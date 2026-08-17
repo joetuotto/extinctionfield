@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.parquet
+berm/berm/data/cache/
+
+# Node
+node_modules/
+.next/
+out/
+.vercel/
+
+# Data (large files)
+data/raw/*.csv
+data/raw/*.xlsx
+data/raw/*.zip
+data/raw/*.json
+data/processed/*.parquet
+data/processed/*.csv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.production

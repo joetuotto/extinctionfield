@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+/* ── Dark palette (default) ── */
+:root {
+  --background: #0a0a0a;
+  --background-secondary: #141414;
+  --foreground: #ededed;
+  --foreground-muted: #a3a3a3;
+  --accent: #3B82F6;
+  --accent-hover: #60A5FA;
+  --border: #262626;
+  --card-bg: #111111;
+  --card-border: #262626;
+  --status-pending: #737373;
+  --status-confirmed: #22C55E;
+  --status-refuted: #EF4444;
+  --status-partial: #F59E0B;
+  --ci-bar-bg: #262626;
+  --ci-bar-fill: #3B82F6;
+  --ci-bar-center: #60A5FA;
+  --nav-bg: rgba(10, 10, 10, 0.85);
+}
+
+/* ── Light palette: system preference ── */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --background: #fafafa;
+    --background-secondary: #f0f0f0;
+    --foreground: #141414;
+    --foreground-muted: #525252;
+    --accent: #2563EB;
+    --accent-hover: #1D4ED8;
+    --border: #d4d4d4;
+    --card-bg: #ffffff;
+    --card-border: #e5e5e5;
+    --status-pending: #737373;
+    --status-confirmed: #16A34A;
+    --status-refuted: #DC2626;
+    --status-partial: #D97706;
+    --ci-bar-bg: #e5e5e5;
+    --ci-bar-fill: #3B82F6;
+    --ci-bar-center: #1D4ED8;
+    --nav-bg: rgba(250, 250, 250, 0.85);
+  }
+}
+
+/* ── Dark palette: explicit toggle ── */
+:root[data-theme="dark"] {
+  --background: #0a0a0a;
+  --background-secondary: #141414;
+  --foreground: #ededed;
+  --foreground-muted: #a3a3a3;
+  --accent: #3B82F6;
+  --accent-hover: #60A5FA;
+  --border: #262626;
+  --card-bg: #111111;
+  --card-border: #262626;
+  --status-pending: #737373;
+  --status-confirmed: #22C55E;
+  --status-refuted: #EF4444;
+  --status-partial: #F59E0B;
+  --ci-bar-bg: #262626;
+  --ci-bar-fill: #3B82F6;
+  --ci-bar-center: #60A5FA;
+  --nav-bg: rgba(10, 10, 10, 0.85);
+}
+
+/* ── Light palette: explicit toggle ── */
+:root[data-theme="light"] {
+  --background: #fafafa;
+  --background-secondary: #f0f0f0;
+  --foreground: #141414;
+  --foreground-muted: #525252;
+  --accent: #2563EB;
+  --accent-hover: #1D4ED8;
+  --border: #d4d4d4;
+  --card-bg: #ffffff;
+  --card-border: #e5e5e5;
+  --status-pending: #737373;
+  --status-confirmed: #16A34A;
+  --status-refuted: #DC2626;
+  --status-partial: #D97706;
+  --ci-bar-bg: #e5e5e5;
+  --ci-bar-fill: #3B82F6;
+  --ci-bar-center: #1D4ED8;
+  --nav-bg: rgba(250, 250, 250, 0.85);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-border: var(--border);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-status-pending: var(--status-pending);
+  --color-status-confirmed: var(--status-confirmed);
+  --color-status-refuted: var(--status-refuted);
+  --color-status-partial: var(--status-partial);
+  --color-ci-bar-bg: var(--ci-bar-bg);
+  --color-ci-bar-fill: var(--ci-bar-fill);
+  --color-ci-bar-center: var(--ci-bar-center);
+  --color-nav-bg: var(--nav-bg);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.font-mono-num {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
