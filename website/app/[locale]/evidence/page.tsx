@@ -404,6 +404,11 @@ const pathwaysFi: Record<string, { label: string; description: string }> = {
     description:
       "DNA-korjauksen (BER-reitti) puoliintumisaika on ~6 tuntia. Kun EMF-vapaa palautumisjakso jää alle 2× puoliintumisajan (< 12 tuntia), korjaus ei ehdi valmistua ja oksidatiivinen vaurio kumuloituu. Moderni 24/7-altistus (22h EMF, 2h vapaa) sallii vain ~21 % korjauksen päivässä verrattuna ~90 %:iin 1950-luvulla (4h EMF, 20h vapaa). Tämä selittää miksi kumulatiivinen altistus on oikea metriikka: ratkaisevaa ei ole annos sinänsä vaan vaurionopeuden suhde korjauskapasiteettiin. REFLEX-konsortio (Diem 2005) havaitsi, että katkonainen altistus tuottaa ENEMMÄN DNA-vaurioita kuin jatkuva — yhdenmukainen VGCC-portin asymmetrian kanssa, jossa jokainen off→on-siirtymä synnyttää steady-state-tason ylittävän Ca²⁺-piikin.",
   },
+  BS: {
+    label: "Nelinkertainen behavioraalinen suppressio",
+    description:
+      "Hedelmällisyyden lasku toimii neljän multiplikatiivisen hormonaalisen kanavan kautta: testosteronin lasku vähentää miehen lähestymiskäyttäytymistä (Puts 2008), populaatiotason maskuliinisen fenotyypin heikkeneminen vähentää naisten attraktiorespon aktivoitumista (Thornhill 1994), oksitosiinin ja testosteronin lasku pariskunnilla vähentää seksuaalista aktiivisuutta (Carter 2021), ja siittiöiden laatu heikentää hedelmöitystodennäköisyyttä (Levine 2023). Dual-hormone -hypoteesi (Mehta 2015) lisää yhdistävän mekanismin: testosteronin käyttäytymisvaikutukset vaativat matalan kortisolin, mutta EMF nostaa kortisolia kroonisesti. Jos jokainen kanava laskee 20%, yhteisvaikutus on 0,8⁴ = 0,41, eli 59% lasku. Tämä selittää miksi pronatalististet taloudelliset ohjelmat epäonnistuvat järjestelmällisesti — ne kohdistuvat tietoiseen valintaan, mutta suppressio toimii tiedostamattoman hormonaalisen motivaation tasolla.",
+  },
   IS: {
     label: "Yksilöllinen herkkyys",
     description:

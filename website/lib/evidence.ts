@@ -118,6 +118,11 @@ export const PATHWAYS: Record<
     description:
       "EMF sensitivity varies between individuals due to VGCC polymorphisms (CACNA1C rs1006737), anatomical differences in tissue geometry (skull thickness, fat layer, water content) that create different internal field patterns, and cumulative allostatic load (Selye phase). This explains EHS prevalence (~3–10%), provocation study null results (population average masks subgroup effects), and objective biomarker findings (Belpomme 2015/2022: histaminemia, nitrotyrosine, S100B in EHS subgroups).",
   },
+  BS: {
+    label: "Quadruple behavioral suppression",
+    description:
+      "Fertility decline operates through four multiplicative hormonal channels: testosterone decline reduces male approach behavior (Puts 2008), population-level masculine phenotype weakening reduces female attraction activation (Thornhill 1994), oxytocin and testosterone decline within couples reduces sexual frequency (Carter 2021), and sperm quality decline reduces fertilization probability (Levine 2023). The dual-hormone hypothesis (Mehta 2015) adds a compounding mechanism: testosterone's behavioral effects require low cortisol, but EMF chronically elevates cortisol. If each channel drops 20%, the combined effect is 0.8^4 = 0.41, a 59% reduction. This explains why pronatalist economic policies consistently fail — they target conscious choice, but the suppression operates on unconscious hormonal motivation.",
+  },
   OT: {
     label: "Dual oxytocin pathway",
     description:
@@ -779,6 +784,31 @@ export const EVIDENCE: EvidenceItem[] = [
   // ── New additions: Pathway D (HPA) ──
   {
     pathway: "D",
+    study: "Travison TG et al. A Population-Level Decline in Serum Testosterone Levels in American Men",
+    year: 2007,
+    finding:
+      "Age-independent testosterone decline of 1.2% per year from 1987-2004 across three cohorts. Persists after controlling for BMI, smoking, and health status. Editorial (Bhasin): 'This magnitude of change during such a short period is disquieting.' The decline is not explained by aging — it is something in the environment.",
+    level: "E",
+    n: 1532,
+  },
+  {
+    pathway: "D",
+    study: "Santi D et al. Secular testosterone decline 1971-2024: systematic review and meta-analysis",
+    year: 2025,
+    finding:
+      "Over 1 million subjects confirm linear negative regression in testosterone across decades, independent of age and BMI. The largest testosterone meta-analysis to date validates Travison's finding at global scale.",
+    level: "E",
+  },
+  {
+    pathway: "D",
+    study: "Lokeshwar SD et al. Decline in Serum Testosterone Levels Among Adolescent and Young Adult Men",
+    year: 2021,
+    finding:
+      "Testosterone decline is particularly severe in younger males and young adults, not just aging men. This pattern suggests environmental rather than age-related cause, and affects reproductive-age males most directly.",
+    level: "M|C",
+  },
+  {
+    pathway: "D",
     study: "Pawlak K et al. EMF exposure and corticosterone in rodent model",
     year: 2025,
     finding:
@@ -861,6 +891,51 @@ export const EVIDENCE: EvidenceItem[] = [
     finding:
       "Umbrella review of 39 systematic reviews covering thousands of individual studies. Majority of reviews report biological effects of non-ionizing EMF on reproductive parameters, oxidative stress, and DNA damage. Strongest evidence for ROS-mediated sperm damage (Pathway A) and HPA disruption (Pathway D).",
     level: "E",
+  },
+
+  // ── Quadruple behavioral suppression (BS) ──
+  {
+    pathway: "BS",
+    study: "Puts DA et al. Testosterone is associated with mating success but not attractiveness or masculinity",
+    year: 2008,
+    finding:
+      "T correlates with mating success via behavioral modulation (courtship effort, mate seeking) rather than physical attractiveness. Men with higher T approach more, not appear more attractive. T decline directly reduces mating probability through reduced approach behavior.",
+    level: "M|C",
+    n: 119,
+  },
+  {
+    pathway: "BS",
+    study: "Goetz SMM & Carré JM. Exogenous testosterone influences cross-sex mind perception of sexual interest",
+    year: 2024,
+    finding:
+      "Testosterone increases sexual overperception bias: men interpret women's signals as more sexually interested. T decline reduces overperception, leading to fewer approaches. Placebo-controlled RCT design (N=190) confirms causal direction.",
+    level: "M",
+    n: 190,
+  },
+  {
+    pathway: "BS",
+    study: "Dreher JC et al. Testosterone causes both prosocial and antisocial status-enhancing behaviors in human males",
+    year: 2016,
+    finding:
+      "Exogenous T causally increases status-seeking behavior in economic games. Not just aggression but strategic social behavior aimed at mate competition. RCT design confirms T-to-behavior causal direction.",
+    level: "E",
+  },
+  {
+    pathway: "BS",
+    study: "Mehta PH & Prasad S. The dual-hormone hypothesis for social status behavior",
+    year: 2015,
+    finding:
+      "T effects on status-relevant behavior (dominance, risk-taking, aggression) manifest ONLY when cortisol is low. High cortisol blocks T's behavioral expression. BERM predicts: EMF raises cortisol AND lowers T, creating double behavioral suppression.",
+    level: "M|C",
+  },
+  {
+    pathway: "BS",
+    study: "Dual-hormone hypothesis meta-analysis (30 papers, 33 independent studies)",
+    year: 2018,
+    finding:
+      "T x cortisol interaction significant for status-relevant behavior (r = -.061, p = .026, N = 8538). Effect largest for direct status measures. Confirms dual-hormone modulation at population level. Effect size is small but the mechanism is real.",
+    level: "E",
+    n: 8538,
   },
 
   // ── Dual oxytocin pathway (OT convergence) ──
