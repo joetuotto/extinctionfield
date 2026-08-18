@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { EPISTEMIC_LEVELS, PATHWAYS, EVIDENCE } from "@/lib/evidence";
 import type { EpistemicLevel } from "@/lib/types";
+import { StatisticalValidation } from "@/components/StatisticalValidation";
 
 interface NaturalExperimentCard {
   id: string;
@@ -848,6 +849,8 @@ export default async function EvidencePage({
           </p>
         </div>
       </section>
+
+      <StatisticalValidation locale={locale} />
 
       <section className="border-t border-border pt-8 mt-8">
         <p className="text-xs text-foreground-muted leading-relaxed max-w-3xl">
