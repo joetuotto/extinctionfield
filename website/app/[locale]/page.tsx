@@ -19,7 +19,6 @@ const t = {
     ],
     happeningConclusion:
       "Something biological is happening, across species, across continents, at the same time. BERM proposes a testable explanation.",
-    mapPlaceholder: "Interactive world map coming soon",
     mapDesc:
       "TFR decline and EMF exposure by country, 1960–2024. Time slider with animation.",
 
@@ -85,7 +84,6 @@ const t = {
     ],
     happeningConclusion:
       "Jotain biologista tapahtuu, lajeista toiseen, mantereelta toiselle, samanaikaisesti. BERM tarjoaa testattavan selityksen.",
-    mapPlaceholder: "Interaktiivinen maailmankartta tulossa",
     mapDesc:
       "TFR-lasku ja EMF-altistus maittain, 1960–2024. Aikaslider animaatiolla.",
 

@@ -153,7 +153,7 @@ const t = {
       'Complete derivation from Lindgren geometry to TFR prediction. Every equation is derivable from the previous one. Click "Full derivation" to see intermediate steps.',
 
     epistemic:
-      "Epistemic note: The equations above are the current model specification (v17.0). Parameter values are calibrated against observed data and will be updated as new evidence becomes available. The model is explicitly designed to be falsifiable -- if its predictions fail, the model is wrong.",
+      "Epistemic note: The equations above are the current model specification (v18.0). Parameter values are calibrated against observed data and will be updated as new evidence becomes available. The model is explicitly designed to be falsifiable -- if its predictions fail, the model is wrong.",
   },
   fi: {
     title: "Mallin dokumentaatio",
@@ -301,7 +301,7 @@ const t = {
       'Täydellinen johtaminen Lindgrenin geometriasta TFR-ennusteeseen. Jokainen yhtälö on johdettavissa edellisestä. Klikkaa "Täysi johtaminen" nähdäksesi välivaiheet.',
 
     epistemic:
-      "Episteeminen huomautus: Yllä olevat yhtälöt ovat nykyinen mallispesifikaatio (v17.0). Parametriarvot on kalibroitu havaittua dataa vasten ja niitä päivitetään uuden näytön myötä. Malli on nimenomaisesti suunniteltu falsifioitavaksi -- jos sen ennusteet epäonnistuvat, malli on väärässä.",
+      "Episteeminen huomautus: Yllä olevat yhtälöt ovat nykyinen mallispesifikaatio (v18.0). Parametriarvot on kalibroitu havaittua dataa vasten ja niitä päivitetään uuden näytön myötä. Malli on nimenomaisesti suunniteltu falsifioitavaksi -- jos sen ennusteet epäonnistuvat, malli on väärässä.",
   },
 } as const;
 
