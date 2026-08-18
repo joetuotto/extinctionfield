@@ -103,6 +103,11 @@ export const PATHWAYS: Record<
     description:
       "Studies and observations that contradict BERM predictions, that the model cannot explain, or that limit the strength of causal claims. Scientific integrity requires documenting what fails, not only what fits. Two entries are rated high-threat: the monotonic degeneracy problem (any increasing variable fits the TFR curve) and the absence of any human RCT linking EMF reduction to fertility improvement.",
   },
+  LB: {
+    label: "Laboratory baseline bias",
+    description:
+      "Rising ambient EMF in laboratories contaminates control groups, compressing observed effect sizes toward null. If χ(Ā) governs biological sensitivity and lab EMF has risen from ~0.1 V/m (1950s) to ~15 V/m (2020s), controls are already at χ ≈ 1.0 — making EMF-sensitive effects nearly undetectable. This predicts the biological replication crisis as a structural consequence of BERM.",
+  },
 };
 
 // Evidence items organized by pathway
@@ -637,5 +642,40 @@ export const EVIDENCE: EvidenceItem[] = [
     finding:
       "IVF success rates improved from ~36% to ~50% live birth rate per transfer (2000-2024), despite increasing ambient EMF. If EMF degrades gamete quality, IVF outcomes should not improve. Lab technique improvements and gamete selection (ICSI/PGT) may overwhelm EMF effects, or effects on gametes may be smaller than modeled. Model threat: MEDIUM",
     level: "C",
+  },
+
+  // ── Pathway LB: Laboratory baseline bias ──
+  {
+    pathway: "LB",
+    study: "Portelli et al. Inhomogeneous background magnetic field in biological incubators",
+    year: 2013,
+    finding:
+      "Measured magnetic fields inside CO₂ incubators varied 3-fold across shelf positions (0.5–1.5 μT DC, plus AC components from heaters and fans). Fields were never controlled or reported in published cell biology studies. Demonstrates that 'control' conditions contain uncontrolled EMF exposure.",
+    level: "M",
+    n: 12,
+  },
+  {
+    pathway: "LB",
+    study: "Makinistian et al. Magnetic field effects on cell culture: inherent variability as confound",
+    year: 2023,
+    finding:
+      "Systematic review of incubator magnetic field measurements shows inter-lab variation of 10-100× in background fields. Proposes standardized EMF reporting for cell biology. Confirms that 'identical' protocols in different labs experience radically different EMF backgrounds.",
+    level: "M|C",
+  },
+  {
+    pathway: "LB",
+    study: "Historical spontaneous tumor rates in laboratory rodents (NTP data)",
+    year: 2020,
+    finding:
+      "Background tumor incidence in control F344 rats rose from ~2% (1970s) to ~8% (2010s) across NTP studies. Multiple explanations proposed (diet, genetics, pathology methods). BERM interpretation: rising vivarium EMF increases oxidative stress in controls, elevating baseline disease. Not definitive but consistent with baseline shift hypothesis.",
+    level: "C",
+  },
+  {
+    pathway: "LB",
+    study: "BERM χ-function analysis of replication failure",
+    year: 2026,
+    finding:
+      "Model calculation: lab ambient EMF rose from ~0.1 V/m (1950s) to ~15 V/m (2020s). The χ selection rule predicts control group χ rose from 0.11 to 0.998, hiding >99% of EMF-sensitive effects. A 1985 experiment replicated in 2015 retains only 2.4% of original effect size. Falsifiable prediction: Faraday-shielded assay should show ~684× larger effect for EMF-sensitive endpoints.",
+    level: "L*",
   },
 ];

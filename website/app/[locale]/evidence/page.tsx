@@ -125,6 +125,11 @@ const pathwaysFi: Record<string, { label: string; description: string }> = {
     description:
       "Tutkimuksia ja havaintoja, jotka ovat ristiriidassa BERM:n ennusteiden kanssa, joita malli ei pysty selittämään tai jotka rajoittavat kausaaliväitteiden vahvuutta. Tieteellinen rehellisyys vaatii sen dokumentointia, mikä epäonnistuu, ei vain sen mikä sopii.",
   },
+  LB: {
+    label: "Laboratorion perustason harha",
+    description:
+      "Kasvava tausta-EMF laboratorioissa kontaminoi kontrolliryhmät, puristaen havaittuja vaikutuskokoja kohti nollaa. Jos χ(Ā) ohjaa biologista herkkyyttä ja laboratorion EMF on noussut ~0,1 V/m:stä (1950-luku) ~15 V/m:iin (2020-luku), kontrollit ovat jo χ ≈ 1,0 — tehden EMF-herkistä vaikutuksista lähes havaitsemattomia. Tämä ennustaa biologisen replikaatiokriisin BERM:n rakenteellisena seurauksena.",
+  },
 };
 
 export async function generateMetadata({
@@ -258,7 +263,8 @@ export default async function EvidencePage({
                 pKey === "NE" ||
                 pKey === "TG" ||
                 pKey === "CA" ||
-                pKey === "NR"
+                pKey === "NR" ||
+                pKey === "LB"
                   ? ""
                   : `${locale === "fi" ? "Reitti" : "Pathway"} ${pKey === "T_BE" ? "T" : pKey}: `}
                 {pathway.label}
@@ -266,6 +272,19 @@ export default async function EvidencePage({
               <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl">
                 {pathway.description}
               </p>
+              {pKey === "LB" && (
+                <p className="text-sm mt-2">
+                  <a
+                    href={`/${locale}/replication`}
+                    className="text-blue-500 hover:underline"
+                  >
+                    {locale === "fi"
+                      ? "BERM ennustaa lisäseurauksen: laboratorion replikaatiokriisin itsessään."
+                      : "BERM predicts a further consequence: the laboratory replication crisis itself."}
+                  </a>
+                  {" →"}
+                </p>
+              )}
             </div>
 
             <div className="hidden md:block overflow-x-auto">

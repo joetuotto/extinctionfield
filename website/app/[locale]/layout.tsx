@@ -1,4 +1,5 @@
 import { Navigation } from "./navigation";
+import { SetLang } from "./set-lang";
 import { isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
 
@@ -39,11 +40,7 @@ export default async function LocaleLayout({
 
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang="${locale}"`,
-        }}
-      />
+      <SetLang locale={locale} />
       <Navigation locale={locale} />
       <main className="flex-1">{children}</main>
       <footer className="border-t border-border py-8 px-6">
