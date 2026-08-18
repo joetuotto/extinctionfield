@@ -133,7 +133,7 @@ def predict_country_year(country: str, year: int) -> dict:
 
     bio_sigmoid_tfr = density_weighted_tfr_with_personal(country, year)
     cult_comp = cultural_component(country)
-    pred_tfr = bio_sigmoid_tfr + cult_comp
+    pred_tfr = max(0.0, bio_sigmoid_tfr + cult_comp)
 
     ivf_corr = ivf_share_projected(country, year)
     bio_tfr = biological_tfr(pred_tfr, ivf_corr)

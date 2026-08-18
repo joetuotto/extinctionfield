@@ -302,7 +302,7 @@ const t = {
     /* temporal timeline */
     timelineTitle: "Temporal Correlation Timeline",
     timelineDesc:
-      "Move the slider to see how EMF infrastructure milestones and species decline events align temporally. Each decline onset matches an EMF deployment phase within 0–3 years.",
+      "Move the slider to see how EMF infrastructure milestones and species decline events align temporally. Green markers show military radar systems (1951–1990), blue markers show civilian telecom infrastructure. Each decline onset matches an EMF deployment phase within 3–10 years.",
     timelineEmfLabel: "EMF Infrastructure",
     timelineDeclineLabel: "Species Decline",
     timelineYearLabel: "Year",
@@ -331,9 +331,16 @@ const t = {
     /* --- data arrays --- */
 
     timelineEmfEvents: [
+      { year: 1951, label: "Pinetree Line (33 radar)", color: "#4a6741" },
       { year: 1953, label: "TV broadcast", color: "#3B82F6" },
+      { year: 1957, label: "DEW Line (63 stations)", color: "#4a6741" },
+      { year: 1961, label: "BMEWS (15 MW peak)", color: "#4a6741" },
+      { year: 1965, label: "200+ Nike stations", color: "#4a6741" },
       { year: 1970, label: "Microwave ovens", color: "#3B82F6" },
+      { year: 1976, label: "Duga OTH (10 MW)", color: "#4a6741" },
+      { year: 1980, label: "PAVE PAWS + ELF", color: "#4a6741" },
       { year: 1983, label: "1G cellular", color: "#60A5FA" },
+      { year: 1990, label: "DEW Line closed", color: "#4a6741" },
       { year: 1991, label: "GSM 2G", color: "#2563EB" },
       { year: 1997, label: "Wi-Fi 802.11", color: "#60A5FA" },
       { year: 2001, label: "3G UMTS", color: "#2563EB" },
@@ -343,10 +350,11 @@ const t = {
     ] as TimelineEvent[],
 
     timelineDeclineEvents: [
+      { year: 1960, label: "Amphibian enigmatic decline", color: "#F97316" },
       { year: 1970, label: "Bird decline begins", color: "#F59E0B" },
-      { year: 1995, label: "Insect collapse (Krefeld)", color: "#EF4444" },
-      { year: 1998, label: "Amphibian enigmatic decline", color: "#F97316" },
-      { year: 2000, label: "Human sperm decline accel.", color: "#DC2626" },
+      { year: 1973, label: "Rothamsted insect decline", color: "#EF4444" },
+      { year: 1973, label: "Levine sperm decline onset", color: "#DC2626" },
+      { year: 1995, label: "Krefeld insect collapse", color: "#EF4444" },
       { year: 2006, label: "CCD (bees) + WNS (bats)", color: "#EF4444" },
     ] as TimelineEvent[],
 
@@ -904,7 +912,7 @@ const t = {
     /* temporal timeline */
     timelineTitle: "Ajallinen korrelaatioaikajana",
     timelineDesc:
-      "Siirrä liukusäädintä nähdäksesi miten EMF-infrastruktuurin virstanpylväät ja lajien vähenemätapahtumat osuvat ajallisesti yhteen. Jokainen vähenemän alku osuu EMF-käyttöönottovaiheeseen 0–3 vuoden sisällä.",
+      "Siirrä liukusäädintä nähdäksesi miten EMF-infrastruktuurin virstanpylväät ja lajien vähenemätapahtumat osuvat ajallisesti yhteen. Vihreät merkit näyttävät sotilastutkat (1951–1990), siniset siviili-telecom-infrastruktuurin. Jokainen vähenemän alku osuu EMF-käyttöönottovaiheeseen 3–10 vuoden sisällä.",
     timelineEmfLabel: "EMF-infrastruktuuri",
     timelineDeclineLabel: "Lajien vähenemä",
     timelineYearLabel: "Vuosi",
@@ -933,9 +941,16 @@ const t = {
     /* --- data arrays --- */
 
     timelineEmfEvents: [
+      { year: 1951, label: "Pinetree Line (33 tutkaa)", color: "#4a6741" },
       { year: 1953, label: "TV-lähetykset", color: "#3B82F6" },
+      { year: 1957, label: "DEW Line (63 asemaa)", color: "#4a6741" },
+      { year: 1961, label: "BMEWS (15 MW huippu)", color: "#4a6741" },
+      { year: 1965, label: "200+ Nike-asemaa", color: "#4a6741" },
       { year: 1970, label: "Mikroaaltouunit", color: "#3B82F6" },
+      { year: 1976, label: "Duga OTH (10 MW)", color: "#4a6741" },
+      { year: 1980, label: "PAVE PAWS + ELF", color: "#4a6741" },
       { year: 1983, label: "1G-matkapuhelimet", color: "#60A5FA" },
+      { year: 1990, label: "DEW Line suljetaan", color: "#4a6741" },
       { year: 1991, label: "GSM 2G", color: "#2563EB" },
       { year: 1997, label: "Wi-Fi 802.11", color: "#60A5FA" },
       { year: 2001, label: "3G UMTS", color: "#2563EB" },
@@ -945,10 +960,11 @@ const t = {
     ] as TimelineEvent[],
 
     timelineDeclineEvents: [
+      { year: 1960, label: "Sammakkoeläinten lasku alkaa", color: "#F97316" },
       { year: 1970, label: "Lintujen vähenemä alkaa", color: "#F59E0B" },
-      { year: 1995, label: "Hyönteisromahdus (Krefeld)", color: "#EF4444" },
-      { year: 1998, label: "Sammakkoeläinten arvoituksellinen vähenemä", color: "#F97316" },
-      { year: 2000, label: "Ihmisten siittiövähenemä kiihtyy", color: "#DC2626" },
+      { year: 1973, label: "Rothamsted-hyönteislasku", color: "#EF4444" },
+      { year: 1973, label: "Levine-siittiölasku alkaa", color: "#DC2626" },
+      { year: 1995, label: "Krefeld-hyönteisromahdus", color: "#EF4444" },
       { year: 2006, label: "CCD (mehiläiset) + WNS (lepakot)", color: "#EF4444" },
     ] as TimelineEvent[],
 

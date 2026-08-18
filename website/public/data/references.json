@@ -1590,5 +1590,41 @@
       "low-exposure",
       "csli"
     ]
+  },
+  {
+    "id": "becker1985_fort_rucker",
+    "authors": "Becker RO, Selden G",
+    "year": 1985,
+    "title": "The Body Electric: Electromagnetism and the Foundation of Life",
+    "journal": "William Morrow & Co.",
+    "type": "case",
+    "level": "L*",
+    "pathway": ["A"],
+    "finding": "17 clubfoot births in 16 months at Fort Rucker military hospital (expected: 4) in high-radar EMF environment. Investigation blocked by military classification of radiation maps.",
+    "tags": ["military", "radar", "birth_defects", "history", "fort_rucker"]
+  },
+  {
+    "id": "guy1984",
+    "authors": "Guy AW, Chou CK, Lin JC, Christensen D",
+    "year": 1984,
+    "title": "Chronic exposure of rats to 2.45 GHz microwaves (US Air Force SAM-TR-83-38)",
+    "journal": "USAF School of Aerospace Medicine",
+    "type": "animal",
+    "level": "M",
+    "pathway": ["D"],
+    "finding": "Rats exposed to 2.45 GHz at 0.5 mW/cm² for 25 months: 3.6× endocrine cancers (18 vs 5). Plasma cortisol pattern consistent with Selye GAS.",
+    "tags": ["military", "chronic", "cancer", "endocrine", "selye", "air_force"]
+  },
+  {
+    "id": "hydro_quebec_1976",
+    "authors": "Hydro-Québec survey (cited in Becker, Cross Currents)",
+    "year": 1976,
+    "title": "Sex ratio shift in children of power station workers",
+    "journal": "Cited in Becker RO, Cross Currents (1990)",
+    "type": "observational",
+    "level": "L*",
+    "pathway": ["A"],
+    "finding": "Sex ratio of offspring shifted from ~1:1 to 6:1 male after parental occupational EMF exposure at power generating stations.",
+    "tags": ["occupational", "sex_ratio", "power_line", "history"]
   }
 ]

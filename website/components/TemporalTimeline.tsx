@@ -19,10 +19,10 @@ interface Props {
 const YEAR_MIN = 1950;
 const YEAR_MAX = 2025;
 const SVG_W = 900;
-const SVG_H = 340;
+const SVG_H = 400;
 const MARGIN_L = 40;
 const MARGIN_R = 30;
-const AXIS_Y = 170;
+const AXIS_Y = 190;
 
 function yearToX(year: number): number {
   return (
@@ -113,7 +113,7 @@ export default function TemporalTimeline({
           {emfEvents.map((ev, i) => {
             const x = yearToX(ev.year);
             const active = ev.year <= selectedYear;
-            const yOffset = 40 + (i % 3) * 30;
+            const yOffset = 36 + (i % 4) * 26;
             return (
               <g
                 key={`emf-${i}`}

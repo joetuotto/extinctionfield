@@ -38,6 +38,7 @@ from berm.data.countries import (
     get_country_params,
 )
 from berm.exposure.ambient import get_attenuation_factor
+from berm.exposure.military_ambient import total_pre_telecom
 from berm.biology.pathways import dysbiosis_index, pathway_f, l_reuteri_oxytocin_pathway
 
 
@@ -189,8 +190,17 @@ def _get_td(country: str):
     )
 
 
+PRE_TELECOM_START = 1950
+
+
+def _exposure_start_year(country: str) -> int:
+    """Earliest year with non-zero ambient (pre-telecom or telecom)."""
+    td = _get_td(country)
+    return min(td.start, PRE_TELECOM_START)
+
+
 def v16_ambient_annual(country: str, year: int) -> float:
-    """Annual ambient EMF: base station + WiFi + IoT."""
+    """Annual ambient EMF: pre-telecom (military + broadcast) + telecom."""
     td = _get_td(country)
     atten = get_attenuation_factor(country)
     nq = NETWORK_QUALITY.get(country, 0.7)
@@ -198,7 +208,9 @@ def v16_ambient_annual(country: str, year: int) -> float:
           * v16_ambient_gen_mult(year, td) * atten * nq)
     wifi = wifi_penetration(country, year) * 0.15
     iot = iot_devices_per_household(country, year) * 0.005
-    return bs + wifi + iot
+    telecom = bs + wifi + iot
+    pre_telecom = total_pre_telecom(country, year)
+    return telecom + pre_telecom
 
 
 def v16_personal_annual(country: str, year: int) -> float:
@@ -291,7 +303,7 @@ def v17_cohort_adjustment(country: str, year: int) -> float:
     """
     td = _get_td(country)
     peak_birth_year = year - 28
-    emf_start = td.start
+    emf_start = _exposure_start_year(country)
 
     weighted = 0.0
     for age, vuln in _VULN_BY_AGE:
@@ -311,8 +323,9 @@ def cohort_weighted_exposure(country: str, eval_year: int) -> float:
     td = _get_td(country)
     birth_year = eval_year - 28
     weighted_cum = 0.0
+    start = _exposure_start_year(country)
 
-    for year in range(max(td.start, birth_year - 1), eval_year + 1):
+    for year in range(max(start, birth_year - 1), eval_year + 1):
         age = year - birth_year
         amb = v16_ambient_annual(country, year)
         pers = v16_personal_annual(country, year)
@@ -330,10 +343,10 @@ _cohort_norm_factor: float = 1.0
 
 def _cohort_weighted_cum_raw(country: str, year: int) -> float:
     """Cohort-weighted cumulative with 5-layer retention (unnormalized)."""
-    td = _get_td(country)
     birth_year = year - 28
+    start = _exposure_start_year(country)
     total = 0.0
-    for y in range(td.start, year + 1):
+    for y in range(start, year + 1):
         amb = v16_ambient_annual(country, y)
         pers = v16_personal_annual(country, y)
         annual = amb + chi(amb) * pers
@@ -365,9 +378,9 @@ def cohort_weighted_exposure_normalized(country: str, year: int) -> float:
 
 def v16_two_channel_cum_exposure(country: str, year: int) -> float:
     """Raw two-channel cumulative: ambient + chi(ambient) * personal."""
-    td = _get_td(country)
+    start = _exposure_start_year(country)
     total = 0.0
-    for y in range(td.start, year + 1):
+    for y in range(start, year + 1):
         amb = v16_ambient_annual(country, y)
         pers = v16_personal_annual(country, y)
         total += amb + chi(amb) * pers
@@ -376,9 +389,9 @@ def v16_two_channel_cum_exposure(country: str, year: int) -> float:
 
 def v17_weighted_cum_exposure(country: str, year: int) -> float:
     """5-layer recovery weighted cumulative exposure."""
-    td = _get_td(country)
+    start = _exposure_start_year(country)
     total = 0.0
-    for y in range(td.start, year + 1):
+    for y in range(start, year + 1):
         amb = v16_ambient_annual(country, y)
         pers = v16_personal_annual(country, y)
         annual_exp = amb + chi(amb) * pers

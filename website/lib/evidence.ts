@@ -1239,4 +1239,36 @@ export const EVIDENCE: EvidenceItem[] = [
     level: "L*",
     n: 1,
   },
+
+  // ── Historical military EMF evidence ──
+  {
+    pathway: "A",
+    study:
+      "Becker RO & Selden G. The Body Electric: Fort Rucker case",
+    year: 1985,
+    finding:
+      "17 clubfoot births in 16 months at Fort Rucker military hospital (expected: 4) in high-radar EMF environment. Investigation was blocked by military classification of radiation exposure maps. Anecdotal but historically significant.",
+    level: "L*",
+    n: 17,
+  },
+  {
+    pathway: "D",
+    study:
+      "Guy AW et al. Chronic RF exposure study in rats (US Air Force)",
+    year: 1984,
+    finding:
+      "Rats exposed to 2.45 GHz at 0.5 mW/cm² for 25 months: 18 vs 5 primary malignancies (3.6× ratio), concentrated in endocrine organs (pituitary, thyroid, adrenal). Plasma cortisol rose initially then fell, consistent with Selye's general adaptation syndrome exhaustion phase.",
+    level: "M",
+    n: 200,
+  },
+  {
+    pathway: "A",
+    study:
+      "Hydro-Québec generating station survey (cited in Becker, Cross Currents)",
+    year: 1976,
+    finding:
+      "Sex ratio of children shifted from ~1:1 to 6:1 male after parental occupational EMF exposure at power generating stations. Anecdotal, single-site, but consistent with VGCC-mediated sex-differential vulnerability.",
+    level: "L*",
+    n: 1,
+  },
 ];
