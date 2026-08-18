@@ -95,7 +95,7 @@ export default function EvidencePage() {
           <section key={pKey} className="mb-14">
             <div className="mb-4">
               <h2 className="text-xl font-semibold mb-1">
-                {pKey === "PV" ? "" : `Pathway ${pKey === "T_BE" ? "T" : pKey}: `}
+                {pKey === "PV" || pKey === "NE" || pKey === "TG" ? "" : `Pathway ${pKey === "T_BE" ? "T" : pKey}: `}
                 {pathway.label}
               </h2>
               <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl">
