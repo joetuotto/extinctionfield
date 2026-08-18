@@ -44,6 +44,37 @@ export interface Reference {
   keyFinding: string;
 }
 
+export type ReferenceStudyType =
+  | "review"
+  | "meta"
+  | "umbrella"
+  | "experimental"
+  | "mechanistic"
+  | "animal"
+  | "human_obs"
+  | "cohort"
+  | "rct"
+  | "clinical"
+  | "observational"
+  | "case"
+  | "theory"
+  | "theoretical"
+  | "book";
+
+export interface ReferenceEntry {
+  id: string;
+  authors: string;
+  year: number;
+  title: string;
+  journal: string;
+  n: number | null;
+  type: ReferenceStudyType;
+  level: EpistemicLevel | "H";
+  pathway: string[];
+  finding: string;
+  tags: string[];
+}
+
 export interface ChainNode {
   id: string;
   level: number;
