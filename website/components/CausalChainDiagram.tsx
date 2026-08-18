@@ -17,7 +17,6 @@ const LEVEL_LABEL_W = 100;
 const FEEDBACK_MARGIN = 44;
 const NODE_GAP = 14;
 const MAX_NODE_W = 240;
-const MIN_NODE_W = 140;
 const MAX_PER_ROW = 4;
 const ROW_INNER_GAP = 10;
 const BAND_PAD_Y = 14;
@@ -88,7 +87,7 @@ function computeLayout(
       const rowEnd = Math.min(rowStart + MAX_PER_ROW, count);
       const rowCount = rowEnd - rowStart;
       const totalGaps = (rowCount - 1) * NODE_GAP;
-      const nodeW = Math.max(MIN_NODE_W, Math.min(MAX_NODE_W, (usableW - totalGaps) / rowCount));
+      const nodeW = Math.min(MAX_NODE_W, (usableW - totalGaps) / rowCount);
       const rowW = rowCount * nodeW + totalGaps;
       const startX = Math.max(leftEdge, leftEdge + (usableW - rowW) / 2);
 
