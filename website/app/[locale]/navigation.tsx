@@ -16,6 +16,7 @@ const NAV_LINKS = {
     { href: "/sentinel", label: "Sentinel" },
     { href: "/evidence", label: "Evidence" },
     { href: "/data", label: "Data" },
+    { href: "/objections", label: "Objections" },
     { href: "/about", label: "About" },
   ],
   fi: [
@@ -27,6 +28,7 @@ const NAV_LINKS = {
     { href: "/sentinel", label: "Lajit" },
     { href: "/evidence", label: "Näyttö" },
     { href: "/data", label: "Data" },
+    { href: "/objections", label: "Vastaväitteet" },
     { href: "/about", label: "Tietoa" },
   ],
 } as const;
