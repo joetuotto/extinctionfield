@@ -99,9 +99,6 @@ function getNode(id: string): NodeDef {
   return n;
 }
 
-function cx(n: NodeDef) {
-  return n.x + (n.w ?? 120) / 2;
-}
 function cy(n: NodeDef) {
   return n.y + NODE_H / 2;
 }
@@ -126,7 +123,7 @@ export default function CausalChain() {
           markerHeight="6"
           orient="auto-start-reverse"
         >
-          <path d="M 0 0 L 10 3.5 L 0 7 z" fill="#525252" />
+          <path d="M 0 0 L 10 3.5 L 0 7 z" fill="var(--foreground-muted)" />
         </marker>
       </defs>
 
@@ -145,7 +142,7 @@ export default function CausalChain() {
             y1={y1}
             x2={x2}
             y2={y2}
-            stroke="#525252"
+            stroke="var(--foreground-muted)"
             strokeWidth={1.5}
             markerEnd="url(#arrow)"
           />
@@ -166,7 +163,7 @@ export default function CausalChain() {
               height={NODE_H}
               rx={RX}
               ry={RX}
-              fill="#141414"
+              fill="var(--card-bg)"
               stroke={color}
               strokeWidth={1.5}
             />
@@ -176,7 +173,7 @@ export default function CausalChain() {
             <text
               x={n.x + 24}
               y={n.y + NODE_H / 2 + 1}
-              fill="#ededed"
+              fill="var(--foreground)"
               fontSize={11}
               fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
               dominantBaseline="middle"
@@ -201,7 +198,7 @@ export default function CausalChain() {
           <text
             x={10}
             y={1}
-            fill="#a3a3a3"
+            fill="var(--foreground-muted)"
             fontSize={10}
             fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
             dominantBaseline="middle"

@@ -9,8 +9,6 @@ export function DetailPanel({
   node: ChainNode;
   onClose: () => void;
 }) {
-  const color = EPISTEMIC_COLORS[node.epistemicLevel];
-
   return (
     <div className="fixed inset-0 z-50 flex items-end lg:items-stretch lg:justify-end" onClick={onClose}>
       <div
@@ -18,25 +16,25 @@ export function DetailPanel({
         aria-hidden
       />
       <div
-        className="relative w-full max-h-[85vh] lg:max-h-none lg:max-w-md bg-[#1E293B] border-t lg:border-t-0 lg:border-l border-[#334155] overflow-y-auto animate-slide-in rounded-t-2xl lg:rounded-t-none"
+        className="relative w-full max-h-[85vh] lg:max-h-none lg:max-w-md bg-card-bg border-t lg:border-t-0 lg:border-l border-card-border overflow-y-auto animate-slide-in rounded-t-2xl lg:rounded-t-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Mobile/tablet drag handle indicator */}
         <div className="flex justify-center pt-3 pb-1 lg:hidden">
-          <div className="w-10 h-1 rounded-full bg-[#475569]" />
+          <div className="w-10 h-1 rounded-full bg-border" />
         </div>
         <div className="p-6 pt-3 lg:pt-6 space-y-6">
           {/* Header */}
           <div className="flex items-start justify-between gap-4">
             <div className="space-y-2">
               <EpistemicBadge level={node.epistemicLevel} size="lg" />
-              <h2 className="text-lg font-semibold text-[#F1F5F9]">
+              <h2 className="text-lg font-semibold text-foreground">
                 {node.title}
               </h2>
             </div>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-[#94A3B8] hover:text-[#F1F5F9] hover:bg-[#334155] transition-colors shrink-0"
+              className="p-1.5 rounded-lg text-foreground-muted hover:text-foreground hover:bg-background-secondary transition-colors shrink-0"
               aria-label="Sulje"
             >
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -48,10 +46,10 @@ export function DetailPanel({
 
           {/* Mechanism */}
           <section>
-            <h3 className="text-xs uppercase tracking-wider text-[#64748B] mb-2">
+            <h3 className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
               Mekanismi
             </h3>
-            <p className="text-sm text-[#CBD5E1] leading-relaxed">
+            <p className="text-sm text-foreground-muted leading-relaxed">
               {node.mechanism}
             </p>
           </section>
@@ -65,7 +63,7 @@ export function DetailPanel({
               <h3 className="text-xs uppercase tracking-wider mb-2" style={{ color: EPISTEMIC_COLORS.M }}>
                 Lindgrenin tulkinta
               </h3>
-              <p className="text-sm text-[#CBD5E1] leading-relaxed">
+              <p className="text-sm text-foreground-muted leading-relaxed">
                 {node.lindgrenInterpretation}
               </p>
             </section>
@@ -74,10 +72,10 @@ export function DetailPanel({
           {/* Quantitative */}
           {node.quantitative && (
             <section>
-              <h3 className="text-xs uppercase tracking-wider text-[#64748B] mb-2">
+              <h3 className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
                 Kvantitatiivinen
               </h3>
-              <pre className="text-xs font-mono text-[#94A3B8] bg-[#0F172A] rounded-lg p-4 overflow-x-auto whitespace-pre-wrap">
+              <pre className="text-xs font-mono text-foreground-muted bg-background-secondary rounded-lg p-4 overflow-x-auto whitespace-pre-wrap">
                 {node.quantitative}
               </pre>
             </section>
@@ -86,15 +84,15 @@ export function DetailPanel({
           {/* Recovery */}
           {node.recoveryAlpha !== undefined && (
             <section>
-              <h3 className="text-xs uppercase tracking-wider text-[#64748B] mb-2">
+              <h3 className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
                 Palautuvuus
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center gap-3">
-                  <span className="text-sm text-[#CBD5E1] font-mono">
+                  <span className="text-sm text-foreground font-mono">
                     α = {node.recoveryAlpha.toFixed(2)}
                   </span>
-                  <div className="flex-1 h-2 bg-[#0F172A] rounded-full overflow-hidden">
+                  <div className="flex-1 h-2 bg-background-secondary rounded-full overflow-hidden">
                     <div
                       className="h-full rounded-full transition-all"
                       style={{
@@ -108,12 +106,12 @@ export function DetailPanel({
                       }}
                     />
                   </div>
-                  <span className="text-xs text-[#94A3B8]">
+                  <span className="text-xs text-foreground-muted">
                     {Math.round(node.recoveryAlpha * 100)}%
                   </span>
                 </div>
                 {node.recoveryTimescale && (
-                  <p className="text-xs text-[#94A3B8]">
+                  <p className="text-xs text-foreground-muted">
                     Aikaskaala: {node.recoveryTimescale}
                   </p>
                 )}
@@ -124,16 +122,16 @@ export function DetailPanel({
           {/* Key references */}
           {node.keyReferences.length > 0 && (
             <section>
-              <h3 className="text-xs uppercase tracking-wider text-[#64748B] mb-2">
+              <h3 className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
                 Keskeiset viitteet
               </h3>
               <ul className="space-y-3">
                 {node.keyReferences.map((ref, i) => (
                   <li key={i} className="text-sm">
-                    <p className="text-[#CBD5E1] font-medium">{ref.authors}</p>
-                    <p className="text-xs text-[#94A3B8] italic">{ref.title}</p>
-                    <p className="text-xs text-[#64748B]">{ref.journal}</p>
-                    <p className="text-xs text-[#94A3B8] mt-1">
+                    <p className="text-foreground font-medium">{ref.authors}</p>
+                    <p className="text-xs text-foreground-muted italic">{ref.title}</p>
+                    <p className="text-xs text-foreground-muted opacity-70">{ref.journal}</p>
+                    <p className="text-xs text-foreground-muted mt-1">
                       → {ref.keyFinding}
                     </p>
                   </li>
@@ -154,7 +152,7 @@ export function DetailPanel({
               >
                 Kumousehto
               </h3>
-              <p className="text-sm text-[#CBD5E1] leading-relaxed">
+              <p className="text-sm text-foreground-muted leading-relaxed">
                 {node.falsificationCondition}
               </p>
             </section>
@@ -163,10 +161,10 @@ export function DetailPanel({
           {/* BERM component */}
           {node.bermComponent && (
             <section>
-              <h3 className="text-xs uppercase tracking-wider text-[#64748B] mb-2">
+              <h3 className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
                 Mallikomponentti
               </h3>
-              <code className="text-xs font-mono text-[#94A3B8] bg-[#0F172A] rounded px-2 py-1">
+              <code className="text-xs font-mono text-foreground-muted bg-background-secondary rounded px-2 py-1">
                 {node.bermComponent}
               </code>
             </section>

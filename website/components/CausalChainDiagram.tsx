@@ -171,7 +171,7 @@ export default function CausalChainDiagram() {
               markerHeight="5"
               orient="auto-start-reverse"
             >
-              <path d="M 0 0 L 10 3.5 L 0 7 z" fill="#64748B" />
+              <path d="M 0 0 L 10 3.5 L 0 7 z" fill="var(--foreground-muted)" />
             </marker>
             {Object.entries(EPISTEMIC_COLORS).map(([key, color]) => (
               <marker
@@ -190,7 +190,7 @@ export default function CausalChainDiagram() {
           </defs>
 
           {/* Background */}
-          <rect x="0" y="0" width={canvasW} height={canvasH} fill="#0F172A" rx="8" />
+          <rect x="0" y="0" width={canvasW} height={canvasH} fill="var(--card-bg)" rx="8" />
 
           {/* Level dividers & labels */}
           {sortedLevels.map((lvl) => {
@@ -210,7 +210,7 @@ export default function CausalChainDiagram() {
                     y1={y}
                     x2={canvasW - 10}
                     y2={y}
-                    stroke="#1E293B"
+                    stroke="var(--card-border)"
                     strokeWidth={1}
                   />
                 )}
@@ -225,7 +225,7 @@ export default function CausalChainDiagram() {
                 <text
                   x={FEEDBACK_MARGIN + 4}
                   y={range.top + firstNodeH / 2 + 1}
-                  fill={isThisExpanded ? "#94A3B8" : "#475569"}
+                  fill={isThisExpanded ? "var(--foreground-muted)" : "var(--border)"}
                   fontSize={11}
                   fontWeight="700"
                   dominantBaseline="middle"
@@ -237,7 +237,7 @@ export default function CausalChainDiagram() {
                   <text
                     x={LEVEL_LABEL_W + FEEDBACK_MARGIN}
                     y={range.top - 6}
-                    fill="#94A3B8"
+                    fill="var(--foreground-muted)"
                     fontSize={10}
                     fontWeight="600"
                     dominantBaseline="auto"
@@ -291,7 +291,7 @@ export default function CausalChainDiagram() {
                   <path
                     d={edgePath(from, to, wrapLeft)}
                     fill="none"
-                    stroke={isHovered ? color : "#475569"}
+                    stroke={isHovered ? color : "var(--foreground-muted)"}
                     strokeWidth={isHovered ? 2 : 1.5}
                     strokeDasharray={wrapLeft ? "6 4" : undefined}
                     markerEnd={
@@ -304,7 +304,7 @@ export default function CausalChainDiagram() {
                     <text
                       x={labelX}
                       y={labelY}
-                      fill={isHovered ? color : "#64748B"}
+                      fill={isHovered ? color : "var(--foreground-muted)"}
                       fontSize={8}
                       textAnchor="middle"
                       dominantBaseline="middle"
@@ -339,7 +339,7 @@ export default function CausalChainDiagram() {
                   height={n.h}
                   rx={NODE_RX}
                   ry={NODE_RX}
-                  fill={isHovered ? "#253349" : "#1E293B"}
+                  fill={isHovered ? "var(--background-secondary)" : "var(--card-bg)"}
                   stroke={color}
                   strokeWidth={isSelected ? 2.5 : isHovered ? 2 : 1.5}
                 />
@@ -354,7 +354,7 @@ export default function CausalChainDiagram() {
                 <text
                   x={n.x + 10}
                   y={n.y + (showSublabel ? 18 : n.h / 2 + 1)}
-                  fill="#F1F5F9"
+                  fill="var(--foreground)"
                   fontSize={n.isCollapsed ? 9 : 11}
                   fontWeight="600"
                   dominantBaseline="middle"
@@ -367,7 +367,7 @@ export default function CausalChainDiagram() {
                   <text
                     x={n.x + 10}
                     y={n.y + 36}
-                    fill="#94A3B8"
+                    fill="var(--foreground-muted)"
                     fontSize={9}
                     dominantBaseline="middle"
                     fontFamily="ui-monospace, SFMono-Regular, monospace"
@@ -387,7 +387,7 @@ export default function CausalChainDiagram() {
                       style={{
                         fontSize: 8,
                         lineHeight: "1.3",
-                        color: "#94A3B8",
+                        color: "var(--foreground-muted)",
                         margin: 0,
                         padding: "0 6px",
                         overflow: "hidden",
@@ -423,7 +423,7 @@ export default function CausalChainDiagram() {
               <text
                 x={10}
                 y={1}
-                fill="#94A3B8"
+                fill="var(--foreground-muted)"
                 fontSize={9}
                 fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                 dominantBaseline="middle"
