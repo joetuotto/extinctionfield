@@ -133,16 +133,18 @@ function CIBar({
   const centerPct = ((central - min) / range) * 100;
 
   return (
-    <div className="relative w-full h-3 bg-ci-bar-bg rounded-full mt-3">
-      <div
-        className="absolute top-0 h-full bg-ci-bar-fill/40 rounded-full"
-        style={{ left: `${leftPct}%`, width: `${widthPct}%` }}
-      />
-      <div
-        className="absolute top-0 h-full w-0.5 bg-ci-bar-center rounded-full"
-        style={{ left: `${centerPct}%` }}
-      />
-      <div className="flex justify-between mt-1.5 text-[10px] text-foreground-muted font-mono-num">
+    <div className="mt-3 mb-1">
+      <div className="relative w-full h-3 bg-ci-bar-bg rounded-full">
+        <div
+          className="absolute top-0 h-full bg-ci-bar-fill/40 rounded-full"
+          style={{ left: `${leftPct}%`, width: `${widthPct}%` }}
+        />
+        <div
+          className="absolute top-0 h-full w-0.5 bg-ci-bar-center rounded-full"
+          style={{ left: `${centerPct}%` }}
+        />
+      </div>
+      <div className="flex justify-between mt-1 text-[10px] text-foreground-muted font-mono-num">
         <span>{min.toFixed(min < 10 ? 2 : 0)}</span>
         <span>{max.toFixed(max < 10 ? 2 : 0)}</span>
       </div>
@@ -163,29 +165,29 @@ function PredictionCard({
   const barMax = prediction.ciHigh + range * 0.5;
 
   return (
-    <div className="border border-card-border bg-card-bg rounded-lg p-6 flex flex-col">
-      <div className="flex items-start justify-between mb-4">
+    <div className="border border-card-border bg-card-bg rounded-lg p-4 flex flex-col">
+      <div className="flex items-start justify-between mb-3">
         <div>
-          <h3 className="text-base font-semibold">
+          <h3 className="text-base font-semibold leading-tight">
             {prediction.countryLabel}
           </h3>
-          <p className="text-sm text-foreground-muted">
+          <p className="text-xs text-foreground-muted mt-0.5">
             {prediction.metricLabel}
           </p>
         </div>
         <StatusBadge status={prediction.status} locale={locale} />
       </div>
 
-      <div className="mb-2">
-        <span className="text-3xl font-bold font-mono-num">
+      <div className="mb-1">
+        <span className="text-2xl font-bold font-mono-num">
           {prediction.central.toFixed(2)}
         </span>
-        <span className="text-sm text-foreground-muted ml-2">
+        <span className="text-xs text-foreground-muted ml-1.5">
           {prediction.unit}
         </span>
       </div>
 
-      <p className="text-sm text-foreground-muted font-mono-num">
+      <p className="text-xs text-foreground-muted font-mono-num">
         95% CI [{prediction.ciLow.toFixed(2)}, {prediction.ciHigh.toFixed(2)}]
       </p>
 
@@ -197,7 +199,7 @@ function PredictionCard({
         max={barMax}
       />
 
-      <div className="mt-auto pt-4 border-t border-border text-xs text-foreground-muted space-y-1">
+      <div className="mt-auto pt-3 border-t border-border text-[11px] text-foreground-muted space-y-0.5">
         <div className="flex justify-between">
           <span>{d.targetYear}</span>
           <span className="font-mono-num">{prediction.year}</span>
@@ -221,10 +223,10 @@ function PredictionCard({
       {/* Version history — always shown */}
       {prediction.history && prediction.history.length > 0 && (
         <div className="mt-3 pt-3 border-t border-border">
-          <p className="text-xs font-semibold text-foreground-muted mb-2">
+          <p className="text-[11px] font-semibold text-foreground-muted mb-2">
             {d.versionHistory}
           </p>
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             {prediction.history.map((v: PredictionVersion, idx: number) => {
               const isInitial = idx === 0;
               const isCurrent = idx === prediction.history!.length - 1;
@@ -235,48 +237,44 @@ function PredictionCard({
               return (
                 <div
                   key={v.version}
-                  className={`text-xs rounded-md p-2 ${
+                  className={`text-[11px] rounded p-1.5 ${
                     isCurrent
                       ? "bg-background border border-card-border"
-                      : "bg-transparent"
+                      : ""
                   }`}
                 >
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="font-mono-num font-semibold">
-                      {v.version}
-                    </span>
-                    <span className="font-mono-num text-foreground-muted">
+                  <div className="flex items-baseline justify-between">
+                    <span className="font-mono-num font-semibold">{v.version}</span>
+                    <span className="font-mono-num text-[10px] text-foreground-muted/60">
                       {v.date}
+                      {v.gitSha && <> &middot; {v.gitSha}</>}
                     </span>
-                    {v.gitSha && (
-                      <span className="font-mono-num text-foreground-muted/60 text-[10px]">
-                        {v.gitSha}
-                      </span>
-                    )}
+                  </div>
+                  <div className="font-mono-num text-foreground-muted mt-0.5">
+                    {v.central.toFixed(2)}
+                    <span className="text-foreground-muted/60 ml-1">
+                      [{v.ci[0].toFixed(2)}, {v.ci[1].toFixed(2)}]
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1 mt-0.5">
                     {isInitial && (
-                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-status-confirmed/15 text-status-confirmed font-medium">
+                      <span className="text-[9px] px-1 py-px rounded bg-status-confirmed/15 text-status-confirmed font-medium">
                         {d.ciLocked}
                       </span>
                     )}
-                  </div>
-                  <div className="font-mono-num text-foreground-muted">
-                    <span>{v.central.toFixed(2)}</span>
-                    <span className="ml-1.5 text-foreground-muted/60">
-                      [{v.ci[0].toFixed(2)}, {v.ci[1].toFixed(2)}]
-                    </span>
                     {centralChanged && (
-                      <span className="ml-1.5 text-status-partial text-[10px]">
+                      <span className="text-[9px] px-1 py-px rounded bg-status-partial/15 text-status-partial font-medium">
                         {d.centralUpdated}
                       </span>
                     )}
                     {ciChanged && (
-                      <span className="ml-1.5 text-status-refuted text-[10px] font-semibold">
+                      <span className="text-[9px] px-1 py-px rounded bg-status-refuted/15 text-status-refuted font-semibold">
                         CI CHANGED
                       </span>
                     )}
                   </div>
                   {v.changeReason !== "initial lock" && (
-                    <p className="mt-1 text-[10px] text-foreground-muted/70 leading-tight italic">
+                    <p className="mt-1 text-[10px] text-foreground-muted/60 leading-snug">
                       {v.changeReason}
                     </p>
                   )}
@@ -292,7 +290,7 @@ function PredictionCard({
         </div>
       )}
 
-      <p className="mt-3 text-[10px] text-foreground-muted italic">
+      <p className="mt-2 text-[10px] text-foreground-muted/60 italic leading-snug">
         {d.immutability}
       </p>
     </div>
