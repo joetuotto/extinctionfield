@@ -2,6 +2,179 @@ import type { Metadata } from "next";
 import { EPISTEMIC_LEVELS, PATHWAYS, EVIDENCE } from "@/lib/evidence";
 import type { EpistemicLevel } from "@/lib/types";
 
+interface NaturalExperimentCard {
+  id: string;
+  location: string;
+  period: string;
+  intervention: string;
+  observed: string;
+  bermPrediction: string;
+  verdict: "consistent" | "inconsistent" | "inconclusive";
+  epistemicLevel: EpistemicLevel;
+  reference: string;
+}
+
+const NATURAL_EXPERIMENTS: { en: NaturalExperimentCard[]; fi: NaturalExperimentCard[] } = {
+  en: [
+    {
+      id: "cuba",
+      location: "Cuba",
+      period: "2018 - present",
+      intervention: "Mobile data opened to citizens (ETECSA 3G, December 2018) after decades of near-zero personal wireless use.",
+      observed: "TFR was stable at ~1.65 for 17 years (2000-2017), then began declining to 1.45 within 4 years of mobile data access.",
+      bermPrediction: "Onset of personal EMF exposure should trigger TFR decline with ~2-year lag. Stable-then-decline pattern is the predicted signature.",
+      verdict: "consistent",
+      epistemicLevel: "C",
+      reference: "ETECSA coverage data; UN WPP 2024 TFR estimates",
+    },
+    {
+      id: "bhutan",
+      location: "Bhutan",
+      period: "2003 - present",
+      intervention: "First cellular service (B-Mobile) introduced in 2003. TV introduced in 1999. Simultaneous development transition.",
+      observed: "TFR declined from 6.0 to 1.8, but proportional decline rate slowed after mobile introduction (4.9%/yr pre vs 2.2%/yr post).",
+      bermPrediction: "Mobile introduction should accelerate TFR decline. Proportional decline should increase post-adoption.",
+      verdict: "inconclusive",
+      epistemicLevel: "C",
+      reference: "World Bank mobile subscriptions; UN WPP 2024",
+    },
+    {
+      id: "myanmar",
+      location: "Myanmar",
+      period: "2014 - present",
+      intervention: "SIM card price collapsed from $250 to $1.50 with Ooredoo/Telenor entry. Mobile penetration jumped 7% to 80% in 3 years.",
+      observed: "TFR decline rate actually decelerated (0.045/yr pre-event to 0.015/yr post-event). Military coup 2021 adds further confounding.",
+      bermPrediction: "Massive jump in personal exposure should accelerate TFR decline.",
+      verdict: "inconsistent",
+      epistemicLevel: "C",
+      reference: "ITU mobile data; Myanmar Census 2014; UN WPP 2024",
+    },
+    {
+      id: "naval",
+      location: "Norway (naval cohort)",
+      period: "1950 - 2004",
+      intervention: "Naval personnel received occupational high-frequency RF exposure at levels far above civilian ambient, with dose-response assessment.",
+      observed: "OR 1.86 for infertility with dose-response gradient. Sex ratio shift toward female offspring in exposed group.",
+      bermPrediction: "High RF exposure should increase infertility with dose-response. X>Y sperm sensitivity predicts sex ratio shift.",
+      verdict: "consistent",
+      epistemicLevel: "M|C",
+      reference: "Mollerlikken & Moen 2008, n=10,497",
+    },
+    {
+      id: "covid",
+      location: "Global (COVID-19 lockdowns)",
+      period: "March 2020 - June 2020",
+      intervention: "Lockdowns reduced commuting and infrastructure use, altering ambient EMF patterns. Personal device use increased but ambient exposure shifted.",
+      observed: "Multiple studies report improved semen parameters 3 months after lockdowns, with ~90 day lag consistent with spermatogenesis cycle.",
+      bermPrediction: "Reduced ambient exposure should improve sperm quality with spermatogenesis-cycle lag. Stress confound (lockdown was stressful) would predict opposite effect.",
+      verdict: "consistent",
+      epistemicLevel: "L*",
+      reference: "Multiple post-lockdown semen studies (2021-2025)",
+    },
+    {
+      id: "south-korea",
+      location: "South Korea",
+      period: "2012 - present",
+      intervention: "World-leading smartphone penetration (>97%), densest 5G network globally, highest per-capita screen time.",
+      observed: "TFR collapsed to 0.72 (2023), the lowest ever recorded for any country. Decline accelerated sharply in the smartphone era.",
+      bermPrediction: "Maximum chi(A)-bar scenario: highest ambient + highest personal exposure should produce deepest TFR suppression globally.",
+      verdict: "consistent",
+      epistemicLevel: "C",
+      reference: "Statistics Korea; ITU smartphone penetration data",
+    },
+    {
+      id: "east-germany",
+      location: "East Germany",
+      period: "1990 - 1994",
+      intervention: "Reunification brought sudden introduction of Western telecom infrastructure, consumer electronics, and broadcasting density alongside economic transformation.",
+      observed: "TFR crashed from 1.52 to 0.77 in 4 years, the lowest ever recorded for any country at that time. Recovery began only in late 1990s.",
+      bermPrediction: "Sudden EMF infrastructure jump should produce rapid TFR decline. Confounded by economic shock, but the magnitude (50% drop) exceeds what economic models predict.",
+      verdict: "inconclusive",
+      epistemicLevel: "C",
+      reference: "Statistisches Bundesamt; Goldstein & Kreyenfeld 2011",
+    },
+  ],
+  fi: [
+    {
+      id: "cuba",
+      location: "Kuuba",
+      period: "2018 - nykyhetki",
+      intervention: "Mobiilidata avattiin kansalaisille (ETECSA 3G, joulukuu 2018) vuosikymmenten lahes nollatason henkilokohtaisen langattoman kayton jalkeen.",
+      observed: "TFR oli vakaa ~1,65 tasolla 17 vuotta (2000-2017), sitten alkoi laskea 1,45:een 4 vuodessa mobiilidatan kayttoonoton jalkeen.",
+      bermPrediction: "Henkilokohtaisen EMF-altistuksen alkamisen pitaisi laukaista TFR-lasku ~2 vuoden viiveella. Vakaa-sitten-lasku on ennustettu signaali.",
+      verdict: "consistent",
+      epistemicLevel: "C",
+      reference: "ETECSA kattavuusdata; YK WPP 2024 TFR-arviot",
+    },
+    {
+      id: "bhutan",
+      location: "Bhutan",
+      period: "2003 - nykyhetki",
+      intervention: "Ensimmainen matkapuhelinpalvelu (B-Mobile) otettiin kayttoon 2003. TV esiteltiin 1999. Samanaikainen kehityssiirtyma.",
+      observed: "TFR laski 6,0:sta 1,8:aan, mutta suhteellinen laskuvauhti hidastui matkapuhelimen kayttoonoton jalkeen (4,9 %/v ennen vs. 2,2 %/v jalkeen).",
+      bermPrediction: "Mobiilikayttoonoton pitaisi kiihdyttaa TFR-laskua. Suhteellisen laskun pitaisi kasvaa adoption jalkeen.",
+      verdict: "inconclusive",
+      epistemicLevel: "C",
+      reference: "Maailmanpankki matkapuhelintilaukset; YK WPP 2024",
+    },
+    {
+      id: "myanmar",
+      location: "Myanmar",
+      period: "2014 - nykyhetki",
+      intervention: "SIM-kortin hinta romahti 250 $:sta 1,50 $:iin Ooredoo/Telenor-tulon myota. Mobiilipenetraatio hyppasi 7 %:sta 80 %:iin 3 vuodessa.",
+      observed: "TFR-laskuvauhti itse asiassa hidastui (0,045/v ennen vs. 0,015/v jalkeen). Sotilasvallankaappaus 2021 lisaa sekoittumista.",
+      bermPrediction: "Massiivisen henkilokohtaisen altistuksen hypyn pitaisi kiihdyttaa TFR-laskua.",
+      verdict: "inconsistent",
+      epistemicLevel: "C",
+      reference: "ITU mobiilidata; Myanmarin vaestonlaskenta 2014; YK WPP 2024",
+    },
+    {
+      id: "naval",
+      location: "Norja (laivastokokortti)",
+      period: "1950 - 2004",
+      intervention: "Laivaston henkilosto altistui tyossaan korkeataajuiselle RF-sateilylle siviilitasoja huomattavasti korkeammilla tasoilla, annos-vastearvioinnilla.",
+      observed: "OR 1,86 hedelmattomyydelle annos-vastegradientilla. Sukupuolijakauman siirtyma naisjalkelaisten suuntaan altistuneessa ryhmassa.",
+      bermPrediction: "Korkean RF-altistuksen pitaisi lisata hedelmattomyytta annos-vasteella. X>Y-siittioiden herkkyys ennustaa sukupuolisuhteen muutoksen.",
+      verdict: "consistent",
+      epistemicLevel: "M|C",
+      reference: "Mollerlikken & Moen 2008, n=10 497",
+    },
+    {
+      id: "covid",
+      location: "Maailmanlaajuinen (COVID-19-sulut)",
+      period: "maaliskuu 2020 - kesakuu 2020",
+      intervention: "Sulkutoimet vahensivat tyomatkustamista ja infrastruktuurin kayttoa, muuttaen ympariston EMF-kuvioita. Henkilokohtaisten laitteiden kaytto lisaantyi, mutta ymparistoaltistus muuttui.",
+      observed: "Useat tutkimukset raportoivat parantuneet siemennestearvot 3 kuukautta sulkujen jalkeen, ~90 paivan viiveella joka vastaa spermatogeneesin syklia.",
+      bermPrediction: "Vahentyneen ymparistoaltistuksen pitaisi parantaa siittioiden laatua spermatogeneesisyklin viiveella. Stressisekoittaja (sulku oli stressaavaa) ennustaisi pastavaikutuksen.",
+      verdict: "consistent",
+      epistemicLevel: "L*",
+      reference: "Useita sulun jalkeisia siemennestetutkimuksia (2021-2025)",
+    },
+    {
+      id: "south-korea",
+      location: "Etela-Korea",
+      period: "2012 - nykyhetki",
+      intervention: "Maailman johtava alypuhelinpenetraatio (>97 %), tiheein 5G-verkko maailmanlaajuisesti, korkein nayttoaika per capita.",
+      observed: "TFR romahti 0,72:een (2023), alhaisin koskaan millekaan maalle kirjattu. Lasku kiihtyi jyrkasti alypuhelinaikakaudella.",
+      bermPrediction: "Maksimaalinen chi(A)-skenaario: korkein ymparisto- + korkein henkilokohtainen altistus pitaisi tuottaa syvin TFR-suppressio maailmanlaajuisesti.",
+      verdict: "consistent",
+      epistemicLevel: "C",
+      reference: "Statistics Korea; ITU alypuhelinpenetraatiodata",
+    },
+    {
+      id: "east-germany",
+      location: "Ita-Saksa",
+      period: "1990 - 1994",
+      intervention: "Yhdistyminen toi lansimaisen televiestintainfrastruktuurin, kulutuselektroniikan ja lahetystiheyden akillisenä muutoksena talousmuutoksen rinnalla.",
+      observed: "TFR romahti 1,52:sta 0,77:aan 4 vuodessa, alhaisin koskaan millekaan maalle siihen asti kirjattu. Elpyminen alkoi vasta 1990-luvun lopussa.",
+      bermPrediction: "Akillisen EMF-infrastruktuurin hypyn pitaisi tuottaa nopea TFR-lasku. Sekoittuu talouskriisin kanssa, mutta suuruusluokka (50 % pudotus) ylittaa talousmallien ennusteen.",
+      verdict: "inconclusive",
+      epistemicLevel: "C",
+      reference: "Statistisches Bundesamt; Goldstein & Kreyenfeld 2011",
+    },
+  ],
+};
+
 const t = {
   en: {
     title: "Evidence Compilation",
@@ -16,6 +189,17 @@ const t = {
     level: "Level",
     footNote:
       "This compilation is maintained as part of the BERM model documentation. Inclusion does not imply endorsement; studies are listed to show what each pathway rests on and where the gaps are. If you know of a study that should be added or believe a rating is incorrect, contributions are welcome via the project repository.",
+    neTitle: "Natural Experiments",
+    neSubtitle: "Real-world situations where EMF exposure changed abruptly, providing quasi-experimental tests of the BERM model. Results are reported transparently, including cases that contradict the model.",
+    neIntervention: "What changed",
+    neObserved: "What was observed",
+    nePrediction: "BERM prediction",
+    neVerdict: "Verdict",
+    verdictConsistent: "BERM-consistent",
+    verdictInconsistent: "BERM-inconsistent",
+    verdictInconclusive: "Inconclusive",
+    neNote: "Epistemic note: 4 of 7 cases are consistent with BERM predictions, 1 is inconsistent, and 2 are inconclusive due to confounding. This is not strong evidence — natural experiments in fertility are inherently confounded by development, culture, and economics. They are reported here for completeness, not as proof.",
+
     attrBiasTitle: "Attribution Bias in Decline Research",
     attrBiasDesc:
       "EMF is structurally invisible in most ecological and reproductive research — not because it was tested and rejected, but because it was never considered. This section documents how conventional attributions (climate change, chemicals, habitat loss) become the default explanation for declines that may have an electromagnetic component.",
@@ -45,7 +229,18 @@ const t = {
     level: "Taso",
     footNote:
       "Tämä kokoelma ylläpidetään osana BERM-mallin dokumentaatiota. Sisällyttäminen ei tarkoita hyväksyntää; tutkimukset on listattu osoittamaan, mihin kukin reitti nojaa ja missä aukot ovat. Jos tiedät tutkimuksen, joka tulisi lisätä, tai uskot arvion olevan virheellinen, osallistuminen on tervetullutta projektin repositoryn kautta.",
-    attrBiasTitle: "Attribuutiovinouma vähenemätutkimuksessa",
+    neTitle: "Luonnolliset kokeet",
+    neSubtitle: "Todellisia tilanteita, joissa EMF-altistus muuttui akillisesti, tarjoten kvasikokeellisia testeja BERM-mallille. Tulokset raportoidaan lapinakyvasti, mukaan lukien tapaukset jotka ovat ristiriidassa mallin kanssa.",
+    neIntervention: "Mika muuttui",
+    neObserved: "Mita havaittiin",
+    nePrediction: "BERM-ennuste",
+    neVerdict: "Tuomio",
+    verdictConsistent: "BERM-yhdenmukainen",
+    verdictInconsistent: "BERM-vastainen",
+    verdictInconclusive: "Ratkaisematon",
+    neNote: "Episteeminen huomautus: 4/7 tapauksesta on yhdenmukaisia BERM-ennusteiden kanssa, 1 on ristiriidassa ja 2 on ratkaisemattomia sekoittumisen vuoksi. Tama ei ole vahvaa nayttoa — hedelmallisyyden luonnolliset kokeet ovat vaistamatta sekoittuneita kehityksen, kulttuurin ja talouden kanssa. Ne raportoidaan taydellisyyden vuoksi, ei todisteena.",
+
+    attrBiasTitle: "Attribuutiovinouma vahenemätutkimuksessa",
     attrBiasDesc:
       "EMF on rakenteellisesti näkymätön useimmissa ekologisissa ja lisääntymistutkimuksissa — ei siksi, että se testattiin ja hylättiin, vaan siksi, ettei sitä koskaan harkittu. Tämä osio dokumentoi, miten perinteiset attribuutiot (ilmastonmuutos, kemikaalit, elinympäristön menetys) muodostuvat oletusselityksiksi vähenemille, joilla voi olla sähkömagneettinen komponentti.",
     attrBiasP1Title: "Attribuutiovinouma",
@@ -381,6 +576,101 @@ export default async function EvidencePage({
           </section>
         );
       })}
+
+      <section id="natural-experiments" className="mb-14">
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-1">{d.neTitle}</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl">
+            {d.neSubtitle}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {(locale === "fi" ? NATURAL_EXPERIMENTS.fi : NATURAL_EXPERIMENTS.en).map((exp) => {
+            const verdictColor =
+              exp.verdict === "consistent"
+                ? "var(--status-confirmed)"
+                : exp.verdict === "inconsistent"
+                  ? "var(--status-refuted)"
+                  : "var(--status-partial)";
+            const verdictLabel =
+              exp.verdict === "consistent"
+                ? d.verdictConsistent
+                : exp.verdict === "inconsistent"
+                  ? d.verdictInconsistent
+                  : d.verdictInconclusive;
+            const levelInfo = EPISTEMIC_LEVELS[exp.epistemicLevel];
+            return (
+              <div
+                key={exp.id}
+                className="border border-card-border bg-card-bg rounded-lg p-5 flex flex-col"
+              >
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div>
+                    <h3 className="text-base font-semibold">{exp.location}</h3>
+                    <p className="text-xs text-foreground-muted font-mono-num">{exp.period}</p>
+                  </div>
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <span
+                      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap"
+                      style={{
+                        backgroundColor: `${levelInfo.color}18`,
+                        color: levelInfo.color,
+                      }}
+                    >
+                      <span
+                        className="w-2 h-2 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: levelInfo.color }}
+                      />
+                      {exp.epistemicLevel}
+                    </span>
+                    <span
+                      className="px-2 py-0.5 rounded text-xs font-semibold"
+                      style={{
+                        backgroundColor: `${verdictColor}18`,
+                        color: verdictColor,
+                      }}
+                    >
+                      {verdictLabel}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="space-y-2.5 text-sm flex-1">
+                  <div>
+                    <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wide mb-0.5">
+                      {d.neIntervention}
+                    </p>
+                    <p className="text-foreground-muted leading-relaxed">{exp.intervention}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wide mb-0.5">
+                      {d.neObserved}
+                    </p>
+                    <p className="text-foreground-muted leading-relaxed">{exp.observed}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wide mb-0.5">
+                      {d.nePrediction}
+                    </p>
+                    <p className="text-foreground-muted leading-relaxed">{exp.bermPrediction}</p>
+                  </div>
+                </div>
+
+                <p className="text-xs text-foreground-muted mt-3 pt-3 border-t border-card-border">
+                  {exp.reference}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-4 p-4 rounded-lg bg-background border border-border max-w-3xl">
+          <p className="text-xs text-foreground-muted leading-relaxed">
+            {d.neNote}
+          </p>
+        </div>
+      </section>
 
       <section id="attribution-bias" className="mb-14">
         <div className="mb-6">

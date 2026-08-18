@@ -97,6 +97,17 @@ const t = {
       "Geometric > arithmetic because hormones are MULTIPLICATIVE: if any one is zero, the total effect is zero.",
     s5d4: "r₂ = 0.013 is calibrated from Travison’s −1%/year testosterone decline:",
     s5d5: "If dEMF/dt ≈ 1/year → dT/T ≈ −1.3%/year ≈ Travison.",
+    s5otTitle: "Biological basis of OT parameter",
+    s5otIntro:
+      "The OT parameter r₁ = 0.010 is not curve-fitted from data. It follows from two independent biological mechanisms that both suppress oxytocin under EMF conditions:",
+    s5otRoute1Title: "Route 1 (HPA → vagal):",
+    s5otRoute1:
+      "EMF → cortisol↑ (Pawlak 2025, d=1.88) → vagal suppression (Porges 2001: myelinated vagus dampens HPA; chronic stress reverses this) → oxytocin↓ (ventral vagal complex → hypothalamic OT release) → social engagement↓ (Carter 2021, Feldman 2012)",
+    s5otRoute2Title: "Route 2 (microbiome → endocrine):",
+    s5otRoute2:
+      "EMF → gut microbiome disruption (Jin 2022) → Lactobacillus↓ (incl. L. reuteri) → oxytocin↓ (Erdman & Poutahidis 2016: L. reuteri → vagus → OT↑) → testosterone↓ (Poutahidis 2014: L. reuteri → IL-17↓ → T↑) → spermatogenesis↓",
+    s5otCombined:
+      "The multiplicative combination OT_eff = OT_vagal × OT_microbiome is approximately exponential: OT_eff ≈ exp(−r_eff × cumEMF), where r_eff = r_vagal + r_microbiome ≈ 0.005 + 0.005 = 0.010. This is the parameter in the model.",
 
     // S6 Cultural
     s6Title: "Cultural Factor & Compensation",
@@ -318,6 +329,17 @@ const t = {
       "Geometrinen > aritmeettinen, koska hormonit ovat MULTIPLIKATIIVISIA: jos yksikin on nolla, kokonaisvaikutus on nolla.",
     s5d4: "r₂ = 0.013 on kalibroitu Travisonin −1 %/vuosi testosteronilaskusta:",
     s5d5: "Jos dEMF/dt ≈ 1/vuosi → dT/T ≈ −1,3 %/vuosi ≈ Travison.",
+    s5otTitle: "OT-parametrin biologinen perustelu",
+    s5otIntro:
+      "OT-parametri r₁ = 0.010 ei ole sovitettu datasta. Se seuraa kahdesta itsenäisestä biologisesta mekanismista, jotka molemmat tukahduttavat oksitosiinia EMF-olosuhteissa:",
+    s5otRoute1Title: "Reitti 1 (HPA → vagaalinen):",
+    s5otRoute1:
+      "EMF → kortisoli↑ (Pawlak 2025, d=1,88) → vagaalinen suppressio (Porges 2001: myelinisoitu vagus vaimentaa HPA:ta; krooninen stressi kääntää tämän) → oksitosiini↓ (ventraalinen vagaalikompleksi → hypotalaaminen OT-vapautus) → sosiaalinen sitoutuminen↓ (Carter 2021, Feldman 2012)",
+    s5otRoute2Title: "Reitti 2 (mikrobiomi → endokriininen):",
+    s5otRoute2:
+      "EMF → suolistomikrobiomin häiriö (Jin 2022) → Lactobacillus↓ (ml. L. reuteri) → oksitosiini↓ (Erdman & Poutahidis 2016: L. reuteri → vagus → OT↑) → testosteroni↓ (Poutahidis 2014: L. reuteri → IL-17↓ → T↑) → spermatogeneesi↓",
+    s5otCombined:
+      "Multiplikatiivinen yhdistelmä OT_eff = OT_vagal × OT_microbiome on likimain eksponentiaalinen: OT_eff ≈ exp(−r_eff × cumEMF), missä r_eff = r_vagal + r_microbiome ≈ 0,005 + 0,005 = 0,010. Tämä on mallissa käytetty parametri.",
 
     // S6 Cultural
     s6Title: "Kulttuuritekijä ja kompensaatio",

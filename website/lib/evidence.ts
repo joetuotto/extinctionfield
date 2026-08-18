@@ -108,6 +108,11 @@ export const PATHWAYS: Record<
     description:
       "Rising ambient EMF in laboratories contaminates control groups, compressing observed effect sizes toward null. If χ(Ā) governs biological sensitivity and lab EMF has risen from ~0.1 V/m (1950s) to ~15 V/m (2020s), controls are already at χ ≈ 1.0 — making EMF-sensitive effects nearly undetectable. This predicts the biological replication crisis as a structural consequence of BERM.",
   },
+  OT: {
+    label: "Dual oxytocin pathway",
+    description:
+      "Two independent biological pathways converge on oxytocin suppression under chronic EMF exposure. First, EMF activates the HPA axis (Pawlak 2025: d=1.88), elevating cortisol, which suppresses vagal tone (Porges 2001/2025). Reduced vagal tone diminishes the social engagement system and hypothalamic oxytocin release (Carter 2021). Second, EMF alters gut microbiome composition (Jin 2022), reducing Lactobacillus populations including L. reuteri. Since L. reuteri upregulates oxytocin via the vagus nerve (Erdman & Poutahidis 2016, MIT), its decline directly reduces systemic oxytocin. Both pathways are independently documented in peer-reviewed literature. Their convergence on oxytocin provides a mechanistic explanation for why pronatalist economic policies consistently fail: they target conscious decision-making, but the decline in reproductive motivation is biological.",
+  },
 };
 
 // Evidence items organized by pathway
@@ -262,6 +267,42 @@ export const EVIDENCE: EvidenceItem[] = [
       "Seminal microbiome composition correlates with sperm concentration and motility; dysbiosis linked to subfertility",
     level: "L*",
     n: 73,
+  },
+  {
+    pathway: "E",
+    study:
+      "Poutahidis T et al. Probiotic microbes sustain youthful serum testosterone levels and testicular size in aging mice",
+    year: 2014,
+    finding:
+      "L. reuteri ATCC 6475 increased serum testosterone, testicular weight, seminiferous tubule area, spermatogenesis and Leydig cell numbers in aging mice. Mechanism: IL-17 suppression. Provides direct link between gut microbiome composition and male reproductive capacity.",
+    level: "M",
+  },
+  {
+    pathway: "E",
+    study:
+      "Erdman SE & Poutahidis T. Microbes and Oxytocin: Benefits for Host Physiology and Behavior",
+    year: 2016,
+    finding:
+      "L. reuteri upregulates oxytocin via vagus nerve, achieving health benefits across wound healing, mental health, metabolism, and reproductive fitness. Demonstrates immune-endocrine-brain signaling network: gut microbiome → vagus → hypothalamic OT release → systemic effects.",
+    level: "M|C",
+  },
+  {
+    pathway: "E",
+    study:
+      "Poutahidis T et al. Microbial Symbionts Accelerate Wound Healing via the Neuropeptide Hormone Oxytocin",
+    year: 2013,
+    finding:
+      "L. reuteri accelerates wound healing through oxytocin upregulation. Confirms that gut microbiome modulates systemic OT levels with measurable physiological outcomes, establishing microbiome as an endocrine modulator.",
+    level: "M",
+  },
+  {
+    pathway: "E",
+    study:
+      "Systematic review: gut microbiome composition and testosterone in men",
+    year: 2025,
+    finding:
+      "Significant positive correlation between gut microbiome composition and testosterone levels, mediated by HPG axis, androgen metabolism, and intestinal homeostasis. Confirms Poutahidis animal findings translate to human correlational evidence.",
+    level: "C",
   },
 
   // ── Pathway A: Becker historical ──
@@ -699,6 +740,32 @@ export const EVIDENCE: EvidenceItem[] = [
     level: "M",
     n: 40,
   },
+  {
+    pathway: "D",
+    study:
+      "Porges SW. Polyvagal Theory: Current Status, Clinical Applications, and Future Directions",
+    year: 2025,
+    finding:
+      "Myelinated vagus actively inhibits sympathetic influences and dampens HPA axis (cortisol). Chronic HPA activation suppresses vagal tone, deteriorating the social engagement system and diminishing oxytocin signaling. Provides mechanistic link between chronic stress and reproductive motivation decline.",
+    level: "M|C",
+  },
+  {
+    pathway: "D",
+    study:
+      "Carter CS. Oxytocin and vasopressin in the evolution of sociality",
+    year: 2021,
+    finding:
+      "Oxytocin and vasopressin are fundamental neuropeptides enabling mammalian sociality, pair bonding, and parental behavior. Their suppression reduces reproductive motivation independently of conscious decision-making.",
+    level: "M",
+  },
+  {
+    pathway: "D",
+    study: "Feldman R. Oxytocin and social affiliation in humans",
+    year: 2012,
+    finding:
+      "Oxytocin functions as biobehavioral synchronizer in parent-infant bonding and pair formation. Lower OT levels predict reduced affiliative behavior and delayed family formation.",
+    level: "M|C",
+  },
 
   // ── New additions: Pharmacological validation ──
   {
@@ -748,5 +815,43 @@ export const EVIDENCE: EvidenceItem[] = [
     finding:
       "Umbrella review of 39 systematic reviews covering thousands of individual studies. Majority of reviews report biological effects of non-ionizing EMF on reproductive parameters, oxidative stress, and DNA damage. Strongest evidence for ROS-mediated sperm damage (Pathway A) and HPA disruption (Pathway D).",
     level: "E",
+  },
+
+  // ── Dual oxytocin pathway (OT convergence) ──
+  {
+    pathway: "OT",
+    study:
+      "Porges SW. Polyvagal Theory: vagal regulation of the social engagement system",
+    year: 2001,
+    finding:
+      "Myelinated vagus actively dampens HPA axis and enables social engagement. Chronic stress suppresses vagal tone → oxytocin signaling diminishes → pair bonding and parental motivation decline. Foundation for understanding biological basis of reproductive motivation.",
+    level: "M|C",
+  },
+  {
+    pathway: "OT",
+    study:
+      "Erdman SE & Poutahidis T. L. reuteri upregulates oxytocin via vagus nerve (MIT)",
+    year: 2016,
+    finding:
+      "L. reuteri → vagus nerve → hypothalamic oxytocin release. Establishes a second, independent pathway from gut microbiome to oxytocin. Combined with Pathway D (HPA → vagal suppression → OT↓), two convergent routes suppress the same neuropeptide under EMF conditions.",
+    level: "M|C",
+  },
+  {
+    pathway: "OT",
+    study:
+      "Poutahidis T et al. L. reuteri sustains testosterone and spermatogenesis in aging mice (MIT)",
+    year: 2014,
+    finding:
+      "L. reuteri increases testosterone, testicular weight, and spermatogenesis via IL-17 suppression. When EMF reduces Lactobacillus (Jin 2022), this reproductive support pathway is lost. Links microbiome-mediated OT decline to measurable male reproductive impairment.",
+    level: "M",
+  },
+  {
+    pathway: "OT",
+    study:
+      "South Korea pronatalist policy failure: $200B spent, TFR fell from 1.13 to 0.72",
+    year: 2024,
+    finding:
+      "Korea has spent over $200B on pronatalist incentives since 2006. TFR fell from 1.13 to 0.72 during this period. Hungary, Singapore, Japan show similar patterns. If fertility decline were purely rational choice, sufficient economic incentives would reverse it. Systematic failure is consistent with biological OT suppression reducing reproductive motivation independently of economic conditions.",
+    level: "C",
   },
 ];
