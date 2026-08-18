@@ -216,6 +216,55 @@ const t = {
       },
     ] as HumanProxyRow[],
 
+    /* CSLI v2: dog sentinel + livestock control */
+    csliTitle: "CSLI v2: Dog Sentinel and Livestock Control",
+    csliIntro:
+      "The Cross-Species Lag Index (CSLI) v2 introduces orthogonal sentinel triangulation: comparing reproductive trends across species with systematically different EMF exposure levels. The domestic dog (Canis familiaris) serves as the primary indoor-environment mammalian sentinel because it shares the human home RF environment while being immune to all social confounders (education, contraception, economic pressure).",
+    csliDogTitle: "Dog: The Primary Indoor Sentinel",
+    csliDogP1:
+      "Lea et al. (2016, Scientific Reports) studied 1,925 ejaculates from stud dogs at the University of Nottingham over 26 years (1988–2014). Dogs in this population live in the same indoor environment as their owners — exposed to Wi-Fi routers, Bluetooth devices, smartphones, and IoT devices. They share the home RF field but not human social factors.",
+    csliDogP2:
+      "Key findings: progressive motility declined significantly over the study period. Normal morphology declined. Sperm concentration was variable (rose then plateaued) — importantly, the primary decline is in motility and morphology, not concentration. Environmental chemicals (DEHP, PCB153) were detected in dog testes and commercial dog food at concentrations that affected sperm function in vitro.",
+    csliDogNote:
+      "Lea 2016 reports motility and morphology decline, not concentration decline. This distinction is critical: BERM predicts that motility (which depends on flagellar Ca²⁺ dynamics via CatSper channels) and morphology (which depends on spermatogenesis fidelity via ROS/DNA pathway) are the primary EMF targets, while concentration reflects production volume and is modulated by different mechanisms.",
+    csliLivestockTitle: "Livestock: The Low-Exposure Negative Control",
+    csliLivestockP1:
+      "Hensel et al. (2025/2026, Animal Reproduction Science) analyzed semen quality trends in production animals: 47,757 bull ejaculates (1997–2019) and 619,368 boar ejaculates (2005–2023). Both species showed improved concentration and motility over the study periods.",
+    csliLivestockP2:
+      "Bull and boar are housed in rural production facilities with minimal RF infrastructure — no household Wi-Fi, no personal devices, no IoT. If EMF drives the decline seen in dogs and humans, low-exposure species should show either no decline or improvement. The observed improvement is consistent with BERM's exposure gradient prediction.",
+    csliLivestockCaveat:
+      "Critical limitation: bull and boar improvement is strongly confounded by breeding selection. Sperm quality is a direct selection criterion in AI (artificial insemination) breeding programs — bulls and boars with poor semen are eliminated from the breeding pool. Production environment improvements (temperature control, nutrition optimization, AI station management) also contribute. The improvement therefore cannot be attributed solely to low EMF exposure. The contrast is directionally consistent with BERM but not independently confirmatory.",
+    csliGradientTitle: "Exposure Gradient Test",
+    csliGradientP:
+      "BERM predicts that response magnitude follows the exposure gradient: species with higher EMF exposure should show greater reproductive decline. The four-tier gradient ranks from lowest to highest exposure:",
+    csliGradientResult:
+      "The observed pattern is directionally consistent: low-exposure species (bull) are improving while high-exposure species (dog, human) are declining. However, monotonic consistency alone is not proof — RF dosimetry data for each species' actual environment is required to confirm the exposure differential. Currently, no measured RF dosimetry exists for any of these environments.",
+    csliGradientThSpecies: "Species",
+    csliGradientThEnv: "Environment",
+    csliGradientThRF: "RF Level",
+    csliGradientThTrend: "Sperm Trend",
+    csliFalsTitle: "Falsification Tests (F1–F6)",
+    csliFalsP:
+      "CSLI v2 defines six falsification criteria that must be met for the cross-species framework to support BERM's EMF hypothesis. All six are currently untested — they require regional data that does not yet exist. This is presented as a research agenda, not as confirmed evidence.",
+    csliFalsNote:
+      "All falsification tests require data that is not currently available. CSLI v2 is a framework for future testing, not a completed analysis.",
+
+    csliGradientData: [
+      { species: "Bull", env: "Rural / production facility", rf: "Low", trend: "Improving" },
+      { species: "Bee", env: "Outdoor / ambient", rf: "Medium", trend: "Colony losses increasing" },
+      { species: "Dog", env: "Home / indoor (Wi-Fi, BT, IoT)", rf: "High", trend: "Motility + morphology declining" },
+      { species: "Human", env: "Personal / on-body (phone 16h/day)", rf: "Highest", trend: "Concentration −62%, motility declining" },
+    ],
+
+    csliFalsTests: [
+      { id: "F1", desc: "Dog sperm change precedes human sperm change", status: "Untested" },
+      { id: "F2", desc: "Dog sperm predicts human biology better than social variables", status: "Untested" },
+      { id: "F3", desc: "Bull does NOT show same decline pattern (negative control)", status: "Untested" },
+      { id: "F4", desc: "Response magnitude follows measured exposure gradient (dosimetry)", status: "Untested" },
+      { id: "F5", desc: "Same lag structure replicates across countries", status: "Untested" },
+      { id: "F6", desc: "EMF explains dog-human link better than chemicals", status: "Untested" },
+    ],
+
     /* temporal timeline */
     timelineTitle: "Temporal Correlation Timeline",
     timelineDesc:

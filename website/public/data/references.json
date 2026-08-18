@@ -1539,5 +1539,56 @@
       "circadian",
       "evening-exposure"
     ]
+  },
+  {
+    "id": "lea2016",
+    "authors": "Lea RG, Byers AS, Sumner RN, et al.",
+    "year": 2016,
+    "title": "Environmental chemicals impact dog semen quality in vitro and may be associated with a temporal decline in sperm motility and increased cryptorchidism",
+    "journal": "Scientific Reports",
+    "n": 1925,
+    "type": "longitudinal",
+    "level": "M|C",
+    "pathway": [
+      "A"
+    ],
+    "finding": "26-year study (1988-2014) of stud dogs sharing human home environment. Progressive motility declined significantly. Normal morphology declined. Sperm concentration variable (rose then plateaued). Cryptorchidism prevalence changed. Environmental chemicals (DEHP, PCB153) detected in dog testes and commercial dog food at concentrations affecting sperm in vitro.",
+    "tags": [
+      "dog",
+      "sentinel",
+      "sperm",
+      "motility",
+      "morphology",
+      "cryptorchidism",
+      "longitudinal",
+      "indoor-exposure",
+      "csli"
+    ]
+  },
+  {
+    "id": "hensel2025",
+    "authors": "Hensel B, Schmelz F, Gerstner K, et al.",
+    "year": 2025,
+    "title": "Temporal trends in semen quality of breeding bulls and boars",
+    "journal": "Animal Reproduction Science",
+    "n": 667125,
+    "type": "longitudinal",
+    "level": "M|C",
+    "pathway": [
+      "A"
+    ],
+    "finding": "Bull (N=47,757, 1997-2019) and boar (N=619,368, 2005-2023) semen quality improved over study periods. Concentration and motility trends positive. Low-EMF production environments. However, improvement likely confounded by strong breeding selection pressure (sperm quality is direct selection criterion) and production environment advances.",
+    "tags": [
+      "bull",
+      "boar",
+      "livestock",
+      "negative-control",
+      "sperm",
+      "concentration",
+      "motility",
+      "breeding-selection",
+      "low-exposure",
+      "csli"
+    ]
   }
 ]
