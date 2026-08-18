@@ -1,465 +1,1419 @@
 {
-  "_metadata": {
-    "description": "COLOSS honey bee colony winter loss rates (%) by country and winter season",
-    "sources": [
-      "Gray A et al. 2019. J Apicultural Research 58(5):628-636. doi:10.1080/00218839.2019.1615661",
-      "Gray A et al. 2020. J Apicultural Research 59(5):744-751. doi:10.1080/00218839.2020.1783561",
-      "Gray A et al. 2022. J Apicultural Research 62(1):1-18. doi:10.1080/00218839.2022.2113329",
-      "Brodschneider R et al. 2018. J Apicultural Research 57(3):452-457",
-      "EPILOBEE 2012-2014. EFSA/EU standardized survey. Zenodo DOI:10.5281/zenodo.400232",
-      "BIP/AIA USA annual surveys. beeinformed.org",
-      "Bee Culture 2025: 55.6% annual loss (record)"
-    ],
-    "notes": [
-      "Values are winter loss percentages (proportion of colonies lost Oct-Apr)",
-      "null = no data available for that country-winter",
-      "COLOSS methodology standardized from 2008-09 onward",
-      "USA data from BIP/AIA uses slightly different methodology (annual vs winter)",
-      "Data collected from published tables - not from API"
-    ],
-    "units": "percent_loss",
-    "last_updated": "2026-08-18"
-  },
+  "source": "COLOSS annual surveys, Journal of Apicultural Research",
+  "sources_detail": [
+    "EPILOBEE (Jacques A et al. 2017). Honey bee Winter mortality 2012-2014. Zenodo. doi:10.5281/zenodo.400232",
+    "Brodschneider R et al. 2016. Preliminary analysis of loss rates of honey bee colonies during winter 2015/16. J Apic Res 55(5):375-378. doi:10.1080/00218839.2016.1260240",
+    "Brodschneider R et al. 2018. Multi-country loss rates of honey bee colonies during winter 2016/2017. J Apic Res 57(3):452-457. doi:10.1080/00218839.2018.1460911",
+    "Gray A et al. 2019. Loss rates of honey bee colonies during winter 2017/18. J Apic Res 58(4):479-485. doi:10.1080/00218839.2019.1615661",
+    "Gray A et al. 2020. Honey bee colony winter loss rates for 35 countries, winter 2018-2019. J Apic Res 59(5):744-751. doi:10.1080/00218839.2020.1797272",
+    "Gray A et al. 2022. Honey bee colony loss rates in 37 countries, winter 2019-2020. J Apic Res 62(2):204-210. doi:10.1080/00218839.2022.2113329",
+    "USA: BIP/AIA annual surveys (beeinformed.org, apiaryinspectors.org)"
+  ],
+  "license": "Open access (Taylor & Francis) / Public data (BIP/AIA)",
+  "extraction_date": "2026-08-19",
+  "extraction_method": "Table 1 data extracted from published open-access articles via browser DOM",
+  "notes": [
+    "Values are overall winter loss rate (%) = mortality + queen problems + natural disasters",
+    "95% CI from published tables; null where not reported",
+    "n_colonies = colonies going into winter",
+    "UK is split into England (ENG), Scotland (SCT), Wales (WLS), Northern Ireland (NIR) per COLOSS methodology",
+    "Germany 2016-17 uses the larger DIB survey (n=149,417 colonies)",
+    "USA data is winter loss from BIP/AIA, different methodology than COLOSS",
+    "Netherlands 2017-18 excluded: only mortality rate published, no overall loss rate",
+    "EPILOBEE 2012-13 and 2013-14: unweighted apiary-level means from raw active surveillance data; different methodology from COLOSS questionnaire surveys; no 95% CI available",
+    "ENGLAND & WALES combined as ENG in EPILOBEE data (per original dataset grouping)"
+  ],
+  "winters_covered": [
+    "2012-13",
+    "2013-14",
+    "2015-16",
+    "2016-17",
+    "2017-18",
+    "2018-19",
+    "2019-20"
+  ],
   "data": {
-    "Finland": {
-      "iso3": "FIN",
-      "2008-09": null,
-      "2009-10": null,
-      "2010-11": 18.0,
-      "2011-12": 15.0,
-      "2012-13": 11.3,
-      "2013-14": 8.5,
-      "2014-15": 14.2,
-      "2015-16": 12.8,
-      "2016-17": 16.5,
-      "2017-18": 18.3,
-      "2018-19": 12.7,
-      "2019-20": 15.6,
-      "2020-21": 14.8,
-      "2021-22": 16.2,
-      "2022-23": 13.5,
-      "2023-24": 15.1
+    "AUT": {
+      "2015-16": {
+        "loss_pct": 8.1,
+        "ci_low": 7.4,
+        "ci_high": 8.8,
+        "n_colonies": 23418
+      },
+      "2016-17": {
+        "loss_pct": 23.4,
+        "ci_low": 22.4,
+        "ci_high": 24.4,
+        "n_colonies": 43852
+      },
+      "2017-18": {
+        "loss_pct": 12.2,
+        "ci_low": 11.5,
+        "ci_high": 13.0,
+        "n_colonies": 28373
+      },
+      "2018-19": {
+        "loss_pct": 15.7,
+        "ci_low": 14.9,
+        "ci_high": 16.6,
+        "n_colonies": 33651
+      },
+      "2019-20": {
+        "loss_pct": 13.2,
+        "ci_low": 12.5,
+        "ci_high": 14.0,
+        "n_colonies": 30724
+      }
     },
-    "Germany": {
-      "iso3": "DEU",
-      "2008-09": 15.1,
-      "2009-10": 12.5,
-      "2010-11": 19.6,
-      "2011-12": 15.2,
-      "2012-13": 14.1,
-      "2013-14": 7.6,
-      "2014-15": 14.7,
-      "2015-16": 11.4,
-      "2016-17": 20.2,
-      "2017-18": 15.5,
-      "2018-19": 16.7,
-      "2019-20": 15.2,
-      "2020-21": 12.8,
-      "2021-22": 14.6,
-      "2022-23": 17.3,
-      "2023-24": 14.9
+    "BEL": {
+      "2012-13": {
+        "loss_pct": 31.7,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 13.8,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 12.2,
+        "ci_low": 10.5,
+        "ci_high": 14.0,
+        "n_colonies": 4064
+      },
+      "2016-17": {
+        "loss_pct": 23.4,
+        "ci_low": 21.4,
+        "ci_high": 25.6,
+        "n_colonies": 6152
+      },
+      "2017-18": {
+        "loss_pct": 19.4,
+        "ci_low": 17.2,
+        "ci_high": 21.7,
+        "n_colonies": 3725
+      },
+      "2018-19": {
+        "loss_pct": 10.7,
+        "ci_low": 9.7,
+        "ci_high": 11.9,
+        "n_colonies": 6326
+      },
+      "2019-20": {
+        "loss_pct": 17.5,
+        "ci_low": 15.7,
+        "ci_high": 19.4,
+        "n_colonies": 4607
+      }
     },
-    "Sweden": {
-      "iso3": "SWE",
-      "2008-09": 13.5,
-      "2009-10": 15.8,
-      "2010-11": 20.3,
-      "2011-12": 11.2,
-      "2012-13": 18.7,
-      "2013-14": 12.6,
-      "2014-15": 13.1,
-      "2015-16": 15.4,
-      "2016-17": 17.2,
-      "2017-18": 19.5,
-      "2018-19": 14.3,
-      "2019-20": 13.8,
-      "2020-21": 16.1,
-      "2021-22": 14.7,
-      "2022-23": 15.9
+    "BGR": {
+      "2017-18": {
+        "loss_pct": 2.0,
+        "ci_low": 0.9,
+        "ci_high": 4.5,
+        "n_colonies": 4074
+      },
+      "2018-19": {
+        "loss_pct": 5.8,
+        "ci_low": 3.3,
+        "ci_high": 10.2,
+        "n_colonies": 5876
+      },
+      "2019-20": {
+        "loss_pct": 11.3,
+        "ci_low": 6.9,
+        "ci_high": 17.8,
+        "n_colonies": 6682
+      }
     },
-    "Denmark": {
-      "iso3": "DNK",
-      "2009-10": 16.4,
-      "2010-11": 14.2,
-      "2011-12": 13.8,
-      "2012-13": 17.6,
-      "2013-14": 9.8,
-      "2014-15": 15.3,
-      "2015-16": 12.1,
-      "2016-17": 18.9,
-      "2017-18": 16.7,
-      "2018-19": 15.2,
-      "2019-20": 14.5
+    "BLR": {
+      "2016-17": {
+        "loss_pct": 14.7,
+        "ci_low": 10.0,
+        "ci_high": 21.1,
+        "n_colonies": 1081
+      },
+      "2017-18": {
+        "loss_pct": 7.3,
+        "ci_low": 5.6,
+        "ci_high": 9.6,
+        "n_colonies": 2469
+      }
     },
-    "Netherlands": {
-      "iso3": "NLD",
-      "2008-09": 21.4,
-      "2009-10": 18.3,
-      "2010-11": 29.0,
-      "2011-12": 19.7,
-      "2012-13": 15.8,
-      "2013-14": 10.5,
-      "2014-15": 16.2,
-      "2015-16": 14.8,
-      "2016-17": 22.1,
-      "2017-18": 18.4,
-      "2018-19": 17.5,
-      "2019-20": 15.9,
-      "2020-21": 14.1,
-      "2021-22": 16.8
+    "CHE": {
+      "2015-16": {
+        "loss_pct": 9.9,
+        "ci_low": 9.2,
+        "ci_high": 10.7,
+        "n_colonies": 17813
+      },
+      "2016-17": {
+        "loss_pct": 20.8,
+        "ci_low": 19.7,
+        "ci_high": 22.0,
+        "n_colonies": 20433
+      },
+      "2017-18": {
+        "loss_pct": 13.8,
+        "ci_low": 12.9,
+        "ci_high": 14.7,
+        "n_colonies": 18807
+      },
+      "2018-19": {
+        "loss_pct": 13.6,
+        "ci_low": 12.8,
+        "ci_high": 14.5,
+        "n_colonies": 19979
+      },
+      "2019-20": {
+        "loss_pct": 13.2,
+        "ci_low": 12.4,
+        "ci_high": 14.0,
+        "n_colonies": 21934
+      }
     },
-    "Belgium": {
-      "iso3": "BEL",
-      "2008-09": 23.5,
-      "2009-10": 19.8,
-      "2010-11": 33.6,
-      "2011-12": 22.1,
-      "2012-13": 18.4,
-      "2013-14": 14.2,
-      "2014-15": 17.6,
-      "2015-16": 15.3,
-      "2016-17": 24.7,
-      "2017-18": 19.1,
-      "2018-19": 18.8,
-      "2019-20": 16.5
+    "CZE": {
+      "2015-16": {
+        "loss_pct": 6.4,
+        "ci_low": 5.8,
+        "ci_high": 7.1,
+        "n_colonies": 17350
+      },
+      "2016-17": {
+        "loss_pct": 15.0,
+        "ci_low": 14.0,
+        "ci_high": 16.2,
+        "n_colonies": 24688
+      },
+      "2017-18": {
+        "loss_pct": 13.0,
+        "ci_low": 12.0,
+        "ci_high": 14.1,
+        "n_colonies": 20567
+      },
+      "2018-19": {
+        "loss_pct": 12.7,
+        "ci_low": 11.7,
+        "ci_high": 13.7,
+        "n_colonies": 20724
+      },
+      "2019-20": {
+        "loss_pct": 20.8,
+        "ci_low": 19.6,
+        "ci_high": 22.0,
+        "n_colonies": 26893
+      }
     },
-    "France": {
-      "iso3": "FRA",
-      "2008-09": 25.2,
-      "2009-10": 22.1,
-      "2010-11": 23.8,
-      "2011-12": 20.5,
-      "2012-13": 19.3,
-      "2013-14": 15.7,
-      "2014-15": 18.4,
-      "2015-16": 16.9,
-      "2016-17": 21.3,
-      "2017-18": 17.8,
-      "2018-19": 19.6,
-      "2019-20": 17.2,
-      "2020-21": 15.8,
-      "2021-22": 18.1
+    "DEU": {
+      "2012-13": {
+        "loss_pct": 12.5,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 5.4,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 11.7,
+        "ci_low": 11.4,
+        "ci_high": 12.1,
+        "n_colonies": 75419
+      },
+      "2016-17": {
+        "loss_pct": 32.2,
+        "ci_low": 31.7,
+        "ci_high": 32.7,
+        "n_colonies": 149417
+      },
+      "2017-18": {
+        "loss_pct": 18.9,
+        "ci_low": 18.5,
+        "ci_high": 19.3,
+        "n_colonies": 121296
+      },
+      "2018-19": {
+        "loss_pct": 14.8,
+        "ci_low": 14.5,
+        "ci_high": 15.2,
+        "n_colonies": 124168
+      },
+      "2019-20": {
+        "loss_pct": 18.4,
+        "ci_low": 18.0,
+        "ci_high": 18.8,
+        "n_colonies": 123368
+      }
     },
-    "Italy": {
-      "iso3": "ITA",
-      "2008-09": 17.4,
-      "2009-10": 14.6,
-      "2010-11": 19.2,
-      "2011-12": 15.8,
-      "2012-13": 12.7,
-      "2013-14": 10.1,
-      "2014-15": 13.5,
-      "2015-16": 11.8,
-      "2016-17": 16.4,
-      "2017-18": 14.2,
-      "2018-19": 15.1,
-      "2019-20": 13.6
+    "DNK": {
+      "2012-13": {
+        "loss_pct": 14.5,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 10.4,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 15.5,
+        "ci_low": 14.4,
+        "ci_high": 16.7,
+        "n_colonies": 12359
+      },
+      "2016-17": {
+        "loss_pct": 19.3,
+        "ci_low": 18.0,
+        "ci_high": 20.7,
+        "n_colonies": 12849
+      },
+      "2017-18": {
+        "loss_pct": 13.7,
+        "ci_low": 12.7,
+        "ci_high": 14.8,
+        "n_colonies": 11524
+      },
+      "2018-19": {
+        "loss_pct": 9.8,
+        "ci_low": 8.9,
+        "ci_high": 10.7,
+        "n_colonies": 12941
+      },
+      "2019-20": {
+        "loss_pct": 22.3,
+        "ci_low": 20.8,
+        "ci_high": 23.8,
+        "n_colonies": 11419
+      }
     },
-    "Spain": {
-      "iso3": "ESP",
-      "2010-11": 21.5,
-      "2011-12": 18.3,
-      "2012-13": 16.1,
-      "2013-14": 13.8,
-      "2014-15": 19.7,
-      "2015-16": 17.2,
-      "2016-17": 22.6,
-      "2017-18": 20.1,
-      "2018-19": 18.9,
-      "2019-20": 16.8
+    "DZA": {
+      "2015-16": {
+        "loss_pct": 13.2,
+        "ci_low": 11.0,
+        "ci_high": 15.9,
+        "n_colonies": 5729
+      },
+      "2016-17": {
+        "loss_pct": 10.8,
+        "ci_low": 9.5,
+        "ci_high": 12.3,
+        "n_colonies": 10473
+      },
+      "2017-18": {
+        "loss_pct": 9.8,
+        "ci_low": 8.7,
+        "ci_high": 11.1,
+        "n_colonies": 12677
+      },
+      "2018-19": {
+        "loss_pct": 10.5,
+        "ci_low": 9.2,
+        "ci_high": 11.9,
+        "n_colonies": 11350
+      },
+      "2019-20": {
+        "loss_pct": 12.2,
+        "ci_low": 10.7,
+        "ci_high": 13.9,
+        "n_colonies": 16412
+      }
     },
-    "Austria": {
-      "iso3": "AUT",
-      "2008-09": 16.8,
-      "2009-10": 14.2,
-      "2010-11": 17.5,
-      "2011-12": 13.6,
-      "2012-13": 15.9,
-      "2013-14": 11.3,
-      "2014-15": 14.8,
-      "2015-16": 12.5,
-      "2016-17": 18.3,
-      "2017-18": 15.7,
-      "2018-19": 16.1,
-      "2019-20": 14.3,
-      "2020-21": 13.2,
-      "2021-22": 15.4
+    "EGY": {
+      "2019-20": {
+        "loss_pct": 24.3,
+        "ci_low": 21.6,
+        "ci_high": 27.1,
+        "n_colonies": 37609
+      }
     },
-    "Switzerland": {
-      "iso3": "CHE",
-      "2008-09": 17.2,
-      "2009-10": 15.6,
-      "2010-11": 19.8,
-      "2011-12": 14.5,
-      "2012-13": 16.3,
-      "2013-14": 12.8,
-      "2014-15": 15.1,
-      "2015-16": 13.7,
-      "2016-17": 19.4,
-      "2017-18": 16.9,
-      "2018-19": 17.3,
-      "2019-20": 15.1,
-      "2020-21": 14.5,
-      "2021-22": 16.2
+    "ENG": {
+      "2012-13": {
+        "loss_pct": 24.4,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2017-18": {
+        "loss_pct": 28.1,
+        "ci_low": 25.7,
+        "ci_high": 30.6,
+        "n_colonies": 2800
+      },
+      "2018-19": {
+        "loss_pct": 9.5,
+        "ci_low": 8.5,
+        "ci_high": 10.6,
+        "n_colonies": 3851
+      },
+      "2019-20": {
+        "loss_pct": 16.8,
+        "ci_low": 15.6,
+        "ci_high": 18.0,
+        "n_colonies": 6379
+      }
     },
-    "Poland": {
-      "iso3": "POL",
-      "2010-11": 15.4,
-      "2011-12": 12.8,
-      "2012-13": 14.6,
-      "2013-14": 11.2,
-      "2014-15": 16.3,
-      "2015-16": 13.9,
-      "2016-17": 18.7,
-      "2017-18": 15.1,
-      "2018-19": 16.5,
-      "2019-20": 14.2,
-      "2020-21": 13.8,
-      "2021-22": 15.6
+    "ESP": {
+      "2012-13": {
+        "loss_pct": 9.7,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 6.7,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 22.1,
+        "ci_low": 18.7,
+        "ci_high": 26.0,
+        "n_colonies": 10786
+      },
+      "2016-17": {
+        "loss_pct": 27.6,
+        "ci_low": 25.1,
+        "ci_high": 30.2,
+        "n_colonies": 43960
+      },
+      "2017-18": {
+        "loss_pct": 26.2,
+        "ci_low": 22.7,
+        "ci_high": 30.1,
+        "n_colonies": 19869
+      },
+      "2018-19": {
+        "loss_pct": 24.5,
+        "ci_low": 19.5,
+        "ci_high": 30.2,
+        "n_colonies": 3764
+      },
+      "2019-20": {
+        "loss_pct": 36.5,
+        "ci_low": 33.2,
+        "ci_high": 40.0,
+        "n_colonies": 19589
+      }
     },
-    "Czech_Republic": {
-      "iso3": "CZE",
-      "2010-11": 14.8,
-      "2011-12": 11.5,
-      "2012-13": 13.2,
-      "2013-14": 9.8,
-      "2014-15": 15.6,
-      "2015-16": 12.4,
-      "2016-17": 17.1,
-      "2017-18": 14.3,
-      "2018-19": 15.8,
-      "2019-20": 13.1
+    "EST": {
+      "2012-13": {
+        "loss_pct": 19.6,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 12.3,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 15.5,
+        "ci_low": 12.2,
+        "ci_high": 19.5,
+        "n_colonies": 5115
+      },
+      "2016-17": {
+        "loss_pct": 13.4,
+        "ci_low": 10.8,
+        "ci_high": 16.5,
+        "n_colonies": 6039
+      },
+      "2017-18": {
+        "loss_pct": 16.4,
+        "ci_low": 14.3,
+        "ci_high": 18.6,
+        "n_colonies": 5660
+      },
+      "2018-19": {
+        "loss_pct": 13.2,
+        "ci_low": 10.4,
+        "ci_high": 16.6,
+        "n_colonies": 4567
+      },
+      "2019-20": {
+        "loss_pct": 12.9,
+        "ci_low": 10.6,
+        "ci_high": 15.6,
+        "n_colonies": 6740
+      }
     },
-    "United_Kingdom": {
-      "iso3": "GBR",
-      "2008-09": 19.2,
-      "2009-10": 17.1,
-      "2010-11": 22.8,
-      "2011-12": 16.5,
-      "2012-13": 21.3,
-      "2013-14": 15.4,
-      "2014-15": 14.5,
-      "2015-16": 12.8,
-      "2016-17": 19.8,
-      "2017-18": 17.2,
-      "2018-19": 16.4,
-      "2019-20": 15.1
+    "FIN": {
+      "2012-13": {
+        "loss_pct": 18.7,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 9.4,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 15.4,
+        "ci_low": 13.9,
+        "ci_high": 17.0,
+        "n_colonies": 9222
+      },
+      "2016-17": {
+        "loss_pct": 14.6,
+        "ci_low": 13.2,
+        "ci_high": 16.1,
+        "n_colonies": 9652
+      },
+      "2017-18": {
+        "loss_pct": 10.7,
+        "ci_low": 9.6,
+        "ci_high": 11.9,
+        "n_colonies": 8780
+      },
+      "2018-19": {
+        "loss_pct": 6.3,
+        "ci_low": 5.4,
+        "ci_high": 7.4,
+        "n_colonies": 8011
+      },
+      "2019-20": {
+        "loss_pct": 15.8,
+        "ci_low": 14.0,
+        "ci_high": 17.7,
+        "n_colonies": 8995
+      }
     },
-    "Ireland": {
-      "iso3": "IRL",
-      "2009-10": 22.5,
-      "2010-11": 26.3,
-      "2011-12": 19.7,
-      "2012-13": 24.8,
-      "2013-14": 17.6,
-      "2014-15": 16.2,
-      "2015-16": 14.5,
-      "2016-17": 21.4,
-      "2017-18": 18.9,
-      "2018-19": 17.8,
-      "2019-20": 16.3
+    "FRA": {
+      "2012-13": {
+        "loss_pct": 13.8,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 11.0,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 13.4,
+        "ci_low": 12.2,
+        "ci_high": 14.7,
+        "n_colonies": 36734
+      },
+      "2016-17": {
+        "loss_pct": 19.5,
+        "ci_low": 17.6,
+        "ci_high": 21.5,
+        "n_colonies": 24943
+      },
+      "2017-18": {
+        "loss_pct": 16.1,
+        "ci_low": 14.7,
+        "ci_high": 17.7,
+        "n_colonies": 16926
+      },
+      "2018-19": {
+        "loss_pct": 10.2,
+        "ci_low": 8.9,
+        "ci_high": 11.6,
+        "n_colonies": 11915
+      },
+      "2019-20": {
+        "loss_pct": 13.7,
+        "ci_low": 12.8,
+        "ci_high": 14.5,
+        "n_colonies": 39507
+      }
     },
-    "Norway": {
-      "iso3": "NOR",
-      "2009-10": 13.2,
-      "2010-11": 16.8,
-      "2011-12": 10.5,
-      "2012-13": 14.7,
-      "2013-14": 9.3,
-      "2014-15": 12.4,
-      "2015-16": 11.8,
-      "2016-17": 15.6,
-      "2017-18": 14.1,
-      "2018-19": 13.5,
-      "2019-20": 12.7
+    "GRC": {
+      "2012-13": {
+        "loss_pct": 7.3,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 9.0,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2017-18": {
+        "loss_pct": 18.4,
+        "ci_low": 15.9,
+        "ci_high": 21.1,
+        "n_colonies": 31187
+      },
+      "2018-19": {
+        "loss_pct": 21.2,
+        "ci_low": 18.3,
+        "ci_high": 24.4,
+        "n_colonies": 23216
+      },
+      "2019-20": {
+        "loss_pct": 14.1,
+        "ci_low": 11.9,
+        "ci_high": 16.5,
+        "n_colonies": 19471
+      }
     },
-    "Greece": {
-      "iso3": "GRC",
-      "2010-11": 18.9,
-      "2011-12": 21.6,
-      "2012-13": 17.2,
-      "2013-14": 14.5,
-      "2014-15": 16.8,
-      "2015-16": 15.3,
-      "2016-17": 19.1,
-      "2017-18": 16.7,
-      "2018-19": 17.5,
-      "2019-20": 15.8
+    "HRV": {
+      "2015-16": {
+        "loss_pct": 16.4,
+        "ci_low": 11.6,
+        "ci_high": 22.7,
+        "n_colonies": 4303
+      },
+      "2016-17": {
+        "loss_pct": 23.1,
+        "ci_low": 20.2,
+        "ci_high": 26.3,
+        "n_colonies": 16508
+      },
+      "2017-18": {
+        "loss_pct": 13.7,
+        "ci_low": 11.9,
+        "ci_high": 15.7,
+        "n_colonies": 17430
+      },
+      "2018-19": {
+        "loss_pct": 24.0,
+        "ci_low": 20.3,
+        "ci_high": 28.1,
+        "n_colonies": 7968
+      }
     },
-    "Portugal": {
-      "iso3": "PRT",
-      "2011-12": 17.8,
-      "2012-13": 15.3,
-      "2013-14": 12.6,
-      "2014-15": 18.1,
-      "2015-16": 16.4,
-      "2016-17": 20.5,
-      "2017-18": 18.2,
-      "2018-19": 17.1,
-      "2019-20": 15.6
+    "HUN": {
+      "2012-13": {
+        "loss_pct": 10.7,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 5.6,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2017-18": {
+        "loss_pct": 18.4,
+        "ci_low": 15.6,
+        "ci_high": 21.6,
+        "n_colonies": 17564
+      }
     },
-    "Romania": {
-      "iso3": "ROU",
-      "2012-13": 11.8,
-      "2013-14": 8.5,
-      "2014-15": 13.2,
-      "2015-16": 10.7,
-      "2016-17": 15.4,
-      "2017-18": 12.6,
-      "2018-19": 14.1,
-      "2019-20": 11.9
+    "IRL": {
+      "2015-16": {
+        "loss_pct": 29.5,
+        "ci_low": 27.4,
+        "ci_high": 31.7,
+        "n_colonies": 4059
+      },
+      "2016-17": {
+        "loss_pct": 13.3,
+        "ci_low": 11.7,
+        "ci_high": 15.1,
+        "n_colonies": 3415
+      },
+      "2017-18": {
+        "loss_pct": 22.6,
+        "ci_low": 20.3,
+        "ci_high": 25.0,
+        "n_colonies": 2958
+      },
+      "2018-19": {
+        "loss_pct": 10.7,
+        "ci_low": 9.4,
+        "ci_high": 12.2,
+        "n_colonies": 3610
+      },
+      "2019-20": {
+        "loss_pct": 18.0,
+        "ci_low": 16.3,
+        "ci_high": 19.9,
+        "n_colonies": 3506
+      }
     },
-    "Hungary": {
-      "iso3": "HUN",
-      "2010-11": 16.5,
-      "2011-12": 13.1,
-      "2012-13": 14.8,
-      "2013-14": 10.4,
-      "2014-15": 15.7,
-      "2015-16": 13.2,
-      "2016-17": 18.1,
-      "2017-18": 15.4,
-      "2018-19": 16.2,
-      "2019-20": 14.1
+    "IRN": {
+      "2018-19": {
+        "loss_pct": 22.1,
+        "ci_low": 21.1,
+        "ci_high": 23.2,
+        "n_colonies": 230093
+      },
+      "2019-20": {
+        "loss_pct": 21.5,
+        "ci_low": 20.5,
+        "ci_high": 22.6,
+        "n_colonies": 233166
+      }
+    },
+    "ISR": {
+      "2015-16": {
+        "loss_pct": 10.5,
+        "ci_low": 8.2,
+        "ci_high": 13.2,
+        "n_colonies": 32165
+      },
+      "2016-17": {
+        "loss_pct": 14.6,
+        "ci_low": 12.3,
+        "ci_high": 17.3,
+        "n_colonies": 27150
+      },
+      "2017-18": {
+        "loss_pct": 8.2,
+        "ci_low": 6.4,
+        "ci_high": 10.4,
+        "n_colonies": 26922
+      },
+      "2018-19": {
+        "loss_pct": 6.6,
+        "ci_low": 4.2,
+        "ci_high": 10.3,
+        "n_colonies": 18843
+      },
+      "2019-20": {
+        "loss_pct": 8.8,
+        "ci_low": 7.3,
+        "ci_high": 10.6,
+        "n_colonies": 25279
+      }
+    },
+    "ITA": {
+      "2012-13": {
+        "loss_pct": 5.0,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 6.1,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 12.5,
+        "ci_low": 10.9,
+        "ci_high": 14.5,
+        "n_colonies": 6815
+      },
+      "2016-17": {
+        "loss_pct": 19.2,
+        "ci_low": 17.5,
+        "ci_high": 20.9,
+        "n_colonies": 13392
+      },
+      "2017-18": {
+        "loss_pct": 29.4,
+        "ci_low": 27.2,
+        "ci_high": 31.7,
+        "n_colonies": 12317
+      },
+      "2018-19": {
+        "loss_pct": 16.5,
+        "ci_low": 15.2,
+        "ci_high": 17.9,
+        "n_colonies": 24021
+      },
+      "2019-20": {
+        "loss_pct": 18.4,
+        "ci_low": 16.4,
+        "ci_high": 20.6,
+        "n_colonies": 7869
+      }
+    },
+    "LTU": {
+      "2012-13": {
+        "loss_pct": 5.4,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 2.2,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 18.7,
+        "ci_low": 14.4,
+        "ci_high": 24.0,
+        "n_colonies": 1733
+      }
+    },
+    "LVA": {
+      "2012-13": {
+        "loss_pct": 18.8,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 7.9,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 15.0,
+        "ci_low": 13.1,
+        "ci_high": 17.2,
+        "n_colonies": 16367
+      },
+      "2016-17": {
+        "loss_pct": 18.5,
+        "ci_low": 16.6,
+        "ci_high": 20.6,
+        "n_colonies": 12322
+      },
+      "2017-18": {
+        "loss_pct": 16.6,
+        "ci_low": 14.7,
+        "ci_high": 18.7,
+        "n_colonies": 12770
+      },
+      "2018-19": {
+        "loss_pct": 14.1,
+        "ci_low": 12.1,
+        "ci_high": 16.4,
+        "n_colonies": 12893
+      },
+      "2019-20": {
+        "loss_pct": 14.3,
+        "ci_low": 12.7,
+        "ci_high": 16.0,
+        "n_colonies": 12210
+      }
+    },
+    "MEX": {
+      "2016-17": {
+        "loss_pct": 25.3,
+        "ci_low": 20.2,
+        "ci_high": 31.3,
+        "n_colonies": 14357
+      },
+      "2017-18": {
+        "loss_pct": 19.6,
+        "ci_low": 16.7,
+        "ci_high": 22.7,
+        "n_colonies": 29240
+      },
+      "2018-19": {
+        "loss_pct": 16.4,
+        "ci_low": 14.7,
+        "ci_high": 18.3,
+        "n_colonies": 11108
+      },
+      "2019-20": {
+        "loss_pct": 28.4,
+        "ci_low": 25.5,
+        "ci_high": 31.6,
+        "n_colonies": 16854
+      }
+    },
+    "MKD": {
+      "2015-16": {
+        "loss_pct": 8.0,
+        "ci_low": 7.1,
+        "ci_high": 8.9,
+        "n_colonies": 17288
+      },
+      "2016-17": {
+        "loss_pct": 22.5,
+        "ci_low": 20.3,
+        "ci_high": 24.7,
+        "n_colonies": 18400
+      },
+      "2017-18": {
+        "loss_pct": 13.2,
+        "ci_low": 11.4,
+        "ci_high": 15.3,
+        "n_colonies": 10918
+      },
+      "2018-19": {
+        "loss_pct": 13.2,
+        "ci_low": 10.5,
+        "ci_high": 16.6,
+        "n_colonies": 6982
+      },
+      "2019-20": {
+        "loss_pct": 14.7,
+        "ci_low": 12.9,
+        "ci_high": 16.7,
+        "n_colonies": 11422
+      }
+    },
+    "MLT": {
+      "2016-17": {
+        "loss_pct": 24.2,
+        "ci_low": 18.1,
+        "ci_high": 31.4,
+        "n_colonies": 1130
+      },
+      "2017-18": {
+        "loss_pct": 13.2,
+        "ci_low": 7.5,
+        "ci_high": 22.3,
+        "n_colonies": 287
+      },
+      "2018-19": {
+        "loss_pct": 16.8,
+        "ci_low": 11.9,
+        "ci_high": 23.1,
+        "n_colonies": 907
+      },
+      "2019-20": {
+        "loss_pct": 11.0,
+        "ci_low": 6.9,
+        "ci_high": 17.0,
+        "n_colonies": 764
+      }
+    },
+    "NIR": {
+      "2015-16": {
+        "loss_pct": 28.2,
+        "ci_low": 22.6,
+        "ci_high": 34.6,
+        "n_colonies": 574
+      },
+      "2016-17": {
+        "loss_pct": 10.0,
+        "ci_low": 7.5,
+        "ci_high": 13.3,
+        "n_colonies": 459
+      },
+      "2017-18": {
+        "loss_pct": 29.9,
+        "ci_low": 25.0,
+        "ci_high": 35.3,
+        "n_colonies": 515
+      },
+      "2018-19": {
+        "loss_pct": 11.0,
+        "ci_low": 7.7,
+        "ci_high": 15.3,
+        "n_colonies": 493
+      },
+      "2019-20": {
+        "loss_pct": 19.2,
+        "ci_low": 16.0,
+        "ci_high": 22.9,
+        "n_colonies": 593
+      }
+    },
+    "NLD": {
+      "2015-16": {
+        "loss_pct": 10.8,
+        "ci_low": 9.9,
+        "ci_high": 11.7,
+        "n_colonies": 11815
+      },
+      "2018-19": {
+        "loss_pct": 12.1,
+        "ci_low": 11.1,
+        "ci_high": 13.3,
+        "n_colonies": 12378
+      },
+      "2019-20": {
+        "loss_pct": 15.6,
+        "ci_low": 14.7,
+        "ci_high": 16.6,
+        "n_colonies": 14169
+      }
+    },
+    "NOR": {
+      "2015-16": {
+        "loss_pct": 12.1,
+        "ci_low": 11.0,
+        "ci_high": 13.3,
+        "n_colonies": 13249
+      },
+      "2016-17": {
+        "loss_pct": 7.7,
+        "ci_low": 6.9,
+        "ci_high": 8.5,
+        "n_colonies": 11056
+      },
+      "2017-18": {
+        "loss_pct": 11.7,
+        "ci_low": 10.5,
+        "ci_high": 12.9,
+        "n_colonies": 9102
+      },
+      "2018-19": {
+        "loss_pct": 8.3,
+        "ci_low": 7.4,
+        "ci_high": 9.4,
+        "n_colonies": 8774
+      },
+      "2019-20": {
+        "loss_pct": 7.4,
+        "ci_low": 6.7,
+        "ci_high": 8.1,
+        "n_colonies": 11990
+      }
+    },
+    "NZL": {
+      "2019-20": {
+        "loss_pct": 10.5,
+        "ci_low": 10.1,
+        "ci_high": 10.8,
+        "n_colonies": 297345
+      }
+    },
+    "POL": {
+      "2012-13": {
+        "loss_pct": 20.1,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 5.3,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 11.3,
+        "ci_low": 10.2,
+        "ci_high": 12.5,
+        "n_colonies": 17822
+      },
+      "2016-17": {
+        "loss_pct": 21.8,
+        "ci_low": 19.9,
+        "ci_high": 23.9,
+        "n_colonies": 23193
+      },
+      "2017-18": {
+        "loss_pct": 14.2,
+        "ci_low": 12.3,
+        "ci_high": 16.3,
+        "n_colonies": 13226
+      },
+      "2018-19": {
+        "loss_pct": 10.7,
+        "ci_low": 9.3,
+        "ci_high": 12.3,
+        "n_colonies": 17379
+      },
+      "2019-20": {
+        "loss_pct": 13.9,
+        "ci_low": 12.2,
+        "ci_high": 15.8,
+        "n_colonies": 16281
+      }
+    },
+    "PRT": {
+      "2017-18": {
+        "loss_pct": 32.8,
+        "ci_low": 26.6,
+        "ci_high": 39.8,
+        "n_colonies": 6896
+      },
+      "2018-19": {
+        "loss_pct": 20.6,
+        "ci_low": 17.7,
+        "ci_high": 23.8,
+        "n_colonies": 10519
+      },
+      "2019-20": {
+        "loss_pct": 22.5,
+        "ci_low": 19.9,
+        "ci_high": 25.3,
+        "n_colonies": 11691
+      }
+    },
+    "ROU": {
+      "2019-20": {
+        "loss_pct": 15.0,
+        "ci_low": 11.9,
+        "ci_high": 18.8,
+        "n_colonies": 8298
+      }
+    },
+    "SCT": {
+      "2015-16": {
+        "loss_pct": 18.0,
+        "ci_low": 14.6,
+        "ci_high": 21.9,
+        "n_colonies": 701
+      },
+      "2016-17": {
+        "loss_pct": 20.4,
+        "ci_low": 17.7,
+        "ci_high": 23.5,
+        "n_colonies": 1609
+      },
+      "2017-18": {
+        "loss_pct": 23.7,
+        "ci_low": 20.9,
+        "ci_high": 26.7,
+        "n_colonies": 1852
+      },
+      "2018-19": {
+        "loss_pct": 18.9,
+        "ci_low": 16.6,
+        "ci_high": 21.6,
+        "n_colonies": 1764
+      },
+      "2019-20": {
+        "loss_pct": 19.6,
+        "ci_low": 17.1,
+        "ci_high": 22.4,
+        "n_colonies": 1384
+      }
+    },
+    "SRB": {
+      "2016-17": {
+        "loss_pct": 24.1,
+        "ci_low": 18.7,
+        "ci_high": 30.3,
+        "n_colonies": 5084
+      },
+      "2017-18": {
+        "loss_pct": 7.4,
+        "ci_low": 6.2,
+        "ci_high": 9.0,
+        "n_colonies": 16419
+      },
+      "2018-19": {
+        "loss_pct": 25.4,
+        "ci_low": 20.8,
+        "ci_high": 30.8,
+        "n_colonies": 16956
+      },
+      "2019-20": {
+        "loss_pct": 13.0,
+        "ci_low": 10.1,
+        "ci_high": 16.6,
+        "n_colonies": 10932
+      }
+    },
+    "SVK": {
+      "2012-13": {
+        "loss_pct": 10.2,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 4.5,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 8.2,
+        "ci_low": 6.8,
+        "ci_high": 9.7,
+        "n_colonies": 6783
+      },
+      "2016-17": {
+        "loss_pct": 16.2,
+        "ci_low": 14.3,
+        "ci_high": 18.3,
+        "n_colonies": 9331
+      },
+      "2017-18": {
+        "loss_pct": 10.0,
+        "ci_low": 8.6,
+        "ci_high": 11.7,
+        "n_colonies": 6499
+      },
+      "2018-19": {
+        "loss_pct": 15.5,
+        "ci_low": 13.4,
+        "ci_high": 17.8,
+        "n_colonies": 8427
+      },
+      "2019-20": {
+        "loss_pct": 18.9,
+        "ci_low": 16.7,
+        "ci_high": 21.4,
+        "n_colonies": 9775
+      }
+    },
+    "SVN": {
+      "2015-16": {
+        "loss_pct": 14.2,
+        "ci_low": 11.8,
+        "ci_high": 17.1,
+        "n_colonies": 7910
+      },
+      "2016-17": {
+        "loss_pct": 19.6,
+        "ci_low": 14.9,
+        "ci_high": 25.4,
+        "n_colonies": 3336
+      },
+      "2017-18": {
+        "loss_pct": 29.9,
+        "ci_low": 26.6,
+        "ci_high": 33.5,
+        "n_colonies": 8825
+      },
+      "2018-19": {
+        "loss_pct": 32.0,
+        "ci_low": 23.3,
+        "ci_high": 42.1,
+        "n_colonies": 1556
+      },
+      "2019-20": {
+        "loss_pct": 28.9,
+        "ci_low": 22.3,
+        "ci_high": 36.6,
+        "n_colonies": 3107
+      }
+    },
+    "SWE": {
+      "2012-13": {
+        "loss_pct": 21.8,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 11.1,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 15.9,
+        "ci_low": 15.1,
+        "ci_high": 16.8,
+        "n_colonies": 25403
+      },
+      "2016-17": {
+        "loss_pct": 15.2,
+        "ci_low": 14.4,
+        "ci_high": 16.1,
+        "n_colonies": 20353
+      },
+      "2017-18": {
+        "loss_pct": 14.9,
+        "ci_low": 14.2,
+        "ci_high": 15.6,
+        "n_colonies": 19570
+      },
+      "2018-19": {
+        "loss_pct": 11.4,
+        "ci_low": 10.6,
+        "ci_high": 12.2,
+        "n_colonies": 20664
+      },
+      "2019-20": {
+        "loss_pct": 13.1,
+        "ci_low": 12.3,
+        "ci_high": 14.1,
+        "n_colonies": 14421
+      }
+    },
+    "TUR": {
+      "2015-16": {
+        "loss_pct": 7.7,
+        "ci_low": 5.7,
+        "ci_high": 10.2,
+        "n_colonies": 22160
+      }
+    },
+    "UKR": {
+      "2015-16": {
+        "loss_pct": 9.9,
+        "ci_low": 8.5,
+        "ci_high": 11.4,
+        "n_colonies": 13850
+      },
+      "2016-17": {
+        "loss_pct": 17.9,
+        "ci_low": 16.0,
+        "ci_high": 19.9,
+        "n_colonies": 20846
+      },
+      "2017-18": {
+        "loss_pct": 11.3,
+        "ci_low": 10.0,
+        "ci_high": 12.6,
+        "n_colonies": 22621
+      },
+      "2018-19": {
+        "loss_pct": 11.2,
+        "ci_low": 9.9,
+        "ci_high": 12.6,
+        "n_colonies": 32335
+      },
+      "2019-20": {
+        "loss_pct": 9.3,
+        "ci_low": 8.4,
+        "ci_high": 10.3,
+        "n_colonies": 42518
+      }
     },
     "USA": {
-      "iso3": "USA",
-      "2006-07": 32.0,
-      "2007-08": 36.0,
-      "2008-09": 29.0,
-      "2009-10": 34.0,
-      "2010-11": 30.0,
-      "2011-12": 22.0,
-      "2012-13": 31.1,
-      "2013-14": 23.7,
-      "2014-15": 42.1,
-      "2015-16": 28.1,
-      "2016-17": 33.2,
-      "2017-18": 30.7,
-      "2018-19": 37.7,
-      "2019-20": 43.7,
-      "2020-21": 45.5,
-      "2021-22": 39.0,
-      "2022-23": 48.2,
-      "2023-24": 36.4,
-      "2024-25": 55.6
+      "2006-07": {
+        "loss_pct": 32.0,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2007-08": {
+        "loss_pct": 36.0,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2008-09": {
+        "loss_pct": 29.0,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2009-10": {
+        "loss_pct": 34.0,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2010-11": {
+        "loss_pct": 30.0,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2011-12": {
+        "loss_pct": 21.9,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2012-13": {
+        "loss_pct": 31.1,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2013-14": {
+        "loss_pct": 23.2,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2014-15": {
+        "loss_pct": 23.1,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2015-16": {
+        "loss_pct": 28.1,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2016-17": {
+        "loss_pct": 21.1,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2017-18": {
+        "loss_pct": 30.7,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2018-19": {
+        "loss_pct": 37.7,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2019-20": {
+        "loss_pct": 22.2,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2020-21": {
+        "loss_pct": 32.2,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2021-22": {
+        "loss_pct": 39.0,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2022-23": {
+        "loss_pct": 37.4,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2023-24": {
+        "loss_pct": 37.4,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      },
+      "2024-25": {
+        "loss_pct": 37.3,
+        "ci_low": null,
+        "ci_high": null,
+        "n_colonies": null
+      }
     },
-    "Canada": {
-      "iso3": "CAN",
-      "2007-08": 35.0,
-      "2008-09": 29.3,
-      "2009-10": 21.0,
-      "2010-11": 22.8,
-      "2011-12": 15.3,
-      "2012-13": 28.6,
-      "2013-14": 25.2,
-      "2014-15": 16.4,
-      "2015-16": 16.8,
-      "2016-17": 25.1,
-      "2017-18": 32.6,
-      "2018-19": 25.7,
-      "2019-20": 26.3
-    },
-    "Japan": {
-      "iso3": "JPN",
-      "2010-11": 25.3,
-      "2011-12": 22.7,
-      "2012-13": 24.1,
-      "2013-14": 21.5,
-      "2014-15": 23.8,
-      "2015-16": 20.4,
-      "2016-17": 26.2,
-      "2017-18": 23.5,
-      "2018-19": 24.8
-    },
-    "South_Korea": {
-      "iso3": "KOR",
-      "2012-13": 28.5,
-      "2013-14": 25.3,
-      "2014-15": 30.1,
-      "2015-16": 27.6,
-      "2016-17": 32.4,
-      "2017-18": 29.8,
-      "2018-19": 31.2,
-      "2019-20": 28.7
-    },
-    "China": {
-      "iso3": "CHN",
-      "2010-11": 14.2,
-      "2011-12": 12.8,
-      "2012-13": 15.6,
-      "2013-14": 13.1,
-      "2014-15": 16.8,
-      "2015-16": 14.5,
-      "2016-17": 18.3,
-      "2017-18": 15.7,
-      "2018-19": 17.2,
-      "2019-20": 16.1
-    },
-    "Australia": {
-      "iso3": "AUS",
-      "2010-11": 12.5,
-      "2011-12": 10.8,
-      "2012-13": 13.7,
-      "2013-14": 11.2,
-      "2014-15": 14.6,
-      "2015-16": 12.9,
-      "2016-17": 15.8,
-      "2017-18": 13.4,
-      "2018-19": 16.1,
-      "2019-20": 14.5
-    },
-    "New_Zealand": {
-      "iso3": "NZL",
-      "2012-13": 10.8,
-      "2013-14": 8.5,
-      "2014-15": 12.3,
-      "2015-16": 10.1,
-      "2016-17": 13.7,
-      "2017-18": 11.5,
-      "2018-19": 14.2,
-      "2019-20": 12.6
-    },
-    "Brazil": {
-      "iso3": "BRA",
-      "2015-16": 22.4,
-      "2016-17": 25.8,
-      "2017-18": 29.1,
-      "2018-19": 31.5,
-      "2019-20": 28.7
-    },
-    "Argentina": {
-      "iso3": "ARG",
-      "2015-16": 18.3,
-      "2016-17": 21.6,
-      "2017-18": 19.8,
-      "2018-19": 23.4,
-      "2019-20": 20.5
-    },
-    "Turkey": {
-      "iso3": "TUR",
-      "2010-11": 14.6,
-      "2011-12": 12.3,
-      "2012-13": 16.1,
-      "2013-14": 13.5,
-      "2014-15": 17.8,
-      "2015-16": 15.2,
-      "2016-17": 19.4,
-      "2017-18": 16.7,
-      "2018-19": 18.3,
-      "2019-20": 15.9
-    },
-    "Israel": {
-      "iso3": "ISR",
-      "2010-11": 19.5,
-      "2011-12": 17.2,
-      "2012-13": 15.8,
-      "2013-14": 13.6,
-      "2014-15": 18.1,
-      "2015-16": 16.3,
-      "2016-17": 20.7,
-      "2017-18": 18.5,
-      "2018-19": 17.4
+    "WLS": {
+      "2015-16": {
+        "loss_pct": 22.4,
+        "ci_low": 16.0,
+        "ci_high": 30.4,
+        "n_colonies": 232
+      },
+      "2016-17": {
+        "loss_pct": 19.8,
+        "ci_low": 10.0,
+        "ci_high": 35.4,
+        "n_colonies": 111
+      },
+      "2017-18": {
+        "loss_pct": 26.6,
+        "ci_low": 19.4,
+        "ci_high": 35.4,
+        "n_colonies": 214
+      },
+      "2018-19": {
+        "loss_pct": 9.8,
+        "ci_low": 7.0,
+        "ci_high": 13.6,
+        "n_colonies": 224
+      },
+      "2019-20": {
+        "loss_pct": 21.4,
+        "ci_low": 17.3,
+        "ci_high": 26.2,
+        "n_colonies": 523
+      }
     }
   }
 }
