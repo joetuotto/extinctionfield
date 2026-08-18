@@ -149,14 +149,14 @@ export default function CausalChainDiagram() {
   const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [containerW, setContainerW] = useState(1400);
+  const [containerW, setContainerW] = useState(900);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
     const ro = new ResizeObserver((entries) => {
       const w = entries[0]?.contentRect.width;
-      if (w && w > 0) setContainerW(Math.max(900, Math.min(1600, w)));
+      if (w && w > 0) setContainerW(Math.max(600, Math.min(1600, w)));
     });
     ro.observe(el);
     return () => ro.disconnect();
@@ -190,13 +190,13 @@ export default function CausalChainDiagram() {
 
   return (
     <>
-      <div ref={containerRef} className="w-full overflow-x-auto">
+      <div ref={containerRef} className="w-full">
         <svg
           viewBox={`0 0 ${viewW} ${canvasH}`}
           xmlns="http://www.w3.org/2000/svg"
           role="img"
           aria-label="BERM causal chain diagram"
-          style={{ width: "100%", height: "auto", minWidth: 900 }}
+          style={{ width: "100%", height: "auto" }}
         >
           <defs>
             <marker

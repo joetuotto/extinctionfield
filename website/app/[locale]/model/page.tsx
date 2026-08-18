@@ -416,9 +416,7 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
               {d.causalDesc}
             </p>
-            <div className="overflow-x-auto">
-              <CausalChainDiagram />
-            </div>
+            <CausalChainDiagram />
           </section>
 
           {/* Lindgren chi coupling */}
