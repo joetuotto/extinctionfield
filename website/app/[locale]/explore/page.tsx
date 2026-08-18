@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ExploreTabs } from "@/components/ExploreTabs";
+import { PageHeader } from "@/components/PageHeader";
+import { Map } from "lucide-react";
 
 export async function generateMetadata({
   params,
@@ -41,12 +43,11 @@ export default async function ExplorePage({
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight mb-2">{d.title}</h1>
-        <p className="text-foreground-muted max-w-2xl leading-relaxed">
-          {d.subtitle}
-        </p>
-      </header>
+      <PageHeader
+        icon={Map}
+        title={d.title}
+        subtitle={d.subtitle}
+      />
       <ExploreTabs locale={locale} />
     </div>
   );

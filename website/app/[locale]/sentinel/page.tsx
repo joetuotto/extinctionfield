@@ -3,6 +3,7 @@ import type { Locale } from "@/lib/i18n";
 import Link from "next/link";
 import TemporalTimeline from "@/components/TemporalTimeline";
 import CSLIDashboard from "@/components/CSLIDashboard";
+import { Leaf } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -1343,7 +1344,12 @@ export default async function SentinelPage({
     <div className="max-w-5xl mx-auto px-6 py-16">
       {/* Header */}
       <header className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight mb-3">{d.title}</h1>
+        <div className="flex items-start gap-3 mb-3">
+          <div className="mt-1 flex-shrink-0 p-2 rounded-lg bg-accent/8 text-accent">
+            <Leaf size={22} strokeWidth={1.8} aria-hidden="true" />
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight">{d.title}</h1>
+        </div>
         <div className="max-w-3xl space-y-4 text-foreground-muted leading-relaxed">
           <p>{d.headerP1}</p>
           <p>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import CausalChainDiagram from "@/components/CausalChainDiagram";
 import { ModelTableOfContents } from "@/components/ModelTableOfContents";
 import { MathematicsSections } from "@/app/[locale]/mathematics/page";
+import { GitBranch } from "lucide-react";
 
 const t = {
   en: {
@@ -358,10 +359,17 @@ export default async function ModelPage({
     <div className="max-w-6xl mx-auto px-6 py-16">
       {/* Header */}
       <header className="mb-12">
-        <h1 className="text-3xl font-bold tracking-tight mb-3">{d.title}</h1>
-        <p className="text-foreground-muted max-w-2xl leading-relaxed">
-          {d.subtitle}
-        </p>
+        <div className="flex items-start gap-3">
+          <div className="mt-1 flex-shrink-0 p-2 rounded-lg bg-accent/8 text-accent">
+            <GitBranch size={22} strokeWidth={1.8} aria-hidden="true" />
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight mb-3">{d.title}</h1>
+            <p className="text-foreground-muted max-w-2xl leading-relaxed">
+              {d.subtitle}
+            </p>
+          </div>
+        </div>
       </header>
 
       <div className="flex gap-10">

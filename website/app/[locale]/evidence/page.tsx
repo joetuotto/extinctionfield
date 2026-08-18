@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { EPISTEMIC_LEVELS, PATHWAYS, EVIDENCE } from "@/lib/evidence";
 import type { EpistemicLevel } from "@/lib/types";
 import { StatisticalValidation } from "@/components/StatisticalValidation";
+import { PageHeader } from "@/components/PageHeader";
+import { Layers } from "lucide-react";
 
 interface NaturalExperimentCard {
   id: string;
@@ -530,12 +532,7 @@ export default async function EvidencePage({
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
-      <header className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight mb-3">{d.title}</h1>
-        <p className="text-foreground-muted max-w-2xl leading-relaxed">
-          {d.subtitle}
-        </p>
-      </header>
+      <PageHeader icon={Layers} title={d.title} subtitle={d.subtitle} />
 
       <section className="mb-12">
         <h2 className="text-lg font-semibold mb-4">{d.epistemicTitle}</h2>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n";
+import { PageHeader } from "@/components/PageHeader";
+import { Info } from "lucide-react";
 
 const t = {
   en: {
@@ -131,12 +133,7 @@ export default async function AboutPage({
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
-      <header className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight mb-3">{d.title}</h1>
-        <p className="text-foreground-muted max-w-2xl leading-relaxed">
-          {d.subtitle}
-        </p>
-      </header>
+      <PageHeader icon={Info} title={d.title} subtitle={d.subtitle} />
 
       <div className="max-w-3xl space-y-10">
         <section>

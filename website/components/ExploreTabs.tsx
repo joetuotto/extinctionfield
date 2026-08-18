@@ -6,30 +6,16 @@ import { ExplorerDashboard } from "./ExplorerDashboard";
 import { DataSourcesContent } from "./DataSourcesContent";
 import { WorldMap } from "./WorldMap";
 import { SentinelExplorer } from "./SentinelExplorer";
+import { getExploreTabs } from "@/lib/navigation";
 
 type Tab = "map" | "country" | "data" | "sentinel";
-
-const TABS = {
-  en: [
-    { key: "map" as Tab, label: "Map" },
-    { key: "country" as Tab, label: "Country" },
-    { key: "sentinel" as Tab, label: "Sentinel" },
-    { key: "data" as Tab, label: "Data" },
-  ],
-  fi: [
-    { key: "map" as Tab, label: "Kartta" },
-    { key: "country" as Tab, label: "Maa" },
-    { key: "sentinel" as Tab, label: "Indikaattorit" },
-    { key: "data" as Tab, label: "Data" },
-  ],
-} as const;
 
 function ExploreTabsInner({ locale }: { locale: string }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const activeTab = (searchParams.get("tab") as Tab) || "country";
-  const tabs = locale === "fi" ? TABS.fi : TABS.en;
+  const activeTab = (searchParams.get("tab") as Tab) || "map";
+  const tabs = getExploreTabs(locale);
 
   const setTab = useCallback(
     (tab: Tab) => {
@@ -42,20 +28,27 @@ function ExploreTabsInner({ locale }: { locale: string }) {
 
   return (
     <div>
-      <nav className="flex gap-1 border-b border-border mb-8">
-        {tabs.map((tab) => (
-          <button
-            key={tab.key}
-            onClick={() => setTab(tab.key)}
-            className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
-              activeTab === tab.key
-                ? "border-accent text-accent"
-                : "border-transparent text-foreground-muted hover:text-foreground"
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
+      <nav className="flex gap-1 border-b border-border mb-8" role="tablist">
+        {tabs.map((tab) => {
+          const Icon = tab.icon;
+          const isActive = activeTab === tab.key;
+          return (
+            <button
+              key={tab.key}
+              role="tab"
+              aria-selected={isActive}
+              onClick={() => setTab(tab.key)}
+              className={`inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+                isActive
+                  ? "border-accent text-accent"
+                  : "border-transparent text-foreground-muted hover:text-foreground"
+              }`}
+            >
+              <Icon size={14} strokeWidth={isActive ? 2.2 : 1.8} aria-hidden="true" />
+              {tab.label}
+            </button>
+          );
+        })}
       </nav>
 
       {activeTab === "map" && <WorldMap locale={locale} />}

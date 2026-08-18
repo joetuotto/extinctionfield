@@ -5,32 +5,12 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-
-const NAV_LINKS = {
-  en: [
-    { href: "", label: "Home" },
-    { href: "/explore", label: "Explore" },
-    { href: "/model", label: "Model" },
-    { href: "/evidence", label: "Evidence" },
-    { href: "/sentinel", label: "Sentinel" },
-    { href: "/predictions", label: "Predictions" },
-    { href: "/about", label: "About" },
-  ],
-  fi: [
-    { href: "", label: "Etusivu" },
-    { href: "/explore", label: "Tutkija" },
-    { href: "/model", label: "Malli" },
-    { href: "/evidence", label: "Näyttö" },
-    { href: "/sentinel", label: "Lajit" },
-    { href: "/predictions", label: "Ennusteet" },
-    { href: "/about", label: "Tietoa" },
-  ],
-} as const;
+import { getNavRoutes } from "@/lib/navigation";
 
 export function Navigation({ locale }: { locale: string }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const links = locale === "fi" ? NAV_LINKS.fi : NAV_LINKS.en;
+  const links = getNavRoutes(locale);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-nav-bg backdrop-blur-sm">
@@ -50,16 +30,18 @@ export function Navigation({ locale }: { locale: string }) {
                 link.href === ""
                   ? pathname === `/${locale}` || pathname === `/${locale}/`
                   : pathname.startsWith(fullHref);
+              const Icon = link.icon;
               return (
                 <li key={link.href}>
                   <Link
                     href={fullHref}
-                    className={`text-sm transition-colors ${
+                    className={`inline-flex items-center gap-1.5 text-sm transition-colors ${
                       isActive
                         ? "text-accent font-medium"
                         : "text-foreground-muted hover:text-foreground"
                     }`}
                   >
+                    <Icon size={14} strokeWidth={isActive ? 2.2 : 1.8} aria-hidden="true" />
                     {link.label}
                   </Link>
                 </li>
@@ -114,17 +96,19 @@ export function Navigation({ locale }: { locale: string }) {
                 link.href === ""
                   ? pathname === `/${locale}` || pathname === `/${locale}/`
                   : pathname.startsWith(fullHref);
+              const Icon = link.icon;
               return (
                 <li key={link.href}>
                   <Link
                     href={fullHref}
                     onClick={() => setMenuOpen(false)}
-                    className={`block text-sm transition-colors ${
+                    className={`flex items-center gap-2.5 text-sm transition-colors ${
                       isActive
                         ? "text-accent font-medium"
                         : "text-foreground-muted hover:text-foreground"
                     }`}
                   >
+                    <Icon size={16} strokeWidth={isActive ? 2.2 : 1.8} aria-hidden="true" />
                     {link.label}
                   </Link>
                 </li>

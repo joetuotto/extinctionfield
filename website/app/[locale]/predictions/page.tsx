@@ -2,6 +2,8 @@ import { LOCKED_PREDICTIONS } from "@/lib/predictions";
 import type { LockedPrediction, PredictionVersion } from "@/lib/types";
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n";
+import { PageHeader } from "@/components/PageHeader";
+import { Target } from "lucide-react";
 
 const t = {
   en: {
@@ -333,12 +335,7 @@ export default async function PredictionsPage({
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
-      <header className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight mb-3">{d.title}</h1>
-        <p className="text-foreground-muted max-w-2xl leading-relaxed">
-          {d.subtitle}
-        </p>
-      </header>
+      <PageHeader icon={Target} title={d.title} subtitle={d.subtitle} />
 
       <div className="flex flex-wrap gap-4 mb-8 text-xs text-foreground-muted">
         <div className="flex items-center gap-1.5">
