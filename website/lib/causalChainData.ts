@@ -301,6 +301,36 @@ export const NODES: ChainNode[] = [
     bermComponent: "biology/bbb.py",
     keyReferences: [],
   },
+  {
+    id: "pathway_f",
+    level: 5,
+    label: "Polku F: Vmem-koodi",
+    sublabel: "Vmem-depolarisaatio → morfogeneesi",
+    epistemicLevel: "L*",
+    title: "Kalvopotentiaalin bioelektrinen koodi",
+    mechanism:
+      "Brownin ym. (2016) mukaan solun kalvopotentiaali (Vmem) toimii morfogeneettisen informaation kantajana. EMF-altistus depolarisoi kalvopotentiaalia → Vmem-gradientti häiriintyy → solujen proliferaatio- ja differentiaatiosignaalit muuttuvat. Levinin tutkimusryhmä (Tufts): bioelektrinen koodi ohjaa kudosten kehitystä ja regeneraatiota. Vmem-depolarisaatio → sammakoilla pään/hännän identiteetin kääntyminen.",
+    lindgrenInterpretation:
+      "Vmem on biologisen aika-avaruuden paikallinen metrinen signaali. Lindgrenin kehyksessä kalvopotentiaali on Ā — taustakenttä joka määrää paikallisen geometrian. EMF-perturbointia muuttaa tätä paikallista geometriaa → solujen 'koordinaatisto' häiriintyy → positio-informaatio vioittuu. Tämä on suorin yhteys geometrian ja biologian välillä.",
+    keyReferences: [
+      {
+        authors: "Brown ym. 2016",
+        title: "Vmem depolarization and bioelectric signaling",
+        journal: "Bioelectrochemistry",
+        keyFinding: "Vmem-depolarisaatio muuttaa solujen morfogeneettistä koodia",
+      },
+      {
+        authors: "Levin 2014",
+        title:
+          "Molecular bioelectricity: how endogenous voltage potentials control cell behavior",
+        journal: "Molecular Biology of the Cell 25(24)",
+        keyFinding:
+          "Bioelektrinen koodi ohjaa kudosten morfogeneesiä ja regeneraatiota",
+      },
+    ],
+    falsificationCondition:
+      "Jos Vmem-muutokset eivät korreloi morfogeneettisten virheiden kanssa EMF-altistuksessa",
+  },
 
   // TASO 6
   {
@@ -377,6 +407,120 @@ export const NODES: ChainNode[] = [
       "X- ja Y-siittiöt ovat partikkeleita eri massoilla samassa metrisessä kentässä. Niiden geodeeseejä (liikeatoja) metrinen perturbointia muuttaa eri verran koska vuorovaikutuspoikkipinta on eri. cos(θ)-riippuvuus ennustaa lisäksi, että vaikutus riippuu EMF:n suunnasta suhteessa reproduktiokanavaan.",
     keyReferences: [],
   },
+  {
+    id: "testosterone",
+    level: 6,
+    label: "Testosteroni ↓ sekulaari",
+    sublabel: "−1%/vuosi (Travison 2007)",
+    epistemicLevel: "E",
+    title: "Testosteronin sekulaarilasku",
+    mechanism:
+      "Travison 2007: miesten testosteronitasot laskevat −1%/vuosi ikävakioituna. Lasku ei selity painonnousulla, tupakoinnin vähenemisellä tai muilla tunnetuilla tekijöillä. HPA-akselin krooninen aktivaatio (polku D) → kortisoli↑ → HPG-akselin suppressio → testosteronituotanto↓. Leydigin solujen kumulatiivinen ROS-vaurio (polku A) heikentää steroidogeneesiä.",
+    recoveryAlpha: 0.5,
+    recoveryTimescale: "kuukausia (HPA-normalisoituminen) – vuosia (Leydig-palautuminen)",
+    keyReferences: [
+      {
+        authors: "Travison ym. 2007",
+        title: "A population-level decline in serum testosterone levels in American men",
+        journal: "J. Clin. Endocrinol. Metab. 92(1)",
+        keyFinding: "Ikävakioitu testosteroni laskee −1%/vuosi 1980-luvulta",
+      },
+    ],
+  },
+  {
+    id: "amh",
+    level: 6,
+    label: "AMH / munasolureservi ↓",
+    sublabel: "AFC↓, reservi ehtyyy aikaisemmin",
+    epistemicLevel: "C",
+    title: "Munasolureservin ennenaikainen ehtyminen",
+    mechanism:
+      "Anti-Müllerian hormoni (AMH) on primaaristen follikkelien markkeri. AMH-tasot ovat laskeneet sekulaarisesti: nykynaisten AMH vastaa edellisten sukupolvien 5–10 vuotta vanhempien naisten tasoa. ROS-vaurio (polku A) vaurioittaa primordiaalisia follikkeleita. CRY-häiriö (polku B) kiihdyttää follikulaarista rekrytointia → reservi ehtyyy nopeammin. mTOR-hyperaktivaatio kiihdyttää follikulaarista loppuunpalamista.",
+    keyReferences: [
+      {
+        authors: "Kelsey ym. 2012",
+        title: "A validated age-related model of total count of non-growing follicles",
+        journal: "PLoS ONE 7(10)",
+        keyFinding: "Munasolujen lukumäärämallit ja reservin ehtymisdynamiikka",
+      },
+    ],
+  },
+  {
+    id: "mtor",
+    level: 6,
+    label: "mTOR-hyperaktivaatio",
+    sublabel: "Ca²⁺ → mTOR↑ → autofagia↓",
+    epistemicLevel: "M|C",
+    title: "mTOR-reitin ylisäätely EMF-altistuksessa",
+    mechanism:
+      "VGIC-aktivaation tuottama Ca²⁺-influksi aktivoi mTOR-reitin (mammalian target of rapamycin). mTOR-hyperaktivaatio → autofagian suppressio → seneskenttien solujen kertyminen → krooninen tulehdus. Sempou-reitti: EMF → VGIC → Ca²⁺↑ → mTOR↑ → kolme epidemiaa: kiihtynyt ikääntyminen, hedelmällisyyden lasku, syöpäriskin kasvu.",
+    lindgrenInterpretation:
+      "mTOR on solunsisäinen integraattori joka yhdistää useita metrisestä perturbointiasta syntyviä signaaleja yhdeksi soluvasteeksi. Geometrinen perturbointia → Ca²⁺-dynamiikan muutos → mTOR-tasapainon siirtymä. Metformiinin pitkäikäisyyshyöty on geometrisessa kehyksessä anti-perturbointia: AMPK-aktivaatio kumoaa mTOR-hyperaktivaatiota.",
+    quantitative:
+      "mTOR_eff = (1.0 + 0.25 × EMF) × Π(1 − reduction_i)\naging_rate = mTOR_eff^0.7\n\nReduction factors:\nMetformiini: 0.30\nRapamysiini: 0.85\nKalorinrajoitus: 0.20\nAjoittainen paasto: 0.10",
+    bermComponent: "biology/mtor.py",
+    keyReferences: [
+      {
+        authors: "Saxton & Sabatini 2017",
+        title: "mTOR Signaling in Growth, Metabolism, and Disease",
+        journal: "Cell 168(6)",
+        keyFinding: "mTOR integroi ravinteet, energian ja kasvutekijät solun kasvuun",
+      },
+    ],
+    falsificationCondition:
+      "Jos mTOR-inhibiittorit (rapamysiini) eivät vähennä EMF:n biologisia vaikutuksia",
+  },
+  {
+    id: "sleep",
+    level: 6,
+    label: "Unihäiriö",
+    sublabel: "Melatoniini↓ → uni↓ → GnRH↓",
+    epistemicLevel: "E",
+    title: "Unen laadun heikkeneminen ja hormonaaliset seuraukset",
+    mechanism:
+      "Melatoniinisuppressio (polku C) → unisyklin häiriö → syvän unen väheneminen. Syvä uni on kriittinen GnRH-pulsaation ja kasvuhormonin erityksen kannalta. Leproult & Van Cauter 2011: 1 viikko unirajoitusta (5h/yö) → testosteroni −15%. Nuorten aikuisten unen kesto on lyhentynyt ~1h/yö 1970-luvulta. Älypuhelimen sininen valo → melatoniinisuppressio → viivästynyt unilatenssi.",
+    keyReferences: [
+      {
+        authors: "Leproult & Van Cauter 2011",
+        title: "Effect of 1 week of sleep restriction on testosterone levels",
+        journal: "JAMA 305(21)",
+        keyFinding: "5h unirajoitus → T −15%, efekti vastaa 10–15 vuoden ikääntymistä",
+      },
+    ],
+  },
+  {
+    id: "miscarriage",
+    level: 6,
+    label: "Keskenmeno ↑",
+    sublabel: "SDF + implantaatio → varhainen menetys",
+    epistemicLevel: "C",
+    title: "Keskenmenoriskin kasvu",
+    mechanism:
+      "Kohonnut SDF (DNA-fragmentaatio) siittiöissä → hedelmöitys voi tapahtua mutta embryon kehitys häiriintyy varhaisessa vaiheessa. Heikentynyt implantaatio (endometriumin reseptiivisyys↓, mikrobiomihäiriö) → biokemiallisten raskauksien menetys. Kliinisesti tunnistettujen keskenmenojen osuus on kasvanut. Varhaiset (pre-kliiniset) menetykset jäävät usein havaitsematta.",
+    keyReferences: [],
+  },
+  {
+    id: "epigenetic",
+    level: 6,
+    label: "Epigeneettinen periytyminen",
+    sublabel: "Sperm methylome → F1, F2",
+    epistemicLevel: "C",
+    title: "Sukupolvien välinen epigeneettinen välittyminen",
+    mechanism:
+      "ROS-vaurio (polku A) muuttaa siittiöiden metylaatioprofiilia. Muuttuneet epigeneettiset merkit periytyvät F1- ja F2-sukupolviin. Hiiritutkimuksissa: isien ympäristöaltistus muuttaa jälkeläisten lisääntymiskykyä. EMF-altistuksen epigeneettiset vaikutukset kumuloituvat sukupolvien yli — jokainen sukupolvi altistuu enemmän JA perii edellisen sukupolven epigeneettiset vauriot.",
+    lindgrenInterpretation:
+      "Epigeneettinen periytyminen on metrisen historian biologinen tallenne. Solujen metriikka (Vmem, ionidynamiikka) ohjaa geeniekspressiota epigeneettisesti. Muuttunut metriikka → muuttunut epigeneettinen tila → muuttunut perusta seuraavan sukupolven metriikalle. Tämä on geometrinen positiivinen palautesilmukka biologisella aikaskaalalla.",
+    recoveryAlpha: 0.1,
+    recoveryTimescale: "sukupolvia (3–5 sukupolvea täydelliseen palautumiseen)",
+    keyReferences: [
+      {
+        authors: "Skinner ym. 2019",
+        title: "Transgenerational epigenetic inheritance",
+        journal: "Nature Reviews Endocrinology",
+        keyFinding: "Ympäristöaltistukset periytyvät 3+ sukupolven yli epigeneettisesti",
+      },
+    ],
+  },
 
   // TASO 7
   {
@@ -401,6 +545,17 @@ export const NODES: ChainNode[] = [
       "Testosteroni (seksuaalinen motivaatio), oksitosiini (kiintymys/pariside), dopamiini (palkkio/tavoittelu), kortisoli (stressieste). Kaikki neljä muuttuvat EMF-altistuksessa samanaikaisesti: T↓ (Travison), OT↓ (L. reuteri -kadon kautta), DA↓ (striataaliset muutokset), kortisoli↑ (HPA-aktivaatio). Multiplikatiivinen lukko: F_bio × M_repro — jos kumpikaan on nolla, syntymähazardi on nolla.",
     lindgrenInterpretation:
       "Motivaatiokerros on bioelektrisen tilan systeeminen seuraus. Hypothalamus-aivolisäke-gonadi -akseli on ionikanavadynamiikan säätelemä ketju. EMF muuttaa geometriaa → ionidynamiikka muuttuu → hormonitasot muuttuvat → käyttäytyminen muuttuu. Calhounin Universe 25 'Beautiful Ones' -ilmiö (vetäytyminen lisääntymisestä) on tämän ääriesimerkki.",
+    keyReferences: [],
+  },
+  {
+    id: "art",
+    level: 7,
+    label: "Avustettu lisääntyminen",
+    sublabel: "IVF/ICSI → osittainen kompensaatio",
+    epistemicLevel: "E",
+    title: "Avustetun lisääntymisen kompensaatiovaikutus",
+    mechanism:
+      "IVF ja ICSI ohittavat osan biologisen fekundabiliteetin esteistä: motiliteetti↓ ja konsentraatio↓ eivät estä ICSI:tä, ovariaalistimulaatio kompensoi osittain AMH↓:ää. Kuitenkin ART ei korjaa: SDF:ää (DNA-vaurio siirtyy embryoon), epigeneettisiä muutoksia, implantaation bioelektristä koodia. ART:n osuus synnytyksistä: Israel 5%, Tanska 10%. ART-riippuvuus kasvaa kun luonnollinen fekundabiliteetti laskee.",
     keyReferences: [],
   },
 
@@ -438,6 +593,25 @@ export const NODES: ChainNode[] = [
       "TFR = 5 × Σ ASFR(ikäryhmä). Globaali TFR: 4.84 (1950) → 2.23 (2021). GBD 2024 ennuste: alle 2.1 (korvautumistaso) lähes kaikissa maissa 2050 mennessä. Etelä-Korea: 0.72 (2023). Pronatalistiset interventiot ($200+ miljardia globaalisti) eivät ole kääntäneet trendiä yhdessäkään maassa pysyvästi.",
     keyReferences: [],
   },
+  {
+    id: "childlessness",
+    level: 8,
+    label: "Tahdoton lapsettomuus ↑",
+    sublabel: "12–24 kk yrittämisen jälkeen",
+    epistemicLevel: "E",
+    title: "Tahdottoman lapsettomuuden yleistyminen",
+    mechanism:
+      "WHO: 1/6 parista kärsii hedelmättömyydestä maailmanlaajuisesti. Trendi on kasvava. TTP (time-to-pregnancy) pitenee → yhä useampi pari ei koskaan saavuta raskautta luonnollisesti. Biologinen kello on muuttumaton mutta biologinen ikä etenee nopeammin: 30-vuotiaan naisen munasolureservi vastaa edellisten sukupolvien 35-vuotiaan tasoa.",
+    keyReferences: [
+      {
+        authors: "WHO 2023",
+        title: "Infertility prevalence estimates",
+        journal: "WHO",
+        keyFinding:
+          "1 kuudesta parista: hedelmättömyys on globaali kansanterveyshaaste",
+      },
+    ],
+  },
 
   // TASO 9
   {
@@ -452,6 +626,44 @@ export const NODES: ChainNode[] = [
     lindgrenInterpretation:
       "Metrinen takaisinkytkentä: biologinen vaste (TFR↓) muuttaa ympäristöä (kaupungistuminen) joka muuttaa metriikkaa (ambient-Ā↑) joka vahvistaa biologista vastetta. Tämä on geometrinen positiivinen palautesilmukka — harvinainen mutta ei ennennäkemätön fysiikassa (gravitaatioaaltojen itsevuorovaikutus yleisessä suhteellisuusteoriassa).",
     keyReferences: [],
+  },
+  {
+    id: "urbanization",
+    level: 9,
+    label: "Kaupungistuminen",
+    sublabel: "TFR↓ → muutto kaupunkiin",
+    epistemicLevel: "E",
+    title: "Kaupungistuminen takaisinkytkentänä",
+    mechanism:
+      "TFR:n lasku → pienemmät perheet → muutto kaupunkiin (koulu, työ, palvelut). Globaali kaupungistumisaste: 56% (2020) → 68% ennuste (2050). Kaupungissa tukiasematiheys on 10–100× maaseudun. Wi-Fi-verkkojen tiheys kaksinkertaistuu alle 2 vuodessa kaupungeissa. Jokainen uusi asukas lisää ambient-EMF-tarvetta.",
+    keyReferences: [
+      {
+        authors: "UN DESA 2019",
+        title: "World Urbanization Prospects",
+        journal: "United Nations",
+        keyFinding:
+          "68% maailman väestöstä asuu kaupungeissa vuonna 2050",
+      },
+    ],
+  },
+  {
+    id: "device_adoption",
+    level: 9,
+    label: "Laiteadoptio ↑",
+    sublabel: "5G, IoT, puettavat laitteet",
+    epistemicLevel: "E",
+    title: "Uusien laitetyyppien käyttöönotto",
+    mechanism:
+      "Älypuhelinpenetraatio kasvaa edelleen (2024: 6.9 miljardia). Uudet laitetyypit: AirPods (2016→), älykellot, VR-lasit, IoT-sensorit. 5G:n mm-aaltoalueet vaativat tiheämpää tukiasemaverkkoa (small cells). Starlink ja muut satelliittiverkot laajentavat kattavuuden alueille joilla ei aiemmin ollut ambient-EMF:ää. Teknologinen takaisinkytkentä: laitteiden kysyntä → infrastruktuuri → ambient-EMF↑.",
+    keyReferences: [
+      {
+        authors: "GSMA Intelligence 2024",
+        title: "Mobile Economy 2024",
+        journal: "GSMA",
+        keyFinding:
+          "6.9 miljardia matkapuhelinliittymää, 5G-käyttäjät 1.9 miljardia",
+      },
+    ],
   },
 ];
 
@@ -621,10 +833,123 @@ export const EDGES: ChainEdge[] = [
     label: "TFR↓ → urbanisaatio↑",
     epistemicLevel: "M|C",
   },
+  // Taso 4→5 (uudet)
+  {
+    from: "vgic",
+    to: "pathway_f",
+    label: "Ca²⁺/Vmem",
+    epistemicLevel: "L*",
+  },
+  // Taso 5→6 (uudet)
+  {
+    from: "pathway_d",
+    to: "testosterone",
+    label: "HPG-suppressio",
+    epistemicLevel: "E",
+  },
+  {
+    from: "pathway_a",
+    to: "amh",
+    label: "ROS → follikkeli",
+    epistemicLevel: "C",
+  },
+  {
+    from: "vgic",
+    to: "mtor",
+    label: "Ca²⁺ → mTOR",
+    epistemicLevel: "M|C",
+  },
+  {
+    from: "mtor",
+    to: "amh",
+    label: "follikulaarinen burnout",
+    epistemicLevel: "M|C",
+  },
+  {
+    from: "pathway_c",
+    to: "sleep",
+    label: "melatoniini↓",
+    epistemicLevel: "E",
+  },
+  {
+    from: "sdf",
+    to: "miscarriage",
+    label: "DNA-vaurio",
+    epistemicLevel: "C",
+  },
+  {
+    from: "pathway_a",
+    to: "epigenetic",
+    label: "ROS → metylaatio",
+    epistemicLevel: "C",
+  },
+  {
+    from: "pathway_f",
+    to: "implantation",
+    label: "bioelektrinen koodi",
+    epistemicLevel: "L*",
+  },
+  // Taso 6→7 (uudet)
+  {
+    from: "testosterone",
+    to: "motivation",
+    label: "T↓",
+    epistemicLevel: "E",
+  },
+  {
+    from: "sleep",
+    to: "motivation",
+    label: "uni↓ → hormonit↓",
+    epistemicLevel: "E",
+  },
+  { from: "amh", to: "fecundability_bio", epistemicLevel: "C" },
+  {
+    from: "epigenetic",
+    to: "fecundability_bio",
+    label: "transgenerationaalinen",
+    epistemicLevel: "C",
+  },
+  {
+    from: "fecundability_bio",
+    to: "art",
+    label: "biologinen lasku → ART",
+    epistemicLevel: "E",
+  },
+  // Taso 7→8 (uudet)
+  {
+    from: "art",
+    to: "fecundability",
+    label: "osittainen kompensaatio",
+    epistemicLevel: "E",
+  },
+  {
+    from: "miscarriage",
+    to: "asfr",
+    label: "raskausmenetys",
+    epistemicLevel: "C",
+  },
+  {
+    from: "fecundability",
+    to: "childlessness",
+    label: "matala p(raskaus)",
+    epistemicLevel: "E",
+  },
+  // Taso 9 (uudet — takaisinkytkentä tarkennettu)
   {
     from: "feedback",
-    to: "ambient",
-    label: "ambient-EMF↑",
+    to: "urbanization",
     epistemicLevel: "M|C",
+  },
+  {
+    from: "urbanization",
+    to: "device_adoption",
+    label: "tiheys → laitteet",
+    epistemicLevel: "E",
+  },
+  {
+    from: "device_adoption",
+    to: "ambient",
+    label: "infra → ambient↑",
+    epistemicLevel: "E",
   },
 ];

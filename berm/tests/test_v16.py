@@ -61,7 +61,10 @@ from berm.v16 import (
     PHARM_VALIDATION,
     feedback_loop_simulate,
     feedback_amplification,
+    vagal_oxytocin_pathway,
+    oxytocin_dual_pathway_diagnostic,
 )
+from berm.biology.pathways import l_reuteri_oxytocin_pathway
 
 
 @pytest.fixture(autouse=True)
@@ -810,3 +813,86 @@ def test_housing_unknown_country():
     from berm.exposure.housing import housing_emf_factor
     r = housing_emf_factor("UnknownCountry")
     assert r["net_housing_factor"] > 0
+
+
+# === L. reuteri oxytocin pathway (Pathway E extension) ===
+
+def test_l_reuteri_structure():
+    r = l_reuteri_oxytocin_pathway(0.5)
+    assert "l_reuteri_level" in r
+    assert "ot_microbiome_fraction" in r
+    assert "t_microbiome_fraction" in r
+    assert "sperm_microbiome_fraction" in r
+
+def test_l_reuteri_zero_emf():
+    r = l_reuteri_oxytocin_pathway(0.0)
+    assert r["l_reuteri_level"] == 1.0
+    assert r["ot_microbiome_fraction"] == 1.0
+
+def test_l_reuteri_high_emf_reduces():
+    r_low = l_reuteri_oxytocin_pathway(0.1)
+    r_high = l_reuteri_oxytocin_pathway(0.9)
+    assert r_high["ot_microbiome_fraction"] < r_low["ot_microbiome_fraction"]
+    assert r_high["t_microbiome_fraction"] < r_low["t_microbiome_fraction"]
+
+def test_l_reuteri_bounded():
+    r = l_reuteri_oxytocin_pathway(1.0)
+    assert r["ot_microbiome_fraction"] >= 0.3
+    assert r["t_microbiome_fraction"] >= 0.5
+
+
+# === Vagal oxytocin pathway (Pathway D extension) ===
+
+def test_vagal_structure():
+    r = vagal_oxytocin_pathway(20.0, 3.0)
+    assert "cortisol_elevation" in r
+    assert "vagal_tone" in r
+    assert "ot_vagal_fraction" in r
+    assert "chronic_hpa_load" in r
+    assert "selye_phase" in r
+
+def test_vagal_zero_emf():
+    r = vagal_oxytocin_pathway(0.0, 0.0)
+    assert r["cortisol_elevation"] == 1.0
+    assert r["vagal_tone"] == 1.0
+    assert r["ot_vagal_fraction"] == 1.0
+
+def test_vagal_high_emf_reduces_ot():
+    r_low = vagal_oxytocin_pathway(5.0, 1.0)
+    r_high = vagal_oxytocin_pathway(30.0, 5.0)
+    assert r_high["ot_vagal_fraction"] < r_low["ot_vagal_fraction"]
+
+def test_vagal_selye_phases():
+    r_early = vagal_oxytocin_pathway(5.0, 2.0)
+    r_late = vagal_oxytocin_pathway(100.0, 5.0)
+    assert r_early["selye_phase"] == "resistance"
+    assert r_late["selye_phase"] == "exhaustion"
+
+
+# === Dual OT pathway diagnostic ===
+
+def test_dual_ot_structure():
+    r = oxytocin_dual_pathway_diagnostic("SouthKorea", 2024, 29.0, 5.8)
+    assert "model_ot" in r
+    assert "diagnostic_ot" in r
+    assert "vagal_contribution" in r
+    assert "microbiome_contribution" in r
+    assert "convergence_note" in r
+
+def test_dual_ot_model_matches_behavioral():
+    import math
+    cum = 29.0
+    r = oxytocin_dual_pathway_diagnostic("SouthKorea", 2024, cum, 5.8)
+    expected_ot = math.exp(-0.010 * cum)
+    assert abs(r["model_ot"] - round(expected_ot, 4)) < 1e-4
+
+def test_dual_ot_in_report():
+    r = v16_country_tfr("SouthKorea", 2024)
+    assert "ot_dual_pathway" in r
+    assert "l_reuteri_pathway" in r
+    assert "vagal_pathway" in r
+
+def test_dual_ot_no_tfr_change():
+    """OT diagnostics must not change predictions."""
+    assert abs(v16_predicted_tfr("SouthKorea", 2024) - 0.7115661545691994) < 1e-6
+    assert abs(v16_predicted_tfr("Finland", 2024) - 1.333547799551896) < 1e-6

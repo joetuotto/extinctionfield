@@ -66,6 +66,27 @@ def dysbiosis_index(emf_norm: float) -> float:
     return ecoli_response(emf_norm) / lactobacillus_response(emf_norm)
 
 
+def l_reuteri_oxytocin_pathway(emf_norm: float) -> dict:
+    """L. reuteri -> oxytocin -> reproductive health (DIAGNOSTIC_ONLY).
+
+    Poutahidis 2014 (MIT): L. reuteri raises T, enlarges testes,
+    increases spermatogenesis via IL-17 suppression.
+    Erdman & Poutahidis 2016: L. reuteri upregulates OT via vagus.
+    """
+    l_reuteri = lactobacillus_response(emf_norm)
+    ot_from_microbiome = 0.3 + 0.7 * l_reuteri
+    t_from_microbiome = 0.5 + 0.5 * l_reuteri
+    sperm_from_microbiome = 0.4 + 0.6 * l_reuteri
+
+    return {
+        "l_reuteri_level": round(l_reuteri, 4),
+        "ot_microbiome_fraction": round(ot_from_microbiome, 4),
+        "t_microbiome_fraction": round(t_from_microbiome, 4),
+        "sperm_microbiome_fraction": round(sperm_from_microbiome, 4),
+        "mechanism": "L. reuteri → vagus → OT↑ + IL-17↓ → T↑ + spermatogenesis↑",
+    }
+
+
 def pathway_e(emf_norm: float, human_transfer: float = 0.5) -> float:
     """Microbiome pathway: dysbiosis -> SCFA loss + inflammation.
 

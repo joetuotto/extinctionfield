@@ -16,6 +16,21 @@ const t = {
     level: "Level",
     footNote:
       "This compilation is maintained as part of the BERM model documentation. Inclusion does not imply endorsement; studies are listed to show what each pathway rests on and where the gaps are. If you know of a study that should be added or believe a rating is incorrect, contributions are welcome via the project repository.",
+    attrBiasTitle: "Attribution Bias in Decline Research",
+    attrBiasDesc:
+      "EMF is structurally invisible in most ecological and reproductive research — not because it was tested and rejected, but because it was never considered. This section documents how conventional attributions (climate change, chemicals, habitat loss) become the default explanation for declines that may have an electromagnetic component.",
+    attrBiasP1Title: "Attribution bias",
+    attrBiasP1:
+      "When a decline is observed, researchers search for explanations among familiar factors. Climate change is well-funded and politically supported. Chemical pollution is regulated and measurable. EMF is unfamiliar to most biologists, unfunded by most agencies, and actively lobbied against by the telecommunications industry. A 2024 analysis of 92 potential drivers of insect decline in Germany did not include electromagnetic fields among the candidates — not because EMF was tested and rejected, but because it was never considered.",
+    attrBiasP2Title: "Evidence asymmetry",
+    attrBiasP2:
+      "There are hundreds of studies on climate change and insect decline. There are fewer than twenty on EMF and insect decline. This disparity does not reflect the relative importance of the two factors — it reflects the structure of research funding. The volume of evidence for a hypothesis tracks the volume of funding, not the strength of the causal relationship.",
+    attrBiasP3Title: "Causal masking",
+    attrBiasP3:
+      "Climate change and EMF infrastructure are temporally correlated: both grew between 1970 and 2024. An OLS regression cannot distinguish between them without an exogenous instrument. When a researcher controls for 'temperature,' they may inadvertently remove the EMF signal — because the two trends move together. The residual appears small, and the researcher concludes climate explains the decline. This is not a flaw in the researcher's analysis — it is a structural limitation of observational data.",
+    attrBiasLink: "See the full proxy masking analysis on the Sentinel Species page",
+    attrBiasNote:
+      "This is not an accusation of negligence. It is a structural observation about how research funding, conceptual vocabulary, and temporal confounding combine to make a specific signal invisible. The test that would resolve it — Faraday-shielded replication — is concrete and feasible.",
   },
   fi: {
     title: "Näyttökokoelma",
@@ -30,6 +45,21 @@ const t = {
     level: "Taso",
     footNote:
       "Tämä kokoelma ylläpidetään osana BERM-mallin dokumentaatiota. Sisällyttäminen ei tarkoita hyväksyntää; tutkimukset on listattu osoittamaan, mihin kukin reitti nojaa ja missä aukot ovat. Jos tiedät tutkimuksen, joka tulisi lisätä, tai uskot arvion olevan virheellinen, osallistuminen on tervetullutta projektin repositoryn kautta.",
+    attrBiasTitle: "Attribuutiovinouma vähenemätutkimuksessa",
+    attrBiasDesc:
+      "EMF on rakenteellisesti näkymätön useimmissa ekologisissa ja lisääntymistutkimuksissa — ei siksi, että se testattiin ja hylättiin, vaan siksi, ettei sitä koskaan harkittu. Tämä osio dokumentoi, miten perinteiset attribuutiot (ilmastonmuutos, kemikaalit, elinympäristön menetys) muodostuvat oletusselityksiksi vähenemille, joilla voi olla sähkömagneettinen komponentti.",
+    attrBiasP1Title: "Attribuutiovinouma",
+    attrBiasP1:
+      "Kun vähenemä havaitaan, tutkijat etsivät selityksiä tuttujen tekijöiden joukosta. Ilmastonmuutos on hyvin rahoitettu ja poliittisesti tuettu. Kemikaalipäästöt ovat säädeltyjä ja mitattavia. EMF on useimmille biologeille vieras, useimpien rahoituslaitosten rahoittama ja televiestintäteollisuuden aktiivisesti lobbaama. Vuoden 2024 analyysi 92 mahdollisesta hyönteisvähenemän ajurista Saksassa ei sisältänyt sähkömagneettisia kenttiä kandidaattien joukossa — ei siksi, että EMF testattiin ja hylättiin, vaan siksi, ettei sitä koskaan harkittu.",
+    attrBiasP2Title: "Näytön epäsymmetria",
+    attrBiasP2:
+      "On satoja tutkimuksia ilmastonmuutoksesta ja hyönteisten vähenemästä. EMF:stä ja hyönteisten vähenemästä on alle kaksikymmentä. Tämä epäsuhta ei heijasta kahden tekijän suhteellista merkitystä — se heijastaa tutkimusrahoituksen rakennetta. Näytön määrä hypoteesille seuraa rahoituksen määrää, ei kausaalisen suhteen vahvuutta.",
+    attrBiasP3Title: "Kausaalinen peittäminen",
+    attrBiasP3:
+      "Ilmastonmuutos ja EMF-infrastruktuuri ovat ajallisesti korreloituneet: molemmat kasvoivat 1970–2024. OLS-regressio ei voi erottaa niitä ilman eksogeenista instrumenttia. Kun tutkija kontrolloi 'lämpötilaa', hän saattaa vahingossa poistaa EMF-signaalin — koska kaksi trendiä liikkuvat yhdessä. Residuaali näyttää pieneltä, ja tutkija päättelee, että ilmasto selittää vähenemän. Tämä ei ole tutkijan analyysin virhe — se on havainnointidatan rakenteellinen rajoitus.",
+    attrBiasLink: "Katso koko proxy masking -analyysi Indikaattorilajit-sivulla",
+    attrBiasNote:
+      "Tämä ei ole syytös huolimattomuudesta. Se on rakenteellinen havainto siitä, miten tutkimusrahoitus, käsitteellinen sanasto ja ajallinen sekoittuminen yhdistyvät tehden tietyn signaalin näkymättömäksi. Testi, joka ratkaisisi asian — Faraday-suojattu replikaatio — on konkreettinen ja toteutettavissa.",
   },
 } as const;
 
@@ -350,6 +380,60 @@ export default async function EvidencePage({
           </section>
         );
       })}
+
+      <section id="attribution-bias" className="mb-14">
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-1">{d.attrBiasTitle}</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl">
+            {d.attrBiasDesc}
+          </p>
+        </div>
+
+        <div className="space-y-6 max-w-3xl">
+          <div className="border border-status-partial/40 bg-status-partial/5 rounded-lg p-5">
+            <h3 className="text-xs font-semibold text-status-partial uppercase tracking-wide mb-2">
+              {d.attrBiasP1Title}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.attrBiasP1}
+            </p>
+          </div>
+
+          <div className="border border-status-partial/40 bg-status-partial/5 rounded-lg p-5">
+            <h3 className="text-xs font-semibold text-status-partial uppercase tracking-wide mb-2">
+              {d.attrBiasP2Title}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.attrBiasP2}
+            </p>
+          </div>
+
+          <div className="border border-status-partial/40 bg-status-partial/5 rounded-lg p-5">
+            <h3 className="text-xs font-semibold text-status-partial uppercase tracking-wide mb-2">
+              {d.attrBiasP3Title}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.attrBiasP3}
+            </p>
+          </div>
+        </div>
+
+        <p className="text-sm mt-4">
+          <a
+            href={`/${locale}/sentinel#proxy-masking`}
+            className="text-accent hover:underline"
+          >
+            {d.attrBiasLink}
+          </a>
+          {" →"}
+        </p>
+
+        <div className="mt-4 p-4 rounded-lg bg-background border border-border max-w-3xl">
+          <p className="text-xs text-foreground-muted leading-relaxed">
+            {d.attrBiasNote}
+          </p>
+        </div>
+      </section>
 
       <section className="border-t border-border pt-8 mt-8">
         <p className="text-xs text-foreground-muted leading-relaxed max-w-3xl">

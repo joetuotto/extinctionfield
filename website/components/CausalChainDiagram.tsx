@@ -18,9 +18,11 @@ const LEVEL_GAP = 28;
 const LEVEL_GAP_COLLAPSED = 14;
 const LEVEL_LABEL_W = 36;
 const FEEDBACK_MARGIN = 50;
-const NODE_GAP = 12;
+const NODE_GAP = 8;
 const MAX_NODE_W = 170;
-const MIN_NODE_W = 130;
+const MIN_NODE_W = 110;
+const MAX_PER_ROW = 7;
+const ROW_INNER_GAP = 6;
 
 interface LayoutNode extends ChainNode {
   x: number;
@@ -50,31 +52,38 @@ function computeLayout(
   for (const lvl of sortedLevels) {
     const nodesInLevel = levels.get(lvl)!;
     const count = nodesInLevel.length;
-    const totalGaps = (count - 1) * NODE_GAP;
-    const nodeW = Math.max(
-      MIN_NODE_W,
-      Math.min(MAX_NODE_W, (usableW - totalGaps) / count)
-    );
-    const rowW = count * nodeW + totalGaps;
-    const startX = LEVEL_LABEL_W + FEEDBACK_MARGIN + (usableW - rowW) / 2;
-
     const isExpanded = expandedLevel === lvl;
     const isCollapsed = expandedLevel !== null && expandedLevel !== lvl;
     const h = isExpanded ? NODE_H_EXPANDED : isCollapsed ? NODE_H_COLLAPSED : NODE_H;
     const gap = isCollapsed ? LEVEL_GAP_COLLAPSED : LEVEL_GAP;
+    const numRows = Math.ceil(count / MAX_PER_ROW);
 
-    for (let i = 0; i < count; i++) {
-      layoutNodes.push({
-        ...nodesInLevel[i],
-        x: startX + i * (nodeW + NODE_GAP),
-        y: currentY,
-        w: nodeW,
-        h,
-        isExpanded,
-        isCollapsed,
-      });
+    for (let row = 0; row < numRows; row++) {
+      const rowStart = row * MAX_PER_ROW;
+      const rowEnd = Math.min(rowStart + MAX_PER_ROW, count);
+      const rowCount = rowEnd - rowStart;
+      const totalGaps = (rowCount - 1) * NODE_GAP;
+      const nodeW = Math.max(
+        MIN_NODE_W,
+        Math.min(MAX_NODE_W, (usableW - totalGaps) / rowCount)
+      );
+      const rowW = rowCount * nodeW + totalGaps;
+      const startX = LEVEL_LABEL_W + FEEDBACK_MARGIN + (usableW - rowW) / 2;
+
+      for (let i = 0; i < rowCount; i++) {
+        layoutNodes.push({
+          ...nodesInLevel[rowStart + i],
+          x: startX + i * (nodeW + NODE_GAP),
+          y: currentY,
+          w: nodeW,
+          h,
+          isExpanded,
+          isCollapsed,
+        });
+      }
+      currentY += h + (row < numRows - 1 ? ROW_INNER_GAP : 0);
     }
-    currentY += h + gap;
+    currentY += gap;
   }
 
   return { layoutNodes, canvasH: currentY + 10 };
@@ -109,7 +118,7 @@ export default function CausalChainDiagram() {
   const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [expandedLevel, setExpandedLevel] = useState<number | null>(null);
-  const canvasW = 1060;
+  const canvasW = 1200;
   const { layoutNodes, canvasH } = useMemo(
     () => computeLayout(NODES, canvasW, expandedLevel),
     [expandedLevel]
@@ -413,11 +422,12 @@ export default function CausalChainDiagram() {
               ["M", "Matemaattinen seuraus"],
               ["C", "Ehdokas"],
               ["L", "Premissi"],
+              ["L*", "Premissi (ei valid.)"],
             ] as const
           ).map(([lvl, lbl], i) => (
             <g
               key={lvl}
-              transform={`translate(${LEVEL_LABEL_W + FEEDBACK_MARGIN + i * 165}, ${canvasH - 12})`}
+              transform={`translate(${LEVEL_LABEL_W + FEEDBACK_MARGIN + i * 155}, ${canvasH - 12})`}
             >
               <circle cx={0} cy={0} r={4} fill={EPISTEMIC_COLORS[lvl]} />
               <text

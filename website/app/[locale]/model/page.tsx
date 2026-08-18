@@ -32,7 +32,7 @@ const t = {
     // Causal pathway diagram
     causalTitle: "Causal pathway diagram",
     causalDesc:
-      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Nine levels, 26 nodes, 31 edges. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
+      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Nine levels, 35 nodes, 50 edges. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
 
     // Lindgren chi coupling
     chiTitle: "Lindgren chi coupling equation",
@@ -189,7 +189,7 @@ const t = {
     // Causal pathway diagram
     causalTitle: "Kausaalireittikaavio",
     causalDesc:
-      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Yhdeksän tasoa, 26 solmua, 31 reunaa. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
+      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Yhdeksän tasoa, 35 solmua, 50 reunaa. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
 
     // Lindgren chi coupling
     chiTitle: "Lindgrenin chi-kytkentäyhtälö",

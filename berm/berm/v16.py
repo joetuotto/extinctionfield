@@ -38,7 +38,7 @@ from berm.data.countries import (
     get_country_params,
 )
 from berm.exposure.ambient import get_attenuation_factor
-from berm.biology.pathways import dysbiosis_index, pathway_f
+from berm.biology.pathways import dysbiosis_index, pathway_f, l_reuteri_oxytocin_pathway
 
 
 # === stdlib chi (no numpy dependency) ===
@@ -557,6 +557,60 @@ def emf_behavioral_factor_v3(adj_cum_emf: float) -> float:
     return max(0.1, combined)
 
 
+# === OT dual pathway diagnostics (DIAGNOSTIC_ONLY) ===
+
+
+def vagal_oxytocin_pathway(cum_emf: float, instant_emf: float) -> dict:
+    """HPA activation -> vagal suppression -> OT decline (DIAGNOSTIC_ONLY).
+
+    Porges 2001/2025: myelinated vagus inhibits HPA; chronic stress reverses.
+    Pawlak 2025: EMF -> corticosterone d=1.88.
+    Carter 2021: OT/AVP fundamental to mammalian sociality.
+    """
+    cortisol_elevation = 1.0 + 0.88 * min(1.0, instant_emf / 5.0)
+    vagal_tone = 1.0 / cortisol_elevation
+    ot_from_vagal = vagal_tone ** 0.5
+    chronic_hpa_load = 1 - math.exp(-0.008 * cum_emf)
+    selye_phase = "resistance" if chronic_hpa_load < 0.5 else "exhaustion"
+
+    return {
+        "cortisol_elevation": round(cortisol_elevation, 3),
+        "vagal_tone": round(vagal_tone, 4),
+        "ot_vagal_fraction": round(ot_from_vagal, 4),
+        "chronic_hpa_load": round(chronic_hpa_load, 4),
+        "selye_phase": selye_phase,
+        "mechanism": "EMF → HPA↑ → cortisol↑ → vagal suppression → OT↓",
+    }
+
+
+def oxytocin_dual_pathway_diagnostic(
+    country: str, year: int, cum_emf: float, instant_emf: float,
+) -> dict:
+    """Combined OT diagnostic from two convergent pathways (DIAGNOSTIC_ONLY).
+
+    Pathway 1 (HPA-vagal): EMF -> cortisol -> vagal suppression -> OT down.
+    Pathway 2 (microbiome): EMF -> dysbiosis -> L. reuteri down -> OT down.
+    Both converge on oxytocin, explaining behavioural OT = exp(-0.010*cumEMF).
+    """
+    emf_norm = min(1.0, instant_emf / 5.0)
+    vagal = vagal_oxytocin_pathway(cum_emf, instant_emf)
+    microbiome = l_reuteri_oxytocin_pathway(emf_norm)
+    model_ot = math.exp(-0.010 * cum_emf)
+    diagnostic_ot = vagal["ot_vagal_fraction"] * microbiome["ot_microbiome_fraction"]
+
+    return {
+        "model_ot": round(model_ot, 4),
+        "diagnostic_ot": round(diagnostic_ot, 4),
+        "vagal_contribution": vagal,
+        "microbiome_contribution": microbiome,
+        "convergence_note": (
+            "Both pathways converge on oxytocin. The model's exponential "
+            "OT = exp(-0.010 * cumEMF) approximates two independent "
+            "biological mechanisms that both suppress OT."
+        ),
+    }
+
+
 # === v16 True cultural rate with alpha compensation ===
 
 _v16_true_cultural_rates: dict[str, float] = {}
@@ -993,6 +1047,10 @@ def _build_country_report(
         "immigrant_tfr": imm_tfr,
         "native_tfr": native_tfr_val,
         "feedback_amplification": feedback_amplification(country, year),
+        "ot_dual_pathway": oxytocin_dual_pathway_diagnostic(
+            country, year, adj_cum, amb_ann + pers_ann),
+        "l_reuteri_pathway": l_reuteri_oxytocin_pathway(emf_norm),
+        "vagal_pathway": vagal_oxytocin_pathway(adj_cum, amb_ann + pers_ann),
     }
 
 
