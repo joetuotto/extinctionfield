@@ -18,6 +18,17 @@ from berm.physics.threegpp_convergence import (
     PTW_VALUES_SECONDS,
     DRX_CYCLES_SECONDS,
 )
+from berm.physics.envelope_psd import (
+    generate_synthetic_edrx_signal,
+    envelope_power,
+    downsample_to_1hz,
+    compute_psd,
+    xi_r42_from_psd,
+    find_edrx_peaks,
+    analyze_envelope,
+    load_iq_file,
+    plot_envelope_psd,
+)
 
 __all__ = [
     "gme_background_response",
@@ -32,4 +43,13 @@ __all__ = [
     "EDRX_CYCLES_SECONDS",
     "PTW_VALUES_SECONDS",
     "DRX_CYCLES_SECONDS",
+    "generate_synthetic_edrx_signal",
+    "envelope_power",
+    "downsample_to_1hz",
+    "compute_psd",
+    "xi_r42_from_psd",
+    "find_edrx_peaks",
+    "analyze_envelope",
+    "load_iq_file",
+    "plot_envelope_psd",
 ]
