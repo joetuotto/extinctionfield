@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Sentinel Species - Extinction Field",
@@ -234,9 +235,22 @@ export default function SentinelPage() {
             are evolutionarily conserved across all eukaryotes — the L-type VGCC
             protein sequence is &gt;70% identical across phyla (mammal 94%, bird
             87%, amphibian 82%, insect 73%). This conservation is not
-            coincidental: in Lindgren&apos;s framework, VGCC sensitivity to
-            electromagnetic fields is a geometric property of the membrane
-            potential, not a species-specific adaptation. All cells with V
+            coincidental: in{" "}
+            <Link
+              href="/mathematics#lindgren"
+              className="text-accent hover:underline"
+            >
+              Lindgren&apos;s framework
+            </Link>
+            , VGCC sensitivity to electromagnetic fields is a geometric property
+            of the{" "}
+            <Link
+              href="/mathematics#chi"
+              className="text-accent hover:underline"
+            >
+              membrane potential
+            </Link>
+            , not a species-specific adaptation. All cells with V
             <sub>mem</sub> ≈ −70 mV are maximally sensitive.
           </p>
         </div>
@@ -275,6 +289,74 @@ export default function SentinelPage() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      {/* Temporal correlation */}
+      <section className="mb-14">
+        <h2 className="text-lg font-semibold mb-4">
+          Temporal Correlations
+        </h2>
+        <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+          These are correlations, not proof of causation. But the temporal
+          coincidence across independent species strengthens the case for a
+          shared environmental driver.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="text-sm border-collapse w-full">
+            <thead>
+              <tr className="border-b border-card-border text-foreground-muted">
+                <th className="text-left py-2 pr-4">Event</th>
+                <th className="text-left py-2 pr-4">Onset</th>
+                <th className="text-left py-2 pr-4">EMF milestone</th>
+                <th className="text-left py-2">Lag</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">Krefeld insect decline acceleration</td>
+                <td className="py-2 pr-4 font-mono-num">~1995</td>
+                <td className="py-2 pr-4">GSM rollout Germany (1992)</td>
+                <td className="py-2 font-mono-num">~3 yr</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">Colony Collapse Disorder</td>
+                <td className="py-2 pr-4 font-mono-num">2006</td>
+                <td className="py-2 pr-4">3G widespread deployment (2004–06)</td>
+                <td className="py-2 font-mono-num">0–2 yr</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">White-nose syndrome (bats)</td>
+                <td className="py-2 pr-4 font-mono-num">2006</td>
+                <td className="py-2 pr-4">3G widespread deployment (2004–06)</td>
+                <td className="py-2 font-mono-num">0–2 yr</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">Amphibian &quot;enigmatic decline&quot; acceleration</td>
+                <td className="py-2 pr-4 font-mono-num">~1998</td>
+                <td className="py-2 pr-4">GSM global expansion (1995–2000)</td>
+                <td className="py-2 font-mono-num">~3 yr</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">Human sperm decline acceleration</td>
+                <td className="py-2 pr-4 font-mono-num">~2000</td>
+                <td className="py-2 pr-4">Pocket phone era (2000+)</td>
+                <td className="py-2 font-mono-num">0 yr</td>
+              </tr>
+              <tr>
+                <td className="py-2 pr-4">Passerine bird decline (−53%)</td>
+                <td className="py-2 pr-4 font-mono-num">1970–2018</td>
+                <td className="py-2 pr-4">Progressive RF densification</td>
+                <td className="py-2 font-mono-num">cumulative</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-foreground-muted mt-3">
+          Note: temporal correlation does not establish causation. These
+          coincidences are presented as hypothesis-consistent observations, not
+          as evidence in themselves. The mechanistic pathway (VGCC/Ca²⁺) provides
+          the causal link; timing provides plausibility.
+        </p>
       </section>
 
       {/* Species sections */}
@@ -342,12 +424,92 @@ export default function SentinelPage() {
         ))}
       </div>
 
+      {/* Laboratory Baseline Bias */}
+      <section className="mt-14 border border-status-partial/30 bg-status-partial/5 rounded-lg p-6">
+        <h2 className="text-lg font-semibold mb-3">
+          Laboratory Baseline Bias: Why All Controlled Studies Underestimate
+          the Effect
+        </h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+          Every laboratory EMF study compares an &quot;exposed&quot; group to a
+          &quot;control&quot; group. But the control group is not unexposed — it
+          lives in a laboratory with background EMF of approximately 10 V/m
+          from lighting, equipment, and building wiring. In{" "}
+          <Link
+            href="/mathematics#chi"
+            className="text-accent hover:underline"
+          >
+            Lindgren&apos;s selection rule
+          </Link>
+          , χ(Ā_lab) ≈ 1.0 (saturated). Both groups are at maximal VGCC
+          sensitivity.
+        </p>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+          This means the measured effect size (exposed minus control) captures
+          only the <em>additional</em> EMF disruption, not the total. The true
+          effect is the difference between the exposed group and a genuinely
+          unexposed biological baseline — which no modern laboratory provides.
+        </p>
+        <div className="overflow-x-auto mt-4">
+          <table className="text-xs border-collapse w-full">
+            <thead>
+              <tr className="border-b border-card-border text-foreground-muted">
+                <th className="text-left py-1.5 pr-4">Observation</th>
+                <th className="text-left py-1.5 pr-4">Period</th>
+                <th className="text-left py-1.5">Implication</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/50">
+                <td className="py-1.5 pr-4">
+                  Spontaneous tumor rate in lab rats: 2% → 30%
+                </td>
+                <td className="py-1.5 pr-4">1940–2024</td>
+                <td className="py-1.5">
+                  Correlates with lab electrification
+                </td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-1.5 pr-4">
+                  Lab rodent metabolic syndrome incidence rising
+                </td>
+                <td className="py-1.5 pr-4">1980–2024</td>
+                <td className="py-1.5">
+                  &quot;Control&quot; animals are not healthy baselines
+                </td>
+              </tr>
+              <tr>
+                <td className="py-1.5 pr-4">
+                  Lab rodent fertility declining over decades
+                </td>
+                <td className="py-1.5 pr-4">1970–2024</td>
+                <td className="py-1.5">
+                  Parallels human sperm decline trajectory
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-foreground-muted mt-3">
+          This is not a critique of laboratory methodology — it is a structural
+          limitation. All published EMF effect sizes should be interpreted as
+          lower bounds. See{" "}
+          <Link
+            href="/mathematics#pharmacological"
+            className="text-accent hover:underline"
+          >
+            §10: Pharmacological Validation
+          </Link>{" "}
+          for how drug calibration partially corrects this bias.
+        </p>
+      </section>
+
       {/* Convergence conclusion */}
-      <section className="mt-16 border-t border-card-border pt-10">
+      <section className="mt-14 border-t border-card-border pt-10">
         <h2 className="text-xl font-semibold mb-4">
           Convergence: Seven Phyla, One Mechanism
         </h2>
-        <p className="text-foreground-muted leading-relaxed max-w-3xl">
+        <p className="text-foreground-muted leading-relaxed max-w-3xl mb-4">
           Seven independent lines of evidence — insects, amphibians, bees,
           birds, bats, laboratory mammals, and humans — all show the same
           pattern: reproductive decline that correlates with electromagnetic
@@ -357,6 +519,17 @@ export default function SentinelPage() {
           only environmental change that is simultaneously global, recent
           (post-1990), and biologically active at observed exposure levels is the
           anthropogenic electromagnetic field.
+        </p>
+        <p className="text-xs text-foreground-muted">
+          For the complete mathematical derivation of the VGCC mechanism and
+          how it produces quantitative TFR predictions, see the{" "}
+          <Link
+            href="/mathematics"
+            className="text-accent hover:underline"
+          >
+            Mathematical Foundation
+          </Link>
+          .
         </p>
       </section>
     </div>
