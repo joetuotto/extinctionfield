@@ -143,6 +143,60 @@ const t: { en: Dict; fi: Dict } = {
         uncertaintyText:
           "Chemical and EMF effects are difficult to separate epidemiologically because both increased during the same period. BERM's partition (EMF dominant, chemicals secondary) is a modeling assumption, not an empirically established ratio. The proxy masking argument identifies a structural blind spot but does not prove EMF is the cause. A Faraday-shielded replication study has not been conducted. Interaction effects between EDCs and EMF are plausible but not modeled.",
       },
+      {
+        id: "pronatalism",
+        claim: "TFR is declining because people don't want children.",
+        paragraphs: [
+          "This is the strongest version of the cultural objection. If fertility decline were purely volitional, pronatalist policies should reverse it. They don't. The empirical record of pronatalist interventions is a natural experiment that tests the volitional hypothesis — and the results are negative.",
+          "Hungary spends 5% of GDP on family support (the highest in the OECD). TFR rose from 1.23 (2011) to 1.59 (2021), then fell back to 1.51 (2023). The gain was temporary and did not reach replacement. South Korea has spent over $270 billion on pronatalist policies since 2006. TFR continued falling: 1.17 (2006) → 0.72 (2023). Singapore offers up to $190,000 in birth-related incentives per family. TFR: 1.04 (2023). Japan's multi-decade pronatalist effort has failed to reverse the trend: TFR fell from 1.26 (2005) to 1.20 (2024).",
+          "Nordic countries — the gold standard for family-friendly policy (paid parental leave, subsidized childcare, gender equality) — are also declining. Finland: 1.87 (2010) → 1.32 (2024). Sweden: 1.91 (2015) → 1.45 (2024). Norway: 1.98 (2009) → 1.41 (2024). These countries already have the policies that pronatalists advocate, and fertility is still falling.",
+          "The volitional model predicts that removing financial and logistical barriers should restore fertility. The data shows the opposite: even massive financial incentives produce at best a temporary, partial recovery. BERM explains this pattern: pronatalist policies address cultural factors (Level 3) but cannot compensate for declining biological capacity (Level 1). You cannot incentivize your way past impaired spermatogenesis, disrupted ovulation, or suppressed pair-bonding hormones.",
+          "Desire-for-children surveys confirm the gap. Eurobarometer (2018) shows Europeans desire 2.3 children on average but achieve 1.5 — a gap of 0.8 that financial incentives have failed to close. This gap between desired and achieved fertility is itself a signal: if decline were purely volitional, desired fertility would match achieved fertility.",
+        ],
+        evidenceLinks: [
+          { label: "Country-level TFR data", href: "/explorer" },
+          { label: "Biological capacity model", href: "/mathematics#biocap" },
+          { label: "Behavioral factor (hormones)", href: "/mathematics#behavioral" },
+          { label: "Locked predictions", href: "/predictions" },
+        ],
+        uncertaintyText:
+          "Pronatalist policy effectiveness is difficult to evaluate causally — countries that adopt strong policies may differ from those that don't. The desire-fertility gap could partly reflect economic constraints not captured by policy. Some pronatalist interventions may not have been implemented long enough to show full effects. BERM's interpretation (biological capacity limits the response) is consistent with the data but not the only possible explanation.",
+      },
+      {
+        id: "ehs-provocation",
+        claim: "EHS provocation studies show EMF has no effect on people.",
+        paragraphs: [
+          "Provocation studies measure the wrong thing. They ask: 'Do you feel the field?' This is a subjective perception that does not require a biological effect. BERM predicts OBJECTIVE changes (Ca²⁺, ROS, HRV, cortisol) that occur unconsciously. The absence of conscious detection does not imply the absence of biological response.",
+          "Belpomme 2015/2022 (N≈1000) measured objective biomarkers in EHS patients: histaminemia↑ 40%, nitrotyrosine↑ 28% (ONOO⁻/BBB opening marker), S100B↑ 15%, melatonin/creatinine↓ in all cases. These are exactly the markers predicted by BERM's VGCC→Ca²⁺→ROS→BBB pathway. PMC 10226401 (2023) measured HRV in HEALTHY volunteers under Wi-Fi: parasympathetic tone fell significantly (p=0.036), sympathetic tone rose (p=0.002). These were not EHS patients — objective autonomic change occurred in all subjects.",
+          "Provocation null results have four structural explanations: (a) They do not genotype CACNA1C — the population average masks a subgroup response. A 2024 medrxiv study is the first to genotype VGCC variants in an EMF study, confirming 'striking inter-individual differences.' (b) They do not control for anatomical differences (skull thickness, fat layer) that change internal field distribution. (c) They do not control for cumulative exposure history (Selye phase modulates the response). (d) The control group is NOT EMF-free (laboratory baseline bias).",
+          "The discriminating test: a provocation study measuring HRV and Ca²⁺ markers (not subjective symptoms), genotyping CACNA1C, with the control condition in a Faraday-shielded room.",
+        ],
+        evidenceLinks: [
+          { label: "Individual susceptibility evidence", href: "/evidence#individual-susceptibility" },
+          { label: "Laboratory Baseline Bias", href: "/evidence#lab-baseline" },
+          { label: "Mathematical basis (§11)", href: "/mathematics#individual-susceptibility" },
+        ],
+        uncertaintyText:
+          "Belpomme's biomarkers are elevated only in subsets (15–40%), and it has not been shown that the SAME patients have ALL markers elevated simultaneously (PMC12314686, 2025). The CACNA1C genotyping study is a preprint (medrxiv), not yet peer-reviewed. The Selye phase quantification is heuristic, not validated. This is a structural critique of study methodology, not proof that EMF causes EHS.",
+      },
+      {
+        id: "short-experiments",
+        claim: "Short-term exposure studies don't find an effect.",
+        paragraphs: [
+          "This is actually what BERM predicts. The model distinguishes between acute response and chronic cumulation — they are different phenomena requiring different experimental designs.",
+          "DNA repair (BER pathway) has a half-life of approximately 6 hours (Dianov & Hübscher 2013). A typical short-term study exposes for 2 hours and then allows 22 hours of recovery. At this ratio, repair capacity is sufficient: approximately 93% of damage is repaired before the next cycle. Net daily accumulation is negligible. This is why short-term studies find null results — they are measuring a regime where biological defense mechanisms are working as designed.",
+          "Modern human exposure is the opposite: approximately 22 hours of EMF (Wi-Fi, cellular, IoT) with only 2 hours truly EMF-free (deep sleep, perhaps). At this ratio, repair capacity is overwhelmed: only about 21% of daily damage is repaired. The remaining 79% accumulates. Over a year, this produces massive oxidative burden. Manta et al. (2014) demonstrated this directly in Drosophila ovaries: short EMF exposure — ROS returned to baseline; long EMF exposure — ROS did NOT return to baseline.",
+          "The REFLEX consortium (Diem 2005) found a further counter-intuitive result: intermittent exposure produces MORE DNA damage than continuous exposure at the same total dose. BERM explains this through VGCC gating asymmetry — channel opening is faster than closing, so each off→on field transition generates a transient Ca²⁺ spike that exceeds the steady-state level. Repeated transitions = greater total Ca²⁺ load. McCarty (2011) confirmed in a double-blind study that symptoms correlated with field transitions, not field strength.",
+          "The discriminating test: a long-term study (months, not hours) comparing 22h/day exposure with 2h recovery versus 4h/day exposure with 20h recovery, measuring cumulative oxidative markers (nitrotyrosine, lipid peroxidation, 8-OHdG). BERM predicts the high-exposure group will show exponentially more damage than a linear dose-response model would predict.",
+        ],
+        evidenceLinks: [
+          { label: "Recovery window evidence", href: "/evidence" },
+          { label: "Cumulative exposure model (§3)", href: "/mathematics#two-channel" },
+          { label: "Laboratory Baseline Bias", href: "/evidence#lab-baseline" },
+        ],
+        uncertaintyText:
+          "The BER half-life of ~6h is an estimate for one specific repair pathway; total DNA repair involves multiple pathways (NER, HR, NHEJ) with different kinetics. The recovery window model is simplified — real repair is more complex. The REFLEX data (Diem 2005) has been disputed (Vienna investigation into possible data manipulation), though the intermittent > continuous finding has been reported independently. The 22h/2h exposure ratio for modern humans is an estimate that varies by individual.",
+      },
     ],
   },
   fi: {
@@ -266,6 +320,60 @@ const t: { en: Dict; fi: Dict } = {
         ],
         uncertaintyText:
           "Kemikaali- ja EMF-vaikutuksia on vaikea erottaa epidemiologisesti, koska molemmat lisääntyivät samana ajanjaksona. BERM:n jako (EMF hallitseva, kemikaalit toissijainen) on mallinnusoletus, ei empiirisesti vakiintunut suhdeluku. Proxy masking -argumentti tunnistaa rakenteellisen sokean pisteen mutta ei todista EMF:n olevan syy. Faraday-suojattua replikaatiotutkimusta ei ole tehty. Vuorovaikutusvaikutukset EDC:iden ja EMF:n välillä ovat uskottavia mutta mallintamattomia.",
+      },
+      {
+        id: "pronatalism",
+        claim: "TFR laskee, koska ihmiset eivät halua lapsia.",
+        paragraphs: [
+          "Tämä on kulttuurivastaväitteen vahvin muoto. Jos hedelmällisyyden lasku olisi puhtaasti tahdonalaista, pronatalismipolitiikkojen pitäisi kääntää se. Ne eivät tee sitä. Pronatalististen interventioiden empiirinen tietue on luonnonkoe, joka testaa tahdonalaista hypoteesia — ja tulokset ovat negatiivisia.",
+          "Unkari käyttää 5 % BKT:stä perhetukeen (OECD:n korkein). TFR nousi 1,23:sta (2011) 1,59:ään (2021) ja laski sitten takaisin 1,51:een (2023). Nousu oli tilapäinen eikä saavuttanut uusiutumistasoa. Etelä-Korea on käyttänyt yli 270 miljardia dollaria pronatalismipolitiikkoihin vuodesta 2006. TFR jatkoi laskuaan: 1,17 (2006) → 0,72 (2023). Singapore tarjoaa jopa 190 000 dollaria syntyvyyskannustimia perhettä kohti. TFR: 1,04 (2023). Japanin vuosikymmeniä kestänyt pronatalistinen pyrkimys ei ole kääntänyt trendiä: TFR laski 1,26:sta (2005) 1,20:een (2024).",
+          "Pohjoismaat — perheystävällisen politiikan kultastandardi (palkallinen vanhempainvapaa, tuettu päivähoito, sukupuolten tasa-arvo) — laskevat myös. Suomi: 1,87 (2010) → 1,32 (2024). Ruotsi: 1,91 (2015) → 1,45 (2024). Norja: 1,98 (2009) → 1,41 (2024). Näillä mailla on jo ne politiikat, joita pronatasmia kannattavat ajavat, ja hedelmällisyys laskee silti.",
+          "Tahdonalainen malli ennustaa, että taloudellisten ja logististen esteiden poistamisen pitäisi palauttaa hedelmällisyys. Data osoittaa päinvastaista: massiivisetkin taloudelliset kannustimet tuottavat parhaimmillaan tilapäisen, osittaisen palautumisen. BERM selittää tämän kuvion: pronatalismipolitiikat kohdistuvat kulttuurisiin tekijöihin (taso 3) mutta eivät voi kompensoida heikkenevää biologista kapasiteettia (taso 1). Ei voi kannustimilla ohittaa heikentynyttä spermatogeneesiä, häiriintynyttä ovulaatiota tai tukahdutettuja parinmuodostushormoneja.",
+          "Lapsitovekyselyt vahvistavat kuilun. Eurobarometri (2018) osoittaa, että eurooppalaiset haluavat keskimäärin 2,3 lasta mutta saavuttavat 1,5 — kuilu 0,8, jota taloudelliset kannustimet eivät ole onnistuneet kuromaan umpeen. Tämä kuilu halutun ja toteutuneen hedelmällisyyden välillä on itsessään signaali: jos lasku olisi puhtaasti tahdonalaista, haluttu hedelmällisyys vastaisi toteutunutta.",
+        ],
+        evidenceLinks: [
+          { label: "Maatason TFR-data", href: "/explorer" },
+          { label: "Biologisen kapasiteetin malli", href: "/mathematics#biocap" },
+          { label: "Käyttäytymistekijä (hormonit)", href: "/mathematics#behavioral" },
+          { label: "Lukitut ennusteet", href: "/predictions" },
+        ],
+        uncertaintyText:
+          "Pronatalismipolitiikkojen tehokkuutta on vaikea arvioida kausaalisesti — politiikkoja omaksuvat maat voivat poiketa niistä, jotka eivät omaksu. Halu-hedelmällisyyskuilu voi osittain heijastaa taloudellisia rajoitteita, joita politiikka ei kata. Joitakin pronatalistisia interventioita ei ehkä ole toteutettu tarpeeksi pitkään täysien vaikutusten näyttämiseksi. BERM:n tulkinta (biologinen kapasiteetti rajoittaa vastetta) on yhdenmukainen datan kanssa mutta ei ainoa mahdollinen selitys.",
+      },
+      {
+        id: "ehs-provocation",
+        claim: "EHS-provokaatiotutkimukset osoittavat, ettei EMF vaikuta ihmisiin.",
+        paragraphs: [
+          "Provokaatiotutkimukset mittaavat väärää asiaa. Ne kysyvät: 'Tunnetko kentän?' Tämä on subjektiivinen havainto, joka ei edellytä biologista vaikutusta. BERM ennustaa OBJEKTIIVISIA muutoksia (Ca²⁺, ROS, HRV, kortisoli), jotka tapahtuvat tiedostamatta. Tietoisen havainnon puuttuminen ei tarkoita biologisen vasteen puuttumista.",
+          "Belpomme 2015/2022 (N≈1000) mittasi objektiivisia biomarkkereita EHS-potilaissa: histaminemia↑ 40 %, nitrotyrosiini↑ 28 % (ONOO⁻/veri-aivoesteen avautumismarkkeri), S100B↑ 15 %, melatoniini/kreatiniini↓ kaikissa tapauksissa. Nämä ovat täsmälleen BERM:n VGCC→Ca²⁺→ROS→BBB-reitin ennustamat markkerit. PMC 10226401 (2023) mittasi HRV:tä TERVEISSÄ vapaaehtoisissa Wi-Fi-altistuksessa: parasympaattinen tonus laski merkitsevästi (p=0,036), sympaattinen tonus nousi (p=0,002). Nämä eivät olleet EHS-potilaita — objektiivinen autonominen muutos tapahtui kaikissa koehenkilöissä.",
+          "Provokaation nollatuloksilla on neljä rakenteellista selitystä: (a) Ne eivät genotyypitä CACNA1C:tä — populaatiokeskiarvo peittää alaryhmän vasteen. Vuoden 2024 medrxiv-tutkimus on ensimmäinen, joka genotyypittää VGCC-variantit EMF-tutkimuksessa ja vahvistaa 'silmiinpistävät yksilöiden väliset erot.' (b) Ne eivät kontrolloi anatomisia eroja (kallon paksuus, rasvakerros), jotka muuttavat sisäistä kenttäjakaumaa. (c) Ne eivät kontrolloi kumulatiivista altistushistoriaa (Selye-vaihe moduloi vastetta). (d) Kontrolliryhmä EI ole EMF-vapaa (laboratorion perustasobias).",
+          "Erotteleva testi: provokaatiotutkimus, joka mittaa HRV:tä ja Ca²⁺-markkereita (ei subjektiivisia oireita), genotyypittää CACNA1C:n, ja kontrollitilanteessa käytetään Faraday-suojattua huonetta.",
+        ],
+        evidenceLinks: [
+          { label: "Yksilöllisen herkkyyden todisteet", href: "/evidence#individual-susceptibility" },
+          { label: "Laboratorion perustasobias", href: "/evidence#lab-baseline" },
+          { label: "Matemaattinen perusta (§11)", href: "/mathematics#individual-susceptibility" },
+        ],
+        uncertaintyText:
+          "Belpommen biomarkkerit ovat koholla vain osajoukoissa (15–40 %), eikä ole osoitettu, että SAMOILLA potilailla KAIKKI markkerit olisivat koholla samanaikaisesti (PMC12314686, 2025). CACNA1C-genotyypitystutkimus on preprintti (medrxiv), ei vielä vertaisarvioitu. Selye-vaiheen kvantifiointi on heuristista, ei validoitua. Tämä on rakenteellinen kritiikki tutkimusmenetelmistä, ei todiste siitä, että EMF aiheuttaa EHS:n.",
+      },
+      {
+        id: "short-experiments",
+        claim: "Lyhytaikaiset altistuskokeet eivät löydä vaikutusta.",
+        paragraphs: [
+          "Juuri tätä BERM ennustaa. Malli erottaa akuutin vasteen ja kroonisen kumulaation — ne ovat eri ilmiöitä, jotka vaativat erilaiset koeasetelmat.",
+          "DNA-korjauksen (BER-reitti) puoliintumisaika on noin 6 tuntia (Dianov & Hübscher 2013). Tyypillinen lyhytaikaiskoe altistaa 2 tuntia ja sallii 22 tuntia palautumista. Tällä suhteella korjauskapasiteetti riittää: noin 93 % vauriosta korjataan ennen seuraavaa sykliä. Nettokumulaatio on merkityksetöntä. Siksi lyhytkokeet antavat nollatuloksia — ne mittaavat aluetta, jossa biologiset puolustusmekanismit toimivat suunnitellulla tavalla.",
+          "Moderni ihmisaltistus on päinvastainen: noin 22 tuntia EMF:ää (Wi-Fi, matkapuhelin, IoT) ja vain 2 tuntia todella EMF-vapaata aikaa (syvä uni). Tällä suhteella korjauskapasiteetti ylikuormittuu: vain noin 21 % päivittäisestä vauriosta korjataan. Loput 79 % kumuloituvat. Vuodessa tämä tuottaa massiivisen oksidatiivisen kuorman. Manta ym. (2014) osoittivat tämän suoraan Drosophilan munasarjoissa: lyhyt EMF-altistus — ROS palautui lähtötasolle; pitkä EMF-altistus — ROS EI palautunut lähtötasolle.",
+          "REFLEX-konsortio (Diem 2005) havaitsi lisäksi vastaintuitiivisen tuloksen: katkonainen altistus tuottaa ENEMMÄN DNA-vaurioita kuin jatkuva samalla kokonaisannoksella. BERM selittää tämän VGCC-portin asymmetrialla — kanavan avautuminen on nopeampaa kuin sulkeutuminen, joten jokainen off→on-kenttäsiirtymä synnyttää ohimenevän Ca²⁺-piikin, joka ylittää vakiotilan. Toistuvat siirtymät = suurempi kokonais-Ca²⁺-kuorma. McCarty (2011) vahvisti tuplasokkokokeessa, että oireet korreloivat kenttäsiirtymien, eivät kenttävoimakkuuden kanssa.",
+          "Erotteleva testi: pitkäaikaistutkimus (kuukausia, ei tunteja), jossa verrataan 22h/pv altistusta 2h palautumisella ja 4h/pv altistusta 20h palautumisella, mitaten kumulatiivisia oksidatiivisia markkereita (nitrotyrosiini, lipidiperoksidaatio, 8-OHdG). BERM ennustaa, että korkean altistuksen ryhmä osoittaa eksponentiaalisesti enemmän vaurioita kuin lineaarinen annos-vastemalli ennustaisi.",
+        ],
+        evidenceLinks: [
+          { label: "Palautumisikkunan todisteet", href: "/evidence" },
+          { label: "Kumulatiivinen altistusmalli (§3)", href: "/mathematics#two-channel" },
+          { label: "Laboratorion perustasobias", href: "/evidence#lab-baseline" },
+        ],
+        uncertaintyText:
+          "BER:n ~6h puoliintumisaika on arvio yhdelle korjausreitille; kokonais-DNA-korjaus käsittää useita reittejä (NER, HR, NHEJ), joilla on eri kinetiikka. Palautumisikkunamalli on yksinkertaistettu — todellinen korjaus on monimutkaisempaa. REFLEX-data (Diem 2005) on kiistetty (Wienin tutkinta mahdollisesta datan manipuloinnista), vaikka katkonainen > jatkuva -havainto on raportoitu itsenäisesti muualla. Modernin ihmisen 22h/2h altistussuhde on arvio, joka vaihtelee yksilöittäin.",
       },
     ],
   },

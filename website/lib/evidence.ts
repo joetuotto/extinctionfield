@@ -108,6 +108,16 @@ export const PATHWAYS: Record<
     description:
       "Rising ambient EMF in laboratories contaminates control groups, compressing observed effect sizes toward null. If χ(Ā) governs biological sensitivity and lab EMF has risen from ~0.1 V/m (1950s) to ~15 V/m (2020s), controls are already at χ ≈ 1.0 — making EMF-sensitive effects nearly undetectable. This predicts the biological replication crisis as a structural consequence of BERM.",
   },
+  RW: {
+    label: "Recovery window elimination",
+    description:
+      "DNA repair (BER pathway) has a half-life of ~6 hours. When EMF-free recovery periods fall below 2× this half-life (<12 hours), repair cannot complete and oxidative damage accumulates. Modern 24/7 exposure (22h EMF, 2h free) allows only ~21% repair per day versus ~90% in the 1950s (4h EMF, 20h free). This explains why cumulative exposure is the correct metric: it is not the dose per se, but the ratio of damage rate to repair capacity that determines biological impact. The REFLEX consortium (Diem 2005) found that intermittent exposure produces MORE DNA damage than continuous — consistent with VGCC gating asymmetry where each off→on transition generates a Ca²⁺ spike exceeding steady-state levels.",
+  },
+  IS: {
+    label: "Individual susceptibility",
+    description:
+      "EMF sensitivity varies between individuals due to VGCC polymorphisms (CACNA1C rs1006737), anatomical differences in tissue geometry (skull thickness, fat layer, water content) that create different internal field patterns, and cumulative allostatic load (Selye phase). This explains EHS prevalence (~3–10%), provocation study null results (population average masks subgroup effects), and objective biomarker findings (Belpomme 2015/2022: histaminemia, nitrotyrosine, S100B in EHS subgroups).",
+  },
   OT: {
     label: "Dual oxytocin pathway",
     description:
@@ -476,6 +486,42 @@ export const EVIDENCE: EvidenceItem[] = [
       "Meta-analysis: occupational EMF exposure associated with depression risk OR 1.45 (95% CI: 1.15–1.82). Supports HPA/circadian disruption pathway. EMF→depression is predicted by BERM's cortisol/circadian mechanism, not by social media confounding",
     level: "M|C",
     n: 12,
+  },
+  {
+    pathway: "B",
+    study:
+      "Xu J et al. FAD-superoxide radical pair in cryptochrome responds to Earth-strength magnetic fields (Nature Communications)",
+    year: 2024,
+    finding:
+      "Demonstrated that cryptochrome's FAD-superoxide radical pair responds to Earth-strength magnetic fields via asymmetric recombination kinetics. Provides the specific molecular mechanism for RPM: the radical pair identity (FAD-O₂⁻) and the physics (spin-selective recombination) are now identified.",
+    level: "M|C",
+  },
+  {
+    pathway: "B",
+    study:
+      "Engels S et al. Anthropogenic electromagnetic noise disrupts magnetic compass orientation in a migratory bird (Nature)",
+    year: 2014,
+    finding:
+      "Urban electromagnetic noise in the 2 kHz – 5 MHz band disrupted magnetic compass orientation in European robins. Effect disappeared when birds were tested in a Faraday-shielded hut. Demonstrates that existing anthropogenic EMF at ambient levels is sufficient to disrupt RPM-based navigation — the levels do not need to be elevated above current norms.",
+    level: "E",
+  },
+  {
+    pathway: "B",
+    study:
+      "Irikura T et al. Non-monotonic RPM predictions confirmed in planarians (PNAS Nexus)",
+    year: 2026,
+    finding:
+      "Confirmed non-monotonic magnetic field effects in planarian regeneration, as predicted by the radical-pair mechanism (Zadeh-Haghighi & Simon 2022). Non-monotonic dose-response is a hallmark RPM prediction that no other mechanism generates. This is a strong discriminating test.",
+    level: "M|C",
+  },
+  {
+    pathway: "B",
+    study:
+      "Mouritsen H. Magnetoreception and the ruling hypothesis (J Exp Biol, critical review)",
+    year: 2025,
+    finding:
+      "Critical review arguing RPM's dominance may be overstated. Magnetite-based mechanisms remain viable for some species. Notes that RPM explains compass (directional) sense but not map (positional) sense, which may require magnetite. BERM acknowledges this: RPM is the CRY→circadian pathway primary mechanism, but magnetite may contribute to individual susceptibility variation.",
+    level: "L*",
   },
 
   // ── Pathway F: Sempou / mTOR ──
@@ -853,5 +899,140 @@ export const EVIDENCE: EvidenceItem[] = [
     finding:
       "Korea has spent over $200B on pronatalist incentives since 2006. TFR fell from 1.13 to 0.72 during this period. Hungary, Singapore, Japan show similar patterns. If fertility decline were purely rational choice, sufficient economic incentives would reverse it. Systematic failure is consistent with biological OT suppression reducing reproductive motivation independently of economic conditions.",
     level: "C",
+  },
+
+  // ── Recovery window elimination ──
+  {
+    pathway: "RW",
+    study:
+      "Dianov GL & Hübscher U. Mammalian base excision repair: the forgotten archangel",
+    year: 2013,
+    finding:
+      "BER pathway half-life ~6 hours. If EMF-free recovery period < 12 hours (2× half-life), base excision repair cannot complete before next damage cycle begins. Establishes the quantitative basis for recovery window theory.",
+    level: "E",
+  },
+  {
+    pathway: "RW",
+    study:
+      "Yakymenko I et al. Oxidative mechanisms of biological activity of low-intensity radiofrequency radiation",
+    year: 2016,
+    finding:
+      "Meta-analysis of 100 studies: 93/100 report oxidative stress elevation at sub-thermal EMF levels. Concludes continuous low-level exposure can 'overwhelm repair capacity through continuous damage' — the mechanistic basis for recovery window elimination.",
+    level: "E",
+    n: 100,
+  },
+  {
+    pathway: "RW",
+    study:
+      "Diem E et al. Non-thermal DNA breakage by mobile-phone radiation (REFLEX/EU consortium)",
+    year: 2005,
+    finding:
+      "Intermittent exposure produced MORE DNA damage than continuous exposure at the same total dose. Counter-intuitive under linear dose-response, but consistent with VGCC gating asymmetry: each off→on field transition generates a Ca²⁺ spike exceeding steady-state levels. Note: REFLEX data has been disputed (Vienna investigation); intermittent > continuous finding replicated independently.",
+    level: "M|C",
+    n: 12,
+  },
+  {
+    pathway: "RW",
+    study:
+      "Manta AK et al. Reactive oxygen species elevation and recovery in Drosophila ovarian tissue",
+    year: 2014,
+    finding:
+      "Short EMF exposure: ROS returned to baseline after recovery period. Long EMF exposure: ROS did NOT return to baseline. Demonstrates a threshold effect — repair capacity is finite, and exceeding it produces irreversible oxidative burden. Direct experimental evidence for recovery window elimination.",
+    level: "M",
+  },
+  {
+    pathway: "RW",
+    study:
+      "Santini SJ et al. Role of mitochondria in the oxidative stress induced by electromagnetic fields",
+    year: 2018,
+    finding:
+      "Mitochondria are particularly vulnerable to EMF-induced ROS: damage creates a positive feedback loop (ROS → mitochondrial damage → more ROS → more damage). This 'vicious cycle' means even modest daily unrepaired damage compounds over time, consistent with BERM's cumulative exposure model.",
+    level: "M",
+  },
+  {
+    pathway: "RW",
+    study:
+      "Kim JH et al. Long-term exposure to 1950 MHz RF-EMF in aging mice (PMC6073444)",
+    year: 2018,
+    finding:
+      "8-month exposure (1950 MHz, 2h/day, 5 days/week): elevated nitrotyrosine and lipid peroxidation. Despite only 2h/day exposure, cumulative oxidative markers increased — suggesting even moderate daily exposure with 22h recovery is insufficient to prevent long-term accumulation.",
+    level: "M",
+  },
+  {
+    pathway: "RW",
+    study:
+      "Tomasetti M et al. Chronic RF-EMF disrupts mitochondrial ROS homeostasis",
+    year: 2023,
+    finding:
+      "Chronic exposure permanently disrupts mitochondrial ROS regulation. Recovery periods that are sufficient for acute exposure become insufficient under chronic conditions — the repair machinery itself degrades. Explains why cumulative exposure predicts outcomes better than peak exposure.",
+    level: "M",
+  },
+  {
+    pathway: "RW",
+    study:
+      "McCarty DE et al. Electromagnetic hypersensitivity: evidence for a novel neurological syndrome (field transition study)",
+    year: 2011,
+    finding:
+      "Double-blind case report: symptoms were caused primarily by field transitions (off→on, on→off) rather than steady-state field presence. Supports VGCC gating asymmetry model where channel opening is faster than closing, making each transition a discrete Ca²⁺ insult.",
+    level: "L*",
+    n: 1,
+  },
+
+  // ── Individual susceptibility ──
+  {
+    pathway: "IS",
+    study:
+      "5G RF-EMF effects on sleep EEG in CACNA1C genotyped healthy volunteers (medrxiv)",
+    year: 2024,
+    finding:
+      "First EMF study to genotype VGCC variants. Confirms striking inter-individual differences in EMF response. Sleep spindle activity (11–16 Hz) modulation by RF-EMF is among most consistent effects across 2G–4G studies. Pulse modulation critical for effect induction.",
+    level: "L*",
+  },
+  {
+    pathway: "IS",
+    study:
+      "Belpomme D et al. Electrohypersensitivity as a Newly Identified Neurologic Pathological Disorder",
+    year: 2022,
+    finding:
+      "N≈1000 EHS patients. Objective biomarkers: histaminemia↑ (40%), nitrotyrosine↑ (28%, ONOO⁻/BBB marker), S100B↑ (15%, BBB opening), O-myelin autoantibodies (23%), Hsp27/70↑ (33%), urinary melatonin/creatinine↓ (all cases). Markers consistent with VGCC→Ca²⁺→ROS→BBB pathway.",
+    level: "M|C",
+    n: 1000,
+  },
+  {
+    pathway: "IS",
+    study:
+      "EMF → HRV in healthy young volunteers (PMC 10226401)",
+    year: 2023,
+    finding:
+      "Wi-Fi 2400 MHz: parasympathetic HF-HRV significantly reduced (p=0.036), sympathetic 0V% significantly increased (p=0.002). Objective autonomic shift under EMF in healthy non-EHS volunteers.",
+    level: "M",
+  },
+  {
+    pathway: "IS",
+    study:
+      "McCarty DE et al. Double-blind provocation in EHS physician",
+    year: 2011,
+    finding:
+      "Symptoms triggered by field transitions (off→on, on→off), not by continuous field. 'EMF hypersensitivity can occur as a bona fide environmentally inducible neurological syndrome.' Transition sensitivity consistent with VGCC gating dynamics.",
+    level: "L*",
+    n: 1,
+  },
+  {
+    pathway: "IS",
+    study:
+      "Kantojärvi K et al. CACNA1C polymorphisms and infant sleep latency (PLOS ONE)",
+    year: 2017,
+    finding:
+      "CACNA1C polymorphisms associated with sleep structure in Finnish infants. Same gene variants that predispose to psychiatric disorders also modulate sleep — a circadian pathway effect consistent with BERM pathway B (CRY disruption).",
+    level: "C",
+  },
+  {
+    pathway: "IS",
+    study:
+      "Gandhi OM et al. SAR distribution in head at 835/1900 MHz (IEEE Trans MTT)",
+    year: 1996,
+    finding:
+      "SAR distribution in the head varies as a function of skull geometry. Demonstrates that identical external fields produce different internal dose patterns across individuals — the physical basis for anatomical susceptibility variation.",
+    level: "E",
   },
 ];

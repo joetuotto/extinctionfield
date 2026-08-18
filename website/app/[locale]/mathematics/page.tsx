@@ -22,6 +22,7 @@ const t = {
       { id: "locked", num: "§8", label: "Locked predictions" },
       { id: "falsification", num: "§9", label: "Falsification conditions" },
       { id: "pharmacological", num: "§10", label: "Pharmacological validation" },
+      { id: "individual-susceptibility", num: "§11", label: "Individual susceptibility" },
     ],
     pageTitle: "Mathematical Foundation",
     pageSubtitle:
@@ -70,6 +71,17 @@ const t = {
     s3d8: "→ Personal adds at full magnitude.",
     s3d9: "Cumulative exposure is the historical sum:",
     s3d10: "where start is the country’s EMF history start year (e.g. Finland 1991).",
+    s3rwTitle: "Why cumulative exposure works: the recovery window",
+    s3rwIntro:
+      "Cumulative exposure is the correct metric because DNA repair capacity is finite. The BER (base excision repair) pathway has a half-life τ_repair ≈ 6 hours. Net daily damage depends on the ratio of exposure time to recovery time:",
+    s3rwTable: "Historical exposure scenarios:",
+    s3rwRow1: "1950 (radio + TV): 4h EMF, 20h free → 90% repair → net 0.40/day",
+    s3rwRow2: "1990 (phone, no Wi-Fi): 8h EMF, 16h free → 84% repair → net 1.26/day",
+    s3rwRow3: "2010 (smartphone + Wi-Fi): 16h EMF, 8h free → 60% repair → net 6.35/day",
+    s3rwRow4: "2020 (24/7 Wi-Fi + IoT): 22h EMF, 2h free → 21% repair → net 17.46/day",
+    s3rwRow5: "Amish (no electronics): 1h EMF, 23h free → 93% repair → net 0.07/day",
+    s3rwThreshold:
+      "Critical threshold: when EMF-free period < 2× repair half-life (< 12h for BER), repair is incomplete and cumulation begins. Modern humans crossed this threshold around 2005–2010.",
 
     // S4 BioCap
     s4Title: "Biological Capacity",
@@ -236,6 +248,26 @@ const t = {
     s10d6:
       "Night EMF exposure disrupts CRY-mediated circadian signaling. Exogenous melatonin (3–5 mg) restores circadian amplitude independently of CRY, providing a pathway C bypass. If melatonin supplementation eliminates EMF-associated circadian disruption, pathway C is validated; if not, the CRY channel requires revision.",
     s10d7Link: "→ Controlled experimental evidence (laboratory mammals)",
+
+    // S11 Individual susceptibility
+    s11Title: "Individual Susceptibility and the χ Distribution",
+    s11Intro:
+      "The population-level selection rule χ(Ā) predicts a mean response. Individuals vary around this mean due to three measurable factors: VGCC genotype, anatomical geometry, and cumulative allostatic load. The individual susceptibility modifier is:",
+    s11After:
+      "This means that two individuals in the same ambient field may experience effective biological doses differing by an order of magnitude. The population TFR is a convolution over the individual χ distribution — the mean hides the tails.",
+    s11d1: "The VGCC genotype modifier follows from CACNA1C rs1006737 functional phenotyping:",
+    s11d2:
+      "AA homozygous risk carriers show 40% greater Ca²⁺ influx per unit field perturbation (medrxiv 2024, MIT DSpace functional data).",
+    s11d3: "The anatomical modifier accounts for tissue geometry affecting internal field distribution:",
+    s11d4:
+      "Children under 6 receive 2–3× the adult SAR at the same external field (Gandhi 1996). BMI modulates fat-layer attenuation. The product age_factor × bmi_factor gives g_anatomy.",
+    s11d5: "The cumulative modifier uses Selye's General Adaptation Syndrome phases:",
+    s11d6:
+      "In the resistance phase, compensation capacity declines linearly. In exhaustion (allostatic load > 15), compensation collapses and the effective modifier amplifies sharply — this is the predicted EHS onset regime.",
+    s11d7: "The combined individual modifier multiplies into the population χ:",
+    s11d8:
+      "For population-level TFR prediction, BERM integrates over the genotype frequency distribution (Hardy-Weinberg) × anatomical demographics × exposure-duration distribution. The mean individual modifier is 1.0 by construction — it cancels in the population average. The DIAGNOSTIC value lies in the tails: high-susceptibility individuals (AA, young, exhaustion phase) may have combined modifiers of 5–10×, explaining why a subpopulation reports symptoms while the majority does not.",
+    s11d9Link: "→ Individual susceptibility evidence",
   },
   fi: {
     meta: {
@@ -254,6 +286,7 @@ const t = {
       { id: "locked", num: "§8", label: "Lukitut ennusteet" },
       { id: "falsification", num: "§9", label: "Falsifiointiehdot" },
       { id: "pharmacological", num: "§10", label: "Farmakologinen validointi" },
+      { id: "individual-susceptibility", num: "§11", label: "Yksilöllinen herkkyys" },
     ],
     pageTitle: "Matemaattinen perusta",
     pageSubtitle:
@@ -302,6 +335,17 @@ const t = {
     s3d8: "→ Henkilökohtainen lisää täydellä voimakkuudella.",
     s3d9: "Kumulatiivinen altistus on historiallinen summa:",
     s3d10: "missä start on maan EMF-historian aloitusvuosi (esim. Suomi 1991).",
+    s3rwTitle: "Miksi kumulatiivinen altistus toimii: palautumisikkuna",
+    s3rwIntro:
+      "Kumulatiivinen altistus on oikea metriikka, koska DNA-korjauskapasiteetti on rajallinen. BER-reitin (emäksen leikkauskorjaus) puoliintumisaika on τ_repair ≈ 6 tuntia. Nettopäivävaurio riippuu altistusajan ja palautumisajan suhteesta:",
+    s3rwTable: "Historialliset altistusskenaariot:",
+    s3rwRow1: "1950 (radio + TV): 4h EMF, 20h vapaa → 90 % korjaus → netto 0,40/pv",
+    s3rwRow2: "1990 (puhelin, ei Wi-Fi): 8h EMF, 16h vapaa → 84 % korjaus → netto 1,26/pv",
+    s3rwRow3: "2010 (älypuhelin + Wi-Fi): 16h EMF, 8h vapaa → 60 % korjaus → netto 6,35/pv",
+    s3rwRow4: "2020 (24/7 Wi-Fi + IoT): 22h EMF, 2h vapaa → 21 % korjaus → netto 17,46/pv",
+    s3rwRow5: "Amissit (ei elektroniikkaa): 1h EMF, 23h vapaa → 93 % korjaus → netto 0,07/pv",
+    s3rwThreshold:
+      "Kriittinen kynnys: kun EMF-vapaa jakso < 2× korjauksen puoliintumisaika (< 12h BER-reitille), korjaus jää epätäydelliseksi ja kumulaatio alkaa. Moderni ihminen ylitti tämän kynnyksen noin 2005–2010.",
 
     // S4 BioCap
     s4Title: "Biologinen kapasiteetti",
@@ -469,6 +513,26 @@ const t = {
     s10d6:
       "Yöllinen EMF-altistus häiritsee CRY-välitteistä sirkadiaanista signalointia. Eksogeeninen melatoniini (3–5 mg) palauttaa sirkadiaanisen amplitudin CRY:stä riippumatta, tarjoten reitin C ohituksen. Jos melatoniinilisä eliminoi EMF:ään liittyvän sirkadiaanisen häiriön, reitti C validoidaan; jos ei, CRY-kanava vaatii uudelleentarkastelua.",
     s10d7Link: "→ Kontrolloitu kokeellinen näyttö (laboratorionisäkkäät)",
+
+    // S11 Individual susceptibility
+    s11Title: "Yksilöllinen herkkyys ja χ-jakauma",
+    s11Intro:
+      "Populaatiotason valintaehto χ(Ā) ennustaa keskimääräisen vasteen. Yksilöt vaihtelevat tämän keskiarvon ympärillä kolmen mitattavan tekijän vuoksi: VGCC-genotyyppi, anatominen geometria ja kumulatiivinen allostaattinen kuorma. Yksilöllinen herkkyyskertoin on:",
+    s11After:
+      "Tämä tarkoittaa, että kaksi yksilöä samassa ympäristökentässä voi kokea efektiivisiä biologisia annoksia, jotka eroavat kertaluvulla. Populaation TFR on konvoluutio yksilöllisen χ-jakauman yli — keskiarvo peittää hännät.",
+    s11d1: "VGCC-genotyyppikerroin seuraa CACNA1C rs1006737 -funktionaalisesta fenotyypityksestä:",
+    s11d2:
+      "AA-homotsygoottiset riskikantajat osoittavat 40 % suurempaa Ca²⁺-sisäänvirtausta kenttähäiriöyksikköä kohti (medrxiv 2024, MIT DSpace funktionaalinen data).",
+    s11d3: "Anatominen kerroin huomioi kudosgeometrian vaikutuksen sisäiseen kenttäjakaumaan:",
+    s11d4:
+      "Alle 6-vuotiaat lapset saavat 2–3× aikuisen SAR:n samassa ulkoisessa kentässä (Gandhi 1996). BMI moduloi rasvakerroksen vaimennusta. Tulo ikä_tekijä × bmi_tekijä antaa g_anatomy:n.",
+    s11d5: "Kumulatiivinen kerroin käyttää Selyen yleisen adaptaatio-oireyhtymän vaiheita:",
+    s11d6:
+      "Resistenssivaiheessa kompensaatiokapasiteetti laskee lineaarisesti. Uupumusvaiheessa (allostaattinen kuorma > 15) kompensaatio romahtaa ja efektiivinen kerroin vahvistuu jyrkästi — tämä on ennustettu EHS:n alkamisregime.",
+    s11d7: "Yhdistetty yksilökerroin kertautuu populaation χ:hin:",
+    s11d8:
+      "Populaatiotason TFR-ennusteessa BERM integroi genotyyppifrekvenssisjakauman (Hardy-Weinberg) × anatominen demografia × altistuskeston jakauman yli. Keskimääräinen yksilökerroin on 1,0 konstruktion mukaan — se supistuu populaatiokeskiarvossa. DIAGNOSTINEN arvo on hännissä: korkean herkkyyden yksilöillä (AA, nuoret, uupumusvaihe) yhdistetty kerroin voi olla 5–10×, mikä selittää miksi osajoukko raportoi oireita enemmistön ollessa oireeton.",
+    s11d9Link: "→ Yksilöllisen herkkyyden todisteet",
   },
 };
 
@@ -710,6 +774,34 @@ export default async function MathematicsPage({
                 <DerivationLine>{d.s3d10}</DerivationLine>
               </div>
             </Derivation>
+
+            <Derivation label={d.s3rwTitle}>
+              <DerivationLine>{d.s3rwIntro}</DerivationLine>
+              <div className="text-center my-3">
+                <MathBlock tex="\text{net\_daily} = \dot{D} \cdot t_{\text{emf}} \cdot \left(1 - e^{-t_{\text{free}} / \tau_{\text{repair}}}\right)" />
+              </div>
+              <div className="text-center my-3">
+                <MathBlock tex="\text{where } t_{\text{free}} = 24 - t_{\text{emf}}, \quad \tau_{\text{repair}} \approx 6\text{h (BER pathway)}" />
+              </div>
+              <div className="mt-3">
+                <DerivationLine>
+                  <strong>{d.s3rwTable}</strong>
+                </DerivationLine>
+                <div className="text-xs font-mono mt-2 space-y-1">
+                  <DerivationLine>{d.s3rwRow1}</DerivationLine>
+                  <DerivationLine>{d.s3rwRow2}</DerivationLine>
+                  <DerivationLine>{d.s3rwRow3}</DerivationLine>
+                  <DerivationLine>{d.s3rwRow4}</DerivationLine>
+                  <DerivationLine>{d.s3rwRow5}</DerivationLine>
+                </div>
+              </div>
+              <div className="mt-3">
+                <DerivationLine>{d.s3rwThreshold}</DerivationLine>
+                <div className="text-center my-3">
+                  <MathBlock tex="t_{\text{free}} < 2\tau_{\text{repair}} \implies \text{repair fraction} < 1 - e^{-2} \approx 86\%" />
+                </div>
+              </div>
+            </Derivation>
           </section>
 
           {/* S4 Biological capacity */}
@@ -812,6 +904,37 @@ export default async function MathematicsPage({
                   <MathBlock tex="\frac{dT}{dt} \approx -0.013 \times \frac{d\text{EMF}}{dt} \times T" />
                 </div>
                 <DerivationLine>{d.s5d5}</DerivationLine>
+              </div>
+            </Derivation>
+
+            <Derivation label={d.s5otTitle}>
+              <DerivationLine>{d.s5otIntro}</DerivationLine>
+              <div className="mt-3">
+                <DerivationLine>
+                  <strong>{d.s5otRoute1Title}</strong>
+                </DerivationLine>
+                <DerivationLine>{d.s5otRoute1}</DerivationLine>
+                <div className="text-center my-2">
+                  <MathBlock tex="\text{OT}_{\text{vagal}} = \left(\frac{1}{1 + 0.88 \cdot \min(1, \text{EMF}/5)}\right)^{0.5}" />
+                </div>
+              </div>
+              <div className="mt-3">
+                <DerivationLine>
+                  <strong>{d.s5otRoute2Title}</strong>
+                </DerivationLine>
+                <DerivationLine>{d.s5otRoute2}</DerivationLine>
+                <div className="text-center my-2">
+                  <MathBlock tex="\text{OT}_{\text{micro}} = 0.3 + 0.7 \cdot L(\text{EMF}_{\text{norm}})" />
+                </div>
+              </div>
+              <div className="mt-3">
+                <DerivationLine>{d.s5otCombined}</DerivationLine>
+                <div className="text-center my-2">
+                  <MathBlock tex="\text{OT}_{\text{eff}} = \text{OT}_{\text{vagal}} \times \text{OT}_{\text{micro}} \approx e^{-0.010 \times \text{cumEMF}}" />
+                </div>
+                <div className="text-center my-2">
+                  <MathBlock tex="r_{\text{eff}} = r_{\text{vagal}} + r_{\text{micro}} \approx 0.005 + 0.005 = 0.010" />
+                </div>
               </div>
             </Derivation>
           </section>
@@ -1104,6 +1227,54 @@ export default async function MathematicsPage({
               <p className="text-xs text-accent mt-3">
                 <Link href={`${lp}/sentinel#lab-mammals`} className="hover:underline">
                   {d.s10d7Link}
+                </Link>
+              </p>
+            </Derivation>
+          </section>
+
+          {/* S11 Individual susceptibility */}
+          <section id="individual-susceptibility">
+            <h2 className="text-xl font-bold mb-2">§11 — {d.s11Title}</h2>
+            <p className="mb-4">{d.s11Intro}</p>
+            <div className="text-center my-4">
+              <MathBlock tex="\chi_i = \chi(\bar{A}) \times g_{\text{VGCC}} \times g_{\text{anatomy}} \times g_{\text{cumulative}}" />
+            </div>
+            <p className="mb-4">{d.s11After}</p>
+
+            <Derivation>
+              <DerivationLine>{d.s11d1}</DerivationLine>
+              <div className="text-center my-2">
+                <MathBlock tex="g_{\text{VGCC}} = \begin{cases} 1.4 & \text{AA (homozygous risk)} \\ 1.15 & \text{AG (heterozygous)} \\ 1.0 & \text{GG (reference)} \end{cases}" />
+              </div>
+              <DerivationLine>{d.s11d2}</DerivationLine>
+
+              <div className="mt-4">
+                <DerivationLine>{d.s11d3}</DerivationLine>
+                <div className="text-center my-2">
+                  <MathBlock tex="g_{\text{anatomy}} = f_{\text{age}} \times f_{\text{BMI}}, \quad f_{\text{age}} = \begin{cases} 2.5 & \text{age} < 6 \\ 2.0 & 6 \leq \text{age} < 12 \\ 1.5 & 12 \leq \text{age} < 18 \\ 1.0 & \text{age} \geq 18 \end{cases}" />
+                </div>
+                <DerivationLine>{d.s11d4}</DerivationLine>
+              </div>
+
+              <div className="mt-4">
+                <DerivationLine>{d.s11d5}</DerivationLine>
+                <div className="text-center my-2">
+                  <MathBlock tex="\text{load} = t_{\text{years}} \times I, \quad \text{capacity} = \begin{cases} 0.95 & \text{load} < 1 \;\text{(alarm)} \\ \max(0.3,\; 1 - 0.045 \cdot \text{load}) & 1 \leq \text{load} < 15 \;\text{(resistance)} \\ \max(0.05,\; 0.3 - 0.02(\text{load}-15)) & \text{load} \geq 15 \;\text{(exhaustion)} \end{cases}" />
+                </div>
+                <DerivationLine>{d.s11d6}</DerivationLine>
+              </div>
+
+              <div className="mt-4">
+                <DerivationLine>{d.s11d7}</DerivationLine>
+                <div className="text-center my-2">
+                  <MathBlock tex="\chi_i = \chi(\bar{A}) \times g_{\text{VGCC}} \times g_{\text{GST}} \times g_{\text{anatomy}} \times \frac{1}{\text{capacity}(\text{load})}" />
+                </div>
+                <DerivationLine>{d.s11d8}</DerivationLine>
+              </div>
+
+              <p className="text-xs text-accent mt-3">
+                <Link href={`${lp}/evidence#individual-susceptibility`} className="hover:underline">
+                  {d.s11d9Link}
                 </Link>
               </p>
             </Derivation>

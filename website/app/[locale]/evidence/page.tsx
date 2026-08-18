@@ -200,6 +200,28 @@ const t = {
     verdictInconclusive: "Inconclusive",
     neNote: "Epistemic note: 4 of 7 cases are consistent with BERM predictions, 1 is inconsistent, and 2 are inconclusive due to confounding. This is not strong evidence — natural experiments in fertility are inherently confounded by development, culture, and economics. They are reported here for completeness, not as proof.",
 
+    /* Individual susceptibility section */
+    indSuscTitle: "Individual Susceptibility: Why EMF Affects Some People More Than Others",
+    indSuscDesc:
+      "BERM predicts that EMF effects vary between individuals based on three factors: genetic variation in voltage-gated calcium channel expression, anatomical differences in tissue geometry that create different internal field patterns, and cumulative exposure history that determines the phase of allostatic adaptation. This prediction explains two apparent contradictions: why some people report electromagnetic hypersensitivity while most do not, and why provocation studies measuring subjective perception typically find null results while studies measuring objective biomarkers find significant effects in subgroups.",
+    indSuscGenTitle: "Genetic: VGCC polymorphisms",
+    indSuscGen:
+      "CACNA1C rs1006737 risk allele increases L-type VGCC expression, producing a larger Ca²+ response to the same EMF field. This is the same mechanism that predisposes to bipolar disorder, schizophrenia, and major depression — all calcium signaling disorders. A 2024 medrxiv study is the first EMF study to genotype VGCC variants, confirming 'striking inter-individual differences in how volunteers respond to acute EMF exposure.' GSTM1/GSTT1 null genotypes weaken oxidative stress defense, so the same ROS load produces more damage.",
+    indSuscAnatTitle: "Anatomical: internal interference patterns",
+    indSuscAnat:
+      "RF waves reflect at tissue boundaries (skin/fat, fat/muscle, bone/CSF, CSF/brain), creating standing wave patterns that are anatomically individual. Thin skull, low fat layer, high tissue water content = higher internal field in critical tissues. Gandhi 1996: SAR distribution in the head varies with skull geometry. Children absorb 2–3× the SAR of adults from the same external field (thinner skull, higher tissue water content).",
+    indSuscCumTitle: "Cumulative: allostatic load",
+    indSuscCum:
+      "Long-term occupational exposure (telecom workers, electricians) raises allostatic load following Selye dynamics. When compensation capacity (phase 2, resistance) is exhausted, the system transitions to decompensation (phase 3, exhaustion) — symptoms appear seemingly suddenly despite chronic exposure. This explains why EHS typically begins in adulthood after cumulative exposure, not in childhood.",
+    indSuscProvTitle: "Reinterpretation of provocation studies",
+    indSuscProv:
+      "Provocation study null results do NOT refute BERM because: (1) they measure subjective perception ('do you feel the field?'), not objective biomarkers — VGCC activation and Ca²+ changes occur unconsciously; (2) they do not genotype CACNA1C — the population average may be null even if a subgroup (risk allele carriers) responds significantly; (3) they do not control for anatomical differences; (4) they do not control for cumulative exposure history (Selye phase); (5) the control group is NOT EMF-free (lab baseline bias).",
+    indSuscBioTitle: "Objective biomarkers",
+    indSuscBio:
+      "Belpomme 2015/2022 (N≈1000 EHS patients): histaminemia↑ 40%, nitrotyrosine↑ 28% (ONOO⁻/BBB marker), S100B↑ 15% (BBB opening), O-myelin autoantibodies 23%, Hsp27/70↑ 33%, urinary melatonin/creatinine↓ all cases. These markers are consistent with the VGCC→Ca²+→ROS→BBB pathway. PMC 10226401 (2023): HRV changes in HEALTHY non-EHS volunteers under Wi-Fi — HF-HRV reduced (p=0.036), sympathetic 0V% increased (p=0.002).",
+    indSuscNote:
+      "Limitation: Belpomme's biomarkers are elevated only in subsets (15–40%), and it has not been shown that the SAME patients have ALL markers elevated simultaneously (PMC12314686, 2025). The Selye phase quantification (years × intensity) is a heuristic simplification, not a validated predictor. This section presents mechanistic plausibility, not proof.",
+
     attrBiasTitle: "Attribution Bias in Decline Research",
     attrBiasDesc:
       "EMF is structurally invisible in most ecological and reproductive research — not because it was tested and rejected, but because it was never considered. This section documents how conventional attributions (climate change, chemicals, habitat loss) become the default explanation for declines that may have an electromagnetic component.",
@@ -239,6 +261,28 @@ const t = {
     verdictInconsistent: "BERM-vastainen",
     verdictInconclusive: "Ratkaisematon",
     neNote: "Episteeminen huomautus: 4/7 tapauksesta on yhdenmukaisia BERM-ennusteiden kanssa, 1 on ristiriidassa ja 2 on ratkaisemattomia sekoittumisen vuoksi. Tama ei ole vahvaa nayttoa — hedelmallisyyden luonnolliset kokeet ovat vaistamatta sekoittuneita kehityksen, kulttuurin ja talouden kanssa. Ne raportoidaan taydellisyyden vuoksi, ei todisteena.",
+
+    /* Individual susceptibility section */
+    indSuscTitle: "Yksilölliset erot: Miksi EMF vaikuttaa joihinkin enemmän kuin toisiin",
+    indSuscDesc:
+      "BERM ennustaa, että EMF-vaikutukset vaihtelevat yksilöiden välillä kolmen tekijän perusteella: geneettinen vaihtelu jänniteohjattujen kalsiumkanavien ilmentymisessä, anatomiset erot kudosgeometriassa jotka luovat erilaisia sisäisiä kenttäkuvioita, ja kumulatiivinen altistushistoria joka määrittää allostaattisen sopeutumisen vaiheen. Tämä ennuste selittää kaksi näennäistä ristiriitaa: miksi jotkut ihmiset raportoivat sähköyliherkkyyden kun useimmat eivät, ja miksi provokaatiotutkimukset jotka mittaavat subjektiivista havaintoa tuottavat tyypillisesti nollatuloksia kun objektiivisia biomarkkereita mittaavat tutkimukset löytävät merkitseviä vaikutuksia osaryhmissä.",
+    indSuscGenTitle: "Geneettinen: VGCC-polymorfismit",
+    indSuscGen:
+      "CACNA1C rs1006737 -riskialleeli lisää L-tyypin VGCC:n ilmentymistä, tuottaen suuremman Ca²⁺-vasteen samaan EMF-kenttään. Tämä on sama mekanismi joka altistaa bipolaariselle häiriölle, skitsofrenialle ja masennukselle — kaikki kalsiumsignaloinnin häiriöitä. Vuoden 2024 medrxiv-tutkimus on ensimmäinen EMF-tutkimus joka genotyypittää VGCC-variantit, vahvistaen 'striking inter-individual differences in how volunteers respond to acute EMF exposure.' GSTM1/GSTT1-nollagenotyypit heikentävät oksidatiivisen stressin puolustusta.",
+    indSuscAnatTitle: "Anatominen: sisäiset interferenssikuviot",
+    indSuscAnat:
+      "RF-aallot heijastuvat kudosrajoilta (iho/rasva, rasva/lihas, luu/CSF, CSF/aivot) luoden seisovia aaltokuvioita jotka ovat anatomisesti yksilöllisiä. Ohut kallo, vähäinen rasvakerros, korkea kudosten vesipitoisuus = korkeampi sisäinen kenttä kriittisissä kudoksissa. Gandhi 1996: SAR-jakauma päässä vaihtelee kallon geometrian funktiona. Lapset absorboivat 2–3× aikuisten SAR:n samasta ulkoisesta kentästä (ohuempi kallo, korkeampi kudosvesipitoisuus).",
+    indSuscCumTitle: "Kumulatiivinen: allostaattinen kuormitus",
+    indSuscCum:
+      "Pitkäaikainen ammatillinen altistus (telecom-työntekijät, sähköasentajat) nostaa allostaattista kuormitusta Selye-dynamiikan mukaisesti. Kun kompensaatiokapasiteetti (vaihe 2, resistanssi) loppuu, siirrytään dekompensaatioon (vaihe 3, uupumus) — oireet ilmaantuvat näennäisesti äkillisesti vaikka altistus on ollut kroonista. Tämä selittää miksi EHS tyypillisesti alkaa aikuisiässä kumulatiivisen altistuksen jälkeen, ei lapsuudessa.",
+    indSuscProvTitle: "Provokaatiotutkimusten uudelleentulkinta",
+    indSuscProv:
+      "Provokaatiokokeiden nollatulokset EIVÄT kumoa BERM:ää koska: (1) ne mittaavat subjektiivista havaintoa ('tunnetko kentän?'), eivät objektiivisia biomarkkereita — VGCC-aktivaatio tapahtuu tiedostamattomasti; (2) ne eivät genotyypitä CACNA1C:tä — keskiarvo peittää osaväestön vasteen; (3) ne eivät kontrolloi anatomisia eroja; (4) ne eivät kontrolloi kumulatiivista altistushistoriaa (Selye-vaihe); (5) kontrolliryhmä EI ole EMF-vapaa (laboratorion perustason harha).",
+    indSuscBioTitle: "Objektiiviset biomarkkerit",
+    indSuscBio:
+      "Belpomme 2015/2022 (N≈1000 EHS-potilasta): histaminemia↑ 40%, nitrotyrosiini↑ 28% (ONOO⁻/BBB-merkkiaine), S100B↑ 15% (BBB-avautuminen), O-myeliini-autovasta-aineet 23%, Hsp27/70↑ 33%, virtsan melatoniini/kreatiniini↓ kaikissa tapauksissa. Nämä markkerit ovat yhdenmukaisia VGCC→Ca²⁺→ROS→BBB -reitin kanssa. PMC 10226401 (2023): HRV-muutokset TERVEILLÄ vapaaehtoisilla Wi-Fi-altistuksessa — HF-HRV laski (p=0,036), sympaattinen 0V% nousi (p=0,002).",
+    indSuscNote:
+      "Rajoitus: Belpomme-biomarkkerit ovat koholla vain osajoukoissa (15–40%), eikä ole osoitettu, että SAMOILLA potilailla KAIKKI markkerit olisivat koholla samanaikaisesti (PMC12314686, 2025). Selye-vaiheen kvantifiointi (vuodet × intensiteetti) on heuristinen yksinkertaistus, ei validoitu ennuste. Tämä osio esittää mekanistista uskottavuutta, ei todistetta.",
 
     attrBiasTitle: "Attribuutiovinouma vahenemätutkimuksessa",
     attrBiasDesc:
@@ -354,6 +398,16 @@ const pathwaysFi: Record<string, { label: string; description: string }> = {
     label: "Laboratorion perustason harha",
     description:
       "Kasvava tausta-EMF laboratorioissa kontaminoi kontrolliryhmät, puristaen havaittuja vaikutuskokoja kohti nollaa. Jos χ(Ā) ohjaa biologista herkkyyttä ja laboratorion EMF on noussut ~0,1 V/m:stä (1950-luku) ~15 V/m:iin (2020-luku), kontrollit ovat jo χ ≈ 1,0 — tehden EMF-herkistä vaikutuksista lähes havaitsemattomia. Tämä ennustaa biologisen replikaatiokriisin BERM:n rakenteellisena seurauksena.",
+  },
+  RW: {
+    label: "Palautumisikkunan eliminaatio",
+    description:
+      "DNA-korjauksen (BER-reitti) puoliintumisaika on ~6 tuntia. Kun EMF-vapaa palautumisjakso jää alle 2× puoliintumisajan (< 12 tuntia), korjaus ei ehdi valmistua ja oksidatiivinen vaurio kumuloituu. Moderni 24/7-altistus (22h EMF, 2h vapaa) sallii vain ~21 % korjauksen päivässä verrattuna ~90 %:iin 1950-luvulla (4h EMF, 20h vapaa). Tämä selittää miksi kumulatiivinen altistus on oikea metriikka: ratkaisevaa ei ole annos sinänsä vaan vaurionopeuden suhde korjauskapasiteettiin. REFLEX-konsortio (Diem 2005) havaitsi, että katkonainen altistus tuottaa ENEMMÄN DNA-vaurioita kuin jatkuva — yhdenmukainen VGCC-portin asymmetrian kanssa, jossa jokainen off→on-siirtymä synnyttää steady-state-tason ylittävän Ca²⁺-piikin.",
+  },
+  IS: {
+    label: "Yksilöllinen herkkyys",
+    description:
+      "EMF-herkkyys vaihtelee yksilöiden välillä VGCC-polymorfismien (CACNA1C rs1006737), anatomisten erojen (kallon paksuus, rasvakerros, vesipitoisuus) ja kumulatiivisen allostaattisen kuormituksen (Selye-vaihe) vuoksi. Tämä selittää EHS-prevalenssin (~3–10 %), provokaatiotutkimusten nollatulokset ja objektiiviset biomarkkerilöydökset (Belpomme 2015/2022).",
   },
 };
 
@@ -490,6 +544,8 @@ export default async function EvidencePage({
                 pKey === "CA" ||
                 pKey === "NR" ||
                 pKey === "LB" ||
+                pKey === "RW" ||
+                pKey === "IS" ||
                 pKey === "OT"
                   ? ""
                   : `${locale === "fi" ? "Reitti" : "Pathway"} ${pKey === "T_BE" ? "T" : pKey}: `}
@@ -722,6 +778,68 @@ export default async function EvidencePage({
         <div className="mt-4 p-4 rounded-lg bg-background border border-border max-w-3xl">
           <p className="text-xs text-foreground-muted leading-relaxed">
             {d.attrBiasNote}
+          </p>
+        </div>
+      </section>
+
+      <section id="individual-susceptibility" className="mb-14">
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-1">{d.indSuscTitle}</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl">
+            {d.indSuscDesc}
+          </p>
+        </div>
+
+        <div className="space-y-5 max-w-3xl">
+          <div className="border border-accent/40 bg-accent/5 rounded-lg p-5">
+            <h3 className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">
+              {d.indSuscBioTitle}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.indSuscBio}
+            </p>
+          </div>
+
+          <div className="border border-card-border bg-card-bg rounded-lg p-5">
+            <h3 className="text-xs font-semibold text-foreground uppercase tracking-wide mb-2">
+              {d.indSuscGenTitle}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.indSuscGen}
+            </p>
+          </div>
+
+          <div className="border border-card-border bg-card-bg rounded-lg p-5">
+            <h3 className="text-xs font-semibold text-foreground uppercase tracking-wide mb-2">
+              {d.indSuscAnatTitle}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.indSuscAnat}
+            </p>
+          </div>
+
+          <div className="border border-card-border bg-card-bg rounded-lg p-5">
+            <h3 className="text-xs font-semibold text-foreground uppercase tracking-wide mb-2">
+              {d.indSuscCumTitle}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.indSuscCum}
+            </p>
+          </div>
+
+          <div className="border border-status-partial/40 bg-status-partial/5 rounded-lg p-5">
+            <h3 className="text-xs font-semibold text-status-partial uppercase tracking-wide mb-2">
+              {d.indSuscProvTitle}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.indSuscProv}
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 p-4 rounded-lg bg-background border border-border max-w-3xl">
+          <p className="text-xs text-foreground-muted leading-relaxed">
+            {d.indSuscNote}
           </p>
         </div>
       </section>
