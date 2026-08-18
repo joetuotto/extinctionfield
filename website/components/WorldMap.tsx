@@ -5,7 +5,7 @@ import * as d3 from "d3";
 import { geoNaturalEarth1, geoPath } from "d3-geo";
 import type { FeatureCollection, Feature, Geometry } from "geojson";
 
-type Layer = "tfr" | "mobile";
+type Layer = "tfr" | "mobile" | "berm";
 
 interface MapData {
   [iso3: string]: {
@@ -46,6 +46,14 @@ const LAYER_CONFIG: Record<
     colorScale: (t: number) => d3.interpolateYlOrRd(t),
     format: (v: number) => v.toFixed(0),
   },
+  berm: {
+    label: "BERM coverage",
+    unit: "country profile",
+    domain: [0, 1],
+    colorScale: (t: number) =>
+      t > 0 ? "var(--accent)" : "var(--card-border)",
+    format: (v: number) => (v > 0 ? "Available" : "Not available"),
+  },
 };
 
 function getISO3(feature: Feature<Geometry, GeoProperties>): string {
@@ -62,11 +70,15 @@ export function WorldMap({ locale }: { locale: string }) {
     useState<FeatureCollection<Geometry, GeoProperties> | null>(null);
   const [year, setYear] = useState(2024);
   const [layer, setLayer] = useState<Layer>("tfr");
+  const [selectedISO3, setSelectedISO3] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
   const animRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const stateRef = useRef({ mapData, layer, year });
-  stateRef.current = { mapData, layer, year };
+
+  useEffect(() => {
+    stateRef.current = { mapData, layer, year };
+  }, [mapData, layer, year]);
 
   useEffect(() => {
     Promise.all([
@@ -82,6 +94,7 @@ export function WorldMap({ locale }: { locale: string }) {
     (iso3: string, ly: Layer, yr: number, md: MapData | null): number | null => {
       const country = md?.[iso3];
       if (!country) return null;
+      if (ly === "berm") return country.berm_country ? 1 : 0;
       const series = ly === "tfr" ? country.tfr : country.mobile;
       return series?.[String(yr)] ?? null;
     },
@@ -162,6 +175,9 @@ export function WorldMap({ locale }: { locale: string }) {
           .attr("stroke", "var(--card-border)")
           .attr("stroke-width", 0.5);
         if (tooltipRef.current) tooltipRef.current.style.display = "none";
+      })
+      .on("click", function (_event, d) {
+        setSelectedISO3(getISO3(d));
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [geoData, mapData]);
@@ -204,11 +220,38 @@ export function WorldMap({ locale }: { locale: string }) {
     );
   }
 
+  const selectedCountry = selectedISO3 ? mapData[selectedISO3] : null;
+  const selectedName = geoData.features.find((feature) => getISO3(feature) === selectedISO3)
+    ?.properties.ADMIN;
+  const selectedValue = selectedISO3
+    ? getValueFor(selectedISO3, layer, year, mapData)
+    : null;
+  const labels =
+    locale === "fi"
+      ? {
+          tfr: "TFR",
+          mobile: "Mobiili",
+          berm: "BERM-aineisto",
+          selected: "Valittu maa",
+          select: "Valitse maa kartalta nähdäksesi kyseisen tason tiedot.",
+          noData: "Ei tietoa valitulle vuodelle",
+          profile: "Maaprofiili",
+        }
+      : {
+          tfr: "TFR",
+          mobile: "Mobile",
+          berm: "BERM data",
+          selected: "Selected country",
+          select: "Select a country to inspect data for this layer.",
+          noData: "No data for selected year",
+          profile: "Country profile",
+        };
+
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex gap-2">
-          {(["tfr", "mobile"] as Layer[]).map((l) => (
+          {(["tfr", "mobile", "berm"] as Layer[]).map((l) => (
             <button
               key={l}
               onClick={() => setLayer(l)}
@@ -218,7 +261,7 @@ export function WorldMap({ locale }: { locale: string }) {
                   : "bg-card-bg border border-card-border text-foreground-muted hover:text-foreground"
               }`}
             >
-              {l === "tfr" ? "TFR" : locale === "fi" ? "Mobiili" : "Mobile"}
+              {labels[l]}
             </button>
           ))}
         </div>
@@ -270,6 +313,33 @@ export function WorldMap({ locale }: { locale: string }) {
                      rounded-lg px-3 py-2 text-sm shadow-lg"
           style={{ display: "none" }}
         />
+      </div>
+
+      <div className="border-t border-card-border pt-3 text-sm">
+        <p className="text-xs uppercase tracking-wider text-foreground-muted mb-1">
+          {labels.selected}
+        </p>
+        {selectedISO3 && selectedName ? (
+          <p className="text-foreground">
+            <span className="font-medium">{selectedName}</span>
+            {selectedValue === null ? (
+              <span className="text-foreground-muted"> · {labels.noData}</span>
+            ) : layer === "berm" ? (
+              <span className="text-foreground-muted">
+                {" "}· {config.format(selectedValue)}
+                {selectedCountry?.berm_country
+                  ? ` · ${labels.profile}: ${selectedCountry.berm_country}`
+                  : ""}
+              </span>
+            ) : (
+              <span className="text-foreground-muted">
+                {" "}· {config.format(selectedValue)} {config.unit}
+              </span>
+            )}
+          </p>
+        ) : (
+          <p className="text-foreground-muted">{labels.select}</p>
+        )}
       </div>
 
       <div className="flex items-center gap-2 text-xs text-foreground-muted">
