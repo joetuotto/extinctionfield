@@ -121,6 +121,26 @@ const t = {
     s5otCombined:
       "The multiplicative combination OT_eff = OT_vagal × OT_microbiome is approximately exponential: OT_eff ≈ exp(−r_eff × cumEMF), where r_eff = r_vagal + r_microbiome ≈ 0.005 + 0.005 = 0.010. This is the parameter in the model.",
 
+    // S5 Quadruple suppression
+    s5qsTitle: "Quadruple suppression derivation",
+    s5qsIntro:
+      "The behavioral factor is the geometric mean of four multiplicative mating probabilities, each hormonally mediated:",
+    s5qsd1: "Four probabilities:",
+    s5qsd2:
+      "P(approach) — male courtship initiation, driven by T and DA, suppressed by cortisol (Puts 2008: T correlates with mating success via courtship effort; Mehta 2015: T effects blocked when cortisol is high).",
+    s5qsd3:
+      "P(attraction) — female attraction response, depends on male T-driven phenotype and female OT motivation (Thornhill 1994: masculinity signals genetic quality).",
+    s5qsd4:
+      "P(sex) — within-couple sexual frequency, depends on OT pair-bonding, T libido, and cortisol/melatonin stress state (Carter 2021: OT fundamental to mammalian sociality).",
+    s5qsd5:
+      "P(fertilization) — biological fertilization probability per act, depends on sperm quality and CatSper cascade.",
+    s5qsd6:
+      "The model's behav ≈ (P₁ × P₂ × P₃ × P₄)^(1/4) is the geometric mean approximation. Each P_i shares the same exponential hormonal dependencies, so the geometric mean of four products reduces to the geometric mean of the individual hormonal terms.",
+    s5qsd7:
+      "Dual-hormone correction (Mehta & Prasad 2015, meta N=8538, r=-.061): T's behavioral expression requires low cortisol. EMF simultaneously lowers T (WHO meta: SMD 0.87) AND raises cortisol (Pawlak 2025: d=1.88), creating double lock on approach behavior.",
+    s5qsd8:
+      "Limitation: the dual-hormone meta-analysis effect size is small (r=-.061). The proxy chain (EMF → T↓ → approach↓ → TFR↓) has not been tested as a whole. Each link is individually documented but the full chain is inference.",
+
     // S6 Cultural
     s6Title: "Cultural Factor & Compensation",
     s6Intro: "The predicted TFR combines all three layers:",
@@ -384,6 +404,26 @@ const t = {
       "EMF → suolistomikrobiomin häiriö (Jin 2022) → Lactobacillus↓ (ml. L. reuteri) → oksitosiini↓ (Erdman & Poutahidis 2016: L. reuteri → vagus → OT↑) → testosteroni↓ (Poutahidis 2014: L. reuteri → IL-17↓ → T↑) → spermatogeneesi↓",
     s5otCombined:
       "Multiplikatiivinen yhdistelmä OT_eff = OT_vagal × OT_microbiome on likimain eksponentiaalinen: OT_eff ≈ exp(−r_eff × cumEMF), missä r_eff = r_vagal + r_microbiome ≈ 0,005 + 0,005 = 0,010. Tämä on mallissa käytetty parametri.",
+
+    // S5 Nelinkertainen suppressio
+    s5qsTitle: "Nelinkertainen suppressio -johtaminen",
+    s5qsIntro:
+      "Käyttäytymiskerroin on neljän multiplikatiivisen pariutumistodennäköisyyden geometrinen keskiarvo, jokainen hormonaalisesti välittynyt:",
+    s5qsd1: "Neljä todennäköisyyttä:",
+    s5qsd2:
+      "P(lähestyminen) — miehen parinmuodostusaloitteet, ajettu T:n ja DA:n kautta, suppressoitu kortisolilla (Puts 2008: T korreloi pariutumismenestykseen parinmuodostusponnistelun kautta; Mehta 2015: T-vaikutukset estyvät kun kortisoli on korkea).",
+    s5qsd3:
+      "P(attraktio) — naisen attraktiovaste, riippuu miehen T-tuottamasta fenotyypistä ja naisen OT-motivaatiosta (Thornhill 1994: maskuliinisuus signaloi geneettistä laatua).",
+    s5qsd4:
+      "P(seksi) — parisuhteen sisäinen seksuaalinen aktiivisuus, riippuu OT-parisiteestä, T-libidosta ja kortisoli/melatoniini-stressitilasta (Carter 2021: OT on nisäkkäiden sosiaalisuuden perusta).",
+    s5qsd5:
+      "P(hedelmöitys) — biologinen hedelmöitystodennäköisyys per yhdyntä, riippuu siittiöiden laadusta ja CatSper-kaskadista.",
+    s5qsd6:
+      "Mallin behav ≈ (P₁ × P₂ × P₃ × P₄)^(1/4) on geometrisen keskiarvon approksimaatio. Jokainen P_i jakaa samat eksponentiaaliset hormonaaliset riippuvuudet, joten neljän tulon geometrinen keskiarvo redusoituu yksittäisten hormonaalisten termien geometriseksi keskiarvoksi.",
+    s5qsd7:
+      "Dual-hormone -korjaus (Mehta & Prasad 2015, meta N=8538, r=-0,061): T:n käyttäytymisvaikutukset vaativat matalan kortisolin. EMF samanaikaisesti laskee T:tä (WHO meta: SMD 0,87) JA nostaa kortisolia (Pawlak 2025: d=1,88), luoden kaksinkertaisen lukon lähestymiskäyttäytymiselle.",
+    s5qsd8:
+      "Rajoitus: dual-hormone -meta-analyysin efektikoko on pieni (r=-0,061). Proxy-ketjua (EMF → T↓ → lähestyminen↓ → TFR↓) ei ole testattu kokonaisuutena. Jokainen lenkki on erikseen dokumentoitu, mutta koko ketju on päättelyä.",
 
     // S6 Cultural
     s6Title: "Kulttuuritekijä ja kompensaatio",
@@ -935,6 +975,52 @@ export default async function MathematicsPage({
                 <div className="text-center my-2">
                   <MathBlock tex="r_{\text{eff}} = r_{\text{vagal}} + r_{\text{micro}} \approx 0.005 + 0.005 = 0.010" />
                 </div>
+              </div>
+            </Derivation>
+
+            <Derivation label={d.s5qsTitle}>
+              <DerivationLine>{d.s5qsIntro}</DerivationLine>
+              <div className="text-center my-4">
+                <MathBlock tex="P(\text{child}) = P(\text{approach}) \times P(\text{attraction}) \times P(\text{sex}) \times P(\text{fertilization})" />
+              </div>
+              <DerivationLine>{d.s5qsd1}</DerivationLine>
+              <div className="mt-2 ml-4 space-y-2">
+                <DerivationLine>{d.s5qsd2}</DerivationLine>
+                <div className="text-center my-1">
+                  <MathBlock tex="P(\text{approach}) \propto T \times \frac{1}{\text{cort}} \times \text{DA}" display={false} />
+                </div>
+                <DerivationLine>{d.s5qsd3}</DerivationLine>
+                <div className="text-center my-1">
+                  <MathBlock tex="P(\text{attraction}) \propto T_{\text{male}} \times \text{OT}_{\text{female}}" display={false} />
+                </div>
+                <DerivationLine>{d.s5qsd4}</DerivationLine>
+                <div className="text-center my-1">
+                  <MathBlock tex="P(\text{sex}) \propto \text{OT} \times T \times \frac{1}{\text{cort}}" display={false} />
+                </div>
+                <DerivationLine>{d.s5qsd5}</DerivationLine>
+                <div className="text-center my-1">
+                  <MathBlock tex="P(\text{fert}) \propto e^{-r_{\text{sperm}} \times \text{cumEMF}}" display={false} />
+                </div>
+              </div>
+              <div className="mt-3">
+                <DerivationLine>{d.s5qsd6}</DerivationLine>
+                <div className="text-center my-3">
+                  <MathBlock tex="\text{behav} \approx \left(P_1 \times P_2 \times P_3 \times P_4\right)^{1/4} = \left(\text{OT}^a \times T^b \times \text{DA}^c \times \text{cort}^{-d}\right)^{1/4}" />
+                </div>
+              </div>
+              <div className="mt-3">
+                <DerivationLine>{d.s5qsd7}</DerivationLine>
+                <div className="text-center my-3">
+                  <MathBlock tex="T_{\text{eff}} = T \times \left(1 - \frac{\text{cortisol}}{\text{cortisol}_{\max}}\right)" />
+                </div>
+                <div className="text-center my-2 text-sm text-foreground-muted">
+                  {locale === "fi"
+                    ? "Jos jokainen P_i laskee 20%: 0.8⁴ = 0.41 → 59% lasku"
+                    : "If each P_i drops 20%: 0.8⁴ = 0.41 → 59% reduction"}
+                </div>
+              </div>
+              <div className="mt-3 p-3 rounded border border-status-partial/40 bg-status-partial/5 text-sm">
+                <DerivationLine>{d.s5qsd8}</DerivationLine>
               </div>
             </Derivation>
           </section>
