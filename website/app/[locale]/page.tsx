@@ -41,7 +41,7 @@ const t = {
     predMetric: "Metric",
     predCentral: "Central",
     predCI: "95% CI",
-    predFooter: "v18.0 — 8 locked predictions.",
+    predFooter: "v18.0 — 11 locked predictions.",
     predLink: "Full prediction registry",
 
     caveatsTitle: "What the model gets right — and wrong",
@@ -66,7 +66,7 @@ const t = {
     spermConc: "Sperm concentration 2050",
     ofLevels: "of 2020 levels",
     modelVersion: "Model version",
-    lockedPredictions: "8 locked predictions",
+    lockedPredictions: "11 locked predictions",
     btnPredictions: "View prediction registry",
     btnModel: "Model documentation",
     btnEvidence: "Browse evidence",
@@ -106,7 +106,7 @@ const t = {
     predMetric: "Mittari",
     predCentral: "Keskiarvo",
     predCI: "95 % LV",
-    predFooter: "v18.0 — 8 lukittua ennustetta.",
+    predFooter: "v18.0 — 11 lukittua ennustetta.",
     predLink: "Täysi ennusterekisteri",
 
     caveatsTitle: "Missä malli onnistuu — ja missä ei",
@@ -131,7 +131,7 @@ const t = {
     spermConc: "Siittiöpitoisuus 2050",
     ofLevels: "vuoden 2020 tasosta",
     modelVersion: "Malliversio",
-    lockedPredictions: "8 lukittua ennustetta",
+    lockedPredictions: "11 lukittua ennustetta",
     btnPredictions: "Näytä ennusterekisteri",
     btnModel: "Mallin dokumentaatio",
     btnEvidence: "Selaa näyttöä",
@@ -139,10 +139,11 @@ const t = {
 } as const;
 
 const PREDICTIONS_SUMMARY = [
-  { country: "Finland", countryFi: "Suomi", year: 2030, metric: "TFR", central: 1.17, ci: "1.02–1.24" },
-  { country: "South Korea", countryFi: "Etelä-Korea", year: 2030, metric: "TFR", central: 0.60, ci: "0.48–0.72" },
-  { country: "Japan", countryFi: "Japani", year: 2030, metric: "TFR", central: 1.04, ci: "0.88–1.20" },
-  { country: "USA", countryFi: "USA", year: 2030, metric: "TFR", central: 1.45, ci: "1.25–1.65" },
+  { country: "Finland", countryFi: "Suomi", year: 2030, metric: "TFR", central: 1.08, ci: "1.02–1.24" },
+  { country: "South Korea", countryFi: "Etelä-Korea", year: 2030, metric: "TFR", central: 0.61, ci: "0.48–0.72" },
+  { country: "Japan", countryFi: "Japani", year: 2030, metric: "TFR", central: 1.01, ci: "0.88–1.20" },
+  { country: "USA", countryFi: "USA", year: 2030, metric: "TFR", central: 1.35, ci: "1.25–1.65" },
+  { country: "Brazil", countryFi: "Brasilia", year: 2030, metric: "TFR", central: 1.44, ci: "1.40–1.68" },
   { country: "Global", countryFi: "Maailma", year: 2040, metric: "TFR", central: 1.78, ci: "1.55–2.05" },
 ];
 

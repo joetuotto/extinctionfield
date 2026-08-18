@@ -191,7 +191,7 @@ const t = {
     s8CI: "95% CI",
     s8Locked: "Locked",
     s8Footer:
-      "v17.0 — predictions frozen at git SHA. If future observations fall outside the CI, the model is falsified — not the prediction adjusted.",
+      "v18.0 — predictions frozen at git SHA. If future observations fall outside the CI, the model is falsified — not the prediction adjusted.",
 
     // S9 Falsification
     s9Title: "Falsification Conditions",
@@ -537,7 +537,7 @@ const t = {
     s8CI: "95 % LV",
     s8Locked: "Lukittu",
     s8Footer:
-      "v17.0 — ennusteet jäädytetty git SHA:ssa. Jos tulevat havainnot jäävät luottamusvälin ulkopuolelle, malli falsifioidaan — ennustetta ei muuteta.",
+      "v18.0 — ennusteet jäädytetty git SHA:ssa. Jos tulevat havainnot jäävät luottamusvälin ulkopuolelle, malli falsifioidaan — ennustetta ei muuteta.",
 
     // S9 Falsification
     s9Title: "Falsifiointiehdot",

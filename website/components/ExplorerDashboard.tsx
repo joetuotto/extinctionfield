@@ -150,7 +150,7 @@ export function ExplorerDashboard() {
       </div>
 
       <p className="text-xs text-foreground-muted text-center max-w-3xl mx-auto">
-        All values are model outputs from BERM v17. Observed TFR from World
+        All values are model outputs from BERM v18. Observed TFR from World
         Bank. Gray dots = observed data. Blue line = model prediction. Shaded
         area after 2024 = forecast with approximate &plusmn;10% visual
         uncertainty band. The model is calibrated at 2024 &mdash; predicted and

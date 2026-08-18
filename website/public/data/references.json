@@ -1626,5 +1626,17 @@
     "pathway": ["A"],
     "finding": "Sex ratio of offspring shifted from ~1:1 to 6:1 male after parental occupational EMF exposure at power generating stations.",
     "tags": ["occupational", "sex_ratio", "power_line", "history"]
+  },
+  {
+    "id": "zandieh2025",
+    "authors": "Zandieh A, Bhatt DK, Bhatt UC, Bhatt AN",
+    "year": 2025,
+    "title": "Frequency-dependent effects of extremely low-frequency electromagnetic fields on mitochondrial membrane potential and reactive oxygen species",
+    "journal": "Nature Scientific Reports",
+    "type": "experimental",
+    "level": "M",
+    "pathway": ["A", "GME"],
+    "finding": "Cells respond frequency-specifically to ELF fields in the 20-40 mHz range with distinct ROS and mitochondrial membrane potential (TMRM) patterns. Establishes the biological window (R42) that the 3GPP eDRX convergence targets.",
+    "tags": ["elf", "mitochondrial", "ros", "frequency_specific", "r42", "vgcc", "in_vitro"]
   }
 ]
