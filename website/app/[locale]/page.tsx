@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CausalChain from "@/components/CausalChain";
+import { WorldMap } from "@/components/WorldMap";
 import type { Locale } from "@/lib/i18n";
 
 const t = {
@@ -223,28 +224,8 @@ export default async function Home({
             </p>
           </div>
           <div className="lg:col-span-2">
-            <div className="border border-card-border bg-card-bg rounded-lg p-8 text-center h-full flex flex-col items-center justify-center min-h-[240px]">
-              <svg
-                className="text-foreground-muted/40 mb-3"
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
-                />
-              </svg>
-              <h3 className="text-sm font-semibold mb-1 text-foreground-muted">
-                {d.mapPlaceholder}
-              </h3>
-              <p className="text-xs text-foreground-muted/60 max-w-[200px]">
-                {d.mapDesc}
-              </p>
+            <div className="border border-card-border bg-card-bg rounded-lg overflow-hidden h-full min-h-[240px]">
+              <WorldMap locale={locale} />
             </div>
           </div>
         </div>
