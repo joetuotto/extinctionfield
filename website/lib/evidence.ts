@@ -678,4 +678,75 @@ export const EVIDENCE: EvidenceItem[] = [
       "Model calculation: lab ambient EMF rose from ~0.1 V/m (1950s) to ~15 V/m (2020s). The χ selection rule predicts control group χ rose from 0.11 to 0.998, hiding >99% of EMF-sensitive effects. A 1985 experiment replicated in 2015 retains only 2.4% of original effect size. Falsifiable prediction: Faraday-shielded assay should show ~684× larger effect for EMF-sensitive endpoints.",
     level: "L*",
   },
+
+  // ── New additions: Pathway F ──
+  {
+    pathway: "F",
+    study: "Brown GR. Complete Vmem depolarization and infertility",
+    year: 2016,
+    finding:
+      "10% of infertile men show full Vmem depolarization in spermatogonia. Connects membrane potential state directly to clinical infertility, validating the Sempou Vmem → mTOR → differentiation pathway at its extreme endpoint.",
+    level: "L*",
+  },
+
+  // ── New additions: Pathway D (HPA) ──
+  {
+    pathway: "D",
+    study: "Pawlak K et al. EMF exposure and corticosterone in rodent model",
+    year: 2025,
+    finding:
+      "RF-EMF exposure increased corticosterone levels with effect size d = 1.88 in exposed vs sham animals. Large effect size supports HPA axis activation as a primary EMF bioeffect, consistent with BERM's HPA → HPG cross-inhibition pathway.",
+    level: "M",
+    n: 40,
+  },
+
+  // ── New additions: Pharmacological validation ──
+  {
+    pathway: "PV",
+    study: "Yang J et al. Metformin slows aging in primates (Cell)",
+    year: 2024,
+    finding:
+      "Metformin administered to cynomolgus monkeys reduced biological age by 6 years (epigenetic clock). Metformin inhibits mTOR via AMPK — the same pathway Sempou identified for spermatogonial differentiation. BERM prediction: mTOR-targeting interventions affect both aging and fertility through shared VGCC → Ca²⁺ → mTOR signaling.",
+    level: "M",
+    n: 24,
+  },
+  {
+    pathway: "PV",
+    study: "UK CPRD study: metformin-treated diabetics vs healthy controls",
+    year: 2014,
+    finding:
+      "Diabetic patients on metformin had lower all-cause mortality than matched non-diabetic controls, despite diabetes being a mortality risk factor. Consistent with mTOR inhibition providing systemic benefit beyond glucose control. Independent calibration anchor for BERM's mTOR pathway.",
+    level: "C",
+    n: 180000,
+  },
+
+  // ── New additions: Natural experiments ──
+  {
+    pathway: "NE",
+    study:
+      "Møllerløkken OJ & Moen BE. Norwegian naval cohort: RF exposure and fertility",
+    year: 2008,
+    finding:
+      "Cohort of 10,497 Norwegian naval personnel exposed to high-frequency RF. OR 1.86 for infertility with dose-response gradient. Sex ratio shift toward female offspring in exposed group. One of the largest occupational EMF-fertility studies, with exposure assessment and dose-response.",
+    level: "M|C",
+    n: 10497,
+  },
+  {
+    pathway: "NE",
+    study: "COVID-19 lockdown and semen quality recovery",
+    year: 2025,
+    finding:
+      "Multiple studies report improved semen parameters 3 months after COVID lockdowns, when ambient EMF from infrastructure decreased. Effect emerged with ~90 day lag consistent with spermatogenesis cycle. Eliminates stress/lifestyle as explanation (lockdown was stressful). Supports BERM's two-channel model: reduced ambient exposure → reduced cumulative EMF → improved sperm quality.",
+    level: "L*",
+  },
+
+  // ── New additions: Established (umbrella review) ──
+  {
+    pathway: "A",
+    study: "Panagopoulos DJ et al. Umbrella review of EMF biological effects",
+    year: 2025,
+    finding:
+      "Umbrella review of 39 systematic reviews covering thousands of individual studies. Majority of reviews report biological effects of non-ionizing EMF on reproductive parameters, oxidative stress, and DNA damage. Strongest evidence for ROS-mediated sperm damage (Pathway A) and HPA disruption (Pathway D).",
+    level: "E",
+  },
 ];

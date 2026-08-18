@@ -12,6 +12,15 @@ const t = {
     ofLevels: "of 2020 levels",
     modelVersion: "Model version",
     lockedPredictions: "7 locked predictions",
+    whatTitle: "What is happening?",
+    whatFacts: [
+      "Global fertility is collapsing faster than any model predicted. The UN revised its 2100 population projection down by 700 million between 2019 and 2024.",
+      "Sperm concentration dropped 62% in 50 years, accelerating after 2000. The decline is global and affects all regions regardless of lifestyle.",
+      "The same reproductive decline is occurring in dogs, horses, insects, and amphibians — species that share none of our social or economic pressures.",
+      "49 countries are now below TFR 1.4 — a level demography once considered impossible under voluntary fertility models.",
+    ],
+    whatConclusion:
+      "Something biological is happening, across species, across continents, at the same time. BERM proposes a testable explanation.",
     desc1:
       "The Bio-Electromagnetic Reproductive Model (BERM) proposes that anthropogenic electromagnetic fields -- from cell towers, Wi-Fi, and smartphones -- are a significant factor in the global fertility decline. The model produces quantitative, falsifiable predictions that will either come true or not. It is a testable hypothesis, not a certainty claim.",
     desc2:
@@ -34,6 +43,15 @@ const t = {
     ofLevels: "vuoden 2020 tasosta",
     modelVersion: "Malliversio",
     lockedPredictions: "7 lukittua ennustetta",
+    whatTitle: "Mitä tapahtuu?",
+    whatFacts: [
+      "Maailman syntyvyys romahtaa nopeammin kuin yksikään malli ennusti. YK laski vuoden 2100 väestöennustettaan 700 miljoonalla vuosien 2019 ja 2024 välillä.",
+      "Siittiökonsentraatio laski 62 % 50 vuodessa, kiihtyen vuoden 2000 jälkeen. Lasku on maailmanlaajuinen ja koskee kaikkia alueita elämäntavasta riippumatta.",
+      "Sama lisääntymiskyvyn heikkeneminen tapahtuu koirilla, hevosilla, hyönteisillä ja sammakkoeläimillä — lajeilla, joilla ei ole mitään sosiaalisia tai taloudellisia paineitamme.",
+      "49 maata on nyt alle TFR 1,4 — tason, jota väestötiede piti mahdottomana vapaaehtoisissa hedelmällisyysmalleissa.",
+    ],
+    whatConclusion:
+      "Jotain biologista tapahtuu, lajeista toiseen, mantereelta toiselle, samanaikaisesti. BERM tarjoaa testattavan selityksen.",
     desc1:
       "Bio-sähkömagneettinen lisääntymismalli (BERM) esittää, että ihmisen tuottamat sähkömagneettiset kentät -- tukiasemista, Wi-Fistä ja älypuhelimista -- ovat merkittävä tekijä maailmanlaajuisessa syntyvyyden laskussa. Malli tuottaa kvantitatiivisia, falsifioitavia ennusteita, jotka joko toteutuvat tai eivät. Se on testattava hypoteesi, ei varmuusväite.",
     desc2:
@@ -68,6 +86,21 @@ export default async function Home({
           {d.heroSub}
         </p>
       </header>
+
+      <section className="mb-16 max-w-3xl">
+        <h2 className="text-xl font-semibold mb-5">{d.whatTitle}</h2>
+        <ol className="space-y-4">
+          {d.whatFacts.map((fact, i) => (
+            <li key={i} className="flex gap-4">
+              <span className="flex-shrink-0 mt-0.5 w-7 h-7 rounded-full bg-status-refuted/15 text-status-refuted flex items-center justify-center text-xs font-bold">
+                {i + 1}
+              </span>
+              <p className="text-foreground-muted leading-relaxed">{fact}</p>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-6 text-foreground font-medium">{d.whatConclusion}</p>
+      </section>
 
       <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
         <div className="border border-card-border bg-card-bg rounded-lg p-6">
