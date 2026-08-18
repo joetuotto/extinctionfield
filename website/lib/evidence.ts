@@ -93,6 +93,16 @@ export const PATHWAYS: Record<
     description:
       "If EMF exposure drives fertility decline, the transition from 2G (base stations only) through 3G (mobile data) to 4G/smartphones (personal RF surge) should produce monotonically increasing TFR decline rates. This tests BERM's dose-response prediction against the sharpest historical exposure discontinuities. Results are partially supportive: 6/8 countries show 4G-era acceleration over 2G, but only 3/8 show strict monotonic increase across all generations.",
   },
+  CA: {
+    label: "Calibration anchors",
+    description:
+      "Independent empirical measurements from Travison (testosterone decline), Leproult (sleep-testosterone pathway), Volkow (acute neural response), and Becker (bioelectric field ratios) are used to check whether BERM's internal parameters produce physiologically consistent magnitudes. All four anchors pass, but this is a consistency check, not evidence of causation.",
+  },
+  NR: {
+    label: "Negative results and counter-evidence",
+    description:
+      "Studies and observations that contradict BERM predictions, that the model cannot explain, or that limit the strength of causal claims. Scientific integrity requires documenting what fails, not only what fits. Two entries are rated high-threat: the monotonic degeneracy problem (any increasing variable fits the TFR curve) and the absence of any human RCT linking EMF reduction to fertility improvement.",
+  },
 };
 
 // Evidence items organized by pathway
@@ -545,6 +555,87 @@ export const EVIDENCE: EvidenceItem[] = [
     year: 2024,
     finding:
       "BERM-inconsistent for monotonicity: 2G-era TFR decline was fastest (driven by demographic transition from TFR 3.5+), slowing through 3G and 4G eras as TFR approaches replacement. Proportional rates partially rescue the pattern but development confounds dominate. Similar to natural experiment limitations in high-TFR transition countries",
+    level: "C",
+  },
+
+  // ── Calibration Anchors ──
+  {
+    pathway: "CA",
+    study: "Travison AB et al. Population-level decline in serum T levels (MMAS)",
+    year: 2007,
+    finding:
+      "Age-independent testosterone decline of ~1%/year across three cohorts (1987-2004). BERM's cumulative EMF exposure model accounts for 14% of this secular decline — consistent with a multi-causal framework where EMF is one contributor alongside obesity, EDCs, and lifestyle changes",
+    level: "C",
+    n: 1532,
+  },
+  {
+    pathway: "CA",
+    study: "Leproult R, Van Cauter E. Sleep restriction and testosterone",
+    year: 2011,
+    finding:
+      "One week of 5h sleep reduced testosterone by 10-15% in young men. BERM's sleep-T pathway (melatonin 0.25 × 0.30 + CRY 0.15 × 0.20 = 10.5% decline) matches at ratio 0.70 — strong calibration of the circadian disruption mechanism",
+    level: "L*",
+    n: 10,
+  },
+  {
+    pathway: "CA",
+    study: "Volkow ND et al. Effects of cell phone radiofrequency signal exposure on brain glucose metabolism",
+    year: 2011,
+    finding:
+      "50 min phone call increased glucose metabolism by 7% in nearest brain region (PET scan). BERM consistency check: 1200 sessions/year × 7% acute response implies 0.18% retention rate per session for the model's chronic neural pathway — consistent with BBB recovery kinetics",
+    level: "L*",
+    n: 47,
+  },
+  {
+    pathway: "CA",
+    study: "Becker RO. Bioelectric field measurements + Levin M. Vmem as morphogenetic signal",
+    year: 2014,
+    finding:
+      "Endogenous DC fields of 50-200 mV/m guide tissue regeneration. Typical RF exposure induces ~0.5 mV/m — 0.5% of endogenous field strength. This is at Becker's disruption threshold (~1%), consistent with BERM's prediction of small but cumulative effects. VGCC open probability at typical exposure: 0.463",
+    level: "M",
+  },
+
+  // ── Negative results and counter-evidence ──
+  {
+    pathway: "NR",
+    study: "INTERPHONE Study Group. Mobile phone use and glioma/meningioma risk",
+    year: 2010,
+    finding:
+      "No overall increased risk of brain cancer with mobile phone use (OR 0.81, 95% CI 0.70-0.94). BERM models sublethal functional changes, not genotoxic endpoints, so this does not directly contradict the model — but it suggests acute metabolic changes may not translate to structural pathology. Model threat: LOW",
+    level: "E",
+    n: 6420,
+  },
+  {
+    pathway: "NR",
+    study: "Hatch EE et al. Mobile phone use and fecundability (Danish cohort)",
+    year: 2021,
+    finding:
+      "No association between self-reported mobile phone use and fecundability ratio (FR 1.00, 95% CI 0.93-1.07). Directly challenges BERM's core hypothesis. Self-reported use is a poor exposure proxy (measurement error biases toward null), but this limitation does not fully resolve the null finding. Model threat: MEDIUM",
+    level: "E",
+    n: 3947,
+  },
+  {
+    pathway: "NR",
+    study: "K8 monotonic degeneracy test (BERM internal)",
+    year: 2026,
+    finding:
+      "86% of random monotonic time series fit the TFR decline curve at least as well as BERM's own exposure index. Any increasing variable (GDP, education, screen time, microplastics) produces similar hindcast fit. This is BERM's most serious identification problem — temporal correlation is necessary but grossly insufficient for causal identification. Model threat: HIGH",
+    level: "M|C",
+  },
+  {
+    pathway: "NR",
+    study: "No human RCT exists (literature gap)",
+    year: 2026,
+    finding:
+      "No randomized controlled trial has ever tested whether reducing personal EMF exposure improves human fertility. The entire causal chain from EMF to TFR rests on observational and animal evidence. Without experimental evidence in humans, BERM predictions remain mechanistic inference, not established fact. Model threat: HIGH",
+    level: "L",
+  },
+  {
+    pathway: "NR",
+    study: "IVF success rate trends vs BERM predictions",
+    year: 2024,
+    finding:
+      "IVF success rates improved from ~36% to ~50% live birth rate per transfer (2000-2024), despite increasing ambient EMF. If EMF degrades gamete quality, IVF outcomes should not improve. Lab technique improvements and gamete selection (ICSI/PGT) may overwhelm EMF effects, or effects on gametes may be smaller than modeled. Model threat: MEDIUM",
     level: "C",
   },
 ];
