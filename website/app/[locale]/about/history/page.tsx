@@ -6,7 +6,91 @@ const t = {
     title: "Historical context",
     subtitle:
       "The historical background of bioelectromagnetic research: Becker, Frey, and the US Navy.",
-    wip: "English translation is in progress. Please switch to Finnish for the full article.",
+    intro:
+      "The biological effects of electromagnetic fields are not a new discovery. They have been known, studied, and documented for over six decades — first in military research laboratories, then in universities, and ultimately marginalized institutionally in a way that is itself a history worth examining.",
+    sections: [
+      {
+        heading: "1896–1950: Early observations",
+        paragraphs: [
+          "The biological effects of electromagnetic fields were observed as early as the late 19th century. French physicist Jacques-Arsène d'Arsonval described the magnetophosphene phenomenon in 1896: alternating magnetic fields produced visible light flashes in the visual field of test subjects. This demonstrated that neural tissue responds to electromagnetic fields non-thermally — the effect was not caused by tissue heating but by direct interaction with the nervous system's ion channels.",
+          "During World War II, the rapid development of radar technology brought the first observations of biological effects from high-power microwave radiation. Radar operators reported sensations of warmth, headaches, and visual disturbances. These observations led to research programs in both the United States and the Soviet Union, the results of which were largely classified.",
+        ],
+      },
+      {
+        heading: "1950–1965: The Cold War and the explosive growth of radar systems",
+        paragraphs: [
+          "During the Cold War, an unprecedented network of air surveillance radars was built across North America and Europe. The Pinetree Line (33 stations, 1951), Mid-Canada Line (90+ stations, 1957), and DEW Line (63 stations, 1957) formed an arctic radar wall from Alaska to Greenland. In 1961, the BMEWS system (Ballistic Missile Early Warning System) introduced three mega-stations whose AN/FPS-27 radars produced 15 megawatts of peak power in the S-band (2.3–2.7 GHz) — precisely the same frequency range used by modern Wi-Fi routers.",
+          "Simultaneously, Nike Ajax and Nike Hercules anti-aircraft battery stations (over 200 stations, 1954–1974) were placed in the suburban areas of major American cities. Their LOPAR search radars produced over a megawatt of peak power. Tens of millions of people lived near these stations for two decades.",
+          "In NATO countries, the NADGE system (NATO Air Defence Ground Environment) covered hundreds of radar stations from Norway to Turkey. Tropospheric scatter communication systems — White Alice (80 stations in Alaska, 900 MHz / 2 GHz, 10–75 kW) and ACE High (49 stations in NATO countries) — radiated high-power RF energy in rural and mountainous areas, precisely the habitats where sentinel species (frogs, birds, insects) lived.",
+          'The Soviet Union built equivalent systems. In 1976, the Duga radar ("Russian Woodpecker") began operations in Chernobyl: a 10-megawatt over-the-horizon radar that disrupted HF radio traffic globally and whose signal was heard on radios worldwide as a steady tapping sound.',
+          "By 1965, the Earth was encircled by a belt of radar radiation that had not existed 15 years earlier. The temporal coincidence between this period and the onset of sentinel species population decline is one of the BERM model's central observations.",
+        ],
+      },
+      {
+        heading: "1961: Frey's auditory effect",
+        paragraphs: [
+          'Allan Frey published a study in 1961 demonstrating that humans could "hear" pulsed microwave radiation — clicks and buzzing, without hearing aids or any obvious mechanism. This was the first peer-reviewed demonstration that RF electromagnetic fields produce a direct neurological response at non-thermal intensity. Frey\'s work also showed that the blood-brain barrier (BBB) opened transiently during RF exposure — a finding confirmed by Salford in 2003 with GSM-900 signals.',
+          "Frey's research attracted interest from both the scientific community and intelligence agencies. The US Department of Defense (DoD) funded follow-up studies, some of which were classified.",
+        ],
+      },
+      {
+        heading: "1960–1972: Becker's bioelectric revolution",
+        paragraphs: [
+          "Robert O. Becker, an orthopedic surgeon and researcher at the Veterans Administration hospital in Syracuse, made a series of breakthroughs in the field of bioelectricity during the 1960s. He demonstrated that salamander limb regeneration is directed by nanoampere-level direct currents (DC): a negative current at the neuroepidermal junction triggers dedifferentiation and regeneration. The current had a precise threshold — slightly more did not work. This was the first demonstration of the existence of a bioelectric code in mammalian tissues.",
+          "Becker connected his observations to electromagnetic field research and proposed that external EMF fields can disrupt the body's internal bioelectric signals. He documented several cases, the most notable being the Fort Rucker case: 17 clubfoot births in 16 months at a military hospital maternity ward (expected value approximately 4), in a high-radar-power military base. When Becker requested radiation maps of the radar stations to study the effect, the Army refused citing military classification.",
+          "Becker's research funding was cut in the 1970s. His laboratory was closed. He published his findings in two books — The Body Electric (1985) and Cross Currents (1990) — which remained outside the scientific mainstream but documented extensive experimental evidence.",
+        ],
+      },
+      {
+        heading: "1972: The Moscow signal",
+        paragraphs: [
+          "From 1953 onwards — possibly earlier — the Soviet Union directed a low-intensity microwave signal at the US Embassy in Moscow at frequencies of 0.5–18 GHz, at an intensity of 5–15 µW/cm² (well below current safety limits). When the exposure was revealed in the 1970s, embassy personnel were found to have elevated cancer rates, leukemia incidence, and neurological symptoms. The US State Department did not publish all research results.",
+          "The case is significant for two reasons. It demonstrated that state-level actors took the biological effects of RF seriously — more seriously than was publicly acknowledged. And it showed that long-term, low-dose exposure can produce health effects, even when instantaneous exposure is below the safety limit.",
+        ],
+      },
+      {
+        heading: "1975–1981: Adey's calcium efflux",
+        paragraphs: [
+          'W. Ross Adey demonstrated in the 1970s–1980s that weak electromagnetic fields at certain frequencies and intensities cause calcium efflux from brain tissue — calcium ions flow out of cells. The effect was a "window phenomenon": it occurred only at certain frequencies and intensities, not all. This was the first clear demonstration of a nonlinear, non-thermal biological response to electromagnetic fields.',
+          "Adey's results were replicated in several independent laboratories — and they form the foundation for the current VGCC mechanism (voltage-gated calcium channels). Nevertheless, Adey was marginalized in the academic community in the 1990s, and his research line withered due to lack of funding.",
+        ],
+      },
+      {
+        heading: "1984: US Air Force chronic exposure study",
+        paragraphs: [
+          "Arthur Guy conducted one of the longest controlled animal experiments on RF exposure, commissioned by the US Air Force. 200 rats were exposed to 2.45 GHz radiation (0.5 mW/cm²) for 25 months. Result: exposed rats developed 18 tumors compared to 5 in the control group (3.6-fold risk), particularly in endocrine organs (pituitary, thyroid, adrenal glands). Plasma cortisol levels rose initially and then fell — precisely the dynamics predicted by Hans Selye's General Adaptation Syndrome (GAS).",
+        ],
+      },
+      {
+        heading: "1990s: Safety standards and industry lobbying",
+        paragraphs: [
+          "ICNIRP (International Commission on Non-Ionizing Radiation Protection) established safety limits in the 1990s based solely on thermal effects — i.e., tissue heating. All non-thermal biological effects (calcium efflux, oxidative stress, BBB opening, hormonal changes) were excluded from the safety limits because they were not considered \"sufficiently proven.\"",
+          "Simultaneously, the mobile phone industry grew into one of the world's largest sectors. The structure of research funding changed: a significant portion of EMF safety research was funded directly or indirectly through industry. Several studies reporting non-thermal effects were severely criticized or marginalized, while industry-funded studies — which systematically reported \"no effect\" — received less scrutiny.",
+        ],
+      },
+      {
+        heading: "2013–2025: Pall's VGCC hypothesis and Panagopoulos umbrella review",
+        paragraphs: [
+          "Martin Pall published a comprehensive review in 2013 linking the biological effects of electromagnetic fields to voltage-gated calcium channels (VGCC). 23 studies demonstrated that calcium channel blockers prevent EMF biological effects — confirming VGCC as the primary mechanism. Pall's analysis expanded this to 28 studies by 2018.",
+          "In 2025, Dimitris Panagopoulos published an umbrella review covering 39 systematic reviews on the effects of EMF on reproductive health. The review confirmed biological effects across multiple parameters.",
+        ],
+      },
+      {
+        heading: "2021–2026: Lindgren's geometric electromagnetism and BERM",
+        paragraphs: [
+          "Jouni Lindgren, Jukka Kovacs and Tapio Liukkonen published a theoretical framework in 2025 in which the electromagnetic potential is part of spacetime geometry: the metric tensor absorbs the EM quadri-potential and Maxwell's equations follow as Bianchi identities of the geometry.",
+          "BERM (Bio-Electromagnetic Reproductive Model) applies this geometry to a biological context and produces quantitative, locked predictions that will either come true or not. The model does not claim to be proven — it claims to be falsifiable.",
+        ],
+      },
+    ],
+    coda: {
+      heading: "Why this history matters",
+      paragraphs: [
+        "The biological effects of electromagnetic fields are not a new claim. They have been documented over six decades, starting from military research laboratories. The marginalization of these claims was not based on the effects being investigated and rejected — but on the research line being shut down due to funding structures and institutional pressures.",
+        'BERM does not claim this is a conspiracy. It claims this is a structural blind spot: research funding is directed toward questions that already have an answer ("is there a thermal effect?") rather than questions that have never been properly asked ("what happens at the VGCC level during chronic, non-thermal exposure?").',
+        "The sources of this site — Becker, Frey, Adey, Guy, Pall, Panagopoulos, Zandieh — form a 60-year research line that is coherent but institutionally broken. BERM seeks to reconnect these threads.",
+      ],
+    },
   },
   fi: {
     title: "Historiallinen konteksti",
@@ -130,19 +214,7 @@ export default async function HistoryPage({
   const { locale } = await params;
   const lang = (locale as Locale) in t ? (locale as Locale) : "en";
 
-  if (lang === "en") {
-    return (
-      <main className="max-w-3xl mx-auto px-6 py-12">
-        <h1 className="text-2xl font-bold mb-2">{t.en.title}</h1>
-        <p className="text-foreground-muted mb-8">{t.en.subtitle}</p>
-        <div className="border border-card-border rounded-lg p-8 text-center text-foreground-muted">
-          {t.en.wip}
-        </div>
-      </main>
-    );
-  }
-
-  const d = t.fi;
+  const d = t[lang];
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-12">
@@ -150,7 +222,9 @@ export default async function HistoryPage({
       <p className="text-foreground-muted mb-4">{d.subtitle}</p>
 
       <h2 className="text-xl font-semibold mt-10 mb-4">
-        Biosähkömagneettisen tutkimuksen tukahdutettu historia
+        {lang === "fi"
+          ? "Biosähkömagneettisen tutkimuksen tukahdutettu historia"
+          : "The suppressed history of bioelectromagnetic research"}
       </h2>
       <p className="text-foreground-muted leading-relaxed mb-6">{d.intro}</p>
 

@@ -579,6 +579,7 @@ export default async function EvidencePage({
                 pKey === "NR" ||
                 pKey === "LB" ||
                 pKey === "RW" ||
+                pKey === "BS" ||
                 pKey === "IS" ||
                 pKey === "OT" ||
                 pKey === "T_BE" ||
