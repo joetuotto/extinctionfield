@@ -674,6 +674,7 @@ export const EDGES: ChainEdge[] = [
     to: "chi",
     label: "geometrinen seuraus",
     epistemicLevel: "M",
+    priority: "primary",
   },
   // Taso 2→3
   {
@@ -681,18 +682,21 @@ export const EDGES: ChainEdge[] = [
     to: "two_channel",
     label: "kytkentäfunktio",
     epistemicLevel: "M",
+    priority: "primary",
   },
   {
     from: "ambient",
     to: "two_channel",
     label: "Ā (tausta)",
     epistemicLevel: "E",
+    priority: "primary",
   },
   {
     from: "personal",
     to: "two_channel",
     label: "a (perturbointia)",
     epistemicLevel: "E",
+    priority: "primary",
   },
   // Taso 3→4
   {
@@ -700,12 +704,14 @@ export const EDGES: ChainEdge[] = [
     to: "membrane",
     label: "EMF saavuttaa solun",
     epistemicLevel: "E",
+    priority: "primary",
   },
   {
     from: "membrane",
     to: "vgic",
     label: "kentänmuutos kalvolla",
     epistemicLevel: "E",
+    priority: "primary",
   },
   // Taso 4→5
   {
@@ -714,6 +720,7 @@ export const EDGES: ChainEdge[] = [
     label: "Ca²⁺ influx",
     derivative: "∂ROS/∂Ca²⁺ > 0",
     epistemicLevel: "E",
+    priority: "primary",
   },
   {
     from: "two_channel",
@@ -721,6 +728,7 @@ export const EDGES: ChainEdge[] = [
     label: "RF → spin-kemia",
     derivative: "∂CRY/∂B_RF ≠ 0",
     epistemicLevel: "E",
+    priority: "primary",
   },
   {
     from: "two_channel",
@@ -733,6 +741,7 @@ export const EDGES: ChainEdge[] = [
     to: "pathway_d",
     label: "Ca²⁺ → HPA",
     epistemicLevel: "E",
+    priority: "primary",
   },
   {
     from: "vgic",
@@ -746,6 +755,7 @@ export const EDGES: ChainEdge[] = [
     to: "sdf",
     label: "ROS → DNA-katko",
     epistemicLevel: "E",
+    priority: "primary",
   },
   {
     from: "sdf",
@@ -784,8 +794,8 @@ export const EDGES: ChainEdge[] = [
     epistemicLevel: "E",
   },
   // Taso 6→7
-  { from: "motility", to: "fecundability_bio", epistemicLevel: "E" },
-  { from: "concentration", to: "fecundability_bio", epistemicLevel: "E" },
+  { from: "motility", to: "fecundability_bio", epistemicLevel: "E", priority: "primary" },
+  { from: "concentration", to: "fecundability_bio", epistemicLevel: "E", priority: "primary" },
   { from: "ovulation", to: "fecundability_bio", epistemicLevel: "M|C" },
   { from: "implantation", to: "fecundability_bio", epistemicLevel: "C" },
   {
@@ -793,6 +803,7 @@ export const EDGES: ChainEdge[] = [
     to: "motivation",
     label: "T↓, OT↓, DA↓",
     epistemicLevel: "E",
+    priority: "primary",
   },
   {
     from: "pathway_c",
@@ -806,19 +817,22 @@ export const EDGES: ChainEdge[] = [
     to: "fecundability",
     label: "F_bio",
     epistemicLevel: "E",
+    priority: "primary",
   },
   {
     from: "motivation",
     to: "fecundability",
     label: "M_repro",
     epistemicLevel: "E",
+    priority: "primary",
   },
-  { from: "fecundability", to: "asfr", epistemicLevel: "E" },
+  { from: "fecundability", to: "asfr", epistemicLevel: "E", priority: "primary" },
   {
     from: "asfr",
     to: "tfr",
     label: "Σ ikäryhmät",
     epistemicLevel: "E",
+    priority: "primary",
   },
   {
     from: "sexratio",
@@ -832,6 +846,7 @@ export const EDGES: ChainEdge[] = [
     to: "feedback",
     label: "TFR↓ → urbanisaatio↑",
     epistemicLevel: "M|C",
+    priority: "primary",
   },
   // Taso 4→5 (uudet)
   {

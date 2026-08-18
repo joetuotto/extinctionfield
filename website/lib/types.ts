@@ -67,4 +67,5 @@ export interface ChainEdge {
   label?: string;
   derivative?: string;
   epistemicLevel: EpistemicLevel;
+  priority?: "primary" | "secondary";
 }

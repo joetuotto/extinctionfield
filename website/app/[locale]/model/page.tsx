@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n";
 import Link from "next/link";
 import CausalChainDiagram from "@/components/CausalChainDiagram";
+import { ModelTableOfContents } from "@/components/ModelTableOfContents";
+import { MathematicsSections } from "@/app/[locale]/mathematics/page";
 
 const t = {
   en: {
@@ -12,7 +14,6 @@ const t = {
     metaDesc:
       "BERM model documentation: three-level architecture, causal pathways, equations, and recovery dynamics.",
 
-    // Three-level architecture
     archTitle: "Three-level architecture",
     archDesc:
       "BERM separates fertility decline into three distinct causal layers. Each level has its own dynamics, timescale, and evidence basis. The total fertility rate (TFR) for a country is the product of all three levels, not the sum -- each acts as a multiplier on the others.",
@@ -29,12 +30,10 @@ const t = {
     level3Desc:
       "Voluntary fertility choices independent of biological capacity. Education, urbanization, contraceptive access, economic opportunity, and cultural norms. This component exists in all demographic models; BERM adds the biological and EMF layers underneath it.",
 
-    // Causal pathway diagram
     causalTitle: "Causal pathway diagram",
     causalDesc:
       "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Nine levels, 35 nodes, 50 edges. Two co-primary pathways operate in parallel: Pathway A (VGCC → Ca²⁺ → ROS) has the strongest experimental support (23–28 blocker studies), while Pathway B (RPM → CRY → circadian disruption) is the most complete theoretical bridge from Lindgren geometry to biology (87.5% of the RPM Hamiltonian is derivable from the metric ansatz). Both are independently supported at E-level evidence. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
 
-    // Lindgren chi coupling
     chiTitle: "Lindgren chi coupling equation",
     chiDesc:
       "The coupling between ambient EMF infrastructure and personal device exposure is not linear. The chi function describes a saturation curve: at low ambient levels, personal exposure adds little on top; at high ambient levels, personal exposure is already dominated by the environmental field.",
@@ -42,14 +41,12 @@ const t = {
       "is the normalized ambient exposure (0 = no infrastructure, 1 = saturation). The function approaches 1 asymptotically, meaning the marginal effect of personal devices diminishes as ambient exposure grows.",
     chiWherePrefix: "Where",
 
-    // Two-channel model
     twoChTitle: "Two-channel exposure model",
     twoChDesc:
       "Total effective EMF exposure is the sum of two channels: the ambient field (cell towers, Wi-Fi infrastructure, power lines) and the personal component (phone, laptop, wearables) modulated by the chi coupling.",
     twoChExplain:
       "This means that in a country with near-zero cellular infrastructure, even heavy personal phone use contributes little total exposure (chi is near zero). Conversely, in a fully saturated environment, the personal component is added almost linearly.",
 
-    // Five-layer recovery model
     recovTitle: "Five-layer recovery model",
     recovDesc:
       "If EMF exposure were reduced, different biological systems would recover at different rates. The α parameter for each layer represents the fraction of damage that is reversible (1.0 = fully reversible, 0.0 = permanent).",
@@ -78,19 +75,15 @@ const t = {
     recovBbbNote:
       "Neuronal damage from chronic BBB leakage is assumed permanent in the model",
 
-    // Compensation mechanism
     compTitle: "Compensation mechanism",
     compDesc:
       "Observed TFR is not simply the product of the three levels. Societies partially compensate for biological decline through assisted reproduction, behavioral changes, and policy interventions. The effective TFR includes a compensation exponent α = 0.43 that captures this partial offset.",
     compWhereLabel: "Where:",
-    compBioCap:
-      "biological capacity (Level 1), normalized 0-1",
-    compBehav:
-      "EMF-behavioral coupling factor (Level 2)",
+    compBioCap: "biological capacity (Level 1), normalized 0-1",
+    compBehav: "EMF-behavioral coupling factor (Level 2)",
     compAlpha:
       "compensation exponent, calibrated against 2000-2024 historical data",
-    compRate2024:
-      "the observed TFR in 2024 (calibration anchor)",
+    compRate2024: "the observed TFR in 2024 (calibration anchor)",
     compCultRatio:
       "ratio of projected cultural fertility preference to 2024 baseline",
     compBioBehav2024:
@@ -98,12 +91,11 @@ const t = {
     compExplain:
       "When α = 0, there is no compensation and biological decline passes through directly to TFR. When α = 1, compensation is complete and biological decline has no effect on observed TFR. The calibrated value of 0.43 implies partial but incomplete compensation -- biological decline still manifests in TFR, but at roughly half the rate it would without societal adaptation.",
 
-    // mTOR convergence
     mtorTitle: "mTOR convergence hypothesis",
     mtorDesc1:
       "mTOR is the downstream integrator where EMF-induced Ca²⁺ influx converges with aging, fertility, and cancer pathways. The Sempou pathway: EMF → VGIC → Ca²⁺↑ → mTOR hyperactivation → autophagy↓, senescent cell accumulation, mitochondrial quality control↓, chronic inflammation↑.",
     mtorDesc2:
-      "Metformin activates AMPK, which suppresses mTOR -- the exact opposite of the EMF-induced pathway. The hypothesis: metformin’s longevity benefit is not anti-aging per se but anti-EMF-accelerated-aging. In a natural EMF environment (Amish), the benefit should be minimal.",
+      "Metformin activates AMPK, which suppresses mTOR -- the exact opposite of the EMF-induced pathway. The hypothesis: metformin's longevity benefit is not anti-aging per se but anti-EMF-accelerated-aging. In a natural EMF environment (Amish), the benefit should be minimal.",
     mtorEqExplain:
       "Where EMF is normalized exposure (0 = no infrastructure, 1 = modern city), and reduction factors include metformin (0.30), rapamycin (0.85), caloric restriction (0.20), intermittent fasting (0.10).",
     mtorThreeTitle: "Three epidemics, one mechanism",
@@ -153,11 +145,12 @@ const t = {
       },
     ],
 
-    // Links
     btnEvidence: "Browse evidence",
     btnPredictions: "View predictions",
+    mathTitle: "Mathematical Foundation",
+    mathSubtitle:
+      'Complete derivation from Lindgren geometry to TFR prediction. Every equation is derivable from the previous one. Click "Full derivation" to see intermediate steps.',
 
-    // Epistemic note
     epistemic:
       "Epistemic note: The equations above are the current model specification (v17.0). Parameter values are calibrated against observed data and will be updated as new evidence becomes available. The model is explicitly designed to be falsifiable -- if its predictions fail, the model is wrong.",
   },
@@ -169,7 +162,6 @@ const t = {
     metaDesc:
       "BERM-mallin dokumentaatio: kolmitasoinen arkkitehtuuri, kausaalireitit, yhtälöt ja palautumisdynamiikka.",
 
-    // Three-level architecture
     archTitle: "Kolmitasoinen arkkitehtuuri",
     archDesc:
       "BERM erottelee syntyvyyden laskun kolmeen erilliseen kausaalitasoon. Jokaisella tasolla on oma dynamiikkansa, aikaskaalansa ja näyttöpohjansa. Maan kokonaishedelmällisyysluku (TFR) on kaikkien kolmen tason tulo, ei summa -- kukin toimii kertoimena muille.",
@@ -186,12 +178,10 @@ const t = {
     level3Desc:
       "Vapaaehtoiset hedelmällisyysvalinnat biologisesta kapasiteetista riippumatta. Koulutus, kaupungistuminen, ehkäisyn saatavuus, taloudelliset mahdollisuudet ja kulttuuriset normit. Tämä komponentti on kaikissa demografisissa malleissa; BERM lisää biologiset ja EMF-tasot sen alle.",
 
-    // Causal pathway diagram
     causalTitle: "Kausaalireittikaavio",
     causalDesc:
       "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Yhdeksän tasoa, 35 solmua, 50 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatukimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). Molemmat ovat itsenäisesti tuetut E-tason evidenssillä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
 
-    // Lindgren chi coupling
     chiTitle: "Lindgrenin chi-kytkentäyhtälö",
     chiDesc:
       "Ympäristön EMF-infrastruktuurin ja henkilökohtaisen laitealtistuksen välinen kytkentä ei ole lineaarinen. Chi-funktio kuvaa saturaatiokäyrää: matalilla ympäristötasoilla henkilökohtainen altistus lisää vain vähän; korkeilla ympäristötasoilla henkilökohtainen altistus on jo ympäristökentän hallitsema.",
@@ -199,14 +189,12 @@ const t = {
       "on normalisoitu ympäristöaltistus (0 = ei infrastruktuuria, 1 = saturaatio). Funktio lähestyy asymptoottisesti arvoa 1, mikä tarkoittaa, että henkilökohtaisten laitteiden marginaalivaikutus pienenee ympäristöaltistuksen kasvaessa.",
     chiWherePrefix: "Missä",
 
-    // Two-channel model
     twoChTitle: "Kaksikanavainen altistusmalli",
     twoChDesc:
       "Kokonaistehokas EMF-altistus on kahden kanavan summa: ympäristökenttä (tukiasemat, Wi-Fi-infrastruktuuri, voimalinjat) ja henkilökohtainen komponentti (puhelin, kannettava, puettavat laitteet) chi-kytkennällä moduloituna.",
     twoChExplain:
       "Tämä tarkoittaa, että maassa, jossa matkapuhelininfrastruktuuri on lähes nolla, jopa runsas puhelinkäyttö tuottaa vähän kokonaisaltistusta (chi on lähellä nollaa). Vastaavasti täysin saturoituneessa ympäristössä henkilökohtainen komponentti lisätään lähes lineaarisesti.",
 
-    // Five-layer recovery model
     recovTitle: "Viisikerroksinen palautumismalli",
     recovDesc:
       "Jos EMF-altistusta vähennettäisiin, eri biologiset järjestelmät palautuisivat eri nopeuksilla. Kunkin kerroksen α-parametri edustaa palautuvan vaurion osuutta (1,0 = täysin palautuva, 0,0 = pysyvä).",
@@ -235,19 +223,15 @@ const t = {
     recovBbbNote:
       "Kroonisesta BBB-vuodosta johtuvan hermostovaurion oletetaan olevan pysyvä mallissa",
 
-    // Compensation mechanism
     compTitle: "Kompensaatiomekanismi",
     compDesc:
       "Havaittu TFR ei ole yksinkertaisesti kolmen tason tulo. Yhteiskunnat kompensoivat osittain biologista laskua avustetun lisääntymisen, käyttäytymismuutosten ja poliittisten interventioiden kautta. Tehokas TFR sisältää kompensaatioeksponentin α = 0,43, joka kuvaa tätä osittaista tasausta.",
     compWhereLabel: "Missä:",
-    compBioCap:
-      "biologinen kapasiteetti (taso 1), normalisoitu 0–1",
-    compBehav:
-      "EMF-käyttäytymiskytkentäkerroin (taso 2)",
+    compBioCap: "biologinen kapasiteetti (taso 1), normalisoitu 0–1",
+    compBehav: "EMF-käyttäytymiskytkentäkerroin (taso 2)",
     compAlpha:
       "kompensaatioeksponentti, kalibroitu vuosien 2000–2024 historiallista dataa vasten",
-    compRate2024:
-      "havaittu TFR vuonna 2024 (kalibrointiankkuri)",
+    compRate2024: "havaittu TFR vuonna 2024 (kalibrointiankkuri)",
     compCultRatio:
       "ennustetun kulttuurisen hedelmällisyyspreferenssin suhde vuoden 2024 perustasoon",
     compBioBehav2024:
@@ -255,7 +239,6 @@ const t = {
     compExplain:
       "Kun α = 0, kompensaatiota ei ole ja biologinen lasku siirtyy suoraan TFR:ään. Kun α = 1, kompensaatio on täydellinen eikä biologinen lasku vaikuta havaittuun TFR:ään. Kalibroitu arvo 0,43 tarkoittaa osittaista mutta epätäydellistä kompensaatiota -- biologinen lasku näkyy edelleen TFR:ssä, mutta noin puolella nopeudella verrattuna tilanteeseen ilman yhteiskunnallista sopeutumista.",
 
-    // mTOR convergence
     mtorTitle: "mTOR-konvergenssihypoteesi",
     mtorDesc1:
       "mTOR on alavirtaintegraattori, jossa EMF:n aiheuttama Ca²⁺-influksi konvergoi ikääntymis-, hedelmällisyys- ja syöpäreittien kanssa. Sempou-reitti: EMF → VGIC → Ca²⁺↑ → mTOR-hyperaktivaatio → autofagia↓, seneskenttien solujen kertyminen, mitokondriaalinen laadunvalvonta↓, krooninen tulehdus↑.",
@@ -310,11 +293,12 @@ const t = {
       },
     ],
 
-    // Links
     btnEvidence: "Selaa näyttöä",
     btnPredictions: "Näytä ennusteet",
+    mathTitle: "Matemaattinen perusta",
+    mathSubtitle:
+      'Täydellinen johtaminen Lindgrenin geometriasta TFR-ennusteeseen. Jokainen yhtälö on johdettavissa edellisestä. Klikkaa "Täysi johtaminen" nähdäksesi välivaiheet.',
 
-    // Epistemic note
     epistemic:
       "Episteeminen huomautus: Yllä olevat yhtälöt ovat nykyinen mallispesifikaatio (v17.0). Parametriarvot on kalibroitu havaittua dataa vasten ja niitä päivitetään uuden näytön myötä. Malli on nimenomaisesti suunniteltu falsifioitavaksi -- jos sen ennusteet epäonnistuvat, malli on väärässä.",
   },
@@ -371,7 +355,7 @@ export default async function ModelPage({
   const prefix = `/${locale}`;
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
+    <div className="max-w-6xl mx-auto px-6 py-16">
       {/* Header */}
       <header className="mb-12">
         <h1 className="text-3xl font-bold tracking-tight mb-3">{d.title}</h1>
@@ -380,313 +364,332 @@ export default async function ModelPage({
         </p>
       </header>
 
-      {/* Three-level architecture */}
-      <section className="mb-14">
-        <h2 className="text-xl font-semibold mb-4">{d.archTitle}</h2>
-        <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-          {d.archDesc}
-        </p>
+      <div className="flex gap-10">
+        {/* Sticky sidebar */}
+        <ModelTableOfContents locale={locale} />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <SectionCard>
-            <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
-              {d.level1Label}
+        {/* Main content */}
+        <div className="flex-1 min-w-0">
+          {/* Three-level architecture */}
+          <section id="architecture" className="mb-14">
+            <h2 className="text-xl font-semibold mb-4">{d.archTitle}</h2>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.archDesc}
             </p>
-            <h3 className="text-base font-semibold mb-2">{d.level1Title}</h3>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              {d.level1Desc}
-            </p>
-          </SectionCard>
 
-          <SectionCard>
-            <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
-              {d.level2Label}
-            </p>
-            <h3 className="text-base font-semibold mb-2">{d.level2Title}</h3>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              {d.level2Desc}
-            </p>
-          </SectionCard>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <SectionCard>
+                <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
+                  {d.level1Label}
+                </p>
+                <h3 className="text-base font-semibold mb-2">{d.level1Title}</h3>
+                <p className="text-sm text-foreground-muted leading-relaxed">
+                  {d.level1Desc}
+                </p>
+              </SectionCard>
 
-          <SectionCard>
-            <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
-              {d.level3Label}
+              <SectionCard>
+                <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
+                  {d.level2Label}
+                </p>
+                <h3 className="text-base font-semibold mb-2">{d.level2Title}</h3>
+                <p className="text-sm text-foreground-muted leading-relaxed">
+                  {d.level2Desc}
+                </p>
+              </SectionCard>
+
+              <SectionCard>
+                <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
+                  {d.level3Label}
+                </p>
+                <h3 className="text-base font-semibold mb-2">{d.level3Title}</h3>
+                <p className="text-sm text-foreground-muted leading-relaxed">
+                  {d.level3Desc}
+                </p>
+              </SectionCard>
+            </div>
+          </section>
+
+          {/* Interactive causal chain diagram */}
+          <section id="causal-diagram" className="mb-14">
+            <h2 className="text-xl font-semibold mb-4">{d.causalTitle}</h2>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.causalDesc}
             </p>
-            <h3 className="text-base font-semibold mb-2">{d.level3Title}</h3>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              {d.level3Desc}
+            <div className="overflow-x-auto">
+              <CausalChainDiagram />
+            </div>
+          </section>
+
+          {/* Lindgren chi coupling */}
+          <section id="chi-coupling" className="mb-14">
+            <h2 className="text-xl font-semibold mb-4">{d.chiTitle}</h2>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.chiDesc}
             </p>
-          </SectionCard>
+            <Eq>
+              &chi;(&#256;) = &#256; / &radic;(1 + &#256;&sup2;)
+            </Eq>
+            <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed">
+              {d.chiWherePrefix}{" "}
+              <code className="font-mono-num text-foreground">&Amacr;</code>{" "}
+              {d.chiExplain}
+            </p>
+          </section>
+
+          {/* Two-channel model */}
+          <section id="two-channel-model" className="mb-14">
+            <h2 className="text-xl font-semibold mb-4">{d.twoChTitle}</h2>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.twoChDesc}
+            </p>
+            <Eq>
+              total = ambient + &chi;(ambient) &times; personal
+            </Eq>
+            <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed">
+              {d.twoChExplain}
+            </p>
+          </section>
+
+          {/* Five-layer recovery model */}
+          <section id="recovery" className="mb-14">
+            <h2 className="text-xl font-semibold mb-4">{d.recovTitle}</h2>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.recovDesc}
+            </p>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left text-foreground-muted">
+                    <th className="py-2 pr-4 font-medium">{d.recovColLayer}</th>
+                    <th className="py-2 pr-4 font-medium">{d.recovColAlpha}</th>
+                    <th className="py-2 pr-4 font-medium">
+                      {d.recovColTimescale}
+                    </th>
+                    <th className="py-2 font-medium">{d.recovColNotes}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-card-border">
+                    <td className="py-3 pr-4 font-medium">{d.recovVgicLayer}</td>
+                    <td className="py-3 pr-4 font-mono-num">1.0</td>
+                    <td className="py-3 pr-4 text-foreground-muted">
+                      {d.recovVgicTime}
+                    </td>
+                    <td className="py-3 text-foreground-muted">
+                      {d.recovVgicNote}
+                    </td>
+                  </tr>
+                  <tr className="border-b border-card-border">
+                    <td className="py-3 pr-4 font-medium">{d.recovRosLayer}</td>
+                    <td className="py-3 pr-4 font-mono-num">0.8</td>
+                    <td className="py-3 pr-4 text-foreground-muted">
+                      {d.recovRosTime}
+                    </td>
+                    <td className="py-3 text-foreground-muted">
+                      {d.recovRosNote}
+                    </td>
+                  </tr>
+                  <tr className="border-b border-card-border">
+                    <td className="py-3 pr-4 font-medium">{d.recovDnaLayer}</td>
+                    <td className="py-3 pr-4 font-mono-num">0.1</td>
+                    <td className="py-3 pr-4 text-foreground-muted">
+                      {d.recovDnaTime}
+                    </td>
+                    <td className="py-3 text-foreground-muted">
+                      {d.recovDnaNote}
+                    </td>
+                  </tr>
+                  <tr className="border-b border-card-border">
+                    <td className="py-3 pr-4 font-medium">
+                      {d.recovLeydigLayer}
+                    </td>
+                    <td className="py-3 pr-4 font-mono-num">0.3</td>
+                    <td className="py-3 pr-4 text-foreground-muted">
+                      {d.recovLeydigTime}
+                    </td>
+                    <td className="py-3 text-foreground-muted">
+                      {d.recovLeydigNote}
+                    </td>
+                  </tr>
+                  <tr className="border-b border-card-border last:border-0">
+                    <td className="py-3 pr-4 font-medium">{d.recovBbbLayer}</td>
+                    <td className="py-3 pr-4 font-mono-num">0.0</td>
+                    <td className="py-3 pr-4 text-foreground-muted">
+                      {d.recovBbbTime}
+                    </td>
+                    <td className="py-3 text-foreground-muted">
+                      {d.recovBbbNote}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* Compensation mechanism */}
+          <section id="compensation" className="mb-14">
+            <h2 className="text-xl font-semibold mb-4">{d.compTitle}</h2>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.compDesc}
+            </p>
+            <Eq>
+              TFR<sub>eff</sub> = (bioCap &times; behav)<sup>(1&minus;&alpha;)</sup>{" "}
+              &times; rate<sub>2024</sub> &times; cultRatio &times;{" "}
+              bioBehav<sub>2024</sub><sup>&alpha;</sup>
+            </Eq>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.compWhereLabel}
+            </p>
+            <ul className="text-sm text-foreground-muted space-y-2 max-w-3xl ml-4 mb-4">
+              <li>
+                <strong className="text-foreground">bioCap</strong> --{" "}
+                {d.compBioCap}
+              </li>
+              <li>
+                <strong className="text-foreground">behav</strong> --{" "}
+                {d.compBehav}
+              </li>
+              <li>
+                <strong className="text-foreground">&alpha; = 0.43</strong> --{" "}
+                {d.compAlpha}
+              </li>
+              <li>
+                <strong className="text-foreground">
+                  rate<sub>2024</sub>
+                </strong>{" "}
+                -- {d.compRate2024}
+              </li>
+              <li>
+                <strong className="text-foreground">cultRatio</strong> --{" "}
+                {d.compCultRatio}
+              </li>
+              <li>
+                <strong className="text-foreground">
+                  bioBehav<sub>2024</sub>
+                </strong>{" "}
+                -- {d.compBioBehav2024}
+              </li>
+            </ul>
+            <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed">
+              {d.compExplain}
+            </p>
+          </section>
+
+          {/* mTOR convergence */}
+          <section id="mtor" className="mb-14">
+            <h2 className="text-xl font-semibold mb-4">{d.mtorTitle}</h2>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.mtorDesc1}
+            </p>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.mtorDesc2}
+            </p>
+            <Eq>
+              mTOR<sub>eff</sub> = (1.0 + 0.25 &times; EMF) &times; &prod;(1 &minus;
+              reduction<sub>i</sub>)
+            </Eq>
+            <Eq>
+              aging rate = mTOR<sub>eff</sub><sup>0.7</sup>
+            </Eq>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.mtorEqExplain}
+            </p>
+
+            <h3 className="text-base font-semibold mb-3">{d.mtorThreeTitle}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <SectionCard>
+                <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
+                  {d.mtorAging}
+                </p>
+                <p className="text-sm text-foreground-muted leading-relaxed">
+                  {d.mtorAgingDesc}
+                </p>
+              </SectionCard>
+              <SectionCard>
+                <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
+                  {d.mtorFertility}
+                </p>
+                <p className="text-sm text-foreground-muted leading-relaxed">
+                  {d.mtorFertilityDesc}
+                </p>
+              </SectionCard>
+              <SectionCard>
+                <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
+                  {d.mtorCancer}
+                </p>
+                <p className="text-sm text-foreground-muted leading-relaxed">
+                  {d.mtorCancerDesc}
+                </p>
+              </SectionCard>
+            </div>
+
+            <h3 className="text-base font-semibold mb-3">{d.mtorPredTitle}</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left text-foreground-muted">
+                    <th className="py-2 pr-4 font-medium">{d.mtorPredColId}</th>
+                    <th className="py-2 pr-4 font-medium">{d.mtorPredColPred}</th>
+                    <th className="py-2 font-medium">{d.mtorPredColTest}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.mtorPreds.map((row, i) => (
+                    <tr
+                      key={row.id}
+                      className={`border-b border-card-border${
+                        i === d.mtorPreds.length - 1 ? " last:border-0" : ""
+                      }`}
+                    >
+                      <td className="py-3 pr-4 font-mono-num">{row.id}</td>
+                      <td className="py-3 pr-4 text-foreground-muted">
+                        {row.pred}
+                      </td>
+                      <td className="py-3 text-foreground-muted">{row.test}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* Mathematical Foundation */}
+          <section className="border-t border-border pt-10 mb-14">
+            <h2 className="text-2xl font-bold tracking-tight mb-2">
+              {d.mathTitle}
+            </h2>
+            <p className="text-sm text-foreground-muted mb-10 max-w-3xl leading-relaxed">
+              {d.mathSubtitle}
+            </p>
+            <MathematicsSections locale={locale} />
+          </section>
+
+          {/* Links */}
+          <section className="border-t border-border pt-8 mt-8 flex flex-wrap gap-4">
+            <Link
+              href={`${prefix}/evidence`}
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              {d.btnEvidence}
+            </Link>
+            <Link
+              href={`${prefix}/predictions`}
+              className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground hover:border-foreground-muted text-sm font-medium rounded-lg transition-colors"
+            >
+              {d.btnPredictions}
+            </Link>
+          </section>
+
+          {/* Epistemic note */}
+          <section className="mt-8">
+            <p className="text-xs text-foreground-muted leading-relaxed max-w-3xl">
+              {d.epistemic}
+            </p>
+          </section>
         </div>
-      </section>
-
-      {/* Interactive causal chain diagram */}
-      <section className="mb-14">
-        <h2 className="text-xl font-semibold mb-4">{d.causalTitle}</h2>
-        <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-          {d.causalDesc}
-        </p>
-        <div className="overflow-x-auto">
-          <CausalChainDiagram />
-        </div>
-      </section>
-
-      {/* Lindgren chi coupling */}
-      <section className="mb-14">
-        <h2 className="text-xl font-semibold mb-4">{d.chiTitle}</h2>
-        <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-          {d.chiDesc}
-        </p>
-        <Eq>
-          &chi;(&#256;) = &#256; / &radic;(1 + &#256;&sup2;)
-        </Eq>
-        <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed">
-          {d.chiWherePrefix}{" "}
-          <code className="font-mono-num text-foreground">&Amacr;</code>{" "}
-          {d.chiExplain}
-        </p>
-      </section>
-
-      {/* Two-channel model */}
-      <section className="mb-14">
-        <h2 className="text-xl font-semibold mb-4">{d.twoChTitle}</h2>
-        <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-          {d.twoChDesc}
-        </p>
-        <Eq>
-          total = ambient + &chi;(ambient) &times; personal
-        </Eq>
-        <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed">
-          {d.twoChExplain}
-        </p>
-      </section>
-
-      {/* Five-layer recovery model */}
-      <section className="mb-14">
-        <h2 className="text-xl font-semibold mb-4">{d.recovTitle}</h2>
-        <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-          {d.recovDesc}
-        </p>
-
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border text-left text-foreground-muted">
-                <th className="py-2 pr-4 font-medium">{d.recovColLayer}</th>
-                <th className="py-2 pr-4 font-medium">{d.recovColAlpha}</th>
-                <th className="py-2 pr-4 font-medium">
-                  {d.recovColTimescale}
-                </th>
-                <th className="py-2 font-medium">{d.recovColNotes}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-card-border">
-                <td className="py-3 pr-4 font-medium">{d.recovVgicLayer}</td>
-                <td className="py-3 pr-4 font-mono-num">1.0</td>
-                <td className="py-3 pr-4 text-foreground-muted">
-                  {d.recovVgicTime}
-                </td>
-                <td className="py-3 text-foreground-muted">
-                  {d.recovVgicNote}
-                </td>
-              </tr>
-              <tr className="border-b border-card-border">
-                <td className="py-3 pr-4 font-medium">{d.recovRosLayer}</td>
-                <td className="py-3 pr-4 font-mono-num">0.8</td>
-                <td className="py-3 pr-4 text-foreground-muted">
-                  {d.recovRosTime}
-                </td>
-                <td className="py-3 text-foreground-muted">
-                  {d.recovRosNote}
-                </td>
-              </tr>
-              <tr className="border-b border-card-border">
-                <td className="py-3 pr-4 font-medium">{d.recovDnaLayer}</td>
-                <td className="py-3 pr-4 font-mono-num">0.1</td>
-                <td className="py-3 pr-4 text-foreground-muted">
-                  {d.recovDnaTime}
-                </td>
-                <td className="py-3 text-foreground-muted">
-                  {d.recovDnaNote}
-                </td>
-              </tr>
-              <tr className="border-b border-card-border">
-                <td className="py-3 pr-4 font-medium">
-                  {d.recovLeydigLayer}
-                </td>
-                <td className="py-3 pr-4 font-mono-num">0.3</td>
-                <td className="py-3 pr-4 text-foreground-muted">
-                  {d.recovLeydigTime}
-                </td>
-                <td className="py-3 text-foreground-muted">
-                  {d.recovLeydigNote}
-                </td>
-              </tr>
-              <tr className="border-b border-card-border last:border-0">
-                <td className="py-3 pr-4 font-medium">{d.recovBbbLayer}</td>
-                <td className="py-3 pr-4 font-mono-num">0.0</td>
-                <td className="py-3 pr-4 text-foreground-muted">
-                  {d.recovBbbTime}
-                </td>
-                <td className="py-3 text-foreground-muted">
-                  {d.recovBbbNote}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Compensation mechanism */}
-      <section className="mb-14">
-        <h2 className="text-xl font-semibold mb-4">{d.compTitle}</h2>
-        <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-          {d.compDesc}
-        </p>
-        <Eq>
-          TFR<sub>eff</sub> = (bioCap &times; behav)<sup>(1&minus;&alpha;)</sup>{" "}
-          &times; rate<sub>2024</sub> &times; cultRatio &times;{" "}
-          bioBehav<sub>2024</sub><sup>&alpha;</sup>
-        </Eq>
-        <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-          {d.compWhereLabel}
-        </p>
-        <ul className="text-sm text-foreground-muted space-y-2 max-w-3xl ml-4 mb-4">
-          <li>
-            <strong className="text-foreground">bioCap</strong> --{" "}
-            {d.compBioCap}
-          </li>
-          <li>
-            <strong className="text-foreground">behav</strong> --{" "}
-            {d.compBehav}
-          </li>
-          <li>
-            <strong className="text-foreground">&alpha; = 0.43</strong> --{" "}
-            {d.compAlpha}
-          </li>
-          <li>
-            <strong className="text-foreground">
-              rate<sub>2024</sub>
-            </strong>{" "}
-            -- {d.compRate2024}
-          </li>
-          <li>
-            <strong className="text-foreground">cultRatio</strong> --{" "}
-            {d.compCultRatio}
-          </li>
-          <li>
-            <strong className="text-foreground">
-              bioBehav<sub>2024</sub>
-            </strong>{" "}
-            -- {d.compBioBehav2024}
-          </li>
-        </ul>
-        <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed">
-          {d.compExplain}
-        </p>
-      </section>
-
-      {/* mTOR convergence */}
-      <section className="mb-14">
-        <h2 className="text-xl font-semibold mb-4">{d.mtorTitle}</h2>
-        <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-          {d.mtorDesc1}
-        </p>
-        <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-          {d.mtorDesc2}
-        </p>
-        <Eq>
-          mTOR<sub>eff</sub> = (1.0 + 0.25 &times; EMF) &times; &prod;(1 &minus;
-          reduction<sub>i</sub>)
-        </Eq>
-        <Eq>
-          aging rate = mTOR<sub>eff</sub><sup>0.7</sup>
-        </Eq>
-        <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-          {d.mtorEqExplain}
-        </p>
-
-        <h3 className="text-base font-semibold mb-3">{d.mtorThreeTitle}</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <SectionCard>
-            <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
-              {d.mtorAging}
-            </p>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              {d.mtorAgingDesc}
-            </p>
-          </SectionCard>
-          <SectionCard>
-            <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
-              {d.mtorFertility}
-            </p>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              {d.mtorFertilityDesc}
-            </p>
-          </SectionCard>
-          <SectionCard>
-            <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
-              {d.mtorCancer}
-            </p>
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              {d.mtorCancerDesc}
-            </p>
-          </SectionCard>
-        </div>
-
-        <h3 className="text-base font-semibold mb-3">{d.mtorPredTitle}</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border text-left text-foreground-muted">
-                <th className="py-2 pr-4 font-medium">{d.mtorPredColId}</th>
-                <th className="py-2 pr-4 font-medium">{d.mtorPredColPred}</th>
-                <th className="py-2 font-medium">{d.mtorPredColTest}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {d.mtorPreds.map((row, i) => (
-                <tr
-                  key={row.id}
-                  className={`border-b border-card-border${
-                    i === d.mtorPreds.length - 1 ? " last:border-0" : ""
-                  }`}
-                >
-                  <td className="py-3 pr-4 font-mono-num">{row.id}</td>
-                  <td className="py-3 pr-4 text-foreground-muted">
-                    {row.pred}
-                  </td>
-                  <td className="py-3 text-foreground-muted">{row.test}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Links */}
-      <section className="border-t border-border pt-8 mt-8 flex flex-wrap gap-4">
-        <Link
-          href={`${prefix}/evidence`}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          {d.btnEvidence}
-        </Link>
-        <Link
-          href={`${prefix}/predictions`}
-          className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground hover:border-foreground-muted text-sm font-medium rounded-lg transition-colors"
-        >
-          {d.btnPredictions}
-        </Link>
-      </section>
-
-      {/* Epistemic note */}
-      <section className="mt-8">
-        <p className="text-xs text-foreground-muted leading-relaxed max-w-3xl">
-          {d.epistemic}
-        </p>
-      </section>
+      </div>
     </div>
   );
 }

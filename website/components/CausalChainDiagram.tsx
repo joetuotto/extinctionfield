@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
-import type { ChainNode } from "@/lib/types";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
+import type { ChainNode, EpistemicLevel } from "@/lib/types";
 import {
   NODES,
   EDGES,
@@ -10,34 +10,47 @@ import {
 } from "@/lib/causalChainData";
 import { DetailPanel } from "./DetailPanel";
 
-const NODE_H = 52;
-const NODE_H_EXPANDED = 88;
-const NODE_H_COLLAPSED = 34;
-const NODE_RX = 10;
-const LEVEL_GAP = 28;
-const LEVEL_GAP_COLLAPSED = 14;
-const LEVEL_LABEL_W = 36;
-const FEEDBACK_MARGIN = 50;
-const NODE_GAP = 8;
-const MAX_NODE_W = 170;
-const MIN_NODE_W = 110;
-const MAX_PER_ROW = 7;
-const ROW_INNER_GAP = 6;
+const NODE_H = 72;
+const NODE_RX = 12;
+const LEVEL_GAP = 52;
+const LEVEL_LABEL_W = 140;
+const FEEDBACK_MARGIN = 60;
+const NODE_GAP = 14;
+const MAX_NODE_W = 240;
+const MIN_NODE_W = 160;
+const MAX_PER_ROW = 5;
+const ROW_INNER_GAP = 10;
+const BAND_PAD_Y = 14;
+const BAND_PAD_X = 8;
+
+const EPISTEMIC_LABELS: Record<string, string> = {
+  E: "E",
+  "M|C": "M|C",
+  M: "M",
+  C: "C",
+  "L*": "L*",
+  L: "L",
+};
 
 interface LayoutNode extends ChainNode {
   x: number;
   y: number;
   w: number;
   h: number;
-  isExpanded: boolean;
-  isCollapsed: boolean;
+}
+
+interface LevelBand {
+  level: number;
+  title: string;
+  top: number;
+  bottom: number;
+  color: string;
 }
 
 function computeLayout(
   nodes: ChainNode[],
   canvasW: number,
-  expandedLevel: number | null
-): { layoutNodes: LayoutNode[]; canvasH: number } {
+): { layoutNodes: LayoutNode[]; canvasH: number; bands: LevelBand[] } {
   const levels = new Map<number, ChainNode[]>();
   for (const n of nodes) {
     if (!levels.has(n.level)) levels.set(n.level, []);
@@ -46,27 +59,34 @@ function computeLayout(
 
   const sortedLevels = [...levels.keys()].sort((a, b) => a - b);
   const layoutNodes: LayoutNode[] = [];
+  const bands: LevelBand[] = [];
   const usableW = canvasW - LEVEL_LABEL_W - FEEDBACK_MARGIN;
-  let currentY = 20;
+  let currentY = 24;
 
   for (const lvl of sortedLevels) {
     const nodesInLevel = levels.get(lvl)!;
     const count = nodesInLevel.length;
-    const isExpanded = expandedLevel === lvl;
-    const isCollapsed = expandedLevel !== null && expandedLevel !== lvl;
-    const h = isExpanded ? NODE_H_EXPANDED : isCollapsed ? NODE_H_COLLAPSED : NODE_H;
-    const gap = isCollapsed ? LEVEL_GAP_COLLAPSED : LEVEL_GAP;
+    const h = NODE_H;
     const numRows = Math.ceil(count / MAX_PER_ROW);
+    const bandTop = currentY - BAND_PAD_Y;
+
+    // Dominant epistemic color for the band
+    const colorCounts = new Map<string, number>();
+    for (const n of nodesInLevel) {
+      colorCounts.set(n.epistemicLevel, (colorCounts.get(n.epistemicLevel) ?? 0) + 1);
+    }
+    let dominant: EpistemicLevel = nodesInLevel[0].epistemicLevel;
+    let maxCount = 0;
+    for (const [lvlKey, cnt] of colorCounts) {
+      if (cnt > maxCount) { dominant = lvlKey as EpistemicLevel; maxCount = cnt; }
+    }
 
     for (let row = 0; row < numRows; row++) {
       const rowStart = row * MAX_PER_ROW;
       const rowEnd = Math.min(rowStart + MAX_PER_ROW, count);
       const rowCount = rowEnd - rowStart;
       const totalGaps = (rowCount - 1) * NODE_GAP;
-      const nodeW = Math.max(
-        MIN_NODE_W,
-        Math.min(MAX_NODE_W, (usableW - totalGaps) / rowCount)
-      );
+      const nodeW = Math.max(MIN_NODE_W, Math.min(MAX_NODE_W, (usableW - totalGaps) / rowCount));
       const rowW = rowCount * nodeW + totalGaps;
       const startX = LEVEL_LABEL_W + FEEDBACK_MARGIN + (usableW - rowW) / 2;
 
@@ -77,23 +97,30 @@ function computeLayout(
           y: currentY,
           w: nodeW,
           h,
-          isExpanded,
-          isCollapsed,
         });
       }
       currentY += h + (row < numRows - 1 ? ROW_INNER_GAP : 0);
     }
-    currentY += gap;
+
+    const bandBottom = currentY + BAND_PAD_Y;
+    bands.push({
+      level: lvl,
+      title: LEVEL_TITLES[lvl] ?? `Level ${lvl}`,
+      top: bandTop,
+      bottom: bandBottom,
+      color: EPISTEMIC_COLORS[dominant] ?? "#6B7280",
+    });
+    currentY = bandBottom + LEVEL_GAP;
   }
 
-  return { layoutNodes, canvasH: currentY + 10 };
+  return { layoutNodes, canvasH: currentY + 40, bands };
 }
 
 function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
   if (wrapLeft) {
     const fy = from.y + from.h / 2;
     const ty = to.y + to.h / 2;
-    const x = LEVEL_LABEL_W + 20;
+    const x = FEEDBACK_MARGIN / 2 + 10;
     return `M ${from.x} ${fy} L ${x} ${fy} L ${x} ${ty} L ${to.x} ${ty}`;
   }
 
@@ -111,17 +138,30 @@ function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
   const x2 = to.x + to.w / 2;
   const y2 = to.y;
   const dy = y2 - y1;
-  return `M ${x1} ${y1} C ${x1} ${y1 + dy * 0.4} ${x2} ${y2 - dy * 0.4} ${x2} ${y2}`;
+  return `M ${x1} ${y1} C ${x1} ${y1 + dy * 0.35} ${x2} ${y2 - dy * 0.35} ${x2} ${y2}`;
 }
 
 export default function CausalChainDiagram() {
   const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
-  const [expandedLevel, setExpandedLevel] = useState<number | null>(null);
-  const canvasW = 1200;
-  const { layoutNodes, canvasH } = useMemo(
-    () => computeLayout(NODES, canvasW, expandedLevel),
-    [expandedLevel]
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerW, setContainerW] = useState(1400);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver((entries) => {
+      const w = entries[0]?.contentRect.width;
+      if (w && w > 0) setContainerW(Math.max(900, Math.min(1600, w)));
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const canvasW = containerW;
+  const { layoutNodes, canvasH, bands } = useMemo(
+    () => computeLayout(NODES, canvasW),
+    [canvasW],
   );
 
   const nodeMap = useMemo(() => {
@@ -130,45 +170,28 @@ export default function CausalChainDiagram() {
     return m;
   }, [layoutNodes]);
 
+  const connectedEdges = useMemo(() => {
+    if (!hoveredNode) return new Set<number>();
+    const s = new Set<number>();
+    EDGES.forEach((e, i) => {
+      if (e.from === hoveredNode || e.to === hoveredNode) s.add(i);
+    });
+    return s;
+  }, [hoveredNode]);
+
   const handleNodeClick = useCallback((node: ChainNode) => {
     setSelectedNode(node);
   }, []);
 
-  const sortedLevels = useMemo(() => {
-    const s = new Set<number>();
-    for (const n of layoutNodes) s.add(n.level);
-    return [...s].sort((a, b) => a - b);
-  }, [layoutNodes]);
-
-  const levelYRanges = useMemo(() => {
-    const ranges = new Map<number, { top: number; bottom: number }>();
-    for (const n of layoutNodes) {
-      const cur = ranges.get(n.level);
-      if (!cur) {
-        ranges.set(n.level, { top: n.y, bottom: n.y + n.h });
-      } else {
-        ranges.set(n.level, {
-          top: Math.min(cur.top, n.y),
-          bottom: Math.max(cur.bottom, n.y + n.h),
-        });
-      }
-    }
-    return ranges;
-  }, [layoutNodes]);
-
-  const handleLevelClick = useCallback((lvl: number) => {
-    setExpandedLevel((prev) => (prev === lvl ? null : lvl));
-  }, []);
-
   return (
     <>
-      <div className="w-full overflow-x-auto">
+      <div ref={containerRef} className="w-full overflow-x-auto">
         <svg
           viewBox={`0 0 ${canvasW} ${canvasH}`}
           xmlns="http://www.w3.org/2000/svg"
           role="img"
           aria-label="BERM causal chain diagram"
-          style={{ width: "100%", height: "auto", minWidth: 640 }}
+          style={{ width: "100%", height: "auto", minWidth: 900 }}
         >
           <defs>
             <marker
@@ -176,8 +199,8 @@ export default function CausalChainDiagram() {
               viewBox="0 0 10 7"
               refX="10"
               refY="3.5"
-              markerWidth="7"
-              markerHeight="5"
+              markerWidth="8"
+              markerHeight="6"
               orient="auto-start-reverse"
             >
               <path d="M 0 0 L 10 3.5 L 0 7 z" fill="var(--foreground-muted)" />
@@ -189,8 +212,8 @@ export default function CausalChainDiagram() {
                 viewBox="0 0 10 7"
                 refX="10"
                 refY="3.5"
-                markerWidth="7"
-                markerHeight="5"
+                markerWidth="8"
+                markerHeight="6"
                 orient="auto-start-reverse"
               >
                 <path d="M 0 0 L 10 3.5 L 0 7 z" fill={color} />
@@ -199,139 +222,149 @@ export default function CausalChainDiagram() {
           </defs>
 
           {/* Background */}
-          <rect x="0" y="0" width={canvasW} height={canvasH} fill="var(--card-bg)" rx="8" />
+          <rect
+            x="0"
+            y="0"
+            width={canvasW}
+            height={canvasH}
+            fill="var(--card-bg)"
+            rx="12"
+          />
 
-          {/* Level dividers & labels */}
-          {sortedLevels.map((lvl) => {
-            const range = levelYRanges.get(lvl)!;
-            const y = range.top - (expandedLevel !== null ? LEVEL_GAP_COLLAPSED : LEVEL_GAP) / 2 + 4;
-            const isThisExpanded = expandedLevel === lvl;
-            const firstNodeH = layoutNodes.find((n) => n.level === lvl)?.h ?? NODE_H;
-            return (
-              <g
-                key={`lvl-${lvl}`}
-                style={{ cursor: "pointer" }}
-                onClick={() => handleLevelClick(lvl)}
+          {/* Level bands */}
+          {bands.map((band) => (
+            <g key={`band-${band.level}`}>
+              {/* Band background */}
+              <rect
+                x={LEVEL_LABEL_W + FEEDBACK_MARGIN - BAND_PAD_X}
+                y={band.top}
+                width={canvasW - LEVEL_LABEL_W - FEEDBACK_MARGIN + BAND_PAD_X - 12}
+                height={band.bottom - band.top}
+                rx="8"
+                fill={`${band.color}08`}
+                stroke={`${band.color}18`}
+                strokeWidth="1"
+              />
+              {/* Left accent bar */}
+              <rect
+                x={LEVEL_LABEL_W + FEEDBACK_MARGIN - BAND_PAD_X}
+                y={band.top}
+                width="4"
+                height={band.bottom - band.top}
+                rx="2"
+                fill={`${band.color}30`}
+              />
+              {/* Level number */}
+              <text
+                x={22}
+                y={band.top + (band.bottom - band.top) / 2 - 8}
+                fill={`${band.color}90`}
+                fontSize="22"
+                fontWeight="800"
+                dominantBaseline="middle"
+                fontFamily="ui-monospace, monospace"
               >
-                {lvl > 1 && (
-                  <line
-                    x1={LEVEL_LABEL_W + FEEDBACK_MARGIN - 10}
-                    y1={y}
-                    x2={canvasW - 10}
-                    y2={y}
-                    stroke="var(--card-border)"
-                    strokeWidth={1}
-                  />
-                )}
-                {/* Hit area for level click */}
-                <rect
-                  x={FEEDBACK_MARGIN - 4}
-                  y={range.top - 4}
-                  width={LEVEL_LABEL_W + 8}
-                  height={firstNodeH + 8}
-                  fill="transparent"
+                {band.level}
+              </text>
+              {/* Level title */}
+              <text
+                x={22}
+                y={band.top + (band.bottom - band.top) / 2 + 12}
+                fill="var(--foreground-muted)"
+                fontSize="11"
+                fontWeight="600"
+                dominantBaseline="middle"
+                fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+              >
+                {band.title}
+              </text>
+            </g>
+          ))}
+
+          {/* Edges */}
+          {EDGES.map((edge, edgeIdx) => {
+            const from = nodeMap.get(edge.from);
+            const to = nodeMap.get(edge.to);
+            if (!from || !to) return null;
+
+            const wrapLeft =
+              (edge.from === "device_adoption" && edge.to === "ambient") ||
+              from.level > to.level;
+            const color = EPISTEMIC_COLORS[edge.epistemicLevel];
+            const isConnected = connectedEdges.has(edgeIdx);
+            const isPrimary = edge.priority === "primary";
+            const markerId = `chain-arrow-${edge.epistemicLevel.replace("|", "_")}`;
+
+            let opacity: number;
+            let strokeW: number;
+            let strokeColor: string;
+
+            if (hoveredNode) {
+              if (isConnected) {
+                opacity = 1;
+                strokeW = 2.5;
+                strokeColor = color;
+              } else {
+                opacity = 0.08;
+                strokeW = 1;
+                strokeColor = "var(--foreground-muted)";
+              }
+            } else if (isPrimary) {
+              opacity = 0.7;
+              strokeW = 2;
+              strokeColor = color;
+            } else {
+              opacity = 0.18;
+              strokeW = 1;
+              strokeColor = "var(--foreground-muted)";
+            }
+
+            return (
+              <g key={`${edge.from}-${edge.to}`} opacity={opacity}>
+                <path
+                  d={edgePath(from, to, wrapLeft)}
+                  fill="none"
+                  stroke={strokeColor}
+                  strokeWidth={strokeW}
+                  strokeDasharray={wrapLeft ? "8 4" : undefined}
+                  markerEnd={
+                    isConnected || isPrimary
+                      ? `url(#${markerId})`
+                      : "url(#chain-arrow)"
+                  }
                 />
-                <text
-                  x={FEEDBACK_MARGIN + 4}
-                  y={range.top + firstNodeH / 2 + 1}
-                  fill={isThisExpanded ? "var(--foreground-muted)" : "var(--border)"}
-                  fontSize={11}
-                  fontWeight="700"
-                  dominantBaseline="middle"
-                  fontFamily="ui-monospace, monospace"
-                >
-                  {lvl}
-                </text>
-                {isThisExpanded && (
+                {edge.label && !wrapLeft && isConnected && (
                   <text
-                    x={LEVEL_LABEL_W + FEEDBACK_MARGIN}
-                    y={range.top - 6}
-                    fill="var(--foreground-muted)"
+                    x={
+                      from.level === to.level
+                        ? (from.x + from.w + to.x) / 2
+                        : (from.x + from.w / 2 + to.x + to.w / 2) / 2
+                    }
+                    y={
+                      from.level === to.level
+                        ? from.y + from.h / 2 - 10
+                        : (from.y + from.h + to.y) / 2
+                    }
+                    fill={color}
                     fontSize={10}
-                    fontWeight="600"
-                    dominantBaseline="auto"
+                    fontWeight="500"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
                     fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                   >
-                    {LEVEL_TITLES[lvl]}
+                    {edge.label}
                   </text>
                 )}
               </g>
             );
           })}
 
-          {/* Edges */}
-          {(() => {
-            const labelPositions: { x: number; y: number; idx: number }[] = [];
-            return EDGES.map((edge, edgeIdx) => {
-              const from = nodeMap.get(edge.from);
-              const to = nodeMap.get(edge.to);
-              if (!from || !to) return null;
-
-              const wrapLeft =
-                (edge.from === "feedback" && edge.to === "ambient") ||
-                (from.level > to.level);
-              const color = EPISTEMIC_COLORS[edge.epistemicLevel];
-              const isHovered =
-                hoveredNode === edge.from || hoveredNode === edge.to;
-              const markerId = `chain-arrow-${edge.epistemicLevel.replace("|", "_")}`;
-
-              let labelX = 0;
-              let labelY = 0;
-              if (edge.label && !wrapLeft) {
-                labelX =
-                  from.level === to.level
-                    ? (from.x + from.w + to.x) / 2
-                    : (from.x + from.w / 2 + to.x + to.w / 2) / 2;
-                labelY =
-                  from.level === to.level
-                    ? from.y + from.h / 2 - 8
-                    : (from.y + from.h + to.y) / 2;
-
-                for (const prev of labelPositions) {
-                  if (Math.abs(labelX - prev.x) < 60 && Math.abs(labelY - prev.y) < 10) {
-                    labelY += 10;
-                  }
-                }
-                labelPositions.push({ x: labelX, y: labelY, idx: edgeIdx });
-              }
-
-              return (
-                <g key={`${edge.from}-${edge.to}`}>
-                  <path
-                    d={edgePath(from, to, wrapLeft)}
-                    fill="none"
-                    stroke={isHovered ? color : "var(--foreground-muted)"}
-                    strokeWidth={isHovered ? 2 : 1.5}
-                    strokeDasharray={wrapLeft ? "6 4" : undefined}
-                    markerEnd={
-                      isHovered
-                        ? `url(#${markerId})`
-                        : "url(#chain-arrow)"
-                    }
-                  />
-                  {edge.label && !wrapLeft && (
-                    <text
-                      x={labelX}
-                      y={labelY}
-                      fill={isHovered ? color : "var(--foreground-muted)"}
-                      fontSize={8}
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                    >
-                      {edge.label}
-                    </text>
-                  )}
-                </g>
-              );
-            });
-          })()}
-
           {/* Nodes */}
           {layoutNodes.map((n) => {
             const color = EPISTEMIC_COLORS[n.epistemicLevel];
             const isHovered = hoveredNode === n.id;
             const isSelected = selectedNode?.id === n.id;
-            const showSublabel = !n.isCollapsed && n.sublabel;
+            const dimmed = hoveredNode !== null && !isHovered && !connectedEdges.size;
 
             return (
               <g
@@ -340,7 +373,9 @@ export default function CausalChainDiagram() {
                 onClick={() => handleNodeClick(n)}
                 onMouseEnter={() => setHoveredNode(n.id)}
                 onMouseLeave={() => setHoveredNode(null)}
+                opacity={hoveredNode && !isHovered && ![...connectedEdges].some(i => EDGES[i]?.from === n.id || EDGES[i]?.to === n.id) ? 0.4 : 1}
               >
+                {/* Node background */}
                 <rect
                   x={n.x}
                   y={n.y}
@@ -348,23 +383,37 @@ export default function CausalChainDiagram() {
                   height={n.h}
                   rx={NODE_RX}
                   ry={NODE_RX}
-                  fill={isHovered ? "var(--background-secondary)" : "var(--card-bg)"}
+                  fill={`${color}${isHovered ? "18" : "0C"}`}
                   stroke={color}
-                  strokeWidth={isSelected ? 2.5 : isHovered ? 2 : 1.5}
+                  strokeWidth={isSelected ? 3 : isHovered ? 2.5 : 1.5}
                 />
-                {/* Epistemic dot */}
-                <circle
-                  cx={n.x + n.w - 12}
-                  cy={n.y + 12}
-                  r={4}
+                {/* Epistemic badge */}
+                <rect
+                  x={n.x + n.w - 36}
+                  y={n.y + 8}
+                  width={28}
+                  height={18}
+                  rx={4}
+                  fill={`${color}25`}
+                />
+                <text
+                  x={n.x + n.w - 22}
+                  y={n.y + 17}
                   fill={color}
-                />
+                  fontSize={9}
+                  fontWeight="700"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fontFamily="ui-monospace, monospace"
+                >
+                  {EPISTEMIC_LABELS[n.epistemicLevel] ?? n.epistemicLevel}
+                </text>
                 {/* Label */}
                 <text
-                  x={n.x + 10}
-                  y={n.y + (showSublabel ? 18 : n.h / 2 + 1)}
+                  x={n.x + 14}
+                  y={n.y + (n.sublabel ? 24 : n.h / 2 + 1)}
                   fill="var(--foreground)"
-                  fontSize={n.isCollapsed ? 9 : 11}
+                  fontSize={14}
                   fontWeight="600"
                   dominantBaseline="middle"
                   fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -372,76 +421,62 @@ export default function CausalChainDiagram() {
                   {n.label}
                 </text>
                 {/* Sublabel */}
-                {showSublabel && (
+                {n.sublabel && (
                   <text
-                    x={n.x + 10}
-                    y={n.y + 36}
+                    x={n.x + 14}
+                    y={n.y + 46}
                     fill="var(--foreground-muted)"
-                    fontSize={9}
+                    fontSize={11}
                     dominantBaseline="middle"
                     fontFamily="ui-monospace, SFMono-Regular, monospace"
                   >
                     {n.sublabel}
                   </text>
                 )}
-                {/* Expanded: mechanism preview */}
-                {n.isExpanded && (
-                  <foreignObject
-                    x={n.x + 2}
-                    y={n.y + (n.sublabel ? 46 : 34)}
-                    width={n.w - 4}
-                    height={n.h - (n.sublabel ? 50 : 38)}
+                {/* Click hint on hover */}
+                {isHovered && (
+                  <text
+                    x={n.x + 14}
+                    y={n.y + n.h - 8}
+                    fill="var(--foreground-muted)"
+                    fontSize={9}
+                    dominantBaseline="auto"
+                    fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                   >
-                    <p
-                      style={{
-                        fontSize: 8,
-                        lineHeight: "1.3",
-                        color: "var(--foreground-muted)",
-                        margin: 0,
-                        padding: "0 6px",
-                        overflow: "hidden",
-                        display: "-webkit-box",
-                        WebkitLineClamp: 3,
-                        WebkitBoxOrient: "vertical",
-                        fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                      }}
-                    >
-                      {n.mechanism}
-                    </p>
-                  </foreignObject>
+                    {"→ click for details"}
+                  </text>
                 )}
               </g>
             );
           })}
 
           {/* Legend */}
-          {(
-            [
-              ["E", "Empiirisesti vahvistettu"],
-              ["M|C", "Välttämätön seuraus"],
-              ["M", "Matemaattinen seuraus"],
-              ["C", "Ehdokas"],
-              ["L", "Premissi"],
-              ["L*", "Premissi (ei valid.)"],
-            ] as const
-          ).map(([lvl, lbl], i) => (
-            <g
-              key={lvl}
-              transform={`translate(${LEVEL_LABEL_W + FEEDBACK_MARGIN + i * 155}, ${canvasH - 12})`}
-            >
-              <circle cx={0} cy={0} r={4} fill={EPISTEMIC_COLORS[lvl]} />
-              <text
-                x={10}
-                y={1}
-                fill="var(--foreground-muted)"
-                fontSize={9}
-                fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                dominantBaseline="middle"
-              >
-                {lbl}
-              </text>
-            </g>
-          ))}
+          {(() => {
+            const items: [EpistemicLevel, string][] = [
+              ["E", "Empirically established"],
+              ["M|C", "Mechanistic + correlational"],
+              ["M", "Mathematical consequence"],
+              ["C", "Candidate"],
+              ["L*", "Premise (not validated)"],
+            ];
+            const legendY = canvasH - 24;
+            const legendX = LEVEL_LABEL_W + FEEDBACK_MARGIN;
+            const spacing = (canvasW - legendX - 20) / items.length;
+            return items.map(([lvl, lbl], i) => {
+              const c = EPISTEMIC_COLORS[lvl];
+              return (
+                <g key={lvl} transform={`translate(${legendX + i * spacing}, ${legendY})`}>
+                  <rect x={0} y={-7} width={14} height={14} rx={3} fill={`${c}25`} stroke={c} strokeWidth={1} />
+                  <text x={8} y={0} fill={c} fontSize={8} fontWeight="700" textAnchor="middle" dominantBaseline="middle" fontFamily="ui-monospace, monospace">
+                    {lvl}
+                  </text>
+                  <text x={20} y={1} fill="var(--foreground-muted)" fontSize={10} fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" dominantBaseline="middle">
+                    {lbl}
+                  </text>
+                </g>
+              );
+            });
+          })()}
         </svg>
       </div>
 

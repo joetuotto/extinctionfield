@@ -643,30 +643,12 @@ const COUNTRY_FI: Record<string, string> = {
   Global: "Maailma",
 };
 
-export default async function MathematicsPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
+export function MathematicsSections({ locale }: { locale: string }) {
   const d = locale === "fi" ? t.fi : t.en;
-  const lp = `/${locale}`; // link prefix
+  const lp = `/${locale}`;
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
-      <header className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight mb-3">
-          {d.pageTitle}
-        </h1>
-        <p className="text-foreground-muted max-w-2xl leading-relaxed">
-          {d.pageSubtitle}
-        </p>
-      </header>
-
-      <div className="flex gap-10">
-        <SectionNav sections={d.sections} />
-
-        <div className="flex-1 min-w-0 space-y-14">
+    <div className="space-y-14">
           {/* S1 Lindgren geometry */}
           <section id="lindgren">
             <h2 className="text-lg font-semibold mb-1">
@@ -1365,6 +1347,37 @@ export default async function MathematicsPage({
               </p>
             </Derivation>
           </section>
+    </div>
+  );
+}
+
+export const mathSectionIds = {
+  en: t.en.sections,
+  fi: t.fi.sections,
+};
+
+export default async function MathematicsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const d = locale === "fi" ? t.fi : t.en;
+
+  return (
+    <div className="max-w-5xl mx-auto px-6 py-16">
+      <header className="mb-10">
+        <h1 className="text-3xl font-bold tracking-tight mb-3">
+          {d.pageTitle}
+        </h1>
+        <p className="text-foreground-muted max-w-2xl leading-relaxed">
+          {d.pageSubtitle}
+        </p>
+      </header>
+      <div className="flex gap-10">
+        <SectionNav sections={d.sections} />
+        <div className="flex-1 min-w-0">
+          <MathematicsSections locale={locale} />
         </div>
       </div>
     </div>
