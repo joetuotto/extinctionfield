@@ -19,6 +19,8 @@ interface YearRow {
   biologicalCapacity: number;
   behavioralFactor: number;
   predictedTFR: number;
+  nativeTFR: number | null;
+  ivfShare: number;
   observedTFR: number | null;
   isForecast: boolean;
 }

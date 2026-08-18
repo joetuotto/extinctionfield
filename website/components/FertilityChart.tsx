@@ -16,6 +16,7 @@ import {
 interface YearRow {
   year: number;
   predictedTFR: number;
+  nativeTFR: number | null;
   observedTFR: number | null;
   isForecast: boolean;
 }
@@ -36,6 +37,7 @@ export function FertilityChart({ timeseries, country }: Props) {
     .map((r) => ({
       year: r.year,
       predicted: r.predictedTFR,
+      native: r.nativeTFR,
       observed: r.observedTFR,
       forecastHigh: r.isForecast
         ? r.predictedTFR * 1.1
@@ -84,6 +86,8 @@ export function FertilityChart({ timeseries, country }: Props) {
             formatter={(value: number, name: string) => {
               if (name === "predicted")
                 return [value?.toFixed(2), "BERM prediction"];
+              if (name === "native")
+                return [value?.toFixed(2), "Native TFR (excl. immigration)"];
               if (name === "observed")
                 return [value?.toFixed(2), "Observed (World Bank)"];
               return [value, name];
@@ -129,6 +133,16 @@ export function FertilityChart({ timeseries, country }: Props) {
             strokeWidth={2}
             dot={false}
             name="predicted"
+          />
+
+          <Line
+            type="monotone"
+            dataKey="native"
+            stroke="#F59E0B"
+            strokeWidth={1.5}
+            strokeDasharray="5 3"
+            dot={false}
+            name="native"
           />
 
           <Scatter

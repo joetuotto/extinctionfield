@@ -214,10 +214,17 @@ def generate_country_data(country: str) -> dict:
         row["behavioralFactor"] = round(behav, 4)
 
         try:
-            predicted_tfr = v16_predicted_tfr(country, year)
+            report = v16_country_tfr(country, year)
+            predicted_tfr = report["predicted_tfr"]
+            native_tfr = report.get("native_tfr")
+            ivf_share = report.get("ivf_share", 0.0)
         except Exception:
             predicted_tfr = biocap * behav
+            native_tfr = None
+            ivf_share = 0.0
         row["predictedTFR"] = round(predicted_tfr, 3)
+        row["nativeTFR"] = round(native_tfr, 3) if native_tfr is not None else None
+        row["ivfShare"] = round(ivf_share, 4)
 
         obs = OBSERVED_TFR.get(country, {})
         obs_val = obs.get(year)

@@ -32,6 +32,7 @@ from berm.data.countries import (
     V12_ACTUAL_TFR_2024,
     CULTURAL_TFR_PARAMS,
     IVF_SHARES,
+    MIGRATION_DATA,
     get_country_params,
 )
 from berm.exposure.ambient import get_attenuation_factor
@@ -232,17 +233,51 @@ def v17_layer_retention(delta_years: int) -> float:
     return total
 
 
-# === v17 Cohort adjustment ===
+# === v17 Cohort adjustment (vulnerability-weighted) ===
+
+_VULN_BY_AGE = [
+    (-1, 5.0),   # fetal
+    (0, 4.0),    # 0-1
+    (1, 4.0),    # 1-2
+    (2, 3.0),    # 2-3
+    (3, 3.0),    # 3-4
+    (4, 3.0),    # 4-5
+    (5, 3.0),    # 5-6
+    (6, 2.5),    # 6-7
+    (7, 2.5),    # 7-8
+    (8, 2.5),    # 8-9
+    (9, 2.5),    # 9-10
+    (10, 2.5),   # 10-11
+    (11, 2.5),   # 11-12
+    (12, 2.0),   # 12-13
+    (13, 2.0),   # 13-14
+    (14, 2.0),   # 14-15
+    (15, 2.0),   # 15-16
+    (16, 2.0),   # 16-17
+    (17, 2.0),   # 17-18
+]
+
+_VULN_MAX = sum(v for _, v in _VULN_BY_AGE)
+
 
 def v17_cohort_adjustment(country: str, year: int) -> float:
-    """Peak birth cohort (age 28) childhood EMF amplification."""
+    """Vulnerability-weighted cohort EMF amplification.
+
+    For the peak birth cohort (age 28 at eval year), weight each
+    developmental year by age-specific EMF vulnerability:
+    fetal 5x, 0-2 4x, 2-6 3x, 6-12 2.5x, 12-18 2x, adult 1x.
+    """
     td = _get_td(country)
     peak_birth_year = year - 28
     emf_start = td.start
-    if peak_birth_year >= emf_start:
-        years_in_emf = min(18.0, peak_birth_year - emf_start)
-        return 1.0 + 0.20 * (years_in_emf / 18.0)
-    return 1.0
+
+    weighted = 0.0
+    for age, vuln in _VULN_BY_AGE:
+        if peak_birth_year + age >= emf_start:
+            weighted += vuln
+
+    fraction = weighted / _VULN_MAX
+    return 1.0 + 0.20 * fraction
 
 
 # === Cumulative exposure chain ===
@@ -482,6 +517,14 @@ def v16_true_cultural_rate(country: str, year: int) -> float:
     return max(0.05, min(2.50, scaled_rate))
 
 
+# === IVF temporal projection ===
+
+def ivf_share_projected(country: str, year: int) -> float:
+    """IVF share grows 0.5pp/year from 2023 baseline, capped at 20%."""
+    base = IVF_SHARES.get(country, 0.02)
+    return max(0.0, min(0.20, base + 0.005 * (year - 2023)))
+
+
 # === v16 Prediction ===
 
 def v16_predicted_tfr(country: str, year: int) -> float:
@@ -548,15 +591,26 @@ def v16_country_tfr(country: str, year: int) -> dict:
     true_cult = v16_true_cultural_rate(country, year)
     predicted = bio_cap * behav * true_cult
 
-    ivf_share = IVF_SHARES.get(country, 0.02)
-    native_tfr = predicted * (1 - ivf_share)
+    ivf_share = ivf_share_projected(country, year)
+    biological_tfr_val = predicted * (1 - ivf_share)
+
+    imm = MIGRATION_DATA.get(country)
+    if imm is not None:
+        imm_share = imm["imm_share"]
+        imm_tfr = imm["imm_tfr"]
+        native_tfr_val = (predicted - imm_share * imm_tfr) / (1 - imm_share)
+    else:
+        imm_share = 0.0
+        imm_tfr = 0.0
+        native_tfr_val = predicted
 
     return _build_country_report(
         country, year, adj_cum, amb_ann, pers_ann, occ_mult, emf_norm,
         base_bio_cap, dys_idx, dys_eff, bbb_result, bbb_eff, nutr_eff, epi_eff,
         night_frac, cry_ann, cry_eff, melat_eff, sperm_ca2, ovul_vgic,
         male_bio_cap, bio_cap, oxy_ret, test_ret, dopa_ret, cort_ret, avp_ret,
-        cort_supp, eff_t, behav, true_cult, predicted, ivf_share, native_tfr,
+        cort_supp, eff_t, behav, true_cult, predicted,
+        ivf_share, biological_tfr_val, imm_share, imm_tfr, native_tfr_val,
     )
 
 
@@ -565,7 +619,8 @@ def _build_country_report(
     base_bio_cap, dys_idx, dys_eff, bbb_result, bbb_eff, nutr_eff, epi_eff,
     night_frac, cry_ann, cry_eff, melat_eff, sperm_ca2, ovul_vgic,
     male_bio_cap, bio_cap, oxy_ret, test_ret, dopa_ret, cort_ret, avp_ret,
-    cort_supp, eff_t, behav, true_cult, predicted, ivf_share, native_tfr,
+    cort_supp, eff_t, behav, true_cult, predicted,
+    ivf_share, biological_tfr_val, imm_share, imm_tfr, native_tfr_val,
 ):
     retentions = [oxy_ret, eff_t, dopa_ret, cort_ret, avp_ret]
     labels = ["Oxytocin", "Testosterone(HPA-suppressed)", "Dopamine", "Cortisol", "Vasopressin"]
@@ -623,7 +678,10 @@ def _build_country_report(
         "total_emf_effect": 6.5 - bio_cap * behav,
         "percent_lost_to_emf": (6.5 - bio_cap * behav) / 6.5,
         "ivf_share": ivf_share,
-        "native_tfr": native_tfr,
+        "biological_tfr": biological_tfr_val,
+        "immigration_share": imm_share,
+        "immigrant_tfr": imm_tfr,
+        "native_tfr": native_tfr_val,
     }
 
 
@@ -797,3 +855,81 @@ def v17_full_report(country: str, year_range: range | None = None) -> dict:
         "decomposition": decomposition,
         "cross_country": ranking,
     }
+
+
+# === Feedback loop simulation ===
+
+_feedback_urban_overrides: dict[tuple[str, int], float] = {}
+_feedback_density_overrides: dict[tuple[str, int], float] = {}
+
+
+def _get_feedback_urban_frac(country: str, year: int) -> float:
+    """Get urban fraction, with feedback override if available."""
+    return _feedback_urban_overrides.get(
+        (country, year),
+        get_country_params(country).urban_frac,
+    )
+
+
+def feedback_loop_simulate(
+    country: str,
+    start_year: int = 2024,
+    end_year: int = 2050,
+) -> list[dict]:
+    """Iterative feedback simulation: TFR↓ → urbanization↑ → density↑ → EMF↑ → TFR↓.
+
+    Each year's TFR decline shifts population toward urban areas,
+    increasing EMF exposure density. The feedback is small per year
+    but compounds over decades.
+
+    Parameters
+    ----------
+    country : Country name.
+    start_year : First simulation year (must be >= calibration year 2024).
+    end_year : Last simulation year.
+
+    Returns list of dicts with year, predicted_tfr, feedback_tfr,
+    urban_frac, density_multiplier, feedback_effect.
+    """
+    global _feedback_urban_overrides, _feedback_density_overrides
+
+    if not _v16_true_cultural_rates:
+        calibrate_v16()
+
+    cp = get_country_params(country)
+    base_urban = cp.urban_frac
+    base_density = cp.pop_density
+
+    results = []
+    current_urban = base_urban
+    current_tfr = v16_predicted_tfr(country, start_year)
+    base_tfr = current_tfr
+
+    for year in range(start_year, end_year + 1):
+        no_feedback_tfr = v16_predicted_tfr(country, year)
+
+        if year > start_year:
+            tfr_decline_rate = max(0.0, (base_tfr - current_tfr) / base_tfr)
+            urban_shift = 0.003 * tfr_decline_rate
+            current_urban = min(0.98, current_urban + urban_shift)
+
+        density_mult = 1.0 + 0.5 * max(0.0, current_urban - base_urban)
+
+        _feedback_density_overrides[(country, year)] = density_mult
+
+        feedback_tfr = no_feedback_tfr / density_mult
+        current_tfr = feedback_tfr
+
+        results.append({
+            "year": year,
+            "predicted_tfr": no_feedback_tfr,
+            "feedback_tfr": feedback_tfr,
+            "urban_frac": round(current_urban, 4),
+            "density_multiplier": round(density_mult, 4),
+            "feedback_effect": round(no_feedback_tfr - feedback_tfr, 4),
+        })
+
+    _feedback_urban_overrides.clear()
+    _feedback_density_overrides.clear()
+
+    return results

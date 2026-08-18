@@ -58,23 +58,23 @@ def _calibrate():
 # === Wolfram-verified predictions (12 test points, machine precision) ===
 
 WOLFRAM_PREDICTIONS = [
-    ("SouthKorea", 2024, 0.710867650237284),
-    ("Japan", 2024, 1.2000456995104392),
-    ("Finland", 2024, 1.3044273718078119),
-    ("USA", 2024, 1.644313496098271),
-    ("Nigeria", 2024, 5.218634512898348),
-    ("Denmark", 2024, 1.5523841164922647),
-    ("India", 2024, 1.9903580921575863),
-    ("Iran", 2024, 2.116681851298839),
-    ("Brazil", 2024, 1.6741072895906424),
-    ("China", 2024, 1.0694376600000028),
-    ("Ethiopia", 2024, 4.090102277792336),
-    ("SouthKorea", 2030, 0.5814812605395421),
-    ("Japan", 2030, 0.9901818454414129),
-    ("Finland", 2030, 1.0609304451062245),
-    ("USA", 2030, 1.340981870989352),
-    ("Nigeria", 2030, 4.907206725059884),
-    ("Niger", 2030, 6.527420798482735),
+    ("SouthKorea", 2024, 0.72831749735462),
+    ("Japan", 2024, 1.205129502600998),
+    ("Finland", 2024, 1.31268180194477),
+    ("USA", 2024, 1.6330447656111486),
+    ("Nigeria", 2024, 5.206316830493338),
+    ("Denmark", 2024, 1.5487960249052677),
+    ("India", 2024, 1.9764851625073865),
+    ("Iran", 2024, 2.1647773342663825),
+    ("Brazil", 2024, 1.6607455151499195),
+    ("China", 2024, 1.067435629526337),
+    ("Ethiopia", 2024, 4.088446847605456),
+    ("SouthKorea", 2030, 0.6064069539039667),
+    ("Japan", 2030, 1.009014291641382),
+    ("Finland", 2030, 1.0839568853876826),
+    ("USA", 2030, 1.3501635394198932),
+    ("Nigeria", 2030, 4.880440472956575),
+    ("Niger", 2030, 6.52343732205688),
 ]
 
 
@@ -95,17 +95,17 @@ def test_korea_personal_annual():
     assert abs(v16_personal_annual("SouthKorea", 2024) - 2.0910266331815337) < 1e-8
 
 def test_korea_adj_cum():
-    assert abs(v16_adjusted_cumulative_exposure("SouthKorea", 2024) - 25.662814686300546) < 1e-6
+    assert abs(v16_adjusted_cumulative_exposure("SouthKorea", 2024) - 28.281469246127134) < 1e-6
 
 def test_korea_bio_cap():
     adj = v16_adjusted_cumulative_exposure("SouthKorea", 2024)
     bio = v16_biological_capacity(adj, "SouthKorea", 2024)
-    assert abs(bio - 4.324787148288158) < 1e-6
+    assert abs(bio - 4.1838416346860425) < 1e-6
 
 def test_korea_behavioral():
     adj = v16_adjusted_cumulative_exposure("SouthKorea", 2024)
     beh = emf_behavioral_factor_v3(adj)
-    assert abs(beh - 0.7471388720868352) < 1e-8
+    assert abs(beh - 0.7253277021335693) < 1e-8
 
 
 # === Wolfram-verified component values for Korea 2024 ===
@@ -117,7 +117,7 @@ def test_korea_melatonin():
     assert abs(v17_melatonin_suppression("SouthKorea", 2024) - 0.9668632717586659) < 1e-8
 
 def test_korea_sperm_ca2():
-    assert abs(v17_sperm_ca2_fecundity("SouthKorea", 2024) - 0.9646611656026346) < 1e-8
+    assert abs(v17_sperm_ca2_fecundity("SouthKorea", 2024) - 0.9642561434808292) < 1e-8
 
 def test_korea_ovulation_vgic():
     assert abs(v17_ovulation_vgic("SouthKorea", 2024) - 0.9838467086404602) < 1e-8
@@ -127,20 +127,20 @@ def test_korea_epigenetic():
 
 def test_korea_bbb_modifier():
     r = v16_country_tfr("SouthKorea", 2024)
-    assert abs(r["bbb_modifier"] - 0.9351128020156173) < 1e-8
+    assert abs(r["bbb_modifier"] - 0.9302881788517405) < 1e-8
 
 def test_korea_dysbiosis_modifier():
     r = v16_country_tfr("SouthKorea", 2024)
-    assert abs(r["dysbiosis_modifier"] - 0.9878726263744135) < 1e-8
+    assert abs(r["dysbiosis_modifier"] - 0.9865361514010208) < 1e-8
 
 def test_korea_sex_ratio():
-    assert abs(v17_predicted_sex_ratio("SouthKorea", 2024) - 0.510460231118822) < 1e-8
+    assert abs(v17_predicted_sex_ratio("SouthKorea", 2024) - 0.5103031118452324) < 1e-8
 
 def test_korea_cohort_adj():
-    assert abs(v17_cohort_adjustment("SouthKorea", 2024) - 1.0888888888888888) < 1e-8
+    assert abs(v17_cohort_adjustment("SouthKorea", 2024) - 1.2) < 1e-8
 
 def test_korea_f_male():
-    assert abs(v17_f_male("SouthKorea", 2024) - 4.756605909395564) < 1e-6
+    assert abs(v17_f_male("SouthKorea", 2024) - 4.6015873524319035) < 1e-6
 
 def test_korea_f_female():
     assert abs(v17_f_female("SouthKorea", 2024) - 0.909217040609892) < 1e-8

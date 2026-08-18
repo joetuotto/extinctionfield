@@ -37,10 +37,12 @@ export default function ExplorerPage() {
           before cultural factors.
         </p>
         <p className="mt-1">
-          <strong>Fertility tab:</strong> Blue line = model prediction. Gray
-          dots = observed World Bank data. The model is calibrated at 2024
-          (predicted = observed by construction). The shaded region after 2024
-          is the forecast with approximate confidence interval.
+          <strong>Fertility tab:</strong> Blue line = model prediction.
+          Yellow dashed line = native TFR (excluding immigrant fertility
+          contribution). Gray dots = observed World Bank data. The model is
+          calibrated at 2024 (predicted = observed by construction). The
+          shaded region after 2024 is the forecast with approximate
+          confidence interval.
         </p>
       </div>
     </main>
