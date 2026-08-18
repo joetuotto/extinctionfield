@@ -303,13 +303,10 @@ def v17_cohort_adjustment(country: str, year: int) -> float:
 
 
 def cohort_weighted_exposure(country: str, eval_year: int) -> float:
-    """Cohort-weighted cumulative exposure (DIAGNOSTIC_ONLY).
+    """Cohort-weighted cumulative exposure (simple sum, no retention).
 
     Weights each year's exposure by the age-specific vulnerability
     that the peak birth cohort (age 28 at eval_year) experienced.
-
-    NOTE: This changes cumEMF scale -> requires recalibration
-    before integration into TFR chain. Use for diagnostics only.
     """
     td = _get_td(country)
     birth_year = eval_year - 28
@@ -324,6 +321,44 @@ def cohort_weighted_exposure(country: str, eval_year: int) -> float:
         weighted_cum += annual * weight
 
     return weighted_cum
+
+
+# === Cohort-weighted cumulative with retention (Erä 4.2) ===
+
+_cohort_norm_factor: float = 1.0
+
+
+def _cohort_weighted_cum_raw(country: str, year: int) -> float:
+    """Cohort-weighted cumulative with 5-layer retention (unnormalized)."""
+    td = _get_td(country)
+    birth_year = year - 28
+    total = 0.0
+    for y in range(td.start, year + 1):
+        amb = v16_ambient_annual(country, y)
+        pers = v16_personal_annual(country, y)
+        annual = amb + chi(amb) * pers
+        age = y - birth_year
+        vuln = vulnerability_by_age(age)
+        ret = v17_layer_retention(year - y)
+        total += annual * vuln * ret
+    return total
+
+
+def _compute_cohort_norm_factor() -> float:
+    """Normalization factor: keeps adj_cum scale compatible with b parameter."""
+    ratios = []
+    for c in V12_ACTUAL_TFR_2024:
+        wt_cum = v17_weighted_cum_exposure(c, 2024)
+        coh_adj = v17_cohort_adjustment(c, 2024)
+        cohort_raw = _cohort_weighted_cum_raw(c, 2024)
+        if cohort_raw > 0.01:
+            ratios.append((wt_cum * coh_adj) / cohort_raw)
+    return sum(ratios) / len(ratios)
+
+
+def cohort_weighted_exposure_normalized(country: str, year: int) -> float:
+    """Cohort-weighted cumulative with retention, normalized to old scale."""
+    return _cohort_weighted_cum_raw(country, year) * _cohort_norm_factor
 
 
 # === Cumulative exposure chain ===
@@ -352,11 +387,10 @@ def v17_weighted_cum_exposure(country: str, year: int) -> float:
 
 
 def v16_adjusted_cumulative_exposure(country: str, year: int) -> float:
-    """Adjusted cumulative = weighted * occupational * cohort."""
+    """Adjusted cumulative = cohort-weighted-normalized * occupational."""
     return (
-        v17_weighted_cum_exposure(country, year)
+        cohort_weighted_exposure_normalized(country, year)
         * occupational_emf_multiplier(country, year)
-        * v17_cohort_adjustment(country, year)
     )
 
 
@@ -452,9 +486,14 @@ def v16_epigenetic_factor(country: str, year: int) -> float:
 # === v17 Male biological capacity ===
 
 def v17_male_bio_cap(adj_cum_emf: float, country: str, year: int) -> float:
-    """Male biological capacity: base * dysbiosis * BBB * nutrition * epigenetic."""
+    """Male biological capacity: base * dysbiosis * BBB * nutrition * epigenetic.
+
+    emf_norm uses INSTANTANEOUS EMF (ambient+personal for this year),
+    not cumulative — dysbiosis and BBB are physiologically instantaneous.
+    """
     base_bio_cap = v11_biological_capacity(adj_cum_emf)
-    emf_norm = min(1.0, adj_cum_emf / 100.0)
+    instant_emf = v16_ambient_annual(country, year) + v16_personal_annual(country, year)
+    emf_norm = min(1.0, instant_emf / 8.0)
     dys_idx = dysbiosis_index(emf_norm)
     dys_effect = max(0.7, min(1.0, 1.0 - 0.08 * max(0.0, dys_idx - 1.0)))
     bbb_result = pathway_f(emf_norm)
@@ -526,7 +565,8 @@ _v16_bio_behav_2024: dict[str, float] = {}
 
 def calibrate_v16() -> dict[str, float]:
     """Calibrate cultural rates from observed TFR 2024."""
-    global _v16_true_cultural_rates, _v16_bio_behav_2024
+    global _v16_true_cultural_rates, _v16_bio_behav_2024, _cohort_norm_factor
+    _cohort_norm_factor = _compute_cohort_norm_factor()
     rates: dict[str, float] = {}
     bb: dict[str, float] = {}
     for c in V12_ACTUAL_TFR_2024:
@@ -829,7 +869,8 @@ def v16_country_tfr(country: str, year: int) -> dict:
     amb_ann = v16_ambient_annual(country, year)
     pers_ann = v16_personal_annual(country, year)
     occ_mult = occupational_emf_multiplier(country, year)
-    emf_norm = min(1.0, adj_cum / 100.0)
+    instant_emf = amb_ann + pers_ann
+    emf_norm = min(1.0, instant_emf / 8.0)
 
     base_bio_cap = v11_biological_capacity(adj_cum)
     dys_idx = dysbiosis_index(emf_norm)
@@ -940,6 +981,7 @@ def _build_country_report(
         "effective_alpha": ALPHA_EFF,
         "chi_ambient": chi(amb_ann),
         "cohort_adjustment": v17_cohort_adjustment(country, year),
+        "cohort_norm_factor": _cohort_norm_factor,
         "f_couple": v17_f_couple(country, year),
         "predicted_sex_ratio": v17_predicted_sex_ratio(country, year),
         "predicted_tfr": predicted,
@@ -950,6 +992,7 @@ def _build_country_report(
         "immigration_share": imm_share,
         "immigrant_tfr": imm_tfr,
         "native_tfr": native_tfr_val,
+        "feedback_amplification": feedback_amplification(country, year),
     }
 
 
@@ -1122,6 +1165,46 @@ def v17_full_report(country: str, year_range: range | None = None) -> dict:
         "time_series": ts,
         "decomposition": decomposition,
         "cross_country": ranking,
+    }
+
+
+# === Feedback amplification diagnostic ===
+
+
+def feedback_amplification(country: str, year: int) -> dict:
+    """Diagnostic: estimated feedback amplification for forecast years.
+
+    For year <= 2024, returns amplification=1.0 (no feedback).
+    For year > 2024, estimates urbanization-driven density multiplier
+    based on projected TFR decline from 2024 baseline.
+
+    DIAGNOSTIC_ONLY — does not change predict_tfr output.
+    """
+    if year <= 2024:
+        return {
+            "amplification": 1.0,
+            "density_multiplier": 1.0,
+            "urban_shift": 0.0,
+            "tfr_decline_rate": 0.0,
+        }
+
+    if not _v16_true_cultural_rates:
+        calibrate_v16()
+
+    base_tfr = v16_predicted_tfr(country, 2024)
+    current_tfr = v16_predicted_tfr(country, year)
+
+    tfr_decline_rate = max(0.0, (base_tfr - current_tfr) / base_tfr)
+    years_forward = year - 2024
+    urban_shift = min(0.15, 0.003 * tfr_decline_rate * years_forward)
+    density_mult = 1.0 + 0.5 * urban_shift
+    amplification = density_mult
+
+    return {
+        "amplification": round(amplification, 6),
+        "density_multiplier": round(density_mult, 6),
+        "urban_shift": round(urban_shift, 6),
+        "tfr_decline_rate": round(tfr_decline_rate, 6),
     }
 
 
