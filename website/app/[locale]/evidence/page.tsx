@@ -294,7 +294,8 @@ export default async function EvidencePage({
                 pKey === "TG" ||
                 pKey === "CA" ||
                 pKey === "NR" ||
-                pKey === "LB"
+                pKey === "LB" ||
+                pKey === "OT"
                   ? ""
                   : `${locale === "fi" ? "Reitti" : "Pathway"} ${pKey === "T_BE" ? "T" : pKey}: `}
                 {pathway.label}
