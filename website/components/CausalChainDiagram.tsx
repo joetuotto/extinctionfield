@@ -13,15 +13,16 @@ import { DetailPanel } from "./DetailPanel";
 const NODE_H = 72;
 const NODE_RX = 12;
 const LEVEL_GAP = 52;
-const LEVEL_LABEL_W = 140;
-const FEEDBACK_MARGIN = 60;
+const LEVEL_LABEL_W = 100;
+const FEEDBACK_MARGIN = 44;
 const NODE_GAP = 14;
 const MAX_NODE_W = 240;
-const MIN_NODE_W = 160;
-const MAX_PER_ROW = 5;
+const MIN_NODE_W = 140;
+const MAX_PER_ROW = 4;
 const ROW_INNER_GAP = 10;
 const BAND_PAD_Y = 14;
 const BAND_PAD_X = 8;
+const RIGHT_PAD = 16;
 
 const EPISTEMIC_LABELS: Record<string, string> = {
   E: "E",
@@ -50,7 +51,7 @@ interface LevelBand {
 function computeLayout(
   nodes: ChainNode[],
   canvasW: number,
-): { layoutNodes: LayoutNode[]; canvasH: number; bands: LevelBand[] } {
+): { layoutNodes: LayoutNode[]; canvasH: number; actualW: number; bands: LevelBand[] } {
   const levels = new Map<number, ChainNode[]>();
   for (const n of nodes) {
     if (!levels.has(n.level)) levels.set(n.level, []);
@@ -60,8 +61,10 @@ function computeLayout(
   const sortedLevels = [...levels.keys()].sort((a, b) => a - b);
   const layoutNodes: LayoutNode[] = [];
   const bands: LevelBand[] = [];
-  const usableW = canvasW - LEVEL_LABEL_W - FEEDBACK_MARGIN;
+  const leftEdge = LEVEL_LABEL_W + FEEDBACK_MARGIN;
+  const usableW = canvasW - leftEdge - RIGHT_PAD;
   let currentY = 24;
+  let maxRight = canvasW;
 
   for (const lvl of sortedLevels) {
     const nodesInLevel = levels.get(lvl)!;
@@ -70,7 +73,6 @@ function computeLayout(
     const numRows = Math.ceil(count / MAX_PER_ROW);
     const bandTop = currentY - BAND_PAD_Y;
 
-    // Dominant epistemic color for the band
     const colorCounts = new Map<string, number>();
     for (const n of nodesInLevel) {
       colorCounts.set(n.epistemicLevel, (colorCounts.get(n.epistemicLevel) ?? 0) + 1);
@@ -88,16 +90,18 @@ function computeLayout(
       const totalGaps = (rowCount - 1) * NODE_GAP;
       const nodeW = Math.max(MIN_NODE_W, Math.min(MAX_NODE_W, (usableW - totalGaps) / rowCount));
       const rowW = rowCount * nodeW + totalGaps;
-      const startX = LEVEL_LABEL_W + FEEDBACK_MARGIN + (usableW - rowW) / 2;
+      const startX = Math.max(leftEdge, leftEdge + (usableW - rowW) / 2);
 
       for (let i = 0; i < rowCount; i++) {
+        const nx = startX + i * (nodeW + NODE_GAP);
         layoutNodes.push({
           ...nodesInLevel[rowStart + i],
-          x: startX + i * (nodeW + NODE_GAP),
+          x: nx,
           y: currentY,
           w: nodeW,
           h,
         });
+        maxRight = Math.max(maxRight, nx + nodeW + RIGHT_PAD);
       }
       currentY += h + (row < numRows - 1 ? ROW_INNER_GAP : 0);
     }
@@ -113,7 +117,7 @@ function computeLayout(
     currentY = bandBottom + LEVEL_GAP;
   }
 
-  return { layoutNodes, canvasH: currentY + 40, bands };
+  return { layoutNodes, canvasH: currentY + 40, actualW: maxRight, bands };
 }
 
 function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
@@ -159,10 +163,11 @@ export default function CausalChainDiagram() {
   }, []);
 
   const canvasW = containerW;
-  const { layoutNodes, canvasH, bands } = useMemo(
+  const { layoutNodes, canvasH, actualW, bands } = useMemo(
     () => computeLayout(NODES, canvasW),
     [canvasW],
   );
+  const viewW = Math.max(canvasW, actualW);
 
   const nodeMap = useMemo(() => {
     const m = new Map<string, LayoutNode>();
@@ -187,7 +192,7 @@ export default function CausalChainDiagram() {
     <>
       <div ref={containerRef} className="w-full overflow-x-auto">
         <svg
-          viewBox={`0 0 ${canvasW} ${canvasH}`}
+          viewBox={`0 0 ${viewW} ${canvasH}`}
           xmlns="http://www.w3.org/2000/svg"
           role="img"
           aria-label="BERM causal chain diagram"
@@ -225,7 +230,7 @@ export default function CausalChainDiagram() {
           <rect
             x="0"
             y="0"
-            width={canvasW}
+            width={viewW}
             height={canvasH}
             fill="var(--card-bg)"
             rx="12"
@@ -238,7 +243,7 @@ export default function CausalChainDiagram() {
               <rect
                 x={LEVEL_LABEL_W + FEEDBACK_MARGIN - BAND_PAD_X}
                 y={band.top}
-                width={canvasW - LEVEL_LABEL_W - FEEDBACK_MARGIN + BAND_PAD_X - 12}
+                width={viewW - LEVEL_LABEL_W - FEEDBACK_MARGIN + BAND_PAD_X - 12}
                 height={band.bottom - band.top}
                 rx="8"
                 fill={`${band.color}08`}
@@ -359,12 +364,19 @@ export default function CausalChainDiagram() {
             );
           })}
 
+          {/* Node clip paths */}
+          {layoutNodes.map((n) => (
+            <clipPath key={`clip-${n.id}`} id={`clip-${n.id}`}>
+              <rect x={n.x} y={n.y} width={n.w} height={n.h} rx={NODE_RX} />
+            </clipPath>
+          ))}
+
           {/* Nodes */}
           {layoutNodes.map((n) => {
             const color = EPISTEMIC_COLORS[n.epistemicLevel];
             const isHovered = hoveredNode === n.id;
             const isSelected = selectedNode?.id === n.id;
-            const dimmed = hoveredNode !== null && !isHovered && !connectedEdges.size;
+            const textW = n.w - 48;
 
             return (
               <g
@@ -408,44 +420,50 @@ export default function CausalChainDiagram() {
                 >
                   {EPISTEMIC_LABELS[n.epistemicLevel] ?? n.epistemicLevel}
                 </text>
-                {/* Label */}
-                <text
-                  x={n.x + 14}
-                  y={n.y + (n.sublabel ? 24 : n.h / 2 + 1)}
-                  fill="var(--foreground)"
-                  fontSize={14}
-                  fontWeight="600"
-                  dominantBaseline="middle"
-                  fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                >
-                  {n.label}
-                </text>
-                {/* Sublabel */}
-                {n.sublabel && (
+                {/* Label — clipped to node bounds */}
+                <g clipPath={`url(#clip-${n.id})`}>
                   <text
-                    x={n.x + 14}
-                    y={n.y + 46}
-                    fill="var(--foreground-muted)"
-                    fontSize={11}
+                    x={n.x + 12}
+                    y={n.y + (n.sublabel ? 24 : n.h / 2 + 1)}
+                    fill="var(--foreground)"
+                    fontSize={n.label.length > 18 ? 12 : 13}
+                    fontWeight="600"
                     dominantBaseline="middle"
-                    fontFamily="ui-monospace, SFMono-Regular, monospace"
-                  >
-                    {n.sublabel}
-                  </text>
-                )}
-                {/* Click hint on hover */}
-                {isHovered && (
-                  <text
-                    x={n.x + 14}
-                    y={n.y + n.h - 8}
-                    fill="var(--foreground-muted)"
-                    fontSize={9}
-                    dominantBaseline="auto"
                     fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+                    textLength={n.label.length * 7.5 > textW ? textW : undefined}
+                    lengthAdjust="spacingAndGlyphs"
                   >
-                    {"→ click for details"}
+                    {n.label}
                   </text>
-                )}
+                  {/* Sublabel */}
+                  {n.sublabel && (
+                    <text
+                      x={n.x + 12}
+                      y={n.y + 44}
+                      fill="var(--foreground-muted)"
+                      fontSize={10}
+                      dominantBaseline="middle"
+                      fontFamily="ui-monospace, SFMono-Regular, monospace"
+                      textLength={n.sublabel.length * 6 > textW ? textW : undefined}
+                      lengthAdjust="spacingAndGlyphs"
+                    >
+                      {n.sublabel}
+                    </text>
+                  )}
+                  {/* Click hint on hover */}
+                  {isHovered && (
+                    <text
+                      x={n.x + 12}
+                      y={n.y + n.h - 8}
+                      fill="var(--foreground-muted)"
+                      fontSize={9}
+                      dominantBaseline="auto"
+                      fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+                    >
+                      {"→ click for details"}
+                    </text>
+                  )}
+                </g>
               </g>
             );
           })}
@@ -461,7 +479,7 @@ export default function CausalChainDiagram() {
             ];
             const legendY = canvasH - 24;
             const legendX = LEVEL_LABEL_W + FEEDBACK_MARGIN;
-            const spacing = (canvasW - legendX - 20) / items.length;
+            const spacing = (viewW - legendX - 20) / items.length;
             return items.map(([lvl, lbl], i) => {
               const c = EPISTEMIC_COLORS[lvl];
               return (
