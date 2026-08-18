@@ -62,6 +62,12 @@ interface ExplanationRow {
   humans: "yes" | "no" | "partial";
 }
 
+interface HumanProxyRow {
+  socialExplanation: string;
+  bermInterpretation: string;
+  mechanism: string;
+}
+
 interface TimelineEvent {
   year: number;
   label: string;
@@ -172,6 +178,43 @@ const t = {
     proxyP2Label: "Evidence asymmetry",
     proxyP3Label: "Causal masking",
     proxyAttrLabel: "Attribution analysis",
+
+    /* human proxy masking */
+    proxyHumanTitle: "Human Fertility: Social Science Explanations as Hormonal Proxies",
+    proxyHumanIntro:
+      "When social scientists observe fertility decline, they document real patterns: men commit less, women report higher standards, couples say they are too busy, infertility diagnoses rise, and careers take priority over children. Each observation is accurate. But each has a hormonal substrate that the social science framing does not capture. The quadruple suppression model (§5) shows how EMF-mediated hormonal changes produce exactly the behavioral patterns that social scientists attribute to culture.",
+    proxyHumanThSocial: "Social science observation",
+    proxyHumanThBERM: "BERM interpretation",
+    proxyHumanThMechanism: "Hormonal mechanism",
+    proxyHumanNote:
+      "This mapping is inherently speculative: the causal chain from population-level T decline to population-level behavior change has not been tested as a whole. Individual-level links are established (RCTs: Dreher 2016, Goetz 2024), but ecological inference carries uncertainty. The dual-hormone meta-analysis effect size is small (r = -0.061). Culture is real — contraception access, education, and economic opportunity genuinely affect fertility choices. BERM argues that part of what appears cultural is hormonally mediated, not that culture is irrelevant.",
+    humanProxyRows: [
+      {
+        socialExplanation: "\"Men don't want to commit\"",
+        bermInterpretation: "T decline reduces approach motivation (P_approach). Men initiate fewer romantic contacts not because of preference change but because hormonal drive is suppressed.",
+        mechanism: "T↓ → approach motivation↓ (Puts 2008, n=119)",
+      },
+      {
+        socialExplanation: "\"Women's standards are too high\"",
+        bermInterpretation: "Population-level T decline weakens the signal women evolved to detect. The signal has objectively degraded; standards have not risen — the signal-to-noise ratio has fallen.",
+        mechanism: "T↓ → attraction signal↓ (Thornhill & Gangestad 1994)",
+      },
+      {
+        socialExplanation: "\"Couples are too busy/stressed\"",
+        bermInterpretation: "Cortisol elevation suppresses the dual-hormone gate. Even residual T cannot express behaviorally when cortisol is high. Stress is partly EMF-mediated.",
+        mechanism: "Cortisol↑ → dual-hormone lock (Mehta 2015, meta N=8538)",
+      },
+      {
+        socialExplanation: "\"Infertility is rising\"",
+        bermInterpretation: "Direct gamete damage via ROS/SDF pathway. This is the biological component that no social explanation addresses.",
+        mechanism: "EMF → VGCC → ROS → sperm DNA fragmentation (Pathway A)",
+      },
+      {
+        socialExplanation: "\"Career over kids\"",
+        bermInterpretation: "OT decline reduces pair-bonding reward. The subjective experience of 'preferring career' is indistinguishable from reduced neurochemical reward for pair-bonding.",
+        mechanism: "OT↓ → pair-bond reward↓ → P(sex within pair)↓",
+      },
+    ] as HumanProxyRow[],
 
     /* temporal timeline */
     timelineTitle: "Temporal Correlation Timeline",
@@ -656,6 +699,43 @@ const t = {
     proxyP2Label: "Näytön epäsymmetria",
     proxyP3Label: "Kausaalinen peittäminen",
     proxyAttrLabel: "Attribuutioanalyysi",
+
+    /* human proxy masking */
+    proxyHumanTitle: "Ihmisten hedelmallisyys: Yhteiskuntatieteelliset selitykset hormonaalisina proxy-muuttujina",
+    proxyHumanIntro:
+      "Kun yhteiskuntatieteilijat havaitsevat hedelmallisyyden laskun, he dokumentoivat todellisia kaavoja: miehet sitoutuvat vahemman, naiset raportoivat korkeampia standardeja, parit sanovat olevansa liian kiireisia, hedelmattomyysdiagnoosit lisaantyvat ja urat asetetaan lasten edelle. Jokainen havainto on tarkka. Mutta jokaisella on hormonaalinen substraatti, jota yhteiskuntatieteellinen kehys ei tavoita. Nelinkertainen suppressiomalli (§5) nayttaa miten EMF-valitteiset hormonaaliset muutokset tuottavat tarkalleen ne kayttaytymismallit, jotka yhteiskuntatieteilijat attribuoivat kulttuurille.",
+    proxyHumanThSocial: "Yhteiskuntatieteellinen havainto",
+    proxyHumanThBERM: "BERM-tulkinta",
+    proxyHumanThMechanism: "Hormonaalinen mekanismi",
+    proxyHumanNote:
+      "Tama kartoitus on luonteeltaan spekulatiivista: kausaaliketjua populaatiotason T-laskusta populaatiotason kayttaytymismuutokseen ei ole testattu kokonaisuutena. Yksilotason yhteydet ovat vakiintuneita (RCT:t: Dreher 2016, Goetz 2024), mutta ekologinen paattely sisaltaa epavarmuutta. Dual-hormone -meta-analyysin efektikoko on pieni (r = -0,061). Kulttuuri ON todellinen — ehkaisyn saatavuus, koulutus ja taloudelliset mahdollisuudet vaikuttavat aidosti hedelmallisyysvalintoihin. BERM vaittaa etta osa siita mika nayttaa kulttuuriselta on hormonaalisesti mediatoitua, ei etta kulttuuri on irrelevantti.",
+    humanProxyRows: [
+      {
+        socialExplanation: "\"Miehet eivat halua sitoutua\"",
+        bermInterpretation: "T-lasku vahentaa lahestymismotivaatiota (P_approach). Miehet aloittavat harvemmin romanttisia kontakteja ei preferenssimuutoksen vaan hormonaalisen driven suppression takia.",
+        mechanism: "T↓ → lahestymismotivaatio↓ (Puts 2008, n=119)",
+      },
+      {
+        socialExplanation: "\"Naisten standardit ovat liian korkealla\"",
+        bermInterpretation: "Populaatiotason T-lasku heikentaa signaalia jonka naiset kehittyivat havaitsemaan. Signaali on objektiivisesti heikentynyt; standardit eivat ole nousseet — signaali-kohinasuhde on laskenut.",
+        mechanism: "T↓ → attraktiosignaali↓ (Thornhill & Gangestad 1994)",
+      },
+      {
+        socialExplanation: "\"Parit ovat liian kiireisia/stressaantuneita\"",
+        bermInterpretation: "Kortisolinnousu estaa dual-hormone -portin. Jaannostestosteronikaan ei voi ilmeta kayttaytymisessa kun kortisoli on korkea. Stressi on osittain EMF-valitteista.",
+        mechanism: "Kortisoli↑ → dual-hormone -lukko (Mehta 2015, meta N=8538)",
+      },
+      {
+        socialExplanation: "\"Hedelmattomyys lisaantyy\"",
+        bermInterpretation: "Suora sukusolujen vaurioituminen ROS/SDF-reitin kautta. Tama on biologinen komponentti johon mikaan sosiaalinen selitys ei puutu.",
+        mechanism: "EMF → VGCC → ROS → siittioiden DNA-fragmentaatio (Reitti A)",
+      },
+      {
+        socialExplanation: "\"Ura lasten edelle\"",
+        bermInterpretation: "OT-lasku vahentaa parisidoksen palkitsevuutta. Subjektiivinen kokemus 'uran suosimisesta' on erottamaton pariutumisen neurokemiallisen palkinnon vahenemisesta.",
+        mechanism: "OT↓ → parisidospalkinto↓ → P(seksi parin sisalla)↓",
+      },
+    ] as HumanProxyRow[],
 
     /* temporal timeline */
     timelineTitle: "Ajallinen korrelaatioaikajana",
@@ -1452,6 +1532,39 @@ export default async function SentinelPage({
               {d.proxyP3}
             </p>
           </div>
+        </div>
+
+        {/* Human proxy masking */}
+        <div className="mt-10 max-w-4xl">
+          <h3 className="text-lg font-semibold mb-3">{d.proxyHumanTitle}</h3>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+            {d.proxyHumanIntro}
+          </p>
+          <div className="overflow-x-auto">
+            <table className="text-xs border-collapse w-full">
+              <thead>
+                <tr className="border-b border-card-border text-foreground-muted">
+                  <th className="text-left py-2 pr-3">{d.proxyHumanThSocial}</th>
+                  <th className="text-left py-2 pr-3">{d.proxyHumanThBERM}</th>
+                  <th className="text-left py-2">{d.proxyHumanThMechanism}</th>
+                </tr>
+              </thead>
+              <tbody className="text-foreground-muted">
+                {(d.humanProxyRows as HumanProxyRow[]).map((row, i) => (
+                  <tr key={i} className="border-b border-card-border/50 align-top">
+                    <td className="py-2 pr-3 font-medium text-foreground whitespace-nowrap">
+                      {row.socialExplanation}
+                    </td>
+                    <td className="py-2 pr-3">{row.bermInterpretation}</td>
+                    <td className="py-2 font-mono-num text-xs">{row.mechanism}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-foreground-muted mt-3 border-l-2 border-status-partial/50 pl-3">
+            {d.proxyHumanNote}
+          </p>
         </div>
       </section>
 
