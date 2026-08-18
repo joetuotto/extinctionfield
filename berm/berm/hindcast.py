@@ -1,11 +1,62 @@
 """Hindcast validation: run BERM predictions against observed TFR history.
 
 Computes RMSE, MAE, and max absolute error for model validation.
+Supports both v17 model (predict_country_year, self-contained) and
+legacy pipeline (predict_tfr, requires manual parameters).
 """
 
 import math
 
-from berm.tfr import predict_tfr
+from berm.model import predict_country_year
+from berm.data.countries import HISTORICAL_TFR
+
+
+def hindcast_v17(
+    country: str,
+    years: list[int] | range | None = None,
+) -> dict:
+    """Run hindcast for a country using v17 model pipeline.
+
+    Uses HISTORICAL_TFR for comparison. All model parameters come from
+    country data — no manual inputs needed.
+
+    Parameters
+    ----------
+    country : str
+        Country name (must be in HISTORICAL_TFR).
+    years : list or range, optional
+        Years to hindcast. Defaults to all years in HISTORICAL_TFR.
+
+    Returns
+    -------
+    dict with predicted, observed, errors, rmse, mae, max_error, n_years.
+    """
+    obs_series = HISTORICAL_TFR.get(country)
+    if obs_series is None:
+        raise ValueError(f"No historical TFR data for {country}")
+
+    obs_dict = dict(obs_series)
+
+    if years is None:
+        years = sorted(obs_dict.keys())
+
+    predicted: dict[int, float] = {}
+    observed: dict[int, float] = {}
+    errors: dict[int, float] = {}
+
+    for yr in years:
+        if yr not in obs_dict:
+            continue
+
+        result = predict_country_year(country, yr)
+        pred = result["predicted_tfr"]
+        obs = obs_dict[yr]
+
+        predicted[yr] = pred
+        observed[yr] = obs
+        errors[yr] = pred - obs
+
+    return _compute_metrics(predicted, observed, errors)
 
 
 def hindcast_country(
@@ -18,39 +69,12 @@ def hindcast_country(
     base_tfr: float | None = None,
     cultural_ratio: float = 1.0,
 ) -> dict:
-    """Run hindcast for a country over a range of years.
+    """Run hindcast using legacy predict_tfr pipeline.
 
-    Parameters
-    ----------
-    country : str
-        Country name.
-    years : range
-        Year range to hindcast over.
-    mobile_penetration_series : dict[int, float]
-        Mobile penetration by year (0-1).
-    pop_density : float
-        Population density (people/km^2), assumed constant.
-    observed_tfr_series : dict[int, float]
-        Observed TFR values by year for comparison.
-    calibration_year : int
-        Year used for base_tfr calibration.
-    base_tfr : float or None
-        Base TFR at calibration year. If None, uses observed value at
-        calibration_year from observed_tfr_series.
-    cultural_ratio : float
-        Cultural fertility preference ratio.
-
-    Returns
-    -------
-    dict with:
-        predicted: dict[int, float] — predicted TFR per year
-        observed: dict[int, float] — observed TFR per year (filtered)
-        errors: dict[int, float] — signed error per year
-        rmse: float
-        mae: float
-        max_error: float
-        n_years: int
+    Kept for backward compatibility. New code should use hindcast_v17.
     """
+    from berm.tfr import predict_tfr
+
     if base_tfr is None:
         if calibration_year not in observed_tfr_series:
             raise ValueError(
@@ -87,6 +111,14 @@ def hindcast_country(
         observed[yr] = obs
         errors[yr] = pred - obs
 
+    return _compute_metrics(predicted, observed, errors)
+
+
+def _compute_metrics(
+    predicted: dict[int, float],
+    observed: dict[int, float],
+    errors: dict[int, float],
+) -> dict:
     n = len(errors)
     if n == 0:
         return {
@@ -102,16 +134,12 @@ def hindcast_country(
     squared_errors = [e ** 2 for e in errors.values()]
     abs_errors = [abs(e) for e in errors.values()]
 
-    rmse = math.sqrt(sum(squared_errors) / n)
-    mae = sum(abs_errors) / n
-    max_error = max(abs_errors)
-
     return {
         "predicted": predicted,
         "observed": observed,
         "errors": errors,
-        "rmse": rmse,
-        "mae": mae,
-        "max_error": max_error,
+        "rmse": math.sqrt(sum(squared_errors) / n),
+        "mae": sum(abs_errors) / n,
+        "max_error": max(abs_errors),
         "n_years": n,
     }

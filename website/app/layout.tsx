@@ -25,6 +25,18 @@ export default function RootLayout({
               that will either come true or not. The model contains explicit
               refutation conditions.
             </p>
+            <ul className="mt-4 space-y-1 text-xs text-foreground-muted leading-relaxed list-disc list-inside">
+              <li>
+                86% of placebo series fit the current data better than the model
+                (K8)
+              </li>
+              <li>
+                The backcast claim has been refuted in replication (K10)
+              </li>
+              <li>
+                Cross-section R&sup2; = 0.9999 is calibration, not validation
+              </li>
+            </ul>
             <p className="text-xs text-foreground-muted mt-4">
               Code: MIT License. Documentation: CC BY-4.0.
             </p>

@@ -84,10 +84,11 @@ def predict_tfr(
         exposure_total, sperm_state
     """
     # Step 1: Ambient EMF from infrastructure
-    ambient = effective_emf_field(mobile_penetration, pop_density)
+    urban_frac = 0.70  # default when no country params available
+    ambient = effective_emf_field(mobile_penetration, pop_density, urban_frac)
 
     # Step 2: Personal EMF from device proximity
-    personal = personal_emf_exposure(mobile_penetration, year)
+    personal = personal_emf_exposure(country, mobile_penetration, year)
 
     # Step 3: Two-channel total (chi applies to VGIC channel only)
     total_exposure = float(two_channel_exposure(ambient, personal))
@@ -115,8 +116,8 @@ def predict_tfr(
 
     # Step 8: Alpha-compensated prediction
     # Compute calibration-year bio-behavioral product for compensation
-    ambient_cal = effective_emf_field(mobile_penetration, pop_density)
-    personal_cal = personal_emf_exposure(mobile_penetration, calibration_year)
+    ambient_cal = effective_emf_field(mobile_penetration, pop_density, urban_frac)
+    personal_cal = personal_emf_exposure(country, mobile_penetration, calibration_year)
     total_cal = float(two_channel_exposure(ambient_cal, personal_cal))
     cum_cal = _cumulative_emf(total_cal, calibration_year, calibration_year)
 

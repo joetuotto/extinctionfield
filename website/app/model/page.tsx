@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CausalChain from "@/components/CausalChain";
+import CausalChainDiagram from "@/components/CausalChainDiagram";
 
 export const metadata: Metadata = {
   title: "Model Documentation - Extinction Field",
@@ -112,23 +112,21 @@ export default function ModelPage() {
         </div>
       </section>
 
-      {/* ── Causal chain diagram ── */}
+      {/* ── Interactive causal chain diagram ── */}
       <section className="mb-14">
         <h2 className="text-xl font-semibold mb-4">
           Causal pathway diagram
         </h2>
         <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-          The diagram below shows how EMF exposure propagates through five
-          biological pathways to converge on fecundability and ultimately TFR.
-          Node borders are colored by epistemic level (see the{" "}
-          <Link href="/evidence" className="text-accent hover:text-accent-hover">
-            evidence page
-          </Link>{" "}
-          for details).
+          The diagram below shows the complete mechanistic chain from Lindgren
+          geometry to TFR decline. Nine levels, 26 nodes, 31 edges. Click any
+          node to see its mechanism, Lindgren interpretation, quantitative
+          formulation, recovery parameters, and key references. Node borders
+          are colored by epistemic level.
         </p>
-        <SectionCard className="overflow-x-auto">
-          <CausalChain />
-        </SectionCard>
+        <div className="overflow-x-auto">
+          <CausalChainDiagram />
+        </div>
       </section>
 
       {/* ── Lindgren chi coupling ── */}

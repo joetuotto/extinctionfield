@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CausalChain from "@/components/CausalChain";
 
 export default function Home() {
   return (
@@ -50,23 +51,34 @@ export default function Home() {
       <section className="max-w-3xl mb-16 space-y-5">
         <p className="text-foreground-muted leading-relaxed">
           The Bio-Electromagnetic Reproductive Model (BERM) proposes that
-          non-ionizing electromagnetic fields -- from mobile phones, Wi-Fi
-          infrastructure, and other sources -- contribute to declining
-          reproductive outcomes worldwide. The model integrates evidence from
-          reproductive biology, epidemiology, and environmental exposure data.
+          anthropogenic electromagnetic fields -- from cell towers, Wi-Fi, and
+          smartphones -- are a significant factor in the global fertility
+          decline. The model produces quantitative, falsifiable predictions
+          that will either come true or not. It is a testable hypothesis, not
+          a certainty claim.
         </p>
         <p className="text-foreground-muted leading-relaxed">
-          BERM produces quantitative, time-bound predictions for specific
-          countries and metrics. Each prediction is locked with a confidence
-          interval before the observation period begins. The model is designed to
-          be falsifiable: if observed values fall outside the predicted
-          confidence intervals, the model is refuted on that prediction.
+          Each prediction is locked with a confidence interval before the
+          observation period begins. If observed values fall outside the
+          predicted interval, the model is refuted on that prediction -- not
+          the prediction adjusted. All source code, data, and methodology are
+          open for anyone to reproduce, challenge, or extend.
         </p>
-        <p className="text-foreground-muted leading-relaxed">
-          This website serves as the public prediction registry and evidence
-          repository. All predictions are timestamped and cannot be modified
-          after locking. The source code, data, and methodology are open.
+      </section>
+
+      {/* Causal chain diagram */}
+      <section className="mb-16">
+        <h2 className="text-xl font-semibold mb-4">
+          Causal pathway overview
+        </h2>
+        <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+          EMF exposure propagates through five biological pathways to converge
+          on fecundability and fertility rate. Node borders indicate the
+          epistemic level of the supporting evidence.
         </p>
+        <div className="border border-card-border bg-card-bg rounded-lg p-4 md:p-6 overflow-x-auto">
+          <CausalChain />
+        </div>
       </section>
 
       {/* Links */}
@@ -78,27 +90,28 @@ export default function Home() {
           View prediction registry
         </Link>
         <Link
+          href="/model"
+          className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground hover:border-foreground-muted text-sm font-medium rounded-lg transition-colors"
+        >
+          Model documentation
+        </Link>
+        <Link
           href="/evidence"
           className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground hover:border-foreground-muted text-sm font-medium rounded-lg transition-colors"
         >
           Browse evidence
-        </Link>
-        <Link
-          href="/about"
-          className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground hover:border-foreground-muted text-sm font-medium rounded-lg transition-colors"
-        >
-          About the model
         </Link>
       </section>
 
       {/* Epistemic note */}
       <section className="border-t border-border pt-8">
         <p className="text-xs text-foreground-muted leading-relaxed max-w-3xl">
-          Epistemic note: BERM is a scientific model, not a certainty claim. The
-          predictions above represent the model&apos;s best estimates given current
-          evidence and methodology. The confidence intervals reflect genuine
-          uncertainty. If the data contradicts the model, the model is wrong --
-          that is the point of falsifiability.
+          Epistemic note: BERM is a scientific model, not a certainty claim.
+          86% of placebo series fit the current data better (K8). The backcast
+          claim has been refuted in replication (K10). Cross-section
+          R&sup2; = 0.9999 is calibration, not validation. If the data
+          contradicts the model, the model is wrong -- that is the point of
+          falsifiability.
         </p>
       </section>
     </div>

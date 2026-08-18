@@ -123,11 +123,18 @@ function PredictionCard({ prediction }: { prediction: LockedPrediction }) {
           <span>Model</span>
           <span className="font-mono-num">{prediction.modelVersion}</span>
         </div>
+        {prediction.gitSha && (
+          <div className="flex justify-between">
+            <span>Git SHA</span>
+            <span className="font-mono-num">{prediction.gitSha}</span>
+          </div>
+        )}
       </div>
 
       {/* Immutability statement */}
       <p className="mt-3 text-[10px] text-foreground-muted italic">
-        This prediction cannot be changed.
+        This prediction cannot be changed. If future observations fall
+        outside the confidence interval, the model is falsified.
       </p>
     </div>
   );

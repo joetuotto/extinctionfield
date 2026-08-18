@@ -10,6 +10,7 @@ export interface LockedPrediction {
   ciHigh: number;
   lockedDate: string;
   modelVersion: string;
+  gitSha: string;
   actual?: number;
   status: "pending" | "confirmed" | "refuted" | "partial";
   unit: string;
@@ -24,4 +25,36 @@ export interface EvidenceItem {
   finding: string;
   level: EpistemicLevel;
   n?: number;
+}
+
+export interface Reference {
+  authors: string;
+  title: string;
+  journal: string;
+  keyFinding: string;
+}
+
+export interface ChainNode {
+  id: string;
+  level: number;
+  label: string;
+  sublabel?: string;
+  epistemicLevel: EpistemicLevel;
+  title: string;
+  mechanism: string;
+  lindgrenInterpretation?: string;
+  quantitative?: string;
+  recoveryAlpha?: number;
+  recoveryTimescale?: string;
+  keyReferences: Reference[];
+  bermComponent?: string;
+  falsificationCondition?: string;
+}
+
+export interface ChainEdge {
+  from: string;
+  to: string;
+  label?: string;
+  derivative?: string;
+  epistemicLevel: EpistemicLevel;
 }

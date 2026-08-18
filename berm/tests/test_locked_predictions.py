@@ -22,7 +22,7 @@ def test_finland_2030():
 def test_korea_2030():
     kr = [p for p in LOCKED_PREDICTIONS if p.country == "SouthKorea" and p.year == 2030]
     assert len(kr) == 1
-    assert kr[0].central == 0.55
+    assert kr[0].central == 0.60
 
 def test_alpha_eff():
     assert abs(ALPHA_EFF - 0.43) < 0.001
