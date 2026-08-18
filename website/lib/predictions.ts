@@ -27,6 +27,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [1.02, 1.24],
         date: "2026-08-18",
         changeReason: "initial lock",
+        gitSha: "0fa9f290",
       },
       {
         version: "v17.1",
@@ -34,6 +35,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [1.02, 1.24],
         date: "2026-08-18",
         changeReason: COHORT_CHANGE,
+        gitSha: "df6b410",
       },
     ],
   },
@@ -59,6 +61,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [0.48, 0.72],
         date: "2026-08-18",
         changeReason: "initial lock",
+        gitSha: "0fa9f290",
       },
       {
         version: "v17.1",
@@ -66,6 +69,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [0.48, 0.72],
         date: "2026-08-18",
         changeReason: COHORT_CHANGE,
+        gitSha: "df6b410",
       },
     ],
   },
@@ -91,6 +95,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [0.40, 0.64],
         date: "2026-08-18",
         changeReason: "initial lock",
+        gitSha: "0fa9f290",
       },
       {
         version: "v17.1",
@@ -98,6 +103,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [0.40, 0.64],
         date: "2026-08-18",
         changeReason: COHORT_CHANGE,
+        gitSha: "df6b410",
       },
     ],
   },
@@ -123,6 +129,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [1.25, 1.65],
         date: "2026-08-18",
         changeReason: "initial lock",
+        gitSha: "0fa9f290",
       },
       {
         version: "v17.1",
@@ -130,6 +137,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [1.25, 1.65],
         date: "2026-08-18",
         changeReason: COHORT_CHANGE,
+        gitSha: "df6b410",
       },
     ],
   },
@@ -155,6 +163,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [0.88, 1.20],
         date: "2026-08-18",
         changeReason: "initial lock",
+        gitSha: "0fa9f290",
       },
       {
         version: "v17.1",
@@ -162,6 +171,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [0.88, 1.20],
         date: "2026-08-18",
         changeReason: COHORT_CHANGE,
+        gitSha: "df6b410",
       },
     ],
   },
@@ -187,6 +197,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [1.40, 1.68],
         date: "2026-08-18",
         changeReason: "initial lock",
+        gitSha: "0fa9f290",
       },
       {
         version: "v17.1",
@@ -194,6 +205,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
         ci: [1.40, 1.68],
         date: "2026-08-18",
         changeReason: COHORT_CHANGE,
+        gitSha: "df6b410",
       },
     ],
   },
@@ -212,6 +224,16 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "0fa9f290",
     status: "pending",
     unit: "children/woman",
+    history: [
+      {
+        version: "v17.0",
+        central: 1.78,
+        ci: [1.55, 2.05],
+        date: "2026-08-18",
+        changeReason: "initial lock",
+        gitSha: "0fa9f290",
+      },
+    ],
   },
   {
     id: "global-2050-sperm",
@@ -228,5 +250,15 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "0fa9f290",
     status: "pending",
     unit: "%",
+    history: [
+      {
+        version: "v17.0",
+        central: 62.0,
+        ci: [48.0, 75.0],
+        date: "2026-08-18",
+        changeReason: "initial lock",
+        gitSha: "0fa9f290",
+      },
+    ],
   },
 ];

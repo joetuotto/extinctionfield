@@ -4,6 +4,7 @@ export interface PredictionVersion {
   ci: [number, number];
   date: string;
   changeReason: string;
+  gitSha?: string;
 }
 
 export interface LockedPrediction {

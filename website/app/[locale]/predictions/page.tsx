@@ -19,6 +19,17 @@ const t = {
     immutability:
       "CI is locked at first version. If future observations fall outside the confidence interval, the model is falsified.",
     versionHistory: "Version history",
+    ciLocked: "CI locked",
+    centralUpdated: "Central updated",
+    noChanges: "No changes since initial lock",
+    auditTitle: "Transparency & Audit Trail",
+    auditP1Title: "What is locked",
+    auditP1: "Confidence intervals (CI bounds) are locked at the first version of each prediction and can never be widened. This is the falsification mechanism: if observed values fall outside the CI, the model is refuted.",
+    auditP2Title: "What can change",
+    auditP2: "Central estimates may be updated when the model structure improves (e.g., better cohort weighting). Every change is documented with a reason, date, model version, and git commit SHA. The CI never changes.",
+    auditP3Title: "How to verify",
+    auditP3: "Every prediction version includes a git SHA linking to the exact code state. The full version history is shown on each prediction card. The git history of lib/predictions.ts serves as the authoritative audit log.",
+    auditGitLink: "View git history on GitHub",
     methodology:
       "Methodology: Confidence intervals are derived from the BERM model using Monte Carlo simulation over parameter uncertainty. CI bounds are locked at the first version and never widened. Central estimates may be updated when the model structure improves (documented transparently in version history). Predictions are evaluated against official statistical sources (UN, World Bank, national statistics offices).",
   },
@@ -37,6 +48,17 @@ const t = {
     immutability:
       "Luottamusväli lukitaan ensimmäisessä versiossa. Jos tulevat havainnot jäävät luottamusvälin ulkopuolelle, malli falsifioidaan.",
     versionHistory: "Versiohistoria",
+    ciLocked: "LV lukittu",
+    centralUpdated: "Keskiarvo paivitetty",
+    noChanges: "Ei muutoksia alkuperaisen lukituksen jalkeen",
+    auditTitle: "Lapinakyvyys ja tarkastusketju",
+    auditP1Title: "Mika on lukittu",
+    auditP1: "Luottamusvalit (LV-rajat) lukitaan jokaisen ennusteen ensimmaisessa versiossa eika niita voi laajentaa. Tama on falsifikaatiomekanismi: jos havaitut arvot jaavat LV:n ulkopuolelle, malli kumotaan.",
+    auditP2Title: "Mika voi muuttua",
+    auditP2: "Keskiarvioita voidaan paivittaa mallirakenteen parantuessa (esim. parempi kohorttipainotus). Jokainen muutos dokumentoidaan syylla, paivamaaralla, malliversiolla ja git-commitin SHA:lla. Luottamusvali ei koskaan muutu.",
+    auditP3Title: "Kuinka varmistaa",
+    auditP3: "Jokainen ennusteversio sisaltaa git-SHA:n, joka linkittaa tarkkaan kooditilaan. Taysi versiohistoria nakyy jokaisessa ennustekortissa. lib/predictions.ts-tiedoston git-historia toimii virallisena tarkastuslokina.",
+    auditGitLink: "Nayta git-historia GitHubissa",
     methodology:
       "Menetelmä: Luottamusvälit johdetaan BERM-mallista Monte Carlo -simulaatiolla parametriepävarmuuden yli. Luottamusvälin rajat lukitaan ensimmäisessä versiossa eikä niitä laajenneta. Keskiarvioita voidaan päivittää mallirakenteen parantuessa (dokumentoidaan läpinäkyvästi versiohistoriassa). Ennusteita arvioidaan virallisia tilastolähteitä vasten (YK, Maailmanpankki, kansalliset tilastovirastot).",
   },
@@ -196,34 +218,77 @@ function PredictionCard({
         )}
       </div>
 
-      {/* Version history */}
-      {prediction.history && prediction.history.length > 1 && (
+      {/* Version history — always shown */}
+      {prediction.history && prediction.history.length > 0 && (
         <div className="mt-3 pt-3 border-t border-border">
-          <p className="text-[10px] font-semibold text-foreground-muted mb-1.5">
+          <p className="text-xs font-semibold text-foreground-muted mb-2">
             {d.versionHistory}
           </p>
-          <div className="space-y-1.5">
-            {prediction.history.map((v: PredictionVersion) => (
-              <div
-                key={v.version}
-                className="text-[10px] text-foreground-muted"
-              >
-                <span className="font-mono-num font-medium">
-                  {v.version}
-                </span>
-                {" "}
-                <span className="font-mono-num">{v.central.toFixed(2)}</span>
-                <span className="ml-1 text-foreground-muted/60">
-                  [{v.ci[0].toFixed(2)}, {v.ci[1].toFixed(2)}]
-                </span>
-                {v.changeReason !== "initial lock" && (
-                  <span className="block mt-0.5 italic text-foreground-muted/70 leading-tight">
-                    {v.changeReason}
-                  </span>
-                )}
-              </div>
-            ))}
+          <div className="space-y-2">
+            {prediction.history.map((v: PredictionVersion, idx: number) => {
+              const isInitial = idx === 0;
+              const isCurrent = idx === prediction.history!.length - 1;
+              const prevVersion = idx > 0 ? prediction.history![idx - 1] : null;
+              const centralChanged = prevVersion && prevVersion.central !== v.central;
+              const ciChanged = prevVersion && (prevVersion.ci[0] !== v.ci[0] || prevVersion.ci[1] !== v.ci[1]);
+
+              return (
+                <div
+                  key={v.version}
+                  className={`text-xs rounded-md p-2 ${
+                    isCurrent
+                      ? "bg-background border border-card-border"
+                      : "bg-transparent"
+                  }`}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="font-mono-num font-semibold">
+                      {v.version}
+                    </span>
+                    <span className="font-mono-num text-foreground-muted">
+                      {v.date}
+                    </span>
+                    {v.gitSha && (
+                      <span className="font-mono-num text-foreground-muted/60 text-[10px]">
+                        {v.gitSha}
+                      </span>
+                    )}
+                    {isInitial && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-status-confirmed/15 text-status-confirmed font-medium">
+                        {d.ciLocked}
+                      </span>
+                    )}
+                  </div>
+                  <div className="font-mono-num text-foreground-muted">
+                    <span>{v.central.toFixed(2)}</span>
+                    <span className="ml-1.5 text-foreground-muted/60">
+                      [{v.ci[0].toFixed(2)}, {v.ci[1].toFixed(2)}]
+                    </span>
+                    {centralChanged && (
+                      <span className="ml-1.5 text-status-partial text-[10px]">
+                        {d.centralUpdated}
+                      </span>
+                    )}
+                    {ciChanged && (
+                      <span className="ml-1.5 text-status-refuted text-[10px] font-semibold">
+                        CI CHANGED
+                      </span>
+                    )}
+                  </div>
+                  {v.changeReason !== "initial lock" && (
+                    <p className="mt-1 text-[10px] text-foreground-muted/70 leading-tight italic">
+                      {v.changeReason}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
           </div>
+          {prediction.history.length === 1 && (
+            <p className="text-[10px] text-foreground-muted/60 mt-1 italic">
+              {d.noChanges}
+            </p>
+          )}
         </div>
       )}
 
@@ -280,7 +345,45 @@ export default async function PredictionsPage({
         ))}
       </div>
 
-      <section className="mt-12 border-t border-border pt-8">
+      <section id="audit-trail" className="mt-12 border-t border-border pt-8 mb-10">
+        <h2 className="text-lg font-semibold mb-4">{d.auditTitle}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl">
+          <div className="border border-status-confirmed/30 bg-status-confirmed/5 rounded-lg p-4">
+            <h3 className="text-xs font-semibold text-status-confirmed uppercase tracking-wide mb-2">
+              {d.auditP1Title}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.auditP1}
+            </p>
+          </div>
+          <div className="border border-status-partial/30 bg-status-partial/5 rounded-lg p-4">
+            <h3 className="text-xs font-semibold text-status-partial uppercase tracking-wide mb-2">
+              {d.auditP2Title}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.auditP2}
+            </p>
+          </div>
+          <div className="border border-card-border bg-card-bg rounded-lg p-4">
+            <h3 className="text-xs font-semibold text-foreground-muted uppercase tracking-wide mb-2">
+              {d.auditP3Title}
+            </h3>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.auditP3}
+            </p>
+            <a
+              href="https://github.com/joetuotto/extinctionfield/commits/main/website/lib/predictions.ts"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-2 text-xs text-accent hover:underline"
+            >
+              {d.auditGitLink} &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border pt-8">
         <p className="text-xs text-foreground-muted leading-relaxed max-w-3xl">
           {d.methodology}
         </p>
