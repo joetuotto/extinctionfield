@@ -77,13 +77,13 @@ export function BiologyChart({ timeseries, country }: Props) {
               color: "var(--foreground)",
               fontSize: "13px",
             }}
-            formatter={(value: number, name: string) => {
+            formatter={(value, name) => {
               const labels: Record<string, string> = {
                 bioCap: "Biological capacity",
                 behav: "Behavioral factor",
                 bioPotential: "Bio × Behav",
               };
-              return [value?.toFixed(3), labels[name] || name];
+              return [Number(value).toFixed(3), labels[String(name)] || String(name)];
             }}
           />
           <Legend

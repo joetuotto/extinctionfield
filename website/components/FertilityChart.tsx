@@ -83,14 +83,14 @@ export function FertilityChart({ timeseries, country }: Props) {
               color: "var(--foreground)",
               fontSize: "13px",
             }}
-            formatter={(value: number, name: string) => {
+            formatter={(value, name) => {
               if (name === "predicted")
-                return [value?.toFixed(2), "BERM prediction"];
+                return [Number(value).toFixed(2), "BERM prediction"];
               if (name === "native")
-                return [value?.toFixed(2), "Native TFR (excl. immigration)"];
+                return [Number(value).toFixed(2), "Native TFR (excl. immigration)"];
               if (name === "observed")
-                return [value?.toFixed(2), "Observed (World Bank)"];
-              return [value, name];
+                return [Number(value).toFixed(2), "Observed (World Bank)"];
+              return [String(value), String(name)];
             }}
           />
 

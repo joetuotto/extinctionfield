@@ -72,12 +72,12 @@ export function ExposureChart({ timeseries, country }: Props) {
                 color: "var(--foreground)",
                 fontSize: "12px",
               }}
-              formatter={(value: number, name: string) => {
+              formatter={(value, name) => {
                 const labels: Record<string, string> = {
                   ambient: "Ambient",
                   chiPersonal: "χ × Personal",
                 };
-                return [value?.toFixed(3), labels[name] || name];
+                return [Number(value).toFixed(3), labels[String(name)] || String(name)];
               }}
             />
             <Area
@@ -139,8 +139,8 @@ export function ExposureChart({ timeseries, country }: Props) {
                 color: "var(--foreground)",
                 fontSize: "12px",
               }}
-              formatter={(value: number) => [
-                value?.toFixed(1),
+              formatter={(value) => [
+                Number(value).toFixed(1),
                 "Cumulative EMF",
               ]}
             />
