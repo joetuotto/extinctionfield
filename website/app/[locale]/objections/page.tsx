@@ -197,6 +197,25 @@ const t: { en: Dict; fi: Dict } = {
         uncertaintyText:
           "The BER half-life of ~6h is an estimate for one specific repair pathway; total DNA repair involves multiple pathways (NER, HR, NHEJ) with different kinetics. The recovery window model is simplified — real repair is more complex. The REFLEX data (Diem 2005) has been disputed (Vienna investigation into possible data manipulation), though the intermittent > continuous finding has been reported independently. The 22h/2h exposure ratio for modern humans is an estimate that varies by individual.",
       },
+      {
+        id: "culture-not-biology",
+        claim: "Fertility decline is about culture, not biology. People choose careers over children.",
+        paragraphs: [
+          "Every one of these 'choices' has a hormonal substrate. When testosterone declines, men do not choose to be less motivated — they ARE less motivated. The subjective experience is indistinguishable from a preference change.",
+          "Five specific predictions follow from the hormonal model. First, testosterone directly drives male courtship effort (Puts 2008, Animal Behaviour). T decline means men initiate fewer romantic interactions. Social scientists observe: 'men do not want to commit.' BERM observes: men's approach motivation is biologically suppressed.",
+          "Second, women's mate preferences evolved when male testosterone was higher. T-driven features — jaw width, brow ridge, voice depth, musculature — signal genetic quality (Thornhill & Gangestad 1994). Population-level T decline weakens the signal women evolved to detect. Social scientists observe: 'women's standards are too high.' BERM observes: the signal is objectively weaker.",
+          "Third, the dual-hormone hypothesis (Mehta & Prasad 2015, meta N=8538) shows testosterone's behavioral effects require low cortisol. EMF simultaneously lowers T (WHO meta 29 studies: SMD 0.87) AND raises cortisol (Pawlak 2025: d=1.88). Even residual T cannot express behaviorally because cortisol blocks it. Social scientists observe: 'modern life is stressful.' BERM observes: the stress is partly EMF-mediated and compounds the T effect.",
+          "Fourth, within couples, oxytocin decline reduces pair-bonding motivation and testosterone decline reduces sexual desire in both sexes. Couples have less sex not because they are 'too busy' but because their hormonal motivation is suppressed.",
+          "Fifth, South Korea spent over $200B on pronatalist policies since 2006. TFR fell from 1.13 to 0.72. Cash incentives target P(conscious_choice). BERM shows P(approach) x P(attraction) x P(sex) x P(fertilization) are all hormonally suppressed. If each drops 20%, the combined effect is 0.8^4 = 0.41 — a 59% reduction. Cash cannot restore testosterone or oxytocin.",
+        ],
+        evidenceLinks: [
+          { label: "Behavioral suppression evidence", href: "/evidence" },
+          { label: "Quadruple suppression derivation (§5)", href: "/mathematics#behavioral" },
+          { label: "T-decline studies (Pathway D)", href: "/evidence" },
+        ],
+        uncertaintyText:
+          "The causal chain from population-level T decline to population-level behavioral change has not been tested in an intervention study. Individual-level T-to-behavior relationships are established (RCTs by Dreher 2016 PNAS, Goetz 2024), but scaling to population effects involves ecological inference. The dual-hormone meta-analysis effect size is small (r=-.061). Culture IS real — contraception access, education, and economic opportunity genuinely affect fertility choices. BERM claims some of what looks cultural has a hormonal substrate, not that culture is irrelevant.",
+      },
     ],
   },
   fi: {
@@ -374,6 +393,25 @@ const t: { en: Dict; fi: Dict } = {
         ],
         uncertaintyText:
           "BER:n ~6h puoliintumisaika on arvio yhdelle korjausreitille; kokonais-DNA-korjaus käsittää useita reittejä (NER, HR, NHEJ), joilla on eri kinetiikka. Palautumisikkunamalli on yksinkertaistettu — todellinen korjaus on monimutkaisempaa. REFLEX-data (Diem 2005) on kiistetty (Wienin tutkinta mahdollisesta datan manipuloinnista), vaikka katkonainen > jatkuva -havainto on raportoitu itsenäisesti muualla. Modernin ihmisen 22h/2h altistussuhde on arvio, joka vaihtelee yksilöittäin.",
+      },
+      {
+        id: "culture-not-biology",
+        claim: "Hedelmallisyyden lasku johtuu kulttuurista, ei biologiasta. Ihmiset valitsevat uran lasten sijaan.",
+        paragraphs: [
+          "Jokaisella naista 'valinnoista' on hormonaalinen substraatti. Kun testosteroni laskee, miehet eivat valitse olla vahemman motivoituneita — he OVAT vahemman motivoituneita. Subjektiivinen kokemus on erottamaton preferenssimuutoksesta.",
+          "Viisi spesifiä ennustetta seuraa hormonaalisesta mallista. Ensinnäkin, testosteroni ohjaa suoraan miehen parinmuodostusponnistelua (Puts 2008, Animal Behaviour). T-lasku tarkoittaa, etta miehet aloittavat harvemmin romanttisia kontakteja. Yhteiskuntatieteilija havaitsee: 'miehet eivat halua sitoutua.' BERM havaitsee: miesten lahestymismotivaatio on biologisesti suppressoitu.",
+          "Toiseksi, naisten kumppanin valintapreferenssit kehittyivat olosuhteissa joissa miesten testosteroni oli korkeampi. T-tuottamat piirteet — leuanleveys, kulmakaari, aanen syvyys, lihaksisto — signaloivat geneettista laatua (Thornhill & Gangestad 1994). Populaatiotason T-lasku heikentaa signaalia jonka naiset ovat kehittyneet havaitsemaan. Yhteiskuntatieteilija havaitsee: 'naisten standardit ovat nousseet.' BERM havaitsee: signaali on objektiivisesti heikentynyt.",
+          "Kolmanneksi, dual-hormone -hypoteesi (Mehta & Prasad 2015, meta N=8538) osoittaa, etta testosteronin kayttaytymisvaikutukset vaativat matalan kortisolin. EMF samanaikaisesti laskee T:ta (WHO meta 29 tutkimusta: SMD 0,87) JA nostaa kortisolia (Pawlak 2025: d=1,88). Jaannostestosteronikaan ei voi ilmeta kayttaytymisessa koska kortisoli estaa sen. Yhteiskuntatieteilija havaitsee: 'moderni elama on stressaavaa.' BERM havaitsee: stressi on osittain EMF-valitteista ja yhdistaa T-vaikutukseen.",
+          "Neljanneksi, pariskuntien sisalla oksitosiinin lasku vahentaa parisitomotiivaatiota ja testosteronin lasku vahentaa seksuaalista halua molemmilla sukupuolilla. Parit harrastavat vahemman seksia ei siksi etta he ovat 'liian kiireisia' vaan koska hormonaalinen motivaatio on suppressoitu.",
+          "Viidenneksi, Etela-Korea kaytti yli 200 miljardia dollaria pronatalistisiin ohjelmiin vuodesta 2006. TFR laski 1,13:sta 0,72:een. Taloudelliset kannustimet kohdistuvat tietoiseen P(valinta):iin. BERM nayttaa etta P(lahestyminen) x P(attraktio) x P(seksi) x P(hedelmöitys) ovat kaikki hormonaalisesti suppressoituja. Jos jokainen laskee 20%, yhteisvaikutus on 0,8⁴ = 0,41 — 59% lasku. Raha ei palauta testosteronia eika oksitosiinia.",
+        ],
+        evidenceLinks: [
+          { label: "Behavioraalisen suppression naytto", href: "/evidence" },
+          { label: "Nelinkertainen suppressio -johtaminen (§5)", href: "/mathematics#behavioral" },
+          { label: "T-laskunaytto (Reitti D)", href: "/evidence" },
+        ],
+        uncertaintyText:
+          "Kausaaliketjua populaatiotason T-laskusta populaatiotason kayttaytymismuutokseen ei ole testattu interventiotutkimuksessa. Yksilotason T→kayttaytymis-yhteydet ovat vakiintuneita (RCT:t Dreher 2016 PNAS, Goetz 2024), mutta populaatiotasolle skaalaaminen sisaltaa ekologista paattelya. Dual-hormone -meta-analyysin efektikoko on pieni (r=-0,061). Kulttuuri ON todellinen — ehkaisyn saatavuus, koulutus ja taloudelliset mahdollisuudet vaikuttavat aidosti hedelmallisyysvalintoihin. BERM vaittaa etta osa siita mika nayttaa kulttuuriselta on hormonaalisesti mediatoitua, ei etta kulttuuri on irrelevantti.",
       },
     ],
   },
