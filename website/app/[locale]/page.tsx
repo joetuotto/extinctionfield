@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { readFile } from "fs/promises";
+import { join } from "path";
 import CausalChain from "@/components/CausalChain";
 import { WorldMap } from "@/components/WorldMap";
 import type { Locale } from "@/lib/i18n";
@@ -39,7 +41,7 @@ const t = {
     predMetric: "Metric",
     predCentral: "Central",
     predCI: "95% CI",
-    predFooter: "v17.0 — 8 locked predictions.",
+    predFooter: "v18.0 — 8 locked predictions.",
     predLink: "Full prediction registry",
 
     caveatsTitle: "What the model gets right — and wrong",
@@ -104,7 +106,7 @@ const t = {
     predMetric: "Mittari",
     predCentral: "Keskiarvo",
     predCI: "95 % LV",
-    predFooter: "v17.0 — 8 lukittua ennustetta.",
+    predFooter: "v18.0 — 8 lukittua ennustetta.",
     predLink: "Täysi ennusterekisteri",
 
     caveatsTitle: "Missä malli onnistuu — ja missä ei",
@@ -144,6 +146,33 @@ const PREDICTIONS_SUMMARY = [
   { country: "Global", countryFi: "Maailma", year: 2040, metric: "TFR", central: 1.78, ci: "1.55–2.05" },
 ];
 
+interface Reference {
+  id: string;
+  pathway: string[];
+  level: string;
+}
+
+async function getReferenceStats(): Promise<{
+  count: number;
+  pathways: number;
+  established: number;
+}> {
+  try {
+    const raw = await readFile(
+      join(process.cwd(), "public", "data", "references.json"),
+      "utf-8",
+    );
+    const refs: Reference[] = JSON.parse(raw);
+    return {
+      count: refs.length,
+      pathways: new Set(refs.flatMap((r) => r.pathway)).size,
+      established: refs.filter((r) => r.level === "E").length,
+    };
+  } catch {
+    return { count: 0, pathways: 0, established: 0 };
+  }
+}
+
 export default async function Home({
   params,
 }: {
@@ -153,6 +182,7 @@ export default async function Home({
   const d = t[(locale as Locale) in t ? (locale as Locale) : "en"];
   const prefix = `/${locale}`;
   const isFi = locale === "fi";
+  const refStats = await getReferenceStats();
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
@@ -191,7 +221,7 @@ export default async function Home({
           <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
             {d.modelVersion}
           </p>
-          <p className="text-3xl font-bold font-mono-num">v17.0</p>
+          <p className="text-3xl font-bold font-mono-num">v18.0</p>
           <p className="text-sm text-foreground-muted mt-1">
             {d.lockedPredictions}
           </p>
@@ -228,6 +258,35 @@ export default async function Home({
           </div>
         </div>
       </section>
+
+      {/* Evidence summary */}
+      {refStats.count > 0 && (
+        <section className="mb-16">
+          <Link
+            href={`${prefix}/references`}
+            className="block border border-accent/20 bg-accent/5 rounded-lg px-6 py-5 hover:bg-accent/10 transition-colors"
+          >
+            <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+              <p className="text-lg font-semibold">
+                <span className="font-mono-num">{refStats.count}</span>{" "}
+                {isFi ? "vertaisarvioitua tutkimusta" : "peer-reviewed studies"}
+              </p>
+              <p className="text-sm text-foreground-muted">
+                <span className="font-mono-num">{refStats.pathways}</span>{" "}
+                {isFi ? "tutkimuspolkua" : "evidence pathways"}
+                {" · "}
+                <span className="font-mono-num">{refStats.established}</span>{" "}
+                {isFi ? "vakiintunutta" : "established"}
+              </p>
+            </div>
+            <p className="text-xs text-foreground-muted mt-2">
+              {isFi
+                ? "Selaa koko lähdetietokantaa →"
+                : "Browse the full reference database →"}
+            </p>
+          </Link>
+        </section>
+      )}
 
       {/* One explanation fits all */}
       <section className="mb-16">
