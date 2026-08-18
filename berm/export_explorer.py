@@ -34,6 +34,7 @@ from berm.data.countries import (
     V12_ACTUAL_TFR_2024,
     HISTORICAL_TFR,
 )
+from berm.data.loader import load_historical_tfr
 
 OBSERVED_TFR: dict[str, dict[int, float]] = {
     "Finland": {
@@ -168,6 +169,8 @@ OBSERVED_TFR: dict[str, dict[int, float]] = {
     },
 }
 
+_wb_tfr_cache: dict[str, dict[int, float]] = {}
+
 # Use all countries from the model's calibration set
 EXPLORER_COUNTRIES = sorted(V12_ACTUAL_TFR_2024.keys())
 
@@ -226,7 +229,13 @@ def generate_country_data(country: str) -> dict:
         row["nativeTFR"] = round(native_tfr, 3) if native_tfr is not None else None
         row["ivfShare"] = round(ivf_share, 4)
 
-        obs = OBSERVED_TFR.get(country, {})
+        obs = OBSERVED_TFR.get(country)
+        if obs is None:
+            if country not in _wb_tfr_cache:
+                _wb_tfr_cache[country] = {
+                    y: t for y, t in load_historical_tfr(country)
+                }
+            obs = _wb_tfr_cache[country]
         obs_val = obs.get(year)
         if obs_val is None and year == 2024:
             obs_val = V12_ACTUAL_TFR_2024.get(country)

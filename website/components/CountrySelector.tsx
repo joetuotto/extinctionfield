@@ -11,6 +11,12 @@ interface Props {
 const DISPLAY_NAMES: Record<string, string> = {
   SouthKorea: "South Korea",
   USA: "United States",
+  UK: "United Kingdom",
+  UAE: "United Arab Emirates",
+  DRCongo: "DR Congo",
+  SouthAfrica: "South Africa",
+  SaudiArabia: "Saudi Arabia",
+  SriLanka: "Sri Lanka",
 };
 
 export function CountrySelector({ countries, selected, onSelect }: Props) {
