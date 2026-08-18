@@ -18,6 +18,7 @@ const t = {
       "Sperm concentration dropped 62% in 50 years, accelerating after 2000. The decline is global and affects all regions regardless of lifestyle.",
       "The same reproductive decline is occurring in dogs, horses, insects, and amphibians — species that share none of our social or economic pressures.",
       "49 countries are now below TFR 1.4 — a level demography once considered impossible under voluntary fertility models.",
+      "Male testosterone has declined ~1% per year since the 1980s across all age groups, independent of obesity, smoking, or alcohol (Travison 2007, n=1,532; Lokeshwar 2021). Young men today have T levels their grandfathers had in old age.",
     ],
     whatConclusion:
       "Something biological is happening, across species, across continents, at the same time. BERM proposes a testable explanation.",
@@ -49,6 +50,7 @@ const t = {
       "Siittiökonsentraatio laski 62 % 50 vuodessa, kiihtyen vuoden 2000 jälkeen. Lasku on maailmanlaajuinen ja koskee kaikkia alueita elämäntavasta riippumatta.",
       "Sama lisääntymiskyvyn heikkeneminen tapahtuu koirilla, hevosilla, hyönteisillä ja sammakkoeläimillä — lajeilla, joilla ei ole mitään sosiaalisia tai taloudellisia paineitamme.",
       "49 maata on nyt alle TFR 1,4 — tason, jota väestötiede piti mahdottomana vapaaehtoisissa hedelmällisyysmalleissa.",
+      "Miesten testosteroni on laskenut ~1 % vuodessa 1980-luvulta kaikissa ikaryhmissa, riippumatta lihavuudesta, tupakoinnista tai alkoholista (Travison 2007, n=1 532; Lokeshwar 2021). Nuorilla miehilla on nykyaan T-tasot, jotka heidan isoisillaan olivat vanhalla iaalla.",
     ],
     whatConclusion:
       "Jotain biologista tapahtuu, lajeista toiseen, mantereelta toiselle, samanaikaisesti. BERM tarjoaa testattavan selityksen.",
