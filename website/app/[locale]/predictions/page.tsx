@@ -46,6 +46,9 @@ const t = {
     r43Conditions: "Locked condition ordering (Ξᵣ₄₂ descending)",
     r43Falsification: "Falsification criteria",
     r43Warning: "THEORETICAL: GME envelope theory is L*-level (single-source, not replicated). The 3GPP timing convergence may be coincidental. This prediction is locked for transparency, not because the theory is established.",
+    r43Hash: "Prediction integrity hash (SHA-256)",
+    r43HashValue: "9fece5e73a8df096cb88514f16e27e63ce0e7a687c7a21b4ce059d2021fbe0e1",
+    r43HashNote: "Covers: conditions, falsification criteria, evidence chain, and convergence significance. Verify: download the JSON, extract these four fields, serialize with sorted keys, and compare SHA-256.",
     r43DataLink: "Full preregistration data (JSON)",
   },
   fi: {
@@ -88,6 +91,9 @@ const t = {
     r43Conditions: "Lukittu olosuhdejärjestys (Ξᵣ₄₂ laskeva)",
     r43Falsification: "Falsifikaatiokriteerit",
     r43Warning: "TEOREETTINEN: GME-verhokäyräteoria on L*-tason (yksittäinen lähde, ei replikoitu). 3GPP-ajoituksen yhteensopivuus voi olla sattumaa. Tämä ennuste on lukittu läpinäkyvyyden vuoksi, ei siksi että teoria olisi vakiintunut.",
+    r43Hash: "Ennusteen eheyshajautus (SHA-256)",
+    r43HashValue: "9fece5e73a8df096cb88514f16e27e63ce0e7a687c7a21b4ce059d2021fbe0e1",
+    r43HashNote: "Kattaa: olosuhteet, falsifikaatiokriteerit, todistusketju ja konvergenssin merkitsevyys. Verifiointi: lataa JSON, poimi nama nelj kenttaa, serialisoi jarjestetyilla avaimilla ja vertaa SHA-256.",
     r43DataLink: "Täydet esirekisteröintitiedot (JSON)",
   },
 } as const;
@@ -467,6 +473,13 @@ export default async function PredictionsPage({
             <p className="text-xs text-status-partial leading-relaxed font-medium">
               {d.r43Warning}
             </p>
+          </div>
+
+          {/* Integrity hash */}
+          <div className="border border-border rounded-lg p-3 mb-4 bg-background-alt/50">
+            <p className="text-[11px] font-medium text-foreground-muted mb-1">{d.r43Hash}</p>
+            <p className="text-[10px] font-mono break-all text-foreground-muted/80 leading-relaxed">{d.r43HashValue}</p>
+            <p className="text-[10px] text-foreground-muted/60 mt-1">{d.r43HashNote}</p>
           </div>
 
           {/* Metadata */}

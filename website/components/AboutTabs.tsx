@@ -9,12 +9,14 @@ const TABS = {
     { href: "/about/objections", label: "Objections" },
     { href: "/about/replication", label: "Replication" },
     { href: "/about/history", label: "History" },
+    { href: "/about/measurement", label: "Measurement" },
   ],
   fi: [
     { href: "/about", label: "Yleiskatsaus" },
     { href: "/about/objections", label: "Vastaväitteet" },
     { href: "/about/replication", label: "Replikaatio" },
     { href: "/about/history", label: "Historia" },
+    { href: "/about/measurement", label: "Mittaus" },
   ],
 } as const;
 

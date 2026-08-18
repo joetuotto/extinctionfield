@@ -1,5 +1,6 @@
 {
   "locked_date": "2026-08-18",
+  "predictions_sha256": "9fece5e73a8df096cb88514f16e27e63ce0e7a687c7a21b4ce059d2021fbe0e1",
   "model_version": "v17.2",
   "correction_note": "v17.2: PTW is NOT a period. Removed all PTW-as-frequency interpretations. Only eDRX cycles are true periodic timers. The single fundamental hit is 40.96s -> 24.414 mHz.",
   "conditions": [

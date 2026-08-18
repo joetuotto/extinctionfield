@@ -28,6 +28,7 @@ from berm.v16 import (
     v16_predicted_tfr,
     chi,
     emf_behavioral_factor_v3,
+    _exposure_start_year,
 )
 from berm.data.countries import (
     TECH_DIFFUSION,
@@ -177,8 +178,7 @@ EXPLORER_COUNTRIES = sorted(V12_ACTUAL_TFR_2024.keys())
 
 def generate_country_data(country: str) -> dict:
     """Generate full timeseries data for one country using v16 model."""
-    td = TECH_DIFFUSION.get(country)
-    start_year = td.start if td else 1995
+    emf_start = _exposure_start_year(country)
 
     years = list(range(1960, 2041))
     timeseries = []
@@ -186,7 +186,7 @@ def generate_country_data(country: str) -> dict:
     for year in years:
         row: dict = {"year": year}
 
-        if year >= start_year:
+        if year >= emf_start:
             try:
                 amb = v16_ambient_annual(country, year)
                 pers = v16_personal_annual(country, year)
@@ -251,7 +251,7 @@ def generate_country_data(country: str) -> dict:
 
     meta = {
         "country": country,
-        "emfStartYear": start_year,
+        "emfStartYear": emf_start,
         "latestObservedTFR": {
             "year": latest_obs_year,
             "value": latest_obs_val,
