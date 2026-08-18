@@ -219,6 +219,37 @@ export const NODES: ChainNode[] = [
       "Jos VGIC-salpaajat (esim. nifedipiini) eivät estä RF-EMF:n biologisia vaikutuksia",
   },
 
+  {
+    id: "gme",
+    level: 4,
+    label: "GME-itsesekoitus",
+    sublabel: "u²(t) → R42-ikkuna",
+    epistemicLevel: "L*",
+    title: "RF-verhokäyrän geometrinen itsesekoitus",
+    mechanism:
+      "Full-Weyl-metriikan neliötermi (AμAν) tuottaa itsesekoituksen: RF-verhokäyrä u²(t) siirtää tehospektrin kantoaallon taajuudelta peruskaistalle. Tuloksena syntyvä peruskaistaspektri sisältää harmonisia, jotka osuvat R42-biologiseen ikkunaan (20–40 mHz). 3GPP TS 24.008 eDRX/PTW-ajastukset tuottavat pulssirakenteita joiden spektraalinen energia keskittyy tähän ikkunaan — PTW=33.28s tuottaa 30.048 mHz (0.16% R42-keskipisteestä).",
+    lindgrenInterpretation:
+      "GME on Lindgrenin metriikan suora seuraus: gμν = ημν + AμAν -termin neliöllinen Aμ tuottaa itsesekoituksen matemaattisesti. Tämä on geometrinen ominaisuus, ei ad hoc -lisäys. R42-ikkuna on biologinen fakta (Zandieh 2025); 3GPP-ajoitus on tekninen standardi. GME yhdistää nämä matemaattisesti.",
+    quantitative:
+      "R_G(ᾱ) = 3ᾱ²/(1+ᾱ²)\nC(ᾱ) = (2ᾱ²−1)/(ᾱ(1+ᾱ²))\nΞ_R42 = Σ_n |c_n|² × W_R42(f_n)\n\nPTW=33.28s → f=30.048 mHz → 0.16% R42:sta",
+    keyReferences: [
+      {
+        authors: "Zandieh ym. 2025",
+        title: "Frequency-specific mitochondrial and ROS responses",
+        journal: "(L* — yksittäinen lähde)",
+        keyFinding: "20–40 mHz taajuusalueella havaittu spesifinen soluvaste",
+      },
+      {
+        authors: "3GPP TS 24.008",
+        title: "Extended DRX / Paging Time Window",
+        journal: "3GPP standardidokumentti",
+        keyFinding: "PTW=33.28s osuu 0.16% päähän R42-ikkunan keskipisteestä",
+      },
+    ],
+    falsificationCondition:
+      "R43-kokeen falsifikaatiokriteerit F1–F6: ei kaistanpäästöä, CW>pulssi, valesignaali>=kaikki, maksimi T=[25,50]s ulkopuolella, Spearman rho<0.5, ei p<0.05",
+  },
+
   // TASO 5
   {
     id: "pathway_a",
@@ -713,6 +744,13 @@ export const EDGES: ChainEdge[] = [
     epistemicLevel: "E",
     priority: "primary",
   },
+  // Taso 3→4 (GME)
+  {
+    from: "two_channel",
+    to: "gme",
+    label: "RF-verhokäyrä",
+    epistemicLevel: "L*",
+  },
   // Taso 4→5
   {
     from: "vgic",
@@ -729,6 +767,12 @@ export const EDGES: ChainEdge[] = [
     derivative: "∂CRY/∂B_RF ≠ 0",
     epistemicLevel: "E",
     priority: "primary",
+  },
+  {
+    from: "gme",
+    to: "pathway_b",
+    label: "GME → R42",
+    epistemicLevel: "L*",
   },
   {
     from: "two_channel",
