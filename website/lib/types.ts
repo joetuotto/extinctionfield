@@ -1,3 +1,11 @@
+export interface PredictionVersion {
+  version: string;
+  central: number;
+  ci: [number, number];
+  date: string;
+  changeReason: string;
+}
+
 export interface LockedPrediction {
   id: string;
   country: string;
@@ -14,6 +22,7 @@ export interface LockedPrediction {
   actual?: number;
   status: "pending" | "confirmed" | "refuted" | "partial";
   unit: string;
+  history?: PredictionVersion[];
 }
 
 export type EpistemicLevel = "E" | "M|C" | "M" | "C" | "L*" | "L";

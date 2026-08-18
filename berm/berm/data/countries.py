@@ -401,6 +401,41 @@ DATA_QUALITY: dict[str, float] = {
 }
 
 
+# OECD antidepressant consumption (DDD/1000 inhabitants/day, latest available)
+ANTIDEPRESSANT_DDD: dict[str, float] = {
+    "Iceland": 169, "Portugal": 163, "Canada": 132, "Sweden": 121,
+    "Spain": 113, "Australia": 110, "Finland": 96, "Denmark": 94,
+    "UK": 94, "Belgium": 88, "Norway": 84, "France": 77,
+    "NewZealand": 73, "Greece": 67, "Germany": 56, "Italy": 53,
+    "Turkey": 53, "Netherlands": 49, "Israel": 42, "CzechRepublic": 41,
+    "SouthKorea": 28, "Japan": 22, "USA": 110, "China": 5,
+    "India": 3, "Brazil": 25, "Niger": 0.5,
+    "Nigeria": 1, "Ethiopia": 0.3, "Bangladesh": 1, "Iran": 15,
+    "Russia": 8, "Cuba": 5, "Myanmar": 0.5, "Mexico": 12,
+}
+
+# Depression baseline prevalence and treatment access
+DEPRESSION_PARAMS: dict[str, dict[str, float]] = {
+    "Finland": {"baseline": 0.05, "treatment_access": 0.55},
+    "Sweden": {"baseline": 0.05, "treatment_access": 0.55},
+    "SouthKorea": {"baseline": 0.04, "treatment_access": 0.35},
+    "USA": {"baseline": 0.06, "treatment_access": 0.50},
+    "Japan": {"baseline": 0.04, "treatment_access": 0.30},
+    "Niger": {"baseline": 0.03, "treatment_access": 0.02},
+    "Nigeria": {"baseline": 0.03, "treatment_access": 0.03},
+    "Denmark": {"baseline": 0.05, "treatment_access": 0.55},
+    "Norway": {"baseline": 0.05, "treatment_access": 0.55},
+    "Germany": {"baseline": 0.05, "treatment_access": 0.45},
+    "France": {"baseline": 0.05, "treatment_access": 0.45},
+    "India": {"baseline": 0.04, "treatment_access": 0.08},
+    "China": {"baseline": 0.04, "treatment_access": 0.12},
+    "Brazil": {"baseline": 0.05, "treatment_access": 0.20},
+    "Iran": {"baseline": 0.04, "treatment_access": 0.15},
+    "Australia": {"baseline": 0.05, "treatment_access": 0.50},
+    "Canada": {"baseline": 0.05, "treatment_access": 0.50},
+}
+
+
 def get_country_params(country: str) -> CountryParams:
     return COUNTRY_PARAMS.get(country, CountryParams(50.0, 0.70, 3000.0, 0.25))
 

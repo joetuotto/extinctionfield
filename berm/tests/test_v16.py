@@ -47,6 +47,19 @@ from berm.v16 import (
     v17_predicted_sex_ratio,
     loocv_v16,
     v17_full_report,
+    # v17 new functions
+    biological_tfr,
+    native_tfr,
+    immigration_buffer,
+    immigrant_generation_tfr,
+    predict_tfr_extended,
+    vulnerability_by_age,
+    cohort_weighted_exposure,
+    ddd_to_prevalence,
+    endogenous_ssri_model,
+    sempou_mtor_effect,
+    PHARM_VALIDATION,
+    feedback_loop_simulate,
 )
 
 
@@ -463,3 +476,216 @@ def test_v17_full_report_multiple_countries():
         assert r["country"] == c
         assert len(r["time_series"]) == 51
         assert r["snapshot_2024"]["predicted_tfr"] > 0
+
+
+# === v17 TFR interpretation layer ===
+
+def test_biological_tfr_reduces():
+    assert biological_tfr(1.5, 0.05) < 1.5
+
+def test_biological_tfr_zero_ivf():
+    assert biological_tfr(1.5, 0.0) == 1.5
+
+def test_biological_tfr_bounded():
+    assert biological_tfr(1.5, 0.20) > 0
+
+def test_native_tfr_basic():
+    nat = native_tfr(1.50, 2.0, 0.20)
+    assert nat < 1.50
+
+def test_native_tfr_zero_immigration():
+    assert native_tfr(1.50, 2.0, 0.0) == 1.50
+
+def test_native_tfr_full_immigration():
+    assert native_tfr(1.50, 2.0, 1.0) == 1.50
+
+def test_immigration_buffer_with_data():
+    buf = immigration_buffer("Finland", 1.32)
+    assert buf["country"] == "Finland"
+    assert buf["native_tfr"] < 1.32
+    assert buf["buffer"] > 0
+    assert buf["buffer_pct"] > 0
+    assert buf["immigrant_share"] > 0
+
+def test_immigration_buffer_no_data():
+    buf = immigration_buffer("Niger", 6.80)
+    assert buf["buffer"] == 0.0
+    assert buf["native_tfr"] == 6.80
+
+def test_immigrant_generation_tfr_g1():
+    g1 = immigrant_generation_tfr(0.1, 0.5, "G1", 10)
+    assert 0 < g1 < 6.0
+
+def test_immigrant_generation_tfr_g2_lower():
+    g2 = immigrant_generation_tfr(0.1, 0.5, "G2")
+    g1 = immigrant_generation_tfr(0.1, 0.5, "G1", 10)
+    assert g2 < g1
+
+def test_immigrant_generation_tfr_g3_lowest():
+    g3 = immigrant_generation_tfr(0.1, 0.5, "G3")
+    g2 = immigrant_generation_tfr(0.1, 0.5, "G2")
+    assert g3 < g2
+
+
+# === predict_tfr_extended ===
+
+def test_predict_tfr_extended_structure():
+    r = predict_tfr_extended("Finland", 2024)
+    assert "predicted_tfr" in r
+    assert "biological_tfr" in r
+    assert "ivf_share" in r
+    assert "ivf_contribution" in r
+    assert "native_tfr" in r
+    assert "immigration_buffer" in r
+    assert "immigration_buffer_pct" in r
+    assert "biological_native_tfr" in r
+
+def test_predict_tfr_extended_matches_base():
+    ext = predict_tfr_extended("Finland", 2024)
+    base = v16_predicted_tfr("Finland", 2024)
+    assert ext["predicted_tfr"] == pytest.approx(base, abs=1e-10)
+
+def test_predict_tfr_extended_ivf_positive():
+    r = predict_tfr_extended("Denmark", 2024)
+    assert r["ivf_contribution"] > 0
+
+def test_predict_tfr_extended_bio_lower():
+    r = predict_tfr_extended("Finland", 2024)
+    assert r["biological_tfr"] < r["predicted_tfr"]
+
+def test_predict_tfr_extended_all_countries():
+    from berm.data.countries import V12_ACTUAL_TFR_2024
+    for c in V12_ACTUAL_TFR_2024:
+        r = predict_tfr_extended(c, 2024)
+        assert r["predicted_tfr"] > 0
+        assert r["biological_tfr"] <= r["predicted_tfr"]
+
+
+# === vulnerability_by_age ===
+
+def test_vulnerability_fetal_highest():
+    assert vulnerability_by_age(-0.5) == 5.0
+
+def test_vulnerability_infant():
+    assert vulnerability_by_age(1) == 4.0
+
+def test_vulnerability_child():
+    assert vulnerability_by_age(4) == 3.0
+
+def test_vulnerability_adolescent():
+    assert vulnerability_by_age(15) == 2.0
+
+def test_vulnerability_adult():
+    assert vulnerability_by_age(25) == 1.0
+
+def test_vulnerability_decreasing():
+    ages = [-0.5, 1, 4, 8, 15, 25]
+    vulns = [vulnerability_by_age(a) for a in ages]
+    for i in range(len(vulns) - 1):
+        assert vulns[i] >= vulns[i + 1]
+
+
+# === cohort_weighted_exposure ===
+
+def test_cohort_weighted_positive():
+    cwe = cohort_weighted_exposure("SouthKorea", 2024)
+    assert cwe > 0
+
+def test_cohort_weighted_higher_than_raw():
+    from berm.v16 import v16_two_channel_cum_exposure
+    cwe = cohort_weighted_exposure("SouthKorea", 2024)
+    raw = v16_two_channel_cum_exposure("SouthKorea", 2024)
+    assert cwe > raw
+
+
+# === SSRI model ===
+
+def test_endogenous_ssri_model_structure():
+    from berm.v16 import v16_adjusted_cumulative_exposure
+    cum = v16_adjusted_cumulative_exposure("Finland", 2024)
+    r = endogenous_ssri_model("Finland", 2024, cum)
+    assert r["is_endogenous"] is True
+    assert r["ssri_prevalence"] > 0
+    assert r["ssri_mediated_fertility_loss"] > 0
+    assert r["ddd_per_1000"] > 0
+
+def test_ssri_model_low_emf_low_effect():
+    r_low = endogenous_ssri_model("Niger", 2024, 2.0)
+    r_high = endogenous_ssri_model("Finland", 2024, 40.0)
+    assert r_low["ssri_mediated_fertility_loss"] < r_high["ssri_mediated_fertility_loss"]
+
+def test_ddd_to_prevalence():
+    assert ddd_to_prevalence(100) == 0.1
+    assert ddd_to_prevalence(0) == 0.0
+
+
+# === Sempou mTOR ===
+
+def test_sempou_mtor_effect_structure():
+    r = sempou_mtor_effect(0.5)
+    assert "mtor_activation" in r
+    assert "differentiation_efficiency" in r
+    assert "sperm_production_multiplier" in r
+    assert r["differentiation_efficiency"] < 1.0
+
+def test_sempou_mtor_zero_perturbation():
+    r = sempou_mtor_effect(0.0)
+    assert r["mtor_activation"] == 1.0
+    assert r["differentiation_efficiency"] == 1.0
+
+def test_sempou_mtor_higher_perturbation_lower_efficiency():
+    r_low = sempou_mtor_effect(0.2)
+    r_high = sempou_mtor_effect(0.8)
+    assert r_high["differentiation_efficiency"] < r_low["differentiation_efficiency"]
+
+
+# === Pharmacological validation matrix ===
+
+def test_pharm_validation_keys():
+    assert "CCB" in PHARM_VALIDATION
+    assert "rapamycin" in PHARM_VALIDATION
+    assert "SSRI" in PHARM_VALIDATION
+    assert "melatonin" in PHARM_VALIDATION
+    assert "metformin" in PHARM_VALIDATION
+
+def test_pharm_validation_structure():
+    for drug, info in PHARM_VALIDATION.items():
+        assert "pathway" in info
+        assert "drug_effect" in info
+        assert "emf_equivalent" in info
+        assert "rescue_test" in info
+        assert "status" in info
+
+
+# === Feedback loop ===
+
+def test_feedback_loop_simulate_structure():
+    results = feedback_loop_simulate("Finland", 2024, 2030)
+    assert len(results) == 7
+    for r in results:
+        assert "year" in r
+        assert "predicted_tfr" in r
+        assert "feedback_tfr" in r
+        assert "urban_frac" in r
+        assert "density_multiplier" in r
+
+def test_feedback_loop_feedback_lowers_tfr():
+    results = feedback_loop_simulate("SouthKorea", 2024, 2035)
+    for r in results:
+        assert r["feedback_tfr"] <= r["predicted_tfr"] + 0.001
+
+
+# === Wolfram predictions unchanged after all additions ===
+
+@pytest.mark.parametrize("country,year,expected", [
+    ("SouthKorea", 2024, 0.72831749735462),
+    ("Japan", 2024, 1.205129502600998),
+    ("Finland", 2024, 1.31268180194477),
+    ("USA", 2024, 1.6330447656111486),
+    ("Nigeria", 2024, 5.206316830493338),
+    ("Niger", 2030, 6.52343732205688),
+])
+def test_wolfram_unchanged_after_v17_additions(country, year, expected):
+    """Critical: new additions must not change existing predictions."""
+    result = v16_predicted_tfr(country, year)
+    assert abs(result - expected) < 1e-6

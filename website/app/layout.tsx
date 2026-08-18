@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navigation } from "./navigation";
 
 export const metadata: Metadata = {
   title: "Extinction Field - BERM Model",
@@ -14,34 +13,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="dark" className="h-full antialiased">
+    <html suppressHydrationWarning className="h-full antialiased">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <footer className="border-t border-border py-8 px-6">
-          <div className="max-w-5xl mx-auto">
-            <p className="text-sm text-foreground-muted leading-relaxed">
-              BERM is a falsifiable model. It makes specific, locked predictions
-              that will either come true or not. The model contains explicit
-              refutation conditions.
-            </p>
-            <ul className="mt-4 space-y-1 text-xs text-foreground-muted leading-relaxed list-disc list-inside">
-              <li>
-                86% of placebo series fit the current data better than the model
-                (K8)
-              </li>
-              <li>
-                The backcast claim has been refuted in replication (K10)
-              </li>
-              <li>
-                Cross-section R&sup2; = 0.9999 is calibration, not validation
-              </li>
-            </ul>
-            <p className="text-xs text-foreground-muted mt-4">
-              Code: MIT License. Documentation: CC BY-4.0.
-            </p>
-          </div>
-        </footer>
+        {children}
       </body>
     </html>
   );

@@ -33,6 +33,8 @@ from berm.data.countries import (
     CULTURAL_TFR_PARAMS,
     IVF_SHARES,
     MIGRATION_DATA,
+    ANTIDEPRESSANT_DDD,
+    DEPRESSION_PARAMS,
     get_country_params,
 )
 from berm.exposure.ambient import get_attenuation_factor
@@ -235,6 +237,26 @@ def v17_layer_retention(delta_years: int) -> float:
 
 # === v17 Cohort adjustment (vulnerability-weighted) ===
 
+def vulnerability_by_age(age: float) -> float:
+    """Age-dependent EMF vulnerability multiplier.
+
+    Fetus is most sensitive (bioelectric code most active: Sempou 2022,
+    Levin 2023). Newborn sensitive (BBB undeveloped). Child sensitive
+    (smaller body -> higher SAR per kg).
+    """
+    if age < 0:
+        return 5.0
+    elif age < 2:
+        return 4.0
+    elif age < 6:
+        return 3.0
+    elif age < 12:
+        return 2.5
+    elif age < 18:
+        return 2.0
+    return 1.0
+
+
 _VULN_BY_AGE = [
     (-1, 5.0),   # fetal
     (0, 4.0),    # 0-1
@@ -278,6 +300,30 @@ def v17_cohort_adjustment(country: str, year: int) -> float:
 
     fraction = weighted / _VULN_MAX
     return 1.0 + 0.20 * fraction
+
+
+def cohort_weighted_exposure(country: str, eval_year: int) -> float:
+    """Cohort-weighted cumulative exposure (DIAGNOSTIC_ONLY).
+
+    Weights each year's exposure by the age-specific vulnerability
+    that the peak birth cohort (age 28 at eval_year) experienced.
+
+    NOTE: This changes cumEMF scale -> requires recalibration
+    before integration into TFR chain. Use for diagnostics only.
+    """
+    td = _get_td(country)
+    birth_year = eval_year - 28
+    weighted_cum = 0.0
+
+    for year in range(max(td.start, birth_year - 1), eval_year + 1):
+        age = year - birth_year
+        amb = v16_ambient_annual(country, year)
+        pers = v16_personal_annual(country, year)
+        annual = amb + chi(amb) * pers
+        weight = vulnerability_by_age(age)
+        weighted_cum += annual * weight
+
+    return weighted_cum
 
 
 # === Cumulative exposure chain ===
@@ -525,6 +571,78 @@ def ivf_share_projected(country: str, year: int) -> float:
     return max(0.0, min(0.20, base + 0.005 * (year - 2023)))
 
 
+# === TFR interpretation layer (does NOT alter predict_tfr output) ===
+
+def biological_tfr(observed_tfr: float, ivf_share: float,
+                   ivf_success_rate: float = 0.30) -> float:
+    """Biological TFR without IVF rescue.
+
+    IVF births buffer observed TFR — without them the biological
+    signal would be lower. BERM's prediction targets this underlying
+    biological TFR; observed TFR includes the IVF mask.
+    """
+    ivf_births_fraction = ivf_share * ivf_success_rate
+    return observed_tfr * (1 - ivf_births_fraction)
+
+
+def native_tfr(total_tfr: float, immigrant_tfr: float,
+               immigrant_share: float) -> float:
+    """Separate native-born TFR from total TFR.
+
+    Does not change predict_tfr output — reported alongside it.
+    """
+    if immigrant_share >= 1.0:
+        return total_tfr
+    return (total_tfr - immigrant_share * immigrant_tfr) / (1 - immigrant_share)
+
+
+def immigration_buffer(country: str, predicted_tfr: float) -> dict:
+    """Immigration buffer diagnostics for a country."""
+    imm = MIGRATION_DATA.get(country)
+    if not imm:
+        return {
+            "country": country,
+            "total_tfr": predicted_tfr,
+            "native_tfr": predicted_tfr,
+            "buffer": 0.0,
+            "buffer_pct": 0.0,
+            "immigrant_share": 0.0,
+        }
+
+    imm_share = imm["imm_share"]
+    imm_tfr = imm["imm_tfr"]
+    nat = native_tfr(predicted_tfr, imm_tfr, imm_share)
+    buf = predicted_tfr - nat
+
+    return {
+        "country": country,
+        "total_tfr": predicted_tfr,
+        "native_tfr": round(nat, 3),
+        "buffer": round(buf, 3),
+        "buffer_pct": round(buf / nat * 100, 1) if nat > 0 else 0.0,
+        "immigrant_share": imm_share,
+    }
+
+
+def immigrant_generation_tfr(origin_emf: float, host_emf: float,
+                              generation: str,
+                              years_in_host: float = 10) -> float:
+    """Immigrant generation TFR by EMF adaptation.
+
+    G1: origin-country TFR decays exponentially toward host EMF level.
+    G2: faster adaptation (shorter exposure memory).
+    G3: near host-country native level.
+    """
+    base = 6.0
+    if generation == "G1":
+        return base * math.exp(-0.12 * years_in_host * max(0, host_emf - origin_emf))
+    elif generation == "G2":
+        return base * math.exp(-0.40 * host_emf * 5.0)
+    elif generation == "G3":
+        return base * math.exp(-0.40 * host_emf * 5.0) * 0.7
+    return base
+
+
 # === v16 Prediction ===
 
 def v16_predicted_tfr(country: str, year: int) -> float:
@@ -534,6 +652,156 @@ def v16_predicted_tfr(country: str, year: int) -> float:
     behav = emf_behavioral_factor_v3(adj_cum)
     cult = v16_true_cultural_rate(country, year)
     return bio_cap * behav * cult
+
+
+def predict_tfr_extended(country: str, year: int) -> dict:
+    """Extended TFR prediction with interpretation layers.
+
+    Calls v16_predicted_tfr (unchanged) and adds IVF decomposition,
+    immigration buffer, and biological native TFR. No numerical
+    change to the core prediction.
+    """
+    if not _v16_true_cultural_rates:
+        calibrate_v16()
+
+    predicted = v16_predicted_tfr(country, year)
+
+    ivf_share = ivf_share_projected(country, year)
+    bio_tfr = biological_tfr(predicted, ivf_share)
+
+    imm = immigration_buffer(country, predicted)
+
+    nat_tfr = imm["native_tfr"]
+    bio_nat = biological_tfr(nat_tfr, ivf_share) if nat_tfr else None
+
+    return {
+        "predicted_tfr": predicted,
+        "ivf_share": round(ivf_share, 4),
+        "biological_tfr": round(bio_tfr, 3),
+        "ivf_contribution": round(predicted - bio_tfr, 3),
+        "native_tfr": nat_tfr,
+        "immigration_buffer": imm["buffer"],
+        "immigration_buffer_pct": imm["buffer_pct"],
+        "biological_native_tfr": round(bio_nat, 3) if bio_nat is not None else None,
+    }
+
+
+# === DIAGNOSTIC: SSRI endogenous mediator model ===
+
+def ddd_to_prevalence(ddd_per_1000: float) -> float:
+    """Convert DDD/1000 inhabitants/day to population prevalence."""
+    return ddd_per_1000 / 1000.0
+
+
+def endogenous_ssri_model(country: str, year: int, cum_emf: float) -> dict:
+    """EMF -> depression -> SSRI -> reproductive effects (DIAGNOSTIC_ONLY).
+
+    Moncrieff 2022: serotonin hypothesis debunked — SSRI does not fix
+    the root cause. SSRI use is an endogenous consequence of EMF-induced
+    depression, not an independent confounder.
+
+    Kacem 2024: EMF exposure -> depression OR 1.45.
+    """
+    dep_params = DEPRESSION_PARAMS.get(
+        country, {"baseline": 0.05, "treatment_access": 0.30})
+    base_dep = dep_params["baseline"]
+    access = dep_params["treatment_access"]
+
+    emf_fraction = min(1.0, cum_emf / 50)
+    emf_attributable = base_dep * (1.45 - 1) * emf_fraction
+    total_depression = base_dep + emf_attributable
+
+    ssri_prev = total_depression * access * 0.65
+
+    # Population-level reproductive effects
+    pop_conc_decline = ssri_prev * 0.24
+    pop_mot_decline = ssri_prev * 0.12
+    sexual_dysf = ssri_prev * 0.55
+    attempt_reduction = sexual_dysf * 0.30
+
+    fertility_loss = 1 - (
+        (1 - pop_conc_decline) * (1 - pop_mot_decline) * (1 - attempt_reduction)
+    )
+
+    ddd = ANTIDEPRESSANT_DDD.get(country, 10)
+    ddd_prev = ddd_to_prevalence(ddd)
+
+    return {
+        "country": country,
+        "year": year,
+        "depression_prevalence": round(total_depression, 4),
+        "emf_attributable_depression": round(emf_attributable, 4),
+        "ssri_prevalence": round(ssri_prev, 4),
+        "ssri_mediated_fertility_loss": round(fertility_loss, 4),
+        "ddd_per_1000": ddd,
+        "ddd_prevalence": round(ddd_prev, 4),
+        "is_endogenous": True,
+        "moncrieff_note": "serotonin hypothesis debunked 2022",
+    }
+
+
+# === DIAGNOSTIC: Sempou mTOR pathway ===
+
+def sempou_mtor_effect(vmem_perturbation: float) -> dict:
+    """Sempou 2022: Vmem -> Ca2+ -> mTOR -> differentiation block (DIAGNOSTIC_ONLY).
+
+    Spermatogonial differentiation depends on mTOR level.
+    EMF-mediated depolarisation -> Ca2+up -> mTORup -> differentiationdown
+    -> mature spermdown -> concentrationdown.
+    Rapamycin (mTOR inhibitor) should reverse the effect.
+    """
+    mtor_activation = 1.0 + 0.25 * vmem_perturbation
+    differentiation_efficiency = 1.0 / (1.0 + 0.5 * max(0, mtor_activation - 1.0))
+
+    return {
+        "mtor_activation": round(mtor_activation, 3),
+        "differentiation_efficiency": round(differentiation_efficiency, 3),
+        "sperm_production_multiplier": round(differentiation_efficiency, 3),
+        "rapamycin_rescue_prediction": "differentiation restored if mTOR inhibited",
+    }
+
+
+# === DIAGNOSTIC: Pharmacological validation matrix ===
+
+PHARM_VALIDATION: dict[str, dict[str, str]] = {
+    "CCB": {
+        "pathway": "A (VGIC)",
+        "drug_effect": "VGCC block -> sperm -23% (amlodipine 30d)",
+        "emf_equivalent": "~6% VGCC disruption -> ~1.5%/yr decline",
+        "rescue_test": "R1: CCB blocks EMF effect (Pall 2013: 23 studies)",
+        "status": "VALIDATED",
+    },
+    "rapamycin": {
+        "pathway": "F (mTOR/Sempou)",
+        "drug_effect": "mTOR down -> sperm count down, differentiation accelerated",
+        "emf_equivalent": "mTOR up -> differentiation blocked -> sperm down",
+        "rescue_test": "R2: rapamycin restores differentiation in EMF cells",
+        "status": "PREDICTED_NOT_TESTED",
+    },
+    "SSRI": {
+        "pathway": "D (HPA->HPG)",
+        "drug_effect": "prolactin up -> GnRH down -> SDF 2.2x, concentration -24%",
+        "emf_equivalent": "cortisol up -> GnRH down -> same downstream",
+        "rescue_test": "additive effects (different upstream)",
+        "status": "ENDOGENOUS_MEDIATOR",
+        "moncrieff": "serotonin hypothesis debunked 2022",
+    },
+    "melatonin": {
+        "pathway": "C (pineal)",
+        "drug_effect": "restores suppressed melatonin -> IVF fertilization +15%",
+        "emf_equivalent": "EMF suppresses melatonin -> supplement rescues",
+        "rescue_test": "R3: benefit greater in high-EMF environments",
+        "status": "RESCUE_EVIDENCE",
+    },
+    "metformin": {
+        "pathway": "F (mTOR/AMPK)",
+        "drug_effect": "AMPK up -> mTOR down -> PCOS improves, longevity up",
+        "emf_equivalent": "EMF -> mTOR up -> metformin counteracts",
+        "rescue_test": "R4: metformin response greater in high-EMF PCOS",
+        "status": "HYPOTHESIS",
+        "longevity_note": "UK CPRD paradox: diabetics+metformin > healthy controls",
+    },
+}
 
 
 # === v17 Sex ratio prediction ===

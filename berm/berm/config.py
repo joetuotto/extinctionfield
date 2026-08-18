@@ -19,23 +19,73 @@ class LockedPrediction:
     model_version: str
 
 LOCKED_PREDICTIONS: list[LockedPrediction] = [
-    LockedPrediction("Finland", 2030, "TFR", 1.17, 1.02, 1.24,
-                     date(2026, 8, 18), "v17.0"),
-    LockedPrediction("SouthKorea", 2030, "TFR", 0.60, 0.48, 0.72,
-                     date(2026, 8, 18), "v17.0"),
-    LockedPrediction("SouthKorea", 2035, "TFR", 0.52, 0.40, 0.64,
-                     date(2026, 8, 18), "v17.0"),
-    LockedPrediction("Japan", 2030, "TFR", 1.04, 0.88, 1.20,
-                     date(2026, 8, 18), "v17.0"),
-    LockedPrediction("USA", 2030, "TFR", 1.45, 1.25, 1.65,
-                     date(2026, 8, 18), "v17.0"),
-    LockedPrediction("Brazil", 2030, "TFR", 1.55, 1.40, 1.68,
-                     date(2026, 8, 18), "v17.0"),
+    LockedPrediction("Finland", 2030, "TFR", 1.08, 1.02, 1.24,
+                     date(2026, 8, 18), "v17.1"),
+    LockedPrediction("SouthKorea", 2030, "TFR", 0.61, 0.48, 0.72,
+                     date(2026, 8, 18), "v17.1"),
+    LockedPrediction("SouthKorea", 2035, "TFR", 0.54, 0.40, 0.64,
+                     date(2026, 8, 18), "v17.1"),
+    LockedPrediction("Japan", 2030, "TFR", 1.01, 0.88, 1.20,
+                     date(2026, 8, 18), "v17.1"),
+    LockedPrediction("USA", 2030, "TFR", 1.35, 1.25, 1.65,
+                     date(2026, 8, 18), "v17.1"),
+    LockedPrediction("Brazil", 2030, "TFR", 1.44, 1.40, 1.68,
+                     date(2026, 8, 18), "v17.1"),
     LockedPrediction("Global", 2040, "TFR", 1.78, 1.55, 2.05,
                      date(2026, 8, 18), "v17.0"),
     LockedPrediction("Global", 2050, "SpermConc_pctOf2020", 62.0, 48.0, 75.0,
                      date(2026, 8, 18), "v17.0"),
 ]
+
+
+PREDICTION_HISTORY: dict[str, list[dict]] = {
+    "Finland_2030_TFR": [
+        {"version": "v17.0", "central": 1.17, "ci": [1.02, 1.24],
+         "date": "2026-08-18", "change_reason": "initial lock"},
+        {"version": "v17.1", "central": 1.08, "ci": [1.02, 1.24],
+         "date": "2026-08-18",
+         "change_reason": "vulnerability-weighted cohort adjustment "
+         "(fetal 5x, infant 4x, child 3x, juvenile 2.5x, adolescent 2x) "
+         "replaces linear ramp; 2005-born cohort spent entire childhood in "
+         "3G/4G environment, biological weighting increases effective exposure"},
+    ],
+    "SouthKorea_2030_TFR": [
+        {"version": "v17.0", "central": 0.60, "ci": [0.48, 0.72],
+         "date": "2026-08-18", "change_reason": "initial lock"},
+        {"version": "v17.1", "central": 0.61, "ci": [0.48, 0.72],
+         "date": "2026-08-18",
+         "change_reason": "vulnerability-weighted cohort adjustment"},
+    ],
+    "SouthKorea_2035_TFR": [
+        {"version": "v17.0", "central": 0.52, "ci": [0.40, 0.64],
+         "date": "2026-08-18", "change_reason": "initial lock"},
+        {"version": "v17.1", "central": 0.54, "ci": [0.40, 0.64],
+         "date": "2026-08-18",
+         "change_reason": "vulnerability-weighted cohort adjustment"},
+    ],
+    "Japan_2030_TFR": [
+        {"version": "v17.0", "central": 1.04, "ci": [0.88, 1.20],
+         "date": "2026-08-18", "change_reason": "initial lock"},
+        {"version": "v17.1", "central": 1.01, "ci": [0.88, 1.20],
+         "date": "2026-08-18",
+         "change_reason": "vulnerability-weighted cohort adjustment"},
+    ],
+    "USA_2030_TFR": [
+        {"version": "v17.0", "central": 1.45, "ci": [1.25, 1.65],
+         "date": "2026-08-18", "change_reason": "initial lock"},
+        {"version": "v17.1", "central": 1.35, "ci": [1.25, 1.65],
+         "date": "2026-08-18",
+         "change_reason": "vulnerability-weighted cohort adjustment"},
+    ],
+    "Brazil_2030_TFR": [
+        {"version": "v17.0", "central": 1.55, "ci": [1.40, 1.68],
+         "date": "2026-08-18", "change_reason": "initial lock"},
+        {"version": "v17.1", "central": 1.44, "ci": [1.40, 1.68],
+         "date": "2026-08-18",
+         "change_reason": "vulnerability-weighted cohort adjustment"},
+    ],
+}
+
 
 # 5-layer recovery model
 RECOVERY_LAYERS = {
