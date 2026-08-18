@@ -201,6 +201,19 @@ const t = {
     verdictInconclusive: "Inconclusive",
     neNote: "Epistemic note: 4 of 7 cases are consistent with BERM predictions, 1 is inconsistent, and 2 are inconclusive due to confounding. This is not strong evidence — natural experiments in fertility are inherently confounded by development, culture, and economics. They are reported here for completeness, not as proof.",
 
+    /* CSLI lag invariance section */
+    csliInvTitle: "Cross-Species Lag Invariance",
+    csliInvDesc: "If EMF drives biological decline through a shared VGCC mechanism, then the lag between EMF exposure and observed effect should be consistent across countries for each species — and should scale with biological generation time across species. The table below shows the coefficient of variation (CV) of lag estimates across countries. CV < 0.3 = strong invariance, 0.3–0.5 = moderate, > 0.5 = weak.",
+    csliInvResult: "Result: All species show weak invariance (CV > 0.5). The lag varies widely across countries, which is inconsistent with a universal mechanism operating on a fixed biological timescale. This is a negative result for the CSLI hypothesis.",
+    csliInvNote: "Note: Weak invariance does not refute EMF effects on individual species — it means that the cross-species lag pattern is not consistent enough to serve as independent evidence for a shared mechanism. Country-level confounders (development, chemical exposure, climate) add noise that this test cannot separate from the signal.",
+    csliInvSpecies: "Species",
+    csliInvCountries: "Countries",
+    csliInvMuLag: "Mean lag (yr)",
+    csliInvSigma: "σ (yr)",
+    csliInvCV: "CV",
+    csliInvAssessment: "Assessment",
+    csliInvLink: "See the full CSLI analysis on the Sentinel Species page",
+
     /* Individual susceptibility section */
     indSuscTitle: "Individual Susceptibility: Why EMF Affects Some People More Than Others",
     indSuscDesc:
@@ -262,6 +275,19 @@ const t = {
     verdictInconsistent: "BERM-vastainen",
     verdictInconclusive: "Ratkaisematon",
     neNote: "Episteeminen huomautus: 4/7 tapauksesta on yhdenmukaisia BERM-ennusteiden kanssa, 1 on ristiriidassa ja 2 on ratkaisemattomia sekoittumisen vuoksi. Tama ei ole vahvaa nayttoa — hedelmallisyyden luonnolliset kokeet ovat vaistamatta sekoittuneita kehityksen, kulttuurin ja talouden kanssa. Ne raportoidaan taydellisyyden vuoksi, ei todisteena.",
+
+    /* CSLI lag invariance section */
+    csliInvTitle: "Lajien välinen viive-invarianssi",
+    csliInvDesc: "Jos EMF ohjaa biologista vähenemää jaetun VGCC-mekanismin kautta, viiveen EMF-altistuksen ja havaitun vaikutuksen välillä tulisi olla johdonmukainen maiden välillä kullekin lajille — ja skaalautua biologisen sukupolviajan mukaan lajien välillä. Alla oleva taulukko näyttää viive-estimaattien variaatiokertoimen (CV) maiden välillä. CV < 0,3 = vahva invarianssi, 0,3–0,5 = kohtalainen, > 0,5 = heikko.",
+    csliInvResult: "Tulos: Kaikki lajit osoittavat heikkoa invarianssia (CV > 0,5). Viive vaihtelee suuresti maiden välillä, mikä on ristiriidassa universaalin, kiinteällä biologisella aikaskaalalla toimivan mekanismin kanssa. Tämä on negatiivinen tulos CSLI-hypoteesille.",
+    csliInvNote: "Huomautus: Heikko invarianssi ei kumoa EMF-vaikutuksia yksittäisiin lajeihin — se tarkoittaa, että lajien välinen viivekuvio ei ole riittävän johdonmukainen toimiakseen itsenäisenä näyttönä jaetusta mekanismista. Maatason sekoittajat (kehitys, kemikaalit, ilmasto) lisäävät kohinaa, jota tämä testi ei voi erottaa signaalista.",
+    csliInvSpecies: "Laji",
+    csliInvCountries: "Maita",
+    csliInvMuLag: "Keskiviive (v)",
+    csliInvSigma: "σ (v)",
+    csliInvCV: "CV",
+    csliInvAssessment: "Arvio",
+    csliInvLink: "Katso koko CSLI-analyysi Indikaattorilajit-sivulla",
 
     /* Individual susceptibility section */
     indSuscTitle: "Yksilölliset erot: Miksi EMF vaikuttaa joihinkin enemmän kuin toisiin",
@@ -846,6 +872,68 @@ export default async function EvidencePage({
         <div className="mt-4 p-4 rounded-lg bg-background border border-border max-w-3xl">
           <p className="text-xs text-foreground-muted leading-relaxed">
             {d.indSuscNote}
+          </p>
+        </div>
+      </section>
+
+      <section id="csli-invariance" className="mb-14">
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold mb-1">{d.csliInvTitle}</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl">
+            {d.csliInvDesc}
+          </p>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-border text-left text-foreground-muted">
+                <th className="py-2 pr-4 font-medium">{d.csliInvSpecies}</th>
+                <th className="py-2 pr-4 font-medium text-right">{d.csliInvCountries}</th>
+                <th className="py-2 pr-4 font-medium text-right">{d.csliInvMuLag}</th>
+                <th className="py-2 pr-4 font-medium text-right">{d.csliInvSigma}</th>
+                <th className="py-2 pr-4 font-medium text-right">{d.csliInvCV}</th>
+                <th className="py-2 font-medium">{d.csliInvAssessment}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { species: locale === "fi" ? "Mehiläiset" : "Bees", n: 29, mu: 4.31, sigma: 2.98, cv: 0.692, assessment: locale === "fi" ? "Heikko (CV > 0,5)" : "Weak (CV > 0.5)" },
+                { species: locale === "fi" ? "Linnut" : "Birds", n: 11, mu: 1.0, sigma: 2.04, cv: 2.045, assessment: locale === "fi" ? "Heikko (CV > 0,5)" : "Weak (CV > 0.5)" },
+                { species: locale === "fi" ? "Siittiöt" : "Human sperm", n: 3, mu: 0.33, sigma: 0.47, cv: 1.414, assessment: locale === "fi" ? "Heikko (CV > 0,5)" : "Weak (CV > 0.5)" },
+              ].map((row) => (
+                <tr key={row.species} className="border-b border-card-border last:border-0">
+                  <td className="py-3 pr-4 font-medium">{row.species}</td>
+                  <td className="py-3 pr-4 text-right font-mono-num">{row.n}</td>
+                  <td className="py-3 pr-4 text-right font-mono-num">{row.mu.toFixed(1)}</td>
+                  <td className="py-3 pr-4 text-right font-mono-num">{row.sigma.toFixed(1)}</td>
+                  <td className="py-3 pr-4 text-right font-mono-num text-status-refuted">{row.cv.toFixed(3)}</td>
+                  <td className="py-3 text-xs text-foreground-muted">{row.assessment}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-4 p-4 rounded-lg border border-status-refuted/30 bg-status-refuted/5 max-w-3xl">
+          <p className="text-sm text-foreground-muted leading-relaxed">
+            {d.csliInvResult}
+          </p>
+        </div>
+
+        <p className="text-sm mt-4">
+          <a
+            href={`/${locale}/sentinel#csli`}
+            className="text-accent hover:underline"
+          >
+            {d.csliInvLink}
+          </a>
+          {" →"}
+        </p>
+
+        <div className="mt-4 p-4 rounded-lg bg-background border border-border max-w-3xl">
+          <p className="text-xs text-foreground-muted leading-relaxed">
+            {d.csliInvNote}
           </p>
         </div>
       </section>

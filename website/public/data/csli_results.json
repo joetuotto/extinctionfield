@@ -1,0 +1,886 @@
+{
+  "generated": "2026-08-18",
+  "cross_species_comparison": {
+    "species_results": {
+      "bees": {
+        "lag_weights": [
+          0.33962519591375673,
+          -0.0011303773279991557,
+          -0.08417941578092596,
+          -0.03307016920719784,
+          0.029066390163805494,
+          0.029589871570847154,
+          -0.0060798955405865435,
+          -0.041256588339555894,
+          -0.040771673822522475,
+          -0.004365785016176318,
+          0.03331127902256394,
+          0.036091929409378526,
+          -0.02283586575781581,
+          -0.08885614242459855,
+          -0.06542618117171113,
+          0.14434323953055836
+        ],
+        "lag_weights_raw": [
+          0.23626285523639112,
+          -0.0007863556008823945,
+          -0.058560051974422114,
+          -0.023005515179819618,
+          0.02022025578237576,
+          0.02058441961173497,
+          -0.004229525657226994,
+          -0.02870046002385258,
+          -0.02836312554537948,
+          -0.0030370916106353886,
+          0.023173245059961906,
+          0.025107625688099447,
+          -0.01588594400724778,
+          -0.06181345249737617,
+          -0.04551422143240273,
+          0.1004134743707885
+        ],
+        "mean_lag": 6.46,
+        "peak_lag": 0,
+        "n_countries": 31,
+        "n_observations": 344,
+        "r_squared": -0.3887,
+        "theta": [
+          0.23626285523639112,
+          -0.2079072220565309,
+          0.14698447847946286,
+          -0.1233585674232463,
+          0.14945810250201982,
+          -0.19109798800421826,
+          0.1004134743707885
+        ],
+        "description": "Bees (short lifecycle, high ambient exposure)",
+        "expected_lag": 0.5
+      },
+      "birds": {
+        "lag_weights": [
+          0.46159803407809186,
+          0.0299203755399089,
+          -0.12944749843001271,
+          -0.1255030345691482,
+          -0.06694401901112913,
+          -0.026209304824521152,
+          -0.005317503174662575,
+          0.001803611076883323,
+          0.0012012143769327068,
+          -0.0016536367349711406,
+          -0.0018660056265578182,
+          0.005433995642822515,
+          0.02282620319457452,
+          0.03295852064926513,
+          0.008216026807881041,
+          -0.07910101626263723
+        ],
+        "lag_weights_raw": [
+          1.7571129708476911,
+          0.1138945057658406,
+          -0.4927531352888766,
+          -0.47773819133053114,
+          -0.254828217282289,
+          -0.0997679930679168,
+          -0.020241537248710827,
+          0.00686560206844406,
+          0.004572526758465591,
+          -0.006294711722269708,
+          -0.0071031123359265,
+          0.02068497593713311,
+          0.08688992315250306,
+          0.1254594687528021,
+          0.03127501897141487,
+          -0.3011048822162015
+        ],
+        "mean_lag": 3.22,
+        "peak_lag": 0,
+        "n_countries": 17,
+        "n_observations": 146,
+        "r_squared": -11.3859,
+        "theta": [
+          1.7571129708476911,
+          -1.1176453084441094,
+          -0.06335375902206954,
+          0.049581222370300077,
+          -0.08705996492702572,
+          0.30717609140743835,
+          -0.3011048822162015
+        ],
+        "description": "Birds (RPM/CRY, medium lifecycle)",
+        "expected_lag": 2.0
+      },
+      "human_sperm": {
+        "lag_weights": [
+          0.37598976002605117,
+          -0.005502312879971894,
+          -0.1315163438388088,
+          -0.10695069795761099,
+          -0.03641821506224017,
+          0.010016824057500555,
+          0.02938857971489697,
+          0.02644039481805785,
+          0.006147324290619175,
+          -0.02118620058665803,
+          -0.03992637217588761,
+          -0.034207670823656285,
+          0.0067932482689660855,
+          0.05001413394522279,
+          0.03979632181159905,
+          -0.07970559974225253
+        ],
+        "lag_weights_raw": [
+          1.660475888377523,
+          -0.024299751851937085,
+          -0.5808129398438376,
+          -0.47232418029537726,
+          -0.16083301844286144,
+          0.044237095245485275,
+          0.1297881836113464,
+          0.11676817494052262,
+          0.027148302554578493,
+          -0.09356418440235695,
+          -0.1763260209635898,
+          -0.15107063712666263,
+          0.03000088341129017,
+          0.22087639697520525,
+          0.17575168219925508,
+          -0.3520022101971872
+        ],
+        "mean_lag": 4.65,
+        "peak_lag": 0,
+        "n_countries": 24,
+        "n_observations": 148,
+        "r_squared": -11.5845,
+        "theta": [
+          1.660475888377523,
+          -1.343682904848276,
+          0.10826336933180367,
+          0.23722118510562856,
+          -0.5781066889203178,
+          0.7120954535114343,
+          -0.3520022101971872
+        ],
+        "description": "Human sperm (74d spermatogenesis)",
+        "expected_lag": 0.5
+      },
+      "human_tfr": {
+        "lag_weights": [
+          0.45088128476471345,
+          0.053568949360732504,
+          -0.09201197866337349,
+          -0.08968566741942983,
+          -0.04297477836626158,
+          -0.018919667949661077,
+          -0.013706629160357208,
+          -0.015381275358071567,
+          -0.012364724649453793,
+          -0.001714704320498582,
+          0.010874449163454277,
+          0.01933289459013698,
+          0.017535635673131756,
+          -0.0011223772971361212,
+          -0.04349337047365411,
+          -0.11643161278993376
+        ],
+        "lag_weights_raw": [
+          0.03977529160655619,
+          0.004725679805033084,
+          -0.008116999765341176,
+          -0.007911780096168714,
+          -0.003791096235314293,
+          -0.0016690320384215665,
+          -0.001209154582853516,
+          -0.0013568864650642812,
+          -0.0010907760982437824,
+          -0.0001512656805048887,
+          0.0009593088051165782,
+          0.001705485558849019,
+          0.0015469371783065212,
+          -9.901250239176349e-05,
+          -0.003836844757138969,
+          -0.010271221067332465
+        ],
+        "mean_lag": 3.98,
+        "peak_lag": 0,
+        "n_countries": 257,
+        "n_observations": 11945,
+        "r_squared": -2.9275,
+        "theta": [
+          0.03977529160655619,
+          -0.02173231953631661,
+          0.0022804201595829866,
+          -0.0036124647681504544,
+          0.004195136097647002,
+          -0.0002909683610210955,
+          -0.010271221067332465
+        ],
+        "description": "Human TFR (biology + behavior + decision)",
+        "expected_lag": 4.0
+      }
+    },
+    "lag_order": [
+      [
+        "birds",
+        3.22,
+        2.0
+      ],
+      [
+        "human_tfr",
+        3.98,
+        4.0
+      ],
+      [
+        "human_sperm",
+        4.65,
+        0.5
+      ],
+      [
+        "bees",
+        6.46,
+        0.5
+      ]
+    ],
+    "spearman_rho": -0.8,
+    "spearman_p": 0.2,
+    "order_matches_biology": false
+  },
+  "lag_invariance": {
+    "bees": {
+      "species": "bees",
+      "country_lags": {
+        "AUS": {
+          "best_lag": 1,
+          "best_corr": 0.678,
+          "n_years": 10
+        },
+        "AUT": {
+          "best_lag": 8,
+          "best_corr": -0.842,
+          "n_years": 14
+        },
+        "BEL": {
+          "best_lag": 7,
+          "best_corr": 0.459,
+          "n_years": 12
+        },
+        "CAN": {
+          "best_lag": 7,
+          "best_corr": 0.831,
+          "n_years": 13
+        },
+        "CHE": {
+          "best_lag": 8,
+          "best_corr": -0.852,
+          "n_years": 14
+        },
+        "CHN": {
+          "best_lag": 0,
+          "best_corr": 0.597,
+          "n_years": 10
+        },
+        "CZE": {
+          "best_lag": 0,
+          "best_corr": -0.639,
+          "n_years": 10
+        },
+        "DEU": {
+          "best_lag": 10,
+          "best_corr": 0.691,
+          "n_years": 16
+        },
+        "DNK": {
+          "best_lag": 6,
+          "best_corr": 0.84,
+          "n_years": 11
+        },
+        "ESP": {
+          "best_lag": 5,
+          "best_corr": -0.719,
+          "n_years": 10
+        },
+        "FIN": {
+          "best_lag": 2,
+          "best_corr": -0.784,
+          "n_years": 14
+        },
+        "FRA": {
+          "best_lag": 0,
+          "best_corr": -0.708,
+          "n_years": 14
+        },
+        "GBR": {
+          "best_lag": 7,
+          "best_corr": -0.626,
+          "n_years": 12
+        },
+        "GRC": {
+          "best_lag": 5,
+          "best_corr": 0.706,
+          "n_years": 10
+        },
+        "HUN": {
+          "best_lag": 2,
+          "best_corr": -0.587,
+          "n_years": 10
+        },
+        "IRL": {
+          "best_lag": 6,
+          "best_corr": 0.776,
+          "n_years": 11
+        },
+        "ISR": {
+          "best_lag": 2,
+          "best_corr": 0.82,
+          "n_years": 9
+        },
+        "ITA": {
+          "best_lag": 3,
+          "best_corr": -0.586,
+          "n_years": 12
+        },
+        "JPN": {
+          "best_lag": 3,
+          "best_corr": 0.601,
+          "n_years": 9
+        },
+        "KOR": {
+          "best_lag": 1,
+          "best_corr": 0.447,
+          "n_years": 8
+        },
+        "NLD": {
+          "best_lag": 8,
+          "best_corr": 0.747,
+          "n_years": 14
+        },
+        "NOR": {
+          "best_lag": 4,
+          "best_corr": -0.499,
+          "n_years": 11
+        },
+        "NZL": {
+          "best_lag": 1,
+          "best_corr": 0.634,
+          "n_years": 8
+        },
+        "POL": {
+          "best_lag": 6,
+          "best_corr": -0.626,
+          "n_years": 12
+        },
+        "PRT": {
+          "best_lag": 4,
+          "best_corr": 0.889,
+          "n_years": 9
+        },
+        "ROU": {
+          "best_lag": 3,
+          "best_corr": 0.379,
+          "n_years": 8
+        },
+        "SWE": {
+          "best_lag": 10,
+          "best_corr": 0.621,
+          "n_years": 15
+        },
+        "TUR": {
+          "best_lag": 1,
+          "best_corr": 0.604,
+          "n_years": 10
+        },
+        "USA": {
+          "best_lag": 5,
+          "best_corr": 0.748,
+          "n_years": 18
+        }
+      },
+      "mu_lag": 4.31,
+      "sigma_lag": 2.98,
+      "cv": 0.692,
+      "n_countries": 29,
+      "assessment": "WEAK invariance (CV > 0.5)"
+    },
+    "birds": {
+      "species": "birds",
+      "country_lags": {
+        "CAN": {
+          "best_lag": 0,
+          "best_corr": -0.867,
+          "n_years": 12
+        },
+        "CHE": {
+          "best_lag": 2,
+          "best_corr": -0.973,
+          "n_years": 8
+        },
+        "CZE": {
+          "best_lag": 0,
+          "best_corr": -0.917,
+          "n_years": 8
+        },
+        "DEU": {
+          "best_lag": 0,
+          "best_corr": -0.929,
+          "n_years": 10
+        },
+        "DNK": {
+          "best_lag": 0,
+          "best_corr": -0.906,
+          "n_years": 11
+        },
+        "FIN": {
+          "best_lag": 0,
+          "best_corr": -0.956,
+          "n_years": 9
+        },
+        "FRA": {
+          "best_lag": 0,
+          "best_corr": -0.964,
+          "n_years": 12
+        },
+        "GBR": {
+          "best_lag": 0,
+          "best_corr": -0.842,
+          "n_years": 12
+        },
+        "NLD": {
+          "best_lag": 2,
+          "best_corr": -0.97,
+          "n_years": 8
+        },
+        "SWE": {
+          "best_lag": 0,
+          "best_corr": -0.976,
+          "n_years": 10
+        },
+        "USA": {
+          "best_lag": 7,
+          "best_corr": -0.847,
+          "n_years": 12
+        }
+      },
+      "mu_lag": 1.0,
+      "sigma_lag": 2.04,
+      "cv": 2.045,
+      "n_countries": 11,
+      "assessment": "WEAK invariance (CV > 0.5)"
+    },
+    "human_sperm": {
+      "species": "human_sperm",
+      "country_lags": {
+        "CAN": {
+          "best_lag": 0,
+          "best_corr": -0.973,
+          "n_years": 8
+        },
+        "GBR": {
+          "best_lag": 0,
+          "best_corr": -0.935,
+          "n_years": 9
+        },
+        "USA": {
+          "best_lag": 1,
+          "best_corr": -0.957,
+          "n_years": 8
+        }
+      },
+      "mu_lag": 0.33,
+      "sigma_lag": 0.47,
+      "cv": 1.414,
+      "n_countries": 3,
+      "assessment": "WEAK invariance (CV > 0.5)"
+    }
+  },
+  "biological_scaling": {
+    "intercept": 6.535,
+    "slope": -0.338,
+    "r_squared": 0.3631,
+    "n_species": 4,
+    "species_data": [
+      {
+        "species": "bees",
+        "log_gen_time": 3.7376696182833684,
+        "observed_lag": 6.46,
+        "expected_lag": 0.5
+      },
+      {
+        "species": "birds",
+        "log_gen_time": 5.8998973535824915,
+        "observed_lag": 3.22,
+        "expected_lag": 2.0
+      },
+      {
+        "species": "human_sperm",
+        "log_gen_time": 4.30406509320417,
+        "observed_lag": 4.65,
+        "expected_lag": 0.5
+      },
+      {
+        "species": "human_tfr",
+        "log_gen_time": 9.232101863757695,
+        "observed_lag": 3.98,
+        "expected_lag": 4.0
+      }
+    ],
+    "follows_scaling": false,
+    "formula": "L = 6.54 + -0.34 \u00d7 log(gen_time_days)"
+  },
+  "latent_common_shock": {
+    "n_countries": 17,
+    "n_observations": 22,
+    "species_in_panel": [
+      "bees",
+      "birds",
+      "human_sperm",
+      "human_tfr"
+    ],
+    "pca_variance_explained": [
+      0.4,
+      0.2841,
+      0.186
+    ],
+    "first_pc_explains": 0.4,
+    "model_comparison": {
+      "M_C_intercept_only": {
+        "r2": 0.0,
+        "bic": -68.5
+      },
+      "M_E_common_shock": {
+        "r2": 0.5645,
+        "bic": -83.7
+      },
+      "M_BERM_emf_shock": {
+        "r2": 0.5722,
+        "bic": -81.0
+      }
+    },
+    "H_emf_correlation": 0.0599,
+    "common_shock_real": true,
+    "emf_explains_shock": false,
+    "caveats": [
+      "PCA extracts statistical, not causal, common factors",
+      "Short overlapping time series limit power",
+      "Multiple confounders affect all sentinel species independently",
+      "EMF proxy (mobile subs) correlates with general development"
+    ]
+  },
+  "prospective_test": {
+    "n_countries": 31,
+    "predictions": [
+      {
+        "holdout": "ARG",
+        "predicted_lag": 4.1,
+        "ci_95": [
+          0.0,
+          8.2
+        ],
+        "actual_lag": 1,
+        "hit": true
+      },
+      {
+        "holdout": "AUS",
+        "predicted_lag": 4.1,
+        "ci_95": [
+          -0.2,
+          8.3
+        ],
+        "actual_lag": 3,
+        "hit": true
+      },
+      {
+        "holdout": "AUT",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.1
+        ],
+        "actual_lag": 6,
+        "hit": true
+      },
+      {
+        "holdout": "BEL",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.3
+        ],
+        "actual_lag": 4,
+        "hit": true
+      },
+      {
+        "holdout": "BRA",
+        "predicted_lag": 4.1,
+        "ci_95": [
+          0.0,
+          8.2
+        ],
+        "actual_lag": 1,
+        "hit": true
+      },
+      {
+        "holdout": "CAN",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.3
+        ],
+        "actual_lag": 4,
+        "hit": true
+      },
+      {
+        "holdout": "CHE",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.1
+        ],
+        "actual_lag": 6,
+        "hit": true
+      },
+      {
+        "holdout": "CHN",
+        "predicted_lag": 4.1,
+        "ci_95": [
+          -0.2,
+          8.3
+        ],
+        "actual_lag": 3,
+        "hit": true
+      },
+      {
+        "holdout": "CZE",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.1
+        ],
+        "actual_lag": 6,
+        "hit": true
+      },
+      {
+        "holdout": "DEU",
+        "predicted_lag": 3.9,
+        "ci_95": [
+          -0.2,
+          8.0
+        ],
+        "actual_lag": 7,
+        "hit": true
+      },
+      {
+        "holdout": "DNK",
+        "predicted_lag": 4.1,
+        "ci_95": [
+          -0.1,
+          8.3
+        ],
+        "actual_lag": 2,
+        "hit": true
+      },
+      {
+        "holdout": "ESP",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.1
+        ],
+        "actual_lag": 6,
+        "hit": true
+      },
+      {
+        "holdout": "FIN",
+        "predicted_lag": 3.9,
+        "ci_95": [
+          -0.2,
+          8.0
+        ],
+        "actual_lag": 7,
+        "hit": true
+      },
+      {
+        "holdout": "FRA",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.1
+        ],
+        "actual_lag": 6,
+        "hit": true
+      },
+      {
+        "holdout": "GBR",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.3
+        ],
+        "actual_lag": 4,
+        "hit": true
+      },
+      {
+        "holdout": "GRC",
+        "predicted_lag": 4.1,
+        "ci_95": [
+          -0.1,
+          8.3
+        ],
+        "actual_lag": 2,
+        "hit": true
+      },
+      {
+        "holdout": "HUN",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.1
+        ],
+        "actual_lag": 6,
+        "hit": true
+      },
+      {
+        "holdout": "IRL",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.3
+        ],
+        "actual_lag": 4,
+        "hit": true
+      },
+      {
+        "holdout": "ISR",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.2
+        ],
+        "actual_lag": 5,
+        "hit": true
+      },
+      {
+        "holdout": "ITA",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.1
+        ],
+        "actual_lag": 6,
+        "hit": true
+      },
+      {
+        "holdout": "JPN",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.2
+        ],
+        "actual_lag": 5,
+        "hit": true
+      },
+      {
+        "holdout": "KOR",
+        "predicted_lag": 4.1,
+        "ci_95": [
+          0.0,
+          8.2
+        ],
+        "actual_lag": 1,
+        "hit": true
+      },
+      {
+        "holdout": "NLD",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.1
+        ],
+        "actual_lag": 6,
+        "hit": true
+      },
+      {
+        "holdout": "NOR",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.2
+        ],
+        "actual_lag": 5,
+        "hit": true
+      },
+      {
+        "holdout": "NZL",
+        "predicted_lag": 4.1,
+        "ci_95": [
+          0.0,
+          8.2
+        ],
+        "actual_lag": 1,
+        "hit": true
+      },
+      {
+        "holdout": "POL",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.2
+        ],
+        "actual_lag": 5,
+        "hit": true
+      },
+      {
+        "holdout": "PRT",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.2
+        ],
+        "actual_lag": 5,
+        "hit": true
+      },
+      {
+        "holdout": "ROU",
+        "predicted_lag": 4.2,
+        "ci_95": [
+          0.2,
+          8.1
+        ],
+        "actual_lag": 0,
+        "hit": false
+      },
+      {
+        "holdout": "SWE",
+        "predicted_lag": 4.0,
+        "ci_95": [
+          -0.2,
+          8.2
+        ],
+        "actual_lag": 5,
+        "hit": true
+      },
+      {
+        "holdout": "TUR",
+        "predicted_lag": 4.1,
+        "ci_95": [
+          -0.2,
+          8.3
+        ],
+        "actual_lag": 3,
+        "hit": true
+      },
+      {
+        "holdout": "USA",
+        "predicted_lag": 4.2,
+        "ci_95": [
+          0.2,
+          8.1
+        ],
+        "actual_lag": 0,
+        "hit": false
+      }
+    ],
+    "hit_rate": 0.935,
+    "overall_mu_delta": 4.03,
+    "overall_sigma_delta": 2.09
+  }
+}

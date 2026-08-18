@@ -5,18 +5,21 @@ import { useCallback, Suspense } from "react";
 import { ExplorerDashboard } from "./ExplorerDashboard";
 import { DataSourcesContent } from "./DataSourcesContent";
 import { WorldMap } from "./WorldMap";
+import { SentinelExplorer } from "./SentinelExplorer";
 
-type Tab = "map" | "country" | "data";
+type Tab = "map" | "country" | "data" | "sentinel";
 
 const TABS = {
   en: [
     { key: "map" as Tab, label: "Map" },
     { key: "country" as Tab, label: "Country" },
+    { key: "sentinel" as Tab, label: "Sentinel" },
     { key: "data" as Tab, label: "Data" },
   ],
   fi: [
     { key: "map" as Tab, label: "Kartta" },
     { key: "country" as Tab, label: "Maa" },
+    { key: "sentinel" as Tab, label: "Indikaattorit" },
     { key: "data" as Tab, label: "Data" },
   ],
 } as const;
@@ -58,6 +61,8 @@ function ExploreTabsInner({ locale }: { locale: string }) {
       {activeTab === "map" && <WorldMap locale={locale} />}
 
       {activeTab === "country" && <ExplorerDashboard />}
+
+      {activeTab === "sentinel" && <SentinelExplorer locale={locale} />}
 
       {activeTab === "data" && <DataSourcesContent locale={locale} />}
     </div>

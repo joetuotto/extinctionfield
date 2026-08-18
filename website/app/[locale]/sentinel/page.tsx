@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n";
 import Link from "next/link";
 import TemporalTimeline from "@/components/TemporalTimeline";
+import CSLIDashboard from "@/components/CSLIDashboard";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -264,6 +265,38 @@ const t = {
       { id: "F5", desc: "Same lag structure replicates across countries", status: "Untested" },
       { id: "F6", desc: "EMF explains dog-human link better than chemicals", status: "Untested" },
     ],
+
+    /* CSLI Dashboard translations */
+    csliDashboard: {
+      title: "Cross-Species Lag Analysis",
+      intro: "Statistical analysis of lag structure across sentinel species. Results are reported transparently regardless of whether they support or refute the hypothesis.",
+      lagCompTitle: "Cross-Species Lag Comparison",
+      lagCompDesc: "Estimated mean lag between EMF proxy and each sentinel outcome. BERM predicts: bees (shortest) < birds < human sperm < human TFR (longest).",
+      thSpecies: "Species", thMeanLag: "Mean lag", thExpected: "Expected", thNObs: "N obs", thR2: "R²",
+      invarianceTitle: "Lag Invariance Across Countries",
+      invarianceDesc: "For each species, is the lag constant across countries? CV < 0.3 = strong invariance.",
+      thCountries: "Countries", thMuLag: "μ lag", thSigma: "σ", thCV: "CV", thAssessment: "Assessment",
+      scalingTitle: "Biological Scaling Law",
+      scalingDesc: "Does lag scale with log(generation time)? If yes, the biological mechanism predicts the temporal structure.",
+      shockTitle: "Latent Common Shock",
+      shockDesc: "PCA extracts a common latent factor H(r,t) from sentinel panel. Three competing models: cultural only (M_C), environmental shock (M_E), EMF-driven shock (M_BERM).",
+      thModel: "Model", thBIC: "BIC",
+      prospTitle: "Leave-One-Country-Out Prediction",
+      prospDesc: "For each holdout country: learn sentinel→TFR lag from all others, predict holdout's lag, compare to actual.",
+      loading: "Loading CSLI data...",
+      error: "Failed to load CSLI data.",
+      caveatsTitle: "Caveats & Limitations",
+      resultPositive: "Matches biological prediction",
+      resultNegative: "Does NOT match biological prediction",
+      spearmanLabel: "Spearman ρ",
+      hitRateLabel: "Hit rate",
+      pc1Label: "PC1 variance",
+      hemfLabel: "H–EMF corr.",
+      commonShockReal: "Common environmental shock IS statistically real (M_E > M_C)",
+      commonShockNo: "Common environmental shock NOT confirmed",
+      emfExplains: "EMF explains the common shock (M_BERM > M_E)",
+      emfNoExplain: "EMF does NOT clearly explain the common shock",
+    },
 
     /* temporal timeline */
     timelineTitle: "Temporal Correlation Timeline",
@@ -785,6 +818,87 @@ const t = {
         mechanism: "OT↓ → parisidospalkinto↓ → P(seksi parin sisalla)↓",
       },
     ] as HumanProxyRow[],
+
+    /* CSLI v2: koira-sentinelli + tuotantoeläinkontrolli */
+    csliTitle: "CSLI v2: Koira-sentinelli ja tuotantoeläinkontrolli",
+    csliIntro:
+      "Cross-Species Lag Index (CSLI) v2 esittelee ortogonaalisen sentinellitriangulaation: eri lajien lisääntymistrendien vertailun systemaattisesti eri EMF-altistustasoilla. Kotikoira (Canis familiaris) on ensisijainen sisäympäristön nisäkässentinelli, koska se jakaa ihmisen kotiympäristön RF-kentän olematta alttiina sosiaalisille sekoittajille (koulutus, ehkäisy, taloudelliset paineet).",
+    csliDogTitle: "Koira: Ensisijainen sisäympäristön sentinelli",
+    csliDogP1:
+      "Lea ym. (2016, Scientific Reports) tutki 1 925 siemennäytettä jalostuskoirista Nottinghamin yliopistossa 26 vuoden ajalta (1988–2014). Tämän populaation koirat elävät samassa sisäympäristössä kuin omistajansa — altistuneina Wi-Fi-reitittimille, Bluetooth-laitteille, älypuhelimille ja IoT-laitteille. Ne jakavat kodin RF-kentän mutta eivät ihmisten sosiaalisia tekijöitä.",
+    csliDogP2:
+      "Keskeiset löydökset: progressiivinen motiliteetti laski merkittävästi tutkimusjakson aikana. Normaali morfologia laski. Siittiökonsentraatio vaihteli (nousi sitten tasaantui) — tärkeää on, että ensisijainen lasku on motiliteetissa ja morfologiassa, ei konsentraatiossa. Ympäristökemikaaleja (DEHP, PCB153) havaittiin koirien kiveksissä ja kaupallisessa koiranruoassa pitoisuuksina, jotka vaikuttivat siittiöiden toimintaan in vitro.",
+    csliDogNote:
+      "Lea 2016 raportoi motiliteetin ja morfologian laskun, ei konsentraation laskun. Tämä ero on kriittinen: BERM ennustaa, että motiliteetti (joka riippuu siimahännän Ca²⁺-dynamiikasta CatSper-kanavien kautta) ja morfologia (joka riippuu spermatogeneesin tarkkuudesta ROS/DNA-reitin kautta) ovat ensisijaiset EMF-kohteet, kun taas konsentraatio heijastaa tuotantomäärää ja säätyy eri mekanismeilla.",
+    csliLivestockTitle: "Tuotantoeläimet: Matalan altistuksen negatiivinen kontrolli",
+    csliLivestockP1:
+      "Hensel ym. (2025/2026, Animal Reproduction Science) analysoi siemennesteen laatutrendejä tuotantoeläimissä: 47 757 sonnin siemennäytettä (1997–2019) ja 619 368 karjun siemennäytettä (2005–2023). Molemmat lajit osoittivat parantunutta konsentraatiota ja motiliteettia tutkimusjaksoilla.",
+    csliLivestockP2:
+      "Sonni ja karju kasvatetaan maaseudun tuotantolaitoksissa, joissa on minimaalinen RF-infrastruktuuri — ei kodin Wi-Fi:tä, ei henkilökohtaisia laitteita, ei IoT:tä. Jos EMF ajaa koirissa ja ihmisissä havattua laskua, matalan altistuksen lajien pitäisi osoittaa joko ei laskua tai parantumista. Havaittu parantuminen on yhdenmukainen BERM:n altistusgradienttiiennusteen kanssa.",
+    csliLivestockCaveat:
+      "Kriittinen rajoitus: sonnin ja karjun parantuminen on vahvasti sekoittunut jalostuvalinnalla. Siemennesteen laatu on suora valintakriteeri keinosiemennys(AI)-ohjelmissa — huonon siemennesteen sonnit ja karjut poistetaan jalostuspoolista. Tuotantoympäristön parannukset (lämpötilansäätely, ravitsemuksen optimointi, AI-aseman hallinta) myös vaikuttavat. Parantumista ei siksi voida attribuoida yksinomaan matalaan EMF-altistukseen. Kontrasti on suunnaltaan yhdenmukainen BERM:n kanssa mutta ei itsenäisesti vahvistava.",
+    csliGradientTitle: "Altistusgradienttitesti",
+    csliGradientP:
+      "BERM ennustaa, että vasteen suuruus seuraa altistusgradienttia: korkeamman EMF-altistuksen lajien pitäisi osoittaa suurempaa lisääntymisen laskua. Neljätasoinen gradientti matalimmasta korkeimpaan altistukseen:",
+    csliGradientResult:
+      "Havaittu kuvio on suunnaltaan yhdenmukainen: matalan altistuksen laji (sonni) paranee kun korkean altistuksen lajit (koira, ihminen) laskevat. Monotoninen yhdenmukkaisuus yksin ei kuitenkaan ole todiste — RF-dosimetriadata kunkin lajin todellisesta ympäristöstä vaaditaan altistuseron vahvistamiseksi. Tällä hetkellä mitattua RF-dosimetriaa ei ole millekään näistä ympäristöistä.",
+    csliGradientThSpecies: "Laji",
+    csliGradientThEnv: "Ympäristö",
+    csliGradientThRF: "RF-taso",
+    csliGradientThTrend: "Siittiötrendi",
+    csliFalsTitle: "Falsifikaatiotestit (F1–F6)",
+    csliFalsP:
+      "CSLI v2 määrittelee kuusi falsifikaatiokriteeriä, joiden tulee täyttyä lajienvalisen kehyksen tukeakseen BERM:n EMF-hypoteesia. Kaikki kuusi ovat tällä hetkellä testaamattomia — ne vaativat alueellista dataa jota ei vielä ole. Tämä esitetään tutkimusagendana, ei vahvistettuna näyttönä.",
+    csliFalsNote:
+      "Kaikki falsifikaatiotestit vaativat dataa, joka ei ole tällä hetkellä saatavilla. CSLI v2 on kehys tulevaa testausta varten, ei valmis analyysi.",
+
+    csliGradientData: [
+      { species: "Sonni", env: "Maaseutu / tuotantolaitos", rf: "Matala", trend: "Paranee" },
+      { species: "Mehiläinen", env: "Ulko / ympäristö", rf: "Keskitaso", trend: "Pesähäviöt kasvussa" },
+      { species: "Koira", env: "Koti / sisätila (Wi-Fi, BT, IoT)", rf: "Korkea", trend: "Motiliteetti + morfologia laskee" },
+      { species: "Ihminen", env: "Henkilökohtainen / keholla (puhelin 16h/pv)", rf: "Korkein", trend: "Konsentraatio −62%, motiliteetti laskee" },
+    ],
+
+    csliFalsTests: [
+      { id: "F1", desc: "Koiran siittiömuutos edeltää ihmisen siittiömuutosta", status: "Testaamaton" },
+      { id: "F2", desc: "Koiran siittiöt ennustavat ihmisen biologiaa paremmin kuin sosiaaliset muuttujat", status: "Testaamaton" },
+      { id: "F3", desc: "Sonni EI osoita samaa laskukuviota (negatiivinen kontrolli)", status: "Testaamaton" },
+      { id: "F4", desc: "Vasteen suuruus seuraa mitattua altistusgradienttia (dosimetria)", status: "Testaamaton" },
+      { id: "F5", desc: "Sama lag-rakenne toistuu maiden välillä", status: "Testaamaton" },
+      { id: "F6", desc: "EMF selittää koira-ihminen-yhteyden paremmin kuin kemikaalit", status: "Testaamaton" },
+    ],
+
+    /* CSLI Dashboard -käännökset */
+    csliDashboard: {
+      title: "Lajienväliinen lag-analyysi",
+      intro: "Tilastollinen analyysi lag-rakenteesta sentinellilajien välillä. Tulokset raportoidaan läpinäkyvästi riippumatta siitä tukevatko vai kumaavatko ne hypoteesia.",
+      lagCompTitle: "Lajienväliinen lag-vertailu",
+      lagCompDesc: "Estimoitu keskimääräinen viive EMF-proxyn ja kunkin sentinellivasteen välillä. BERM ennustaa: mehiläiset (lyhin) < linnut < ihmisen siittiöt < ihmisen TFR (pisin).",
+      thSpecies: "Laji", thMeanLag: "Keskim. lag", thExpected: "Odotettu", thNObs: "N hav", thR2: "R²",
+      invarianceTitle: "Lag-invarianssi maiden välillä",
+      invarianceDesc: "Jokaiselle lajille: onko lag vakio maiden välillä? CV < 0.3 = vahva invarianssi.",
+      thCountries: "Maat", thMuLag: "μ lag", thSigma: "σ", thCV: "CV", thAssessment: "Arvio",
+      scalingTitle: "Biologinen skaalauslaki",
+      scalingDesc: "Skaalautuuko lag log(generaatioajan) mukaisesti? Jos kyllä, biologinen mekanismi ennustaa ajallisen rakenteen.",
+      shockTitle: "Latentti yhteinen shokki",
+      shockDesc: "PCA poimii yhteisen latentin tekijän H(r,t) sentinellipaneelista. Kolme kilpailevaa mallia: vain kulttuuri (M_C), ympäristöshokki (M_E), EMF-ohjattu shokki (M_BERM).",
+      thModel: "Malli", thBIC: "BIC",
+      prospTitle: "Jätä-yksi-maa-pois -ennuste",
+      prospDesc: "Jokaiselle holdout-maalle: opitaan sentinelli→TFR-lag muista, ennustetaan holdoutin lag, verrataan todelliseen.",
+      loading: "Ladataan CSLI-dataa...",
+      error: "CSLI-datan lataus epäonnistui.",
+      caveatsTitle: "Varaumat ja rajoitukset",
+      resultPositive: "Vastaa biologista ennustetta",
+      resultNegative: "EI vastaa biologista ennustetta",
+      spearmanLabel: "Spearman ρ",
+      hitRateLabel: "Osumaosuus",
+      pc1Label: "PC1 varianssi",
+      hemfLabel: "H–EMF korr.",
+      commonShockReal: "Yhteinen ympäristöshokki ON tilastollisesti todellinen (M_E > M_C)",
+      commonShockNo: "Yhteistä ympäristöshokkia EI vahvistettu",
+      emfExplains: "EMF selittää yhteisen shokin (M_BERM > M_E)",
+      emfNoExplain: "EMF EI selvästi selitä yhteistä shokkia",
+    },
 
     /* temporal timeline */
     timelineTitle: "Ajallinen korrelaatioaikajana",
@@ -1493,6 +1607,110 @@ export default async function SentinelPage({
           </section>
         ))}
       </div>
+
+      {/* CSLI v2: Dog Sentinel + Livestock Control + Gradient + Falsification */}
+      <section id="csli" className="mt-14 mb-14">
+        <h2 className="text-xl font-semibold mb-3">{d.csliTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-3xl">
+          {d.csliIntro}
+        </p>
+
+        {/* Dog sentinel */}
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-2">{d.csliDogTitle}</h3>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-2">
+            {d.csliDogP1}
+          </p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+            {d.csliDogP2}
+          </p>
+          <div className="border border-accent/30 bg-accent/5 rounded-lg p-4">
+            <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-1">
+              {locale === "fi" ? "Tärkeä korjaus" : "Important correction"}
+            </p>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.csliDogNote}
+            </p>
+          </div>
+        </div>
+
+        {/* Livestock control */}
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-2">{d.csliLivestockTitle}</h3>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-2">
+            {d.csliLivestockP1}
+          </p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+            {d.csliLivestockP2}
+          </p>
+          <div className="border border-status-partial/40 bg-status-partial/5 rounded-lg p-4">
+            <p className="text-xs font-semibold text-status-partial uppercase tracking-wide mb-1">
+              {locale === "fi" ? "Kriittinen rajoitus" : "Critical limitation"}
+            </p>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {d.csliLivestockCaveat}
+            </p>
+          </div>
+        </div>
+
+        {/* Exposure gradient */}
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-2">{d.csliGradientTitle}</h3>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+            {d.csliGradientP}
+          </p>
+          <div className="overflow-x-auto">
+            <table className="text-sm border-collapse w-full">
+              <thead>
+                <tr className="border-b border-card-border text-foreground-muted">
+                  <th className="text-left py-2 pr-4">{d.csliGradientThSpecies}</th>
+                  <th className="text-left py-2 pr-4">{d.csliGradientThEnv}</th>
+                  <th className="text-left py-2 pr-4">{d.csliGradientThRF}</th>
+                  <th className="text-left py-2">{d.csliGradientThTrend}</th>
+                </tr>
+              </thead>
+              <tbody className="text-foreground-muted">
+                {d.csliGradientData.map((row, i) => (
+                  <tr key={i} className="border-b border-card-border/50">
+                    <td className="py-2 pr-4 font-medium text-foreground">{row.species}</td>
+                    <td className="py-2 pr-4">{row.env}</td>
+                    <td className="py-2 pr-4 font-mono-num">{row.rf}</td>
+                    <td className="py-2">{row.trend}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed mt-3">
+            {d.csliGradientResult}
+          </p>
+        </div>
+
+        {/* Falsification tests */}
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-2">{d.csliFalsTitle}</h3>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+            {d.csliFalsP}
+          </p>
+          <div className="space-y-2">
+            {d.csliFalsTests.map((test) => (
+              <div key={test.id} className="flex items-start gap-3 text-sm">
+                <span className="font-mono-num text-foreground-muted w-8 shrink-0">{test.id}</span>
+                <span className="text-foreground-muted flex-1">{test.desc}</span>
+                <span className="text-status-refuted text-xs shrink-0">{test.status}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-foreground-muted mt-3 border-l-2 border-status-partial/50 pl-3">
+            {d.csliFalsNote}
+          </p>
+        </div>
+
+        {/* CSLI Statistical Dashboard */}
+        <div className="border border-card-border rounded-lg p-6 bg-card-bg">
+          <CSLIDashboard locale={locale} t={d.csliDashboard} />
+        </div>
+      </section>
 
       {/* Proxy Masking */}
       <section id="proxy-masking" className="mt-14 mb-14">
