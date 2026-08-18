@@ -611,6 +611,141 @@ def oxytocin_dual_pathway_diagnostic(
     }
 
 
+# === DIAGNOSTIC: Quadruple behavioral suppression ===
+
+
+def behavioral_quadruple_suppression(
+    country: str, year: int, cum_emf: float, instant_emf: float,
+) -> dict:
+    """Quadruple suppression diagnostic (DIAGNOSTIC_ONLY).
+
+    Decomposes behav into four multiplicative mating probabilities:
+      P(child) = P(approach) * P(attraction) * P(sex) * P(fertilization)
+
+    Each depends on hormonal state which depends on EMF exposure.
+    The model's behav = (OT * T * DA * cort)^(1/4) is the reduced form.
+
+    Puts 2008: T -> mating success via courtship effort.
+    Goetz & Carré 2024: T -> sexual overperception (RCT).
+    Mehta & Prasad 2015: T effects require low cortisol (dual-hormone).
+    Thornhill & Gangestad 1994: masculine traits = good genes signal.
+    Travison 2007 / Santi 2025: T decline 1.2%/yr confirmed >1M subjects.
+    """
+    ot = math.exp(-0.010 * cum_emf)
+    t_level = math.exp(-0.013 * cum_emf)
+    da = math.exp(-0.016 * cum_emf)
+    cort_elevation = 1.0 + 0.88 * min(1.0, instant_emf / 5.0)
+    cort_suppression = 1.0 / cort_elevation
+    cort_ret = math.exp(-0.008 * cum_emf)
+
+    p_approach = t_level * cort_suppression * da
+    p_attraction = t_level * ot
+    p_sex = ot * t_level * cort_suppression
+    p_fertilization = math.exp(-0.012 * cum_emf)
+
+    p_total = p_approach * p_attraction * p_sex * p_fertilization
+
+    eff_t = t_level * (0.5 + 0.5 * cort_ret)
+    behav = max(0.1, (ot * eff_t * da * cort_ret * math.exp(-0.006 * cum_emf)) ** (1.0 / 5.0))
+
+    return {
+        "p_approach": round(p_approach, 4),
+        "p_attraction": round(p_attraction, 4),
+        "p_sex": round(p_sex, 4),
+        "p_fertilization": round(p_fertilization, 4),
+        "p_total": round(p_total, 4),
+        "model_behav": round(behav, 4),
+        "hormonal_state": {
+            "oxytocin": round(ot, 4),
+            "testosterone": round(t_level, 4),
+            "dopamine": round(da, 4),
+            "cortisol_elevation": round(cort_elevation, 3),
+            "cortisol_suppression": round(cort_suppression, 4),
+        },
+        "dual_hormone_note": (
+            "T effects on status-relevant behavior manifest ONLY when "
+            "cortisol is low (Mehta & Prasad 2015, meta N=8538 r=-.061). "
+            "EMF simultaneously lowers T AND raises cortisol -> double lock."
+        ),
+        "pronatalist_failure_explanation": (
+            f"Cash incentives target conscious P(choice). "
+            f"P(approach)={p_approach:.2f}, P(attraction)={p_attraction:.2f}, "
+            f"P(sex)={p_sex:.2f}, P(fertilization)={p_fertilization:.2f} "
+            f"are all hormonally suppressed. Total P={p_total:.3f}. "
+            f"Cash cannot restore testosterone or oxytocin."
+        ),
+        "social_science_proxy_map": {
+            "men_dont_commit": (
+                f"T down -> approach down (Puts 2008). "
+                f"P(approach)={p_approach:.2f}"
+            ),
+            "women_too_picky": (
+                f"T down males -> masculine signal down -> attraction down "
+                f"(Thornhill 1994). P(attraction)={p_attraction:.2f}"
+            ),
+            "couples_too_busy": (
+                f"OT down + T down + cortisol up -> libido down "
+                f"(dual-hormone). P(sex)={p_sex:.2f}"
+            ),
+            "infertility_rising": (
+                f"Sperm down 62% (Levine 2023). "
+                f"P(fertilization)={p_fertilization:.2f}"
+            ),
+        },
+        "sources": [
+            "Puts 2008 Anim Behav (T -> mating success via courtship)",
+            "Goetz & Carre 2024 Front Psychol (T -> sexual overperception RCT)",
+            "Dreher 2016 PNAS (T -> status-seeking behavior RCT)",
+            "Mehta & Prasad 2015 (dual-hormone hypothesis)",
+            "Dual-hormone meta 2018 (30 studies N=8538 r=-.061)",
+            "Thornhill & Gangestad 1994 (masculinity = good genes signal)",
+            "Travison 2007 JCEM (T decline 1.2%/yr)",
+            "Santi 2025 meta >1M (secular T decline confirmed)",
+            "WHO meta 29 studies (EMF -> T down SMD 0.87)",
+        ],
+        "uncertainty": (
+            "Causal chain from population-level T decline to behavioral "
+            "change not tested as whole. Individual T->behavior links are "
+            "RCT-established; population scaling involves ecological inference. "
+            "Dual-hormone meta effect size is small (r=-.061)."
+        ),
+    }
+
+
+SOCIAL_SCIENCE_PROXY_MAP: dict[str, dict[str, str]] = {
+    "men_dont_commit": {
+        "social_observation": "Men are less willing to commit to relationships",
+        "hormonal_substrate": "T down -> approach motivation down (Puts 2008, Goetz 2024 RCT)",
+        "berm_parameter": "testosterone_retention * cortisol_suppression",
+        "emf_link": "WHO meta 29 studies: EMF -> T down SMD 0.87",
+    },
+    "women_too_picky": {
+        "social_observation": "Women's standards have risen / no suitable partners",
+        "hormonal_substrate": "T down males -> masculine phenotype weakened (Thornhill 1994)",
+        "berm_parameter": "testosterone_retention (population-level signal strength)",
+        "emf_link": "Travison 2007: T declining 1.2%/yr independent of BMI",
+    },
+    "couples_too_busy": {
+        "social_observation": "Modern couples are too tired/busy for sex",
+        "hormonal_substrate": "OT down + T down + cortisol up -> libido down",
+        "berm_parameter": "oxytocin_retention * effective_testosterone",
+        "emf_link": "Dual pathway: HPA-vagal + microbiome -> OT down",
+    },
+    "infertility_rising": {
+        "social_observation": "More couples need IVF / subfertility increasing",
+        "hormonal_substrate": "Sperm quality decline + CatSper cascade disruption",
+        "berm_parameter": "sperm_ca2_fecundity * bio_cap",
+        "emf_link": "Levine 2023: sperm concentration down 62% since 1973",
+    },
+    "career_over_kids": {
+        "social_observation": "People prioritize career over family",
+        "hormonal_substrate": "DA reward substitution: career status replaces mating drive",
+        "berm_parameter": "dopamine_retention",
+        "emf_link": "DA down -> reward-seeking shifts from mating to status",
+    },
+}
+
+
 # === v16 True cultural rate with alpha compensation ===
 
 _v16_true_cultural_rates: dict[str, float] = {}
@@ -1051,6 +1186,9 @@ def _build_country_report(
             country, year, adj_cum, amb_ann + pers_ann),
         "l_reuteri_pathway": l_reuteri_oxytocin_pathway(emf_norm),
         "vagal_pathway": vagal_oxytocin_pathway(adj_cum, amb_ann + pers_ann),
+        "quadruple_suppression": behavioral_quadruple_suppression(
+            country, year, adj_cum, amb_ann + pers_ann),
+        "social_science_proxy_map": SOCIAL_SCIENCE_PROXY_MAP,
     }
 
 

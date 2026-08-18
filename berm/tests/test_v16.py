@@ -63,6 +63,8 @@ from berm.v16 import (
     feedback_amplification,
     vagal_oxytocin_pathway,
     oxytocin_dual_pathway_diagnostic,
+    behavioral_quadruple_suppression,
+    SOCIAL_SCIENCE_PROXY_MAP,
 )
 from berm.biology.pathways import l_reuteri_oxytocin_pathway
 
@@ -896,3 +898,96 @@ def test_dual_ot_no_tfr_change():
     """OT diagnostics must not change predictions."""
     assert abs(v16_predicted_tfr("SouthKorea", 2024) - 0.7115661545691994) < 1e-6
     assert abs(v16_predicted_tfr("Finland", 2024) - 1.333547799551896) < 1e-6
+
+
+# === Quadruple behavioral suppression diagnostic ===
+
+def test_quad_suppression_structure():
+    r = behavioral_quadruple_suppression("SouthKorea", 2024, 29.0, 5.8)
+    assert "p_approach" in r
+    assert "p_attraction" in r
+    assert "p_sex" in r
+    assert "p_fertilization" in r
+    assert "p_total" in r
+    assert "model_behav" in r
+    assert "hormonal_state" in r
+    assert "social_science_proxy_map" in r
+    assert "sources" in r
+    assert "uncertainty" in r
+    assert "dual_hormone_note" in r
+    assert "pronatalist_failure_explanation" in r
+
+
+def test_quad_suppression_probabilities_bounded():
+    r = behavioral_quadruple_suppression("SouthKorea", 2024, 29.0, 5.8)
+    for key in ("p_approach", "p_attraction", "p_sex", "p_fertilization"):
+        assert 0 < r[key] <= 1.0, f"{key}={r[key]}"
+
+
+def test_quad_suppression_total_is_product():
+    r = behavioral_quadruple_suppression("SouthKorea", 2024, 29.0, 5.8)
+    product = r["p_approach"] * r["p_attraction"] * r["p_sex"] * r["p_fertilization"]
+    assert abs(r["p_total"] - round(product, 4)) < 0.001
+
+
+def test_quad_suppression_higher_emf_lower_probabilities():
+    r_low = behavioral_quadruple_suppression("Niger", 2024, 5.0, 2.0)
+    r_high = behavioral_quadruple_suppression("SouthKorea", 2024, 29.0, 5.8)
+    assert r_high["p_approach"] < r_low["p_approach"]
+    assert r_high["p_attraction"] < r_low["p_attraction"]
+    assert r_high["p_sex"] < r_low["p_sex"]
+    assert r_high["p_fertilization"] < r_low["p_fertilization"]
+
+
+def test_quad_suppression_zero_emf():
+    r = behavioral_quadruple_suppression("Niger", 2024, 0.0, 0.0)
+    assert abs(r["p_approach"] - 1.0) < 0.01
+    assert abs(r["p_attraction"] - 1.0) < 0.01
+    assert abs(r["p_sex"] - 1.0) < 0.01
+    assert abs(r["p_fertilization"] - 1.0) < 0.01
+
+
+def test_quad_suppression_hormonal_state():
+    r = behavioral_quadruple_suppression("SouthKorea", 2024, 29.0, 5.8)
+    hs = r["hormonal_state"]
+    assert 0 < hs["oxytocin"] < 1.0
+    assert 0 < hs["testosterone"] < 1.0
+    assert 0 < hs["dopamine"] < 1.0
+    assert hs["cortisol_elevation"] > 1.0
+    assert hs["cortisol_suppression"] < 1.0
+
+
+def test_quad_suppression_social_science_map():
+    r = behavioral_quadruple_suppression("SouthKorea", 2024, 29.0, 5.8)
+    ssm = r["social_science_proxy_map"]
+    assert "men_dont_commit" in ssm
+    assert "women_too_picky" in ssm
+    assert "couples_too_busy" in ssm
+    assert "infertility_rising" in ssm
+
+
+def test_quad_suppression_in_report():
+    r = v16_country_tfr("SouthKorea", 2024)
+    assert "quadruple_suppression" in r
+    assert "social_science_proxy_map" in r
+    qs = r["quadruple_suppression"]
+    assert 0 < qs["p_total"] < 1.0
+
+
+def test_quad_suppression_no_tfr_change():
+    """Diagnostic only: predictions unchanged."""
+    assert abs(v16_predicted_tfr("SouthKorea", 2024) - 0.7115661545691994) < 1e-6
+    assert abs(v16_predicted_tfr("Finland", 2024) - 1.333547799551896) < 1e-6
+
+
+def test_social_science_proxy_map_structure():
+    assert "men_dont_commit" in SOCIAL_SCIENCE_PROXY_MAP
+    assert "women_too_picky" in SOCIAL_SCIENCE_PROXY_MAP
+    assert "couples_too_busy" in SOCIAL_SCIENCE_PROXY_MAP
+    assert "infertility_rising" in SOCIAL_SCIENCE_PROXY_MAP
+    assert "career_over_kids" in SOCIAL_SCIENCE_PROXY_MAP
+    for key, entry in SOCIAL_SCIENCE_PROXY_MAP.items():
+        assert "social_observation" in entry
+        assert "hormonal_substrate" in entry
+        assert "berm_parameter" in entry
+        assert "emf_link" in entry
