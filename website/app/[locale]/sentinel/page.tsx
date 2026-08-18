@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n";
 import Link from "next/link";
+import TemporalTimeline from "@/components/TemporalTimeline";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -36,6 +37,23 @@ interface LabBiasRow {
   observation: string;
   period: string;
   implication: string;
+}
+
+interface ExplanationRow {
+  explanation: string;
+  insects: "yes" | "no" | "partial";
+  amphibians: "yes" | "no" | "partial";
+  bees: "yes" | "no" | "partial";
+  birds: "yes" | "no" | "partial";
+  bats: "yes" | "no" | "partial";
+  labMammals: "yes" | "no" | "partial";
+  humans: "yes" | "no" | "partial";
+}
+
+interface TimelineEvent {
+  year: number;
+  label: string;
+  color: string;
 }
 
 /* ------------------------------------------------------------------ */
@@ -119,7 +137,99 @@ const t = {
     convergenceConclMathLinkText: "Mathematical Foundation",
     convergenceConclNoteAfter: ".",
 
+    /* temporal timeline */
+    timelineTitle: "Temporal Correlation Timeline",
+    timelineDesc:
+      "Move the slider to see how EMF infrastructure milestones and species decline events align temporally. Each decline onset matches an EMF deployment phase within 0–3 years.",
+    timelineEmfLabel: "EMF Infrastructure",
+    timelineDeclineLabel: "Species Decline",
+    timelineYearLabel: "Year",
+    timelineNote:
+      "Temporal coincidence is not causation. The mechanistic link (VGCC/Ca²⁺ conservation across phyla) provides the causal hypothesis; temporal alignment provides plausibility.",
+
+    /* convergence explanation table */
+    explTableTitle:
+      "Convergence Test: Can Any Conventional Explanation Cover All Species?",
+    explTableDesc:
+      "Each row is a conventional explanation proposed for population decline. Each column is a species group. The key observation: no single conventional explanation gets 'yes' across all columns. EMF via the VGCC mechanism is the only hypothesis that applies to all seven simultaneously.",
+    explThExplanation: "Conventional Explanation",
+    explColInsects: "Insects",
+    explColAmphibians: "Amphibians",
+    explColBees: "Bees",
+    explColBirds: "Birds",
+    explColBats: "Bats",
+    explColLabMammals: "Lab mammals",
+    explColHumans: "Humans",
+    explYes: "Yes",
+    explNo: "No",
+    explPartial: "Partial",
+    explNote:
+      "Only the EMF/VGCC row is 'yes' across all species. This does not prove EMF is the cause — it establishes that no conventional alternative can be the sole cause across all taxa.",
+
     /* --- data arrays --- */
+
+    timelineEmfEvents: [
+      { year: 1953, label: "TV broadcast", color: "#3B82F6" },
+      { year: 1970, label: "Microwave ovens", color: "#3B82F6" },
+      { year: 1983, label: "1G cellular", color: "#60A5FA" },
+      { year: 1991, label: "GSM 2G", color: "#2563EB" },
+      { year: 1997, label: "Wi-Fi 802.11", color: "#60A5FA" },
+      { year: 2001, label: "3G UMTS", color: "#2563EB" },
+      { year: 2007, label: "Smartphone era", color: "#1D4ED8" },
+      { year: 2009, label: "4G LTE", color: "#2563EB" },
+      { year: 2019, label: "5G NR", color: "#1D4ED8" },
+    ] as TimelineEvent[],
+
+    timelineDeclineEvents: [
+      { year: 1970, label: "Bird decline begins", color: "#F59E0B" },
+      { year: 1995, label: "Insect collapse (Krefeld)", color: "#EF4444" },
+      { year: 1998, label: "Amphibian enigmatic decline", color: "#F97316" },
+      { year: 2000, label: "Human sperm decline accel.", color: "#DC2626" },
+      { year: 2006, label: "CCD (bees) + WNS (bats)", color: "#EF4444" },
+    ] as TimelineEvent[],
+
+    explanationRows: [
+      {
+        explanation: "Pesticides / chemicals",
+        insects: "partial", amphibians: "partial", bees: "partial",
+        birds: "partial", bats: "no", labMammals: "no", humans: "partial",
+      },
+      {
+        explanation: "Climate change",
+        insects: "partial", amphibians: "partial", bees: "partial",
+        birds: "partial", bats: "partial", labMammals: "no", humans: "no",
+      },
+      {
+        explanation: "Disease / pathogens",
+        insects: "no", amphibians: "partial", bees: "partial",
+        birds: "no", bats: "partial", labMammals: "no", humans: "no",
+      },
+      {
+        explanation: "Habitat loss",
+        insects: "partial", amphibians: "partial", bees: "partial",
+        birds: "partial", bats: "partial", labMammals: "no", humans: "no",
+      },
+      {
+        explanation: "Light pollution",
+        insects: "partial", amphibians: "no", bees: "no",
+        birds: "partial", bats: "partial", labMammals: "no", humans: "partial",
+      },
+      {
+        explanation: "Education / economics",
+        insects: "no", amphibians: "no", bees: "no",
+        birds: "no", bats: "no", labMammals: "no", humans: "yes",
+      },
+      {
+        explanation: "Contraception",
+        insects: "no", amphibians: "no", bees: "no",
+        birds: "no", bats: "no", labMammals: "no", humans: "yes",
+      },
+      {
+        explanation: "EMF / VGCC mechanism",
+        insects: "yes", amphibians: "yes", bees: "yes",
+        birds: "yes", bats: "yes", labMammals: "yes", humans: "yes",
+      },
+    ] as ExplanationRow[],
 
     convergenceTable: [
       {
@@ -431,7 +541,99 @@ const t = {
     convergenceConclMathLinkText: "Matemaattinen perusta",
     convergenceConclNoteAfter: ".",
 
+    /* temporal timeline */
+    timelineTitle: "Ajallinen korrelaatioaikajana",
+    timelineDesc:
+      "Siirrä liukusäädintä nähdäksesi miten EMF-infrastruktuurin virstanpylväät ja lajien vähenemätapahtumat osuvat ajallisesti yhteen. Jokainen vähenemän alku osuu EMF-käyttöönottovaiheeseen 0–3 vuoden sisällä.",
+    timelineEmfLabel: "EMF-infrastruktuuri",
+    timelineDeclineLabel: "Lajien vähenemä",
+    timelineYearLabel: "Vuosi",
+    timelineNote:
+      "Ajallinen yhteensattuma ei ole kausaalisuus. Mekanistinen yhteys (VGCC/Ca²⁺-konservaatio pääjaksojen välillä) tarjoaa kausaalisen hypoteesin; ajallinen yhteneväisyys tarjoaa uskottavuuden.",
+
+    /* convergence explanation table */
+    explTableTitle:
+      "Konvergenssitesti: Voiko mikään perinteinen selitys kattaa kaikki lajit?",
+    explTableDesc:
+      "Jokainen rivi on perinteinen selitys populaation vähenemälle. Jokainen sarake on lajiryhmä. Keskeinen havainto: mikään yksittäinen perinteinen selitys ei saa 'kyllä' kaikkiin sarakkeisiin. EMF VGCC-mekanismin kautta on ainoa hypoteesi, joka soveltuu kaikkiin seitsemään samanaikaisesti.",
+    explThExplanation: "Perinteinen selitys",
+    explColInsects: "Hyönteiset",
+    explColAmphibians: "Sammakkoel.",
+    explColBees: "Mehiläiset",
+    explColBirds: "Linnut",
+    explColBats: "Lepakot",
+    explColLabMammals: "Laboratorio",
+    explColHumans: "Ihmiset",
+    explYes: "Kyllä",
+    explNo: "Ei",
+    explPartial: "Osittain",
+    explNote:
+      "Vain EMF/VGCC-rivi on 'kyllä' kaikkien lajien kohdalla. Tämä ei todista, että EMF on syy — se osoittaa, ettei mikään perinteinen vaihtoehto voi olla ainoa syy kaikkien taksonien osalta.",
+
     /* --- data arrays --- */
+
+    timelineEmfEvents: [
+      { year: 1953, label: "TV-lähetykset", color: "#3B82F6" },
+      { year: 1970, label: "Mikroaaltouunit", color: "#3B82F6" },
+      { year: 1983, label: "1G-matkapuhelimet", color: "#60A5FA" },
+      { year: 1991, label: "GSM 2G", color: "#2563EB" },
+      { year: 1997, label: "Wi-Fi 802.11", color: "#60A5FA" },
+      { year: 2001, label: "3G UMTS", color: "#2563EB" },
+      { year: 2007, label: "Älypuhelinaika", color: "#1D4ED8" },
+      { year: 2009, label: "4G LTE", color: "#2563EB" },
+      { year: 2019, label: "5G NR", color: "#1D4ED8" },
+    ] as TimelineEvent[],
+
+    timelineDeclineEvents: [
+      { year: 1970, label: "Lintujen vähenemä alkaa", color: "#F59E0B" },
+      { year: 1995, label: "Hyönteisromahdus (Krefeld)", color: "#EF4444" },
+      { year: 1998, label: "Sammakkoeläinten arvoituksellinen vähenemä", color: "#F97316" },
+      { year: 2000, label: "Ihmisten siittiövähenemä kiihtyy", color: "#DC2626" },
+      { year: 2006, label: "CCD (mehiläiset) + WNS (lepakot)", color: "#EF4444" },
+    ] as TimelineEvent[],
+
+    explanationRows: [
+      {
+        explanation: "Torjunta-aineet / kemikaalit",
+        insects: "partial", amphibians: "partial", bees: "partial",
+        birds: "partial", bats: "no", labMammals: "no", humans: "partial",
+      },
+      {
+        explanation: "Ilmastonmuutos",
+        insects: "partial", amphibians: "partial", bees: "partial",
+        birds: "partial", bats: "partial", labMammals: "no", humans: "no",
+      },
+      {
+        explanation: "Taudit / patogeenit",
+        insects: "no", amphibians: "partial", bees: "partial",
+        birds: "no", bats: "partial", labMammals: "no", humans: "no",
+      },
+      {
+        explanation: "Elinympäristön menetys",
+        insects: "partial", amphibians: "partial", bees: "partial",
+        birds: "partial", bats: "partial", labMammals: "no", humans: "no",
+      },
+      {
+        explanation: "Valosaaste",
+        insects: "partial", amphibians: "no", bees: "no",
+        birds: "partial", bats: "partial", labMammals: "no", humans: "partial",
+      },
+      {
+        explanation: "Koulutus / talous",
+        insects: "no", amphibians: "no", bees: "no",
+        birds: "no", bats: "no", labMammals: "no", humans: "yes",
+      },
+      {
+        explanation: "Ehkäisy",
+        insects: "no", amphibians: "no", bees: "no",
+        birds: "no", bats: "no", labMammals: "no", humans: "yes",
+      },
+      {
+        explanation: "EMF / VGCC-mekanismi",
+        insects: "yes", amphibians: "yes", bees: "yes",
+        birds: "yes", bats: "yes", labMammals: "yes", humans: "yes",
+      },
+    ] as ExplanationRow[],
 
     convergenceTable: [
       {
@@ -825,6 +1027,90 @@ export default async function SentinelPage({
         </div>
         <p className="text-xs text-foreground-muted mt-3">
           {d.temporalNote}
+        </p>
+      </section>
+
+      {/* Temporal Timeline (interactive) */}
+      <section className="mb-14">
+        <h2 className="text-lg font-semibold mb-4">{d.timelineTitle}</h2>
+        <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+          {d.timelineDesc}
+        </p>
+        <div className="border border-card-border rounded-lg p-4 bg-card-bg">
+          <TemporalTimeline
+            emfLabel={d.timelineEmfLabel}
+            declineLabel={d.timelineDeclineLabel}
+            emfEvents={d.timelineEmfEvents as TimelineEvent[]}
+            declineEvents={d.timelineDeclineEvents as TimelineEvent[]}
+            yearLabel={d.timelineYearLabel}
+          />
+        </div>
+        <p className="text-xs text-foreground-muted mt-3">
+          {d.timelineNote}
+        </p>
+      </section>
+
+      {/* Convergence explanation table */}
+      <section className="mb-14">
+        <h2 className="text-lg font-semibold mb-4">{d.explTableTitle}</h2>
+        <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+          {d.explTableDesc}
+        </p>
+        <div className="overflow-x-auto">
+          <table className="text-xs border-collapse w-full">
+            <thead>
+              <tr className="border-b border-card-border text-foreground-muted">
+                <th className="text-left py-2 pr-3">{d.explThExplanation}</th>
+                <th className="text-center py-2 px-1">{d.explColInsects}</th>
+                <th className="text-center py-2 px-1">{d.explColAmphibians}</th>
+                <th className="text-center py-2 px-1">{d.explColBees}</th>
+                <th className="text-center py-2 px-1">{d.explColBirds}</th>
+                <th className="text-center py-2 px-1">{d.explColBats}</th>
+                <th className="text-center py-2 px-1">{d.explColLabMammals}</th>
+                <th className="text-center py-2 px-1">{d.explColHumans}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {(d.explanationRows as ExplanationRow[]).map((row, i) => {
+                const isEmf = i === (d.explanationRows as ExplanationRow[]).length - 1;
+                const cells = [
+                  row.insects, row.amphibians, row.bees,
+                  row.birds, row.bats, row.labMammals, row.humans,
+                ];
+                return (
+                  <tr
+                    key={i}
+                    className={`border-b border-card-border/50 ${isEmf ? "bg-accent/10 font-semibold" : ""}`}
+                  >
+                    <td className={`py-2 pr-3 ${isEmf ? "text-accent" : "text-foreground-muted"}`}>
+                      {row.explanation}
+                    </td>
+                    {cells.map((cell, j) => (
+                      <td
+                        key={j}
+                        className={`py-2 px-1 text-center ${
+                          cell === "yes"
+                            ? "text-status-confirmed"
+                            : cell === "no"
+                              ? "text-status-refuted"
+                              : "text-status-partial"
+                        }`}
+                      >
+                        {cell === "yes"
+                          ? d.explYes
+                          : cell === "no"
+                            ? d.explNo
+                            : d.explPartial}
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-foreground-muted mt-3">
+          {d.explNote}
         </p>
       </section>
 
