@@ -128,6 +128,11 @@ export const PATHWAYS: Record<
     description:
       "Two independent biological pathways converge on oxytocin suppression under chronic EMF exposure. First, EMF activates the HPA axis (Pawlak 2025: d=1.88), elevating cortisol, which suppresses vagal tone (Porges 2001/2025). Reduced vagal tone diminishes the social engagement system and hypothalamic oxytocin release (Carter 2021). Second, EMF alters gut microbiome composition (Jin 2022), reducing Lactobacillus populations including L. reuteri. Since L. reuteri upregulates oxytocin via the vagus nerve (Erdman & Poutahidis 2016, MIT), its decline directly reduces systemic oxytocin. Both pathways are independently documented in peer-reviewed literature. Their convergence on oxytocin provides a mechanistic explanation for why pronatalist economic policies consistently fail: they target conscious decision-making, but the decline in reproductive motivation is biological.",
   },
+  GME: {
+    label: "RF protocol timing and biological windows",
+    description:
+      "An unexpected convergence: 3GPP's eDRX power-saving protocol defines periodic RF burst structures whose harmonics fall in the same 20-40 mHz frequency range where Zandieh et al. (2025) observed frequency-specific mitochondrial and ROS responses. The protocol timings were standardized for network engineering purposes; the biological window was identified from cell physiology experiments. Neither field was aware of the other. Whether this convergence is causal or coincidental is the subject of the R43 experimental prediction.",
+  },
 };
 
 // Evidence items organized by pathway
@@ -1203,5 +1208,35 @@ export const EVIDENCE: EvidenceItem[] = [
     finding:
       "SAR distribution in the head varies as a function of skull geometry. Demonstrates that identical external fields produce different internal dose patterns across individuals — the physical basis for anatomical susceptibility variation.",
     level: "E",
+  },
+  // ── GME: RF Protocol Timing ──
+  {
+    pathway: "GME",
+    study:
+      "Zandieh A et al. Frequency-dependent mitochondrial and ROS responses to ELF fields (Nature Sci Rep)",
+    year: 2025,
+    finding:
+      "Cells show frequency-specific ROS and mitochondrial membrane potential (TMRM) responses at 20-40 mHz. Different frequencies within this narrow band produce distinct response patterns, demonstrating biological band-pass behavior at the same frequencies as 3GPP eDRX timing harmonics.",
+    level: "L*",
+    n: 1,
+  },
+  {
+    pathway: "GME",
+    study:
+      "3GPP TS 24.008: eDRX/PTW timing specification",
+    year: 2024,
+    finding:
+      "7 of 16 standardized PTW values (43.75%) produce fundamental frequencies inside the R42 window [20.45, 39.55] mHz. PTW = 33.28s → f₁ = 30.048 mHz, 0.16% from R42 center. Timing values were designed for energy efficiency, not biology — convergence is coincidental but testable.",
+    level: "L",
+  },
+  {
+    pathway: "GME",
+    study:
+      "Lindgren J, Kovacs A, Liukkonen J. Full-Weyl metric and self-mixing of electromagnetic fields",
+    year: 2025,
+    finding:
+      "Mathematical derivation of quadratic self-mixing: u²(t) contains |x(t)|² baseband branch. RF envelope transfers to biological frequencies via geometric nonlinearity without demodulation. Single paper, not yet replicated.",
+    level: "L*",
+    n: 1,
   },
 ];

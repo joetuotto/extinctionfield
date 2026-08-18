@@ -23,6 +23,7 @@ const t = {
       { id: "falsification", num: "§9", label: "Falsification conditions" },
       { id: "pharmacological", num: "§10", label: "Pharmacological validation" },
       { id: "individual-susceptibility", num: "§11", label: "Individual susceptibility" },
+      { id: "gme-multiwave", num: "§12", label: "GME multiwave theory" },
     ],
     pageTitle: "Mathematical Foundation",
     pageSubtitle:
@@ -288,6 +289,32 @@ const t = {
     s11d8:
       "For population-level TFR prediction, BERM integrates over the genotype frequency distribution (Hardy-Weinberg) × anatomical demographics × exposure-duration distribution. The mean individual modifier is 1.0 by construction — it cancels in the population average. The DIAGNOSTIC value lies in the tails: high-susceptibility individuals (AA, young, exhaustion phase) may have combined modifiers of 5–10×, explaining why a subpopulation reports symptoms while the majority does not.",
     s11d9Link: "→ Individual susceptibility evidence",
+
+    // S12 GME Multiwave Theory
+    s12Title: "GME Multiwave Theory and 3GPP-R42 Convergence",
+    s12Intro:
+      "The Geometric Mixing Effect (GME) extends BERM's physical foundation from static fields to the actual modulated structure of modern wireless signals. In Lindgren's Full-Weyl metric, the squared field u²(t) naturally contains a baseband branch: the RF envelope transfers to biological frequencies without any demodulation electronics. The key prediction is that the slow periodic structure of wireless protocols — not the GHz carrier — determines the biological impact.",
+    s12P1Title: "GME self-mixing",
+    s12P1:
+      "In the Full-Weyl metric, the background field curvature R_G and nonlinear coupling coefficient C(ᾱ) determine how RF envelope modulation couples to baseband biological frequencies:",
+    s12P2:
+      "C(ᾱ) crosses zero at ᾱ = 1/√2 and diverges as ᾱ → 0. The baseband component of |x(t)|² is scaled by K_G² = C²(ᾱ), providing the coupling strength from RF modulation to cellular response.",
+    s12P3Title: "R42 biological window",
+    s12P3:
+      "Zandieh et al. (2025, Nature Scientific Reports) demonstrated that cells respond frequency-specifically to fields in the 20–40 mHz range, with distinct ROS and mitochondrial membrane potential (TMRM) patterns at different frequencies within this band. The R42 spectral metric Ξ quantifies how much of an RF signal's envelope energy falls inside this biological window:",
+    s12P4:
+      "where A_n are the Fourier coefficients of the RF envelope and W(f) is a Gaussian window centered at 30 mHz (σ = 5 mHz). Higher Ξ predicts stronger biological response.",
+    s12P5Title: "3GPP-R42 convergence",
+    s12P5:
+      "3GPP TS 24.008 defines extended Discontinuous Reception (eDRX) cycles for IoT power management. These timing values were chosen by network engineers for energy efficiency without any knowledge of biological frequency windows. An unexpected convergence: 7 of 16 standardized PTW values (43.75%) produce fundamentals inside the R42 window. The closest match is PTW = 33.28s → f₁ = 30.048 mHz, only 0.16% from the R42 center.",
+    s12P6:
+      "This convergence is coincidental but testable. Three independent lines converge: (A) telecom signals contain structured envelopes at 20–40 mHz (3GPP specification), (B) cells respond frequency-specifically at 20–40 mHz (Zandieh 2025), (C) GME self-mixing transfers RF envelope to baseband (Full-Weyl exact solution). The untested link is A+C → B: whether an RF carrier with a 33s-period envelope reproduces the cellular response seen with direct ELF stimulation.",
+    s12P7Title: "R43 prediction (locked)",
+    s12P7:
+      "BERM predicts a band-pass biological response as a function of RF burst period T, with maximum near T = 33.3s (matching PTW = 33.28s). This is quantified by the Ξ_R42 spectral metric. Six falsification criteria (F1–F6) are defined: any single criterion is sufficient to falsify the envelope hypothesis.",
+    s12Warning:
+      "Epistemic level: L* (single source, not replicated). Lindgren's paper is one, not replicated. Full-Weyl derivation is mathematically consistent but based on an unconfirmed premise. The 3GPP convergence may be coincidental (p ≈ 0.01–0.13). R43 experiment is the only way to distinguish coincidence from mechanism. All envelope-related claims on this site are marked as THEORETICAL.",
+    s12EvidenceLink: "→ RF Protocol Timing and Biological Windows",
   },
   fi: {
     meta: {
@@ -307,6 +334,7 @@ const t = {
       { id: "falsification", num: "§9", label: "Falsifiointiehdot" },
       { id: "pharmacological", num: "§10", label: "Farmakologinen validointi" },
       { id: "individual-susceptibility", num: "§11", label: "Yksilöllinen herkkyys" },
+      { id: "gme-multiwave", num: "§12", label: "GME-monikaistoiteoria" },
     ],
     pageTitle: "Matemaattinen perusta",
     pageSubtitle:
@@ -573,6 +601,32 @@ const t = {
     s11d8:
       "Populaatiotason TFR-ennusteessa BERM integroi genotyyppifrekvenssisjakauman (Hardy-Weinberg) × anatominen demografia × altistuskeston jakauman yli. Keskimääräinen yksilökerroin on 1,0 konstruktion mukaan — se supistuu populaatiokeskiarvossa. DIAGNOSTINEN arvo on hännissä: korkean herkkyyden yksilöillä (AA, nuoret, uupumusvaihe) yhdistetty kerroin voi olla 5–10×, mikä selittää miksi osajoukko raportoi oireita enemmistön ollessa oireeton.",
     s11d9Link: "→ Yksilöllisen herkkyyden todisteet",
+
+    // S12 GME-monikaistoiteoria
+    s12Title: "GME-monikaistoiteoria ja 3GPP-R42-konvergenssi",
+    s12Intro:
+      "Geometrinen sekoitusvaikutus (GME) laajentaa BERM:n fysikaalista perustaa staattisista kentistä modernien langattomien signaalien todelliseen moduloituun rakenteeseen. Lindgrenin Full-Weyl-metriikassa neliöity kenttä u²(t) sisältää luonnostaan basebandhaaran: RF-envelope siirtyy biologisille taajuuksille ilman demodulointielektroniikkaa. Keskeinen ennuste on, että langattomien protokollien hidas periodinen rakenne — ei GHz-kantoaalto — määrittää biologisen vaikutuksen.",
+    s12P1Title: "GME-itsesekoitus",
+    s12P1:
+      "Full-Weyl-metriikassa taustakentän kaarevuus R_G ja epälineaarinen kytkentäkerroin C(ᾱ) määrittävät, miten RF-envelopen modulaatio kytkeytyy basebandiin biologisilla taajuuksilla:",
+    s12P2:
+      "C(ᾱ) ylittää nollan kohdassa ᾱ = 1/√2 ja divergoi kun ᾱ → 0. |x(t)|²:n baseband-komponentti skaalataan K_G² = C²(ᾱ):lla, mikä antaa kytkentävahvuuden RF-modulaatiosta soluvasteeseen.",
+    s12P3Title: "R42-biologinen ikkuna",
+    s12P3:
+      "Zandieh ym. (2025, Nature Scientific Reports) osoittivat, että solut reagoivat taajuusspesifisesti 20–40 mHz:n alueella, erilaisilla ROS- ja mitokondrioiden kalvopotentiaali (TMRM) -kuvioilla eri taajuuksilla tämän kaistan sisällä. R42-spektraalimetriikka Ξ kvantifioi kuinka paljon RF-signaalin envelopen energiaa osuu tähän biologiseen ikkunaan:",
+    s12P4:
+      "missä A_n ovat RF-envelopen Fourier-kertoimet ja W(f) on gaussinen ikkuna keskitettynä 30 mHz:iin (σ = 5 mHz). Suurempi Ξ ennustaa vahvempaa biologista vastetta.",
+    s12P5Title: "3GPP-R42-konvergenssi",
+    s12P5:
+      "3GPP TS 24.008 määrittelee laajennetut jatkuvan vastaanoton (eDRX) syklit IoT-virranhallinnan tarpeisiin. Nämä ajoitusarvot valittiin verkkoinsinöörien toimesta energiatehokkuuden vuoksi ilman tietoa biologisista taajuusikkunoista. Odottamaton konvergenssi: 7/16 standardoidusta PTW-arvosta (43,75 %) tuottaa fundamentaaleja R42-ikkunan sisällä. Lähin osuma: PTW = 33,28s → f₁ = 30,048 mHz, vain 0,16 % R42-keskuksesta.",
+    s12P6:
+      "Tämä konvergenssi on koinsidenssi mutta testattavissa. Kolme riippumatonta linjaa konvergoivat: (A) telecomsignaalit sisältävät rakenteellisia envelopeja 20–40 mHz:n alueella (3GPP-spesifikaatio), (B) solut reagoivat taajuusspesifisesti 20–40 mHz:llä (Zandieh 2025), (C) GME-itsesekoitus siirtää RF-envelopen basebandiin (Full-Weyl-eksaktit ratkaisut). Testaamaton linkki on A+C → B: tuottaako RF-kantoaalto 33s-envelopella saman soluvasteen kuin suora ELF-stimulaatio.",
+    s12P7Title: "R43-ennuste (lukittu)",
+    s12P7:
+      "BERM ennustaa kaistoitetun biologisen vasteen RF-pulssijakson T funktiona, maksimikohdassa T ≈ 33,3s (vastaten PTW = 33,28s). Tämä kvantifioidaan Ξ_R42-spektraalimetriikalla. Kuusi falsifikaatiokriteeriä (F1–F6) on määritelty: mikä tahansa yksittäinen kriteeri riittää kumoamaan envelope-hypoteesin.",
+    s12Warning:
+      "Episteeminen taso: L* (yksittäinen lähde, ei replikoitu). Lindgrenin paperi on yksi, ei replikoitu. Full-Weyl-johto on matemaattisesti konsistentti mutta perustuu vahvistamattomaan premissiin. 3GPP-konvergenssi voi olla sattumaa (p ≈ 0,01–0,13). R43-koe on ainoa tapa erottaa sattuma mekanismista. Kaikki envelope-väitteet sivustolla on merkitty TEOREETTISIKSI.",
+    s12EvidenceLink: "→ RF-protokolla-ajoitus ja biologiset ikkunat",
   },
 };
 
@@ -1346,6 +1400,105 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 </Link>
               </p>
             </Derivation>
+          </section>
+
+          {/* S12 GME Multiwave Theory */}
+          <section id="gme-multiwave">
+            <h2 className="text-xl font-bold mb-2">§12 — {d.s12Title}</h2>
+            <p className="mb-4">{d.s12Intro}</p>
+
+            <h3 className="font-semibold mt-6 mb-2">{d.s12P1Title}</h3>
+            <p className="mb-3">{d.s12P1}</p>
+            <div className="text-center my-4 space-y-2">
+              <MathBlock tex="R_G(\bar{\alpha}) = \frac{3\bar{\alpha}^2}{1 + \bar{\alpha}^2}" />
+              <MathBlock tex="C(\bar{\alpha}) = \frac{2\bar{\alpha}^2 - 1}{\bar{\alpha}(1 + \bar{\alpha}^2)}" />
+            </div>
+            <p className="mb-4">{d.s12P2}</p>
+
+            <h3 className="font-semibold mt-6 mb-2">{d.s12P3Title}</h3>
+            <p className="mb-3">{d.s12P3}</p>
+            <div className="text-center my-4">
+              <MathBlock tex="\Xi_{R42} = K_G^2 \sum_{n=1}^{N} A_n^2 \, W\!\left(\frac{n}{T}\right), \quad W(f) = e^{-\frac{(f - f_0)^2}{2\sigma^2}}" />
+            </div>
+            <p className="mb-4">{d.s12P4}</p>
+
+            <h3 className="font-semibold mt-6 mb-2">{d.s12P5Title}</h3>
+            <p className="mb-3">{d.s12P5}</p>
+
+            <div className="overflow-x-auto my-4">
+              <table className="w-full text-sm border border-border">
+                <thead>
+                  <tr className="bg-card-bg">
+                    <th className="text-left px-3 py-2 border-b border-border">PTW (s)</th>
+                    <th className="text-left px-3 py-2 border-b border-border">f₁ (mHz)</th>
+                    <th className="text-left px-3 py-2 border-b border-border">{locale === "fi" ? "Ero R42:sta" : "R42 deviation"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { ptw: 25.60, f: 39.063, dev: "30.21%" },
+                    { ptw: 28.16, f: 35.511, dev: "18.37%" },
+                    { ptw: 30.72, f: 32.552, dev: "8.51%" },
+                    { ptw: 33.28, f: 30.048, dev: "0.16%" },
+                    { ptw: 35.84, f: 27.902, dev: "6.99%" },
+                    { ptw: 38.40, f: 26.042, dev: "13.19%" },
+                    { ptw: 40.96, f: 24.414, dev: "18.62%" },
+                  ].map((row) => (
+                    <tr key={row.ptw} className={row.ptw === 33.28 ? "bg-green-50 dark:bg-green-950/30 font-semibold" : ""}>
+                      <td className="px-3 py-1.5 border-b border-border">{row.ptw}</td>
+                      <td className="px-3 py-1.5 border-b border-border">{row.f}</td>
+                      <td className="px-3 py-1.5 border-b border-border">{row.dev}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p className="mb-4">{d.s12P6}</p>
+
+            <Derivation>
+              <h3 className="font-semibold mb-2">{d.s12P7Title}</h3>
+              <p className="mb-3">{d.s12P7}</p>
+              <div className="overflow-x-auto my-3">
+                <table className="w-full text-sm border border-border">
+                  <thead>
+                    <tr className="bg-card-bg">
+                      <th className="text-left px-3 py-2 border-b border-border">{locale === "fi" ? "Ehto" : "Condition"}</th>
+                      <th className="text-left px-3 py-2 border-b border-border">T (s)</th>
+                      <th className="text-left px-3 py-2 border-b border-border">Ξ_R42</th>
+                      <th className="text-left px-3 py-2 border-b border-border">Ξ_norm</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { id: "C4_center", T: 33.28, xi: 0.10132, norm: 1.0 },
+                      { id: "C5_edrx", T: 40.96, xi: 0.05428, norm: 0.536 },
+                      { id: "C3_inside", T: 25.60, xi: 0.01960, norm: 0.194 },
+                      { id: "C2_edge_hi", T: 20.48, xi: 0.00008, norm: 0.001 },
+                      { id: "C1_fast", T: 10.24, xi: 0.0, norm: 0.0 },
+                    ].map((row) => (
+                      <tr key={row.id} className={row.id === "C4_center" ? "bg-green-50 dark:bg-green-950/30" : ""}>
+                        <td className="px-3 py-1.5 border-b border-border font-mono text-xs">{row.id}</td>
+                        <td className="px-3 py-1.5 border-b border-border">{row.T}</td>
+                        <td className="px-3 py-1.5 border-b border-border font-mono text-xs">{row.xi.toFixed(5)}</td>
+                        <td className="px-3 py-1.5 border-b border-border">{row.norm.toFixed(3)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Derivation>
+
+            <div className="mt-4 p-3 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded text-sm">
+              <p className="font-semibold mb-1">{locale === "fi" ? "Episteeminen varoitus" : "Epistemic warning"}</p>
+              <p>{d.s12Warning}</p>
+            </div>
+
+            <p className="text-xs text-accent mt-3">
+              <Link href={`${lp}/evidence#rf-protocol-timing`} className="hover:underline">
+                {d.s12EvidenceLink}
+              </Link>
+            </p>
           </section>
     </div>
   );

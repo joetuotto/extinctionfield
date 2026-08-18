@@ -441,6 +441,11 @@ const pathwaysFi: Record<string, { label: string; description: string }> = {
     description:
       "EMF-herkkyys vaihtelee yksilöiden välillä VGCC-polymorfismien (CACNA1C rs1006737), anatomisten erojen (kallon paksuus, rasvakerros, vesipitoisuus) ja kumulatiivisen allostaattisen kuormituksen (Selye-vaihe) vuoksi. Tämä selittää EHS-prevalenssin (~3–10 %), provokaatiotutkimusten nollatulokset ja objektiiviset biomarkkerilöydökset (Belpomme 2015/2022).",
   },
+  GME: {
+    label: "RF-protokolla-ajoitus ja biologiset ikkunat",
+    description:
+      "Odottamaton konvergenssi: 3GPP:n eDRX-virransäästöprotokolla määrittelee periodisia RF-pulssi-rakenteita, joiden harmoniset osuvat samalle 20–40 mHz:n taajuusalueelle, jossa Zandieh ym. (2025) havaitsivat taajuusspesifisiä mitokondriaali- ja ROS-vasteita. Protokolla-ajoitukset standardoitiin verkkoteknisiin tarkoituksiin; biologinen ikkuna tunnistettiin solufysiologian kokeista. Kumpikaan ala ei tiennyt toisesta. Onko tämä konvergenssi kausaalista vai sattumanvaraista, on R43-kokeen aihe.",
+  },
 };
 
 export async function generateMetadata({
@@ -579,7 +584,8 @@ export default async function EvidencePage({
                 pKey === "RW" ||
                 pKey === "IS" ||
                 pKey === "OT" ||
-                pKey === "T_BE"
+                pKey === "T_BE" ||
+                pKey === "GME"
                   ? ""
                   : `${locale === "fi" ? "Reitti" : "Pathway"} ${pKey}: `}
                 {pathway.label}

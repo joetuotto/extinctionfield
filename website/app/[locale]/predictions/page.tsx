@@ -32,6 +32,19 @@ const t = {
     auditGitLink: "View git history on GitHub",
     methodology:
       "Methodology: Confidence intervals are derived from the BERM model using Monte Carlo simulation over parameter uncertainty. CI bounds are locked at the first version and never widened. Central estimates may be updated when the model structure improves (documented transparently in version history). Predictions are evaluated against official statistical sources (UN, World Bank, national statistics offices).",
+    labTitle: "Laboratory Predictions (THEORETICAL)",
+    labSubtitle: "These predictions derive from GME multiwave theory and require experimental verification. Epistemic level: L* (single source, not replicated). The R43 prediction is locked but the underlying theory is not yet validated.",
+    r43Title: "R43: Band-pass biological response",
+    r43Desc: "RF envelope self-mixing (GME) predicts that pulsed RF exposure produces maximum biological response when the pulse period places spectral energy inside the R42 window (20–40 mHz). The predicted ordering of biological effect by pulse timing is locked below.",
+    r43Chain: "Three-stage evidence chain",
+    r43ChainA: "A: 3GPP TS 24.008 eDRX/PTW timing (documented standard)",
+    r43ChainB: "B: Zandieh 2025 ROS/mitochondrial response at 20–40 mHz (experimental, L*)",
+    r43ChainC: "C: GME quadratic self-mixing (mathematical derivation)",
+    r43ChainMissing: "Missing link: A + C → B — this is the experiment R43 predicts",
+    r43Conditions: "Locked condition ordering (Ξᵣ₄₂ descending)",
+    r43Falsification: "Falsification criteria",
+    r43Warning: "THEORETICAL: GME envelope theory is L*-level (single-source, not replicated). The 3GPP timing convergence may be coincidental. This prediction is locked for transparency, not because the theory is established.",
+    r43DataLink: "Full preregistration data (JSON)",
   },
   fi: {
     title: "Ennusterekisteri",
@@ -61,6 +74,19 @@ const t = {
     auditGitLink: "Nayta git-historia GitHubissa",
     methodology:
       "Menetelmä: Luottamusvälit johdetaan BERM-mallista Monte Carlo -simulaatiolla parametriepävarmuuden yli. Luottamusvälin rajat lukitaan ensimmäisessä versiossa eikä niitä laajenneta. Keskiarvioita voidaan päivittää mallirakenteen parantuessa (dokumentoidaan läpinäkyvästi versiohistoriassa). Ennusteita arvioidaan virallisia tilastolähteitä vasten (YK, Maailmanpankki, kansalliset tilastovirastot).",
+    labTitle: "Laboratorioennusteet (TEOREETTINEN)",
+    labSubtitle: "Nämä ennusteet perustuvat GME-monikaistoiteoriaan ja vaativat kokeellisen vahvistuksen. Episteeminen taso: L* (yksittäinen lähde, ei replikoitu). R43-ennuste on lukittu, mutta taustateoria ei ole vielä validoitu.",
+    r43Title: "R43: Kaistanpäästö-biologinen vaste",
+    r43Desc: "RF-verhokäyrän itsesekoitus (GME) ennustaa, että pulssitettu RF-altistus tuottaa suurimman biologisen vasteen, kun pulssijakso sijoittaa spektraalienergian R42-ikkunaan (20–40 mHz). Ennustettu biologisen vasteen järjestys pulssijakson mukaan on lukittu alla.",
+    r43Chain: "Kolmivaiheinen todistusketju",
+    r43ChainA: "A: 3GPP TS 24.008 eDRX/PTW-ajoitus (dokumentoitu standardi)",
+    r43ChainB: "B: Zandieh 2025 ROS/mitokondriaalinen vaste 20–40 mHz (kokeellinen, L*)",
+    r43ChainC: "C: GME neliöllinen itsesekoitus (matemaattinen johtaminen)",
+    r43ChainMissing: "Puuttuva linkki: A + C → B — tämä on koe, jonka R43 ennustaa",
+    r43Conditions: "Lukittu olosuhdejärjestys (Ξᵣ₄₂ laskeva)",
+    r43Falsification: "Falsifikaatiokriteerit",
+    r43Warning: "TEOREETTINEN: GME-verhokäyräteoria on L*-tason (yksittäinen lähde, ei replikoitu). 3GPP-ajoituksen yhteensopivuus voi olla sattumaa. Tämä ennuste on lukittu läpinäkyvyyden vuoksi, ei siksi että teoria olisi vakiintunut.",
+    r43DataLink: "Täydet esirekisteröintitiedot (JSON)",
   },
 } as const;
 
@@ -342,6 +368,125 @@ export default async function PredictionsPage({
           />
         ))}
       </div>
+
+      {/* R43 Laboratory Prediction */}
+      <section id="r43" className="mt-16 border-t border-border pt-10">
+        <div className="mb-6">
+          <h2 className="text-xl font-bold tracking-tight mb-2">{d.labTitle}</h2>
+          <p className="text-sm text-foreground-muted max-w-2xl leading-relaxed">
+            {d.labSubtitle}
+          </p>
+        </div>
+
+        <div className="border border-status-partial/30 bg-card-bg rounded-lg p-6 max-w-4xl">
+          <div className="flex items-start justify-between mb-4">
+            <h3 className="text-lg font-semibold">{d.r43Title}</h3>
+            <span className="inline-block text-xs font-medium px-2 py-0.5 rounded bg-status-pending/20 text-status-pending">
+              {d.pending}
+            </span>
+          </div>
+
+          <p className="text-sm text-foreground-muted leading-relaxed mb-6">
+            {d.r43Desc}
+          </p>
+
+          {/* Three-stage evidence chain */}
+          <div className="mb-6">
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-foreground-muted mb-2">
+              {d.r43Chain}
+            </h4>
+            <div className="space-y-1.5 text-sm">
+              <p className="text-foreground-muted">{d.r43ChainA}</p>
+              <p className="text-foreground-muted">{d.r43ChainB}</p>
+              <p className="text-foreground-muted">{d.r43ChainC}</p>
+              <p className="text-accent font-medium mt-2">{d.r43ChainMissing}</p>
+            </div>
+          </div>
+
+          {/* Locked conditions table */}
+          <div className="mb-6">
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-foreground-muted mb-2">
+              {d.r43Conditions}
+            </h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left text-xs text-foreground-muted">
+                    <th className="py-2 pr-4">ID</th>
+                    <th className="py-2 pr-4">T (s)</th>
+                    <th className="py-2 pr-4">Label</th>
+                    <th className="py-2 pr-4 text-right">{"Ξ"}&#x1D63;&#x2084;&#x2082;</th>
+                    <th className="py-2 text-right">{"Ξ"} norm</th>
+                  </tr>
+                </thead>
+                <tbody className="font-mono-num">
+                  {[
+                    { id: "C4", T: "33.28", label: "R42 center (0.16%)", xi: "0.1013", norm: "1.000" },
+                    { id: "C5", T: "40.96", label: "eDRX standard", xi: "0.0543", norm: "0.536" },
+                    { id: "C3", T: "25.60", label: "R42 inside", xi: "0.0196", norm: "0.194" },
+                    { id: "C8", T: "100.0", label: "NB-IoT typical", xi: "0.0113", norm: "0.112" },
+                    { id: "C6", T: "81.92", label: "Long eDRX", xi: "0.0049", norm: "0.048" },
+                    { id: "C7", T: "163.84", label: "Very long eDRX", xi: "0.0049", norm: "0.048" },
+                    { id: "C2", T: "20.48", label: "R42 lower edge", xi: "0.0001", norm: "0.001" },
+                    { id: "C1", T: "10.24", label: "Fast (below R42)", xi: "0.0000", norm: "0.000" },
+                  ].map((row) => (
+                    <tr key={row.id} className="border-b border-border/50">
+                      <td className="py-1.5 pr-4 font-semibold">{row.id}</td>
+                      <td className="py-1.5 pr-4">{row.T}</td>
+                      <td className="py-1.5 pr-4 font-sans text-foreground-muted">{row.label}</td>
+                      <td className="py-1.5 pr-4 text-right">{row.xi}</td>
+                      <td className="py-1.5 text-right">{row.norm}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Falsification criteria */}
+          <div className="mb-6">
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-foreground-muted mb-2">
+              {d.r43Falsification}
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+              {[
+                { id: "F1", desc: locale === "fi" ? "Monotoninen SAR-vaste (ei kaistanpäästöä)" : "Monotonic SAR response (no band-pass)", kills: locale === "fi" ? "R42 ei funktionaalinen" : "R42 non-functional" },
+                { id: "F2", desc: locale === "fi" ? "CW > kaikki pulssitetut" : "CW > all pulsed conditions", kills: locale === "fi" ? "Verhokäyrä irrelevantti" : "Envelope irrelevant" },
+                { id: "F3", desc: locale === "fi" ? "Valesignaali >= kaikki" : "Sham >= all", kills: locale === "fi" ? "Ei RF-biologista vaikutusta" : "No RF-biological effect" },
+                { id: "F4", desc: locale === "fi" ? "Maksimi T=[25,50]s ulkopuolella" : "Maximum outside T=[25,50]s", kills: locale === "fi" ? "R42-ikkuna väärässä paikassa" : "R42 window misplaced" },
+                { id: "F5", desc: locale === "fi" ? "Spearman rho < 0.5 Ξ(T) vs vaste" : "Spearman rho < 0.5 Xi(T) vs response", kills: locale === "fi" ? "Spektrikampateoria väärä" : "Spectral comb theory wrong" },
+                { id: "F6", desc: locale === "fi" ? "Ei p < 0.05 (Bonferroni) vs valesignaali" : "No p < 0.05 (Bonferroni) vs sham", kills: locale === "fi" ? "Riittämätön vaikutuskoko" : "Insufficient effect size" },
+              ].map((f) => (
+                <div key={f.id} className="flex gap-2 text-xs text-foreground-muted">
+                  <span className="font-mono-num font-semibold text-status-refuted shrink-0">{f.id}</span>
+                  <span>{f.desc} &rarr; {f.kills}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Warning box */}
+          <div className="border border-status-partial/40 bg-status-partial/5 rounded-lg p-4 mb-4">
+            <p className="text-xs text-status-partial leading-relaxed font-medium">
+              {d.r43Warning}
+            </p>
+          </div>
+
+          {/* Metadata */}
+          <div className="flex flex-wrap gap-x-6 gap-y-1 text-[11px] text-foreground-muted font-mono-num">
+            <span>{d.locked}: 2026-08-18</span>
+            <span>{d.model}: v17.1</span>
+            <a
+              href="/data/r43_preregistration.json"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:underline"
+            >
+              {d.r43DataLink} &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
 
       <section id="audit-trail" className="mt-12 border-t border-border pt-8 mb-10">
         <h2 className="text-lg font-semibold mb-4">{d.auditTitle}</h2>

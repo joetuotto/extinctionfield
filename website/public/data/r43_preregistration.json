@@ -1,0 +1,216 @@
+{
+  "locked_date": "2026-08-18",
+  "model_version": "v17.1",
+  "conditions": [
+    {
+      "id": "C4_center",
+      "T_s": 33.28,
+      "label": "R42 center (0.16%)",
+      "xi_r42": 0.1013165,
+      "xi_norm": 1.0
+    },
+    {
+      "id": "C5_edrx",
+      "T_s": 40.96,
+      "label": "eDRX standard",
+      "xi_r42": 0.05428465,
+      "xi_norm": 0.5358
+    },
+    {
+      "id": "C3_inside",
+      "T_s": 25.6,
+      "label": "R42 inside",
+      "xi_r42": 0.01960368,
+      "xi_norm": 0.1935
+    },
+    {
+      "id": "C8_nbiot",
+      "T_s": 100.0,
+      "label": "NB-IoT typical",
+      "xi_r42": 0.01129326,
+      "xi_norm": 0.1115
+    },
+    {
+      "id": "C6_long",
+      "T_s": 81.92,
+      "label": "Long eDRX",
+      "xi_r42": 0.00486489,
+      "xi_norm": 0.048
+    },
+    {
+      "id": "C7_vlong",
+      "T_s": 163.84,
+      "label": "Very long eDRX",
+      "xi_r42": 0.00484556,
+      "xi_norm": 0.0478
+    },
+    {
+      "id": "C2_edge_hi",
+      "T_s": 20.48,
+      "label": "R42 lower edge",
+      "xi_r42": 8.444e-05,
+      "xi_norm": 0.0008
+    },
+    {
+      "id": "C1_fast",
+      "T_s": 10.24,
+      "label": "Fast (below R42)",
+      "xi_r42": 0.0,
+      "xi_norm": 0.0
+    }
+  ],
+  "falsification_criteria": [
+    {
+      "id": "F1",
+      "desc": "Monotonic SAR response (no band-pass)",
+      "kills": "R42 non-functional"
+    },
+    {
+      "id": "F2",
+      "desc": "CW > all pulsed conditions",
+      "kills": "Envelope irrelevant"
+    },
+    {
+      "id": "F3",
+      "desc": "Sham >= all",
+      "kills": "No RF-biological effect"
+    },
+    {
+      "id": "F4",
+      "desc": "Maximum outside T=[25,50]s",
+      "kills": "R42 window misplaced"
+    },
+    {
+      "id": "F5",
+      "desc": "Spearman rho < 0.5 Xi(T) vs response",
+      "kills": "Spectral comb theory wrong"
+    },
+    {
+      "id": "F6",
+      "desc": "No p < 0.05 (Bonferroni) vs sham",
+      "kills": "Insufficient effect size"
+    }
+  ],
+  "three_stage_chain": {
+    "A": "3GPP TS 24.008 eDRX/PTW timing (documented)",
+    "B": "Zandieh 2025 ROS/mitochondrial 20-40 mHz response (experimental)",
+    "C": "GME quadratic self-mixing (mathematical)",
+    "missing": "A+C -> B (this experiment)"
+  },
+  "threegpp_convergence": {
+    "edrx_in_r42": [
+      {
+        "T_s": 40.96,
+        "f1_mHz": 24.414,
+        "deviation_pct": 18.62
+      }
+    ],
+    "ptw_in_r42": [
+      {
+        "PTW_s": 25.6,
+        "f1_mHz": 39.062,
+        "deviation_pct": 30.21
+      },
+      {
+        "PTW_s": 28.16,
+        "f1_mHz": 35.511,
+        "deviation_pct": 18.37
+      },
+      {
+        "PTW_s": 30.72,
+        "f1_mHz": 32.552,
+        "deviation_pct": 8.51
+      },
+      {
+        "PTW_s": 33.28,
+        "f1_mHz": 30.048,
+        "deviation_pct": 0.16
+      },
+      {
+        "PTW_s": 35.84,
+        "f1_mHz": 27.902,
+        "deviation_pct": 6.99
+      },
+      {
+        "PTW_s": 38.4,
+        "f1_mHz": 26.042,
+        "deviation_pct": 13.19
+      },
+      {
+        "PTW_s": 40.96,
+        "f1_mHz": 24.414,
+        "deviation_pct": 18.62
+      }
+    ],
+    "edrx_harmonics_in_r42": [
+      {
+        "T_s": 81.92,
+        "harmonic": 2,
+        "fn_mHz": 24.414,
+        "deviation_pct": 18.62
+      },
+      {
+        "T_s": 81.92,
+        "harmonic": 3,
+        "fn_mHz": 36.621,
+        "deviation_pct": 22.07
+      },
+      {
+        "T_s": 163.84,
+        "harmonic": 4,
+        "fn_mHz": 24.414,
+        "deviation_pct": 18.62
+      },
+      {
+        "T_s": 163.84,
+        "harmonic": 5,
+        "fn_mHz": 30.518,
+        "deviation_pct": 1.73
+      },
+      {
+        "T_s": 163.84,
+        "harmonic": 6,
+        "fn_mHz": 36.621,
+        "deviation_pct": 22.07
+      },
+      {
+        "T_s": 327.68,
+        "harmonic": 7,
+        "fn_mHz": 21.362,
+        "deviation_pct": 28.79
+      },
+      {
+        "T_s": 327.68,
+        "harmonic": 8,
+        "fn_mHz": 24.414,
+        "deviation_pct": 18.62
+      },
+      {
+        "T_s": 327.68,
+        "harmonic": 9,
+        "fn_mHz": 27.466,
+        "deviation_pct": 8.45
+      }
+    ],
+    "summary": {
+      "edrx_total": 10,
+      "edrx_fundamental_in_r42": 1,
+      "edrx_harmonics_in_r42": 8,
+      "ptw_total": 16,
+      "ptw_in_r42": 7,
+      "ptw_fraction_in_r42": 0.4375,
+      "closest_ptw_deviation_pct": 0.16
+    }
+  },
+  "convergence_significance": {
+    "r42_width_mHz": 19.1,
+    "freq_range_mHz": 366.2,
+    "n_ptw": 16,
+    "p_single_band": 0.0522,
+    "p_any_band": 0.5756,
+    "p_single_precise": 0.000819,
+    "p_any_precise": 0.013,
+    "significant_005": true,
+    "note": "Simplified calculation. Real analysis should account for: (1) PTW values are not random (n \u00d7 2.56s), (2) R42 window is not at a random location (derived from biology), (3) both are discrete series. R43 experiment is the only way to distinguish coincidence from mechanism."
+  }
+}
