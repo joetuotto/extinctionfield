@@ -187,6 +187,41 @@ export const EVIDENCE: EvidenceItem[] = [
     level: "E",
     n: 42935,
   },
+  {
+    pathway: "A",
+    study: "PubMed 41036143: Ambient conditions and semen quality across COVID periods",
+    year: 2025,
+    finding:
+      "Semen quality improved during the COVID-19 pandemic. Sperm concentration increased post-COVID compared to pre-COVID era. Consistent with reduced ambient EMF from lockdown (traffic −73%, industry closed).",
+    level: "M|C",
+    n: 2672,
+  },
+  {
+    pathway: "A",
+    study: "PMC10804479: COVID temporarily impairs then recovers semen parameters",
+    year: 2024,
+    finding:
+      "Progressive motility and normal morphology significantly increased during recovery. Sperm concentration rose during lockdown period with 74-day spermatogenesis-cycle lag.",
+    level: "M|C",
+    n: 85,
+  },
+  {
+    pathway: "A",
+    study: "PMC12540804: 6-month sperm recovery from COVID",
+    year: 2025,
+    finding:
+      "Sperm quality recovered 3–6 months post-infection. Repeated measurements confirm temporal pattern consistent with spermatogenesis cycle.",
+    level: "M",
+    n: 74,
+  },
+  {
+    pathway: "A",
+    study: "Zhang 2025 (Transl Androl Urol): China COVID relaxation effect",
+    year: 2025,
+    finding:
+      "When restrictions were LIFTED (December 2022), sperm quality DECLINED significantly (volume, concentration, motility all decreased). Reverse lockdown effect: ambient EMF returned → sperm worsened, despite infections being resolved. BERM's bidirectional prediction.",
+    level: "M|C",
+  },
 
   // ── Pathway B: RPM → CRY → Circadian disruption ──
   {
@@ -1051,6 +1086,65 @@ export const EVIDENCE: EvidenceItem[] = [
       "Double-blind case report: symptoms were caused primarily by field transitions (off→on, on→off) rather than steady-state field presence. Supports VGCC gating asymmetry model where channel opening is faster than closing, making each transition a discrete Ca²⁺ insult.",
     level: "L*",
     n: 1,
+  },
+  {
+    pathway: "RW",
+    study:
+      "PMC11472795: Netherlands child mental health 2018–2023 longitudinal",
+    year: 2024,
+    finding:
+      "Child mental health had NOT returned to pre-pandemic levels by April 2023. Problems INCREASED further in children already in psychiatric care. Recovery window was eliminated during lockdown (24/7 device use) and never restored — device counts remained permanently elevated.",
+    level: "E",
+    n: 1056,
+  },
+  {
+    pathway: "RW",
+    study:
+      "PMC9709147: Switzerland natural experiment — screen time and mental health",
+    year: 2022,
+    finding:
+      "Mental health problems increased over time with overall medium effect size (Hedge's g=0.337). Screen time increase associated with mental health decline in natural experiment design. Sustained device use eliminated recovery periods.",
+    level: "M|C",
+    n: 674,
+  },
+  {
+    pathway: "RW",
+    study:
+      "PMC9843116: UK screen-viewing pre vs post lockdown",
+    year: 2023,
+    finding:
+      "Total screen time 11–18% HIGHER post-lockdown than pre-COVID on weekdays, 8–10% on weekends. TV viewing 68% higher weekdays, 80% weekends. Change was PERMANENT — recovery window compression persisted after lockdowns ended.",
+    level: "M|C",
+    n: 1689,
+  },
+  {
+    pathway: "RW",
+    study:
+      "PMC11153974: US child screen time during COVID",
+    year: 2024,
+    finding:
+      "Children's screen time increased by average 1.1 h/day. 3.4 devices disrupted parent-child interaction daily (previously 3.0). Demonstrates recovery window elimination in developing neurological systems.",
+    level: "C",
+    n: 280,
+  },
+  {
+    pathway: "RW",
+    study:
+      "PMC12535673: India medical students screen time and sleep",
+    year: 2025,
+    finding:
+      "Median screen time rose from 5h to 8h/day during lockdown (p<0.001). Sleep disorder prevalence rose from 14.3% to 23.2% (p<0.05). Direct demonstration of recovery window elimination → circadian disruption.",
+    level: "M|C",
+    n: 470,
+  },
+  {
+    pathway: "RW",
+    study:
+      "PMC10982732: Screen time and child behavioral disorders during COVID (systematic review)",
+    year: 2024,
+    finding:
+      "Indirect association between increased screen time and depression and anxiety. Systematic review 2019–2022. Screen time increase during COVID eliminated recovery windows for children globally.",
+    level: "M|C",
   },
 
   // ── Individual susceptibility ──
