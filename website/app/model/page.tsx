@@ -310,6 +310,148 @@ export default function ModelPage() {
         </p>
       </section>
 
+      {/* ── mTOR convergence ── */}
+      <section className="mb-14">
+        <h2 className="text-xl font-semibold mb-4">
+          mTOR convergence hypothesis
+        </h2>
+        <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+          mTOR is the downstream integrator where EMF-induced Ca&sup2;&#8314;
+          influx converges with aging, fertility, and cancer pathways. The
+          Sempou pathway: EMF &rarr; VGIC &rarr; Ca&sup2;&#8314;&uarr; &rarr;
+          mTOR hyperactivation &rarr; autophagy&darr;, senescent cell
+          accumulation, mitochondrial quality control&darr;, chronic
+          inflammation&uarr;.
+        </p>
+        <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+          Metformin activates AMPK, which suppresses mTOR -- the exact
+          opposite of the EMF-induced pathway. The hypothesis: metformin&apos;s
+          longevity benefit is not anti-aging per se but anti-EMF-accelerated-aging.
+          In a natural EMF environment (Amish), the benefit should be minimal.
+        </p>
+        <Eq>
+          mTOR<sub>eff</sub> = (1.0 + 0.25 &times; EMF) &times; &prod;(1 &minus;
+          reduction<sub>i</sub>)
+        </Eq>
+        <Eq>
+          aging rate = mTOR<sub>eff</sub><sup>0.7</sup>
+        </Eq>
+        <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+          Where EMF is normalized exposure (0 = no infrastructure, 1 =
+          modern city), and reduction factors include metformin (0.30),
+          rapamycin (0.85), caloric restriction (0.20), intermittent fasting
+          (0.10).
+        </p>
+
+        <h3 className="text-base font-semibold mb-3">
+          Three epidemics, one mechanism
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <SectionCard>
+            <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
+              Aging
+            </p>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              mTOR&uarr; &rarr; autophagy&darr;, senescence&uarr;,
+              inflammation&uarr;, mitochondria&darr; &rarr; accelerated aging
+            </p>
+          </SectionCard>
+          <SectionCard>
+            <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
+              Fertility
+            </p>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              mTOR&uarr; &rarr; spermatogonial differentiation&darr;,
+              follicular burnout&uarr;, AMH&darr; &rarr; TFR&darr;
+            </p>
+          </SectionCard>
+          <SectionCard>
+            <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
+              Cancer
+            </p>
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              mTOR&uarr; &rarr; proliferation&uarr;, tumor growth&uarr;,
+              metastasis&uarr; &rarr; cancer risk&uarr;
+            </p>
+          </SectionCard>
+        </div>
+
+        <h3 className="text-base font-semibold mb-3">
+          Testable predictions
+        </h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-border text-left text-foreground-muted">
+                <th className="py-2 pr-4 font-medium">ID</th>
+                <th className="py-2 pr-4 font-medium">Prediction</th>
+                <th className="py-2 font-medium">Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-card-border">
+                <td className="py-3 pr-4 font-mono-num">E1</td>
+                <td className="py-3 pr-4 text-foreground-muted">
+                  Metformin longevity benefit is larger in high-EMF
+                  environments
+                </td>
+                <td className="py-3 text-foreground-muted">
+                  UK CPRD stratified by urban/rural
+                </td>
+              </tr>
+              <tr className="border-b border-card-border">
+                <td className="py-3 pr-4 font-mono-num">E2</td>
+                <td className="py-3 pr-4 text-foreground-muted">
+                  Amish metformin users show smaller longevity bonus than
+                  general population
+                </td>
+                <td className="py-3 text-foreground-muted">
+                  Amish diabetic cohort comparison
+                </td>
+              </tr>
+              <tr className="border-b border-card-border">
+                <td className="py-3 pr-4 font-mono-num">E3</td>
+                <td className="py-3 pr-4 text-foreground-muted">
+                  Blue Zone longevity advantage disappears as 4G/5G arrives
+                </td>
+                <td className="py-3 text-foreground-muted">
+                  Okinawa, Sardinia, Ikaria cohort tracking
+                </td>
+              </tr>
+              <tr className="border-b border-card-border">
+                <td className="py-3 pr-4 font-mono-num">E4</td>
+                <td className="py-3 pr-4 text-foreground-muted">
+                  CR experiment effect sizes increase by decade
+                  (rising lab EMF)
+                </td>
+                <td className="py-3 text-foreground-muted">
+                  Meta-analysis: effect size vs publication year
+                </td>
+              </tr>
+              <tr className="border-b border-card-border">
+                <td className="py-3 pr-4 font-mono-num">E5</td>
+                <td className="py-3 pr-4 text-foreground-muted">
+                  TAME trial benefit stratifies by EMF exposure
+                </td>
+                <td className="py-3 text-foreground-muted">
+                  Urban vs rural subgroup analysis
+                </td>
+              </tr>
+              <tr className="border-b border-card-border last:border-0">
+                <td className="py-3 pr-4 font-mono-num">E6</td>
+                <td className="py-3 pr-4 text-foreground-muted">
+                  Shabbat (25h/week EMF-free) acts as intermittent mTOR
+                  fasting, supporting Haredi TFR and longevity
+                </td>
+                <td className="py-3 text-foreground-muted">
+                  Haredi vs secular Israeli cohort
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* ── Links ── */}
       <section className="border-t border-border pt-8 mt-8 flex flex-wrap gap-4">
         <Link

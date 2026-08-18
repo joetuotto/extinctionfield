@@ -11,6 +11,14 @@ from berm.v16 import (
     loocv_v16,
     v17_full_report,
 )
+from berm.biology.mtor_aging import (
+    mtor_effective,
+    aging_rate_multiplier,
+    senescence_accumulation,
+    metformin_longevity_benefit,
+    mtor_fertility_aging_interaction,
+    intervention_comparison,
+)
 
 __all__ = [
     "predict_country_year",
@@ -21,4 +29,10 @@ __all__ = [
     "calibrate_v16",
     "loocv_v16",
     "v17_full_report",
+    "mtor_effective",
+    "aging_rate_multiplier",
+    "senescence_accumulation",
+    "metformin_longevity_benefit",
+    "mtor_fertility_aging_interaction",
+    "intervention_comparison",
 ]
