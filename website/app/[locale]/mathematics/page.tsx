@@ -306,14 +306,14 @@ const t = {
       "where A_n are the Fourier coefficients of the RF envelope and W(f) is a Gaussian window centered at 30 mHz (σ = 5 mHz). Higher Ξ predicts stronger biological response.",
     s12P5Title: "3GPP-R42 convergence",
     s12P5:
-      "3GPP TS 24.008 defines extended Discontinuous Reception (eDRX) cycles for IoT power management. These timing values were chosen by network engineers for energy efficiency without any knowledge of biological frequency windows. An unexpected convergence: 7 of 16 standardized PTW values (43.75%) produce fundamentals inside the R42 window. The closest match is PTW = 33.28s → f₁ = 30.048 mHz, only 0.16% from the R42 center.",
+      "3GPP TS 24.008 defines extended Discontinuous Reception (eDRX) cycles for IoT power management. These timing values were chosen by network engineers for energy efficiency without any knowledge of biological frequency windows. Of 10 standardized eDRX values, one fundamental falls inside R42: T = 40.96s → f₁ = 24.414 mHz (18.6% from R42 center). Note: PTW (Paging Time Window) is a window duration, NOT a periodic timer — previous claims of PTW frequency hits were incorrect.",
     s12P6:
-      "This convergence is coincidental but testable. Three independent lines converge: (A) telecom signals contain structured envelopes at 20–40 mHz (3GPP specification), (B) cells respond frequency-specifically at 20–40 mHz (Zandieh 2025), (C) GME self-mixing transfers RF envelope to baseband (Full-Weyl exact solution). The untested link is A+C → B: whether an RF carrier with a 33s-period envelope reproduces the cellular response seen with direct ELF stimulation.",
+      "This single convergence is weak but testable. Three independent lines exist: (A) the eDRX cycle at 40.96s produces a fundamental at 24.4 mHz inside the R42 band (3GPP specification), (B) cells respond frequency-specifically at 20–40 mHz (Zandieh 2025), (C) GME self-mixing transfers RF envelope to baseband (Full-Weyl exact solution). The untested link is A+C → B: whether an RF carrier with a 40.96s-period envelope reproduces the cellular response seen with direct ELF stimulation.",
     s12P7Title: "R43 prediction (locked)",
     s12P7:
-      "BERM predicts a band-pass biological response as a function of RF burst period T, with maximum near T = 33.3s (matching PTW = 33.28s). This is quantified by the Ξ_R42 spectral metric. Six falsification criteria (F1–F6) are defined: any single criterion is sufficient to falsify the envelope hypothesis.",
+      "BERM predicts a band-pass biological response as a function of RF burst period T, with maximum at T = 40.96s (the only eDRX cycle with a fundamental inside R42). All R43 conditions use eDRX timer values, not PTW durations. This is quantified by the Ξ_R42 spectral metric. Six falsification criteria (F1–F6) are defined: any single criterion is sufficient to falsify the envelope hypothesis.",
     s12Warning:
-      "Epistemic level: L* (single source, not replicated). Lindgren's paper is one, not replicated. Full-Weyl derivation is mathematically consistent but based on an unconfirmed premise. The 3GPP convergence may be coincidental (p ≈ 0.01–0.13). R43 experiment is the only way to distinguish coincidence from mechanism. All envelope-related claims on this site are marked as THEORETICAL.",
+      "Epistemic level: L* (single source, not replicated). Lindgren's paper is one, not replicated. Full-Weyl derivation is mathematically consistent but based on an unconfirmed premise. The 3GPP convergence is weak (1/10 eDRX fundamental in R42, p ≈ 0.06, not significant at 0.05). R43 experiment is the only way to distinguish coincidence from mechanism. All envelope-related claims on this site are marked as THEORETICAL.",
     s12EvidenceLink: "→ RF Protocol Timing and Biological Windows",
   },
   fi: {
@@ -618,14 +618,14 @@ const t = {
       "missä A_n ovat RF-envelopen Fourier-kertoimet ja W(f) on gaussinen ikkuna keskitettynä 30 mHz:iin (σ = 5 mHz). Suurempi Ξ ennustaa vahvempaa biologista vastetta.",
     s12P5Title: "3GPP-R42-konvergenssi",
     s12P5:
-      "3GPP TS 24.008 määrittelee laajennetut jatkuvan vastaanoton (eDRX) syklit IoT-virranhallinnan tarpeisiin. Nämä ajoitusarvot valittiin verkkoinsinöörien toimesta energiatehokkuuden vuoksi ilman tietoa biologisista taajuusikkunoista. Odottamaton konvergenssi: 7/16 standardoidusta PTW-arvosta (43,75 %) tuottaa fundamentaaleja R42-ikkunan sisällä. Lähin osuma: PTW = 33,28s → f₁ = 30,048 mHz, vain 0,16 % R42-keskuksesta.",
+      "3GPP TS 24.008 määrittelee laajennetut jatkuvan vastaanoton (eDRX) syklit IoT-virranhallinnan tarpeisiin. Nämä ajoitusarvot valittiin verkkoinsinöörien toimesta energiatehokkuuden vuoksi ilman tietoa biologisista taajuusikkunoista. Kymmenestä standardoidusta eDRX-arvosta yksi fundamentaali osuu R42-ikkunaan: T = 40,96s → f₁ = 24,414 mHz (18,6 % R42-keskipisteestä). Huom: PTW (Paging Time Window) on ikkunan kesto, EI periodinen ajastin — aiemmat väitteet PTW-taajuusosumista olivat virheellisiä.",
     s12P6:
-      "Tämä konvergenssi on koinsidenssi mutta testattavissa. Kolme riippumatonta linjaa konvergoivat: (A) telecomsignaalit sisältävät rakenteellisia envelopeja 20–40 mHz:n alueella (3GPP-spesifikaatio), (B) solut reagoivat taajuusspesifisesti 20–40 mHz:llä (Zandieh 2025), (C) GME-itsesekoitus siirtää RF-envelopen basebandiin (Full-Weyl-eksaktit ratkaisut). Testaamaton linkki on A+C → B: tuottaako RF-kantoaalto 33s-envelopella saman soluvasteen kuin suora ELF-stimulaatio.",
+      "Tämä yksittäinen konvergenssi on heikko mutta testattavissa. Kolme riippumatonta linjaa ovat: (A) eDRX-sykli 40,96s tuottaa fundamentaalin 24,4 mHz R42-kaistan sisällä (3GPP-spesifikaatio), (B) solut reagoivat taajuusspesifisesti 20–40 mHz:llä (Zandieh 2025), (C) GME-itsesekoitus siirtää RF-envelopen basebandiin (Full-Weyl-eksaktit ratkaisut). Testaamaton linkki on A+C → B: tuottaako RF-kantoaalto 40,96s-envelopella saman soluvasteen kuin suora ELF-stimulaatio.",
     s12P7Title: "R43-ennuste (lukittu)",
     s12P7:
-      "BERM ennustaa kaistoitetun biologisen vasteen RF-pulssijakson T funktiona, maksimikohdassa T ≈ 33,3s (vastaten PTW = 33,28s). Tämä kvantifioidaan Ξ_R42-spektraalimetriikalla. Kuusi falsifikaatiokriteeriä (F1–F6) on määritelty: mikä tahansa yksittäinen kriteeri riittää kumoamaan envelope-hypoteesin.",
+      "BERM ennustaa kaistoitetun biologisen vasteen RF-pulssijakson T funktiona, maksimikohdassa T = 40,96s (ainoa eDRX-sykli jonka fundamentaali osuu R42-ikkunaan). Kaikki R43-kokeen olosuhteet käyttävät eDRX-ajastinarvoja, eivät PTW-kestoja. Tämä kvantifioidaan Ξ_R42-spektraalimetriikalla. Kuusi falsifikaatiokriteeriä (F1–F6) on määritelty: mikä tahansa yksittäinen kriteeri riittää kumoamaan envelope-hypoteesin.",
     s12Warning:
-      "Episteeminen taso: L* (yksittäinen lähde, ei replikoitu). Lindgrenin paperi on yksi, ei replikoitu. Full-Weyl-johto on matemaattisesti konsistentti mutta perustuu vahvistamattomaan premissiin. 3GPP-konvergenssi voi olla sattumaa (p ≈ 0,01–0,13). R43-koe on ainoa tapa erottaa sattuma mekanismista. Kaikki envelope-väitteet sivustolla on merkitty TEOREETTISIKSI.",
+      "Episteeminen taso: L* (yksittäinen lähde, ei replikoitu). Lindgrenin paperi on yksi, ei replikoitu. Full-Weyl-johto on matemaattisesti konsistentti mutta perustuu vahvistamattomaan premissiin. 3GPP-konvergenssi on heikko (1/10 eDRX-fundamentaali R42:ssa, p ≈ 0,06, ei merkitsevä tasolla 0,05). R43-koe on ainoa tapa erottaa sattuma mekanismista. Kaikki envelope-väitteet sivustolla on merkitty TEOREETTISIKSI.",
     s12EvidenceLink: "→ RF-protokolla-ajoitus ja biologiset ikkunat",
   },
 };
@@ -1429,25 +1429,23 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <table className="w-full text-sm border border-border">
                 <thead>
                   <tr className="bg-card-bg">
-                    <th className="text-left px-3 py-2 border-b border-border">PTW (s)</th>
+                    <th className="text-left px-3 py-2 border-b border-border">eDRX (s)</th>
                     <th className="text-left px-3 py-2 border-b border-border">f₁ (mHz)</th>
-                    <th className="text-left px-3 py-2 border-b border-border">{locale === "fi" ? "Ero R42:sta" : "R42 deviation"}</th>
+                    <th className="text-left px-3 py-2 border-b border-border">{locale === "fi" ? "R42-osuma" : "R42 hit"}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { ptw: 25.60, f: 39.063, dev: "30.21%" },
-                    { ptw: 28.16, f: 35.511, dev: "18.37%" },
-                    { ptw: 30.72, f: 32.552, dev: "8.51%" },
-                    { ptw: 33.28, f: 30.048, dev: "0.16%" },
-                    { ptw: 35.84, f: 27.902, dev: "6.99%" },
-                    { ptw: 38.40, f: 26.042, dev: "13.19%" },
-                    { ptw: 40.96, f: 24.414, dev: "18.62%" },
+                    { edrx: 20.48, f: 48.828, hit: locale === "fi" ? "Yläpuolella" : "Above" },
+                    { edrx: 40.96, f: 24.414, hit: locale === "fi" ? "SISÄLLÄ (18.6%)" : "INSIDE (18.6%)" },
+                    { edrx: 81.92, f: 12.207, hit: locale === "fi" ? "Alapuolella (harm. 2-3 R42:ssa)" : "Below (harm. 2-3 in R42)" },
+                    { edrx: 163.84, f: 6.104, hit: locale === "fi" ? "Alapuolella (harm. 4-6 R42:ssa)" : "Below (harm. 4-6 in R42)" },
+                    { edrx: 327.68, f: 3.052, hit: locale === "fi" ? "Alapuolella (harm. 7-9 R42:ssa)" : "Below (harm. 7-9 in R42)" },
                   ].map((row) => (
-                    <tr key={row.ptw} className={row.ptw === 33.28 ? "bg-green-50 dark:bg-green-950/30 font-semibold" : ""}>
-                      <td className="px-3 py-1.5 border-b border-border">{row.ptw}</td>
+                    <tr key={row.edrx} className={row.edrx === 40.96 ? "bg-green-50 dark:bg-green-950/30 font-semibold" : ""}>
+                      <td className="px-3 py-1.5 border-b border-border">{row.edrx}</td>
                       <td className="px-3 py-1.5 border-b border-border">{row.f}</td>
-                      <td className="px-3 py-1.5 border-b border-border">{row.dev}</td>
+                      <td className="px-3 py-1.5 border-b border-border">{row.hit}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1471,13 +1469,15 @@ export function MathematicsSections({ locale }: { locale: string }) {
                   </thead>
                   <tbody>
                     {[
-                      { id: "C4_center", T: 33.28, xi: 0.10132, norm: 1.0 },
-                      { id: "C5_edrx", T: 40.96, xi: 0.05428, norm: 0.536 },
-                      { id: "C3_inside", T: 25.60, xi: 0.01960, norm: 0.194 },
-                      { id: "C2_edge_hi", T: 20.48, xi: 0.00008, norm: 0.001 },
-                      { id: "C1_fast", T: 10.24, xi: 0.0, norm: 0.0 },
+                      { id: "C3_edrx40", T: 40.96, xi: 0.05428, norm: 1.0 },
+                      { id: "C8_nbiot", T: 100.0, xi: 0.01129, norm: 0.208 },
+                      { id: "C4_edrx81", T: 81.92, xi: 0.00486, norm: 0.090 },
+                      { id: "C5_edrx163", T: 163.84, xi: 0.00485, norm: 0.089 },
+                      { id: "C6_edrx327", T: 327.68, xi: 0.00236, norm: 0.044 },
+                      { id: "C2_edrx20", T: 20.48, xi: 0.00008, norm: 0.002 },
+                      { id: "C1_below", T: 10.24, xi: 0.0, norm: 0.0 },
                     ].map((row) => (
-                      <tr key={row.id} className={row.id === "C4_center" ? "bg-green-50 dark:bg-green-950/30" : ""}>
+                      <tr key={row.id} className={row.id === "C3_edrx40" ? "bg-green-50 dark:bg-green-950/30" : ""}>
                         <td className="px-3 py-1.5 border-b border-border font-mono text-xs">{row.id}</td>
                         <td className="px-3 py-1.5 border-b border-border">{row.T}</td>
                         <td className="px-3 py-1.5 border-b border-border font-mono text-xs">{row.xi.toFixed(5)}</td>

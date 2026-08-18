@@ -227,11 +227,11 @@ export const NODES: ChainNode[] = [
     epistemicLevel: "L*",
     title: "RF-verhokäyrän geometrinen itsesekoitus",
     mechanism:
-      "Full-Weyl-metriikan neliötermi (AμAν) tuottaa itsesekoituksen: RF-verhokäyrä u²(t) siirtää tehospektrin kantoaallon taajuudelta peruskaistalle. Tuloksena syntyvä peruskaistaspektri sisältää harmonisia, jotka osuvat R42-biologiseen ikkunaan (20–40 mHz). 3GPP TS 24.008 eDRX/PTW-ajastukset tuottavat pulssirakenteita joiden spektraalinen energia keskittyy tähän ikkunaan — PTW=33.28s tuottaa 30.048 mHz (0.16% R42-keskipisteestä).",
+      "Full-Weyl-metriikan neliötermi (AμAν) tuottaa itsesekoituksen: RF-verhokäyrä u²(t) siirtää tehospektrin kantoaallon taajuudelta peruskaistalle. Tuloksena syntyvä peruskaistaspektri sisältää harmonisia, jotka osuvat R42-biologiseen ikkunaan (20–40 mHz). 3GPP TS 24.008 eDRX-sykli T=40.96s tuottaa fundamentaalin 24.414 mHz R42-kaistassa (18.6% keskipisteestä). Huom: PTW on ikkunan kesto, ei periodinen ajastin.",
     lindgrenInterpretation:
       "GME on Lindgrenin metriikan suora seuraus: gμν = ημν + AμAν -termin neliöllinen Aμ tuottaa itsesekoituksen matemaattisesti. Tämä on geometrinen ominaisuus, ei ad hoc -lisäys. R42-ikkuna on biologinen fakta (Zandieh 2025); 3GPP-ajoitus on tekninen standardi. GME yhdistää nämä matemaattisesti.",
     quantitative:
-      "R_G(ᾱ) = 3ᾱ²/(1+ᾱ²)\nC(ᾱ) = (2ᾱ²−1)/(ᾱ(1+ᾱ²))\nΞ_R42 = Σ_n |c_n|² × W_R42(f_n)\n\nPTW=33.28s → f=30.048 mHz → 0.16% R42:sta",
+      "R_G(ᾱ) = 3ᾱ²/(1+ᾱ²)\nC(ᾱ) = (2ᾱ²−1)/(ᾱ(1+ᾱ²))\nΞ_R42 = Σ_n |c_n|² × W_R42(f_n)\n\neDRX=40.96s → f₁=24.414 mHz → 18.6% R42:sta",
     keyReferences: [
       {
         authors: "Zandieh ym. 2025",
@@ -241,9 +241,9 @@ export const NODES: ChainNode[] = [
       },
       {
         authors: "3GPP TS 24.008",
-        title: "Extended DRX / Paging Time Window",
+        title: "Extended DRX cycle timing",
         journal: "3GPP standardidokumentti",
-        keyFinding: "PTW=33.28s osuu 0.16% päähän R42-ikkunan keskipisteestä",
+        keyFinding: "eDRX=40.96s → f₁=24.414 mHz, ainoa fundamentaali R42-ikkunassa (18.6% keskipisteestä)",
       },
     ],
     falsificationCondition:

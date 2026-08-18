@@ -35,9 +35,9 @@ const t = {
     labTitle: "Laboratory Predictions (THEORETICAL)",
     labSubtitle: "These predictions derive from GME multiwave theory and require experimental verification. Epistemic level: L* (single source, not replicated). The R43 prediction is locked but the underlying theory is not yet validated.",
     r43Title: "R43: Band-pass biological response",
-    r43Desc: "RF envelope self-mixing (GME) predicts that pulsed RF exposure produces maximum biological response when the pulse period places spectral energy inside the R42 window (20–40 mHz). The predicted ordering of biological effect by pulse timing is locked below.",
+    r43Desc: "RF envelope self-mixing (GME) predicts that pulsed RF exposure produces maximum biological response when the pulse period places spectral energy inside the R42 window (20–40 mHz). The only eDRX fundamental inside R42 is 40.96s → 24.414 mHz. All conditions use eDRX timer values (PTW is a window duration, not a period).",
     r43Chain: "Three-stage evidence chain",
-    r43ChainA: "A: 3GPP TS 24.008 eDRX/PTW timing (documented standard)",
+    r43ChainA: "A: 3GPP TS 24.008 eDRX timing (documented standard)",
     r43ChainB: "B: Zandieh 2025 ROS/mitochondrial response at 20–40 mHz (experimental, L*)",
     r43ChainC: "C: GME quadratic self-mixing (mathematical derivation)",
     r43ChainMissing: "Missing link: A + C → B — this is the experiment R43 predicts",
@@ -77,9 +77,9 @@ const t = {
     labTitle: "Laboratorioennusteet (TEOREETTINEN)",
     labSubtitle: "Nämä ennusteet perustuvat GME-monikaistoiteoriaan ja vaativat kokeellisen vahvistuksen. Episteeminen taso: L* (yksittäinen lähde, ei replikoitu). R43-ennuste on lukittu, mutta taustateoria ei ole vielä validoitu.",
     r43Title: "R43: Kaistanpäästö-biologinen vaste",
-    r43Desc: "RF-verhokäyrän itsesekoitus (GME) ennustaa, että pulssitettu RF-altistus tuottaa suurimman biologisen vasteen, kun pulssijakso sijoittaa spektraalienergian R42-ikkunaan (20–40 mHz). Ennustettu biologisen vasteen järjestys pulssijakson mukaan on lukittu alla.",
+    r43Desc: "RF-verhokäyrän itsesekoitus (GME) ennustaa, että pulssitettu RF-altistus tuottaa suurimman biologisen vasteen, kun pulssijakso sijoittaa spektraalienergian R42-ikkunaan (20–40 mHz). Ainoa eDRX-fundamentaali R42:ssa on 40,96s → 24,414 mHz. Kaikki olosuhteet käyttävät eDRX-ajastinarvoja (PTW on ikkunan kesto, ei periodi).",
     r43Chain: "Kolmivaiheinen todistusketju",
-    r43ChainA: "A: 3GPP TS 24.008 eDRX/PTW-ajoitus (dokumentoitu standardi)",
+    r43ChainA: "A: 3GPP TS 24.008 eDRX-ajoitus (dokumentoitu standardi)",
     r43ChainB: "B: Zandieh 2025 ROS/mitokondriaalinen vaste 20–40 mHz (kokeellinen, L*)",
     r43ChainC: "C: GME neliöllinen itsesekoitus (matemaattinen johtaminen)",
     r43ChainMissing: "Puuttuva linkki: A + C → B — tämä on koe, jonka R43 ennustaa",
@@ -421,14 +421,14 @@ export default async function PredictionsPage({
                 </thead>
                 <tbody className="font-mono-num">
                   {[
-                    { id: "C4", T: "33.28", label: "R42 center (0.16%)", xi: "0.1013", norm: "1.000" },
-                    { id: "C5", T: "40.96", label: "eDRX standard", xi: "0.0543", norm: "0.536" },
-                    { id: "C3", T: "25.60", label: "R42 inside", xi: "0.0196", norm: "0.194" },
-                    { id: "C8", T: "100.0", label: "NB-IoT typical", xi: "0.0113", norm: "0.112" },
-                    { id: "C6", T: "81.92", label: "Long eDRX", xi: "0.0049", norm: "0.048" },
-                    { id: "C7", T: "163.84", label: "Very long eDRX", xi: "0.0049", norm: "0.048" },
-                    { id: "C2", T: "20.48", label: "R42 lower edge", xi: "0.0001", norm: "0.001" },
-                    { id: "C1", T: "10.24", label: "Fast (below R42)", xi: "0.0000", norm: "0.000" },
+                    { id: "C3", T: "40.96", label: locale === "fi" ? "eDRX-fundamentaali (24,4 mHz)" : "eDRX fundamental hit (24.4 mHz)", xi: "0.0543", norm: "1.000" },
+                    { id: "C8", T: "100.0", label: "NB-IoT typical", xi: "0.0113", norm: "0.208" },
+                    { id: "C4", T: "81.92", label: locale === "fi" ? "eDRX harm. 2-3 R42:ssa" : "eDRX harmonics 2-3 in R42", xi: "0.0049", norm: "0.090" },
+                    { id: "C5", T: "163.84", label: locale === "fi" ? "eDRX harm. 4-6 R42:ssa" : "eDRX harmonics 4-6 in R42", xi: "0.0049", norm: "0.089" },
+                    { id: "C6", T: "327.68", label: locale === "fi" ? "eDRX korkeat harmonit" : "eDRX high harmonics", xi: "0.0024", norm: "0.044" },
+                    { id: "C7", T: "655.36", label: locale === "fi" ? "eDRX pitkä (lähes neg.)" : "eDRX very long (near-negative)", xi: "0.0008", norm: "0.015" },
+                    { id: "C2", T: "20.48", label: locale === "fi" ? "eDRX lyhin" : "eDRX shortest", xi: "0.0001", norm: "0.002" },
+                    { id: "C1", T: "10.24", label: locale === "fi" ? "Alle R42 (neg. kontrolli)" : "Below R42 (negative control)", xi: "0.0000", norm: "0.000" },
                   ].map((row) => (
                     <tr key={row.id} className="border-b border-border/50">
                       <td className="py-1.5 pr-4 font-semibold">{row.id}</td>
@@ -475,7 +475,7 @@ export default async function PredictionsPage({
           {/* Metadata */}
           <div className="flex flex-wrap gap-x-6 gap-y-1 text-[11px] text-foreground-muted font-mono-num">
             <span>{d.locked}: 2026-08-18</span>
-            <span>{d.model}: v17.1</span>
+            <span>{d.model}: v17.2</span>
             <a
               href="/data/r43_preregistration.json"
               target="_blank"

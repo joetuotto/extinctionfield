@@ -1223,10 +1223,10 @@ export const EVIDENCE: EvidenceItem[] = [
   {
     pathway: "GME",
     study:
-      "3GPP TS 24.008: eDRX/PTW timing specification",
+      "3GPP TS 24.008: eDRX cycle timing specification",
     year: 2024,
     finding:
-      "7 of 16 standardized PTW values (43.75%) produce fundamental frequencies inside the R42 window [20.45, 39.55] mHz. PTW = 33.28s → f₁ = 30.048 mHz, 0.16% from R42 center. Timing values were designed for energy efficiency, not biology — convergence is coincidental but testable.",
+      "Of 10 standardized eDRX cycle values, one fundamental falls inside R42: T = 40.96s → f₁ = 24.414 mHz (18.6% from R42 center). Note: PTW (Paging Time Window) is a window duration, NOT a periodic timer — previous claims of PTW frequency hits were incorrect. The single eDRX convergence is weak (p ≈ 0.06) but testable via R43.",
     level: "L",
   },
   {

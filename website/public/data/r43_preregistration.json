@@ -1,60 +1,61 @@
 {
   "locked_date": "2026-08-18",
-  "model_version": "v17.1",
+  "model_version": "v17.2",
+  "correction_note": "v17.2: PTW is NOT a period. Removed all PTW-as-frequency interpretations. Only eDRX cycles are true periodic timers. The single fundamental hit is 40.96s -> 24.414 mHz.",
   "conditions": [
     {
-      "id": "C4_center",
-      "T_s": 33.28,
-      "label": "R42 center (0.16%)",
-      "xi_r42": 0.1013165,
-      "xi_norm": 1.0
-    },
-    {
-      "id": "C5_edrx",
+      "id": "C3_edrx40",
       "T_s": 40.96,
-      "label": "eDRX standard",
+      "label": "eDRX fundamental hit (24.4 mHz)",
       "xi_r42": 0.05428465,
-      "xi_norm": 0.5358
-    },
-    {
-      "id": "C3_inside",
-      "T_s": 25.6,
-      "label": "R42 inside",
-      "xi_r42": 0.01960368,
-      "xi_norm": 0.1935
+      "xi_norm": 1.0
     },
     {
       "id": "C8_nbiot",
       "T_s": 100.0,
       "label": "NB-IoT typical",
       "xi_r42": 0.01129326,
-      "xi_norm": 0.1115
+      "xi_norm": 0.208
     },
     {
-      "id": "C6_long",
+      "id": "C4_edrx81",
       "T_s": 81.92,
-      "label": "Long eDRX",
+      "label": "eDRX harmonics 2-3 in R42",
       "xi_r42": 0.00486489,
-      "xi_norm": 0.048
+      "xi_norm": 0.0896
     },
     {
-      "id": "C7_vlong",
+      "id": "C5_edrx163",
       "T_s": 163.84,
-      "label": "Very long eDRX",
+      "label": "eDRX harmonics 4-6 in R42",
       "xi_r42": 0.00484556,
-      "xi_norm": 0.0478
+      "xi_norm": 0.0893
     },
     {
-      "id": "C2_edge_hi",
+      "id": "C6_edrx327",
+      "T_s": 327.68,
+      "label": "eDRX high harmonics",
+      "xi_r42": 0.00236399,
+      "xi_norm": 0.0435
+    },
+    {
+      "id": "C7_edrx655",
+      "T_s": 655.36,
+      "label": "eDRX very long (near-negative)",
+      "xi_r42": 0.00080003,
+      "xi_norm": 0.0147
+    },
+    {
+      "id": "C2_edrx20",
       "T_s": 20.48,
-      "label": "R42 lower edge",
+      "label": "eDRX shortest",
       "xi_r42": 8.444e-05,
-      "xi_norm": 0.0008
+      "xi_norm": 0.0016
     },
     {
-      "id": "C1_fast",
+      "id": "C1_below",
       "T_s": 10.24,
-      "label": "Fast (below R42)",
+      "label": "Below R42 (negative control)",
       "xi_r42": 0.0,
       "xi_norm": 0.0
     }
@@ -92,7 +93,7 @@
     }
   ],
   "three_stage_chain": {
-    "A": "3GPP TS 24.008 eDRX/PTW timing (documented)",
+    "A": "3GPP TS 24.008 eDRX timing (documented)",
     "B": "Zandieh 2025 ROS/mitochondrial 20-40 mHz response (experimental)",
     "C": "GME quadratic self-mixing (mathematical)",
     "missing": "A+C -> B (this experiment)"
@@ -101,43 +102,6 @@
     "edrx_in_r42": [
       {
         "T_s": 40.96,
-        "f1_mHz": 24.414,
-        "deviation_pct": 18.62
-      }
-    ],
-    "ptw_in_r42": [
-      {
-        "PTW_s": 25.6,
-        "f1_mHz": 39.062,
-        "deviation_pct": 30.21
-      },
-      {
-        "PTW_s": 28.16,
-        "f1_mHz": 35.511,
-        "deviation_pct": 18.37
-      },
-      {
-        "PTW_s": 30.72,
-        "f1_mHz": 32.552,
-        "deviation_pct": 8.51
-      },
-      {
-        "PTW_s": 33.28,
-        "f1_mHz": 30.048,
-        "deviation_pct": 0.16
-      },
-      {
-        "PTW_s": 35.84,
-        "f1_mHz": 27.902,
-        "deviation_pct": 6.99
-      },
-      {
-        "PTW_s": 38.4,
-        "f1_mHz": 26.042,
-        "deviation_pct": 13.19
-      },
-      {
-        "PTW_s": 40.96,
         "f1_mHz": 24.414,
         "deviation_pct": 18.62
       }
@@ -196,21 +160,19 @@
       "edrx_total": 10,
       "edrx_fundamental_in_r42": 1,
       "edrx_harmonics_in_r42": 8,
-      "ptw_total": 16,
-      "ptw_in_r42": 7,
-      "ptw_fraction_in_r42": 0.4375,
-      "closest_ptw_deviation_pct": 0.16
+      "only_fundamental_hit": "40.96s -> 24.414 mHz",
+      "ptw_note": "PTW is a window duration, NOT a period. Previous claim of 7/16 PTW hits was incorrect."
     }
   },
   "convergence_significance": {
     "r42_width_mHz": 19.1,
-    "freq_range_mHz": 366.2,
-    "n_ptw": 16,
-    "p_single_band": 0.0522,
-    "p_any_band": 0.5756,
-    "p_single_precise": 0.000819,
-    "p_any_precise": 0.013,
-    "significant_005": true,
-    "note": "Simplified calculation. Real analysis should account for: (1) PTW values are not random (n \u00d7 2.56s), (2) R42 window is not at a random location (derived from biology), (3) both are discrete series. R43 experiment is the only way to distinguish coincidence from mechanism."
+    "freq_range_mHz": 48.7,
+    "n_edrx": 10,
+    "p_single_band": 0.3919,
+    "p_any_band": 0.9931,
+    "p_single_precise": 0.006156,
+    "p_any_precise": 0.0599,
+    "significant_005": false,
+    "note": "With only 10 eDRX values (geometric series 2^k x 10.24s), the single fundamental hit at 40.96s -> 24.414 mHz is 18.6% from R42 center. Previous PTW-based claim incorrectly treated window durations as periods. R43 experiment is the only way to distinguish coincidence from mechanism."
   }
 }

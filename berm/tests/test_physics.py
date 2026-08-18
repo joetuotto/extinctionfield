@@ -26,7 +26,7 @@ from berm.physics.threegpp_convergence import (
 )
 
 
-# ── GME mixing ──
+# -- GME mixing --
 
 class TestGMEBackgroundResponse:
     def test_zero_gives_zero(self):
@@ -82,7 +82,7 @@ class TestGMEEnvelopeSelfmixing:
         assert r1["K_G_squared"] > r2["K_G_squared"]
 
 
-# ── R42 envelope ──
+# -- R42 envelope --
 
 class TestR42Window:
     def test_center_is_one(self):
@@ -100,16 +100,16 @@ class TestR42Window:
 
 
 class TestXiR42PulseTrain:
-    def test_33s_higher_than_10s(self):
-        xi_33 = xi_r42_pulse_train(33.28)
+    def test_40_96_higher_than_10(self):
+        xi_40 = xi_r42_pulse_train(40.96)
         xi_10 = xi_r42_pulse_train(10.24)
-        assert xi_33 > xi_10
+        assert xi_40 > xi_10
 
-    def test_center_period_is_maximum(self):
-        periods = [10.24, 20.48, 25.60, 33.28, 40.96, 81.92, 163.84]
+    def test_40_96_is_maximum_among_edrx(self):
+        periods = [10.24, 20.48, 40.96, 81.92, 163.84, 327.68, 655.36]
         xis = {T: xi_r42_pulse_train(T) for T in periods}
         max_T = max(xis, key=xis.get)
-        assert max_T == 33.28
+        assert max_T == 40.96
 
     def test_positive_values(self):
         for T in [10, 20, 33, 50, 100]:
@@ -133,9 +133,9 @@ class TestR43LockedConditions:
         conds = r43_locked_conditions()
         assert len(conds) == 8
 
-    def test_c4_center_is_highest(self):
+    def test_edrx40_is_highest(self):
         conds = r43_locked_conditions()
-        assert conds[0]["id"] == "C4_center"
+        assert conds[0]["id"] == "C3_edrx40"
         assert conds[0]["xi_norm"] == 1.0
 
     def test_all_have_xi(self):
@@ -147,9 +147,18 @@ class TestR43LockedConditions:
     def test_predicted_ordering(self):
         conds = r43_locked_conditions()
         ids = [c["id"] for c in conds]
-        assert ids.index("C4_center") < ids.index("C5_edrx")
-        assert ids.index("C5_edrx") < ids.index("C3_inside")
-        assert ids.index("C3_inside") < ids.index("C1_fast")
+        assert ids.index("C3_edrx40") < ids.index("C8_nbiot")
+        assert ids.index("C8_nbiot") < ids.index("C4_edrx81")
+        assert ids.index("C4_edrx81") < ids.index("C1_below")
+
+    def test_all_conditions_use_edrx_or_reference(self):
+        conds = r43_locked_conditions()
+        edrx_set = set(EDRX_CYCLES_SECONDS)
+        for c in conds:
+            T = c["T_s"]
+            assert T in edrx_set or T == 10.24 or T == 100.0, (
+                f"Condition {c['id']} uses T={T} which is not an eDRX value"
+            )
 
 
 class TestProtocolLandscape:
@@ -163,7 +172,7 @@ class TestProtocolLandscape:
             assert results[i]["xi_total"] >= results[i + 1]["xi_total"]
 
 
-# ── 3GPP convergence ──
+# -- 3GPP convergence --
 
 class TestEdrxR42Analysis:
     def test_edrx_40_96_in_r42(self):
@@ -171,21 +180,17 @@ class TestEdrxR42Analysis:
         edrx_freqs = [e["T_s"] for e in analysis["edrx_in_r42"]]
         assert 40.96 in edrx_freqs
 
-    def test_ptw_33_28_closest(self):
+    def test_only_one_edrx_fundamental_in_r42(self):
         analysis = edrx_r42_analysis()
-        closest = min(analysis["ptw_in_r42"], key=lambda x: x["deviation_pct"])
-        assert closest["PTW_s"] == 33.28
-        assert closest["deviation_pct"] < 0.5
+        assert len(analysis["edrx_in_r42"]) == 1
 
-    def test_seven_ptw_in_r42(self):
+    def test_no_ptw_in_results(self):
         analysis = edrx_r42_analysis()
-        assert len(analysis["ptw_in_r42"]) == 7
+        assert "ptw_in_r42" not in analysis
 
-    def test_summary_fraction(self):
+    def test_summary_has_only_fundamental_hit(self):
         analysis = edrx_r42_analysis()
-        assert analysis["summary"]["ptw_fraction_in_r42"] == pytest.approx(
-            7 / 16, abs=0.01
-        )
+        assert analysis["summary"]["only_fundamental_hit"] == "40.96s -> 24.414 mHz"
 
 
 class TestConvergenceSignificance:
@@ -193,13 +198,14 @@ class TestConvergenceSignificance:
         sig = convergence_significance()
         assert "p_any_band" in sig
         assert "p_any_precise" in sig
-        assert 0 < sig["p_any_band"] < 1
+        assert 0 < sig["p_any_band"] <= 1
         assert 0 < sig["p_any_precise"] < 1
 
-    def test_band_p_less_than_1(self):
+    def test_uses_edrx_not_ptw(self):
         sig = convergence_significance()
-        assert sig["p_any_band"] < 1.0
+        assert "n_edrx" in sig
+        assert sig["n_edrx"] == 10
 
-    def test_precise_smaller_than_band(self):
+    def test_not_significant_at_005(self):
         sig = convergence_significance()
-        assert sig["p_any_precise"] < sig["p_any_band"]
+        assert not sig["significant_005"]

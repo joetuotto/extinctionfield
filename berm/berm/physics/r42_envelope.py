@@ -110,16 +110,20 @@ def xi_r42_from_protocol(
 def r43_locked_conditions() -> list[dict]:
     """Return the 8 locked R43 experimental conditions with predicted Xi values.
 
-    Locked 2026-08-18. These values define the falsification criteria.
+    Updated 2026-08-18: All conditions now use eDRX cycle values.
+    PTW values (25.60, 33.28) removed — PTW is a window duration,
+    not a periodic timer, and does not produce spectral lines.
+
+    The ONLY eDRX fundamental inside R42 is 40.96s -> 24.414 mHz.
     """
     conditions = [
-        {"id": "C1_fast", "T_s": 10.24, "label": "Fast (below R42)"},
-        {"id": "C2_edge_hi", "T_s": 20.48, "label": "R42 lower edge"},
-        {"id": "C3_inside", "T_s": 25.60, "label": "R42 inside"},
-        {"id": "C4_center", "T_s": 33.28, "label": "R42 center (0.16%)"},
-        {"id": "C5_edrx", "T_s": 40.96, "label": "eDRX standard"},
-        {"id": "C6_long", "T_s": 81.92, "label": "Long eDRX"},
-        {"id": "C7_vlong", "T_s": 163.84, "label": "Very long eDRX"},
+        {"id": "C1_below", "T_s": 10.24, "label": "Below R42 (negative control)"},
+        {"id": "C2_edrx20", "T_s": 20.48, "label": "eDRX shortest"},
+        {"id": "C3_edrx40", "T_s": 40.96, "label": "eDRX fundamental hit (24.4 mHz)"},
+        {"id": "C4_edrx81", "T_s": 81.92, "label": "eDRX harmonics 2-3 in R42"},
+        {"id": "C5_edrx163", "T_s": 163.84, "label": "eDRX harmonics 4-6 in R42"},
+        {"id": "C6_edrx327", "T_s": 327.68, "label": "eDRX high harmonics"},
+        {"id": "C7_edrx655", "T_s": 655.36, "label": "eDRX very long (near-negative)"},
         {"id": "C8_nbiot", "T_s": 100.00, "label": "NB-IoT typical"},
     ]
 
