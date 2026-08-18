@@ -9,6 +9,8 @@ const NAV_LINKS = [
   { href: "/predictions", label: "Predictions" },
   { href: "/explorer", label: "Explorer" },
   { href: "/model", label: "Model" },
+  { href: "/mathematics", label: "Mathematics" },
+  { href: "/sentinel", label: "Sentinel" },
   { href: "/evidence", label: "Evidence" },
   { href: "/data", label: "Data" },
   { href: "/about", label: "About" },
