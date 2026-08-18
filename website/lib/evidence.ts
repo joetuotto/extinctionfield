@@ -51,7 +51,7 @@ export const PATHWAYS: Record<
   B: {
     label: "RPM → CRY → Circadian disruption",
     description:
-      "The radical-pair mechanism in cryptochrome proteins is sensitive to weak magnetic fields, potentially disrupting circadian signaling and downstream reproductive hormone rhythms.",
+      "The radical-pair mechanism (RPM) in cryptochrome proteins is sensitive to Earth-strength magnetic fields. Ritz et al. (2004) demonstrated RF disruption of bird magnetic compass; Engels et al. (2014) showed ambient anthropogenic EMF is sufficient to disrupt it. The FAD-superoxide radical pair is now identified as the sensor (Nature Comms 2024), and non-monotonic RPM predictions have been confirmed in planarians (PNAS Nexus 2026). CRY disruption alters circadian signaling, melatonin secretion, and downstream GnRH/HPG reproductive hormone rhythms. RPM is theoretically derivable from Lindgren geometry (87.5% of Hamiltonian elements), making it the most complete bridge from physics to biology in BERM.",
   },
   C: {
     label: "BBB disruption",

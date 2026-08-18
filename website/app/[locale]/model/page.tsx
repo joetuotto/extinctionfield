@@ -32,7 +32,7 @@ const t = {
     // Causal pathway diagram
     causalTitle: "Causal pathway diagram",
     causalDesc:
-      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Nine levels, 35 nodes, 50 edges. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
+      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Nine levels, 35 nodes, 50 edges. Two co-primary pathways operate in parallel: Pathway A (VGCC → Ca²⁺ → ROS) has the strongest experimental support (23–28 blocker studies), while Pathway B (RPM → CRY → circadian disruption) is the most complete theoretical bridge from Lindgren geometry to biology (87.5% of the RPM Hamiltonian is derivable from the metric ansatz). Both are independently supported at E-level evidence. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
 
     // Lindgren chi coupling
     chiTitle: "Lindgren chi coupling equation",
@@ -189,7 +189,7 @@ const t = {
     // Causal pathway diagram
     causalTitle: "Kausaalireittikaavio",
     causalDesc:
-      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Yhdeksän tasoa, 35 solmua, 50 reunaa. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
+      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Yhdeksän tasoa, 35 solmua, 50 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatukimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). Molemmat ovat itsenäisesti tuetut E-tason evidenssillä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
 
     // Lindgren chi coupling
     chiTitle: "Lindgrenin chi-kytkentäyhtälö",

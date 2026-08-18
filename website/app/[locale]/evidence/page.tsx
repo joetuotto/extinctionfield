@@ -342,7 +342,7 @@ const pathwaysFi: Record<string, { label: string; description: string }> = {
   B: {
     label: "RPM → CRY → Vuorokausirytmin häiriö",
     description:
-      "Kryptokromiproteiinien radikaalipari-mekanismi on herkkä heikoille magneettikentille, mikä voi häiritä vuorokausirytmin signalointia ja sen alaisia lisääntymishormonirytmejä.",
+      "Kryptokromiproteiinien radikaalipari-mekanismi (RPM) on herkkä Maan magneettikenttävoimakkuuksille. Ritz ym. (2004) osoittivat RF-häiriön lintujen magneettikompassissa; Engels ym. (2014) osoittivat ympäristön antropogeenisen EMF:n riittävän häiritsemään sitä. FAD-superoksidi-radikaalipari on nyt tunnistettu sensoriksi (Nature Comms 2024), ja RPM:n ei-monotoniset ennusteet on vahvistettu planaariamatoissa (PNAS Nexus 2026). CRY:n häiriö muuttaa vuorokausirytmin signalointia, melatoniinin eritystä ja GnRH/HPG-lisääntymishormonirytmejä. RPM on teoreettisesti johdettavissa Lindgrenin geometriasta (87,5 % Hamiltoniaanin elementeistä), tehden siitä täydellisimmän sillan fysiikasta biologiaan BERM:ssä.",
   },
   C: {
     label: "Veri-aivoesteen häiriö",

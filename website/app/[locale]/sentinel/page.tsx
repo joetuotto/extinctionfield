@@ -432,7 +432,7 @@ const t = {
         documentedDecline:
           "The Krefeld long-term study (Hallmann et al. 2017, PLOS ONE): flying insect biomass declined 75% in 27 years (1989–2016) across 63 protected areas in Germany. The decline occurred even in protected areas not exposed to pesticides or land-use changes. Sánchez-Bayo & Wyckhuys 2019: 40% of insect species are declining, 33% are threatened. The rate is 2.5% per year — faster than mammals or birds.",
         bermPrediction:
-          "BERM predicts insects are the MOST SENSITIVE group because: (1) as resonance antennas they absorb RF efficiently, (2) VGCCs regulate flight muscle function and navigation, (3) they are small → SAR is relatively higher, (4) they are poikilothermic → no thermoregulation to buffer.",
+          "BERM predicts insects are the MOST SENSITIVE group because: (1) as resonance antennas they absorb RF efficiently, (2) VGCCs regulate flight muscle function and navigation, (3) they are small → SAR is relatively higher, (4) they are poikilothermic → no thermoregulation to buffer. The resonant antenna effect (body size ≈ λ/2) is the inter-species analogue of individual susceptibility — just as CACNA1C genotype modulates human response, body geometry modulates species-level response.",
         lindgrenNote:
           "In Lindgren’s framework, insect size is critical: when an animal’s physical size is λ/2 (half the wavelength), it functions as a half-wave dipole antenna absorbing at resonance. 2.4 GHz: λ = 12.5 cm, λ/2 = 6.25 cm. A large butterfly or beetle is this size. 5G (3.5 GHz): λ/2 = 4.3 cm → smaller insects in resonance. As EMF frequency increases (2G→5G), resonance shifts to SMALLER insects → a wider range of species is exposed.",
         proxyNote:
@@ -923,7 +923,7 @@ const t = {
         documentedDecline:
           "Krefeldin pitkäaikaistutkimus (Hallmann ym. 2017, PLOS ONE): lentävien hyönteisten biomassa väheni 75% 27 vuodessa (1989–2016) 63 suojelualueella Saksassa. Vähenemä tapahtui jopa suojelualueilla, joilla ei ollut torjunta-ainealtistusta tai maankäytön muutoksia. Sánchez-Bayo & Wyckhuys 2019: 40% hyönteislajeista vähenee, 33% on uhanalaisia. Vauhti on 2,5% vuodessa — nopeampaa kuin nisäkkäillä tai linnuilla.",
         bermPrediction:
-          "BERM ennustaa, että hyönteiset ovat HERKIN ryhmä koska: (1) resonanssiantenneina ne absorboivat RF:ää tehokkaasti, (2) VGCC:t säätelevät lentolihaksen toimintaa ja navigointia, (3) ne ovat pieniä → SAR on suhteellisesti korkeampi, (4) ne ovat vaihtolampoisia → ei lämmönsäätelyä puskuriksi.",
+          "BERM ennustaa, että hyönteiset ovat HERKIN ryhmä koska: (1) resonanssiantenneina ne absorboivat RF:ää tehokkaasti, (2) VGCC:t säätelevät lentolihaksen toimintaa ja navigointia, (3) ne ovat pieniä → SAR on suhteellisesti korkeampi, (4) ne ovat vaihtolampoisia → ei lämmönsäätelyä puskuriksi. Resonanssiantennivaikutus (kehon koko ≈ λ/2) on lajien välinen vastine yksilölliselle herkkyydelle — aivan kuten CACNA1C-genotyyppi moduloi ihmisen vastetta, kehon geometria moduloi lajitason vastetta.",
         lindgrenNote:
           "Lindgrenin viitekehyksessä hyönteisen koko on ratkaiseva: kun eläimen fyysinen koko on λ/2 (puolet aallonpituudesta), se toimii puoliaaltodipoliantennina absorboiden resonanssissa. 2,4 GHz: λ = 12,5 cm, λ/2 = 6,25 cm. Suuri perhonen tai kovakuoriainen on tämän kokoinen. 5G (3,5 GHz): λ/2 = 4,3 cm → pienemmät hyönteiset resonanssissa. Kun EMF-taajuus kasvaa (2G→5G), resonanssi siirtyy PIENEMPIIN hyönteisiin → laajempi lajivalikoima altistuu.",
         proxyNote:
