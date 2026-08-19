@@ -128,7 +128,7 @@ export function EcoTickHero({ locale }: { locale: Locale }) {
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 560px"
-            className="object-cover object-[45%_50%]"
+            className="object-cover object-[26%_50%]"
           />
         </div>
       </div>
