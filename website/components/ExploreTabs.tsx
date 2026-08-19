@@ -6,9 +6,10 @@ import { ExplorerDashboard } from "./ExplorerDashboard";
 import { DataSourcesContent } from "./DataSourcesContent";
 import { WorldMap } from "./WorldMap";
 import { SentinelExplorer } from "./SentinelExplorer";
+import { GlobalDataExplorer } from "./GlobalDataExplorer";
 import { getExploreTabs } from "@/lib/navigation";
 
-type Tab = "map" | "country" | "data" | "sentinel";
+type Tab = "map" | "country" | "global" | "data" | "sentinel";
 
 function ExploreTabsInner({ locale }: { locale: string }) {
   const searchParams = useSearchParams();
@@ -54,6 +55,8 @@ function ExploreTabsInner({ locale }: { locale: string }) {
       {activeTab === "map" && <WorldMap locale={locale} />}
 
       {activeTab === "country" && <ExplorerDashboard />}
+
+      {activeTab === "global" && <GlobalDataExplorer locale={locale} />}
 
       {activeTab === "sentinel" && <SentinelExplorer locale={locale} />}
 

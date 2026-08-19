@@ -28,6 +28,11 @@ berm/data/raw/*
 data/processed/
 berm/data/processed/
 
+# Global source-panel build is a 73 MB local research artefact.  Its immutable
+# raw-source manifest, compact tier artefact, public CSV, and checksums are
+# versioned; regenerate this full provenance panel locally when needed.
+berm/data/global/all_countries_panel.json
+
 # IDE
 .idea/
 .vscode/

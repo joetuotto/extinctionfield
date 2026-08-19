@@ -2,6 +2,7 @@
 
 import { ASFRCohortPhase } from "./ASFRCohortPhase";
 import { RollingBacktestValidation } from "./RollingBacktestValidation";
+import { GlobalValidation } from "./GlobalValidation";
 
 const t = {
   en: {
@@ -313,6 +314,9 @@ export function StatisticalValidation({ locale }: Props) {
 
       {/* Historical train/test validation; results are loaded from the generated artifact. */}
       <RollingBacktestValidation locale={locale} />
+
+      {/* Global coverage tiers and released summaries live in a separate artifact. */}
+      <GlobalValidation locale={locale} />
 
       {/* Phase 4: ASFR Cohort Model */}
       <ASFRCohortPhase locale={locale} />

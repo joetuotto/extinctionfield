@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/i18n";
+import { GlobalDataDownloads } from "./GlobalDataDownloads";
 
 const t = {
   en: {
@@ -158,6 +158,8 @@ export function DataSourcesContent({ locale }: { locale: string }) {
 
   return (
     <div>
+      <GlobalDataDownloads locale={locale} />
+
       <section className="mb-14">
         <h2 className="text-xl font-semibold mb-2">{d.primaryTitle}</h2>
         <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">{d.primaryDesc}</p>

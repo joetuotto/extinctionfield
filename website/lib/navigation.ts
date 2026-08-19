@@ -8,6 +8,7 @@ import {
   Info,
   ChartLine,
   Database,
+  Globe2,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -37,7 +38,7 @@ export function getNavRoutes(locale: string) {
 }
 
 export interface ExploreTab {
-  key: "map" | "country" | "sentinel" | "data";
+  key: "map" | "country" | "global" | "sentinel" | "data";
   labelEn: string;
   labelFi: string;
   icon: LucideIcon;
@@ -46,6 +47,7 @@ export interface ExploreTab {
 export const EXPLORE_TABS: ExploreTab[] = [
   { key: "map", labelEn: "Map", labelFi: "Kartta", icon: Map },
   { key: "country", labelEn: "Country", labelFi: "Maa", icon: ChartLine },
+  { key: "global", labelEn: "Global", labelFi: "Globaali", icon: Globe2 },
   { key: "sentinel", labelEn: "Sentinel", labelFi: "Indikaattorit", icon: Leaf },
   { key: "data", labelEn: "Data", labelFi: "Data", icon: Database },
 ];
