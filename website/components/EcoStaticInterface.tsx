@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EcoCausalVisuals, EcoSpeciesCueRow, TickFocalFrame } from "./EcoCausalVisuals";
 
 type Locale = "en" | "fi";
 
@@ -686,6 +687,7 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
       <section>
         <h2 className="text-xl font-semibold">{d.frameworkTitle}</h2>
         <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.frameworkLead}</p>
+        <EcoCausalVisuals locale={language} />
         <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {d.fieldClasses.map((fieldClass) => (
             <article key={fieldClass.title} className="rounded-xl border border-card-border bg-card-bg p-5">
@@ -724,27 +726,8 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
       <section>
         <h2 className="text-xl font-semibold">{d.interfaceTitle}</h2>
         <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.interfaceLead}</p>
-
-        <div className="mt-6 grid gap-3 lg:grid-cols-[1fr_1.2fr_1fr]">
-          <article className="rounded-xl border border-card-border bg-card-bg p-4">
-            <p className="text-xs font-semibold text-accent">{d.host}</p>
-            <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.hostText}</p>
-          </article>
-          <article className="rounded-xl border border-accent/30 bg-accent/5 p-4">
-            <p className="text-xs font-semibold text-accent">{d.interface}</p>
-            <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.interfaceText}</p>
-            <div className="mt-4 flex items-center gap-2 text-xs text-accent" aria-hidden="true">
-              <span className="h-px flex-1 bg-accent/50" />
-              <span>↔</span>
-              <span className="h-px flex-1 bg-accent/50" />
-            </div>
-          </article>
-          <article className="rounded-xl border border-card-border bg-card-bg p-4">
-            <p className="text-xs font-semibold text-accent">{d.vegetation} · {d.tick}</p>
-            <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.vegetationText}</p>
-            <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.tickText}</p>
-          </article>
-        </div>
+        <TickFocalFrame locale={language} />
+        <EcoSpeciesCueRow locale={language} />
       </section>
 
       <section>
