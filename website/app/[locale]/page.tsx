@@ -75,23 +75,26 @@ export default async function Home({
   const activeLocale: Locale = locale === "fi" ? "fi" : "en";
   const d = COPY[activeLocale];
   const prefix = `/${activeLocale}`;
+  const figureLabels = activeLocale === "fi"
+    ? { map: "KUVIO 01 · JULKAISTU AIKASARJA", causal: "KUVIO 02 · REKISTERÖITY KAUSAALIREITTI" }
+    : { map: "FIGURE 01 · PUBLISHED TIME SERIES", causal: "FIGURE 02 · REGISTERED CAUSAL ROUTE" };
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
-      <header className="mb-12 max-w-4xl">
-        <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-3">FieldState–ASFR v2</p>
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">{d.hero}</h1>
-        <p className="text-lg md:text-xl text-foreground-muted leading-relaxed">{d.lead}</p>
+      <header className="mb-16 max-w-4xl border-b border-card-border pb-9">
+        <p className="editorial-kicker mb-4 text-accent">FieldState–ASFR v2</p>
+        <h1 className="mb-5 text-5xl sm:text-6xl">{d.hero}</h1>
+        <p className="editorial-deck text-[1.08rem] sm:text-[1.14rem]">{d.lead}</p>
       </header>
 
-      <section className="mb-16">
-        <h2 className="text-2xl font-bold tracking-tight mb-5">{d.scopeTitle}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-6">{d.scopeTitle}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 md:divide-x md:divide-card-border">
           {d.scope.map((item, index) => (
-            <div key={item} className="border border-card-border bg-card-bg rounded-lg p-5">
+            <article key={item} className="border-t border-card-border py-5 md:border-t-0 md:px-5 first:md:pl-0 last:md:pr-0">
               <p className="font-mono-num text-xs text-accent mb-3">0{index + 1}</p>
               <p className="text-sm text-foreground-muted leading-relaxed">{item}</p>
-            </div>
+            </article>
           ))}
         </div>
       </section>
@@ -100,44 +103,52 @@ export default async function Home({
         <FieldStateStatus locale={activeLocale} />
       </section>
 
-      <section className="mb-16">
-        <h2 className="text-2xl font-bold tracking-tight mb-3">{d.mapTitle}</h2>
-        <p className="text-sm text-foreground-muted max-w-3xl mb-5 leading-relaxed">{d.mapLead}</p>
-        <div className="border border-card-border bg-card-bg rounded-lg overflow-hidden min-h-[320px]">
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <figure className="data-figure overflow-hidden">
+          <figcaption className="data-figure__caption">
+            <p className="editorial-kicker text-accent">{figureLabels.map}</p>
+            <p className="data-figure__title mt-1">{d.mapTitle}</p>
+          </figcaption>
           <WorldMap locale={activeLocale} />
-        </div>
+          <p className="data-figure__note">{d.mapLead}</p>
+        </figure>
       </section>
 
-      <section className="mb-16">
-        <h2 className="text-2xl font-bold tracking-tight mb-3">{d.evidenceTitle}</h2>
-        <p className="text-sm text-foreground-muted max-w-3xl mb-5 leading-relaxed">{d.evidenceLead}</p>
-        <div className="border border-card-border bg-card-bg rounded-lg p-4 md:p-6 overflow-x-auto">
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <figure className="data-figure overflow-hidden">
+          <figcaption className="data-figure__caption">
+            <p className="editorial-kicker text-accent">{figureLabels.causal}</p>
+            <p className="data-figure__title mt-1">{d.evidenceTitle}</p>
+          </figcaption>
+          <div className="overflow-x-auto p-1 md:p-3">
           <CausalChain locale={activeLocale} />
-        </div>
-        <Link href={`${prefix}/references`} className="block mt-4 border border-accent/20 bg-accent/5 hover:bg-accent/10 rounded-lg px-5 py-4 transition-colors">
-          <p className="font-semibold">{d.evidenceCount}</p>
+          </div>
+          <p className="data-figure__note">{d.evidenceLead}</p>
+        </figure>
+        <Link href={`${prefix}/references`} className="editorial-rail mt-5 block py-1 transition-colors hover:text-accent">
+          <p className="font-semibold text-foreground">{d.evidenceCount}</p>
           <p className="text-sm text-foreground-muted mt-1">{d.evidenceCountNote}</p>
         </Link>
       </section>
 
-      <section className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="border border-card-border bg-card-bg rounded-lg p-6">
-          <h2 className="text-xl font-bold tracking-tight mb-3">{d.cohortTitle}</h2>
+      <section className="mb-16 grid grid-cols-1 gap-8 border-t editorial-rule pt-6 lg:grid-cols-2 lg:divide-x lg:divide-card-border">
+        <article className="lg:pr-8">
+          <h2 className="editorial-section-heading mb-4">{d.cohortTitle}</h2>
           <p className="text-sm text-foreground-muted leading-relaxed">{d.cohortLead}</p>
-        </div>
-        <div className="border border-card-border bg-card-bg rounded-lg p-6">
-          <h2 className="text-xl font-bold tracking-tight mb-3">{d.nextTitle}</h2>
+        </article>
+        <article className="lg:pl-8">
+          <h2 className="editorial-section-heading mb-4">{d.nextTitle}</h2>
           <ol className="space-y-3">
             {d.next.map((item, index) => <li key={item} className="flex gap-3 text-sm text-foreground-muted leading-relaxed"><span className="font-mono-num text-accent">{index + 1}.</span>{item}</li>)}
           </ol>
-        </div>
+        </article>
       </section>
 
-      <section className="flex flex-wrap gap-3">
-        <Link href={`${prefix}/model`} className="inline-flex items-center px-5 py-2.5 bg-accent hover:bg-accent-hover text-white text-sm font-medium rounded-lg transition-colors">{d.methods}</Link>
-        <Link href={`${prefix}/evidence`} className="inline-flex items-center px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground text-sm font-medium rounded-lg transition-colors">{d.evidence}</Link>
-        <Link href={`${prefix}/data`} className="inline-flex items-center px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground text-sm font-medium rounded-lg transition-colors">{d.data}</Link>
-        <Link href={`${prefix}/predictions`} className="inline-flex items-center px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground text-sm font-medium rounded-lg transition-colors">{d.archive}</Link>
+      <section className="flex flex-wrap gap-3 border-t border-card-border pt-6">
+        <Link href={`${prefix}/model`} className="inline-flex items-center bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover">{d.methods}</Link>
+        <Link href={`${prefix}/evidence`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.evidence}</Link>
+        <Link href={`${prefix}/data`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.data}</Link>
+        <Link href={`${prefix}/predictions`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.archive}</Link>
       </section>
     </div>
   );

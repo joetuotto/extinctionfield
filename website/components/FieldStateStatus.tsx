@@ -188,11 +188,11 @@ const COPY: Record<Locale, {
 function statusClasses(tone: StatusDefinition["tone"]) {
   switch (tone) {
     case "partial":
-      return "border-status-partial/35 bg-status-partial/5 text-status-partial";
+      return "border-status-partial";
     case "confirmed":
-      return "border-status-confirmed/35 bg-status-confirmed/5 text-status-confirmed";
+      return "border-status-confirmed";
     default:
-      return "border-status-pending/35 bg-status-pending/5 text-foreground-muted";
+      return "border-status-pending";
   }
 }
 
@@ -205,18 +205,19 @@ export function FieldStateStatus({ locale }: { locale: string }) {
   const d = COPY[language];
 
   return (
-    <section className="mb-10 rounded-xl border border-card-border bg-card-bg p-4 sm:p-6">
-      <div className="max-w-4xl">
-        <h2 className="text-xl font-semibold tracking-tight">{d.title}</h2>
-        <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.lead}</p>
-      </div>
+    <section className="mb-12 border-y border-card-border py-7 sm:py-9">
+      <header className="max-w-4xl">
+        <p className="editorial-kicker text-accent">FieldState–ASFR v2</p>
+        <h2 className="editorial-section-heading mt-2">{d.title}</h2>
+        <p className="editorial-deck mt-3">{d.lead}</p>
+      </header>
 
-      <div className="mt-6">
-        <h3 className="text-sm font-semibold">{d.layersTitle}</h3>
-        <ol className="mt-3 grid gap-3 lg:grid-cols-2">
+      <section className="mt-8 border-t border-card-border pt-5" aria-labelledby="fieldstate-layers-title">
+        <h3 id="fieldstate-layers-title" className="editorial-kicker text-foreground">{d.layersTitle}</h3>
+        <ol className="mt-4 grid gap-x-7 gap-y-5 lg:grid-cols-2">
           {d.layers.map((layer) => (
-            <li key={layer.index} className="rounded-lg border border-card-border bg-background p-4">
-              <div className="flex gap-3">
+            <li key={layer.index} className="border-t border-card-border pt-4">
+              <div className="flex gap-4">
                 <span className="font-mono-num text-xs text-accent">{layer.index}</span>
                 <div>
                   <h4 className="text-sm font-medium">{layer.title}</h4>
@@ -226,42 +227,44 @@ export function FieldStateStatus({ locale }: { locale: string }) {
             </li>
           ))}
         </ol>
-      </div>
+      </section>
 
-      <div className="mt-7">
-        <h3 className="text-sm font-semibold">{d.statusTitle}</h3>
-        <div className="mt-3 grid gap-3 lg:grid-cols-3">
+      <section className="mt-9 border-t border-card-border pt-5" aria-labelledby="fieldstate-completeness-title">
+        <h3 id="fieldstate-completeness-title" className="editorial-kicker text-foreground">{d.statusTitle}</h3>
+        <div className="mt-4 grid gap-x-7 gap-y-6 lg:grid-cols-3">
           {d.statuses.map((status) => (
-            <article key={status.id} className={`rounded-lg border p-4 ${statusClasses(status.tone)}`}>
+            <article key={status.id} className={`border-l-2 pl-4 ${statusClasses(status.tone)}`}>
               <h4 className="text-sm font-semibold text-foreground">{status.title}</h4>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{status.description}</p>
-              <div className="mt-3 border-t border-current/20 pt-3 text-xs leading-relaxed text-foreground-muted">
+              <div className="mt-4 border-t border-card-border pt-3 text-xs leading-relaxed text-foreground-muted">
                 <span className="font-medium text-foreground">{d.useLabel}: </span>{status.use}
               </div>
             </article>
           ))}
         </div>
-        <p className="mt-3 max-w-4xl text-xs leading-relaxed text-foreground-muted">{d.readinessNote}</p>
-        <p className="mt-1 max-w-4xl text-xs leading-relaxed text-foreground-muted">{d.evidenceNote}</p>
-      </div>
+        <div className="editorial-rail mt-6 max-w-4xl text-xs leading-relaxed text-foreground-muted">
+          <p>{d.readinessNote}</p>
+          <p className="mt-2">{d.evidenceNote}</p>
+        </div>
+      </section>
 
-      <div className="mt-7 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-        <article className="rounded-lg border border-card-border bg-background p-4">
-          <h3 className="text-sm font-semibold">{d.identityTitle}</h3>
+      <section className="mt-9 grid gap-7 border-t border-card-border pt-5 lg:grid-cols-[1.1fr_0.9fr] lg:divide-x lg:divide-card-border">
+        <article className="lg:pr-7">
+          <h3 className="font-serif text-[1.1rem] font-semibold leading-snug tracking-[-0.014em]">{d.identityTitle}</h3>
           <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.identityDescription}</p>
-          <p className="mt-4 overflow-x-auto rounded-md border border-card-border bg-card-bg px-3 py-2 font-mono-num text-sm text-foreground">
+          <p className="mt-4 overflow-x-auto border-y border-card-border px-3 py-3 font-mono-num text-sm text-foreground">
             TFR₍c,t₎ = (5 / 1000) × Σ₍g=15–19…45–49₎ ASFR₍c,g,t₎
           </p>
           <p className="mt-2 text-xs leading-relaxed text-foreground-muted">{d.identityNote}</p>
         </article>
 
-        <article className="rounded-lg border border-status-partial/35 bg-status-partial/5 p-4">
-          <h3 className="text-sm font-semibold">{d.cohortTitle}</h3>
+        <article className="border-l-2 border-status-partial pl-4 lg:pl-7">
+          <h3 className="font-serif text-[1.1rem] font-semibold leading-snug tracking-[-0.014em]">{d.cohortTitle}</h3>
           <p className="mt-3 font-mono-num text-sm font-semibold text-foreground">{d.cohortResult}</p>
           <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.cohortDescription}</p>
           <p className="mt-3 text-xs leading-relaxed text-foreground-muted">{d.cohortSource}</p>
         </article>
-      </div>
+      </section>
     </section>
   );
 }

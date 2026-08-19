@@ -672,27 +672,71 @@ const COPY: Record<Locale, Copy> = {
   },
 };
 
-function toneClass(tone: EvidenceCard["tone"]) {
-  return tone === "direct"
-    ? "border-status-confirmed/35 bg-status-confirmed/5"
-    : "border-status-partial/35 bg-status-partial/5";
+function SectionHeader({
+  label,
+  title,
+  lead,
+}: {
+  label: string;
+  title: string;
+  lead?: string;
+}) {
+  return (
+    <header className="max-w-4xl">
+      <p className="editorial-kicker text-accent">{label}</p>
+      <h2 className="editorial-section-heading mt-2">{title}</h2>
+      {lead && <p className="editorial-deck mt-3">{lead}</p>}
+    </header>
+  );
 }
 
 export function EcoStaticInterface({ locale }: { locale: string }) {
   const language: Locale = locale === "fi" ? "fi" : "en";
   const d = COPY[language];
+  const label = language === "fi"
+    ? {
+        framework: "MALLIN KEHYS",
+        claims: "NÄYTTÖPOLKU",
+        interface: "RAJAPINTA",
+        systems: "INDIKAATTORIJÄRJESTELMÄT",
+        measurement: "MITTAUSKETJU",
+        coupling: "BIOLOGINEN KYTKENTÄ",
+        evidence: "NÄYTÖN TILA",
+        interpretation: "TULKINTA",
+        predictions: "JOHDETUT ENNUSTEET",
+        research: "TUTKIMUSASETELMA",
+        sources: "LÄHTEET JA PROVENIENSSI",
+        protocol: "MINIMAALINEN PROTOKOLLA",
+        observed: "HAVAITTU",
+        testable: "JOHDETTU / TESTATTAVA",
+      }
+    : {
+        framework: "MODEL FRAMEWORK",
+        claims: "EVIDENCE SEQUENCE",
+        interface: "INTERFACE",
+        systems: "SENTINEL SYSTEMS",
+        measurement: "MEASUREMENT CHAIN",
+        coupling: "BIOLOGICAL COUPLING",
+        evidence: "EVIDENCE STATUS",
+        interpretation: "INTERPRETATION",
+        predictions: "DERIVED PREDICTIONS",
+        research: "RESEARCH DESIGN",
+        sources: "SOURCES AND PROVENANCE",
+        protocol: "MINIMUM PROTOCOL",
+        observed: "OBSERVED",
+        testable: "DERIVED / TESTABLE",
+      };
 
   return (
-    <div className="space-y-14">
+    <div className="space-y-16">
       <section>
-        <h2 className="text-xl font-semibold">{d.frameworkTitle}</h2>
-        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.frameworkLead}</p>
+        <SectionHeader label={label.framework} title={d.frameworkTitle} lead={d.frameworkLead} />
         <EcoCausalVisuals locale={language} />
-        <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-7 grid gap-x-6 gap-y-7 md:grid-cols-2 xl:grid-cols-4">
           {d.fieldClasses.map((fieldClass) => (
-            <article key={fieldClass.title} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={fieldClass.title} className="border-t border-card-border pt-4">
               <p className="font-mono-num text-xs font-semibold text-accent">{fieldClass.symbol}</p>
-              <h3 className="mt-2 text-base font-semibold">{fieldClass.title}</h3>
+              <h3 className="mt-2 font-serif text-[1.05rem] font-semibold leading-snug tracking-[-0.012em]">{fieldClass.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{fieldClass.text}</p>
               {fieldClass.source && (
                 <a href={fieldClass.source.href} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs font-medium text-accent hover:underline">
@@ -704,14 +748,16 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <section>
-        <h2 className="text-xl font-semibold">{d.ladderTitle}</h2>
-        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.ladderLead}</p>
-        <div className="mt-5 grid gap-4 lg:grid-cols-4">
+      <section className="border-t border-card-border pt-10">
+        <SectionHeader label={label.claims} title={d.ladderTitle} lead={d.ladderLead} />
+        <div className="mt-7 grid gap-x-6 gap-y-7 lg:grid-cols-4">
           {d.ladder.map((stage) => (
-            <article key={stage.step} className={"rounded-xl border p-5 " + toneClass(stage.tone)}>
-              <p className="text-[11px] font-semibold tracking-wide text-foreground-muted">{stage.step}</p>
-              <h3 className="mt-3 text-base font-semibold">{stage.title}</h3>
+            <article key={stage.step} className="border-t border-card-border pt-4">
+              <p className={`editorial-kicker ${stage.tone === "direct" ? "text-status-confirmed" : "text-status-partial"}`}>
+                {stage.tone === "direct" ? label.observed : label.testable}
+              </p>
+              <p className="mt-2 font-mono-num text-[10px] font-semibold tracking-[0.12em] text-foreground-muted">{stage.step}</p>
+              <h3 className="mt-3 font-serif text-[1.05rem] font-semibold leading-snug tracking-[-0.012em]">{stage.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{stage.text}</p>
               {stage.source && (
                 <a href={stage.source.href} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs font-medium text-accent hover:underline">
@@ -723,21 +769,19 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <section>
-        <h2 className="text-xl font-semibold">{d.interfaceTitle}</h2>
-        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.interfaceLead}</p>
+      <section className="border-t border-card-border pt-10">
+        <SectionHeader label={label.interface} title={d.interfaceTitle} lead={d.interfaceLead} />
         <TickEvidenceBoundary locale={language} />
         <EcoSpeciesCueRow locale={language} />
       </section>
 
-      <section>
-        <h2 className="text-xl font-semibold">{d.systemsTitle}</h2>
-        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.systemsLead}</p>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
+      <section className="border-t border-card-border pt-10">
+        <SectionHeader label={label.systems} title={d.systemsTitle} lead={d.systemsLead} />
+        <div className="mt-7 grid gap-x-8 gap-y-7 md:grid-cols-2">
           {d.systems.map((system) => (
-            <article key={system.id} className="rounded-xl border border-card-border bg-card-bg p-5">
-              <p className="font-mono-num text-xs text-accent">{system.id}</p>
-              <h3 className="mt-2 text-base font-semibold">{system.title}</h3>
+            <article key={system.id} className="border-t border-card-border pt-4">
+              <p className="editorial-kicker text-accent">{system.id}</p>
+              <h3 className="mt-2 font-serif text-[1.12rem] font-semibold leading-snug tracking-[-0.012em]">{system.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{system.text}</p>
               {system.source && (
                 <a href={system.source.href} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs font-medium text-accent hover:underline">
@@ -749,14 +793,13 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <section>
-        <h2 className="text-xl font-semibold">{d.reconstructionTitle}</h2>
-        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.reconstructionLead}</p>
-        <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <section className="border-t border-card-border pt-10">
+        <SectionHeader label={label.measurement} title={d.reconstructionTitle} lead={d.reconstructionLead} />
+        <div className="mt-7 grid gap-x-7 gap-y-8 md:grid-cols-2 xl:grid-cols-3">
           {d.staticMetrics.map((metric) => (
-            <article key={metric.title} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={metric.title} className="border-t border-card-border pt-4">
               <p className="font-mono-num text-xs font-semibold text-accent">{metric.symbol}</p>
-              <h3 className="mt-2 text-base font-semibold">{metric.title}</h3>
+              <h3 className="mt-2 font-serif text-[1.05rem] font-semibold leading-snug tracking-[-0.012em]">{metric.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{metric.text}</p>
               {metric.source && (
                 <a href={metric.source.href} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs font-medium text-accent hover:underline">
@@ -768,27 +811,26 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <section>
-        <h2 className="text-xl font-semibold">{d.couplingTitle}</h2>
-        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.couplingLead}</p>
-        <div className="mt-5 grid gap-4 lg:grid-cols-3">
+      <section className="border-t border-card-border pt-10">
+        <SectionHeader label={label.coupling} title={d.couplingTitle} lead={d.couplingLead} />
+        <div className="mt-7 grid gap-x-7 gap-y-8 lg:grid-cols-3">
           {d.couplingRoutes.map((route) => (
-            <article key={route.id} className="rounded-xl border border-accent/25 bg-accent/[0.03] p-5">
+            <article key={route.id} className="border-t border-accent/35 pt-4">
               <p className="font-mono-num text-xs text-accent">{route.id}</p>
-              <h3 className="mt-2 text-base font-semibold">{route.title}</h3>
+              <h3 className="mt-2 font-serif text-[1.05rem] font-semibold leading-snug tracking-[-0.012em]">{route.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{route.text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section>
-        <h2 className="text-xl font-semibold mb-4">{d.evidenceTitle}</h2>
-        <div className="grid gap-4 lg:grid-cols-3">
+      <section className="border-t border-card-border pt-10">
+        <SectionHeader label={label.evidence} title={d.evidenceTitle} />
+        <div className="mt-7 grid gap-x-7 gap-y-8 lg:grid-cols-3">
           {d.evidence.map((card) => (
-            <article key={card.title} className={`rounded-xl border p-5 ${toneClass(card.tone)}`}>
-              <p className="text-[11px] font-semibold tracking-wide text-foreground-muted">{card.tag}</p>
-              <h3 className="mt-3 text-base font-semibold">{card.title}</h3>
+            <article key={card.title} className={`border-t pt-4 ${card.tone === "direct" ? "border-status-confirmed/55" : "border-status-partial/55"}`}>
+              <p className={`editorial-kicker ${card.tone === "direct" ? "text-status-confirmed" : "text-status-partial"}`}>{card.tag}</p>
+              <h3 className="mt-3 font-serif text-[1.12rem] font-semibold leading-snug tracking-[-0.012em]">{card.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{card.text}</p>
               {card.source && (
                 <a href={card.source.href} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs font-medium text-accent hover:underline">
@@ -800,57 +842,59 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         </div>
       </section>
 
-      <section className="max-w-4xl">
-        <h2 className="text-xl font-semibold mb-3">{d.directTitle}</h2>
+      <section className="max-w-4xl border-t border-card-border pt-10">
+        <SectionHeader label={label.interpretation} title={d.directTitle} />
         <ul className="space-y-3 text-sm leading-relaxed text-foreground-muted">
           {d.direct.map((item) => <li key={item} className="flex gap-3"><span className="text-accent">•</span><span>{item}</span></li>)}
         </ul>
       </section>
 
-      <section>
-        <h2 className="text-xl font-semibold">{d.predictionTitle}</h2>
-        <p className="mt-2 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.predictionLead}</p>
-        <p className="mt-4 max-w-4xl rounded-lg border border-accent/25 bg-accent/[0.03] px-4 py-3 font-mono-num text-sm text-accent">
+      <section className="border-t border-card-border pt-10">
+        <SectionHeader label={label.predictions} title={d.predictionTitle} lead={d.predictionLead} />
+        <p className="mt-5 max-w-4xl border-y border-accent/30 py-3 font-mono-num text-sm text-accent">
           {d.selectionEquation}
         </p>
         <p className="mt-4 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.evolutionText}</p>
-        <p className="mt-3 max-w-4xl rounded-lg border border-accent/25 bg-accent/[0.03] px-4 py-3 font-mono-num text-sm text-accent">
+        <p className="mt-4 max-w-4xl border-y border-accent/30 py-3 font-mono-num text-sm text-accent">
           {d.evolutionEquation}
         </p>
-        <div className="mt-5 grid gap-4 lg:grid-cols-3">
+        <div className="mt-7 grid gap-x-7 gap-y-8 lg:grid-cols-3">
           {d.predictions.map((prediction) => (
-            <article key={prediction.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <article key={prediction.id} className="border-t border-card-border pt-4">
               <p className="font-mono-num text-xs text-accent">{prediction.id}</p>
-              <h3 className="mt-2 text-base font-semibold">{prediction.title}</h3>
+              <h3 className="mt-2 font-serif text-[1.05rem] font-semibold leading-snug tracking-[-0.012em]">{prediction.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{prediction.text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-2">
-        <article className="rounded-xl border border-card-border bg-card-bg p-5">
-          <h2 className="text-lg font-semibold">{d.protocolTitle}</h2>
+      <section className="border-t border-card-border pt-10">
+        <SectionHeader label={label.research} title={d.protocolTitle} />
+        <div className="mt-7 grid gap-x-10 gap-y-8 lg:grid-cols-2">
+          <article className="border-t border-card-border pt-4">
+          <p className="editorial-kicker text-accent">{label.protocol}</p>
           <ol className="mt-4 space-y-3 text-sm leading-relaxed text-foreground-muted">
             {d.protocol.map((item, index) => <li key={item} className="flex gap-3"><span className="font-mono-num text-accent">{index + 1}.</span><span>{item}</span></li>)}
           </ol>
         </article>
 
-        <article className="rounded-xl border border-status-partial/35 bg-status-partial/5 p-5">
-          <h2 className="text-lg font-semibold">{d.boundaryTitle}</h2>
+          <article className="border-t border-status-partial/55 pt-4">
+          <p className="editorial-kicker text-status-partial">{d.boundaryTitle}</p>
           <div className="mt-4 space-y-3 text-sm leading-relaxed text-foreground-muted">
             {d.boundary.map((item) => <p key={item}>{item}</p>)}
           </div>
         </article>
+        </div>
       </section>
 
       <section className="max-w-4xl border-t border-card-border pt-8">
-        <h2 className="text-lg font-semibold">{d.sourceTitle}</h2>
-        <div className="mt-4 space-y-3">
+        <SectionHeader label={label.sources} title={d.sourceTitle} />
+        <div className="mt-6 space-y-5">
           {d.sources.map((source) => (
-            <article key={source.href} className="rounded-lg border border-card-border bg-card-bg p-4">
-              <a href={source.href} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-accent hover:underline">{source.label} ↗</a>
-              <p className="mt-1 text-sm leading-relaxed text-foreground-muted">{source.text}</p>
+            <article key={source.href} className="border-t border-card-border pt-3">
+              <a href={source.href} target="_blank" rel="noopener noreferrer" className="font-serif text-[1.02rem] font-semibold leading-snug text-accent hover:underline">{source.label} ↗</a>
+              <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{source.text}</p>
             </article>
           ))}
         </div>

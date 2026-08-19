@@ -2,6 +2,17 @@
 
 /* ── Dark palette (default) ── */
 :root {
+  /*
+   * Editorial system: the interface stays deliberately quiet while article
+   * titles carry a readable serif voice. These are local/system fallbacks so
+   * the site keeps working without a third-party font request.
+   */
+  --font-interface: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-editorial: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+    Georgia, "Times New Roman", serif;
+  --font-data: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
   --background: #0a0a0a;
   --background-secondary: #141414;
   --foreground: #ededed;
@@ -19,20 +30,23 @@
   --ci-bar-fill: #3B82F6;
   --ci-bar-center: #60A5FA;
   --nav-bg: rgba(10, 10, 10, 0.85);
+  --rule-strong: #4b5563;
+  --figure-bg: #0d1117;
+  --figure-caption-bg: rgba(255, 255, 255, 0.025);
 }
 
 /* ── Light palette: system preference ── */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --background: #fafafa;
-    --background-secondary: #f0f0f0;
-    --foreground: #141414;
-    --foreground-muted: #525252;
+    --background: #fcfcfb;
+    --background-secondary: #f4f5f5;
+    --foreground: #171a1d;
+    --foreground-muted: #53606c;
     --accent: #2563EB;
     --accent-hover: #1D4ED8;
-    --border: #d4d4d4;
+    --border: #d9dde1;
     --card-bg: #ffffff;
-    --card-border: #e5e5e5;
+    --card-border: #dfe3e7;
     --status-pending: #737373;
     --status-confirmed: #16A34A;
     --status-refuted: #DC2626;
@@ -40,7 +54,10 @@
     --ci-bar-bg: #e5e5e5;
     --ci-bar-fill: #3B82F6;
     --ci-bar-center: #1D4ED8;
-    --nav-bg: rgba(250, 250, 250, 0.85);
+    --nav-bg: rgba(252, 252, 251, 0.9);
+    --rule-strong: #87919b;
+    --figure-bg: #ffffff;
+    --figure-caption-bg: #f8f9f9;
   }
 }
 
@@ -63,19 +80,22 @@
   --ci-bar-fill: #3B82F6;
   --ci-bar-center: #60A5FA;
   --nav-bg: rgba(10, 10, 10, 0.85);
+  --rule-strong: #4b5563;
+  --figure-bg: #0d1117;
+  --figure-caption-bg: rgba(255, 255, 255, 0.025);
 }
 
 /* ── Light palette: explicit toggle ── */
 :root[data-theme="light"] {
-  --background: #fafafa;
-  --background-secondary: #f0f0f0;
-  --foreground: #141414;
-  --foreground-muted: #525252;
+  --background: #fcfcfb;
+  --background-secondary: #f4f5f5;
+  --foreground: #171a1d;
+  --foreground-muted: #53606c;
   --accent: #2563EB;
   --accent-hover: #1D4ED8;
-  --border: #d4d4d4;
+  --border: #d9dde1;
   --card-bg: #ffffff;
-  --card-border: #e5e5e5;
+  --card-border: #dfe3e7;
   --status-pending: #737373;
   --status-confirmed: #16A34A;
   --status-refuted: #DC2626;
@@ -83,10 +103,16 @@
   --ci-bar-bg: #e5e5e5;
   --ci-bar-fill: #3B82F6;
   --ci-bar-center: #1D4ED8;
-  --nav-bg: rgba(250, 250, 250, 0.85);
+  --nav-bg: rgba(252, 252, 251, 0.9);
+  --rule-strong: #87919b;
+  --figure-bg: #ffffff;
+  --figure-caption-bg: #f8f9f9;
 }
 
 @theme inline {
+  --font-sans: var(--font-interface);
+  --font-serif: var(--font-editorial);
+  --font-mono: var(--font-data);
   --color-background: var(--background);
   --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
@@ -104,19 +130,136 @@
   --color-ci-bar-fill: var(--ci-bar-fill);
   --color-ci-bar-center: var(--ci-bar-center);
   --color-nav-bg: var(--nav-bg);
+  --color-rule-strong: var(--rule-strong);
+  --color-figure-bg: var(--figure-bg);
+  --color-figure-caption-bg: var(--figure-caption-bg);
+}
+
+html {
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: var(--font-interface);
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: var(--font-editorial);
+  font-weight: 600;
+  letter-spacing: -0.026em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 24%, transparent);
+  color: var(--foreground);
 }
 
 .font-mono-num {
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-    "Liberation Mono", monospace;
+  font-family: var(--font-data);
   font-variant-numeric: tabular-nums;
+}
+
+/* Reusable editorial primitives for article headers and evidence figures. */
+.editorial-kicker {
+  color: var(--foreground-muted);
+  font-family: var(--font-interface);
+  font-size: 0.6875rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.editorial-deck {
+  color: var(--foreground-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 66ch;
+}
+
+.editorial-section-heading {
+  color: var(--foreground);
+  font-family: var(--font-editorial);
+  font-size: clamp(1.45rem, 1.2rem + 0.6vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.12;
+}
+
+.editorial-rule {
+  border-color: var(--rule-strong);
+}
+
+.editorial-divider {
+  border: 0;
+  border-top: 1px solid var(--card-border);
+  margin-block: 2.5rem;
+}
+
+.editorial-rail {
+  border-inline-start: 2px solid var(--accent);
+  padding-inline-start: 1rem;
+}
+
+.data-figure {
+  background: var(--figure-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+}
+
+.data-figure__caption {
+  background: var(--figure-caption-bg);
+  border-bottom: 1px solid var(--card-border);
+  color: var(--foreground);
+  font-family: var(--font-interface);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  margin: -0.75rem -0.75rem 0.75rem;
+  padding: 0.7rem 0.75rem;
+}
+
+.data-figure__title {
+  color: var(--foreground);
+  font-family: var(--font-editorial);
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  line-height: 1.2;
+}
+
+.data-figure__legend,
+.data-figure__note,
+.data-figure__source {
+  color: var(--foreground-muted);
+  font-family: var(--font-interface);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.data-figure__note,
+.data-figure__source {
+  border-top: 1px solid var(--card-border);
+  margin: 0.75rem -0.75rem -0.75rem;
+  padding: 0.625rem 0.75rem;
 }
 
 @keyframes slide-up {

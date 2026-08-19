@@ -91,19 +91,20 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Layers} title={d.title} subtitle={d.subtitle} />
 
-      <section className="mb-14">
-        <h2 className="text-xl font-semibold mb-4">{d.interpretationTitle}</h2>
-        <ol className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-4xl">
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-6">{d.interpretationTitle}</h2>
+        <ol className="grid max-w-4xl grid-cols-1 md:grid-cols-2 md:divide-x md:divide-card-border">
           {d.interpretation.map((item, index) => (
-            <li key={item} className="border border-card-border bg-card-bg rounded-lg p-4 text-sm text-foreground-muted leading-relaxed">
-              <span className="font-mono-num text-accent mr-2">0{index + 1}</span>{item}
+            <li key={item} className="border-t border-card-border py-4 text-sm leading-relaxed text-foreground-muted md:border-t-0 md:px-5 first:md:pl-0 last:md:pr-0">
+              <span className="font-mono-num mr-2 text-accent">0{index + 1}</span>{item}
             </li>
           ))}
         </ol>
       </section>
 
-      <section className="mb-14 max-w-4xl rounded-xl border border-status-partial/30 bg-status-partial/5 p-6">
-        <h2 className="text-xl font-semibold mb-2">{d.provenanceTitle}</h2>
+      <section className="editorial-rail mb-14 max-w-4xl border-y border-card-border py-5">
+        <p className="editorial-kicker mb-2 text-accent">{activeLocale === "fi" ? "LÄHDEKONTEKSTI" : "RESEARCH PROVENANCE"}</p>
+        <h2 className="editorial-section-heading mb-3">{d.provenanceTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed">{d.provenance}</p>
       </section>
 
@@ -113,27 +114,28 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         const records = FIELDSTATE_EVIDENCE.filter((record) => record.directness === directness);
         if (!records.length) return null;
         return (
-          <section key={directness} className="mb-14">
-            <h2 className="text-xl font-semibold mb-4">{d.groups[directness]}</h2>
+          <section key={directness} className="mb-16 border-t editorial-rule pt-6">
+            <h2 className="editorial-section-heading mb-5">{d.groups[directness]}</h2>
             <div className="grid gap-4">
               {records.map((record) => (
-                <article key={record.id} className="border border-card-border bg-card-bg rounded-xl p-5">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
-                    <div>
-                      <h3 className="font-semibold">{record.citation}</h3>
-                      <p className="text-xs text-foreground-muted mt-1">{record.studyType} · {record.system}</p>
+                <article key={record.id} className="border-t border-card-border py-6 first:border-t-0">
+                  <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                    <div className="min-w-0">
+                      <p className="editorial-kicker mb-2 text-accent">{record.directness.replaceAll("_", " ")}</p>
+                      <h3 className="font-serif text-lg font-semibold leading-snug tracking-[-0.014em]">{record.citation}</h3>
+                      <p className="mt-1 text-xs text-foreground-muted">{record.studyType} · {record.system}</p>
                     </div>
-                    <span className="text-xs font-mono-num rounded border border-card-border px-2 py-1 text-foreground-muted">{record.year}</span>
+                    <span className="font-mono-num text-xs text-foreground-muted">{record.year}</span>
                   </div>
-                  <p className="text-sm text-foreground-muted leading-relaxed mb-4">{record.finding}</p>
-                  <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-xs leading-relaxed">
+                  <p className="mb-5 max-w-4xl text-sm leading-relaxed text-foreground-muted">{record.finding}</p>
+                  <dl className="grid grid-cols-1 gap-x-8 gap-y-3 border-t border-card-border pt-4 text-xs leading-relaxed md:grid-cols-2">
                     <div><dt className="font-semibold text-foreground mb-0.5">{d.fields.nodes}</dt><dd className="text-foreground-muted">{causalNodeLabels(record.causalNodes, activeLocale).join(" · ")}</dd></div>
                     <div><dt className="font-semibold text-foreground mb-0.5">{d.fields.field}</dt><dd className="text-foreground-muted">{record.fieldClass}</dd></div>
                     <div><dt className="font-semibold text-foreground mb-0.5">{d.fields.scope}</dt><dd className="text-foreground-muted">{record.scope}</dd></div>
                     <div><dt className="font-semibold text-foreground mb-0.5">{d.fields.limitations}</dt><dd className="text-foreground-muted">{record.limitations.join("; ")}</dd></div>
                   </dl>
-                  <div className="mt-4 flex flex-wrap items-center gap-3 text-xs">
-                    <span className="rounded bg-background-secondary px-2 py-1 text-foreground-muted">{d.fields.role}: {record.calibrationRole === "STRUCTURAL_ONLY" ? d.structural : d.contextual}</span>
+                  <div className="mt-5 flex flex-wrap items-center gap-3 text-xs">
+                    <span className="font-mono-num text-foreground-muted">{d.fields.role}: {record.calibrationRole === "STRUCTURAL_ONLY" ? d.structural : d.contextual}</span>
                     <a href={record.url} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">{d.fields.source} ↗</a>
                   </div>
                 </article>
@@ -143,8 +145,8 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         );
       })}
 
-      <section className="mb-14 rounded-xl border border-status-partial/30 bg-status-partial/5 p-6 max-w-4xl">
-        <h2 className="text-xl font-semibold mb-2">{d.sentinelTitle}</h2>
+      <section className="editorial-rail mb-14 max-w-4xl border-y border-card-border py-5">
+        <h2 className="editorial-section-heading mb-3">{d.sentinelTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.sentinel}</p>
         <Link href={`/${activeLocale}/sentinel`} className="text-sm text-accent hover:underline">{d.sentinelLink} →</Link>
       </section>
