@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Zap } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { EcoTickHero } from "@/components/EcoTickHero";
 import { EcoStaticInterface } from "@/components/EcoStaticInterface";
 
 const COPY = {
@@ -38,6 +39,7 @@ export default async function EcologyPage({
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Zap} title={d.title} subtitle={d.subtitle} />
+      <EcoTickHero locale={language} />
       <EcoStaticInterface locale={language} />
     </div>
   );
