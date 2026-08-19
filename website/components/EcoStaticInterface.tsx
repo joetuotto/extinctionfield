@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { EcoCausalVisuals, EcoSpeciesCueRow, TickFocalFrame } from "./EcoCausalVisuals";
+import { EcoCausalVisuals, EcoSpeciesCueRow, TickEvidenceBoundary } from "./EcoCausalVisuals";
 
 type Locale = "en" | "fi";
 
@@ -726,7 +726,7 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
       <section>
         <h2 className="text-xl font-semibold">{d.interfaceTitle}</h2>
         <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.interfaceLead}</p>
-        <TickFocalFrame locale={language} />
+        <TickEvidenceBoundary locale={language} />
         <EcoSpeciesCueRow locale={language} />
       </section>
 
