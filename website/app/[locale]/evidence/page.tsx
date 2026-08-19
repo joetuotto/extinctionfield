@@ -15,6 +15,7 @@ const ORDER: FieldStateDirectness[] = [
   "PHYSICS_SIGNATURE",
   "MECHANISTIC_INTERMEDIATE",
   "REPRODUCTIVE_ENDPOINT",
+  "ECOLOGICAL_ENDPOINT",
   "SYSTEMATIC_REVIEW",
   "POPULATION_DESCRIPTIVE",
 ];
@@ -36,6 +37,7 @@ const COPY = {
       PHYSICS_SIGNATURE: "Physics signatures",
       MECHANISTIC_INTERMEDIATE: "Mechanistic intermediates",
       REPRODUCTIVE_ENDPOINT: "Reproductive endpoints",
+      ECOLOGICAL_ENDPOINT: "Ecological endpoints",
       SYSTEMATIC_REVIEW: "Systematic reviews",
       POPULATION_DESCRIPTIVE: "Population-descriptive data",
     },
@@ -62,6 +64,7 @@ const COPY = {
       PHYSICS_SIGNATURE: "Fysiikan allekirjoitukset",
       MECHANISTIC_INTERMEDIATE: "Mekanistiset välivaiheet",
       REPRODUCTIVE_ENDPOINT: "Lisääntymisen päätepisteet",
+      ECOLOGICAL_ENDPOINT: "Ekologiset päätepisteet",
       SYSTEMATIC_REVIEW: "Systemaattiset katsaukset",
       POPULATION_DESCRIPTIVE: "Väestötason kuvaileva data",
     },

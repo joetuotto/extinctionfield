@@ -11,6 +11,7 @@ const DIRECTNESS: FieldStateDirectness[] = [
   "PHYSICS_SIGNATURE",
   "MECHANISTIC_INTERMEDIATE",
   "REPRODUCTIVE_ENDPOINT",
+  "ECOLOGICAL_ENDPOINT",
   "SYSTEMATIC_REVIEW",
   "POPULATION_DESCRIPTIVE",
 ];
@@ -27,6 +28,7 @@ const LABELS = {
       PHYSICS_SIGNATURE: "Physics signature",
       MECHANISTIC_INTERMEDIATE: "Mechanistic intermediate",
       REPRODUCTIVE_ENDPOINT: "Reproductive endpoint",
+      ECOLOGICAL_ENDPOINT: "Ecological endpoint",
       SYSTEMATIC_REVIEW: "Systematic review",
       POPULATION_DESCRIPTIVE: "Population descriptive",
     },
@@ -42,6 +44,7 @@ const LABELS = {
       PHYSICS_SIGNATURE: "Fysiikan allekirjoitus",
       MECHANISTIC_INTERMEDIATE: "Mekanistinen välivaihe",
       REPRODUCTIVE_ENDPOINT: "Lisääntymisen päätepiste",
+      ECOLOGICAL_ENDPOINT: "Ekologinen päätepiste",
       SYSTEMATIC_REVIEW: "Systemaattinen katsaus",
       POPULATION_DESCRIPTIVE: "Väestötason kuvaileva",
     },

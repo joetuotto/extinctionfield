@@ -36,6 +36,12 @@ def test_registry_has_bounded_evidence_for_new_male_female_and_physics_nodes() -
     assert "NADERI_2026_RODENT_SYSTEMATIC_REVIEW" in ids
     assert "BALDINI_2025_ART_LAB_SPERM" in ids
     assert "YOUSEFI_2025_NEONATAL_OOGENESIS" in ids
+    assert "SHAFIK_1992_HUMAN_TEXTILE_SURFACE_READING" in ids
+    assert "SHAFIK_1992_HUMAN_POLYESTER_SLING" in ids
+    assert "DINCMEN_2016_PET_ANTISTATIC_DECAY" in ids
+    assert "ENGLAND_2023_TICK_STATIC_ATTACHMENT" in ids
+    assert "GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION" in ids
+    assert "SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE" in ids
     assert all(record.calibration_role in {"STRUCTURAL_ONLY", "CONTEXT_ONLY"} for record in records)
     assert all(record.limitations for record in records)
 
@@ -47,6 +53,22 @@ def test_evidence_is_attached_to_semantic_nodes_not_ambiguous_pathway_letters() 
     assert any(record.id == "YU_2020_LOCAL_4G_BTB" for record in btb)
     assert "BARRIER_BTB" in summary
     assert "T" not in summary
+
+
+def test_static_interface_and_ecological_branch_stay_structural_not_tfr_coefficients() -> None:
+    static_records = evidence_for_node("STATIC_TRIBO_INTERFACE")
+    low_frequency_records = evidence_for_node("FIELDSTATE_LOW_FREQUENCY_ELECTRIC")
+    encounter_records = evidence_for_node("ECOLOGICAL_ENCOUNTER")
+
+    assert any(record.id == "SHAFIK_1992_HUMAN_TEXTILE_SURFACE_READING" for record in static_records)
+    assert any(record.id == "MALLINSON_2025_HONEYBEE_EFIELD_FORAGING" for record in low_frequency_records)
+    assert any(record.id == "GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION" for record in low_frequency_records)
+    assert any(record.id == "SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE" for record in encounter_records)
+    assert any(record.id == "ENGLAND_2023_TICK_STATIC_ATTACHMENT" for record in encounter_records)
+    assert all(
+        record.calibration_role == "STRUCTURAL_ONLY"
+        for record in static_records + low_frequency_records + encounter_records
+    )
 
 
 def test_asfr_keeps_biological_and_nonbiological_inputs_explicit() -> None:

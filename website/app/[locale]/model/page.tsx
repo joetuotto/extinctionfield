@@ -16,6 +16,9 @@ type Copy = {
   architecture: readonly { title: string; text: string }[];
   fieldStateTitle: string;
   fieldStateText: readonly string[];
+  staticInterfaceTitle: string;
+  staticInterfaceText: readonly string[];
+  ecologyLink: string;
   diagramTitle: string;
   diagramText: string;
   organTitle: string;
@@ -55,6 +58,12 @@ const t: Record<Locale, Copy> = {
       "For each organ, v2 keeps background, ambient and personal field components distinct after an organ-, posture- and geometry-specific transfer. It retains vector information, phase/coherence, envelope or beat PSD, circadian context, calibration and provenance.",
       "National mobile-subscription series can describe technology diffusion. They remain distinct from local dosimetry and a measured organ FieldState.",
     ],
+    staticInterfaceTitle: "Static triboelectric interface: a native local-physics branch",
+    staticInterfaceText: [
+      "BERM also registers a separate 0 Hz and transient-interface state for material–skin and organism interfaces: {Q, V, E(r,t), ∇E², dE/dt, τ}. Material, air-gap geometry, humidity, motion and grounding determine this state; it is not folded into an RF, ELF or national technology proxy.",
+      "Historical textile readings are retained as physically underdetermined historical signals. They become a measurement-ready input only after a named earth/body reference, ground-path impedance and capacitance, probe geometry, calibrated local field map, charge measurement and decay curve are supplied. The same physics permits a separate ecological host–vegetation–tick contact branch without creating an uncalibrated reproductive or population coefficient.",
+    ],
+    ecologyLink: "Open the static-interface ecology branch",
     diagramTitle: "Registered causal route",
     diagramText:
       "The diagram makes the required intermediate states visible. Its labels describe the status of each link; they do not turn a collection of studies into a country-level coefficient. Click a node to inspect the bounded role and evidence attached to it.",
@@ -100,6 +109,12 @@ const t: Record<Locale, Copy> = {
       "V2 säilyttää kullekin elimelle tausta-, ambient- ja henkilökohtaiset kenttäkomponentit erillään elin-, asento- ja geometriakohtaisen siirron jälkeen. Se säilyttää vektoritiedon, vaiheen/koherenssin, verhokäyrä- tai beat-PSD:n, vuorokausikontekstin, kalibroinnin ja provenienssin.",
       "Kansalliset mobiililiittymäsarjat voivat kuvata teknologian leviämistä. Ne pidetään erillään paikallisesta dosimetriasta ja mitatusta elin-FieldStatesta.",
     ],
+    staticInterfaceTitle: "Staattinen triboelektrinen rajapinta: natiivi paikallisfysiikan haara",
+    staticInterfaceText: [
+      "BERM rekisteröi myös erillisen 0 Hz:n ja transienttirajapinnan tilan materiaali–iho- ja eliörajapinnoille: {Q, V, E(r,t), ∇E², dE/dt, τ}. Materiaali, ilmarakon geometria, kosteus, liike ja maadoitus määrittävät tilan; sitä ei sulauteta RF:ään, ELF:ään eikä kansalliseen teknologiaproxyyn.",
+      "Historialliset tekstiilimittarilukemat säilytetään fysikaalisesti alimäärättyinä historiallisina signaaleina. Niistä tulee mittausvalmis syöte vasta, kun nimetty maa-/kehoreferenssi, maareitin impedanssi ja kapasitanssi, mittapään geometria, kalibroitu paikalliskenttäkartta, varausmittaus ja purkautumiskäyrä on toimitettu. Sama fysiikka mahdollistaa erillisen ekologisen isäntä–kasvillisuus–punkki-kontaktihaaran ilman kalibroimatonta lisääntymis- tai populaatiokerrointa.",
+    ],
+    ecologyLink: "Avaa staattisen rajapinnan ekologinen haara",
     diagramTitle: "Rekisteröity kausaalireitti",
     diagramText:
       "Kaavio tekee tarvittavat välitilat näkyviksi. Sen merkinnät kuvaavat kunkin lenkin tilaa; ne eivät muuta tutkimuskokoelmaa maakohtaiseksi kertoimeksi. Solmua klikkaamalla näet sille kiinnitetyn rajatun roolin ja evidenssin.",
@@ -173,6 +188,18 @@ export default async function ModelPage({
             <h2 className="text-xl font-semibold mb-3">{d.fieldStateTitle}</h2>
             <div className="max-w-4xl space-y-3 text-sm leading-relaxed text-foreground-muted">
               {d.fieldStateText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </div>
+          </section>
+
+          <section id="static-interface">
+            <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
+              <h2 className="text-xl font-semibold">{d.staticInterfaceTitle}</h2>
+              <Link href={`/${language}/ecology`} className="text-sm font-medium text-accent hover:text-accent-hover transition-colors">
+                {d.ecologyLink} →
+              </Link>
+            </div>
+            <div className="max-w-4xl space-y-3 text-sm leading-relaxed text-foreground-muted">
+              {d.staticInterfaceText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </section>
 

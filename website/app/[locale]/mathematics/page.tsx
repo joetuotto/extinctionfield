@@ -27,6 +27,7 @@ const t: Record<Locale, Copy> = {
     nav: [
       { id: "premise", label: "Physics premise" },
       { id: "fieldstate", label: "FieldState" },
+      { id: "static-interface-math", label: "Static interface" },
       { id: "organ-state", label: "Organ state" },
       { id: "asfr", label: "ASFR → TFR" },
       { id: "cohort", label: "Cohort signal" },
@@ -61,8 +62,23 @@ const t: Record<Locale, Copy> = {
           "A measurement-ready FieldState requires documented normalisation, B₀, organ transfer, PSD, circadian context, phase/coherence and measurement provenance. Incomplete records are reported as partial FieldState data.",
       },
       {
+        id: "static-interface-math",
+        title: "3. Static triboelectric interface is a local FieldState branch",
+        body: [
+          "A material–skin or organism interface is represented by {Q, Δφref, E(r,t), ∇|E|², dE/dt, τ}. It preserves DC/triboelectric transport separately from the low-frequency waveform and polarity component used for species-specific sensing and behaviour. A material name is not itself an exposure coordinate.",
+          "The historical V/cm² textile reading is physically underdetermined: it preserves a material ordering but cannot yield charge, V/m or an organ field without a named reference electrode, probe area/distance/orientation/calibration, ground-path impedance, capacitance to reference and an empirical decay measurement. In a checked fixture τRC≈RleakCeff is a comparator, not a replacement for measured multi-phase decay.",
+        ],
+        equations: [
+          "\\frac{dQ}{dt}=I_{\\mathrm{tribo}}(m,v,p,A,RH,T)-\\frac{Q}{\\tau}-I_{\\mathrm{discharge}}",
+          "\\tau_{RC}\\approx R_{\\mathrm{leak}}C_{\\mathrm{eff}}",
+          "F_{\\mathrm{ind}}\\approx\\frac{1}{2}\\alpha\\nabla(E^2)",
+        ],
+        note:
+          "For a polarizable tick, the third expression is a local induced-attraction proxy, not a universal threshold or a population effect. The static interface reaches an organ only through a named local transfer to the existing Vmem/Ca²⁺–redox or surface-sensory HPA–HPG states.",
+      },
+      {
         id: "organ-state",
-        title: "3. Biological capacity is organ-specific reversible/persistent state",
+        title: "4. Biological capacity is organ-specific reversible/persistent state",
         body: [
           "A field feature affects a registered organ endpoint only through an explicit, evidence-linked increment model. Each organ has a reversible state R and persistent state P. Their retention and endpoint mapping are parameterised only when a parameter ID and evidence ID are supplied.",
           "The male branch separates blood–testis-barrier integrity, germline reserve, steroidogenesis, sperm output/function and DNA integrity. The female branch separates ovarian reserve, oocyte redox, ovulatory clock and luteal/implantation support. BTB has the registered direct reproductive branch; BBB, placenta and retina remain separate candidate barrier states rather than a shared multiplier.",
@@ -78,7 +94,7 @@ const t: Record<Locale, Copy> = {
       },
       {
         id: "asfr",
-        title: "4. Couple state enters ASFR before TFR",
+        title: "5. Couple state enters ASFR before TFR",
         body: [
           "A population average must retain the shared household and partner covariance; it is not a country-average male multiplier times a country-average female multiplier. Biological conception/live-birth capacity is then kept separate from demand/opportunity, period tempo and ART/live-birth delivery.",
           "TFR is a period sum of age-specific fertility rates. It is not a direct measure of gonadal capacity, so a change in TFR cannot be assigned to FieldState without the intervening ASFR and biological measurements.",
@@ -93,7 +109,7 @@ const t: Record<Locale, Copy> = {
       },
       {
         id: "cohort",
-        title: "5. Current population result: a descriptive cohort-timing signal",
+        title: "6. Current population result: a descriptive cohort-timing signal",
         body: [
           "With WPP 2024 ASFR and World Bank/ITU mobile subscriptions, the development-weighted young-minus-older cohort timing proxy correlates with the young-minus-older ASFR log-change in 2000–2023. The complete-country run has N = 163 and Pearson r = −0.66645; the BERM-country subset has N = 54 and r = −0.64012.",
           "This is useful because it follows the age/cohort premise better than a contemporaneous national TFR–subscription correlation. It remains a technology-timing proxy: region, income and demographic structure are material alternative explanations. It is not FieldState, a biological effect estimate or a calibration coefficient.",
@@ -107,7 +123,7 @@ const t: Record<Locale, Copy> = {
       },
       {
         id: "gme",
-        title: "6. GME / R42 is an experimental branch, not a network inference",
+        title: "7. GME / R42 is an experimental branch, not a network inference",
         body: [
           "Quadratic mixing motivates retaining an envelope/beat PSD in FieldState. Zandieh et al. (2025) observed frequency-dependent mitochondrial/ROS behaviour in cancer-cell experiments at ELF conditions (0.01–5 Hz; fields up to 100 mT). This provides an experimental candidate for cell-state-dependent response windows.",
           "It does not demonstrate RF-network envelope effects, an eDRX field signature, or reproductive harm. Any R42 analysis is therefore exploratory and must begin with measured PSD, sham/thermal controls and a pre-specified biological endpoint.",
@@ -118,7 +134,7 @@ const t: Record<Locale, Copy> = {
       },
       {
         id: "validation",
-        title: "7. What constitutes a v2 result",
+        title: "8. What constitutes a v2 result",
         body: [
           "A valid v2 calibration requires a matched FieldState panel, measured organ or couple endpoint, explicit parameter/evidence IDs and a train-only estimation period. A later ASFR/TFR period remains outside the fit for temporal evaluation.",
           "A population estimate is published when the corresponding FieldState and endpoint panels have been assembled, the mappings are registered and the temporal evaluation is complete.",
@@ -137,6 +153,7 @@ const t: Record<Locale, Copy> = {
     nav: [
       { id: "premise", label: "Fysiikan premissi" },
       { id: "fieldstate", label: "FieldState" },
+      { id: "static-interface-math", label: "Staattinen rajapinta" },
       { id: "organ-state", label: "Elintila" },
       { id: "asfr", label: "ASFR → TFR" },
       { id: "cohort", label: "Kohorttisignaali" },
@@ -171,8 +188,23 @@ const t: Record<Locale, Copy> = {
           "Mittausvalmis FieldState vaatii dokumentoidun normalisoinnin, B₀:n, elinsiirron, PSD:n, vuorokausikontekstin, vaiheen/koherenssin ja mittausprovenienssin. Epätäydelliset tietueet raportoidaan osittaisena FieldState-datana.",
       },
       {
+        id: "static-interface-math",
+        title: "3. Staattinen triboelektrinen rajapinta on paikallinen FieldState-haara",
+        body: [
+          "Materiaali–iho- tai eliörajapinta esitetään joukkona {Q, Δφref, E(r,t), ∇|E|², dE/dt, τ}. Se pitää DC-/triboelektrisen kuljetuksen erillään matalataajuisesta aaltomuoto- ja polariteettikomponentista, jota käytetään lajikohtaisessa aistimisessa ja käyttäytymisessä. Materiaalin nimi ei itsessään ole altistuskoordinaatti.",
+          "Historiallinen V/cm²-tekstiilimittarilukema on fysikaalisesti alimäärätty: se säilyttää materiaalijärjestyksen, mutta siitä ei saa varausta, V/m-arvoa eikä elinkenttää ilman nimettyä referenssielektrodia, mittapään alaa/etäisyyttä/suuntaa/kalibrointia, maareitin impedanssia, kapasitanssia referenssiin ja empiiristä purkautumismittausta. Tarkistetussa mittausasetelmassa τRC≈RleakCeff on vertailusuure, ei mitatun monivaiheisen purkautumisen korvike.",
+        ],
+        equations: [
+          "\\frac{dQ}{dt}=I_{\\mathrm{tribo}}(m,v,p,A,RH,T)-\\frac{Q}{\\tau}-I_{\\mathrm{discharge}}",
+          "\\tau_{RC}\\approx R_{\\mathrm{leak}}C_{\\mathrm{eff}}",
+          "F_{\\mathrm{ind}}\\approx\\frac{1}{2}\\alpha\\nabla(E^2)",
+        ],
+        note:
+          "Polarisoituvalle punkille kolmas yhtälö on paikallinen indusoidun vetovoiman approksimaatio, ei yleinen kynnys eikä populaatiovaikutus. Staattinen rajapinta voi edetä elimeen vain nimetyn paikallissiirron kautta nykyisiin Vmem/Ca²⁺–redox- tai pinta-aistisiin HPA–HPG-tiloihin.",
+      },
+      {
         id: "organ-state",
-        title: "3. Biologinen kapasiteetti on elinkohtainen palautuva/persistentti tila",
+        title: "4. Biologinen kapasiteetti on elinkohtainen palautuva/persistentti tila",
         body: [
           "Kenttäpiirre vaikuttaa rekisteröityyn elinpäätepisteeseen vain eksplisiittisen, evidenssiin kiinnitetyn incrementtimallin kautta. Jokaisella elimellä on palautuva R-tila ja persistentti P-tila. Niiden retentio ja endpoint-mapping parametroituu vasta, kun mukana ovat parameter-ID ja evidence-ID.",
           "Mieshaara erottaa veri–kivesesteen, ituradan varannon, steroidogeneesin, siittiötuoton/toiminnan ja DNA-eheyden. Naishaara erottaa munasarjavarannon, oosyyttiredoxin, ovulaation kellotuksen sekä luteaali-/implantaatiotuen. BTB:llä on rekisteröity suora lisääntymishaara; BBB, istukka ja retina ovat erillisiä kandidaatti-estetiloja, eivät yhteinen kerroin.",
@@ -188,7 +220,7 @@ const t: Record<Locale, Copy> = {
       },
       {
         id: "asfr",
-        title: "4. Paritila tulee ASFR:ään ennen TFR:ää",
+        title: "5. Paritila tulee ASFR:ään ennen TFR:ää",
         body: [
           "Väestökeskiarvon on säilytettävä yhteinen kotiympäristö ja partnerikovarianssi; se ei ole maan keskiarvomiehen ja keskiarvonaisen tulo. Biologinen käsitys-/live-birth-kapasiteetti erotetaan lisäksi kysynnästä/mahdollisuudesta, perioditemposta ja ART:n live-birth-toimituksesta.",
           "TFR on ikäkohtaisten hedelmällisyyslukujen periodisumma. Se ei ole suora gonadikapasiteetin mittari, joten TFR-muutosta ei voi osoittaa FieldStatelle ilman välissä olevia ASFR- ja biologisia mittauksia.",
@@ -203,7 +235,7 @@ const t: Record<Locale, Copy> = {
       },
       {
         id: "cohort",
-        title: "5. Nykyinen väestötulos: kuvaileva kohortti-ajoitussignaali",
+        title: "6. Nykyinen väestötulos: kuvaileva kohortti-ajoitussignaali",
         body: [
           "WPP 2024:n ASFR- ja World Bank/ITU:n mobiililiittymäsarjoilla kehityspainotettu nuori–vanhempi-kohortin ajoitusproksi korreloi nuori–vanhempi-ASFR:n logmuutoksen kanssa 2000–2023. Koko maapaneelissa N = 163 ja Pearson r = −0,66645; BERM-maiden osajoukossa N = 54 ja r = −0,64012.",
           "Tulos on hyödyllinen, koska se seuraa ikä-/kohorttipremissiä paremmin kuin samanaikainen kansallinen TFR–liittymäkorrelaatio. Se on silti teknologiakehityksen ajoitusproksi: alue, tulotaso ja demografinen rakenne ovat olennaisia vaihtoehtoisia selityksiä. Se ei ole FieldState, biologinen vaikutusarvio eikä kalibrointikerroin.",
@@ -217,7 +249,7 @@ const t: Record<Locale, Copy> = {
       },
       {
         id: "gme",
-        title: "6. GME / R42 on kokeellinen haara, ei verkkopäätelmä",
+        title: "7. GME / R42 on kokeellinen haara, ei verkkopäätelmä",
         body: [
           "Neliöllinen sekoitus motivoi envelope/beat-PSD:n säilyttämistä FieldStatessa. Zandieh ym. (2025) havaitsi taajuusriippuvaista mitokondrio-/ROS-käyttäytymistä syöpäsolukokeissa ELF-olosuhteissa (0,01–5 Hz; kenttiä enintään 100 mT). Tämä tarjoaa kokeellisen ehdokkaan solutilariippuvaiselle vasteikkunalle.",
           "Se ei osoita RF-verkon envelope-vaikutusta, eDRX-kenttäallekirjoitusta eikä lisääntymishaittaa. Mahdollinen R42-analyysi on siksi eksploratiivinen: lähtökohtana ovat mitattu PSD, sham-/lämpökontrollit ja ennalta määritelty biologinen päätepiste.",
@@ -228,7 +260,7 @@ const t: Record<Locale, Copy> = {
       },
       {
         id: "validation",
-        title: "7. Mikä muodostaa v2-tuloksen",
+        title: "8. Mikä muodostaa v2-tuloksen",
         body: [
           "Pätevä v2-kalibrointi edellyttää kohdistettua FieldState-paneelia, mitattua elin- tai paripäätepistettä, eksplisiittisiä parameter/evidence-ID:tä ja vain opetusjaksolta tehtävää estimointia. Myöhempi ASFR/TFR-jakso jää sovituksen ulkopuolelle ajalliseen arviointiin.",
           "Väestöarvio julkaistaan, kun vastaavat FieldState- ja endpoint-paneelit on koottu, mappingit rekisteröity ja ajallinen arviointi valmis.",

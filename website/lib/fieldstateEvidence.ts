@@ -11,6 +11,7 @@ export type FieldStateDirectness =
   | "PHYSICS_SIGNATURE"
   | "MECHANISTIC_INTERMEDIATE"
   | "REPRODUCTIVE_ENDPOINT"
+  | "ECOLOGICAL_ENDPOINT"
   | "SYSTEMATIC_REVIEW"
   | "POPULATION_DESCRIPTIVE";
 
@@ -403,6 +404,150 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     limitations: ["Ecological country-level analysis", "Versioned scenario weights are not calibrated sensitivity estimates", "Subscriptions are not an EMF dose", "Development, policy, tempo and demand covary with adoption"],
     isTfrCoefficient: false,
   },
+  {
+    id: "SHAFIK_1992_HUMAN_TEXTILE_SURFACE_READING",
+    citation: "Shafik, Ibrahim & El-Sayed. Andrologia (1992)",
+    year: 1992,
+    url: "https://doi.org/10.1111/j.1439-0272.1992.tb02628.x",
+    studyType: "Human textile-interface measurement study",
+    system: "Twenty-one healthy men wearing polyester, blend or cotton underpants",
+    fieldClass: "Triboelectric textile–skin interface; historical physically underdetermined V/cm² reading",
+    finding: "Reported readings ranked 100% polyester above a 50:50 polyester/cotton blend; cotton had no detected reading in the stated setup.",
+    causalNodes: ["STATIC_TRIBO_INTERFACE"],
+    directness: "PHYSICS_SIGNATURE",
+    scope: "Supports a material-dependent human textile–skin static-interface state; the historically reported, physically underdetermined V/cm² cannot convert into Q, V/m or an organ field.",
+    calibrationRole: "STRUCTURAL_ONLY",
+    limitations: ["V/cm² is not a standard potential, field or charge-density unit", "Probe geometry/reference incompletely reported", "No reproductive endpoint"],
+    isTfrCoefficient: false,
+  },
+  {
+    id: "SHAFIK_1992_HUMAN_POLYESTER_SLING",
+    citation: "Shafik A. Contraception (1992)",
+    year: 1992,
+    url: "https://doi.org/10.1016/0010-7824(92)90157-O",
+    studyType: "Human longitudinal textile-sling experiment",
+    system: "Fourteen adult men wearing a polyester scrotal sling for 12 months",
+    fieldClass: "Triboelectric textile–skin interface with altered scrotal geometry",
+    finding: "Reported reversible azoospermia, seminiferous-tubule changes and static-interface readings; the paper itself proposed electrostatic and thermoregulatory mechanisms.",
+    causalNodes: ["STATIC_TRIBO_INTERFACE", "MALE_SPERM"],
+    directness: "REPRODUCTIVE_ENDPOINT",
+    scope: "Human endpoint anchor for a prolonged textile-interface configuration, not isolated static causality, general clothing effect or TFR coefficient.",
+    calibrationRole: "STRUCTURAL_ONLY",
+    limitations: ["Small historical study", "Static and thermoregulatory components co-occurred", "No calibrated Q, V/m, dE/dt or organ transfer"],
+    isTfrCoefficient: false,
+  },
+  {
+    id: "DINCMEN_2016_PET_ANTISTATIC_DECAY",
+    citation: "Dincmen, Hauser & Gursoy. AATCC Journal of Research (2016)",
+    year: 2016,
+    url: "https://doi.org/10.14504/ajr.3.4.4",
+    studyType: "Controlled textile-material charge generation and dissipation experiment",
+    system: "Untreated and antistatic-treated polyester and nylon fabrics",
+    fieldClass: "Triboelectric charge generation, surface resistivity and charge-decay measurements",
+    finding: "Untreated polyester retained a large charge for over 2,000 seconds in the stated test; antistatic treatment reduced both magnitude and decay time.",
+    causalNodes: ["STATIC_TRIBO_INTERFACE"],
+    directness: "PHYSICS_SIGNATURE",
+    scope: "Supports material-treatment and relaxation-time variables in static-interface FieldState, not a skin or reproductive effect.",
+    calibrationRole: "STRUCTURAL_ONLY",
+    limitations: ["Fabric material test", "Specific treatment and climate conditions", "No biological endpoint"],
+    isTfrCoefficient: false,
+  },
+  {
+    id: "ENGLAND_2023_TICK_STATIC_ATTACHMENT",
+    citation: "England, Lihou & Robert. Current Biology (2023)",
+    year: 2023,
+    url: "https://doi.org/10.1016/j.cub.2023.06.021",
+    studyType: "Controlled arthropod electrostatic-attraction experiment with finite-element modelling",
+    system: "Ixodes ricinus nymphs and host–vegetation geometries",
+    fieldClass: "Static host–vegetation air-gap electric fields and field gradients",
+    finding: "Nymphs crossed short air gaps toward charged host-like targets; polarity independence supported induced polarization, and the modelled geometry exceeded 300 kV/m locally.",
+    causalNodes: ["STATIC_TRIBO_INTERFACE", "ECOLOGICAL_ENCOUNTER"],
+    directness: "ECOLOGICAL_ENDPOINT",
+    scope: "Direct contact/attachment evidence for the tested tick and geometry, not RF/ELF resistance, population abundance or a human coefficient.",
+    calibrationRole: "STRUCTURAL_ONLY",
+    limitations: ["Ixodes ricinus nymph system", "Attachment rather than population endpoint", "Each host/habitat geometry needs measurement"],
+    isTfrCoefficient: false,
+  },
+  {
+    id: "COLIN_1992_VARROA_ELECTRICAL_CHARGES",
+    citation: "Colin et al. Journal of Insect Physiology (1992)",
+    year: 1992,
+    url: "https://doi.org/10.1016/0022-1910(92)90039-G",
+    studyType: "Controlled ectoparasite behavior experiment",
+    system: "Varroa jacobsoni as named in the original study (now generally treated as V. destructor in this Apis mellifera pest context) and honey-bee-range charged lures",
+    fieldClass: "Static electrical charges matched to the reported host range",
+    finding: "Charge sign altered mite movement; a negatively charged lure increased contact and climbing in the tested system.",
+    causalNodes: ["STATIC_TRIBO_INTERFACE", "ECOLOGICAL_ENCOUNTER"],
+    directness: "ECOLOGICAL_ENDPOINT",
+    scope: "Supports a charge-sensitive parasite contact/behavior branch, not colony collapse, population growth or other-field resistance.",
+    calibrationRole: "STRUCTURAL_ONLY",
+    limitations: ["Historical taxonomic name retained with modern interpretation", "Laboratory lure", "Contact behavior is not fitness or resistance"],
+    isTfrCoefficient: false,
+  },
+  {
+    id: "MALLINSON_2025_HONEYBEE_EFIELD_FORAGING",
+    citation: "Mallinson, Woodburn & O'Reilly. iScience (2025)",
+    year: 2025,
+    url: "https://doi.org/10.1016/j.isci.2025.112550",
+    studyType: "Paired field experiment with anthropogenic AC/DC electric-field treatments",
+    system: "Honeybee floral landing behavior in urban meadows",
+    fieldClass: "Weak 50 Hz AC and DC aerial electric fields; transmission-line measurements",
+    finding: "AC and positive DC treatments reduced floral landings in the reported paired experiment; negative DC did not show a statistically significant effect.",
+    causalNodes: ["FIELDSTATE_LOW_FREQUENCY_ELECTRIC", "ECOLOGICAL_ENCOUNTER"],
+    directness: "ECOLOGICAL_ENDPOINT",
+    scope: "Component- and polarity-specific pollinator behavior evidence, not a colony-fitness, abundance or general EMF estimate.",
+    calibrationRole: "STRUCTURAL_ONLY",
+    limitations: ["Single species/context", "Landing behavior endpoint", "Do not merge AC/DC E-field with RF or magnetic-field hypotheses"],
+    isTfrCoefficient: false,
+  },
+  {
+    id: "GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION",
+    citation: "García-Robledo, Dierick & Manser. PNAS (2025)",
+    year: 2025,
+    url: "https://doi.org/10.1073/pnas.2419214122",
+    studyType: "Controlled mite behavior, sensory-ablation and electrostatic-transport experiment",
+    system: "Tropical hummingbird flower mites and host-like electric-field configurations",
+    fieldClass: "Modulated and static electric fields with host-like charge and geometry",
+    finding: "Tested flower mites responded to modulated fields using front-leg sensory structures and bridged a gap to a hummingbird-beak analogue electrostatically.",
+    causalNodes: ["STATIC_TRIBO_INTERFACE", "FIELDSTATE_LOW_FREQUENCY_ELECTRIC", "ECOLOGICAL_ENCOUNTER"],
+    directness: "ECOLOGICAL_ENDPOINT",
+    scope: "Electroreception-plus-transport evidence in a mite life cycle, not a general tick/mite response spectrum or selection estimate.",
+    calibrationRole: "STRUCTURAL_ONLY",
+    limitations: ["Tropical flower-mite guild", "Laboratory host analogue", "No multigeneration population outcome"],
+    isTfrCoefficient: false,
+  },
+  {
+    id: "SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE",
+    citation: "Šofranková et al. Pathogens (2023)",
+    year: 2023,
+    url: "https://doi.org/10.3390/pathogens12121398",
+    studyType: "Controlled radiofrequency exposure and tick synganglion qRT-PCR experiment",
+    system: "Adult male and female Ixodes ricinus under stated 900 MHz, 2 or 40 V/m exposure conditions",
+    fieldClass: "900 MHz polarized, unmodulated RF electric-field exposure",
+    finding: "Reported exposures produced sex-, intensity- and time-dependent neuropeptide/receptor transcript changes in tick synganglia.",
+    causalNodes: ["FIELDSTATE_VECTOR", "ECOLOGICAL_ENCOUNTER"],
+    directness: "MECHANISTIC_INTERMEDIATE",
+    scope: "A separate tick RF-physiology branch, not static attachment, RF resistance, feeding fitness, population growth or a human coefficient.",
+    calibrationRole: "STRUCTURAL_ONLY",
+    limitations: ["Adult laboratory tick system", "Transcript rather than fitness endpoint", "Exposure geometry and thermal control matter", "No multigeneration outcome"],
+    isTfrCoefficient: false,
+  },
+  {
+    id: "MORLEY_2018_SPIDER_EFIELD_BALLOONING",
+    citation: "Morley & Robert. Current Biology (2018)",
+    year: 2018,
+    url: "https://doi.org/10.1016/j.cub.2018.05.057",
+    studyType: "Controlled arthropod behavior and mechanosensory-hair experiment",
+    system: "Ballooning spiders",
+    fieldClass: "Vertical atmospheric-scale static electric fields",
+    finding: "Atmospheric-scale electric fields elicited ballooning behavior and mechanically activated spider sensory hairs in the reported experiments.",
+    causalNodes: ["STATIC_TRIBO_INTERFACE", "ECOLOGICAL_ENCOUNTER"],
+    directness: "ECOLOGICAL_ENDPOINT",
+    scope: "Supports an electric-field-to-dispersal behavior branch, not landscape population expansion or built-infrastructure effects.",
+    calibrationRole: "STRUCTURAL_ONLY",
+    limitations: ["Spider behavior system", "Atmospheric field rather than textile interface", "Behavior is not a population-growth estimate"],
+    isTfrCoefficient: false,
+  },
 ] as const;
 
 /** Every registered record is structural/contextual evidence, never a TFR slope. */
@@ -427,6 +572,14 @@ type EvidenceLocale = "en" | "fi";
 
 /** Public names for internal causal-node identifiers. */
 const CAUSAL_NODE_LABELS: Record<string, Record<EvidenceLocale, string>> = {
+  STATIC_TRIBO_INTERFACE: {
+    en: "Static triboelectric material–skin / organism interface",
+    fi: "Staattinen triboelektrinen materiaali–iho / eliörajapinta",
+  },
+  FIELDSTATE_LOW_FREQUENCY_ELECTRIC: {
+    en: "Low-frequency electric-field waveform / polarity state",
+    fi: "Matalataajuisen sähkökentän aaltomuoto- / polariteettitila",
+  },
   FIELDSTATE_VECTOR: {
     en: "FieldState vector / background geometry",
     fi: "FieldState-vektori / taustageometria",
@@ -503,6 +656,18 @@ const CAUSAL_NODE_LABELS: Record<string, Record<EvidenceLocale, string>> = {
     en: "Couple conception / live-birth capacity",
     fi: "Parin conception/live-birth-kapasiteetti",
   },
+  ECOLOGICAL_ENCOUNTER: {
+    en: "Species-specific field encounter, sensing, physiology and dispersal",
+    fi: "Lajikohtainen kenttäkontakti, aistiminen, fysiologia ja dispersio",
+  },
+  ECOLOGICAL_SELECTION: {
+    en: "Species-specific relative fitness and ecological sorting",
+    fi: "Lajikohtainen suhteellinen kelpoisuus ja ekologinen valikoituminen",
+  },
+  ECOLOGICAL_TRAIT_STATE: {
+    en: "Time-indexed heritable trait distribution",
+    fi: "Ajassa indeksoitu periytyvä piirrejakautuma",
+  },
   DEMAND_OPPORTUNITY: {
     en: "Family-formation demand and opportunity",
     fi: "Perheenmuodostuksen kysyntä ja mahdollisuus",
@@ -530,6 +695,6 @@ export function causalNodeLabels(nodeIds: readonly string[], locale: EvidenceLoc
   return nodeIds.map((id) => CAUSAL_NODE_LABELS[id]?.[locale] ?? "Unmapped registered node");
 }
 
-if (FIELDSTATE_EVIDENCE_COUNT !== 23) {
-  throw new Error(`Expected 23 FieldState evidence records, found ${FIELDSTATE_EVIDENCE_COUNT}.`);
+if (FIELDSTATE_EVIDENCE_COUNT !== 32) {
+  throw new Error(`Expected 32 FieldState evidence records, found ${FIELDSTATE_EVIDENCE_COUNT}.`);
 }
