@@ -3,7 +3,8 @@
 Versio: 2026-08-19
 Liittyy: [`data-lineage-audit.md`](data-lineage-audit.md) (löydökset A-9, A-10) ·
 [`data-gap-register.md`](data-gap-register.md) (G-3, G-5, G-6, G-7) ·
-[`sentinel-acquisition-register.md`](sentinel-acquisition-register.md) (lähteiden hankinta- ja käyttöehtotila)
+[`sentinel-acquisition-register.md`](sentinel-acquisition-register.md) (lähteiden hankinta- ja käyttöehtotila) ·
+[`sentinel-hindcast-protocol.md`](sentinel-hindcast-protocol.md) (FieldState → sentinelli → ihmisbiologia → ASFR/TFR -lukitus ja holdout)
 
 **Tätä työpakettia ei merkitä suoritetuksi kirjallisuusviitteiden perusteella.** Sitaatti
 ei ole aineisto. Nykytilassa `berm/csli/` sisältää kuusi falsifikaatiokriteeriä, joista
@@ -224,3 +225,9 @@ Koneellisesti luettava auktoriteetti on
 sen F1–F6-merkinnät ovat kaikki `BLOCKED`, ja se kertoo täsmälliset estekoodit sekä
 seuraavat vaatimukset. Tämä on säilytettävä muotoilu, kunnes vastaava mitattu paneeli on
 oikeasti saatavilla.
+
+Kun paneeli on saatavilla, F1–F6:n jälkeen käytetään
+[`sentinel-hindcast-protocol.md`](sentinel-hindcast-protocol.md)-protokollaa: se lukitsee
+FieldState-, sentinelli-, elinmuisti- ja viiveparametrit ennen kuin ASFR/TFR-holdout
+avataan. Näin sentinelli testaa BERM:n ennakkoindikaattoriketjua eikä valitse parametreja
+jälkikäteen demografisen käyrän sopivuuden perusteella.
