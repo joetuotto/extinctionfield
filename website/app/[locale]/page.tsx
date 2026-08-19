@@ -3,7 +3,10 @@ import CausalChain from "@/components/CausalChain";
 import { FieldStateStatus } from "@/components/FieldStateStatus";
 import { WorldMap } from "@/components/WorldMap";
 import type { Locale } from "@/lib/i18n";
-import { FIELDSTATE_EVIDENCE_COUNT } from "@/lib/fieldstateEvidence";
+import {
+  FIELDSTATE_EVIDENCE_COUNT,
+  LEGACY_EVIDENCE_MIGRATION,
+} from "@/lib/fieldstateEvidence";
 
 const COPY = {
   en: {
@@ -18,9 +21,9 @@ const COPY = {
     mapTitle: "Published fertility series and technology timing",
     mapLead: "The map displays the published World Bank WDI TFR series and mobile subscriptions. The latter is a digital-technology timing proxy, not an EMF exposure or dose layer. The separate v2 demographic route uses WPP ASFR with its own provenance.",
     evidenceTitle: "A causal route with bounded evidence",
-    evidenceLead: "The active route is FieldState → organ-specific state → paired capacity → ASFR → TFR. Studies support distinct links and endpoints; none of the current records is a TFR coefficient.",
+    evidenceLead: "The active route is FieldState → named intermediate and organ states → paired capacity, alongside explicit demand/tempo/ART inputs → ASFR → TFR. Studies support distinct links and endpoints; none of the current records is a TFR coefficient.",
     evidenceCount: `${FIELDSTATE_EVIDENCE_COUNT} bounded study-to-node records`,
-    evidenceCountNote: "Each record states its field class, directness, translation scope and limitation.",
+    evidenceCountNote: `Each record states its field class, directness, translation scope and limitation. A further ${LEGACY_EVIDENCE_MIGRATION.recordCount}-record bibliography is preserved in a source-qualified migration layer.`,
     cohortTitle: "A cohort-pattern result worth testing",
     cohortLead: "WPP 2024 ASFR paired with World Bank/ITU subscriptions shows a versioned, reproducible descriptive young-versus-older cohort timing pattern (N = 163; r = −0.66645 for 2000–2023). It motivates a future preregistered FieldState study; it is neither a physical exposure estimate nor a causal result.",
     nextTitle: "Current research priorities",
@@ -46,9 +49,9 @@ const COPY = {
     mapTitle: "Julkaistu hedelmällisyyssarja ja teknologian ajoitus",
     mapLead: "Kartta näyttää Maailmanpankin WDI:n julkaistun TFR-sarjan ja mobiililiittymät. Jälkimmäinen on digitaalisen teknologian ajoitusproksi, ei EMF-altistus- tai annoskerros. V2:n erillinen demografinen reitti käyttää WPP:n ASFR:ää omalla provenienssillaan.",
     evidenceTitle: "Kausaalireitti ja rajattu evidenssi",
-    evidenceLead: "Aktiivinen reitti on FieldState → elinkohtainen tila → parin kapasiteetti → ASFR → TFR. Tutkimukset tukevat erillisiä linkkejä ja päätepisteitä; mikään nykyisistä tietueista ei ole TFR-kerroin.",
+    evidenceLead: "Aktiivinen reitti on FieldState → nimetyt välitilat ja elinkohtaiset tilat → parikapasiteetti sekä eksplisiittiset kysyntä-/tempo-/ART-syötteet → ASFR → TFR. Tutkimukset tukevat erillisiä linkkejä ja päätepisteitä; mikään nykyisistä tietueista ei ole TFR-kerroin.",
     evidenceCount: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tutkimus–solmu-tietuetta`,
-    evidenceCountNote: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen.",
+    evidenceCountNote: `Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Lisäksi ${LEGACY_EVIDENCE_MIGRATION.recordCount} tietueen bibliografia säilyy lähdekohtaisessa siirtokerroksessa.`,
     cohortTitle: "Testaamisen arvoinen kohorttikuvio",
     cohortLead: "WPP 2024:n ASFR yhdessä Maailmanpankin/ITU:n mobiililiittymien kanssa näyttää versionoidun, toistettavan kuvailevan nuorten ja vanhempien kohorttien ajoituskuvion (N = 163; r = −0,66645 vuosina 2000–2023). Se motivoi tulevaa ennakkorekisteröityä FieldState-tutkimusta; se ei ole fysikaalinen altistusarvio eikä kausaalitulos.",
     nextTitle: "Tutkimuksen nykyiset prioriteetit",

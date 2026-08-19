@@ -1,0 +1,74 @@
+# Legacy-evidenssin säilyttävä FieldState–ASFR-v2-siirtymä
+
+## Tarkoitus
+
+`data/evidence/legacy_reference_migration_v1.json` säilyttää aiemman
+129-tietueisen A–F-bibliografian **tietuekohtaisena siirtokerroksena**. Se ei
+palauta vanhaa A–F-kaaviota aktiiviseksi malliksi eikä kopioi sen aiempia
+`finding`-tekstejä nykyisiksi väitteiksi.
+
+Tällä erotetaan kaksi asiaa, joita ei pidä sekoittaa:
+
+| Kerros | Tiedosto | Käyttö |
+|---|---|---|
+| Aktiivinen FieldState-evidenssi | `data/evidence/fieldstate_causal_evidence.json` | Rajatut, lähde- ja solmukohtaiset rakenneväitteet. Ei TFR-kerrointa. |
+| Legacy-siirtokerros | `data/evidence/legacy_reference_migration_v1.json` | Kaikkien 129 historiallisen viitteen säilytys, semanttinen alias ja uudelleentulkinnan tila. Ei aktiivinen evidenssi eikä parametrilähde. |
+
+Legacy-aineiston alkuperäinen sisältö on ankkuroitu Git-objektiin
+`505f761b3b4d79dbfe8b6cfcb52d3fa79a793ae8` (polku ennen poistoa
+`website/public/data/references.json`). Näin bibliografia ja historiallinen
+sanamuoto ovat auditointia varten palautettavissa ilman, että vanha sanamuoto
+näkyy uusina malliväitteinä.
+
+Manifestin `preserved_metadata_sha256` ja testi varmistavat lisäksi, että
+kaikkien 129 tietueen säilytetty bibliografinen metatieto, legacy-polku ja tagit
+ovat muuttumattomat suhteessa tähän arkistolähteeseen.
+
+Vanha A–F/T-tunniste on tässä vain provenienssimerkintä. Se ei ole ilman
+namespacea kanoninen solmu-ID, koska eri legacy-kerrokset käyttivät samoja
+kirjaimia eri merkityksissä. Historiallinen tulkinta tehdään vain
+namespace-kelpoisella `berm.biology.legacy_compat`-adapterilla.
+
+## Tietueen rakenne
+
+Jokaisella legacy-ID:llä on:
+
+- säilytetty bibliografinen viite sekä vanha tyyppi, tasotunniste, polku ja tagit;
+- `canonical_nodes`: vain nykyiset semanttiset solmu-ID:t;
+- `model_domain`: esimerkiksi fysiikka, mekanismi, sentinel, palautumisikkuna,
+  farmakologia tai demografinen konteksti;
+- `evidence_role`, `status`, `translation_scope` ja `limitations`;
+- ainoastaan `STRUCTURAL_ONLY`- tai `CONTEXT_ONLY`-kalibrointirooli.
+
+Tyhjä `canonical_nodes` on tarkoituksellinen. Sitä käytetään esimerkiksi
+sentinel-, COVID-/palautumisikkuna-, farmakologia-, oire-, demografia- ja
+metodologiatietueissa, kun niiden pakottaminen lisääntymissolmuun loisi uuden
+kausaalireunan ilman suoraa evidenssiä. Tietue säilyy tällöin mallin
+ulkopuolisena kontekstina eikä katoa.
+
+## Tilat
+
+| Tila | Merkitys |
+|---|---|
+| `SUPERSEDED_BY_ACTIVE_RECORD` | Täsmällinen bibliografinen alias aktiiviseen, rajattuun FieldState-tietueeseen. |
+| `MIGRATION_CANDIDATE` | Mahdollisesti solmulle relevantti lähde; vaatii lähde- ja protokollatason tarkistuksen. |
+| `CONTEXT_ONLY` | Päätepiste-, kovariaatti-, ekologinen tai vaihtoehtoinen konteksti, ei aktiivinen kausaalinen syöte. |
+| `HISTORICAL_CONTEXT` | Historiallinen tai teoreettinen tausta, ei nykyisen mittaussopimuksen mukainen inferenssi. |
+| `UNVERIFIED_CITATION` | Legacy-metatieto on puutteellinen tai placeholder-tyyppinen; lähde tunnistetaan ennen käyttöä. |
+| `OUTSIDE_ACTIVE_GRAPH` | Lähde säilytetään, mutta nykykaavioon ei ole turvallista solmuliitosta. |
+
+## Miten lähde aktivoidaan myöhemmin
+
+`MIGRATION_CANDIDATE` ei muutu aktiiviseksi massamuunnoksena. Kullekin
+lähteelle tehdään erillinen tietue aktiiviseen rekisteriin vasta, kun:
+
+1. bibliografia, URL/DOI ja ensisijainen lähde on varmennettu;
+2. järjestelmä, kenttäluokka, paikallinen altistus/geometria ja päätepiste on
+   rajattu;
+3. se kytketään vain siihen semanttiseen solmuun, jota tutkimus todella koskee;
+4. suoruus, tulkintaraja ja rajoitukset kirjataan; ja
+5. tietue pysyy `STRUCTURAL_ONLY`- tai `CONTEXT_ONLY`-tasolla, ellei erillinen
+   parametrikalibrointiprotokolla ole ennalta määritetty.
+
+Tämä mahdollistaa aiemman evidenssin säilymisen ja tarkentumisen ilman
+retroaktiivista TFR-vaikutuskertoimen tai yleisen EMF-annosväitteen lisäämistä.

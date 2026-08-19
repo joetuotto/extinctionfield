@@ -3,9 +3,10 @@ import type { ChainEdge, ChainNode } from "./types";
 /**
  * Canonical public causal map for the FieldState–ASFR-v2 route.
  *
- * The legacy A–F lettering remains in older artefacts only.  This map uses
- * semantic node names so that BBB, BTB, ovarian reserve and the demographic
- * endpoint cannot be collapsed into a single scalar pathway.
+ * The legacy A–F lettering remains only through source-qualified compatibility
+ * bindings. This map uses semantic node names so that BBB, BTB, melatonin,
+ * bioelectric development, ovarian reserve and the demographic endpoint
+ * cannot be collapsed into one scalar pathway.
  */
 export const FIELDSTATE_V2_NODES: ChainNode[] = [
   {
@@ -34,11 +35,11 @@ export const FIELDSTATE_V2_NODES: ChainNode[] = [
     id: "mechanisms",
     level: 2,
     label: "Biologiset välitilat",
-    sublabel: "CRY/redox · Ca²⁺/ROS · kello/HPA",
+    sublabel: "CRY · melatoniini · Ca²⁺/ROS · Vmem/mTOR · HPA · mikrobiomi/OT",
     epistemicLevel: "M",
     title: "Erilliset välittäjähaarat",
     mechanism:
-      "FieldState voi kohdistua erillisiin, testattaviin välitiloihin: RPM/CRY–redox, Ca²⁺/mitokondrio–ROS sekä kello-/HPA–HPG-tila. RF, ELF/PEMF ja optinen sinivalo pidetään altistusluokkina erillään.",
+      "FieldState voi kohdistua erillisiin, testattaviin välitiloihin: RPM/CRY–redox, melatoniini/redox, Ca²⁺/mitokondrio–ROS, Vmem/mTOR–kehitysmuisti, kello-/HPA–HPG sekä legacy-mikrobiomi/oksitosiini. Ne eivät ole yksi additiivinen vaikutus; RF, ELF/PEMF ja optinen sinivalo pidetään altistusluokkina erillään.",
     keyReferences: [
       {
         authors: "Sherrard et al. 2018; Cao et al. 2015",
@@ -134,6 +135,17 @@ export const FIELDSTATE_V2_NODES: ChainNode[] = [
     keyReferences: [],
   },
   {
+    id: "demographic-inputs",
+    level: 5,
+    label: "Eksplisiittiset demografiset syötteet",
+    sublabel: "kysyntä/mahdollisuus · tempo · ART/live birth",
+    epistemicLevel: "E",
+    title: "Biologia ei korvaa väestödynamiikkaa",
+    mechanism:
+      "Parin biologinen kapasiteetti on vain yksi ASFR:n syöte. Perheenmuodostuksen kysyntä ja mahdollisuus, ajoittumisen tempo sekä ART:n/conception-to-live-birth-hoidon saatavuus tuodaan malliin erillisinä, ulkoisesti mitattuina syötteinä.",
+    keyReferences: [],
+  },
+  {
     id: "asfr",
     level: 6,
     label: "ASFR",
@@ -177,6 +189,7 @@ export const FIELDSTATE_V2_EDGES: ChainEdge[] = [
   { from: "male", to: "couple", label: "mieskapasiteetti", epistemicLevel: "M", priority: "primary" },
   { from: "female", to: "couple", label: "naiskapasiteetti", epistemicLevel: "M", priority: "primary" },
   { from: "couple", to: "asfr", label: "käsitys / live birth", epistemicLevel: "M", priority: "primary" },
+  { from: "demographic-inputs", to: "asfr", label: "erilliset demografiset syötteet", epistemicLevel: "E", priority: "primary" },
   { from: "asfr", to: "tfr", label: "ikäryhmäsumma", epistemicLevel: "E", priority: "primary" },
 ];
 
@@ -195,10 +208,10 @@ const EN_NODE_COPY: Record<string, Pick<ChainNode, "label" | "sublabel" | "title
   },
   mechanisms: {
     label: "Biological intermediates",
-    sublabel: "CRY/redox · Ca²⁺/ROS · clock/HPA",
+    sublabel: "CRY · melatonin · Ca²⁺/ROS · Vmem/mTOR · HPA · microbiome/OT",
     title: "Separate, testable mediator branches",
     mechanism:
-      "FieldState can enter separate, testable intermediates: RPM/CRY–redox, Ca²⁺/mitochondrial–ROS and clock/HPA–HPG state. RF, ELF/PEMF and optical blue light remain separate exposure classes.",
+      "FieldState can enter separate, testable intermediates: RPM/CRY–redox, melatonin/redox, Ca²⁺/mitochondrial–ROS, Vmem/mTOR developmental memory, clock/HPA–HPG and the legacy microbiome/oxytocin branch. They are not one additive effect; RF, ELF/PEMF and optical blue light remain separate exposure classes.",
   },
   btb: {
     label: "Blood–testis barrier (BTB)",
@@ -235,6 +248,13 @@ const EN_NODE_COPY: Record<string, Pick<ChainNode, "label" | "sublabel" | "title
     mechanism:
       "Conception and live-birth capacity are couple-specific. A shared home environment, local geometry and biological reserve can make partner states correlated.",
   },
+  "demographic-inputs": {
+    label: "Explicit demographic inputs",
+    sublabel: "demand/opportunity · tempo · ART/live birth",
+    title: "Biology does not replace population dynamics",
+    mechanism:
+      "Couple biological capacity is only one ASFR input. Family-formation demand and opportunity, childbearing tempo and ART/conception-to-live-birth delivery are externally measured inputs, retained separately from biology.",
+  },
   asfr: {
     label: "ASFR",
     sublabel: "age · cohort · parity · year",
@@ -261,6 +281,7 @@ const EN_EDGE_LABELS: Record<string, string> = {
   "male-couple": "male capacity",
   "female-couple": "female capacity",
   "couple-asfr": "conception / live birth",
+  "demographic-inputs-asfr": "separate demographic inputs",
   "asfr-tfr": "age-group sum",
 };
 

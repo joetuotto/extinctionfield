@@ -72,7 +72,7 @@ const t: Record<Locale, Copy> = {
     ],
     legacyTitle: "How to read the earlier model outputs",
     legacyText:
-      "v16/v17 scalar cumEMF charts, hindcasts and numeric forecasts are retained as reproducible historical scenario artefacts. They are not re-labelled as FieldState–ASFR-v2 estimates and must not be interpreted as local exposure or biological-dose results.",
+      "v16/v17 scalar cumEMF charts, hindcasts and numeric forecasts are retained as reproducible historical scenario artefacts. Their arithmetic is unchanged, while legacy A–F/T labels are resolved only through source-qualified semantic bindings (for example, BBB versus melatonin versus Vmem). The preserved 129-record bibliography is reviewed through the same migration layer; neither inherited labels nor source summaries are re-labelled as FieldState–ASFR-v2 coefficients.",
     evidenceLink: "Browse the bounded evidence registry",
     mathematicsTitle: "Mathematical specification",
     mathematicsText:
@@ -120,7 +120,7 @@ const t: Record<Locale, Copy> = {
     ],
     legacyTitle: "Miten aiempia mallituotoksia luetaan",
     legacyText:
-      "V16/v17:n skalaariset cumEMF-kuvaajat, hindcastit ja numeroennusteet säilyvät toistettavina historiallisina skenaarioartefakteina. Niitä ei nimetä FieldState–ASFR-v2-arvioiksi, eikä niitä pidä tulkita paikallisiksi altistus- tai biologisen annoksen tuloksiksi.",
+      "V16/v17:n skalaariset cumEMF-kuvaajat, hindcastit ja numeroennusteet säilyvät toistettavina historiallisina skenaarioartefakteina. Niiden laskenta ei muutu, mutta legacy-A–F/T-nimet ratkaistaan vain lähdekohtaisilla semanttisilla sidoksilla (esimerkiksi BBB vs. melatoniini vs. Vmem). Säilytetty 129 tietueen bibliografia tarkistetaan saman siirtokerroksen kautta; perityistä nimistä tai lähdeyhteenvedoista ei tehdä FieldState–ASFR-v2-kertoimia.",
     evidenceLink: "Selaa rajattua evidenssirekisteriä",
     mathematicsTitle: "Matemaattinen määrittely",
     mathematicsText:

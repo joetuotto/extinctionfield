@@ -13,7 +13,7 @@ from typing import Mapping
 
 from berm.biology.reproductive_state import CoupleReproductiveState
 from berm.data import wpp
-from berm.evidence_registry import evidence_summary
+from berm.evidence_registry import evidence_summary, legacy_evidence_summary
 from berm.outcomes.fieldstate_asfr import (
     FIELDSTATE_ASFR_VERSION,
     AgeSpecificFieldStateInput,
@@ -157,9 +157,11 @@ def _as_public_result(
         "reference_series_status": reference_series_status,
         "active_chain": (
             "FieldState -> organ R/P memory -> male/female states -> paired "
-            "couple capacity -> ASFR -> TFR"
+            "couple capacity + demand/opportunity + tempo + ART/live-birth "
+            "delivery -> ASFR -> TFR"
         ),
         "evidence_by_causal_node": evidence_summary(),
+        "legacy_evidence_migration": legacy_evidence_summary(),
         "warnings": [
             "This route requires externally supplied local FieldState and paired biological states; it does not infer them from national mobile subscriptions.",
             "A STRUCTURAL_ONLY output is a transparent scenario calculation, not a calibrated causal estimate.",

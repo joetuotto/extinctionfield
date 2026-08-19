@@ -7,6 +7,7 @@ import { StatisticalValidation } from "@/components/StatisticalValidation";
 import {
   causalNodeLabels,
   FIELDSTATE_EVIDENCE,
+  LEGACY_EVIDENCE_MIGRATION,
   type FieldStateDirectness,
 } from "@/lib/fieldstateEvidence";
 
@@ -29,6 +30,8 @@ const COPY = {
       "A review locates a body of literature. A population timing result is descriptive unless matched FieldState, endpoint and confounding controls are present.",
       "No record below is a TFR coefficient. A country TFR pathway requires the separate ASFR and demographic terms in the model specification.",
     ],
+    legacyTitle: "Preserved legacy bibliography",
+    legacy: `The earlier bibliography is retained as a ${LEGACY_EVIDENCE_MIGRATION.recordCount}-record, source-qualified migration manifest. ${LEGACY_EVIDENCE_MIGRATION.activeAliases} records have a matching bounded active record; ${LEGACY_EVIDENCE_MIGRATION.migrationCandidates} are candidates for source-level reinterpretation; the rest remains historical, sentinel, methodological or other explicit context. This preserves the research trail without making inherited labels or conclusions active coefficients.`,
     groups: {
       PHYSICS_SIGNATURE: "Physics signatures",
       MECHANISTIC_INTERMEDIATE: "Mechanistic intermediates",
@@ -53,6 +56,8 @@ const COPY = {
       "Katsaus paikantaa tutkimuskokonaisuuden. Väestön ajoitustulos on kuvaileva, ellei kohdistettu FieldState, päätepiste ja sekoittajien hallinta ole mukana.",
       "Mikään alla oleva tietue ei ole TFR-kerroin. Maakohtainen TFR-reitti tarvitsee erilliset ASFR- ja demografiset termit mallin määrittelyn mukaisesti.",
     ],
+    legacyTitle: "Säilytetty legacy-bibliografia",
+    legacy: `Aiempi bibliografia säilyy ${LEGACY_EVIDENCE_MIGRATION.recordCount} tietueen lähdekohtaisena siirtomanifestina. ${LEGACY_EVIDENCE_MIGRATION.activeAliases} tietuetta vastaa rajattua aktiivista tietuetta; ${LEGACY_EVIDENCE_MIGRATION.migrationCandidates} on lähdetason uudelleentulkinnan kandidaatteja; loppuosa säilyy historiallisena, sentinel-, metodologisena tai muuna eksplisiittisenä kontekstina. Näin tutkimusjälki säilyy ilman että perityistä nimistä tai johtopäätöksistä tulee aktiivisia kertoimia.`,
     groups: {
       PHYSICS_SIGNATURE: "Fysiikan allekirjoitukset",
       MECHANISTIC_INTERMEDIATE: "Mekanistiset välivaiheet",
@@ -92,6 +97,11 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
             </li>
           ))}
         </ol>
+      </section>
+
+      <section className="mb-14 max-w-4xl rounded-xl border border-status-partial/30 bg-status-partial/5 p-6">
+        <h2 className="text-xl font-semibold mb-2">{d.legacyTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed">{d.legacy}</p>
       </section>
 
       <section className="mb-14"><FieldStateStatus locale={activeLocale} /></section>

@@ -1,4 +1,7 @@
-import { FIELDSTATE_EVIDENCE_COUNT } from "@/lib/fieldstateEvidence";
+import {
+  FIELDSTATE_EVIDENCE_COUNT,
+  LEGACY_EVIDENCE_MIGRATION,
+} from "@/lib/fieldstateEvidence";
 
 type Locale = "en" | "fi";
 type Status = "LEGACY_TIMING_PROXY" | "PARTIAL_FIELD_STATE" | "MEASUREMENT_READY_FIELD_STATE";
@@ -25,6 +28,7 @@ const COPY: Record<Locale, {
   useLabel: string;
   readinessNote: string;
   evidenceNote: string;
+  legacyEvidenceNote: string;
   identityTitle: string;
   identityDescription: string;
   identityNote: string;
@@ -45,6 +49,7 @@ const COPY: Record<Locale, {
     readinessNote:
       "Measurement-ready means that all named physical inputs are documented. It does not mean a biological effect, a causal estimate or an outcome coefficient has been established.",
     evidenceNote: `${FIELDSTATE_EVIDENCE_COUNT} bounded study-to-node records support parts of the route. Each remains structural or contextual evidence, never a direct TFR slope.`,
+    legacyEvidenceNote: `${LEGACY_EVIDENCE_MIGRATION.recordCount} historical bibliography records are preserved in a source-qualified migration manifest: ${LEGACY_EVIDENCE_MIGRATION.activeAliases} have a matching active record, ${LEGACY_EVIDENCE_MIGRATION.migrationCandidates} await source-level review, and the remainder stays explicit context rather than being discarded or forced into a causal edge.`,
     identityTitle: "ASFR first; TFR is a derived identity",
     identityDescription:
       "The route projects age-specific fertility rates before summing them. Demand/opportunity, tempo and ART/live-birth delivery remain separate inputs rather than hidden biological terms.",
@@ -118,6 +123,7 @@ const COPY: Record<Locale, {
     readinessNote:
       "Mittaamisvalmis tarkoittaa, että kaikki nimetyt fysikaaliset syötteet on dokumentoitu. Se ei tarkoita, että biologinen vaikutus, kausaaliarvio tai tuloskerroin olisi osoitettu.",
     evidenceNote: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tutkimus–solmu-tietuetta tukee reitin osia. Jokainen on rakenteellista tai kontekstuaalista evidenssiä, ei suora TFR-kulmakerroin.`,
+    legacyEvidenceNote: `${LEGACY_EVIDENCE_MIGRATION.recordCount} historiallisen bibliografian tietuetta on säilytetty lähdekohtaisessa siirtomanifestissa: ${LEGACY_EVIDENCE_MIGRATION.activeAliases} vastaa aktiivista tietuetta, ${LEGACY_EVIDENCE_MIGRATION.migrationCandidates} odottaa lähdetason tarkistusta ja loppuosa säilyy eksplisiittisenä kontekstina sen sijaan, että se poistettaisiin tai pakotettaisiin kausaalireunaan.`,
     identityTitle: "ASFR ensin; TFR on johdettu identiteetti",
     identityDescription:
       "Reitti projisoi ensin ikäkohtaiset hedelmällisyysluvut ja summaa ne vasta sitten. Kysyntä/mahdollisuus, tempo ja ART/live-birth-delivery säilyvät erillisinä syötteinä eivätkä piiloudu biologisiksi termeiksi.",
@@ -242,6 +248,7 @@ export function FieldStateStatus({ locale }: { locale: string }) {
         </div>
         <p className="mt-3 max-w-4xl text-xs leading-relaxed text-foreground-muted">{d.readinessNote}</p>
         <p className="mt-1 max-w-4xl text-xs leading-relaxed text-foreground-muted">{d.evidenceNote}</p>
+        <p className="mt-1 max-w-4xl text-xs leading-relaxed text-foreground-muted">{d.legacyEvidenceNote}</p>
       </div>
 
       <div className="mt-7 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
@@ -264,4 +271,3 @@ export function FieldStateStatus({ locale }: { locale: string }) {
     </section>
   );
 }
-

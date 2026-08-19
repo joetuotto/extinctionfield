@@ -140,7 +140,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     system: "Rats",
     fieldClass: "1.8 GHz RF exposure at six time-of-day conditions",
     finding: "Melatonin and antioxidant rhythm measures varied by RF exposure time in the protocol.",
-    causalNodes: ["B_RPM_CRY", "HPA_HPG", "OOCYTE_REDOX"],
+    causalNodes: ["B_RPM_CRY", "MELATONIN_REDOX", "HPA_HPG", "OOCYTE_REDOX"],
     directness: "MECHANISTIC_INTERMEDIATE",
     scope: "Supports a circadian/redox context in FieldState, not human conception or birth rates.",
     calibrationRole: "STRUCTURAL_ONLY",
@@ -188,7 +188,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     system: "Wistar rat testes and semen endpoints",
     fieldClass: "2.45 GHz microwave exposure, reported SAR 0.14 W/kg",
     finding: "Reported redox, testosterone, sperm and DNA-fragmentation changes attenuated in the melatonin arm.",
-    causalNodes: ["A_VGCC_ROS", "B_RPM_CRY", "MALE_SPERM", "MALE_STEROIDOGENESIS"],
+    causalNodes: ["A_VGCC_ROS", "MELATONIN_REDOX", "MALE_SPERM", "MALE_STEROIDOGENESIS"],
     directness: "REPRODUCTIVE_ENDPOINT",
     scope: "Supports a redox-mediated testis branch and mediator test, not a human prevention recommendation or effect size.",
     calibrationRole: "STRUCTURAL_ONLY",
@@ -204,7 +204,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     system: "Rat ovaries exposed during intrauterine and postnatal development",
     fieldClass: "50 Hz magnetic-field exposure for 8 or 13 weeks",
     finding: "Reported higher follicular atresia and ovarian/oocyte morphological changes after the protocol.",
-    causalNodes: ["VMEM_MTOR", "OVARIAN_RESERVE", "OOCYTE_REDOX"],
+    causalNodes: ["VMEM_MTOR", "BIOELECTRIC_DEVELOPMENT", "OVARIAN_RESERVE", "OOCYTE_REDOX"],
     directness: "REPRODUCTIVE_ENDPOINT",
     scope: "Supports a developmental ovarian-reserve state, not a human reserve-decline estimate.",
     calibrationRole: "STRUCTURAL_ONLY",
@@ -268,7 +268,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     system: "Murine oocytes and embryo-development endpoints",
     fieldClass: "Downstream redox/melatonin mechanism, not EMF exposure",
     finding: "Melatonin/redox manipulation changed mitochondrial and oxidative-damage markers and embryo-development measures.",
-    causalNodes: ["B_RPM_CRY", "OOCYTE_REDOX", "IMPLANTATION"],
+    causalNodes: ["MELATONIN_REDOX", "OOCYTE_REDOX", "IMPLANTATION"],
     directness: "MECHANISTIC_INTERMEDIATE",
     scope: "Supports oocyte redox-resilience state, not direct EMF evidence or a human IVF prediction.",
     calibrationRole: "STRUCTURAL_ONLY",
@@ -348,7 +348,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     system: "Female rat offspring ovarian histology at postnatal day 42",
     fieldClass: "Smartphone RF exposure during pregnancy",
     finding: "The exposed offspring group had fewer primordial and secondary follicles and higher atresia in the reported protocol.",
-    causalNodes: ["FIELDSTATE_VECTOR", "OVARIAN_RESERVE", "OOCYTE_REDOX"],
+    causalNodes: ["FIELDSTATE_VECTOR", "BIOELECTRIC_DEVELOPMENT", "OVARIAN_RESERVE", "OOCYTE_REDOX"],
     directness: "REPRODUCTIVE_ENDPOINT",
     scope: "Supports a developmental ovarian-reserve branch distinct from acute ovulation, not human reserve calibration.",
     calibrationRole: "STRUCTURAL_ONLY",
@@ -364,7 +364,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     system: "Neonatal Wistar-rat ovaries after maternal phone exposure",
     fieldClass: "Maternal mobile-phone exposure during gestation",
     finding: "Primary animal study measured oogenesis, folliculogenesis and neonatal ovarian developmental/hormonal endpoints.",
-    causalNodes: ["FIELDSTATE_VECTOR", "OVARIAN_RESERVE", "OOCYTE_REDOX"],
+    causalNodes: ["FIELDSTATE_VECTOR", "BIOELECTRIC_DEVELOPMENT", "OVARIAN_RESERVE", "OOCYTE_REDOX"],
     directness: "REPRODUCTIVE_ENDPOINT",
     scope: "Adds a recent developmental female branch; it is a primary rat study, not a human review or direct TFR coefficient.",
     calibrationRole: "STRUCTURAL_ONLY",
@@ -408,6 +408,21 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
 /** Every registered record is structural/contextual evidence, never a TFR slope. */
 export const FIELDSTATE_EVIDENCE_COUNT = FIELDSTATE_EVIDENCE.length;
 
+/**
+ * Summary of `berm/data/evidence/legacy_reference_migration_v1.json`.
+ * The full 129-record manifest remains a repository audit artefact rather
+ * than a browser payload: candidate sources must be reviewed record by record
+ * before entering the bounded active register above.
+ */
+export const LEGACY_EVIDENCE_MIGRATION = {
+  version: "legacy-reference-migration-v1",
+  recordCount: 129,
+  activeAliases: 3,
+  migrationCandidates: 35,
+  contextOrHistoricalRecords: 91,
+  sourcePath: "berm/data/evidence/legacy_reference_migration_v1.json",
+} as const;
+
 type EvidenceLocale = "en" | "fi";
 
 /** Public names for internal causal-node identifiers. */
@@ -428,9 +443,21 @@ const CAUSAL_NODE_LABELS: Record<string, Record<EvidenceLocale, string>> = {
     en: "RPM / cryptochrome–redox intermediate",
     fi: "RPM / kryptokromi–redox-välitila",
   },
+  MELATONIN_REDOX: {
+    en: "Melatonin / circadian-redox mediator",
+    fi: "Melatoniini- / vuorokausi-redox-välittäjä",
+  },
   VMEM_MTOR: {
     en: "Membrane-potential / mTOR intermediate",
     fi: "Kalvopotentiaali- / mTOR-välitila",
+  },
+  BIOELECTRIC_DEVELOPMENT: {
+    en: "Developmental bioelectric memory",
+    fi: "Kehityksellinen bioelektrinen muisti",
+  },
+  MICROBIOME_OT: {
+    en: "Microbiome / oxytocin mediator",
+    fi: "Mikrobiomi- / oksitosiinivälittäjä",
   },
   BARRIER_BBB: {
     en: "Blood–brain barrier",
@@ -475,6 +502,18 @@ const CAUSAL_NODE_LABELS: Record<string, Record<EvidenceLocale, string>> = {
   COUPLE_FECUNDABILITY: {
     en: "Couple conception / live-birth capacity",
     fi: "Parin conception/live-birth-kapasiteetti",
+  },
+  DEMAND_OPPORTUNITY: {
+    en: "Family-formation demand and opportunity",
+    fi: "Perheenmuodostuksen kysyntä ja mahdollisuus",
+  },
+  TEMPO: {
+    en: "Childbearing timing / tempo",
+    fi: "Lastensaannin ajoittuminen / tempo",
+  },
+  ART_LIVE_BIRTH_DELIVERY: {
+    en: "ART and live-birth delivery",
+    fi: "ART- ja live-birth-delivery",
   },
   ASFR: {
     en: "Age-specific fertility (ASFR)",

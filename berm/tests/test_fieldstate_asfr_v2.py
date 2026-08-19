@@ -257,3 +257,5 @@ def test_wpp_facade_uses_observed_reference_asfr_without_v16_exposure_curve() ->
     assert result["predicted_asfr"] == pytest.approx(result["reference_asfr"])
     assert result["calibration_status"] == STRUCTURAL_ONLY
     assert "national mobile subscriptions" in result["warnings"][0]
+    assert result["legacy_evidence_migration"]["record_count"] == 129
+    assert "demand/opportunity" in result["active_chain"]

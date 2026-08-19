@@ -7,6 +7,16 @@ from berm.biology.causal_registry import (
     get_causal_node,
     validate_causal_nodes,
 )
+from berm.biology.legacy_compat import (
+    DEMOGRAPHIC_CONTEXT_ONLY,
+    LEGACY_DIAGNOSTIC,
+    LEGACY_NUMERICS_UNCHANGED,
+    LEGACY_PATHWAY_BINDINGS,
+    STRUCTURAL_ONLY as LEGACY_STRUCTURAL_ONLY,
+    LegacyPathwayBinding,
+    bindings_for_namespace,
+    resolve_legacy_binding,
+)
 from berm.biology.pathways import total_effect, pathway_a, pathway_b, pathway_c, pathway_d, pathway_e, pathway_f
 from berm.biology.reproductive_state import (
     ENDPOINT_CALIBRATED,
@@ -30,6 +40,14 @@ __all__ = [
     "canonical_node_id",
     "get_causal_node",
     "validate_causal_nodes",
+    "DEMOGRAPHIC_CONTEXT_ONLY",
+    "LEGACY_DIAGNOSTIC",
+    "LEGACY_NUMERICS_UNCHANGED",
+    "LEGACY_PATHWAY_BINDINGS",
+    "LEGACY_STRUCTURAL_ONLY",
+    "LegacyPathwayBinding",
+    "bindings_for_namespace",
+    "resolve_legacy_binding",
     "total_effect",
     "pathway_a",
     "pathway_b",

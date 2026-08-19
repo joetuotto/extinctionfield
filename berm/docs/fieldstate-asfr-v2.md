@@ -1,10 +1,20 @@
 # FieldState–ASFR v2: Lindgrenistä ikäkohtaiseen hedelmällisyyteen
 
-**Tila:** rinnakkainen, eksplisiittinen ja rakenteellisesti toteutettu BERM-reitti.  
+**Tila:** BERM:n kanoninen tulkinta- ja integraatiokerros; legacy-v16/v17 säilyy numeerisena vertailureittinä.
 **Versio:** `fieldstate-asfr-v2`.  
 **Tavoite:** tehdä BERM:n Lindgren-pohjaisesta fysiikasta koko TFR-selitysketjun lähtöpiste siten, että fysikaalinen kenttätila, biologinen kapasiteetti, pari, ASFR ja TFR pysyvät erillisinä mitattavina kerroksina.
 
-Tämä reitti ei muuta v16/v17:n lukittuja ennusteita. Sen tehtävä on korvata niiden yksi skalaari- ja maatasoinen biologinen syöte elin-, kohortti-, pari- ja ikäryhmäkohtaisella ketjulla, kun tarvittavat mittauspaneelit valmistuvat.
+Tämä reitti ei poista BERM:n aiempaa biologista runkoa eikä muuta v16/v17:n lukittuja numeerisia ajoja. Sen tehtävä on **tulkita koko malli yhdenmukaisesti**: vanhat mekanismit, tutkimuslähteet ja laskennalliset komponentit säilyvät, mutta ne kiinnitetään nimettyihin biologisiin solmuihin ja niille ilmoitetaan altistusluokka, tutkimusjärjestelmä, siirtoraja ja kalibrointirooli.
+
+Käytännössä muutos on seuraava:
+
+- aiempi `ambient + χ·personal` säilyy historiallisena ajoitusproxyna ja vertailureitin syötteenä;
+- Lindgrenin fysiikka tulkitaan elinpaikallisena `FieldState`-syötteenä, ei kansallisena EMF-annoksena;
+- A–F/T-kirjainten alle kertyneet mekanismit säilytetään, mutta epäyhtenäiset kirjaimet ratkaistaan **lähdetiedoston mukaan** semanttisiin nimiin;
+- biologinen näyttö tukee ensiksi omaa linkkiään (esim. `BTB → siittiötuotanto`), ei automaattisesti maakohtaista TFR-kerrointa;
+- väestöpääte mallinnetaan edelleen `pari → ASFR → TFR`, jossa kysyntä, tempo ja ART ovat erillisiä selittäjiä.
+
+Näin v2 ei ole vanhan BERM:n korvaaja eikä pelkkä uusi sivuhaara. Se on yhteinen tietomalli, jonka kautta legacy-laskelmat, fysiikka, mekanistinen evidenssi ja myöhempi endpoint-kalibrointi voidaan vertailla ilman että niiden merkitykset sekoittuvat.
 
 ## 1. Kanoninen kausaaliketju
 
@@ -12,8 +22,11 @@ Tämä reitti ei muuta v16/v17:n lukittuja ennusteita. Sen tehtävä on korvata 
 flowchart LR
   FS["FieldState\ntausta + henkilökohtainen lähde + vektori + vaihe + PSD + aika"]
   L["Lindgren-valinta ja paikallinen elinsiirto"]
-  A["A: Vmem/VGCC - Ca2+ - mitoROS"]
-  B["B: RPM/CRY - clock/redox"]
+  A["Vmem/VGCC - Ca2+ - mitoROS\n(legacy A)"]
+  B["RPM/CRY - clock/redox\n(legacy B)"]
+  R["Melatoniini/redox\n(legacy C joissakin v16-artefakteissa)"]
+  V["Vmem/mTOR + kehitysmuisti\n(legacy F / T_BE joissakin artefakteissa)"]
+  X["Mikrobiomi - oksitosiini\n(legacy E; diagnostinen)"]
   H["HPA/HPG + steroidogeneesi"]
   BTB["BTB/Sertoli - spermatogeneesi"]
   O["Munasarjavaranto + oosyytti"]
@@ -23,15 +36,22 @@ flowchart LR
   C["Parin conception + live-birth kapasiteetti"]
   ASFR["ASFR: ikä x kohortti x vuosi"]
   TFR["TFR = 5 sum(ASFR) / 1000"]
-  DU["Kysyntä, mahdollisuus, tempo, ART"]
+  DU["Kysyntä/mahdollisuus + tempo + ART/live-birth"]
   FS --> L
   L --> A
   L --> B
+  L --> V
+  L --> X
+  B --> R
   A --> BTB
   A --> O
   A --> H
   B --> H
   B --> O
+  R --> H
+  R --> I
+  V --> O
+  X --> H
   H --> M
   H --> I
   BTB --> M
@@ -44,9 +64,22 @@ flowchart LR
   ASFR --> TFR
 ```
 
-Uudessa reitissä historialliset A–F-kirjaimet ovat vain käyttöliittymä- ja legacy-aliaksia. Tutkimus ja parametrit kiinnitetään semanttisiin solmuihin, esimerkiksi `BARRIER_BTB`, `OVARIAN_RESERVE` ja `COUPLE_FECUNDABILITY`. Näin BBB:tä, BTB:tä ja biologista kehityskoodia ei sekoiteta toisiinsa.
+Uudessa reitissä historialliset A–F/T-kirjaimet ovat vain **lähdekohtaisia** legacy-aliaksia. Tutkimus ja parametrit kiinnitetään semanttisiin solmuihin, esimerkiksi `BARRIER_BTB`, `MELATONIN_REDOX`, `BIOELECTRIC_DEVELOPMENT`, `OVARIAN_RESERVE` ja `COUPLE_FECUNDABILITY`. Näin BBB:tä, BTB:tä ja biologista kehityskoodia ei sekoiteta toisiinsa.
 
-Kanoninen solmurekisteri on [`berm/biology/causal_registry.py`](../berm/biology/causal_registry.py). Se ratkaisee myös nykyisten legacy-toteutusten epäyhtenäisen polkukirjainkäytön.
+Kanoninen solmurekisteri on [`berm/biology/causal_registry.py`](../berm/biology/causal_registry.py). Sen [`legacy_compat.py`](../berm/biology/legacy_compat.py)-adapteri vaatii aina artefaktin nimen ennen kuin se ratkaisee vanhan kirjaimen merkityksen:
+
+| Legacy-artefakti | Vanha tunniste | Kanoninen tulkinta | Numeerinen tila |
+|---|---|---|---|
+| `berm.biology.pathways.v17` | `C` | `BARRIER_BBB` | Vanha laskenta säilyy; vain tulkinta on `LEGACY_DIAGNOSTIC`. |
+| `berm.v16.intervention_catalogue` | `C` | `MELATONIN_REDOX` | Ei sekoitu BBB:hen eikä muutu ASFR-kertoimeksi. |
+| `berm.biology.pathways.v17` | `F` | `BARRIER_BBB` | Vanha BBB-multiplieri ei laajene automaattisesti muihin esteisiin. |
+| `berm.v16.intervention_catalogue` | `F` | `VMEM_MTOR` | Bioelektrinen/mTOR-haara säilyy omana mekanismina. |
+| `berm.biology.pathways.v17` | `E` | `MICROBIOME_OT` | Säilyy diagnostiikkahaara; ei saa uusia TFR-painoja ilman omaa endpoint-kalibrointia. |
+| v16-raportit | `epigenetic_factor` | `BIOELECTRIC_DEVELOPMENT` | Kehitysmuisti säilyy, mutta se ei peri vanhaa maaskalaariarvoa. |
+
+Siksi pelkkä `C`, `F` tai `T` ei enää ratkea koodissa automaattisesti. Tämä on tarkoituksellinen vartija: se estää vanhan evidenssin liittämisen väärään biologiseen reittiin samalla, kun kaikki alkuperäiset laskelmat säilyvät muuttumattomina.
+
+Koko aiempi 129-tietueinen bibliografia on säilytetty [`legacy-evidence-migration.md`](legacy-evidence-migration.md)-kuvatulla tietuekohtaisella siirtokerroksella. Se ei hävitä näyttöä, mutta erottaa jo aktiiviseen rekisteriin varmennetut lähteet, uudelleentulkintaa odottavat kandidaatit ja pelkän kontekstin.
 
 ## 2. Lindgrenin fysiikka on FieldState, ei yksi EMF-luku
 

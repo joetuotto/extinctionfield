@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import { ReferenceDatabase } from "@/components/ReferenceDatabase";
-import { FIELDSTATE_EVIDENCE_COUNT } from "@/lib/fieldstateEvidence";
+import {
+  FIELDSTATE_EVIDENCE_COUNT,
+  LEGACY_EVIDENCE_MIGRATION,
+} from "@/lib/fieldstateEvidence";
 
 const COPY = {
   en: {
     title: "FieldState–ASFR v2 reference register",
-    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} bounded records are mapped to the active causal route. They are curated for field class, directness, scope and limitations; no record is a TFR coefficient. The previous broad A–F collection is retained in the repository as a legacy bibliography, not as the active v2 evidence register.`,
+    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} bounded records are mapped to the active causal route. They are curated for field class, directness, scope and limitations; no record is a TFR coefficient. The prior bibliography is preserved through a ${LEGACY_EVIDENCE_MIGRATION.recordCount}-record, source-qualified migration manifest—not discarded, but not promoted to an active v2 evidence register without record-level review.`,
   },
   fi: {
     title: "FieldState–ASFR v2 -lähderekisteri",
-    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tietuetta on kytketty aktiiviseen kausaalireittiin. Ne on kuratoitu kenttäluokan, suoruuden, tulkintarajan ja rajoitusten mukaan; mikään tietue ei ole TFR-kerroin. Aiempi laaja A–F-kokoelma säilyy repossa legacy-bibliografiana, ei aktiivisena v2-evidenssirekisterinä.`,
+    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tietuetta on kytketty aktiiviseen kausaalireittiin. Ne on kuratoitu kenttäluokan, suoruuden, tulkintarajan ja rajoitusten mukaan; mikään tietue ei ole TFR-kerroin. Aiempi bibliografia säilyy ${LEGACY_EVIDENCE_MIGRATION.recordCount} tietueen lähdekohtaisena siirtomanifestina: sitä ei poisteta, mutta sitä ei nosteta aktiiviseksi v2-evidenssiksi ilman tietuekohtaista tarkistusta.`,
   },
 } as const;
 

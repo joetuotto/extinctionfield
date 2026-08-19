@@ -1,0 +1,4875 @@
+{
+  "migration_version": "legacy-reference-migration-v1",
+  "purpose": "Record-level preservation and reinterpretation crosswalk for the legacy A–F reference collection. This manifest preserves citation metadata and source-qualified aliases without restoring legacy finding text, causal claims or parameters. It is an intake and review layer, not an active evidence register.",
+  "source_archive": {
+    "legacy_repository_path": "website/public/data/references.json",
+    "content_commit": "b5338f9184a903d6ff87e96d788bd504f96c1d7d",
+    "removal_commit": "593fec0b1c7e847ffbf6ee446760422caa53aee7",
+    "git_blob": "505f761b3b4d79dbfe8b6cfcb52d3fa79a793ae8",
+    "retrieval": "git show b5338f9184a903d6ff87e96d788bd504f96c1d7d:website/public/data/references.json",
+    "record_count": 129,
+    "preserved_metadata_sha256": "b3303ad782d5993d3cb816eb333db3efe71f1ba17d436a83f8c503bf6d9af907",
+    "note": "Legacy finding strings are intentionally not copied here. The referenced Git blob preserves the historical wording for audit; active interpretation is only the bounded manifest fields below."
+  },
+  "manifest_contract": {
+    "active_registry": "berm/data/evidence/fieldstate_causal_evidence.json",
+    "active_registry_rule": "Only active-registry records may support the current FieldState–ASFR route. A migration record never becomes a parameter, coefficient or active causal claim merely by appearing here.",
+    "legacy_pathway_label_rule": "Legacy A–F/T labels are provenance labels, not unqualified canonical node IDs. Their historical namespace is resolved only through the qualified legacy compatibility adapter.",
+    "empty_canonical_nodes_rule": "An empty canonical_nodes list is deliberate for sources outside the active graph. It prevents a forced, unsupported causal attachment.",
+    "allowed_calibration_roles": [
+      "STRUCTURAL_ONLY",
+      "CONTEXT_ONLY"
+    ]
+  },
+  "status_definitions": {
+    "SUPERSEDED_BY_ACTIVE_RECORD": "Exact bibliographic alias of a separately curated active FieldState record.",
+    "MIGRATION_CANDIDATE": "Potential node-relevant source requiring source-level protocol and claim review before activation.",
+    "CONTEXT_ONLY": "Retained for endpoint, covariate, ecological or alternative-context use; not an active causal input.",
+    "HISTORICAL_CONTEXT": "Retained for provenance or theory history; not a current measurement-qualified inference.",
+    "UNVERIFIED_CITATION": "Legacy citation is incomplete, placeholder-like or otherwise requires independent bibliographic verification before use.",
+    "OUTSIDE_ACTIVE_GRAPH": "Preserved citation has no safe attachment to the current graph; forced mapping would create a new unsupported edge."
+  },
+  "records": [
+    {
+      "legacy_id": "pall2013",
+      "legacy_source_record_index": 1,
+      "citation": {
+        "authors": "Pall ML",
+        "year": 2013,
+        "title": "Electromagnetic fields act via activation of voltage-gated calcium channels to produce beneficial or adverse effects",
+        "journal": "J Cell Mol Med",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "vgcc",
+          "calcium",
+          "mechanism",
+          "blocker"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "pall2018",
+      "legacy_source_record_index": 2,
+      "citation": {
+        "authors": "Pall ML",
+        "year": 2018,
+        "title": "Wi-Fi is an important threat to human health",
+        "journal": "Environ Res",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "vgcc",
+          "wifi",
+          "blocker"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "tang2024",
+      "legacy_source_record_index": 3,
+      "citation": {
+        "authors": "Tang J et al.",
+        "year": 2024,
+        "title": "Proton dynamics in voltage-gated calcium channel selectivity filter",
+        "journal": "Nat Commun",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "mechanistic",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "vgcc",
+          "proton",
+          "quantum",
+          "mechanism"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "salford2003",
+      "legacy_source_record_index": 4,
+      "citation": {
+        "authors": "Salford LG et al.",
+        "year": 2003,
+        "title": "Nerve cell damage in mammalian brain after exposure to microwaves from GSM mobile phones",
+        "journal": "Environ Health Perspect",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "M",
+        "pathways": [
+          "A",
+          "F"
+        ],
+        "tags": [
+          "bbb",
+          "brain",
+          "sar",
+          "safety"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS",
+        "BARRIER_BBB"
+      ],
+      "model_domain": "barrier_state",
+      "evidence_role": "BARRIER_STATE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for the named organ barrier state in the stated system; it does not create a global barrier multiplier or a human reproductive effect size.",
+      "limitations": [
+        "Barrier and tissue specificity must be retained",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "yakymenko2016",
+      "legacy_source_record_index": 5,
+      "citation": {
+        "authors": "Yakymenko I et al.",
+        "year": 2016,
+        "title": "Oxidative mechanisms of biological activity of low-intensity radiofrequency radiation",
+        "journal": "Electromagn Biol Med",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "ros",
+          "oxidative",
+          "meta"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "panagopoulos2025",
+      "legacy_source_record_index": 6,
+      "citation": {
+        "authors": "Panagopoulos DJ et al.",
+        "year": 2025,
+        "title": "Umbrella review of EMF biological effects",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "umbrella",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A",
+          "T"
+        ],
+        "tags": [
+          "umbrella",
+          "meta",
+          "comprehensive"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "ritz2004",
+      "legacy_source_record_index": 7,
+      "citation": {
+        "authors": "Ritz T et al.",
+        "year": 2004,
+        "title": "Resonance effects indicate a radical-pair mechanism for avian magnetic compass",
+        "journal": "Nature",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "E",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "rpm",
+          "compass",
+          "birds",
+          "larmor"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR",
+        "B_RPM_CRY"
+      ],
+      "model_domain": "physics_signature",
+      "evidence_role": "CANONICAL_ALIAS",
+      "status": "SUPERSEDED_BY_ACTIVE_RECORD",
+      "source_status": "CANONICAL_RECORD_AVAILABLE",
+      "translation_scope": "The citation has a separately curated active FieldState record; this alias preserves the prior bibliography without restoring its legacy claim wording.",
+      "limitations": [
+        "The active record's scope and limitations govern interpretation",
+        "Not an effect-size or TFR calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY",
+      "canonical_evidence_id": "RITZ_2004_VECTOR_ANGLE"
+    },
+    {
+      "legacy_id": "engels2014",
+      "legacy_source_record_index": 8,
+      "citation": {
+        "authors": "Engels S et al.",
+        "year": 2014,
+        "title": "Anthropogenic electromagnetic noise disrupts magnetic compass orientation in migratory birds",
+        "journal": "Nature",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "E",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "rpm",
+          "birds",
+          "anthropogenic",
+          "shielding"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR",
+        "B_RPM_CRY"
+      ],
+      "model_domain": "physics_signature",
+      "evidence_role": "PHYSICS_SIGNATURE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "hore2016",
+      "legacy_source_record_index": 9,
+      "citation": {
+        "authors": "Hore PJ & Mouritsen H",
+        "year": 2016,
+        "title": "The radical pair mechanism of magnetoreception",
+        "journal": "Annu Rev Biophys",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "rpm",
+          "cryptochrome",
+          "review"
+        ]
+      },
+      "canonical_nodes": [
+        "B_RPM_CRY"
+      ],
+      "model_domain": "physics_signature",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "sherrard2018",
+      "legacy_source_record_index": 10,
+      "citation": {
+        "authors": "Sherrard RM et al.",
+        "year": 2018,
+        "title": "Low-intensity EMF activates CRY-dependent circadian pathway in Drosophila",
+        "journal": "PNAS",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "cry",
+          "drosophila",
+          "circadian"
+        ]
+      },
+      "canonical_nodes": [
+        "B_RPM_CRY"
+      ],
+      "model_domain": "physics_signature",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "yoshii2009",
+      "legacy_source_record_index": 11,
+      "citation": {
+        "authors": "Yoshii T et al.",
+        "year": 2009,
+        "title": "Cryptochrome mediates light-dependent magnetosensitivity in Drosophila",
+        "journal": "Nature",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "cry",
+          "drosophila",
+          "mutant"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR",
+        "B_RPM_CRY"
+      ],
+      "model_domain": "physics_signature",
+      "evidence_role": "PHYSICS_SIGNATURE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "natcomms2024rpm",
+      "legacy_source_record_index": 12,
+      "citation": {
+        "authors": "Various",
+        "year": 2024,
+        "title": "FAD-superoxide radical pair mechanism in cryptochrome",
+        "journal": "Nat Commun",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "mechanistic",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "fad",
+          "superoxide",
+          "rpm"
+        ]
+      },
+      "canonical_nodes": [
+        "B_RPM_CRY"
+      ],
+      "model_domain": "physics_signature",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "pnasnexus2026",
+      "legacy_source_record_index": 13,
+      "citation": {
+        "authors": "Various",
+        "year": 2026,
+        "title": "Non-monotonic magnetic field effects in planarians confirm RPM predictions",
+        "journal": "PNAS Nexus",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "rpm",
+          "planaria",
+          "non-monotonic"
+        ]
+      },
+      "canonical_nodes": [
+        "B_RPM_CRY"
+      ],
+      "model_domain": "physics_signature",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "battelle1980",
+      "legacy_source_record_index": 14,
+      "citation": {
+        "authors": "Battelle Memorial Institute",
+        "year": 1980,
+        "title": "EMF effects on pineal melatonin production",
+        "journal": "Report",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "M",
+        "pathways": [
+          "C"
+        ],
+        "tags": [
+          "melatonin",
+          "pineal",
+          "gnrh"
+        ]
+      },
+      "canonical_nodes": [
+        "MELATONIN_REDOX"
+      ],
+      "model_domain": "circadian_mediator",
+      "evidence_role": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+      "status": "HISTORICAL_CONTEXT",
+      "source_status": "HISTORICAL_LEGACY_METADATA",
+      "translation_scope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+      "limitations": [
+        "Historic methods and reporting may be incomplete",
+        "Requires source-level audit before any active use",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "reiter2007",
+      "legacy_source_record_index": 15,
+      "citation": {
+        "authors": "Reiter RJ et al.",
+        "year": 2007,
+        "title": "Light at night, chronodisruption, melatonin suppression, and cancer risk",
+        "journal": "Crit Rev Oncog",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "C"
+        ],
+        "tags": [
+          "melatonin",
+          "circadian",
+          "cancer"
+        ]
+      },
+      "canonical_nodes": [
+        "MELATONIN_REDOX"
+      ],
+      "model_domain": "circadian_mediator",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "pawlak2025",
+      "legacy_source_record_index": 16,
+      "citation": {
+        "authors": "Pawlak K et al.",
+        "year": 2025,
+        "title": "EMF exposure and corticosterone elevation in rodents",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "M",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "cortisol",
+          "hpa",
+          "stress",
+          "effect_size"
+        ]
+      },
+      "canonical_nodes": [
+        "HPA_HPG"
+      ],
+      "model_domain": "neuroendocrine_context",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "kacem2024",
+      "legacy_source_record_index": 17,
+      "citation": {
+        "authors": "Kacem S et al.",
+        "year": 2024,
+        "title": "EMF exposure and depression risk",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "depression",
+          "hpa",
+          "mental_health"
+        ]
+      },
+      "canonical_nodes": [
+        "HPA_HPG"
+      ],
+      "model_domain": "neuroendocrine_context",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "esmailzadeh2019",
+      "legacy_source_record_index": 18,
+      "citation": {
+        "authors": "Esmailzadeh S et al.",
+        "year": 2019,
+        "title": "Mobile phone use and salivary cortisol",
+        "journal": "Various",
+        "n": 200
+      },
+      "legacy_classification": {
+        "type": "human_obs",
+        "evidence_level_label": "C",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "cortisol",
+          "mobile",
+          "human"
+        ]
+      },
+      "canonical_nodes": [
+        "HPA_HPG"
+      ],
+      "model_domain": "neuroendocrine_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "travison2007",
+      "legacy_source_record_index": 19,
+      "citation": {
+        "authors": "Travison TG et al.",
+        "year": 2007,
+        "title": "A population-level decline in serum testosterone levels in American men",
+        "journal": "JCEM",
+        "n": 1532
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "E",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "testosterone",
+          "decline",
+          "secular"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_STEROIDOGENESIS"
+      ],
+      "model_domain": "endpoint_trend_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "santi2025",
+      "legacy_source_record_index": 20,
+      "citation": {
+        "authors": "Santi D et al.",
+        "year": 2025,
+        "title": "Meta-analysis: secular testosterone decline 1971-2024",
+        "journal": "Various",
+        "n": 1000000
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "E",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "testosterone",
+          "meta",
+          "decline"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_STEROIDOGENESIS"
+      ],
+      "model_domain": "endpoint_trend_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "lokeshwar2021",
+      "legacy_source_record_index": 21,
+      "citation": {
+        "authors": "Lokeshwar SD et al.",
+        "year": 2021,
+        "title": "Decline in serum testosterone in adolescents and young adults",
+        "journal": "Eur Urol Focus",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "testosterone",
+          "young",
+          "decline"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_STEROIDOGENESIS"
+      ],
+      "model_domain": "endpoint_trend_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "who_t_meta",
+      "legacy_source_record_index": 22,
+      "citation": {
+        "authors": "WHO/various",
+        "year": 2023,
+        "title": "Meta-analysis: EMF effects on testosterone (29 animal studies)",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "E",
+        "pathways": [
+          "D",
+          "T"
+        ],
+        "tags": [
+          "testosterone",
+          "emf",
+          "meta",
+          "animal"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_STEROIDOGENESIS"
+      ],
+      "model_domain": "review_context",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "puts2008",
+      "legacy_source_record_index": 23,
+      "citation": {
+        "authors": "Puts DA et al.",
+        "year": 2008,
+        "title": "Testosterone is associated with mating success but not attractiveness or masculinity in human males",
+        "journal": "Anim Behav",
+        "n": 119
+      },
+      "legacy_classification": {
+        "type": "human_obs",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "testosterone",
+          "mating",
+          "behavior",
+          "courtship"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "behavioral_or_social_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "goetz2024",
+      "legacy_source_record_index": 24,
+      "citation": {
+        "authors": "Goetz SMM & Carre JM",
+        "year": 2024,
+        "title": "Exogenous testosterone influences sexual overperception bias",
+        "journal": "Front Psychol",
+        "n": 190
+      },
+      "legacy_classification": {
+        "type": "rct",
+        "evidence_level_label": "M",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "testosterone",
+          "rct",
+          "overperception",
+          "behavior"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "behavioral_or_social_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "dreher2016",
+      "legacy_source_record_index": 25,
+      "citation": {
+        "authors": "Dreher JC et al.",
+        "year": 2016,
+        "title": "Testosterone causes both prosocial and antisocial status-enhancing behaviors in human males",
+        "journal": "PNAS",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "rct",
+        "evidence_level_label": "E",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "testosterone",
+          "rct",
+          "status",
+          "behavior"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "behavioral_or_social_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "mehta2015",
+      "legacy_source_record_index": 26,
+      "citation": {
+        "authors": "Mehta PH & Prasad S",
+        "year": 2015,
+        "title": "The dual-hormone hypothesis for social status",
+        "journal": "Curr Opin Behav Sci",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "dual_hormone",
+          "cortisol",
+          "testosterone",
+          "status"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "behavioral_or_social_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "dualhormone_meta2018",
+      "legacy_source_record_index": 27,
+      "citation": {
+        "authors": "Various",
+        "year": 2018,
+        "title": "Meta-analysis of dual-hormone hypothesis (30 studies, N=8538)",
+        "journal": "Various",
+        "n": 8538
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "E",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "dual_hormone",
+          "meta"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "behavioral_or_social_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "thornhill1994",
+      "legacy_source_record_index": 28,
+      "citation": {
+        "authors": "Thornhill R & Gangestad SW",
+        "year": 1994,
+        "title": "Human fluctuating asymmetry and sexual behavior",
+        "journal": "Psychol Sci",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "mate_selection",
+          "masculinity",
+          "evolution"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "behavioral_or_social_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "porges2001",
+      "legacy_source_record_index": 29,
+      "citation": {
+        "authors": "Porges SW",
+        "year": 2001,
+        "title": "The polyvagal theory: phylogenetic substrates of a social nervous system",
+        "journal": "Int J Psychophysiol",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "theory",
+        "evidence_level_label": "E",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "polyvagal",
+          "vagus",
+          "oxytocin",
+          "social"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "behavioral_or_social_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "carter2021",
+      "legacy_source_record_index": 30,
+      "citation": {
+        "authors": "Carter CS",
+        "year": 2021,
+        "title": "Oxytocin and vasopressin in the evolution of sociality",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "oxytocin",
+          "vasopressin",
+          "sociality"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "behavioral_or_social_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "feldman2012",
+      "legacy_source_record_index": 31,
+      "citation": {
+        "authors": "Feldman R",
+        "year": 2012,
+        "title": "Oxytocin and social affiliation in humans",
+        "journal": "Horm Behav",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "oxytocin",
+          "bonding",
+          "parent"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "behavioral_or_social_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "poutahidis2014",
+      "legacy_source_record_index": 32,
+      "citation": {
+        "authors": "Poutahidis T et al.",
+        "year": 2014,
+        "title": "Probiotic microbes sustain youthful serum testosterone levels and testicular size in aging mice",
+        "journal": "PLOS ONE",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "M",
+        "pathways": [
+          "E",
+          "D"
+        ],
+        "tags": [
+          "reuteri",
+          "testosterone",
+          "microbiome",
+          "mit"
+        ]
+      },
+      "canonical_nodes": [
+        "MICROBIOME_OT"
+      ],
+      "model_domain": "microbiome_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "erdman2016",
+      "legacy_source_record_index": 33,
+      "citation": {
+        "authors": "Erdman SE & Poutahidis T",
+        "year": 2016,
+        "title": "Microbes and oxytocin: benefits for host physiology and behavior",
+        "journal": "Int Rev Cell Mol Biol",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "E",
+          "D"
+        ],
+        "tags": [
+          "reuteri",
+          "oxytocin",
+          "vagus",
+          "mit"
+        ]
+      },
+      "canonical_nodes": [
+        "MICROBIOME_OT"
+      ],
+      "model_domain": "microbiome_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "poutahidis2013",
+      "legacy_source_record_index": 34,
+      "citation": {
+        "authors": "Poutahidis T et al.",
+        "year": 2013,
+        "title": "Microbial symbionts accelerate wound healing via oxytocin",
+        "journal": "PLOS ONE",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "M",
+        "pathways": [
+          "E"
+        ],
+        "tags": [
+          "reuteri",
+          "oxytocin",
+          "wound",
+          "mit"
+        ]
+      },
+      "canonical_nodes": [
+        "MICROBIOME_OT"
+      ],
+      "model_domain": "microbiome_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "jin2022",
+      "legacy_source_record_index": 35,
+      "citation": {
+        "authors": "Jin Y et al.",
+        "year": 2022,
+        "title": "Wi-Fi exposure alters gut microbiome composition in mice",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "M",
+        "pathways": [
+          "E"
+        ],
+        "tags": [
+          "wifi",
+          "microbiome",
+          "dysbiosis"
+        ]
+      },
+      "canonical_nodes": [
+        "MICROBIOME_OT"
+      ],
+      "model_domain": "microbiome_context",
+      "evidence_role": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "sempou2022",
+      "legacy_source_record_index": 36,
+      "citation": {
+        "authors": "Sempou E et al.",
+        "year": 2022,
+        "title": "Membrane potential drives spermatogonial stem cell differentiation via mTOR",
+        "journal": "Nat Commun",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "mechanistic",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "F"
+        ],
+        "tags": [
+          "vmem",
+          "mtor",
+          "spermatogonia",
+          "stem_cell"
+        ]
+      },
+      "canonical_nodes": [
+        "VMEM_MTOR",
+        "BIOELECTRIC_DEVELOPMENT"
+      ],
+      "model_domain": "bioelectric_development",
+      "evidence_role": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "brown2016",
+      "legacy_source_record_index": 37,
+      "citation": {
+        "authors": "Brown SG et al.",
+        "year": 2016,
+        "title": "Depolarization of sperm membrane potential in infertile men",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "human_obs",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "F"
+        ],
+        "tags": [
+          "vmem",
+          "infertility",
+          "depolarization"
+        ]
+      },
+      "canonical_nodes": [
+        "VMEM_MTOR",
+        "MALE_SPERM"
+      ],
+      "model_domain": "clinical_endpoint_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "zhanglevin2025",
+      "legacy_source_record_index": 38,
+      "citation": {
+        "authors": "Zhang D & Levin M",
+        "year": 2025,
+        "title": "Bioelectricity as a universal signaling mechanism",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "F"
+        ],
+        "tags": [
+          "bioelectric",
+          "levin",
+          "vmem"
+        ]
+      },
+      "canonical_nodes": [
+        "VMEM_MTOR",
+        "BIOELECTRIC_DEVELOPMENT"
+      ],
+      "model_domain": "bioelectric_development",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "levine2017",
+      "legacy_source_record_index": 39,
+      "citation": {
+        "authors": "Levine H et al.",
+        "year": 2017,
+        "title": "Temporal trends in sperm count: a systematic review and meta-regression analysis",
+        "journal": "Hum Reprod Update",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "E",
+        "pathways": [
+          "T"
+        ],
+        "tags": [
+          "sperm",
+          "decline",
+          "meta"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_SPERM"
+      ],
+      "model_domain": "endpoint_trend_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "levine2023",
+      "legacy_source_record_index": 40,
+      "citation": {
+        "authors": "Levine H et al.",
+        "year": 2023,
+        "title": "Temporal trends in sperm count: updated meta-regression",
+        "journal": "Hum Reprod Update",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "E",
+        "pathways": [
+          "T"
+        ],
+        "tags": [
+          "sperm",
+          "decline",
+          "meta",
+          "global"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_SPERM"
+      ],
+      "model_domain": "endpoint_trend_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "houston2016",
+      "legacy_source_record_index": 41,
+      "citation": {
+        "authors": "Houston BJ et al.",
+        "year": 2016,
+        "title": "Radiofrequency electromagnetic radiation and sperm quality",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "T"
+        ],
+        "tags": [
+          "sperm",
+          "mobile",
+          "dna"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_SPERM"
+      ],
+      "model_domain": "male_reproductive_endpoint",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "mollerlokken2008",
+      "legacy_source_record_index": 42,
+      "citation": {
+        "authors": "Mollerlokken OJ & Moen BE",
+        "year": 2008,
+        "title": "Is fertility reduced among men exposed to radiofrequency fields in the Norwegian Navy?",
+        "journal": "Bioelectromagnetics",
+        "n": 10497
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "T"
+        ],
+        "tags": [
+          "navy",
+          "infertility",
+          "dose_response",
+          "occupational"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS",
+        "MALE_SPERM"
+      ],
+      "model_domain": "male_reproductive_endpoint",
+      "evidence_role": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
+      "limitations": [
+        "Species, tissue and exposure protocol limit translation",
+        "Requires local field and thermal-control audit",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "catsper2024",
+      "legacy_source_record_index": 43,
+      "citation": {
+        "authors": "Various",
+        "year": 2024,
+        "title": "CatSper channel complex in human sperm fertilization",
+        "journal": "J Clin Invest",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "T",
+          "F"
+        ],
+        "tags": [
+          "catsper",
+          "sperm",
+          "ion_channel"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_SPERM"
+      ],
+      "model_domain": "male_reproductive_endpoint",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "ccb_fertility",
+      "legacy_source_record_index": 44,
+      "citation": {
+        "authors": "Various",
+        "year": 2020,
+        "title": "Calcium channel blockers and male fertility",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "clinical",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "PV"
+        ],
+        "tags": [
+          "ccb",
+          "pharma",
+          "sperm"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "pharmacological_context",
+      "evidence_role": "PHARMACOLOGICAL_ANALOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Pharmacological perturbation retained as pathway context only; it is not equivalent to an electromagnetic exposure and does not calibrate FieldState.",
+      "limitations": [
+        "Pharmacological target engagement is not exposure equivalence",
+        "Clinical indication and co-treatment confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "rapamycin_fertility",
+      "legacy_source_record_index": 45,
+      "citation": {
+        "authors": "Various",
+        "year": 2023,
+        "title": "Rapamycin (mTOR inhibitor) effects on fertility",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "clinical",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "PV",
+          "F"
+        ],
+        "tags": [
+          "rapamycin",
+          "mtor",
+          "pharma"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "pharmacological_context",
+      "evidence_role": "PHARMACOLOGICAL_ANALOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Pharmacological perturbation retained as pathway context only; it is not equivalent to an electromagnetic exposure and does not calibrate FieldState.",
+      "limitations": [
+        "Pharmacological target engagement is not exposure equivalence",
+        "Clinical indication and co-treatment confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "moncrieff2022",
+      "legacy_source_record_index": 46,
+      "citation": {
+        "authors": "Moncrieff J et al.",
+        "year": 2022,
+        "title": "The serotonin theory of depression: a systematic umbrella review",
+        "journal": "Mol Psychiatry",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "umbrella",
+        "evidence_level_label": "E",
+        "pathways": [
+          "PV"
+        ],
+        "tags": [
+          "ssri",
+          "serotonin",
+          "depression",
+          "pharma"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "methodological_or_alternative_hypothesis_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "yang2024_metformin",
+      "legacy_source_record_index": 47,
+      "citation": {
+        "authors": "Yang JH et al.",
+        "year": 2024,
+        "title": "Metformin effects on biological aging in non-human primates",
+        "journal": "Cell",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "M",
+        "pathways": [
+          "PV",
+          "F"
+        ],
+        "tags": [
+          "metformin",
+          "mtor",
+          "aging",
+          "pharma"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "pharmacological_context",
+      "evidence_role": "PHARMACOLOGICAL_ANALOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Pharmacological perturbation retained as pathway context only; it is not equivalent to an electromagnetic exposure and does not calibrate FieldState.",
+      "limitations": [
+        "Pharmacological target engagement is not exposure equivalence",
+        "Clinical indication and co-treatment confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "diem2005",
+      "legacy_source_record_index": 48,
+      "citation": {
+        "authors": "Diem E et al. (REFLEX)",
+        "year": 2005,
+        "title": "Non-thermal DNA breakage by mobile-phone radiation in human fibroblasts",
+        "journal": "Mutat Res",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "RW"
+        ],
+        "tags": [
+          "reflex",
+          "dna",
+          "intermittent",
+          "transition"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "mccarty2011",
+      "legacy_source_record_index": 49,
+      "citation": {
+        "authors": "McCarty DE et al.",
+        "year": 2011,
+        "title": "Electromagnetic hypersensitivity: evidence for a novel neurological syndrome",
+        "journal": "Int J Neurosci",
+        "n": 1
+      },
+      "legacy_classification": {
+        "type": "case",
+        "evidence_level_label": "L*",
+        "pathways": [
+          "RW",
+          "EHS"
+        ],
+        "tags": [
+          "ehs",
+          "transition",
+          "provocation",
+          "double_blind"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "symptom_or_clinical_context",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "manta2014",
+      "legacy_source_record_index": 50,
+      "citation": {
+        "authors": "Manta AK et al.",
+        "year": 2014,
+        "title": "Reactive oxygen species in Drosophila ovaries after EMF exposure",
+        "journal": "Electromagn Biol Med",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "M",
+        "pathways": [
+          "RW"
+        ],
+        "tags": [
+          "ros",
+          "drosophila",
+          "recovery",
+          "repair"
+        ]
+      },
+      "canonical_nodes": [
+        "OOCYTE_REDOX"
+      ],
+      "model_domain": "female_reproductive_endpoint",
+      "evidence_role": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
+      "limitations": [
+        "Species, tissue and exposure protocol limit translation",
+        "Requires local field and thermal-control audit",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "santini2018",
+      "legacy_source_record_index": 51,
+      "citation": {
+        "authors": "Santini SJ et al.",
+        "year": 2018,
+        "title": "EMF and mitochondrial ROS homeostasis",
+        "journal": "Oxid Med Cell Longev",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M",
+        "pathways": [
+          "RW"
+        ],
+        "tags": [
+          "mitochondria",
+          "ros",
+          "feedback"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "belpomme2022",
+      "legacy_source_record_index": 52,
+      "citation": {
+        "authors": "Belpomme D et al.",
+        "year": 2022,
+        "title": "Electrohypersensitivity as a newly identified neurologic pathological disorder",
+        "journal": "Int J Mol Sci",
+        "n": 1000
+      },
+      "legacy_classification": {
+        "type": "clinical",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "EHS"
+        ],
+        "tags": [
+          "ehs",
+          "biomarker",
+          "histamine",
+          "bbb"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "symptom_or_clinical_context",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "cacna1c_emf2024",
+      "legacy_source_record_index": 53,
+      "citation": {
+        "authors": "Various",
+        "year": 2024,
+        "title": "5G RF-EMF effects on sleep EEG in CACNA1C genotyped volunteers",
+        "journal": "medrxiv",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "L*",
+        "pathways": [
+          "EHS"
+        ],
+        "tags": [
+          "cacna1c",
+          "genotype",
+          "sleep",
+          "5g"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "symptom_or_clinical_context",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "hrv_wifi2023",
+      "legacy_source_record_index": 54,
+      "citation": {
+        "authors": "Various",
+        "year": 2023,
+        "title": "Wi-Fi exposure and HRV in healthy young volunteers",
+        "journal": "PMC",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "EHS",
+          "D"
+        ],
+        "tags": [
+          "hrv",
+          "wifi",
+          "autonomic",
+          "healthy"
+        ]
+      },
+      "canonical_nodes": [
+        "HPA_HPG"
+      ],
+      "model_domain": "autonomic_context",
+      "evidence_role": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "hallmann2017",
+      "legacy_source_record_index": 55,
+      "citation": {
+        "authors": "Hallmann CA et al.",
+        "year": 2017,
+        "title": "More than 75 percent decline over 27 years in total flying insect biomass in protected areas",
+        "journal": "PLOS ONE",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "E",
+        "pathways": [
+          "S"
+        ],
+        "tags": [
+          "insects",
+          "decline",
+          "krefeld",
+          "protected"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "rosenberg2019",
+      "legacy_source_record_index": 56,
+      "citation": {
+        "authors": "Rosenberg KV et al.",
+        "year": 2019,
+        "title": "Decline of the North American avifauna",
+        "journal": "Science",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "E",
+        "pathways": [
+          "S"
+        ],
+        "tags": [
+          "birds",
+          "decline",
+          "north_america"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "klimentidis2010",
+      "legacy_source_record_index": 57,
+      "citation": {
+        "authors": "Klimentidis YC et al.",
+        "year": 2010,
+        "title": "Canaries in the coal mine: a cross-species analysis of the plurality of obesity epidemics",
+        "journal": "Proc R Soc B",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "S",
+          "RW"
+        ],
+        "tags": [
+          "obesity",
+          "animals",
+          "lab",
+          "environmental"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "becker1985",
+      "legacy_source_record_index": 58,
+      "citation": {
+        "authors": "Becker RO",
+        "year": 1985,
+        "title": "The Body Electric: Electromagnetism and the Foundation of Life",
+        "journal": "Book (Morrow)",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "book",
+        "evidence_level_label": "H",
+        "pathways": [
+          "H"
+        ],
+        "tags": [
+          "history",
+          "bioelectric",
+          "suppression"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR"
+      ],
+      "model_domain": "historical_physics_context",
+      "evidence_role": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+      "status": "HISTORICAL_CONTEXT",
+      "source_status": "HISTORICAL_LEGACY_METADATA",
+      "translation_scope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+      "limitations": [
+        "Historic methods and reporting may be incomplete",
+        "Requires source-level audit before any active use",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "frey1961",
+      "legacy_source_record_index": 59,
+      "citation": {
+        "authors": "Frey AH",
+        "year": 1961,
+        "title": "Auditory system response to radio frequency energy",
+        "journal": "Aerosp Med",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "E",
+        "pathways": [
+          "H"
+        ],
+        "tags": [
+          "history",
+          "microwave",
+          "auditory"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR"
+      ],
+      "model_domain": "historical_physics_context",
+      "evidence_role": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+      "status": "HISTORICAL_CONTEXT",
+      "source_status": "HISTORICAL_LEGACY_METADATA",
+      "translation_scope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+      "limitations": [
+        "Historic methods and reporting may be incomplete",
+        "Requires source-level audit before any active use",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "adey1981",
+      "legacy_source_record_index": 60,
+      "citation": {
+        "authors": "Adey WR",
+        "year": 1981,
+        "title": "Tissue interactions with nonionizing electromagnetic fields",
+        "journal": "Physiol Rev",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "H"
+        ],
+        "tags": [
+          "history",
+          "calcium",
+          "brain",
+          "window"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "historical_physics_context",
+      "evidence_role": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+      "status": "HISTORICAL_CONTEXT",
+      "source_status": "HISTORICAL_LEGACY_METADATA",
+      "translation_scope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+      "limitations": [
+        "Historic methods and reporting may be incomplete",
+        "Requires source-level audit before any active use",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "lindgren2021",
+      "legacy_source_record_index": 61,
+      "citation": {
+        "authors": "Lindgren J, Kovacs A, Liukkonen J",
+        "year": 2025,
+        "title": "Geometric electrodynamics from Weyl geometry",
+        "journal": "Various",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "theoretical",
+        "evidence_level_label": "M",
+        "pathways": [
+          "theory"
+        ],
+        "tags": [
+          "lindgren",
+          "weyl",
+          "geometry",
+          "theory"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR",
+        "FIELDSTATE_ENVELOPE"
+      ],
+      "model_domain": "theoretical_physics_context",
+      "evidence_role": "THEORETICAL_PREMISE_CONTEXT",
+      "status": "HISTORICAL_CONTEXT",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Theoretical or biophysical premise retained as structural context; it does not by itself establish a biological endpoint or a TFR coefficient.",
+      "limitations": [
+        "Requires independent empirical tests",
+        "Does not supply local FieldState measurements",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "covid_sperm_2025",
+      "legacy_source_record_index": 62,
+      "citation": {
+        "authors": "PubMed 41036143",
+        "year": 2025,
+        "title": "Ambient conditions and semen quality across COVID periods",
+        "journal": "Reproductive Sciences",
+        "n": 2672
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "A",
+          "RW"
+        ],
+        "tags": [
+          "covid",
+          "sperm",
+          "lockdown",
+          "ambient-emf",
+          "natural-experiment"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "covid_recovery_2024",
+      "legacy_source_record_index": 63,
+      "citation": {
+        "authors": "PMC10804479",
+        "year": 2024,
+        "title": "COVID temporarily impairs then recovers semen parameters",
+        "journal": "Andrology",
+        "n": 85
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "covid",
+          "sperm",
+          "recovery",
+          "spermatogenesis-cycle"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "covid_6mo_recovery_2025",
+      "legacy_source_record_index": 64,
+      "citation": {
+        "authors": "PMC12540804",
+        "year": 2025,
+        "title": "6-month sperm recovery from COVID",
+        "journal": "Frontiers in Reproductive Health",
+        "n": 74
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "M",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "covid",
+          "sperm",
+          "recovery",
+          "longitudinal"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "zhang_china_covid_2025",
+      "legacy_source_record_index": 65,
+      "citation": {
+        "authors": "Zhang et al.",
+        "year": 2025,
+        "title": "China COVID relaxation effect on semen quality",
+        "journal": "Transl Androl Urol",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "A",
+          "RW"
+        ],
+        "tags": [
+          "covid",
+          "sperm",
+          "china",
+          "bidirectional",
+          "natural-experiment"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "deloitte_devices_2021",
+      "legacy_source_record_index": 66,
+      "citation": {
+        "authors": "Deloitte",
+        "year": 2021,
+        "title": "Connectivity and mobile trends survey (USA)",
+        "journal": "Deloitte Insights",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "C",
+        "pathways": [
+          "RW"
+        ],
+        "tags": [
+          "covid",
+          "devices",
+          "screen-time",
+          "indoor-emf",
+          "usa"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "uk_screen_time_2023",
+      "legacy_source_record_index": 67,
+      "citation": {
+        "authors": "PMC9843116",
+        "year": 2023,
+        "title": "UK screen-viewing pre vs post lockdown",
+        "journal": "BMC Public Health",
+        "n": 1689
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "RW"
+        ],
+        "tags": [
+          "covid",
+          "screen-time",
+          "uk",
+          "permanent-change",
+          "recovery-window"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "us_child_screen_2024",
+      "legacy_source_record_index": 68,
+      "citation": {
+        "authors": "PMC11153974",
+        "year": 2024,
+        "title": "US child screen time during COVID",
+        "journal": "JAMA Pediatrics",
+        "n": 280
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "C",
+        "pathways": [
+          "RW"
+        ],
+        "tags": [
+          "covid",
+          "screen-time",
+          "children",
+          "usa",
+          "devices"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "india_screen_sleep_2025",
+      "legacy_source_record_index": 69,
+      "citation": {
+        "authors": "PMC12535673",
+        "year": 2025,
+        "title": "India medical students screen time and sleep during COVID",
+        "journal": "Indian J Community Med",
+        "n": 470
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "RW",
+          "B"
+        ],
+        "tags": [
+          "covid",
+          "screen-time",
+          "sleep",
+          "india",
+          "circadian"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "india_electricity_2022",
+      "legacy_source_record_index": 70,
+      "citation": {
+        "authors": "PMC9767798",
+        "year": 2022,
+        "title": "India household electricity consumption during COVID",
+        "journal": "Energy Policy",
+        "n": 500
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "C",
+        "pathways": [
+          "RW"
+        ],
+        "tags": [
+          "covid",
+          "electricity",
+          "india",
+          "indoor-emf",
+          "remote-work"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "wfh_permanent_2021",
+      "legacy_source_record_index": 71,
+      "citation": {
+        "authors": "arxiv 2109.13643",
+        "year": 2021,
+        "title": "Working from home adaptations and post-pandemic predictions",
+        "journal": "arXiv preprint",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "C",
+        "pathways": [
+          "RW"
+        ],
+        "tags": [
+          "covid",
+          "remote-work",
+          "permanent-change",
+          "exposure-pattern"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "irreversible_digital_2023",
+      "legacy_source_record_index": 72,
+      "citation": {
+        "authors": "ScienceDirect",
+        "year": 2023,
+        "title": "Irreversible effects of COVID digitalization",
+        "journal": "Technological Forecasting and Social Change",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "C",
+        "pathways": [
+          "RW"
+        ],
+        "tags": [
+          "covid",
+          "digitalization",
+          "irreversible",
+          "permanent-change"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "nl_child_mh_2024",
+      "legacy_source_record_index": 73,
+      "citation": {
+        "authors": "PMC11472795",
+        "year": 2024,
+        "title": "Netherlands child mental health 2018-2023 longitudinal",
+        "journal": "Eur Child Adolesc Psychiatry",
+        "n": 1056
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "E",
+        "pathways": [
+          "RW",
+          "D"
+        ],
+        "tags": [
+          "covid",
+          "mental-health",
+          "children",
+          "netherlands",
+          "persistent",
+          "natural-experiment"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "swiss_screen_mh_2022",
+      "legacy_source_record_index": 74,
+      "citation": {
+        "authors": "PMC9709147",
+        "year": 2022,
+        "title": "Switzerland natural experiment — screen time and mental health",
+        "journal": "Int J Environ Res Public Health",
+        "n": 674
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "RW",
+          "D"
+        ],
+        "tags": [
+          "covid",
+          "mental-health",
+          "screen-time",
+          "switzerland",
+          "natural-experiment",
+          "hedges-g"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "screen_child_behav_2024",
+      "legacy_source_record_index": 75,
+      "citation": {
+        "authors": "PMC10982732",
+        "year": 2024,
+        "title": "Screen time and child behavioral disorders during COVID (systematic review)",
+        "journal": "Int J Environ Res Public Health",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "RW"
+        ],
+        "tags": [
+          "covid",
+          "screen-time",
+          "children",
+          "mental-health",
+          "systematic-review"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "post_lockdown_mh_2025",
+      "legacy_source_record_index": 76,
+      "citation": {
+        "authors": "PMC11936785",
+        "year": 2025,
+        "title": "One-year post-lockdown mental health trajectories",
+        "journal": "Lancet Psychiatry",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "cohort",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "RW",
+          "D"
+        ],
+        "tags": [
+          "covid",
+          "mental-health",
+          "persistent",
+          "longitudinal",
+          "post-lockdown"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "italy_sleep_device_2020",
+      "legacy_source_record_index": 77,
+      "citation": {
+        "authors": "medrxiv Italian sleep study",
+        "year": 2020,
+        "title": "Evening device exposure and sleep during Italian lockdown",
+        "journal": "medrxiv preprint",
+        "n": null
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "M",
+        "pathways": [
+          "RW",
+          "B"
+        ],
+        "tags": [
+          "covid",
+          "sleep",
+          "devices",
+          "italy",
+          "circadian",
+          "evening-exposure"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "recovery_window_or_technology_context",
+      "evidence_role": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+      "limitations": [
+        "Temporal co-occurrence is not exposure measurement",
+        "Substantial social, clinical and behavioral confounding",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "lea2016",
+      "legacy_source_record_index": 78,
+      "citation": {
+        "authors": "Lea RG, Byers AS, Sumner RN, et al.",
+        "year": 2016,
+        "title": "Environmental chemicals impact dog semen quality in vitro and may be associated with a temporal decline in sperm motility and increased cryptorchidism",
+        "journal": "Scientific Reports",
+        "n": 1925
+      },
+      "legacy_classification": {
+        "type": "longitudinal",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "dog",
+          "sentinel",
+          "sperm",
+          "motility",
+          "morphology",
+          "cryptorchidism",
+          "longitudinal",
+          "indoor-exposure",
+          "csli"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_reproductive_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "hensel2025",
+      "legacy_source_record_index": 79,
+      "citation": {
+        "authors": "Hensel B, Schmelz F, Gerstner K, et al.",
+        "year": 2025,
+        "title": "Temporal trends in semen quality of breeding bulls and boars",
+        "journal": "Animal Reproduction Science",
+        "n": 667125
+      },
+      "legacy_classification": {
+        "type": "longitudinal",
+        "evidence_level_label": "M|C",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "bull",
+          "boar",
+          "livestock",
+          "negative-control",
+          "sperm",
+          "concentration",
+          "motility",
+          "breeding-selection",
+          "low-exposure",
+          "csli"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_reproductive_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "becker1985_fort_rucker",
+      "legacy_source_record_index": 80,
+      "citation": {
+        "authors": "Becker RO, Selden G",
+        "year": 1985,
+        "title": "The Body Electric: Electromagnetism and the Foundation of Life",
+        "journal": "William Morrow & Co."
+      },
+      "legacy_classification": {
+        "type": "case",
+        "evidence_level_label": "L*",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "military",
+          "radar",
+          "birth_defects",
+          "history",
+          "fort_rucker"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "historical_claim_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "guy1984",
+      "legacy_source_record_index": 81,
+      "citation": {
+        "authors": "Guy AW, Chou CK, Lin JC, Christensen D",
+        "year": 1984,
+        "title": "Chronic exposure of rats to 2.45 GHz microwaves (US Air Force SAM-TR-83-38)",
+        "journal": "USAF School of Aerospace Medicine"
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "M",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "military",
+          "chronic",
+          "cancer",
+          "endocrine",
+          "selye",
+          "air_force"
+        ]
+      },
+      "canonical_nodes": [
+        "HPA_HPG",
+        "MALE_STEROIDOGENESIS"
+      ],
+      "model_domain": "animal_neuroendocrine_context",
+      "evidence_role": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "hydro_quebec_1976",
+      "legacy_source_record_index": 82,
+      "citation": {
+        "authors": "Hydro-Québec survey (cited in Becker, Cross Currents)",
+        "year": 1976,
+        "title": "Sex ratio shift in children of power station workers",
+        "journal": "Cited in Becker RO, Cross Currents (1990)"
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "L*",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "occupational",
+          "sex_ratio",
+          "power_line",
+          "history"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "historical_claim_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "zandieh2025",
+      "legacy_source_record_index": 83,
+      "citation": {
+        "authors": "Zandieh A, Bhatt DK, Bhatt UC, Bhatt AN",
+        "year": 2025,
+        "title": "Frequency-dependent effects of extremely low-frequency electromagnetic fields on mitochondrial membrane potential and reactive oxygen species",
+        "journal": "Nature Scientific Reports"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "A",
+          "GME"
+        ],
+        "tags": [
+          "elf",
+          "mitochondrial",
+          "ros",
+          "frequency_specific",
+          "r42",
+          "vgcc",
+          "in_vitro"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_ENVELOPE",
+        "A_VGCC_ROS",
+        "VMEM_MTOR"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "CANONICAL_ALIAS",
+      "status": "SUPERSEDED_BY_ACTIVE_RECORD",
+      "source_status": "CANONICAL_RECORD_AVAILABLE",
+      "translation_scope": "The citation has a separately curated active FieldState record; this alias preserves the prior bibliography without restoring its legacy claim wording.",
+      "limitations": [
+        "The active record's scope and limitations govern interpretation",
+        "Not an effect-size or TFR calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY",
+      "canonical_evidence_id": "ZANDIEH_2025_MITO_RESONANCE"
+    },
+    {
+      "legacy_id": "sanchez_bayo2019",
+      "legacy_source_record_index": 84,
+      "citation": {
+        "authors": "Sanchez-Bayo F, Wyckhuys KAG",
+        "year": 2019,
+        "title": "Worldwide decline of the entomofauna: A review of its drivers",
+        "journal": "Biological Conservation"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "insects",
+          "decline",
+          "ecology",
+          "meta_review",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_or_ecological_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "thielens2018",
+      "legacy_source_record_index": 85,
+      "citation": {
+        "authors": "Thielens A, Bell D, Mortimore DB, Greco MK, Martens L, Joseph W",
+        "year": 2018,
+        "title": "Exposure of Insects to Radio-Frequency Electromagnetic Fields from 2 to 120 GHz",
+        "journal": "Scientific Reports"
+      },
+      "legacy_classification": {
+        "type": "computational",
+        "evidence_level_label": "M",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "insects",
+          "5g",
+          "absorption",
+          "resonance",
+          "modeling",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR"
+      ],
+      "model_domain": "organ_transfer_physics",
+      "evidence_role": "PHYSICS_SIGNATURE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "balmori2015",
+      "legacy_source_record_index": 86,
+      "citation": {
+        "authors": "Balmori A",
+        "year": 2015,
+        "title": "Anthropogenic radiofrequency electromagnetic fields as an emerging threat to wildlife orientation",
+        "journal": "Reviews on Environmental Health"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "wildlife",
+          "magnetoreception",
+          "orientation",
+          "ecology",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_or_ecological_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "balmori2006",
+      "legacy_source_record_index": 87,
+      "citation": {
+        "authors": "Balmori A",
+        "year": 2006,
+        "title": "The incidence of electromagnetic pollution on the amphibian decline: Is this an important piece of the puzzle?",
+        "journal": "Toxicological and Environmental Chemistry"
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "L*",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "amphibians",
+          "frogs",
+          "base_station",
+          "decline",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_or_ecological_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "stuart2004",
+      "legacy_source_record_index": 88,
+      "citation": {
+        "authors": "Stuart SN, Chanson JS, Cox NA, Young BE, Rodrigues ASL, Fischman DL, Waller RW",
+        "year": 2004,
+        "title": "Status and Trends of Amphibian Declines and Extinctions Worldwide",
+        "journal": "Science"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "amphibians",
+          "enigmatic_decline",
+          "extinction",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_or_ecological_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "favre2011",
+      "legacy_source_record_index": 89,
+      "citation": {
+        "authors": "Favre D",
+        "year": 2011,
+        "title": "Mobile phone-induced honeybee worker piping",
+        "journal": "Apidologie"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "bees",
+          "piping",
+          "mobile_phone",
+          "behavior",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [
+        "B_RPM_CRY"
+      ],
+      "model_domain": "nonhuman_orientation_or_behavior",
+      "evidence_role": "PHYSICS_SIGNATURE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "sharma_kumar2010",
+      "legacy_source_record_index": 90,
+      "citation": {
+        "authors": "Sharma VP, Kumar NR",
+        "year": 2010,
+        "title": "Changes in honeybee behaviour and biology under the influence of cellphone radiations",
+        "journal": "Current Science"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "bees",
+          "behavior",
+          "navigation",
+          "colony_collapse",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [
+        "B_RPM_CRY"
+      ],
+      "model_domain": "nonhuman_orientation_or_behavior",
+      "evidence_role": "PHYSICS_SIGNATURE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "shepherd2018",
+      "legacy_source_record_index": 91,
+      "citation": {
+        "authors": "Shepherd S, Lima MAP, Oliveira EE, Sharkh SM, Jackson CW, Sherlock MR",
+        "year": 2018,
+        "title": "Extremely low frequency electromagnetic fields impair the cognitive and motor abilities of honey bees",
+        "journal": "Scientific Reports"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "bees",
+          "cognition",
+          "motor",
+          "elf",
+          "ccd",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [
+        "B_RPM_CRY"
+      ],
+      "model_domain": "nonhuman_orientation_or_behavior",
+      "evidence_role": "PHYSICS_SIGNATURE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "vanbergen2013",
+      "legacy_source_record_index": 92,
+      "citation": {
+        "authors": "Vanbergen AJ, Insect Pollinators Initiative",
+        "year": 2013,
+        "title": "Threats to an ecosystem service: pressures on pollinators",
+        "journal": "Frontiers in Ecology and the Environment"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "pollinators",
+          "decline",
+          "ecosystem",
+          "multi_stressor",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_or_ecological_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "wang2007",
+      "legacy_source_record_index": 93,
+      "citation": {
+        "authors": "Wang Y, Pan Y, Parsons S, Walker M, Zhang S",
+        "year": 2007,
+        "title": "Bats respond to polarity of a magnetic field",
+        "journal": "Proceedings of the Royal Society B"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "bats",
+          "magnetoreception",
+          "navigation",
+          "polarity",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [
+        "B_RPM_CRY"
+      ],
+      "model_domain": "nonhuman_orientation_or_behavior",
+      "evidence_role": "PHYSICS_SIGNATURE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "frick2010",
+      "legacy_source_record_index": 94,
+      "citation": {
+        "authors": "Frick WF, Pollock JF, Hicks AC, Langwig KE, Reynolds DS, Turner GG, Butchkoski CM, Kunz TH",
+        "year": 2010,
+        "title": "An Emerging Disease Causes Regional Population Collapse of a Common North American Bat Species",
+        "journal": "Science"
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "E",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "bats",
+          "population_collapse",
+          "disease",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_or_ecological_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "czerski1979",
+      "legacy_source_record_index": 95,
+      "citation": {
+        "authors": "Czerski P",
+        "year": 1979,
+        "title": "Microwave effects on the blood-forming system with particular reference to the lymphocyte",
+        "journal": "Annals of the New York Academy of Sciences"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "L*",
+        "pathways": [
+          "A",
+          "B"
+        ],
+        "tags": [
+          "chromosomal",
+          "sperm",
+          "microwave",
+          "history",
+          "non_thermal"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "historical_cellular_context",
+      "evidence_role": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+      "status": "HISTORICAL_CONTEXT",
+      "source_status": "HISTORICAL_LEGACY_METADATA",
+      "translation_scope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+      "limitations": [
+        "Historic methods and reporting may be incomplete",
+        "Requires source-level audit before any active use",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "panagopoulos2004",
+      "legacy_source_record_index": 96,
+      "citation": {
+        "authors": "Panagopoulos DJ, Karabarbounis A, Margaritis LH",
+        "year": 2004,
+        "title": "Effect of GSM 900-MHz Mobile Phone Radiation on the Reproductive Capacity of Drosophila melanogaster",
+        "journal": "Electromagnetic Biology and Medicine"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "B",
+          "BS"
+        ],
+        "tags": [
+          "drosophila",
+          "reproduction",
+          "gsm",
+          "dose_response",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [
+        "B_RPM_CRY"
+      ],
+      "model_domain": "nonhuman_reproductive_endpoint",
+      "evidence_role": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
+      "limitations": [
+        "Species, tissue and exposure protocol limit translation",
+        "Requires local field and thermal-control audit",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "gandhi1996",
+      "legacy_source_record_index": 97,
+      "citation": {
+        "authors": "Gandhi OP, Lazzi G, Furse CM",
+        "year": 1996,
+        "title": "Electromagnetic absorption in the human head and neck for mobile telephones at 835 and 1900 MHz",
+        "journal": "IEEE Transactions on Microwave Theory and Techniques"
+      },
+      "legacy_classification": {
+        "type": "computational",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A",
+          "D"
+        ],
+        "tags": [
+          "sar",
+          "children",
+          "head",
+          "absorption",
+          "skull",
+          "modeling"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR"
+      ],
+      "model_domain": "organ_transfer_physics",
+      "evidence_role": "PHYSICS_SIGNATURE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "goldstein_kreyenfeld2011",
+      "legacy_source_record_index": 98,
+      "citation": {
+        "authors": "Goldstein JR, Kreyenfeld M",
+        "year": 2011,
+        "title": "Has East Germany Overtaken West Germany? Recent Trends in Order-Specific Fertility",
+        "journal": "Population and Development Review"
+      },
+      "legacy_classification": {
+        "type": "demographic",
+        "evidence_level_label": "E",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "germany",
+          "tfr",
+          "reunification",
+          "collapse",
+          "recovery",
+          "demographic"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "demographic_or_preference_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "belpomme2015",
+      "legacy_source_record_index": 99,
+      "citation": {
+        "authors": "Belpomme D, Campagnac C, Irigaray P",
+        "year": 2015,
+        "title": "Reliable disease biomarkers characterizing and identifying electrohypersensitivity and multiple chemical sensitivity as two etiopathogenic aspects of a unique pathological disorder",
+        "journal": "Reviews on Environmental Health"
+      },
+      "legacy_classification": {
+        "type": "clinical",
+        "evidence_level_label": "M",
+        "pathways": [
+          "D",
+          "SE"
+        ],
+        "tags": [
+          "ehs",
+          "biomarkers",
+          "clinical",
+          "histamine",
+          "oxidative_stress"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "symptom_or_clinical_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "huss2007",
+      "legacy_source_record_index": 100,
+      "citation": {
+        "authors": "Huss A, Egger M, Hug K, Huwiler-Müntener K, Röösli M",
+        "year": 2007,
+        "title": "Source of Funding and Results of Studies of Health Effects of Mobile Phone Use: Systematic Review of Experimental Studies",
+        "journal": "Environmental Health Perspectives"
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "funding_bias",
+          "industry",
+          "systematic_review",
+          "methodology"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "methodological_or_guideline_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "eurobarometer2018",
+      "legacy_source_record_index": 101,
+      "citation": {
+        "authors": "European Commission",
+        "year": 2018,
+        "title": "Eurobarometer: Fertility and family issues",
+        "journal": "Eurobarometer Special Surveys"
+      },
+      "legacy_classification": {
+        "type": "survey",
+        "evidence_level_label": "E",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "fertility_gap",
+          "desired_children",
+          "europe",
+          "demographic",
+          "survey"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "demographic_or_preference_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "vassallo2025",
+      "legacy_source_record_index": 102,
+      "citation": {
+        "authors": "Vassallo G, Catania F, Ferro M",
+        "year": 2025,
+        "title": "Independent validation of Lindgren geometric electrodynamics derivation",
+        "journal": "Preprint"
+      },
+      "legacy_classification": {
+        "type": "theoretical",
+        "evidence_level_label": "L*",
+        "pathways": [
+          "theory"
+        ],
+        "tags": [
+          "lindgren",
+          "weyl",
+          "validation",
+          "theory",
+          "independent"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR"
+      ],
+      "model_domain": "theoretical_physics_context",
+      "evidence_role": "SOURCE_QUALIFICATION_PENDING",
+      "status": "UNVERIFIED_CITATION",
+      "source_status": "INCOMPLETE_OR_PLACEHOLDER_LEGACY_CITATION",
+      "translation_scope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+      "limitations": [
+        "Incomplete or placeholder legacy metadata",
+        "No active causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "ntp2018",
+      "legacy_source_record_index": 103,
+      "citation": {
+        "authors": "National Toxicology Program",
+        "year": 2018,
+        "title": "Toxicology and carcinogenesis studies in Hsd:Sprague Dawley SD rats exposed to whole-body radio frequency radiation at a frequency (900 MHz)",
+        "journal": "NTP Technical Report 595"
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A",
+          "D"
+        ],
+        "tags": [
+          "ntp",
+          "cancer",
+          "schwannoma",
+          "glioma",
+          "rat",
+          "landmark"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "nonreproductive_bioeffect_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "falcioni2018",
+      "legacy_source_record_index": 104,
+      "citation": {
+        "authors": "Falcioni L, Bua L, Tibaldi E, Lauriola M, De Angelis L, Thayer GP, Gnudi G, Mandrioli D, Manservigi M, Manservisi F, Manzoli I, Menghetti I, Montella R, Panzacchi S, Sgargi D, Strollo V, Vornoli A, Belpoggi F",
+        "year": 2018,
+        "title": "Report of final results regarding brain and heart tumors in Sprague-Dawley rats exposed from prenatal life until natural death to mobile phone radiofrequency field",
+        "journal": "Environmental Research"
+      },
+      "legacy_classification": {
+        "type": "animal",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "ramazzini",
+          "cancer",
+          "schwannoma",
+          "replication",
+          "rat",
+          "far_field"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "nonreproductive_bioeffect_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "iarc2011",
+      "legacy_source_record_index": 105,
+      "citation": {
+        "authors": "IARC Working Group on the Evaluation of Carcinogenic Risks to Humans",
+        "year": 2011,
+        "title": "Non-ionizing radiation, Part 2: Radiofrequency electromagnetic fields",
+        "journal": "IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, Vol. 102"
+      },
+      "legacy_classification": {
+        "type": "institutional",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "who",
+          "iarc",
+          "classification",
+          "2b",
+          "carcinogenic",
+          "landmark"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "nonreproductive_bioeffect_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "interphone2010",
+      "legacy_source_record_index": 106,
+      "citation": {
+        "authors": "INTERPHONE Study Group",
+        "year": 2010,
+        "title": "Brain tumour risk in relation to mobile telephone use: results of the INTERPHONE international case-control study",
+        "journal": "International Journal of Epidemiology"
+      },
+      "legacy_classification": {
+        "type": "epidemiological",
+        "evidence_level_label": "E",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "interphone",
+          "brain_tumor",
+          "glioma",
+          "epidemiology",
+          "landmark"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "nonreproductive_endpoint_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "agarwal2009",
+      "legacy_source_record_index": 107,
+      "citation": {
+        "authors": "Agarwal A, Desai NR, Makker K, Varghese A, Mouradi R, Sabanegh E, Sharma R",
+        "year": 2009,
+        "title": "Effects of radiofrequency electromagnetic waves (RF-EMW) from cellular phones on human ejaculated semen: an in vitro pilot study",
+        "journal": "Fertility and Sterility"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "B",
+          "GME"
+        ],
+        "tags": [
+          "sperm",
+          "motility",
+          "ros",
+          "in_vitro",
+          "cell_phone"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS",
+        "MALE_SPERM"
+      ],
+      "model_domain": "male_reproductive_endpoint",
+      "evidence_role": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
+      "limitations": [
+        "Species, tissue and exposure protocol limit translation",
+        "Requires local field and thermal-control audit",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "adams2014",
+      "legacy_source_record_index": 108,
+      "citation": {
+        "authors": "Adams JA, Galloway TS, Mondal D, Esteves SC, Mathews F",
+        "year": 2014,
+        "title": "Effect of mobile telephones on sperm quality: a systematic review and meta-analysis",
+        "journal": "Environment International"
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "E",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "sperm",
+          "meta_analysis",
+          "motility",
+          "viability",
+          "systematic_review"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_SPERM"
+      ],
+      "model_domain": "male_reproductive_endpoint",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "deiuliis2009",
+      "legacy_source_record_index": 109,
+      "citation": {
+        "authors": "De Iuliis GN, Newey RJ, King BV, Aitken RJ",
+        "year": 2009,
+        "title": "Mobile phone radiation induces reactive oxygen species production and DNA damage in human spermatozoa in vitro",
+        "journal": "PLoS ONE"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "B",
+          "GME"
+        ],
+        "tags": [
+          "sperm",
+          "ros",
+          "dna_damage",
+          "mitochondrial",
+          "dose_response"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS",
+        "MALE_SPERM"
+      ],
+      "model_domain": "human_gamete_endpoint",
+      "evidence_role": "CANONICAL_ALIAS",
+      "status": "SUPERSEDED_BY_ACTIVE_RECORD",
+      "source_status": "CANONICAL_RECORD_AVAILABLE",
+      "translation_scope": "The citation has a separately curated active FieldState record; this alias preserves the prior bibliography without restoring its legacy claim wording.",
+      "limitations": [
+        "The active record's scope and limitations govern interpretation",
+        "Not an effect-size or TFR calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY",
+      "canonical_evidence_id": "DE_IULIIS_2009_HUMAN_SPERM"
+    },
+    {
+      "legacy_id": "avendano2012",
+      "legacy_source_record_index": 110,
+      "citation": {
+        "authors": "Avendaño C, Mata A, Sanchez Sarmiento CA, Doncel GF",
+        "year": 2012,
+        "title": "Use of laptop computers connected to internet through Wi-Fi decreases human sperm motility and increases sperm DNA fragmentation",
+        "journal": "Fertility and Sterility"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "B",
+          "GME"
+        ],
+        "tags": [
+          "sperm",
+          "wifi",
+          "laptop",
+          "motility",
+          "dna_fragmentation"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS",
+        "MALE_SPERM"
+      ],
+      "model_domain": "male_reproductive_endpoint",
+      "evidence_role": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
+      "limitations": [
+        "Species, tissue and exposure protocol limit translation",
+        "Requires local field and thermal-control audit",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "kesari2018",
+      "legacy_source_record_index": 111,
+      "citation": {
+        "authors": "Kesari KK, Agarwal A, Henkel R",
+        "year": 2018,
+        "title": "Radiations and male fertility",
+        "journal": "Reproductive Biology and Endocrinology"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "sperm",
+          "review",
+          "oxidative_stress",
+          "apoptosis",
+          "male_fertility"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_SPERM"
+      ],
+      "model_domain": "male_reproductive_endpoint",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "lavignera2012",
+      "legacy_source_record_index": 112,
+      "citation": {
+        "authors": "La Vignera S, Condorelli RA, Vicari E, D'Agata R, Calogero AE",
+        "year": 2012,
+        "title": "Effects of the exposure to mobile phones on male reproduction: a review of the literature",
+        "journal": "Journal of Andrology"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "sperm",
+          "review",
+          "mobile_phone",
+          "male_reproduction"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_SPERM"
+      ],
+      "model_domain": "male_reproductive_endpoint",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "skakkebaek2016",
+      "legacy_source_record_index": 113,
+      "citation": {
+        "authors": "Skakkebaek NE, Rajpert-De Meyts E, Buck Louis GM, Toppari J, Andersson AM, Eisenberg ML, Jensen TK, Jorgensen N, Swan SH, Sapra KJ, Ziebe S, Priskorn L, Juul A",
+        "year": 2016,
+        "title": "Male Reproductive Disorders and Fertility Trends: Influences of Environment and Genetic Susceptibility",
+        "journal": "Physiological Reviews"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "E",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "sperm_decline",
+          "testicular",
+          "tds",
+          "environmental",
+          "trends"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_SPERM"
+      ],
+      "model_domain": "endpoint_trend_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "carlsen1992",
+      "legacy_source_record_index": 114,
+      "citation": {
+        "authors": "Carlsen E, Giwercman A, Keiding N, Skakkebaek NE",
+        "year": 1992,
+        "title": "Evidence for decreasing quality of semen during past 50 years",
+        "journal": "BMJ"
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "E",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "sperm_decline",
+          "meta_analysis",
+          "historical",
+          "landmark"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_SPERM"
+      ],
+      "model_domain": "endpoint_trend_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "swan2000",
+      "legacy_source_record_index": 115,
+      "citation": {
+        "authors": "Swan SH, Elkin EP, Fenster L",
+        "year": 2000,
+        "title": "The question of declining sperm density revisited: an analysis of 101 studies published 1934-1996",
+        "journal": "Environmental Health Perspectives"
+      },
+      "legacy_classification": {
+        "type": "meta",
+        "evidence_level_label": "E",
+        "pathways": [
+          "B"
+        ],
+        "tags": [
+          "sperm_decline",
+          "meta_analysis",
+          "trend",
+          "acceleration"
+        ]
+      },
+      "canonical_nodes": [
+        "MALE_SPERM"
+      ],
+      "model_domain": "endpoint_trend_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "blank_goodman2009",
+      "legacy_source_record_index": 116,
+      "citation": {
+        "authors": "Blank M, Goodman R",
+        "year": 2009,
+        "title": "Electromagnetic fields stress living cells",
+        "journal": "Pathophysiology"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M",
+        "pathways": [
+          "A",
+          "SE"
+        ],
+        "tags": [
+          "stress_response",
+          "hsp",
+          "dna_antenna",
+          "non_thermal",
+          "mechanism"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "friedman2007",
+      "legacy_source_record_index": 117,
+      "citation": {
+        "authors": "Friedman J, Kraus S, Hauptman Y, Schiff Y, Seger R",
+        "year": 2007,
+        "title": "Mechanism of short-term ERK activation by electromagnetic fields at mobile phone frequencies",
+        "journal": "Biochemical Journal"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "erk",
+          "nadh_oxidase",
+          "ros",
+          "signaling",
+          "mechanism",
+          "non_thermal"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "panagopoulos2013",
+      "legacy_source_record_index": 118,
+      "citation": {
+        "authors": "Panagopoulos DJ, Johansson O, Carlo GL",
+        "year": 2013,
+        "title": "Polarization: A Key Difference between Man-made and Natural Electromagnetic Fields, in regard to Biological Activity",
+        "journal": "Scientific Reports"
+      },
+      "legacy_classification": {
+        "type": "theoretical",
+        "evidence_level_label": "M",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "polarization",
+          "mechanism",
+          "coherent",
+          "non_thermal",
+          "theory"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR"
+      ],
+      "model_domain": "theoretical_physics_context",
+      "evidence_role": "THEORETICAL_PREMISE_CONTEXT",
+      "status": "HISTORICAL_CONTEXT",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Theoretical or biophysical premise retained as structural context; it does not by itself establish a biological endpoint or a TFR coefficient.",
+      "limitations": [
+        "Requires independent empirical tests",
+        "Does not supply local FieldState measurements",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "lai_singh2004",
+      "legacy_source_record_index": 119,
+      "citation": {
+        "authors": "Lai H, Singh NP",
+        "year": 2004,
+        "title": "Magnetic-field-induced DNA strand breaks in brain cells of the rat",
+        "journal": "Environmental Health Perspectives"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "M",
+        "pathways": [
+          "A",
+          "D"
+        ],
+        "tags": [
+          "dna_damage",
+          "brain",
+          "elf",
+          "free_radicals",
+          "rat"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "cellular_mechanism",
+      "evidence_role": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+      "limitations": [
+        "System- and protocol-specific",
+        "Requires source-level exposure and endpoint verification",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "STRUCTURAL_ONLY"
+    },
+    {
+      "legacy_id": "volkow2011",
+      "legacy_source_record_index": 120,
+      "citation": {
+        "authors": "Volkow ND, Tomasi D, Wang GJ, Vaska P, Fowler JS, Telang F, Alexoff D, Logan J, Wong C",
+        "year": 2011,
+        "title": "Effects of Cell Phone Radiofrequency Signal Exposure on Brain Glucose Metabolism",
+        "journal": "JAMA"
+      },
+      "legacy_classification": {
+        "type": "experimental",
+        "evidence_level_label": "E",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "brain",
+          "glucose",
+          "pet_scan",
+          "human",
+          "jama",
+          "landmark"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "nonreproductive_endpoint_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "pall2016",
+      "legacy_source_record_index": 121,
+      "citation": {
+        "authors": "Pall ML",
+        "year": 2016,
+        "title": "Microwave frequency electromagnetic fields (EMFs) produce widespread neuropsychiatric effects including depression",
+        "journal": "Journal of Chemical Neuroanatomy"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M",
+        "pathways": [
+          "D",
+          "A"
+        ],
+        "tags": [
+          "neuropsychiatric",
+          "vgcc",
+          "depression",
+          "sleep",
+          "brain"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS",
+        "HPA_HPG"
+      ],
+      "model_domain": "neuroendocrine_context",
+      "evidence_role": "REVIEW_OR_SYNTHESIS_INDEX",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+      "limitations": [
+        "Primary studies must be assessed separately",
+        "Legacy summary wording is not retained as an active conclusion",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "cucurachi2013",
+      "legacy_source_record_index": 122,
+      "citation": {
+        "authors": "Cucurachi S, Tamis WLM, Vijver MG, Peijnenburg WJGM, Bolte JFB, de Snoo GR",
+        "year": 2013,
+        "title": "A review of the ecological effects of radiofrequency electromagnetic fields (RF-EMF)",
+        "journal": "Environment International"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "ecology",
+          "review",
+          "wildlife",
+          "plants",
+          "multi_species",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_or_ecological_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "balmori2009",
+      "legacy_source_record_index": 123,
+      "citation": {
+        "authors": "Balmori A",
+        "year": 2009,
+        "title": "Electromagnetic pollution from phone masts. Effects on wildlife",
+        "journal": "Pathophysiology"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M",
+        "pathways": [
+          "BS"
+        ],
+        "tags": [
+          "wildlife",
+          "birds",
+          "base_station",
+          "nesting",
+          "reproduction",
+          "sentinel"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "sentinel_or_ecological_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "belyaev2016",
+      "legacy_source_record_index": 124,
+      "citation": {
+        "authors": "Belyaev I, Dean A, Eger H, Hubmann G, Jandrisovits R, Kern M, Kundi M, Moshammer H, Lercher P, Müller K, Oberfeld G, Ohnsorge P, Pelzmann P, Scheingraber C, Thill R",
+        "year": 2016,
+        "title": "EUROPAEM EMF Guideline 2016 for the prevention, diagnosis and treatment of EMF-related health problems and illnesses",
+        "journal": "Reviews on Environmental Health"
+      },
+      "legacy_classification": {
+        "type": "guideline",
+        "evidence_level_label": "M",
+        "pathways": [
+          "A",
+          "D"
+        ],
+        "tags": [
+          "guidelines",
+          "europaem",
+          "precautionary",
+          "limits",
+          "clinical"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "methodological_or_guideline_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "hardell_carlberg2015",
+      "legacy_source_record_index": 125,
+      "citation": {
+        "authors": "Hardell L, Carlberg M",
+        "year": 2015,
+        "title": "Mobile phone and cordless phone use and the risk for glioma — analysis of pooled case-control studies in Sweden, 1997-2003 and 2007-2009",
+        "journal": "Pathophysiology"
+      },
+      "legacy_classification": {
+        "type": "epidemiological",
+        "evidence_level_label": "M",
+        "pathways": [
+          "D"
+        ],
+        "tags": [
+          "glioma",
+          "mobile_phone",
+          "long_term",
+          "sweden",
+          "epidemiology"
+        ]
+      },
+      "canonical_nodes": [],
+      "model_domain": "nonreproductive_endpoint_context",
+      "evidence_role": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+      "status": "OUTSIDE_ACTIVE_GRAPH",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+      "limitations": [
+        "No canonical-node attachment in the current graph",
+        "No FieldState causal inference",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "miller2019",
+      "legacy_source_record_index": 126,
+      "citation": {
+        "authors": "Miller AB, Sears ME, Morgan LL, Davis DL, Hardell L, Oremus M, Soskolne CL",
+        "year": 2019,
+        "title": "Risks to Health and Well-Being From Radio-Frequency Radiation Emitted by Cell Phones and Other Wireless Devices",
+        "journal": "Frontiers in Public Health"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M",
+        "pathways": [
+          "A",
+          "D"
+        ],
+        "tags": [
+          "cancer",
+          "iarc",
+          "reclassification",
+          "review",
+          "public_health"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "nonreproductive_bioeffect_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "melnick2019",
+      "legacy_source_record_index": 127,
+      "citation": {
+        "authors": "Melnick RL",
+        "year": 2019,
+        "title": "Commentary on the utility of the National Toxicology Program study on cell phone radiofrequency radiation data for assessing human health risks despite unfounded criticisms",
+        "journal": "Environmental Research"
+      },
+      "legacy_classification": {
+        "type": "review",
+        "evidence_level_label": "M",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "ntp",
+          "commentary",
+          "carcinogenicity",
+          "safety_standards"
+        ]
+      },
+      "canonical_nodes": [
+        "A_VGCC_ROS"
+      ],
+      "model_domain": "nonreproductive_bioeffect_context",
+      "evidence_role": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+      "status": "CONTEXT_ONLY",
+      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
+      "translation_scope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+      "limitations": [
+        "May be confounded or non-exposure-specific",
+        "Does not identify a FieldState feature",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "selye1950",
+      "legacy_source_record_index": 128,
+      "citation": {
+        "authors": "Selye H",
+        "year": 1950,
+        "title": "Stress and the General Adaptation Syndrome",
+        "journal": "BMJ"
+      },
+      "legacy_classification": {
+        "type": "theoretical",
+        "evidence_level_label": "E",
+        "pathways": [
+          "SE"
+        ],
+        "tags": [
+          "gas",
+          "stress",
+          "adaptation",
+          "exhaustion",
+          "foundational",
+          "history"
+        ]
+      },
+      "canonical_nodes": [
+        "HPA_HPG"
+      ],
+      "model_domain": "historical_stress_context",
+      "evidence_role": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+      "status": "HISTORICAL_CONTEXT",
+      "source_status": "HISTORICAL_LEGACY_METADATA",
+      "translation_scope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+      "limitations": [
+        "Historic methods and reporting may be incomplete",
+        "Requires source-level audit before any active use",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "schwan1957",
+      "legacy_source_record_index": 129,
+      "citation": {
+        "authors": "Schwan HP, Piersol GM",
+        "year": 1957,
+        "title": "The absorption of electromagnetic energy in body tissues",
+        "journal": "IRE Transactions on Medical Electronics"
+      },
+      "legacy_classification": {
+        "type": "theoretical",
+        "evidence_level_label": "E",
+        "pathways": [
+          "A"
+        ],
+        "tags": [
+          "thermal_threshold",
+          "safety_standards",
+          "history",
+          "foundational",
+          "paradigm"
+        ]
+      },
+      "canonical_nodes": [
+        "FIELDSTATE_VECTOR"
+      ],
+      "model_domain": "historical_physics_context",
+      "evidence_role": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+      "status": "HISTORICAL_CONTEXT",
+      "source_status": "HISTORICAL_LEGACY_METADATA",
+      "translation_scope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+      "limitations": [
+        "Historic methods and reporting may be incomplete",
+        "Requires source-level audit before any active use",
+        "No active effect-size calibration"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    }
+  ]
+}
