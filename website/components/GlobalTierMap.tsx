@@ -5,7 +5,8 @@ import { geoNaturalEarth1, geoPath } from "d3-geo";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
 import {
   GLOBAL_TIER_ORDER,
-  parseGlobalValidation,
+  membershipsFromPanel,
+  parseGlobalPanelCsv,
   tierForCountry,
   type GlobalTier,
   type GlobalTierMemberships,
@@ -34,7 +35,7 @@ const copy = {
       "Colors show each country’s highest applicable membership in the pre-specified data tiers. They do not encode a fertility forecast, effect size, or model score.",
     loading: "Loading tier map…",
     error: "The published tier artifact is not available yet.",
-    core: "Core 51 · locked",
+    core: "Core 51",
     extended: "Extended",
     global: "Global",
     unassigned: "No published tier",
@@ -49,7 +50,7 @@ const copy = {
       "Värit näyttävät kunkin maan korkeimman soveltuvan jäsenyyden ennalta määritellyssä datajaossa. Ne eivät kuvaa hedelmällisyysennustetta, vaikutuskokoa tai mallipistettä.",
     loading: "Ladataan tasokarttaa…",
     error: "Julkaistua tasoartefaktia ei ole vielä saatavilla.",
-    core: "Core 51 · lukittu",
+    core: "Core 51",
     extended: "Laajennettu",
     global: "Globaali",
     unassigned: "Ei julkaistua tasoa",
@@ -97,20 +98,20 @@ export function GlobalTierMap({ locale }: { locale: string }) {
   useEffect(() => {
     const controller = new AbortController();
     Promise.all([
-      fetch("/data/global_validation.json", { signal: controller.signal }),
+      fetch("/data/global_panel.csv", { signal: controller.signal }),
       fetch("/data/geojson/ne_110m_countries.json", { signal: controller.signal }),
     ])
-      .then(async ([validationResponse, geoResponse]) => {
-        if (!validationResponse.ok || !geoResponse.ok) throw new Error("Global tier artefact request failed");
-        const [validationPayload, geographyPayload] = await Promise.all([
-          validationResponse.json(),
+      .then(async ([panelResponse, geoResponse]) => {
+        if (!panelResponse.ok || !geoResponse.ok) throw new Error("Global tier artefact request failed");
+        const [panelCsv, geographyPayload] = await Promise.all([
+          panelResponse.text(),
           geoResponse.json(),
         ]);
-        const validation = parseGlobalValidation(validationPayload);
-        if (!validation || Object.keys(validation.tiers.membershipsByIso).length === 0) {
+        const panel = parseGlobalPanelCsv(panelCsv);
+        if (!panel || panel.countries.length === 0) {
           throw new Error("Global tier artefact schema is invalid");
         }
-        setTiers(validation.tiers);
+        setTiers(membershipsFromPanel(panel));
         setGeoData(geographyPayload as FeatureCollection<Geometry, GeoProperties>);
       })
       .catch((error: unknown) => {

@@ -188,20 +188,42 @@ R_{t+1} = R_t − damage(E_t; θ_d) + recovery(R_t; θ_r)
 R42 ja PSD pysyvät diagnostisina**, kunnes niiden yhteys havaittuun välitulokseen on
 dataan perustuvasti kalibroitu.
 
-### Vaihe F — data-driven-reitti rinnakkaisena
+### Vaihe F — data-driven-reitti rinnakkaisena · **ensimmäinen versio valmis 2026-08-19**
+
+Toteutettu [`berm/model_data_driven.py`](../berm/model_data_driven.py):ssä ja
+[`berm/outcomes/asfr_data_driven.py`](../berm/outcomes/asfr_data_driven.py):ssä.
+Legacy-reittiä ei korvattu eikä `model.py`:tä muutettu.
 
 ```python
-predict_country_year_legacy(...)
-predict_country_year_data_driven(...)
+result = predict_data_driven(
+    geography="FIN", year=2030,
+    model_version="reserve-asfr-v1",
+    exposure_scenario="observed_plus_projection",
+)
 ```
 
-Palautus aina:
+Palauttaa kaikki kahdeksan vaadittua kenttää. Suomi 2030: TFR **1.016**, herkkyysväli
+[1.006, 1.023]; UN:n oma mediaaniprojektio samalle vuodelle on 1.323, 95 %:n väli
+[1.023, 1.599].
 
-```python
-{"prediction": ..., "uncertainty_interval": ..., "input_provenance": ...,
- "assumptions": ..., "active_mechanisms": ..., "diagnostic_mechanisms_excluded": ...,
- "data_coverage": ..., "warnings": ...}
-```
+**Reitti on rehellinen siitä, mihin se nojaa.** `input_provenance` merkitsee ASFR-perustan
+`OBSERVED`-luokkaan tarkistussummineen, mutta altistuksen `SCENARIO_PARAMETER`-luokkaan ja
+`is_proxy=True`-lipulla, koska altistusreitti on yhä kovakoodattu käyrä (A-2); ja
+kulttuuritason `DERIVED`-luokkaan maininnalla "one free parameter per observation" (A-4).
+
+**Epävarmuusväli on tarkoituksella vaatimaton.** Se on *one-at-a-time* -verhokäyrä
+rekisteröityjen parametrivälien yli, ei luottamusväli, ja tulos sanoo sen
+(`is_confidence_interval: False`). Se kattaa 7 parametria 66:sta, koska vain
+moduulitason vakiot ovat vaihdeltavissa. **`bio_capacity.b` — mallin vaikutusvaltaisin
+luku — on funktion sisäinen literaali `v16.py:473` eikä ole vaihdeltavissa lainkaan.**
+Tämä on itsessään falsifioitavuuden puute, ja se raportoidaan jokaisessa tuloksessa.
+Kapea väli heijastaa herkkyysanalyysin kattavuutta, ei ennusteen tarkkuutta — myös tämä
+on eksplisiittinen varoitus tuloksessa.
+
+Diagnostiset mekanismit luetaan `v16`:n docstringeistä ajonaikaisesti, joten lista ei voi
+ajautua erilleen koodista: `vagal_oxytocin_pathway`, `oxytocin_dual_pathway_diagnostic`,
+`behavioral_quadruple_suppression`, `endogenous_ssri_model`, `sempou_mtor_effect`,
+`feedback_amplification`.
 
 ---
 
@@ -215,9 +237,30 @@ Legacy-reittiä **ei korvata** ennen kuin kaikki seitsemän täyttyy. Nykytila k
 | 2 | Kaikilla proxyilla `proxy_flag=True` | Sopimus pakottaa; aktiivinen reitti ei vielä käytä sopimusta |
 | 3 | Ei piilotettuja maakohtaisia TFR-residuaaleja | **Ei täyty** — `calibrate_v16` on yksi vapaa parametri per havainto (löydös A-4) |
 | 4 | ASFR-ennuste tuottaa TFR:n summana | **Perusta valmis** — kanoninen tuote täyttää identiteetin 0.39 %:n jäännöksellä; jäljellä `outcomes/asfr_model.py`:n siirto |
-| 5 | Data-driven-reitti palauttaa epävarmuusvälit | Ei aloitettu |
-| 6 | Vanhan ja uuden erot raportoidaan | Osin — altistuksen ero mitattu, muut eivät |
-| 7 | Toteutetut ja diagnostiset mekanismit erotettu | Rekisterin `active_model_version` erottaa ne; koodissa erottelu on vain docstringeissä |
+| 5 | Data-driven-reitti palauttaa epävarmuusvälit | **Osin** — verhokäyrä toteutettu, mutta kattaa 7/66 parametria; `bio_capacity.b` ei ole vaihdeltavissa |
+| 6 | Vanhan ja uuden erot raportoidaan | **Kyllä** — ks. luku 4b |
+| 7 | Toteutetut ja diagnostiset mekanismit erotettu | **Kyllä** — `diagnostic_mechanisms()` lukee erottelun v16:n docstringeistä ja palauttaa sen jokaisessa tuloksessa |
+
+### 4b. Rinnakkaisvalidoinnin tulokset (2026-08-19)
+
+**A. Datalähteen vaikutus, moottori vakiona.** Sama ASFR-moottori, vain perusta vaihtuu
+(171 maa-vuotta, 2030/2040/2050):
+
+- keskimääräinen |suhteellinen ero| **29.5 %**, mediaani 30.1 %, maksimi 59.0 %
+- WPP-pohjainen korkeampi **96 %:ssa** tapauksista
+- suurimmat: Kambodža +59 %, Myanmar +58 %
+
+**B. Koko reitti, moottori ja data molemmat eri** (57 maata, 2030):
+
+- keskimääräinen |suhteellinen ero| **25.0 %**, mediaani 21.6 %
+- data-driven matalampi 58 %:ssa — ero ei siis ole yksisuuntainen, toisin kuin A:ssa
+- suurimmat: Singapore +100 % (ks. löydös A-15), Vietnam +61 %, Iran −60 %
+
+Vertailu A eristää datalähteen vaikutuksen; vertailu B ei. Molemmat raportoidaan, koska
+niiden sekoittaminen antaisi vaikutelman, että 25 %:n ero johtuu datasta.
+
+**Rinnakkaisajo löysi virheen, jota staattinen luenta ei löytänyt:** legacy-reitti puristaa
+Singaporen TFR:n tasan nollaan kaikkina vuosina. Ks. löydös A-15.
 
 Ehdot 3 ja 4 ovat vakavimmat: ne tarkoittavat, ettei nykyinen malli läpäisisi omaa
 hyväksymiskriteeristöään edes silloin, jos kaikki data olisi paikallaan.

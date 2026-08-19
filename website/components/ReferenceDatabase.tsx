@@ -1,289 +1,108 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import type { ReferenceEntry } from "@/lib/types";
-import { EPISTEMIC_LEVELS } from "@/lib/evidence";
+import { useMemo, useState } from "react";
+import {
+  causalNodeLabels,
+  FIELDSTATE_EVIDENCE,
+  type FieldStateDirectness,
+} from "@/lib/fieldstateEvidence";
 
-const STUDY_TYPE_LABELS: Record<string, string> = {
-  review: "Review",
-  meta: "Meta-analysis",
-  umbrella: "Umbrella review",
-  experimental: "Experimental",
-  mechanistic: "Mechanistic",
-  animal: "Animal",
-  human_obs: "Human observational",
-  cohort: "Cohort",
-  rct: "RCT",
-  clinical: "Clinical",
-  observational: "Observational",
-  case: "Case report",
-  theory: "Theory",
-  theoretical: "Theoretical",
-  book: "Book",
-};
+const DIRECTNESS: FieldStateDirectness[] = [
+  "PHYSICS_SIGNATURE",
+  "MECHANISTIC_INTERMEDIATE",
+  "REPRODUCTIVE_ENDPOINT",
+  "ECOLOGICAL_ENDPOINT",
+  "SYSTEMATIC_REVIEW",
+  "POPULATION_DESCRIPTIVE",
+];
 
-const PATHWAY_LABELS: Record<string, string> = {
-  A: "VGCC/Ca²⁺/ROS",
-  B: "RPM/CRY",
-  C: "Melatonin/Circadian",
-  D: "HPA/HPG",
-  E: "Microbiome",
-  F: "Vmem/mTOR",
-  T: "Sperm/Fertility",
-  PV: "Pharmacological",
-  RW: "Recovery window",
-  EHS: "Individual susceptibility",
-  S: "Sentinel species",
-  H: "Historical",
-  theory: "Theory",
-};
+const LABELS = {
+  en: {
+    search: "Search citation, system, endpoint or node…",
+    filter: "Evidence role",
+    all: "All roles",
+    result: (shown: number, total: number) => `${shown} / ${total} bounded records`,
+    noResults: "No records match the current search.",
+    clear: "Clear filters",
+    roles: {
+      PHYSICS_SIGNATURE: "Physics signature",
+      MECHANISTIC_INTERMEDIATE: "Mechanistic intermediate",
+      REPRODUCTIVE_ENDPOINT: "Reproductive endpoint",
+      ECOLOGICAL_ENDPOINT: "Ecological endpoint",
+      SYSTEMATIC_REVIEW: "Systematic review",
+      POPULATION_DESCRIPTIVE: "Population descriptive",
+    },
+  },
+  fi: {
+    search: "Hae viitteellä, järjestelmällä, päätepisteellä tai solmulla…",
+    filter: "Evidenssin rooli",
+    all: "Kaikki roolit",
+    result: (shown: number, total: number) => `${shown} / ${total} rajattua tietuetta`,
+    noResults: "Hakua vastaavia tietueita ei löydy.",
+    clear: "Tyhjennä suodattimet",
+    roles: {
+      PHYSICS_SIGNATURE: "Fysiikan allekirjoitus",
+      MECHANISTIC_INTERMEDIATE: "Mekanistinen välivaihe",
+      REPRODUCTIVE_ENDPOINT: "Lisääntymisen päätepiste",
+      ECOLOGICAL_ENDPOINT: "Ekologinen päätepiste",
+      SYSTEMATIC_REVIEW: "Systemaattinen katsaus",
+      POPULATION_DESCRIPTIVE: "Väestötason kuvaileva",
+    },
+  },
+} as const;
 
-interface Props {
-  locale: string;
-  translations: {
-    searchPlaceholder: string;
-    pathwayFilter: string;
-    levelFilter: string;
-    typeFilter: string;
-    allPathways: string;
-    allLevels: string;
-    allTypes: string;
-    nLabel: string;
-    resultsCount: string;
-    noResults: string;
-    clearFilters: string;
-    pathwayLabel: string;
-    tagsLabel: string;
-  };
-}
-
-export function ReferenceDatabase({ locale, translations: t }: Props) {
-  const [data, setData] = useState<ReferenceEntry[]>([]);
+/** Searchable primary v2 register. It intentionally does not read legacy A–F data. */
+export function ReferenceDatabase({ locale }: { locale: string }) {
+  const d = locale === "fi" ? LABELS.fi : LABELS.en;
   const [search, setSearch] = useState("");
-  const [pathwayFilter, setPathwayFilter] = useState("");
-  const [levelFilter, setLevelFilter] = useState("");
-  const [typeFilter, setTypeFilter] = useState("");
-  const [expandedId, setExpandedId] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetch("/data/references.json")
-      .then((r) => r.json())
-      .then((d) => setData(d as ReferenceEntry[]));
-  }, []);
-
-  const pathways = useMemo(() => {
-    const set = new Set<string>();
-    data.forEach((r) => r.pathway.forEach((p) => set.add(p)));
-    return Array.from(set).sort();
-  }, [data]);
-
-  const levels = useMemo(() => {
-    const set = new Set<string>();
-    data.forEach((r) => set.add(r.level));
-    return Array.from(set).sort();
-  }, [data]);
-
-  const types = useMemo(() => {
-    const set = new Set<string>();
-    data.forEach((r) => set.add(r.type));
-    return Array.from(set).sort();
-  }, [data]);
-
-  const filtered = useMemo(() => {
-    const q = search.toLowerCase();
-    return data.filter((r) => {
-      if (pathwayFilter && !r.pathway.includes(pathwayFilter)) return false;
-      if (levelFilter && r.level !== levelFilter) return false;
-      if (typeFilter && r.type !== typeFilter) return false;
-      if (q) {
-        return (
-          r.title.toLowerCase().includes(q) ||
-          r.authors.toLowerCase().includes(q) ||
-          r.finding.toLowerCase().includes(q) ||
-          r.tags.some((tag) => tag.includes(q)) ||
-          r.journal.toLowerCase().includes(q)
-        );
-      }
-      return true;
+  const [role, setRole] = useState<"" | FieldStateDirectness>("");
+  const result = useMemo(() => {
+    const term = search.trim().toLowerCase();
+    return FIELDSTATE_EVIDENCE.filter((record) => {
+      if (role && record.directness !== role) return false;
+      if (!term) return true;
+      return [
+        record.citation,
+        record.studyType,
+        record.system,
+        record.fieldClass,
+        record.finding,
+        record.scope,
+        ...record.causalNodes,
+      ].join(" ").toLowerCase().includes(term);
     });
-  }, [data, search, pathwayFilter, levelFilter, typeFilter]);
-
-  const hasFilters = search || pathwayFilter || levelFilter || typeFilter;
-
-  const levelColor = (level: string) => {
-    const ep = EPISTEMIC_LEVELS[level as keyof typeof EPISTEMIC_LEVELS];
-    return ep?.color ?? "#737373";
-  };
+  }, [role, search]);
+  const hasFilters = Boolean(search || role);
 
   return (
-    <div>
-      {/* Search */}
-      <div className="mb-4">
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder={t.searchPlaceholder}
-          className="w-full px-4 py-2.5 bg-card-bg border border-card-border rounded-lg text-sm text-foreground placeholder:text-foreground-muted focus:outline-none focus:border-accent"
-        />
+    <section>
+      <div className="flex flex-col sm:flex-row gap-3 mb-5">
+        <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder={d.search} className="min-w-0 flex-1 px-4 py-2.5 bg-card-bg border border-card-border rounded-lg text-sm text-foreground placeholder:text-foreground-muted focus:outline-none focus:border-accent" />
+        <select value={role} onChange={(event) => setRole(event.target.value as "" | FieldStateDirectness)} className="px-3 py-2.5 bg-card-bg border border-card-border rounded-lg text-sm text-foreground-muted focus:outline-none focus:border-accent">
+          <option value="">{d.filter}: {d.all}</option>
+          {DIRECTNESS.map((value) => <option value={value} key={value}>{d.roles[value]}</option>)}
+        </select>
       </div>
-
-      {/* Filters */}
-      <div className="flex flex-wrap gap-3 mb-6">
-        <select
-          value={pathwayFilter}
-          onChange={(e) => setPathwayFilter(e.target.value)}
-          className="px-3 py-1.5 bg-card-bg border border-card-border rounded-lg text-xs text-foreground-muted focus:outline-none focus:border-accent"
-        >
-          <option value="">{t.allPathways}</option>
-          {pathways.map((p) => (
-            <option key={p} value={p}>
-              {PATHWAY_LABELS[p] ?? p}
-            </option>
-          ))}
-        </select>
-
-        <select
-          value={levelFilter}
-          onChange={(e) => setLevelFilter(e.target.value)}
-          className="px-3 py-1.5 bg-card-bg border border-card-border rounded-lg text-xs text-foreground-muted focus:outline-none focus:border-accent"
-        >
-          <option value="">{t.allLevels}</option>
-          {levels.map((l) => (
-            <option key={l} value={l}>
-              {EPISTEMIC_LEVELS[l as keyof typeof EPISTEMIC_LEVELS]?.label ?? l}
-            </option>
-          ))}
-        </select>
-
-        <select
-          value={typeFilter}
-          onChange={(e) => setTypeFilter(e.target.value)}
-          className="px-3 py-1.5 bg-card-bg border border-card-border rounded-lg text-xs text-foreground-muted focus:outline-none focus:border-accent"
-        >
-          <option value="">{t.allTypes}</option>
-          {types.map((ty) => (
-            <option key={ty} value={ty}>
-              {STUDY_TYPE_LABELS[ty] ?? ty}
-            </option>
-          ))}
-        </select>
-
-        {hasFilters && (
-          <button
-            onClick={() => {
-              setSearch("");
-              setPathwayFilter("");
-              setLevelFilter("");
-              setTypeFilter("");
-            }}
-            className="px-3 py-1.5 text-xs text-status-refuted hover:text-foreground transition-colors"
-          >
-            {t.clearFilters}
-          </button>
-        )}
-
-        <span className="ml-auto text-xs text-foreground-muted self-center">
-          {t.resultsCount.replace("{count}", String(filtered.length)).replace("{total}", String(data.length))}
-        </span>
+      <div className="flex items-center justify-between gap-3 mb-5 text-sm text-foreground-muted">
+        <p>{d.result(result.length, FIELDSTATE_EVIDENCE.length)}</p>
+        {hasFilters && <button type="button" onClick={() => { setSearch(""); setRole(""); }} className="text-accent hover:underline">{d.clear}</button>}
       </div>
-
-      {/* Results */}
-      {filtered.length === 0 && data.length > 0 && (
-        <p className="text-sm text-foreground-muted py-8 text-center">
-          {t.noResults}
-        </p>
+      {!result.length ? <p className="border border-card-border rounded-lg p-6 text-sm text-foreground-muted">{d.noResults}</p> : (
+        <div className="space-y-3">
+          {result.map((record) => (
+            <article key={record.id} className="border border-card-border bg-card-bg rounded-lg p-4">
+              <div className="flex flex-wrap gap-x-3 gap-y-1 items-baseline justify-between">
+                <h2 className="font-medium">{record.citation}</h2>
+                <span className="font-mono-num text-xs text-foreground-muted">{record.year}</span>
+              </div>
+              <p className="mt-1 text-xs text-accent">{d.roles[record.directness]}</p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground-muted">{record.finding}</p>
+              <p className="mt-3 text-xs leading-relaxed text-foreground-muted"><span className="font-medium text-foreground">{causalNodeLabels(record.causalNodes, locale === "fi" ? "fi" : "en").join(" · ")}</span> · {record.scope}</p>
+              <a href={record.url} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-xs text-accent hover:underline">DOI / source ↗</a>
+            </article>
+          ))}
+        </div>
       )}
-
-      <div className="space-y-2">
-        {filtered.map((ref) => {
-          const isOpen = expandedId === ref.id;
-          return (
-            <div
-              key={ref.id}
-              className="border border-card-border rounded-lg overflow-hidden"
-            >
-              <button
-                onClick={() => setExpandedId(isOpen ? null : ref.id)}
-                className="w-full text-left px-4 py-3 flex items-start gap-3 hover:bg-card-bg/50 transition-colors"
-              >
-                <span
-                  className="flex-shrink-0 mt-1 inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-medium"
-                  style={{
-                    backgroundColor: `${levelColor(ref.level)}18`,
-                    color: levelColor(ref.level),
-                    border: `1px solid ${levelColor(ref.level)}40`,
-                  }}
-                >
-                  {ref.level}
-                </span>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-foreground truncate">
-                    {ref.authors} ({ref.year})
-                  </p>
-                  <p className="text-xs text-foreground-muted truncate">
-                    {ref.title}
-                  </p>
-                </div>
-                <span className="flex-shrink-0 text-foreground-muted text-xs mt-1">
-                  {isOpen ? "▲" : "▼"}
-                </span>
-              </button>
-
-              {isOpen && (
-                <div className="px-4 pb-4 border-t border-card-border/50 pt-3 space-y-3">
-                  <p className="text-xs text-foreground-muted italic">
-                    {ref.journal}
-                    {ref.n != null && (
-                      <span>
-                        {" "}
-                        &middot; {t.nLabel} {ref.n.toLocaleString(locale)}
-                      </span>
-                    )}
-                    {" "}&middot; {STUDY_TYPE_LABELS[ref.type] ?? ref.type}
-                  </p>
-
-                  <p className="text-sm text-foreground-muted leading-relaxed">
-                    {ref.finding}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 items-center">
-                    <span className="text-[10px] font-semibold text-foreground-muted uppercase tracking-wide">
-                      {t.pathwayLabel}:
-                    </span>
-                    {ref.pathway.map((p) => (
-                      <button
-                        key={p}
-                        onClick={() => {
-                          setPathwayFilter(p);
-                          setExpandedId(null);
-                        }}
-                        className="px-2 py-0.5 text-[10px] rounded-full bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
-                      >
-                        {PATHWAY_LABELS[p] ?? p}
-                      </button>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap gap-1.5 items-center">
-                    <span className="text-[10px] font-semibold text-foreground-muted uppercase tracking-wide">
-                      {t.tagsLabel}:
-                    </span>
-                    {ref.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 text-[10px] rounded-full bg-foreground/5 text-foreground-muted border border-foreground/10"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    </section>
   );
 }

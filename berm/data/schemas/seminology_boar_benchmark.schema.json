@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/joetuotto/extinctionfield/berm/data/schemas/seminology_boar_benchmark.schema.json",
+  "title": "BERM Fernández-López boar seminology benchmark",
+  "description": "A provenance-rich, non-canonical benchmark product derived from the open Fernández-López et al. Mendeley Data v5 release. It is not a sentinel panel, RF/EMF exposure dataset, causal-analysis input or F1-F6-eligible product.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "pipeline_version",
+    "analysis_status",
+    "eligibility",
+    "source",
+    "raw_integrity",
+    "row_counts",
+    "schema",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "berm.seminology_boar_benchmark@v1.0.0"
+    },
+    "pipeline_version": {
+      "const": "seminology_benchmark@v1.0.0"
+    },
+    "analysis_status": {
+      "const": "BENCHMARK_ONLY_NOT_SENTINEL"
+    },
+    "eligibility": {
+      "type": "object",
+      "required": ["f1_f6", "reason_codes"],
+      "properties": {
+        "f1_f6": {
+          "const": "NOT_ELIGIBLE"
+        },
+        "reason_codes": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "enum": [
+              "FOUR_MONTH_WINDOW",
+              "NO_ENVIRONMENTAL_COVARIATES",
+              "NO_RF_DOSIMETRY",
+              "SINGLE_SITE"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "source_url",
+        "article_url",
+        "license",
+        "retrieved_at",
+        "source_period",
+        "site_id",
+        "site_name",
+        "country_iso3"
+      ],
+      "properties": {
+        "source_id": {
+          "const": "FERNANDEZ_LOPEZ_2022_BOAR_BENCHMARK"
+        },
+        "source_url": {
+          "const": "https://doi.org/10.17632/jd38jhxpg6.5"
+        },
+        "article_url": {
+          "const": "https://doi.org/10.1038/s42003-022-03954-0"
+        },
+        "license": {
+          "const": "CC-BY-4.0"
+        },
+        "retrieved_at": {
+          "const": "2026-08-19"
+        },
+        "source_period": {
+          "const": "2017-03/2017-06"
+        },
+        "site_id": {
+          "const": "ESP-CAT-RIUDARANES-BATALLE_SA"
+        },
+        "site_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "country_iso3": {
+          "const": "ESP"
+        }
+      },
+      "additionalProperties": false
+    },
+    "raw_integrity": {
+      "type": "object",
+      "required": ["manifest_id", "files"],
+      "properties": {
+        "manifest_id": {
+          "const": "fernandez_lopez_2022_sperm_move_v5_2026-08-19"
+        },
+        "files": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["path", "bytes", "sha256"],
+            "properties": {
+              "path": {
+                "type": "string",
+                "pattern": "^raw/veterinary/fernandez_lopez_2022_sperm_move_v5/"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "row_counts": {
+      "type": "object",
+      "required": [
+        "raw_fertility_rows",
+        "raw_sperm_cell_rows",
+        "boar_count",
+        "sperm_ejaculate_count",
+        "fertility_ejaculate_count",
+        "motile_cell_rows",
+        "nonmotile_cell_rows",
+        "normalized_insemination_event_rows",
+        "normalized_ejaculate_summary_rows",
+        "ejaculates_with_fertility_events",
+        "ejaculates_without_fertility_events"
+      ],
+      "properties": {
+        "raw_fertility_rows": {"const": 221},
+        "raw_sperm_cell_rows": {"const": 98020},
+        "boar_count": {"const": 17},
+        "sperm_ejaculate_count": {"const": 36},
+        "fertility_ejaculate_count": {"const": 34},
+        "motile_cell_rows": {"const": 69170},
+        "nonmotile_cell_rows": {"const": 28850},
+        "normalized_insemination_event_rows": {"const": 221},
+        "normalized_ejaculate_summary_rows": {"const": 36},
+        "ejaculates_with_fertility_events": {"const": 34},
+        "ejaculates_without_fertility_events": {"const": 2}
+      },
+      "additionalProperties": false
+    },
+    "schema": {
+      "type": "object",
+      "required": ["insemination_events", "ejaculate_summary"],
+      "properties": {
+        "insemination_events": {
+          "type": "array",
+          "minItems": 30,
+          "items": {"type": "string"}
+        },
+        "ejaculate_summary": {
+          "type": "array",
+          "minItems": 35,
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": false
+}

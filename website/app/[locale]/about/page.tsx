@@ -1,108 +1,133 @@
 import type { Metadata } from "next";
+import { Info } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
-import { Info } from "lucide-react";
 
-const t = {
+type Principle = { num: string; bold: string; text: string };
+type Copy = {
+  title: string;
+  subtitle: string;
+  whatTitle: string;
+  whatText: readonly string[];
+  principlesTitle: string;
+  principles: readonly Principle[];
+  statusTitle: string;
+  statusText: string;
+  licensingTitle: string;
+  codeLabel: string;
+  codeText: string;
+  docsLabel: string;
+  docsText: string;
+  dataLabel: string;
+  dataText: string;
+  contributeTitle: string;
+  contributeText: string;
+};
+
+const t: Record<Locale, Copy> = {
   en: {
-    title: "About",
+    title: "About BERM",
     subtitle:
-      "What the Bio-Electromagnetic Reproductive Model is, how it works, and how to engage with it.",
-    whatTitle: "What is BERM?",
-    whatDesc:
-      "The Bio-Electromagnetic Reproductive Model (BERM) is a quantitative model that attempts to explain the worldwide decline in fertility rates and reproductive health metrics through the lens of increasing electromagnetic field (EMF) exposure. It integrates data from reproductive biology, environmental exposure assessments, and demographic statistics to produce testable, time-bound predictions.",
-    principlesTitle: "Principles",
+      "A research programme for testing a measurement-aware field-to-reproduction hypothesis without collapsing exposure, biology and demography into one score.",
+    whatTitle: "What is the active BERM specification?",
+    whatText: [
+      "BERM (Bio-Electromagnetic Reproductive Model) is an open research model. Its active FieldState–ASFR-v2 specification asks whether a documented physical field state can be linked, through measured organ and couple endpoints, to age-specific fertility patterns.",
+      "It does not treat mobile subscriptions as an EMF dose, and it does not infer an individual biological effect from a country TFR series. The upstream Lindgren formulation is a theory-level premise that motivates testable field-state features; it is not a population-effect estimate.",
+    ],
+    principlesTitle: "Working principles",
     principles: [
       {
         num: "01",
-        bold: "Falsifiability.",
-        text: "Every prediction includes explicit refutation conditions. If observed data falls outside the predicted confidence interval, the model is refuted on that prediction.",
+        bold: "Measured inputs before calibration.",
+        text: "A v2 endpoint estimate requires a documented FieldState, organ transfer, biological or couple endpoint, parameter/evidence IDs and a pre-specified mapping.",
       },
       {
         num: "02",
-        bold: "Open data.",
-        text: "All input data, processing scripts, and model code are publicly available. Reproduction of results requires no proprietary tools or data.",
+        bold: "Evidence is attached to the link it supports.",
+        text: "A cellular, animal, in-vitro or systematic-review finding may support a bounded route segment. It is never silently promoted into a human TFR coefficient.",
       },
       {
         num: "03",
-        bold: "Epistemic humility.",
-        text: "The model may be wrong. The confidence intervals reflect genuine uncertainty, not precision theater. Where evidence is weak, the model says so.",
+        bold: "ASFR before TFR.",
+        text: "TFR is a period sum of age-specific fertility rates. Demand/opportunity, tempo and ART/live-birth delivery remain explicit demographic inputs rather than residual biology.",
       },
       {
         num: "04",
-        bold: "Locked predictions.",
-        text: "Predictions are timestamped and immutable once published. They cannot be retroactively adjusted. This prevents post-hoc rationalization.",
+        bold: "Results are versioned and reproducible.",
+        text: "The active route, evidence register and data-status rules state the measurement and interpretation conditions attached to each result.",
       },
       {
         num: "05",
-        bold: "Non-apocalyptic tone.",
-        text: "BERM describes a quantifiable trend, not an extinction event. The model's name reflects the subject matter, not a certainty about outcomes.",
+        bold: "Open, adversarial testing.",
+        text: "The project prioritises pre-specified measurements, sham and thermal controls, independent replication, held-out periods and publication of negative results.",
       },
     ],
-    licensingTitle: "Licensing",
+    statusTitle: "Current status",
+    statusText:
+      "The v2 code and causal registry exist, but a matched national FieldState–biomarker–couple–ASFR panel has not yet been assembled. The active model therefore makes no calibrated country-level TFR forecast.",
+    licensingTitle: "Licensing and data",
     codeLabel: "Code:",
-    codeText: "MIT License. You can use, modify, and distribute the model code freely.",
+    codeText: "MIT License. Use, modify and distribute the model code under the license terms.",
     docsLabel: "Documentation:",
-    docsText: "CC BY-4.0. You can share and adapt the documentation with attribution.",
+    docsText: "CC BY-4.0 unless a source page states otherwise.",
     dataLabel: "Data:",
-    dataText: "See individual data source licenses. BERM does not claim ownership of third-party datasets.",
-    contribTitle: "Contributing",
-    contribText:
-      "The project is hosted on GitHub. Contributions are welcome: bug reports, data corrections, methodology critique, and code improvements. See the repository for contribution guidelines.",
-    contactTitle: "Contact",
-    contactText:
-      "For questions about the model, data, or methodology, open an issue on the GitHub repository or reach out via the contact methods listed there.",
+    dataText: "Third-party datasets retain their own licences and provenance. Derived tables label their source and intended analytical use.",
+    contributeTitle: "Contribute or challenge the model",
+    contributeText:
+      "Useful contributions include measurement datasets with provenance, endpoint studies, source corrections, preregistered replications, competing causal models and code review. Please report both supporting and non-supporting results.",
   },
   fi: {
-    title: "Tietoa",
+    title: "Tietoa BERM:stä",
     subtitle:
-      "Mitä bio-sähkömagneettinen lisääntymismalli on, miten se toimii ja miten siihen voi osallistua.",
-    whatTitle: "Mikä on BERM?",
-    whatDesc:
-      "Bio-sähkömagneettinen lisääntymismalli (BERM) on kvantitatiivinen malli, joka pyrkii selittämään maailmanlaajuisen syntyvyyden ja lisääntymisterveyden mittareiden laskun kasvavan sähkömagneettisen kenttäaltistuksen (EMF) kautta. Se yhdistää lisääntymisbiologian, ympäristöaltistusarvioiden ja väestötilastojen dataa tuottaakseen testattavia, aikaan sidottuja ennusteita.",
-    principlesTitle: "Periaatteet",
+      "Tutkimusohjelma, joka testaa mittaustietoista kenttä–lisääntyminen-hypoteesia tiivistämättä altistusta, biologiaa ja demografiaa yhdeksi luvuksi.",
+    whatTitle: "Mikä on BERM:n aktiivinen määrittely?",
+    whatText: [
+      "BERM (Bio-Electromagnetic Reproductive Model) on avoin tutkimusmalli. Sen aktiivinen FieldState–ASFR-v2-määrittely kysyy, voidaanko dokumentoitu fysikaalinen kenttätila yhdistää mitattujen elin- ja paripäätepisteiden kautta ikäkohtaisten hedelmällisyyslukujen kehitykseen.",
+      "Se ei käsittele mobiililiittymiä EMF-annoksena eikä päättele yksilön biologista vaikutusta maan TFR-sarjasta. Upstream-Lindgren-muotoilu on teoriatason premissi, joka motivoi testattavia FieldState-piirteitä; se ei ole väestövaikutusarvio.",
+    ],
+    principlesTitle: "Toimintaperiaatteet",
     principles: [
       {
         num: "01",
-        bold: "Falsifioitavuus.",
-        text: "Jokainen ennuste sisältää eksplisiittiset kumoamisehdot. Jos havaittu data jää ennustetun luottamusvälin ulkopuolelle, malli kumotaan kyseisen ennusteen osalta.",
+        bold: "Mitatut syötteet ennen kalibrointia.",
+        text: "V2:n päätepistearvio edellyttää dokumentoitua FieldStatea, elinsiirtoa, biologista tai paripäätepistettä, parametri-/evidence-ID:tä ja ennalta määriteltyä mappingia.",
       },
       {
         num: "02",
-        bold: "Avoin data.",
-        text: "Kaikki syötedata, käsittelyskriptit ja mallikoodi ovat julkisesti saatavilla. Tulosten toistaminen ei vaadi patentoituja työkaluja tai dataa.",
+        bold: "Evidenssi kiinnitetään sitä tukevaan lenkkiin.",
+        text: "Solu-, eläin-, in-vitro- tai systemaattisen katsauksen löydös voi tukea rajattua reittisegmenttiä. Sitä ei hiljaisesti ylennetä ihmisen TFR-kertoimeksi.",
       },
       {
         num: "03",
-        bold: "Episteeminen nöyryys.",
-        text: "Malli voi olla väärässä. Luottamusvälit heijastavat aitoa epävarmuutta, eivät tarkkuusteatteria. Missä näyttö on heikkoa, malli sanoo sen.",
+        bold: "ASFR ennen TFR:ää.",
+        text: "TFR on ikäkohtaisten hedelmällisyyslukujen periodisumma. Kysyntä/mahdollisuus, tempo ja ART/live-birth-delivery säilyvät eksplisiittisinä demografisina syötteinä, eivät biologian residuaaleina.",
       },
       {
         num: "04",
-        bold: "Lukitut ennusteet.",
-        text: "Ennusteet ovat aikaleimattuja ja muuttumattomia julkaisun jälkeen. Niitä ei voi muuttaa takautuvasti. Tämä estää jälkikäteisrationalisoinnin.",
+        bold: "Tulokset ovat versioituja ja toistettavia.",
+        text: "Aktiivinen reitti, evidenssirekisteri ja datatilan säännöt kertovat kuhunkin tulokseen liitetyt mittaus- ja tulkintaehdot.",
       },
       {
         num: "05",
-        bold: "Ei-apokalyptinen sävy.",
-        text: "BERM kuvaa kvantifioitavaa trendiä, ei sukupuuttotapahtumaa. Mallin nimi heijastaa aihetta, ei varmuutta lopputuloksista.",
+        bold: "Avoin, kriittinen testaaminen.",
+        text: "Projekti priorisoi ennalta määriteltyjä mittauksia, sham- ja lämpökontrolleja, riippumatonta replikaatiota, sovituksen ulkopuolelle jätettyjä jaksoja ja negatiivisten tulosten julkaisemista.",
       },
     ],
-    licensingTitle: "Lisensointi",
+    statusTitle: "Nykytila",
+    statusText:
+      "V2-koodi ja kausaalirekisteri ovat olemassa, mutta kohdistettua kansallista FieldState–biomarkkeri–pari–ASFR-paneelia ei ole vielä koottu. Aktiivinen malli ei siksi anna kalibroitua maakohtaista TFR-ennustetta.",
+    licensingTitle: "Lisensointi ja data",
     codeLabel: "Koodi:",
-    codeText: "MIT-lisenssi. Mallikoodia voi käyttää, muokata ja jakaa vapaasti.",
+    codeText: "MIT-lisenssi. Mallikoodia voi käyttää, muokata ja jakaa lisenssin ehtojen mukaisesti.",
     docsLabel: "Dokumentaatio:",
-    docsText: "CC BY-4.0. Dokumentaatiota voi jakaa ja muokata lähdeviitteellä.",
+    docsText: "CC BY-4.0, ellei lähdesivu toisin ilmoita.",
     dataLabel: "Data:",
-    dataText: "Katso yksittäisten datalähteiden lisenssit. BERM ei väitä omistavansa kolmannen osapuolen datasettejä.",
-    contribTitle: "Osallistuminen",
-    contribText:
-      "Projekti on GitHubissa. Osallistuminen on tervetullutta: virheraportit, datakorjaukset, menetelmäkritiikki ja koodiparannukset. Katso repositoryn osallistumisohjeet.",
-    contactTitle: "Yhteystiedot",
-    contactText:
-      "Mallia, dataa tai menetelmiä koskevissa kysymyksissä avaa issue GitHub-repositoryssa tai ota yhteyttä siellä listattujen yhteystietojen kautta.",
+    dataText: "Kolmannen osapuolen datasetit säilyttävät omat lisenssinsä ja provenienssinsa. Johdetut taulukot kertovat lähteensä ja tarkoitetun analyyttisen käytön.",
+    contributeTitle: "Osallistu tai haastaa malli",
+    contributeText:
+      "Hyödyllisiä kontribuutioita ovat mittausaineistot proveniensseineen, päätepistetutkimukset, lähdekorjaukset, ennakkorekisteröidyt replikaatiot, kilpailevat kausaalimallit ja koodikatselmointi. Raportoi sekä tukeva että ei-tukeva tulos.",
   },
-} as const;
+};
 
 export async function generateMetadata({
   params,
@@ -110,17 +135,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return locale === "fi"
-    ? {
-        title: "Tietoa - Extinction Field",
-        description:
-          "Tietoa BERM-mallista: periaatteet, lisensointi ja osallistumisohjeet.",
-      }
-    : {
-        title: "About - Extinction Field",
-        description:
-          "About the BERM model: principles, licensing, and contribution guidelines.",
-      };
+  const d = t[locale === "fi" ? "fi" : "en"];
+  return { title: `${d.title} – Extinction Field`, description: d.subtitle };
 }
 
 export default async function AboutPage({
@@ -129,7 +145,7 @@ export default async function AboutPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const d = t[(locale as Locale) in t ? (locale as Locale) : "en"];
+  const d = t[locale === "fi" ? "fi" : "en"];
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
@@ -138,64 +154,42 @@ export default async function AboutPage({
       <div className="max-w-3xl space-y-10">
         <section>
           <h2 className="text-xl font-semibold mb-3">{d.whatTitle}</h2>
-          <p className="text-foreground-muted leading-relaxed">{d.whatDesc}</p>
+          <div className="space-y-3 text-foreground-muted leading-relaxed">
+            {d.whatText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
         </section>
 
         <section>
           <h2 className="text-xl font-semibold mb-3">{d.principlesTitle}</h2>
-          <ul className="space-y-3 text-foreground-muted leading-relaxed">
-            {d.principles.map((p) => (
-              <li key={p.num} className="flex gap-3">
-                <span className="text-accent font-mono-num text-sm mt-0.5 shrink-0">
-                  {p.num}
-                </span>
-                <div>
-                  <strong className="text-foreground">{p.bold}</strong> {p.text}
-                </div>
+          <ul className="space-y-4 text-foreground-muted leading-relaxed">
+            {d.principles.map((principle) => (
+              <li key={principle.num} className="flex gap-3">
+                <span className="text-accent font-mono-num text-sm mt-0.5 shrink-0">{principle.num}</span>
+                <div><strong className="text-foreground">{principle.bold}</strong> {principle.text}</div>
               </li>
             ))}
           </ul>
         </section>
 
+        <section className="rounded-xl border border-status-partial/35 bg-status-partial/5 p-5">
+          <h2 className="text-lg font-semibold">{d.statusTitle}</h2>
+          <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.statusText}</p>
+        </section>
+
         <section>
           <h2 className="text-xl font-semibold mb-3">{d.licensingTitle}</h2>
           <div className="space-y-2 text-foreground-muted leading-relaxed">
-            <p>
-              <strong className="text-foreground">{d.codeLabel}</strong>{" "}
-              {d.codeText}
-            </p>
-            <p>
-              <strong className="text-foreground">{d.docsLabel}</strong>{" "}
-              {d.docsText}
-            </p>
-            <p>
-              <strong className="text-foreground">{d.dataLabel}</strong>{" "}
-              {d.dataText}
-            </p>
+            <p><strong className="text-foreground">{d.codeLabel}</strong> {d.codeText}</p>
+            <p><strong className="text-foreground">{d.docsLabel}</strong> {d.docsText}</p>
+            <p><strong className="text-foreground">{d.dataLabel}</strong> {d.dataText}</p>
           </div>
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold mb-3">{d.contribTitle}</h2>
-          <p className="text-foreground-muted leading-relaxed">
-            {d.contribText}
-          </p>
-          <p className="text-foreground-muted leading-relaxed mt-3">
-            <a
-              href="https://github.com/extinctionfield"
-              className="text-accent hover:text-accent-hover transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              github.com/extinctionfield
-            </a>
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold mb-3">{d.contactTitle}</h2>
-          <p className="text-foreground-muted leading-relaxed">
-            {d.contactText}
+          <h2 className="text-xl font-semibold mb-3">{d.contributeTitle}</h2>
+          <p className="text-foreground-muted leading-relaxed">{d.contributeText}</p>
+          <p className="mt-3 text-foreground-muted leading-relaxed">
+            <a href="https://github.com/extinctionfield" className="text-accent hover:text-accent-hover transition-colors" target="_blank" rel="noopener noreferrer">github.com/extinctionfield</a>
           </p>
         </section>
       </div>

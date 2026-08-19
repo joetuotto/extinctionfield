@@ -1,33 +1,25 @@
 import type { Metadata } from "next";
 import { ExplorerDashboard } from "@/components/ExplorerDashboard";
-import { HousingEMF } from "@/components/HousingEMF";
-import { TemporalBacktestExplorer } from "@/components/TemporalBacktestExplorer";
-import type { Locale } from "@/lib/i18n";
+import { WorldMap } from "@/components/WorldMap";
 
 const t = {
   en: {
-    title: "Explorer",
+    title: "Country series explorer",
     subtitle:
-      "Select a country to view its EMF exposure history, biological impact trajectory, and fertility predictions from the BERM model. All values are computed from the model — nothing is hardcoded. Observed TFR data from World Bank.",
-    howToRead: "How to read these charts",
-    exposureTab:
-      "Exposure tab: Shows how ambient (infrastructure) and personal (device) EMF exposure have grown over time. The cumulative sum drives the biological model.",
-    biologyTab:
-      "Biology tab: Biological capacity (blue) is the maximum TFR the population could achieve given its EMF exposure. Behavioral factor (green) captures endocrine-mediated motivation changes. Their product (yellow dashed) is the biological potential before cultural factors.",
-    fertilityTab:
-      "Fertility tab: Blue line = model prediction. Yellow dashed line = native TFR (excluding immigrant fertility contribution). Gray dots = observed World Bank data. The model is calibrated at 2024 (predicted = observed by construction). The shaded region after 2024 is the forecast with approximate confidence interval.",
+      "Published TFR series and technology-adoption timing can be compared across countries with their source scope kept visible.",
+    method: "How to read this page",
+    a: "A published TFR series is a period demographic measure. It cannot by itself identify a biological mechanism.",
+    b: "Mobile subscriptions are used elsewhere on the site only as a technology-adoption timing proxy, not as RF exposure or a causal variable.",
+    c: "A v2 country estimate requires measured FieldState inputs, organ/couple endpoints, and ASFR calibration. Those inputs are not yet available as a national panel.",
   },
   fi: {
-    title: "Tutkija",
+    title: "Maasarjojen tutkija",
     subtitle:
-      "Valitse maa nähdäksesi sen EMF-altistushistorian, biologisen vaikutuksen kehityskulun ja hedelmällisyysennusteet BERM-mallista. Kaikki arvot lasketaan mallista — mitään ei ole kovakoodattu. Havaittu TFR-data Maailmanpankista.",
-    howToRead: "Kuinka lukea näitä kaavioita",
-    exposureTab:
-      "Altistus-välilehti: Näyttää miten ympäristön (infrastruktuuri) ja henkilökohtainen (laitteet) EMF-altistus on kasvanut ajan myötä. Kumulatiivinen summa ohjaa biologista mallia.",
-    biologyTab:
-      "Biologia-välilehti: Biologinen kapasiteetti (sininen) on maksimi-TFR, jonka väestö voisi saavuttaa EMF-altistuksellaan. Käyttäytymiskerroin (vihreä) kuvaa endokriinivälitteisiä motivaatiomuutoksia. Niiden tulo (keltainen katkoviiva) on biologinen potentiaali ennen kulttuuritekijöitä.",
-    fertilityTab:
-      "Hedelmällisyys-välilehti: Sininen viiva = mallin ennuste. Keltainen katkoviiva = natiivi TFR (ilman maahanmuuttajien hedelmällisyyskontribuutiota). Harmaat pisteet = havaittu Maailmanpankin data. Malli on kalibroitu vuoteen 2024 (ennuste = havaittu rakenteellisesti). Varjostettu alue vuoden 2024 jälkeen on ennuste likimääräisellä luottamusvälillä.",
+      "Julkaistuja TFR-sarjoja ja teknologiakäyttöönoton ajoitusta voi vertailla maittain siten, että lähteiden tulkintarajat säilyvät näkyvissä.",
+    method: "Näin sivua luetaan",
+    a: "Julkaistu TFR-sarja on periodinen demografinen mittari. Se ei yksinään tunnista biologista mekanismia.",
+    b: "Mobiililiittymiä käytetään muualla sivustolla vain teknologiakäyttöönoton ajoitusproxyna, ei RF-altistuksena tai kausaalisena muuttujana.",
+    c: "V2-maa-arvio vaatii mitatut FieldState-syötteet, elin-/paritason päätepisteet ja ASFR-kalibroinnin. Näitä syötteitä ei vielä ole kansallisena paneelina.",
   },
 } as const;
 
@@ -39,14 +31,12 @@ export async function generateMetadata({
   const { locale } = await params;
   return locale === "fi"
     ? {
-        title: "Tutkija - Extinction Field",
-        description:
-          "Interaktiivinen maatason EMF-altistuksen ja hedelmällisyyden tutkija.",
+        title: "Maasarjojen tutkija - Extinction Field",
+        description: "Julkaistut TFR-sarjat, teknologiakäyttöönoton ajoitus ja lähteiden tulkintarajat.",
       }
     : {
-        title: "Explorer - Extinction Field",
-        description:
-          "Interactive country-level EMF exposure and fertility explorer.",
+        title: "Country series explorer - Extinction Field",
+        description: "Published TFR series, technology-adoption timing and source interpretation scope.",
       };
 }
 
@@ -56,42 +46,27 @@ export default async function ExplorerPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const d = locale === "fi" ? t.fi : t.en;
+  const language = locale === "fi" ? "fi" : "en";
+  const d = t[language];
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold tracking-tight mb-2">{d.title}</h1>
-      <p className="text-foreground-muted mb-8 max-w-3xl leading-relaxed">
-        {d.subtitle}
-      </p>
+    <main className="mx-auto max-w-6xl px-4 py-12">
+      <h1 className="mb-2 text-3xl font-bold tracking-tight">{d.title}</h1>
+      <p className="mb-8 max-w-4xl leading-relaxed text-foreground-muted">{d.subtitle}</p>
 
-      <ExplorerDashboard />
+      <ExplorerDashboard locale={language} />
 
-      <TemporalBacktestExplorer locale={locale} />
+      <section className="mt-10 rounded-xl border border-card-border bg-card-bg p-4 sm:p-6">
+        <WorldMap locale={language} />
+      </section>
 
-      <div className="mt-12">
-        <HousingEMF locale={locale} />
-      </div>
-
-      <div className="mt-12 p-4 bg-card-bg border border-card-border rounded-lg text-xs text-foreground-muted">
-        <p className="font-semibold text-foreground mb-1">{d.howToRead}</p>
-        <p>
-          <strong>{locale === "fi" ? "Altistus:" : "Exposure tab:"}</strong>{" "}
-          {d.exposureTab.replace(/^(Exposure tab|Altistus-välilehti): /, "")}
-        </p>
-        <p className="mt-1">
-          <strong>{locale === "fi" ? "Biologia:" : "Biology tab:"}</strong>{" "}
-          {d.biologyTab.replace(/^(Biology tab|Biologia-välilehti): /, "")}
-        </p>
-        <p className="mt-1">
-          <strong>
-            {locale === "fi" ? "Hedelmällisyys:" : "Fertility tab:"}
-          </strong>{" "}
-          {d.fertilityTab.replace(
-            /^(Fertility tab|Hedelmällisyys-välilehti): /,
-            "",
-          )}
-        </p>
+      <div className="mt-12 rounded-lg border border-card-border bg-card-bg p-4 text-sm text-foreground-muted">
+        <p className="mb-2 font-semibold text-foreground">{d.method}</p>
+        <ul className="space-y-2 leading-relaxed">
+          <li>{d.a}</li>
+          <li>{d.b}</li>
+          <li>{d.c}</li>
+        </ul>
       </div>
     </main>
   );

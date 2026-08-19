@@ -7,10 +7,11 @@
 
 // Epistemic-level colors
 const LEVEL_COLORS = {
-  E: "#22C55E",    // green  -- established
-  "M|C": "#3B82F6", // blue   -- mechanistic + correlational
-  M: "#8B5CF6",    // purple -- mechanistic only
-  C: "#F59E0B",    // amber  -- correlational only
+  E: "#22C55E",     // observed endpoint / replicated element
+  "M|C": "#3B82F6", // mechanism + association
+  M: "#8B5CF6",     // mechanistic intermediate
+  C: "#F59E0B",     // observational association
+  "L*": "#9CA3AF", // theoretical / measurement hypothesis
 } as const;
 
 type Level = keyof typeof LEVEL_COLORS;
@@ -26,33 +27,32 @@ interface NodeDef {
   w?: number;
 }
 
-const NODES: NodeDef[] = [
-  // Entry
-  { id: "emf",     label: "EMF Exposure",        x: 40,  y: 180, level: "E",   w: 140 },
-
-  // Pathway A
-  { id: "vgic",    label: "VGIC Activation",      x: 260, y: 60,  level: "M|C", w: 140 },
-  { id: "ros",     label: "ROS ↑",           x: 460, y: 60,  level: "M|C", w: 100 },
-  { id: "sdf",     label: "SDF ↑",           x: 620, y: 30,  level: "M|C", w: 100 },
-  { id: "motil",   label: "Motility ↓",      x: 620, y: 90,  level: "E",   w: 120 },
-  { id: "conc",    label: "Concentration ↓",  x: 620, y: 150, level: "E",   w: 140 },
-
-  // Pathway B
-  { id: "cry",     label: "CRY Disruption",       x: 260, y: 180, level: "M|C", w: 140 },
-  { id: "ovul",    label: "Ovulation timing ↓", x: 460, y: 180, level: "M", w: 160 },
-
-  // Pathway C
-  { id: "bbb",     label: "BBB Permeability ↑", x: 260, y: 270, level: "M", w: 170 },
-  { id: "chem",    label: "Chemical load ↑",    x: 500, y: 270, level: "M", w: 140 },
-
-  // Pathway D
-  { id: "hpa",     label: "HPA → HPG",          x: 260, y: 350, level: "C", w: 130 },
-  { id: "testo",   label: "Testosterone ↓",     x: 460, y: 350, level: "C", w: 140 },
-
-  // Convergence
-  { id: "fecund",  label: "Fecundability ↓",    x: 740, y: 270, level: "M|C", w: 150 },
-  { id: "tfr",     label: "TFR ↓",              x: 900, y: 270, level: "E",   w: 100 },
-];
+const NODES: Record<"en" | "fi", NodeDef[]> = {
+  en: [
+    { id: "field", label: "FieldState", x: 20, y: 180, level: "L*", w: 115 },
+    { id: "transfer", label: "Local transfer", x: 155, y: 180, level: "L*", w: 130 },
+    { id: "intermediate", label: "CRY · melatonin · Ca²⁺/ROS · Vmem", x: 305, y: 180, level: "M", w: 185 },
+    { id: "organ", label: "Organ states · BTB", x: 510, y: 180, level: "M", w: 140 },
+    { id: "male", label: "BTB + sperm state", x: 670, y: 80, level: "M", w: 145 },
+    { id: "female", label: "Ovary + oocyte state", x: 670, y: 270, level: "M", w: 155 },
+    { id: "couple", label: "Couple capacity", x: 840, y: 180, level: "M", w: 125 },
+    { id: "context", label: "Demand · tempo · ART", x: 825, y: 290, level: "E", w: 145 },
+    { id: "asfr", label: "ASFR", x: 985, y: 180, level: "E", w: 75 },
+    { id: "tfr", label: "TFR", x: 1080, y: 180, level: "E", w: 75 },
+  ],
+  fi: [
+    { id: "field", label: "FieldState", x: 20, y: 180, level: "L*", w: 115 },
+    { id: "transfer", label: "Paikallinen siirto", x: 155, y: 180, level: "L*", w: 130 },
+    { id: "intermediate", label: "CRY · melatoniini · Ca²⁺/ROS · Vmem", x: 305, y: 180, level: "M", w: 195 },
+    { id: "organ", label: "Elinkohtaiset tilat · BTB", x: 520, y: 180, level: "M", w: 160 },
+    { id: "male", label: "BTB + siittiötila", x: 700, y: 80, level: "M", w: 145 },
+    { id: "female", label: "Munasarja + oosyyttitila", x: 680, y: 270, level: "M", w: 170 },
+    { id: "couple", label: "Parikapasiteetti", x: 855, y: 180, level: "M", w: 125 },
+    { id: "context", label: "Kysyntä · tempo · ART", x: 835, y: 290, level: "E", w: 155 },
+    { id: "asfr", label: "ASFR", x: 1000, y: 180, level: "E", w: 75 },
+    { id: "tfr", label: "TFR", x: 1095, y: 180, level: "E", w: 75 },
+  ],
+};
 
 // ── Edge definitions ──
 
@@ -62,30 +62,16 @@ interface EdgeDef {
 }
 
 const EDGES: EdgeDef[] = [
-  // From EMF
-  { from: "emf",  to: "vgic" },
-  { from: "emf",  to: "cry" },
-  { from: "emf",  to: "bbb" },
-  { from: "emf",  to: "hpa" },
-  // Pathway A
-  { from: "vgic", to: "ros" },
-  { from: "ros",  to: "sdf" },
-  { from: "ros",  to: "motil" },
-  { from: "ros",  to: "conc" },
-  // Pathway B
-  { from: "cry",  to: "ovul" },
-  // Pathway C
-  { from: "bbb",  to: "chem" },
-  // Pathway D
-  { from: "hpa",  to: "testo" },
-  // Converge to fecundability
-  { from: "motil",  to: "fecund" },
-  { from: "conc",   to: "fecund" },
-  { from: "ovul",   to: "fecund" },
-  { from: "chem",   to: "fecund" },
-  { from: "testo",  to: "fecund" },
-  // Fecundability to TFR
-  { from: "fecund", to: "tfr" },
+  { from: "field", to: "transfer" },
+  { from: "transfer", to: "intermediate" },
+  { from: "intermediate", to: "organ" },
+  { from: "organ", to: "male" },
+  { from: "organ", to: "female" },
+  { from: "male", to: "couple" },
+  { from: "female", to: "couple" },
+  { from: "couple", to: "asfr" },
+  { from: "context", to: "asfr" },
+  { from: "asfr", to: "tfr" },
 ];
 
 // ── Helpers ──
@@ -93,8 +79,8 @@ const EDGES: EdgeDef[] = [
 const NODE_H = 36;
 const RX = 6;
 
-function getNode(id: string): NodeDef {
-  const n = NODES.find((n) => n.id === id);
+function getNode(nodes: NodeDef[], id: string): NodeDef {
+  const n = nodes.find((node) => node.id === id);
   if (!n) throw new Error(`Node not found: ${id}`);
   return n;
 }
@@ -103,13 +89,18 @@ function cy(n: NodeDef) {
   return n.y + NODE_H / 2;
 }
 
-export default function CausalChain() {
+export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" }) {
+  const nodes = NODES[locale];
+  const legend = locale === "fi"
+    ? [["L*", "Teoria / kenttäallekirjoitus"], ["M", "Mekanistinen välitila"], ["E", "Havaittu päätepiste"]] as [Level, string][]
+    : [["L*", "Theory / field signature"], ["M", "Mechanistic intermediate"], ["E", "Observed endpoint"]] as [Level, string][];
+
   return (
     <svg
-      viewBox="0 0 1040 420"
+      viewBox="0 0 1200 420"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="BERM causal chain diagram showing pathways from EMF exposure to fertility decline"
+      aria-label={locale === "fi" ? "BERM FieldState–ASFR-v2-kausaalireitti" : "BERM FieldState–ASFR-v2 causal route"}
       style={{ width: "100%", height: "auto" }}
     >
       {/* Arrowhead marker */}
@@ -129,8 +120,8 @@ export default function CausalChain() {
 
       {/* Edges */}
       {EDGES.map(({ from, to }) => {
-        const a = getNode(from);
-        const b = getNode(to);
+        const a = getNode(nodes, from);
+        const b = getNode(nodes, to);
         const x1 = a.x + (a.w ?? 120);
         const y1 = cy(a);
         const x2 = b.x;
@@ -150,7 +141,7 @@ export default function CausalChain() {
       })}
 
       {/* Nodes */}
-      {NODES.map((n) => {
+      {nodes.map((n) => {
         const w = n.w ?? 120;
         const color = LEVEL_COLORS[n.level];
         return (
@@ -185,14 +176,7 @@ export default function CausalChain() {
       })}
 
       {/* Legend */}
-      {(
-        [
-          ["E", "Established"],
-          ["M|C", "Mech.+Corr."],
-          ["M", "Mechanistic"],
-          ["C", "Correlational"],
-        ] as [Level, string][]
-      ).map(([lvl, lbl], i) => (
+      {legend.map(([lvl, lbl], i) => (
         <g key={lvl} transform={`translate(${40 + i * 160}, 400)`}>
           <circle cx={0} cy={0} r={4} fill={LEVEL_COLORS[lvl]} />
           <text

@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/joetuotto/extinctionfield/berm/data/schemas/ifce_sire_equine_breeding_benchmark.schema.json",
+  "title": "BERM IFCE/SIRE equine breeding benchmark",
+  "description": "Summary schema for the provenance-rich IFCE/SIRE France département×year×breed/type equine-breeding benchmark. It is deliberately not a sentinel panel, RF/EMF exposure dataset, causal-analysis input, CSLI input, readiness input or prediction input.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "pipeline_version",
+    "analysis_status",
+    "eligibility",
+    "source",
+    "raw_integrity",
+    "row_counts",
+    "coverage_by_metric",
+    "output",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "berm.ifce_sire_equine_breeding_panel@v1.0.0"
+    },
+    "pipeline_version": {
+      "const": "ifce_sire_equine_benchmark@v1.0.0"
+    },
+    "analysis_status": {
+      "const": "BENCHMARK_ONLY_NOT_SENTINEL"
+    },
+    "eligibility": {
+      "type": "object",
+      "required": ["f1_f6", "reason_codes"],
+      "properties": {
+        "f1_f6": {
+          "const": "NOT_ELIGIBLE"
+        },
+        "reason_codes": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "enum": [
+              "AGGREGATED_DEPARTEMENT_YEAR_BREED_TYPE",
+              "METRIC_SPECIFIC_GEOGRAPHY_SEMANTICS",
+              "NO_ENVIRONMENTAL_OR_CHEMICAL_COVARIATES",
+              "NO_EXTERNAL_RF_JOIN",
+              "NO_RF_DOSIMETRY"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "publisher",
+        "license",
+        "retrieved_at",
+        "source_period",
+        "country_iso3",
+        "source_encoding"
+      ],
+      "properties": {
+        "source_id": {
+          "const": "IFCE_SIRE_EQUINE_BREEDING_PANEL"
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "const": "Licence Ouverte / Open Licence 2.0"
+        },
+        "retrieved_at": {
+          "const": "2026-08-19"
+        },
+        "source_period": {
+          "const": "2008/2024"
+        },
+        "country_iso3": {
+          "const": "FRA"
+        },
+        "source_encoding": {
+          "const": "ISO-8859-1"
+        }
+      },
+      "additionalProperties": false
+    },
+    "raw_integrity": {
+      "type": "object",
+      "required": ["manifest_id", "manifest_path", "files"],
+      "properties": {
+        "manifest_id": {
+          "const": "ifce_sire_equine_breeding_2026-08-19"
+        },
+        "manifest_path": {
+          "const": "raw/manifests/ifce_sire_equine_breeding_2026-08-19.manifest.json"
+        },
+        "files": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "filename",
+              "path",
+              "bytes",
+              "sha256",
+              "source_url",
+              "source_landing_page",
+              "source_encoding"
+            ],
+            "properties": {
+              "filename": {
+                "enum": [
+                  "juments_saillies.csv",
+                  "naissances.csv",
+                  "etalons_actifs.csv"
+                ]
+              },
+              "path": {
+                "pattern": "^raw/equine/ifce_sire_2026-08-19/"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "source_url": {
+                "type": "string",
+                "pattern": "^https://www\\.data\\.gouv\\.fr/api/1/datasets/r/"
+              },
+              "source_landing_page": {
+                "type": "string",
+                "pattern": "^https://www\\.data\\.gouv\\.fr/datasets/"
+              },
+              "source_encoding": {
+                "const": "ISO-8859-1"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "row_counts": {
+      "type": "object",
+      "required": ["raw_total", "normalized_panel_rows", "by_metric"],
+      "properties": {
+        "raw_total": {
+          "const": 114226
+        },
+        "normalized_panel_rows": {
+          "const": 114226
+        },
+        "by_metric": {
+          "type": "object",
+          "required": ["mares_bred_count", "births_count", "active_stallions_count"],
+          "properties": {
+            "mares_bred_count": { "const": 40911 },
+            "births_count": { "const": 43464 },
+            "active_stallions_count": { "const": 29851 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "coverage_by_metric": {
+      "type": "object",
+      "required": ["mares_bred_count", "births_count", "active_stallions_count"],
+      "properties": {
+        "mares_bred_count": { "$ref": "#/$defs/metricCoverage" },
+        "births_count": { "$ref": "#/$defs/metricCoverage" },
+        "active_stallions_count": { "$ref": "#/$defs/metricCoverage" }
+      },
+      "additionalProperties": false
+    },
+    "output": {
+      "type": "object",
+      "required": ["row_schema", "encoding", "form"],
+      "properties": {
+        "row_schema": {
+          "type": "array",
+          "minItems": 30,
+          "items": { "type": "string" }
+        },
+        "encoding": {
+          "const": "UTF-8"
+        },
+        "form": {
+          "const": "long_metric_specific_rows_no_cross_table_join"
+        }
+      },
+      "additionalProperties": false
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "metricCoverage": {
+      "type": "object",
+      "required": [
+        "raw_rows",
+        "year_min",
+        "year_max",
+        "year_count",
+        "department_count",
+        "geography_semantics",
+        "source_fields"
+      ],
+      "properties": {
+        "raw_rows": { "type": "integer", "minimum": 1 },
+        "year_min": { "const": 2008 },
+        "year_max": { "const": 2024 },
+        "year_count": { "const": 17 },
+        "department_count": { "type": "integer", "minimum": 1 },
+        "geography_semantics": {
+          "enum": ["DEPARTEMENT_STATIONNEMENT", "DEPARTEMENT_LIEU_ELEVAGE"]
+        },
+        "source_fields": {
+          "type": "object",
+          "required": ["year", "department", "region", "breed", "equine_type", "value"],
+          "properties": {
+            "year": { "type": "string", "minLength": 1 },
+            "department": { "type": "string", "minLength": 1 },
+            "region": { "type": "string", "minLength": 1 },
+            "breed": { "type": "string", "minLength": 1 },
+            "equine_type": { "type": "string", "minLength": 1 },
+            "value": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -46,10 +46,10 @@
       "source_id": "WAHL_2009_BULL_SEMEN",
       "path": "sentinel/livestock_negative_control.json",
       "original_filename": "livestock_negative_control.json",
-      "bytes": 4611,
-      "sha256": "73c410a79f9484c3e308b7ceb1546c26a430d67d2db512032e5a301e9e8fa905",
-      "retrieved_at": "2025-08-18",
-      "note": "CONTAINS NO NUMERIC SERIES: citations and qualitative trend strings only. Also covers KAROUI_2011_BULL_SEMEN and HENSEL_2025_BOAR_SEMEN, both ACCESS_REQUIRED."
+      "bytes": 4987,
+      "sha256": "a5cc766072a35b5fb4a7400c4b3a148235b6a063be2f304a16af4136d0658ef5",
+      "retrieved_at": "2026-08-19",
+      "note": "CURATED LITERATURE LEDGER, NOT A NUMERIC SERIES: the 2026-08-19 source check corrected citations and removes any negative-control inference. It covers KAROUI_2011_BULL_SEMEN and HENSEL_2025_BOAR_SEMEN, both ACCESS_REQUIRED."
     }
   ]
 }

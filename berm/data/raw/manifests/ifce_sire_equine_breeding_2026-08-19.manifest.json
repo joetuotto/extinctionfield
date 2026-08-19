@@ -1,0 +1,49 @@
+{
+  "manifest_id": "ifce_sire_equine_breeding_2026-08-19",
+  "description": "Exact public IFCE/SIRE aggregate CSV exports used for a France département×year×breed/type equine-breeding benchmark. The three metrics remain separate; this is not an RF/EMF, sentinel, CSLI, readiness, causal-analysis, or prediction source.",
+  "retrieved_at": "2026-08-19",
+  "retrieval_method": "Direct HTTPS retrieval of the current CSV resources through the official data.gouv.fr resource API URLs, retaining the source byte encoding unchanged. Landing pages identify Institut français du cheval et de l'équitation (IFCE) as producer and Licence Ouverte / Open Licence 2.0 as reuse licence.",
+  "license": "Licence Ouverte / Open Licence 2.0",
+  "transform_pipeline_version": "ifce_sire_equine_benchmark@v1.0.0",
+  "files": [
+    {
+      "source_id": "IFCE_SIRE_EQUINE_BREEDING_PANEL",
+      "path": "raw/equine/ifce_sire_2026-08-19/juments_saillies.csv",
+      "original_filename": "juments_saillies.csv",
+      "bytes": 1786419,
+      "sha256": "1aadfd6f416df96c156d35df33d5e727ed8722c200155beec36d89a828fbcb4e",
+      "retrieved_at": "2026-08-19",
+      "source_url": "https://www.data.gouv.fr/api/1/datasets/r/b273d4e1-0c53-4e11-ae1c-fa2f75de4562",
+      "landing_page": "https://www.data.gouv.fr/datasets/nombre-de-juments-saillies-en-france-572970",
+      "source_encoding": "ISO-8859-1",
+      "raw_data_rows": 40911,
+      "note": "Annual 2008-2024 aggregate covered-mares counts by stationing department, region, product breed and product type. It is not a pregnancy, conception, birth or RF measurement."
+    },
+    {
+      "source_id": "IFCE_SIRE_EQUINE_BREEDING_PANEL",
+      "path": "raw/equine/ifce_sire_2026-08-19/naissances.csv",
+      "original_filename": "naissances.csv",
+      "bytes": 1878614,
+      "sha256": "7973df461f7c41ef96cec60c87a456b2ec2eff70095824d5e918c4a34aa7c1a3",
+      "retrieved_at": "2026-08-19",
+      "source_url": "https://www.data.gouv.fr/api/1/datasets/r/9b2cac00-f43d-4d66-b0fc-86fb60d3d381",
+      "landing_page": "https://www.data.gouv.fr/datasets/nombre-de-naissances-d-equides-en-france-30378678",
+      "source_encoding": "ISO-8859-1",
+      "raw_data_rows": 43464,
+      "note": "Annual 2008-2024 aggregate equid birth counts by breeding-place department, region, product breed and product type. Geography is not stationing geography, so this file is never joined to covered-mares rows by this pipeline."
+    },
+    {
+      "source_id": "IFCE_SIRE_EQUINE_BREEDING_PANEL",
+      "path": "raw/equine/ifce_sire_2026-08-19/etalons_actifs.csv",
+      "original_filename": "etalons_actifs.csv",
+      "bytes": 1244722,
+      "sha256": "a651734efd4aba317e761c852faa065383da2566b7219bb4f19b6a0fea658f2b",
+      "retrieved_at": "2026-08-19",
+      "source_url": "https://www.data.gouv.fr/api/1/datasets/r/6d9e32ce-a56e-4ec6-865d-0db3b20cc5df",
+      "landing_page": "https://www.data.gouv.fr/datasets/nombre-d-etalons-en-activite-en-france-572975",
+      "source_encoding": "ISO-8859-1",
+      "raw_data_rows": 29851,
+      "note": "Annual 2008-2024 aggregate active-stallion counts by stationing department, region, stallion breed and equid type. It is not a semen-quality, service-count, conception or RF measurement."
+    }
+  ]
+}

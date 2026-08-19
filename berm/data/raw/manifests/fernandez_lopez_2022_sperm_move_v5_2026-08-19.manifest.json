@@ -1,0 +1,30 @@
+{
+  "manifest_id": "fernandez_lopez_2022_sperm_move_v5_2026-08-19",
+  "description": "Exact raw CSV files from Fernández-López et al.'s open Mendeley Data v5 release. The release is retained as a seminology feature-and-fertility benchmark only; it is not a sentinel, RF or causal-analysis input.",
+  "retrieved_at": "2026-08-19",
+  "retrieval_method": "Direct HTTPS retrieval of public Mendeley Data v5 file-download endpoints. Dataset landing DOI: 10.17632/jd38jhxpg6.5.",
+  "license": "CC-BY-4.0",
+  "transform_pipeline_version": "seminology_benchmark@v1.0.0",
+  "files": [
+    {
+      "source_id": "FERNANDEZ_LOPEZ_2022_BOAR_BENCHMARK",
+      "path": "raw/veterinary/fernandez_lopez_2022_sperm_move_v5/fertility_data.csv",
+      "original_filename": "fertility_data.csv",
+      "bytes": 16023,
+      "sha256": "2fab5d6a49e15aba781598f80a4b39817683fa1b6f369336d935777d7a70b348",
+      "retrieved_at": "2026-08-19",
+      "source_url": "https://data.mendeley.com/public-files/datasets/jd38jhxpg6/files/bed30244-3dad-436c-9f81-911ff5680cc5/file_downloaded",
+      "note": "221 direct insemination-event records: boar and sow identifiers, dates, litter outcomes, raw Success binary and ejaculate identifier. Mendeley metadata calls Success pregnancy while the associated article discusses farrowing rate; this discrepancy remains unresolved."
+    },
+    {
+      "source_id": "FERNANDEZ_LOPEZ_2022_BOAR_BENCHMARK",
+      "path": "raw/veterinary/fernandez_lopez_2022_sperm_move_v5/sperm_data.csv",
+      "original_filename": "sperm_data.csv",
+      "bytes": 5045129,
+      "sha256": "68c3bd13659f521b9e02c1f26639826d21a5e3c93d564aaf910095261660fd38",
+      "retrieved_at": "2026-08-19",
+      "source_url": "https://data.mendeley.com/public-files/datasets/jd38jhxpg6/files/8b8b29be-87b9-42ba-bbb8-e6eabb6f0703/file_downloaded",
+      "note": "98,020 individual-sperm CASA rows from 17 boars and 36 ejaculates. Kinematic NA rows are source-reported nonmotile cells; raw bytes are never edited."
+    }
+  ]
+}

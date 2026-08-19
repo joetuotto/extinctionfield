@@ -1,6 +1,24 @@
-# Extinction Field
+# Extinction Field / BERM
 
-A falsifiable model linking electromagnetic field exposure to global fertility decline.
+BERM is a research model for testing whether a measured, local electromagnetic
+FieldState can contribute—through explicit biological and demographic
+intermediates—to age-specific fertility and total fertility rate (TFR).
+
+The project keeps its historical v16/v17 calculations intact as archived
+comparison routes. The canonical interpretation layer is
+`fieldstate-asfr-v2`: Lindgren-style field physics → organ-specific biological
+state → paired fecundability → ASFR → TFR. It does not convert national mobile
+subscriptions into a physical dose or a TFR coefficient.
+
+See [the FieldState–ASFR v2 integration guide](berm/docs/fieldstate-asfr-v2.md)
+for the causal graph, evidence boundaries and calibration plan.
+
+See [the BERM–Eco biosähkömagnetiikan ja evolutiivisen lajittumisen
+research review](berm/docs/berm-eco-bioelectromagnetic-selection-review.md)
+for the parallel ecological test framework: FieldState → species-specific
+response → ecological interaction → possible heritable selection. This
+framework is a cross-domain validation and research branch; it is not a TFR
+coefficient.
 
 ## Structure
 
@@ -28,11 +46,12 @@ npm install
 npm run dev
 ```
 
-## Locked predictions
+## Archived v17 predictions
 
-This model makes specific, locked predictions that cannot be changed after publication.
-Each prediction is timestamped with a git SHA. If future observations fall outside the
-confidence interval, the model is falsified — not the prediction adjusted.
+The following are historical v17 scalar-proxy scenario outputs. They remain
+available for transparent comparison, but are not FieldState–ASFR-v2 forecasts:
+the v2 route requires a matched local FieldState, biological endpoint,
+partner/couple and ASFR panel before it can publish calibrated country forecasts.
 
 | Country | Year | Metric | Central | 95% CI | Locked |
 |---------|------|--------|---------|--------|--------|

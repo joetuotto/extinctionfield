@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/berm/berm/data/schemas/fieldstate_observation.schema.json",
+  "title": "BERM FieldState observation",
+  "description": "Language-neutral external contract for one local FieldState observation. The authoritative Python implementation is berm.data.field_state.FieldStateObservation. This is not a country-level exposure table and never converts a proxy to organ dose.",
+  "type": "object",
+  "required": [
+    "observation_id",
+    "time_id",
+    "country",
+    "setting",
+    "cohort_id",
+    "biological_sex",
+    "life_stage",
+    "organ",
+    "year",
+    "normalization_id",
+    "background_vector",
+    "ambient_vector",
+    "personal_vector",
+    "source_ids",
+    "transfer_id",
+    "completeness_status"
+  ],
+  "properties": {
+    "observation_id": {"type": "string", "minLength": 1},
+    "time_id": {"type": "string", "minLength": 1, "description": "Source-local timestamp or declared aggregation interval."},
+    "country": {"type": "string", "minLength": 1},
+    "area": {"type": ["string", "null"]},
+    "setting": {"type": "string", "minLength": 1, "description": "Household, workplace, school, clinic, or another explicitly named setting."},
+    "cohort_id": {"type": ["string", "integer"]},
+    "biological_sex": {"type": "string", "minLength": 1},
+    "life_stage": {"type": "string", "minLength": 1},
+    "organ": {"type": "string", "minLength": 1},
+    "year": {"type": "integer", "minimum": 1900, "maximum": 2100},
+    "normalization_id": {"type": "string", "minLength": 1},
+    "background_vector": {"$ref": "#/$defs/vector3"},
+    "ambient_vector": {"$ref": "#/$defs/vector3"},
+    "personal_vector": {"$ref": "#/$defs/vector3"},
+    "geomagnetic_b0": {"anyOf": [{"$ref": "#/$defs/vector3"}, {"type": "null"}]},
+    "geomagnetic_b0_unit": {"type": ["string", "null"]},
+    "transfer_id": {"type": "string", "minLength": 1},
+    "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "completeness_status": {"enum": ["LEGACY_TIMING_PROXY", "PARTIAL_FIELD_STATE", "MEASUREMENT_READY_FIELD_STATE"]},
+    "endpoint_join_id": {"type": ["string", "null"], "description": "Pre-specified ID for a matched biological endpoint; absence prohibits a causal endpoint join."}
+  },
+  "$defs": {
+    "vector3": {
+      "type": "object",
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"},
+        "z": {"type": "number"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

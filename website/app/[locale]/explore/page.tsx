@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ExploreTabs } from "@/components/ExploreTabs";
-import { HousingEMF } from "@/components/HousingEMF";
 import { PageHeader } from "@/components/PageHeader";
 import { Map } from "lucide-react";
 
@@ -12,14 +11,14 @@ export async function generateMetadata({
   const { locale } = await params;
   return locale === "fi"
     ? {
-        title: "Tutkija - Extinction Field",
-        description:
-          "Tutki BERM-mallin dataa: maailmankartta, maakohtaiset kaaviot ja datalähteet.",
+          title: "Tutkija - Extinction Field",
+          description:
+          "Tutki julkaistuja hedelmällisyyssarjoja, teknologian ajoitusproksia ja FieldState–ASFR-v2:n datavalmiutta.",
       }
     : {
-        title: "Explore - Extinction Field",
-        description:
-          "Explore BERM model data: world map, country-level charts, and data sources.",
+          title: "Explore - Extinction Field",
+          description:
+          "Explore published fertility series, technology-timing proxy data and FieldState–ASFR-v2 data readiness.",
       };
 }
 
@@ -34,12 +33,12 @@ export default async function ExplorePage({
       ? {
           title: "Tutkija",
           subtitle:
-            "Kartta, maakohtaiset kaaviot ja datalähteet yhdessä paikassa.",
+            "Julkaistut TFR-sarjat, teknologian ajoitusproksi ja FieldState–ASFR-v2:n datavalmius yhdessä paikassa.",
         }
       : {
           title: "Explore",
           subtitle:
-            "Map, country-level charts, and data sources in one place.",
+            "Published TFR series, technology-timing proxy data and FieldState–ASFR-v2 readiness in one place.",
         };
 
   return (
@@ -50,9 +49,6 @@ export default async function ExplorePage({
         subtitle={d.subtitle}
       />
       <ExploreTabs locale={locale} />
-      <div className="mt-12">
-        <HousingEMF locale={locale} />
-      </div>
     </div>
   );
 }

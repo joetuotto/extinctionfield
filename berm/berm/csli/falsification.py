@@ -13,11 +13,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Literal
 
-from berm.csli.species_data import (
-    EXPOSURE_GRADIENT,
-    LIVESTOCK_DATA,
-    SPECIES_BIOLOGY_V2,
-)
+from berm.csli.species_data import EXPOSURE_GRADIENT_REQUIREMENTS
 
 
 @dataclass(frozen=True)
@@ -104,64 +100,37 @@ CSLI_FALSIFICATIONS: dict[str, FalsificationTest] = {
 
 
 def exposure_gradient_test() -> dict:
-    """Test whether responses order by exposure level.
+    """Return the fail-closed status for the unmeasured exposure-gradient idea.
 
-    BERM prediction:
-      E_bull(rural) < E_bee(ambient) < E_dog(home) < E_human(personal)
-
-    If response magnitude follows this gradient, it supports
-    an exposure-response relationship.
-
-    Returns dict with gradient data, monotonicity check, and
-    qualitative assessment.
+    No RF dosimetry, comparable response panel, or confounder-complete design
+    exists in the repository.  The former implementation evaluated manually
+    assigned ranks and hand-written trend labels, so its ``monotonic`` and
+    ``contrast_correct`` booleans were tautologies rather than empirical tests.
     """
-    gradient = EXPOSURE_GRADIENT
-
-    # Check: is the declining trend monotonic with exposure rank?
-    # Positive trend_direction = improving, negative = declining
-    directions = [(g.rank, g.trend_direction, g.species) for g in gradient]
-    directions.sort(key=lambda x: x[0])
-
-    monotonic = True
-    for i in range(1, len(directions)):
-        if directions[i][1] > directions[i - 1][1]:
-            monotonic = False
-            break
-
-    # Bull (rank 1) improving, dog (rank 3) declining, human (rank 4) declining
-    # = directionally consistent with gradient
-    bull_improving = directions[0][1] > 0
-    high_exposure_declining = all(d[1] < 0 for d in directions if d[0] >= 3)
-    contrast_correct = bull_improving and high_exposure_declining
 
     return {
-        "gradient": [
+        "status": "BLOCKED",
+        "analysis": "measured_exposure_gradient",
+        "not_estimable": True,
+        "reasons": [
             {
-                "species": g.species,
-                "environment": g.environment,
-                "rf_level": g.estimated_rf_level,
-                "rank": g.rank,
-                "trend": g.sperm_trend,
-                "direction": g.trend_direction,
-            }
-            for g in gradient
+                "code": "RF_DOSIMETRY_ABSENT",
+                "message": "No compared species environment has matched measured RF dosimetry.",
+            },
+            {
+                "code": "COMPARABLE_RESPONSE_PANEL_ABSENT",
+                "message": "The held sources do not provide a matched numeric species-region-year response panel.",
+            },
+            {
+                "code": "CONFOUNDER_COVERAGE_INCOMPLETE",
+                "message": "Breeding, collection, chemical, pathogen, weather, and management covariates are not jointly matched.",
+            },
+            {
+                "code": "QUALITATIVE_RANKS_RETIRED",
+                "message": "Hand-assigned exposure ranks and publication-summary trends are not empirical exposure-response data.",
+            },
         ],
-        "monotonic": monotonic,
-        "contrast_correct": contrast_correct,
-        "assessment": (
-            "Directionally consistent: low-exposure species (bull) improving "
-            "while high-exposure species (dog, human) declining. "
-            "However, bull improvement may reflect breeding selection pressure. "
-            "RF dosimetry required to confirm exposure differential."
-            if contrast_correct
-            else "Gradient NOT monotonically consistent with exposure-response."
-        ),
-        "caveats": [
-            "No measured RF dosimetry for any species environment",
-            "Bull/boar improvement likely confounded by breeding selection",
-            "Dog data from single population (Nottingham, Lea 2016)",
-            "Bee decline has multiple strong confounders (pesticides, pathogens)",
-        ],
+        "requirements": list(EXPOSURE_GRADIENT_REQUIREMENTS),
     }
 
 
@@ -192,24 +161,13 @@ def print_falsification_status() -> None:
 
 
 def print_exposure_gradient() -> None:
-    """Print exposure gradient analysis."""
+    """Print the fail-closed exposure-gradient readiness result."""
     result = exposure_gradient_test()
 
-    print("EXPOSURE GRADIENT TEST")
+    print("MEASURED EXPOSURE-GRADIENT TEST: NOT ESTIMABLE")
     print("=" * 70)
-    print(f"{'Species':10s} {'Environment':35s} {'RF Level':12s} {'Trend':>10s}")
-    print("-" * 70)
-
-    for g in result["gradient"]:
-        direction = {1: "UP", -1: "DOWN", 0: "STABLE"}[g["direction"]]
-        print(f"  {g['species']:8s} {g['environment']:35s} {g['rf_level']:12s} {direction:>8s}")
-
-    print()
-    print(f"Monotonic with exposure: {'YES' if result['monotonic'] else 'NO'}")
-    print(f"Low-high contrast correct: {'YES' if result['contrast_correct'] else 'NO'}")
-    print()
-    print(f"Assessment: {result['assessment']}")
-    print()
-    print("Caveats:")
-    for c in result["caveats"]:
-        print(f"  - {c}")
+    for reason in result["reasons"]:
+        print(f"  - [{reason['code']}] {reason['message']}")
+    print("Requirements:")
+    for requirement in result["requirements"]:
+        print(f"  - {requirement}")

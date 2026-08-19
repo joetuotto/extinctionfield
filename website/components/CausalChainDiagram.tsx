@@ -3,12 +3,62 @@
 import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import type { ChainNode, EpistemicLevel } from "@/lib/types";
 import {
-  NODES,
-  EDGES,
+  getFieldStateCausalGraph,
+} from "@/lib/causalChainV2Data";
+import {
   EPISTEMIC_COLORS,
-  LEVEL_TITLES,
 } from "@/lib/causalChainData";
 import { DetailPanel } from "./DetailPanel";
+
+type Locale = "en" | "fi";
+
+const COPY: Record<Locale, {
+  ariaLabel: string;
+  clickHint: string;
+  levelTitles: Record<number, string>;
+  legend: [EpistemicLevel, string][];
+}> = {
+  en: {
+    ariaLabel: "BERM FieldState–ASFR-v2 causal diagram",
+    clickHint: "→ click for details",
+    levelTitles: {
+      1: "Field state",
+      2: "Biological intermediates",
+      3: "BTB and other barrier states",
+      4: "Reproductive states",
+      5: "Couple and demographic context",
+      6: "Age-specific fertility",
+      7: "Demographic endpoint",
+    },
+    legend: [
+      ["E", "Observed endpoint"],
+      ["M|C", "Mechanism + association"],
+      ["M", "Mechanistic intermediate"],
+      ["C", "Observed association"],
+      ["L*", "Theory / measurement premise"],
+    ],
+  },
+  fi: {
+    ariaLabel: "BERM FieldState–ASFR-v2-kausaalikaavio",
+    clickHint: "→ klikkaa tiedot",
+    levelTitles: {
+      1: "Kenttätila",
+      2: "Biologiset välitilat",
+      3: "BTB ja muut estetilat",
+      4: "Lisääntymistilat",
+      5: "Pari- ja demografinen konteksti",
+      6: "Ikäkohtainen hedelmällisyys",
+      7: "Demografinen päätepiste",
+    },
+    legend: [
+      ["E", "Havaittu päätepiste"],
+      ["M|C", "Mekanismi + assosiaatio"],
+      ["M", "Mekanistinen välitila"],
+      ["C", "Havaittu assosiaatio"],
+      ["L*", "Teoria- / mittauspremissi"],
+    ],
+  },
+};
 
 const NODE_H = 72;
 const NODE_RX = 12;
@@ -50,6 +100,7 @@ interface LevelBand {
 function computeLayout(
   nodes: ChainNode[],
   canvasW: number,
+  levelTitles: Record<number, string>,
 ): { layoutNodes: LayoutNode[]; canvasH: number; actualW: number; bands: LevelBand[] } {
   const levels = new Map<number, ChainNode[]>();
   for (const n of nodes) {
@@ -108,7 +159,7 @@ function computeLayout(
     const bandBottom = currentY + BAND_PAD_Y;
     bands.push({
       level: lvl,
-      title: LEVEL_TITLES[lvl] ?? `Level ${lvl}`,
+      title: levelTitles[lvl] ?? `Level ${lvl}`,
       top: bandTop,
       bottom: bandBottom,
       color: EPISTEMIC_COLORS[dominant] ?? "#6B7280",
@@ -144,7 +195,9 @@ function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
   return `M ${x1} ${y1} C ${x1} ${y1 + dy * 0.35} ${x2} ${y2 - dy * 0.35} ${x2} ${y2}`;
 }
 
-export default function CausalChainDiagram() {
+export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale }) {
+  const d = COPY[locale];
+  const { nodes, edges } = useMemo(() => getFieldStateCausalGraph(locale), [locale]);
   const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -163,8 +216,8 @@ export default function CausalChainDiagram() {
 
   const canvasW = containerW;
   const { layoutNodes, canvasH, actualW, bands } = useMemo(
-    () => computeLayout(NODES, canvasW),
-    [canvasW],
+    () => computeLayout(nodes, canvasW, d.levelTitles),
+    [canvasW, d.levelTitles, nodes],
   );
   const viewW = Math.max(canvasW, actualW);
 
@@ -177,11 +230,11 @@ export default function CausalChainDiagram() {
   const connectedEdges = useMemo(() => {
     if (!hoveredNode) return new Set<number>();
     const s = new Set<number>();
-    EDGES.forEach((e, i) => {
+    edges.forEach((e, i) => {
       if (e.from === hoveredNode || e.to === hoveredNode) s.add(i);
     });
     return s;
-  }, [hoveredNode]);
+  }, [edges, hoveredNode]);
 
   const handleNodeClick = useCallback((node: ChainNode) => {
     setSelectedNode(node);
@@ -194,7 +247,7 @@ export default function CausalChainDiagram() {
           viewBox={`0 0 ${viewW} ${canvasH}`}
           xmlns="http://www.w3.org/2000/svg"
           role="img"
-          aria-label="BERM causal chain diagram"
+          aria-label={d.ariaLabel}
           style={{ width: "100%", height: "auto" }}
         >
           <defs>
@@ -286,7 +339,7 @@ export default function CausalChainDiagram() {
           ))}
 
           {/* Edges */}
-          {EDGES.map((edge, edgeIdx) => {
+          {edges.map((edge, edgeIdx) => {
             const from = nodeMap.get(edge.from);
             const to = nodeMap.get(edge.to);
             if (!from || !to) return null;
@@ -384,7 +437,7 @@ export default function CausalChainDiagram() {
                 onClick={() => handleNodeClick(n)}
                 onMouseEnter={() => setHoveredNode(n.id)}
                 onMouseLeave={() => setHoveredNode(null)}
-                opacity={hoveredNode && !isHovered && ![...connectedEdges].some(i => EDGES[i]?.from === n.id || EDGES[i]?.to === n.id) ? 0.4 : 1}
+                opacity={hoveredNode && !isHovered && ![...connectedEdges].some(i => edges[i]?.from === n.id || edges[i]?.to === n.id) ? 0.4 : 1}
               >
                 {/* Node background */}
                 <rect
@@ -459,7 +512,7 @@ export default function CausalChainDiagram() {
                       dominantBaseline="auto"
                       fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                     >
-                      {"→ click for details"}
+                      {d.clickHint}
                     </text>
                   )}
                 </g>
@@ -469,13 +522,7 @@ export default function CausalChainDiagram() {
 
           {/* Legend */}
           {(() => {
-            const items: [EpistemicLevel, string][] = [
-              ["E", "Empirically established"],
-              ["M|C", "Mechanistic + correlational"],
-              ["M", "Mathematical consequence"],
-              ["C", "Candidate"],
-              ["L*", "Premise (not validated)"],
-            ];
+            const items = d.legend;
             const legendY = canvasH - 24;
             const legendX = LEVEL_LABEL_W + FEEDBACK_MARGIN;
             const spacing = (viewW - legendX - 20) / items.length;
@@ -501,6 +548,7 @@ export default function CausalChainDiagram() {
         <DetailPanel
           node={selectedNode}
           onClose={() => setSelectedNode(null)}
+          locale={locale}
         />
       )}
     </>

@@ -6,21 +6,21 @@ import { notFound } from "next/navigation";
 const footerText = {
   en: {
     disclaimer:
-      "BERM is a falsifiable model. It makes specific, locked predictions that will either come true or not. The model contains explicit refutation conditions.",
+      "BERM FieldState–ASFR-v2 is a measurement-aware research specification. It does not currently publish calibrated country-level TFR forecasts.",
     bullets: [
-      "86% of placebo series fit the current data better than the model (K8)",
-      "The backcast claim has been refuted in replication (K10)",
-      "Cross-section R² = 0.9999 is calibration, not validation",
+      "Mobile subscriptions are a technology-timing proxy, not measured FieldState or dose",
+      "Evidence records are bounded to causal nodes; none is a TFR coefficient",
+      "TFR is derived from ASFR after biological and demographic terms are kept separate",
     ],
     license: "Code: MIT License. Documentation: CC BY-4.0.",
   },
   fi: {
     disclaimer:
-      "BERM on falsifioitava malli. Se tuottaa spesifejä, lukittuja ennusteita, jotka joko toteutuvat tai eivät. Malli sisältää eksplisiittiset kumoamisehdot.",
+      "BERM FieldState–ASFR-v2 on mittaustietoinen tutkimusmäärittely. Se ei tällä hetkellä julkaise kalibroituja maakohtaisia TFR-ennusteita.",
     bullets: [
-      "86 % plasebosarjoista sopii nykyiseen dataan paremmin kuin malli (K8)",
-      "Takautuvan ennustamisen väite on kumottu replikaatiossa (K10)",
-      "Poikkileikkauksen R² = 0.9999 on kalibraatio, ei validaatio",
+      "Mobiililiittymät ovat teknologian ajoitusproksi, eivät mitattu FieldState tai annos",
+      "Evidenssitietueet on rajattu kausaalisolmuihin; mikään niistä ei ole TFR-kerroin",
+      "TFR johdetaan ASFR:stä, kun biologiset ja demografiset termit pidetään erillään",
     ],
     license: "Koodi: MIT-lisenssi. Dokumentaatio: CC BY-4.0.",
   },

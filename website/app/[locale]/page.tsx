@@ -1,178 +1,70 @@
 import Link from "next/link";
-import { readFile } from "fs/promises";
-import { join } from "path";
 import CausalChain from "@/components/CausalChain";
+import { FieldStateStatus } from "@/components/FieldStateStatus";
 import { WorldMap } from "@/components/WorldMap";
 import type { Locale } from "@/lib/i18n";
+import {
+  FIELDSTATE_EVIDENCE_COUNT,
+} from "@/lib/fieldstateEvidence";
 
-const t = {
+const COPY = {
   en: {
     hero: "Extinction Field",
-    heroSub:
-      "A falsifiable model linking electromagnetic field exposure to global fertility decline.",
-
-    happeningTitle: "Something is happening",
-    happeningFacts: [
-      "Global fertility is collapsing faster than any model predicted. The UN revised its 2100 population projection down by 700 million between 2019 and 2024.",
-      "Sperm concentration dropped 62% in 50 years, accelerating after 2000. The decline is global and affects all regions regardless of lifestyle.",
-      "The same reproductive decline is occurring in dogs, horses, insects, and amphibians — species that share none of our social or economic pressures.",
-      "49 countries are now below TFR 1.4 — a level demography once considered impossible under voluntary fertility models.",
-      "Male testosterone has declined ~1% per year since the 1980s across all age groups, independent of obesity, smoking, or alcohol (Travison 2007, n=1,532; Lokeshwar 2021). Young men today have T levels their grandfathers had in old age.",
+    lead: "BERM is a measurement-aware research model for testing whether specific electromagnetic field states contribute to components of reproductive capacity and, through age-specific fertility, to period fertility trends.",
+    scopeTitle: "What the model does — and does not yet do",
+    scope: [
+      "It separates a physical FieldState from organ-local transfer, biological endpoints, the couple and demographic terms. A national technology series is not treated as an EMF dose.",
+      "It treats Lindgren-derived background, vector, geometry and timing effects as testable upstream hypotheses. They are not population-effect estimates.",
+      "It does not presently publish FieldState–ASFR-v2 country TFR forecasts: matched local field, biological-endpoint and couple panels are still required.",
     ],
-    happeningConclusion:
-      "Something biological is happening, across species, across continents, at the same time. BERM proposes a testable explanation.",
-    mapDesc:
-      "TFR decline and EMF exposure by country, 1960–2024. Time slider with animation.",
-
-    explainTitle: "One explanation fits all",
-    explainDesc:
-      "The Bio-Electromagnetic Reproductive Model (BERM) proposes that anthropogenic electromagnetic fields — from cell towers, Wi-Fi, and smartphones — are a significant factor in the global fertility decline. The model produces quantitative, falsifiable predictions that will either come true or not.",
-    explainDesc2:
-      "Each prediction is locked with a confidence interval before the observation period begins. If observed values fall outside the predicted interval, the model is refuted on that prediction — not the prediction adjusted. All source code, data, and methodology are open for anyone to reproduce, challenge, or extend.",
-    causalTitle: "Causal pathway overview",
-    causalDesc:
-      "EMF exposure propagates through five biological pathways to converge on fecundability and fertility rate. Node borders indicate the epistemic level of the supporting evidence.",
-
-    predTitle: "Locked predictions",
-    predDesc:
-      "The model produces specific, irrevocable predictions. Each is frozen at a git SHA — if the observation falls outside the CI, the model is falsified.",
-    predCountry: "Country",
-    predYear: "Year",
-    predMetric: "Metric",
-    predCentral: "Central",
-    predCI: "95% CI",
-    predFooter: "v18.0 — 11 locked predictions.",
-    predLink: "Full prediction registry",
-
-    caveatsTitle: "What the model gets right — and wrong",
-    caveats: [
-      {
-        label: "K8: Placebo series",
-        text: "86% of random placebo series fit the current data better than BERM. The model has not yet distinguished itself from noise on cross-sectional TFR. This is expected — the model's predictive power is in the temporal dimension (locked future predictions), not in cross-country fit.",
-      },
-      {
-        label: "K10: Backcast refuted",
-        text: "The original claim that the model 'predicted' historical TFR has been refuted in independent replication. The backcast fit was calibration, not prediction. The model now relies exclusively on forward-locked predictions.",
-      },
-      {
-        label: "R² = 0.9999",
-        text: "The cross-section R² is calibration, not validation. The model has enough parameters to fit any smooth curve. Validation will come from locked predictions landing inside their CIs — or not.",
-      },
+    mapTitle: "Published fertility series and technology timing",
+    mapLead: "The map displays the published World Bank WDI TFR series and mobile subscriptions. The latter is a digital-technology timing proxy, not an EMF exposure or dose layer. The separate v2 demographic route uses WPP ASFR with its own provenance.",
+    evidenceTitle: "A causal route with bounded evidence",
+    evidenceLead: "The active route is FieldState → named intermediate and organ states → paired capacity, alongside explicit demand/tempo/ART inputs → ASFR → TFR. Studies support distinct links and endpoints; none of the current records is a TFR coefficient.",
+    evidenceCount: `${FIELDSTATE_EVIDENCE_COUNT} bounded study-to-node records`,
+    evidenceCountNote: "Each record states its field class, directness, translation scope and limitation. The evidence register provides the corresponding source detail.",
+    cohortTitle: "A cohort-pattern result worth testing",
+    cohortLead: "WPP 2024 ASFR paired with World Bank/ITU subscriptions shows a versioned, reproducible descriptive young-versus-older cohort timing pattern (N = 163; r = −0.66645 for 2000–2023). It motivates a future preregistered FieldState study; it is neither a physical exposure estimate nor a causal result.",
+    nextTitle: "Current research priorities",
+    next: [
+      "Build reproducible FieldState panels: B₀ vector, spectrum/PSD, local geometry, circadian context and measurement provenance.",
+      "Join those panels to registered male, female and barrier endpoints before estimating an organ response.",
+      "Model ASFR first, retaining demand, tempo, ART and partner/household covariance; derive TFR only afterwards.",
     ],
-    caveatsConclusion:
-      "BERM is a scientific model, not a certainty claim. If the data contradicts the model, the model is wrong — that is the point of falsifiability.",
-
-    globalTfr: "Global TFR 2040",
-    spermConc: "Sperm concentration 2050",
-    ofLevels: "of 2020 levels",
-    modelVersion: "Model version",
-    lockedPredictions: "11 locked predictions",
-    btnPredictions: "View prediction registry",
-    btnModel: "Model documentation",
-    btnEvidence: "Browse evidence",
+    methods: "Model specification",
+    evidence: "Evidence register",
+    data: "Data and measurement status",
+    archive: "Research archive",
   },
   fi: {
     hero: "Extinction Field",
-    heroSub:
-      "Falsifioitava malli, joka yhdistää sähkömagneettisen kenttäaltistuksen maailmanlaajuiseen syntyvyyden laskuun.",
-
-    happeningTitle: "Jotain tapahtuu",
-    happeningFacts: [
-      "Maailman syntyvyys romahtaa nopeammin kuin yksikään malli ennusti. YK laski vuoden 2100 väestöennustettaan 700 miljoonalla vuosien 2019 ja 2024 välillä.",
-      "Siittiökonsentraatio laski 62 % 50 vuodessa, kiihtyen vuoden 2000 jälkeen. Lasku on maailmanlaajuinen ja koskee kaikkia alueita elämäntavasta riippumatta.",
-      "Sama lisääntymiskyvyn heikkeneminen tapahtuu koirilla, hevosilla, hyönteisillä ja sammakkoeläimillä — lajeilla, joilla ei ole mitään sosiaalisia tai taloudellisia paineitamme.",
-      "49 maata on nyt alle TFR 1,4 — tason, jota väestötiede piti mahdottomana vapaaehtoisissa hedelmällisyysmalleissa.",
-      "Miesten testosteroni on laskenut ~1 % vuodessa 1980-luvulta kaikissa ikäryhmissä, riippumatta lihavuudesta, tupakoinnista tai alkoholista (Travison 2007, n=1 532; Lokeshwar 2021). Nuorilla miehillä on nykyään T-tasot, jotka heidän isoisillään olivat vanhalla iällä.",
+    lead: "BERM on mittaustietoinen tutkimusmalli, jolla testataan, voivatko tietyt sähkömagneettiset kenttätilat vaikuttaa lisääntymiskyvyn osiin ja ikäryhmäkohtaisen hedelmällisyyden kautta periodihedelmällisyyteen.",
+    scopeTitle: "Mitä malli tekee — ja mitä se ei vielä tee",
+    scope: [
+      "Se erottaa fysikaalisen FieldState-tilan, elinkohtaisen siirron, biologiset päätepisteet, parin ja demografiset tekijät. Kansallista teknologiasarjaa ei käsitellä EMF-annoksena.",
+      "Lindgrenistä johdetut tausta-, vektori-, geometria- ja ajoitusvaikutukset ovat testattavia upstream-hypoteeseja, eivät väestövaikutuksen estimaatteja.",
+      "Malli ei toistaiseksi julkaise FieldState–ASFR-v2-maakohtaisia TFR-ennusteita: tarvitaan vielä yhteen sovitettuja paikallisia kenttä-, biologisia päätepiste- ja paripaneeleja.",
     ],
-    happeningConclusion:
-      "Jotain biologista tapahtuu, lajeista toiseen, mantereelta toiselle, samanaikaisesti. BERM tarjoaa testattavan selityksen.",
-    mapDesc:
-      "TFR-lasku ja EMF-altistus maittain, 1960–2024. Aikaslider animaatiolla.",
-
-    explainTitle: "Yksi selitys sopii kaikkeen",
-    explainDesc:
-      "Bio-sähkömagneettinen lisääntymismalli (BERM) esittää, että ihmisen tuottamat sähkömagneettiset kentät — tukiasemista, Wi-Fistä ja älypuhelimista — ovat merkittävä tekijä maailmanlaajuisessa syntyvyyden laskussa. Malli tuottaa kvantitatiivisia, falsifioitavia ennusteita, jotka joko toteutuvat tai eivät.",
-    explainDesc2:
-      "Jokainen ennuste lukitaan luottamusvälin kanssa ennen havaintojakson alkua. Jos havaitut arvot jäävät ennustetun välin ulkopuolelle, malli kumotaan kyseisen ennusteen osalta — ennustetta ei muuteta. Kaikki lähdekoodi, data ja menetelmät ovat avoimesti saatavilla.",
-    causalTitle: "Kausaalireitin yleiskatsaus",
-    causalDesc:
-      "EMF-altistus etenee viiden biologisen reitin kautta ja konvergoi hedelmällisyyteen ja syntyvyyteen. Solmujen reunat osoittavat tukevan näytön episteemisen tason.",
-
-    predTitle: "Lukitut ennusteet",
-    predDesc:
-      "Malli tuottaa tarkkoja, peruuttamattomia ennusteita. Jokainen on jäädytetty git SHA:ssa — jos havainto jää luottamusvälin ulkopuolelle, malli falsifioidaan.",
-    predCountry: "Maa",
-    predYear: "Vuosi",
-    predMetric: "Mittari",
-    predCentral: "Keskiarvo",
-    predCI: "95 % LV",
-    predFooter: "v18.0 — 11 lukittua ennustetta.",
-    predLink: "Täysi ennusterekisteri",
-
-    caveatsTitle: "Missä malli onnistuu — ja missä ei",
-    caveats: [
-      {
-        label: "K8: Plasebosarjat",
-        text: "86 % satunnaisista plasebosarjoista sopii nykyiseen dataan paremmin kuin BERM. Malli ei ole vielä erottunut kohinasta poikkileikkaus-TFR:ssä. Tämä on odotettua — mallin ennustevoima on ajallisessa ulottuvuudessa (lukitut tulevaisuuden ennusteet), ei maakohtaisessa sovituksessa.",
-      },
-      {
-        label: "K10: Takautuva ennustaminen kumottu",
-        text: 'Alkuperäinen väite, että malli "ennusti" historiallista TFR:ää, on kumottu itsenäisessä replikaatiossa. Takautuva sovitus oli kalibraatio, ei ennuste. Malli nojaa nyt yksinomaan eteenpäin lukittuihin ennusteisiin.',
-      },
-      {
-        label: "R² = 0,9999",
-        text: "Poikkileikkauksen R² on kalibraatio, ei validaatio. Mallissa on riittävästi parametreja minkä tahansa sileän käyrän sovittamiseen. Validaatio tulee lukittujen ennusteiden osumisesta luottamusväleille — tai olemasta.",
-      },
+    mapTitle: "Julkaistu hedelmällisyyssarja ja teknologian ajoitus",
+    mapLead: "Kartta näyttää Maailmanpankin WDI:n julkaistun TFR-sarjan ja mobiililiittymät. Jälkimmäinen on digitaalisen teknologian ajoitusproksi, ei EMF-altistus- tai annoskerros. V2:n erillinen demografinen reitti käyttää WPP:n ASFR:ää omalla provenienssillaan.",
+    evidenceTitle: "Kausaalireitti ja rajattu evidenssi",
+    evidenceLead: "Aktiivinen reitti on FieldState → nimetyt välitilat ja elinkohtaiset tilat → parikapasiteetti sekä eksplisiittiset kysyntä-/tempo-/ART-syötteet → ASFR → TFR. Tutkimukset tukevat erillisiä linkkejä ja päätepisteitä; mikään nykyisistä tietueista ei ole TFR-kerroin.",
+    evidenceCount: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tutkimus–solmu-tietuetta`,
+    evidenceCountNote: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Evidenssirekisteri tarjoaa vastaavat lähdetiedot.",
+    cohortTitle: "Testaamisen arvoinen kohorttikuvio",
+    cohortLead: "WPP 2024:n ASFR yhdessä Maailmanpankin/ITU:n mobiililiittymien kanssa näyttää versionoidun, toistettavan kuvailevan nuorten ja vanhempien kohorttien ajoituskuvion (N = 163; r = −0,66645 vuosina 2000–2023). Se motivoi tulevaa ennakkorekisteröityä FieldState-tutkimusta; se ei ole fysikaalinen altistusarvio eikä kausaalitulos.",
+    nextTitle: "Tutkimuksen nykyiset prioriteetit",
+    next: [
+      "Rakennetaan toistettavat FieldState-paneelit: B₀-vektori, spektri/PSD, paikallinen geometria, vuorokausikonteksti ja mittausprovenienssi.",
+      "Yhdistetään paneelit rekisteröityihin mies-, nais- ja este-päätepisteisiin ennen elinvasteen estimointia.",
+      "Mallinnetaan ensin ASFR, säilyttäen kysyntä, tempo, ART sekä puoliso-/kotitalouskovarianssi; TFR johdetaan vasta sen jälkeen.",
     ],
-    caveatsConclusion:
-      "BERM on tieteellinen malli, ei varmuusväite. Jos data on ristiriidassa mallin kanssa, malli on väärässä — se on falsifioitavuuden tarkoitus.",
-
-    globalTfr: "Globaali TFR 2040",
-    spermConc: "Siittiöpitoisuus 2050",
-    ofLevels: "vuoden 2020 tasosta",
-    modelVersion: "Malliversio",
-    lockedPredictions: "11 lukittua ennustetta",
-    btnPredictions: "Näytä ennusterekisteri",
-    btnModel: "Mallin dokumentaatio",
-    btnEvidence: "Selaa näyttöä",
+    methods: "Mallin määrittely",
+    evidence: "Evidenssirekisteri",
+    data: "Data ja mittaustila",
+    archive: "Tutkimusarkisto",
   },
 } as const;
-
-const PREDICTIONS_SUMMARY = [
-  { country: "Finland", countryFi: "Suomi", year: 2030, metric: "TFR", central: 1.08, ci: "1.02–1.24" },
-  { country: "South Korea", countryFi: "Etelä-Korea", year: 2030, metric: "TFR", central: 0.61, ci: "0.48–0.72" },
-  { country: "Japan", countryFi: "Japani", year: 2030, metric: "TFR", central: 1.01, ci: "0.88–1.20" },
-  { country: "USA", countryFi: "USA", year: 2030, metric: "TFR", central: 1.35, ci: "1.25–1.65" },
-  { country: "Brazil", countryFi: "Brasilia", year: 2030, metric: "TFR", central: 1.44, ci: "1.40–1.68" },
-  { country: "Global", countryFi: "Maailma", year: 2040, metric: "TFR", central: 1.78, ci: "1.55–2.05" },
-];
-
-interface Reference {
-  id: string;
-  pathway: string[];
-  level: string;
-}
-
-async function getReferenceStats(): Promise<{
-  count: number;
-  pathways: number;
-  established: number;
-}> {
-  try {
-    const raw = await readFile(
-      join(process.cwd(), "public", "data", "references.json"),
-      "utf-8",
-    );
-    const refs: Reference[] = JSON.parse(raw);
-    return {
-      count: refs.length,
-      pathways: new Set(refs.flatMap((r) => r.pathway)).size,
-      established: refs.filter((r) => r.level === "E").length,
-    };
-  } catch {
-    return { count: 0, pathways: 0, established: 0 };
-  }
-}
 
 export default async function Home({
   params,
@@ -180,244 +72,72 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const d = t[(locale as Locale) in t ? (locale as Locale) : "en"];
-  const prefix = `/${locale}`;
-  const isFi = locale === "fi";
-  const refStats = await getReferenceStats();
+  const activeLocale: Locale = locale === "fi" ? "fi" : "en";
+  const d = COPY[activeLocale];
+  const prefix = `/${activeLocale}`;
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
-      {/* Hero */}
-      <header className="mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-          {d.hero}
-        </h1>
-        <p className="text-lg md:text-xl text-foreground-muted max-w-2xl">
-          {d.heroSub}
-        </p>
+      <header className="mb-12 max-w-4xl">
+        <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-3">FieldState–ASFR v2</p>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">{d.hero}</h1>
+        <p className="text-lg md:text-xl text-foreground-muted leading-relaxed">{d.lead}</p>
       </header>
 
-      {/* Key metrics */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-        <div className="border border-card-border bg-card-bg rounded-lg p-6">
-          <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
-            {d.globalTfr}
-          </p>
-          <p className="text-3xl font-bold font-mono-num">1.78</p>
-          <p className="text-sm text-foreground-muted font-mono-num mt-1">
-            95% CI [1.55, 2.05]
-          </p>
-        </div>
-        <div className="border border-card-border bg-card-bg rounded-lg p-6">
-          <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
-            {d.spermConc}
-          </p>
-          <p className="text-3xl font-bold font-mono-num">62%</p>
-          <p className="text-sm text-foreground-muted mt-1">
-            {d.ofLevels}{" "}
-            <span className="font-mono-num">[48%, 75%]</span>
-          </p>
-        </div>
-        <div className="border border-card-border bg-card-bg rounded-lg p-6">
-          <p className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
-            {d.modelVersion}
-          </p>
-          <p className="text-3xl font-bold font-mono-num">v18.0</p>
-          <p className="text-sm text-foreground-muted mt-1">
-            {d.lockedPredictions}
-          </p>
-        </div>
-      </section>
-
-      {/* Something is happening */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold tracking-tight mb-6">
-          {d.happeningTitle}
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-3">
-            <ol className="space-y-4">
-              {d.happeningFacts.map((fact, i) => (
-                <li key={i} className="flex gap-4">
-                  <span className="flex-shrink-0 mt-0.5 w-7 h-7 rounded-full bg-status-refuted/15 text-status-refuted flex items-center justify-center text-xs font-bold">
-                    {i + 1}
-                  </span>
-                  <p className="text-foreground-muted leading-relaxed text-sm">
-                    {fact}
-                  </p>
-                </li>
-              ))}
-            </ol>
-            <p className="mt-6 text-foreground font-medium">
-              {d.happeningConclusion}
-            </p>
-          </div>
-          <div className="lg:col-span-2">
-            <div className="border border-card-border bg-card-bg rounded-lg overflow-hidden h-full min-h-[240px]">
-              <WorldMap locale={locale} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Evidence summary */}
-      {refStats.count > 0 && (
-        <section className="mb-16">
-          <Link
-            href={`${prefix}/references`}
-            className="block border border-accent/20 bg-accent/5 rounded-lg px-6 py-5 hover:bg-accent/10 transition-colors"
-          >
-            <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
-              <p className="text-lg font-semibold">
-                <span className="font-mono-num">{refStats.count}</span>{" "}
-                {isFi ? "vertaisarvioitua tutkimusta" : "peer-reviewed studies"}
-              </p>
-              <p className="text-sm text-foreground-muted">
-                <span className="font-mono-num">{refStats.pathways}</span>{" "}
-                {isFi ? "tutkimuspolkua" : "evidence pathways"}
-                {" · "}
-                <span className="font-mono-num">{refStats.established}</span>{" "}
-                {isFi ? "vakiintunutta" : "established"}
-              </p>
-            </div>
-            <p className="text-xs text-foreground-muted mt-2">
-              {isFi
-                ? "Selaa koko lähdetietokantaa →"
-                : "Browse the full reference database →"}
-            </p>
-          </Link>
-        </section>
-      )}
-
-      {/* One explanation fits all */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-bold tracking-tight mb-6">
-          {d.explainTitle}
-        </h2>
-        <div className="max-w-3xl space-y-5 mb-10">
-          <p className="text-foreground-muted leading-relaxed">{d.explainDesc}</p>
-          <p className="text-foreground-muted leading-relaxed">
-            {d.explainDesc2}
-          </p>
-        </div>
-        <h3 className="text-lg font-semibold mb-3">{d.causalTitle}</h3>
-        <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-          {d.causalDesc}
-        </p>
-        <div className="border border-card-border bg-card-bg rounded-lg p-4 md:p-6 overflow-x-auto">
-          <CausalChain />
-        </div>
-      </section>
-
-      {/* Locked predictions */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-bold tracking-tight mb-3">
-          {d.predTitle}
-        </h2>
-        <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-          {d.predDesc}
-        </p>
-        <div className="border border-card-border bg-card-bg rounded-lg overflow-hidden mb-4">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border text-left text-foreground-muted bg-background-secondary/50">
-                  <th className="py-3 px-4 font-medium">{d.predCountry}</th>
-                  <th className="py-3 px-4 font-medium">{d.predYear}</th>
-                  <th className="py-3 px-4 font-medium">{d.predMetric}</th>
-                  <th className="py-3 px-4 font-medium text-right">
-                    {d.predCentral}
-                  </th>
-                  <th className="py-3 px-4 font-medium text-right">
-                    {d.predCI}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {PREDICTIONS_SUMMARY.map((p, i) => (
-                  <tr
-                    key={i}
-                    className={
-                      i < PREDICTIONS_SUMMARY.length - 1
-                        ? "border-b border-card-border"
-                        : ""
-                    }
-                  >
-                    <td className="py-3 px-4 font-medium">
-                      {isFi ? p.countryFi : p.country}
-                    </td>
-                    <td className="py-3 px-4 text-foreground-muted">
-                      {p.year}
-                    </td>
-                    <td className="py-3 px-4 text-foreground-muted">
-                      {p.metric}
-                    </td>
-                    <td className="py-3 px-4 text-right font-mono-num font-medium">
-                      {p.central}
-                    </td>
-                    <td className="py-3 px-4 text-right font-mono-num text-foreground-muted">
-                      {p.ci}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <p className="text-xs text-foreground-muted mb-4">{d.predFooter}</p>
-        <Link
-          href={`${prefix}/predictions`}
-          className="text-sm text-accent hover:underline"
-        >
-          {d.predLink} &rarr;
-        </Link>
-      </section>
-
-      {/* What the model gets right — and wrong */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-bold tracking-tight mb-6">
-          {d.caveatsTitle}
-        </h2>
-        <div className="space-y-4 max-w-3xl">
-          {d.caveats.map((caveat, i) => (
-            <div
-              key={i}
-              className="border border-card-border rounded-lg p-5"
-            >
-              <p className="text-sm font-semibold text-foreground mb-1">
-                {caveat.label}
-              </p>
-              <p className="text-sm text-foreground-muted leading-relaxed">
-                {caveat.text}
-              </p>
+        <h2 className="text-2xl font-bold tracking-tight mb-5">{d.scopeTitle}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {d.scope.map((item, index) => (
+            <div key={item} className="border border-card-border bg-card-bg rounded-lg p-5">
+              <p className="font-mono-num text-xs text-accent mb-3">0{index + 1}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed">{item}</p>
             </div>
           ))}
         </div>
-        <p className="mt-6 text-sm text-foreground-muted max-w-3xl leading-relaxed font-medium">
-          {d.caveatsConclusion}
-        </p>
       </section>
 
-      {/* Action links */}
-      <section className="flex flex-wrap gap-4 mb-16">
-        <Link
-          href={`${prefix}/predictions`}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-white text-sm font-medium rounded-lg transition-colors"
-        >
-          {d.btnPredictions}
+      <section className="mb-16">
+        <FieldStateStatus locale={activeLocale} />
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold tracking-tight mb-3">{d.mapTitle}</h2>
+        <p className="text-sm text-foreground-muted max-w-3xl mb-5 leading-relaxed">{d.mapLead}</p>
+        <div className="border border-card-border bg-card-bg rounded-lg overflow-hidden min-h-[320px]">
+          <WorldMap locale={activeLocale} />
+        </div>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold tracking-tight mb-3">{d.evidenceTitle}</h2>
+        <p className="text-sm text-foreground-muted max-w-3xl mb-5 leading-relaxed">{d.evidenceLead}</p>
+        <div className="border border-card-border bg-card-bg rounded-lg p-4 md:p-6 overflow-x-auto">
+          <CausalChain locale={activeLocale} />
+        </div>
+        <Link href={`${prefix}/references`} className="block mt-4 border border-accent/20 bg-accent/5 hover:bg-accent/10 rounded-lg px-5 py-4 transition-colors">
+          <p className="font-semibold">{d.evidenceCount}</p>
+          <p className="text-sm text-foreground-muted mt-1">{d.evidenceCountNote}</p>
         </Link>
-        <Link
-          href={`${prefix}/model`}
-          className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground hover:border-foreground-muted text-sm font-medium rounded-lg transition-colors"
-        >
-          {d.btnModel}
-        </Link>
-        <Link
-          href={`${prefix}/evidence`}
-          className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground hover:border-foreground-muted text-sm font-medium rounded-lg transition-colors"
-        >
-          {d.btnEvidence}
-        </Link>
+      </section>
+
+      <section className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="border border-card-border bg-card-bg rounded-lg p-6">
+          <h2 className="text-xl font-bold tracking-tight mb-3">{d.cohortTitle}</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed">{d.cohortLead}</p>
+        </div>
+        <div className="border border-card-border bg-card-bg rounded-lg p-6">
+          <h2 className="text-xl font-bold tracking-tight mb-3">{d.nextTitle}</h2>
+          <ol className="space-y-3">
+            {d.next.map((item, index) => <li key={item} className="flex gap-3 text-sm text-foreground-muted leading-relaxed"><span className="font-mono-num text-accent">{index + 1}.</span>{item}</li>)}
+          </ol>
+        </div>
+      </section>
+
+      <section className="flex flex-wrap gap-3">
+        <Link href={`${prefix}/model`} className="inline-flex items-center px-5 py-2.5 bg-accent hover:bg-accent-hover text-white text-sm font-medium rounded-lg transition-colors">{d.methods}</Link>
+        <Link href={`${prefix}/evidence`} className="inline-flex items-center px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground text-sm font-medium rounded-lg transition-colors">{d.evidence}</Link>
+        <Link href={`${prefix}/data`} className="inline-flex items-center px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground text-sm font-medium rounded-lg transition-colors">{d.data}</Link>
+        <Link href={`${prefix}/predictions`} className="inline-flex items-center px-5 py-2.5 border border-border text-foreground-muted hover:text-foreground text-sm font-medium rounded-lg transition-colors">{d.archive}</Link>
       </section>
     </div>
   );

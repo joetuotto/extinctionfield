@@ -54,7 +54,7 @@ function ExploreTabsInner({ locale }: { locale: string }) {
 
       {activeTab === "map" && <WorldMap locale={locale} />}
 
-      {activeTab === "country" && <ExplorerDashboard />}
+      {activeTab === "country" && <ExplorerDashboard locale={locale} />}
 
       {activeTab === "global" && <GlobalDataExplorer locale={locale} />}
 

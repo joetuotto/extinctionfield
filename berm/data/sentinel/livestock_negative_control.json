@@ -1,12 +1,12 @@
 {
-  "description": "Livestock semen quality as negative control for CSLI analysis. Unlike human/dog sperm, bull and boar semen quality is STABLE or IMPROVING over decades.",
-  "role": "negative_control",
-  "rationale": "If environmental EDCs alone drove reproductive decline, livestock in the same chemical environment should also decline. They do not — genetic selection and controlled breeding maintain or improve semen quality. This supports EMF-specific mechanisms: livestock are typically housed in rural areas with lower RF exposure and/or in metal-framed barns that attenuate RF fields.",
+  "description": "Literature ledger for potential livestock comparator datasets in CSLI. This file contains no numeric observation panel and is not a negative-control dataset.",
+  "role": "context_only_not_a_numeric_control",
+  "rationale": "The cited studies can motivate future acquisition of station-level livestock data. They cannot estimate a livestock-versus-dog/human contrast: no row-level observations, compatible geography, RF measurements, collection metadata, or selection covariates are held in this repository.",
   "sources": [
     {
       "id": "wahl2009",
       "citation": "Wahl RL, Reif JS. Temporal trends in bull semen quality: a comparative model for human health? Environ Res. 2009;109(3):273-280.",
-      "doi": "10.1016/j.envres.2008.12.007",
+      "doi": "10.1016/j.envres.2008.10.012",
       "pmid": 19181314,
       "species": "bovine",
       "breed": "Holstein dairy bulls",
@@ -31,7 +31,7 @@
           "motility": "improving"
         }
       },
-      "conclusion": "If EDCs were the cause, continued decline would be expected. Instead, quality rose in the latter period. Source of initial decline unknown."
+      "conclusion": "The publication reports changing trends over time and explicitly notes methodological inconsistencies. This ledger does not hold its numeric series or any RF measurement."
     },
     {
       "id": "karoui2011",
@@ -51,31 +51,49 @@
       "conclusion": "No systematic time trends observed except post-thawing motility, which increased due to improved freezing-thawing protocols. Heritability estimates moderate (0.16-0.22)."
     },
     {
-      "id": "hensel2025",
-      "citation": "Hensel B, Henneberg S, Schröter F, Hürland M, Osmers JH, Geissendörfer S, Lautner M, Jung M, Schulze M. Temporal trends in porcine and bovine semen characteristics: A retrospective long-term analysis of semen production data. Anim Reprod Sci. 2025;286:108093.",
+      "id": "hensel2026",
+      "citation": "Hensel B, Henneberg S, Schröter F, Hürland M, Osmers JH, Geissendörfer S, Lautner M, Jung M, Schulze M. Temporal trends in porcine and bovine semen characteristics: A retrospective long-term analysis of semen production data. Anim Reprod Sci. 2026;286:108093. Epub 2025 Dec 25.",
       "doi": "10.1016/j.anireprosci.2025.108093",
+      "pmid": 41455162,
       "species": ["bovine", "porcine"],
+      "sites": "one German artificial-insemination centre per species",
       "data_available": false,
-      "note": "Full text not accessible at extraction time. Article confirms long-term retrospective analysis of both species' semen production data. Awaiting institutional access for detailed parameter trends."
+      "abstract_summary": {
+        "bull": {
+          "n_ejaculates": 47757,
+          "period": "1997-2019",
+          "reported_direction": "sperm concentration, total sperm motility and sperm output increased; ejaculate volume decreased"
+        },
+        "boar": {
+          "n_ejaculates": 619368,
+          "period": "2005-2023",
+          "reported_direction": "sperm concentration, total sperm motility and sperm output increased; ejaculate volume decreased"
+        }
+      },
+      "note": "The PubMed abstract was verified on 2026-08-19. It supplies publication-level counts, periods and reported directions only; no local full text, table, row-level data, station metadata or RF measurement is held. These aggregates must not be used as a numeric time series or exposure control."
     }
   ],
-  "summary_trend": {
+  "publication_summaries": {
     "bovine": {
-      "overall": "stable_or_improving",
-      "period": "1965-2007",
-      "key_finding": "No systematic decline. Brief dip 1970-1985 reversed. Post-thaw motility improved via technology."
+      "status": "qualitative_publication_summary_only",
+      "periods_reported": ["1965-1995", "1990-2007", "1997-2019"],
+      "not_a_local_numeric_series": true
     },
     "porcine": {
-      "overall": "data_pending_hensel2025",
-      "note": "Hensel 2025 provides the definitive long-term porcine dataset. Based on search results, genetic selection and AI management maintain or improve boar semen quality."
+      "status": "qualitative_publication_summary_only",
+      "periods_reported": ["2005-2023"],
+      "not_a_local_numeric_series": true
     }
   },
-  "contrast_with_sentinel_species": {
-    "human": "Sperm concentration declined 51.6% from 1973-2018, accelerating post-2000 (Levine 2023)",
-    "dog": "Progressive motility declined 2.5%/yr 1988-1998, 1.2%/yr 2002-2014 (Lea 2016)",
-    "horse": "Progressive motility declining (Harris 2023 meta-regression)",
-    "livestock_bull": "No systematic decline 1990-2007 (Karoui 2011)",
-    "interpretation": "Livestock under genetic selection and controlled rural environments do NOT show the reproductive decline seen in human, dog, and horse populations exposed to urban/suburban RF-EMF levels."
+  "analysis_status": {
+    "numeric_observations_held": 0,
+    "rf_dosimetry_held": 0,
+    "eligible_as_negative_control": false,
+    "blocking_reasons": [
+      "Publication summaries are not a year-by-site panel.",
+      "RF exposure was not measured or reported for a matched comparison.",
+      "Genetic selection, collection/freezing protocols and station management are major unmeasured confounders."
+    ]
   },
   "extraction_date": "2026-08-19"
 }

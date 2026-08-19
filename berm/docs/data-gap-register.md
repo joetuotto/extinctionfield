@@ -40,9 +40,9 @@ E_ambient, E_personal, E_night, E_developmental → R_reproductive → Φ_couple
 - **Huom:** yksikään näistä ei mittaa RF-annosta. Ne mittaavat *käyttöä*. Annos vaatii dosimetrian
 - **Työmäärä:** suuri. Väliratkaisu: siirrä nykyiset arvot `SCENARIO_PARAMETER`-luokkaan versioituun taulukkoon (tehty rekisterissä) ja pidä rajapinta korvattavana
 
-### G-3 · RF-altistusta ei ole mitattu millekään lajille
-- **Puuttuu:** dosimetria tai validoitu kenttämittausproxy, joka voidaan liittää biologiseen päätetapahtumaan samalla (alue, vuosi) -avaimella
-- **Nykytila:** ainoa kvantitatiivinen proxy on mobiililiittymät. Sentinellitiedostoissa RF on merkkijono (`"low"`, `"high"`)
+### G-3 · RF-altistusta ei ole mitattu samaan biologiseen paneeliin
+- **Puuttuu:** dosimetria tai validoitu kenttämittaus, joka voidaan liittää biologiseen päätetapahtumaan samalla ennalta määritellyllä (paikka, aika) -avaimella
+- **Nykytila:** ANFR:n erillinen `measured_rf_site_time`-kerros sisältää 1 474 010 mitattua kiinteän anturin V/m-havaintoa 158 paikasta Ranskassa vuosilta 2020–2024. Se ei ole henkilö- tai eläinannos eikä sitä ole liitetty yhteenkään biologiseen päätetapahtumaan. Sentinellitiedostoissa RF on yhä merkkijono (`"low"`, `"high"`), ja ainoa laaja malliproxy on mobiililiittymät.
 - **Estää:** jokaisen annos-vaste-väitteen, F4:n kokonaan, ja tekee kaikista lajikontrasteista tulkinnanvaraisia
 - **Ehdokaslähteet:** kansalliset kentänvoimakkuusmittausrekisterit (Ofcom UK, BNetzA DE, ANFR FR, Traficom FI) — useimmat avoimia; OpenCellID / tukiasemarekisterit — avoin mutta epätäydellinen
 - **Työmäärä:** suuri, mutta BNetzA:n ja ANFR:n aineistot ovat julkisia ja paikkatietoisia
@@ -60,16 +60,16 @@ E_ambient, E_personal, E_night, E_developmental → R_reproductive → Φ_couple
 
 ### G-5 · Koira-aineisto on yksi laitos yhdessä maassa
 - **Puuttuu:** monialueinen tai monimaainen koirasperma-paneeli, sama alue ja aika kuin ihmisen biomarkkerisarjalla
-- **Nykytila:** `lea2016_dog_sperm.json` = Guide Dogs for the Blind, UK, 1988–2014, digitoitu kuvaajasta, **eikä yksikään moduuli avaa tiedostoa**
+- **Nykytila:** `lea2016_dog_sperm.json` = Guide Dogs for the Blind, UK, 1988–2014, digitoitu kuvaajasta. `berm.data.sentinel_normalize` tuottaa siitä 92 provenanssilla varustettua kanonista riviä, mutta aineisto on yhä yksi SITE eikä sitä käytetä CSLI- tai ennustepolkuna.
 - **Estää:** F1 (koira→ihminen-viive), F2 (koira vs. sosioekonominen), F5 (spatiaalinen johdonmukaisuus)
 - **Ks.** [`sentinel-data-requirements.md`](sentinel-data-requirements.md)
 
-### G-6 · Härkä-negatiivikontrollilla ei ole dataa
-- **Puuttuu:** kaikki numeerinen härkäsperma-aineisto
-- **Nykytila:** `livestock_negative_control.json` sisältää **nolla havaintoa** — vain kolme sitaattia ja laadullisia merkkijonoja
-- **Ristiriita:** `csli/species_data.py:149` liittää `n_ejaculates=47757` / 1997–2019 Hensel 2025 -viitteeseen, jonka sama JSON merkitsee `data_available: false`. **Tämä on ratkaistava ennen kuin viitettä käytetään missään**
+### G-6 · Härkä-/karjuvertailulta puuttuu analyysikelpoinen pitkä kontrollipaneeli
+- **Puuttuu:** vähintään viiden vuoden rivi- tai vuosi×asema-tason härkä-/karju-aineisto, jossa ovat mukana keräyspaikka ja -aika, jalostus- ja laboratorioprotokollat, olennaiset husbandry-kovariaatit sekä mitattu RF-altistus tai realistinen liitosavain siihen.
+- **Nykytila:** `livestock_negative_control.json` sisältää edelleen **nolla havaintoa** — vain kolme sitaattia ja laadullisia merkkijonoja. Erillinen `FERNANDEZ_LOPEZ_2022_BOAR_BENCHMARK` on nyt hallussa (221 inseminaatiotapahtumaa, 36 ejakulaattia ja 98 020 CASA-soluriviä), mutta se on yksi asema ja neljä kuukautta vuonna 2017 ilman RF- tai ympäristökovariaatteja; se on siksi vain seminologinen benchmark, ei kontrollipaneeli.
+- **Tarkistettu 2026-08-19:** Hensel et al. 2026:n PubMed-abstrakti vahvistaa julkaisutason luvut 47 757 härkäejakulaattia (1997–2019) ja 619 368 karjuejakulaattia (2005–2023), mutta niitä ei pidetä havaintopaneelina. Aiempi ristiriita on korjattu; puuttuvat yhä rivi-/vuosi×asema-taso, RF-altistus ja selektio-/protokollakovariaatit.
 - **Estää:** F3, F4
-- **Hankinta:** Wahl 2009, Karoui 2011 ja Hensel 2025 ovat kaikki `ACCESS_REQUIRED`
+- **Hankinta:** Wahl 2009, Karoui 2011 ja Hensel 2026:n varsinaiset aineistot ovat edelleen `ACCESS_REQUIRED`
 
 ### G-7 · Ihmisen biomarkkerisarja on rekonstruoitu, ei havaittu
 - **Puuttuu:** Levine 2023:n tutkimustason liitetaulukko
@@ -115,7 +115,7 @@ E_ambient, E_personal, E_night, E_developmental → R_reproductive → Φ_couple
 | G-17 | `berm/data/itu.py` ei toimi (Parquet ilman `pyarrow`) eikä sitä kutsuta | `itu.py:73` | Joko lisää `pyarrow` valinnaiseksi riippuvuudeksi tai vaihda CSV:hen |
 | G-18 | `urban_by_country_year.csv` (17 160 riviä) jäsennetty, ei luettu | `data/processed/` | Kytke `E_ambient`-reittiin tai poista jäsennys |
 | G-19 | Kaksi eri lajibiologiataulukkoa eri arvoilla | `csli/species_data.py:27` vs. `stats/csli.py:258` | Yksi lähde totuudelle |
-| G-20 | Mehiläisaineistosta puuttuvat kaikki kovariaatit | `coloss_winter_loss.json` | Varroa, patogeenit, torjunta-aineet, ravinto, sää, maankäyttö |
+| G-20 | Mehiläisaineistosta puuttuvat ajallisesti kohdistetut biologiset kovariaatit | `coloss_winter_loss.json` | Varroa, patogeenit, torjunta-aineet, ravinto, sää, maankäyttö sekä mitattu RF. MUST-B:stä hallussa oleva 7 tarhapaikan ja 453 kasvipolygonin paikkakonteksti ei sisällä näitä vasteita tai ajallista biologista kovariaattipaneelia. |
 
 ---
 
@@ -127,7 +127,7 @@ Riippuvuudet huomioiden:
 2. **G-4** (parity, HFD) — avoin, avaa lykkäys/toteutumattomuus-erottelun
 3. **G-8** (Eurostat NUTS-3) — avoin, avaa alueellisen tason, jota G-3 ja G-5 tarvitsevat
 4. **G-9** (kysyntädata) — avoin, poistaa jäännöstermin
-5. **G-3** (kenttämittaukset) — avoin mutta työläs; ilman tätä mikään annos-vaste ei ole testattavissa
+5. **G-3** (kohdistettu kenttämittaus + biologinen paneeli) — ANFR:n mitattu kerros on nyt hallussa, mutta ilman samaan paikkaan ja aikaan sidottua biologista asetelmaa mikään annos-vaste ei ole testattavissa
 6. **G-2** (henkilöaltistus) — osin avoin, osin `ACCESS_REQUIRED`
 7. **G-10, G-11** (ART, TTP) — avoin, mutta poiminta PDF:istä
 8. **G-5, G-6, G-7** (sentinellit) — vaativat joko julkaisijalupaa tai uutta aineistonkeruuta

@@ -11,6 +11,15 @@ from berm.v16 import (
     loocv_v16,
     v17_full_report,
 )
+from berm.model_fieldstate_asfr import (
+    MODEL_VERSION as FIELDSTATE_ASFR_MODEL_VERSION,
+    project_wpp_fieldstate_asfr,
+)
+from berm.evidence_registry import (
+    legacy_evidence_summary,
+    load_fieldstate_evidence,
+    load_legacy_evidence_migration,
+)
 from berm.biology.mtor_aging import (
     mtor_effective,
     aging_rate_multiplier,
@@ -29,6 +38,11 @@ __all__ = [
     "calibrate_v16",
     "loocv_v16",
     "v17_full_report",
+    "FIELDSTATE_ASFR_MODEL_VERSION",
+    "project_wpp_fieldstate_asfr",
+    "load_fieldstate_evidence",
+    "load_legacy_evidence_migration",
+    "legacy_evidence_summary",
     "mtor_effective",
     "aging_rate_multiplier",
     "senescence_accumulation",

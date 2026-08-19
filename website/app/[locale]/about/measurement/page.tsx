@@ -1,200 +1,133 @@
 import type { Metadata } from "next";
+import { Radio } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
+import { PageHeader } from "@/components/PageHeader";
 
-const t = {
+type ProtocolSection = {
+  title: string;
+  text: readonly string[];
+  steps?: readonly { title: string; text: string }[];
+};
+
+type Copy = {
+  title: string;
+  subtitle: string;
+  introduction: readonly string[];
+  sections: readonly ProtocolSection[];
+  boundaryTitle: string;
+  boundaryText: string;
+};
+
+const t: Record<Locale, Copy> = {
   en: {
-    title: "SDR Measurement Protocol",
+    title: "FieldState measurement protocol",
     subtitle:
-      "How to independently measure RF envelope spectral content in the R42 biological window using software-defined radio.",
-    intro:
-      "BERM's R43 prediction claims that the pulsed structure of cellular RF — specifically the eDRX duty cycle — places spectral energy inside the 20–40 mHz biological response window (R42). This claim is verifiable by anyone with an SDR receiver. This page describes the measurement protocol.",
+      "A protocol for documenting a physical field state and testing a pre-specified biological endpoint. It is not a claim that a network feature has already been identified or that an exposure causes a reproductive outcome.",
+    introduction: [
+      "FieldState–ASFR-v2 requires more than a national technology proxy or one broadband level. A useful experiment documents the measured field components, calibration, geometry, timing and provenance that could distinguish competing physical hypotheses.",
+      "The purpose of this protocol is to make the physical measurement and the biological experiment independently auditable. A physical signature, if observed, is a prerequisite for a mechanism test — not evidence of harm or a TFR coefficient.",
+    ],
     sections: [
       {
-        heading: "What is being measured",
-        paragraphs: [
-          "Modern cellular devices do not transmit continuously. They follow standardized sleep/wake cycles defined by 3GPP specifications. In eDRX (extended Discontinuous Reception) mode, a device sleeps for a defined period T, then briefly wakes to check for paging messages. This creates a pulsed RF envelope with fundamental frequency f₁ = 1/T.",
-          "The R42 window (20–40 mHz, centered at 30 mHz) corresponds to the frequency range where Zandieh (2025) observed mitochondrial ROS responses. If the eDRX duty cycle places spectral energy inside this window, the biological pathway A + C → B from BERM's R43 prediction is physically present in the ambient RF environment.",
-          "The measurement does not prove biological effect — it confirms the physical precondition. The spectral content is either there or it isn't. This is a binary, reproducible measurement.",
+        title: "1. Pre-specify the question and endpoint",
+        text: [
+          "State the field feature, biological system, primary endpoint, exposure contrast, timing, analysis and exclusion rules before collection. Register a null-compatible hypothesis as well as the proposed directional hypothesis.",
+          "Choose an endpoint close to the tested link: for example a calibrated physical PSD feature, a cellular redox readout, a tight-junction protein, a sperm-function measure or a reproductive hormone. Do not use national TFR as the direct endpoint of a laboratory exposure experiment.",
         ],
       },
       {
-        heading: "Equipment required",
-        paragraphs: [
-          "Any SDR receiver capable of capturing I/Q data at a cellular band: RTL-SDR (~$30, sufficient for envelope analysis), HackRF One ($300, wider bandwidth), or USRP ($1000+, research-grade). The critical requirement is continuous capture duration ≥ 2 hours at ≥ 1 kHz sample rate — the R42 window is at millihertz frequencies, so long captures are essential for spectral resolution.",
-          "Software: GNU Radio, SDR# (Windows), or GQRX (Linux/Mac) for I/Q capture. Python with NumPy + SciPy for analysis. BERM provides the analysis pipeline as envelope_psd.py (open source, no dependencies beyond scipy).",
+        title: "2. Acquire a documented physical FieldState",
+        text: [
+          "Record calibrated instruments, antenna or probe response, band selection, dynamic range, sampling chain, location, orientation, device posture, time zone, clock synchronisation and raw-data checksums. Measure the local static magnetic background B₀ vector where it is relevant to the hypothesis.",
+          "Keep ambient and personal-source conditions distinct. If the physical question concerns an organ, describe the transfer model or phantom/position measurement; a room measurement is not automatically an organ field estimate.",
+        ],
+        steps: [
+          { title: "Field components", text: "Capture the relevant electric/magnetic components and source band(s); retain calibration and uncertainty, not just a single summary level." },
+          { title: "Time structure", text: "Create a time-stamped band-power or field-amplitude series, then estimate envelope/beat PSD after the carrier or band has been validly acquired." },
+          { title: "Context", text: "Record vector orientation, phase/coherence where measurable, circadian time, source configuration and environmental conditions that can alter the apparatus." },
         ],
       },
       {
-        heading: "Measurement procedure",
-        content: [
-          {
-            step: "1. Frequency selection",
-            detail:
-              "Tune to a cellular downlink band (e.g., LTE Band 3: 1805–1880 MHz, or Band 7: 2620–2690 MHz). The exact carrier frequency matters less than capturing any active cell — all cells in the same band share the same eDRX timing structure.",
-          },
-          {
-            step: "2. I/Q capture",
-            detail:
-              "Record raw I/Q samples to disk. Minimum duration: 2 hours (for 0.14 mHz frequency resolution at the R42 band). Recommended: 4–8 hours for robust spectral estimation. Sample rate: 1 kHz is sufficient (we only need the envelope, not the carrier). If your SDR requires higher rates, the analysis pipeline downsamples automatically.",
-          },
-          {
-            step: "3. Envelope extraction",
-            detail:
-              "Compute instantaneous power P(t) = |x(t)|² from the complex I/Q signal. This removes the carrier and leaves only the amplitude modulation — the on/off pattern of device transmissions.",
-          },
-          {
-            step: "4. Downsampling",
-            detail:
-              "Anti-alias lowpass filter (cutoff 0.5 Hz), then decimate to 1 Hz. The R42 window is at 20–40 mHz; 1 Hz sampling gives 500× oversampling.",
-          },
-          {
-            step: "5. Welch PSD estimation",
-            detail:
-              "Compute the power spectral density using Welch's method with segment length ≥ 600 seconds (for ≤ 1.7 mHz bin width). Use Hann window, 50% overlap. This yields the spectral power distribution of the RF envelope from 1 mHz to 0.5 Hz.",
-          },
-          {
-            step: "6. R42 spectral integration",
-            detail:
-              "Integrate the PSD weighted by the R42 Gaussian window (center 30 mHz, σ = 5 mHz) to compute Ξ_R42. This is the spectral exposure index — the amount of envelope spectral energy inside the biological response window. Compare Ξ_R42 across different eDRX timer settings to test R43's prediction of band-pass response.",
-          },
+        title: "3. Treat eDRX and R42 correctly",
+        text: [
+          "eDRX is a user-equipment discontinuous-reception/paging scheduling mechanism. It is not, by itself, a known cellular downlink RF waveform or an ambient-field signature. An eDRX timer may be logged as network/device metadata, but it must not be substituted for a measured downlink envelope PSD.",
+          "Zandieh et al. (2025) reported frequency-dependent mitochondrial/ROS behaviour in cancer-cell experiments under ELF magnetic-field conditions (0.01–5 Hz; up to 100 mT, including 0.02 and 0.04 Hz conditions). That result motivates an exploratory PSD test; it does not establish RF network modulation, eDRX spectral lines or reproductive effects.",
         ],
       },
       {
-        heading: "Expected results",
-        paragraphs: [
-          "For eDRX T = 40.96 s: the fundamental frequency f₁ = 1/40.96 = 24.414 mHz falls inside R42. The PSD should show a clear peak at this frequency. Ξ_R42 should be the highest among all standard eDRX timer values — this is R43's core prediction.",
-          "For eDRX T = 10.24 s: f₁ = 97.66 mHz, outside R42. No significant R42 spectral content expected. This serves as a negative control.",
-          "For continuous wave (CW, no pulsing): no discrete spectral lines in the envelope. Ξ_R42 should be near zero. If CW produces the highest biological response in the R43 experiment, the envelope theory is falsified.",
+        title: "4. Run a controlled biological arm",
+        text: [
+          "Use blinded allocation where possible, a sham condition and a thermal/airflow/handling control that is matched to the active apparatus. Instrument the exposure chamber during every run rather than assuming that its setpoint describes the delivered condition.",
+          "Vary one pre-specified FieldState feature at a time when feasible: vector angle, static background, field amplitude, timing/PSD feature or circadian phase. Include positive controls only when their biological interpretation is appropriate; do not treat a rescue as proof of an upstream field mechanism.",
         ],
       },
       {
-        heading: "Analysis pipeline",
-        paragraphs: [
-          "BERM provides a complete analysis pipeline in Python (berm/physics/envelope_psd.py). The pipeline accepts raw I/Q files (complex float32) or can generate synthetic eDRX signals for testing. Key functions: generate_synthetic_edrx_signal() for test data, load_iq_file() for real captures, analyze_envelope() for the full pipeline, and plot_envelope_psd() for visualization.",
-          "To run with synthetic data (no SDR required): python -m berm.physics.envelope_psd. This generates a 2-hour synthetic eDRX signal at T = 40.96 s, processes it through the full pipeline, and outputs the Ξ_R42 value and spectral plot.",
-        ],
-      },
-      {
-        heading: "Reproducibility requirements",
-        paragraphs: [
-          "For a measurement to contribute to R43 validation, the following must be documented: SDR hardware model and firmware version, antenna type and placement, cellular band and center frequency, capture duration and sample rate, geographic location (city-level, for cell density context), date and time of capture, and the raw I/Q file (or a checksum thereof).",
-          "The analysis code is open source and deterministic — given the same I/Q input, the same Ξ_R42 value must result. Reproducibility is verified by comparing against the synthetic test signal output.",
-        ],
-      },
-      {
-        heading: "Limitations",
-        paragraphs: [
-          "This protocol measures aggregate RF envelope content in a cellular band. It does not isolate a single device's eDRX cycle — it captures the superposition of all devices in range. In dense urban environments, multiple overlapping eDRX cycles may produce a more complex spectral structure than a single-device model predicts.",
-          "The measurement confirms physical spectral content, not biological effect. Even if Ξ_R42 is high at T = 40.96 s, this does not prove that the spectral content causes biological harm. That is the question the R43 experiment addresses.",
-          "SDR measurements at cellular frequencies may be subject to local regulations. Check your jurisdiction's laws regarding RF signal reception before conducting measurements.",
+        title: "5. Analyse and report",
+        text: [
+          "Publish raw or access-controlled raw field data, processing code, calibration files, biological data, exclusions, adverse events and null results. Report effect estimates with uncertainty and compare the active and sham FieldStates, not only nominal device settings.",
+          "Classify the result by data readiness: a technology-timing proxy for national series, partial FieldState data when inputs are missing, and measurement-ready FieldState when calibration, B₀, transfer, PSD, circadian context, phase/coherence and provenance are documented. Measurement-ready data still require an endpoint-specific test.",
         ],
       },
     ],
+    boundaryTitle: "Interpretation boundary",
+    boundaryText:
+      "This protocol can test a physical-to-biological link. It cannot by itself identify a population effect, separate all environmental causes or justify a personal health recommendation. Any later ASFR/TFR analysis must join measured FieldState and endpoint data with demographic demand, tempo and ART terms.",
   },
   fi: {
-    title: "SDR-mittausprotokolla",
+    title: "FieldState-mittausprotokolla",
     subtitle:
-      "Kuinka itsenäisesti mitata RF-verhokäyrän spektrisisältö R42-biologisessa ikkunassa ohjelmistoradiolla.",
-    intro:
-      "BERM:n R43-ennuste väittää, että solukkoverkon RF:n pulssitettu rakenne — erityisesti eDRX-käyttösykli — sijoittaa spektrienergiaa 20–40 mHz biologisen vasteen ikkunaan (R42). Tämä väite on todennettavissa kenen tahansa SDR-vastaanottimella. Tämä sivu kuvaa mittausprotokollan.",
+      "Protokolla fysikaalisen kenttätilan dokumentoimiseen ja ennalta määritellyn biologisen päätepisteen testaamiseen. Se ei väitä, että verkkopiirre olisi jo tunnistettu tai että altistus aiheuttaisi lisääntymistuloksen.",
+    introduction: [
+      "FieldState–ASFR-v2 vaatii enemmän kuin kansallisen teknologiaproxyn tai yhden laajakaistatason. Hyödyllinen koe dokumentoi mitatut kenttäkomponentit, kalibroinnin, geometrian, ajoituksen ja provenienssin, joilla kilpailevia fysikaalisia hypoteeseja voidaan erottaa.",
+      "Protokollan tarkoitus on tehdä fysikaalisesta mittauksesta ja biologisesta kokeesta erikseen auditoitavia. Havaittu fysikaalinen allekirjoitus on mekanismitestin ennakkoehto — ei todiste haitasta eikä TFR-kerroin.",
+    ],
     sections: [
       {
-        heading: "Mitä mitataan",
-        paragraphs: [
-          "Nykyaikaiset solukkolaitteet eivät lähetä jatkuvasti. Ne noudattavat 3GPP-standardien määrittelemiä uni/herätyssyklejä. eDRX-tilassa (extended Discontinuous Reception) laite nukkuu määritellyn ajan T ja herää sitten lyhyesti tarkistamaan sivutusviestit. Tämä luo pulssimaisen RF-verhokäyrän perustaajuudella f₁ = 1/T.",
-          "R42-ikkuna (20–40 mHz, keskitetty 30 mHz) vastaa taajuusaluetta, jossa Zandieh (2025) havaitsi mitokondriaalisia ROS-vasteita. Jos eDRX-käyttösykli sijoittaa spektrienergiaa tähän ikkunaan, BERM:n R43-ennusteen biologinen polku A + C → B on fyysisesti läsnä ympäristön RF-kentässä.",
-          "Mittaus ei todista biologista vaikutusta — se vahvistaa fyysisen ennakkoehdon. Spektrisisältö joko on tai ei ole. Tämä on binäärinen, toistettava mittaus.",
+        title: "1. Määrittele kysymys ja päätepiste ennakolta",
+        text: [
+          "Kirjaa ennen aineistonkeruuta kenttäpiirre, biologinen järjestelmä, ensisijainen päätepiste, altistuskontrasti, ajoitus, analyysi ja poissulkusäännöt. Rekisteröi myös nollatuloksen salliva hypoteesi ehdotetun suuntahypoteesin rinnalle.",
+          "Valitse testattavan lenkin lähellä oleva päätepiste: esimerkiksi kalibroitu PSD-piirre, solun redox-lukema, tight-junction-proteiini, siittiötoiminnon mitta tai lisääntymishormoni. Kansallista TFR:ää ei käytetä laboratorioaltistuskokeen suorana päätepisteenä.",
         ],
       },
       {
-        heading: "Tarvittavat laitteet",
-        paragraphs: [
-          "Mikä tahansa SDR-vastaanotin, joka pystyy tallentamaan I/Q-dataa solukkokaistalla: RTL-SDR (~30 $, riittävä verhokäyräanalyysiin), HackRF One (300 $, laajempi kaistanleveys) tai USRP (1000 $+, tutkimustaso). Kriittinen vaatimus on vähintään 2 tunnin jatkuva tallennus ≥ 1 kHz näytteenottotaajuudella — R42-ikkuna on millihertsitaajuuksilla, joten pitkät tallennukset ovat välttämättömiä spektriresoluutiolle.",
-          "Ohjelmistot: GNU Radio, SDR# (Windows) tai GQRX (Linux/Mac) I/Q-tallennukseen. Python NumPy:n ja SciPy:n kanssa analysointiin. BERM tarjoaa analyysipipelinen envelope_psd.py:nä (avoin lähdekoodi, ei riippuvuuksia scipy:n lisäksi).",
+        title: "2. Kerää dokumentoitu fysikaalinen FieldState",
+        text: [
+          "Tallenna kalibroidut mittalaitteet, antennin tai anturin vaste, kaistavalinta, dynaaminen alue, näytteenottoketju, sijainti, orientaatio, laitteen asento, aikavyöhyke, kellosynkronointi ja raakadatan tarkistussummat. Mittaa paikallinen staattisen magneettikentän B₀-vektori, kun se on hypoteesin kannalta relevantti.",
+          "Pidä ambient- ja henkilökohtaisen lähteen olosuhteet erillään. Jos fysikaalinen kysymys koskee elintä, kuvaa siirtomalli tai phantom-/asentomittaus; huonemittaus ei automaattisesti ole elinkenttäarvio.",
+        ],
+        steps: [
+          { title: "Kenttäkomponentit", text: "Tallenna relevantit sähkö-/magneettikomponentit ja lähdekaistat; säilytä kalibrointi ja epävarmuus, ei vain yhtä yhteenvetotasoa." },
+          { title: "Aikarakenne", text: "Muodosta aikaleimattu kaistateho- tai kenttäamplitudisarja ja estimoi sitten verhokäyrä-/beat-PSD vasta sen jälkeen, kun kantoaalto tai kaista on kerätty pätevästi." },
+          { title: "Konteksti", text: "Kirjaa vektorin orientaatio, mitattavissa oleva vaihe/koherenssi, vuorokaudenaika, lähdekonfiguraatio ja ympäristöolosuhteet, jotka voivat muuttaa laitteistoa." },
         ],
       },
       {
-        heading: "Mittausmenettely",
-        content: [
-          {
-            step: "1. Taajuuden valinta",
-            detail:
-              "Viritä solukkoverkkon downlink-kaistalle (esim. LTE Band 3: 1805–1880 MHz tai Band 7: 2620–2690 MHz). Tarkka kantoaallon taajuus on vähemmän tärkeä kuin aktiivisen solun tallennus — kaikki saman kaistan solut jakavat saman eDRX-ajoitusrakenteen.",
-          },
-          {
-            step: "2. I/Q-tallennus",
-            detail:
-              "Tallenna raakamuotoiset I/Q-näytteet levylle. Vähimmäiskesto: 2 tuntia (0,14 mHz taajuusresoluutio R42-kaistalla). Suositeltu: 4–8 tuntia luotettavalle spektriestimoinnille. Näytteenottotaajuus: 1 kHz riittää (tarvitsemme vain verhokäyrän, ei kantoaaltoa).",
-          },
-          {
-            step: "3. Verhokäyrän erotus",
-            detail:
-              "Laske hetkellinen teho P(t) = |x(t)|² kompleksisesta I/Q-signaalista. Tämä poistaa kantoaallon ja jättää vain amplitudimodulaation — laitteiden lähetysviestien on/off-kuvion.",
-          },
-          {
-            step: "4. Alaspäin näytteistys",
-            detail:
-              "Alipäästösuodatus (rajataajuus 0,5 Hz), sitten desimointi 1 Hz:iin. R42-ikkuna on 20–40 mHz; 1 Hz näytteistys antaa 500-kertaisen ylinäytteistyksen.",
-          },
-          {
-            step: "5. Welch PSD -estimointi",
-            detail:
-              "Laske tehospektritiheys Welchin menetelmällä, segmentin pituus ≥ 600 sekuntia (≤ 1,7 mHz lokeronleveys). Käytä Hann-ikkunaa, 50 % limittäisyys.",
-          },
-          {
-            step: "6. R42-spektri-integrointi",
-            detail:
-              "Integroi PSD painotettuna R42-Gaussin ikkunalla (keskipiste 30 mHz, σ = 5 mHz) laskettavaksi Ξ_R42. Tämä on spektrialtistusindeksi. Vertaa Ξ_R42:ta eri eDRX-ajastinarvojen välillä testataksesi R43:n ennustetta kaistanpäästövasteesta.",
-          },
+        title: "3. Käsittele eDRX ja R42 oikein",
+        text: [
+          "eDRX on käyttäjälaitteen katkonaisen vastaanoton/sivutuksen ajoitusmekanismi. Se ei yksinään ole tunnettu solukkoverkon downlink-RF-aaltomuoto eikä ambient-kentän allekirjoitus. eDRX-ajastin voidaan kirjata verkko-/laitemetadatana, mutta sitä ei saa korvata mitatulla downlink-verhokäyrän PSD:llä.",
+          "Zandieh ym. (2025) raportoi taajuusriippuvaista mitokondrio-/ROS-käyttäytymistä syöpäsolukokeissa ELF-magneettikenttäolosuhteissa (0,01–5 Hz; enintään 100 mT, mukana 0,02 ja 0,04 Hz -olosuhteet). Tulos motivoi eksploratiivista PSD-testiä; se ei osoita RF-verkon modulaatiota, eDRX-spektriviivoja eikä lisääntymisvaikutuksia.",
         ],
       },
       {
-        heading: "Odotetut tulokset",
-        paragraphs: [
-          "eDRX T = 40,96 s: perustaajuus f₁ = 1/40,96 = 24,414 mHz osuu R42:n sisään. PSD:ssä pitäisi näkyä selvä piikki tällä taajuudella. Ξ_R42 pitäisi olla korkein kaikkien standardien eDRX-ajastinarvojen joukossa — tämä on R43:n ydinennuste.",
-          "eDRX T = 10,24 s: f₁ = 97,66 mHz, R42:n ulkopuolella. Merkittävää R42-spektrisisältöä ei odoteta. Tämä toimii negatiivisena kontrollina.",
-          "Jatkuva aalto (CW, ei pulssia): ei diskreettejä spektriviivoja verhokäyrässä. Ξ_R42 pitäisi olla lähellä nollaa. Jos CW tuottaa korkeimman biologisen vasteen R43-kokeessa, verhokäyräteoria on falsifioitu.",
+        title: "4. Toteuta kontrolloitu biologinen haara",
+        text: [
+          "Käytä mahdollisuuksien mukaan sokkoutettua allokaatiota, sham-ehtoa sekä aktiivista laitteistoa vastaavaa lämpö-/ilmavirta-/käsittelykontrollia. Instrumentoi altistuskammio jokaisessa ajossa sen sijaan, että oletat asetusarvon kuvaavan toimitettua olosuhdetta.",
+          "Vaihda yhtä ennalta määriteltyä FieldState-piirrettä kerrallaan, kun se on mahdollista: vektorikulmaa, staattista taustaa, kentän amplitudia, ajoitus-/PSD-piirrettä tai vuorokausivaihetta. Käytä positiivisia kontrolleja vain, jos niiden biologinen tulkinta on asianmukainen; rescue ei yksin todista upstream-kenttämekanismia.",
         ],
       },
       {
-        heading: "Analyysipipeline",
-        paragraphs: [
-          "BERM tarjoaa täydellisen Python-analyysipipelinen (berm/physics/envelope_psd.py). Pipeline hyväksyy raakoja I/Q-tiedostoja (complex float32) tai voi generoida synteettisiä eDRX-signaaleja testausta varten. Avainfunktiot: generate_synthetic_edrx_signal() testidatalle, load_iq_file() oikeille tallennuksille, analyze_envelope() koko pipelinelle ja plot_envelope_psd() visualisoinnille.",
-          "Ajaminen synteettisellä datalla (ei SDR:ää tarvita): python -m berm.physics.envelope_psd. Tämä generoi 2 tunnin synteettisen eDRX-signaalin T = 40,96 s, prosessoi sen koko pipelinen läpi ja tulostaa Ξ_R42-arvon ja spektrikuvaajan.",
-        ],
-      },
-      {
-        heading: "Toistettavuusvaatimukset",
-        paragraphs: [
-          "Mittauksen on dokumentoitava: SDR-laitteiston malli ja firmware-versio, antennityyppi ja sijoitus, solukkokaista ja keskitaajuus, tallennuksen kesto ja näytteenottotaajuus, maantieteellinen sijainti (kaupunkitaso, soluntiheyskontekstille), päivämäärä ja kellonaika sekä raaka I/Q-tiedosto (tai sen tarkistussumma).",
-          "Analyysikoodi on avointa lähdekoodia ja deterministinen — samalla I/Q-syötteellä saman Ξ_R42-arvon on tultava. Toistettavuus varmennetaan vertaamalla synteettisen testisignaalin tulokseen.",
-        ],
-      },
-      {
-        heading: "Rajoitukset",
-        paragraphs: [
-          "Tämä protokolla mittaa kokonais-RF-verhokäyrän sisältöä solukkokaistalla. Se ei eristä yksittäisen laitteen eDRX-sykliä — se tallentaa kaikkien kantaman sisällä olevien laitteiden superpositio. Tiheissä kaupunkiympäristöissä useat päällekkäiset eDRX-syklit voivat tuottaa monimutkaisemman spektrirakenteen kuin yhden laitteen malli ennustaa.",
-          "Mittaus vahvistaa fyysisen spektrisisällön, ei biologista vaikutusta. Vaikka Ξ_R42 olisi korkea T = 40,96 s:lla, tämä ei todista, että spektrisisältö aiheuttaa biologista haittaa. Se on kysymys, johon R43-koe vastaa.",
-          "SDR-mittaukset solukkoradiotaajuuksilla voivat olla paikallisten säädösten alaisia. Tarkista oman lainkäyttöalueesi lait RF-signaalien vastaanotosta ennen mittausten suorittamista.",
+        title: "5. Analysoi ja raportoi",
+        text: [
+          "Julkaise raaka- tai pääsykontrolloitu raaka kenttädata, käsittelykoodi, kalibrointitiedostot, biologinen data, poissulut, haittatapahtumat ja nollatulokset. Raportoi vaikutusarviot epävarmuuksineen ja vertaile aktiivista ja sham-FieldStatea, ei vain nimellisiä laiteasetuksia.",
+          "Luokittele tulos datavalmiuden mukaan: kansallisille sarjoille teknologian ajoitusproxy, puuttuville syötteille osittainen FieldState-data ja mittausvalmis FieldState vasta, kun kalibrointi, B₀, siirto, PSD, vuorokausikonteksti, vaihe/koherenssi ja provenienssi on dokumentoitu. Mittausvalmis data vaatii silti päätepistekohtaisen testin.",
         ],
       },
     ],
+    boundaryTitle: "Tulkintaraja",
+    boundaryText:
+      "Tällä protokollalla voidaan testata fysikaalinen → biologinen lenkki. Se ei yksin tunnista väestövaikutusta, erottele kaikkia ympäristösyitä eikä oikeuta henkilökohtaista terveyssuositusta. Myöhemmän ASFR/TFR-analyysin on yhdistettävä mitattu FieldState ja päätepistedata demografisiin kysyntä-, tempo- ja ART-termeihin.",
   },
-} as const;
-
-type SectionType = { heading: string; paragraphs?: readonly string[]; content?: readonly { step: string; detail: string }[] };
-
-function hasContent(
-  section: SectionType,
-): section is SectionType & { content: Array<{ step: string; detail: string }> } {
-  return "content" in section;
-}
-
-function hasParagraphs(
-  section: SectionType,
-): section is SectionType & { paragraphs: readonly string[] } {
-  return "paragraphs" in section;
-}
+};
 
 export async function generateMetadata({
   params,
@@ -202,11 +135,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const d = t[locale as Locale] ?? t.en;
-  return {
-    title: `${d.title} - Extinction Field`,
-    description: d.subtitle,
-  };
+  const d = t[locale === "fi" ? "fi" : "en"];
+  return { title: `${d.title} – Extinction Field`, description: d.subtitle };
 }
 
 export default async function MeasurementPage({
@@ -215,54 +145,41 @@ export default async function MeasurementPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const d = t[locale as Locale] ?? t.en;
+  const d = t[locale === "fi" ? "fi" : "en"];
 
   return (
-    <div className="max-w-3xl mx-auto px-4 pb-16">
-      <h1 className="text-2xl font-bold mb-2">{d.title}</h1>
-      <p className="text-foreground-muted text-sm mb-6">{d.subtitle}</p>
+    <div className="max-w-5xl mx-auto px-6 py-16">
+      <PageHeader icon={Radio} title={d.title} subtitle={d.subtitle} />
 
-      <p className="text-sm leading-relaxed mb-8">{d.intro}</p>
+      <div className="max-w-3xl space-y-10">
+        <div className="space-y-3 text-foreground-muted leading-relaxed">
+          {d.introduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
 
-      {d.sections.map((section, i) => (
-        <section key={i} className="mb-8">
-          <h2 className="text-lg font-semibold mb-3 text-accent">
-            {section.heading}
-          </h2>
-
-          {hasParagraphs(section) &&
-            section.paragraphs.map((p, j) => (
-              <p key={j} className="text-sm leading-relaxed mb-3 text-foreground/90">
-                {p}
-              </p>
-            ))}
-
-          {hasContent(section) && (
-            <div className="space-y-4">
-              {section.content.map((item, j) => (
-                <div key={j} className="border-l-2 border-accent/30 pl-4">
-                  <p className="text-sm font-semibold mb-1">{item.step}</p>
-                  <p className="text-sm leading-relaxed text-foreground/80">
-                    {item.detail}
-                  </p>
-                </div>
-              ))}
+        {d.sections.map((section, index) => (
+          <section key={section.title} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <p className="font-mono-num text-xs text-accent">0{index + 1}</p>
+            <h2 className="mt-2 text-lg font-semibold">{section.title}</h2>
+            <div className="mt-3 space-y-3 text-sm leading-relaxed text-foreground-muted">
+              {section.text.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
-          )}
-        </section>
-      ))}
+            {section.steps && (
+              <div className="mt-5 space-y-3 border-t border-card-border pt-4">
+                {section.steps.map((step) => (
+                  <div key={step.title} className="border-l-2 border-accent/30 pl-4">
+                    <h3 className="text-sm font-semibold">{step.title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-foreground-muted">{step.text}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        ))}
 
-      <div className="border border-border rounded-lg p-4 mt-8 bg-background-alt/30">
-        <p className="text-xs text-foreground-muted font-mono">
-          {locale === "fi"
-            ? "Analyysikoodi: berm/physics/envelope_psd.py (avoin lähdekoodi)"
-            : "Analysis code: berm/physics/envelope_psd.py (open source)"}
-        </p>
-        <p className="text-xs text-foreground-muted font-mono mt-1">
-          {locale === "fi"
-            ? "Aja synteettisellä datalla: python -m berm.physics.envelope_psd"
-            : "Run with synthetic data: python -m berm.physics.envelope_psd"}
-        </p>
+        <section className="rounded-xl border border-status-partial/35 bg-status-partial/5 p-5">
+          <h2 className="text-lg font-semibold">{d.boundaryTitle}</h2>
+          <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.boundaryText}</p>
+        </section>
       </div>
     </div>
   );

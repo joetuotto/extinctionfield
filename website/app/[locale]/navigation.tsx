@@ -22,7 +22,7 @@ export function Navigation({ locale }: { locale: string }) {
           Extinction Field
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-6">
           <ul className="flex items-center gap-6">
             {links.map((link) => {
               const fullHref = `/${locale}${link.href}`;
@@ -54,7 +54,7 @@ export function Navigation({ locale }: { locale: string }) {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <LanguageSwitcher locale={locale} />
           <ThemeToggle />
           <button
@@ -88,7 +88,7 @@ export function Navigation({ locale }: { locale: string }) {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-border bg-background">
+        <div className="lg:hidden border-t border-border bg-background">
           <ul className="px-6 py-4 space-y-3">
             {links.map((link) => {
               const fullHref = `/${locale}${link.href}`;

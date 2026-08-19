@@ -1,23 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark" | "system";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("system");
-
-  useEffect(() => {
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored === "light" || stored === "dark") {
-      setTheme(stored);
-    }
-  }, []);
+  const theme = useSyncExternalStore(subscribeToTheme, readTheme, systemTheme);
 
   function cycle() {
     const next: Theme =
       theme === "dark" ? "light" : theme === "light" ? "system" : "dark";
-    setTheme(next);
     if (next === "system") {
       localStorage.removeItem("theme");
       document.documentElement.removeAttribute("data-theme");
@@ -25,6 +17,7 @@ export function ThemeToggle() {
       localStorage.setItem("theme", next);
       document.documentElement.setAttribute("data-theme", next);
     }
+    window.dispatchEvent(new Event("berm-theme-change"));
   }
 
   return (
@@ -59,4 +52,23 @@ export function ThemeToggle() {
       )}
     </button>
   );
+}
+
+function readTheme(): Theme {
+  const stored = localStorage.getItem("theme");
+  return stored === "light" || stored === "dark" ? stored : "system";
+}
+
+function systemTheme(): Theme {
+  return "system";
+}
+
+function subscribeToTheme(onStoreChange: () => void) {
+  const onStorage = () => onStoreChange();
+  window.addEventListener("storage", onStorage);
+  window.addEventListener("berm-theme-change", onStorage);
+  return () => {
+    window.removeEventListener("storage", onStorage);
+    window.removeEventListener("berm-theme-change", onStorage);
+  };
 }

@@ -9,6 +9,7 @@ import {
   ChartLine,
   Database,
   Globe2,
+  Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -25,7 +26,8 @@ export const NAV_ROUTES: NavRoute[] = [
   { href: "/model", labelEn: "Model", labelFi: "Malli", icon: GitBranch },
   { href: "/evidence", labelEn: "Evidence", labelFi: "Näyttö", icon: Layers },
   { href: "/sentinel", labelEn: "Sentinel", labelFi: "Lajit", icon: Leaf },
-  { href: "/predictions", labelEn: "Predictions", labelFi: "Ennusteet", icon: Target },
+  { href: "/ecology", labelEn: "Ecology", labelFi: "Ekologia", icon: Zap },
+  { href: "/predictions", labelEn: "Archive", labelFi: "Arkisto", icon: Target },
   { href: "/about", labelEn: "About", labelFi: "Tietoa", icon: Info },
 ];
 

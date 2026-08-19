@@ -1,84 +1,69 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  GLOBAL_TIER_ORDER,
-  parseGlobalValidation,
-  type GlobalTier,
-  type GlobalValidationArtifact,
-} from "@/lib/globalArtifacts";
+import { GLOBAL_TIER_ORDER, type GlobalTier } from "@/lib/globalArtifacts";
 
 type Locale = "en" | "fi";
 
+interface PanelSummary {
+  schema_version?: string;
+  publication_type?: string;
+  source_tiers?: {
+    counts?: Partial<Record<GlobalTier, number>>;
+  };
+}
+
 const copy = {
   en: {
-    title: "Global validation",
-    description:
-      "Published tiers and validation summaries for the expanded country panel. This section reports the artefact as released; tier membership is not a prediction, effect estimate, or causal conclusion.",
-    loading: "Loading published global validation…",
-    error: "The global validation artefact is not available yet. No global benchmark result is shown until it is published.",
-    core: "Core 51 · locked",
-    extended: "Extended",
-    global: "Global",
+    title: "Global panel data coverage",
+    lead: "The published country panel documents the demographic and technology-timing data currently available for the FieldState–ASFR-v2 research programme.",
+    loading: "Loading panel metadata…",
+    unavailable: "Panel metadata is unavailable. Please try again shortly.",
+    artifact: "Publication format",
+    schema: "Schema",
+    tiers: "Coverage tiers in the published panel",
     countries: "countries",
-    tierTitle: "Pre-specified coverage tiers",
-    tierNote:
-      "Core 51 membership is locked before validation reporting. It is a coverage and governance boundary, not a performance-selected subset.",
-    tierCounts: "Tier memberships can overlap, so these counts are not mutually exclusive.",
-    scenarioTitle: "Published validation scenarios",
-    noScenarios:
-      "The artefact contains no published scenario summaries yet. The absence of a metric is not replaced with a model claim.",
-    trainTest: "Train → test",
-    countriesUsed: "Countries",
-    status: "Core membership",
-    artifact: "Artefact",
-    locked: "Locked",
-    notLocked: "Not marked locked",
+    note: "Tier membership documents source coverage. FieldState availability, endpoints and effect estimates are recorded separately.",
+    missing: "Next v2 data addition",
+    missingText: "A national panel of measured FieldState inputs, traceable organ/couple endpoints and age-specific fertility outcomes collected on a compatible time axis.",
   },
   fi: {
-    title: "Globaali validointi",
-    description:
-      "Laajennetun maapaneelin julkaistut tasot ja validointiyhteenvedot. Osio raportoi artefaktin sellaisena kuin se on julkaistu; tasojäsenyys ei ole ennuste, vaikutusarvio eikä kausaalinen johtopäätös.",
-    loading: "Ladataan julkaistua globaalia validointia…",
-    error: "Globaalia validointiartifaktia ei ole vielä saatavilla. Globaalia benchmark-tulosta ei näytetä ennen julkaisua.",
-    core: "Core 51 · lukittu",
-    extended: "Laajennettu",
-    global: "Globaali",
+    title: "Globaalin paneelin datakattavuus",
+    lead: "Julkaistu maapaneeli dokumentoi FieldState–ASFR-v2-tutkimusohjelmalle tällä hetkellä saatavilla olevan demografia- ja teknologia-ajoitusdatan.",
+    loading: "Ladataan paneelin metatietoja…",
+    unavailable: "Paneelin metatietoa ei ole saatavilla. Yritä hetken kuluttua uudelleen.",
+    artifact: "Julkaisumuoto",
+    schema: "Skeema",
+    tiers: "Julkaistun paneelin kattavuustasot",
     countries: "maata",
-    tierTitle: "Ennalta määritellyt kattavuustasot",
-    tierNote:
-      "Core 51 -jäsenyys lukitaan ennen validointiraportointia. Se on kattavuus- ja hallintoraja, ei suorituskyvyn perusteella valittu osajoukko.",
-    tierCounts: "Tasojäsenyydet voivat olla päällekkäisiä, joten luvut eivät ole toisensa poissulkevia.",
-    scenarioTitle: "Julkaistut validointiskenaariot",
-    noScenarios:
-      "Artefakti ei vielä sisällä julkaistuja skenaarioyhteenvetoja. Puuttuvaa mittaria ei korvata malliväitteellä.",
-    trainTest: "Opetus → testi",
-    countriesUsed: "Maat",
-    status: "Core-jäsenyys",
-    artifact: "Artefakti",
-    locked: "Lukittu",
-    notLocked: "Ei merkitty lukituksi",
+    note: "Tasojäsenyys dokumentoi lähdekattavuutta. FieldState-saatavuus, päätepisteet ja vaikutusarviot kirjataan erikseen.",
+    missing: "Seuraava v2-datalisäys",
+    missingText: "Kansallinen paneeli mitatuista FieldState-syötteistä, jäljitettävistä elin-/paritason päätepisteistä ja ikäryhmäkohtaisista hedelmällisyystuloksista yhteensopivalla aika-akselilla.",
   },
 } as const;
 
 function tierLabel(tier: GlobalTier, locale: Locale) {
-  return copy[locale][tier];
+  const labels = locale === "fi"
+    ? { core: "Ydin", extended: "Laajennettu", global: "Globaali" }
+    : { core: "Core", extended: "Extended", global: "Global" };
+  return labels[tier];
 }
 
+/** Shows public-panel provenance and data coverage for the v2-facing surface. */
 export function GlobalValidation({ locale }: { locale: string }) {
   const language: Locale = locale === "fi" ? "fi" : "en";
   const d = copy[language];
-  const [data, setData] = useState<GlobalValidationArtifact | null>(null);
+  const [data, setData] = useState<PanelSummary | null>(null);
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
-    fetch("/data/global_validation.json", { signal: controller.signal })
+    fetch("/data/global_panel_summary.json", { signal: controller.signal })
       .then(async (response) => {
-        if (!response.ok) throw new Error("Global validation artifact request failed");
-        const parsed = parseGlobalValidation(await response.json());
-        if (!parsed) throw new Error("Global validation artifact schema is invalid");
-        setData(parsed);
+        if (!response.ok) throw new Error("Global panel summary request failed");
+        const summary = await response.json() as PanelSummary;
+        if (!summary.source_tiers?.counts) throw new Error("Global panel summary schema is invalid");
+        setData(summary);
       })
       .catch((error: unknown) => {
         if (error instanceof Error && error.name === "AbortError") return;
@@ -88,74 +73,40 @@ export function GlobalValidation({ locale }: { locale: string }) {
   }, []);
 
   return (
-    <section className="mb-10 rounded-xl border border-card-border bg-card-bg p-4 sm:p-6">
-      <div className="mb-5 max-w-3xl">
-        <h3 className="text-base font-semibold">{d.title}</h3>
-        <p className="mt-1 text-sm leading-relaxed text-foreground-muted">{d.description}</p>
-      </div>
+    <section className="max-w-4xl rounded-xl border border-card-border bg-card-bg p-5 sm:p-6">
+      <h3 className="text-base font-semibold">{d.title}</h3>
+      <p className="mt-1 max-w-3xl text-sm leading-relaxed text-foreground-muted">{d.lead}</p>
 
       {failed ? (
-        <p className="rounded-lg border border-status-partial/30 bg-status-partial/5 p-3 text-sm text-foreground-muted">{d.error}</p>
+        <p className="mt-5 rounded-lg border border-status-partial/30 bg-status-partial/5 p-3 text-sm text-foreground-muted">{d.unavailable}</p>
       ) : !data ? (
-        <p className="py-10 text-center text-sm text-foreground-muted">{d.loading}</p>
+        <p className="mt-5 py-6 text-center text-sm text-foreground-muted">{d.loading}</p>
       ) : (
-        <div className="space-y-7">
-          <div className="flex flex-wrap gap-x-5 gap-y-1 text-xs text-foreground-muted">
-            {data.schema && <span>{d.artifact}: <span className="font-mono-num">{data.schema}</span></span>}
-            {data.version && <span>v{data.version}</span>}
-            <span>{d.status}: <span className="font-medium text-foreground">{data.locked ? d.locked : d.notLocked}</span></span>
+        <>
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-1 text-xs text-foreground-muted">
+            {data.schema_version && <span>{d.schema}: <span className="font-mono-num">{data.schema_version}</span></span>}
+            {data.publication_type && <span>{d.artifact}: <span className="font-mono-num">{data.publication_type}</span></span>}
           </div>
-
-          <div>
-            <h4 className="mb-3 text-sm font-semibold">{d.tierTitle}</h4>
+          <div className="mt-5">
+            <h4 className="mb-3 text-sm font-semibold">{d.tiers}</h4>
             <div className="grid gap-3 sm:grid-cols-3">
               {GLOBAL_TIER_ORDER.map((tier) => (
                 <div key={tier} className="rounded-lg border border-card-border bg-background p-3">
                   <p className="text-xs text-foreground-muted">{tierLabel(tier, language)}</p>
-                  <p className="mt-1 font-mono-num text-xl font-semibold">{data.tiers.countriesByTier[tier].length}</p>
+                  <p className="mt-1 font-mono-num text-xl font-semibold">{data.source_tiers?.counts?.[tier] ?? 0}</p>
                   <p className="text-xs text-foreground-muted">{d.countries}</p>
                 </div>
               ))}
             </div>
-            <p className="mt-3 max-w-3xl text-xs leading-relaxed text-foreground-muted">{d.tierNote}</p>
-            <p className="mt-1 max-w-3xl text-xs leading-relaxed text-foreground-muted">{d.tierCounts}</p>
+            <p className="mt-3 text-xs leading-relaxed text-foreground-muted">{d.note}</p>
           </div>
-
-          <div>
-            <h4 className="mb-3 text-sm font-semibold">{d.scenarioTitle}</h4>
-            {data.scenarios.length === 0 ? (
-              <p className="rounded-lg border border-card-border bg-background p-3 text-sm text-foreground-muted">{d.noScenarios}</p>
-            ) : (
-              <div className="grid gap-3 lg:grid-cols-2">
-                {data.scenarios.map((scenario) => (
-                  <article key={scenario.key} className="rounded-lg border border-card-border bg-background p-4">
-                    <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h5 className="font-medium">{scenario.name}</h5>
-                      {scenario.status && <span className="text-xs text-foreground-muted">{scenario.status}</span>}
-                    </div>
-                    {(scenario.trainStart !== undefined || scenario.testStart !== undefined) && (
-                      <p className="mt-2 text-xs text-foreground-muted">
-                        {d.trainTest}: {scenario.trainStart ?? "?"}–{scenario.trainEnd ?? "?"} → {scenario.testStart ?? "?"}–{scenario.testEnd ?? "?"}
-                      </p>
-                    )}
-                    {scenario.countryCount !== undefined && (
-                      <p className="mt-1 text-xs text-foreground-muted">{d.countriesUsed}: {scenario.countryCount}</p>
-                    )}
-                    <dl className="mt-4 grid grid-cols-2 gap-2">
-                      {scenario.metrics.map((metric) => (
-                        <div key={metric.label} className="rounded-md border border-card-border bg-card-bg p-2">
-                          <dt className="text-[11px] leading-tight text-foreground-muted">{metric.label}</dt>
-                          <dd className="mt-1 font-mono-num text-sm font-semibold">{metric.value.toFixed(3)}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </article>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
+        </>
       )}
+
+      <div className="mt-5 rounded-lg border border-blue-500/30 bg-blue-500/5 p-3">
+        <p className="text-xs font-semibold uppercase tracking-wide text-foreground-muted">{d.missing}</p>
+        <p className="mt-1 text-xs leading-relaxed text-foreground-muted">{d.missingText}</p>
+      </div>
     </section>
   );
 }

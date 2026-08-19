@@ -13,119 +13,98 @@ interface TocGroup {
   sections: TocSection[];
 }
 
-const GROUPS = {
+const GROUPS: Record<"en" | "fi", TocGroup[]> = {
   en: [
     {
-      title: "Model",
+      title: "FieldState–ASFR v2",
       sections: [
-        { id: "architecture", label: "Three-level architecture" },
-        { id: "causal-diagram", label: "Causal pathway diagram" },
-        { id: "chi-coupling", label: "Chi coupling equation" },
-        { id: "two-channel-model", label: "Two-channel model" },
-        { id: "recovery", label: "Five-layer recovery" },
-        { id: "compensation", label: "Compensation mechanism" },
-        { id: "mtor", label: "mTOR convergence" },
+        { id: "architecture", label: "Scope and boundaries" },
+        { id: "fieldstate-input", label: "FieldState input" },
+        { id: "static-interface", label: "Static interface" },
+        { id: "causal-diagram", label: "Registered causal route" },
+        { id: "organ-states", label: "Organ states" },
+        { id: "asfr-tfr", label: "ASFR → TFR" },
       ],
     },
     {
-      title: "Mathematical Foundation",
+      title: "Mathematical specification",
       sections: [
-        { id: "lindgren", num: "§1", label: "Lindgren geometry" },
-        { id: "chi", num: "§2", label: "Selection rule χ(Ā)" },
-        { id: "two-channel", num: "§3", label: "Two-channel model" },
-        { id: "biocap", num: "§4", label: "Biological capacity" },
-        { id: "behavioral", num: "§5", label: "Behavioral factor" },
-        { id: "cultural", num: "§6", label: "Cultural / compensation" },
-        { id: "jacobian", num: "§7", label: "Jacobian" },
-        { id: "locked", num: "§8", label: "Locked predictions" },
-        { id: "falsification", num: "§9", label: "Falsification conditions" },
-        { id: "pharmacological", num: "§10", label: "Pharmacological validation" },
-        { id: "individual-susceptibility", num: "§11", label: "Individual susceptibility" },
+        { id: "premise", num: "§1", label: "Physics premise" },
+        { id: "fieldstate", num: "§2", label: "FieldState" },
+        { id: "static-interface-math", num: "§3", label: "Static interface" },
+        { id: "organ-state", num: "§4", label: "Organ state" },
+        { id: "asfr", num: "§5", label: "ASFR → TFR" },
+        { id: "cohort", num: "§6", label: "Cohort signal" },
+        { id: "gme", num: "§7", label: "GME / R42" },
+        { id: "validation", num: "§8", label: "Validation boundary" },
       ],
     },
   ],
   fi: [
     {
-      title: "Malli",
+      title: "FieldState–ASFR v2",
       sections: [
-        { id: "architecture", label: "Kolmitasoinen arkkitehtuuri" },
-        { id: "causal-diagram", label: "Kausaalireittikaavio" },
-        { id: "chi-coupling", label: "Chi-kytkentäyhtälö" },
-        { id: "two-channel-model", label: "Kaksikanavamalli" },
-        { id: "recovery", label: "Viisikerroksinen palautumismalli" },
-        { id: "compensation", label: "Kompensaatiomekanismi" },
-        { id: "mtor", label: "mTOR-konvergenssi" },
+        { id: "architecture", label: "Rajaus ja reunaehdot" },
+        { id: "fieldstate-input", label: "FieldState-syöte" },
+        { id: "static-interface", label: "Staattinen rajapinta" },
+        { id: "causal-diagram", label: "Rekisteröity kausaalireitti" },
+        { id: "organ-states", label: "Elintilat" },
+        { id: "asfr-tfr", label: "ASFR → TFR" },
       ],
     },
     {
-      title: "Matemaattinen perusta",
+      title: "Matemaattinen määrittely",
       sections: [
-        { id: "lindgren", num: "§1", label: "Lindgrenin geometria" },
-        { id: "chi", num: "§2", label: "Valintaehto χ(Ā)" },
-        { id: "two-channel", num: "§3", label: "Kaksikanavamalli" },
-        { id: "biocap", num: "§4", label: "Biologinen kapasiteetti" },
-        { id: "behavioral", num: "§5", label: "Käyttäytymistekijä" },
-        { id: "cultural", num: "§6", label: "Kulttuuri / kompensaatio" },
-        { id: "jacobian", num: "§7", label: "Jakobiaani" },
-        { id: "locked", num: "§8", label: "Lukitut ennusteet" },
-        { id: "falsification", num: "§9", label: "Falsifiointiehdot" },
-        { id: "pharmacological", num: "§10", label: "Farmakologinen validointi" },
-        { id: "individual-susceptibility", num: "§11", label: "Yksilöllinen herkkyys" },
+        { id: "premise", num: "§1", label: "Fysiikan premissi" },
+        { id: "fieldstate", num: "§2", label: "FieldState" },
+        { id: "static-interface-math", num: "§3", label: "Staattinen rajapinta" },
+        { id: "organ-state", num: "§4", label: "Elintila" },
+        { id: "asfr", num: "§5", label: "ASFR → TFR" },
+        { id: "cohort", num: "§6", label: "Kohorttisignaali" },
+        { id: "gme", num: "§7", label: "GME / R42" },
+        { id: "validation", num: "§8", label: "Validaatioraja" },
       ],
     },
   ],
-} as const;
+};
 
 export function ModelTableOfContents({ locale }: { locale: string }) {
-  const groups: TocGroup[] = locale === "fi" ? GROUPS.fi as unknown as TocGroup[] : GROUPS.en as unknown as TocGroup[];
+  const groups = GROUPS[locale === "fi" ? "fi" : "en"];
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    const allIds = groups.flatMap((g) => g.sections.map((s) => s.id));
+    const allIds = [...new Set(groups.flatMap((group) => group.sections.map((section) => section.id)))];
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
-          .filter((e) => e.isIntersecting)
+          .filter((entry) => entry.isIntersecting)
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible.length > 0) {
-          setActiveId(visible[0].target.id);
-        }
+        if (visible[0]) setActiveId(visible[0].target.id);
       },
-      { rootMargin: "-80px 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-80px 0px -60% 0px", threshold: 0 },
     );
 
     allIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
     });
-
     return () => observer.disconnect();
   }, [groups]);
 
   return (
-    <nav className="hidden lg:block sticky top-20 w-52 shrink-0 self-start max-h-[calc(100vh-6rem)] overflow-y-auto">
+    <nav className="hidden lg:block sticky top-20 w-56 shrink-0 self-start max-h-[calc(100vh-6rem)] overflow-y-auto">
       {groups.map((group) => (
         <div key={group.title} className="mb-5">
-          <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted/60 mb-2">
-            {group.title}
-          </p>
+          <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted/60 mb-2">{group.title}</p>
           <ul className="space-y-1 text-sm border-l border-card-border pl-3">
-            {group.sections.map((s) => (
-              <li key={s.id}>
+            {group.sections.map((section) => (
+              <li key={`${group.title}-${section.id}`}>
                 <a
-                  href={`#${s.id}`}
-                  className={`block leading-snug transition-colors ${
-                    activeId === s.id
-                      ? "text-accent font-medium"
-                      : "text-foreground-muted hover:text-accent"
-                  }`}
+                  href={`#${section.id}`}
+                  className={`block leading-snug transition-colors ${activeId === section.id ? "text-accent font-medium" : "text-foreground-muted hover:text-accent"}`}
                 >
-                  {s.num && (
-                    <span className="text-xs text-foreground-muted/60 mr-1">
-                      {s.num}
-                    </span>
-                  )}
-                  {s.label}
+                  {section.num && <span className="text-xs text-foreground-muted/60 mr-1">{section.num}</span>}
+                  {section.label}
                 </a>
               </li>
             ))}

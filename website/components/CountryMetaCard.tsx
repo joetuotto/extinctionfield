@@ -1,12 +1,9 @@
 interface Props {
   meta: {
     country: string;
-    emfStartYear: number;
     latestObservedTFR: { year: number; value: number };
-    predictedTFR2030: number;
-    predictedTFR2040: number;
-    cumEMF2024: number;
   };
+  locale?: "en" | "fi";
 }
 
 const DISPLAY_NAMES: Record<string, string> = {
@@ -14,33 +11,34 @@ const DISPLAY_NAMES: Record<string, string> = {
   USA: "United States",
 };
 
-export function CountryMetaCard({ meta }: Props) {
-  const stats = [
-    {
-      label: "Latest observed TFR",
-      value: `${meta.latestObservedTFR.value} (${meta.latestObservedTFR.year})`,
-    },
-    { label: "Predicted TFR 2030", value: meta.predictedTFR2030.toFixed(2) },
-    { label: "Predicted TFR 2040", value: meta.predictedTFR2040.toFixed(2) },
-    { label: "Cumulative EMF (2024)", value: meta.cumEMF2024.toFixed(1) },
-    { label: "EMF history starts", value: meta.emfStartYear.toString() },
-  ];
+export function CountryMetaCard({ meta, locale = "en" }: Props) {
+  const isFinnish = locale === "fi";
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-3">
+      <h2 className="mb-3 text-xl font-semibold">
         {DISPLAY_NAMES[meta.country] || meta.country}
       </h2>
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
-        {stats.map((s) => (
-          <div
-            key={s.label}
-            className="bg-card-bg border border-card-border rounded-lg p-3"
-          >
-            <p className="text-xs text-foreground-muted">{s.label}</p>
-            <p className="text-lg font-semibold font-mono-num">{s.value}</p>
-          </div>
-        ))}
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div className="rounded-lg border border-card-border bg-card-bg p-3">
+          <p className="text-xs text-foreground-muted">
+            {isFinnish ? "Julkaistun TFR-sarjan viimeisin arvo" : "Latest published TFR value"}
+          </p>
+          <p className="font-mono-num text-lg font-semibold">
+            {meta.latestObservedTFR.value.toFixed(2)} ({meta.latestObservedTFR.year})
+          </p>
+        </div>
+        <div className="rounded-lg border border-card-border bg-card-bg p-3">
+          <p className="text-xs text-foreground-muted">{isFinnish ? "Datan tila" : "Data status"}</p>
+          <p className="mt-1 text-sm font-semibold text-status-partial">
+            {isFinnish ? "Kontekstisarjat saatavilla" : "Context series available"}
+          </p>
+          <p className="mt-1 text-xs leading-relaxed text-foreground-muted">
+            {isFinnish
+              ? "Maakohtaista FieldState-mittausta tai elinkohtaista tila-arviota ei ole vielä liitetty tähän näkymään."
+              : "A country-specific FieldState measurement or organ-state estimate has not yet been joined to this view."}
+          </p>
+        </div>
       </div>
     </div>
   );
