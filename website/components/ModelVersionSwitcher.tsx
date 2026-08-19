@@ -13,17 +13,15 @@ type VersionSwitcherVariant = "compact" | "expanded";
 const copy = {
   en: {
     label: "BERM model version",
+    compactLabel: "Model",
     fieldState: "FieldState–ASFR v2",
     legacy: "BERM v18.0",
-    fieldStateShort: "v2",
-    legacyShort: "v18",
   },
   fi: {
     label: "BERM-malliversio",
+    compactLabel: "Malli",
     fieldState: "FieldState–ASFR v2",
     legacy: "BERM v18.0",
-    fieldStateShort: "v2",
-    legacyShort: "v18",
   },
 } as const;
 
@@ -47,13 +45,12 @@ export function ModelVersionSwitcher({
   const text = locale === "fi" ? copy.fi : copy.en;
   const activeVersion = activeModelVersion(locale, pathname);
   const isExpanded = variant === "expanded";
-  const versions: Array<{ id: ModelVersionId; label: string; shortLabel: string }> = [
+  const versions: Array<{ id: ModelVersionId; label: string }> = [
     {
       id: "fieldstate-v2",
       label: text.fieldState,
-      shortLabel: text.fieldStateShort,
     },
-    { id: "berm-v18", label: text.legacy, shortLabel: text.legacyShort },
+    { id: "berm-v18", label: text.legacy },
   ];
 
   return (
@@ -66,6 +63,11 @@ export function ModelVersionSwitcher({
         {isExpanded && (
           <span className="px-2 text-[0.64rem] font-semibold uppercase tracking-[0.12em] text-foreground-muted">
             {text.label}
+          </span>
+        )}
+        {!isExpanded && (
+          <span className="px-1.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-foreground-muted">
+            {text.compactLabel}
           </span>
         )}
         {versions.map((version) => {
@@ -82,7 +84,13 @@ export function ModelVersionSwitcher({
                   : "text-foreground-muted hover:text-foreground"
               }`}
             >
-              {isExpanded ? version.label : version.shortLabel}
+              {isExpanded ? (
+                version.label
+              ) : (
+                <span className="whitespace-nowrap">
+                  {version.id === "fieldstate-v2" ? "FieldState v2" : "BERM v18"}
+                </span>
+              )}
             </Link>
           );
         })}
