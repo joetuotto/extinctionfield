@@ -73,7 +73,7 @@ ASFR-reittiin.
 | IVF/ART-osuus | Käsin kirjoitettu | `berm/data/countries.py:250` `IVF_SHARES` | `ESTIMATED` | Yksi perusvuosi (2023) | 55 maata | **kyllä** | Kollektiivinen viittaus "ESHRE, CDC, kansalliset rekisterit"; ei maakohtaista viitettä eikä vuotta. Käytetään skalaarikorjauksena, minkä tavoitearkkitehtuuri kieltää |
 | Maahanmuutto | Käsin kirjoitettu | `berm/data/countries.py:918` `MIGRATION_DATA` | `SCENARIO_PARAMETER` | Vakio kaikille vuosille | 29 maata | kyllä (`native_tfr`) | Pysyvä "immigrant TFR" ilman ikä- ja sukupolvikomponenttia — työohjeen nimenomaisesti kieltämä muoto |
 | Biomarkkerit (ihminen) | Rekonstruoitu sarja | `data/sentinel/sperm_by_country.json` | `PROXY` | 1973–2018, 5 v. välein | 24 maata | ei | Tiedosto itse toteaa: sarja on rekonstruoitu, ei julkaistu. Ei luottamusväliä, ei n-lukua |
-| Koirasentinelli | Lea 2016 | `data/sentinel/lea2016_dog_sperm.json` | `OBSERVED` | 1988–2014 | **Yksi laitos, UK** | ei — **orpo tiedosto**, ks. A-9 | Digitoitu kuvaajasta (±2–3 yksikköä). Yksikään moduuli ei avaa tiedostoa |
+| Koirasentinelli | Lea 2016 | `data/sentinel/lea2016_dog_sperm.json` | `OBSERVED` | 1988–2014 | **Yksi laitos, UK** | ei — normalisoitu erilliseen provenanssitauluun, ei CSLI-/ennustepolussa | Digitoitu kuvaajasta (±2–3 yksikköä). `sentinel_normalize` tuottaa 92 kanonista riviä; yksi SITE ei silti muodosta F1–F5-paneelia |
 | Härkäsentinelli | Ei numeerista dataa | `data/sentinel/livestock_negative_control.json` | — | Vain tutkimusjaksot | Paikantamaton | ei | **Tiedosto ei sisällä yhtään havaintoa.** F3 ja F4 eivät ole laskettavissa |
 | Mehiläissentinelli | COLOSS | `data/sentinel/coloss_winter_loss.json` | `OBSERVED` | 2006–2025 (vain USA täysi) | 43 aluetta, ml. 4 alakansallista | ei (vain `stats/csli.py`) | Talvikuolleisuus ei ole lisääntymismittari. Sekamenetelmä. Ei varroa-, patogeeni- eikä torjunta-ainekovariaatteja |
 | Lintusentinelli | PECBMS + Rosenberg 2019 | `data/sentinel/bird_index.json` | `OBSERVED` | 1970–2023, epäsäännöllinen | 17 maata + EU-aggregaatti | ei (vain `stats/csli.py`) | Runsausindeksi, ei lisääntymismittari |
@@ -190,20 +190,28 @@ Moduuli kirjoittaa välimuistin Parquet-muodossa (`to_parquet`, rivi 73). `pyarr
 Moduulia ei myöskään kutsuta mistään. Sen `BERM_COUNTRIES`-dict kattaa 25 maata, kun
 `loader.py` tuntee 57.
 
-### A-9 — CSLI: 0/6 falsifikaatiotestiä suoritettu, kaksi aineistoa orpona
+### A-9 — CSLI: 0/6 falsifikaatiotestiä suoritettu, historialliset lähdeartefaktit olivat irrallaan
 
 `berm/csli/falsification.py` on deklaratiivinen rekisteri: jokaisen F1–F6-merkinnän
 `status` on `"untested"`, mitään statusta ei muuteta missään, eikä yhtäkään testifunktiota
 ole olemassa. Ainoa laskeva funktio `exposure_gradient_test` tarkistaa monotonisuutta
 **käsin annetuista** järjestysluvuista, ei ladatusta datasta.
 
-Yksikään koodipolku ei avaa `lea2016_dog_sperm.json`- eikä
-`livestock_negative_control.json`-tiedostoa. Koira- ja härkämoduulit käyttävät sen sijaan
+Auditin alkuhetkellä yksikään koodipolku ei avannut `lea2016_dog_sperm.json`- eikä
+`livestock_negative_control.json`-tiedostoa. Koira- ja härkämoduulit käyttivät sen sijaan
 käsin kirjoitettuja merkkijonoja (`"declining"`, `"variable (rose then plateaued)"`).
+Korjaustilassa Lea-aineisto luetaan `berm.data.sentinel_normalize`-normalisoijassa;
+karja-artefakti sisältää edelleen vain kirjallisuusmetatietoa eikä numeerisia rivejä.
 
 Lisäksi `berm/csli/` ja `berm/stats/csli.py` ovat kaksi erillistä kehystä, joilla on eri
 lajilistat ja **eri biologiavakiot samoille lajeille** (mehiläisen viive 0.3 vs. 0.5 vuotta;
 ihmisen sukupolviaika 74 vrk vs. 365×15 vrk).
+
+**Korjaustila 2026-08-19:** koira-aineisto luetaan nyt normalisoijassa kanoniseen
+provenanssitauluun. Käsin annettu altistusjärjestys ja siitä johdettu monotonisuustulos on
+poistettu; julkiset CSLI-rajapinnat palauttavat `BLOCKED`/`NOT_ELIGIBLE`, kunnes kelpoinen
+mitattu paneeli on olemassa. Tämä ei suorita F1–F6-testejä eikä ratkaise lajibiologian
+mallioletusten eroja.
 
 ### A-10 — RF-altistusta ei ole pariutettu yhteenkään biologiseen päätetapahtumaan
 
@@ -215,6 +223,10 @@ tämän itse: *"No measured RF dosimetry for any species environment"*.
 Ainoa kvantitatiivinen altistusproxy (mobiililiittymät) yhdistetään biologiaan vain
 muistissa `stats/csli.py`:n sisällä, eikä koskaan mehiläisiä, lintuja, ihmisspermaa ja
 TFR:ää pidemmälle — ei koskaan koiraan tai härkään.
+
+**Korjaustila 2026-08-19:** mobile-proxyyn nojaavat numeeriset CSLI-viive-, PCA- ja
+leave-one-out-tulokset on vedetty pois julkisesta artefaktista. Nykyinen rajapinta ei
+hyväksy mobiililiittymiä RF-dosimetriaksi; mitattua `E_RF`-sarjaa ei silti vielä ole.
 
 ### A-11 — Kolme rinnakkaista totuutta samoille suureille
 

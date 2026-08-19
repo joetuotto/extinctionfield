@@ -9,6 +9,14 @@ from berm.stats.reversible_persistent import estimate_rp_parameters, RPEstimatio
 from berm.stats.synthetic_tests import run_falsification_battery, placebo_rollout_test, wrong_lag_test
 from berm.stats.event_study import event_study, EventStudyResult
 from berm.stats.external_exposure import exposure_from_data, mobile_to_personal_emf
+from berm.stats.fieldstate_core import (
+    FIELDSTATE_CORE_VERSION,
+    FieldStateCoreResult,
+    FieldStateFeatures,
+    RegisteredOrganIncrement,
+    evaluate_fieldstate_core,
+    extract_fieldstate_features,
+)
 
 __all__ = [
     "compare_models",
@@ -22,4 +30,10 @@ __all__ = [
     "EventStudyResult",
     "exposure_from_data",
     "mobile_to_personal_emf",
+    "FIELDSTATE_CORE_VERSION",
+    "FieldStateCoreResult",
+    "FieldStateFeatures",
+    "RegisteredOrganIncrement",
+    "evaluate_fieldstate_core",
+    "extract_fieldstate_features",
 ]

@@ -21,6 +21,14 @@ from typing import Any
 
 import numpy as np
 
+from berm.stats.csli_readiness import (
+    CSLIInput,
+    blocked_result,
+    current_source_blocked_result,
+    unpack_input,
+    validate_pair_contract,
+)
+
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 SENTINEL_DIR = DATA_DIR / "sentinel"
 
@@ -162,13 +170,13 @@ def _bspline_basis(lag: float, k: int, knots: np.ndarray,
 
 # ─── Lag-kernel estimation ──────────────────────────────────────────
 
-def estimate_lag_kernel(
+def _estimate_lag_kernel_unchecked(
     outcome_data: dict[str, dict[int, float]],
     emf_data: dict[str, dict[int, float]],
     max_lag: int = 15,
     n_spline_knots: int = 5,
 ) -> dict[str, Any]:
-    """Estimate lag-kernel w(l) for one sentinel species.
+    """Internal numerical kernel estimator after readiness validation.
 
     outcome_data: {country_iso3: {year: value}}
     emf_data: {country_iso3: {year: emf_proxy}}
@@ -192,8 +200,8 @@ def estimate_lag_kernel(
         years = sorted(out_years & emf_years)
 
         for year in years:
-            min_emf_year = min(emf_years) if emf_years else year
-            if year - max_lag < min_emf_year:
+            required_exposure_years = set(range(year - max_lag, year + 1))
+            if not required_exposure_years.issubset(emf_years):
                 continue
 
             spline_components = []
@@ -201,7 +209,10 @@ def estimate_lag_kernel(
                 wce_k = 0.0
                 for lag in range(max_lag + 1):
                     basis_val = _bspline_basis(float(lag), k, knots, degree)
-                    emf_val = emf_data[country].get(year - lag, 0.0)
+                    # This function is deliberately reached only after a
+                    # complete calendar-year lag window was verified.  Never
+                    # turn an unavailable exposure into a zero exposure.
+                    emf_val = emf_data[country][year - lag]
                     wce_k += basis_val * emf_val
                 spline_components.append(wce_k)
 
@@ -253,6 +264,67 @@ def estimate_lag_kernel(
     }
 
 
+def _unpack_pair_inputs(
+    outcome_data: CSLIInput | dict[str, dict[int, float]],
+    exposure_data: CSLIInput | dict[str, dict[int, float]],
+    readiness: dict[str, Any] | None,
+) -> tuple[dict[str, dict[int, float]], dict[str, dict[int, float]], dict[str, Any] | None]:
+    """Extract values and one analysis-level readiness contract.
+
+    ``CSLIInput`` may carry the full pair-level contract.  Passing bare
+    mappings remains supported only to return a structured ineligibility
+    result; it cannot enable calculation.
+    """
+
+    outcome_values, outcome_contract = unpack_input(outcome_data)
+    exposure_values, exposure_contract = unpack_input(exposure_data)
+    if readiness is None:
+        readiness = dict(outcome_contract or exposure_contract) if (outcome_contract or exposure_contract) else None
+    elif outcome_contract is not None or exposure_contract is not None:
+        raise ValueError("Pass readiness either in CSLIInput or as readiness=, not both")
+    return dict(outcome_values), dict(exposure_values), readiness
+
+
+def estimate_lag_kernel(
+    outcome_data: CSLIInput | dict[str, dict[int, float]],
+    emf_data: CSLIInput | dict[str, dict[int, float]],
+    max_lag: int = 15,
+    n_spline_knots: int = 5,
+    *,
+    readiness: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Public, fail-closed lag-kernel entry point.
+
+    The caller must supply a ``csli-readiness/v1`` contract that verifies the
+    outcome endpoint, exact geography, measured RF exposure, annual calendar
+    coverage and required covariates.  Current repository sentinel inputs do
+    not meet that contract and return ``NOT_ELIGIBLE`` without numeric lag
+    results.
+    """
+
+    outcomes, exposure, readiness = _unpack_pair_inputs(outcome_data, emf_data, readiness)
+    blocked = validate_pair_contract(
+        outcomes,
+        exposure,
+        readiness,
+        max_lag=max_lag,
+        analysis="lag_kernel",
+    )
+    if blocked is not None:
+        return blocked
+    result = _estimate_lag_kernel_unchecked(outcomes, exposure, max_lag, n_spline_knots)
+    # A contract can pass the structural checks yet have too little data for a
+    # fitted spline.  Preserve the fail-closed public envelope in that case.
+    if "error" in result:
+        return blocked_result(
+            "lag_kernel",
+            [{"code": "INSUFFICIENT_ELIGIBLE_ROWS", "message": result["error"]}],
+            readiness={"max_lag_years": max_lag},
+            status="BLOCKED",
+        )
+    return {"status": "ELIGIBLE", "analysis": "lag_kernel", **result}
+
+
 # ─── Cross-species lag comparison ──────────────────────────────────
 
 SPECIES_BIOLOGY = {
@@ -283,7 +355,7 @@ SPECIES_BIOLOGY = {
 }
 
 
-def cross_species_lag_comparison(
+def _cross_species_lag_comparison_unchecked(
     sentinel_data: dict[str, dict[str, dict[int, float]]],
     emf_data: dict[str, dict[int, float]],
 ) -> dict[str, Any]:
@@ -299,7 +371,7 @@ def cross_species_lag_comparison(
     for species, biology in SPECIES_BIOLOGY.items():
         if species not in sentinel_data:
             continue
-        result = estimate_lag_kernel(sentinel_data[species], emf_data)
+        result = _estimate_lag_kernel_unchecked(sentinel_data[species], emf_data)
         results[species] = {
             **result,
             "description": biology["description"],
@@ -345,15 +417,84 @@ def cross_species_lag_comparison(
     }
 
 
+def cross_species_lag_comparison(
+    sentinel_data: dict[str, CSLIInput | dict[str, dict[int, float]]],
+    emf_data: CSLIInput | dict[str, dict[int, float]],
+    *,
+    readiness_by_species: dict[str, dict[str, Any]] | None = None,
+    cross_species_contract: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Public, fail-closed cross-species comparison.
+
+    A ranked cascade has stronger requirements than a single association: each
+    species needs an eligible pair contract *and* the comparison needs a
+    verified shared geography/time shock, endpoint orientation, and a locked
+    ordering rule.  The legacy collections do not satisfy these requirements.
+    """
+
+    if readiness_by_species is None:
+        return blocked_result(
+            "cross_species_lag_comparison",
+            [{
+                "code": "INPUT_METADATA_REQUIRED",
+                "message": "Each species needs a verified CSLI pair contract before cross-species lag comparison.",
+            }],
+        )
+    if not isinstance(cross_species_contract, dict) or not all(
+        cross_species_contract.get(key) is True
+        for key in ("verified_shared_geography_time", "endpoint_orientation_verified", "ordering_rule_locked")
+    ):
+        return blocked_result(
+            "cross_species_lag_comparison",
+            [{
+                "code": "CROSS_SPECIES_ALIGNMENT_UNVERIFIED",
+                "message": "A cascade requires verified shared geography/time, endpoint orientation, and a pre-specified ordering rule.",
+            }],
+        )
+
+    exposure_values, exposure_contract = unpack_input(emf_data)
+    blocked_reasons: list[dict[str, Any]] = []
+    eligible_panel: dict[str, dict[str, dict[int, float]]] = {}
+    for species, outcome_input in sentinel_data.items():
+        outcome_values, embedded_contract = unpack_input(outcome_input)
+        contract = readiness_by_species.get(species)
+        if contract is None and embedded_contract is not None:
+            contract = dict(embedded_contract)
+        if contract is None and exposure_contract is not None:
+            contract = dict(exposure_contract)
+        gate = validate_pair_contract(
+            outcome_values,
+            exposure_values,
+            contract,
+            max_lag=15,
+            analysis=f"cross_species_lag_comparison:{species}",
+        )
+        if gate is not None:
+            blocked_reasons.extend(gate["reasons"])
+        else:
+            eligible_panel[species] = dict(outcome_values)
+    if blocked_reasons:
+        return blocked_result("cross_species_lag_comparison", blocked_reasons)
+
+    result = _cross_species_lag_comparison_unchecked(eligible_panel, dict(exposure_values))
+    if "error" in result:
+        return blocked_result(
+            "cross_species_lag_comparison",
+            [{"code": "INSUFFICIENT_ELIGIBLE_SPECIES", "message": result["error"]}],
+            status="BLOCKED",
+        )
+    return {"status": "ELIGIBLE", "analysis": "cross_species_lag_comparison", **result}
+
+
 # ─── Lag-invariance test ───────────────────────────────────────────
 
-def lag_invariance_test(
+def _lag_invariance_unchecked(
     species: str,
     sentinel_data: dict[str, dict[int, float]],
     emf_data: dict[str, dict[int, float]],
     max_lag: int = 10,
 ) -> dict[str, Any]:
-    """Test whether lag is constant across countries for one species.
+    """Internal annual-calendar implementation after readiness validation.
 
     Estimates Δ_r for each country separately and tests:
     σ_Δ << μ_Δ (small dispersion relative to mean).
@@ -369,32 +510,33 @@ def lag_invariance_test(
             continue
 
         sent_years = sorted(sentinel_data[iso3].keys())
-        emf_years = sorted(emf_data[iso3].keys())
-        common_years = sorted(set(sent_years) & set(emf_years))
-
-        if len(common_years) < 5:
+        if len(sent_years) < 5:
             continue
-
-        sentinel_ts = np.array([sentinel_data[iso3][y] for y in common_years])
-        emf_ts = np.array([emf_data[iso3][y] for y in common_years])
 
         best_lag = 0
         best_corr = 0.0
-        for lag in range(0, min(max_lag + 1, len(common_years) - 4)):
-            s = sentinel_ts[lag:]
-            e = emf_ts[: len(s)]
-            if len(s) < 5:
+        best_n_pairs = 0
+        for lag in range(max_lag + 1):
+            pairs = [
+                (sentinel_data[iso3][year], emf_data[iso3][year - lag])
+                for year in sent_years
+                if year - lag in emf_data[iso3]
+            ]
+            if len(pairs) < 5:
                 continue
+            s = np.array([pair[0] for pair in pairs])
+            e = np.array([pair[1] for pair in pairs])
             corr_matrix = np.corrcoef(s, e)
             corr = corr_matrix[0, 1]
             if abs(corr) > abs(best_corr):
                 best_corr = corr
                 best_lag = lag
+                best_n_pairs = len(pairs)
 
         country_lags[iso3] = {
             "best_lag": best_lag,
             "best_corr": round(float(best_corr), 3),
-            "n_years": len(common_years),
+            "n_years": best_n_pairs,
         }
 
     if len(country_lags) < 3:
@@ -426,9 +568,44 @@ def lag_invariance_test(
     }
 
 
+def lag_invariance_test(
+    species: str,
+    sentinel_data: CSLIInput | dict[str, dict[int, float]],
+    emf_data: CSLIInput | dict[str, dict[int, float]],
+    max_lag: int = 10,
+    *,
+    readiness: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Public, fail-closed country-lag invariance diagnostic.
+
+    The numerical routine aligns each pair by its actual calendar year, never
+    by its position in a sparse observation array.  It is unavailable unless
+    the input contract verifies annual, exact-geography data.
+    """
+
+    outcomes, exposure, readiness = _unpack_pair_inputs(sentinel_data, emf_data, readiness)
+    blocked = validate_pair_contract(
+        outcomes,
+        exposure,
+        readiness,
+        max_lag=max_lag,
+        analysis="lag_invariance",
+    )
+    if blocked is not None:
+        return blocked
+    result = _lag_invariance_unchecked(species, outcomes, exposure, max_lag)
+    if "error" in result:
+        return blocked_result(
+            "lag_invariance",
+            [{"code": "INSUFFICIENT_ELIGIBLE_COUNTRIES", "message": result["error"]}],
+            status="BLOCKED",
+        )
+    return {"status": "ELIGIBLE", "analysis": "lag_invariance", **result}
+
+
 # ─── Biological scaling law ───────────────────────────────────────
 
-def test_biological_scaling(
+def _test_biological_scaling_unchecked(
     observed_lags: dict[str, float],
 ) -> dict[str, Any]:
     """Test whether lag scales with log(generation_time).
@@ -474,9 +651,52 @@ def test_biological_scaling(
     }
 
 
+def test_biological_scaling(
+    observed_lags: dict[str, float],
+    *,
+    readiness: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Public fail-closed scaling check for independently validated lags.
+
+    A regression over model-derived lag point estimates is not evidence of a
+    biological scaling law.  Only a versioned set of externally validated lag
+    estimates, with uncertainty and a pre-specified direction, may reach the
+    internal numerical routine.
+    """
+
+    if not isinstance(readiness, dict) or not all(
+        readiness.get(key) is True
+        for key in ("lag_estimates_independently_validated", "uncertainty_available", "direction_pre_specified")
+    ):
+        return blocked_result(
+            "biological_scaling",
+            [{
+                "code": "VALIDATED_LAG_ESTIMATES_REQUIRED",
+                "message": "Biological scaling requires independently validated lag estimates with uncertainty and a pre-specified directional hypothesis.",
+            }],
+        )
+    result = _test_biological_scaling_unchecked(observed_lags)
+    if "error" in result:
+        return blocked_result(
+            "biological_scaling",
+            [{"code": "INSUFFICIENT_ELIGIBLE_SPECIES", "message": result["error"]}],
+            status="BLOCKED",
+        )
+    if result["slope"] <= 0:
+        return blocked_result(
+            "biological_scaling",
+            [{
+                "code": "SCALING_DIRECTION_INCONSISTENT",
+                "message": "The fitted slope is not in the pre-specified positive direction; no biological scaling result is reported.",
+            }],
+            status="BLOCKED",
+        )
+    return {"status": "ELIGIBLE", "analysis": "biological_scaling", **result}
+
+
 # ─── Latent common shock ──────────────────────────────────────────
 
-def latent_common_shock(
+def _latent_common_shock_unchecked(
     sentinel_panel: dict[str, dict[str, dict[int, float]]],
     emf_data: dict[str, dict[int, float]],
     tfr_data: dict[str, dict[int, float]],
@@ -614,14 +834,43 @@ def latent_common_shock(
     }
 
 
+def latent_common_shock(
+    sentinel_panel: dict[str, dict[str, dict[int, float]]],
+    emf_data: dict[str, dict[int, float]],
+    tfr_data: dict[str, dict[int, float]],
+    *,
+    readiness: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Retired public PCA shortcut for a latent common-shock claim.
+
+    The previous routine pooled sparse, heterogeneous observations and compared
+    an intercept-only model with models containing a PCA score.  That is not a
+    cultural or causal comparison, and cannot safely be converted into a
+    public result by adding a few flags.  Keep the numerical implementation
+    above private for method development only; a future public implementation
+    must use a preregistered dynamic panel with country/time effects, matched
+    measured exposure and covariates, and held-out scoring.
+    """
+
+    del sentinel_panel, emf_data, tfr_data, readiness
+    return blocked_result(
+        "latent_common_shock",
+        [{
+            "code": "LEGACY_LATENT_SHOCK_METHOD_RETIRED",
+            "message": "The legacy PCA/intercept comparison is not an eligible causal or common-shock test. A verified dynamic-panel protocol is required.",
+        }],
+        status="BLOCKED",
+    )
+
+
 # ─── Prospective test ─────────────────────────────────────────────
 
-def prospective_sentinel_test(
+def _prospective_sentinel_test_unchecked(
     sentinel_data: dict[str, dict[int, float]],
     tfr_data: dict[str, dict[int, float]],
     emf_data: dict[str, dict[int, float]],
 ) -> dict[str, Any]:
-    """Leave-one-country-out sentinel prediction.
+    """Legacy numerical routine retained for internal method comparison only.
 
     For each holdout country:
     1. Learn Δ (sentinel→TFR lag) from training countries
@@ -702,6 +951,32 @@ def prospective_sentinel_test(
     }
 
 
+def prospective_sentinel_test(
+    sentinel_data: CSLIInput | dict[str, dict[int, float]],
+    tfr_data: CSLIInput | dict[str, dict[int, float]],
+    emf_data: CSLIInput | dict[str, dict[int, float]],
+    *,
+    readiness: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Retire the legacy leave-country-out lag routine from public use.
+
+    It previously estimated each holdout country's ``actual_lag`` from its
+    complete observed series, used no temporal holdout, and reported
+    ``mean ± 2σ`` as a 95% interval.  It also only filtered on ``emf_data``
+    without using it in the calculation.  This is not a prospective test.
+    """
+
+    del sentinel_data, tfr_data, emf_data, readiness
+    return blocked_result(
+        "prospective_sentinel_test",
+        [{
+            "code": "LEGACY_PROSPECTIVE_METHOD_RETIRED",
+            "message": "The legacy country-holdout lag routine is not prospective and cannot produce a hit rate or confidence interval. A frozen temporal protocol is required.",
+        }],
+        status="BLOCKED",
+    )
+
+
 def generate_locked_prediction(
     training_countries: list[str],
     target_country: str,
@@ -709,166 +984,74 @@ def generate_locked_prediction(
     mu_delta: float,
     sigma_delta: float,
 ) -> dict[str, Any]:
-    """Generate a locked prediction for the Predictions page."""
-    return {
-        "prediction_type": "sentinel_cascade",
-        "training_countries": training_countries,
-        "target_country": target_country,
-        "sentinel_change_year": sentinel_change_year,
-        "predicted_tfr_change_year": round(sentinel_change_year + mu_delta, 1),
-        "ci_95": (
-            round(sentinel_change_year + mu_delta - 2 * sigma_delta, 1),
-            round(sentinel_change_year + mu_delta + 2 * sigma_delta, 1),
-        ),
-        "locked_date": "2026-08-18",
-        "model_version": "v18.0",
-        "status": "LOCKED - awaiting verification",
-    }
+    """Disable legacy CSLI prediction locks until an eligible protocol exists."""
+
+    del training_countries, target_country, sentinel_change_year, mu_delta, sigma_delta
+    return blocked_result(
+        "locked_sentinel_prediction",
+        [{
+            "code": "LOCKED_PREDICTION_DISABLED",
+            "message": "Current CSLI sources and the retired lag method cannot support a locked prediction. Require a versioned eligible input artifact and a frozen temporal validation protocol.",
+        }],
+        status="BLOCKED",
+    )
 
 
-# ─── Diagnostic printer ───────────────────────────────────────────
+# ─── Public readiness artifact ─────────────────────────────────────
 
-def print_full_csli_diagnostic() -> None:
-    """Run and print full CSLI diagnostic."""
+def current_csli_readiness() -> dict[str, Any]:
+    """Return a non-numeric readiness report for the current source snapshot."""
+
+    return current_source_blocked_result("current_csli_diagnostic")
+
+
+def export_current_csli_readiness(path: str | Path) -> dict[str, Any]:
+    """Write the safe replacement artifact at an explicitly requested path.
+
+    The function never overwrites a path implicitly.  Its result intentionally
+    contains no lag, correlation, hit-rate, interval, PCA, or model-score
+    fields, so downstream renderers cannot mistake source readiness for
+    evidence.
+    """
+
+    artifact = current_csli_readiness()
+    target = Path(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(artifact, indent=2, sort_keys=True) + "\n")
+    return artifact
+
+
+def print_full_csli_diagnostic() -> dict[str, Any]:
+    """Print the current CSLI readiness gate; numerical diagnostics are retired."""
+
+    result = current_csli_readiness()
     print("=" * 70)
-    print("CROSS-SPECIES LAG INVARIANCE (CSLI) DIAGNOSTIC")
+    print("CSLI DIAGNOSTIC: BLOCKED PENDING ELIGIBLE SENTINEL PANEL")
     print("=" * 70)
-    print()
+    for reason in result["reasons"]:
+        print(f"  - [{reason['code']}] {reason['message']}")
+    print("No lag, correlation, confidence interval, LOOCV, or locked prediction is reported.")
+    return result
 
-    # Load data
-    print("Loading data...")
-    bees = load_bee_data()
-    birds = load_bird_data()
-    sperm = load_sperm_data()
-    emf = load_emf_data()
-    tfr = load_tfr_data()
-    print(f"  Bees: {len(bees)} countries")
-    print(f"  Birds: {len(birds)} countries")
-    print(f"  Sperm: {len(sperm)} countries")
-    print(f"  EMF: {len(emf)} countries")
-    print(f"  TFR: {len(tfr)} countries")
-    print()
 
-    # Cross-species lag comparison
-    print("CROSS-SPECIES LAG COMPARISON")
-    print("-" * 70)
-    sentinel_panel = {
-        "bees": bees,
-        "birds": birds,
-        "human_sperm": sperm,
-        "human_tfr": tfr,
-    }
-    comparison = cross_species_lag_comparison(sentinel_panel, emf)
+def main(argv: list[str] | None = None) -> int:
+    """Emit only the fail-closed readiness artifact for the current sources."""
 
-    if "error" not in comparison:
-        print(f"{'Species':30s} {'Mean lag':>10s} {'Expected':>10s} {'N obs':>8s} {'R²':>8s}")
-        print("-" * 70)
-        for species, ml, el in comparison["lag_order"]:
-            r = comparison["species_results"][species]
-            n = r.get("n_observations", "?")
-            r2 = r.get("r_squared", "?")
-            print(f"  {species:28s} {ml:9.1f}y {el:9.1f}y {str(n):>7s} {str(r2):>7s}")
-        print()
-        print(f"  Spearman ρ = {comparison['spearman_rho']}, p = {comparison['spearman_p']}")
-        if comparison["order_matches_biology"]:
-            print("  -> Lag order matches biological prediction")
-        else:
-            print("  -> Lag order does NOT match biological prediction")
+    import argparse
+
+    parser = argparse.ArgumentParser(description="CSLI readiness gate")
+    parser.add_argument(
+        "--export-readiness",
+        type=Path,
+        help="Explicit output path for the non-numeric CSLI readiness JSON artifact.",
+    )
+    args = parser.parse_args(argv)
+    if args.export_readiness:
+        export_current_csli_readiness(args.export_readiness)
     else:
-        print(f"  Error: {comparison['error']}")
-    print()
+        print_full_csli_diagnostic()
+    return 0
 
-    # Lag invariance for each species
-    print("LAG INVARIANCE TESTS")
-    print("-" * 70)
-    for species_name, species_data in [
-        ("bees", bees),
-        ("birds", birds),
-        ("human_sperm", sperm),
-    ]:
-        inv = lag_invariance_test(species_name, species_data, emf)
-        if "error" not in inv:
-            print(f"  {species_name}: μ={inv['mu_lag']:.1f}y, σ={inv['sigma_lag']:.1f}y, "
-                  f"CV={inv['cv']:.3f} ({inv['n_countries']} countries)")
-            print(f"    -> {inv['assessment']}")
-        else:
-            print(f"  {species_name}: {inv['error']}")
-    print()
 
-    # Biological scaling
-    print("BIOLOGICAL SCALING LAW")
-    print("-" * 70)
-    if "error" not in comparison and comparison.get("species_results"):
-        observed = {
-            s: r["mean_lag"]
-            for s, r in comparison["species_results"].items()
-            if "error" not in r
-        }
-        scaling = test_biological_scaling(observed)
-        if "error" not in scaling:
-            print(f"  {scaling['formula']}")
-            print(f"  R² = {scaling['r_squared']}")
-            if scaling["follows_scaling"]:
-                print("  -> Lag follows biological scaling law")
-            else:
-                print("  -> Lag does NOT follow biological scaling law")
-        else:
-            print(f"  {scaling['error']}")
-    print()
-
-    # Latent common shock
-    print("LATENT COMMON SHOCK ANALYSIS")
-    print("-" * 70)
-    shock = latent_common_shock(sentinel_panel, emf, tfr)
-    if "error" not in shock:
-        print(f"  Panel: {shock['n_countries']} countries, {shock['n_observations']} obs")
-        print(f"  PC1 explains {shock['first_pc_explains']:.1%} of sentinel variance")
-        print(f"  H-EMF correlation: {shock['H_emf_correlation']:.3f}")
-        print()
-        print(f"  {'Model':25s} {'R²':>8s} {'BIC':>10s}")
-        for name, vals in shock["model_comparison"].items():
-            print(f"  {name:25s} {vals['r2']:7.4f} {vals['bic']:9.1f}")
-        print()
-        if shock["common_shock_real"]:
-            print("  -> Common environmental shock IS real (M_E > M_C)")
-        else:
-            print("  -> Common environmental shock NOT confirmed")
-        if shock["emf_explains_shock"]:
-            print("  -> EMF explains the common shock (M_BERM > M_E)")
-        else:
-            print("  -> EMF does NOT clearly explain the common shock")
-    else:
-        print(f"  {shock['error']}")
-    print()
-
-    # Prospective test
-    print("PROSPECTIVE SENTINEL TEST (Leave-one-country-out)")
-    print("-" * 70)
-    prosp = prospective_sentinel_test(bees, tfr, emf)
-    if "error" not in prosp:
-        print(f"  Countries: {prosp['n_countries']}")
-        print(f"  Overall Δ: {prosp['overall_mu_delta']:.1f} ± {prosp['overall_sigma_delta']:.1f} years")
-        print(f"  Hit rate: {prosp['hit_rate']:.1%}")
-        print()
-        for p in prosp["predictions"]:
-            marker = "HIT" if p["hit"] else "MISS"
-            print(f"  {p['holdout']:6s}: pred={p['predicted_lag']:.1f} "
-                  f"({p['ci_95'][0]:.1f}-{p['ci_95'][1]:.1f}), "
-                  f"actual={p['actual_lag']}, [{marker}]")
-    else:
-        print(f"  {prosp['error']}")
-    print()
-
-    print("CAVEATS")
-    print("-" * 70)
-    caveats = [
-        "COLOSS data collected from publications, not verified against original databases",
-        "Bee winter loss has major confounders: Varroa, neonicotinoids, climate, husbandry",
-        "Cross-correlation ≠ causation; lag invariance is stronger but still not causal proof",
-        "Sentinel data time series are short (most <20 years)",
-        "Biological scaling law is a hypothesis, not a fact",
-        "Prospective predictions require YEARS to verify (Δ ≈ 4yr → test in 2030)",
-        "EMF proxy (mobile subs/100) correlates with general economic development",
-    ]
-    for c in caveats:
-        print(f"  - {c}")
+if __name__ == "__main__":  # pragma: no cover - command-line wrapper
+    raise SystemExit(main())

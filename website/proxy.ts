@@ -10,7 +10,7 @@ const REDIRECTS: Record<string, string> = {
   "/objections": "/about/objections",
 };
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const pathnameHasLocale = locales.some(

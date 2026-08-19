@@ -1,30 +1,25 @@
 "use client";
 
 import {
-  ComposedChart,
+  CartesianGrid,
   Line,
-  Scatter,
+  ReferenceLine,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  ReferenceLine,
-  Area,
+  LineChart,
 } from "recharts";
 
 interface YearRow {
   year: number;
-  predictedTFR: number;
-  nativeTFR: number | null;
-  ivfShare: number;
   observedTFR: number | null;
-  isForecast: boolean;
 }
 
 interface Props {
   timeseries: YearRow[];
   country: string;
+  locale?: "en" | "fi";
 }
 
 const DISPLAY_NAMES: Record<string, string> = {
@@ -32,47 +27,30 @@ const DISPLAY_NAMES: Record<string, string> = {
   USA: "United States",
 };
 
-export function FertilityChart({ timeseries, country }: Props) {
+export function FertilityChart({ timeseries, country, locale = "en" }: Props) {
+  const isFinnish = locale === "fi";
   const chartData = timeseries
-    .filter((r) => r.year >= 1970 && r.year <= 2040)
-    .map((r) => {
-      const biologicalTFR = r.predictedTFR * (1 - (r.ivfShare || 0));
-      return {
-        year: r.year,
-        predicted: r.predictedTFR,
-        biological: r.ivfShare > 0.005 ? biologicalTFR : undefined,
-        native: r.nativeTFR,
-        observed: r.observedTFR,
-        forecastHigh: r.isForecast
-          ? r.predictedTFR * 1.1
-          : undefined,
-        forecastLow: r.isForecast
-          ? r.predictedTFR * 0.9
-          : undefined,
-      };
-    });
+    .filter((row) => row.year <= 2024 && typeof row.observedTFR === "number")
+    .map((row) => ({ year: row.year, observed: row.observedTFR }));
 
   return (
     <div>
-      <h3 className="text-lg font-semibold mb-4">
-        Total Fertility Rate &mdash;{" "}
-        {DISPLAY_NAMES[country] || country}
+      <h3 className="mb-2 text-lg font-semibold">
+        {isFinnish ? "Julkaistu kokonaishedelmällisyysluku" : "Published total fertility rate"} — {DISPLAY_NAMES[country] || country}
       </h3>
-      <ResponsiveContainer width="100%" height={400}>
-        <ComposedChart
-          data={chartData}
-          margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
-        >
+      <p className="mb-4 max-w-3xl text-xs leading-relaxed text-foreground-muted">
+        {isFinnish
+          ? "Kaavio näyttää vain paketoidun demografisen lähdesarjan julkaistut arvot. TFR on periodimittari, ei biologinen päätepiste eikä FieldState–ASFR-v2:n maaennuste."
+          : "This chart shows only published values from the bundled demographic source series. TFR is a period measure, not a biological endpoint or a FieldState–ASFR-v2 country forecast."}
+      </p>
+      <ResponsiveContainer width="100%" height={360}>
+        <LineChart data={chartData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
-          <XAxis
-            dataKey="year"
-            stroke="var(--foreground-muted)"
-            tick={{ fontSize: 12 }}
-          />
+          <XAxis dataKey="year" stroke="var(--foreground-muted)" tick={{ fontSize: 12 }} />
           <YAxis
             stroke="var(--foreground-muted)"
             tick={{ fontSize: 12 }}
-            domain={["auto", "auto"]}
+            domain={[0, "auto"]}
             label={{
               value: "TFR",
               angle: -90,
@@ -88,86 +66,35 @@ export function FertilityChart({ timeseries, country }: Props) {
               color: "var(--foreground)",
               fontSize: "13px",
             }}
-            formatter={(value, name) => {
-              if (name === "predicted")
-                return [Number(value).toFixed(2), "BERM prediction (observed)"];
-              if (name === "biological")
-                return [Number(value).toFixed(2), "Biological TFR (excl. IVF)"];
-              if (name === "native")
-                return [Number(value).toFixed(2), "Native TFR (excl. immigration)"];
-              if (name === "observed")
-                return [Number(value).toFixed(2), "Observed (World Bank)"];
-              return [String(value), String(name)];
-            }}
+            formatter={(value) => [
+              typeof value === "number"
+                ? value.toFixed(2)
+                : Array.isArray(value)
+                  ? value.join(", ")
+                  : value ?? "",
+              isFinnish ? "Julkaistu TFR" : "Published TFR",
+            ]}
           />
-
           <ReferenceLine
             y={2.1}
             stroke="#EF4444"
             strokeDasharray="5 5"
             strokeOpacity={0.5}
             label={{
-              value: "Replacement (2.1)",
+              value: isFinnish ? "Uusiutumistaso (2,1)" : "Replacement (2.1)",
               position: "right",
               style: { fill: "#EF4444", fontSize: 11 },
             }}
           />
-
-          <ReferenceLine
-            x={2024}
-            stroke="var(--foreground-muted)"
-            strokeDasharray="3 3"
-            strokeOpacity={0.5}
-          />
-
-          <Area
-            dataKey="forecastHigh"
-            stroke="none"
-            fill="var(--accent)"
-            fillOpacity={0.08}
-          />
-          <Area
-            dataKey="forecastLow"
-            stroke="none"
-            fill="var(--background)"
-            fillOpacity={1}
-          />
-
           <Line
             type="monotone"
-            dataKey="predicted"
-            stroke="var(--accent)"
-            strokeWidth={2}
-            dot={false}
-            name="predicted"
-          />
-
-          <Line
-            type="monotone"
-            dataKey="biological"
-            stroke="#8B5CF6"
-            strokeWidth={1.5}
-            strokeDasharray="4 2"
-            dot={false}
-            name="biological"
-          />
-
-          <Line
-            type="monotone"
-            dataKey="native"
-            stroke="#F59E0B"
-            strokeWidth={1.5}
-            strokeDasharray="5 3"
-            dot={false}
-            name="native"
-          />
-
-          <Scatter
             dataKey="observed"
-            fill="var(--foreground-muted)"
+            stroke="var(--accent)"
+            strokeWidth={2.25}
+            dot={false}
             name="observed"
           />
-        </ComposedChart>
+        </LineChart>
       </ResponsiveContainer>
     </div>
   );

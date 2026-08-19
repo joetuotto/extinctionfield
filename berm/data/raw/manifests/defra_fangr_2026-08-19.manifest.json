@@ -1,0 +1,20 @@
+{
+  "manifest_id": "defra_fangr_2026-08-19",
+  "description": "Exact machine-readable CSV from DEFRA's published UK Farm Animal Genetic Resources annual breed inventory. It is a breeding-structure benchmark only, not a fertility, semen or RF-exposure panel.",
+  "retrieved_at": "2026-08-19",
+  "retrieval_method": "Direct HTTPS download of the 2025 inventory-data CSV linked from the stable DEFRA FAnGR statistics landing page.",
+  "license": "Open Government Licence v3.0",
+  "transform_pipeline_version": "fangr_breeding_structure@v1.0.0",
+  "files": [
+    {
+      "source_id": "DEFRA_FANGR_BREED_INVENTORY",
+      "path": "raw/defra_fangr/fangr_2026-08-19/fangr_timeseries_20260514.csv",
+      "original_filename": "fangr_timeseries_20260514.csv",
+      "bytes": 1894718,
+      "sha256": "08a3e6aac3e7a86d9abc25fd7cd810d3be64f53c0820c78f7173b9e3968fda1e",
+      "retrieved_at": "2026-08-19",
+      "source_url": "https://assets.publishing.service.gov.uk/media/6a5a206e5ca06bf11ccb43d7/fangr_timeseries_20260514.csv",
+      "note": "38,458 source rows across seven livestock species and 204 breeds. The values are national annual breed-population structure variables, not individual fertility, semen quality or RF exposure."
+    }
+  ]
+}

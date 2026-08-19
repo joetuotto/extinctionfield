@@ -25,7 +25,7 @@ export const NAV_ROUTES: NavRoute[] = [
   { href: "/model", labelEn: "Model", labelFi: "Malli", icon: GitBranch },
   { href: "/evidence", labelEn: "Evidence", labelFi: "Näyttö", icon: Layers },
   { href: "/sentinel", labelEn: "Sentinel", labelFi: "Lajit", icon: Leaf },
-  { href: "/predictions", labelEn: "Predictions", labelFi: "Ennusteet", icon: Target },
+  { href: "/predictions", labelEn: "Archive", labelFi: "Arkisto", icon: Target },
   { href: "/about", labelEn: "About", labelFi: "Tietoa", icon: Info },
 ];
 

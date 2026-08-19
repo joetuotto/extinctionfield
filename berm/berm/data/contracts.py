@@ -269,11 +269,42 @@ CANONICAL_TABLES: dict[str, TableSpec] = {
         ),
         _t(
             "sentinel_species_region_year",
-            ["geography_id", "year"],
+            ["geography_id", "year", "species", "endpoint"],
             ["pct_loss", "pct_motile", "pct_normal_morphology", "million_per_ml",
-             "index_base_100", "per_1000", "count", "cm2"],
+             "million_total", "index_base_100", "per_1000", "count", "cm2"],
             "Non-human sentinel endpoints, one row per species-endpoint-region-year.",
             extra_columns=("species", "endpoint"),
+        ),
+        _t(
+            "veterinary_sentinel_species_site_time",
+            ["geography_id", "observation_datetime", "species", "endpoint"],
+            ["count"],
+            "Veterinary sentinel counts at anonymised study-site and survey-time grain. "
+            "This is deliberately separate from annual CSLI inputs: the source may "
+            "have repeated within-year observations, non-geocodable sites, or an "
+            "intervention that makes a country-year causal join inappropriate.",
+            extra_columns=("species", "endpoint", "observation_datetime", "raw_record_key"),
+        ),
+        _t(
+            "measured_rf_site_time",
+            ["geography_id", "observation_datetime"],
+            ["V_per_m"],
+            "Measured ambient RF field-strength readings at a fixed probe and local time. "
+            "This is not a personal/organism dose and must remain separate from "
+            "biological endpoints until a pre-specified matched study panel exists.",
+            extra_columns=(
+                "observation_datetime",
+                "source_local_datetime",
+                "datetime_timezone_status",
+                "probe_key",
+                "latitude",
+                "longitude",
+                "measurement_geometry_status",
+                "personal_dose_status",
+                "biological_join_status",
+                "causal_analysis_eligibility",
+                "raw_record_key",
+            ),
         ),
     )
 }

@@ -1,4 +1,4 @@
-"""Species biology, observed trends, and endpoint definitions.
+"""Species biology and source-aware endpoint readiness definitions.
 
 Data sources:
   Dog:   Lea RG et al. 2016, Scientific Reports, N=1925 ejaculates
@@ -10,7 +10,7 @@ Data sources:
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
@@ -77,54 +77,68 @@ SPECIES_BIOLOGY_V2: dict[str, SpeciesBiology] = {
 }
 
 
-# ─── Dog endpoints (Lea et al. 2016) ─────────────────────────────
+# ─── Dog endpoint readiness (Lea et al. 2016) ─────────────────────
 
 @dataclass(frozen=True)
 class DogEndpoint:
-    """Reproductive endpoint measured in domestic dog studies."""
+    """Source-aware endpoint context, not a direction-of-effect claim."""
 
     name: str
     unit: str
-    lea_2016_trend: str
-    human_parallel: str
+    source_status: str
+    eligible_for_csli: bool
+    requirements: tuple[str, ...]
+
+
+DOG_ENDPOINT_REQUIREMENTS: tuple[str, ...] = (
+    "Observed regional or multi-country dog panel with retained raw observations",
+    "Matched observed human biomarker panel at the same geography and calendar resolution",
+    "Matched RF dosimetry and kennel/environment covariates",
+)
 
 
 DOG_ENDPOINTS: dict[str, DogEndpoint] = {
     "sperm_progressive_motility": DogEndpoint(
         name="Progressive motility",
         unit="%",
-        lea_2016_trend="declining",
-        human_parallel="Levine 2023: motility declining",
+        source_status="FIGURE_DIGITIZED_SINGLE_SITE",
+        eligible_for_csli=False,
+        requirements=DOG_ENDPOINT_REQUIREMENTS,
     ),
     "sperm_normal_morphology": DogEndpoint(
         name="Normal morphology",
         unit="%",
-        lea_2016_trend="declining",
-        human_parallel="Levine 2023: morphology declining",
+        source_status="FIGURE_DIGITIZED_SINGLE_SITE",
+        eligible_for_csli=False,
+        requirements=DOG_ENDPOINT_REQUIREMENTS,
     ),
     "sperm_concentration": DogEndpoint(
         name="Sperm concentration",
         unit="x10^6/mL",
-        lea_2016_trend="variable (rose then plateaued)",
-        human_parallel="Levine 2023: -62%",
+        source_status="FIGURE_DIGITIZED_SINGLE_SITE",
+        eligible_for_csli=False,
+        requirements=DOG_ENDPOINT_REQUIREMENTS,
     ),
     "dna_fragmentation_index": DogEndpoint(
         name="DNA fragmentation index",
         unit="%",
-        lea_2016_trend="not measured in Lea",
-        human_parallel="Houston 2016: increasing",
+        source_status="NOT_HELD_IN_LEA_SOURCE",
+        eligible_for_csli=False,
+        requirements=DOG_ENDPOINT_REQUIREMENTS,
     ),
     "testosterone": DogEndpoint(
         name="Testosterone",
         unit="ng/mL",
-        lea_2016_trend="not measured in Lea",
-        human_parallel="Travison 2007: -1.2%/yr",
+        source_status="NOT_HELD_IN_LEA_SOURCE",
+        eligible_for_csli=False,
+        requirements=DOG_ENDPOINT_REQUIREMENTS,
     ),
     "cryptorchidism_rate": DogEndpoint(
         name="Cryptorchidism prevalence",
         unit="%",
-        lea_2016_trend="changed over time",
-        human_parallel="increasing in several countries",
+        source_status="FIGURE_DIGITIZED_SINGLE_SITE",
+        eligible_for_csli=False,
+        requirements=DOG_ENDPOINT_REQUIREMENTS,
     ),
 }
 
@@ -133,95 +147,59 @@ DOG_ENDPOINTS: dict[str, DogEndpoint] = {
 
 @dataclass(frozen=True)
 class LivestockData:
-    """Observed semen trends in production animals."""
+    """Readiness context for a proposed livestock negative control.
+
+    This is deliberately not an observed response series and carries no RF
+    exposure estimate.  The held livestock JSON contains citation-level,
+    qualitative summaries only; it cannot establish a low-exposure contrast.
+    """
 
     species: str
     source: str
-    n_ejaculates: int
-    period: str
-    trend_concentration: str
-    trend_motility: str
-    emf_exposure: str
-    confounders: tuple[str, ...]
+    data_status: str
+    rf_exposure_status: str
+    eligible_for_csli: bool
+    requirements: tuple[str, ...]
 
 
 LIVESTOCK_DATA: dict[str, LivestockData] = {
     "bull": LivestockData(
         species="bull",
-        source="Hensel B et al. 2025/2026, Anim Reprod Sci",
-        n_ejaculates=47_757,
-        period="1997-2019",
-        trend_concentration="improved",
-        trend_motility="improved",
-        emf_exposure="low (rural, no household Wi-Fi/devices)",
-        confounders=(
-            "breeding selection (sperm quality = selection criterion)",
-            "production environment improvements (temperature, nutrition)",
-            "AI station management advances",
+        source="Held livestock citation summary (Wahl 2009; Karoui 2011; Hensel 2026)",
+        data_status="NO_NUMERIC_REGION_YEAR_SERIES_HELD",
+        rf_exposure_status="NOT_MEASURED",
+        eligible_for_csli=False,
+        requirements=(
+            "Row-level semen observations with source provenance",
+            "Matched RF dosimetry at the animal environment",
+            "Breeding-selection, collection-protocol, and management covariates",
         ),
     ),
     "boar": LivestockData(
         species="boar",
-        source="Hensel B et al. 2025/2026, Anim Reprod Sci",
-        n_ejaculates=619_368,
-        period="2005-2023",
-        trend_concentration="improved",
-        trend_motility="improved",
-        emf_exposure="low (production facility, limited RF)",
-        confounders=(
-            "breeding selection (sperm quality = selection criterion)",
-            "production environment improvements (temperature, nutrition)",
-            "AI station management advances",
+        source="Held livestock citation summary (Wahl 2009; Karoui 2011; Hensel 2026)",
+        data_status="NO_NUMERIC_REGION_YEAR_SERIES_HELD",
+        rf_exposure_status="NOT_MEASURED",
+        eligible_for_csli=False,
+        requirements=(
+            "Row-level semen observations with source provenance",
+            "Matched RF dosimetry at the animal environment",
+            "Breeding-selection, collection-protocol, and management covariates",
         ),
     ),
 }
 
 
-# ─── Exposure gradient ────────────────────────────────────────────
+# ─── Exposure-gradient readiness ───────────────────────────────────
 
-@dataclass(frozen=True)
-class ExposureLevel:
-    """Estimated EMF exposure level for a species/environment."""
-
-    species: str
-    environment: str
-    estimated_rf_level: str
-    rank: int
-    sperm_trend: str
-    trend_direction: int  # -1 declining, 0 stable, +1 improving
-
-
-EXPOSURE_GRADIENT: list[ExposureLevel] = [
-    ExposureLevel(
-        species="bull",
-        environment="rural/production facility",
-        estimated_rf_level="low",
-        rank=1,
-        sperm_trend="improving (concentration + motility)",
-        trend_direction=1,
-    ),
-    ExposureLevel(
-        species="bee",
-        environment="outdoor/ambient",
-        estimated_rf_level="medium (base stations)",
-        rank=2,
-        sperm_trend="colony losses increasing",
-        trend_direction=-1,
-    ),
-    ExposureLevel(
-        species="dog",
-        environment="home/indoor (Wi-Fi, BT, phones, IoT)",
-        estimated_rf_level="high",
-        rank=3,
-        sperm_trend="motility + morphology declining (Lea 2016)",
-        trend_direction=-1,
-    ),
-    ExposureLevel(
-        species="human",
-        environment="personal/on-body (phone 16h/day)",
-        estimated_rf_level="highest",
-        rank=4,
-        sperm_trend="concentration -62%, motility declining (Levine 2023)",
-        trend_direction=-1,
-    ),
-]
+# Deliberately no species rank, RF level, or response direction appears here.
+# Earlier versions encoded a presumed low→high exposure ordering and qualitative
+# publication summaries as if they were observations.  The raw source files
+# remain the authoritative record; this module exposes only what a future
+# measured exposure-gradient analysis must provide.
+EXPOSURE_GRADIENT_REQUIREMENTS: tuple[str, ...] = (
+    "Matched numeric RF dosimetry for every compared species environment",
+    "Comparable observed biological endpoints at the same geography and calendar resolution",
+    "Endpoint-specific confounders, including breeding/collection protocols where applicable",
+    "Pre-specified exposure-response model and direction before outcome analysis",
+)

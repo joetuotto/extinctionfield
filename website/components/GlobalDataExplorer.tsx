@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
+  membershipsFromPanel,
   parseGlobalPanelCsv,
-  parseGlobalValidation,
   type GlobalCountryPanel,
   type GlobalCountryYear,
   type GlobalPanel,
@@ -19,26 +19,30 @@ const copy = {
   en: {
     title: "Global country-year explorer",
     description:
-      "Browse the published country-year input panel by country and pre-specified coverage tier. The panel contains observed outcomes and exposure proxies; it is not a prediction display.",
+      "Browse the published country-year panel by country and pre-specified coverage tier. It contains published reported-or-estimated demographic series and technology-timing proxies, not measured FieldState or a prediction display.",
     loading: "Loading the published global panel…",
     error: "The global country-year panel is not available yet. No values are shown until a published artefact can be loaded.",
     tier: "Coverage tier",
     country: "Country",
     year: "Year",
     all: "All published countries",
-    core: "Core 51 · locked",
+    core: "Core 51",
     extended: "Extended",
     global: "Global",
     unassigned: "No published tier",
-    tfr: "Observed TFR",
+    tfr: "Published TFR series",
     mobile: "Mobile subscriptions",
     urban: "Urban population",
     gdp: "GDP PPP per capita",
     noValue: "Not reported",
     provenance: "Field provenance",
+    tfrProvenance: "TFR provenance",
+    tfrSource: "Source",
+    tfrStatus: "Series status",
+    tfrMeasurementType: "Measurement type",
     missingness: "Missingness note",
     trends: "Published country-year trends",
-    tfrTrend: "Observed TFR by year",
+    tfrTrend: "Published TFR series by year",
     mobileTrend: "Mobile subscriptions per 100 people by year",
     noTrend: "No published values are available for this series.",
     panelNote:
@@ -48,26 +52,30 @@ const copy = {
   fi: {
     title: "Globaalin maa–vuosi-aineiston tutkija",
     description:
-      "Selaa julkaistua maa–vuosi-syötepaneelia maan ja ennalta määritellyn kattavuustason mukaan. Paneeli sisältää havaittuja tuloksia ja altistusproxyja; se ei ole ennustenäkymä.",
+      "Selaa julkaistua maa–vuosi-paneelia maan ja ennalta määritellyn kattavuustason mukaan. Paneeli sisältää julkaistuja raportoituja tai estimoituja demografisia sarjoja ja teknologian ajoitusprokseja, ei mitattua FieldStatea eikä ennustenäkymää.",
     loading: "Ladataan julkaistua globaalia paneelia…",
     error: "Globaalia maa–vuosi-paneelia ei ole vielä saatavilla. Arvoja ei näytetä ennen julkaistun artefaktin lataamista.",
     tier: "Kattavuustaso",
     country: "Maa",
     year: "Vuosi",
     all: "Kaikki julkaistut maat",
-    core: "Core 51 · lukittu",
+    core: "Core 51",
     extended: "Laajennettu",
     global: "Globaali",
     unassigned: "Ei julkaistua tasoa",
-    tfr: "Havaittu TFR",
+    tfr: "Julkaistu TFR-sarja",
     mobile: "Mobiililiittymät",
     urban: "Kaupunkiväestö",
     gdp: "BKT (PPP) per asukas",
     noValue: "Ei raportoitu",
     provenance: "Kentän alkuperä",
+    tfrProvenance: "TFR-sarjan provenienssi",
+    tfrSource: "Lähde",
+    tfrStatus: "Sarjan tila",
+    tfrMeasurementType: "Mittauksen tyyppi",
     missingness: "Puuttuvuushuomio",
     trends: "Julkaistut maa–vuosi-trendit",
-    tfrTrend: "Havaittu TFR vuosittain",
+    tfrTrend: "Julkaistu TFR-sarja vuosittain",
     mobileTrend: "Mobiililiittymät per 100 asukasta vuosittain",
     noTrend: "Tälle sarjalle ei ole julkaistu arvoja.",
     panelNote:
@@ -181,17 +189,10 @@ export function GlobalDataExplorer({ locale }: { locale: string }) {
 
   useEffect(() => {
     const controller = new AbortController();
-    Promise.allSettled([
-      loadPanel(controller.signal),
-      fetch("/data/global_validation.json", { signal: controller.signal })
-        .then(async (response) => response.ok ? parseGlobalValidation(await response.json()) : null),
-    ])
-      .then(([panelResult, validationResult]) => {
-        if (panelResult.status !== "fulfilled") throw panelResult.reason;
-        setPanel(panelResult.value);
-        if (validationResult.status === "fulfilled" && validationResult.value) {
-          setMemberships(validationResult.value.tiers);
-        }
+    loadPanel(controller.signal)
+      .then((publishedPanel) => {
+        setPanel(publishedPanel);
+        setMemberships(membershipsFromPanel(publishedPanel));
       })
       .catch((error: unknown) => {
         if (error instanceof Error && error.name === "AbortError") return;
@@ -308,6 +309,17 @@ export function GlobalDataExplorer({ locale }: { locale: string }) {
                       <p className="mt-1 break-words text-sm text-foreground">{selectedRow.missingness}</p>
                     </div>
                   )}
+                </div>
+              )}
+
+              {(selectedRow.tfrSource || selectedRow.tfrSeriesStatus || selectedRow.tfrMeasurementType) && (
+                <div className="rounded-lg border border-card-border bg-background p-3">
+                  <p className="text-xs font-medium text-foreground-muted">{d.tfrProvenance}</p>
+                  <dl className="mt-2 grid gap-2 text-sm sm:grid-cols-3">
+                    {selectedRow.tfrSource && <div><dt className="text-xs text-foreground-muted">{d.tfrSource}</dt><dd className="mt-0.5 break-words text-foreground">{selectedRow.tfrSource}</dd></div>}
+                    {selectedRow.tfrSeriesStatus && <div><dt className="text-xs text-foreground-muted">{d.tfrStatus}</dt><dd className="mt-0.5 break-words text-foreground">{selectedRow.tfrSeriesStatus}</dd></div>}
+                    {selectedRow.tfrMeasurementType && <div><dt className="text-xs text-foreground-muted">{d.tfrMeasurementType}</dt><dd className="mt-0.5 break-words text-foreground">{selectedRow.tfrMeasurementType}</dd></div>}
+                  </dl>
                 </div>
               )}
 

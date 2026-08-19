@@ -1,161 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { CountrySelector } from "./CountrySelector";
-import { ExposureChart } from "./ExposureChart";
-import { BiologyChart } from "./BiologyChart";
-import { FertilityChart } from "./FertilityChart";
-import { CountryMetaCard } from "./CountryMetaCard";
-
-type Tab = "exposure" | "biology" | "fertility";
-
-interface YearRow {
-  year: number;
-  ambient: number;
-  personal: number;
-  chiValue: number;
-  twoChannelTotal: number;
-  cumulativeEMF: number;
-  biologicalCapacity: number;
-  behavioralFactor: number;
-  predictedTFR: number;
-  nativeTFR: number | null;
-  ivfShare: number;
-  observedTFR: number | null;
-  isForecast: boolean;
-}
-
-interface CountryMeta {
-  country: string;
-  emfStartYear: number;
-  latestObservedTFR: { year: number; value: number };
-  predictedTFR2030: number;
-  predictedTFR2040: number;
-  cumEMF2024: number;
-}
-
-interface CountryData {
-  meta: CountryMeta;
-  timeseries: YearRow[];
-}
-
-interface ExplorerData {
-  [country: string]: CountryData;
-}
-
-export function ExplorerDashboard() {
-  const [data, setData] = useState<ExplorerData | null>(null);
-  const [selectedCountry, setSelectedCountry] = useState("Finland");
-  const [activeTab, setActiveTab] = useState<Tab>("fertility");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    fetch("/data/explorer.json")
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then((d) => {
-        setData(d);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="text-center py-20 text-foreground-muted">
-        Loading model data...
-      </div>
-    );
-  }
-  if (error || !data) {
-    return (
-      <div className="text-center py-20 text-status-refuted">
-        Failed to load data{error ? `: ${error}` : ""}
-      </div>
-    );
-  }
-
-  const countryData = data[selectedCountry];
-  if (!countryData) {
-    return (
-      <div className="text-status-refuted">
-        Country not found: {selectedCountry}
-      </div>
-    );
-  }
-
-  const countries = Object.keys(data).sort();
-  const tabs: { key: Tab; label: string }[] = [
-    { key: "exposure", label: "EMF Exposure" },
-    { key: "biology", label: "Biological Impact" },
-    { key: "fertility", label: "Fertility (TFR)" },
-  ];
+/**
+ * The former dashboard rendered a scalar v17 scenario as if it were a
+ * dosimetry-backed country forecast.  Retain a visible archive entry point
+ * instead of mixing that artefact with the FieldState–ASFR-v2 route.
+ */
+export function ExplorerDashboard({ locale = "en" }: { locale?: string }) {
+  const fi = locale === "fi";
+  const copy = fi
+    ? {
+        title: "Arkistoitu v17-proksiskenaario",
+        lead: "Tämän näkymän aiemmat maa-, biologia- ja TFR-käyrät perustuivat skalaariin ambient + χ(ambient) × personal sekä siihen johdettuihin kumulatiivisiin suureisiin. Syötteet eivät ole mitattua paikallista FieldStatea, elinsiirtoa tai annosta.",
+        kept: "Arkistoon on jätetty ainoastaan menetelmähistoria. Sitä ei käytetä FieldState–ASFR-v2:n altistus-, biologisen kapasiteetin- tai TFR-ennusteena.",
+        next: "V2-käyttöliittymä avataan vasta, kun maakohtaiseen aikapaneeliin voidaan liittää dokumentoitu FieldState, elinkohtainen vaste, paritila ja ASFR-tulos.",
+      }
+    : {
+        title: "Archived v17 proxy scenario",
+        lead: "The former country, biology and TFR curves were generated from the scalar ambient + χ(ambient) × personal and derived cumulative quantities. Those inputs are not measured local FieldState, organ transfer or dose.",
+        kept: "Only the method history is retained in the archive. It is not used as a FieldState–ASFR-v2 exposure, biological-capacity or TFR forecast.",
+        next: "A v2 explorer will open only after a country-time panel can join documented FieldState, organ endpoint, couple state and ASFR outcome data.",
+      };
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col lg:flex-row gap-6">
-        <div className="lg:w-1/3">
-          <CountrySelector
-            countries={countries}
-            selected={selectedCountry}
-            onSelect={setSelectedCountry}
-          />
-        </div>
-        <div className="lg:w-2/3">
-          <CountryMetaCard meta={countryData.meta} />
-        </div>
+    <section className="border border-status-partial/30 bg-status-partial/5 rounded-xl p-6 max-w-3xl">
+      <p className="text-xs uppercase tracking-[0.16em] font-semibold text-status-partial mb-2">LEGACY_TIMING_PROXY</p>
+      <h2 className="text-xl font-semibold mb-3">{copy.title}</h2>
+      <p className="text-sm text-foreground-muted leading-relaxed">{copy.lead}</p>
+      <div className="mt-4 pt-4 border-t border-card-border space-y-3 text-sm text-foreground-muted leading-relaxed">
+        <p>{copy.kept}</p>
+        <p>{copy.next}</p>
       </div>
-
-      <div className="flex gap-1 bg-card-bg border border-card-border rounded-lg p-1">
-        {tabs.map((tab) => (
-          <button
-            key={tab.key}
-            onClick={() => setActiveTab(tab.key)}
-            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
-              activeTab === tab.key
-                ? "bg-accent text-white"
-                : "text-foreground-muted hover:text-foreground hover:bg-background-secondary"
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-
-      <div className="bg-card-bg border border-card-border rounded-xl p-4 lg:p-6 min-h-[400px]">
-        {activeTab === "exposure" && (
-          <ExposureChart
-            timeseries={countryData.timeseries}
-            country={selectedCountry}
-          />
-        )}
-        {activeTab === "biology" && (
-          <BiologyChart
-            timeseries={countryData.timeseries}
-            country={selectedCountry}
-          />
-        )}
-        {activeTab === "fertility" && (
-          <FertilityChart
-            timeseries={countryData.timeseries}
-            country={selectedCountry}
-          />
-        )}
-      </div>
-
-      <p className="text-xs text-foreground-muted text-center max-w-3xl mx-auto">
-        All values are model outputs from BERM v18. Observed TFR from World
-        Bank. Gray dots = observed data. Blue line = model prediction. Shaded
-        area after 2024 = forecast with approximate &plusmn;10% visual
-        uncertainty band. The model is calibrated at 2024 &mdash; predicted and
-        observed TFR match at that point by construction.
-      </p>
-    </div>
+    </section>
   );
 }

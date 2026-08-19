@@ -1,13 +1,13 @@
 """BERM Cross-Species Lag Index (CSLI) v2.
 
-Orthogonal Sentinel Triangulation: five-tier system comparing
-reproductive biomarker trends across species with different EMF
-exposure levels. The exposure gradient (bull < bee < dog < human)
-predicts response magnitude and timing.
+Orthogonal Sentinel Triangulation: a future-testing framework for comparing
+reproductive biomarker trends across species. Any exposure-gradient claim
+requires measured dosimetry and matched response panels; no such empirical
+gradient is currently exposed by this package.
 
 Key components:
   - Dog as primary indoor-environment mammalian sentinel
-  - Bull/boar as low-exposure negative control
+  - Bull/boar as a proposed negative-control data requirement
   - Bee as ecological ambient-exposure sentinel
   - Human biomarkers and fertility as final outcome
 
@@ -28,7 +28,7 @@ from berm.csli.lag_scaling import (
 )
 from berm.csli.species_data import (
     DOG_ENDPOINTS,
-    EXPOSURE_GRADIENT,
+    EXPOSURE_GRADIENT_REQUIREMENTS,
     LIVESTOCK_DATA,
     SPECIES_BIOLOGY_V2,
 )
@@ -36,7 +36,7 @@ from berm.csli.species_data import (
 __all__ = [
     "CSLI_FALSIFICATIONS",
     "DOG_ENDPOINTS",
-    "EXPOSURE_GRADIENT",
+    "EXPOSURE_GRADIENT_REQUIREMENTS",
     "LIVESTOCK_DATA",
     "SPECIES_BIOLOGY_V2",
     "expected_lag_days",

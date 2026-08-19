@@ -1,0 +1,43 @@
+{
+  "manifest_id": "fielding_goa_2026-08-19",
+  "description": "Exact component files used from Fielding's open Goa free-roaming-dog sterilisation RCT release. This is an isolated veterinary sentinel source, not a CSLI input or RF dataset.",
+  "retrieved_at": "2026-08-19",
+  "retrieval_method": "Direct HTTPS download of immutable original DSpace bitstreams from the University of Edinburgh DataShare API; source landing DOI: 10.7488/ds/7919.",
+  "license": "CC-BY-4.0",
+  "transform_pipeline_version": "fielding_goa_vet_ingest@v1.0.0",
+  "files": [
+    {
+      "source_id": "FIELDING_2025_GOA_DOG_RCT",
+      "path": "raw/veterinary/fielding_2025_goa_rct/README_ImpactsPaper.txt",
+      "original_filename": "README_ImpactsPaper.txt",
+      "bytes": 6434,
+      "sha256": "40fe649f23590f982388d9e53f52a436329fce3f12358384e84ba13fbd2d9f50",
+      "retrieved_at": "2026-08-19",
+      "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/0808f0d2-fbb3-4922-b09e-8328ae04fce0/content",
+      "publisher_reported_md5": "9fb2faf82701327a32471f6ae93d2095",
+      "note": "Repository README describing the two observed-count CSV inputs and their survey-level fields; no analysis values are read from this file."
+    },
+    {
+      "source_id": "FIELDING_2025_GOA_DOG_RCT",
+      "path": "raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsByAge_R2_14.csv",
+      "original_filename": "SummedSiteCountsByAge_R2_14.csv",
+      "bytes": 124604,
+      "sha256": "610e2c1ab8c33c4c00354208fb83ac1034d1f493aec7ece9366d81c4c63a6c7d",
+      "retrieved_at": "2026-08-19",
+      "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/60a4695c-ba79-4899-9221-d5dad7e9d872/content",
+      "publisher_reported_md5": "5185cc78fc8760282163144b967d8af0",
+      "note": "939 site-by-survey-time aggregate records with direct puppy, juvenile and adult counts plus weather, route-km effort, density and randomised-site metadata."
+    },
+    {
+      "source_id": "FIELDING_2025_GOA_DOG_RCT",
+      "path": "raw/veterinary/fielding_2025_goa_rct/SummedSiteCountsLact_R2_14.csv",
+      "original_filename": "SummedSiteCountsLact_R2_14.csv",
+      "bytes": 142932,
+      "sha256": "399bb1435723c214a6053f1ff498525f419f091727111517ba01fdc67a0f221a",
+      "retrieved_at": "2026-08-19",
+      "source_url": "https://datashare.ed.ac.uk/server/api/core/bitstreams/1146bb9b-5bee-4ef4-ab37-e21e1d902ad4/content",
+      "publisher_reported_md5": "205385543a875702b8c7f4174eaa26d6",
+      "note": "939 site-by-survey-time aggregate records with direct lactating-female and adult-female counts plus weather, route-km effort, density and randomised-site metadata."
+    }
+  ]
+}

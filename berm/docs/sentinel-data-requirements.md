@@ -2,12 +2,17 @@
 
 Versio: 2026-08-19
 Liittyy: [`data-lineage-audit.md`](data-lineage-audit.md) (löydökset A-9, A-10) ·
-[`data-gap-register.md`](data-gap-register.md) (G-3, G-5, G-6, G-7)
+[`data-gap-register.md`](data-gap-register.md) (G-3, G-5, G-6, G-7) ·
+[`sentinel-acquisition-register.md`](sentinel-acquisition-register.md) (lähteiden hankinta- ja käyttöehtotila)
 
 **Tätä työpakettia ei merkitä suoritetuksi kirjallisuusviitteiden perusteella.** Sitaatti
 ei ole aineisto. Nykytilassa `berm/csli/` sisältää kuusi falsifikaatiokriteeriä, joista
-**nolla on suoritettu**, ja kaksi viidestä sentinellitiedostosta on orpoja: yksikään
-koodipolku ei avaa niitä.
+**nolla on suoritettu**. Saatavilla olevat ei-ihmisrivit on normalisoitu kanoniseen
+sentinellitauluun, mutta laadullinen karja-artikkelikokoelma sekä rekonstruoitu
+ihmisspermaproxy jätetään siitä tarkoituksellisesti ulos. Lisäksi hallussa on
+erillisiä, manifest-lukittuja eläinlääketieteellisiä ja seminologisia
+benchmark-kerroksia; ne eivät muutu sentinelliksi ilman samaan paneeliin
+kohdistuvaa mitattua RF-altistusta, biologista päätepistettä ja sekoittajia.
 
 ---
 
@@ -19,10 +24,13 @@ Yksikään F1–F6-testi ei ole laskettavissa ennen kuin seuraava paneeli on ole
 (alue, vuosi, laji, biologinen päätetapahtuma, E_RF, kemialliset kovariaatit)
 ```
 
-Tällä hetkellä **`E_RF`-sarake puuttuu jokaisesta sentinellitaulusta.** Kaikki RF-viittaukset
-`berm/csli/`-hakemistossa ovat merkkijonoja (`"low"`, `"medium (base stations)"`, `"high"`)
-tai käsin annettuja järjestyslukuja. `falsification.py:160` toteaa tämän itse:
-*"No measured RF dosimetry for any species environment"*.
+Tällä hetkellä **`E_RF`-sarake puuttuu jokaisesta sentinellitaulusta.** Erillinen
+ANFR:n mitattu `measured_rf_site_time`-kerros (Ranska, 2020–2024) ei muuta tätä:
+se sisältää kiinteän anturin ambienttikentän, mutta ei samaan paikkaan ja aikaan
+kohdistuvaa biologista paneelia. Aiemmat käsin
+annetut RF-tasot ja järjestysluvut on poistettu analyysirajapinnasta: nykyinen
+`exposure_gradient_test()` palauttaa vain `BLOCKED`-tilan ja edellyttää mitattua
+dosimetriaa, yhteensopivaa vastepaneelia ja kovariaatteja.
 
 Kanoninen kohdetaulu on `sentinel_species_region_year`
 ([`contracts.py`](../berm/data/contracts.py)), jonka lisäsarakkeet ovat `species` ja
@@ -78,8 +86,10 @@ talvikuolleisuuteen on tulkinnaltaan sekoittunut neljällä tunnetulla mekanismi
 Arvot on **digitoitu kuvaajista** (Kuva 1 ja 2a), lukutarkkuus ±2–3 yksikköä, ja ne ovat
 monitasomallien estimoituja keskiarvoja, eivät raakahavaintoja.
 
-**Yksikään moduuli ei avaa tätä tiedostoa.** `berm/csli/species_data.py:92` toistaa trendit
-käsin kirjoitettuina merkkijonoina (`"declining"`, `"not measured in Lea"`).
+`berm.data.sentinel_normalize` lukee tiedoston ja tuottaa siitä 92 kanonista,
+provenanssilla varustettua riviä. Tämä ei muuta sarjaa alueelliseksi paneeliksi:
+`berm/csli/species_data.py` käsittelee koiraa vain lähdevalmiuden kontekstina, ei
+altistus- tai viive-estimaatin syötteenä.
 
 ### Vaadittu laajennus
 Tavoite on toteuttaa:
@@ -110,25 +120,30 @@ sellaista ole (G-7: ihmissarja on rekonstruoitu, 24 maata, ei alakansallista tas
 
 ---
 
-## 3. Härät
+## 3. Härät ja karjut
 
-Härkä on tarkoitettu **negatiiviseksi kontrolliksi**. Sillä on kaksi ongelmaa.
+Härkä on suunniteltu **mahdolliseksi negatiiviseksi kontrolliksi**, mutta sitä ei voi
+vielä käyttää sellaisena. Nykyinen artefakti on kirjallisuusrekisteri, ei kontrolliaineisto.
 
 ### Ensimmäinen: dataa ei ole
 `data/sentinel/livestock_negative_control.json` sisältää **nolla numeerista havaintoa** —
 kolme sitaattia, laadullisia trendimerkkijonoja (`"improving"`, `"no_systematic_time_trend"`)
 ja tutkimusjaksot. Ei aikasarjaa, ei aluetta, ei maata.
 
-Kaikki kolme lähdettä ovat `ACCESS_REQUIRED`. Hensel 2025 on merkitty
-`"data_available": false` ja *"Full text not accessible at extraction time"*.
+Erillinen avoin Fernández-López ym. 2022 -karjuaineisto on hallussa
+seminologia-benchmarkina: 221 inseminaatiotapahtumaa, 36 ejakulaattia ja
+98 020 CASA-soluriviä yhdeltä Espanjan AI-asemalta maaliskuulta kesäkuuhun
+2017. Se ei korvaa puuttuvaa kontrollipaneelia: aikajakso on neljä kuukautta,
+asetelma on single-site eikä aineistossa ole RF-dosimetriaa, ympäristö- tai
+kemiallisia kovariaatteja. Tarkka rajaus on
+[`seminology-benchmark.md`](seminology-benchmark.md)-dokumentissa.
 
-### Toinen: ratkaisematon ristiriita
-`berm/csli/species_data.py:149` liittää `n_ejaculates = 47 757`, jakso 1997–2019, viitteeseen
-Hensel 2025 — samaan viitteeseen, jonka JSON merkitsee saavuttamattomaksi ja ilman dataa.
-Sama JSON antaa naudan jaksoksi 1965–2007.
-
-**Tämä ristiriita on ratkaistava ennen kuin viitettä käytetään missään.** Toinen artefakteista
-on väärässä.
+Hensel et al. (2026; verkossa 25.12.2025) -artikkelin PubMed-abstrakti vahvistaa
+julkaisutason yhteenvetona 47 757 härkäejakulaattia (1997–2019) ja 619 368
+karjuejakulaattia (2005–2023) sekä raportoidun nousun pitoisuudessa ja liikkuvuudessa.
+Se **ei** toimita paikallista vuosittaista paneelia, aseman metadataa tai RF-mittausta.
+Aiempien artefaktien ristiriita on siis korjattu: luvut ovat sallittuja vain
+kirjallisuusyhteenvetona, eivät havaintoriveinä tai negatiivisen kontrollin tuloksena.
 
 ### Kolmas: sekoittajat ovat poikkeuksellisen vahvat
 Tuotantoeläinten jalostus ja keinosiemennysasemien kehitys ovat 1965–2020 muuttuneet
@@ -153,31 +168,34 @@ mikä tahansa härkätrendi on tulkinnaltaan sekoittunut jalostukseen.
 
 ## 4. F1–F6: mitä kukin vaatii
 
-Kaikkien tila on `untested`. Yksikään ei ole toteutettuna funktiona.
+Julkisessa valmiusartefaktissa kaikkien tila on `BLOCKED`. Koodi estää laskennan, kunnes
+alla mainitut tiedot ovat todella saatavilla; `untested` on vain falsifikaatiorekisterin
+sisäinen hallintatila, ei analyysitulos.
 
 | Testi | Väite | Puuttuva data | Este |
 |---|---|---|---|
 | **F1** | `DogSperm_{r,t} → HumanSperm_{r,t+Δ}`, Δ > 0 ja johdonmukainen alueiden yli | Alueellinen koira- **ja** ihmisspermasarja | G-5, G-7, G-8 |
 | **F2** | `R²(koira→ihminen) > R²(BKT/koulutus→ihminen)` | Sama + sosioekonomiset kovariaatit samalla tasolla | G-5, G-7 |
-| **F3** | Härkäsperma **ei** ennusta ihmisspermaa | Härän aikasarja — ei ole olemassa | G-6 |
+| **F3** | Härkäsperma **ei** ennusta ihmisspermaa | Pitkä, alueellisesti kohdistettava härkä-/karjuaikasarja — ei ole olemassa | G-6 |
 | **F4** | `\|ΔDogSperm\| > \|ΔBullSperm\|` **ja** `E_dog > E_bull` mitattuna | RF-dosimetria molemmille ympäristöille | G-3, G-6 |
 | **F5** | `CV(Δ_r) < 0.3` maiden yli | Monimaainen koira-aineisto | G-5 |
 | **F6** | EMF-vaikutus säilyy PFAS/PCB/ftalaatti-kontrollin jälkeen | Kemialliset kovariaatit alue-vuosi-tasolla | uusi |
 
 **F4 on huomionarvoinen:** se on ainoa testi, joka vaatii *mitattua* altistuseroa lajien
-välillä. Nykyinen `exposure_gradient_test` tarkistaa monotonisuutta käsin annetuista
-järjestysluvuista (`rank` 1–4 merkkijonojen `"low"`…`"highest"` yli). Se ei ole F4, eikä
-sitä pidä raportoida F4:nä.
+välillä. Aiempi käsin annetuista järjestysluvuista laskettu monotonisuusesitys on vedetty
+pois. Nykyinen `exposure_gradient_test()` palauttaa `BLOCKED` eikä tuota altistusjärjestystä,
+monotonisuutta tai “directionally consistent” -arviota.
 
 ---
 
 ## 5. Hankintajärjestys
 
-1. **RF-kenttämittaukset** (G-3). Ilman `E_RF`-saraketta mikään F-testi ei ole laskettavissa,
-   olipa biologinen data kuinka hyvää tahansa. Ofcom, BNetzA, ANFR ja Traficom julkaisevat
-   paikkatietoisia mittauksia avoimesti
-2. **Ratkaise härkäristiriita** (G-6). Ei vaadi uutta dataa, vain sen toteamista, kumpi
-   artefakti on väärässä
+1. **Ennalta kohdistettu RF-kenttämittaus ja biologinen paneeli** (G-3). ANFR:n kiinteiden
+   antureiden mitattu kerros on hallussa, mutta ilman samaan paikkaan ja aikaan sidottua
+   biologista päätetapahtumaa mikään F-testi ei ole laskettavissa, olipa kumpikin erillinen
+   aineisto kuinka hyvä tahansa.
+2. **Hanki härkä-/karjupaneeli** (G-6). Julkaisuabstraktien metadata ja yksi lyhyt benchmark on tarkistettu,
+   mutta F3/F4 tarvitsevat yhä rivi- tai ainakin vuosi×asema-tason tulokset ja kovariaatit
 3. **Alueellinen ihmisbiomarkkerisarja** (G-7). Levine 2023:n tutkimustason liitetaulukko,
    `ACCESS_REQUIRED`
 4. **Monimaainen koira-aineisto** (G-5). Vaatii todennäköisesti uutta yhteistyötä
@@ -201,6 +219,8 @@ saa esittää dokumentaatiossa, käyttöliittymässä eikä mallin ulostulossa:
 - että lajien välinen altistusgradientti on mitattu
 - että mikä tahansa F1–F6-kriteeri on läpäisty tai hylätty
 
-`berm/csli/falsification.py` tulostaa nykyisin rehellisesti *"Status: 0/6 tests executed"*
-ja *"All tests require regional data not yet available."* Tämä on oikea muotoilu ja se on
-säilytettävä.
+Koneellisesti luettava auktoriteetti on
+[`website/public/data/sentinel_readiness.json`](../../website/public/data/sentinel_readiness.json):
+sen F1–F6-merkinnät ovat kaikki `BLOCKED`, ja se kertoo täsmälliset estekoodit sekä
+seuraavat vaatimukset. Tämä on säilytettävä muotoilu, kunnes vastaava mitattu paneeli on
+oikeasti saatavilla.

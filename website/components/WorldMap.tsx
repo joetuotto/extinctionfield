@@ -5,13 +5,15 @@ import * as d3 from "d3";
 import { geoNaturalEarth1, geoPath } from "d3-geo";
 import type { FeatureCollection, Feature, Geometry } from "geojson";
 
-type Layer = "tfr" | "mobile" | "berm";
+type Layer = "tfr" | "mobile";
 
 interface MapData {
   [iso3: string]: {
     tfr: Record<string, number>;
     mobile: Record<string, number>;
-    berm_country: string | null;
+    // Retained because it exists in the public payload, but it is not a map
+    // layer: all records currently have no country-level FieldState profile.
+    berm_country?: string | null;
   };
 }
 
@@ -33,26 +35,18 @@ const LAYER_CONFIG: Record<
   }
 > = {
   tfr: {
-    label: "Total Fertility Rate",
+    label: "World Bank published TFR series",
     unit: "births/woman",
     domain: [0.5, 7],
     colorScale: (t: number) => d3.interpolateRdYlGn(t),
     format: (v: number) => v.toFixed(2),
   },
   mobile: {
-    label: "Mobile Subscriptions",
+    label: "Mobile subscriptions (technology-timing proxy)",
     unit: "per 100 people",
     domain: [0, 200],
     colorScale: (t: number) => d3.interpolateYlOrRd(t),
     format: (v: number) => v.toFixed(0),
-  },
-  berm: {
-    label: "BERM coverage",
-    unit: "country profile",
-    domain: [0, 1],
-    colorScale: (t: number) =>
-      t > 0 ? "var(--accent)" : "var(--card-border)",
-    format: (v: number) => (v > 0 ? "Available" : "Not available"),
   },
 };
 
@@ -94,7 +88,6 @@ export function WorldMap({ locale }: { locale: string }) {
     (iso3: string, ly: Layer, yr: number, md: MapData | null): number | null => {
       const country = md?.[iso3];
       if (!country) return null;
-      if (ly === "berm") return country.berm_country ? 1 : 0;
       const series = ly === "tfr" ? country.tfr : country.mobile;
       return series?.[String(yr)] ?? null;
     },
@@ -151,11 +144,9 @@ export function WorldMap({ locale }: { locale: string }) {
         const tooltip = tooltipRef.current;
         if (tooltip) {
           const val = getValueFor(iso3, ly, yr, md);
-          const berm = md?.[iso3]?.berm_country;
           const config = LAYER_CONFIG[ly];
           tooltip.innerHTML = `
             <strong>${d.properties.ADMIN || d.properties.NAME}</strong>
-            ${berm ? `<span style="opacity:0.6;font-size:11px"> (BERM)</span>` : ""}
             <br/>
             ${val !== null ? `${config.label}: <strong>${config.format(val)}</strong> ${config.unit}` : "No data"}
           `;
@@ -220,7 +211,6 @@ export function WorldMap({ locale }: { locale: string }) {
     );
   }
 
-  const selectedCountry = selectedISO3 ? mapData[selectedISO3] : null;
   const selectedName = geoData.features.find((feature) => getISO3(feature) === selectedISO3)
     ?.properties.ADMIN;
   const selectedValue = selectedISO3
@@ -229,29 +219,27 @@ export function WorldMap({ locale }: { locale: string }) {
   const labels =
     locale === "fi"
       ? {
-          tfr: "TFR",
-          mobile: "Mobiili",
-          berm: "BERM-aineisto",
+          tfr: "TFR (Maailmanpankin sarja)",
+          mobile: "Mobiililiittymät (teknologia-ajoituksen proxy)",
           selected: "Valittu maa",
           select: "Valitse maa kartalta nähdäksesi kyseisen tason tiedot.",
           noData: "Ei tietoa valitulle vuodelle",
-          profile: "Maaprofiili",
+          tfrSource: "TFR-kartta: Maailmanpankin WDI:n julkaistu TFR-sarja. Se voi sisältää kansallisten lähteiden ja YK:n väestöarvioiden harmonisointeja; kartta ei ole WPP:n ASFR-paneeli.",
         }
       : {
-          tfr: "TFR",
-          mobile: "Mobile",
-          berm: "BERM data",
+          tfr: "TFR (World Bank series)",
+          mobile: "Mobile subscriptions (technology-timing proxy)",
           selected: "Selected country",
           select: "Select a country to inspect data for this layer.",
           noData: "No data for selected year",
-          profile: "Country profile",
+          tfrSource: "TFR map: World Bank WDI published TFR series. It may incorporate harmonised national sources and UN demographic estimates; it is not the WPP ASFR panel.",
         };
 
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex gap-2">
-          {(["tfr", "mobile", "berm"] as Layer[]).map((l) => (
+          {(["tfr", "mobile"] as Layer[]).map((l) => (
             <button
               key={l}
               onClick={() => setLayer(l)}
@@ -324,13 +312,6 @@ export function WorldMap({ locale }: { locale: string }) {
             <span className="font-medium">{selectedName}</span>
             {selectedValue === null ? (
               <span className="text-foreground-muted"> · {labels.noData}</span>
-            ) : layer === "berm" ? (
-              <span className="text-foreground-muted">
-                {" "}· {config.format(selectedValue)}
-                {selectedCountry?.berm_country
-                  ? ` · ${labels.profile}: ${selectedCountry.berm_country}`
-                  : ""}
-              </span>
             ) : (
               <span className="text-foreground-muted">
                 {" "}· {config.format(selectedValue)} {config.unit}
@@ -359,6 +340,16 @@ export function WorldMap({ locale }: { locale: string }) {
         <span>{config.format(config.domain[1])}</span>
         <span className="ml-2">{config.unit}</span>
       </div>
+      {layer === "mobile" && (
+        <p className="text-xs leading-relaxed text-foreground-muted">
+          {locale === "fi"
+            ? "Mobiililiittymät ovat teknologian käyttöönoton ajoitusproxy, eivät mitattu RF-altistus, FieldState-vektori tai annosmitta."
+            : "Mobile subscriptions are a technology-adoption timing proxy, not measured RF exposure, a FieldState vector, or a dose metric."}
+        </p>
+      )}
+      {layer === "tfr" && (
+        <p className="text-xs leading-relaxed text-foreground-muted">{labels.tfrSource}</p>
+      )}
     </div>
   );
 }

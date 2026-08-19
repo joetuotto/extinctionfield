@@ -4,29 +4,25 @@ type Locale = "en" | "fi";
 
 const copy = {
   en: {
-    title: "Global validation artefacts",
+    title: "Public country-panel artefacts",
     description:
-      "Download the published country-year table, coverage summary, and validation summary. These files expose inputs, tier membership, and reported metrics; they do not represent a set of future TFR predictions.",
-    core: "Core 51 membership is locked in the tier artefact before validation reporting.",
+      "Download the no-imputation country-year table and its coverage metadata. They expose source fields and tier membership; they do not represent measured FieldState, a biological endpoint panel or a set of future TFR predictions.",
+    core: "Coverage tiers are descriptive data-governance labels, not model scores or v2 validation results.",
     summary: "Panel coverage summary (JSON)",
     summaryDetail: "Publication metadata, coverage, source-panel identity, and field availability.",
     csvPanel: "Country-year panel (CSV)",
     csvPanelDetail: "Flattened no-imputation table for spreadsheet and statistical workflows.",
-    validation: "Global validation summary (JSON)",
-    validationDetail: "Tier membership, released scenarios, and aggregate metrics only.",
     download: "Download",
   },
   fi: {
-    title: "Globaalin validoinnin artefaktit",
+    title: "Julkiset maa–vuosi-paneelin artefaktit",
     description:
-      "Lataa julkaistu maa–vuosi-taulukko, kattavuusyhteenveto ja validointiyhteenveto. Tiedostot avaavat syötteet, tasojäsenyyden ja raportoidut mittarit; ne eivät ole tulevien TFR-ennusteiden joukko.",
-    core: "Core 51 -jäsenyys lukitaan tasoartefaktissa ennen validointiraportointia.",
+      "Lataa ilman imputointia julkaistu maa–vuosi-taulukko ja sen kattavuusmetatiedot. Ne avaavat lähdekentät ja tasojäsenyyden; ne eivät ole mitattu FieldState, biologinen päätepistepaneeli eivätkä tulevien TFR-ennusteiden joukko.",
+    core: "Kattavuustasot ovat kuvailevia datahallinnan merkintöjä, eivät mallipisteitä tai v2-validointituloksia.",
     summary: "Paneelin kattavuusyhteenveto (JSON)",
     summaryDetail: "Julkaisumetadatat, kattavuus, lähdepaneelin tunniste ja kenttien saatavuus.",
     csvPanel: "Maa–vuosi-paneeli (CSV)",
     csvPanelDetail: "Litteä, ilman imputointia julkaistu taulukko laskentataulukko- ja tilastotyöhön.",
-    validation: "Globaalin validoinnin yhteenveto (JSON)",
-    validationDetail: "Vain tasojäsenyys, julkaistut skenaariot ja koontimittarit.",
     download: "Lataa",
   },
 } as const;
@@ -47,12 +43,6 @@ export function GlobalDataDownloads({ locale }: { locale: string }) {
       detail: d.csvPanelDetail,
       icon: FileSpreadsheet,
     },
-    {
-      href: "/data/global_validation.json",
-      title: d.validation,
-      detail: d.validationDetail,
-      icon: FileJson2,
-    },
   ];
 
   return (
@@ -62,7 +52,7 @@ export function GlobalDataDownloads({ locale }: { locale: string }) {
       <p className="mt-3 max-w-3xl rounded-lg border border-accent/25 bg-accent/5 p-3 text-xs leading-relaxed text-foreground-muted">
         {d.core}
       </p>
-      <div className="mt-4 grid gap-3 md:grid-cols-3">
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
         {files.map(({ href, title, detail, icon: Icon }) => (
           <a
             key={href}

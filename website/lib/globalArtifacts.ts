@@ -13,6 +13,9 @@ export const GLOBAL_TIER_ORDER: readonly GlobalTier[] = ["core", "extended", "gl
 export interface GlobalCountryYear {
   year: number;
   tfr?: number;
+  tfrSource?: string;
+  tfrMeasurementType?: string;
+  tfrSeriesStatus?: string;
   mobilePer100?: number;
   urbanPct?: number;
   gdpPppPerCapita?: number;
@@ -24,6 +27,7 @@ export interface GlobalCountryPanel {
   iso3: string;
   name: string;
   years: GlobalCountryYear[];
+  tiers: GlobalTier[];
 }
 
 export interface GlobalPanel {
@@ -109,12 +113,28 @@ function normaliseTier(value: unknown): GlobalTier | undefined {
   return undefined;
 }
 
+function parseTierMemberships(value: unknown): GlobalTier[] {
+  const values = Array.isArray(value)
+    ? value
+    : typeof value === "string"
+      ? value.split("|")
+      : [value];
+  const tiers = values.flatMap((item) => {
+    const tier = normaliseTier(item);
+    return tier ? [tier] : [];
+  });
+  return [...new Set(tiers)].sort((left, right) => GLOBAL_TIER_ORDER.indexOf(left) - GLOBAL_TIER_ORDER.indexOf(right));
+}
+
 function rowFromUnknown(value: unknown, fallbackYear?: unknown): GlobalCountryYear | null {
   if (!isRecord(value)) return null;
   const year = pickNumber(value, ["year", "calendar_year"]) ?? finiteNumber(fallbackYear);
   if (!year || !Number.isInteger(year)) return null;
 
   const tfr = pickNumber(value, ["tfr", "observed_tfr", "total_fertility_rate"]);
+  const tfrSource = pickString(value, ["tfr_source", "tfrSource"]);
+  const tfrMeasurementType = pickString(value, ["tfr_measurement_type", "tfrMeasurementType"]);
+  const tfrSeriesStatus = pickString(value, ["tfr_series_status", "tfrSeriesStatus"]);
   const mobilePer100 = pickNumber(value, [
     "mobile_per_100",
     "subs_per_100",
@@ -137,7 +157,18 @@ function rowFromUnknown(value: unknown, fallbackYear?: unknown): GlobalCountryYe
     && !missingness
   ) return null;
 
-  return { year, tfr, mobilePer100, urbanPct, gdpPppPerCapita, fieldProvenance, missingness };
+  return {
+    year,
+    tfr,
+    tfrSource,
+    tfrMeasurementType,
+    tfrSeriesStatus,
+    mobilePer100,
+    urbanPct,
+    gdpPppPerCapita,
+    fieldProvenance,
+    missingness,
+  };
 }
 
 function rowsFromUnknown(value: unknown): GlobalCountryYear[] {
@@ -168,6 +199,7 @@ function countryFromUnknown(isoCandidate: unknown, value: unknown): GlobalCountr
     iso3,
     name: pickString(value, ["country_name", "country", "name", "label"]) ?? iso3,
     years,
+    tiers: parseTierMemberships(pick(value, ["tier_memberships", "tiers", "memberships"])),
   };
 }
 
@@ -200,7 +232,7 @@ export function parseGlobalPanel(value: unknown): GlobalPanel | null {
 
   const flatRows = pick(value, ["rows", "observations", "data"]);
   if (Array.isArray(flatRows)) {
-    const grouped = new Map<string, { name: string; rows: GlobalCountryYear[] }>();
+    const grouped = new Map<string, { name: string; rows: GlobalCountryYear[]; tiers: GlobalTier[] }>();
     flatRows.forEach((row) => {
       if (!isRecord(row)) return;
       const iso3 = normaliseIso3(pick(row, ["iso3", "country_iso3", "country_id"]));
@@ -209,8 +241,12 @@ export function parseGlobalPanel(value: unknown): GlobalPanel | null {
       const current = grouped.get(iso3) ?? {
         name: pickString(row, ["country_name", "country", "name", "label"]) ?? iso3,
         rows: [],
+        tiers: [],
       };
       current.rows.push(parsedRow);
+      parseTierMemberships(pick(row, ["tier_memberships", "tiers", "memberships"])).forEach((tier) => {
+        if (!current.tiers.includes(tier)) current.tiers.push(tier);
+      });
       grouped.set(iso3, current);
     });
     grouped.forEach((entry, iso3) => {
@@ -218,6 +254,7 @@ export function parseGlobalPanel(value: unknown): GlobalPanel | null {
         iso3,
         name: entry.name,
         years: entry.rows.sort((left, right) => left.year - right.year),
+        tiers: entry.tiers,
       });
     });
   }
@@ -298,6 +335,26 @@ function emptyTiers(): GlobalTierMemberships {
     countriesByTier: { core: [], extended: [], global: [] },
     membershipsByIso: {},
   };
+}
+
+/** Builds coverage memberships from the no-imputation public panel itself. */
+export function membershipsFromPanel(panel: GlobalPanel): GlobalTierMemberships {
+  const result = emptyTiers();
+  panel.countries.forEach((country) => {
+    country.tiers.forEach((tier) => {
+      if (!result.countriesByTier[tier].includes(country.iso3)) {
+        result.countriesByTier[tier].push(country.iso3);
+      }
+      const memberships = result.membershipsByIso[country.iso3] ?? [];
+      if (!memberships.includes(tier)) memberships.push(tier);
+      result.membershipsByIso[country.iso3] = memberships;
+    });
+  });
+  GLOBAL_TIER_ORDER.forEach((tier) => result.countriesByTier[tier].sort());
+  Object.values(result.membershipsByIso).forEach((memberships) => {
+    memberships.sort((left, right) => GLOBAL_TIER_ORDER.indexOf(left) - GLOBAL_TIER_ORDER.indexOf(right));
+  });
+  return result;
 }
 
 export function parseGlobalTiers(value: unknown): GlobalTierMemberships {

@@ -1,419 +1,154 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { ShieldQuestion } from "lucide-react";
+import type { Locale } from "@/lib/i18n";
+import { PageHeader } from "@/components/PageHeader";
 
-interface Objection {
-  id: string;
-  claim: string;
-  paragraphs: string[];
-  evidenceLinks: { label: string; href: string }[];
-  uncertaintyText: string;
-}
-
-interface Dict {
-  metaTitle: string;
-  metaDesc: string;
+type Objection = { question: string; response: readonly string[]; boundary: string };
+type Copy = {
   title: string;
   subtitle: string;
-  clickToExpand: string;
-  uncertainty: string;
-  evidence: string;
-  objections: Objection[];
-}
+  introduction: string;
+  objections: readonly Objection[];
+  closingTitle: string;
+  closingText: string;
+};
 
-const t: { en: Dict; fi: Dict } = {
+const t: Record<Locale, Copy> = {
   en: {
-    metaTitle: "Objections - Extinction Field",
-    metaDesc:
-      "Common objections to the BERM model addressed with evidence, acknowledged uncertainties, and links to supporting data.",
-    title: "Common Objections",
+    title: "Research questions and evidence boundaries",
     subtitle:
-      "Every strong claim invites strong skepticism. Below are the objections we hear most often, addressed honestly — including what we cannot yet answer.",
-    clickToExpand: "Click to expand",
-    uncertainty: "Acknowledged uncertainty",
-    evidence: "Evidence",
+      "The questions BERM must answer before a field-to-population interpretation can be regarded as a calibrated result.",
+    introduction:
+      "This page does not turn open questions into rhetoric. It separates what the current FieldState–ASFR-v2 structure is designed to test from what remains unknown, competing or outside the model.",
     objections: [
       {
-        id: "cultural",
-        claim: "Fertility decline is cultural — education, urbanization, contraception.",
-        paragraphs: [
-          "This is the standard explanation and it is partly correct. Education, urbanization, and contraception access do suppress fertility. BERM does not deny this — the model's Level 3 (\"true culture\") explicitly incorporates voluntary fertility choices.",
-          "But the cultural explanation cannot account for three observations: (1) Dogs, horses, and insects are also experiencing reproductive decline — they don't attend university or use contraception. (2) Sperm concentration dropped 62% in 50 years across all regions, including populations with stable education levels. (3) 49 countries are now below the \"TFR floor\" of 1.4 that demography considered impossible under purely volitional models.",
-          "BERM proposes that cultural factors operate on top of a biological substrate that is itself declining. The sentinel species evidence is the strongest argument: identical VGCC-mediated reproductive effects across phyla that share no social or cultural factors.",
+        question: "Could demographic and social causes explain period TFR change?",
+        response: [
+          "Yes. Education, contraception, housing, labour markets, partnership formation, migration, policy, desired family size, tempo and ART all affect observed fertility. A period TFR is a five-year-age-group sum, not a direct assay of gametes or conception.",
+          "V2 therefore models ASFR before TFR and keeps demand/opportunity, tempo and ART/live-birth delivery explicit. It does not assign their residual variation to a biological field pathway.",
         ],
-        evidenceLinks: [
-          { label: "Sentinel species evidence", href: "/sentinel" },
-          { label: "Cross-species convergence table", href: "/sentinel#convergence" },
-          { label: "Explorer — country-level data", href: "/explorer" },
-        ],
-        uncertaintyText:
-          "Cultural factors clearly matter. BERM cannot yet quantify the exact partition between biological and cultural contributions for any given country. The model's Level 3 is calibrated, not derived from first principles.",
+        boundary: "A country trend alone cannot identify a biological cause. Population inference requires a matched FieldState, endpoint, couple and ASFR panel with credible competing models.",
       },
       {
-        id: "correlation",
-        claim: "Correlation is not causation.",
-        paragraphs: [
-          "Correct. No single study proves EMF causes fertility decline. BERM does not rest on any single study. Instead, it uses six identification strategies that collectively narrow the space of alternative explanations:",
-          "1. Proxy elimination: sentinel species remove human confounders. 2. Natural experiments: Amish/Hutterite communities, Israeli Shabbat observance, COVID lockdown sperm recovery. 3. Pharmacological validation: drugs targeting the same pathways (VGCC blockers, mTOR inhibitors) produce quantitatively consistent effects. 4. Dose-response: Norwegian naval cohort (N=10,497) shows OR 1.86 with dose-response gradient. 5. Cross-species evidence: VGCC conservation >70% across all eukaryotes, same reproductive effects in insects, amphibians, birds, bats, and lab mammals. 6. Mechanistic chain: Lindgren geometry → χ(Ā) selection → VGCC activation → Ca²⁺ → ROS → sperm damage, each step independently verified.",
-          "No single strategy proves causation. Together, they eliminate most alternative explanations. The remaining alternatives (unknown ubiquitous toxin, coincidence across 7 phyla) are less parsimonious than the EMF hypothesis.",
+        question: "Does Lindgren physics establish a human reproductive mechanism?",
+        response: [
+          "No. In v2, the Lindgren-derived formulation is a theory-level premise that motivates a background-, vector-, geometry- and spectrum-aware measurement design. It supplies neither a human receptor identity nor an EMF-to-TFR coefficient.",
+          "The relevant tests are discriminating physical and biological experiments: for example a pre-specified angle, background or PSD dependence with calibrated fields and appropriate sham/thermal controls.",
         ],
-        evidenceLinks: [
-          { label: "Evidence compilation (80+ studies)", href: "/evidence" },
-          { label: "Pharmacological validation", href: "/mathematics#pharmacological" },
-          { label: "Lindgren geometry derivation", href: "/mathematics#lindgren" },
-        ],
-        uncertaintyText:
-          "Identification strategies narrow but do not eliminate confounding. A true RCT of population-level EMF reduction has never been conducted. BERM's causal claim remains a hypothesis supported by converging evidence, not a proven fact.",
+        boundary: "A theoretical premise is not elevated to an empirical endpoint. Each additional link needs its own measured evidence.",
       },
       {
-        id: "replication",
-        claim: "EMF research hasn't replicated.",
-        paragraphs: [
-          "This is partly true and partly a structural artifact. Panagopoulos et al. (2025) conducted an umbrella review of 39 systematic reviews covering thousands of individual studies. The majority report biological effects of non-ionizing EMF. The replication problem is real but not unique to EMF — it affects all of biomedical research.",
-          "BERM offers a structural explanation for why EMF research specifically suffers replication failures: the control group is not EMF-free. Every laboratory operates inside the ambient electromagnetic environment. Control animals in 2020 are exposed to EMF levels that would have been the experimental condition in 1985. This is the Laboratory Baseline Bias — it systematically shrinks effect sizes over time as ambient EMF rises.",
-          "The model predicts that a Faraday-shielded laboratory would show 684× larger effect ratios than a standard lab. This is a testable, falsifiable prediction.",
+        question: "What do the reproductive and barrier studies actually show?",
+        response: [
+          "The registry includes bounded findings such as in-vitro human sperm endpoints, animal blood–testis-barrier and ovarian studies, and mechanistic redox/tight-junction work. These can motivate organ-specific states rather than a single generic biological-capacity curve.",
+          "Their systems, frequencies, amplitudes, durations and endpoints differ. Animal and cell results cannot simply be converted into a population dose, fertility probability or country forecast.",
         ],
-        evidenceLinks: [
-          { label: "Laboratory Baseline Bias analysis", href: "/evidence#lab-baseline" },
-          { label: "Replication crisis as BERM prediction", href: "/replication" },
-        ],
-        uncertaintyText:
-          "The lab baseline bias hypothesis is mechanistically plausible but has not been experimentally tested. No Faraday-shielded replication study has been conducted. The 684× prediction is derived from the model, not from observation.",
+        boundary: "A study-to-node record supports the registered part of the route only. None is a direct TFR slope or a substitute for a human endpoint panel.",
       },
       {
-        id: "levels",
-        claim: "Radiation levels are too low to cause biological effects.",
-        paragraphs: [
-          "This objection assumes biological response is proportional to absolute field strength. Lindgren's framework shows this is incorrect. The biologically relevant response is χ(Ā) = Ā / √(1 + Ā²), where Ā is the normalized background field. This is a saturation function, not a linear one.",
-          "At the cell membrane, the endogenous electric field is approximately 7 × 10⁶ V/m. In Lindgren's normalized units, this means χ ≈ 1.0 — the biological system is already near saturation. Small perturbations at this operating point produce measurable effects because the system is operating on the steep part of the response curve.",
-          "The VGCC voltage sensor is sensitive to fields 100× below current safety limits. Salford et al. demonstrated blood-brain barrier permeability at SAR 0.016 W/kg — 100× below the FCC limit of 1.6 W/kg. Safety standards are based on thermal effects; BERM's mechanisms are non-thermal.",
+        question: "Can mobile subscriptions or eDRX show a physical exposure pathway?",
+        response: [
+          "No. Mobile subscriptions can time digital-technology diffusion but are not a local field measurement, organ transfer or biological dose. The current N = 163 cohort result is explicitly classified as a descriptive TECHNOLOGY_TIMING_PROXY_NOT_FIELDSTATE analysis.",
+          "Likewise, eDRX is device reception/paging scheduling metadata, not by itself a known downlink RF field signature. Any envelope or beat feature must be measured in the actual field before it is tested biologically.",
         ],
-        evidenceLinks: [
-          { label: "χ(Ā) selection rule derivation", href: "/mathematics#chi" },
-          { label: "Lindgren geometry", href: "/mathematics#lindgren" },
-          { label: "Pathway A: VGCC mechanism", href: "/evidence" },
-        ],
-        uncertaintyText:
-          "Lindgren's geometric framework is published but not yet widely replicated. The χ(Ā) function is a theoretical prediction. While VGCC sensitivity at sub-thermal levels is experimentally demonstrated, the full chain from geometry to population-level fertility has not been verified end-to-end in a single experiment.",
+        boundary: "Proxy timing and physical dosimetry answer different questions and must remain labelled differently.",
       },
       {
-        id: "noticed",
-        claim: "If this were real, someone would have noticed.",
-        paragraphs: [
-          "Someone did. Robert O. Becker documented bioelectric effects in the 1960s–70s and was systematically marginalized. His research funding was terminated after publishing findings on electromagnetic effects on bone healing and neural regeneration. W. Ross Adey and Allan Frey made similar discoveries (Frey auditory effect, 1961) and faced similar institutional resistance.",
-          "The US Navy and CIA conducted classified EMF bioeffects research programs throughout the 1960s–80s. The results were not published in the open literature. When the telecommunications industry grew into a multi-trillion dollar sector, research funding shifted: industry-funded studies are 10× more likely to find no effect than independently funded studies (Huss et al. 2007, EHP).",
-          "This is not a conspiracy theory — it is a documented pattern of institutional incentives. The tobacco industry followed the same playbook for decades. The absence of mainstream recognition is not evidence of absence; it is evidence of the structure of research funding.",
+        question: "What about mixed EMF research and systematic reviews?",
+        response: [
+          "The evidence base is heterogeneous. Study quality, exposure characterisation, thermal control, endpoint selection and replication vary substantially. Reviews can establish that findings exist across systems, but their certainty assessments and sensitivity analyses need to be reported rather than replaced with a single headline.",
+          "For example, the WHO-commissioned reproductive review reported adverse findings in several analyses while rating much of the certainty low or very low and requiring sensitivity to high-SAR studies. V2 treats that as context, not a settled population effect.",
         ],
-        evidenceLinks: [
-          { label: "About the BERM project", href: "/about" },
-        ],
-        uncertaintyText:
-          "Historical marginalization of researchers does not prove their claims were correct. Becker's bioelectric work on bone healing was eventually validated, but his broader EMF claims remain controversial. The funding bias is documented but its magnitude is debated.",
+        boundary: "The right response to uncertainty is better measurement and transparent study weighting, not a stronger narrative claim.",
       },
       {
-        id: "overfitting",
-        claim: "The model is too good — R² = 0.9999 is overfitting.",
-        paragraphs: [
-          "This is a legitimate concern, and we agree. R² = 0.9999 on the cross-section IS calibration, NOT validation. The model is calibrated to match 2024 observed TFR for each country by construction. This site says so on every page (footer disclaimer K8).",
-          "The meaningful test statistics are different: LOOCV RMSE = 1.146 (leave-one-country-out cross-validation), and 86% of randomly generated placebo series fit the current data better than the model (K8). These are not impressive numbers. We report them because intellectual honesty requires it.",
-          "The model's value is not in fitting the past but in predicting the future. Seven locked predictions with timestamps, confidence intervals, and explicit refutation conditions are published on the Predictions page. If observed values fall outside the CI, the model is falsified on that prediction. No other fertility model makes locked, falsifiable predictions.",
+        question: "Could chemicals, climate, disease, lifestyle or other exposures be involved?",
+        response: [
+          "Yes. These exposures may affect reproductive biology and may co-vary with technology, urbanisation and socioeconomic change. They are competing explanations and potential interactions, not nuisance variables that can be dismissed by a simple correlation.",
+          "A useful test measures or designs around plausible co-exposures, compares alternative causal models and reports which inference changes when they are included.",
         ],
-        evidenceLinks: [
-          { label: "Locked predictions with CI", href: "/predictions" },
-          { label: "Falsification conditions (§9)", href: "/mathematics#falsification" },
-          { label: "LOOCV analysis", href: "/model" },
-        ],
-        uncertaintyText:
-          "The model has more free parameters than ideal. The placebo test (K8) suggests the cross-sectional fit is not strongly constraining. The model's real test is temporal: will the 2030 and 2035 predictions hold? Until then, the model is a hypothesis, not an established result.",
+        boundary: "No single cross-country pattern establishes dominance of one environmental cause. V2 must earn any attribution through discriminating data.",
       },
       {
-        id: "chemicals",
-        claim: "Climate change and chemicals explain everything.",
-        paragraphs: [
-          "Climate change and endocrine-disrupting chemicals (EDCs) are real threats to ecosystems and reproductive health. BERM does not deny this. The question is whether they can explain the full cross-species convergence — identical reproductive declines across insects, amphibians, bees, birds, lab mammals, and humans — or whether an additional factor is required.",
-          "The proxy masking table on the Sentinel Species page shows the critical test: no single conventional explanation gets a 'yes' across all six taxa. Pesticides are partial for insects and bees but have no mechanism for lab mammal fertility decline. Climate change correlates with some insect declines but Krefeld data shows warmer temperatures INCREASE insect biomass. Habitat loss applies to wild species but not to lab animals or humans. Disease explains individual outbreaks (chytrid, Varroa) but not the cross-species pattern. Only EMF via the conserved VGCC mechanism applies to all simultaneously.",
-          "Three structural mechanisms maintain the invisibility of the EMF signal: (1) Attribution bias — EMF is not in most researchers' conceptual vocabulary. A 2024 analysis of 92 potential drivers of insect decline did not include EMF among the candidates. (2) Evidence asymmetry — hundreds of studies examine climate-insect links; fewer than twenty examine EMF-insect links. The volume of evidence tracks funding, not causation. (3) Causal masking — climate change and EMF infrastructure are temporally correlated (both grew 1970–2024). A regression controlling for 'temperature' may inadvertently remove the EMF signal because the two trends move together.",
-          "The test that would distinguish them: a Faraday-shielded laboratory replication. If EMF is the driver, shielded controls would show dramatically different baselines than standard labs. This is a concrete, falsifiable prediction.",
+        question: "What would move the model from structure to a result?",
+        response: [
+          "A measurement-ready FieldState needs documented calibration, B₀ vector, organ transfer, PSD, circadian context, phase/coherence and provenance. It must then be joined to a pre-specified organ or couple endpoint with evidence- and parameter-linked mappings.",
+          "Calibration should use a training period only, followed by an independent laboratory replication and a held-out ASFR/TFR period. Both null and non-null results should update the causal registry.",
         ],
-        evidenceLinks: [
-          { label: "Proxy masking analysis", href: "/sentinel#proxy-masking" },
-          { label: "Cross-species convergence", href: "/sentinel#convergence" },
-          { label: "Temporal correlations", href: "/sentinel#temporal" },
-          { label: "Attribution bias in evidence", href: "/evidence#attribution-bias" },
-        ],
-        uncertaintyText:
-          "Chemical and EMF effects are difficult to separate epidemiologically because both increased during the same period. BERM's partition (EMF dominant, chemicals secondary) is a modeling assumption, not an empirically established ratio. The proxy masking argument identifies a structural blind spot but does not prove EMF is the cause. A Faraday-shielded replication study has not been conducted. Interaction effects between EDCs and EMF are plausible but not modeled.",
-      },
-      {
-        id: "pronatalism",
-        claim: "TFR is declining because people don't want children.",
-        paragraphs: [
-          "This is the strongest version of the cultural objection. If fertility decline were purely volitional, pronatalist policies should reverse it. They don't. The empirical record of pronatalist interventions is a natural experiment that tests the volitional hypothesis — and the results are negative.",
-          "Hungary spends 5% of GDP on family support (the highest in the OECD). TFR rose from 1.23 (2011) to 1.59 (2021), then fell back to 1.51 (2023). The gain was temporary and did not reach replacement. South Korea has spent over $270 billion on pronatalist policies since 2006. TFR continued falling: 1.17 (2006) → 0.72 (2023). Singapore offers up to $190,000 in birth-related incentives per family. TFR: 1.04 (2023). Japan's multi-decade pronatalist effort has failed to reverse the trend: TFR fell from 1.26 (2005) to 1.20 (2024).",
-          "Nordic countries — the gold standard for family-friendly policy (paid parental leave, subsidized childcare, gender equality) — are also declining. Finland: 1.87 (2010) → 1.32 (2024). Sweden: 1.91 (2015) → 1.45 (2024). Norway: 1.98 (2009) → 1.41 (2024). These countries already have the policies that pronatalists advocate, and fertility is still falling.",
-          "The volitional model predicts that removing financial and logistical barriers should restore fertility. The data shows the opposite: even massive financial incentives produce at best a temporary, partial recovery. BERM explains this pattern: pronatalist policies address cultural factors (Level 3) but cannot compensate for declining biological capacity (Level 1). You cannot incentivize your way past impaired spermatogenesis, disrupted ovulation, or suppressed pair-bonding hormones.",
-          "Desire-for-children surveys confirm the gap. Eurobarometer (2018) shows Europeans desire 2.3 children on average but achieve 1.5 — a gap of 0.8 that financial incentives have failed to close. This gap between desired and achieved fertility is itself a signal: if decline were purely volitional, desired fertility would match achieved fertility.",
-        ],
-        evidenceLinks: [
-          { label: "Country-level TFR data", href: "/explorer" },
-          { label: "Biological capacity model", href: "/mathematics#biocap" },
-          { label: "Behavioral factor (hormones)", href: "/mathematics#behavioral" },
-          { label: "Locked predictions", href: "/predictions" },
-        ],
-        uncertaintyText:
-          "Pronatalist policy effectiveness is difficult to evaluate causally — countries that adopt strong policies may differ from those that don't. The desire-fertility gap could partly reflect economic constraints not captured by policy. Some pronatalist interventions may not have been implemented long enough to show full effects. BERM's interpretation (biological capacity limits the response) is consistent with the data but not the only possible explanation.",
-      },
-      {
-        id: "ehs-provocation",
-        claim: "EHS provocation studies show EMF has no effect on people.",
-        paragraphs: [
-          "Provocation studies measure the wrong thing. They ask: 'Do you feel the field?' This is a subjective perception that does not require a biological effect. BERM predicts OBJECTIVE changes (Ca²⁺, ROS, HRV, cortisol) that occur unconsciously. The absence of conscious detection does not imply the absence of biological response.",
-          "Belpomme 2015/2022 (N≈1000) measured objective biomarkers in EHS patients: histaminemia↑ 40%, nitrotyrosine↑ 28% (ONOO⁻/BBB opening marker), S100B↑ 15%, melatonin/creatinine↓ in all cases. These are exactly the markers predicted by BERM's VGCC→Ca²⁺→ROS→BBB pathway. PMC 10226401 (2023) measured HRV in HEALTHY volunteers under Wi-Fi: parasympathetic tone fell significantly (p=0.036), sympathetic tone rose (p=0.002). These were not EHS patients — objective autonomic change occurred in all subjects.",
-          "Provocation null results have four structural explanations: (a) They do not genotype CACNA1C — the population average masks a subgroup response. A 2024 medrxiv study is the first to genotype VGCC variants in an EMF study, confirming 'striking inter-individual differences.' (b) They do not control for anatomical differences (skull thickness, fat layer) that change internal field distribution. (c) They do not control for cumulative exposure history (Selye phase modulates the response). (d) The control group is NOT EMF-free (laboratory baseline bias).",
-          "The discriminating test: a provocation study measuring HRV and Ca²⁺ markers (not subjective symptoms), genotyping CACNA1C, with the control condition in a Faraday-shielded room.",
-        ],
-        evidenceLinks: [
-          { label: "Individual susceptibility evidence", href: "/evidence#individual-susceptibility" },
-          { label: "Laboratory Baseline Bias", href: "/evidence#lab-baseline" },
-          { label: "Mathematical basis (§11)", href: "/mathematics#individual-susceptibility" },
-        ],
-        uncertaintyText:
-          "Belpomme's biomarkers are elevated only in subsets (15–40%), and it has not been shown that the SAME patients have ALL markers elevated simultaneously (PMC12314686, 2025). The CACNA1C genotyping study is a preprint (medrxiv), not yet peer-reviewed. The Selye phase quantification is heuristic, not validated. This is a structural critique of study methodology, not proof that EMF causes EHS.",
-      },
-      {
-        id: "short-experiments",
-        claim: "Short-term exposure studies don't find an effect.",
-        paragraphs: [
-          "This is actually what BERM predicts. The model distinguishes between acute response and chronic cumulation — they are different phenomena requiring different experimental designs.",
-          "DNA repair (BER pathway) has a half-life of approximately 6 hours (Dianov & Hübscher 2013). A typical short-term study exposes for 2 hours and then allows 22 hours of recovery. At this ratio, repair capacity is sufficient: approximately 93% of damage is repaired before the next cycle. Net daily accumulation is negligible. This is why short-term studies find null results — they are measuring a regime where biological defense mechanisms are working as designed.",
-          "Modern human exposure is the opposite: approximately 22 hours of EMF (Wi-Fi, cellular, IoT) with only 2 hours truly EMF-free (deep sleep, perhaps). At this ratio, repair capacity is overwhelmed: only about 21% of daily damage is repaired. The remaining 79% accumulates. Over a year, this produces massive oxidative burden. Manta et al. (2014) demonstrated this directly in Drosophila ovaries: short EMF exposure — ROS returned to baseline; long EMF exposure — ROS did NOT return to baseline.",
-          "The REFLEX consortium (Diem 2005) found a further counter-intuitive result: intermittent exposure produces MORE DNA damage than continuous exposure at the same total dose. BERM explains this through VGCC gating asymmetry — channel opening is faster than closing, so each off→on field transition generates a transient Ca²⁺ spike that exceeds the steady-state level. Repeated transitions = greater total Ca²⁺ load. McCarty (2011) confirmed in a double-blind study that symptoms correlated with field transitions, not field strength.",
-          "The discriminating test: a long-term study (months, not hours) comparing 22h/day exposure with 2h recovery versus 4h/day exposure with 20h recovery, measuring cumulative oxidative markers (nitrotyrosine, lipid peroxidation, 8-OHdG). BERM predicts the high-exposure group will show exponentially more damage than a linear dose-response model would predict.",
-        ],
-        evidenceLinks: [
-          { label: "Recovery window evidence", href: "/evidence" },
-          { label: "Cumulative exposure model (§3)", href: "/mathematics#two-channel" },
-          { label: "Laboratory Baseline Bias", href: "/evidence#lab-baseline" },
-        ],
-        uncertaintyText:
-          "The BER half-life of ~6h is an estimate for one specific repair pathway; total DNA repair involves multiple pathways (NER, HR, NHEJ) with different kinetics. The recovery window model is simplified — real repair is more complex. The REFLEX data (Diem 2005) has been disputed (Vienna investigation into possible data manipulation), though the intermittent > continuous finding has been reported independently. The 22h/2h exposure ratio for modern humans is an estimate that varies by individual.",
-      },
-      {
-        id: "culture-not-biology",
-        claim: "Fertility decline is about culture, not biology. People choose careers over children.",
-        paragraphs: [
-          "Every one of these 'choices' has a hormonal substrate. When testosterone declines, men do not choose to be less motivated — they ARE less motivated. The subjective experience is indistinguishable from a preference change.",
-          "Five specific predictions follow from the hormonal model. First, testosterone directly drives male courtship effort (Puts 2008, Animal Behaviour). T decline means men initiate fewer romantic interactions. Social scientists observe: 'men do not want to commit.' BERM observes: men's approach motivation is biologically suppressed.",
-          "Second, women's mate preferences evolved when male testosterone was higher. T-driven features — jaw width, brow ridge, voice depth, musculature — signal genetic quality (Thornhill & Gangestad 1994). Population-level T decline weakens the signal women evolved to detect. Social scientists observe: 'women's standards are too high.' BERM observes: the signal is objectively weaker.",
-          "Third, the dual-hormone hypothesis (Mehta & Prasad 2015, meta N=8538) shows testosterone's behavioral effects require low cortisol. EMF simultaneously lowers T (WHO meta 29 studies: SMD 0.87) AND raises cortisol (Pawlak 2025: d=1.88). Even residual T cannot express behaviorally because cortisol blocks it. Social scientists observe: 'modern life is stressful.' BERM observes: the stress is partly EMF-mediated and compounds the T effect.",
-          "Fourth, within couples, oxytocin decline reduces pair-bonding motivation and testosterone decline reduces sexual desire in both sexes. Couples have less sex not because they are 'too busy' but because their hormonal motivation is suppressed.",
-          "Fifth, South Korea spent over $200B on pronatalist policies since 2006. TFR fell from 1.13 to 0.72. Cash incentives target P(conscious_choice). BERM shows P(approach) x P(attraction) x P(sex) x P(fertilization) are all hormonally suppressed. If each drops 20%, the combined effect is 0.8^4 = 0.41 — a 59% reduction. Cash cannot restore testosterone or oxytocin.",
-        ],
-        evidenceLinks: [
-          { label: "Behavioral suppression evidence", href: "/evidence" },
-          { label: "Quadruple suppression derivation (§5)", href: "/mathematics#behavioral" },
-          { label: "T-decline studies (Pathway D)", href: "/evidence" },
-        ],
-        uncertaintyText:
-          "The causal chain from population-level T decline to population-level behavioral change has not been tested in an intervention study. Individual-level T-to-behavior relationships are established (RCTs by Dreher 2016 PNAS, Goetz 2024), but scaling to population effects involves ecological inference. The dual-hormone meta-analysis effect size is small (r=-.061). Culture IS real — contraception access, education, and economic opportunity genuinely affect fertility choices. BERM claims some of what looks cultural has a hormonal substrate, not that culture is irrelevant.",
+        boundary: "Until those joins exist, v2 is a research specification and causal map, not a calibrated country forecast model.",
       },
     ],
+    closingTitle: "Constructive ways to test the programme",
+    closingText:
+      "The most useful critiques provide a competing measurement model, a source correction, an independently replicated experiment, or a better demographic design. The project should be judged by whether its registered links survive those tests, not by an unmeasured scalar or an unqualified TFR narrative.",
   },
   fi: {
-    metaTitle: "Vastaväitteet - Extinction Field",
-    metaDesc:
-      "Yleisimmät vastaväitteet BERM-mallille käsiteltyinä näytön, tunnustettujen epävarmuuksien ja tukidatan avulla.",
-    title: "Yleisimmät vastaväitteet",
+    title: "Tutkimuskysymykset ja evidenssirajat",
     subtitle:
-      "Jokainen vahva väite kutsuu vahvaa skeptisyyttä. Alla ovat useimmin kuulemamme vastaväitteet, käsiteltyinä rehellisesti — mukaan lukien se, mihin emme vielä osaa vastata.",
-    clickToExpand: "Klikkaa avataksesi",
-    uncertainty: "Tunnustettu epävarmuus",
-    evidence: "Näyttö",
+      "Kysymykset, joihin BERM:n on vastattava ennen kuin kentästä väestöön ulottuvaa tulkintaa voidaan pitää kalibroituna tuloksena.",
+    introduction:
+      "Tämä sivu ei muuta avoimia kysymyksiä retoriikaksi. Se erottaa, mitä nykyinen FieldState–ASFR-v2-rakenne on suunniteltu testaamaan, siitä mikä on vielä tuntematonta, kilpailevaa tai mallin ulkopuolella.",
     objections: [
       {
-        id: "cultural",
-        claim: "Hedelmällisyyden lasku on kulttuurista — koulutus, kaupungistuminen, ehkäisy.",
-        paragraphs: [
-          "Tämä on vakioselitys ja osittain oikea. Koulutus, kaupungistuminen ja ehkäisyn saatavuus laskevat hedelmällisyyttä. BERM ei kiistä tätä — mallin taso 3 (\"todellinen kulttuuri\") sisältää eksplisiittisesti vapaaehtoiset hedelmällisyysvalinnat.",
-          "Kulttuurinen selitys ei kuitenkaan kykene selittämään kolmea havaintoa: (1) Myös koirat, hevoset ja hyönteiset kokevat lisääntymiskyvyn heikkenemistä — ne eivät käy yliopistossa eivätkä käytä ehkäisyä. (2) Siittiökonsentraatio laski 62 % 50 vuodessa kaikilla alueilla, myös populaatioissa joissa koulutustaso on pysynyt vakaana. (3) 49 maata on nyt alle \"TFR-lattian\" 1,4, jota väestötiede piti mahdottomana puhtaasti tahdonalaisissa malleissa.",
-          "BERM esittää, että kulttuuriset tekijät vaikuttavat biologisen substraatin päällä, joka itsessään heikkenee. Indikaattorilajien näyttö on vahvin argumentti: identtiset VGCC-välitteiset lisääntymisvaikutukset pääjaksoissa, joilla ei ole yhteisiä sosiaalisia tai kulttuurisia tekijöitä.",
+        question: "Voivatko demografiset ja sosiaaliset syyt selittää periodin TFR-muutoksen?",
+        response: [
+          "Kyllä. Koulutus, ehkäisy, asuminen, työmarkkinat, parinmuodostus, muuttoliike, politiikka, toivottu perhekoko, tempo ja ART vaikuttavat havaittuun hedelmällisyyteen. Periodin TFR on viisivuotisikäryhmien summa, ei suora gametti- tai conception-testi.",
+          "V2 mallintaa siksi ASFR:n ennen TFR:ää ja pitää kysynnän/mahdollisuuden, tempon sekä ART/live-birth-deliveryn eksplisiittisinä. Se ei kohdista niiden residuaalivaihtelua biologiseen kenttäreittiin.",
         ],
-        evidenceLinks: [
-          { label: "Indikaattorilajien näyttö", href: "/sentinel" },
-          { label: "Lajienväliset konvergenssitaulukko", href: "/sentinel#convergence" },
-          { label: "Tutkija — maatason data", href: "/explorer" },
-        ],
-        uncertaintyText:
-          "Kulttuuriset tekijät selvästi vaikuttavat. BERM ei vielä kykene kvantifioimaan tarkkaa jakaumaa biologisten ja kulttuuristen tekijöiden välillä minkään yksittäisen maan kohdalla. Mallin taso 3 on kalibroitu, ei johdettu perusperiaatteista.",
+        boundary: "Maakohtainen trendi ei yksin tunnista biologista syytä. Väestöpäättely vaatii kohdistetun FieldState-, päätepiste-, pari- ja ASFR-paneelin sekä uskottavat kilpailevat mallit.",
       },
       {
-        id: "correlation",
-        claim: "Korrelaatio ei ole kausaatiota.",
-        paragraphs: [
-          "Oikein. Yksikään yksittäinen tutkimus ei todista, että EMF aiheuttaa hedelmällisyyden laskua. BERM ei nojaa yhteen tutkimukseen. Sen sijaan se käyttää kuutta identifiointistrategiaa, jotka yhdessä rajaavat vaihtoehtoisten selitysten tilaa:",
-          "1. Proksi-eliminaatio: indikaattorilajit poistavat inhimilliset sekoittajat. 2. Luonnonkokeet: amish/hutteriittiyhteisöt, Israelin sapatin noudattaminen, COVID-lockdownin siittiöparannus. 3. Farmakologinen validaatio: samoja reittejä kohdentavat lääkkeet (VGCC-salpaajat, mTOR-estäjät) tuottavat kvantitatiivisesti yhdenmukaisia vaikutuksia. 4. Annos-vaste: Norjan laivaston kohortti (N=10 497) osoittaa OR 1,86 annos-vastegradientin kanssa. 5. Lajienväliset todisteet: VGCC-konservaatio >70 % kaikissa aitotumallisissa, samat lisääntymisvaikutukset hyönteisissä, sammakkoeläimissä, linnuissa, lepakoissa ja laboratorionisäkkäissä. 6. Mekanistinen ketju: Lindgrenin geometria → χ(Ā)-valinta → VGCC-aktivaatio → Ca²⁺ → ROS → siittiövaurio, jokainen vaihe itsenäisesti varmistettu.",
-          "Mikään yksittäinen strategia ei todista kausaatiota. Yhdessä ne eliminoivat useimmat vaihtoehtoiset selitykset. Jäljelle jäävät vaihtoehdot (tuntematon kaikkialla esiintyvä toksiini, sattuma seitsemässä pääjaksossa) ovat vähemmän parsimoniallisia kuin EMF-hypoteesi.",
+        question: "Osoittaako Lindgren-fysiikka ihmisen lisääntymismekanismin?",
+        response: [
+          "Ei. V2:ssa Lindgrenistä johdettu muotoilu on teoriatason premissi, joka motivoi tausta-, vektori-, geometria- ja spektritietoista mittaussuunnitelmaa. Se ei anna ihmisen reseptori-identiteettiä eikä EMF → TFR -kerrointa.",
+          "Relevantit testit ovat erottavia fysikaalisia ja biologisia kokeita: esimerkiksi ennalta määritelty kulma-, tausta- tai PSD-riippuvuus kalibroiduilla kentillä sekä asianmukaisilla sham-/lämpökontrolleilla.",
         ],
-        evidenceLinks: [
-          { label: "Näyttökokoelma (80+ tutkimusta)", href: "/evidence" },
-          { label: "Farmakologinen validaatio", href: "/mathematics#pharmacological" },
-          { label: "Lindgrenin geometrian johtaminen", href: "/mathematics#lindgren" },
-        ],
-        uncertaintyText:
-          "Identifiointistrategiat rajaavat mutta eivät eliminoi sekoittajia. Todellista väestötason EMF-vähennyskokeen RCT:tä ei ole koskaan tehty. BERM:n kausaaliväite on yhtenevän näytön tukema hypoteesi, ei todistettu tosiasia.",
+        boundary: "Teoreettista premissiä ei ylennetä empiiriseksi päätepisteeksi. Jokainen lisälenkki tarvitsee oman mitatun evidenssinsä.",
       },
       {
-        id: "replication",
-        claim: "EMF-tutkimus ei ole replikoitunut.",
-        paragraphs: [
-          "Tämä on osittain totta ja osittain rakenteellinen artefakti. Panagopoulos ym. (2025) tekivät sateenvarjokatsauksen 39 systemaattisesta katsauksesta, jotka kattavat tuhansia yksittäisiä tutkimuksia. Enemmistö raportoi ei-ionisoivan EMF:n biologisia vaikutuksia. Replikaatio-ongelma on todellinen mutta ei ainutlaatuinen EMF:lle — se koskee koko biolääketieteellistä tutkimusta.",
-          "BERM tarjoaa rakenteellisen selityksen sille, miksi nimenomaan EMF-tutkimus kärsii replikaatio-ongelmista: kontrolliryhmä ei ole EMF-vapaa. Jokainen laboratorio toimii ympäristön sähkömagneettisessa kentässä. Kontrollieläimet vuonna 2020 altistuvat EMF-tasoille, jotka olisivat olleet koeolosuhde vuonna 1985. Tämä on laboratorion lähtötason vinouma — se pienentää systemaattisesti vaikutuskokoja ajan myötä ambient-EMF:n noustessa.",
-          "Malli ennustaa, että Faraday-suojattu laboratorio osoittaisi 684× suuremman vaikutussuhteen kuin tavallinen laboratorio. Tämä on testattava, falsifioitava ennuste.",
+        question: "Mitä lisääntymis- ja estetutkimukset todella osoittavat?",
+        response: [
+          "Rekisterissä on rajattuja löydöksiä, kuten in-vitro-ihmisen siittiöpäätepisteitä, eläinmallien veri–kiveseste- ja munasarjatutkimuksia sekä mekanistista redox-/tight-junction-työtä. Ne voivat motivoida elinkohtaisia tiloja yhden geneerisen biologisen kapasiteettikäyrän sijasta.",
+          "Järjestelmät, taajuudet, amplitudit, kestot ja päätepisteet eroavat. Eläin- ja solutuloksia ei voi suoraan muuntaa väestöannokseksi, hedelmällisyystodennäköisyydeksi tai maakohtaiseksi ennusteeksi.",
         ],
-        evidenceLinks: [
-          { label: "Laboratorion lähtötason vinoumaanalyysi", href: "/evidence#lab-baseline" },
-          { label: "Replikaatiokriisi BERM:n ennusteena", href: "/replication" },
-        ],
-        uncertaintyText:
-          "Laboratorion lähtötason vinoumahypoteesi on mekanistisesti uskottava, mutta sitä ei ole kokeellisesti testattu. Faraday-suojattua replikaatiotutkimusta ei ole tehty. 684×-ennuste on johdettu mallista, ei havainnoista.",
+        boundary: "Tutkimus–solmu-tietue tukee vain rekisteröityä reitin osaa. Mikään niistä ei ole suora TFR-kulmakerroin eikä ihmisen päätepistepaneelin korvike.",
       },
       {
-        id: "levels",
-        claim: "Säteilytasot ovat liian alhaiset aiheuttamaan biologisia vaikutuksia.",
-        paragraphs: [
-          "Tämä vastaväite olettaa, että biologinen vaste on verrannollinen absoluuttiseen kenttävoimakkuuteen. Lindgrenin viitekehys osoittaa tämän vääräksi. Biologisesti relevantti vaste on χ(Ā) = Ā / √(1 + Ā²), missä Ā on normalisoitu taustakenttä. Tämä on saturaatiofunktio, ei lineaarinen.",
-          "Solukalvolla endogeeninen sähkökenttä on noin 7 × 10⁶ V/m. Lindgrenin normalisoiduissa yksiköissä tämä tarkoittaa χ ≈ 1,0 — biologinen järjestelmä on jo lähellä saturaatiota. Pienet häiriöt tässä toimintapisteessä tuottavat mitattavia vaikutuksia, koska järjestelmä toimii vastekäyrän jyrkällä osalla.",
-          "VGCC:n jännitesensori on herkkä kentille, jotka ovat 100× nykyisten turvarajojen alapuolella. Salford ym. osoittivat veri-aivoesteen läpäisevyyden SAR-arvolla 0,016 W/kg — 100× FCC-rajan 1,6 W/kg alapuolella. Turvallisuusstandardit perustuvat termisiin vaikutuksiin; BERM:n mekanismit ovat ei-termisiä.",
+        question: "Voivatko mobiililiittymät tai eDRX osoittaa fysikaalisen altistusreitin?",
+        response: [
+          "Eivät. Mobiililiittymät voivat ajoittaa digitaaliteknologian leviämistä, mutta ne eivät ole paikallinen kenttämittaus, elinsiirto eivätkä biologinen annos. Nykyinen N = 163 -kohorttitulosta käsitellään eksplisiittisesti kuvailevana TECHNOLOGY_TIMING_PROXY_NOT_FIELDSTATE-analyysinä.",
+          "Samoin eDRX on laitteen vastaanoton/sivutuksen ajoitusmetadataa, ei yksin tunnettu downlink-RF-kenttäallekirjoitus. Mahdollinen verhokäyrä- tai beat-piirre on mitattava todellisessa kentässä ennen biologista testiä.",
         ],
-        evidenceLinks: [
-          { label: "χ(Ā)-valintasäännön johtaminen", href: "/mathematics#chi" },
-          { label: "Lindgrenin geometria", href: "/mathematics#lindgren" },
-          { label: "Reitti A: VGCC-mekanismi", href: "/evidence" },
-        ],
-        uncertaintyText:
-          "Lindgrenin geometrinen viitekehys on julkaistu mutta ei vielä laajasti replikoitu. χ(Ā)-funktio on teoreettinen ennuste. Vaikka VGCC:n herkkyys subtermisillä tasoilla on kokeellisesti osoitettu, koko ketjua geometriasta väestötason hedelmällisyyteen ei ole verifioitu yhdessä kokeessa.",
+        boundary: "Proxyn ajoitus ja fysikaalinen dosimetria vastaavat eri kysymyksiin, ja ne on merkittävä eri tavoin.",
       },
       {
-        id: "noticed",
-        claim: "Jos tämä olisi totta, joku olisi huomannut.",
-        paragraphs: [
-          "Joku huomasi. Robert O. Becker dokumentoi biosähköisiä vaikutuksia 1960–70-luvuilla ja hänet marginalisoitiin systemaattisesti. Hänen tutkimusrahoituksensa katkaistiin sen jälkeen, kun hän julkaisi löydöksiä sähkömagneettisten kenttien vaikutuksista luun paranemiseen ja hermojen regeneraatioon. W. Ross Adey ja Allan Frey tekivät vastaavia löydöksiä (Freyn kuulovaikutus, 1961) ja kohtasivat vastaavaa institutionaalista vastustusta.",
-          "Yhdysvaltain laivasto ja CIA toteuttivat luokiteltuja EMF:n biovaikutusten tutkimusohjelmia 1960–80-luvuilla. Tuloksia ei julkaistu avoimessa kirjallisuudessa. Kun televiestintäteollisuus kasvoi monen biljoonan dollarin sektoriksi, tutkimusrahoitus muuttui: teollisuuden rahoittamat tutkimukset löytävät 10× todennäköisemmin \"ei vaikutusta\" kuin riippumattomasti rahoitetut (Huss ym. 2007, EHP).",
-          "Tämä ei ole salaliittoteoria — se on dokumentoitu institutionaalisten kannustimien kuvio. Tupakkateollisuus noudatti samaa pelisääntöä vuosikymmeniä. Valtavirtaisen tunnustuksen puuttuminen ei ole todiste puuttumisesta; se on todiste tutkimusrahoituksen rakenteesta.",
+        question: "Entä vaihteleva EMF-kirjallisuus ja systemaattiset katsaukset?",
+        response: [
+          "Evidenssipohja on heterogeeninen. Tutkimuslaatu, altistuskarakterisointi, lämpökontrolli, päätepistevalinta ja replikaatio vaihtelevat huomattavasti. Katsaukset voivat osoittaa, että eri järjestelmistä on löydöksiä, mutta niiden varmuusarviot ja herkkyysanalyysit on raportoitava yhden otsikkolauseen sijaan.",
+          "Esimerkiksi WHO:n tilaama lisääntymiskatsaus raportoi haitallisia löydöksiä useissa analyyseissä, mutta arvioi suuren osan varmuudesta matalaksi tai hyvin matalaksi ja edellytti herkkyyttä korkean SAR:n tutkimuksille. V2 käsittelee tätä kontekstina, ei vakiintuneena väestövaikutuksena.",
         ],
-        evidenceLinks: [
-          { label: "Tietoa BERM-projektista", href: "/about" },
-        ],
-        uncertaintyText:
-          "Tutkijoiden historiallinen marginalisointi ei todista heidän väitteidensä olleen oikeita. Beckerin biosähköinen työ luun paranemisesta lopulta validoitiin, mutta hänen laajemmat EMF-väitteensä ovat edelleen kiistanalaisia. Rahoitusvinouma on dokumentoitu mutta sen suuruusluokka on kiistelty.",
+        boundary: "Oikea vastaus epävarmuuteen on parempi mittaus ja läpinäkyvä tutkimuspainotus, ei vahvempi narratiiviväite.",
       },
       {
-        id: "overfitting",
-        claim: "Malli on liian hyvä — R² = 0,9999 on overfitting.",
-        paragraphs: [
-          "Tämä on oikeutettu huoli, ja olemme samaa mieltä. R² = 0,9999 poikkileikkauksessa ON kalibraatiota, EI validointia. Malli on kalibroitu vastaamaan vuoden 2024 havaittua TFR:ää jokaiselle maalle rakenteellisesti. Tämä sivusto sanoo tämän jokaisella sivulla (alatunnisteen disclaimer K8).",
-          "Merkitykselliset testisuureet ovat toiset: LOOCV RMSE = 1,146 (jätä-yksi-maa-pois ristivalidointi), ja 86 % satunnaisesti generoiduista plasebosarjoista sopii nykyiseen dataan paremmin kuin malli (K8). Nämä eivät ole vaikuttavia lukuja. Raportoimme ne, koska älyllinen rehellisyys vaatii sitä.",
-          "Mallin arvo ei ole menneisyyden sovittamisessa vaan tulevaisuuden ennustamisessa. Seitsemän lukittua ennustetta aikaleimoineen, luottamusväleineen ja eksplisiittisine kumoamisehtoineen on julkaistu Ennusteet-sivulla. Jos havaitut arvot osuvat CI:n ulkopuolelle, malli falsifioidaan kyseisen ennusteen osalta. Mikään muu hedelmällisyysmalli ei tee lukittuja, falsifioitavia ennusteita.",
+        question: "Voivatko kemikaalit, ilmasto, sairaudet, elämäntapa tai muut altisteet olla mukana?",
+        response: [
+          "Kyllä. Nämä altisteet voivat vaikuttaa lisääntymisbiologiaan ja yhteisvaihdella teknologian, kaupungistumisen ja sosioekonomisen muutoksen kanssa. Ne ovat kilpailevia selityksiä ja mahdollisia yhteisvaikutuksia, eivät häiriötekijöitä, jotka voidaan sivuuttaa yksinkertaisella korrelaatiolla.",
+          "Hyödyllinen testi mittaa tai suunnittelee uskottavien yhteisaltisteiden ympärille, vertailee vaihtoehtoisia kausaalimalleja ja raportoi, miten päätelmä muuttuu, kun ne sisällytetään.",
         ],
-        evidenceLinks: [
-          { label: "Lukitut ennusteet CI:neen", href: "/predictions" },
-          { label: "Falsifikaatioehdot (§9)", href: "/mathematics#falsification" },
-          { label: "LOOCV-analyysi", href: "/model" },
-        ],
-        uncertaintyText:
-          "Mallilla on enemmän vapaita parametreja kuin olisi ihanteellista. Plasebotesti (K8) viittaa siihen, että poikkileikkaussovitus ei ole vahvasti rajoittava. Mallin todellinen testi on ajallinen: pitävätkö vuosien 2030 ja 2035 ennusteet? Siihen asti malli on hypoteesi, ei vakiintunut tulos.",
+        boundary: "Yksittäinen maidenvälinen kuvio ei osoita yhden ympäristösyyn hallitsevuutta. V2:n on ansaittava attribuutio erottavalla datalla.",
       },
       {
-        id: "chemicals",
-        claim: "Ilmastonmuutos ja kemikaalit selittävät kaiken.",
-        paragraphs: [
-          "Ilmastonmuutos ja hormonihäiritsijät (EDC:t) ovat todellisia uhkia ekosysteemeille ja lisääntymisterveydelle. BERM ei kiistä tätä. Kysymys on, voivatko ne selittää koko lajienväliset konvergenssin — identtiset lisääntymisen vähenemät hyönteisissä, sammakkoeläimissä, mehiläisissä, linnuissa, laboratorionisäkkäissä ja ihmisissä — vai tarvitaanko lisätekijä.",
-          "Indikaattorilajit-sivun proxy masking -taulukko osoittaa kriittisen testin: mikään yksittäinen perinteinen selitys ei saa 'kyllä'-merkintää kaikkien kuuden taksonin kohdalla. Torjunta-aineet ovat osittaisia hyönteisille ja mehiläisille mutta niillä ei ole mekanismia laboratorionisäkkäiden hedelmällisyyden laskulle. Ilmastonmuutos korreloi joidenkin hyönteisvähenemien kanssa, mutta Krefeldin data osoittaa, että lämpimämmät lämpötilat LISÄÄVÄT hyönteisten biomassaa. Elinympäristön menetys koskee villejä lajeja mutta ei laboratorieläimiä tai ihmisiä. Taudit selittävät yksittäisiä epidemioita (chytrid, Varroa) mutta eivät lajienvälistä kuviota. Vain EMF konservoituneen VGCC-mekanismin kautta soveltuu kaikkiin samanaikaisesti.",
-          "Kolme rakenteellista mekanismia ylläpitää EMF-signaalin näkymättömyyttä: (1) Attribuutiovinouma — EMF ei ole useimpien tutkijoiden käsitteellisessä sanastossa. Vuoden 2024 analyysi 92 mahdollisesta hyönteisvähenemän ajurista ei sisältänyt EMF:ää kandidaattien joukossa. (2) Näytön epäsymmetria — satoja tutkimuksia tarkastelee ilmasto-hyönteisyhteyksiä; alle kaksikymmentä tarkastelee EMF-hyönteisyhteyksiä. Näytön määrä seuraa rahoitusta, ei kausaatiota. (3) Kausaalinen peittäminen — ilmastonmuutos ja EMF-infrastruktuuri ovat ajallisesti korreloituneet (molemmat kasvoivat 1970–2024). Regressio, joka kontrolloi 'lämpötilaa', voi vahingossa poistaa EMF-signaalin, koska kaksi trendiä liikkuvat yhdessä.",
-          "Erottava testi: Faraday-suojattu laboratorioreplikaatio. Jos EMF on ajuri, suojatut kontrollit osoittaisivat dramaattisesti erilaisia perustasoja kuin tavalliset laboratoriot. Tämä on konkreettinen, falsifioitava ennuste.",
+        question: "Mikä siirtäisi mallin rakenteesta tulokseksi?",
+        response: [
+          "Mittausvalmis FieldState tarvitsee dokumentoidun kalibroinnin, B₀-vektorin, elinsiirron, PSD:n, vuorokausikontekstin, vaiheen/koherenssin ja provenienssin. Se on sen jälkeen yhdistettävä ennalta määriteltyyn elin- tai paripäätepisteeseen evidenssi- ja parametri-ID:hin kiinnittyvillä mappingeilla.",
+          "Kalibrointi tehdään vain opetusjaksolla, jota seuraavat riippumaton laboratorioreplikaatio ja sovituksen ulkopuolelle jätetty ASFR/TFR-jakso. Sekä nolla- että ei-nollatulosten tulee päivittää kausaalirekisteriä.",
         ],
-        evidenceLinks: [
-          { label: "Proxy masking -analyysi", href: "/sentinel#proxy-masking" },
-          { label: "Lajienväliset konvergenssi", href: "/sentinel#convergence" },
-          { label: "Ajalliset korrelaatiot", href: "/sentinel#temporal" },
-          { label: "Attribuutiovinouma näytössä", href: "/evidence#attribution-bias" },
-        ],
-        uncertaintyText:
-          "Kemikaali- ja EMF-vaikutuksia on vaikea erottaa epidemiologisesti, koska molemmat lisääntyivät samana ajanjaksona. BERM:n jako (EMF hallitseva, kemikaalit toissijainen) on mallinnusoletus, ei empiirisesti vakiintunut suhdeluku. Proxy masking -argumentti tunnistaa rakenteellisen sokean pisteen mutta ei todista EMF:n olevan syy. Faraday-suojattua replikaatiotutkimusta ei ole tehty. Vuorovaikutusvaikutukset EDC:iden ja EMF:n välillä ovat uskottavia mutta mallintamattomia.",
-      },
-      {
-        id: "pronatalism",
-        claim: "TFR laskee, koska ihmiset eivät halua lapsia.",
-        paragraphs: [
-          "Tämä on kulttuurivastaväitteen vahvin muoto. Jos hedelmällisyyden lasku olisi puhtaasti tahdonalaista, pronatalismipolitiikkojen pitäisi kääntää se. Ne eivät tee sitä. Pronatalististen interventioiden empiirinen tietue on luonnonkoe, joka testaa tahdonalaista hypoteesia — ja tulokset ovat negatiivisia.",
-          "Unkari käyttää 5 % BKT:stä perhetukeen (OECD:n korkein). TFR nousi 1,23:sta (2011) 1,59:ään (2021) ja laski sitten takaisin 1,51:een (2023). Nousu oli tilapäinen eikä saavuttanut uusiutumistasoa. Etelä-Korea on käyttänyt yli 270 miljardia dollaria pronatalismipolitiikkoihin vuodesta 2006. TFR jatkoi laskuaan: 1,17 (2006) → 0,72 (2023). Singapore tarjoaa jopa 190 000 dollaria syntyvyyskannustimia perhettä kohti. TFR: 1,04 (2023). Japanin vuosikymmeniä kestänyt pronatalistinen pyrkimys ei ole kääntänyt trendiä: TFR laski 1,26:sta (2005) 1,20:een (2024).",
-          "Pohjoismaat — perheystävällisen politiikan kultastandardi (palkallinen vanhempainvapaa, tuettu päivähoito, sukupuolten tasa-arvo) — laskevat myös. Suomi: 1,87 (2010) → 1,32 (2024). Ruotsi: 1,91 (2015) → 1,45 (2024). Norja: 1,98 (2009) → 1,41 (2024). Näillä mailla on jo ne politiikat, joita pronatasmia kannattavat ajavat, ja hedelmällisyys laskee silti.",
-          "Tahdonalainen malli ennustaa, että taloudellisten ja logististen esteiden poistamisen pitäisi palauttaa hedelmällisyys. Data osoittaa päinvastaista: massiivisetkin taloudelliset kannustimet tuottavat parhaimmillaan tilapäisen, osittaisen palautumisen. BERM selittää tämän kuvion: pronatalismipolitiikat kohdistuvat kulttuurisiin tekijöihin (taso 3) mutta eivät voi kompensoida heikkenevää biologista kapasiteettia (taso 1). Ei voi kannustimilla ohittaa heikentynyttä spermatogeneesiä, häiriintynyttä ovulaatiota tai tukahdutettuja parinmuodostushormoneja.",
-          "Lapsitovekyselyt vahvistavat kuilun. Eurobarometri (2018) osoittaa, että eurooppalaiset haluavat keskimäärin 2,3 lasta mutta saavuttavat 1,5 — kuilu 0,8, jota taloudelliset kannustimet eivät ole onnistuneet kuromaan umpeen. Tämä kuilu halutun ja toteutuneen hedelmällisyyden välillä on itsessään signaali: jos lasku olisi puhtaasti tahdonalaista, haluttu hedelmällisyys vastaisi toteutunutta.",
-        ],
-        evidenceLinks: [
-          { label: "Maatason TFR-data", href: "/explorer" },
-          { label: "Biologisen kapasiteetin malli", href: "/mathematics#biocap" },
-          { label: "Käyttäytymistekijä (hormonit)", href: "/mathematics#behavioral" },
-          { label: "Lukitut ennusteet", href: "/predictions" },
-        ],
-        uncertaintyText:
-          "Pronatalismipolitiikkojen tehokkuutta on vaikea arvioida kausaalisesti — politiikkoja omaksuvat maat voivat poiketa niistä, jotka eivät omaksu. Halu-hedelmällisyyskuilu voi osittain heijastaa taloudellisia rajoitteita, joita politiikka ei kata. Joitakin pronatalistisia interventioita ei ehkä ole toteutettu tarpeeksi pitkään täysien vaikutusten näyttämiseksi. BERM:n tulkinta (biologinen kapasiteetti rajoittaa vastetta) on yhdenmukainen datan kanssa mutta ei ainoa mahdollinen selitys.",
-      },
-      {
-        id: "ehs-provocation",
-        claim: "EHS-provokaatiotutkimukset osoittavat, ettei EMF vaikuta ihmisiin.",
-        paragraphs: [
-          "Provokaatiotutkimukset mittaavat väärää asiaa. Ne kysyvät: 'Tunnetko kentän?' Tämä on subjektiivinen havainto, joka ei edellytä biologista vaikutusta. BERM ennustaa OBJEKTIIVISIA muutoksia (Ca²⁺, ROS, HRV, kortisoli), jotka tapahtuvat tiedostamatta. Tietoisen havainnon puuttuminen ei tarkoita biologisen vasteen puuttumista.",
-          "Belpomme 2015/2022 (N≈1000) mittasi objektiivisia biomarkkereita EHS-potilaissa: histaminemia↑ 40 %, nitrotyrosiini↑ 28 % (ONOO⁻/veri-aivoesteen avautumismarkkeri), S100B↑ 15 %, melatoniini/kreatiniini↓ kaikissa tapauksissa. Nämä ovat täsmälleen BERM:n VGCC→Ca²⁺→ROS→BBB-reitin ennustamat markkerit. PMC 10226401 (2023) mittasi HRV:tä TERVEISSÄ vapaaehtoisissa Wi-Fi-altistuksessa: parasympaattinen tonus laski merkitsevästi (p=0,036), sympaattinen tonus nousi (p=0,002). Nämä eivät olleet EHS-potilaita — objektiivinen autonominen muutos tapahtui kaikissa koehenkilöissä.",
-          "Provokaation nollatuloksilla on neljä rakenteellista selitystä: (a) Ne eivät genotyypitä CACNA1C:tä — populaatiokeskiarvo peittää alaryhmän vasteen. Vuoden 2024 medrxiv-tutkimus on ensimmäinen, joka genotyypittää VGCC-variantit EMF-tutkimuksessa ja vahvistaa 'silmiinpistävät yksilöiden väliset erot.' (b) Ne eivät kontrolloi anatomisia eroja (kallon paksuus, rasvakerros), jotka muuttavat sisäistä kenttäjakaumaa. (c) Ne eivät kontrolloi kumulatiivista altistushistoriaa (Selye-vaihe moduloi vastetta). (d) Kontrolliryhmä EI ole EMF-vapaa (laboratorion perustasobias).",
-          "Erotteleva testi: provokaatiotutkimus, joka mittaa HRV:tä ja Ca²⁺-markkereita (ei subjektiivisia oireita), genotyypittää CACNA1C:n, ja kontrollitilanteessa käytetään Faraday-suojattua huonetta.",
-        ],
-        evidenceLinks: [
-          { label: "Yksilöllisen herkkyyden todisteet", href: "/evidence#individual-susceptibility" },
-          { label: "Laboratorion perustasobias", href: "/evidence#lab-baseline" },
-          { label: "Matemaattinen perusta (§11)", href: "/mathematics#individual-susceptibility" },
-        ],
-        uncertaintyText:
-          "Belpommen biomarkkerit ovat koholla vain osajoukoissa (15–40 %), eikä ole osoitettu, että SAMOILLA potilailla KAIKKI markkerit olisivat koholla samanaikaisesti (PMC12314686, 2025). CACNA1C-genotyypitystutkimus on preprintti (medrxiv), ei vielä vertaisarvioitu. Selye-vaiheen kvantifiointi on heuristista, ei validoitua. Tämä on rakenteellinen kritiikki tutkimusmenetelmistä, ei todiste siitä, että EMF aiheuttaa EHS:n.",
-      },
-      {
-        id: "short-experiments",
-        claim: "Lyhytaikaiset altistuskokeet eivät löydä vaikutusta.",
-        paragraphs: [
-          "Juuri tätä BERM ennustaa. Malli erottaa akuutin vasteen ja kroonisen kumulaation — ne ovat eri ilmiöitä, jotka vaativat erilaiset koeasetelmat.",
-          "DNA-korjauksen (BER-reitti) puoliintumisaika on noin 6 tuntia (Dianov & Hübscher 2013). Tyypillinen lyhytaikaiskoe altistaa 2 tuntia ja sallii 22 tuntia palautumista. Tällä suhteella korjauskapasiteetti riittää: noin 93 % vauriosta korjataan ennen seuraavaa sykliä. Nettokumulaatio on merkityksetöntä. Siksi lyhytkokeet antavat nollatuloksia — ne mittaavat aluetta, jossa biologiset puolustusmekanismit toimivat suunnitellulla tavalla.",
-          "Moderni ihmisaltistus on päinvastainen: noin 22 tuntia EMF:ää (Wi-Fi, matkapuhelin, IoT) ja vain 2 tuntia todella EMF-vapaata aikaa (syvä uni). Tällä suhteella korjauskapasiteetti ylikuormittuu: vain noin 21 % päivittäisestä vauriosta korjataan. Loput 79 % kumuloituvat. Vuodessa tämä tuottaa massiivisen oksidatiivisen kuorman. Manta ym. (2014) osoittivat tämän suoraan Drosophilan munasarjoissa: lyhyt EMF-altistus — ROS palautui lähtötasolle; pitkä EMF-altistus — ROS EI palautunut lähtötasolle.",
-          "REFLEX-konsortio (Diem 2005) havaitsi lisäksi vastaintuitiivisen tuloksen: katkonainen altistus tuottaa ENEMMÄN DNA-vaurioita kuin jatkuva samalla kokonaisannoksella. BERM selittää tämän VGCC-portin asymmetrialla — kanavan avautuminen on nopeampaa kuin sulkeutuminen, joten jokainen off→on-kenttäsiirtymä synnyttää ohimenevän Ca²⁺-piikin, joka ylittää vakiotilan. Toistuvat siirtymät = suurempi kokonais-Ca²⁺-kuorma. McCarty (2011) vahvisti tuplasokkokokeessa, että oireet korreloivat kenttäsiirtymien, eivät kenttävoimakkuuden kanssa.",
-          "Erotteleva testi: pitkäaikaistutkimus (kuukausia, ei tunteja), jossa verrataan 22h/pv altistusta 2h palautumisella ja 4h/pv altistusta 20h palautumisella, mitaten kumulatiivisia oksidatiivisia markkereita (nitrotyrosiini, lipidiperoksidaatio, 8-OHdG). BERM ennustaa, että korkean altistuksen ryhmä osoittaa eksponentiaalisesti enemmän vaurioita kuin lineaarinen annos-vastemalli ennustaisi.",
-        ],
-        evidenceLinks: [
-          { label: "Palautumisikkunan todisteet", href: "/evidence" },
-          { label: "Kumulatiivinen altistusmalli (§3)", href: "/mathematics#two-channel" },
-          { label: "Laboratorion perustasobias", href: "/evidence#lab-baseline" },
-        ],
-        uncertaintyText:
-          "BER:n ~6h puoliintumisaika on arvio yhdelle korjausreitille; kokonais-DNA-korjaus käsittää useita reittejä (NER, HR, NHEJ), joilla on eri kinetiikka. Palautumisikkunamalli on yksinkertaistettu — todellinen korjaus on monimutkaisempaa. REFLEX-data (Diem 2005) on kiistetty (Wienin tutkinta mahdollisesta datan manipuloinnista), vaikka katkonainen > jatkuva -havainto on raportoitu itsenäisesti muualla. Modernin ihmisen 22h/2h altistussuhde on arvio, joka vaihtelee yksilöittäin.",
-      },
-      {
-        id: "culture-not-biology",
-        claim: "Hedelmallisyyden lasku johtuu kulttuurista, ei biologiasta. Ihmiset valitsevat uran lasten sijaan.",
-        paragraphs: [
-          "Jokaisella naista 'valinnoista' on hormonaalinen substraatti. Kun testosteroni laskee, miehet eivat valitse olla vahemman motivoituneita — he OVAT vahemman motivoituneita. Subjektiivinen kokemus on erottamaton preferenssimuutoksesta.",
-          "Viisi spesifiä ennustetta seuraa hormonaalisesta mallista. Ensinnäkin, testosteroni ohjaa suoraan miehen parinmuodostusponnistelua (Puts 2008, Animal Behaviour). T-lasku tarkoittaa, etta miehet aloittavat harvemmin romanttisia kontakteja. Yhteiskuntatieteilija havaitsee: 'miehet eivat halua sitoutua.' BERM havaitsee: miesten lahestymismotivaatio on biologisesti suppressoitu.",
-          "Toiseksi, naisten kumppanin valintapreferenssit kehittyivat olosuhteissa joissa miesten testosteroni oli korkeampi. T-tuottamat piirteet — leuanleveys, kulmakaari, aanen syvyys, lihaksisto — signaloivat geneettista laatua (Thornhill & Gangestad 1994). Populaatiotason T-lasku heikentaa signaalia jonka naiset ovat kehittyneet havaitsemaan. Yhteiskuntatieteilija havaitsee: 'naisten standardit ovat nousseet.' BERM havaitsee: signaali on objektiivisesti heikentynyt.",
-          "Kolmanneksi, dual-hormone -hypoteesi (Mehta & Prasad 2015, meta N=8538) osoittaa, etta testosteronin kayttaytymisvaikutukset vaativat matalan kortisolin. EMF samanaikaisesti laskee T:ta (WHO meta 29 tutkimusta: SMD 0,87) JA nostaa kortisolia (Pawlak 2025: d=1,88). Jaannostestosteronikaan ei voi ilmeta kayttaytymisessa koska kortisoli estaa sen. Yhteiskuntatieteilija havaitsee: 'moderni elama on stressaavaa.' BERM havaitsee: stressi on osittain EMF-valitteista ja yhdistaa T-vaikutukseen.",
-          "Neljanneksi, pariskuntien sisalla oksitosiinin lasku vahentaa parisitomotiivaatiota ja testosteronin lasku vahentaa seksuaalista halua molemmilla sukupuolilla. Parit harrastavat vahemman seksia ei siksi etta he ovat 'liian kiireisia' vaan koska hormonaalinen motivaatio on suppressoitu.",
-          "Viidenneksi, Etela-Korea kaytti yli 200 miljardia dollaria pronatalistisiin ohjelmiin vuodesta 2006. TFR laski 1,13:sta 0,72:een. Taloudelliset kannustimet kohdistuvat tietoiseen P(valinta):iin. BERM nayttaa etta P(lahestyminen) x P(attraktio) x P(seksi) x P(hedelmöitys) ovat kaikki hormonaalisesti suppressoituja. Jos jokainen laskee 20%, yhteisvaikutus on 0,8⁴ = 0,41 — 59% lasku. Raha ei palauta testosteronia eika oksitosiinia.",
-        ],
-        evidenceLinks: [
-          { label: "Behavioraalisen suppression naytto", href: "/evidence" },
-          { label: "Nelinkertainen suppressio -johtaminen (§5)", href: "/mathematics#behavioral" },
-          { label: "T-laskunaytto (Reitti D)", href: "/evidence" },
-        ],
-        uncertaintyText:
-          "Kausaaliketjua populaatiotason T-laskusta populaatiotason kayttaytymismuutokseen ei ole testattu interventiotutkimuksessa. Yksilotason T→kayttaytymis-yhteydet ovat vakiintuneita (RCT:t Dreher 2016 PNAS, Goetz 2024), mutta populaatiotasolle skaalaaminen sisaltaa ekologista paattelya. Dual-hormone -meta-analyysin efektikoko on pieni (r=-0,061). Kulttuuri ON todellinen — ehkaisyn saatavuus, koulutus ja taloudelliset mahdollisuudet vaikuttavat aidosti hedelmallisyysvalintoihin. BERM vaittaa etta osa siita mika nayttaa kulttuuriselta on hormonaalisesti mediatoitua, ei etta kulttuuri on irrelevantti.",
+        boundary: "Kunnes nämä joinit ovat olemassa, v2 on tutkimusmäärittely ja kausaalikartta, ei kalibroitu maakohtainen ennustemalli.",
       },
     ],
+    closingTitle: "Rakentavia tapoja testata tutkimusohjelmaa",
+    closingText:
+      "Hyödyllisimmät kritiikit tarjoavat kilpailevan mittausmallin, lähdekorjauksen, riippumattomasti replikoidun kokeen tai paremman demografisen asetelman. Projektia tulee arvioida sen mukaan, kestävätkö rekisteröidyt lenkit nämä testit — ei mittaamattoman skalaarin tai rajaamattoman TFR-narratiivin mukaan.",
   },
 };
 
@@ -423,80 +158,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const d = locale === "fi" ? t.fi : t.en;
-  return { title: d.metaTitle, description: d.metaDesc };
-}
-
-function ObjectionCard({
-  objection,
-  locale,
-  index,
-}: {
-  objection: Objection;
-  locale: string;
-  index: number;
-}) {
-  const d = locale === "fi" ? t.fi : t.en;
-  const inputId = `objection-${objection.id}`;
-
-  return (
-    <div className="border border-card-border rounded-lg overflow-hidden">
-      <input type="checkbox" id={inputId} className="peer hidden" />
-      <label
-        htmlFor={inputId}
-        className="flex items-start gap-4 p-5 cursor-pointer hover:bg-card-bg/50 transition-colors peer-checked:bg-card-bg"
-      >
-        <span className="flex-shrink-0 mt-0.5 w-7 h-7 rounded-full bg-status-refuted/15 text-status-refuted flex items-center justify-center text-xs font-bold">
-          {index + 1}
-        </span>
-        <div className="flex-1 min-w-0">
-          <p className="text-base font-semibold text-status-refuted leading-snug">
-            &ldquo;{objection.claim}&rdquo;
-          </p>
-          <p className="text-xs text-foreground-muted mt-1 peer-checked:hidden">
-            {d.clickToExpand}
-          </p>
-        </div>
-        <span className="flex-shrink-0 mt-1 text-foreground-muted transition-transform peer-checked:rotate-180">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
-      </label>
-
-      <div className="hidden peer-checked:block border-t border-card-border p-5 bg-card-bg">
-        <div className="space-y-3 text-sm text-foreground leading-relaxed max-w-3xl">
-          {objection.paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </div>
-
-        <div className="mt-5 flex flex-wrap gap-2">
-          <span className="text-xs font-medium text-foreground-muted">
-            {d.evidence}:
-          </span>
-          {objection.evidenceLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={`/${locale}${link.href}`}
-              className="text-xs text-accent hover:underline"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-4 p-4 rounded-lg bg-background border border-border">
-          <p className="text-xs font-semibold text-foreground-muted mb-1">
-            {d.uncertainty}
-          </p>
-          <p className="text-xs text-foreground-muted leading-relaxed">
-            {objection.uncertaintyText}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+  const d = t[locale === "fi" ? "fi" : "en"];
+  return { title: `${d.title} – Extinction Field`, description: d.subtitle };
 }
 
 export default async function ObjectionsPage({
@@ -505,24 +168,29 @@ export default async function ObjectionsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const d = locale === "fi" ? t.fi : t.en;
+  const d = t[locale === "fi" ? "fi" : "en"];
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
-      <header className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight mb-3">{d.title}</h1>
-        <p className="text-foreground-muted leading-relaxed">{d.subtitle}</p>
-      </header>
+    <div className="max-w-5xl mx-auto px-6 py-16">
+      <PageHeader icon={ShieldQuestion} title={d.title} subtitle={d.subtitle} />
+      <div className="max-w-3xl space-y-8">
+        <p className="text-foreground-muted leading-relaxed">{d.introduction}</p>
 
-      <div className="space-y-4">
-        {d.objections.map((objection, i) => (
-          <ObjectionCard
-            key={objection.id}
-            objection={objection}
-            locale={locale}
-            index={i}
-          />
+        {d.objections.map((objection, index) => (
+          <section key={objection.question} className="rounded-xl border border-card-border bg-card-bg p-5">
+            <p className="font-mono-num text-xs text-accent">0{index + 1}</p>
+            <h2 className="mt-2 text-lg font-semibold">{objection.question}</h2>
+            <div className="mt-3 space-y-3 text-sm leading-relaxed text-foreground-muted">
+              {objection.response.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </div>
+            <p className="mt-4 rounded-lg border border-status-partial/35 bg-status-partial/5 p-3 text-xs leading-relaxed text-foreground-muted">{objection.boundary}</p>
+          </section>
         ))}
+
+        <section className="rounded-xl border border-accent/25 bg-accent/5 p-5">
+          <h2 className="text-lg font-semibold">{d.closingTitle}</h2>
+          <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.closingText}</p>
+        </section>
       </div>
     </div>
   );

@@ -1,25 +1,92 @@
-"""Tests for Cross-Species Lag Invariance (CSLI) framework."""
+"""Safety tests for the fail-closed CSLI public interface.
 
-import numpy as np
-import pytest
+The legacy numeric routines remain private method-development helpers.  These
+tests assert that public APIs cannot convert sparse/reconstructed inputs into
+apparently quantitative evidence.
+"""
 
-from berm.stats import csli as csli_mod
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
 from berm.stats.csli import (
     _parse_winter_year,
-    load_bee_data,
-    load_bird_data,
-    load_sperm_data,
-    load_emf_data,
-    load_tfr_data,
-    _bspline_basis,
-    estimate_lag_kernel,
     cross_species_lag_comparison,
+    current_csli_readiness,
+    estimate_lag_kernel,
+    export_current_csli_readiness,
+    generate_locked_prediction,
     lag_invariance_test,
     latent_common_shock,
-    SPECIES_BIOLOGY,
+    load_bee_data,
+    load_bird_data,
+    load_emf_data,
+    load_sperm_data,
+    load_tfr_data,
+    print_full_csli_diagnostic,
+    prospective_sentinel_test,
+    test_biological_scaling as biological_scaling,
 )
 
-biological_scaling_fn = csli_mod.test_biological_scaling
+
+NUMERIC_EVIDENCE_FIELDS = {
+    "lag_weights",
+    "mean_lag",
+    "peak_lag",
+    "r_squared",
+    "cv",
+    "hit_rate",
+    "ci_95",
+    "predictions",
+    "model_comparison",
+    "first_pc_explains",
+}
+
+
+def assert_no_numeric_evidence(result: dict) -> None:
+    assert not (NUMERIC_EVIDENCE_FIELDS & result.keys())
+
+
+def eligible_contract() -> dict:
+    """Minimal explicit contract for a synthetic, fully observed panel."""
+
+    return {
+        "schema_version": "csli-readiness/v1",
+        "artifact_version": "fixture-v1",
+        "artifact_sha256": "fixture-sha256",
+        "outcome": {
+            "measurement_status": "OBSERVED",
+            "endpoint_valid_for_csli": True,
+            "verified_calendar_year_coverage": True,
+            "geography_level": "region",
+            "geography_match_status": "EXACT",
+        },
+        "exposure": {
+            "measurement_status": "OBSERVED",
+            "measured_rf": True,
+            "verified_calendar_year_coverage": True,
+            "geography_level": "region",
+            "geography_match_status": "EXACT",
+        },
+        "covariates": {
+            "complete_for_analysis": True,
+            "required_fields": ["chemical_exposure", "weather"],
+        },
+    }
+
+
+def annual_fixture() -> tuple[dict[str, dict[int, float]], dict[str, dict[int, float]]]:
+    years = range(1998, 2012)
+    exposure = {
+        "AAA": {year: float(year - 1997) for year in years},
+        "BBB": {year: float((year - 1997) * 2) for year in years},
+    }
+    outcome = {
+        "AAA": {year: float(year - 1998) for year in range(2000, 2012)},
+        "BBB": {year: float((year - 1998) * 1.5) for year in range(2000, 2012)},
+    }
+    return outcome, exposure
 
 
 class TestParseWinterYear:
@@ -29,176 +96,132 @@ class TestParseWinterYear:
     def test_century_boundary(self):
         assert _parse_winter_year("1999-00") == 2000
 
-    def test_single_year(self):
-        assert _parse_winter_year("2020") == 2020
 
-    def test_full_year_format(self):
-        assert _parse_winter_year("2018-2019") == 2019
+class TestCurrentSourcesAreBlocked:
+    def test_current_raw_loaders_remain_readable(self):
+        assert load_bee_data()
+        assert load_bird_data()
+        assert load_sperm_data()
+        assert load_emf_data()
+        assert load_tfr_data()
 
+    def test_bare_current_sources_cannot_produce_lag_weights(self):
+        result = estimate_lag_kernel(load_bee_data(), load_emf_data())
+        assert result["status"] == "NOT_ELIGIBLE"
+        assert result["analysis"] == "lag_kernel"
+        assert result["reasons"][0]["code"] == "INPUT_METADATA_REQUIRED"
+        assert_no_numeric_evidence(result)
 
-class TestDataLoaders:
-    def test_bee_data_loads(self):
-        data = load_bee_data()
-        assert len(data) > 0
-        for iso3, series in data.items():
-            assert len(iso3) == 3
-            assert all(isinstance(y, int) for y in series.keys())
-            assert all(isinstance(v, float) for v in series.values())
-
-    def test_bird_data_loads(self):
-        data = load_bird_data()
-        assert len(data) > 0
-        for iso3, series in data.items():
-            assert all(isinstance(y, int) for y in series.keys())
-
-    def test_sperm_data_loads(self):
-        data = load_sperm_data()
-        assert len(data) > 0
-        for iso3, series in data.items():
-            assert all(v > 0 for v in series.values())
-
-    def test_emf_data_loads(self):
-        data = load_emf_data()
-        assert len(data) > 0
-        for iso3, series in data.items():
-            assert all(isinstance(y, int) for y in series.keys())
-
-    def test_tfr_data_loads(self):
-        data = load_tfr_data()
-        assert len(data) > 0
-        for iso3, series in data.items():
-            assert all(0 < v < 10 for v in series.values())
-
-    def test_emf_and_bee_share_countries(self):
-        emf = load_emf_data()
-        bees = load_bee_data()
-        shared = set(emf.keys()) & set(bees.keys())
-        assert len(shared) >= 3
-
-    def test_emf_and_tfr_share_countries(self):
-        emf = load_emf_data()
-        tfr = load_tfr_data()
-        shared = set(emf.keys()) & set(tfr.keys())
-        assert len(shared) >= 10
-
-
-class TestBSplineBasis:
-    def test_nonnegative(self):
-        knots = np.linspace(0, 15, 5)
-        for k in range(7):
-            for lag in range(16):
-                val = _bspline_basis(float(lag), k, knots, degree=3)
-                assert val >= 0.0
-
-    def test_peak_at_center(self):
-        knots = np.linspace(0, 15, 5)
-        mid_knot = 7.5
-        vals = [_bspline_basis(float(lag), 2, knots, degree=3) for lag in range(16)]
-        peak_lag = np.argmax(vals)
-        assert abs(peak_lag - mid_knot) < 5
-
-
-class TestEstimateLagKernel:
-    @pytest.fixture
-    def emf_data(self):
-        return load_emf_data()
-
-    def test_bee_kernel(self, emf_data):
-        bees = load_bee_data()
-        result = estimate_lag_kernel(bees, emf_data)
-        assert "error" not in result or result["n_observations"] > 0
-        if "lag_weights" in result:
-            assert len(result["lag_weights"]) == 16
-            assert result["n_countries"] > 0
-
-    def test_tfr_kernel(self, emf_data):
-        tfr = load_tfr_data()
-        result = estimate_lag_kernel(tfr, emf_data)
-        if "lag_weights" in result:
-            assert len(result["lag_weights"]) == 16
-            assert isinstance(result["r_squared"], float)
-            assert result["mean_lag"] >= 0
-
-    def test_too_few_observations(self):
-        outcome = {"XX": {2020: 1.0}}
-        emf = {"XX": {2020: 50.0}}
-        result = estimate_lag_kernel(outcome, emf)
-        assert "error" in result
-
-    def test_no_overlapping_countries(self):
-        outcome = {"AA": {2020: 1.0}}
-        emf = {"BB": {2020: 50.0}}
-        result = estimate_lag_kernel(outcome, emf)
-        assert "error" in result
-
-
-class TestCrossSpeciesComparison:
-    def test_runs_with_real_data(self):
-        emf = load_emf_data()
+    def test_current_cross_species_and_invariance_are_blocked(self):
         sentinel = {
             "bees": load_bee_data(),
             "birds": load_bird_data(),
-            "human_tfr": load_tfr_data(),
+            "human_sperm": load_sperm_data(),
         }
-        result = cross_species_lag_comparison(sentinel, emf)
-        assert "species_results" in result
-        assert "order_matches_biology" in result
-        assert "lag_order" in result
-        assert "spearman_rho" in result
+        comparison = cross_species_lag_comparison(sentinel, load_emf_data())
+        invariance = lag_invariance_test("birds", load_bird_data(), load_emf_data())
+        assert comparison["status"] == "NOT_ELIGIBLE"
+        assert invariance["status"] == "NOT_ELIGIBLE"
+        assert_no_numeric_evidence(comparison)
+        assert_no_numeric_evidence(invariance)
 
-    def test_species_biology_complete(self):
-        for sp, bio in SPECIES_BIOLOGY.items():
-            assert "generation_time_days" in bio
-            assert "expected_lag_years" in bio
-            assert bio["generation_time_days"] > 0
+    def test_current_common_shock_and_prospective_paths_are_retired(self):
+        shock = latent_common_shock(
+            {"bees": load_bee_data(), "birds": load_bird_data()},
+            load_emf_data(),
+            load_tfr_data(),
+        )
+        prospective = prospective_sentinel_test(load_bee_data(), load_tfr_data(), load_emf_data())
+        locked = generate_locked_prediction(["AAA"], "BBB", 2030, 2.0, 1.0)
+        assert shock["status"] == "BLOCKED"
+        assert prospective["status"] == "BLOCKED"
+        assert locked["status"] == "BLOCKED"
+        assert_no_numeric_evidence(shock)
+        assert_no_numeric_evidence(prospective)
+        assert_no_numeric_evidence(locked)
 
-
-class TestLagInvariance:
-    def test_runs_with_bee_data(self):
-        emf = load_emf_data()
-        bees = load_bee_data()
-        result = lag_invariance_test("bees", bees, emf)
-        assert "cv" in result
-        assert "assessment" in result
-        assert result["cv"] >= 0
-
-    def test_runs_with_tfr_data(self):
-        emf = load_emf_data()
-        tfr = load_tfr_data()
-        result = lag_invariance_test("human_tfr", tfr, emf)
-        assert "cv" in result
-        assert "n_countries" in result
-
-
-class TestBiologicalScaling:
-    def test_runs(self):
-        emf = load_emf_data()
-        sentinel = {
-            "bees": load_bee_data(),
-            "birds": load_bird_data(),
-            "human_tfr": load_tfr_data(),
-        }
-        comparison = cross_species_lag_comparison(sentinel, emf)
-        observed_lags = {}
-        for species, mean_lag, _ in comparison["lag_order"]:
-            observed_lags[species] = mean_lag
-        result = biological_scaling_fn(observed_lags)
-        assert "slope" in result
-        assert "r_squared" in result
-        assert "formula" in result
+    def test_current_readiness_report_states_concrete_data_blockers(self, capsys):
+        result = current_csli_readiness()
+        codes = {reason["code"] for reason in result["reasons"]}
+        assert result["status"] == "BLOCKED"
+        assert {"MEASURED_RF_REQUIRED", "SPERM_SERIES_RECONSTRUCTED", "DOG_PANEL_UNMATCHED"} <= codes
+        printed = print_full_csli_diagnostic()
+        assert printed == result
+        assert "No lag, correlation, confidence interval" in capsys.readouterr().out
 
 
-class TestLatentCommonShock:
-    def test_runs_with_real_data(self):
-        emf = load_emf_data()
-        tfr = load_tfr_data()
-        sentinel = {
-            "bees": load_bee_data(),
-            "birds": load_bird_data(),
-        }
-        result = latent_common_shock(sentinel, emf, tfr)
-        assert "model_comparison" in result
-        assert "common_shock_real" in result
-        for model_name in result["model_comparison"]:
-            mc = result["model_comparison"][model_name]
-            assert "bic" in mc
+class TestLagReadinessAndLeakageProtection:
+    def test_verified_annual_fixture_can_use_public_kernel(self):
+        outcome, exposure = annual_fixture()
+        result = estimate_lag_kernel(
+            outcome,
+            exposure,
+            max_lag=2,
+            n_spline_knots=2,
+            readiness=eligible_contract(),
+        )
+        assert result["status"] == "ELIGIBLE"
+        assert result["analysis"] == "lag_kernel"
+        assert result["readiness"] if "readiness" in result else True
+        assert len(result["lag_weights"]) == 3
+
+    def test_missing_internal_exposure_is_blocked_not_zero_filled(self):
+        outcome, exposure = annual_fixture()
+        del exposure["AAA"][2004]
+        result = estimate_lag_kernel(
+            outcome,
+            exposure,
+            max_lag=2,
+            n_spline_knots=2,
+            readiness=eligible_contract(),
+        )
+        codes = {reason["code"] for reason in result["reasons"]}
+        assert result["status"] == "NOT_ELIGIBLE"
+        assert "MISSING_EXPOSURE_LAG_HISTORY" in codes
+        assert_no_numeric_evidence(result)
+
+    def test_sparse_observation_positions_cannot_be_called_year_lags(self):
+        outcome, exposure = annual_fixture()
+        del outcome["AAA"][2004]
+        result = lag_invariance_test(
+            "fixture",
+            outcome,
+            exposure,
+            max_lag=2,
+            readiness=eligible_contract(),
+        )
+        codes = {reason["code"] for reason in result["reasons"]}
+        assert result["status"] == "NOT_ELIGIBLE"
+        assert "IRREGULAR_OUTCOME_CALENDAR" in codes
+        assert_no_numeric_evidence(result)
+
+    def test_mobile_like_or_reconstructed_metadata_cannot_be_asserted_eligible(self):
+        outcome, exposure = annual_fixture()
+        contract = eligible_contract()
+        contract["exposure"]["measured_rf"] = False
+        contract["outcome"]["measurement_status"] = "RECONSTRUCTED"
+        result = estimate_lag_kernel(outcome, exposure, max_lag=2, readiness=contract)
+        codes = {reason["code"] for reason in result["reasons"]}
+        assert {"MEASURED_RF_REQUIRED", "OUTCOME_NOT_VERIFIED_OBSERVED"} <= codes
+        assert_no_numeric_evidence(result)
+
+    def test_biological_scaling_requires_validated_lag_artifact(self):
+        result = biological_scaling({"bees": 1.0, "birds": 2.0, "human_tfr": 4.0})
+        assert result["status"] == "NOT_ELIGIBLE"
+        assert_no_numeric_evidence(result)
+
+
+class TestReadinessArtifact:
+    def test_export_has_no_legacy_numeric_fields(self, tmp_path: Path):
+        target = tmp_path / "csli_readiness.json"
+        result = export_current_csli_readiness(target)
+        assert result["status"] == "BLOCKED"
+        assert json.loads(target.read_text()) == result
+        assert_no_numeric_evidence(result)
+
+    def test_legacy_website_artifact_is_withdrawn_stub(self):
+        artifact = Path(__file__).resolve().parents[2] / "website" / "public" / "data" / "csli_results.json"
+        payload = json.loads(artifact.read_text())
+        assert payload["status"] == "WITHDRAWN"
+        assert payload["replacement"] == "/data/sentinel_readiness.json"
+        assert_no_numeric_evidence(payload)

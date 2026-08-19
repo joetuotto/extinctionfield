@@ -1,36 +1,36 @@
 import type { Metadata } from "next";
-import type { Locale } from "@/lib/i18n";
+import { FieldStateStatus } from "@/components/FieldStateStatus";
 
 const t = {
   en: {
     title: "Data Sources",
     subtitle:
-      "Every dataset used in the BERM model is either open-access or publicly cited. This page documents each source, its provider, coverage, and update cadence so that any researcher can reproduce our results from scratch.",
-    primaryTitle: "Primary exposure data",
+      "Data inventory for FieldState–ASFR-v2. Sources are separated by what they actually measure; availability is not treated as evidence of a biological or demographic effect.",
+    primaryTitle: "Technology-timing proxies",
     primaryDesc:
-      "Country-level indices of mobile infrastructure and connectivity used as the main EMF exposure proxy in the model.",
+      "Country-level uptake and connectivity series can support descriptive technology timing and cohort analysis. They are not physical FieldState, local RF dose or organ exposure inputs.",
     rfTitle: "RF measurement data",
     rfDesc:
-      "Directly measured ambient radiofrequency field strengths from national regulators. Used for model validation and calibration against the subscription-based proxy.",
+      "Regulatory and spatial RF records are candidate components of a FieldState panel. They require documented units, calibration, spectrum/PSD, location, B₀ context and organ-transfer assumptions before endpoint analysis.",
     infraTitle: "Infrastructure data",
     infraDesc:
-      "Tower and antenna registrations used to model geographic exposure gradients within countries.",
-    outcomeTitle: "Outcome data (TFR)",
+      "Tower and antenna registrations provide source-location context. They do not by themselves establish a geographic organ-exposure gradient.",
+    outcomeTitle: "Demographic outcome data (ASFR → TFR)",
     outcomeDesc:
-      "Total fertility rate and vital statistics used as the dependent variable in BERM calibration and prediction evaluation.",
+      "WPP age-specific fertility rates (ASFR) are the primary demographic endpoint; TFR is derived after ASFR. Vital statistics help assess timing, parity and registration differences.",
     biomarkerTitle: "Biomarker reference data",
     biomarkerDesc:
-      "Meta-analyses and reference standards for human reproductive biomarkers. Used to calibrate the biological capacity layer of the model.",
+      "Reference standards and research syntheses for registered organ endpoints. They inform endpoint selection and protocol design; they do not supply a national bioCap or TFR coefficient.",
     pipelineTitle: "Data pipeline",
     pipelineFlow: "Raw datasets flow through a standardized pipeline before entering the model:",
     pipelineNote:
-      "Python loaders in berm/berm/data/ handle fetching, caching, and normalization. The ITU/World Bank loader is already implemented: it fetches from the World Bank API with local caching and rate-limit handling. Each loader produces a consistent country-year panel format that the model consumes directly.",
+      "The repository documents source provenance and normalisation separately. A country-year technology series remains a LEGACY_TIMING_PROXY until it is joined to a documented local FieldState and a registered endpoint; no implicit conversion to dose or TFR effect is made.",
     licensingTitle: "Licensing",
     licData: "All datasets used are either open-access or cited with permission under their respective licenses.",
     licCode: "MIT License -- free to use, modify, and distribute with attribution.",
     licDocs: "CC BY-4.0 -- share and adapt with appropriate credit.",
     dataNote:
-      "Data availability note: Some sources (particularly GSMA MCI) require registration. Where data access is restricted, we document the source and methodology so that researchers with access can reproduce the analysis. All model outputs can be reproduced using only the open-access sources (D1, TFR).",
+      "Availability note: Some sources require registration. Open demographic and technology-timing series reproduce the descriptive cohort analysis, not a FieldState–ASFR effect estimate or country forecast.",
     coverage: "Coverage",
     frequency: "Frequency",
     dataLabel: "Data",
@@ -43,32 +43,32 @@ const t = {
   fi: {
     title: "Datalähteet",
     subtitle:
-      "Jokainen BERM-mallissa käytetty datasetti on joko avoimesti saatavilla tai julkisesti viitattu. Tämä sivu dokumentoi kunkin lähteen, sen tarjoajan, kattavuuden ja päivitystahdin, jotta kuka tahansa tutkija voi toistaa tuloksemme alusta asti.",
-    primaryTitle: "Ensisijainen altistusdata",
+      "FieldState–ASFR-v2:n dataluettelo. Lähteet erotellaan sen mukaan, mitä ne todella mittaavat; saatavuutta ei käsitellä biologisen tai demografisen vaikutuksen evidenssinä.",
+    primaryTitle: "Teknologian ajoitusproksit",
     primaryDesc:
-      "Maatason mobiili-infrastruktuurin ja yhteyksien indeksit, joita käytetään mallin pääasiallisena EMF-altistuksen proksimuuttujana.",
+      "Maatason käyttöönotto- ja yhteyssarjat tukevat kuvailevaa teknologia-ajoitus- ja kohorttianalyysiä. Ne eivät ole fysikaalinen FieldState, paikallinen RF-annos tai elinkohtainen altistussyöte.",
     rfTitle: "RF-mittausdata",
     rfDesc:
-      "Kansallisten sääntelyviranomaisten suoraan mittaamat ympäristön radiotaajuuskenttävoimakkuudet. Käytetään mallin validointiin ja kalibrointiin tilauspohjaiseen proksiin nähden.",
+      "Sääntely- ja spatiaalisen RF-datan tietueet ovat FieldState-paneelin mahdollisia osia. Ne tarvitsevat dokumentoidut yksiköt, kalibroinnin, spektrin/PSD:n, sijainnin, B₀-kontekstin ja elinsiirto-oletukset ennen endpoint-analyysiä.",
     infraTitle: "Infrastruktuuridata",
     infraDesc:
-      "Masto- ja antennirekisterit, joita käytetään maantieteellisten altistuserojen mallintamiseen maiden sisällä.",
-    outcomeTitle: "Tulosdata (TFR)",
+      "Masto- ja antennirekisterit antavat lähdesijainnin kontekstia. Ne eivät yksin osoita maantieteellistä elinkohtaista altistusgradienttia.",
+    outcomeTitle: "Demografinen tulosdata (ASFR → TFR)",
     outcomeDesc:
-      "Kokonaishedelmällisyysluku ja vitaalitilastot, joita käytetään riippuvana muuttujana BERM:n kalibroinnissa ja ennusteiden arvioinnissa.",
+      "WPP:n ikäryhmäkohtainen hedelmällisyys (ASFR) on ensisijainen demografinen päätepiste; TFR johdetaan ASFR:n jälkeen. Vitaalitilastot auttavat arvioimaan ajoitus-, pariteetti- ja rekisteröintieroja.",
     biomarkerTitle: "Biomarkkereiden referenssidata",
     biomarkerDesc:
-      "Meta-analyysit ja referenssistandardit ihmisen lisääntymisbiomarkkereille. Käytetään mallin biologisen kapasiteettikerroksen kalibrointiin.",
+      "Referenssistandardit ja tutkimussynteesit rekisteröidyille elinpäätepisteille. Ne ohjaavat päätepistevalintaa ja protokollaa, eivät anna kansallista bioCap- tai TFR-kerrointa.",
     pipelineTitle: "Dataputki",
     pipelineFlow: "Raakadatasetit kulkevat standardoidun putken läpi ennen malliin syöttämistä:",
     pipelineNote:
-      "Python-lataajat berm/berm/data/-hakemistossa hoitavat haun, välimuistin ja normalisoinnin. ITU/Maailmanpankki-lataaja on jo toteutettu: se hakee Maailmanpankin API:sta paikallisella välimuistilla ja nopeusrajoitusten käsittelyllä. Jokainen lataaja tuottaa yhdenmukaisen maa-vuosi-paneeliformaatin, jonka malli kuluttaa suoraan.",
+      "Repo dokumentoi lähdeprovenienssin ja normalisoinnin erikseen. Maa–vuosi-teknologiasarja on LEGACY_TIMING_PROXY, kunnes se yhdistetään dokumentoituun paikalliseen FieldStateen ja rekisteröityyn päätepisteeseen; implisiittistä muunnosta annokseksi tai TFR-vaikutukseksi ei tehdä.",
     licensingTitle: "Lisensointi",
     licData: "Kaikki käytetyt datasetit ovat joko avoimesti saatavilla tai viitattu luvalla niiden omilla lisensseillä.",
     licCode: "MIT-lisenssi -- vapaasti käytettävissä, muokattavissa ja jaettavissa lähdeviitteellä.",
     licDocs: "CC BY-4.0 -- jaa ja muokkaa asianmukaisella lähdeviitteellä.",
     dataNote:
-      "Huomautus datan saatavuudesta: Jotkut lähteet (erityisesti GSMA MCI) vaativat rekisteröitymisen. Kun datan saatavuus on rajoitettu, dokumentoimme lähteen ja menetelmän, jotta tutkijat joilla on pääsy voivat toistaa analyysin. Kaikki mallin tulosteet voidaan toistaa pelkästään avoimilla lähteillä (D1, TFR).",
+      "Saatavuushuomautus: Jotkin lähteet vaativat rekisteröitymisen. Avoimet demografia- ja teknologia-ajoitussarjat toistavat kuvailevan kohorttianalyysin, eivät FieldState–ASFR-vaikutusarviota tai maaennustetta.",
     coverage: "Kattavuus",
     frequency: "Päivitystahti",
     dataLabel: "Data",
@@ -90,12 +90,12 @@ export async function generateMetadata({
     ? {
         title: "Datalähteet - Extinction Field",
         description:
-          "Kaikki BERM-mallissa käytetyt datalähteet: altistusindeksit, RF-mittaukset, hedelmällisyystulokset ja biomarkkerireferenssit.",
+          "BERM FieldState–ASFR-v2:n teknologiakehityksen ajoitusproksit, ehdokas-RF-mittaustietueet, demografiset sarjat ja päätepistereferenssit.",
       }
     : {
         title: "Data Sources - Extinction Field",
         description:
-          "All data sources used in the BERM model: exposure indices, RF measurements, fertility outcomes, and biomarker references.",
+          "BERM FieldState–ASFR-v2 technology-timing proxies, candidate RF measurement records, demographic series and endpoint references.",
       };
 }
 
@@ -216,42 +216,42 @@ const dataSources = {
     d1: {
       name: "Mobile Cellular Subscriptions",
       description:
-        "Mobile cellular subscriptions per 100 inhabitants. The primary proxy for population-level RF exposure intensity in BERM.",
+        "Mobile cellular subscriptions per 100 inhabitants. A technology-adoption timing proxy for descriptive cohort analysis; not a physical RF or FieldState measure.",
       coverage: "200+ countries, 1990 -- present",
       frequency: "Annual",
     },
     d2: {
       name: "Mobile Connectivity Index",
       description:
-        "Composite index measuring infrastructure deployment, affordability, consumer readiness, and content availability. Used to weight exposure estimates across markets.",
+        "Composite index measuring infrastructure deployment, affordability, consumer readiness, and content availability. Useful context for technology diffusion, not an exposure-weighting coefficient.",
       coverage: "170 countries",
       frequency: "Annual",
     },
     d3: {
       name: "National RF Field Strength Surveys",
       description:
-        "Measured ambient RF levels in V/m from national spectrum authorities including ARPANSA (Australia), SSM (Sweden), and BfS (Germany).",
+        "Measured ambient RF levels reported by national spectrum authorities. These observations need protocol-, spectrum-, location- and calibration metadata before they can contribute to a FieldState panel.",
       coverage: "Varies by country",
       frequency: "Periodic",
     },
     d4: {
       name: "Connected Nations Reports",
       description:
-        "100-metre grid resolution coverage and signal strength data for mobile networks. Provides ground-truth RF exposure levels for UK calibration.",
+        "100-metre grid coverage and signal-strength data for mobile networks. It supports spatial context; it is not by itself a ground-truth organ exposure or endpoint calibration.",
       coverage: "United Kingdom",
       frequency: "Annual",
     },
     o4: {
       name: "Antenna Structure Registration",
       description:
-        "Registered antenna structures including tower locations, heights, and types. Used for spatial exposure modelling in the United States.",
+        "Registered antenna structures including tower locations, heights, and types. Candidate source-location context for a future measured FieldState protocol; not an active U.S. organ-exposure model.",
       coverage: "United States",
       frequency: "Continuously updated",
     },
     wpp: {
       name: "World Population Prospects",
       description:
-        "Comprehensive demographic estimates and projections including total fertility rate by country. The primary TFR reference dataset for BERM.",
+        "Demographic estimates including age-specific fertility rates and TFR. WPP ASFR is the primary demographic reference for the active route.",
       coverage: "All countries",
       frequency: "Biennial",
     },
@@ -272,14 +272,14 @@ const dataSources = {
     levine: {
       name: "Sperm Concentration Trends Meta-analysis",
       description:
-        "Systematic review and meta-regression of sperm concentration trends from 1973 to 2011. Covers 42,935 men across 185 studies. Foundational dataset for the biological capacity decline curve.",
+        "A historical research synthesis on sperm-concentration trends. It provides context for endpoint selection, not a biological-capacity decline curve or national parameter.",
       coverage: "42,935 men, 185 studies",
       frequency: "Published 2017",
     },
     who: {
       name: "WHO Semen Analysis Reference Values",
       description:
-        "Clinical reference ranges for semen parameters (concentration, motility, morphology). 6th edition published 2021. Used to define the normal-range boundaries in BERM.",
+        "Clinical reference ranges for semen parameters (concentration, motility, morphology). 6th edition published 2021. A reference for endpoint selection and future protocol design, not an active BERM calibration boundary.",
       coverage: "Global clinical standard",
       frequency: "Published 2021",
     },
@@ -288,42 +288,42 @@ const dataSources = {
     d1: {
       name: "Matkapuhelinliittymät",
       description:
-        "Matkapuhelinliittymät 100 asukasta kohti. Ensisijainen proksimuuttuja väestötason RF-altistuksen intensiteetille BERM:ssä.",
+        "Matkapuhelinliittymät 100 asukasta kohti. Teknologian käyttöönoton ajoitusproksi kuvailevaan kohorttianalyysiin; ei fysikaalinen RF- tai FieldState-mittaus.",
       coverage: "200+ maata, 1990 -- nykyhetki",
       frequency: "Vuosittainen",
     },
     d2: {
       name: "Mobiiliyhteyksien indeksi",
       description:
-        "Komposiitti-indeksi, joka mittaa infrastruktuurin käyttöönottoa, edullisuutta, kuluttajavalmiutta ja sisällön saatavuutta. Käytetään altistusarvioiden painottamiseen markkinoiden välillä.",
+        "Komposiitti-indeksi infrastruktuurin käyttöönotosta, edullisuudesta, kuluttajavalmiudesta ja sisällön saatavuudesta. Käyttökelpoinen teknologian diffuusion kontekstina, ei altistuspainona.",
       coverage: "170 maata",
       frequency: "Vuosittainen",
     },
     d3: {
       name: "Kansalliset RF-kenttävoimakkuustutkimukset",
       description:
-        "Kansallisten taajuusviranomaisten mittaamat ympäristön RF-tasot V/m:ssä, mukaan lukien ARPANSA (Australia), SSM (Ruotsi) ja BfS (Saksa).",
+        "Kansallisten taajuusviranomaisten raportoimat ympäristön RF-tasot. Havainnot tarvitsevat protokolla-, spektri-, sijainti- ja kalibrointimetatiedot ennen FieldState-paneeliin liittämistä.",
       coverage: "Vaihtelee maittain",
       frequency: "Jaksottainen",
     },
     d4: {
       name: "Connected Nations -raportit",
       description:
-        "100 metrin ruudukko-resoluution kattavuus- ja signaalivoimakkuusdata mobiiliverkoille. Tarjoaa todellisen RF-altistustason UK:n kalibrointiin.",
+        "100 metrin ruudukon kattavuus- ja signaalivoimakkuusdata mobiiliverkoille. Tukee spatiaalista kontekstia; ei yksin ole todellinen elinkohtainen altistus tai endpoint-kalibrointi.",
       coverage: "Yhdistynyt kuningaskunta",
       frequency: "Vuosittainen",
     },
     o4: {
       name: "Antennirakenteiden rekisteri",
       description:
-        "Rekisteröidyt antennirakenteet sisältäen mastojen sijainnit, korkeudet ja tyypit. Käytetään spatiaalisen altistuksen mallintamiseen Yhdysvalloissa.",
+        "Rekisteröidyt antennirakenteet sisältäen mastojen sijainnit, korkeudet ja tyypit. Mahdollinen lähdesijainnin konteksti tulevalle mitatulle FieldState-protokollalle; ei aktiivinen Yhdysvaltain elinkohtainen altistusmalli.",
       coverage: "Yhdysvallat",
       frequency: "Jatkuvasti päivitetty",
     },
     wpp: {
       name: "World Population Prospects",
       description:
-        "Kattavat väestöarviot ja -ennusteet sisältäen kokonaishedelmällisyysluvun maittain. BERM:n ensisijainen TFR-referenssidatasetti.",
+        "Väestöarviot, mukaan lukien ikäryhmäkohtainen hedelmällisyys ja TFR. WPP:n ASFR on aktiivisen reitin ensisijainen demografinen referenssi.",
       coverage: "Kaikki maat",
       frequency: "Kahden vuoden välein",
     },
@@ -344,14 +344,14 @@ const dataSources = {
     levine: {
       name: "Siittiöpitoisuustrendien meta-analyysi",
       description:
-        "Systemaattinen katsaus ja meta-regressio siittiöpitoisuustrendeistä 1973--2011. Kattaa 42 935 miestä 185 tutkimuksesta. Perusdatasetti biologisen kapasiteetin laskukäyrälle.",
+        "Historiallinen tutkimussynteesi siittiöpitoisuuden trendeistä. Se antaa kontekstia päätepistevalinnalle, ei biologisen kapasiteetin laskukäyrää tai kansallista parametria.",
       coverage: "42 935 miestä, 185 tutkimusta",
       frequency: "Julkaistu 2017",
     },
     who: {
       name: "WHO:n siemennesteanalyysin referenssiarvot",
       description:
-        "Kliiniset viitearvot siemennesteen parametreille (pitoisuus, liikkuvuus, morfologia). 6. painos julkaistu 2021. Käytetään BERM:n normaalivaihtelun rajojen määrittämiseen.",
+        "Kliiniset viitearvot siemennesteen parametreille (pitoisuus, liikkuvuus, morfologia). 6. painos julkaistu 2021. Referenssi päätepistevalinnalle ja tulevalle protokollasuunnittelulle, ei aktiivinen BERM-kalibrointiraja.",
       coverage: "Globaali kliininen standardi",
       frequency: "Julkaistu 2021",
     },
@@ -375,6 +375,10 @@ export default async function DataPage({
           {d.subtitle}
         </p>
       </header>
+
+      <section className="mb-14">
+        <FieldStateStatus locale={locale === "fi" ? "fi" : "en"} />
+      </section>
 
       <section className="mb-14">
         <h2 className="text-xl font-semibold mb-2">{d.primaryTitle}</h2>
