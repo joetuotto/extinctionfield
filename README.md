@@ -13,6 +13,13 @@ subscriptions into a physical dose or a TFR coefficient.
 See [the FieldState–ASFR v2 integration guide](berm/docs/fieldstate-asfr-v2.md)
 for the causal graph, evidence boundaries and calibration plan.
 
+See [the BERM–Eco biosähkömagnetiikan ja evolutiivisen lajittumisen
+research review](berm/docs/berm-eco-bioelectromagnetic-selection-review.md)
+for the parallel ecological test framework: FieldState → species-specific
+response → ecological interaction → possible heritable selection. This
+framework is a cross-domain validation and research branch; it is not a TFR
+coefficient.
+
 ## Structure
 
 ```

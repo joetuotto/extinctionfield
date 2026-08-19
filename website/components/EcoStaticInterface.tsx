@@ -29,7 +29,38 @@ type RouteCard = {
   text: string;
 };
 
+type FieldClass = {
+  symbol: string;
+  title: string;
+  text: string;
+  source?: { label: string; href: string };
+};
+
+type EvidenceStage = {
+  step: string;
+  title: string;
+  text: string;
+  source?: { label: string; href: string };
+  tone: EvidenceCard["tone"];
+};
+
+type SentinelSystem = {
+  id: string;
+  title: string;
+  text: string;
+  source?: { label: string; href: string };
+};
+
 type Copy = {
+  frameworkTitle: string;
+  frameworkLead: string;
+  fieldClasses: readonly FieldClass[];
+  ladderTitle: string;
+  ladderLead: string;
+  ladder: readonly EvidenceStage[];
+  systemsTitle: string;
+  systemsLead: string;
+  systems: readonly SentinelSystem[];
   interfaceTitle: string;
   interfaceLead: string;
   reconstructionTitle: string;
@@ -69,6 +100,95 @@ type Copy = {
 
 const COPY: Record<Locale, Copy> = {
   en: {
+    frameworkTitle: "BERM–Eco: FieldState, ecological sorting and selection",
+    frameworkLead:
+      "The ecology branch tests the same physical premise as the human model: organisms do not encounter one generic “EMF dose”. They encounter a measured field configuration, and each species has its own sensory, morphological and life-stage transfer function. This makes relative ecological outcomes testable without treating every species as uniformly sensitive or resistant.",
+    fieldClasses: [
+      {
+        symbol: "E_DC · Q · ∇|E|²",
+        title: "Static / triboelectric interface",
+        text: "Charge, reference potential, local electric-field gradient, geometry, grounding and humidity govern local transport and attachment. This is the class established in the tick–host work; it is not a proxy for RF or geomagnetism.",
+        source: { label: "England & Robert 2022", href: "https://doi.org/10.1111/brv.12804" },
+      },
+      {
+        symbol: "E_AC(f) · B(f) · dE/dt",
+        title: "ELF electric and magnetic fields",
+        text: "Time-varying electric and magnetic components must be measured separately, including waveform, polarity, geometry and induced local transfer. A static attachment result cannot be copied into an ELF response claim.",
+        source: { label: "Mallinson, Woodburn & O’Reilly 2025", href: "https://doi.org/10.1016/j.isci.2025.112550" },
+      },
+      {
+        symbol: "B₀ · inclination · light",
+        title: "Geomagnetic orientation",
+        text: "Background-vector direction and inclination can be information-bearing; reception can also be light-, clock- and developmental-stage-dependent. This branch is distinct from electric-field transport.",
+        source: { label: "Wan et al. 2021", href: "https://doi.org/10.1038/s41467-021-21002-z" },
+      },
+      {
+        symbol: "S(f, polarization, time)",
+        title: "RF spectrum and temporal structure",
+        text: "Carrier frequency alone is insufficient: spectrum, polarization, modulation, background and exposure geometry can matter. In some avian compass experiments, disruption is frequency-window-specific rather than a generic RF effect.",
+        source: { label: "Leberecht et al. 2023", href: "https://doi.org/10.1073/pnas.2301153120" },
+      },
+    ],
+    ladderTitle: "Four claims, one causal sequence",
+    ladderLead:
+      "BERM–Eco gains explanatory power by keeping what has been established distinct from what is next to test. The sequence below is not a downgrade of the hypothesis; it defines the evidence needed to move from mechanism to selection.",
+    ladder: [
+      {
+        step: "01 · NATURAL FUNCTION",
+        title: "A field can be a biological signal or force",
+        text: "Electric and magnetic fields can guide floral foraging, orientation, dispersal and host encounter in different organisms. This anchors the FieldState premise: vector, geometry and time are biologically meaningful inputs.",
+        source: { label: "England & Robert 2022", href: "https://doi.org/10.1111/brv.12804" },
+        tone: "direct",
+      },
+      {
+        step: "02 · MEASURED RESPONSE",
+        title: "A changed FieldState can alter a defined endpoint",
+        text: "A matched sham-controlled experiment can establish a component-specific behavioural or physiological response. It does not by itself establish a population trend or a universal species effect.",
+        source: { label: "Mallinson, Woodburn & O’Reilly 2025", href: "https://doi.org/10.1016/j.isci.2025.112550" },
+        tone: "direct",
+      },
+      {
+        step: "03 · ECOLOGICAL SORTING",
+        title: "Different response functions can reorganise encounters",
+        text: "If the same calibrated FieldState changes a pollinator, host, parasite, predator or competitor differently, visit, attachment, navigation or dispersal rates can shift relative fitness and community structure. This is a testable model consequence.",
+        tone: "hypothesis",
+      },
+      {
+        step: "04 · EVOLUTION",
+        title: "Selection requires inherited variation across generations",
+        text: "Ecological sorting becomes evolution only if the FieldState-dependent fitness difference acts repeatedly on a heritable trait and changes its distribution. Abundance alone is not an evolutionary result.",
+        tone: "hypothesis",
+      },
+    ],
+    systemsTitle: "High-information BERM–Eco sentinel systems",
+    systemsLead:
+      "These systems are valuable because each joins a measured field feature to a proximate biological endpoint. They are not interchangeable dose models and do not supply a direct human TFR coefficient.",
+    systems: [
+      {
+        id: "POLLINATORS",
+        title: "Pollinator networks",
+        text: "Bumblebees and honeybees can use floral electric cues. Field experiments with anthropogenic electric fields make floral landing and visit networks a direct test bed for species-specific response functions.",
+        source: { label: "Clarke et al. 2013", href: "https://doi.org/10.1126/science.1230883" },
+      },
+      {
+        id: "HOST–PARASITE",
+        title: "Ticks, mites and host encounter",
+        text: "Ixodes attraction, flower-mite transport and parasite attachment make encounter rate a measurable intermediate. A tick’s electrostatic competence is not evidence of RF/ELF immunity; robustness must be shown field-class by field-class.",
+        source: { label: "England, Lihou & Robert 2023", href: "https://doi.org/10.1016/j.cub.2023.06.021" },
+      },
+      {
+        id: "NAVIGATION",
+        title: "Migration and orientation",
+        text: "Cryptochrome-dependent and avian compass systems show why background vector, light and narrow frequency windows deserve explicit measurement. The endpoint can be route choice or return, not necessarily mortality.",
+        source: { label: "Engels et al. 2014", href: "https://doi.org/10.1038/nature13290" },
+      },
+      {
+        id: "DISPERSAL",
+        title: "Dispersal and colonisation",
+        text: "Electric-field-elicited spider ballooning demonstrates a physical route from local field geometry to dispersal. Repeated changes in dispersal can reshape colonisation, gene flow and metapopulation structure.",
+        source: { label: "Morley & Robert 2018", href: "https://doi.org/10.1016/j.cub.2018.05.057" },
+      },
+    ],
     interfaceTitle: "The static triboelectric interface",
     interfaceLead:
       "This is a native BERM FieldState branch: the host, air gap, vegetation, textile and tick can form a local static-electric interface. It joins reproductive or ecological states only through a measured local transfer; it is not a shortcut from a material name or a country proxy to an outcome.",
@@ -265,6 +385,95 @@ const COPY: Record<Locale, Copy> = {
     tickText: "passive induction and attachment are empirical endpoints",
   },
   fi: {
+    frameworkTitle: "BERM–Eco: FieldState, ekologinen lajittuminen ja valinta",
+    frameworkLead:
+      "Ekologiahaara testaa samaa fysiikan premissiä kuin ihmismalli: eliö ei kohtaa yhtä yleistä “EMF-annosta”. Se kohtaa mitatun kenttäkonfiguraation, johon jokaisella lajilla on oma aisti-, morfologia- ja elinvaihekohtainen siirtofunktionsa. Tämä tekee suhteelliset ekologiset seuraukset testattaviksi ilman oletusta, että kaikki lajit ovat tasaisesti herkkiä tai resistenttejä.",
+    fieldClasses: [
+      {
+        symbol: "E_DC · Q · ∇|E|²",
+        title: "Staattinen / triboelektrinen rajapinta",
+        text: "Varaus, referenssipotentiaali, paikallinen sähkökenttägradientti, geometria, maadoitus ja kosteus määrittävät paikallista kuljetusta ja kiinnittymistä. Tämä on punkki–isäntätyössä osoitettu kenttäluokka; se ei ole RF:n tai geomagnetismin proxy.",
+        source: { label: "England & Robert 2022", href: "https://doi.org/10.1111/brv.12804" },
+      },
+      {
+        symbol: "E_AC(f) · B(f) · dE/dt",
+        title: "ELF-sähkö- ja magneettikentät",
+        text: "Ajassa vaihtelevat sähkö- ja magneettikomponentit on mitattava erikseen, mukaan lukien aaltomuoto, napaisuus, geometria ja indusoitu paikallinen siirto. Staattisen kiinnittymisen tulosta ei voi siirtää ELF-vasteväitteeksi.",
+        source: { label: "Mallinson, Woodburn & O’Reilly 2025", href: "https://doi.org/10.1016/j.isci.2025.112550" },
+      },
+      {
+        symbol: "B₀ · inklinaatio · valo",
+        title: "Geomagneettinen orientaatio",
+        text: "Taustavektorin suunta ja inklinaatio voivat olla informaatiota, ja vastaanotto voi riippua valosta, kellotilasta ja kehitysvaiheesta. Tämä haara on eri asia kuin sähkökentän kuljetus.",
+        source: { label: "Wan ym. 2021", href: "https://doi.org/10.1038/s41467-021-21002-z" },
+      },
+      {
+        symbol: "S(f, polarisaatio, aika)",
+        title: "RF-spektri ja ajallinen rakenne",
+        text: "Kantoaaltotaajuus ei yksin riitä: spektri, polarisaatio, modulaatio, tausta ja altistusgeometria voivat olla merkityksellisiä. Joissakin lintukompassikokeissa häiriö on taajuusikkunakohtaista eikä yleinen RF-vaikutus.",
+        source: { label: "Leberecht ym. 2023", href: "https://doi.org/10.1073/pnas.2301153120" },
+      },
+    ],
+    ladderTitle: "Neljä väitettä, yksi kausaalinen ketju",
+    ladderLead:
+      "BERM–Eco vahvistuu, kun jo osoitettu erotetaan seuraavaksi testattavasta. Alla oleva ketju ei heikennä hypoteesia, vaan määrittää näytön, jolla mekanismista siirrytään valintaan.",
+    ladder: [
+      {
+        step: "01 · LUONNOLLINEN FUNKTIO",
+        title: "Kenttä voi olla biologinen signaali tai voima",
+        text: "Sähkö- ja magneettikentät voivat ohjata eri eliöiden kukkahakua, orientaatiota, dispersaalia ja isäntäkohtaamista. Tämä ankkuroi FieldState-premissin: vektori, geometria ja aika ovat biologisesti merkityksellisiä syötteitä.",
+        source: { label: "England & Robert 2022", href: "https://doi.org/10.1111/brv.12804" },
+        tone: "direct",
+      },
+      {
+        step: "02 · MITATTU VASTE",
+        title: "Muuttunut FieldState voi muuttaa määriteltyä päätepistettä",
+        text: "Vastaava sham-kontrolloitu koe voi osoittaa komponenttikohtaisen käyttäytymis- tai fysiologiavasteen. Se ei sellaisenaan osoita populaatiotrendiä tai yleispätevää lajivaikutusta.",
+        source: { label: "Mallinson, Woodburn & O’Reilly 2025", href: "https://doi.org/10.1016/j.isci.2025.112550" },
+        tone: "direct",
+      },
+      {
+        step: "03 · EKOLOGINEN LAJITTUMINEN",
+        title: "Eri vastefunktiot voivat järjestää kohtaamiset uudelleen",
+        text: "Jos sama kalibroitu FieldState muuttaa pölyttäjän, isännän, loisen, pedon tai kilpailijan vastetta eri tavoin, käynti-, kiinnittymis-, navigointi- tai dispersaalinopeudet voivat muuttaa suhteellista kelpoisuutta ja yhteisörakennetta. Tämä on mallista johdettu testattava seuraus.",
+        tone: "hypothesis",
+      },
+      {
+        step: "04 · EVOLUUTIO",
+        title: "Valinta edellyttää periytyvää vaihtelua sukupolvien yli",
+        text: "Ekologinen lajittuminen muuttuu evoluutioksi vasta, jos FieldState-riippuvainen kelpoisuusero kohdistuu toistuvasti periytyvään piirteeseen ja muuttaa sen jakaumaa. Pelkkä runsaus ei ole evoluutiotulos.",
+        tone: "hypothesis",
+      },
+    ],
+    systemsTitle: "BERM–Eco:n informatiiviset indikaattorijärjestelmät",
+    systemsLead:
+      "Nämä järjestelmät ovat arvokkaita, koska kukin yhdistää mitatun kenttäpiirteen läheiseen biologiseen päätepisteeseen. Ne eivät ole keskenään vaihdettavia annosmalleja eivätkä tuota suoraa ihmis-TFR-kerrointa.",
+    systems: [
+      {
+        id: "PÖLYTTÄJÄT",
+        title: "Pölytysverkot",
+        text: "Kimalaiset ja tarhamehiläiset voivat käyttää kukkien sähköisiä vihjeitä. Ihmisen synnyttämiä sähkökenttiä koskevat kenttäkokeet tekevät kukalle laskeutumisesta ja käyntiverkoista suoran testialustan lajikohtaisille vastefunktioille.",
+        source: { label: "Clarke ym. 2013", href: "https://doi.org/10.1126/science.1230883" },
+      },
+      {
+        id: "ISÄNTÄ–LOINEN",
+        title: "Punkit, kukkapunkit ja isäntäkohtaaminen",
+        text: "Ixodes-veto, kukkapunkin kuljetus ja loisen kiinnittyminen tekevät kohtaamisnopeudesta mitattavan välitilan. Punkin sähköstaattinen toimivuus ei ole näyttö RF-/ELF-immuniteetista; robustius on osoitettava kenttäluokka kerrallaan.",
+        source: { label: "England, Lihou & Robert 2023", href: "https://doi.org/10.1016/j.cub.2023.06.021" },
+      },
+      {
+        id: "NAVIGOINTI",
+        title: "Muuttoliike ja orientaatio",
+        text: "Kryptokromi- ja lintukompassijärjestelmät osoittavat, miksi taustavektori, valo ja kapeat taajuusikkunat tarvitsevat eksplisiittisen mittauksen. Päätepiste voi olla reittivalinta tai paluu, ei välttämättä kuolleisuus.",
+        source: { label: "Engels ym. 2014", href: "https://doi.org/10.1038/nature13290" },
+      },
+      {
+        id: "DISPERSAALI",
+        title: "Leviäminen ja kolonisaatio",
+        text: "Sähkökentän laukaisema hämähäkkien ballooning osoittaa fysikaalisen reitin paikallisesta kenttägeometriasta dispersaaliin. Toistuva muutos dispersaalissa voi muovata kolonisaatiota, geenivirtaa ja metapopulaatiorakennetta.",
+        source: { label: "Morley & Robert 2018", href: "https://doi.org/10.1016/j.cub.2018.05.057" },
+      },
+    ],
     interfaceTitle: "Staattinen triboelektrinen rajapinta",
     interfaceLead:
       "Tämä on BERM:n oma FieldState-haara: isäntä, ilmarako, kasvillisuus, tekstiili ja punkki voivat muodostaa paikallisen staattissähköisen rajapinnan. Se liittyy lisääntymis- tai ekologisiin tiloihin vain mitatun paikallisen siirron kautta; materiaalin nimi tai maaproxy ei ole oikotie päätepisteeseen.",
@@ -475,6 +684,44 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
   return (
     <div className="space-y-14">
       <section>
+        <h2 className="text-xl font-semibold">{d.frameworkTitle}</h2>
+        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.frameworkLead}</p>
+        <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {d.fieldClasses.map((fieldClass) => (
+            <article key={fieldClass.title} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <p className="font-mono-num text-xs font-semibold text-accent">{fieldClass.symbol}</p>
+              <h3 className="mt-2 text-base font-semibold">{fieldClass.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{fieldClass.text}</p>
+              {fieldClass.source && (
+                <a href={fieldClass.source.href} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs font-medium text-accent hover:underline">
+                  {fieldClass.source.label} ↗
+                </a>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">{d.ladderTitle}</h2>
+        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.ladderLead}</p>
+        <div className="mt-5 grid gap-4 lg:grid-cols-4">
+          {d.ladder.map((stage) => (
+            <article key={stage.step} className={"rounded-xl border p-5 " + toneClass(stage.tone)}>
+              <p className="text-[11px] font-semibold tracking-wide text-foreground-muted">{stage.step}</p>
+              <h3 className="mt-3 text-base font-semibold">{stage.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{stage.text}</p>
+              {stage.source && (
+                <a href={stage.source.href} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs font-medium text-accent hover:underline">
+                  {stage.source.label} ↗
+                </a>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section>
         <h2 className="text-xl font-semibold">{d.interfaceTitle}</h2>
         <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.interfaceLead}</p>
 
@@ -497,6 +744,25 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
             <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.vegetationText}</p>
             <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.tickText}</p>
           </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold">{d.systemsTitle}</h2>
+        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.systemsLead}</p>
+        <div className="mt-5 grid gap-4 md:grid-cols-2">
+          {d.systems.map((system) => (
+            <article key={system.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <p className="font-mono-num text-xs text-accent">{system.id}</p>
+              <h3 className="mt-2 text-base font-semibold">{system.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{system.text}</p>
+              {system.source && (
+                <a href={system.source.href} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs font-medium text-accent hover:underline">
+                  {system.source.label} ↗
+                </a>
+              )}
+            </article>
+          ))}
         </div>
       </section>
 

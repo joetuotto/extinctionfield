@@ -5,14 +5,14 @@ import { EcoStaticInterface } from "@/components/EcoStaticInterface";
 
 const COPY = {
   en: {
-    title: "Ecology: static interface",
+    title: "Ecology: FieldState and selection",
     subtitle:
-      "A bounded ecological research branch on triboelectric host–vegetation–tick interfaces, with direct static-field evidence distinguished from ecology and evolution hypotheses.",
+      "BERM–Eco distinguishes static, ELF, geomagnetic and RF FieldStates; natural field use, measured anthropogenic response, ecological sorting and evolution remain separate claims.",
   },
   fi: {
-    title: "Ekologia: staattinen rajapinta",
+    title: "Ekologia: FieldState ja valikoituminen",
     subtitle:
-      "Rajattu ekologinen tutkimushaara triboelektrisistä isäntä–kasvillisuus–punkki-rajapinnoista; suora staattisen kentän näyttö erotetaan ekologia- ja evoluutiohypoteeseista.",
+      "BERM–Eco erottaa staattiset, ELF-, geomagneettiset ja RF-FieldStatet sekä luonnollisen kentänkäytön, mitatun antropogeenisen vasteen, ekologisen lajittumisen ja evoluution toisistaan.",
   },
 } as const;
 
