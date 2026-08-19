@@ -241,7 +241,7 @@ Toistettava, repo-integroitu laskenta on [`berm/validation/fieldstate_cohort_sig
 3. **Määritä elinkohtainen R/P-muisti:** pre-specifioi retentiot ja incrementtimalli; tallenna parameter- ja evidenssi-ID:t.
 4. **Muodosta paritila:** säilytä yhteinen kotiympäristö ja partnerikorrelaatio yksilötasolla tai määritellyssä stratumissa.
 5. **Kytke WPP/HFD-tyyppiseen ikäryhmädataan:** pidä reference-ASFR, kysyntä/mahdollisuus, tempo ja ART erillisinä syötteinä.
-6. **Kalibroi vain train-jaksolla:** pidä target-ajan ASFR/TFR ulkopuolisena hindcastina. V2-tulos esitetään legacy-v17:n rinnalla, kunnes paikallisen FieldState-paneelin kattavuus on riittävä.
+6. **Kalibroi vain train-jaksolla:** pidä target-ajan ASFR/TFR ulkopuolisena hindcastina. Kun sentinelliä käytetään ennakkoindikaattorina, lukitse myös sen FieldState → biologinen endpoint → ihmisbiologia -viive ennen demografisen outcome-ikkunan avaamista; koneellisesti pakotettu sopimus on [`sentinel-hindcast-protocol.md`](sentinel-hindcast-protocol.md). V2-tulos esitetään legacy-v17:n rinnalla, kunnes paikallisen FieldState-paneelin kattavuus on riittävä.
 
 Näin BERM kasvaa selitysvoimaisemmaksi juuri siellä, missä sen omat premissit ovat erottavimmillaan: eri maiden saman teknologialeviämisen ei tarvitse tuottaa samaa biologista vaikutusta, koska FieldState, kehityshistoria, elin-, pari- ja demografiakerros ovat eri suureita.
 
@@ -253,6 +253,7 @@ Näin BERM kasvaa selitysvoimaisemmaksi juuri siellä, missä sen omat premissit
 - Fysiikka → R/P -bridge: [`berm/stats/fieldstate_core.py`](../berm/stats/fieldstate_core.py)
 - ASFR → TFR: [`berm/outcomes/fieldstate_asfr.py`](../berm/outcomes/fieldstate_asfr.py)
 - Julkinen WPP-reference-fasadi: [`berm/model_fieldstate_asfr.py`](../berm/model_fieldstate_asfr.py)
+- Sentinelli → ihmisbiologia → ASFR/TFR -lukitus: [`berm/validation/sentinel_hindcast_protocol.py`](../berm/validation/sentinel_hindcast_protocol.py)
 - Kohortti–ASFR-timing-proxy: [`berm/validation/fieldstate_cohort_signature.py`](../berm/validation/fieldstate_cohort_signature.py)
 - Tutkimusrekisteri: [`data/evidence/fieldstate_causal_evidence.json`](../data/evidence/fieldstate_causal_evidence.json)
 - Testit: [`tests/test_field_state.py`](../tests/test_field_state.py), [`tests/test_fieldstate_asfr_v2.py`](../tests/test_fieldstate_asfr_v2.py), [`tests/test_fieldstate_evidence.py`](../tests/test_fieldstate_evidence.py), [`tests/test_fieldstate_cohort_signature.py`](../tests/test_fieldstate_cohort_signature.py)
