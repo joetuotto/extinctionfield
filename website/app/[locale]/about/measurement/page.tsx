@@ -65,7 +65,7 @@ const t: Record<Locale, Copy> = {
         title: "5. Analyse and report",
         text: [
           "Publish raw or access-controlled raw field data, processing code, calibration files, biological data, exclusions, adverse events and null results. Report effect estimates with uncertainty and compare the active and sham FieldStates, not only nominal device settings.",
-          "Classify the result honestly: LEGACY_TIMING_PROXY for technology series, PARTIAL_FIELD_STATE when inputs are missing, and MEASUREMENT_READY_FIELD_STATE only when calibration, B₀, transfer, PSD, circadian context, phase/coherence and provenance are documented. Measurement-ready does not itself establish biological causation.",
+          "Classify the result by data readiness: a technology-timing proxy for national series, partial FieldState data when inputs are missing, and measurement-ready FieldState when calibration, B₀, transfer, PSD, circadian context, phase/coherence and provenance are documented. Measurement-ready data still require an endpoint-specific test.",
         ],
       },
     ],
@@ -119,7 +119,7 @@ const t: Record<Locale, Copy> = {
         title: "5. Analysoi ja raportoi",
         text: [
           "Julkaise raaka- tai pääsykontrolloitu raaka kenttädata, käsittelykoodi, kalibrointitiedostot, biologinen data, poissulut, haittatapahtumat ja nollatulokset. Raportoi vaikutusarviot epävarmuuksineen ja vertaile aktiivista ja sham-FieldStatea, ei vain nimellisiä laiteasetuksia.",
-          "Luokittele tulos rehellisesti: LEGACY_TIMING_PROXY teknologiasarjoille, PARTIAL_FIELD_STATE puuttuville syötteille ja MEASUREMENT_READY_FIELD_STATE vasta, kun kalibrointi, B₀, siirto, PSD, vuorokausikonteksti, vaihe/koherenssi ja provenienssi on dokumentoitu. Mittausvalmius ei itsessään osoita biologista kausaatiota.",
+          "Luokittele tulos datavalmiuden mukaan: kansallisille sarjoille teknologian ajoitusproxy, puuttuville syötteille osittainen FieldState-data ja mittausvalmis FieldState vasta, kun kalibrointi, B₀, siirto, PSD, vuorokausikonteksti, vaihe/koherenssi ja provenienssi on dokumentoitu. Mittausvalmis data vaatii silti päätepistekohtaisen testin.",
         ],
       },
     ],

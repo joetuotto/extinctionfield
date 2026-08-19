@@ -23,7 +23,7 @@ const t: Record<Locale, Copy> = {
     metaDescription: "The measurement-aware FieldState–ASFR-v2 specification of BERM.",
     title: "FieldState–ASFR-v2 mathematical specification",
     subtitle:
-      "A measurement-aware route from Lindgren-derived field hypotheses to organ states, couple capacity, age-specific fertility and TFR. It replaces the legacy scalar cumEMF-to-TFR equation in the active research specification.",
+      "A measurement-aware route from Lindgren-derived field hypotheses to organ states, couple capacity, age-specific fertility and TFR.",
     nav: [
       { id: "premise", label: "Physics premise" },
       { id: "fieldstate", label: "FieldState" },
@@ -47,10 +47,10 @@ const t: Record<Locale, Copy> = {
       },
       {
         id: "fieldstate",
-        title: "2. FieldState preserves the quantities a scalar proxy loses",
+        title: "2. FieldState preserves the required physical quantities",
         body: [
           "For organ o, background, ambient and personal components are transferred through an organ-, posture- and geometry-specific transfer function Tₒ. Vector direction, phase/coherence, envelope/beat PSD, circadian context and source provenance remain explicit fields.",
-          "The old ambient + χ(ambient) × personal expression survives only as a LEGACY_TIMING_PROXY adapter. Mobile subscriptions can time digital-environment diffusion; they are neither local dosimetry nor a measured organ FieldState.",
+          "Mobile subscriptions can describe digital-environment diffusion. The FieldState record instead documents local physical conditions and organ-specific transfer before an endpoint is analysed.",
         ],
         equations: [
           "\\mathbf A_{\\mathrm{selected},o}=T_o\\mathbf A_{\\mathrm{ambient}}+\\chi(\\lvert T_o\\mathbf A_{\\mathrm{background}}\\rvert)T_o\\mathbf A_{\\mathrm{personal}}",
@@ -58,7 +58,7 @@ const t: Record<Locale, Copy> = {
           "\\Xi_o=\\int PSD_{\\mathrm{envelope/beat},o}(f)W_o(f)\\,df",
         ],
         note:
-          "A measurement-ready FieldState requires documented normalisation, B₀, organ transfer, PSD, circadian context, phase/coherence and measurement provenance. Missing fields remain visible as PARTIAL_FIELD_STATE.",
+          "A measurement-ready FieldState requires documented normalisation, B₀, organ transfer, PSD, circadian context, phase/coherence and measurement provenance. Incomplete records are reported as partial FieldState data.",
       },
       {
         id: "organ-state",
@@ -74,7 +74,7 @@ const t: Record<Locale, Copy> = {
           "\\Phi_f=F_{\\mathrm{ovarian\\,reserve}}F_{\\mathrm{oocyte\\,redox}}F_{\\mathrm{ovulatory\\,clock}}F_{\\mathrm{luteal/implantation}}",
         ],
         note:
-          "These are structures, not currently published country coefficients. Candidate placenta/BBB/retina states have no active reproductive increment in this product. The prior single bioCap curve, fixed recovery fractions and global BBB multiplier are legacy assumptions and are not used by v2.",
+          "These are structures, not currently published country coefficients. Candidate placenta, BBB and retinal states receive a reproductive increment only after a parameter- and evidence-linked mapping is registered.",
       },
       {
         id: "asfr",
@@ -103,7 +103,7 @@ const t: Record<Locale, Copy> = {
           "Y_{gap}=\\overline{\\log(ASFR_{2023,g}/ASFR_{2000,g})}_{15\\text{–}29}-\\overline{\\log(ASFR_{2023,g}/ASFR_{2000,g})}_{30\\text{–}49}",
         ],
         note:
-          "This is a versioned, reproducible TECHNOLOGY_TIMING_PROXY_NOT_FIELDSTATE analysis, not a preregistered causal study. Its development weights are scenario weights rather than calibrated sensitivity estimates. A v2 population estimate awaits matched FieldState, biomarker, couple and ASFR panels.",
+          "This is a versioned, reproducible descriptive technology-timing analysis. Its development weights are scenario weights rather than calibrated sensitivity estimates. A v2 population estimate awaits matched FieldState, biomarker, couple and ASFR panels.",
       },
       {
         id: "gme",
@@ -120,11 +120,11 @@ const t: Record<Locale, Copy> = {
         id: "validation",
         title: "7. What constitutes a v2 result",
         body: [
-          "A valid v2 calibration requires a matched FieldState panel, measured organ or couple endpoint, explicit parameter/evidence IDs and a train-only estimation period. A later ASFR/TFR period must remain outside the fit for hindcast evaluation.",
-          "Legacy v16/v17 charts and forecasts remain reproducible historical scenario artefacts. They are not re-labelled as FieldState–ASFR-v2 forecasts, because the required FieldState and endpoint panels have not yet been assembled.",
+          "A valid v2 calibration requires a matched FieldState panel, measured organ or couple endpoint, explicit parameter/evidence IDs and a train-only estimation period. A later ASFR/TFR period remains outside the fit for temporal evaluation.",
+          "A population estimate is published when the corresponding FieldState and endpoint panels have been assembled, the mappings are registered and the temporal evaluation is complete.",
         ],
         note:
-          "The distinction is deliberately strict: a model that says what has not yet been measured is more falsifiable and more useful than one that hides proxy-to-outcome conversion inside a scalar.",
+          "The specification keeps measurement, endpoint mapping and demographic estimation visible so each can be independently tested and improved.",
       },
     ],
   },
@@ -133,7 +133,7 @@ const t: Record<Locale, Copy> = {
     metaDescription: "BERM:n mittaustietoinen FieldState–ASFR-v2-määrittely.",
     title: "FieldState–ASFR-v2:n matemaattinen määrittely",
     subtitle:
-      "Mittaustietoinen reitti Lindgrenistä johdetuista kenttähypoteeseista elintiloihin, parikapasiteettiin, ikäkohtaiseen hedelmällisyyteen ja TFR:ään. Se korvaa aktiivisessa tutkimusmäärittelyssä vanhan skalaarin cumEMF → TFR -yhtälön.",
+      "Mittaustietoinen reitti Lindgrenistä johdetuista kenttähypoteeseista elintiloihin, parikapasiteettiin, ikäkohtaiseen hedelmällisyyteen ja TFR:ään.",
     nav: [
       { id: "premise", label: "Fysiikan premissi" },
       { id: "fieldstate", label: "FieldState" },
@@ -157,10 +157,10 @@ const t: Record<Locale, Copy> = {
       },
       {
         id: "fieldstate",
-        title: "2. FieldState säilyttää suureet, jotka skalaariproksi hävittää",
+        title: "2. FieldState säilyttää tarvittavat fysikaaliset suureet",
         body: [
           "Elimelle o tausta-, ambient- ja henkilökohtaiset komponentit siirtyvät elin-, asento- ja geometriakohtaisen siirtofunktion Tₒ kautta. Vektorin suunta, vaihe/koherenssi, envelope/beat-PSD, vuorokausikonteksti ja lähdeprovenienssi säilyvät eksplisiittisinä kenttinä.",
-          "Vanha ambient + χ(ambient) × personal säilyy vain LEGACY_TIMING_PROXY-adapterina. Mobiililiittymät voivat ajoittaa digitaalisen ympäristön leviämistä; ne eivät ole paikallista dosimetriaa eivätkä mitattu elin-FieldState.",
+          "Mobiililiittymät voivat kuvata digitaalisen ympäristön leviämistä. FieldState-tietue dokumentoi sen sijaan paikalliset fysikaaliset olosuhteet ja elinkohtaisen siirron ennen päätepisteanalyysiä.",
         ],
         equations: [
           "\\mathbf A_{\\mathrm{selected},o}=T_o\\mathbf A_{\\mathrm{ambient}}+\\chi(\\lvert T_o\\mathbf A_{\\mathrm{background}}\\rvert)T_o\\mathbf A_{\\mathrm{personal}}",
@@ -168,7 +168,7 @@ const t: Record<Locale, Copy> = {
           "\\Xi_o=\\int PSD_{\\mathrm{envelope/beat},o}(f)W_o(f)\\,df",
         ],
         note:
-          "Mittausvalmis FieldState vaatii dokumentoidun normalisoinnin, B₀:n, elinsiirron, PSD:n, vuorokausikontekstin, vaiheen/koherenssin ja mittausprovenienssin. Puuttuvat osat näkyvät PARTIAL_FIELD_STATE-tilana.",
+          "Mittausvalmis FieldState vaatii dokumentoidun normalisoinnin, B₀:n, elinsiirron, PSD:n, vuorokausikontekstin, vaiheen/koherenssin ja mittausprovenienssin. Epätäydelliset tietueet raportoidaan osittaisena FieldState-datana.",
       },
       {
         id: "organ-state",
@@ -184,7 +184,7 @@ const t: Record<Locale, Copy> = {
           "\\Phi_f=F_{\\mathrm{ovarian\\,reserve}}F_{\\mathrm{oocyte\\,redox}}F_{\\mathrm{ovulatory\\,clock}}F_{\\mathrm{luteal/implantation}}",
         ],
         note:
-          "Nämä ovat rakenteita, eivät vielä julkaistuja maakohtaisia kertoimia. Istukan, BBB:n ja retinan kandidaattitiloilla ei ole tässä tulossa aktiivista lisääntymisincrementtiä. Aiempi yksi bioCap-käyrä, kiinteät palautumisosuudet ja globaali BBB-multiplier ovat legacy-oletuksia, eivät v2:n laskentaa.",
+          "Nämä ovat rakenteita, eivät vielä julkaistuja maakohtaisia kertoimia. Istukan, BBB:n ja retinan kandidaattitilat saavat lisääntymisincrementin vasta, kun parametri- ja evidenssikiinnitteinen mapping on rekisteröity.",
       },
       {
         id: "asfr",
@@ -213,7 +213,7 @@ const t: Record<Locale, Copy> = {
           "Y_{gap}=\\overline{\\log(ASFR_{2023,g}/ASFR_{2000,g})}_{15\\text{–}29}-\\overline{\\log(ASFR_{2023,g}/ASFR_{2000,g})}_{30\\text{–}49}",
         ],
         note:
-          "Analyysi on versionoitu ja toistettava TECHNOLOGY_TIMING_PROXY_NOT_FIELDSTATE-analyysi, ei ennakkorekisteröity kausaalitutkimus. Sen kehityspainot ovat skenaariopainoja, eivät kalibroituja herkkyysestimaatteja. V2:n väestöarvio odottaa kohdistettua FieldState-, biomarkkeri-, pari- ja ASFR-paneelia.",
+          "Analyysi on versionoitu ja toistettava kuvaileva teknologia-ajoitusanalyysi. Sen kehityspainot ovat skenaariopainoja, eivät kalibroituja herkkyysestimaatteja. V2:n väestöarvio odottaa kohdistettua FieldState-, biomarkkeri-, pari- ja ASFR-paneelia.",
       },
       {
         id: "gme",
@@ -230,11 +230,11 @@ const t: Record<Locale, Copy> = {
         id: "validation",
         title: "7. Mikä muodostaa v2-tuloksen",
         body: [
-          "Pätevä v2-kalibrointi edellyttää kohdistettua FieldState-paneelia, mitattua elin- tai paripäätepistettä, eksplisiittisiä parameter/evidence-ID:tä ja vain opetusjaksolta tehtävää estimointia. Myöhempi ASFR/TFR-jakso jää sovituksen ulkopuolelle hindcast-arviointiin.",
-          "Legacy-v16/v17-kuvaajat ja -ennusteet pysyvät toistettavina historiallisina skenaarioartefakteina. Niitä ei nimetä FieldState–ASFR-v2-ennusteiksi, koska vaadittuja FieldState- ja endpoint-paneeleja ei ole vielä koottu.",
+          "Pätevä v2-kalibrointi edellyttää kohdistettua FieldState-paneelia, mitattua elin- tai paripäätepistettä, eksplisiittisiä parameter/evidence-ID:tä ja vain opetusjaksolta tehtävää estimointia. Myöhempi ASFR/TFR-jakso jää sovituksen ulkopuolelle ajalliseen arviointiin.",
+          "Väestöarvio julkaistaan, kun vastaavat FieldState- ja endpoint-paneelit on koottu, mappingit rekisteröity ja ajallinen arviointi valmis.",
         ],
         note:
-          "Raja on tarkoituksella tiukka: malli, joka kertoo mitä ei vielä ole mitattu, on falsifioitavampi ja hyödyllisempi kuin malli, joka piilottaa proksista tulokseen -muunnoksen skalaarin sisään.",
+          "Määrittely pitää mittauksen, päätepistemappingin ja demografisen estimoinnin näkyvinä, jotta kutakin voidaan testata ja parantaa itsenäisesti.",
       },
     ],
   },

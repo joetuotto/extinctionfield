@@ -29,12 +29,14 @@ export function CountryMetaCard({ meta, locale = "en" }: Props) {
           </p>
         </div>
         <div className="rounded-lg border border-card-border bg-card-bg p-3">
-          <p className="text-xs text-foreground-muted">{isFinnish ? "Mallin tila" : "Model status"}</p>
-          <p className="mt-1 text-sm font-semibold text-status-partial">LEGACY_TIMING_PROXY</p>
+          <p className="text-xs text-foreground-muted">{isFinnish ? "Datan tila" : "Data status"}</p>
+          <p className="mt-1 text-sm font-semibold text-status-partial">
+            {isFinnish ? "Kontekstisarjat saatavilla" : "Context series available"}
+          </p>
           <p className="mt-1 text-xs leading-relaxed text-foreground-muted">
             {isFinnish
-              ? "Ei FieldState-mittausta, biologisen tilan arviota eikä maaennustetta tässä näkymässä."
-              : "No FieldState measurement, organ-state estimate, or country forecast is shown here."}
+              ? "Maakohtaista FieldState-mittausta tai elinkohtaista tila-arviota ei ole vielä liitetty tähän näkymään."
+              : "A country-specific FieldState measurement or organ-state estimate has not yet been joined to this view."}
           </p>
         </div>
       </div>

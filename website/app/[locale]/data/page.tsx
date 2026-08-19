@@ -24,7 +24,7 @@ const t = {
     pipelineTitle: "Data pipeline",
     pipelineFlow: "Raw datasets flow through a standardized pipeline before entering the model:",
     pipelineNote:
-      "The repository documents source provenance and normalisation separately. A country-year technology series remains a LEGACY_TIMING_PROXY until it is joined to a documented local FieldState and a registered endpoint; no implicit conversion to dose or TFR effect is made.",
+      "The repository documents source provenance and normalisation separately. A country-year technology series supports descriptive timing until it is joined to a documented local FieldState and a registered endpoint; no implicit conversion to dose or TFR effect is made.",
     licensingTitle: "Licensing",
     licData: "All datasets used are either open-access or cited with permission under their respective licenses.",
     licCode: "MIT License -- free to use, modify, and distribute with attribution.",
@@ -62,7 +62,7 @@ const t = {
     pipelineTitle: "Dataputki",
     pipelineFlow: "Raakadatasetit kulkevat standardoidun putken läpi ennen malliin syöttämistä:",
     pipelineNote:
-      "Repo dokumentoi lähdeprovenienssin ja normalisoinnin erikseen. Maa–vuosi-teknologiasarja on LEGACY_TIMING_PROXY, kunnes se yhdistetään dokumentoituun paikalliseen FieldStateen ja rekisteröityyn päätepisteeseen; implisiittistä muunnosta annokseksi tai TFR-vaikutukseksi ei tehdä.",
+      "Repo dokumentoi lähdeprovenienssin ja normalisoinnin erikseen. Maa–vuosi-teknologiasarja tukee kuvailevaa ajoitusta, kunnes se yhdistetään dokumentoituun paikalliseen FieldStateen ja rekisteröityyn päätepisteeseen; implisiittistä muunnosta annokseksi tai TFR-vaikutukseksi ei tehdä.",
     licensingTitle: "Lisensointi",
     licData: "Kaikki käytetyt datasetit ovat joko avoimesti saatavilla tai viitattu luvalla niiden omilla lisensseillä.",
     licCode: "MIT-lisenssi -- vapaasti käytettävissä, muokattavissa ja jaettavissa lähdeviitteellä.",
@@ -253,12 +253,12 @@ const dataSources = {
       description:
         "Demographic estimates including age-specific fertility rates and TFR. WPP ASFR is the primary demographic reference for the active route.",
       coverage: "All countries",
-      frequency: "Biennial",
+      frequency: "Periodic revisions",
     },
     wbFert: {
       name: "Fertility Rate (World Bank)",
       description:
-        "Crude birth rate and total fertility rate sourced from UN Population Division and national statistics. Used as a cross-check against WPP estimates.",
+        "World Bank total fertility rate indicator, drawing on UN Population Division and national-statistical sources. Used as a cross-check against WPP estimates.",
       coverage: "200+ countries",
       frequency: "Annual",
     },
@@ -325,12 +325,12 @@ const dataSources = {
       description:
         "Väestöarviot, mukaan lukien ikäryhmäkohtainen hedelmällisyys ja TFR. WPP:n ASFR on aktiivisen reitin ensisijainen demografinen referenssi.",
       coverage: "Kaikki maat",
-      frequency: "Kahden vuoden välein",
+      frequency: "Julkaisukierroksittain",
     },
     wbFert: {
       name: "Hedelmällisyysluku (Maailmanpankki)",
       description:
-        "Karkea syntyvyysluku ja kokonaishedelmällisyysluku YK:n väestöosastolta ja kansallisista tilastoista. Käytetään ristiintarkistuksena WPP-arvioita vasten.",
+        "Maailmanpankin kokonaishedelmällisyysindikaattori, joka pohjaa YK:n väestöosaston ja kansallisten tilastojen lähteisiin. Käytetään ristiintarkistuksena WPP-arvioita vasten.",
       coverage: "200+ maata",
       frequency: "Vuosittainen",
     },

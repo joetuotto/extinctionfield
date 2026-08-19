@@ -22,8 +22,6 @@ type Copy = {
   organText: readonly string[];
   asfrTitle: string;
   asfrText: readonly string[];
-  legacyTitle: string;
-  legacyText: string;
   evidenceLink: string;
   mathematicsTitle: string;
   mathematicsText: string;
@@ -55,7 +53,7 @@ const t: Record<Locale, Copy> = {
     fieldStateTitle: "FieldState replaces a national exposure scalar",
     fieldStateText: [
       "For each organ, v2 keeps background, ambient and personal field components distinct after an organ-, posture- and geometry-specific transfer. It retains vector information, phase/coherence, envelope or beat PSD, circadian context, calibration and provenance.",
-      "The previous ambient + χ(ambient) × personal expression remains available only as a legacy timing-proxy adapter. National mobile-subscription series may describe technology diffusion, but they are neither local dosimetry nor a measured organ FieldState.",
+      "National mobile-subscription series can describe technology diffusion. They remain distinct from local dosimetry and a measured organ FieldState.",
     ],
     diagramTitle: "Registered causal route",
     diagramText:
@@ -70,9 +68,6 @@ const t: Record<Locale, Copy> = {
       "The population layer combines paired male and female conception/live-birth capacity while preserving shared-household and partner covariance. It then reports biological capacity separately from demand/opportunity, tempo and ART/live-birth delivery for each age group.",
       "A national FieldState–ASFR coefficient is not yet estimated: the matched FieldState, biological-endpoint and couple panels required for calibration have not been assembled. Accordingly, v2 publishes no country TFR forecast.",
     ],
-    legacyTitle: "How to read the earlier model outputs",
-    legacyText:
-      "v16/v17 scalar cumEMF charts, hindcasts and numeric forecasts are retained as reproducible historical scenario artefacts. Their arithmetic is unchanged, while legacy A–F/T labels are resolved only through source-qualified semantic bindings (for example, BBB versus melatonin versus Vmem). The preserved 129-record bibliography is reviewed through the same migration layer; neither inherited labels nor source summaries are re-labelled as FieldState–ASFR-v2 coefficients.",
     evidenceLink: "Browse the bounded evidence registry",
     mathematicsTitle: "Mathematical specification",
     mathematicsText:
@@ -103,7 +98,7 @@ const t: Record<Locale, Copy> = {
     fieldStateTitle: "FieldState korvaa kansallisen altistusskalaarin",
     fieldStateText: [
       "V2 säilyttää kullekin elimelle tausta-, ambient- ja henkilökohtaiset kenttäkomponentit erillään elin-, asento- ja geometriakohtaisen siirron jälkeen. Se säilyttää vektoritiedon, vaiheen/koherenssin, verhokäyrä- tai beat-PSD:n, vuorokausikontekstin, kalibroinnin ja provenienssin.",
-      "Aiempi ambient + χ(ambient) × personal -lauseke säilyy vain legacy-ajoitusproxy-adapterina. Kansalliset mobiililiittymäsarjat voivat kuvata teknologian leviämistä, mutta ne eivät ole paikallista dosimetriaa eivätkä mitattu elin-FieldState.",
+      "Kansalliset mobiililiittymäsarjat voivat kuvata teknologian leviämistä. Ne pidetään erillään paikallisesta dosimetriasta ja mitatusta elin-FieldStatesta.",
     ],
     diagramTitle: "Rekisteröity kausaalireitti",
     diagramText:
@@ -118,9 +113,6 @@ const t: Record<Locale, Copy> = {
       "Väestökerros yhdistää paritetun miehen ja naisen conception/live-birth-kapasiteetin säilyttäen yhteisen kotiympäristön ja partnerikovarianssin. Sen jälkeen se raportoi biologisen kapasiteetin erillään kysynnästä/mahdollisuudesta, temposta ja ART/live-birth-deliverystä jokaiselle ikäryhmälle.",
       "Maakohtaista FieldState–ASFR-kerrointa ei vielä estimoida: kalibroinnin vaatimia kohdistettuja FieldState-, biologisten päätepisteiden ja paripaneeleja ei ole koottu. Siksi v2 ei julkaise maakohtaisia TFR-ennusteita.",
     ],
-    legacyTitle: "Miten aiempia mallituotoksia luetaan",
-    legacyText:
-      "V16/v17:n skalaariset cumEMF-kuvaajat, hindcastit ja numeroennusteet säilyvät toistettavina historiallisina skenaarioartefakteina. Niiden laskenta ei muutu, mutta legacy-A–F/T-nimet ratkaistaan vain lähdekohtaisilla semanttisilla sidoksilla (esimerkiksi BBB vs. melatoniini vs. Vmem). Säilytetty 129 tietueen bibliografia tarkistetaan saman siirtokerroksen kautta; perityistä nimistä tai lähdeyhteenvedoista ei tehdä FieldState–ASFR-v2-kertoimia.",
     evidenceLink: "Selaa rajattua evidenssirekisteriä",
     mathematicsTitle: "Matemaattinen määrittely",
     mathematicsText:
@@ -202,11 +194,6 @@ export default async function ModelPage({
             <div className="max-w-4xl space-y-3 text-sm leading-relaxed text-foreground-muted">
               {d.asfrText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
-          </section>
-
-          <section id="legacy" className="rounded-xl border border-status-partial/35 bg-status-partial/5 p-5">
-            <h2 className="text-lg font-semibold">{d.legacyTitle}</h2>
-            <p className="mt-2 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.legacyText}</p>
           </section>
 
           <section>

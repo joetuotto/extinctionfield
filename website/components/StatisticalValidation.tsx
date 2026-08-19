@@ -8,9 +8,7 @@ export function StatisticalValidation({ locale }: { locale: string }) {
   const d = fi
     ? {
         title: "Tilastollinen tila ja validointiraja",
-        lead: "FieldState–ASFR-v2 erottaa kuvailevan ajastuskuvion, biologisen päätepisteen ja väestövaikutuksen. Nykyinen sivu ei esitä vanhoja skalaari- tai kalibrointituloksia v2:n validointina.",
-        archivedTitle: "Arkistoitu v17-diagnostiikka",
-        archived: "V17:n poikkileikkaus-, hindcast- ja käyttöönottotestit käyttivät mobiililiittymiä ja urbaanistumisen kaltaisia teknologia-ajoitusprokseja. Ne ovat menetelmähistoriaa, eivät paikallista FieldStatea tai FieldState–ASFR-v2:n ennustevalidointia. Julkaistussa globaalissa ydinvertailussa v17 ei johdonmukaisesti voittanut demografista nollamallia.",
+        lead: "FieldState–ASFR-v2 erottaa kuvailevan ajastuskuvion, biologisen päätepisteen ja väestövaikutuksen. Validointitila kertoo, mitä aktiivisen reitin testaamiseen tarvitaan.",
         criteriaTitle: "Mitä v2-validointi edellyttää",
         criteria: [
           "Ennalta määritetty, mitattu FieldState: B₀, spektri/PSD, vaihe/koherenssi, sijainti, elinsiirto ja provenienssi.",
@@ -21,9 +19,7 @@ export function StatisticalValidation({ locale }: { locale: string }) {
       }
     : {
         title: "Statistical status and validation boundary",
-        lead: "FieldState–ASFR-v2 separates a descriptive timing pattern, a biological endpoint and a population effect. This page does not present prior scalar or calibration results as v2 validation.",
-        archivedTitle: "Archived v17 diagnostics",
-        archived: "The v17 cross-sectional, hindcast and rollout tests used mobile subscriptions and technology-timing proxies such as urbanisation. They are method history, not local FieldState or FieldState–ASFR-v2 forecast validation. In the released global core comparisons, v17 did not consistently outperform the demographic null.",
+        lead: "FieldState–ASFR-v2 separates a descriptive timing pattern, a biological endpoint and a population effect. The validation status states what is required to test the active route.",
         criteriaTitle: "What v2 validation requires",
         criteria: [
           "A pre-specified measured FieldState: B₀, spectrum/PSD, phase/coherence, position, organ transfer and provenance.",
@@ -42,11 +38,6 @@ export function StatisticalValidation({ locale }: { locale: string }) {
       </header>
 
       <ASFRCohortPhase locale={locale} />
-
-      <section className="mb-10 rounded-xl border border-status-partial/30 bg-status-partial/5 p-5 max-w-4xl">
-        <h3 className="text-base font-semibold mb-2">{d.archivedTitle}</h3>
-        <p className="text-sm text-foreground-muted leading-relaxed">{d.archived}</p>
-      </section>
 
       <section className="mb-10 max-w-4xl">
         <h3 className="text-base font-semibold mb-3">{d.criteriaTitle}</h3>

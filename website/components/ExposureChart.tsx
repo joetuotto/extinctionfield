@@ -14,12 +14,12 @@ export function ExposureChart({ country, locale = "en" }: Props) {
   return (
     <div className="max-w-3xl">
       <h3 className="mb-2 text-lg font-semibold">
-        {isFinnish ? "Arkistoitu v17-proxy" : "Archived v17 proxy"} — {DISPLAY_NAMES[country] || country}
+        {isFinnish ? "Maadatan saatavuus" : "Country-data availability"} — {DISPLAY_NAMES[country] || country}
       </h3>
       <p className="text-sm leading-relaxed text-foreground-muted">
         {isFinnish
-          ? "Vanhan näkymän ambient + χ × personal-, kumulatiivinen EMF- ja biologinen kapasiteetti -sarjat on poistettu käytöstä. Ne olivat oletusperusteisia skalaarisia proxeja, eivät mitattuja kenttiä, annoksia tai FieldState-vektoreita."
-          : "The former ambient + χ × personal, cumulative-EMF, and biological-capacity series are retired. They were assumption-driven scalar proxies, not measured fields, doses, or FieldState vectors."}
+          ? "Julkaistut demografiset sarjat ja teknologian ajoitus ovat saatavilla maavertailuun. FieldState–ASFR-v2:n maakohtainen analyysi edellyttää lisäksi dokumentoituja paikallisia kenttä- ja päätepistesyötteitä."
+          : "Published demographic series and technology timing are available for country comparison. A country-level FieldState–ASFR-v2 analysis additionally requires documented local field and endpoint inputs."}
       </p>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-3">

@@ -15,29 +15,29 @@ interface PanelSummary {
 
 const copy = {
   en: {
-    title: "Global panel provenance and v2 validation boundary",
-    lead: "The published country panel is available for data governance and descriptive coverage only. Its records are not a measured FieldState panel or FieldState–ASFR-v2 validation result.",
+    title: "Global panel data coverage",
+    lead: "The published country panel documents the demographic and technology-timing data currently available for the FieldState–ASFR-v2 research programme.",
     loading: "Loading panel metadata…",
-    unavailable: "Panel metadata is unavailable; no validation claim is substituted for it.",
+    unavailable: "Panel metadata is unavailable. Please try again shortly.",
     artifact: "Publication format",
     schema: "Schema",
     tiers: "Coverage tiers in the published panel",
     countries: "countries",
-    note: "Tier membership describes data coverage only. It does not indicate model performance, FieldState availability, effect size or a causal conclusion.",
-    missing: "What is still missing for v2",
+    note: "Tier membership documents source coverage. FieldState availability, endpoints and effect estimates are recorded separately.",
+    missing: "Next v2 data addition",
     missingText: "A national panel of measured FieldState inputs, traceable organ/couple endpoints and age-specific fertility outcomes collected on a compatible time axis.",
   },
   fi: {
-    title: "Globaalin paneelin provenienssi ja v2-validointiraja",
-    lead: "Julkaistu maapaneeli on saatavilla datahallintaa ja kuvailevaa kattavuutta varten. Sen tietueet eivät ole mitattu FieldState-paneeli eivätkä FieldState–ASFR-v2:n validaatiotulos.",
+    title: "Globaalin paneelin datakattavuus",
+    lead: "Julkaistu maapaneeli dokumentoi FieldState–ASFR-v2-tutkimusohjelmalle tällä hetkellä saatavilla olevan demografia- ja teknologia-ajoitusdatan.",
     loading: "Ladataan paneelin metatietoja…",
-    unavailable: "Paneelin metatietoa ei ole saatavilla; sen tilalle ei esitetä validointiväitettä.",
+    unavailable: "Paneelin metatietoa ei ole saatavilla. Yritä hetken kuluttua uudelleen.",
     artifact: "Julkaisumuoto",
     schema: "Skeema",
     tiers: "Julkaistun paneelin kattavuustasot",
     countries: "maata",
-    note: "Tasojäsenyys kuvaa vain datan kattavuutta. Se ei ilmaise mallisuorituskykyä, FieldState-saatavuutta, vaikutuskokoa eikä kausaalista johtopäätöstä.",
-    missing: "Mitä v2:sta vielä puuttuu",
+    note: "Tasojäsenyys dokumentoi lähdekattavuutta. FieldState-saatavuus, päätepisteet ja vaikutusarviot kirjataan erikseen.",
+    missing: "Seuraava v2-datalisäys",
     missingText: "Kansallinen paneeli mitatuista FieldState-syötteistä, jäljitettävistä elin-/paritason päätepisteistä ja ikäryhmäkohtaisista hedelmällisyystuloksista yhteensopivalla aika-akselilla.",
   },
 } as const;
@@ -49,10 +49,7 @@ function tierLabel(tier: GlobalTier, locale: Locale) {
   return labels[tier];
 }
 
-/**
- * Shows only public-panel provenance. The former v17 conditional-hindcast
- * payload is intentionally not fetched or rendered by a v2-facing surface.
- */
+/** Shows public-panel provenance and data coverage for the v2-facing surface. */
 export function GlobalValidation({ locale }: { locale: string }) {
   const language: Locale = locale === "fi" ? "fi" : "en";
   const d = copy[language];

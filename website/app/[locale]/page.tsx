@@ -5,7 +5,6 @@ import { WorldMap } from "@/components/WorldMap";
 import type { Locale } from "@/lib/i18n";
 import {
   FIELDSTATE_EVIDENCE_COUNT,
-  LEGACY_EVIDENCE_MIGRATION,
 } from "@/lib/fieldstateEvidence";
 
 const COPY = {
@@ -23,7 +22,7 @@ const COPY = {
     evidenceTitle: "A causal route with bounded evidence",
     evidenceLead: "The active route is FieldState → named intermediate and organ states → paired capacity, alongside explicit demand/tempo/ART inputs → ASFR → TFR. Studies support distinct links and endpoints; none of the current records is a TFR coefficient.",
     evidenceCount: `${FIELDSTATE_EVIDENCE_COUNT} bounded study-to-node records`,
-    evidenceCountNote: `Each record states its field class, directness, translation scope and limitation. A further ${LEGACY_EVIDENCE_MIGRATION.recordCount}-record bibliography is preserved in a source-qualified migration layer.`,
+    evidenceCountNote: "Each record states its field class, directness, translation scope and limitation. The evidence register provides the corresponding source detail.",
     cohortTitle: "A cohort-pattern result worth testing",
     cohortLead: "WPP 2024 ASFR paired with World Bank/ITU subscriptions shows a versioned, reproducible descriptive young-versus-older cohort timing pattern (N = 163; r = −0.66645 for 2000–2023). It motivates a future preregistered FieldState study; it is neither a physical exposure estimate nor a causal result.",
     nextTitle: "Current research priorities",
@@ -35,7 +34,7 @@ const COPY = {
     methods: "Model specification",
     evidence: "Evidence register",
     data: "Data and measurement status",
-    archive: "Archived v17 scenario registry",
+    archive: "Research archive",
   },
   fi: {
     hero: "Extinction Field",
@@ -51,7 +50,7 @@ const COPY = {
     evidenceTitle: "Kausaalireitti ja rajattu evidenssi",
     evidenceLead: "Aktiivinen reitti on FieldState → nimetyt välitilat ja elinkohtaiset tilat → parikapasiteetti sekä eksplisiittiset kysyntä-/tempo-/ART-syötteet → ASFR → TFR. Tutkimukset tukevat erillisiä linkkejä ja päätepisteitä; mikään nykyisistä tietueista ei ole TFR-kerroin.",
     evidenceCount: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tutkimus–solmu-tietuetta`,
-    evidenceCountNote: `Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Lisäksi ${LEGACY_EVIDENCE_MIGRATION.recordCount} tietueen bibliografia säilyy lähdekohtaisessa siirtokerroksessa.`,
+    evidenceCountNote: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Evidenssirekisteri tarjoaa vastaavat lähdetiedot.",
     cohortTitle: "Testaamisen arvoinen kohorttikuvio",
     cohortLead: "WPP 2024:n ASFR yhdessä Maailmanpankin/ITU:n mobiililiittymien kanssa näyttää versionoidun, toistettavan kuvailevan nuorten ja vanhempien kohorttien ajoituskuvion (N = 163; r = −0,66645 vuosina 2000–2023). Se motivoi tulevaa ennakkorekisteröityä FieldState-tutkimusta; se ei ole fysikaalinen altistusarvio eikä kausaalitulos.",
     nextTitle: "Tutkimuksen nykyiset prioriteetit",
@@ -63,7 +62,7 @@ const COPY = {
     methods: "Mallin määrittely",
     evidence: "Evidenssirekisteri",
     data: "Data ja mittaustila",
-    archive: "Arkistoitu v17-skenaariorekisteri",
+    archive: "Tutkimusarkisto",
   },
 } as const;
 

@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import { ExplorerDashboard } from "@/components/ExplorerDashboard";
-import { TemporalBacktestExplorer } from "@/components/TemporalBacktestExplorer";
+import { WorldMap } from "@/components/WorldMap";
 
 const t = {
   en: {
-    title: "Country data explorer",
+    title: "Country series explorer",
     subtitle:
-      "Published TFR series are shown for descriptive country comparison. The earlier scalar EMF and fertility scenario has been retained only as a clearly labelled LEGACY_TIMING_PROXY archive; it is not a FieldState measurement, dose model, or FieldState–ASFR-v2 forecast.",
+      "Published TFR series and technology-adoption timing can be compared across countries with their source scope kept visible.",
     method: "How to read this page",
     a: "A published TFR series is a period demographic measure. It cannot by itself identify a biological mechanism.",
     b: "Mobile subscriptions are used elsewhere on the site only as a technology-adoption timing proxy, not as RF exposure or a causal variable.",
     c: "A v2 country estimate requires measured FieldState inputs, organ/couple endpoints, and ASFR calibration. Those inputs are not yet available as a national panel.",
   },
   fi: {
-    title: "Maadata-tutkija",
+    title: "Maasarjojen tutkija",
     subtitle:
-      "Julkaistua TFR-sarjaa näytetään kuvailevaa maavertailua varten. Aiempi skalaarinen EMF- ja hedelmällisyysskenaario on säilytetty vain selvästi merkitynä LEGACY_TIMING_PROXY-arkistona; se ei ole FieldState-mittaus, annosmalli eikä FieldState–ASFR-v2-ennuste.",
+      "Julkaistuja TFR-sarjoja ja teknologiakäyttöönoton ajoitusta voi vertailla maittain siten, että lähteiden tulkintarajat säilyvät näkyvissä.",
     method: "Näin sivua luetaan",
     a: "Julkaistu TFR-sarja on periodinen demografinen mittari. Se ei yksinään tunnista biologista mekanismia.",
     b: "Mobiililiittymiä käytetään muualla sivustolla vain teknologiakäyttöönoton ajoitusproxyna, ei RF-altistuksena tai kausaalisena muuttujana.",
@@ -31,12 +31,12 @@ export async function generateMetadata({
   const { locale } = await params;
   return locale === "fi"
     ? {
-        title: "Maadata-tutkija - Extinction Field",
-        description: "Julkaistu TFR-sarja ja arkistoitu teknologia-ajoitusproxy.",
+        title: "Maasarjojen tutkija - Extinction Field",
+        description: "Julkaistut TFR-sarjat, teknologiakäyttöönoton ajoitus ja lähteiden tulkintarajat.",
       }
     : {
-        title: "Country data explorer - Extinction Field",
-        description: "Published TFR series and an archived technology-timing proxy.",
+        title: "Country series explorer - Extinction Field",
+        description: "Published TFR series, technology-adoption timing and source interpretation scope.",
       };
 }
 
@@ -56,7 +56,9 @@ export default async function ExplorerPage({
 
       <ExplorerDashboard locale={language} />
 
-      <TemporalBacktestExplorer locale={language} />
+      <section className="mt-10 rounded-xl border border-card-border bg-card-bg p-4 sm:p-6">
+        <WorldMap locale={language} />
+      </section>
 
       <div className="mt-12 rounded-lg border border-card-border bg-card-bg p-4 text-sm text-foreground-muted">
         <p className="mb-2 font-semibold text-foreground">{d.method}</p>

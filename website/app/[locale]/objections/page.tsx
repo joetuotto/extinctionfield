@@ -48,7 +48,7 @@ const t: Record<Locale, Copy> = {
       {
         question: "Can mobile subscriptions or eDRX show a physical exposure pathway?",
         response: [
-          "No. Mobile subscriptions can time digital-technology diffusion but are not a local field measurement, organ transfer or biological dose. The current N = 163 cohort result is explicitly classified as a descriptive TECHNOLOGY_TIMING_PROXY_NOT_FIELDSTATE analysis.",
+          "No. Mobile subscriptions can time digital-technology diffusion but are not a local field measurement, organ transfer or biological dose. The current N = 163 cohort result is reported as a descriptive technology-timing analysis.",
           "Likewise, eDRX is device reception/paging scheduling metadata, not by itself a known downlink RF field signature. Any envelope or beat feature must be measured in the actual field before it is tested biologically.",
         ],
         boundary: "Proxy timing and physical dosimetry answer different questions and must remain labelled differently.",
@@ -80,7 +80,7 @@ const t: Record<Locale, Copy> = {
     ],
     closingTitle: "Constructive ways to test the programme",
     closingText:
-      "The most useful critiques provide a competing measurement model, a source correction, an independently replicated experiment, or a better demographic design. The project should be judged by whether its registered links survive those tests, not by an unmeasured scalar or an unqualified TFR narrative.",
+      "The most useful critiques provide a competing measurement model, a source correction, an independently replicated experiment, or a better demographic design. The project should be judged by whether its registered links survive those tests and how they compare with alternative explanations.",
   },
   fi: {
     title: "Tutkimuskysymykset ja evidenssirajat",
@@ -116,7 +116,7 @@ const t: Record<Locale, Copy> = {
       {
         question: "Voivatko mobiililiittymät tai eDRX osoittaa fysikaalisen altistusreitin?",
         response: [
-          "Eivät. Mobiililiittymät voivat ajoittaa digitaaliteknologian leviämistä, mutta ne eivät ole paikallinen kenttämittaus, elinsiirto eivätkä biologinen annos. Nykyinen N = 163 -kohorttitulosta käsitellään eksplisiittisesti kuvailevana TECHNOLOGY_TIMING_PROXY_NOT_FIELDSTATE-analyysinä.",
+          "Eivät. Mobiililiittymät voivat ajoittaa digitaaliteknologian leviämistä, mutta ne eivät ole paikallinen kenttämittaus, elinsiirto eivätkä biologinen annos. Nykyinen N = 163 -kohorttitulosta raportoidaan kuvailevana teknologia-ajoitusanalyysinä.",
           "Samoin eDRX on laitteen vastaanoton/sivutuksen ajoitusmetadataa, ei yksin tunnettu downlink-RF-kenttäallekirjoitus. Mahdollinen verhokäyrä- tai beat-piirre on mitattava todellisessa kentässä ennen biologista testiä.",
         ],
         boundary: "Proxyn ajoitus ja fysikaalinen dosimetria vastaavat eri kysymyksiin, ja ne on merkittävä eri tavoin.",
@@ -148,7 +148,7 @@ const t: Record<Locale, Copy> = {
     ],
     closingTitle: "Rakentavia tapoja testata tutkimusohjelmaa",
     closingText:
-      "Hyödyllisimmät kritiikit tarjoavat kilpailevan mittausmallin, lähdekorjauksen, riippumattomasti replikoidun kokeen tai paremman demografisen asetelman. Projektia tulee arvioida sen mukaan, kestävätkö rekisteröidyt lenkit nämä testit — ei mittaamattoman skalaarin tai rajaamattoman TFR-narratiivin mukaan.",
+      "Hyödyllisimmät kritiikit tarjoavat kilpailevan mittausmallin, lähdekorjauksen, riippumattomasti replikoidun kokeen tai paremman demografisen asetelman. Projektia tulee arvioida sen mukaan, kestävätkö rekisteröidyt lenkit nämä testit ja miten ne vertautuvat vaihtoehtoisiin selityksiin.",
   },
 };
 

@@ -24,46 +24,37 @@ interface SentinelReadinessData {
     sha256?: string;
     row_count?: number;
   };
-  withdrawn_records?: Array<{
-    id: string;
-    status?: string;
-    reason?: LocaleText;
-  }>;
 }
 
 const COPY = {
   en: {
     title: "CSLI readiness",
     lead:
-      "No cross-species lag, exposure-gradient, or prospective CSLI result is currently reported. The public record below is a readiness assessment: all six preregistered tests are blocked by missing matched data.",
-    status: "Current status",
-    blocked: "Blocked",
+      "The public CSLI record tracks the data required for a registered cross-species test. Its six preregistered requirements are currently awaiting matched place–time field and endpoint data.",
+    status: "Data readiness",
+    blocked: "Awaiting matched data",
     tests: "Prerequisite tests",
     requirements: "Required before testing",
     blockers: "Blockers",
-    withdrawn: "Withdrawn prior CSLI records",
     noImputation: "No missing values are imputed for this readiness assessment.",
     source: "Readiness manifest",
     loading: "Loading sentinel readiness…",
-    error:
-      "The readiness manifest could not be loaded. No CSLI lag estimate or forecast is shown.",
+    error: "The readiness manifest could not be loaded. Please try again shortly.",
     unavailable: "Unavailable",
   },
   fi: {
     title: "CSLI-aineiston valmiustila",
     lead:
-      "CSLI:stä ei tällä hetkellä raportoida lajien välistä viivettä, altistusgradienttia eikä prospektiivista tulosta. Alla on aineiston valmiusarvio: kaikki kuusi esirekisteröityä testiä ovat estyneet, koska vastaavaa yhdistettyä dataa puuttuu.",
-    status: "Nykytila",
-    blocked: "Estynyt",
+      "Julkinen CSLI-tietue seuraa rekisteröityyn lajienväliseen testiin tarvittavaa dataa. Sen kuusi esirekisteröityä vaatimusta odottaa tällä hetkellä kohdistettua paikka–aika-kenttä- ja päätepistedataa.",
+    status: "Datavalmius",
+    blocked: "Odottaa kohdistettua aineistoa",
     tests: "Edellytystestit",
     requirements: "Vaaditaan ennen testiä",
     blockers: "Esteet",
-    withdrawn: "Poistetut aiemmat CSLI-tietueet",
     noImputation: "Tässä valmiusarviossa puuttuvia arvoja ei imputoida.",
     source: "Valmiusmanifesti",
     loading: "Ladataan sentinelliaineiston valmiustilaa…",
-    error:
-      "Valmiusmanifestia ei voitu ladata. CSLI-viive-estimointia tai ennustetta ei näytetä.",
+    error: "Valmiusmanifestia ei voitu ladata. Yritä hetken kuluttua uudelleen.",
     unavailable: "Ei saatavilla",
   },
 } as const;
@@ -121,19 +112,6 @@ function parseReadiness(value: unknown): SentinelReadinessData | null {
     return null;
   }
 
-  const withdrawnRecords = Array.isArray(value.withdrawn_records)
-    ? value.withdrawn_records.flatMap((item) => {
-        if (!isRecord(item) || typeof item.id !== "string") return [];
-        return [{
-          id: item.id,
-          status: typeof item.status === "string" ? item.status : undefined,
-          reason: typeof item.reason === "string" || isRecord(item.reason)
-            ? item.reason
-            : undefined,
-        }];
-      })
-    : undefined;
-
   return {
     schema_version: typeof value.schema_version === "string" ? value.schema_version : undefined,
     generated_at: typeof value.generated_at === "string" ? value.generated_at : undefined,
@@ -147,7 +125,6 @@ function parseReadiness(value: unknown): SentinelReadinessData | null {
           row_count: typeof value.canonical_artifact.row_count === "number" ? value.canonical_artifact.row_count : undefined,
         }
       : undefined,
-    withdrawn_records: withdrawnRecords,
   };
 }
 
@@ -184,7 +161,7 @@ export function SentinelReadiness({ locale }: { locale: string }) {
   }, []);
 
   if (failed) {
-    return <p className="text-sm text-status-refuted">{d.error}</p>;
+    return <p className="text-sm text-status-partial">{d.error}</p>;
   }
 
   if (!data) {
@@ -198,8 +175,8 @@ export function SentinelReadiness({ locale }: { locale: string }) {
         <p className="text-sm leading-relaxed text-foreground-muted max-w-3xl">{d.lead}</p>
       </div>
 
-      <div className="border border-status-refuted/35 bg-status-refuted/5 rounded-lg p-4">
-        <p className="text-xs font-semibold uppercase tracking-wide text-status-refuted mb-1">
+      <div className="border border-status-partial/35 bg-status-partial/5 rounded-lg p-4">
+        <p className="text-xs font-semibold uppercase tracking-wide text-status-partial mb-1">
           {d.status}
         </p>
         <p className="text-base font-medium text-foreground">
@@ -225,7 +202,7 @@ export function SentinelReadiness({ locale }: { locale: string }) {
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                       <h5 className="text-sm font-medium">{title}</h5>
-                      <span className="text-xs font-medium text-status-refuted">
+                      <span className="text-xs font-medium text-status-partial">
                         {blockedLabel(test.status, locale)}
                       </span>
                     </div>
@@ -252,20 +229,6 @@ export function SentinelReadiness({ locale }: { locale: string }) {
           })}
         </div>
       </div>
-
-      {data.withdrawn_records && data.withdrawn_records.length > 0 && (
-        <div className="border-l-2 border-status-partial/60 pl-4">
-          <h4 className="text-sm font-semibold mb-2">{d.withdrawn}</h4>
-          <ul className="space-y-2 text-xs text-foreground-muted">
-            {data.withdrawn_records.map((record) => (
-              <li key={record.id}>
-                <span className="font-mono-num text-foreground">{record.id}</span>
-                {record.reason && <> — {textForLocale(record.reason, locale, d.unavailable)}</>}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
 
       <a
         href="/data/sentinel_readiness.json"

@@ -11,7 +11,7 @@ export function DataSourcesContent({ locale }: { locale: string }) {
         lead: "Aktiivinen reitti erottaa demografisen tuloksen, teknologian ajoitusproksin ja mitatun FieldStaten. Saatavilla oleva maa–vuosi-aineisto ei vielä muodosta elinkohtaista altistus- tai vaikutuspaneelia.",
         cards: [
           ["ASFR ja TFR", "UN WPP 2024 tarjoaa ikäryhmäkohtaisen hedelmällisyyden. TFR johdetaan ASFR:stä; se ei yksin tunnista biologista mekanismia."],
-          ["Teknologian ajoitus", "Maailmanpankin/ITU:n mobiililiittymät tukevat kuvailevaa käyttöönotto- ja kohorttiajoitusta. Ne ovat LEGACY_TIMING_PROXY, eivät RF-annos tai FieldState."],
+          ["Teknologian ajoitus", "Maailmanpankin/ITU:n mobiililiittymät tukevat kuvailevaa käyttöönotto- ja kohorttiajoitusta. Ne eivät ole RF-annos tai FieldState."],
           ["Fyysinen FieldState", "Tarvitaan kalibroidut paikalliset vektori-, spektri/PSD-, geometria-, B₀-, ajoitus- ja provenienssimittaukset sekä elinsiirtomalli."],
           ["Biologinen yhdistäminen", "Elinkohtaiset mies-, nais- ja este-päätepisteet sekä paritila on mitattava samalla aika–paikka-akselilla ennen ASFR-mallinnusta."],
         ],
@@ -22,7 +22,7 @@ export function DataSourcesContent({ locale }: { locale: string }) {
         lead: "The active route separates demographic outcome, technology-timing proxy and measured FieldState. Available country-year data do not yet form an organ-specific exposure or effect panel.",
         cards: [
           ["ASFR and TFR", "UN WPP 2024 provides age-specific fertility. TFR is derived from ASFR and cannot on its own identify a biological mechanism."],
-          ["Technology timing", "World Bank/ITU mobile subscriptions support descriptive adoption and cohort timing. They are LEGACY_TIMING_PROXY, not RF dose or FieldState."],
+          ["Technology timing", "World Bank/ITU mobile subscriptions support descriptive adoption and cohort timing. They are not RF dose or FieldState."],
           ["Physical FieldState", "Calibrated local vector, spectrum/PSD, geometry, B₀, timing and provenance measurements plus an organ-transfer model are required."],
           ["Biological join", "Organ-specific male, female and barrier endpoints plus couple state must be measured on the same time-place axis before ASFR modelling."],
         ],

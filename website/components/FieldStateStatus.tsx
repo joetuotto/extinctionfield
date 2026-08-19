@@ -1,10 +1,9 @@
 import {
   FIELDSTATE_EVIDENCE_COUNT,
-  LEGACY_EVIDENCE_MIGRATION,
 } from "@/lib/fieldstateEvidence";
 
 type Locale = "en" | "fi";
-type Status = "LEGACY_TIMING_PROXY" | "PARTIAL_FIELD_STATE" | "MEASUREMENT_READY_FIELD_STATE";
+type Status = "TECHNOLOGY_TIMING_PROXY" | "PARTIAL_FIELD_STATE" | "MEASUREMENT_READY_FIELD_STATE";
 
 interface StatusDefinition {
   readonly id: Status;
@@ -28,7 +27,6 @@ const COPY: Record<Locale, {
   useLabel: string;
   readinessNote: string;
   evidenceNote: string;
-  legacyEvidenceNote: string;
   identityTitle: string;
   identityDescription: string;
   identityNote: string;
@@ -49,7 +47,6 @@ const COPY: Record<Locale, {
     readinessNote:
       "Measurement-ready means that all named physical inputs are documented. It does not mean a biological effect, a causal estimate or an outcome coefficient has been established.",
     evidenceNote: `${FIELDSTATE_EVIDENCE_COUNT} bounded study-to-node records support parts of the route. Each remains structural or contextual evidence, never a direct TFR slope.`,
-    legacyEvidenceNote: `${LEGACY_EVIDENCE_MIGRATION.recordCount} historical bibliography records are preserved in a source-qualified migration manifest: ${LEGACY_EVIDENCE_MIGRATION.activeAliases} have a matching active record, ${LEGACY_EVIDENCE_MIGRATION.migrationCandidates} await source-level review, and the remainder stays explicit context rather than being discarded or forced into a causal edge.`,
     identityTitle: "ASFR first; TFR is a derived identity",
     identityDescription:
       "The route projects age-specific fertility rates before summing them. Demand/opportunity, tempo and ART/live-birth delivery remain separate inputs rather than hidden biological terms.",
@@ -88,10 +85,10 @@ const COPY: Record<Locale, {
     ],
     statuses: [
       {
-        id: "LEGACY_TIMING_PROXY",
-        title: "Legacy timing proxy",
+        id: "TECHNOLOGY_TIMING_PROXY",
+        title: "Technology-timing proxy",
         description:
-          "A scalar such as ambient + χ(ambient) × personal, or a national technology series, can time the digital environment. It is not a locally measured FieldState or organ transfer.",
+          "A national technology series can describe the timing of digital-environment diffusion. It is distinct from a locally measured FieldState and organ transfer.",
         use: "Descriptive timing and cohort-signature analysis only; never local dose or endpoint calibration.",
         tone: "pending",
       },
@@ -123,7 +120,6 @@ const COPY: Record<Locale, {
     readinessNote:
       "Mittaamisvalmis tarkoittaa, että kaikki nimetyt fysikaaliset syötteet on dokumentoitu. Se ei tarkoita, että biologinen vaikutus, kausaaliarvio tai tuloskerroin olisi osoitettu.",
     evidenceNote: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tutkimus–solmu-tietuetta tukee reitin osia. Jokainen on rakenteellista tai kontekstuaalista evidenssiä, ei suora TFR-kulmakerroin.`,
-    legacyEvidenceNote: `${LEGACY_EVIDENCE_MIGRATION.recordCount} historiallisen bibliografian tietuetta on säilytetty lähdekohtaisessa siirtomanifestissa: ${LEGACY_EVIDENCE_MIGRATION.activeAliases} vastaa aktiivista tietuetta, ${LEGACY_EVIDENCE_MIGRATION.migrationCandidates} odottaa lähdetason tarkistusta ja loppuosa säilyy eksplisiittisenä kontekstina sen sijaan, että se poistettaisiin tai pakotettaisiin kausaalireunaan.`,
     identityTitle: "ASFR ensin; TFR on johdettu identiteetti",
     identityDescription:
       "Reitti projisoi ensin ikäkohtaiset hedelmällisyysluvut ja summaa ne vasta sitten. Kysyntä/mahdollisuus, tempo ja ART/live-birth-delivery säilyvät erillisinä syötteinä eivätkä piiloudu biologisiksi termeiksi.",
@@ -162,10 +158,10 @@ const COPY: Record<Locale, {
     ],
     statuses: [
       {
-        id: "LEGACY_TIMING_PROXY",
-        title: "Legacy-ajoitusproxy",
+        id: "TECHNOLOGY_TIMING_PROXY",
+        title: "Teknologian ajoitusproxy",
         description:
-          "Skalaari kuten ambient + χ(ambient) × personal tai kansallinen teknologiasarja voi ajoittaa digitaalista ympäristöä. Se ei ole paikallisesti mitattu FieldState eikä elinsiirto.",
+          "Kansallinen teknologiasarja voi kuvata digitaalisen ympäristön leviämisen ajoitusta. Se on eri asia kuin paikallisesti mitattu FieldState ja elinsiirto.",
         use: "Vain kuvailevaan ajoitus- ja kohorttisignaalin analyysiin; ei paikalliseksi annokseksi eikä päätepistekalibrointiin.",
         tone: "pending",
       },
@@ -237,8 +233,7 @@ export function FieldStateStatus({ locale }: { locale: string }) {
         <div className="mt-3 grid gap-3 lg:grid-cols-3">
           {d.statuses.map((status) => (
             <article key={status.id} className={`rounded-lg border p-4 ${statusClasses(status.tone)}`}>
-              <p className="font-mono-num text-[11px] font-semibold tracking-wide">{status.id}</p>
-              <h4 className="mt-2 text-sm font-semibold text-foreground">{status.title}</h4>
+              <h4 className="text-sm font-semibold text-foreground">{status.title}</h4>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{status.description}</p>
               <div className="mt-3 border-t border-current/20 pt-3 text-xs leading-relaxed text-foreground-muted">
                 <span className="font-medium text-foreground">{d.useLabel}: </span>{status.use}
@@ -248,7 +243,6 @@ export function FieldStateStatus({ locale }: { locale: string }) {
         </div>
         <p className="mt-3 max-w-4xl text-xs leading-relaxed text-foreground-muted">{d.readinessNote}</p>
         <p className="mt-1 max-w-4xl text-xs leading-relaxed text-foreground-muted">{d.evidenceNote}</p>
-        <p className="mt-1 max-w-4xl text-xs leading-relaxed text-foreground-muted">{d.legacyEvidenceNote}</p>
       </div>
 
       <div className="mt-7 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">

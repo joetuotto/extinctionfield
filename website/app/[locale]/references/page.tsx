@@ -8,11 +8,11 @@ import {
 const COPY = {
   en: {
     title: "FieldState–ASFR v2 reference register",
-    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} bounded records are mapped to the active causal route. They are curated for field class, directness, scope and limitations; no record is a TFR coefficient. The prior bibliography is preserved through a ${LEGACY_EVIDENCE_MIGRATION.recordCount}-record, source-qualified migration manifest—not discarded, but not promoted to an active v2 evidence register without record-level review.`,
+    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} bounded records are mapped to the active causal route. They are curated for field class, directness, scope and limitations; no record is a TFR coefficient. A source-qualified bibliography retains ${LEGACY_EVIDENCE_MIGRATION.recordCount} further records for continuing record-level review.`,
   },
   fi: {
     title: "FieldState–ASFR v2 -lähderekisteri",
-    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tietuetta on kytketty aktiiviseen kausaalireittiin. Ne on kuratoitu kenttäluokan, suoruuden, tulkintarajan ja rajoitusten mukaan; mikään tietue ei ole TFR-kerroin. Aiempi bibliografia säilyy ${LEGACY_EVIDENCE_MIGRATION.recordCount} tietueen lähdekohtaisena siirtomanifestina: sitä ei poisteta, mutta sitä ei nosteta aktiiviseksi v2-evidenssiksi ilman tietuekohtaista tarkistusta.`,
+    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tietuetta on kytketty aktiiviseen kausaalireittiin. Ne on kuratoitu kenttäluokan, suoruuden, tulkintarajan ja rajoitusten mukaan; mikään tietue ei ole TFR-kerroin. Lähdekohtainen bibliografia säilyttää ${LEGACY_EVIDENCE_MIGRATION.recordCount} lisätietuetta jatkuvaa tietuekohtaista tarkistusta varten.`,
   },
 } as const;
 

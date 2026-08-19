@@ -53,8 +53,8 @@ const t: Record<Locale, Copy> = {
       },
       {
         num: "04",
-        bold: "Legacy outputs are labelled as legacy.",
-        text: "Earlier scalar exposure charts, hindcasts and country forecasts remain reproducible historical scenario artefacts, not FieldState–ASFR-v2 predictions.",
+        bold: "Results are versioned and reproducible.",
+        text: "The active route, evidence register and data-status rules state the measurement and interpretation conditions attached to each result.",
       },
       {
         num: "05",
@@ -104,8 +104,8 @@ const t: Record<Locale, Copy> = {
       },
       {
         num: "04",
-        bold: "Legacy-tuotokset merkitään legacyksi.",
-        text: "Aiemmat skalaariset altistuskuvaajat, hindcastit ja maakohtaiset ennusteet säilyvät toistettavina historiallisina skenaarioartefakteina, eivät FieldState–ASFR-v2-ennusteina.",
+        bold: "Tulokset ovat versioituja ja toistettavia.",
+        text: "Aktiivinen reitti, evidenssirekisteri ja datatilan säännöt kertovat kuhunkin tulokseen liitetyt mittaus- ja tulkintaehdot.",
       },
       {
         num: "05",

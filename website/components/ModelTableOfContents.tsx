@@ -23,7 +23,6 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
         { id: "causal-diagram", label: "Registered causal route" },
         { id: "organ-states", label: "Organ states" },
         { id: "asfr-tfr", label: "ASFR → TFR" },
-        { id: "legacy", label: "Legacy artefacts" },
       ],
     },
     {
@@ -48,7 +47,6 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
         { id: "causal-diagram", label: "Rekisteröity kausaalireitti" },
         { id: "organ-states", label: "Elintilat" },
         { id: "asfr-tfr", label: "ASFR → TFR" },
-        { id: "legacy", label: "Legacy-artefaktit" },
       ],
     },
     {

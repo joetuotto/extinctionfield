@@ -4,28 +4,28 @@ import { PageHeader } from "@/components/PageHeader";
 
 const COPY = {
   en: {
-    title: "Research history and revision record",
-    subtitle: "How BERM moved from a scalar population narrative toward a measurement-aware FieldState–ASFR research specification.",
+    title: "Research development",
+    subtitle: "How BERM developed into a measurement-aware FieldState–ASFR research specification.",
     entries: [
-      ["Early formulation", "The project initially combined technology proxies, cumulative scalar exposure and national TFR. That structure could generate country curves, but it did not separately identify physical field state, organ response or demographic mechanisms."],
-      ["Evidence audit", "Source checking showed that studies differ sharply by field class, system, frequency, intensity, temperature control and endpoint. Blood–testis barrier, ovarian and circadian findings motivated organ-specific branches; unreliable barrier rows and mistaken citations were removed rather than carried forward."],
+      ["Research question", "The programme asks how documented physical field conditions, biological states and demographic outcomes can be connected without collapsing their separate measurement layers."],
+      ["Evidence mapping", "Source checking maps studies by field class, system, frequency, intensity, temperature control and endpoint. Blood–testis barrier, ovarian and circadian findings motivate distinct organ-specific branches."],
       ["Lindgren-derived measurement hypotheses", "Background dependence, vector orientation, local geometry, spectral content and timing became explicit experimental variables. They are retained as testable upstream premises, not as a direct estimate of human reproductive risk or TFR."],
       ["FieldState–ASFR v2", "The active route now keeps FieldState, organ-local transfer, reversible/persistent organ state, couple capacity, ASFR and TFR distinct. It treats mobile subscriptions as a descriptive technology-timing proxy only."],
-      ["What remains open", "A matched panel of measured FieldState, organ/couple endpoints and ASFR has not yet been assembled. Earlier v16/v17 country forecasts, backcasts and derived capacity curves remain labelled historical scenario artefacts rather than active v2 results."],
+      ["Current research focus", "The next data layer joins measured FieldState, organ/couple endpoints and ASFR on a compatible time axis so the registered mappings can be calibrated and evaluated."],
     ],
-    note: "This revision record is deliberately substantive: a model becomes more useful when unsupported conversions and stale claims are removed, not when they are relabelled as evidence.",
+    note: "The development record keeps the measurement contract, evidence roles and demographic terms explicit so every link can be tested independently.",
   },
   fi: {
-    title: "Tutkimushistoria ja korjausmerkinnät",
-    subtitle: "Miten BERM siirtyi skalaari-väestönarratiivista mittaustietoiseen FieldState–ASFR-tutkimusmäärittelyyn.",
+    title: "Tutkimuksen kehityskaari",
+    subtitle: "Miten BERM kehittyi mittaustietoiseksi FieldState–ASFR-tutkimusmäärittelyksi.",
     entries: [
-      ["Varhainen muotoilu", "Projekti yhdisti aluksi teknologiaproksit, kumulatiivisen skalaari-altistuksen ja kansallisen TFR:n. Rakenne pystyi tuottamaan maakohtaisia käyriä, mutta se ei erottanut fysikaalista kenttätilaa, elinvastetta eikä demografisia mekanismeja."],
-      ["Evidenssiaudit", "Lähteiden tarkistus osoitti, että tutkimukset eroavat voimakkaasti kenttäluokan, järjestelmän, taajuuden, intensiteetin, lämpökontrollin ja päätepisteen mukaan. Veri–kiveseste-, munasarja- ja vuorokausilöydökset motivoivat elinkohtaisia haaroja; epäluotettavat esterivit ja virheviitteet poistettiin niiden säilyttämisen sijaan."],
+      ["Tutkimuskysymys", "Ohjelma kysyy, miten dokumentoidut fysikaaliset kenttäolosuhteet, biologiset tilat ja demografiset tulokset voidaan yhdistää tiivistämättä niiden erillisiä mittauskerroksia yhdeksi suureeksi."],
+      ["Evidenssin kartoitus", "Lähteet kartoitetaan kenttäluokan, järjestelmän, taajuuden, intensiteetin, lämpökontrollin ja päätepisteen mukaan. Veri–kiveseste-, munasarja- ja vuorokausilöydökset motivoivat erillisiä elinkohtaisia haaroja."],
       ["Lindgrenistä johdetut mittaushypoteesit", "Taustariippuvuus, vektorin orientaatio, paikallinen geometria, spektrisisältö ja ajoitus nostettiin eksplisiittisiksi kokeellisiksi muuttujiksi. Ne säilyvät testattavina upstream-premisseinä, eivät suoraan ihmisen lisääntymisriskin tai TFR:n estimaattina."],
       ["FieldState–ASFR v2", "Aktiivinen reitti pitää FieldStaten, elinkohtaisen siirron, palautuvan/persistentin elintilan, parikapasiteetin, ASFR:n ja TFR:n erillisinä. Mobiililiittymiä käsitellään vain kuvailevana teknologian ajoitusproxyna."],
-      ["Mikä on vielä avoinna", "Kohdistettua mitatun FieldStaten, elin-/paripäätepisteiden ja ASFR:n paneelia ei vielä ole. Aiemmat v16/v17-maennusteet, hindcastit ja johdetut kapasiteettikäyrät säilyvät historiallisina skenaarioartefakteina, eivät aktiivisina v2-tuloksina."],
+      ["Nykyinen tutkimusfokus", "Seuraava datakerros yhdistää mitatun FieldStaten, elin-/paripäätepisteet ja ASFR:n yhteensopivalle aika-akselille, jotta rekisteröidyt mappingit voidaan kalibroida ja arvioida."],
     ],
-    note: "Korjausmerkintä on tarkoituksella sisällöllinen: malli muuttuu hyödyllisemmäksi, kun perusteettomat muunnokset ja vanhentuneet väitteet poistetaan, ei kun ne nimetään uudelleen evidenssiksi.",
+    note: "Kehityskertomus pitää mittauskontraktin, evidenssin roolit ja demografiset termit näkyvinä, jotta jokainen lenkki voidaan testata itsenäisesti.",
   },
 } as const;
 

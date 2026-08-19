@@ -19,7 +19,7 @@ const t: Record<Locale, Copy> = {
     subtitle:
       "A preregistered way to test whether measured laboratory field conditions moderate a defined biological experiment — without assuming that they explain the wider replication literature.",
     introduction: [
-      "The earlier BERM site presented laboratory-background bias as a quantified explanation for the replication crisis. That claim is not established. The revised protocol treats laboratory FieldState as a measurable potential moderator that requires a direct, blinded comparison.",
+      "This protocol treats laboratory FieldState as a measurable potential moderator that requires a direct, blinded comparison.",
       "Its goal is modest and discriminating: establish whether a documented difference in physical FieldState changes a pre-specified endpoint under otherwise matched experimental conditions.",
     ],
     sections: [
@@ -55,7 +55,7 @@ const t: Record<Locale, Copy> = {
         title: "5. Release an auditable package",
         text: [
           "Publish the preregistration, raw or access-controlled raw field recordings, calibration certificates, chamber logs, biological data, analysis code, randomisation/blinding record, deviations and null results.",
-          "Classify input quality as PARTIAL_FIELD_STATE or MEASUREMENT_READY_FIELD_STATE. A measurement-ready input still requires replication and an independently interpretable endpoint before it can inform an organ-state mapping.",
+          "Classify input quality as partial or measurement-ready FieldState data. Measurement-ready data still require replication and an independently interpretable endpoint before they can inform an organ-state mapping.",
         ],
       },
     ],
@@ -68,7 +68,7 @@ const t: Record<Locale, Copy> = {
     subtitle:
       "Ennakkorekisteröity tapa testata, moderovatko mitatut laboratorio-olosuhteet määriteltyä biologista koetta — olettamatta, että ne selittäisivät laajemman replikaatiokirjallisuuden.",
     introduction: [
-      "Aiempi BERM-sivusto esitti laboratorion taustakenttävinouman replikaatiokriisin kvantifioituna selityksenä. Väite ei ole vakiintunut. Uudistettu protokolla käsittelee laboratorion FieldStatea mitattavana mahdollisena moderaattorina, joka vaatii suoran, sokkoutetun vertailun.",
+      "Protokolla käsittelee laboratorion FieldStatea mitattavana mahdollisena moderaattorina, joka vaatii suoran, sokkoutetun vertailun.",
       "Tavoite on rajattu ja erottava: selvitetään, muuttaako dokumentoitu fysikaalinen FieldState-ero ennalta määriteltyä päätepistettä muilta osin vastaavissa koeolosuhteissa.",
     ],
     sections: [
@@ -104,7 +104,7 @@ const t: Record<Locale, Copy> = {
         title: "5. Julkaise auditoitava paketti",
         text: [
           "Julkaise ennakkorekisteröinti, raaka- tai pääsykontrolloidut raakakenttätallenteet, kalibrointisertifikaatit, kammiolokit, biologinen data, analyysikoodi, satunnaistus-/sokkoutustieto, poikkeamat ja nollatulokset.",
-          "Luokittele syötteen laatu PARTIAL_FIELD_STATE- tai MEASUREMENT_READY_FIELD_STATE-tilaksi. Mittausvalmis syöte vaatii silti replikaation ja itsenäisesti tulkittavan päätepisteen ennen kuin se voi informoida elintilan mappingia.",
+          "Luokittele syötteen laatu osittaiseksi tai mittausvalmiiksi FieldState-dataksi. Mittausvalmis data vaatii silti replikaation ja itsenäisesti tulkittavan päätepisteen ennen kuin se voi informoida elintilan mappingia.",
         ],
       },
     ],
