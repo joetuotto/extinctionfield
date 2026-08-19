@@ -5,18 +5,21 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { ModelVersionSwitcher } from "@/components/ModelVersionSwitcher";
+import { activeModelVersion, modelVersionHref } from "@/lib/modelVersions";
 import { getNavRoutes } from "@/lib/navigation";
 
 export function Navigation({ locale }: { locale: string }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const links = getNavRoutes(locale);
+  const modelVersion = activeModelVersion(locale, pathname);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-nav-bg backdrop-blur-md">
       <div className="max-w-5xl mx-auto flex h-16 items-center justify-between px-6">
         <Link
-          href={`/${locale}`}
+          href={modelVersionHref(locale, `/${locale}`, modelVersion)}
           className="text-sm font-semibold uppercase leading-none tracking-[0.1em] text-foreground transition-colors hover:text-accent"
         >
           Extinction Field
@@ -25,11 +28,15 @@ export function Navigation({ locale }: { locale: string }) {
         <div className="hidden lg:flex items-center gap-6">
           <ul className="flex items-center gap-6">
             {links.map((link) => {
-              const fullHref = `/${locale}${link.href}`;
+              const fullHref = modelVersionHref(
+                locale,
+                `/${locale}${link.href}`,
+                modelVersion,
+              );
               const isActive =
                 link.href === ""
-                  ? pathname === `/${locale}` || pathname === `/${locale}/`
-                  : pathname.startsWith(fullHref);
+                  ? pathname === fullHref || pathname === `${fullHref}/`
+                  : pathname === fullHref || pathname.startsWith(`${fullHref}/`);
               const Icon = link.icon;
               return (
                 <li key={link.href}>
@@ -49,6 +56,7 @@ export function Navigation({ locale }: { locale: string }) {
             })}
           </ul>
           <div className="flex items-center gap-2 ml-2 border-l border-border pl-4">
+            <ModelVersionSwitcher locale={locale} />
             <LanguageSwitcher locale={locale} />
             <ThemeToggle />
           </div>
@@ -91,11 +99,15 @@ export function Navigation({ locale }: { locale: string }) {
         <div className="lg:hidden border-t border-border bg-background">
           <ul className="px-6 py-4 space-y-3">
             {links.map((link) => {
-              const fullHref = `/${locale}${link.href}`;
+              const fullHref = modelVersionHref(
+                locale,
+                `/${locale}${link.href}`,
+                modelVersion,
+              );
               const isActive =
                 link.href === ""
-                  ? pathname === `/${locale}` || pathname === `/${locale}/`
-                  : pathname.startsWith(fullHref);
+                  ? pathname === fullHref || pathname === `${fullHref}/`
+                  : pathname === fullHref || pathname.startsWith(`${fullHref}/`);
               const Icon = link.icon;
               return (
                 <li key={link.href}>
@@ -115,6 +127,9 @@ export function Navigation({ locale }: { locale: string }) {
               );
             })}
           </ul>
+          <div className="border-t border-border px-6 py-4">
+            <ModelVersionSwitcher locale={locale} variant="expanded" />
+          </div>
         </div>
       )}
     </nav>
