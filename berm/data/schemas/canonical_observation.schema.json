@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/berm/berm/data/schemas/canonical_observation.schema.json",
+  "title": "BERM canonical observation",
+  "description": "One row of any BERM canonical data product. The authoritative implementation is berm/berm/data/contracts.py; this document is the language-neutral statement of the same contract, for consumers outside Python. Where the two disagree, contracts.py wins and this file is the bug.",
+  "type": "object",
+  "required": [
+    "source_id",
+    "source_url",
+    "license",
+    "retrieved_at",
+    "source_period",
+    "geography_id",
+    "geography_level",
+    "year",
+    "sex",
+    "age_group",
+    "value",
+    "unit",
+    "measurement_type",
+    "proxy_flag",
+    "imputation_flag",
+    "transform_pipeline_version"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]{2,63}$",
+      "description": "Stable key into data/registry/source_registry.csv."
+    },
+    "source_url": {
+      "type": "string",
+      "description": "Retrieval URL, a doi: reference, or the literal ACCESS_REQUIRED.",
+      "anyOf": [
+        { "pattern": "^https?://" },
+        { "pattern": "^doi:" },
+        { "const": "ACCESS_REQUIRED" }
+      ]
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Licence or terms of use under which the value may be redistributed."
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Date the value was pulled from the source. Must not be in the future."
+    },
+    "source_period": {
+      "type": "string",
+      "pattern": "^\\d{4}(-\\d{2})?(/\\d{4}(-\\d{2})?)?$",
+      "description": "Period the source itself reports, e.g. 2019 or 2018/2019. The year field must fall inside it."
+    },
+    "geography_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "ISO-3166 alpha-3 at COUNTRY level, ISO-3166-2 style (GBR-SCT) at SUBNATIONAL1/METRO, a registered supranational code, or WLD at GLOBAL."
+    },
+    "geography_level": {
+      "type": "string",
+      "enum": ["GLOBAL", "SUPRANATIONAL", "COUNTRY", "SUBNATIONAL1", "METRO", "GRID", "SITE"]
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1900,
+      "maximum": 2100
+    },
+    "sex": {
+      "type": "string",
+      "enum": ["FEMALE", "MALE", "BOTH", "NA"],
+      "description": "NA is rejected in tables declared sex-stratified."
+    },
+    "age_group": {
+      "type": "string",
+      "enum": [
+        "0-4", "5-9", "10-14",
+        "15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49",
+        "50-54", "15-49", "ALL", "NA"
+      ],
+      "description": "ALL and NA are rejected in tables declared age-stratified."
+    },
+    "birth_cohort": {
+      "type": ["integer", "null"],
+      "minimum": 1850,
+      "maximum": 2100,
+      "description": "Year of birth. Must not be later than the observation year."
+    },
+    "value": {
+      "type": "number",
+      "description": "Must be finite."
+    },
+    "unit": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Must appear in the unit vocabulary of the containing table, declared in contracts.CANONICAL_TABLES."
+    },
+    "measurement_type": {
+      "type": "string",
+      "enum": ["OBSERVED", "PROXY", "SCENARIO_PARAMETER", "DERIVED"],
+      "description": "OBSERVED is a measurement of the quantity itself. PROXY is a measurement of something else standing in for it. SCENARIO_PARAMETER is an assumption. DERIVED is computed from other canonical rows. These must never be merged or displayed without their label."
+    },
+    "proxy_flag": {
+      "type": "boolean",
+      "description": "Must be true when measurement_type is PROXY and false when it is OBSERVED."
+    },
+    "imputation_flag": {
+      "type": "boolean",
+      "description": "True when the value was filled rather than reported. Requires transform_pipeline_version to record how."
+    },
+    "uncertainty_lower": {
+      "type": ["number", "null"],
+      "description": "Must be given together with uncertainty_upper, and must bracket value."
+    },
+    "uncertainty_upper": {
+      "type": ["number", "null"]
+    },
+    "transform_pipeline_version": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*@v\\d+\\.\\d+\\.\\d+$",
+      "description": "Name and semantic version of the pipeline that produced the row, e.g. wb_ingest@v1.0.0."
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "measurement_type": { "const": "PROXY" } }, "required": ["measurement_type"] },
+      "then": { "properties": { "proxy_flag": { "const": true } } }
+    },
+    {
+      "if": { "properties": { "measurement_type": { "const": "OBSERVED" } }, "required": ["measurement_type"] },
+      "then": { "properties": { "proxy_flag": { "const": false } } }
+    },
+    {
+      "if": { "properties": { "measurement_type": { "const": "SCENARIO_PARAMETER" } }, "required": ["measurement_type"] },
+      "then": {
+        "required": ["uncertainty_lower", "uncertainty_upper"],
+        "description": "An assumption without an explicit range cannot be varied, tested, or falsified."
+      }
+    },
+    {
+      "if": { "properties": { "imputation_flag": { "const": true } }, "required": ["imputation_flag"] },
+      "then": { "required": ["transform_pipeline_version"] }
+    },
+    {
+      "if": { "required": ["uncertainty_lower"] },
+      "then": { "required": ["uncertainty_upper"] }
+    },
+    {
+      "if": { "required": ["uncertainty_upper"] },
+      "then": { "required": ["uncertainty_lower"] }
+    },
+    {
+      "if": { "properties": { "geography_level": { "const": "COUNTRY" } }, "required": ["geography_level"] },
+      "then": { "properties": { "geography_id": { "pattern": "^[A-Z]{3}$" } } }
+    },
+    {
+      "if": {
+        "properties": { "geography_level": { "enum": ["SUBNATIONAL1", "METRO"] } },
+        "required": ["geography_level"]
+      },
+      "then": { "properties": { "geography_id": { "pattern": "^[A-Z]{3}-[A-Z0-9]{1,6}$" } } }
+    }
+  ],
+  "additionalProperties": true
+}

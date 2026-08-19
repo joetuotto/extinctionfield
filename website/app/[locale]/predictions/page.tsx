@@ -3,6 +3,7 @@ import type { LockedPrediction, PredictionVersion } from "@/lib/types";
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
+import { TemporalPredictionStatus } from "@/components/TemporalPredictionStatus";
 import { Target } from "lucide-react";
 
 const t = {
@@ -342,6 +343,8 @@ export default async function PredictionsPage({
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Target} title={d.title} subtitle={d.subtitle} />
+
+      <TemporalPredictionStatus locale={locale} />
 
       <div className="flex flex-wrap gap-4 mb-8 text-xs text-foreground-muted">
         <div className="flex items-center gap-1.5">

@@ -1,0 +1,56 @@
+{
+  "manifest_id": "wb_2025-08-18",
+  "description": "World Bank Open Data API pull for the five indicators used by the BERM data pipeline.",
+  "retrieved_at": "2025-08-18",
+  "retrieval_method": "World Bank v2 JSON API, per_page=20000, date=1960:2025",
+  "license": "CC-BY-4.0",
+  "transform_pipeline_version": "wb_ingest@v0.0.0",
+  "transform_note": "data/parse_all.py is unversioned in the tree; recorded as v0.0.0 until it declares a version.",
+  "files": [
+    {
+      "source_id": "WB_SP_DYN_TFRT_IN",
+      "path": "raw/wb_tfr.json",
+      "original_filename": "wb_tfr.json",
+      "bytes": 3955489,
+      "sha256": "157c57ed365004282819b2022a4bc04bd4442558459b322335cfef4b73f62384",
+      "retrieved_at": "2025-08-18",
+      "note": "Indicator SP.DYN.TFRT.IN. Contains aggregates (WLD, EAS) that parse_all filters by code length."
+    },
+    {
+      "source_id": "WB_IT_CEL_SETS_P2",
+      "path": "raw/wb_mobile.json",
+      "original_filename": "wb_mobile.json",
+      "bytes": 4088470,
+      "sha256": "5ada9953ac7e7f90e6ef945d878abe812559183a8de470bbdf791af0bea0bf6c",
+      "retrieved_at": "2025-08-18",
+      "note": "Indicator IT.CEL.SETS.P2. Subscriptions, not people and not dose."
+    },
+    {
+      "source_id": "WB_IT_NET_USER_ZS",
+      "path": "raw/wb_internet.json",
+      "original_filename": "wb_internet.json",
+      "bytes": 4081411,
+      "sha256": "f7b4a426f3d0454a36f65104fdebb703bdaa3a60ce552a4107e7148d3a1cdb87",
+      "retrieved_at": "2025-08-18",
+      "note": "Indicator IT.NET.USER.ZS."
+    },
+    {
+      "source_id": "WB_IT_NET_BBND_P2",
+      "path": "raw/wb_broadband.json",
+      "original_filename": "wb_broadband.json",
+      "bytes": 4075720,
+      "sha256": "dabc23dbbc04657536cfc250629dfb06ac638189e13020409febb15d50e7504d",
+      "retrieved_at": "2025-08-18",
+      "note": "Indicator IT.NET.BBND.P2."
+    },
+    {
+      "source_id": "WB_SP_URB_TOTL_IN_ZS",
+      "path": "raw/wb_urban.json",
+      "original_filename": "wb_urban.json",
+      "bytes": 4160580,
+      "sha256": "6f72b6bbddc94265eb41e3c7822a5b4e1c0381e212cf615cfecf4cf077a2aaf4",
+      "retrieved_at": "2025-08-18",
+      "note": "Indicator SP.URB.TOTL.IN.ZS. Parsed to processed/ but read by no module."
+    }
+  ]
+}

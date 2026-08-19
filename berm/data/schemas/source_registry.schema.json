@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/berm/berm/data/schemas/source_registry.schema.json",
+  "title": "BERM source registry record",
+  "description": "One row of data/registry/source_registry.csv. Enforced by berm.data.registry.validate_source_registry.",
+  "type": "object",
+  "required": [
+    "source_id", "title", "publisher", "citation", "source_url", "license",
+    "access_status", "retrieved_at", "checksum_sha256", "original_filename",
+    "temporal_coverage", "geographic_coverage", "geographic_level", "variables",
+    "known_limitations", "transform_pipeline", "used_in_active_prediction",
+    "measurement_class", "notes"
+  ],
+  "properties": {
+    "source_id": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]{2,63}$" },
+    "title": { "type": "string", "minLength": 1 },
+    "publisher": { "type": "string" },
+    "citation": { "type": "string", "minLength": 1, "description": "Full reference, sufficient to locate the source without this repository." },
+    "source_url": { "type": "string" },
+    "license": { "type": "string", "minLength": 1 },
+    "access_status": {
+      "type": "string",
+      "enum": ["OPEN", "ACCESS_REQUIRED", "NOT_YET_ACQUIRED"],
+      "description": "ACCESS_REQUIRED marks a source behind paywall or restrictive terms. Such sources are never downloaded automatically; notes must state exactly what a user or institution has to obtain."
+    },
+    "retrieved_at": { "type": "string", "pattern": "^(\\d{4}-\\d{2}-\\d{2})?$" },
+    "checksum_sha256": { "type": "string", "pattern": "^([0-9a-f]{64})?$" },
+    "original_filename": { "type": "string" },
+    "temporal_coverage": { "type": "string" },
+    "geographic_coverage": { "type": "string" },
+    "geographic_level": { "type": "string" },
+    "variables": { "type": "string", "description": "Semicolon-separated variable names as they appear in the source." },
+    "known_limitations": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Required. A source with no stated limitation has not been read carefully enough to use."
+    },
+    "transform_pipeline": { "type": "string" },
+    "used_in_active_prediction": { "type": "string", "enum": ["yes", "no"] },
+    "measurement_class": {
+      "type": "string",
+      "enum": ["OBSERVED", "PROXY", "SCENARIO_PARAMETER", "DERIVED", "NOT_ACQUIRED"],
+      "description": "NOT_ACQUIRED is required while the artefact is not on disk: an unheld source cannot yet be classified as an observation."
+    },
+    "notes": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "access_status": { "const": "OPEN" } },
+        "required": ["access_status"],
+        "not": { "properties": { "original_filename": { "const": "" } } }
+      },
+      "then": {
+        "properties": {
+          "checksum_sha256": { "pattern": "^[0-9a-f]{64}$" },
+          "retrieved_at": { "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+        },
+        "description": "A source we claim to hold must be reproducible: a named file, a checksum and a retrieval date."
+      }
+    },
+    {
+      "if": {
+        "properties": { "access_status": { "enum": ["ACCESS_REQUIRED", "NOT_YET_ACQUIRED"] } },
+        "required": ["access_status"]
+      },
+      "then": {
+        "properties": { "notes": { "minLength": 1 } },
+        "description": "Must document precisely what has to be obtained, by whom, and under what terms."
+      }
+    }
+  ],
+  "additionalProperties": false
+}

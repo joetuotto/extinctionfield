@@ -1,0 +1,55 @@
+{
+  "manifest_id": "sentinel_2025-08-18",
+  "description": "Sentinel-species artefacts. Retained in data/sentinel/ for compatibility with berm/stats/csli.py; registered here so they are checksummed like any raw artefact.",
+  "retrieved_at": "2025-08-18",
+  "retrieval_method": "Manual extraction from published open-access articles; see per-file note.",
+  "license": "per-source; see source_registry.csv",
+  "transform_pipeline_version": "manual_extract@v0.0.0",
+  "files": [
+    {
+      "source_id": "COLOSS_WINTER_LOSS",
+      "path": "sentinel/coloss_winter_loss.json",
+      "original_filename": "coloss_winter_loss.json",
+      "bytes": 31176,
+      "sha256": "d4da6a2fab97f0b2aec2ad6f76f9ba7fe4a7bf31ffd5f8275ea4437a7b82603f",
+      "retrieved_at": "2025-08-18",
+      "note": "Table 1 extracted from open-access articles via browser DOM. Mixed methodology across territories."
+    },
+    {
+      "source_id": "LEA_2016_DOG_SEMEN",
+      "path": "sentinel/lea2016_dog_sperm.json",
+      "original_filename": "lea2016_dog_sperm.json",
+      "bytes": 5191,
+      "sha256": "55e26fa237af2b92fa5d2287c8952c3a15a08e36cad46649155f8db967f36db3",
+      "retrieved_at": "2025-08-18",
+      "note": "Digitized from Figure 1 and Figure 2a; reading uncertainty +-2-3 units. ORPHANED: no code reads this file."
+    },
+    {
+      "source_id": "LEVINE_2023_SPERM_RECON",
+      "path": "sentinel/sperm_by_country.json",
+      "original_filename": "sperm_by_country.json",
+      "bytes": 5479,
+      "sha256": "0dd28b648e4e02d8cbf38db67e3c94bab58e913ea3612d34824de39297cd1ea7",
+      "retrieved_at": "2025-08-18",
+      "note": "RECONSTRUCTED, not observed. The file's own notes state the country-level series is not available in the published supplement."
+    },
+    {
+      "source_id": "PECBMS_BIRD_INDEX",
+      "path": "sentinel/bird_index.json",
+      "original_filename": "bird_index.json",
+      "bytes": 5061,
+      "sha256": "ba7d1a1b8193bb0d4ece8abfe8665ffcbe4248ee51db838a41abf48fcb301693",
+      "retrieved_at": "2025-08-18",
+      "note": "Abundance index, not a reproductive endpoint. Irregular 2-6 year steps."
+    },
+    {
+      "source_id": "WAHL_2009_BULL_SEMEN",
+      "path": "sentinel/livestock_negative_control.json",
+      "original_filename": "livestock_negative_control.json",
+      "bytes": 4611,
+      "sha256": "73c410a79f9484c3e308b7ceb1546c26a430d67d2db512032e5a301e9e8fa905",
+      "retrieved_at": "2025-08-18",
+      "note": "CONTAINS NO NUMERIC SERIES: citations and qualitative trend strings only. Also covers KAROUI_2011_BULL_SEMEN and HENSEL_2025_BOAR_SEMEN, both ACCESS_REQUIRED."
+    }
+  ]
+}

@@ -49,6 +49,8 @@ from berm.v16 import (
     v17_full_report,
     # v17 new functions
     biological_tfr,
+    observed_from_biological,
+    ivf_share_projected,
     native_tfr,
     immigration_buffer,
     immigrant_generation_tfr,
@@ -74,34 +76,35 @@ def _calibrate():
     calibrate_v16()
 
 
-# === Wolfram-verified predictions (12 test points, machine precision) ===
+# === Bio-calibrated predictions (v16_predicted_tfr outputs biological TFR) ===
+# Calibration target: observed_TFR × (1 - IVF_share)
 
-WOLFRAM_PREDICTIONS = [
-    ("SouthKorea", 2024, 0.7276972658524353),
-    ("Japan", 2024, 1.204771423411335),
-    ("Finland", 2024, 1.3311218421332502),
-    ("USA", 2024, 1.6341039790932066),
-    ("Nigeria", 2024, 5.204726429909009),
-    ("Denmark", 2024, 1.5403273611682224),
+BIO_PREDICTIONS = [
+    ("SouthKorea", 2024, 0.6549275392671918),
+    ("Japan", 2024, 1.0976806302192161),
+    ("Finland", 2024, 1.2224588346121685),
+    ("USA", 2024, 1.588712201896173),
+    ("Nigeria", 2024, 5.146896136243353),
+    ("Denmark", 2024, 1.3635684836571151),
     ("India", 2024, 1.98587371691445),
     ("Iran", 2024, 2.1299996313876504),
-    ("Brazil", 2024, 1.6630484808011619),
-    ("China", 2024, 1.0941344278655274),
+    ("Brazil", 2024, 1.6181012245632926),
+    ("China", 2024, 1.0503690507509063),
     ("Ethiopia", 2024, 4.0921744328353675),
-    ("SouthKorea", 2030, 0.5941330144842795),
-    ("Japan", 2030, 0.9903687635751189),
-    ("Finland", 2030, 1.0843048134482896),
-    ("USA", 2030, 1.3169442363260595),
-    ("Nigeria", 2030, 4.832536592110527),
+    ("SouthKorea", 2030, 0.5347197130358514),
+    ("Japan", 2030, 0.9023359845906637),
+    ("Finland", 2030, 0.9957901347994496),
+    ("USA", 2030, 1.280362451983669),
+    ("Nigeria", 2030, 4.778841741087077),
     ("Niger", 2030, 6.474795895468166),
 ]
 
 
-@pytest.mark.parametrize("country,year,expected", WOLFRAM_PREDICTIONS)
-def test_wolfram_verified_prediction(country, year, expected):
+@pytest.mark.parametrize("country,year,expected", BIO_PREDICTIONS)
+def test_bio_calibrated_prediction(country, year, expected):
     result = v16_predicted_tfr(country, year)
     assert abs(result - expected) < 1e-6, (
-        f"{country} {year}: {result:.10f} vs Wolfram {expected:.10f}"
+        f"{country} {year}: {result:.10f} vs expected {expected:.10f}"
     )
 
 
@@ -168,8 +171,8 @@ def test_korea_f_female():
 # === V16 Verification assertions (from Wolfram v16Verification) ===
 
 def test_v16c_korea_accuracy():
-    tfr = v16_predicted_tfr("SouthKorea", 2024)
-    assert abs(tfr - 0.72) < 0.05
+    bio_tfr = v16_predicted_tfr("SouthKorea", 2024)
+    assert abs(bio_tfr - 0.655) < 0.05
 
 def test_v16d_nigeria_above_3():
     assert v16_predicted_tfr("Nigeria", 2024) > 3.0
@@ -495,6 +498,9 @@ def test_biological_tfr_zero_ivf():
 def test_biological_tfr_bounded():
     assert biological_tfr(1.5, 0.20) > 0
 
+def test_biological_tfr_formula():
+    assert biological_tfr(1.55, 0.12) == pytest.approx(1.55 * 0.88, abs=1e-10)
+
 def test_native_tfr_basic():
     nat = native_tfr(1.50, 2.0, 0.20)
     assert nat < 1.50
@@ -539,17 +545,21 @@ def test_predict_tfr_extended_structure():
     r = predict_tfr_extended("Finland", 2024)
     assert "predicted_tfr" in r
     assert "biological_tfr" in r
+    assert "observed_tfr" in r
     assert "ivf_share" in r
     assert "ivf_contribution" in r
     assert "native_tfr" in r
     assert "immigration_buffer" in r
     assert "immigration_buffer_pct" in r
-    assert "biological_native_tfr" in r
 
-def test_predict_tfr_extended_matches_base():
+def test_predict_tfr_extended_bio_matches_core():
     ext = predict_tfr_extended("Finland", 2024)
-    base = v16_predicted_tfr("Finland", 2024)
-    assert ext["predicted_tfr"] == pytest.approx(base, abs=1e-10)
+    bio = v16_predicted_tfr("Finland", 2024)
+    assert ext["biological_tfr"] == pytest.approx(bio, abs=0.01)
+
+def test_predict_tfr_extended_observed_higher():
+    r = predict_tfr_extended("Finland", 2024)
+    assert r["observed_tfr"] > r["biological_tfr"]
 
 def test_predict_tfr_extended_ivf_positive():
     r = predict_tfr_extended("Denmark", 2024)
@@ -681,18 +691,18 @@ def test_feedback_loop_feedback_lowers_tfr():
         assert r["feedback_tfr"] <= r["predicted_tfr"] + 0.001
 
 
-# === Wolfram predictions unchanged after all additions ===
+# === Bio-calibrated predictions stable after IVF integration ===
 
 @pytest.mark.parametrize("country,year,expected", [
-    ("SouthKorea", 2024, 0.7276972658524353),
-    ("Japan", 2024, 1.204771423411335),
-    ("Finland", 2024, 1.3311218421332502),
-    ("USA", 2024, 1.6341039790932066),
-    ("Nigeria", 2024, 5.204726429909009),
+    ("SouthKorea", 2024, 0.6549275392671918),
+    ("Japan", 2024, 1.0976806302192161),
+    ("Finland", 2024, 1.2224588346121685),
+    ("USA", 2024, 1.588712201896173),
+    ("Nigeria", 2024, 5.146896136243353),
     ("Niger", 2030, 6.474795895468166),
 ])
-def test_predictions_stable_after_era42(country, year, expected):
-    """Post-Erä 4.2: cohort-weighted exposure replaces simple cumulative."""
+def test_predictions_stable_after_ivf_integration(country, year, expected):
+    """Post-IVF integration: calibration targets biological TFR."""
     result = v16_predicted_tfr(country, year)
     assert abs(result - expected) < 1e-6
 
@@ -731,7 +741,7 @@ def test_feedback_amplification_in_report():
 
 def test_feedback_amplification_no_tfr_change():
     """Diagnostic only — predictions unchanged."""
-    assert abs(v16_predicted_tfr("SouthKorea", 2024) - 0.7276972658524353) < 1e-6
+    assert abs(v16_predicted_tfr("SouthKorea", 2024) - 0.6549275392671918) < 1e-6
 
 
 # === T1: CatSper fertilization cascade ===
@@ -896,8 +906,8 @@ def test_dual_ot_in_report():
 
 def test_dual_ot_no_tfr_change():
     """OT diagnostics must not change predictions."""
-    assert abs(v16_predicted_tfr("SouthKorea", 2024) - 0.7276972658524353) < 1e-6
-    assert abs(v16_predicted_tfr("Finland", 2024) - 1.3311218421332502) < 1e-6
+    assert abs(v16_predicted_tfr("SouthKorea", 2024) - 0.6549275392671918) < 1e-6
+    assert abs(v16_predicted_tfr("Finland", 2024) - 1.2224588346121685) < 1e-6
 
 
 # === Quadruple behavioral suppression diagnostic ===
@@ -976,8 +986,8 @@ def test_quad_suppression_in_report():
 
 def test_quad_suppression_no_tfr_change():
     """Diagnostic only: predictions unchanged."""
-    assert abs(v16_predicted_tfr("SouthKorea", 2024) - 0.7276972658524353) < 1e-6
-    assert abs(v16_predicted_tfr("Finland", 2024) - 1.3311218421332502) < 1e-6
+    assert abs(v16_predicted_tfr("SouthKorea", 2024) - 0.6549275392671918) < 1e-6
+    assert abs(v16_predicted_tfr("Finland", 2024) - 1.2224588346121685) < 1e-6
 
 
 def test_social_science_proxy_map_structure():
@@ -991,3 +1001,70 @@ def test_social_science_proxy_map_structure():
         assert "hormonal_substrate" in entry
         assert "berm_parameter" in entry
         assert "emf_link" in entry
+
+
+# === IVF compensation (ACTIVE) ===
+
+def test_ivf_denmark_bio_tfr_approx_136():
+    """Denmark bio TFR ≈ 1.36 (observed 1.55, IVF ~12%)."""
+    bio = v16_predicted_tfr("Denmark", 2024)
+    assert abs(bio - 1.36) < 0.05
+
+def test_ivf_niger_correction_negligible():
+    """Niger IVF correction ≈ 0 (IVF share ~0.05%)."""
+    bio = v16_predicted_tfr("Niger", 2024)
+    ivf = ivf_share_projected("Niger", 2024)
+    obs = observed_from_biological(bio, ivf)
+    assert abs(obs - bio) < 0.05
+
+def test_ivf_buffer_grows_over_time():
+    """IVF buffer should grow as IVF share increases."""
+    bio_2024 = v16_predicted_tfr("Denmark", 2024)
+    bio_2035 = v16_predicted_tfr("Denmark", 2035)
+    ivf_2024 = ivf_share_projected("Denmark", 2024)
+    ivf_2035 = ivf_share_projected("Denmark", 2035)
+    buffer_2024 = observed_from_biological(bio_2024, ivf_2024) - bio_2024
+    buffer_2035 = observed_from_biological(bio_2035, ivf_2035) - bio_2035
+    buffer_pct_2024 = buffer_2024 / bio_2024 if bio_2024 > 0 else 0
+    buffer_pct_2035 = buffer_2035 / bio_2035 if bio_2035 > 0 else 0
+    assert buffer_pct_2035 > buffer_pct_2024
+
+def test_ivf_share_capped():
+    assert ivf_share_projected("Denmark", 2100) <= 0.25
+
+def test_ivf_observed_roundtrip():
+    """observed_from_biological(biological_tfr(obs)) ≈ obs."""
+    obs = 1.55
+    share = 0.12
+    bio = biological_tfr(obs, share)
+    recovered = observed_from_biological(bio, share)
+    assert abs(recovered - obs) < 1e-10
+
+def test_ivf_report_has_both_tfrs():
+    """Country report includes both biological and observed predictions."""
+    r = v16_country_tfr("Denmark", 2024)
+    assert "biological_predicted_tfr" in r
+    assert "ivf_contribution" in r
+    assert r["biological_predicted_tfr"] < r["predicted_tfr"]
+    assert r["ivf_contribution"] > 0
+
+def test_ivf_loocv_rmse():
+    """LOOCV RMSE ≤ 1.20 after IVF calibration change."""
+    result = loocv_v16()
+    assert result["rmse"] <= 1.20
+
+def test_ivf_loocv_has_observed():
+    """LOOCV results include observed TFR for comparison."""
+    result = loocv_v16()
+    for c, r in result["per_country"].items():
+        assert "observed" in r
+        assert r["observed"] >= r["actual"]
+
+def test_ivf_all_countries_bio_below_observed():
+    """Biological TFR ≤ observed TFR for all countries."""
+    from berm.data.countries import V12_ACTUAL_TFR_2024
+    for c in V12_ACTUAL_TFR_2024:
+        bio = v16_predicted_tfr(c, 2024)
+        ivf = ivf_share_projected(c, 2024)
+        obs = observed_from_biological(bio, ivf)
+        assert bio <= obs + 1e-10, f"{c}: bio {bio:.4f} > obs {obs:.4f}"

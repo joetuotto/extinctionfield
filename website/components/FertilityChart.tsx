@@ -17,6 +17,7 @@ interface YearRow {
   year: number;
   predictedTFR: number;
   nativeTFR: number | null;
+  ivfShare: number;
   observedTFR: number | null;
   isForecast: boolean;
 }
@@ -34,18 +35,22 @@ const DISPLAY_NAMES: Record<string, string> = {
 export function FertilityChart({ timeseries, country }: Props) {
   const chartData = timeseries
     .filter((r) => r.year >= 1970 && r.year <= 2040)
-    .map((r) => ({
-      year: r.year,
-      predicted: r.predictedTFR,
-      native: r.nativeTFR,
-      observed: r.observedTFR,
-      forecastHigh: r.isForecast
-        ? r.predictedTFR * 1.1
-        : undefined,
-      forecastLow: r.isForecast
-        ? r.predictedTFR * 0.9
-        : undefined,
-    }));
+    .map((r) => {
+      const biologicalTFR = r.predictedTFR * (1 - (r.ivfShare || 0));
+      return {
+        year: r.year,
+        predicted: r.predictedTFR,
+        biological: r.ivfShare > 0.005 ? biologicalTFR : undefined,
+        native: r.nativeTFR,
+        observed: r.observedTFR,
+        forecastHigh: r.isForecast
+          ? r.predictedTFR * 1.1
+          : undefined,
+        forecastLow: r.isForecast
+          ? r.predictedTFR * 0.9
+          : undefined,
+      };
+    });
 
   return (
     <div>
@@ -85,7 +90,9 @@ export function FertilityChart({ timeseries, country }: Props) {
             }}
             formatter={(value, name) => {
               if (name === "predicted")
-                return [Number(value).toFixed(2), "BERM prediction"];
+                return [Number(value).toFixed(2), "BERM prediction (observed)"];
+              if (name === "biological")
+                return [Number(value).toFixed(2), "Biological TFR (excl. IVF)"];
               if (name === "native")
                 return [Number(value).toFixed(2), "Native TFR (excl. immigration)"];
               if (name === "observed")
@@ -133,6 +140,16 @@ export function FertilityChart({ timeseries, country }: Props) {
             strokeWidth={2}
             dot={false}
             name="predicted"
+          />
+
+          <Line
+            type="monotone"
+            dataKey="biological"
+            stroke="#8B5CF6"
+            strokeWidth={1.5}
+            strokeDasharray="4 2"
+            dot={false}
+            name="biological"
           />
 
           <Line

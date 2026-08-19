@@ -248,16 +248,18 @@ CULTURAL_PRONATALISM: dict[str, float] = {
 }
 
 IVF_SHARES: dict[str, float] = {
-    "Denmark": 0.10, "SouthKorea": 0.08, "Japan": 0.07,
-    "Australia": 0.05, "Finland": 0.04, "USA": 0.03,
+    # Source: ESHRE, CDC, national ART registries (2023 baseline)
+    # Values = fraction of live births from IVF/ICSI
+    "Denmark": 0.12, "SouthKorea": 0.08, "Japan": 0.07,
+    "Australia": 0.05, "Finland": 0.06, "USA": 0.02,
     "Canada": 0.04, "Norway": 0.05, "Spain": 0.06,
     "Italy": 0.04, "Germany": 0.04, "France": 0.04,
     "Sweden": 0.05, "China": 0.02, "India": 0.005,
     "Iran": 0.01, "Brazil": 0.02, "Mexico": 0.01,
     "Bangladesh": 0.001, "Nigeria": 0.001,
-    "Ethiopia": 0.001, "Niger": 0.001,
+    "Ethiopia": 0.001, "Niger": 0.0005,
 
-    # --- Expansion countries (auto-generated) ---
+    # --- Expansion countries ---
     "Algeria": 0.01,
     "Argentina": 0.03,
     "Cambodia": 0.005,
@@ -267,7 +269,7 @@ IVF_SHARES: dict[str, float] = {
     "Egypt": 0.02,
     "Ghana": 0.002,
     "Indonesia": 0.01,
-    "Israel": 0.08,
+    "Israel": 0.10,
     "Kazakhstan": 0.01,
     "Kenya": 0.002,
     "Malaysia": 0.02,
@@ -290,6 +292,7 @@ IVF_SHARES: dict[str, float] = {
     "Ukraine": 0.02,
     "Uzbekistan": 0.005,
     "Vietnam": 0.02,
+    "Belgium": 0.07,
 }
 
 TECH_DIFFUSION: dict[str, TechDiffusion] = {

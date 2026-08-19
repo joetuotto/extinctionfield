@@ -173,9 +173,9 @@ def test_cultural_china():
 # === IVF shares ===
 
 def test_ivf_projection():
-    assert ivf_share_projected("Denmark", 2023) == 0.10
-    assert abs(ivf_share_projected("Denmark", 2033) - 0.15) < 1e-10
-    assert ivf_share_projected("Denmark", 2043) == 0.20  # capped
+    assert ivf_share_projected("Denmark", 2023) == 0.12
+    assert abs(ivf_share_projected("Denmark", 2033) - 0.17) < 1e-10
+    assert ivf_share_projected("Denmark", 2043) == 0.22
 
 
 # === Full country prediction ===

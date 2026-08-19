@@ -4,6 +4,8 @@ import Link from "next/link";
 import CausalChainDiagram from "@/components/CausalChainDiagram";
 import { ModelTableOfContents } from "@/components/ModelTableOfContents";
 import { MathematicsSections } from "@/app/[locale]/mathematics/page";
+import { SpermCascadeChart } from "@/components/SpermCascadeChart";
+import { FeedbackLoop } from "@/components/FeedbackLoop";
 import { GitBranch } from "lucide-react";
 
 const t = {
@@ -660,6 +662,14 @@ export default async function ModelPage({
               </table>
             </div>
           </section>
+
+          {/* Sperm cascade */}
+          <section id="sperm-cascade" className="mb-14">
+            <SpermCascadeChart locale={locale} />
+          </section>
+
+          {/* Feedback loop & sex ratio */}
+          <FeedbackLoop locale={locale} />
 
           {/* Mathematical Foundation */}
           <section className="border-t border-border pt-10 mb-14">

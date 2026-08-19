@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { EPISTEMIC_LEVELS, PATHWAYS, EVIDENCE } from "@/lib/evidence";
 import type { EpistemicLevel } from "@/lib/types";
 import { StatisticalValidation } from "@/components/StatisticalValidation";
+import { BehavioralSuppression } from "@/components/BehavioralSuppression";
+import { HindcastValidation } from "@/components/HindcastValidation";
 import { PageHeader } from "@/components/PageHeader";
 import { Layers } from "lucide-react";
 
@@ -942,6 +944,10 @@ export default async function EvidencePage({
           </p>
         </div>
       </section>
+
+      <BehavioralSuppression locale={locale} />
+
+      <HindcastValidation locale={locale} />
 
       <StatisticalValidation locale={locale} />
 

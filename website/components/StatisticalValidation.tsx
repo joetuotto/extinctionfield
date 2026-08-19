@@ -1,20 +1,23 @@
 "use client";
 
+import { ASFRCohortPhase } from "./ASFRCohortPhase";
+import { RollingBacktestValidation } from "./RollingBacktestValidation";
+
 const t = {
   en: {
     title: "Statistical Validation (v18)",
     subtitle:
       "Systematic model comparison, decomposition analysis, synthetic falsification, and rollout event study. All results are reported regardless of whether they strengthen or weaken BERM — this is the epistemic core of the project.",
 
-    ph1Title: "Phase 1: Model Comparison (LOOCV)",
+    ph1Title: "Legacy 2024 Cross-Sectional Model Comparison (LOOCV)",
     ph1Desc:
-      "Leave-One-Country-Out Cross-Validation across 57 countries. Each model is calibrated on 56 countries and predicts the left-out country's TFR. Lower RMSE = better out-of-sample prediction.",
+      "Legacy Leave-One-Country-Out Cross-Validation on a 57-country 2024 cross-section. Each model is calibrated on 56 countries and predicts the left-out country's TFR. This is country-held-out validation, not a historical temporal backtest. Lower RMSE = better.",
     ph1M0: "M0 — Demographic null (no EMF)",
-    ph1M1: "M1 — Current BERM (cumulative EMF + cohort weighting)",
+    ph1M1: "M1 — Legacy BERM (cumulative EMF + cohort weighting)",
     ph1M2: "M2 — Exponential decay weighted exposure",
     ph1M3: "M3 — Free-form B-spline lag weights",
     ph1Note:
-      "M1 (BERM) beats the null model by 16% in out-of-sample prediction. M3 (data-driven lag weights) achieves comparable performance, which is expected since B-splines can approximate the cumulative weighting. M2 performs poorly because pure exponential decay loses the cumulative signal.",
+      "This legacy cross-sectional result reports M1 (BERM) beating the null by 16%. It does not establish historical trajectory prediction; the temporal backtests below are the relevant result for that question.",
 
     ph2Title: "Phase 2: Reversible / Persistent Decomposition",
     ph2Desc:
@@ -66,30 +69,30 @@ const t = {
 
     summTitle: "Summary",
     summStrengths: "What the statistics show",
-    summS1: "BERM (M1) outperforms the demographic null in cross-validated prediction (RMSE 1.01 vs 1.27)",
+    summS1: "In legacy 2024 cross-sectional LOOCV, BERM (M1) outperforms the demographic null (RMSE 1.01 vs 1.27)",
     summS2: "The EMF signal survives placebo permutation (p < 0.005) and wrong-lag falsification",
     summS3: "R+P decomposition suggests ~80% of the effect is reversible (half-life ~10 years)",
     summS4: "BERM correctly rejects S0 (no effect) and S6 (reverse causation) synthetic worlds",
     summWeaknesses: "What the statistics do not show",
     summW1: "S5 failure: BERM cannot distinguish EMF from correlated confounders (urbanization, development) in ecological data",
     summW2: "Event study pre-trend: 4G rollout is not a clean quasi-experiment for TFR",
-    summW3: "57-country cross-section provides no causal identification — only predictive fit",
-    summW4: "Phase 4 (ASFR cohort model) and within-country panel analysis remain unimplemented",
+    summW3: "The legacy 57-country cross-section provides no causal identification — only cross-sectional predictive fit",
+    summW4: "Within-country panel analysis remains unimplemented",
   },
   fi: {
     title: "Tilastollinen validointi (v18)",
     subtitle:
       "Systemaattinen mallivertailu, dekomponointi, synteettinen falsifiointi ja kayttoonottotapahtumatutkimus. KAIKKI tulokset raportoidaan riippumatta siita, vahvistavatko vai heikentavatko ne BERM:aa — tama on projektin episteeminen ydin.",
 
-    ph1Title: "Vaihe 1: Mallivertailu (LOOCV)",
+    ph1Title: "Vanha 2024-poikkileikkausmallivertailu (LOOCV)",
     ph1Desc:
-      "Leave-One-Country-Out ristiinvalidointi 57 maalle. Kukin malli kalibroidaan 56 maalla ja ennustaa pois jatetyn maan TFR:n. Matalampi RMSE = parempi otoksen ulkopuolinen ennuste.",
+      "Vanha Leave-One-Country-Out-ristiinvalidointi 57 maan vuoden 2024 poikkileikkauksessa. Kukin malli kalibroidaan 56 maalla ja ennustaa pois jätetyn maan TFR:n. Tämä on maittain ulos jätetty validointi, ei historiallinen ajallinen backtest. Pienempi RMSE on parempi.",
     ph1M0: "M0 — Demografinen nollahypoteesi (ei EMF:aa)",
-    ph1M1: "M1 — Nykyinen BERM (kumulatiivinen EMF + kohorttipainotus)",
+    ph1M1: "M1 — Vanha BERM (kumulatiivinen EMF + kohorttipainotus)",
     ph1M2: "M2 — Eksponentiaalinen vaimenemispainotettu altistus",
     ph1M3: "M3 — Vapaamuotoinen B-spline-viivepainotus",
     ph1Note:
-      "M1 (BERM) voittaa nollamallin 16 % otoksen ulkopuolisessa ennusteessa. M3 (dataohjatuilla viivepainoilla) saavuttaa vertailukelpoisen suorituskyvyn, mika on odotettua koska B-splinet voivat approksimoida kumulatiivista painotusta. M2 suoriutuu huonosti koska puhdas eksponentiaalinen vaimeneminen kadottaa kumulatiivisen signaalin.",
+      "Tämä vanha poikkileikkaustulos raportoi M1:n (BERM) voittavan nollamallin 16 %:lla. Se ei osoita historiallisten trajektorien ennustuskykyä; alla olevat ajalliset backtestit vastaavat siihen kysymykseen.",
 
     ph2Title: "Vaihe 2: Palautuva / pysyva dekomponointi",
     ph2Desc:
@@ -141,15 +144,15 @@ const t = {
 
     summTitle: "Yhteenveto",
     summStrengths: "Mita tilastot nayttavat",
-    summS1: "BERM (M1) voittaa demografisen nollan ristiinvalidoidussa ennusteessa (RMSE 1,01 vs 1,27)",
+    summS1: "Vanhassa 2024-poikkileikkaus-LOOCV:ssä BERM (M1) voittaa demografisen nollan (RMSE 1,01 vs 1,27)",
     summS2: "EMF-signaali selviaa plasebopermutaation (p < 0,005) ja vaaranviivefalsifioinnin",
     summS3: "R+P-dekomponointi viittaa siihen etta ~80 % vaikutuksesta on palautuvaa (puoliintumisaika ~10 v)",
     summS4: "BERM hylkaa oikein S0 (ei vaikutusta) ja S6 (kaaenteisvaikutus) synteettiset maailmat",
     summWeaknesses: "Mita tilastot eivat nayta",
     summW1: "S5-epaonnistuminen: BERM ei voi erottaa EMF:aa korreloiduista sekoittajista (kaupungistuminen, kehitys) ekologisessa datassa",
     summW2: "Tapahtumatutkimuksen esitrendi: 4G-kayttoonotto ei ole puhdas kvasikoe TFR:lle",
-    summW3: "57 maan poikkileikkaus ei tarjoa kausaalista identifikaatiota — vain ennustavaa sovitetta",
-    summW4: "Vaihe 4 (ASFR-kohorttimalli) ja maan sisainen panelianalyysi ovat toteuttamatta",
+    summW3: "Vanha 57 maan poikkileikkaus ei tarjoa kausaalista identifikaatiota — vain poikkileikkausennustetta",
+    summW4: "Maan sisäinen panelianalyysi on toteuttamatta",
   },
 } as const;
 
@@ -307,6 +310,12 @@ export function StatisticalValidation({ locale }: Props) {
           </div>
         </div>
       </div>
+
+      {/* Historical train/test validation; results are loaded from the generated artifact. */}
+      <RollingBacktestValidation locale={locale} />
+
+      {/* Phase 4: ASFR Cohort Model */}
+      <ASFRCohortPhase locale={locale} />
 
       {/* Phase 5: Event Study */}
       <div className="mb-10">

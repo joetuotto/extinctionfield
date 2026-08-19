@@ -1,0 +1,29 @@
+{
+  "manifest_id": "wpp2024_2026-08-19",
+  "description": "UN World Population Prospects 2024 Revision, Standard Projections, CSV format. Acquired to close gap G-1 and replace the hand-typed ASFR table as the ASFR basis.",
+  "retrieved_at": "2026-08-19",
+  "retrieval_method": "Direct HTTPS download from population.un.org/wpp assets, Standard Projections CSV files. Open data, no access request required.",
+  "license": "CC-BY-3.0-IGO",
+  "transform_pipeline_version": "berm/data/wpp.py@v1.0.0",
+  "transform_note": "Filtered to LocTypeName='Country/Area' with a 3-letter ISO3 code, age groups 15-49, variants Medium plus Lower/Upper 95 PI. Estimates (Time<=2023) classified OBSERVED; projections (Time>=2024) classified DERIVED.",
+  "files": [
+    {
+      "source_id": "UN_WPP_2024_ASFR",
+      "path": "raw/WPP2024_Fertility_by_Age5.csv.gz",
+      "original_filename": "WPP2024_Fertility_by_Age5.csv.gz",
+      "bytes": 82864610,
+      "sha256": "c0d3b5b7e992902df3be1980cfa86c440c1cd673ecec9d4826142a03aece04ec",
+      "retrieved_at": "2026-08-19",
+      "note": "6481890 raw rows across 18 variants; ingest keeps Medium + 95% PI for 237 countries x 151 years x 7 age groups = 250509 canonical rows."
+    },
+    {
+      "source_id": "UN_WPP_2024_TFR",
+      "path": "raw/WPP2024_Demographic_Indicators_Medium.csv.gz",
+      "original_filename": "WPP2024_Demographic_Indicators_Medium.csv.gz",
+      "bytes": 16557272,
+      "sha256": "286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc",
+      "retrieved_at": "2026-08-19",
+      "note": "Only the TFR column is ingested, independently of the ASFR file, so the accounting identity stays a test rather than a tautology. 35787 canonical rows."
+    }
+  ]
+}

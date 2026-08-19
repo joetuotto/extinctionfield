@@ -182,7 +182,7 @@ const t = {
   },
 } as const;
 
-type SectionType = (typeof t.en.sections)[number];
+type SectionType = { heading: string; paragraphs?: readonly string[]; content?: readonly { step: string; detail: string }[] };
 
 function hasContent(
   section: SectionType,
@@ -192,7 +192,7 @@ function hasContent(
 
 function hasParagraphs(
   section: SectionType,
-): section is SectionType & { paragraphs: string[] } {
+): section is SectionType & { paragraphs: readonly string[] } {
   return "paragraphs" in section;
 }
 

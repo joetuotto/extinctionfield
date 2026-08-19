@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ExploreTabs } from "@/components/ExploreTabs";
+import { HousingEMF } from "@/components/HousingEMF";
 import { PageHeader } from "@/components/PageHeader";
 import { Map } from "lucide-react";
 
@@ -49,6 +50,9 @@ export default async function ExplorePage({
         subtitle={d.subtitle}
       />
       <ExploreTabs locale={locale} />
+      <div className="mt-12">
+        <HousingEMF locale={locale} />
+      </div>
     </div>
   );
 }

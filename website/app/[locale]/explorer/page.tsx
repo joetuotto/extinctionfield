@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ExplorerDashboard } from "@/components/ExplorerDashboard";
+import { HousingEMF } from "@/components/HousingEMF";
+import { TemporalBacktestExplorer } from "@/components/TemporalBacktestExplorer";
 import type { Locale } from "@/lib/i18n";
 
 const t = {
@@ -64,6 +66,12 @@ export default async function ExplorerPage({
       </p>
 
       <ExplorerDashboard />
+
+      <TemporalBacktestExplorer locale={locale} />
+
+      <div className="mt-12">
+        <HousingEMF locale={locale} />
+      </div>
 
       <div className="mt-12 p-4 bg-card-bg border border-card-border rounded-lg text-xs text-foreground-muted">
         <p className="font-semibold text-foreground mb-1">{d.howToRead}</p>

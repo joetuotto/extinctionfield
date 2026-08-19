@@ -1,0 +1,21 @@
+{
+  "housing_types": {
+    "wooden_frame": {"outdoor_attenuation": 0.90, "indoor_source_density": 1.0, "reflection_factor": 1.05, "label_en": "Wooden frame", "label_fi": "Puurunko"},
+    "brick": {"outdoor_attenuation": 0.70, "indoor_source_density": 1.0, "reflection_factor": 1.15, "label_en": "Brick/masonry", "label_fi": "Tiili/muurattu"},
+    "concrete": {"outdoor_attenuation": 0.45, "indoor_source_density": 1.1, "reflection_factor": 1.25, "label_en": "Concrete/rebar", "label_fi": "Betoni/raudoitus"},
+    "steel_highrise": {"outdoor_attenuation": 0.35, "indoor_source_density": 1.4, "reflection_factor": 1.40, "label_en": "Steel high-rise", "label_fi": "Teraskerrostalo"},
+    "traditional": {"outdoor_attenuation": 0.95, "indoor_source_density": 0.5, "reflection_factor": 1.00, "label_en": "Traditional", "label_fi": "Perinteinen"}
+  },
+  "countries": [
+    {"country": "USA", "net_factor": 0.8978, "outdoor_atten": 0.76, "indoor_density": 1.05, "reflection": 1.125, "mix": {"wooden_frame": 0.6, "brick": 0.2, "concrete": 0.1, "steel_highrise": 0.1}},
+    {"country": "Finland", "net_factor": 0.8487, "outdoor_atten": 0.7075, "indoor_density": 1.05, "reflection": 1.1425, "mix": {"wooden_frame": 0.5, "concrete": 0.3, "brick": 0.15, "steel_highrise": 0.05}},
+    {"country": "Japan", "net_factor": 0.8144, "outdoor_atten": 0.5625, "indoor_density": 1.17, "reflection": 1.2375, "mix": {"steel_highrise": 0.35, "concrete": 0.3, "wooden_frame": 0.3, "brick": 0.05}},
+    {"country": "Germany", "net_factor": 0.7897, "outdoor_atten": 0.6025, "indoor_density": 1.09, "reflection": 1.2025, "mix": {"brick": 0.4, "concrete": 0.3, "wooden_frame": 0.15, "steel_highrise": 0.15}},
+    {"country": "Brazil", "net_factor": 0.7549, "outdoor_atten": 0.6375, "indoor_density": 1.01, "reflection": 1.1725, "mix": {"concrete": 0.4, "brick": 0.3, "wooden_frame": 0.15, "traditional": 0.1, "steel_highrise": 0.05}},
+    {"country": "SouthKorea", "net_factor": 0.7305, "outdoor_atten": 0.4375, "indoor_density": 1.265, "reflection": 1.32, "mix": {"steel_highrise": 0.6, "concrete": 0.25, "brick": 0.1, "wooden_frame": 0.05}},
+    {"country": "China", "net_factor": 0.7234, "outdoor_atten": 0.4975, "indoor_density": 1.145, "reflection": 1.27, "mix": {"steel_highrise": 0.4, "concrete": 0.35, "brick": 0.15, "traditional": 0.1}},
+    {"country": "India", "net_factor": 0.7199, "outdoor_atten": 0.6525, "indoor_density": 0.945, "reflection": 1.1675, "mix": {"concrete": 0.3, "brick": 0.35, "traditional": 0.25, "steel_highrise": 0.1}},
+    {"country": "Nigeria", "net_factor": 0.6811, "outdoor_atten": 0.7075, "indoor_density": 0.85, "reflection": 1.1325, "mix": {"concrete": 0.3, "brick": 0.25, "traditional": 0.4, "steel_highrise": 0.05}},
+    {"country": "Niger", "net_factor": 0.5794, "outdoor_atten": 0.8605, "indoor_density": 0.641, "reflection": 1.0505, "mix": {"traditional": 0.75, "brick": 0.15, "concrete": 0.08, "steel_highrise": 0.02}}
+  ]
+}

@@ -91,7 +91,7 @@ def cultural_component(country: str) -> float:
 
 def ivf_share_projected(country: str, year: int) -> float:
     base = IVF_SHARES.get(country, 0.02)
-    return max(0, min(0.20, base + 0.005 * (year - 2023)))
+    return max(0, min(0.25, base + 0.005 * (year - 2023)))
 
 
 def biological_tfr(observed_tfr: float, ivf_share: float) -> float:

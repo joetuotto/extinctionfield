@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/berm/berm/data/schemas/parameter_registry.schema.json",
+  "title": "BERM parameter registry record",
+  "description": "One row of data/registry/parameter_registry.csv. Enforced by berm.data.registry.validate_parameter_registry. Every constant that changes a prediction belongs here, graded honestly.",
+  "type": "object",
+  "required": [
+    "parameter_name", "value", "unit", "prior_or_range", "evidence_grade",
+    "source_id", "scope", "active_model_version", "defined_in", "affects", "notes"
+  ],
+  "properties": {
+    "parameter_name": { "type": "string", "minLength": 1 },
+    "value": { "type": "string", "description": "Literal value, or a pointer such as 'see countries.py:205' for table-valued parameters, or 'fitted_at_runtime' / 'fitted_per_country' for calibration outputs." },
+    "unit": { "type": "string", "minLength": 1, "description": "Required. A dimensionless parameter states 'dimensionless', never nothing." },
+    "prior_or_range": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Either '[lo, hi]' or 'see <file>:<line>'. A parameter with no range cannot be varied in a sensitivity analysis and therefore cannot be falsified.",
+      "anyOf": [
+        { "pattern": "^\\[\\s*-?[\\d.eE+-]+\\s*,\\s*-?[\\d.eE+-]+\\s*\\]$" },
+        { "pattern": "^see " }
+      ]
+    },
+    "evidence_grade": {
+      "type": "string",
+      "enum": ["MEASURED", "ESTIMATED", "SCENARIO", "UNIDENTIFIED"],
+      "description": "MEASURED: taken from a cited measurement of this quantity. ESTIMATED: fitted or derived from data. SCENARIO: chosen by the modeller as an assumption. UNIDENTIFIED: present in the code with no recorded origin."
+    },
+    "source_id": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]{2,63}$" },
+    "scope": { "type": "string", "minLength": 1, "description": "Which geographies and years the value applies to." },
+    "active_model_version": { "type": "string", "minLength": 1, "description": "Which model version consumes it: v17-legacy, v16, v17-asfr, diagnostic, or a semicolon-separated combination." },
+    "defined_in": { "type": "string", "minLength": 1, "description": "file:line where the value lives, so the registry and the code can be checked against each other." },
+    "affects": { "type": "string", "minLength": 1, "description": "Which stage it changes: E_ambient, E_personal, E_night, E_developmental, R_reproductive, D_demand, ASFR, TFR, or a diagnostic output." },
+    "notes": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "evidence_grade": { "const": "MEASURED" } }, "required": ["evidence_grade"] },
+      "then": {
+        "description": "A MEASURED parameter must not point at a scenario placeholder source. Cross-registry rule, enforced in registry.validate_parameter_registry."
+      }
+    },
+    {
+      "if": { "properties": { "evidence_grade": { "enum": ["SCENARIO", "UNIDENTIFIED"] } }, "required": ["evidence_grade"] },
+      "then": {
+        "description": "An assumption must not point at a source registered OBSERVED or PROXY. Cross-registry rule, enforced in registry.validate_parameter_registry."
+      }
+    }
+  ],
+  "additionalProperties": false
+}

@@ -47,15 +47,21 @@ def load_bee_data() -> dict[str, dict[int, float]]:
     raw = json.loads(path.read_text())
     result = {}
     for country, values in raw["data"].items():
-        iso3 = values.get("iso3", country[:3].upper())
         series = {}
         for k, v in values.items():
-            if k == "iso3" or v is None:
+            if v is None:
                 continue
-            year = _parse_winter_year(k)
-            series[year] = float(v)
+            if isinstance(v, dict):
+                loss = v.get("loss_pct")
+                if loss is None:
+                    continue
+                year = _parse_winter_year(k)
+                series[year] = float(loss)
+            elif isinstance(v, (int, float)):
+                year = _parse_winter_year(k)
+                series[year] = float(v)
         if series:
-            result[iso3] = series
+            result[country] = series
     return result
 
 
@@ -366,7 +372,7 @@ def lag_invariance_test(
         emf_years = sorted(emf_data[iso3].keys())
         common_years = sorted(set(sent_years) & set(emf_years))
 
-        if len(common_years) < 8:
+        if len(common_years) < 5:
             continue
 
         sentinel_ts = np.array([sentinel_data[iso3][y] for y in common_years])

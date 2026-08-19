@@ -766,7 +766,11 @@ _v16_bio_behav_2024: dict[str, float] = {}
 
 
 def calibrate_v16() -> dict[str, float]:
-    """Calibrate cultural rates from observed TFR 2024."""
+    """Calibrate cultural rates from biological TFR 2024.
+
+    Calibration target is biological TFR = observed × (1 - IVF_share),
+    so the model predicts biological capacity without IVF compensation.
+    """
     global _v16_true_cultural_rates, _v16_bio_behav_2024, _cohort_norm_factor
     _cohort_norm_factor = _compute_cohort_norm_factor()
     rates: dict[str, float] = {}
@@ -775,9 +779,10 @@ def calibrate_v16() -> dict[str, float]:
         adj_cum = v16_adjusted_cumulative_exposure(c, 2024)
         bio_cap = v16_biological_capacity(adj_cum, c, 2024)
         behav = emf_behavioral_factor_v3(adj_cum)
-        actual = V12_ACTUAL_TFR_2024[c]
+        observed = V12_ACTUAL_TFR_2024[c]
+        target = biological_tfr(observed, ivf_share_projected(c, 2024))
         if bio_cap * behav > 0.001:
-            cult = actual / (bio_cap * behav)
+            cult = target / (bio_cap * behav)
         else:
             cult = 0.80
         rates[c] = round(cult, 2)
@@ -808,23 +813,31 @@ def v16_true_cultural_rate(country: str, year: int) -> float:
 # === IVF temporal projection ===
 
 def ivf_share_projected(country: str, year: int) -> float:
-    """IVF share grows 0.5pp/year from 2023 baseline, capped at 20%."""
-    base = IVF_SHARES.get(country, 0.02)
-    return max(0.0, min(0.20, base + 0.005 * (year - 2023)))
+    """IVF share of live births, projected from 2023 baseline.
 
-
-# === TFR interpretation layer (does NOT alter predict_tfr output) ===
-
-def biological_tfr(observed_tfr: float, ivf_share: float,
-                   ivf_success_rate: float = 0.30) -> float:
-    """Biological TFR without IVF rescue.
-
-    IVF births buffer observed TFR — without them the biological
-    signal would be lower. BERM's prediction targets this underlying
-    biological TFR; observed TFR includes the IVF mask.
+    Grows 0.5pp/year from baseline, capped at 25%.
     """
-    ivf_births_fraction = ivf_share * ivf_success_rate
-    return observed_tfr * (1 - ivf_births_fraction)
+    base = IVF_SHARES.get(country, 0.02)
+    return max(0.0, min(0.25, base + 0.005 * (year - 2023)))
+
+
+def biological_tfr(observed_tfr: float, ivf_share_val: float) -> float:
+    """Biological TFR = observed TFR minus IVF-assisted births.
+
+    Bio_TFR = Obs_TFR × (1 - IVF_share)
+
+    IVF_share is the fraction of live births from IVF/ICSI.
+    Biological TFR is the TFR that bioCap predicts — observed
+    TFR is higher because IVF compensates for subfertility.
+    """
+    return observed_tfr * (1 - ivf_share_val)
+
+
+def observed_from_biological(bio_tfr: float, ivf_share_val: float) -> float:
+    """Reconstruct observed TFR from biological by adding IVF back."""
+    if ivf_share_val >= 1.0:
+        return bio_tfr
+    return bio_tfr / (1 - ivf_share_val)
 
 
 def native_tfr(total_tfr: float, immigrant_tfr: float,
@@ -897,34 +910,32 @@ def v16_predicted_tfr(country: str, year: int) -> float:
 
 
 def predict_tfr_extended(country: str, year: int) -> dict:
-    """Extended TFR prediction with interpretation layers.
+    """Extended TFR prediction with IVF and immigration decomposition.
 
-    Calls v16_predicted_tfr (unchanged) and adds IVF decomposition,
-    immigration buffer, and biological native TFR. No numerical
-    change to the core prediction.
+    v16_predicted_tfr now outputs biological TFR (calibrated against
+    observed × (1 - IVF_share)). This function adds the IVF buffer
+    back to reconstruct observed TFR, and reports both.
     """
     if not _v16_true_cultural_rates:
         calibrate_v16()
 
-    predicted = v16_predicted_tfr(country, year)
+    bio_predicted = v16_predicted_tfr(country, year)
+    ivf = ivf_share_projected(country, year)
+    obs_predicted = observed_from_biological(bio_predicted, ivf)
+    ivf_contribution = obs_predicted - bio_predicted
 
-    ivf_share = ivf_share_projected(country, year)
-    bio_tfr = biological_tfr(predicted, ivf_share)
-
-    imm = immigration_buffer(country, predicted)
-
+    imm = immigration_buffer(country, obs_predicted)
     nat_tfr = imm["native_tfr"]
-    bio_nat = biological_tfr(nat_tfr, ivf_share) if nat_tfr else None
 
     return {
-        "predicted_tfr": predicted,
-        "ivf_share": round(ivf_share, 4),
-        "biological_tfr": round(bio_tfr, 3),
-        "ivf_contribution": round(predicted - bio_tfr, 3),
+        "predicted_tfr": obs_predicted,
+        "biological_tfr": round(bio_predicted, 3),
+        "observed_tfr": round(obs_predicted, 3),
+        "ivf_share": round(ivf, 4),
+        "ivf_contribution": round(ivf_contribution, 3),
         "native_tfr": nat_tfr,
         "immigration_buffer": imm["buffer"],
         "immigration_buffer_pct": imm["buffer_pct"],
-        "biological_native_tfr": round(bio_nat, 3) if bio_nat is not None else None,
     }
 
 
@@ -1102,26 +1113,27 @@ def v16_country_tfr(country: str, year: int) -> dict:
     true_cult = v16_true_cultural_rate(country, year)
     predicted = bio_cap * behav * true_cult
 
-    ivf_share = ivf_share_projected(country, year)
-    biological_tfr_val = predicted * (1 - ivf_share)
+    ivf = ivf_share_projected(country, year)
+    observed_predicted = observed_from_biological(predicted, ivf)
+    ivf_contribution = observed_predicted - predicted
 
     imm = MIGRATION_DATA.get(country)
     if imm is not None:
         imm_share = imm["imm_share"]
         imm_tfr = imm["imm_tfr"]
-        native_tfr_val = (predicted - imm_share * imm_tfr) / (1 - imm_share)
+        native_tfr_val = (observed_predicted - imm_share * imm_tfr) / (1 - imm_share)
     else:
         imm_share = 0.0
         imm_tfr = 0.0
-        native_tfr_val = predicted
+        native_tfr_val = observed_predicted
 
     return _build_country_report(
         country, year, adj_cum, amb_ann, pers_ann, occ_mult, emf_norm,
         base_bio_cap, dys_idx, dys_eff, bbb_result, bbb_eff, nutr_eff, epi_eff,
         night_frac, cry_ann, cry_eff, melat_eff, sperm_ca2, ovul_vgic,
         male_bio_cap, bio_cap, oxy_ret, test_ret, dopa_ret, cort_ret, avp_ret,
-        cort_supp, eff_t, behav, true_cult, predicted,
-        ivf_share, biological_tfr_val, imm_share, imm_tfr, native_tfr_val,
+        cort_supp, eff_t, behav, true_cult, predicted, observed_predicted,
+        ivf, ivf_contribution, imm_share, imm_tfr, native_tfr_val,
     )
 
 
@@ -1130,8 +1142,8 @@ def _build_country_report(
     base_bio_cap, dys_idx, dys_eff, bbb_result, bbb_eff, nutr_eff, epi_eff,
     night_frac, cry_ann, cry_eff, melat_eff, sperm_ca2, ovul_vgic,
     male_bio_cap, bio_cap, oxy_ret, test_ret, dopa_ret, cort_ret, avp_ret,
-    cort_supp, eff_t, behav, true_cult, predicted,
-    ivf_share, biological_tfr_val, imm_share, imm_tfr, native_tfr_val,
+    cort_supp, eff_t, behav, true_cult, predicted, observed_predicted,
+    ivf_share_val, ivf_contribution, imm_share, imm_tfr, native_tfr_val,
 ):
     retentions = [oxy_ret, eff_t, dopa_ret, cort_ret, avp_ret]
     labels = ["Oxytocin", "Testosterone(HPA-suppressed)", "Dopamine", "Cortisol", "Vasopressin"]
@@ -1186,11 +1198,13 @@ def _build_country_report(
         "cohort_norm_factor": _cohort_norm_factor,
         "f_couple": v17_f_couple(country, year),
         "predicted_sex_ratio": v17_predicted_sex_ratio(country, year),
-        "predicted_tfr": predicted,
+        "predicted_tfr": observed_predicted,
+        "biological_predicted_tfr": predicted,
         "total_emf_effect": 6.5 - bio_cap * behav,
         "percent_lost_to_emf": (6.5 - bio_cap * behav) / 6.5,
-        "ivf_share": ivf_share,
-        "biological_tfr": biological_tfr_val,
+        "ivf_share": ivf_share_val,
+        "ivf_contribution": ivf_contribution,
+        "biological_tfr": predicted,
         "immigration_share": imm_share,
         "immigrant_tfr": imm_tfr,
         "native_tfr": native_tfr_val,
@@ -1217,9 +1231,10 @@ def _calibrate_excluding(exclude: str) -> tuple[dict[str, float], dict[str, floa
         adj_cum = v16_adjusted_cumulative_exposure(c, 2024)
         bio_cap = v16_biological_capacity(adj_cum, c, 2024)
         behav = emf_behavioral_factor_v3(adj_cum)
-        actual = V12_ACTUAL_TFR_2024[c]
+        observed = V12_ACTUAL_TFR_2024[c]
+        target = biological_tfr(observed, ivf_share_projected(c, 2024))
         if bio_cap * behav > 0.001:
-            cult = actual / (bio_cap * behav)
+            cult = target / (bio_cap * behav)
         else:
             cult = 0.80
         rates[c] = cult
@@ -1234,8 +1249,8 @@ def loocv_v16() -> dict:
     1. Remove it from calibration
     2. Calibrate cultural rates from remaining countries
     3. Assign the mean cultural rate to the left-out country
-    4. Predict its TFR = bioCap * behavioral * meanCulturalRate
-    5. Compare to observed TFR
+    4. Predict its biological TFR = bioCap * behavioral * meanCulturalRate
+    5. Compare to biological TFR (observed × (1 - IVF_share))
 
     Returns dict with per_country results, rmse, mae, max_error, bias, n.
     """
@@ -1250,12 +1265,14 @@ def loocv_v16() -> dict:
         bio_cap = v16_biological_capacity(adj_cum, leave_out, 2024)
         behav = emf_behavioral_factor_v3(adj_cum)
         predicted = bio_cap * behav * mean_cult
-        actual = V12_ACTUAL_TFR_2024[leave_out]
+        observed = V12_ACTUAL_TFR_2024[leave_out]
+        actual = biological_tfr(observed, ivf_share_projected(leave_out, 2024))
         error = predicted - actual
 
         per_country[leave_out] = {
             "predicted": predicted,
             "actual": actual,
+            "observed": observed,
             "error": error,
             "abs_error": abs(error),
             "bio_cap": bio_cap,
