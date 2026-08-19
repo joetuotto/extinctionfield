@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning className="h-full antialiased">
+    <html suppressHydrationWarning className="h-full antialiased font-sans">
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>

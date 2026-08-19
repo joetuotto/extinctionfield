@@ -167,8 +167,10 @@ function RmseBars({ scenarios, label }: { scenarios: ScenarioScore[]; label: str
   const barWidth = (value: number) => Math.max(1, (value / maxValue) * availableWidth);
 
   return (
-    <figure className="mt-4 overflow-x-auto">
-      <figcaption className="mb-2 text-xs text-foreground-muted">{label}</figcaption>
+    <figure className="data-figure mt-4 overflow-x-auto">
+      <figcaption className="data-figure__caption">
+        <span className="data-figure__title">{label}</span>
+      </figcaption>
       <svg
         role="img"
         aria-label={label}
@@ -190,7 +192,7 @@ function RmseBars({ scenarios, label }: { scenarios: ScenarioScore[]; label: str
           );
         })}
       </svg>
-      <div className="mt-1 flex gap-4 text-xs text-foreground-muted">
+      <div className="data-figure__legend mt-2 flex gap-4">
         <span className="flex items-center gap-1.5"><span aria-hidden="true" className="h-2 w-2 rounded-sm bg-accent" />BERM</span>
         <span className="flex items-center gap-1.5"><span aria-hidden="true" className="h-2 w-2 rounded-sm bg-gray-400" />M0</span>
       </div>

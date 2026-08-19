@@ -153,16 +153,19 @@ export default async function ModelPage({
   const { locale } = await params;
   const language: Locale = locale === "fi" ? "fi" : "en";
   const d = t[language];
+  const diagramLabel = language === "fi"
+    ? "KUVIO 01 · REKISTERÖITY MALLIARKKITEHTUURI"
+    : "FIGURE 01 · REGISTERED MODEL ARCHITECTURE";
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
-      <header className="mb-12 max-w-4xl">
-        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/5 px-3 py-1 text-xs font-medium text-accent">
+      <header className="mb-12 max-w-4xl border-b border-card-border pb-9">
+        <div className="editorial-kicker mb-4 inline-flex items-center gap-2 text-accent">
           <GitBranch size={14} aria-hidden="true" />
           FieldState–ASFR-v2
         </div>
-        <h1 className="text-3xl font-bold tracking-tight mb-3">{d.title}</h1>
-        <p className="text-foreground-muted leading-relaxed">{d.subtitle}</p>
+        <h1 className="mb-4 text-4xl sm:text-5xl">{d.title}</h1>
+        <p className="editorial-deck">{d.subtitle}</p>
       </header>
 
       <FieldStateStatus locale={language} />
@@ -170,12 +173,12 @@ export default async function ModelPage({
       <div className="flex gap-12 items-start">
         <ModelTableOfContents locale={language} />
 
-        <article className="min-w-0 flex-1 space-y-14">
-          <section id="architecture">
-            <h2 className="text-xl font-semibold mb-4">{d.architectureTitle}</h2>
-            <div className="grid gap-4 md:grid-cols-3">
+        <article className="min-w-0 flex-1 space-y-16">
+          <section id="architecture" className="border-t editorial-rule pt-6">
+            <h2 className="editorial-section-heading mb-6">{d.architectureTitle}</h2>
+            <div className="grid md:grid-cols-3 md:divide-x md:divide-card-border">
               {d.architecture.map((item, index) => (
-                <article key={item.title} className="rounded-lg border border-card-border bg-card-bg p-4">
+                <article key={item.title} className="border-t border-card-border py-5 md:border-t-0 md:px-5 first:md:pl-0 last:md:pr-0">
                   <p className="font-mono-num text-xs text-accent">0{index + 1}</p>
                   <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{item.text}</p>
@@ -184,16 +187,16 @@ export default async function ModelPage({
             </div>
           </section>
 
-          <section id="fieldstate-input">
-            <h2 className="text-xl font-semibold mb-3">{d.fieldStateTitle}</h2>
+          <section id="fieldstate-input" className="border-t border-card-border pt-6">
+            <h2 className="editorial-section-heading mb-4">{d.fieldStateTitle}</h2>
             <div className="max-w-4xl space-y-3 text-sm leading-relaxed text-foreground-muted">
               {d.fieldStateText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </section>
 
-          <section id="static-interface">
-            <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
-              <h2 className="text-xl font-semibold">{d.staticInterfaceTitle}</h2>
+          <section id="static-interface" className="border-t border-card-border pt-6">
+            <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+              <h2 className="editorial-section-heading">{d.staticInterfaceTitle}</h2>
               <Link href={`/${language}/ecology`} className="text-sm font-medium text-accent hover:text-accent-hover transition-colors">
                 {d.ecologyLink} →
               </Link>
@@ -203,30 +206,37 @@ export default async function ModelPage({
             </div>
           </section>
 
-          <section id="causal-diagram">
-            <h2 className="text-xl font-semibold mb-3">{d.diagramTitle}</h2>
-            <p className="mb-5 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.diagramText}</p>
-            <CausalChainDiagram locale={language} />
+          <section id="causal-diagram" className="border-t border-card-border pt-6">
+            <figure className="data-figure overflow-hidden">
+              <figcaption className="data-figure__caption">
+                <p className="editorial-kicker text-accent">{diagramLabel}</p>
+                <p className="data-figure__title mt-1">{d.diagramTitle}</p>
+              </figcaption>
+              <div className="overflow-x-auto p-1 sm:p-3">
+                <CausalChainDiagram locale={language} />
+              </div>
+              <p className="data-figure__note">{d.diagramText}</p>
+            </figure>
           </section>
 
-          <section id="organ-states">
-            <h2 className="text-xl font-semibold mb-3">{d.organTitle}</h2>
+          <section id="organ-states" className="border-t border-card-border pt-6">
+            <h2 className="editorial-section-heading mb-4">{d.organTitle}</h2>
             <div className="max-w-4xl space-y-3 text-sm leading-relaxed text-foreground-muted">
               {d.organText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </section>
 
-          <section id="asfr-tfr">
-            <h2 className="text-xl font-semibold mb-3">{d.asfrTitle}</h2>
+          <section id="asfr-tfr" className="border-t border-card-border pt-6">
+            <h2 className="editorial-section-heading mb-4">{d.asfrTitle}</h2>
             <div className="max-w-4xl space-y-3 text-sm leading-relaxed text-foreground-muted">
               {d.asfrText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </section>
 
-          <section>
+          <section className="border-t border-card-border pt-6">
             <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <h2 className="text-xl font-semibold">{d.mathematicsTitle}</h2>
+                <h2 className="editorial-section-heading">{d.mathematicsTitle}</h2>
                 <p className="mt-2 max-w-3xl text-sm leading-relaxed text-foreground-muted">{d.mathematicsText}</p>
               </div>
               <Link href={`/${language}/evidence`} className="text-sm font-medium text-accent hover:text-accent-hover transition-colors">

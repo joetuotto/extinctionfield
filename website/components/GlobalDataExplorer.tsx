@@ -137,8 +137,10 @@ function TrendChart({
   const ticks = Array.from({ length: 3 }, (_, index) => low + ((high - low) * index) / 2);
 
   return (
-    <figure className="rounded-lg border border-card-border bg-background p-3">
-      <figcaption className="mb-2 text-xs text-foreground-muted">{label}</figcaption>
+    <figure className="data-figure">
+      <figcaption className="data-figure__caption">
+        <span className="data-figure__title">{label}</span>
+      </figcaption>
       <svg role="img" aria-label={label} className="h-auto w-full" viewBox={`0 0 ${width} ${height}`}>
         <title>{label}</title>
         {ticks.map((tick) => (

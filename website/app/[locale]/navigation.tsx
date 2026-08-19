@@ -13,11 +13,11 @@ export function Navigation({ locale }: { locale: string }) {
   const links = getNavRoutes(locale);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-nav-bg backdrop-blur-sm">
-      <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-14">
+    <nav className="sticky top-0 z-50 border-b border-border bg-nav-bg backdrop-blur-md">
+      <div className="max-w-5xl mx-auto flex h-16 items-center justify-between px-6">
         <Link
           href={`/${locale}`}
-          className="text-sm font-semibold tracking-wide uppercase text-foreground hover:text-accent transition-colors"
+          className="text-sm font-semibold uppercase leading-none tracking-[0.1em] text-foreground transition-colors hover:text-accent"
         >
           Extinction Field
         </Link>
@@ -35,7 +35,7 @@ export function Navigation({ locale }: { locale: string }) {
                 <li key={link.href}>
                   <Link
                     href={fullHref}
-                    className={`inline-flex items-center gap-1.5 text-sm transition-colors ${
+                    className={`inline-flex items-center gap-1.5 text-[0.82rem] tracking-[0.005em] transition-colors ${
                       isActive
                         ? "text-accent font-medium"
                         : "text-foreground-muted hover:text-foreground"
