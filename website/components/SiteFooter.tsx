@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { activeModelVersion } from "@/lib/modelVersions";
 
@@ -66,6 +67,16 @@ export function SiteFooter({ locale }: { locale: string }) {
             <li key={bullet}>{bullet}</li>
           ))}
         </ul>
+        {version !== "berm-v18" && (
+          <p className="mt-4">
+            <Link
+              href={`/${language}/model/fieldstate`}
+              className="text-xs font-medium text-accent transition-colors hover:text-accent-hover"
+            >
+              {language === "fi" ? "FieldState-mittausmäärittely" : "FieldState measurement specification"} →
+            </Link>
+          </p>
+        )}
         <p className="text-xs text-foreground-muted mt-4">{COPY[language].license}</p>
       </div>
     </footer>
