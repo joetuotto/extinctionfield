@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { LOCKED_PREDICTIONS, metricLabel, countryLabel } from "@/lib/predictions";
 import { PredictionStatusBadge } from "@/components/PredictionStatusBadge";
 import { PredictionTrack } from "@/components/PredictionTrack";
+import { FeedbackLoop } from "@/components/FeedbackLoop";
 
 const COPY = {
   en: {
@@ -175,6 +176,10 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
           </div>
         </section>
       )}
+
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <FeedbackLoop locale={activeLocale} />
+      </section>
 
       {/* Sentinel cascade predictions */}
       {SENTINEL_IDS.length > 0 && (
