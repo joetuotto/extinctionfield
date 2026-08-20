@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n";
 import { MathBlock } from "@/components/MathBlock";
+import { CohortAsfrProfile } from "@/components/CohortAsfrProfile";
 
 type Copy = {
   metaTitle: string;
@@ -319,6 +320,11 @@ export function MathematicsSections({ locale }: { locale: string }) {
             <p className="mt-4 max-w-3xl rounded-lg border border-accent/20 bg-accent/5 p-3 text-xs leading-relaxed text-foreground-muted">
               {section.note}
             </p>
+          )}
+          {section.id === "cohort" && (
+            <div className="mt-6 max-w-3xl">
+              <CohortAsfrProfile locale={locale} />
+            </div>
           )}
         </section>
       ))}

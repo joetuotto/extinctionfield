@@ -1,0 +1,2750 @@
+{
+  "generatedBy": "berm/export_cohort_asfr.py",
+  "source": "UN WPP 2024 age-specific fertility, estimate years only",
+  "cohorts": [
+    1970,
+    1990
+  ],
+  "ageGroups": [
+    "15-19",
+    "20-24",
+    "25-29",
+    "30-34",
+    "35-39",
+    "40-44",
+    "45-49"
+  ],
+  "minYearsInGroup": 3,
+  "countries": {
+    "AUT": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 23.93,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 87.45,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 99.22,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 70.98,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 35.7,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 8.66,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.63,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 11.53,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 44.79,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 87.2,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 97.09,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "BEL": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 11.97,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 74.21,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 130.37,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 96.34,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 42.64,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 9.44,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.73,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 10.32,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 50.07,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 107.87,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 112.2,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "BRA": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 88.65,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 158.99,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 119.02,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 67.21,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 33.48,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 9.62,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.65,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 71.6,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 91.16,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 81.89,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 66.13,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "CHE": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 6.8,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 56.26,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 106.97,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 95.2,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 51.95,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 11.98,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.96,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 4.45,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 31.02,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 77.97,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 112.44,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "CZE": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 46.99,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 153.15,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 83.05,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 53.48,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 30.45,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 6.85,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.52,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 11.4,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 43.32,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 105.02,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 109.56,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "DEU": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 19.35,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 65.9,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 92.72,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 78.09,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 39.16,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 8.66,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.57,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 10.38,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 37.66,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 84.52,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 108.56,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "DNK": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 9.73,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 68.23,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 131.25,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 117.11,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 53.49,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 10.11,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.68,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 5.51,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 37.17,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 109.64,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 124.81,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "DZA": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 33.31,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 141.48,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 146.38,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 136.66,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 119.99,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 57.92,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 7.46,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 8.76,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 82.54,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 157.79,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 151.52,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "ESP": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 15.76,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 40.98,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 71.41,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 95.71,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 57.05,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 13.78,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 1.39,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 12.36,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 29.58,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 54.43,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 82.89,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "EST": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 44.35,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 136.94,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 77.71,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 56.64,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 38.97,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 10.74,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.8,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 23.94,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 58.45,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 100.54,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 93.22,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "FIN": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 13.18,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 72.95,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 123.61,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 104.62,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 53.23,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 11.8,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.83,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 9.05,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 52.9,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 86.34,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 95.05,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "FRA": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 14.12,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 74.35,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 133.22,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 110.66,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 54.02,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 13.13,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.92,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 10.88,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 58.71,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 117.72,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 120.53,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "IRL": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 15.45,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 57.06,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 103.32,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 131.65,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 94.34,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 22.6,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 1.8,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 16.72,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 47.5,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 74.61,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 120.25,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "ISR": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 20.86,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 126.36,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 185.37,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 160.49,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 94.93,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 28.94,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 3.36,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 14.29,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 107.5,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 178.14,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 178.2,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "ITA": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 10.6,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 47.78,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 78.86,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 86.74,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 55.74,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 14.6,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 1.33,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 6.85,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 32.75,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 64.18,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 87.1,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "JPN": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 3.59,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 42.22,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 106.99,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 89.39,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 40.85,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 9.45,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.41,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 5.17,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 32.24,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 79.61,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 93.03,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "KOR": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 7.18,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 77.21,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 164.76,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 82.15,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 24.84,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 4.74,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.24,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 1.98,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 15.08,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 46.85,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 72.98,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "LVA": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 43.04,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 136.7,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 69.54,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 50.17,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 32.41,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 9.31,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.66,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 21.71,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 57.94,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 102.3,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 85.02,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "MKD": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 50.57,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 178.51,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 131.2,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 61.87,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 22.26,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 4.72,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.32,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 21.64,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 80.97,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 118.2,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 86.8,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "NOR": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 18.1,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 85.9,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 131.63,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 111.18,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 53.66,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 10.77,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.75,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 8.69,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 51.74,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 102.2,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 111.03,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "POL": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 31.51,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 149.89,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 100.61,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 53.31,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 26.35,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 6.43,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.34,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 15.4,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 51.94,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 96.12,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 80.56,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "SVK": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 48.11,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 167.24,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 91.08,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 48.0,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 25.31,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 6.36,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.38,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 21.27,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 51.33,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 88.58,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 88.96,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "SVN": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 34.95,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 103.57,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 97.68,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 66.66,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 32.73,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 6.86,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.44,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 5.49,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 43.91,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 110.8,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 107.57,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "SWE": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 11.68,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 87.81,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 111.55,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 109.44,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 61.18,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 13.79,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.97,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 5.82,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 47.02,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 106.14,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 113.3,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "UKR": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 53.67,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 145.59,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 61.24,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 30.49,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 17.24,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 4.81,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.41,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 31.88,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 90.77,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 79.54,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 44.87,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    },
+    "USA": {
+      "1970": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 53.34,
+          "yearsObserved": 5,
+          "window": [
+            1985,
+            1989
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 112.43,
+          "yearsObserved": 5,
+          "window": [
+            1990,
+            1994
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 108.32,
+          "yearsObserved": 5,
+          "window": [
+            1995,
+            1999
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 92.04,
+          "yearsObserved": 5,
+          "window": [
+            2000,
+            2004
+          ]
+        },
+        {
+          "ageGroup": "35-39",
+          "asfr": 46.1,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "40-44",
+          "asfr": 10.19,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "45-49",
+          "asfr": 0.8,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        }
+      ],
+      "1990": [
+        {
+          "ageGroup": "15-19",
+          "asfr": 39.77,
+          "yearsObserved": 5,
+          "window": [
+            2005,
+            2009
+          ]
+        },
+        {
+          "ageGroup": "20-24",
+          "asfr": 83.13,
+          "yearsObserved": 5,
+          "window": [
+            2010,
+            2014
+          ]
+        },
+        {
+          "ageGroup": "25-29",
+          "asfr": 98.26,
+          "yearsObserved": 5,
+          "window": [
+            2015,
+            2019
+          ]
+        },
+        {
+          "ageGroup": "30-34",
+          "asfr": 95.37,
+          "yearsObserved": 4,
+          "window": [
+            2020,
+            2024
+          ]
+        }
+      ]
+    }
+  }
+}
