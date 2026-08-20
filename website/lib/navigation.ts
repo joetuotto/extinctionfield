@@ -27,7 +27,7 @@ export interface NavRoute {
 
 export const NAV_ROUTES: NavRoute[] = [
   { href: "", labelEn: "Home", labelFi: "Etusivu", icon: House },
-  { href: "/explore", labelEn: "Explore", labelFi: "Tutkija", icon: Map },
+  { href: "/explore", labelEn: "Data", labelFi: "Data", icon: Database },
   {
     href: "/model",
     labelEn: "Model",
