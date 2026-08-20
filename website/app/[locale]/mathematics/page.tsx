@@ -15,9 +15,11 @@ const t = {
       { id: "lindgren", num: "§1", label: "Lindgren geometry" },
       { id: "evo-calibration", num: "§1b", label: "Evolutionary calibration" },
       { id: "chi", num: "§2", label: "Selection rule χ(Ā)" },
+      { id: "three-channel-derivation", num: "§2b", label: "Three-channel derivation" },
       { id: "two-channel", num: "§3", label: "Two-channel model" },
       { id: "biocap", num: "§4", label: "Biological capacity" },
       { id: "behavioral", num: "§5", label: "Behavioral factor" },
+      { id: "cell-size-frequency", num: "§5b", label: "Cell size × frequency" },
       { id: "cultural", num: "§6", label: "Cultural / compensation" },
       { id: "jacobian", num: "§7", label: "Jacobian" },
       { id: "locked", num: "§8", label: "Locked predictions" },
@@ -40,6 +42,10 @@ const t = {
     s1d3: "where κ is a coupling constant (normalized to 1 in suitable units).",
     s1d4: "Maxwell’s equations follow from the Bianchi identities:",
     s1d5: "Vassallo et al. (2025) validated this derivation independently.",
+    s1d6: "The apparent problem (δV_mem ≈ 10⁻²¹ V from naive calculation) is resolved by three independent mechanisms:",
+    s1d6a: "(1) IFO: ion forced oscillation acts on the S4 voltage sensor directly at <1 nm distance, threshold 10⁻⁵ V/m (Panagopoulos 2025).",
+    s1d6b: "(2) Non-ionotropic VGCC signaling: conformational change without ion flux, lower energy threshold (Trus & Atlas 2024).",
+    s1d6c: "(3) RPM pathway bypasses VGCC entirely: 87.5% of RPM Hamiltonian elements derivable from Lindgren geometry.",
 
     // S1b Evolutionary Calibration
     s1bTitle: "Evolutionary Calibration",
@@ -52,6 +58,23 @@ const t = {
     s1bd3: "VGCC: 1 S4 conformational change → non-ionotropic signal (Trus & Atlas 2024) OR ion flux → Ca²⁺ → calmodulin → cascade. Gain: ~10⁴–10⁶×.",
     s1bd4: "Bifurcation near Hopf point: G = 1/(2µ). Small ROS change → macroscopic output. Additional gain: ~10²–10³×.",
     s1bd5: "Total gain: 10⁶–10⁹× — same order of magnitude as the eye’s photon amplification cascade.",
+
+    // S2b Three-Channel Derivation
+    s2bTitle: "Three-Channel Derivation",
+    s2bIntro:
+      "Two biological cutoff frequencies divide the EMF spectrum into three regimes with distinct biophysical mechanisms. These cutoffs are fundamental properties of cell biology, not arbitrary parameters.",
+    s2bFC:
+      "f_c ≈ 1 kHz — the membrane RC time constant. Below f_c: the field drops across the membrane and perturbs V_mem. Above f_c: the field penetrates into the cell interior.",
+    s2bFRPM:
+      "f_RPM ≈ 1 MHz — the radical pair coherence limit. Above f_RPM: classical field–membrane interaction weakens but quantum spin effects become relevant.",
+    s2bELF:
+      "ELF channel (f < ~1 kHz): field drops across the membrane. ΔV_mem = E_ext · d_cell · H(f). χ_mem saturated at 7×10⁶ V/m. Linear response. Mechanisms: VGCC→Ca²⁺→ROS (pathway A), GPCR-adenosine (PEMF, FDA 1979), Nav-modulation (TMS, FDA 2008), vagus nerve (VNS, FDA 2017).",
+    s2bIF:
+      "IF channel (f_c < f < f_RPM): field penetrates the cell interior. T(f) = 1/√(1+(f_c/f)²). Primary mechanism at environmental levels: IFO-VGIC (linear, threshold 10⁻⁵ V/m). Geometric field amplification at cleavage furrow: G ≈ (d_cell/d_furrow)² ≈ 25×. Selective effect on dividing cells. TTFields (FDA 2011+) validates the mechanism at therapeutic intensity via DEP.",
+    s2bRF:
+      "RF channel (f > ~1 MHz): membrane is transparent. Classical field–membrane interaction is weak. Quantum spin effects become relevant. Lindgren's covariant spin correction: B_local = (1/w)b + (A·b)A/(w(1+w)). Anisotropic response. Mechanisms: CRY/RPM→circadian disruption (pathway B), magnetic compass corruption (Lindecke 2026).",
+    s2bAfter:
+      "Channel weights (w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35) are DIAGNOSTIC and require empirical calibration. The three-channel decomposition is structurally derived from membrane biophysics; only the relative weights are uncertain.",
 
     // S2 Chi
     s2Title: "Selection Rule χ(Ā)",
@@ -95,6 +118,12 @@ const t = {
     s3rwRow5: "Amish (no electronics): 1h EMF, 23h free → 93% repair → net 0.07/day",
     s3rwThreshold:
       "Critical threshold: when EMF-free period < 2× repair half-life (< 12h for BER), repair is incomplete and cumulation begins. Modern humans crossed this threshold around 2005–2010.",
+    s3tcTitle: "Three-channel extension",
+    s3tcIntro:
+      "In the three-channel decomposition, cumEMF becomes a weighted sum of frequency-specific cumulative exposures:",
+    s3tcAfter:
+      "Channel weights are frequency-specific and tissue-dependent (see §2b). The single-channel cumEMF above is the weighted aggregate of the three channels. Channel weights (0.05/0.60/0.35) are diagnostic estimates requiring empirical calibration.",
+
     s3ifoTitle: "IF response function: IFO vs DEP",
     s3ifoIntro:
       "The IF channel response is the sum of two mechanisms operating at different intensity regimes:",
@@ -162,6 +191,18 @@ const t = {
       "Dual-hormone correction (Mehta & Prasad 2015, meta N=8538, r=-.061): T's behavioral expression requires low cortisol. EMF simultaneously lowers T (WHO meta: SMD 0.87) AND raises cortisol (Pawlak 2025: d=1.88), creating double lock on approach behavior.",
     s5qsd8:
       "Limitation: the dual-hormone meta-analysis effect size is small (r=-.061). The proxy chain (EMF → T↓ → approach↓ → TFR↓) has not been tested as a whole. Each link is individually documented but the full chain is inference.",
+
+    // S5b Cell Size × Frequency
+    s5bTitle: "Cell Size × Frequency Resonance",
+    s5bIntro:
+      "TTFields clinical data reveals a quantitative relationship between cell size and optimal disruption frequency. This relationship is calibrated from FDA phase III data and extrapolated to BERM's target tissues.",
+    s5bFormula:
+      "where K ≈ 3.7 Hz·m, calibrated from TTFields clinical data across four cancer types.",
+    s5bd1: "TTFields clinical frequencies (FDA PMA data):",
+    s5bd2: "GBM (18 µm): 200 kHz. Pancreas (15 µm): 150 kHz. Breast (20 µm): 120 kHz. Melanoma (~25 µm): 100 kHz.",
+    s5bd3: "Extrapolation to BERM target cells:",
+    s5bd4: "Spermatogonia (12 µm): f_opt ≈ 310 kHz — LED driver switching range. Intestinal epithelium (10 µm): f_opt ≈ 370 kHz. Oocyte (120 µm): f_opt ≈ 31 kHz — HVAC VFD range.",
+    s5bd5: "LED drivers typically switch at 20–500 kHz with harmonic content extending beyond 1 MHz. The overlap with spermatogonial resonance (310 kHz) is not designed — it is a coincidence of engineering optimization and cell biology.",
 
     // S6 Cultural
     s6Title: "Cultural Factor & Compensation",
@@ -321,9 +362,11 @@ const t = {
       { id: "lindgren", num: "§1", label: "Lindgrenin geometria" },
       { id: "evo-calibration", num: "§1b", label: "Evoluutionäärinen kalibraatio" },
       { id: "chi", num: "§2", label: "Valintaehto χ(Ā)" },
+      { id: "three-channel-derivation", num: "§2b", label: "Kolmikanavajohdannainen" },
       { id: "two-channel", num: "§3", label: "Kaksikanavamalli" },
       { id: "biocap", num: "§4", label: "Biologinen kapasiteetti" },
       { id: "behavioral", num: "§5", label: "Käyttäytymistekijä" },
+      { id: "cell-size-frequency", num: "§5b", label: "Solukoko × taajuus" },
       { id: "cultural", num: "§6", label: "Kulttuuri / kompensaatio" },
       { id: "jacobian", num: "§7", label: "Jakobiaani" },
       { id: "locked", num: "§8", label: "Lukitut ennusteet" },
@@ -346,6 +389,10 @@ const t = {
     s1d3: "missä κ on kytkentävakio (normalisoitu arvoon 1 sopivissa yksiköissä).",
     s1d4: "Maxwellin yhtälöt seuraavat Bianchin identiteeteistä:",
     s1d5: "Vassallo et al. (2025) validoi tämän johtamisen itsenäisesti.",
+    s1d6: "Näennäinen ongelma (δV_mem ≈ 10⁻²¹ V naivista laskennasta) ratkeaa kolmella itsenäisellä mekanismilla:",
+    s1d6a: "(1) IFO: ionien pakotettu oskillaatio vaikuttaa S4-jännitesensoriin suoraan <1 nm etäisyydellä, kynnys 10⁻⁵ V/m (Panagopoulos 2025).",
+    s1d6b: "(2) Ei-ionotrooppinen VGCC-signalointi: konformaatiomuutos ilman ionivirtausta, matalampi energiakynnys (Trus & Atlas 2024).",
+    s1d6c: "(3) RPM-reitti ohittaa VGCC:n kokonaan: 87,5 % RPM-hamiltoniaanin elementeistä johdettavissa Lindgrenin geometriasta.",
 
     // S1b Evoluutionäärinen kalibraatio
     s1bTitle: "Evoluutionäärinen kalibraatio",
@@ -358,6 +405,23 @@ const t = {
     s1bd3: "VGCC: 1 S4-konformaatiomuutos → ei-ionotrooppinen signaali (Trus & Atlas 2024) TAI ionivirtaus → Ca²⁺ → kalmoduliini → kaskadi. Vahvistus: ~10⁴–10⁶×.",
     s1bd4: "Bifurkaatio Hopf-pisteen lähellä: G = 1/(2µ). Pieni ROS-muutos → makroskooppinen vaste. Lisävahvistus: ~10²–10³×.",
     s1bd5: "Kokonaisvahvistus: 10⁶–10⁹× — sama suuruusluokka kuin silmän fotonivahvistuskaskadi.",
+
+    // S2b Kolmikanavajohdannainen
+    s2bTitle: "Kolmikanavajohdannainen",
+    s2bIntro:
+      "Kaksi biologista rajataajuutta jakaa EMF-spektrin kolmeen regiimiin, joilla on erilliset biofysikaaliset mekanismit. Nämä rajataajuudet ovat solubiologian perustavanlaatuisia ominaisuuksia, eivät mielivaltaisia parametreja.",
+    s2bFC:
+      "f_c ≈ 1 kHz — solukalvon RC-aikavakio. Alle f_c: kenttä putoaa kalvon yli ja perturboi V_mem:iä. Yli f_c: kenttä penetroituu solun sisälle.",
+    s2bFRPM:
+      "f_RPM ≈ 1 MHz — radikaaliparin koherenssin raja. Yli f_RPM: klassinen kenttä-kalvo-vuorovaikutus heikkenee mutta kvantti-spin-efektit tulevat relevantiksi.",
+    s2bELF:
+      "ELF-kanava (f < ~1 kHz): kenttä putoaa kalvon yli. ΔV_mem = E_ext · d_cell · H(f). χ_mem saturoitunut 7×10⁶ V/m:ssä. Lineaarinen vaste. Mekanismit: VGCC→Ca²⁺→ROS (reitti A), GPCR-adenosiini (PEMF, FDA 1979), Nav-modulaatio (TMS, FDA 2008), vagushermo (VNS, FDA 2017).",
+    s2bIF:
+      "IF-kanava (f_c < f < f_RPM): kenttä penetroituu solun sisälle. T(f) = 1/√(1+(f_c/f)²). Päämekanismi ympäristötasoilla: IFO-VGIC (lineaarinen, kynnys 10⁻⁵ V/m). Geometrinen kenttävahvistus kaulakuroutumassa: G ≈ (d_cell/d_furrow)² ≈ 25×. Valikoiva vaikutus jakautuviin soluihin. TTFields (FDA 2011+) validoi mekanismin terapeuttisella intensiteetillä DEP:n kautta.",
+    s2bRF:
+      "RF-kanava (f > ~1 MHz): kalvo on läpinäkyvä. Klassinen kenttä-kalvo-vuorovaikutus on heikko. Kvantti-spin-efektit tulevat relevantiksi. Lindgrenin kovariantti spin-korjaus: B_local = (1/w)b + (A·b)A/(w(1+w)). Anisotrooppinen vaste. Mekanismit: CRY/RPM→sirkadiaaninen häiriö (reitti B), magneettikompassin korruptoituminen (Lindecke 2026).",
+    s2bAfter:
+      "Kanavapainot (w_ELF = 0,05, w_IF = 0,60, w_RF = 0,35) ovat DIAGNOSTISIA ja vaativat empiirisen kalibraation. Kolmikanavadekompositio on rakenteellisesti johdettu kalvobiofysiikasta; vain suhteelliset painot ovat epävarmoja.",
 
     // S2 Chi
     s2Title: "Valintaehto χ(Ā)",
@@ -401,6 +465,12 @@ const t = {
     s3rwRow5: "Amissit (ei elektroniikkaa): 1h EMF, 23h vapaa → 93 % korjaus → netto 0,07/pv",
     s3rwThreshold:
       "Kriittinen kynnys: kun EMF-vapaa jakso < 2× korjauksen puoliintumisaika (< 12h BER-reitille), korjaus jää epätäydelliseksi ja kumulaatio alkaa. Moderni ihminen ylitti tämän kynnyksen noin 2005–2010.",
+    s3tcTitle: "Kolmikanavalaajennus",
+    s3tcIntro:
+      "Kolmikanavadekompositiossa cumEMF muuttuu taajuuskohtaisten kumulatiivisten altistusten painotetuksi summaksi:",
+    s3tcAfter:
+      "Kanavapainot ovat taajuuskohtaisia ja kudosriippuvaisia (katso §2b). Yllä oleva yksikanavainen cumEMF on kolmen kanavan painotettu aggregaatti. Kanavapainot (0,05/0,60/0,35) ovat diagnostisia arvioita, jotka vaativat empiirisen kalibraation.",
+
     s3ifoTitle: "IF-vastefunktio: IFO vs DEP",
     s3ifoIntro:
       "IF-kanavan vaste on kahden mekanismin summa, jotka toimivat eri intensiteettialueilla:",
@@ -468,6 +538,18 @@ const t = {
       "Dual-hormone -korjaus (Mehta & Prasad 2015, meta N=8538, r=-0,061): T:n käyttäytymisvaikutukset vaativat matalan kortisolin. EMF samanaikaisesti laskee T:tä (WHO meta: SMD 0,87) JA nostaa kortisolia (Pawlak 2025: d=1,88), luoden kaksinkertaisen lukon lähestymiskäyttäytymiselle.",
     s5qsd8:
       "Rajoitus: dual-hormone -meta-analyysin efektikoko on pieni (r=-0,061). Proxy-ketjua (EMF → T↓ → lähestyminen↓ → TFR↓) ei ole testattu kokonaisuutena. Jokainen lenkki on erikseen dokumentoitu, mutta koko ketju on päättelyä.",
+
+    // S5b Solukoko × Taajuus
+    s5bTitle: "Solukoko × taajuusresonanssi",
+    s5bIntro:
+      "TTFields-kliininen data paljastaa kvantitatiivisen suhteen solukoon ja optimaalisen häiriötaajuuden välillä. Tämä suhde on kalibroitu FDA:n vaiheen III datasta ja ekstrapoloitu BERM:n kohdekudoksiin.",
+    s5bFormula:
+      "missä K ≈ 3,7 Hz·m, kalibroitu TTFields-kliinisestä datasta neljän syöpätyypin yli.",
+    s5bd1: "TTFields-kliiniset taajuudet (FDA PMA -data):",
+    s5bd2: "GBM (18 µm): 200 kHz. Haima (15 µm): 150 kHz. Rinta (20 µm): 120 kHz. Melanooma (~25 µm): 100 kHz.",
+    s5bd3: "Ekstrapolaatio BERM-kohdekudoksiin:",
+    s5bd4: "Spermatogonia (12 µm): f_opt ≈ 310 kHz — LED-hakkureiden taajuusalue. Suoliston epiteeli (10 µm): f_opt ≈ 370 kHz. Munasolu (120 µm): f_opt ≈ 31 kHz — HVAC-VFD-alue.",
+    s5bd5: "LED-hakkurit kytkevät tyypillisesti 20–500 kHz:n taajuuksilla harmonisella sisällöllä joka ulottuu yli 1 MHz:n. Päällekkäisyys spermatogoniaalisen resonanssin (310 kHz) kanssa ei ole suunniteltu — se on sattuma teknisen optimoinnin ja solubiologian välillä.",
 
     // S6 Cultural
     s6Title: "Kulttuuritekijä ja kompensaatio",
@@ -724,6 +806,12 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 <MathBlock tex="\nabla_\mu F^{\mu\nu} = 0 \quad \text{follows from} \quad \nabla_\mu G^{\mu\nu} = 0" />
               </div>
               <DerivationLine>{d.s1d5}</DerivationLine>
+              <div className="mt-4 p-3 rounded border border-accent/20 bg-card-bg">
+                <DerivationLine>{d.s1d6}</DerivationLine>
+                <DerivationLine>{d.s1d6a}</DerivationLine>
+                <DerivationLine>{d.s1d6b}</DerivationLine>
+                <DerivationLine>{d.s1d6c}</DerivationLine>
+              </div>
             </Derivation>
           </section>
 
@@ -825,6 +913,62 @@ export function MathematicsSections({ locale }: { locale: string }) {
             </Derivation>
           </section>
 
+          {/* S2b Three-Channel Derivation */}
+          <section id="three-channel-derivation">
+            <h2 className="text-lg font-semibold mb-1">
+              <span className="text-foreground-muted text-sm mr-2">{"§2b"}</span>
+              {d.s2bTitle}
+            </h2>
+            <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+              {d.s2bIntro}
+            </p>
+
+            <div className="space-y-3 mb-4">
+              <div className="rounded-lg border border-card-border p-4">
+                <div className="text-center mb-2">
+                  <MathBlock tex="f_c \approx 1\;\text{kHz} \quad \text{(membrane RC time constant)}" />
+                </div>
+                <p className="text-xs text-foreground-muted">{d.s2bFC}</p>
+              </div>
+              <div className="rounded-lg border border-card-border p-4">
+                <div className="text-center mb-2">
+                  <MathBlock tex="f_{RPM} \approx 1\;\text{MHz} \quad \text{(radical pair coherence limit)}" />
+                </div>
+                <p className="text-xs text-foreground-muted">{d.s2bFRPM}</p>
+              </div>
+            </div>
+
+            <Derivation>
+              <div className="space-y-4">
+                <div className="p-3 rounded border-l-2 border-blue-500/50">
+                  <p className="text-xs font-semibold text-blue-400 mb-1">ELF (f {"<"} ~1 kHz)</p>
+                  <div className="text-center my-2">
+                    <MathBlock tex="\chi_{mem} = \frac{E_{mem}}{\sqrt{1 + E_{mem}^2}} \approx 1.0, \quad H(f) = \frac{1}{\sqrt{1+(f/f_c)^2}}" />
+                  </div>
+                  <DerivationLine>{d.s2bELF}</DerivationLine>
+                </div>
+                <div className="p-3 rounded border-l-2 border-orange-500/50">
+                  <p className="text-xs font-semibold text-orange-400 mb-1">IF (f_c {"<"} f {"<"} f_RPM)</p>
+                  <div className="text-center my-2">
+                    <MathBlock tex="T(f) = \frac{1}{\sqrt{1+(f_c/f)^2}}, \quad G_{furrow} \approx \left(\frac{d_{cell}}{d_{furrow}}\right)^2 \approx 25\times" />
+                  </div>
+                  <DerivationLine>{d.s2bIF}</DerivationLine>
+                </div>
+                <div className="p-3 rounded border-l-2 border-red-500/50">
+                  <p className="text-xs font-semibold text-red-400 mb-1">RF (f {">"} ~1 MHz)</p>
+                  <div className="text-center my-2">
+                    <MathBlock tex="B_{local} = \frac{1}{w}b + \frac{(A \cdot b)A}{w(1+w)}, \quad w = \sqrt{1 + A^2}" />
+                  </div>
+                  <DerivationLine>{d.s2bRF}</DerivationLine>
+                </div>
+              </div>
+            </Derivation>
+
+            <p className="text-foreground-muted text-sm leading-relaxed mt-4">
+              {d.s2bAfter}
+            </p>
+          </section>
+
           {/* S3 Two-channel model */}
           <section id="two-channel">
             <h2 className="text-lg font-semibold mb-1">
@@ -890,6 +1034,22 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 </div>
               </div>
             </Derivation>
+
+            <div className="mt-6 rounded-lg border border-accent/20 bg-card-bg p-5">
+              <h3 className="text-sm font-semibold mb-2">{d.s3tcTitle}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+                {d.s3tcIntro}
+              </p>
+              <div className="text-center my-3">
+                <MathBlock tex="\text{cumEMF} = w_{ELF} \cdot \text{cumELF} + w_{IF} \cdot \text{cumIF} + w_{RF} \cdot \text{cumRF}" />
+              </div>
+              <div className="text-center my-3">
+                <MathBlock tex="w_{ELF} = 0.05, \quad w_{IF} = 0.60, \quad w_{RF} = 0.35 \quad \text{(diagnostic)}" />
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                {d.s3tcAfter}
+              </p>
+            </div>
 
             <div className="mt-6 rounded-lg border border-accent/20 bg-card-bg p-5">
               <h3 className="text-sm font-semibold mb-2">{d.s3ifoTitle}</h3>
@@ -1092,6 +1252,42 @@ export function MathematicsSections({ locale }: { locale: string }) {
               </div>
               <div className="mt-3 p-3 rounded border border-status-partial/40 bg-status-partial/5 text-sm">
                 <DerivationLine>{d.s5qsd8}</DerivationLine>
+              </div>
+            </Derivation>
+          </section>
+
+          {/* S5b Cell Size × Frequency */}
+          <section id="cell-size-frequency">
+            <h2 className="text-lg font-semibold mb-1">
+              <span className="text-foreground-muted text-sm mr-2">{"§5b"}</span>
+              {d.s5bTitle}
+            </h2>
+            <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+              {d.s5bIntro}
+            </p>
+            <div className="text-center my-4">
+              <MathBlock tex="f_{opt} = \frac{K}{d_{cell}}" />
+            </div>
+            <p className="text-foreground-muted text-sm leading-relaxed">
+              {locale === "fi" ? "missä " : "where "}<MathBlock tex="K \approx 3.7\;\text{Hz·m}" display={false} />{" "}
+              {d.s5bFormula}
+            </p>
+
+            <Derivation>
+              <DerivationLine>{d.s5bd1}</DerivationLine>
+              <DerivationLine>{d.s5bd2}</DerivationLine>
+              <div className="text-center my-3">
+                <MathBlock tex="\begin{aligned} \text{GBM (18 µm)} &: 200\;\text{kHz} \\ \text{Pancreas (15 µm)} &: 150\;\text{kHz} \\ \text{Breast (20 µm)} &: 120\;\text{kHz} \\ \text{Melanoma (25 µm)} &: 100\;\text{kHz} \end{aligned}" />
+              </div>
+              <div className="mt-3">
+                <DerivationLine>{d.s5bd3}</DerivationLine>
+                <DerivationLine>{d.s5bd4}</DerivationLine>
+                <div className="text-center my-3">
+                  <MathBlock tex="\begin{aligned} \text{Spermatogonia (12 µm)} &: f_{opt} \approx 310\;\text{kHz} \\ \text{Intestinal epi (10 µm)} &: f_{opt} \approx 370\;\text{kHz} \\ \text{Oocyte (120 µm)} &: f_{opt} \approx 31\;\text{kHz} \end{aligned}" />
+                </div>
+              </div>
+              <div className="mt-3">
+                <DerivationLine>{d.s5bd5}</DerivationLine>
               </div>
             </Derivation>
           </section>

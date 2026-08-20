@@ -88,11 +88,21 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     icon: "toad",
     source: "Petrovan & Schmidt 2016",
   },
+  {
+    name: "Lepakot", nameEn: "Bats",
+    lag: 14, lagRange: [12, 16],
+    r: -0.310, p: 0.028,
+    nCountries: 1,
+    direction: 1, directionTotal: 1,
+    color: "#6366f1",
+    icon: "bat",
+    source: "Lindecke 2026 (Science); 4.5× sensitivity; RPM compass disrupted by broadband RF 0.01–300 MHz",
+  },
 ];
 
 export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
   const fi = locale === "fi";
-  const maxLag = 8;
+  const maxLag = 16;
   const barHeight = 52;
   const labelWidth = 155;
   const chartWidth = 440;
@@ -118,10 +128,10 @@ export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
           role="img"
           aria-label={fi ? "Sentinellikaskadi-kaavio" : "Sentinel cascade chart"}
         >
-          {Array.from({ length: 8 }, (_, i) => {
-            const x = labelWidth + (i / maxLag) * chartWidth;
+          {[0, 2, 4, 6, 8, 10, 12, 14].map((tick) => {
+            const x = labelWidth + (tick / maxLag) * chartWidth;
             return (
-              <g key={i}>
+              <g key={tick}>
                 <line
                   x1={x} y1={0} x2={x} y2={SENTINEL_DATA.length * barHeight}
                   stroke="var(--card-border)" strokeWidth={1} strokeDasharray="4,4"
@@ -131,7 +141,7 @@ export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
                   fill="var(--foreground-muted)" fontSize={11} textAnchor="middle"
                   fontFamily="var(--font-mono)"
                 >
-                  {i === 0 ? (fi ? "Muutos" : "Change") : `+${i}${fi ? "v" : "y"}`}
+                  {tick === 0 ? (fi ? "Muutos" : "Change") : `+${tick}${fi ? "v" : "y"}`}
                 </text>
               </g>
             );

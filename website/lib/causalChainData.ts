@@ -22,12 +22,13 @@ export const LEVEL_TITLES: Record<number, string> = {
   1: "Geometria",
   2: "Valintasääntö",
   3: "Altistus",
-  4: "Kalvofysiikka",
-  5: "Polut",
-  6: "Kaskadi",
-  7: "Konvergenssi",
-  8: "Demografinen kaskadi",
-  9: "Takaisinkytkentä",
+  4: "Kolme kanavaa",
+  5: "Kalvofysiikka",
+  6: "Polut",
+  7: "Kaskadi",
+  8: "Konvergenssi",
+  9: "Demografinen kaskadi",
+  10: "Takaisinkytkentä",
 };
 
 export const NODES: ChainNode[] = [
@@ -167,10 +168,84 @@ export const NODES: ChainNode[] = [
       "Jos personal-EMF tuottaa saman biologisen vasteen ambient-taustasta riippumatta",
   },
 
-  // TASO 4
+  // TASO 4 — Kolme kanavaa
+  {
+    id: "channel_elf",
+    level: 4,
+    label: "ELF-kanava",
+    sublabel: "f < 1 kHz · PEMF / TMS / VNS",
+    epistemicLevel: "E",
+    title: "ELF-kanava: kalvomodulaatio",
+    mechanism:
+      "Taajuudet alle solun kalvon RC-rajataajuuden f_c ≈ 1 kHz pääsevät solun sisään ja moduloivat suoraan kalvopotentiaalia. Ulkoinen kenttä indusoituu kalvon yli koko solun antennipinta-alan kautta — δV_m = 1.5 × E × r_cell × cos(θ). FDA-hyväksytyt PEMF-laitteet (luumurtumat), TMS (depressio) ja VNS (epilepsia) toimivat tällä kanavalla.",
+    lindgrenInterpretation:
+      "ELF-kanava on geometrisen perturbointian suora kalvovaste. Taajuudet f < f_c pääsevät kalvon RC-suodattimen läpi ja muuttavat paikallista metriikkaa Ā → χ(Ā) muuttuu. H(f) = 1/√(1+(f/f_c)²) on metrisen suodattimen taajuusvaste.",
+    quantitative:
+      "f_c ≈ 1/(2π R_m C_m) ≈ 1 kHz\nδV_m = 1.5 · E · r_cell · cos(θ)\nH(f) = 1/√(1 + (f/f_c)²)\n\nFDA-laitteet: PEMF (luumurtumat), TMS (depressio), VNS (epilepsia)",
+    keyReferences: [
+      {
+        authors: "Panagopoulos ym. 2015",
+        title: "Polarization: A Key Difference between Man-made and Natural EMFs",
+        journal: "Scientific Reports 5",
+        keyFinding: "Polarisoitu ELF moduloi kalvopotentiaalia suoraan",
+      },
+    ],
+  },
+  {
+    id: "channel_if",
+    level: 4,
+    label: "IF-kanava",
+    sublabel: "1 kHz – 1 MHz · TTFields",
+    epistemicLevel: "E",
+    title: "IF-kanava: solunjakautumishäiriö",
+    mechanism:
+      "Taajuudet 1 kHz – 1 MHz eivät pääse RC-suodattimen läpi soluun kokonaisina aaltoina, mutta vaikuttavat kahdella mekanismilla: (1) IFO-VGIC — polarisoitu kenttä pakottaa S4-jännitesensorin oskilloiman epäsäännöllisesti, kynnys ~10⁻⁵ V/m (lineaarinen); (2) DEP — dielektroforeettinen voima mitoosin aikana jakautumiskaran tubuliineille, kynnys 100–300 V/m (neliöllinen). TTFields (200 kHz, 1–2 V/cm) käyttää DEP-mekanismia glioblastoomahoidossa (FDA 2011).",
+    lindgrenInterpretation:
+      "IF-kanava on geometrisesti mielenkiintoisin: mitoottisessa solussa jakautumiskara on anisotrooppinen dielektrinen rakenne. Metrinen perturbointia kohdistuu tubuliinien varausjakaumaan → karan orientaatio häiriintyy → solunjakautuminen keskeytyy tai virheellistyy. Cleavage-uurteen geometrinen vahvistus G ≈ 25× selittää miksi DEP-efekti on voimakkain juuri jakautumisen aikana.",
+    quantitative:
+      "IFO-kynnys: ~10⁻⁵ V/m (lineaarinen)\nDEP-kynnys: 100–300 V/m (neliöllinen)\nG_furrow ≈ (d_cell / w_furrow)² ≈ 25×\n\nFDA-laite: TTFields (Optune), 200 kHz, glioblastooma",
+    keyReferences: [
+      {
+        authors: "Kirson ym. 2004",
+        title: "Disruption of cancer cell replication by alternating electric fields",
+        journal: "Cancer Research 64(9)",
+        keyFinding: "100–300 kHz kentät häiritsevät mitoottista karaa DEP:n kautta",
+      },
+    ],
+  },
+  {
+    id: "channel_rf",
+    level: 4,
+    label: "RF-kanava",
+    sublabel: "> 1 MHz · PRF / diatermialaitteet",
+    epistemicLevel: "E",
+    title: "RF-kanava: spin-kemia ja sirkadiaaninen häiriö",
+    mechanism:
+      "Taajuudet yli RPM-koherenssirajan f_RPM ≈ 1 MHz vaikuttavat spin-kemiallisen mekanismin kautta. Kryptokromin (CRY) FAD-superoksidi-radikaalipari toimii magnetosensorina: RF-kenttä muuttaa singletti-tripletti-siirtymänopeutta → CRY-signalointi häiriintyy → sirkadiaaninen kello vioittuu. Lindgrenin kovariantti spinkorjaus: B_local = B_ext × √(det(g_μν)). PRF-laitteet (pulsed RF, FDA: pehmytkudosparaneminen) ja diatermialaitteet toimivat tällä kanavalla.",
+    lindgrenInterpretation:
+      "RF-kanava on geometrisesti puhtain polku: 87.5% RPM-Hamiltoniaanin elementeistä on johdettavissa Lindgrenin metriikka-ansatzista. Spinprekkessio on suoraan metriikan funktio — kovariantti spinkorjaus B_local = B_ext × √(det(g_μν)) tarkoittaa, että RF-kentän biologinen vaikutus riippuu paikallisesta geometriasta. Tämä ohittaa VGIC-reitin δV_m-ongelman kokonaan.",
+    quantitative:
+      "f_RPM ≈ 1 MHz (radikaaliparimekanismin koherenssin ylärajaaja)\nB_local = B_ext × √(det(g_μν))\nRitz 2004 kokeellinen häiriökynnys: ~15 nT\n\nFDA-laitteet: PRF (pehmytkudos), diatermia (kipu/tulehdus)",
+    keyReferences: [
+      {
+        authors: "Ritz ym. 2004",
+        title: "Resonance effects indicate a radical-pair mechanism for avian compass",
+        journal: "Nature 429",
+        keyFinding: "RF-kentät häiritsevät radikaaliparimekanismia ~15 nT kynnyksel",
+      },
+      {
+        authors: "Xu ym. 2024",
+        title: "FAD-superoxide radical pair identified as magnetosensor",
+        journal: "Nature Communications",
+        keyFinding: "FAD-superoksidi on CRY:n magneettisensori",
+      },
+    ],
+  },
+
+  // TASO 5
   {
     id: "membrane",
-    level: 4,
+    level: 5,
     label: "Kalvopotentiaali",
     sublabel: "Vmem = −70 mV / 10 nm",
     epistemicLevel: "E",
@@ -183,7 +258,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "vgic",
-    level: 4,
+    level: 5,
     label: "VGIC-aktivaatio",
     sublabel: "IFO-mekanismi (Panagopoulos 2025)",
     epistemicLevel: "E",
@@ -219,10 +294,10 @@ export const NODES: ChainNode[] = [
       "Jos VGIC-salpaajat (esim. nifedipiini) eivät estä RF-EMF:n biologisia vaikutuksia",
   },
 
-  // TASO 5
+  // TASO 6
   {
     id: "pathway_a",
-    level: 5,
+    level: 6,
     label: "Polku A: ROS",
     sublabel: "Ca²⁺ → mitokondriaali ROS",
     epistemicLevel: "E",
@@ -238,7 +313,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "pathway_b",
-    level: 5,
+    level: 6,
     label: "Polku B: CRY",
     sublabel: "RPM → kellogeenihäiriö",
     epistemicLevel: "E",
@@ -254,7 +329,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "pathway_c",
-    level: 5,
+    level: 6,
     label: "Polku C: Melatoniini",
     sublabel: "Pineaali → vuorokausirytmi",
     epistemicLevel: "E",
@@ -271,7 +346,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "pathway_d",
-    level: 5,
+    level: 6,
     label: "Polku D: HPA→HPG",
     sublabel: "Kortisoli → T↓, OT↓, DA↓",
     epistemicLevel: "E",
@@ -287,7 +362,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "pathway_e",
-    level: 5,
+    level: 6,
     label: "Polku E: BBB",
     sublabel: "eNOS↑ → permeabiliteetti↑",
     epistemicLevel: "E",
@@ -303,7 +378,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "pathway_f",
-    level: 5,
+    level: 6,
     label: "Polku F: Vmem-koodi",
     sublabel: "Vmem-depolarisaatio → morfogeneesi",
     epistemicLevel: "L*",
@@ -332,10 +407,10 @@ export const NODES: ChainNode[] = [
       "Jos Vmem-muutokset eivät korreloi morfogeneettisten virheiden kanssa EMF-altistuksessa",
   },
 
-  // TASO 6
+  // TASO 7
   {
     id: "sdf",
-    level: 6,
+    level: 7,
     label: "DNA-fragmentaatio (SDF)",
     sublabel: "ROS → DNA-katko",
     epistemicLevel: "E",
@@ -349,7 +424,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "motility",
-    level: 6,
+    level: 7,
     label: "Motiliteetti ↓",
     sublabel: "−8.1% (Yu 2021)",
     epistemicLevel: "E",
@@ -360,7 +435,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "concentration",
-    level: 6,
+    level: 7,
     label: "Konsentraatio ↓",
     sublabel: "−51% (1973–2018)",
     epistemicLevel: "E",
@@ -374,7 +449,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "ovulation",
-    level: 6,
+    level: 7,
     label: "Ovulaation ajoitus ↓",
     sublabel: "CRY + VGIC → ajoitusvirhe",
     epistemicLevel: "M|C",
@@ -385,7 +460,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "implantation",
-    level: 6,
+    level: 7,
     label: "Implantaatio ↓",
     sublabel: "Mikrobiomi + bioelektrinen",
     epistemicLevel: "C",
@@ -396,7 +471,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "sexratio",
-    level: 6,
+    level: 7,
     label: "Sukupuolisuhde Δ",
     sublabel: "X-siittiö herkempi",
     epistemicLevel: "E",
@@ -409,7 +484,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "testosterone",
-    level: 6,
+    level: 7,
     label: "Testosteroni ↓ sekulaari",
     sublabel: "−1%/vuosi (Travison 2007)",
     epistemicLevel: "E",
@@ -429,7 +504,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "amh",
-    level: 6,
+    level: 7,
     label: "AMH / munasolureservi ↓",
     sublabel: "AFC↓, reservi ehtyyy aikaisemmin",
     epistemicLevel: "C",
@@ -447,7 +522,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "mtor",
-    level: 6,
+    level: 7,
     label: "mTOR-hyperaktivaatio",
     sublabel: "Ca²⁺ → mTOR↑ → autofagia↓",
     epistemicLevel: "M|C",
@@ -472,7 +547,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "sleep",
-    level: 6,
+    level: 7,
     label: "Unihäiriö",
     sublabel: "Melatoniini↓ → uni↓ → GnRH↓",
     epistemicLevel: "E",
@@ -490,7 +565,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "miscarriage",
-    level: 6,
+    level: 7,
     label: "Keskenmeno ↑",
     sublabel: "SDF + implantaatio → varhainen menetys",
     epistemicLevel: "C",
@@ -501,7 +576,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "epigenetic",
-    level: 6,
+    level: 7,
     label: "Epigeneettinen periytyminen",
     sublabel: "Sperm methylome → F1, F2",
     epistemicLevel: "C",
@@ -522,10 +597,10 @@ export const NODES: ChainNode[] = [
     ],
   },
 
-  // TASO 7
+  // TASO 8
   {
     id: "fecundability_bio",
-    level: 7,
+    level: 8,
     label: "Biologinen fekunditeetti",
     sublabel: "F_bio = sperm × oocyte × tract",
     epistemicLevel: "E",
@@ -536,7 +611,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "motivation",
-    level: 7,
+    level: 8,
     label: "Lisääntymismotivaatio",
     sublabel: "M = f(T, OT, DA, kortisoli)",
     epistemicLevel: "E",
@@ -549,7 +624,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "art",
-    level: 7,
+    level: 8,
     label: "Avustettu lisääntyminen",
     sublabel: "IVF/ICSI → osittainen kompensaatio",
     epistemicLevel: "E",
@@ -559,10 +634,10 @@ export const NODES: ChainNode[] = [
     keyReferences: [],
   },
 
-  // TASO 8
+  // TASO 9
   {
     id: "fecundability",
-    level: 8,
+    level: 9,
     label: "Fekundabiliteettiaste",
     sublabel: "F_bio × M_repro",
     epistemicLevel: "E",
@@ -573,7 +648,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "asfr",
-    level: 8,
+    level: 9,
     label: "ASFR(ikä)",
     sublabel: "Ikäkohtainen hedelmällisyys",
     epistemicLevel: "E",
@@ -584,7 +659,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "tfr",
-    level: 8,
+    level: 9,
     label: "TFR",
     sublabel: "Kokonaishedelmällisyysluku",
     epistemicLevel: "E",
@@ -595,7 +670,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "childlessness",
-    level: 8,
+    level: 9,
     label: "Tahdoton lapsettomuus ↑",
     sublabel: "12–24 kk yrittämisen jälkeen",
     epistemicLevel: "E",
@@ -613,10 +688,10 @@ export const NODES: ChainNode[] = [
     ],
   },
 
-  // TASO 9
+  // TASO 10
   {
     id: "feedback",
-    level: 9,
+    level: 10,
     label: "Takaisinkytkentä",
     sublabel: "TFR↓ → urbanisaatio↑ → EMF↑",
     epistemicLevel: "M|C",
@@ -629,7 +704,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "urbanization",
-    level: 9,
+    level: 10,
     label: "Kaupungistuminen",
     sublabel: "TFR↓ → muutto kaupunkiin",
     epistemicLevel: "E",
@@ -648,7 +723,7 @@ export const NODES: ChainNode[] = [
   },
   {
     id: "device_adoption",
-    level: 9,
+    level: 10,
     label: "Laiteadoptio ↑",
     sublabel: "5G, IoT, puettavat laitteet",
     epistemicLevel: "E",
@@ -698,11 +773,40 @@ export const EDGES: ChainEdge[] = [
     epistemicLevel: "E",
     priority: "primary",
   },
-  // Taso 3→4
+  // Taso 3→4 (kolme kanavaa)
   {
     from: "two_channel",
+    to: "channel_elf",
+    label: "f < 1 kHz",
+    epistemicLevel: "E",
+    priority: "primary",
+  },
+  {
+    from: "two_channel",
+    to: "channel_if",
+    label: "1 kHz – 1 MHz",
+    epistemicLevel: "E",
+    priority: "primary",
+  },
+  {
+    from: "two_channel",
+    to: "channel_rf",
+    label: "> 1 MHz",
+    epistemicLevel: "E",
+    priority: "primary",
+  },
+  // Taso 4→5 (kanavat → kalvofysiikka)
+  {
+    from: "channel_elf",
     to: "membrane",
-    label: "EMF saavuttaa solun",
+    label: "kalvomodulaatio",
+    epistemicLevel: "E",
+    priority: "primary",
+  },
+  {
+    from: "channel_if",
+    to: "vgic",
+    label: "IFO + DEP",
     epistemicLevel: "E",
     priority: "primary",
   },
@@ -713,7 +817,7 @@ export const EDGES: ChainEdge[] = [
     epistemicLevel: "E",
     priority: "primary",
   },
-  // Taso 4→5
+  // Taso 5→6
   {
     from: "vgic",
     to: "pathway_a",
@@ -723,17 +827,17 @@ export const EDGES: ChainEdge[] = [
     priority: "primary",
   },
   {
-    from: "two_channel",
+    from: "channel_rf",
     to: "pathway_b",
-    label: "RF → spin-kemia",
+    label: "RPM → spin-kemia",
     derivative: "∂CRY/∂B_RF ≠ 0",
     epistemicLevel: "E",
     priority: "primary",
   },
   {
-    from: "two_channel",
+    from: "channel_rf",
     to: "pathway_c",
-    label: "EMF → pineaali",
+    label: "RF → pineaali",
     epistemicLevel: "E",
   },
   {

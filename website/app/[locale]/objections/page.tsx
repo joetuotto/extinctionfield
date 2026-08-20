@@ -110,6 +110,15 @@ const t: Record<Locale, Copy> = {
         boundary: "The intensity argument is an empirical claim. FDA approvals and IFO threshold measurements are empirical facts. The burden of proof is on the intensity argument to explain why FDA-approved non-thermal devices work.",
       },
       {
+        question: "TTFields proves IF effects only work at high intensity",
+        response: [
+          "TTFields uses dielectrophoresis (DEP) — a quadratic mechanism that requires field strengths of 100–300 V/m. Environmental IF exposure operates via a fundamentally different mechanism: Ion Forced Oscillation (IFO-VGIC), which is linear in field strength with a demonstrated threshold of 10⁻⁵ V/m (Panagopoulos 2025). Different mechanisms have different intensity requirements.",
+          "Pulsed LED-driver fields are more biologically active per watt than TTFields' pure sine wave (Campisi 2010: amplitude-modulated 900 MHz produced more ROS and DNA fragmentation than continuous wave). LED drivers produce pulsed, harmonically rich waveforms with 50,000+ switching transitions per second — each transition a potential Ca²⁺ spike via VGCC gating asymmetry.",
+          "The TTFields clinical program validates that IF frequencies disrupt cell division. It does not define the minimum intensity at which disruption begins — that question is answered by IFO biophysics, not by the DEP mechanism TTFields employs.",
+        ],
+        boundary: "This distinction is falsifiable: if IFO effects cannot be demonstrated below 1 V/m in controlled experiments, the environmental IF channel loses its primary mechanism.",
+      },
+      {
         question: "Could demographic and social causes explain period TFR change?",
         response: [
           "Yes. Education, contraception, housing, labour markets, partnership formation, migration, policy, desired family size, tempo and ART all affect observed fertility. A period TFR is a five-year-age-group sum, not a direct assay of gametes or conception.",
@@ -234,6 +243,15 @@ const t: Record<Locale, Copy> = {
           "Ionien pakotettu oskillaatio -mekanismi (Panagopoulos 2025, Frontiers in Public Health) osoittaa biologisen vasteen kynnyksen 10⁻⁵ V/m polarisoituneille, koherenteille kentille — viisi kertaluokkaa alle tyypillisen ympäristötason. Intensiteettikuilua ei ole. Kuilu oli olemassa vain malleissa, jotka olettivat termisten vaikutusten olevan ainoa mekanismi.",
         ],
         boundary: "Intensiteettiargumentti on empiirinen väite. FDA-hyväksynnät ja IFO-kynnysmittaukset ovat empiirisiä tosiasioita. Todistustaakka on intensiteettiargumentilla selittää, miksi FDA-hyväksytyt ei-termiset laitteet toimivat.",
+      },
+      {
+        question: "TTFields todistaa, että IF-vaikutukset toimivat vain korkealla intensiteetillä",
+        response: [
+          "TTFields käyttää dielektroforeesia (DEP) — neliöllistä mekanismia, joka vaatii 100–300 V/m kenttävoimakkuuksia. Ympäristön IF-altistus toimii täysin eri mekanismilla: ionien pakotetulla oskillaatiolla (IFO-VGIC), joka on lineaarinen kenttävoimakkuuden suhteen ja jonka osoitettu kynnys on 10⁻⁵ V/m (Panagopoulos 2025). Eri mekanismeilla on eri intensiteettivaatimukset.",
+          "Pulssimuotoiset LED-hakkurikentät ovat biologisesti aktiivisempia wattia kohti kuin TTFieldsin puhdas siniaalto (Campisi 2010: amplitudimoduloitu 900 MHz tuotti enemmän ROS:ia ja DNA-fragmentaatiota kuin jatkuva aalto). LED-hakkurit tuottavat pulssimuotoisia, harmonisesti rikkaita aaltomuotoja yli 50 000 kytkentäsiirtymällä sekunnissa — jokainen siirtymä potentiaalinen Ca²⁺-piikki VGCC-portituksen asymmetrian kautta.",
+          "TTFields-kliininen ohjelma validoi, että IF-taajuudet häiritsevät solunjakautumista. Se ei määrittele minimiintensiteettiä jolla häiriö alkaa — siihen kysymykseen vastaa IFO-biofysiikka, ei TTFieldsin käyttämä DEP-mekanismi.",
+        ],
+        boundary: "Tämä erottelu on falsifioitavissa: jos IFO-vaikutuksia ei voida osoittaa alle 1 V/m:n kontrolloiduissa kokeissa, ympäristön IF-kanava menettää ensisijaisen mekanisminsa.",
       },
       {
         question: "Voivatko demografiset ja sosiaaliset syyt selittää periodin TFR-muutoksen?",

@@ -28,6 +28,7 @@ export const LEGACY_EVIDENCE_COUNT = LEGACY_EVIDENCE_CATALOGUE.length;
 
 export const PATHWAY_LABELS: Record<string, Record<"en" | "fi", string>> = {
   A: { en: "VGIC → Ca²⁺ → ROS → sperm damage", fi: "VGIC → Ca²⁺ → ROS → siittiövaurio" },
+  A_mitotic: { en: "IF → DEP/IFO → mitotic spindle disruption", fi: "IF → DEP/IFO → mitoottisen karan häiriö" },
   B: { en: "RPM → CRY → circadian disruption", fi: "RPM → CRY → vuorokausirytmin häiriö" },
   C: { en: "Blood–brain barrier disruption", fi: "Veri-aivoesteen häiriö" },
   D: { en: "HPA → HPG cross-inhibition", fi: "HPA → HPG -ristiinhibitio" },

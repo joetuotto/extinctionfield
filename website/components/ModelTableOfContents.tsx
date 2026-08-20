@@ -37,6 +37,7 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
       sections: [
         { id: "premise", num: "§1", label: "Physics premise" },
         { id: "evo-calibration", num: "§1b", label: "Evolutionary calibration" },
+        { id: "three-channel-derivation", num: "§2b", label: "Three-channel derivation" },
         { id: "fieldstate", num: "§2", label: "FieldState" },
         { id: "static-interface-math", num: "§3", label: "Static interface" },
         { id: "organ-state", num: "§4", label: "Organ state" },
@@ -70,6 +71,7 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
       sections: [
         { id: "premise", num: "§1", label: "Fysiikan premissi" },
         { id: "evo-calibration", num: "§1b", label: "Evoluutionäärinen kalibraatio" },
+        { id: "three-channel-derivation", num: "§2b", label: "Kolmikanavajohdannainen" },
         { id: "fieldstate", num: "§2", label: "FieldState" },
         { id: "static-interface-math", num: "§3", label: "Staattinen rajapinta" },
         { id: "organ-state", num: "§4", label: "Elintila" },

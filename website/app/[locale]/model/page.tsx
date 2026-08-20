@@ -42,11 +42,11 @@ const t = {
       "is the normalized ambient exposure (0 = no infrastructure, 1 = saturation). The function approaches 1 asymptotically, meaning the marginal effect of personal devices diminishes as ambient exposure grows.",
     chiWherePrefix: "Where",
 
-    twoChTitle: "Two-channel exposure model",
+    twoChTitle: "Three-channel exposure model",
     twoChDesc:
-      "Total effective EMF exposure is the sum of two channels: the ambient field (cell towers, Wi-Fi infrastructure, power lines) and the personal component (phone, laptop, wearables) modulated by the chi coupling.",
+      "Total effective EMF exposure decomposes into three frequency channels — ELF (f < 1 kHz, membrane modulation), IF (1 kHz – 1 MHz, intracellular/mitotic), and RF (> 1 MHz, spin chemistry) — each weighted by its biological mechanism and modulated by the chi coupling.",
     twoChExplain:
-      "This means that in a country with near-zero cellular infrastructure, even heavy personal phone use contributes little total exposure (chi is near zero). Conversely, in a fully saturated environment, the personal component is added almost linearly.",
+      "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF. In a country with near-zero cellular infrastructure, even heavy personal phone use contributes little total exposure (chi is near zero). Conversely, in a fully saturated environment, the personal component is added almost linearly across all three channels.",
     twoChLayersTitle: "12 technology layers composing the ambient field",
     twoChLayersDesc:
       "The ambient term is not monolithic. It decomposes into 12 independent technology layers, each with its own driver, deployment timeline, and frequency profile. This decomposition improves the model's discriminative power because each layer acts as an orthogonal instrument.",
@@ -196,11 +196,11 @@ const t = {
       "on normalisoitu ympäristöaltistus (0 = ei infrastruktuuria, 1 = saturaatio). Funktio lähestyy asymptoottisesti arvoa 1, mikä tarkoittaa, että henkilökohtaisten laitteiden marginaalivaikutus pienenee ympäristöaltistuksen kasvaessa.",
     chiWherePrefix: "Missä",
 
-    twoChTitle: "Kaksikanavainen altistusmalli",
+    twoChTitle: "Kolmikanavainen altistusmalli",
     twoChDesc:
-      "Kokonaistehokas EMF-altistus on kahden kanavan summa: ympäristökenttä (tukiasemat, Wi-Fi-infrastruktuuri, voimalinjat) ja henkilökohtainen komponentti (puhelin, kannettava, puettavat laitteet) chi-kytkennällä moduloituna.",
+      "Kokonaistehokas EMF-altistus jakautuu kolmeen taajuuskanavaan — ELF (f < 1 kHz, kalvomodulaatio), IF (1 kHz – 1 MHz, solunjakautuminen/mitoottinen), RF (> 1 MHz, spin-kemia) — kukin painotettuna biologisen mekanisminsa mukaan ja chi-kytkennällä moduloituna.",
     twoChExplain:
-      "Tämä tarkoittaa, että maassa, jossa matkapuhelininfrastruktuuri on lähes nolla, jopa runsas puhelinkäyttö tuottaa vähän kokonaisaltistusta (chi on lähellä nollaa). Vastaavasti täysin saturoituneessa ympäristössä henkilökohtainen komponentti lisätään lähes lineaarisesti.",
+      "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF. Maassa, jossa matkapuhelininfrastruktuuri on lähes nolla, jopa runsas puhelinkäyttö tuottaa vähän kokonaisaltistusta (chi on lähellä nollaa). Vastaavasti täysin saturoituneessa ympäristössä henkilökohtainen komponentti lisätään lähes lineaarisesti kaikkien kolmen kanavan kautta.",
     twoChLayersTitle: "12 teknologiakerrosta ambient-kentän komponentteina",
     twoChLayersDesc:
       "Ambient-termi ei ole monoliittinen. Se hajoaa 12 itsenäiseen teknologiakerrokseen, joista jokaisella on oma ajurinsa, käyttöönottoaikataulunsa ja taajuusprofiilinsa. Tämä hajotus parantaa mallin diskriminointikykyä koska jokainen kerros toimii ortogonaalisena instrumenttina.",
@@ -450,14 +450,14 @@ export default async function ModelPage({
             </p>
           </section>
 
-          {/* Two-channel model */}
+          {/* Three-channel model */}
           <section id="two-channel-model" className="mb-14">
             <h2 className="text-xl font-semibold mb-4">{d.twoChTitle}</h2>
             <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
               {d.twoChDesc}
             </p>
             <Eq>
-              total = ambient + &chi;(ambient) &times; personal
+              cumEMF = w_ELF &middot; cumELF + w_IF &middot; cumIF + w_RF &middot; cumRF
             </Eq>
             <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed mb-6">
               {d.twoChExplain}

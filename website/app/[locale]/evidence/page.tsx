@@ -49,6 +49,8 @@ const COPY = {
     boundedTitle: "Bounded v2 records",
     boundedLead: "Each record states its field class, directness, translation scope and limitation. These are the primary evidence entries for the FieldState–ASFR v2 causal route.",
     classificationTitle: "How previously negative findings classify",
+    channelGroupTitle: "Three frequency channels",
+    channelGroupLead: "Each biological pathway maps to one of three frequency channels, defined by two biological cutoffs: f_c ~ 1 kHz (membrane RC) and f_RPM ~ 1 MHz (radical pair coherence).",
     extendedTitle: "Extended evidence catalogue",
     extendedLead: `${LEGACY_EVIDENCE_COUNT} additional records from the BERM v18 bibliography, retained for source-level review. Each is classified by its v18 pathway, evidence level, and v2 migration status.`,
     groups: {
@@ -252,6 +254,8 @@ const COPY = {
     boundedTitle: "Rajatut v2-tietueet",
     boundedLead: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Nämä ovat FieldState–ASFR v2 -kausaalireitin ensisijaiset evidenssitietueet.",
     classificationTitle: "Miten aiemmin negatiiviset havainnot luokittuvat",
+    channelGroupTitle: "Kolme taajuuskanavaa",
+    channelGroupLead: "Jokainen biologinen polku kuuluu yhteen kolmesta taajuuskanavasta, jotka määrittyvät kahdella biologisella rajataajuudella: f_c ~ 1 kHz (kalvon RC) ja f_RPM ~ 1 MHz (radikaaliparimekanismin koherenssi).",
     extendedTitle: "Laajennettu evidenssikatalogi",
     extendedLead: `${LEGACY_EVIDENCE_COUNT} lisätietuetta BERM v18 -bibliografiasta, säilytetty lähdetason tarkistusta varten. Jokainen on luokiteltu v18-polun, evidenssitason ja v2-migraatiostatuksen mukaan.`,
     groups: {
@@ -444,7 +448,20 @@ const COPY = {
   },
 } as const;
 
-const PATHWAY_ORDER = ["A", "B", "C", "D", "E", "F", "T", "RW", "BS", "PV", "S", "SE", "EHS", "H", "theory"];
+const PATHWAY_ORDER = ["A", "A_mitotic", "B", "C", "D", "E", "F", "T", "RW", "BS", "PV", "S", "SE", "EHS", "H", "theory"];
+
+const CHANNEL_GROUPS = {
+  en: [
+    { channel: "ELF", band: "f < 1 kHz", color: "border-blue-500/50", fda: "PEMF / TMS / VNS", pathways: ["A", "D", "E", "F"], desc: "Membrane modulation via H(f) low-pass filter" },
+    { channel: "IF", band: "1 kHz – 1 MHz", color: "border-orange-500/50", fda: "TTFields (Optune)", pathways: ["A_mitotic"], desc: "Intracellular via IFO-VGIC and DEP on mitotic spindle" },
+    { channel: "RF", band: "> 1 MHz", color: "border-red-500/50", fda: "PRF / Diathermy", pathways: ["B", "C"], desc: "Spin chemistry via CRY radical-pair mechanism" },
+  ],
+  fi: [
+    { channel: "ELF", band: "f < 1 kHz", color: "border-blue-500/50", fda: "PEMF / TMS / VNS", pathways: ["A", "D", "E", "F"], desc: "Kalvomodulaatio H(f)-alipäästösuodattimen kautta" },
+    { channel: "IF", band: "1 kHz – 1 MHz", color: "border-orange-500/50", fda: "TTFields (Optune)", pathways: ["A_mitotic"], desc: "Solunsisäinen IFO-VGIC:n ja DEP:n kautta mitoottiseen karaan" },
+    { channel: "RF", band: "> 1 MHz", color: "border-red-500/50", fda: "PRF / Diatermia", pathways: ["B", "C"], desc: "Spin-kemia CRY:n radikaaliparimekanismin kautta" },
+  ],
+} as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -599,6 +616,29 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         <h2 className="editorial-section-heading mb-4">{d.classificationTitle}</h2>
         <div className="max-w-4xl">
           <EvidenceClassification locale={activeLocale} />
+        </div>
+      </section>
+
+      {/* Three frequency channels grouping */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.channelGroupTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.channelGroupLead}</p>
+        <div className="grid gap-4 md:grid-cols-3 mb-4">
+          {(CHANNEL_GROUPS[activeLocale === "fi" ? "fi" : "en"]).map((ch) => (
+            <div key={ch.channel} className={`border-l-2 ${ch.color} bg-card-bg rounded-lg p-4`}>
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="font-semibold text-sm">{ch.channel}</span>
+                <span className="text-xs text-foreground-muted font-mono">{ch.band}</span>
+              </div>
+              <p className="text-xs text-foreground-muted mb-2">{ch.desc}</p>
+              <div className="text-xs text-foreground-muted/70 mb-2">FDA: {ch.fda}</div>
+              <div className="flex flex-wrap gap-1">
+                {ch.pathways.map((p) => (
+                  <span key={p} className="inline-block text-xs font-mono bg-card-border/30 rounded px-1.5 py-0.5">{p}</span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

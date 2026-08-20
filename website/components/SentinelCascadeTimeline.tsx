@@ -11,6 +11,37 @@ interface Point {
 }
 
 const MAX_LAG = 5;
+
+interface TechLayer {
+  id: string;
+  nameEn: string;
+  nameFi: string;
+  startYear: number;
+  endYear: number | null; // null = ongoing
+  detail: string;
+  color: string;
+}
+
+const TECH_LAYERS: TechLayer[] = [
+  {
+    id: "nexrad",
+    nameEn: "NEXRAD weather radar",
+    nameFi: "NEXRAD-säätutkajärjestelmä",
+    startYear: 1988,
+    endYear: 1997,
+    detail: "S-band 2.7 GHz, 250 kW–1 MW peak",
+    color: "#ef4444",
+  },
+  {
+    id: "led",
+    nameEn: "LED street lighting",
+    nameFi: "LED-katuvalaistus",
+    startYear: 2012,
+    endYear: null,
+    detail: "EU incandescent ban 2009–2012, street rollout 2012+",
+    color: "#8b5cf6",
+  },
+];
 const COUNTRY_NAMES_FI: Record<string, string> = {
   AUT: "Itävalta", BEL: "Belgia", CHE: "Sveitsi", CZE: "Tšekki", DEU: "Saksa",
   DNK: "Tanska", DZA: "Algeria", ESP: "Espanja", EST: "Viro", FIN: "Suomi",
@@ -106,6 +137,69 @@ function Figure({ compact, fi, lag, bee, alignedTfr }: FigureProps) {
             : `Annual changes in bee loss and TFR at a ${lag} year lag`
         }
       >
+        {/* Technology deployment layers */}
+        {TECH_LAYERS.map((layer) => {
+          const x1Raw = sx(layer.startYear);
+          const x2Raw = layer.endYear ? sx(layer.endYear) : W - pad.right;
+          const x1 = Math.max(x1Raw, pad.left);
+          const x2 = Math.min(x2Raw, W - pad.right);
+          // Skip entirely off-chart layers but show an annotation arrow at the edge
+          if (x2 <= pad.left) {
+            return (
+              <g key={layer.id}>
+                <title>{`${fi ? layer.nameFi : layer.nameEn}: ${layer.detail}`}</title>
+                <text
+                  x={pad.left + 2}
+                  y={beeTop - 2}
+                  fill={layer.color}
+                  fontSize={compact ? 7 : 6.5}
+                  opacity={0.55}
+                >
+                  {`← ${fi ? layer.nameFi : layer.nameEn} (${layer.startYear}–${layer.endYear ?? ""})`}
+                </text>
+              </g>
+            );
+          }
+          if (x1 >= W - pad.right) return null;
+          const bandWidth = x2 - x1;
+          return (
+            <g key={layer.id}>
+              <title>{`${fi ? layer.nameFi : layer.nameEn}: ${layer.detail}`}</title>
+              <rect
+                x={x1}
+                y={beeTop}
+                width={bandWidth}
+                height={tfrTop + bandH - beeTop}
+                fill={layer.color}
+                opacity={0.06}
+              />
+              {/* Left edge marker line */}
+              {x1Raw >= pad.left && (
+                <line
+                  x1={x1}
+                  y1={beeTop}
+                  x2={x1}
+                  y2={tfrTop + bandH}
+                  stroke={layer.color}
+                  strokeWidth={1}
+                  strokeDasharray="3,3"
+                  opacity={0.35}
+                />
+              )}
+              <text
+                x={Math.max(x1 + 3, pad.left + 2)}
+                y={tfrTop + bandH + 42}
+                fill={layer.color}
+                fontSize={compact ? 7 : 7}
+                opacity={0.6}
+                dominantBaseline="hanging"
+              >
+                {fi ? layer.nameFi : layer.nameEn}
+              </text>
+            </g>
+          );
+        })}
+
         {[
           {
             top: beeTop,
