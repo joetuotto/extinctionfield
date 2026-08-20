@@ -3,6 +3,7 @@ import Link from "next/link";
 import { GitBranch } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { FieldStateStatus } from "@/components/FieldStateStatus";
+import { SpermCascadeChart } from "@/components/SpermCascadeChart";
 
 type Principle = { num: string; title: string; text: string };
 type Pathway = {
@@ -239,6 +240,10 @@ export default async function ModelPage({
         <p className="mt-4 max-w-4xl rounded-lg border border-accent/20 bg-accent/5 p-3 text-xs leading-relaxed text-foreground-muted">
           {d.pathwayNote}
         </p>
+      </section>
+
+      <section className="mt-14 border-t border-card-border pt-6">
+        <SpermCascadeChart locale={language} />
       </section>
 
       <section className="mt-14 border-t border-card-border pt-6">
