@@ -18,8 +18,13 @@ const COPY = {
     csliNote: "All results are correlational [C] from BERM internal analyses. They are not peer-reviewed. A common confounder (e.g. agricultural chemicals, climate change) could produce the same pattern without EMF. Lag values are discovery-scan peaks, not pre-locked constants.",
 
     nikeTitle: "Spatial gradient: Cold War radar sites and bird populations",
-    nikeText: "Spatial analysis of 1,381 Breeding Bird Survey routes near 268 Cold War Nike radar/fire control sites (median start 1956) reveals a BERM-direction gradient: routes within 50 km of active sites showed −0.526%/year population trends versus +0.096%/year for routes >100 km away (difference 0.622 percentage points, Welch p = 0.031). Continuous distance correlation: Spearman ρ = +0.088, p = 0.001 — farther from radar, better bird trends. Species richness signal persists in within-state permutation (p = 0.006).",
+    nikeText: "Spatial analysis of 1,381 Breeding Bird Survey routes near 268 Cold War Nike radar/fire control sites (median start 1956) reveals a BERM-direction gradient: routes within 50 km of active sites showed −0.526%/year population trends versus +0.096%/year for routes >100 km away (difference 0.622 percentage points, Welch p = 0.031). Continuous distance correlation: Spearman ρ = +0.088, p = 0.001 — farther from radar, better bird trends.",
+    nikeRichnessNote: "Species richness and abundance diverge: the richness gradient persists in within-state permutation (p = 0.006), but the abundance trend weakens when state-level confounders are controlled (p = 0.103). This means radar proximity predicts which species are present more reliably than how many individuals survive. The bird signal is detrended (slow, structural) — it does not appear in first-difference (fast, year-to-year) analysis.",
     nikeCounterText: "However, site closure did not predict bird recovery, and active site count correlated with higher bird abundance (possible infrastructure-habitat or siting bias). This constrains interpretation: proximity gradient exists but simple 'more sites = more damage' does not hold.",
+
+    frogTitle: "Amphibians near radar: an inverted signal",
+    frogText: "Nike-NAAMP frog survey data shows an unexpected inversion: frog calling indices trend better near active Nike sites (+0.040/decade) than farther away (+0.002/decade, difference p = 0.045). This is the opposite of the bird result and requires explanation.",
+    frogInterpretation: "Lindgren's χ(Ā) framework offers a possible interpretation: amphibians occupy a different biophysical niche than birds. Their semi-aquatic lifecycle, moist skin conductance and ground-level habitat place them in a different electromagnetic coupling regime. If the relevant field parameter for frogs is not the same as for birds, the same spatial gradient can produce opposite biological responses. This does not confirm the EMF hypothesis — it demonstrates that single-species extrapolation is unreliable and multi-species panels with species-specific transfer functions are required.",
 
     covidTitle: "COVID lockdown: an informative counter-result",
     covidText: "Source-verified COLOSS data does not show bee colony improvement during COVID lockdowns: winter loss increased by 2.27 percentage points (24/35 countries worsened, p = 0.043). BBS birds also declined 2.8–3.0% in 2020–22. This is an informative negative result: it shows that the simple 'lockdown → ambient EMF ↓ → sentinels improve' prediction does not hold, likely because household RF traffic increased while outdoor activity decreased.",
@@ -47,8 +52,13 @@ const COPY = {
     csliNote: "Kaikki tulokset ovat korrelatiivisia [C] BERM:n sisäisistä analyyseistä. Niitä ei ole vertaisarvioitu. Yhteinen sekoittaja (esim. maatalouskemikaalit, ilmastonmuutos) voisi tuottaa saman kuvion ilman EMF:ää. Viivearvot ovat discovery-haun huippuja, eivät ennalta lukittuja vakioita.",
 
     nikeTitle: "Spatiaalinen gradientti: kylmän sodan tutka-asemat ja lintupopulaatiot",
-    nikeText: "1 381 Breeding Bird Survey -reitin spatiaalinen analyysi 268 kylmän sodan Nike-tutka/tulenjohtokohteen lähellä (mediaani aloitusvuosi 1956) paljastaa BERM-suuntaisen gradientin: reitit alle 50 km:n päässä aktiivisista kohteista osoittivat −0,526 %/vuosi populaatiotrendejä verrattuna +0,096 %/vuosi yli 100 km:n päässä (ero 0,622 prosenttiyksikköä, Welch p = 0,031). Jatkuva etäisyyskorrelaatio: Spearman ρ = +0,088, p = 0,001 — kauempana tutkasta, paremmat lintutrendit. Lajirikkaussignaali säilyy osavaltion sisäisessä permutaatiossa (p = 0,006).",
+    nikeText: "1 381 Breeding Bird Survey -reitin spatiaalinen analyysi 268 kylmän sodan Nike-tutka/tulenjohtokohteen lähellä (mediaani aloitusvuosi 1956) paljastaa BERM-suuntaisen gradientin: reitit alle 50 km:n päässä aktiivisista kohteista osoittivat −0,526 %/vuosi populaatiotrendejä verrattuna +0,096 %/vuosi yli 100 km:n päässä (ero 0,622 prosenttiyksikköä, Welch p = 0,031). Jatkuva etäisyyskorrelaatio: Spearman ρ = +0,088, p = 0,001 — kauempana tutkasta, paremmat lintutrendit.",
+    nikeRichnessNote: "Lajirikkaus ja runsaus eroavat: lajirikkausgradientti säilyy osavaltion sisäisessä permutaatiossa (p = 0,006), mutta runsaustrendi heikkenee osavaltiotason sekoittajien kontrolloinnissa (p = 0,103). Tämä tarkoittaa, että tutkan läheisyys ennustaa luotettavammin mitä lajeja on läsnä kuin kuinka monta yksilöä selviää. Lintusignaali on detrendattu (hidas, rakenteellinen) — se ei näy ensimmäisen differenssin (nopea, vuosi-vuosi) analyysissä.",
     nikeCounterText: "Kohteiden sulkeutuminen ei kuitenkaan ennustanut lintujen elpymistä, ja aktiivisten kohteiden lukumäärä korreloi korkeamman linturunsauden kanssa (mahdollinen infrastruktuuri-habitaatti- tai sijoitusharha). Tämä rajoittaa tulkintaa: läheisyysgradientti on olemassa, mutta yksinkertainen 'enemmän kohteita = enemmän vahinkoa' ei päde.",
+
+    frogTitle: "Sammakot tutka-asemien lähellä: käänteinen signaali",
+    frogText: "Nike-NAAMP-sammakkokyselydatan mukaan sammakoiden kutsuindeksit kehittyvät odottamattomasti PAREMMIN aktiivisten Nike-kohteiden lähellä (+0,040/vuosikymmen) kuin kauempana (+0,002/vuosikymmen, ero p = 0,045). Tämä on lintujen tuloksen vastakohta ja vaatii selityksen.",
+    frogInterpretation: "Lindgrenin χ(Ā)-kehys tarjoaa mahdollisen tulkinnan: sammakot elävät erilaisessa biofysikaalisessa niksissä kuin linnut. Niiden puolivesielämä, kostea ihojohtavuus ja maanpintatason elinympäristö asettavat ne erilaiseen sähkömagneettiseen kytkentäregiimiin. Jos sammakoille relevantti kenttäparametri ei ole sama kuin linnuille, sama spatiaalinen gradientti voi tuottaa vastakkaisia biologisia vasteita. Tämä ei vahvista EMF-hypoteesia — se osoittaa, että yhdestä lajista ekstrapolointi on epäluotettavaa ja tarvitaan monilajipaneelit lajikohtaisilla siirtofunktioilla.",
 
     covidTitle: "COVID-lockdown: informatiivinen vastatulos",
     covidText: "Lähdevarmennettu COLOSS-data ei näytä mehiläispesien paranemista COVID-lockdownien aikana: talvihäviö kasvoi 2,27 prosenttiyksikköä (24/35 maata paheni, p = 0,043). BBS-linnut myös laskivat 2,8–3,0 % vuosina 2020–22. Tämä on informatiivinen negatiivinen tulos: se osoittaa, että yksinkertainen 'lockdown → ambientin EMF ↓ → sentinellit paranevat' -ennuste ei päde, todennäköisesti koska kotitalouksien RF-liikenne kasvoi samalla kun ulkona liikkuminen väheni.",
@@ -105,9 +115,19 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
         <h2 className="editorial-section-heading mb-4">{d.nikeTitle}</h2>
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
           <p>{d.nikeText}</p>
+          <p className="text-xs leading-relaxed border-l-2 border-foreground-muted/20 pl-4">{d.nikeRichnessNote}</p>
           <div className="rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
             <p className="text-xs text-foreground-muted leading-relaxed">{d.nikeCounterText}</p>
           </div>
+        </div>
+      </section>
+
+      {/* Frog inverted signal */}
+      <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.frogTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p>{d.frogText}</p>
+          <p className="text-xs leading-relaxed border-l-2 border-foreground-muted/20 pl-4">{d.frogInterpretation}</p>
         </div>
       </section>
 
