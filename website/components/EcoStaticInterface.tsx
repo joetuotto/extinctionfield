@@ -734,7 +734,7 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         <EcoCausalVisuals locale={language} />
         <div className="mt-7 grid gap-x-6 gap-y-7 md:grid-cols-2 xl:grid-cols-4">
           {d.fieldClasses.map((fieldClass) => (
-            <article key={fieldClass.title} className="border-t border-card-border pt-4">
+            <article key={fieldClass.title} className="min-w-0 border-t border-card-border pt-4">
               <p className="font-mono-num text-xs font-semibold text-accent">{fieldClass.symbol}</p>
               <h3 className="mt-2 font-serif text-[1.05rem] font-semibold leading-snug tracking-[-0.012em]">{fieldClass.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{fieldClass.text}</p>
@@ -752,7 +752,7 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         <SectionHeader label={label.claims} title={d.ladderTitle} lead={d.ladderLead} />
         <div className="mt-7 grid gap-x-6 gap-y-7 lg:grid-cols-4">
           {d.ladder.map((stage) => (
-            <article key={stage.step} className="border-t border-card-border pt-4">
+            <article key={stage.step} className="min-w-0 border-t border-card-border pt-4">
               <p className={`editorial-kicker ${stage.tone === "direct" ? "text-status-confirmed" : "text-status-partial"}`}>
                 {stage.tone === "direct" ? label.observed : label.testable}
               </p>
@@ -779,7 +779,7 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         <SectionHeader label={label.systems} title={d.systemsTitle} lead={d.systemsLead} />
         <div className="mt-7 grid gap-x-8 gap-y-7 md:grid-cols-2">
           {d.systems.map((system) => (
-            <article key={system.id} className="border-t border-card-border pt-4">
+            <article key={system.id} className="min-w-0 border-t border-card-border pt-4">
               <p className="editorial-kicker text-accent">{system.id}</p>
               <h3 className="mt-2 font-serif text-[1.12rem] font-semibold leading-snug tracking-[-0.012em]">{system.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{system.text}</p>
@@ -797,7 +797,7 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         <SectionHeader label={label.measurement} title={d.reconstructionTitle} lead={d.reconstructionLead} />
         <div className="mt-7 grid gap-x-7 gap-y-8 md:grid-cols-2 xl:grid-cols-3">
           {d.staticMetrics.map((metric) => (
-            <article key={metric.title} className="border-t border-card-border pt-4">
+            <article key={metric.title} className="min-w-0 border-t border-card-border pt-4">
               <p className="font-mono-num text-xs font-semibold text-accent">{metric.symbol}</p>
               <h3 className="mt-2 font-serif text-[1.05rem] font-semibold leading-snug tracking-[-0.012em]">{metric.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{metric.text}</p>
@@ -815,7 +815,7 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         <SectionHeader label={label.coupling} title={d.couplingTitle} lead={d.couplingLead} />
         <div className="mt-7 grid gap-x-7 gap-y-8 lg:grid-cols-3">
           {d.couplingRoutes.map((route) => (
-            <article key={route.id} className="border-t border-accent/35 pt-4">
+            <article key={route.id} className="min-w-0 border-t border-accent/35 pt-4">
               <p className="font-mono-num text-xs text-accent">{route.id}</p>
               <h3 className="mt-2 font-serif text-[1.05rem] font-semibold leading-snug tracking-[-0.012em]">{route.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{route.text}</p>
@@ -828,7 +828,7 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         <SectionHeader label={label.evidence} title={d.evidenceTitle} />
         <div className="mt-7 grid gap-x-7 gap-y-8 lg:grid-cols-3">
           {d.evidence.map((card) => (
-            <article key={card.title} className={`border-t pt-4 ${card.tone === "direct" ? "border-status-confirmed/55" : "border-status-partial/55"}`}>
+            <article key={card.title} className={`min-w-0 border-t pt-4 ${card.tone === "direct" ? "border-status-confirmed/55" : "border-status-partial/55"}`}>
               <p className={`editorial-kicker ${card.tone === "direct" ? "text-status-confirmed" : "text-status-partial"}`}>{card.tag}</p>
               <h3 className="mt-3 font-serif text-[1.12rem] font-semibold leading-snug tracking-[-0.012em]">{card.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{card.text}</p>
@@ -860,7 +860,7 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
         </p>
         <div className="mt-7 grid gap-x-7 gap-y-8 lg:grid-cols-3">
           {d.predictions.map((prediction) => (
-            <article key={prediction.id} className="border-t border-card-border pt-4">
+            <article key={prediction.id} className="min-w-0 border-t border-card-border pt-4">
               <p className="font-mono-num text-xs text-accent">{prediction.id}</p>
               <h3 className="mt-2 font-serif text-[1.05rem] font-semibold leading-snug tracking-[-0.012em]">{prediction.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{prediction.text}</p>
