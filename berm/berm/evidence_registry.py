@@ -2,8 +2,10 @@
 
 ``data/registry/source_registry.csv`` remains the provenance registry for
 model input datasets.  This separate registry records biomedical and physics
-studies used to justify *causal-node structure*.  A paper in this file never
-becomes an active prediction parameter merely by being listed here.
+studies used to justify *causal-node structure*.  A source-qualified record is
+active non-numeric evidence: it constrains the graph, direction, field-feature
+signature, life stage or memory family.  It never becomes an unexamined single
+prediction parameter merely by being listed here.
 
 Each record names the exact causal node(s), study system, field class,
 directness and translation boundary.  This prevents, for example, an avian
@@ -12,9 +14,10 @@ coefficient, while retaining its strong relevance to the Lindgren vector/RPM
 premise.
 
 The historical 129-record bibliography is loaded through a separate migration
-manifest below.  It remains queryable and source-anchored, but it is never
-merged into the active record set or converted into a parameter merely because
-it has a legacy pathway label.
+manifest below.  It remains queryable and source-anchored.  Semantic placement
+and source qualification can make an individual legacy source an active broad
+constraint or candidate prior; a legacy pathway label alone never creates a
+numerical parameter or silently collapses uncertainty.
 """
 
 from __future__ import annotations
@@ -120,10 +123,11 @@ class LegacyEvidenceMigrationRecord:
     """One preserved, source-qualified legacy bibliography record.
 
     This object is intentionally distinct from :class:`FieldStateEvidenceRecord`.
-    A migrated record retains provenance and a semantic placement decision, but
-    it is not active structural evidence or a parameter source. Empty
-    ``canonical_nodes`` deliberately preserve context-only sources without
-    inventing a causal edge.
+    A migrated record retains provenance and a semantic placement decision.
+    The evidence-constraint ledger can promote a source-qualified record to an
+    active broad prior while preserving its legacy origin; it never makes one a
+    numerical parameter by default. Empty ``canonical_nodes`` deliberately
+    preserve discovery/context sources without inventing a causal edge.
     """
 
     legacy_id: str
@@ -310,8 +314,9 @@ def legacy_evidence_summary(
         "by_status": dict(sorted(by_status.items())),
         "by_model_domain": dict(sorted(by_domain.items())),
         "interpretation": (
-            "Preserved source-qualified bibliography context; migration records are not "
-            "active FieldState evidence, parameters, or TFR coefficients."
+            "Preserved bibliography with source-by-source semantic placement. Individual "
+            "records may be active broad priors after qualification; neither migration nor "
+            "qualification creates a numerical FieldState or TFR coefficient by itself."
         ),
     }
 

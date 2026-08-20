@@ -7,7 +7,15 @@ a stable semantic identifier.  New biology and evidence are therefore
 attached to stable semantic node IDs, not to a display letter.
 
 This registry is structural: it identifies the causal graph and data contracts.
-It does not assert an effect size or activate a TFR coefficient.
+It does not assert a universal effect size or activate a TFR coefficient.
+
+``calibration_status`` is deliberately a *coefficient-resolution* label, not
+an evidence-admission label.  A node marked ``structural_only`` can therefore
+still have active physics, mechanism, animal, human-endpoint, sentinel or
+ecological evidence constraining its topology, sign, lag family, susceptibility
+or FieldState signature.  ``requires_*`` identifies what would narrow a
+node-specific numerical endpoint mapping; it must never be read as “no
+evidence” or “zero effect”.
 """
 
 from __future__ import annotations
@@ -18,7 +26,12 @@ from typing import Iterable
 
 @dataclass(frozen=True)
 class CausalNode:
-    """One stable node in the Lindgren → ASFR causal graph."""
+    """One stable node in the Lindgren → ASFR causal graph.
+
+    ``calibration_status`` says only how directly a numerical mapping for this
+    node has been resolved.  It is intentionally separate from the evidence
+    registry and its active topology/direction/lag/transfer constraints.
+    """
 
     id: str
     label: str

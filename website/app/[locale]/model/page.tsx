@@ -32,12 +32,12 @@ type Copy = {
 
 const t: Record<Locale, Copy> = {
   en: {
-    title: "BERM FieldState–ASFR-v2",
+    title: "BERM model specification",
     subtitle:
-      "A measurement-aware research specification from a physics premise to organ-specific reproductive states, age-specific fertility and TFR.",
-    metaTitle: "BERM FieldState–ASFR-v2 – Extinction Field",
+      "FieldState–ASFR v2 architecture with BERM v18 evidence and predictions. A measurement-aware research specification from a physics premise to organ-specific reproductive states, age-specific fertility and TFR.",
+    metaTitle: "BERM model specification – Extinction Field",
     metaDescription:
-      "The measurement-aware FieldState–ASFR-v2 specification of the Bio-Electromagnetic Reproductive Model.",
+      "The FieldState–ASFR-v2 architecture with BERM v18 evidence and predictions.",
     architectureTitle: "What the active model does — and does not — claim",
     architecture: [
       {
@@ -83,12 +83,12 @@ const t: Record<Locale, Copy> = {
       "The equations below state the active data contract, the organ-state structure and the boundary between a descriptive timing proxy and a calibratable FieldState result.",
   },
   fi: {
-    title: "BERM FieldState–ASFR-v2",
+    title: "BERM-mallin määrittely",
     subtitle:
-      "Mittaustietoinen tutkimusmäärittely fysiikan premissistä elinkohtaisiin lisääntymistiloihin, ikäkohtaiseen hedelmällisyyteen ja TFR:ään.",
-    metaTitle: "BERM FieldState–ASFR-v2 – Extinction Field",
+      "FieldState–ASFR v2 -arkkitehtuuri BERM v18 -evidenssillä ja ennusteilla. Mittaustietoinen tutkimusmäärittely fysiikan premissistä elinkohtaisiin lisääntymistiloihin, ikäkohtaiseen hedelmällisyyteen ja TFR:ään.",
+    metaTitle: "BERM-mallin määrittely – Extinction Field",
     metaDescription:
-      "Bio-sähkömagneettisen lisääntymismallin mittaustietoinen FieldState–ASFR-v2-määrittely.",
+      "FieldState–ASFR-v2-arkkitehtuuri BERM v18 -evidenssillä ja ennusteilla.",
     architectureTitle: "Mitä aktiivinen malli väittää — ja mitä se ei väitä",
     architecture: [
       {
@@ -162,7 +162,7 @@ export default async function ModelPage({
       <header className="mb-12 max-w-4xl border-b border-card-border pb-9">
         <div className="editorial-kicker mb-4 inline-flex items-center gap-2 text-accent">
           <GitBranch size={14} aria-hidden="true" />
-          FieldState–ASFR-v2
+          FieldState–ASFR v2 architecture · BERM v18 evidence and predictions
         </div>
         <h1 className="mb-4 text-4xl sm:text-5xl">{d.title}</h1>
         <p className="editorial-deck">{d.subtitle}</p>

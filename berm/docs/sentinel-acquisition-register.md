@@ -2,7 +2,10 @@
 
 Päivitetty: 2026-08-19  
 Tarkoitus: hankinnan ja käyttökelpoisuuden läpinäkyvä rekisteri — **ei
-todisterekisteri eikä kausaalinen tulkinta**.
+itsenäinen todisterekisteri eikä kausaalinen tulkinta**. Tässä annetut
+sentinelli-/F1–F6-statukset kuvaavat vain suoran numeerisen kalibroinnin
+valmiutta; lähteen aktiivinen topologia-, suunta-, viive-, endpoint- tai
+transfer-rooli kirjataan erikseen evidenssirekisteriin.
 
 Tässä erotetaan toisistaan (a) paikallisesti hallussa oleva, tarkistussummalla
 lukittu aineisto, (b) avoin mutta vain rajattuun tekniseen käyttöön sopiva
@@ -43,8 +46,10 @@ Tämä on käyttökelpoinen, toistettava eläinlääketieteellinen **havaintoker
 mutta ei koirasperma- eikä hedelmällisyyspaneeli. Paikkakoordinaatit ovat
 anonymisoituja, sterilisaatiointerventio muuttaa suoraan
 lisääntymispopulaatiota, eikä aineistossa ole RF-dosimetriaa, kemiallisia
-kovariaatteja tai ihmispaneelia. Se ei siksi syötä CSLI:tä, aktiivista
-ennustetta eikä F1–F6-testiä. Tekniset yksityiskohdat ovat
+kovariaatteja tai ihmispaneelia. Se ei siksi syötä suoraa CSLI-kerrointa,
+aktiivista yksinään tehtävää FieldState-ennustetta eikä F1–F6-testiä. Sen
+eläinlääketieteellinen endpoint- ja interventioasetelmatieto säilyy silti
+aktiivisena cross-species/protocol constraintina. Tekniset yksityiskohdat ovat
 [`veterinary-sentinel-data.md`](veterinary-sentinel-data.md)-dokumentissa.
 
 ### Fernández-López ym. 2022: karjun siemennesteen CASA–hedelmällisyysbenchmark
@@ -73,7 +78,9 @@ single-site, neljän kuukauden mittainen ja valikoitu minimitason
 siemennesteen laadun mukaan. Siitä puuttuvat RF/EMF-dosimetria, ympäristö- ja
 kemialliset kovariaatit sekä pitkä viive- tai monipaikkapaneeli. Sen tila on
 siis `BENCHMARK_ONLY_NOT_SENTINEL` ja F1–F6-kelpoisuus `NOT_ELIGIBLE`, vaikka
-raakadata ja toistettava erillinen muunnos ovat hallussa. Tarkka
+raakadata ja toistettava erillinen muunnos ovat hallussa. Tämä on suoran
+FieldState→endpoint-kertoimen raja, ei havaittuun CASA→fertility-siirtosuhteeseen
+liittyvän evidenssin poissulku. Tarkka
 aineistokuvaus on [`seminology-benchmark.md`](seminology-benchmark.md)-dokumentissa.
 Pidemmät, monipaikkaiset ja käyttöluvan vaativat seminologiaehdokkaat on
 koottu erikseen [`seminology-candidate-ledger.md`](seminology-candidate-ledger.md)-lokiin;
@@ -92,8 +99,11 @@ karttaa, mutta kumpikaan ei mittaa RF-annosta eikä suoraa hedelmällisyyttä:
 | [IFCE/SIRE](ifce-sire-equine-breeding-benchmark.md) | 114 226 Ranskan département×vuosi×rotu×tyyppi-riviä, 2008–2024: peitetyt tammat, syntymät ja aktiiviset orit | Kolmella mittarilla on eri aluemerkitys; niitä ei yhdistetä `births / mares`-luvuksi. Ei yksilö-/kohorttilinkkiä, RF:tä, seminaatiota tai tiineysvastetta. |
 
 Molemmat tuotteet ovat erillisiä, toistettavia benchmarkeja. Ne pysyvät
-`NOT_ELIGIBLE`-tilassa F1–F6-testien suhteen, eivätkä ne syötä sentinelliä,
-CSLI:tä, readinessiä tai aktiivista ennustetta.
+`NOT_ELIGIBLE`-tilassa suorien F1–F6-testien suhteen eivätkä itse muodosta
+RF-kerrointa tai CSLI-lukua. Pitkät, lajikohtaiset populaatio-, jalostus- ja
+syntymäsarjat säilyvät kuitenkin aktiivisina ekologisen valinnan,
+historiallisten allekirjoitusten ja FieldState-siirtohypoteesien
+kontekstikerroksina, kun liitosgeometria ja kovariaatit määritellään erikseen.
 
 ## Nykyiset, rajalliset vertailukerrokset
 

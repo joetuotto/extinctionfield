@@ -10,10 +10,14 @@ hevosjalostustaulukosta. Se tuottaa pitkän muotoisen
 `département × vuosi × rotu × tyyppi × mittari` -paneelin, jossa alkuperäiset
 lähdekentät säilyvät jokaisella rivillä.
 
-Tämä ei ole sentinelliaineisto eikä RF/EMF-aineisto. Se ei ole kausaalinen
-testi, CSLI-, readiness- tai ennustepolun syöte, eikä sitä saa esittää
-sellaisena. Kaikki tuotokset on pakotettu tilaan
-`BENCHMARK_ONLY_NOT_SENTINEL` ja `NOT_ELIGIBLE` F1--F6-arvioinnissa.
+Tämä ei ole suora sentinelliaineisto eikä RF/EMF-aineisto. Se ei yksin ole
+kausaalinen RF-testi, CSLI-kerroin tai valmis ennustepolun syöte, eikä sitä saa
+esittää sellaisena. Kaikki tuotokset ovat siksi
+`BENCHMARK_ONLY_NOT_SENTINEL` ja `NOT_ELIGIBLE` suorassa F1--F6-arvioinnissa.
+Niiden säilytetyt hevosjalostuksen ja syntymien aikasarjat ovat silti aktiivista
+endpoint- ja historiallisen/lajikohtaisen allekirjoituksen kontekstia: ne voivat
+päivittää FieldState-siirto- ja ekologisia ennusteita, kun erillinen
+alue-/liikkuvuus-/aikacrosswalk sekä kovariaatit ovat näkyvästi määriteltyjä.
 
 ## Viralliset lähteet ja lukittu raakaversio
 
@@ -105,9 +109,12 @@ hyväksytään, mutta erilaisen tiedoston ylikirjoitus vaatii nimenomaisen
 
 Paneeli on silti arvokas benchmark, koska se on virallinen, pitkä,
 aluerakenteinen ja numeerinen jalostusaktiivisuuden/syntymien aineisto. Sen
-oikea käyttö on testata myöhempää, ennalta määriteltyä kohortti- ja viivemallia
-vasta sen jälkeen, kun paikkasemantiikka, rotuavaimet, kohorttiviive ja
-ulkopuoliset altistus- sekä häiriötekijäaineistot on hankittu ja auditoitu.
+oikea käyttö on (i) säilyttää hevoskohtainen endpoint- ja
+populaatioallekirjoitus aktiivisena transfer/evolutionary-context -kerroksena
+ja (ii) testata myöhempää, ennalta määriteltyä kohortti- ja viivemallia vasta
+sen jälkeen, kun paikkasemantiikka, rotuavaimet, kohorttiviive ja ulkopuoliset
+altistus- sekä häiriötekijäaineistot on hankittu ja auditoitu. Ensimmäinen
+käyttö ei väitä numeerista RF-kerrointa; toinen voi kaventaa sitä.
 
 ## Lähderekisteri
 

@@ -5,8 +5,12 @@ Versio: 2026-08-19
 Putki: seminology_benchmark@v1.0.0
 
 Tämä on avoimen Fernández-López ym. -aineiston toistettava muunnos
-seminologian analyysiä varten. Se ei ole sentinelliaineisto eikä BERM:n
-altistus-, CSLI-, readiness- tai ennustepolun syöte.
+seminologian analyysiä varten. Se ei ole suora FieldState-altistus- tai
+CSLI-kerroinaineisto eikä yksin BERM:n ennustepolun syöte. Sen havaittu
+CASA→inseminaatio-/porsimistulos on kuitenkin aktiivinen
+siittiötoiminto→hedelmällisyys-siirtosuhteen ja mittausmallin evidenssi, joka
+voidaan yhdistää myöhemmin FieldState-haaraan ilman että neljän kuukauden
+single-site-aineistoa esitetään RF-vasteena.
 
 Lähde on [Mendeley Data v5](https://doi.org/10.17632/jd38jhxpg6.5),
 CC-BY-4.0. Siihen liittyvä julkaisu on
@@ -68,7 +72,9 @@ Muunnos kirjoittaa vain uudelleenrakennettavat, gitissä sivuutetut tiedostot:
 Konekielinen skeema on
 berm/data/schemas/seminology_boar_benchmark.schema.json. Se lukitsee
 raakarivimäärät, tarvittavat provenance-kentät ja sen, että status on
-BENCHMARK_ONLY_NOT_SENTINEL sekä F1--F6-tila NOT_ELIGIBLE.
+BENCHMARK_ONLY_NOT_SENTINEL sekä F1--F6-tila NOT_ELIGIBLE. Nämä ovat suoran
+FieldState→endpoint-kalibroinnin rajoja, eivät CASA- ja fertiiliyspäätetapahtuman
+merkityksen hylkäys.
 
 Rakennus komentoriviltä:
 
@@ -92,9 +98,10 @@ ylikirjoiteta ilman erikseen annettua --replace-lippua.
 Siksi benchmarkin oikea käyttö on tarkistaa, että myöhempi
 semen-feature-to-fertility-malli on teknisesti reprodusoitava, että
 solutasolta ejakulaattitasolle tehty aggregointi on eksplisiittinen ja että
-raakalähteen outcome-määritelmän epävarmuus säilyy näkyvänä. Sen käyttäminen
-EMF-vaikutuksen tai sentinelliviiveen näyttönä olisi aineiston asetelman
-ylitulkintaa.
+raakalähteen outcome-määritelmän epävarmuus säilyy näkyvänä. Se voi päivittää
+eläinlajin endpoint-siirtoa ja mittausmallia, mutta sen käyttäminen yksinään
+EMF-vaikutuskertoimen tai alueellisen sentinelliviiveen näyttönä olisi
+asetelman ylitulkintaa.
 
 ## Seuraava hankinta
 

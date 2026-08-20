@@ -3,8 +3,11 @@
 The DEFRA Farm Animal Genetic Resources (FAnGR) CSV is an annual UK breed
 inventory.  It reports breeding-structure counts (for example dams, sires,
 females and effective population size), not individual fertility, semen or RF
-measurements.  It is therefore a provenance-locked benchmark only and never a
-sentinel, CSLI or active-prediction input.
+measurements.  It is therefore not a direct fertility/RF sentinel, CSLI
+coefficient dataset or standalone FieldState predictor.  It remains a
+provenance-locked animal population-structure layer that can inform
+ecological-selection and historical species-signature hypotheses once an
+explicit FieldState/covariate crosswalk is supplied.
 """
 
 from __future__ import annotations
@@ -262,6 +265,12 @@ def build_fangr_benchmark_artifacts(
             "f1_f6": F1_F6_ELIGIBILITY,
             "reason": "NO_INDIVIDUAL_FERTILITY_OR_SEMEN_ENDPOINT_AND_NO_RF_MEASUREMENT",
         },
+        "evidence_status": "ACTIVE_ECOLOGICAL_STRUCTURE_AND_HISTORICAL_SIGNATURE_CONTEXT_NOT_DIRECT_F1_F6_CALIBRATION",
+        "evidence_roles": [
+            "breed/population-structure ecological context",
+            "historical species-signature and ecological-selection candidate outcome",
+            "transfer-prior context after an explicit FieldState/covariate crosswalk",
+        ],
         "source": {
             "source_id": SOURCE_ID,
             "source_url": SOURCE_URL,

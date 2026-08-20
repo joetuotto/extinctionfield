@@ -56,7 +56,6 @@ export function Navigation({ locale }: { locale: string }) {
             })}
           </ul>
           <div className="flex items-center gap-2 ml-2 border-l border-border pl-4">
-            <ModelVersionSwitcher locale={locale} />
             <LanguageSwitcher locale={locale} />
             <ThemeToggle />
           </div>
@@ -92,6 +91,12 @@ export function Navigation({ locale }: { locale: string }) {
               )}
             </svg>
           </button>
+        </div>
+      </div>
+
+      <div className="hidden border-t border-border/70 xl:block">
+        <div className="mx-auto flex max-w-5xl justify-end px-6 py-2">
+          <ModelVersionSwitcher locale={locale} />
         </div>
       </div>
 

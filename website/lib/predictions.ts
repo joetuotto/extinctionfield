@@ -313,4 +313,31 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
       },
     ],
   },
+  {
+    id: "csli-1-usa-tfr-acceleration",
+    country: "USA",
+    countryLabel: "United States",
+    year: 2030,
+    metric: "sentinel_cascade_TFR_acceleration",
+    metricLabel: "TFR decline acceleration (sentinel cascade)",
+    central: -0.08,
+    ciLow: -0.12,
+    ciHigh: -0.04,
+    lockedDate: "2026-08-19",
+    modelVersion: "CSLI-1",
+    gitSha: "csli_panel",
+    status: "pending",
+    unit: "Δ children/woman/year",
+    history: [
+      {
+        version: "CSLI-1",
+        central: -0.08,
+        ci: [-0.12, -0.04],
+        date: "2026-08-19",
+        changeReason:
+          "initial lock — sentinel cascade: USA record bee colony losses 2024-2025 (55.6%) predict accelerated TFR decline by 2029-2030 via 5±2 year cross-species lag. Falsification: if USA TFR does NOT decline faster in 2029-2030 than 2024-2025 trend",
+        gitSha: "csli_panel",
+      },
+    ],
+  },
 ];

@@ -14,6 +14,7 @@ from typing import Mapping
 from berm.biology.reproductive_state import CoupleReproductiveState
 from berm.data import wpp
 from berm.evidence_registry import evidence_summary, legacy_evidence_summary
+from berm.evidence_constraints import evidence_constraint_summary
 from berm.outcomes.fieldstate_asfr import (
     FIELDSTATE_ASFR_VERSION,
     AgeSpecificFieldStateInput,
@@ -162,9 +163,10 @@ def _as_public_result(
         ),
         "evidence_by_causal_node": evidence_summary(),
         "legacy_evidence_migration": legacy_evidence_summary(),
+        "evidence_constraint_ledger": evidence_constraint_summary(),
         "warnings": [
             "This route requires externally supplied local FieldState and paired biological states; it does not infer them from national mobile subscriptions.",
-            "A STRUCTURAL_ONLY output is a transparent scenario calculation, not a calibrated causal estimate.",
+            "A STRUCTURAL_ONLY output is a transparent, evidence-constrained scenario calculation rather than a narrow locally calibrated causal estimate; it is not a zero-evidence or zero-effect label.",
             "Demand/opportunity, tempo and ART/live-birth delivery remain separate age-specific inputs.",
         ],
     })

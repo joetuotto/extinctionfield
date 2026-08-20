@@ -16,6 +16,14 @@ Käytännössä muutos on seuraava:
 
 Näin v2 ei ole vanhan BERM:n korvaaja eikä pelkkä uusi sivuhaara. Se on yhteinen tietomalli, jonka kautta legacy-laskelmat, fysiikka, mekanistinen evidenssi ja myöhempi endpoint-kalibrointi voidaan vertailla ilman että niiden merkitykset sekoittuvat.
 
+Evidenssin discovery-first- ja bayesilainen tulkintasääntö on
+[`fieldstate-discovery-inference.md`](fieldstate-discovery-inference.md):
+rakenne-, suunta-, viive- ja lajikohtainen evidenssi on aktiivinen mallisyöte;
+täysi paikallinen paneeli kaventaa vaikutusväliä, mutta ei ole edellytys
+signaalin löytämiselle tai lajienvälisten FieldState-ennusteiden tekemiselle.
+Koko v2-reitin vartijoiden ja tulkintojen läpikäynti on
+[`evidence-inference-audit.md`](evidence-inference-audit.md)-auditissa.
+
 ## 1. Kanoninen kausaaliketju
 
 ```mermaid
@@ -115,7 +123,7 @@ Toteutus: [`berm/physics/field_state.py`](../berm/physics/field_state.py).
 | Tila | Mitä se tarkoittaa | Miten sitä saa käyttää |
 |---|---|---|
 | `LEGACY_TIMING_PROXY` | Nykyinen `ambient + chi(ambient) * personal` -erikoistapaus; esimerkiksi mobiililiittymät ajoittavat digitaalisen ympäristön leviämistä. | Kohortti- ja ajoitussignaalin tutkimiseen, ei paikalliseksi annokseksi. |
-| `PARTIAL_FIELD_STATE` | Jokin fysikaalisen tilan osa on mitattu, mutta esimerkiksi PSD, B0, elinsiirto tai vuorokausikonteksti puuttuu. | Diagnostiikkaan ja data-aukon näkyväksi tekemiseen. |
+| `PARTIAL_FIELD_STATE` | Jokin fysikaalisen tilan osa on mitattu, mutta esimerkiksi PSD, B0, elinsiirto tai vuorokausikonteksti puuttuu. | Aktiiviseksi mitatuksi FieldState-komponentiksi, paikallisen/alueellisen likelihoodin sekä suunta-, siirto- ja lajikohtaisten posteriori-ennusteiden rakentamiseen; puuttuvat komponentit kannetaan epävarmuutena. Ei yksin väitä valmista elinannosta tai kapeaa endpoint-kerrointa. |
 | `MEASUREMENT_READY_FIELD_STATE` | Dokumentoitu normalisointi, B0-vektori, elinsiirto, PSD, circadian-konteksti, vaihe/koherenssi ja mittausprovenienssi ovat läsnä. | Elinkohtaisen endpoint-mallin kalibrointiin, kun myös biologinen päätepiste on yhdistetty ennalta määritellysti. |
 
 Tämä erottelu ratkaisee BERM:n keskeisen mittausongelman: kansallinen teknologian levinneisyys ei saa hiljaisesti muuttua kivesten, munasarjan tai hypotalamuksen paikalliseksi kenttätilaksi.

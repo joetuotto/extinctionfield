@@ -56,12 +56,12 @@ export function ModelVersionSwitcher({
   return (
     <div role="group" aria-label={text.label} className={className}>
       <div
-        className={`inline-flex items-center rounded-md border border-border bg-background-secondary p-0.5 ${
-          isExpanded ? "gap-1" : "gap-0.5"
-        }`}
+        className={`${
+          isExpanded ? "flex max-w-full flex-wrap gap-1" : "inline-flex gap-0.5"
+        } items-center rounded-md border border-border bg-background-secondary p-0.5`}
       >
         {isExpanded && (
-          <span className="px-2 text-[0.64rem] font-semibold uppercase tracking-[0.12em] text-foreground-muted">
+          <span className="basis-full px-2 text-[0.64rem] font-semibold uppercase tracking-[0.12em] text-foreground-muted">
             {text.label}
           </span>
         )}

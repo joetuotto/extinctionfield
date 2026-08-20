@@ -1,0 +1,718 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/berm/berm/data/schemas/measured_fieldstate_biology_panel.schema.json",
+  "title": "BERM locked measured FieldState--biology panel",
+  "description": "Portable pre-calibration manifest for a measured FieldState -> observed-biology panel. EXACT_SITE is the highest-directness route; MOBILITY_WEIGHTED_CATCHMENT and LOCAL_AREA_ESTIMATE are valid declared spatial-transfer routes when their crosswalk or kernel, distance/time support and uncertainty are retained. This contract only gates a new numerical endpoint coefficient. It does not deactivate BERM's separate structural evidence. It has no ASFR, TFR, demand, tempo, parity, migration, or ART input surface; demographic outcomes remain unavailable until a separate post-lock evaluation protocol.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "panel_id",
+    "protocol_id",
+    "manifest_sha256",
+    "frozen_at",
+    "upstream_lock_status",
+    "fieldstate_observations",
+    "fieldstate_measurement_bindings",
+    "biological_observations",
+    "match_geometries",
+    "endpoint_exposure_rules",
+    "sentinel_human_lead_lag_links",
+    "pairs",
+    "endpoint_calibration_locks"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "measured-fieldstate-biology-panel-v1"
+    },
+    "panel_id": {
+      "$ref": "#/$defs/nonemptyString"
+    },
+    "protocol_id": {
+      "$ref": "#/$defs/nonemptyString"
+    },
+    "manifest_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "frozen_at": {
+      "$ref": "#/$defs/timestamp"
+    },
+    "upstream_lock_status": {
+      "const": "LOCKED_BEFORE_DEMOGRAPHIC_UNBLINDING",
+      "description": "Declares that this artefact can calibrate only FieldState-to-biology parameters."
+    },
+    "fieldstate_observations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/fieldstateObservation"
+      }
+    },
+    "fieldstate_measurement_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/fieldstateMeasurementBinding"
+      },
+      "description": "Physical source sidecar. Each record binds one FieldState observation to its local site, window, geometry and source artefacts; a separate spatial match geometry can transfer it to a mobile/catchment/local-area endpoint."
+    },
+    "biological_observations": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/$defs/biologicalObservation"
+      },
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "required": ["biology_role"],
+            "properties": {
+              "biology_role": {
+                "const": "SENTINEL"
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "required": ["biology_role"],
+            "properties": {
+              "biology_role": {
+                "const": "HUMAN"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "match_geometries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/spatialMatchGeometry"
+      },
+      "description": "Declared directness, crosswalk/kernel, distance/time support and uncertainty for every non-legacy FieldState-to-biology or sentinel-to-human spatial transfer."
+    },
+    "endpoint_exposure_rules": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/$defs/endpointExposureRule"
+      },
+      "description": "Predeclared assay-specific FieldState exposure windows. They are biological timing rules, not demographic lags."
+    },
+    "sentinel_human_lead_lag_links": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/sentinelHumanLeadLagLink"
+      },
+      "description": "A pre-outcome positive-leading relation from a sentinel endpoint to a human biological endpoint."
+    },
+    "pairs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/fieldstateBiologyPair"
+      }
+    },
+    "endpoint_calibration_locks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/endpointCalibrationLock"
+      },
+      "description": "Pre-outcome endpoint locks. Numerical response fitting may begin only after these locks and the panel manifest are frozen."
+    }
+  },
+  "allOf": [
+    {
+      "not": {
+        "anyOf": [
+          {"required": ["asfr"]},
+          {"required": ["tfr"]},
+          {"required": ["demand"]},
+          {"required": ["tempo"]},
+          {"required": ["parity"]},
+          {"required": ["migration"]},
+          {"required": ["art"]}
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "nonemptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "nonemptyIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/upstreamIdentifier"
+      }
+    },
+    "upstreamIdentifier": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/nonemptyString"
+        },
+        {
+          "not": {
+            "enum": [
+              "fertility_asfr_region_age_year",
+              "fertility_tfr_region_year",
+              "fertility_parity_progression",
+              "culture_demand_age_country_year",
+              "migration_generation_fertility",
+              "art_outcomes_age_year"
+            ]
+          }
+        }
+      ]
+    },
+    "vector3": {
+      "type": "object",
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"},
+        "z": {"type": "number"}
+      },
+      "additionalProperties": false
+    },
+    "spectralBin": {
+      "type": "object",
+      "required": ["frequency_hz", "power_density", "bandwidth_hz"],
+      "properties": {
+        "frequency_hz": {"type": "number", "minimum": 0},
+        "power_density": {"type": "number", "minimum": 0},
+        "bandwidth_hz": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "fieldstateProvenance": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "calibration_id"
+      ],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/upstreamIdentifier"},
+        "dataset_id": {"$ref": "#/$defs/upstreamIdentifier"},
+        "measurement_id": {"$ref": "#/$defs/upstreamIdentifier"},
+        "collection_method": {"$ref": "#/$defs/nonemptyString"},
+        "calibration_id": {"$ref": "#/$defs/upstreamIdentifier"},
+        "normalization_reference": {"$ref": "#/$defs/nonemptyString"},
+        "normalisation_reference": {"$ref": "#/$defs/nonemptyString"}
+      },
+      "additionalProperties": false
+    },
+    "fieldstateState": {
+      "type": "object",
+      "required": [
+        "background",
+        "ambient",
+        "personal",
+        "normalization_id",
+        "country",
+        "area",
+        "setting",
+        "cohort_id",
+        "biological_sex",
+        "life_stage",
+        "year",
+        "geomagnetic_b0",
+        "geomagnetic_b0_unit",
+        "ambient_envelope_psd",
+        "personal_envelope_psd",
+        "mixed_envelope_psd",
+        "circadian",
+        "source_coupling",
+        "provenance"
+      ],
+      "properties": {
+        "background": {"$ref": "#/$defs/vector3"},
+        "ambient": {"$ref": "#/$defs/vector3"},
+        "personal": {"$ref": "#/$defs/vector3"},
+        "normalization_id": {"$ref": "#/$defs/nonemptyString"},
+        "country": {"$ref": "#/$defs/nonemptyString"},
+        "area": {"$ref": "#/$defs/nonemptyString"},
+        "setting": {"$ref": "#/$defs/nonemptyString"},
+        "cohort_id": {"type": ["string", "integer"], "minLength": 1},
+        "biological_sex": {"$ref": "#/$defs/nonemptyString"},
+        "life_stage": {"$ref": "#/$defs/nonemptyString"},
+        "year": {"type": "integer", "minimum": 1900, "maximum": 2100},
+        "geomagnetic_b0": {"$ref": "#/$defs/vector3"},
+        "geomagnetic_b0_unit": {"$ref": "#/$defs/nonemptyString"},
+        "ambient_envelope_psd": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/spectralBin"}
+        },
+        "personal_envelope_psd": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/spectralBin"}
+        },
+        "mixed_envelope_psd": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/spectralBin"}
+        },
+        "circadian": {
+          "type": "object",
+          "required": ["night_fraction", "state_id"],
+          "properties": {
+            "night_fraction": {"type": "number", "minimum": 0, "maximum": 1},
+            "circadian_phase": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+            "light_fraction": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+            "state_id": {
+              "allOf": [
+                {"$ref": "#/$defs/nonemptyString"},
+                {"not": {"const": "unspecified"}}
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "source_coupling": {
+          "type": "object",
+          "required": ["relative_phase_rad", "coherence", "coupling_id"],
+          "properties": {
+            "relative_phase_rad": {"type": "number"},
+            "coherence": {"type": "number", "minimum": 0, "maximum": 1},
+            "coupling_id": {"$ref": "#/$defs/nonemptyString"}
+          },
+          "additionalProperties": false
+        },
+        "provenance": {"$ref": "#/$defs/fieldstateProvenance"}
+      },
+      "allOf": [
+        {
+          "anyOf": [
+            {"properties": {"ambient_envelope_psd": {"minItems": 1}}},
+            {"properties": {"personal_envelope_psd": {"minItems": 1}}},
+            {"properties": {"mixed_envelope_psd": {"minItems": 1}}}
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "fieldstateObservation": {
+      "type": "object",
+      "required": [
+        "observation_id",
+        "time_id",
+        "state",
+        "receptor",
+        "transfer",
+        "source_ids",
+        "endpoint_join_id"
+      ],
+      "properties": {
+        "observation_id": {"$ref": "#/$defs/nonemptyString"},
+        "time_id": {"$ref": "#/$defs/timestamp"},
+        "state": {"$ref": "#/$defs/fieldstateState"},
+        "receptor": {
+          "type": "object",
+          "required": ["organ", "tissue_axis", "receptor_id"],
+          "properties": {
+            "organ": {"$ref": "#/$defs/nonemptyString"},
+            "tissue_axis": {"$ref": "#/$defs/vector3"},
+            "receptor_id": {"$ref": "#/$defs/nonemptyString"}
+          },
+          "additionalProperties": false
+        },
+        "transfer": {
+          "type": "object",
+          "required": ["row_x", "row_y", "row_z", "transfer_id"],
+          "properties": {
+            "row_x": {"$ref": "#/$defs/vector3"},
+            "row_y": {"$ref": "#/$defs/vector3"},
+            "row_z": {"$ref": "#/$defs/vector3"},
+            "transfer_id": {
+              "allOf": [
+                {"$ref": "#/$defs/nonemptyString"},
+                {"not": {"const": "identity"}}
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "source_ids": {"$ref": "#/$defs/nonemptyIds"},
+        "endpoint_join_id": {"$ref": "#/$defs/nonemptyString"}
+      },
+      "additionalProperties": false
+    },
+    "fieldstateMeasurementBinding": {
+      "type": "object",
+      "required": [
+        "fieldstate_observation_id",
+        "site_id",
+        "geography_id",
+        "target_node",
+        "biological_sex",
+        "life_stage",
+        "window_start",
+        "window_end",
+        "time_window_rule_id",
+        "measurement_geometry_id",
+        "physical_artifact_sha256",
+        "coverage_fraction",
+        "source_manifest_sha256"
+      ],
+      "properties": {
+        "fieldstate_observation_id": {"$ref": "#/$defs/nonemptyString"},
+        "site_id": {"$ref": "#/$defs/nonemptyString"},
+        "geography_id": {"$ref": "#/$defs/nonemptyString"},
+        "target_node": {"$ref": "#/$defs/nonemptyString"},
+        "biological_sex": {"$ref": "#/$defs/nonemptyString"},
+        "life_stage": {"$ref": "#/$defs/nonemptyString"},
+        "window_start": {"$ref": "#/$defs/timestamp"},
+        "window_end": {"$ref": "#/$defs/timestamp"},
+        "time_window_rule_id": {"$ref": "#/$defs/nonemptyString"},
+        "measurement_geometry_id": {"$ref": "#/$defs/nonemptyString"},
+        "physical_artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "coverage_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "source_manifest_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "biologicalObservation": {
+      "type": "object",
+      "required": [
+        "observation_id",
+        "endpoint_join_id",
+        "biology_role",
+        "organism_id",
+        "target_node",
+        "endpoint_id",
+        "biological_sex",
+        "life_stage",
+        "endpoint_layer",
+        "geography_id",
+        "site_id",
+        "window_start",
+        "window_end",
+        "value",
+        "unit",
+        "assay_id",
+        "endpoint_statistic",
+        "uncertainty_lower",
+        "uncertainty_upper",
+        "source_ids",
+        "manifest_sha256",
+        "sample_size",
+        "covariate_asset_ids",
+        "measurement_type",
+        "provenance"
+      ],
+      "properties": {
+        "observation_id": {"$ref": "#/$defs/nonemptyString"},
+        "endpoint_join_id": {"$ref": "#/$defs/nonemptyString"},
+        "biology_role": {"enum": ["SENTINEL", "HUMAN"]},
+        "organism_id": {"$ref": "#/$defs/nonemptyString"},
+        "target_node": {"$ref": "#/$defs/nonemptyString"},
+        "endpoint_id": {"$ref": "#/$defs/upstreamIdentifier"},
+        "biological_sex": {"$ref": "#/$defs/nonemptyString"},
+        "life_stage": {"$ref": "#/$defs/nonemptyString"},
+        "endpoint_layer": {
+          "enum": [
+            "GAMETE",
+            "BARRIER",
+            "OVARIAN",
+            "ENDOCRINE",
+            "PREGNANCY",
+            "SENTINEL_REPRODUCTIVE",
+            "SENTINEL_ECOLOGICAL"
+          ]
+        },
+        "geography_id": {"$ref": "#/$defs/nonemptyString"},
+        "site_id": {"$ref": "#/$defs/nonemptyString"},
+        "window_start": {"$ref": "#/$defs/timestamp"},
+        "window_end": {"$ref": "#/$defs/timestamp"},
+        "value": {"type": "number"},
+        "unit": {"$ref": "#/$defs/nonemptyString"},
+        "assay_id": {"$ref": "#/$defs/nonemptyString"},
+        "endpoint_statistic": {"$ref": "#/$defs/nonemptyString"},
+        "uncertainty_lower": {"type": ["number", "null"]},
+        "uncertainty_upper": {"type": ["number", "null"]},
+        "source_ids": {"$ref": "#/$defs/nonemptyIds"},
+        "manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "sample_size": {"type": "integer", "minimum": 1},
+        "covariate_asset_ids": {"$ref": "#/$defs/nonemptyIds"},
+        "measurement_type": {"const": "OBSERVED"},
+        "provenance": {
+          "type": "object",
+          "minProperties": 1,
+          "properties": {
+            "laboratory_id": {"$ref": "#/$defs/nonemptyString"},
+            "assay_protocol_id": {"$ref": "#/$defs/nonemptyString"},
+            "release_id": {"$ref": "#/$defs/nonemptyString"},
+            "collection_method": {"$ref": "#/$defs/nonemptyString"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "properties": {
+                "uncertainty_lower": {"type": "null"},
+                "uncertainty_upper": {"type": "null"}
+              }
+            },
+            {
+              "properties": {
+                "uncertainty_lower": {"type": "number"},
+                "uncertainty_upper": {"type": "number"}
+              }
+            }
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "endpointExposureRule": {
+      "type": "object",
+      "required": [
+        "rule_id",
+        "biology_role",
+        "endpoint_id",
+        "target_node",
+        "minimum_lag_days",
+        "maximum_lag_days",
+        "accumulation_rule_id",
+        "biological_basis_asset_ids"
+      ],
+      "properties": {
+        "rule_id": {"$ref": "#/$defs/nonemptyString"},
+        "biology_role": {"enum": ["SENTINEL", "HUMAN"]},
+        "endpoint_id": {"$ref": "#/$defs/upstreamIdentifier"},
+        "target_node": {"$ref": "#/$defs/nonemptyString"},
+        "minimum_lag_days": {"type": "number", "minimum": 0},
+        "maximum_lag_days": {"type": "number", "minimum": 0},
+        "accumulation_rule_id": {"$ref": "#/$defs/nonemptyString"},
+        "biological_basis_asset_ids": {"$ref": "#/$defs/nonemptyIds"}
+      },
+      "additionalProperties": false
+    },
+    "spatialMatchGeometry": {
+      "type": "object",
+      "required": [
+        "geometry_id",
+        "match_level",
+        "source_record_role",
+        "source_record_id",
+        "target_record_role",
+        "target_record_id",
+        "source_geography_id",
+        "source_site_id",
+        "target_geography_id",
+        "target_site_id",
+        "crosswalk_id",
+        "crosswalk_sha256",
+        "distance_metric_id",
+        "distance_estimate_m",
+        "distance_uncertainty_lower_m",
+        "distance_uncertainty_upper_m",
+        "temporal_alignment_rule_id",
+        "temporal_uncertainty_days",
+        "spatial_uncertainty_method_id"
+      ],
+      "properties": {
+        "geometry_id": {"$ref": "#/$defs/nonemptyString"},
+        "match_level": {
+          "enum": [
+            "EXACT_SITE",
+            "MOBILITY_WEIGHTED_CATCHMENT",
+            "LOCAL_AREA_ESTIMATE"
+          ]
+        },
+        "source_record_role": {"enum": ["FIELDSTATE", "BIOLOGICAL"]},
+        "source_record_id": {"$ref": "#/$defs/nonemptyString"},
+        "target_record_role": {"enum": ["FIELDSTATE", "BIOLOGICAL"]},
+        "target_record_id": {"$ref": "#/$defs/nonemptyString"},
+        "source_geography_id": {"$ref": "#/$defs/nonemptyString"},
+        "source_site_id": {"$ref": "#/$defs/nonemptyString"},
+        "target_geography_id": {"$ref": "#/$defs/nonemptyString"},
+        "target_site_id": {"$ref": "#/$defs/nonemptyString"},
+        "crosswalk_id": {"$ref": "#/$defs/nonemptyString"},
+        "crosswalk_sha256": {"$ref": "#/$defs/sha256"},
+        "distance_metric_id": {"$ref": "#/$defs/nonemptyString"},
+        "distance_estimate_m": {"type": "number", "minimum": 0},
+        "distance_uncertainty_lower_m": {"type": "number", "minimum": 0},
+        "distance_uncertainty_upper_m": {"type": "number", "minimum": 0},
+        "temporal_alignment_rule_id": {"$ref": "#/$defs/nonemptyString"},
+        "temporal_uncertainty_days": {"type": "number", "minimum": 0},
+        "spatial_uncertainty_method_id": {"$ref": "#/$defs/nonemptyString"},
+        "mobility_kernel_id": {"$ref": "#/$defs/nonemptyString"},
+        "mobility_kernel_sha256": {"$ref": "#/$defs/sha256"},
+        "local_area_estimator_id": {"$ref": "#/$defs/nonemptyString"},
+        "local_area_estimator_sha256": {"$ref": "#/$defs/sha256"},
+        "weight_sum": {"type": "number", "exclusiveMinimum": 0},
+        "effective_sample_size": {"type": "number", "exclusiveMinimum": 0}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"match_level": {"const": "MOBILITY_WEIGHTED_CATCHMENT"}}},
+          "then": {
+            "required": [
+              "mobility_kernel_id",
+              "mobility_kernel_sha256",
+              "weight_sum",
+              "effective_sample_size"
+            ],
+            "not": {"anyOf": [
+              {"required": ["local_area_estimator_id"]},
+              {"required": ["local_area_estimator_sha256"]}
+            ]}
+          }
+        },
+        {
+          "if": {"properties": {"match_level": {"const": "LOCAL_AREA_ESTIMATE"}}},
+          "then": {
+            "required": ["local_area_estimator_id", "local_area_estimator_sha256"],
+            "not": {"anyOf": [
+              {"required": ["mobility_kernel_id"]},
+              {"required": ["mobility_kernel_sha256"]}
+            ]}
+          }
+        },
+        {
+          "if": {"properties": {"match_level": {"const": "EXACT_SITE"}}},
+          "then": {
+            "not": {"anyOf": [
+              {"required": ["mobility_kernel_id"]},
+              {"required": ["local_area_estimator_id"]}
+            ]}
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "sentinelHumanLeadLagLink": {
+      "type": "object",
+      "required": [
+        "link_id",
+        "sentinel_endpoint_id",
+        "human_endpoint_id",
+        "target_node",
+        "minimum_lead_days",
+        "maximum_lead_days",
+        "biological_basis_asset_ids",
+        "match_geometry_ids"
+      ],
+      "properties": {
+        "link_id": {"$ref": "#/$defs/nonemptyString"},
+        "sentinel_endpoint_id": {"$ref": "#/$defs/upstreamIdentifier"},
+        "human_endpoint_id": {"$ref": "#/$defs/upstreamIdentifier"},
+        "target_node": {"$ref": "#/$defs/nonemptyString"},
+        "minimum_lead_days": {"type": "number", "exclusiveMinimum": 0},
+        "maximum_lead_days": {"type": "number", "exclusiveMinimum": 0},
+        "biological_basis_asset_ids": {"$ref": "#/$defs/nonemptyIds"},
+        "match_geometry_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/nonemptyString"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "fieldstateBiologyPair": {
+      "type": "object",
+      "required": [
+        "pair_id",
+        "endpoint_join_id",
+        "fieldstate_observation_id",
+        "biological_observation_id",
+        "geography_id",
+        "site_id",
+        "endpoint_exposure_rule_id",
+        "site_crosswalk_id",
+        "site_crosswalk_sha256",
+        "confounder_asset_ids",
+        "match_geometry_id"
+      ],
+      "properties": {
+        "pair_id": {"$ref": "#/$defs/nonemptyString"},
+        "endpoint_join_id": {"$ref": "#/$defs/nonemptyString"},
+        "fieldstate_observation_id": {"$ref": "#/$defs/nonemptyString"},
+        "biological_observation_id": {"$ref": "#/$defs/nonemptyString"},
+        "geography_id": {"$ref": "#/$defs/nonemptyString"},
+        "site_id": {"$ref": "#/$defs/nonemptyString"},
+        "endpoint_exposure_rule_id": {"$ref": "#/$defs/nonemptyString"},
+        "site_crosswalk_id": {"$ref": "#/$defs/nonemptyString"},
+        "site_crosswalk_sha256": {"$ref": "#/$defs/sha256"},
+        "confounder_asset_ids": {"$ref": "#/$defs/nonemptyIds"},
+        "match_geometry_id": {"$ref": "#/$defs/nonemptyString"}
+      },
+      "additionalProperties": false
+    },
+    "endpointCalibrationLock": {
+      "type": "object",
+      "required": [
+        "lock_id",
+        "panel_id",
+        "panel_manifest_sha256",
+        "target_node",
+        "biology_role",
+        "endpoint_id",
+        "feature_ids",
+        "parameter_ids",
+        "scale_anchor_parameter_id",
+        "training_pair_ids",
+        "temporal_holdout_pair_ids",
+        "geographic_holdout_site_ids",
+        "response_model_id",
+        "response_model_spec_sha256",
+        "locked_at"
+      ],
+      "properties": {
+        "lock_id": {"$ref": "#/$defs/nonemptyString"},
+        "panel_id": {"$ref": "#/$defs/nonemptyString"},
+        "panel_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "target_node": {"$ref": "#/$defs/nonemptyString"},
+        "biology_role": {"enum": ["SENTINEL", "HUMAN"]},
+        "endpoint_id": {"$ref": "#/$defs/upstreamIdentifier"},
+        "feature_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "selected_vector_magnitude",
+              "tissue_axis_projection",
+              "geometric_cross_term",
+              "coherent_cross_term",
+              "envelope_overlap",
+              "night_selected_projection",
+              "background_personal_cosine"
+            ]
+          }
+        },
+        "parameter_ids": {"$ref": "#/$defs/nonemptyIds"},
+        "scale_anchor_parameter_id": {"$ref": "#/$defs/upstreamIdentifier"},
+        "training_pair_ids": {"$ref": "#/$defs/nonemptyIds"},
+        "temporal_holdout_pair_ids": {"$ref": "#/$defs/nonemptyIds"},
+        "geographic_holdout_site_ids": {"$ref": "#/$defs/nonemptyIds"},
+        "response_model_id": {"$ref": "#/$defs/nonemptyString"},
+        "response_model_spec_sha256": {"$ref": "#/$defs/sha256"},
+        "locked_at": {"$ref": "#/$defs/timestamp"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

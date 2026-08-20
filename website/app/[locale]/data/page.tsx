@@ -1,11 +1,75 @@
 import type { Metadata } from "next";
 import { FieldStateStatus } from "@/components/FieldStateStatus";
 
+const READINESS_TIERS = {
+  en: [
+    {
+      tier: "Technology timing proxy",
+      color: "text-status-confirmed",
+      borderColor: "border-status-confirmed/30",
+      bgColor: "bg-status-confirmed/5",
+      status: "163 countries",
+      description: "Country-level mobile-subscription and internet-penetration series are available as technology-adoption timing proxies. They support descriptive cohort analysis but are not physical FieldState, local RF dose or organ-exposure inputs.",
+      sources: "World Bank WDI, ITU, GSMA Intelligence",
+    },
+    {
+      tier: "Partial FieldState",
+      color: "text-status-partial",
+      borderColor: "border-status-partial/30",
+      bgColor: "bg-status-partial/5",
+      status: "Protocol defined, data limited",
+      description: "Spatial RF measurement data exists (e.g. ANFR in France, Ofcom in the UK) but has not been joined to the organ-transfer model. Documented units, calibration, spectrum/PSD, B₀ context and circadian timing are required before these observations can enter a FieldState panel.",
+      sources: "ANFR (France), Ofcom (UK), national regulators",
+    },
+    {
+      tier: "Measurement-ready FieldState",
+      color: "text-status-pending",
+      borderColor: "border-status-pending/30",
+      bgColor: "bg-status-pending/5",
+      status: "No countries yet",
+      description: "A measurement-ready FieldState requires documented local field vectors (B₀, ambient RF spectrum/PSD, personal device geometry), organ-specific transfer with posture and circadian context, registered biological endpoints and couple panels. No country currently has all components assembled.",
+      sources: "Requires purpose-built measurement campaign",
+    },
+  ],
+  fi: [
+    {
+      tier: "Teknologian ajoitusproxy",
+      color: "text-status-confirmed",
+      borderColor: "border-status-confirmed/30",
+      bgColor: "bg-status-confirmed/5",
+      status: "163 maata",
+      description: "Maatason mobiililiittymä- ja internetpenetraatiosarjat ovat saatavilla teknologian käyttöönoton ajoitusproxyna. Ne tukevat kuvailevaa kohorttianalyysiä, mutta eivät ole fysikaalinen FieldState, paikallinen RF-annos tai elinkohtainen altistussyöte.",
+      sources: "Maailmanpankki WDI, ITU, GSMA Intelligence",
+    },
+    {
+      tier: "Osittainen FieldState",
+      color: "text-status-partial",
+      borderColor: "border-status-partial/30",
+      bgColor: "bg-status-partial/5",
+      status: "Protokolla määritelty, data rajallista",
+      description: "Alueellisia RF-mittaustietoja on olemassa (esim. ANFR Ranskassa, Ofcom UK:ssa), mutta niitä ei ole yhdistetty elinsiirtomalliin. Dokumentoidut yksiköt, kalibrointi, spektri/PSD, B₀-konteksti ja vuorokausiajoitus vaaditaan ennen FieldState-paneeliin liittämistä.",
+      sources: "ANFR (Ranska), Ofcom (UK), kansalliset sääntelyviranomaiset",
+    },
+    {
+      tier: "Mittaamisvalmis FieldState",
+      color: "text-status-pending",
+      borderColor: "border-status-pending/30",
+      bgColor: "bg-status-pending/5",
+      status: "Ei yhtään maata vielä",
+      description: "Mittaamisvalmis FieldState vaatii dokumentoidut paikalliset kenttävektorit (B₀, ambientin RF-spektri/PSD, henkilökohtaisen laitteen geometria), elinkohtaisen siirron asennolla ja vuorokausikontekstilla, rekisteröidyt biologiset päätepisteet ja paripaneelit. Missään maassa ei ole kaikkia komponentteja koottuna.",
+      sources: "Vaatii tarkoitukseen rakennetun mittauskampanjan",
+    },
+  ],
+} as const;
+
 const t = {
   en: {
     title: "Data Sources",
     subtitle:
       "Data inventory for FieldState–ASFR-v2. Sources are separated by what they actually measure; availability is not treated as evidence of a biological or demographic effect.",
+    readinessTitle: "Measurement readiness by country tier",
+    readinessLead: "FieldState–ASFR v2 classifies every country by what input data is actually available. This makes the gap between a timing proxy and a measurement-ready FieldState explicit rather than hidden.",
+    readinessNote: "Measurement-ready means that all named physical inputs are documented. It does not mean a biological effect, a causal estimate or an outcome coefficient has been established.",
     primaryTitle: "Technology-timing proxies",
     primaryDesc:
       "Country-level uptake and connectivity series can support descriptive technology timing and cohort analysis. They are not physical FieldState, local RF dose or organ exposure inputs.",
@@ -44,6 +108,9 @@ const t = {
     title: "Datalähteet",
     subtitle:
       "FieldState–ASFR-v2:n dataluettelo. Lähteet erotellaan sen mukaan, mitä ne todella mittaavat; saatavuutta ei käsitellä biologisen tai demografisen vaikutuksen evidenssinä.",
+    readinessTitle: "Mittaamisvalmius maatasoittain",
+    readinessLead: "FieldState–ASFR v2 luokittelee jokaisen maan sen mukaan, mitä syötedataa on todella saatavilla. Tämä tekee eron ajoitusproxyn ja mittaamisvalmiin FieldStaten välillä näkyväksi piilossa pitämisen sijaan.",
+    readinessNote: "Mittaamisvalmis tarkoittaa, että kaikki nimetyt fysikaaliset syötteet on dokumentoitu. Se ei tarkoita, että biologinen vaikutus, kausaaliarvio tai tuloskerroin olisi osoitettu.",
     primaryTitle: "Teknologian ajoitusproksit",
     primaryDesc:
       "Maatason käyttöönotto- ja yhteyssarjat tukevat kuvailevaa teknologia-ajoitus- ja kohorttianalyysiä. Ne eivät ole fysikaalinen FieldState, paikallinen RF-annos tai elinkohtainen altistussyöte.",
@@ -378,6 +445,24 @@ export default async function DataPage({
 
       <section className="mb-14">
         <FieldStateStatus locale={locale === "fi" ? "fi" : "en"} />
+      </section>
+
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.readinessTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-8 max-w-4xl">{d.readinessLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {READINESS_TIERS[locale === "fi" ? "fi" : "en"].map((tier) => (
+            <div key={tier.tier} className={`border ${tier.borderColor} ${tier.bgColor} rounded-lg p-5`}>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mb-3">
+                <h3 className={`text-base font-semibold ${tier.color}`}>{tier.tier}</h3>
+                <span className="text-xs font-mono-num text-foreground-muted">{tier.status}</span>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-2">{tier.description}</p>
+              <p className="text-xs text-foreground-muted">{locale === "fi" ? "Lähteet" : "Sources"}: {tier.sources}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-4 text-xs text-foreground-muted leading-relaxed max-w-4xl italic">{d.readinessNote}</p>
       </section>
 
       <section className="mb-14">

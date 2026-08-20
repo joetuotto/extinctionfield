@@ -1,11 +1,13 @@
 # BERM: sentinelli → ihmisbiologia → ASFR/TFR -hindcast-protokolla
 
 Versio: `sentinel-hindcast-protocol-v1`
-Tila: **BLOCKED — ei vielä parametrisovitusta eikä ennustetulosta**
+Tila: **rakenne- ja suuntaevidenssi aktiivinen; paikallinen numeerinen
+FieldState→endpoint-kalibrointi odottaa matchattua paneelia**
 
 Liittyy: [FieldState–ASFR v2](fieldstate-asfr-v2.md), [sentinellidatan
 vaatimukset](sentinel-data-requirements.md), [data-aukkorekisteri](data-gap-register.md)
-ja [ANFR:n mitattu RF-kerros](anfr-measured-rf-layer.md).
+ja [ANFR:n mitattu RF-kerros](anfr-measured-rf-layer.md), sekä [lukittu mitattu
+FieldState–biologia-paneeli](measured-fieldstate-biology-panel.md).
 
 Tämä protokolla tekee seuraavan tutkimusvaiheen ennustavaksi BERM:n omien
 premissien sisältä. Se ei hae FieldState-, muisti-, sentinelli- tai
@@ -58,6 +60,15 @@ Jokainen `GeoTemporalMatch` vaatii:
 - nimettyjen endpointille relevanttien sekoittaja-aineistojen joukon; sekä
 - havaitut (ei proxy- tai skenaario-) rivit ja `MEASUREMENT_READY_FIELD_STATE`-tilan.
 
+Tämä metatason `GeoTemporalMatch` ei yksin riitä numeeriseen kalibrointiin.
+Sillä täytyy olla alla manifestijäädytetty `LockedMeasuredFieldStateBiologyPanel`,
+joka dokumentoi yksittäisten FieldState-havaintojen, elinsiirron, biologisten
+endpointien, aikaikkunoiden ja sekoittaja-aineistojen todellisen liitoksen.
+`EXACT_SITE` on tarkin vaihtoehto; `MOBILITY_WEIGHTED_CATCHMENT` ja
+`LOCAL_AREA_ESTIMATE` ovat yhtä lailla kelvollisia, kun niiden crosswalk,
+liike-/aluekernel, ajallinen peitto ja epävarmuus on lukittu. Jälkimmäiset
+tuottavat leveämmän, eivät nollaan pakotetun parametriarvion.
+
 Kiinteän anturin ambientti `V/m` -sarja ei yksin täytä viimeistä ehtoa.
 Country-year-aggregointi on myöhempi vaihe ja vaatii läpinäkyvän
 näytekehikko-/väestöpainotuksen.
@@ -80,13 +91,16 @@ Yksi hyväksyttävä ajo tuottaa erilliset eligibility reportin, parameter locki
 as-of forecast ledgerin ja post-lock scorecardin. BERM- ja sentinellitön
 perusmalli pisteytetään samoilla alue × ikä × vuosi -riveillä.
 
-## Nykyinen pullonkaula
+## Nykyinen kvantitatiivinen pullonkaula
 
-Koneellinen vartija palauttaa nyt `BLOCKED`, koska G-3, G-5, G-7, G-8 ja G-4
-ovat auki: ANFR:n RF ei ole matchattu biologiseen paneeliin; monialueinen
-sentinellipaneeli ja havaittu ihmisbiomarkkerisarja puuttuvat; vastaava
-subnational ASFR/TFR-holdout puuttuu; ja parity/tempo-erottelu on yhä
-tarpeen lopullisessa demografisessa tulkinnassa.
+Koneellinen vartija raportoi **kvantitatiivisen kalibroinnin odottavan**,
+koska G-3, G-5, G-7, G-8 ja G-4 ovat auki: ANFR:n RF ei ole matchattu
+biologiseen paneeliin; monialueinen sentinellipaneeli ja havaittu
+ihmisbiomarkkerisarja puuttuvat; vastaava subnational ASFR/TFR-holdout puuttuu;
+ja parity/tempo-erottelu on yhä tarpeen lopullisessa demografisessa
+tulkinnassa. Tämä rajaa uuden kertoimen estimointia — se ei mitätöi jo
+rekisteröityä FieldState-, mekanismi-, elin- tai kohorttievidenssiä, joka
+asettaa mallille testattavia suunta- ja viive-ennusteita jo nyt.
 
 Toteutus: [`berm.validation.sentinel_hindcast_protocol`](../berm/validation/sentinel_hindcast_protocol.py).
 Ulkoisen ajosuunnitelman sopimus: [`sentinel_hindcast_protocol.schema.json`](../data/schemas/sentinel_hindcast_protocol.schema.json).

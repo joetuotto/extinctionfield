@@ -26,9 +26,12 @@ from typing import Iterable, Mapping
 
 REPRODUCTIVE_STATE_VERSION = "reproductive-state-v1"
 
-# These labels distinguish a structural calculation from an endpoint-calibrated
-# model.  They are intentionally strings in output so JSON clients need no
-# Python enum decoder.
+# These labels distinguish coefficient resolution, not evidentiary weight.
+# ``STRUCTURAL_ONLY`` keeps a calculation transparently conditional on its
+# registered mapping; it can still carry active evidence IDs that constrain
+# topology, direction, lag, susceptibility or a cross-species transfer
+# signature.  They are intentionally strings in output so JSON clients need
+# no Python enum decoder.
 STRUCTURAL_ONLY = "STRUCTURAL_ONLY"
 ENDPOINT_CALIBRATED = "ENDPOINT_CALIBRATED"
 VALID_CALIBRATION_STATUSES = frozenset({STRUCTURAL_ONLY, ENDPOINT_CALIBRATED})
@@ -143,7 +146,9 @@ class EndpointCapacityMapping:
     It is suitable for a pre-specified monotone capacity endpoint (BTB
     integrity, sperm output, ovarian reserve, and so on), but contains no
     project default.  Every nonzero mapping therefore has a named parameter
-    set and evidence record rather than inheriting a legacy TFR slope.
+    set and evidence record rather than inheriting a legacy TFR slope.  A
+    ``STRUCTURAL_ONLY`` mapping is an active, explicitly conditional bridge;
+    it does not erase the evidence IDs or imply an effect of zero.
     """
 
     component: str

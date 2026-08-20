@@ -39,8 +39,13 @@ Se ei mittaa:
 - RF/EMF:tä, annosta tai edes RF-proxyä;
 - lisääntymisen keskeisiä sekoittajia samalla havaintotasolla.
 
-Siksi se on `NOT_ELIGIBLE` F1--F6-testeihin, eikä muunnos tuo tietoja
-sentinelliin, CSLI:hin, kausaalijoiniin tai aktiiviseen ennusteeseen.
+Siksi se on `NOT_ELIGIBLE` suorissa F1--F6-testeissä, eikä muunnos itsessään
+muodosta RF–vastekerrointa, CSLI-lukua tai valmista kausaalijoinia. Tämä ei tee
+pitkästä, manifestilukitusta jalostus-/populaatiorakennesarjasta passiivista:
+se on aktiivinen ekologisen valinnan, lajikohtaisen herkkyyden ja historiallisen
+allekirjoituksen kontekstikerros. Se voidaan liittää FieldState- ja
+ympäristökovariaatteihin vasta erillisellä, näkyvällä crosswalkilla; tällöin
+epävarmuus ja jalostuspolitiikan vaihtoehtoiset selitykset säilyvät mallissa.
 
 Lisäksi lähteen `native`, `nbs_at_risk_current`, `bar_current` ja
 `zr_current` ovat **nykyisiä** luokituksia, joita lähde toistaa historiallisten

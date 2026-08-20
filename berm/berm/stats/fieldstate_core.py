@@ -207,7 +207,13 @@ class FieldStateCoreResult:
 
     @property
     def calibration_status(self) -> str:
-        """Only measurement-ready input plus endpoint calibration is calibrated."""
+        """Report numerical endpoint-calibration resolution only.
+
+        A ``STRUCTURAL_ONLY`` result may still be an evidence-constrained
+        FieldState transition and may support direction, lag, transfer and
+        posterior-predictive signatures.  It simply does not claim that this
+        particular organ endpoint has a narrow, locally calibrated coefficient.
+        """
         return (
             ENDPOINT_CALIBRATED
             if (

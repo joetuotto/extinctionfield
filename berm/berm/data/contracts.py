@@ -290,8 +290,10 @@ CANONICAL_TABLES: dict[str, TableSpec] = {
             ["geography_id", "observation_datetime"],
             ["V_per_m"],
             "Measured ambient RF field-strength readings at a fixed probe and local time. "
-            "This is not a personal/organism dose and must remain separate from "
-            "biological endpoints until a pre-specified matched study panel exists.",
+            "This is not a personal/organism dose; it remains explicitly distinguishable "
+            "from biological endpoints while serving as an active FieldState component. "
+            "A pre-specified direct endpoint calibration additionally requires a documented "
+            "organism/organ transfer and temporal-spatial match.",
             extra_columns=(
                 "observation_datetime",
                 "source_local_datetime",

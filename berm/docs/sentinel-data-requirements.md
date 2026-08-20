@@ -6,32 +6,51 @@ Liittyy: [`data-lineage-audit.md`](data-lineage-audit.md) (löydökset A-9, A-10
 [`sentinel-acquisition-register.md`](sentinel-acquisition-register.md) (lähteiden hankinta- ja käyttöehtotila) ·
 [`sentinel-hindcast-protocol.md`](sentinel-hindcast-protocol.md) (FieldState → sentinelli → ihmisbiologia → ASFR/TFR -lukitus ja holdout)
 
-**Tätä työpakettia ei merkitä suoritetuksi kirjallisuusviitteiden perusteella.** Sitaatti
-ei ole aineisto. Nykytilassa `berm/csli/` sisältää kuusi falsifikaatiokriteeriä, joista
-**nolla on suoritettu**. Saatavilla olevat ei-ihmisrivit on normalisoitu kanoniseen
-sentinellitauluun, mutta laadullinen karja-artikkelikokoelma sekä rekonstruoitu
-ihmisspermaproxy jätetään siitä tarkoituksellisesti ulos. Lisäksi hallussa on
-erillisiä, manifest-lukittuja eläinlääketieteellisiä ja seminologisia
-benchmark-kerroksia; ne eivät muutu sentinelliksi ilman samaan paneeliin
-kohdistuvaa mitattua RF-altistusta, biologista päätepistettä ja sekoittajia.
+**Tämä dokumentti erottaa kaksi tehtävää, joita ei saa sekoittaa.**
+
+1. Kirjallisuus, sentinellihavainnot ja mitatut kenttäkerrokset ovat aktiivista
+   evidenssiä BERM:n topologialle, kenttäluokalle, lajikohtaiselle
+   siirtotoiminnolle, suunnalle, viiveelle ja herkkyydelle.
+2. `berm/csli/`-moduulin kuusi F1–F6-kriteeriä ovat kapeampia,
+   ennalta lukittuja **suoran sentinelli→ihmisendpoint-ketjun** testejä.
+   Niistä nolla on vielä laskettu. Tämä ei poista ensimmäisen tason
+   evidenssiä eikä estä FieldState-pohjaisten lajienvälisten ennusteiden
+   muodostamista.
+
+Saatavilla olevat ei-ihmisrivit, eläinlääketieteelliset benchmarkit,
+seminologiset aineistot, rekonstruoidut historialliset vertailusarjat ja
+kirjallisuudesta johdetut viive-/herkkyyssäännöt säilyvät aktiivisina
+discovery-kerroksina. Jos lähteen raakamuoto ei riitä kanoniseen havaintoriviin,
+se säilyy konteksti- tai constraint-kerroksena eikä muutu keinotekoiseksi
+numeeriseksi dataksi. Niiden arvo kasvaa, kun ne voidaan liittää mitattuun
+kenttään samaan mikroympäristöön, liikkuvuuspainotettuun valuma-alueeseen tai
+dokumentoituun paikallisalue-estimaattiin.
 
 ---
 
-## 0. Yhteinen minimiehto
+## 0. Suoran F1–F6-kriteerin minimiehto
 
-Yksikään F1–F6-testi ei ole laskettavissa ennen kuin seuraava paneeli on olemassa:
+Alkuperäisessä muodossaan yksikään F1–F6-kriteeri ei ole laskettavissa ennen
+kuin seuraava paneeli on olemassa:
 
 ```
 (alue, vuosi, laji, biologinen päätetapahtuma, E_RF, kemialliset kovariaatit)
 ```
 
-Tällä hetkellä **`E_RF`-sarake puuttuu jokaisesta sentinellitaulusta.** Erillinen
-ANFR:n mitattu `measured_rf_site_time`-kerros (Ranska, 2020–2024) ei muuta tätä:
-se sisältää kiinteän anturin ambienttikentän, mutta ei samaan paikkaan ja aikaan
-kohdistuvaa biologista paneelia. Aiemmat käsin
-annetut RF-tasot ja järjestysluvut on poistettu analyysirajapinnasta: nykyinen
-`exposure_gradient_test()` palauttaa vain `BLOCKED`-tilan ja edellyttää mitattua
-dosimetriaa, yhteensopivaa vastepaneelia ja kovariaatteja.
+Tällä hetkellä **`E_RF`-sarake puuttuu jokaisesta kanonisesta
+sentinellitaulusta.** Erillinen ANFR:n mitattu `measured_rf_site_time`-kerros
+(Ranska, 2020–2024) on silti aktiivinen FieldState-komponentti: sitä voidaan
+siirtää ennalta määritellyllä liikkuvuus-/valuma-alue- tai paikallisalue-mallilla
+ja käyttää lajikohtaisten vasteiden tutkimiseen. Se ei vielä muodosta
+alkuperäisen F1–F6-määritelmän yhtä, kapeasti kohdistettua
+`(alue, aika, laji, endpoint, E_RF)`-riviä.
+
+Aiemmat käsin annetut RF-tasot ja järjestysluvut on poistettu varsinaisesta
+vaikutuskertoimen sovituksesta. Tilalle ei aseteta nollaoletusta, vaan
+evidenssirajoitettu ja useita prioriperheitä vertaileva FieldState-päättely.
+Nykyinen `exposure_gradient_test()`-`BLOCKED` tarkoittaa vain, ettei se suorita
+vanhaa, suppeaa gradienttikriteeriä ilman dokumentoitua mittausta ja
+siirtogeometriaa.
 
 Kanoninen kohdetaulu on `sentinel_species_region_year`
 ([`contracts.py`](../berm/data/contracts.py)), jonka lisäsarakkeet ovat `species` ja
@@ -167,11 +186,13 @@ mikä tahansa härkätrendi on tulkinnaltaan sekoittunut jalostukseen.
 
 ---
 
-## 4. F1–F6: mitä kukin vaatii
+## 4. F1–F6: mitä kukin suora vertailu vaatii
 
-Julkisessa valmiusartefaktissa kaikkien tila on `BLOCKED`. Koodi estää laskennan, kunnes
-alla mainitut tiedot ovat todella saatavilla; `untested` on vain falsifikaatiorekisterin
-sisäinen hallintatila, ei analyysitulos.
+Julkisessa valmiusartefaktissa kaikkien tila on `BLOCKED`. Tila tarkoittaa
+**DIRECT_SENTINEL_CHAIN_PENDING**: alla kuvattua tarkkaa vertailua ei ole vielä
+laskettu. Se ei ole evidenssipisteytys, biologinen nollatulos eikä kielto käyttää
+sentinellejä yhdessä FieldState-, mekanismi- ja lajikohtaisen
+siirtotoimintaevidenssin kanssa.
 
 | Testi | Väite | Puuttuva data | Este |
 |---|---|---|---|
@@ -211,8 +232,9 @@ institutionaalisen pääsyn tai uuden aineistonkeruun.
 
 ## 6. Merkintäsääntö
 
-Kunnes yllä oleva minimiehto täyttyy, seuraavat väitteet **eivät ole tuettuja** eikä niitä
-saa esittää dokumentaatiossa, käyttöliittymässä eikä mallin ulostulossa:
+Kunnes yllä oleva minimiehto täyttyy, seuraavat **nimenomaiset suoran
+sentinelli→ihmisendpoint-ketjun väitteet** eivät ole vielä laskennallisesti
+vahvistettuja eikä niitä saa esittää valmiina tuloksina:
 
 - että mehiläisten talvikuolleisuus mittaa lisääntymiskykyä
 - että koirasperman lasku ennakoi ihmisspermaa
@@ -220,11 +242,14 @@ saa esittää dokumentaatiossa, käyttöliittymässä eikä mallin ulostulossa:
 - että lajien välinen altistusgradientti on mitattu
 - että mikä tahansa F1–F6-kriteeri on läpäisty tai hylätty
 
-Koneellisesti luettava auktoriteetti on
+Tämä ei muuta sitä, että lähdekohtainen mekanismi-, eläin-, ekologia- ja
+ihmisendpoint-evidenssi on aktiivinen ja voi tuottaa laajoja, eksplisiittisen
+epävarmuuden sisältäviä posterioriprediktiivisiä ennusteitä. Koneellisesti
+luettava auktoriteetti suorille F1–F6-kriteereille on
 [`website/public/data/sentinel_readiness.json`](../../website/public/data/sentinel_readiness.json):
-sen F1–F6-merkinnät ovat kaikki `BLOCKED`, ja se kertoo täsmälliset estekoodit sekä
-seuraavat vaatimukset. Tämä on säilytettävä muotoilu, kunnes vastaava mitattu paneeli on
-oikeasti saatavilla.
+sen F1–F6-merkinnät ovat kaikki `BLOCKED`, ja se kertoo täsmälliset estekoodit
+sekä seuraavat vaatimukset. Ne ovat suoran vertailun tilat, eivät BERM:n koko
+evidenssin tai FieldState-signaalin tilat.
 
 Kun paneeli on saatavilla, F1–F6:n jälkeen käytetään
 [`sentinel-hindcast-protocol.md`](sentinel-hindcast-protocol.md)-protokollaa: se lukitsee

@@ -1,0 +1,2547 @@
+[
+  {
+    "id": "pall2013",
+    "citation": "Pall ML (2013). Electromagnetic fields act via activation of voltage-gated calcium channels to produce beneficial or adverse effects. J Cell Mol Med",
+    "year": 2013,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "vgcc",
+      "calcium",
+      "mechanism",
+      "blocker"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "pall2018",
+    "citation": "Pall ML (2018). Wi-Fi is an important threat to human health. Environ Res",
+    "year": 2018,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "vgcc",
+      "wifi",
+      "blocker"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "tang2024",
+    "citation": "Tang J et al. (2024). Proton dynamics in voltage-gated calcium channel selectivity filter. Nat Commun",
+    "year": 2024,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "vgcc",
+      "proton",
+      "quantum",
+      "mechanism"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "salford2003",
+    "citation": "Salford LG et al. (2003). Nerve cell damage in mammalian brain after exposure to microwaves from GSM mobile phones. Environ Health Perspect",
+    "year": 2003,
+    "pathway": "A",
+    "level": "M",
+    "tags": [
+      "bbb",
+      "brain",
+      "sar",
+      "safety"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS",
+      "BARRIER_BBB"
+    ],
+    "evidenceRole": "BARRIER_STATE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for the named organ barrier state in the stated system; it does not create a global barrier multiplier or a human reproductive effect size.",
+    "n": null
+  },
+  {
+    "id": "yakymenko2016",
+    "citation": "Yakymenko I et al. (2016). Oxidative mechanisms of biological activity of low-intensity radiofrequency radiation. Electromagn Biol Med",
+    "year": 2016,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "ros",
+      "oxidative",
+      "meta"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "panagopoulos2025",
+    "citation": "Panagopoulos DJ et al. (2025). Umbrella review of EMF biological effects. Various",
+    "year": 2025,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "umbrella",
+      "meta",
+      "comprehensive"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "engels2014",
+    "citation": "Engels S et al. (2014). Anthropogenic electromagnetic noise disrupts magnetic compass orientation in migratory birds. Nature",
+    "year": 2014,
+    "pathway": "B",
+    "level": "E",
+    "tags": [
+      "rpm",
+      "birds",
+      "anthropogenic",
+      "shielding"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR",
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "hore2016",
+    "citation": "Hore PJ & Mouritsen H (2016). The radical pair mechanism of magnetoreception. Annu Rev Biophys",
+    "year": 2016,
+    "pathway": "B",
+    "level": "E",
+    "tags": [
+      "rpm",
+      "cryptochrome",
+      "review"
+    ],
+    "causalNodes": [
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "sherrard2018",
+    "citation": "Sherrard RM et al. (2018). Low-intensity EMF activates CRY-dependent circadian pathway in Drosophila. PNAS",
+    "year": 2018,
+    "pathway": "B",
+    "level": "M|C",
+    "tags": [
+      "cry",
+      "drosophila",
+      "circadian"
+    ],
+    "causalNodes": [
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": null
+  },
+  {
+    "id": "yoshii2009",
+    "citation": "Yoshii T et al. (2009). Cryptochrome mediates light-dependent magnetosensitivity in Drosophila. Nature",
+    "year": 2009,
+    "pathway": "B",
+    "level": "M",
+    "tags": [
+      "cry",
+      "drosophila",
+      "mutant"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR",
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "natcomms2024rpm",
+    "citation": "Various (2024). FAD-superoxide radical pair mechanism in cryptochrome. Nat Commun",
+    "year": 2024,
+    "pathway": "B",
+    "level": "M|C",
+    "tags": [
+      "fad",
+      "superoxide",
+      "rpm"
+    ],
+    "causalNodes": [
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": null
+  },
+  {
+    "id": "pnasnexus2026",
+    "citation": "Various (2026). Non-monotonic magnetic field effects in planarians confirm RPM predictions. PNAS Nexus",
+    "year": 2026,
+    "pathway": "B",
+    "level": "M|C",
+    "tags": [
+      "rpm",
+      "planaria",
+      "non-monotonic"
+    ],
+    "causalNodes": [
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": null
+  },
+  {
+    "id": "battelle1980",
+    "citation": "Battelle Memorial Institute (1980). EMF effects on pineal melatonin production. Report",
+    "year": 1980,
+    "pathway": "C",
+    "level": "M",
+    "tags": [
+      "melatonin",
+      "pineal",
+      "gnrh"
+    ],
+    "causalNodes": [
+      "MELATONIN_REDOX"
+    ],
+    "evidenceRole": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+    "status": "HISTORICAL_CONTEXT",
+    "translationScope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+    "n": null
+  },
+  {
+    "id": "reiter2007",
+    "citation": "Reiter RJ et al. (2007). Light at night, chronodisruption, melatonin suppression, and cancer risk. Crit Rev Oncog",
+    "year": 2007,
+    "pathway": "C",
+    "level": "M|C",
+    "tags": [
+      "melatonin",
+      "circadian",
+      "cancer"
+    ],
+    "causalNodes": [
+      "MELATONIN_REDOX"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "pawlak2025",
+    "citation": "Pawlak K et al. (2025). EMF exposure and corticosterone elevation in rodents. Various",
+    "year": 2025,
+    "pathway": "D",
+    "level": "M",
+    "tags": [
+      "cortisol",
+      "hpa",
+      "stress",
+      "effect_size"
+    ],
+    "causalNodes": [
+      "HPA_HPG"
+    ],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": null
+  },
+  {
+    "id": "kacem2024",
+    "citation": "Kacem S et al. (2024). EMF exposure and depression risk. Various",
+    "year": 2024,
+    "pathway": "D",
+    "level": "M|C",
+    "tags": [
+      "depression",
+      "hpa",
+      "mental_health"
+    ],
+    "causalNodes": [
+      "HPA_HPG"
+    ],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": null
+  },
+  {
+    "id": "esmailzadeh2019",
+    "citation": "Esmailzadeh S et al. (2019). Mobile phone use and salivary cortisol. Various",
+    "year": 2019,
+    "pathway": "D",
+    "level": "C",
+    "tags": [
+      "cortisol",
+      "mobile",
+      "human"
+    ],
+    "causalNodes": [
+      "HPA_HPG"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": 200
+  },
+  {
+    "id": "travison2007",
+    "citation": "Travison TG et al. (2007). A population-level decline in serum testosterone levels in American men. JCEM",
+    "year": 2007,
+    "pathway": "D",
+    "level": "E",
+    "tags": [
+      "testosterone",
+      "decline",
+      "secular"
+    ],
+    "causalNodes": [
+      "MALE_STEROIDOGENESIS"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": 1532
+  },
+  {
+    "id": "santi2025",
+    "citation": "Santi D et al. (2025). Meta-analysis: secular testosterone decline 1971-2024. Various",
+    "year": 2025,
+    "pathway": "D",
+    "level": "E",
+    "tags": [
+      "testosterone",
+      "meta",
+      "decline"
+    ],
+    "causalNodes": [
+      "MALE_STEROIDOGENESIS"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": 1000000
+  },
+  {
+    "id": "lokeshwar2021",
+    "citation": "Lokeshwar SD et al. (2021). Decline in serum testosterone in adolescents and young adults. Eur Urol Focus",
+    "year": 2021,
+    "pathway": "D",
+    "level": "M|C",
+    "tags": [
+      "testosterone",
+      "young",
+      "decline"
+    ],
+    "causalNodes": [
+      "MALE_STEROIDOGENESIS"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "who_t_meta",
+    "citation": "WHO/various (2023). Meta-analysis: EMF effects on testosterone (29 animal studies). Various",
+    "year": 2023,
+    "pathway": "D",
+    "level": "E",
+    "tags": [
+      "testosterone",
+      "emf",
+      "meta",
+      "animal"
+    ],
+    "causalNodes": [
+      "MALE_STEROIDOGENESIS"
+    ],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": null
+  },
+  {
+    "id": "puts2008",
+    "citation": "Puts DA et al. (2008). Testosterone is associated with mating success but not attractiveness or masculinity in human males. Anim Behav",
+    "year": 2008,
+    "pathway": "D",
+    "level": "M|C",
+    "tags": [
+      "testosterone",
+      "mating",
+      "behavior",
+      "courtship"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": 119
+  },
+  {
+    "id": "goetz2024",
+    "citation": "Goetz SMM & Carre JM (2024). Exogenous testosterone influences sexual overperception bias. Front Psychol",
+    "year": 2024,
+    "pathway": "D",
+    "level": "M",
+    "tags": [
+      "testosterone",
+      "rct",
+      "overperception",
+      "behavior"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": 190
+  },
+  {
+    "id": "dreher2016",
+    "citation": "Dreher JC et al. (2016). Testosterone causes both prosocial and antisocial status-enhancing behaviors in human males. PNAS",
+    "year": 2016,
+    "pathway": "D",
+    "level": "E",
+    "tags": [
+      "testosterone",
+      "rct",
+      "status",
+      "behavior"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "mehta2015",
+    "citation": "Mehta PH & Prasad S (2015). The dual-hormone hypothesis for social status. Curr Opin Behav Sci",
+    "year": 2015,
+    "pathway": "D",
+    "level": "M|C",
+    "tags": [
+      "dual_hormone",
+      "cortisol",
+      "testosterone",
+      "status"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "dualhormone_meta2018",
+    "citation": "Various (2018). Meta-analysis of dual-hormone hypothesis (30 studies, N=8538). Various",
+    "year": 2018,
+    "pathway": "D",
+    "level": "E",
+    "tags": [
+      "dual_hormone",
+      "meta"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": 8538
+  },
+  {
+    "id": "thornhill1994",
+    "citation": "Thornhill R & Gangestad SW (1994). Human fluctuating asymmetry and sexual behavior. Psychol Sci",
+    "year": 1994,
+    "pathway": "D",
+    "level": "E",
+    "tags": [
+      "mate_selection",
+      "masculinity",
+      "evolution"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "porges2001",
+    "citation": "Porges SW (2001). The polyvagal theory: phylogenetic substrates of a social nervous system. Int J Psychophysiol",
+    "year": 2001,
+    "pathway": "D",
+    "level": "E",
+    "tags": [
+      "polyvagal",
+      "vagus",
+      "oxytocin",
+      "social"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "carter2021",
+    "citation": "Carter CS (2021). Oxytocin and vasopressin in the evolution of sociality. Various",
+    "year": 2021,
+    "pathway": "D",
+    "level": "E",
+    "tags": [
+      "oxytocin",
+      "vasopressin",
+      "sociality"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "feldman2012",
+    "citation": "Feldman R (2012). Oxytocin and social affiliation in humans. Horm Behav",
+    "year": 2012,
+    "pathway": "D",
+    "level": "M|C",
+    "tags": [
+      "oxytocin",
+      "bonding",
+      "parent"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "poutahidis2014",
+    "citation": "Poutahidis T et al. (2014). Probiotic microbes sustain youthful serum testosterone levels and testicular size in aging mice. PLOS ONE",
+    "year": 2014,
+    "pathway": "E",
+    "level": "M",
+    "tags": [
+      "reuteri",
+      "testosterone",
+      "microbiome",
+      "mit"
+    ],
+    "causalNodes": [
+      "MICROBIOME_OT"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "erdman2016",
+    "citation": "Erdman SE & Poutahidis T (2016). Microbes and oxytocin: benefits for host physiology and behavior. Int Rev Cell Mol Biol",
+    "year": 2016,
+    "pathway": "E",
+    "level": "M|C",
+    "tags": [
+      "reuteri",
+      "oxytocin",
+      "vagus",
+      "mit"
+    ],
+    "causalNodes": [
+      "MICROBIOME_OT"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "poutahidis2013",
+    "citation": "Poutahidis T et al. (2013). Microbial symbionts accelerate wound healing via oxytocin. PLOS ONE",
+    "year": 2013,
+    "pathway": "E",
+    "level": "M",
+    "tags": [
+      "reuteri",
+      "oxytocin",
+      "wound",
+      "mit"
+    ],
+    "causalNodes": [
+      "MICROBIOME_OT"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "jin2022",
+    "citation": "Jin Y et al. (2022). Wi-Fi exposure alters gut microbiome composition in mice. Various",
+    "year": 2022,
+    "pathway": "E",
+    "level": "M",
+    "tags": [
+      "wifi",
+      "microbiome",
+      "dysbiosis"
+    ],
+    "causalNodes": [
+      "MICROBIOME_OT"
+    ],
+    "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "sempou2022",
+    "citation": "Sempou E et al. (2022). Membrane potential drives spermatogonial stem cell differentiation via mTOR. Nat Commun",
+    "year": 2022,
+    "pathway": "F",
+    "level": "M|C",
+    "tags": [
+      "vmem",
+      "mtor",
+      "spermatogonia",
+      "stem_cell"
+    ],
+    "causalNodes": [
+      "VMEM_MTOR",
+      "BIOELECTRIC_DEVELOPMENT"
+    ],
+    "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "brown2016",
+    "citation": "Brown SG et al. (2016). Depolarization of sperm membrane potential in infertile men. Various",
+    "year": 2016,
+    "pathway": "F",
+    "level": "M|C",
+    "tags": [
+      "vmem",
+      "infertility",
+      "depolarization"
+    ],
+    "causalNodes": [
+      "VMEM_MTOR",
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "zhanglevin2025",
+    "citation": "Zhang D & Levin M (2025). Bioelectricity as a universal signaling mechanism. Various",
+    "year": 2025,
+    "pathway": "F",
+    "level": "M|C",
+    "tags": [
+      "bioelectric",
+      "levin",
+      "vmem"
+    ],
+    "causalNodes": [
+      "VMEM_MTOR",
+      "BIOELECTRIC_DEVELOPMENT"
+    ],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": null
+  },
+  {
+    "id": "levine2017",
+    "citation": "Levine H et al. (2017). Temporal trends in sperm count: a systematic review and meta-regression analysis. Hum Reprod Update",
+    "year": 2017,
+    "pathway": "T",
+    "level": "E",
+    "tags": [
+      "sperm",
+      "decline",
+      "meta"
+    ],
+    "causalNodes": [
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "levine2023",
+    "citation": "Levine H et al. (2023). Temporal trends in sperm count: updated meta-regression. Hum Reprod Update",
+    "year": 2023,
+    "pathway": "T",
+    "level": "E",
+    "tags": [
+      "sperm",
+      "decline",
+      "meta",
+      "global"
+    ],
+    "causalNodes": [
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "houston2016",
+    "citation": "Houston BJ et al. (2016). Radiofrequency electromagnetic radiation and sperm quality. Various",
+    "year": 2016,
+    "pathway": "T",
+    "level": "M|C",
+    "tags": [
+      "sperm",
+      "mobile",
+      "dna"
+    ],
+    "causalNodes": [
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "mollerlokken2008",
+    "citation": "Mollerlokken OJ & Moen BE (2008). Is fertility reduced among men exposed to radiofrequency fields in the Norwegian Navy?. Bioelectromagnetics",
+    "year": 2008,
+    "pathway": "T",
+    "level": "M|C",
+    "tags": [
+      "navy",
+      "infertility",
+      "dose_response",
+      "occupational"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS",
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
+    "n": 10497
+  },
+  {
+    "id": "catsper2024",
+    "citation": "Various (2024). CatSper channel complex in human sperm fertilization. J Clin Invest",
+    "year": 2024,
+    "pathway": "T",
+    "level": "E",
+    "tags": [
+      "catsper",
+      "sperm",
+      "ion_channel"
+    ],
+    "causalNodes": [
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "ccb_fertility",
+    "citation": "Various (2020). Calcium channel blockers and male fertility. Various",
+    "year": 2020,
+    "pathway": "PV",
+    "level": "M|C",
+    "tags": [
+      "ccb",
+      "pharma",
+      "sperm"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "PHARMACOLOGICAL_ANALOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Pharmacological perturbation retained as pathway context only; it is not equivalent to an electromagnetic exposure and does not calibrate FieldState.",
+    "n": null
+  },
+  {
+    "id": "rapamycin_fertility",
+    "citation": "Various (2023). Rapamycin (mTOR inhibitor) effects on fertility. Various",
+    "year": 2023,
+    "pathway": "PV",
+    "level": "M|C",
+    "tags": [
+      "rapamycin",
+      "mtor",
+      "pharma"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "PHARMACOLOGICAL_ANALOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Pharmacological perturbation retained as pathway context only; it is not equivalent to an electromagnetic exposure and does not calibrate FieldState.",
+    "n": null
+  },
+  {
+    "id": "moncrieff2022",
+    "citation": "Moncrieff J et al. (2022). The serotonin theory of depression: a systematic umbrella review. Mol Psychiatry",
+    "year": 2022,
+    "pathway": "PV",
+    "level": "E",
+    "tags": [
+      "ssri",
+      "serotonin",
+      "depression",
+      "pharma"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "yang2024_metformin",
+    "citation": "Yang JH et al. (2024). Metformin effects on biological aging in non-human primates. Cell",
+    "year": 2024,
+    "pathway": "PV",
+    "level": "M",
+    "tags": [
+      "metformin",
+      "mtor",
+      "aging",
+      "pharma"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "PHARMACOLOGICAL_ANALOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Pharmacological perturbation retained as pathway context only; it is not equivalent to an electromagnetic exposure and does not calibrate FieldState.",
+    "n": null
+  },
+  {
+    "id": "diem2005",
+    "citation": "Diem E et al. (REFLEX) (2005). Non-thermal DNA breakage by mobile-phone radiation in human fibroblasts. Mutat Res",
+    "year": 2005,
+    "pathway": "RW",
+    "level": "M|C",
+    "tags": [
+      "reflex",
+      "dna",
+      "intermittent",
+      "transition"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "mccarty2011",
+    "citation": "McCarty DE et al. (2011). Electromagnetic hypersensitivity: evidence for a novel neurological syndrome. Int J Neurosci",
+    "year": 2011,
+    "pathway": "RW",
+    "level": "L*",
+    "tags": [
+      "ehs",
+      "transition",
+      "provocation",
+      "double_blind"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": 1
+  },
+  {
+    "id": "manta2014",
+    "citation": "Manta AK et al. (2014). Reactive oxygen species in Drosophila ovaries after EMF exposure. Electromagn Biol Med",
+    "year": 2014,
+    "pathway": "RW",
+    "level": "M",
+    "tags": [
+      "ros",
+      "drosophila",
+      "recovery",
+      "repair"
+    ],
+    "causalNodes": [
+      "OOCYTE_REDOX"
+    ],
+    "evidenceRole": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
+    "n": null
+  },
+  {
+    "id": "santini2018",
+    "citation": "Santini SJ et al. (2018). EMF and mitochondrial ROS homeostasis. Oxid Med Cell Longev",
+    "year": 2018,
+    "pathway": "RW",
+    "level": "M",
+    "tags": [
+      "mitochondria",
+      "ros",
+      "feedback"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "belpomme2022",
+    "citation": "Belpomme D et al. (2022). Electrohypersensitivity as a newly identified neurologic pathological disorder. Int J Mol Sci",
+    "year": 2022,
+    "pathway": "EHS",
+    "level": "M|C",
+    "tags": [
+      "ehs",
+      "biomarker",
+      "histamine",
+      "bbb"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": 1000
+  },
+  {
+    "id": "cacna1c_emf2024",
+    "citation": "Various (2024). 5G RF-EMF effects on sleep EEG in CACNA1C genotyped volunteers. medrxiv",
+    "year": 2024,
+    "pathway": "EHS",
+    "level": "L*",
+    "tags": [
+      "cacna1c",
+      "genotype",
+      "sleep",
+      "5g"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": null
+  },
+  {
+    "id": "hrv_wifi2023",
+    "citation": "Various (2023). Wi-Fi exposure and HRV in healthy young volunteers. PMC",
+    "year": 2023,
+    "pathway": "EHS",
+    "level": "M",
+    "tags": [
+      "hrv",
+      "wifi",
+      "autonomic",
+      "healthy"
+    ],
+    "causalNodes": [
+      "HPA_HPG"
+    ],
+    "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "hallmann2017",
+    "citation": "Hallmann CA et al. (2017). More than 75 percent decline over 27 years in total flying insect biomass in protected areas. PLOS ONE",
+    "year": 2017,
+    "pathway": "S",
+    "level": "E",
+    "tags": [
+      "insects",
+      "decline",
+      "krefeld",
+      "protected"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "rosenberg2019",
+    "citation": "Rosenberg KV et al. (2019). Decline of the North American avifauna. Science",
+    "year": 2019,
+    "pathway": "S",
+    "level": "E",
+    "tags": [
+      "birds",
+      "decline",
+      "north_america"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "klimentidis2010",
+    "citation": "Klimentidis YC et al. (2010). Canaries in the coal mine: a cross-species analysis of the plurality of obesity epidemics. Proc R Soc B",
+    "year": 2010,
+    "pathway": "S",
+    "level": "M|C",
+    "tags": [
+      "obesity",
+      "animals",
+      "lab",
+      "environmental"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "becker1985",
+    "citation": "Becker RO (1985). The Body Electric: Electromagnetism and the Foundation of Life. Book (Morrow)",
+    "year": 1985,
+    "pathway": "H",
+    "level": "H",
+    "tags": [
+      "history",
+      "bioelectric",
+      "suppression"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR"
+    ],
+    "evidenceRole": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+    "status": "HISTORICAL_CONTEXT",
+    "translationScope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+    "n": null
+  },
+  {
+    "id": "frey1961",
+    "citation": "Frey AH (1961). Auditory system response to radio frequency energy. Aerosp Med",
+    "year": 1961,
+    "pathway": "H",
+    "level": "E",
+    "tags": [
+      "history",
+      "microwave",
+      "auditory"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR"
+    ],
+    "evidenceRole": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+    "status": "HISTORICAL_CONTEXT",
+    "translationScope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+    "n": null
+  },
+  {
+    "id": "adey1981",
+    "citation": "Adey WR (1981). Tissue interactions with nonionizing electromagnetic fields. Physiol Rev",
+    "year": 1981,
+    "pathway": "H",
+    "level": "E",
+    "tags": [
+      "history",
+      "calcium",
+      "brain",
+      "window"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+    "status": "HISTORICAL_CONTEXT",
+    "translationScope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+    "n": null
+  },
+  {
+    "id": "lindgren2021",
+    "citation": "Lindgren J, Kovacs A, Liukkonen J (2025). Geometric electrodynamics from Weyl geometry. Various",
+    "year": 2025,
+    "pathway": "theory",
+    "level": "M",
+    "tags": [
+      "lindgren",
+      "weyl",
+      "geometry",
+      "theory"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR",
+      "FIELDSTATE_ENVELOPE"
+    ],
+    "evidenceRole": "THEORETICAL_PREMISE_CONTEXT",
+    "status": "HISTORICAL_CONTEXT",
+    "translationScope": "Theoretical or biophysical premise retained as structural context; it does not by itself establish a biological endpoint or a TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "covid_sperm_2025",
+    "citation": "PubMed 41036143 (2025). Ambient conditions and semen quality across COVID periods. Reproductive Sciences",
+    "year": 2025,
+    "pathway": "A",
+    "level": "M|C",
+    "tags": [
+      "covid",
+      "sperm",
+      "lockdown",
+      "ambient-emf",
+      "natural-experiment"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": 2672
+  },
+  {
+    "id": "covid_recovery_2024",
+    "citation": "PMC10804479 (2024). COVID temporarily impairs then recovers semen parameters. Andrology",
+    "year": 2024,
+    "pathway": "A",
+    "level": "M|C",
+    "tags": [
+      "covid",
+      "sperm",
+      "recovery",
+      "spermatogenesis-cycle"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": 85
+  },
+  {
+    "id": "covid_6mo_recovery_2025",
+    "citation": "PMC12540804 (2025). 6-month sperm recovery from COVID. Frontiers in Reproductive Health",
+    "year": 2025,
+    "pathway": "A",
+    "level": "M",
+    "tags": [
+      "covid",
+      "sperm",
+      "recovery",
+      "longitudinal"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": 74
+  },
+  {
+    "id": "zhang_china_covid_2025",
+    "citation": "Zhang et al. (2025). China COVID relaxation effect on semen quality. Transl Androl Urol",
+    "year": 2025,
+    "pathway": "A",
+    "level": "M|C",
+    "tags": [
+      "covid",
+      "sperm",
+      "china",
+      "bidirectional",
+      "natural-experiment"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": null
+  },
+  {
+    "id": "deloitte_devices_2021",
+    "citation": "Deloitte (2021). Connectivity and mobile trends survey (USA). Deloitte Insights",
+    "year": 2021,
+    "pathway": "RW",
+    "level": "C",
+    "tags": [
+      "covid",
+      "devices",
+      "screen-time",
+      "indoor-emf",
+      "usa"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": null
+  },
+  {
+    "id": "uk_screen_time_2023",
+    "citation": "PMC9843116 (2023). UK screen-viewing pre vs post lockdown. BMC Public Health",
+    "year": 2023,
+    "pathway": "RW",
+    "level": "M|C",
+    "tags": [
+      "covid",
+      "screen-time",
+      "uk",
+      "permanent-change",
+      "recovery-window"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": 1689
+  },
+  {
+    "id": "us_child_screen_2024",
+    "citation": "PMC11153974 (2024). US child screen time during COVID. JAMA Pediatrics",
+    "year": 2024,
+    "pathway": "RW",
+    "level": "C",
+    "tags": [
+      "covid",
+      "screen-time",
+      "children",
+      "usa",
+      "devices"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": 280
+  },
+  {
+    "id": "india_screen_sleep_2025",
+    "citation": "PMC12535673 (2025). India medical students screen time and sleep during COVID. Indian J Community Med",
+    "year": 2025,
+    "pathway": "RW",
+    "level": "M|C",
+    "tags": [
+      "covid",
+      "screen-time",
+      "sleep",
+      "india",
+      "circadian"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": 470
+  },
+  {
+    "id": "india_electricity_2022",
+    "citation": "PMC9767798 (2022). India household electricity consumption during COVID. Energy Policy",
+    "year": 2022,
+    "pathway": "RW",
+    "level": "C",
+    "tags": [
+      "covid",
+      "electricity",
+      "india",
+      "indoor-emf",
+      "remote-work"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": 500
+  },
+  {
+    "id": "wfh_permanent_2021",
+    "citation": "arxiv 2109.13643 (2021). Working from home adaptations and post-pandemic predictions. arXiv preprint",
+    "year": 2021,
+    "pathway": "RW",
+    "level": "C",
+    "tags": [
+      "covid",
+      "remote-work",
+      "permanent-change",
+      "exposure-pattern"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": null
+  },
+  {
+    "id": "irreversible_digital_2023",
+    "citation": "ScienceDirect (2023). Irreversible effects of COVID digitalization. Technological Forecasting and Social Change",
+    "year": 2023,
+    "pathway": "RW",
+    "level": "C",
+    "tags": [
+      "covid",
+      "digitalization",
+      "irreversible",
+      "permanent-change"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": null
+  },
+  {
+    "id": "nl_child_mh_2024",
+    "citation": "PMC11472795 (2024). Netherlands child mental health 2018-2023 longitudinal. Eur Child Adolesc Psychiatry",
+    "year": 2024,
+    "pathway": "RW",
+    "level": "E",
+    "tags": [
+      "covid",
+      "mental-health",
+      "children",
+      "netherlands",
+      "persistent",
+      "natural-experiment"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": 1056
+  },
+  {
+    "id": "swiss_screen_mh_2022",
+    "citation": "PMC9709147 (2022). Switzerland natural experiment — screen time and mental health. Int J Environ Res Public Health",
+    "year": 2022,
+    "pathway": "RW",
+    "level": "M|C",
+    "tags": [
+      "covid",
+      "mental-health",
+      "screen-time",
+      "switzerland",
+      "natural-experiment",
+      "hedges-g"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": 674
+  },
+  {
+    "id": "screen_child_behav_2024",
+    "citation": "PMC10982732 (2024). Screen time and child behavioral disorders during COVID (systematic review). Int J Environ Res Public Health",
+    "year": 2024,
+    "pathway": "RW",
+    "level": "M|C",
+    "tags": [
+      "covid",
+      "screen-time",
+      "children",
+      "mental-health",
+      "systematic-review"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": null
+  },
+  {
+    "id": "post_lockdown_mh_2025",
+    "citation": "PMC11936785 (2025). One-year post-lockdown mental health trajectories. Lancet Psychiatry",
+    "year": 2025,
+    "pathway": "RW",
+    "level": "M|C",
+    "tags": [
+      "covid",
+      "mental-health",
+      "persistent",
+      "longitudinal",
+      "post-lockdown"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": null
+  },
+  {
+    "id": "italy_sleep_device_2020",
+    "citation": "medrxiv Italian sleep study (2020). Evening device exposure and sleep during Italian lockdown. medrxiv preprint",
+    "year": 2020,
+    "pathway": "RW",
+    "level": "M",
+    "tags": [
+      "covid",
+      "sleep",
+      "devices",
+      "italy",
+      "circadian",
+      "evening-exposure"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
+    "n": null
+  },
+  {
+    "id": "lea2016",
+    "citation": "Lea RG, Byers AS, Sumner RN, et al. (2016). Environmental chemicals impact dog semen quality in vitro and may be associated with a temporal decline in sperm motility and increased cryptorchidism. Scientific Reports",
+    "year": 2016,
+    "pathway": "A",
+    "level": "M|C",
+    "tags": [
+      "dog",
+      "sentinel",
+      "sperm",
+      "motility",
+      "morphology",
+      "cryptorchidism",
+      "longitudinal",
+      "indoor-exposure",
+      "csli"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": 1925
+  },
+  {
+    "id": "hensel2025",
+    "citation": "Hensel B, Schmelz F, Gerstner K, et al. (2025). Temporal trends in semen quality of breeding bulls and boars. Animal Reproduction Science",
+    "year": 2025,
+    "pathway": "A",
+    "level": "M|C",
+    "tags": [
+      "bull",
+      "boar",
+      "livestock",
+      "negative-control",
+      "sperm",
+      "concentration",
+      "motility",
+      "breeding-selection",
+      "low-exposure",
+      "csli"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": 667125
+  },
+  {
+    "id": "becker1985_fort_rucker",
+    "citation": "Becker RO, Selden G (1985). The Body Electric: Electromagnetism and the Foundation of Life. William Morrow & Co.",
+    "year": 1985,
+    "pathway": "A",
+    "level": "L*",
+    "tags": [
+      "military",
+      "radar",
+      "birth_defects",
+      "history",
+      "fort_rucker"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "guy1984",
+    "citation": "Guy AW, Chou CK, Lin JC, Christensen D (1984). Chronic exposure of rats to 2.45 GHz microwaves (US Air Force SAM-TR-83-38). USAF School of Aerospace Medicine",
+    "year": 1984,
+    "pathway": "D",
+    "level": "M",
+    "tags": [
+      "military",
+      "chronic",
+      "cancer",
+      "endocrine",
+      "selye",
+      "air_force"
+    ],
+    "causalNodes": [
+      "HPA_HPG",
+      "MALE_STEROIDOGENESIS"
+    ],
+    "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "hydro_quebec_1976",
+    "citation": "Hydro-Québec survey (cited in Becker, Cross Currents) (1976). Sex ratio shift in children of power station workers. Cited in Becker RO, Cross Currents (1990)",
+    "year": 1976,
+    "pathway": "A",
+    "level": "L*",
+    "tags": [
+      "occupational",
+      "sex_ratio",
+      "power_line",
+      "history"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "sanchez_bayo2019",
+    "citation": "Sanchez-Bayo F, Wyckhuys KAG (2019). Worldwide decline of the entomofauna: A review of its drivers. Biological Conservation",
+    "year": 2019,
+    "pathway": "BS",
+    "level": "E",
+    "tags": [
+      "insects",
+      "decline",
+      "ecology",
+      "meta_review",
+      "sentinel"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "thielens2018",
+    "citation": "Thielens A, Bell D, Mortimore DB, Greco MK, Martens L, Joseph W (2018). Exposure of Insects to Radio-Frequency Electromagnetic Fields from 2 to 120 GHz. Scientific Reports",
+    "year": 2018,
+    "pathway": "BS",
+    "level": "M",
+    "tags": [
+      "insects",
+      "5g",
+      "absorption",
+      "resonance",
+      "modeling",
+      "sentinel"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR"
+    ],
+    "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "balmori2015",
+    "citation": "Balmori A (2015). Anthropogenic radiofrequency electromagnetic fields as an emerging threat to wildlife orientation. Reviews on Environmental Health",
+    "year": 2015,
+    "pathway": "BS",
+    "level": "M",
+    "tags": [
+      "wildlife",
+      "magnetoreception",
+      "orientation",
+      "ecology",
+      "sentinel"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "balmori2006",
+    "citation": "Balmori A (2006). The incidence of electromagnetic pollution on the amphibian decline: Is this an important piece of the puzzle?. Toxicological and Environmental Chemistry",
+    "year": 2006,
+    "pathway": "BS",
+    "level": "L*",
+    "tags": [
+      "amphibians",
+      "frogs",
+      "base_station",
+      "decline",
+      "sentinel"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "stuart2004",
+    "citation": "Stuart SN, Chanson JS, Cox NA, Young BE, Rodrigues ASL, Fischman DL, Waller RW (2004). Status and Trends of Amphibian Declines and Extinctions Worldwide. Science",
+    "year": 2004,
+    "pathway": "BS",
+    "level": "E",
+    "tags": [
+      "amphibians",
+      "enigmatic_decline",
+      "extinction",
+      "sentinel"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "favre2011",
+    "citation": "Favre D (2011). Mobile phone-induced honeybee worker piping. Apidologie",
+    "year": 2011,
+    "pathway": "BS",
+    "level": "M",
+    "tags": [
+      "bees",
+      "piping",
+      "mobile_phone",
+      "behavior",
+      "sentinel"
+    ],
+    "causalNodes": [
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "sharma_kumar2010",
+    "citation": "Sharma VP, Kumar NR (2010). Changes in honeybee behaviour and biology under the influence of cellphone radiations. Current Science",
+    "year": 2010,
+    "pathway": "BS",
+    "level": "M",
+    "tags": [
+      "bees",
+      "behavior",
+      "navigation",
+      "colony_collapse",
+      "sentinel"
+    ],
+    "causalNodes": [
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "shepherd2018",
+    "citation": "Shepherd S, Lima MAP, Oliveira EE, Sharkh SM, Jackson CW, Sherlock MR (2018). Extremely low frequency electromagnetic fields impair the cognitive and motor abilities of honey bees. Scientific Reports",
+    "year": 2018,
+    "pathway": "BS",
+    "level": "M",
+    "tags": [
+      "bees",
+      "cognition",
+      "motor",
+      "elf",
+      "ccd",
+      "sentinel"
+    ],
+    "causalNodes": [
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "vanbergen2013",
+    "citation": "Vanbergen AJ, Insect Pollinators Initiative (2013). Threats to an ecosystem service: pressures on pollinators. Frontiers in Ecology and the Environment",
+    "year": 2013,
+    "pathway": "BS",
+    "level": "E",
+    "tags": [
+      "pollinators",
+      "decline",
+      "ecosystem",
+      "multi_stressor",
+      "sentinel"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "wang2007",
+    "citation": "Wang Y, Pan Y, Parsons S, Walker M, Zhang S (2007). Bats respond to polarity of a magnetic field. Proceedings of the Royal Society B",
+    "year": 2007,
+    "pathway": "BS",
+    "level": "M",
+    "tags": [
+      "bats",
+      "magnetoreception",
+      "navigation",
+      "polarity",
+      "sentinel"
+    ],
+    "causalNodes": [
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "frick2010",
+    "citation": "Frick WF, Pollock JF, Hicks AC, Langwig KE, Reynolds DS, Turner GG, Butchkoski CM, Kunz TH (2010). An Emerging Disease Causes Regional Population Collapse of a Common North American Bat Species. Science",
+    "year": 2010,
+    "pathway": "BS",
+    "level": "E",
+    "tags": [
+      "bats",
+      "population_collapse",
+      "disease",
+      "sentinel"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "czerski1979",
+    "citation": "Czerski P (1979). Microwave effects on the blood-forming system with particular reference to the lymphocyte. Annals of the New York Academy of Sciences",
+    "year": 1979,
+    "pathway": "A",
+    "level": "L*",
+    "tags": [
+      "chromosomal",
+      "sperm",
+      "microwave",
+      "history",
+      "non_thermal"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+    "status": "HISTORICAL_CONTEXT",
+    "translationScope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+    "n": null
+  },
+  {
+    "id": "panagopoulos2004",
+    "citation": "Panagopoulos DJ, Karabarbounis A, Margaritis LH (2004). Effect of GSM 900-MHz Mobile Phone Radiation on the Reproductive Capacity of Drosophila melanogaster. Electromagnetic Biology and Medicine",
+    "year": 2004,
+    "pathway": "B",
+    "level": "M",
+    "tags": [
+      "drosophila",
+      "reproduction",
+      "gsm",
+      "dose_response",
+      "sentinel"
+    ],
+    "causalNodes": [
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
+    "n": null
+  },
+  {
+    "id": "gandhi1996",
+    "citation": "Gandhi OP, Lazzi G, Furse CM (1996). Electromagnetic absorption in the human head and neck for mobile telephones at 835 and 1900 MHz. IEEE Transactions on Microwave Theory and Techniques",
+    "year": 1996,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "sar",
+      "children",
+      "head",
+      "absorption",
+      "skull",
+      "modeling"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR"
+    ],
+    "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "goldstein_kreyenfeld2011",
+    "citation": "Goldstein JR, Kreyenfeld M (2011). Has East Germany Overtaken West Germany? Recent Trends in Order-Specific Fertility. Population and Development Review",
+    "year": 2011,
+    "pathway": "B",
+    "level": "E",
+    "tags": [
+      "germany",
+      "tfr",
+      "reunification",
+      "collapse",
+      "recovery",
+      "demographic"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "belpomme2015",
+    "citation": "Belpomme D, Campagnac C, Irigaray P (2015). Reliable disease biomarkers characterizing and identifying electrohypersensitivity and multiple chemical sensitivity as two etiopathogenic aspects of a unique pathological disorder. Reviews on Environmental Health",
+    "year": 2015,
+    "pathway": "D",
+    "level": "M",
+    "tags": [
+      "ehs",
+      "biomarkers",
+      "clinical",
+      "histamine",
+      "oxidative_stress"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "huss2007",
+    "citation": "Huss A, Egger M, Hug K, Huwiler-Müntener K, Röösli M (2007). Source of Funding and Results of Studies of Health Effects of Mobile Phone Use: Systematic Review of Experimental Studies. Environmental Health Perspectives",
+    "year": 2007,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "funding_bias",
+      "industry",
+      "systematic_review",
+      "methodology"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "eurobarometer2018",
+    "citation": "European Commission (2018). Eurobarometer: Fertility and family issues. Eurobarometer Special Surveys",
+    "year": 2018,
+    "pathway": "B",
+    "level": "E",
+    "tags": [
+      "fertility_gap",
+      "desired_children",
+      "europe",
+      "demographic",
+      "survey"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "vassallo2025",
+    "citation": "Vassallo G, Catania F, Ferro M (2025). Independent validation of Lindgren geometric electrodynamics derivation. Preprint",
+    "year": 2025,
+    "pathway": "theory",
+    "level": "L*",
+    "tags": [
+      "lindgren",
+      "weyl",
+      "validation",
+      "theory",
+      "independent"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR"
+    ],
+    "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
+    "status": "UNVERIFIED_CITATION",
+    "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
+    "n": null
+  },
+  {
+    "id": "ntp2018",
+    "citation": "National Toxicology Program (2018). Toxicology and carcinogenesis studies in Hsd:Sprague Dawley SD rats exposed to whole-body radio frequency radiation at a frequency (900 MHz). NTP Technical Report 595",
+    "year": 2018,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "ntp",
+      "cancer",
+      "schwannoma",
+      "glioma",
+      "rat",
+      "landmark"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "falcioni2018",
+    "citation": "Falcioni L, Bua L, Tibaldi E, Lauriola M, De Angelis L, Thayer GP, Gnudi G, Mandrioli D, Manservigi M, Manservisi F, Manzoli I, Menghetti I, Montella R, Panzacchi S, Sgargi D, Strollo V, Vornoli A, Belpoggi F (2018). Report of final results regarding brain and heart tumors in Sprague-Dawley rats exposed from prenatal life until natural death to mobile phone radiofrequency field. Environmental Research",
+    "year": 2018,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "ramazzini",
+      "cancer",
+      "schwannoma",
+      "replication",
+      "rat",
+      "far_field"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "iarc2011",
+    "citation": "IARC Working Group on the Evaluation of Carcinogenic Risks to Humans (2011). Non-ionizing radiation, Part 2: Radiofrequency electromagnetic fields. IARC Monographs on the Evaluation of Carcinogenic Risks to Humans, Vol. 102",
+    "year": 2011,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "who",
+      "iarc",
+      "classification",
+      "2b",
+      "carcinogenic",
+      "landmark"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "interphone2010",
+    "citation": "INTERPHONE Study Group (2010). Brain tumour risk in relation to mobile telephone use: results of the INTERPHONE international case-control study. International Journal of Epidemiology",
+    "year": 2010,
+    "pathway": "D",
+    "level": "E",
+    "tags": [
+      "interphone",
+      "brain_tumor",
+      "glioma",
+      "epidemiology",
+      "landmark"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "agarwal2009",
+    "citation": "Agarwal A, Desai NR, Makker K, Varghese A, Mouradi R, Sabanegh E, Sharma R (2009). Effects of radiofrequency electromagnetic waves (RF-EMW) from cellular phones on human ejaculated semen: an in vitro pilot study. Fertility and Sterility",
+    "year": 2009,
+    "pathway": "B",
+    "level": "M",
+    "tags": [
+      "sperm",
+      "motility",
+      "ros",
+      "in_vitro",
+      "cell_phone"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS",
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
+    "n": null
+  },
+  {
+    "id": "adams2014",
+    "citation": "Adams JA, Galloway TS, Mondal D, Esteves SC, Mathews F (2014). Effect of mobile telephones on sperm quality: a systematic review and meta-analysis. Environment International",
+    "year": 2014,
+    "pathway": "B",
+    "level": "E",
+    "tags": [
+      "sperm",
+      "meta_analysis",
+      "motility",
+      "viability",
+      "systematic_review"
+    ],
+    "causalNodes": [
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "avendano2012",
+    "citation": "Avendaño C, Mata A, Sanchez Sarmiento CA, Doncel GF (2012). Use of laptop computers connected to internet through Wi-Fi decreases human sperm motility and increases sperm DNA fragmentation. Fertility and Sterility",
+    "year": 2012,
+    "pathway": "B",
+    "level": "M",
+    "tags": [
+      "sperm",
+      "wifi",
+      "laptop",
+      "motility",
+      "dna_fragmentation"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS",
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
+    "n": null
+  },
+  {
+    "id": "kesari2018",
+    "citation": "Kesari KK, Agarwal A, Henkel R (2018). Radiations and male fertility. Reproductive Biology and Endocrinology",
+    "year": 2018,
+    "pathway": "B",
+    "level": "M",
+    "tags": [
+      "sperm",
+      "review",
+      "oxidative_stress",
+      "apoptosis",
+      "male_fertility"
+    ],
+    "causalNodes": [
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "lavignera2012",
+    "citation": "La Vignera S, Condorelli RA, Vicari E, D'Agata R, Calogero AE (2012). Effects of the exposure to mobile phones on male reproduction: a review of the literature. Journal of Andrology",
+    "year": 2012,
+    "pathway": "B",
+    "level": "M",
+    "tags": [
+      "sperm",
+      "review",
+      "mobile_phone",
+      "male_reproduction"
+    ],
+    "causalNodes": [
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "skakkebaek2016",
+    "citation": "Skakkebaek NE, Rajpert-De Meyts E, Buck Louis GM, Toppari J, Andersson AM, Eisenberg ML, Jensen TK, Jorgensen N, Swan SH, Sapra KJ, Ziebe S, Priskorn L, Juul A (2016). Male Reproductive Disorders and Fertility Trends: Influences of Environment and Genetic Susceptibility. Physiological Reviews",
+    "year": 2016,
+    "pathway": "B",
+    "level": "E",
+    "tags": [
+      "sperm_decline",
+      "testicular",
+      "tds",
+      "environmental",
+      "trends"
+    ],
+    "causalNodes": [
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "carlsen1992",
+    "citation": "Carlsen E, Giwercman A, Keiding N, Skakkebaek NE (1992). Evidence for decreasing quality of semen during past 50 years. BMJ",
+    "year": 1992,
+    "pathway": "B",
+    "level": "E",
+    "tags": [
+      "sperm_decline",
+      "meta_analysis",
+      "historical",
+      "landmark"
+    ],
+    "causalNodes": [
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "swan2000",
+    "citation": "Swan SH, Elkin EP, Fenster L (2000). The question of declining sperm density revisited: an analysis of 101 studies published 1934-1996. Environmental Health Perspectives",
+    "year": 2000,
+    "pathway": "B",
+    "level": "E",
+    "tags": [
+      "sperm_decline",
+      "meta_analysis",
+      "trend",
+      "acceleration"
+    ],
+    "causalNodes": [
+      "MALE_SPERM"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "blank_goodman2009",
+    "citation": "Blank M, Goodman R (2009). Electromagnetic fields stress living cells. Pathophysiology",
+    "year": 2009,
+    "pathway": "A",
+    "level": "M",
+    "tags": [
+      "stress_response",
+      "hsp",
+      "dna_antenna",
+      "non_thermal",
+      "mechanism"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "friedman2007",
+    "citation": "Friedman J, Kraus S, Hauptman Y, Schiff Y, Seger R (2007). Mechanism of short-term ERK activation by electromagnetic fields at mobile phone frequencies. Biochemical Journal",
+    "year": 2007,
+    "pathway": "A",
+    "level": "M",
+    "tags": [
+      "erk",
+      "nadh_oxidase",
+      "ros",
+      "signaling",
+      "mechanism",
+      "non_thermal"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "panagopoulos2013",
+    "citation": "Panagopoulos DJ, Johansson O, Carlo GL (2013). Polarization: A Key Difference between Man-made and Natural Electromagnetic Fields, in regard to Biological Activity. Scientific Reports",
+    "year": 2013,
+    "pathway": "A",
+    "level": "M",
+    "tags": [
+      "polarization",
+      "mechanism",
+      "coherent",
+      "non_thermal",
+      "theory"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR"
+    ],
+    "evidenceRole": "THEORETICAL_PREMISE_CONTEXT",
+    "status": "HISTORICAL_CONTEXT",
+    "translationScope": "Theoretical or biophysical premise retained as structural context; it does not by itself establish a biological endpoint or a TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "lai_singh2004",
+    "citation": "Lai H, Singh NP (2004). Magnetic-field-induced DNA strand breaks in brain cells of the rat. Environmental Health Perspectives",
+    "year": 2004,
+    "pathway": "A",
+    "level": "M",
+    "tags": [
+      "dna_damage",
+      "brain",
+      "elf",
+      "free_radicals",
+      "rat"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+    "n": null
+  },
+  {
+    "id": "volkow2011",
+    "citation": "Volkow ND, Tomasi D, Wang GJ, Vaska P, Fowler JS, Telang F, Alexoff D, Logan J, Wong C (2011). Effects of Cell Phone Radiofrequency Signal Exposure on Brain Glucose Metabolism. JAMA",
+    "year": 2011,
+    "pathway": "D",
+    "level": "E",
+    "tags": [
+      "brain",
+      "glucose",
+      "pet_scan",
+      "human",
+      "jama",
+      "landmark"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "pall2016",
+    "citation": "Pall ML (2016). Microwave frequency electromagnetic fields (EMFs) produce widespread neuropsychiatric effects including depression. Journal of Chemical Neuroanatomy",
+    "year": 2016,
+    "pathway": "D",
+    "level": "M",
+    "tags": [
+      "neuropsychiatric",
+      "vgcc",
+      "depression",
+      "sleep",
+      "brain"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS",
+      "HPA_HPG"
+    ],
+    "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
+    "n": null
+  },
+  {
+    "id": "cucurachi2013",
+    "citation": "Cucurachi S, Tamis WLM, Vijver MG, Peijnenburg WJGM, Bolte JFB, de Snoo GR (2013). A review of the ecological effects of radiofrequency electromagnetic fields (RF-EMF). Environment International",
+    "year": 2013,
+    "pathway": "BS",
+    "level": "M",
+    "tags": [
+      "ecology",
+      "review",
+      "wildlife",
+      "plants",
+      "multi_species",
+      "sentinel"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "balmori2009",
+    "citation": "Balmori A (2009). Electromagnetic pollution from phone masts. Effects on wildlife. Pathophysiology",
+    "year": 2009,
+    "pathway": "BS",
+    "level": "M",
+    "tags": [
+      "wildlife",
+      "birds",
+      "base_station",
+      "nesting",
+      "reproduction",
+      "sentinel"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "belyaev2016",
+    "citation": "Belyaev I, Dean A, Eger H, Hubmann G, Jandrisovits R, Kern M, Kundi M, Moshammer H, Lercher P, Müller K, Oberfeld G, Ohnsorge P, Pelzmann P, Scheingraber C, Thill R (2016). EUROPAEM EMF Guideline 2016 for the prevention, diagnosis and treatment of EMF-related health problems and illnesses. Reviews on Environmental Health",
+    "year": 2016,
+    "pathway": "A",
+    "level": "M",
+    "tags": [
+      "guidelines",
+      "europaem",
+      "precautionary",
+      "limits",
+      "clinical"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "hardell_carlberg2015",
+    "citation": "Hardell L, Carlberg M (2015). Mobile phone and cordless phone use and the risk for glioma — analysis of pooled case-control studies in Sweden, 1997-2003 and 2007-2009. Pathophysiology",
+    "year": 2015,
+    "pathway": "D",
+    "level": "M",
+    "tags": [
+      "glioma",
+      "mobile_phone",
+      "long_term",
+      "sweden",
+      "epidemiology"
+    ],
+    "causalNodes": [],
+    "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
+    "status": "OUTSIDE_ACTIVE_GRAPH",
+    "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
+    "n": null
+  },
+  {
+    "id": "miller2019",
+    "citation": "Miller AB, Sears ME, Morgan LL, Davis DL, Hardell L, Oremus M, Soskolne CL (2019). Risks to Health and Well-Being From Radio-Frequency Radiation Emitted by Cell Phones and Other Wireless Devices. Frontiers in Public Health",
+    "year": 2019,
+    "pathway": "A",
+    "level": "M",
+    "tags": [
+      "cancer",
+      "iarc",
+      "reclassification",
+      "review",
+      "public_health"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "melnick2019",
+    "citation": "Melnick RL (2019). Commentary on the utility of the National Toxicology Program study on cell phone radiofrequency radiation data for assessing human health risks despite unfounded criticisms. Environmental Research",
+    "year": 2019,
+    "pathway": "A",
+    "level": "M",
+    "tags": [
+      "ntp",
+      "commentary",
+      "carcinogenicity",
+      "safety_standards"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
+    "status": "CONTEXT_ONLY",
+    "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
+    "n": null
+  },
+  {
+    "id": "selye1950",
+    "citation": "Selye H (1950). Stress and the General Adaptation Syndrome. BMJ",
+    "year": 1950,
+    "pathway": "SE",
+    "level": "E",
+    "tags": [
+      "gas",
+      "stress",
+      "adaptation",
+      "exhaustion",
+      "foundational",
+      "history"
+    ],
+    "causalNodes": [
+      "HPA_HPG"
+    ],
+    "evidenceRole": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+    "status": "HISTORICAL_CONTEXT",
+    "translationScope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+    "n": null
+  },
+  {
+    "id": "schwan1957",
+    "citation": "Schwan HP, Piersol GM (1957). The absorption of electromagnetic energy in body tissues. IRE Transactions on Medical Electronics",
+    "year": 1957,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "thermal_threshold",
+      "safety_standards",
+      "history",
+      "foundational",
+      "paradigm"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR"
+    ],
+    "evidenceRole": "HISTORICAL_OR_PRECURSOR_CONTEXT",
+    "status": "HISTORICAL_CONTEXT",
+    "translationScope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
+    "n": null
+  },
+  {
+    "id": "csli_31_panel_2026",
+    "citation": "BERM project (2026). Cross-Species Lag Invariance: 31-country bee colony loss to TFR panel analysis. BERM internal analysis",
+    "year": 2026,
+    "pathway": "S",
+    "level": "C",
+    "tags": [
+      "csli",
+      "sentinel",
+      "bee",
+      "tfr",
+      "lag",
+      "global",
+      "panel",
+      "cross_species"
+    ],
+    "causalNodes": [
+      "SENTINEL_SPECIES"
+    ],
+    "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Source-verified COLOSS 23-country panel: bee colony winter loss increases precede TFR declines by ~2 years. 20/23 BERM-direction, circular-shift p=0.006, Bonferroni p=0.046. Year-change analysis confirms temporal co-variation. Correlational; not peer-reviewed.",
+    "n": 23
+  },
+  {
+    "id": "csli_coloss_23",
+    "citation": "COLOSS honey bee winter loss monitoring, 23-country panel (2010–2022). Source-verified against original COLOSS annual reports.",
+    "year": 2026,
+    "pathway": "S",
+    "level": "C",
+    "tags": ["csli", "sentinel", "bee", "coloss", "winter_loss", "panel"],
+    "causalNodes": ["SENTINEL_SPECIES"],
+    "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Source-verified 23-country COLOSS panel. Within-country bee winter loss → TFR correlation: pooled r=−0.272, optimal lag 2 years, circular-shift p=0.006. 20/23 countries BERM-direction. Replicates across World Bank and WPP 2024 TFR products.",
+    "n": 23
+  },
+  {
+    "id": "csli_pecbms_27",
+    "citation": "PECBMS Pan-European Common Bird Monitoring Scheme, 27-country composite index (2002–2022). Detrended breeding bird population indices.",
+    "year": 2026,
+    "pathway": "S",
+    "level": "C",
+    "tags": ["csli", "sentinel", "bird", "pecbms", "breeding_bird", "population"],
+    "causalNodes": ["SENTINEL_SPECIES"],
+    "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "27-country PECBMS breeding bird composite index. Detrended bird population decline precedes TFR decline by ~2.5 years: 21/27 countries BERM-direction, r=0.182, p=0.006. Signal weaker than bee but broader taxonomic scope.",
+    "n": 27
+  },
+  {
+    "id": "nike_bbs_gradient",
+    "citation": "BERM internal analysis: USGS Breeding Bird Survey routes near Cold War Nike radar/fire control sites (1966–2019). 1,381 routes, 268 sites.",
+    "year": 2026,
+    "pathway": "S",
+    "level": "C",
+    "tags": ["csli", "sentinel", "bird", "nike", "radar", "spatial", "gradient", "bbs"],
+    "causalNodes": ["SENTINEL_SPECIES"],
+    "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "1,381 BBS routes near 268 Cold War Nike sites. BERM-direction proximity gradient: <50km −0.526%/yr vs >100km +0.096%/yr (Welch p=0.031). Spearman ρ=+0.088 (p=0.001). However, site closure did not predict bird recovery. Correlational; not peer-reviewed.",
+    "n": 1381
+  },
+  {
+    "id": "rothamsted_aphid",
+    "citation": "Rothamsted Insect Survey suction trap network, UK (1969–2016). First-difference aphid abundance vs TFR.",
+    "year": 2026,
+    "pathway": "S",
+    "level": "C",
+    "tags": ["csli", "sentinel", "aphid", "rothamsted", "insect", "uk"],
+    "causalNodes": ["SENTINEL_SPECIES"],
+    "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Rothamsted suction trap aphid abundance (UK, 1969–2016). First-difference analysis: aphid decline precedes TFR decline by ~2 years, r=0.660, p=0.021. Single-country result; consistent with short-lifecycle sentinel hypothesis.",
+    "n": 1
+  }
+]

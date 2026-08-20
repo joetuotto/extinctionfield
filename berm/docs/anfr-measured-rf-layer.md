@@ -6,8 +6,12 @@ Putki: `anfr_autonomous_probes@v1.0.0`
 
 Tämä kerros jäädyttää Ranskan Agence nationale des fréquencesin (ANFR)
 autonomisten, kiinteiden anturien julkaistut kenttävoimakkuusmittaukset.
-Se on **mitattu ambientti-RF**, ei henkilökohtainen, eläin- tai biologinen
-annos. Se ei ole BERM:n aktiivisen ennusteen, CSLI:n tai F1–F6-testien syöte.
+Se on **mitattu ambientti-RF**, ei vielä henkilökohtainen, eläin- tai
+elinannos. Kerros on BERM:n aktiivinen fyysinen FieldState-komponentti:
+sitä voidaan käyttää lajikohtaisten vastehypoteesien, paikallisten
+liikkuvuus-/valuma-alue-estimaattien ja posterior-prediktiivisten signaalien
+muodostamiseen. Se ei yksin määritä biologista vaikutuskerrointa, CSLI:tä tai
+F1–F6:n kapeaa, suoraa endpoint-estimaattia.
 
 Lähde: [ANFR — Mesures sondes autonomes](https://data.anfr.fr/visualisation?id=mesures-sondes-autonomes),
 Licence Ouverte v2.0 (Etalab).
@@ -51,17 +55,31 @@ Ne eivät jää pois aineistosta: alkuperäinen arvo säilyy
 `EXCEL_1900_SERIAL_CONVERTED_FROM_PUBLISHED_VALUE`. Koska lähde ei ilmoita
 aikavyöhykettä, mitään UTC-oletusta ei tehdä.
 
-## Rajat, joita kerros ei ylitä
+## Mitä kerros kertoo — ja mitä se ei vielä yksin ratkaise
 
-- Kiinteän anturin ambienttikenttä ei ole elimen, eläimen tai henkilön annos.
-- Kerros ei sisällä eläinlääketieteellistä, seminologista, mehiläis- tai ihmisbiologista päätetapahtumaa.
-- Putki ei interpoloi, tee maakeskiarvoa, valitse viivettä tai sovita kausaalivaikutusta.
-- Nykyinen 2020–2024 kattavuus ei ole historiallinen RF-vastin COLOSSin 2012–2020 talvikuolleisuuksille.
+- Kiinteän anturin ambienttikenttä ei ole automaattisesti elimen, eläimen tai
+  henkilön annos; muunnos tehdään organisaatio-/lajikohtaisella
+  siirtotoiminnolla ja liikkuvuusgeometrialla.
+- Kerros ei sisällä valmista eläinlääketieteellistä, seminologista, mehiläis-
+  tai ihmisbiologista päätetapahtumaa. Se voi silti yhdistyä niihin
+  liikkuvuuspainotetun valuma-alueen tai paikallisalue-estimaatin kautta,
+  kun kyseinen ristiintaulukko ja sen epävarmuus dokumentoidaan.
+- Putki ei tee piilointerpolointia, maakeskiarvoa, viivevalintaa tai
+  väestöllisen vaikutuskertoimen sovitusta. Nämä ovat erillisiä,
+  näkyviä mallivalintoja, joita arvioidaan useilla leveillä prioriperheillä.
+- Nykyinen 2020–2024 kattavuus ei yksin ole historiallinen RF-vastin
+  COLOSSin 2012–2020 talvikuolleisuuksille, mutta se antaa mitatun
+  paikallisen mittakaavan, jonka avulla myöhemmät ekologia- ja
+  biologiapaneelit voidaan ankkuroida.
 
-Siksi kaikki F1–F6-tilat säilyvät `BLOCKED`-muodossa. Kerros tekee seuraavan
-tutkimusvaiheen mahdolliseksi vain, jos biologinen paneeli suunnitellaan
-ennalta samoille paikoille ja ajoille, sen mittausgeometria dokumentoidaan ja
-keskeiset sekoittajat mitataan.
+F1–F6:n nykyinen `BLOCKED`-merkintä tarkoittaa vain, että niiden alkuperäinen
+**suora, ennalta lukittu sentinelli→ihmisendpoint-kriteeri** ei ole vielä
+arvioitavissa. Se ei ole ANFR-kerroksen, muun biologisen evidenssin tai
+lajikohtaisten FieldState-ennusteiden kielto. Seuraava korkean informaation
+vaihe on biologinen paneeli joko samoilla paikoilla tai ennalta määritellyllä,
+liikkuvuuspainotetulla paikallisalueella; silloin kenttä-, organismi- ja
+päätetapahtumaepävarmuus voidaan kaventaa ilman että jo olemassa oleva
+signaali hylätään.
 
 ## Toistaminen
 

@@ -9,10 +9,12 @@ source-reported reproductive *counts* at site-by-survey-time grain:
 
 The release has ten anonymised sites in five intervention/control pairs and
 does not contain RF dosimetry or re-identifiable coordinates.  It is therefore
-not joined to the CSLI table, not an exposure proxy, and not evidence for any
-F1--F6 test.  Its purpose is to make a well-provenanced, directly observed
-veterinary reproductive-outcome layer available for descriptive reanalysis of
-the original study.
+not a direct CSLI table, exposure proxy or F1--F6 coefficient dataset.  It is
+nevertheless an active veterinary endpoint and protocol-context layer: it
+preserves a directly observed reproductive-population outcome, its response
+definition, intervention structure and relevant source covariates for the
+wider species/endpoint evidence map.  It cannot by itself identify an
+RF/FieldState effect or a human transfer coefficient.
 
 The raw files are acquired manually into ``data/raw/`` and registered in a
 versioned manifest.  This module never contacts the network and refuses to use
@@ -500,6 +502,12 @@ def build_fielding_goa_artifacts(
         "schema_version": VETERINARY_SENTINEL_SCHEMA_VERSION,
         "pipeline_version": PIPELINE_VERSION,
         "status": "CONTEXT_ONLY_NOT_CSLI_ELIGIBLE",
+        "evidence_status": "ACTIVE_VETERINARY_ENDPOINT_AND_PROTOCOL_CONTEXT_NOT_DIRECT_FIELDSTATE_CALIBRATION",
+        "evidence_roles": [
+            "species-specific reproductive-population endpoint definition",
+            "veterinary outcome and intervention-design constraint",
+            "cross-species endpoint/protocol context",
+        ],
         "source": {
             "source_id": SOURCE_ID,
             "source_url": SOURCE_URL,
@@ -561,6 +569,11 @@ def build_fielding_goa_artifacts(
             "F5": {"status": "BLOCKED", "missing": ["multi-region dog semen time series", "external region identities"]},
             "F6": {"status": "BLOCKED", "missing": ["matched chemical covariates", "RF dosimetry", "external region identities"]},
         },
+        "readiness_scope": (
+            "F1-F6 statuses describe only direct sentinel-to-human endpoint "
+            "calibration. They do not erase this source's veterinary endpoint and "
+            "study-design information from the evidence map."
+        ),
     }
     return VeterinarySentinelArtifacts(rows=rows, csv_bytes=csv_bytes, summary=summary)
 

@@ -7,10 +7,13 @@ the three measures in long form.  In particular, it never divides births by
 mares or joins the tables: the location semantics differ between the source
 tables (stationing department versus breeding-place department).
 
-It is a reproducibility and future modelling benchmark only.  It is not a
-sentinel panel, RF/EMF dataset, causal-analysis input, CSLI input, readiness
-input, or prediction input.  The module deliberately has no imports from
-those paths or from the shared source registry.
+It is a reproducibility and future-modelling benchmark, not a direct
+RF/EMF-exposure dataset, CSLI coefficient input or standalone causal effect
+estimate.  Its separately preserved annual breeding and birth measures can
+nevertheless inform equine endpoint definitions, ecological/historical
+signatures and transfer hypotheses after an explicit FieldState/covariate
+crosswalk; the module deliberately does not manufacture that crosswalk or
+silently join its incompatible geography semantics.
 
 Run from ``berm/`` with::
 
@@ -632,6 +635,12 @@ def build_ifce_sire_equine_benchmark_artifacts(
                 "NO_RF_DOSIMETRY",
             ],
         },
+        "evidence_status": "ACTIVE_EQUINE_ENDPOINT_AND_HISTORICAL_SIGNATURE_CONTEXT_NOT_DIRECT_F1_F6_CALIBRATION",
+        "evidence_roles": [
+            "equine breeding/birth endpoint-definition context",
+            "department-year ecological and historical signature candidate",
+            "transfer-prior context after an explicit FieldState/covariate crosswalk",
+        ],
         "source": {
             "source_id": SOURCE_ID,
             "publisher": PUBLISHER,

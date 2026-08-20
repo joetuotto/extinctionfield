@@ -5,7 +5,11 @@
 This is an isolated veterinary observation layer. It normalises direct
 site-by-survey-time counts from Fielding’s free-roaming-dog sterilisation RCT
 into `veterinary_sentinel_species_site_time`; it is **not** an RF-exposure
-dataset, a CSLI input, or a component of the active prediction.
+dataset, direct CSLI input, or standalone FieldState-effect predictor. It is
+an active veterinary endpoint and protocol-context layer: its observed response
+definition, intervention structure and source covariates remain available to
+the cross-species/endpoint evidence map without being mistaken for RF
+dosimetry.
 
 - Dataset: [Fielding 2025, University of Edinburgh DataShare](https://doi.org/10.7488/ds/7919)
 - Study article: [Scientific Reports, 2025](https://doi.org/10.1038/s41598-025-98990-1)
@@ -59,9 +63,11 @@ semen-quality, cryptorchidism, or long-run geographic fertility endpoints.
 
 ## F-test status
 
-All F1–F6 are intentionally marked `BLOCKED` in the generated summary. At a
-minimum, an RF comparison would require externally joinable region identities
-and measured or validated RF exposure. The present source additionally lacks a
+All F1–F6 are intentionally marked `BLOCKED` in the generated summary. This
+is a status for the six predeclared **direct sentinel→human endpoint** tests,
+not a zero-evidence label for the observed veterinary outcome. At a minimum,
+an RF comparison would require externally joinable region identities and
+measured or validated RF exposure. The present source additionally lacks a
 dog-semen endpoint, matched human biomarker panel, matched chemical covariates,
 and a multi-region comparable time series. Those missing data must remain
 visible rather than being filled with an adoption proxy or a model assumption.

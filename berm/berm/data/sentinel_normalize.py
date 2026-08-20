@@ -821,19 +821,27 @@ def _build_readiness(summary: Mapping[str, Any]) -> dict[str, Any]:
         },
         {
             "source_id": "LEVINE_2023_SPERM_RECON",
-            "status": "EXCLUDED",
+            "status": "CONTEXTUAL_SERIES_NOT_ROW_ELIGIBLE",
             "row_count": 0,
             "limitations": [
                 "Held series is reconstructed, lacks study-row provenance/uncertainty, and is not promoted to an observed row-level panel.",
             ],
+            "evidence_use": (
+                "Retained as an explicitly reconstructed historical context and comparison signal; "
+                "not used as an observed row-level sentinel endpoint."
+            ),
         },
         {
             "source_id": "WAHL_2009_BULL_SEMEN;KAROUI_2011_BULL_SEMEN;HENSEL_2025_BOAR_SEMEN",
-            "status": "EXCLUDED",
+            "status": "LITERATURE_CONTEXT_NOT_ROW_ELIGIBLE",
             "row_count": 0,
             "limitations": [
                 "The held livestock JSON contains citations and qualitative descriptions, not numeric observation rows.",
             ],
+            "evidence_use": (
+                "Retained as species, production-system and endpoint context for FieldState transfer "
+                "hypotheses; not represented as invented numeric observation rows."
+            ),
         },
     ]
     tests = [
@@ -891,6 +899,8 @@ def _build_readiness(summary: Mapping[str, Any]) -> dict[str, Any]:
         "generated_at": SOURCE_SNAPSHOT_DATE,
         "generation_policy": "fixed_source_snapshot_label_for_deterministic_builds",
         "status": "BLOCKED",
+        "direct_test_status": "DIRECT_SENTINEL_CHAIN_PENDING",
+        "evidence_status": "ACTIVE_DISCOVERY_AND_TRANSFER_EVIDENCE_PRESENT",
         "analysis": "cross_species_sentinel_falsification_readiness",
         "canonical_artifact": canonical,
         "tests": tests,
@@ -924,6 +934,8 @@ def _build_readiness(summary: Mapping[str, Any]) -> dict[str, Any]:
         "no_imputation": True,
         "scope_boundary": [
             "BLOCKED is a data-readiness state, not an evidence score or causal conclusion.",
+            "DIRECT_SENTINEL_CHAIN_PENDING applies only to the six predeclared sentinel-to-human endpoint tests.",
+            "Observed sentinel records, FieldState measurements and registered source evidence remain usable for discovery, transfer-function and posterior-predictive analysis with explicit uncertainty.",
             "The artifact does not convert mobile subscriptions or qualitative exposure ranks into RF dosimetry.",
         ],
     }

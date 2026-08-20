@@ -8,9 +8,10 @@ management, inspection, laboratory, pesticide, resource, or observation
 tables.  This module deliberately preserves that distinction.
 
 It creates two standalone spatial-context tables and an availability summary.
-They are useful only to locate the held study context; they are not a bee
-health endpoint, a biological covariate panel, an RF measurement, a proxy for
-RF, or an eligible input to CSLI / causal analysis.
+They locate the held study context and are active provenance/spatial-design
+evidence for a later apiary FieldState crosswalk. They are not, by themselves,
+a bee-health endpoint, a biological covariate panel, an RF measurement, a
+proxy for RF or a direct CSLI/RF-effect coefficient input.
 
 Run from ``berm/`` with::
 
@@ -267,6 +268,12 @@ def build_mustb_spatial_context_artifacts(
         "schema_version": MUSTB_SPATIAL_CONTEXT_SCHEMA_VERSION,
         "pipeline_version": PIPELINE_VERSION,
         "status": "PARTIAL_SPATIAL_CONTEXT_ONLY_NOT_SENTINEL_ENDPOINT_OR_CSLI_ELIGIBLE",
+        "evidence_status": "ACTIVE_SPATIAL_AND_PROVENANCE_CONTEXT_PENDING_ENDPOINT_AND_FIELDSTATE_MATCH",
+        "evidence_roles": [
+            "apiary and botanical-survey spatial crosswalk context",
+            "field-study provenance and missingness constraint",
+            "future local-area/mobility FieldState design input",
+        ],
         "source": {
             "source_id": SOURCE_ID,
             "source_url": SOURCE_URL,
@@ -310,7 +317,7 @@ def build_mustb_spatial_context_artifacts(
         "explicit_nonuses": [
             "not a biological endpoint or covariate panel in the held archive",
             "not an RF-exposure dataset or RF proxy",
-            "not eligible for CSLI, F1-F6, or a BERM causal join",
+            "not eligible by itself for a direct CSLI, F1-F6 or RF-effect coefficient join",
             "not temporally joinable at row level because held tables contain no observation dates",
             "not a basis for inferring flower resources from polygon geometry alone",
         ],

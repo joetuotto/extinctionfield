@@ -9,8 +9,11 @@ biologically-ordered lag cascade across sentinel species:
 Golden signature: T_E < T_S < T_H < T_F and the inter-species
 lags Δ_S and Δ_H are INVARIANT across regions.
 
-This module is DIAGNOSTIC ONLY — results are reported transparently
-regardless of whether they support or refute the hypothesis.
+This module is a narrow, direct numerical diagnostic — results are reported
+transparently regardless of whether they support or refute the hypothesis.
+Its readiness status does not decide whether a source remains active in the
+wider BERM evidence ledger for topology, direction, lag, transfer or
+posterior-predictive signatures.
 """
 
 from __future__ import annotations
@@ -297,9 +300,11 @@ def estimate_lag_kernel(
 
     The caller must supply a ``csli-readiness/v1`` contract that verifies the
     outcome endpoint, exact geography, measured RF exposure, annual calendar
-    coverage and required covariates.  Current repository sentinel inputs do
-    not meet that contract and return ``NOT_ELIGIBLE`` without numeric lag
-    results.
+    coverage and required covariates.  This is the v1 criterion for a direct
+    CSLI statistic, not a requirement for FieldState-aware discovery or
+    mobility/catchment-aware transfer inference elsewhere in BERM.  Current
+    repository sentinel inputs do not meet that direct-CSLI contract and
+    return ``NOT_ELIGIBLE`` without numeric lag results.
     """
 
     outcomes, exposure, readiness = _unpack_pair_inputs(outcome_data, emf_data, readiness)
@@ -1010,8 +1015,9 @@ def export_current_csli_readiness(path: str | Path) -> dict[str, Any]:
 
     The function never overwrites a path implicitly.  Its result intentionally
     contains no lag, correlation, hit-rate, interval, PCA, or model-score
-    fields, so downstream renderers cannot mistake source readiness for
-    evidence.
+    fields, so downstream renderers cannot mistake direct-CSLI readiness for a
+    numeric result.  The artifact explicitly preserves the distinction between
+    this narrow readiness status and the source's wider evidence role.
     """
 
     artifact = current_csli_readiness()
@@ -1022,15 +1028,18 @@ def export_current_csli_readiness(path: str | Path) -> dict[str, Any]:
 
 
 def print_full_csli_diagnostic() -> dict[str, Any]:
-    """Print the current CSLI readiness gate; numerical diagnostics are retired."""
+    """Print the current direct-CSLI readiness gate; numerical diagnostics are retired."""
 
     result = current_csli_readiness()
     print("=" * 70)
-    print("CSLI DIAGNOSTIC: BLOCKED PENDING ELIGIBLE SENTINEL PANEL")
+    print("CSLI DIRECT DIAGNOSTIC: BLOCKED PENDING ELIGIBLE SENTINEL PANEL")
     print("=" * 70)
     for reason in result["reasons"]:
         print(f"  - [{reason['code']}] {reason['message']}")
-    print("No lag, correlation, confidence interval, LOOCV, or locked prediction is reported.")
+    print(
+        "No lag, correlation, confidence interval, LOOCV, or locked prediction "
+        "is reported for the direct-CSLI statistic."
+    )
     return result
 
 

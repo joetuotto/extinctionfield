@@ -1,4 +1,4 @@
-"""Fail-closed input contracts for CSLI analyses.
+"""Fail-closed input contracts for *direct numerical* CSLI analyses.
 
 CSLI is only interpretable when the biological outcome, exposure, geography and
 confounder data are all aligned at verified calendar-year resolution.  This
@@ -10,6 +10,13 @@ RF exposure.
 Public CSLI entry points therefore require an explicit metadata contract.  The
 contract is intentionally small and JSON serialisable so a normalisation
 pipeline can attach its version and input hash to an analysis artifact.
+
+This is a scope guard for a narrow, direct lag/coefficient claim.  It is not an
+evidence-admission gate for BERM as a whole: a mechanism result, animal
+endpoint, historical series, partial FieldState measurement or
+mobility-weighted transfer estimate can remain active evidence for topology,
+direction, lag-family, susceptibility and posterior-predictive signatures even
+when it cannot produce a numeric CSLI statistic through this module.
 
 Example metadata::
 
@@ -81,6 +88,13 @@ def blocked_result(
         "readiness": {
             "schema_version": READINESS_SCHEMA_VERSION,
             "eligible": False,
+            "scope": "DIRECT_CSLI_ENDPOINT_CALIBRATION_ONLY",
+            "interpretation": (
+                "This eligibility result applies only to the requested direct CSLI "
+                "lag/coefficient calculation. It does not rank, discard or set to "
+                "zero the source's use in BERM topology, direction, lag, transfer "
+                "or posterior-predictive evidence synthesis."
+            ),
             **dict(readiness or {}),
         },
     }
@@ -122,8 +136,12 @@ def validate_pair_contract(
     """Validate the metadata and calendar alignment for a lag-style analysis.
 
     Returns ``None`` only for an explicitly verified, exactly joined, annual
-    input with usable complete lag windows.  It never imputes an exposure and
-    never turns row positions into years.
+    input with usable complete lag windows.  The current v1 public CSLI
+    estimator deliberately uses ``EXACT`` geography for this narrow numerical
+    result; a documented mobility/catchment/local-area FieldState transfer can
+    still inform other BERM likelihoods and predictions without being silently
+    relabelled as an exact CSLI row.  This function never imputes an exposure
+    and never turns row positions into years.
     """
 
     if metadata is None:
@@ -280,8 +298,10 @@ def validate_pair_contract(
 def current_source_blocked_result(analysis: str) -> dict[str, Any]:
     """Describe why the repository's current sentinel sources cannot be run.
 
-    This is a deliberately factual readiness report for public diagnostic
-    entrypoints.  It does not inspect values to manufacture an apparent lag.
+    This is a deliberately factual readiness report for public direct-CSLI
+    diagnostic entrypoints.  It does not inspect values to manufacture an
+    apparent lag, and it does not classify the listed sources as absent from
+    the wider FieldState evidence synthesis.
     """
 
     return blocked_result(
@@ -320,5 +340,11 @@ def current_source_blocked_result(analysis: str) -> dict[str, Any]:
         readiness={
             "source_snapshot": "repository_current_sentinel_sources",
             "required_schema": READINESS_SCHEMA_VERSION,
+            "active_non_csli_evidence_roles": [
+                "causal-topology and endpoint-definition constraints",
+                "directional and biological-lag priors",
+                "species/organ transfer and susceptibility hypotheses",
+                "FieldState and cross-species posterior-predictive signatures",
+            ],
         },
     )

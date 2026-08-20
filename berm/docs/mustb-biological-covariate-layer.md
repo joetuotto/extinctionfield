@@ -49,13 +49,16 @@ actual archive and marks all unavailable endpoints and covariates explicitly.
 ## Explicit limits
 
 This release is `PARTIAL_SPATIAL_CONTEXT_ONLY_NOT_SENTINEL_ENDPOINT_OR_CSLI_ELIGIBLE`.
-It is **not**:
+That status is a direct endpoint/RF-coefficient boundary, not a claim that its
+verified coordinates and missingness audit are useless. They remain active
+provenance and spatial-design inputs for a documented later FieldState
+crosswalk. The held bytes are **not**:
 
 - an RF-exposure measurement or an RF proxy;
 - a honey-bee biological endpoint panel;
 - a time-resolved apiary covariate panel;
-- eligible evidence for CSLI, F1–F6, an active prediction, or an RF-causal
-  join.
+- by themselves eligible for a direct CSLI, F1–F6, standalone prediction, or
+  RF-effect coefficient join.
 
 Those are exclusions imposed by the held bytes, not a judgement about the
 MUST-B study as a whole.

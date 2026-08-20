@@ -141,6 +141,8 @@ def test_build_and_write_are_deterministic_and_preserve_raw_inputs(tmp_path):
     assert first.readiness == second.readiness
     assert first.summary["canonical_artifact"]["row_count"] == 480
     assert first.readiness["status"] == "BLOCKED"
+    assert first.readiness["direct_test_status"] == "DIRECT_SENTINEL_CHAIN_PENDING"
+    assert first.readiness["evidence_status"] == "ACTIVE_DISCOVERY_AND_TRANSFER_EVIDENCE_PRESENT"
     assert [test["status"] for test in first.readiness["tests"]] == ["BLOCKED"] * 6
     assert [record["id"] for record in first.readiness["withdrawn_records"]] == [
         "csli-bee-lag", "csli-bird-lag", "csli-sperm-lag",

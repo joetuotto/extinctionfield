@@ -7,10 +7,14 @@ reproducibility and feature-engineering checks, but it is not a BERM sentinel
 panel: the release covers one AI station during March--June 2017 and has no
 RF/EMF dosimetry or external environmental covariates.
 
-This module never imports or writes the sentinel, CSLI, readiness or prediction
-paths. Every output explicitly says BENCHMARK_ONLY_NOT_SENTINEL and
-NOT_ELIGIBLE for F1--F6. Raw files are ignored by git and checked against the
-versioned manifest before they are read. Derived output is fail-closed.
+This module never imports or writes the sentinel, CSLI, readiness or direct
+prediction paths. Every output explicitly says BENCHMARK_ONLY_NOT_SENTINEL and
+NOT_ELIGIBLE for F1--F6: those labels mean that this four-month single-station
+release cannot itself identify a FieldState effect or a direct cross-species
+coefficient. Its observed CASA-to-insemination outcome relation remains active
+endpoint-transfer and measurement-model evidence. Raw files are ignored by git
+and checked against the versioned manifest before they are read. Derived output
+is fail-closed.
 
 Run from berm/ with:
 
@@ -786,7 +790,7 @@ def _validate_source_registry() -> None:
         )
     if source.feeds_prediction:
         raise ValueError(
-            f"{SOURCE_ID} must not feed active prediction; it is a benchmark-only source"
+            f"{SOURCE_ID} must not feed a direct standalone FieldState prediction; it is a benchmark-only source"
         )
 
 
@@ -795,7 +799,7 @@ def build_seminology_benchmark_artifacts(
     data_dir: Path = DATA_DIR,
     manifest_path: Path | None = None,
 ) -> SeminologyBenchmarkArtifacts:
-    """Build all outputs in memory. The benchmark is never a sentinel input."""
+    """Build all outputs in memory without claiming a direct FieldState effect."""
 
     _validate_source_registry()
     manifest_path = manifest_path or _default_manifest_path(data_dir)
@@ -824,6 +828,12 @@ def build_seminology_benchmark_artifacts(
                 "SINGLE_SITE",
             ],
         },
+        "evidence_status": "ACTIVE_SPERM_TO_FERTILITY_TRANSFER_CONTEXT_NOT_DIRECT_F1_F6_CALIBRATION",
+        "evidence_roles": [
+            "observed CASA-to-insemination/farrowing endpoint-transfer context",
+            "boar reproductive endpoint and measurement-model constraint",
+            "species-specific response-mapping prior pending FieldState match",
+        ],
         "source": {
             "source_id": SOURCE_ID,
             "source_url": SOURCE_URL,

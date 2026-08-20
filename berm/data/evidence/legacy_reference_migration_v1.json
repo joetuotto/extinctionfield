@@ -4870,6 +4870,163 @@
         "No active effect-size calibration"
       ],
       "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "csli_31_panel_2026",
+      "legacy_source_record_index": 130,
+      "citation": {
+        "authors": "BERM project",
+        "year": 2026,
+        "title": "Cross-Species Lag Invariance: 31-country bee colony loss to TFR panel analysis",
+        "journal": "BERM internal analysis",
+        "n": 31
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "C",
+        "pathways": [
+          "S"
+        ],
+        "tags": [
+          "csli",
+          "sentinel",
+          "bee",
+          "tfr",
+          "lag",
+          "global",
+          "panel",
+          "cross_species"
+        ]
+      },
+      "canonical_nodes": [
+        "SENTINEL_SPECIES"
+      ],
+      "model_domain": "cross_species_sentinel",
+      "evidence_role": "OBSERVATIONAL_ASSOCIATION",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "BERM_INTERNAL_ANALYSIS",
+      "translation_scope": "Source-verified COLOSS 23-country panel: bee colony winter loss increases precede TFR declines by ~2 years. 20/23 BERM-direction, circular-shift p=0.006, Bonferroni p=0.046. Year-change analysis confirms temporal co-variation. Correlational; not peer-reviewed.",
+      "limitations": [
+        "Correlational only — common confounder not excluded",
+        "2-year lag is discovery-scan peak, not pre-locked",
+        "Small effect size (pooled r ≈ −0.272)",
+        "BERM internal analysis, not peer-reviewed",
+        "Heterogeneous bee loss data across sources"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "csli_coloss_23",
+      "citation": {
+        "authors": "COLOSS honey bee research association",
+        "year": 2026,
+        "title": "Source-verified 23-country COLOSS winter loss panel (2010–2022)",
+        "journal": "COLOSS annual reports, source-verified by BERM",
+        "n": 23
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "C",
+        "pathways": ["S"],
+        "tags": ["csli", "sentinel", "bee", "coloss", "winter_loss", "panel"]
+      },
+      "canonical_nodes": ["SENTINEL_SPECIES"],
+      "model_domain": "cross_species_sentinel",
+      "evidence_role": "OBSERVATIONAL_ASSOCIATION",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "BERM_INTERNAL_ANALYSIS",
+      "translation_scope": "Source-verified 23-country COLOSS panel. Within-country bee winter loss → TFR correlation: pooled r=−0.272, optimal lag 2 years, circular-shift p=0.006. 20/23 countries BERM-direction. Replicates across World Bank and WPP 2024 TFR products.",
+      "limitations": [
+        "Correlational only",
+        "BERM internal analysis, not peer-reviewed",
+        "Lag is discovery-scan peak from source-verified data"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "csli_pecbms_27",
+      "citation": {
+        "authors": "PECBMS Pan-European Common Bird Monitoring Scheme",
+        "year": 2026,
+        "title": "27-country breeding bird composite index (2002–2022), detrended",
+        "journal": "PECBMS, analyzed by BERM",
+        "n": 27
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "C",
+        "pathways": ["S"],
+        "tags": ["csli", "sentinel", "bird", "pecbms", "breeding_bird", "population"]
+      },
+      "canonical_nodes": ["SENTINEL_SPECIES"],
+      "model_domain": "cross_species_sentinel",
+      "evidence_role": "OBSERVATIONAL_ASSOCIATION",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "BERM_INTERNAL_ANALYSIS",
+      "translation_scope": "27-country PECBMS breeding bird composite index. Detrended bird population decline precedes TFR decline by ~2.5 years: 21/27 countries BERM-direction, r=0.182, p=0.006.",
+      "limitations": [
+        "Correlational only",
+        "Detrended composite — species-level signals vary",
+        "BERM internal analysis, not peer-reviewed"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "nike_bbs_gradient",
+      "citation": {
+        "authors": "BERM internal analysis",
+        "year": 2026,
+        "title": "BBS bird population trends near Cold War Nike radar/fire control sites",
+        "journal": "BERM internal analysis, USGS BBS data (1966–2019)",
+        "n": 1381
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "C",
+        "pathways": ["S"],
+        "tags": ["csli", "sentinel", "bird", "nike", "radar", "spatial", "gradient", "bbs"]
+      },
+      "canonical_nodes": ["SENTINEL_SPECIES"],
+      "model_domain": "cross_species_sentinel",
+      "evidence_role": "OBSERVATIONAL_ASSOCIATION",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "BERM_INTERNAL_ANALYSIS",
+      "translation_scope": "1,381 BBS routes near 268 Cold War Nike sites. BERM-direction proximity gradient: <50km −0.526%/yr vs >100km +0.096%/yr (Welch p=0.031). Spearman ρ=+0.088 (p=0.001). However, site closure did not predict bird recovery — constrains causal interpretation.",
+      "limitations": [
+        "Correlational only — siting bias possible",
+        "Closure did not predict recovery",
+        "Active site count correlated with higher abundance (confound)",
+        "BERM internal analysis, not peer-reviewed"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
+    },
+    {
+      "legacy_id": "rothamsted_aphid",
+      "citation": {
+        "authors": "Rothamsted Insect Survey",
+        "year": 2026,
+        "title": "Suction trap aphid abundance (UK, 1969–2016), first-difference analysis",
+        "journal": "Rothamsted Research data, analyzed by BERM",
+        "n": 1
+      },
+      "legacy_classification": {
+        "type": "observational",
+        "evidence_level_label": "C",
+        "pathways": ["S"],
+        "tags": ["csli", "sentinel", "aphid", "rothamsted", "insect", "uk"]
+      },
+      "canonical_nodes": ["SENTINEL_SPECIES"],
+      "model_domain": "cross_species_sentinel",
+      "evidence_role": "OBSERVATIONAL_ASSOCIATION",
+      "status": "MIGRATION_CANDIDATE",
+      "source_status": "BERM_INTERNAL_ANALYSIS",
+      "translation_scope": "Rothamsted suction trap aphid abundance (UK, 1969–2016). First-difference analysis: aphid decline precedes TFR decline by ~2 years, r=0.660, p=0.021. Single-country result; consistent with short-lifecycle sentinel hypothesis.",
+      "limitations": [
+        "Single country (UK only)",
+        "Correlational only",
+        "BERM internal analysis, not peer-reviewed"
+      ],
+      "calibration_role": "CONTEXT_ONLY"
     }
   ]
 }

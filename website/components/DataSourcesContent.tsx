@@ -36,6 +36,33 @@ export function DataSourcesContent({ locale }: { locale: string }) {
         <p className="text-sm leading-relaxed text-foreground-muted">{d.lead}</p>
       </section>
       <section className="mb-10"><FieldStateStatus locale={language} /></section>
+      <section className="mb-10 max-w-4xl">
+        <h3 className="text-base font-semibold mb-3">{fi ? "Mittaamisvalmius maatasoittain" : "Measurement readiness by country tier"}</h3>
+        <div className="grid gap-3">
+          <div className="border border-status-confirmed/30 bg-status-confirmed/5 rounded-lg p-4">
+            <div className="flex items-center justify-between mb-1">
+              <span className="font-semibold text-sm text-status-confirmed">{fi ? "Teknologian ajoitusproxy" : "Technology timing proxy"}</span>
+              <span className="text-xs font-mono-num text-foreground-muted">{fi ? "163 maata" : "163 countries"}</span>
+            </div>
+            <p className="text-xs text-foreground-muted leading-relaxed">{fi ? "Mobiililiittymäsarjat ajoitusproxyna. Ei fysikaalinen FieldState tai RF-annos." : "Mobile subscription series as timing proxy. Not physical FieldState or RF dose."}</p>
+          </div>
+          <div className="border border-status-partial/30 bg-status-partial/5 rounded-lg p-4">
+            <div className="flex items-center justify-between mb-1">
+              <span className="font-semibold text-sm text-status-partial">{fi ? "Osittainen FieldState" : "Partial FieldState"}</span>
+              <span className="text-xs font-mono-num text-foreground-muted">{fi ? "Protokolla määritelty" : "Protocol defined"}</span>
+            </div>
+            <p className="text-xs text-foreground-muted leading-relaxed">{fi ? "ANFR-tyyppisiä RF-mittauksia on olemassa; elinsiirtomallia ei ole kalibroitu." : "ANFR-type spatial RF measurements exist; organ transfer model not yet calibrated."}</p>
+          </div>
+          <div className="border border-status-pending/30 bg-status-pending/5 rounded-lg p-4">
+            <div className="flex items-center justify-between mb-1">
+              <span className="font-semibold text-sm text-status-pending">{fi ? "Mittaamisvalmis FieldState" : "Measurement-ready FieldState"}</span>
+              <span className="text-xs font-mono-num text-foreground-muted">{fi ? "Ei yhtään maata" : "No countries yet"}</span>
+            </div>
+            <p className="text-xs text-foreground-muted leading-relaxed">{fi ? "Vaatii dokumentoidut kenttävektorit, elinkohtaisen siirron, biologiset päätepisteet ja paripaneelit." : "Requires documented field vectors, organ-specific transfer, biological endpoints and couple panels."}</p>
+          </div>
+        </div>
+        <p className="mt-2 text-xs text-foreground-muted italic">{fi ? "Mittaamisvalmis ei tarkoita, että biologinen vaikutus tai tuloskerroin olisi osoitettu." : "Measurement-ready does not mean a biological effect or outcome coefficient has been established."}</p>
+      </section>
       <section className="grid gap-4 md:grid-cols-2 mb-8">
         {d.cards.map(([title, text]) => <article key={title} className="rounded-xl border border-card-border bg-card-bg p-5"><h3 className="font-semibold mb-2">{title}</h3><p className="text-sm text-foreground-muted leading-relaxed">{text}</p></article>)}
       </section>

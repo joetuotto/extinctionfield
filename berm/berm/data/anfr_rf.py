@@ -601,6 +601,12 @@ def write_anfr_artifacts(
             "schema_version": ANFR_RF_SCHEMA_VERSION,
             "pipeline_version": PIPELINE_VERSION,
             "status": "MEASURED_AMBIENT_RF_LAYER_NOT_JOINED_TO_BIOLOGY",
+            "evidence_status": "ACTIVE_MEASURED_FIELDSTATE_COMPONENT_PENDING_DIRECT_ENDPOINT_CALIBRATION",
+            "evidence_roles": [
+                "measured ambient-RF likelihood/scale anchor",
+                "local, mobility-weighted and local-area FieldState input",
+                "species/organ transfer and posterior-predictive signature input",
+            ],
             "source_id": ANFR_SOURCE_ID,
             "source_url": ANFR_LANDING_URL,
             "measurement_unit": "V_per_m",
@@ -623,6 +629,11 @@ def write_anfr_artifacts(
             "f_test_readiness": {
                 f"F{i}": "BLOCKED_NO_PRE_SPECIFIED_MATCHED_BIOLOGICAL_PANEL" for i in range(1, 7)
             },
+            "readiness_scope": (
+                "F1-F6 statuses apply only to the pre-specified direct "
+                "sentinel-to-human endpoint criteria, not to the measured RF layer's "
+                "FieldState or transfer-evidence role."
+            ),
         }
         artifact = AnfrRfArtifacts(
             row_count=row_count,
