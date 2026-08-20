@@ -6,19 +6,15 @@ import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { ModelVersionSwitcher } from "@/components/ModelVersionSwitcher";
-import { activeModelVersion, modelVersionHref, type ModelVersionId } from "@/lib/modelVersions";
 import { getNavRoutes, type ResolvedNavRoute } from "@/lib/navigation";
 
 function NavDropdown({
   link,
   locale,
-  modelVersion,
   pathname,
 }: {
   link: ResolvedNavRoute;
   locale: string;
-  modelVersion: ModelVersionId;
   pathname: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -32,9 +28,8 @@ function NavDropdown({
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  const isGroupActive = pathname.startsWith(
-    modelVersionHref(locale, `/${locale}${link.href}`, modelVersion),
-  );
+  const groupHref = `/${locale}${link.href}`;
+  const isGroupActive = pathname.startsWith(groupHref);
   const Icon = link.icon;
 
   return (
@@ -59,11 +54,7 @@ function NavDropdown({
       {open && (
         <ul className="absolute left-0 top-full mt-2 min-w-[200px] rounded-lg border border-card-border bg-background py-1.5 shadow-lg">
           {link.children!.map((child) => {
-            const childHref = modelVersionHref(
-              locale,
-              `/${locale}${child.href}`,
-              modelVersion,
-            );
+            const childHref = `/${locale}${child.href}`;
             const isChildActive =
               child.href === link.href
                 ? pathname === childHref || pathname === `${childHref}/`
@@ -96,13 +87,12 @@ export function Navigation({ locale }: { locale: string }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const links = getNavRoutes(locale);
-  const modelVersion = activeModelVersion(locale, pathname);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-nav-bg backdrop-blur-md">
       <div className="max-w-5xl mx-auto flex h-16 items-center justify-between px-6">
         <Link
-          href={modelVersionHref(locale, `/${locale}`, modelVersion)}
+          href={`/${locale}`}
           className="text-sm font-semibold uppercase leading-none tracking-[0.1em] text-foreground transition-colors hover:text-accent"
         >
           Extinction Field
@@ -117,16 +107,11 @@ export function Navigation({ locale }: { locale: string }) {
                     key={link.href}
                     link={link}
                     locale={locale}
-                    modelVersion={modelVersion}
                     pathname={pathname}
                   />
                 );
               }
-              const fullHref = modelVersionHref(
-                locale,
-                `/${locale}${link.href}`,
-                modelVersion,
-              );
+              const fullHref = `/${locale}${link.href}`;
               const isActive =
                 link.href === ""
                   ? pathname === fullHref || pathname === `${fullHref}/`
@@ -188,23 +173,13 @@ export function Navigation({ locale }: { locale: string }) {
         </div>
       </div>
 
-      <div className="hidden border-t border-border/70 xl:block">
-        <div className="mx-auto flex max-w-5xl justify-end px-6 py-2">
-          <ModelVersionSwitcher locale={locale} />
-        </div>
-      </div>
-
       {menuOpen && (
         <div className="xl:hidden border-t border-border bg-background">
           <ul className="px-6 py-4 space-y-3">
             {links.map((link) => {
               if (link.children) {
                 return link.children.map((child) => {
-                  const childHref = modelVersionHref(
-                    locale,
-                    `/${locale}${child.href}`,
-                    modelVersion,
-                  );
+                  const childHref = `/${locale}${child.href}`;
                   const isChildActive =
                     child.href === link.href
                       ? pathname === childHref || pathname === `${childHref}/`
@@ -230,11 +205,7 @@ export function Navigation({ locale }: { locale: string }) {
                   );
                 });
               }
-              const fullHref = modelVersionHref(
-                locale,
-                `/${locale}${link.href}`,
-                modelVersion,
-              );
+              const fullHref = `/${locale}${link.href}`;
               const isActive =
                 link.href === ""
                   ? pathname === fullHref || pathname === `${fullHref}/`
@@ -258,9 +229,6 @@ export function Navigation({ locale }: { locale: string }) {
               );
             })}
           </ul>
-          <div className="border-t border-border px-6 py-4">
-            <ModelVersionSwitcher locale={locale} variant="expanded" />
-          </div>
         </div>
       )}
     </nav>
