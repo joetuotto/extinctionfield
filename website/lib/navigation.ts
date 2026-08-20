@@ -10,6 +10,7 @@ import {
   Database,
   Globe2,
   Zap,
+  ShieldQuestion,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -25,6 +26,7 @@ export const NAV_ROUTES: NavRoute[] = [
   { href: "/explore", labelEn: "Explore", labelFi: "Tutkija", icon: Map },
   { href: "/model", labelEn: "Model", labelFi: "Malli", icon: GitBranch },
   { href: "/evidence", labelEn: "Evidence", labelFi: "Näyttö", icon: Layers },
+  { href: "/objections", labelEn: "Criticism", labelFi: "Kritiikki", icon: ShieldQuestion },
   { href: "/sentinel", labelEn: "Sentinel", labelFi: "Lajit", icon: Leaf },
   { href: "/ecology", labelEn: "Ecology", labelFi: "Ekologia", icon: Zap },
   { href: "/predictions", labelEn: "Predictions", labelFi: "Ennusteet", icon: Target },
