@@ -1,0 +1,172 @@
+{
+  "version": "1.0",
+  "date": "2026-08-20",
+  "findings": [
+    {
+      "id": "F01",
+      "name": "Nokia-era Finland fertility rise",
+      "original_classification": "falsification",
+      "revised_classification": "non_discriminating",
+      "reason": "BERM cumulative lag model predicts delayed onset; TFR decline began 2010",
+      "affects": "demographic_claims",
+      "affects_l_berm": false,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": true,
+      "discriminating_test": "In utero cohort tracking (2G-born vs 4G-born ASFR)"
+    },
+    {
+      "id": "F02",
+      "name": "Israel high TFR",
+      "original_classification": "falsification",
+      "revised_classification": "non_discriminating",
+      "reason": "D-term (cultural demand) is explicit in architecture; internal gradient supports BERM",
+      "affects": "demographic_claims",
+      "affects_l_berm": false,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": true,
+      "discriminating_test": "Sperm quality comparison: secular Israeli vs Amish (same desired fertility, different EMF)"
+    },
+    {
+      "id": "F03",
+      "name": "Pre-mobile demographic transition",
+      "original_classification": "falsification",
+      "revised_classification": "straw_man",
+      "reason": "BERM v6+ separates D-driven decline from Φ-driven; claims post-2000 acceleration only",
+      "affects": "none",
+      "affects_l_berm": false,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": false,
+      "discriminating_test": null
+    },
+    {
+      "id": "F04",
+      "name": "Nike-BBS monotonic dose-response",
+      "original_classification": "lindgren_chi_falsified",
+      "revised_classification": "underdetermined",
+      "reason": "χ prediction not derived pre-test; R²<1% insufficient power; compatible with both models",
+      "affects": "l_berm_chi_shape",
+      "affects_l_berm": true,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": true,
+      "discriminating_test": "Derive explicit χ(Ā) prediction for radar geometry, test with higher-power dataset"
+    },
+    {
+      "id": "F05",
+      "name": "δV_m ≈ 10⁻²¹ V geometric coupling",
+      "original_classification": "mechanism_failure",
+      "revised_classification": "internal_refinement",
+      "reason": "Applies to pathway A only; pathway C (RPM) operates at correct scale; led to hierarchy inversion",
+      "affects": "pathway_a_geometry",
+      "affects_l_berm": true,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": false,
+      "discriminating_test": null
+    },
+    {
+      "id": "F06",
+      "name": "Lorentzian ghost obstruction",
+      "original_classification": "soliton_layer_falsified",
+      "revised_classification": "soliton_layer_falsified",
+      "reason": "Mathematically proven: π₂=0 for timelike A, ghost energy for spacelike A",
+      "affects": "l_berm_soliton",
+      "affects_l_berm": true,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": false,
+      "discriminating_test": null
+    },
+    {
+      "id": "F07",
+      "name": "VGCC resonance 94-183 GHz",
+      "original_classification": "mechanism_impossible",
+      "revised_classification": "mechanism_impossible",
+      "reason": "5 orders of magnitude too fast for protein conformational dynamics; correctly abandoned",
+      "affects": "berm_v6_v9_resonance",
+      "affects_l_berm": false,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": false,
+      "discriminating_test": null
+    },
+    {
+      "id": "F08",
+      "name": "Water resonance physics error",
+      "original_classification": "physics_error",
+      "revised_classification": "physics_error",
+      "reason": "2.45 GHz water absorption is rotational damping, not amplifying resonance",
+      "affects": "berm_v6_v9_documents",
+      "affects_l_berm": false,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": false,
+      "discriminating_test": null
+    },
+    {
+      "id": "F09",
+      "name": "Eight fabricated DOIs",
+      "original_classification": "documentation_integrity",
+      "revised_classification": "documentation_integrity",
+      "reason": "AI-generated citation hallucinations in early documents; does not affect physics or data",
+      "affects": "berm_v6_v9_documents",
+      "affects_l_berm": false,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": false,
+      "discriminating_test": null
+    },
+    {
+      "id": "F10",
+      "name": "Cross-sectional r = -0.46",
+      "original_classification": "weak_explanatory_power",
+      "revised_classification": "wrong_test",
+      "reason": "Proxy ≠ dose; attenuation bias compresses r; community data (D-controlled) yields R²=0.999",
+      "affects": "demographic_claims",
+      "affects_l_berm": false,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": true,
+      "discriminating_test": "FieldState-measured panel with attenuation correction"
+    },
+    {
+      "id": "F11",
+      "name": "Finland density model failure",
+      "original_classification": "catastrophic_failure",
+      "revised_classification": "internal_refinement",
+      "reason": "Revealed missing personal-EMF component; led to two-component architecture correction",
+      "affects": "density_only_model",
+      "affects_l_berm": false,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": true,
+      "discriminating_test": "Two-component model (ambient + personal) validation"
+    },
+    {
+      "id": "F12",
+      "name": "Lindgren 16 premises vs standard 6",
+      "original_classification": "parsimony_problem",
+      "revised_classification": "parsimony_problem",
+      "reason": "Valid epistemological concern for L-BERM geometric layer; not a falsification",
+      "affects": "l_berm_theory",
+      "affects_l_berm": true,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": false,
+      "discriminating_test": null
+    },
+    {
+      "id": "F13",
+      "name": "κ coupling and gauge non-invariance",
+      "original_classification": "consistency_problem",
+      "revised_classification": "consistency_problem",
+      "reason": "Open theoretical problems in Lindgren's framework; weakens L-BERM derivations",
+      "affects": "l_berm_theory",
+      "affects_l_berm": true,
+      "affects_empirical_berm": false,
+      "discriminating_test_available": false,
+      "discriminating_test": null
+    }
+  ],
+  "summary": {
+    "total": 13,
+    "remains_negative": 6,
+    "reclassified": 5,
+    "internal_refinement": 2,
+    "affects_current_berm": 0,
+    "affects_l_berm_only": 5,
+    "affects_old_versions_only": 4,
+    "discriminating_tests_needed": 5
+  }
+}
