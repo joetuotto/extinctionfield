@@ -29,7 +29,7 @@ export function SentinelCascadeCompact({ locale = "en" }: { locale?: "fi" | "en"
                 style={{ width: `${(sp.lag / 7) * 100}%` }}
               />
             </div>
-            <span className="text-xs font-mono-num text-foreground-muted w-8 text-right shrink-0">
+            <span className="text-xs font-mono-num text-foreground-muted w-10 text-right shrink-0">
               +{sp.lag}{fi ? "v" : "y"}
             </span>
           </div>
@@ -42,7 +42,7 @@ export function SentinelCascadeCompact({ locale = "en" }: { locale?: "fi" | "en"
           <div className="flex-1 h-2 bg-background-secondary rounded-full relative">
             <div className="h-2 bg-status-confirmed/50 rounded-full w-full" />
           </div>
-          <span className="text-xs font-mono-num text-status-confirmed w-8 text-right shrink-0">
+          <span className="text-xs font-mono-num text-status-confirmed w-10 text-right shrink-0">
             TFR↓
           </span>
         </div>

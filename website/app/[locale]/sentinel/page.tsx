@@ -4,6 +4,8 @@ import { Leaf } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { SentinelReadiness } from "@/components/SentinelReadiness";
 import { SentinelCascade } from "@/components/SentinelCascade";
+import { NikeBBSScatter } from "@/components/NikeBBSScatter";
+import { PulseProfile } from "@/components/PulseProfile";
 
 const COPY = {
   en: {
@@ -117,7 +119,9 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
         <h2 className="editorial-section-heading mb-4">{d.nikeTitle}</h2>
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
           <p>{d.nikeText}</p>
+          <div className="my-6"><NikeBBSScatter locale={activeLocale} /></div>
           <p>{d.nikePeakFieldText}</p>
+          <div className="my-6"><PulseProfile locale={activeLocale} /></div>
           <p className="text-xs leading-relaxed border-l-2 border-foreground-muted/20 pl-4">{d.nikeRichnessNote}</p>
           <div className="rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
             <p className="text-xs text-foreground-muted leading-relaxed">{d.nikeCounterText}</p>

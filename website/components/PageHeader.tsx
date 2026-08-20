@@ -14,8 +14,8 @@ export function PageHeader({ icon: Icon, title, subtitle, motif }: PageHeaderPro
         <div className="mt-1 flex-shrink-0 p-2 rounded-lg bg-accent/8 text-accent">
           <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
         </div>
-        <div>
-          <h1 className="mb-3 text-4xl sm:text-[2.65rem]">{title}</h1>
+        <div className="min-w-0 flex-1">
+          <h1 className="mb-3 break-words text-[clamp(1.75rem,7vw,2.25rem)] sm:text-[2.65rem]">{title}</h1>
           <p className="editorial-deck">
             {subtitle}
           </p>
