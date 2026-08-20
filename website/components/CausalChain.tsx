@@ -31,28 +31,28 @@ interface NodeDef {
 // epistemic dot, ~7px per character, 10px trailing padding.
 const NODES: Record<"en" | "fi", NodeDef[]> = {
   en: [
-    { id: "field", label: "FieldState", x: 20, y: 180, level: "L*", w: 120 },
-    { id: "transfer", label: "Local transfer", x: 170, y: 180, level: "L*", w: 140 },
-    { id: "intermediate", label: "CRY · melatonin · Ca²⁺/ROS · Vmem", x: 340, y: 180, level: "M", w: 270 },
-    { id: "organ", label: "Organ states · BTB", x: 640, y: 180, level: "M", w: 165 },
-    { id: "male", label: "BTB + sperm state", x: 835, y: 80, level: "M", w: 160 },
-    { id: "female", label: "Ovary + oocyte state", x: 835, y: 270, level: "M", w: 180 },
-    { id: "couple", label: "Couple capacity", x: 1045, y: 180, level: "M", w: 145 },
-    { id: "context", label: "Demand · tempo · ART", x: 1030, y: 290, level: "E", w: 180 },
-    { id: "asfr", label: "ASFR", x: 1240, y: 180, level: "E", w: 80 },
-    { id: "tfr", label: "TFR", x: 1350, y: 180, level: "E", w: 80 },
+    { id: "field", label: "FieldState", x: 20, y: 110, level: "L*", w: 120 },
+    { id: "transfer", label: "Local transfer", x: 170, y: 110, level: "L*", w: 140 },
+    { id: "intermediate", label: "CRY · melatonin · Ca²⁺/ROS · Vmem", x: 340, y: 110, level: "M", w: 270 },
+    { id: "organ", label: "Organ states · BTB", x: 640, y: 110, level: "M", w: 165 },
+    { id: "male", label: "BTB + sperm state", x: 835, y: 20, level: "M", w: 160 },
+    { id: "female", label: "Ovary + oocyte state", x: 835, y: 200, level: "M", w: 180 },
+    { id: "couple", label: "Couple capacity", x: 1045, y: 110, level: "M", w: 145 },
+    { id: "context", label: "Demand · tempo · ART", x: 1030, y: 220, level: "E", w: 180 },
+    { id: "asfr", label: "ASFR", x: 1240, y: 110, level: "E", w: 80 },
+    { id: "tfr", label: "TFR", x: 1350, y: 110, level: "E", w: 80 },
   ],
   fi: [
-    { id: "field", label: "FieldState", x: 20, y: 180, level: "L*", w: 120 },
-    { id: "transfer", label: "Paikallinen siirto", x: 170, y: 180, level: "L*", w: 165 },
-    { id: "intermediate", label: "CRY · melatoniini · Ca²⁺/ROS · Vmem", x: 365, y: 180, level: "M", w: 285 },
-    { id: "organ", label: "Elinkohtaiset tilat · BTB", x: 680, y: 180, level: "M", w: 215 },
-    { id: "male", label: "BTB + siittiötila", x: 925, y: 80, level: "M", w: 160 },
-    { id: "female", label: "Munasarja + oosyyttitila", x: 925, y: 270, level: "M", w: 205 },
-    { id: "couple", label: "Parikapasiteetti", x: 1160, y: 180, level: "M", w: 150 },
-    { id: "context", label: "Kysyntä · tempo · ART", x: 1145, y: 290, level: "E", w: 185 },
-    { id: "asfr", label: "ASFR", x: 1360, y: 180, level: "E", w: 80 },
-    { id: "tfr", label: "TFR", x: 1470, y: 180, level: "E", w: 80 },
+    { id: "field", label: "FieldState", x: 20, y: 110, level: "L*", w: 120 },
+    { id: "transfer", label: "Paikallinen siirto", x: 170, y: 110, level: "L*", w: 165 },
+    { id: "intermediate", label: "CRY · melatoniini · Ca²⁺/ROS · Vmem", x: 365, y: 110, level: "M", w: 285 },
+    { id: "organ", label: "Elinkohtaiset tilat · BTB", x: 680, y: 110, level: "M", w: 215 },
+    { id: "male", label: "BTB + siittiötila", x: 925, y: 20, level: "M", w: 160 },
+    { id: "female", label: "Munasarja + oosyyttitila", x: 925, y: 200, level: "M", w: 205 },
+    { id: "couple", label: "Parikapasiteetti", x: 1160, y: 110, level: "M", w: 150 },
+    { id: "context", label: "Kysyntä · tempo · ART", x: 1145, y: 220, level: "E", w: 185 },
+    { id: "asfr", label: "ASFR", x: 1360, y: 110, level: "E", w: 80 },
+    { id: "tfr", label: "TFR", x: 1470, y: 110, level: "E", w: 80 },
   ],
 };
 
@@ -101,7 +101,7 @@ export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" })
 
   return (
     <svg
-      viewBox={`0 0 ${VIEWBOX_W[locale]} 440`}
+      viewBox={`0 0 ${VIEWBOX_W[locale]} 330`}
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label={locale === "fi" ? "BERM FieldState–ASFR-v2-kausaalireitti" : "BERM FieldState–ASFR-v2 causal route"}
@@ -187,7 +187,7 @@ export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" })
 
       {/* Legend */}
       {legend.map(([lvl, lbl], i) => (
-        <g key={lvl} transform={`translate(${40 + i * 215}, 400)`}>
+        <g key={lvl} transform={`translate(${40 + i * 215}, 300)`}>
           <circle cx={0} cy={0} r={4} fill={LEVEL_COLORS[lvl]} />
           <text
             x={12}

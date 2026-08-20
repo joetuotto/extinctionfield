@@ -172,7 +172,7 @@ export default async function FieldStatePage({
         </section>
 
         <section id="causal-diagram" className="border-t border-card-border pt-6">
-          <figure className="data-figure overflow-hidden">
+          <figure className="data-figure">
             <figcaption className="data-figure__caption">
               <p className="editorial-kicker text-accent">{diagramLabel}</p>
               <p className="data-figure__title mt-1">{d.diagramTitle}</p>

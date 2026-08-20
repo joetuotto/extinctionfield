@@ -179,7 +179,7 @@ export default async function Home({
       {/* ── Causal diagram ── */}
       <section className="pb-20">
         <h2 className="editorial-section-heading mb-8">{d.howTitle}</h2>
-        <figure className="data-figure overflow-hidden">
+        <figure className="data-figure">
           <figcaption className="data-figure__caption">
             <p className="editorial-kicker text-accent">{d.causalLabel}</p>
             <p className="data-figure__title mt-1">{d.causalTitle}</p>
