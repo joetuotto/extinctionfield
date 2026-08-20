@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import * as d3 from "d3";
 import { geoNaturalEarth1, geoPath } from "d3-geo";
 import type { FeatureCollection, Feature, Geometry } from "geojson";
+import { CountryDetailPanel } from "@/components/CountryDetailPanel";
 
 type Layer = "tfr" | "mobile";
 
@@ -20,6 +21,8 @@ interface MapData {
 interface GeoProperties {
   ISO_A3: string;
   ISO_A3_EH: string;
+  ISO_A2: string;
+  ISO_A2_EH: string;
   NAME: string;
   ADMIN: string;
 }
@@ -52,6 +55,27 @@ const LAYER_CONFIG: Record<
   },
 };
 
+/**
+ * Natural Earth ships English names only. The browser's own region names give
+ * a correct label in either locale without shipping a translation table.
+ */
+function localisedName(
+  feature: Feature<Geometry, GeoProperties>,
+  display: Intl.DisplayNames | null,
+): string {
+  const p = feature.properties;
+  const iso2 = p.ISO_A2 !== "-99" ? p.ISO_A2 : p.ISO_A2_EH;
+  if (display && iso2 && iso2 !== "-99") {
+    try {
+      const name = display.of(iso2);
+      if (name && name !== iso2) return name;
+    } catch {
+      // Fall through to the English name below.
+    }
+  }
+  return p.ADMIN || p.NAME;
+}
+
 function getISO3(feature: Feature<Geometry, GeoProperties>): string {
   const p = feature.properties;
   if (p.ISO_A3 !== "-99") return p.ISO_A3;
@@ -59,6 +83,13 @@ function getISO3(feature: Feature<Geometry, GeoProperties>): string {
 }
 
 export function WorldMap({ locale }: { locale: string }) {
+  const displayNames = useMemo(() => {
+    try {
+      return new Intl.DisplayNames([locale], { type: "region" });
+    } catch {
+      return null;
+    }
+  }, [locale]);
   const svgRef = useRef<SVGSVGElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const [mapData, setMapData] = useState<MapData | null>(null);
@@ -70,11 +101,11 @@ export function WorldMap({ locale }: { locale: string }) {
   const [playing, setPlaying] = useState(false);
   const animRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const stateRef = useRef({ mapData, layer, year });
+  const stateRef = useRef({ mapData, layer, year, displayNames });
 
   useEffect(() => {
-    stateRef.current = { mapData, layer, year };
-  }, [mapData, layer, year]);
+    stateRef.current = { mapData, layer, year, displayNames };
+  }, [mapData, layer, year, displayNames]);
 
   useEffect(() => {
     Promise.all([
@@ -148,7 +179,7 @@ export function WorldMap({ locale }: { locale: string }) {
           const val = getValueFor(iso3, ly, yr, md);
           const config = LAYER_CONFIG[ly];
           tooltip.innerHTML = `
-            <strong>${d.properties.ADMIN || d.properties.NAME}</strong>
+            <strong>${localisedName(d, stateRef.current.displayNames)}</strong>
             <br/>
             ${val !== null ? `${config.label}: <strong>${config.format(val)}</strong> ${config.unit}` : "No data"}
           `;
@@ -213,8 +244,12 @@ export function WorldMap({ locale }: { locale: string }) {
     );
   }
 
-  const selectedName = geoData.features.find((feature) => getISO3(feature) === selectedISO3)
-    ?.properties.ADMIN;
+  const selectedFeature = geoData.features.find(
+    (feature) => getISO3(feature) === selectedISO3,
+  );
+  const selectedName = selectedFeature
+    ? localisedName(selectedFeature, displayNames)
+    : undefined;
   const selectedValue = selectedISO3
     ? getValueFor(selectedISO3, layer, year, mapData)
     : null;
@@ -324,6 +359,16 @@ export function WorldMap({ locale }: { locale: string }) {
           <p className="text-foreground-muted">{labels.select}</p>
         )}
       </div>
+
+      {selectedISO3 && selectedName && mapData?.[selectedISO3] && (
+        <CountryDetailPanel
+          iso3={selectedISO3}
+          name={selectedName}
+          tfr={mapData[selectedISO3].tfr}
+          mobile={mapData[selectedISO3].mobile}
+          locale={locale}
+        />
+      )}
 
       <div className="max-w-md">
         <div
