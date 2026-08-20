@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Layers } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { StatisticalValidation } from "@/components/StatisticalValidation";
+import { EvidenceClassification } from "@/components/EvidenceClassification";
 import {
   causalNodeLabels,
   FIELDSTATE_EVIDENCE,
@@ -39,6 +40,7 @@ const COPY = {
     ],
     boundedTitle: "Bounded v2 records",
     boundedLead: "Each record states its field class, directness, translation scope and limitation. These are the primary evidence entries for the FieldState–ASFR v2 causal route.",
+    classificationTitle: "How previously negative findings classify",
     extendedTitle: "Extended evidence catalogue",
     extendedLead: `${LEGACY_EVIDENCE_COUNT} additional records from the BERM v18 bibliography, retained for source-level review. Each is classified by its v18 pathway, evidence level, and v2 migration status.`,
     groups: {
@@ -155,6 +157,7 @@ const COPY = {
     ],
     boundedTitle: "Rajatut v2-tietueet",
     boundedLead: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Nämä ovat FieldState–ASFR v2 -kausaalireitin ensisijaiset evidenssitietueet.",
+    classificationTitle: "Miten aiemmin negatiiviset havainnot luokittuvat",
     extendedTitle: "Laajennettu evidenssikatalogi",
     extendedLead: `${LEGACY_EVIDENCE_COUNT} lisätietuetta BERM v18 -bibliografiasta, säilytetty lähdetason tarkistusta varten. Jokainen on luokiteltu v18-polun, evidenssitason ja v2-migraatiostatuksen mukaan.`,
     groups: {
@@ -373,6 +376,14 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
             </div>
           );
         })}
+      </section>
+
+      {/* Protocol classification of previously negative findings */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-4">{d.classificationTitle}</h2>
+        <div className="max-w-4xl">
+          <EvidenceClassification locale={activeLocale} />
+        </div>
       </section>
 
       {/* Extended evidence catalogue */}
