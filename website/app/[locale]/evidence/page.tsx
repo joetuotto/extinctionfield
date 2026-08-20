@@ -521,7 +521,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                   </thead>
                   <tbody>
                     {narrative.studies.map((s) => (
-                      <tr key={s.citation} className="border-b border-card-border/40">
+                      <tr key={`${s.citation}-${s.year}`} className="border-b border-card-border/40">
                         <td className="py-2 pr-3 font-medium text-foreground">{s.citation}</td>
                         <td className="py-2 pr-3 font-mono-num text-foreground-muted">{s.year}</td>
                         <td className="py-2 text-foreground-muted">{s.note}</td>
