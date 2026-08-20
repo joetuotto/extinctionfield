@@ -124,3 +124,30 @@ def test_model_metadata_counts_come_from_the_audit_table() -> None:
     ]
     assert meta["discriminating_tests_completed"] == 0
     assert meta["primary_pathway"] == "C_RPM"
+
+
+def test_evidence_records_carry_an_explicit_protocol_assessment_state() -> None:
+    """Every active record declares whether the protocol has been applied to it.
+
+    An unassessed record must say so rather than carry an invented verdict:
+    guessing whether a source discriminates BERM from the consensus model is
+    the exact error the protocol exists to prevent.
+    """
+    path = ROOT / "berm" / "data" / "evidence" / "fieldstate_causal_evidence.json"
+    records = json.loads(path.read_text(encoding="utf-8"))["records"]
+    fields = (
+        "discriminating",
+        "tests_berm_specific_prediction",
+        "berm_prediction_derived",
+        "consensus_prediction_same",
+    )
+
+    for record in records:
+        status = record["protocol_assessment_status"]
+        assert status in {"PENDING", "ASSESSED"}
+        for field in fields:
+            assert field in record
+            if status == "PENDING":
+                assert record[field] is None
+            else:
+                assert isinstance(record[field], bool)
