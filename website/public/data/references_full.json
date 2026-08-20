@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 422,
+    "total_references": 452,
     "verified_count": 58,
     "generated": "2026-08-20"
   },
@@ -8653,6 +8653,799 @@
       "pdf_section": null,
       "pdf_number": null,
       "doi": null
+    },
+    {
+      "id": "lindecke2026",
+      "authors": "Lindecke O, Tallo K, Holland RA, Kelm DH, Usenko M, Zeuss D",
+      "year": 2026,
+      "title": "Disruptive effects of brief radiofrequency noise exposure on migratory bat navigation",
+      "journal": "Science",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "B"
+      ],
+      "finding": "Weak broadband RF noise (0.01-300 MHz) disrupted migratory bat orientation for hours after exposure. First mammalian validation of magnetic compass RF disruption.",
+      "tags": [
+        "bat",
+        "navigation",
+        "RPM",
+        "CRY",
+        "mammal",
+        "Science",
+        "landmark"
+      ],
+      "verified": false,
+      "category": "ecology_sentinels",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1126/science.adq4418"
+    },
+    {
+      "id": "boyes2021",
+      "authors": "Boyes DH, Evans DM, Fox R, Parsons MS, Pocock MJO",
+      "year": 2021,
+      "title": "Street lighting has detrimental impacts on local insect populations",
+      "journal": "Science Advances",
+      "type": "field",
+      "level": "E",
+      "pathway": [
+        "C"
+      ],
+      "finding": "LED streetlights reduced moth caterpillars by 47% (hedgerow) and 33% (grass margin) vs unlit sites. Effects worse under LED than sodium.",
+      "tags": [
+        "LED",
+        "street_lighting",
+        "moth",
+        "caterpillar",
+        "insect_decline"
+      ],
+      "verified": false,
+      "category": "ecology_sentinels",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1126/sciadv.abi8322"
+    },
+    {
+      "id": "pawson2014",
+      "authors": "Pawson SM, Bader MKF",
+      "year": 2014,
+      "title": "LED lighting increases the ecological impact of light pollution irrespective of color temperature",
+      "journal": "Ecological Applications",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "C"
+      ],
+      "finding": "LED traps captured 48% more insects than sodium (HPS). Changing color temperature (2700-6500K) did not reduce effect.",
+      "tags": [
+        "LED",
+        "insect_attraction",
+        "sodium",
+        "HPS",
+        "light_pollution"
+      ],
+      "verified": false,
+      "category": "ecology_sentinels",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1890/14-0468.1"
+    },
+    {
+      "id": "levitt2022_ecosystem",
+      "authors": "Levitt BB, Lai HC, Manville AM II",
+      "year": 2022,
+      "title": "Low-level EMF effects on wildlife and plants: What research tells us about an ecosystem approach",
+      "journal": "Frontiers in Public Health",
+      "type": "review",
+      "level": "M",
+      "pathway": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "finding": "1200+ study review. Sufficient evidence of ecosystem-level harm across all taxa. No exposure standard protects wildlife.",
+      "tags": [
+        "ecosystem",
+        "review",
+        "comprehensive",
+        "wildlife",
+        "1200_studies"
+      ],
+      "verified": false,
+      "category": "ecology_sentinels",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.3389/fpubh.2022.1000840"
+    },
+    {
+      "id": "levitt2022a",
+      "authors": "Levitt BB, Lai HC, Manville AM",
+      "year": 2022,
+      "title": "Effects of non-ionizing electromagnetic fields on flora and fauna, part 1. Rising ambient EMF levels in the environment",
+      "journal": "Reviews on Environmental Health",
+      "type": "review",
+      "level": "M",
+      "pathway": [
+        "A",
+        "B"
+      ],
+      "finding": "Documents continuously rising ambient EMF levels in the environment.",
+      "tags": [
+        "ambient",
+        "rising_levels",
+        "environment"
+      ],
+      "verified": false,
+      "category": "ecology_sentinels",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1515/reveh-2021-0026"
+    },
+    {
+      "id": "levitt2022b",
+      "authors": "Levitt BB, Lai HC, Manville AM",
+      "year": 2022,
+      "title": "Effects of non-ionizing electromagnetic fields on flora and fauna, Part 2 impacts: how species interact with natural and man-made EMF",
+      "journal": "Reviews on Environmental Health",
+      "type": "review",
+      "level": "M",
+      "pathway": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "finding": "Species interaction with EMF documented across 8 harm categories.",
+      "tags": [
+        "species",
+        "interaction",
+        "eight_categories",
+        "harm"
+      ],
+      "verified": false,
+      "category": "ecology_sentinels",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1515/reveh-2021-0050"
+    },
+    {
+      "id": "nicholls2007",
+      "authors": "Nicholls B, Racey PA",
+      "year": 2007,
+      "title": "Bats Avoid Radar Installations: Could Electromagnetic Fields Deter Bats from Colliding with Wind Turbines?",
+      "journal": "PLOS ONE",
+      "type": "field",
+      "level": "E",
+      "pathway": [
+        "B"
+      ],
+      "finding": "Bat activity significantly reduced in habitats where EMF > 2 V/m near radar installations.",
+      "tags": [
+        "bat",
+        "radar",
+        "avoidance",
+        "2Vm_threshold",
+        "wind_turbine"
+      ],
+      "verified": false,
+      "category": "ecology_sentinels",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1371/journal.pone.0000297"
+    },
+    {
+      "id": "nicholls2009",
+      "authors": "Nicholls B, Racey PA",
+      "year": 2009,
+      "title": "The Aversive Effect of Electromagnetic Radiation on Foraging Bats—A Possible Means of Discouraging Bats from Approaching Wind Turbines",
+      "journal": "PLOS ONE",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "B"
+      ],
+      "finding": "Portable radar reduced foraging bat activity. Proposed as deterrent for wind turbine collisions.",
+      "tags": [
+        "bat",
+        "radar",
+        "deterrent",
+        "wind_turbine",
+        "foraging"
+      ],
+      "verified": false,
+      "category": "ecology_sentinels",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1371/journal.pone.0006246"
+    },
+    {
+      "id": "vangrunsven2020",
+      "authors": "van Grunsven RH, Jähnichen D, Jokisch A",
+      "year": 2020,
+      "title": "Experimental light at night has a negative long-term impact on macro-moth populations",
+      "journal": "Current Biology",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "C"
+      ],
+      "finding": "Experimental artificial light at night reduced macro-moth populations long-term.",
+      "tags": [
+        "moth",
+        "ALAN",
+        "long_term",
+        "population_decline"
+      ],
+      "verified": false,
+      "category": "ecology_sentinels",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1016/j.cub.2020.04.083"
+    },
+    {
+      "id": "pmc9920439_led_harmonics",
+      "authors": "LED power quality study",
+      "year": 2023,
+      "title": "Effect of LED Lighting on Selected Quality Parameters of Electricity",
+      "journal": "Energies (PMC9920439)",
+      "type": "technical",
+      "level": "T",
+      "pathway": [],
+      "finding": "LED bulbs produce significant harmonic distortions, exceeding THD limits. Incandescent bulbs better for power quality.",
+      "tags": [
+        "LED",
+        "harmonics",
+        "THD",
+        "dirty_electricity",
+        "power_quality"
+      ],
+      "verified": false,
+      "category": "rf_safety_regulation",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": null
+    },
+    {
+      "id": "havas2006",
+      "authors": "Havas M",
+      "year": 2006,
+      "title": "The Biological Effects of Dirty Electricity with Special Emphasis on Diabetes and Multiple Sclerosis",
+      "journal": "ICEMS Benevento",
+      "type": "clinical",
+      "level": "M|C",
+      "pathway": [
+        "A"
+      ],
+      "finding": "kHz harmonic filtering (dirty electricity removal) improved blood sugar in diabetics and MS symptoms.",
+      "tags": [
+        "dirty_electricity",
+        "kHz",
+        "diabetes",
+        "MS",
+        "intermediate_frequency"
+      ],
+      "verified": false,
+      "category": "transduction_rpm_calcium",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": null
+    },
+    {
+      "id": "ttfields_mechanism",
+      "authors": "Tuszynski JA, Wenger C, Friesen DE, Preto J",
+      "year": 2016,
+      "title": "An Overview of Sub-Cellular Mechanisms Involved in the Action of TTFields",
+      "journal": "International Journal of Environmental Research and Public Health (PMC5129338)",
+      "type": "clinical_mechanism",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "100-300 kHz fields disrupt cell division. FDA-approved for glioblastoma. Proves biological activity of intermediate-frequency fields.",
+      "tags": [
+        "TTFields",
+        "100kHz",
+        "cell_division",
+        "FDA",
+        "cancer",
+        "intermediate_frequency"
+      ],
+      "verified": false,
+      "category": "transduction_rpm_calcium",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": null
+    },
+    {
+      "id": "if_systematic_review_2019",
+      "authors": "Aerts S, Calderon C, Valberg P, Vermeeren G, Cervera L, Joseph W",
+      "year": 2019,
+      "title": "Systematic review on the biological effects of electric, magnetic and electromagnetic fields in the intermediate frequency range (300 Hz to 1 MHz)",
+      "journal": "Environment International",
+      "type": "systematic_review",
+      "level": "M",
+      "pathway": [
+        "A"
+      ],
+      "finding": "IF field biological effects poorly studied. Many new technologies (induction cooktops, WPT, energy-saving lamps) produce fields in this range.",
+      "tags": [
+        "intermediate_frequency",
+        "systematic_review",
+        "research_gap",
+        "LED",
+        "WPT"
+      ],
+      "verified": false,
+      "category": "transduction_rpm_calcium",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1016/j.envint.2019.01.002"
+    },
+    {
+      "id": "ttfields_ef14_jama_2017",
+      "authors": "Stupp R, Taillibert S, Kanner A, ym.",
+      "year": 2017,
+      "title": "Effect of Tumor-Treating Fields Plus Maintenance Temozolomide vs Maintenance Temozolomide Alone on Survival in Patients With Glioblastoma: A Randomized Clinical Trial",
+      "journal": "JAMA",
+      "doi": "10.1001/jama.2017.18718",
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "RCT",
+      "finding": "TTFields + temozolomide extended OS to 20.9 months vs 16.0 months (HR 0.63, p<0.001). Phase III, 695 patients. FDA PMA 2015.",
+      "tags": [
+        "TTFields",
+        "FDA",
+        "200kHz",
+        "glioblastoma",
+        "non-thermal",
+        "cell_division"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "ttfields_panova3_2026",
+      "authors": "Picozzi VJ, ym.",
+      "year": 2026,
+      "title": "PANOVA-3: TTFields with gemcitabine/nab-paclitaxel for locally advanced pancreatic cancer",
+      "journal": "FDA approval / clinical trial",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "RCT",
+      "finding": "TTFields 150 kHz approved for pancreatic cancer. Torso application exposes pelvic organs to therapeutic-level fields (1-2.5 V/cm confirmed in rat torso study).",
+      "tags": [
+        "TTFields",
+        "FDA",
+        "150kHz",
+        "pancreatic",
+        "torso",
+        "pelvic_exposure"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "ttfields_patent_7016725",
+      "authors": "Palti Y (Novocure)",
+      "year": 2006,
+      "title": "Method and apparatus for destroying dividing cells",
+      "journal": "US Patent 7,016,725",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "patent",
+      "finding": "Patent explicitly states: 'cells in the ovaries or testicles may be sensitive to the electric fields' and recommends shielding these areas during treatment.",
+      "tags": [
+        "TTFields",
+        "patent",
+        "ovaries",
+        "testicles",
+        "reproductive_risk"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "ttfields_cell_size_frequency",
+      "authors": "Kirson ED, Dbalý V, Tovarys F, ym.",
+      "year": 2007,
+      "title": "Alternating electric fields arrest cell proliferation in animal tumor models and human brain tumors",
+      "journal": "PNAS",
+      "doi": "10.1073/pnas.0702916104",
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Optimal TTFields frequency depends on cell size: GBM 200kHz, pancreatic 150kHz, breast 120kHz, melanoma 100kHz. Smaller cells respond to higher frequencies.",
+      "tags": [
+        "TTFields",
+        "frequency",
+        "cell_size",
+        "resonance"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "ttfields_normal_cells_jo2019",
+      "authors": "Jo Y, ym.",
+      "year": 2019,
+      "title": "Effect of prolonged TTFields exposure on normal and cancer cell types",
+      "journal": "Cell Death Discovery",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Prolonging TTFields exposure produced similar effects on both normal intestinal epithelial (IEC-6) and glioblastoma (U373) cells — delayed DNA repair, increased cell cycle arrest, increased apoptosis.",
+      "tags": [
+        "TTFields",
+        "normal_cells",
+        "gut_epithelium",
+        "duration_dependent"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "ttfields_torso_safety_2021",
+      "authors": "Berkelmann L, ym.",
+      "year": 2021,
+      "title": "In Vivo Safety of Tumor Treating Fields (TTFields) Applied to the Torso",
+      "journal": "Front Oncol",
+      "doi": "10.3389/fonc.2021.670809",
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "2-week torso TTFields in rats: no systemic toxicity. BUT: confirmed 1-2.5 V/cm RMS in internal organs. No reproductive endpoints measured. Study duration too short for spermatogenesis cycle.",
+      "tags": [
+        "TTFields",
+        "torso",
+        "safety",
+        "reproductive_gap"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "ttfields_mechanisms_review_2022",
+      "authors": "Moser JC, ym.",
+      "year": 2022,
+      "title": "The Mechanisms of Action of Tumor Treating Fields",
+      "journal": "Cancer Res",
+      "doi": "10.1158/0008-5472.CAN-22-0507",
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "review",
+      "finding": "Comprehensive review of TTFields mechanisms: mitotic spindle disruption, dielectrophoretic forces, membrane permeability changes, metabolic effects. Explicitly non-thermal.",
+      "tags": [
+        "TTFields",
+        "mechanism",
+        "review"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "pemf_bone_fda_review_2020",
+      "authors": "Cadossi R, Massari L, Racine-Avila J, Aaron RK",
+      "year": 2020,
+      "title": "Pulsed Electromagnetic Field Stimulation of Bone Healing and Joint Preservation: Cellular Mechanisms of Skeletal Response",
+      "journal": "JAAOS Global Research Reviews",
+      "doi": "10.5435/JAAOSGlobal-D-19-00155",
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "review",
+      "finding": "PEMF activates adenosine A2A/A3 membrane receptors (GPCRs, not ion channels). FDA-approved since 1979. 72% of US hospitals offer PEMF therapy. Mechanism: non-thermal EMF -> GPCR activation -> ECM synthesis + anti-inflammatory.",
+      "tags": [
+        "PEMF",
+        "FDA",
+        "adenosine",
+        "GPCR",
+        "bone",
+        "anti-inflammatory",
+        "non-thermal"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "tms_fda_depression_2008",
+      "authors": "O'Reardon JP, ym.",
+      "year": 2007,
+      "title": "Efficacy and Safety of Transcranial Magnetic Stimulation in the Acute Treatment of Major Depression",
+      "journal": "Biol Psychiatry",
+      "doi": null,
+      "category": "neurobiology_circadian",
+      "pathway": [
+        "D"
+      ],
+      "level": "E",
+      "type": "RCT",
+      "finding": "Phase III trial leading to FDA 510(k) clearance 2008 for treatment-resistant depression. Pulsed magnetic fields induce electric currents in cortex, producing long-lasting neuroplastic changes.",
+      "tags": [
+        "TMS",
+        "FDA",
+        "depression",
+        "neuroplasticity",
+        "non-thermal"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "tdcs_fda_depression_2025",
+      "authors": "Flow Neuroscience",
+      "year": 2025,
+      "title": "FDA PMA for home-use tDCS device for major depressive disorder",
+      "journal": "Lancet Regional Health (commentary)",
+      "doi": null,
+      "category": "neurobiology_circadian",
+      "pathway": [
+        "D"
+      ],
+      "level": "E",
+      "type": "regulatory",
+      "finding": "First FDA PMA for home-use brain stimulation. DC current 1-2 mA -> ~0.3-1.0 V/m in cortex. This therapeutic field strength is SAME ORDER OF MAGNITUDE as measured urban ambient RF (0.67-1.51 V/m).",
+      "tags": [
+        "tDCS",
+        "FDA",
+        "depression",
+        "home_use",
+        "intensity_comparison"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "vns_gammacore_fda",
+      "authors": "electroCore Inc.",
+      "year": 2017,
+      "title": "GammaCore non-invasive vagus nerve stimulation for migraine and cluster headache",
+      "journal": "FDA 510(k) clearance",
+      "doi": null,
+      "category": "neurobiology_circadian",
+      "pathway": [
+        "E"
+      ],
+      "level": "E",
+      "type": "regulatory",
+      "finding": "Transcutaneous cervical vagus nerve stimulation produces systemic anti-inflammatory effects and headache relief. 14+ auricular VNS devices also FDA-cleared. Demonstrates vagus nerve responsiveness to electrical stimulation.",
+      "tags": [
+        "VNS",
+        "FDA",
+        "vagus",
+        "anti-inflammatory",
+        "migraine"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "heliyon_150khz_fertility_2022",
+      "authors": "Hori T, ym.",
+      "year": 2022,
+      "title": "Effects of 150 kHz intermediate frequency electromagnetic radiation on fertility indicators in male rats",
+      "journal": "Heliyon",
+      "doi": "10.1016/j.heliyon.2022.e12228",
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Rats exposed to highest reported IF levels (150 kHz) showed increased gonadotrophin hormone levels and reduced testicular weights. First direct evidence of IF-EMF reproductive effects at TTFields-relevant frequencies.",
+      "tags": [
+        "IF",
+        "150kHz",
+        "fertility",
+        "gonadotrophin",
+        "testicular_weight",
+        "rat"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "prf_non_thermal_patent",
+      "authors": "Pilla AA",
+      "year": 2016,
+      "title": "Apparatus and method for electromagnetic treatment",
+      "journal": "US Patents 9,415,233 / 9,433,797 / 9,440,089",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "patent",
+      "finding": "Patent explicitly states: 'electromagnetic field capable of eliciting a non-thermal biological effect in the treatment of infections.' PRF 27.12 MHz used clinically since 1960s for edema, wound healing, nerve regeneration.",
+      "tags": [
+        "PRF",
+        "27MHz",
+        "non-thermal",
+        "wound_healing",
+        "patent"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "early_onset_cancer_gbd_2023",
+      "authors": "Zhao J, Xu L, Sun J, ym.",
+      "year": 2023,
+      "title": "Global trends in incidence, death, burden and risk factors of early-onset cancer from 1990 to 2019",
+      "journal": "BMJ Oncology",
+      "doi": null,
+      "category": "ecology_sentinels",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "meta-analysis",
+      "finding": "Early-onset cancer incidence rose 79.1% globally between 1990 and 2019. Under-50 was the ONLY age group with sustained cancer incidence increase 1995-2021.",
+      "tags": [
+        "cancer",
+        "early_onset",
+        "under_50",
+        "global_trend",
+        "environmental"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "early_onset_colorectal_lancet_2024",
+      "authors": "Siegel RL, ym.",
+      "year": 2024,
+      "title": "Global patterns and trends in colorectal cancer incidence in young adults",
+      "journal": "Lancet Oncol",
+      "doi": null,
+      "category": "ecology_sentinels",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "meta-analysis",
+      "finding": "Early-onset CRC rising in 27 of 50 countries. CRC rate increasing by 1-2% annually in adults under 55 since mid-1990s. Gut epithelium is among the fastest-dividing tissues (3-5 day turnover).",
+      "tags": [
+        "colorectal",
+        "cancer",
+        "early_onset",
+        "gut_epithelium",
+        "rapidly_dividing"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "becker1990",
+      "authors": "Becker RO",
+      "year": 1990,
+      "title": "Cross Currents: The Perils of Electropollution, The Promise of Electromedicine",
+      "journal": "Jeremy P. Tarcher",
+      "doi": null,
+      "category": "history_institutional",
+      "pathway": [
+        "C"
+      ],
+      "level": "E",
+      "type": "book",
+      "finding": "Extended dual nervous system theory. Identified pineal gland as magnetic sensor. Showed melatonin secretion altered by magnetic fields at geomagnetic strength. Predicted chronic EMF -> chronic stress syndrome -> immune decline.",
+      "tags": [
+        "dual_nervous_system",
+        "pineal",
+        "melatonin",
+        "magnetic_sense",
+        "electropollution"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "adee2023",
+      "authors": "Adee S",
+      "year": 2023,
+      "title": "We Are Electric: Inside the 200-Year Hunt for Our Body's Bioelectric Code, and What the Future Holds",
+      "journal": "Canongate / Hachette",
+      "doi": null,
+      "category": "history_institutional",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "book",
+      "finding": "Documents the 'electrome': universal electrical dimension of all life. Ion channels 3 billion years old, conserved from bacteria to humans. Gap junctions connect all cells electrically. Bioelectric code (Levin) controls morphology, development, cancer. CatSper calcium channel essential for sperm navigation.",
+      "tags": [
+        "electrome",
+        "ion_channels",
+        "bioelectric_code",
+        "Levin",
+        "conservation",
+        "CatSper"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "vaziri2016",
+      "authors": "Tinsley JN, Molodtsov MI, Prevedel R, Wartmann D, Espigulé-Pons J, Lauwers M, Vaziri A",
+      "year": 2016,
+      "title": "Direct detection of a single photon by humans",
+      "journal": "Nature Communications",
+      "doi": "10.1038/ncomms12172",
+      "category": "physics_dosimetry",
+      "pathway": ["A", "C"],
+      "level": "A",
+      "type": "experiment",
+      "finding": "Demonstrates that the human visual system can detect single photons (~4×10⁻¹⁹ J, one-tenth of thermal noise energy). Establishes that biological electromagnetic sensors operate at the quantum limit. The amplification cascade (rhodopsin → transducin → PDE → cGMP → current) achieves ~10⁶× gain.",
+      "tags": ["single_photon", "quantum_limit", "biological_sensitivity", "amplification_cascade", "evolutionary_calibration"],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "trus2024",
+      "authors": "Trus M, Atlas D",
+      "year": 2024,
+      "title": "Non-ionotropic voltage-gated calcium channel signaling",
+      "journal": "Channels",
+      "doi": "10.1080/19336950.2024.2341670",
+      "category": "mechanism_cellular",
+      "pathway": ["A"],
+      "level": "A",
+      "type": "review",
+      "finding": "VGCCs activate intracellular signaling pathways (gene transcription, synaptic transmission, cardiac contraction) through conformational change WITHOUT ion flux. The S4 voltage sensor movement alone suffices — the channel does not need to open fully. Energy threshold is significantly lower than for ion flux, implying biological sensitivity to weaker fields than the ion-flux threshold would predict.",
+      "tags": ["VGCC", "non_ionotropic", "conformational_signaling", "S4_sensor", "low_threshold", "IFO"],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true
     }
   ]
 }

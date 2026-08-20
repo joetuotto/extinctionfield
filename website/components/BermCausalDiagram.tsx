@@ -17,8 +17,8 @@ const LEVEL_LABEL_W = 140;
 const FEEDBACK_MARGIN = 60;
 const NODE_GAP = 14;
 const MAX_NODE_W = 240;
-const MIN_NODE_W = 160;
-const MAX_PER_ROW = 5;
+const MIN_NODE_W = 140;
+const ABS_MAX_PER_ROW = 5;
 const ROW_INNER_GAP = 10;
 const BAND_PAD_Y = 14;
 const BAND_PAD_X = 8;
@@ -61,13 +61,14 @@ function computeLayout(
   const layoutNodes: LayoutNode[] = [];
   const bands: LevelBand[] = [];
   const usableW = canvasW - LEVEL_LABEL_W - FEEDBACK_MARGIN;
+  const maxPerRow = Math.min(ABS_MAX_PER_ROW, Math.max(1, Math.floor((usableW + NODE_GAP) / (MIN_NODE_W + NODE_GAP))));
   let currentY = 24;
 
   for (const lvl of sortedLevels) {
     const nodesInLevel = levels.get(lvl)!;
     const count = nodesInLevel.length;
     const h = NODE_H;
-    const numRows = Math.ceil(count / MAX_PER_ROW);
+    const numRows = Math.ceil(count / maxPerRow);
     const bandTop = currentY - BAND_PAD_Y;
 
     // Dominant epistemic color for the band
@@ -82,8 +83,8 @@ function computeLayout(
     }
 
     for (let row = 0; row < numRows; row++) {
-      const rowStart = row * MAX_PER_ROW;
-      const rowEnd = Math.min(rowStart + MAX_PER_ROW, count);
+      const rowStart = row * maxPerRow;
+      const rowEnd = Math.min(rowStart + maxPerRow, count);
       const rowCount = rowEnd - rowStart;
       const totalGaps = (rowCount - 1) * NODE_GAP;
       const nodeW = Math.max(MIN_NODE_W, Math.min(MAX_NODE_W, (usableW - totalGaps) / rowCount));
@@ -145,14 +146,14 @@ export default function BermCausalDiagram() {
   const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [containerW, setContainerW] = useState(1400);
+  const [containerW, setContainerW] = useState(900);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
     const ro = new ResizeObserver((entries) => {
       const w = entries[0]?.contentRect.width;
-      if (w && w > 0) setContainerW(Math.max(900, Math.min(1600, w)));
+      if (w && w > 0) setContainerW(Math.max(600, Math.min(1600, w)));
     });
     ro.observe(el);
     return () => ro.disconnect();
@@ -191,7 +192,7 @@ export default function BermCausalDiagram() {
           xmlns="http://www.w3.org/2000/svg"
           role="img"
           aria-label="BERM causal chain diagram"
-          style={{ width: "100%", height: "auto", minWidth: 900 }}
+          style={{ width: "100%", height: "auto", minWidth: 600 }}
         >
           <defs>
             <marker

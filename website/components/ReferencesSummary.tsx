@@ -8,13 +8,13 @@ import { categoryName, loadReferences } from "@/lib/references";
 const COPY = {
   en: {
     title: "Reference database",
-    subtitle: "422 references across 8 thematic categories",
+    subtitle: "452 references across 8 thematic categories",
     verified: "verified",
     browse: "Browse all references",
   },
   fi: {
     title: "Lähdetietokanta",
-    subtitle: "422 viitettä 8 temaattisessa kategoriassa",
+    subtitle: "452 viitettä 8 temaattisessa kategoriassa",
     verified: "varmennettu",
     browse: "Selaa kaikkia viitteitä",
   },

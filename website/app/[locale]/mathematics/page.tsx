@@ -13,6 +13,7 @@ const t = {
     },
     sections: [
       { id: "lindgren", num: "§1", label: "Lindgren geometry" },
+      { id: "evo-calibration", num: "§1b", label: "Evolutionary calibration" },
       { id: "chi", num: "§2", label: "Selection rule χ(Ā)" },
       { id: "two-channel", num: "§3", label: "Two-channel model" },
       { id: "biocap", num: "§4", label: "Biological capacity" },
@@ -39,6 +40,18 @@ const t = {
     s1d3: "where κ is a coupling constant (normalized to 1 in suitable units).",
     s1d4: "Maxwell’s equations follow from the Bianchi identities:",
     s1d5: "Vassallo et al. (2025) validated this derivation independently.",
+
+    // S1b Evolutionary Calibration
+    s1bTitle: "Evolutionary Calibration",
+    s1bIntro:
+      "Biological sensors evolved to detect electromagnetic signals at the quantum limit. The human eye detects single photons (~4×10⁻¹⁹ J, one-tenth of thermal noise energy — Vaziri et al. 2016). Shark electroreceptors detect 0.5 µV/m fields. Migratory birds’ compass is disrupted by 15 nT RF noise. Ion channels respond to 10⁻⁵ V/m polarized fields (Panagopoulos 2025). Lindgren’s χ(Ā) ≈ 1.0 at the membrane is the geometric reason for this sensitivity: the membrane is maximally susceptible because its internal field (7×10⁶ V/m) saturates the susceptibility function.",
+    s1bAfter:
+      "There is no evolved filter for IF or RF frequencies because these frequencies did not exist during 3.8 billion years of biological evolution. Ion channels are wideband receivers — evolution optimized detection sensitivity, not frequency rejection. Every technical signal is a potential disruption because biological sensors cannot distinguish it from a physiological signal.",
+    s1bd1: "Amplification cascade — photon analogy:",
+    s1bd2: "Eye: 1 photon → rhodopsin → transducin → PDE → cGMP → measurable current. Gain: ~10⁶×.",
+    s1bd3: "VGCC: 1 S4 conformational change → non-ionotropic signal (Trus & Atlas 2024) OR ion flux → Ca²⁺ → calmodulin → cascade. Gain: ~10⁴–10⁶×.",
+    s1bd4: "Bifurcation near Hopf point: G = 1/(2µ). Small ROS change → macroscopic output. Additional gain: ~10²–10³×.",
+    s1bd5: "Total gain: 10⁶–10⁹× — same order of magnitude as the eye’s photon amplification cascade.",
 
     // S2 Chi
     s2Title: "Selection Rule χ(Ā)",
@@ -82,6 +95,15 @@ const t = {
     s3rwRow5: "Amish (no electronics): 1h EMF, 23h free → 93% repair → net 0.07/day",
     s3rwThreshold:
       "Critical threshold: when EMF-free period < 2× repair half-life (< 12h for BER), repair is incomplete and cumulation begins. Modern humans crossed this threshold around 2005–2010.",
+    s3ifoTitle: "IF response function: IFO vs DEP",
+    s3ifoIntro:
+      "The IF channel response is the sum of two mechanisms operating at different intensity regimes:",
+    s3ifoIfo:
+      "R_IFO — Ion Forced Oscillation: linear in E_ext, threshold 10⁻⁵ V/m, dominates at environmental levels (0.01–3 V/m). Polarized, coherent IF fields force irregular gating of voltage-gated ion channels (Panagopoulos 2025).",
+    s3ifoDep:
+      "R_DEP — Dielectrophoresis: quadratic in E_ext, dominates at TTFields therapeutic levels (100–300 V/m). Requires high field gradients for translational force on intracellular structures.",
+    s3ifoAfter:
+      "At environmental intensities R_IFO ≫ R_DEP → linear response. At therapeutic intensities R_DEP ≫ R_IFO → quadratic response. The intensity gap between therapeutic devices and environmental exposure does not exist — it is an artifact of assuming DEP is the only IF mechanism.",
 
     // S4 BioCap
     s4Title: "Biological Capacity",
@@ -297,6 +319,7 @@ const t = {
     },
     sections: [
       { id: "lindgren", num: "§1", label: "Lindgrenin geometria" },
+      { id: "evo-calibration", num: "§1b", label: "Evoluutionäärinen kalibraatio" },
       { id: "chi", num: "§2", label: "Valintaehto χ(Ā)" },
       { id: "two-channel", num: "§3", label: "Kaksikanavamalli" },
       { id: "biocap", num: "§4", label: "Biologinen kapasiteetti" },
@@ -323,6 +346,18 @@ const t = {
     s1d3: "missä κ on kytkentävakio (normalisoitu arvoon 1 sopivissa yksiköissä).",
     s1d4: "Maxwellin yhtälöt seuraavat Bianchin identiteeteistä:",
     s1d5: "Vassallo et al. (2025) validoi tämän johtamisen itsenäisesti.",
+
+    // S1b Evoluutionäärinen kalibraatio
+    s1bTitle: "Evoluutionäärinen kalibraatio",
+    s1bIntro:
+      "Biologiset sensorit kehittyivät havaitsemaan sähkömagneettisia signaaleja kvanttiraja-herkkyydellä. Ihmisen silmä havaitsee yksittäisen fotonin (~4×10⁻¹⁹ J, kymmenesosa termisestä kohinaenergiasta — Vaziri ym. 2016). Haiden elektrosensorit havaitsevat 0,5 µV/m kenttää. Muuttolintujen kompassi häiriintyy 15 nT RF-kohinasta. Ionikanavat vastaavat 10⁻⁵ V/m polarisoituihin kenttiin (Panagopoulos 2025). Lindgrenin χ(Ā) ≈ 1,0 solukalvolla on geometrinen syy tälle herkkyydelle: kalvo on maksimaalisesti altis koska sen sisäinen kenttä (7×10⁶ V/m) saturoi herkkyysfunktion.",
+    s1bAfter:
+      "IF- ja RF-taajuuksille ei ole kehittynyt suodatinta, koska näitä taajuuksia ei esiintynyt 3,8 miljardin vuoden biologisen evoluution aikana. Ionikanavat ovat laajakaistavastaanottimia — evoluutio optimoi havaitsemisherkkyyden, ei taajuuden torjuntaa. Jokainen tekninen signaali on potentiaalinen häiriö, koska biologiset sensorit eivät pysty erottamaan sitä fysiologisesta signaalista.",
+    s1bd1: "Vahvistuskaskadi — fotoni-analogia:",
+    s1bd2: "Silmä: 1 fotoni → rodopsiini → transdusuiini → PDE → cGMP → mitattava virta. Vahvistus: ~10⁶×.",
+    s1bd3: "VGCC: 1 S4-konformaatiomuutos → ei-ionotrooppinen signaali (Trus & Atlas 2024) TAI ionivirtaus → Ca²⁺ → kalmoduliini → kaskadi. Vahvistus: ~10⁴–10⁶×.",
+    s1bd4: "Bifurkaatio Hopf-pisteen lähellä: G = 1/(2µ). Pieni ROS-muutos → makroskooppinen vaste. Lisävahvistus: ~10²–10³×.",
+    s1bd5: "Kokonaisvahvistus: 10⁶–10⁹× — sama suuruusluokka kuin silmän fotonivahvistuskaskadi.",
 
     // S2 Chi
     s2Title: "Valintaehto χ(Ā)",
@@ -366,6 +401,15 @@ const t = {
     s3rwRow5: "Amissit (ei elektroniikkaa): 1h EMF, 23h vapaa → 93 % korjaus → netto 0,07/pv",
     s3rwThreshold:
       "Kriittinen kynnys: kun EMF-vapaa jakso < 2× korjauksen puoliintumisaika (< 12h BER-reitille), korjaus jää epätäydelliseksi ja kumulaatio alkaa. Moderni ihminen ylitti tämän kynnyksen noin 2005–2010.",
+    s3ifoTitle: "IF-vastefunktio: IFO vs DEP",
+    s3ifoIntro:
+      "IF-kanavan vaste on kahden mekanismin summa, jotka toimivat eri intensiteettialueilla:",
+    s3ifoIfo:
+      "R_IFO — ionien pakotettu oskillaatio: lineaarinen E_ext:ssä, kynnys 10⁻⁵ V/m, dominoi ympäristötasoilla (0,01–3 V/m). Polarisoidut, koherentit IF-kentät pakottavat jänniteohjattujen ionikanavien epäsäännöllisen portituksen (Panagopoulos 2025).",
+    s3ifoDep:
+      "R_DEP — dielektroforeesi: neliöllinen E_ext:ssä, dominoi TTFields-terapiatasoilla (100–300 V/m). Vaatii korkean kenttägradientin translaatiovoimalle solunsisäisiin rakenteisiin.",
+    s3ifoAfter:
+      "Ympäristöintensiteeteillä R_IFO ≫ R_DEP → lineaarinen vaste. Terapiaintensiteeteillä R_DEP ≫ R_IFO → neliöllinen vaste. Intensiteettikuilua terapeuttisten laitteiden ja ympäristöaltistuksen välillä ei ole — se on artefakti oletuksesta, että DEP on ainoa IF-mekanismi.",
 
     // S4 BioCap
     s4Title: "Biologinen kapasiteetti",
@@ -683,6 +727,28 @@ export function MathematicsSections({ locale }: { locale: string }) {
             </Derivation>
           </section>
 
+          {/* S1b Evolutionary Calibration */}
+          <section id="evo-calibration">
+            <h2 className="text-lg font-semibold mb-1">
+              <span className="text-foreground-muted text-sm mr-2">{"§1b"}</span>
+              {d.s1bTitle}
+            </h2>
+            <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+              {d.s1bIntro}
+            </p>
+            <p className="text-foreground-muted text-sm leading-relaxed">
+              {d.s1bAfter}
+            </p>
+
+            <Derivation>
+              <DerivationLine>{d.s1bd1}</DerivationLine>
+              <DerivationLine>{d.s1bd2}</DerivationLine>
+              <DerivationLine>{d.s1bd3}</DerivationLine>
+              <DerivationLine>{d.s1bd4}</DerivationLine>
+              <DerivationLine>{d.s1bd5}</DerivationLine>
+            </Derivation>
+          </section>
+
           {/* S2 Selection rule chi */}
           <section id="chi">
             <h2 className="text-lg font-semibold mb-1">
@@ -824,6 +890,29 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 </div>
               </div>
             </Derivation>
+
+            <div className="mt-6 rounded-lg border border-accent/20 bg-card-bg p-5">
+              <h3 className="text-sm font-semibold mb-2">{d.s3ifoTitle}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">
+                {d.s3ifoIntro}
+              </p>
+              <div className="text-center my-3">
+                <MathBlock tex="R_{IF} = R_{IFO} + R_{DEP}" />
+              </div>
+              <div className="space-y-2 text-sm text-foreground-muted leading-relaxed mb-3">
+                <p>{d.s3ifoIfo}</p>
+                <div className="text-center my-2">
+                  <MathBlock tex="R_{IFO}(E,f) = \chi_{mem} \cdot H(f) \cdot E_{ext} \cdot d_{cell} \cdot q_{eff} / kT \quad \text{(linear)}" />
+                </div>
+                <p>{d.s3ifoDep}</p>
+                <div className="text-center my-2">
+                  <MathBlock tex="R_{DEP}(E,f) = T(f) \cdot G_{geo} \cdot |E_{ext}|^2 \cdot V_{cell} \cdot \text{Re}[K(f)] \quad \text{(quadratic)}" />
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                {d.s3ifoAfter}
+              </p>
+            </div>
           </section>
 
           {/* S4 Biological capacity */}

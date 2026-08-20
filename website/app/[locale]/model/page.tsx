@@ -4,6 +4,7 @@ import Link from "next/link";
 import BermCausalDiagram from "@/components/BermCausalDiagram";
 import { ModelTableOfContents } from "@/components/ModelTableOfContents";
 import { MathematicsSections } from "@/app/[locale]/mathematics/page";
+import { ModulomeLayers } from "@/components/ModulomeLayers";
 
 const t = {
   en: {
@@ -46,6 +47,9 @@ const t = {
       "Total effective EMF exposure is the sum of two channels: the ambient field (cell towers, Wi-Fi infrastructure, power lines) and the personal component (phone, laptop, wearables) modulated by the chi coupling.",
     twoChExplain:
       "This means that in a country with near-zero cellular infrastructure, even heavy personal phone use contributes little total exposure (chi is near zero). Conversely, in a fully saturated environment, the personal component is added almost linearly.",
+    twoChLayersTitle: "12 technology layers composing the ambient field",
+    twoChLayersDesc:
+      "The ambient term is not monolithic. It decomposes into 12 independent technology layers, each with its own driver, deployment timeline, and frequency profile. This decomposition improves the model's discriminative power because each layer acts as an orthogonal instrument.",
 
     recovTitle: "Five-layer recovery model",
     recovDesc:
@@ -145,6 +149,9 @@ const t = {
       },
     ],
 
+    modulomeTitle: "EMF Modulome",
+    modulomeDesc: "The seven-layer modulome synthesizes four independent research traditions — Becker's DC control system, Adee's electrome, Levin's bioelectric code, and Lindgren's geometric framework — into a unified model of EMF biological susceptibility. Each layer is independently supported by FDA-approved therapeutic devices that exploit the same mechanism.",
+
     btnEvidence: "Browse evidence",
     btnPredictions: "View predictions",
     mathTitle: "Mathematical Foundation",
@@ -194,6 +201,9 @@ const t = {
       "Kokonaistehokas EMF-altistus on kahden kanavan summa: ympäristökenttä (tukiasemat, Wi-Fi-infrastruktuuri, voimalinjat) ja henkilökohtainen komponentti (puhelin, kannettava, puettavat laitteet) chi-kytkennällä moduloituna.",
     twoChExplain:
       "Tämä tarkoittaa, että maassa, jossa matkapuhelininfrastruktuuri on lähes nolla, jopa runsas puhelinkäyttö tuottaa vähän kokonaisaltistusta (chi on lähellä nollaa). Vastaavasti täysin saturoituneessa ympäristössä henkilökohtainen komponentti lisätään lähes lineaarisesti.",
+    twoChLayersTitle: "12 teknologiakerrosta ambient-kentän komponentteina",
+    twoChLayersDesc:
+      "Ambient-termi ei ole monoliittinen. Se hajoaa 12 itsenäiseen teknologiakerrokseen, joista jokaisella on oma ajurinsa, käyttöönottoaikataulunsa ja taajuusprofiilinsa. Tämä hajotus parantaa mallin diskriminointikykyä koska jokainen kerros toimii ortogonaalisena instrumenttina.",
 
     recovTitle: "Viisikerroksinen palautumismalli",
     recovDesc:
@@ -292,6 +302,9 @@ const t = {
         test: "Haredi vs. sekulaari israelilaiskohortti",
       },
     ],
+
+    modulomeTitle: "EMF-modulooma",
+    modulomeDesc: "Seitsemäntasoinen modulooma yhdistää neljä itsenäistä tutkimusperinnettä — Beckerin DC-ohjausjärjestelmän, Adeen elektromin, Levinin bioelektrisen koodin ja Lindgrenin geometrisen viitekehyksen — yhtenäiseksi malliksi EMF:n biologisesta herkkyydestä. Jokaista tasoa tukevat itsenäisesti FDA-hyväksytyt terapeuttiset laitteet, jotka hyödyntävät samaa mekanismia.",
 
     btnEvidence: "Selaa näyttöä",
     btnPredictions: "Näytä ennusteet",
@@ -446,9 +459,48 @@ export default async function ModelPage({
             <Eq>
               total = ambient + &chi;(ambient) &times; personal
             </Eq>
-            <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed">
+            <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed mb-6">
               {d.twoChExplain}
             </p>
+
+            <h3 className="text-base font-semibold mb-2">{d.twoChLayersTitle}</h3>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.twoChLayersDesc}
+            </p>
+            <Eq>
+              ambient = &Sigma;<sub>k=1..12</sub> layer<sub>k</sub>(country, year)
+            </Eq>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 mt-4">
+              {([
+                ["#4a6741", locale_key === "fi" ? "Sotilastutka" : "Military radar", "1950s"],
+                ["#2196F3", locale_key === "fi" ? "Säätutka" : "Weather radar", "1988+"],
+                ["#FF5722", locale_key === "fi" ? "Matkapuhelinverkot" : "Mobile networks", "1991+"],
+                ["#E91E63", "Wi-Fi", "1999+"],
+                ["#8BC34A", locale_key === "fi" ? "Tuuliturbiinit" : "Wind turbines", "2000+"],
+                ["#9C27B0", locale_key === "fi" ? "Näyttösiirtymä" : "Display transition", "2005+"],
+                ["#00BCD4", locale_key === "fi" ? "Älymittarit" : "Smart meters", "2005+"],
+                ["#FFC107", locale_key === "fi" ? "Sisä-LED" : "Indoor LED", "2009+"],
+                ["#FFEB3B", locale_key === "fi" ? "Aurinkoinvertterit" : "Solar inverters", "2010+"],
+                ["#FF9800", locale_key === "fi" ? "LED-katuvalaistus" : "Street LED", "2012+"],
+                ["#795548", "IoT", "2014+"],
+                ["#607D8B", "ADAS", "2015+"],
+              ] as const).map(([color, name, year]) => (
+                <div key={name} className="flex items-center gap-2 rounded-lg border border-card-border px-3 py-2">
+                  <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: color }} />
+                  <span className="text-xs font-medium truncate">{name}</span>
+                  <span className="text-[10px] font-mono-num text-foreground-muted ml-auto">{year}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* EMF Modulome */}
+          <section id="modulome" className="mb-14">
+            <h2 className="text-xl font-semibold mb-4">{d.modulomeTitle}</h2>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.modulomeDesc}
+            </p>
+            <ModulomeLayers locale={locale} />
           </section>
 
           {/* Five-layer recovery model */}

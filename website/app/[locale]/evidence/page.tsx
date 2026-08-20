@@ -8,6 +8,10 @@ import { EvidenceClassification } from "@/components/EvidenceClassification";
 import { BehavioralSuppression } from "@/components/BehavioralSuppression";
 import { HindcastValidation } from "@/components/HindcastValidation";
 import { ReferencesSummary } from "@/components/ReferencesSummary";
+import { TherapeuticFrequencyMap } from "@/components/TherapeuticFrequencyMap";
+import { CellSizeFrequencyMatrix } from "@/components/CellSizeFrequencyMatrix";
+import { ThreeChannelDiagram } from "@/components/ThreeChannelDiagram";
+import { RetrodictionCards } from "@/components/RetrodictionCards";
 import {
   causalNodeLabels,
   FIELDSTATE_EVIDENCE,
@@ -67,19 +71,38 @@ const COPY = {
     extScope: "Translation scope",
     extN: "N",
     narrativeTitle: "Thematic evidence narratives",
-    narrativeLead: "Five cross-cutting themes that connect individual studies into mechanistic arguments. Each narrative synthesizes published findings; none establishes a population-level causal coefficient.",
+    narrativeLead: "Cross-cutting themes that connect individual studies into mechanistic arguments. Each narrative synthesizes published findings; none establishes a population-level causal coefficient.",
     narratives: [
+      {
+        id: "therapeutic-device-paradox",
+        title: "The therapeutic device paradox",
+        paragraphs: [
+          "FDA has approved 9+ medical devices whose efficacy depends on non-thermal EMF biological effects across frequencies from DC to 27 MHz. Each approval required clinical proof that electromagnetic fields produce a biological response at non-thermal intensities. These include bone growth stimulators (DC, PMA 1986), PEMF devices (1–100 Hz, PMA 1979), rTMS for depression (1–50 Hz, 510(k) 2008), vagus nerve stimulation for migraine (1–30 Hz, 510(k)), tDCS for depression (DC, PMA 2025), and Tumor Treating Fields for cancer (100–500 kHz, PMA 2011). This is not controversial EMF safety research — it is mainstream medicine.",
+          "The logical contradiction is direct: FDA requires proof of biological effect for device approval, while ICNIRP assumes absence of non-thermal biological effects for exposure limit setting. These two positions are logically incompatible. If non-thermal biological effects exist at multiple frequencies (as FDA approvals demonstrate), then exposure limits based solely on thermal effects are necessarily incomplete.",
+          "The tDCS comparison is particularly revealing: the therapeutic field strength in the cortex (0.3–1.0 V/m) that earned FDA PMA approval in December 2025 is the same order of magnitude as measured urban ambient RF field strength (0.67–1.51 V/m). If 0.3 V/m DC is biologically active enough for FDA approval, urban ambient RF at 0.67 V/m cannot be assumed biologically inert. The Novocure TTFields patent (US 7,016,725) explicitly identifies that 'cells in the ovaries or testicles may be sensitive to the electric fields' at 100–300 kHz — the same frequency range produced by LED lighting drivers.",
+        ],
+        studies: [
+          { citation: "EBI Bone Healing System (FDA PMA)", year: 1979, note: "PEMF non-thermal bone healing, 1–100 Hz" },
+          { citation: "NeuroStar rTMS (FDA 510(k))", year: 2008, note: "Neuroplastic changes from pulsed magnetic fields" },
+          { citation: "Optune TTFields (FDA PMA, EF-14 phase III)", year: 2015, note: "100–300 kHz disrupts cell division (non-thermal)" },
+          { citation: "Flow Neuroscience tDCS (FDA PMA)", year: 2025, note: "0.3–1.0 V/m DC changes brain function" },
+          { citation: "GammaCore VNS (FDA 510(k))", year: 2017, note: "Vagus nerve stimulation, systemic anti-inflammatory" },
+          { citation: "Novocure patent US 7,016,725", year: 2006, note: "Identifies ovaries/testicles as sensitive to IF fields" },
+        ],
+      },
       {
         id: "covid",
         title: "COVID-19 lockdown as natural experiment",
         paragraphs: [
           "Multiple studies report improved semen parameters during strict lockdown periods. A Chinese cohort (PubMed 41036143) found sperm concentration and motility increased during home confinement. Zhang et al. 2025 observed that semen quality declined again when restrictions were lifted, consistent with a reversible environmental component.",
-          "However, the sentinel species result is informative in the opposite direction: source-verified COLOSS data shows bee colony winter loss increased by 2.27 percentage points during COVID (24/35 countries worsened, p = 0.043). BBS birds also declined 2.8–3.0% in 2020–22. This bidirectionality is consistent with the BERM prediction that ambient outdoor RF decreased during lockdown while personal indoor RF exposure (Wi-Fi, devices at home) increased substantially.",
+          "The three-channel model resolves the apparent paradox — sperm quality improved while mental health declined — by decomposing EMF exposure into frequency bands with distinct biological targets. The intermediate frequency (IF) channel (300 Hz – 1 MHz), which affects cell division through the same frequency-cell size relationship as FDA-approved TTFields cancer therapy, dropped dramatically during lockdown because office environments with hundreds of LED fixtures, HVAC variable frequency drives, and power electronics were eliminated. At environmental intensities (0.01–3 V/m), the IF mechanism operates via Ion Forced Oscillation (IFO-VGIC, threshold 10⁻⁵ V/m — Panagopoulos 2025), not via dielectrophoresis which requires TTFields-level intensity (100–300 V/m). This closes the intensity gap between TTFields therapy and office LED fixtures. A typical office floor has 200–500 LED fixtures versus 15–20 at home — a 10–25× difference in IF sources. The RF channel (> 1 MHz), which affects circadian and neuropsychological pathways, increased 30–50% because screen time and device usage rose. Two different frequencies, two different mechanisms, two different tissues, two different directions — no paradox.",
+          "The sentinel species result confirms the outdoor component: COLOSS data shows bee colony winter loss increased by 2.27 percentage points during COVID (24/35 countries worsened, p = 0.043). BBS birds also declined 2.8–3.0% in 2020–22. Bees and birds remained in outdoor environments where ambient RF from cell towers continued uninterrupted, while human sperm quality benefited from reduced indoor IF exposure.",
         ],
         studies: [
           { citation: "Chinese lockdown cohort (PubMed 41036143)", year: 2024, note: "Sperm quality improvement during confinement" },
-          { citation: "Zhang et al.", year: 2025, note: "Quality decline after restriction lifting" },
-          { citation: "COLOSS winter loss panel", year: "2020–22", note: "Counter-result: bees worsened (+2.27 pp)" },
+          { citation: "Zhang et al.", year: 2025, note: "Quality decline after restriction lifting (reverse lockdown effect)" },
+          { citation: "COLOSS winter loss panel", year: "2020–22", note: "Counter-result: bees worsened (+2.27 pp, outdoor RF unchanged)" },
+          { citation: "Optune TTFields (FDA PMA)", year: 2015, note: "IF fields (100–300 kHz) disrupt cell division — same frequency as LED drivers" },
         ],
       },
       {
@@ -147,7 +170,74 @@ const COPY = {
           { citation: "Hore & Mouritsen, Annual Review of Biophysics", year: 2016, note: "Radical-pair mechanism lifetime ~1 µs" },
         ],
       },
+      {
+        id: "lighting",
+        title: "Lighting transition: the invisible EMF shift",
+        paragraphs: [
+          "The replacement of incandescent bulbs with LED lighting (EU ban 2009–2012, similar elsewhere) transformed every lamp socket from a passive resistor producing zero EMF above 50 Hz into an active kHz-frequency EMF source. A typical home has 15–30 LED bulbs, each containing a switch-mode power supply operating at 20–200 kHz with harmonic overtones extending higher.",
+          "Studies attributing LED health effects to 'blue light' (Tosini 2016) did not control for the EMF component. LED bulbs produce both blue light and kHz-EMF; incandescent bulbs produce neither. When a study compares LED to incandescent and finds melatonin suppression, it cannot determine whether the cause was spectral (blue light via retina → SCN) or electromagnetic (kHz fields via pineal or VGCC). No separation experiment has been conducted.",
+          "The biological activity of intermediate-frequency fields (kHz range) is confirmed by Tumor Treating Fields (TTFields), an FDA-approved cancer therapy using 100–300 kHz alternating fields to disrupt cell division. If these frequencies are therapeutically active in cancer cells, they cannot be biologically inert in normal tissue.",
+          "LED street lighting compounds the effect: Boyes et al. 2021 (Science Advances) found 47% reduction in moth caterpillar abundance under LED streetlights vs unlit sites, with worse effects from LEDs than sodium lamps. Pawson & Bader 2014 found LED traps captured 48% more insects than sodium. The Science editorial note on Lindecke 2026 explicitly identifies LED lights as a source of biological RF noise.",
+        ],
+        studies: [
+          { citation: "Boyes et al. (Science Advances)", year: 2021, note: "LED streetlights: −47% moth caterpillars vs unlit" },
+          { citation: "Pawson & Bader (Ecological Applications)", year: 2014, note: "LED traps: +48% insect capture vs sodium" },
+          { citation: "Tuszynski et al. — TTFields (PMC5129338)", year: 2016, note: "100–300 kHz fields disrupt cell division (FDA-approved)" },
+          { citation: "LED power quality study (PMC9920439)", year: 2023, note: "LED bulbs exceed harmonic distortion limits" },
+          { citation: "Havas — dirty electricity (ICEMS)", year: 2006, note: "kHz filtering improved diabetes/MS symptoms" },
+          { citation: "Aerts et al. (Environment International)", year: 2019, note: "IF fields (300 Hz–1 MHz) poorly studied" },
+        ],
+      },
+      {
+        id: "display",
+        title: "Display transition: CRT → LCD/LED",
+        paragraphs: [
+          "The transition from CRT to flat-panel LCD/LED televisions (2005–2015) was not simply a display technology change — it was a multiplicative EMF transformation. Screen count per household increased from ~1 to ~3–4. Average screen size grew from 27\" to 60\" (~5× surface area). Bedroom TV penetration rose from 15% to 70%. Built-in Wi-Fi added continuous 2.4/5 GHz RF emission. Viewing distance decreased. Viewing hours increased with streaming culture.",
+          "CRT televisions were not EMF-silent — their deflection coils produced strong VLF fields (15.6 kHz) and ELF fields (50 Hz). But these were from a single device at 3–4 m distance. The replacement by multiple Wi-Fi-connected LCD screens in every room, including bedrooms at 1.5–2 m from the pineal gland during evening hours, represents a qualitative change in the circadian EMF exposure profile.",
+          "The bedroom television is particularly relevant to BERM's circadian pathway (Pathway C): a large LED-backlit, Wi-Fi-connected screen at head height, operating from evening through the melatonin production window, producing both blue light and EMF simultaneously. The multiplicative effect (count × size × bedroom × Wi-Fi × hours × proximity) is far larger than any single-factor analysis would suggest.",
+        ],
+        studies: [
+          { citation: "Display market penetration data (Statista/GWI)", year: "2005–24", note: "Screen count 1 → 3.5, bedroom penetration 15% → 70%" },
+          { citation: "Streaming culture and screen time increase", year: "2012–24", note: "Average viewing hours +2.5h with streaming adoption" },
+        ],
+      },
+      {
+        id: "weather-radar",
+        title: "Weather radar networks and sentinel species",
+        paragraphs: [
+          "Weather surveillance radars are among the most powerful EMF sources in the environment. NEXRAD (USA, 159 stations) and equivalent European networks operate at S-band (2.7–3.0 GHz — nearly identical to Wi-Fi) or C-band (5.6 GHz), transmitting 250 kW to 1 MW peak power in rotating beams that sweep the entire landscape 24/7. Protected nature reserves are not shielded from radar signals.",
+          "The temporal coincidence with insect decline is notable: NEXRAD deployment began in 1988 and was complete by 1997. Hallmann's insect biomass data begins in 1989 — one year after the first NEXRAD installations. European Doppler radar networks were built on a similar timeline. The S-band frequency (2.8 GHz, λ/2 ≈ 5.4 cm) matches the body size of large flying insects, producing resonant absorption (Thielens 2018).",
+          "Nicholls & Racey (2007, PLOS ONE) demonstrated that bat activity was significantly reduced near radar installations at field strengths above 2 V/m. In a follow-up study (2009), a portable radar reduced foraging bat activity, suggesting EMF rather than noise or visual cues was responsible.",
+          "Weather radar data is now widely used to monitor insect populations. These studies use the radar to measure insect density but do not consider whether the radar itself affects the insects being measured — a methodological blind spot that BERM identifies as a critical research gap. BERM predicts that insect decline should correlate with proximity to weather radar stations, independent of pesticide and land-use covariates.",
+        ],
+        studies: [
+          { citation: "Nicholls & Racey (PLOS ONE)", year: 2007, note: "Bat activity reduced near radar (>2 V/m)" },
+          { citation: "Nicholls & Racey (PLOS ONE)", year: 2009, note: "Portable radar reduced foraging bat activity" },
+          { citation: "Hallmann et al.", year: 2017, note: "76% insect biomass decline, protected areas, 1989–2016" },
+          { citation: "Thielens et al.", year: 2018, note: "Insect RF absorption at 2–120 GHz, resonance effects" },
+          { citation: "UK weather radar insect study", year: 2025, note: "Radar used to TRACK insects, not test radar effects" },
+          { citation: "NEXRAD insect density study", year: 2025, note: "140 radars track US insects — radar impact not considered" },
+        ],
+      },
     ],
+    paradoxCards: [
+      {
+        label: "tDCS ≈ urban ambient",
+        text: "The therapeutic field strength in FDA-approved tDCS (0.3–1.0 V/m) is the same order of magnitude as measured urban ambient RF (0.67–1.51 V/m). If 0.3 V/m is biologically active enough for FDA approval, urban ambient cannot be assumed inert.",
+      },
+      {
+        label: "TTFields patent risk",
+        text: "Novocure's TTFields patent (US 7,016,725) explicitly states that 'ovarian or testicular cells may be sensitive to electric fields' at 100–300 kHz — the same frequency range as LED switched-mode power supplies found in every modern building.",
+      },
+      {
+        label: "PEMF expands mechanism",
+        text: "Pulsed electromagnetic field therapy works at 1–100 Hz via calcium signaling and osteoblast activation — demonstrating that VGCC is not the only non-thermal pathway. The EMF modulome encompasses at least 7 transduction layers.",
+      },
+    ],
+    paradoxCalTitle: "Why biological sensitivity is expected, not surprising",
+    paradoxCal1: "The human eye can detect a single photon — one quantum of electromagnetic radiation carrying ~4×10⁻¹⁹ joules, one-tenth of thermal noise energy (Vaziri et al. 2016, Nature Communications). Evolution optimized this electromagnetic sensor to the quantum limit because information is valuable for survival. If evolution pushed photon detection to the single-quantum boundary, why would it not have pushed electromagnetic field detection to comparable extremes?",
+    paradoxCal2: "It did. Panagopoulos et al. 2025 (Frontiers in Public Health) demonstrate that voltage-gated ion channels respond to polarized, coherent electromagnetic fields as weak as 10⁻⁵ V/m — one hundred thousandth of a volt per meter — through the Ion Forced Oscillation mechanism. Typical environmental IF-EMF from LED drivers and power electronics ranges from 0.01 to 3 V/m, exceeding this biological threshold by a factor of 1,000 to 300,000. The 'intensity gap' between therapeutic devices and environmental exposure does not exist at the biological level.",
+    paradoxCal3: "There is no evolved filter for IF or RF frequencies because these frequencies did not exist in the natural environment during the 3.8 billion years of biological evolution. Ion channels are 'wideband receivers' with no rejection of frequencies that nature never produced. Every technical signal is a potential disruption because biological sensors cannot distinguish it from a physiological signal. This is the same reason synthetic chemicals can disrupt the endocrine system — evolution did not build defenses against molecules it never encountered.",
   },
   fi: {
     title: "Evidenssirekisteri",
@@ -184,19 +274,38 @@ const COPY = {
     extScope: "Tulkintaraja",
     extN: "N",
     narrativeTitle: "Temaattiset evidenssinarratiivit",
-    narrativeLead: "Viisi poikkileikkaavaa teemaa, jotka yhdistävät yksittäiset tutkimukset mekanistisiksi argumenteiksi. Kukin narratiivi syntetisoi julkaistuja löydöksiä; mikään ei osoita väestötason kausaalikerrointa.",
+    narrativeLead: "Poikkileikkaavia teemoja, jotka yhdistävät yksittäiset tutkimukset mekanistisiksi argumenteiksi. Kukin narratiivi syntetisoi julkaistuja löydöksiä; mikään ei osoita väestötason kausaalikerrointa.",
     narratives: [
+      {
+        id: "therapeutic-device-paradox",
+        title: "Terapeuttisten laitteiden paradoksi",
+        paragraphs: [
+          "FDA on hyväksynyt 9+ lääkinnällistä laitetta, joiden teho perustuu EMF:n ei-termiseen biologiseen vaikutukseen taajuuksilla DC:stä 27 MHz:iin. Jokaisen hyväksyntä edellytti kliinistä todistamista siitä, että sähkömagneettiset kentät tuottavat biologisen vasteen ei-termisellä intensiteetillä. Näihin kuuluvat luunkasvustimulaattorit (DC, PMA 1986), PEMF-laitteet (1–100 Hz, PMA 1979), rTMS masennukseen (1–50 Hz, 510(k) 2008), vagushermostimulaatio migreeniin (1–30 Hz, 510(k)), tDCS masennukseen (DC, PMA 2025) ja Tumor Treating Fields syöpään (100–500 kHz, PMA 2011). Tämä ei ole kontroversiaalista EMF-turvallisuustutkimusta — se on valtavirtalääketiedettä.",
+          "Looginen ristiriita on suora: FDA vaatii biologisen vaikutuksen todentamista laitteen hyväksymiseksi, kun taas ICNIRP olettaa ei-termisten biologisten vaikutusten puuttumista altistusrajojen asettamiseksi. Nämä kaksi positiota ovat loogisesti yhteensopimattomia. Jos ei-termisiä biologisia vaikutuksia on useilla taajuuksilla (kuten FDA:n hyväksynnät osoittavat), pelkästään termisiin vaikutuksiin perustuvat altistusrajat ovat väistämättä puutteelliset.",
+          "tDCS-vertailu on erityisen paljastava: terapeuttinen kenttävoimakkuus aivokuoressa (0,3–1,0 V/m), joka sai FDA PMA -hyväksynnän joulukuussa 2025, on samaa suuruusluokkaa kuin mitattu kaupungin ambient-RF-kenttävoimakkuus (0,67–1,51 V/m). Jos 0,3 V/m DC on biologisesti riittävän aktiivinen FDA-hyväksyntään, kaupungin ambient-RF:ää 0,67 V/m ei voida olettaa biologisesti inertiksi. Novocuren TTFields-patentti (US 7 016 725) tunnistaa eksplisiittisesti, että 'munasarjojen tai kivesten solut voivat olla herkkiä sähkökentille' 100–300 kHz:n taajuudella — samalla taajuusalueella kuin LED-valaistuksen hakkuriteholähteet.",
+        ],
+        studies: [
+          { citation: "EBI Bone Healing System (FDA PMA)", year: 1979, note: "PEMF:n ei-terminen luunparaneminen, 1–100 Hz" },
+          { citation: "NeuroStar rTMS (FDA 510(k))", year: 2008, note: "Neuroplastiset muutokset pulssimagneettikentistä" },
+          { citation: "Optune TTFields (FDA PMA, EF-14 faasi III)", year: 2015, note: "100–300 kHz häiritsee solunjakautumista (ei-terminen)" },
+          { citation: "Flow Neuroscience tDCS (FDA PMA)", year: 2025, note: "0,3–1,0 V/m DC muuttaa aivojen toimintaa" },
+          { citation: "GammaCore VNS (FDA 510(k))", year: 2017, note: "Vagushermostimulaatio, systeeminen anti-inflammatorinen" },
+          { citation: "Novocure-patentti US 7 016 725", year: 2006, note: "Tunnistaa munasarjat/kivekset herkiksi IF-kentille" },
+        ],
+      },
       {
         id: "covid",
         title: "COVID-19-lockdown luonnollisena kokeena",
         paragraphs: [
           "Useat tutkimukset raportoivat parantuneen siemennesteen laadun tiukkojen lockdown-jaksojen aikana. Kiinalainen kohortti (PubMed 41036143) havaitsi siittiökonsentraation ja liikkuvuuden kasvaneen kotieristyksen aikana. Zhang ym. 2025 havaitsivat, että siemennesteen laatu laski jälleen rajoitusten purkamisen jälkeen, mikä on yhteensopivaa palautuvan ympäristötekijän kanssa.",
-          "Sentinellilajien tulos on kuitenkin informatiivinen vastakkaiseen suuntaan: lähdevarmennettu COLOSS-data osoittaa mehiläispesien talvihäviön kasvaneen 2,27 prosenttiyksikköä COVIDin aikana (24/35 maata heikkeni, p = 0,043). BBS-linnut laskivat myös 2,8–3,0 % vuosina 2020–22. Tämä kaksisuuntaisuus on yhteensopivaa BERM:n ennusteen kanssa: ambientin ulko-RF laski lockdownissa, mutta henkilökohtainen sisä-RF-altistus (Wi-Fi, laitteet kotona) kasvoi merkittävästi.",
+          "Kolmikanavamalli ratkaisee näennäisen paradoksin — siittiölaatu parani mutta mielenterveys heikkeni — hajottamalla EMF-altistuksen taajuuskaistoihin, joilla on erilliset biologiset kohteet. Välitaajuuskanava (IF, 300 Hz – 1 MHz), joka vaikuttaa solunjakautumiseen saman taajuus-solukoko-suhteen kautta kuin FDA:n hyväksymä TTFields-syöpähoito, laski dramaattisesti lockdownin aikana, koska toimistoympäristöt satojen LED-valaisimien, HVAC-taajuusmuuttajien ja tehoelektroniikan kanssa poistuivat. Ympäristöintensiteeteillä (0,01–3 V/m) IF-mekanismi toimii ionien pakotetun oskillaation kautta (IFO-VGIC, kynnys 10⁻⁵ V/m — Panagopoulos 2025), ei dielektroforeesin kautta, joka vaatii TTFields-tason intensiteetin (100–300 V/m). Tämä sulkee intensiteettikuilun TTFields-terapian ja toimiston LED-valaisimien välillä. Tyypillisessä toimistokerroksessa on 200–500 LED-valaisinta verrattuna kodin 15–20:een — 10–25-kertainen ero IF-lähteissä. RF-kanava (> 1 MHz), joka vaikuttaa sirkadiaanisiin ja neuropsykologisiin reitteihin, kasvoi 30–50 % ruutuajan ja laitekäytön lisääntyessä. Kaksi eri taajuutta, kaksi eri mekanismia, kaksi eri kudosta, kaksi eri suuntaa — ei paradoksia.",
+          "Sentinellilajien tulos vahvistaa ulkokomponentin: COLOSS-data osoittaa mehiläispesien talvihäviön kasvaneen 2,27 prosenttiyksikköä COVIDin aikana (24/35 maata heikkeni, p = 0,043). BBS-linnut laskivat myös 2,8–3,0 % vuosina 2020–22. Mehiläiset ja linnut pysyivät ulkoympäristöissä, joissa tukiasemien ambient-RF jatkui keskeytyksettä, kun taas ihmisten siittiölaatu hyötyi vähentyneestä sisätilojen IF-altistuksesta.",
         ],
         studies: [
           { citation: "Kiinalainen lockdown-kohortti (PubMed 41036143)", year: 2024, note: "Siittiölaadun paraneminen eristyksen aikana" },
-          { citation: "Zhang ym.", year: 2025, note: "Laadun lasku rajoitusten purkamisen jälkeen" },
-          { citation: "COLOSS-talvihäviöpaneeli", year: "2020–22", note: "Vastatulos: mehiläiset heikkenivät (+2,27 pp)" },
+          { citation: "Zhang ym.", year: 2025, note: "Laadun lasku rajoitusten purkamisen jälkeen (käänteinen lockdown-efekti)" },
+          { citation: "COLOSS-talvihäviöpaneeli", year: "2020–22", note: "Vastatulos: mehiläiset heikkenivät (+2,27 pp, ulko-RF ennallaan)" },
+          { citation: "Optune TTFields (FDA PMA)", year: 2015, note: "IF-kentät (100–300 kHz) häiritsevät solunjakautumista — sama taajuus kuin LED-hakkurit" },
         ],
       },
       {
@@ -264,7 +373,74 @@ const COPY = {
           { citation: "Hore & Mouritsen, Annual Review of Biophysics", year: 2016, note: "Radikaaliparimekanismin elinaika ~1 µs" },
         ],
       },
+      {
+        id: "lighting",
+        title: "Valaistussiirtymä: näkymätön EMF-muutos",
+        paragraphs: [
+          "Hehkulamppujen korvaaminen LED-valaistuksella (EU-kielto 2009–2012, vastaavat muualla) muutti jokaisen lampunkannan passiivisesta resistanssista, joka ei tuota EMF:ää yli 50 Hz:n, aktiiviseksi kilohertsitaajuiseksi EMF-lähteeksi. Tyypillisessä kodissa on 15–30 LED-lamppua, joista jokaisessa on hakkuriteholähde, joka toimii 20–200 kHz:n taajuudella ja tuottaa korkeampia harmonisia.",
+          "Tutkimukset, jotka attribuoivat LED:n terveysvaikutukset 'siniselle valolle' (Tosini 2016), eivät kontrolloineet EMF-komponenttia. LED-lamput tuottavat sekä sinistä valoa että kHz-EMF:ää; hehkulamput eivät kumpaakaan. Kun tutkimus vertaa LED:ää hehkulamppuun ja havaitsee melatoniinin suppression, se ei pysty erottamaan, oliko syy spektraalinen (sininen valo verkkokalvon kautta → SCN) vai sähkömagneettinen (kHz-kentät pineaalirauhasen tai VGCC:n kautta). Erottelututkimusta ei ole tehty.",
+          "Välitaajuisten kenttien (kHz-alue) biologinen aktiivisuus on vahvistettu Tumor Treating Fields (TTFields) -hoidolla, FDA:n hyväksymällä syöpähoidolla, joka käyttää 100–300 kHz:n vaihtokenttiä solunjakautumisen häiritsemiseen. Jos nämä taajuudet ovat terapeuttisesti aktiivisia syöpäsoluissa, ne eivät voi olla biologisesti inerttejä normaalissa kudoksessa.",
+          "LED-katuvalaistus vahvistaa vaikutusta: Boyes ym. 2021 (Science Advances) havaitsivat 47 %:n vähenemisen yöperhosten toukkamäärissä LED-katuvalojen alla verrattuna valaisemattomiin kohteisiin. Pawson & Bader 2014 havaitsivat LED-loukkujen pyydystäneen 48 % enemmän hyönteisiä kuin natriumlamppu. Sciencen toimituksellinen huomautus Lindecke 2026 -tutkimuksessa tunnistaa nimenomaisesti LED-valot biologisen RF-kohinan lähteeksi.",
+        ],
+        studies: [
+          { citation: "Boyes ym. (Science Advances)", year: 2021, note: "LED-katuvalot: −47 % yöperhosten toukkia vs valaisemattomat" },
+          { citation: "Pawson & Bader (Ecological Applications)", year: 2014, note: "LED-loukut: +48 % hyönteispyydystys vs natrium" },
+          { citation: "Tuszynski ym. — TTFields (PMC5129338)", year: 2016, note: "100–300 kHz kentät häiritsevät solunjakautumista (FDA-hyväksytty)" },
+          { citation: "LED-sähkönlaatututkimus (PMC9920439)", year: 2023, note: "LED-lamput ylittävät harmonisen särön rajat" },
+          { citation: "Havas — dirty electricity (ICEMS)", year: 2006, note: "kHz-suodatus paransi diabetes-/MS-oireita" },
+          { citation: "Aerts ym. (Environment International)", year: 2019, note: "IF-kentät (300 Hz–1 MHz) heikosti tutkittuja" },
+        ],
+      },
+      {
+        id: "display",
+        title: "Näyttöteknologiasiirtymä: CRT → LCD/LED",
+        paragraphs: [
+          "Siirtymä CRT-kuvaputkinäytöistä LCD/LED-litteänäyttöihin (2005–2015) ei ollut pelkkä näyttöteknologian muutos — se oli moninkertaistava EMF-muutos. Näyttöjen lukumäärä kotitaloutta kohti kasvoi ~1:stä ~3–4:ään. Keskimääräinen ruutukoko kasvoi 27\":stä 60\":iin (~5-kertainen pinta-ala). Makuuhuoneen TV-penetraatio nousi 15 %:sta 70 %:iin. Sisäänrakennettu Wi-Fi lisäsi jatkuvan 2,4/5 GHz RF-emission. Katseluetäisyys lyheni. Katseluaika kasvoi suoratoistokulttuurin myötä.",
+          "CRT-televisiot eivät olleet EMF-hiljaisia — niiden poikkeutuskäämit tuottivat voimakkaita VLF-kenttiä (15,6 kHz) ja ELF-kenttiä (50 Hz). Mutta nämä olivat yhdestä laitteesta 3–4 m:n etäisyydellä. Korvaaminen useilla Wi-Fi-yhdistetyillä LCD-näytöillä jokaisessa huoneessa, mukaan lukien makuuhuoneessa 1,5–2 m:n päässä pineaalirauhasesta ilta-aikaan, edustaa laadullista muutosta sirkadiaanisessa EMF-altistusprofiilissa.",
+          "Makuuhuoneen televisio on erityisen relevantti BERM:n sirkadiaaniselle reitille (Polku C): suuri LED-taustavalaistu, Wi-Fi-yhdistetty näyttö pään korkeudella, toimii illasta melatoniinin tuotantoikkunan läpi, tuottaen sekä sinistä valoa että EMF:ää samanaikaisesti. Moninkertaisuusvaikutus (lukumäärä × koko × makuuhuone × Wi-Fi × tunnit × läheisyys) on paljon suurempi kuin mikään yksittäisen tekijän analyysi antaisi ymmärtää.",
+        ],
+        studies: [
+          { citation: "Näyttömarkkinapenetraatiodata (Statista/GWI)", year: "2005–24", note: "Näyttömäärä 1 → 3,5, makuuhuonepenetraatio 15 % → 70 %" },
+          { citation: "Suoratoistokulttuuri ja ruutuajan kasvu", year: "2012–24", note: "Keskimääräinen katseluaika +2,5h suoratoiston myötä" },
+        ],
+      },
+      {
+        id: "weather-radar",
+        title: "Säätukaverkostot ja indikaattorilajit",
+        paragraphs: [
+          "Säävalvontatutkat ovat ympäristön voimakkaimpia EMF-lähteitä. NEXRAD (USA, 159 asemaa) ja vastaavat eurooppalaiset verkostot toimivat S-kaistalla (2,7–3,0 GHz — lähes identtinen Wi-Fi:n kanssa) tai C-kaistalla (5,6 GHz), lähettäen 250 kW – 1 MW huipputehoa pyörivissä keiloissa jotka pyyhkäisevät koko maiseman 24/7. Luonnonsuojelualueet eivät ole suojattuja tutkasignaaleilta.",
+          "Ajallinen yhteensattuma hyönteiskadon kanssa on huomattava: NEXRAD-asennus alkoi 1988 ja valmistui 1997. Hallmannin hyönteisbiomassadata alkaa 1989 — vuosi ensimmäisten NEXRAD-asennusten jälkeen. Eurooppalaiset Doppler-tutkaverkostot rakennettiin vastaavalla aikataululla. S-kaistan taajuus (2,8 GHz, λ/2 ≈ 5,4 cm) vastaa suurten lentävien hyönteisten kehon kokoa, tuottaen resonanssityyppistä absorptiota (Thielens 2018).",
+          "Nicholls & Racey (2007, PLOS ONE) osoittivat, että lepakkoaktiivisuus laski merkittävästi tutka-asemien lähellä kenttävoimakkuuksilla yli 2 V/m. Jatkotutkimuksessa (2009) kannettava tutka vähensi saalistavien lepakoiden aktiivisuutta, viitaten siihen, että EMF eikä melu tai visuaaliset vihjeet oli vastuussa.",
+          "Säätutkadataa käytetään nykyisin laajasti hyönteispopulaatioiden seuraamiseen. Nämä tutkimukset käyttävät tutkaa hyönteistiheyden mittaamiseen mutta eivät harkitse, vaikuttaako tutka itse mitattaviin hyönteisiin — metodologinen sokea piste, jonka BERM tunnistaa kriittiseksi tutkimusaukoksi. BERM ennustaa, että hyönteiskato korreloi säätutkien läheisyyden kanssa, riippumatta torjunta-aine- ja maankäyttökovariaateista.",
+        ],
+        studies: [
+          { citation: "Nicholls & Racey (PLOS ONE)", year: 2007, note: "Lepakkoaktiivisuus laski tutkan lähellä (>2 V/m)" },
+          { citation: "Nicholls & Racey (PLOS ONE)", year: 2009, note: "Kannettava tutka vähensi saalistavien lepakoiden aktiivisuutta" },
+          { citation: "Hallmann ym.", year: 2017, note: "76 %:n hyönteisbiomassalasku, suojelualueet, 1989–2016" },
+          { citation: "Thielens ym.", year: 2018, note: "Hyönteisten RF-absorptio 2–120 GHz, resonanssivaikutuksia" },
+          { citation: "UK:n säätutkahyönteistutkimus", year: 2025, note: "Tutkaa käytetty hyönteisten SEURAAMISEEN, ei vaikutusten testaamiseen" },
+          { citation: "NEXRAD-hyönteistiheystutkimus", year: 2025, note: "140 tutkaa seuraa USA:n hyönteisiä — tutkan vaikutusta ei huomioitu" },
+        ],
+      },
     ],
+    paradoxCards: [
+      {
+        label: "tDCS ≈ kaupungin ambient",
+        text: "FDA:n hyväksymän tDCS:n terapeuttinen kenttävoimakkuus (0,3–1,0 V/m) on samaa suuruusluokkaa kuin mitattu kaupungin ambient-RF (0,67–1,51 V/m). Jos 0,3 V/m on biologisesti riittävän aktiivinen FDA-hyväksyntään, kaupungin ambientia ei voida olettaa inertiksi.",
+      },
+      {
+        label: "TTFields-patentin riski",
+        text: "Novocuren TTFields-patentti (US 7 016 725) toteaa eksplisiittisesti, että 'munasarjojen tai kivesten solut voivat olla herkkiä sähkökentille' taajuudella 100–300 kHz — samalla taajuusalueella kuin LED-valaistuksen hakkuriteholähteet, joita on jokaisessa nykyrakennuksessa.",
+      },
+      {
+        label: "PEMF laajentaa mekanismin",
+        text: "Pulssisähkömagneettinen kenttäterapia toimii 1–100 Hz:n taajuudella kalsiumsignaloinnin ja osteoblastiaktivaation kautta — osoittaen, että VGCC ei ole ainoa ei-terminen reitti. EMF-moduloomi kattaa vähintään 7 transduktiokerrosta.",
+      },
+    ],
+    paradoxCalTitle: "Miksi biologinen herkkyys on odotettavissa, ei yllättävää",
+    paradoxCal1: "Ihmisen silmä havaitsee yksittäisen fotonin — yhden sähkömagneettisen säteilyn kvantin, joka kantaa ~4×10⁻¹⁹ joulea, kymmenesosan termisestä kohinaenergiasta (Vaziri ym. 2016, Nature Communications). Evoluutio optimoi tämän sähkömagneettisen sensorin kvanttirajaansa asti, koska informaatio on arvokasta selviytymiselle. Jos evoluutio painoi fotonihavaitsemisen yhden kvantin rajalle, miksi se ei olisi painanut sähkömagneettisen kentän havaitsemista vastaaviin äärirajoihin?",
+    paradoxCal2: "Se painoi. Panagopoulos ym. 2025 (Frontiers in Public Health) osoittavat, että jänniteohjatut ionikanavat vastaavat polarisoituihin, koherentteihin sähkömagneettisiin kenttiin jo 10⁻⁵ V/m voimakkuudella — sadastuhannesosalla voltista metrillä — ionien pakko-oskillaatiomekanismilla (IFO). Tyypillinen ympäristön IF-EMF LED-hakkureista ja tehoelektroniikasta on 0,01–3 V/m, ylittäen tämän biologisen kynnyksen 1 000–300 000 -kertaisesti. Intensiteettikuilua terapeuttisten laitteiden ja ympäristöaltistuksen välillä ei ole biologisella tasolla.",
+    paradoxCal3: "IF- tai RF-taajuuksille ei ole evoluution kehittämää suodatinta, koska näitä taajuuksia ei ollut luonnollisessa ympäristössä 3,8 miljardin vuoden biologisen evoluution aikana. Ionikanavat ovat 'laajakaistavastaaottimia' ilman hylkimistä taajuuksille, joita luonto ei koskaan tuottanut. Jokainen tekninen signaali on mahdollinen häiriö, koska biologiset sensorit eivät voi erottaa sitä fysiologisesta signaalista. Tämä on sama syy, miksi synteettiset kemikaalit voivat häiritä endokriinistä järjestelmää — evoluutio ei rakentanut puolustuksia molekyylejä vastaan, joita se ei kohdannut.",
   },
 } as const;
 
@@ -337,10 +513,42 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                   </tbody>
                 </table>
               </div>
+
+              {narrative.id === "therapeutic-device-paradox" && (
+                <>
+                  <div className="mt-8">
+                    <TherapeuticFrequencyMap locale={activeLocale} />
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-3 mt-8">
+                    {d.paradoxCards.map((card) => (
+                      <div key={card.label} className="rounded-lg border border-card-border bg-card-bg p-4">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-2">{card.label}</p>
+                        <p className="text-sm text-foreground-muted leading-relaxed">{card.text}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 rounded-lg border border-accent/20 bg-card-bg p-5">
+                    <h4 className="text-sm font-semibold mb-3">{d.paradoxCalTitle}</h4>
+                    <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.paradoxCal1}</p>
+                    <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.paradoxCal2}</p>
+                    <p className="text-sm text-foreground-muted leading-relaxed">{d.paradoxCal3}</p>
+                  </div>
+
+                  <CellSizeFrequencyMatrix locale={activeLocale} />
+                </>
+              )}
+
+              {narrative.id === "covid" && (
+                <ThreeChannelDiagram locale={activeLocale} />
+              )}
             </article>
           ))}
         </div>
       </section>
+
+      <RetrodictionCards locale={activeLocale} />
 
       <section className="mb-16">
         <BehavioralSuppression locale={activeLocale} />

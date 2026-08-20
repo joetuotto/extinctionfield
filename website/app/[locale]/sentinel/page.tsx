@@ -31,6 +31,14 @@ const COPY = {
     frogText: "Nike-NAAMP frog survey data shows an unexpected inversion: frog calling indices trend better near active Nike sites (+0.040/decade) than farther away (+0.002/decade, difference p = 0.045). This is the opposite of the bird result and requires explanation.",
     frogInterpretation: "The inverted result is consistent when species-specific RF attenuation is considered. Frogs live in water and moist soil — media that attenuate RF strongly (water relative permittivity ε_r ≈ 80). A frog in water is effectively shielded from peak-field pulses. Birds are in open air with no attenuating medium — peak field reaches them at full strength. Additionally, Nike site security zones provide undisturbed wetland habitat for amphibians. The bird negative gradient (p = 0.031) and frog positive gradient (p = 0.045) are both consistent with the peak-field model when habitat RF attenuation is accounted for. This does not confirm the EMF hypothesis — the water-attenuation explanation is physically motivated but not measured in this context.",
 
+    batTitle: "Bats: Mammalian compass disrupted",
+    batP1: "In May 2026, a team led by Oliver Lindecke published in Science the first experimental demonstration that radiofrequency electromagnetic noise disrupts a mammal's magnetic compass. Migratory soprano pipistrelle bats (Pipistrellus pygmaeus) were exposed to weak broadband RF noise (0.01–300 MHz) — at levels found in normal urban environments — for just 30 minutes during sunset. Control bats oriented normally toward their expected migratory direction. RF-exposed bats departed in random directions.",
+    batP2: "The most unexpected finding was the duration of the effect. In previous studies on migratory birds, the magnetic compass recovered immediately after RF exposure ended. In bats, the disorientation persisted for more than two hours. The researchers concluded that electromagnetic pollution may affect animal behavior 'in more complex ways than previously thought,' and that the 'widely anticipated increase of electromagnetic pollution may further add to the effects of anthropogenic climate change.'",
+    batP3: "This finding has three direct implications for the BERM framework. First, it extends the RPM/CRY compass disruption mechanism from birds (Engels 2014, Mouritsen 2014) to mammals — the first taxonomic class jump, published in a top-tier journal. Second, the hours-long disorientation provides a mechanistic basis for bat mortality at wind turbines: bats navigating near turbines with disrupted compasses would be at elevated collision risk. Third, the Science editors explicitly note that RF noise of this kind is 'produced by electronics, power lines, and even LED lights' — linking the finding directly to the lighting transition analysis.",
+    batHighlight: "Soprano pipistrelles weigh approximately 6 grams. Their entire body is well within the near-field of Wi-Fi and mobile base station antennas. The RPM mechanism in bat cryptochrome operates identically to bird cryptochrome — the geometric susceptibility predicts that any mammal using a radical-pair compass will be disrupted by ambient RF at urban levels. The hours-long persistence suggests not just sensory masking but a deeper calibration failure — the bat's internal model of magnetic North is corrupted and does not self-correct quickly.",
+    batRef: "Lindecke O et al. (2026). Science 388: 977+. doi:10.1126/science.adq4418",
+    batNote: "This study demonstrates RF-induced disorientation in bats. It does not study fertility, hormones, or cell biology. The BERM framework implications are model predictions, not conclusions of the original study.",
+
     covidTitle: "COVID lockdown: an informative counter-result",
     covidText: "Source-verified COLOSS data does not show bee colony improvement during COVID lockdowns: winter loss increased by 2.27 percentage points (24/35 countries worsened, p = 0.043). BBS birds also declined 2.8–3.0% in 2020–22. This is an informative negative result: it shows that the simple 'lockdown → ambient EMF ↓ → sentinels improve' prediction does not hold, likely because household RF traffic increased while outdoor activity decreased.",
     covidLabel: "Counter-result",
@@ -65,6 +73,14 @@ const COPY = {
     frogTitle: "Sammakot tutka-asemien lähellä: käänteinen signaali",
     frogText: "Nike-NAAMP-sammakkokyselydatan mukaan sammakoiden kutsuindeksit kehittyvät odottamattomasti PAREMMIN aktiivisten Nike-kohteiden lähellä (+0,040/vuosikymmen) kuin kauempana (+0,002/vuosikymmen, ero p = 0,045). Tämä on lintujen tuloksen vastakohta ja vaatii selityksen.",
     frogInterpretation: "Käänteinen tulos on johdonmukainen, kun lajikohtainen RF-vaimennus otetaan huomioon. Sammakot elävät vedessä ja kosteassa maaperässä — väliaineissa, jotka vaimentavat RF:ää voimakkaasti (veden suhteellinen permittiivisyys ε_r ≈ 80). Veden sammakko on käytännössä suojattu huippukenttäpulsseilta. Linnut ovat avoimessa ilmassa ilman vaimentavaa väliainetta — huippukenttä osuu niihin täydellä teholla. Lisäksi Nike-kohteiden suojavyöhykkeet tarjoavat sammakkoeläimille häiriöttömän kosteikkohabitaatin. Lintujen negatiivinen gradientti (p = 0,031) ja sammakoiden positiivinen gradientti (p = 0,045) ovat molemmat johdonmukaisia huippukenttämallin kanssa, kun habitaatin RF-vaimennus otetaan huomioon. Tämä ei vahvista EMF-hypoteesia — vesivaimennusselitys on fysikaalisesti motivoitu mutta ei mitattu tässä kontekstissa.",
+
+    batTitle: "Lepakot: Nisäkkäiden kompassi häiriintyy",
+    batP1: "Toukokuussa 2026 Oliver Lindecken johtama tutkimusryhmä julkaisi Sciencessa ensimmäisen kokeellisen osoituksen siitä, että radiotaajuinen sähkömagneettinen kohina häiritsee nisäkkään magneettikompassia. Muuttavia sopraanoyölepakoita (Pipistrellus pygmaeus) altistettiin heikkoille laajakaistaisille RF-kentille (0,01–300 MHz) — normaaleissa kaupunkiympäristöissä esiintyvillä tasoilla — vain 30 minuutin ajan auringonlaskun aikana. Kontrollilepakoiden suuntautuminen oli normaali. RF-altistetut lepakot lähtivät satunnaisiin suuntiin.",
+    batP2: "Odottamattomin löydös oli vaikutuksen kesto. Aiemmissa muuttolintuihin kohdistuneissa tutkimuksissa magneettikompassi palautui välittömästi altistuksen päätyttyä. Lepakoilla desorientaatio kesti yli kaksi tuntia. Tutkijat päättelivät, että sähkömagneettinen saaste voi vaikuttaa eläinten käyttäytymiseen 'monimutkaisemmin kuin aiemmin ajateltiin' ja että 'laajalti ennustettu sähkömagneettisen saasteen kasvu voi edelleen lisätä ihmisen aiheuttaman ilmastonmuutoksen vaikutuksia.'",
+    batP3: "Tällä löydöksellä on kolme suoraa merkitystä BERM-kehykselle. Ensinnäkin se laajentaa RPM/CRY-kompassihäiriömekanismin linnuista (Engels 2014, Mouritsen 2014) nisäkkäisiin — ensimmäinen taksonominen luokkahyppy, julkaistu huippujulkaisussa. Toiseksi tuntien kestävä desorientaatio tarjoaa mekanistisen perusteen lepakoiden tuulivoimakuolleisuudelle: turbiinien lähellä häiriintyneellä kompassilla navigoivien lepakoiden törmäysriski kasvaa. Kolmanneksi Sciencen toimittajat toteavat nimenomaisesti, että tällaista RF-kohinaa 'tuottavat elektroniikka, voimalinjat ja jopa LED-valot' — mikä yhdistää löydöksen suoraan valaistussiirtymäanalyysiin.",
+    batHighlight: "Sopraanoyölepakko painaa noin 6 grammaa. Sen koko keho on hyvin Wi-Fi- ja matkapuhelintukiasema-antennien lähikentässä. RPM-mekanismi lepakkokryptokromissa toimii identtisesti lintukryptokromin kanssa — geometrinen herkkyys ennustaa, että mikä tahansa radikaaliparikompassia käyttävä nisäkäs häiriintyy kaupunkitason ambient-RF:stä. Tuntien kestävä vaikutus viittaa syvempään kalibraatiovirheeseen kuin pelkkä sensorinen peittyminen — lepakko menettää sisäisen mallinsa magneettisesta pohjoisesta eikä se korjaudu nopeasti.",
+    batRef: "Lindecke O ym. (2026). Science 388: 977+. doi:10.1126/science.adq4418",
+    batNote: "Tämä tutkimus osoittaa RF:n aiheuttaman desorientaation lepakoilla. Se ei tutki hedelmällisyyttä, hormoneja tai solubiologiaa. BERM-kehyksen tulkinnat ovat mallipohjisia ennusteita, eivät alkuperäisen tutkimuksen johtopäätöksiä.",
 
     covidTitle: "COVID-lockdown: informatiivinen vastatulos",
     covidText: "Lähdevarmennettu COLOSS-data ei näytä mehiläispesien paranemista COVID-lockdownien aikana: talvihäviö kasvoi 2,27 prosenttiyksikköä (24/35 maata paheni, p = 0,043). BBS-linnut myös laskivat 2,8–3,0 % vuosina 2020–22. Tämä on informatiivinen negatiivinen tulos: se osoittaa, että yksinkertainen 'lockdown → ambientin EMF ↓ → sentinellit paranevat' -ennuste ei päde, todennäköisesti koska kotitalouksien RF-liikenne kasvoi samalla kun ulkona liikkuminen väheni.",
@@ -141,6 +157,26 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
           <p>{d.frogText}</p>
           <p className="text-xs leading-relaxed border-l-2 border-foreground-muted/20 pl-4">{d.frogInterpretation}</p>
+        </div>
+      </section>
+
+      {/* Bats: Lindecke 2026 */}
+      <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.batTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p>{d.batP1}</p>
+          <p>{d.batP2}</p>
+          <p>{d.batP3}</p>
+        </div>
+        <div className="my-6 rounded-lg border border-accent/30 bg-accent/5 p-5">
+          <p className="text-xs font-semibold text-accent mb-2">
+            {activeLocale === "fi" ? "Lindgren-kehys" : "Lindgren Framework"}
+          </p>
+          <p className="text-sm text-foreground-muted leading-relaxed">{d.batHighlight}</p>
+        </div>
+        <p className="text-xs text-foreground-muted font-mono-num mb-4">{d.batRef}</p>
+        <div className="rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.batNote}</p>
         </div>
       </section>
 

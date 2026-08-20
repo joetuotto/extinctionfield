@@ -27,9 +27,16 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
       ],
     },
     {
+      title: "Modulome",
+      sections: [
+        { id: "modulome", label: "7-layer modulome" },
+      ],
+    },
+    {
       title: "Mathematical specification",
       sections: [
         { id: "premise", num: "§1", label: "Physics premise" },
+        { id: "evo-calibration", num: "§1b", label: "Evolutionary calibration" },
         { id: "fieldstate", num: "§2", label: "FieldState" },
         { id: "static-interface-math", num: "§3", label: "Static interface" },
         { id: "organ-state", num: "§4", label: "Organ state" },
@@ -53,9 +60,16 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
       ],
     },
     {
+      title: "Modulooma",
+      sections: [
+        { id: "modulome", label: "7-tasoinen modulooma" },
+      ],
+    },
+    {
       title: "Matemaattinen määrittely",
       sections: [
         { id: "premise", num: "§1", label: "Fysiikan premissi" },
+        { id: "evo-calibration", num: "§1b", label: "Evoluutionäärinen kalibraatio" },
         { id: "fieldstate", num: "§2", label: "FieldState" },
         { id: "static-interface-math", num: "§3", label: "Staattinen rajapinta" },
         { id: "organ-state", num: "§4", label: "Elintila" },

@@ -101,6 +101,15 @@ const t: Record<Locale, Copy> = {
     questionsTitle: "Research questions and evidence boundaries",
     objections: [
       {
+        question: "Environmental EMF fields are too weak for biological effects",
+        response: [
+          "The human eye detects single photons. Sharks detect 0.5 µV/m electric fields. Migratory birds' compass is disrupted by 15 nT RF noise — 0.03% of the geomagnetic background. Biology operates at the quantum limit of electromagnetic sensitivity because evolution optimized detection, not tolerance.",
+          "Nine FDA-approved medical devices exploit non-thermal EMF biological effects across the frequency spectrum. tDCS treats depression at 0.3–1.0 V/m in cortical tissue — the same order of magnitude as measured urban ambient RF (0.67–1.51 V/m). PEMF bone healing devices have been FDA-approved since 1979. The claim that EMF is 'too weak' directly contradicts FDA's own approval decisions.",
+          "The Ion Forced Oscillation mechanism (Panagopoulos 2025, Frontiers in Public Health) demonstrates a biological response threshold of 10⁻⁵ V/m for polarized, coherent fields — five orders of magnitude below typical environmental levels. There is no intensity gap. The gap existed only in models that assumed thermal effects were the only mechanism.",
+        ],
+        boundary: "The intensity argument is an empirical claim. FDA approvals and IFO threshold measurements are empirical facts. The burden of proof is on the intensity argument to explain why FDA-approved non-thermal devices work.",
+      },
+      {
         question: "Could demographic and social causes explain period TFR change?",
         response: [
           "Yes. Education, contraception, housing, labour markets, partnership formation, migration, policy, desired family size, tempo and ART all affect observed fertility. A period TFR is a five-year-age-group sum, not a direct assay of gametes or conception.",
@@ -217,6 +226,15 @@ const t: Record<Locale, Copy> = {
     ],
     questionsTitle: "Tutkimuskysymykset ja evidenssirajat",
     objections: [
+      {
+        question: "Ympäristön EMF-kentät ovat liian heikkoja biologisiin vaikutuksiin",
+        response: [
+          "Ihmisen silmä havaitsee yksittäisiä fotoneja. Hait havaitsevat 0,5 µV/m sähkökenttiä. Muuttolintujen kompassi häiriintyy 15 nT RF-kohinasta — 0,03 % geomagneettisesta taustasta. Biologia toimii sähkömagneettisen herkkyyden kvanttirajoilla, koska evoluutio optimoi havaitsemisen, ei toleranssin.",
+          "Yhdeksän FDA-hyväksyttyä lääkintälaitetta hyödyntää ei-termisiä EMF-biologisia vaikutuksia eri taajuusalueilla. tDCS hoitaa masennusta 0,3–1,0 V/m aivokuoressa — sama suuruusluokka kuin kaupunkiympäristön mitattu RF (0,67–1,51 V/m). PEMF-luunparantamislaitteet ovat olleet FDA-hyväksyttyjä vuodesta 1979. Väite EMF:n 'liiallisesta heikkoudesta' on suorassa ristiriidassa FDA:n omien hyväksymispäätösten kanssa.",
+          "Ionien pakotettu oskillaatio -mekanismi (Panagopoulos 2025, Frontiers in Public Health) osoittaa biologisen vasteen kynnyksen 10⁻⁵ V/m polarisoituneille, koherenteille kentille — viisi kertaluokkaa alle tyypillisen ympäristötason. Intensiteettikuilua ei ole. Kuilu oli olemassa vain malleissa, jotka olettivat termisten vaikutusten olevan ainoa mekanismi.",
+        ],
+        boundary: "Intensiteettiargumentti on empiirinen väite. FDA-hyväksynnät ja IFO-kynnysmittaukset ovat empiirisiä tosiasioita. Todistustaakka on intensiteettiargumentilla selittää, miksi FDA-hyväksytyt ei-termiset laitteet toimivat.",
+      },
       {
         question: "Voivatko demografiset ja sosiaaliset syyt selittää periodin TFR-muutoksen?",
         response: [

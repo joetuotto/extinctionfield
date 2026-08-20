@@ -8,12 +8,12 @@ const COPY = {
   en: {
     title: "Reference database",
     subtitle:
-      "422 references organized into 8 thematic categories spanning field theory, signal transduction, cellular effects, reproduction, neurobiology, ecology, RF regulation, and institutional analysis. 58 source-verified records include curated findings and pathway annotations.",
+      "462 references organized into 8 thematic categories spanning field theory, signal transduction, cellular effects, reproduction, neurobiology, ecology, RF regulation, and institutional analysis. 58 source-verified records include curated findings and pathway annotations.",
   },
   fi: {
     title: "Lähdetietokanta",
     subtitle:
-      "422 viitettä jaettuna 8 temaattiseen kategoriaan: kenttäteoria, signaalitransduktio, solutason vaikutukset, lisääntyminen, neurobiologia, ekologia, RF-sääntely ja institutionaalinen analyysi. 58 lähdevarmennettua tietuetta sisältää kuratoidut löydökset ja reittiannotoinnit.",
+      "462 viitettä jaettuna 8 temaattiseen kategoriaan: kenttäteoria, signaalitransduktio, solutason vaikutukset, lisääntyminen, neurobiologia, ekologia, RF-sääntely ja institutionaalinen analyysi. 58 lähdevarmennettua tietuetta sisältää kuratoidut löydökset ja reittiannotoinnit.",
   },
 } as const;
 
