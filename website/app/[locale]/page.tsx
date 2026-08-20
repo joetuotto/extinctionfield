@@ -2,6 +2,7 @@ import Link from "next/link";
 import CausalChain from "@/components/CausalChain";
 import { WorldMap } from "@/components/WorldMap";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
+import { ReferencesSummary } from "@/components/ReferencesSummary";
 import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS } from "@/lib/predictions";
 import {
@@ -296,6 +297,11 @@ export default async function Home({
         </div>
 
         <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">{d.s4Evidence}</p>
+      </section>
+
+      {/* Reference database summary */}
+      <section className="mb-16 max-w-4xl">
+        <ReferencesSummary locale={activeLocale} />
       </section>
 
       {/* Navigation links */}
