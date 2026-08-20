@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Info } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { NextPageLink } from "@/components/NextPageLink";
 import { ReferenceDatabase } from "@/components/ReferenceDatabase";
 
 const COPY = {
@@ -40,6 +41,13 @@ export default async function ReferencesPage({
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={BookOpen} title={d.title} subtitle={d.subtitle} />
       <ReferenceDatabase locale={locale} />
+
+      <NextPageLink
+        href={`/${locale === "fi" ? "fi" : "en"}/about`}
+        label={locale === "fi" ? "Seuraavaksi" : "Next"}
+        title={locale === "fi" ? "Tietoa" : "About"}
+        icon={Info}
+      />
     </div>
   );
 }

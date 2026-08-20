@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Radio } from "lucide-react";
+import { Radio, Sigma } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
+import { NextPageLink } from "@/components/NextPageLink";
 import CausalChainDiagram from "@/components/CausalChainDiagram";
 
 type Copy = {
@@ -202,6 +203,13 @@ export default async function FieldStatePage({
           </div>
         </section>
       </article>
+
+      <NextPageLink
+        href={`/${language}/model/math`}
+        label={language === "fi" ? "Seuraavaksi" : "Next"}
+        title={language === "fi" ? "Matemaattinen määrittely" : "Mathematical specification"}
+        icon={Sigma}
+      />
     </div>
   );
 }

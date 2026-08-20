@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Sigma } from "lucide-react";
+import { Sigma, Layers } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
+import { NextPageLink } from "@/components/NextPageLink";
 import { MathematicsSections } from "@/app/[locale]/mathematics/page";
 
 const COPY = {
@@ -67,6 +68,13 @@ export default async function MathPage({
         <h3 className="editorial-kicker mb-2 text-foreground-muted">{d.baseDocTitle}</h3>
         <p className="text-sm leading-relaxed text-foreground-muted">{d.baseDocText}</p>
       </aside>
+
+      <NextPageLink
+        href={`/${language}/evidence`}
+        label={language === "fi" ? "Seuraavaksi" : "Next"}
+        title={language === "fi" ? "Evidenssirekisteri" : "Evidence registry"}
+        icon={Layers}
+      />
     </div>
   );
 }

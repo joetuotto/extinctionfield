@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Zap } from "lucide-react";
+import { Zap, Target } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { NextPageLink } from "@/components/NextPageLink";
 import { EcoTickHero } from "@/components/EcoTickHero";
 import { EcoStaticInterface } from "@/components/EcoStaticInterface";
 
@@ -41,6 +42,13 @@ export default async function EcologyPage({
       <PageHeader icon={Zap} title={d.title} subtitle={d.subtitle} />
       <EcoTickHero locale={language} />
       <EcoStaticInterface locale={language} />
+
+      <NextPageLink
+        href={`/${language}/predictions`}
+        label={language === "fi" ? "Seuraavaksi" : "Next"}
+        title={language === "fi" ? "Ennusteet" : "Predictions"}
+        icon={Target}
+      />
     </div>
   );
 }

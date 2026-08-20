@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { ShieldQuestion } from "lucide-react";
+import { ShieldQuestion, Leaf } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
+import { NextPageLink } from "@/components/NextPageLink";
 import { FindingCard } from "@/components/FindingCard";
 import {
   CLASSIFICATION_SUMMARY,
@@ -432,6 +433,13 @@ export default async function ObjectionsPage({
           <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.closingText}</p>
         </section>
       </div>
+
+      <NextPageLink
+        href={`/${locale === "fi" ? "fi" : "en"}/sentinel`}
+        label={locale === "fi" ? "Seuraavaksi" : "Next"}
+        title={locale === "fi" ? "Sentinellilajit" : "Sentinel species"}
+        icon={Leaf}
+      />
     </div>
   );
 }

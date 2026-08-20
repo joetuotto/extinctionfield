@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Leaf } from "lucide-react";
+import { Leaf, Zap } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { NextPageLink } from "@/components/NextPageLink";
 import { SentinelReadiness } from "@/components/SentinelReadiness";
 import { SentinelCascade } from "@/components/SentinelCascade";
 import { SentinelCascadeTimeline } from "@/components/SentinelCascadeTimeline";
@@ -175,6 +176,13 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
         </ol>
         <Link href={`/${activeLocale}/about/measurement`} className="inline-block mt-5 text-sm text-accent hover:underline">{d.link} →</Link>
       </section>
+
+      <NextPageLink
+        href={`/${activeLocale}/ecology`}
+        label={activeLocale === "fi" ? "Seuraavaksi" : "Next"}
+        title={activeLocale === "fi" ? "Ekologia" : "Ecology"}
+        icon={Zap}
+      />
     </div>
   );
 }

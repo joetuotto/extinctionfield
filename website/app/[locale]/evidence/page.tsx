@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Layers } from "lucide-react";
+import { Layers, ShieldQuestion } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { NextPageLink } from "@/components/NextPageLink";
 import { StatisticalValidation } from "@/components/StatisticalValidation";
 import { EvidenceClassification } from "@/components/EvidenceClassification";
 import { BehavioralSuppression } from "@/components/BehavioralSuppression";
@@ -484,6 +485,13 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
       <section className="mt-14">
         <ReferencesSummary locale={activeLocale} />
       </section>
+
+      <NextPageLink
+        href={`/${activeLocale}/objections`}
+        label={activeLocale === "fi" ? "Seuraavaksi" : "Next"}
+        title={activeLocale === "fi" ? "Kritiikki ja vastaukset" : "Criticism and responses"}
+        icon={ShieldQuestion}
+      />
     </div>
   );
 }

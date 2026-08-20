@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Target } from "lucide-react";
+import { Target, BookOpen } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { NextPageLink } from "@/components/NextPageLink";
 import { LOCKED_PREDICTIONS, metricLabel, countryLabel } from "@/lib/predictions";
 import { PredictionStatusBadge } from "@/components/PredictionStatusBadge";
 import { PredictionTrack } from "@/components/PredictionTrack";
@@ -228,6 +229,13 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <h2 className="text-xl font-semibold mb-3">{d.r43Title}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed">{d.r43Text}</p>
       </section>
+
+      <NextPageLink
+        href={`/${activeLocale}/references`}
+        label={activeLocale === "fi" ? "Seuraavaksi" : "Next"}
+        title={activeLocale === "fi" ? "Lähteet" : "Sources"}
+        icon={BookOpen}
+      />
     </div>
   );
 }
