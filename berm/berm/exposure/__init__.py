@@ -7,3 +7,12 @@ from berm.exposure.military_ambient import (
     broadcast_ambient,
     total_pre_telecom,
 )
+from berm.exposure.pulsed_radar_peak import (
+    sidelobe_peak_field,
+    sidelobe_rms_field,
+    peak_rms_ratio,
+    pathway_weighted_sigmoid,
+    permanent_damage,
+    nike_lopar_peak_field,
+    nike_lopar_rms_field,
+)

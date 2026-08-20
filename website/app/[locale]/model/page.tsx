@@ -28,6 +28,8 @@ type Copy = {
   evidenceLink: string;
   mathematicsTitle: string;
   mathematicsText: string;
+  baseDocTitle: string;
+  baseDocText: string;
 };
 
 const t: Record<Locale, Copy> = {
@@ -56,6 +58,7 @@ const t: Record<Locale, Copy> = {
     fieldStateTitle: "FieldState replaces a national exposure scalar",
     fieldStateText: [
       "For each organ, v2 keeps background, ambient and personal field components distinct after an organ-, posture- and geometry-specific transfer. It retains vector information, phase/coherence, envelope or beat PSD, circadian context, calibration and provenance.",
+      "FieldState measurement must preserve pulse structure: peak field, pulse duration, repetition rate and duty cycle are biologically relevant quantities that are lost in RMS averaging. BERM pathways A, B and D respond to peak field (threshold and pulse mechanisms), not time-averaged power. This distinguishes BERM from thermal models that use SAR (W/kg).",
       "National mobile-subscription series can describe technology diffusion. They remain distinct from local dosimetry and a measured organ FieldState.",
     ],
     staticInterfaceTitle: "Static triboelectric interface: a native local-physics branch",
@@ -81,6 +84,9 @@ const t: Record<Locale, Copy> = {
     mathematicsTitle: "Mathematical specification",
     mathematicsText:
       "The equations below state the active data contract, the organ-state structure and the boundary between a descriptive timing proxy and a calibratable FieldState result.",
+    baseDocTitle: "Not reproduced on this page",
+    baseDocText:
+      "The formal Jacobian product structure (chapter 17), the proof-obligation register and the safety-system specification are described in the LBERM base document. They are not reproduced here; this page carries the measurement contract and the equations the published results depend on.",
   },
   fi: {
     title: "BERM-mallin määrittely",
@@ -107,6 +113,7 @@ const t: Record<Locale, Copy> = {
     fieldStateTitle: "FieldState korvaa kansallisen altistusskalaarin",
     fieldStateText: [
       "V2 säilyttää kullekin elimelle tausta-, ambient- ja henkilökohtaiset kenttäkomponentit erillään elin-, asento- ja geometriakohtaisen siirron jälkeen. Se säilyttää vektoritiedon, vaiheen/koherenssin, verhokäyrä- tai beat-PSD:n, vuorokausikontekstin, kalibroinnin ja provenienssin.",
+      "FieldState-mittauksen on säilytettävä pulssirakenne: huippukenttä, pulssin kesto, toistotaajuus ja duty cycle ovat biologisesti relevantteja suureita, jotka katoavat RMS-keskiarvostuksessa. BERM:n polut A, B ja D vastaavat huippukenttään (kynnys- ja pulssimekanismit), eivät aikakeskiarvoistettuun tehoon. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
       "Kansalliset mobiililiittymäsarjat voivat kuvata teknologian leviämistä. Ne pidetään erillään paikallisesta dosimetriasta ja mitatusta elin-FieldStatesta.",
     ],
     staticInterfaceTitle: "Staattinen triboelektrinen rajapinta: natiivi paikallisfysiikan haara",
@@ -132,6 +139,9 @@ const t: Record<Locale, Copy> = {
     mathematicsTitle: "Matemaattinen määrittely",
     mathematicsText:
       "Alla olevat yhtälöt määrittelevät aktiivisen datakontraktin, elintilarakenteen sekä rajan kuvailevan ajoitusproxyn ja kalibroitavan FieldState-tuloksen välillä.",
+    baseDocTitle: "Ei toisteta tällä sivulla",
+    baseDocText:
+      "Formaali Jacobiaani-tulorakenne (luku 17), proof-obligation-rekisteri ja turvajärjestelmien määrittely kuvataan LBERM-perusdokumentissa. Niitä ei toisteta tässä; tämä sivu kantaa mittauskontraktin ja ne yhtälöt, joihin julkaistut tulokset nojaavat.",
   },
 };
 
@@ -244,6 +254,11 @@ export default async function ModelPage({
               </Link>
             </div>
             <MathematicsSections locale={language} />
+
+            <aside className="mt-10 max-w-4xl rounded-lg border border-card-border bg-card-bg p-5">
+              <h3 className="editorial-kicker mb-2 text-foreground-muted">{d.baseDocTitle}</h3>
+              <p className="text-sm leading-relaxed text-foreground-muted">{d.baseDocText}</p>
+            </aside>
           </section>
         </article>
       </div>

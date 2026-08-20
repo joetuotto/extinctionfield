@@ -1,5 +1,38 @@
 import { LockedPrediction } from "./types";
 
+/**
+ * Localised metric and country names. `metricLabel` / `countryLabel` on each
+ * record stay English (they are the registry's canonical identifiers); these
+ * maps supply the display strings for the Finnish locale.
+ */
+const METRIC_LABELS_FI: Record<string, string> = {
+  TFR: "Kokonaishedelmällisyysluku",
+  feedback_TFR: "TFR kaupungistumispalautteella",
+  SpermConc_pctOf2020: "Siittiökonsentraatio (% vuodesta 2020)",
+  sex_ratio_male_frac: "Sukupuolisuhde syntymässä (miesten osuus)",
+  sentinel_cascade_TFR_acceleration: "TFR-laskun kiihtyminen (sentinellikaskadi)",
+};
+
+const COUNTRY_LABELS_FI: Record<string, string> = {
+  Finland: "Suomi",
+  "South Korea": "Etelä-Korea",
+  "United States": "Yhdysvallat",
+  Japan: "Japani",
+  Brazil: "Brasilia",
+  Global: "Globaali",
+  "United States 2030": "Yhdysvallat 2030",
+};
+
+export function metricLabel(p: LockedPrediction, locale: string): string {
+  if (locale !== "fi") return p.metricLabel;
+  return METRIC_LABELS_FI[p.metric] ?? p.metricLabel;
+}
+
+export function countryLabel(p: LockedPrediction, locale: string): string {
+  if (locale !== "fi") return p.countryLabel;
+  return COUNTRY_LABELS_FI[p.countryLabel] ?? p.countryLabel;
+}
+
 const COHORT_CHANGE =
   "vulnerability-weighted cohort adjustment (fetal 5×, infant 4×, child 3×, " +
   "juvenile 2.5×, adolescent 2×) replaces linear ramp; LOOCV RMSE improved 1.17 → 1.15";

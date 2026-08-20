@@ -1,5 +1,19 @@
 import type { Metadata } from "next";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+
+const interFont = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-interface-loaded",
+});
+
+const serifFont = Source_Serif_4({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "600", "700"],
+  variable: "--font-editorial-loaded",
+});
 
 export const metadata: Metadata = {
   title: "Extinction Field – FieldState–ASFR research model",
@@ -15,7 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning className="h-full antialiased font-sans">
+    <html
+      suppressHydrationWarning
+      className={`h-full antialiased font-sans ${interFont.variable} ${serifFont.variable}`}
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>

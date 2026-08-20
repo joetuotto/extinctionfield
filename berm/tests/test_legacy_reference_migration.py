@@ -30,14 +30,21 @@ ALLOWED_STATUSES = {
     "HISTORICAL_CONTEXT",
     "UNVERIFIED_CITATION",
     "OUTSIDE_ACTIVE_GRAPH",
+    "RETRACTED_2024",
 }
 ALLOWED_CALIBRATION_ROLES = {"STRUCTURAL_ONLY", "CONTEXT_ONLY"}
-EMPTY_NODE_STATUSES = {"CONTEXT_ONLY", "UNVERIFIED_CITATION", "OUTSIDE_ACTIVE_GRAPH"}
+EMPTY_NODE_STATUSES = {
+    "CONTEXT_ONLY",
+    "UNVERIFIED_CITATION",
+    "OUTSIDE_ACTIVE_GRAPH",
+    "RETRACTED_2024",
+}
 EMPTY_NODE_ROLES = {
     "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "PHARMACOLOGICAL_ANALOGY_CONTEXT",
     "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "SOURCE_QUALIFICATION_PENDING",
+    "RETRACTED_SOURCE_PROVENANCE_ONLY",
 }
 
 
@@ -49,13 +56,16 @@ def test_legacy_bibliography_is_complete_and_source_anchored() -> None:
     manifest = _load_manifest()
     archive = manifest["source_archive"]
     records = manifest["records"]
-    ids = [record["legacy_id"] for record in records]
+    added = set(manifest["post_archive_additions"]["legacy_ids"])
+    archive_records = [r for r in records if r["legacy_id"] not in added]
+    ids = [record["legacy_id"] for record in archive_records]
     digest = hashlib.sha256(("\n".join(sorted(ids)) + "\n").encode()).hexdigest()
 
     assert manifest["migration_version"] == "legacy-reference-migration-v1"
     assert archive["record_count"] == 129
-    assert len(records) == 129
-    assert len(set(ids)) == len(ids)
+    assert len(archive_records) == 129
+    assert len(records) == len(archive_records) + len(added)
+    assert len({r["legacy_id"] for r in records}) == len(records)
     assert digest == EXPECTED_LEGACY_ID_DIGEST
     assert archive["git_blob"] == "505f761b3b4d79dbfe8b6cfcb52d3fa79a793ae8"
     assert archive["legacy_repository_path"] == "website/public/data/references.json"
@@ -73,7 +83,7 @@ def test_legacy_bibliography_is_complete_and_source_anchored() -> None:
             "pathway": record["legacy_classification"].get("pathways"),
             "tags": record["legacy_classification"].get("tags"),
         }
-        for record in records
+        for record in archive_records
     ]
     metadata_json = json.dumps(
         preserved_metadata,
@@ -82,6 +92,21 @@ def test_legacy_bibliography_is_complete_and_source_anchored() -> None:
     )
     assert hashlib.sha256(metadata_json.encode()).hexdigest() == EXPECTED_LEGACY_METADATA_DIGEST
     assert archive["preserved_metadata_sha256"] == EXPECTED_LEGACY_METADATA_DIGEST
+
+
+def test_post_archive_additions_are_declared_and_never_claim_archive_provenance() -> None:
+    manifest = _load_manifest()
+    added = set(manifest["post_archive_additions"]["legacy_ids"])
+    records = {record["legacy_id"]: record for record in manifest["records"]}
+
+    assert added <= set(records)
+    for legacy_id in added:
+        record = records[legacy_id]
+        assert "legacy_source_record_index" not in record
+        assert record["source_status"] == "BERM_INTERNAL_ANALYSIS"
+    for legacy_id, record in records.items():
+        if legacy_id not in added:
+            assert isinstance(record["legacy_source_record_index"], int)
 
 
 def test_migration_records_are_bounded_and_use_only_semantic_nodes() -> None:

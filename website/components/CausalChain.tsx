@@ -27,32 +27,36 @@ interface NodeDef {
   w?: number;
 }
 
+// Node widths are sized for the 14px label type: 26px left inset for the
+// epistemic dot, ~7px per character, 10px trailing padding.
 const NODES: Record<"en" | "fi", NodeDef[]> = {
   en: [
-    { id: "field", label: "FieldState", x: 20, y: 180, level: "L*", w: 115 },
-    { id: "transfer", label: "Local transfer", x: 155, y: 180, level: "L*", w: 130 },
-    { id: "intermediate", label: "CRY · melatonin · Ca²⁺/ROS · Vmem", x: 305, y: 180, level: "M", w: 185 },
-    { id: "organ", label: "Organ states · BTB", x: 510, y: 180, level: "M", w: 140 },
-    { id: "male", label: "BTB + sperm state", x: 670, y: 80, level: "M", w: 145 },
-    { id: "female", label: "Ovary + oocyte state", x: 670, y: 270, level: "M", w: 155 },
-    { id: "couple", label: "Couple capacity", x: 840, y: 180, level: "M", w: 125 },
-    { id: "context", label: "Demand · tempo · ART", x: 825, y: 290, level: "E", w: 145 },
-    { id: "asfr", label: "ASFR", x: 985, y: 180, level: "E", w: 75 },
-    { id: "tfr", label: "TFR", x: 1080, y: 180, level: "E", w: 75 },
+    { id: "field", label: "FieldState", x: 20, y: 180, level: "L*", w: 120 },
+    { id: "transfer", label: "Local transfer", x: 170, y: 180, level: "L*", w: 140 },
+    { id: "intermediate", label: "CRY · melatonin · Ca²⁺/ROS · Vmem", x: 340, y: 180, level: "M", w: 270 },
+    { id: "organ", label: "Organ states · BTB", x: 640, y: 180, level: "M", w: 165 },
+    { id: "male", label: "BTB + sperm state", x: 835, y: 80, level: "M", w: 160 },
+    { id: "female", label: "Ovary + oocyte state", x: 835, y: 270, level: "M", w: 180 },
+    { id: "couple", label: "Couple capacity", x: 1045, y: 180, level: "M", w: 145 },
+    { id: "context", label: "Demand · tempo · ART", x: 1030, y: 290, level: "E", w: 180 },
+    { id: "asfr", label: "ASFR", x: 1240, y: 180, level: "E", w: 80 },
+    { id: "tfr", label: "TFR", x: 1350, y: 180, level: "E", w: 80 },
   ],
   fi: [
-    { id: "field", label: "FieldState", x: 20, y: 180, level: "L*", w: 115 },
-    { id: "transfer", label: "Paikallinen siirto", x: 155, y: 180, level: "L*", w: 130 },
-    { id: "intermediate", label: "CRY · melatoniini · Ca²⁺/ROS · Vmem", x: 305, y: 180, level: "M", w: 195 },
-    { id: "organ", label: "Elinkohtaiset tilat · BTB", x: 520, y: 180, level: "M", w: 160 },
-    { id: "male", label: "BTB + siittiötila", x: 700, y: 80, level: "M", w: 145 },
-    { id: "female", label: "Munasarja + oosyyttitila", x: 680, y: 270, level: "M", w: 170 },
-    { id: "couple", label: "Parikapasiteetti", x: 855, y: 180, level: "M", w: 125 },
-    { id: "context", label: "Kysyntä · tempo · ART", x: 835, y: 290, level: "E", w: 155 },
-    { id: "asfr", label: "ASFR", x: 1000, y: 180, level: "E", w: 75 },
-    { id: "tfr", label: "TFR", x: 1095, y: 180, level: "E", w: 75 },
+    { id: "field", label: "FieldState", x: 20, y: 180, level: "L*", w: 120 },
+    { id: "transfer", label: "Paikallinen siirto", x: 170, y: 180, level: "L*", w: 165 },
+    { id: "intermediate", label: "CRY · melatoniini · Ca²⁺/ROS · Vmem", x: 365, y: 180, level: "M", w: 285 },
+    { id: "organ", label: "Elinkohtaiset tilat · BTB", x: 680, y: 180, level: "M", w: 215 },
+    { id: "male", label: "BTB + siittiötila", x: 925, y: 80, level: "M", w: 160 },
+    { id: "female", label: "Munasarja + oosyyttitila", x: 925, y: 270, level: "M", w: 205 },
+    { id: "couple", label: "Parikapasiteetti", x: 1160, y: 180, level: "M", w: 150 },
+    { id: "context", label: "Kysyntä · tempo · ART", x: 1145, y: 290, level: "E", w: 185 },
+    { id: "asfr", label: "ASFR", x: 1360, y: 180, level: "E", w: 80 },
+    { id: "tfr", label: "TFR", x: 1470, y: 180, level: "E", w: 80 },
   ],
 };
+
+const VIEWBOX_W: Record<"en" | "fi", number> = { en: 1460, fi: 1580 };
 
 // ── Edge definitions ──
 
@@ -76,7 +80,7 @@ const EDGES: EdgeDef[] = [
 
 // ── Helpers ──
 
-const NODE_H = 36;
+const NODE_H = 40;
 const RX = 6;
 
 function getNode(nodes: NodeDef[], id: string): NodeDef {
@@ -97,11 +101,17 @@ export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" })
 
   return (
     <svg
-      viewBox="0 0 1200 420"
+      viewBox={`0 0 ${VIEWBOX_W[locale]} 440`}
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label={locale === "fi" ? "BERM FieldState–ASFR-v2-kausaalireitti" : "BERM FieldState–ASFR-v2 causal route"}
-      style={{ width: "100%", height: "auto" }}
+      style={{
+        width: "100%",
+        // Below this the parent's overflow-x-auto scrolls, rather than
+        // shrinking the label type past legibility.
+        minWidth: 1150,
+        height: "auto",
+      }}
     >
       {/* Arrowhead marker */}
       <defs>
@@ -162,11 +172,11 @@ export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" })
             <circle cx={n.x + 12} cy={n.y + NODE_H / 2} r={4} fill={color} />
             {/* Label */}
             <text
-              x={n.x + 24}
+              x={n.x + 26}
               y={n.y + NODE_H / 2 + 1}
               fill="var(--foreground)"
-              fontSize={11}
-              fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+              fontSize={14}
+              fontFamily="var(--font-interface)"
               dominantBaseline="middle"
             >
               {n.label}
@@ -177,14 +187,14 @@ export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" })
 
       {/* Legend */}
       {legend.map(([lvl, lbl], i) => (
-        <g key={lvl} transform={`translate(${40 + i * 160}, 400)`}>
+        <g key={lvl} transform={`translate(${40 + i * 215}, 400)`}>
           <circle cx={0} cy={0} r={4} fill={LEVEL_COLORS[lvl]} />
           <text
-            x={10}
+            x={12}
             y={1}
             fill="var(--foreground-muted)"
-            fontSize={10}
-            fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+            fontSize={13}
+            fontFamily="var(--font-interface)"
             dominantBaseline="middle"
           >
             {lbl}

@@ -65,10 +65,11 @@ def test_all_legacy_records_keep_a_source_by_source_placement() -> None:
     placements = legacy_evidence_placements()
     summary = evidence_constraint_summary()
 
-    assert len(legacy) == 129
-    assert len(placements) == 129
+    # 129 frozen archive records plus 5 declared post-archive additions.
+    assert len(legacy) == 134
+    assert len(placements) == 134
     assert {item.legacy_id for item in placements} == {item.legacy_id for item in legacy}
-    assert summary["legacy_record_count"] == 129
+    assert summary["legacy_record_count"] == 134
     assert summary["verified_legacy_source_count"] >= 19
     assert summary["active_constraint_count"] > summary["canonical_active_constraint_count"]
     assert "weakly-informative" in summary["prior_family_sensitivity"]

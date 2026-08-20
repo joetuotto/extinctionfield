@@ -56,6 +56,8 @@ _LEGACY_EMPTY_NODE_STATUSES = frozenset({
     "CONTEXT_ONLY",
     "UNVERIFIED_CITATION",
     "OUTSIDE_ACTIVE_GRAPH",
+    # A retracted source keeps no causal nodes: it is provenance, not evidence.
+    "RETRACTED_2024",
 })
 
 
@@ -131,7 +133,9 @@ class LegacyEvidenceMigrationRecord:
     """
 
     legacy_id: str
-    legacy_source_record_index: int
+    # ``None`` for records added after the archive snapshot (e.g. source-verified
+    # CSLI sentinel panels); every archive-derived record keeps its 1-based index.
+    legacy_source_record_index: int | None
     citation: Mapping[str, object]
     legacy_classification: Mapping[str, object]
     canonical_nodes: tuple[str, ...]
@@ -155,15 +159,16 @@ class LegacyEvidenceMigrationRecord:
             "calibration_role",
         ):
             object.__setattr__(self, name, _nonempty(name, getattr(self, name)))
-        if isinstance(self.legacy_source_record_index, bool):
-            raise ValueError("legacy_source_record_index must be a positive integer")
-        try:
-            source_index = int(self.legacy_source_record_index)
-        except (TypeError, ValueError) as exc:
-            raise ValueError("legacy_source_record_index must be a positive integer") from exc
-        if source_index < 1 or source_index != self.legacy_source_record_index:
-            raise ValueError("legacy_source_record_index must be a positive integer")
-        object.__setattr__(self, "legacy_source_record_index", source_index)
+        if self.legacy_source_record_index is not None:
+            if isinstance(self.legacy_source_record_index, bool):
+                raise ValueError("legacy_source_record_index must be a positive integer")
+            try:
+                source_index = int(self.legacy_source_record_index)
+            except (TypeError, ValueError) as exc:
+                raise ValueError("legacy_source_record_index must be a positive integer") from exc
+            if source_index < 1 or source_index != self.legacy_source_record_index:
+                raise ValueError("legacy_source_record_index must be a positive integer")
+            object.__setattr__(self, "legacy_source_record_index", source_index)
         if not isinstance(self.citation, Mapping) or not _nonempty(
             "citation.title", str(self.citation.get("title", ""))
         ):
@@ -214,7 +219,7 @@ def _record_from_dict(raw: dict) -> FieldStateEvidenceRecord:
 def _legacy_record_from_dict(raw: dict) -> LegacyEvidenceMigrationRecord:
     return LegacyEvidenceMigrationRecord(
         legacy_id=raw["legacy_id"],
-        legacy_source_record_index=raw["legacy_source_record_index"],
+        legacy_source_record_index=raw.get("legacy_source_record_index"),
         citation=dict(raw["citation"]),
         legacy_classification=dict(raw["legacy_classification"]),
         canonical_nodes=tuple(raw.get("canonical_nodes", ())),

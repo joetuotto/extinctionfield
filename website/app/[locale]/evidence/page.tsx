@@ -128,6 +128,19 @@ const COPY = {
           { citation: "HRV Wi-Fi exposure", year: 2023, note: "Autonomic changes in susceptible subset" },
         ],
       },
+      {
+        id: "cry-pulse-resonance",
+        title: "CRY/RPM pulse-duration resonance",
+        paragraphs: [
+          "The radical-pair mechanism (RPM) lifetime in cryptochrome is approximately 1 µs — the time window during which the singlet-triplet interconversion is magnetically sensitive. This is temporally compatible with pulse durations used by air-defense radars (also ~1 µs). The coincidence is not designed but arises from the physical timescales involved: cryptochrome's singlet-triplet conversion time is the same order of magnitude as the pulse width of surveillance radars.",
+          "Each radar pulse covers the radical pair's entire lifetime, delivering the magnetic perturbation during the full conversion window. At 400 pulses per second, this produces 400 complete RPM events per second near a radar installation. By contrast, a continuous-wave (CW) signal at the same RMS applies a steady field with no pulse structure — the radical pair experiences a constant perturbation rather than discrete 1 µs windows. This predicts that pulse-modulated RF is more biologically active than CW at the same SAR. The REFLEX project (Diem et al. 2005) formally reported greater genotoxic effects from intermittent versus continuous exposure, consistent with this prediction. The temporal match is a physical coincidence, not a demonstrated resonance mechanism — it remains a testable prediction.",
+        ],
+        studies: [
+          { citation: "Sherrard RM et al. PLOS Biology", year: 2018, note: "CRY-dependent ROS generation under pulsed EMF" },
+          { citation: "REFLEX / Diem et al.", year: 2005, note: "Intermittent > continuous genotoxicity at same SAR" },
+          { citation: "Hore & Mouritsen, Annual Review of Biophysics", year: 2016, note: "Radical-pair mechanism lifetime ~1 µs" },
+        ],
+      },
     ],
   },
   fi: {
@@ -231,6 +244,19 @@ const COPY = {
           { citation: "HRV Wi-Fi -altistus", year: 2023, note: "Autonomiset muutokset herkässä osajoukossa" },
         ],
       },
+      {
+        id: "cry-pulse-resonance",
+        title: "CRY/RPM-pulssikestoresonanssi",
+        paragraphs: [
+          "Radikaaliparimekanismin (RPM) elinaika kryptokromissa on noin 1 µs — aikaikkuna, jonka aikana singletti–tripletti-interkonversio on magneettisesti herkkä. Tämä on ajallisesti yhteensopiva ilmapuolustustutkien pulssikestojen kanssa (myös ~1 µs). Yhteensattuma ei ole suunniteltu vaan syntyy mukana olevista fysikaalisista aikaskaaloista: kryptokromin singletti–tripletti-konversioaika on samaa suuruusluokkaa kuin valvontatutkien pulssinkesto.",
+          "Jokainen tutkapulssi kattaa radikaaliparin koko elinkaaren ja tuottaa magneettisen häiriön koko konversioikkunan ajan. 400 pulssia sekunnissa tuottaa 400 täydellistä RPM-tapahtumaa sekunnissa tutka-aseman lähellä. Sitä vastoin jatkuva aalto (CW) samalla RMS:llä tuottaa tasaisen kentän ilman pulssirakennetta — radikaalipari kokee vakiohäiriön yksittäisten 1 µs -ikkunoiden sijaan. Tämä ennustaa, että pulssimoduloitu RF on biologisesti aktiivisempi kuin CW samalla SAR-arvolla. REFLEX-projekti (Diem ym. 2005) raportoi muodollisesti suuremmat genotoksiset vaikutukset katkonaiselle altistukselle jatkuvaan verrattuna, mikä on yhteensopivaa tämän ennusteen kanssa. Ajallinen vastaavuus on fysikaalinen yhteensattuma, ei osoitettu resonanssimekanismi — se on testattava ennuste.",
+        ],
+        studies: [
+          { citation: "Sherrard RM ym. PLOS Biology", year: 2018, note: "CRY-riippuvainen ROS-tuotanto pulssi-EMF:ssä" },
+          { citation: "REFLEX / Diem ym.", year: 2005, note: "Katkonainen > jatkuva genotoksisuus samalla SAR:lla" },
+          { citation: "Hore & Mouritsen, Annual Review of Biophysics", year: 2016, note: "Radikaaliparimekanismin elinaika ~1 µs" },
+        ],
+      },
     ],
   },
 } as const;
@@ -274,15 +300,20 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                 <span className="font-mono-num text-xs text-accent mr-2">0{ni + 1}</span>
                 {narrative.title}
               </h3>
+              {narrative.paragraphs.length > 0 && (
+                <p className="editorial-rail mb-4 text-[0.95rem] leading-relaxed text-foreground">
+                  {narrative.paragraphs[0]}
+                </p>
+              )}
               <div className="space-y-3 text-sm text-foreground-muted leading-relaxed mb-5">
-                {narrative.paragraphs.map((p, pi) => (
+                {narrative.paragraphs.slice(1).map((p, pi) => (
                   <p key={pi}>{p}</p>
                 ))}
               </div>
               <div className="overflow-x-auto">
-                <table className="w-full text-xs border-collapse">
+                <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="border-b border-card-border text-left text-[0.65rem] text-foreground-muted uppercase tracking-wider">
+                    <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
                       <th className="py-2 pr-3">{activeLocale === "fi" ? "Viite" : "Citation"}</th>
                       <th className="py-2 pr-3 w-16">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
                       <th className="py-2">{activeLocale === "fi" ? "Huomio" : "Note"}</th>
@@ -321,12 +352,12 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                     <div className="mb-3 flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                       <div className="min-w-0">
                         <h4 className="font-serif text-base font-semibold leading-snug tracking-[-0.014em]">{record.citation}</h4>
-                        <p className="mt-1 text-xs text-foreground-muted">{record.studyType} · {record.system}</p>
+                        <p className="mt-1 text-sm text-foreground-muted">{record.studyType} · {record.system}</p>
                       </div>
                       <span className="font-mono-num text-xs text-foreground-muted">{record.year}</span>
                     </div>
                     <p className="mb-4 max-w-4xl text-sm leading-relaxed text-foreground-muted">{record.finding}</p>
-                    <dl className="grid grid-cols-1 gap-x-8 gap-y-2 border-t border-card-border pt-3 text-xs leading-relaxed md:grid-cols-2">
+                    <dl className="grid grid-cols-1 gap-x-8 gap-y-2 border-t border-card-border pt-3 text-sm leading-relaxed md:grid-cols-2">
                       <div><dt className="font-semibold text-foreground mb-0.5">{d.fields.nodes}</dt><dd className="text-foreground-muted">{causalNodeLabels(record.causalNodes, activeLocale).join(" · ")}</dd></div>
                       <div><dt className="font-semibold text-foreground mb-0.5">{d.fields.field}</dt><dd className="text-foreground-muted">{record.fieldClass}</dd></div>
                       <div><dt className="font-semibold text-foreground mb-0.5">{d.fields.scope}</dt><dd className="text-foreground-muted">{record.scope}</dd></div>
@@ -360,9 +391,9 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                 {pathwayLabel}
               </h3>
               <div className="overflow-x-auto">
-                <table className="w-full text-xs border-collapse">
+                <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="border-b border-card-border text-left text-[0.65rem] text-foreground-muted uppercase tracking-wider">
+                    <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
                       <th className="py-2 pr-3">{activeLocale === "fi" ? "Viite" : "Citation"}</th>
                       <th className="py-2 pr-3 w-12">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
                       <th className="py-2 pr-3 w-20">{d.extLevel}</th>
@@ -374,7 +405,15 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                     {records.map((r) => (
                       <tr key={r.id} className="border-b border-card-border/40 hover:bg-card-bg/50 transition-colors">
                         <td className="py-2.5 pr-3">
-                          <p className="font-medium text-foreground leading-snug">{r.citation}</p>
+                          <p
+                            className={`font-medium leading-snug ${
+                              r.status === "RETRACTED_2024"
+                                ? "text-foreground-muted line-through decoration-status-refuted"
+                                : "text-foreground"
+                            }`}
+                          >
+                            {r.citation}
+                          </p>
                           {r.translationScope && (
                             <p className="mt-1 text-foreground-muted leading-relaxed">{r.translationScope}</p>
                           )}
@@ -390,7 +429,15 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                         </td>
                         <td className="py-2.5 pr-3 font-mono-num text-foreground-muted align-top">{r.n ?? "—"}</td>
                         <td className="py-2.5 pr-3 align-top">
-                          <span className={`text-[0.6rem] ${r.status === "MIGRATION_CANDIDATE" ? "text-accent" : "text-foreground-muted"}`}>
+                          <span
+                            className={`text-[0.6rem] ${
+                              r.status === "RETRACTED_2024"
+                                ? "text-status-refuted font-medium"
+                                : r.status === "MIGRATION_CANDIDATE"
+                                  ? "text-accent"
+                                  : "text-foreground-muted"
+                            }`}
+                          >
                             {STATUS_LABELS[r.status]?.[activeLocale] ?? r.status}
                           </span>
                         </td>

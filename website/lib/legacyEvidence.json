@@ -2214,12 +2214,10 @@
       "mechanism",
       "non_thermal"
     ],
-    "causalNodes": [
-      "A_VGCC_ROS"
-    ],
-    "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
-    "status": "MIGRATION_CANDIDATE",
-    "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+    "causalNodes": [],
+    "evidenceRole": "RETRACTED_SOURCE_PROVENANCE_ONLY",
+    "status": "RETRACTED_2024",
+    "translationScope": "Retracted by Biochemical Journal in 2024. Retained for provenance only: it documents which source the legacy A-pathway narrative once leaned on, and carries no evidential weight for any causal node, endpoint or parameter.",
     "n": null
   },
   {
@@ -2485,7 +2483,7 @@
       "cross_species"
     ],
     "causalNodes": [
-      "SENTINEL_SPECIES"
+      "ECOLOGICAL_ENCOUNTER"
     ],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
@@ -2499,7 +2497,7 @@
     "pathway": "S",
     "level": "C",
     "tags": ["csli", "sentinel", "bee", "coloss", "winter_loss", "panel"],
-    "causalNodes": ["SENTINEL_SPECIES"],
+    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Source-verified 23-country COLOSS panel. Within-country bee winter loss → TFR correlation: pooled r=−0.272, optimal lag 2 years, circular-shift p=0.006. 20/23 countries BERM-direction. Replicates across World Bank and WPP 2024 TFR products.",
@@ -2512,7 +2510,7 @@
     "pathway": "S",
     "level": "C",
     "tags": ["csli", "sentinel", "bird", "pecbms", "breeding_bird", "population"],
-    "causalNodes": ["SENTINEL_SPECIES"],
+    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "27-country PECBMS breeding bird composite index. Detrended bird population decline precedes TFR decline by ~2.5 years: 21/27 countries BERM-direction, r=0.182, p=0.006. Signal weaker than bee but broader taxonomic scope.",
@@ -2525,7 +2523,7 @@
     "pathway": "S",
     "level": "C",
     "tags": ["csli", "sentinel", "bird", "nike", "radar", "spatial", "gradient", "bbs"],
-    "causalNodes": ["SENTINEL_SPECIES"],
+    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "1,381 BBS routes near 268 Cold War Nike sites. BERM-direction proximity gradient: <50km −0.526%/yr vs >100km +0.096%/yr (Welch p=0.031). Spearman ρ=+0.088 (p=0.001). However, site closure did not predict bird recovery. Correlational; not peer-reviewed.",
@@ -2538,7 +2536,7 @@
     "pathway": "S",
     "level": "C",
     "tags": ["csli", "sentinel", "aphid", "rothamsted", "insect", "uk"],
-    "causalNodes": ["SENTINEL_SPECIES"],
+    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Rothamsted suction trap aphid abundance (UK, 1969–2016). First-difference analysis: aphid decline precedes TFR decline by ~2 years, r=0.660, p=0.021. Single-country result; consistent with short-lifecycle sentinel hypothesis.",

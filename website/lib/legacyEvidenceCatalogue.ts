@@ -50,6 +50,10 @@ export const STATUS_LABELS: Record<string, Record<"en" | "fi", string>> = {
   OUTSIDE_ACTIVE_GRAPH: { en: "Outside active graph", fi: "Aktiivisen graafin ulkopuolella" },
   UNVERIFIED_CITATION: { en: "Unverified citation", fi: "Todentamaton viite" },
   HISTORICAL_CONTEXT: { en: "Historical context", fi: "Historiallinen konteksti" },
+  RETRACTED_2024: {
+    en: "Retracted (2024) — provenance only",
+    fi: "Peruttu (2024) — vain provenienssi",
+  },
 };
 
 export const EVIDENCE_LEVEL_LABELS: Record<string, Record<"en" | "fi", string>> = {

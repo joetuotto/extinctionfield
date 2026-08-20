@@ -38,14 +38,16 @@ const LAYER_CONFIG: Record<
     label: "World Bank published TFR series",
     unit: "births/woman",
     domain: [0.5, 7],
-    colorScale: (t: number) => d3.interpolateRdYlGn(t),
+    // Sequential, colour-vision-safe: low TFR reads as the dark, saturated end.
+    // Reversed so the darkest colour marks the lowest fertility.
+    colorScale: (t: number) => d3.interpolateViridis(1 - t),
     format: (v: number) => v.toFixed(2),
   },
   mobile: {
     label: "Mobile subscriptions (technology-timing proxy)",
     unit: "per 100 people",
     domain: [0, 200],
-    colorScale: (t: number) => d3.interpolateYlOrRd(t),
+    colorScale: (t: number) => d3.interpolateCividis(t),
     format: (v: number) => v.toFixed(0),
   },
 };
@@ -201,7 +203,7 @@ export function WorldMap({ locale }: { locale: string }) {
   }, [playing]);
 
   const config = LAYER_CONFIG[layer];
-  const legendSteps = 6;
+  const legendSteps = 12;
 
   if (!mapData || !geoData) {
     return (
@@ -323,22 +325,25 @@ export function WorldMap({ locale }: { locale: string }) {
         )}
       </div>
 
-      <div className="flex items-center gap-2 text-xs text-foreground-muted">
-        <span>{config.format(config.domain[0])}</span>
-        <div className="flex h-3 rounded-sm overflow-hidden flex-1 max-w-48">
-          {Array.from({ length: legendSteps }, (_, i) => {
-            const t = i / (legendSteps - 1);
-            return (
-              <div
-                key={i}
-                className="flex-1"
-                style={{ backgroundColor: config.colorScale(t) }}
-              />
-            );
+      <div className="max-w-md">
+        <div
+          className="h-4 w-full rounded-sm"
+          style={{
+            backgroundImage: `linear-gradient(to right, ${Array.from(
+              { length: legendSteps },
+              (_, i) => config.colorScale(i / (legendSteps - 1))
+            ).join(", ")})`,
+          }}
+        />
+        <div className="mt-1.5 flex justify-between font-mono-num text-xs text-foreground-muted">
+          {Array.from({ length: 5 }, (_, i) => {
+            const t = i / 4;
+            const value =
+              config.domain[0] + t * (config.domain[1] - config.domain[0]);
+            return <span key={i}>{config.format(value)}</span>;
           })}
         </div>
-        <span>{config.format(config.domain[1])}</span>
-        <span className="ml-2">{config.unit}</span>
+        <p className="mt-1 text-xs text-foreground-muted">{config.unit}</p>
       </div>
       {layer === "mobile" && (
         <p className="text-xs leading-relaxed text-foreground-muted">

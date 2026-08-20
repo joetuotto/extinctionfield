@@ -88,10 +88,19 @@ def test_legacy_bibliography_is_available_without_becoming_active_evidence() -> 
     records = load_legacy_evidence_migration()
     summary = legacy_evidence_summary(records)
 
-    assert len(records) == 129
-    assert summary["record_count"] == 129
+    # 129 frozen archive records plus 5 declared post-archive additions.
+    assert len(records) == 134
+    assert summary["record_count"] == 134
+    assert sum(1 for r in records if r.legacy_source_record_index is None) == 5
     assert summary["active_alias_count"] == 3
-    assert summary["by_status"]["MIGRATION_CANDIDATE"] == 35
+    assert summary["by_status"]["MIGRATION_CANDIDATE"] == 39
+    # A retracted source keeps its provenance row but no causal attachment.
+    assert summary["by_status"]["RETRACTED_2024"] == 1
+    assert all(
+        not record.canonical_nodes
+        for record in records
+        if record.status == "RETRACTED_2024"
+    )
     assert any(not record.canonical_nodes for record in records)
 
 
@@ -99,4 +108,4 @@ def test_top_level_package_exposes_the_integrated_route_and_evidence_layers() ->
     import berm
 
     assert berm.FIELDSTATE_ASFR_MODEL_VERSION == "fieldstate-asfr-v2"
-    assert berm.legacy_evidence_summary()["record_count"] == 129
+    assert berm.legacy_evidence_summary()["record_count"] == 134

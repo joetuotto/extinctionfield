@@ -11,6 +11,16 @@
     "preserved_metadata_sha256": "b3303ad782d5993d3cb816eb333db3efe71f1ba17d436a83f8c503bf6d9af907",
     "note": "Legacy finding strings are intentionally not copied here. The referenced Git blob preserves the historical wording for audit; active interpretation is only the bounded manifest fields below."
   },
+  "post_archive_additions": {
+    "rule": "Records added after the frozen archive snapshot. They carry no legacy_source_record_index, are marked source_status BERM_INTERNAL_ANALYSIS, and are excluded from the archive integrity digests.",
+    "legacy_ids": [
+      "csli_31_panel_2026",
+      "csli_coloss_23",
+      "csli_pecbms_27",
+      "nike_bbs_gradient",
+      "rothamsted_aphid"
+    ]
+  },
   "manifest_contract": {
     "active_registry": "berm/data/evidence/fieldstate_causal_evidence.json",
     "active_registry_rule": "Only active-registry records may support the current FieldState–ASFR route. A migration record never becomes a parameter, coefficient or active causal claim merely by appearing here.",
@@ -4402,20 +4412,18 @@
           "non_thermal"
         ]
       },
-      "canonical_nodes": [
-        "A_VGCC_ROS"
-      ],
+      "canonical_nodes": [],
       "model_domain": "cellular_mechanism",
-      "evidence_role": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
-      "status": "MIGRATION_CANDIDATE",
-      "source_status": "LEGACY_METADATA_REQUIRES_VERIFICATION",
-      "translation_scope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
+      "evidence_role": "RETRACTED_SOURCE_PROVENANCE_ONLY",
+      "status": "RETRACTED_2024",
+      "source_status": "RETRACTED_2024",
+      "translation_scope": "Retracted by Biochemical Journal in 2024. Retained for provenance only: it documents which source the legacy A-pathway narrative once leaned on, and carries no evidential weight for any causal node, endpoint or parameter.",
       "limitations": [
-        "System- and protocol-specific",
-        "Requires source-level exposure and endpoint verification",
-        "No active effect-size calibration"
+        "Retracted publication (2024) — no evidential weight",
+        "Retained solely to document legacy provenance",
+        "Must not be cited as support for the ERK/ROS intermediate"
       ],
-      "calibration_role": "STRUCTURAL_ONLY"
+      "calibration_role": "CONTEXT_ONLY"
     },
     {
       "legacy_id": "panagopoulos2013",
@@ -4873,7 +4881,6 @@
     },
     {
       "legacy_id": "csli_31_panel_2026",
-      "legacy_source_record_index": 130,
       "citation": {
         "authors": "BERM project",
         "year": 2026,
@@ -4899,7 +4906,7 @@
         ]
       },
       "canonical_nodes": [
-        "SENTINEL_SPECIES"
+        "ECOLOGICAL_ENCOUNTER"
       ],
       "model_domain": "cross_species_sentinel",
       "evidence_role": "OBSERVATIONAL_ASSOCIATION",
@@ -4930,7 +4937,7 @@
         "pathways": ["S"],
         "tags": ["csli", "sentinel", "bee", "coloss", "winter_loss", "panel"]
       },
-      "canonical_nodes": ["SENTINEL_SPECIES"],
+      "canonical_nodes": ["ECOLOGICAL_ENCOUNTER"],
       "model_domain": "cross_species_sentinel",
       "evidence_role": "OBSERVATIONAL_ASSOCIATION",
       "status": "MIGRATION_CANDIDATE",
@@ -4958,7 +4965,7 @@
         "pathways": ["S"],
         "tags": ["csli", "sentinel", "bird", "pecbms", "breeding_bird", "population"]
       },
-      "canonical_nodes": ["SENTINEL_SPECIES"],
+      "canonical_nodes": ["ECOLOGICAL_ENCOUNTER"],
       "model_domain": "cross_species_sentinel",
       "evidence_role": "OBSERVATIONAL_ASSOCIATION",
       "status": "MIGRATION_CANDIDATE",
@@ -4986,7 +4993,7 @@
         "pathways": ["S"],
         "tags": ["csli", "sentinel", "bird", "nike", "radar", "spatial", "gradient", "bbs"]
       },
-      "canonical_nodes": ["SENTINEL_SPECIES"],
+      "canonical_nodes": ["ECOLOGICAL_ENCOUNTER"],
       "model_domain": "cross_species_sentinel",
       "evidence_role": "OBSERVATIONAL_ASSOCIATION",
       "status": "MIGRATION_CANDIDATE",
@@ -5015,7 +5022,7 @@
         "pathways": ["S"],
         "tags": ["csli", "sentinel", "aphid", "rothamsted", "insect", "uk"]
       },
-      "canonical_nodes": ["SENTINEL_SPECIES"],
+      "canonical_nodes": ["ECOLOGICAL_ENCOUNTER"],
       "model_domain": "cross_species_sentinel",
       "evidence_role": "OBSERVATIONAL_ASSOCIATION",
       "status": "MIGRATION_CANDIDATE",

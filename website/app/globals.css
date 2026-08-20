@@ -4,13 +4,15 @@
 :root {
   /*
    * Editorial system: the interface stays deliberately quiet while article
-   * titles carry a readable serif voice. These are local/system fallbacks so
-   * the site keeps working without a third-party font request.
+   * titles carry a readable serif voice. Inter and Source Serif 4 are loaded
+   * via next/font (self-hosted, no external request); the system stacks after
+   * them keep the page readable before the webfont settles.
    */
-  --font-interface: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-editorial: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Georgia, "Times New Roman", serif;
+  --font-interface: var(--font-interface-loaded), Inter, ui-sans-serif,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --font-editorial: var(--font-editorial-loaded), "Iowan Old Style",
+    "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
   --font-data: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
     "Liberation Mono", monospace;
   --background: #0a0a0a;
@@ -44,9 +46,9 @@
     --foreground-muted: #53606c;
     --accent: #2563EB;
     --accent-hover: #1D4ED8;
-    --border: #d9dde1;
+    --border: #ccd2d8;
     --card-bg: #ffffff;
-    --card-border: #dfe3e7;
+    --card-border: #d2d8de;
     --status-pending: #737373;
     --status-confirmed: #16A34A;
     --status-refuted: #DC2626;
@@ -93,9 +95,9 @@
   --foreground-muted: #53606c;
   --accent: #2563EB;
   --accent-hover: #1D4ED8;
-  --border: #d9dde1;
+  --border: #ccd2d8;
   --card-bg: #ffffff;
-  --card-border: #dfe3e7;
+  --card-border: #d2d8de;
   --status-pending: #737373;
   --status-confirmed: #16A34A;
   --status-refuted: #DC2626;

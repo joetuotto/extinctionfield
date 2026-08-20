@@ -536,6 +536,21 @@
       "limitations": ["Spider behavior system", "Atmospheric electric field rather than textile interface", "Dispersal behavior is not a population-growth estimate"],
       "pmid": "29983315",
       "doi": "10.1016/j.cub.2018.05.057"
+    },
+    {
+      "id": "NIKE_BBS_2026_PEAK_FIELD_GRADIENT",
+      "citation": "BERM internal analysis. Nike-BBS spatial gradient reinterpreted through peak field physics. 2026. Underlying data: USGS North American Breeding Bird Survey.",
+      "url": "https://www.usgs.gov/centers/eesc/science/north-american-breeding-bird-survey",
+      "year": 2026,
+      "study_type": "Internal spatial analysis with peak-field reinterpretation",
+      "system": "1,381 BBS bird survey routes near 268 Nike radar sites (141 active 1966), trends 1966-1980",
+      "field_class": "Pulsed S-band radar sidelobe peak field (1 MW, 1 µs pulse, 400 Hz PRF, 2° beam)",
+      "finding": "The monotonic distance gradient (Spearman ρ = +0.088, p = 0.001) is consistent with 1/r² peak field attenuation when 85% of BERM pathways (VGIC 45%, CRY/RPM 25%, HPA 15%) respond to peak field rather than RMS. Peak sidelobe field at 1 km: 24.5 V/m vs RMS 0.037 V/m (ratio 671:1). BERM sigmoid S(E_peak) reaches 50% at 95 km (S(E_rms) at 0.14 km). CRY radical-pair lifetime (~1 µs) matches radar pulse duration.",
+      "causal_nodes": ["FIELDSTATE_VECTOR", "A_VGCC_ROS", "B_RPM_CRY", "HPA_HPG", "ECOLOGICAL_ENCOUNTER"],
+      "directness": "ECOLOGICAL_ENDPOINT",
+      "translation_scope": "Supports the distinction between peak-field and RMS-field biological relevance for pulsed sources. It does not prove causation: the gradient is correlational (Spearman p = 0.001; the <50 km vs >100 km trend contrast is Welch p = 0.031) and competing explanations (habitat, urbanization) are not excluded.",
+      "calibration_role": "STRUCTURAL_ONLY",
+      "limitations": ["Internal analysis, not peer-reviewed", "Correlational spatial gradient", "No measured field dosimetry at routes", "Habitat and urbanization confounders not fully controlled", "VGIC threshold exceedance at 24.5 V/m is a prediction, not confirmed by cell experiment", "Site closure did not predict bird recovery, which constrains the causal reading"]
     }
   ]
 }

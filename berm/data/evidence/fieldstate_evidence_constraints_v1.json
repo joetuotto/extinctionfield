@@ -427,6 +427,19 @@
       "model_constraints": ["Treat electric-field-mediated dispersal as an explicit ecological pathway that can alter colonisation before population abundance changes."],
       "receptor_transfer": {"field_features": ["VERTICAL_STATIC_E_FIELD", "ATMOSPHERIC_CONTEXT", "SILK_CHARGE", "SENSORY_HAIR_GEOMETRY"], "response_class": "BALLOONING_AND_DISPERSAL", "transfer_mode": "ECOLOGICAL_INTERFACE_TRANSFER", "species_sensitivity_signature": "SILK_SENSORY_HAIR_AND_DISPERSAL_STAGE_SPECIFIC"},
       "node_direction_overrides": {"STATIC_TRIBO_INTERFACE": "ATMOSPHERIC_STATIC_FIELD_MODULATES_SPIDER_INTERFACE_STATE", "ECOLOGICAL_ENCOUNTER": "STATIC_E_FIELD_CAN_TRIGGER_BALLOONING_AND_DISPERSAL"}
+    },
+    {
+      "evidence_id": "NIKE_BBS_2026_PEAK_FIELD_GRADIENT",
+      "convergence_groups": ["FIELDSTATE_VECTOR_GEOMETRY", "PULSED_PEAK_FIELD", "ECOLOGICAL_ENCOUNTER", "AVIAN_SENTINEL"],
+      "life_stages": ["ADULT_BREEDING_BIRD_POPULATION"],
+      "organs": ["POPULATION_LEVEL_ROUTE_COUNT_NO_ORGAN_MEASUREMENT"],
+      "latency_memory_family": "MULTI_YEAR_POPULATION_TREND",
+      "parameter_prior_tier": "DESCRIPTIVE_SIGNATURE_PRIOR",
+      "uncertainty_update": "CONSTRAINS_EXPECTED_OBSERVATIONAL_SIGNATURE",
+      "heterogeneity_signatures": ["DISTANCE_DEPENDENT", "PEAK_VERSUS_RMS_DEPENDENT", "PULSE_DUTY_CYCLE_DEPENDENT", "HABITAT_AND_URBANISATION_CONFOUNDED"],
+      "model_constraints": ["Represent pulsed sources by peak field, pulse duration, PRF and duty cycle; an RMS-averaged scalar is not a substitute for a peak-responsive pathway.", "Treat the spatial gradient as an expected observational signature only: it carries no effect size, and site closure did not predict recovery."],
+      "receptor_transfer": {"field_features": ["PULSED_RF_PEAK_E_FIELD", "PULSE_DURATION", "PULSE_REPETITION_FREQUENCY", "DUTY_CYCLE", "SIDELOBE_GEOMETRY"], "response_class": "POPULATION_TREND_GRADIENT_WITH_DISTANCE", "transfer_mode": "AREA_TIME_AGGREGATED_ECOLOGICAL_OBSERVATION", "species_sensitivity_signature": "SPECIES_AND_HABITAT_SPECIFIC_NOT_DOSIMETRY_RESOLVED"},
+      "node_direction_overrides": {"FIELDSTATE_VECTOR": "PULSED_SIDELOBE_PEAK_FIELD_FALLS_AS_ONE_OVER_R_AND_IS_NOT_THE_RMS_SCALAR", "A_VGCC_ROS": "PEAK_FIELD_RATHER_THAN_TIME_AVERAGE_IS_THE_CANDIDATE_VGIC_DRIVER", "B_RPM_CRY": "MICROSECOND_PULSE_DURATION_OVERLAPS_RADICAL_PAIR_LIFETIME", "HPA_HPG": "PEAK_RESPONSIVE_STRESS_AXIS_ENGAGEMENT_REMAINS_UNMEASURED_IN_THIS_SOURCE", "ECOLOGICAL_ENCOUNTER": "DECLINE_GRADIENT_WITH_PROXIMITY_IS_CORRELATIONAL_AND_CONFOUNDER_EXPOSED"}
     }
   ]
 }

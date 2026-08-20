@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Target } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import { LOCKED_PREDICTIONS } from "@/lib/predictions";
+import { LOCKED_PREDICTIONS, metricLabel, countryLabel } from "@/lib/predictions";
+import { PredictionStatusBadge } from "@/components/PredictionStatusBadge";
 
 const COPY = {
   en: {
@@ -23,6 +24,7 @@ const COPY = {
     sensitivity: "Sensitivity",
     version: "Version",
     locked: "Locked",
+    statusLabel: "Status",
     history: "Version history",
     sentinelTitle: "Sentinel cascade predictions",
     sentinelLead: "Cross-species lag predictions derived from the CSLI 31-country bee–TFR panel. These test whether sentinel species decline precedes human fertility decline at a locked lag.",
@@ -48,6 +50,7 @@ const COPY = {
     sensitivity: "Herkkyys",
     version: "Versio",
     locked: "Lukittu",
+    statusLabel: "Tila",
     history: "Versiohistoria",
     sentinelTitle: "Sentinellikaskadi-ennusteet",
     sentinelLead: "Lajienväliset viive-ennusteet CSLI:n 31 maan mehiläis–TFR-paneelista. Nämä testaavat, edeltääkö sentinellilajien lasku ihmisen hedelmällisyyden laskua lukitulla viiveellä.",
@@ -99,6 +102,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
                 <th className="py-3 pr-4">{d.metric}</th>
                 <th className="py-3 pr-4 text-right">{d.prediction}</th>
                 <th className="py-3 pr-4 text-right">{d.sensitivity}</th>
+                <th className="py-3 pr-4">{d.statusLabel}</th>
                 <th className="py-3 pr-4 text-right">{d.version}</th>
                 <th className="py-3 text-right">{d.locked}</th>
               </tr>
@@ -106,11 +110,12 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <tbody>
               {TFR_IDS.map((p) => (
                 <tr key={p.id} className="border-b border-card-border/50 hover:bg-card-bg/50 transition-colors">
-                  <td className="py-3 pr-4 font-medium">{p.countryLabel}</td>
+                  <td className="py-3 pr-4 font-medium">{countryLabel(p, activeLocale)}</td>
                   <td className="py-3 pr-4 font-mono-num text-foreground-muted">{p.year}</td>
-                  <td className="py-3 pr-4 text-xs text-foreground-muted">{p.metricLabel}</td>
+                  <td className="py-3 pr-4 text-sm text-foreground-muted">{metricLabel(p, activeLocale)}</td>
                   <td className="py-3 pr-4 text-right font-mono-num font-semibold text-accent">{p.central.toFixed(2)}</td>
                   <td className="py-3 pr-4 text-right font-mono-num text-foreground-muted">[{p.ciLow.toFixed(2)} – {p.ciHigh.toFixed(2)}]</td>
+                  <td className="py-3 pr-4"><PredictionStatusBadge status={p.status} locale={activeLocale} /></td>
                   <td className="py-3 pr-4 text-right font-mono-num text-xs text-foreground-muted">{p.modelVersion}</td>
                   <td className="py-3 text-right font-mono-num text-xs text-foreground-muted">{p.lockedDate}</td>
                 </tr>
@@ -134,6 +139,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
                   <th className="py-3 pr-4">{d.metric}</th>
                   <th className="py-3 pr-4 text-right">{d.prediction}</th>
                   <th className="py-3 pr-4 text-right">{d.sensitivity}</th>
+                  <th className="py-3 pr-4">{d.statusLabel}</th>
                   <th className="py-3 pr-4 text-right">{d.version}</th>
                   <th className="py-3 text-right">{d.locked}</th>
                 </tr>
@@ -141,11 +147,12 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               <tbody>
                 {BIO_IDS.map((p) => (
                   <tr key={p.id} className="border-b border-card-border/50 hover:bg-card-bg/50 transition-colors">
-                    <td className="py-3 pr-4 font-medium">{p.countryLabel}</td>
+                    <td className="py-3 pr-4 font-medium">{countryLabel(p, activeLocale)}</td>
                     <td className="py-3 pr-4 font-mono-num text-foreground-muted">{p.year}</td>
-                    <td className="py-3 pr-4 text-xs text-foreground-muted">{p.metricLabel}</td>
+                    <td className="py-3 pr-4 text-sm text-foreground-muted">{metricLabel(p, activeLocale)}</td>
                     <td className="py-3 pr-4 text-right font-mono-num font-semibold text-accent">{p.central}</td>
                     <td className="py-3 pr-4 text-right font-mono-num text-foreground-muted">[{p.ciLow} – {p.ciHigh}]</td>
+                    <td className="py-3 pr-4"><PredictionStatusBadge status={p.status} locale={activeLocale} /></td>
                     <td className="py-3 pr-4 text-right font-mono-num text-xs text-foreground-muted">{p.modelVersion}</td>
                     <td className="py-3 text-right font-mono-num text-xs text-foreground-muted">{p.lockedDate}</td>
                   </tr>
@@ -166,8 +173,11 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               <article key={p.id} className="rounded-xl border border-card-border bg-card-bg p-5">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                   <div>
-                    <h3 className="font-semibold">{p.countryLabel} {p.year}</h3>
-                    <p className="text-xs text-foreground-muted">{p.metricLabel}</p>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="font-semibold">{countryLabel(p, activeLocale)} {p.year}</h3>
+                      <PredictionStatusBadge status={p.status} locale={activeLocale} />
+                    </div>
+                    <p className="mt-1 text-sm text-foreground-muted">{metricLabel(p, activeLocale)}</p>
                   </div>
                   <div className="text-right">
                     <span className="font-mono-num font-semibold text-accent">{p.central}</span>
