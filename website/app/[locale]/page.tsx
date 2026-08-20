@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import CausalChain from "@/components/CausalChain";
 import { WorldMap } from "@/components/WorldMap";
@@ -180,6 +181,26 @@ const READINESS_COLORS: Record<string, string> = {
   "no countries yet": "text-status-pending",
   "ei yhtään maata": "text-status-pending",
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (locale === "fi") {
+    return {
+      title: "Extinction Field – FieldState–ASFR-tutkimusmalli",
+      description:
+        "Mittaustietoinen tutkimusmalli kenttätilan, lisääntymispäätepisteiden ja ikäkohtaisen hedelmällisyyden hypoteesien testaamiseen.",
+    };
+  }
+  return {
+    title: "Extinction Field – FieldState–ASFR research model",
+    description:
+      "A measurement-aware research model for testing field-state, reproductive-endpoint and age-specific fertility hypotheses.",
+  };
+}
 
 export default async function Home({
   params,
