@@ -12,6 +12,8 @@ import {
   Zap,
   ShieldQuestion,
   BookOpen,
+  Radio,
+  Sigma,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -20,12 +22,23 @@ export interface NavRoute {
   labelEn: string;
   labelFi: string;
   icon: LucideIcon;
+  children?: NavRoute[];
 }
 
 export const NAV_ROUTES: NavRoute[] = [
   { href: "", labelEn: "Home", labelFi: "Etusivu", icon: House },
   { href: "/explore", labelEn: "Explore", labelFi: "Tutkija", icon: Map },
-  { href: "/model", labelEn: "Model", labelFi: "Malli", icon: GitBranch },
+  {
+    href: "/model",
+    labelEn: "Model",
+    labelFi: "Malli",
+    icon: GitBranch,
+    children: [
+      { href: "/model", labelEn: "Overview", labelFi: "Yleiskatsaus", icon: GitBranch },
+      { href: "/model/fieldstate", labelEn: "FieldState", labelFi: "FieldState", icon: Radio },
+      { href: "/model/math", labelEn: "Mathematics", labelFi: "Matematiikka", icon: Sigma },
+    ],
+  },
   { href: "/evidence", labelEn: "Evidence", labelFi: "Näyttö", icon: Layers },
   { href: "/objections", labelEn: "Criticism", labelFi: "Kritiikki", icon: ShieldQuestion },
   { href: "/sentinel", labelEn: "Sentinel", labelFi: "Lajit", icon: Leaf },
@@ -35,11 +48,23 @@ export const NAV_ROUTES: NavRoute[] = [
   { href: "/about", labelEn: "About", labelFi: "Tietoa", icon: Info },
 ];
 
-export function getNavRoutes(locale: string) {
+export interface ResolvedNavRoute {
+  href: string;
+  label: string;
+  icon: LucideIcon;
+  children?: ResolvedNavRoute[];
+}
+
+export function getNavRoutes(locale: string): ResolvedNavRoute[] {
   return NAV_ROUTES.map((route) => ({
     href: route.href,
     label: locale === "fi" ? route.labelFi : route.labelEn,
     icon: route.icon,
+    children: route.children?.map((child) => ({
+      href: child.href,
+      label: locale === "fi" ? child.labelFi : child.labelEn,
+      icon: child.icon,
+    })),
   }));
 }
 

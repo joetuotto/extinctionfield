@@ -2,12 +2,95 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ModelVersionSwitcher } from "@/components/ModelVersionSwitcher";
-import { activeModelVersion, modelVersionHref } from "@/lib/modelVersions";
-import { getNavRoutes } from "@/lib/navigation";
+import { activeModelVersion, modelVersionHref, type ModelVersionId } from "@/lib/modelVersions";
+import { getNavRoutes, type ResolvedNavRoute } from "@/lib/navigation";
+
+function NavDropdown({
+  link,
+  locale,
+  modelVersion,
+  pathname,
+}: {
+  link: ResolvedNavRoute;
+  locale: string;
+  modelVersion: ModelVersionId;
+  pathname: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  const isGroupActive = pathname.startsWith(
+    modelVersionHref(locale, `/${locale}${link.href}`, modelVersion),
+  );
+  const Icon = link.icon;
+
+  return (
+    <li ref={ref} className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        className={`inline-flex items-center gap-1.5 text-[0.82rem] tracking-[0.005em] transition-colors ${
+          isGroupActive
+            ? "text-accent font-medium"
+            : "text-foreground-muted hover:text-foreground"
+        }`}
+      >
+        <Icon size={14} strokeWidth={isGroupActive ? 2.2 : 1.8} aria-hidden="true" />
+        {link.label}
+        <ChevronDown
+          size={12}
+          className={`transition-transform ${open ? "rotate-180" : ""}`}
+          aria-hidden="true"
+        />
+      </button>
+
+      {open && (
+        <ul className="absolute left-0 top-full mt-2 min-w-[200px] rounded-lg border border-card-border bg-background py-1.5 shadow-lg">
+          {link.children!.map((child) => {
+            const childHref = modelVersionHref(
+              locale,
+              `/${locale}${child.href}`,
+              modelVersion,
+            );
+            const isChildActive =
+              child.href === link.href
+                ? pathname === childHref || pathname === `${childHref}/`
+                : pathname === childHref || pathname.startsWith(`${childHref}/`);
+            const ChildIcon = child.icon;
+            return (
+              <li key={child.href}>
+                <Link
+                  href={childHref}
+                  onClick={() => setOpen(false)}
+                  className={`flex items-center gap-2 px-3.5 py-2 text-[0.82rem] transition-colors ${
+                    isChildActive
+                      ? "text-accent font-medium"
+                      : "text-foreground-muted hover:text-foreground hover:bg-card-bg"
+                  }`}
+                >
+                  <ChildIcon size={14} strokeWidth={isChildActive ? 2.2 : 1.8} aria-hidden="true" />
+                  {child.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </li>
+  );
+}
 
 export function Navigation({ locale }: { locale: string }) {
   const pathname = usePathname();
@@ -28,6 +111,17 @@ export function Navigation({ locale }: { locale: string }) {
         <div className="hidden xl:flex items-center gap-5">
           <ul className="flex items-center gap-6">
             {links.map((link) => {
+              if (link.children) {
+                return (
+                  <NavDropdown
+                    key={link.href}
+                    link={link}
+                    locale={locale}
+                    modelVersion={modelVersion}
+                    pathname={pathname}
+                  />
+                );
+              }
               const fullHref = modelVersionHref(
                 locale,
                 `/${locale}${link.href}`,
@@ -104,6 +198,38 @@ export function Navigation({ locale }: { locale: string }) {
         <div className="xl:hidden border-t border-border bg-background">
           <ul className="px-6 py-4 space-y-3">
             {links.map((link) => {
+              if (link.children) {
+                return link.children.map((child) => {
+                  const childHref = modelVersionHref(
+                    locale,
+                    `/${locale}${child.href}`,
+                    modelVersion,
+                  );
+                  const isChildActive =
+                    child.href === link.href
+                      ? pathname === childHref || pathname === `${childHref}/`
+                      : pathname === childHref || pathname.startsWith(`${childHref}/`);
+                  const ChildIcon = child.icon;
+                  return (
+                    <li key={child.href}>
+                      <Link
+                        href={childHref}
+                        onClick={() => setMenuOpen(false)}
+                        className={`flex items-center gap-2.5 text-sm transition-colors ${
+                          child.href !== link.href ? "pl-5" : ""
+                        } ${
+                          isChildActive
+                            ? "text-accent font-medium"
+                            : "text-foreground-muted hover:text-foreground"
+                        }`}
+                      >
+                        <ChildIcon size={16} strokeWidth={isChildActive ? 2.2 : 1.8} aria-hidden="true" />
+                        {child.label}
+                      </Link>
+                    </li>
+                  );
+                });
+              }
               const fullHref = modelVersionHref(
                 locale,
                 `/${locale}${link.href}`,
