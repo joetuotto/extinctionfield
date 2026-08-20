@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Layers } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import { FieldStateStatus } from "@/components/FieldStateStatus";
 import { StatisticalValidation } from "@/components/StatisticalValidation";
 import {
   causalNodeLabels,
@@ -61,6 +60,75 @@ const COPY = {
     extStatus: "Migration status",
     extScope: "Translation scope",
     extN: "N",
+    narrativeTitle: "Thematic evidence narratives",
+    narrativeLead: "Five cross-cutting themes that connect individual studies into mechanistic arguments. Each narrative synthesizes published findings; none establishes a population-level causal coefficient.",
+    narratives: [
+      {
+        id: "covid",
+        title: "COVID-19 lockdown as natural experiment",
+        paragraphs: [
+          "Multiple studies report improved semen parameters during strict lockdown periods. A Chinese cohort (PubMed 41036143) found sperm concentration and motility increased during home confinement. Zhang et al. 2025 observed that semen quality declined again when restrictions were lifted, consistent with a reversible environmental component.",
+          "However, the sentinel species result is informative in the opposite direction: source-verified COLOSS data shows bee colony winter loss increased by 2.27 percentage points during COVID (24/35 countries worsened, p = 0.043). BBS birds also declined 2.8–3.0% in 2020–22. This bidirectionality is consistent with the BERM prediction that ambient outdoor RF decreased during lockdown while personal indoor RF exposure (Wi-Fi, devices at home) increased substantially.",
+        ],
+        studies: [
+          { citation: "Chinese lockdown cohort (PubMed 41036143)", year: 2024, note: "Sperm quality improvement during confinement" },
+          { citation: "Zhang et al.", year: 2025, note: "Quality decline after restriction lifting" },
+          { citation: "COLOSS winter loss panel", year: "2020–22", note: "Counter-result: bees worsened (+2.27 pp)" },
+        ],
+      },
+      {
+        id: "qbs",
+        title: "Quadruple behavioral suppression",
+        paragraphs: [
+          "Conception probability can be decomposed as P(child) = P(approach) × P(attraction) × P(intercourse) × P(fertilization). EMF-sensitive pathways exist at each stage: testosterone governs approach motivation (Puts 2008), attraction requires intact olfactory-hormonal signaling, sexual frequency depends on libido and opportunity, and fertilization requires sperm quality. Each multiplicative factor below 1.0 compounds the reduction.",
+          "Goetz et al. 2024 (RCT) demonstrated that exogenous testosterone modulates approach behavior. Dreher et al. 2016 (PNAS) showed testosterone-dependent reward valuation in mating contexts. The dual-hormone meta-analysis (2018, N = 8,538) confirmed that testosterone and cortisol jointly predict dominance and mating effort. If EMF exposure suppresses testosterone at the population level (as suggested by the −1%/year secular trend), all four stages are affected simultaneously.",
+        ],
+        studies: [
+          { citation: "Puts 2008", year: 2008, note: "Testosterone and approach motivation" },
+          { citation: "Goetz et al. RCT", year: 2024, note: "Exogenous T modulates approach behavior" },
+          { citation: "Dreher et al. PNAS", year: 2016, note: "T-dependent reward valuation" },
+          { citation: "Dual-hormone meta-analysis", year: 2018, note: "T + cortisol predict mating effort (N = 8,538)" },
+        ],
+      },
+      {
+        id: "oxytocin",
+        title: "Dual oxytocin pathway",
+        paragraphs: [
+          "Two independent biological routes converge on oxytocin suppression. The Porges polyvagal pathway: chronic sympathetic activation (consistent with EMF-induced autonomic stress) downregulates the ventral vagal complex, reducing parasympathetic-mediated OT release. This affects pair bonding, sexual receptivity and uterine contractility.",
+          "The Poutahidis/Erdman (MIT) microbiome pathway: Lactobacillus reuteri stimulates OT secretion via the vagus nerve. EMF exposure has been shown to alter gut microbiome composition in animal models. If L. reuteri populations decline under chronic RF exposure, the vagal OT signaling pathway is independently suppressed. Both routes — autonomic and microbial — converge on reduced circulating OT, affecting reproductive behavior and physiology from different directions.",
+        ],
+        studies: [
+          { citation: "Porges polyvagal theory", year: 2011, note: "Vagal tone → OT release pathway" },
+          { citation: "Poutahidis & Erdman (MIT)", year: 2014, note: "L. reuteri → vagus → OT" },
+          { citation: "Microbiome-EMF animal studies", year: "2019–24", note: "RF alters gut flora composition" },
+        ],
+      },
+      {
+        id: "recovery",
+        title: "Recovery window elimination",
+        paragraphs: [
+          "The REFLEX project (Diem et al. 2005) demonstrated that intermittent RF exposure produces greater genotoxic effects than continuous exposure at the same SAR, suggesting that cellular repair mechanisms are activated during exposure-free intervals. The recovery window hypothesis proposes that biological repair of RF-induced damage (ROS neutralization, DNA repair, protein refolding) requires sufficient EMF-free time.",
+          "A modern urban adult experiences approximately 2 hours per day of near-zero RF exposure (sleep in a connected bedroom), yielding ~20.6% potential recovery time. A 1950s adult experienced approximately 20 hours per day in RF-free environments, yielding ~90.1% recovery time. If repair mechanisms require a minimum duty-free fraction to maintain homeostasis, the 4.4× reduction in recovery time could produce cumulative damage even at sub-thermal exposure levels.",
+        ],
+        studies: [
+          { citation: "REFLEX / Diem et al.", year: 2005, note: "Intermittent > continuous genotoxicity" },
+          { citation: "Recovery window model (BERM)", year: 2026, note: "20.6% vs 90.1% EMF-free time" },
+        ],
+      },
+      {
+        id: "susceptibility",
+        title: "Individual susceptibility variation",
+        paragraphs: [
+          "Electromagnetic hypersensitivity (EHS) clinical data suggests a continuous distribution of individual susceptibility. Belpomme et al. 2022 characterized approximately 1,000 EHS patients with objective biomarkers including histamine, S100B protein and nitrotyrosine. While EHS as a clinical entity remains debated, the biomarker data suggests measurable physiological responses in a susceptible subpopulation.",
+          "CACNA1C genotyping (2024) links voltage-gated calcium channel polymorphisms to differential EMF sensitivity, providing a plausible genetic basis for the susceptibility distribution. HRV studies under controlled Wi-Fi exposure (2023) show measurable autonomic changes in a subset of participants. If susceptibility follows a normal distribution, the population-level reproductive effect is the integral over the entire distribution, not the response of the median individual.",
+        ],
+        studies: [
+          { citation: "Belpomme et al.", year: 2022, note: "EHS biomarkers (~1,000 patients)" },
+          { citation: "CACNA1C genotyping", year: 2024, note: "VGCC polymorphism → EMF sensitivity" },
+          { citation: "HRV Wi-Fi exposure", year: 2023, note: "Autonomic changes in susceptible subset" },
+        ],
+      },
+    ],
   },
   fi: {
     title: "Evidenssirekisteri",
@@ -95,6 +163,75 @@ const COPY = {
     extStatus: "Migraatiostatus",
     extScope: "Tulkintaraja",
     extN: "N",
+    narrativeTitle: "Temaattiset evidenssinarratiivit",
+    narrativeLead: "Viisi poikkileikkaavaa teemaa, jotka yhdistävät yksittäiset tutkimukset mekanistisiksi argumenteiksi. Kukin narratiivi syntetisoi julkaistuja löydöksiä; mikään ei osoita väestötason kausaalikerrointa.",
+    narratives: [
+      {
+        id: "covid",
+        title: "COVID-19-lockdown luonnollisena kokeena",
+        paragraphs: [
+          "Useat tutkimukset raportoivat parantuneen siemennesteen laadun tiukkojen lockdown-jaksojen aikana. Kiinalainen kohortti (PubMed 41036143) havaitsi siittiökonsentraation ja liikkuvuuden kasvaneen kotieristyksen aikana. Zhang ym. 2025 havaitsivat, että siemennesteen laatu laski jälleen rajoitusten purkamisen jälkeen, mikä on yhteensopivaa palautuvan ympäristötekijän kanssa.",
+          "Sentinellilajien tulos on kuitenkin informatiivinen vastakkaiseen suuntaan: lähdevarmennettu COLOSS-data osoittaa mehiläispesien talvihäviön kasvaneen 2,27 prosenttiyksikköä COVIDin aikana (24/35 maata heikkeni, p = 0,043). BBS-linnut laskivat myös 2,8–3,0 % vuosina 2020–22. Tämä kaksisuuntaisuus on yhteensopivaa BERM:n ennusteen kanssa: ambientin ulko-RF laski lockdownissa, mutta henkilökohtainen sisä-RF-altistus (Wi-Fi, laitteet kotona) kasvoi merkittävästi.",
+        ],
+        studies: [
+          { citation: "Kiinalainen lockdown-kohortti (PubMed 41036143)", year: 2024, note: "Siittiölaadun paraneminen eristyksen aikana" },
+          { citation: "Zhang ym.", year: 2025, note: "Laadun lasku rajoitusten purkamisen jälkeen" },
+          { citation: "COLOSS-talvihäviöpaneeli", year: "2020–22", note: "Vastatulos: mehiläiset heikkenivät (+2,27 pp)" },
+        ],
+      },
+      {
+        id: "qbs",
+        title: "Nelinkertainen käyttäytymissuppressio",
+        paragraphs: [
+          "Hedelmöittymistodennäköisyys voidaan hajottaa muotoon P(lapsi) = P(lähestyminen) × P(attraktio) × P(yhdyntä) × P(hedelmöitys). EMF-herkkiä reittejä on jokaisessa vaiheessa: testosteroni ohjaa lähestymismotivaatiota (Puts 2008), attraktio vaatii ehjää hajuaisti-hormonaalista signalointia, seksuaalinen frekvenssi riippuu libidosta ja mahdollisuudesta, ja hedelmöitys vaatii siittiölaatua. Jokainen alle 1,0:n kerroin kumuloi vähennyksen.",
+          "Goetz ym. 2024 (RCT) osoittivat, että eksogeeninen testosteroni moduloi lähestymiskäyttäytymistä. Dreher ym. 2016 (PNAS) osoittivat testosteroniriippuvaisen palkintoarvostuksen parittelukonteksteissa. Kaksoishormonimeta-analyysi (2018, N = 8 538) vahvisti, että testosteroni ja kortisoli ennustavat yhdessä dominanssia ja paritteluponnistelua. Jos EMF-altistus suppressoi testosteronia väestötasolla (kuten −1 %/vuosi sekulaaritrendi viittaa), kaikki neljä vaihetta vaikuttuvat samanaikaisesti.",
+        ],
+        studies: [
+          { citation: "Puts 2008", year: 2008, note: "Testosteroni ja lähestymismotivaatio" },
+          { citation: "Goetz ym. RCT", year: 2024, note: "Eksogeeninen T moduloi lähestymistä" },
+          { citation: "Dreher ym. PNAS", year: 2016, note: "T-riippuvainen palkintoarvostus" },
+          { citation: "Kaksoishormonimeta-analyysi", year: 2018, note: "T + kortisoli ennustavat parittelua (N = 8 538)" },
+        ],
+      },
+      {
+        id: "oxytocin",
+        title: "Kaksoisoksitossiinireitti",
+        paragraphs: [
+          "Kaksi itsenäistä biologista reittiä konvergoi oksitosiinin suppressioon. Porgesin polyvagaalireitti: krooninen sympaattinen aktivaatio (yhteensopiva EMF:n aiheuttaman autonomisen stressin kanssa) alassäätelee ventraalista vagaali-kompleksia, vähentäen parasympaattista OT-vapautumista. Tämä vaikuttaa parisiteeseen, seksuaaliseen vastaanottavuuteen ja kohdun supistuvuuteen.",
+          "Poutahidiksen/Erdmanin (MIT) mikrobiomireitti: Lactobacillus reuteri stimuloi OT-eritystä vagushermon kautta. EMF-altistuksen on osoitettu muuttavan suoliston mikrobiomikoostumusta eläinmalleissa. Jos L. reuteri -populaatiot vähenevät kroonisen RF-altistuksen alla, vagaalinen OT-signalointireitti suppressoituu itsenäisesti. Molemmat reitit — autonominen ja mikrobinen — konvergoivat vähäisempään kiertävään OT:iin, vaikuttaen lisääntymiskäyttäytymiseen ja -fysiologiaan eri suunnista.",
+        ],
+        studies: [
+          { citation: "Porges polyvagaaliteoria", year: 2011, note: "Vagaalinen tonus → OT-vapautumisreitti" },
+          { citation: "Poutahidis & Erdman (MIT)", year: 2014, note: "L. reuteri → vagus → OT" },
+          { citation: "Mikrobiomi-EMF-eläintutkimukset", year: "2019–24", note: "RF muuttaa suolistoflooraa" },
+        ],
+      },
+      {
+        id: "recovery",
+        title: "Palautumisikkunan eliminaatio",
+        paragraphs: [
+          "REFLEX-projekti (Diem ym. 2005) osoitti, että katkonainen RF-altistus tuottaa suurempia genotoksisia vaikutuksia kuin jatkuva altistus samalla SAR-tasolla, viitaten siihen että solujen korjausmekanismit aktivoituvat altistusvapaina jaksoina. Palautumisikkunahypoteesi esittää, että RF:n aiheuttaman vaurion biologinen korjaus (ROS-neutralointi, DNA-korjaus, proteiinien uudelleenlaskostuminen) vaatii riittävästi EMF-vapaata aikaa.",
+          "Moderni kaupunkiaikuinen kokee noin 2 tuntia päivässä lähes nolla-RF-altistusta (uni verkotetussa makuuhuoneessa), jolloin potentiaalinen palautumisaika on noin 20,6 %. 1950-luvun aikuinen koki noin 20 tuntia päivässä RF-vapaissa ympäristöissä, jolloin palautumisaika oli noin 90,1 %. Jos korjausmekanismit vaativat vähimmäismäärän altistusvapaata aikaa homeostaasin ylläpitämiseksi, 4,4-kertainen palautumisajan väheneminen voi tuottaa kumulatiivista vauriota myös subtermisillä altistustasoilla.",
+        ],
+        studies: [
+          { citation: "REFLEX / Diem ym.", year: 2005, note: "Katkonainen > jatkuva genotoksisuus" },
+          { citation: "Palautumisikkunamalli (BERM)", year: 2026, note: "20,6 % vs 90,1 % EMF-vapaata aikaa" },
+        ],
+      },
+      {
+        id: "susceptibility",
+        title: "Yksilöllinen herkkyysvariaatio",
+        paragraphs: [
+          "Sähkömagneettinen yliherkkyyys (EHS) -kliininen data viittaa jatkuvaan yksilöllisen herkkyyden jakaumaan. Belpomme ym. 2022 karakterisoivat noin 1 000 EHS-potilasta objektiivisilla biomarkkereilla, mukaan lukien histamiini, S100B-proteiini ja nitrotyrosiini. Vaikka EHS kliinisenä entiteettinä on kiistanalainen, biomarkkerit viittaavat mitattaviin fysiologisiin vasteisiin herkässä alapopulaatiossa.",
+          "CACNA1C-genotyypitys (2024) yhdistää jänniteporttisten kalsiumkanavien polymorfismit erilaiseen EMF-herkkyyteen, tarjoten uskottavan geneettisen perustan herkkyysjaukaumalle. HRV-tutkimukset kontrolloidussa Wi-Fi-altistuksessa (2023) osoittavat mitattavia autonomisia muutoksia osassa osallistujista. Jos herkkyys noudattaa normaalijakaumaa, väestötason lisääntymisvaikutus on integraali koko jakauman yli, ei mediaani-yksilön vaste.",
+        ],
+        studies: [
+          { citation: "Belpomme ym.", year: 2022, note: "EHS-biomarkkerit (~1 000 potilasta)" },
+          { citation: "CACNA1C-genotyypitys", year: 2024, note: "VGCC-polymorfismi → EMF-herkkyys" },
+          { citation: "HRV Wi-Fi -altistus", year: 2023, note: "Autonomiset muutokset herkässä osajoukossa" },
+        ],
+      },
+    ],
   },
 } as const;
 
@@ -125,7 +262,47 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </ol>
       </section>
 
-      <section className="mb-14"><FieldStateStatus locale={activeLocale} /></section>
+      {/* Thematic evidence narratives */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.narrativeTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-8 max-w-4xl">{d.narrativeLead}</p>
+
+        <div className="space-y-12 max-w-4xl">
+          {d.narratives.map((narrative, ni) => (
+            <article key={narrative.id} id={`narrative-${narrative.id}`} className="scroll-mt-24">
+              <h3 className="text-lg font-semibold mb-4">
+                <span className="font-mono-num text-xs text-accent mr-2">0{ni + 1}</span>
+                {narrative.title}
+              </h3>
+              <div className="space-y-3 text-sm text-foreground-muted leading-relaxed mb-5">
+                {narrative.paragraphs.map((p, pi) => (
+                  <p key={pi}>{p}</p>
+                ))}
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="border-b border-card-border text-left text-[0.65rem] text-foreground-muted uppercase tracking-wider">
+                      <th className="py-2 pr-3">{activeLocale === "fi" ? "Viite" : "Citation"}</th>
+                      <th className="py-2 pr-3 w-16">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
+                      <th className="py-2">{activeLocale === "fi" ? "Huomio" : "Note"}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {narrative.studies.map((s) => (
+                      <tr key={s.citation} className="border-b border-card-border/40">
+                        <td className="py-2 pr-3 font-medium text-foreground">{s.citation}</td>
+                        <td className="py-2 pr-3 font-mono-num text-foreground-muted">{s.year}</td>
+                        <td className="py-2 text-foreground-muted">{s.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
       {/* Bounded v2 records */}
       <section className="mb-16 border-t editorial-rule pt-6">
