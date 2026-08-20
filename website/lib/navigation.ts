@@ -11,6 +11,7 @@ import {
   Globe2,
   Zap,
   ShieldQuestion,
+  BookOpen,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -30,6 +31,7 @@ export const NAV_ROUTES: NavRoute[] = [
   { href: "/sentinel", labelEn: "Sentinel", labelFi: "Lajit", icon: Leaf },
   { href: "/ecology", labelEn: "Ecology", labelFi: "Ekologia", icon: Zap },
   { href: "/predictions", labelEn: "Predictions", labelFi: "Ennusteet", icon: Target },
+  { href: "/references", labelEn: "Sources", labelFi: "Lähteet", icon: BookOpen },
   { href: "/about", labelEn: "About", labelFi: "Tietoa", icon: Info },
 ];
 

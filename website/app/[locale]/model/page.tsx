@@ -6,6 +6,7 @@ import CausalChainDiagram from "@/components/CausalChainDiagram";
 import { FieldStateStatus } from "@/components/FieldStateStatus";
 import { MathematicsSections } from "@/app/[locale]/mathematics/page";
 import { ModelTableOfContents } from "@/components/ModelTableOfContents";
+import { SpermCascadeChart } from "@/components/SpermCascadeChart";
 
 type Copy = {
   title: string;
@@ -234,6 +235,10 @@ export default async function ModelPage({
             <div className="max-w-4xl space-y-3 text-sm leading-relaxed text-foreground-muted">
               {d.organText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
+          </section>
+
+          <section className="border-t border-card-border pt-6">
+            <SpermCascadeChart locale={language} />
           </section>
 
           <section id="asfr-tfr" className="border-t border-card-border pt-6">

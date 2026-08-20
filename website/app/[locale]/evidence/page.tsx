@@ -4,6 +4,9 @@ import { Layers } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { StatisticalValidation } from "@/components/StatisticalValidation";
 import { EvidenceClassification } from "@/components/EvidenceClassification";
+import { BehavioralSuppression } from "@/components/BehavioralSuppression";
+import { HindcastValidation } from "@/components/HindcastValidation";
+import { ReferencesSummary } from "@/components/ReferencesSummary";
 import {
   causalNodeLabels,
   FIELDSTATE_EVIDENCE,
@@ -338,6 +341,10 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </div>
       </section>
 
+      <section className="mb-16">
+        <BehavioralSuppression locale={activeLocale} />
+      </section>
+
       {/* Bounded v2 records */}
       <section className="mb-16 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">{d.boundedTitle}</h2>
@@ -468,7 +475,15 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         <Link href={`/${activeLocale}/sentinel`} className="text-sm text-accent hover:underline">{d.sentinelLink} →</Link>
       </section>
 
+      <section className="mb-14">
+        <HindcastValidation locale={activeLocale} />
+      </section>
+
       <StatisticalValidation locale={activeLocale} />
+
+      <section className="mt-14">
+        <ReferencesSummary locale={activeLocale} />
+      </section>
     </div>
   );
 }
