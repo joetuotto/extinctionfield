@@ -7,12 +7,24 @@ interface SentinelSpecies {
   lagRange: [number, number];
   r: number;
   p: number;
+  pLabel?: string;
   nCountries: number;
   direction: number;
   directionTotal: number;
   color: string;
   icon: string;
   source: string;
+}
+
+function speciesLabel(sp: SentinelSpecies, fi: boolean): string {
+  const rSign = sp.r < 0 ? "−" : "+";
+  const rStr = `r = ${rSign}${Math.abs(sp.r).toFixed(3)}`;
+  const area = sp.nCountries > 1
+    ? `${sp.direction}/${sp.directionTotal} ${fi ? "maata" : "countries"}`
+    : "UK";
+  const pStr = sp.pLabel ?? `p = ${sp.p.toFixed(3)}`;
+  const lagStr = `+${sp.lag}${fi ? "v" : "y"}`;
+  return `${fi ? sp.name : sp.nameEn}: ${rStr}, ${area}, ${pStr}, ${lagStr}`;
 }
 
 const SENTINEL_DATA: SentinelSpecies[] = [
@@ -39,7 +51,7 @@ const SENTINEL_DATA: SentinelSpecies[] = [
   {
     name: "Pesimälintu", nameEn: "Breeding bird",
     lag: 2.5, lagRange: [1, 4],
-    r: 0.182, p: 0.006,
+    r: 0.182, p: 0.006, pLabel: "q = 0.00013",
     nCountries: 27,
     direction: 21, directionTotal: 27,
     color: "#3b82f6",
@@ -153,8 +165,10 @@ export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
             const rangeW = ((sp.lagRange[1] - sp.lagRange[0]) / maxLag) * chartWidth;
             const circleR = sp.nCountries > 1 ? Math.sqrt(sp.nCountries) * 2.8 : 5;
 
+            const label = speciesLabel(sp, fi);
             return (
-              <g key={sp.nameEn}>
+              <g key={sp.nameEn} tabIndex={0} role="listitem" aria-label={label} className="focus:outline-none focus-visible:[&>rect]:stroke-accent">
+                <title>{label}</title>
                 <text
                   x={6} y={y}
                   fill={sp.color} fontSize={12.5}

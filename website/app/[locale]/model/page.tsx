@@ -58,7 +58,7 @@ const t: Record<Locale, Copy> = {
     fieldStateTitle: "FieldState replaces a national exposure scalar",
     fieldStateText: [
       "For each organ, v2 keeps background, ambient and personal field components distinct after an organ-, posture- and geometry-specific transfer. It retains vector information, phase/coherence, envelope or beat PSD, circadian context, calibration and provenance.",
-      "FieldState measurement must preserve pulse structure: peak field, pulse duration, repetition rate and duty cycle are biologically relevant quantities that are lost in RMS averaging. BERM pathways A, B and D respond to peak field (threshold and pulse mechanisms), not time-averaged power. This distinguishes BERM from thermal models that use SAR (W/kg).",
+      "FieldState measurement must preserve pulse structure: peak field, pulse duration, repetition rate and duty cycle are biologically relevant quantities that are lost in RMS averaging. BERM pathways A, B and D respond to peak field (threshold and pulse mechanisms), not time-averaged power. Only pathway C (BBB, 15%) responds to RMS. This distinguishes BERM from thermal models that use SAR (W/kg).",
       "National mobile-subscription series can describe technology diffusion. They remain distinct from local dosimetry and a measured organ FieldState.",
     ],
     staticInterfaceTitle: "Static triboelectric interface: a native local-physics branch",
@@ -113,7 +113,7 @@ const t: Record<Locale, Copy> = {
     fieldStateTitle: "FieldState korvaa kansallisen altistusskalaarin",
     fieldStateText: [
       "V2 säilyttää kullekin elimelle tausta-, ambient- ja henkilökohtaiset kenttäkomponentit erillään elin-, asento- ja geometriakohtaisen siirron jälkeen. Se säilyttää vektoritiedon, vaiheen/koherenssin, verhokäyrä- tai beat-PSD:n, vuorokausikontekstin, kalibroinnin ja provenienssin.",
-      "FieldState-mittauksen on säilytettävä pulssirakenne: huippukenttä, pulssin kesto, toistotaajuus ja duty cycle ovat biologisesti relevantteja suureita, jotka katoavat RMS-keskiarvostuksessa. BERM:n polut A, B ja D vastaavat huippukenttään (kynnys- ja pulssimekanismit), eivät aikakeskiarvoistettuun tehoon. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
+      "FieldState-mittauksen on säilytettävä pulssirakenne: huippukenttä, pulssin kesto, toistotaajuus ja duty cycle ovat biologisesti relevantteja suureita, jotka katoavat RMS-keskiarvostuksessa. BERM:n polut A, B ja D vastaavat huippukenttään (kynnys- ja pulssimekanismit), eivät aikakeskiarvoistettuun tehoon. Vain polku C (BBB, 15 %) vastaa RMS:ään. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
       "Kansalliset mobiililiittymäsarjat voivat kuvata teknologian leviämistä. Ne pidetään erillään paikallisesta dosimetriasta ja mitatusta elin-FieldStatesta.",
     ],
     staticInterfaceTitle: "Staattinen triboelektrinen rajapinta: natiivi paikallisfysiikan haara",

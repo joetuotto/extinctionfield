@@ -62,6 +62,17 @@ const COPY = {
     ],
     s4Evidence: `Based on ${FIELDSTATE_EVIDENCE_COUNT} bounded study-to-node records across the causal route, plus 82+ peer-reviewed studies in the extended evidence register.`,
 
+    // Above-fold impact grid
+    impactGrid: [
+      { icon: "📉", stat: "5.0 → 2.2", label: "Global TFR since 1960 — decline is accelerating" },
+      { icon: "🔬", stat: "−62%", label: "Sperm concentration (Levine 2023)" },
+      { icon: "💉", stat: "−1.2%/yr", label: "Testosterone decline, age-independent" },
+      { icon: "🌍", stat: "49", label: "Countries below TFR 1.4" },
+      { icon: "💰", stat: "$200B", label: "Korea's pronatalism → TFR dropped" },
+    ],
+    sentinelCta: "All sentinels",
+    howTitle: "How the model works",
+
     // Navigation links
     methods: "Model specification",
     evidence: "Evidence register",
@@ -125,6 +136,16 @@ const COPY = {
     ],
     s4Evidence: `Perustuu ${FIELDSTATE_EVIDENCE_COUNT} rajattuun tutkimus–solmu-tietueeseen kausaalireitillä sekä 82+ vertaisarvioituun tutkimukseen laajennetussa evidenssirekisterissä.`,
 
+    impactGrid: [
+      { icon: "📉", stat: "5,0 → 2,2", label: "Globaali TFR vuodesta 1960 — lasku kiihtyy" },
+      { icon: "🔬", stat: "−62 %", label: "Siittiökonsentraatio (Levine 2023)" },
+      { icon: "💉", stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton" },
+      { icon: "🌍", stat: "49", label: "Maata alle TFR 1,4" },
+      { icon: "💰", stat: "200 mrd $", label: "Korean pronatalismi → TFR laski" },
+    ],
+    sentinelCta: "Kaikki sentinellit",
+    howTitle: "Miten malli toimii",
+
     methods: "Mallin määrittely",
     evidence: "Evidenssirekisteri",
     predictions: "Kaikki ennusteet",
@@ -172,6 +193,20 @@ export default async function Home({
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
+      {/* Above-fold impact grid */}
+      <section className="mb-12 max-w-4xl">
+        <h2 className="editorial-section-heading mb-6">{d.s1Title}</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {d.impactGrid.map((item) => (
+            <article key={item.stat} className="border border-card-border rounded-lg p-4">
+              <span className="text-lg leading-none">{item.icon}</span>
+              <p className="font-mono-num text-xl font-semibold text-accent mt-2 leading-tight">{item.stat}</p>
+              <p className="text-xs text-foreground-muted mt-1 leading-snug">{item.label}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <header className="mb-16 max-w-4xl border-b border-card-border pb-9">
         <p className="editorial-kicker mb-4 text-accent">{d.kicker}</p>
         <h1 className="mb-5 text-5xl sm:text-6xl">{d.hero}</h1>
@@ -214,6 +249,14 @@ export default async function Home({
       {/* Sentinel cascade compact */}
       <section className="mb-16 max-w-4xl">
         <SentinelCascadeCompact locale={activeLocale} />
+        <div className="mt-3 text-right">
+          <Link
+            href={`${prefix}/sentinel`}
+            className="text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+          >
+            {d.sentinelCta} →
+          </Link>
+        </div>
       </section>
 
       {/* Locked predictions — compact teaser */}
@@ -260,6 +303,12 @@ export default async function Home({
           <p className="data-figure__note">{d.mapNote}</p>
         </figure>
       </section>
+
+      {/* Transition to model explanation */}
+      <div className="mb-16 max-w-4xl">
+        <hr className="editorial-divider" />
+        <h2 className="editorial-section-heading">{d.howTitle}</h2>
+      </div>
 
       {/* SECTION 2: One testable explanation */}
       <section className="mb-16 border-t editorial-rule pt-6">
