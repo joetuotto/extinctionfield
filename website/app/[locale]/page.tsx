@@ -491,7 +491,7 @@ export default async function Home({
         <div className="flex flex-wrap gap-3">
           <Link href={`${prefix}/explore`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.explore}</Link>
           <Link href={`${prefix}/sentinel`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.sentinel}</Link>
-          <Link href={`${prefix}/berm-v18`} className="inline-flex items-center border border-border/50 px-5 py-2.5 text-xs font-medium text-foreground-muted/60 transition-colors hover:text-foreground-muted">{d.archive}</Link>
+          <Link href={`${prefix}/predictions`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.predictions}</Link>
         </div>
       </section>
     </div>
