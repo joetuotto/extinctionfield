@@ -40,7 +40,7 @@ function NavDropdown({
     <li ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className={`inline-flex items-center gap-1.5 text-[0.82rem] tracking-[0.005em] transition-colors ${
+        className={`inline-flex items-center gap-1.5 text-[0.875rem] tracking-[0.005em] transition-colors ${
           isGroupActive
             ? "text-accent font-medium"
             : "text-foreground-muted hover:text-foreground"
@@ -125,7 +125,7 @@ export function Navigation({ locale }: { locale: string }) {
                 <li key={link.href}>
                   <Link
                     href={fullHref}
-                    className={`inline-flex items-center gap-1.5 text-[0.82rem] tracking-[0.005em] transition-colors ${
+                    className={`inline-flex items-center gap-1.5 text-[0.875rem] tracking-[0.005em] transition-colors ${
                       isActive
                         ? "text-accent font-medium"
                         : "text-foreground-muted hover:text-foreground"

@@ -6,46 +6,18 @@ import { activeModelVersion } from "@/lib/modelVersions";
 
 const COPY = {
   en: {
-    v2: {
-      label: "FieldState–ASFR v2 · current research presentation",
-      text: "BERM FieldState–ASFR-v2 is a measurement-aware research specification. It does not currently publish calibrated country-level TFR forecasts.",
-      bullets: [
-        "Mobile subscriptions are a technology-timing proxy, not measured FieldState or dose",
-        "Evidence records are bounded to causal nodes; none is a TFR coefficient",
-        "TFR is derived from ASFR after biological and demographic terms are kept separate",
-      ],
-    },
-    v18: {
-      label: "BERM v18.0 · historical model presentation",
-      text: "This route preserves the earlier public BERM presentation as a separately versioned research record. Its equations, scenarios and numerical outputs belong to v18.0 and are not silently substituted for FieldState–ASFR-v2 outputs.",
-      bullets: [
-        "Use the model-version switcher to compare the two specifications on parallel routes",
-        "Versioned pages retain their original model context and source snapshot",
-        "The current FieldState–ASFR-v2 presentation remains available alongside this archive",
-      ],
-    },
-    license: "Code: MIT License. Documentation: CC BY-4.0.",
+    label: "FieldState–ASFR v2 · current research specification",
+    summary: "A measurement-aware research specification. Mobile subscriptions are a timing proxy, not measured FieldState. Evidence records are bounded to causal nodes. TFR is derived from ASFR with biological and demographic terms kept separate.",
+    noForecast: "No calibrated country-level TFR forecasts are published.",
+    license: "Code: MIT · Docs: CC BY-4.0",
+    specLink: "FieldState measurement spec",
   },
   fi: {
-    v2: {
-      label: "FieldState–ASFR v2 · nykyinen tutkimusesitys",
-      text: "BERM FieldState–ASFR-v2 on mittaustietoinen tutkimusmäärittely. Se ei tällä hetkellä julkaise kalibroituja maakohtaisia TFR-ennusteita.",
-      bullets: [
-        "Mobiililiittymät ovat teknologian ajoitusproksi, eivät mitattu FieldState tai annos",
-        "Evidenssitietueet on rajattu kausaalisolmuihin; mikään niistä ei ole TFR-kerroin",
-        "TFR johdetaan ASFR:stä, kun biologiset ja demografiset termit pidetään erillään",
-      ],
-    },
-    v18: {
-      label: "BERM v18.0 · aiempi malliesitys",
-      text: "Tämä reitti säilyttää aiemman julkisen BERM-esityksen erillisenä, versioituna tutkimustietueena. Sen yhtälöt, skenaariot ja numeeriset tulokset kuuluvat v18.0:aan, eikä niitä korvata huomaamatta FieldState–ASFR-v2:n tuloksilla.",
-      bullets: [
-        "Malliversiovaihtimella voit verrata kahta määrittelyä rinnakkaisilla reiteillä",
-        "Versioidut sivut säilyttävät oman mallikontekstinsa ja lähdetilannekuvansa",
-        "Nykyinen FieldState–ASFR-v2-esitys on käytettävissä tämän arkiston rinnalla",
-      ],
-    },
-    license: "Koodi: MIT-lisenssi. Dokumentaatio: CC BY-4.0.",
+    label: "FieldState–ASFR v2 · nykyinen tutkimusmäärittely",
+    summary: "Mittaustietoinen tutkimusmäärittely. Mobiililiittymät ovat ajoitusproksi, eivät mitattu FieldState. Evidenssitietueet on rajattu kausaalisolmuihin. TFR johdetaan ASFR:stä biologiset ja demografiset termit erillään.",
+    noForecast: "Kalibroituja maakohtaisia TFR-ennusteita ei julkaista.",
+    license: "Koodi: MIT · Docs: CC BY-4.0",
+    specLink: "FieldState-mittausmäärittely",
   },
 } as const;
 
@@ -53,31 +25,30 @@ export function SiteFooter({ locale }: { locale: string }) {
   const pathname = usePathname();
   const language = locale === "fi" ? "fi" : "en";
   const version = activeModelVersion(locale, pathname);
-  const content = COPY[language][version === "berm-v18" ? "v18" : "v2"];
+  const c = COPY[language];
+
+  if (version === "berm-v18") return null;
 
   return (
-    <footer className="border-t border-border py-8 px-6">
-      <div className="max-w-5xl mx-auto">
-        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-foreground-muted mb-3">
-          {content.label}
-        </p>
-        <p className="text-sm text-foreground-muted leading-relaxed">{content.text}</p>
-        <ul className="mt-4 space-y-1 text-xs text-foreground-muted leading-relaxed list-disc list-inside">
-          {content.bullets.map((bullet) => (
-            <li key={bullet}>{bullet}</li>
-          ))}
-        </ul>
-        {version !== "berm-v18" && (
-          <p className="mt-4">
-            <Link
-              href={`/${language}/model/fieldstate`}
-              className="text-xs font-medium text-accent transition-colors hover:text-accent-hover"
-            >
-              {language === "fi" ? "FieldState-mittausmäärittely" : "FieldState measurement specification"} →
-            </Link>
+    <footer className="border-t border-border py-6 px-6">
+      <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:items-start gap-4">
+        <div className="flex-1 min-w-0">
+          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-foreground-muted/70 mb-1.5">
+            {c.label}
           </p>
-        )}
-        <p className="text-xs text-foreground-muted mt-4">{COPY[language].license}</p>
+          <p className="text-[0.8125rem] text-foreground-muted leading-relaxed">
+            {c.summary} {c.noForecast}
+          </p>
+        </div>
+        <div className="flex flex-col items-start sm:items-end gap-1.5 sm:shrink-0">
+          <Link
+            href={`/${language}/model/fieldstate`}
+            className="text-xs font-medium text-accent transition-colors hover:text-accent-hover"
+          >
+            {c.specLink} →
+          </Link>
+          <p className="text-xs text-foreground-muted/60">{c.license}</p>
+        </div>
       </div>
     </footer>
   );

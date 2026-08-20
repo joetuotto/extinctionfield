@@ -22,8 +22,8 @@
   --accent: #3B82F6;
   --accent-hover: #60A5FA;
   --border: #262626;
-  --card-bg: #111111;
-  --card-border: #262626;
+  --card-bg: #161616;
+  --card-border: #2a2a2a;
   --status-pending: #737373;
   --status-confirmed: #22C55E;
   --status-refuted: #EF4444;
@@ -33,8 +33,8 @@
   --ci-bar-center: #60A5FA;
   --nav-bg: rgba(10, 10, 10, 0.85);
   --rule-strong: #4b5563;
-  --figure-bg: #0d1117;
-  --figure-caption-bg: rgba(255, 255, 255, 0.025);
+  --figure-bg: #121418;
+  --figure-caption-bg: rgba(255, 255, 255, 0.03);
 }
 
 /* ── Light palette: system preference ── */
@@ -72,8 +72,8 @@
   --accent: #3B82F6;
   --accent-hover: #60A5FA;
   --border: #262626;
-  --card-bg: #111111;
-  --card-border: #262626;
+  --card-bg: #161616;
+  --card-border: #2a2a2a;
   --status-pending: #737373;
   --status-confirmed: #22C55E;
   --status-refuted: #EF4444;
@@ -83,8 +83,8 @@
   --ci-bar-center: #60A5FA;
   --nav-bg: rgba(10, 10, 10, 0.85);
   --rule-strong: #4b5563;
-  --figure-bg: #0d1117;
-  --figure-caption-bg: rgba(255, 255, 255, 0.025);
+  --figure-bg: #121418;
+  --figure-caption-bg: rgba(255, 255, 255, 0.03);
 }
 
 /* ── Light palette: explicit toggle ── */
@@ -234,7 +234,7 @@ h3 {
   border-bottom: 1px solid var(--card-border);
   color: var(--foreground);
   font-family: var(--font-interface);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 650;
   letter-spacing: 0.01em;
   line-height: 1.45;
@@ -256,8 +256,8 @@ h3 {
 .data-figure__source {
   color: var(--foreground-muted);
   font-family: var(--font-interface);
-  font-size: 0.75rem;
-  line-height: 1.5;
+  font-size: 0.8125rem;
+  line-height: 1.55;
 }
 
 .data-figure__note,
