@@ -3,6 +3,7 @@ import { Target } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { LOCKED_PREDICTIONS, metricLabel, countryLabel } from "@/lib/predictions";
 import { PredictionStatusBadge } from "@/components/PredictionStatusBadge";
+import { PredictionTrack } from "@/components/PredictionTrack";
 
 const COPY = {
   en: {
@@ -93,6 +94,18 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
       <section className="mb-14 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">{d.tfrTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.tfrLead}</p>
+
+        <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {TFR_IDS.map((p) => (
+            <PredictionTrack key={p.id} prediction={p} locale={activeLocale} />
+          ))}
+        </div>
+        <p className="mb-6 text-xs leading-relaxed text-foreground-muted max-w-4xl">
+          {activeLocale === "fi"
+            ? "Harmaa viiva on Maailmanpankin julkaistu TFR-sarja. Sininen alue on lukittu herkkyysalue, ei luottamusväli. Kun ennustevuoden havainto julkaistaan, se piirtyy timanttina: vihreä alueen sisällä, punainen sen ulkopuolella."
+            : "The grey line is the World Bank published TFR series. The blue wedge is the locked sensitivity envelope, not a confidence interval. When the prediction year is observed, it appears as a diamond: green inside the envelope, red outside."}
+        </p>
+
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
