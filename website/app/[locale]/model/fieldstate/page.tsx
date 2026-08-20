@@ -67,7 +67,7 @@ const t: Record<Locale, Copy> = {
       "A national FieldState–ASFR coefficient is not yet estimated: the matched FieldState, biological-endpoint and couple panels required for calibration have not been assembled. Accordingly, v2 publishes no country TFR forecast.",
     ],
     evidenceLink: "Browse the bounded evidence registry",
-    mathLink: "Mathematical specification (§1–§8)",
+    mathLink: "FieldState mathematics (§1–§8)",
     modelLink: "← Back to model overview",
   },
   fi: {
@@ -107,7 +107,7 @@ const t: Record<Locale, Copy> = {
       "Maakohtaista FieldState–ASFR-kerrointa ei vielä estimoida: kalibroinnin vaatimia kohdistettuja FieldState-, biologisten päätepisteiden ja paripaneeleja ei ole koottu. Siksi v2 ei julkaise maakohtaisia TFR-ennusteita.",
     ],
     evidenceLink: "Selaa rajattua evidenssirekisteriä",
-    mathLink: "Matemaattinen määrittely (§1–§8)",
+    mathLink: "FieldState-matematiikka (§1–§8)",
     modelLink: "← Takaisin mallin yleiskatsaukseen",
   },
 };
@@ -141,7 +141,7 @@ export default async function FieldStatePage({
       <nav className="mb-10 flex flex-wrap gap-3 text-sm">
         <Link href={`/${language}/model`} className="text-accent hover:underline">{d.modelLink}</Link>
         <span className="text-foreground-muted">·</span>
-        <Link href={`/${language}/model/math`} className="text-accent hover:underline">{d.mathLink}</Link>
+        <Link href={`/${language}/model/fieldstate/math`} className="text-accent hover:underline">{d.mathLink}</Link>
       </nav>
 
       <article className="space-y-14">
@@ -205,9 +205,9 @@ export default async function FieldStatePage({
       </article>
 
       <NextPageLink
-        href={`/${language}/model/math`}
+        href={`/${language}/model/fieldstate/math`}
         label={language === "fi" ? "Seuraavaksi" : "Next"}
-        title={language === "fi" ? "Matemaattinen määrittely" : "Mathematical specification"}
+        title={language === "fi" ? "FieldState-matematiikka" : "FieldState mathematics"}
         icon={Sigma}
       />
     </div>

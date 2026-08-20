@@ -11,14 +11,14 @@ export async function generateMetadata({
   const { locale } = await params;
   return locale === "fi"
     ? {
-          title: "Tutkija - Extinction Field",
+          title: "Data - Extinction Field",
           description:
-          "Tutki julkaistuja hedelmällisyyssarjoja, teknologian ajoitusproksia ja FieldState–ASFR-v2:n datavalmiutta.",
+          "Tutki BERM-mallin dataa: TFR-sarjat, maakohtaiset kaaviot ja sentinelli-indikaattorit.",
       }
     : {
-          title: "Explore - Extinction Field",
+          title: "Data - Extinction Field",
           description:
-          "Explore published fertility series, technology-timing proxy data and FieldState–ASFR-v2 data readiness.",
+          "Explore BERM model data: TFR series, country-level charts, and sentinel indicators.",
       };
 }
 
@@ -31,14 +31,14 @@ export default async function ExplorePage({
   const d =
     locale === "fi"
       ? {
-          title: "Tutkija",
+          title: "Data",
           subtitle:
-            "Julkaistut TFR-sarjat, teknologian ajoitusproksi ja FieldState–ASFR-v2:n datavalmius yhdessä paikassa.",
+            "TFR-sarjat, maakohtaiset kaaviot ja sentinelli-indikaattorit yhdessä paikassa.",
         }
       : {
-          title: "Explore",
+          title: "Data",
           subtitle:
-            "Published TFR series, technology-timing proxy data and FieldState–ASFR-v2 readiness in one place.",
+            "TFR series, country-level charts, and sentinel indicators in one place.",
         };
 
   return (

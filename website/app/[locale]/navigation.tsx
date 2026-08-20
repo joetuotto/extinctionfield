@@ -29,7 +29,11 @@ function NavDropdown({
   }, []);
 
   const groupHref = `/${locale}${link.href}`;
-  const isGroupActive = pathname.startsWith(groupHref);
+  const isGroupActive = pathname.startsWith(groupHref) ||
+    (link.children ?? []).some((child) => {
+      const childHref = `/${locale}${child.href}`;
+      return pathname === childHref || pathname.startsWith(`${childHref}/`);
+    });
   const Icon = link.icon;
 
   return (
@@ -174,7 +178,7 @@ export function Navigation({ locale }: { locale: string }) {
       </div>
 
       {menuOpen && (
-        <div className="xl:hidden border-t border-border bg-background">
+        <div className="xl:hidden border-t border-border bg-background overflow-y-auto max-h-[calc(100dvh-4rem)]">
           <ul className="px-6 py-4 space-y-3">
             {links.map((link) => {
               if (link.children) {

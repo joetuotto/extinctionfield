@@ -3,75 +3,25 @@
 import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import type { ChainNode, EpistemicLevel } from "@/lib/types";
 import {
-  getFieldStateCausalGraph,
-} from "@/lib/causalChainV2Data";
-import {
+  NODES,
+  EDGES,
   EPISTEMIC_COLORS,
+  LEVEL_TITLES,
 } from "@/lib/causalChainData";
 import { DetailPanel } from "./DetailPanel";
-
-type Locale = "en" | "fi";
-
-const COPY: Record<Locale, {
-  ariaLabel: string;
-  clickHint: string;
-  levelTitles: Record<number, string>;
-  legend: [EpistemicLevel, string][];
-}> = {
-  en: {
-    ariaLabel: "BERM FieldState–ASFR-v2 causal diagram",
-    clickHint: "→ click for details",
-    levelTitles: {
-      1: "Field state",
-      2: "Biological intermediates",
-      3: "BTB and other barrier states",
-      4: "Reproductive states",
-      5: "Couple and demographic context",
-      6: "Age-specific fertility",
-      7: "Demographic endpoint",
-    },
-    legend: [
-      ["E", "Observed endpoint"],
-      ["M|C", "Mechanism + association"],
-      ["M", "Mechanistic intermediate"],
-      ["C", "Observed association"],
-      ["L*", "Theory / measurement premise"],
-    ],
-  },
-  fi: {
-    ariaLabel: "BERM FieldState–ASFR-v2-kausaalikaavio",
-    clickHint: "→ klikkaa tiedot",
-    levelTitles: {
-      1: "Kenttätila",
-      2: "Biologiset välitilat",
-      3: "BTB ja muut estetilat",
-      4: "Lisääntymistilat",
-      5: "Pari- ja demografinen konteksti",
-      6: "Ikäkohtainen hedelmällisyys",
-      7: "Demografinen päätepiste",
-    },
-    legend: [
-      ["E", "Havaittu päätepiste"],
-      ["M|C", "Mekanismi + assosiaatio"],
-      ["M", "Mekanistinen välitila"],
-      ["C", "Havaittu assosiaatio"],
-      ["L*", "Teoria- / mittauspremissi"],
-    ],
-  },
-};
 
 const NODE_H = 72;
 const NODE_RX = 12;
 const LEVEL_GAP = 52;
-const LEVEL_LABEL_W = 100;
-const FEEDBACK_MARGIN = 44;
+const LEVEL_LABEL_W = 140;
+const FEEDBACK_MARGIN = 60;
 const NODE_GAP = 14;
 const MAX_NODE_W = 240;
-const MAX_PER_ROW = 4;
+const MIN_NODE_W = 160;
+const MAX_PER_ROW = 5;
 const ROW_INNER_GAP = 10;
 const BAND_PAD_Y = 14;
 const BAND_PAD_X = 8;
-const RIGHT_PAD = 16;
 
 const EPISTEMIC_LABELS: Record<string, string> = {
   E: "E",
@@ -100,8 +50,7 @@ interface LevelBand {
 function computeLayout(
   nodes: ChainNode[],
   canvasW: number,
-  levelTitles: Record<number, string>,
-): { layoutNodes: LayoutNode[]; canvasH: number; actualW: number; bands: LevelBand[] } {
+): { layoutNodes: LayoutNode[]; canvasH: number; bands: LevelBand[] } {
   const levels = new Map<number, ChainNode[]>();
   for (const n of nodes) {
     if (!levels.has(n.level)) levels.set(n.level, []);
@@ -111,10 +60,8 @@ function computeLayout(
   const sortedLevels = [...levels.keys()].sort((a, b) => a - b);
   const layoutNodes: LayoutNode[] = [];
   const bands: LevelBand[] = [];
-  const leftEdge = LEVEL_LABEL_W + FEEDBACK_MARGIN;
-  const usableW = canvasW - leftEdge - RIGHT_PAD;
+  const usableW = canvasW - LEVEL_LABEL_W - FEEDBACK_MARGIN;
   let currentY = 24;
-  let maxRight = canvasW;
 
   for (const lvl of sortedLevels) {
     const nodesInLevel = levels.get(lvl)!;
@@ -123,6 +70,7 @@ function computeLayout(
     const numRows = Math.ceil(count / MAX_PER_ROW);
     const bandTop = currentY - BAND_PAD_Y;
 
+    // Dominant epistemic color for the band
     const colorCounts = new Map<string, number>();
     for (const n of nodesInLevel) {
       colorCounts.set(n.epistemicLevel, (colorCounts.get(n.epistemicLevel) ?? 0) + 1);
@@ -138,20 +86,18 @@ function computeLayout(
       const rowEnd = Math.min(rowStart + MAX_PER_ROW, count);
       const rowCount = rowEnd - rowStart;
       const totalGaps = (rowCount - 1) * NODE_GAP;
-      const nodeW = Math.min(MAX_NODE_W, (usableW - totalGaps) / rowCount);
+      const nodeW = Math.max(MIN_NODE_W, Math.min(MAX_NODE_W, (usableW - totalGaps) / rowCount));
       const rowW = rowCount * nodeW + totalGaps;
-      const startX = Math.max(leftEdge, leftEdge + (usableW - rowW) / 2);
+      const startX = LEVEL_LABEL_W + FEEDBACK_MARGIN + (usableW - rowW) / 2;
 
       for (let i = 0; i < rowCount; i++) {
-        const nx = startX + i * (nodeW + NODE_GAP);
         layoutNodes.push({
           ...nodesInLevel[rowStart + i],
-          x: nx,
+          x: startX + i * (nodeW + NODE_GAP),
           y: currentY,
           w: nodeW,
           h,
         });
-        maxRight = Math.max(maxRight, nx + nodeW + RIGHT_PAD);
       }
       currentY += h + (row < numRows - 1 ? ROW_INNER_GAP : 0);
     }
@@ -159,7 +105,7 @@ function computeLayout(
     const bandBottom = currentY + BAND_PAD_Y;
     bands.push({
       level: lvl,
-      title: levelTitles[lvl] ?? `Level ${lvl}`,
+      title: LEVEL_TITLES[lvl] ?? `Level ${lvl}`,
       top: bandTop,
       bottom: bandBottom,
       color: EPISTEMIC_COLORS[dominant] ?? "#6B7280",
@@ -167,7 +113,7 @@ function computeLayout(
     currentY = bandBottom + LEVEL_GAP;
   }
 
-  return { layoutNodes, canvasH: currentY + 40, actualW: maxRight, bands };
+  return { layoutNodes, canvasH: currentY + 40, bands };
 }
 
 function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
@@ -195,31 +141,28 @@ function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
   return `M ${x1} ${y1} C ${x1} ${y1 + dy * 0.35} ${x2} ${y2 - dy * 0.35} ${x2} ${y2}`;
 }
 
-export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale }) {
-  const d = COPY[locale];
-  const { nodes, edges } = useMemo(() => getFieldStateCausalGraph(locale), [locale]);
+export default function BermCausalDiagram() {
   const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [containerW, setContainerW] = useState(900);
+  const [containerW, setContainerW] = useState(1400);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
     const ro = new ResizeObserver((entries) => {
       const w = entries[0]?.contentRect.width;
-      if (w && w > 0) setContainerW(Math.max(600, Math.min(1600, w)));
+      if (w && w > 0) setContainerW(Math.max(900, Math.min(1600, w)));
     });
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
 
   const canvasW = containerW;
-  const { layoutNodes, canvasH, actualW, bands } = useMemo(
-    () => computeLayout(nodes, canvasW, d.levelTitles),
-    [canvasW, d.levelTitles, nodes],
+  const { layoutNodes, canvasH, bands } = useMemo(
+    () => computeLayout(NODES, canvasW),
+    [canvasW],
   );
-  const viewW = Math.max(canvasW, actualW);
 
   const nodeMap = useMemo(() => {
     const m = new Map<string, LayoutNode>();
@@ -230,11 +173,11 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
   const connectedEdges = useMemo(() => {
     if (!hoveredNode) return new Set<number>();
     const s = new Set<number>();
-    edges.forEach((e, i) => {
+    EDGES.forEach((e, i) => {
       if (e.from === hoveredNode || e.to === hoveredNode) s.add(i);
     });
     return s;
-  }, [edges, hoveredNode]);
+  }, [hoveredNode]);
 
   const handleNodeClick = useCallback((node: ChainNode) => {
     setSelectedNode(node);
@@ -242,13 +185,13 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
 
   return (
     <>
-      <div ref={containerRef} className="w-full">
+      <div ref={containerRef} className="w-full overflow-x-auto">
         <svg
-          viewBox={`0 0 ${viewW} ${canvasH}`}
+          viewBox={`0 0 ${canvasW} ${canvasH}`}
           xmlns="http://www.w3.org/2000/svg"
           role="img"
-          aria-label={d.ariaLabel}
-          style={{ width: "100%", height: "auto" }}
+          aria-label="BERM causal chain diagram"
+          style={{ width: "100%", height: "auto", minWidth: 900 }}
         >
           <defs>
             <marker
@@ -282,7 +225,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
           <rect
             x="0"
             y="0"
-            width={viewW}
+            width={canvasW}
             height={canvasH}
             fill="var(--card-bg)"
             rx="12"
@@ -295,7 +238,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
               <rect
                 x={LEVEL_LABEL_W + FEEDBACK_MARGIN - BAND_PAD_X}
                 y={band.top}
-                width={viewW - LEVEL_LABEL_W - FEEDBACK_MARGIN + BAND_PAD_X - 12}
+                width={canvasW - LEVEL_LABEL_W - FEEDBACK_MARGIN + BAND_PAD_X - 12}
                 height={band.bottom - band.top}
                 rx="8"
                 fill={`${band.color}08`}
@@ -339,7 +282,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
           ))}
 
           {/* Edges */}
-          {edges.map((edge, edgeIdx) => {
+          {EDGES.map((edge, edgeIdx) => {
             const from = nodeMap.get(edge.from);
             const to = nodeMap.get(edge.to);
             if (!from || !to) return null;
@@ -416,19 +359,12 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
             );
           })}
 
-          {/* Node clip paths */}
-          {layoutNodes.map((n) => (
-            <clipPath key={`clip-${n.id}`} id={`clip-${n.id}`}>
-              <rect x={n.x} y={n.y} width={n.w} height={n.h} rx={NODE_RX} />
-            </clipPath>
-          ))}
-
           {/* Nodes */}
           {layoutNodes.map((n) => {
             const color = EPISTEMIC_COLORS[n.epistemicLevel];
             const isHovered = hoveredNode === n.id;
             const isSelected = selectedNode?.id === n.id;
-            const textW = n.w - 48;
+            const dimmed = hoveredNode !== null && !isHovered && !connectedEdges.size;
 
             return (
               <g
@@ -437,7 +373,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
                 onClick={() => handleNodeClick(n)}
                 onMouseEnter={() => setHoveredNode(n.id)}
                 onMouseLeave={() => setHoveredNode(null)}
-                opacity={hoveredNode && !isHovered && ![...connectedEdges].some(i => edges[i]?.from === n.id || edges[i]?.to === n.id) ? 0.4 : 1}
+                opacity={hoveredNode && !isHovered && ![...connectedEdges].some(i => EDGES[i]?.from === n.id || EDGES[i]?.to === n.id) ? 0.4 : 1}
               >
                 {/* Node background */}
                 <rect
@@ -472,60 +408,60 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
                 >
                   {EPISTEMIC_LABELS[n.epistemicLevel] ?? n.epistemicLevel}
                 </text>
-                {/* Label — clipped to node bounds */}
-                <g clipPath={`url(#clip-${n.id})`}>
+                {/* Label */}
+                <text
+                  x={n.x + 14}
+                  y={n.y + (n.sublabel ? 24 : n.h / 2 + 1)}
+                  fill="var(--foreground)"
+                  fontSize={14}
+                  fontWeight="600"
+                  dominantBaseline="middle"
+                  fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+                >
+                  {n.label}
+                </text>
+                {/* Sublabel */}
+                {n.sublabel && (
                   <text
-                    x={n.x + 12}
-                    y={n.y + (n.sublabel ? 24 : n.h / 2 + 1)}
-                    fill="var(--foreground)"
-                    fontSize={n.label.length > 18 ? 12 : 13}
-                    fontWeight="600"
+                    x={n.x + 14}
+                    y={n.y + 46}
+                    fill="var(--foreground-muted)"
+                    fontSize={11}
                     dominantBaseline="middle"
-                    fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                    textLength={n.label.length * 7.5 > textW ? textW : undefined}
-                    lengthAdjust="spacingAndGlyphs"
+                    fontFamily="ui-monospace, SFMono-Regular, monospace"
                   >
-                    {n.label}
+                    {n.sublabel}
                   </text>
-                  {/* Sublabel */}
-                  {n.sublabel && (
-                    <text
-                      x={n.x + 12}
-                      y={n.y + 44}
-                      fill="var(--foreground-muted)"
-                      fontSize={10}
-                      dominantBaseline="middle"
-                      fontFamily="ui-monospace, SFMono-Regular, monospace"
-                      textLength={n.sublabel.length * 6 > textW ? textW : undefined}
-                      lengthAdjust="spacingAndGlyphs"
-                    >
-                      {n.sublabel}
-                    </text>
-                  )}
-                  {/* Click hint on hover */}
-                  {isHovered && (
-                    <text
-                      x={n.x + 12}
-                      y={n.y + n.h - 8}
-                      fill="var(--foreground-muted)"
-                      fontSize={9}
-                      dominantBaseline="auto"
-                      fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                    >
-                      {d.clickHint}
-                    </text>
-                  )}
-                </g>
+                )}
+                {/* Click hint on hover */}
+                {isHovered && (
+                  <text
+                    x={n.x + 14}
+                    y={n.y + n.h - 8}
+                    fill="var(--foreground-muted)"
+                    fontSize={9}
+                    dominantBaseline="auto"
+                    fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+                  >
+                    {"→ click for details"}
+                  </text>
+                )}
               </g>
             );
           })}
 
           {/* Legend */}
           {(() => {
-            const items = d.legend;
+            const items: [EpistemicLevel, string][] = [
+              ["E", "Empirically established"],
+              ["M|C", "Mechanistic + correlational"],
+              ["M", "Mathematical consequence"],
+              ["C", "Candidate"],
+              ["L*", "Premise (not validated)"],
+            ];
             const legendY = canvasH - 24;
             const legendX = LEVEL_LABEL_W + FEEDBACK_MARGIN;
-            const spacing = (viewW - legendX - 20) / items.length;
+            const spacing = (canvasW - legendX - 20) / items.length;
             return items.map(([lvl, lbl], i) => {
               const c = EPISTEMIC_COLORS[lvl];
               return (
@@ -534,7 +470,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
                   <text x={8} y={0} fill={c} fontSize={8} fontWeight="700" textAnchor="middle" dominantBaseline="middle" fontFamily="ui-monospace, monospace">
                     {lvl}
                   </text>
-                  <text x={20} y={1} fill="var(--foreground-muted)" fontSize={9} fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" dominantBaseline="middle" textLength={Math.min(lbl.length * 5, spacing - 26)} lengthAdjust="spacingAndGlyphs">
+                  <text x={20} y={1} fill="var(--foreground-muted)" fontSize={10} fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" dominantBaseline="middle">
                     {lbl}
                   </text>
                 </g>
@@ -548,7 +484,6 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
         <DetailPanel
           node={selectedNode}
           onClose={() => setSelectedNode(null)}
-          locale={locale}
         />
       )}
     </>

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TrendingDown, Microscope, TestTube, Globe2, Banknote } from "lucide-react";
 import CausalChain from "@/components/CausalChain";
 import { WorldMap } from "@/components/WorldMap";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
 import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
+
+const IMPACT_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote] as const;
 
 const COPY = {
   en: {
@@ -28,11 +31,11 @@ const COPY = {
     teaserNote: "Locked under BERM v18 and falsifiable: each will be compared against observed data in the stated year. Brackets show the one-at-a-time parameter sensitivity envelope, not a confidence interval.",
 
     impactGrid: [
-      { icon: "📉", stat: "5.0 → 2.2", label: "Global TFR since 1960 — decline is accelerating" },
-      { icon: "🔬", stat: "−62%", label: "Sperm concentration (Levine 2023)" },
-      { icon: "💉", stat: "−1.2%/yr", label: "Testosterone decline, age-independent" },
-      { icon: "🌍", stat: "49", label: "Countries below TFR 1.4" },
-      { icon: "💰", stat: "$200B", label: "Korea's pronatalism → TFR dropped" },
+      { stat: "5.0 → 2.2", label: "Global TFR since 1960 — decline is accelerating" },
+      { stat: "−62%", label: "Sperm concentration (Levine 2023)" },
+      { stat: "−1.2%/yr", label: "Testosterone decline, age-independent" },
+      { stat: "49", label: "Countries below TFR 1.4" },
+      { stat: "$200B", label: "Korea's pronatalism → TFR dropped" },
     ],
     sentinelCta: "All sentinels",
     howTitle: "How the model works",
@@ -71,11 +74,11 @@ const COPY = {
     teaserNote: "Lukittu BERM v18:lla ja falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna. Hakasulkeet näyttävät yksi-kerrallaan-parametriherkkyysalueen, eivät luottamusväliä.",
 
     impactGrid: [
-      { icon: "📉", stat: "5,0 → 2,2", label: "Globaali TFR vuodesta 1960 — lasku kiihtyy" },
-      { icon: "🔬", stat: "−62 %", label: "Siittiökonsentraatio (Levine 2023)" },
-      { icon: "💉", stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton" },
-      { icon: "🌍", stat: "49", label: "Maata alle TFR 1,4" },
-      { icon: "💰", stat: "200 mrd $", label: "Korean pronatalismi → TFR laski" },
+      { stat: "5,0 → 2,2", label: "Globaali TFR vuodesta 1960 — lasku kiihtyy" },
+      { stat: "−62 %", label: "Siittiökonsentraatio (Levine 2023)" },
+      { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton" },
+      { stat: "49", label: "Maata alle TFR 1,4" },
+      { stat: "200 mrd $", label: "Korean pronatalismi → TFR laski" },
     ],
     sentinelCta: "Kaikki sentinellit",
     howTitle: "Miten malli toimii",
@@ -136,13 +139,16 @@ export default async function Home({
       <section className="mb-12 max-w-4xl">
         <h2 className="editorial-section-heading mb-6">{d.s1Title}</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {d.impactGrid.map((item) => (
-            <article key={item.stat} className="border border-card-border rounded-lg p-4">
-              <span className="text-lg leading-none">{item.icon}</span>
-              <p className="font-mono-num text-xl font-semibold text-accent mt-2 leading-tight">{item.stat}</p>
-              <p className="text-xs text-foreground-muted mt-1 leading-snug">{item.label}</p>
-            </article>
-          ))}
+          {d.impactGrid.map((item, i) => {
+            const Icon = IMPACT_ICONS[i];
+            return (
+              <article key={item.stat} className="border border-card-border rounded-lg p-4">
+                <Icon size={20} className="text-accent/60" strokeWidth={1.5} aria-hidden="true" />
+                <p className="font-mono-num text-xl font-semibold text-accent mt-2 leading-tight">{item.stat}</p>
+                <p className="text-xs text-foreground-muted mt-1 leading-snug">{item.label}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 

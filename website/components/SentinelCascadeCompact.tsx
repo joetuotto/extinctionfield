@@ -1,9 +1,12 @@
 "use client";
 
-const TOP_SPECIES = [
-  { icon: "🐝", nameEn: "Honeybee", nameFi: "Mehiläinen", lag: 2, stat: "20/23", r: 0.27 },
-  { icon: "🐦", nameEn: "Bird", nameFi: "Lintu", lag: 2.5, stat: "21/27", r: 0.18 },
-  { icon: "🐸", nameEn: "Toad", nameFi: "Rupikonna", lag: 6, stat: "UK", r: 0.36 },
+import { Bug, Bird, Snail, User } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+const TOP_SPECIES: { Icon: LucideIcon; nameEn: string; nameFi: string; lag: number; stat: string; r: number }[] = [
+  { Icon: Bug, nameEn: "Honeybee", nameFi: "Mehiläinen", lag: 2, stat: "20/23", r: 0.27 },
+  { Icon: Bird, nameEn: "Bird", nameFi: "Lintu", lag: 2.5, stat: "21/27", r: 0.18 },
+  { Icon: Snail, nameEn: "Toad", nameFi: "Rupikonna", lag: 6, stat: "UK", r: 0.36 },
 ];
 
 export function SentinelCascadeCompact({ locale = "en" }: { locale?: "fi" | "en" }) {
@@ -19,7 +22,7 @@ export function SentinelCascadeCompact({ locale = "en" }: { locale?: "fi" | "en"
       <div className="space-y-2">
         {TOP_SPECIES.map((sp) => (
           <div key={sp.nameEn} className="flex items-center gap-3">
-            <span className="text-base leading-none">{sp.icon}</span>
+            <sp.Icon size={16} className="text-accent/60 shrink-0" strokeWidth={1.5} aria-hidden="true" />
             <span className="text-sm text-foreground-muted w-24 shrink-0">
               {fi ? sp.nameFi : sp.nameEn}
             </span>
@@ -35,7 +38,7 @@ export function SentinelCascadeCompact({ locale = "en" }: { locale?: "fi" | "en"
           </div>
         ))}
         <div className="flex items-center gap-3 pt-2 border-t border-card-border">
-          <span className="text-base leading-none">👤</span>
+          <User size={16} className="text-status-confirmed shrink-0" strokeWidth={1.5} aria-hidden="true" />
           <span className="text-sm text-status-confirmed font-medium w-24 shrink-0">
             {fi ? "Ihminen" : "Human"}
           </span>

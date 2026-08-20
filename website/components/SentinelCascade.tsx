@@ -35,7 +35,7 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     nCountries: 1,
     direction: 29, directionTotal: 45,
     color: "#22c55e",
-    icon: "\u{1FAB2}",
+    icon: "aphid",
     source: "Rothamsted 1969–2016, first diff",
   },
   {
@@ -45,7 +45,7 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     nCountries: 23,
     direction: 20, directionTotal: 23,
     color: "#eab308",
-    icon: "🐝",
+    icon: "bee",
     source: "COLOSS 23 countries, circular-shift",
   },
   {
@@ -55,7 +55,7 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     nCountries: 27,
     direction: 21, directionTotal: 27,
     color: "#3b82f6",
-    icon: "🐦",
+    icon: "bird",
     source: "PECBMS 27 countries, detrended",
   },
   {
@@ -65,7 +65,7 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     nCountries: 1,
     direction: 1, directionTotal: 1,
     color: "#f97316",
-    icon: "🐕",
+    icon: "dog",
     source: "Lea 2016, detrended",
   },
   {
@@ -75,7 +75,7 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     nCountries: 1,
     direction: 1, directionTotal: 1,
     color: "#a855f7",
-    icon: "🦋",
+    icon: "moth",
     source: "Rothamsted moths, circular-shift",
   },
   {
@@ -85,7 +85,7 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     nCountries: 1,
     direction: 1, directionTotal: 1,
     color: "#ef4444",
-    icon: "🐸",
+    icon: "toad",
     source: "Petrovan & Schmidt 2016",
   },
 ];
@@ -174,7 +174,7 @@ export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
                   fill={sp.color} fontSize={12.5}
                   dominantBaseline="middle" fontWeight="600"
                 >
-                  {sp.icon} {fi ? sp.name : sp.nameEn}
+                  {fi ? sp.name : sp.nameEn}
                 </text>
 
                 <rect

@@ -8,28 +8,28 @@ import { MathematicsSections } from "@/app/[locale]/mathematics/page";
 
 const COPY = {
   en: {
-    title: "Mathematical specification",
+    title: "BERM mathematical specification",
     subtitle:
-      "The equations that state the active data contract, the organ-state structure and the boundary between a descriptive timing proxy and a calibratable FieldState result.",
-    metaTitle: "FieldState–ASFR mathematics – Extinction Field",
-    metaDescription: "The measurement-aware FieldState–ASFR-v2 mathematical specification of BERM.",
+      "The equations behind the three-level scalar architecture: Lindgren geometry, selection rule, two-channel exposure model, biological capacity, behavioral factor, cultural compensation, Jacobian stability and locked predictions.",
+    metaTitle: "BERM mathematics – Extinction Field",
+    metaDescription: "The BERM v18 mathematical specification: §1–§11 from geometry to falsification conditions.",
     modelLink: "← Back to model overview",
     fieldstateLink: "FieldState measurement specification",
-    baseDocTitle: "Not reproduced on this page",
+    baseDocTitle: "LBERM base document",
     baseDocText:
-      "The formal Jacobian product structure (chapter 17), the proof-obligation register and the safety-system specification are described in the LBERM base document. They are not reproduced here; this page carries the measurement contract and the equations the published results depend on.",
+      "The formal Jacobian product structure (chapter 17), the proof-obligation register and the safety-system specification are described in the LBERM base document. They are not reproduced here; this page carries the core equations the BERM predictions depend on.",
   },
   fi: {
-    title: "Matemaattinen määrittely",
+    title: "BERM:n matemaattinen määrittely",
     subtitle:
-      "Yhtälöt, jotka määrittelevät aktiivisen datakontraktin, elintilarakenteen sekä rajan kuvailevan ajoitusproxyn ja kalibroitavan FieldState-tuloksen välillä.",
-    metaTitle: "FieldState–ASFR-matematiikka – Extinction Field",
-    metaDescription: "BERM:n mittaustietoinen FieldState–ASFR-v2:n matemaattinen määrittely.",
+      "Kolmitasoisen skaalaariarkkitehtuurin yhtälöt: Lindgrenin geometria, valintasääntö, kaksikanavamalli, biologinen kapasiteetti, käyttäytymiskerroin, kulttuurikompensaatio, Jacobiaani ja lukitut ennusteet.",
+    metaTitle: "BERM-matematiikka – Extinction Field",
+    metaDescription: "BERM v18:n matemaattinen määrittely: §1–§11 geometriasta falsifikaatioehtoihin.",
     modelLink: "← Takaisin mallin yleiskatsaukseen",
     fieldstateLink: "FieldState-mittausmäärittely",
-    baseDocTitle: "Ei toisteta tällä sivulla",
+    baseDocTitle: "LBERM-perusdokumentti",
     baseDocText:
-      "Formaali Jacobiaani-tulorakenne (luku 17), proof-obligation-rekisteri ja turvajärjestelmien määrittely kuvataan LBERM-perusdokumentissa. Niitä ei toisteta tässä; tämä sivu kantaa mittauskontraktin ja ne yhtälöt, joihin julkaistut tulokset nojaavat.",
+      "Formaali Jacobiaani-tulorakenne (luku 17), proof-obligation-rekisteri ja turvajärjestelmien määrittely kuvataan LBERM-perusdokumentissa. Niitä ei toisteta tässä; tämä sivu kantaa ne yhtälöt, joihin BERM:n ennusteet nojaavat.",
   },
 } as const;
 
