@@ -103,3 +103,24 @@ def test_site_copy_is_byte_identical_to_the_canonical_table() -> None:
     # The bundler cannot follow a symlink out of the app directory, so the site
     # keeps a copy. It must not drift from the audited source.
     assert SITE_COPY_PATH.read_bytes() == TABLE_PATH.read_bytes()
+
+
+def test_model_metadata_counts_come_from_the_audit_table() -> None:
+    import berm
+
+    table = _load()["summary"]
+    meta = berm.model_metadata()
+
+    assert meta["reasoning_protocol_version"] == "1.0"
+    assert meta["negative_findings_reviewed"] == table["total"]
+    assert meta["findings_reclassified"] == table["reclassified"]
+    assert meta["findings_remain_negative"] == table["remains_negative"]
+    assert meta["findings_internal_refinement"] == table["internal_refinement"]
+    assert meta["findings_affecting_current_model"] == table["affects_current_berm"]
+    # D1-D3 test the primary branch; the table's five are per-finding follow-ups.
+    assert meta["discriminating_tests_needed"] == 3
+    assert meta["follow_up_discriminating_tests_identified"] == table[
+        "discriminating_tests_needed"
+    ]
+    assert meta["discriminating_tests_completed"] == 0
+    assert meta["primary_pathway"] == "C_RPM"

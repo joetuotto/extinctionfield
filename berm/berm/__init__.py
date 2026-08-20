@@ -15,6 +15,11 @@ from berm.model_fieldstate_asfr import (
     MODEL_VERSION as FIELDSTATE_ASFR_MODEL_VERSION,
     project_wpp_fieldstate_asfr,
 )
+from berm.metadata import (
+    MODEL_METADATA,
+    REASONING_PROTOCOL_VERSION,
+    model_metadata,
+)
 from berm.evidence_registry import (
     legacy_evidence_summary,
     load_fieldstate_evidence,
@@ -51,6 +56,9 @@ __all__ = [
     "loocv_v16",
     "v17_full_report",
     "FIELDSTATE_ASFR_MODEL_VERSION",
+    "MODEL_METADATA",
+    "REASONING_PROTOCOL_VERSION",
+    "model_metadata",
     "project_wpp_fieldstate_asfr",
     "load_fieldstate_evidence",
     "load_legacy_evidence_migration",
