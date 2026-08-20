@@ -39,7 +39,7 @@ function Chart({ compact, fi }: { compact: boolean; fi: boolean }) {
   const W = compact ? 360 : 560;
   const H = compact ? 300 : 320;
   const pad = compact
-    ? { top: 16, right: 12, bottom: 46, left: 42 }
+    ? { top: 16, right: 18, bottom: 46, left: 42 }
     : { top: 20, right: 30, bottom: 52, left: 60 };
   const cw = W - pad.left - pad.right;
   const ch = H - pad.top - pad.bottom;
@@ -52,8 +52,8 @@ function Chart({ compact, fi }: { compact: boolean; fi: boolean }) {
 
   const yTicks = [-3, -2, -1, 0, 1];
   const xTicks = compact ? [0, 100, 200, 300] : [0, 50, 100, 150, 200, 250, 300];
-  const axisFont = compact ? 11 : 10;
-  const labelFont = compact ? 12 : 11;
+  const axisFont = compact ? 12 : 10;
+  const labelFont = compact ? 13 : 11;
 
   return (
     <svg

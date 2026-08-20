@@ -4,6 +4,7 @@ import { Leaf } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { SentinelReadiness } from "@/components/SentinelReadiness";
 import { SentinelCascade } from "@/components/SentinelCascade";
+import { SentinelCascadeTimeline } from "@/components/SentinelCascadeTimeline";
 import { NikeBBSScatter } from "@/components/NikeBBSScatter";
 import { PulseProfile } from "@/components/PulseProfile";
 
@@ -107,6 +108,10 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
 
         <div className="mb-6">
           <SentinelCascade locale={activeLocale} />
+        </div>
+
+        <div className="mb-6">
+          <SentinelCascadeTimeline locale={activeLocale} />
         </div>
 
         <div className="rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">

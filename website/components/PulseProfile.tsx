@@ -21,7 +21,7 @@ function Chart({ compact, fi }: { compact: boolean; fi: boolean }) {
   const W = compact ? 360 : 560;
   const H = 300;
   const pad = compact
-    ? { top: 18, right: 12, bottom: 46, left: 46 }
+    ? { top: 18, right: 26, bottom: 46, left: 46 }
     : { top: 22, right: 24, bottom: 50, left: 62 };
   const cw = W - pad.left - pad.right;
   const ch = H - pad.top - pad.bottom;
@@ -44,8 +44,9 @@ function Chart({ compact, fi }: { compact: boolean; fi: boolean }) {
   const xTicks = compact ? [0, 1250, 2500] : [0, 500, 1000, 1500, 2000, 2500];
   const highTicks = compact ? [20, 24] : [20, 22, 24, 26];
   const lowTicks = compact ? [0, 0.04] : [0, 0.02, 0.04];
-  const axisFont = compact ? 11 : 10;
-  const labelFont = compact ? 12 : 11;
+  const axisFont = compact ? 12 : 10;
+  const labelFont = compact ? 13 : 11;
+  const annotationFont = compact ? 11 : 10;
 
   const pulseX = sx(PULSE_AT_US);
   // 1 µs of a 2500 µs period is far below one pixel: drawn at a legible
@@ -184,7 +185,7 @@ function Chart({ compact, fi }: { compact: boolean; fi: boolean }) {
         x={W - pad.right}
         y={syLow(RMS) - 6}
         fill="var(--accent)"
-        fontSize={10}
+        fontSize={annotationFont}
         textAnchor="end"
         fontFamily="var(--font-mono)"
       >
@@ -230,7 +231,7 @@ function Chart({ compact, fi }: { compact: boolean; fi: boolean }) {
         x={pulseX + 8}
         y={syHigh(PEAK) + 19}
         fill="var(--foreground-muted)"
-        fontSize={10}
+        fontSize={annotationFont}
       >
         {fi ? "1 µs (ei mittakaavassa)" : "1 µs (not to scale)"}
       </text>
@@ -246,7 +247,7 @@ function Chart({ compact, fi }: { compact: boolean; fi: boolean }) {
         x={pulseX + 1}
         y={lowBottom - 4}
         fill="var(--status-confirmed)"
-        fontSize={10}
+        fontSize={annotationFont}
         textAnchor="middle"
         // Knocks the pulse line out from behind the label.
         stroke="var(--card-bg)"

@@ -1,0 +1,1783 @@
+{
+  "generatedBy": "berm/export_sentinel_cascade.py",
+  "panel": [
+    "AUT",
+    "BEL",
+    "CHE",
+    "CZE",
+    "DEU",
+    "DNK",
+    "DZA",
+    "ESP",
+    "EST",
+    "FIN",
+    "FRA",
+    "IRL",
+    "ISR",
+    "ITA",
+    "LVA",
+    "MKD",
+    "NOR",
+    "POL",
+    "SVK",
+    "SVN",
+    "SWE",
+    "UKR",
+    "USA"
+  ],
+  "panelSize": 23,
+  "beeSeries": [
+    {
+      "year": 2014,
+      "mean": -7.7231,
+      "countries": 13
+    },
+    {
+      "year": 2017,
+      "mean": 4.7391,
+      "countries": 23
+    },
+    {
+      "year": 2018,
+      "mean": -1.9435,
+      "countries": 23
+    },
+    {
+      "year": 2019,
+      "mean": -2.3043,
+      "countries": 23
+    },
+    {
+      "year": 2020,
+      "mean": 2.3696,
+      "countries": 23
+    }
+  ],
+  "tfrSeries": [
+    {
+      "year": 2014,
+      "mean": 0.0184,
+      "countries": 23
+    },
+    {
+      "year": 2015,
+      "mean": -0.0048,
+      "countries": 23
+    },
+    {
+      "year": 2016,
+      "mean": 0.014,
+      "countries": 23
+    },
+    {
+      "year": 2017,
+      "mean": -0.0233,
+      "countries": 23
+    },
+    {
+      "year": 2018,
+      "mean": -0.0258,
+      "countries": 23
+    },
+    {
+      "year": 2019,
+      "mean": -0.0261,
+      "countries": 23
+    },
+    {
+      "year": 2020,
+      "mean": -0.0362,
+      "countries": 23
+    },
+    {
+      "year": 2021,
+      "mean": 0.0432,
+      "countries": 23
+    },
+    {
+      "year": 2022,
+      "mean": -0.1033,
+      "countries": 23
+    },
+    {
+      "year": 2023,
+      "mean": -0.062,
+      "countries": 23
+    },
+    {
+      "year": 2024,
+      "mean": -0.034,
+      "countries": 23
+    }
+  ],
+  "lagProfile": [
+    {
+      "lag": 0,
+      "meanR": -0.0758,
+      "bermDirection": 13,
+      "countries": 23
+    },
+    {
+      "lag": 1,
+      "meanR": 0.0668,
+      "bermDirection": 10,
+      "countries": 23
+    },
+    {
+      "lag": 2,
+      "meanR": -0.3584,
+      "bermDirection": 20,
+      "countries": 23
+    },
+    {
+      "lag": 3,
+      "meanR": -0.0434,
+      "bermDirection": 12,
+      "countries": 23
+    },
+    {
+      "lag": 4,
+      "meanR": 0.2679,
+      "bermDirection": 7,
+      "countries": 23
+    },
+    {
+      "lag": 5,
+      "meanR": -0.1885,
+      "bermDirection": 14,
+      "countries": 23
+    }
+  ],
+  "byCountry": {
+    "AUT": {
+      "bee": [
+        {
+          "year": 2017,
+          "value": 15.3
+        },
+        {
+          "year": 2018,
+          "value": -11.2
+        },
+        {
+          "year": 2019,
+          "value": 3.5
+        },
+        {
+          "year": 2020,
+          "value": -2.5
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.02
+        },
+        {
+          "year": 2015,
+          "value": 0.03
+        },
+        {
+          "year": 2016,
+          "value": 0.04
+        },
+        {
+          "year": 2017,
+          "value": -0.01
+        },
+        {
+          "year": 2018,
+          "value": -0.05
+        },
+        {
+          "year": 2019,
+          "value": -0.01
+        },
+        {
+          "year": 2020,
+          "value": -0.02
+        },
+        {
+          "year": 2021,
+          "value": 0.04
+        },
+        {
+          "year": 2022,
+          "value": -0.07
+        },
+        {
+          "year": 2023,
+          "value": -0.09
+        },
+        {
+          "year": 2024,
+          "value": -0.01
+        }
+      ]
+    },
+    "BEL": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -17.9
+        },
+        {
+          "year": 2017,
+          "value": 11.2
+        },
+        {
+          "year": 2018,
+          "value": -4.0
+        },
+        {
+          "year": 2019,
+          "value": -8.7
+        },
+        {
+          "year": 2020,
+          "value": 6.8
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": -0.02
+        },
+        {
+          "year": 2015,
+          "value": -0.04
+        },
+        {
+          "year": 2016,
+          "value": -0.02
+        },
+        {
+          "year": 2017,
+          "value": -0.03
+        },
+        {
+          "year": 2018,
+          "value": -0.03
+        },
+        {
+          "year": 2019,
+          "value": -0.02
+        },
+        {
+          "year": 2020,
+          "value": -0.05
+        },
+        {
+          "year": 2021,
+          "value": 0.05
+        },
+        {
+          "year": 2022,
+          "value": -0.07
+        },
+        {
+          "year": 2023,
+          "value": -0.06
+        },
+        {
+          "year": 2024,
+          "value": -0.03
+        }
+      ]
+    },
+    "CHE": {
+      "bee": [
+        {
+          "year": 2017,
+          "value": 10.9
+        },
+        {
+          "year": 2018,
+          "value": -7.0
+        },
+        {
+          "year": 2019,
+          "value": -0.2
+        },
+        {
+          "year": 2020,
+          "value": -0.4
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.02
+        },
+        {
+          "year": 2015,
+          "value": 0.0
+        },
+        {
+          "year": 2016,
+          "value": 0.0
+        },
+        {
+          "year": 2017,
+          "value": -0.02
+        },
+        {
+          "year": 2018,
+          "value": 0.0
+        },
+        {
+          "year": 2019,
+          "value": -0.04
+        },
+        {
+          "year": 2020,
+          "value": -0.02
+        },
+        {
+          "year": 2021,
+          "value": 0.06
+        },
+        {
+          "year": 2022,
+          "value": -0.13
+        },
+        {
+          "year": 2023,
+          "value": -0.06
+        },
+        {
+          "year": 2024,
+          "value": -0.04
+        }
+      ]
+    },
+    "CZE": {
+      "bee": [
+        {
+          "year": 2017,
+          "value": 8.6
+        },
+        {
+          "year": 2018,
+          "value": -2.0
+        },
+        {
+          "year": 2019,
+          "value": -0.3
+        },
+        {
+          "year": 2020,
+          "value": 8.1
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.07
+        },
+        {
+          "year": 2015,
+          "value": 0.04
+        },
+        {
+          "year": 2016,
+          "value": 0.06
+        },
+        {
+          "year": 2017,
+          "value": 0.06
+        },
+        {
+          "year": 2018,
+          "value": 0.02
+        },
+        {
+          "year": 2019,
+          "value": 0.0
+        },
+        {
+          "year": 2020,
+          "value": 0.03
+        },
+        {
+          "year": 2021,
+          "value": 0.09
+        },
+        {
+          "year": 2022,
+          "value": -0.19
+        },
+        {
+          "year": 2023,
+          "value": -0.18
+        },
+        {
+          "year": 2024,
+          "value": -0.1
+        }
+      ]
+    },
+    "DEU": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -7.1
+        },
+        {
+          "year": 2017,
+          "value": 20.5
+        },
+        {
+          "year": 2018,
+          "value": -13.3
+        },
+        {
+          "year": 2019,
+          "value": -4.1
+        },
+        {
+          "year": 2020,
+          "value": 3.6
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.05
+        },
+        {
+          "year": 2015,
+          "value": 0.03
+        },
+        {
+          "year": 2016,
+          "value": 0.1
+        },
+        {
+          "year": 2017,
+          "value": -0.03
+        },
+        {
+          "year": 2018,
+          "value": 0.0
+        },
+        {
+          "year": 2019,
+          "value": -0.03
+        },
+        {
+          "year": 2020,
+          "value": -0.01
+        },
+        {
+          "year": 2021,
+          "value": 0.05
+        },
+        {
+          "year": 2022,
+          "value": -0.125
+        },
+        {
+          "year": 2023,
+          "value": -0.065
+        },
+        {
+          "year": 2024,
+          "value": -0.03
+        }
+      ]
+    },
+    "DNK": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -4.1
+        },
+        {
+          "year": 2017,
+          "value": 3.8
+        },
+        {
+          "year": 2018,
+          "value": -5.6
+        },
+        {
+          "year": 2019,
+          "value": -3.9
+        },
+        {
+          "year": 2020,
+          "value": 12.5
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.02
+        },
+        {
+          "year": 2015,
+          "value": 0.02
+        },
+        {
+          "year": 2016,
+          "value": 0.08
+        },
+        {
+          "year": 2017,
+          "value": -0.04
+        },
+        {
+          "year": 2018,
+          "value": -0.02
+        },
+        {
+          "year": 2019,
+          "value": -0.03
+        },
+        {
+          "year": 2020,
+          "value": -0.02
+        },
+        {
+          "year": 2021,
+          "value": 0.04
+        },
+        {
+          "year": 2022,
+          "value": -0.17
+        },
+        {
+          "year": 2023,
+          "value": -0.05
+        },
+        {
+          "year": 2024,
+          "value": -0.03
+        }
+      ]
+    },
+    "DZA": {
+      "bee": [
+        {
+          "year": 2017,
+          "value": -2.4
+        },
+        {
+          "year": 2018,
+          "value": -1.0
+        },
+        {
+          "year": 2019,
+          "value": 0.7
+        },
+        {
+          "year": 2020,
+          "value": 1.7
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.087
+        },
+        {
+          "year": 2015,
+          "value": 0.007
+        },
+        {
+          "year": 2016,
+          "value": 0.0
+        },
+        {
+          "year": 2017,
+          "value": -0.001
+        },
+        {
+          "year": 2018,
+          "value": -0.071
+        },
+        {
+          "year": 2019,
+          "value": -0.022
+        },
+        {
+          "year": 2020,
+          "value": -0.057
+        },
+        {
+          "year": 2021,
+          "value": -0.07
+        },
+        {
+          "year": 2022,
+          "value": -0.053
+        },
+        {
+          "year": 2023,
+          "value": -0.051
+        },
+        {
+          "year": 2024,
+          "value": -0.043
+        }
+      ]
+    },
+    "ESP": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -3.0
+        },
+        {
+          "year": 2017,
+          "value": 5.5
+        },
+        {
+          "year": 2018,
+          "value": -1.4
+        },
+        {
+          "year": 2019,
+          "value": -1.7
+        },
+        {
+          "year": 2020,
+          "value": 12.0
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.05
+        },
+        {
+          "year": 2015,
+          "value": 0.01
+        },
+        {
+          "year": 2016,
+          "value": 0.0
+        },
+        {
+          "year": 2017,
+          "value": -0.02
+        },
+        {
+          "year": 2018,
+          "value": -0.05
+        },
+        {
+          "year": 2019,
+          "value": -0.03
+        },
+        {
+          "year": 2020,
+          "value": -0.05
+        },
+        {
+          "year": 2021,
+          "value": 0.0
+        },
+        {
+          "year": 2022,
+          "value": -0.02
+        },
+        {
+          "year": 2023,
+          "value": -0.04
+        },
+        {
+          "year": 2024,
+          "value": -0.02
+        }
+      ]
+    },
+    "EST": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -7.3
+        },
+        {
+          "year": 2017,
+          "value": -2.1
+        },
+        {
+          "year": 2018,
+          "value": 3.0
+        },
+        {
+          "year": 2019,
+          "value": -3.2
+        },
+        {
+          "year": 2020,
+          "value": -0.3
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.02
+        },
+        {
+          "year": 2015,
+          "value": 0.04
+        },
+        {
+          "year": 2016,
+          "value": 0.02
+        },
+        {
+          "year": 2017,
+          "value": -0.01
+        },
+        {
+          "year": 2018,
+          "value": 0.08
+        },
+        {
+          "year": 2019,
+          "value": -0.01
+        },
+        {
+          "year": 2020,
+          "value": -0.08
+        },
+        {
+          "year": 2021,
+          "value": 0.03
+        },
+        {
+          "year": 2022,
+          "value": -0.2
+        },
+        {
+          "year": 2023,
+          "value": -0.1
+        },
+        {
+          "year": 2024,
+          "value": -0.13
+        }
+      ]
+    },
+    "FIN": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -9.3
+        },
+        {
+          "year": 2017,
+          "value": -0.8
+        },
+        {
+          "year": 2018,
+          "value": -3.9
+        },
+        {
+          "year": 2019,
+          "value": -4.4
+        },
+        {
+          "year": 2020,
+          "value": 9.5
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": -0.04
+        },
+        {
+          "year": 2015,
+          "value": -0.06
+        },
+        {
+          "year": 2016,
+          "value": -0.08
+        },
+        {
+          "year": 2017,
+          "value": -0.08
+        },
+        {
+          "year": 2018,
+          "value": -0.08
+        },
+        {
+          "year": 2019,
+          "value": -0.06
+        },
+        {
+          "year": 2020,
+          "value": 0.02
+        },
+        {
+          "year": 2021,
+          "value": 0.09
+        },
+        {
+          "year": 2022,
+          "value": -0.14
+        },
+        {
+          "year": 2023,
+          "value": -0.06
+        },
+        {
+          "year": 2024,
+          "value": -0.01
+        }
+      ]
+    },
+    "FRA": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -2.8
+        },
+        {
+          "year": 2017,
+          "value": 6.1
+        },
+        {
+          "year": 2018,
+          "value": -3.4
+        },
+        {
+          "year": 2019,
+          "value": -5.9
+        },
+        {
+          "year": 2020,
+          "value": 3.5
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.01
+        },
+        {
+          "year": 2015,
+          "value": -0.04
+        },
+        {
+          "year": 2016,
+          "value": -0.04
+        },
+        {
+          "year": 2017,
+          "value": -0.03
+        },
+        {
+          "year": 2018,
+          "value": -0.02
+        },
+        {
+          "year": 2019,
+          "value": -0.01
+        },
+        {
+          "year": 2020,
+          "value": -0.04
+        },
+        {
+          "year": 2021,
+          "value": 0.01
+        },
+        {
+          "year": 2022,
+          "value": -0.05
+        },
+        {
+          "year": 2023,
+          "value": -0.12
+        },
+        {
+          "year": 2024,
+          "value": -0.05
+        }
+      ]
+    },
+    "IRL": {
+      "bee": [
+        {
+          "year": 2017,
+          "value": -16.2
+        },
+        {
+          "year": 2018,
+          "value": 9.3
+        },
+        {
+          "year": 2019,
+          "value": -11.9
+        },
+        {
+          "year": 2020,
+          "value": 7.3
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": -0.04
+        },
+        {
+          "year": 2015,
+          "value": -0.04
+        },
+        {
+          "year": 2016,
+          "value": -0.04
+        },
+        {
+          "year": 2017,
+          "value": -0.05
+        },
+        {
+          "year": 2018,
+          "value": -0.02
+        },
+        {
+          "year": 2019,
+          "value": -0.05
+        },
+        {
+          "year": 2020,
+          "value": -0.09
+        },
+        {
+          "year": 2021,
+          "value": 0.12
+        },
+        {
+          "year": 2022,
+          "value": -0.21
+        },
+        {
+          "year": 2023,
+          "value": -0.01
+        },
+        {
+          "year": 2024,
+          "value": -0.03
+        }
+      ]
+    },
+    "ISR": {
+      "bee": [
+        {
+          "year": 2017,
+          "value": 4.1
+        },
+        {
+          "year": 2018,
+          "value": -6.4
+        },
+        {
+          "year": 2019,
+          "value": -1.6
+        },
+        {
+          "year": 2020,
+          "value": 2.2
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.05
+        },
+        {
+          "year": 2015,
+          "value": 0.01
+        },
+        {
+          "year": 2016,
+          "value": 0.02
+        },
+        {
+          "year": 2017,
+          "value": 0.0
+        },
+        {
+          "year": 2018,
+          "value": -0.02
+        },
+        {
+          "year": 2019,
+          "value": -0.08
+        },
+        {
+          "year": 2020,
+          "value": -0.11
+        },
+        {
+          "year": 2021,
+          "value": 0.1
+        },
+        {
+          "year": 2022,
+          "value": -0.11
+        },
+        {
+          "year": 2023,
+          "value": -0.04
+        },
+        {
+          "year": 2024,
+          "value": 0.02
+        }
+      ]
+    },
+    "ITA": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": 1.1
+        },
+        {
+          "year": 2017,
+          "value": 6.7
+        },
+        {
+          "year": 2018,
+          "value": 10.2
+        },
+        {
+          "year": 2019,
+          "value": -12.9
+        },
+        {
+          "year": 2020,
+          "value": 1.9
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": -0.01
+        },
+        {
+          "year": 2015,
+          "value": -0.02
+        },
+        {
+          "year": 2016,
+          "value": 0.0
+        },
+        {
+          "year": 2017,
+          "value": -0.02
+        },
+        {
+          "year": 2018,
+          "value": -0.03
+        },
+        {
+          "year": 2019,
+          "value": -0.04
+        },
+        {
+          "year": 2020,
+          "value": -0.03
+        },
+        {
+          "year": 2021,
+          "value": 0.01
+        },
+        {
+          "year": 2022,
+          "value": -0.01
+        },
+        {
+          "year": 2023,
+          "value": -0.03
+        },
+        {
+          "year": 2024,
+          "value": -0.03
+        }
+      ]
+    },
+    "LVA": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -10.9
+        },
+        {
+          "year": 2017,
+          "value": 3.5
+        },
+        {
+          "year": 2018,
+          "value": -1.9
+        },
+        {
+          "year": 2019,
+          "value": -2.5
+        },
+        {
+          "year": 2020,
+          "value": 0.2
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.13
+        },
+        {
+          "year": 2015,
+          "value": 0.05
+        },
+        {
+          "year": 2016,
+          "value": 0.04
+        },
+        {
+          "year": 2017,
+          "value": -0.05
+        },
+        {
+          "year": 2018,
+          "value": -0.09
+        },
+        {
+          "year": 2019,
+          "value": 0.01
+        },
+        {
+          "year": 2020,
+          "value": -0.06
+        },
+        {
+          "year": 2021,
+          "value": 0.02
+        },
+        {
+          "year": 2022,
+          "value": -0.1
+        },
+        {
+          "year": 2023,
+          "value": -0.11
+        },
+        {
+          "year": 2024,
+          "value": -0.12
+        }
+      ]
+    },
+    "MKD": {
+      "bee": [
+        {
+          "year": 2017,
+          "value": 14.5
+        },
+        {
+          "year": 2018,
+          "value": -9.3
+        },
+        {
+          "year": 2019,
+          "value": 0.0
+        },
+        {
+          "year": 2020,
+          "value": 1.5
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.0
+        },
+        {
+          "year": 2015,
+          "value": -0.01
+        },
+        {
+          "year": 2016,
+          "value": 0.01
+        },
+        {
+          "year": 2017,
+          "value": -0.07
+        },
+        {
+          "year": 2018,
+          "value": -0.01
+        },
+        {
+          "year": 2019,
+          "value": -0.08
+        },
+        {
+          "year": 2020,
+          "value": -0.03
+        },
+        {
+          "year": 2021,
+          "value": 0.29
+        },
+        {
+          "year": 2022,
+          "value": 0.0
+        },
+        {
+          "year": 2023,
+          "value": -0.1
+        },
+        {
+          "year": 2024,
+          "value": -0.1
+        }
+      ]
+    },
+    "NOR": {
+      "bee": [
+        {
+          "year": 2017,
+          "value": -4.4
+        },
+        {
+          "year": 2018,
+          "value": 4.0
+        },
+        {
+          "year": 2019,
+          "value": -3.4
+        },
+        {
+          "year": 2020,
+          "value": -0.9
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": -0.03
+        },
+        {
+          "year": 2015,
+          "value": -0.03
+        },
+        {
+          "year": 2016,
+          "value": -0.01
+        },
+        {
+          "year": 2017,
+          "value": -0.09
+        },
+        {
+          "year": 2018,
+          "value": -0.06
+        },
+        {
+          "year": 2019,
+          "value": -0.03
+        },
+        {
+          "year": 2020,
+          "value": -0.05
+        },
+        {
+          "year": 2021,
+          "value": 0.07
+        },
+        {
+          "year": 2022,
+          "value": -0.14
+        },
+        {
+          "year": 2023,
+          "value": -0.01
+        },
+        {
+          "year": 2024,
+          "value": 0.05
+        }
+      ]
+    },
+    "POL": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -14.8
+        },
+        {
+          "year": 2017,
+          "value": 10.5
+        },
+        {
+          "year": 2018,
+          "value": -7.6
+        },
+        {
+          "year": 2019,
+          "value": -3.5
+        },
+        {
+          "year": 2020,
+          "value": 3.2
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.03
+        },
+        {
+          "year": 2015,
+          "value": 0.0
+        },
+        {
+          "year": 2016,
+          "value": 0.07
+        },
+        {
+          "year": 2017,
+          "value": 0.09
+        },
+        {
+          "year": 2018,
+          "value": -0.02
+        },
+        {
+          "year": 2019,
+          "value": -0.02
+        },
+        {
+          "year": 2020,
+          "value": -0.05
+        },
+        {
+          "year": 2021,
+          "value": -0.06
+        },
+        {
+          "year": 2022,
+          "value": -0.04
+        },
+        {
+          "year": 2023,
+          "value": -0.09
+        },
+        {
+          "year": 2024,
+          "value": -0.06
+        }
+      ]
+    },
+    "SVK": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -5.7
+        },
+        {
+          "year": 2017,
+          "value": 8.0
+        },
+        {
+          "year": 2018,
+          "value": -6.2
+        },
+        {
+          "year": 2019,
+          "value": 5.5
+        },
+        {
+          "year": 2020,
+          "value": 3.4
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.03
+        },
+        {
+          "year": 2015,
+          "value": 0.03
+        },
+        {
+          "year": 2016,
+          "value": 0.08
+        },
+        {
+          "year": 2017,
+          "value": 0.04
+        },
+        {
+          "year": 2018,
+          "value": 0.02
+        },
+        {
+          "year": 2019,
+          "value": 0.03
+        },
+        {
+          "year": 2020,
+          "value": 0.02
+        },
+        {
+          "year": 2021,
+          "value": 0.04
+        },
+        {
+          "year": 2022,
+          "value": -0.06
+        },
+        {
+          "year": 2023,
+          "value": -0.08
+        },
+        {
+          "year": 2024,
+          "value": -0.03
+        }
+      ]
+    },
+    "SVN": {
+      "bee": [
+        {
+          "year": 2017,
+          "value": 5.4
+        },
+        {
+          "year": 2018,
+          "value": 10.3
+        },
+        {
+          "year": 2019,
+          "value": 2.1
+        },
+        {
+          "year": 2020,
+          "value": -3.1
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.03
+        },
+        {
+          "year": 2015,
+          "value": -0.01
+        },
+        {
+          "year": 2016,
+          "value": 0.01
+        },
+        {
+          "year": 2017,
+          "value": 0.04
+        },
+        {
+          "year": 2018,
+          "value": -0.02
+        },
+        {
+          "year": 2019,
+          "value": 0.01
+        },
+        {
+          "year": 2020,
+          "value": -0.02
+        },
+        {
+          "year": 2021,
+          "value": 0.05
+        },
+        {
+          "year": 2022,
+          "value": -0.09
+        },
+        {
+          "year": 2023,
+          "value": -0.04
+        },
+        {
+          "year": 2024,
+          "value": 0.01
+        }
+      ]
+    },
+    "SWE": {
+      "bee": [
+        {
+          "year": 2014,
+          "value": -10.7
+        },
+        {
+          "year": 2017,
+          "value": -0.7
+        },
+        {
+          "year": 2018,
+          "value": -0.3
+        },
+        {
+          "year": 2019,
+          "value": -3.5
+        },
+        {
+          "year": 2020,
+          "value": 1.7
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": -0.01
+        },
+        {
+          "year": 2015,
+          "value": -0.03
+        },
+        {
+          "year": 2016,
+          "value": 0.0
+        },
+        {
+          "year": 2017,
+          "value": -0.07
+        },
+        {
+          "year": 2018,
+          "value": -0.02
+        },
+        {
+          "year": 2019,
+          "value": -0.05
+        },
+        {
+          "year": 2020,
+          "value": -0.04
+        },
+        {
+          "year": 2021,
+          "value": 0.0
+        },
+        {
+          "year": 2022,
+          "value": -0.14
+        },
+        {
+          "year": 2023,
+          "value": -0.08
+        },
+        {
+          "year": 2024,
+          "value": -0.02
+        }
+      ]
+    },
+    "UKR": {
+      "bee": [
+        {
+          "year": 2017,
+          "value": 8.0
+        },
+        {
+          "year": 2018,
+          "value": -6.6
+        },
+        {
+          "year": 2019,
+          "value": -0.1
+        },
+        {
+          "year": 2020,
+          "value": -1.9
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": -0.049
+        },
+        {
+          "year": 2015,
+          "value": -0.079
+        },
+        {
+          "year": 2016,
+          "value": 0.004
+        },
+        {
+          "year": 2017,
+          "value": -0.091
+        },
+        {
+          "year": 2018,
+          "value": -0.067
+        },
+        {
+          "year": 2019,
+          "value": -0.015
+        },
+        {
+          "year": 2020,
+          "value": -0.01
+        },
+        {
+          "year": 2021,
+          "value": -0.06
+        },
+        {
+          "year": 2022,
+          "value": -0.251
+        },
+        {
+          "year": 2023,
+          "value": 0.08
+        },
+        {
+          "year": 2024,
+          "value": 0.011
+        }
+      ]
+    },
+    "USA": {
+      "bee": [
+        {
+          "year": 2008,
+          "value": 4.0
+        },
+        {
+          "year": 2009,
+          "value": -7.0
+        },
+        {
+          "year": 2010,
+          "value": 5.0
+        },
+        {
+          "year": 2011,
+          "value": -4.0
+        },
+        {
+          "year": 2012,
+          "value": -8.1
+        },
+        {
+          "year": 2013,
+          "value": 9.2
+        },
+        {
+          "year": 2014,
+          "value": -7.9
+        },
+        {
+          "year": 2015,
+          "value": -0.1
+        },
+        {
+          "year": 2016,
+          "value": 5.0
+        },
+        {
+          "year": 2017,
+          "value": -7.0
+        },
+        {
+          "year": 2018,
+          "value": 9.6
+        },
+        {
+          "year": 2019,
+          "value": 7.0
+        },
+        {
+          "year": 2020,
+          "value": -15.5
+        },
+        {
+          "year": 2021,
+          "value": 10.0
+        },
+        {
+          "year": 2022,
+          "value": 6.8
+        },
+        {
+          "year": 2023,
+          "value": -1.6
+        },
+        {
+          "year": 2024,
+          "value": 0.0
+        },
+        {
+          "year": 2025,
+          "value": -0.1
+        }
+      ],
+      "tfr": [
+        {
+          "year": 2014,
+          "value": 0.005
+        },
+        {
+          "year": 2015,
+          "value": -0.019
+        },
+        {
+          "year": 2016,
+          "value": -0.023
+        },
+        {
+          "year": 2017,
+          "value": -0.055
+        },
+        {
+          "year": 2018,
+          "value": -0.036
+        },
+        {
+          "year": 2019,
+          "value": -0.0235
+        },
+        {
+          "year": 2020,
+          "value": -0.0645
+        },
+        {
+          "year": 2021,
+          "value": 0.0225
+        },
+        {
+          "year": 2022,
+          "value": -0.0075
+        },
+        {
+          "year": 2023,
+          "value": -0.04
+        },
+        {
+          "year": 2024,
+          "value": 0.01
+        }
+      ]
+    }
+  },
+  "published": {
+    "pooledR": -0.272,
+    "circularShiftP": 0.006,
+    "bermDirection": 20,
+    "panelSize": 23,
+    "optimalLagYears": 2,
+    "note": "pooled_r and circular_shift_p come from the within-country pooled analysis, which controls for level differences between countries. The pooled annual means drawn in the figure remove those differences and therefore correlate differently."
+  }
+}
