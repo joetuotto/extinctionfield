@@ -534,7 +534,9 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
                   <text x={8} y={0} fill={c} fontSize={8} fontWeight="700" textAnchor="middle" dominantBaseline="middle" fontFamily="ui-monospace, monospace">
                     {lvl}
                   </text>
-                  <text x={20} y={1} fill="var(--foreground-muted)" fontSize={10} fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" dominantBaseline="middle">
+                  {/* 9px keeps the longest English label ("Theory / measurement
+                      premise") inside the viewBox in the last legend slot. */}
+                  <text x={20} y={1} fill="var(--foreground-muted)" fontSize={9} fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" dominantBaseline="middle">
                     {lbl}
                   </text>
                 </g>
