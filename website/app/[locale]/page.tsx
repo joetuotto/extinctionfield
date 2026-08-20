@@ -448,14 +448,51 @@ export default async function Home({
         <ReferencesSummary locale={activeLocale} />
       </section>
 
-      {/* Navigation links */}
-      <section className="flex flex-wrap gap-3 border-t border-card-border pt-6">
-        <Link href={`${prefix}/model`} className="inline-flex items-center bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover">{d.methods}</Link>
-        <Link href={`${prefix}/evidence`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.evidence}</Link>
-        <Link href={`${prefix}/predictions`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.predictions}</Link>
-        <Link href={`${prefix}/explore`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.explore}</Link>
-        <Link href={`${prefix}/sentinel`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.sentinel}</Link>
-        <Link href={`${prefix}/berm-v18`} className="inline-flex items-center border border-border/50 px-5 py-2.5 text-xs font-medium text-foreground-muted/60 transition-colors hover:text-foreground-muted">{d.archive}</Link>
+      {/* Navigation cards */}
+      <section className="border-t border-card-border pt-8">
+        <div className="grid gap-4 sm:grid-cols-3 mb-6">
+          <Link
+            href={`${prefix}/model`}
+            className="group rounded-xl border border-card-border bg-card-bg p-5 transition-colors hover:border-accent/40"
+          >
+            <h3 className="text-sm font-semibold group-hover:text-accent transition-colors">{d.methods}</h3>
+            <p className="mt-2 text-xs leading-relaxed text-foreground-muted">
+              {activeLocale === "fi"
+                ? "FieldState–ASFR v2 -arkkitehtuuri, polkuhierarkia ja matemaattinen määrittely."
+                : "FieldState–ASFR v2 architecture, pathway hierarchy and mathematical specification."}
+            </p>
+            <p className="mt-3 text-xs font-medium text-accent">{activeLocale === "fi" ? "Avaa" : "Open"} →</p>
+          </Link>
+          <Link
+            href={`${prefix}/evidence`}
+            className="group rounded-xl border border-card-border bg-card-bg p-5 transition-colors hover:border-accent/40"
+          >
+            <h3 className="text-sm font-semibold group-hover:text-accent transition-colors">{d.evidence}</h3>
+            <p className="mt-2 text-xs leading-relaxed text-foreground-muted">
+              {activeLocale === "fi"
+                ? "Rajatut tutkimus–solmu-tietueet kausaalireitillä ja laajennettu evidenssirekisteri."
+                : "Bounded study-to-node records on the causal route and extended evidence registry."}
+            </p>
+            <p className="mt-3 text-xs font-medium text-accent">{activeLocale === "fi" ? "Avaa" : "Open"} →</p>
+          </Link>
+          <Link
+            href={`${prefix}/predictions`}
+            className="group rounded-xl border border-card-border bg-card-bg p-5 transition-colors hover:border-accent/40"
+          >
+            <h3 className="text-sm font-semibold group-hover:text-accent transition-colors">{d.predictions}</h3>
+            <p className="mt-2 text-xs leading-relaxed text-foreground-muted">
+              {activeLocale === "fi"
+                ? "Lukitut TFR-ennusteet BERM v18 -arkkitehtuurilla, vertailtavissa havaittuun dataan."
+                : "Locked TFR predictions under the BERM v18 architecture, comparable against observed data."}
+            </p>
+            <p className="mt-3 text-xs font-medium text-accent">{activeLocale === "fi" ? "Avaa" : "Open"} →</p>
+          </Link>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <Link href={`${prefix}/explore`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.explore}</Link>
+          <Link href={`${prefix}/sentinel`} className="inline-flex items-center border border-border px-5 py-2.5 text-sm font-medium text-foreground-muted transition-colors hover:text-foreground">{d.sentinel}</Link>
+          <Link href={`${prefix}/berm-v18`} className="inline-flex items-center border border-border/50 px-5 py-2.5 text-xs font-medium text-foreground-muted/60 transition-colors hover:text-foreground-muted">{d.archive}</Link>
+        </div>
       </section>
     </div>
   );
