@@ -4,7 +4,7 @@ berm/
 *.pkl
 *.parquet
 *.csv
-data/
+/data/
 notebooks/
 __pycache__/
 *.pyc
