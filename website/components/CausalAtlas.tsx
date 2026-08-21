@@ -299,44 +299,45 @@ function AtlasInner({ locale }: { locale: string }) {
           </div>
         </Panel>
 
-        {/* Guided mode scene navigator */}
-        {mode === "guided" && scene && (
-          <Panel position="bottom-center" className="!mb-4">
-            <div className="bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-4 max-w-lg text-center">
-              <h3 className="text-sm font-bold text-gray-100 mb-1.5">{scene.title[lang]}</h3>
-              <p className="text-xs text-gray-400 leading-relaxed mb-3">{scene.description[lang]}</p>
-              <div className="flex items-center justify-center gap-4">
-                <button
-                  onClick={prevScene}
-                  disabled={sceneIdx === 0}
-                  className="p-1.5 rounded-md hover:bg-white/10 transition-colors disabled:opacity-30 text-gray-300"
-                  aria-label="Previous scene"
-                >
-                  <ChevronLeft size={16} />
-                </button>
-                <div className="flex gap-1.5">
-                  {GUIDED_SCENES.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setSceneIdx(i)}
-                      className={`w-2 h-2 rounded-full transition-colors ${i === sceneIdx ? "bg-blue-400" : "bg-gray-600 hover:bg-gray-500"}`}
-                      aria-label={`Scene ${i + 1}`}
-                    />
-                  ))}
-                </div>
-                <button
-                  onClick={nextScene}
-                  disabled={sceneIdx === GUIDED_SCENES.length - 1}
-                  className="p-1.5 rounded-md hover:bg-white/10 transition-colors disabled:opacity-30 text-gray-300"
-                  aria-label="Next scene"
-                >
-                  <ChevronRight size={16} />
-                </button>
-              </div>
-            </div>
-          </Panel>
-        )}
       </ReactFlow>
+
+      {/* Guided mode scene navigator — fixed to viewport bottom */}
+      {mode === "guided" && scene && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-auto">
+          <div className="bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-4 max-w-lg text-center">
+            <h3 className="text-sm font-bold text-gray-100 mb-1.5">{scene.title[lang]}</h3>
+            <p className="text-xs text-gray-400 leading-relaxed mb-3">{scene.description[lang]}</p>
+            <div className="flex items-center justify-center gap-4">
+              <button
+                onClick={prevScene}
+                disabled={sceneIdx === 0}
+                className="p-1.5 rounded-md hover:bg-white/10 transition-colors disabled:opacity-30 text-gray-300"
+                aria-label="Previous scene"
+              >
+                <ChevronLeft size={16} />
+              </button>
+              <div className="flex gap-1.5">
+                {GUIDED_SCENES.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setSceneIdx(i)}
+                    className={`w-2 h-2 rounded-full transition-colors ${i === sceneIdx ? "bg-blue-400" : "bg-gray-600 hover:bg-gray-500"}`}
+                    aria-label={`Scene ${i + 1}`}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={nextScene}
+                disabled={sceneIdx === GUIDED_SCENES.length - 1}
+                className="p-1.5 rounded-md hover:bg-white/10 transition-colors disabled:opacity-30 text-gray-300"
+                aria-label="Next scene"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {selectedNode && (
         <AtlasDetail node={selectedNode} locale={locale} onClose={() => setSelectedNode(null)} />
