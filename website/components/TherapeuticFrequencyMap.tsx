@@ -41,7 +41,7 @@ const DEVICES: Device[] = [
     freqMax: 0.1,
     freqLabel: "DC",
     mechanism: "0.3–1.0 V/m modulates cortical excitability",
-    mechanismFi: "0.3–1.0 V/m moduloi kortikaalista eksitabiliteettia",
+    mechanismFi: "0,3–1,0 V/m moduloi kortikaalista eksitabiliteettia",
     nonThermal: true,
     bermPath: "D",
     color: "#9C27B0",

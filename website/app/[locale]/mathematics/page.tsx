@@ -494,7 +494,7 @@ const t = {
     s4d3:
       "Kynnysarvo θ = 5 heijastaa biologista vastustuskykyä: pienet altistukset eivät ylitä korjausmekanismien kapasiteettia.",
     s4d4:
-      'a = 6.5 on kalibroitu: se on likimääräinen "luonnollinen TFR" ilman EMF-altistusta (vrt. amissit ≈ 6.5, hutteristit ≈ 9.0).',
+      'a = 6,5 on kalibroitu: se on likimääräinen "luonnollinen TFR" ilman EMF-altistusta (vrt. amissit ≈ 6,5, hutteristit ≈ 9,0).',
     s4d5Link: "→ Kontrolloitu laboratorionäyttö bioCap-parametreille",
 
     // S5 Behavioral
@@ -505,11 +505,11 @@ const t = {
     s5d2: "Geometrinen keskiarvo: (OT × T × DA × cort)^(1/4)",
     s5d3:
       "Geometrinen > aritmeettinen, koska hormonit ovat MULTIPLIKATIIVISIA: jos yksikin on nolla, kokonaisvaikutus on nolla.",
-    s5d4: "r₂ = 0.013 on kalibroitu Travisonin −1 %/vuosi testosteronilaskusta:",
+    s5d4: "r₂ = 0,013 on kalibroitu Travisonin −1 %/vuosi testosteronilaskusta:",
     s5d5: "Jos dEMF/dt ≈ 1/vuosi → dT/T ≈ −1,3 %/vuosi ≈ Travison.",
     s5otTitle: "OT-parametrin biologinen perustelu",
     s5otIntro:
-      "OT-parametri r₁ = 0.010 ei ole sovitettu datasta. Se seuraa kahdesta itsenäisestä biologisesta mekanismista, jotka molemmat tukahduttavat oksitosiinia EMF-olosuhteissa:",
+      "OT-parametri r₁ = 0,010 ei ole sovitettu datasta. Se seuraa kahdesta itsenäisestä biologisesta mekanismista, jotka molemmat tukahduttavat oksitosiinia EMF-olosuhteissa:",
     s5otRoute1Title: "Reitti 1 (HPA → vagaalinen):",
     s5otRoute1:
       "EMF → kortisoli↑ (Pawlak 2025, d=1,88) → vagaalinen suppressio (Porges 2001: myelinisoitu vagus vaimentaa HPA:ta; krooninen stressi kääntää tämän) → oksitosiini↓ (ventraalinen vagaalikompleksi → hypotalaaminen OT-vapautus) → sosiaalinen sitoutuminen↓ (Carter 2021, Feldman 2012)",
@@ -1246,7 +1246,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 </div>
                 <div className="text-center my-2 text-sm text-foreground-muted">
                   {locale === "fi"
-                    ? "Jos jokainen P_i laskee 20%: 0.8⁴ = 0.41 → 59% lasku"
+                    ? "Jos jokainen P_i laskee 20 %: 0,8⁴ = 0,41 → 59 % lasku"
                     : "If each P_i drops 20%: 0.8⁴ = 0.41 → 59% reduction"}
                 </div>
               </div>

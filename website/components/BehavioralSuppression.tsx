@@ -24,12 +24,12 @@ const t = {
   },
   fi: {
     title: "Nelinkertainen käyttäytymissuppressio",
-    desc: "Hedelmällisyyden lasku toimii neljän multiplikatiivisen hormonaalisen kanavan kautta. Kukin kanava vähentää itsenäisesti lisääntymistodennäköisyyttä ~20%. Koska kanavat ovat multiplikatiivisia (eivät additiivisia), yhdistetty vaikutus on paljon suurempi kuin mikään yksittäinen kanava: 0,8⁴ = 0,41 — 59% vähennys hedelmällisyysrelevantissa käyttäytymisessä.",
+    desc: "Hedelmällisyyden lasku toimii neljän multiplikatiivisen hormonaalisen kanavan kautta. Kukin kanava vähentää itsenäisesti lisääntymistodennäköisyyttä ~20 %. Koska kanavat ovat multiplikatiivisia (eivät additiivisia), yhdistetty vaikutus on paljon suurempi kuin mikään yksittäinen kanava: 0,8⁴ = 0,41 — 59 % vähennys lisääntymiskäyttäytymisessä.",
     channel: "Kanava",
     mechanism: "Mekanismi",
     factor: "Kerroin",
     combined: "Yhdistetty vaikutus",
-    reduction: "vähennys hedelmällisyysrelevantissa käyttäytymisessä",
+    reduction: "vähennys lisääntymiskäyttäytymisessä",
     c1Name: "Testosteroni → lähestyminen",
     c1Mech: "T:n lasku vähentää miesten lähestymiskäyttäytymistä ja kumppanin etsintää (Puts 2008)",
     c2Name: "Fenotyyppi → vetovoima",
@@ -37,11 +37,11 @@ const t = {
     c3Name: "Oksitosiini → parisuhde",
     c3Mech: "OT:n ja T:n lasku pariskunnissa vähentää seksuaalista aktiivisuutta ja parisidettä (Carter 2021)",
     c4Name: "Siittiöiden laatu → hedelmöitys",
-    c4Mech: "Siittiöiden laadun heikkeneminen vähentää per-kerta hedelmöitystodennäköisyyttä (Levine 2023)",
+    c4Mech: "Siittiöiden laadun heikkeneminen vähentää kertakohtaista hedelmöitystodennäköisyyttä (Levine 2023)",
     dualHormone: "Kaksoishormonaalinen yhdistelmä",
     dualHormoneDesc: "Testosteronin käyttäytymisvaikutukset vaativat matalan kortisolin (Mehta 2015). EMF nostaa kroonisesti kortisolia JA laskee testosteronia, luoden kaksinkertaisen suppression kunkin kanavan sisällä.",
     policy: "Poliittinen implikaatio",
-    policyDesc: "Tämä selittää miksi pronatalilisit talouspolitiikat epäonnistuvat johdonmukaisesti — ne kohdistuvat tietoiseen valintaan (\"onko meillä varaa lapseen?\"), mutta suppressio toimii tiedostamattomalla hormonaalisella tasolla. Etelä-Korea käytti 200 miljardia dollaria pronatalisleihin (2006–2024); TFR laski 1,13:sta 0,72:een.",
+    policyDesc: "Tämä selittää miksi pronatalistiset talouspolitiikat epäonnistuvat johdonmukaisesti — ne kohdistuvat tietoiseen valintaan (\"onko meillä varaa lapseen?\"), mutta suppressio toimii tiedostamattomalla hormonaalisella tasolla. Etelä-Korea käytti 200 miljardia dollaria syntyvyyskannusteisiin (2006–2024); TFR laski 1,13:sta 0,72:een.",
   },
 } as const;
 
@@ -106,7 +106,7 @@ export function BehavioralSuppression({ locale }: Props) {
             ))}
             <tr className="bg-status-refuted/5">
               <td className="py-2.5 pr-4 font-semibold">{d.combined}</td>
-              <td className="py-2.5 pr-4 text-status-refuted font-medium">59% {d.reduction}</td>
+              <td className="py-2.5 pr-4 text-status-refuted font-medium">{locale === "fi" ? "59 %" : "59%"} {d.reduction}</td>
               <td className="py-2.5 text-right font-mono-num font-bold text-status-refuted">{combined.toFixed(2)}</td>
             </tr>
           </tbody>

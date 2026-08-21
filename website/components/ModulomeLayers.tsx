@@ -137,7 +137,7 @@ const LAYERS: Layer[] = [
     freq: "N/A (geometric property)",
     freqFi: "N/A (geometrinen ominaisuus)",
     target: "Vmem = −70 mV / 10 nm → χ(Ā) ≈ 1.0",
-    targetFi: "Vmem = −70 mV / 10 nm → χ(Ā) ≈ 1.0",
+    targetFi: "Vmem = −70 mV / 10 nm → χ(Ā) ≈ 1,0",
     fdaEvidence: "Indirect (all devices combined)",
     fdaEvidenceFi: "Epäsuora (kaikki laitteet yhdessä)",
     bermPath: "Lindgren",

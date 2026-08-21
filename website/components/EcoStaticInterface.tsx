@@ -91,6 +91,7 @@ type Copy = {
   selectionLandscapeP2: string;
   selectionLandscapeArticleLink: string;
   selectionLandscapeSentinelLink: string;
+  selectionLandscapeNote: string;
   sentinelLink: string;
   measurementLink: string;
   modelLink: string;
@@ -328,6 +329,7 @@ const COPY: Record<Locale, Copy> = {
     selectionLandscapeP2: "The honeybee-Varroa system is the clearest case study: EMF simultaneously weakens the host and does not affect the parasite, creating a \"double cascade\" that amplifies all other stressors.",
     selectionLandscapeArticleLink: "Case study: Why the Bees Can't Fight Back",
     selectionLandscapeSentinelLink: "Full analysis on sentinel page",
+    selectionLandscapeNote: "Species positions are BERM-Eco estimates [H] based on known mechanisms, not quantitative fitness measurements. The scatter illustrates the hypothesis that EM-dependent species are systematically disadvantaged in the changed FieldState.",
     protocolTitle: "Minimal discriminating study design",
     protocol: [
       "Measure surface potential or local static field, geometry, separation distance, material, grounding state, temperature and relative humidity for every trial.",
@@ -618,6 +620,7 @@ const COPY: Record<Locale, Copy> = {
     selectionLandscapeP2: "Mehiläis-Varroa-järjestelmä on selkein tapaustutkimus: EMF heikentää samanaikaisesti isäntää eikä vaikuta loiseen, luoden \"kaksinkertaisen kaskadin\" joka vahvistaa kaikkia muita stressitekijöitä.",
     selectionLandscapeArticleLink: "Tapaustutkimus: Miksi mehiläiset eivät pysty puolustautumaan",
     selectionLandscapeSentinelLink: "Täysi analyysi sentinellisivulla",
+    selectionLandscapeNote: "Lajien sijainnit ovat BERM-Eco-arvioita [H] perustuen tunnettuihin mekanismeihin, eivät kvantitatiivisia kelpoisuusmittauksia. Hajontakuvaaja havainnollistaa hypoteesia, jonka mukaan EM-riippuvaiset lajit ovat systemaattisesti epäedullisessa asemassa muuttuneessa FieldStatessa.",
     protocolTitle: "Minimaalinen erottava tutkimusasetelma",
     protocol: [
       "Mittaa jokaisessa kokeessa pintapotentiaali tai paikallinen staattinen kenttä, geometria, erotusetäisyys, materiaali, maadoitustila, lämpötila ja suhteellinen kosteus.",
@@ -950,6 +953,10 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
             </div>
           </div>
         </div>
+
+        <p className="mt-4 text-xs text-foreground-muted/60 leading-relaxed italic">
+          {d.selectionLandscapeNote}
+        </p>
 
         <div className="mt-6 flex flex-wrap gap-4 text-sm">
           <Link href={`/${language}/sentinel`} className="text-accent hover:underline">

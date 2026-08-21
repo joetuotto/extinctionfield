@@ -30,6 +30,7 @@ const COPY = {
     ] as ProfileRow[],
     sentinelLink: "See Varroa cascade analysis",
     ecologyLink: "Selection landscape",
+    epistemicNote: "Sensitivity ratings are BERM-Eco estimates [H] based on known mechanisms and body-plan physics — not measured differential values. Individual mechanism citations carry their own evidence levels (see references).",
   },
   fi: {
     title: "BERM-Eco: Differentiaalinen sähkömagneettinen herkkyys uutena valintapaineena",
@@ -46,12 +47,13 @@ const COPY = {
       { organism: "Muuttolintu", stars: 5, mechanism: "CRY/RPM-kompassi", effect: "Desorientoituu" },
       { organism: "Lepakko", stars: 4, mechanism: "Magneettikompassi", effect: "Desorientoituu" },
       { organism: "Yöperhonen", stars: 4, mechanism: "GHz-resonanssi", effect: "Absorptiokasvu" },
-      { organism: "Ihminen", stars: 3, mechanism: "VGCC, CRY, VNS", effect: "Krooniset sair." },
+      { organism: "Ihminen", stars: 3, mechanism: "VGCC, CRY, VNS", effect: "Krooninen tauti" },
       { organism: "Varroa-punkki", stars: 1, mechanism: "Kemiallinen", effect: "Suojassa" },
       { organism: "Ixodes-punkki", stars: 1, mechanism: "Sähköstaattinen", effect: "Voi hyötyä" },
     ] as ProfileRow[],
     sentinelLink: "Katso Varroa-kaskadianalyysi",
-    ecologyLink: "Valintalandskappi",
+    ecologyLink: "Valintamaisema",
+    epistemicNote: "Herkkyysluokitukset ovat BERM-Eco-arvioita [H] perustuen tunnettuihin mekanismeihin ja ruumiinrakenteen fysiikkaan — eivät mitattuja differentiaaliarvoja. Yksittäisten mekanismien viittaukset kantavat omat evidenssitasonsa (ks. lähdeluettelo).",
   },
 } as const;
 
@@ -118,6 +120,10 @@ export function DifferentialSusceptibility({ locale }: { locale: Locale }) {
           </table>
         </div>
       </div>
+
+      <p className="text-xs text-foreground-muted/60 leading-relaxed italic mb-6">
+        {d.epistemicNote}
+      </p>
 
       <div className="flex flex-wrap gap-4 text-sm">
         <Link href={`${prefix}/sentinel`} className="text-accent hover:underline">

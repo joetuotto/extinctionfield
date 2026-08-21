@@ -248,7 +248,7 @@ const COPY = {
     subtitle: "12 itsenäistä EMF-teknologiakerrosta, joista jokaisella on oma ajurinsa, taajuusprofiilinsa ja käyttöönottoaikataulunsa. Ortogonaaliset instrumentit parantavat mallin kykyä erottaa biologiset vaikutukset taloudellisista sekoittajista.",
     timelineTitle: "EMF-kerrosten käyttöönottoaikajana",
     timelineNote: "Jokainen nauha osoittaa milloin teknologiakerros tuli ympäristöön. Sentinellitapahtumat (▼) merkitsevät keskeisiä ekologisia havaintoja.",
-    matrixTitle: "Kerros × Sentinelli -kohdistus",
+    matrixTitle: "Kerros × Sentinelli-kohdistus",
     matrixNote: "Kunkin EMF-kerroksen relevanssi kullekin sentinellilajille. ●●● = vahva mekanistinen + havaintopohjainen yhteys. ●● = kohtalainen. ● = heikko. ○ = ei tunnettua yhteyttä.",
     layer: "Kerros",
     freq: "Taajuus",
