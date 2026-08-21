@@ -61,7 +61,3 @@ export function levelLabel(level: string | null, locale: "en" | "fi"): string {
 export function categoryName(cat: ReferenceCategory, locale: "en" | "fi"): string {
   return locale === "fi" ? cat.name_fi : cat.name_en;
 }
-
-export function categoryDescription(cat: ReferenceCategory, locale: "en" | "fi"): string {
-  return locale === "fi" ? cat.description_fi : cat.description_en;
-}

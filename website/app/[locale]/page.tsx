@@ -1,14 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TrendingDown, Microscope, TestTube, Globe2, Banknote, ArrowRight, Shield, Zap } from "lucide-react";
-import CausalChain from "@/components/CausalChain";
+import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, ArrowRight, Shield, Zap } from "lucide-react";
+import { ThreeChannelSummary } from "@/components/ThreeChannelSummary";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
 import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
 import { LatestArticles } from "@/components/LatestArticles";
 import { Sparkline } from "@/components/SparklineCard";
+import { readFileSync } from "fs";
+import { join } from "path";
 
-const SPARKLINE_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote] as const;
+const SPARKLINE_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon] as const;
+
+function getFalsificationStats() {
+  try {
+    const raw = readFileSync(join(process.cwd(), "public/data/falsification_v19_1.json"), "utf-8");
+    const data = JSON.parse(raw);
+    const tests = data.tests || [];
+    const total = tests.length;
+    const ran = tests.filter((t: { status: string }) => t.status === "RAN").length;
+    const falsified = tests.filter((t: { falsified?: boolean }) => t.falsified === true).length;
+    const consistent = ran - falsified;
+    const pending = total - ran;
+    return { total, ran, consistent, falsified, pending };
+  } catch {
+    return { total: 7, ran: 3, consistent: 3, falsified: 0, pending: 4 };
+  }
+}
 
 const SPARKLINE_DATA = [
   [5.0, 4.9, 4.5, 4.1, 3.7, 3.5, 3.2, 2.9, 2.7, 2.6, 2.5, 2.4, 2.3, 2.2],
@@ -16,6 +34,7 @@ const SPARKLINE_DATA = [
   [100, 97, 93, 90, 87, 83, 80],
   [0, 2, 5, 10, 18, 15, 20, 35, 49],
   [1.47, 1.08, 1.23, 1.24, 0.84, 0.72],
+  [100, 100, 100, 30, 85, 90],
 ];
 
 const COPY = {
@@ -31,6 +50,7 @@ const COPY = {
       { stat: "−1.2%/yr", label: "Testosterone decline, age-independent (Travison 2007)" },
       { stat: "49", label: "Countries below replacement TFR 1.4" },
       { stat: "$200B", label: "Korea pronatalism spending → TFR still dropped to 0.72" },
+      { stat: "−70%", label: "NK cells after one night of sleep deprivation (Irwin)" },
     ],
 
     sentinelCta: "All sentinels",
@@ -55,8 +75,9 @@ const COPY = {
     falsPending: "pending",
     falsCta: "Test details",
 
-    epistemicNote: "BERM v19 is a falsifiable research model, not a certainty. 452 peer-reviewed references. 24+ regulatory-validated non-thermal mechanisms. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.",
+    epistemicNote: "BERM v19 is a falsifiable research model, not a certainty. 484 peer-reviewed references across 10 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.",
     epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · LOOCV RMSE = 0.09",
+    epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Independent research",
 
     ctaModel: "Model specification",
     ctaEvidence: "Evidence register",
@@ -75,6 +96,7 @@ const COPY = {
       { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton (Travison 2007)" },
       { stat: "49", label: "Maata alle korvaavuustason TFR 1,4" },
       { stat: "200 mrd $", label: "Korean pronatalismi → TFR silti 0,72" },
+      { stat: "−70 %", label: "NK-solut yhden yön unideprivaation jälkeen (Irwin)" },
     ],
 
     sentinelCta: "Kaikki sentinellit",
@@ -99,8 +121,9 @@ const COPY = {
     falsPending: "odottaa",
     falsCta: "Testien yksityiskohdat",
 
-    epistemicNote: "BERM v19 on falsifioitava tutkimusmalli, ei varmuus. 452 vertaisarvioitua viitettä. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.",
+    epistemicNote: "BERM v19 on falsifioitava tutkimusmalli, ei varmuus. 484 vertaisarvioitua viitettä 10 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.",
     epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · LOOCV RMSE = 0,09",
+    epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Itsenäinen tutkimus",
 
     ctaModel: "Mallin määrittely",
     ctaEvidence: "Evidenssirekisteri",
@@ -143,6 +166,7 @@ export default async function Home({
   const activeLocale: Locale = locale === "fi" ? "fi" : "en";
   const d = COPY[activeLocale];
   const prefix = `/${activeLocale}`;
+  const fals = getFalsificationStats();
 
   return (
     <div className="max-w-5xl mx-auto px-6">
@@ -157,7 +181,7 @@ export default async function Home({
       {/* ── 2. Sparkline fact cards ── */}
       <section className="pb-20">
         <h2 className="editorial-kicker text-accent mb-6">{d.s1Title}</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {d.impactGrid.map((item, i) => {
             const Icon = SPARKLINE_ICONS[i];
             return (
@@ -194,7 +218,7 @@ export default async function Home({
             <p className="data-figure__title mt-1">{d.causalTitle}</p>
           </figcaption>
           <div className="overflow-x-auto p-1 md:p-3">
-            <CausalChain locale={activeLocale} />
+            <ThreeChannelSummary locale={activeLocale} />
           </div>
           <p className="data-figure__note">{d.causalNote}</p>
         </figure>
@@ -271,11 +295,11 @@ export default async function Home({
             </Link>
           </div>
           <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            <span><span className="font-mono-num font-semibold text-accent">7</span> tests</span>
-            <span><span className="font-mono-num font-semibold text-accent">3</span> {d.falsRan}</span>
-            <span><span className="font-mono-num font-semibold text-green-500">3</span> {d.falsConsistent}</span>
-            <span><span className="font-mono-num font-semibold text-red-500">0</span> {d.falsFalsified}</span>
-            <span><span className="font-mono-num font-semibold text-foreground-muted">4</span> {d.falsPending}</span>
+            <span><span className="font-mono-num font-semibold text-accent">{fals.total}</span> tests</span>
+            <span><span className="font-mono-num font-semibold text-accent">{fals.ran}</span> {d.falsRan}</span>
+            <span><span className="font-mono-num font-semibold text-green-500">{fals.consistent}</span> {d.falsConsistent}</span>
+            <span><span className="font-mono-num font-semibold text-red-500">{fals.falsified}</span> {d.falsFalsified}</span>
+            <span><span className="font-mono-num font-semibold text-foreground-muted">{fals.pending}</span> {d.falsPending}</span>
           </div>
         </div>
       </section>
@@ -304,6 +328,7 @@ export default async function Home({
       <footer className="pb-16 border-t border-card-border pt-8">
         <p className="text-sm leading-relaxed text-foreground-muted max-w-3xl">{d.epistemicNote}</p>
         <p className="font-mono-num text-xs text-foreground-muted/60 mt-3">{d.epistemicStats}</p>
+        <p className="text-xs text-foreground-muted/40 mt-2">{d.epistemicAuthor}</p>
       </footer>
     </div>
   );

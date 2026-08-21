@@ -37,6 +37,7 @@ const COPY = {
         "In short: EMF weakens the host and doesn’t touch the parasite.",
         "This creates a ratchet effect. Each increment of ambient EMF tilts the balance further in Varroa’s favor. The bee’s grooming becomes less effective. Its hygienic behavior becomes less sensitive. Its immune system becomes more burdened. But Varroa’s ability to find, attach to, and feed on its host remains intact — and may even be enhanced if changing electrostatic conditions improve its host-contact efficiency.",
         "The result is that a colony can appear healthy until it suddenly isn’t. The tipping point arrives when Varroa load exceeds the colony’s diminished capacity to resist. This is Colony Collapse Disorder: not a single cause, but a cascade in which EMF is the hidden amplifier that makes every other stressor worse.",
+        "In May 2025, researchers from the same Bristol group that discovered bee electroreception published a field experiment showing that weak anthropogenic electric fields — comparable to those near power lines — reduce honeybee floral landings by 71% (Mallinson et al., iScience / Cell Press). The electromagnetic environment doesn’t just weaken the bees’ defenses against Varroa. It also disrupts their ability to find food. The term the researchers used: ‘electric pollution.’",
       ],
       [
         "There is a US patent — number 12,239,107 — for an EMF shield for beehives. The patent’s description states, with remarkable directness: \"With EMF transmissions blocked, bees rest better, become more healthy, productive and can better defend the colony against mites and hive beetles.\"",
@@ -57,6 +58,7 @@ const COPY = {
       "Shepherd S et al. (2023). Electromagnetic fields disrupt the pollination service by honeybees. Science Advances, 9(20), eadh1455.",
       "Wyszkowska J et al. (2023/2025). 900 MHz EMF induces stress protein expression in honeybees. PLOS ONE; Behavioral changes under 50 Hz E-field. Agriculture.",
       "Panagopoulos DJ et al. (2025). A comprehensive mechanism of biological and health effects of anthropogenic ELF and WC EMFs. Frontiers in Public Health, 13:1585441.",
+      "Mallinson VJ et al. (2025). Weak anthropogenic electric fields affect honeybee foraging. iScience, 28(5), 112550.",
       "Lindecke O et al. (2026). RF noise disrupts bat magnetic compass. Science, 388: 977+.",
       "US Patent 12,239,107: EMF shield for beehives.",
       "Tinsley JN et al. (2016). Direct detection of a single photon by humans. Nature Communications, 7, 12172.",
@@ -98,6 +100,7 @@ const COPY = {
         "Lyhyesti: EMF heikentää isäntää eikä koske loiseen.",
         "Tämä luo räikkävaikutuksen. Jokainen lisäys ambient-EMF:ssä kallistaa tasapainoa edelleen Varroan eduksi. Mehiläisen sukiminen muuttuu vähemmän tehokkaaksi. Sen hygieeninen käyttäytyminen muuttuu vähemmän herkäksi. Sen immuunijärjestelmä kuormittuu enemmän. Mutta Varroan kyky löytää, kiinnittyä ja syöttää isännällään säilyy koskemattomana — ja voi jopa tehostua, jos muuttuvat sähköstaattiset olosuhteet parantavat sen isäntäkontaktitehokkuutta.",
         "Tulos on, että yhdyskunta voi vaikuttaa terveltä kunnes se yhtäkkiä ei ole. Käännepiste saapuu kun Varroa-kuorma ylittää yhdyskunnan heikentyneen kyvyn vastustaa. Tämä on Colony Collapse Disorder: ei yksittäinen syy, vaan kaskadi jossa EMF on piilotettu vahvistin, joka tekee jokaisesta muusta stressitekijästä pahemman.",
+        "Toukokuussa 2025 samasta Bristolin yliopiston ryhmästä, joka löysi mehiläisten sähköreseption, julkaistiin kenttäkoe joka osoitti, että heikot ihmisperäiset sähkökentät — verrattavia voimalinjojen läheisyyteen — vähentävät mehiläisten kukille laskeutumista 71 % (Mallinson ym., iScience / Cell Press). Sähkömagneettinen ympäristö ei vain heikennä mehiläisten puolustusta Varroaa vastaan. Se myös häiritsee niiden kykyä löytää ruokaa. Tutkijoiden käyttämä termi: 'electric pollution' — sähkösaaste.",
       ],
       [
         "On olemassa yhdysvaltalainen patentti — numero 12 239 107 — mehiläispesien EMF-suojalle. Patentin kuvaus toteaa merkittävällä suoruudella: \"Kun EMF-lähetykset estetään, mehiläiset lepäävät paremmin, tulevat terveemmiksi, tuottavammiksi ja pystyvät paremmin puolustamaan yhdyskuntaa punkkeja ja pesäkuoriaisia vastaan.\"",
@@ -118,6 +121,7 @@ const COPY = {
       "Shepherd S ym. (2023). Electromagnetic fields disrupt the pollination service by honeybees. Science Advances, 9(20), eadh1455.",
       "Wyszkowska J ym. (2023/2025). 900 MHz EMF ja stressiproteiinien ilmentyminen mehiläisissä. PLOS ONE; Käyttäytymismuutokset 50 Hz E-kentässä. Agriculture.",
       "Panagopoulos DJ ym. (2025). Kattava mekanismi ihmisen tekemien ELF- ja WC-EMF-kenttien biologisista ja terveysvaikutuksista. Frontiers in Public Health, 13:1585441.",
+      "Mallinson VJ ym. (2025). Heikot ihmisperäiset sähkökentät vaikuttavat mehiläisten ravinnonhakuun. iScience, 28(5), 112550.",
       "Lindecke O ym. (2026). RF-kohina häiritsee lepakkojen magneettikompassia. Science, 388: 977+.",
       "US Patent 12 239 107: EMF-suoja mehiläispesille.",
       "Tinsley JN ym. (2016). Yksittäisen fotonin suora havaitseminen ihmisillä. Nature Communications, 7, 12172.",

@@ -196,6 +196,27 @@ const COPY = {
         ],
       },
       {
+        id: "electroecology",
+        title: "Electroecology: the emerging science of electric pollution",
+        paragraphs: [
+          "Aerial electroreception — the ability to detect airborne electric fields — has emerged as a recognized sensory modality in arthropods (Robert 2024, Current Biology). Bees detect floral electric fields to optimize foraging (Clarke 2013, Science). Their mechanosensory hairs physically bend in electric fields, transmitting neural signals (Sutton 2016, PNAS). Bees communicate within the hive using electrostatic signals during the waggle dance, with individual bee charge reaching 450 V (Greggers 2013, Proc R Soc B). Spiders detect atmospheric electric fields for ballooning (Morley & Robert 2018, Current Biology). Caterpillars detect approaching wasps electrically before contact (England & Robert 2024, PNAS). Ticks are passively attracted to hosts across air gaps by electrostatic forces (England 2023, Current Biology).",
+          "Electrostatic charging is not a passive byproduct of flight. A 2024 study of 269 butterflies and moths across 11 species showed that the amount of static charge varies systematically with ecology — whether the species visits flowers, is tropical, or flies at night (England & Robert 2024, J R Soc Interface). This is the first evidence that electrostatic properties are adaptive traits shaped by natural selection. If evolution has optimized organisms' electrostatic properties, a changed electrostatic environment (synthetic materials, plastic surfaces, electrical devices) disrupts that optimization — the same logic as BERM's evolutionary calibration principle applied to the STATIC channel.",
+          "In field experiments in urban meadows, Mallinson et al. (2025, iScience) demonstrated that weak anthropogenic electric fields reduce honeybee floral landings by 71% (AC fields) and 53% (positive DC fields). Electric field measurements near high-voltage transmission lines revealed persistent field strengths comparable to those used experimentally, spanning tens of meters at heights relevant for bee foraging. The authors use the term 'electric pollution' — the first use of this term in a Cell Press journal.",
+          "These findings provide the empirical foundation for BERM's STATIC and ELF channels. If anthropogenic electric fields reduce pollinator efficiency by 71%, every new power line, transformer, and electric device reduces pollination. Combined with LED lighting's IF emissions (which affect insect populations through a separate mechanism), the electromagnetic environment exerts a double pressure on pollinator-dependent ecosystems. This is consistent with the global pollinator decline documented by IPBES and the FAO.",
+        ],
+        studies: [
+          { citation: "Clarke et al. (Science)", year: 2013, note: "Bees detect floral electric fields — first terrestrial electroreception" },
+          { citation: "Greggers et al. (Proc R Soc B)", year: 2013, note: "Bee electric communication in hive, charge up to 450 V" },
+          { citation: "Sutton et al. (PNAS)", year: 2016, note: "Mechanosensory hairs = electroreceptors in bumblebees" },
+          { citation: "Morley & Robert (Current Biology)", year: 2018, note: "Spiders detect E-fields for ballooning dispersal" },
+          { citation: "England et al. (Current Biology)", year: 2023, note: "Ticks attracted electrostatically across air gaps" },
+          { citation: "England & Robert (J R Soc Interface)", year: 2024, note: "Butterfly electrostatic charge is adaptive (natural selection)" },
+          { citation: "England & Robert (PNAS)", year: 2024, note: "Caterpillars detect predators electrically before contact" },
+          { citation: "Robert (Current Biology)", year: 2024, note: "Aerial electroreception formalized as sensory modality" },
+          { citation: "Mallinson et al. (iScience / Cell Press)", year: 2025, note: "Field experiment: AC fields −71% bee landings, term 'electric pollution'" },
+        ],
+      },
+      {
         id: "display",
         title: "Display transition: CRT → LCD/LED",
         paragraphs: [
@@ -405,6 +426,27 @@ const COPY = {
         ],
       },
       {
+        id: "electroecology",
+        title: "Sähköekologia: sähkösaasteen tutkimus",
+        paragraphs: [
+          "Ilman sähkökentän havaitseminen (aerial electroreception) on tunnistettu omana aistimodaalisuutenaan niveljalkaisilla (Robert 2024, Current Biology). Mehiläiset havaitsevat kukkien sähkökentät ravinnonhaun optimoimiseksi (Clarke 2013, Science). Niiden mekanosensoriset karvat taipuvat fyysisesti sähkökentässä ja välittävät hermosignaaleja (Sutton 2016, PNAS). Mehiläiset viestivät pesässä sähköstaattisilla signaaleilla tanssitanssin aikana, yksittäisen mehiläisen varauksen ollessa jopa 450 V (Greggers 2013, Proc R Soc B). Hämähäkit havaitsevat ilmakehän sähkökenttiä lentämistä (ballooning) varten (Morley & Robert 2018, Current Biology). Toukat havaitsevat lähestyvän ampiaisen sähköisesti ennen kontaktia (England & Robert 2024, PNAS). Punkkeja vedetään isäntiin ilmarakojen yli sähköstaattisilla voimilla (England 2023, Current Biology).",
+          "Sähköstaattinen varautuminen ei ole lennon passiivinen sivutuote. Vuoden 2024 tutkimus 269 perhosesta ja yöperhosesta 11 lajin poikki osoitti, että staattisen varauksen määrä vaihtelee systemaattisesti ekologian mukaan — vieraileeko laji kukilla, onko se trooppinen vai lentääkö se yöllä (England & Robert 2024, J R Soc Interface). Tämä on ensimmäinen todiste siitä, että sähköstaattiset ominaisuudet ovat adaptiivisia piirteitä, joita luonnonvalinta on muokannut. Jos evoluutio on optimoinut eliöiden sähköstaattisia ominaisuuksia, muuttunut sähköstaattinen ympäristö (synteettiset materiaalit, muovipinnat, sähkölaitteet) häiritsee tätä optimointia — sama logiikka kuin BERM:n evolutionäärinen kalibraatioperiaate STATIC-kanavassa.",
+          "Kenttäkokeissa kaupunkiniityillä Mallinson ym. (2025, iScience) osoittivat, että heikot ihmisperäiset sähkökentät vähensivät mehiläisten kukille laskeutumista 71 % (AC-kentät) ja 53 % (positiiviset DC-kentät). Suurjännitevoimalinjojen lähellä mitatut kenttävoimakkuudet olivat verrattavissa kokeellisiin, ulottuen kymmenien metrien etäisyydelle mehiläisten ravinnonhakukorkeudella. Tekijät käyttävät termiä 'electric pollution' (sähkösaaste) — ensimmäinen kerta kun tätä termiä käytetään Cell Press -lehdessä.",
+          "Nämä löydökset tarjoavat empiirisen perustan BERM:n STATIC- ja ELF-kanaville. Jos ihmisperäiset sähkökentät vähentävät pölyttäjien tehokkuutta 71 %, jokainen uusi voimalinja, muuntaja ja sähkölaite vähentää pölytystä. Yhdistettynä LED-valaistuksen IF-emissioihin (jotka vaikuttavat hyönteispopulaatioihin eri mekanismilla), sähkömagneettinen ympäristö kohdistaa kaksinkertaisen paineen pölyttäjäriippuvaisiin ekosysteemeihin. Tämä on yhdenmukaista IPBES:n ja FAO:n dokumentoiman globaalin pölyttäjäkadon kanssa.",
+        ],
+        studies: [
+          { citation: "Clarke ym. (Science)", year: 2013, note: "Mehiläiset havaitsevat kukkien sähkökentät — ensimmäinen maaeläimen sähköreseptio" },
+          { citation: "Greggers ym. (Proc R Soc B)", year: 2013, note: "Mehiläisten sähköinen viestintä pesässä, varaus 450 V" },
+          { citation: "Sutton ym. (PNAS)", year: 2016, note: "Mekanosensoriset karvat = sähköreseptorit kimalaisilla" },
+          { citation: "Morley & Robert (Current Biology)", year: 2018, note: "Hämähäkit havaitsevat sähkökenttiä lentämistä varten" },
+          { citation: "England ym. (Current Biology)", year: 2023, note: "Punkit vetäytyvät sähköstaattisesti ilmarakojen yli" },
+          { citation: "England & Robert (J R Soc Interface)", year: 2024, note: "Perhosten sähkövaraus adaptiivinen (luonnonvalinta)" },
+          { citation: "England & Robert (PNAS)", year: 2024, note: "Toukat havaitsevat saalistajan sähköisesti ennen kontaktia" },
+          { citation: "Robert (Current Biology)", year: 2024, note: "Ilman sähköreseptio virallistettu aistimodaalisuutena" },
+          { citation: "Mallinson ym. (iScience / Cell Press)", year: 2025, note: "Kenttäkoe: AC-kentät −71 % mehiläislaskeutumisia, termi 'electric pollution'" },
+        ],
+      },
+      {
         id: "display",
         title: "Näyttöteknologiasiirtymä: CRT → LCD/LED",
         paragraphs: [
@@ -584,6 +626,137 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
 
       <section className="mb-16">
         <BehavioralSuppression locale={activeLocale} />
+      </section>
+
+      {/* Sleep as mediating mechanism */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "Unideprivaatio keskeisenä välittävänä mekanismina" : "Sleep deprivation as the central mediating mechanism"}
+        </h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {activeLocale === "fi"
+              ? "Unideprivaatio tuottaa jokaisen biologisen lopputuloksen jonka BERM:n kuusi retrodiktiota kuvaavat: testosteronilasku (Leproult & Van Cauter: −10–15 % nuorilla miehillä), siittiölasku (−29 %, enemmän epämuodostumia), NK-solujen romahdus (Irwin: −70 % yhdessä yössä), metabolinen oireyhtymä (Spiegel ym.: pre-diabeettinen tila viikossa), sympaattinen yliaktivaatio (krooninen tulehdus) ja masennus (Walker: 'syy, ei oire'). Jos EMF häiritsee unta — kuten sirkadiaaninen polku (CRY/RPM, melatoniinisuppressio) ennustaa — kaikki kuusi retrodiktiota seuraavat yhden ylävirran syyn alavirtavaikutuksina."
+              : "Sleep deprivation produces every biological outcome that BERM's six retrodictions describe: testosterone decline (Leproult & Van Cauter: −10–15% in young men), sperm decline (−29% with more deformities), NK cell collapse (Irwin: −70% in one night), metabolic syndrome (Spiegel et al.: pre-diabetic in one week), sympathetic overdrive (chronic inflammation), and depression (Walker: 'a cause, not a symptom'). If EMF disrupts sleep — which the circadian pathway (CRY/RPM, melatonin suppression) predicts — then ALL six retrodictions follow as downstream consequences of a single upstream cause."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Järjestys jossa nämä tilat ilmaantuvat vastaa modulooman ennustetta: unihäiriö ensin (lyhin latenssi, kuukausia), masennus toisena (1–3 vuotta), metabolinen oireyhtymä kolmantena (3–8 vuotta), autoimmuunisairaus neljäntenä (5–10 vuotta), hedelmällisyyslasku viidentenä (5–15 vuotta), syöpä kuudentena (10–25 vuotta). Tämä järjestys ei ole mielivaltainen — se heijastaa kunkin kudoksen uusiutumisnopeutta ja kumulatiivisen vaurion kynnystä. Walker dokumentoi saman kaskadin empiirisesti ilman EMF-kehystä, tarjoten riippumattoman validoinnin modulooman ennustamalle järjestykselle."
+              : "The order in which these conditions appear matches the modulome's prediction: sleep disruption first (shortest latency, months), depression second (1–3 years), metabolic syndrome third (3–8 years), autoimmune disease fourth (5–10 years), fertility decline fifth (5–15 years), cancer sixth (10–25 years). This order is not arbitrary — it reflects each tissue's regeneration rate and cumulative damage threshold. Walker documents this same cascade empirically without an EMF framework, providing independent validation of the modulome's predicted ordering."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Jos uniepidemia johtuisi yksinomaan sinisestä valosta, sinisen valon suodatus (Night Shift, f.lux, keltaiset lasit) korjaisi sen. Se ei korjaa: Duraccio ym. (2021) osoitti, ettei Night Shift-tila parantanut merkittävästi objektiivista unenlaatua. BERM ehdottaa, että sähkömagneettisen kentän komponentti (laitteen RF, LED-valaistuksen IF) on itsenäinen unihäiritsijä joka toimii CRY/RPM-mekanismin kautta, ei retinaalisen melanopsiinin. Tämä selittää miksi valon suodatus ei riitä — EMF-polku ohittaa silmän kokonaan."
+              : "If the sleep epidemic were caused solely by blue light from screens, blue-light filtering (Night Shift, f.lux, amber glasses) should resolve it. It does not: Duraccio et al. (2021) showed that Night Shift mode did not significantly improve objective sleep quality. BERM proposes that the electromagnetic field component (RF from the device, IF from LED lighting) is an independent sleep disruptor that operates through the CRY/RPM mechanism, not through retinal melanopsin. This explains why filtering light is insufficient — the EMF pathway bypasses the eye entirely."}
+          </p>
+        </div>
+        <div className="mt-6 overflow-x-auto">
+          <table className="w-full text-sm border-collapse max-w-4xl">
+            <thead>
+              <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                <th className="py-2 pr-3">{activeLocale === "fi" ? "Viite" : "Citation"}</th>
+                <th className="py-2 pr-3 w-16">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
+                <th className="py-2">{activeLocale === "fi" ? "Löydös" : "Finding"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Walker MP</td>
+                <td className="py-2 pr-3 font-mono-num">2017</td>
+                <td className="py-2">{activeLocale === "fi" ? "Uni → testosteroni −10–15 %, siittiöt −29 %, NK-solut −70 %, metabolinen oireyhtymä, masennus (kausaalinen)" : "Sleep → testosterone −10–15%, sperm −29%, NK cells −70%, metabolic syndrome, depression (causal)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Leproult & Van Cauter (JAMA)</td>
+                <td className="py-2 pr-3 font-mono-num">2011</td>
+                <td className="py-2">{activeLocale === "fi" ? "5h uni 1 viikko → testosteroni −10–15 % nuorilla miehillä" : "5h sleep for 1 week → testosterone −10–15% in young men"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Irwin MR (Annu Rev Psychol)</td>
+                <td className="py-2 pr-3 font-mono-num">2015</td>
+                <td className="py-2">{activeLocale === "fi" ? "4h uni 1 yö → NK-solut −70 %. WHO 2A: yötyö" : "4h sleep 1 night → NK cells −70%. WHO 2A: night-shift work"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Spiegel, Leproult & Van Cauter (Lancet)</td>
+                <td className="py-2 pr-3 font-mono-num">1999</td>
+                <td className="py-2">{activeLocale === "fi" ? "4h uni 6 yötä → pre-diabeettinen glukoositoleranssi" : "4h sleep for 6 nights → pre-diabetic glucose tolerance"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Chang et al. (PNAS)</td>
+                <td className="py-2 pr-3 font-mono-num">2015</td>
+                <td className="py-2">{activeLocale === "fi" ? "iPad-lukeminen: melatoniini −50 %, viive +3h, LED 2× vs hehku" : "iPad reading: melatonin −50%, delay +3h, LED 2× vs incandescent"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Duraccio et al. (Sleep Health)</td>
+                <td className="py-2 pr-3 font-mono-num">2021</td>
+                <td className="py-2">{activeLocale === "fi" ? "Night Shift EI parantanut objektiivista unenlaatua" : "Night Shift did NOT improve objective sleep quality"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-foreground-muted italic mt-4 max-w-4xl">
+          {activeLocale === "fi"
+            ? "Episteeminen taso: mekanismi [E] (Walker/Leproult/Irwin/Spiegel data). EMF-kytkentä: [M|C] (CRY/RPM + Lindecke 2026)."
+            : "Epistemic level: mechanism [E] (Walker/Leproult/Irwin/Spiegel data). EMF linkage: [M|C] (CRY/RPM + Lindecke 2026)."}
+        </p>
+      </section>
+
+      {/* Proxy masking: Walker example */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "Proksimasking: unitutkimuksen sokea piste" : "Proxy masking: the blind spot in sleep science"}
+        </h2>
+        <div className="max-w-4xl rounded-lg border border-card-border bg-card-bg p-5">
+          <p className="text-sm text-foreground-muted leading-relaxed">
+            {activeLocale === "fi"
+              ? "Paradigmaattinen esimerkki: Matthew Walkerin 'Why We Sleep' (2017) on kenties vaikutusvaltaisin unitutkimuksen kirja koskaan. Walker analysoi laajasti miten LED-näytöt suppressoivat melatoniinia sinisen valon kautta. Hän dokumentoi LED-sinisen valon aiheuttavan 2× melatoniinisuppression verrattuna hehkulamppuun samalla intensiteetillä. Silti hän ei koskaan kysy tuottavatko LED-laitteet muuta kuin valoa — erityisesti, emittoivatko jokaisen LED-laitteen hakkuriteholähteet keskitaajuisia sähkömagneettisia kenttiä (20–200 kHz) jotka voisivat itsenäisesti häiritä sirkadiaanista järjestelmää CRY/RPM-mekanismin kautta. Sähkömagneettinen kenttä ei ole hänen käsitteellisessä sanastossaan. Tämä ei ole kritiikki Walkeria kohtaan — se on osoitus siitä, miten täydellisesti EMF-hypoteesi puuttuu valtavirran unitieteestä."
+              : "A paradigmatic example: Matthew Walker's 'Why We Sleep' (2017) is perhaps the most influential sleep science book ever written. Walker devotes extensive analysis to how LED screens suppress melatonin through blue light. He documents that LED blue light has twice the melatonin-suppressing effect of incandescent light at matched intensity. Yet he never asks whether LED devices produce anything other than light — specifically, whether the switch-mode power supplies in every LED device emit intermediate-frequency electromagnetic fields (20–200 kHz) that might independently disrupt the circadian system through the CRY/RPM mechanism. The electromagnetic field is not in his conceptual vocabulary. This is not a criticism of Walker — it is a demonstration of how completely the EMF hypothesis is absent from mainstream sleep science."}
+          </p>
+        </div>
+      </section>
+
+      {/* 10 independent research domains */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "10 riippumatonta tutkimusalaa" : "10 independent research domains"}
+        </h2>
+        <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">
+          {activeLocale === "fi"
+            ? "BERM:n mekanistiset polut perustuvat 10 toisistaan riippumattomaan tutkimusalaan. Mikään yksittäinen ala ei riitä, mutta niiden konvergenssi samaan ennusteeseen — sähkömagneettisten kenttien biologinen aktiivisuus — on epätodennäköistä sattumalta."
+            : "BERM's mechanistic pathways draw on 10 mutually independent research domains. No single domain is sufficient, but their convergence on the same prediction — biological activity of electromagnetic fields — is unlikely by chance."}
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2 max-w-4xl">
+          {(activeLocale === "fi" ? [
+            { n: "01", t: "Onkologia", d: "TTFields (FDA-hyväksytty): 100–300 kHz kentät häiritsevät solunjakautumista. Novocure, kliiniset kokeet." },
+            { n: "02", t: "Ortopedia", d: "PEMF-luunstimulaattorit (FDA 1986): pulssimuotoinen EMF kiihdyttää luun paranemista. 30+ vuoden kliininen käyttö." },
+            { n: "03", t: "Neurologia", d: "TMS, tDCS, VNS, DBS: ei-termiset EMF-laitteet hoitavat masennusta, epilepsiaa, Parkinsonia. 160 000+ implantoitua DBS-laitetta." },
+            { n: "04", t: "Kvanttbiologia", d: "Radikaalipari/CRY-mekanismi (RPM): lintujen magneettiaisti perustuu kryptokromiin. Sherrard 2018: pulssi-EMF tuottaa ROS:ia CRY-riippuvaisesti." },
+            { n: "05", t: "Solubiologia", d: "IFO-VGIC (Panagopoulos 2025): ionien pakotettu oskillaatio jänniteohjattujen kalsiumkanavien kautta. Kynnys 10⁻⁵ V/m." },
+            { n: "06", t: "Ei-ionotrooppinen VGCC", d: "Trus ym. 2024 (Hebr. yliopisto): VGCC aktivoi solunsisäisiä signaalireittejä konformaatiomuutoksella ILMAN ionifluksia." },
+            { n: "07", t: "Entomologia", d: "Mehiläis-EMF-data: Favre & Johansson 2025, Hallmann 2017, Thielens 2018. Mehiläisten piping, hyönteiskato, RF-absorptio." },
+            { n: "08", t: "Parasitologia", d: "England 2023: punkit vedetään isäntiin sähköstaattisesti. Staattisten kenttien biologinen aktiivisuus." },
+            { n: "09", t: "Geometrinen fysiikka", d: "Lindgren-metriikka: 87,5 % RPM-Hamiltoniaanin elementeistä johdettavissa geometriasta. Ennustaa tausta- ja kulmariippuvuuden." },
+            { n: "10", t: "Sähköekologia", d: "Bristol (Clarke, Robert, England, Mallinson): ilman sähköreseptio, mehiläisten sähköinen viestintä, antropogeeniset kentät −71 % mehiläislaskeutumisia." },
+          ] : [
+            { n: "01", t: "Oncology", d: "TTFields (FDA-approved): 100–300 kHz fields disrupt cell division. Novocure, clinical trials." },
+            { n: "02", t: "Orthopedics", d: "PEMF bone stimulators (FDA 1986): pulsed EMF accelerates bone healing. 30+ years of clinical use." },
+            { n: "03", t: "Neurology", d: "TMS, tDCS, VNS, DBS: non-thermal EMF devices treat depression, epilepsy, Parkinson's. 160,000+ implanted DBS devices." },
+            { n: "04", t: "Quantum biology", d: "Radical-pair/CRY mechanism (RPM): bird magnetoreception via cryptochrome. Sherrard 2018: pulsed EMF produces ROS CRY-dependently." },
+            { n: "05", t: "Cell biology", d: "IFO-VGIC (Panagopoulos 2025): ion forced oscillation via voltage-gated calcium channels. Threshold 10⁻⁵ V/m." },
+            { n: "06", t: "Non-ionotropic VGCC", d: "Trus et al. 2024 (Hebrew U.): VGCC activates intracellular signaling via conformational change WITHOUT ion flux." },
+            { n: "07", t: "Entomology", d: "Bee-EMF data: Favre & Johansson 2025, Hallmann 2017, Thielens 2018. Bee piping, insect decline, RF absorption." },
+            { n: "08", t: "Parasitology", d: "England 2023: ticks attracted to hosts electrostatically. Biological activity of static fields." },
+            { n: "09", t: "Geometric physics", d: "Lindgren metric: 87.5% of RPM Hamiltonian elements derivable from geometry. Predicts background and angle dependence." },
+            { n: "10", t: "Electroecology", d: "Bristol (Clarke, Robert, England, Mallinson): aerial electroreception, bee electric communication, anthropogenic fields −71% bee landings." },
+          ]).map((item) => (
+            <div key={item.n} className="flex gap-3 rounded-lg border border-card-border bg-card-bg p-3">
+              <span className="font-mono-num text-xs text-accent mt-0.5 shrink-0">{item.n}</span>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold">{item.t}</p>
+                <p className="text-xs text-foreground-muted mt-0.5 leading-relaxed">{item.d}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Bounded v2 records */}

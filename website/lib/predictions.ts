@@ -373,4 +373,31 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
       },
     ],
   },
+  {
+    id: "sleep-1-faraday-vs-bluefilter",
+    country: "Global",
+    countryLabel: "Global",
+    year: 2030,
+    metric: "sleep_quality_faraday",
+    metricLabel: "PSG sleep quality: Faraday vs blue-light filter",
+    central: 2.0,
+    ciLow: 1.5,
+    ciHigh: 3.0,
+    lockedDate: "2026-08-21",
+    modelVersion: "SLEEP-1",
+    gitSha: "walker_integration",
+    status: "pending" as const,
+    unit: "effect ratio (Faraday / blue-filter)",
+    history: [
+      {
+        version: "SLEEP-1",
+        central: 2.0,
+        ci: [1.5, 3.0] as [number, number],
+        date: "2026-08-21",
+        changeReason:
+          "Faraday-shielded bedroom improves PSG sleep quality (slow-wave sleep, REM fraction, sleep latency) more than blue-light filtering alone. Central: Faraday effect ≥ 2× blue-filter effect. Falsification: blue-filter ≥ Faraday, or neither affects sleep.",
+        gitSha: "walker_integration",
+      },
+    ],
+  },
 ];

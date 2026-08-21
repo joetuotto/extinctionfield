@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Info } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
@@ -22,6 +23,10 @@ type Copy = {
   dataText: string;
   contributeTitle: string;
   contributeText: string;
+  authorTitle: string;
+  authorName: string;
+  authorDegrees: readonly string[];
+  authorIndependence: string;
 };
 
 const t: Record<Locale, Copy> = {
@@ -75,6 +80,13 @@ const t: Record<Locale, Copy> = {
     contributeTitle: "Contribute or challenge the model",
     contributeText:
       "Useful contributions include measurement datasets with provenance, endpoint studies, source corrections, preregistered replications, competing causal models and code review. Please report both supporting and non-supporting results.",
+    authorTitle: "Author",
+    authorName: "Otto Juote",
+    authorDegrees: [
+      "MSc Biomedicine, Bioscience and Society — London School of Economics",
+      "BA Political Science — University of Helsinki",
+    ],
+    authorIndependence: "Independent researcher. No university affiliation, no industry funding, no grant obligations.",
   },
   fi: {
     title: "Tietoa BERM:stä",
@@ -123,9 +135,16 @@ const t: Record<Locale, Copy> = {
     docsText: "CC BY-4.0, ellei lähdesivu toisin ilmoita.",
     dataLabel: "Data:",
     dataText: "Kolmannen osapuolen datasetit säilyttävät omat lisenssinsä ja provenienssinsa. Johdetut taulukot kertovat lähteensä ja tarkoitetun analyyttisen käytön.",
-    contributeTitle: "Osallistu tai haastaa malli",
+    contributeTitle: "Osallistu tai haasta malli",
     contributeText:
       "Hyödyllisiä kontribuutioita ovat mittausaineistot proveniensseineen, päätepistetutkimukset, lähdekorjaukset, ennakkorekisteröidyt replikaatiot, kilpailevat kausaalimallit ja koodikatselmointi. Raportoi sekä tukeva että ei-tukeva tulos.",
+    authorTitle: "Tekijä",
+    authorName: "Otto Juote",
+    authorDegrees: [
+      "MSc Biomedicine, Bioscience and Society — London School of Economics",
+      "VTK Yleinen valtio-oppi — Helsingin yliopisto",
+    ],
+    authorIndependence: "Itsenäinen tutkija. Ei yliopistoaffiliatiota, ei teollisuusrahoitusta, ei apurahaveloitteita.",
   },
 };
 
@@ -191,6 +210,26 @@ export default async function AboutPage({
           <p className="mt-3 text-foreground-muted leading-relaxed">
             <a href="https://github.com/extinctionfield" className="text-accent hover:text-accent-hover transition-colors" target="_blank" rel="noopener noreferrer">github.com/extinctionfield</a>
           </p>
+        </section>
+
+        <section className="border-t border-border pt-10">
+          <h2 className="text-xl font-semibold mb-4">{d.authorTitle}</h2>
+          <div className="flex gap-6 items-start">
+            <Image
+              src="/images/otto-juote.png"
+              alt="Otto Juote"
+              width={96}
+              height={96}
+              className="rounded-full object-cover shrink-0 grayscale"
+            />
+            <div className="space-y-3">
+              <p className="text-lg font-medium">{d.authorName}</p>
+              <ul className="space-y-1 text-sm text-foreground-muted">
+                {d.authorDegrees.map((deg) => <li key={deg}>{deg}</li>)}
+              </ul>
+              <p className="text-sm text-foreground-muted leading-relaxed">{d.authorIndependence}</p>
+            </div>
+          </div>
         </section>
       </div>
     </div>
