@@ -34,7 +34,7 @@ const COPY = {
     architectureNote: "Architecture note",
     architectureText: "These predictions use the scalar cumulative-exposure architecture (v17/v18). Mobile penetration enters as a technology-adoption timing proxy. The sensitivity envelope varies one parameter at a time; it is not a probabilistic confidence interval.",
     modulomeTitle: "Modulome predictions",
-    modulomeLead: "Mechanistic predictions derived from the seven-layer EMF modulome and therapeutic device evidence. These are qualitative, falsifiable predictions — each specifies a concrete experimental outcome.",
+    modulomeLead: "Mechanistic predictions derived from the eight-layer EMF modulome and therapeutic device evidence. These are qualitative, falsifiable predictions — each specifies a concrete experimental outcome.",
     modulomePredictions: [
       {
         id: "M-1",
@@ -56,6 +56,13 @@ const COPY = {
         description: "Male rats raised under LED lighting will show significantly lower sperm motility and concentration compared to rats raised under incandescent lighting, in a four-arm design separating light spectrum from EMF emission.",
         timeline: "Testable in 3–6 months",
         falsification: "No difference, or EMF-shielded LED = unshielded LED",
+      },
+      {
+        id: "LED-1",
+        title: "EU LED ban and TFR acceleration",
+        description: "EU countries (mandatory LED transition 2009–2012 via Directive 244/2009) show faster TFR decline in 2015–2022 compared to countries with later or no incandescent ban, controlling for mobile density, GDP, and urbanization. Central estimate: TFR decline acceleration ≥0.02/year faster in EU vs non-EU controls.",
+        timeline: "Testable immediately (existing demographic data)",
+        falsification: "No acceleration difference, or non-EU countries show faster decline",
       },
     ],
     modulomeTimeline: "Timeline",
@@ -89,7 +96,7 @@ const COPY = {
     architectureNote: "Arkkitehtuurihuomautus",
     architectureText: "Nämä ennusteet käyttävät skalaarin kumulatiivisen altistuksen arkkitehtuuria (v17/v18). Mobiilipenetraatio on teknologian käyttöönoton ajoitusproxy. Herkkyysalue varioi yhtä parametria kerrallaan; se ei ole probabilistinen luottamusväli.",
     modulomeTitle: "Modulooma-ennusteet",
-    modulomeLead: "Mekanistiset ennusteet jotka perustuvat seitsemänkerroksiseen EMF-moduloomiin ja terapeuttisten laitteiden evidenssiin. Nämä ovat kvalitatiivisia, falsifioitavia ennusteita — jokainen määrittää konkreettisen kokeellisen tuloksen.",
+    modulomeLead: "Mekanistiset ennusteet jotka perustuvat kahdeksankerroksiseen EMF-moduloomiin ja terapeuttisten laitteiden evidenssiin. Nämä ovat kvalitatiivisia, falsifioitavia ennusteita — jokainen määrittää konkreettisen kokeellisen tuloksen.",
     modulomePredictions: [
       {
         id: "M-1",
@@ -111,6 +118,13 @@ const COPY = {
         description: "LED-valaistuksessa kasvatettujen urosrottien siittiöiden liikkuvuus ja konsentraatio on merkittävästi matalampia kuin hehkulamppuvalaistuksessa kasvatettujen, neljän ryhmän koeasetelmassa joka erottelee valospektrin EMF-emissiosta.",
         timeline: "Testattavissa 3–6 kuukaudessa",
         falsification: "Ei eroa, tai EMF-suojattu LED = suojaamaton LED",
+      },
+      {
+        id: "LED-1",
+        title: "EU:n LED-kielto ja TFR-kiihtyminen",
+        description: "EU-maat (pakollinen LED-siirtymä 2009–2012, direktiivi 244/2009) osoittavat nopeampaa TFR-laskua 2015–2022 verrattuna maihin joissa hehkulamppukielto tuli myöhemmin tai ei lainkaan, kontrolloiden matkapuhelintiheyttä, BKT:ta ja kaupungistumista. Keskiarvio: TFR-laskun kiihtyminen ≥0,02/vuosi nopeampi EU:ssa vs ei-EU-kontrollit.",
+        timeline: "Testattavissa heti (olemassa oleva demografinen data)",
+        falsification: "Ei kiihtymiseroa, tai ei-EU-maat osoittavat nopeampaa laskua",
       },
     ],
     modulomeTimeline: "Aikajana",

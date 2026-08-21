@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Activity, ArrowRight } from "lucide-react";
+import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Activity, Zap, ArrowRight } from "lucide-react";
 import CausalChain from "@/components/CausalChain";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
 import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
 import { LatestArticles } from "@/components/LatestArticles";
 
-const IMPACT_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote, Activity] as const;
+const IMPACT_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote, Activity, Zap] as const;
 
 const COPY = {
   en: {
@@ -23,7 +23,8 @@ const COPY = {
       { stat: "−1.2%/yr", label: "Testosterone decline, age-independent" },
       { stat: "49", label: "Countries below TFR 1.4" },
       { stat: "$200B", label: "Korea's pronatalism → TFR dropped" },
-      { stat: "9+", label: "FDA-approved devices prove non-thermal EMF biological activity" },
+      { stat: "24+", label: "Regulatory-approved device categories prove non-thermal EMF biological activity (DC to UV)" },
+      { stat: "0 → 24/7", label: "The lighting transition replaced zero-IF sources with continuous kHz fields — unstudied" },
     ],
 
     teaserLabel: "LOCKED PREDICTIONS · TFR 2030",
@@ -53,7 +54,8 @@ const COPY = {
       { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton" },
       { stat: "49", label: "Maata alle TFR 1,4" },
       { stat: "200 mrd $", label: "Korean pronatalismi → TFR laski" },
-      { stat: "9+", label: "FDA-hyväksyttyä laitetta todistaa ei-termisen EMF:n biologisen aktiivisuuden" },
+      { stat: "24+", label: "Regulaattorihyväksyttyä laitekategoriaa todistaa ei-termisen EMF:n biologisen aktiivisuuden (DC – UV)" },
+      { stat: "0 → 24/7", label: "Valaistussiirtymä korvasi nolla-IF-lähteet jatkuvilla kHz-kentillä — tutkimatta" },
     ],
 
     teaserLabel: "LUKITUT ENNUSTEET · TFR 2030",

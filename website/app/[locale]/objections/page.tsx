@@ -104,7 +104,7 @@ const t: Record<Locale, Copy> = {
         question: "Environmental EMF fields are too weak for biological effects",
         response: [
           "The human eye detects single photons. Sharks detect 0.5 µV/m electric fields. Migratory birds' compass is disrupted by 15 nT RF noise — 0.03% of the geomagnetic background. Biology operates at the quantum limit of electromagnetic sensitivity because evolution optimized detection, not tolerance.",
-          "Nine FDA-approved medical devices exploit non-thermal EMF biological effects across the frequency spectrum. tDCS treats depression at 0.3–1.0 V/m in cortical tissue — the same order of magnitude as measured urban ambient RF (0.67–1.51 V/m). PEMF bone healing devices have been FDA-approved since 1979. The claim that EMF is 'too weak' directly contradicts FDA's own approval decisions.",
+          "Twenty-four regulatory-approved device categories exploit non-thermal EMF biological effects across the entire EM spectrum — from DC bone stimulators (1986) to UV phototherapy. This includes 12,000+ individual TENS clearances, a $8–10B neuromodulation market, and 160,000+ implanted DBS devices. tDCS treats depression at 0.3–1.0 V/m — the same order of magnitude as measured urban ambient RF (0.67–1.51 V/m). The claim that EMF is 'too weak' directly contradicts regulatory approval decisions worldwide.",
           "The Ion Forced Oscillation mechanism (Panagopoulos 2025, Frontiers in Public Health) demonstrates a biological response threshold of 10⁻⁵ V/m for polarized, coherent fields — five orders of magnitude below typical environmental levels. There is no intensity gap. The gap existed only in models that assumed thermal effects were the only mechanism.",
         ],
         boundary: "The intensity argument is an empirical claim. FDA approvals and IFO threshold measurements are empirical facts. The burden of proof is on the intensity argument to explain why FDA-approved non-thermal devices work.",
@@ -174,6 +174,15 @@ const t: Record<Locale, Copy> = {
         ],
         boundary: "Until those joins exist, v2 is a research specification and causal map, not a calibrated country forecast model.",
       },
+      {
+        question: "LED lights are energy-efficient and certified safe",
+        response: [
+          "LED lights are certified for electromagnetic compatibility (EMC) — meaning their emissions don't interfere with other electronic devices beyond regulatory limits. They are not certified for biological safety of their intermediate-frequency emissions. CISPR 15, the standard that governs LED lighting EMF, was designed to protect radio reception, not biological systems.",
+          "No regulatory body has evaluated the biological effects of continuous 20–200 kHz fields from LED drivers. The Panagopoulos 2025 IFO-VGIC threshold (10⁻⁵ V/m) is orders of magnitude below any EMC limit. EMC compliance and biological safety are entirely different standards measuring entirely different things.",
+          "Zeghoudi et al. 2025 (Optics & Laser Technology) directly measured LED driver near-field emissions and confirmed E-field components at centimeter distances. A typical home has 15–30 LED bulbs, each containing a switch-mode power supply. The EU incandescent ban (2009–2012) replaced zero-IF sources with continuous-IF sources for ~450 million people without any assessment of the electromagnetic change.",
+        ],
+        boundary: "This is a regulatory-gap argument, not a health claim. If LED driver emissions at environmental distances produce no measurable IFO-VGIC response in controlled experiments, the IF-channel concern is empirically resolved.",
+      },
     ],
     closingTitle: "Constructive ways to test the programme",
     closingText:
@@ -239,7 +248,7 @@ const t: Record<Locale, Copy> = {
         question: "Ympäristön EMF-kentät ovat liian heikkoja biologisiin vaikutuksiin",
         response: [
           "Ihmisen silmä havaitsee yksittäisiä fotoneja. Hait havaitsevat 0,5 µV/m sähkökenttiä. Muuttolintujen kompassi häiriintyy 15 nT RF-kohinasta — 0,03 % geomagneettisesta taustasta. Biologia toimii sähkömagneettisen herkkyyden kvanttirajoilla, koska evoluutio optimoi havaitsemisen, ei toleranssin.",
-          "Yhdeksän FDA-hyväksyttyä lääkintälaitetta hyödyntää ei-termisiä EMF-biologisia vaikutuksia eri taajuusalueilla. tDCS hoitaa masennusta 0,3–1,0 V/m aivokuoressa — sama suuruusluokka kuin kaupunkiympäristön mitattu RF (0,67–1,51 V/m). PEMF-luunparantamislaitteet ovat olleet FDA-hyväksyttyjä vuodesta 1979. Väite EMF:n 'liiallisesta heikkoudesta' on suorassa ristiriidassa FDA:n omien hyväksymispäätösten kanssa.",
+          "Kaksikymmentäneljä regulaattorihyväksyttyä laitekategoriaa hyödyntää ei-termisiä EMF-biologisia vaikutuksia koko EM-spektrillä — DC-luunstimulaattoreista (1986) UV-valohoitoon. Tämä sisältää 12 000+ yksittäistä TENS-hyväksyntää, 8–10 miljardin dollarin neuromodulaatiomarkkinat ja 160 000+ implantoitua DBS-laitetta. tDCS hoitaa masennusta 0,3–1,0 V/m — sama suuruusluokka kuin kaupunkiympäristön mitattu RF (0,67–1,51 V/m). Väite EMF:n 'liiallisesta heikkoudesta' on suorassa ristiriidassa regulaattoreiden hyväksymispäätösten kanssa maailmanlaajuisesti.",
           "Ionien pakotettu oskillaatio -mekanismi (Panagopoulos 2025, Frontiers in Public Health) osoittaa biologisen vasteen kynnyksen 10⁻⁵ V/m polarisoituneille, koherenteille kentille — viisi kertaluokkaa alle tyypillisen ympäristötason. Intensiteettikuilua ei ole. Kuilu oli olemassa vain malleissa, jotka olettivat termisten vaikutusten olevan ainoa mekanismi.",
         ],
         boundary: "Intensiteettiargumentti on empiirinen väite. FDA-hyväksynnät ja IFO-kynnysmittaukset ovat empiirisiä tosiasioita. Todistustaakka on intensiteettiargumentilla selittää, miksi FDA-hyväksytyt ei-termiset laitteet toimivat.",
@@ -308,6 +317,15 @@ const t: Record<Locale, Copy> = {
           "Kalibrointi tehdään vain opetusjaksolla, jota seuraavat riippumaton laboratorioreplikaatio ja sovituksen ulkopuolelle jätetty ASFR/TFR-jakso. Sekä nolla- että ei-nollatulosten tulee päivittää kausaalirekisteriä.",
         ],
         boundary: "Kunnes nämä joinit ovat olemassa, v2 on tutkimusmäärittely ja kausaalikartta, ei kalibroitu maakohtainen ennustemalli.",
+      },
+      {
+        question: "LED-lamput ovat energiatehokkaita ja sertifioituja turvallisiksi",
+        response: [
+          "LED-lamput on sertifioitu sähkömagneettisen yhteensopivuuden (EMC) osalta — eli niiden emissiot eivät häiritse muita elektronisia laitteita yli sääntelyrajojen. Niitä ei ole sertifioitu välitaajuusemissioidensa biologisen turvallisuuden osalta. CISPR 15, standardi joka koskee LED-valaistuksen EMF:ää, suunniteltiin suojaamaan radiovastaanottoa, ei biologisia järjestelmiä.",
+          "Mikään sääntelyelin ei ole arvioinut LED-ajureiden jatkuvien 20–200 kHz kenttien biologisia vaikutuksia. Panagopouloksen 2025 IFO-VGIC-kynnys (10⁻⁵ V/m) on kertaluokkia minkä tahansa EMC-rajan alapuolella. EMC-vaatimustenmukaisuus ja biologinen turvallisuus ovat täysin erilaisia standardeja, jotka mittaavat täysin erilaisia asioita.",
+          "Zeghoudi ym. 2025 (Optics & Laser Technology) mittasi suoraan LED-ajurin lähikenttäemission ja vahvisti sähkökentän komponentit senttimetrien etäisyydellä. Tyypillisessä kodissa on 15–30 LED-lamppua, joista jokaisessa on hakkuriteholähde. EU:n hehkulamppukielto (2009–2012) korvasi nolla-IF-lähteet jatkuvilla IF-lähteillä ~450 miljoonalle ihmiselle ilman minkäänlaista sähkömagneettisen muutoksen arviointia.",
+        ],
+        boundary: "Tämä on sääntelyn aukko -argumentti, ei terveysväite. Jos LED-ajuriemissiot ympäristöetäisyyksillä eivät tuota mitattavaa IFO-VGIC-vastetta kontrolloiduissa kokeissa, IF-kanavahuoli on empiirisesti ratkaistu.",
       },
     ],
     closingTitle: "Rakentavia tapoja testata tutkimusohjelmaa",

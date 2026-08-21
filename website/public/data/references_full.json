@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 464,
+    "total_references": 468,
     "verified_count": 58,
     "generated": "2026-08-20"
   },
@@ -8690,7 +8690,9 @@
       "type": "field",
       "level": "E",
       "pathway": [
-        "C"
+        "C",
+        "IF",
+        "sentinel"
       ],
       "finding": "LED streetlights reduced moth caterpillars by 47% (hedgerow) and 33% (grass margin) vs unlit sites. Effects worse under LED than sodium.",
       "tags": [
@@ -8700,7 +8702,7 @@
         "caterpillar",
         "insect_decline"
       ],
-      "verified": false,
+      "verified": true,
       "category": "ecology_sentinels",
       "pdf_section": null,
       "pdf_number": null,
@@ -8715,7 +8717,9 @@
       "type": "experimental",
       "level": "E",
       "pathway": [
-        "C"
+        "C",
+        "IF",
+        "sentinel"
       ],
       "finding": "LED traps captured 48% more insects than sodium (HPS). Changing color temperature (2700-6500K) did not reduce effect.",
       "tags": [
@@ -8725,7 +8729,7 @@
         "HPS",
         "light_pollution"
       ],
-      "verified": false,
+      "verified": true,
       "category": "ecology_sentinels",
       "pdf_section": null,
       "pdf_number": null,
@@ -8896,7 +8900,9 @@
       "journal": "Energies (PMC9920439)",
       "type": "technical",
       "level": "T",
-      "pathway": [],
+      "pathway": [
+        "IF"
+      ],
       "finding": "LED bulbs produce significant harmonic distortions, exceeding THD limits. Incandescent bulbs better for power quality.",
       "tags": [
         "LED",
@@ -9671,6 +9677,101 @@
         "electrostatic",
         "review",
         "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "zeghoudi2025_led_driver_emf",
+      "authors": "Zeghoudi A, Bendaoud A, Canale L, Tilmatine A, Slimani H",
+      "year": 2025,
+      "title": "Experimental measurement of near electric emission from LED driver as function of power variation and lighting mode",
+      "journal": "Optics & Laser Technology",
+      "doi": "10.1016/j.optlastec.2025.112583",
+      "category": "mechanism",
+      "level": "E",
+      "type": "experimental",
+      "pathway": [
+        "IF"
+      ],
+      "finding": "Direct measurement of LED driver near-field E-field emissions. Components decrease with distance but measurable at cm range. First systematic characterization of LED driver IF emissions.",
+      "tags": [
+        "LED",
+        "driver",
+        "IF",
+        "near_field",
+        "emission_measurement"
+      ],
+      "verified": true
+    },
+    {
+      "id": "cispr15_2018_led_emissions",
+      "authors": "IEC/CISPR",
+      "year": 2018,
+      "title": "CISPR 15: Limits and methods of measurement of radio disturbance from lighting equipment",
+      "journal": "IEC Standard",
+      "doi": null,
+      "category": "rf_safety_regulation",
+      "level": "E",
+      "type": "standard",
+      "pathway": [
+        "IF"
+      ],
+      "finding": "Recognizes LED driver PWM emissions at 50-200 kHz switching frequency. Standard designed for EMC (device interference), not biological safety.",
+      "tags": [
+        "LED",
+        "CISPR",
+        "EMC",
+        "standard",
+        "IF",
+        "regulation"
+      ],
+      "verified": true
+    },
+    {
+      "id": "eu_directive_244_2009",
+      "authors": "European Commission",
+      "year": 2009,
+      "title": "Commission Regulation (EC) No 244/2009: Ecodesign requirements for non-directional household lamps",
+      "journal": "Official Journal of the European Union",
+      "doi": null,
+      "category": "regulatory",
+      "level": "E",
+      "type": "regulatory",
+      "pathway": [
+        "IF"
+      ],
+      "finding": "Phased out incandescent lamps in EU 2009-2012. Replaced by LED and CFL. No assessment of electromagnetic emission changes from switch-mode power supplies.",
+      "tags": [
+        "EU",
+        "incandescent_ban",
+        "LED_transition",
+        "regulation",
+        "IF",
+        "natural_experiment"
+      ],
+      "verified": true
+    },
+    {
+      "id": "analog_devices_2020_led_emi",
+      "authors": "Analog Devices",
+      "year": 2020,
+      "title": "Keeping EMI from LED Drivers Under Control",
+      "journal": "Electronic Design / Analog Dialogue",
+      "doi": null,
+      "category": "mechanism",
+      "level": "E",
+      "type": "technical",
+      "pathway": [
+        "IF"
+      ],
+      "finding": "LED driver EMI 'can be extremely high.' Case: LED bulb interfered with garage door remote. Switch-mode PS generates conducted + radiated emissions at switching freq and harmonics.",
+      "tags": [
+        "LED",
+        "EMI",
+        "driver",
+        "switch_mode",
+        "IF",
+        "harmonics"
       ],
       "verified": true
     }

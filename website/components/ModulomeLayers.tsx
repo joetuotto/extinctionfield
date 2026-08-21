@@ -23,6 +23,24 @@ interface Layer {
 
 const LAYERS: Layer[] = [
   {
+    id: "chromophore",
+    level: 8,
+    color: "#E91E63",
+    freq: "RF (CRY) + Optical (CCO)",
+    freqFi: "RF (CRY) + Optinen (CCO)",
+    target: "Mitochondrial respiration, radical pair magnetoreception",
+    targetFi: "Mitokondriaalinen respiraatio, radikaaliparin magnetoreseptio",
+    fdaEvidence: "LLLT / Photobiomodulation — FDA 510(k) 2007+",
+    fdaEvidenceFi: "LLLT / Fotobiomodulaatio — FDA 510(k) 2007+",
+    bermPath: "CCO + CRY",
+    epistemic: "E — FDA 510(k) (LLLT), M — experimental (CRY)",
+    epistemicFi: "E — FDA 510(k) (LLLT), M — kokeellinen (CRY)",
+    description: "Chromophores are molecules whose conformation changes upon absorbing specific EM frequencies. Cytochrome c oxidase (CCO) in mitochondria absorbs near-IR/visible photons → increased ATP and ROS signaling (LLLT mechanism). Cryptochrome (CRY) radical pairs are perturbed by RF magnetic fields → disrupted circadian/magnetoreception signaling. Same principle: EM frequency → chromophore conformational change → biological cascade.",
+    descriptionFi: "Kromoforit ovat molekyylejä joiden konformaatio muuttuu absorboidessaan tietyn EM-taajuuden. Sytokromi c -oksidaasi (CCO) mitokondrioissa absorboi lähi-IR/näkyvän valon fotoneja → lisääntynyt ATP ja ROS-signalointi (LLLT-mekanismi). Kryptokromin (CRY) radikaalipari häiriintyy RF-magneettikentistä → häiriintynyt sirkadiaani/magnetoreseptio-signalointi. Sama periaate: EM-taajuus → kromoforin konformaatiomuutos → biologinen kaskadi.",
+    mechanism: "Photon/RF → chromophore absorption → conformational change → downstream cascade (ATP↑ via CCO, or circadian disruption via CRY)",
+    mechanismFi: "Fotoni/RF → kromoforin absorptio → konformaatiomuutos → alavirtakaskadi (ATP↑ CCO:n kautta, tai sirkadiaanihäiriö CRY:n kautta)",
+  },
+  {
     id: "cell-division",
     level: 7,
     color: "#FF5722",
@@ -152,8 +170,8 @@ const LAYERS: Layer[] = [
 
 const COPY = {
   en: {
-    title: "EMF Modulome: Seven Layers of Biological Susceptibility",
-    lead: "The modulome synthesizes Becker's DC control system, Adee's electrome, Levin's bioelectric code, and Lindgren's geometric framework into a unified seven-layer model of EMF biological susceptibility. Each layer is independently supported by FDA-approved therapeutic devices that exploit the same mechanism.",
+    title: "EMF Modulome: Eight Layers of Biological Susceptibility",
+    lead: "The modulome synthesizes Becker's DC control system, Adee's electrome, Levin's bioelectric code, Lindgren's geometric framework, and the chromophore generalization (CCO/CRY) into a unified eight-layer model of EMF biological susceptibility. Each layer is independently supported by regulatory-approved therapeutic devices that exploit the same mechanism.",
     layer: "Layer",
     frequency: "Frequency band",
     target: "Biological target",
@@ -165,8 +183,8 @@ const COPY = {
     note: "Epistemic note: Layer evidence ranges from E (Phase III RCT) to M/C (theoretical model). Each layer's status is marked independently. The modulome as a unified framework is a BERM-specific synthesis [C] — the individual components carry their own evidence levels.",
   },
   fi: {
-    title: "EMF-modulooma: seitsemän biologisen herkkyyden tasoa",
-    lead: "Modulooma yhdistää Beckerin DC-ohjausjärjestelmän, Adeen elektromin, Levinin bioelektrisen koodin ja Lindgrenin geometrisen viitekehyksen yhtenäiseksi seitsemän­tasoisen malliksi EMF:n biologisesta herkkyydestä. Jokaista tasoa tukevat itsenäisesti FDA-hyväksytyt terapeuttiset laitteet, jotka hyödyntävät samaa mekanismia.",
+    title: "EMF-modulooma: kahdeksan biologisen herkkyyden tasoa",
+    lead: "Modulooma yhdistää Beckerin DC-ohjausjärjestelmän, Adeen elektromin, Levinin bioelektrisen koodin, Lindgrenin geometrisen viitekehyksen ja kromoforien yleistyksen (CCO/CRY) yhtenäiseksi kahdeksantasoiseksi malliksi EMF:n biologisesta herkkyydestä. Jokaista tasoa tukevat itsenäisesti regulaattorihyväksytyt terapeuttiset laitteet, jotka hyödyntävät samaa mekanismia.",
     layer: "Taso",
     frequency: "Taajuuskaista",
     target: "Biologinen kohde",

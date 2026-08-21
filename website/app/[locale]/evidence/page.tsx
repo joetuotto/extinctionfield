@@ -13,6 +13,7 @@ import { CellSizeFrequencyMatrix } from "@/components/CellSizeFrequencyMatrix";
 import { ThreeChannelDiagram } from "@/components/ThreeChannelDiagram";
 import { RetrodictionCards } from "@/components/RetrodictionCards";
 import { DifferentialSusceptibility } from "@/components/DifferentialSusceptibility";
+import { LightingTransitionTimeline } from "@/components/LightingTransitionTimeline";
 import {
   causalNodeLabels,
   FIELDSTATE_EVIDENCE,
@@ -78,8 +79,8 @@ const COPY = {
         id: "therapeutic-device-paradox",
         title: "The therapeutic device paradox",
         paragraphs: [
-          "FDA has approved 9+ medical devices whose efficacy depends on non-thermal EMF biological effects across frequencies from DC to 27 MHz. Each approval required clinical proof that electromagnetic fields produce a biological response at non-thermal intensities. These include bone growth stimulators (DC, PMA 1986), PEMF devices (1–100 Hz, PMA 1979), rTMS for depression (1–50 Hz, 510(k) 2008), vagus nerve stimulation for migraine (1–30 Hz, 510(k)), tDCS for depression (DC, PMA 2025), and Tumor Treating Fields for cancer (100–500 kHz, PMA 2011). This is not controversial EMF safety research — it is mainstream medicine.",
-          "The logical contradiction is direct: FDA requires proof of biological effect for device approval, while ICNIRP assumes absence of non-thermal biological effects for exposure limit setting. These two positions are logically incompatible. If non-thermal biological effects exist at multiple frequencies (as FDA approvals demonstrate), then exposure limits based solely on thermal effects are necessarily incomplete.",
+          "Regulatory agencies worldwide have approved 24+ device categories whose efficacy depends on non-thermal electromagnetic biological effects — spanning the entire EM spectrum from DC to UV light. These include bone growth stimulators (DC, PMA 1986), TENS (12,000+ individual 510(k) clearances), deep brain stimulation (PMA 1997), rTMS for depression (510(k) 2008), TTFields for cancer (PMA 2011/2015/2026), PRF anti-inflammatory therapy (27 MHz), LLLT/photobiomodulation (510(k) 2007), blue light for neonatal jaundice, and UV phototherapy for psoriasis. Each approval required clinical proof that electromagnetic energy produces a biological response without thermal heating. This is not controversial EMF safety research — it is mainstream medicine representing a $8–10 billion global neuromodulation market.",
+          "The logical contradiction is direct: FDA requires proof of biological effect for device approval, while ICNIRP assumes absence of non-thermal biological effects for exposure limit setting. These two positions are logically incompatible. Non-thermal bioactivity is proven at every frequency from DC to UV light — except at RF frequencies between 300 MHz and 6 GHz. This is not a gap in biology; it is a gap in acknowledgment. The only frequency range where non-thermal effects are 'not recognized' is the range used by the telecommunications industry.",
           "The tDCS comparison is particularly revealing: the therapeutic field strength in the cortex (0.3–1.0 V/m) that earned FDA PMA approval in December 2025 is the same order of magnitude as measured urban ambient RF field strength (0.67–1.51 V/m). If 0.3 V/m DC is biologically active enough for FDA approval, urban ambient RF at 0.67 V/m cannot be assumed biologically inert. The Novocure TTFields patent (US 7,016,725) explicitly identifies that 'cells in the ovaries or testicles may be sensitive to the electric fields' at 100–300 kHz — the same frequency range produced by LED lighting drivers.",
         ],
         studies: [
@@ -179,6 +180,8 @@ const COPY = {
           "Studies attributing LED health effects to 'blue light' (Tosini 2016) did not control for the EMF component. LED bulbs produce both blue light and kHz-EMF; incandescent bulbs produce neither. When a study compares LED to incandescent and finds melatonin suppression, it cannot determine whether the cause was spectral (blue light via retina → SCN) or electromagnetic (kHz fields via pineal or VGCC). No separation experiment has been conducted.",
           "The biological activity of intermediate-frequency fields (kHz range) is confirmed by Tumor Treating Fields (TTFields), an FDA-approved cancer therapy using 100–300 kHz alternating fields to disrupt cell division. If these frequencies are therapeutically active in cancer cells, they cannot be biologically inert in normal tissue.",
           "LED street lighting compounds the effect: Boyes et al. 2021 (Science Advances) found 47% reduction in moth caterpillar abundance under LED streetlights vs unlit sites, with worse effects from LEDs than sodium lamps. Pawson & Bader 2014 found LED traps captured 48% more insects than sodium. The Science editorial note on Lindecke 2026 explicitly identifies LED lights as a source of biological RF noise.",
+          "The EU incandescent ban (Directive 244/2009) provides a testable natural experiment. The ban was phased: >100W in September 2009, >75W in 2010, >60W in 2011, all remaining in 2012, halogens in 2018. This was an administratively mandated, non-self-selected, population-wide switch from zero IF-EMF sources to continuous IF-EMF sources affecting ~450 million people. Zeghoudi et al. 2025 (Optics & Laser Technology) directly measured LED driver near-field emissions, confirming measurable E-field components at centimeter distances.",
+          "BERM predicts that EU countries — where the lighting transition was mandated and simultaneous — will show accelerated TFR decline in 2015–2022 (5–10 year lag from cumulative spermatogenic damage) compared to countries where the ban occurred later or not at all (USA effective 2023, many developing countries still no ban). This is testable with existing demographic data using difference-in-differences regression with LED ban timing as the treatment variable.",
         ],
         studies: [
           { citation: "Boyes et al. (Science Advances)", year: 2021, note: "LED streetlights: −47% moth caterpillars vs unlit" },
@@ -187,6 +190,8 @@ const COPY = {
           { citation: "LED power quality study (PMC9920439)", year: 2023, note: "LED bulbs exceed harmonic distortion limits" },
           { citation: "Havas — dirty electricity (ICEMS)", year: 2006, note: "kHz filtering improved diabetes/MS symptoms" },
           { citation: "Aerts et al. (Environment International)", year: 2019, note: "IF fields (300 Hz–1 MHz) poorly studied" },
+          { citation: "Zeghoudi et al. (Optics & Laser Technology)", year: 2025, note: "LED driver near-field E-field emission measured" },
+          { citation: "EU Directive 244/2009", year: 2009, note: "Phased incandescent ban 2009–2012, no EMF assessment" },
         ],
       },
       {
@@ -231,8 +236,8 @@ const COPY = {
         text: "Novocure's TTFields patent (US 7,016,725) explicitly states that 'ovarian or testicular cells may be sensitive to electric fields' at 100–300 kHz — the same frequency range as LED switched-mode power supplies found in every modern building.",
       },
       {
-        label: "PEMF expands mechanism",
-        text: "Pulsed electromagnetic field therapy works at 1–100 Hz via calcium signaling and osteoblast activation — demonstrating that VGCC is not the only non-thermal pathway. The EMF modulome encompasses at least 7 transduction layers.",
+        label: "Chromophore generalization",
+        text: "LLLT works because visible light photons are absorbed by cytochrome c oxidase (CCO) in mitochondria. RF fields affect biology through cryptochrome radical pairs (CRY). Both are chromophores — molecules whose conformation changes when they absorb specific EM frequencies. Different chromophore, same principle, same non-thermal mechanism class.",
       },
     ],
     paradoxCalTitle: "Why biological sensitivity is expected, not surprising",
@@ -283,8 +288,8 @@ const COPY = {
         id: "therapeutic-device-paradox",
         title: "Terapeuttisten laitteiden paradoksi",
         paragraphs: [
-          "FDA on hyväksynyt 9+ lääkinnällistä laitetta, joiden teho perustuu EMF:n ei-termiseen biologiseen vaikutukseen taajuuksilla DC:stä 27 MHz:iin. Jokaisen hyväksyntä edellytti kliinistä todistamista siitä, että sähkömagneettiset kentät tuottavat biologisen vasteen ei-termisellä intensiteetillä. Näihin kuuluvat luunkasvustimulaattorit (DC, PMA 1986), PEMF-laitteet (1–100 Hz, PMA 1979), rTMS masennukseen (1–50 Hz, 510(k) 2008), vagushermostimulaatio migreeniin (1–30 Hz, 510(k)), tDCS masennukseen (DC, PMA 2025) ja Tumor Treating Fields syöpään (100–500 kHz, PMA 2011). Tämä ei ole kontroversiaalista EMF-turvallisuustutkimusta — se on valtavirtalääketiedettä.",
-          "Looginen ristiriita on suora: FDA vaatii biologisen vaikutuksen todentamista laitteen hyväksymiseksi, kun taas ICNIRP olettaa ei-termisten biologisten vaikutusten puuttumista altistusrajojen asettamiseksi. Nämä kaksi positiota ovat loogisesti yhteensopimattomia. Jos ei-termisiä biologisia vaikutuksia on useilla taajuuksilla (kuten FDA:n hyväksynnät osoittavat), pelkästään termisiin vaikutuksiin perustuvat altistusrajat ovat väistämättä puutteelliset.",
+          "Regulaattorit ympäri maailmaa ovat hyväksyneet 24+ laitekategoriaa, joiden teho perustuu ei-termiseen sähkömagneettiseen biologiseen vaikutukseen — kattaen koko EM-spektrin DC:stä UV-valoon. Näihin kuuluvat luunkasvustimulaattorit (DC, PMA 1986), TENS (12 000+ yksittäistä 510(k)-hyväksyntää), syväaivostimulaatio (PMA 1997), rTMS masennukseen (510(k) 2008), TTFields syöpään (PMA 2011/2015/2026), PRF-tulehdushoito (27 MHz), LLLT/fotobiomodulaatio (510(k) 2007), sinivaloterapia vastasyntyneiden keltaisuuteen ja UV-valohoito psoriasikseen. Jokainen hyväksyntä edellytti kliinistä todistamista siitä, että sähkömagneettinen energia tuottaa biologisen vasteen ilman termistä kuumennusta. Tämä ei ole kontroversiaalista EMF-turvallisuustutkimusta — se on valtavirtalääketiedettä, joka edustaa 8–10 miljardin dollarin globaaleja neuromodulaatiomarkkinoita.",
+          "Looginen ristiriita on suora: FDA vaatii biologisen vaikutuksen todentamista laitteen hyväksymiseksi, kun taas ICNIRP olettaa ei-termisten biologisten vaikutusten puuttumista altistusrajojen asettamiseksi. Nämä kaksi positiota ovat loogisesti yhteensopimattomia. Ei-terminen bioaktiivisuus on todistettu jokaisella taajuudella DC:stä UV-valoon — paitsi RF-taajuuksilla 300 MHz:n ja 6 GHz:n välillä. Tämä ei ole aukko biologiassa; se on aukko tunnustamisessa. Ainoa taajuusalue jossa ei-termisiä vaikutuksia 'ei tunnusteta' on telekommunikaatioteollisuuden käyttämä alue.",
           "tDCS-vertailu on erityisen paljastava: terapeuttinen kenttävoimakkuus aivokuoressa (0,3–1,0 V/m), joka sai FDA PMA -hyväksynnän joulukuussa 2025, on samaa suuruusluokkaa kuin mitattu kaupungin ambient-RF-kenttävoimakkuus (0,67–1,51 V/m). Jos 0,3 V/m DC on biologisesti riittävän aktiivinen FDA-hyväksyntään, kaupungin ambient-RF:ää 0,67 V/m ei voida olettaa biologisesti inertiksi. Novocuren TTFields-patentti (US 7 016 725) tunnistaa eksplisiittisesti, että 'munasarjojen tai kivesten solut voivat olla herkkiä sähkökentille' 100–300 kHz:n taajuudella — samalla taajuusalueella kuin LED-valaistuksen hakkuriteholähteet.",
         ],
         studies: [
@@ -384,6 +389,8 @@ const COPY = {
           "Tutkimukset, jotka attribuoivat LED:n terveysvaikutukset 'siniselle valolle' (Tosini 2016), eivät kontrolloineet EMF-komponenttia. LED-lamput tuottavat sekä sinistä valoa että kHz-EMF:ää; hehkulamput eivät kumpaakaan. Kun tutkimus vertaa LED:ää hehkulamppuun ja havaitsee melatoniinin suppression, se ei pysty erottamaan, oliko syy spektraalinen (sininen valo verkkokalvon kautta → SCN) vai sähkömagneettinen (kHz-kentät pineaalirauhasen tai VGCC:n kautta). Erottelututkimusta ei ole tehty.",
           "Välitaajuisten kenttien (kHz-alue) biologinen aktiivisuus on vahvistettu Tumor Treating Fields (TTFields) -hoidolla, FDA:n hyväksymällä syöpähoidolla, joka käyttää 100–300 kHz:n vaihtokenttiä solunjakautumisen häiritsemiseen. Jos nämä taajuudet ovat terapeuttisesti aktiivisia syöpäsoluissa, ne eivät voi olla biologisesti inerttejä normaalissa kudoksessa.",
           "LED-katuvalaistus vahvistaa vaikutusta: Boyes ym. 2021 (Science Advances) havaitsivat 47 %:n vähenemisen yöperhosten toukkamäärissä LED-katuvalojen alla verrattuna valaisemattomiin kohteisiin. Pawson & Bader 2014 havaitsivat LED-loukkujen pyydystäneen 48 % enemmän hyönteisiä kuin natriumlamppu. Sciencen toimituksellinen huomautus Lindecke 2026 -tutkimuksessa tunnistaa nimenomaisesti LED-valot biologisen RF-kohinan lähteeksi.",
+          "EU:n hehkulamppukielto (direktiivi 244/2009) tarjoaa testattavan luonnollisen kokeen. Kielto vaiheistettiin: >100 W syyskuussa 2009, >75 W 2010, >60 W 2011, kaikki loput 2012, halogeenit 2018. Tämä oli hallinnollisesti pakotettu, ei-itsevalittu, väestönlaajuinen siirtymä nollasta IF-EMF-lähteestä jatkuviin IF-EMF-lähteisiin, joka koski ~450 miljoonaa ihmistä. Zeghoudi ym. 2025 (Optics & Laser Technology) mittasi suoraan LED-ajurin lähikenttäemission ja vahvisti mitattavat sähkökentän komponentit senttimetrien etäisyydellä.",
+          "BERM ennustaa, että EU-maat — joissa valaistussiirtymä oli pakollinen ja samanaikainen — osoittavat kiihtyvää TFR-laskua 2015–2022 (5–10 vuoden viive kumulatiivisesta spermatogeneesivauriosta) verrattuna maihin, joissa kielto tuli voimaan myöhemmin tai ei lainkaan (USA vasta 2023, monet kehitysmaat yhä ilman kieltoa). Tämä on testattavissa olemassa olevalla demografisella datalla käyttäen erotus-erotuksissa-regressiota LED-kiellon ajoituksella käsittelymuuttujana.",
         ],
         studies: [
           { citation: "Boyes ym. (Science Advances)", year: 2021, note: "LED-katuvalot: −47 % yöperhosten toukkia vs valaisemattomat" },
@@ -392,6 +399,8 @@ const COPY = {
           { citation: "LED-sähkönlaatututkimus (PMC9920439)", year: 2023, note: "LED-lamput ylittävät harmonisen särön rajat" },
           { citation: "Havas — dirty electricity (ICEMS)", year: 2006, note: "kHz-suodatus paransi diabetes-/MS-oireita" },
           { citation: "Aerts ym. (Environment International)", year: 2019, note: "IF-kentät (300 Hz–1 MHz) heikosti tutkittuja" },
+          { citation: "Zeghoudi ym. (Optics & Laser Technology)", year: 2025, note: "LED-ajurin lähikenttäemissio mitattu" },
+          { citation: "EU-direktiivi 244/2009", year: 2009, note: "Hehkulamppujen asteittainen kielto 2009–2012, ei EMF-arviointia" },
         ],
       },
       {
@@ -436,8 +445,8 @@ const COPY = {
         text: "Novocuren TTFields-patentti (US 7 016 725) toteaa eksplisiittisesti, että 'munasarjojen tai kivesten solut voivat olla herkkiä sähkökentille' taajuudella 100–300 kHz — samalla taajuusalueella kuin LED-valaistuksen hakkuriteholähteet, joita on jokaisessa nykyrakennuksessa.",
       },
       {
-        label: "PEMF laajentaa mekanismin",
-        text: "Pulssisähkömagneettinen kenttäterapia toimii 1–100 Hz:n taajuudella kalsiumsignaloinnin ja osteoblastiaktivaation kautta — osoittaen, että VGCC ei ole ainoa ei-terminen reitti. EMF-moduloomi kattaa vähintään 7 transduktiokerrosta.",
+        label: "Kromoforien yleistys",
+        text: "LLLT toimii koska näkyvän valon fotonit absorboituvat mitokondrioiden sytokromi c -oksidaasiin (CCO). RF-kentät vaikuttavat biologiaan kryptokromi-radikaaliparin (CRY) kautta. Molemmat ovat kromofooreja — molekyylejä joiden konformaatio muuttuu absorboidessaan tietyn EM-taajuuden. Eri kromofori, sama periaate, sama ei-terminen mekanismiluokka.",
       },
     ],
     paradoxCalTitle: "Miksi biologinen herkkyys on odotettavissa, ei yllättävää",
@@ -558,6 +567,12 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
 
               {narrative.id === "covid" && (
                 <ThreeChannelDiagram locale={activeLocale} />
+              )}
+
+              {narrative.id === "lighting" && (
+                <div className="mt-8">
+                  <LightingTransitionTimeline locale={activeLocale} />
+                </div>
               )}
             </article>
           ))}

@@ -71,6 +71,8 @@ const t = {
       "ELF channel (f < ~1 kHz): field drops across the membrane. ΔV_mem = E_ext · d_cell · H(f). χ_mem saturated at 7×10⁶ V/m. Linear response. Mechanisms: VGCC→Ca²⁺→ROS (pathway A), GPCR-adenosine (PEMF, FDA 1979), Nav-modulation (TMS, FDA 2008), vagus nerve (VNS, FDA 2017).",
     s2bIF:
       "IF channel (f_c < f < f_RPM): field penetrates the cell interior. T(f) = 1/√(1+(f_c/f)²). Primary mechanism at environmental levels: IFO-VGIC (linear, threshold 10⁻⁵ V/m). Geometric field amplification at cleavage furrow: G ≈ (d_cell/d_furrow)² ≈ 25×. Selective effect on dividing cells. TTFields (FDA 2011+) validates the mechanism at therapeutic intensity via DEP.",
+    s2bIFSources:
+      "Environmental IF source characterization: a typical LED driver operates at switching frequency f_sw in the range 20–200 kHz with harmonic content at 2f_sw, 3f_sw, 5f_sw extending into the MHz range. The waveform is a square pulse train, not a sinusoid, which produces richer harmonic content than continuous-wave sources. Panagopoulos 2025 demonstrates that pulsed fields are biologically more active than continuous-wave fields at the same average intensity. Zeghoudi et al. 2025 directly measured LED driver near-field emissions, confirming measurable E-field components at centimeter distances.",
     s2bRF:
       "RF channel (f > ~1 MHz): membrane is transparent. Classical field–membrane interaction is weak. Quantum spin effects become relevant. Lindgren's covariant spin correction: B_local = (1/w)b + (A·b)A/(w(1+w)). Anisotropic response. Mechanisms: CRY/RPM→circadian disruption (pathway B), magnetic compass corruption (Lindecke 2026).",
     s2bAfter:
@@ -418,6 +420,8 @@ const t = {
       "ELF-kanava (f < ~1 kHz): kenttä putoaa kalvon yli. ΔV_mem = E_ext · d_cell · H(f). χ_mem saturoitunut 7×10⁶ V/m:ssä. Lineaarinen vaste. Mekanismit: VGCC→Ca²⁺→ROS (reitti A), GPCR-adenosiini (PEMF, FDA 1979), Nav-modulaatio (TMS, FDA 2008), vagushermo (VNS, FDA 2017).",
     s2bIF:
       "IF-kanava (f_c < f < f_RPM): kenttä penetroituu solun sisälle. T(f) = 1/√(1+(f_c/f)²). Päämekanismi ympäristötasoilla: IFO-VGIC (lineaarinen, kynnys 10⁻⁵ V/m). Geometrinen kenttävahvistus kaulakuroutumassa: G ≈ (d_cell/d_furrow)² ≈ 25×. Valikoiva vaikutus jakautuviin soluihin. TTFields (FDA 2011+) validoi mekanismin terapeuttisella intensiteetillä DEP:n kautta.",
+    s2bIFSources:
+      "Ympäristön IF-lähteiden karakterisointi: tyypillinen LED-ajuri toimii kytkintaajuudella f_sw alueella 20–200 kHz harmonisella sisällöllä taajuuksilla 2f_sw, 3f_sw, 5f_sw megahertsialueelle asti. Aaltomuoto on suorakaideaalto, ei siniaalto, joka tuottaa rikkaampaa harmonista sisältöä kuin jatkuva-aaltolähteet. Panagopoulos 2025 osoittaa, että pulssitetut kentät ovat biologisesti aktiivisempia kuin jatkuva-aaltokentät samalla keskimääräisellä intensiteetillä. Zeghoudi ym. 2025 mittasi suoraan LED-ajurin lähikenttäemission vahvistaen mitattavat sähkökentän komponentit senttimetrien etäisyydellä.",
     s2bRF:
       "RF-kanava (f > ~1 MHz): kalvo on läpinäkyvä. Klassinen kenttä-kalvo-vuorovaikutus on heikko. Kvantti-spin-efektit tulevat relevantiksi. Lindgrenin kovariantti spin-korjaus: B_local = (1/w)b + (A·b)A/(w(1+w)). Anisotrooppinen vaste. Mekanismit: CRY/RPM→sirkadiaaninen häiriö (reitti B), magneettikompassin korruptoituminen (Lindecke 2026).",
     s2bAfter:
@@ -953,6 +957,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
                     <MathBlock tex="T(f) = \frac{1}{\sqrt{1+(f_c/f)^2}}, \quad G_{furrow} \approx \left(\frac{d_{cell}}{d_{furrow}}\right)^2 \approx 25\times" />
                   </div>
                   <DerivationLine>{d.s2bIF}</DerivationLine>
+                  <p className="text-xs text-foreground-muted mt-2 italic leading-relaxed">{d.s2bIFSources}</p>
                 </div>
                 <div className="p-3 rounded border-l-2 border-red-500/50">
                   <p className="text-xs font-semibold text-red-400 mb-1">RF (f {">"} ~1 MHz)</p>

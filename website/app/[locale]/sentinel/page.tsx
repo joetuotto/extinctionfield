@@ -40,6 +40,11 @@ const COPY = {
     batRef: "Lindecke O et al. (2026). Science 388: 977+. doi:10.1126/science.adq4418",
     batNote: "This study demonstrates RF-induced disorientation in bats. It does not study fertility, hormones, or cell biology. The BERM framework implications are model predictions, not conclusions of the original study.",
 
+    insectTitle: "Insects: LED lighting and population decline",
+    insectP1: "Boyes et al. 2021 (Science Advances) found that moth caterpillar abundance under LED street lights was 52% lower than in nearby unlit areas — compared to 41% lower under sodium lighting. The difference between LED and sodium is significant: sodium lamps are discharge lamps with minimal IF emissions; LED lamps contain switch-mode drivers emitting continuous 20–200 kHz fields.",
+    insectP2: "While the study attributed the difference to light spectrum (white vs yellow), BERM's IF channel provides an alternative mechanism: the LED driver's IF emissions may directly affect caterpillar development through IFO-VGIC perturbation of voltage-gated ion channels. Pawson & Bader 2014 found LED traps captured 48% more insects than sodium, an effect independent of color temperature — suggesting a mechanism beyond visible spectrum.",
+    insectNote: "These studies measured population-level outcomes, not individual IF-EMF exposure. The LED vs sodium difference is consistent with the IF hypothesis but does not exclude spectral or thermal explanations. Controlled IF-only exposure experiments have not been conducted on insects.",
+
     covidTitle: "COVID lockdown: an informative counter-result",
     covidText: "Source-verified COLOSS data does not show bee colony improvement during COVID lockdowns: winter loss increased by 2.27 percentage points (24/35 countries worsened, p = 0.043). BBS birds also declined 2.8–3.0% in 2020–22. This is an informative negative result: it shows that the simple 'lockdown → ambient EMF ↓ → sentinels improve' prediction does not hold, likely because household RF traffic increased while outdoor activity decreased.",
     covidLabel: "Counter-result",
@@ -82,6 +87,11 @@ const COPY = {
     batHighlight: "Sopraanoyölepakko painaa noin 6 grammaa. Sen koko keho on hyvin Wi-Fi- ja matkapuhelintukiasema-antennien lähikentässä. RPM-mekanismi lepakkokryptokromissa toimii identtisesti lintukryptokromin kanssa — geometrinen herkkyys ennustaa, että mikä tahansa radikaaliparikompassia käyttävä nisäkäs häiriintyy kaupunkitason ambient-RF:stä. Tuntien kestävä vaikutus viittaa syvempään kalibraatiovirheeseen kuin pelkkä sensorinen peittyminen — lepakko menettää sisäisen mallinsa magneettisesta pohjoisesta eikä se korjaudu nopeasti.",
     batRef: "Lindecke O ym. (2026). Science 388: 977+. doi:10.1126/science.adq4418",
     batNote: "Tämä tutkimus osoittaa RF:n aiheuttaman desorientaation lepakoilla. Se ei tutki hedelmällisyyttä, hormoneja tai solubiologiaa. BERM-kehyksen tulkinnat ovat mallipohjisia ennusteita, eivät alkuperäisen tutkimuksen johtopäätöksiä.",
+
+    insectTitle: "Hyönteiset: LED-valaistus ja populaatiolasku",
+    insectP1: "Boyes ym. 2021 (Science Advances) havaitsivat, että yöperhosten toukkamäärä LED-katuvalaistuksen alla oli 52 % pienempi kuin läheisissä valaisemattomissa kohteissa — verrattuna 41 %:n vähenemiseen natriumvalaistuksen alla. Ero LED:n ja natriumin välillä on merkitsevä: natriumlamput ovat purkauslamppuja minimaalisella IF-emissiolla; LED-lamput sisältävät hakkuriteholähteitä, jotka tuottavat jatkuvaa 20–200 kHz kenttää.",
+    insectP2: "Tutkimus attribuoi eron valospektriin (valkoinen vs keltainen), mutta BERM:n IF-kanava tarjoaa vaihtoehtoisen mekanismin: LED-ajurin IF-emissiot voivat suoraan vaikuttaa toukkien kehitykseen IFO-VGIC-häiriön kautta jänniteportetuissa ionikanavissa. Pawson & Bader 2014 havaitsivat LED-loukkujen pyydystäneen 48 % enemmän hyönteisiä kuin natriumlamput, vaikutuksen ollessa riippumaton värilämpötilasta — mikä viittaa näkyvän spektrin ulkopuoliseen mekanismiin.",
+    insectNote: "Nämä tutkimukset mittasivat populaatiotason tuloksia, eivät yksilötason IF-EMF-altistusta. LED:n ja natriumin välinen ero on yhteensopiva IF-hypoteesin kanssa mutta ei sulje pois spektraalisia tai termisiä selityksiä. Kontrolloituja pelkän IF:n altistuskokeita ei ole tehty hyönteisillä.",
 
     covidTitle: "COVID-lockdown: informatiivinen vastatulos",
     covidText: "Lähdevarmennettu COLOSS-data ei näytä mehiläispesien paranemista COVID-lockdownien aikana: talvihäviö kasvoi 2,27 prosenttiyksikköä (24/35 maata paheni, p = 0,043). BBS-linnut myös laskivat 2,8–3,0 % vuosina 2020–22. Tämä on informatiivinen negatiivinen tulos: se osoittaa, että yksinkertainen 'lockdown → ambientin EMF ↓ → sentinellit paranevat' -ennuste ei päde, todennäköisesti koska kotitalouksien RF-liikenne kasvoi samalla kun ulkona liikkuminen väheni.",
@@ -181,6 +191,18 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
         <p className="text-xs text-foreground-muted font-mono-num mb-4">{d.batRef}</p>
         <div className="rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
           <p className="text-xs text-foreground-muted leading-relaxed">{d.batNote}</p>
+        </div>
+      </section>
+
+      {/* Insects: LED vs sodium */}
+      <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.insectTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p>{d.insectP1}</p>
+          <p>{d.insectP2}</p>
+        </div>
+        <div className="mt-4 rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.insectNote}</p>
         </div>
       </section>
 

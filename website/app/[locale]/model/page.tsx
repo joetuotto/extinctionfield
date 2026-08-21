@@ -50,6 +50,9 @@ const t = {
     twoChLayersTitle: "12 technology layers composing the ambient field",
     twoChLayersDesc:
       "The ambient term is not monolithic. It decomposes into 12 independent technology layers, each with its own driver, deployment timeline, and frequency profile. This decomposition improves the model's discriminative power because each layer acts as an orthogonal instrument.",
+    ifChannelTitle: "IF channel: LED lighting as primary source",
+    ifChannelDesc:
+      "The IF channel (1 kHz – 1 MHz) targets dividing cells through the same frequency–cell size relationship as FDA-approved TTFields cancer therapy. The primary environmental source of IF fields is LED lighting: every LED bulb contains a switch-mode power supply operating at 20–200 kHz with harmonics extending to megahertz. A typical home contains 15–30 such sources; a typical office contains 200–500. Additional IF sources include HVAC variable frequency drives (5–50 kHz), induction cooktops (20–75 kHz), and all switch-mode power supplies (laptop chargers, phone chargers). The mechanism operates via Ion Forced Oscillation (IFO-VGIC), with a biological threshold of 10⁻⁵ V/m (Panagopoulos 2025) — orders of magnitude below measured LED driver emissions.",
 
     recovTitle: "Five-layer recovery model",
     recovDesc:
@@ -150,7 +153,7 @@ const t = {
     ],
 
     modulomeTitle: "EMF Modulome",
-    modulomeDesc: "The seven-layer modulome synthesizes four independent research traditions — Becker's DC control system, Adee's electrome, Levin's bioelectric code, and Lindgren's geometric framework — into a unified model of EMF biological susceptibility. Each layer is independently supported by FDA-approved therapeutic devices that exploit the same mechanism.",
+    modulomeDesc: "The eight-layer modulome synthesizes five independent research traditions — Becker's DC control system, Adee's electrome, Levin's bioelectric code, Lindgren's geometric framework, and the chromophore generalization (CCO/CRY) — into a unified model of EMF biological susceptibility. Each layer is independently supported by regulatory-approved therapeutic devices that exploit the same mechanism.",
 
     btnEvidence: "Browse evidence",
     btnPredictions: "View predictions",
@@ -204,6 +207,9 @@ const t = {
     twoChLayersTitle: "12 teknologiakerrosta ambient-kentän komponentteina",
     twoChLayersDesc:
       "Ambient-termi ei ole monoliittinen. Se hajoaa 12 itsenäiseen teknologiakerrokseen, joista jokaisella on oma ajurinsa, käyttöönottoaikataulunsa ja taajuusprofiilinsa. Tämä hajotus parantaa mallin diskriminointikykyä koska jokainen kerros toimii ortogonaalisena instrumenttina.",
+    ifChannelTitle: "IF-kanava: LED-valaistus päälähteinä",
+    ifChannelDesc:
+      "IF-kanava (1 kHz – 1 MHz) kohdistuu jakautuviin soluihin saman taajuus–solukoko-suhteen kautta kuin FDA:n hyväksymä TTFields-syöpähoito. Ympäristön IF-kenttien pääasiallinen lähde on LED-valaistus: jokainen LED-lamppu sisältää hakkuriteholähteen, joka toimii 20–200 kHz:n taajuudella ja tuottaa harmonisia megahertsialueelle asti. Tyypillisessä kodissa on 15–30 tällaista lähdettä; tyypillisessä toimistossa 200–500. Muita IF-lähteitä ovat ilmanvaihdon taajuusmuuttajat (5–50 kHz), induktioliedet (20–75 kHz) ja kaikki hakkuriteholähteet (kannettavan laturit, puhelinlaturit). Mekanismi toimii ionien pakko-oskillaation (IFO-VGIC) kautta, biologisella kynnysarvolla 10⁻⁵ V/m (Panagopoulos 2025) — kertaluokkia mitattujen LED-ajuriemissioiden alapuolella.",
 
     recovTitle: "Viisikerroksinen palautumismalli",
     recovDesc:
@@ -304,7 +310,7 @@ const t = {
     ],
 
     modulomeTitle: "EMF-modulooma",
-    modulomeDesc: "Seitsemäntasoinen modulooma yhdistää neljä itsenäistä tutkimusperinnettä — Beckerin DC-ohjausjärjestelmän, Adeen elektromin, Levinin bioelektrisen koodin ja Lindgrenin geometrisen viitekehyksen — yhtenäiseksi malliksi EMF:n biologisesta herkkyydestä. Jokaista tasoa tukevat itsenäisesti FDA-hyväksytyt terapeuttiset laitteet, jotka hyödyntävät samaa mekanismia.",
+    modulomeDesc: "Kahdeksantasoinen modulooma yhdistää viisi itsenäistä tutkimusperinnettä — Beckerin DC-ohjausjärjestelmän, Adeen elektromin, Levinin bioelektrisen koodin, Lindgrenin geometrisen viitekehyksen ja kromoforien yleistyksen (CCO/CRY) — yhtenäiseksi malliksi EMF:n biologisesta herkkyydestä. Jokaista tasoa tukevat itsenäisesti regulaattorihyväksytyt terapeuttiset laitteet, jotka hyödyntävät samaa mekanismia.",
 
     btnEvidence: "Selaa näyttöä",
     btnPredictions: "Näytä ennusteet",
@@ -491,6 +497,11 @@ export default async function ModelPage({
                   <span className="text-[10px] font-mono-num text-foreground-muted ml-auto">{year}</span>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-6 rounded-lg border border-status-partial/30 bg-status-partial/5 p-5 max-w-3xl">
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-status-partial mb-2">{d.ifChannelTitle}</h4>
+              <p className="text-sm text-foreground-muted leading-relaxed">{d.ifChannelDesc}</p>
             </div>
           </section>
 
