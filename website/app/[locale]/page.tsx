@@ -1,72 +1,111 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TrendingDown, Microscope, TestTube, Globe2, Banknote, ArrowRight } from "lucide-react";
+import { TrendingDown, Microscope, TestTube, Globe2, Banknote, ArrowRight, Shield, Zap } from "lucide-react";
 import CausalChain from "@/components/CausalChain";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
 import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
 import { LatestArticles } from "@/components/LatestArticles";
+import { Sparkline } from "@/components/SparklineCard";
 
-const IMPACT_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote] as const;
+const SPARKLINE_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote] as const;
+
+const SPARKLINE_DATA = [
+  [5.0, 4.9, 4.5, 4.1, 3.7, 3.5, 3.2, 2.9, 2.7, 2.6, 2.5, 2.4, 2.3, 2.2],
+  [101, 96, 89, 83, 77, 70, 62, 55, 49, 42],
+  [100, 97, 93, 90, 87, 83, 80],
+  [0, 2, 5, 10, 18, 15, 20, 35, 49],
+  [1.47, 1.08, 1.23, 1.24, 0.84, 0.72],
+];
 
 const COPY = {
   en: {
-    hero: "Extinction Field",
-    heroDeck: "A falsifiable research model testing whether electromagnetic field states contribute to the global decline in reproductive indicators — with locked predictions, a bounded evidence register, and the results that do not fit.",
+    heroTitle: "Something is happening to fertility",
+    heroDeck: "Human sperm counts, testosterone and birth rates are falling worldwide. Bee colonies, bird populations and amphibians are declining on the same timeline. No single conventional explanation accounts for the breadth, simultaneity and cross-species convergence of these trends.",
 
-    s1Title: "Something is happening",
-    s1Lead: "Global reproductive indicators are declining across species and geographies. No single conventional explanation accounts for the breadth, simultaneity and cross-species convergence of these trends.",
+    s1Title: "THE NUMBERS",
 
     impactGrid: [
       { stat: "5.0 → 2.2", label: "Global TFR since 1960 — decline is accelerating" },
-      { stat: "−62%", label: "Sperm concentration (Levine 2023)" },
-      { stat: "−1.2%/yr", label: "Testosterone decline, age-independent" },
-      { stat: "49", label: "Countries below TFR 1.4" },
-      { stat: "$200B", label: "Korea's pronatalism → TFR dropped" },
+      { stat: "−62%", label: "Sperm concentration (Levine 2023, 223 studies)" },
+      { stat: "−1.2%/yr", label: "Testosterone decline, age-independent (Travison 2007)" },
+      { stat: "49", label: "Countries below replacement TFR 1.4" },
+      { stat: "$200B", label: "Korea pronatalism spending → TFR still dropped to 0.72" },
     ],
+
+    sentinelCta: "All sentinels",
+
+    howTitle: "How the model works",
+    causalLabel: "THREE-CHANNEL MECHANISM",
+    causalTitle: "ELF · IF · RF — three frequency bands, three biological pathways",
+    causalNote: "Mobile subscription density is a composite proxy for the overall electromagnetic environment. The model traces three independent channels — ELF (power grid, lighting), IF (switching electronics, LED flicker), RF (base stations, Wi-Fi, radar) — through cryptochrome disruption, calcium signaling and membrane voltage to paired reproductive capacity.",
 
     teaserLabel: "LOCKED PREDICTIONS · TFR 2030",
     teaserNote: "Locked under BERM v18 and falsifiable: each will be compared against observed data in the stated year.",
     allPredictions: "All predictions",
 
-    sentinelCta: "All sentinels",
-    howTitle: "How the model works",
-    causalLabel: "REGISTERED CAUSAL ROUTE",
-    causalTitle: "A causal route with bounded evidence",
-    causalNote: "The active route is FieldState → named intermediate and organ states → paired capacity, alongside explicit demand/tempo/ART inputs → ASFR → TFR. Studies support distinct links and endpoints; none of the current records is a TFR coefficient.",
+    tdpTitle: "THE THERAPEUTIC DEVICE PARADOX",
+    tdpText: "24 regulatory-approved device categories — from DC bone stimulators to visible-light photobiomodulation — prove non-thermal electromagnetic biological activity across the full spectrum. If non-thermal EMF has no biological effect, these devices cannot work. They work.",
+    tdpCta: "The Spectrum of Proof",
+
+    falsTitle: "FALSIFICATION STATUS",
+    falsRan: "ran",
+    falsConsistent: "consistent",
+    falsFalsified: "falsified",
+    falsPending: "pending",
+    falsCta: "Test details",
+
+    epistemicNote: "BERM v19 is a falsifiable research model, not a certainty. 452 peer-reviewed references. 24+ regulatory-validated non-thermal mechanisms. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.",
+    epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · LOOCV RMSE = 0.09",
 
     ctaModel: "Model specification",
     ctaEvidence: "Evidence register",
     ctaData: "Explore data",
+    ctaMath: "Mathematics",
   },
   fi: {
-    hero: "Extinction Field",
-    heroDeck: "Falsifioitava tutkimusmalli, joka testaa vaikuttavatko sähkömagneettiset kenttätilat lisääntymisindikaattoreiden globaaliin laskuun — lukituilla ennusteilla, rajatulla evidenssirekisterillä ja niillä tuloksilla jotka eivät sovi.",
+    heroTitle: "Jotain tapahtuu hedelmällisyydelle",
+    heroDeck: "Ihmisen siittiömäärät, testosteroni ja syntyvyys laskevat maailmanlaajuisesti. Mehiläisyhdyskunnat, lintupopulaatiot ja sammakkoeläimet vähenevät samalla aikajanalla. Mikään yksittäinen tavanomainen selitys ei kata näiden trendien laajuutta, samanaikaisuutta ja lajienvälisyyttä.",
 
-    s1Title: "Jotain tapahtuu",
-    s1Lead: "Lisääntymisen indikaattorit laskevat globaalisti yli laji- ja maantieteellisten rajojen. Mikään yksittäinen tavanomainen selitys ei kata näiden trendien laajuutta, samanaikaisuutta ja lajienvälisyyttä.",
+    s1Title: "LUVUT",
 
     impactGrid: [
       { stat: "5,0 → 2,2", label: "Globaali TFR vuodesta 1960 — lasku kiihtyy" },
-      { stat: "−62 %", label: "Siittiökonsentraatio (Levine 2023)" },
-      { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton" },
-      { stat: "49", label: "Maata alle TFR 1,4" },
-      { stat: "200 mrd $", label: "Korean pronatalismi → TFR laski" },
+      { stat: "−62 %", label: "Siittiökonsentraatio (Levine 2023, 223 tutkimusta)" },
+      { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton (Travison 2007)" },
+      { stat: "49", label: "Maata alle korvaavuustason TFR 1,4" },
+      { stat: "200 mrd $", label: "Korean pronatalismi → TFR silti 0,72" },
     ],
+
+    sentinelCta: "Kaikki sentinellit",
+
+    howTitle: "Miten malli toimii",
+    causalLabel: "KOLMIKANAVAMEKANISMI",
+    causalTitle: "ELF · IF · RF — kolme taajuuskaistaa, kolme biologista reittiä",
+    causalNote: "Matkapuhelinliittymätiheys on yhdistelmäproksi koko sähkömagneettiselle ympäristölle. Malli jäljittää kolme itsenäistä kanavaa — ELF (sähköverkko, valaistus), IF (kytkentäelektroniikka, LED-välkyntä), RF (tukiasemat, Wi-Fi, tutka) — kryptokromihäiriön, kalsiumsignaloinnin ja kalvojännitteen kautta pariutumisen lisääntymiskapasiteettiin.",
 
     teaserLabel: "LUKITUT ENNUSTEET · TFR 2030",
     teaserNote: "Lukittu BERM v18:lla ja falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna.",
     allPredictions: "Kaikki ennusteet",
 
-    sentinelCta: "Kaikki sentinellit",
-    howTitle: "Miten malli toimii",
-    causalLabel: "REKISTERÖITY KAUSAALIREITTI",
-    causalTitle: "Kausaalireitti ja rajattu evidenssi",
-    causalNote: "Aktiivinen reitti on FieldState → nimetyt välitilat ja elinkohtaiset tilat → parikapasiteetti sekä eksplisiittiset kysyntä-/tempo-/ART-syötteet → ASFR → TFR. Tutkimukset tukevat erillisiä linkkejä ja päätepisteitä; mikään nykyisistä tietueista ei ole TFR-kerroin.",
+    tdpTitle: "TERAPEUTTINEN LAITEPARADOKSI",
+    tdpText: "24 regulaattorihyväksyttyä laiteluokkaa — tasavirtaisista luustimulaattoreista näkyvän valon fotobiomodulaatioon — todistavat ei-termisen sähkömagneettisen biologisen aktiivisuuden koko spektrillä. Jos ei-termisellä EMF:llä ei ole biologista vaikutusta, nämä laitteet eivät voi toimia. Ne toimivat.",
+    tdpCta: "Todisteiden spektri",
+
+    falsTitle: "FALSIFIKAATIOTILANNE",
+    falsRan: "ajettu",
+    falsConsistent: "yhteensopiva",
+    falsFalsified: "falsifioitu",
+    falsPending: "odottaa",
+    falsCta: "Testien yksityiskohdat",
+
+    epistemicNote: "BERM v19 on falsifioitava tutkimusmalli, ei varmuus. 452 vertaisarvioitua viitettä. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.",
+    epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · LOOCV RMSE = 0,09",
 
     ctaModel: "Mallin määrittely",
     ctaEvidence: "Evidenssirekisteri",
     ctaData: "Tutki dataa",
+    ctaMath: "Matematiikka",
   },
 } as const;
 
@@ -107,31 +146,33 @@ export default async function Home({
 
   return (
     <div className="max-w-5xl mx-auto px-6">
-      {/* ── Hero ── */}
+      {/* ── 1. Hero ── */}
       <header className="pt-16 pb-10 max-w-3xl">
-        <h1 className="text-5xl sm:text-6xl mb-4">{d.hero}</h1>
-        <p className="editorial-deck text-base sm:text-lg leading-relaxed">{d.heroDeck}</p>
+        <h1 className="text-4xl sm:text-5xl font-serif font-semibold tracking-[-0.02em] leading-[1.15] mb-5">
+          {d.heroTitle}
+        </h1>
+        <p className="text-base sm:text-lg leading-relaxed text-foreground-muted">{d.heroDeck}</p>
       </header>
 
-      {/* ── Key numbers ── */}
+      {/* ── 2. Sparkline fact cards ── */}
       <section className="pb-20">
-        <h2 className="editorial-section-heading text-2xl sm:text-3xl mb-3">{d.s1Title}</h2>
-        <p className="text-sm text-foreground-muted leading-relaxed mb-8 max-w-3xl">{d.s1Lead}</p>
+        <h2 className="editorial-kicker text-accent mb-6">{d.s1Title}</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {d.impactGrid.map((item, i) => {
-            const Icon = IMPACT_ICONS[i] ?? TrendingDown;
+            const Icon = SPARKLINE_ICONS[i];
             return (
-              <article key={item.stat} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <article key={item.stat} className="rounded-xl border border-card-border bg-card-bg p-5 flex flex-col">
                 <Icon size={22} className="text-accent/50 mb-3" strokeWidth={1.5} aria-hidden="true" />
                 <p className="font-mono-num text-2xl font-semibold text-accent leading-tight">{item.stat}</p>
-                <p className="text-[0.8125rem] text-foreground-muted mt-2 leading-snug">{item.label}</p>
+                <p className="text-[0.8125rem] text-foreground-muted mt-2 leading-snug flex-1">{item.label}</p>
+                <Sparkline data={SPARKLINE_DATA[i]} index={i} />
               </article>
             );
           })}
         </div>
       </section>
 
-      {/* ── Sentinel cascade ── */}
+      {/* ── 3. Sentinel cascade ── */}
       <section className="pb-20">
         <SentinelCascadeCompact locale={activeLocale} />
         <div className="mt-4 text-right">
@@ -144,10 +185,22 @@ export default async function Home({
         </div>
       </section>
 
-      {/* ── Featured article ── */}
-      <LatestArticles locale={activeLocale} />
+      {/* ── 4. How the model works ── */}
+      <section className="pb-20">
+        <h2 className="editorial-section-heading mb-8">{d.howTitle}</h2>
+        <figure className="data-figure">
+          <figcaption className="data-figure__caption">
+            <p className="editorial-kicker text-accent">{d.causalLabel}</p>
+            <p className="data-figure__title mt-1">{d.causalTitle}</p>
+          </figcaption>
+          <div className="overflow-x-auto p-1 md:p-3">
+            <CausalChain locale={activeLocale} />
+          </div>
+          <p className="data-figure__note">{d.causalNote}</p>
+        </figure>
+      </section>
 
-      {/* ── Locked predictions ── */}
+      {/* ── 5. Locked predictions ── */}
       <section className="pb-20">
         <div className="rounded-xl border border-card-border bg-card-bg p-6 sm:p-8">
           <div className="flex flex-wrap items-baseline justify-between gap-4 mb-6">
@@ -180,44 +233,78 @@ export default async function Home({
         </div>
       </section>
 
-      {/* ── Causal diagram ── */}
+      {/* ── 6. Therapeutic device paradox ── */}
       <section className="pb-20">
-        <h2 className="editorial-section-heading mb-8">{d.howTitle}</h2>
-        <figure className="data-figure">
-          <figcaption className="data-figure__caption">
-            <p className="editorial-kicker text-accent">{d.causalLabel}</p>
-            <p className="data-figure__title mt-1">{d.causalTitle}</p>
-          </figcaption>
-          <div className="overflow-x-auto p-1 md:p-3">
-            <CausalChain locale={activeLocale} />
+        <div className="rounded-xl border border-card-border bg-card-bg p-6 sm:p-8">
+          <div className="flex items-start gap-4">
+            <Zap size={28} className="text-accent/60 shrink-0 mt-1" strokeWidth={1.5} aria-hidden="true" />
+            <div>
+              <h2 className="editorial-kicker text-accent mb-3">{d.tdpTitle}</h2>
+              <p className="text-sm sm:text-[0.9375rem] leading-relaxed text-foreground-muted">{d.tdpText}</p>
+              <Link
+                href={`${prefix}/evidence#therapeutic-device-paradox`}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover mt-4"
+              >
+                {d.tdpCta} <ArrowRight size={14} />
+              </Link>
+            </div>
           </div>
-          <p className="data-figure__note">{d.causalNote}</p>
-        </figure>
-      </section>
-
-      {/* ── Quick links ── */}
-      <section className="pb-16">
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href={`${prefix}/model`}
-            className="inline-flex items-center gap-2 rounded-lg border border-card-border bg-card-bg px-5 py-3 text-sm font-medium transition-colors hover:border-accent/40 hover:text-accent"
-          >
-            {d.ctaModel} <ArrowRight size={14} />
-          </Link>
-          <Link
-            href={`${prefix}/evidence`}
-            className="inline-flex items-center gap-2 rounded-lg border border-card-border bg-card-bg px-5 py-3 text-sm font-medium transition-colors hover:border-accent/40 hover:text-accent"
-          >
-            {d.ctaEvidence} <ArrowRight size={14} />
-          </Link>
-          <Link
-            href={`${prefix}/explore`}
-            className="inline-flex items-center gap-2 rounded-lg border border-card-border bg-card-bg px-5 py-3 text-sm font-medium transition-colors hover:border-accent/40 hover:text-accent"
-          >
-            {d.ctaData} <ArrowRight size={14} />
-          </Link>
         </div>
       </section>
+
+      {/* ── 7. Featured articles ── */}
+      <LatestArticles locale={activeLocale} />
+
+      {/* ── 8. Falsification status ── */}
+      <section className="pb-20">
+        <div className="rounded-xl border border-card-border bg-card-bg p-5 sm:p-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <Shield size={20} className="text-accent/60 shrink-0" strokeWidth={1.5} aria-hidden="true" />
+              <h2 className="editorial-kicker text-accent">{d.falsTitle}</h2>
+            </div>
+            <Link
+              href={`${prefix}/model#falsification`}
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+            >
+              {d.falsCta} <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <span><span className="font-mono-num font-semibold text-accent">7</span> tests</span>
+            <span><span className="font-mono-num font-semibold text-accent">3</span> {d.falsRan}</span>
+            <span><span className="font-mono-num font-semibold text-green-500">3</span> {d.falsConsistent}</span>
+            <span><span className="font-mono-num font-semibold text-red-500">0</span> {d.falsFalsified}</span>
+            <span><span className="font-mono-num font-semibold text-foreground-muted">4</span> {d.falsPending}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. Quick links ── */}
+      <section className="pb-10">
+        <div className="flex flex-wrap gap-3">
+          {[
+            { href: `${prefix}/model`, label: d.ctaModel },
+            { href: `${prefix}/evidence`, label: d.ctaEvidence },
+            { href: `${prefix}/explore`, label: d.ctaData },
+            { href: `${prefix}/mathematics`, label: d.ctaMath },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="inline-flex items-center gap-2 rounded-lg border border-card-border bg-card-bg px-5 py-3 text-sm font-medium transition-colors hover:border-accent/40 hover:text-accent"
+            >
+              {link.label} <ArrowRight size={14} />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 10. Epistemic footer ── */}
+      <footer className="pb-16 border-t border-card-border pt-8">
+        <p className="text-sm leading-relaxed text-foreground-muted max-w-3xl">{d.epistemicNote}</p>
+        <p className="font-mono-num text-xs text-foreground-muted/60 mt-3">{d.epistemicStats}</p>
+      </footer>
     </div>
   );
 }

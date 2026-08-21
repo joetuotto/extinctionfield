@@ -14,6 +14,7 @@ import { ThreeChannelDiagram } from "@/components/ThreeChannelDiagram";
 import { RetrodictionCards } from "@/components/RetrodictionCards";
 import { DifferentialSusceptibility } from "@/components/DifferentialSusceptibility";
 import { LightingTransitionTimeline } from "@/components/LightingTransitionTimeline";
+import { DiseaseCascadeTimeline } from "@/components/DiseaseCascadeTimeline";
 import {
   causalNodeLabels,
   FIELDSTATE_EVIDENCE,
@@ -737,6 +738,9 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.sentinel}</p>
         <Link href={`/${activeLocale}/sentinel`} className="text-sm text-accent hover:underline">{d.sentinelLink} →</Link>
       </section>
+
+      {/* Chronic disease cascade × EMF timeline */}
+      <DiseaseCascadeTimeline locale={activeLocale} />
 
       {/* BERM-Eco differential susceptibility */}
       <DifferentialSusceptibility locale={activeLocale} />
