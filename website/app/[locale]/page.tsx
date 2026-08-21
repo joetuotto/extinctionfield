@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Activity, Zap, ArrowRight } from "lucide-react";
+import { TrendingDown, Microscope, TestTube, Globe2, Banknote, ArrowRight } from "lucide-react";
 import CausalChain from "@/components/CausalChain";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
 import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
 import { LatestArticles } from "@/components/LatestArticles";
 
-const IMPACT_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote, Activity, Zap] as const;
+const IMPACT_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote] as const;
 
 const COPY = {
   en: {
@@ -23,8 +23,6 @@ const COPY = {
       { stat: "−1.2%/yr", label: "Testosterone decline, age-independent" },
       { stat: "49", label: "Countries below TFR 1.4" },
       { stat: "$200B", label: "Korea's pronatalism → TFR dropped" },
-      { stat: "24+", label: "Regulatory-approved device categories prove non-thermal EMF biological activity (DC to UV)" },
-      { stat: "0 → 24/7", label: "The lighting transition replaced zero-IF sources with continuous kHz fields — unstudied" },
     ],
 
     teaserLabel: "LOCKED PREDICTIONS · TFR 2030",
@@ -54,8 +52,6 @@ const COPY = {
       { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton" },
       { stat: "49", label: "Maata alle TFR 1,4" },
       { stat: "200 mrd $", label: "Korean pronatalismi → TFR laski" },
-      { stat: "24+", label: "Regulaattorihyväksyttyä laitekategoriaa todistaa ei-termisen EMF:n biologisen aktiivisuuden (DC – UV)" },
-      { stat: "0 → 24/7", label: "Valaistussiirtymä korvasi nolla-IF-lähteet jatkuvilla kHz-kentillä — tutkimatta" },
     ],
 
     teaserLabel: "LUKITUT ENNUSTEET · TFR 2030",
@@ -112,18 +108,18 @@ export default async function Home({
   return (
     <div className="max-w-5xl mx-auto px-6">
       {/* ── Hero ── */}
-      <header className="pt-20 pb-16 max-w-3xl">
-        <h1 className="text-5xl sm:text-6xl mb-6">{d.hero}</h1>
+      <header className="pt-16 pb-10 max-w-3xl">
+        <h1 className="text-5xl sm:text-6xl mb-4">{d.hero}</h1>
         <p className="editorial-deck text-base sm:text-lg leading-relaxed">{d.heroDeck}</p>
       </header>
 
       {/* ── Key numbers ── */}
       <section className="pb-20">
-        <h2 className="editorial-section-heading mb-3">{d.s1Title}</h2>
+        <h2 className="editorial-section-heading text-2xl sm:text-3xl mb-3">{d.s1Title}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-8 max-w-3xl">{d.s1Lead}</p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {d.impactGrid.map((item, i) => {
-            const Icon = IMPACT_ICONS[i];
+            const Icon = IMPACT_ICONS[i] ?? TrendingDown;
             return (
               <article key={item.stat} className="rounded-xl border border-card-border bg-card-bg p-5">
                 <Icon size={22} className="text-accent/50 mb-3" strokeWidth={1.5} aria-hidden="true" />
