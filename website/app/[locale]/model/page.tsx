@@ -512,6 +512,13 @@ export default async function ModelPage({
               {d.modulomeDesc}
             </p>
             <ModulomeLayers locale={locale} />
+            <p className="mt-4 text-sm">
+              <Link href={`${prefix}/evidence`} className="text-accent hover:underline">
+                &rarr; {locale_key === "fi"
+                  ? "Katso miten tämä ilmenee sairauksina"
+                  : "See how this manifests as diseases"}
+              </Link>
+            </p>
           </section>
 
           {/* Five-layer recovery model */}

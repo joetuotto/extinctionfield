@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 /* ── Bilingual labels ── */
 const COPY = {
@@ -827,6 +828,20 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
         <p className="text-[0.65rem] text-foreground-muted leading-relaxed opacity-70">
           {t.footerData}
         </p>
+        <div className="flex flex-wrap gap-4 pt-2 border-t border-card-border mt-2">
+          <Link
+            href={`/${locale}/model#modulome`}
+            className="text-[0.72rem] text-accent hover:underline"
+          >
+            &rarr; {locale === "fi" ? "Modulooman matemaattinen johtaminen" : "See the mathematical derivation"}
+          </Link>
+          <Link
+            href={`/${locale}/predictions`}
+            className="text-[0.72rem] text-accent hover:underline"
+          >
+            &rarr; {locale === "fi" ? "Kaskadi-ennusteet P11–P13" : "See predictions P11–P13"}
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Target, BookOpen } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
@@ -76,6 +77,36 @@ const COPY = {
     modulomeFalsification: "Falsification criterion",
     modulomeLocked: "Locked: 2026-08-21",
     modulomeStatus: "LOCKED — awaiting test",
+    cascadeTitle: "Disease cascade predictions",
+    cascadeLead: "Predictions derived from the four-channel chronic disease cascade model. Each tests whether the seven-disease cascade follows the modulome's biological latency hierarchy and channel-specific exposure patterns.",
+    cascadePredictions: [
+      {
+        id: "P11",
+        title: "COVID IF-channel retrodiction",
+        description: "During lockdown, IF-sensitive diseases (infertility → improvement) and RF-sensitive diseases (depression → worsening) behave in opposite directions. The COVID lockdown acts as a natural experiment: workplace IF exposure dropped ~70% (offices with LED lighting closed) while home RF exposure rose ~40% (more phone/Wi-Fi usage). This predicts channel-specific, opposite-sign health effects.",
+        validation: "GBD 2024 + national health registers",
+        falsification: "No differential direction between IF-sensitive and RF-sensitive diseases during lockdown",
+      },
+      {
+        id: "P12",
+        title: "LED rollout × sperm quality",
+        description: "In countries where the EU LED transition happened earlier, sperm quality decline should accelerate earlier than in countries where it happened later. EU vs non-EU difference-in-differences design, controlling for mobile density, GDP, and urbanization.",
+        validation: "Levine meta-analysis country-specific estimates + EU Directive 244/2009 implementation dates (2009–2016)",
+        falsification: "No acceleration difference, or non-EU countries show faster decline",
+      },
+      {
+        id: "P13",
+        title: "Cascade order test",
+        description: "Seven chronic diseases' acceleration points follow the modulome's biological latency hierarchy: sleep < depression < ADHD < metabolic < autoimmune < infertility < cancer. Each acceleration point should fall 0–10 years after mass adoption of its specific technology generation.",
+        validation: "GBD 2024 acceleration point statistical analysis (structural breakpoint detection)",
+        falsification: "Acceleration order does not match modulome hierarchy, or acceleration points are not temporally linked to technology rollouts",
+      },
+    ],
+    cascadeValidation: "Validation",
+    cascadeFalsification: "Falsification criterion",
+    cascadeLocked: "Locked: 2026-08-21",
+    cascadeStatus: "LOCKED — awaiting test",
+    cascadeLink: "See the cascade visualization",
   },
   fi: {
     title: "Lukitut ennusteet",
@@ -145,6 +176,36 @@ const COPY = {
     modulomeFalsification: "Kumoamisehto",
     modulomeLocked: "Lukittu: 2026-08-21",
     modulomeStatus: "LUKITTU — odottaa testiä",
+    cascadeTitle: "Sairauskaskadi-ennusteet",
+    cascadeLead: "Ennusteet jotka perustuvat nelikanavaiseen kroonisten sairauksien kaskadimalliin. Jokainen testaa, noudattaako seitsemän sairauden kaskadi modulooman biologista viivehierarkiaa ja kanavaspesifisiä altistusmalleja.",
+    cascadePredictions: [
+      {
+        id: "P11",
+        title: "COVID IF-kanava -retrodiktio",
+        description: "Lockdownin aikana IF-herkät sairaudet (hedelmättömyys → paraneminen) ja RF-herkät sairaudet (masennus → paheneminen) käyttäytyvät erisuuntaisesti. COVID-lockdown toimii luonnollisena kokeena: työpaikkojen IF-altistus laski ~70 % (LED-valaistut toimistot kiinni) samalla kun kotien RF-altistus nousi ~40 % (lisää puhelin-/Wi-Fi-käyttöä). Tämä ennustaa kanavaspesifisiä, vastakkaismerkkisiä terveysvaikutuksia.",
+        validation: "GBD 2024 + kansalliset terveysrekisterit",
+        falsification: "Ei erisuuntaista vaikutusta IF-herkkien ja RF-herkkien sairauksien välillä lockdownin aikana",
+      },
+      {
+        id: "P12",
+        title: "LED-rollout × siittiölaatu",
+        description: "Maissa joissa EU:n LED-siirtymä tapahtui aikaisemmin, siittiölaadun laskun pitäisi kiihtyä aikaisemmin kuin maissa joissa se tapahtui myöhemmin. EU vs ei-EU difference-in-differences -asetelma, kontrolloiden matkapuhelintiheyttä, BKT:ta ja kaupungistumista.",
+        validation: "Levine-meta-analyysin maakohtaiset estimaatit + EU:n direktiivin 244/2009 implementointiajankohdat (2009–2016)",
+        falsification: "Ei kiihtymiseroa, tai ei-EU-maat osoittavat nopeampaa laskua",
+      },
+      {
+        id: "P13",
+        title: "Kaskadijärjestyksen testi",
+        description: "Seitsemän kroonisen sairauden kiihtymispisteiden järjestys noudattaa modulooman biologista viivehierarkiaa: uni < masennus < ADHD < diabetes < autoimmuuni < hedelmättömyys < syöpä. Jokaisen kiihtymispisteen pitäisi osua 0–10 vuoden viiveellä spesifisen teknologiasukupolven massakäyttöönoton jälkeen.",
+        validation: "GBD 2024 kiihtymispisteiden tilastollinen analyysi (rakenteellinen murroskohdan tunnistus)",
+        falsification: "Kiihtymispisteiden järjestys ei vastaa modulooman hierarkiaa, tai ne eivät ole ajallisesti kytköksissä teknologian käyttöönottoon",
+      },
+    ],
+    cascadeValidation: "Validointi",
+    cascadeFalsification: "Kumoamisehto",
+    cascadeLocked: "Lukittu: 2026-08-21",
+    cascadeStatus: "LUKITTU — odottaa testiä",
+    cascadeLink: "Katso kaskadivisualisointi",
   },
 } as const;
 
@@ -329,6 +390,40 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             </article>
           ))}
         </div>
+      </section>
+
+      {/* Cascade predictions P11-P13 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.cascadeTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.cascadeLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.cascadePredictions.map((cp) => (
+            <article key={cp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{cp.id}</span>
+                    <h3 className="font-semibold">{cp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.cascadeStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{cp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.cascadeValidation}:</span> {cp.validation}</p>
+                <p><span className="font-semibold">{d.cascadeFalsification}:</span> {cp.falsification}</p>
+                <p className="font-mono-num">{d.cascadeLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="mt-4 text-sm">
+          <Link href={`/${activeLocale}/evidence`} className="text-accent hover:underline">
+            &rarr; {d.cascadeLink}
+          </Link>
+        </p>
       </section>
 
       {/* v2 status */}
