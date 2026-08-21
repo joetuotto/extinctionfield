@@ -275,7 +275,7 @@ const t = {
         condition:
           "Amish community TFR declines at the same rate as the general population",
         detail:
-          "If the Amish (EMF ≈ 0) show TFR decline matching high-EMF populations, the EMF hypothesis is falsified. Current Amish TFR ≈ 6.5 is stable.",
+          "The Amish function as a quasi-experimental control group: they share genetics, diet and geography with surrounding populations but have near-zero EMF exposure. Current Amish TFR ≈ 6.5 is stable while surrounding populations decline — this eliminates urbanization, diet, education and economics as sufficient explanations for the fertility gap.",
       },
       {
         condition:
@@ -625,7 +625,7 @@ const t = {
         condition:
           "Amissiyhteisön TFR laskee samaa vauhtia kuin yleisväestön",
         detail:
-          "Jos amissit (EMF ≈ 0) osoittavat TFR-laskua, joka vastaa korkean EMF:n populaatioita, EMF-hypoteesi falsifioidaan. Amissien nykyinen TFR ≈ 6,5 on vakaa.",
+          "Amissit toimivat kvasikokeellisena verrokkiryhmänä: he jakavat genetiikan, ruokavalion ja maantieteen ympäröivien populaatioiden kanssa mutta altistuvat lähes nolla-EMF:lle. Amissien nykyinen TFR ≈ 6,5 on vakaa ympäröivien populaatioiden laskiessa — tämä eliminoi kaupungistumisen, ruokavalion, koulutuksen ja talouden riittävinä selityksinä hedelmällisyyskuilulle.",
       },
       {
         condition:

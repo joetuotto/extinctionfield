@@ -9,7 +9,7 @@ const t = {
       "Published TFR series and technology-adoption timing can be compared across countries with their source scope kept visible.",
     method: "How to read this page",
     a: "A published TFR series is a period demographic measure. It cannot by itself identify a biological mechanism.",
-    b: "Mobile subscriptions are used elsewhere on the site only as a technology-adoption timing proxy, not as RF exposure or a causal variable.",
+    b: "Mobile subscription density is a composite proxy for the overall electromagnetic environment — it tracks the deployment of base stations, Wi-Fi, IoT and indoor electronics, not RF exposure alone.",
     c: "A v2 country estimate requires measured FieldState inputs, organ/couple endpoints, and ASFR calibration. Those inputs are not yet available as a national panel.",
   },
   fi: {
@@ -18,7 +18,7 @@ const t = {
       "Julkaistuja TFR-sarjoja ja teknologiakäyttöönoton ajoitusta voi vertailla maittain siten, että lähteiden tulkintarajat säilyvät näkyvissä.",
     method: "Näin sivua luetaan",
     a: "Julkaistu TFR-sarja on periodinen demografinen mittari. Se ei yksinään tunnista biologista mekanismia.",
-    b: "Mobiililiittymiä käytetään muualla sivustolla vain teknologiakäyttöönoton ajoitusproxyna, ei RF-altistuksena tai kausaalisena muuttujana.",
+    b: "Mobiililiittymätiheys on yhdistelmäproksi koko sähkömagneettiselle ympäristölle — se seuraa tukiasemien, Wi-Fin, IoT:n ja sisätilaelektroniikan käyttöönottoa, ei pelkkää RF-altistusta.",
     c: "V2-maa-arvio vaatii mitatut FieldState-syötteet, elin-/paritason päätepisteet ja ASFR-kalibroinnin. Näitä syötteitä ei vielä ole kansallisena paneelina.",
   },
 } as const;

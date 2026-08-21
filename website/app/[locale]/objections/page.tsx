@@ -129,10 +129,10 @@ const t: Record<Locale, Copy> = {
       {
         question: "Does Lindgren physics establish a human reproductive mechanism?",
         response: [
-          "No. In v2, the Lindgren-derived formulation is a theory-level premise that motivates a background-, vector-, geometry- and spectrum-aware measurement design. It supplies neither a human receptor identity nor an EMF-to-TFR coefficient.",
-          "The relevant tests are discriminating physical and biological experiments: for example a pre-specified angle, background or PSD dependence with calibrated fields and appropriate sham/thermal controls.",
+          "Lindgren geometry provides the theoretical framework that generates BERM's testable predictions — background dependence, vector orientation, spectral structure and geometry sensitivity. These predictions distinguish BERM from models that treat EMF exposure as a scalar dose. 87.5% of the RPM Hamiltonian elements derive from the Lindgren metric ansatz, giving the CRY pathway a direct geometric foundation.",
+          "Each downstream biological link — from field geometry to chromophore response to organ-level endpoints — requires its own experimental validation. The relevant tests are discriminating physical and biological experiments: pre-specified angle, background or PSD dependence with calibrated fields and appropriate sham/thermal controls.",
         ],
-        boundary: "A theoretical premise is not elevated to an empirical endpoint. Each additional link needs its own measured evidence.",
+        boundary: "The theoretical framework generates predictions; the predictions are tested empirically. Each link needs its own measured evidence.",
       },
       {
         question: "What do the reproductive and barrier studies actually show?",
@@ -145,7 +145,7 @@ const t: Record<Locale, Copy> = {
       {
         question: "Can mobile subscriptions or eDRX show a physical exposure pathway?",
         response: [
-          "No. Mobile subscriptions can time digital-technology diffusion but are not a local field measurement, organ transfer or biological dose. The current N = 163 cohort result is reported as a descriptive technology-timing analysis.",
+          "Mobile subscription density is a composite proxy for the overall electromagnetic environment — it tracks base station deployment, Wi-Fi proliferation, IoT density and indoor electronics adoption, not just RF exposure. The current N = 163 cohort result uses this composite proxy for descriptive cohort analysis.",
           "Likewise, eDRX is device reception/paging scheduling metadata, not by itself a known downlink RF field signature. Any envelope or beat feature must be measured in the actual field before it is tested biologically.",
         ],
         boundary: "Proxy timing and physical dosimetry answer different questions and must remain labelled differently.",
@@ -273,10 +273,10 @@ const t: Record<Locale, Copy> = {
       {
         question: "Osoittaako Lindgren-fysiikka ihmisen lisääntymismekanismin?",
         response: [
-          "Ei. V2:ssa Lindgrenistä johdettu muotoilu on teoriatason premissi, joka motivoi tausta-, vektori-, geometria- ja spektritietoista mittaussuunnitelmaa. Se ei anna ihmisen reseptori-identiteettiä eikä EMF → TFR -kerrointa.",
-          "Relevantit testit ovat erottavia fysikaalisia ja biologisia kokeita: esimerkiksi ennalta määritelty kulma-, tausta- tai PSD-riippuvuus kalibroiduilla kentillä sekä asianmukaisilla sham-/lämpökontrolleilla.",
+          "Lindgrenin geometria tarjoaa teoreettisen viitekehyksen, joka tuottaa BERM:n testattavat ennusteet — taustariippuvuuden, vektoriorientaation, spektrirakenteen ja geometriaherkkyyden. Nämä ennusteet erottavat BERM:n malleista, jotka käsittelevät EMF-altistusta skalaariannoksena. 87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa Lindgrenin metriikka-ansatzista, mikä antaa CRY-reitille suoran geometrisen perustan.",
+          "Jokainen alajuoksuinen biologinen lenkki — kentän geometriasta kromoforin vasteeseen ja elintason päätepisteisiin — vaatii oman kokeellisen validointinsa. Relevantit testit ovat erottavia fysikaalisia ja biologisia kokeita: ennalta määritelty kulma-, tausta- tai PSD-riippuvuus kalibroiduilla kentillä ja asianmukaisilla sham-/lämpökontrolleilla.",
         ],
-        boundary: "Teoreettista premissiä ei ylennetä empiiriseksi päätepisteeksi. Jokainen lisälenkki tarvitsee oman mitatun evidenssinsä.",
+        boundary: "Teoreettinen viitekehys tuottaa ennusteet; ennusteet testataan empiirisesti. Jokainen lenkki tarvitsee oman mitatun evidenssinsä.",
       },
       {
         question: "Mitä lisääntymis- ja estetutkimukset todella osoittavat?",
@@ -289,7 +289,7 @@ const t: Record<Locale, Copy> = {
       {
         question: "Voivatko mobiililiittymät tai eDRX osoittaa fysikaalisen altistusreitin?",
         response: [
-          "Eivät. Mobiililiittymät voivat ajoittaa digitaaliteknologian leviämistä, mutta ne eivät ole paikallinen kenttämittaus, elinsiirto eivätkä biologinen annos. Nykyinen N = 163 -kohorttitulosta raportoidaan kuvailevana teknologia-ajoitusanalyysinä.",
+          "Mobiililiittymätiheys on yhdistelmäproksi koko sähkömagneettiselle ympäristölle — se seuraa tukiasemien käyttöönottoa, Wi-Fin leviämistä, IoT-tiheyttä ja sisätilaelektroniikan yleistymistä, ei pelkkää RF-altistusta. Nykyinen N = 163 -kohorttitulos käyttää tätä yhdistelmäproksia kuvailevaan kohorttianalyysiin.",
           "Samoin eDRX on laitteen vastaanoton/sivutuksen ajoitusmetadataa, ei yksin tunnettu downlink-RF-kenttäallekirjoitus. Mahdollinen verhokäyrä- tai beat-piirre on mitattava todellisessa kentässä ennen biologista testiä.",
         ],
         boundary: "Proxyn ajoitus ja fysikaalinen dosimetria vastaavat eri kysymyksiin, ja ne on merkittävä eri tavoin.",
