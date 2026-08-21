@@ -1,0 +1,278 @@
+{
+  "version": "v19.1",
+  "generated_at": "2026-08-21",
+  "tests_run": 3,
+  "tests_total": 7,
+  "tests": [
+    {
+      "id": "T1",
+      "title": "LED natural experiment (DID)",
+      "prediction": "DID < 0: EU countries show faster TFR decline post-ban",
+      "falsification": "DID >= 0: LED ban did NOT accelerate TFR decline",
+      "data_status": "AVAILABLE",
+      "runnable": true,
+      "premises": [
+        {
+          "id": "P1",
+          "text": "LED drivers produce continuous 20-200 kHz IF field",
+          "type": "K"
+        },
+        {
+          "id": "P2",
+          "text": "IFO mechanism operates above 1e-5 V/m threshold",
+          "type": "E"
+        },
+        {
+          "id": "P3",
+          "text": "EU banned incandescent lamps 2009-2012",
+          "type": "K"
+        },
+        {
+          "id": "P4",
+          "text": "Spermatogenesis damage cumulates over 5-10 year lag",
+          "type": "M|C"
+        }
+      ],
+      "status": "RAN",
+      "result_summary": "DID = -0.00891 TFR/year. EU pre=0.02773, post=-0.01007; Ctrl pre=-0.02680, post=-0.05569. CONSISTENT with IF-EMF hypothesis.",
+      "falsified": false,
+      "key_result": {
+        "did_estimate": -0.00891,
+        "eu_n": 18,
+        "ctrl_n": 9
+      }
+    },
+    {
+      "id": "T2",
+      "title": "Horse race (model comparison AIC/BIC)",
+      "prediction": "M2/M3 beats M1: three-channel adds predictive power",
+      "falsification": "M0 beats M1: entire BERM is refuted; M1 beats M2: three-channel is overfitting",
+      "data_status": "PARTIAL",
+      "runnable": false,
+      "premises": [
+        {
+          "id": "P1",
+          "text": "Better exposure model produces better TFR prediction",
+          "type": "T"
+        },
+        {
+          "id": "P2",
+          "text": "AIC/BIC penalizes extra parameters",
+          "type": "K"
+        },
+        {
+          "id": "P3",
+          "text": "If extra channels don't help, weights go to zero",
+          "type": "T"
+        }
+      ],
+      "status": "PENDING"
+    },
+    {
+      "id": "T3",
+      "title": "COVID three-channel retrodiction",
+      "prediction": "M2 predicts bidirectional response; M1 cannot",
+      "falsification": "Sperm worsened in lockdown: entire framework wrong; mental health improved: RF channel wrong",
+      "data_status": "AVAILABLE",
+      "runnable": true,
+      "premises": [
+        {
+          "id": "P1",
+          "text": "IF channel (LED) dropped ~70% in lockdown",
+          "type": "M|C"
+        },
+        {
+          "id": "P2",
+          "text": "RF channel (screen time) rose ~40% in lockdown",
+          "type": "M|C"
+        },
+        {
+          "id": "P3",
+          "text": "IF dominates spermatogenesis, RF dominates neuropsychological",
+          "type": "C"
+        },
+        {
+          "id": "P4",
+          "text": "Sperm quality improved in lockdown",
+          "type": "E"
+        },
+        {
+          "id": "P5",
+          "text": "Mental health worsened in lockdown",
+          "type": "E"
+        }
+      ],
+      "status": "RAN",
+      "result_summary": "M1 prediction correct: False. M2 prediction correct: True. IF change: -89.1%, RF change: 43.5%. DISCRIMINATING: three-channel predicts what single-channel cannot.",
+      "falsified": false,
+      "key_result": {
+        "m2_prediction_correct": true,
+        "m1_prediction_correct": false,
+        "discriminating": true
+      }
+    },
+    {
+      "id": "T4",
+      "title": "Induction cooktop x TFR (cross-country)",
+      "prediction": "Negative correlation: high induction share -> low TFR",
+      "falsification": "No correlation or positive correlation",
+      "data_status": "REQUIRES_COLLECTION",
+      "runnable": false,
+      "premises": [
+        {
+          "id": "P1",
+          "text": "Induction cooktops produce 20-75 kHz IF field",
+          "type": "K"
+        },
+        {
+          "id": "P2",
+          "text": "IF field hits spermatogonia resonance range",
+          "type": "M|C"
+        },
+        {
+          "id": "P3",
+          "text": "Induction market share varies by country",
+          "type": "K"
+        }
+      ],
+      "status": "PENDING"
+    },
+    {
+      "id": "T5",
+      "title": "Amish/Hutterite quasi-experiment",
+      "prediction": "TFR follows inverse EMF gradient across the three groups",
+      "falsification": "Hutterite or Mennonite TFR >= Amish",
+      "data_status": "REQUIRES_COLLECTION",
+      "runnable": false,
+      "premises": [
+        {
+          "id": "P1",
+          "text": "Amish communities use no electricity",
+          "type": "K"
+        },
+        {
+          "id": "P2",
+          "text": "Amish TFR = 6.4-7.0 (near biological maximum)",
+          "type": "K"
+        },
+        {
+          "id": "P3",
+          "text": "Hutterites use some technology",
+          "type": "K"
+        },
+        {
+          "id": "P4",
+          "text": "Mennonites use more technology",
+          "type": "K"
+        }
+      ],
+      "status": "PENDING"
+    },
+    {
+      "id": "T6",
+      "title": "Sentinel cascade temporal consistency",
+      "prediction": "CSLI 23/31 result (p=0.005) replicates with expanded dataset",
+      "falsification": "Lag order does not follow size-sensitivity gradient or p > 0.05",
+      "data_status": "AVAILABLE",
+      "runnable": true,
+      "premises": [
+        {
+          "id": "P1",
+          "text": "Smaller organisms are more EMF-sensitive (GHz resonance)",
+          "type": "E"
+        },
+        {
+          "id": "P2",
+          "text": "Sensitive species decline precedes less sensitive",
+          "type": "M|C"
+        },
+        {
+          "id": "P3",
+          "text": "CSLI data exists for 23 countries",
+          "type": "E"
+        }
+      ],
+      "status": "PENDING"
+    },
+    {
+      "id": "T7",
+      "title": "Therapeutic device intensity comparison",
+      "prediction": "Ambient >= therapeutic in multiple comparisons",
+      "falsification": "Ambient << therapeutic in ALL comparisons",
+      "data_status": "AVAILABLE",
+      "runnable": true,
+      "premises": [
+        {
+          "id": "P1",
+          "text": "tDCS operates at 0.3-1.0 V/m cortical",
+          "type": "E"
+        },
+        {
+          "id": "P2",
+          "text": "Urban ambient RF is 0.67-1.51 V/m",
+          "type": "K"
+        },
+        {
+          "id": "P3",
+          "text": "If 0.3 V/m DC changes brain function, 0.67 V/m RF cannot be biologically inert",
+          "type": "logical"
+        }
+      ],
+      "status": "RAN",
+      "result_summary": "Ambient median 0.67 V/m exceeds therapeutic intensity in 1/5 comparisons. tDCS cortical (0.3 V/m) is the key comparator: ambient is 2.2x the proven neuromodulatory dose.",
+      "falsified": false,
+      "key_result": {
+        "ambient_median_v_m": 0.67,
+        "n_exceeds": 1,
+        "n_total": 5
+      }
+    }
+  ],
+  "falsification_matrix": [
+    {
+      "test": "T1",
+      "criterion": "DID >= 0 (EU does not accelerate)",
+      "scope": "IF channel"
+    },
+    {
+      "test": "T2",
+      "criterion": "M0 beats M1",
+      "scope": "ENTIRE BERM"
+    },
+    {
+      "test": "T2",
+      "criterion": "M1 beats M2/M3",
+      "scope": "Three-channel model"
+    },
+    {
+      "test": "T3",
+      "criterion": "Sperm worsened in lockdown",
+      "scope": "IF channel + three-channel"
+    },
+    {
+      "test": "T3",
+      "criterion": "Mental health improved in lockdown",
+      "scope": "RF channel"
+    },
+    {
+      "test": "T4",
+      "criterion": "No correlation",
+      "scope": "IF channel (induction)"
+    },
+    {
+      "test": "T5",
+      "criterion": "Hutterite TFR >= Amish",
+      "scope": "EMF-TFR link"
+    },
+    {
+      "test": "T6",
+      "criterion": "Lag order violates size gradient",
+      "scope": "Sentinel cascade"
+    },
+    {
+      "test": "T7",
+      "criterion": "Ambient << therapeutic in ALL cases",
+      "scope": "Intensity argument"
+    }
+  ]
+}

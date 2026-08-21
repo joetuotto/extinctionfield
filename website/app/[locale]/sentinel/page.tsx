@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Leaf, Zap } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
-import { SentinelReadiness } from "@/components/SentinelReadiness";
+import { FalsificationTestsV19 } from "@/components/FalsificationTestsV19";
 import { SentinelCascade } from "@/components/SentinelCascade";
 import { SentinelCascadeTimeline } from "@/components/SentinelCascadeTimeline";
 import { NikeBBSScatter } from "@/components/NikeBBSScatter";
@@ -122,7 +122,7 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Leaf} title={d.title} subtitle={d.subtitle} />
-      <section className="mb-14"><SentinelReadiness locale={activeLocale} /></section>
+      <section className="mb-14"><FalsificationTestsV19 locale={activeLocale} /></section>
 
       {/* CSLI empirical results */}
       <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
