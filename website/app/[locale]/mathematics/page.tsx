@@ -26,6 +26,7 @@ const t = {
       { id: "falsification", num: "§9", label: "Falsification conditions" },
       { id: "pharmacological", num: "§10", label: "Pharmacological validation" },
       { id: "individual-susceptibility", num: "§11", label: "Individual susceptibility" },
+      { id: "cross-sectional", num: "§12", label: "Cross-sectional validation" },
     ],
     pageTitle: "Mathematical Foundation",
     pageSubtitle:
@@ -126,15 +127,17 @@ const t = {
     s3tcAfter:
       "Channel weights are frequency-specific and tissue-dependent (see §2b). The single-channel cumEMF above is the weighted aggregate of the three channels. Channel weights (0.05/0.60/0.35) are diagnostic estimates requiring empirical calibration.",
 
-    s3ifoTitle: "IF response function: IFO vs DEP",
+    s3ifoTitle: "IF response function: IFO vs DEP vs Cyb5b",
     s3ifoIntro:
-      "The IF channel response is the sum of two mechanisms operating at different intensity regimes:",
+      "The IF channel response is the sum of three mechanisms operating at different intensity regimes and frequency bands:",
     s3ifoIfo:
       "R_IFO — Ion Forced Oscillation: linear in E_ext, threshold 10⁻⁵ V/m, dominates at environmental levels (0.01–3 V/m). Polarized, coherent IF fields force irregular gating of voltage-gated ion channels (Panagopoulos 2025).",
     s3ifoDep:
       "R_DEP — Dielectrophoresis: quadratic in E_ext, dominates at TTFields therapeutic levels (100–300 V/m). Requires high field gradients for translational force on intracellular structures.",
+    s3ifoCyb5b:
+      "R_Cyb5b — Mitochondrial outer membrane transduction: Cyb5b identified via genome-wide CRISPR screen as an EMF sensor (Kim et al. 2026, Cell). 60 Hz pulsed EMF → Cyb5b conformational change → Ca²⁺ oscillations → gene promoter activation. Operates at ELF frequencies (50/60 Hz) and couples the ELF channel directly to gene expression control — a pathway independent of both IFO and RPM.",
     s3ifoAfter:
-      "At environmental intensities R_IFO ≫ R_DEP → linear response. At therapeutic intensities R_DEP ≫ R_IFO → quadratic response. The intensity gap between therapeutic devices and environmental exposure does not exist — it is an artifact of assuming DEP is the only IF mechanism.",
+      "At environmental intensities R_IFO ≫ R_DEP → linear response. At therapeutic intensities R_DEP ≫ R_IFO → quadratic response. R_Cyb5b adds an ELF-specific gene-regulatory pathway that operates independently of membrane ion channel gating. The intensity gap between therapeutic devices and environmental exposure does not exist — it is an artifact of assuming DEP is the only mechanism.",
 
     // S4 BioCap
     s4Title: "Biological Capacity",
@@ -353,6 +356,29 @@ const t = {
     s11d8:
       "For population-level TFR prediction, BERM integrates over the genotype frequency distribution (Hardy-Weinberg) × anatomical demographics × exposure-duration distribution. The mean individual modifier is 1.0 by construction — it cancels in the population average. The DIAGNOSTIC value lies in the tails: high-susceptibility individuals (AA, young, exhaustion phase) may have combined modifiers of 5–10×, explaining why a subpopulation reports symptoms while the majority does not.",
     s11d9Link: "→ Individual susceptibility evidence",
+
+    // S12 Cross-Sectional Validation
+    s12Title: "Cross-Sectional Validation v19.1",
+    s12Intro:
+      "Formula discovery across 54 countries (2022 data) provides an independent validation of the temporal model. The cross-sectional formula uses two EMF proxy variables and one binary threshold to predict national TFR with LOOCV RMSE 0.522.",
+    s12Formula:
+      "The two-channel EMF index combines residential electricity consumption (ELF proxy) and fixed broadband subscriptions (RF proxy):",
+    s12Access:
+      "Electricity access acts as a binary biological exposure boundary. The IFO-VGIC activation threshold (10⁻⁵ V/m) is exceeded at the operating distance of every household electrical device. Populations without electricity are not exposed.",
+    s12Stats: "Validation statistics:",
+    s12Stat1: "LOOCV RMSE = 0.522 (leave-one-country-out cross-validation)",
+    s12Stat2: "R² = 0.851",
+    s12Stat3: "74% of countries within 0.5 children of prediction",
+    s12Stat4: "Residential electricity is the BEST single predictor (RMSE 0.533)",
+    s12Stat5: "Mobile phone subscriptions are the WEAKEST (RMSE 1.053)",
+    s12Mobile:
+      "The mobile phone paradox: if the mechanism were 'information access → family planning choices', the information device (mobile phone) should be the strongest predictor. It is the weakest. The infrastructure variable (residential electricity) predicts best — consistent with a physical exposure mechanism, not an information mechanism.",
+    s12Electrified:
+      "For partially electrified countries, the electrified sub-population TFR can be estimated from the binary mixture model:",
+    s12Collinearity:
+      "GDP collinearity: EMF proxies and GDP per capita are correlated (r = 0.87). In linear models, neither is significant when the other is controlled. This is a symmetric identification problem — it does not favor GDP over EMF. Three structural differences break the symmetry: (1) binary electrification threshold, (2) mobile phone paradox, (3) sentinel species respond to EMF but not GDP.",
+    s12Caveat:
+      "Cross-sectional analysis cannot determine causal direction. Discriminating evidence comes from sentinel species, natural experiments, and populations without electricity.",
   },
   fi: {
     meta: {
@@ -375,6 +401,7 @@ const t = {
       { id: "falsification", num: "§9", label: "Falsifiointiehdot" },
       { id: "pharmacological", num: "§10", label: "Farmakologinen validointi" },
       { id: "individual-susceptibility", num: "§11", label: "Yksilöllinen herkkyys" },
+      { id: "cross-sectional", num: "§12", label: "Poikkileikkausvalidointi" },
     ],
     pageTitle: "Matemaattinen perusta",
     pageSubtitle:
@@ -475,15 +502,17 @@ const t = {
     s3tcAfter:
       "Kanavapainot ovat taajuuskohtaisia ja kudosriippuvaisia (katso §2b). Yllä oleva yksikanavainen cumEMF on kolmen kanavan painotettu aggregaatti. Kanavapainot (0,05/0,60/0,35) ovat diagnostisia arvioita, jotka vaativat empiirisen kalibraation.",
 
-    s3ifoTitle: "IF-vastefunktio: IFO vs DEP",
+    s3ifoTitle: "IF-vastefunktio: IFO vs DEP vs Cyb5b",
     s3ifoIntro:
-      "IF-kanavan vaste on kahden mekanismin summa, jotka toimivat eri intensiteettialueilla:",
+      "IF-kanavan vaste on kolmen mekanismin summa, jotka toimivat eri intensiteettialueilla ja taajuuskaistoilla:",
     s3ifoIfo:
       "R_IFO — ionien pakotettu oskillaatio: lineaarinen E_ext:ssä, kynnys 10⁻⁵ V/m, dominoi ympäristötasoilla (0,01–3 V/m). Polarisoidut, koherentit IF-kentät pakottavat jänniteohjattujen ionikanavien epäsäännöllisen portituksen (Panagopoulos 2025).",
     s3ifoDep:
       "R_DEP — dielektroforeesi: neliöllinen E_ext:ssä, dominoi TTFields-terapiatasoilla (100–300 V/m). Vaatii korkean kenttägradientin translaatiovoimalle solunsisäisiin rakenteisiin.",
+    s3ifoCyb5b:
+      "R_Cyb5b — mitokondrion ulkokalvon transduktio: Cyb5b tunnistettu genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi (Kim ym. 2026, Cell). 60 Hz pulssi-EMF → Cyb5b:n konformaatiomuutos → Ca²⁺-oskillaatiot → geenipromootterin aktivaatio. Toimii ELF-taajuuksilla (50/60 Hz) ja kytkee ELF-kanavan suoraan geeniekspression hallintaan — reitti joka on riippumaton sekä IFO:sta että RPM:stä.",
     s3ifoAfter:
-      "Ympäristöintensiteeteillä R_IFO ≫ R_DEP → lineaarinen vaste. Terapiaintensiteeteillä R_DEP ≫ R_IFO → neliöllinen vaste. Intensiteettikuilua terapeuttisten laitteiden ja ympäristöaltistuksen välillä ei ole — se on artefakti oletuksesta, että DEP on ainoa IF-mekanismi.",
+      "Ympäristöintensiteeteillä R_IFO ≫ R_DEP → lineaarinen vaste. Terapiaintensiteeteillä R_DEP ≫ R_IFO → neliöllinen vaste. R_Cyb5b lisää ELF-spesifisen geenisäätöreitin, joka toimii riippumattomasti kalvon ionikanavien portituksesta. Intensiteettikuilua terapeuttisten laitteiden ja ympäristöaltistuksen välillä ei ole — se on artefakti oletuksesta, että DEP on ainoa mekanismi.",
 
     // S4 BioCap
     s4Title: "Biologinen kapasiteetti",
@@ -703,6 +732,29 @@ const t = {
     s11d8:
       "Populaatiotason TFR-ennusteessa BERM integroi genotyyppifrekvenssisjakauman (Hardy-Weinberg) × anatominen demografia × altistuskeston jakauman yli. Keskimääräinen yksilökerroin on 1,0 konstruktion mukaan — se supistuu populaatiokeskiarvossa. DIAGNOSTINEN arvo on hännissä: korkean herkkyyden yksilöillä (AA, nuoret, uupumusvaihe) yhdistetty kerroin voi olla 5–10×, mikä selittää miksi osajoukko raportoi oireita enemmistön ollessa oireeton.",
     s11d9Link: "→ Yksilöllisen herkkyyden todisteet",
+
+    // S12 Poikkileikkausvalidointi
+    s12Title: "Poikkileikkausvalidointi v19.1",
+    s12Intro:
+      "Kaavaetsintä 54 maan aineistosta (2022 data) tarjoaa temporaalimallista riippumattoman validoinnin. Poikkileikkauskaava käyttää kahta EMF-proxy-muuttujaa ja yhtä binääristä kynnystä kansallisen TFR:n ennustamiseen LOOCV RMSE:llä 0,522.",
+    s12Formula:
+      "Kaksikanavainen EMF-indeksi yhdistää asumisen sähkönkulutuksen (ELF-proxy) ja kiinteän laajakaistan tilaukset (RF-proxy):",
+    s12Access:
+      "Sähkön saatavuus toimii binäärisenä biologisen altistumisen rajana. IFO-VGIC-aktivaatiokynnys (10⁻⁵ V/m) ylittyy jokaisen kotitalouden sähkölaitteen käyttöetäisyydellä. Ilman sähköä olevat väestöt eivät altistu.",
+    s12Stats: "Validointitilastot:",
+    s12Stat1: "LOOCV RMSE = 0,522 (yksi maa kerrallaan pois -ristiinvalidointi)",
+    s12Stat2: "R² = 0,851",
+    s12Stat3: "74 % maista 0,5 lapsen sisällä ennusteesta",
+    s12Stat4: "Asumisen sähkönkulutus on PARAS yksittäinen ennustaja (RMSE 0,533)",
+    s12Stat5: "Matkapuhelintilaukset ovat HEIKOIN (RMSE 1,053)",
+    s12Mobile:
+      "Matkapuhelinparadoksi: jos mekanismi olisi 'tiedon saatavuus → perhesuunnitteluvalinnat', tietolaitteen (matkapuhelin) pitäisi olla vahvin ennustaja. Se on heikoin. Infrastruktuurimuuttuja (asumisen sähkönkulutus) ennustaa parhaiten — yhdenmukaista fyysisen altistusmekanismin, ei tietomekanismin kanssa.",
+    s12Electrified:
+      "Osittain sähköistetyille maille sähköistetyn osaväestön TFR voidaan estimoida binäärisestä sekoitusmallista:",
+    s12Collinearity:
+      "BKT-kollineaarisuus: EMF-proxy-muuttujat ja BKT/cap korreloivat (r = 0,87). Lineaarisissa malleissa kumpikaan ei ole merkitsevä toisen kontrolloinnin jälkeen. Tämä on symmetrinen identifikaatio-ongelma — se ei suosi BKT:tä EMF:n yli. Kolme rakenteellista eroa murtavat symmetrian: (1) binäärinen sähköistymiskynnys, (2) matkapuhelinparadoksi, (3) sentinelkilajit reagoivat EMF:ään mutta eivät BKT:hen.",
+    s12Caveat:
+      "Poikkileikkausanalyysi ei voi määrittää kausaalisuuntaa. Erotteleva evidenssi tulee sentinelkilajeista, luonnollisista kokeista ja väestöistä ilman sähköä.",
   },
 };
 
@@ -1062,7 +1114,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 {d.s3ifoIntro}
               </p>
               <div className="text-center my-3">
-                <MathBlock tex="R_{IF} = R_{IFO} + R_{DEP}" />
+                <MathBlock tex="R_{IF} = R_{IFO} + R_{DEP} + R_{Cyb5b}" />
               </div>
               <div className="space-y-2 text-sm text-foreground-muted leading-relaxed mb-3">
                 <p>{d.s3ifoIfo}</p>
@@ -1072,6 +1124,10 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 <p>{d.s3ifoDep}</p>
                 <div className="text-center my-2">
                   <MathBlock tex="R_{DEP}(E,f) = T(f) \cdot G_{geo} \cdot |E_{ext}|^2 \cdot V_{cell} \cdot \text{Re}[K(f)] \quad \text{(quadratic)}" />
+                </div>
+                <p>{d.s3ifoCyb5b}</p>
+                <div className="text-center my-2">
+                  <MathBlock tex="R_{Cyb5b}(B) = \Theta(B - B_{thr}) \cdot \sigma_{Cyb5b} \cdot [Ca^{2+}]_{osc} \quad \text{(ELF threshold)}" />
                 </div>
               </div>
               <p className="text-sm text-foreground-muted leading-relaxed">
@@ -1636,6 +1692,71 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 </Link>
               </p>
             </Derivation>
+          </section>
+
+          {/* S12 Cross-Sectional Validation */}
+          <section id="cross-sectional">
+            <h2 className="text-lg font-semibold mb-1">
+              <span className="text-foreground-muted text-sm mr-2">{"§12"}</span>
+              {d.s12Title}
+            </h2>
+            <p className="text-foreground-muted text-sm leading-relaxed mb-4">
+              {d.s12Intro}
+            </p>
+
+            <p className="text-foreground-muted text-sm leading-relaxed mb-2">
+              {d.s12Formula}
+            </p>
+            <div className="text-center my-4">
+              <MathBlock tex="\text{EMF}_{\text{index}} = 0.60 \times \min\!\left(1,\;\frac{\text{res\_elec}}{8500}\right) + 0.40 \times \min\!\left(1,\;\frac{\text{broadband}}{47}\right)" />
+            </div>
+
+            <p className="text-foreground-muted text-sm leading-relaxed mb-2">
+              {d.s12Access}
+            </p>
+            <div className="text-center my-4">
+              <MathBlock tex="\text{EMF}_{\text{eff}} = \text{EMF}_{\text{index}} \times \frac{\text{access}}{100}" />
+            </div>
+            <div className="text-center my-4">
+              <MathBlock tex="\text{TFR} \approx 4.11 \times e^{-54.0 \times \text{EMF}_{\text{eff}}} + 1.55" />
+            </div>
+
+            <div className="rounded-lg border border-card-border p-4 mb-4">
+              <p className="text-sm font-medium mb-2">{d.s12Stats}</p>
+              <ul className="text-xs text-foreground-muted space-y-1 font-mono">
+                <li>{d.s12Stat1}</li>
+                <li>{d.s12Stat2}</li>
+                <li>{d.s12Stat3}</li>
+                <li>{d.s12Stat4}</li>
+                <li>{d.s12Stat5}</li>
+              </ul>
+            </div>
+
+            <Derivation label={locale === "fi" ? "Matkapuhelinparadoksi" : "Mobile phone paradox"}>
+              <DerivationLine>{d.s12Mobile}</DerivationLine>
+            </Derivation>
+
+            <div className="mt-4">
+              <p className="text-foreground-muted text-sm leading-relaxed mb-2">
+                {d.s12Electrified}
+              </p>
+              <div className="text-center my-4">
+                <MathBlock tex="\text{TFR}_{\text{elec}} = \frac{\text{TFR}_{\text{national}} - (1 - \text{access}) \times \text{TFR}_{\text{unelec}}}{\text{access}}" />
+              </div>
+              <div className="text-center my-2">
+                <MathBlock tex="\text{where } \text{TFR}_{\text{unelec}} \approx 6.5 \;\text{(biological maximum)}" display={false} />
+              </div>
+            </div>
+
+            <Derivation label={locale === "fi" ? "BKT-kollineaarisuus" : "GDP collinearity"}>
+              <DerivationLine>{d.s12Collinearity}</DerivationLine>
+            </Derivation>
+
+            <div className="mt-4 p-3 rounded border border-status-partial/40 bg-status-partial/5">
+              <p className="text-xs text-foreground-muted leading-relaxed">
+                {d.s12Caveat}
+              </p>
+            </div>
           </section>
     </div>
   );

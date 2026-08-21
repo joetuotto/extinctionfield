@@ -5,14 +5,14 @@ import Link from "next/link";
 const COPY = {
   en: {
     label: "BERM v19 · Bio-Electromagnetic Reproductive Model",
-    summary: "Three-channel framework (ELF · IF · RF). 484 peer-reviewed references.",
+    summary: "Three-channel framework (ELF · IF · RF). 486 peer-reviewed references.",
     license: "Code: MIT · Docs: CC BY-4.0",
     specLink: "Model specification",
     author: "Otto Juote · MSc Biomedicine (LSE) · Independent research",
   },
   fi: {
     label: "BERM v19 · Bio-sähkömagneettinen lisääntymismalli",
-    summary: "Kolmikanavakehys (ELF · IF · RF). 484 vertaisarvioitua viitettä.",
+    summary: "Kolmikanavakehys (ELF · IF · RF). 486 vertaisarvioitua viitettä.",
     license: "Koodi: MIT · Docs: CC BY-4.0",
     specLink: "Mallin määrittely",
     author: "Otto Juote · MSc Biomedicine (LSE) · Itsenäinen tutkimus",

@@ -55,6 +55,17 @@ const COPY = {
 
     sentinelCta: "All sentinels",
 
+    paradoxLabel: "CROSS-SECTIONAL DISCOVERY v19.1",
+    paradoxTitle: "The mobile phone paradox",
+    paradoxText: "Across 54 countries, residential electricity consumption is the strongest predictor of fertility decline (RMSE 0.533). Mobile phone subscriptions — the information device — are the weakest (RMSE 1.053). If the mechanism were 'information → choices', the information device should predict best. It doesn't. The infrastructure variable predicts best — consistent with a physical exposure mechanism.",
+    paradoxStat1: "LOOCV RMSE",
+    paradoxVal1: "0.522",
+    paradoxStat2: "R²",
+    paradoxVal2: "0.851",
+    paradoxStat3: "Countries within 0.5",
+    paradoxVal3: "74%",
+    paradoxCta: "Cross-sectional formula",
+
     howTitle: "How the model works",
     causalLabel: "THREE-CHANNEL MECHANISM",
     causalTitle: "ELF · IF · RF — three frequency bands, three biological pathways",
@@ -75,8 +86,8 @@ const COPY = {
     falsPending: "pending",
     falsCta: "Test details",
 
-    epistemicNote: "BERM v19 is a falsifiable research model, not a certainty. 484 peer-reviewed references across 10 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.",
-    epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · LOOCV RMSE = 0.09",
+    epistemicNote: "BERM v19 is a falsifiable research model, not a certainty. 486 peer-reviewed references across 10 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Cross-sectional formula: LOOCV RMSE 0.522, 74% of countries within 0.5 children of prediction. Residential electricity consumption outperforms GDP as a TFR predictor by 21%. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.",
+    epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · Cross-sectional RMSE = 0.522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Independent research",
 
     ctaModel: "Model specification",
@@ -101,6 +112,17 @@ const COPY = {
 
     sentinelCta: "Kaikki sentinellit",
 
+    paradoxLabel: "POIKKILEIKKAUSLÖYDÖS v19.1",
+    paradoxTitle: "Matkapuhelinparadoksi",
+    paradoxText: "54 maan aineistossa asumisen sähkönkulutus on vahvin yksittäinen hedelmällisyyslaskun ennustaja (RMSE 0,533). Matkapuhelintilaukset — tietolaite — ovat heikoin (RMSE 1,053). Jos mekanismi olisi 'tieto → valinnat', tietolaitteen pitäisi ennustaa parhaiten. Ei ennusta. Infrastruktuurimuuttuja ennustaa parhaiten — yhdenmukaista fyysisen altistusmekanismin kanssa.",
+    paradoxStat1: "LOOCV RMSE",
+    paradoxVal1: "0,522",
+    paradoxStat2: "R²",
+    paradoxVal2: "0,851",
+    paradoxStat3: "Maat 0,5 sisällä",
+    paradoxVal3: "74 %",
+    paradoxCta: "Poikkileikkauskaava",
+
     howTitle: "Miten malli toimii",
     causalLabel: "KOLMIKANAVAMEKANISMI",
     causalTitle: "ELF · IF · RF — kolme taajuuskaistaa, kolme biologista reittiä",
@@ -121,8 +143,8 @@ const COPY = {
     falsPending: "odottaa",
     falsCta: "Testien yksityiskohdat",
 
-    epistemicNote: "BERM v19 on falsifioitava tutkimusmalli, ei varmuus. 484 vertaisarvioitua viitettä 10 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.",
-    epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · LOOCV RMSE = 0,09",
+    epistemicNote: "BERM v19 on falsifioitava tutkimusmalli, ei varmuus. 486 vertaisarvioitua viitettä 10 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava: LOOCV RMSE 0,522, 74 % maista 0,5 lapsen sisällä ennusteesta. Asumisen sähkönkulutus ylittää BKT:n TFR-ennustajana 21 %. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.",
+    epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · Poikkileikkaus-RMSE = 0,522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Itsenäinen tutkimus",
 
     ctaModel: "Mallin määrittely",
@@ -193,6 +215,35 @@ export default async function Home({
               </article>
             );
           })}
+        </div>
+      </section>
+
+      {/* ── 2b. Mobile phone paradox ── */}
+      <section className="pb-20">
+        <div className="rounded-xl border border-accent/20 bg-card-bg p-6 sm:p-8">
+          <p className="editorial-kicker text-accent mb-2">{d.paradoxLabel}</p>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.paradoxTitle}</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl mb-5">{d.paradoxText}</p>
+          <div className="grid grid-cols-3 gap-4 mb-5 max-w-md">
+            <div>
+              <p className="font-mono-num text-2xl font-semibold text-accent">{d.paradoxVal1}</p>
+              <p className="text-xs text-foreground-muted mt-1">{d.paradoxStat1}</p>
+            </div>
+            <div>
+              <p className="font-mono-num text-2xl font-semibold text-accent">{d.paradoxVal2}</p>
+              <p className="text-xs text-foreground-muted mt-1">{d.paradoxStat2}</p>
+            </div>
+            <div>
+              <p className="font-mono-num text-2xl font-semibold text-accent">{d.paradoxVal3}</p>
+              <p className="text-xs text-foreground-muted mt-1">{d.paradoxStat3}</p>
+            </div>
+          </div>
+          <Link
+            href={`${prefix}/mathematics#cross-sectional`}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+          >
+            {d.paradoxCta} <ArrowRight size={14} />
+          </Link>
         </div>
       </section>
 

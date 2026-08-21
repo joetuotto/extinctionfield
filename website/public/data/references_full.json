@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 484,
+    "total_references": 486,
     "verified_count": 58,
     "generated": "2026-08-20"
   },
@@ -9783,11 +9783,24 @@
       "journal": "Scribner",
       "doi": null,
       "category": "neurobiology_circadian",
-      "pathway": ["C", "D", "metabolic", "immune"],
+      "pathway": [
+        "C",
+        "D",
+        "metabolic",
+        "immune"
+      ],
       "level": "E",
       "type": "book",
       "finding": "Comprehensive review: sleep deprivation produces testosterone decline (−10–15%), sperm count reduction (−29%), NK cell collapse (−70% in one night), pre-diabetic state in one week, sympathetic overdrive, and depression (causal, not symptomatic). LED blue light causes 2× melatonin suppression vs incandescent at matched intensity.",
-      "tags": ["sleep", "testosterone", "NK_cells", "melatonin", "LED", "circadian", "cascade"],
+      "tags": [
+        "sleep",
+        "testosterone",
+        "NK_cells",
+        "melatonin",
+        "LED",
+        "circadian",
+        "cascade"
+      ],
       "verified": true
     },
     {
@@ -9798,11 +9811,19 @@
       "journal": "JAMA",
       "doi": "10.1001/jama.2011.710",
       "category": "reproduction_hormones",
-      "pathway": ["C", "D"],
+      "pathway": [
+        "C",
+        "D"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "One week of 5-hour sleep reduced daytime testosterone by 10–15% in healthy young men. Effect equivalent to 10–15 years of aging in testosterone terms.",
-      "tags": ["sleep", "testosterone", "experimental", "young_men"],
+      "tags": [
+        "sleep",
+        "testosterone",
+        "experimental",
+        "young_men"
+      ],
       "verified": true
     },
     {
@@ -9813,11 +9834,21 @@
       "journal": "Annual Review of Psychology",
       "doi": "10.1146/annurev-psych-010213-115205",
       "category": "neurobiology_circadian",
-      "pathway": ["immune", "cancer"],
+      "pathway": [
+        "immune",
+        "cancer"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Single night of 4-hour sleep reduces NK cell count by 70%. Chronic short sleep associated with increased cancer risk. WHO classified night-shift work as Group 2A probable carcinogen based on breast and prostate cancer data.",
-      "tags": ["sleep", "NK_cells", "immune", "cancer", "night_shift", "WHO_2A"],
+      "tags": [
+        "sleep",
+        "NK_cells",
+        "immune",
+        "cancer",
+        "night_shift",
+        "WHO_2A"
+      ],
       "verified": true
     },
     {
@@ -9828,11 +9859,19 @@
       "journal": "Lancet",
       "doi": "10.1016/S0140-6736(99)01376-8",
       "category": "neurobiology_circadian",
-      "pathway": ["metabolic"],
+      "pathway": [
+        "metabolic"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Sleep restriction to 4 h/night for 6 nights produced pre-diabetic glucose tolerance in healthy young adults. First demonstration that sleep debt has metabolic consequences comparable to aging.",
-      "tags": ["sleep", "insulin", "metabolic", "glucose", "experimental"],
+      "tags": [
+        "sleep",
+        "insulin",
+        "metabolic",
+        "glucose",
+        "experimental"
+      ],
       "verified": true
     },
     {
@@ -9843,11 +9882,20 @@
       "journal": "PNAS",
       "doi": "10.1073/pnas.1418490112",
       "category": "neurobiology_circadian",
-      "pathway": ["C"],
+      "pathway": [
+        "C"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "iPad reading suppressed melatonin by >50%, delayed melatonin rise by up to 3 hours, reduced REM sleep, increased next-day sleepiness. LED blue light produces 2× melatonin suppression vs incandescent at matched lux.",
-      "tags": ["LED", "melatonin", "circadian", "blue_light", "iPad", "experimental"],
+      "tags": [
+        "LED",
+        "melatonin",
+        "circadian",
+        "blue_light",
+        "iPad",
+        "experimental"
+      ],
       "verified": true
     },
     {
@@ -9858,11 +9906,19 @@
       "journal": "Sleep Health",
       "doi": "10.1016/j.sleh.2021.03.005",
       "category": "neurobiology_circadian",
-      "pathway": ["C"],
+      "pathway": [
+        "C"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Blue-light filtering (Night Shift) did not significantly improve objective sleep quality compared to normal phone use. Suggests non-visible-light mechanisms contribute to device-related sleep disruption.",
-      "tags": ["blue_light", "Night_Shift", "sleep", "filter", "experimental"],
+      "tags": [
+        "blue_light",
+        "Night_Shift",
+        "sleep",
+        "filter",
+        "experimental"
+      ],
       "verified": true
     },
     {
@@ -9873,11 +9929,21 @@
       "journal": "iScience",
       "doi": "10.1016/j.isci.2025.112550",
       "category": "ecology_sentinels",
-      "pathway": ["STATIC", "ELF", "sentinel"],
+      "pathway": [
+        "STATIC",
+        "ELF",
+        "sentinel"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Field experiment: AC electric fields reduced honeybee floral landings by 71%, positive DC fields by 53%. Power line fields extend tens of meters at foraging height. First use of term 'electric pollution' in a Cell Press journal.",
-      "tags": ["electroecology", "bee", "electric_pollution", "field_experiment", "STATIC"],
+      "tags": [
+        "electroecology",
+        "bee",
+        "electric_pollution",
+        "field_experiment",
+        "STATIC"
+      ],
       "verified": true
     },
     {
@@ -9888,11 +9954,19 @@
       "journal": "Science",
       "doi": "10.1126/science.1230883",
       "category": "ecology_sentinels",
-      "pathway": ["STATIC", "sentinel"],
+      "pathway": [
+        "STATIC",
+        "sentinel"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Bumblebees detect and learn floral electric fields. First demonstration of aerial electroreception in a terrestrial animal.",
-      "tags": ["electroecology", "bee", "electroreception", "Science"],
+      "tags": [
+        "electroecology",
+        "bee",
+        "electroreception",
+        "Science"
+      ],
       "verified": true
     },
     {
@@ -9903,11 +9977,19 @@
       "journal": "Proceedings of the Royal Society B",
       "doi": "10.1098/rspb.2013.0528",
       "category": "ecology_sentinels",
-      "pathway": ["STATIC", "sentinel"],
+      "pathway": [
+        "STATIC",
+        "sentinel"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Bees emit electric fields (up to 450 V) during waggle dance. Electric fields are communication signals within the hive. Both constant and modulated components detected by antennae.",
-      "tags": ["electroecology", "bee", "electric_communication", "waggle_dance"],
+      "tags": [
+        "electroecology",
+        "bee",
+        "electric_communication",
+        "waggle_dance"
+      ],
       "verified": true
     },
     {
@@ -9918,11 +10000,19 @@
       "journal": "Proceedings of the National Academy of Sciences",
       "doi": "10.1073/pnas.1601624113",
       "category": "ecology_sentinels",
-      "pathway": ["STATIC"],
+      "pathway": [
+        "STATIC"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Mechanosensory hairs on bumblebees physically bend in electric fields, producing neural signals. Mechanism of aerial electroreception identified.",
-      "tags": ["electroecology", "mechanism", "hair", "electroreception", "PNAS"],
+      "tags": [
+        "electroecology",
+        "mechanism",
+        "hair",
+        "electroreception",
+        "PNAS"
+      ],
       "verified": true
     },
     {
@@ -9933,11 +10023,18 @@
       "journal": "Current Biology",
       "doi": "10.1016/j.cub.2018.05.057",
       "category": "ecology_sentinels",
-      "pathway": ["STATIC"],
+      "pathway": [
+        "STATIC"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Spiders detect electric fields via trichobothria and initiate ballooning. Atmospheric electric fields sufficient for spider dispersal. Electroreception extended to arachnids.",
-      "tags": ["electroecology", "spider", "ballooning", "electroreception"],
+      "tags": [
+        "electroecology",
+        "spider",
+        "ballooning",
+        "electroreception"
+      ],
       "verified": true
     },
     {
@@ -9947,11 +10044,19 @@
       "title": "Aerial electroreception",
       "journal": "Current Biology",
       "category": "ecology_sentinels",
-      "pathway": ["STATIC", "ELF"],
+      "pathway": [
+        "STATIC",
+        "ELF"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Review formalizing aerial electroreception as a recognized sensory modality in arthropods. Widespread across bees, flies, spiders, worms, caterpillars.",
-      "tags": ["electroecology", "review", "electroreception", "sensory_modality"],
+      "tags": [
+        "electroecology",
+        "review",
+        "electroreception",
+        "sensory_modality"
+      ],
       "verified": true
     },
     {
@@ -9961,11 +10066,18 @@
       "title": "Caterpillars detect approaching predators via electric fields",
       "journal": "Proceedings of the National Academy of Sciences",
       "category": "ecology_sentinels",
-      "pathway": ["STATIC"],
+      "pathway": [
+        "STATIC"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Caterpillars detect approaching wasps via electric field and initiate defensive behavior before contact. Electroreception used for predator avoidance.",
-      "tags": ["electroecology", "caterpillar", "predator_detection", "PNAS"],
+      "tags": [
+        "electroecology",
+        "caterpillar",
+        "predator_detection",
+        "PNAS"
+      ],
       "verified": true
     },
     {
@@ -9976,11 +10088,19 @@
       "journal": "Journal of the Royal Society Interface",
       "doi": "10.1098/rsif.2024.0156",
       "category": "ecology_sentinels",
-      "pathway": ["STATIC", "sentinel"],
+      "pathway": [
+        "STATIC",
+        "sentinel"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "269 butterflies/moths across 11 species: electrostatic charge varies with ecology. First evidence that electrostatic properties are adaptive traits shaped by natural selection.",
-      "tags": ["electroecology", "butterfly", "adaptive", "natural_selection"],
+      "tags": [
+        "electroecology",
+        "butterfly",
+        "adaptive",
+        "natural_selection"
+      ],
       "verified": true
     },
     {
@@ -9991,11 +10111,18 @@
       "journal": "Current Biology",
       "doi": "10.1016/j.cub.2023.06.021",
       "category": "ecology_sentinels",
-      "pathway": ["STATIC"],
+      "pathway": [
+        "STATIC"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Ticks attracted across air gaps of mm/cm by host electrostatic charge. Mechanism: induced polarization within tick. Quantified force sufficient to overcome gravity.",
-      "tags": ["electroecology", "tick", "electrostatic", "parasitology"],
+      "tags": [
+        "electroecology",
+        "tick",
+        "electrostatic",
+        "parasitology"
+      ],
       "verified": true
     },
     {
@@ -10005,12 +10132,67 @@
       "title": "Measurement of electric charges of Varroa jacobsoni Oud. and their possible role in the host-parasite relationships with Apis mellifera L.",
       "journal": "Apidologie",
       "category": "ecology_sentinels",
-      "pathway": ["STATIC", "sentinel"],
+      "pathway": [
+        "STATIC",
+        "sentinel"
+      ],
       "level": "M|C",
       "type": "experimental",
       "finding": "Varroa mites carry charge; honeybee charge (~450 pC) sufficient for electrostatic Varroa attraction. First hypothesis of electrostatic host-parasite interaction.",
-      "tags": ["electroecology", "varroa", "bee", "electrostatic", "parasitology"],
+      "tags": [
+        "electroecology",
+        "varroa",
+        "bee",
+        "electrostatic",
+        "parasitology"
+      ],
       "verified": true
+    },
+    {
+      "id": "delong2010_plosone",
+      "authors": "DeLong, J.P., Burger, O. & Hamilton, M.J.",
+      "year": 2010,
+      "title": "Current Demographics Suggest Future Energy Supplies Will Be Inadequate to Slow Human Population Growth",
+      "journal": "PLOS ONE",
+      "doi": "10.1371/journal.pone.0013206",
+      "category": "reproduction_hormones",
+      "pathway": [
+        "cross-sectional"
+      ],
+      "level": "E",
+      "type": "empirical",
+      "finding": "Per capita energy use predicts fertility decline across nations. Demonstrates the energy-fertility link that BERM reinterprets as EMF exposure threshold.",
+      "tags": [
+        "energy",
+        "fertility",
+        "cross-sectional",
+        "demographics"
+      ],
+      "verified": false
+    },
+    {
+      "id": "belmin2022_nature_sustainability",
+      "authors": "Belmin, C., Hoffmann, R., Pichler, P.-P. & Weisz, H.",
+      "year": 2022,
+      "title": "Fertility transition powered by women's access to electricity and modern cooking fuels",
+      "journal": "Nature Sustainability",
+      "doi": "10.1038/s41893-021-00830-3",
+      "category": "reproduction_hormones",
+      "pathway": [
+        "cross-sectional",
+        "electrification"
+      ],
+      "level": "E",
+      "type": "empirical",
+      "finding": "Electricity access is independently associated with fertility decline in DHS data across 44 countries, controlling for education and wealth. Confirms binary electrification threshold.",
+      "tags": [
+        "electricity",
+        "fertility",
+        "DHS",
+        "cross-sectional",
+        "electrification"
+      ],
+      "verified": false
     }
   ]
 }

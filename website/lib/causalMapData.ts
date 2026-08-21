@@ -26,26 +26,28 @@ export interface CausalMapEdge {
   label?: string;
 }
 
-export const LEVEL_LABELS = {
-  en: [
-    "Environment channels",
-    "Modulation layers",
-    "Biological mechanisms",
-    "Tissue effects",
-    "Disease cascade",
-    "Demographic cascade",
-    "Ecological branch",
-  ],
-  fi: [
-    "Ympäristökanavat",
-    "Modulaatiotasot",
-    "Biologiset mekanismit",
-    "Kudosvaikutukset",
-    "Sairauskaskadi",
-    "Demografinen kaskadi",
-    "Ekologinen haara",
-  ],
-} as const;
+export const LEVEL_LABELS: Record<"en" | "fi", Record<number, string>> = {
+  en: {
+    [-1]: "Electrification boundary",
+    0: "Environment channels",
+    1: "Modulation layers",
+    2: "Biological mechanisms",
+    3: "Tissue effects",
+    4: "Disease cascade",
+    5: "Demographic cascade",
+    6: "Ecological branch",
+  },
+  fi: {
+    [-1]: "Sähköistymiskynnys",
+    0: "Ympäristökanavat",
+    1: "Modulaatiotasot",
+    2: "Biologiset mekanismit",
+    3: "Kudosvaikutukset",
+    4: "Sairauskaskadi",
+    5: "Demografinen kaskadi",
+    6: "Ekologinen haara",
+  },
+};
 
 export { MAP_EPISTEMIC_COLORS as EPISTEMIC_COLORS, MAP_EPISTEMIC_LABELS as EPISTEMIC_LABELS } from "./epistemicConstants";
 
@@ -101,6 +103,20 @@ export const NODES: CausalMapNode[] = [
       keyRefs: ["lindecke2026_science", "panagopoulos2025"],
       prediction: "Wi-Fi-tiheys korreloi sirkadiaanisten häiriöiden kanssa",
       link: "/evidence#rf-channel",
+    },
+  },
+
+  // ── LEVEL -1: Electrification boundary (1) ──
+  {
+    id: "electrification_boundary", level: -1, label: "Sähköistymiskynnys",
+    sublabel: "IFO-VGIC 10⁻⁵ V/m = binäärinen raja",
+    color: "#F59E0B", epistemicLevel: "E",
+    detail: {
+      mechanism: "IFO-VGIC-aktivaatiokynnys (10⁻⁵ V/m) ylittyy jokaisen kotitalouden sähkölaitteen käyttöetäisyydellä. Sähkön saatavuus toimii binäärisenä altistumisen rajana: sähköistetyt vs. sähköistämättömät väestöt. Access-korjattu r paranee −0,864 → −0,885.",
+      bermPathway: "Kaikki kanavat",
+      keyRefs: ["panagopoulos2025", "delong2010_plosone"],
+      prediction: "DHS-mikrodata: sähköistettyjen kotitalouksien TFR < sähköistämättömien (tulojen ja koulutuksen kontrolloinnin jälkeen)",
+      link: "/evidence#electrification-boundary",
     },
   },
 
@@ -201,7 +217,21 @@ export const NODES: CausalMapNode[] = [
     },
   },
 
-  // ── LEVEL 2: Biological mechanisms (8) ──
+  {
+    id: "mod_cyb5b", level: 1, label: "9. Cyb5b EMF-sensori",
+    sublabel: "Kim 2026 Cell",
+    color: "#8B5CF6", epistemicLevel: "E",
+    detail: {
+      mechanism: "Sytokromi b5 tyyppi B (mitokondrion ulkokalvoproteiini) tunnistettu genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi. 60 Hz pulssi-EMF → Cyb5b → rytmiset Ca²⁺-oskillaatiot → geenipromoottorin aktivaatio. Reversiibeli 24h.",
+      fdaDevice: "EMF-geenikytkin (Cell 2026, Kim ym.) — 25. laiteluokka",
+      bermPathway: "Cyb5b-transduktioreitti",
+      keyRefs: ["kim2026_cell_emf_gene_switch"],
+      prediction: "Ympäristö-ELF (50/60 Hz) aktivoi hallitsemattomasti samoja geenipromoottoreita",
+      link: "/evidence#therapeutic-devices",
+    },
+  },
+
+  // ── LEVEL 2: Biological mechanisms (9) ──
   { id: "mech_vgcc_ros", level: 2, label: "VGCC → Ca²⁺ → ROS", epistemicLevel: "E", detail: { mechanism: "Jänniteohjatut kalsiumkanavat avautuvat → Ca²⁺-influksi → mitokondriaaliset ROS → DNA-vaurio.", bermPathway: "A", link: "/evidence#pathway-A" } },
   { id: "mech_gpcr", level: 2, label: "GPCR-adenosiini → cAMP", epistemicLevel: "E", detail: { mechanism: "PEMF-mekanismi: adenosiini-A2A-reseptorin aktivointi → cAMP-kaskadi → anti-inflammatorinen vaste.", bermPathway: "GPCR", link: "/evidence#pathway-GPCR" } },
   { id: "mech_nav_plasticity", level: 2, label: "Nav → neuroplastisuus", epistemicLevel: "E", detail: { mechanism: "Natriumkanavien modulointi → kortikaalinen plastisuus. rTMS:n ja tDCS:n perusmekanismi.", bermPathway: "neural", link: "/evidence#pathway-neural" } },
@@ -210,6 +240,8 @@ export const NODES: CausalMapNode[] = [
   { id: "mech_mitotic_spindle", level: 2, label: "Mitoottinen kara → aneuploidia", epistemicLevel: "E", detail: { mechanism: "IF-kenttä häiritsee tubuliinipolymerisaatiota ja karan orientaatiota → väärä kromosomijakauma.", bermPathway: "A_mitotic", link: "/evidence#pathway-A-mitotic" } },
   { id: "mech_ifo_linear", level: 2, label: "IFO lineaarinen (10⁻⁵ V/m)", epistemicLevel: "E", detail: { mechanism: "Ionien pakotettu oskillaatio (IFO): jännitesensorin S4-segmentti reagoi lineaarisesti ulkoiseen kenttään. Kynnys 10⁻⁵ V/m.", bermPathway: "A,A_mitotic", link: "/model#ifo" } },
   { id: "mech_dep_quadratic", level: 2, label: "DEP neliöllinen (>100 V/m)", epistemicLevel: "E", detail: { mechanism: "Dielektroforeesi: neliöllinen voima polarisoituneille partikkeleille epähomogeenisessa kentässä. TTFields-intensiteetti.", bermPathway: "A_mitotic (TTFields)", link: "/evidence#ttfields" } },
+  { id: "mech_cyb5b_ca", level: 2, label: "Cyb5b → Ca²⁺ oskillaatiot", epistemicLevel: "E", detail: { mechanism: "CRISPR-seulonnalla tunnistettu Cyb5b toimii EMF-sensorina mitokondrion ulkokalvolla. Tuottaa rytmiset Ca²⁺-oskillaatiot jotka aktivoivat geenipromoottoreita. Kolmas transduktioreitti IFO:n ja RPM:n rinnalla.", bermPathway: "Cyb5b", keyRefs: ["kim2026_cell_emf_gene_switch"], link: "/evidence#therapeutic-devices" } },
+  { id: "mech_vgcc_genotype", level: 2, label: "VGCC-genotyyppi × herkkyys", epistemicLevel: "E", detail: { mechanism: "CACNA1C rs7304986 T/C-kantajat osoittavat mitattavan neurofysiologisen vasteen 5G-altistukselle (3.6 GHz) ICNIRP-rajojen alla. T/T-kantajilla ei vaikutusta. Kaksoissokkoasetelma.", bermPathway: "Individual susceptibility", keyRefs: ["sousouri2025_cacna1c_5g_sleep"], link: "/evidence#individual-susceptibility" } },
 
   // ── LEVEL 3: Tissue effects (10) ──
   { id: "tissue_sperm", level: 3, label: "Spermatogeneesi ↓", epistemicLevel: "E", detail: { mechanism: "ROS-vaurio, mitoottisen karan häiriö ja Leydig-solujen toimintahäiriö vähentävät siittiötuotantoa.", link: "/evidence#sperm" } },
@@ -227,7 +259,7 @@ export const NODES: CausalMapNode[] = [
   { id: "disease_sleep", level: 4, label: "1. Unihäiriöt", sublabel: "Viive: kuukausia", color: "#9B7FD4", cascadeOrder: 1, epistemicLevel: "E", detail: { mechanism: "Melatoniinin puute + sirkadiaaninen häiriö → unihäiriöt. Ensimmäinen kliininen oire.", link: "/evidence#sleep" } },
   { id: "disease_depression", level: 4, label: "2. Masennus", sublabel: "Viive: 1-3 vuotta", color: "#6B9FD4", cascadeOrder: 2, epistemicLevel: "E", detail: { mechanism: "Krooninen unihäiriö + kortisoli + testosteronin lasku → masennus.", link: "/evidence#depression" } },
   { id: "disease_adhd", level: 4, label: "3. ADHD/ASD", sublabel: "Viive: 2-5 vuotta", color: "#5AAD8B", cascadeOrder: 3, epistemicLevel: "M|C", detail: { mechanism: "Prenataalinen EMF-altistus häiritsee hermosolujen migraatiota ja synaptogeneesiä.", link: "/evidence#adhd" } },
-  { id: "disease_metabolic", level: 4, label: "4. Metabolinen oireyht.", sublabel: "Viive: 3-8 vuotta", color: "#D4A85A", cascadeOrder: 4, epistemicLevel: "E", detail: { mechanism: "Insuliiniresistenssi + krooninen kortisoli → metabolinen oireyhtymä.", link: "/evidence#metabolic" } },
+  { id: "disease_metabolic", level: 4, label: "4. Metabolinen oireyht.", sublabel: "Viive: 3-8 v | Klimentidis 2011", color: "#D4A85A", cascadeOrder: 4, epistemicLevel: "E", detail: { mechanism: "Insuliiniresistenssi + krooninen kortisoli → metabolinen oireyhtymä. Klimentidis ym. 2011 (Proc R Soc B): 24 populaatiota 8 lajissa osoittaa rinnakkaista painonnousua, ml. laboratorio­eläimet kontrolloiduilla ruokavalioilla (p < 10⁻⁷).", keyRefs: ["klimentidis2011_procrsocb"], link: "/evidence#metabolic" } },
   { id: "disease_autoimmune", level: 4, label: "5. Autoimmuunisairaudet", sublabel: "Viive: 5-10 vuotta", color: "#D47A8B", cascadeOrder: 5, epistemicLevel: "M|C", detail: { mechanism: "Vagaalisen tonuksen lasku + krooninen tulehdus + suoliston läpäisevyys → autoimmuniteetti.", link: "/evidence#autoimmune" } },
   { id: "disease_fertility", level: 4, label: "6. Hedelmättömyys", sublabel: "Viive: 5-15 vuotta", color: "#D4845A", cascadeOrder: 6, epistemicLevel: "E", detail: { mechanism: "Kumulatiivinen: sperman laatu + ovulaatio + testosteroni + hormonaalinen häiriö → hedelmättömyys.", link: "/evidence#fertility" } },
   { id: "disease_cancer", level: 4, label: "7. Nuorten syöpä", sublabel: "Viive: 10-25 vuotta", color: "#A85A5A", cascadeOrder: 7, epistemicLevel: "E", detail: { mechanism: "NK-solujen lasku + ROS-vaurio + mitoottinen häiriö + immunosuppressio → syöpäriski.", link: "/evidence#cancer" } },
@@ -250,6 +282,11 @@ export const NODES: CausalMapNode[] = [
 ];
 
 export const EDGES: CausalMapEdge[] = [
+  // Electrification boundary → channels
+  { from: "electrification_boundary", to: "ch_elf", label: "access gate" },
+  { from: "electrification_boundary", to: "ch_if", label: "access gate" },
+  { from: "electrification_boundary", to: "ch_rf", label: "access gate" },
+
   // Channels → modulation layers
   { from: "ch_static", to: "mod_ion" },
   { from: "ch_static", to: "mod_dc" },
@@ -276,6 +313,10 @@ export const EDGES: CausalMapEdge[] = [
   { from: "mod_division", to: "mech_mitotic_spindle" },
   { from: "mod_division", to: "mech_dep_quadratic" },
   { from: "mod_mito", to: "mech_vgcc_ros" },
+  { from: "mod_cyb5b", to: "mech_cyb5b_ca" },
+  { from: "ch_elf", to: "mod_cyb5b" },
+  { from: "mod_ion", to: "mech_vgcc_genotype" },
+  { from: "ch_rf", to: "mech_vgcc_genotype" },
 
   // Mechanisms → tissue effects
   { from: "mech_vgcc_ros", to: "tissue_sperm" },
@@ -294,6 +335,9 @@ export const EDGES: CausalMapEdge[] = [
   { from: "mech_ifo_linear", to: "tissue_sperm" },
   { from: "mech_ifo_linear", to: "tissue_insulin" },
   { from: "mech_dep_quadratic", to: "tissue_sperm" },
+  { from: "mech_cyb5b_ca", to: "tissue_sperm" },
+  { from: "mech_cyb5b_ca", to: "tissue_ovarian" },
+  { from: "mech_vgcc_genotype", to: "tissue_melatonin" },
 
   // Tissue effects → diseases
   { from: "tissue_melatonin", to: "disease_sleep" },

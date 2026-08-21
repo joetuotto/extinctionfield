@@ -80,7 +80,7 @@ const COPY = {
         id: "therapeutic-device-paradox",
         title: "The therapeutic device paradox",
         paragraphs: [
-          "Regulatory agencies worldwide have approved 24+ device categories whose efficacy depends on non-thermal electromagnetic biological effects — spanning the entire EM spectrum from DC to UV light. These include bone growth stimulators (DC, PMA 1986), TENS (12,000+ individual 510(k) clearances), deep brain stimulation (PMA 1997), rTMS for depression (510(k) 2008), TTFields for cancer (PMA 2011/2015/2026), PRF anti-inflammatory therapy (27 MHz), LLLT/photobiomodulation (510(k) 2007), blue light for neonatal jaundice, and UV phototherapy for psoriasis. Each approval required clinical proof that electromagnetic energy produces a biological response without thermal heating. This is not controversial EMF safety research — it is mainstream medicine representing a $8–10 billion global neuromodulation market.",
+          "Regulatory agencies worldwide have approved 24+ device categories whose efficacy depends on non-thermal electromagnetic biological effects — spanning the entire EM spectrum from DC to UV light. These include bone growth stimulators (DC, PMA 1986), TENS (12,000+ individual 510(k) clearances), deep brain stimulation (PMA 1997), rTMS for depression (510(k) 2008), TTFields for cancer (PMA 2011/2015/2026), PRF anti-inflammatory therapy (27 MHz), LLLT/photobiomodulation (510(k) 2007), blue light for neonatal jaundice, and UV phototherapy for psoriasis. In 2026, Kim et al. (Cell, IF ~64) demonstrated a 25th category: an EMF-inducible gene switch where 60 Hz pulsed EMF activates gene promoters in vivo via Cyb5b, a mitochondrial outer membrane protein identified through genome-wide CRISPR screening. If EMF can activate gene expression intentionally, unintentional environmental EMF at the same frequency (50/60 Hz) may alter gene expression without awareness. Each approval required clinical proof that electromagnetic energy produces a biological response without thermal heating. This is not controversial EMF safety research — it is mainstream medicine.",
           "The logical contradiction is direct: FDA requires proof of biological effect for device approval, while ICNIRP assumes absence of non-thermal biological effects for exposure limit setting. These two positions are logically incompatible. Non-thermal bioactivity is proven at every frequency from DC to UV light — except at RF frequencies between 300 MHz and 6 GHz. This is not a gap in biology; it is a gap in acknowledgment. The only frequency range where non-thermal effects are 'not recognized' is the range used by the telecommunications industry.",
           "The tDCS comparison is particularly revealing: the therapeutic field strength in the cortex (0.3–1.0 V/m) that earned FDA PMA approval in December 2025 is the same order of magnitude as measured urban ambient RF field strength (0.67–1.51 V/m). If 0.3 V/m DC is biologically active enough for FDA approval, urban ambient RF at 0.67 V/m cannot be assumed biologically inert. The Novocure TTFields patent (US 7,016,725) explicitly identifies that 'cells in the ovaries or testicles may be sensitive to the electric fields' at 100–300 kHz — the same frequency range produced by LED lighting drivers.",
         ],
@@ -91,6 +91,7 @@ const COPY = {
           { citation: "Flow Neuroscience tDCS (FDA PMA)", year: 2025, note: "0.3–1.0 V/m DC changes brain function" },
           { citation: "GammaCore VNS (FDA 510(k))", year: 2017, note: "Vagus nerve stimulation, systemic anti-inflammatory" },
           { citation: "Novocure patent US 7,016,725", year: 2006, note: "Identifies ovaries/testicles as sensitive to IF fields" },
+          { citation: "Kim et al. (Cell)", year: 2026, note: "EMF gene switch via Cyb5b — CRISPR-identified EMF sensor, 60 Hz" },
         ],
       },
       {
@@ -152,10 +153,11 @@ const COPY = {
         title: "Individual susceptibility variation",
         paragraphs: [
           "Electromagnetic hypersensitivity (EHS) clinical data suggests a continuous distribution of individual susceptibility. Belpomme et al. 2022 characterized approximately 1,000 EHS patients with objective biomarkers including histamine, S100B protein and nitrotyrosine. While EHS as a clinical entity remains debated, the biomarker data suggests measurable physiological responses in a susceptible subpopulation.",
-          "CACNA1C genotyping (2024) links voltage-gated calcium channel polymorphisms to differential EMF sensitivity, providing a plausible genetic basis for the susceptibility distribution. HRV studies under controlled Wi-Fi exposure (2023) show measurable autonomic changes in a subset of participants. If susceptibility follows a normal distribution, the population-level reproductive effect is the integral over the entire distribution, not the response of the median individual.",
+          "Sousouri et al. 2025 (NeuroImage, ETH Zurich) provided the first double-blind human experimental demonstration of VGCC genotype-dependent EMF sensitivity. In 34 healthy volunteers, CACNA1C rs7304986 T/C carriers showed altered sleep spindle frequency after 30 minutes of 3.6 GHz 5G exposure below ICNIRP limits. T/T carriers showed no effect. This is not nocebo — it is a genetically determined, objectively measured neurophysiological response. The regulatory variant does not change the protein but its expression density: more VGCC channels = greater sensitivity. HRV studies under controlled Wi-Fi exposure (2023) show measurable autonomic changes in a subset of participants. If susceptibility follows a normal distribution, the population-level reproductive effect is the integral over the entire distribution, not the response of the median individual.",
         ],
         studies: [
           { citation: "Belpomme et al.", year: 2022, note: "EHS biomarkers (~1,000 patients)" },
+          { citation: "Sousouri et al. (NeuroImage, ETH Zurich)", year: 2025, note: "Double-blind RCT: CACNA1C rs7304986 T/C → altered sleep spindles at 3.6 GHz below ICNIRP" },
           { citation: "CACNA1C genotyping", year: 2024, note: "VGCC polymorphism → EMF sensitivity" },
           { citation: "HRV Wi-Fi exposure", year: 2023, note: "Autonomic changes in susceptible subset" },
         ],
@@ -191,6 +193,7 @@ const COPY = {
           { citation: "LED power quality study (PMC9920439)", year: 2023, note: "LED bulbs exceed harmonic distortion limits" },
           { citation: "Havas — dirty electricity (ICEMS)", year: 2006, note: "kHz filtering improved diabetes/MS symptoms" },
           { citation: "Aerts et al. (Environment International)", year: 2019, note: "IF fields (300 Hz–1 MHz) poorly studied" },
+          { citation: "IJRB systematic review", year: 2022, note: "IF-EMF (300 Hz–10 MHz) animal studies: minimal health research vs ELF/RF" },
           { citation: "Zeghoudi et al. (Optics & Laser Technology)", year: 2025, note: "LED driver near-field E-field emission measured" },
           { citation: "EU Directive 244/2009", year: 2009, note: "Phased incandescent ban 2009–2012, no EMF assessment" },
         ],
@@ -214,6 +217,34 @@ const COPY = {
           { citation: "England & Robert (PNAS)", year: 2024, note: "Caterpillars detect predators electrically before contact" },
           { citation: "Robert (Current Biology)", year: 2024, note: "Aerial electroreception formalized as sensory modality" },
           { citation: "Mallinson et al. (iScience / Cell Press)", year: 2025, note: "Field experiment: AC fields −71% bee landings, term 'electric pollution'" },
+        ],
+      },
+      {
+        id: "electrification-boundary",
+        title: "The electrification boundary",
+        paragraphs: [
+          "The IFO-VGIC activation threshold (10⁻⁵ V/m, Panagopoulos 2025) is so low that every household appliance exceeds it at operating distance. This means the electrification boundary — whether a household has electricity or not — IS the biological exposure boundary. A person without electricity lives permanently below the IFO threshold. A person with electricity lives above it 24/7.",
+          "This is a binary threshold, not a gradient. Education, income, and contraception access are all gradients — more is gradually different from less. Only EMF exposure has a physical threshold that maps to an infrastructure boundary. This structural difference produces a testable prediction: adjusting national electricity consumption by the fraction of the population with access should improve TFR prediction. It does: correlation improves from r = −0.864 to r = −0.885 (54 countries, LOOCV RMSE 0.522).",
+          "In partially electrified countries, the unelectrified population lives in the electromagnetic environment that evolution calibrated biological sensors for. Their TFR should be near the biological maximum (~6.5). National TFR is a mixture of the electrified (lower TFR) and unelectrified (higher TFR) populations. Correcting for this, Nigeria's electrified population (55%) has an estimated TFR of 4.03, Ethiopia's (51%) has 1.89, and Uganda's (42%) has 1.86 — dramatically lower than their national averages.",
+        ],
+        studies: [
+          { citation: "Panagopoulos et al. (Frontiers in Public Health)", year: 2025, note: "IFO-VGIC threshold 10⁻⁵ V/m for polarized fields" },
+          { citation: "Belmin et al. (Nature Sustainability)", year: 2022, note: "155 DHS surveys: electricity access negatively affects fertility" },
+          { citation: "DeLong et al. (PLOS ONE)", year: 2010, note: "Energy consumption negatively related to population growth" },
+          { citation: "BERM v19.1 formula discovery", year: 2026, note: "54 countries, LOOCV RMSE 0.522, R² 0.851" },
+        ],
+      },
+      {
+        id: "mobile-paradox",
+        title: "The mobile phone paradox",
+        paragraphs: [
+          "Mobile phone subscriptions per 100 people — intuitively the most direct EMF proxy — is the WEAKEST single predictor of TFR across 54 countries (RMSE 1.053, worse than GDP alone at 0.719). Residential electricity consumption is the BEST (RMSE 0.533 in exponential form).",
+          "This is paradoxical only if EMF exposure comes from phones. BERM's three-channel model resolves it: a mobile phone is one device in one channel (RF), used intermittently. Residential electricity measures the entire electromagnetic environment — every light, every appliance, every wire in every wall, the 50/60 Hz field that permeates the home 24 hours a day.",
+          "If the mechanism were 'information access' (TV, internet, phone), the mobile phone should be the BEST proxy because it IS the information device. The fact that it is the WORST proxy, while electricity consumption (which measures physical infrastructure, not information) is the BEST, is structurally consistent with EMF exposure rather than information access as the mechanism.",
+        ],
+        studies: [
+          { citation: "BERM v19.1 cross-sectional analysis", year: 2026, note: "Mobile RMSE 1.053 vs electricity RMSE 0.533 (54 countries)" },
+          { citation: "World Bank Development Indicators", year: 2024, note: "Source for residential electricity, broadband, mobile data" },
         ],
       },
       {
@@ -310,7 +341,7 @@ const COPY = {
         id: "therapeutic-device-paradox",
         title: "Terapeuttisten laitteiden paradoksi",
         paragraphs: [
-          "Regulaattorit ympäri maailmaa ovat hyväksyneet 24+ laitekategoriaa, joiden teho perustuu ei-termiseen sähkömagneettiseen biologiseen vaikutukseen — kattaen koko EM-spektrin DC:stä UV-valoon. Näihin kuuluvat luunkasvustimulaattorit (DC, PMA 1986), TENS (12 000+ yksittäistä 510(k)-hyväksyntää), syväaivostimulaatio (PMA 1997), rTMS masennukseen (510(k) 2008), TTFields syöpään (PMA 2011/2015/2026), PRF-tulehdushoito (27 MHz), LLLT/fotobiomodulaatio (510(k) 2007), sinivaloterapia vastasyntyneiden keltaisuuteen ja UV-valohoito psoriasikseen. Jokainen hyväksyntä edellytti kliinistä todistamista siitä, että sähkömagneettinen energia tuottaa biologisen vasteen ilman termistä kuumennusta. Tämä ei ole kontroversiaalista EMF-turvallisuustutkimusta — se on valtavirtalääketiedettä, joka edustaa 8–10 miljardin dollarin globaaleja neuromodulaatiomarkkinoita.",
+          "Regulaattorit ympäri maailmaa ovat hyväksyneet 24+ laitekategoriaa, joiden teho perustuu ei-termiseen sähkömagneettiseen biologiseen vaikutukseen — kattaen koko EM-spektrin DC:stä UV-valoon. Näihin kuuluvat luunkasvustimulaattorit (DC, PMA 1986), TENS (12 000+ yksittäistä 510(k)-hyväksyntää), syväaivostimulaatio (PMA 1997), rTMS masennukseen (510(k) 2008), TTFields syöpään (PMA 2011/2015/2026), PRF-tulehdushoito (27 MHz), LLLT/fotobiomodulaatio (510(k) 2007), sinivaloterapia vastasyntyneiden keltaisuuteen ja UV-valohoito psoriasikseen. Vuonna 2026 Kim ym. (Cell, IF ~64) osoittivat 25. kategorian: EMF-geenikytkin, jossa 60 Hz pulssi-EMF aktivoi geenipromoottoreita in vivo Cyb5b:n kautta — mitokondrion ulkokalvoproteiini, joka tunnistettiin genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi. Jos EMF voi aktivoida geeniekspression tarkoituksellisesti, ympäristö-EMF samalla taajuudella (50/60 Hz) voi muuttaa geeniekspressiota tiedostamattomasti. Jokainen hyväksyntä edellytti kliinistä todistamista siitä, että sähkömagneettinen energia tuottaa biologisen vasteen ilman termistä kuumennusta. Tämä ei ole kontroversiaalista EMF-turvallisuustutkimusta — se on valtavirtalääketiedettä.",
           "Looginen ristiriita on suora: FDA vaatii biologisen vaikutuksen todentamista laitteen hyväksymiseksi, kun taas ICNIRP olettaa ei-termisten biologisten vaikutusten puuttumista altistusrajojen asettamiseksi. Nämä kaksi positiota ovat loogisesti yhteensopimattomia. Ei-terminen bioaktiivisuus on todistettu jokaisella taajuudella DC:stä UV-valoon — paitsi RF-taajuuksilla 300 MHz:n ja 6 GHz:n välillä. Tämä ei ole aukko biologiassa; se on aukko tunnustamisessa. Ainoa taajuusalue jossa ei-termisiä vaikutuksia 'ei tunnusteta' on telekommunikaatioteollisuuden käyttämä alue.",
           "tDCS-vertailu on erityisen paljastava: terapeuttinen kenttävoimakkuus aivokuoressa (0,3–1,0 V/m), joka sai FDA PMA -hyväksynnän joulukuussa 2025, on samaa suuruusluokkaa kuin mitattu kaupungin ambient-RF-kenttävoimakkuus (0,67–1,51 V/m). Jos 0,3 V/m DC on biologisesti riittävän aktiivinen FDA-hyväksyntään, kaupungin ambient-RF:ää 0,67 V/m ei voida olettaa biologisesti inertiksi. Novocuren TTFields-patentti (US 7 016 725) tunnistaa eksplisiittisesti, että 'munasarjojen tai kivesten solut voivat olla herkkiä sähkökentille' 100–300 kHz:n taajuudella — samalla taajuusalueella kuin LED-valaistuksen hakkuriteholähteet.",
         ],
@@ -321,6 +352,7 @@ const COPY = {
           { citation: "Flow Neuroscience tDCS (FDA PMA)", year: 2025, note: "0,3–1,0 V/m DC muuttaa aivojen toimintaa" },
           { citation: "GammaCore VNS (FDA 510(k))", year: 2017, note: "Vagushermostimulaatio, systeeminen anti-inflammatorinen" },
           { citation: "Novocure-patentti US 7 016 725", year: 2006, note: "Tunnistaa munasarjat/kivekset herkiksi IF-kentille" },
+          { citation: "Kim ym. (Cell)", year: 2026, note: "EMF-geenikytkin Cyb5b:n kautta — CRISPR-tunnistettu EMF-sensori, 60 Hz" },
         ],
       },
       {
@@ -382,11 +414,11 @@ const COPY = {
         title: "Yksilöllinen herkkyysvariaatio",
         paragraphs: [
           "Sähkömagneettinen yliherkkyyys (EHS) -kliininen data viittaa jatkuvaan yksilöllisen herkkyyden jakaumaan. Belpomme ym. 2022 karakterisoivat noin 1 000 EHS-potilasta objektiivisilla biomarkkereilla, mukaan lukien histamiini, S100B-proteiini ja nitrotyrosiini. Vaikka EHS kliinisenä entiteettinä on kiistanalainen, biomarkkerit viittaavat mitattaviin fysiologisiin vasteisiin herkässä alapopulaatiossa.",
-          "CACNA1C-genotyypitys (2024) yhdistää jänniteporttisten kalsiumkanavien polymorfismit erilaiseen EMF-herkkyyteen, tarjoten uskottavan geneettisen perustan herkkyysjaukaumalle. HRV-tutkimukset kontrolloidussa Wi-Fi-altistuksessa (2023) osoittavat mitattavia autonomisia muutoksia osassa osallistujista. Jos herkkyys noudattaa normaalijakaumaa, väestötason lisääntymisvaikutus on integraali koko jakauman yli, ei mediaani-yksilön vaste.",
+          "Sousouri ym. 2025 (NeuroImage, ETH Zürich) tarjosi ensimmäisen kaksoissokko-ihmiskokeellisen osoituksen VGCC-genotyyppiriippuvaisesta EMF-herkkyydestä. Satunnaistetussa kontrolloidussa kokeessa CACNA1C rs7304986 T/C -kantajat osoittivat muuttunutta unisukkuladynamiikkaa 3,6 GHz RF-altistuksessa ICNIRP-rajojen alapuolella, kun taas CC-homotsygootit eivät. Tämä on ensimmäinen kokeellinen vahvistus sille, että ionikanavan genotyyppi ennustaa yksilöllistä EMF-vastetta, ja se muuttaa herkkyysjakauman aiemmin ehdotetusta (CACNA1C-assosiaatiotutkimukset 2024) kokeellisesti todistetuksi. Jos herkkyys noudattaa normaalijakaumaa, väestötason lisääntymisvaikutus on integraali koko jakauman yli, ei mediaani-yksilön vaste.",
         ],
         studies: [
           { citation: "Belpomme ym.", year: 2022, note: "EHS-biomarkkerit (~1 000 potilasta)" },
-          { citation: "CACNA1C-genotyypitys", year: 2024, note: "VGCC-polymorfismi → EMF-herkkyys" },
+          { citation: "Sousouri ym. (NeuroImage, ETH Zürich)", year: 2025, note: "Kaksoissokko-RCT: CACNA1C rs7304986 T/C → muuttunut unisukkuladynamiikka 3,6 GHz:ssä ICNIRP-rajan alla" },
           { citation: "HRV Wi-Fi -altistus", year: 2023, note: "Autonomiset muutokset herkässä osajoukossa" },
         ],
       },
@@ -423,6 +455,7 @@ const COPY = {
           { citation: "Aerts ym. (Environment International)", year: 2019, note: "IF-kentät (300 Hz–1 MHz) heikosti tutkittuja" },
           { citation: "Zeghoudi ym. (Optics & Laser Technology)", year: 2025, note: "LED-ajurin lähikenttäemissio mitattu" },
           { citation: "EU-direktiivi 244/2009", year: 2009, note: "Hehkulamppujen asteittainen kielto 2009–2012, ei EMF-arviointia" },
+          { citation: "IJRB systemaattinen katsaus", year: 2022, note: "IF-EMF (300 Hz–10 MHz) eläintutkimukset: minimaalinen terveystutkimus vs ELF/RF" },
         ],
       },
       {
@@ -444,6 +477,34 @@ const COPY = {
           { citation: "England & Robert (PNAS)", year: 2024, note: "Toukat havaitsevat saalistajan sähköisesti ennen kontaktia" },
           { citation: "Robert (Current Biology)", year: 2024, note: "Ilman sähköreseptio virallistettu aistimodaalisuutena" },
           { citation: "Mallinson ym. (iScience / Cell Press)", year: 2025, note: "Kenttäkoe: AC-kentät −71 % mehiläislaskeutumisia, termi 'electric pollution'" },
+        ],
+      },
+      {
+        id: "electrification-boundary",
+        title: "Sähköistymisraja",
+        paragraphs: [
+          "IFO-VGIC-aktivaatiokynnys (10⁻⁵ V/m, Panagopoulos 2025) on niin matala, että jokainen kodin sähkölaite ylittää sen käyttöetäisyydellä. Tämä tarkoittaa, että sähköistymisraja — onko kotitaloudella sähköä vai ei — ON biologisen altistuksen raja. Ihminen ilman sähköä elää pysyvästi IFO-kynnyksen alapuolella. Ihminen jolla on sähkö elää sen yläpuolella 24/7.",
+          "Tämä on binäärinen kynnys, ei gradientti. Koulutus, tulot ja ehkäisyn saatavuus ovat kaikki gradientteja — enemmän on asteittain erilaista kuin vähemmän. Vain EMF-altistuksella on fysikaalinen kynnys joka vastaa infrastruktuurirajaa. Tämä rakenteellinen ero tuottaa testattavan ennusteen: kansallisen sähkönkulutuksen korjaaminen sähköistetyn väestöosuuden mukaan parantaa TFR-ennustetta. Näin käy: korrelaatio paranee r = −0,864:stä r = −0,885:een (54 maata, LOOCV RMSE 0,522).",
+          "Osittain sähköistetyissä maissa sähköistämätön väestö elää sähkömagneettisessa ympäristössä, johon evoluutio kalibroi biologiset sensorit. Heidän TFR:nsä tulisi olla lähellä biologista maksimia (~6,5). Kansallinen TFR on sekoitus sähköistettyä (matalampi TFR) ja sähköistämätöntä (korkeampi TFR) väestöä. Korjattuna Nigerian sähköistetyn väestön (55 %) arvioitu TFR on 4,03, Etiopian (51 %) 1,89 ja Ugandan (42 %) 1,86 — dramaattisesti kansallisia keskiarvoja matalampia.",
+        ],
+        studies: [
+          { citation: "Panagopoulos ym. (Frontiers in Public Health)", year: 2025, note: "IFO-VGIC-kynnys 10⁻⁵ V/m polarisoituneille kentille" },
+          { citation: "Belmin ym. (Nature Sustainability)", year: 2022, note: "155 DHS-kyselyä: sähkön saatavuus vähentää hedelmällisyyttä" },
+          { citation: "DeLong ym. (PLOS ONE)", year: 2010, note: "Energiankulutus negatiivisesti yhteydessä väestönkasvuun" },
+          { citation: "BERM v19.1 kaavanlöytö", year: 2026, note: "54 maata, LOOCV RMSE 0,522, R² 0,851" },
+        ],
+      },
+      {
+        id: "mobile-paradox",
+        title: "Matkapuhelinparadoksi",
+        paragraphs: [
+          "Matkapuhelinliittymät sataa henkeä kohti — intuitiivisesti suorin EMF-proxy — on HEIKOIN yksittäinen TFR-ennustaja 54 maassa (RMSE 1,053, heikompi kuin BKT yksinään 0,719). Asumisen sähkönkulutus on PARAS (RMSE 0,533 eksponentiaalisessa muodossa).",
+          "Tämä on paradoksaalista vain jos EMF-altistus tulee puhelimista. BERM:n kolmikanavamalli ratkaisee sen: matkapuhelin on yksi laite yhdellä kanavalla (RF), käytetty ajoittain. Asumisen sähkönkulutus mittaa koko sähkömagneettista ympäristöä — jokainen valo, jokainen kodinlaite, jokainen johto jokaisessa seinässä, 50/60 Hz kenttä joka läpäisee kodin 24 tuntia vuorokaudessa.",
+          "Jos mekanismi olisi 'tiedon saatavuus' (TV, internet, puhelin), matkapuhelimen pitäisi olla PARAS proxy koska se ON tietolaite. Se, että se on HUONOIN proxy kun sähkönkulutus (joka mittaa fyysistä infrastruktuuria, ei tietoa) on PARAS, on rakenteellisesti yhdenmukaista EMF-altistuksen kanssa pikemmin kuin tiedonsaannin mekanismina.",
+        ],
+        studies: [
+          { citation: "BERM v19.1 poikkileikkausanalyysi", year: 2026, note: "Matkapuhelin RMSE 1,053 vs sähkö RMSE 0,533 (54 maata)" },
+          { citation: "Maailmanpankin kehitysindikaattorit", year: 2024, note: "Lähde: asumisen sähkö, laajakaista, matkapuhelindata" },
         ],
       },
       {

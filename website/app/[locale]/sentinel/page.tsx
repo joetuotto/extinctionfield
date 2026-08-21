@@ -49,6 +49,12 @@ const COPY = {
     covidText: "Source-verified COLOSS data does not show bee colony improvement during COVID lockdowns: winter loss increased by 2.27 percentage points (24/35 countries worsened, p = 0.043). BBS birds also declined 2.8–3.0% in 2020–22. This is an informative negative result: it shows that the simple 'lockdown → ambient EMF ↓ → sentinels improve' prediction does not hold, likely because household RF traffic increased while outdoor activity decreased.",
     covidLabel: "Counter-result",
 
+    metabolicTitle: "Cross-species metabolic cascade: Klimentidis 2011",
+    metabolicP1: "Klimentidis et al. 2011 (Proc R Soc B) documented a statistically significant increase in body weight across 24 populations spanning 8 species — including laboratory animals with controlled diets — over the same decades that ambient EMF exposure increased. Feral rats in Baltimore, laboratory mice at NIEHS, domestic dogs, and domestic cats all gained weight on parallel trajectories. The probability that all 24 populations would show positive weight trends by chance alone is less than 10⁻⁷.",
+    metabolicP2: "This finding is a BERM retrodiction (R1): the model predicts that EMF-induced metabolic disruption should be visible across species that share voltage-gated ion channels, not only in humans where diet and lifestyle confound the signal. Laboratory rodents on fixed diets and feral animals not exposed to processed food marketing provide partial controls for the 'caloric excess' explanation.",
+    metabolicP3: "The metabolic cascade connects to BERM through two independent pathways. First, melatonin suppression (CRY/RPM pathway) disrupts circadian glucose regulation — shift workers have 2–3× diabetes risk. Second, VGCC-mediated Ca²⁺ dysregulation alters insulin secretion from pancreatic β-cells, which are among the most electrically active cells in the body. Both pathways predict cross-species metabolic disruption in any electrified environment.",
+    metabolicNote: "Klimentidis 2011 is an observational study documenting parallel trends. It does not measure EMF exposure or establish causation. The 'common environmental factor' the authors hypothesize could be EMF, endocrine disruptors, epigenetic changes, or microbiome shifts. BERM claims EMF as the most parsimonious explanation because it is the only factor that affects both laboratory and feral animals in different environments.",
+
     contextTitle: "What the current records can say",
     context: [
       ["Dogs", "A published single-site breeding-programme series reports changes in some semen endpoints over time. It lacks measured RF, household-device and regional endpoint data, so it is contextual rather than an exposure-gradient test."],
@@ -96,6 +102,12 @@ const COPY = {
     covidTitle: "COVID-lockdown: informatiivinen vastatulos",
     covidText: "Lähdevarmennettu COLOSS-data ei näytä mehiläispesien paranemista COVID-lockdownien aikana: talvihäviö kasvoi 2,27 prosenttiyksikköä (24/35 maata paheni, p = 0,043). BBS-linnut myös laskivat 2,8–3,0 % vuosina 2020–22. Tämä on informatiivinen negatiivinen tulos: se osoittaa, että yksinkertainen 'lockdown → ambientin EMF ↓ → sentinellit paranevat' -ennuste ei päde, todennäköisesti koska kotitalouksien RF-liikenne kasvoi samalla kun ulkona liikkuminen väheni.",
     covidLabel: "Vastatulos",
+
+    metabolicTitle: "Lajienvälinen metabolinen kaskadi: Klimentidis 2011",
+    metabolicP1: "Klimentidis ym. 2011 (Proc R Soc B) dokumentoi tilastollisesti merkitsevän painonnousun 24 populaatiossa 8 lajin poikki — mukaan lukien laboratorio­eläimet kontrolloiduilla ruokavalioilla — samoina vuosikymmeninä kuin ympäristön EMF-altistus kasvoi. Baltimoren villirottien, NIEHS:n laboratoriohiirien, kotikoirien ja kissojen painot nousivat rinnakkaisilla trajektoreilla. Todennäköisyys, että kaikki 24 populaatiota osoittaisivat positiivisia painotrendejä sattumalta, on alle 10⁻⁷.",
+    metabolicP2: "Tämä löydös on BERM-retrodiktio (R1): malli ennustaa, että EMF:n aiheuttaman metabolisen häiriön pitäisi näkyä lajeissa, jotka jakavat jänniteportteiset ionikanavat, eikä ainoastaan ihmisillä, joilla ruokavalio ja elämäntapa sekoittavat signaalia. Laboratorion jyrsijät kontrolloiduilla ruokavalioilla ja villieläimet, jotka eivät altistu prosessoidun ruoan markkinoinnille, tarjoavat osittaisen kontrollin 'kaloriylijäämä'-selitykselle.",
+    metabolicP3: "Metabolinen kaskadi kytkeytyy BERM:iin kahden itsenäisen reitin kautta. Ensinnäkin melatoniinisuppressio (CRY/RPM-reitti) häiritsee sirkadiaanista glukoosinsäätelyä — vuorotyöntekijöillä on 2–3-kertainen diabetesriski. Toiseksi VGCC-välitteinen Ca²⁺-dysregulaatio muuttaa insuliinin eritystä haiman β-soluista, jotka ovat kehon sähköisesti aktiivisimpia soluja. Molemmat reitit ennustavat lajienvälisen metabolisen häiriön missä tahansa sähköistetyssä ympäristössä.",
+    metabolicNote: "Klimentidis 2011 on havainnointitutkimus, joka dokumentoi rinnakkaisia trendejä. Se ei mittaa EMF-altistusta eikä osoita kausaalisuutta. 'Yhteinen ympäristötekijä', jota tekijät esittävät hypoteesina, voisi olla EMF, endokriiniset häiritsijät, epigeneettiset muutokset tai mikrobiomin muutokset. BERM esittää EMF:n parsimoniaisimpana selityksenä, koska se on ainoa tekijä, joka vaikuttaa sekä laboratorio- että villieläimiin eri ympäristöissä.",
 
     contextTitle: "Mitä nykyiset tietueet voivat sanoa",
     context: [
@@ -211,6 +223,19 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
         <p className="text-xs uppercase tracking-[0.16em] text-status-confirmed font-semibold mb-2">{d.covidLabel}</p>
         <h2 className="editorial-section-heading mb-4">{d.covidTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed">{d.covidText}</p>
+      </section>
+
+      {/* Cross-species metabolic cascade */}
+      <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.metabolicTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p>{d.metabolicP1}</p>
+          <p>{d.metabolicP2}</p>
+          <p>{d.metabolicP3}</p>
+        </div>
+        <div className="mt-4 rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.metabolicNote}</p>
+        </div>
       </section>
 
       {/* What current records can say */}

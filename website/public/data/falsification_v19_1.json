@@ -2,7 +2,7 @@
   "version": "v19.1",
   "generated_at": "2026-08-21",
   "tests_run": 3,
-  "tests_total": 7,
+  "tests_total": 8,
   "tests": [
     {
       "id": "T1",
@@ -226,6 +226,37 @@
         "n_exceeds": 1,
         "n_total": 5
       }
+    },
+    {
+      "id": "T8",
+      "title": "Access threshold prediction (DHS micro-data)",
+      "prediction": "Electrified households have lower TFR than unelectrified within same country, controlling for income and education",
+      "falsification": "No TFR difference between electrified and unelectrified households after controlling for income and education",
+      "data_status": "AVAILABLE",
+      "runnable": false,
+      "premises": [
+        {
+          "id": "P1",
+          "text": "IFO-VGIC threshold (10⁻⁵ V/m) is exceeded at operating distance of household electrical devices",
+          "type": "E"
+        },
+        {
+          "id": "P2",
+          "text": "Electricity access is a binary biological exposure boundary, not just a development proxy",
+          "type": "M|C"
+        },
+        {
+          "id": "P3",
+          "text": "DHS surveys record household electrification status alongside fertility, income, and education",
+          "type": "K"
+        },
+        {
+          "id": "P4",
+          "text": "Access-adjusted EMF correlation improves from r = −0.864 to r = −0.885",
+          "type": "E"
+        }
+      ],
+      "status": "PENDING"
     }
   ],
   "falsification_matrix": [
@@ -273,6 +304,11 @@
       "test": "T7",
       "criterion": "Ambient << therapeutic in ALL cases",
       "scope": "Intensity argument"
+    },
+    {
+      "test": "T8",
+      "criterion": "No electrified/unelectrified TFR difference after controls",
+      "scope": "Electrification threshold"
     }
   ]
 }

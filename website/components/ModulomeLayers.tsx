@@ -23,6 +23,24 @@ interface Layer {
 
 const LAYERS: Layer[] = [
   {
+    id: "cyb5b-receptor",
+    level: 9,
+    color: "#D32F2F",
+    freq: "ELF 50/60 Hz pulsed",
+    freqFi: "ELF 50/60 Hz pulssitettu",
+    target: "Mitochondrial outer membrane, gene expression",
+    targetFi: "Mitokondrion ulkokalvo, geeniekspressio",
+    fdaEvidence: "Kim et al. 2026 (Cell) — EMF-inducible gene switch",
+    fdaEvidenceFi: "Kim ym. 2026 (Cell) — EMF-indusoitava geenikytkin",
+    bermPath: "T_Cyb5b",
+    epistemic: "E — CRISPR screen + in vivo",
+    epistemicFi: "E — CRISPR-seulonta + in vivo",
+    description: "Cyb5b is a mitochondrial outer membrane protein identified by genome-wide CRISPR screen as an EMF sensor (Kim et al. 2026, Cell IF ~64). 60 Hz pulsed EMF activates gene promoters in vivo via Cyb5b → Ca²⁺ oscillations. This is the first genetically identified EMF receptor. If EMF can activate gene expression deliberately, ambient 50/60 Hz EMF can alter gene expression inadvertently.",
+    descriptionFi: "Cyb5b on mitokondrion ulkokalvoproteiini, joka tunnistettiin genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi (Kim ym. 2026, Cell IF ~64). 60 Hz pulssi-EMF aktivoi geenipromoottoreita in vivo Cyb5b:n kautta → Ca²⁺-oskillaatiot. Tämä on ensimmäinen geneettisesti tunnistettu EMF-reseptori. Jos EMF voi aktivoida geeniekspression tarkoituksellisesti, ympäristön 50/60 Hz EMF voi muuttaa geeniekspressiota tiedostamattomasti.",
+    mechanism: "60 Hz pulsed EMF → Cyb5b (OMM) → Ca²⁺ oscillations → gene promoter activation → downstream gene expression",
+    mechanismFi: "60 Hz pulssi-EMF → Cyb5b (OMM) → Ca²⁺-oskillaatiot → geenipromootterin aktivaatio → alavirtageeniekspressio",
+  },
+  {
     id: "chromophore",
     level: 8,
     color: "#E91E63",
@@ -170,8 +188,8 @@ const LAYERS: Layer[] = [
 
 const COPY = {
   en: {
-    title: "EMF Modulome: Eight Layers of Biological Susceptibility",
-    lead: "The modulome synthesizes Becker's DC control system, Adee's electrome, Levin's bioelectric code, Lindgren's geometric framework, and the chromophore generalization (CCO/CRY) into a unified eight-layer model of EMF biological susceptibility. Each layer is independently supported by regulatory-approved therapeutic devices that exploit the same mechanism.",
+    title: "EMF Modulome: Nine Layers of Biological Susceptibility",
+    lead: "The modulome synthesizes Becker's DC control system, Adee's electrome, Levin's bioelectric code, Lindgren's geometric framework, the chromophore generalization (CCO/CRY), and the Cyb5b EMF receptor (Kim 2026, Cell) into a unified nine-layer model of EMF biological susceptibility. Each layer is independently supported by regulatory-approved therapeutic devices that exploit the same mechanism.",
     layer: "Layer",
     frequency: "Frequency band",
     target: "Biological target",
@@ -180,11 +198,11 @@ const COPY = {
     epistemicLevel: "Epistemic level",
     mechanism: "Mechanism chain",
     clickHint: "Click a layer to see mechanism details",
-    note: "Epistemic note: Layer evidence ranges from E (Phase III RCT) to M/C (theoretical model). Each layer's status is marked independently. The modulome as a unified framework is a BERM-specific synthesis [C] — the individual components carry their own evidence levels.",
+    note: "Epistemic note: Layer evidence ranges from E (CRISPR screen + Phase III RCT) to M/C (theoretical model). Each layer's status is marked independently. The modulome as a unified framework is a BERM-specific synthesis [C] — the individual components carry their own evidence levels.",
   },
   fi: {
-    title: "EMF-modulooma: kahdeksan biologisen herkkyyden tasoa",
-    lead: "Modulooma yhdistää Beckerin DC-ohjausjärjestelmän, Adeen elektromin, Levinin bioelektrisen koodin, Lindgrenin geometrisen viitekehyksen ja kromoforien yleistyksen (CCO/CRY) yhtenäiseksi kahdeksantasoiseksi malliksi EMF:n biologisesta herkkyydestä. Jokaista tasoa tukevat itsenäisesti regulaattorihyväksytyt terapeuttiset laitteet, jotka hyödyntävät samaa mekanismia.",
+    title: "EMF-modulooma: yhdeksän biologisen herkkyyden tasoa",
+    lead: "Modulooma yhdistää Beckerin DC-ohjausjärjestelmän, Adeen elektromin, Levinin bioelektrisen koodin, Lindgrenin geometrisen viitekehyksen, kromoforien yleistyksen (CCO/CRY) ja Cyb5b-EMF-reseptorin (Kim 2026, Cell) yhtenäiseksi yhdeksäntasoiseksi malliksi EMF:n biologisesta herkkyydestä. Jokaista tasoa tukevat itsenäisesti regulaattorihyväksytyt terapeuttiset laitteet, jotka hyödyntävät samaa mekanismia.",
     layer: "Taso",
     frequency: "Taajuuskaista",
     target: "Biologinen kohde",
@@ -232,6 +250,7 @@ export function ModulomeLayers({ locale }: { locale: string }) {
             const name = locale === "fi" ? layer.descriptionFi : layer.description;
 
             const layerLabels: Record<string, { en: string; fi: string }> = {
+              "cyb5b-receptor": { en: "Cyb5b EMF receptor (OMM)", fi: "Cyb5b-EMF-reseptori (OMM)" },
               "cell-division": { en: "Cell division geometry", fi: "Solunjakautumisen geometria" },
               "vagus-axis": { en: "Vagus–brain–gut axis", fi: "Vagus–aivot–suolisto-akseli" },
               "pineal-circadian": { en: "Pineal / circadian", fi: "Pineaalinen / sirkadiaaninen" },

@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { CausalMap } from "@/components/CausalMap";
+import { CausalAtlas } from "@/components/CausalAtlas";
 
 const COPY = {
   en: {
-    title: "Causal Map",
-    subtitle: "49 nodes across 7 levels — from environmental EMF channels to demographic and ecological outcomes. Click any node for mechanism details.",
-    instruction: "Scroll to zoom. Click nodes for details.",
+    title: "Causal Atlas",
+    subtitle: "53 causal nodes across 8 stages — trace the pathways from environmental EMF channels to demographic and ecological outcomes.",
+    instruction: "Scroll to zoom · Click nodes for details · Use Guided mode for a narrated walkthrough",
   },
   fi: {
-    title: "Kausaalikartta",
-    subtitle: "49 solmua 7 tasolla — ympäristön EMF-kanavista demografisiin ja ekologisiin seurauksiin. Klikkaa solmua mekanismin yksityiskohtiin.",
-    instruction: "Vieritä zoomataksesi. Klikkaa solmua yksityiskohtiin.",
+    title: "Kausaaliatlas",
+    subtitle: "53 kausaalisolmua 8 vaiheessa — seuraa polkuja ympäristön EMF-kanavista demografisiin ja ekologisiin seurauksiin.",
+    instruction: "Vieritä zoomataksesi · Klikkaa solmuja yksityiskohtiin · Käytä Opastettu-tilaa opastetulle kierrokselle",
   },
 } as const;
 
 export const metadata: Metadata = {
-  title: "Causal Map – BERM v19",
-  description: "Interactive causal map of the Bio-Electromagnetic Reproductive Model",
+  title: "Causal Atlas – BERM",
+  description: "Interactive causal atlas of the Bio-Electromagnetic Reproductive Model",
 };
 
 export default async function MapPage({
@@ -29,13 +29,13 @@ export default async function MapPage({
   const d = COPY[lang];
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-      <header className="mb-8">
+    <main className="max-w-[1600px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <header className="mb-6">
         <h1 className="font-serif text-3xl sm:text-4xl tracking-tight mb-3">{d.title}</h1>
         <p className="text-foreground-muted leading-relaxed max-w-2xl">{d.subtitle}</p>
         <p className="text-xs text-foreground-muted/50 mt-2 hidden md:block">{d.instruction}</p>
       </header>
-      <CausalMap locale={lang} />
+      <CausalAtlas locale={lang} />
     </main>
   );
 }
