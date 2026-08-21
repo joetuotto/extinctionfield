@@ -1,22 +1,5 @@
-import type { ChainNode, ChainEdge, EpistemicLevel } from "./types";
-
-export const EPISTEMIC_COLORS: Record<EpistemicLevel, string> = {
-  L: "#6B7280",
-  "L*": "#9CA3AF",
-  M: "#3B82F6",
-  C: "#F59E0B",
-  "M|C": "#8B5CF6",
-  E: "#10B981",
-};
-
-export const EPISTEMIC_LABELS: Record<EpistemicLevel, string> = {
-  L: "Premissi",
-  "L*": "Premissi (ei validoitu)",
-  M: "Matemaattinen seuraus",
-  C: "Ehdokas",
-  "M|C": "Välttämätön seuraus",
-  E: "Empiirisesti vahvistettu",
-};
+import type { ChainNode, ChainEdge } from "./types";
+export { CHAIN_EPISTEMIC_COLORS as EPISTEMIC_COLORS, CHAIN_EPISTEMIC_LABELS as EPISTEMIC_LABELS } from "./epistemicConstants";
 
 export const LEVEL_TITLES: Record<number, string> = {
   1: "Geometria",

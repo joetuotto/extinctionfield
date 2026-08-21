@@ -13,6 +13,7 @@ import {
   BookOpen,
   Radio,
   Sigma,
+  Network,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -38,6 +39,7 @@ export const NAV_ROUTES: NavRoute[] = [
       { href: "/model/math", labelEn: "Mathematics", labelFi: "Matematiikka", icon: Sigma },
     ],
   },
+  { href: "/map", labelEn: "Causal Map", labelFi: "Kausaalikartta", icon: Network },
   { href: "/predictions", labelEn: "Predictions", labelFi: "Ennusteet", icon: Target },
   { href: "/evidence", labelEn: "Evidence", labelFi: "Näyttö", icon: Layers },
   { href: "/sentinel", labelEn: "Sentinel", labelFi: "Lajit", icon: Leaf },
@@ -88,8 +90,4 @@ export function getExploreTabs(locale: string) {
     label: locale === "fi" ? tab.labelFi : tab.labelEn,
     icon: tab.icon,
   }));
-}
-
-export function getRouteIcon(href: string): LucideIcon | undefined {
-  return NAV_ROUTES.find((r) => r.href === href)?.icon;
 }
