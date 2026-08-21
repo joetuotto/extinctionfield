@@ -30,7 +30,7 @@ const COPY = {
     result: "Result: Each increment of ambient EMF tilts the balance further in Varroa's favor. The parasite is shielded; the host is not.",
     favreTitle: "The Faraday Experiment (Favre & Johansson 2025)",
     favreText: "Honeybee colonies placed in complete Faraday shielding (blocking all EMF including natural fields) collapsed — queens stopped laying fertilized eggs. But colonies in Faraday cages WITH artificial Schumann resonance (7.83 Hz) survived. Bees need Earth's natural electromagnetic environment but are harmed by artificial EMF layered on top of it.",
-    favreFootnote: "US Patent 12,239,107 states: "With EMF transmissions blocked, bees can better defend the colony against mites and hive beetles."",
+    favreFootnote: `US Patent 12,239,107 states: “With EMF transmissions blocked, bees can better defend the colony against mites and hive beetles.”`,
     readMore: "Read the full story",
   },
   fi: {
@@ -59,7 +59,7 @@ const COPY = {
     result: "Tulos: jokainen lisäys ambient-EMF:ssä kallistaa tasapainoa edelleen Varroan eduksi. Loinen on suojattu; isäntä ei ole.",
     favreTitle: "Faraday-koe (Favre & Johansson 2025)",
     favreText: "Faradayn häkkiin (kaikki EMF mukaan lukien luonnolliset kentät estetty) asetetut mehiläisyhdyskunnat romahtivat — kuningattaret lopettivat hedelmöitettyjen munien munimisen. Mutta yhdyskunnat Faradayn häkeissä JOISSA oli keinotekoinen Schumannin resonanssi (7,83 Hz) selvisivät. Mehiläiset tarvitsevat Maan luonnollista sähkömagneettista ympäristöä mutta niille on vahingollista keinotekoinen EMF joka on kerrostettu sen päälle.",
-    favreFootnote: "US Patent 12 239 107 toteaa: "Kun EMF-lähetykset estetään, mehiläiset pystyvät paremmin puolustamaan yhdyskuntaa punkkeja ja pesäkuoriaisia vastaan."",
+    favreFootnote: 'US Patent 12 239 107 toteaa: "Kun EMF-lähetykset estetään, mehiläiset pystyvät paremmin puolustamaan yhdyskuntaa punkkeja ja pesäkuoriaisia vastaan."',
     readMore: "Lue koko tarina",
   },
 } as const;
