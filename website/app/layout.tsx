@@ -16,7 +16,7 @@ const serifFont = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Extinction Field – FieldState–ASFR research model",
+  title: "Extinction Field – BERM v19 research model",
   description:
     "A measurement-aware research model for testing field-state, reproductive-endpoint and age-specific fertility hypotheses.",
 };

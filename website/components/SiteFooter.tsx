@@ -1,33 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { activeModelVersion } from "@/lib/modelVersions";
 
 const COPY = {
   en: {
-    label: "FieldState–ASFR v2 · current research specification",
-    summary: "A measurement-aware research specification. Mobile subscriptions are a timing proxy, not measured FieldState. Evidence records are bounded to causal nodes. TFR is derived from ASFR with biological and demographic terms kept separate.",
-    noForecast: "No calibrated country-level TFR forecasts are published.",
+    label: "BERM v19 · Bio-Electromagnetic Reproductive Model",
+    summary: "A falsifiable research model. FieldState is what we measure. The three-channel model is how we predict. The modulome is where it acts. Mobile subscriptions are a timing proxy, not measured FieldState.",
     license: "Code: MIT · Docs: CC BY-4.0",
     specLink: "FieldState measurement spec",
   },
   fi: {
-    label: "FieldState–ASFR v2 · nykyinen tutkimusmäärittely",
-    summary: "Mittaustietoinen tutkimusmäärittely. Mobiililiittymät ovat ajoitusproksi, eivät mitattu FieldState. Evidenssitietueet on rajattu kausaalisolmuihin. TFR johdetaan ASFR:stä biologiset ja demografiset termit erillään.",
-    noForecast: "Kalibroituja maakohtaisia TFR-ennusteita ei julkaista.",
+    label: "BERM v19 · Bio-sähkömagneettinen lisääntymismalli",
+    summary: "Falsifioitavissa oleva tutkimusmalli. FieldState on se mitä mitataan. Kolmikanavamalli on se miten ennustetaan. Modulooma on se mihin vaikutus kohdistuu. Mobiililiittymät ovat ajoitusproksi, eivät mitattu FieldState.",
     license: "Koodi: MIT · Docs: CC BY-4.0",
     specLink: "FieldState-mittausmäärittely",
   },
 } as const;
 
 export function SiteFooter({ locale }: { locale: string }) {
-  const pathname = usePathname();
   const language = locale === "fi" ? "fi" : "en";
-  const version = activeModelVersion(locale, pathname);
   const c = COPY[language];
-
-  if (version === "berm-v18") return null;
 
   return (
     <footer className="border-t border-border py-6 px-6">
@@ -37,7 +29,7 @@ export function SiteFooter({ locale }: { locale: string }) {
             {c.label}
           </p>
           <p className="text-[0.8125rem] text-foreground-muted leading-relaxed">
-            {c.summary} {c.noForecast}
+            {c.summary}
           </p>
         </div>
         <div className="flex flex-col items-start sm:items-end gap-1.5 sm:shrink-0">

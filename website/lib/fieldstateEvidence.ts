@@ -1,5 +1,5 @@
 /**
- * Bounded study-to-node evidence for the FieldState–ASFR v2 route.
+ * Bounded study-to-node evidence for the BERM v19 route.
  *
  * This mirrors `berm/data/evidence/fieldstate_causal_evidence.json` in the
  * model repository. These records locate evidence within the causal graph;

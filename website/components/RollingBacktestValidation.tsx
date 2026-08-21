@@ -4,7 +4,7 @@ const copy = {
   en: {
     eyebrow: "LEGACY_TIMING_PROXY",
     title: "Archived temporal-proxy diagnostics",
-    lead: "The released v17 train/test artifacts are not FieldState–ASFR-v2 validation. They combine observed later technology-adoption covariates with a legacy scalar model; therefore they are conditional historical diagnostics, not prospective exposure or TFR forecasts.",
+    lead: "The released v17 train/test artifacts are not BERM v19 validation. They combine observed later technology-adoption covariates with a legacy scalar model; therefore they are conditional historical diagnostics, not prospective exposure or TFR forecasts.",
     limits: [
       "Mobile subscriptions describe technology adoption timing, not RF exposure, a FieldState vector, or biological dose.",
       "The later covariates are observed inputs to a conditional hindcast; they were not prospectively locked before the later period.",
@@ -14,7 +14,7 @@ const copy = {
   fi: {
     eyebrow: "LEGACY_TIMING_PROXY",
     title: "Arkistoidut ajalliset proxy-diagnostiikat",
-    lead: "Julkaistut v17-opetus/testi-artefaktit eivät ole FieldState–ASFR-v2:n validointia. Ne yhdistävät myöhemmin havaitut teknologiakäyttöönoton kovariaatit vanhaan skalaarimalliin; siksi ne ovat ehdollisia historiallisia diagnostiikkoja, eivät prospektiivisia altistus- tai TFR-ennusteita.",
+    lead: "Julkaistut v17-opetus/testi-artefaktit eivät ole BERM v19:n validointia. Ne yhdistävät myöhemmin havaitut teknologiakäyttöönoton kovariaatit vanhaan skalaarimalliin; siksi ne ovat ehdollisia historiallisia diagnostiikkoja, eivät prospektiivisia altistus- tai TFR-ennusteita.",
     limits: [
       "Mobiililiittymät kuvaavat teknologiakäyttöönoton ajoitusta, eivät RF-altistusta, FieldState-vektoria tai biologista annosta.",
       "Myöhemmät kovariaatit ovat ehdollisen hindcastin havaittuja syötteitä; niitä ei lukittu prospektiivisesti ennen myöhempää jaksoa.",

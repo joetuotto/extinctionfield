@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 452,
+    "total_references": 464,
     "verified_count": 58,
     "generated": "2026-08-20"
   },
@@ -9421,11 +9421,20 @@
       "journal": "Nature Communications",
       "doi": "10.1038/ncomms12172",
       "category": "physics_dosimetry",
-      "pathway": ["A", "C"],
+      "pathway": [
+        "A",
+        "C"
+      ],
       "level": "A",
       "type": "experiment",
       "finding": "Demonstrates that the human visual system can detect single photons (~4×10⁻¹⁹ J, one-tenth of thermal noise energy). Establishes that biological electromagnetic sensors operate at the quantum limit. The amplification cascade (rhodopsin → transducin → PDE → cGMP → current) achieves ~10⁶× gain.",
-      "tags": ["single_photon", "quantum_limit", "biological_sensitivity", "amplification_cascade", "evolutionary_calibration"],
+      "tags": [
+        "single_photon",
+        "quantum_limit",
+        "biological_sensitivity",
+        "amplification_cascade",
+        "evolutionary_calibration"
+      ],
       "pdf_section": null,
       "pdf_number": null,
       "verified": true
@@ -9438,13 +9447,231 @@
       "journal": "Channels",
       "doi": "10.1080/19336950.2024.2341670",
       "category": "mechanism_cellular",
-      "pathway": ["A"],
+      "pathway": [
+        "A"
+      ],
       "level": "A",
       "type": "review",
       "finding": "VGCCs activate intracellular signaling pathways (gene transcription, synaptic transmission, cardiac contraction) through conformational change WITHOUT ion flux. The S4 voltage sensor movement alone suffices — the channel does not need to open fully. Energy threshold is significantly lower than for ion flux, implying biological sensitivity to weaker fields than the ion-flux threshold would predict.",
-      "tags": ["VGCC", "non_ionotropic", "conformational_signaling", "S4_sensor", "low_threshold", "IFO"],
+      "tags": [
+        "VGCC",
+        "non_ionotropic",
+        "conformational_signaling",
+        "S4_sensor",
+        "low_threshold",
+        "IFO"
+      ],
       "pdf_section": null,
       "pdf_number": null,
+      "verified": true
+    },
+    {
+      "id": "favre_johansson_2025",
+      "authors": "Favre D, Johansson O",
+      "year": 2025,
+      "title": "Honeybees' Behaviour in a Faraday-Shielded Hive: Mandatory Schumann Resonance for Colony Survival",
+      "journal": "Int J Research - GRANTHAALAYAH",
+      "doi": "10.29121/granthaalayah.v13.i4.2025.6023",
+      "category": "ecology_sentinels",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Faraday cage without Schumann resonance caused colony collapse — queens stopped laying fertilized eggs. Faraday + Schumann (7.83 Hz) restored colony survival. Bees need natural EM but are harmed by artificial EMF.",
+      "tags": [
+        "honeybee",
+        "faraday",
+        "schumann",
+        "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "england_2023_ticks",
+      "authors": "England SJ et al.",
+      "year": 2023,
+      "title": "Static electricity passively attracts ticks onto hosts",
+      "journal": "Current Biology",
+      "doi": "10.1016/j.cub.2023.06.021",
+      "category": "ecology_sentinels",
+      "pathway": [
+        "electrostatic"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Electrostatic charge on hosts passively attracts ticks across air gaps. Mechanism likely applies to Varroa destructor.",
+      "tags": [
+        "tick",
+        "electrostatic",
+        "varroa",
+        "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "colin_1992_varroa_charge",
+      "authors": "Colin ME et al.",
+      "year": 1992,
+      "title": "Attraction of Varroa jacobsoni by electrical charges",
+      "journal": "J Apicultural Research",
+      "doi": null,
+      "category": "ecology_sentinels",
+      "pathway": [
+        "electrostatic"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Varroa mite movement altered by charge sign of metallic lure mimicking bee charges. Establishes electrostatic host-finding.",
+      "tags": [
+        "varroa",
+        "electrostatic",
+        "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "shepherd_2023_pollination",
+      "authors": "Shepherd S et al.",
+      "year": 2023,
+      "title": "Electromagnetic fields disrupt the pollination service by honeybees",
+      "journal": "Science Advances",
+      "doi": "10.1126/sciadv.adh1455",
+      "category": "ecology_sentinels",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "EMF disrupts honeybee foraging, navigation, and pollination through magnetoreception disorder. Gene and protein expression changes confirmed.",
+      "tags": [
+        "honeybee",
+        "pollination",
+        "magnetoreception",
+        "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "plos_one_2023_bee_900mhz",
+      "authors": "Migdał P et al.",
+      "year": 2023,
+      "title": "Exposure to 900 MHz EMF induces stress response in honeybees",
+      "journal": "PLOS ONE",
+      "doi": "10.1371/journal.pone.0285522",
+      "category": "ecology_sentinels",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "900 MHz altered stress enzymes (AST, ALT, ALP) and stress gene expression (hsp70, hsp90, vitellogenin) in honeybees.",
+      "tags": [
+        "honeybee",
+        "900MHz",
+        "stress",
+        "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "us_patent_12239107",
+      "authors": "Tauzer J et al.",
+      "year": 2025,
+      "title": "EMF shield for beehives",
+      "journal": "US Patent 12,239,107",
+      "doi": null,
+      "category": "ecology_sentinels",
+      "pathway": [],
+      "level": "E",
+      "type": "patent",
+      "finding": "Patent states: 'bees can better defend the colony against mites and hive beetles' when EMF blocked.",
+      "tags": [
+        "honeybee",
+        "faraday",
+        "patent",
+        "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "varroa_protein_atlas_2017",
+      "authors": "McAfee A et al.",
+      "year": 2017,
+      "title": "A Varroa destructor protein atlas reveals molecular underpinnings of developmental transitions",
+      "journal": "Mol Cell Proteomics",
+      "doi": "10.1074/mcp.RA117.000104",
+      "category": "ecology_sentinels",
+      "pathway": [],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Adult Varroa has rigid sclerotin armor. Cuticle proteins show dramatic developmental transition from soft to hard exoskeleton.",
+      "tags": [
+        "varroa",
+        "sclerotin",
+        "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "varroa_chitinase_2020",
+      "authors": "Becchimanzi A et al.",
+      "year": 2020,
+      "title": "A salivary chitinase of Varroa destructor influences host immunity and mite's survival",
+      "journal": "PLOS Pathogens",
+      "doi": "10.1371/journal.ppat.1009075",
+      "category": "ecology_sentinels",
+      "pathway": [],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Varroa salivary chitinase keeps feeding wound open and prevents host healing. Knockdown reduces mite feeding and survival.",
+      "tags": [
+        "varroa",
+        "chitinase",
+        "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "wyszkowska_2025_bee_behavior",
+      "authors": "Wyszkowska J et al.",
+      "year": 2025,
+      "title": "The Influence of an EMF at 900 MHz on the Behavior of a Honey Bee",
+      "journal": "Agriculture",
+      "doi": null,
+      "category": "ecology_sentinels",
+      "pathway": [],
+      "level": "E",
+      "type": "experimental",
+      "finding": "50 Hz E-field reduced self-grooming, walking, and inter-individual contacts in honeybees. Grooming is primary Varroa defense.",
+      "tags": [
+        "honeybee",
+        "grooming",
+        "50Hz",
+        "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "entomology_today_2025_electric",
+      "authors": "Various",
+      "year": 2025,
+      "title": "Electric Entomology: How Insects Interact With Electricity",
+      "journal": "Entomology Today",
+      "doi": null,
+      "category": "ecology_sentinels",
+      "pathway": [
+        "electrostatic"
+      ],
+      "level": "C",
+      "type": "review",
+      "finding": "Varroa mites increase activity in negative electric fields too weak to lift them. Flowers' charge acts as additional sensory signal for mite interception.",
+      "tags": [
+        "varroa",
+        "electrostatic",
+        "review",
+        "sentinel"
+      ],
       "verified": true
     }
   ]

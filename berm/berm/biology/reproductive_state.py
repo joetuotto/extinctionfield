@@ -1,6 +1,6 @@
 """Organ-, sex-, and couple-specific states for the FieldState ASFR route.
 
-This is the biological middle layer of ``fieldstate-asfr-v2``:
+This is the biological middle layer of ``berm-v19``:
 
     FieldState features -> organ R/P memory -> reproductive capacity
     -> couple fecundability/live-birth support -> age-specific fertility.

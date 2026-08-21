@@ -1,7 +1,7 @@
 /**
  * Extended evidence catalogue from the BERM v18 legacy reference migration.
  *
- * These 126 records complement the 32 bounded FieldState–ASFR v2 records.
+ * These 126 records complement the 32 bounded BERM v19 records.
  * Each entry retains its v18 pathway classification and v2 migration status.
  * Records superseded by active v2 entries are excluded.
  */

@@ -1,7 +1,7 @@
 import type { ChainEdge, ChainNode } from "./types";
 
 /**
- * Canonical public causal map for the FieldState–ASFR-v2 route.
+ * Canonical public causal map for the BERM v19 route.
  *
  * The legacy A–F lettering remains only through source-qualified compatibility
  * bindings. This map uses semantic node names so that BBB, BTB, melatonin,

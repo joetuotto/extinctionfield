@@ -40,8 +40,8 @@ export function FertilityChart({ timeseries, country, locale = "en" }: Props) {
       </h3>
       <p className="mb-4 max-w-3xl text-xs leading-relaxed text-foreground-muted">
         {isFinnish
-          ? "Kaavio näyttää vain paketoidun demografisen lähdesarjan julkaistut arvot. TFR on periodimittari, ei biologinen päätepiste eikä FieldState–ASFR-v2:n maaennuste."
-          : "This chart shows only published values from the bundled demographic source series. TFR is a period measure, not a biological endpoint or a FieldState–ASFR-v2 country forecast."}
+          ? "Kaavio näyttää vain paketoidun demografisen lähdesarjan julkaistut arvot. TFR on periodimittari, ei biologinen päätepiste eikä BERM v19:n maaennuste."
+          : "This chart shows only published values from the bundled demographic source series. TFR is a period measure, not a biological endpoint or a BERM v19 country forecast."}
       </p>
       <ResponsiveContainer width="100%" height={360}>
         <LineChart data={chartData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>

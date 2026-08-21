@@ -107,5 +107,5 @@ def test_legacy_bibliography_is_available_without_becoming_active_evidence() -> 
 def test_top_level_package_exposes_the_integrated_route_and_evidence_layers() -> None:
     import berm
 
-    assert berm.FIELDSTATE_ASFR_MODEL_VERSION == "fieldstate-asfr-v2"
+    assert berm.FIELDSTATE_ASFR_MODEL_VERSION == "berm-v19"
     assert berm.legacy_evidence_summary()["record_count"] == 134

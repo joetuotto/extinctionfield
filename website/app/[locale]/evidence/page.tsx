@@ -17,14 +17,12 @@ import {
   FIELDSTATE_EVIDENCE,
   FIELDSTATE_EVIDENCE_COUNT,
   type FieldStateDirectness,
-} from "@/lib/fieldstateEvidence";
-import {
   LEGACY_EVIDENCE_CATALOGUE,
   LEGACY_EVIDENCE_COUNT,
   PATHWAY_LABELS,
   STATUS_LABELS,
   EVIDENCE_LEVEL_LABELS,
-} from "@/lib/legacyEvidenceCatalogue";
+} from "@/lib/evidence";
 
 const ORDER: FieldStateDirectness[] = [
   "PHYSICS_SIGNATURE",
@@ -38,7 +36,7 @@ const ORDER: FieldStateDirectness[] = [
 const COPY = {
   en: {
     title: "Evidence register",
-    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} bounded FieldState–ASFR v2 records and ${LEGACY_EVIDENCE_COUNT} extended catalogue entries across 13+ pathways and 82+ peer-reviewed studies.`,
+    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} bounded BERM v19 records and ${LEGACY_EVIDENCE_COUNT} extended catalogue entries across 13+ pathways and 82+ peer-reviewed studies.`,
     interpretationTitle: "How to read this register",
     interpretation: [
       "A field signature can support a measurement variable such as background vector, angle, spectrum or envelope; it does not establish human fertility effects.",
@@ -47,7 +45,7 @@ const COPY = {
       "No record below is a TFR coefficient. A country TFR pathway requires the separate ASFR and demographic terms in the model specification.",
     ],
     boundedTitle: "Bounded v2 records",
-    boundedLead: "Each record states its field class, directness, translation scope and limitation. These are the primary evidence entries for the FieldState–ASFR v2 causal route.",
+    boundedLead: "Each record states its field class, directness, translation scope and limitation. These are the primary evidence entries for the BERM v19 causal route.",
     classificationTitle: "How previously negative findings classify",
     channelGroupTitle: "Three frequency channels",
     channelGroupLead: "Each biological pathway maps to one of three frequency channels, defined by two biological cutoffs: f_c ~ 1 kHz (membrane RC) and f_RPM ~ 1 MHz (radical pair coherence).",
@@ -243,7 +241,7 @@ const COPY = {
   },
   fi: {
     title: "Evidenssirekisteri",
-    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} rajattua FieldState–ASFR v2 -tietuetta ja ${LEGACY_EVIDENCE_COUNT} laajennetun katalogin tietuetta 13+ polulla ja 82+ vertaisarvioidussa tutkimuksessa.`,
+    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} rajattua BERM v19 -tietuetta ja ${LEGACY_EVIDENCE_COUNT} laajennetun katalogin tietuetta 13+ polulla ja 82+ vertaisarvioidussa tutkimuksessa.`,
     interpretationTitle: "Kuinka rekisteriä luetaan",
     interpretation: [
       "Kenttäallekirjoitus voi tukea mittausmuuttujaa, kuten taustavektoria, kulmaa, spektriä tai verhokäyrää; se ei osoita ihmisen hedelmällisyysvaikutusta.",
@@ -252,7 +250,7 @@ const COPY = {
       "Mikään alla oleva tietue ei ole TFR-kerroin. Maakohtainen TFR-reitti tarvitsee erilliset ASFR- ja demografiset termit mallin määrittelyn mukaisesti.",
     ],
     boundedTitle: "Rajatut v2-tietueet",
-    boundedLead: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Nämä ovat FieldState–ASFR v2 -kausaalireitin ensisijaiset evidenssitietueet.",
+    boundedLead: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Nämä ovat BERM v19 -kausaalireitin ensisijaiset evidenssitietueet.",
     classificationTitle: "Miten aiemmin negatiiviset havainnot luokittuvat",
     channelGroupTitle: "Kolme taajuuskanavaa",
     channelGroupLead: "Jokainen biologinen polku kuuluu yhteen kolmesta taajuuskanavasta, jotka määrittyvät kahdella biologisella rajataajuudella: f_c ~ 1 kHz (kalvon RC) ja f_RPM ~ 1 MHz (radikaaliparimekanismin koherenssi).",

@@ -4,7 +4,7 @@ const copy = {
   en: {
     eyebrow: "LEGACY_TIMING_PROXY",
     title: "Archived scalar hindcast",
-    lead: "The former hindcast applied a scalar v17 proxy, calibrated at a late observation, backwards through the same country series. It is retained as method history only and is not shown as a FieldState–ASFR-v2 validation result.",
+    lead: "The former hindcast applied a scalar v17 proxy, calibrated at a late observation, backwards through the same country series. It is retained as method history only and is not shown as a BERM v19 validation result.",
     whyTitle: "Why the numeric display was withdrawn",
     points: [
       "Its inputs were technology-timing and assumed exposure proxies, not measured local FieldState or organ transfer.",
@@ -17,7 +17,7 @@ const copy = {
   fi: {
     eyebrow: "LEGACY_TIMING_PROXY",
     title: "Arkistoitu skalaarinen hindcast",
-    lead: "Aiempi hindcast sovelsi myöhäiseen havaintoon kalibroitua v17-skalaariproxya taaksepäin samaan maa-aikasarjaan. Se säilytetään vain menetelmähistoriana eikä sitä esitetä FieldState–ASFR-v2:n validointituloksena.",
+    lead: "Aiempi hindcast sovelsi myöhäiseen havaintoon kalibroitua v17-skalaariproxya taaksepäin samaan maa-aikasarjaan. Se säilytetään vain menetelmähistoriana eikä sitä esitetä BERM v19:n validointituloksena.",
     whyTitle: "Miksi numeerinen näyttö poistettiin",
     points: [
       "Syötteinä oli teknologia-ajoituksen ja oletetun altistuksen proxeja, ei mitattua paikallista FieldStatea tai elinsiirtoa.",

@@ -66,9 +66,9 @@ const t = {
   en: {
     title: "Data Sources",
     subtitle:
-      "Data inventory for FieldState–ASFR-v2. Sources are separated by what they actually measure; availability is not treated as evidence of a biological or demographic effect.",
+      "Data inventory for BERM v19. Sources are separated by what they actually measure; availability is not treated as evidence of a biological or demographic effect.",
     readinessTitle: "Measurement readiness by country tier",
-    readinessLead: "FieldState–ASFR v2 classifies every country by what input data is actually available. This makes the gap between a timing proxy and a measurement-ready FieldState explicit rather than hidden.",
+    readinessLead: "BERM v19 classifies every country by what input data is actually available. This makes the gap between a timing proxy and a measurement-ready FieldState explicit rather than hidden.",
     readinessNote: "Measurement-ready means that all named physical inputs are documented. It does not mean a biological effect, a causal estimate or an outcome coefficient has been established.",
     primaryTitle: "Technology-timing proxies",
     primaryDesc:
@@ -94,7 +94,7 @@ const t = {
     licCode: "MIT License -- free to use, modify, and distribute with attribution.",
     licDocs: "CC BY-4.0 -- share and adapt with appropriate credit.",
     dataNote:
-      "Availability note: Some sources require registration. Open demographic and technology-timing series reproduce the descriptive cohort analysis, not a FieldState–ASFR effect estimate or country forecast.",
+      "Availability note: Some sources require registration. Open demographic and technology-timing series reproduce the descriptive cohort analysis, not a BERM v19 effect estimate or country forecast.",
     coverage: "Coverage",
     frequency: "Frequency",
     dataLabel: "Data",
@@ -107,9 +107,9 @@ const t = {
   fi: {
     title: "Datalähteet",
     subtitle:
-      "FieldState–ASFR-v2:n dataluettelo. Lähteet erotellaan sen mukaan, mitä ne todella mittaavat; saatavuutta ei käsitellä biologisen tai demografisen vaikutuksen evidenssinä.",
+      "BERM v19:n dataluettelo. Lähteet erotellaan sen mukaan, mitä ne todella mittaavat; saatavuutta ei käsitellä biologisen tai demografisen vaikutuksen evidenssinä.",
     readinessTitle: "Mittaamisvalmius maatasoittain",
-    readinessLead: "FieldState–ASFR v2 luokittelee jokaisen maan sen mukaan, mitä syötedataa on todella saatavilla. Tämä tekee eron ajoitusproxyn ja mittaamisvalmiin FieldStaten välillä näkyväksi piilossa pitämisen sijaan.",
+    readinessLead: "BERM v19 luokittelee jokaisen maan sen mukaan, mitä syötedataa on todella saatavilla. Tämä tekee eron ajoitusproxyn ja mittaamisvalmiin FieldStaten välillä näkyväksi piilossa pitämisen sijaan.",
     readinessNote: "Mittaamisvalmis tarkoittaa, että kaikki nimetyt fysikaaliset syötteet on dokumentoitu. Se ei tarkoita, että biologinen vaikutus, kausaaliarvio tai tuloskerroin olisi osoitettu.",
     primaryTitle: "Teknologian ajoitusproksit",
     primaryDesc:
@@ -135,7 +135,7 @@ const t = {
     licCode: "MIT-lisenssi -- vapaasti käytettävissä, muokattavissa ja jaettavissa lähdeviitteellä.",
     licDocs: "CC BY-4.0 -- jaa ja muokkaa asianmukaisella lähdeviitteellä.",
     dataNote:
-      "Saatavuushuomautus: Jotkin lähteet vaativat rekisteröitymisen. Avoimet demografia- ja teknologia-ajoitussarjat toistavat kuvailevan kohorttianalyysin, eivät FieldState–ASFR-vaikutusarviota tai maaennustetta.",
+      "Saatavuushuomautus: Jotkin lähteet vaativat rekisteröitymisen. Avoimet demografia- ja teknologia-ajoitussarjat toistavat kuvailevan kohorttianalyysin, eivät BERM v19-vaikutusarviota tai maaennustetta.",
     coverage: "Kattavuus",
     frequency: "Päivitystahti",
     dataLabel: "Data",
@@ -157,12 +157,12 @@ export async function generateMetadata({
     ? {
         title: "Datalähteet - Extinction Field",
         description:
-          "BERM FieldState–ASFR-v2:n teknologiakehityksen ajoitusproksit, ehdokas-RF-mittaustietueet, demografiset sarjat ja päätepistereferenssit.",
+          "BERM BERM v19:n teknologiakehityksen ajoitusproksit, ehdokas-RF-mittaustietueet, demografiset sarjat ja päätepistereferenssit.",
       }
     : {
         title: "Data Sources - Extinction Field",
         description:
-          "BERM FieldState–ASFR-v2 technology-timing proxies, candidate RF measurement records, demographic series and endpoint references.",
+          "BERM BERM v19 technology-timing proxies, candidate RF measurement records, demographic series and endpoint references.",
       };
 }
 

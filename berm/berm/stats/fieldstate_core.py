@@ -1,4 +1,4 @@
-"""Pure FieldState -> organ-memory bridge for ``fieldstate-asfr-v2``.
+"""Pure FieldState -> organ-memory bridge for ``berm-v19``.
 
 This module is intentionally parallel to :mod:`berm.stats.temporal_core`.
 It consumes an externally supplied, local FieldState and retains the physical

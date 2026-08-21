@@ -24,7 +24,7 @@ const t: Record<Locale, Copy> = {
     subtitle:
       "A protocol for documenting a physical field state and testing a pre-specified biological endpoint. It is not a claim that a network feature has already been identified or that an exposure causes a reproductive outcome.",
     introduction: [
-      "FieldState–ASFR-v2 requires more than a national technology proxy or one broadband level. A useful experiment documents the measured field components, calibration, geometry, timing and provenance that could distinguish competing physical hypotheses.",
+      "BERM v19 requires more than a national technology proxy or one broadband level. A useful experiment documents the measured field components, calibration, geometry, timing and provenance that could distinguish competing physical hypotheses.",
       "The purpose of this protocol is to make the physical measurement and the biological experiment independently auditable. A physical signature, if observed, is a prerequisite for a mechanism test — not evidence of harm or a TFR coefficient.",
     ],
     sections: [
@@ -78,7 +78,7 @@ const t: Record<Locale, Copy> = {
     subtitle:
       "Protokolla fysikaalisen kenttätilan dokumentoimiseen ja ennalta määritellyn biologisen päätepisteen testaamiseen. Se ei väitä, että verkkopiirre olisi jo tunnistettu tai että altistus aiheuttaisi lisääntymistuloksen.",
     introduction: [
-      "FieldState–ASFR-v2 vaatii enemmän kuin kansallisen teknologiaproxyn tai yhden laajakaistatason. Hyödyllinen koe dokumentoi mitatut kenttäkomponentit, kalibroinnin, geometrian, ajoituksen ja provenienssin, joilla kilpailevia fysikaalisia hypoteeseja voidaan erottaa.",
+      "BERM v19 vaatii enemmän kuin kansallisen teknologiaproxyn tai yhden laajakaistatason. Hyödyllinen koe dokumentoi mitatut kenttäkomponentit, kalibroinnin, geometrian, ajoituksen ja provenienssin, joilla kilpailevia fysikaalisia hypoteeseja voidaan erottaa.",
       "Protokollan tarkoitus on tehdä fysikaalisesta mittauksesta ja biologisesta kokeesta erikseen auditoitavia. Havaittu fysikaalinen allekirjoitus on mekanismitestin ennakkoehto — ei todiste haitasta eikä TFR-kerroin.",
     ],
     sections: [

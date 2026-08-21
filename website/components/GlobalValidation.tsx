@@ -16,7 +16,7 @@ interface PanelSummary {
 const copy = {
   en: {
     title: "Global panel data coverage",
-    lead: "The published country panel documents the demographic and technology-timing data currently available for the FieldState–ASFR-v2 research programme.",
+    lead: "The published country panel documents the demographic and technology-timing data currently available for the BERM v19 research programme.",
     loading: "Loading panel metadata…",
     unavailable: "Panel metadata is unavailable. Please try again shortly.",
     artifact: "Publication format",
@@ -29,7 +29,7 @@ const copy = {
   },
   fi: {
     title: "Globaalin paneelin datakattavuus",
-    lead: "Julkaistu maapaneeli dokumentoi FieldState–ASFR-v2-tutkimusohjelmalle tällä hetkellä saatavilla olevan demografia- ja teknologia-ajoitusdatan.",
+    lead: "Julkaistu maapaneeli dokumentoi BERM v19-tutkimusohjelmalle tällä hetkellä saatavilla olevan demografia- ja teknologia-ajoitusdatan.",
     loading: "Ladataan paneelin metatietoja…",
     unavailable: "Paneelin metatietoa ei ole saatavilla. Yritä hetken kuluttua uudelleen.",
     artifact: "Julkaisumuoto",

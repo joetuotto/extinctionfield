@@ -1,0 +1,49 @@
+export interface Article {
+  id: string;
+  slug: string;
+  title: string;
+  titleFi: string;
+  subtitle: string;
+  subtitleFi: string;
+  icon: string;
+  publishedDate: string;
+  readingTimeMinutes: number;
+  tags: string[];
+  heroImage?: string;
+  ogImage?: string;
+  thumbImage?: string;
+}
+
+export const ARTICLES: Article[] = [
+  {
+    id: "bees",
+    slug: "bees",
+    title: "Why the Bees Can't Fight Back",
+    titleFi: "Miksi mehiläiset eivät pysty puolustautumaan",
+    subtitle:
+      "How electromagnetic fields tilt the balance between honeybees and their deadliest parasite",
+    subtitleFi:
+      "Miten sähkömagneettiset kentät kallistavat tasapainoa mehiläisten ja niiden tappavimman loisen välillä",
+    icon: "🐝",
+    publishedDate: "2026-08-21",
+    readingTimeMinutes: 12,
+    tags: ["ecology", "varroa", "sentinel", "faraday"],
+    heroImage: "/images/articles/bee-hero.webp",
+    ogImage: "/images/articles/bee-og.webp",
+    thumbImage: "/images/articles/bee-thumb.webp",
+  },
+];
+
+export function getArticleBySlug(slug: string): Article | undefined {
+  return ARTICLES.find((a) => a.slug === slug);
+}
+
+export function getLatestArticles(count = 3): Article[] {
+  return [...ARTICLES]
+    .sort(
+      (a, b) =>
+        new Date(b.publishedDate).getTime() -
+        new Date(a.publishedDate).getTime(),
+    )
+    .slice(0, count);
+}

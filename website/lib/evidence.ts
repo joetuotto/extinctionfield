@@ -1,22 +1,28 @@
 /**
- * @deprecated
+ * Unified BERM v19 evidence registry.
  *
- * The former A–F evidence catalogue mixed exposure classes, mechanistic
- * studies, population associations and speculative numerical claims. It is
- * deliberately not used by the public site. New work must use the bounded
- * FieldState–ASFR-v2 register in `fieldstateEvidence.ts`, whose records state
- * their system, translation scope, limitations and the explicit fact that
- * none is a TFR coefficient.
- *
- * This small compatibility module avoids silently reviving the retired
- * catalogue if an external consumer still imports this path.
+ * Re-exports the bounded FieldState study-to-node records and the extended
+ * legacy catalogue through a single import path.
  */
+
 export {
-  FIELDSTATE_EVIDENCE as EVIDENCE,
-  type FieldStateEvidenceRecord as EvidenceItem,
+  FIELDSTATE_EVIDENCE,
+  FIELDSTATE_EVIDENCE_COUNT,
+  LEGACY_EVIDENCE_MIGRATION,
+  causalNodeLabels,
+  type FieldStateDirectness,
+  type FieldStateCalibrationRole,
+  type FieldStateEvidenceRecord,
 } from "./fieldstateEvidence";
 
-export const PATHWAYS = {} as const;
+export {
+  LEGACY_EVIDENCE_CATALOGUE,
+  LEGACY_EVIDENCE_COUNT,
+  PATHWAY_LABELS,
+  STATUS_LABELS,
+  EVIDENCE_LEVEL_LABELS,
+  type LegacyEvidenceRecord,
+} from "./legacyEvidenceCatalogue";
 
 export const EPISTEMIC_LEVELS = {
   L: "Theoretical premise",

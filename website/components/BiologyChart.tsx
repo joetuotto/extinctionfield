@@ -16,8 +16,8 @@ export function BiologyChart({ country, locale = "en" }: Props) {
       </h3>
       <p className="text-sm leading-relaxed text-foreground-muted">
         {isFinnish
-          ? "FieldState–ASFR-v2 ei käytä yhtä maakohtaista “biologisen kapasiteetin” käyrää. Se erottaa mies-, nais- ja paritason tilat sekä niiden palautuvat ja pysyvät komponentit. Näille suureille ei ole vielä maakohtaista, kalibroitua paneelia."
-          : "FieldState–ASFR-v2 does not use one country-level “biological capacity” curve. It separates male, female, and couple states and their reversible and persistent components. A country-level calibrated panel for these quantities is not yet available."}
+          ? "BERM v19 ei käytä yhtä maakohtaista “biologisen kapasiteetin” käyrää. Se erottaa mies-, nais- ja paritason tilat sekä niiden palautuvat ja pysyvät komponentit. Näille suureille ei ole vielä maakohtaista, kalibroitua paneelia."
+          : "BERM v19 does not use one country-level “biological capacity” curve. It separates male, female, and couple states and their reversible and persistent components. A country-level calibrated panel for these quantities is not yet available."}
       </p>
       <div className="mt-5 grid gap-3 sm:grid-cols-3">
         {[

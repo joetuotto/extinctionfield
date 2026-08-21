@@ -3,7 +3,7 @@
 The v16/v17 implementations are retained as locked comparison routes.  Their
 numeric functions must not import, call, or be changed by this module.  This
 file only records how a *named legacy artifact* is interpreted in the stable
-FieldState--ASFR causal registry.
+BERM v19 causal registry.
 
 Bare pathway letters are deliberately unsupported here: ``C`` and ``F`` have
 different meanings in different historical artifacts.  A caller must name the
@@ -182,7 +182,7 @@ LEGACY_PATHWAY_BINDINGS: tuple[LegacyPathwayBinding, ...] = (
     LegacyPathwayBinding(
         "berm.v16.country_report", "predicted_tfr", ("TFR",),
         DEMOGRAPHIC_CONTEXT_ONLY,
-        "Locked legacy output; not a FieldState--ASFR v2 prediction.",
+        "Locked legacy output; not a BERM v19 prediction.",
     ),
     # Independent legacy public entry points.
     LegacyPathwayBinding(
@@ -205,7 +205,7 @@ LEGACY_PATHWAY_BINDINGS: tuple[LegacyPathwayBinding, ...] = (
     ),
     LegacyPathwayBinding(
         "berm.tfr.legacy", "tfr_predicted", ("TFR",), DEMOGRAPHIC_CONTEXT_ONLY,
-        "Locked legacy output; not a FieldState--ASFR v2 prediction.",
+        "Locked legacy output; not a BERM v19 prediction.",
     ),
     LegacyPathwayBinding(
         "berm.model.v17_community", "combined_emf", ("FIELDSTATE_SELECTED_PROXY",),
@@ -220,7 +220,7 @@ LEGACY_PATHWAY_BINDINGS: tuple[LegacyPathwayBinding, ...] = (
     LegacyPathwayBinding(
         "berm.model.v17_community", "predicted_tfr", ("TFR",),
         DEMOGRAPHIC_CONTEXT_ONLY,
-        "Locked v17 output; not a FieldState--ASFR v2 prediction.",
+        "Locked v17 output; not a BERM v19 prediction.",
     ),
 )
 

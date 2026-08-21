@@ -18,8 +18,8 @@ export function ExposureChart({ country, locale = "en" }: Props) {
       </h3>
       <p className="text-sm leading-relaxed text-foreground-muted">
         {isFinnish
-          ? "Julkaistut demografiset sarjat ja teknologian ajoitus ovat saatavilla maavertailuun. FieldState–ASFR-v2:n maakohtainen analyysi edellyttää lisäksi dokumentoituja paikallisia kenttä- ja päätepistesyötteitä."
-          : "Published demographic series and technology timing are available for country comparison. A country-level FieldState–ASFR-v2 analysis additionally requires documented local field and endpoint inputs."}
+          ? "Julkaistut demografiset sarjat ja teknologian ajoitus ovat saatavilla maavertailuun. BERM v19:n maakohtainen analyysi edellyttää lisäksi dokumentoituja paikallisia kenttä- ja päätepistesyötteitä."
+          : "Published demographic series and technology timing are available for country comparison. A country-level BERM v19 analysis additionally requires documented local field and endpoint inputs."}
       </p>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-3">

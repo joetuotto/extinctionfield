@@ -1,6 +1,6 @@
 """Age-specific ASFR/TFR projection for the FieldState biological route.
 
-This is a new, parallel ``fieldstate-asfr-v2`` route.  It does not modify the
+This is a new, parallel ``berm-v19`` route.  It does not modify the
 active v17 community-sigmoid model or the WPP/v16 data-driven route.
 
 The model preserves the demographic identity rather than fitting a direct
@@ -34,7 +34,7 @@ from berm.biology.reproductive_state import (
 from berm.data.wpp import AGE_GROUPS, asfr_to_tfr
 
 
-FIELDSTATE_ASFR_VERSION = "fieldstate-asfr-v2"
+FIELDSTATE_ASFR_VERSION = "berm-v19"
 
 
 def _finite(name: str, value: float) -> float:
