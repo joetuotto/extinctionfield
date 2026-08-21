@@ -94,10 +94,10 @@ export function Navigation({ locale }: { locale: string }) {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-nav-bg backdrop-blur-md">
-      <div className="max-w-5xl mx-auto flex h-16 items-center justify-between px-6">
+      <div className="max-w-5xl mx-auto flex h-16 items-center justify-between gap-8 px-6">
         <Link
           href={`/${locale}`}
-          className="text-sm font-semibold uppercase leading-none tracking-[0.1em] text-foreground transition-colors hover:text-accent"
+          className="shrink-0 text-sm font-semibold uppercase leading-none tracking-[0.1em] text-foreground transition-colors hover:text-accent"
         >
           Extinction Field
         </Link>
