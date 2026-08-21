@@ -6,7 +6,7 @@ const COPY = {
     sections: [
       [
         "In 2025, Swiss biologist Daniel Favre and Swedish neuroscientist Olle Johansson published a study that should have made front-page news. They placed honeybee colonies inside Faraday cages — metal enclosures that block all electromagnetic fields. The bees, shielded from every radio signal, Wi-Fi transmission, and power line field in their environment, promptly collapsed. Queens stopped laying fertilized eggs. Workers became disoriented. Within weeks, the colonies were dead.",
-        "But here’s the part that changes everything: when the researchers introduced a single frequency back into the shielded hive — the Schumann resonance, Earth’s natural electromagnetic “heartbeat” at 7.83 Hz — the colonies survived.",
+        "But here’s the part that changes everything: when the researchers introduced a single frequency back into the shielded hive — the Schumann resonance, Earth’s natural electromagnetic \"heartbeat\" at 7.83 Hz — the colonies survived.",
         "The bees didn’t need silence. They needed the right signal.",
       ],
       [
@@ -33,13 +33,13 @@ const COPY = {
         "EMF disrupts both.",
         "Grooming decreases under electromagnetic stress. Olfactory sensitivity decreases under electromagnetic stress. Navigation and foraging efficiency decrease, meaning the colony brings in less food, meaning fewer resources for immune function. Stress proteins activate, diverting metabolic energy from defense to damage repair. The queen lays fewer viable eggs, weakening the colony’s ability to replace lost workers.",
         "Meanwhile, Varroa is structurally protected.",
-        "The adult Varroa mite wears what one researcher described as “military-grade arthropod armour” — a thick sclerotin protein coat that is nearly impervious to the bee’s grooming attempts. This same rigid exoskeleton likely attenuates electromagnetic fields far more effectively than the bee’s relatively thin, flexible cuticle. At 1.6 millimeters long, the mite is too small for resonant absorption at any environmental EMF frequency. Its parasitic strategy — injecting salivary chemicals to keep the feeding wound open and suppress host immune response — is biochemical, not electromagnetic.",
+        "The adult Varroa mite wears what one researcher described as \"military-grade arthropod armour\" — a thick sclerotin protein coat that is nearly impervious to the bee’s grooming attempts. This same rigid exoskeleton likely attenuates electromagnetic fields far more effectively than the bee’s relatively thin, flexible cuticle. At 1.6 millimeters long, the mite is too small for resonant absorption at any environmental EMF frequency. Its parasitic strategy — injecting salivary chemicals to keep the feeding wound open and suppress host immune response — is biochemical, not electromagnetic.",
         "In short: EMF weakens the host and doesn’t touch the parasite.",
         "This creates a ratchet effect. Each increment of ambient EMF tilts the balance further in Varroa’s favor. The bee’s grooming becomes less effective. Its hygienic behavior becomes less sensitive. Its immune system becomes more burdened. But Varroa’s ability to find, attach to, and feed on its host remains intact — and may even be enhanced if changing electrostatic conditions improve its host-contact efficiency.",
         "The result is that a colony can appear healthy until it suddenly isn’t. The tipping point arrives when Varroa load exceeds the colony’s diminished capacity to resist. This is Colony Collapse Disorder: not a single cause, but a cascade in which EMF is the hidden amplifier that makes every other stressor worse.",
       ],
       [
-        "There is a US patent — number 12,239,107 — for an EMF shield for beehives. The patent’s description states, with remarkable directness: “With EMF transmissions blocked, bees rest better, become more healthy, productive and can better defend the colony against mites and hive beetles.”",
+        "There is a US patent — number 12,239,107 — for an EMF shield for beehives. The patent’s description states, with remarkable directness: \"With EMF transmissions blocked, bees rest better, become more healthy, productive and can better defend the colony against mites and hive beetles.\"",
         "And Favre and Johansson’s Faraday experiment demonstrates the underlying principle: bees need Earth’s natural electromagnetic environment (the Schumann resonance) but are harmed by the artificial electromagnetic environment that we have layered on top of it.",
       ],
       [
@@ -67,7 +67,7 @@ const COPY = {
     sections: [
       [
         "Vuonna 2025 sveitsiläinen biologi Daniel Favre ja ruotsalainen neurotieteilijä Olle Johansson julkaisivat tutkimuksen, jonka olisi pitänyt olla etusivun uutinen. He asettivat mehiläisyhdyskuntia Faradayn häkkeihin — metallikotelointeihin, jotka estävät kaikki sähkömagneettiset kentät. Mehiläiset, suojattuina jokaiselta radiosignaalilta, Wi-Fi-lähetykseltä ja voimalinjakentältä ympäristössään, romahtivat nopeasti. Kuningattaret lopettivat hedelmöitettyjen munien munimisen. Työläiset desorientoituivat. Muutamassa viikossa yhdyskunnat olivat kuolleita.",
-        "Mutta tässä on osa joka muuttaa kaiken: kun tutkijat toivat yhden taajuuden takaisin suojattuun pesään — Schumannin resonanssin, Maan luonnollisen sähkömagneettisen ”sydämenlyönnin” taajuudella 7,83 Hz — yhdyskunnat selväsivat.",
+        "Mutta tässä on osa joka muuttaa kaiken: kun tutkijat toivat yhden taajuuden takaisin suojattuun pesään — Schumannin resonanssin, Maan luonnollisen sähkömagneettisen \"sydämenlyönnin\" taajuudella 7,83 Hz — yhdyskunnat selväsivat.",
         "Mehiläiset eivät tarvinneet hiljaisuutta. Ne tarvitsivat oikean signaalin.",
       ],
       [
@@ -94,13 +94,13 @@ const COPY = {
         "EMF häiritsee molempia.",
         "Sukiminen vähenee sähkömagneettisen stressin alla. Hajuherkkyys vähenee sähkömagneettisen stressin alla. Navigoinnin ja ravinnon hankinnan tehokkuus vähenee, mikä tarkoittaa että yhdyskunta kerää vähemmän ruokaa, mikä tarkoittaa vähemmän resursseja immuunitoimintaan. Stressiproteiiinit aktivoituvat ohjaten metabolista energiaa puolustuksesta vaurioiden korjaamiseen. Kuningatar munii vähemmän elinkelpoisia munia, heikentäen yhdyskunnan kykyä korvata menettyjä työläisiä.",
         "Samaan aikaan Varroa on rakenteellisesti suojattu.",
-        "Aikuinen Varroa-punkki on pukeutunut siihen, mitä eräs tutkija kuvaili ”sotilasluokan niveljalkaishaarniskaksi” — paksuksi sklerotiiniproteiinikerrokseksi, joka on lähes läpäisemätön mehiläisen sukimisyrityksille. Tämä sama jäykkä ulkokuori todennäköisesti vaimentaa sähkömagneettisia kenttiä paljon tehokkaammin kuin mehiläisen suhteellisen ohut, joustava kutiikkeli. 1,6 millimetrin pituisena punkki on liian pieni resonantti-absorptiolle millään ympäristön EMF-taajuudella. Sen loisstrategia — sylkikemikaalien injektointi pitääkseen syöttöhaava auki ja tukahduttaakseen isännän immuunivasteen — on biokemiallinen, ei sähkömagneettinen.",
+        "Aikuinen Varroa-punkki on pukeutunut siihen, mitä eräs tutkija kuvaili \"sotilasluokan niveljalkaishaarniskaksi\" — paksuksi sklerotiiniproteiinikerrokseksi, joka on lähes läpäisemätön mehiläisen sukimisyrityksille. Tämä sama jäykkä ulkokuori todennäköisesti vaimentaa sähkömagneettisia kenttiä paljon tehokkaammin kuin mehiläisen suhteellisen ohut, joustava kutiikkeli. 1,6 millimetrin pituisena punkki on liian pieni resonantti-absorptiolle millään ympäristön EMF-taajuudella. Sen loisstrategia — sylkikemikaalien injektointi pitääkseen syöttöhaava auki ja tukahduttaakseen isännän immuunivasteen — on biokemiallinen, ei sähkömagneettinen.",
         "Lyhyesti: EMF heikentää isäntää eikä koske loiseen.",
         "Tämä luo räikkävaikutuksen. Jokainen lisäys ambient-EMF:ssä kallistaa tasapainoa edelleen Varroan eduksi. Mehiläisen sukiminen muuttuu vähemmän tehokkaaksi. Sen hygieeninen käyttäytyminen muuttuu vähemmän herkäksi. Sen immuunijärjestelmä kuormittuu enemmän. Mutta Varroan kyky löytää, kiinnittyä ja syöttää isännällään säilyy koskemattomana — ja voi jopa tehostua, jos muuttuvat sähköstaattiset olosuhteet parantavat sen isäntäkontaktitehokkuutta.",
         "Tulos on, että yhdyskunta voi vaikuttaa terveltä kunnes se yhtäkkiä ei ole. Käännepiste saapuu kun Varroa-kuorma ylittää yhdyskunnan heikentyneen kyvyn vastustaa. Tämä on Colony Collapse Disorder: ei yksittäinen syy, vaan kaskadi jossa EMF on piilotettu vahvistin, joka tekee jokaisesta muusta stressitekijästä pahemman.",
       ],
       [
-        "On olemassa yhdysvaltalainen patentti — numero 12 239 107 — mehiläispesien EMF-suojalle. Patentin kuvaus toteaa merkittävällä suoruudella: ”Kun EMF-lähetykset estetään, mehiläiset lepäävät paremmin, tulevat terveemmiksi, tuottavammiksi ja pystyvät paremmin puolustamaan yhdyskuntaa punkkeja ja pesäkuoriaisia vastaan.”",
+        "On olemassa yhdysvaltalainen patentti — numero 12 239 107 — mehiläispesien EMF-suojalle. Patentin kuvaus toteaa merkittävällä suoruudella: \"Kun EMF-lähetykset estetään, mehiläiset lepäävät paremmin, tulevat terveemmiksi, tuottavammiksi ja pystyvät paremmin puolustamaan yhdyskuntaa punkkeja ja pesäkuoriaisia vastaan.\"",
         "Ja Favren ja Johanssonin Faraday-koe osoittaa taustalla olevan periaatteen: mehiläiset tarvitsevat Maan luonnollista sähkömagneettista ympäristöä (Schumannin resonanssia), mutta niille on vahingollista keinotekoinen sähkömagneettinen ympäristö, jonka olemme kerrostaneet sen päälle.",
       ],
       [

@@ -86,6 +86,11 @@ type Copy = {
   boundary: readonly string[];
   sourceTitle: string;
   sources: readonly { label: string; href: string; text: string }[];
+  selectionLandscapeTitle: string;
+  selectionLandscapeP1: string;
+  selectionLandscapeP2: string;
+  selectionLandscapeArticleLink: string;
+  selectionLandscapeSentinelLink: string;
   sentinelLink: string;
   measurementLink: string;
   modelLink: string;
@@ -318,6 +323,11 @@ const COPY: Record<Locale, Copy> = {
         text: "A selection claim requires more than an attachment contrast: the contrast must predict feeding success, survival or reproduction across generations, with genotype or heritable phenotype measured independently.",
       },
     ],
+    selectionLandscapeTitle: "EMF as a Novel Evolutionary Selection Pressure",
+    selectionLandscapeP1: "The changed electromagnetic environment creates a new axis of natural selection. Species whose fitness depends on electromagnetic sensing (pollination, navigation, circadian regulation) are at a disadvantage. Species whose fitness depends on chemical or mechanical strategies are relatively advantaged. This differential susceptibility is not a gradual evolutionary pressure — it appeared in less than a century, far too fast for adaptive evolution.",
+    selectionLandscapeP2: "The honeybee-Varroa system is the clearest case study: EMF simultaneously weakens the host and does not affect the parasite, creating a \"double cascade\" that amplifies all other stressors.",
+    selectionLandscapeArticleLink: "Case study: Why the Bees Can't Fight Back",
+    selectionLandscapeSentinelLink: "Full analysis on sentinel page",
     protocolTitle: "Minimal discriminating study design",
     protocol: [
       "Measure surface potential or local static field, geometry, separation distance, material, grounding state, temperature and relative humidity for every trial.",
@@ -603,6 +613,11 @@ const COPY: Record<Locale, Copy> = {
         text: "Valintaväite tarvitsee enemmän kuin kiinnittymiskontrastin: kontrastin on ennustettava ruokinnan onnistumista, selviytymistä tai lisääntymistä sukupolvien yli, ja genotyyppi tai periytyvä fenotyyppi on mitattava erikseen.",
       },
     ],
+    selectionLandscapeTitle: "EMF uutena evolutiivisena valintapaineena",
+    selectionLandscapeP1: "Muuttunut sähkömagneettinen ympäristö luo uuden luonnonvalinnan akselin. Lajit joiden kelpoisuus riippuu sähkömagneettisesta aistimisesta (pölytys, navigointi, vuorokausirytmin säätely) ovat epäedullisessa asemassa. Lajit joiden kelpoisuus riippuu kemiallisista tai mekaanisista strategioista ovat suhteellisesti edullisessa asemassa. Tämä differentiaalinen herkkyys ei ole asteittainen evolutiivinen paine — se ilmaantui alle vuosisadassa, liian nopeasti adaptiiviselle evoluutiolle.",
+    selectionLandscapeP2: "Mehiläis-Varroa-järjestelmä on selkein tapaustutkimus: EMF heikentää samanaikaisesti isäntää eikä vaikuta loiseen, luoden \"kaksinkertaisen kaskadin\" joka vahvistaa kaikkia muita stressitekijöitä.",
+    selectionLandscapeArticleLink: "Tapaustutkimus: Miksi mehiläiset eivät pysty puolustautumaan",
+    selectionLandscapeSentinelLink: "Täysi analyysi sentinellisivulla",
     protocolTitle: "Minimaalinen erottava tutkimusasetelma",
     protocol: [
       "Mittaa jokaisessa kokeessa pintapotentiaali tai paikallinen staattinen kenttä, geometria, erotusetäisyys, materiaali, maadoitustila, lämpötila ja suhteellinen kosteus.",
@@ -866,6 +881,83 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{prediction.text}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* EMF Selection Landscape */}
+      <section className="max-w-4xl border-t border-card-border pt-10">
+        <SectionHeader label={label.predictions} title={d.selectionLandscapeTitle} />
+        <div className="mt-6 space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p>{d.selectionLandscapeP1}</p>
+          <p>{d.selectionLandscapeP2}</p>
+        </div>
+
+        {/* Selection landscape scatter */}
+        <div className="mt-8 rounded-xl border border-card-border bg-card-bg p-5">
+          <div className="relative h-64 sm:h-72">
+            {/* Y axis label */}
+            <div className="absolute left-0 top-0 bottom-8 flex items-center">
+              <span className="text-[0.6875rem] text-foreground-muted -rotate-90 whitespace-nowrap origin-center">
+                {language === "fi" ? "Kelpoisuusmuutos" : "Fitness change"} →
+              </span>
+            </div>
+            {/* X axis label */}
+            <div className="absolute bottom-0 left-8 right-0 text-center">
+              <span className="text-[0.6875rem] text-foreground-muted">
+                {language === "fi" ? "EM-herkkyys" : "EM sensitivity"} →
+              </span>
+            </div>
+            {/* Species dots */}
+            <div className="absolute inset-0 ml-8 mb-8">
+              {/* Grid lines */}
+              <div className="absolute inset-0 border-b border-l border-card-border" />
+              <div className="absolute left-0 right-0 top-1/2 border-t border-dashed border-card-border/50" />
+              {/* Varroa — low sensitivity, fitness improves */}
+              <div className="absolute left-[8%] top-[15%] text-center">
+                <span className="text-lg">🕷️</span>
+                <p className="text-[0.625rem] text-status-confirmed mt-0.5">Varroa</p>
+              </div>
+              {/* Ixodes — low sensitivity, fitness improves */}
+              <div className="absolute left-[15%] top-[22%] text-center">
+                <span className="text-lg">🪲</span>
+                <p className="text-[0.625rem] text-status-confirmed mt-0.5">Ixodes</p>
+              </div>
+              {/* Human — medium sensitivity */}
+              <div className="absolute left-[48%] top-[52%] text-center">
+                <span className="text-lg">👤</span>
+                <p className="text-[0.625rem] text-foreground-muted mt-0.5">{language === "fi" ? "Ihminen" : "Human"}</p>
+              </div>
+              {/* Moth — high sensitivity */}
+              <div className="absolute left-[68%] top-[62%] text-center">
+                <span className="text-lg">🦋</span>
+                <p className="text-[0.625rem] text-status-refuted mt-0.5">{language === "fi" ? "Yöperhonen" : "Moth"}</p>
+              </div>
+              {/* Bat — high sensitivity */}
+              <div className="absolute left-[72%] top-[72%] text-center">
+                <span className="text-lg">🦇</span>
+                <p className="text-[0.625rem] text-status-refuted mt-0.5">{language === "fi" ? "Lepakko" : "Bat"}</p>
+              </div>
+              {/* Honeybee — very high sensitivity */}
+              <div className="absolute left-[85%] top-[78%] text-center">
+                <span className="text-lg">🐝</span>
+                <p className="text-[0.625rem] text-status-refuted mt-0.5">{language === "fi" ? "Mehiläinen" : "Honeybee"}</p>
+              </div>
+              {/* Migratory bird — very high sensitivity */}
+              <div className="absolute left-[88%] top-[85%] text-center">
+                <span className="text-lg">🐦</span>
+                <p className="text-[0.625rem] text-status-refuted mt-0.5">{language === "fi" ? "Muuttolintu" : "Bird"}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-4 text-sm">
+          <Link href={`/${language}/sentinel`} className="text-accent hover:underline">
+            {d.selectionLandscapeSentinelLink} →
+          </Link>
+          <Link href={`/${language}/articles/bees`} className="text-accent hover:underline">
+            {d.selectionLandscapeArticleLink} →
+          </Link>
         </div>
       </section>
 

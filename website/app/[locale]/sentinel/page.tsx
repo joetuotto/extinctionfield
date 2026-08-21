@@ -137,6 +137,9 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
+      {/* Varroa cascade */}
+      <VarroaCascade locale={activeLocale} />
+
       {/* Nike radar spatial gradient */}
       <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
         <h2 className="editorial-section-heading mb-4">{d.nikeTitle}</h2>

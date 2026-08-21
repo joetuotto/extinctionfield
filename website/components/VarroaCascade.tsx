@@ -59,7 +59,7 @@ const COPY = {
     result: "Tulos: jokainen lisäys ambient-EMF:ssä kallistaa tasapainoa edelleen Varroan eduksi. Loinen on suojattu; isäntä ei ole.",
     favreTitle: "Faraday-koe (Favre & Johansson 2025)",
     favreText: "Faradayn häkkiin (kaikki EMF mukaan lukien luonnolliset kentät estetty) asetetut mehiläisyhdyskunnat romahtivat — kuningattaret lopettivat hedelmöitettyjen munien munimisen. Mutta yhdyskunnat Faradayn häkeissä JOISSA oli keinotekoinen Schumannin resonanssi (7,83 Hz) selvisivät. Mehiläiset tarvitsevat Maan luonnollista sähkömagneettista ympäristöä mutta niille on vahingollista keinotekoinen EMF joka on kerrostettu sen päälle.",
-    favreFootnote: 'US Patent 12 239 107 toteaa: "Kun EMF-lähetykset estetään, mehiläiset pystyvät paremmin puolustamaan yhdyskuntaa punkkeja ja pesäkuoriaisia vastaan."',
+    favreFootnote: `US Patent 12 239 107 toteaa: "Kun EMF-lähetykset estetään, mehiläiset pystyvät paremmin puolustamaan yhdyskuntaa punkkeja ja pesäkuoriaisia vastaan."`,
     readMore: "Lue koko tarina",
   },
 } as const;

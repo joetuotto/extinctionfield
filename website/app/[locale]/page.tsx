@@ -5,6 +5,7 @@ import CausalChain from "@/components/CausalChain";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
 import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
+import { LatestArticles } from "@/components/LatestArticles";
 
 const IMPACT_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote, Activity] as const;
 
@@ -144,6 +145,9 @@ export default async function Home({
           </Link>
         </div>
       </section>
+
+      {/* ── Featured article ── */}
+      <LatestArticles locale={activeLocale} />
 
       {/* ── Locked predictions ── */}
       <section className="pb-20">

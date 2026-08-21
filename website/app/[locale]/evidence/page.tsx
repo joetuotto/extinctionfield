@@ -12,6 +12,7 @@ import { TherapeuticFrequencyMap } from "@/components/TherapeuticFrequencyMap";
 import { CellSizeFrequencyMatrix } from "@/components/CellSizeFrequencyMatrix";
 import { ThreeChannelDiagram } from "@/components/ThreeChannelDiagram";
 import { RetrodictionCards } from "@/components/RetrodictionCards";
+import { DifferentialSusceptibility } from "@/components/DifferentialSusceptibility";
 import {
   causalNodeLabels,
   FIELDSTATE_EVIDENCE,
@@ -721,6 +722,9 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.sentinel}</p>
         <Link href={`/${activeLocale}/sentinel`} className="text-sm text-accent hover:underline">{d.sentinelLink} →</Link>
       </section>
+
+      {/* BERM-Eco differential susceptibility */}
+      <DifferentialSusceptibility locale={activeLocale} />
 
       <section className="mb-14">
         <HindcastValidation locale={activeLocale} />
