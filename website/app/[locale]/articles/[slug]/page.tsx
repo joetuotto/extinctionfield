@@ -6,6 +6,7 @@ import { ArrowRight, ArrowLeft, Clock, Calendar } from "lucide-react";
 import { getArticleBySlug, ARTICLES } from "@/lib/articles";
 import type { Locale } from "@/lib/i18n";
 import { BeeArticleContent } from "./BeeArticleContent";
+import { SpectrumArticleContent } from "./SpectrumArticleContent";
 
 const COPY = {
   en: {
@@ -86,6 +87,10 @@ export default async function ArticlePage({
           {isFi ? article.subtitleFi : article.subtitle}
         </p>
         <div className="flex flex-wrap items-center gap-4 text-sm text-foreground-muted">
+          <span>Otto Juote</span>
+          <span className="text-foreground-muted/40">·</span>
+          <span>MSc LSE</span>
+          <span className="text-foreground-muted/40">·</span>
           <span className="inline-flex items-center gap-1.5">
             <Calendar size={14} />
             {new Date(article.publishedDate).toLocaleDateString(
@@ -93,6 +98,7 @@ export default async function ArticlePage({
               { year: "numeric", month: "long", day: "numeric" },
             )}
           </span>
+          <span className="text-foreground-muted/40">·</span>
           <span className="inline-flex items-center gap-1.5">
             <Clock size={14} />
             {article.readingTimeMinutes} {d.minRead}
@@ -114,6 +120,7 @@ export default async function ArticlePage({
 
       {/* Article body */}
       {slug === "bees" && <BeeArticleContent locale={activeLocale} />}
+      {slug === "spectrum" && <SpectrumArticleContent locale={activeLocale} />}
 
       {/* End navigation */}
       <footer className="mt-16 pt-8 border-t border-card-border">

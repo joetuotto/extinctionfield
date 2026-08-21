@@ -32,6 +32,20 @@ export const ARTICLES: Article[] = [
     ogImage: "/images/articles/bee-og.webp",
     thumbImage: "/images/articles/bee-thumb.webp",
   },
+  {
+    id: "spectrum",
+    slug: "spectrum",
+    title: "The Spectrum of Proof",
+    titleFi: "Todistuksen spektri",
+    subtitle:
+      "Every frequency has been proven biologically active — except the one worth $1.9 trillion a year",
+    subtitleFi:
+      "Jokainen taajuus on todistettu biologisesti aktiiviseksi — paitsi se joka on 1,9 biljoonan dollarin arvoinen vuodessa",
+    icon: "⚡",
+    publishedDate: "2026-08-22",
+    readingTimeMinutes: 14,
+    tags: ["therapeutic", "FDA", "paradox"],
+  },
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {

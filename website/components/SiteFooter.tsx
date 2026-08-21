@@ -5,15 +5,17 @@ import Link from "next/link";
 const COPY = {
   en: {
     label: "BERM v19 · Bio-Electromagnetic Reproductive Model",
-    summary: "BERM v19 framework. Predictions calibrated with v18. Explorer data from v17.",
+    summary: "Three-channel framework (ELF · IF · RF). 474 peer-reviewed references.",
     license: "Code: MIT · Docs: CC BY-4.0",
     specLink: "Model specification",
+    author: "Otto Juote · MSc Biomedicine (LSE) · Independent research",
   },
   fi: {
     label: "BERM v19 · Bio-sähkömagneettinen lisääntymismalli",
-    summary: "BERM v19 -kehys. Ennusteet kalibroitu v18:lla. Explorer-data versiosta v17.",
+    summary: "Kolmikanavakehys (ELF · IF · RF). 474 vertaisarvioitua viitettä.",
     license: "Koodi: MIT · Docs: CC BY-4.0",
     specLink: "Mallin määrittely",
+    author: "Otto Juote · MSc Biomedicine (LSE) · Itsenäinen tutkimus",
   },
 } as const;
 
@@ -41,6 +43,9 @@ export function SiteFooter({ locale }: { locale: string }) {
           </Link>
           <p className="text-xs text-foreground-muted/60">{c.license}</p>
         </div>
+      </div>
+      <div className="max-w-5xl mx-auto mt-4 pt-3 border-t border-border/50">
+        <p className="text-xs text-foreground-muted/50">{c.author}</p>
       </div>
     </footer>
   );
