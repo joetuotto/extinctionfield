@@ -157,12 +157,12 @@ export async function generateMetadata({
     ? {
         title: "Datalähteet - Extinction Field",
         description:
-          "BERM BERM v19:n teknologiakehityksen ajoitusproksit, ehdokas-RF-mittaustietueet, demografiset sarjat ja päätepistereferenssit.",
+          "BERM v19:n teknologiakehityksen ajoitusproksit, ehdokas-RF-mittaustietueet, demografiset sarjat ja päätepistereferenssit.",
       }
     : {
         title: "Data Sources - Extinction Field",
         description:
-          "BERM BERM v19 technology-timing proxies, candidate RF measurement records, demographic series and endpoint references.",
+          "BERM v19 technology-timing proxies, candidate RF measurement records, demographic series and endpoint references.",
       };
 }
 

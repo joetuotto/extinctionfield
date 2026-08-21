@@ -104,7 +104,7 @@ export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" })
       viewBox={`0 0 ${VIEWBOX_W[locale]} 330`}
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label={locale === "fi" ? "BERM BERM v19-kausaalireitti" : "BERM BERM v19 causal route"}
+      aria-label={locale === "fi" ? "BERM v19-kausaalireitti" : "BERM v19 causal route"}
       style={{
         width: "100%",
         // Below this the parent's overflow-x-auto scrolls, rather than

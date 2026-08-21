@@ -305,7 +305,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
       {/* v2 status */}
       <section className="mb-14 rounded-xl border border-status-partial/30 bg-status-partial/5 p-6 max-w-4xl">
-        <p className="text-xs uppercase tracking-[0.16em] text-status-partial font-semibold mb-2">FIELDSTATE–ASFR v2</p>
+        <p className="text-xs uppercase tracking-[0.16em] text-status-partial font-semibold mb-2">BERM v19</p>
         <h2 className="text-xl font-semibold mb-2">{d.v2Title}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.v2Status}</p>
         <p className="text-xs text-foreground-muted leading-relaxed italic">{d.v2Note}</p>

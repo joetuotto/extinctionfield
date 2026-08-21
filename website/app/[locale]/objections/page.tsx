@@ -49,7 +49,7 @@ const t: Record<Locale, Copy> = {
     subtitle:
       "Every identified negative finding, open problem and falsified earlier version — and what each one actually bears on.",
     introduction:
-      "BERM BERM v19 treats openness as an epistemological principle. The classification below applies the BERM reasoning protocol (v1.0) to findings previously read as negative. Reclassification does not mean a finding supports BERM: it means the original test was not discriminating, or did not address the target it was taken to address. The primary branch (pathway C / RPM / cohort effect) remains empirically untested by discriminating tests.",
+      "BERM v19 treats openness as an epistemological principle. The classification below applies the BERM reasoning protocol (v1.0) to findings previously read as negative. Reclassification does not mean a finding supports BERM: it means the original test was not discriminating, or did not address the target it was taken to address. The primary branch (pathway C / RPM / cohort effect) remains empirically untested by discriminating tests.",
     summaryLabel: "REVIEW OF NEGATIVE FINDINGS",
     activeTitle: "Active problems (remain negative)",
     activeLead:
@@ -184,7 +184,7 @@ const t: Record<Locale, Copy> = {
     subtitle:
       "Kaikki tunnistetut negatiiviset havainnot, avoimet ongelmat ja falsifioidut aiemmat versiot — sekä se, mitä kukin niistä todella koskee.",
     introduction:
-      "BERM BERM v19 pitää avoimuutta epistemologisena periaatteena. Alla oleva luokittelu soveltaa BERM-päättelyprotokollaa (v1.0) aiemmin negatiivisiksi tulkittuihin havaintoihin. Uudelleenluokittelu ei tarkoita, että havainto tukisi BERM:ää — se tarkoittaa, ettei alkuperäinen testi ollut erotteleva tai kohdistui oikeaan kohteeseen. BERM:n primäärihaara (polku C / RPM / kohorttivaikutus) on edelleen empiirisesti testaamaton erottelevilla testeillä.",
+      "BERM v19 pitää avoimuutta epistemologisena periaatteena. Alla oleva luokittelu soveltaa BERM-päättelyprotokollaa (v1.0) aiemmin negatiivisiksi tulkittuihin havaintoihin. Uudelleenluokittelu ei tarkoita, että havainto tukisi BERM:ää — se tarkoittaa, ettei alkuperäinen testi ollut erotteleva tai kohdistui oikeaan kohteeseen. BERM:n primäärihaara (polku C / RPM / kohorttivaikutus) on edelleen empiirisesti testaamaton erottelevilla testeillä.",
     summaryLabel: "NEGATIIVISTEN HAVAINTOJEN UUDELLEENARVIOINTI",
     activeTitle: "Aktiiviset ongelmat (pysyvät negatiivisina)",
     activeLead:

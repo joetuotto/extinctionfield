@@ -8,6 +8,7 @@ import { SentinelCascade } from "@/components/SentinelCascade";
 import { SentinelCascadeTimeline } from "@/components/SentinelCascadeTimeline";
 import { NikeBBSScatter } from "@/components/NikeBBSScatter";
 import { PulseProfile } from "@/components/PulseProfile";
+import { VarroaCascade } from "@/components/VarroaCascade";
 
 const COPY = {
   en: {
