@@ -153,7 +153,7 @@ const t = {
     ],
 
     modulomeTitle: "EMF Modulome",
-    modulomeDesc: "The eight-layer modulome synthesizes five independent research traditions — Becker's DC control system, Adee's electrome, Levin's bioelectric code, Lindgren's geometric framework, and the chromophore generalization (CCO/CRY) — into a unified model of EMF biological susceptibility. Each layer is independently supported by regulatory-approved therapeutic devices that exploit the same mechanism.",
+    modulomeDesc: "The nine-layer modulome synthesizes six independent research traditions — Becker's DC control system, Adee's electrome, Levin's bioelectric code, Lindgren's geometric framework, the chromophore generalization (CCO/CRY), and the Cyb5b EMF receptor (Kim 2026, Cell) — into a unified model of EMF biological susceptibility. Each layer is independently supported by regulatory-approved therapeutic devices that exploit the same mechanism.",
 
     btnEvidence: "Browse evidence",
     btnPredictions: "View predictions",
