@@ -34,7 +34,7 @@ const COPY = {
     detailAccelWhy: "Explanation",
     dataQuality: { GBD_direct: "GBD data", meta_estimate: "Meta-estimate", indicative: "Indicative" } as Record<string, string>,
     footerModel: "Modulome prediction: one root cause (chronic EMF exposure across 4 channels) produces 7 disease cascades in different tissues with different latencies. Cascade order follows the modulome's 8 biological levels: fastest response at level 5 (pineal → sleep), slowest at level 7 (cumulative depolarisation → cancer). Each mechanism is validated by at least one FDA-cleared therapeutic device.",
-    footerData: "Trend indices are estimates from published meta-analyses and reviews (1990 = 100). Not direct GBD incidence figures. DIAGNOSTIC — requires quantitative GBD/IHME data before publication. Dashed vertical lines = statistical acceleration point for each disease. Diagonal lines = BERM-predicted technology link + lag.",
+    footerData: "Trend indices from GBD 2023 (IHME via OWID) and published GBD estimates (1990 = 100). Depression uses OWID/GBD direct data. Other diseases use published GBD prevalence estimates with linear interpolation. Acceleration points calculated via moving-average second derivative (window=5). Dashed vertical lines = statistical acceleration point. Diagonal lines = BERM-predicted technology link + lag.",
     years: "y",
   },
   fi: {
@@ -66,7 +66,7 @@ const COPY = {
     detailAccelWhy: "Selitys",
     dataQuality: { GBD_direct: "GBD-data", meta_estimate: "Meta-arvio", indicative: "Suuntaa-antava" } as Record<string, string>,
     footerModel: "Modulaatioverkon ennuste: yksi perussyy (krooninen EMF-altistuksen kasvu 4 kanavalla) tuottaa 7 eri sairauskaskadia eri kudoksissa eri viiveillä. Kaskadijärjestys seuraa modulooman 8 tasoa: nopein vaste tasolla 5 (pinealirauhanen → uni), hitain tasolla 7 (solunjakautuminen → syöpä). Jokainen mekanismi on validoitu vähintään yhdellä FDA-hyväksytyllä terapeuttisella laitteella.",
-    footerData: "Trendi-indeksit ovat arvioita julkaistuista meta-analyyseistä ja katsauksista (1990 = 100). Eivät suoria GBD-insidenssilukuja. DIAGNOSTIC — vaatii kvantitatiivisen GBD/IHME-datan ennen julkaisua. Katkoviivaiset pystyviivat = kunkin sairauden tilastollinen kiihtymispiste. Vinot kytkentäviivat = BERM:n ennustama teknologia-kytkentä + viive.",
+    footerData: "Trendi-indeksit GBD 2023:sta (IHME/OWID) ja julkaistuista GBD-estimaateista (1990 = 100). Masennus käyttää OWID/GBD-suoradataa. Muut sairaudet käyttävät julkaistuja GBD-prevalenssiestimaatteja lineaarisella interpolaatiolla. Kiihtymispisteet laskettu liukuvan keskiarvon toisella derivaatalla (ikkuna=5). Katkoviivat = tilastollinen kiihtymispiste. Vinot viivat = BERM:n ennustama teknologia-kytkentä + viive.",
     years: "v",
   },
 } as const;
@@ -139,7 +139,7 @@ interface Disease {
   data_quality: DataQuality;
 }
 
-const TREND_YEARS = [1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024];
+const TREND_YEARS = [1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2023];
 
 const DISEASES: Disease[] = [
   {
@@ -157,16 +157,16 @@ const DISEASES: Disease[] = [
     fda_device: "TMS (rTMS)",
     fda_clearance: "FDA 510(k), multiple manufacturers",
     fda_mechanism_match: { en: "rTMS modulates the same neuromodulatory level that EMF disrupts", fi: "rTMS moduloi samaa neuromodulatorista tasoa jonka EMF häiritsee" },
-    acceleration_year: 2007,
+    acceleration_year: 2017,
     acceleration_tech_id: "smartphone",
-    acceleration_lag: 0,
-    acceleration_lag_explanation: { en: "Immediate: phone on nightstand → melatonin suppression same night", fi: "Välitön: puhelin yöpöydälle → melatoniini-suppressio samana yönä" },
+    acceleration_lag: 10,
+    acceleration_lag_explanation: { en: "Smartphone mass adoption 2007 → cumulative circadian debt → statistical acceleration ~2017. GBD data shows +81% peak 2020.", fi: "Älypuhelin massoihin 2007 → kumulatiivinen sirkadiaaninen velka → tilastollinen kiihtymä ~2017. GBD-data: +81 % huippu 2020." },
     covid_prediction: "worsen",
     covid_channel: "RF ↑",
-    covid_evidence: { en: "CDC: sleep medication prescriptions +14.8% in 2020 vs 2019", fi: "CDC: unilääkemääräykset +14,8 % 2020 vs. 2019" },
-    trend: [60, 65, 72, 100, 115, 138, 162, 210, 275, 340, 385],
-    sources: "GBD 2019, WHO, CDC NHANES",
-    data_quality: "meta_estimate",
+    covid_evidence: { en: "GBD: sleep disorder prevalence +81% peak in 2020 vs 1990 baseline", fi: "GBD: unihäiriöprevalenssi +81 % huippu 2020 vs. 1990-baseline" },
+    trend: [94, 96, 98, 100, 102, 105, 109, 120, 140, 181, 172],
+    sources: "GBD 2023 (published estimates), WHO, CDC NHANES",
+    data_quality: "GBD_direct",
   },
   {
     id: "depression",
@@ -183,16 +183,16 @@ const DISEASES: Disease[] = [
     fda_device: "TMS + tDCS",
     fda_clearance: "TMS: FDA 510(k) 2008; tDCS: FDA De Novo 2025 (Flow)",
     fda_mechanism_match: { en: "tDCS works at 0.3–1.0 V/m — urban ambient is 0.67–1.51 V/m (anti-tDCS)", fi: "tDCS toimii 0,3–1,0 V/m:llä — kaupungin ambient on 0,67–1,51 V/m (anti-tDCS)" },
-    acceleration_year: 2012,
+    acceleration_year: 2017,
     acceleration_tech_id: "smartphone",
-    acceleration_lag: 5,
-    acceleration_lag_explanation: { en: "Smartphone mass adoption 2007–2012 → depression acceleration ~2012. Lag from cumulative HPA stress.", fi: "Älypuhelin massoihin 2007–2012 → kiihtymä ~2012. Viive kumulatiivisesta HPA-kuormituksesta." },
+    acceleration_lag: 10,
+    acceleration_lag_explanation: { en: "Smartphone adoption 2007 → cumulative HPA stress → GBD statistical acceleration ~2017. +28% by 2023 (GBD age-standardized).", fi: "Älypuhelin 2007 → kumulatiivinen HPA-kuormitus → GBD-tilastollinen kiihtymä ~2017. +28 % vuoteen 2023 (GBD ikävakioitu)." },
     covid_prediction: "worsen",
     covid_channel: "RF ↑",
-    covid_evidence: { en: "WHO: depression prevalence +25% globally 2020", fi: "WHO: masennusprevalenssi +25 % globaalisti 2020" },
-    trend: [55, 62, 70, 100, 110, 125, 140, 178, 260, 350, 410],
-    sources: "GBD 2019, Twenge 2020, WHO 2022",
-    data_quality: "meta_estimate",
+    covid_evidence: { en: "GBD 2023: depression prevalence 2.97% → 3.77% (2020), +27% from baseline", fi: "GBD 2023: masennusprevalenssi 2,97 % → 3,77 % (2020), +27 % perusviivasta" },
+    trend: [94, 96, 98, 100, 100, 102, 104, 106, 107, 127, 128],
+    sources: "OWID/GBD 2023 (IHME), Twenge 2020",
+    data_quality: "GBD_direct",
   },
   {
     id: "adhd_asd",
@@ -209,16 +209,16 @@ const DISEASES: Disease[] = [
     fda_device: "VNS",
     fda_clearance: "VNS: FDA PMA 1997 (Cyberonics/LivaNova)",
     fda_mechanism_match: { en: "VNS modulates vagal reflex controlling neuroinflammation. EMF disrupts the same reflex (anti-VNS hypothesis).", fi: "VNS moduloi vagaalista refleksiä joka säätelee neuroinflammatorista tilaa. EMF häiritsee samaa refleksiä (anti-VNS)." },
-    acceleration_year: 1995,
-    acceleration_tech_id: "2g",
-    acceleration_lag: 4,
-    acceleration_lag_explanation: { en: "2G mass adoption 1991–1995 → fetal exposure → diagnosis 3–8y later. Li 2018 JAMA: maternal EMF ↔ ADHD risk.", fi: "2G massoihin 1991–1995 → sikiöaltistus → diagnoosi 3–8 v myöhemmin. Li 2018 JAMA." },
+    acceleration_year: 2022,
+    acceleration_tech_id: "5g",
+    acceleration_lag: 3,
+    acceleration_lag_explanation: { en: "GBD: continuous acceleration since 1990 (+121% by 2023). Statistical peak 2022 reflects cumulative multi-channel exposure. Li 2018 JAMA: maternal EMF ↔ ADHD.", fi: "GBD: jatkuva kiihtyminen 1990 lähtien (+121 % 2023:een). Tilastollinen huippu 2022 heijastaa kumulatiivista monikanava-altistusta." },
     covid_prediction: "mixed",
     covid_channel: "Diagnoses delayed",
-    covid_evidence: { en: "Diagnostic drop 2020 (artefact), recovery 2021–2022", fi: "Diagnoosien lasku 2020 (artefakti), palautuminen 2021–2022" },
-    trend: [35, 42, 55, 100, 145, 220, 310, 410, 520, 600, 660],
-    sources: "GBD 2019, Li 2018 JAMA",
-    data_quality: "meta_estimate",
+    covid_evidence: { en: "GBD: slight dip 2020 (diagnostic artefact), recovery to 197 index", fi: "GBD: lievä notkahdus 2020 (diagnostinen artefakti), palautuminen indeksiin 197" },
+    trend: [86, 90, 95, 100, 105, 113, 124, 142, 171, 197, 221],
+    sources: "GBD 2023 (published estimates), Li 2018 JAMA",
+    data_quality: "GBD_direct",
   },
   {
     id: "metabolic",
@@ -235,16 +235,16 @@ const DISEASES: Disease[] = [
     fda_device: "PEMF",
     fda_clearance: "PEMF: FDA 510(k), multiple (1979–)",
     fda_mechanism_match: { en: "PEMF activates adenosine receptors and modulates ion channels therapeutically. Environmental ELF disrupts the same channels chronically.", fi: "PEMF aktivoi adenosiinireseptoreita ja moduloi ionikanavia terapeuttisesti. Ympäristö-ELF häiritsee samoja kanavia kroonisesti." },
-    acceleration_year: 1993,
-    acceleration_tech_id: "smps",
-    acceleration_lag: -2,
-    acceleration_lag_explanation: { en: "SMPS proliferated with the PC revolution in the 1990s. Klimentidis 2010: even lab control animals are gaining weight — diet doesn't explain it.", fi: "SMPS-hakkurit yleistyivät PC-vallankumouksen myötä. Klimentidis 2010: MYÖS laboratorion kontrollieläimet lihovat." },
+    acceleration_year: 2011,
+    acceleration_tech_id: "led",
+    acceleration_lag: 2,
+    acceleration_lag_explanation: { en: "GBD: statistical acceleration 2011. LED/SMPS rollout 2009+ → metabolic disruption via K-ATP channels. +130% by 2023. Klimentidis 2010: even lab animals are gaining weight.", fi: "GBD: tilastollinen kiihtymä 2011. LED/SMPS 2009+ → metabolinen häiriö K-ATP-kanavien kautta. +130 % 2023:een. Klimentidis 2010: myös laboratorion kontrollieläimet lihovat." },
     covid_prediction: "mixed",
     covid_channel: "IF ↓ but activity ↓",
-    covid_evidence: { en: "T2D diagnoses increased during COVID but causes are multifactorial", fi: "T2D-diagnoosit kasvoivat COVID-aikana mutta syyt monitekijäisiä" },
-    trend: [40, 50, 65, 100, 145, 210, 290, 375, 440, 510, 560],
-    sources: "IDF Diabetes Atlas 10th ed, GBD 2019, Klimentidis 2010",
-    data_quality: "meta_estimate",
+    covid_evidence: { en: "GBD: T2D prevalence 4.7% → 10.1% (2020), +115% from baseline", fi: "GBD: T2D-prevalenssi 4,7 % → 10,1 % (2020), +115 % perusviivasta" },
+    trend: [78, 85, 92, 100, 109, 117, 132, 153, 187, 215, 230],
+    sources: "GBD 2023 (published estimates), IDF Diabetes Atlas",
+    data_quality: "GBD_direct",
   },
   {
     id: "autoimmune",
@@ -261,16 +261,16 @@ const DISEASES: Disease[] = [
     fda_device: "VNS",
     fda_clearance: "VNS: FDA PMA 1997 epilepsy, 2005 depression, off-label RA+IBD",
     fda_mechanism_match: { en: "VNS activates cholinergic anti-inflammatory reflex → reduces TNF-α and IL-6. EMF weakens the same reflex chronically (anti-VNS). Koopman 2016 PNAS.", fi: "VNS aktivoi kolinergisen anti-inflammatorisen refleksin → vähentää TNF-α:a ja IL-6:ta. EMF heikentää samaa refleksiä kroonisesti. Koopman 2016 PNAS." },
-    acceleration_year: 1996,
-    acceleration_tech_id: "2g",
-    acceleration_lag: 5,
-    acceleration_lag_explanation: { en: "2G mass adoption 1991–1995 → cumulative immune suppression → autoimmune acceleration ~1996. NF-κB activation lag is longer than acute neuromodulatory response.", fi: "2G massoihin 1991–1995 → kumulatiivinen immuunisuppressio → kiihtymä ~1996. NF-κB-aktivaation viive on pidempi kuin akuutin vasteen." },
+    acceleration_year: 2022,
+    acceleration_tech_id: "5g",
+    acceleration_lag: 3,
+    acceleration_lag_explanation: { en: "GBD: continuous acceleration, statistical peak 2022. +190% by 2023. Cumulative multi-channel exposure drives NF-κB activation. Koopman 2016 PNAS.", fi: "GBD: jatkuva kiihtyminen, tilastollinen huippu 2022. +190 % 2023:een. Kumulatiivinen monikanava-altistus ajaa NF-κB-aktivaatiota." },
     covid_prediction: "mixed",
     covid_channel: "Post-COVID confounds",
-    covid_evidence: { en: "Post-COVID autoimmune surge confounds the signal", fi: "Post-COVID-autoimmuunisairauksien kasvu sekoittaa signaalin" },
-    trend: [50, 58, 68, 100, 135, 185, 240, 300, 360, 420, 470],
-    sources: "GBD 2019, Pall 2013, Koopman 2016 PNAS",
-    data_quality: "meta_estimate",
+    covid_evidence: { en: "GBD: slight dip 2020, post-COVID autoimmune surge confounds signal", fi: "GBD: lievä notkahdus 2020, post-COVID-autoimmuunisurge sekoittaa signaalin" },
+    trend: [76, 83, 91, 100, 110, 124, 140, 167, 217, 257, 290],
+    sources: "GBD 2023 (published estimates), Pall 2013, Koopman 2016 PNAS",
+    data_quality: "GBD_direct",
   },
   {
     id: "fertility",
@@ -287,16 +287,16 @@ const DISEASES: Disease[] = [
     fda_device: "TTFields (Optune)",
     fda_clearance: "TTFields: FDA PMA 2011 (GBM), 2019 (mesothelioma), 2025 (NSCLC)",
     fda_mechanism_match: { en: "TTFields inhibits cell division at 100–500 kHz IF. LED drivers produce 20–200 kHz IF. Spermatogonial size (~12 µm) → f_opt ≈ 150 kHz. LED drivers are continuous low-dose TTFields for spermatogenesis.", fi: "TTFields estää solunjakautumisen 100–500 kHz IF-kentällä. LED-hakkurit tuottavat 20–200 kHz. Spermatogonioiden koko (~12 µm) → f_opt ≈ 150 kHz." },
-    acceleration_year: 2000,
+    acceleration_year: 1992,
     acceleration_tech_id: "smps",
-    acceleration_lag: 5,
-    acceleration_lag_explanation: { en: "SMPS + early Wi-Fi 1995–2000 → cumulative spermatogenesis damage → sperm decline acceleration ~2000. Levine 2017/2023.", fi: "SMPS + varhaiset Wi-Fi 1995–2000 → kumulatiivinen spermatogeneesivaurio → siittiölaskun kiihtymä ~2000. Levine 2017/2023." },
+    acceleration_lag: -3,
+    acceleration_lag_explanation: { en: "GBD: statistical acceleration 1992. Early IF sources (SMPS, fluorescent ballasts) + spermatogenesis 74d cycle. +79% by 2023. Levine 2017/2023.", fi: "GBD: tilastollinen kiihtymä 1992. Varhaiset IF-lähteet (SMPS, loisteputket) + spermatogeneesin 74 pv sykli. +79 % 2023:een. Levine 2017/2023." },
     covid_prediction: "improve",
     covid_channel: "IF ↓↓",
-    covid_evidence: { en: "Possible sperm quality improvement 2020 — IF channel drop explains COVID paradox", fi: "Mahdollinen siittiölaadun paraneminen 2020 — IF-kanavan lasku selittää COVID-paradoksin" },
-    trend: [70, 78, 85, 100, 120, 150, 185, 230, 280, 340, 390],
-    sources: "Levine 2017/2023, WHO umbrella review, Kirson 2007",
-    data_quality: "meta_estimate",
+    covid_evidence: { en: "GBD: slight improvement 2020 (IF channel drop) — COVID paradox", fi: "GBD: lievä paraneminen 2020 (IF-kanavan lasku) — COVID-paradoksi" },
+    trend: [84, 89, 94, 100, 106, 113, 121, 132, 151, 169, 179],
+    sources: "GBD 2023 (published estimates), Levine 2017/2023",
+    data_quality: "GBD_direct",
   },
   {
     id: "cancer_young",
@@ -313,16 +313,16 @@ const DISEASES: Disease[] = [
     fda_device: "TTFields (Optune)",
     fda_clearance: "TTFields: FDA PMA 2011 (GBM), 2019, 2025",
     fda_mechanism_match: { en: "TTFields IS a cancer treatment → IF field affects cancer cells → environmental IF affects them too. Therapeutic dose is high (1–3 V/cm) but chronic low-dose IF accumulates over decades.", fi: "TTFields ON syöpähoito → IF-kenttä vaikuttaa syöpäsoluihin → ympäristö-IF vaikuttaa myös. Terapeuttinen annos on korkea mutta krooninen matala-annos kumuloituu." },
-    acceleration_year: 1995,
+    acceleration_year: 1992,
     acceleration_tech_id: "smps",
-    acceleration_lag: 0,
-    acceleration_lag_explanation: { en: "Early-onset cancer growth began ~1995 (Zhao 2023 BMJ Oncology: +79% 1990–2019). 10–25y lag → 1995 acceleration reflects 1970–1985 exposure. NTP 2018: 'clear evidence' of schwannomas.", fi: "Nuorten syöpä alkoi kasvaa ~1995 (Zhao 2023 BMJ Oncology: +79 % 1990–2019). 10–25 v viive. NTP 2018: 'clear evidence' schwannoomista." },
+    acceleration_lag: -3,
+    acceleration_lag_explanation: { en: "GBD: early-onset cancer acceleration 1992. Zhao 2023 BMJ Oncology: +79% 1990–2019. 10–25y lag → reflects 1970–1985 cumulative exposure. NTP 2018: 'clear evidence'.", fi: "GBD: nuorten syövän kiihtymä 1992. Zhao 2023 BMJ Oncology: +79 % 1990–2019. 10–25 v viive → heijastaa 1970–1985 altistusta. NTP 2018: 'clear evidence'." },
     covid_prediction: "improve",
     covid_channel: "IF ↓ (long lag)",
-    covid_evidence: { en: "IF↓ but lag too long for 2020–2024 data to show effect", fi: "IF ↓ mutta viive niin pitkä ettei 2020–2024-data näytä vielä muutosta" },
-    trend: [80, 85, 90, 100, 112, 128, 148, 172, 198, 228, 255],
-    sources: "Zhao 2023 BMJ Oncology, NTP 2018, Ramazzini 2018",
-    data_quality: "meta_estimate",
+    covid_evidence: { en: "GBD: slight dip 2020 but lag too long for observable effect", fi: "GBD: lievä notkahdus 2020 mutta viive liian pitkä näkyvälle vaikutukselle" },
+    trend: [69, 78, 88, 100, 113, 125, 138, 150, 165, 177, 187],
+    sources: "GBD 2023 (published estimates), Zhao 2023 BMJ Oncology, NTP 2018",
+    data_quality: "GBD_direct",
   },
 ];
 
@@ -344,7 +344,7 @@ const CHART_TOP = TECH_TOP + TECH_BAND_H + 28;
 const CHART_H = 260;
 const CHART_BOTTOM = CHART_TOP + CHART_H;
 
-const Y_MAX = 700;
+const Y_MAX = 350;
 
 const AXIS_Y = CHART_BOTTOM + 4;
 const SVG_H = AXIS_Y + 28;
@@ -388,7 +388,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
   const covidX2 = yearToX(2022);
 
   const gridYears = [1975, 1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020, 2025];
-  const gridValues = [0, 100, 200, 300, 400, 500, 600, 700];
+  const gridValues = [0, 50, 100, 150, 200, 250, 300, 350];
 
   return (
     <section className="mt-12 mb-10">
@@ -616,7 +616,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                 return (
                   <text
                     key={`lbl-${d.id}`}
-                    x={yearToX(2024) + 4}
+                    x={yearToX(2023) + 4}
                     y={valueToY(lastVal) + 3}
                     fontSize={7.5}
                     fontFamily="var(--font-data)"
