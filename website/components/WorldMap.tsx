@@ -393,8 +393,8 @@ export function WorldMap({ locale }: { locale: string }) {
       {layer === "mobile" && (
         <p className="text-xs leading-relaxed text-foreground-muted">
           {locale === "fi"
-            ? "Mobiililiittymät ovat teknologian käyttöönoton ajoitusproxy, eivät mitattu RF-altistus, FieldState-vektori tai annosmitta."
-            : "Mobile subscriptions are a technology-adoption timing proxy, not measured RF exposure, a FieldState vector, or a dose metric."}
+            ? "Mobiililiittymätiheys on yhdistelmäproksi sähkömagneettiselle ympäristölle, ei mitattu RF-altistus, FieldState-vektori tai annosmitta."
+            : "Mobile subscription density is a composite proxy for the electromagnetic environment, not measured RF exposure, a FieldState vector, or a dose metric."}
         </p>
       )}
       {layer === "tfr" && (

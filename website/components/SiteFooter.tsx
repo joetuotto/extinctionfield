@@ -5,15 +5,15 @@ import Link from "next/link";
 const COPY = {
   en: {
     label: "BERM v19 · Bio-Electromagnetic Reproductive Model",
-    summary: "A falsifiable research model. FieldState is what we measure. The three-channel model is how we predict. The modulome is where it acts. Mobile subscriptions are a timing proxy, not measured FieldState.",
+    summary: "BERM v19 framework. Predictions calibrated with v18. Explorer data from v17.",
     license: "Code: MIT · Docs: CC BY-4.0",
-    specLink: "FieldState measurement spec",
+    specLink: "Model specification",
   },
   fi: {
     label: "BERM v19 · Bio-sähkömagneettinen lisääntymismalli",
-    summary: "Falsifioitavissa oleva tutkimusmalli. FieldState on se mitä mitataan. Kolmikanavamalli on se miten ennustetaan. Modulooma on se mihin vaikutus kohdistuu. Mobiililiittymät ovat ajoitusproksi, eivät mitattu FieldState.",
+    summary: "BERM v19 -kehys. Ennusteet kalibroitu v18:lla. Explorer-data versiosta v17.",
     license: "Koodi: MIT · Docs: CC BY-4.0",
-    specLink: "FieldState-mittausmäärittely",
+    specLink: "Mallin määrittely",
   },
 } as const;
 
@@ -34,7 +34,7 @@ export function SiteFooter({ locale }: { locale: string }) {
         </div>
         <div className="flex flex-col items-start sm:items-end gap-1.5 sm:shrink-0">
           <Link
-            href={`/${language}/model/fieldstate`}
+            href={`/${language}/model`}
             className="text-xs font-medium text-accent transition-colors hover:text-accent-hover"
           >
             {c.specLink} →

@@ -1,0 +1,17 @@
+berm/
+*.db
+*.sqlite
+*.pkl
+*.parquet
+*.csv
+data/
+notebooks/
+__pycache__/
+*.pyc
+venv/
+.venv/
+node_modules/
+.next/
+.git/
+.ruff_cache/
+.pytest_cache/
