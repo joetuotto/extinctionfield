@@ -12,6 +12,7 @@ import { TherapeuticFrequencyMap } from "@/components/TherapeuticFrequencyMap";
 import { CellSizeFrequencyMatrix } from "@/components/CellSizeFrequencyMatrix";
 import { ThreeChannelDiagram } from "@/components/ThreeChannelDiagram";
 import { RetrodictionCards } from "@/components/RetrodictionCards";
+import { IonicHierarchyDiagram } from "@/components/IonicHierarchyDiagram";
 import { DifferentialSusceptibility } from "@/components/DifferentialSusceptibility";
 import { LightingTransitionTimeline } from "@/components/LightingTransitionTimeline";
 import { DiseaseCascadeTimeline } from "@/components/DiseaseCascadeTimeline";
@@ -80,7 +81,7 @@ const COPY = {
         id: "therapeutic-device-paradox",
         title: "The therapeutic device paradox",
         paragraphs: [
-          "Regulatory agencies worldwide have approved 26 device categories whose efficacy depends on non-thermal electromagnetic biological effects — spanning the entire EM spectrum from DC to UV light. These include bone growth stimulators (DC, PMA 1986), TENS (12,000+ individual 510(k) clearances), deep brain stimulation (PMA 1997), rTMS for depression (510(k) 2008), TTFields for cancer (PMA 2011/2015/2026), PRF anti-inflammatory therapy (27 MHz), LLLT/photobiomodulation (510(k) 2007), blue light for neonatal jaundice, and UV phototherapy for psoriasis. In 2026, Kim et al. (Cell, IF ~64) demonstrated a 25th category: an EMF-inducible gene switch where 60 Hz pulsed EMF activates gene promoters in vivo via Cyb5b, a mitochondrial outer membrane protein identified through genome-wide CRISPR screening. If EMF can activate gene expression intentionally, unintentional environmental EMF at the same frequency (50/60 Hz) may alter gene expression without awareness. Each approval required clinical proof that electromagnetic energy produces a biological response without thermal heating. This is not controversial EMF safety research — it is mainstream medicine.",
+          "Regulatory agencies worldwide have approved 26 device categories whose efficacy depends on non-thermal electromagnetic biological effects — spanning the entire EM spectrum from DC to UV light. These include bone growth stimulators (DC, PMA 1986), TENS (12,000+ individual 510(k) clearances), deep brain stimulation (PMA 1997), rTMS for depression (510(k) 2008), TTFields for cancer (PMA 2011/2015/2026), PRF anti-inflammatory therapy (27 MHz), LLLT/photobiomodulation (510(k) 2007), blue light for neonatal jaundice, and UV phototherapy for psoriasis. In 2026, Kim et al. (Cell, IF ~64) demonstrated a 25th category: an EMF-inducible gene switch where 60 Hz pulsed EMF activates gene promoters in vivo via Cyb5b, a mitochondrial outer membrane protein identified through genome-wide CRISPR screening. A 26th category predates these by decades: US Patent 4,850,959 (1989) described a method for controlling insulin release from pancreatic beta cells using resonance-frequency EMF via calcium channel modulation — resonance frequency causes Ca²⁺ influx and insulin increase, non-resonance frequency causes Ca²⁺ efflux and decrease. If intentional EMF can control gene expression and insulin secretion, unintentional environmental EMF may dysregulate both without awareness. Each approval required clinical proof that electromagnetic energy produces a biological response without thermal heating. This is not controversial EMF safety research — it is mainstream medicine.",
           "The logical contradiction is direct: FDA requires proof of biological effect for device approval, while ICNIRP assumes absence of non-thermal biological effects for exposure limit setting. These two positions are logically incompatible. Non-thermal bioactivity is proven at every frequency from DC to UV light — except at RF frequencies between 300 MHz and 6 GHz. This is not a gap in biology; it is a gap in acknowledgment. The only frequency range where non-thermal effects are 'not recognized' is the range used by the telecommunications industry.",
           "The tDCS comparison is particularly revealing: the therapeutic field strength in the cortex (0.3–1.0 V/m) that earned FDA PMA approval in December 2025 is the same order of magnitude as measured urban ambient RF field strength (0.67–1.51 V/m). If 0.3 V/m DC is biologically active enough for FDA approval, urban ambient RF at 0.67 V/m cannot be assumed biologically inert. The Novocure TTFields patent (US 7,016,725) explicitly identifies that 'cells in the ovaries or testicles may be sensitive to the electric fields' at 100–300 kHz — the same frequency range produced by LED lighting drivers.",
         ],
@@ -92,6 +93,7 @@ const COPY = {
           { citation: "GammaCore VNS (FDA 510(k))", year: 2017, note: "Vagus nerve stimulation, systemic anti-inflammatory" },
           { citation: "Novocure patent US 7,016,725", year: 2006, note: "Identifies ovaries/testicles as sensitive to IF fields" },
           { citation: "Kim et al. (Cell)", year: 2026, note: "EMF gene switch via Cyb5b — CRISPR-identified EMF sensor, 60 Hz" },
+          { citation: "US Patent 4,850,959", year: 1989, note: "Resonance-frequency EMF controls insulin release via Ca²⁺ channels in pancreatic beta cells" },
         ],
       },
       {
@@ -129,11 +131,13 @@ const COPY = {
         paragraphs: [
           "Two independent biological routes converge on oxytocin suppression. The Porges polyvagal pathway: chronic sympathetic activation (consistent with EMF-induced autonomic stress) downregulates the ventral vagal complex, reducing parasympathetic-mediated OT release. This affects pair bonding, sexual receptivity and uterine contractility.",
           "The Poutahidis/Erdman (MIT) microbiome pathway: Lactobacillus reuteri stimulates OT secretion via the vagus nerve. EMF exposure has been shown to alter gut microbiome composition in animal models. If L. reuteri populations decline under chronic RF exposure, the vagal OT signaling pathway is independently suppressed. Both routes — autonomic and microbial — converge on reduced circulating OT, affecting reproductive behavior and physiology from different directions.",
+          "Direct experimental evidence: a 2024 study in Scientific Reports showed that 4.9 GHz RF exposure caused gut microbiome dysbiosis in mice, including decreased microbial diversity and altered Bacteroidetes/Firmicutes ratio. This links RF exposure directly to the gut-brain axis disruption that BERM's pathway E describes: RF → microbiome disruption → L. reuteri decline → vagal oxytocin suppression → reproductive motivation decline.",
         ],
         studies: [
           { citation: "Porges polyvagal theory", year: 2011, note: "Vagal tone → OT release pathway" },
           { citation: "Poutahidis & Erdman (MIT)", year: 2014, note: "L. reuteri → vagus → OT" },
           { citation: "Microbiome-EMF animal studies", year: "2019–24", note: "RF alters gut flora composition" },
+          { citation: "Scientific Reports (4.9 GHz RF)", year: 2024, note: "RF → gut dysbiosis: decreased diversity, altered Bacteroidetes/Firmicutes ratio" },
         ],
       },
       {
@@ -341,7 +345,7 @@ const COPY = {
         id: "therapeutic-device-paradox",
         title: "Terapeuttisten laitteiden paradoksi",
         paragraphs: [
-          "Regulaattorit ympäri maailmaa ovat hyväksyneet 26 laitekategoriaa, joiden teho perustuu ei-termiseen sähkömagneettiseen biologiseen vaikutukseen — kattaen koko EM-spektrin DC:stä UV-valoon. Näihin kuuluvat luunkasvustimulaattorit (DC, PMA 1986), TENS (12 000+ yksittäistä 510(k)-hyväksyntää), syväaivostimulaatio (PMA 1997), rTMS masennukseen (510(k) 2008), TTFields syöpään (PMA 2011/2015/2026), PRF-tulehdushoito (27 MHz), LLLT/fotobiomodulaatio (510(k) 2007), sinivaloterapia vastasyntyneiden keltaisuuteen ja UV-valohoito psoriasikseen. Vuonna 2026 Kim ym. (Cell, IF ~64) osoittivat 25. kategorian: EMF-geenikytkin, jossa 60 Hz pulssi-EMF aktivoi geenipromoottoreita in vivo Cyb5b:n kautta — mitokondrion ulkokalvoproteiini, joka tunnistettiin genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi. Jos EMF voi aktivoida geeniekspression tarkoituksellisesti, ympäristö-EMF samalla taajuudella (50/60 Hz) voi muuttaa geeniekspressiota tiedostamattomasti. Jokainen hyväksyntä edellytti kliinistä todistamista siitä, että sähkömagneettinen energia tuottaa biologisen vasteen ilman termistä kuumennusta. Tämä ei ole kontroversiaalista EMF-turvallisuustutkimusta — se on valtavirtalääketiedettä.",
+          "Regulaattorit ympäri maailmaa ovat hyväksyneet 26 laitekategoriaa, joiden teho perustuu ei-termiseen sähkömagneettiseen biologiseen vaikutukseen — kattaen koko EM-spektrin DC:stä UV-valoon. Näihin kuuluvat luunkasvustimulaattorit (DC, PMA 1986), TENS (12 000+ yksittäistä 510(k)-hyväksyntää), syväaivostimulaatio (PMA 1997), rTMS masennukseen (510(k) 2008), TTFields syöpään (PMA 2011/2015/2026), PRF-tulehdushoito (27 MHz), LLLT/fotobiomodulaatio (510(k) 2007), sinivaloterapia vastasyntyneiden keltaisuuteen ja UV-valohoito psoriasikseen. Vuonna 2026 Kim ym. (Cell, IF ~64) osoittivat 25. kategorian: EMF-geenikytkin, jossa 60 Hz pulssi-EMF aktivoi geenipromoottoreita in vivo Cyb5b:n kautta — mitokondrion ulkokalvoproteiini, joka tunnistettiin genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi. 26. kategoria on vuosikymmeniä vanhempi: US-patentti 4 850 959 (1989) kuvasi menetelmän insuliinin erityksen kontrolloimiseksi haiman beetasoluista resonanssitaajuisella EMF:llä kalsiumkanavien kautta — resonanssitaajuus aiheuttaa Ca²⁺-influksin ja insuliinin nousun, ei-resonanssitaajuus effluksin ja laskun. Jos tarkoituksellinen EMF voi kontrolloida geeniekspressiota ja insuliinieritystä, tahaton ympäristö-EMF voi häiritä molempia tiedostamattomasti. Jokainen hyväksyntä edellytti kliinistä todistamista siitä, että sähkömagneettinen energia tuottaa biologisen vasteen ilman termistä kuumennusta. Tämä ei ole kontroversiaalista EMF-turvallisuustutkimusta — se on valtavirtalääketiedettä.",
           "Looginen ristiriita on suora: FDA vaatii biologisen vaikutuksen todentamista laitteen hyväksymiseksi, kun taas ICNIRP olettaa ei-termisten biologisten vaikutusten puuttumista altistusrajojen asettamiseksi. Nämä kaksi positiota ovat loogisesti yhteensopimattomia. Ei-terminen bioaktiivisuus on todistettu jokaisella taajuudella DC:stä UV-valoon — paitsi RF-taajuuksilla 300 MHz:n ja 6 GHz:n välillä. Tämä ei ole aukko biologiassa; se on aukko tunnustamisessa. Ainoa taajuusalue jossa ei-termisiä vaikutuksia 'ei tunnusteta' on telekommunikaatioteollisuuden käyttämä alue.",
           "tDCS-vertailu on erityisen paljastava: terapeuttinen kenttävoimakkuus aivokuoressa (0,3–1,0 V/m), joka sai FDA PMA -hyväksynnän joulukuussa 2025, on samaa suuruusluokkaa kuin mitattu kaupungin ambient-RF-kenttävoimakkuus (0,67–1,51 V/m). Jos 0,3 V/m DC on biologisesti riittävän aktiivinen FDA-hyväksyntään, kaupungin ambient-RF:ää 0,67 V/m ei voida olettaa biologisesti inertiksi. Novocuren TTFields-patentti (US 7 016 725) tunnistaa eksplisiittisesti, että 'munasarjojen tai kivesten solut voivat olla herkkiä sähkökentille' 100–300 kHz:n taajuudella — samalla taajuusalueella kuin LED-valaistuksen hakkuriteholähteet.",
         ],
@@ -353,6 +357,7 @@ const COPY = {
           { citation: "GammaCore VNS (FDA 510(k))", year: 2017, note: "Vagushermostimulaatio, systeeminen anti-inflammatorinen" },
           { citation: "Novocure-patentti US 7 016 725", year: 2006, note: "Tunnistaa munasarjat/kivekset herkiksi IF-kentille" },
           { citation: "Kim ym. (Cell)", year: 2026, note: "EMF-geenikytkin Cyb5b:n kautta — CRISPR-tunnistettu EMF-sensori, 60 Hz" },
+          { citation: "US-patentti 4 850 959", year: 1989, note: "Resonanssitaajuinen EMF kontrolloi insuliinieritystä Ca²⁺-kanavien kautta haiman beetasoluissa" },
         ],
       },
       {
@@ -390,11 +395,13 @@ const COPY = {
         paragraphs: [
           "Kaksi itsenäistä biologista reittiä konvergoi oksitosiinin suppressioon. Porgesin polyvagaalireitti: krooninen sympaattinen aktivaatio (yhteensopiva EMF:n aiheuttaman autonomisen stressin kanssa) alassäätelee ventraalista vagaali-kompleksia, vähentäen parasympaattista OT-vapautumista. Tämä vaikuttaa parisiteeseen, seksuaaliseen vastaanottavuuteen ja kohdun supistuvuuteen.",
           "Poutahidiksen/Erdmanin (MIT) mikrobiomireitti: Lactobacillus reuteri stimuloi OT-eritystä vagushermon kautta. EMF-altistuksen on osoitettu muuttavan suoliston mikrobiomikoostumusta eläinmalleissa. Jos L. reuteri -populaatiot vähenevät kroonisen RF-altistuksen alla, vagaalinen OT-signalointireitti suppressoituu itsenäisesti. Molemmat reitit — autonominen ja mikrobinen — konvergoivat vähäisempään kiertävään OT:iin, vaikuttaen lisääntymiskäyttäytymiseen ja -fysiologiaan eri suunnista.",
+          "Suora kokeellinen evidenssi: vuoden 2024 Scientific Reports -tutkimus osoitti, että 4,9 GHz RF-altistus aiheutti suoliston mikrobiomidysbioosin hiirillä, mukaan lukien mikrobiston monimuotoisuuden laskun ja muuttuneen Bacteroidetes/Firmicutes-suhteen. Tämä yhdistää RF-altistuksen suoraan suoli-aivo-akselin häiriöön, jota BERM:n polku E kuvaa: RF → mikrobiomin häiriö → L. reuterin väheneminen → vagaalisen oksitosiinin suppressio → lisääntymismotivaation lasku.",
         ],
         studies: [
           { citation: "Porges polyvagaaliteoria", year: 2011, note: "Vagaalinen tonus → OT-vapautumisreitti" },
           { citation: "Poutahidis & Erdman (MIT)", year: 2014, note: "L. reuteri → vagus → OT" },
           { citation: "Mikrobiomi-EMF-eläintutkimukset", year: "2019–24", note: "RF muuttaa suolistoflooraa" },
+          { citation: "Scientific Reports (4,9 GHz RF)", year: 2024, note: "RF → suolistodysbioosia: vähentynyt diversiteetti, muuttunut Bacteroidetes/Firmicutes-suhde" },
         ],
       },
       {
@@ -685,6 +692,164 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
 
       <RetrodictionCards locale={activeLocale} />
 
+      {/* R4b-d: Ionic Treatment Hierarchy */}
+      <section id="ionic-hierarchy" className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "R4b-d: Ioninen hoitohierarkia" : "R4b-d: The Ionic Treatment Hierarchy"}
+        </h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {activeLocale === "fi"
+              ? "Retrodiktio R4 esittää, että masennus reagoi paremmin sähköön kuin kemiaan. Ioninen hoitohierarkia selittää miksi: kaikki mielialahäiriöiden hoidot — SSRI:istä psykedeeeleihin — konvergoivat lopulta kalsiumhomeostaasiin. Niiden tehokkuus seuraa ionisen kohdistuksen astetta."
+              : "Retrodiction R4 states that depression responds better to electricity than chemistry. The ionic treatment hierarchy explains why: all mood disorder treatments — from SSRIs to psychedelics — ultimately converge on calcium homeostasis. Their efficacy tracks with the degree of ionic directness."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "R4b — Litium: Litium on maailman vanhin ja tehokkain mielialastabilisaattori, ja ainoa joka vähentää itsemurhakuolleisuutta (meta-analyysi >14 000 potilasta). Sen mekanismi on ioninen, ei kemiallinen: Li⁺-ioni läpäisee jänniteriippuvaisen natriumkanavan (VGSC), korvaa Na⁺:n 1:1-suhteessa ja normalisoi solujen Na⁺/Ca²⁺-tasapainon. GWAS-tutkimukset liittävät litiumvasteen ionikanavageeneihin — ei serotoniiniteihin. Yhtään serotoniinilääkettä ei ole koskaan osoitettu vähentävän itsemurhakuolleisuutta."
+              : "R4b — Lithium: Lithium is the world's oldest and most effective mood stabilizer, and the only one shown to reduce suicide mortality (meta-analysis of >14,000 patients). Its mechanism is ionic, not chemical: the Li⁺ ion permeates the voltage-gated sodium channel (VGSC), replaces Na⁺ at a 1:1 ratio, and normalizes cellular Na⁺/Ca²⁺ balance. GWAS studies link lithium response to ion channel genes — not serotonin pathways. No serotonin-based drug has ever been shown to reduce suicide mortality."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "R4c — Psykedeelit ja Ca²⁺-konvergenssi: Psilosybiinin (NEJM 2022, NNT ≈ 3) signaaliketju päättyy Cav1.2-kalsiumkanavaan (CACNA1C). Sousouri ym. (2025, PMC12491688) osoittivat, että 5-HT2A → Gq → IP3 → Ca²⁺-ER-vapautuminen aktivoi Cav1.2:n kautta massiivisen Ca²⁺-aallon — saman kanavan jonka EMF moduloi VGCC-mekanismin kautta. Ketamiini (NNT ≈ 3,5) saavuttaa saman Ca²⁺-konvergenssin NMDA-reseptorieston kautta: NMDA-esto → glutamaattipurkaus → AMPA → Ca²⁺-sisäänvirtaus. NMDA itsessään on ionikanava, ei välittäjäainereseptori."
+              : "R4c — Psychedelics and Ca²⁺ convergence: Psilocybin's signal chain (NEJM 2022, NNT ≈ 3) terminates at the Cav1.2 calcium channel (CACNA1C). Sousouri et al. (2025, PMC12491688) demonstrated that 5-HT2A → Gq → IP3 → Ca²⁺ ER release activates Cav1.2, producing a massive Ca²⁺ surge — the same channel that EMF modulates via the VGCC mechanism. Ketamine (NNT ≈ 3.5) achieves the same Ca²⁺ convergence through NMDA receptor blockade: NMDA block → glutamate surge → AMPA → Ca²⁺ influx. NMDA itself is an ion channel, not a neurotransmitter receptor."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "R4d — Hierarkia: Viisitasoinen hierarkia (kemiallinen < sähkömagneettinen < ioninen krooninen < ioninen reset < totaalinen ioninen nollaus) selittää miksi nopeampi vaikutusmekanismi ennustaa suurempaa tehoa. SSRI:t (NNT 7) vaikuttavat ionikanaviin epäsuorasti viikkojen viiveellä. TMS/tDCS (NNT 5–6) indusoivat ionivirtoja suoraan. Litium korvaa Na⁺-ionin suoraan. Psykedeelit tuottavat akuutin Ca²⁺-resetin tunneissa. ECT — psykiatrian tehokkain hoito (70–80 % vaste hoitoresistenteissä) — laukaisee leviävän depolarisaatioaallon (CSD) joka nollaa koko korteksin ionigradientit (Rosenthal ym. 2025, Nature Communications). Tämä kuvio on yhteensopiva vain ionikanavahypoteesin kanssa."
+              : "R4d — The hierarchy: The five-level hierarchy (chemical < electromagnetic < ionic chronic < ionic reset < total ionic reset) explains why faster mechanisms predict greater efficacy. SSRIs (NNT 7) affect ion channels indirectly over weeks. TMS/tDCS (NNT 5–6) induce ion currents directly. Lithium replaces the Na⁺ ion directly. Psychedelics produce an acute Ca²⁺ reset within hours. ECT — psychiatry's most effective treatment (70–80% response in treatment-resistant cases) — triggers cortical spreading depolarization (CSD) that resets all ionic gradients across the entire cortex (Rosenthal et al. 2025, Nature Communications). This pattern is consistent only with the ion channel hypothesis."}
+          </p>
+        </div>
+
+        <IonicHierarchyDiagram locale={activeLocale} />
+
+        <div className="mt-6 overflow-x-auto">
+          <table className="w-full text-sm border-collapse max-w-4xl">
+            <thead>
+              <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                <th className="py-2 pr-3">{activeLocale === "fi" ? "Viite" : "Citation"}</th>
+                <th className="py-2 pr-3 w-16">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
+                <th className="py-2">{activeLocale === "fi" ? "Löydös" : "Finding"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Cipriani et al. (Lancet)</td>
+                <td className="py-2 pr-3 font-mono-num">2018</td>
+                <td className="py-2">{activeLocale === "fi" ? "21 masennuslääkettä, 116 477 potilasta: NNT ≈ 7 SSRI:ille" : "21 antidepressants, 116,477 patients: NNT ≈ 7 for SSRIs"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Goodwin et al. (NEJM)</td>
+                <td className="py-2 pr-3 font-mono-num">2022</td>
+                <td className="py-2">{activeLocale === "fi" ? "Psilosybiini vs essitalopraami: NNT ≈ 3, vaikutus tunneissa" : "Psilocybin vs escitalopram: NNT ≈ 3, effect within hours"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Sousouri et al. (PMC12491688)</td>
+                <td className="py-2 pr-3 font-mono-num">2025</td>
+                <td className="py-2">{activeLocale === "fi" ? "5-HT2A → Gq → IP3 → Cav1.2 (CACNA1C): psykedeelit kohdistuvat samaan kanavaan kuin EMF" : "5-HT2A → Gq → IP3 → Cav1.2 (CACNA1C): psychedelics target the same channel as EMF"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">El-Mallakh & Bhansali</td>
+                <td className="py-2 pr-3 font-mono-num">2004/2010</td>
+                <td className="py-2">{activeLocale === "fi" ? "Li⁺ läpäisee VGSC:n, korvaa Na⁺:n: ionimekanismi, ei kemiallinen" : "Li⁺ permeates VGSC, replaces Na⁺: ionic mechanism, not chemical"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Zarate et al. (Arch Gen Psych)</td>
+                <td className="py-2 pr-3 font-mono-num">2006</td>
+                <td className="py-2">{activeLocale === "fi" ? "Ketamiini: ensimmäinen RCT. NMDA on ionikanava, vaikutus tunneissa" : "Ketamine: first RCT. NMDA is an ion channel, effect within hours"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Rosenthal et al. (Nat Commun)</td>
+                <td className="py-2 pr-3 font-mono-num">2025</td>
+                <td className="py-2">{activeLocale === "fi" ? "ECT laukaisee leviävän depolarisaatioaallon (CSD): totaalinen ioninen nollaus" : "ECT triggers cortical spreading depolarization (CSD): total ionic reset"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-foreground-muted italic mt-4 max-w-4xl">
+          {activeLocale === "fi"
+            ? "Episteeminen taso: litiumin ionimekanismi [E] (El-Mallakh/Bhansali data). Psykedeelien Ca²⁺/CACNA1C-konvergenssi [E] (Sousouri 2025). ECT:n CSD-mekanismi [E] (Rosenthal 2025). Hierarkiaennuste [M|C] (Lindgren)."
+            : "Epistemic level: lithium ionic mechanism [E] (El-Mallakh/Bhansali data). Psychedelic Ca²⁺/CACNA1C convergence [E] (Sousouri 2025). ECT CSD mechanism [E] (Rosenthal 2025). Hierarchy prediction [M|C] (Lindgren)."}
+        </p>
+      </section>
+
+      {/* The Skin Battery — dermal bioelectric system */}
+      <section id="skin-battery" className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "Ihoakku — ihon biosähköinen sensorijärjestelmä" : "The Skin Battery — dermal bioelectric sensor system"}
+        </h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {activeLocale === "fi"
+              ? "Iho ei ole passiivinen suoja vaan aktiivinen biosähköinen sensoriverkko. Epidermis ylläpitää jatkuvaa transepiteliaalista potentiaalia (TEP, 10–60 mV) Na⁺/K⁺-ATPaasin avulla — kirjaimellinen paristo joka generoi sähkökentän ihon läpi. Kun iho vaurioituu, TEP romahtaa ja generoi lateraalisen sähkökentän (100–200 mV/mm) joka ohjaa keratinosyyttien ja fibroblastien elektrotaksista. Tämä sähköinen signaali on ensimmäinen parantava signaali — ENNEN biokemiallisia signaaleja."
+              : "Skin is not a passive barrier but an active bioelectric sensor network. The epidermis maintains a continuous transepithelial potential (TEP, 10–60 mV) via Na⁺/K⁺-ATPase — a literal battery that generates an electric field across the skin. When skin is wounded, TEP collapses and generates a lateral electric field (100–200 mV/mm) that guides keratinocyte and fibroblast electrotaxis. This electrical signal is the first healing signal — BEFORE biochemical signals."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Ihon dermis on pääasiassa kollageenia, joka on pietsosähköinen (7–8 pC/N): se muuntaa mekaanisen voiman suoraan sähköiseksi signaaliksi. Kosketuksen havaitseminen ei ole pelkästään mekaanisten reseptorien (PIEZO1/2) toimintaa — se on myös pietsosähköinen prosessi jossa kollageeni generoi jännitteen joka avaa SAMAT jänniteohjatut kalsiumkanavat (VGCC) jotka BERM identifioi EMF:n kohteiksi. Mekaaninen kosketus ja EMF konvergoivat samaan Ca²⁺-kanavaan."
+              : "The skin dermis is primarily collagen, which is piezoelectric (7–8 pC/N): it converts mechanical force directly into electrical signal. Touch perception is not solely the work of mechanical receptors (PIEZO1/2) — it is also a piezoelectric process where collagen generates voltage that opens the SAME voltage-gated calcium channels (VGCC) that BERM identifies as EMF targets. Mechanical touch and EMF converge on the same Ca²⁺ channel."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Keratinosyyttien TRPV4 on multimodaalinen ionikanava joka reagoi mekaaniseen paineeseen, lämpöön (>27°C), UVB-säteilyyn ja osmoottiseen paineeseen — kaikki samaksi Ca²⁺-vasteeksi. TRPV4 välittää myös histaminergista kutinaa. Jos EMF aktivoi TRPV4:ää, tuloksena on kutina joka on erottamaton allergisesta kutinasta. Tämä selittää miksi EHS:n yleisimmät iho-oireet (pistely, polttelu, kutina) ovat biologisesti ennustettavia vasteita, eivät nocebo-ilmiöitä."
+              : "Keratinocyte TRPV4 is a multimodal ion channel that responds to mechanical pressure, heat (>27°C), UVB radiation, and osmotic pressure — all producing the same Ca²⁺ response. TRPV4 also mediates histaminergic itch. If EMF activates TRPV4, the result is itch indistinguishable from allergic itch. This explains why the most common EHS skin symptoms (tingling, burning, itching) are biologically predictable responses, not nocebo phenomena."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Skedung ym. (2013, Scientific Reports) osoittivat, että ihmisen sormi havaitsee 13 nm kohoumat — kokoluokkaero sormenjälkiharjanteeseen nähden on 15 000:1. Mekaaniset mallit eivät selitä tätä tarkkuutta. Pietsosähköinen + ionikanavaselitys voi: nanometritason pintarakenne generoi sähköisen signaalin joka on riittävän voimakas aktivoimaan VGCC/PIEZO1/TRPV4-kanavia. Tämä todistaa, että ihon sensorijärjestelmä operoi tasolla jossa EMF:n ja luonnollisten biosähköisten signaalien erottaminen on mahdotonta."
+              : "Skedung et al. (2013, Scientific Reports) demonstrated that the human finger detects 13 nm ridges — a scale difference of 15,000:1 relative to fingerprint ridges. Mechanical models cannot explain this precision. The piezoelectric + ion channel explanation can: nanometer surface structure generates an electrical signal sufficient to activate VGCC/PIEZO1/TRPV4 channels. This proves the skin sensory system operates at a level where distinguishing EMF from natural bioelectric signals is impossible."}
+          </p>
+        </div>
+
+        <div className="mt-6 overflow-x-auto">
+          <table className="w-full text-sm border-collapse max-w-4xl">
+            <thead>
+              <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                <th className="py-2 pr-3">{activeLocale === "fi" ? "Viite" : "Citation"}</th>
+                <th className="py-2 pr-3 w-16">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
+                <th className="py-2">{activeLocale === "fi" ? "Löydös" : "Finding"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Lim et al. (SAGE Journals)</td>
+                <td className="py-2 pr-3 font-mono-num">2024</td>
+                <td className="py-2">{activeLocale === "fi" ? "TEP 'ihoakku' 10–60 mV nisäkkään ihossa" : "TEP 'skin battery' 10–60 mV in mammalian skin"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Zhao et al. (Nature)</td>
+                <td className="py-2 pr-3 font-mono-num">2006</td>
+                <td className="py-2">{activeLocale === "fi" ? "Endogeeninen haavan sähkökenttä 100–200 mV/mm, ensimmäinen parantava signaali" : "Endogenous wound EF 100–200 mV/mm, first healing signal"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Fukada & Yasuda</td>
+                <td className="py-2 pr-3 font-mono-num">1957</td>
+                <td className="py-2">{activeLocale === "fi" ? "Luun pietsosähköisyys (laajennettu: kollageeni 7–8 pC/N)" : "Bone piezoelectricity (extended: collagen 7–8 pC/N)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Mohandas et al. (eLife)</td>
+                <td className="py-2 pr-3 font-mono-num">2022</td>
+                <td className="py-2">{activeLocale === "fi" ? "PIEZO1 keratinosyyteissä: mekanotransduktio ja Ca²⁺/Na⁺-permeabiliteetti" : "PIEZO1 in keratinocytes: mechanotransduction and Ca²⁺/Na⁺ permeability"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Skedung et al. (Scientific Reports)</td>
+                <td className="py-2 pr-3 font-mono-num">2013</td>
+                <td className="py-2">{activeLocale === "fi" ? "Ihmisen sormi havaitsee 13 nm kohoumat — kokoluokkaero 15 000:1" : "Human finger detects 13 nm ridges — scale difference 15,000:1"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PMC4858974</td>
+                <td className="py-2 pr-3 font-mono-num">2016</td>
+                <td className="py-2">{activeLocale === "fi" ? "TRPV4 välittää Ca²⁺-influksia ja histaminergista kutinaa keratinosyyteissä" : "TRPV4 mediates Ca²⁺ influx and histaminergic itch in keratinocytes"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-foreground-muted italic mt-4 max-w-4xl">
+          {activeLocale === "fi"
+            ? "Episteeminen taso: TEP ja haavan sähkökenttä [E] (Lim/Zhao). Pietsosähköinen kollageeni [E] (Fukada/Yasuda). VGCC-konvergenssi [E] (Pall/PMC5828134). EHS-selitys [M|C] (malli)."
+            : "Epistemic level: TEP and wound EF [E] (Lim/Zhao). Piezoelectric collagen [E] (Fukada/Yasuda). VGCC convergence [E] (Pall/PMC5828134). EHS explanation [M|C] (model)."}
+        </p>
+      </section>
+
       <section className="mb-16">
         <BehavioralSuppression locale={activeLocale} />
       </section>
@@ -771,6 +936,75 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
             {activeLocale === "fi"
               ? "Paradigmaattinen esimerkki: Matthew Walkerin 'Why We Sleep' (2017) on kenties vaikutusvaltaisin unitutkimuksen kirja koskaan. Walker analysoi laajasti miten LED-näytöt suppressoivat melatoniinia sinisen valon kautta. Hän dokumentoi LED-sinisen valon aiheuttavan 2× melatoniinisuppression verrattuna hehkulamppuun samalla intensiteetillä. Silti hän ei koskaan kysy tuottavatko LED-laitteet muuta kuin valoa — erityisesti, emittoivatko jokaisen LED-laitteen hakkuriteholähteet keskitaajuisia sähkömagneettisia kenttiä (20–200 kHz) jotka voisivat itsenäisesti häiritä sirkadiaanista järjestelmää CRY/RPM-mekanismin kautta. Sähkömagneettinen kenttä ei ole hänen käsitteellisessä sanastossaan. Tämä ei ole kritiikki Walkeria kohtaan — se on osoitus siitä, miten täydellisesti EMF-hypoteesi puuttuu valtavirran unitieteestä."
               : "A paradigmatic example: Matthew Walker's 'Why We Sleep' (2017) is perhaps the most influential sleep science book ever written. Walker devotes extensive analysis to how LED screens suppress melatonin through blue light. He documents that LED blue light has twice the melatonin-suppressing effect of incandescent light at matched intensity. Yet he never asks whether LED devices produce anything other than light — specifically, whether the switch-mode power supplies in every LED device emit intermediate-frequency electromagnetic fields (20–200 kHz) that might independently disrupt the circadian system through the CRY/RPM mechanism. The electromagnetic field is not in his conceptual vocabulary. This is not a criticism of Walker — it is a demonstration of how completely the EMF hypothesis is absent from mainstream sleep science."}
+          </p>
+        </div>
+      </section>
+
+      {/* Orphaned findings */}
+      <section id="orphaned-findings" className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "Hylätyt havainnot: data ilman mekanismia" : "Orphaned Findings: Data Without a Mechanism"}
+        </h2>
+        <div className="max-w-4xl overflow-x-auto mb-6">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-card-border text-left">
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Tutkija" : "Researcher"}</th>
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Havainto" : "Finding"}</th>
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Kritiikki" : "Criticism"}</th>
+                <th className="py-2 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Mekanismi (nyt)" : "Mechanism (now)"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              {[
+                { year: "1976", researcher: "Adey-Blackman",
+                  finding: activeLocale === "fi" ? "Ca²⁺ ikkunailmiö" : "Ca²⁺ window effect",
+                  criticism: activeLocale === "fi" ? "\"Ei-lineaarinen = artefakti\"" : "\"Non-linear = artifact\"",
+                  mechanism: activeLocale === "fi" ? "Resonanssi-oskillaatio (Kim 2026)" : "Resonance oscillation (Kim 2026)" },
+                { year: "1995", researcher: "Lai-Singh",
+                  finding: activeLocale === "fi" ? "DNA-katkokset" : "DNA strand breaks",
+                  criticism: activeLocale === "fi" ? "\"Liian heikko fotoni\"" : "\"Photon too weak\"",
+                  mechanism: activeLocale === "fi" ? "ROS via VGCC/IFO (Panagopoulos 2025)" : "ROS via VGCC/IFO (Panagopoulos 2025)" },
+                { year: "2013", researcher: "Pall",
+                  finding: activeLocale === "fi" ? "VGCC: 23 tutkimusta" : "VGCC: 23 studies",
+                  criticism: activeLocale === "fi" ? "\"Liian yksinkertainen\"" : "\"Too simple\"",
+                  mechanism: activeLocale === "fi" ? "3 reittiä: IFO + RPM + Cyb5b" : "3 pathways: IFO + RPM + Cyb5b" },
+                { year: "2025", researcher: "Sousouri",
+                  finding: "CACNA1C × 5G",
+                  criticism: activeLocale === "fi" ? "\"Liian pieni otos\"" : "\"Sample too small\"",
+                  mechanism: activeLocale === "fi" ? "Geneettinen VGCC-tiheysvaihtelu" : "Genetic VGCC density variation" },
+                { year: "2026", researcher: "Kim",
+                  finding: activeLocale === "fi" ? "Geenikytkimen aktivaatio" : "Gene switch activation",
+                  criticism: "\"Incredibly implausible\"",
+                  mechanism: activeLocale === "fi" ? "Lindgrenin χ(Ā) saturaatio" : "Lindgren's χ(Ā) saturation" },
+              ].map((row) => (
+                <tr key={row.year} className="border-b border-card-border/50">
+                  <td className="py-2 pr-3 font-mono-num">{row.year}</td>
+                  <td className="py-2 pr-3">{row.researcher}</td>
+                  <td className="py-2 pr-3">{row.finding}</td>
+                  <td className="py-2 pr-3 italic">{row.criticism}</td>
+                  <td className="py-2">{row.mechanism}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="max-w-4xl space-y-4">
+          <p className="text-sm text-foreground-muted leading-relaxed">
+            {activeLocale === "fi"
+              ? "Jokaisessa tapauksessa empiirinen havainto oli vahva — usein julkaistu huipputason lehdissä (Cell, NeuroImage, Bioelectromagnetics). Kritiikki ei kohdistunut dataan vaan MEKANISMIIN: miten niin heikot kentät voivat tuottaa biologisia vaikutuksia? Tämä \"epäuskottavuusargumentti\" ei ole tieteellinen kumoaminen — se on argumentti tietämättömyydestä, joka sekoittaa \"emme tunne mekanismia\" ja \"mekanismia ei ole.\""
+              : "In each case, the empirical observation was strong — often published in top-tier journals (Cell, NeuroImage, Bioelectromagnetics). The criticism targeted not the data but the mechanism: how could such weak fields produce biological effects? This 'implausibility argument' is not a scientific rebuttal — it is an argument from ignorance that confuses 'we don't know the mechanism' with 'there is no mechanism.'"}
+          </p>
+          <p className="text-sm text-foreground-muted leading-relaxed">
+            {activeLocale === "fi"
+              ? "Lindgrenin susceptibiliteettifunktio χ(Ā) ratkaisee kaikki viisi tapausta samanaikaisesti. Solukalvon sähkökenttä (~10⁷ V/m) luo susceptibiliteetin joka on jo lähellä saturaatiota. Ionikanavan jännitesensorit, jotka ovat säilyneet 3 miljardia vuotta (Zakon 2012), toimivat kvanttirajan herkkyydellä — kuten silmän fotoreseptori. Ulkoinen kenttä 10⁻⁵ V/m on ionikanavalle sama kuin yksittäinen fotoni verkkokalvolle: yksittäin pieni, mutta havaittavissa koska sensori kehittyi havaitsemaan juuri tämän."
+              : "Lindgren's susceptibility function χ(Ā) resolves all five cases simultaneously. The membrane electric field (~10⁷ V/m) creates a susceptibility that is already near saturation. Ion channel voltage sensors, conserved for 3 billion years (Zakon 2012), operate at quantum-limit sensitivity — like the eye's photoreceptor. An external field of 10⁻⁵ V/m is to the ion channel what a single photon is to the retina: individually tiny, but detectable because the sensor evolved to detect exactly this."}
+          </p>
+          <p className="text-xs text-foreground-muted/70 italic">
+            {activeLocale === "fi"
+              ? "Episteeminen taso: [L] (Lindgrenin tulkinta) yhdistettynä [E]-tason empiirisiin havaintoihin."
+              : "Epistemic level: [L] (Lindgren's interpretation) combined with [E]-level empirical findings."}
           </p>
         </div>
       </section>

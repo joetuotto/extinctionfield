@@ -86,7 +86,7 @@ const COPY = {
     falsPending: "pending",
     falsCta: "Test details",
 
-    epistemicNote: "BERM v19 is a falsifiable research model, not a certainty. 486 peer-reviewed references across 10 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Cross-sectional formula: LOOCV RMSE 0.522, 74% of countries within 0.5 children of prediction. Residential electricity consumption outperforms GDP as a TFR predictor by 21%. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.",
+    epistemicNote: "BERM v19 is a falsifiable research model, not a certainty. 498 peer-reviewed references across 10 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Cross-sectional formula: LOOCV RMSE 0.522, 74% of countries within 0.5 children of prediction. Residential electricity consumption outperforms GDP as a TFR predictor by 21%. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.",
     epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · Cross-sectional RMSE = 0.522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Independent research",
 
@@ -143,7 +143,7 @@ const COPY = {
     falsPending: "odottaa",
     falsCta: "Testien yksityiskohdat",
 
-    epistemicNote: "BERM v19 on falsifioitava tutkimusmalli, ei varmuus. 486 vertaisarvioitua viitettä 10 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava: LOOCV RMSE 0,522, 74 % maista 0,5 lapsen sisällä ennusteesta. Asumisen sähkönkulutus ylittää BKT:n TFR-ennustajana 21 %. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.",
+    epistemicNote: "BERM v19 on falsifioitava tutkimusmalli, ei varmuus. 498 vertaisarvioitua viitettä 10 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava: LOOCV RMSE 0,522, 74 % maista 0,5 lapsen sisällä ennusteesta. Asumisen sähkönkulutus ylittää BKT:n TFR-ennustajana 21 %. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.",
     epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · Poikkileikkaus-RMSE = 0,522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Itsenäinen tutkimus",
 
