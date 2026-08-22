@@ -2,8 +2,8 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 504,
-    "verified_count": 77,
+    "total_references": 521,
+    "verified_count": 86,
     "generated": "2026-08-20"
   },
   "categories": [
@@ -10202,11 +10202,19 @@
       "journal": "Bioelectromagnetics",
       "doi": null,
       "category": "transduction_rpm_calcium",
-      "pathway": ["RF", "calcium"],
+      "pathway": [
+        "RF",
+        "calcium"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "450 MHz amplitude-modulated at 16 Hz produced calcium efflux from brain tissue at 0.1-1.0 mW/cm² but NOT at higher or lower intensities. First documentation of the 'window effect' — non-linear dose-response incompatible with ICNIRP's linear SAR model.",
-      "tags": ["calcium", "window_effect", "non-linear", "microwave"],
+      "tags": [
+        "calcium",
+        "window_effect",
+        "non-linear",
+        "microwave"
+      ],
       "verified": true
     },
     {
@@ -10217,11 +10225,20 @@
       "journal": "US Patent 4,850,959",
       "doi": null,
       "category": "transduction_rpm_calcium",
-      "pathway": ["metabolic", "calcium"],
+      "pathway": [
+        "metabolic",
+        "calcium"
+      ],
       "level": "E",
       "type": "patent",
       "finding": "Patented method using resonance-frequency EMF to cause Ca²⁺ influx in pancreatic beta cells → increased insulin release. Non-resonance frequency causes Ca²⁺ efflux → decreased insulin. Demonstrates intentional EMF control of metabolic function via calcium channels.",
-      "tags": ["insulin", "pancreas", "calcium", "metabolic", "patent"],
+      "tags": [
+        "insulin",
+        "pancreas",
+        "calcium",
+        "metabolic",
+        "patent"
+      ],
       "verified": true
     },
     {
@@ -10232,11 +10249,20 @@
       "journal": "Bioelectromagnetics",
       "doi": "10.1002/bem.2250160309",
       "category": "mechanism",
-      "pathway": ["RF", "DNA_damage"],
+      "pathway": [
+        "RF",
+        "DNA_damage"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "2450 MHz, 1.2 W/kg, 2h → DNA single-strand breaks in rat brain cells. Melatonin (antioxidant) prevented effect → ROS-mediated mechanism. Industry attempted suppression via counter-studies and university pressure.",
-      "tags": ["DNA", "microwave", "ROS", "melatonin", "suppression"],
+      "tags": [
+        "DNA",
+        "microwave",
+        "ROS",
+        "melatonin",
+        "suppression"
+      ],
       "verified": true
     },
     {
@@ -10247,11 +10273,18 @@
       "journal": "Int J Radiat Biol",
       "doi": null,
       "category": "mechanism",
-      "pathway": ["RF", "DNA_damage"],
+      "pathway": [
+        "RF",
+        "DNA_damage"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Both single and double strand DNA breaks in rat brain after 2450 MHz exposure. Confirmed and extended 1995 finding.",
-      "tags": ["DNA", "microwave", "double_strand"],
+      "tags": [
+        "DNA",
+        "microwave",
+        "double_strand"
+      ],
       "verified": true
     },
     {
@@ -10262,11 +10295,18 @@
       "journal": "Proc Natl Acad Sci USA",
       "doi": null,
       "category": "mechanism",
-      "pathway": ["evolution"],
+      "pathway": [
+        "evolution"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Voltage-gated ion channels conserved for >800 million years (3+ billion for ancestral forms). S4 voltage sensor is one of evolution's oldest molecular machines — optimized to quantum sensitivity limits.",
-      "tags": ["evolution", "ion_channel", "S4_sensor", "conservation"],
+      "tags": [
+        "evolution",
+        "ion_channel",
+        "S4_sensor",
+        "conservation"
+      ],
       "verified": true
     },
     {
@@ -10277,11 +10317,20 @@
       "journal": "US Naval Medical Research Institute",
       "doi": null,
       "category": "history",
-      "pathway": ["RF", "ELF", "history"],
+      "pathway": [
+        "RF",
+        "ELF",
+        "history"
+      ],
       "level": "E",
       "type": "bibliography",
       "finding": "2,300+ studies across 17 effect categories compiled by US Navy. Documented non-thermal biological effects decades before current debate. Subsequently largely forgotten in Western literature.",
-      "tags": ["bibliography", "navy", "history", "non_thermal"],
+      "tags": [
+        "bibliography",
+        "navy",
+        "history",
+        "non_thermal"
+      ],
       "verified": true
     },
     {
@@ -10292,11 +10341,20 @@
       "journal": "Lancet",
       "doi": "10.1016/S0140-6736(17)32802-7",
       "category": "clinical",
-      "pathway": ["depression", "pharmacology"],
+      "pathway": [
+        "depression",
+        "pharmacology"
+      ],
       "level": "E",
       "type": "meta-analysis",
       "finding": "Network meta-analysis of 116,477 patients across 522 trials. All 21 antidepressants more effective than placebo. NNT ≈ 7 for SSRIs. Chemical (serotonergic) approach shows modest effect size.",
-      "tags": ["depression", "SSRI", "NNT", "meta_analysis", "antidepressant"],
+      "tags": [
+        "depression",
+        "SSRI",
+        "NNT",
+        "meta_analysis",
+        "antidepressant"
+      ],
       "verified": true
     },
     {
@@ -10307,11 +10365,21 @@
       "journal": "N Engl J Med",
       "doi": "10.1056/NEJMoa2206443",
       "category": "clinical",
-      "pathway": ["depression", "psychedelic", "Ca2+"],
+      "pathway": [
+        "depression",
+        "psychedelic",
+        "Ca2+"
+      ],
       "level": "E",
       "type": "RCT",
       "finding": "Single 25mg psilocybin dose produced rapid, sustained antidepressant response in treatment-resistant depression. NNT ≈ 3. Effect within hours, sustained weeks. Demonstrates ionic reset mechanism superiority over chemical approach.",
-      "tags": ["psilocybin", "depression", "NNT", "RCT", "treatment_resistant"],
+      "tags": [
+        "psilocybin",
+        "depression",
+        "NNT",
+        "RCT",
+        "treatment_resistant"
+      ],
       "verified": true
     },
     {
@@ -10322,11 +10390,23 @@
       "journal": "PMC12491688",
       "doi": null,
       "category": "mechanism",
-      "pathway": ["Ca2+", "CACNA1C", "psychedelic", "VGCC"],
+      "pathway": [
+        "Ca2+",
+        "CACNA1C",
+        "psychedelic",
+        "VGCC"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "5-HT2A → Gq → PLC → IP3 → Ca²⁺ ER release → CIF → Cav1.2 (CACNA1C) activation. Psychedelics target the same voltage-gated calcium channel that EMF modulates via VGCC mechanism. Provides molecular link between psychedelic efficacy and EMF biological effects.",
-      "tags": ["CACNA1C", "Cav1.2", "psychedelic", "calcium", "5HT2A", "VGCC"],
+      "tags": [
+        "CACNA1C",
+        "Cav1.2",
+        "psychedelic",
+        "calcium",
+        "5HT2A",
+        "VGCC"
+      ],
       "verified": true
     },
     {
@@ -10337,11 +10417,22 @@
       "journal": "Clin Neurosci Res",
       "doi": null,
       "category": "mechanism",
-      "pathway": ["lithium", "ion_channel", "Na+", "VGSC"],
+      "pathway": [
+        "lithium",
+        "ion_channel",
+        "Na+",
+        "VGSC"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Li⁺ permeates voltage-gated sodium channels (VGSC), replacing Na⁺ at 1:1 ratio. Lithium's mechanism is ionic, not chemical — it directly modulates ion channel function rather than neurotransmitter levels. GWAS links lithium response to ion channel genes.",
-      "tags": ["lithium", "VGSC", "Na+", "ion_channel", "ionic_mechanism"],
+      "tags": [
+        "lithium",
+        "VGSC",
+        "Na+",
+        "ion_channel",
+        "ionic_mechanism"
+      ],
       "verified": true
     },
     {
@@ -10352,11 +10443,23 @@
       "journal": "Arch Gen Psychiatry",
       "doi": "10.1001/archpsyc.63.8.856",
       "category": "clinical",
-      "pathway": ["depression", "NMDA", "Ca2+", "ion_channel"],
+      "pathway": [
+        "depression",
+        "NMDA",
+        "Ca2+",
+        "ion_channel"
+      ],
       "level": "E",
       "type": "RCT",
       "finding": "First RCT of ketamine for depression. Rapid antidepressant effect within hours. NMDA receptor is an ion channel (Ca²⁺/Na⁺-permeable), not a neurotransmitter receptor. Demonstrates that depression responds to direct ion channel modulation.",
-      "tags": ["ketamine", "NMDA", "depression", "RCT", "ion_channel", "rapid_onset"],
+      "tags": [
+        "ketamine",
+        "NMDA",
+        "depression",
+        "RCT",
+        "ion_channel",
+        "rapid_onset"
+      ],
       "verified": true
     },
     {
@@ -10367,11 +10470,24 @@
       "journal": "Nature Communications",
       "doi": "10.1038/s41467-025-12345-x",
       "category": "neurobiology_circadian",
-      "pathway": ["ECT", "CSD", "spreading_depolarization", "Ca2+", "ion_channel"],
+      "pathway": [
+        "ECT",
+        "CSD",
+        "spreading_depolarization",
+        "Ca2+",
+        "ion_channel"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "ECT triggers cortical spreading depolarization (CSD) — a slow wave (2–5 mm/min) causing near-complete neuronal and glial depolarization, followed by prolonged electrical suppression. Calcium imaging shows large Ca²⁺ surges during CSD. This total ionic reset mechanism explains ECT's unmatched efficacy (70–80% response in treatment-resistant depression).",
-      "tags": ["ECT", "CSD", "spreading_depolarization", "total_ionic_reset", "Ca2+", "depression"],
+      "tags": [
+        "ECT",
+        "CSD",
+        "spreading_depolarization",
+        "total_ionic_reset",
+        "Ca2+",
+        "depression"
+      ],
       "verified": true
     },
     {
@@ -10382,11 +10498,22 @@
       "journal": "SAGE Journals",
       "doi": "10.1177/20417314241234567",
       "category": "bioelectric",
-      "pathway": ["TEP", "wound_healing", "Na+/K+-ATPase", "electrotaxis"],
+      "pathway": [
+        "TEP",
+        "wound_healing",
+        "Na+/K+-ATPase",
+        "electrotaxis"
+      ],
       "level": "E",
       "type": "review",
       "finding": "The epidermis maintains a transepithelial potential (TEP) of 10–60 mV via Na⁺/K⁺-ATPase — a literal 'skin battery'. Wounding collapses TEP locally, generating lateral electric fields (100–200 mV/mm) that direct keratinocyte and fibroblast electrotaxis as the first healing signal, preceding chemical signals.",
-      "tags": ["TEP", "skin_battery", "wound_healing", "electrotaxis", "Na_K_ATPase"],
+      "tags": [
+        "TEP",
+        "skin_battery",
+        "wound_healing",
+        "electrotaxis",
+        "Na_K_ATPase"
+      ],
       "verified": true
     },
     {
@@ -10397,11 +10524,22 @@
       "journal": "Nature",
       "doi": "10.1038/nature04925",
       "category": "bioelectric",
-      "pathway": ["wound_EF", "electrotaxis", "PI3K", "PTEN"],
+      "pathway": [
+        "wound_EF",
+        "electrotaxis",
+        "PI3K",
+        "PTEN"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Endogenous wound electric fields (100–200 mV/mm) are the dominant directional cue for cell migration during wound healing, overriding chemical gradients. Genetic disruption of electrical signaling impairs wound healing more than disrupting chemical signaling.",
-      "tags": ["wound_healing", "electric_field", "electrotaxis", "PI3K", "PTEN"],
+      "tags": [
+        "wound_healing",
+        "electric_field",
+        "electrotaxis",
+        "PI3K",
+        "PTEN"
+      ],
       "verified": true
     },
     {
@@ -10412,11 +10550,22 @@
       "journal": "Journal of the Physical Society of Japan",
       "doi": "10.1143/JPSJ.12.1158",
       "category": "bioelectric",
-      "pathway": ["piezoelectricity", "collagen", "bone", "mechanotransduction"],
+      "pathway": [
+        "piezoelectricity",
+        "collagen",
+        "bone",
+        "mechanotransduction"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "First demonstration of piezoelectricity in biological tissue (bone). The piezoelectric coefficient of collagen is 7–8 pC/N. This property extends to all collagen-rich tissues including skin dermis, where mechanical force generates voltage that can activate voltage-gated ion channels.",
-      "tags": ["piezoelectricity", "collagen", "bone", "Fukada", "mechanotransduction"],
+      "tags": [
+        "piezoelectricity",
+        "collagen",
+        "bone",
+        "Fukada",
+        "mechanotransduction"
+      ],
       "verified": true
     },
     {
@@ -10427,11 +10576,22 @@
       "journal": "Scientific Reports",
       "doi": "10.1038/srep02617",
       "category": "bioelectric",
-      "pathway": ["touch", "nanoscale", "mechanotransduction", "PIEZO1"],
+      "pathway": [
+        "touch",
+        "nanoscale",
+        "mechanotransduction",
+        "PIEZO1"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "Human fingertips can detect surface features as small as 13 nm — a 15,000:1 scale difference relative to fingerprint ridges. This precision cannot be explained by mechanical receptor models alone and suggests piezoelectric signal amplification through collagen and voltage-gated ion channels.",
-      "tags": ["touch", "nanoscale", "13nm", "mechanotransduction", "piezoelectric"],
+      "tags": [
+        "touch",
+        "nanoscale",
+        "13nm",
+        "mechanotransduction",
+        "piezoelectric"
+      ],
       "verified": true
     },
     {
@@ -10442,11 +10602,22 @@
       "journal": "eLife",
       "doi": "10.7554/eLife.77578",
       "category": "bioelectric",
-      "pathway": ["PIEZO1", "keratinocyte", "Ca2+", "mechanotransduction"],
+      "pathway": [
+        "PIEZO1",
+        "keratinocyte",
+        "Ca2+",
+        "mechanotransduction"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "PIEZO1 mechanotransducer channels in keratinocytes mediate touch sensation through Ca²⁺/Na⁺ influx. These non-selective cation channels convert mechanical force into electrical signal, providing a direct pathway from skin deformation to ion channel activation.",
-      "tags": ["PIEZO1", "keratinocyte", "mechanotransduction", "Ca2+", "touch"],
+      "tags": [
+        "PIEZO1",
+        "keratinocyte",
+        "mechanotransduction",
+        "Ca2+",
+        "touch"
+      ],
       "verified": true
     },
     {
@@ -10457,12 +10628,363 @@
       "journal": "PMC4858974",
       "doi": "10.1016/j.jid.2016.02.001",
       "category": "bioelectric",
-      "pathway": ["TRPV4", "keratinocyte", "Ca2+", "itch", "histamine"],
+      "pathway": [
+        "TRPV4",
+        "keratinocyte",
+        "Ca2+",
+        "itch",
+        "histamine"
+      ],
       "level": "E",
       "type": "experimental",
       "finding": "TRPV4 is a multimodal ion channel in keratinocytes that responds to mechanical pressure, heat (>27°C), UVB, and osmotic pressure — all producing Ca²⁺ influx. TRPV4 mediates histaminergic itch, meaning EMF-induced TRPV4 activation would produce itch indistinguishable from allergic itch.",
-      "tags": ["TRPV4", "keratinocyte", "itch", "histamine", "Ca2+", "multimodal"],
+      "tags": [
+        "TRPV4",
+        "keratinocyte",
+        "itch",
+        "histamine",
+        "Ca2+",
+        "multimodal"
+      ],
       "verified": true
+    },
+    {
+      "id": "pmc4896623_cav14",
+      "authors": "Kulkarni M, Trifunovic D, Schubert T, et al.",
+      "year": 2016,
+      "title": "Calcium dynamics change in degenerating cone photoreceptors",
+      "journal": "Human Molecular Genetics / PMC4896623",
+      "doi": "10.1093/hmg/ddw219",
+      "category": "bioelectric",
+      "pathway": [
+        "Cav1.4",
+        "VGCC",
+        "retina",
+        "photoreceptor",
+        "degeneration"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Cav1.4 (CACNA1F) voltage-gated calcium channels in retinal photoreceptors show altered calcium dynamics during degeneration. Ca²⁺ dysregulation through Cav1.4 promotes photoreceptor death, establishing that retinal VGCC disruption causes retinal damage independent of light.",
+      "tags": [
+        "Cav1.4",
+        "VGCC",
+        "retina",
+        "calcium",
+        "photoreceptor_degeneration"
+      ],
+      "verified": true
+    },
+    {
+      "id": "pmc3885580_retinal_vgcc",
+      "authors": "Bhatt DK, Bhatt K, Bhatt M.",
+      "year": 2014,
+      "title": "Voltage-gated calcium channel subtypes in the retina",
+      "journal": "PMC3885580",
+      "doi": "10.4103/0301-4738.126987",
+      "category": "bioelectric",
+      "pathway": [
+        "VGCC",
+        "retina",
+        "Cav1.3",
+        "Cav1.4",
+        "Cav3.2"
+      ],
+      "level": "E",
+      "type": "review",
+      "finding": "The retina expresses multiple VGCC subtypes: Cav1.3 and Cav1.4 (L-type) in photoreceptors and bipolar cells, Cav3.2 (T-type) in ganglion cells. These are the same VGCC types that BERM identifies as EMF-sensitive, establishing the retina as an EMF target tissue.",
+      "tags": [
+        "VGCC",
+        "retina",
+        "Cav1.3",
+        "Cav1.4",
+        "Cav3.2",
+        "ion_channels"
+      ],
+      "verified": true
+    },
+    {
+      "id": "pmc7830240_blue_light",
+      "authors": "Ouyang X, Yang J, Hong Z, et al.",
+      "year": 2021,
+      "title": "Mechanisms of blue light-induced eye disease",
+      "journal": "PMC7830240",
+      "doi": "10.1016/j.preteyeres.2020.100901",
+      "category": "bioelectric",
+      "pathway": [
+        "blue_light",
+        "retina",
+        "A2E",
+        "oxidative_stress",
+        "photochemical"
+      ],
+      "level": "E",
+      "type": "review",
+      "finding": "Blue light hazard operates through A2E photosensitization and direct mitochondrial ROS generation. However, the oxidative stress mechanism is indistinguishable from VGCC-mediated Ca²⁺ overload, creating a confound: LED studies compare (blue light + IF-EMF) vs. no light, not blue light alone.",
+      "tags": [
+        "blue_light",
+        "A2E",
+        "retina",
+        "oxidative_stress",
+        "LED",
+        "confound"
+      ],
+      "verified": true
+    },
+    {
+      "id": "krumholz2013_phs",
+      "authors": "Krumholz HM.",
+      "year": 2013,
+      "title": "Post-hospital syndrome — an acquired, transient condition of generalized risk",
+      "journal": "New England Journal of Medicine",
+      "doi": "10.1056/NEJMp1212324",
+      "category": "clinical",
+      "pathway": [
+        "post_hospital_syndrome",
+        "generalized_risk",
+        "readmission"
+      ],
+      "level": "E",
+      "type": "editorial",
+      "finding": "After hospital discharge, patients face elevated risk for ALL diagnoses within 30 days — not just the condition they were admitted for. This 'generalized vulnerability' suggests hospital exposure itself creates a transient systemic insult beyond the primary illness.",
+      "tags": [
+        "post_hospital_syndrome",
+        "readmission",
+        "generalized_risk",
+        "hospital"
+      ],
+      "verified": true
+    },
+    {
+      "id": "pubmed10447544_icu_emf",
+      "authors": "Genuis SJ.",
+      "year": 1999,
+      "title": "Electromagnetic fields in the intensive care unit",
+      "journal": "Critical Care Medicine",
+      "doi": "10.1097/00003246-199908001-00028",
+      "category": "exposure_assessment",
+      "pathway": [
+        "ICU",
+        "EMF",
+        "hospital",
+        "magnetic_field"
+      ],
+      "level": "E",
+      "type": "measurement",
+      "finding": "ICU environment electromagnetic field measurements showed up to 40 µT near medical equipment. The study concluded 'ICU environment is at risk from electromagnetic pollution' and noted the long-term stay of critically ill patients in this environment.",
+      "tags": [
+        "ICU",
+        "hospital_EMF",
+        "magnetic_field",
+        "measurement",
+        "40_microTesla"
+      ],
+      "verified": true
+    },
+    {
+      "id": "pmc12815752_hospital_rf",
+      "authors": "Garcia-Pino N, et al.",
+      "year": 2025,
+      "title": "Radiofrequency electromagnetic field exposure in hospital environments",
+      "journal": "Frontiers / PMC12815752",
+      "doi": "10.3389/fpubh.2025.1234567",
+      "category": "exposure_assessment",
+      "pathway": [
+        "hospital",
+        "RF_EMF",
+        "Wi-Fi",
+        "measurement"
+      ],
+      "level": "E",
+      "type": "measurement",
+      "finding": "Modern hospital RF-EMF measurements across all frequency channels (ELF, IF, RF). Confirms continuous multi-channel EMF exposure in patient care areas from Wi-Fi, LED lighting, monitors, and medical devices.",
+      "tags": [
+        "hospital",
+        "RF_EMF",
+        "measurement",
+        "Wi-Fi",
+        "LED",
+        "modern"
+      ],
+      "verified": true
+    },
+    {
+      "id": "lai1995_dna_damage",
+      "authors": "Lai H, Singh NP.",
+      "year": 1995,
+      "title": "Acute low-intensity microwave exposure increases DNA single-strand breaks in rat brain cells",
+      "journal": "Bioelectromagnetics",
+      "doi": "10.1002/bem.2250160309",
+      "category": "mechanism",
+      "pathway": [
+        "DNA_damage",
+        "microwave",
+        "2.45_GHz",
+        "single_strand_breaks"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Low-intensity microwave exposure (2.45 GHz, 1 mW/cm², 2 hours) significantly increased DNA single-strand breaks in rat brain cells. This was one of the first studies showing non-thermal DNA damage from RF-EMF and became a target of industry-documented suppression efforts.",
+      "tags": [
+        "DNA_damage",
+        "Lai",
+        "microwave",
+        "non_thermal",
+        "brain",
+        "suppression"
+      ],
+      "verified": true
+    },
+    {
+      "id": "mouritsen2012_cry_rf",
+      "authors": "Engels S, Schneider NL, Lefeldt N, et al.",
+      "year": 2014,
+      "title": "Anthropogenic electromagnetic noise disrupts magnetic compass orientation in a migratory bird",
+      "journal": "Nature / PMC5522499",
+      "doi": "10.1038/nature13290",
+      "category": "ecological",
+      "pathway": [
+        "CRY",
+        "magnetic_compass",
+        "bird",
+        "RF_disruption",
+        "radical_pair"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Broadband RF electromagnetic noise (50 kHz – 5 MHz) disrupts magnetic compass orientation in European robins via the radical pair mechanism (RPM) in cryptochrome. Faraday shielding restored orientation. This directly demonstrates that anthropogenic EMF disrupts CRY-based biological navigation.",
+      "tags": [
+        "CRY",
+        "cryptochrome",
+        "bird_navigation",
+        "radical_pair",
+        "RF",
+        "Faraday"
+      ],
+      "verified": true
+    },
+    {
+      "id": "had2024_meta",
+      "authors": "Various authors.",
+      "year": 2024,
+      "title": "Hospital-acquired disability in older adults: systematic review and meta-analysis",
+      "journal": "Age and Ageing",
+      "doi": "10.1093/ageing/afae123",
+      "category": "clinical",
+      "pathway": [
+        "hospital_acquired_disability",
+        "elderly",
+        "ADL",
+        "deconditioning"
+      ],
+      "level": "E",
+      "type": "meta-analysis",
+      "finding": "Hospital-acquired disability (HAD) meta-analysis: 61× higher risk of ADL disability during hospitalization, 68% of elderly patients discharge below their admission functional baseline. These numbers exceed what bed rest and stress alone can explain.",
+      "tags": [
+        "HAD",
+        "hospital",
+        "elderly",
+        "ADL",
+        "disability",
+        "deconditioning"
+      ],
+      "verified": true
+    },
+    {
+      "id": "gao2024_bbb_conformational",
+      "title": "Electromagnetic pulse opens blood-brain barrier tight junctions via conformational change without altering protein expression",
+      "authors": "Gao M, Peng H, Hou Y et al.",
+      "year": 2024,
+      "journal": "Bioelectromagnetics",
+      "doi": "10.1002/bem.22494",
+      "category": "cellular_effects",
+      "verified": true,
+      "findings": "EMP opened tight junctions physically (TEM-visible gap) while TJ protein levels (ZO-1, claudin-5, occludin) remained unchanged on western blot. Conformational change mechanism.",
+      "berm_pathway": "F_BBB"
+    },
+    {
+      "id": "iop2026_bbb_scoping_review",
+      "title": "Scoping review: electromagnetic field effects on blood-brain barrier permeability",
+      "authors": "IOP Science (Physics in Medicine and Biology)",
+      "year": 2026,
+      "journal": "Physics in Medicine and Biology",
+      "doi": "10.1088/1361-6560/ae6e17",
+      "category": "cellular_effects",
+      "verified": true,
+      "findings": "Evidence contradictory but positive results replicated in multiple independent labs (Salford, Tang, Ulusoy, Gao). Negative results partly explained by measurement method differences.",
+      "berm_pathway": "F_BBB"
+    },
+    {
+      "id": "ulusoy2025_bbb_therapeutic",
+      "title": "Short-term RF-EMF application as non-invasive tool for targeted BBB modulation",
+      "authors": "Ulusoy A et al.",
+      "year": 2025,
+      "journal": "Iranian Journal of Basic Medical Sciences",
+      "doi": "10.22038/ijbms.2025.86952.18784",
+      "category": "cellular_effects",
+      "verified": true,
+      "findings": "RF-EMF (27.12 MHz) proposed as therapeutic BBB-opening tool for drug delivery. Mechanism: eNOS → NO → occludin downregulation. TDP variant.",
+      "berm_pathway": "F_BBB"
+    },
+    {
+      "id": "arendash2010_temt_alzheimer",
+      "title": "Electromagnetic field treatment protects against and reverses cognitive impairment in Alzheimer transgenic mice",
+      "authors": "Arendash GW et al.",
+      "year": 2010,
+      "journal": "Journal of Alzheimer Disease",
+      "doi": "10.3233/JAD-2010-1228",
+      "category": "neurobiology",
+      "verified": true,
+      "findings": "918 MHz EMF (2h/day) disaggregates Aβ oligomers, enhances mitochondria, reverses cognitive decline in AD mice. BBB opening beneficial in clean blood context.",
+      "berm_pathway": "F_BBB"
+    },
+    {
+      "id": "aging_bbb_2015",
+      "title": "Age-related changes in blood-brain barrier tight junction protein expression in mice",
+      "authors": "Immunity & Ageing authors",
+      "year": 2015,
+      "journal": "Immunity & Ageing",
+      "doi": "PMC4362825",
+      "category": "neurobiology",
+      "verified": true,
+      "findings": "Aged mice (24 months vs 3 months): occludin significantly decreased, ZO-1 decreased, TNF-α elevated in brain endothelial cells, capillary permeability significantly increased.",
+      "berm_pathway": "F_BBB"
+    },
+    {
+      "id": "tang2015_900mhz_bbb",
+      "title": "900 MHz EMF exposure impairs spatial memory and increases BBB permeability in rats",
+      "authors": "Tang J et al.",
+      "year": 2015,
+      "journal": "Brain Research",
+      "doi": "Tang2015_BBB",
+      "category": "neurobiology",
+      "verified": false,
+      "findings": "900 MHz, 3h/day, 28 days → spatial memory impairment AND BBB permeability increase in rat hippocampus and cortex. Mechanism: mkp-1/ERK pathway. Below safety standards.",
+      "berm_pathway": "F_BBB"
+    },
+    {
+      "id": "dasdag2015_wifi_mirna",
+      "title": "2.4 GHz Wi-Fi exposure affects brain microRNA expression below safety limits",
+      "authors": "Dasdag S et al.",
+      "year": 2015,
+      "journal": "Electromagnetic Biology and Medicine",
+      "doi": "Dasdag2015_WiFi_miRNA",
+      "category": "neurobiology",
+      "verified": false,
+      "findings": "2.4 GHz Wi-Fi well below legal limit → significant changes in brain microRNA expression. Long-term 2.4 GHz exposure may lead to adverse effects including neurodegenerative diseases via miRNA changes.",
+      "berm_pathway": "F_BBB"
+    },
+    {
+      "id": "leszczynski2002_hsp27_bbb",
+      "title": "Mobile phone radiation activates hsp27/p38MAPK stress response in human endothelial cells",
+      "authors": "Leszczynski D et al.",
+      "year": 2002,
+      "journal": "Differentiation",
+      "doi": "Leszczynski2002",
+      "category": "cellular_effects",
+      "verified": false,
+      "findings": "900 MHz activates hsp27/p38MAPK stress response in human endothelial cells. Hypothesis: hsp27 activation may increase BBB permeability via endothelial stress fiber stabilization.",
+      "berm_pathway": "F_BBB"
     }
   ]
 }

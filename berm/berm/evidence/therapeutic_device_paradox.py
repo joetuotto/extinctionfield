@@ -226,6 +226,58 @@ THERAPEUTIC_EMF_DEVICES: dict[str, TherapeuticEMFDevice] = {
         berm_pathway="A_VGCC_ROS",
         evidence_level="FDA approved (thermal); non-thermal component under study",
     ),
+
+    "RF_BBB_modulation": TherapeuticEMFDevice(
+        key="RF_BBB_modulation",
+        name="RF-EMF BBB modulation (research tool)",
+        fda_status="Research use (not FDA-approved, not commercial)",
+        frequency_hz=27_120_000.0,
+        intensity="Non-thermal, SAR below ICNIRP limits",
+        mechanism=(
+            "27.12 MHz RF → eNOS activation → NO production → "
+            "occludin downregulation → tight junction opening → "
+            "BBB permeability increase for drug delivery."
+        ),
+        non_thermal=True,
+        biological_target="Blood-brain barrier tight junctions",
+        berm_pathway="F_BBB",
+        evidence_level="Peer-reviewed research (Ulusoy 2025, Iranian J Basic Med Sci)",
+        critical_note=(
+            "Researchers PROPOSE RF-EMF as therapeutic tool for BBB "
+            "opening to deliver drugs to the brain. This proves biological "
+            "activity at the same frequency (27.12 MHz) used in PRF therapy. "
+            "ICNIRP does not acknowledge the mechanism."
+        ),
+    ),
+
+    "TEMT_alzheimer": TherapeuticEMFDevice(
+        key="TEMT_alzheimer",
+        name="Transcranial Electromagnetic Treatment (TEMT / MemorEM)",
+        fda_status="Clinical trials Phase I/II (NeuroEM Therapeutics)",
+        frequency_hz=918_000_000.0,
+        intensity="~1 W/kg SAR, pulse-modulated 217 Hz",
+        mechanism=(
+            "918 MHz pulse-modulated RF disaggregates Aβ oligomers and "
+            "p-tau aggregates, enhances mitochondrial function, increases "
+            "neuronal activity in entorhinal cortex. Opens BBB for "
+            "Aβ clearance (Arendash paradox: BBB opening is beneficial "
+            "when blood is clean)."
+        ),
+        non_thermal=True,
+        biological_target="Brain Aβ/p-tau aggregates, mitochondria, BBB",
+        berm_pathway="F_BBB",
+        evidence_level=(
+            "Phase I/II clinical trial (8 AD patients, 2 months): "
+            "cognitive improvement on ADAS-cog and Rey AVLT. "
+            "Arendash 2010/2012/2016/2019 animal studies."
+        ),
+        critical_note=(
+            "Same researcher (Arendash) acknowledges BBB opening but "
+            "interprets it as BENEFICIAL (Aβ clearance in clean lab "
+            "environment). Proves non-thermal biological activity at "
+            "918 MHz. ICNIRP does not acknowledge the mechanism."
+        ),
+    ),
 }
 
 
