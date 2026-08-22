@@ -120,10 +120,10 @@ export function IonicHierarchyDiagram({ locale }: { locale: string }) {
   const isFi = locale === "fi";
   const d = isFi ? COPY.fi : COPY.en;
 
-  const svgW = 700;
+  const svgW = 860;
   const svgH = 400;
   const barX = 120;
-  const barW = 540;
+  const barW = 480;
   const rowH = 56;
   const startY = 50;
   const totalLevels = TREATMENTS.length;
