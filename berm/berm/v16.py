@@ -517,6 +517,81 @@ def v17_cry_effect(country: str, year: int) -> float:
     return max(0.85, min(1.0, 1.0 - GAMMA_CRY * cry_ann))
 
 
+def v18_nutritional_cry_modifier(
+    b2_adequacy_fraction: float = 1.0,
+    eye_color_blue_prevalence: float = 0.0,
+    omega_index: float = 1.0,
+) -> float:
+    """Nutritional and genetic modifier for pathway C effectiveness.
+
+    NOT YET INTEGRATED into main model. Placeholder for future extension.
+
+    Parameters
+    ----------
+    b2_adequacy_fraction : float
+        Fraction of population with adequate B2 intake (>= EAR).
+        Range: 0.0 (all deficient) to 1.0 (all adequate).
+        Source: CNHS 2015-2017 for China (~0.08), Western Europe (~0.85).
+
+    eye_color_blue_prevalence : float
+        Population prevalence of blue/green eyes (proxy for enhanced CRY
+        activation via iris light transmission).
+        Range: 0.0 (all brown) to 1.0 (all blue/green).
+        Source: Martinez-Cadenas 2013, country-specific estimates.
+
+    omega_index : float
+        Normalized omega-3/omega-6 ratio relative to reference population.
+        Range: 0.5 (highly omega-6 skewed) to 1.5 (optimal omega-3 balance).
+        Default 1.0 = reference population.
+
+    Returns
+    -------
+    float
+        Multiplicative modifier for pathway C response. Range ~0.1 to ~1.3.
+        1.0 = no modification (reference population).
+        <1.0 = impaired CRY function (B2 deficiency, brown eyes, poor omega).
+        >1.0 = enhanced CRY function (B2 adequate, blue eyes, good omega).
+
+    Mechanism
+    ---------
+    nutritional_modifier = b2_factor * eye_factor * omega_factor
+
+    b2_factor = b2_adequacy_fraction^0.5 (diminishing returns)
+        At China's 0.08 adequacy: b2_factor ~ 0.28 (72% reduction)
+        At Western Europe's 0.85: b2_factor ~ 0.92 (8% reduction)
+
+    eye_factor = 0.3 + 0.7 * eye_color_blue_prevalence
+        All brown (0.0): 0.3 | All blue (1.0): 1.0 | Mixed (0.5): 0.65
+
+    omega_factor = omega_index^0.3 (weak modulation, poorly quantified)
+
+    IMPORTANT CAVEATS:
+    - This function is NOT validated. Parameters are order-of-magnitude.
+    - b2_adequacy data exists for ~30 countries. Eye color data is sparse.
+    - The three factors may not be independent.
+    - CRY1 (C1-sensory) and CRY2 (C2-circadian) may have different
+      nutritional sensitivities.
+    - AMPK-CRY dynamics in fasting (Lamia 2009, Science) create a paradox:
+      fasting degrades old CRY via AMPK-Ser71-FBXL3, but increases FAD pool
+      via beta-oxidation, so new CRY is better FAD-loaded. Net effect is
+      L*-level hypothesis.
+
+    References
+    ----------
+    Hirano 2017 (Cell Reports): FAD -> CRY stability
+    Yap/Sherrard 2025 (Cells): FAD -> magnetic sensitivity
+    Bartolke 2025 (FASEB J): CRY1 in human blue cone outer segments
+    Majewska 2025 (ACS Chem Biol): CRY membrane orientation
+    Higuchi 2007: Eye color -> melatonin suppression (89% vs 73%)
+    Lamia 2009 (Science): AMPK -> CRY degradation in fasting
+    Wacker 2000: B2 deficiency -> preeclampsia OR 4.7
+    """
+    b2_factor = b2_adequacy_fraction ** 0.5
+    eye_factor = 0.3 + 0.7 * eye_color_blue_prevalence
+    omega_factor = omega_index ** 0.3
+    return b2_factor * eye_factor * omega_factor
+
+
 def v17_melatonin_suppression(country: str, year: int) -> float:
     """Melatonin suppression from night EMF exposure."""
     night_emf = v17_night_fraction(country, year) * v16_personal_annual(country, year)

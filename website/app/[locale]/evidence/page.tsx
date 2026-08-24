@@ -1400,6 +1400,35 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </div>
       </section>
 
+      {/* VDT Precedent */}
+      <section id="vdt-precedent" className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "VDT-ennakkotapaus: IF-kentät ja lisääntyminen 1980-luvulla" : "The VDT Precedent: IF Fields and Reproduction in the 1980s"}
+        </h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {activeLocale === "fi"
+              ? "1980-luvulla VDT-työntekijöiden (video display terminal) keskuudessa havaittiin keskenmenoklustereita. CRT-monitorien vaakapoikkeutuskäämi tuotti 15–30 kHz IF-kenttiä — sama taajuusalue kuin nykyisten LED-hakkurien. Tapaus ratkesi teknologian vaihdolla (LCD), ei tieteellä."
+              : "In the 1980s, clusters of miscarriages were reported among VDT (video display terminal) workers. CRT monitors' horizontal deflection coils produced 15–30 kHz IF fields — the same frequency range as modern LED drivers. The issue was resolved by technology change (LCD), not by science."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Epidemiologinen näyttö oli ristiriitainen: jotkut tutkimukset osoittivat kohonnutta riskiä (McDonald 1986, Goldhaber 1988), toiset eivät (Schnorr/NIOSH 1991). NIOSH:n tutkimusta pidettiin lopullisena, mutta se käytti VLF-kenttämittauksia (15 kHz) vain karkeana proksi-altistuksena — se ei erottanut pulssimuotoisia kenttiä jatkuvista, eikä mitattu yksittäisten monitorien hetkellistä emissiovaihtelua. Kun LCD-näytöt korvasivat CRT:t 2000-luvulla, IF-altistus VDT-työntekijöiltä hävisi — ja samalla hävisi motiivi tutkia asiaa."
+              : "Epidemiological evidence was mixed: some studies showed elevated risk (McDonald 1986, Goldhaber 1988), others did not (Schnorr/NIOSH 1991). The NIOSH study was treated as definitive, but it used VLF field measurements (15 kHz) only as a crude proxy — it did not distinguish pulsed from continuous fields, nor measure individual monitor emission variability. When LCD screens replaced CRTs in the 2000s, IF exposure from VDT workers disappeared — and with it, the motivation to investigate."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "BERM-konteksti: VDT-tapaus on IF-kanavan historiallinen ennakkotapaus. CRT:n 15–30 kHz -kentät ovat samaa taajuusaluetta kuin LED-hakkurien 20–100 kHz -emissiot. VDT-ongelma 'ratkesi' korvaamalla CRT:t LCD:illä — mutta LCD:t sisältävät LED-taustavalot, joiden hakkurit tuottavat saman taajuusalueen kenttiä. IF-altistus ei hävinnyt; se siirtyi VDT-työntekijöiltä koko väestöön."
+              : "BERM context: The VDT case is a historical precedent for the IF channel. CRT 15–30 kHz fields occupy the same frequency range as LED driver 20–100 kHz emissions. The VDT problem was 'solved' by replacing CRTs with LCDs — but LCDs contain LED backlights whose drivers produce fields in the same frequency range. IF exposure did not disappear; it shifted from VDT workers to the entire population."}
+          </p>
+          <p className="text-xs text-foreground-muted/70 italic">
+            {activeLocale === "fi"
+              ? "Episteeminen taso: [C] (historiallinen ennakkotapaus). VDT-epidemiologia ei ole todiste IF:n vaarallisuudesta — se on todiste siitä, että IF-kenttien lisääntymisvaikutukset on havaittu aiemmin ja jätetty ratkaisematta."
+              : "Epistemic level: [C] (historical precedent). VDT epidemiology is not proof of IF harm — it is evidence that IF field reproductive effects were observed before and left unresolved."}
+          </p>
+        </div>
+      </section>
+
       {/* Hospital EMF Hypothesis */}
       <section id="hospital-emf" className="mb-16 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">

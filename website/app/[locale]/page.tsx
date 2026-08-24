@@ -47,6 +47,7 @@ const COPY = {
   en: {
     heroTitle: "Something is happening to fertility",
     heroDeck: "Human sperm counts, testosterone and birth rates are falling worldwide. Bee colonies, bird populations and amphibians are declining on the same timeline. No single conventional explanation accounts for the breadth, simultaneity and cross-species convergence of these trends.",
+    whatIsThis: "This site documents the Bio-Electromagnetic Reproductive Model (BERM) — a falsifiable research model that investigates whether non-thermal electromagnetic field exposure contributes to global fertility decline. BERM traces three frequency channels (ELF, IF, RF) through established biophysical mechanisms to reproductive endpoints. Every claim is bounded by epistemic level, every prediction is locked with a falsification criterion, and every negative finding is catalogued. This is not advocacy — it is an open research framework designed to be tested and, if wrong, to fail visibly.",
 
     s1Title: "THE NUMBERS",
 
@@ -104,6 +105,7 @@ const COPY = {
   fi: {
     heroTitle: "Jotain tapahtuu hedelmällisyydelle",
     heroDeck: "Ihmisen siittiömäärät, testosteroni ja syntyvyys laskevat maailmanlaajuisesti. Mehiläisyhdyskunnat, lintupopulaatiot ja sammakkoeläimet vähenevät samalla aikajanalla. Mikään yksittäinen tavanomainen selitys ei kata näiden trendien laajuutta, samanaikaisuutta ja lajienvälisyyttä.",
+    whatIsThis: "Tämä sivusto dokumentoi Bio-Electromagnetic Reproductive Model (BERM) -tutkimusmallin — falsifioitavan tutkimuskehikon, joka tutkii vaikuttaako ei-terminen sähkömagneettinen kenttäaltistus globaaliin hedelmällisyyden laskuun. BERM jäljittää kolme taajuuskanavaa (ELF, IF, RF) tunnettujen biofysikaalisten mekanismien kautta lisääntymisen päätepisteisiin. Jokainen väite on rajattu episteemisellä tasolla, jokainen ennuste on lukittu kumoamisehdolla, ja jokainen negatiivinen löydös on katalogissa. Tämä ei ole kannanotto — se on avoin tutkimuskehys, joka on suunniteltu testattavaksi ja, jos väärässä, epäonnistumaan näkyvästi.",
 
     s1Title: "LUVUT",
 
@@ -204,6 +206,7 @@ export default async function Home({
           {d.heroTitle}
         </h1>
         <p className="text-base sm:text-lg leading-relaxed text-foreground-muted">{d.heroDeck}</p>
+        <p className="text-sm leading-relaxed text-foreground-muted mt-4 border-l-2 border-accent/30 pl-4">{d.whatIsThis}</p>
       </header>
 
       {/* ── 2. Sparkline fact cards ── */}

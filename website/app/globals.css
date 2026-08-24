@@ -35,6 +35,17 @@
   --rule-strong: #4b5563;
   --figure-bg: #121418;
   --figure-caption-bg: rgba(255, 255, 255, 0.03);
+  --atlas-bg: #0a0a1a;
+  --atlas-surface: #12122a;
+  --atlas-edge: rgba(255, 255, 255, 0.09);
+  --atlas-edge-dim: rgba(255, 255, 255, 0.02);
+  --atlas-edge-hl: #60A5FA;
+  --atlas-marker: rgba(255, 255, 255, 0.14);
+  --atlas-marker-dim: rgba(255, 255, 255, 0.03);
+  --atlas-dot: rgba(255, 255, 255, 0.02);
+  --atlas-text: #f3f4f6;
+  --atlas-text-dim: #9ca3af;
+  --atlas-text-muted: #6b7280;
 }
 
 /* ── Light palette: system preference ── */
@@ -60,6 +71,17 @@
     --rule-strong: #87919b;
     --figure-bg: #ffffff;
     --figure-caption-bg: #f8f9f9;
+    --atlas-bg: #f0f2f5;
+    --atlas-surface: rgba(255, 255, 255, 0.92);
+    --atlas-edge: rgba(0, 0, 0, 0.18);
+    --atlas-edge-dim: rgba(0, 0, 0, 0.05);
+    --atlas-edge-hl: #2563EB;
+    --atlas-marker: rgba(0, 0, 0, 0.25);
+    --atlas-marker-dim: rgba(0, 0, 0, 0.08);
+    --atlas-dot: rgba(0, 0, 0, 0.05);
+    --atlas-text: #111827;
+    --atlas-text-dim: #4b5563;
+    --atlas-text-muted: #9ca3af;
   }
 }
 
@@ -85,6 +107,17 @@
   --rule-strong: #4b5563;
   --figure-bg: #121418;
   --figure-caption-bg: rgba(255, 255, 255, 0.03);
+  --atlas-bg: #0a0a1a;
+  --atlas-surface: #12122a;
+  --atlas-edge: rgba(255, 255, 255, 0.09);
+  --atlas-edge-dim: rgba(255, 255, 255, 0.02);
+  --atlas-edge-hl: #60A5FA;
+  --atlas-marker: rgba(255, 255, 255, 0.14);
+  --atlas-marker-dim: rgba(255, 255, 255, 0.03);
+  --atlas-dot: rgba(255, 255, 255, 0.02);
+  --atlas-text: #f3f4f6;
+  --atlas-text-dim: #9ca3af;
+  --atlas-text-muted: #6b7280;
 }
 
 /* ── Light palette: explicit toggle ── */
@@ -109,6 +142,17 @@
   --rule-strong: #87919b;
   --figure-bg: #ffffff;
   --figure-caption-bg: #f8f9f9;
+  --atlas-bg: #f0f2f5;
+  --atlas-surface: rgba(255, 255, 255, 0.92);
+  --atlas-edge: rgba(0, 0, 0, 0.18);
+  --atlas-edge-dim: rgba(0, 0, 0, 0.05);
+  --atlas-edge-hl: #2563EB;
+  --atlas-marker: rgba(0, 0, 0, 0.25);
+  --atlas-marker-dim: rgba(0, 0, 0, 0.08);
+  --atlas-dot: rgba(0, 0, 0, 0.05);
+  --atlas-text: #111827;
+  --atlas-text-dim: #4b5563;
+  --atlas-text-muted: #9ca3af;
 }
 
 @theme inline {

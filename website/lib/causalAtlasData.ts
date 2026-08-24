@@ -103,7 +103,17 @@ const NODE_ORDER: Record<Stage, string[]> = {
 
 export { NODE_ORDER };
 
-const REF_HEIGHT = 720;
+function calcRefHeight(): number {
+  let maxH = 720;
+  for (const stage of STAGE_ORDER) {
+    const n = NODE_ORDER[stage].length;
+    const h = n * NODE_H + (n - 1) * NODE_GAP;
+    if (h > maxH) maxH = h;
+  }
+  return maxH + 80;
+}
+
+const REF_HEIGHT = calcRefHeight();
 
 export function computeLayout(): Record<string, { x: number; y: number }> {
   const pos: Record<string, { x: number; y: number }> = {};

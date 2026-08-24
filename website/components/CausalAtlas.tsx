@@ -74,7 +74,7 @@ function AtlasEdge(props: EdgeProps) {
       markerEnd={markerEnd}
       style={{
         ...style,
-        stroke: highlighted ? "#60A5FA" : dimmed ? "#ffffff06" : "#ffffff18",
+        stroke: highlighted ? "var(--atlas-edge-hl)" : dimmed ? "var(--atlas-edge-dim)" : "var(--atlas-edge)",
         strokeWidth: highlighted ? 2 : 1,
         strokeDasharray: dasharray,
         transition: "stroke 0.3s, stroke-width 0.3s, opacity 0.3s",
@@ -207,7 +207,7 @@ function buildElements(
       target: e.to,
       type: "atlas",
       data: { relation, highlighted, dimmed },
-      markerEnd: { type: MarkerType.ArrowClosed, width: 12, height: 12, color: highlighted ? "#60A5FA" : dimmed ? "#ffffff08" : "#ffffff25" },
+      markerEnd: { type: MarkerType.ArrowClosed, width: 12, height: 12, color: highlighted ? "var(--atlas-edge-hl)" : dimmed ? "var(--atlas-marker-dim)" : "var(--atlas-marker)" },
     };
   }).filter(Boolean) as Edge[];
 
@@ -237,17 +237,17 @@ function AtlasToolbar({
   const epistemicLabels = EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>;
 
   return (
-    <div className="flex flex-wrap items-center gap-2 bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2">
+    <div className="flex flex-wrap items-center gap-2 bg-[var(--atlas-surface)] backdrop-blur-sm border border-[var(--border)] rounded-lg px-3 py-2">
       {/* Search */}
       <div className="relative">
-        <Search size={12} className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500" />
+        <Search size={12} className="absolute left-2 top-1/2 -translate-y-1/2 text-[var(--atlas-text-muted)]" />
         <input
           ref={searchRef}
           type="search"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder={lang === "fi" ? "Etsi solmu..." : "Search nodes..."}
-          className="w-36 pl-7 pr-2 py-1.5 bg-white/5 border border-white/10 rounded-md text-xs text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-400/50"
+          className="w-36 pl-7 pr-2 py-1.5 bg-[var(--atlas-edge-dim)] border border-[var(--border)] rounded-md text-xs text-[var(--atlas-text)] placeholder:text-[var(--atlas-text-muted)] focus:outline-none focus:ring-1 focus:ring-blue-400/50"
           aria-label={lang === "fi" ? "Etsi solmuja" : "Search nodes"}
         />
       </div>
@@ -263,8 +263,8 @@ function AtlasToolbar({
               aria-pressed={active}
               className={`px-2 py-1 rounded text-[10px] font-medium transition-colors min-h-[28px] ${
                 active
-                  ? "text-white"
-                  : "text-gray-500 hover:text-gray-300"
+                  ? "text-[var(--atlas-text)]"
+                  : "text-[var(--atlas-text-muted)] hover:text-[var(--atlas-text-dim)]"
               }`}
               style={active ? { backgroundColor: `${s.accent}25`, color: s.accent } : undefined}
             >
@@ -284,7 +284,7 @@ function AtlasToolbar({
               onClick={() => onEvidenceToggle(level)}
               aria-pressed={active}
               className={`inline-flex items-center gap-1 px-1.5 py-1 rounded text-[10px] transition-colors min-h-[28px] ${
-                active ? "text-gray-200" : "text-gray-500 opacity-50"
+                active ? "text-[var(--atlas-text)]" : "text-[var(--atlas-text-muted)] opacity-50"
               }`}
               title={epistemicLabels[level]}
             >
@@ -296,11 +296,11 @@ function AtlasToolbar({
       </div>
 
       {/* Count + clear */}
-      <span className="text-[10px] text-gray-500 tabular-nums">{visibleCount}/{NODES.length}</span>
+      <span className="text-[10px] text-[var(--atlas-text-muted)] tabular-nums">{visibleCount}/{NODES.length}</span>
       {hasFilters && (
         <button
           onClick={onClearFilters}
-          className="inline-flex items-center gap-1 px-2 py-1 rounded text-[10px] text-gray-400 hover:text-white hover:bg-white/10 transition-colors min-h-[28px]"
+          className="inline-flex items-center gap-1 px-2 py-1 rounded text-[10px] text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] hover:bg-[var(--atlas-edge)] transition-colors min-h-[28px]"
         >
           <RotateCcw size={10} />
           {lang === "fi" ? "Tyhjennä" : "Clear"}
@@ -467,7 +467,7 @@ function AtlasInner({ locale }: { locale: string }) {
   const copy = COPY[lang];
 
   return (
-    <div className="relative w-full h-[82vh] min-h-[600px] rounded-xl overflow-hidden bg-[#0a0a1a] border border-white/10">
+    <div className="relative w-full h-[82vh] min-h-[600px] rounded-xl overflow-hidden bg-[var(--atlas-bg)] border border-[var(--border)]">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -498,10 +498,10 @@ function AtlasInner({ locale }: { locale: string }) {
         proOptions={{ hideAttribution: true }}
         aria-label={lang === "fi" ? "BERM-kausaaliatlas" : "BERM Causal Atlas"}
       >
-        <Background gap={30} size={1} color="#ffffff05" />
+        <Background gap={30} size={1} color="var(--atlas-dot)" />
         <Controls
           showInteractive={false}
-          className="!bg-[#12122a] !border-white/10 !shadow-lg [&>button]:!bg-[#12122a] [&>button]:!border-white/10 [&>button]:!fill-gray-400 [&>button:hover]:!bg-white/10 [&>button]:!w-[44px] [&>button]:!h-[44px]"
+          className="!bg-[var(--atlas-surface)] !border-[var(--border)] !shadow-lg [&>button]:!bg-[var(--atlas-surface)] [&>button]:!border-[var(--border)] [&>button]:!fill-[var(--atlas-text-dim)] [&>button:hover]:!bg-[var(--atlas-edge)] [&>button]:!w-[44px] [&>button]:!h-[44px]"
         />
         <MiniMap
           nodeColor={(n) => {
@@ -510,29 +510,29 @@ function AtlasInner({ locale }: { locale: string }) {
             return EVIDENCE_COLORS[d.epistemicLevel as EpistemicLevel] ?? "#6B7280";
           }}
           maskColor="rgba(0,0,0,0.7)"
-          className="!bg-[#12122a] !border-white/10"
+          className="!bg-[var(--atlas-surface)] !border-[var(--border)]"
         />
 
         {/* Mode toggle + instruction */}
         <Panel position="top-right" className="!m-3">
           <div className="flex flex-col gap-2 items-end">
-            <div className="flex gap-1 bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-lg p-1">
+            <div className="flex gap-1 bg-[var(--atlas-surface)] backdrop-blur-sm border border-[var(--border)] rounded-lg p-1">
               <button
                 onClick={() => { setMode("explore"); setSelectedNode(null); closeDetails(); }}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors min-h-[36px] ${mode === "explore" ? "bg-white/10 text-white" : "text-gray-400 hover:text-gray-200"}`}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors min-h-[36px] ${mode === "explore" ? "bg-[var(--atlas-edge)] text-[var(--atlas-text)]" : "text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)]"}`}
               >
                 <Map size={14} />
                 {copy.explore}
               </button>
               <button
                 onClick={() => { setMode("guided"); setSceneIdx(0); closeDetails(); }}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors min-h-[36px] ${mode === "guided" ? "bg-blue-500/20 text-blue-300" : "text-gray-400 hover:text-gray-200"}`}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors min-h-[36px] ${mode === "guided" ? "bg-blue-500/20 text-blue-300" : "text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)]"}`}
               >
                 <Route size={14} />
                 {copy.guided}
               </button>
             </div>
-            <p className="text-[11px] text-gray-400 bg-[#12122a]/80 backdrop-blur-sm rounded px-2 py-1">
+            <p className="text-[11px] text-[var(--atlas-text-dim)] bg-[var(--atlas-surface)] backdrop-blur-sm rounded px-2 py-1">
               {copy.instruction}
             </p>
           </div>
@@ -559,13 +559,13 @@ function AtlasInner({ locale }: { locale: string }) {
         {/* Legend (in guided mode) */}
         {mode === "guided" && (
           <Panel position="top-left" className="!m-3">
-            <div className="bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2.5">
-              <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-1.5">
+            <div className="bg-[var(--atlas-surface)] backdrop-blur-sm border border-[var(--border)] rounded-lg px-3 py-2.5">
+              <p className="text-[10px] uppercase tracking-wider text-[var(--atlas-text-dim)] mb-1.5">
                 {lang === "fi" ? "Evidenssitaso" : "Evidence Level"}
               </p>
               <div className="flex flex-wrap gap-x-3 gap-y-1">
                 {(Object.keys(EVIDENCE_COLORS) as EpistemicLevel[]).map((key) => (
-                  <span key={key} className="inline-flex items-center gap-1.5 text-[11px] text-gray-300">
+                  <span key={key} className="inline-flex items-center gap-1.5 text-[11px] text-[var(--atlas-text-dim)]">
                     <span
                       className="inline-flex items-center justify-center w-4 h-4 rounded-full text-[8px] font-bold text-white"
                       style={{ backgroundColor: EVIDENCE_COLORS[key] }}
@@ -589,25 +589,25 @@ function AtlasInner({ locale }: { locale: string }) {
           role="region"
           aria-label={lang === "fi" ? "Opastettu kierros" : "Guided tour"}
         >
-          <div className="bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-4 max-w-lg text-center">
+          <div className="bg-[var(--atlas-surface)] backdrop-blur-sm border border-[var(--border)] rounded-xl px-5 py-4 max-w-lg text-center">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] text-gray-500 tabular-nums">
+              <span className="text-[10px] text-[var(--atlas-text-muted)] tabular-nums">
                 {lang === "fi" ? `Kohtaus ${sceneIdx + 1} / ${GUIDED_SCENES.length}` : `Scene ${sceneIdx + 1} of ${GUIDED_SCENES.length}`}
               </span>
               <button
                 onClick={() => { setMode("explore"); closeDetails(); }}
-                className="text-[10px] text-gray-400 hover:text-white transition-colors px-2 py-1 rounded hover:bg-white/10 min-h-[28px]"
+                className="text-[10px] text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] transition-colors px-2 py-1 rounded hover:bg-[var(--atlas-edge)] min-h-[28px]"
               >
                 {copy.exitGuided}
               </button>
             </div>
-            <h3 className="text-sm font-bold text-gray-100 mb-1.5">{t(scene.title, lang)}</h3>
-            <p className="text-xs text-gray-400 leading-relaxed mb-3">{t(scene.description, lang)}</p>
+            <h3 className="text-sm font-bold text-[var(--atlas-text)] mb-1.5">{t(scene.title, lang)}</h3>
+            <p className="text-xs text-[var(--atlas-text-dim)] leading-relaxed mb-3">{t(scene.description, lang)}</p>
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={prevScene}
                 disabled={sceneIdx === 0}
-                className="p-2.5 rounded-md hover:bg-white/10 transition-colors disabled:opacity-30 text-gray-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                className="p-2.5 rounded-md hover:bg-[var(--atlas-edge)] transition-colors disabled:opacity-30 text-[var(--atlas-text-dim)] min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label={lang === "fi" ? "Edellinen kohtaus" : "Previous scene"}
               >
                 <ChevronLeft size={18} />
@@ -628,7 +628,7 @@ function AtlasInner({ locale }: { locale: string }) {
               <button
                 onClick={nextScene}
                 disabled={sceneIdx === GUIDED_SCENES.length - 1}
-                className="p-2.5 rounded-md hover:bg-white/10 transition-colors disabled:opacity-30 text-gray-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                className="p-2.5 rounded-md hover:bg-[var(--atlas-edge)] transition-colors disabled:opacity-30 text-[var(--atlas-text-dim)] min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label={lang === "fi" ? "Seuraava kohtaus" : "Next scene"}
               >
                 <ChevronRight size={18} />
@@ -673,12 +673,12 @@ function MobileStepper({ locale }: { locale: string }) {
   const epLabels = EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>;
 
   return (
-    <div className="bg-[#0a0a1a] rounded-xl border border-white/10 overflow-hidden">
+    <div className="bg-[var(--atlas-bg)] rounded-xl border border-[var(--border)] overflow-hidden">
       {/* Path selector */}
       <div
         role="tablist"
         aria-label={lang === "fi" ? "Kausaalipolut" : "Causal pathways"}
-        className="flex border-b border-white/10"
+        className="flex border-b border-[var(--border)]"
       >
         {(Object.keys(STEPPER_PATHS) as StepperPathKey[]).map((k) => (
           <button
@@ -687,7 +687,7 @@ function MobileStepper({ locale }: { locale: string }) {
             aria-selected={k === pathKey}
             onClick={() => { setPathKey(k); setStep(0); }}
             className={`flex-1 px-3 py-3 text-xs font-medium transition-colors min-h-[44px] ${
-              k === pathKey ? "text-blue-300 border-b-2 border-blue-400 bg-blue-500/10" : "text-gray-500 hover:text-gray-300"
+              k === pathKey ? "text-blue-300 border-b-2 border-blue-400 bg-blue-500/10" : "text-[var(--atlas-text-muted)] hover:text-[var(--atlas-text-dim)]"
             }`}
           >
             {t(STEPPER_PATHS[k].label, lang)}
@@ -699,7 +699,7 @@ function MobileStepper({ locale }: { locale: string }) {
       <div className="flex items-center gap-1 px-4 py-3" role="progressbar" aria-valuenow={step + 1} aria-valuemin={1} aria-valuemax={ids.length}>
         {ids.map((_, i) => (
           <div key={i} className="flex-1 flex items-center">
-            <div className={`h-1 w-full rounded-full transition-colors ${i <= step ? "bg-blue-400" : "bg-white/10"}`} />
+            <div className={`h-1 w-full rounded-full transition-colors ${i <= step ? "bg-blue-400" : "bg-[var(--atlas-edge)]"}`} />
           </div>
         ))}
       </div>
@@ -711,14 +711,14 @@ function MobileStepper({ locale }: { locale: string }) {
 
       {/* Card */}
       <div className="px-4 pb-4" role="tabpanel">
-        <div className="bg-[#12122a] border border-white/10 rounded-xl p-5">
+        <div className="bg-[var(--atlas-surface)] border border-[var(--border)] rounded-xl p-5">
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border border-white/10"
+            <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border border-[var(--border)]"
               style={{ color: band?.accent, borderColor: `${band?.accent}40` }}
             >
               {band ? t(band.label, lang) : ""}
             </span>
-            <span className="flex items-center gap-1 text-[10px] text-gray-500">
+            <span className="flex items-center gap-1 text-[10px] text-[var(--atlas-text-muted)]">
               <span
                 className="inline-flex items-center justify-center w-4 h-4 rounded-full text-[8px] font-bold text-white"
                 style={{ backgroundColor: epColor }}
@@ -729,16 +729,16 @@ function MobileStepper({ locale }: { locale: string }) {
             </span>
           </div>
 
-          <h3 className="text-base font-bold text-gray-100 mb-1">{label}</h3>
-          {sublabel && <p className="text-xs text-gray-400 mb-3">{sublabel}</p>}
+          <h3 className="text-base font-bold text-[var(--atlas-text)] mb-1">{label}</h3>
+          {sublabel && <p className="text-xs text-[var(--atlas-text-dim)] mb-3">{sublabel}</p>}
 
           {d?.mechanism && (
-            <p className="text-[13px] text-gray-300 leading-relaxed mb-3">{d.mechanism}</p>
+            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed mb-3">{d.mechanism}</p>
           )}
 
           {d?.fdaDevice && (
-            <p className="text-xs text-gray-400">
-              <span className="font-semibold text-gray-300">{lang === "fi" ? "FDA-laite:" : "FDA Device:"}</span> {d.fdaDevice}
+            <p className="text-xs text-[var(--atlas-text-dim)]">
+              <span className="font-semibold text-[var(--atlas-text-dim)]">{lang === "fi" ? "FDA-laite:" : "FDA Device:"}</span> {d.fdaDevice}
             </p>
           )}
 
@@ -754,16 +754,16 @@ function MobileStepper({ locale }: { locale: string }) {
           <button
             onClick={() => setStep((s) => Math.max(0, s - 1))}
             disabled={step === 0}
-            className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors disabled:opacity-30 min-h-[44px]"
+            className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] hover:bg-[var(--atlas-edge-dim)] transition-colors disabled:opacity-30 min-h-[44px]"
           >
             <ChevronLeft size={14} />
             {lang === "fi" ? "Edellinen" : "Previous"}
           </button>
-          <span className="text-xs text-gray-500 font-mono tabular-nums">{step + 1} / {ids.length}</span>
+          <span className="text-xs text-[var(--atlas-text-muted)] font-mono tabular-nums">{step + 1} / {ids.length}</span>
           <button
             onClick={() => setStep((s) => Math.min(ids.length - 1, s + 1))}
             disabled={step === ids.length - 1}
-            className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors disabled:opacity-30 min-h-[44px]"
+            className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] hover:bg-[var(--atlas-edge-dim)] transition-colors disabled:opacity-30 min-h-[44px]"
           >
             {lang === "fi" ? "Seuraava" : "Next"}
             <ChevronRight size={14} />

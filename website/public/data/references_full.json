@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 594,
+    "total_references": 598,
     "verified_count": 188,
     "generated": "2026-08-24"
   },
@@ -7907,6 +7907,57 @@
       "category": "transduction_rpm_calcium"
     },
     {
+      "id": "bartolke2025",
+      "authors": "Bartölke R, Nießner C, Reinhard K, Wolfrum U, Meimann S, Bolte P, Feederle R, Mouritsen H, Dedek K, Peichl L, Winklhofer M",
+      "year": 2025,
+      "title": "Full-Length Cryptochrome 1 in the Outer Segments of the Retinal Blue Cone Photoreceptors in Humans and Great Apes Suggests a Role Beyond Transcriptional Repression",
+      "journal": "FASEB Journal",
+      "doi": "10.1096/fj.202402614R",
+      "pmid": "40277221",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "B"
+      ],
+      "finding": "Full-length CRY1 protein found exclusively in outer segments of short-wavelength-sensitive blue cone photoreceptors in human, bonobo, and gorilla retinas. Location suggests non-circadian, phototransductive function.",
+      "tags": [
+        "cry1",
+        "blue_cone",
+        "outer_segment",
+        "human",
+        "retina",
+        "anatomy",
+        "magnetoreception"
+      ],
+      "verified": false,
+      "category": "transduction_rpm_calcium"
+    },
+    {
+      "id": "majewska2025",
+      "authors": "Majewska M, Hanić M, Bartölke R, Schmidt J, Bożek J, Gerhards L, Mouritsen H, Koch K-W, Solov'yov IA, Brand I",
+      "year": 2025,
+      "title": "European Robin Cryptochrome-4a Associates with Lipid Bilayers in an Ordered Manner, Fulfilling a Molecular-Level Condition for Magnetoreception",
+      "journal": "ACS Chemical Biology",
+      "doi": "10.1021/acschembio.4c00576",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "B"
+      ],
+      "finding": "ErCry4a associates with model lipid membranes in uniform, partially restricted orientation. Membrane lamellae provide orientational order required for directional magnetoreception.",
+      "tags": [
+        "cry4a",
+        "membrane",
+        "lipid",
+        "orientation",
+        "omega",
+        "magnetoreception",
+        "structural"
+      ],
+      "verified": false,
+      "category": "transduction_rpm_calcium"
+    },
+    {
       "id": "pnasnexus2026",
       "authors": "Various",
       "year": 2026,
@@ -7974,6 +8025,30 @@
       "pdf_section": null,
       "pdf_number": null,
       "doi": null
+    },
+    {
+      "id": "wacker2000",
+      "authors": "Wacker J, Frühauf J, Schulz M, Chiwora FM, Volz J, Becker K",
+      "year": 2000,
+      "title": "Riboflavin deficiency and preeclampsia",
+      "journal": "Obstetrics & Gynecology",
+      "pmid": "10862839",
+      "type": "observational_cohort",
+      "level": "C",
+      "pathway": [
+        "C"
+      ],
+      "finding": "B2-deficient mothers had 4.7× higher preeclampsia risk (OR 4.7, CI 1.8-12.2). Intracellular free FAD was significantly lower in preeclampsia patients.",
+      "tags": [
+        "b2",
+        "riboflavin",
+        "preeclampsia",
+        "pregnancy",
+        "fad",
+        "fertility"
+      ],
+      "verified": false,
+      "category": "reproduction_hormones"
     },
     {
       "id": "pawlak2025",
@@ -12335,6 +12410,31 @@
         "chronotype",
         "sleep",
         "latitude"
+      ],
+      "verified": false,
+      "category": "neurobiology_circadian"
+    },
+    {
+      "id": "lamia2009",
+      "authors": "Lamia KA, Sachdeva UM, DiTacchio L, Williams EC, Alvarez JG, Egan DF, Vasquez DS, Juguilon H, Panda S, Shaw RJ, Thompson CB, Evans RM",
+      "year": 2009,
+      "title": "AMPK Regulates the Circadian Clock by Cryptochrome Phosphorylation and Degradation",
+      "journal": "Science",
+      "doi": "10.1126/science.1172156",
+      "pmid": "19833968",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "C"
+      ],
+      "finding": "AMPK phosphorylates CRY1 at Ser71 triggering FBXL3-mediated ubiquitin degradation. AMPK activity was rhythmic and inversely correlated with CRY1 nuclear protein abundance.",
+      "tags": [
+        "ampk",
+        "cry1",
+        "fasting",
+        "degradation",
+        "circadian",
+        "fbxl3"
       ],
       "verified": false,
       "category": "neurobiology_circadian"

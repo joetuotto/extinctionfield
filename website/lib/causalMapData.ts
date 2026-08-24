@@ -342,6 +342,41 @@ export const NODES: CausalMapNode[] = [
     },
   },
 
+  // ── LEVEL 1 (continued): Nutritional/membrane modulators ──
+  {
+    id: "mod_fad_riboflavin", level: 1,
+    label: { en: "FAD / riboflavin (B2)", fi: "FAD / riboflaviini (B2)" },
+    sublabel: { en: "CRY chromophore", fi: "CRY:n kromofori" },
+    color: "#8B5CF6", epistemicLevel: "E",
+    detail: {
+      en: { mechanism: "FAD (flavin adenine dinucleotide) is the essential chromophore for both CRY1 and CRY2. Riboflavin (vitamin B2) deficiency reduces CRY protein stability (Hirano 2017) and abolishes magnetoreception (Yap 2025). China: >90% B2 inadequacy coincides with lowest TFR." },
+      fi: { mechanism: "FAD (flaviiniadeniinidinukleotidi) on välttämätön kromofori sekä CRY1:lle että CRY2:lle. Riboflaviini (B2-vitamiini) -puutos vähentää CRY-proteiinin stabiilisuutta (Hirano 2017) ja estää magnetoreseption (Yap 2025). Kiina: >90 % B2-puutos yhdistyy maailman alhaisimpaan TFR:ään." },
+      bermPathway: "Pathway C modulator", keyRefs: ["hirano2017", "yap2025"],
+    },
+  },
+  {
+    id: "mod_membrane_omega", level: 1,
+    label: { en: "Membrane lipid order", fi: "Kalvon lipidijärjestys" },
+    sublabel: { en: "Omega-3/7, Majewska 2025", fi: "Omega-3/7, Majewska 2025" },
+    color: "#8B5CF6", epistemicLevel: "E",
+    detail: {
+      en: { mechanism: "CRY4a associates with lipid bilayers in an ordered manner — membrane fatty acid composition (omega-3/7 balance) determines the orientational order available for radical pair magnetoreception. Cone outer segment stacked lamellae provide optimal orientation (Majewska et al. 2025, ACS Chem Biol)." },
+      fi: { mechanism: "CRY4a assosioituu lipidikaksoiskerrosten kanssa järjestäytyneesti — kalvon rasvahappokoostumus (omega-3/7-tasapaino) määrittää radikaaliparin magnetoreseptiolle käytettävissä olevan suuntajärjestyksen. Tappisolujen ulkosegmenttien pinotut lamellit tarjoavat optimaalisen orientaation (Majewska ym. 2025, ACS Chem Biol)." },
+      bermPathway: "Pathway C1 modulator", keyRefs: ["majewska2025"],
+    },
+  },
+  {
+    id: "mod_ampk_fasting", level: 1,
+    label: { en: "AMPK fasting dynamics", fi: "AMPK-paastodynamiikka" },
+    sublabel: { en: "Lamia 2009 Science", fi: "Lamia 2009 Science" },
+    color: "#8B5CF6", epistemicLevel: "E",
+    detail: {
+      en: { mechanism: "AMPK phosphorylates CRY1 at Ser71 → FBXL3 ubiquitination → degradation (Lamia et al. 2009, Science). Fasting paradox: AMPK degrades old CRY, but simultaneously increases FAD pool via β-oxidation, so newly synthesized CRY is better FAD-loaded. Net effect depends on CRY turnover rate vs. FAD availability — resolution is L*-level hypothesis." },
+      fi: { mechanism: "AMPK fosforyloi CRY1:n Ser71:ssä → FBXL3-ubikitinaatio → hajotus (Lamia ym. 2009, Science). Paastoparadoksi: AMPK hajottaa vanhan CRY:n, mutta lisää samanaikaisesti FAD-poolia β-oksidaation kautta, joten uusi CRY on paremmin FAD-ladattu. Nettovaikutus riippuu CRY:n vaihtuvuusnopeudesta vs. FAD:n saatavuudesta — ratkaisu on L*-tason hypoteesi." },
+      bermPathway: "Pathway C modulator", keyRefs: ["lamia2009"],
+    },
+  },
+
   // ── LEVEL 2: Biological mechanisms ──
   {
     id: "mech_vgcc_ros", level: 2,
@@ -729,6 +764,14 @@ export const EDGES: CausalMapEdge[] = [
   { from: "mech_melatonin_fertility", to: "tissue_sperm" },
   // CRY2-TRPC1 physical coupling: pathways A and C are not independent (Yap 2025)
   { from: "mech_cry_melatonin", to: "mech_vgcc_ros", label: "CRY2-TRPC1 complex (Yap 2025)" },
+  // FAD/B2 → CRY chromophore dependency (Hirano 2017, Yap 2025)
+  { from: "mod_fad_riboflavin", to: "mech_cry_melatonin", label: "FAD chromophore (Hirano 2017)" },
+  // Membrane lipid order → CRY orientation (Majewska 2025)
+  { from: "mod_membrane_omega", to: "mech_cry_melatonin", label: "CRY orientation order (Majewska 2025)" },
+  // AMPK fasting → CRY degradation (Lamia 2009)
+  { from: "mod_ampk_fasting", to: "mech_cry_melatonin", label: "CRY1 phosphorylation → degradation (Lamia 2009)" },
+  // AMPK fasting → FAD pool increase via β-oxidation
+  { from: "mod_ampk_fasting", to: "mod_fad_riboflavin", label: "β-oxidation → FAD pool ↑" },
 
   // Tissue effects → diseases
   { from: "tissue_melatonin", to: "disease_sleep" },

@@ -62,24 +62,24 @@ export function AtlasDetail({ node, locale, onClose, originRef }: Props) {
       ref={asideRef}
       role="complementary"
       aria-labelledby="atlas-detail-title"
-      className="absolute right-0 top-0 h-full w-80 max-w-[90vw] bg-[#0e0e22] border-l border-white/10 z-50 overflow-y-auto shadow-2xl"
+      className="absolute right-0 top-0 h-full w-80 max-w-[90vw] bg-[var(--atlas-surface)] border-l border-[var(--border)] z-50 overflow-y-auto shadow-2xl"
     >
-      <div className="sticky top-0 bg-[#0e0e22] border-b border-white/10 p-4 flex items-start justify-between gap-3">
+      <div className="sticky top-0 bg-[var(--atlas-surface)] border-b border-[var(--border)] p-4 flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-[10px] uppercase tracking-wider text-gray-500 mb-1">
+          <p className="text-[10px] uppercase tracking-wider text-[var(--atlas-text-muted)] mb-1">
             {stageLabel(node.level, lang)}
           </p>
-          <h2 id="atlas-detail-title" className="text-sm font-bold leading-tight text-gray-100">
+          <h2 id="atlas-detail-title" className="text-sm font-bold leading-tight text-[var(--atlas-text)]">
             {t(node.label, lang)}
           </h2>
           {node.sublabel && (
-            <p className="text-xs text-gray-400 mt-0.5">{t(node.sublabel, lang)}</p>
+            <p className="text-xs text-[var(--atlas-text-dim)] mt-0.5">{t(node.sublabel, lang)}</p>
           )}
         </div>
         <button
           ref={closeRef}
           onClick={handleClose}
-          className="shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md hover:bg-white/10 transition-colors text-gray-400"
+          className="shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md hover:bg-[var(--atlas-edge)] transition-colors text-[var(--atlas-text-dim)]"
           aria-label="Close details"
         >
           <X size={16} />
@@ -94,32 +94,32 @@ export function AtlasDetail({ node, locale, onClose, originRef }: Props) {
           >
             {node.epistemicLevel === "M|C" ? "M" : node.epistemicLevel}
           </span>
-          <span className="text-xs font-medium text-gray-400">
+          <span className="text-xs font-medium text-[var(--atlas-text-dim)]">
             {labels[node.epistemicLevel]}
           </span>
         </div>
 
         {d?.mechanism && (
           <Section title={SECTION_LABELS.mechanism[lang]}>
-            <p className="text-[13px] text-gray-300 leading-relaxed">{d.mechanism}</p>
+            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed">{d.mechanism}</p>
           </Section>
         )}
 
         {d?.fdaDevice && (
           <Section title={SECTION_LABELS.fdaDevice[lang]}>
-            <p className="text-[13px] text-gray-300 leading-relaxed">{d.fdaDevice}</p>
+            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed">{d.fdaDevice}</p>
           </Section>
         )}
 
         {node.detail?.bermPathway && (
           <Section title={SECTION_LABELS.bermPathway[lang]}>
-            <p className="text-[13px] text-gray-300 font-mono text-xs">{node.detail.bermPathway}</p>
+            <p className="text-xs text-[var(--atlas-text-dim)] font-mono">{node.detail.bermPathway}</p>
           </Section>
         )}
 
         {d?.prediction && (
           <Section title={SECTION_LABELS.prediction[lang]}>
-            <p className="text-[13px] text-gray-300 leading-relaxed">{d.prediction}</p>
+            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed">{d.prediction}</p>
           </Section>
         )}
 
@@ -127,7 +127,7 @@ export function AtlasDetail({ node, locale, onClose, originRef }: Props) {
           <Section title={SECTION_LABELS.keyRefs[lang]}>
             <ul className="space-y-0.5">
               {node.detail.keyRefs.map((ref) => (
-                <li key={ref} className="text-xs text-gray-400 font-mono">{ref}</li>
+                <li key={ref} className="text-xs text-[var(--atlas-text-dim)] font-mono">{ref}</li>
               ))}
             </ul>
           </Section>
@@ -150,7 +150,7 @@ export function AtlasDetail({ node, locale, onClose, originRef }: Props) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h3 className="text-[10px] font-semibold uppercase tracking-wider text-gray-500 mb-1.5">
+      <h3 className="text-[10px] font-semibold uppercase tracking-wider text-[var(--atlas-text-muted)] mb-1.5">
         {title}
       </h3>
       {children}

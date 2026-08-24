@@ -43,15 +43,15 @@ function AtlasNode({ data, selected }: NodeProps) {
       onClick={handleClick}
       onKeyDown={handleKeyDown}
       className={`
-        relative rounded-lg border bg-[#12122a] transition-all duration-200
+        relative rounded-lg border bg-[var(--atlas-surface)] transition-all duration-200
         min-w-[140px] max-w-[170px] px-2.5 py-2 text-left cursor-pointer
-        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a1a]
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--atlas-bg)]
         ${d.dimmed ? "opacity-20 pointer-events-none" : ""}
         ${d.highlighted ? "ring-1 ring-blue-400/50 shadow-[0_0_12px_rgba(96,165,250,0.25)]" : ""}
         ${selected ? "ring-2 ring-blue-400 shadow-[0_0_20px_rgba(96,165,250,0.35)]" : ""}
         ${!d.dimmed && !selected ? "hover:shadow-[0_0_10px_rgba(255,255,255,0.08)]" : ""}
       `}
-      style={{ borderColor: d.dimmed ? "#ffffff10" : `${accent}50` }}
+      style={{ borderColor: d.dimmed ? "var(--atlas-edge-dim)" : `${accent}50` }}
     >
       <Handle type="target" position={Position.Left} className="!w-0 !h-0 !min-w-0 !min-h-0 !border-0 !bg-transparent" tabIndex={-1} />
 
@@ -63,9 +63,9 @@ function AtlasNode({ data, selected }: NodeProps) {
         {d.epistemicLevel === "M|C" ? "M" : d.epistemicLevel}
       </div>
 
-      <p className="text-[11px] font-semibold leading-tight text-gray-100 pr-3">{d.label}</p>
+      <p className="text-[11px] font-semibold leading-tight text-[var(--atlas-text)] pr-3">{d.label}</p>
       {d.sublabel && (
-        <p className="text-[9px] text-gray-400 mt-0.5 leading-tight">{d.sublabel}</p>
+        <p className="text-[9px] text-[var(--atlas-text-dim)] mt-0.5 leading-tight">{d.sublabel}</p>
       )}
 
       <Handle type="source" position={Position.Right} className="!w-0 !h-0 !min-w-0 !min-h-0 !border-0 !bg-transparent" tabIndex={-1} />
