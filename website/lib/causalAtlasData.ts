@@ -101,6 +101,15 @@ export const EN_LABELS: Record<string, { label: string; sublabel?: string }> = {
   mod_cyb5b: { label: "9. Cyb5b EMF sensor" },
   mech_cyb5b_ca: { label: "Cyb5b → Ca²⁺ oscillations" },
   mech_vgcc_genotype: { label: "VGCC genotype × sensitivity" },
+  mech_ionic_hierarchy: { label: "Ionic treatment hierarchy", sublabel: "Ca²⁺ convergence" },
+  mech_skin_bioelectric: { label: "Dermal bioelectric system", sublabel: "TEP + piezo + VGCC" },
+  mech_led_confound: { label: "LED IF-EMF confound", sublabel: "65 kHz–2 MHz driver" },
+  mech_hospital_emf: { label: "Hospital EMF", sublabel: "PHS + modulome" },
+  mech_alzheimer_calcium: { label: "Amyloid-calcium feedback", sublabel: "Ca²⁺ → Aβ → pores → Ca²⁺" },
+  mech_adhd_calibration: { label: "ADHD calibration error", sublabel: "HCN/VGCC tuning → S/N ↓" },
+  mech_melatonin_fertility: { label: "Melatonin bridge", sublabel: "Cascade 1 → cascade 6" },
+  mech_beta_katp: { label: "β-cell K-ATP → insulin" },
+  mech_window_effect: { label: "Window effect", sublabel: "Adey-Blackman 1976" },
 };
 
 // ── Edge relation types ──
@@ -133,7 +142,7 @@ function stageX(stage: Stage): number {
 const NODE_ORDER: Record<Stage, string[]> = {
   sources: ["electrification_boundary", "ch_static", "ch_elf", "ch_rf", "ch_if"],
   modulation: ["mod_bioelectric", "mod_mito", "mod_ion", "mod_geometry", "mod_dc", "mod_pineal", "mod_vagus", "mod_division", "mod_cyb5b"],
-  mechanisms: ["mech_dep_quadratic", "mech_vgcc_ros", "mech_ifo_linear", "mech_mitotic_spindle", "mech_cry_melatonin", "mech_nav_plasticity", "mech_vagal_antiinflam", "mech_gpcr", "mech_cyb5b_ca", "mech_vgcc_genotype"],
+  mechanisms: ["mech_dep_quadratic", "mech_vgcc_ros", "mech_ifo_linear", "mech_mitotic_spindle", "mech_cry_melatonin", "mech_nav_plasticity", "mech_vagal_antiinflam", "mech_gpcr", "mech_cyb5b_ca", "mech_vgcc_genotype", "mech_ionic_hierarchy", "mech_skin_bioelectric", "mech_led_confound", "mech_hospital_emf", "mech_alzheimer_calcium", "mech_adhd_calibration", "mech_melatonin_fertility", "mech_beta_katp", "mech_window_effect"],
   tissue: ["tissue_melatonin", "tissue_cortisol", "tissue_bbb", "tissue_insulin", "tissue_vagal_tone", "tissue_gut", "tissue_sperm", "tissue_ovarian", "tissue_testosterone", "tissue_nk_cells"],
   disease: ["disease_sleep", "disease_depression", "disease_adhd", "disease_metabolic", "disease_autoimmune", "disease_fertility", "disease_cancer"],
   demographic: ["demo_behavior", "demo_biocap", "demo_asfr", "demo_tfr"],

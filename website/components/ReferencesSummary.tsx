@@ -8,13 +8,13 @@ import { categoryName, loadReferences } from "@/lib/references";
 const COPY = {
   en: {
     title: "Reference database",
-    subtitle: "521 references across 8 thematic categories",
+    subtitle: (n: number, c: number) => `${n} references across ${c} thematic categories`,
     verified: "verified",
     browse: "Browse all references",
   },
   fi: {
     title: "Lähdetietokanta",
-    subtitle: "521 viitettä 8 temaattisessa kategoriassa",
+    subtitle: (n: number, c: number) => `${n} viitettä ${c} temaattisessa kategoriassa`,
     verified: "varmennettu",
     browse: "Selaa kaikkia viitteitä",
   },
@@ -42,7 +42,7 @@ export function ReferencesSummary({ locale }: { locale: "en" | "fi" }) {
       <div className="flex items-baseline justify-between mb-4">
         <div>
           <h3 className="text-sm font-semibold">{d.title}</h3>
-          <p className="text-xs text-foreground-muted mt-0.5">{d.subtitle}</p>
+          <p className="text-xs text-foreground-muted mt-0.5">{d.subtitle(data.references.length, data.categories.length)}</p>
         </div>
         <span className="text-xs font-mono-num text-accent">
           {data.metadata.verified_count} {d.verified}

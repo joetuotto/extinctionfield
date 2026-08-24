@@ -627,7 +627,7 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
       {/* Stats row */}
       <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
-          { n: "24+", label: d.totalCategories },
+          { n: "26", label: d.totalCategories },
           { n: "12,000+", label: d.totalApprovals },
           { n: "$8–10B", label: d.totalMarket },
           { n: "160,000+", label: d.totalImplanted },

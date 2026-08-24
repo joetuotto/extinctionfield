@@ -1253,6 +1253,387 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </p>
       </section>
 
+      {/* ADHD as developmental ion channel calibration error */}
+      <section id="adhd-calibration" className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "ADHD: kehityksellinen ionikanavien kalibraatiovirhe" : "ADHD: A Developmental Ion Channel Calibration Error"}
+        </h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {activeLocale === "fi"
+              ? "ADHD:n konventionaalinen selitys (dopamiinivajaus prefrontaalisessa korteksissa) ei vastaa kysymykseen MIKSI dopamiinijärjestelmä on häiriintynyt. BERM:n ionikanavakehys tarjoaa ylävirtaan menevän vastauksen: ADHD on kehityksellinen ionikanavien kalibraatiovirhe, joka syntyy kun sikiön tai varhaisen lapsuuden hermoverkon ionikanavat kalibroituvat EMF-kontaminoidussa ympäristössä. Tämä perustuu kolmeen itsenäiseen todistuslinjaan: GWAS (CACNA1C-variantit ADHD:ssä), epidemiologia (Li 2020 JAMA, raskausaikainen EMF → ADHD) ja farmakologia (guanfasiini toimii ionikanaviin, ei neurotransmittereihin)."
+              : "The conventional explanation of ADHD (dopamine deficit in prefrontal cortex) does not answer WHY the dopamine system is disrupted. BERM's ion channel framework offers an upstream answer: ADHD is a developmental ion channel calibration error that occurs when fetal or early childhood neural ion channels calibrate to an EMF-contaminated environment. This is based on three independent evidence lines: GWAS (CACNA1C variants in ADHD), epidemiology (Li 2020 JAMA, prenatal EMF → ADHD), and pharmacology (guanfacine acts on ion channels, not neurotransmitters)."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "GWAS-todiste: CACNA1C (Cav1.2) -geenin variantit assosioituvat toistuvasti ADHD:hen, autismiin, bipolaarihäiriöön ja masennukseen (PMC6101623, PMC6679227). Tämä on SAMA geeni/kanava joka moduloi EMF:n uni-vaikutusta (Sousouri 2025), on psykedeelien signaaliketjun kohde ja osallistuu AD:n Ca²⁺-kaskadiin. Timothy-syndrooma (de novo CACNA1C gain-of-function G406R) aiheuttaa autismin korkealla penetranssilla — VGCC:n YLITOIMINTA = autistinen fenotyyppi. Muut VGCC-geenit (CACNA1A, CACNA1H, CACNA1I) assosioituvat myös neurokehityshäiriöihin (PMC4643966, PMC8957782)."
+              : "GWAS evidence: CACNA1C (Cav1.2) gene variants repeatedly associate with ADHD, autism, bipolar disorder, and depression (PMC6101623, PMC6679227). This is the SAME gene/channel that modulates EMF sleep effects (Sousouri 2025), is the psychedelic signal chain target, and participates in AD's Ca²⁺ cascade. Timothy syndrome (de novo CACNA1C gain-of-function G406R) causes autism with high penetrance — VGCC OVERACTIVITY = autistic phenotype. Other VGCC genes (CACNA1A, CACNA1H, CACNA1I) also associate with neurodevelopmental disorders (PMC4643966, PMC8957782)."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Epidemiologinen todiste: Li ym. (2020, JAMA Network Open) seurasivat 1482 äiti-lapsi-paria Kaiser Permanente -kohortissa. Raskausaikainen EMF mitattiin OBJEKTIIVISESTI (MF-mittari 24h). Korkea raskausaikainen MF-altistus assosioi ADHD-riskiin, erityisesti PYSYVÄÄN ja VAIKEAAN ADHD:hen sekä ADHD:hen immuunivälitteisten liitännäissairauksien kanssa. Sama tutkimusryhmä on osoittanut saman altistuksen assosioivan myös keskenmenoon (OR 2.72), lapsuuden lihavuuteen ja astmaan — YKSI altistus, MONTA vastetta, kuten modulooma ennustaa."
+              : "Epidemiological evidence: Li et al. (2020, JAMA Network Open) followed 1482 mother-child pairs in the Kaiser Permanente cohort. Prenatal EMF was measured OBJECTIVELY (MF meter, 24h). High prenatal MF exposure associated with ADHD risk, specifically PERSISTENT and SEVERE ADHD and ADHD with immune-mediated comorbidities. The same research group has shown the same exposure associates with miscarriage (OR 2.72), childhood obesity, and asthma — ONE exposure, MULTIPLE outcomes, as the modulome predicts."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Farmakologinen todiste: Guanfasiini (Intuniv, FDA/EMA-hyväksytty ADHD:hen) EI koske dopamiiniin. Se on α2A-adrenerginen agonisti joka estää cAMP:n → SULKEE HCN-kanavat → stabiloi membraanipotentiaalin → prefrontaalisen korteksin signaali-kohinasuhde paranee (Wang ym. 2007, Cell). Tämä on SUORA ionikanavainterventio. Guanfasiini toimii juuri niihin ADHD-oireisiin (impulsiivisuus, emotionaalinen säätely) jotka vaativat tarkinta ionista kontrollia. Stimulantit sen sijaan KOMPENSOIVAT kalibraatiovirhettä nostamalla signaalia — guanfasiini KORJAA kynnystä."
+              : "Pharmacological evidence: Guanfacine (Intuniv, FDA/EMA-approved for ADHD) does NOT touch dopamine. It is an α2A-adrenergic agonist that inhibits cAMP → CLOSES HCN channels → stabilizes membrane potential → prefrontal cortex signal-to-noise ratio improves (Wang et al. 2007, Cell). This is a DIRECT ion channel intervention. Guanfacine works precisely on those ADHD symptoms (impulsivity, emotional regulation) requiring the finest ionic control. Stimulants instead COMPENSATE for the calibration error by raising the signal — guanfacine CORRECTS the threshold."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Kalibraatioikkuna: prefrontaalinen korteksi on viimeiseksi kypsyvä aivoalue. Jos sikiökauden ja varhaisen lapsuuden (0–10 v) ionikanavien viritys tapahtuu EMF-kontaminoidussa ympäristössä, HCN-kanavat viritetään korkeammalle kohinatasolle ja VGCC:t asetetaan aktivoitumaan korkeammalla kynnyksellä — signaali-kohinasuhde jää matalaksi. Hong ym. (2020, PMC7287020) osoittivat raskausaikaisen matkapuhelinaltistuksen vaikuttavan kognitioon VANHOISSA rottien jälkeläisissä — vaikutus on ELINIKÄINEN."
+              : "Calibration window: the prefrontal cortex is the last brain region to mature. If fetal and early childhood (0–10 y) ion channel tuning occurs in an EMF-contaminated environment, HCN channels tune to a higher noise floor and VGCCs set to activate at a higher threshold — signal-to-noise ratio remains low. Hong et al. (2020, PMC7287020) showed prenatal mobile phone exposure affects cognition in AGED rat offspring — the effect is LIFELONG."}
+          </p>
+        </div>
+
+        <div className="mt-6 overflow-x-auto">
+          <table className="w-full text-sm border-collapse max-w-4xl">
+            <thead>
+              <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                <th className="py-2 pr-3">{activeLocale === "fi" ? "Viite" : "Citation"}</th>
+                <th className="py-2 pr-3 w-16">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
+                <th className="py-2">{activeLocale === "fi" ? "Löydös" : "Finding"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Li ym. (JAMA Network Open)</td>
+                <td className="py-2 pr-3 font-mono-num">2020</td>
+                <td className="py-2">{activeLocale === "fi" ? "Raskausaikainen MF → ADHD-riski ↑ (1482 paria, 20v seuranta, objektiivinen mittaus)" : "Prenatal MF → ADHD risk ↑ (1482 pairs, 20y follow-up, objective measurement)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PMC6101623 / PMC6679227</td>
+                <td className="py-2 pr-3 font-mono-num">2018/19</td>
+                <td className="py-2">{activeLocale === "fi" ? "CACNA1C-variantit assosioituvat ADHD:hen, ASD:hen, bipolaarihäiriöön, MDD:hen (GWAS)" : "CACNA1C variants associate with ADHD, ASD, bipolar, MDD (GWAS)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PMC6894750</td>
+                <td className="py-2 pr-3 font-mono-num">2019</td>
+                <td className="py-2">{activeLocale === "fi" ? "Timothy-syndrooman CACNA1C gain-of-function → aksonikohdennus ja käyttäytyminen muuttuvat" : "Timothy syndrome CACNA1C gain-of-function → axon targeting and behavior altered"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Wang ym. (Cell)</td>
+                <td className="py-2 pr-3 font-mono-num">2007</td>
+                <td className="py-2">{activeLocale === "fi" ? "α2A → cAMP↓ → HCN sulkeutuu → PFC:n työmuistiverkot vahvistuvat (guanfasiinin mekanismi)" : "α2A → cAMP↓ → HCN closure → PFC working memory networks strengthened (guanfacine mechanism)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Aldad ym. (PMC3306017)</td>
+                <td className="py-2 pr-3 font-mono-num">2012</td>
+                <td className="py-2">{activeLocale === "fi" ? "800–1900 MHz sikiöaltistus hiirillä → neurokehityksen ja käyttäytymisen muutokset" : "800–1900 MHz fetal exposure in mice → neurodevelopmental and behavioral changes"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Hong ym. (PMC7287020)</td>
+                <td className="py-2 pr-3 font-mono-num">2020</td>
+                <td className="py-2">{activeLocale === "fi" ? "Raskausaikainen matkapuhelinaltistus → kognitiivinen heikkeneminen VANHOISSA jälkeläisissä (elinikäinen)" : "Prenatal mobile phone exposure → cognitive decline in AGED offspring (lifelong)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PMC4658333</td>
+                <td className="py-2 pr-3 font-mono-num">2015</td>
+                <td className="py-2">{activeLocale === "fi" ? "VGCC:t ovat kriittisiä aivojen KEHITYKSELLE — kanavaekspressio säätelee hermoverkon muodostumista" : "VGCCs are critical for brain DEVELOPMENT — channel expression regulates neural network formation"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-foreground-muted italic mt-4 max-w-4xl">
+          {activeLocale === "fi"
+            ? "Episteeminen taso: CACNA1C × neurokehitys [E] (GWAS, replikoitu). Raskausaikainen EMF → ADHD [E] (Li 2020 JAMA, objektiivinen mittaus). Guanfasiini HCN-mekanismi [E] (Wang 2007 Cell, FDA/EMA). Kalibraatioikkunateoria [C] (teoreettinen kehys). ADHD on monitekijäinen — EMF on yksi mahdollinen riskitekijä. Li 2020 on yksittäinen kohortti — replikaatio kriittistä."
+            : "Epistemic level: CACNA1C × neurodevelopment [E] (GWAS, replicated). Prenatal EMF → ADHD [E] (Li 2020 JAMA, objective measurement). Guanfacine HCN mechanism [E] (Wang 2007 Cell, FDA/EMA). Calibration window theory [C] (theoretical framework). ADHD is multifactorial — EMF is one possible risk factor. Li 2020 is a single cohort — replication critical."}
+        </p>
+      </section>
+
+      {/* Ion channel convergence across 8 cascade diseases */}
+      <section id="ion-convergence" className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "Ionikanavakonvergenssi: kahdeksan sairautta, yksi malli" : "The Ion Channel Convergence: Eight Diseases, One Model"}
+        </h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {activeLocale === "fi"
+              ? "Jokainen BERM-kaskadin sairaus noudattaa samaa rakennetta: (1) GWAS-assosiaatio ionikanavageeneihin, (2) tehokkain hoito kohdistuu ionikanaviin, (3) EMF-altistus assosioituu sairauteen, (4) mekanistinen ketju EMF → ionikanava → patologia. Tämä ei ole sattuma — se on BERM:n ydinväite: ympäristö-EMF häiritsee ionikanavahomeostaasia, ja eri sairaudet ovat saman häiriön ilmentymiä eri kudoksissa eri viiveillä."
+              : "Every BERM cascade disease follows the same structure: (1) GWAS association with ion channel genes, (2) most effective treatment targets ion channels, (3) EMF exposure associates with the disease, (4) mechanistic chain from EMF → ion channel → pathology. This is not coincidence — it is BERM's core claim: environmental EMF disrupts ion channel homeostasis, and different diseases are manifestations of the same disruption in different tissues at different latencies."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Bipolaarihäiriö on mallin eleganttein tapaus. Laskennalliset mallit (PubMed 32278494, Translational Psychiatry) osoittavat suoraan, että bipolaariset hippokampusneuronit heilahtelevat hypereksitaabeliuden ja hypoeksitaabeliuden välillä ionikanavien konduktanssimuutosten vuoksi. El-Mallakhin Na,K-ATPaasi-hypoteesi selittää molemmat ääripäät: LIEVÄ pumpun häiriö → eksitabiliteetti ↑ → mania; VOIMAKKAAMPI häiriö → neurotransmitterien vapautuminen ↓ → depressio. Litium (Li⁺) kulkee VGSC:n kautta ja kertyy ensisijaisesti hyperaktiivisiin neuroneihin → vaimentaa oskillaation. Antiepileptit (valproaatti, karbamatsepiini, lamotrigiini) toimivat SEKÄ epilepsiaan ETTÄ bipolaarihäiriöön koska SAMA ionisen eksitabiliteetin säätely on häiriintynyt molemmissa — eri aikaskaalalla."
+              : "Bipolar disorder is the model's most elegant case. Computational models (PubMed 32278494, Translational Psychiatry) directly show that bipolar hippocampal neurons oscillate between hyperexcitability and hypoexcitability due to ion channel conductance changes. El-Mallakh's Na,K-ATPase hypothesis explains both poles: MILD pump dysfunction → excitability ↑ → mania; MORE SEVERE dysfunction → neurotransmitter release ↓ → depression. Lithium (Li⁺) traverses VGSC and accumulates preferentially in hyperactive neurons → dampens oscillation. Antiepileptics (valproate, carbamazepine, lamotrigine) work for BOTH epilepsy AND bipolar because the SAME ionic excitability regulation is disrupted in both — at different timescales."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Metabolinen oireyhtymä: haiman β-solujen K-ATP-kanava (Kir6.2 + SUR1) on insuliinisäätelyn PÄÄKYTKIN. Glukoosi ↑ → ATP ↑ → K-ATP sulkeutuu → depolarisaatio → VGCC avautuu → Ca²⁺ → insuliini vapautuu. Sulfonyyliureat (FDA-hyväksytyt) sulkevat K-ATP-kanavan SUORAAN. US Patent 4850959 (1989) todistaa: resonanssi-EMF kontrolloi β-solujen insuliinieritystä kalsiumkanavien kautta. Klimentidis 2011: myös laboratorion kontrollieläimet lihovat (p = 1.2 × 10⁻⁷, 8 lajia) — ympäristömuutos, ei pelkkä ruokavalio."
+              : "Metabolic syndrome: the pancreatic β-cell K-ATP channel (Kir6.2 + SUR1) is the MASTER SWITCH of insulin regulation. Glucose ↑ → ATP ↑ → K-ATP closes → depolarization → VGCC opens → Ca²⁺ → insulin release. Sulfonylureas (FDA-approved) close the K-ATP channel DIRECTLY. US Patent 4850959 (1989) proves: resonance-EMF controls β-cell insulin secretion via calcium channels. Klimentidis 2011: even lab control animals are gaining weight (p = 1.2 × 10⁻⁷, 8 species) — environmental change, not diet alone."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Autoimmuunisairaudet: α7-nikotiininen asetyylikoliinireseptori (α7nAChR) — ionikanava (ligandiohjattu kationikanava) — säätelee kolinergistä anti-inflammatorista refleksiä. VNS (FDA-hyväksytty) aktivoi α7nAChR:n → NF-κB ↓ → tulehdus vähenee. EMF aktivoi NF-κB:tä VGCC-Ca²⁺-reitin kautta (Pall 2013), samalla kun vagushermon signalointi heikkenee. EMF on funktionaalisesti 'anti-VNS'. Koopman 2016 (PNAS): VNS tuotti merkitsevän vasteen nivelreumaan."
+              : "Autoimmune diseases: α7 nicotinic acetylcholine receptor (α7nAChR) — an ion channel (ligand-gated cation channel) — regulates the cholinergic anti-inflammatory pathway. VNS (FDA-approved) activates α7nAChR → NF-κB ↓ → inflammation decreases. EMF activates NF-κB via the VGCC-Ca²⁺ pathway (Pall 2013), while vagal signaling weakens. EMF is functionally 'anti-VNS'. Koopman 2016 (PNAS): VNS produced significant response in rheumatoid arthritis."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Syöpä on kumulatiivisen depolarisaation seuraus. Normaalit solut: Vm ≈ −60 mV (hyperpolaroitunut). Syöpäsolut: Vm ≈ −15 mV (depolaroitunut). Levin (2012) osoitti suoraan: onkogeenin yliekspressio depolarisoi soluja → kasvain. Mutta jos depolarisaatio estetään hyperpolaroivilla ionikanavilla → kasvain EI muodostu vaikka onkogeeni on aktiivinen. PMC12533209 (2025): leukemiasolut 'kaappaavat' stroomansolujen biosähkön CaV1.2-depolarisaation kautta. TTFields (FDA-hyväksytty) ja verapamiili (VGCC-estäjä, PMC5034549) ovat suoria ionisia syöpähoitoja."
+              : "Cancer is the consequence of cumulative depolarization. Normal cells: Vm ≈ −60 mV (hyperpolarized). Cancer cells: Vm ≈ −15 mV (depolarized). Levin (2012) showed directly: oncogene overexpression depolarizes cells → tumor. But if depolarization is prevented by hyperpolarizing ion channels → tumor does NOT form even with active oncogene. PMC12533209 (2025): leukemia cells 'hijack' stromal cell bioelectricity via CaV1.2 depolarization. TTFields (FDA-approved) and verapamil (VGCC blocker, PMC5034549) are direct ionic cancer treatments."}
+          </p>
+        </div>
+
+        <div className="mt-6 overflow-x-auto">
+          <table className="w-full text-sm border-collapse max-w-4xl">
+            <thead>
+              <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                <th className="py-2 pr-3">{activeLocale === "fi" ? "Sairaus" : "Disease"}</th>
+                <th className="py-2 pr-3">{activeLocale === "fi" ? "Ionikanava" : "Ion channel"}</th>
+                <th className="py-2 pr-3">{activeLocale === "fi" ? "Ioninen hoito" : "Ionic treatment"}</th>
+                <th className="py-2">{activeLocale === "fi" ? "TDP-todiste" : "TDP evidence"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">{activeLocale === "fi" ? "1. Uni" : "1. Sleep"}</td>
+                <td className="py-2 pr-3">CRY + VGCC</td>
+                <td className="py-2 pr-3">{activeLocale === "fi" ? "Melatoniini" : "Melatonin"}</td>
+                <td className="py-2">Flock Off (CRY)</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">{activeLocale === "fi" ? "2. Masennus/bipolaari" : "2. Depression/bipolar"}</td>
+                <td className="py-2 pr-3">CACNA1C, Na,K-ATPase, HCN</td>
+                <td className="py-2 pr-3">Li⁺, TMS, ECT</td>
+                <td className="py-2">TMS/tDCS/ECT (FDA)</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">3. ADHD</td>
+                <td className="py-2 pr-3">CACNA1C, HCN</td>
+                <td className="py-2 pr-3">{activeLocale === "fi" ? "Guanfasiini" : "Guanfacine"}</td>
+                <td className="py-2">{activeLocale === "fi" ? "Guanfasiini (FDA/EMA)" : "Guanfacine (FDA/EMA)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">{activeLocale === "fi" ? "4. T2D/metabolinen" : "4. T2D/metabolic"}</td>
+                <td className="py-2 pr-3">K-ATP (Kir6.2), VGCC</td>
+                <td className="py-2 pr-3">{activeLocale === "fi" ? "Sulfonyyliureat" : "Sulfonylureas"}</td>
+                <td className="py-2">Patent 4850959</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">{activeLocale === "fi" ? "5. Autoimmuuni" : "5. Autoimmune"}</td>
+                <td className="py-2 pr-3">α7nAChR</td>
+                <td className="py-2 pr-3">VNS</td>
+                <td className="py-2">VNS (FDA)</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">{activeLocale === "fi" ? "6. Hedelmättömyys" : "6. Infertility"}</td>
+                <td className="py-2 pr-3">CatSper, VGCC</td>
+                <td className="py-2 pr-3">(TTFields)</td>
+                <td className="py-2">TTFields (FDA)</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">{activeLocale === "fi" ? "7. Syöpä" : "7. Cancer"}</td>
+                <td className="py-2 pr-3">Vm/Cav1.2</td>
+                <td className="py-2 pr-3">{activeLocale === "fi" ? "TTFields, verapamiili" : "TTFields, verapamil"}</td>
+                <td className="py-2">TTFields (FDA)</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">8. Alzheimer</td>
+                <td className="py-2 pr-3">CACNA1C, PSEN</td>
+                <td className="py-2 pr-3">TEMT</td>
+                <td className="py-2">TEMT ({activeLocale === "fi" ? "kliininen pilotti" : "clinical pilot"})</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-6 overflow-x-auto">
+          <table className="w-full text-sm border-collapse max-w-4xl">
+            <thead>
+              <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                <th className="py-2 pr-3">{activeLocale === "fi" ? "Viite" : "Citation"}</th>
+                <th className="py-2 pr-3 w-16">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
+                <th className="py-2">{activeLocale === "fi" ? "Löydös" : "Finding"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PubMed 32278494</td>
+                <td className="py-2 pr-3 font-mono-num">2020</td>
+                <td className="py-2">{activeLocale === "fi" ? "Bipolaariset neuronit: ionisen konduktanssin muutokset → hyper/hypoeksitaabelisuuden oskillaatio" : "Bipolar neurons: ion conductance changes → hyper/hypoexcitability oscillation"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">El-Mallakh 2000/2004</td>
+                <td className="py-2 pr-3 font-mono-num">2004</td>
+                <td className="py-2">{activeLocale === "fi" ? "Na,K-ATPaasi-hypoteesi: lievä häiriö → mania, voimakkaampi → depressio" : "Na,K-ATPase hypothesis: mild dysfunction → mania, severe → depression"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PMC3678088</td>
+                <td className="py-2 pr-3 font-mono-num">2013</td>
+                <td className="py-2">{activeLocale === "fi" ? "K⁺-kanavat bipolaarihäiriössä — kattava katsaus" : "K⁺ channels in bipolar disorder — comprehensive review"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PMC12533209</td>
+                <td className="py-2 pr-3 font-mono-num">2025</td>
+                <td className="py-2">{activeLocale === "fi" ? "Leukemiasolut kaappaavat stroomansolujen biosähkön CaV1.2-depolarisaation kautta" : "Leukemia cells hijack stromal bioelectricity via CaV1.2 depolarization"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Koopman 2016 (PNAS)</td>
+                <td className="py-2 pr-3 font-mono-num">2016</td>
+                <td className="py-2">{activeLocale === "fi" ? "VNS → α7nAChR → merkitsevä vaste nivelreumaan" : "VNS → α7nAChR → significant response in rheumatoid arthritis"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Klimentidis 2011</td>
+                <td className="py-2 pr-3 font-mono-num">2011</td>
+                <td className="py-2">{activeLocale === "fi" ? "24 populaatiota 8 lajissa — myös kontrollieläimet lihovat (p < 10⁻⁷)" : "24 populations across 8 species — even control animals gaining weight (p < 10⁻⁷)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PMC5034549</td>
+                <td className="py-2 pr-3 font-mono-num">2016</td>
+                <td className="py-2">{activeLocale === "fi" ? "Verapamiili (VGCC-estäjä) estää rintasyöpäsolujen kasvua in vitro" : "Verapamil (VGCC blocker) inhibits breast cancer cell growth in vitro"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-foreground-muted italic mt-4 max-w-4xl">
+          {activeLocale === "fi"
+            ? "Episteeminen taso: Ionikanavien rooli jokaisessa sairaudessa [E] (GWAS, farmakologia, FDA). EMF → ionikanava -mekanismi [E] (Pall 2013). EMF → sairauskausaatio [C] (hypoteesi). Konvergenssimalli on TEOREETTINEN KEHYS — se ei todista kausaatiota. Jokainen sairaus on monitekijäinen. Se, että ionikanavalääke toimii, todistaa ionikanavien roolin OIREISSA mutta ei välttämättä SYYSSÄ."
+            : "Epistemic level: Ion channel role in each disease [E] (GWAS, pharmacology, FDA). EMF → ion channel mechanism [E] (Pall 2013). EMF → disease causation [C] (hypothesis). The convergence model is a THEORETICAL FRAMEWORK — it does not prove causation. Each disease is multifactorial. That an ion channel drug works proves the ion channel role in SYMPTOMS but not necessarily in CAUSE."}
+        </p>
+      </section>
+
+      {/* Melatonin-fertility bridge: cascade 1 → cascade 6 */}
+      <section id="melatonin-bridge" className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "Melatoniinisilta: kaskadi 1 → kaskadi 6" : "The Melatonin Bridge: Cascade 1 → Cascade 6"}
+        </h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {activeLocale === "fi"
+              ? "BERM:n kuusi kaskadia eivät ole rinnakkaisia — ne ovat sarjassa. Melatoniini on kriittinen silta kaskadin 1 (uni/sirkadiaaninen) ja kaskadin 6 (hedelmällisyys) välillä. EMF → pinealirauhanen → melatoniinisuppressio → HPG-akselin häiriö + follikulaarisen antioksidanttipuolustuksen heikkeneminen → hedelmällisyyden lasku. Tämä reitti on erillinen EMF:n suorasta gonadivasteesta (VGCC → siittiöt), ja molempien täytyy olla aktiivisia samanaikaisesti kokonaisvaikutuksen tuottamiseksi."
+              : "BERM's six cascades are not parallel — they are serial. Melatonin is the critical bridge between cascade 1 (sleep/circadian) and cascade 6 (fertility). EMF → pineal gland → melatonin suppression → HPG axis disruption + follicular antioxidant defense decline → fertility decline. This pathway is separate from EMF's direct gonadal effects (VGCC → sperm), and both must be active simultaneously to produce the full effect."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Pinealirauhanen 'näkee' sähkömagneettisen kentän valona. Battellen tutkimus (1980) osoitti EMF:n suppressoivan yöllistä melatoniinihuippua koe-eläimillä. Mekanismi: magnetiitti (Fe₃O₄) pinealirauhan kalvoilla ja/tai kryptokromien (CRY1/CRY2) radikaalipari­mekanismi havaitsevat kentän, NAT-aktiivisuus (serotoniiini → melatoniini -konversio) hidastuu, yöllisen melatoniinihuipun amplitudi laskee ja ajoitus viivästyy. Ihmistutkimukset ovat RISTIRIITAISIA: jotkin osoittavat suppressiota, toiset eivät — mutta eläindata on johdonmukaista ja mekanismi on biologisesti uskottava."
+              : "The pineal gland 'sees' electromagnetic fields as light. Battelle's study (1980) demonstrated EMF suppression of nocturnal melatonin peak in experimental animals. Mechanism: magnetite (Fe₃O₄) on pineal membranes and/or cryptochrome (CRY1/CRY2) radical pair mechanism sense the field, NAT activity (serotonin → melatonin conversion) slows, nocturnal melatonin peak amplitude drops and timing delays. Human studies are INCONSISTENT: some show suppression, others don't — but animal data is consistent and the mechanism is biologically plausible."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Melatoniini follikkuli­nesteessä on munasolun kriittinen suojaaja. Tamura ym. (2012) osoittivat, että follikkelinesteen melatoniinikonsentraatio korreloi suoraan munasolun laadun kanssa. Melatoniini neutraloi happiradikaaleja (ROS), suojaa mitokondriaalista DNA:ta ja säätelee Gdf9- ja Bmp15-geenien ilmentymistä munasoluissa. IVF meta-analyysit (Tong 2017, PMC12500685, PMC11265587) osoittavat johdonmukaisesti: melatoniinilisä parantaa fertilisaatioastetta, alkionlaatua ja kliinistä raskausastetta. Mutta meta-analyysien otoskoot ovat pieniä, sokkoutus vaikeaa ja julkaisuvinouma mahdollinen."
+              : "Melatonin in follicular fluid is the oocyte's critical protector. Tamura et al. (2012) showed that follicular fluid melatonin concentration directly correlates with oocyte quality. Melatonin neutralizes reactive oxygen species (ROS), protects mitochondrial DNA, and regulates Gdf9 and Bmp15 gene expression in oocytes. IVF meta-analyses (Tong 2017, PMC12500685, PMC11265587) consistently show: melatonin supplementation improves fertilization rate, embryo quality, and clinical pregnancy rate. But meta-analysis sample sizes are small, blinding is difficult, and publication bias is possible."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Miesten hedelmällisyydessä melatoniini suojaa Leydigin soluja oksidatiiviselta stressiltä (testosteronituotanto), säätelee HPG-akselia (GnRH → LH/FSH) ja ylläpitää siittiöiden mitokondriaalista toimintaa. Nishihara ym. (2014) osoittivat melatoniinin parantavan siittiöiden liikkuvuutta in vitro. VAROITUS: melatoniinin HPG-vaikutus EI ole yksisuuntainen — korkeina pitoisuuksina melatoniini voi SUPPRESSOIDA GnRH:ta joissain konteksteissa. Melatoniinilisä ei ole riskitöntä lisääntymisiässä."
+              : "In male fertility, melatonin protects Leydig cells from oxidative stress (testosterone production), regulates the HPG axis (GnRH → LH/FSH), and maintains sperm mitochondrial function. Nishihara et al. (2014) showed melatonin improves sperm motility in vitro. CAUTION: melatonin's HPG effect is NOT unidirectional — at high concentrations, melatonin can SUPPRESS GnRH in some contexts. Melatonin supplementation is not risk-free in reproductive age."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Vuorotyö on vahvin luonnollinen koe melatoniinisillalle: se suppressoi melatoniinia sirkadiaanisen häiriön, työpaikan valaistuksen JA mahdollisen ammatillisen EMF:n kautta samanaikaisesti. Vuorotyöntekijöillä on dokumentoitu matalampi hedelmällisyys, enemmän raskauskomplikaatioita ja epäsäännöllisemmät kuukautiskierrot. Mutta vuorotyön hedelmällisyysvaikutukset ovat MONITEKIJÄISIÄ — stressi, ruokailutottumukset, sosiaalinen eristäytyminen ja muut tekijät vaikuttavat. Melatoniini on yksi tekijä, ei ainoa."
+              : "Shift work is the strongest natural experiment for the melatonin bridge: it suppresses melatonin through circadian disruption, workplace lighting, AND possible occupational EMF simultaneously. Shift workers have documented lower fertility, more pregnancy complications, and more irregular menstrual cycles. But shift work fertility effects are MULTIFACTORIAL — stress, eating patterns, social isolation, and other factors contribute. Melatonin is one factor, not the only one."}
+          </p>
+        </div>
+
+        <div className="mt-6 overflow-x-auto">
+          <h3 className="text-xs uppercase tracking-[0.16em] text-foreground-muted/60 mb-2">
+            {activeLocale === "fi" ? "Viisi melatoniini–hedelmällisyys -polkua" : "Five melatonin–fertility pathways"}
+          </h3>
+          <table className="w-full text-sm border-collapse max-w-4xl">
+            <thead>
+              <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                <th className="py-2 pr-3">{activeLocale === "fi" ? "Polku" : "Pathway"}</th>
+                <th className="py-2">{activeLocale === "fi" ? "Mekanismi" : "Mechanism"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">HPG</td>
+                <td className="py-2">{activeLocale === "fi" ? "Melatoniini → hypotalamus → GnRH → LH/FSH → gonadit" : "Melatonin → hypothalamus → GnRH → LH/FSH → gonads"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">{activeLocale === "fi" ? "Antioksidantti" : "Antioxidant"}</td>
+                <td className="py-2">{activeLocale === "fi" ? "Melatoniini follikkuli­nesteessä → ROS-neutralointi → munasolun suoja" : "Melatonin in follicular fluid → ROS neutralization → oocyte protection"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">{activeLocale === "fi" ? "Anti-inflammatorinen" : "Anti-inflammatory"}</td>
+                <td className="py-2">{activeLocale === "fi" ? "Melatoniini → NF-κB ↓ → krooninen tulehdus ↓ → endometrioosi/PCOS ↓" : "Melatonin → NF-κB ↓ → chronic inflammation ↓ → endometriosis/PCOS ↓"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">{activeLocale === "fi" ? "Mitokondriaalinen" : "Mitochondrial"}</td>
+                <td className="py-2">{activeLocale === "fi" ? "Melatoniini → AMPK/SIRT1 ↑ → lisääntymissolujen energia ↑" : "Melatonin → AMPK/SIRT1 ↑ → reproductive cell energy ↑"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">{activeLocale === "fi" ? "Epigeneettinen" : "Epigenetic"}</td>
+                <td className="py-2">{activeLocale === "fi" ? "Melatoniini säätelee Gdf9- ja Bmp15-geenien ilmentymistä munasoluissa" : "Melatonin regulates Gdf9 and Bmp15 gene expression in oocytes"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-6 overflow-x-auto">
+          <h3 className="text-xs uppercase tracking-[0.16em] text-foreground-muted/60 mb-2">
+            {activeLocale === "fi" ? "Viitteet" : "References"}
+          </h3>
+          <table className="w-full text-sm border-collapse max-w-4xl">
+            <thead>
+              <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                <th className="py-2 pr-3">{activeLocale === "fi" ? "Viite" : "Citation"}</th>
+                <th className="py-2 pr-3 w-16">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
+                <th className="py-2">{activeLocale === "fi" ? "Löydös" : "Finding"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Battelle / Wilson ym.</td>
+                <td className="py-2 pr-3 font-mono-num">1980</td>
+                <td className="py-2">{activeLocale === "fi" ? "EMF suppressoi yöllistä melatoniinia koe-eläimissä (60 Hz, ELF)" : "EMF suppresses nocturnal melatonin in experimental animals (60 Hz, ELF)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Tamura ym.</td>
+                <td className="py-2 pr-3 font-mono-num">2012</td>
+                <td className="py-2">{activeLocale === "fi" ? "Follikkeli­nesteen melatoniini korreloi munasolun laadun kanssa; antioksidanttirooli munasolussa" : "Follicular fluid melatonin correlates with oocyte quality; antioxidant role in oocyte"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Tong ym.</td>
+                <td className="py-2 pr-3 font-mono-num">2017</td>
+                <td className="py-2">{activeLocale === "fi" ? "Meta-analyysi: melatoniinilisä parantaa IVF-tuloksia (fertilisaatio, alkion laatu, raskaus)" : "Meta-analysis: melatonin supplementation improves IVF outcomes (fertilization, embryo quality, pregnancy)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PMC12500685</td>
+                <td className="py-2 pr-3 font-mono-num">2025</td>
+                <td className="py-2">{activeLocale === "fi" ? "Systemaattinen katsaus: melatoniini parantaa munasolun ja alkion laatua IVF:ssä" : "Systematic review: melatonin improves oocyte and embryo quality in IVF"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PMC11265587</td>
+                <td className="py-2 pr-3 font-mono-num">2024</td>
+                <td className="py-2">{activeLocale === "fi" ? "Meta-analyysi: melatoniini parantaa kliinistä raskausastetta IVF:ssä" : "Meta-analysis: melatonin improves clinical pregnancy rate in IVF"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">PMC10354453</td>
+                <td className="py-2 pr-3 font-mono-num">2023</td>
+                <td className="py-2">{activeLocale === "fi" ? "Katsaus: melatoniinin viisi reittiä naisen hedelmällisyyteen (HPG, antioksidantti, anti-inflammatorinen, mitokondriaalinen, epigeneettinen)" : "Review: melatonin's five pathways to female fertility (HPG, antioxidant, anti-inflammatory, mitochondrial, epigenetic)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Reiter ym.</td>
+                <td className="py-2 pr-3 font-mono-num">2007</td>
+                <td className="py-2">{activeLocale === "fi" ? "Melatoniini suojaa siittiöitä oksidatiiviselta vauriolta; säätää HPG-akselia" : "Melatonin protects sperm from oxidative damage; regulates HPG axis"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Unfer ym.</td>
+                <td className="py-2 pr-3 font-mono-num">2011</td>
+                <td className="py-2">{activeLocale === "fi" ? "Melatoniini IVF:ssä: munasolun laatu paranee, mutta pienet otoskoot ja sokkoutuksen haasteet" : "Melatonin in IVF: oocyte quality improves, but small sample sizes and blinding challenges"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Nishihara ym.</td>
+                <td className="py-2 pr-3 font-mono-num">2014</td>
+                <td className="py-2">{activeLocale === "fi" ? "Melatoniini parantaa siittiöiden liikkuvuutta in vitro" : "Melatonin improves sperm motility in vitro"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Rad. Prot. Dosimetry</td>
+                <td className="py-2 pr-3 font-mono-num">2013</td>
+                <td className="py-2">{activeLocale === "fi" ? "RF-EMF ja melatoniinisuppressio: epidemiologinen katsaus (tulokset epäjohdonmukaisia ihmisillä)" : "RF-EMF and melatonin suppression: epidemiological review (inconsistent results in humans)"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-xs text-foreground-muted italic mt-4 max-w-4xl">
+          {activeLocale === "fi"
+            ? "Episteeminen taso: Melatoniini follikkuli­nesteessä → munasolun laatu [E] (Tamura 2012, replikoitu). Melatoniinilisä IVF:ssä [E] (meta-analyysit, mutta pienet otoskoot). EMF → melatoniinisuppressio [M|C] (vahva eläindata, epäjohdonmukainen ihmisdata). Melatoniini-hedelmällisyyssilta kokonaisuutena [C] (teoreettinen yhdistäminen). IVF meta-analyysit ovat pieniä — julkaisuvinouma mahdollinen. Melatoniini HPG-vaikutus on KAKSISUUNTAINEN. Vuorotyön hedelmällisyysvaje on monitekijäinen — melatoniini on yksi polku."
+            : "Epistemic level: Melatonin in follicular fluid → oocyte quality [E] (Tamura 2012, replicated). Melatonin supplementation in IVF [E] (meta-analyses, but small sample sizes). EMF → melatonin suppression [M|C] (strong animal data, inconsistent human data). Melatonin-fertility bridge as a whole [C] (theoretical unification). IVF meta-analyses are small — publication bias possible. Melatonin HPG effect is BIDIRECTIONAL. Shift work fertility deficit is multifactorial — melatonin is one pathway."}
+        </p>
+      </section>
+
       <section className="mb-16">
         <BehavioralSuppression locale={activeLocale} />
       </section>

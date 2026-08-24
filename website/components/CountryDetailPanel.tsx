@@ -270,8 +270,8 @@ export function CountryDetailPanel({ iso3, name, tfr, mobile, locale }: Props) {
 
       <p className="mt-2 text-xs leading-relaxed text-foreground-muted">
         {fi
-          ? "Mobiililiittymätiheys on yhdistelmäproksi sähkömagneettiselle ympäristölle, ei mitattu EMF-altistus. Ennuste on lukittu BERM v18:lla; hakasulkeet ovat parametriherkkyysalue, eivät luottamusväli."
-          : "Mobile subscription density is a composite proxy for the electromagnetic environment, not measured EMF exposure. The prediction is locked under BERM v18; brackets are a parameter sensitivity envelope, not a confidence interval."}
+          ? "Mobiililiittymätiheys on yhdistelmäproksi sähkömagneettiselle ympäristölle, ei mitattu EMF-altistus. Ennuste on lukittu BERM v17:lla; hakasulkeet ovat parametriherkkyysalue, eivät luottamusväli."
+          : "Mobile subscription density is a composite proxy for the electromagnetic environment, not measured EMF exposure. The prediction is locked under BERM v17; brackets are a parameter sensitivity envelope, not a confidence interval."}
       </p>
     </div>
   );

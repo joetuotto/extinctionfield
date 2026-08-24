@@ -4,22 +4,22 @@ import Link from "next/link";
 
 const COPY = {
   en: {
-    label: "BERM v19 · Bio-Electromagnetic Reproductive Model",
-    summary: "Three-channel framework (ELF · IF · RF). 521 peer-reviewed references.",
+    label: "BERM v17 · Bio-Electromagnetic Reproductive Model",
+    summary: (n: number) => `Three-channel framework (ELF · IF · RF). ${n} peer-reviewed references.`,
     license: "Code: MIT · Docs: CC BY-4.0",
     specLink: "Model specification",
     author: "Otto Juote · MSc Biomedicine (LSE) · Independent research",
   },
   fi: {
-    label: "BERM v19 · Bio-sähkömagneettinen lisääntymismalli",
-    summary: "Kolmikanavakehys (ELF · IF · RF). 521 vertaisarvioitua viitettä.",
+    label: "BERM v17 · Bio-sähkömagneettinen lisääntymismalli",
+    summary: (n: number) => `Kolmikanavakehys (ELF · IF · RF). ${n} vertaisarvioitua viitettä.`,
     license: "Koodi: MIT · Docs: CC BY-4.0",
     specLink: "Mallin määrittely",
     author: "Otto Juote · MSc Biomedicine (LSE) · Itsenäinen tutkimus",
   },
 } as const;
 
-export function SiteFooter({ locale }: { locale: string }) {
+export function SiteFooter({ locale, referenceCount }: { locale: string; referenceCount: number }) {
   const language = locale === "fi" ? "fi" : "en";
   const c = COPY[language];
 
@@ -31,7 +31,7 @@ export function SiteFooter({ locale }: { locale: string }) {
             {c.label}
           </p>
           <p className="text-[0.8125rem] text-foreground-muted leading-relaxed">
-            {c.summary}
+            {c.summary(referenceCount)}
           </p>
         </div>
         <div className="flex flex-col items-start sm:items-end gap-1.5 sm:shrink-0">

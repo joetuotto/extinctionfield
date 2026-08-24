@@ -46,6 +46,20 @@ export const ARTICLES: Article[] = [
     readingTimeMinutes: 14,
     tags: ["therapeutic", "FDA", "paradox"],
   },
+  {
+    id: "implausibility",
+    slug: "implausibility",
+    title: "The Implausibility Argument",
+    titleFi: "Epäuskottavuusargumentti",
+    subtitle:
+      "How missing physics led to 50 years of dismissal — and what changed",
+    subtitleFi:
+      "Miten puuttuva fysiikka johti 50 vuoden hylkäämiseen — ja mikä muuttui",
+    icon: "🔬",
+    publishedDate: "2026-08-22",
+    readingTimeMinutes: 16,
+    tags: ["mechanism", "history", "lindgren", "VGCC"],
+  },
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {

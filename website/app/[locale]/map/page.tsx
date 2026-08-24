@@ -4,12 +4,12 @@ import { CausalAtlas } from "@/components/CausalAtlas";
 const COPY = {
   en: {
     title: "Causal Atlas",
-    subtitle: "53 causal nodes across 8 stages — trace the pathways from environmental EMF channels to demographic and ecological outcomes.",
+    subtitle: "62 causal nodes across 8 stages — trace the pathways from environmental EMF channels to demographic and ecological outcomes.",
     instruction: "Scroll to zoom · Click nodes for details · Use Guided mode for a narrated walkthrough",
   },
   fi: {
     title: "Kausaaliatlas",
-    subtitle: "53 kausaalisolmua 8 vaiheessa — seuraa polkuja ympäristön EMF-kanavista demografisiin ja ekologisiin seurauksiin.",
+    subtitle: "62 kausaalisolmua 8 vaiheessa — seuraa polkuja ympäristön EMF-kanavista demografisiin ja ekologisiin seurauksiin.",
     instruction: "Vieritä zoomataksesi · Klikkaa solmuja yksityiskohtiin · Käytä Opastettu-tilaa opastetulle kierrokselle",
   },
 } as const;

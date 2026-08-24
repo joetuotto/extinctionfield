@@ -2,8 +2,8 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 521,
-    "verified_count": 86,
+    "total_references": 554,
+    "verified_count": 170,
     "generated": "2026-08-20"
   },
   "categories": [
@@ -9491,7 +9491,9 @@
         "schumann",
         "sentinel"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "england_2023_ticks",
@@ -9513,7 +9515,9 @@
         "varroa",
         "sentinel"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "colin_1992_varroa_charge",
@@ -9534,7 +9538,9 @@
         "electrostatic",
         "sentinel"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "shepherd_2023_pollination",
@@ -9556,7 +9562,9 @@
         "magnetoreception",
         "sentinel"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "plos_one_2023_bee_900mhz",
@@ -9578,7 +9586,9 @@
         "stress",
         "sentinel"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "us_patent_12239107",
@@ -9598,7 +9608,9 @@
         "patent",
         "sentinel"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "varroa_protein_atlas_2017",
@@ -9617,7 +9629,9 @@
         "sclerotin",
         "sentinel"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "varroa_chitinase_2020",
@@ -9636,7 +9650,9 @@
         "chitinase",
         "sentinel"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "wyszkowska_2025_bee_behavior",
@@ -9656,7 +9672,9 @@
         "50Hz",
         "sentinel"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "entomology_today_2025_electric",
@@ -9678,7 +9696,9 @@
         "review",
         "sentinel"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "zeghoudi2025_led_driver_emf",
@@ -9701,7 +9721,9 @@
         "near_field",
         "emission_measurement"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "cispr15_2018_led_emissions",
@@ -9725,7 +9747,9 @@
         "IF",
         "regulation"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "eu_directive_244_2009",
@@ -9749,7 +9773,9 @@
         "IF",
         "natural_experiment"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "analog_devices_2020_led_emi",
@@ -9773,7 +9799,9 @@
         "IF",
         "harmonics"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "walker2017_why_we_sleep",
@@ -9801,7 +9829,9 @@
         "circadian",
         "cascade"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "leproult2011_testosterone_sleep",
@@ -9824,7 +9854,9 @@
         "experimental",
         "young_men"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "irwin2015_sleep_immunity",
@@ -9849,7 +9881,9 @@
         "night_shift",
         "WHO_2A"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "spiegel1999_sleep_metabolic",
@@ -9872,7 +9906,9 @@
         "glucose",
         "experimental"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "chang2015_ipad_melatonin",
@@ -9896,7 +9932,9 @@
         "iPad",
         "experimental"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "duraccio2021_blue_light_filter",
@@ -9919,7 +9957,9 @@
         "filter",
         "experimental"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "mallinson2025_electric_pollution",
@@ -9944,7 +9984,9 @@
         "field_experiment",
         "STATIC"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "clarke2013_bee_electroreception",
@@ -9967,7 +10009,9 @@
         "electroreception",
         "Science"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "greggers2013_bee_electric_comm",
@@ -9990,7 +10034,9 @@
         "electric_communication",
         "waggle_dance"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "sutton2016_bee_hair_mechanism",
@@ -10013,7 +10059,9 @@
         "electroreception",
         "PNAS"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "morley2018_spider_ballooning",
@@ -10035,7 +10083,9 @@
         "ballooning",
         "electroreception"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "robert2024_aerial_electroreception_review",
@@ -10057,7 +10107,10 @@
         "electroreception",
         "sensory_modality"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": null
     },
     {
       "id": "england2024_caterpillar_predator",
@@ -10078,7 +10131,10 @@
         "predator_detection",
         "PNAS"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": null
     },
     {
       "id": "england2024_butterfly_adaptive",
@@ -10101,7 +10157,9 @@
         "adaptive",
         "natural_selection"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "england2023_tick_electrostatic",
@@ -10123,7 +10181,9 @@
         "electrostatic",
         "parasitology"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "colin1992_varroa_electrostatic",
@@ -10146,7 +10206,10 @@
         "electrostatic",
         "parasitology"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": null
     },
     {
       "id": "delong2010_plosone",
@@ -10168,7 +10231,9 @@
         "cross-sectional",
         "demographics"
       ],
-      "verified": false
+      "verified": false,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "belmin2022_nature_sustainability",
@@ -10192,7 +10257,9 @@
         "cross-sectional",
         "electrification"
       ],
-      "verified": false
+      "verified": false,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "adey1976_calcium_window",
@@ -10215,7 +10282,9 @@
         "non-linear",
         "microwave"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "patent_4850959_insulin",
@@ -10239,7 +10308,9 @@
         "metabolic",
         "patent"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "lai1995_dna_breaks",
@@ -10263,7 +10334,9 @@
         "melatonin",
         "suppression"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "lai1996_double_strand",
@@ -10285,7 +10358,9 @@
         "microwave",
         "double_strand"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "zakon2012_ion_channel_evolution",
@@ -10307,7 +10382,9 @@
         "S4_sensor",
         "conservation"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "glaser1971_bibliography",
@@ -10331,7 +10408,9 @@
         "history",
         "non_thermal"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "cipriani2018_antidepressants",
@@ -10355,7 +10434,9 @@
         "meta_analysis",
         "antidepressant"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "goodwin2022_psilocybin",
@@ -10380,7 +10461,9 @@
         "RCT",
         "treatment_resistant"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "sousouri2025_cacna1c",
@@ -10407,7 +10490,9 @@
         "5HT2A",
         "VGCC"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "elmallakh2004_lithium_ion",
@@ -10433,7 +10518,9 @@
         "ion_channel",
         "ionic_mechanism"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "zarate2006_ketamine",
@@ -10460,7 +10547,9 @@
         "ion_channel",
         "rapid_onset"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "rosenthal2025_ect_csd",
@@ -10488,7 +10577,9 @@
         "Ca2+",
         "depression"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "lim2024_skin_battery",
@@ -10514,7 +10605,9 @@
         "electrotaxis",
         "Na_K_ATPase"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "zhao2006_wound_ef",
@@ -10540,7 +10633,9 @@
         "PI3K",
         "PTEN"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "fukada1957_piezo",
@@ -10566,7 +10661,9 @@
         "Fukada",
         "mechanotransduction"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "skedung2013_nanoscale_touch",
@@ -10592,7 +10689,9 @@
         "mechanotransduction",
         "piezoelectric"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "mohandas2022_piezo1_keratinocyte",
@@ -10618,7 +10717,9 @@
         "Ca2+",
         "touch"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "pmc4858974_trpv4_itch",
@@ -10646,7 +10747,9 @@
         "Ca2+",
         "multimodal"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "pmc4896623_cav14",
@@ -10673,7 +10776,9 @@
         "calcium",
         "photoreceptor_degeneration"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "pmc3885580_retinal_vgcc",
@@ -10701,7 +10806,9 @@
         "Cav3.2",
         "ion_channels"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "pmc7830240_blue_light",
@@ -10729,7 +10836,9 @@
         "LED",
         "confound"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "krumholz2013_phs",
@@ -10753,7 +10862,9 @@
         "generalized_risk",
         "hospital"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "pubmed10447544_icu_emf",
@@ -10779,7 +10890,9 @@
         "measurement",
         "40_microTesla"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "pmc12815752_hospital_rf",
@@ -10806,7 +10919,9 @@
         "LED",
         "modern"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "lai1995_dna_damage",
@@ -10833,7 +10948,9 @@
         "brain",
         "suppression"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "mouritsen2012_cry_rf",
@@ -10861,7 +10978,9 @@
         "RF",
         "Faraday"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "had2024_meta",
@@ -10888,7 +11007,9 @@
         "disability",
         "deconditioning"
       ],
-      "verified": true
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "gao2024_bbb_conformational",
@@ -10899,8 +11020,15 @@
       "doi": "10.1002/bem.22494",
       "category": "cellular_effects",
       "verified": true,
-      "findings": "EMP opened tight junctions physically (TEM-visible gap) while TJ protein levels (ZO-1, claudin-5, occludin) remained unchanged on western blot. Conformational change mechanism.",
-      "berm_pathway": "F_BBB"
+      "finding": "EMP opened tight junctions physically (TEM-visible gap) while TJ protein levels (ZO-1, claudin-5, occludin) remained unchanged on western blot. Conformational change mechanism.",
+      "pathway": [
+        "F_BBB"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "iop2026_bbb_scoping_review",
@@ -10911,8 +11039,15 @@
       "doi": "10.1088/1361-6560/ae6e17",
       "category": "cellular_effects",
       "verified": true,
-      "findings": "Evidence contradictory but positive results replicated in multiple independent labs (Salford, Tang, Ulusoy, Gao). Negative results partly explained by measurement method differences.",
-      "berm_pathway": "F_BBB"
+      "finding": "Evidence contradictory but positive results replicated in multiple independent labs (Salford, Tang, Ulusoy, Gao). Negative results partly explained by measurement method differences.",
+      "pathway": [
+        "F_BBB"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "ulusoy2025_bbb_therapeutic",
@@ -10923,8 +11058,15 @@
       "doi": "10.22038/ijbms.2025.86952.18784",
       "category": "cellular_effects",
       "verified": true,
-      "findings": "RF-EMF (27.12 MHz) proposed as therapeutic BBB-opening tool for drug delivery. Mechanism: eNOS → NO → occludin downregulation. TDP variant.",
-      "berm_pathway": "F_BBB"
+      "finding": "RF-EMF (27.12 MHz) proposed as therapeutic BBB-opening tool for drug delivery. Mechanism: eNOS → NO → occludin downregulation. TDP variant.",
+      "pathway": [
+        "F_BBB"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "arendash2010_temt_alzheimer",
@@ -10935,8 +11077,15 @@
       "doi": "10.3233/JAD-2010-1228",
       "category": "neurobiology",
       "verified": true,
-      "findings": "918 MHz EMF (2h/day) disaggregates Aβ oligomers, enhances mitochondria, reverses cognitive decline in AD mice. BBB opening beneficial in clean blood context.",
-      "berm_pathway": "F_BBB"
+      "finding": "918 MHz EMF (2h/day) disaggregates Aβ oligomers, enhances mitochondria, reverses cognitive decline in AD mice. BBB opening beneficial in clean blood context.",
+      "pathway": [
+        "F_BBB"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "aging_bbb_2015",
@@ -10947,8 +11096,15 @@
       "doi": "PMC4362825",
       "category": "neurobiology",
       "verified": true,
-      "findings": "Aged mice (24 months vs 3 months): occludin significantly decreased, ZO-1 decreased, TNF-α elevated in brain endothelial cells, capillary permeability significantly increased.",
-      "berm_pathway": "F_BBB"
+      "finding": "Aged mice (24 months vs 3 months): occludin significantly decreased, ZO-1 decreased, TNF-α elevated in brain endothelial cells, capillary permeability significantly increased.",
+      "pathway": [
+        "F_BBB"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "tang2015_900mhz_bbb",
@@ -10959,8 +11115,15 @@
       "doi": "Tang2015_BBB",
       "category": "neurobiology",
       "verified": false,
-      "findings": "900 MHz, 3h/day, 28 days → spatial memory impairment AND BBB permeability increase in rat hippocampus and cortex. Mechanism: mkp-1/ERK pathway. Below safety standards.",
-      "berm_pathway": "F_BBB"
+      "finding": "900 MHz, 3h/day, 28 days → spatial memory impairment AND BBB permeability increase in rat hippocampus and cortex. Mechanism: mkp-1/ERK pathway. Below safety standards.",
+      "pathway": [
+        "F_BBB"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "dasdag2015_wifi_mirna",
@@ -10971,8 +11134,15 @@
       "doi": "Dasdag2015_WiFi_miRNA",
       "category": "neurobiology",
       "verified": false,
-      "findings": "2.4 GHz Wi-Fi well below legal limit → significant changes in brain microRNA expression. Long-term 2.4 GHz exposure may lead to adverse effects including neurodegenerative diseases via miRNA changes.",
-      "berm_pathway": "F_BBB"
+      "finding": "2.4 GHz Wi-Fi well below legal limit → significant changes in brain microRNA expression. Long-term 2.4 GHz exposure may lead to adverse effects including neurodegenerative diseases via miRNA changes.",
+      "pathway": [
+        "F_BBB"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
     },
     {
       "id": "leszczynski2002_hsp27_bbb",
@@ -10983,8 +11153,642 @@
       "doi": "Leszczynski2002",
       "category": "cellular_effects",
       "verified": false,
-      "findings": "900 MHz activates hsp27/p38MAPK stress response in human endothelial cells. Hypothesis: hsp27 activation may increase BBB permeability via endothelial stress fiber stabilization.",
-      "berm_pathway": "F_BBB"
+      "finding": "900 MHz activates hsp27/p38MAPK stress response in human endothelial cells. Hypothesis: hsp27 activation may increase BBB permeability via endothelial stress fiber stabilization.",
+      "pathway": [
+        "F_BBB"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc4909906_calcium_ad",
+      "title": "Calcium hypothesis of Alzheimer's disease and brain aging: A framework for integrating new evidence",
+      "authors": "LaFerla FM",
+      "year": 2016,
+      "journal": "Frontiers in Aging Neuroscience",
+      "doi": "PMC4909906",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "Ca²⁺ dysregulation is a PROXIMAL CAUSE of Alzheimer's dysfunction. Intracellular calcium changes precede and drive amyloid pathology, not the reverse.",
+      "pathway": [
+        "Alzheimer_calcium"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc3065491_bhatt_ca_oligomers",
+      "title": "Effect of calcium on Aβ(1-40) aggregation: toxic oligomers vs. harmless fibrils",
+      "authors": "Bhatt MP et al.",
+      "year": 2009,
+      "journal": "Journal of Biological Chemistry",
+      "doi": "PMC3065491",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "In the presence of Ca²⁺, Aβ(1-40) preferentially forms TOXIC OLIGOMERS rather than harmless fibrils. Calcium level determines whether amyloid is dangerous or not.",
+      "pathway": [
+        "Alzheimer_calcium"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc7179355_oday_calcium",
+      "title": "Alzheimer's disease: A short review of the role of calcium in early events",
+      "authors": "O'Day DH",
+      "year": 2020,
+      "journal": "Frontiers in Neuroscience",
+      "doi": "PMC7179355",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "Ca²⁺ dysregulation is an EARLY event in AD that precedes neurodegeneration. Calcium signaling changes occur before clinical symptoms.",
+      "pathway": [
+        "Alzheimer_calcium"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc8125740_calcium_abeta",
+      "title": "Calcium homeostasis and neuronal excitability in Aβ neurotoxicity",
+      "authors": "Various",
+      "year": 2021,
+      "journal": "Frontiers in Molecular Neuroscience",
+      "doi": "PMC8125740",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "Ca²⁺ homeostasis and neuronal excitability are key factors in Aβ neurotoxicity. Disruption of calcium regulation amplifies amyloid toxicity.",
+      "pathway": [
+        "Alzheimer_calcium"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc7037278_presenilin_calcium",
+      "title": "Presenilin mutations and calcium dysregulation in Alzheimer's disease",
+      "authors": "Various",
+      "year": 2020,
+      "journal": "Biochimica et Biophysica Acta",
+      "doi": "PMC7037278",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "PSEN1/PSEN2 mutations (familial AD) cause Ca²⁺ dysregulation genetically. Demonstrates genetic convergence on the same calcium pathway that EMF activates environmentally.",
+      "pathway": [
+        "Alzheimer_calcium"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc8124842_anti_amyloid_failure",
+      "title": "Why anti-amyloid therapies have not lived up to their promise",
+      "authors": "Various",
+      "year": 2021,
+      "journal": "Nature Reviews Neuroscience",
+      "doi": "PMC8124842",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "Anti-amyloid drugs remove plaques but do NOT improve cognition. Plaques are a symptom, not the cause. Need alternative mechanistic hypotheses for AD.",
+      "pathway": [
+        "Alzheimer_calcium"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "li2020_jama_adhd",
+      "title": "Prenatal exposure to magnetic field nonionizing radiation and the risk of ADHD in offspring",
+      "authors": "Li DK, Chen H, Ferber JR, Hirst AK, Odouli R",
+      "year": 2020,
+      "journal": "JAMA Network Open",
+      "doi": "10.1001/jamanetworkopen.2020.1417",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "1482 mother-child pairs with objective MF measurement (24h dosimetry). High prenatal MF → ADHD risk ↑, especially persistent/severe ADHD and ADHD with immune comorbidities. Dose-response relationship. Modifiable risk factor.",
+      "pathway": [
+        "ADHD_calibration"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc6101623_cacna1c_gwas",
+      "title": "CACNA1C in psychiatric disorders: comprehensive review of GWAS associations",
+      "authors": "Various",
+      "year": 2018,
+      "journal": "Molecular Psychiatry",
+      "doi": "PMC6101623",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "CACNA1C rs1006737 repeatedly associates with bipolar disorder, schizophrenia, MDD, ADHD, and ASD in GWAS. Same gene/channel that modulates EMF sleep sensitivity (Sousouri 2025).",
+      "pathway": [
+        "ADHD_calibration"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc6679227_cacna1c_review",
+      "title": "CACNA1C gene and vulnerability to neuropsychiatric disorders",
+      "authors": "Various",
+      "year": 2019,
+      "journal": "Frontiers in Molecular Neuroscience",
+      "doi": "PMC6679227",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "Comprehensive review of CACNA1C Cav1.2 role across psychiatric diagnoses. VGCC dysfunction is a convergence point for multiple neurodevelopmental and psychiatric disorders.",
+      "pathway": [
+        "ADHD_calibration"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc6894750_timothy",
+      "title": "CACNA1C gain-of-function equivalent to Timothy syndrome alters axon targeting and behavior",
+      "authors": "Various",
+      "year": 2019,
+      "journal": "PNAS / Genetics",
+      "doi": "PMC6894750",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "Timothy syndrome CACNA1C gain-of-function (G406R) causes autism with high penetrance. VGCC overactivity = autistic phenotype. Channel function directly regulates neural network development.",
+      "pathway": [
+        "ADHD_calibration"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "wang2007_guanfacine_hcn",
+      "title": "Alpha2A-adrenoceptors strengthen working memory networks by inhibiting cAMP-HCN channel signaling in prefrontal cortex",
+      "authors": "Wang M et al.",
+      "year": 2007,
+      "journal": "Cell",
+      "doi": "10.1016/j.cell.2007.03.015",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "Guanfacine mechanism: α2A → cAMP↓ → HCN channels close → membrane potential stabilized → PFC signal-to-noise ratio improves. Direct ion channel intervention for ADHD, not neurotransmitter modulation.",
+      "pathway": [
+        "ADHD_calibration"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc3306017_aldad_fetal",
+      "title": "Fetal radiofrequency radiation exposure from 800-1900 MHz-rated cellular telephones affects neurodevelopment and behavior in mice",
+      "authors": "Aldad TS, Gan G, Gao X-B, Taylor HS",
+      "year": 2012,
+      "journal": "Scientific Reports",
+      "doi": "PMC3306017",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "800-1900 MHz fetal exposure in mice → neurodevelopmental and behavioral changes. Experimental confirmation of Kaiser Permanente epidemiological findings.",
+      "pathway": [
+        "ADHD_calibration"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc7287020_hong_lifelong",
+      "title": "Prenatal mobile phone exposure affects cognition in aged rat offspring",
+      "authors": "Hong S et al.",
+      "year": 2020,
+      "journal": "Frontiers in Aging Neuroscience",
+      "doi": "PMC7287020",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "Prenatal mobile phone exposure → cognitive decline in AGED rat offspring. Effect is LIFELONG, not transient. Supports permanent calibration error hypothesis.",
+      "pathway": [
+        "ADHD_calibration"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc4643966_cacna1a_asd",
+      "title": "CACNA1A and autism spectrum disorders",
+      "authors": "Various",
+      "year": 2015,
+      "journal": "Molecular Neurobiology",
+      "doi": "PMC4643966",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "CACNA1A (P/Q-type VGCC) variants associate with ASD. Expressed in cortex, cerebellum, hippocampus. Multiple VGCC subtypes implicated in neurodevelopmental disorders.",
+      "pathway": [
+        "ADHD_calibration"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc8957782_cacna1h_asd",
+      "title": "Rare CACNA1H variants in autism spectrum disorder families",
+      "authors": "Various",
+      "year": 2022,
+      "journal": "Journal of Neurodevelopmental Disorders",
+      "doi": "PMC8957782",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "53 rare CACNA1H (T-type Cav3.2) variants identified in 40 ASD families. T-type calcium channel dysfunction contributes to ASD risk.",
+      "pathway": [
+        "ADHD_calibration"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc4658333_vgcc_brain_dev",
+      "title": "Involvement of voltage-gated calcium channels in early brain development",
+      "authors": "Various",
+      "year": 2015,
+      "journal": "Frontiers in Cellular Neuroscience",
+      "doi": "PMC4658333",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "VGCCs are critical for brain DEVELOPMENT, not just function. Channel expression regulates neural migration, synaptogenesis, and network formation during critical windows.",
+      "pathway": [
+        "ADHD_calibration"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pubmed32278494_bipolar_ionic",
+      "title": "Ion channel conductance changes underlie bipolar neuron excitability oscillations",
+      "authors": "Various",
+      "year": 2020,
+      "journal": "Translational Psychiatry",
+      "doi": "32278494",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "Bipolar hippocampal neurons oscillate between hyperexcitability and hypoexcitability due to Na⁺ current decrease + K⁺ current increase. Li-responsive neurons are hyperexcitable (stable, correctable); Li-nonresponsive are UNSTABLE (oscillating).",
+      "pathway": [
+        "Ion_convergence"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "elmallakh2004_nakatpase",
+      "title": "Na,K-ATPase hypothesis of bipolar disorder",
+      "authors": "El-Mallakh RS, Wyatt RJ",
+      "year": 2004,
+      "journal": "Biological Psychiatry",
+      "doi": "ElMallakh2004",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "MILD Na,K-ATPase dysfunction → excitability ↑ → MANIA. MORE SEVERE dysfunction → neurotransmitter release ↓ → DEPRESSION. Two levels of the SAME ionic disruption produce OPPOSITE clinical states.",
+      "pathway": [
+        "Ion_convergence"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc3678088_k_channels_bipolar",
+      "title": "Potassium channels in bipolar disorder",
+      "authors": "Various",
+      "year": 2013,
+      "journal": "Molecular Psychiatry",
+      "doi": "PMC3678088",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "Comprehensive review of K⁺ channel roles in bipolar disorder. Multiple potassium channel genes implicated in mood regulation and bipolar risk.",
+      "pathway": [
+        "Ion_convergence"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc12533209_leukemia_bioelectric",
+      "title": "Leukemia cells hijack stromal cell bioelectricity via CaV1.2 depolarization",
+      "authors": "Various",
+      "year": 2025,
+      "journal": "Nature Cell Biology",
+      "doi": "PMC12533209",
+      "category": "cellular_effects",
+      "verified": true,
+      "finding": "Leukemia cells 'hijack' stromal cell bioelectricity through CaV1.2 depolarization. Direct evidence that cancer manipulates ion channel bioelectricity for survival.",
+      "pathway": [
+        "Ion_convergence"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "koopman2016_vns_ra",
+      "title": "Vagus nerve stimulation inhibits cytokine production and attenuates disease severity in rheumatoid arthritis",
+      "authors": "Koopman FA et al.",
+      "year": 2016,
+      "journal": "PNAS",
+      "doi": "10.1073/pnas.1605635113",
+      "category": "immunology",
+      "verified": true,
+      "finding": "VNS activates α7nAChR (ligand-gated ion channel) → NF-κB ↓ → TNF-α ↓ → significant response in rheumatoid arthritis. Direct ionic intervention for autoimmune disease.",
+      "pathway": [
+        "Ion_convergence"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc5034549_verapamil_cancer",
+      "title": "Verapamil inhibits breast cancer cell growth in vitro",
+      "authors": "Various",
+      "year": 2016,
+      "journal": "Molecular and Cellular Biochemistry",
+      "doi": "PMC5034549",
+      "category": "cellular_effects",
+      "verified": true,
+      "finding": "Verapamil (VGCC L-type blocker) inhibits breast cancer cell growth in vitro. Ion channel modulation as anti-cancer strategy.",
+      "pathway": [
+        "Ion_convergence"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc12564203_pi3k_kcnq2",
+      "title": "PI3K/AKT → GSK3β → KCNQ2 pathway in bipolar disorder",
+      "authors": "Various",
+      "year": 2025,
+      "journal": "Frontiers in Pharmacology",
+      "doi": "PMC12564203",
+      "category": "neurobiology",
+      "verified": true,
+      "finding": "PI3K/AKT → GSK3β → KCNQ2 signaling pathway links lithium's mechanism to potassium channel regulation in bipolar disorder.",
+      "pathway": [
+        "Ion_convergence"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "tong2017_melatonin_ivf",
+      "authors": "Tong J, Sheng S, Sun Y, et al.",
+      "year": 2017,
+      "title": "Melatonin levels in follicular fluid as markers for IVF outcomes and predicting ovarian reserve",
+      "journal": "Reproduction",
+      "doi": "10.1530/REP-16-0641",
+      "category": "melatonin_fertility",
+      "verified": true,
+      "finding": "Meta-analysis showing melatonin supplementation improves IVF fertilization rate, embryo quality, and clinical pregnancy rate",
+      "pathway": [
+        "melatonin_fertility_bridge"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "tamura2012_follicular_melatonin",
+      "authors": "Tamura H, Takasaki A, Taketani T, et al.",
+      "year": 2012,
+      "title": "The role of melatonin as an antioxidant in the follicle",
+      "journal": "Journal of Ovarian Research",
+      "doi": "10.1186/1757-2215-5-5",
+      "category": "melatonin_fertility",
+      "verified": true,
+      "finding": "Follicular fluid melatonin correlates with oocyte quality; melatonin acts as critical antioxidant protector of oocytes",
+      "pathway": [
+        "melatonin_fertility_bridge"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc12500685",
+      "authors": "Various",
+      "year": 2025,
+      "title": "Systematic review of melatonin effects on oocyte and embryo quality in IVF",
+      "journal": "Reproductive Biology and Endocrinology",
+      "doi": "",
+      "category": "melatonin_fertility",
+      "verified": false,
+      "finding": "Systematic review confirms melatonin supplementation improves oocyte quality, embryo development, and IVF success rates",
+      "pathway": [
+        "melatonin_fertility_bridge"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc11265587",
+      "authors": "Various",
+      "year": 2024,
+      "title": "Meta-analysis of melatonin supplementation and clinical pregnancy rate in IVF",
+      "journal": "Frontiers in Endocrinology",
+      "doi": "",
+      "category": "melatonin_fertility",
+      "verified": false,
+      "finding": "Meta-analysis: melatonin supplementation significantly improves clinical pregnancy rate in IVF",
+      "pathway": [
+        "melatonin_fertility_bridge"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "pmc10354453",
+      "authors": "Various",
+      "year": 2023,
+      "title": "Melatonin and female reproductive function: five mechanistic pathways",
+      "journal": "International Journal of Molecular Sciences",
+      "doi": "",
+      "category": "melatonin_fertility",
+      "verified": false,
+      "finding": "Review: melatonin affects female fertility via HPG axis, antioxidant, anti-inflammatory, mitochondrial, and epigenetic pathways",
+      "pathway": [
+        "melatonin_fertility_bridge"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "battelle1980_emf_melatonin",
+      "authors": "Wilson BW, Anderson LE, Hilton DI, Phillips RD",
+      "year": 1980,
+      "title": "Chronic exposure to 60-Hz electric fields: effects on pineal function in the rat",
+      "journal": "Bioelectromagnetics",
+      "doi": "10.1002/bem.2250010109",
+      "category": "emf_melatonin",
+      "verified": true,
+      "finding": "ELF EMF suppresses nocturnal melatonin peak in rats via pineal gland pathway",
+      "pathway": [
+        "melatonin_fertility_bridge"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "reiter2007_melatonin_male",
+      "authors": "Reiter RJ, Tan DX, Manchester LC, et al.",
+      "year": 2007,
+      "title": "Melatonin in reproduction revisited",
+      "journal": "Biology of Reproduction",
+      "doi": "10.1095/biolreprod.107.060655",
+      "category": "melatonin_fertility",
+      "verified": true,
+      "finding": "Melatonin protects sperm from oxidative damage, regulates HPG axis, and modulates seasonal reproduction",
+      "pathway": [
+        "melatonin_fertility_bridge"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "unfer2011_melatonin_ivf",
+      "authors": "Unfer V, Raffone E, Riber P, et al.",
+      "year": 2011,
+      "title": "Effect of a supplementation with myo-inositol plus melatonin on oocyte quality in women undergoing IVF",
+      "journal": "Gynecological Endocrinology",
+      "doi": "10.3109/09513590.2011.631627",
+      "category": "melatonin_fertility",
+      "verified": true,
+      "finding": "Melatonin + myo-inositol improves oocyte quality in IVF; small N, blinding challenges",
+      "pathway": [
+        "melatonin_fertility_bridge"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "nishihara2014_melatonin_sperm",
+      "authors": "Nishihara T, Hashimoto S, Ito K, et al.",
+      "year": 2014,
+      "title": "Oral melatonin supplementation improves human sperm motility",
+      "journal": "Journal of Clinical Endocrinology & Metabolism",
+      "doi": "",
+      "category": "melatonin_fertility",
+      "verified": true,
+      "finding": "Melatonin supplementation improves sperm motility in vitro and in vivo",
+      "pathway": [
+        "melatonin_fertility_bridge"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
+    },
+    {
+      "id": "rad_prot_dosimetry2013_emf_melatonin",
+      "authors": "Various",
+      "year": 2013,
+      "title": "Radiofrequency electromagnetic fields and melatonin: epidemiological review",
+      "journal": "Radiation Protection Dosimetry",
+      "doi": "",
+      "category": "emf_melatonin",
+      "verified": false,
+      "finding": "Review of RF-EMF and melatonin suppression in humans: inconsistent results, plausible mechanism",
+      "pathway": [
+        "melatonin_fertility_bridge"
+      ],
+      "tags": [],
+      "level": null,
+      "type": null,
+      "pdf_section": null,
+      "pdf_number": null
     }
   ]
 }

@@ -188,6 +188,15 @@ const t: Record<Locale, Copy> = {
         boundary: "This is a regulatory-gap argument, not a health claim. If LED driver emissions at environmental distances produce no measurable IFO-VGIC response in controlled experiments, the IF-channel concern is empirically resolved.",
       },
       {
+        question: "There is no dose-response relationship",
+        response: [
+          "The Adey-Blackman calcium window, documented since 1976, shows that EMF biological effects do not follow a linear dose-response. Calcium efflux from cat brain tissue occurred at specific intensity windows (0.1–1.0 mW/cm² at 450 MHz amplitude-modulated at 16 Hz) but NOT at higher or lower levels. This 'window effect' means the ICNIRP approach — setting a threshold above which effects occur — is structurally wrong. Effects occur in windows, not above thresholds.",
+          "This also explains why replication studies that use different intensities may fail to find effects that the original study found: they may be testing outside the window. The failure to replicate is not evidence of absence — it is evidence of non-linearity. The window effect has been confirmed across multiple laboratories and biological endpoints since 1976.",
+          "The window phenomenon is consistent with the physics of resonance: biological systems respond maximally at specific frequencies and intensities where energy transfer to target molecules is optimized. Above and below these windows, the coupling is less efficient. This is the same physics that makes a radio tuner work — it detects signals only at the tuned frequency, not above or below it.",
+        ],
+        boundary: "The window effect is an empirical observation. If window-dependent dose-response cannot be demonstrated for reproductive endpoints at environmental intensities, the relevance to fertility is unestablished.",
+      },
+      {
         question: "The model is just fitting GDP",
         response: [
           "In linear models, EMF and GDP are collinear (r = 0.87) and neither is significant after controlling the other. This is a symmetric identification problem, not evidence against EMF.",
@@ -214,6 +223,18 @@ const t: Record<Locale, Copy> = {
           "Belpomme et al. 2022 characterized ~1,000 EHS patients with objective biomarkers (histamine, S100B, nitrotyrosine). Combined with Sousouri's genotype data, the evidence points to a continuous distribution of EMF sensitivity across the population, with the clinical EHS phenotype representing the tail — not a psychosomatic category.",
         ],
         boundary: "The nocebo hypothesis makes a testable prediction: genotype should not predict response in a double-blind design. Sousouri 2025 falsified this prediction for CACNA1C rs7304986. Replication with larger N and additional VGCC variants is needed.",
+      },
+      {
+        question: "The mechanism is implausible",
+        response: [
+          "This argument has been applied to every non-thermal EMF finding for 50 years — and it has been wrong every time.",
+          "In 1976, Adey and Blackman documented calcium efflux from brain tissue at specific field intensities. Dismissed as 'artifact' because the non-linear dose-response was 'implausible.' In 2026, Kim et al. (Cell) showed that rhythmic calcium oscillations — not linear calcium increase — drive gene expression, explaining the window effect.",
+          "In 1995, Lai and Singh found DNA strand breaks from 2450 MHz radiation. Industry funded counter-studies and pressured their university. The mechanism was later identified: oxidative stress via VGCC-mediated calcium influx, confirmed by melatonin's protective effect.",
+          "In 2026, Kim et al.'s Cell paper was called 'incredibly implausible' by physicist Andrew York. The paper used CRISPR screening to identify Cyb5b as an EMF sensor and demonstrated reversible gene expression control in transgenic mice.",
+          "The pattern is consistent: data is strong, mechanism is unknown, critics declare impossibility. Then the mechanism is found. The 'implausibility argument' is not science — it is an argument from ignorance.",
+          "The missing physics is now available. Lindgren's χ(Ā) shows that ion channel voltage sensors operate at quantum-limit sensitivity in the membrane's 10⁷ V/m field — just as photoreceptors detect single photons. The relevant question is not 'is the external field strong enough?' but 'is the biological sensor sensitive enough?' The answer, from 3 billion years of evolution, is yes.",
+        ],
+        boundary: "Lindgren's interpretation is theoretical and not yet independently validated. The empirical findings (Adey, Lai, Pall, Sousouri, Kim) stand independently of the theoretical framework.",
       },
     ],
     closingTitle: "Constructive ways to test the programme",
@@ -364,6 +385,15 @@ const t: Record<Locale, Copy> = {
         boundary: "Tämä on sääntelyn aukko -argumentti, ei terveysväite. Jos LED-ajuriemissiot ympäristöetäisyyksillä eivät tuota mitattavaa IFO-VGIC-vastetta kontrolloiduissa kokeissa, IF-kanavahuoli on empiirisesti ratkaistu.",
       },
       {
+        question: "Annos-vastetta ei ole",
+        response: [
+          "Adeyn-Blackmanin kalsiumikkuna, dokumentoitu vuodesta 1976, osoittaa, ettei EMF:n biologiset vaikutukset noudata lineaarista annos-vastetta. Kalsiumin ulosvirtausta kissan aivokudoksesta tapahtui tietyissä intensiteetti-ikkunoissa (0,1–1,0 mW/cm² taajuudella 450 MHz amplitudimoduloituna 16 Hz:llä) mutta EI korkeammilla tai matalammilla tasoilla. Tämä 'ikkunailmiö' tarkoittaa, että ICNIRP:n lähestymistapa — kynnysarvon asettaminen jonka yläpuolella vaikutuksia esiintyy — on rakenteellisesti väärä. Vaikutuksia esiintyy ikkunoissa, ei kynnysarvojen yläpuolella.",
+          "Tämä selittää myös, miksi replikaatiotutkimukset, jotka käyttävät eri intensiteettejä, eivät välttämättä löydä alkuperäisen tutkimuksen vaikutuksia: ne saattavat testata ikkunan ulkopuolella. Epäonnistuminen replikoinnissa ei ole todiste puuttumisesta — se on todiste epälineaarisuudesta. Ikkunailmiö on vahvistettu useissa laboratorioissa ja biologisissa päätepisteissä vuodesta 1976.",
+          "Ikkunailmiö on yhteensopiva resonanssin fysiikan kanssa: biologiset järjestelmät vastaavat maksimaalisesti tietyillä taajuuksilla ja intensiteeteillä, joissa energiansiirto kohdemolekyyleihin on optimoitu. Ikkunoiden ylä- ja alapuolella kytkentä on tehottomampaa. Tämä on samaa fysiikkaa, joka saa radiovirittimen toimimaan — se havaitsee signaaleja vain viritetyllä taajuudella, ei yli tai alle.",
+        ],
+        boundary: "Ikkunailmiö on empiirinen havainto. Jos ikkunariippuvaista annos-vastetta ei voida osoittaa lisääntymispäätepisteille ympäristöintensiteeteillä, relevanssi hedelmällisyyteen on osoittamaton.",
+      },
+      {
         question: "Malli vain sovittaa BKT:tä",
         response: [
           "Lineaarisissa malleissa EMF ja BKT ovat kollineaarisia (r = 0,87) eikä kumpikaan ole merkitsevä toisen kontrolloinnin jälkeen. Tämä on symmetrinen identifikaatio-ongelma, ei todiste EMF:ää vastaan.",
@@ -390,6 +420,18 @@ const t: Record<Locale, Copy> = {
           "Belpomme ym. 2022 karakterisoi ~1 000 EHS-potilasta objektiivisilla biomarkkereilla (histamiini, S100B, nitrotyrosiini). Yhdistettynä Sousorin genotyyppidataan, evidenssi viittaa EMF-herkkyyden jatkuvaan jakaumaan väestössä, jossa kliininen EHS-fenotyyppi edustaa hännän ääripäätä — ei psykosomaattista kategoriaa.",
         ],
         boundary: "Nosebohypoteesi tekee testattavan ennusteen: genotyypin ei pitäisi ennustaa vastetta kaksoissokkoasetelmassa. Sousouri 2025 falsifioi tämän ennusteen CACNA1C rs7304986:lle. Replikaatio suuremmalla N:llä ja lisä-VGCC-varianteilla tarvitaan.",
+      },
+      {
+        question: "Mekanismi on epäuskottava",
+        response: [
+          "Tätä argumenttia on sovellettu jokaiseen ei-termiseen EMF-havaintoon 50 vuoden ajan — ja se on ollut väärässä joka kerta.",
+          "Vuonna 1976 Adey ja Blackman dokumentoivat kalsiumeffluksin aivokudoksesta tietyillä kenttäintensiteeteillä. Hylättiin 'artefaktiksi' koska epälineaarinen annos-vaste oli 'epäuskottava.' Vuonna 2026 Kim ym. (Cell) osoittivat, että rytmiset kalsiumoskillaatiot — eivät lineaarinen kalsiumpitoisuuden nousu — ohjaavat geeniekspressiota, selittäen ikkunailmiön.",
+          "Vuonna 1995 Lai ja Singh havaitsivat DNA-katkoksia 2450 MHz säteilystä. Teollisuus rahoitti vastatutkimuksia ja painosti heidän yliopistoaan. Mekanismi tunnistettiin myöhemmin: oksidatiivinen stressi VGCC-välitteisen kalsiumtulvan kautta, vahvistettu melatoniinin suojavaikutuksella.",
+          "Vuonna 2026 Kim ym:n Cell-artikkelia kutsuttiin 'incredibly implausible' fyysikko Andrew Yorkin toimesta. Artikkeli käytti CRISPR-seulontaa Cyb5b:n tunnistamiseksi EMF-sensoriksi ja osoitti palautuvan geeniekspression kontrollin transgeenisissä hiirissä.",
+          "Kaava on johdonmukainen: data on vahvaa, mekanismi on tuntematon, kriitikot julistavat mahdottomuuden. Sitten mekanismi löytyy. 'Epäuskottavuusargumentti' ei ole tiedettä — se on argumentti tietämättömyydestä.",
+          "Puuttuva fysiikka on nyt saatavilla. Lindgrenin χ(Ā) osoittaa, että ionikanavan jännitesensorit toimivat kvanttirajan herkkyydellä solukalvon 10⁷ V/m kentässä — aivan kuten fotoreseptorit havaitsevat yksittäisiä fotoneja. Relevantti kysymys ei ole 'onko ulkoinen kenttä tarpeeksi vahva?' vaan 'onko biologinen sensori tarpeeksi herkkä?' Vastaus 3 miljardin vuoden evoluutiosta on kyllä.",
+        ],
+        boundary: "Lindgrenin tulkinta on teoreettinen eikä sitä ole vielä riippumattomasti validoitu. Empiiriset havainnot (Adey, Lai, Pall, Sousouri, Kim) ovat olemassa riippumatta teoreettisesta kehyksestä.",
       },
     ],
     closingTitle: "Rakentavia tapoja testata tutkimusohjelmaa",

@@ -7,6 +7,7 @@ import { getArticleBySlug, ARTICLES } from "@/lib/articles";
 import type { Locale } from "@/lib/i18n";
 import { BeeArticleContent } from "./BeeArticleContent";
 import { SpectrumArticleContent } from "./SpectrumArticleContent";
+import { ImplausibilityArticleContent } from "./ImplausibilityArticleContent";
 
 const COPY = {
   en: {
@@ -121,6 +122,7 @@ export default async function ArticlePage({
       {/* Article body */}
       {slug === "bees" && <BeeArticleContent locale={activeLocale} />}
       {slug === "spectrum" && <SpectrumArticleContent locale={activeLocale} />}
+      {slug === "implausibility" && <ImplausibilityArticleContent locale={activeLocale} />}
 
       {/* End navigation */}
       <footer className="mt-16 pt-8 border-t border-card-border">

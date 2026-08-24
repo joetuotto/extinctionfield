@@ -9,5 +9,5 @@ export function cryEffect(
   personal: number,
   nightFraction: number,
 ): number {
-  return clamp(1 - GAMMA_CRY * personal * nightFraction, 0.95, 1.0);
+  return clamp(1 - GAMMA_CRY * personal * nightFraction, 0.85, 1.0);
 }

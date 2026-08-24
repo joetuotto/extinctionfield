@@ -207,7 +207,7 @@ function ReferenceCard({
                 {r.type}
               </span>
             )}
-            {r.pathway.map((p) => (
+            {(r.pathway ?? []).map((p) => (
               <span
                 key={p}
                 className="text-[10px] px-1.5 py-0.5 rounded bg-foreground-muted/10 text-foreground-muted"
@@ -307,7 +307,7 @@ export function ReferenceDatabase({ locale }: { locale: string }) {
       if (typeFilter && r.type !== typeFilter) return false;
       if (verifiedOnly && !r.verified) return false;
       if (!term) return true;
-      return [r.authors, r.title, r.journal, r.doi, r.finding, ...r.pathway, ...r.tags]
+      return [r.authors, r.title, r.journal, r.doi, r.finding, ...(r.pathway ?? []), ...(r.tags ?? [])]
         .filter(Boolean)
         .join(" ")
         .toLowerCase()

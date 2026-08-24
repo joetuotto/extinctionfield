@@ -139,7 +139,7 @@ export const NODES: CausalMapNode[] = [
     color: "#8B5CF6", epistemicLevel: "E",
     detail: {
       mechanism: "VGCC, Nav, K-ATP, CatSper — kaikki sähköisesti moduloitavia. S4-jännitesensori reagoi IFO-mekanismilla 10⁻⁵ V/m. Ei-ionotrooppinen signalointi (Trus & Atlas 2024) madaltaa kynnystä.",
-      fdaDevice: "KAIKKI 24+ laiteluokkaa hyödyntävät ionikanavia",
+      fdaDevice: "KAIKKI 26 laiteluokkaa hyödyntävät ionikanavia",
       bermPathway: "Kaikki polut",
       keyRefs: ["panagopoulos2025", "trus_atlas2024"],
       link: "/evidence#therapeutic-devices",
@@ -231,7 +231,7 @@ export const NODES: CausalMapNode[] = [
     },
   },
 
-  // ── LEVEL 2: Biological mechanisms (9) ──
+  // ── LEVEL 2: Biological mechanisms (12) ──
   { id: "mech_vgcc_ros", level: 2, label: "VGCC → Ca²⁺ → ROS", epistemicLevel: "E", detail: { mechanism: "Jänniteohjatut kalsiumkanavat avautuvat → Ca²⁺-influksi → mitokondriaaliset ROS → DNA-vaurio.", bermPathway: "A", link: "/evidence#pathway-A" } },
   { id: "mech_gpcr", level: 2, label: "GPCR-adenosiini → cAMP", epistemicLevel: "E", detail: { mechanism: "PEMF-mekanismi: adenosiini-A2A-reseptorin aktivointi → cAMP-kaskadi → anti-inflammatorinen vaste.", bermPathway: "GPCR", link: "/evidence#pathway-GPCR" } },
   { id: "mech_nav_plasticity", level: 2, label: "Nav → neuroplastisuus", epistemicLevel: "E", detail: { mechanism: "Natriumkanavien modulointi → kortikaalinen plastisuus. rTMS:n ja tDCS:n perusmekanismi.", bermPathway: "neural", link: "/evidence#pathway-neural" } },
@@ -242,6 +242,15 @@ export const NODES: CausalMapNode[] = [
   { id: "mech_dep_quadratic", level: 2, label: "DEP neliöllinen (>100 V/m)", epistemicLevel: "E", detail: { mechanism: "Dielektroforeesi: neliöllinen voima polarisoituneille partikkeleille epähomogeenisessa kentässä. TTFields-intensiteetti.", bermPathway: "A_mitotic (TTFields)", link: "/evidence#ttfields" } },
   { id: "mech_cyb5b_ca", level: 2, label: "Cyb5b → Ca²⁺ oskillaatiot", epistemicLevel: "E", detail: { mechanism: "CRISPR-seulonnalla tunnistettu Cyb5b toimii EMF-sensorina mitokondrion ulkokalvolla. Tuottaa rytmiset Ca²⁺-oskillaatiot jotka aktivoivat geenipromoottoreita. Kolmas transduktioreitti IFO:n ja RPM:n rinnalla.", bermPathway: "Cyb5b", keyRefs: ["kim2026_cell_emf_gene_switch"], link: "/evidence#therapeutic-devices" } },
   { id: "mech_vgcc_genotype", level: 2, label: "VGCC-genotyyppi × herkkyys", epistemicLevel: "E", detail: { mechanism: "CACNA1C rs7304986 T/C-kantajat osoittavat mitattavan neurofysiologisen vasteen 5G-altistukselle (3.6 GHz) ICNIRP-rajojen alla. T/T-kantajilla ei vaikutusta. Kaksoissokkoasetelma.", bermPathway: "Individual susceptibility", keyRefs: ["sousouri2025_cacna1c_5g_sleep"], link: "/evidence#individual-susceptibility" } },
+  { id: "mech_beta_katp", level: 2, label: "β-solu K-ATP → insuliini", epistemicLevel: "E", detail: { mechanism: "US Patent 4,850,959 (1989): resonanssitaajuinen EMF kontrolloi haiman β-solujen insuliinieritystä Ca²⁺-kanavien kautta. Resonanssi → Ca²⁺-influksi → insuliini↑. Ei-resonanssi → Ca²⁺-effluksi → insuliini↓.", bermPathway: "metabolic", keyRefs: ["patent_4850959_insulin"], link: "/evidence#metabolic" } },
+  { id: "mech_window_effect", level: 2, label: "Ikkunailmiö", sublabel: "Adey-Blackman 1976", epistemicLevel: "E", detail: { mechanism: "Biologinen vaikutus ei-lineaarinen: Ca²⁺-effluksi aivokudoksesta tapahtuu tietyissä intensiteetti-ikkunoissa (0,1–1,0 mW/cm²) mutta EI korkeammilla tai matalammilla tasoilla. Selittää miksi ICNIRP:n lineaarinen SAR-malli ei havaitse vaikutuksia ja miksi replikaatiotutkimukset voivat epäonnistua.", bermPathway: "Non-linear dose-response", keyRefs: ["adey1976_calcium_window"], link: "/objections#dose-response" } },
+  { id: "mech_ionic_hierarchy", level: 2, label: "Ioninen hoitohierarkia", sublabel: "Ca²⁺-konvergenssi", epistemicLevel: "E", detail: { mechanism: "Kaikki mielialahäiriöiden hoidot konvergoivat Ca²⁺-homeostaasiin: SSRI (epäsuora, NNT 7) < TMS/tDCS (sähkömagneettinen, NNT 5) < litium (ioninen, Li⁺→VGSC) < psykedeelit (ioninen reset, 5-HT2A→Cav1.2/CACNA1C, NNT 3). Tehokkuus seuraa ionisen kohdistuksen astetta.", bermPathway: "Ionic treatment", keyRefs: ["cipriani2018_antidepressants", "goodwin2022_psilocybin", "sousouri2025_cacna1c", "elmallakh2004_lithium_ion", "zarate2006_ketamine"], prediction: "P14: EMF-altistus × psykedeelien vaste; P15: CACNA1C-genotyyppi × vaste; P16: litium suojaa EMF-mielialavaikutuksilta", link: "/evidence#ionic-hierarchy" } },
+  { id: "mech_skin_bioelectric", level: 2, label: "Ihon biosähköinen sensorijärjestelmä", sublabel: "TEP + pietsosähkö + VGCC", epistemicLevel: "E", detail: { mechanism: "Epidermis ylläpitää transepiteliaalista potentiaalia (TEP, 10–60 mV) Na⁺/K⁺-ATPaasin avulla. Dermiksen kollageeni on pietsosähköinen (7–8 pC/N) ja muuntaa mekaanisen voiman jännitteeksi joka avaa VGCC-kanavat. PIEZO1/TRPV4/VGCC konvergoivat Ca²⁺-vasteeseen. EMF häiritsee kaikkia kolmea järjestelmää samanaikaisesti.", bermPathway: "Dermal bioelectric", keyRefs: ["lim2024_skin_battery", "zhao2006_wound_ef", "fukada1957_piezo", "skedung2013_nanoscale_touch"], prediction: "P17: EMF vähentää TEP:ia; P18: EMF hidastaa haavan paranemista", link: "/evidence#skin-battery" } },
+  { id: "mech_led_confound", level: 2, label: "LED IF-EMF -sekoittaja", sublabel: "65 kHz–2 MHz ajuri", epistemicLevel: "C", detail: { mechanism: "Kaikki LED-valonlähteet sisältävät hakkuriteholähteen (65 kHz – 2 MHz IF-EMF). Verkkokalvon Cav1.4-kanavat ovat VGCC-tyyppisiä ja IF-EMF:n kohteita. Sinivalotutkimuksissa hehkulamppu vs. LED -vertailu sekoittuu IF-EMF:ään. A2E-fotosensitisaatio on todellinen, mutta IF-EMF voi vahvistaa sitä synergistisesti. Yötila poistaa sinivalon mutta EI IF-EMF:ää.", bermPathway: "LED confound", keyRefs: ["pmc4896623_cav14", "pmc3885580_retinal_vgcc", "pmc7830240_blue_light"], prediction: "P19–P22: IF-EMF välittää LED-sinivalovauriota", link: "/evidence#led-confound" } },
+  { id: "mech_hospital_emf", level: 2, label: "Sairaala-EMF", sublabel: "PHS + modulooma", epistemicLevel: "C", detail: { mechanism: "Post-hospital syndrome (Krumholz NEJM 2013): riski kaikille diagnooseille 30 pv kotiutumisen jälkeen. Sairaalat ovat korkeimman EMF:n ympäristö: 24/7 LED (IF), Wi-Fi (RF), monitorit (IF+ELF), sähkösängyt (ELF). ICU: 40 µT laitteiden lähellä. Vanhukset 95% ajasta sängyssä. BERM: simultaaninen modulooma-aktivaatio heikentyneessä ionikanavahomeostaasissa.", bermPathway: "Hospital EMF", keyRefs: ["krumholz2013_phs", "pubmed10447544_icu_emf"], prediction: "P23–P25: sairaala-EMF korrelaatio ja interventio", link: "/evidence#hospital-emf" } },
+  { id: "mech_alzheimer_calcium", level: 2, label: "Amyloidi-kalsium-palautesilmukka", sublabel: "Ca²⁺ → Aβ → huokoset → Ca²⁺", epistemicLevel: "C", detail: { mechanism: "EMF → VGCC → Ca²⁺ ↑ → BACE1 → Aβ-oligomeerit. Ca²⁺:n läsnäollessa Aβ muodostaa toksisia oligomeereja (Bhatt PMC3065491). Oligomeerit muodostavat kalvon Ca²⁺-huokosia → positiivinen palautesilmukka. Preseniini-konvergenssi: PSEN1/2-mutaatiot (geneettinen) ja EMF-VGCC (ympäristöllinen) konvergoivat samaan Ca²⁺-polkuun. Arendash-paradoksi: kontrolloitu EMF suojaa (918 MHz, MemorEM/TEMT) — annos/taajuus/konteksti ratkaisevat.", bermPathway: "Alzheimer calcium", keyRefs: ["pmc4909906_calcium_ad", "pmc3065491_bhatt_ca_oligomers", "pmc7179355_oday_calcium", "pmc8125740_calcium_abeta"], prediction: "P29–P32: AD korreloi EMF:n kanssa, CACNA1C moduloi, matala-EMF hidastaa", link: "/evidence#alzheimer-calcium" } },
+  { id: "mech_adhd_calibration", level: 2, label: "ADHD-kalibraatiovirhe", sublabel: "HCN/VGCC-viritys → S/N ↓", epistemicLevel: "C", detail: { mechanism: "Raskausaikainen EMF → sikiön VGCC-aktivaatio → Ca²⁺-häiriö kriittisessä kehitysikkunassa → ionikanavien (HCN, VGCC, KCNQ) kalibraatiovirhe PFC:n pyramidaalineuroneissa → signaali-kohinasuhteen vaje → ADHD-fenotyyppi. CACNA1C-variantit assosioituvat ADHD:hen, ASD:hen, bipolaarihäiriöön GWAS:ssa. Timothy-syndrooma (CACNA1C GoF) → autismi = geneettinen ääriesimerkki. Guanfasiini (FDA/EMA ADHD) toimii SUORAAN ionikanaviin: α2A → cAMP↓ → HCN sulkeutuu → Vm stabiloituu. Li 2020 (JAMA, 1482 paria): objektiivisesti mitattu raskausaikainen EMF → ADHD-riski.", bermPathway: "ADHD calibration", keyRefs: ["li2020_jama_adhd", "pmc6101623_cacna1c_gwas", "pmc6894750_timothy", "wang2007_guanfacine_hcn"], prediction: "P33–P35: CACNA1C × EMF → ADHD, guanfasiini suojaa, prevalenssi seuraa EMF:ää", link: "/evidence#adhd-calibration" } },
+  { id: "mech_melatonin_fertility", level: 2, label: "Melatoniinisilta", sublabel: "Kaskadi 1 → kaskadi 6", epistemicLevel: "C", detail: { mechanism: "EMF → pinealirauhanen → melatoniini ↓ kytkee unikaskadin (1) hedelmällisyyskaskadiin (6): kaskadit ovat SARJASSA, eivät rinnakkain. Viisi polkua: (1) HPG-akseli: melatoniini → hypotalamus → GnRH → LH/FSH → gonadit; (2) antioksidantti: follikkelinesteen melatoniini → ROS-neutralointi → munasolun suoja (Tamura 2012); (3) anti-inflammatorinen: NF-κB ↓; (4) mitokondriaalinen: AMPK/SIRT1 ↑; (5) epigeneettinen: Gdf9/Bmp15-säätely. VAROITUS: melatoniinin HPG-vaikutus on KAKSISUUNTAINEN — korkeina pitoisuuksina se voi suppressoida GnRH:ta.", bermPathway: "Melatonin bridge", keyRefs: ["tamura2012_follicular_melatonin", "tong2017_melatonin_ivf", "battelle1980_emf_melatonin", "reiter2007_melatonin_male"], prediction: "P38–P40: IVF × EMF, melatoniinilisä × EMF -interaktio, vuorotyö", link: "/evidence#melatonin-bridge" } },
 
   // ── LEVEL 3: Tissue effects (10) ──
   { id: "tissue_sperm", level: 3, label: "Spermatogeneesi ↓", epistemicLevel: "E", detail: { mechanism: "ROS-vaurio, mitoottisen karan häiriö ja Leydig-solujen toimintahäiriö vähentävät siittiötuotantoa.", link: "/evidence#sperm" } },
@@ -338,6 +347,34 @@ export const EDGES: CausalMapEdge[] = [
   { from: "mech_cyb5b_ca", to: "tissue_sperm" },
   { from: "mech_cyb5b_ca", to: "tissue_ovarian" },
   { from: "mech_vgcc_genotype", to: "tissue_melatonin" },
+  { from: "mod_ion", to: "mech_beta_katp" },
+  { from: "mech_beta_katp", to: "tissue_insulin" },
+  { from: "ch_rf", to: "mech_window_effect" },
+  { from: "mech_window_effect", to: "mech_vgcc_ros" },
+
+  // Ionic hierarchy → depression (treatment convergence)
+  { from: "mech_vgcc_ros", to: "mech_ionic_hierarchy" },
+  { from: "mech_ionic_hierarchy", to: "disease_depression" },
+  // Skin bioelectric → VGCC convergence, neuromodulation
+  { from: "mech_vgcc_ros", to: "mech_skin_bioelectric" },
+  { from: "mech_skin_bioelectric", to: "tissue_sperm" },
+  // LED confound → melatonin, retinal
+  { from: "mech_vgcc_ros", to: "mech_led_confound" },
+  { from: "mech_led_confound", to: "tissue_melatonin" },
+  // Hospital EMF → simultaneous cascade
+  { from: "mech_led_confound", to: "mech_hospital_emf" },
+  { from: "mech_hospital_emf", to: "disease_sleep" },
+  // Alzheimer calcium feedback loop
+  { from: "mech_vgcc_ros", to: "mech_alzheimer_calcium" },
+  { from: "mech_alzheimer_calcium", to: "tissue_bbb" },
+  // ADHD calibration error
+  { from: "mech_vgcc_ros", to: "mech_adhd_calibration" },
+  { from: "mech_adhd_calibration", to: "disease_adhd" },
+  // Melatonin bridge: cascade 1 → cascade 6 (serial, not parallel)
+  { from: "mech_cry_melatonin", to: "mech_melatonin_fertility" },
+  { from: "mech_melatonin_fertility", to: "tissue_ovarian" },
+  { from: "mech_melatonin_fertility", to: "tissue_testosterone" },
+  { from: "mech_melatonin_fertility", to: "tissue_sperm" },
 
   // Tissue effects → diseases
   { from: "tissue_melatonin", to: "disease_sleep" },

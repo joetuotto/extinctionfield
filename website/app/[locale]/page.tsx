@@ -55,7 +55,7 @@ const COPY = {
 
     sentinelCta: "All sentinels",
 
-    paradoxLabel: "CROSS-SECTIONAL DISCOVERY v19.1",
+    paradoxLabel: "CROSS-SECTIONAL DISCOVERY v17.1",
     paradoxTitle: "The mobile phone paradox",
     paradoxText: "Across 54 countries, residential electricity consumption is the strongest predictor of fertility decline (RMSE 0.533). Mobile phone subscriptions — the information device — are the weakest (RMSE 1.053). If the mechanism were 'information → choices', the information device should predict best. It doesn't. The infrastructure variable predicts best — consistent with a physical exposure mechanism.",
     paradoxStat1: "LOOCV RMSE",
@@ -72,7 +72,7 @@ const COPY = {
     causalNote: "Mobile subscription density is a composite proxy for the overall electromagnetic environment. The model traces three independent channels — ELF (power grid, lighting), IF (switching electronics, LED flicker), RF (base stations, Wi-Fi, radar) — through cryptochrome disruption, calcium signaling and membrane voltage to paired reproductive capacity.",
 
     teaserLabel: "LOCKED PREDICTIONS · TFR 2030",
-    teaserNote: "Locked under BERM v18 and falsifiable: each will be compared against observed data in the stated year.",
+    teaserNote: "Locked under BERM v17 and falsifiable: each will be compared against observed data in the stated year.",
     allPredictions: "All predictions",
 
     tdpTitle: "THE THERAPEUTIC DEVICE PARADOX",
@@ -86,7 +86,7 @@ const COPY = {
     falsPending: "pending",
     falsCta: "Test details",
 
-    epistemicNote: "BERM v19 is a falsifiable research model, not a certainty. 521 peer-reviewed references across 10 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Cross-sectional formula: LOOCV RMSE 0.522, 74% of countries within 0.5 children of prediction. Residential electricity consumption outperforms GDP as a TFR predictor by 21%. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.",
+    epistemicNote: "BERM v17 is a falsifiable research model, not a certainty. 521 peer-reviewed references across 10 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Cross-sectional formula: LOOCV RMSE 0.522, 74% of countries within 0.5 children of prediction. Residential electricity consumption outperforms GDP as a TFR predictor by 21%. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.",
     epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · Cross-sectional RMSE = 0.522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Independent research",
 
@@ -112,7 +112,7 @@ const COPY = {
 
     sentinelCta: "Kaikki sentinellit",
 
-    paradoxLabel: "POIKKILEIKKAUSLÖYDÖS v19.1",
+    paradoxLabel: "POIKKILEIKKAUSLÖYDÖS v17.1",
     paradoxTitle: "Matkapuhelinparadoksi",
     paradoxText: "54 maan aineistossa asumisen sähkönkulutus on vahvin yksittäinen hedelmällisyyslaskun ennustaja (RMSE 0,533). Matkapuhelintilaukset — tietolaite — ovat heikoin (RMSE 1,053). Jos mekanismi olisi 'tieto → valinnat', tietolaitteen pitäisi ennustaa parhaiten. Ei ennusta. Infrastruktuurimuuttuja ennustaa parhaiten — yhdenmukaista fyysisen altistusmekanismin kanssa.",
     paradoxStat1: "LOOCV RMSE",
@@ -129,7 +129,7 @@ const COPY = {
     causalNote: "Matkapuhelinliittymätiheys on yhdistelmäproksi koko sähkömagneettiselle ympäristölle. Malli jäljittää kolme itsenäistä kanavaa — ELF (sähköverkko, valaistus), IF (kytkentäelektroniikka, LED-välkyntä), RF (tukiasemat, Wi-Fi, tutka) — kryptokromihäiriön, kalsiumsignaloinnin ja kalvojännitteen kautta pariutumisen lisääntymiskapasiteettiin.",
 
     teaserLabel: "LUKITUT ENNUSTEET · TFR 2030",
-    teaserNote: "Lukittu BERM v18:lla ja falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna.",
+    teaserNote: "Lukittu BERM v17:lla ja falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna.",
     allPredictions: "Kaikki ennusteet",
 
     tdpTitle: "TERAPEUTTINEN LAITEPARADOKSI",
@@ -143,7 +143,7 @@ const COPY = {
     falsPending: "odottaa",
     falsCta: "Testien yksityiskohdat",
 
-    epistemicNote: "BERM v19 on falsifioitava tutkimusmalli, ei varmuus. 521 vertaisarvioitua viitettä 10 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava: LOOCV RMSE 0,522, 74 % maista 0,5 lapsen sisällä ennusteesta. Asumisen sähkönkulutus ylittää BKT:n TFR-ennustajana 21 %. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.",
+    epistemicNote: "BERM v17 on falsifioitava tutkimusmalli, ei varmuus. 521 vertaisarvioitua viitettä 10 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava: LOOCV RMSE 0,522, 74 % maista 0,5 lapsen sisällä ennusteesta. Asumisen sähkönkulutus ylittää BKT:n TFR-ennustajana 21 %. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.",
     epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · Poikkileikkaus-RMSE = 0,522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Itsenäinen tutkimus",
 
