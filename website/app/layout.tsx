@@ -16,9 +16,19 @@ const serifFont = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Extinction Field – BERM v19 research model",
+  metadataBase: new URL("https://extinctionfield.com"),
+  title: "Extinction Field – BERM v17 research model",
   description:
     "A measurement-aware research model for testing field-state, reproductive-endpoint and age-specific fertility hypotheses.",
+  openGraph: {
+    type: "website",
+    siteName: "BERM — Bio-Electromagnetic Response Model",
+    locale: "en_US",
+    alternateLocale: "fi_FI",
+  },
+  twitter: {
+    card: "summary",
+  },
 };
 
 const themeInitScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}})()`;

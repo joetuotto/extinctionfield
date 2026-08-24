@@ -33,7 +33,7 @@ const t = {
 
     causalTitle: "Causal pathway diagram",
     causalDesc:
-      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Nine levels, 35 nodes, 50 edges. Two co-primary pathways operate in parallel: Pathway A (VGCC → Ca²⁺ → ROS) has the strongest experimental support (23–28 blocker studies), while Pathway B (RPM → CRY → circadian disruption) is the most complete theoretical bridge from Lindgren geometry to biology (87.5% of the RPM Hamiltonian is derivable from the metric ansatz). The CRY/RPM pathway has supporting evidence across species: disruption of magnetic compass in birds (Ritz 2004, Engels 2014), CRY-dependent magnetoreception in Drosophila (Yoshii 2009), CRY-dependent ROS modulation in human cells (Sherrard 2018), and — critically — functional blue-light-dependent magnetoreception in humans (Chae et al. 2019, PLOS ONE), indicating that the biological substrate is present in the species BERM models. Both pathways are independently supported at E-level evidence. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
+      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Eight levels, 63 nodes, 107 edges. Two co-primary pathways operate in parallel: Pathway A (VGCC → Ca²⁺ → ROS) has the strongest experimental support (23–28 blocker studies), while Pathway B (RPM → CRY → circadian disruption) is the most complete theoretical bridge from Lindgren geometry to biology (87.5% of the RPM Hamiltonian is derivable from the metric ansatz). The CRY/RPM pathway has supporting evidence across species: disruption of magnetic compass in birds (Ritz 2004, Engels 2014), CRY-dependent magnetoreception in Drosophila (Yoshii 2009), CRY-dependent ROS modulation in human cells (Sherrard 2018), and — critically — functional blue-light-dependent magnetoreception in humans (Chae et al. 2019, PLOS ONE), indicating that the biological substrate is present in the species BERM models. Both pathways are independently supported at E-level evidence. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
 
     chiTitle: "Lindgren chi coupling equation",
     chiDesc:
@@ -46,13 +46,37 @@ const t = {
     twoChDesc:
       "Total effective EMF exposure decomposes into three frequency channels — ELF (f < 1 kHz, membrane modulation), IF (1 kHz – 1 MHz, intracellular/mitotic), and RF (> 1 MHz, spin chemistry) — each weighted by its biological mechanism and modulated by the chi coupling.",
     twoChExplain:
-      "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF. In a country with near-zero cellular infrastructure, even heavy personal phone use contributes little total exposure (chi is near zero). Conversely, in a fully saturated environment, the personal component is added almost linearly across all three channels.",
+      "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, where the current diagnostic weights are w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35. These are DIAGNOSTIC weights requiring empirical calibration, not fitted parameters -- the three-channel decomposition is structurally derived from membrane biophysics, but the relative weights are uncertain. In a country with near-zero cellular infrastructure, even heavy personal phone use contributes little total exposure (chi is near zero). Conversely, in a fully saturated environment, the personal component is added almost linearly across all three channels.",
     twoChLayersTitle: "12 technology layers composing the ambient field",
     twoChLayersDesc:
       "The ambient term is not monolithic. It decomposes into 12 independent technology layers, each with its own driver, deployment timeline, and frequency profile. This decomposition improves the model's discriminative power because each layer acts as an orthogonal instrument.",
+    ifoVgicNote: "The IFO-VGIC mechanism is supported by a comprehensive review of 131 studies (Panagopoulos et al. 2025, Bioelectromagnetics): 95% report oxidative effects from RF/Wi-Fi exposure. This consensus, consistent with Yakymenko et al. 2016 (93/100), establishes the Ca²⁺ influx → ROS pathway as the most robustly documented non-thermal mechanism.",
+    multiPathwayCa2Note: "The Ca²⁺ disruption at Level 4 operates through multiple independent pathways: (1) direct S4 voltage sensor forced oscillation (Panagopoulos et al. 2025, IFO-VGIC); (2) intracellular calcium store dysregulation via ryanodine receptors (RyR) and SERCA pumps (Bertagna et al. 2025, Ann NY Acad Sci). Both pharmacological blockade experiments (VGCC blockers for pathway 1; dantrolene for RyR, CPA for SERCA in pathway 2) abrogate EMF effects, confirming mechanism. The multi-pathway nature explains tissue-specific sensitivity: cells with high VGIC density AND large intracellular Ca²⁺ stores (neurons, gonadal cells) are more sensitive than cells with low stores (keratinocytes — cf. Meyer 2026, Haidar 2025: null results in skin cells). Note: Bertagna 2025 is ELF (50 Hz), not RF — translation to RF is not direct, but the Ca²⁺ pathway is shared.",
+    fiveGReproNote: "The first 5G-frequency-specific testicular data (Bektas et al. 2026, Bioelectromagnetics): 3.5 GHz RF induced testicular and oxidative damage in rats. CoQ10 supplementation ameliorated the damage, demonstrating mechanism reversibility — consistent with BERM's recovery window model where antioxidant capacity determines net daily damage. This extends the oxidative stress evidence base (Yakymenko 2016: 93/100; Panagopoulos 2025: 95%) to the 5G frequency range.",
+    pathwayCQuantNote: "The melatonin suppression pathway is quantitatively supported by a PRISMA systematic review of 55 studies (Tbahriti et al. 2026, Sleep Biol Rhythms): 88% of high-quality animal studies report EMF-induced melatonin suppression of 20-50% from baseline. This suppression is biologically significant for GnRH pulsatility but smaller than light-induced suppression (>90%), consistent with BERM's v17_night_fraction() modeling EMF as one component of the nocturnal triple hit (melanopsin + CRY + melatonin), not the sole driver. Methodological note: only 27% of reviewed studies met high standards.",
+    recoveryWindowNote: "The distinction between acute and chronic exposure is empirically supported: Koivisto et al. (2000) observed cognitive facilitation after 30–60 min exposure (compatible with acute Ca²⁺-mediated synaptic enhancement), while Panagopoulos et al. (2025) report 95% oxidative stress in studies with chronic or repeated exposure. The recovery window model resolves this apparent contradiction: 30 min + 23.5h recovery → 97% repair (no net damage); 22h exposure + 2h recovery → 21% repair (cumulative damage).",
+    lateralizationNote: "The two-channel model's spatial structure is empirically supported by lateralization studies: Eliyahu et al. (2006) and Luria et al. (2009) demonstrated that 890 MHz exposure affects specifically the hemisphere nearest the phone. This confirms that personal-EMF effects are local, not systemic — EMF attenuates with the square of distance — supporting BERM's premise that phone-in-pocket targets testes, phone-at-ear targets hypothalamus.",
     ifChannelTitle: "IF channel: LED lighting as primary source",
     ifChannelDesc:
       "The IF channel (1 kHz – 1 MHz) targets dividing cells through the same frequency–cell size relationship as FDA-approved TTFields cancer therapy. The primary environmental source of IF fields is LED lighting: every LED bulb contains a switch-mode power supply operating at 20–200 kHz with harmonics extending to megahertz. A typical home contains 15–30 such sources; a typical office contains 200–500. Additional IF sources include HVAC variable frequency drives (5–50 kHz), induction cooktops (20–75 kHz), and all switch-mode power supplies (laptop chargers, phone chargers). The mechanism operates via Ion Forced Oscillation (IFO-VGIC), with a biological threshold of 10⁻⁵ V/m (Panagopoulos 2025) — orders of magnitude below measured LED driver emissions.",
+    tcbmTitle: "Three-Channel Biological Model (TCBM)",
+    tcbmIntro:
+      "BERM v19.1 identifies three independent electromagnetic channels, each with distinct frequency ranges, exposure sources, biological mechanisms, and temporal histories:",
+    tcbmElfTitle: "Channel 1: ELF (0–300 Hz)",
+    tcbmElfDesc:
+      "Source: power grid, household wiring, appliances, transformers. Mechanism: IFO-VGIC forced ion oscillation (Panagopoulos 2025). History: present since electrification (1880s), stable since ~1970. Proxy: residential electricity consumption (kWh per capita). Always on, 24/7, entire home.",
+    tcbmIfTitle: "Channel 2: IF (300 Hz – 10 MHz)",
+    tcbmIfDesc:
+      "Source: LED drivers (20–300 kHz), SMPS, VFDs, induction cooktops. Mechanism: Cyb5b → Ca²⁺ oscillations (Kim 2026 Cell), IFO at higher frequencies. History: near-zero before 2009, exponential growth 2009–2019 (EU LED transition). Proxy: LED market share × residential electricity. Pulsed, high dV/dt, regulatory gap (IJRB 2022).",
+    tcbmRfTitle: "Channel 3: RF (100 kHz – 300 GHz)",
+    tcbmRfDesc:
+      "Source: mobile phones, Wi-Fi, Bluetooth, base stations, IoT. Mechanism: RPM/CRY spin chemistry (Ritz 2004), thermal deposition at high SAR. History: 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Proxy: broadband subscriptions per 100, mobile subscriptions. Modulated (data encoding), personal + ambient.",
+    tcbmIfMitotic:
+      "The IF channel's biological mechanism differs from ELF and RF. While ELF primarily activates ion channels (IFO-VGCC) and RF primarily disrupts radical pair chemistry (RPM/CRY), IF acts through a THIRD pathway: disruption of polar macromolecular structures during cell division (mitotic spindle, tubulin dimers). TTFields research demonstrates that IF fields (100–500 kHz) exert directional forces on polar intracellular elements. This mechanism is frequency-dependent: cancer cells are most affected at 150–200 kHz, while normal cells at ~50 kHz (Nature 2020). LED driver emissions (20–100 kHz) span the normal-cell sensitivity range.",
+    tcbmCrossSectional:
+      "In the cross-sectional formula (54 countries, LOOCV RMSE 0.522), residential electricity serves as primary proxy because it captures ELF (always present with electricity) and correlates with IF (LED penetration tracks electrification). Broadband captures RF. ELF carries ~60% of the cross-sectional signal, RF carries ~40%. IF cannot be separated from ELF in cross-sectional data because LED penetration correlates with electrification. The temporal test (T1: LED-DID) is needed to isolate IF's independent contribution.",
+    tcbmWolframPlanned:
+      "Planned: formal Wolfram Language verification of the three-channel coupling structure, including symbolic derivation of the IFO-VGIC threshold from first principles and numerical validation against the 54-country cross-sectional dataset.",
 
     recovTitle: "Five-layer recovery model",
     recovDesc:
@@ -163,6 +187,8 @@ const t = {
 
     epistemic:
       "Epistemic note: The equations above are the current model specification (BERM v17). Parameter values are calibrated against observed data and will be updated as new evidence becomes available. The model is explicitly designed to be falsifiable -- if its predictions fail, the model is wrong. The Therapeutic Device Paradox (24+ regulatory-approved non-thermal EMF device categories, DC to UV) establishes non-thermal bioactivity as regulatory fact, not hypothesis.",
+    lbermRef:
+      "Formal Jacobian product structure (chapter 17), proof-obligation register and safety systems are described in the base document (LBERM_final.docx).",
   },
   fi: {
     title: "Mallin dokumentaatio",
@@ -190,7 +216,7 @@ const t = {
 
     causalTitle: "Kausaalireittikaavio",
     causalDesc:
-      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Yhdeksän tasoa, 35 solmua, 50 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatukimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). CRY/RPM-polulla on tukea useasta lajista: magneettikompassin häiriintyminen linnuissa (Ritz 2004, Engels 2014), CRY-riippuvainen magnetoreseptio Drosophilassa (Yoshii 2009), CRY-riippuvainen ROS-modulaatio ihmisen soluissa (Sherrard 2018) ja — kriittisesti — toiminnallinen sinivalosta riippuva magnetoreseptio ihmisessä (Chae ym. 2019, PLOS ONE), mikä osoittaa biologisen substraatin olemassaolon lajissa jota BERM mallintaa. Molemmat ovat itsenäisesti tuetut E-tason evidenssillä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
+      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Kahdeksan tasoa, 63 solmua, 107 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatukimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). CRY/RPM-polulla on tukea useasta lajista: magneettikompassin häiriintyminen linnuissa (Ritz 2004, Engels 2014), CRY-riippuvainen magnetoreseptio Drosophilassa (Yoshii 2009), CRY-riippuvainen ROS-modulaatio ihmisen soluissa (Sherrard 2018) ja — kriittisesti — toiminnallinen sinivalosta riippuva magnetoreseptio ihmisessä (Chae ym. 2019, PLOS ONE), mikä osoittaa biologisen substraatin olemassaolon lajissa jota BERM mallintaa. Molemmat ovat itsenäisesti tuetut E-tason evidenssillä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
 
     chiTitle: "Lindgrenin chi-kytkentäyhtälö",
     chiDesc:
@@ -203,13 +229,37 @@ const t = {
     twoChDesc:
       "Kokonaistehokas EMF-altistus jakautuu kolmeen taajuuskanavaan — ELF (f < 1 kHz, kalvomodulaatio), IF (1 kHz – 1 MHz, solunjakautuminen/mitoottinen), RF (> 1 MHz, spin-kemia) — kukin painotettuna biologisen mekanisminsa mukaan ja chi-kytkennällä moduloituna.",
     twoChExplain:
-      "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF. Maassa, jossa matkapuhelininfrastruktuuri on lähes nolla, jopa runsas puhelinkäyttö tuottaa vähän kokonaisaltistusta (chi on lähellä nollaa). Vastaavasti täysin saturoituneessa ympäristössä henkilökohtainen komponentti lisätään lähes lineaarisesti kaikkien kolmen kanavan kautta.",
+      "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, missä nykyiset diagnostiset painot ovat w_ELF = 0,05, w_IF = 0,60, w_RF = 0,35. Nämä ovat DIAGNOSTISIA painoja, jotka vaativat empiirisen kalibraation, eivät sovitettuja parametreja -- kolmikanavadekompositio on rakenteellisesti johdettu kalvobiofysiikasta, mutta suhteelliset painot ovat epävarmoja. Maassa, jossa matkapuhelininfrastruktuuri on lähes nolla, jopa runsas puhelinkäyttö tuottaa vähän kokonaisaltistusta (chi on lähellä nollaa). Vastaavasti täysin saturoituneessa ympäristössä henkilökohtainen komponentti lisätään lähes lineaarisesti kaikkien kolmen kanavan kautta.",
     twoChLayersTitle: "12 teknologiakerrosta ambient-kentän komponentteina",
     twoChLayersDesc:
       "Ambient-termi ei ole monoliittinen. Se hajoaa 12 itsenäiseen teknologiakerrokseen, joista jokaisella on oma ajurinsa, käyttöönottoaikataulunsa ja taajuusprofiilinsa. Tämä hajotus parantaa mallin diskriminointikykyä koska jokainen kerros toimii ortogonaalisena instrumenttina.",
+    ifoVgicNote: "IFO-VGIC-mekanismia tukee 131 tutkimuksen kattava katsaus (Panagopoulos ym. 2025, Bioelectromagnetics): 95 % raportoi oksidatiivisia vaikutuksia RF/Wi-Fi-altistuksessa. Tämä konsensus, joka on yhdenmukainen Yakymenko ym. 2016 (93/100) kanssa, tukee Ca²⁺-influksi → ROS -reitin parhaiten dokumentoiduksi ei-termiseksi mekanismiksi.",
+    multiPathwayCa2Note: "Tason 4 Ca²⁺-häiriö operoi useamman itsenäisen reitin kautta: (1) suora S4-jännitesensorin pakotettu oskillaatio (Panagopoulos ym. 2025, IFO-VGIC); (2) solunsisäisten kalsiumvarastojen dysregulaatio ryanodiinireseptoreiden (RyR) ja SERCA-pumppujen kautta (Bertagna ym. 2025, Ann NY Acad Sci). Molemmat farmakologiset salpauskokeet (VGCC-salpaajat reitille 1; dantroleeni RyR:lle, CPA SERCA:lle reitille 2) estävät EMF-vaikutukset — tukee mekanismia. Monireittiisyys selittää kudosspesifisen herkkyyden: solut joissa on korkea VGIC-tiheys JA suuret solunsisäiset Ca²⁺-varastot (neuronit, gonaadisolut) ovat herkempiä kuin matalan varastotiheyden solut (keratinosyytit — vrt. Meyer 2026, Haidar 2025: nollatulokset ihosoluissa). Huom: Bertagna 2025 on ELF (50 Hz), ei RF — mekanismin siirto RF:lle ei suoraviivainen, mutta Ca²⁺-reitti on jaettu.",
+    fiveGReproNote: "Ensimmäinen 5G-taajuusspesifinen testisdata (Bektas ym. 2026, Bioelectromagnetics): 3,5 GHz RF aiheutti testis- ja oksidatiivista vauriota rotilla. CoQ10-lisäravinto lievitti vauriota — osoittaa mekanismin reversiibeliuden. Yhdenmukainen BERM:n recovery window -mallin kanssa, jossa antioksidanttikapasiteetti määrittää nettovaurion. Laajentaa oksidatiivisen stressin evidenssipohjan (Yakymenko 2016: 93/100; Panagopoulos 2025: 95 %) 5G-taajuusalueelle.",
+    pathwayCQuantNote: "Melatoniinisuppressiopolkua tukee kvantitatiivisesti 55 tutkimuksen PRISMA-katsaus (Tbahriti ym. 2026, Sleep Biol Rhythms): 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 % basaalitasosta). Suppressio on biologisesti merkittävä GnRH-pulsaatiolle mutta pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen BERM:n v17_night_fraction() -mallinnuksen kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniini), ei ainoa ajuri. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat standardit.",
+    recoveryWindowNote: "Akuutin ja kroonisen altistuksen ero on empiirisesti tuettu: Koivisto ym. (2000) havaitsi kognitiivisen fasilitaation 30–60 min altistuksen jälkeen (yhteensopiva akuutin Ca²⁺-välitteisen synaptisen vahvistuksen kanssa), kun taas Panagopoulos ym. (2025) raportoi 95 %:n oksidatiivista stressiä kroonisissa/toistuvissa altistuksissa. Recovery window -malli ratkaisee tämän: 30 min + 23,5 h palautuminen → 97 % korjaus; 22 h altistus + 2 h palautuminen → 21 % korjaus.",
+    lateralizationNote: "Kaksikanavamallin spatiaalista rakennetta tukevat lateralisaatiotutkimukset: Eliyahu ym. (2006) ja Luria ym. (2009) osoittivat, että 890 MHz:n altistus vaikuttaa nimenomaan puhelinta lähimpänä olevaan aivopuoliskoon. Tämä osoittaa, ettei personal-EMF-vaikutus ole systeeminen vaan paikallinen — EMF vaimenee etäisyyden neliössä — ja tukee BERM:n premissiä: puhelin taskussa → kivekset, puhelin korvalla → hypotalamus.",
     ifChannelTitle: "IF-kanava: LED-valaistus päälähteinä",
     ifChannelDesc:
       "IF-kanava (1 kHz – 1 MHz) kohdistuu jakautuviin soluihin saman taajuus–solukoko-suhteen kautta kuin FDA:n hyväksymä TTFields-syöpähoito. Ympäristön IF-kenttien pääasiallinen lähde on LED-valaistus: jokainen LED-lamppu sisältää hakkuriteholähteen, joka toimii 20–200 kHz:n taajuudella ja tuottaa harmonisia megahertsialueelle asti. Tyypillisessä kodissa on 15–30 tällaista lähdettä; tyypillisessä toimistossa 200–500. Muita IF-lähteitä ovat ilmanvaihdon taajuusmuuttajat (5–50 kHz), induktioliedet (20–75 kHz) ja kaikki hakkuriteholähteet (kannettavan laturit, puhelinlaturit). Mekanismi toimii ionien pakko-oskillaation (IFO-VGIC) kautta, biologisella kynnysarvolla 10⁻⁵ V/m (Panagopoulos 2025) — kertaluokkia mitattujen LED-ajuriemissioiden alapuolella.",
+    tcbmTitle: "Kolmikanavainen biologinen malli (TCBM)",
+    tcbmIntro:
+      "BERM v19.1 tunnistaa kolme riippumatonta sähkömagneettista kanavaa, joilla kullakin on omat taajuusalueensa, altistuslähteet, biologiset mekanismit ja ajalliset historiat:",
+    tcbmElfTitle: "Kanava 1: ELF (0–300 Hz)",
+    tcbmElfDesc:
+      "Lähde: sähköverkko, kodin johdotus, kodinkoneet, muuntajat. Mekanismi: IFO-VGIC pakko-oskillaatio (Panagopoulos 2025). Historia: läsnä sähköistymisestä (1880-luku), vakaa n. 1970 jälkeen. Proksi: asumisen sähkönkulutus (kWh per capita). Aina päällä, 24/7, koko koti.",
+    tcbmIfTitle: "Kanava 2: IF (300 Hz – 10 MHz)",
+    tcbmIfDesc:
+      "Lähde: LED-ajurit (20–300 kHz), SMPS, VFD, induktioliedet. Mekanismi: Cyb5b → Ca²⁺-oskillaatiot (Kim 2026 Cell), IFO korkeammilla taajuuksilla. Historia: lähes nolla ennen 2009, eksponentiaalinen kasvu 2009–2019 (EU LED-siirtymä). Proksi: LED-markkinaosuus × asumisen sähkönkulutus. Pulssitettu, korkea dV/dt, säätelyaukko (IJRB 2022).",
+    tcbmRfTitle: "Kanava 3: RF (100 kHz – 300 GHz)",
+    tcbmRfDesc:
+      "Lähde: matkapuhelimet, Wi-Fi, Bluetooth, tukiasemat, IoT. Mekanismi: RPM/CRY spin-kemia (Ritz 2004), terminen absorptio korkealla SAR:lla. Historia: 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Proksi: laajakaistaliittymät per 100, matkapuhelinliittymät. Moduloitu (datakoodaus), personal + ambient.",
+    tcbmIfMitotic:
+      "IF-kanavan biologinen mekanismi eroaa ELF:stä ja RF:stä. Kun ELF ensisijaisesti aktivoi ionikanavia (IFO-VGCC) ja RF ensisijaisesti häiritsee radikaaliparin spin-kemiaa (RPM/CRY), IF toimii KOLMANNEN reitin kautta: polaaristen makromolekulaaristen rakenteiden häirintä solunjakautumisen aikana (mitoottinen kara, tubuliinidimeerit). TTFields-tutkimus osoittaa, että IF-kentät (100–500 kHz) kohdistuvat polaarisiin solunsisäisiin elementteihin. Mekanismi on taajuusriippuvainen: syöpäsolut kärsivät eniten 150–200 kHz:llä, normaalit solut ~50 kHz:llä (Nature 2020). LED-hakkuriemissiot (20–100 kHz) kattavat normaalien solujen herkkyystaajuuden.",
+    tcbmCrossSectional:
+      "Poikkileikkauskaavassa (54 maata, LOOCV RMSE 0.522) asumisen sähkönkulutus on pääproksi, koska se kattaa ELF:n (aina läsnä sähkön kanssa) ja korreloi IF:n kanssa (LED-penetraatio seuraa sähköistymistä). Laajakaista kattaa RF:n. ELF kantaa ~60 % poikkileikkaussignaalista, RF ~40 %. IF:ää ei voi erottaa ELF:stä poikkileikkauksessa, koska LED-penetraatio korreloi sähköistymisen kanssa. Temporaalinen testi (T1: LED-DID) tarvitaan IF:n itsenäisen kontribuution erottamiseksi.",
+    tcbmWolframPlanned:
+      "Suunniteltu: Wolfram Language -formalisointi kolmikanavaisen kytkentärakenteen muodolliseksi verifioinniksi, mukaan lukien IFO-VGIC-kynnyksen symbolinen derivointi ja numeerinen validointi 54 maan poikkileikkausaineistolla.",
 
     recovTitle: "Viisikerroksinen palautumismalli",
     recovDesc:
@@ -310,7 +360,7 @@ const t = {
     ],
 
     modulomeTitle: "EMF-modulooma",
-    modulomeDesc: "Kahdeksantasoinen modulooma yhdistää viisi itsenäistä tutkimusperinnettä — Beckerin DC-ohjausjärjestelmän, Adeen elektromin, Levinin bioelektrisen koodin, Lindgrenin geometrisen viitekehyksen ja kromoforien yleistyksen (CCO/CRY) — yhtenäiseksi malliksi EMF:n biologisesta herkkyydestä. Jokaista tasoa tukevat itsenäisesti regulaattorihyväksytyt terapeuttiset laitteet, jotka hyödyntävät samaa mekanismia.",
+    modulomeDesc: "Yhdeksäntasoinen modulooma yhdistää kuusi itsenäistä tutkimusperinnettä — Beckerin DC-ohjausjärjestelmän, Adeen elektromin, Levinin bioelektrisen koodin, Lindgrenin geometrisen viitekehyksen, kromoforien yleistyksen (CCO/CRY) ja Cyb5b-EMF-reseptorin (Kim 2026, Cell) — yhtenäiseksi malliksi EMF:n biologisesta herkkyydestä. Jokaista tasoa tukevat itsenäisesti regulaattorihyväksytyt terapeuttiset laitteet, jotka hyödyntävät samaa mekanismia.",
 
     btnEvidence: "Selaa näyttöä",
     btnPredictions: "Näytä ennusteet",
@@ -320,6 +370,8 @@ const t = {
 
     epistemic:
       "Episteeminen huomautus: Yllä olevat yhtälöt ovat nykyinen mallispesifikaatio (BERM v17). Parametriarvot on kalibroitu havaittua dataa vasten ja niitä päivitetään uuden näytön myötä. Malli on nimenomaisesti suunniteltu falsifioitavaksi -- jos sen ennusteet epäonnistuvat, malli on väärässä. Terapeuttinen laiteparadoksi (24+ regulaattorihyväksyttyä ei-termistä EMF-laitekategoriaa, DC:stä UV:iin) vahvistaa ei-termisen bioaktiivisuuden regulatiiviseksi tosiasiaksi, ei hypoteesiksi.",
+    lbermRef:
+      "Formaali jakobiaanitulorakenne (luku 17), todistusvelvollisuusrekisteri ja turvajärjestelmät on kuvattu perusdokumentissa (LBERM_final.docx).",
   },
 } as const;
 
@@ -438,6 +490,19 @@ export default async function ModelPage({
             <div className="overflow-x-auto">
               <BermCausalDiagram />
             </div>
+            <span id="ifo" />
+            <p className="mt-4 text-sm text-foreground-muted max-w-3xl leading-relaxed">
+              {d.ifoVgicNote}
+            </p>
+            <p className="mt-3 text-sm text-foreground-muted max-w-3xl leading-relaxed">
+              {d.multiPathwayCa2Note}
+            </p>
+            <p className="mt-3 text-sm text-foreground-muted max-w-3xl leading-relaxed">
+              {d.fiveGReproNote}
+            </p>
+            <p className="mt-3 text-sm text-foreground-muted max-w-3xl leading-relaxed">
+              {d.pathwayCQuantNote}
+            </p>
           </section>
 
           {/* Lindgren chi coupling */}
@@ -465,8 +530,11 @@ export default async function ModelPage({
             <Eq>
               cumEMF = w_ELF &middot; cumELF + w_IF &middot; cumIF + w_RF &middot; cumRF
             </Eq>
-            <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed mb-6">
+            <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed mb-4">
               {d.twoChExplain}
+            </p>
+            <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed mb-6">
+              {d.lateralizationNote}
             </p>
 
             <h3 className="text-base font-semibold mb-2">{d.twoChLayersTitle}</h3>
@@ -502,6 +570,29 @@ export default async function ModelPage({
             <div className="mt-6 rounded-lg border border-status-partial/30 bg-status-partial/5 p-5 max-w-3xl">
               <h4 className="text-xs font-semibold uppercase tracking-wide text-status-partial mb-2">{d.ifChannelTitle}</h4>
               <p className="text-sm text-foreground-muted leading-relaxed">{d.ifChannelDesc}</p>
+            </div>
+
+            {/* TCBM detail */}
+            <div className="mt-8 max-w-3xl">
+              <h3 className="text-base font-semibold mb-2">{d.tcbmTitle}</h3>
+              <p className="text-sm text-foreground-muted mb-4 leading-relaxed">{d.tcbmIntro}</p>
+              <div className="space-y-3">
+                <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-blue-500 mb-1">{d.tcbmElfTitle}</h4>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{d.tcbmElfDesc}</p>
+                </div>
+                <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-amber-500 mb-1">{d.tcbmIfTitle}</h4>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{d.tcbmIfDesc}</p>
+                </div>
+                <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-red-500 mb-1">{d.tcbmRfTitle}</h4>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{d.tcbmRfDesc}</p>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted mt-4 leading-relaxed">{d.tcbmIfMitotic}</p>
+              <p className="text-sm text-foreground-muted mt-4 leading-relaxed">{d.tcbmCrossSectional}</p>
+              <p className="text-xs text-foreground-muted mt-3 italic leading-relaxed">{d.tcbmWolframPlanned}</p>
             </div>
           </section>
 
@@ -596,9 +687,13 @@ export default async function ModelPage({
                 </tbody>
               </table>
             </div>
+            <p className="mt-4 text-sm text-foreground-muted max-w-3xl leading-relaxed">
+              {d.recoveryWindowNote}
+            </p>
           </section>
 
           {/* Compensation mechanism */}
+          <span id="asfr" />
           <section id="compensation" className="mb-14">
             <h2 className="text-xl font-semibold mb-4">{d.compTitle}</h2>
             <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
@@ -753,9 +848,12 @@ export default async function ModelPage({
           </section>
 
           {/* Epistemic note */}
-          <section className="mt-8">
+          <section className="mt-8 space-y-2">
             <p className="text-xs text-foreground-muted leading-relaxed max-w-3xl">
               {d.epistemic}
+            </p>
+            <p className="text-xs text-foreground-muted leading-relaxed max-w-3xl">
+              {d.lbermRef}
             </p>
           </section>
         </div>

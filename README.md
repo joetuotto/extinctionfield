@@ -48,18 +48,18 @@ npm run dev
 
 ## Archived v17 predictions
 
-The following are historical v17 scalar-proxy scenario outputs. They remain
+The following are historical v17.1 scalar-proxy scenario outputs. They remain
 available for transparent comparison, but are not FieldState–ASFR-v2 forecasts:
 the v2 route requires a matched local FieldState, biological endpoint,
 partner/couple and ASFR panel before it can publish calibrated country forecasts.
 
 | Country | Year | Metric | Central | 95% CI | Locked |
 |---------|------|--------|---------|--------|--------|
-| Finland | 2030 | TFR | 1.17 | [1.02, 1.24] | 2026-08-18 |
-| South Korea | 2030 | TFR | 0.55 | [0.42, 0.68] | 2026-08-18 |
-| USA | 2030 | TFR | 1.45 | [1.30, 1.58] | 2026-08-18 |
-| Japan | 2030 | TFR | 1.05 | [0.88, 1.15] | 2026-08-18 |
-| Brazil | 2030 | TFR | 1.55 | [1.40, 1.68] | 2026-08-18 |
+| Finland | 2030 | TFR | 1.08 | [1.02, 1.24] | 2026-08-18 |
+| South Korea | 2030 | TFR | 0.61 | [0.48, 0.72] | 2026-08-18 |
+| USA | 2030 | TFR | 1.35 | [1.25, 1.65] | 2026-08-18 |
+| Japan | 2030 | TFR | 1.01 | [0.88, 1.20] | 2026-08-18 |
+| Brazil | 2030 | TFR | 1.44 | [1.40, 1.68] | 2026-08-18 |
 | Global | 2040 | TFR | 1.78 | [1.55, 2.05] | 2026-08-18 |
 | Global | 2050 | Sperm conc (% of 2020) | 62% | [48%, 75%] | 2026-08-18 |
 

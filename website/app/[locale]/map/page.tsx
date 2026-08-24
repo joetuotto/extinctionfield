@@ -4,20 +4,21 @@ import { CausalAtlas } from "@/components/CausalAtlas";
 const COPY = {
   en: {
     title: "Causal Atlas",
-    subtitle: "62 causal nodes across 8 stages — trace the pathways from environmental EMF channels to demographic and ecological outcomes.",
+    subtitle: "63 causal nodes across 8 stages — trace the pathways from environmental EMF channels to demographic and ecological outcomes.",
     instruction: "Scroll to zoom · Click nodes for details · Use Guided mode for a narrated walkthrough",
   },
   fi: {
     title: "Kausaaliatlas",
-    subtitle: "62 kausaalisolmua 8 vaiheessa — seuraa polkuja ympäristön EMF-kanavista demografisiin ja ekologisiin seurauksiin.",
+    subtitle: "63 kausaalisolmua 8 vaiheessa — seuraa polkuja ympäristön EMF-kanavista demografisiin ja ekologisiin seurauksiin.",
     instruction: "Vieritä zoomataksesi · Klikkaa solmuja yksityiskohtiin · Käytä Opastettu-tilaa opastetulle kierrokselle",
   },
 } as const;
 
-export const metadata: Metadata = {
-  title: "Causal Atlas – BERM",
-  description: "Interactive causal atlas of the Bio-Electromagnetic Reproductive Model",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const d = locale === "fi" ? COPY.fi : COPY.en;
+  return { title: `${d.title} – Extinction Field`, description: d.subtitle };
+}
 
 export default async function MapPage({
   params,

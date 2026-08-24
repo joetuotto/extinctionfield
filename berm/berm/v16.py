@@ -237,7 +237,14 @@ def v16_personal_annual(country: str, year: int) -> float:
 # === v17 Layer retention (5-layer recovery model) ===
 
 def v17_layer_retention(delta_years: int) -> float:
-    """Weighted retention across 5 damage layers after delta_years."""
+    """Weighted retention across 5 damage layers after delta_years.
+
+    Koivisto 2000: 30-60 min GSM exposure facilitated cognition
+    (compatible with acute Ca2+-mediated enhancement, non-replicated).
+    Panagopoulos 2025: 95% oxidative stress in chronic/repeated
+    exposures. Recovery window resolves this: short exposure + long
+    recovery -> high repair; chronic exposure -> cumulative damage.
+    """
     total = 0.0
     for layer in RECOVERY_LAYERS.values():
         if delta_years == 0:
@@ -377,7 +384,14 @@ def cohort_weighted_exposure_normalized(country: str, year: int) -> float:
 # === Cumulative exposure chain ===
 
 def v16_two_channel_cum_exposure(country: str, year: int) -> float:
-    """Raw two-channel cumulative: ambient + chi(ambient) * personal."""
+    """Raw two-channel cumulative: ambient + chi(ambient) * personal.
+
+    Panagopoulos 2025 IFO-VGIC review (131 studies): irregular pulsed
+    waveforms force voltage-gated ion channels open via the forced
+    oscillation mechanism, compatible with the two-channel spatial
+    structure modelled here. Eliyahu 2006 / Luria 2009 lateralization
+    data support the personal-channel geometry.
+    """
     start = _exposure_start_year(country)
     total = 0.0
     for y in range(start, year + 1):
@@ -428,6 +442,21 @@ def v17_night_fraction(country: str, year: int) -> float:
     therefore the window where CRY is both active and exposed, which is
     why this fraction is a separate term rather than folded into the
     daily average.
+
+    Quantitative support for melatonin suppression pathway (B):
+    Tbahriti et al. 2026 (Sleep Biol Rhythms, PRISMA, 55 studies):
+    88% of high-quality animal studies report EMF-induced melatonin
+    suppression of 20-50% from baseline. This quantifies the EMF
+    component of the triple hit modeled here (melanopsin + CRY +
+    melatonin). Suppression is smaller than light-induced (>90%),
+    consistent with EMF being one of multiple nocturnal disruption
+    pathways in this function. Methodological caveat: only 27% of
+    reviewed studies met high quality standards.
+
+    Adjacent context (NOT modelled): Parssinen & Wedenoja 2021 myopia
+    review notes near-work + screen time association with myopia
+    progression. This overlaps temporally with the night-fraction window
+    but myopia is not a BERM reproductive endpoint.
     """
     sp_pen = smartphone_penetration(country, year)
     bed_frac = SMARTPHONE_IN_BEDROOM.get(country, 0.55)
@@ -470,7 +499,21 @@ def v17_melatonin_suppression(country: str, year: int) -> float:
 
 
 def v17_ovulation_vgic(country: str, year: int) -> float:
-    """VGIC disruption of ovulation bioelectric coordination."""
+    """VGIC disruption of ovulation bioelectric coordination.
+
+    Multi-pathway Ca2+ disruption model (Level 4):
+    (1) Direct S4 voltage sensor IFO (Panagopoulos et al. 2025):
+        polarized RF -> S4 oscillation -> irregular VGCC opening -> Ca2+ influx
+    (2) Intracellular Ca2+ store dysregulation (Bertagna et al. 2025,
+        Ann NY Acad Sci): EMF -> RyR/SERCA pathway modulation -> altered
+        intracellular Ca2+ -> changed ionic currents (inward -40%,
+        transient outward -50%). Both pathways pharmacologically confirmed.
+    Tissue-specificity note: Skin cells show no ROS/DNA damage at same
+    frequencies (Meyer 2026 ELF; Haidar 2025 3.5 GHz RF) while gonadal
+    cells do (Bektas 2026 3.5 GHz). Consistent with chi(A) selection rule:
+    tissue-specific VGIC density and Ca2+ store architecture determine
+    response threshold.
+    """
     amb = v16_ambient_annual(country, year)
     pers = v16_personal_annual(country, year)
     vgic_exposure = chi(amb) * pers
@@ -480,7 +523,14 @@ def v17_ovulation_vgic(country: str, year: int) -> float:
 # === Sperm Ca2+ fecundity ===
 
 def v17_sperm_ca2_fecundity(country: str, year: int) -> float:
-    """Sperm Ca2+ channel (CatSper) disruption: motility * capacitation * navigation."""
+    """Sperm Ca2+ channel (CatSper) disruption: motility * capacitation * navigation.
+
+    5G-frequency-specific evidence (Bektas et al. 2026, Bioelectromagnetics
+    bem.70043): 3.5 GHz -> testicular and oxidative damage in rats. CoQ10
+    ameliorates -> mechanism reversibility. First data at 5G core frequency
+    for the Level 5A->6 edge. Extends Yakymenko 2016 (93/100 oxidative)
+    and Panagopoulos 2025 (95%) evidence base to current exposure context.
+    """
     pers = v16_personal_annual(country, year)
     adj_cum = v16_adjusted_cumulative_exposure(country, year)
     cum_norm = min(1.0, adj_cum / 50.0)
@@ -582,7 +632,10 @@ def emf_behavioral_factor_v3(adj_cum_emf: float) -> float:
     """5-dimensional endocrine behavioral factor.
 
     Oxytocin, testosterone (cortisol-suppressed), dopamine,
-    cortisol, vasopressin — geometric mean.
+    cortisol, vasopressin — geometric mean. Luria 2009: 10-min
+    900 MHz exposure altered HPA-axis GAS dynamics (compatible
+    with cortisol -> testosterone suppression pathway D modelled
+    here).
     """
     oxytocin = math.exp(-0.010 * adj_cum_emf)
     testosterone = math.exp(-0.013 * adj_cum_emf)
@@ -1065,7 +1118,7 @@ PHARM_VALIDATION: dict[str, dict[str, str]] = {
         "moncrieff": "serotonin hypothesis debunked 2022",
     },
     "melatonin": {
-        "pathway": "C (pineal)",
+        "pathway": "B (pineal)",
         "drug_effect": "restores suppressed melatonin -> IVF fertilization +15%",
         "emf_equivalent": "EMF suppresses melatonin -> supplement rescues",
         "rescue_test": "R3: benefit greater in high-EMF environments",

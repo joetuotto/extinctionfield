@@ -83,13 +83,13 @@ PATCHABLE_PARAMETERS: dict[str, str] = {
 #: Registered parameters that change the prediction but are function-local
 #: literals, so no sensitivity analysis can reach them without a code change.
 UNVARIABLE_PARAMETERS: dict[str, str] = {
-    "bio_capacity.a": "berm/v16.py:473",
-    "bio_capacity.b": "berm/v16.py:473",
-    "bio_capacity.threshold": "berm/v16.py:473",
-    "floor.cry_effect": "berm/v16.py:438",
-    "floor.melatonin": "berm/v16.py:444",
-    "floor.ovulation_vgic": "berm/v16.py:452",
-    "floor.sperm_ca2": "berm/v16.py:465",
+    "bio_capacity.a": "berm/v16.py:547",
+    "bio_capacity.b": "berm/v16.py:547",
+    "bio_capacity.threshold": "berm/v16.py:547",
+    "floor.cry_effect": "berm/v16.py:492",
+    "floor.melatonin": "berm/v16.py:498",
+    "floor.ovulation_vgic": "berm/v16.py:520",
+    "floor.sperm_ca2": "berm/v16.py:540",
 }
 
 

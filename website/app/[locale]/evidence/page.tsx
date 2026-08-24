@@ -28,6 +28,9 @@ import {
   STATUS_LABELS,
   EVIDENCE_LEVEL_LABELS,
 } from "@/lib/evidence";
+import { PATHWAY_ORDER, CHANNEL_GROUPS } from "@/lib/channelGroups";
+import { ORPHANED_FINDINGS, ORPHANED_COMMENTARY } from "@/lib/orphanedFindings";
+import { RESEARCH_DOMAINS } from "@/lib/researchDomains";
 
 const ORDER: FieldStateDirectness[] = [
   "PHYSICS_SIGNATURE",
@@ -41,7 +44,7 @@ const ORDER: FieldStateDirectness[] = [
 const COPY = {
   en: {
     title: "Evidence register",
-    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} bounded BERM v19 records and ${LEGACY_EVIDENCE_COUNT} extended catalogue entries across 13+ pathways and 82+ peer-reviewed studies.`,
+    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} bounded BERM v17 records and ${LEGACY_EVIDENCE_COUNT} extended catalogue entries across 13+ pathways and 490+ peer-reviewed studies.`,
     interpretationTitle: "How to read this register",
     interpretation: [
       "A field signature can support a measurement variable such as background vector, angle, spectrum or envelope; it does not establish human fertility effects.",
@@ -50,12 +53,12 @@ const COPY = {
       "No record below is a TFR coefficient. A country TFR pathway requires the separate ASFR and demographic terms in the model specification.",
     ],
     boundedTitle: "Bounded v2 records",
-    boundedLead: "Each record states its field class, directness, translation scope and limitation. These are the primary evidence entries for the BERM v19 causal route.",
+    boundedLead: "Each record states its field class, directness, translation scope and limitation. These are the primary evidence entries for the BERM v17 causal route.",
     classificationTitle: "How previously negative findings classify",
     channelGroupTitle: "Three frequency channels",
     channelGroupLead: "Each biological pathway maps to one of three frequency channels, defined by two biological cutoffs: f_c ~ 1 kHz (membrane RC) and f_RPM ~ 1 MHz (radical pair coherence).",
     extendedTitle: "Extended evidence catalogue",
-    extendedLead: `${LEGACY_EVIDENCE_COUNT} additional records from the BERM v18 bibliography, retained for source-level review. Each is classified by its v18 pathway, evidence level, and v2 migration status.`,
+    extendedLead: `${LEGACY_EVIDENCE_COUNT} additional records from the BERM v17 bibliography, retained for source-level review. Each is classified by its legacy pathway, evidence level, and migration status.`,
     groups: {
       PHYSICS_SIGNATURE: "Physics signatures",
       MECHANISTIC_INTERMEDIATE: "Mechanistic intermediates",
@@ -147,10 +150,41 @@ const COPY = {
         paragraphs: [
           "The REFLEX project (Diem et al. 2005) demonstrated that intermittent RF exposure produces greater genotoxic effects than continuous exposure at the same SAR, suggesting that cellular repair mechanisms are activated during exposure-free intervals. The recovery window hypothesis proposes that biological repair of RF-induced damage (ROS neutralization, DNA repair, protein refolding) requires sufficient EMF-free time.",
           "A modern urban adult experiences approximately 2 hours per day of near-zero RF exposure (sleep in a connected bedroom), yielding ~20.6% potential recovery time. A 1950s adult experienced approximately 20 hours per day in RF-free environments, yielding ~90.1% recovery time. If repair mechanisms require a minimum duty-free fraction to maintain homeostasis, the 4.4× reduction in recovery time could produce cumulative damage even at sub-thermal exposure levels.",
+          "The first 5G-frequency-specific testicular data (Bektas et al. 2026, Bioelectromagnetics) supports the recovery window concept from a different angle: CoQ10 supplementation ameliorated 3.5 GHz RF-induced testicular and oxidative damage in rats. The CoQ10 rescue demonstrates mechanism reversibility — the oxidative pathway is pharmacologically blockable, consistent with the model net_daily = damage_rate × t_emf × (1 − exp(−t_free / τ_repair)). CoQ10 increases antioxidant capacity, effectively shortening τ_repair and reducing net daily damage. This is a pharmacological analogue of the recovery window: instead of reducing exposure time, the intervention enhances repair rate.",
         ],
         studies: [
           { citation: "REFLEX / Diem et al.", year: 2005, note: "Intermittent > continuous genotoxicity" },
           { citation: "Recovery window model (BERM)", year: 2026, note: "20.6% vs 90.1% EMF-free time" },
+          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, note: "3.5 GHz → testicular ROS damage; CoQ10 ameliorates — mechanism reversibility, consistent with recovery window." },
+        ],
+      },
+      {
+        id: "ifo-vgic-review",
+        title: "IFO-VGIC: the transduction mechanism (Panagopoulos 2025)",
+        paragraphs: [
+          "Panagopoulos et al. (2025, Bioelectromagnetics) present a comprehensive review of 131 studies on RF/Wi-Fi biological effects. 95% report oxidative stress — a consensus consistent with Yakymenko et al. 2016 (93/100 studies), demonstrating robustness across independent reviews. The IFO (Irregular Forced Opening) mechanism explains how: polarized, coherent RF-EMF forces the S4 voltage sensor of voltage-gated calcium channels to oscillate at a non-physiological frequency, causing irregular channel opening, uncontrolled Ca²⁺ influx, mitochondrial ROS production, DNA damage, sperm disorders, and hormonal changes.",
+          "The mechanism is confirmed by VGCC blocker experiments: nifedipine and other calcium channel blockers prevent RF-induced biological effects across multiple study designs (Pall 2013: 23 blocker studies). This is the strongest single source for BERM's Level 4 node (VGIC activation) and the Level 4→5A edge (Ca²⁺ → ROS). The 95% consensus on oxidative stress across 131 studies supports Level 5A→6 edges (ROS → sperm cascade: SDF, motility, concentration). Quantitative: Yu 2021 reports −8.1% motility per hour of exposure; Levine 2023 reports −51% sperm concentration decline (1973–2018).",
+          "Bertagna et al. (2025, Ann NY Acad Sci) extend the IFO-VGIC mechanism to intracellular calcium stores. Mouse hippocampal CA1 pyramidal neurons exposed to 50 Hz, 1 mT ELF-EMF for 60 minutes showed inward currents ↓40% and transient outward currents ↓50%. Two independent Ca²⁺ pathways were identified: (1) RyR pathway — dantrolene (ryanodine receptor blocker) fully abrogated EMF effects; (2) SERCA pathway — CPA (SERCA inhibitor) similarly blocked EMF effects. The Ca²⁺ disruption at Level 4 thus operates through multiple independent pathways: direct S4 voltage sensor forced oscillation (Panagopoulos 2025) and intracellular calcium store dysregulation via RyR and SERCA (Bertagna 2025). The multi-pathway nature explains tissue-specific sensitivity: cells with high VGIC density and large intracellular Ca²⁺ stores (neurons, gonadal cells) are more sensitive than cells with low stores (keratinocytes — cf. Meyer 2026, Haidar 2025: null results in skin cells). Note: ELF (50 Hz), not RF — translation to RF is not direct, but the Ca²⁺ pathway is shared (cf. Panagopoulos 2025: IFO operates at both ELF and RF with different intensity dependencies).",
+        ],
+        studies: [
+          { citation: "Panagopoulos et al. (Bioelectromagnetics)", year: 2025, note: "131-study review: 95% report oxidative effects from RF/Wi-Fi. IFO-VGIC mechanism confirmed." },
+          { citation: "Yakymenko et al.", year: 2016, note: "93/100 studies report oxidative stress from low-intensity RF — independent confirmation of Panagopoulos 2025" },
+          { citation: "Pall (J. Cell. Mol. Med.)", year: 2013, note: "23 studies: VGCC blockers prevent RF-induced biological effects" },
+          { citation: "Bertagna et al. (Ann NY Acad Sci)", year: 2025, note: "50 Hz, 1 mT: inward currents ↓40%, transient outward ↓50%. RyR + SERCA blockade abrogates EMF effects — intracellular Ca²⁺ stores participate in EMF transduction." },
+        ],
+      },
+      {
+        id: "transduction-rcts",
+        title: "Three GSM RCTs: the Level 3→4 edge is active",
+        paragraphs: [
+          "Three independent experimental studies demonstrate that 890–902 MHz GSM signal — BERM's modeled frequency — produces a measurable biological response at non-thermal SAR. Koivisto et al. (2000a,b, NeuroReport, n=48+48) conducted two double-blind RCTs at the University of Turku. 902 MHz GSM left-sided exposure produced cognitive facilitation (faster reaction times) in 3-Back (30 min) and Simple RT/Vigilance/Subtraction tasks (60 min). Facilitation is NOT anti-BERM: acute Ca²⁺ elevation can facilitate synaptic transmission, while chronic elevation produces ROS (Level 5A). This maps to BERM's recovery window: 30 min exposure + 23.5h recovery → 97% repair → no net damage. Caveat: not replicated (Haarala 2003: n=32, null; Haarala 2005: n=32 children, null).",
+          "Eliyahu et al. (2006, Bioelectromagnetics, n=36) used 890.2 MHz bilateral exposure for 2 hours (Nokia 5110, 2W peak). Left-sided exposure slowed left-hand RT in spatial recognition — demonstrating lateralization: EMF effect localizes to the exposed hemisphere. This provides direct empirical support for BERM's Level 3 two-channel spatial structure: phone in pocket → testes, phone at ear → hypothalamus. Compatible with local VGCC activation (pathway A) and local BBB opening (pathway E, cf. Salford 2003 at SAR 0.016 W/kg).",
+          "Luria et al. (2009, Bioelectromagnetics, n=48 right-handed males) applied 890.2 MHz for 1 hour at SAR 0.54–1.09 W/kg. Right-hand RT increased during left-sided exposure in the first 2 blocks only — the effect vanished in later blocks. This time-dependent adaptation maps to BERM's pathway D (HPA→HPG): Selye's GAS dynamics (alarm → resistance). The acute alarm→resistance transition observed within 1 hour is the first step of the chronic process BERM models: sustained HPA activation → cortisol↑ → HPG suppression. Male-only sample matches BERM's bioCap target population. Caveat: effect only in first 2 blocks — adaptation or random fluctuation.",
+        ],
+        studies: [
+          { citation: "Koivisto et al. (NeuroReport)", year: 2000, note: "Two double-blind RCTs (n=48+48): 902 MHz → cognitive facilitation. Not replicated (Haarala 2003, 2005)." },
+          { citation: "Eliyahu et al. (Bioelectromagnetics)", year: 2006, note: "n=36, 890 MHz, 2h: lateralized RT effect — supports two-channel spatial structure" },
+          { citation: "Luria et al. (Bioelectromagnetics)", year: 2009, note: "n=48 males, 890 MHz, 1h: time-dependent lateralized effect — GAS dynamics" },
         ],
       },
       {
@@ -253,7 +287,7 @@ const COPY = {
           { citation: "Panagopoulos et al. (Frontiers in Public Health)", year: 2025, note: "IFO-VGIC threshold 10⁻⁵ V/m for polarized fields" },
           { citation: "Belmin et al. (Nature Sustainability)", year: 2022, note: "155 DHS surveys: electricity access negatively affects fertility" },
           { citation: "DeLong et al. (PLOS ONE)", year: 2010, note: "Energy consumption negatively related to population growth" },
-          { citation: "BERM v19.1 formula discovery", year: 2026, note: "54 countries, LOOCV RMSE 0.522, R² 0.851" },
+          { citation: "BERM v17.1 formula discovery", year: 2026, note: "54 countries, LOOCV RMSE 0.522, R² 0.851" },
         ],
       },
       {
@@ -265,7 +299,7 @@ const COPY = {
           "If the mechanism were 'information access' (TV, internet, phone), the mobile phone should be the BEST proxy because it IS the information device. The fact that it is the WORST proxy, while electricity consumption (which measures physical infrastructure, not information) is the BEST, is structurally consistent with EMF exposure rather than information access as the mechanism.",
         ],
         studies: [
-          { citation: "BERM v19.1 cross-sectional analysis", year: 2026, note: "Mobile RMSE 1.053 vs electricity RMSE 0.533 (54 countries)" },
+          { citation: "BERM v17.1 cross-sectional analysis", year: 2026, note: "Mobile RMSE 1.053 vs electricity RMSE 0.533 (54 countries)" },
           { citation: "World Bank Development Indicators", year: 2024, note: "Source for residential electricity, broadband, mobile data" },
         ],
       },
@@ -300,6 +334,51 @@ const COPY = {
           { citation: "NEXRAD insect density study", year: 2025, note: "140 radars track US insects — radar impact not considered" },
         ],
       },
+      {
+        id: "5g-testis-ros",
+        title: "5G-frequency testicular evidence (Bektas 2026)",
+        paragraphs: [
+          "Bektas et al. (2026, Bioelectromagnetics, bem.70043) provide the first 5G-frequency-specific testicular data: rats exposed to 3.5 GHz RF radiation (the 5G core frequency) showed testicular and oxidative damage, with decreased testis antioxidant capacity. CoQ10 supplementation ameliorated the damage, demonstrating mechanism reversibility. This operates directly on the Level 5A→6 edge (ROS → sperm cascade) and extends the oxidative stress evidence base (Yakymenko 2016: 93/100; Panagopoulos 2025: 95%) to the 5G frequency range.",
+          "The tissue-specific nature of this damage is underscored by contemporaneous high-quality null results in skin cells: Meyer et al. (2026, Bioelectromagnetics, bem.70046) found no cell viability change, DNA damage, or micronucleus formation in HaCaT keratinocytes at 50 Hz, 200 µT (blinded sham-controlled, WST-1, alkaline comet assay, micronucleus/CREST); Haidar et al. (2025, Scientific Reports) found no effect on basal ROS or DNA damage in fibroblasts and keratinocytes at 5G-modulated 3.5 GHz (SAR 0.08 and 4 W/kg, 20–48h). Same or similar frequencies, different tissues, different outcomes — consistent with BERM's χ(Ā) selection rule where response depends on tissue-specific VGIC density, mitochondrial ROS capacity, and Ca²⁺ store architecture. Both possibilities (tissue specificity or insufficient effect) should be kept open.",
+        ],
+        studies: [
+          { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, note: "3.5 GHz → testicular ROS damage; CoQ10 ameliorates. First 5G-frequency testicular data." },
+          { citation: "Meyer et al. (Bioelectromagnetics)", year: 2026, note: "50 Hz, 200 µT, HaCaT keratinocytes: no viability change, no DNA damage. Blinded sham-controlled." },
+          { citation: "Haidar et al. (Scientific Reports)", year: 2025, note: "5G-modulated 3.5 GHz, fibroblasts + keratinocytes: no ROS, no DNA damage (CPD). High-quality null." },
+        ],
+      },
+      {
+        id: "melatonin-systematic",
+        title: "Melatonin suppression: PRISMA systematic review (Tbahriti 2026)",
+        paragraphs: [
+          "Tbahriti et al. (2026, Sleep Biol Rhythms 24(2):195–214) present a PRISMA 2020 systematic review of 55 studies from 892 screened, examining EMF effects on circadian rhythms. 88% of high-quality animal studies report EMF-induced melatonin suppression of 20–50% from baseline. Clock gene expression altered. Sleep architecture changes documented. EMF-induced melatonin suppression is smaller than light-induced (>90%).",
+          "This directly supports BERM pathway C (EMF → pineal melatonin suppression → GnRH pulsatility disruption → HPG → gonadal function). The 20–50% suppression magnitude is biologically significant and consistent with BERM's v17_night_fraction() function, where EMF is one component of the nocturnal triple hit (melanopsin + CRY + melatonin suppression). The suppression magnitude being smaller than light-induced (>90%) is consistent with BERM modeling EMF as one of multiple nocturnal disruption pathways, not the sole driver. Methodological note: only 27% of reviewed studies met high methodological standards; 48% of animal studies lacked adequate sham controls. The transition from cellular effects to systemic circadian disruption is not fully established clinically.",
+        ],
+        studies: [
+          { citation: "Tbahriti et al. (Sleep Biol Rhythms)", year: 2026, note: "PRISMA 55 studies: 88% of high-quality animal studies report melatonin suppression 20–50%. Only 27% met high standards." },
+        ],
+      },
+      {
+        id: "bbb-tight-junction",
+        title: "BBB tight junction mechanism (Gao 2024)",
+        paragraphs: [
+          "Gao et al. (2024, Bioelectromagnetics, bem.22494) demonstrate that electromagnetic pulse (EMP) caused BBB disruption in rat brains via tight junction protein (occludin, claudin, ZO-1) degradation. This identifies the molecular target for pathway E (EMF → BBB permeability↑ → neurotoxic agents enter brain → neuroinflammation → indirect hypothalamic effects). Important distinction: EMP is high-amplitude, short-duration — different exposure parameters from BERM's chronic low-intensity RF. EMP relevance to BERM is mechanistic (same molecular system), not parametric. Cf. Salford 2003: BBB opening at GSM frequencies (SAR 0.016 W/kg), which is BERM's direct reference for pathway E.",
+        ],
+        studies: [
+          { citation: "Gao et al. (Bioelectromagnetics)", year: 2024, note: "EMP → tight junction protein degradation → BBB opening. Mechanistic support for pathway E (EMP, not chronic RF)." },
+          { citation: "Salford et al.", year: 2003, note: "BBB opening at GSM frequencies (SAR 0.016 W/kg) — BERM's direct pathway E reference." },
+        ],
+      },
+      {
+        id: "5g-ambient-spectral",
+        title: "5G ambient exposure assessment (Deprez 2025)",
+        paragraphs: [
+          "Deprez et al. (2025, Bioelectromagnetics, bem.70019) present spectral measurements of 5G RF-EMF exposure levels in four European countries — the first quantitative ambient data relevant to BERM's Level 3 calibration at 5G frequencies. 5G beam-formed signals produce different spatial exposure patterns than 2G/3G/4G: directed beams may create higher instantaneous personal exposures but lower background ambient. This changes the ambient/personal ratio in BERM's two-channel model (total = ambient + χ(Ā) × personal): ambient decreases relative to 4G while personal increases transiently, producing different χ(Ā) dynamics.",
+        ],
+        studies: [
+          { citation: "Deprez et al. (Bioelectromagnetics)", year: 2025, note: "5G spectral exposure assessment, 4 European countries. Beamforming changes ambient/personal ratio." },
+        ],
+      },
     ],
     paradoxCards: [
       {
@@ -322,7 +401,7 @@ const COPY = {
   },
   fi: {
     title: "Evidenssirekisteri",
-    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} rajattua BERM v19 -tietuetta ja ${LEGACY_EVIDENCE_COUNT} laajennetun katalogin tietuetta 13+ polulla ja 82+ vertaisarvioidussa tutkimuksessa.`,
+    subtitle: `${FIELDSTATE_EVIDENCE_COUNT} rajattua BERM v17 -tietuetta ja ${LEGACY_EVIDENCE_COUNT} laajennetun katalogin tietuetta 13+ polulla ja 490+ vertaisarvioidussa tutkimuksessa.`,
     interpretationTitle: "Kuinka rekisteriä luetaan",
     interpretation: [
       "Kenttäallekirjoitus voi tukea mittausmuuttujaa, kuten taustavektoria, kulmaa, spektriä tai verhokäyrää; se ei osoita ihmisen hedelmällisyysvaikutusta.",
@@ -331,12 +410,12 @@ const COPY = {
       "Mikään alla oleva tietue ei ole TFR-kerroin. Maakohtainen TFR-reitti tarvitsee erilliset ASFR- ja demografiset termit mallin määrittelyn mukaisesti.",
     ],
     boundedTitle: "Rajatut v2-tietueet",
-    boundedLead: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Nämä ovat BERM v19 -kausaalireitin ensisijaiset evidenssitietueet.",
+    boundedLead: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Nämä ovat BERM v17 -kausaalireitin ensisijaiset evidenssitietueet.",
     classificationTitle: "Miten aiemmin negatiiviset havainnot luokittuvat",
     channelGroupTitle: "Kolme taajuuskanavaa",
     channelGroupLead: "Jokainen biologinen polku kuuluu yhteen kolmesta taajuuskanavasta, jotka määrittyvät kahdella biologisella rajataajuudella: f_c ~ 1 kHz (kalvon RC) ja f_RPM ~ 1 MHz (radikaaliparimekanismin koherenssi).",
     extendedTitle: "Laajennettu evidenssikatalogi",
-    extendedLead: `${LEGACY_EVIDENCE_COUNT} lisätietuetta BERM v18 -bibliografiasta, säilytetty lähdetason tarkistusta varten. Jokainen on luokiteltu v18-polun, evidenssitason ja v2-migraatiostatuksen mukaan.`,
+    extendedLead: `${LEGACY_EVIDENCE_COUNT} lisätietuetta BERM v17 -bibliografiasta, säilytetty lähdetason tarkistusta varten. Jokainen on luokiteltu legacy-polun, evidenssitason ja migraatiostatuksen mukaan.`,
     groups: {
       PHYSICS_SIGNATURE: "Fysiikan allekirjoitukset",
       MECHANISTIC_INTERMEDIATE: "Mekanistiset välivaiheet",
@@ -428,10 +507,41 @@ const COPY = {
         paragraphs: [
           "REFLEX-projekti (Diem ym. 2005) osoitti, että katkonainen RF-altistus tuottaa suurempia genotoksisia vaikutuksia kuin jatkuva altistus samalla SAR-tasolla, viitaten siihen että solujen korjausmekanismit aktivoituvat altistusvapaina jaksoina. Palautumisikkunahypoteesi esittää, että RF:n aiheuttaman vaurion biologinen korjaus (ROS-neutralointi, DNA-korjaus, proteiinien uudelleenlaskostuminen) vaatii riittävästi EMF-vapaata aikaa.",
           "Moderni kaupunkiaikuinen kokee noin 2 tuntia päivässä lähes nolla-RF-altistusta (uni verkotetussa makuuhuoneessa), jolloin potentiaalinen palautumisaika on noin 20,6 %. 1950-luvun aikuinen koki noin 20 tuntia päivässä RF-vapaissa ympäristöissä, jolloin palautumisaika oli noin 90,1 %. Jos korjausmekanismit vaativat vähimmäismäärän altistusvapaata aikaa homeostaasin ylläpitämiseksi, 4,4-kertainen palautumisajan väheneminen voi tuottaa kumulatiivista vauriota myös subtermisillä altistustasoilla.",
+          "Ensimmäinen 5G-taajuusspesifinen testisdata (Bektas ym. 2026, Bioelectromagnetics) tukee palautumisikkunakonseptia eri kulmasta: CoQ10-lisäravinto lievitti 3,5 GHz RF:n aiheuttamaa testis- ja oksidatiivista vauriota rotilla. CoQ10-interventio osoittaa mekanismin reversiibeliuden — oksidatiivinen polku on farmakologisesti estettävissä, yhdenmukainen mallin net_daily = damage_rate × t_emf × (1 − exp(−t_free / τ_repair)) kanssa. CoQ10 lisää antioksidanttikapasiteettia, lyhentäen efektiivisesti τ_repair-arvoa ja vähentäen nettovauriota. Tämä on palautumisikkunan farmakologinen analogi: altistusajan vähentämisen sijaan interventio tehostaa korjausnopeutta.",
         ],
         studies: [
           { citation: "REFLEX / Diem ym.", year: 2005, note: "Katkonainen > jatkuva genotoksisuus" },
           { citation: "Palautumisikkunamalli (BERM)", year: 2026, note: "20,6 % vs 90,1 % EMF-vapaata aikaa" },
+          { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, note: "3,5 GHz → testis-ROS-vaurio; CoQ10 lievittää — mekanismin reversiibeilyys, yhdenmukainen palautumisikkunan kanssa." },
+        ],
+      },
+      {
+        id: "ifo-vgic-review",
+        title: "IFO-VGIC: transduktiomekanismi (Panagopoulos 2025)",
+        paragraphs: [
+          "Panagopoulos ym. (2025, Bioelectromagnetics) esittävät 131 tutkimuksen kattavan katsauksen RF/Wi-Fi:n biologisista vaikutuksista. 95 % raportoi oksidatiivista stressiä — konsensus, joka on yhdenmukainen Yakymenko ym. 2016 (93/100 tutkimusta) kanssa. IFO-mekanismi (Irregular Forced Opening) selittää: polarisoitu, koherentti RF-EMF pakottaa VGCC:n S4-jännitesensorin epäfysiologiseen oskillaatioon → hallitsematon kanavan avautuminen → kontrolloimaton Ca²⁺-influksi → mitokondriaalinen ROS → DNA-vauriot, siittiöhäiriöt, hormonaaliset muutokset.",
+          "Mekanismia tukevat VGCC-salpaajat: nifedipiini ja muut kalsiumkanavasalpaajat estävät RF:n biologiset vaikutukset useissa koeasetelmissa (Pall 2013: 23 salpaajatukimusta). Tämä on tason 4 (VGIC-aktivaatio) ja tason 4→5A nuolen (Ca²⁺ → ROS) vahvin yksittäinen kokoava evidenssilähde. 95 %:n konsensus 131 tutkimuksessa tukee tason 5A→6 nuolia (ROS → siittiökaskadi: SDF, motiliteetti, konsentraatio). Kvantitatiivisesti: Yu 2021: −8,1 % motiliteetti per tunti altistusta; Levine 2023: −51 % siittiökonsentraation lasku (1973–2018).",
+          "Bertagna ym. (2025, Ann NY Acad Sci) laajentavat IFO-VGIC-mekanismia solunsisäisiin kalsiumvarastoihin. Hiiren hippokampuksen CA1-pyramidaalineuronit altistettiin 50 Hz, 1 mT ELF-EMF:lle 60 minuutin ajan: sisäänpäinsuuntaiset virrat ↓40 % ja transientit ulospäinsuuntaiset virrat ↓50 %. Kaksi itsenäistä Ca²⁺-reittiä tunnistettiin: (1) RyR-reitti — dantroleeni (ryanodiinireseptorisalpaaja) esti EMF-vaikutukset kokonaan; (2) SERCA-reitti — CPA (SERCA-inhibiittori) esti samoin EMF-vaikutukset. Tason 4 Ca²⁺-häiriö operoi siten useamman itsenäisen reitin kautta: suora S4-jännitesensorin pakotettu oskillaatio (Panagopoulos 2025) ja solunsisäisten kalsiumvarastojen dysregulaatio RyR:n ja SERCA:n kautta (Bertagna 2025). Monireittiisyys selittää kudosspesifisen herkkyyden: solut joissa on korkea VGIC-tiheys ja suuret solunsisäiset Ca²⁺-varastot (neuronit, gonaadisolut) ovat herkempiä kuin matalan varastotiheyden solut (keratinosyytit — vrt. Meyer 2026, Haidar 2025: nollatulokset ihosoluissa). Huom: ELF (50 Hz), ei RF — mekanismin siirto RF:lle ei suoraviivainen, mutta Ca²⁺-reitti on jaettu (vrt. Panagopoulos 2025: IFO operoi sekä ELF- että RF-alueella eri voimakkuusriippuvuudella).",
+        ],
+        studies: [
+          { citation: "Panagopoulos ym. (Bioelectromagnetics)", year: 2025, note: "131 tutkimuksen katsaus: 95 % raportoi oksidatiivisia vaikutuksia. IFO-VGIC-mekanismi." },
+          { citation: "Yakymenko ym.", year: 2016, note: "93/100 tutkimusta raportoi oksidatiivista stressiä — riippumaton vahvistus" },
+          { citation: "Pall (J. Cell. Mol. Med.)", year: 2013, note: "23 tutkimusta: VGCC-salpaajat estävät RF:n biologiset vaikutukset" },
+          { citation: "Bertagna ym. (Ann NY Acad Sci)", year: 2025, note: "50 Hz, 1 mT: sisäänpäinvirrat ↓40 %, transientit ↓50 %. RyR- ja SERCA-salpaus estää EMF-vaikutukset — solunsisäiset Ca²⁺-varastot osallistuvat EMF-transduktioon." },
+        ],
+      },
+      {
+        id: "transduction-rcts",
+        title: "Kolme GSM-RCT:tä: tason 3→4 nuoli on aktiivinen",
+        paragraphs: [
+          "Kolme itsenäistä kokeellista tutkimusta osoittaa, että 890–902 MHz:n GSM-signaali — BERM:n mallintama taajuus — tuottaa mitattavan biologisen vasteen ei-termisillä SAR-arvoilla. Koivisto ym. (2000a,b, NeuroReport, n=48+48) toteutti kaksi kaksoissokkokokeetta Turun yliopistossa. 902 MHz:n vasemmanpuoleinen GSM-altistus tuotti kognitiivisen fasilitaation (nopeammat reaktioajat) 3-Back-tehtävässä (30 min) ja Simple RT/Vigilance/Subtraction -tehtävissä (60 min). Fasilitaatio EI ole BERM:n vastainen: akuutti Ca²⁺-kohoaminen voi fasilitoida synaptista transmissiota, kun taas krooninen Ca²⁺ tuottaa ROS:ia (taso 5A). Ero kartoittuu BERM:n recovery window -mekanismiin: 30 min altistus + 23,5 h palautuminen → 97 % korjaus. Rajoite: ei replikoitu (Haarala 2003: n=32, nollatulos; Haarala 2005: n=32 lasta, nollatulos).",
+          "Eliyahu ym. (2006, Bioelectromagnetics, n=36) käytti 890,2 MHz:n bilateraalista altistusta 2 tuntia (Nokia 5110, 2W huippu). Vasemmanpuoleinen altistus hidasti vasemman käden RT spatiaalisessa tunnistuksessa — osoittaen lateralisaation: EMF-vaikutus paikantuu altistettuun aivopuoliskoon. Suora empiirinen tuki tason 3 kaksikanavamallin spatiaaliselle rakenteelle: puhelin taskussa → kivekset, puhelin korvalla → hypotalamus. Yhteensopiva paikallisen VGCC-aktivaation (polku A) ja BBB-avautumisen (polku E, vrt. Salford 2003 SAR 0,016 W/kg) kanssa.",
+          "Luria ym. (2009, Bioelectromagnetics, n=48 oikeakätistä miestä) altisti 890,2 MHz:llä 1 tunti, SAR 0,54–1,09 W/kg. Oikean käden RT kasvoi vasemmanpuoleisen altistuksen aikana vain 2 ensimmäisessä blokissa — vaikutus hävisi myöhemmissä. Aikariippuva adaptaatio kartoittuu polun D (HPA→HPG) konseptiin: Selyen GAS-dynamiikka (alarm → resistance). Yhden tunnin sisällä havaittu alarm→resistance -siirtymä on ensimmäinen askel kroonisessa prosessissa: HPA-aktivaatio → kortisoli↑ → HPG-suppressio. Pelkkiä miehiä — kohdistuu BERM:n bioCap-populaatioon. Rajoite: vaikutus vain 2 ensimmäisessä blokissa.",
+        ],
+        studies: [
+          { citation: "Koivisto ym. (NeuroReport)", year: 2000, note: "Kaksi kaksoissokkokokeetta (n=48+48): 902 MHz → fasilitaatio. Ei replikoitu (Haarala 2003, 2005)." },
+          { citation: "Eliyahu ym. (Bioelectromagnetics)", year: 2006, note: "n=36, 890 MHz, 2 h: lateralisoitunut RT-vaikutus — tukee kaksikanavamallia" },
+          { citation: "Luria ym. (Bioelectromagnetics)", year: 2009, note: "n=48 miestä, 890 MHz, 1 h: aikariippuva lateralisoitunut vaikutus — GAS-dynamiikka" },
         ],
       },
       {
@@ -533,7 +643,7 @@ const COPY = {
           { citation: "Panagopoulos ym. (Frontiers in Public Health)", year: 2025, note: "IFO-VGIC-kynnys 10⁻⁵ V/m polarisoituneille kentille" },
           { citation: "Belmin ym. (Nature Sustainability)", year: 2022, note: "155 DHS-kyselyä: sähkön saatavuus vähentää hedelmällisyyttä" },
           { citation: "DeLong ym. (PLOS ONE)", year: 2010, note: "Energiankulutus negatiivisesti yhteydessä väestönkasvuun" },
-          { citation: "BERM v19.1 kaavanlöytö", year: 2026, note: "54 maata, LOOCV RMSE 0,522, R² 0,851" },
+          { citation: "BERM v17.1 kaavanlöytö", year: 2026, note: "54 maata, LOOCV RMSE 0,522, R² 0,851" },
         ],
       },
       {
@@ -545,7 +655,7 @@ const COPY = {
           "Jos mekanismi olisi 'tiedon saatavuus' (TV, internet, puhelin), matkapuhelimen pitäisi olla PARAS proxy koska se ON tietolaite. Se, että se on HUONOIN proxy kun sähkönkulutus (joka mittaa fyysistä infrastruktuuria, ei tietoa) on PARAS, on rakenteellisesti yhdenmukaista EMF-altistuksen kanssa pikemmin kuin tiedonsaannin mekanismina.",
         ],
         studies: [
-          { citation: "BERM v19.1 poikkileikkausanalyysi", year: 2026, note: "Matkapuhelin RMSE 1,053 vs sähkö RMSE 0,533 (54 maata)" },
+          { citation: "BERM v17.1 poikkileikkausanalyysi", year: 2026, note: "Matkapuhelin RMSE 1,053 vs sähkö RMSE 0,533 (54 maata)" },
           { citation: "Maailmanpankin kehitysindikaattorit", year: 2024, note: "Lähde: asumisen sähkö, laajakaista, matkapuhelindata" },
         ],
       },
@@ -580,6 +690,51 @@ const COPY = {
           { citation: "NEXRAD-hyönteistiheystutkimus", year: 2025, note: "140 tutkaa seuraa USA:n hyönteisiä — tutkan vaikutusta ei huomioitu" },
         ],
       },
+      {
+        id: "5g-testis-ros",
+        title: "5G-taajuusspesifinen testisevidenssi (Bektas 2026)",
+        paragraphs: [
+          "Bektas ym. (2026, Bioelectromagnetics, bem.70043) tarjoavat ensimmäisen 5G-taajuusspesifisen testisdatan: rotat altistettiin 3,5 GHz RF-säteilylle (5G:n ydintaajuus), jolloin havaittiin testis- ja oksidatiivinen vaurio sekä heikentynyt testiksen antioksidanttikapasiteetti. CoQ10-lisäravinto lievitti vauriota, osoittaen mekanismin reversiibeliuden. Tämä operoi suoraan tason 5A→6 nuolella (ROS → siittiökaskadi) ja laajentaa oksidatiivisen stressin evidenssipohjan (Yakymenko 2016: 93/100; Panagopoulos 2025: 95 %) 5G-taajuusalueelle.",
+          "Vaurion kudosspesifisyyttä korostavat samanaikaiset laadukkaat nollatulokset ihosoluissa: Meyer ym. (2026, Bioelectromagnetics, bem.70046) eivät löytäneet solujen elinvoimaisuusmuutosta, DNA-vauriota eikä mikronukleusmuodostusta HaCaT-keratinosyyteissä 50 Hz, 200 µT:ssa (sokkoutettu, sham-kontrolloitu, WST-1, komet, mikronukleus/CREST); Haidar ym. (2025, Scientific Reports) eivät löytäneet vaikutusta basaaliin ROS-tasoon eikä DNA-vauriota fibroblasteissa ja keratinosyyteissä 5G-moduloidulla 3,5 GHz:llä (SAR 0,08 ja 4 W/kg, 20–48 h). Samat tai vastaavat taajuudet, eri kudokset, eri tulokset — yhdenmukainen BERM:n χ(Ā)-valintasäännön kanssa, jossa vaste riippuu kudosspesifisestä VGIC-tiheydestä, mitokondrioiden ROS-kapasiteetista ja Ca²⁺-varastojen arkkitehtuurista. Molemmat mahdollisuudet (kudosspesifisyys tai riittämätön vaikutus) on pidettävä avoimina.",
+        ],
+        studies: [
+          { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, note: "3,5 GHz → testis-ROS-vaurio; CoQ10 lievittää. Ensimmäinen 5G-taajuusspesifinen testisdata." },
+          { citation: "Meyer ym. (Bioelectromagnetics)", year: 2026, note: "50 Hz, 200 µT, HaCaT-keratinosyytit: ei elinvoimaisuusmuutosta, ei DNA-vauriota. Sokkoutettu sham-kontrolloitu." },
+          { citation: "Haidar ym. (Scientific Reports)", year: 2025, note: "5G-moduloitu 3,5 GHz, fibroblastit + keratinosyytit: ei ROS:ia, ei DNA-vauriota (CPD). Laadukas nollatulos." },
+        ],
+      },
+      {
+        id: "melatonin-systematic",
+        title: "Melatoniinisuppressio: PRISMA-katsaus (Tbahriti 2026)",
+        paragraphs: [
+          "Tbahriti ym. (2026, Sleep Biol Rhythms 24(2):195–214) esittävät PRISMA 2020 -systemaattisen katsauksen: 55 tutkimusta 892 seulotusta, tarkastellen EMF:n vaikutuksia sirkadiaanirytmeihin. 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 % basaalitasosta). Kellogenien ekspressio muuttuu. Uniarkkitehtuurin muutokset dokumentoitu. EMF:n melatoniinisuppressio on pienempi kuin valon aiheuttama (>90 %).",
+          "Tukee suoraan BERM:n polkua C (EMF → pineaalinen melatoniinisuppressio → GnRH-pulsaatiohäiriö → HPG → gonadifunktio). 20–50 %:n suppressio on biologisesti merkittävä ja yhdenmukainen BERM:n v17_night_fraction()-funktion kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniinisuppressio). Suppression suuruus on pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen sen kanssa, että BERM mallintaa EMF:n yhtenä useista yöllisistä häiriöreiteistä, ei ainoana ajurina. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat metodologiset standardit; 48 % eläintutkimuksista ilman riittävää sham-kontrollia. Siirtymä soluvaikutuksista systeemiseen sirkadiaaniseen häiriöön ei ole täysin osoitettu kliinisesti.",
+        ],
+        studies: [
+          { citation: "Tbahriti ym. (Sleep Biol Rhythms)", year: 2026, note: "PRISMA, 55 tutkimusta: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota 20–50 %. Vain 27 % täytti korkeat standardit." },
+        ],
+      },
+      {
+        id: "bbb-tight-junction",
+        title: "BBB:n tight junction -mekanismi (Gao 2024)",
+        paragraphs: [
+          "Gao ym. (2024, Bioelectromagnetics, bem.22494) osoittavat, että sähkömagneettinen pulssi (EMP) aiheutti veri-aivoesteen läpimurron rottien aivoissa tight junction -proteiinien (okkludiini, klaudiini, ZO-1) degradaation kautta. Tunnistaa molekulaarisen kohteen polulle E (EMF → BBB-permeabiliteetti↑ → neurotoksiset aineet aivoihin → neuroinflammatio → epäsuora vaikutus hypotalamukseen). Erottelu: EMP on korkea-amplitudinen, lyhytkestoinen — eri altistusparametrit kuin BERM:n krooninen matala-intensiteettinen RF. EMP:n relevanssi BERM:lle on mekanistinen (sama molekulaarijärjestelmä), ei parametrinen. Vrt. Salford 2003: BBB-avautuminen GSM-taajuuksilla (SAR 0,016 W/kg).",
+        ],
+        studies: [
+          { citation: "Gao ym. (Bioelectromagnetics)", year: 2024, note: "EMP → tight junction -proteiinien degradaatio → BBB-avautuminen. Mekanistinen tuki polulle E (EMP, ei krooninen RF)." },
+          { citation: "Salford ym.", year: 2003, note: "BBB-avautuminen GSM-taajuuksilla (SAR 0,016 W/kg) — BERM:n suora polun E viite." },
+        ],
+      },
+      {
+        id: "5g-ambient-spectral",
+        title: "5G:n ambient-altistusarviointi (Deprez 2025)",
+        paragraphs: [
+          "Deprez ym. (2025, Bioelectromagnetics, bem.70019) esittävät 5G RF-EMF -altistustasojen spektraalimittaukset neljässä Euroopan maassa — ensimmäistä kvantitatiivista ambient-dataa BERM:n tason 3 kalibrointiin 5G-taajuuksilla. 5G:n suunnatut keilat tuottavat erilaisia spatiaalisia altistuskuvioita kuin 2G/3G/4G: suunnatut keilat voivat luoda korkeampia hetkellisiä henkilökohtaisia altistuksia mutta matalamman taustakomponentin. Tämä muuttaa ambient/personal-suhdetta BERM:n kaksikanavamallissa (total = ambient + χ(Ā) × personal): ambient laskee suhteessa 4G:hen, personal nousee hetkittäin → eri χ(Ā)-dynamiikka.",
+        ],
+        studies: [
+          { citation: "Deprez ym. (Bioelectromagnetics)", year: 2025, note: "5G:n spektraalinen altistusarviointi, 4 Euroopan maata. Suunnattu keila muuttaa ambient/personal-suhdetta." },
+        ],
+      },
     ],
     paradoxCards: [
       {
@@ -602,20 +757,6 @@ const COPY = {
   },
 } as const;
 
-const PATHWAY_ORDER = ["A", "A_mitotic", "B", "C", "D", "E", "F", "T", "RW", "BS", "PV", "S", "SE", "EHS", "H", "theory"];
-
-const CHANNEL_GROUPS = {
-  en: [
-    { channel: "ELF", band: "f < 1 kHz", color: "border-blue-500/50", fda: "PEMF / TMS / VNS", pathways: ["A", "D", "E", "F"], desc: "Membrane modulation via H(f) low-pass filter" },
-    { channel: "IF", band: "1 kHz – 1 MHz", color: "border-orange-500/50", fda: "TTFields (Optune)", pathways: ["A_mitotic"], desc: "Intracellular via IFO-VGIC and DEP on mitotic spindle" },
-    { channel: "RF", band: "> 1 MHz", color: "border-red-500/50", fda: "PRF / Diathermy", pathways: ["B", "C"], desc: "Spin chemistry via CRY radical-pair mechanism" },
-  ],
-  fi: [
-    { channel: "ELF", band: "f < 1 kHz", color: "border-blue-500/50", fda: "PEMF / TMS / VNS", pathways: ["A", "D", "E", "F"], desc: "Kalvomodulaatio H(f)-alipäästösuodattimen kautta" },
-    { channel: "IF", band: "1 kHz – 1 MHz", color: "border-orange-500/50", fda: "TTFields (Optune)", pathways: ["A_mitotic"], desc: "Solunsisäinen IFO-VGIC:n ja DEP:n kautta mitoottiseen karaan" },
-    { channel: "RF", band: "> 1 MHz", color: "border-red-500/50", fda: "PRF / Diatermia", pathways: ["B", "C"], desc: "Spin-kemia CRY:n radikaaliparimekanismin kautta" },
-  ],
-} as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -650,6 +791,14 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         <div className="space-y-12 max-w-4xl">
           {d.narratives.map((narrative, ni) => (
             <article key={narrative.id} id={`narrative-${narrative.id}`} className="scroll-mt-24">
+              {narrative.id === "therapeutic-device-paradox" && <><span id="therapeutic-devices" /><span id="pathway-GPCR" /><span id="pathway-neural" /></>}
+              {narrative.id === "qbs" && <span id="qbs" />}
+              {narrative.id === "oxytocin" && <><span id="pathway-E" /><span id="gut" /><span id="vagal-tone" /></>}
+              {narrative.id === "susceptibility" && <span id="individual-susceptibility" />}
+              {narrative.id === "human-cry-magnetoreception" && <span id="human-cry-magnetoreception" />}
+              {narrative.id === "electroecology" && <><span id="static-interface" /><span id="ticks" /></>}
+              {narrative.id === "electrification-boundary" && <span id="electrification-boundary" />}
+              {narrative.id === "ifo-vgic-review" && <span id="pathway-A" />}
               <h3 className="text-lg font-semibold mb-4">
                 <span className="font-mono-num text-xs text-accent mr-2">0{ni + 1}</span>
                 {narrative.title}
@@ -906,33 +1055,48 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </p>
       </section>
 
-      {/* The LED Light Confound — IF-EMF from LED drivers */}
-      <section id="led-confound" className="mb-16 border-t editorial-rule pt-6">
+      {/* The Lighting Transition — IF-EMF from LED drivers */}
+      <section id="lighting-transition" className="mb-16 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">
-          {activeLocale === "fi" ? "LED-valoharha — sinivalo vai IF-EMF?" : "The LED Light Confound — blue light or IF-EMF?"}
+          {activeLocale === "fi" ? "Valaistussiirtymä: termisestä valosta elektroniseen" : "The Lighting Transition: From Thermal to Electronic Light"}
         </h2>
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          {/* Paragraph 1: What happened */}
           <p className="editorial-rail text-[0.95rem] text-foreground">
             {activeLocale === "fi"
-              ? "Kaikki LED-valonlähteet sisältävät hakkuriteholähteen joka generoi IF-EMF-kohinaa 65 kHz – 2 MHz taajuusalueella. Kun tutkimus vertaa LED-sinivaloa hehkulamppuun, se vertaa itse asiassa (sinivalo + IF-EMF) pelkkään sinivaloon. IF-EMF on sekoittava muuttuja jota ei ole kontrolloitu yhdessäkään tunnetussa sinivalotutkimuksessa."
-              : "Every LED light source contains a switching power supply that generates IF-EMF noise in the 65 kHz – 2 MHz range. When a study compares LED blue light to incandescent light, it actually compares (blue light + IF-EMF) to blue light alone. IF-EMF is a confounding variable that has not been controlled in any known blue light study."}
+              ? "Vuosina 2009–2019 Euroopan unioni luopui asteittain hehkulampuista ja korvasi ne LED-valaistuksella. Ilmoitettu syy oli energiatehokkuus. Sähkömagneettinen seuraus jäi mainitsematta: jokainen LED-lamppu sisältää hakkuriteholähteen (SMPS), joka muuntaa 230 V AC:n DC:ksi kytkentätaajuudella 20–300 kHz. Tämä toi uuden sähkömagneettisen kanavan — välitaajuuden (IF) — jokaiseen kotiin, toimistoon, kouluun ja sairaalaan, jota ei ollut hehkulamppuaikakaudella. Hehkulamppu on vastus: se tuottaa 50/60 Hz magneettikentän (ELF) suhteessa virtaansa, eikä mitään muuta. LED-lamppu on kytkentäpiiri: se tuottaa ELF:ää (verkkovirrasta), IF:ää (ajurista, 20–300 kHz) ja optista välkyntää (epätäydellisestä DC-tasoituksesta)."
+              : "Between 2009 and 2019, the European Union phased out incandescent light bulbs and replaced them with LED lighting. The stated reason was energy efficiency. The electromagnetic consequence was unstated: every LED lamp contains a switched-mode power supply (SMPS) that converts 230V AC to DC at switching frequencies of 20–300 kHz. This introduced a new electromagnetic channel — intermediate frequency (IF) — into every home, office, school, and hospital that did not exist in the incandescent era. An incandescent bulb is a resistor: it produces 50/60 Hz magnetic field (ELF) proportional to its current draw, and nothing else. An LED lamp is a switching circuit: it produces ELF (from the mains), IF (from the driver, 20–300 kHz), and optical flicker (from incomplete DC smoothing)."}
           </p>
+          {/* Paragraph 2: Regulatory gap */}
           <p>
             {activeLocale === "fi"
-              ? "Verkkokalvon fotoreseptorit sisältävät VGCC-kanavat (Cav1.4), jotka ovat täsmälleen se ionikanavatyyppi jonka BERM identifioi EMF:n kohteeksi. Oksidatiivinen stressi — mekanismi jolla sinivalon väitetään vaurioittavan verkkokalvoa — on MYÖS VGCC-välitteinen: Ca²⁺-influksi → mitokondrion ylikuormitus → ROS. Sinivalon fotokemiallinen mekanismi (A2E-fotosensitisaatio) on todellinen, mutta IF-EMF voi vahvistaa sitä synergistisesti."
-              : "Retinal photoreceptors contain VGCC channels (Cav1.4), precisely the ion channel type BERM identifies as an EMF target. Oxidative stress — the mechanism by which blue light is claimed to damage the retina — is ALSO VGCC-mediated: Ca²⁺ influx → mitochondrial overload → ROS. The photochemical mechanism of blue light (A2E photosensitization) is real, but IF-EMF may amplify it synergistically."}
+              ? "IF-alue (300 Hz – 10 MHz) sijaitsee sääntelyaukossa. ELF (alle 300 Hz) on säädelty ICNIRP:n 2010 ohjeilla. RF (yli 100 kHz) on säädelty ICNIRP:n 1998/2020 ohjeilla. IF-alue jää näiden väliin, päällekkäisin mutta epäjohdonmukaisin rajoin. Vuoden 2022 systemaattinen katsaus International Journal of Radiation Biology -lehdessä totesi: 'verrattuna ELF- tai RF-EMF-kaistoihin, IF-EMF:n terveysvaikutuksia EI ole tutkittu monipuolisemmista näkökulmista.' IF-kanavaa ei ole tutkittu siksi, ettei kukaan tutkinut sitä — ei siksi, että se todettiin turvalliseksi."
+              : "The IF range (300 Hz – 10 MHz) sits in a regulatory gap. ELF (below 300 Hz) is regulated by ICNIRP's 2010 guidelines. RF (above 100 kHz) is regulated by ICNIRP's 1998/2020 guidelines. The IF range falls between the two, with overlapping but inconsistent limits. A 2022 systematic review in the International Journal of Radiation Biology found that 'compared to ELF or RF EMF bands, studies on health effects with more diverse perspectives of IF-EMF have NOT been conducted.' The IF channel is unstudied because no one studied it — not because it was found safe. This is the regulatory gap that BERM identifies as the third exposure channel."}
           </p>
+          {/* Paragraph 3: Mechanistic evidence */}
           <p>
             {activeLocale === "fi"
-              ? "Falsifioiva koeasetelma: vertaa (1) LED-sinivalo, (2) hehkulamppu-sinivalo (suodatettu samaan spektriin, EI IF-EMF:ää), (3) IF-EMF ilman sinivaloa. Jos ryhmä 2 ei osoita vaurioita mutta ryhmä 1 osoittaa, IF-EMF on välttämätön tekijä. Sirkadiaaninen huomio: puhelimen 'yötila' poistaa sinivalon mutta EI IF-EMF:ää — melatoniinisuppressio voi jatkua IF-EMF:n kautta."
-              : "Falsifying experiment: compare (1) LED blue light, (2) incandescent blue light (filtered to same spectrum, NO IF-EMF), (3) IF-EMF without blue light. If group 2 shows no damage but group 1 does, IF-EMF is a necessary factor. Circadian note: phone 'night mode' removes blue light but NOT IF-EMF — melatonin suppression may continue via IF-EMF pathway."}
+              ? "Kolme riippumatonta todistuslinjaa yhdistää IF-taajuudet biologisiin vaikutuksiin. Ensinnäkin Kim ym. (Cell, 2026) osoitti, että 60 Hz pulssi-EMF aktivoi geeniekspression Cyb5b-välitteisten kalsiumoskillaatioiden kautta; heidän geenikytkin käytti 4 kHz taajuutta, joka on suoraan LED-ajureiden tuottamalla IF-alueella. Toiseksi vuoden 2022 tutkimus (Heliyon, PMC9952889) altisti rottia 150 kHz IF-EMR:lle 8 viikon ajan ja havaitsi merkitseviä muutoksia kivesten massassa (p=0.03), interstitiaalisten solujen määrässä (p=0.01) ja FSH-tasoissa (p=0.01). Kolmanneksi Novocuren TTFields — FDA:n hyväksymä syöpähoito — toimii taajuudella 200 kHz tuhoten syöpäsoluja mitoottisen karan häiriön kautta. Jos 200 kHz kentät voivat häiritä solunjakautumista tarkoituksellisesti, ympäristön 200 kHz kentät LED-ajureista voivat häiritä sitä tahattomasti."
+              : "Three independent lines of evidence connect IF-frequency EMF to biological effects. First, Kim et al. (Cell, 2026) demonstrated that 60 Hz pulsed EMF activates gene expression via Cyb5b-mediated calcium oscillations; their gene switch used 4 kHz, squarely in the IF range produced by LED drivers. Second, a 2022 study (Heliyon, PMC9952889) exposed rats to 150 kHz IF-EMF for 8 weeks and found significant changes in testicular mass (p=0.03), interstitial cell count (p=0.01), and FSH levels (p=0.01). Third, Novocure's TTFields — FDA-approved for glioblastoma treatment — operates at 200 kHz, destroying cancer cells through disruption of the mitotic spindle. If 200 kHz fields can disrupt cell division intentionally, environmental 200 kHz fields from LED drivers may disrupt cell division unintentionally."}
           </p>
+          {/* Paragraph 4: Blue light insufficient */}
           <p>
             {activeLocale === "fi"
-              ? "Myopiaepidemia: lasten likinäköisyys on kasvanut dramaattisesti 2000-luvulla. Konventionaalinen selitys korostaa lähityötä ja sisätilavaloa. BERM-hypoteesi: IF-EMF näytöistä ja LED-valoista perturboi silmän kehitystä VGCC-häiriön kautta. Myopian nousu korreloi LED-valaistuksen yleistymisen kanssa (EU hehkulamppukielto 2009 → DID-asetelma)."
-              : "Myopia epidemic: childhood myopia has risen dramatically since 2000. The conventional explanation emphasizes near work and indoor lighting. BERM hypothesis: IF-EMF from screens and LED lights perturbs eye development via VGCC disruption. The myopia rise correlates with LED lighting adoption (EU incandescent ban 2009 → DID design)."}
+              ? "Konventionaalinen selitys kohdistaa LED:n terveysvaikutukset siniseen valoon, joka suppressoi melatoniinia. BERM ei kiistä tätä mekanismia mutta väittää sen olevan riittämätön. Duraccio ym. (2019) havaitsi, että sinisen valon suodatuslasit EIVÄT merkitsevästi parantaneet nuorten unenlaatua — mikä viittaa siihen, että ei-optinen komponentti (IF-emissiot) saattaa olla tärkeämpi vaikutuspolku. BERM:n ennuste: Faraday-suojattu LED-lamppu (estää IF-emissiot mutta säilyttää identtisen valospektrin) tuottaisi vähemmän biologista häiriötä kuin suojaamaton lamppu identtisellä spektrillä."
+              : "The conventional explanation attributes LED's health effects to blue light suppression of melatonin. BERM does not deny this mechanism but argues it is insufficient. Duraccio et al. (2019) found that blue-light-filtering glasses did NOT significantly improve adolescent sleep quality — suggesting that the non-optical component (IF emissions) may be the more important pathway. BERM's prediction: a Faraday-shielded LED lamp (blocking IF emissions while preserving identical light output) would produce less biological disruption than an unshielded lamp with identical spectrum. Blue-light filtering addresses the wrong channel."}
+          </p>
+          {/* Paragraph 5: Natural experiment T1 */}
+          <p>
+            {activeLocale === "fi"
+              ? "EU:n valaistussiirtymä (2009–2019) loi luonnollisen kokeen. Maat jotka ottivat LED-valaistuksen käyttöön aikaisemmin kokivat IF-altistuksen kasvun aikaisemmin. Jos IF vaikuttaa biologisiin päätepisteisiin, TFR-laskun pitäisi kiihtyä enemmän aikaisin omaksuneissa maissa RF-kasvun kontrolloinnin jälkeen. Falsifikaatiotesti T1: vertaa TFR-kiihtyvyyttä ennen ja jälkeen LED-siirtymän alkamisen, kontrolloiden matkapuhelin-/laajakaistakehitystä. Jos kiihtyvyyttä ei ole → IF-kanava ei tuettu. Jos kiihtyvyys korreloi LED-omaksumisajankohtaan → yhteensopiva IF-hypoteesin kanssa."
+              : "The EU's lighting transition (2009–2019) created a natural experiment. Countries that adopted LED lighting earlier experienced IF exposure increases earlier. If IF contributes to biological effects, TFR decline should accelerate more in early-adopting countries after controlling for RF growth. Falsification test T1: Compare TFR acceleration before and after LED transition onset, controlling for mobile/broadband growth. If no acceleration → IF channel not supported. If acceleration correlates with LED adoption timing → consistent with IF hypothesis."}
           </p>
         </div>
+        <p className="text-xs text-foreground-muted italic mt-2 max-w-4xl">
+          {activeLocale === "fi"
+            ? "Episteeminen taso: IF-säätelyaukko [E] (IJRB 2022). Cyb5b-mekanismi [E] (Kim 2026 Cell). 150 kHz hedelmällisyys [E] (Heliyon 2022). TTFields [E] (FDA). Sinisen valon riittämättömyys [C] (Duraccio 2019). LED-DID populaatiotesti [C] (testaamaton)."
+            : "Epistemic level: IF regulatory gap [E] (IJRB 2022). Cyb5b mechanism [E] (Kim 2026 Cell). 150 kHz fertility [E] (Heliyon 2022). TTFields [E] (FDA). Blue light insufficiency [C] (Duraccio 2019). LED-DID population test [C] (untested)."}
+        </p>
 
         <div className="mt-6 overflow-x-auto">
           <table className="w-full text-sm border-collapse max-w-4xl">
@@ -945,6 +1109,36 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
             </thead>
             <tbody className="text-foreground-muted">
               <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">IJRB (Ohkubo & Okano)</td>
+                <td className="py-2 pr-3 font-mono-num">2022</td>
+                <td className="py-2">{activeLocale === "fi" ? "IF-EMF (300 Hz – 10 MHz) systemaattisesti alitutkittu; säätelyaukko dokumentoitu" : "IF-EMF (300 Hz – 10 MHz) systematically under-researched; regulatory gap documented"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Kim et al. (Cell)</td>
+                <td className="py-2 pr-3 font-mono-num">2026</td>
+                <td className="py-2">{activeLocale === "fi" ? "Cyb5b EMF-sensori: 60 Hz → Ca²⁺-oskillaatiot → geeniekspressio in vivo (CRISPR-validoitu)" : "Cyb5b EMF sensor: 60 Hz → Ca²⁺ oscillations → gene expression in vivo (CRISPR-validated)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Heliyon (PMC9952889)</td>
+                <td className="py-2 pr-3 font-mono-num">2022</td>
+                <td className="py-2">{activeLocale === "fi" ? "150 kHz IF-EMR 8 vk: kivesten massa ↓, interstitiaalisolut ↓, FSH ↑ rotilla" : "150 kHz IF-EMR 8 wk: testicular mass ↓, interstitial cells ↓, FSH ↑ in rats"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">TTFields / Novocure (FDA)</td>
+                <td className="py-2 pr-3 font-mono-num">2011</td>
+                <td className="py-2">{activeLocale === "fi" ? "200 kHz tuhoaa syöpäsoluja mitoottisen karan häiriöllä (FDA-hyväksytty)" : "200 kHz destroys cancer cells via mitotic spindle disruption (FDA-approved)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Duraccio et al.</td>
+                <td className="py-2 pr-3 font-mono-num">2019</td>
+                <td className="py-2">{activeLocale === "fi" ? "Sinisen valon suodatuslasit EIVÄT parantaneet nuorten unta merkitsevästi" : "Blue-light-filtering glasses did NOT significantly improve adolescent sleep"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
+                <td className="py-2 pr-3 font-medium text-foreground">Milham & Stetzer</td>
+                <td className="py-2 pr-3 font-mono-num">2013</td>
+                <td className="py-2">{activeLocale === "fi" ? "kHz-transienttien vähentäminen muutti virtsan dopamiinia ja PEA:ta (N=7 pilotti)" : "Reducing kHz transients changed urinary dopamine and PEA (N=7 pilot)"}</td>
+              </tr>
+              <tr className="border-b border-card-border/40">
                 <td className="py-2 pr-3 font-medium text-foreground">CISPR / LISUN</td>
                 <td className="py-2 pr-3 font-mono-num">2020</td>
                 <td className="py-2">{activeLocale === "fi" ? "LED-ajurit generoivat IF-EMF-kohinaa 65 kHz – 2 MHz" : "LED drivers generate IF-EMF noise at 65 kHz – 2 MHz"}</td>
@@ -953,11 +1147,6 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                 <td className="py-2 pr-3 font-medium text-foreground">PMC4896623</td>
                 <td className="py-2 pr-3 font-mono-num">2016</td>
                 <td className="py-2">{activeLocale === "fi" ? "Cav1.4 (VGCC) edistää verkkokalvon degeneraatiota" : "Cav1.4 (VGCC) promotes retinal degeneration"}</td>
-              </tr>
-              <tr className="border-b border-card-border/40">
-                <td className="py-2 pr-3 font-medium text-foreground">PMC3885580</td>
-                <td className="py-2 pr-3 font-mono-num">2014</td>
-                <td className="py-2">{activeLocale === "fi" ? "VGCC-alatyypit verkkokalvolla: Cav1.3, Cav1.4, Cav3.2" : "VGCC subtypes in the retina: Cav1.3, Cav1.4, Cav3.2"}</td>
               </tr>
               <tr className="border-b border-card-border/40">
                 <td className="py-2 pr-3 font-medium text-foreground">PMC7830240</td>
@@ -972,11 +1161,111 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-foreground-muted italic mt-4 max-w-4xl">
-          {activeLocale === "fi"
-            ? "Episteeminen taso: LED IF-EMF [E] (CISPR-mittaus). Verkkokalvon VGCC [E] (PMC4896623/PMC3885580). IF-EMF → verkkokalvovaurio [C] (hypoteesi). Myopia-korrelaatio [C] (testaamaton)."
-            : "Epistemic level: LED IF-EMF [E] (CISPR measurement). Retinal VGCC [E] (PMC4896623/PMC3885580). IF-EMF → retinal damage [C] (hypothesis). Myopia correlation [C] (untested)."}
-        </p>
+      </section>
+
+      {/* The Spermatogenesis Connection */}
+      <section id="spermatogenesis-connection" className="mb-16 border-t editorial-rule pt-6">
+        <span id="sperm" /><span id="pathway-A-mitotic" /><span id="ttfields" />
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "Spermatogeneesiyhteys" : "The Spermatogenesis Connection"}
+        </h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {activeLocale === "fi"
+              ? "Spermatogeneesi — kypsien siittiöiden tuottaminen kantasoluista — on MITOOTTINEN prosessi. Kantasolut jakautuvat klonaalisten mitoottisten kierrosten kautta ennen erilaistumista siittiöiksi. Tämä tekee spermatogeneesistä luonnostaan haavoittuvan mille tahansa tekijälle joka häiritsee mitoosia."
+              : "Spermatogenesis — the production of mature sperm from germ cells — is a MITOTIC process. Germ cells divide clonally through multiple rounds of mitosis before differentiating into spermatozoa. This makes spermatogenesis inherently vulnerable to any agent that disrupts mitosis."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "TTFields, FDA-hyväksytty syöpähoito taajuudella 100–300 kHz, tuhoaa syöpäsoluja juuri häiritsemällä mitoosia. Valmistajan oma tutkimus osoittaa, että NORMAALIEN solujen mitoosi häiriintyy noin 50 kHz:n taajuudella — taajuudella jonka käyttöä syöpähoidossa VÄLTETÄÄN haittavaikutusten minimoimiseksi terveeseen kudokseen (Nature 2020)."
+              : "TTFields, the FDA-approved cancer therapy operating at 100–300 kHz, destroys cancer cells precisely by disrupting mitosis. The manufacturer's own research shows that NORMAL cell mitosis is disrupted at approximately 50 kHz — a frequency chosen to be AVOIDED in cancer treatment to minimize side effects on healthy tissue (Nature 2020)."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "LED-hakkurien kytkentätaajuudet (20–100 kHz) osuvat juuri tälle alueelle. Ympäristön IF-altistus LED-valaistuksesta operoi taajuudella jonka TTFields-tutkimus tunnisti normaalin solunjakautumisen kannalta haitallisimmaksi."
+              : "LED driver switching frequencies (20–100 kHz) fall squarely in this range. The environmental IF exposure from LED lighting operates at the frequency that TTFields research identified as most disruptive to normal cell division."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "UWI Trinidadin tutkimusryhmä teki tämän yhteyden eksplisiittiseksi: 'Koska nisäkkäiden kivesten itusolut lisääntyvät klonaalisesti mitoottisten kierrosten kautta ennen erilaistumista kypsiksi siittiöiksi, IF:n vaikutus lisääntymisriskeihin tässä TTFields-taajuusalueella (100–300 kHz) on tutkittava.' Heidän 150 kHz tutkimuksensa havaitsi merkitsevän kivesmassan vähenemisen (p=0.03), interstitiaalisten solujen lukumäärän laskun (p=0.01) ja muuttuneet FSH-tasot (p=0.01) (Sundaram 2022)."
+              : "The UWI Trinidad research group made this connection explicit: 'Since mammalian testicular germ cells proliferate clonally via mitotic rounds before differentiating into mature spermatozoa, the effect of IF on reproductive risks in this TTFields frequency range needs to be investigated.' Their 150 kHz study found significant reductions in testicular mass (p=0.03), interstitial cell count (p=0.01), and altered FSH levels (p=0.01) (Sundaram 2022)."}
+          </p>
+          <p className="text-xs text-foreground-muted/70 italic">
+            {activeLocale === "fi"
+              ? "Episteeminen taso: TTFields-mekanismi [E] (FDA-hyväksytty). UWI Trinidad 150 kHz [M|C] (eläinkoe, yksi ryhmä). Ympäristörelevanssi [L] (kenttävoimakkuusero)."
+              : "Epistemic level: TTFields mechanism [E] (FDA-approved). UWI Trinidad 150 kHz [M|C] (animal study, single group). Environmental relevance [L] (field strength gap)."}
+          </p>
+        </div>
+      </section>
+
+      {/* The Kaiser Permanente Series */}
+      <section id="kaiser-permanente-series" className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "Kaiser Permanente MF-sarja" : "The Kaiser Permanente Series"}
+        </h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {activeLocale === "fi"
+              ? "Kattavin epidemiologinen todistusaineisto EMF:n lisääntymis- ja kehitysvaikutuksista tulee Kaiser Permanente Northern Californiasta, missä tohtori De-Kun Lin tutkimusryhmä toteutti kuusi prospektiivista kohorttitutkimusta vuosina 2002–2020, NIEHS-rahoituksella."
+              : "The most comprehensive epidemiological evidence for EMF reproductive and developmental effects comes from Kaiser Permanente Northern California, where Dr. De-Kun Li's research group conducted six prospective cohort studies between 2002 and 2020, funded by the National Institute of Environmental Health Sciences (NIEHS)."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Kaikki osallistuvat naiset kantoivat EMDEX-mittaria 24 tuntia raskauden aikana, mitaten TODELLISEN magneettikentän altistuksen kaikista lähteistä — ei itseraportoidun laitteiden käytön perusteella. Tämä objektiivinen altistusmittaus erottaa Kaiser-sarjan useimmasta muusta EMF-epidemiologiasta."
+              : "All participating women wore an EMDEX meter for 24 hours during pregnancy, measuring ACTUAL magnetic field exposure from all sources — not self-reported device use. This objective exposure measurement distinguishes the Kaiser series from most other EMF epidemiology."}
+          </p>
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-3">
+              {activeLocale === "fi" ? "Löydökset neljässä BERM-kaskadissa" : "Findings across four BERM cascades"}
+            </p>
+            <ul className="space-y-1.5 text-sm">
+              <li>{activeLocale === "fi" ? "Keskenmeno: 2× riski yli 1,6 mG (Li 2002, 2017)" : "Miscarriage: 2× risk above 1.6 mG (Li 2002, 2017)"}</li>
+              <li>{activeLocale === "fi" ? "ADHD: kohonnut riski korkeammalla prenataalisella MF:llä (Li 2020, JAMA)" : "ADHD: elevated risk with higher prenatal MF (Li 2020, JAMA Network Open)"}</li>
+              <li>{activeLocale === "fi" ? "Lapsuuden lihavuus: OR 1,69 (Li 2012, Scientific Reports)" : "Childhood obesity: OR 1.69 (Li 2012, Scientific Reports)"}</li>
+              <li>{activeLocale === "fi" ? "Astma: kohonnut riski (Li 2011)" : "Asthma: elevated risk (Li 2011)"}</li>
+              <li>{activeLocale === "fi" ? "Siittiölaatu: 2× riski poikkeavaan motiliteettiin (Li 2010)" : "Sperm quality: 2× risk of abnormal motility (Li 2010)"}</li>
+            </ul>
+          </div>
+          <p>
+            {activeLocale === "fi"
+              ? "EMDEX-mittari ei erottele ELF- ja IF-taajuuksia. Korkea kokonaisaltistus korreloi sekä sähköverkon (ELF) että kodinkoneiden/valaistuksen (IF) kanssa. Kaiser-sarja ei voi tunnistaa kumpaa kanavaa vaikutus ohjaa — mutta se osoittaa, että MITATTU magneettikenttäaltistus ennustaa lisääntymis- ja kehitystuloksia useissa päätepisteissä."
+              : "The EMDEX meter does not separate ELF from IF frequencies. High total MF correlates with both power grid exposure (ELF) and appliance/lighting exposure (IF). The Kaiser series cannot identify which channel drives the effect — but it demonstrates that MEASURED magnetic field exposure predicts reproductive and developmental outcomes across multiple endpoints."}
+          </p>
+          <p className="text-xs text-foreground-muted/70 italic">
+            {activeLocale === "fi"
+              ? "Episteeminen taso: [E] (prospektiivinen kohortti, mitattu altistus, NIEHS-rahoitus). HUOM: Li 2017 Editorial Expression of Concern datan jakamisongelman vuoksi (ei retraktio, ei koske tuloksia)."
+              : "Epistemic level: [E] (prospective cohort, measured exposure, NIEHS-funded). NOTE: Li 2017 Editorial Expression of Concern due to data sharing inability (not retraction, not about results)."}
+          </p>
+        </div>
+      </section>
+
+      {/* Japan IH Research Program */}
+      <section id="japan-ih-program" className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "Japanin IH-tutkimusohjelma" : "Japan's IH Research Program"}
+        </h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {activeLocale === "fi"
+              ? "Japanilla on maailman laajin tutkimusohjelma välitaajuuksien terveysvaikutuksista, johtuen induktioliesien korkeasta levinneisyydestä (~50 % kotitalouksista). Kolme tutkimusta tarkasteli IH:n käyttöä ja raskaustuloksia."
+              : "Japan has the world's most extensive research program on intermediate-frequency health effects, driven by the high penetration of induction heating cookers (~50% of households). Three studies examined IH use and pregnancy outcomes."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Sato ym. (2023) havaitsi tilastollisesti merkitsevän yhteyden pöytätason/kiinteän IH-lieden käytön ja ennenaikaisen synnytyksen välillä (OR 1,27–1,44). Kriittisesti yhteys oli ANNOS-VASTEINEN: korkean emission liedet (9 mT 30 cm:n etäisyydellä) osoittivat korkeamman riskin kuin matalan emission kaapistomallit (4 mT). Tämä annos-vastekuvio viittaa biologiseen mekanismiin sekoittavan tekijän sijaan."
+              : "Sato et al. (2023) found a statistically significant association between stationary/tabletop IH cooker use and preterm birth (OR 1.27–1.44). Critically, the association was DOSE-DEPENDENT: high-emission cookers (9 mT at 30 cm) showed higher risk than low-emission built-in models (4 mT). This dose-response pattern suggests a biological mechanism rather than a confounder."}
+          </p>
+          <p>
+            {activeLocale === "fi"
+              ? "Tokinobu ym. (2021) havaitsi päinvastaisen: IH:n käyttö assosioitui VÄHENTYNEESEEN ennenaikaisen synnytyksen riskiin. Ristiriita selittyy todennäköisesti altistusluokittelulla: Tokinobu yhdisti kaikki IH-tyypit, kun Sato erotti korkean ja matalan emission mallit. Kun korkeat ja matalat keskiarvoistetaan, vastakkaiset vaikutukset voivat kumota toisensa."
+              : "Tokinobu et al. (2021) found the opposite: IH use was associated with REDUCED preterm birth risk. The contradiction likely arises from exposure classification: Tokinobu grouped all IH types together, while Sato separated high-emission from low-emission models. When high and low are averaged, opposing effects may cancel."}
+          </p>
+          <p className="text-xs text-foreground-muted/70 italic">
+            {activeLocale === "fi"
+              ? "Episteeminen taso: [C] (ihmisepidemiologia, ristiriitainen mutta annos-vasteinen viite). Nämä ovat alustavia mutta edustavat ainoaa epidemiologista todistetta IF-EMF-vaikutuksista ihmisraskauteen ei-ELF, ei-RF-taajuusalueelta."
+              : "Epistemic level: [C] (human epidemiology, contradictory but dose-response signal). These findings are preliminary but represent the only epidemiological evidence for IF-EMF effects on human pregnancy from a non-ELF, non-RF frequency range."}
+          </p>
+        </div>
       </section>
 
       {/* Hospital EMF Hypothesis */}
@@ -1049,6 +1338,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
 
       {/* BBB Pathway F: Mechanism, Aging Synergy, and Arendash Paradox */}
       <section id="bbb-pathway-f" className="mb-16 border-t editorial-rule pt-6">
+        <span id="bbb" />
         <h2 className="editorial-section-heading mb-3">
           {activeLocale === "fi" ? "Polku F: Veri-aivoeste — EMF-vahvistin" : "Pathway F: Blood-Brain Barrier — The EMF Multiplier"}
         </h2>
@@ -1289,6 +1579,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
 
       {/* ADHD as developmental ion channel calibration error */}
       <section id="adhd-calibration" className="mb-16 border-t editorial-rule pt-6">
+        <span id="adhd" />
         <h2 className="editorial-section-heading mb-3">
           {activeLocale === "fi" ? "ADHD: kehityksellinen ionikanavien kalibraatiovirhe" : "ADHD: A Developmental Ion Channel Calibration Error"}
         </h2>
@@ -1386,21 +1677,25 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
               ? "Jokainen BERM-kaskadin sairaus noudattaa samaa rakennetta: (1) GWAS-assosiaatio ionikanavageeneihin, (2) tehokkain hoito kohdistuu ionikanaviin, (3) EMF-altistus assosioituu sairauteen, (4) mekanistinen ketju EMF → ionikanava → patologia. Tämä ei ole sattuma — se on BERM:n ydinväite: ympäristö-EMF häiritsee ionikanavahomeostaasia, ja eri sairaudet ovat saman häiriön ilmentymiä eri kudoksissa eri viiveillä."
               : "Every BERM cascade disease follows the same structure: (1) GWAS association with ion channel genes, (2) most effective treatment targets ion channels, (3) EMF exposure associates with the disease, (4) mechanistic chain from EMF → ion channel → pathology. This is not coincidence — it is BERM's core claim: environmental EMF disrupts ion channel homeostasis, and different diseases are manifestations of the same disruption in different tissues at different latencies."}
           </p>
+          <span id="depression" />
           <p>
             {activeLocale === "fi"
               ? "Bipolaarihäiriö on mallin eleganttein tapaus. Laskennalliset mallit (PubMed 32278494, Translational Psychiatry) osoittavat suoraan, että bipolaariset hippokampusneuronit heilahtelevat hypereksitaabeliuden ja hypoeksitaabeliuden välillä ionikanavien konduktanssimuutosten vuoksi. El-Mallakhin Na,K-ATPaasi-hypoteesi selittää molemmat ääripäät: LIEVÄ pumpun häiriö → eksitabiliteetti ↑ → mania; VOIMAKKAAMPI häiriö → neurotransmitterien vapautuminen ↓ → depressio. Litium (Li⁺) kulkee VGSC:n kautta ja kertyy ensisijaisesti hyperaktiivisiin neuroneihin → vaimentaa oskillaation. Antiepileptit (valproaatti, karbamatsepiini, lamotrigiini) toimivat SEKÄ epilepsiaan ETTÄ bipolaarihäiriöön koska SAMA ionisen eksitabiliteetin säätely on häiriintynyt molemmissa — eri aikaskaalalla."
               : "Bipolar disorder is the model's most elegant case. Computational models (PubMed 32278494, Translational Psychiatry) directly show that bipolar hippocampal neurons oscillate between hyperexcitability and hypoexcitability due to ion channel conductance changes. El-Mallakh's Na,K-ATPase hypothesis explains both poles: MILD pump dysfunction → excitability ↑ → mania; MORE SEVERE dysfunction → neurotransmitter release ↓ → depression. Lithium (Li⁺) traverses VGSC and accumulates preferentially in hyperactive neurons → dampens oscillation. Antiepileptics (valproate, carbamazepine, lamotrigine) work for BOTH epilepsy AND bipolar because the SAME ionic excitability regulation is disrupted in both — at different timescales."}
           </p>
+          <span id="metabolic" /><span id="insulin" />
           <p>
             {activeLocale === "fi"
               ? "Metabolinen oireyhtymä: haiman β-solujen K-ATP-kanava (Kir6.2 + SUR1) on insuliinisäätelyn PÄÄKYTKIN. Glukoosi ↑ → ATP ↑ → K-ATP sulkeutuu → depolarisaatio → VGCC avautuu → Ca²⁺ → insuliini vapautuu. Sulfonyyliureat (FDA-hyväksytyt) sulkevat K-ATP-kanavan SUORAAN. US Patent 4850959 (1989) todistaa: resonanssi-EMF kontrolloi β-solujen insuliinieritystä kalsiumkanavien kautta. Klimentidis 2011: myös laboratorion kontrollieläimet lihovat (p = 1.2 × 10⁻⁷, 8 lajia) — ympäristömuutos, ei pelkkä ruokavalio."
               : "Metabolic syndrome: the pancreatic β-cell K-ATP channel (Kir6.2 + SUR1) is the MASTER SWITCH of insulin regulation. Glucose ↑ → ATP ↑ → K-ATP closes → depolarization → VGCC opens → Ca²⁺ → insulin release. Sulfonylureas (FDA-approved) close the K-ATP channel DIRECTLY. US Patent 4850959 (1989) proves: resonance-EMF controls β-cell insulin secretion via calcium channels. Klimentidis 2011: even lab control animals are gaining weight (p = 1.2 × 10⁻⁷, 8 species) — environmental change, not diet alone."}
           </p>
+          <span id="autoimmune" />
           <p>
             {activeLocale === "fi"
               ? "Autoimmuunisairaudet: α7-nikotiininen asetyylikoliinireseptori (α7nAChR) — ionikanava (ligandiohjattu kationikanava) — säätelee kolinergistä anti-inflammatorista refleksiä. VNS (FDA-hyväksytty) aktivoi α7nAChR:n → NF-κB ↓ → tulehdus vähenee. EMF aktivoi NF-κB:tä VGCC-Ca²⁺-reitin kautta (Pall 2013), samalla kun vagushermon signalointi heikkenee. EMF on funktionaalisesti 'anti-VNS'. Koopman 2016 (PNAS): VNS tuotti merkitsevän vasteen nivelreumaan."
               : "Autoimmune diseases: α7 nicotinic acetylcholine receptor (α7nAChR) — an ion channel (ligand-gated cation channel) — regulates the cholinergic anti-inflammatory pathway. VNS (FDA-approved) activates α7nAChR → NF-κB ↓ → inflammation decreases. EMF activates NF-κB via the VGCC-Ca²⁺ pathway (Pall 2013), while vagal signaling weakens. EMF is functionally 'anti-VNS'. Koopman 2016 (PNAS): VNS produced significant response in rheumatoid arthritis."}
           </p>
+          <span id="cancer" />
           <p>
             {activeLocale === "fi"
               ? "Syöpä on kumulatiivisen depolarisaation seuraus. Normaalit solut: Vm ≈ −60 mV (hyperpolaroitunut). Syöpäsolut: Vm ≈ −15 mV (depolaroitunut). Levin (2012) osoitti suoraan: onkogeenin yliekspressio depolarisoi soluja → kasvain. Mutta jos depolarisaatio estetään hyperpolaroivilla ionikanavilla → kasvain EI muodostu vaikka onkogeeni on aktiivinen. PMC12533209 (2025): leukemiasolut 'kaappaavat' stroomansolujen biosähkön CaV1.2-depolarisaation kautta. TTFields (FDA-hyväksytty) ja verapamiili (VGCC-estäjä, PMC5034549) ovat suoria ionisia syöpähoitoja."
@@ -1528,6 +1823,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
 
       {/* Melatonin-fertility bridge: cascade 1 → cascade 6 */}
       <section id="melatonin-bridge" className="mb-16 border-t editorial-rule pt-6">
+        <span id="melatonin" /><span id="ovarian" /><span id="fertility" />
         <h2 className="editorial-section-heading mb-3">
           {activeLocale === "fi" ? "Melatoniinisilta: kaskadi 1 → kaskadi 6" : "The Melatonin Bridge: Cascade 1 → Cascade 6"}
         </h2>
@@ -1673,7 +1969,8 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
       </section>
 
       {/* Sleep as mediating mechanism */}
-      <section className="mb-16 border-t editorial-rule pt-6">
+      <section id="sleep" className="mb-16 border-t editorial-rule pt-6">
+        <span id="testosterone" /><span id="nk-cells" /><span id="cortisol" />
         <h2 className="editorial-section-heading mb-3">
           {activeLocale === "fi" ? "Unideprivaatio keskeisenä välittävänä mekanismina" : "Sleep deprivation as the central mediating mechanism"}
         </h2>
@@ -1761,7 +2058,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
       {/* Orphaned findings */}
       <section id="orphaned-findings" className="mb-16 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">
-          {activeLocale === "fi" ? "Hylätyt havainnot: data ilman mekanismia" : "Orphaned Findings: Data Without a Mechanism"}
+          {activeLocale === "fi" ? ORPHANED_COMMENTARY.fi.title : ORPHANED_COMMENTARY.en.title}
         </h2>
         <div className="max-w-4xl overflow-x-auto mb-6">
           <table className="w-full text-sm border-collapse">
@@ -1775,55 +2072,34 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
               </tr>
             </thead>
             <tbody className="text-foreground-muted">
-              {[
-                { year: "1976", researcher: "Adey-Blackman",
-                  finding: activeLocale === "fi" ? "Ca²⁺ ikkunailmiö" : "Ca²⁺ window effect",
-                  criticism: activeLocale === "fi" ? "\"Ei-lineaarinen = artefakti\"" : "\"Non-linear = artifact\"",
-                  mechanism: activeLocale === "fi" ? "Resonanssi-oskillaatio (Kim 2026)" : "Resonance oscillation (Kim 2026)" },
-                { year: "1995", researcher: "Lai-Singh",
-                  finding: activeLocale === "fi" ? "DNA-katkokset" : "DNA strand breaks",
-                  criticism: activeLocale === "fi" ? "\"Liian heikko fotoni\"" : "\"Photon too weak\"",
-                  mechanism: activeLocale === "fi" ? "ROS via VGCC/IFO (Panagopoulos 2025)" : "ROS via VGCC/IFO (Panagopoulos 2025)" },
-                { year: "2013", researcher: "Pall",
-                  finding: activeLocale === "fi" ? "VGCC: 23 tutkimusta" : "VGCC: 23 studies",
-                  criticism: activeLocale === "fi" ? "\"Liian yksinkertainen\"" : "\"Too simple\"",
-                  mechanism: activeLocale === "fi" ? "3 reittiä: IFO + RPM + Cyb5b" : "3 pathways: IFO + RPM + Cyb5b" },
-                { year: "2025", researcher: "Sousouri",
-                  finding: "CACNA1C × 5G",
-                  criticism: activeLocale === "fi" ? "\"Liian pieni otos\"" : "\"Sample too small\"",
-                  mechanism: activeLocale === "fi" ? "Geneettinen VGCC-tiheysvaihtelu" : "Genetic VGCC density variation" },
-                { year: "2026", researcher: "Kim",
-                  finding: activeLocale === "fi" ? "Geenikytkimen aktivaatio" : "Gene switch activation",
-                  criticism: "\"Incredibly implausible\"",
-                  mechanism: activeLocale === "fi" ? "Lindgrenin χ(Ā) saturaatio" : "Lindgren's χ(Ā) saturation" },
-              ].map((row) => (
+              {ORPHANED_FINDINGS.map((row) => {
+                const finding = activeLocale === "fi" ? row.findingFi : row.findingEn;
+                const criticism = activeLocale === "fi" ? row.criticismFi : row.criticismEn;
+                const mechanism = activeLocale === "fi" ? row.mechanismFi : row.mechanismEn;
+                return (
                 <tr key={row.year} className="border-b border-card-border/50">
                   <td className="py-2 pr-3 font-mono-num">{row.year}</td>
                   <td className="py-2 pr-3">{row.researcher}</td>
-                  <td className="py-2 pr-3">{row.finding}</td>
-                  <td className="py-2 pr-3 italic">{row.criticism}</td>
-                  <td className="py-2">{row.mechanism}</td>
+                  <td className="py-2 pr-3">{finding}</td>
+                  <td className="py-2 pr-3 italic">{criticism}</td>
+                  <td className="py-2">{mechanism}</td>
                 </tr>
-              ))}
+                );
+              })}
             </tbody>
           </table>
         </div>
         <div className="max-w-4xl space-y-4">
-          <p className="text-sm text-foreground-muted leading-relaxed">
-            {activeLocale === "fi"
-              ? "Jokaisessa tapauksessa empiirinen havainto oli vahva — usein julkaistu huipputason lehdissä (Cell, NeuroImage, Bioelectromagnetics). Kritiikki ei kohdistunut dataan vaan MEKANISMIIN: miten niin heikot kentät voivat tuottaa biologisia vaikutuksia? Tämä \"epäuskottavuusargumentti\" ei ole tieteellinen kumoaminen — se on argumentti tietämättömyydestä, joka sekoittaa \"emme tunne mekanismia\" ja \"mekanismia ei ole.\""
-              : "In each case, the empirical observation was strong — often published in top-tier journals (Cell, NeuroImage, Bioelectromagnetics). The criticism targeted not the data but the mechanism: how could such weak fields produce biological effects? This 'implausibility argument' is not a scientific rebuttal — it is an argument from ignorance that confuses 'we don't know the mechanism' with 'there is no mechanism.'"}
-          </p>
-          <p className="text-sm text-foreground-muted leading-relaxed">
-            {activeLocale === "fi"
-              ? "Lindgrenin susceptibiliteettifunktio χ(Ā) ratkaisee kaikki viisi tapausta samanaikaisesti. Solukalvon sähkökenttä (~10⁷ V/m) luo susceptibiliteetin joka on jo lähellä saturaatiota. Ionikanavan jännitesensorit, jotka ovat säilyneet 3 miljardia vuotta (Zakon 2012), toimivat kvanttirajan herkkyydellä — kuten silmän fotoreseptori. Ulkoinen kenttä 10⁻⁵ V/m on ionikanavalle sama kuin yksittäinen fotoni verkkokalvolle: yksittäin pieni, mutta havaittavissa koska sensori kehittyi havaitsemaan juuri tämän."
-              : "Lindgren's susceptibility function χ(Ā) resolves all five cases simultaneously. The membrane electric field (~10⁷ V/m) creates a susceptibility that is already near saturation. Ion channel voltage sensors, conserved for 3 billion years (Zakon 2012), operate at quantum-limit sensitivity — like the eye's photoreceptor. An external field of 10⁻⁵ V/m is to the ion channel what a single photon is to the retina: individually tiny, but detectable because the sensor evolved to detect exactly this."}
-          </p>
-          <p className="text-xs text-foreground-muted/70 italic">
-            {activeLocale === "fi"
-              ? "Episteeminen taso: [L] (Lindgrenin tulkinta) yhdistettynä [E]-tason empiirisiin havaintoihin."
-              : "Epistemic level: [L] (Lindgren's interpretation) combined with [E]-level empirical findings."}
-          </p>
+          {(() => {
+            const oc = activeLocale === "fi" ? ORPHANED_COMMENTARY.fi : ORPHANED_COMMENTARY.en;
+            return (
+              <>
+                <p className="text-sm text-foreground-muted leading-relaxed">{oc.p1}</p>
+                <p className="text-sm text-foreground-muted leading-relaxed">{oc.p2}</p>
+                <p className="text-xs text-foreground-muted/70 italic">{oc.note}</p>
+              </>
+            );
+          })()}
         </div>
       </section>
 
@@ -1838,29 +2114,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
             : "BERM's mechanistic pathways draw on 10 mutually independent research domains. No single domain is sufficient, but their convergence on the same prediction — biological activity of electromagnetic fields — is unlikely by chance."}
         </p>
         <div className="grid gap-3 sm:grid-cols-2 max-w-4xl">
-          {(activeLocale === "fi" ? [
-            { n: "01", t: "Onkologia", d: "TTFields (FDA-hyväksytty): 100–300 kHz kentät häiritsevät solunjakautumista. Novocure, kliiniset kokeet." },
-            { n: "02", t: "Ortopedia", d: "PEMF-luunstimulaattorit (FDA 1986): pulssimuotoinen EMF kiihdyttää luun paranemista. 30+ vuoden kliininen käyttö." },
-            { n: "03", t: "Neurologia", d: "TMS, tDCS, VNS, DBS: ei-termiset EMF-laitteet hoitavat masennusta, epilepsiaa, Parkinsonia. 160 000+ implantoitua DBS-laitetta." },
-            { n: "04", t: "Kvanttbiologia", d: "Radikaalipari/CRY-mekanismi (RPM): lintujen magneettiaisti perustuu kryptokromiin. Sherrard 2018: pulssi-EMF tuottaa ROS:ia CRY-riippuvaisesti." },
-            { n: "05", t: "Solubiologia", d: "IFO-VGIC (Panagopoulos 2025): ionien pakotettu oskillaatio jänniteohjattujen kalsiumkanavien kautta. Kynnys 10⁻⁵ V/m." },
-            { n: "06", t: "Ei-ionotrooppinen VGCC", d: "Trus ym. 2024 (Hebr. yliopisto): VGCC aktivoi solunsisäisiä signaalireittejä konformaatiomuutoksella ILMAN ionifluksia." },
-            { n: "07", t: "Entomologia", d: "Mehiläis-EMF-data: Favre & Johansson 2025, Hallmann 2017, Thielens 2018. Mehiläisten piping, hyönteiskato, RF-absorptio." },
-            { n: "08", t: "Parasitologia", d: "England 2023: punkit vedetään isäntiin sähköstaattisesti. Staattisten kenttien biologinen aktiivisuus." },
-            { n: "09", t: "Geometrinen fysiikka", d: "Lindgren-metriikka: 87,5 % RPM-Hamiltoniaanin elementeistä johdettavissa geometriasta. Ennustaa tausta- ja kulmariippuvuuden." },
-            { n: "10", t: "Sähköekologia", d: "Bristol (Clarke, Robert, England, Mallinson): ilman sähköreseptio, mehiläisten sähköinen viestintä, antropogeeniset kentät −71 % mehiläislaskeutumisia." },
-          ] : [
-            { n: "01", t: "Oncology", d: "TTFields (FDA-approved): 100–300 kHz fields disrupt cell division. Novocure, clinical trials." },
-            { n: "02", t: "Orthopedics", d: "PEMF bone stimulators (FDA 1986): pulsed EMF accelerates bone healing. 30+ years of clinical use." },
-            { n: "03", t: "Neurology", d: "TMS, tDCS, VNS, DBS: non-thermal EMF devices treat depression, epilepsy, Parkinson's. 160,000+ implanted DBS devices." },
-            { n: "04", t: "Quantum biology", d: "Radical-pair/CRY mechanism (RPM): bird magnetoreception via cryptochrome. Sherrard 2018: pulsed EMF produces ROS CRY-dependently." },
-            { n: "05", t: "Cell biology", d: "IFO-VGIC (Panagopoulos 2025): ion forced oscillation via voltage-gated calcium channels. Threshold 10⁻⁵ V/m." },
-            { n: "06", t: "Non-ionotropic VGCC", d: "Trus et al. 2024 (Hebrew U.): VGCC activates intracellular signaling via conformational change WITHOUT ion flux." },
-            { n: "07", t: "Entomology", d: "Bee-EMF data: Favre & Johansson 2025, Hallmann 2017, Thielens 2018. Bee piping, insect decline, RF absorption." },
-            { n: "08", t: "Parasitology", d: "England 2023: ticks attracted to hosts electrostatically. Biological activity of static fields." },
-            { n: "09", t: "Geometric physics", d: "Lindgren metric: 87.5% of RPM Hamiltonian elements derivable from geometry. Predicts background and angle dependence." },
-            { n: "10", t: "Electroecology", d: "Bristol (Clarke, Robert, England, Mallinson): aerial electroreception, bee electric communication, anthropogenic fields −71% bee landings." },
-          ]).map((item) => (
+          {(activeLocale === "fi" ? RESEARCH_DOMAINS.fi : RESEARCH_DOMAINS.en).map((item) => (
             <div key={item.n} className="flex gap-3 rounded-lg border border-card-border bg-card-bg p-3">
               <span className="font-mono-num text-xs text-accent mt-0.5 shrink-0">{item.n}</span>
               <div className="min-w-0">
@@ -1922,6 +2176,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
 
       {/* Three frequency channels grouping */}
       <section className="mb-16 border-t editorial-rule pt-6">
+        <span id="elf-channel" /><span id="rf-channel" />
         <h2 className="editorial-section-heading mb-3">{d.channelGroupTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.channelGroupLead}</p>
         <div className="grid gap-4 md:grid-cols-3 mb-4">

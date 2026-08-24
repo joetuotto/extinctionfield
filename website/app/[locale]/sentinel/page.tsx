@@ -31,6 +31,13 @@ const COPY = {
     frogTitle: "Amphibians near radar: an inverted signal",
     frogText: "Nike-NAAMP frog survey data shows an unexpected inversion: frog calling indices trend better near active Nike sites (+0.040/decade) than farther away (+0.002/decade, difference p = 0.045). This is the opposite of the bird result and requires explanation.",
     frogInterpretation: "The inverted result is consistent when species-specific RF attenuation is considered. Frogs live in water and moist soil — media that attenuate RF strongly (water relative permittivity ε_r ≈ 80). A frog in water is effectively shielded from peak-field pulses. Birds are in open air with no attenuating medium — peak field reaches them at full strength. Additionally, Nike site security zones provide undisturbed wetland habitat for amphibians. The bird negative gradient (p = 0.031) and frog positive gradient (p = 0.045) are both consistent with the peak-field model when habitat RF attenuation is accounted for. This does not confirm the EMF hypothesis — the water-attenuation explanation is physically motivated but not measured in this context.",
+    frogAggregateTitle: "Frog-EMF aggregate result",
+    frogAggregate: [
+      "Nike-NAAMP inverse association (p = 0.045) → water attenuation + habitat confound",
+      "Tropical S-band BERM-inconsistent (OR = 1.474, p = 0.016)",
+      "Australian timeline inconsistent for JORN",
+      "8.7× absorption coefficient NOT confirmed from primary source",
+    ],
 
     batTitle: "Bats: Mammalian compass disrupted",
     batP1: "In May 2026, a team led by Oliver Lindecke published in Science the first experimental demonstration that radiofrequency electromagnetic noise disrupts a mammal's magnetic compass. Migratory soprano pipistrelle bats (Pipistrellus pygmaeus) were exposed to weak broadband RF noise (0.01–300 MHz) — at levels found in normal urban environments — for just 30 minutes during sunset. Control bats oriented normally toward their expected migratory direction. RF-exposed bats departed in random directions.",
@@ -43,6 +50,7 @@ const COPY = {
     insectTitle: "Insects: LED lighting and population decline",
     insectP1: "Boyes et al. 2021 (Science Advances) found that moth caterpillar abundance under LED street lights was 52% lower than in nearby unlit areas — compared to 41% lower under sodium lighting. The difference between LED and sodium is significant: sodium lamps are discharge lamps with minimal IF emissions; LED lamps contain switch-mode drivers emitting continuous 20–200 kHz fields.",
     insectP2: "While the study attributed the difference to light spectrum (white vs yellow), BERM's IF channel provides an alternative mechanism: the LED driver's IF emissions may directly affect caterpillar development through IFO-VGIC perturbation of voltage-gated ion channels. Pawson & Bader 2014 found LED traps captured 48% more insects than sodium, an effect independent of color temperature — suggesting a mechanism beyond visible spectrum.",
+    insectP3: "Insects may be disproportionately susceptible to IF-band exposures for geometric reasons. Clarke et al. 2013 demonstrated that insect bodies act as efficient electromagnetic antennas — their small dimensions create high internal field concentrations relative to body mass. At IF frequencies (20–300 kHz), the induced electric field gradient across an insect body (1–50 mm) can perturb voltage-gated ion channels at lower external field strengths than required for larger organisms. LED-lit commercial greenhouses represent a concentrated IF exposure environment: high-density LED arrays with switch-mode drivers operating continuously, exposing pollinators throughout their foraging cycle. Mallinson et al. 2025 documented altered pollinator activity patterns in LED-lit greenhouse environments compared to conventional lighting.",
     insectNote: "These studies measured population-level outcomes, not individual IF-EMF exposure. The LED vs sodium difference is consistent with the IF hypothesis but does not exclude spectral or thermal explanations. Controlled IF-only exposure experiments have not been conducted on insects.",
 
     covidTitle: "COVID lockdown: an informative counter-result",
@@ -85,6 +93,13 @@ const COPY = {
     frogTitle: "Sammakot tutka-asemien lähellä: käänteinen signaali",
     frogText: "Nike-NAAMP-sammakkokyselydatan mukaan sammakoiden kutsuindeksit kehittyvät odottamattomasti PAREMMIN aktiivisten Nike-kohteiden lähellä (+0,040/vuosikymmen) kuin kauempana (+0,002/vuosikymmen, ero p = 0,045). Tämä on lintujen tuloksen vastakohta ja vaatii selityksen.",
     frogInterpretation: "Käänteinen tulos on johdonmukainen, kun lajikohtainen RF-vaimennus otetaan huomioon. Sammakot elävät vedessä ja kosteassa maaperässä — väliaineissa, jotka vaimentavat RF:ää voimakkaasti (veden suhteellinen permittiivisyys ε_r ≈ 80). Veden sammakko on käytännössä suojattu huippukenttäpulsseilta. Linnut ovat avoimessa ilmassa ilman vaimentavaa väliainetta — huippukenttä osuu niihin täydellä teholla. Lisäksi Nike-kohteiden suojavyöhykkeet tarjoavat sammakkoeläimille häiriöttömän kosteikkohabitaatin. Lintujen negatiivinen gradientti (p = 0,031) ja sammakoiden positiivinen gradientti (p = 0,045) ovat molemmat johdonmukaisia huippukenttämallin kanssa, kun habitaatin RF-vaimennus otetaan huomioon. Tämä ei vahvista EMF-hypoteesia — vesivaimennusselitys on fysikaalisesti motivoitu mutta ei mitattu tässä kontekstissa.",
+    frogAggregateTitle: "Sammakko-EMF kokonaistulos",
+    frogAggregate: [
+      "Nike-NAAMP käänteinen assosiaatio (p = 0,045) → vesivaimennus + habitaattisekoittaja",
+      "Trooppinen S-kaista BERM-epäjohdonmukainen (OR = 1,474, p = 0,016)",
+      "Australian aikajana epäjohdonmukainen JORN:lle",
+      "8,7× absorptiokerroin EI vahvistettu primäärilähteestä",
+    ],
 
     batTitle: "Lepakot: Nisäkkäiden kompassi häiriintyy",
     batP1: "Toukokuussa 2026 Oliver Lindecken johtama tutkimusryhmä julkaisi Sciencessa ensimmäisen kokeellisen osoituksen siitä, että radiotaajuinen sähkömagneettinen kohina häiritsee nisäkkään magneettikompassia. Muuttavia sopraanoyölepakoita (Pipistrellus pygmaeus) altistettiin heikkoille laajakaistaisille RF-kentille (0,01–300 MHz) — normaaleissa kaupunkiympäristöissä esiintyvillä tasoilla — vain 30 minuutin ajan auringonlaskun aikana. Kontrollilepakoiden suuntautuminen oli normaali. RF-altistetut lepakot lähtivät satunnaisiin suuntiin.",
@@ -97,6 +112,7 @@ const COPY = {
     insectTitle: "Hyönteiset: LED-valaistus ja populaatiolasku",
     insectP1: "Boyes ym. 2021 (Science Advances) havaitsivat, että yöperhosten toukkamäärä LED-katuvalaistuksen alla oli 52 % pienempi kuin läheisissä valaisemattomissa kohteissa — verrattuna 41 %:n vähenemiseen natriumvalaistuksen alla. Ero LED:n ja natriumin välillä on merkitsevä: natriumlamput ovat purkauslamppuja minimaalisella IF-emissiolla; LED-lamput sisältävät hakkuriteholähteitä, jotka tuottavat jatkuvaa 20–200 kHz kenttää.",
     insectP2: "Tutkimus attribuoi eron valospektriin (valkoinen vs keltainen), mutta BERM:n IF-kanava tarjoaa vaihtoehtoisen mekanismin: LED-ajurin IF-emissiot voivat suoraan vaikuttaa toukkien kehitykseen IFO-VGIC-häiriön kautta jänniteportetuissa ionikanavissa. Pawson & Bader 2014 havaitsivat LED-loukkujen pyydystäneen 48 % enemmän hyönteisiä kuin natriumlamput, vaikutuksen ollessa riippumaton värilämpötilasta — mikä viittaa näkyvän spektrin ulkopuoliseen mekanismiin.",
+    insectP3: "Hyönteiset voivat olla suhteettoman herkkiä IF-kaistan altistuksille geometrisista syistä. Clarke ym. 2013 osoittivat, että hyönteisten kehot toimivat tehokkaina sähkömagneettisina antenneina — niiden pienet mitat luovat korkeita sisäisiä kenttäkonsentraatioita suhteessa kehon massaan. IF-taajuuksilla (20–300 kHz) indusoitu sähkökenttägradientti hyönteisen kehon (1–50 mm) poikki voi häiritä jänniteporteisia ionikanavia alhaisemmilla ulkoisilla kenttävoimakkuuksilla kuin suuremmilla organismeilla. LED-valaistut kaupalliset kasvihuoneet ovat erityisen keskittynyt IF-altistusympäristö: korkeatiheyksisiä LED-valaisimia hakkuriteholähteineen jatkuvasti käynnissä, altistaen pölyttäjiä koko niiden keruukierron ajan. Mallinson ym. 2025 dokumentoivat pölyttäjien muuttuneen aktiivisuuskuvion LED-valaistuissa kasvihuoneympäristöissä verrattuna tavanomaiseen valaistukseen.",
     insectNote: "Nämä tutkimukset mittasivat populaatiotason tuloksia, eivät yksilötason IF-EMF-altistusta. LED:n ja natriumin välinen ero on yhteensopiva IF-hypoteesin kanssa mutta ei sulje pois spektraalisia tai termisiä selityksiä. Kontrolloituja pelkän IF:n altistuskokeita ei ole tehty hyönteisillä.",
 
     covidTitle: "COVID-lockdown: informatiivinen vastatulos",
@@ -160,10 +176,11 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Varroa cascade */}
+      <div id="pollination" />
       <VarroaCascade locale={activeLocale} />
 
       {/* Nike radar spatial gradient */}
-      <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+      <section id="birds" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
         <h2 className="editorial-section-heading mb-4">{d.nikeTitle}</h2>
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
           <p>{d.nikeText}</p>
@@ -178,16 +195,22 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Frog inverted signal */}
-      <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+      <section id="amphibians" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
         <h2 className="editorial-section-heading mb-4">{d.frogTitle}</h2>
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
           <p>{d.frogText}</p>
           <p className="text-xs leading-relaxed border-l-2 border-foreground-muted/20 pl-4">{d.frogInterpretation}</p>
+          <div className="mt-4 rounded-lg border border-card-border bg-card-bg p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-foreground-muted mb-2">{d.frogAggregateTitle}</p>
+            <ul className="text-xs text-foreground-muted space-y-1 list-disc list-inside">
+              {d.frogAggregate.map((item: string) => <li key={item}>{item}</li>)}
+            </ul>
+          </div>
         </div>
       </section>
 
       {/* Bats: Lindecke 2026 */}
-      <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+      <section id="bats" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
         <h2 className="editorial-section-heading mb-4">{d.batTitle}</h2>
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
           <p>{d.batP1}</p>
@@ -207,11 +230,12 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Insects: LED vs sodium */}
-      <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+      <section id="insects" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
         <h2 className="editorial-section-heading mb-4">{d.insectTitle}</h2>
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
           <p>{d.insectP1}</p>
           <p>{d.insectP2}</p>
+          <p>{d.insectP3}</p>
         </div>
         <div className="mt-4 rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
           <p className="text-xs text-foreground-muted leading-relaxed">{d.insectNote}</p>

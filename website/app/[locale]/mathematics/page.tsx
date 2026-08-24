@@ -76,6 +76,9 @@ const t = {
       "Environmental IF source characterization: a typical LED driver operates at switching frequency f_sw in the range 20–200 kHz with harmonic content at 2f_sw, 3f_sw, 5f_sw extending into the MHz range. The waveform is a square pulse train, not a sinusoid, which produces richer harmonic content than continuous-wave sources. Panagopoulos 2025 demonstrates that pulsed fields are biologically more active than continuous-wave fields at the same average intensity. Zeghoudi et al. 2025 directly measured LED driver near-field emissions, confirming measurable E-field components at centimeter distances.",
     s2bRF:
       "RF channel (f > ~1 MHz): membrane is transparent. Classical field–membrane interaction is weak. Quantum spin effects become relevant. Lindgren's covariant spin correction: B_local = (1/w)b + (A·b)A/(w(1+w)). Anisotropic response. Mechanisms: CRY/RPM→circadian disruption (pathway B), magnetic compass corruption (Lindecke 2026).",
+    s2bRegGapTitle: "The IF Regulatory Gap",
+    s2bRegGap:
+      "ICNIRP 2010 sets exposure limits for f < 300 Hz (ELF). ICNIRP 2020 sets limits for f > 100 kHz (RF). The range 300 Hz < f < 100 kHz has overlapping, inconsistent limits. LED driver emissions (20–300 kHz) fall in this gap. A 2022 systematic review (IJRB, Ohkubo & Okano) confirmed: 'studies on health effects with more diverse perspectives of IF-EMF have NOT been conducted.' Biological relevance at these frequencies is supported by: IFO threshold 10⁻⁵ V/m exceeded by LED drivers at 1 m; Kim 2026 gene expression activation at 4 kHz (Cyb5b); TTFields FDA-approved cancer treatment at 200 kHz; 150 kHz rat testicular effects (Heliyon 2022).",
     s2bAfter:
       "Channel weights (w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35) are DIAGNOSTIC and require empirical calibration. The three-channel decomposition is structurally derived from membrane biophysics; only the relative weights are uncertain.",
 
@@ -158,9 +161,9 @@ const t = {
     // S5 Behavioral
     s5Title: "Behavioral Factor",
     s5Intro:
-      "The endocrine vector (testosterone, oxytocin, dopamine, cortisol) as a geometric mean:",
+      "The endocrine vector (testosterone, oxytocin, dopamine, cortisol, vasopressin) as a geometric mean:",
     s5d1: "Each hormone declines exponentially:",
-    s5d2: "Geometric mean: (OT × T × DA × cort)^(1/4)",
+    s5d2: "Geometric mean: (OT × T × DA × cort × AVP)^(1/5)",
     s5d3:
       "Geometric > arithmetic because hormones are MULTIPLICATIVE: if any one is zero, the total effect is zero.",
     s5d4: "r₂ = 0.013 is calibrated from Travison’s −1%/year testosterone decline:",
@@ -451,6 +454,9 @@ const t = {
       "Ympäristön IF-lähteiden karakterisointi: tyypillinen LED-ajuri toimii kytkintaajuudella f_sw alueella 20–200 kHz harmonisella sisällöllä taajuuksilla 2f_sw, 3f_sw, 5f_sw megahertsialueelle asti. Aaltomuoto on suorakaideaalto, ei siniaalto, joka tuottaa rikkaampaa harmonista sisältöä kuin jatkuva-aaltolähteet. Panagopoulos 2025 osoittaa, että pulssitetut kentät ovat biologisesti aktiivisempia kuin jatkuva-aaltokentät samalla keskimääräisellä intensiteetillä. Zeghoudi ym. 2025 mittasi suoraan LED-ajurin lähikenttäemission vahvistaen mitattavat sähkökentän komponentit senttimetrien etäisyydellä.",
     s2bRF:
       "RF-kanava (f > ~1 MHz): kalvo on läpinäkyvä. Klassinen kenttä-kalvo-vuorovaikutus on heikko. Kvantti-spin-efektit tulevat relevantiksi. Lindgrenin kovariantti spin-korjaus: B_local = (1/w)b + (A·b)A/(w(1+w)). Anisotrooppinen vaste. Mekanismit: CRY/RPM→sirkadiaaninen häiriö (reitti B), magneettikompassin korruptoituminen (Lindecke 2026).",
+    s2bRegGapTitle: "IF-säätelyaukko",
+    s2bRegGap:
+      "ICNIRP 2010 asettaa altistusrajat taajuuksille f < 300 Hz (ELF). ICNIRP 2020 asettaa rajat taajuuksille f > 100 kHz (RF). Alue 300 Hz < f < 100 kHz:lla on päällekkäiset, epäjohdonmukaiset rajat. LED-ajuriemissiot (20–300 kHz) osuvat tähän aukkoon. Vuoden 2022 systemaattinen katsaus (IJRB, Ohkubo & Okano) vahvisti: 'IF-EMF:n terveysvaikutuksia EI ole tutkittu monipuolisemmista näkökulmista.' Biologinen relevanssi näillä taajuuksilla tuettu: IFO-kynnys 10⁻⁵ V/m ylittyy LED-ajurilla 1 m:ssä; Kim 2026 geeniekspression aktivointi 4 kHz:llä (Cyb5b); TTFields FDA-hyväksytty syöpähoito 200 kHz:llä; 150 kHz rottatutkimuksen kivesvaikutukset (Heliyon 2022).",
     s2bAfter:
       "Kanavapainot (w_ELF = 0,05, w_IF = 0,60, w_RF = 0,35) ovat DIAGNOSTISIA ja vaativat empiirisen kalibraation. Kolmikanavadekompositio on rakenteellisesti johdettu kalvobiofysiikasta; vain suhteelliset painot ovat epävarmoja.",
 
@@ -533,9 +539,9 @@ const t = {
     // S5 Behavioral
     s5Title: "Käyttäytymistekijä",
     s5Intro:
-      "Endokriininen vektori (testosteroni, oksitosiini, dopamiini, kortisoli) geometrisena keskiarvona:",
+      "Endokriininen vektori (testosteroni, oksitosiini, dopamiini, kortisoli, vasopressiini) geometrisena keskiarvona:",
     s5d1: "Jokainen hormoni laskee eksponentiaalisesti:",
-    s5d2: "Geometrinen keskiarvo: (OT × T × DA × cort)^(1/4)",
+    s5d2: "Geometrinen keskiarvo: (OT × T × DA × cort × AVP)^(1/5)",
     s5d3:
       "Geometrinen > aritmeettinen, koska hormonit ovat MULTIPLIKATIIVISIA: jos yksikin on nolla, kokonaisvaikutus on nolla.",
     s5d4: "r₂ = 0,013 on kalibroitu Travisonin −1 %/vuosi testosteronilaskusta:",
@@ -833,6 +839,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
     <div className="space-y-14">
           {/* S1 Lindgren geometry */}
           <section id="lindgren">
+            <span id="section-1" />
             <h2 className="text-lg font-semibold mb-1">
               <span className="text-foreground-muted text-sm mr-2">{"§1"}</span>
               {d.s1Title}
@@ -971,6 +978,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
 
           {/* S2b Three-Channel Derivation */}
           <section id="three-channel-derivation">
+            <span id="section-2b" />
             <h2 className="text-lg font-semibold mb-1">
               <span className="text-foreground-muted text-sm mr-2">{"§2b"}</span>
               {d.s2bTitle}
@@ -1020,6 +1028,11 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 </div>
               </div>
             </Derivation>
+
+            <div className="mt-6 rounded-lg border border-status-partial/30 bg-status-partial/5 p-4 max-w-3xl">
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-status-partial mb-2">{d.s2bRegGapTitle}</h4>
+              <p className="text-sm text-foreground-muted leading-relaxed">{d.s2bRegGap}</p>
+            </div>
 
             <p className="text-foreground-muted text-sm leading-relaxed mt-4">
               {d.s2bAfter}
@@ -1186,7 +1199,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
               {d.s5Intro}
             </p>
             <div className="text-center my-4">
-              <MathBlock tex="\text{behav} = \max\!\left(0.1,\;\left(\prod_{i=1}^{4} e^{-r_i \cdot \text{cumEMF}}\right)^{\!1/4}\right)" />
+              <MathBlock tex="\text{behav} = \max\!\left(0.1,\;\left(\prod_{i=1}^{5} e^{-r_i \cdot \text{cumEMF}}\right)^{\!1/5}\right)" />
             </div>
             <p className="text-foreground-muted text-sm leading-relaxed">
               {locale === "fi" ? "missä " : "where "}{" "}
@@ -1194,7 +1207,15 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <MathBlock tex="r_2 = 0.013" display={false} /> (T),{" "}
               <MathBlock tex="r_3 = 0.016" display={false} /> (DA),{" "}
               <MathBlock tex="r_4 = 0.008" display={false} />{" "}
-              ({locale === "fi" ? "kortisoli" : "cortisol"}).
+              ({locale === "fi" ? "kortisoli" : "cortisol"}),{" "}
+              <MathBlock tex="r_5 = 0.006" display={false} />{" "}
+              ({locale === "fi" ? "vasopressiini" : "vasopressin"}/AVP).
+            </p>
+            <p className="text-foreground-muted text-sm leading-relaxed mt-2">
+              {locale === "fi"
+                ? "Lisäksi kortisoli moduloi efektiivistä testosteronia:"
+                : "Additionally, cortisol modulates effective testosterone:"}{" "}
+              <MathBlock tex="T_{\text{eff}} = T \times (0.5 + 0.5 \times \text{cortisol\_factor})" display={false} />
             </p>
 
             <Derivation>
@@ -1221,6 +1242,12 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 <div>
                   <MathBlock
                     tex="\text{cort}(t) = e^{-0.008 \times \text{cumEMF}} \quad \text{— cortisol (inverse)}"
+                    display={false}
+                  />
+                </div>
+                <div>
+                  <MathBlock
+                    tex="\text{AVP}(t) = e^{-0.006 \times \text{cumEMF}} \quad \text{— vasopressin}"
                     display={false}
                   />
                 </div>

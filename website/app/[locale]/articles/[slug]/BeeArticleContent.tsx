@@ -135,7 +135,7 @@ export function BeeArticleContent({ locale }: { locale: Locale }) {
   return (
     <div className="article-body">
       {d.sections.map((section, si) => (
-        <section key={si} className="mb-10">
+        <section key={si} id={si === 1 ? "varroa" : undefined} className="mb-10">
           {si > 0 && (
             <div className="mb-10 flex justify-center">
               <span className="text-foreground-muted/30 text-lg tracking-[0.5em]">***</span>

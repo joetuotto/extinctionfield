@@ -49,7 +49,7 @@ const t: Record<Locale, Copy> = {
     subtitle:
       "Every identified negative finding, open problem and falsified earlier version — and what each one actually bears on.",
     introduction:
-      "BERM v19 treats openness as an epistemological principle. The classification below applies the BERM reasoning protocol (v1.0) to findings previously read as negative. Reclassification does not mean a finding supports BERM: it means the original test was not discriminating, or did not address the target it was taken to address. The primary branch (pathway C / RPM / cohort effect) remains empirically untested by discriminating tests.",
+      "BERM v17 treats openness as an epistemological principle. The classification below applies the BERM reasoning protocol (v1.0) to findings previously read as negative. Reclassification does not mean a finding supports BERM: it means the original test was not discriminating, or did not address the target it was taken to address. The primary branch (pathway C / RPM / cohort effect) remains empirically untested by discriminating tests.",
     summaryLabel: "REVIEW OF NEGATIVE FINDINGS",
     activeTitle: "Active problems (remain negative)",
     activeLead:
@@ -117,6 +117,7 @@ const t: Record<Locale, Copy> = {
           "TTFields uses dielectrophoresis (DEP) — a quadratic mechanism that requires field strengths of 100–300 V/m. Environmental IF exposure operates via a fundamentally different mechanism: Ion Forced Oscillation (IFO-VGIC), which is linear in field strength with a demonstrated threshold of 10⁻⁵ V/m (Panagopoulos 2025). Different mechanisms have different intensity requirements.",
           "Pulsed LED-driver fields are more biologically active per watt than TTFields' pure sine wave (Campisi 2010: amplitude-modulated 900 MHz produced more ROS and DNA fragmentation than continuous wave). LED drivers produce pulsed, harmonically rich waveforms with 50,000+ switching transitions per second — each transition a potential Ca²⁺ spike via VGCC gating asymmetry.",
           "The TTFields clinical program validates that IF frequencies disrupt cell division. It does not define the minimum intensity at which disruption begins — that question is answered by IFO biophysics, not by the DEP mechanism TTFields employs.",
+          "Critically, Neuhaus et al. (Nature 2020) showed that TTFields' frequency-dependence differs between cancer and normal cells: cancer cells are most affected at 150–200 kHz, while normal cell mitosis is disrupted at ~50 kHz. LED driver switching frequencies (20–100 kHz) span precisely this normal-cell sensitivity range — a coincidence that the intensity-only argument cannot address.",
         ],
         boundary: "This distinction is falsifiable: if IFO effects cannot be demonstrated below 1 V/m in controlled experiments, the environmental IF channel loses its primary mechanism.",
       },
@@ -236,6 +237,16 @@ const t: Record<Locale, Copy> = {
         ],
         boundary: "Lindgren's interpretation is theoretical and not yet independently validated. The empirical findings (Adey, Lai, Pall, Sousouri, Kim) stand independently of the theoretical framework.",
       },
+      {
+        question: "Blue light explains all LED health effects",
+        response: [
+          "Blue light does suppress melatonin — this is established. But it is not the whole story.",
+          "Duraccio et al. (2019) found that blue-light-filtering glasses did NOT significantly improve adolescent sleep quality. If blue light were the only mechanism, filtering it should work. It doesn't.",
+          "BERM proposes that LED lamps produce TWO biologically relevant outputs: blue light (optical, retinal) and IF emissions (electromagnetic, systemic). Blue-light filtering addresses the first but not the second.",
+          "This generates a testable prediction (SLEEP-1): a Faraday-shielded LED lamp that blocks IF emissions while preserving identical light spectrum should produce less biological disruption than an unshielded lamp. If shielding makes no difference, the IF channel hypothesis is weakened.",
+        ],
+        boundary: "The SLEEP-1 prediction is directly falsifiable. If Faraday-shielded LEDs produce the same sleep disruption as unshielded LEDs (identical spectrum), the IF pathway is not the primary mechanism.",
+      },
     ],
     closingTitle: "Constructive ways to test the programme",
     closingText:
@@ -246,7 +257,7 @@ const t: Record<Locale, Copy> = {
     subtitle:
       "Kaikki tunnistetut negatiiviset havainnot, avoimet ongelmat ja falsifioidut aiemmat versiot — sekä se, mitä kukin niistä todella koskee.",
     introduction:
-      "BERM v19 pitää avoimuutta epistemologisena periaatteena. Alla oleva luokittelu soveltaa BERM-päättelyprotokollaa (v1.0) aiemmin negatiivisiksi tulkittuihin havaintoihin. Uudelleenluokittelu ei tarkoita, että havainto tukisi BERM:ää — se tarkoittaa, ettei alkuperäinen testi ollut erotteleva tai kohdistui oikeaan kohteeseen. BERM:n primäärihaara (polku C / RPM / kohorttivaikutus) on edelleen empiirisesti testaamaton erottelevilla testeillä.",
+      "BERM v17 pitää avoimuutta epistemologisena periaatteena. Alla oleva luokittelu soveltaa BERM-päättelyprotokollaa (v1.0) aiemmin negatiivisiksi tulkittuihin havaintoihin. Uudelleenluokittelu ei tarkoita, että havainto tukisi BERM:ää — se tarkoittaa, ettei alkuperäinen testi ollut erotteleva tai kohdistui oikeaan kohteeseen. BERM:n primäärihaara (polku C / RPM / kohorttivaikutus) on edelleen empiirisesti testaamaton erottelevilla testeillä.",
     summaryLabel: "NEGATIIVISTEN HAVAINTOJEN UUDELLEENARVIOINTI",
     activeTitle: "Aktiiviset ongelmat (pysyvät negatiivisina)",
     activeLead:
@@ -314,6 +325,7 @@ const t: Record<Locale, Copy> = {
           "TTFields käyttää dielektroforeesia (DEP) — neliöllistä mekanismia, joka vaatii 100–300 V/m kenttävoimakkuuksia. Ympäristön IF-altistus toimii täysin eri mekanismilla: ionien pakotetulla oskillaatiolla (IFO-VGIC), joka on lineaarinen kenttävoimakkuuden suhteen ja jonka osoitettu kynnys on 10⁻⁵ V/m (Panagopoulos 2025). Eri mekanismeilla on eri intensiteettivaatimukset.",
           "Pulssimuotoiset LED-hakkurikentät ovat biologisesti aktiivisempia wattia kohti kuin TTFieldsin puhdas siniaalto (Campisi 2010: amplitudimoduloitu 900 MHz tuotti enemmän ROS:ia ja DNA-fragmentaatiota kuin jatkuva aalto). LED-hakkurit tuottavat pulssimuotoisia, harmonisesti rikkaita aaltomuotoja yli 50 000 kytkentäsiirtymällä sekunnissa — jokainen siirtymä potentiaalinen Ca²⁺-piikki VGCC-portituksen asymmetrian kautta.",
           "TTFields-kliininen ohjelma validoi, että IF-taajuudet häiritsevät solunjakautumista. Se ei määrittele minimiintensiteettiä jolla häiriö alkaa — siihen kysymykseen vastaa IFO-biofysiikka, ei TTFieldsin käyttämä DEP-mekanismi.",
+          "Kriittisesti, Neuhaus ym. (Nature 2020) osoittivat, että TTFieldsin taajuusriippuvuus eroaa syöpä- ja normaalien solujen välillä: syöpäsolut kärsivät eniten 150–200 kHz:llä, kun taas normaalien solujen mitoosi häiriintyy ~50 kHz:llä. LED-hakkurien kytkentätaajuudet (20–100 kHz) kattavat juuri tämän normaalien solujen herkkyystaajuusalueen — sattuma, jota pelkkä intensiteettiargumentti ei voi käsitellä.",
         ],
         boundary: "Tämä erottelu on falsifioitavissa: jos IFO-vaikutuksia ei voida osoittaa alle 1 V/m:n kontrolloiduissa kokeissa, ympäristön IF-kanava menettää ensisijaisen mekanisminsa.",
       },
@@ -432,6 +444,16 @@ const t: Record<Locale, Copy> = {
           "Puuttuva fysiikka on nyt saatavilla. Lindgrenin χ(Ā) osoittaa, että ionikanavan jännitesensorit toimivat kvanttirajan herkkyydellä solukalvon 10⁷ V/m kentässä — aivan kuten fotoreseptorit havaitsevat yksittäisiä fotoneja. Relevantti kysymys ei ole 'onko ulkoinen kenttä tarpeeksi vahva?' vaan 'onko biologinen sensori tarpeeksi herkkä?' Vastaus 3 miljardin vuoden evoluutiosta on kyllä.",
         ],
         boundary: "Lindgrenin tulkinta on teoreettinen eikä sitä ole vielä riippumattomasti validoitu. Empiiriset havainnot (Adey, Lai, Pall, Sousouri, Kim) ovat olemassa riippumatta teoreettisesta kehyksestä.",
+      },
+      {
+        question: "Sininen valo selittää kaikki LED:n terveysvaikutukset",
+        response: [
+          "Sininen valo suppressoi melatoniinia — tämä on vakiintunutta. Mutta se ei ole koko kuva.",
+          "Duraccio ym. (2019) havaitsi, että sinisen valon suodatuslasit EIVÄT merkitsevästi parantaneet nuorten unenlaatua. Jos sininen valo olisi ainoa mekanismi, sen suodattamisen pitäisi toimia. Ei toimi.",
+          "BERM ehdottaa, että LED-lamput tuottavat KAKSI biologisesti relevanttia ulostuloa: sininen valo (optinen, retinaalinen) ja IF-emissiot (sähkömagneettinen, systeeminen). Sinisen valon suodatus kohdistuu ensimmäiseen mutta ei toiseen.",
+          "Tämä tuottaa testattavan ennusteen (SLEEP-1): Faraday-suojattu LED-lamppu joka estää IF-emissiot mutta säilyttää identtisen valospektrin tuottaisi vähemmän biologista häiriötä kuin suojaamaton lamppu. Jos suojauksella ei ole vaikutusta, IF-kanavahypoteesi heikkenee.",
+        ],
+        boundary: "SLEEP-1-ennuste on suoraan falsifioitavissa. Jos Faraday-suojatut LED:t tuottavat saman unihäiriön kuin suojaamattomat (identtinen spektri), IF-polku ei ole ensisijainen mekanismi.",
       },
     ],
     closingTitle: "Rakentavia tapoja testata tutkimusohjelmaa",
@@ -578,7 +600,7 @@ export default async function ObjectionsPage({
         <h2 className="editorial-section-heading border-t editorial-rule pt-6">{d.questionsTitle}</h2>
 
         {d.objections.map((objection, index) => (
-          <section key={objection.question} className="rounded-xl border border-card-border bg-card-bg p-5">
+          <section key={objection.question} id={objection.question === "There is no dose-response relationship" || objection.question === "Annos-vastetta ei ole" ? "dose-response" : undefined} className="rounded-xl border border-card-border bg-card-bg p-5">
             <p className="font-mono-num text-xs text-accent">0{index + 1}</p>
             <h2 className="mt-2 text-lg font-semibold">{objection.question}</h2>
             <div className="mt-3 space-y-3 text-sm leading-relaxed text-foreground-muted">
