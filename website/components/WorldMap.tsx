@@ -82,6 +82,17 @@ function getISO3(feature: Feature<Geometry, GeoProperties>): string {
   return p.ISO_A3_EH || "";
 }
 
+const LOW_EMF_MARKERS = [
+  { name: "Tsimane", lat: -14.8, lon: -65.5, detail: "TFR ~9 · Lowest CVD recorded · Dementia 1.2%" },
+  { name: "Hadza", lat: -3.8, lon: 35.0, detail: "TFR 6-7 · Obesity <5% · T2D 0-2%" },
+  { name: "Kitava", lat: -8.5, lon: 151.1, detail: "CVD absent · T2D absent · High-carb diet" },
+  { name: "Aché", lat: -24.0, lon: -56.0, detail: "TFR ~8 · Low obesity" },
+  { name: "San", lat: -22.0, lon: 21.0, detail: "TFR 4-5 · Low CVD · Low T2D" },
+  { name: "Shuar", lat: -2.5, lon: -77.5, detail: "TFR ~5 · Low obesity" },
+  { name: "Amish (OH)", lat: 40.5, lon: -81.1, detail: "TFR 6.1 · Cancer 60% of US · Depression <1%" },
+  { name: "Mosetén", lat: -15.4, lon: -67.5, detail: "Intermediate — Tsimane-Modern gradient" },
+];
+
 export function WorldMap({ locale }: { locale: string }) {
   const displayNames = useMemo(() => {
     try {
@@ -203,6 +214,48 @@ export function WorldMap({ locale }: { locale: string }) {
       .on("click", function (_event, d) {
         setSelectedISO3(getISO3(d));
       });
+
+    // ── Low-EMF community markers ──
+    svg.select(".markers").remove();
+    const markers = svg.append("g").attr("class", "markers");
+
+    LOW_EMF_MARKERS.forEach((m) => {
+      const coords = projection([m.lon, m.lat]);
+      if (!coords) return;
+
+      markers
+        .append("circle")
+        .attr("cx", coords[0])
+        .attr("cy", coords[1])
+        .attr("r", 4)
+        .attr("fill", "#f59e0b")
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 1.5)
+        .style("cursor", "pointer")
+        .on("mouseenter", function (event) {
+          d3.select(this).attr("r", 6);
+          const tooltip = tooltipRef.current;
+          if (tooltip) {
+            tooltip.innerHTML = `<strong>${m.name}</strong><br/>${m.detail}`;
+            tooltip.style.display = "block";
+            const rect = svgRef.current!.getBoundingClientRect();
+            tooltip.style.left = `${event.clientX - rect.left + 12}px`;
+            tooltip.style.top = `${event.clientY - rect.top - 10}px`;
+          }
+        })
+        .on("mousemove", function (event) {
+          const tooltip = tooltipRef.current;
+          if (tooltip) {
+            const rect = svgRef.current!.getBoundingClientRect();
+            tooltip.style.left = `${event.clientX - rect.left + 12}px`;
+            tooltip.style.top = `${event.clientY - rect.top - 10}px`;
+          }
+        })
+        .on("mouseleave", function () {
+          d3.select(this).attr("r", 4);
+          if (tooltipRef.current) tooltipRef.current.style.display = "none";
+        });
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [geoData, mapData]);
 

@@ -11,6 +11,7 @@ export function ExplorerDashboard({ locale = "en" }: { locale?: string }) {
           ["Teknologian ajoitus", "Mobiililiittymät kuvaavat käyttöönoton ajoitusta. Ne eivät ole paikallinen RF-mittaus, elinkohtainen siirto tai annos."],
           ["V2-maa-arvio", "Se edellyttää dokumentoitua FieldStatea, elin- ja paritason päätepisteitä sekä ASFR-kalibrointia samalla aika–paikka-akselilla."],
           ["Poikkileikkausennuste v17.1", "TFR ≈ 4,11 × exp(−54,0 × EMF_eff) + 1,55. EMF_eff yhdistää asumisen sähkönkulutuksen (ELF) ja laajakaistan (RF) sähkön saatavuudella korjattuna. LOOCV RMSE 0,522."],
+          ["χ-profiilit", "Populaation χ-profiili yhdistää ympäristön (χ_env), optisen (χ_optical) ja molekulaarisen (χ_molecular) kytkennän. Korkeat biologiset χ-arvot (sinisilmäiset, laktoosinsietokykyiset populaatiot) vahvistavat EMF-vastetta, matalat (ruskeasilmäiset, laktoosi-intolerantit) vaimentavat."],
         ],
       }
     : {
@@ -21,6 +22,7 @@ export function ExplorerDashboard({ locale = "en" }: { locale?: string }) {
           ["Technology timing", "Mobile subscriptions describe adoption timing. They are not a local RF measurement, organ transfer or dose."],
           ["A v2 country estimate", "It requires documented FieldState, organ and couple endpoints, and ASFR calibration on the same time–place axis."],
           ["Cross-sectional prediction v17.1", "TFR ≈ 4.11 × exp(−54.0 × EMF_eff) + 1.55. EMF_eff combines residential electricity (ELF) and broadband (RF), adjusted by electricity access. LOOCV RMSE 0.522."],
+          ["χ profiles", "A population's χ profile combines environmental (χ_env), optical (χ_optical), and molecular (χ_molecular) coupling. High biological χ values (blue-eyed, lactose-tolerant populations) amplify EMF response; low values (brown-eyed, lactose-intolerant) dampen it."],
         ],
       };
 

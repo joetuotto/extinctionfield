@@ -247,6 +247,24 @@ const t: Record<Locale, Copy> = {
         ],
         boundary: "The SLEEP-1 prediction is directly falsifiable. If Faraday-shielded LEDs produce the same sleep disruption as unshielded LEDs (identical spectrum), the IF pathway is not the primary mechanism.",
       },
+      {
+        question: "Why does pathway C get 25% when it was originally 15%?",
+        response: [
+          "Pathway C was originally assigned 15% based on its known role as a circadian clock modulator. In 2025, Yap and colleagues discovered that CRY2 — the main protein of pathway C — also physically interacts with TRPC1, a cation channel, and modulates calcium signaling through a mechanism that requires both light and FAD. This means pathway C encompasses TWO downstream effects: circadian clock disruption AND CRY2-dependent calcium signaling. The increased weight (25%) reflects this expanded biological footprint.",
+          "Importantly, TRPC1 is a TRP channel, not a voltage-gated calcium channel (VGCC). Pathway A operates through VGCCs and is blocked by nifedipine. Pathway C's TRPC1 branch is NOT blocked by nifedipine. The two pathways remain pharmacologically distinct — they share the same upstream stimulus (EMF) while acting through completely different channel families.",
+          "The prediction TRPC1-1 tests this directly: EMF exposure of reproductive cells with nifedipine (blocks A), anti-TRPC1 (blocks C-calcium), or both should reveal the relative contributions of each pathway.",
+        ],
+        boundary: "The weight adjustment is based on one study (Yap 2025) in myoblasts. Confirmation in gonadal cells (Sertoli, granulosa) is required before the weight can be considered empirically validated.",
+      },
+      {
+        question: "If EMF effects are real, why do labs get contradictory results?",
+        response: [
+          "Because the biological response depends on five variables that are not standardized across laboratories: (1) Tissue temperature — Blackman 1991 showed that 1°C changes the result from positive to null to negative; (2) Lighting spectrum — CRY's radical pair mechanism is light-dependent; (3) Geomagnetic field orientation — Blackman 1990 showed DC-AC angle is critical; (4) Geomagnetic field intensity — varies with latitude; (5) Developmental exposure history — Blackman 1985 showed frequency imprinting.",
+          "When Blackman controlled these variables, his results were consistent across hundreds of experiments over six years. When other labs did not control them — because no one had yet identified them as critical — results varied.",
+          "This is analogous to early drug trials before dose standardization: different labs gave different doses and got different results. The solution was not to conclude drugs don't work — it was to standardize dosing. EMF biology needs the same standardization.",
+        ],
+        boundary: "Blackman's individual findings are experimental (E-level). Their synthesis into a unified five-confound framework is BERM's contribution (M-level).",
+      },
     ],
     closingTitle: "Constructive ways to test the programme",
     closingText:
@@ -454,6 +472,24 @@ const t: Record<Locale, Copy> = {
           "Tämä tuottaa testattavan ennusteen (SLEEP-1): Faraday-suojattu LED-lamppu joka estää IF-emissiot mutta säilyttää identtisen valospektrin tuottaisi vähemmän biologista häiriötä kuin suojaamaton lamppu. Jos suojauksella ei ole vaikutusta, IF-kanavahypoteesi heikkenee.",
         ],
         boundary: "SLEEP-1-ennuste on suoraan falsifioitavissa. Jos Faraday-suojatut LED:t tuottavat saman unihäiriön kuin suojaamattomat (identtinen spektri), IF-polku ei ole ensisijainen mekanismi.",
+      },
+      {
+        question: "Miksi polku C saa 25 % kun se oli alun perin 15 %?",
+        response: [
+          "Polku C sai alun perin 15 % perustuen tunnettuun rooliinsa sirkadiaanisen kellon modulaattorina. Vuonna 2025 Yap ja kollegat löysivät, että CRY2 — polku C:n pääproteiini — on myös fysikaalisessa vuorovaikutuksessa TRPC1:n, kationikanavan, kanssa ja moduloi kalsiumsignalointia mekanismilla joka vaatii sekä valon että FAD:n. Tämä tarkoittaa, että polku C kattaa KAKSI alaspäin suuntautuvaa vaikutusta: sirkadiaanisen kellon häiriön JA CRY2-riippuvaisen kalsiumsignaloinnin. Korotettu paino (25 %) heijastaa tätä laajennettua biologista vaikutuskenttää.",
+          "TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polku A toimii VGCC:iden kautta ja nifedipiini estää sen. Polku C:n TRPC1-haara EI ole nifedipiinin estämä. Kaksi polkua pysyy farmakologisesti erillisinä — ne jakavat saman ylävirtastimulaation (EMF) mutta toimivat täysin eri kanavaperheiden kautta.",
+          "Ennuste TRPC1-1 testaa tämän suoraan: EMF-altistus reproduktiosoluille nifedipiinin (estää A:n), anti-TRPC1:n (estää C-kalsiumin) tai molempien kanssa paljastaa kunkin polun suhteellisen kontribuution.",
+        ],
+        boundary: "Painon muutos perustuu yhteen tutkimukseen (Yap 2025) myoblasteissa. Vahvistus gonadikudoksessa (Sertoli, granuloosa) vaaditaan ennen kuin painoa voidaan pitää empiirisesti validoituna.",
+      },
+      {
+        question: "Jos EMF-vaikutukset ovat todellisia, miksi laboratoriot saavat ristiriitaisia tuloksia?",
+        response: [
+          "Koska biologinen vaste riippuu viidestä muuttujasta, joita ei ole standardoitu laboratorioiden välillä: (1) Kudoslämpötila — Blackman 1991 osoitti, että 1 °C muuttaa tuloksen positiivisesta nollaan ja negatiiviseen; (2) Valaistusspektri — CRY:n radikaalipari-mekanismi on valoriippuvainen; (3) Geomagneettisen kentän orientaatio — Blackman 1990 osoitti, että DC-AC-kulma on kriittinen; (4) Geomagneettisen kentän intensiteetti — vaihtelee leveysasteen mukaan; (5) Kehityksenaikainen altistushistoria — Blackman 1985 osoitti taajuusleimaantumisen.",
+          "Kun Blackman kontrolloi näitä muuttujia, hänen tuloksensa olivat johdonmukaisia satojen kokeiden yli kuuden vuoden aikana. Kun muut laboratoriot eivät kontrolloineet niitä — koska kukaan ei ollut vielä tunnistanut niitä kriittisiksi — tulokset vaihtelivat.",
+          "Tämä on analoginen varhaisten lääketutkimusten kanssa ennen annostuksen standardointia: eri laboratoriot antoivat eri annoksia ja saivat eri tuloksia. Ratkaisu ei ollut päätellä, etteivät lääkkeet toimi — vaan standardoida annostus. EMF-biologia tarvitsee saman standardoinnin.",
+        ],
+        boundary: "Blackmanin yksittäiset löydökset ovat kokeellisia (E-taso). Niiden synteesi yhtenäiseksi viiden sekoittajan viitekehykseksi on BERM:n kontribuutio (M-taso).",
       },
     ],
     closingTitle: "Rakentavia tapoja testata tutkimusohjelmaa",

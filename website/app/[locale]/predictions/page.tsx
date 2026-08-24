@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Target, BookOpen } from "lucide-react";
+import { Target, BookOpen, FlaskConical } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
 import { LOCKED_PREDICTIONS, metricLabel, countryLabel } from "@/lib/predictions";
 import { PredictionStatusBadge } from "@/components/PredictionStatusBadge";
 import { PredictionTrack } from "@/components/PredictionTrack";
 import { FeedbackLoop } from "@/components/FeedbackLoop";
+import { EVOLUTION_PREDICTIONS } from "@/lib/evolutionData";
+import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
+import type { EpistemicLevel } from "@/lib/types";
 
 const COPY = {
   en: {
@@ -19,6 +22,8 @@ const COPY = {
     v2Title: "BERM v17 forecast status",
     v2Status: "No country-level FieldState-calibrated forecasts are published. The current route requires matched local FieldState, registered organ and couple endpoints, ASFR modelling and external temporal validation before a forecast can be locked.",
     v2Note: "When FieldState-calibrated predictions are ready, they will be published alongside these scalar-proxy predictions for comparison.",
+    histTitle: "Historical / evolutionary predictions",
+    histLead: "Predictions derived from the nested χ model and the Northern Package hypothesis. These test whether population-specific biological χ profiles modulate the EMF-fertility relationship.",
     r43Title: "R43: Protocol-envelope resonance",
     r43Text: "Zandieh et al. (2025) reports frequency-dependent mitochondrial/ROS observations in ELF cancer-cell experiments (0.01–5 Hz; up to 100 mT). This supports an exploratory measured-PSD protocol for testing whether network-layer envelope modulation produces a cellular response. It does not establish RF network-envelope effects, eDRX causality or a reproductive/TFR parameter.",
     country: "Country",
@@ -81,6 +86,41 @@ const COPY = {
         description: "Low-level laser therapy (620–1100 nm) applied to testes in a controlled animal study will improve spermatogenesis markers (motility, concentration, morphology) via mitochondrial cytochrome c oxidase activation — the same chromophore mechanism as FDA-approved photobiomodulation devices. If LLLT (optical EM) improves fertility via CCO, and RF (lower EM) disrupts fertility via CRY, the chromophore generalization predicts that both optical and RF frequencies modulate reproductive biology through frequency-specific chromophore targets.",
         timeline: "Testable in 3–6 months (animal study)",
         falsification: "No improvement in any spermatogenesis marker, or improvement is thermal in nature",
+      },
+      {
+        id: "NEURO-1",
+        title: "CACNA1C carriers show stronger EMF-ASD association",
+        description: "In a genotyped birth cohort with documented prenatal EMF exposure: stratify ASD/ADHD diagnosis rates by CACNA1C rs1006737 genotype AND maternal EMF exposure level. Prediction: significant GxE interaction where risk allele + high EMF produces synergistic elevation in ASD/ADHD rates beyond additive effects.",
+        timeline: "Requires large genotyped cohort (thousands)",
+        falsification: "No GxE interaction at CACNA1C locus",
+      },
+      {
+        id: "NEURO-2",
+        title: "Lithium attenuates EMF-induced neuronal oscillation disruption",
+        description: "Expose hiPSC-derived neuronal cultures to EMF and measure network oscillation patterns (MEA). Then add lithium. Prediction: lithium restores oscillation regularity because it dampens Ca²⁺ oscillations via IMPA1/inositol pathway — the same mechanism that makes it effective in bipolar disorder.",
+        timeline: "Testable in 3–6 months (in vitro)",
+        falsification: "Lithium does not restore oscillation regularity after EMF exposure",
+      },
+      {
+        id: "EPI-1",
+        title: "EMF-exposed fathers: offspring sperm methylation changes",
+        description: "Expose male mice to chronic RF-EMF. Mate with unexposed females. Analyze F1 male offspring sperm for DNA methylation patterns. Prediction: specific DMRs overlap with those in human radar study (Research Square 2025). If DMRs include CACNA1C or other VGCC genes, this closes the epigenetic feedback loop.",
+        timeline: "Testable in 6–12 months (animal study)",
+        falsification: "No DMR overlap with radar study, or no VGCC-gene DMRs in F1",
+      },
+      {
+        id: "EPI-2",
+        title: "Non-monotonic methylation response to EMF",
+        description: "Replicate the GC-2 study across a wider intensity range (0.1, 0.5, 1, 2, 3, 5 mT). Prediction: methylation changes show non-monotonic dose-response with at least one sign reversal, paralleling Blackman’s Ca²⁺ window. If confirmed, Lindgren’s window dynamics operate at the epigenetic level.",
+        timeline: "Testable in 3–6 months (in vitro)",
+        falsification: "Monotonic dose-response with no sign reversal",
+      },
+      {
+        id: "SCHWAN-1",
+        title: "GSM produces larger sperm effects than LTE at equivalent SAR",
+        description: "Expose matched sperm samples to: (1) GSM-modulated 900 MHz (217 Hz TDMA), (2) LTE-modulated 900 MHz (OFDM), (3) CW 900 MHz, all at identical time-averaged SAR. Measure motility, ROS, DNA fragmentation. Prediction: GSM > LTE > CW because GSM’s hard pulse produces the strongest ELF membrane component. Directly tests Schwan + T-type bifurcation mechanism.",
+        timeline: "Testable in 1–3 months (in vitro)",
+        falsification: "No difference between modulation types at equal SAR, or CW > modulated",
       },
     ],
     modulomeTimeline: "Timeline",
@@ -292,6 +332,381 @@ const COPY = {
     cascadeLocked: "Locked: 2026-08-22",
     cascadeStatus: "LOCKED — awaiting test",
     cascadeLink: "See the cascade visualization",
+    nutritionalTitle: "Nutritional CRY modulation predictions",
+    nutritionalLead: "Predictions derived from the CRY dual-system model and its nutritional modulators (FAD/B2, omega fatty acids, AMPK fasting dynamics). These test whether pathway C effectiveness is modifiable by nutritional intervention.",
+    nutritionalPredictions: [
+      {
+        id: "NUT-1",
+        title: "B2 supplementation improves circadian resilience to nighttime EMF",
+        description: "RCT: B2 supplementation (25mg/day x 8 weeks) vs placebo in subjects with poor sleep quality and high nighttime phone use. Primary endpoint: melatonin onset latency. Secondary: sleep efficiency, cortisol awakening response. B2 group should show less circadian disruption because FAD-replete CRY is more stable against EMF perturbation. Mechanistic basis: Hirano 2017 (FAD -> CRY stability), Yap 2025 (FAD -> magnetic sensitivity).",
+        timeline: "Testable within 3-6 months (RCT, N=60)",
+        falsification: "No difference in melatonin onset latency or sleep metrics between B2 and placebo groups",
+      },
+      {
+        id: "NUT-2",
+        title: "B2 deficiency x EMF interaction in 54-country regression",
+        description: "Add population-level B2 adequacy as a control variable to the 54-country EMF-TFR regression model. Prediction: the interaction term (EMF x B2_deficiency) is significant and negative — countries with BOTH high EMF AND high B2 deficiency show steeper TFR decline than countries with high EMF alone. China (>90% B2 deficiency, highest EMF, lowest TFR) vs. Finland (~15% B2 deficiency, high EMF, higher TFR) is the key contrast. CAUTION: This is ecological evidence — correlation, not causation.",
+        timeline: "Testable immediately (existing data + B2 surveys from ~30 countries)",
+        falsification: "No significant EMF x B2 interaction term, or interaction is positive",
+      },
+      {
+        id: "NUT-3",
+        title: "Fasting duration predicts magnetoreceptive sensitivity (inverted U)",
+        description: "Replicate Chae 2019 food orientation paradigm with graded fasting durations (4h, 8h, 12h, 16h, 24h). Prediction: inverted U-shaped dose-response — sensitivity peaks at 12-16h (optimal CRY turnover with adequate FAD) and declines at 24h+ (FAD pool depletion begins). Additional arm: B2-supplemented (25mg pre-fast) vs. unsupplemented subjects. B2 supplementation should right-shift the peak (allowing longer fasting before decline). The fasting paradox resolution (Lamia 2009 AMPK-CRY + beta-oxidation FAD) predicts this specific shape.",
+        timeline: "Testable within 2-4 months (behavioral, N=40 per duration)",
+        falsification: "Monotonic increase (no decline at 24h), or no fasting effect, or B2 does not shift the peak",
+      },
+    ],
+    nutritionalTimeline: "Timeline",
+    nutritionalFalsification: "Falsification criterion",
+    nutritionalLocked: "Locked: 2026-08-24",
+    nutritionalStatus: "LOCKED — awaiting test",
+    trpc1Title: "Pharmacological pathway separation predictions",
+    trpc1Lead: "Predictions testing the independence of pathway A (VGCC) and pathway C's TRPC1 calcium branch. The CRY2-TRPC1 complex (Yap et al. 2025) predicts that EMF reproductive effects can be pharmacologically decomposed into VGCC-dependent and TRPC1-dependent components.",
+    trpc1Predictions: [
+      {
+        id: "TRPC1-1",
+        title: "CRY2-TRPC1 calcium entry contributes to EMF reproductive effects independently of VGCCs",
+        description: "Expose reproductive cells (e.g. granulosa cells, Sertoli cells) to EMF under four conditions: (1) Control (no blockers); (2) + Nifedipine (blocks VGCCs, pathway A) — isolates C's contribution; (3) + Anti-TRPC1 antibody (blocks TRPC1) — isolates A's contribution; (4) + Both blockers — residual effect = non-Ca²⁺ pathways (B, D). Prediction: nifedipine reduces but does NOT eliminate EMF response. The remaining response is CRY2-TRPC1-mediated (pathway C's calcium branch). Anti-TRPC1 also reduces but does not eliminate the response. Both blockers together produce near-complete abolition of the Ca²⁺ response. This experiment directly quantifies the relative contributions of pathways A (VGCC) and C-calcium (TRPC1) to EMF reproductive effects.",
+        timeline: "Testable within 6-12 months (in vitro, cell lines available)",
+        falsification: "Nifedipine alone abolishes all EMF-induced calcium effects (no TRPC1-independent component), or anti-TRPC1 has no effect (TRPC1 not involved in reproductive cells)",
+      },
+    ],
+    trpc1Timeline: "Timeline",
+    trpc1Falsification: "Falsification criterion",
+    trpc1Locked: "Locked: 2026-08-24",
+    trpc1Status: "LOCKED — awaiting test",
+    modIntTitle: "Modulome integration predictions",
+    modIntLead: "Predictions derived from the modulome integration — pituitary hub, mitochondrial ROS amplification, redox buffering, autonomic HRV, placental barriers, and thyroid-EMF interactions. These test whether newly identified EMF target tissues and mechanisms produce the predicted downstream effects.",
+    modIntPredictions: [
+      {
+        id: "MOD-1",
+        title: "Pituitary gonadotroph T-type channels mediate EMF-induced FSH/LH disruption",
+        description: "Pituitary gonadotrophs express Cav3 T-type channels for hormone secretion. EMF perturbation of these channels reduces FSH/LH pulsatility independently of hypothalamic GnRH. Test: expose pituitary cell cultures to standardized EMF with and without T-type channel blocker (ethosuximide). Prediction: EMF reduces FSH/LH secretion; ethosuximide abolishes the effect.",
+        type: "experimental",
+        discriminating: true,
+        timeline: "Testable within 6 months (pituitary cell culture)",
+        falsification: "No EMF effect on pituitary FSH/LH secretion, or ethosuximide does not block the effect",
+      },
+      {
+        id: "MOD-2",
+        title: "Mitochondrial age amplifies EMF-induced ROS in reproductive tissue",
+        description: "Aged mitochondria produce more ROS per unit Ca2+ influx than young mitochondria. Test: expose testicular tissue from young (3-month) and old (18-month) rats to identical EMF. Measure mitochondrial ROS production. Prediction: old tissue produces disproportionately more ROS per unit EMF exposure, following the v18_mitochondrial_ros_amplifier() function.",
+        type: "experimental",
+        discriminating: true,
+        timeline: "Testable within 6 months (animal tissue, standard ROS assay)",
+        falsification: "Old and young tissue produce equal ROS per unit EMF, or young tissue produces more",
+      },
+      {
+        id: "MOD-3",
+        title: "B2 supplementation restores glutathione defense AND reduces CRY sensitivity",
+        description: "Riboflavin (B2) is the precursor for FAD, which is required by both glutathione reductase (GR, redox defense) and cryptochrome (CRY, EMF sensor). B2 supplementation should simultaneously: (a) increase effective glutathione buffering capacity (via GR), and (b) stabilize CRY against EMF perturbation (via FAD loading). Test: B2-supplemented vs. unsupplemented cell cultures under EMF. Measure both GSH/GSSG ratio and CRY-dependent circadian gene expression.",
+        type: "experimental",
+        discriminating: true,
+        timeline: "Testable within 3-6 months (cell culture, dual endpoint)",
+        falsification: "B2 affects only one endpoint (GR or CRY) but not both, or no effect on either",
+      },
+      {
+        id: "MOD-4",
+        title: "HRV is a sensitive early biomarker of chronic EMF exposure",
+        description: "Heart rate variability (HRV), specifically the high-frequency (HF) component reflecting vagal tone, decreases with chronic EMF exposure before clinical symptoms appear. The SA node's Cav3.1 T-type channels are the transducer. Test: correlate personal RF dosimetry with 24-hour HRV monitoring in a cohort (N=200). Prediction: inverse dose-response between cumulative EMF and HF-HRV, independent of age, fitness, and stress.",
+        type: "observational",
+        discriminating: true,
+        timeline: "Testable immediately (wearable HRV + RF dosimetry)",
+        falsification: "No correlation between personal EMF exposure and HRV after controlling for confounders",
+      },
+      {
+        id: "MOD-5",
+        title: "Placental TJ proteins decrease with gestational EMF exposure",
+        description: "The placental barrier uses the same tight junction (TJ) proteins as BBB and BTB (occludin, ZO-1, claudins). EMF exposure during pregnancy should decrease placental TJ protein expression in a dose-dependent manner. Test: measure placental TJ protein levels in women with high vs. low EMF exposure during pregnancy (personal dosimetry). Prediction: higher EMF exposure correlates with lower occludin and ZO-1 expression.",
+        type: "experimental",
+        discriminating: true,
+        timeline: "Testable within 12 months (birth cohort with dosimetry)",
+        falsification: "No correlation between gestational EMF and placental TJ protein expression",
+      },
+      {
+        id: "MOD-6",
+        title: "Thyroid dysfunction prevalence correlates with mobile phone adoption rate nationally",
+        description: "Thyroid cells express VGCCs and are sensitive to EMF-induced Ca2+ disruption. National thyroid dysfunction prevalence (hypothyroidism, elevated TSH) should correlate with mobile phone adoption rate, controlling for iodine status, age structure, and diagnostic practices. This is an ecological prediction — correlation, not causation.",
+        type: "ecological",
+        discriminating: false,
+        timeline: "Testable immediately (existing health registry + ITU data)",
+        falsification: "No correlation between mobile adoption rate and thyroid dysfunction prevalence after controlling for iodine status and demographics",
+      },
+    ],
+    modIntTimeline: "Timeline",
+    modIntFalsification: "Falsification criterion",
+    modIntType: "Type",
+    modIntDiscriminating: "Discriminating",
+    modIntLocked: "Locked: 2026-08-24",
+    modIntStatus: "LOCKED — awaiting test",
+    ttypeTitle: "T-Type Channel Predictions",
+    ttypeLead: "Testable predictions from the T-type calcium channel bifurcation mechanism.",
+    ttypePredictions: [
+      {
+        id: "TTYPE-1",
+        title: "EMF effects on testosterone are mediated primarily by T-type, not L-type channels",
+        description: "Expose Leydig cell cultures to standardized EMF (ELF-modulated RF). Measure testosterone under three conditions: (1) Control, (2) + nifedipine (L-type blocker) isolates T-type contribution, (3) + ethosuximide (T-type blocker) isolates L-type contribution. Prediction: ethosuximide abolishes MORE of the EMF effect than nifedipine.",
+        timeline: "Testable within 3–6 months (in vitro, Leydig cell culture)",
+        falsification: "Nifedipine alone abolishes all EMF-induced testosterone change (no T-type contribution), or ethosuximide blocks less of the EMF effect than nifedipine",
+      },
+      {
+        id: "TTYPE-2",
+        title: "Modulated signals produce larger T-type effects than continuous wave at same SAR",
+        description: "Expose Leydig cells to: (1) CW at 900 MHz, (2) same carrier amplitude-modulated at 16 Hz (Adey frequency), (3) same carrier modulated at 217 Hz (GSM). Same time-averaged SAR. Prediction: modulated signals produce LARGER effects because the ELF modulation envelope passes through membrane capacitance while the carrier does not.",
+        timeline: "Testable within 3–6 months (in vitro, Leydig cell culture)",
+        falsification: "CW and modulated signals produce equal testosterone effects at the same time-averaged SAR, or CW produces larger effects",
+      },
+    ],
+    ttypeTimeline: "Timeline",
+    ttypeFalsification: "Falsification criterion",
+    ttypeLocked: "Locked: 2026-08-24",
+    ttypeStatus: "LOCKED — awaiting test",
+    repTitle: "Replication Crisis Resolution Predictions",
+    repLead: "Testable predictions derived from the Five Confound Framework.",
+    repPredictions: [
+      {
+        id: "REP-1",
+        title: "Controlling all five parameters yields consistent EMF calcium efflux results",
+        description: "Replicate Blackman's calcium efflux experiment with ALL five parameters controlled: (1) temperature 36.5±0.3°C stable, (2) blue-rich lighting documented, (3) DC field measured and oriented, (4) Faraday-shielded controls, (5) tissue developmental history documented. Prediction: results are consistent across laboratories when all five parameters match.",
+        timeline: "Testable within 6–12 months (cell culture, standard equipment)",
+        falsification: "Results remain inconsistent even when all five parameters are controlled and matched across laboratories",
+      },
+      {
+        id: "REP-2",
+        title: "EMF effects on insulin secretion are glucose-dependent",
+        description: "Expose pancreatic β-cell lines to standardized EMF at three glucose concentrations (2.8 mM basal, 11 mM stimulatory, 25 mM supramaximal). Prediction: EMF effect is LARGEST at 11 mM (VGCCs maximally primed) and SMALLEST at 2.8 mM (VGCCs mostly closed). Tests the glucose-dependent χ prediction.",
+        timeline: "Testable within 3–6 months (β-cell lines, standard glucose assay)",
+        falsification: "EMF effect is equal across glucose concentrations, or largest at 2.8 mM basal",
+      },
+      {
+        id: "REP-3",
+        title: "BTB opening correlates with sperm quality decline in same animals",
+        description: "RF-EMF exposure in rats with simultaneous measurement of: (1) BTB permeability (FITC-dextran tracer), (2) sperm concentration and motility, (3) tight junction protein expression (occludin, ZO-1). Time-series: 1, 4, 8, 12 weeks. Prediction: BTB permeability increases BEFORE sperm parameters decline (barrier damage precedes toxicity) and decline ACCELERATES over time (positive feedback).",
+        timeline: "Testable within 3–6 months (standard rat model, FITC-dextran protocol)",
+        falsification: "BTB permeability and sperm decline are simultaneous, or sperm decline precedes BTB opening",
+      },
+      {
+        id: "REP-4",
+        title: "Sentinel species sensitivity scales with metabolic rate",
+        description: "Meta-analysis: compile EMF exposure thresholds across species (insects, birds, rodents, primates) and test whether threshold ∝ body_mass^(0.25). If the metabolic χ scaling is correct, smaller species show effects at lower exposure levels following Kleiber’s law.",
+        timeline: "Testable immediately (meta-analysis of existing literature)",
+        falsification: "No correlation between body mass and EMF effect threshold, or inverse correlation",
+      },
+    ],
+    repTimeline: "Timeline",
+    repFalsification: "Falsification criterion",
+    repLocked: "Locked: 2026-08-24",
+    repStatus: "LOCKED — awaiting test",
+    diffTitle: "Neurodevelopment & Differentiation (Derived)",
+    diffLead: "Predictions derived from the BERM framework addressing neurodevelopmental and differentiation pathways. These parallel established endocrine disrupting chemical (EDC) research.",
+    diffNote: "These predictions are L*-level — derived from the BERM framework but not yet directly tested. They parallel established endocrine disrupting chemical (EDC) research.",
+    diffPredictions: [
+      {
+        id: "DIFF-1",
+        title: "Prenatal EMF correlates with shorter AGD in newborn boys",
+        description: "Prenatal EMF exposure correlates with shorter anogenital distance (AGD) in newborn boys. Test: measure AGD in birth cohorts with documented maternal EMF exposure. Control for phthalates, BMI, smoking. If negative, prenatal channels 1-3 are weak.",
+        discriminating: true,
+        critical: true,
+        level: "L*",
+        verified: false,
+      },
+      {
+        id: "DIFF-2",
+        title: "CACNA1C × prenatal EMF → ASD + gender-atypical development",
+        description: "CACNA1C risk variant carriers with high prenatal EMF show higher rates of ASD+gender-atypical development than non-carriers with same exposure. GxE interaction test.",
+        discriminating: true,
+        critical: false,
+        level: "L*",
+        verified: false,
+      },
+      {
+        id: "DIFF-3",
+        title: "Puberty onset inversely correlates with EMF/screen time",
+        description: "Puberty onset age inversely correlates with childhood EMF/screen time exposure. VERIFIED: CPP increased 3× in girls, 2× in boys (Denmark 1998-2017). COVID screen time increase → CPP surge.",
+        discriminating: false,
+        critical: false,
+        level: "M|C",
+        verified: true,
+      },
+      {
+        id: "DIFF-4",
+        title: "Salivary oxytocin inversely correlates with EMF exposure",
+        description: "Salivary oxytocin levels in adolescents inversely correlate with personal EMF exposure (phone use hours). Test: biomarker study with dosimetry.",
+        discriminating: false,
+        critical: false,
+        level: "L*",
+        verified: false,
+      },
+      {
+        id: "DIFF-5",
+        title: "Insular cortex activation differs by EMF exposure level",
+        description: "Insular cortex activation patterns during interoceptive tasks differ between high-EMF and low-EMF adolescents. Test: fMRI with heartbeat detection task.",
+        discriminating: false,
+        critical: false,
+        level: "L*",
+        verified: false,
+      },
+      {
+        id: "DIFF-6",
+        title: "Gender clinic referrals correlate with technology adoption",
+        description: "Gender clinic referral rates correlate with technology adoption timeline across countries. VERIFIED: Sweden +19,700%, Australia +12,650%, UK +2,457%. AFAB majority. Temporal correlation with smartphone adoption ~2010.",
+        discriminating: false,
+        critical: false,
+        level: "L*",
+        verified: true,
+      },
+      {
+        id: "DIFF-7",
+        title: "BDD prevalence increases with screen time",
+        description: "Body dysmorphic disorder (BDD) prevalence increases with screen time/device use. VERIFIED: BDD prevalence rising, 'Snapchat dysmorphia' documented.",
+        discriminating: false,
+        critical: false,
+        level: "L*",
+        verified: true,
+      },
+    ],
+    diffLevel: "Level",
+    diffDiscriminating: "Discriminating",
+    diffCritical: "Critical discriminating",
+    diffLocked: "Locked: 2026-08-24",
+    diffStatus: "LOCKED — awaiting test",
+    diffVerifiedStatus: "VERIFIED",
+    vgccTitle: "VGCC Gene Family Predictions",
+    vgccLead: "Predictions derived from the six-gene VGCC family analysis. Each targets a specific calcium channel subtype and its associated disease mechanism.",
+    vgccNote: "Evidence levels vary by prediction: E (experimental support), M|C (mechanistic/correlational), L* (derived/theoretical).",
+    vgccPredictions: [
+      {
+        id: "MYOP-1",
+        title: "Outdoor time protection against myopia is partially EMF-reduction mediated",
+        description: "Compare myopia progression in children with identical outdoor time but different EMF exposure (Faraday-shielded vs standard outdoor areas). If EMF reduction adds to light's protective effect, it confirms the VGCC/DA channel.",
+        level: "L*",
+        discriminating: true,
+        verified: false,
+      },
+      {
+        id: "IMMUNE-1",
+        title: "Chronic EMF exposure elevates baseline NFAT activation in T-cells",
+        description: "Measure NFAT nuclear translocation in T-cells from high-EMF vs low-EMF populations matched for other factors.",
+        level: "M|C",
+        discriminating: false,
+        verified: false,
+      },
+      {
+        id: "HEAR-1",
+        title: "Bluetooth earphone use duration correlates with subclinical hearing loss in young adults",
+        description: "Control for volume level. Prediction: EMF component (Bluetooth RF) adds to acoustic damage via Cav1.3 excitotoxicity.",
+        level: "M|C",
+        discriminating: false,
+        verified: false,
+      },
+      {
+        id: "MIGR-1",
+        title: "CACNA1I T-type variant carriers have higher EMF-triggered migraine frequency",
+        description: "GxE interaction: T-type variant × EMF exposure → more cortical spreading depression events → more migraines.",
+        level: "E",
+        discriminating: true,
+        verified: false,
+      },
+      {
+        id: "SLEEP-2",
+        title: "Sleep spindle density inversely correlates with evening EMF exposure",
+        description: "Measure EEG sleep spindles in subjects with/without evening screen use. Prediction: spindle density ↓ in high-EMF group due to Cav3.3 nRt perturbation.",
+        level: "M|C",
+        discriminating: false,
+        verified: false,
+      },
+      {
+        id: "PCOS-1",
+        title: "PCOS prevalence correlates with national EMF density controlling for BMI and diet",
+        description: "Cross-national analysis. Prediction: positive correlation because 4 Modulome organs (pancreas, theca, granulosa, pituitary) converge on PCOS pathophysiology.",
+        level: "M",
+        discriminating: false,
+        verified: false,
+      },
+      {
+        id: "PAIN-1",
+        title: "Cav3.2 blocker attenuates EMF-induced pain sensitization in animal model",
+        description: "Expose rats to chronic EMF, measure pain thresholds, then administer selective Cav3.2 blocker. Prediction: blocker reverses EMF-induced hyperalgesia.",
+        level: "M|C",
+        discriminating: true,
+        verified: false,
+      },
+      {
+        id: "QT-1",
+        title: "QTc interval positively correlates with cumulative EMF exposure in young adults",
+        description: "EKG screening study with EMF dosimetry. Prediction: chronic EMF → Cav1.2 window current ↑ → action potential prolongation → measurable QTc increase.",
+        level: "M|C",
+        discriminating: false,
+        verified: false,
+      },
+      {
+        id: "TDP-1",
+        title: "TheraBionic efficacy is abolished by co-administration of T-type Ca²⁺ channel blocker",
+        description: "Already confirmed by FDA label (contraindication with CCBs). Further test: specific T-type blocker (ethosuximide) should abolish TheraBionic's anti-HCC effect while L-type blocker (nifedipine) should have less effect.",
+        level: "E",
+        discriminating: true,
+        verified: true,
+      },
+      {
+        id: "UNIFIED-1",
+        title: "Same individual shows correlated VGCC-dependent biomarkers across systems",
+        description: "In a single cohort, measure: HRV (cardiac Cav3), sleep spindle density (Cav3.3), pain threshold (Cav3.2 DRG), melatonin (CRY/Cav), sperm quality (Cav3 Leydig). Prediction: all should correlate within individuals because all share VGCC/Ca²⁺ as upstream cause.",
+        level: "M",
+        discriminating: true,
+        verified: false,
+      },
+    ],
+    vgccLevel: "Level",
+    vgccDiscriminating: "Discriminating",
+    vgccLocked: "Locked: 2026-08-24",
+    vgccStatus: "LOCKED — awaiting test",
+    vgccVerifiedStatus: "VERIFIED",
+    popTitle: "Population comparison predictions",
+    popLead: "Predictions derived from the systematic comparison of 9 low-EMF populations against modern populations. These test whether the observed health gradient tracks EMF exposure as BERM predicts.",
+    popPredictions: [
+      {
+        id: "POP-1",
+        title: "Amish TFR correlates inversely with distance to nearest urban area",
+        description: "Within CAPED database: Amish communities closer to cities (higher ambient EMF) should have lower TFR than remote Amish communities, controlling for sect strictness and community size.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "POP-2",
+        title: "Tsimane newborn AGD is longer than Trinidad (nearest city) newborn AGD",
+        description: "AGD measurement in Tsimane Health and Life History Project cohort vs. urban Trinidadian comparison group. Same geographic region, different EMF exposure. If Tsimane AGD > Trinidad AGD, supports prenatal EMF → masculinization↓.",
+        discriminating: true,
+        critical: true,
+        level: "L*",
+        verified: false,
+      },
+      {
+        id: "POP-3",
+        title: "Mosetén health metrics fall between Tsimane and Western on EVERY measured variable",
+        description: "Already partially confirmed (dementia, brain atrophy). Predict the same gradient for: fertility, metabolic syndrome, autoimmune markers, myopia, sleep quality. This gradient within a genetically matched population is the strongest available natural experiment.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "POP-4",
+        title: "Indigenous communities adopting mobile technology show health deterioration within 5-10 years",
+        description: "Longitudinal tracking of communities transitioning from no-phone to smartphone use. Predict: sleep quality↓, myopia↑, metabolic markers↑, fertility intention unchanged but biological fertility markers (hormones, sperm) ↓.",
+        discriminating: true,
+        critical: false,
+        level: "L*",
+        verified: false,
+      },
+    ],
+    popLevel: "Level",
+    popDiscriminating: "Discriminating",
+    popCritical: "Critical discriminating",
+    popLocked: "Locked: 2026-08-24",
+    popStatus: "LOCKED — awaiting test",
   },
   fi: {
     title: "Lukitut ennusteet",
@@ -303,6 +718,8 @@ const COPY = {
     v2Title: "BERM v17 -ennusteen tila",
     v2Status: "BERM v17 ei julkaise maakohtaisia FieldState-kalibroituja ennusteita. Nykyinen reitti tarvitsee kohdistetun paikallisen FieldStaten, rekisteröidyt elin- ja paripäätepisteet, ASFR-mallinnuksen ja ulkoisen ajallisen validoinnin ennen ennusteen lukitsemista.",
     v2Note: "Kun FieldState-kalibroidut ennusteet ovat valmiita, ne julkaistaan rinnakkain näiden skalaariproxy-ennusteiden kanssa vertailua varten.",
+    histTitle: "Historialliset / evoluutioennusteet",
+    histLead: "Ennusteet jotka on johdettu sisäkkäisestä χ-mallista ja Pohjoinen paketti -hypoteesista. Nämä testaavat, moduloivatko populaatiokohtaiset biologiset χ-profiilit EMF-hedelmällisyyssuhdetta.",
     r43Title: "R43: Protokolla-verhokäyräresonanssi",
     r43Text: "Zandieh ym. (2025) raportoi taajuusriippuvaisia mitokondrio-/ROS-havaintoja ELF-syöpäsolukokeissa (0,01–5 Hz; enintään 100 mT). Se tukee eksploratiivista mitattua PSD-protokollaa sen testaamiseksi, tuottaako verkkokerroksen verhokäyrämodulaatio soluvasteen. Se ei osoita RF-verkon verhokäyrävaikutuksia, eDRX-kausaliteettia eikä lisääntymis-/TFR-parametria.",
     country: "Maa",
@@ -365,6 +782,41 @@ const COPY = {
         description: "Matalan tason laserterapia (620–1100 nm) kiveksiin kontroloidussa eläinkokeessa parantaa spermatogeneesin merkkiaineita (liikkuvuus, konsentraatio, morfologia) mitokondriaalisen sytokromi c -oksidaasiaktivaation kautta — sama kromoforimekanismi kuin FDA-hyväksytyissä fotobiomodulaatiolaitteissa. Jos LLLT (optinen EM) parantaa hedelmällisyyttä CCO:n kautta ja RF (matalampi EM) heikentää hedelmällisyyttä CRY:n kautta, kromoforien yleistys ennustaa, että sekä optiset että RF-taajuudet moduloivat lisääntymisbiologiaa taajuusspesifisten kromofoorikohteiden kautta.",
         timeline: "Testattavissa 3–6 kuukaudessa (eläinkoe)",
         falsification: "Ei parannusta missään spermatogeneesin mittarissa, tai parannus on luonteeltaan terminen",
+      },
+      {
+        id: "NEURO-1",
+        title: "CACNA1C-kantajat osoittavat vahvemman EMF-ASD-yhteyden",
+        description: "Genotyypitetyssä syntymäkohortissa dokumentoidulla prenataalisella EMF-altistuksella: stratifioi ASD/ADHD-diagnoosit CACNA1C rs1006737 -genotyypin JA äidin EMF-altistustason mukaan. Ennuste: merkitsevä GxE-interaktio jossa riskialleeli + korkea EMF tuottaa synergistisen ASD/ADHD-riskin nousun yli additiivisten vaikutusten.",
+        timeline: "Vaatii suuren genotyypitetyn kohortin (tuhansia)",
+        falsification: "Ei GxE-interaktiota CACNA1C-lokuksessa",
+      },
+      {
+        id: "NEURO-2",
+        title: "Litium vaimentaa EMF-indusoitua hermosolujen oskillaatiohäiriötä",
+        description: "Altista hiPSC-johdetut hermosoluviljelmät EMF:lle ja mittaa verkko-oskillaatiomalleja (MEA). Lisää sitten litium. Ennuste: litium palauttaa oskillaatioiden säännöllisyyden koska se vaimentaa Ca²⁺-oskillaatioita IMPA1/inositolireitin kautta — sama mekanismi joka tekee siitä tehokkaan kaksisuuntaisessa mielialahäiriössä.",
+        timeline: "Testattavissa 3–6 kuukaudessa (in vitro)",
+        falsification: "Litium ei palauta oskillaatioiden säännöllisyyttä EMF-altistuksen jälkeen",
+      },
+      {
+        id: "EPI-1",
+        title: "EMF-altistettujen isien jälkeläisten siittiöiden metylaatiomuutokset",
+        description: "Altista uroshhiiret krooniselle RF-EMF:lle. Parrita altistamattomien naaraiden kanssa. Analysoi F1-urospojukaisten siittiöiden DNA-metylaatiomallit. Ennuste: spesifiset DMR:t ovat päällekkäisiä ihmisten tutka-tutkimuksen kanssa (Research Square 2025). Jos DMR:t sisältävät CACNA1C:n tai muita VGCC-geenejä, tämä sulkee epigeneettisen takaisinkytkentäsilmukan.",
+        timeline: "Testattavissa 6–12 kuukaudessa (eläinkoe)",
+        falsification: "Ei DMR-päällekkäisyyttä tutkatutkimuksen kanssa tai ei VGCC-geeni-DMR:iä F1:ssä",
+      },
+      {
+        id: "EPI-2",
+        title: "Ei-monotoninen metylaatiovaste EMF:lle",
+        description: "Toista GC-2-tutkimus laajemmalla intensiteettialueella (0,1, 0,5, 1, 2, 3, 5 mT). Ennuste: metylaatiomuutokset osoittavat ei-monotonisen annos-vasteen vähintään yhdellä merkinvaihdolla, Blackmanin Ca²⁺-ikkunan tavoin. Jos vahvistetaan, Lindgrenin ikkunadynamiikat toimivat epigeneettisellä tasolla.",
+        timeline: "Testattavissa 3–6 kuukaudessa (in vitro)",
+        falsification: "Monotoninen annos-vaste ilman merkinvaihtoa",
+      },
+      {
+        id: "SCHWAN-1",
+        title: "GSM tuottaa suurempia siittiövaikutuksia kuin LTE samalla SAR-arvolla",
+        description: "Altista vastaatetut siittiönäytteet: (1) GSM-moduloitu 900 MHz (217 Hz TDMA), (2) LTE-moduloitu 900 MHz (OFDM), (3) CW 900 MHz, kaikki identtisellä aikaintegroidulla SAR-arvolla. Mittaa motiliteetti, ROS ja DNA-fragmentaatio. Ennuste: GSM > LTE > CW koska GSM:n kova pulssi tuottaa vahvimman ELF-kalvokomponentin. Testaa suoraan Schwanin + T-tyypin bifurkaatiomekanismin.",
+        timeline: "Testattavissa 1–3 kuukaudessa (in vitro)",
+        falsification: "Ei eroa modulaatiotyyppien välillä samalla SAR-arvolla tai CW > moduloitu",
       },
     ],
     modulomeTimeline: "Aikajana",
@@ -576,6 +1028,381 @@ const COPY = {
     cascadeLocked: "Lukittu: 2026-08-22",
     cascadeStatus: "LUKITTU — odottaa testiä",
     cascadeLink: "Katso kaskadivisualisointi",
+    nutritionalTitle: "Ravitsemuksellisen CRY-modulaation ennusteet",
+    nutritionalLead: "Ennusteet jotka perustuvat CRY:n kaksoissysteemimalliin ja sen ravitsemuksellisiin modulaattoreihin (FAD/B2, omega-rasvahapot, AMPK-paastodynamiikka). Nämä testaavat onko polku C:n tehokkuus muokattavissa ravitsemusinterventiolla.",
+    nutritionalPredictions: [
+      {
+        id: "NUT-1",
+        title: "B2-lisä parantaa sirkadiaanista resilienssiä yölliselle EMF:lle",
+        description: "RCT: B2-lisä (25 mg/vrk x 8 viikkoa) vs. plasebo koehenkilöillä joilla on huono unenlaatu ja runsas yöllinen puhelinkäyttö. Ensisijainen päätetapahtuma: melatoniinin alkamisviive. Toissijaiset: unitehokkuus, kortisolin herätysvaste. B2-ryhmän tulisi osoittaa vähemmän sirkadiaanista häiriötä koska FAD-kylläinen CRY on stabiilimpi EMF-perturbaatiota vastaan. Mekanistinen perusta: Hirano 2017 (FAD → CRY-stabiilisuus), Yap 2025 (FAD → magneettinen herkkyys).",
+        timeline: "Testattavissa 3-6 kuukaudessa (RCT, N=60)",
+        falsification: "Ei eroa melatoniinin alkamisviiveessä tai unimittareissa B2- ja plaseboryhmien välillä",
+      },
+      {
+        id: "NUT-2",
+        title: "B2-puutos x EMF -interaktio 54 maan regressiossa",
+        description: "Lisää väestötason B2-riittävyys kontrollimuuttujaksi 54 maan EMF-TFR-regressiomalliin. Ennuste: interaktiotermi (EMF x B2_puutos) on merkitsevä ja negatiivinen — maat joissa SEKÄ korkea EMF ETTÄ korkea B2-puutos osoittavat jyrkempää TFR-laskua kuin maat joissa vain korkea EMF. Kiina (>90 % B2-puutos, korkein EMF, alhaisin TFR) vs. Suomi (~15 % B2-puutos, korkea EMF, korkeampi TFR) on avainkontrasti. VAROITUS: Tämä on ekologista evidenssiä — korrelaatio, ei kausaatio.",
+        timeline: "Testattavissa heti (olemassa oleva data + B2-tutkimukset ~30 maasta)",
+        falsification: "Ei merkitsevää EMF x B2 -interaktiotermiä, tai interaktio on positiivinen",
+      },
+      {
+        id: "NUT-3",
+        title: "Paaston kesto ennustaa magnetoreseptiivistä herkkyyttä (käänteinen U)",
+        description: "Toista Chae 2019:n ruokasuuntautumisparadigma asteitetuilla paaston kestoilla (4h, 8h, 12h, 16h, 24h). Ennuste: käänteinen U-muotoinen annosvaste — herkkyys huipentuu 12-16h kohdalla (optimaalinen CRY-vaihtuvuus riittävällä FAD:lla) ja laskee 24h+ (FAD-poolin ehtyminen alkaa). Lisähaara: B2-lisätty (25 mg ennen paastoa) vs. lisäämätön. B2-lisän tulisi siirtää huippua oikealle (sallien pidemmän paaston ennen laskua). Paastoparadoksin ratkaisu (Lamia 2009 AMPK-CRY + beta-oksidaatio-FAD) ennustaa tämän spesifisen muodon.",
+        timeline: "Testattavissa 2-4 kuukaudessa (käyttäytymiskoe, N=40 per kesto)",
+        falsification: "Monotoninen kasvu (ei laskua 24h), tai ei paastovaikutusta, tai B2 ei siirrä huippua",
+      },
+    ],
+    nutritionalTimeline: "Aikataulu",
+    nutritionalFalsification: "Falsifikaatiokriteeri",
+    nutritionalLocked: "Lukittu: 2026-08-24",
+    nutritionalStatus: "LUKITTU — odottaa testiä",
+    trpc1Title: "Farmakologiset polkujen erotusennusteet",
+    trpc1Lead: "Ennusteet jotka testaavat polku A:n (VGCC) ja polku C:n TRPC1-kalsiumhaaran riippumattomuutta. CRY2-TRPC1-kompleksi (Yap ym. 2025) ennustaa, että EMF:n reproduktiovaikutukset voidaan farmakologisesti jakaa VGCC-riippuvaisiin ja TRPC1-riippuvaisiin komponentteihin.",
+    trpc1Predictions: [
+      {
+        id: "TRPC1-1",
+        title: "CRY2-TRPC1-kalsiumsisäänvirtaus vaikuttaa EMF:n reproduktiovaikutuksiin VGCC:stä riippumatta",
+        description: "Altista reproduktiosoluja (esim. granuloosa-, Sertoli-soluja) EMF:lle neljässä olosuhteessa: (1) Kontrolli (ei salpaajia); (2) + Nifedipiini (estää VGCC:t, polku A) — eristää C:n kontribuution; (3) + Anti-TRPC1-vasta-aine (estää TRPC1:n) — eristää A:n kontribuution; (4) + Molemmat salpaajat — jäännösvaikutus = ei-Ca²⁺-polut (B, D). Ennuste: nifedipiini vähentää mutta EI poista EMF-vastetta. Jäännösvaste on CRY2-TRPC1-välitteinen (polku C:n kalsiumhaara). Anti-TRPC1 myös vähentää mutta ei poista vastetta. Molemmat salpaajat yhdessä tuottavat lähes täydellisen Ca²⁺-vasteen poistumisen. Tämä koe kvantifioi suoraan polkujen A (VGCC) ja C-kalsium (TRPC1) suhteelliset kontribuutiot EMF:n reproduktiovaikutuksiin.",
+        timeline: "Testattavissa 6–12 kuukauden sisällä (in vitro, solulinjat saatavilla)",
+        falsification: "Nifedipiini yksin poistaa kaikki EMF-indusoidut kalsiumvaikutukset (ei TRPC1-riippumatonta komponenttia), tai anti-TRPC1:llä ei ole vaikutusta (TRPC1 ei osallistu reproduktiosoluissa)",
+      },
+    ],
+    trpc1Timeline: "Aikataulu",
+    trpc1Falsification: "Falsifikaatiokriteeri",
+    trpc1Locked: "Lukittu: 2026-08-24",
+    trpc1Status: "LUKITTU — odottaa testiä",
+    modIntTitle: "Modulooma-integraation ennusteet",
+    modIntLead: "Ennusteet jotka perustuvat modulooma-integraatioon — aivolisäkesolmu, mitokondriaalinen ROS-vahvistus, redox-puskurointi, autonominen HRV, istukkaesteet ja kilpirauhas-EMF-vuorovaikutukset. Nämä testaavat tuottavatko äskettäin tunnistetut EMF:n kohdekudokset ja -mekanismit ennustetut alavirtavaikutukset.",
+    modIntPredictions: [
+      {
+        id: "MOD-1",
+        title: "Aivolisäkkeen gonadotrofien T-tyypin kanavat välittävät EMF:n aiheuttaman FSH/LH-häiriön",
+        description: "Aivolisäkkeen gonadotrofit ilmentävät Cav3 T-tyypin kanavia hormonieritykseen. EMF:n häiriö näihin kanaviin vähentää FSH/LH-pulsatiilisuutta riippumatta hypotalamuksen GnRH:sta. Testi: altista aivolisäkkeen soluviljelmiä standardoidulle EMF:lle T-tyypin kanavan salpaajan (etosuksimidi) kanssa ja ilman. Ennuste: EMF vähentää FSH/LH-eritystä; etosuksimidi estää vaikutuksen.",
+        type: "kokeellinen",
+        discriminating: true,
+        timeline: "Testattavissa 6 kuukaudessa (aivolisäkkeen soluviljely)",
+        falsification: "Ei EMF-vaikutusta aivolisäkkeen FSH/LH-eritykseen, tai etosuksimidi ei estä vaikutusta",
+      },
+      {
+        id: "MOD-2",
+        title: "Mitokondrioiden ikä vahvistaa EMF:n aiheuttamaa ROS:ia reproduktiivisessa kudoksessa",
+        description: "Ikääntyneet mitokondriot tuottavat enemmän ROS:ia per Ca2+-yksikkö kuin nuoret. Testi: altista nuorten (3 kk) ja vanhojen (18 kk) rottien kiveskudos identtiselle EMF:lle. Mittaa mitokondriaalinen ROS-tuotanto. Ennuste: vanha kudos tuottaa suhteettoman paljon enemmän ROS:ia per EMF-yksikkö, v18_mitochondrial_ros_amplifier()-funktion mukaisesti.",
+        type: "kokeellinen",
+        discriminating: true,
+        timeline: "Testattavissa 6 kuukaudessa (eläinkudos, vakio-ROS-analyysi)",
+        falsification: "Vanha ja nuori kudos tuottavat yhtäläisen ROS:n per EMF-yksikkö, tai nuori kudos tuottaa enemmän",
+      },
+      {
+        id: "MOD-3",
+        title: "B2-lisä palauttaa glutationipuolustuksen JA vähentää CRY-herkkyyttä",
+        description: "Riboflaviini (B2) on FAD:n esiaste, jota tarvitsevat sekä glutationireduktaasi (GR, redox-puolustus) että kryptokromi (CRY, EMF-sensori). B2-lisän tulisi samanaikaisesti: (a) lisätä efektiivistä glutationipuskurointikapasiteettia (GR:n kautta), ja (b) stabiloida CRY:tä EMF-perturbaatiota vastaan (FAD-latauksen kautta). Testi: B2-lisätyt vs. lisäämättömät soluviljelyt EMF:n alla. Mittaa sekä GSH/GSSG-suhde että CRY-riippuvainen sirkadiaaninen geeniekspressio.",
+        type: "kokeellinen",
+        discriminating: true,
+        timeline: "Testattavissa 3-6 kuukaudessa (soluviljely, kaksoisendpointti)",
+        falsification: "B2 vaikuttaa vain yhteen päätetapahtumaan (GR tai CRY) mutta ei molempiin, tai ei vaikutusta kumpaankaan",
+      },
+      {
+        id: "MOD-4",
+        title: "HRV on herkkä varhainen biomarkkeri krooniselle EMF-altistukselle",
+        description: "Sykevälivaihtelu (HRV), erityisesti korkeataajuinen (HF) komponentti joka heijastaa vagaalista tonusta, laskee kroonisen EMF-altistuksen myötä ennen kliinisten oireiden ilmaantumista. SA-solmukkeen Cav3.1 T-tyypin kanavat ovat transduserit. Testi: korreloi henkilökohtainen RF-dosimetria 24 tunnin HRV-monitorointiin kohortissa (N=200). Ennuste: käänteinen annos-vaste kumulatiivisen EMF:n ja HF-HRV:n välillä, riippumatta iästä, kunnosta ja stressistä.",
+        type: "havainnoiva",
+        discriminating: true,
+        timeline: "Testattavissa heti (puettava HRV + RF-dosimetria)",
+        falsification: "Ei korrelaatiota henkilökohtaisen EMF-altistuksen ja HRV:n välillä sekoittavien tekijöiden kontrolloinnin jälkeen",
+      },
+      {
+        id: "MOD-5",
+        title: "Istukan TJ-proteiinit laskevat raskausaikaisen EMF-altistuksen myötä",
+        description: "Istukkaeste käyttää samoja tiiviin liitoksen (TJ) proteiineja kuin BBB ja BTB (okkludiini, ZO-1, klaudiinit). EMF-altistus raskauden aikana vähentää istukan TJ-proteiiniekspressiota annosriippuvaisesti. Testi: mittaa istukan TJ-proteiinitasot naisilla joilla on korkea vs. matala EMF-altistus raskauden aikana (henkilökohtainen dosimetria). Ennuste: korkeampi EMF-altistus korreloi matalamman okkludiini- ja ZO-1-ekspression kanssa.",
+        type: "kokeellinen",
+        discriminating: true,
+        timeline: "Testattavissa 12 kuukaudessa (syntymäkohortti dosimetrialla)",
+        falsification: "Ei korrelaatiota raskausaikaisen EMF:n ja istukan TJ-proteiiniekspression välillä",
+      },
+      {
+        id: "MOD-6",
+        title: "Kilpirauhashäiriöiden prevalenssi korreloi matkapuhelimen yleistymisasteen kanssa kansallisesti",
+        description: "Kilpirauhassolut ilmentävät VGCC:itä ja ovat herkkiä EMF:n aiheuttamalle Ca2+-häiriölle. Kansallisen kilpirauhashäiriöprevalenssin (hypotyreoosi, kohonnut TSH) tulisi korreloida matkapuhelimen yleistymisasteen kanssa, kontrolloituna jodistaturksen, ikärakenteen ja diagnostisten käytäntöjen suhteen. Tämä on ekologinen ennuste — korrelaatio, ei kausaatio.",
+        type: "ekologinen",
+        discriminating: false,
+        timeline: "Testattavissa heti (olemassa olevat terveysrekisterit + ITU-data)",
+        falsification: "Ei korrelaatiota matkapuhelimen yleistymisasteen ja kilpirauhashäiriöprevalenssin välillä jodistaturksen ja demografian kontrolloinnin jälkeen",
+      },
+    ],
+    modIntTimeline: "Aikataulu",
+    modIntFalsification: "Falsifikaatiokriteeri",
+    modIntType: "Tyyppi",
+    modIntDiscriminating: "Erotteleva",
+    modIntLocked: "Lukittu: 2026-08-24",
+    modIntStatus: "LUKITTU — odottaa testiä",
+    ttypeTitle: "T-tyypin kanavan ennusteet",
+    ttypeLead: "T-tyypin kalsiumkanavan bifurkaatiomekanismista johdetut testattavat ennusteet.",
+    ttypePredictions: [
+      {
+        id: "TTYPE-1",
+        title: "EMF:n vaikutukset testosteroniin välittyvät ensisijaisesti T-tyypin, eivät L-tyypin kanavien kautta",
+        description: "Altista Leydig-soluviljelmät standardoidulle EMF:lle (ELF-moduloitu RF). Mittaa testosteroni kolmessa olosuhteessa: (1) Kontrolli, (2) + nifedipiini (L-tyypin salpaaja) eristää T-tyypin kontribuution, (3) + etosuksimidi (T-tyypin salpaaja) eristää L-tyypin kontribuution. Ennuste: etosuksimidi poistaa ENEMMÄN EMF-vaikutuksesta kuin nifedipiini.",
+        timeline: "Testattavissa 3–6 kuukauden sisällä (in vitro, Leydig-soluviljely)",
+        falsification: "Nifedipiini yksin poistaa kaiken EMF:n aiheuttaman testosteronimuutoksen (ei T-tyypin kontribuutiota), tai etosuksimidi estää vähemmän EMF-vaikutuksesta kuin nifedipiini",
+      },
+      {
+        id: "TTYPE-2",
+        title: "Moduloidut signaalit tuottavat suuremman T-tyypin vaikutuksen kuin jatkuva aalto samalla SAR:lla",
+        description: "Altista Leydig-solut: (1) CW 900 MHz:llä, (2) sama kantoaalto amplitudimoduloitu 16 Hz:llä (Adeyn taajuus), (3) sama kantoaalto moduloitu 217 Hz:llä (GSM). Sama aikaintegroitu SAR. Ennuste: moduloidut signaalit tuottavat SUUREMMAN vaikutuksen, koska ELF-modulaatioverhokäyrä läpäisee kalvon kapasitanssin, mutta kantoaalto ei.",
+        timeline: "Testattavissa 3–6 kuukauden sisällä (in vitro, Leydig-soluviljely)",
+        falsification: "CW ja moduloidut signaalit tuottavat yhtäläiset testosteronivaikutukset samalla aikaintegroidulla SAR:lla, tai CW tuottaa suuremman vaikutuksen",
+      },
+    ],
+    ttypeTimeline: "Aikataulu",
+    ttypeFalsification: "Falsifikaatiokriteeri",
+    ttypeLocked: "Lukittu: 2026-08-24",
+    ttypeStatus: "LUKITTU — odottaa testiä",
+    repTitle: "Replikaatiokriisin ratkaisun ennusteet",
+    repLead: "Viiden konfoundin kehyksestä johdetut testattavat ennusteet.",
+    repPredictions: [
+      {
+        id: "REP-1",
+        title: "Kaikkien viiden parametrin kontrollointi tuottaa yhdenmukaiset EMF-kalsiumeffluksitulokset",
+        description: "Toista Blackmanin kalsiumeffluksikoe KAIKKIEN viiden parametrin kontrollilla: (1) lämpötila 36,5±0,3 °C stabiili, (2) sinirikas valaistus dokumentoitu, (3) DC-kenttä mitattu ja suunnattu, (4) Faraday-suojatut kontrollit, (5) kudoksen kehityshistoria dokumentoitu. Ennuste: tulokset ovat yhdenmukaisia laboratorioiden välillä kun kaikki viisi parametria vastaavat toisiaan.",
+        timeline: "Testattavissa 6–12 kuukauden sisällä (soluviljely, vakiolaitteet)",
+        falsification: "Tulokset pysyvät epäyhdenmukaisina vaikka kaikki viisi parametria on kontrolloitu ja vastaavat laboratorioiden välillä",
+      },
+      {
+        id: "REP-2",
+        title: "EMF:n vaikutus insuliinieritykseen on glukoosiriippuvainen",
+        description: "Altista haiman β-solulinjoja standardoidulle EMF:lle kolmella glukoosipitoisuudella (2,8 mM basaali, 11 mM stimuloiva, 25 mM supramaksimaalinen). Ennuste: EMF-vaikutus on SUURIN 11 mM:ssä (VGCC:t maksimaalisesti viritetyt) ja PIENIN 2,8 mM:ssä (VGCC:t enimmäkseen kiinni). Testaa glukoosiriippuvaisen χ-ennusteen.",
+        timeline: "Testattavissa 3–6 kuukauden sisällä (β-solulinjat, vakioglukoosianalyysi)",
+        falsification: "EMF-vaikutus on yhtä suuri kaikilla glukoosipitoisuuksilla tai suurin 2,8 mM basaalilla",
+      },
+      {
+        id: "REP-3",
+        title: "BTB:n avautuminen korreloi siittiölaadun laskun kanssa samoissa eläimissä",
+        description: "RF-EMF-altistus rotilla samanaikaisen mittauksen kanssa: (1) BTB:n läpäisevyys (FITC-dekstraanimerkkiaine), (2) siittiökonsentraatio ja liikkuvuus, (3) tiiviin liitoksen proteiiniekspressio (okkludiini, ZO-1). Aikasarja: 1, 4, 8, 12 viikkoa. Ennuste: BTB:n läpäisevyys kasvaa ENNEN siittiöparametrien laskua (esteen vaurio edeltää toksisuutta) ja lasku KIIHTYY ajan myötä (positiivinen takaisinkytkentä).",
+        timeline: "Testattavissa 3–6 kuukauden sisällä (vakiorottamalli, FITC-dekstraaniprotokolla)",
+        falsification: "BTB:n läpäisevyys ja siittiölasku ovat samanaikaisia, tai siittiölasku edeltää BTB:n avautumista",
+      },
+      {
+        id: "REP-4",
+        title: "Sentinellilajien herkkyys skaalautuu aineenvaihduntanopeuden mukaan",
+        description: "Meta-analyysi: kokoa EMF-altistuskynnykset lajeittain (hyönteiset, linnut, jyrsijät, kädelliset) ja testaa onko kynnys ∝ ruumiinmassa^(0,25). Jos metabolinen χ-skaalaus on oikein, pienemmät lajit osoittavat vaikutuksia matalammilla altistustasoilla Kleiberin lakia seuraten.",
+        timeline: "Testattavissa välittömästi (olemassa olevan kirjallisuuden meta-analyysi)",
+        falsification: "Ei korrelaatiota ruumiinmassan ja EMF-vaikutuskynnyksen välillä, tai käänteinen korrelaatio",
+      },
+    ],
+    repTimeline: "Aikataulu",
+    repFalsification: "Falsifikaatiokriteeri",
+    repLocked: "Lukittu: 2026-08-24",
+    repStatus: "LUKITTU — odottaa testiä",
+    diffTitle: "Neurokehitys ja differentiaatio (johdettu)",
+    diffLead: "BERM-kehyksestä johdetut ennusteet neurokehityksen ja differentiaation polkuihin. Ne ovat rinnakkaisia vakiintuneen EDC-tutkimuksen kanssa.",
+    diffNote: "Nämä ennusteet ovat L*-tasoisia — johdettu BERM-kehyksestä mutta ei vielä suoraan testattuja. Ne ovat rinnakkaisia vakiintuneen EDC-tutkimuksen kanssa.",
+    diffPredictions: [
+      {
+        id: "DIFF-1",
+        title: "Prenataalin EMF:n korrelaatio lyhyemmän AGD:n kanssa vastasyntyneillä pojilla",
+        description: "Prenataalin EMF-altistuksen ja vastasyntyneiden poikien lyhyemmän anogenitaalisen etäisyyden (AGD) välillä on korrelaatio. Testi: mittaa AGD syntymäkohorteissa joissa äidin EMF-altistus on dokumentoitu. Kontrolloi ftalaatit, BMI, tupakointi. Jos negatiivinen, prenataaliset kanavat 1-3 ovat heikkoja.",
+        discriminating: true,
+        critical: true,
+        level: "L*",
+        verified: false,
+      },
+      {
+        id: "DIFF-2",
+        title: "CACNA1C × prenataalinen EMF → ASD + sukupuoliatyyppinen kehitys",
+        description: "CACNA1C-riskivariantin kantajat, joiden prenataalinen EMF-altistus oli korkea, osoittavat korkeampia ASD+sukupuoliatyyppisen kehityksen lukuja kuin ei-kantajat samalla altistuksella. GxE-interaktiotesti.",
+        discriminating: true,
+        critical: false,
+        level: "L*",
+        verified: false,
+      },
+      {
+        id: "DIFF-3",
+        title: "Puberteetin alkamisikä korreloi käänteisesti EMF-/ruutuaika-altistuksen kanssa",
+        description: "Puberteetin alkamisikä korreloi käänteisesti lapsuuden EMF-/ruutuaika-altistuksen kanssa. VAHVISTETTU: CPP kasvoi 3× tytöillä, 2× pojilla (Tanska 1998-2017). COVID-ruutuajan kasvu → CPP-piikki.",
+        discriminating: false,
+        critical: false,
+        level: "M|C",
+        verified: true,
+      },
+      {
+        id: "DIFF-4",
+        title: "Syljen oksytosiinitasot korreloivat käänteisesti EMF-altistuksen kanssa",
+        description: "Nuorten syljen oksytosiinitasot korreloivat käänteisesti henkilökohtaisen EMF-altistuksen kanssa (puhelimen käyttötunnit). Testi: biomarkkeritutkimus dosimetrialla.",
+        discriminating: false,
+        critical: false,
+        level: "L*",
+        verified: false,
+      },
+      {
+        id: "DIFF-5",
+        title: "Insulaarikorteksin aktivaatio eroaa EMF-altistustason mukaan",
+        description: "Insulaarikorteksin aktivaatiomallit interoseptisten tehtävien aikana eroavat korkean ja matalan EMF-altistuksen nuorten välillä. Testi: fMRI sydämenlyönnin tunnistustehtävällä.",
+        discriminating: false,
+        critical: false,
+        level: "L*",
+        verified: false,
+      },
+      {
+        id: "DIFF-6",
+        title: "Sukupuoliklinikoiden lähetteet korreloivat teknologian omaksumisen kanssa",
+        description: "Sukupuoliklinikoiden lähetemäärät korreloivat teknologian omaksumisen aikajanan kanssa maittain. VAHVISTETTU: Ruotsi +19 700%, Australia +12 650%, UK +2 457%. AFAB-enemmistö. Ajallinen korrelaatio älypuhelimen omaksumisen kanssa ~2010.",
+        discriminating: false,
+        critical: false,
+        level: "L*",
+        verified: true,
+      },
+      {
+        id: "DIFF-7",
+        title: "BDD-prevalenssi kasvaa ruutuajan myötä",
+        description: "Kehonkuvahäiriön (BDD) prevalenssi kasvaa ruutuajan/laitekäytön myötä. VAHVISTETTU: BDD-prevalenssi nousee, 'Snapchat-dysmorfia' dokumentoitu.",
+        discriminating: false,
+        critical: false,
+        level: "L*",
+        verified: true,
+      },
+    ],
+    diffLevel: "Taso",
+    diffDiscriminating: "Erotteleva",
+    diffCritical: "Kriittinen erotteleva",
+    diffLocked: "Lukittu: 2026-08-24",
+    diffStatus: "LUKITTU — odottaa testiä",
+    diffVerifiedStatus: "VAHVISTETTU",
+    vgccTitle: "VGCC-geeniperheen ennusteet",
+    vgccLead: "VGCC-geeniperheen kuuden geenin analyysistä johdetut ennusteet. Kukin kohdistuu tiettyyn kalsiumkanavan alatyyppiin ja sen sairausmekanismiin.",
+    vgccNote: "Evidenssitasot vaihtelevat ennusteittain: E (kokeellinen tuki), M|C (mekanistinen/korrelaatio), L* (johdettu/teoreettinen).",
+    vgccPredictions: [
+      {
+        id: "MYOP-1",
+        title: "Ulkoilun suojavaikutus myopiaa vastaan on osittain EMF-reduktion välittämä",
+        description: "Vertaa myopian etenemistä lapsilla, joilla on identtinen ulkoiluaika mutta eri EMF-altistus (Faraday-suojatut vs tavalliset ulkoalueet). Jos EMF-reduktio lisää valon suojaavaa vaikutusta, se vahvistaa VGCC/DA-kanavan.",
+        level: "L*",
+        discriminating: true,
+        verified: false,
+      },
+      {
+        id: "IMMUNE-1",
+        title: "Krooninen EMF-altistus nostaa T-solujen NFAT-perusaktivaatiota",
+        description: "Mittaa NFAT:n tumaan siirtyminen T-soluissa korkean ja matalan EMF-altistuksen populaatioista muiden tekijöiden suhteen kaltaistetuissa ryhmissä.",
+        level: "M|C",
+        discriminating: false,
+        verified: false,
+      },
+      {
+        id: "HEAR-1",
+        title: "Bluetooth-kuulokkeiden käyttöaika korreloi subkliinisen kuulonmenetyksen kanssa nuorilla aikuisilla",
+        description: "Kontrolloi äänenvoimakkuus. Ennuste: EMF-komponentti (Bluetooth RF) lisää akustista vahinkoa Cav1.3-eksitotoksisuuden kautta.",
+        level: "M|C",
+        discriminating: false,
+        verified: false,
+      },
+      {
+        id: "MIGR-1",
+        title: "CACNA1I T-tyypin variantin kantajilla on korkeampi EMF-laukaistun migreenin esiintyvyys",
+        description: "GxE-interaktio: T-tyypin variantti × EMF-altistus → enemmän kortikaalisia leviäviä depressiotapahtumia → enemmän migreenejä.",
+        level: "E",
+        discriminating: true,
+        verified: false,
+      },
+      {
+        id: "SLEEP-2",
+        title: "Unisukkulatiheys korreloi käänteisesti ilta-EMF-altistuksen kanssa",
+        description: "Mittaa EEG-unisukkulat koehenkilöillä iltanäyttökäytöllä ja ilman. Ennuste: sukkulatiheys ↓ korkean EMF:n ryhmässä Cav3.3 nRt -perturbaation vuoksi.",
+        level: "M|C",
+        discriminating: false,
+        verified: false,
+      },
+      {
+        id: "PCOS-1",
+        title: "PCOS-prevalenssi korreloi kansallisen EMF-tiheyden kanssa BMI:n ja ruokavalion suhteen kontrolloituna",
+        description: "Kansainvälinen analyysi. Ennuste: positiivinen korrelaatio koska 4 modulomin elintä (haima, theca, granulosa, aivolisäke) konvergoivat PCOS-patofysiologiaan.",
+        level: "M",
+        discriminating: false,
+        verified: false,
+      },
+      {
+        id: "PAIN-1",
+        title: "Cav3.2-salpaaja vaimentaa EMF-indusoitua kipuherkistymistä eläinmallissa",
+        description: "Altista rottia krooniselle EMF:lle, mittaa kipukynnykset, anna sitten selektiivinen Cav3.2-salpaaja. Ennuste: salpaaja kumoaa EMF-indusoidun hyperalgesian.",
+        level: "M|C",
+        discriminating: true,
+        verified: false,
+      },
+      {
+        id: "QT-1",
+        title: "QTc-intervalli korreloi positiivisesti kumulatiivisen EMF-altistuksen kanssa nuorilla aikuisilla",
+        description: "EKG-seulontatutkimus EMF-dosimetrialla. Ennuste: krooninen EMF → Cav1.2-ikkunavirta ↑ → aktiopotetiaalin pidentyminen → mitattava QTc-nousu.",
+        level: "M|C",
+        discriminating: false,
+        verified: false,
+      },
+      {
+        id: "TDP-1",
+        title: "TheraBionic-teho kumoutuu T-tyypin Ca²⁺-kanavasalpaajan samanaikaisella annolla",
+        description: "Jo vahvistettu FDA-merkinnällä (kontraindikaatio CCB:ien kanssa). Lisätesti: spesifinen T-tyypin salpaaja (etosuksimidi) kumoaa TheraBionic:n anti-HCC-vaikutuksen, kun taas L-tyypin salpaajalla (nifedipiini) pitäisi olla vähemmän vaikutusta.",
+        level: "E",
+        discriminating: true,
+        verified: true,
+      },
+      {
+        id: "UNIFIED-1",
+        title: "Sama yksilö osoittaa korreloivia VGCC-riippuvaisia biomarkkereita eri järjestelmissä",
+        description: "Yhdessä kohortissa mittaa: HRV (sydämen Cav3), unisukkulatiheys (Cav3.3), kipukynnys (Cav3.2 DRG), melatoniini (CRY/Cav), siittiöiden laatu (Cav3 Leydig). Ennuste: kaikkien tulisi korreloida yksilöiden sisällä koska kaikki jakavat VGCC/Ca²⁺:n ylävirtasyynä.",
+        level: "M",
+        discriminating: true,
+        verified: false,
+      },
+    ],
+    vgccLevel: "Taso",
+    vgccDiscriminating: "Erotteleva",
+    vgccLocked: "Lukittu: 2026-08-24",
+    vgccStatus: "LUKITTU — odottaa testiä",
+    vgccVerifiedStatus: "VAHVISTETTU",
+    popTitle: "Populaatiovertailun ennusteet",
+    popLead: "Ennusteet jotka perustuvat 9 matalan EMF:n populaation systemaattiseen vertailuun moderneihin populaatioihin. Nämä testaavat seuraako havaittu terveysgradientti EMF-altistusta BERM:n ennusteiden mukaisesti.",
+    popPredictions: [
+      {
+        id: "POP-1",
+        title: "Amissien TFR korreloi käänteisesti etäisyyteen lähimmästä kaupunkialueesta",
+        description: "CAPED-tietokannassa: lähempänä kaupunkeja sijaitsevilla amish-yhteisöillä (korkeampi ympäristön EMF) tulisi olla matalampi TFR kuin syrjäisillä yhteisöillä, kontrolloiden lahkon tiukkuus ja yhteisön koko.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "POP-2",
+        title: "Tsimane-vastasyntyneiden AGD on pidempi kuin Trinidadin (lähin kaupunki) vastasyntyneiden AGD",
+        description: "AGD-mittaus Tsimane Health and Life History Project -kohortissa vs. kaupunki-trinidadilainen vertailuryhmä. Sama maantieteellinen alue, eri EMF-altistus. Jos Tsimane AGD > Trinidad AGD, tukee prenataalista EMF → maskulinisaatio↓.",
+        discriminating: true,
+        critical: true,
+        level: "L*",
+        verified: false,
+      },
+      {
+        id: "POP-3",
+        title: "Mosetén-terveysmittarit ovat Tsimanen ja länsimaisen VÄLISSÄ jokaisessa mitatussa muuttujassa",
+        description: "Osittain jo vahvistettu (dementia, aivoatrofia). Ennustetaan sama gradientti: hedelmällisyys, metabolinen oireyhtymä, autoimmuunimarkkerit, likitaitteisuus, unenlaatu. Tämä gradientti geneettisesti yhtenevässä populaatiossa on vahvin saatavilla oleva luonnollinen koe.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "POP-4",
+        title: "Mobiiliteknologian omaksuvat alkuperäisyhteisöt osoittavat terveyden heikkenemistä 5–10 vuodessa",
+        description: "Pitkittäisseuranta yhteisöissä, jotka siirtyvät puhelimettomasta älypuhelimen käyttöön. Ennuste: unenlaatu↓, likitaitteisuus↑, metaboliset markkerit↑, hedelmällisyysaikomus muuttumaton mutta biologiset hedelmällisyysmarkkerit (hormonit, siittiöt) ↓.",
+        discriminating: true,
+        critical: false,
+        level: "L*",
+        verified: false,
+      },
+    ],
+    popLevel: "Taso",
+    popDiscriminating: "Erotteleva",
+    popCritical: "Kriittinen erotteleva",
+    popLocked: "Lukittu: 2026-08-24",
+    popStatus: "LUKITTU — odottaa testiä",
   },
 } as const;
 
@@ -827,6 +1654,324 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             &rarr; {d.cascadeLink}
           </Link>
         </p>
+      </section>
+
+      {/* Nutritional CRY modulation predictions NUT-1 to NUT-3 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.nutritionalTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.nutritionalLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.nutritionalPredictions.map((np) => (
+            <article key={np.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{np.id}</span>
+                    <h3 className="font-semibold">{np.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.nutritionalStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{np.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.nutritionalTimeline}:</span> {np.timeline}</p>
+                <p><span className="font-semibold">{d.nutritionalFalsification}:</span> {np.falsification}</p>
+                <p className="font-mono-num">{d.nutritionalLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Pharmacological pathway separation predictions TRPC1-1 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.trpc1Title}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.trpc1Lead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.trpc1Predictions.map((tp) => (
+            <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{tp.id}</span>
+                    <h3 className="font-semibold">{tp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.trpc1Status}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{tp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.trpc1Timeline}:</span> {tp.timeline}</p>
+                <p><span className="font-semibold">{d.trpc1Falsification}:</span> {tp.falsification}</p>
+                <p className="font-mono-num">{d.trpc1Locked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Modulome integration predictions MOD-1 through MOD-6 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.modIntTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.modIntLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.modIntPredictions.map((mp) => (
+            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{mp.id}</span>
+                    <h3 className="font-semibold">{mp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.modIntStatus}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent/10 text-accent border border-accent/20">{mp.type}</span>
+                    {mp.discriminating && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">
+                        {d.modIntDiscriminating}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{mp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.modIntTimeline}:</span> {mp.timeline}</p>
+                <p><span className="font-semibold">{d.modIntFalsification}:</span> {mp.falsification}</p>
+                <p className="font-mono-num">{d.modIntLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* T-Type channel predictions TTYPE-1 through TTYPE-2 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.ttypeTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.ttypeLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.ttypePredictions.map((ttp) => (
+            <article key={ttp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{ttp.id}</span>
+                    <h3 className="font-semibold">{ttp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.ttypeStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{ttp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.ttypeTimeline}:</span> {ttp.timeline}</p>
+                <p><span className="font-semibold">{d.ttypeFalsification}:</span> {ttp.falsification}</p>
+                <p className="font-mono-num">{d.ttypeLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Replication crisis resolution predictions REP-1 through REP-4 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.repTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.repLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.repPredictions.map((rp) => (
+            <article key={rp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{rp.id}</span>
+                    <h3 className="font-semibold">{rp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.repStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{rp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.repTimeline}:</span> {rp.timeline}</p>
+                <p><span className="font-semibold">{d.repFalsification}:</span> {rp.falsification}</p>
+                <p className="font-mono-num">{d.repLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Neurodevelopment & differentiation predictions DIFF-1 through DIFF-7 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.diffTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-4xl">{d.diffLead}</p>
+        <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.diffNote}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.diffPredictions.map((dp) => (
+            <article key={dp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{dp.id}</span>
+                    <h3 className="font-semibold">{dp.title}</h3>
+                    {dp.verified ? (
+                      <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 uppercase tracking-wider font-semibold">
+                        {d.diffVerifiedStatus}
+                      </span>
+                    ) : (
+                      <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                        {d.diffStatus}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent/10 text-accent border border-accent/20">{dp.level}</span>
+                    {dp.critical && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 font-semibold">
+                        {d.diffCritical}
+                      </span>
+                    )}
+                    {dp.discriminating && !dp.critical && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">
+                        {d.diffDiscriminating}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{dp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p className="font-mono-num">{d.diffLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* VGCC gene family predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.vgccTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-4xl">{d.vgccLead}</p>
+        <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.vgccNote}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.vgccPredictions.map((vp) => (
+            <article key={vp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{vp.id}</span>
+                    <h3 className="font-semibold">{vp.title}</h3>
+                    {vp.verified ? (
+                      <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 uppercase tracking-wider font-semibold">
+                        {d.vgccVerifiedStatus}
+                      </span>
+                    ) : (
+                      <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                        {d.vgccStatus}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent/10 text-accent border border-accent/20">{vp.level}</span>
+                    {vp.discriminating && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">
+                        {d.vgccDiscriminating}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{vp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p className="font-mono-num">{d.vgccLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Population comparison predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.popTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.popLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.popPredictions.map((pp) => (
+            <article key={pp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{pp.id}</span>
+                    <h3 className="font-semibold">{pp.title}</h3>
+                    {pp.verified ? (
+                      <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20 uppercase tracking-wider font-semibold">
+                        {d.popStatus}
+                      </span>
+                    ) : (
+                      <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                        {d.popStatus}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent/10 text-accent border border-accent/20">{pp.level}</span>
+                    {pp.critical && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 font-semibold">
+                        {d.popCritical}
+                      </span>
+                    )}
+                    {pp.discriminating && !pp.critical && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">
+                        {d.popDiscriminating}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{pp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p className="font-mono-num">{d.popLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Historical / evolutionary predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-3">{d.histTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6">{d.histLead}</p>
+        <div className="space-y-4">
+          {EVOLUTION_PREDICTIONS.map((pred) => {
+            const color = CHAIN_EPISTEMIC_COLORS[pred.level as EpistemicLevel] ?? "#6B7280";
+            return (
+              <article key={pred.id} className="rounded-lg border border-card-border bg-card-bg p-5">
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <h3 className="font-semibold text-sm">
+                    <span className="font-mono-num text-xs text-accent mr-2">{pred.code}</span>
+                    {activeLocale === "fi" ? pred.title_fi : pred.title_en}
+                  </h3>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="text-xs text-foreground-muted">{pred.timeframe}</span>
+                    <span className="rounded-full px-2 py-0.5 text-xs font-semibold" style={{ backgroundColor: `${color}20`, color, border: `1px solid ${color}40` }}>
+                      {pred.level}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-sm text-foreground-muted leading-relaxed">
+                  {activeLocale === "fi" ? pred.test_fi : pred.test_en}
+                </p>
+              </article>
+            );
+          })}
+        </div>
       </section>
 
       {/* v2 status */}

@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 598,
+    "total_references": 658,
     "verified_count": 188,
     "generated": "2026-08-24"
   },
@@ -797,19 +797,26 @@
       "authors": "Blackman, C.F., Benane, S.G., House, D.E. & Joines, W.T",
       "year": 1985,
       "title": "Effects of ELF (1120 Hz) and modulated (50 Hz) RF fields on the efflux of calcium ions from brain tissue in vitro",
-      "journal": "",
+      "journal": "Bioelectromagnetics",
       "doi": null,
       "category": "transduction_rpm_calcium",
       "pathway": [
         "A"
       ],
-      "level": "M",
+      "level": "E",
       "type": "report",
-      "finding": "Finding not yet documented — see: Effects of ELF (1120 Hz) and modulated (50 Hz) RF fields on the efflux of calcium ions from brain ti",
-      "tags": [],
+      "finding": "Chicken eggs incubated in 60 Hz electric fields for 21 days produced hatchlings whose brain tissue responded to 50 Hz EMF but NOT to 60 Hz. The developing brain adapted to its developmental frequency exposure. This demonstrates developmental frequency imprinting — a confounding variable in all EMF biology experiments using cell lines or animals with different power frequency histories.",
+      "tags": [
+        "calcium",
+        "frequency",
+        "developmental",
+        "confound",
+        "replication",
+        "frequency_imprinting"
+      ],
       "pdf_section": "III",
       "pdf_number": 37,
-      "verified": false
+      "verified": true
     },
     {
       "id": "adey1981",
@@ -11509,14 +11516,23 @@
       "year": 2025,
       "journal": "Iranian Journal of Basic Medical Sciences",
       "doi": "10.22038/ijbms.2025.86952.18784",
-      "category": "cellular_effects",
+      "category": "cellular_ros_dna",
       "verified": true,
-      "finding": "RF-EMF (27.12 MHz) proposed as therapeutic BBB-opening tool for drug delivery. Mechanism: eNOS → NO → occludin downregulation. TDP variant.",
+      "finding": "30 min RF-EMF at 27.12 MHz significantly increased eNOS gene expression and decreased occludin — without oxidative stress or inflammation. Longer exposures (180, 360 min) produced HIF-1a increase, claudin-1 and occludin decrease, and histopathological edema. The mechanism is eNOS-mediated vasodilation + TJ protein downregulation. Confirms BBB opening mechanism is TJ-protein mediated (occludin, claudin-1) — the same proteins as in BTB.",
       "pathway": [
-        "F_BBB"
+        "F"
       ],
-      "tags": [],
-      "level": "P",
+      "tags": [
+        "bbb",
+        "occludin",
+        "claudin",
+        "eNOS",
+        "tight_junction",
+        "pathway_F",
+        "non_thermal",
+        "barrier"
+      ],
+      "level": "E",
       "type": "journal",
       "pdf_section": null,
       "pdf_number": null
@@ -12893,6 +12909,1350 @@
         "human_cells",
         "pulsed"
       ]
+    },
+    {
+      "id": "blackman1991",
+      "authors": "Blackman CF, Benane SG, House DE",
+      "year": 1991,
+      "title": "The influence of temperature during electric- and magnetic-field-induced alteration of calcium-ion release from in vitro brain tissue",
+      "journal": "Bioelectromagnetics",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "level": "E",
+      "type": "journal",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Ca2+ efflux from brain tissue occurred at 36C and 37C but NOT at 35C, 38C, or 39C. The DIRECTION of effect (enhancement vs. reduction vs. null) depended on whether temperature was rising, stable, or falling during exposure. Three different outcomes — all genuine — from the same EMF dose at different temperatures. Demonstrates that 1C temperature difference changes the result from positive to null to negative.",
+      "verified": true,
+      "tags": [
+        "calcium",
+        "temperature_window",
+        "confound",
+        "replication",
+        "brain_tissue"
+      ]
+    },
+    {
+      "id": "blackman1990",
+      "authors": "Blackman CF, Benane SG, House DE, Elliott DJ",
+      "year": 1990,
+      "title": "Importance of alignment between local DC magnetic field and an oscillating magnetic field in responses of brain tissue in vitro and in vivo",
+      "journal": "Bioelectromagnetics",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "level": "E",
+      "type": "journal",
+      "pathway": [
+        "A",
+        "C"
+      ],
+      "finding": "The relative orientation between the local DC magnetic field (geomagnetic) and the oscillating AC magnetic field is crucial for calcium release. Results are consistent with a magnetic resonance-like transduction mechanism. Labs in different geographic locations (different geomagnetic declination and inclination) and different building orientations get systematically different results at the same AC field parameters.",
+      "verified": true,
+      "tags": [
+        "calcium",
+        "geomagnetic",
+        "orientation",
+        "confound",
+        "replication",
+        "dc_field"
+      ]
+    },
+    {
+      "id": "yu2019_btb",
+      "authors": "Yu G et al.",
+      "year": 2019,
+      "title": "Long-term exposure to 4G smartphone RF-EMR diminished male reproductive potential by directly disrupting Spock3-MMP2-BTB axis",
+      "journal": "Science of The Total Environment",
+      "doi": null,
+      "category": "reproduction_hormones",
+      "level": "E",
+      "type": "journal",
+      "pathway": [
+        "A",
+        "F"
+      ],
+      "finding": "Long-term exposure to 2605 MHz (4G) RF-EMR gradually damaged spermatogenesis and resulted in time-dependent reproductive toxicity by directly disrupting blood-testis barrier integrity via the Spock3-MMP2-BTB axis. The effect was progressive — consistent with a positive feedback mechanism where BTB opening increases exposure of protected tissue. First direct demonstration of BTB disruption by telecom-frequency RF.",
+      "verified": true,
+      "tags": [
+        "btb",
+        "blood_testis_barrier",
+        "tight_junction",
+        "4g",
+        "spermatogenesis",
+        "pathway_F",
+        "barrier_multiplier",
+        "sperm"
+      ]
+    },
+    {
+      "id": "nature_comms_2026_ttype",
+      "authors": "[Nature Communications authors]",
+      "year": 2026,
+      "title": "All four voltage-sensing domains of human CaV3.1 activate within a narrow voltage range near resting membrane potential",
+      "journal": "Nature Communications",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "level": "E",
+      "type": "journal",
+      "pathway": [
+        "A"
+      ],
+      "finding": "All four voltage-sensing domains of human CaV3.1 (T-type) activate within a narrow voltage range near resting membrane potential (-70 to -50 mV). Solves the longstanding conundrum of how T-type channels achieve low-voltage sensitivity. Establishes that T-type channels are maximally sensitive NEAR resting potential — the exact range where EMF-induced perturbations via Schwan equation are largest.",
+      "verified": true,
+      "tags": [
+        "t_type",
+        "cav3",
+        "voltage_sensing",
+        "bifurcation",
+        "window_current"
+      ]
+    },
+    {
+      "id": "xiang2025_clc2_ttype",
+      "authors": "Xiang C et al.",
+      "year": 2025,
+      "title": "ClC-2 facilitates T-type VGCC-mediated steroidogenesis in Leydig cells",
+      "journal": "Reproduction (Oxford)",
+      "doi": "10.1530/REP-24-0432",
+      "category": "reproduction_hormones",
+      "level": "E",
+      "type": "journal",
+      "pathway": [
+        "A",
+        "D"
+      ],
+      "finding": "In Leydig cells, ClC-2 chloride channels facilitate membrane depolarization that activates voltage-gated calcium channels. Inhibition of T-type VGCC attenuated cAMP-induced steroidogenic gene expression and testosterone synthesis. ClC-2 knockdown in vivo diminished intratesticular testosterone levels. Completes the chain: EMF -> Schwan dVm -> T-type Cav3 -> Ca2+ -> StAR -> testosterone.",
+      "verified": true,
+      "tags": [
+        "t_type",
+        "leydig",
+        "testosterone",
+        "steroidogenesis",
+        "star_protein",
+        "clc2"
+      ]
+    },
+    {
+      "id": "ma2026_spermatogenesis_cav",
+      "authors": "Ma T et al.",
+      "year": 2026,
+      "title": "Cav1 and Cav3 are both essential for spermatogenesis",
+      "journal": "Andrology",
+      "doi": "10.1111/andr.70119",
+      "category": "reproduction_hormones",
+      "level": "E",
+      "type": "journal",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Functional regulation of Cav channels is essential for normal spermatocyte development. Inhibition of Cav1 (L-type, nifedipine) or Cav3 (T-type, ethosuximide) disrupts normal spermatogenesis and steroidogenesis during prepubertal testicular maturation. Both channel types required — EMF perturbation of T-type window current provides chronic low-level disruption mechanism.",
+      "verified": true,
+      "tags": [
+        "t_type",
+        "l_type",
+        "spermatogenesis",
+        "cav1",
+        "cav3",
+        "ethosuximide",
+        "nifedipine"
+      ]
+    },
+    {
+      "id": "ijms2026-hpg",
+      "authors": "IJMS authors",
+      "year": 2026,
+      "title": "The Effect of 2.45 GHz RF-EMR on Components of the HPG Axis in Male Rats",
+      "journal": "International Journal of Molecular Sciences",
+      "doi": null,
+      "category": "reproduction_hormones",
+      "level": "E",
+      "type": "journal",
+      "pathway": [
+        "A",
+        "D"
+      ],
+      "finding": "2.45 GHz RF-EMR disrupts multiple components of the hypothalamic-pituitary-gonadal (HPG) axis in male rats, including GnRH pulsatility, pituitary gonadotroph FSH/LH secretion, and downstream gonadal function. Demonstrates that EMF affects the HPG axis at the pituitary level, not only at the gonadal level.",
+      "verified": false,
+      "tags": [
+        "pituitary",
+        "gnrh",
+        "fsh",
+        "lh",
+        "hpg",
+        "gonadotroph"
+      ]
+    },
+    {
+      "id": "kim2021-placenta",
+      "authors": "Kim J et al.",
+      "year": 2021,
+      "title": "Biological Effects of Exposure to RF-EMF on the Placental Barrier in Pregnant Rats",
+      "journal": "Bioelectromagnetics",
+      "doi": "10.1002/bem.22322",
+      "category": "reproduction_hormones",
+      "level": "M",
+      "type": "journal",
+      "pathway": [
+        "F"
+      ],
+      "finding": "RF-EMF exposure affects placental barrier integrity in pregnant rats, suggesting that biological barriers beyond BBB and BTB are vulnerable to EMF-induced tight junction disruption. Extends the barrier vulnerability model to the placental barrier during pregnancy.",
+      "verified": false,
+      "tags": [
+        "placenta",
+        "barrier",
+        "pregnancy"
+      ]
+    },
+    {
+      "id": "mohamed-bp-emf",
+      "authors": "Mohamed FA et al.",
+      "year": 2013,
+      "title": "Cell phone EMF exposure increases systolic blood pressure and plasma renin activity",
+      "journal": "",
+      "doi": null,
+      "category": "reproduction_hormones",
+      "level": "E",
+      "type": "journal",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Cell phone EMF exposure increases systolic blood pressure and plasma renin activity, indicating autonomic cardiovascular effects mediated through the renin-angiotensin-aldosterone system. Supports the autonomic/cardiovascular pathway of EMF biological effects.",
+      "verified": false,
+      "tags": [
+        "hypertension",
+        "renin",
+        "aldosterone",
+        "cardiovascular"
+      ]
+    },
+    {
+      "id": "pall2022-ad",
+      "authors": "Pall ML",
+      "year": 2022,
+      "title": "Low Intensity EMFs Act via VGCC Activation to Cause Very Early Onset Alzheimer's: 18 Distinct Types of Evidence",
+      "journal": "Current Alzheimer Research",
+      "doi": "10.2174/1567205019666220202114510",
+      "pmid": "35114921",
+      "category": "neurobiology_circadian",
+      "level": "M|C",
+      "type": "journal",
+      "pathway": [
+        "A",
+        "F"
+      ],
+      "finding": "Presents 18 distinct types of evidence that low-intensity EMFs act via voltage-gated calcium channel (VGCC) activation to produce very early onset Alzheimer's disease. The Ca2+ hypothesis of AD converges with EMF-VGCC pathway: EMF → VGCC → Ca2+ influx → BACE1 activation → amyloid-beta production → neurodegeneration.",
+      "verified": false,
+      "tags": [
+        "alzheimer",
+        "vgcc",
+        "calcium",
+        "hippocampus"
+      ]
+    },
+    {
+      "id": "thyroid-sysrev-2024",
+      "authors": "Systematic review authors",
+      "year": 2024,
+      "title": "Do electromagnetic fields significantly affect thyroid cells and their functions? A systematic review",
+      "journal": "F1000Research",
+      "doi": "10.12688/f1000research.143498.1",
+      "category": "reproduction_hormones",
+      "level": "M|C",
+      "type": "journal",
+      "pathway": [
+        "A",
+        "D"
+      ],
+      "finding": "Systematic review examining whether electromagnetic fields significantly affect thyroid cells and their functions. Evidence suggests EMF exposure can alter thyroid hormone levels and thyroid cell function, contributing to hypothyroidism and TSH dysregulation through VGCC-mediated and endocrine disruption pathways.",
+      "verified": false,
+      "tags": [
+        "thyroid",
+        "hypothyroidism",
+        "tsh"
+      ]
+    },
+    {
+      "id": "lte-thyroid-2024",
+      "authors": "LTE thyroid study authors",
+      "year": 2024,
+      "title": "Effects of 4G LTE EMF on Thyroid Hormone Dysfunction and Behavioral Changes in Adolescent Male Mice",
+      "journal": "IJMS/Toxicological Research",
+      "doi": null,
+      "category": "reproduction_hormones",
+      "level": "E",
+      "type": "journal",
+      "pathway": [
+        "A",
+        "D"
+      ],
+      "finding": "4G LTE EMF exposure causes thyroid hormone dysfunction and behavioral changes in adolescent male mice. Demonstrates disruption of the hypothalamic-pituitary-thyroid (HPT) axis with downstream effects on DIO2 enzyme activity and thyroid hormone conversion, supporting the endocrine disruption pathway of EMF effects.",
+      "verified": false,
+      "tags": [
+        "thyroid",
+        "lte",
+        "4g",
+        "dio2",
+        "hpt"
+      ]
+    },
+    {
+      "id": "res-square-2025-radar-methylation",
+      "authors": "Various",
+      "year": 2025,
+      "title": "Genome-wide sperm DNA methylation alterations in individuals exposed to radar electromagnetic radiation",
+      "journal": "Research Square (preprint)",
+      "doi": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Genome-wide analysis reveals significant sperm DNA methylation alterations in radar-exposed individuals, identifying differentially methylated regions relevant to transgenerational epigenetic effects of electromagnetic radiation.",
+      "verified": false,
+      "tags": [
+        "sperm",
+        "dna_methylation",
+        "epigenetic",
+        "radar",
+        "human",
+        "transgenerational"
+      ]
+    },
+    {
+      "id": "gc2-elf-dnmt",
+      "authors": "Various",
+      "year": 2015,
+      "title": "Effect of 50 Hz ELF-EMF on DNA Methylation and DNA Methyltransferases in Mouse Spermatocyte-Derived Cell Line GC-2",
+      "journal": "PMC (Int J Environ Res Public Health)",
+      "doi": null,
+      "category": "cellular_ros_dna",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "50 Hz ELF-EMF alters DNA methylation and DNMT1/DNMT3B expression in GC-2 spermatocyte cells with non-monotonic dose-response and window effects, suggesting epigenetic modulation at specific intensity windows.",
+      "verified": false,
+      "tags": [
+        "elf",
+        "dnmt1",
+        "dnmt3b",
+        "methylation",
+        "spermatocyte",
+        "window_effect",
+        "non_monotonic"
+      ]
+    },
+    {
+      "id": "sci-rep-2019-sperm-ros",
+      "authors": "Houston BJ et al.",
+      "year": 2019,
+      "title": "Whole-body RF-EME exposures cause DNA damage in mouse spermatozoa via oxidative mechanism",
+      "journal": "Scientific Reports",
+      "doi": "10.1038/s41598-019-53983-9",
+      "pmid": "31767903",
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Whole-body RF-EME exposure at 905 MHz causes DNA damage in mouse spermatozoa via mitochondrial ROS generation and elevated 8-OHdG, demonstrating an oxidative mechanism for RF-induced sperm genotoxicity.",
+      "verified": false,
+      "tags": [
+        "sperm",
+        "ros",
+        "mitochondria",
+        "dna_damage",
+        "8ohdg",
+        "905mhz",
+        "oxidative"
+      ]
+    },
+    {
+      "id": "cells-2023-genotoxic-rf",
+      "authors": "Various",
+      "year": 2023,
+      "title": "Genotoxic Risks to Male Reproductive Health from Radiofrequency Radiation",
+      "journal": "Cells",
+      "doi": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A"
+      ],
+      "level": "M|C",
+      "type": "review",
+      "finding": "Review of genotoxic risks from RF radiation to male reproductive health, covering sperm 8-OHdG elevation, DNA fragmentation, and transgenerational germline effects across multiple studies.",
+      "verified": false,
+      "tags": [
+        "sperm",
+        "8ohdg",
+        "genotoxic",
+        "transgenerational",
+        "germline"
+      ]
+    },
+    {
+      "id": "catSper-temp-2025",
+      "authors": "Nature Communications",
+      "year": 2025,
+      "title": "The essential calcium channel of sperm CatSper is temperature-gated",
+      "journal": "Nature Communications",
+      "doi": "10.1038/s41467-025-58824-0",
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "CatSper, the essential calcium channel of sperm, is temperature-gated with a thermal threshold at 33.5C, linking temperature sensing to capacitation and establishing CatSper as a thermosensitive ion channel relevant to reproductive physiology.",
+      "verified": false,
+      "tags": [
+        "catsper",
+        "temperature",
+        "sperm",
+        "capacitation",
+        "thermal_threshold",
+        "33.5C"
+      ]
+    },
+    {
+      "id": "fert-steril-2023-phone-sperm-trend",
+      "authors": "Various",
+      "year": 2023,
+      "title": "Association between mobile phone use and semen quality: decreasing association over time",
+      "journal": "Fertility and Sterility",
+      "doi": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A"
+      ],
+      "level": "M|C",
+      "type": "observational",
+      "finding": "Association between mobile phone use and semen quality decreases over time, with stronger effects during GSM era compared to LTE, suggesting modulation type (not just SAR) influences biological outcomes — consistent with Schwan membrane coupling hypothesis.",
+      "verified": false,
+      "tags": [
+        "sperm",
+        "phone",
+        "gsm",
+        "lte",
+        "time_trend",
+        "modulation",
+        "schwann"
+      ]
+    },
+    {
+      "id": "lee2011-ethosuximide-star",
+      "authors": "Lee et al.",
+      "year": 2011,
+      "title": "T-type calcium channel blockade reduces StAR and testosterone in prepubertal mouse Leydig cells",
+      "journal": "Reproduction",
+      "doi": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "T-type calcium channel blocker ethosuximide reduces StAR mRNA, testosterone production, and Leydig cell number in prepubertal mice. LH unchanged — direct effect, not HPG axis. Pharmacological proof that T-type Ca²⁺ channels control testosterone synthesis.",
+      "verified": false,
+      "tags": [
+        "t-type",
+        "cav3",
+        "leydig",
+        "star",
+        "testosterone",
+        "ethosuximide",
+        "prepubertal"
+      ]
+    },
+    {
+      "id": "reproduction2025-mibefradil-leydig",
+      "authors": "Various",
+      "year": 2025,
+      "title": "Mibefradil inhibits steroidogenic gene expression in MA-10 Leydig cells",
+      "journal": "Reproduction (Oxford Academic)",
+      "doi": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "T-type blocker mibefradil reduces StAR, Cyp11a1, Hsd3b1, Cyp17a1 mRNA in MA-10 Leydig cells. Testosterone production significantly decreased. Confirms T-type Ca²⁺ dependence of entire steroidogenic pathway.",
+      "verified": false,
+      "tags": [
+        "t-type",
+        "cav3",
+        "leydig",
+        "mibefradil",
+        "steroidogenesis",
+        "star"
+      ]
+    },
+    {
+      "id": "pgc-cacna1c-five-disorders",
+      "authors": "Psychiatric Genomics Consortium",
+      "year": 2013,
+      "title": "CACNA1C variants associated with five major psychiatric disorders",
+      "journal": "Lancet",
+      "doi": null,
+      "category": "neurodevelopment",
+      "pathway": [
+        "A",
+        "E"
+      ],
+      "level": "E",
+      "type": "gwas",
+      "finding": "GWAS mega-analysis (33,332 cases, 27,888 controls): CACNA1C variants significantly associated with all five major psychiatric disorders — ASD, ADHD, bipolar, MDD, schizophrenia. Single gene, five phenotypes.",
+      "verified": false,
+      "tags": [
+        "cacna1c",
+        "gwas",
+        "autism",
+        "adhd",
+        "bipolar",
+        "depression",
+        "schizophrenia"
+      ]
+    },
+    {
+      "id": "timothy-syndrome-cacna1c-autism",
+      "authors": "Bhatt et al.",
+      "year": 2019,
+      "title": "Timothy syndrome G406R CACNA1C mutation causes autism via disrupted axon targeting",
+      "journal": "PLOS Genetics",
+      "doi": null,
+      "category": "neurodevelopment",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Timothy syndrome G406R gain-of-function mutation in CACNA1C causes autism with 80% penetrance. Mechanism: excessive Ca²⁺ influx disrupts axon targeting via selective autophagy → circuit formation defects.",
+      "verified": false,
+      "tags": [
+        "cacna1c",
+        "timothy",
+        "autism",
+        "calcium",
+        "axon",
+        "autophagy"
+      ]
+    },
+    {
+      "id": "denmark-cpp-3x-increase",
+      "authors": "Various",
+      "year": 2020,
+      "title": "Central precocious puberty increase in Denmark 1998-2017",
+      "journal": "Various",
+      "doi": null,
+      "category": "neurodevelopment",
+      "pathway": [
+        "C"
+      ],
+      "level": "M|C",
+      "type": "epidemiological",
+      "finding": "Central precocious puberty (CPP) increased 3× in girls and 2× in boys in Denmark 1998-2017. CPP girls had significantly lower salivary melatonin, linked to electronic device EMF exposure.",
+      "verified": false,
+      "tags": [
+        "puberty",
+        "cpp",
+        "melatonin",
+        "denmark",
+        "children"
+      ]
+    },
+    {
+      "id": "asd-gd-comorbidity-trinetx",
+      "authors": "Various",
+      "year": 2024,
+      "title": "ASD-gender dysphoria comorbidity in large clinical datasets",
+      "journal": "Various",
+      "doi": null,
+      "category": "neurodevelopment",
+      "pathway": [
+        "A",
+        "E"
+      ],
+      "level": "E",
+      "type": "observational",
+      "finding": "6-26% of autistic individuals report gender-atypical feelings. TriNetX 48k dataset confirms ASD-GD clustering. AFAB 22% gender-nonconforming. Consistent with shared CACNA1C vulnerability.",
+      "verified": false,
+      "tags": [
+        "autism",
+        "gender",
+        "comorbidity",
+        "cacna1c",
+        "neurodevelopment"
+      ]
+    },
+    {
+      "id": "oxtr-development-two-waves",
+      "authors": "Various",
+      "year": 2022,
+      "title": "OXTR expression develops in two waves: perinatal and pubertal",
+      "journal": "Neuropsychopharmacology",
+      "doi": null,
+      "category": "neurodevelopment",
+      "pathway": [
+        "E"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "OXTR expression develops in two waves: perinatal (stronger in males) and pubertal. OT modulates interoception in insular cortex. VGCC-dependent Ca²⁺ influx required for OT release from magnocellular neurons.",
+      "verified": false,
+      "tags": [
+        "oxytocin",
+        "oxtr",
+        "interoception",
+        "insular",
+        "development"
+      ]
+    },
+    {
+      "id": "insular-interoception-ot-2026",
+      "authors": "Various",
+      "year": 2026,
+      "title": "Oxytocin modulates interoceptive attention in insular cortex",
+      "journal": "Frontiers in Neural Circuits",
+      "doi": null,
+      "category": "neurodevelopment",
+      "pathway": [
+        "E"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "OT regulates attention switching between interoceptive and exteroceptive signals in insular cortex. Disrupted OT → altered body-self relationship. Adolescent interoceptive processing is still developing — context-dependent and variable.",
+      "verified": false,
+      "tags": [
+        "oxytocin",
+        "insular",
+        "interoception",
+        "body_image",
+        "adolescent"
+      ]
+    },
+    {
+      "id": "afp-estrogen-protection",
+      "authors": "Various",
+      "year": 2010,
+      "title": "Alpha-fetoprotein protects female fetal brain from estrogen masculinization",
+      "journal": "Various",
+      "doi": null,
+      "category": "neurodevelopment",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "review",
+      "finding": "Alpha-fetoprotein (AFP) binds circulating estrogen, protecting female fetal brain from masculinization. AFP does NOT bind testosterone. Local brain aromatase can produce estradiol that bypasses AFP protection.",
+      "verified": false,
+      "tags": [
+        "afp",
+        "estrogen",
+        "masculinization",
+        "fetal",
+        "aromatase",
+        "sexual_differentiation"
+      ]
+    },
+    {
+      "id": "aromatase-calcium-dependent",
+      "authors": "Various",
+      "year": 2015,
+      "title": "Brain aromatase (CYP19) expression requires Ca²⁺-dependent MAPK phosphorylation",
+      "journal": "Various",
+      "doi": null,
+      "category": "neurodevelopment",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Aromatase expression requires MAPK1/3 phosphorylation which depends on extracellular calcium. Demonstrated in granulosa cells, derived for neurons. Brain aromatase converts testosterone to estradiol in sexually dimorphic regions.",
+      "verified": false,
+      "tags": [
+        "aromatase",
+        "cyp19",
+        "calcium",
+        "mapk",
+        "estradiol",
+        "sexual_differentiation"
+      ]
+    },
+    {
+      "id": "therabionic-ebioMedicine-2019",
+      "authors": "Jimenez H, Wang M et al.",
+      "year": 2019,
+      "title": "Tumour-specific AM RF EMF induce differentiation of HCC via targeting Cav3.2 T-type VGCC and Ca2+ influx",
+      "journal": "eBioMedicine (Lancet)",
+      "doi": "10.1016/j.ebiom.2019.05.034",
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "FDA-approved TheraBionic device treats HCC via non-thermal EMF targeting Cav3.2 T-type calcium channels. Amplitude-modulated 27.12 MHz at SAR 100-1000x below mobile phone levels induces Ca2+ influx and tumor cell differentiation.",
+      "verified": true,
+      "tags": [
+        "therabionic",
+        "cav3.2",
+        "fda",
+        "cancer",
+        "non_thermal",
+        "amplitude_modulation",
+        "hcc"
+      ]
+    },
+    {
+      "id": "fda-hde-h220001",
+      "authors": "FDA",
+      "year": 2019,
+      "title": "HDE H220001: TheraBionic P1 Summary of Safety and Probable Benefit",
+      "journal": "FDA",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "regulatory",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "FDA Humanitarian Device Exemption for TheraBionic P1 treating advanced HCC. Label explicitly contraindicates calcium channel blockers, confirming Ca2+ mechanism. 34% survival increase in advanced HCC.",
+      "verified": true,
+      "tags": [
+        "fda",
+        "therabionic",
+        "regulatory",
+        "calcium_channel_blocker_contraindication"
+      ]
+    },
+    {
+      "id": "aging-cell-2024-cav13-hearing",
+      "authors": "Lu M, Xian F et al.",
+      "year": 2024,
+      "title": "Upregulation of Cav1.3 in IHCs by IL-6-dependent inflammaging contributes to age-related hearing loss",
+      "journal": "Aging Cell",
+      "doi": "10.1111/acel.14305",
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "IL-6-dependent inflammaging upregulates Cav1.3 in inner hair cells, causing chronic Ca2+ overload and excitotoxicity at IHC synapses, contributing to age-related hearing loss.",
+      "verified": false,
+      "tags": [
+        "cav1.3",
+        "hearing",
+        "tinnitus",
+        "il6",
+        "inflammaging",
+        "inner_hair_cell"
+      ]
+    },
+    {
+      "id": "brain-2026-cav32-human-drg",
+      "authors": "Various",
+      "year": 2026,
+      "title": "Functional expression of T-type Cav3.2 in female and male human DRG neurons",
+      "journal": "Brain (Oxford Academic)",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Cav3.2 T-type calcium channels are functionally expressed in human DRG nociceptors with sex-differential expression. Female DRG neurons show more prominent Cav3.2 currents.",
+      "verified": false,
+      "tags": [
+        "cav3.2",
+        "pain",
+        "drg",
+        "sex_difference",
+        "nociceptor",
+        "human"
+      ]
+    },
+    {
+      "id": "cav32-chronic-pain-2021",
+      "authors": "Snutch TP, Bhargava A",
+      "year": 2021,
+      "title": "Targeting T-type/CaV3.2 channels for chronic pain",
+      "journal": "Mol Aspects Med",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Cav3.2 is the primary pain channel in DRG nociceptors. Expression and activity are significantly upregulated in inflammatory and neuropathic pain models. T-type channel blockers are effective analgesics.",
+      "verified": false,
+      "tags": [
+        "cav3.2",
+        "pain",
+        "drg",
+        "neuropathic",
+        "inflammatory",
+        "target"
+      ]
+    },
+    {
+      "id": "pnas-2011-cav33-spindles",
+      "authors": "Astori S et al.",
+      "year": 2011,
+      "title": "The CaV3.3 calcium channel is the major sleep spindle pacemaker in thalamus",
+      "journal": "PNAS",
+      "doi": "10.1073/pnas.1105115108",
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Cav3.3 knockout mice completely lack sleep spindles in the nucleus reticularis thalami (nRt). Cav3.3 is the major pacemaker for sleep spindle generation.",
+      "verified": false,
+      "tags": [
+        "cav3.3",
+        "sleep",
+        "spindle",
+        "nrt",
+        "thalamus",
+        "pacemaker"
+      ]
+    },
+    {
+      "id": "pnas-2005-cav31-sleep",
+      "authors": "Anderson MP et al.",
+      "year": 2005,
+      "title": "Thalamic Cav3.1 T-type Ca2+ channel plays a crucial role in stabilizing sleep",
+      "journal": "PNAS",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Cav3.1 knockout mice show reduced delta waves and increased sleep fragmentation. Thalamic T-type channels are essential for sleep stability.",
+      "verified": false,
+      "tags": [
+        "cav3.1",
+        "sleep",
+        "delta",
+        "stabilization",
+        "thalamus"
+      ]
+    },
+    {
+      "id": "cacna1i-migraine-2022",
+      "authors": "Various",
+      "year": 2022,
+      "title": "Investigation of CACNA1I Cav3.3 dysfunction in hemiplegic migraine",
+      "journal": "PMC",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "genetic",
+      "level": "M|C",
+      "pathway": [
+        "A"
+      ],
+      "finding": "CACNA1I burden test shows OR 2.30 (P=0.00005) for hemiplegic migraine. T-type Cav3.3 dysfunction contributes to cortical spreading depression.",
+      "verified": false,
+      "tags": [
+        "cacna1i",
+        "cav3.3",
+        "migraine",
+        "hemiplegic",
+        "t_type",
+        "burden_test"
+      ]
+    },
+    {
+      "id": "nejm-fhm-cacna1a",
+      "authors": "Ducros A et al.",
+      "year": 2001,
+      "title": "The clinical spectrum of FHM associated with mutations in a neuronal Ca channel",
+      "journal": "NEJM",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "clinical",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "CACNA1A gain-of-function mutations cause familial hemiplegic migraine type 1. Increased Ca2+ influx leads to excessive glutamate release and cortical spreading depression.",
+      "verified": false,
+      "tags": [
+        "cacna1a",
+        "migraine",
+        "familial_hemiplegic",
+        "p_q_type"
+      ]
+    },
+    {
+      "id": "frontiers-immunol-2020-nfat",
+      "authors": "Park YJ, Yoo SA et al.",
+      "year": 2020,
+      "title": "The role of Ca2+-calcineurin-NFAT signaling pathway in health and autoimmune diseases",
+      "journal": "Frontiers in Immunology",
+      "doi": "10.3389/fimmu.2020.00195",
+      "category": "transduction_rpm_calcium",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Ca2+-calcineurin-NFAT pathway is critical for T-cell activation. Pharmacological inhibitors (cyclosporine, tacrolimus) are standard autoimmune treatments, confirming that Ca2+ dysregulation drives autoimmunity.",
+      "verified": false,
+      "tags": [
+        "calcium",
+        "nfat",
+        "calcineurin",
+        "autoimmune",
+        "cyclosporine",
+        "tacrolimus"
+      ]
+    },
+    {
+      "id": "pcos-prevalence-2025",
+      "authors": "Various (GBD 2021 study)",
+      "year": 2025,
+      "title": "Global and Chinese epidemiologic study of PCOS in women of childbearing age, 1990-2021, projections to 2035",
+      "journal": "PMC",
+      "doi": null,
+      "category": "reproductive",
+      "type": "epidemiological",
+      "level": "E",
+      "pathway": [
+        "A",
+        "D"
+      ],
+      "finding": "PCOS prevalence is 5-20% of reproductive-age women and rising through 2035. Global analysis shows increasing trend aligned with metabolic and environmental changes.",
+      "verified": false,
+      "tags": [
+        "pcos",
+        "prevalence",
+        "global",
+        "insulin_resistance",
+        "androgen"
+      ]
+    },
+    {
+      "id": "timothy-cardiac-2023",
+      "authors": "Various",
+      "year": 2023,
+      "title": "Hypertrophic cardiomyopathy and long QT syndrome in cardiac-only Timothy syndrome",
+      "journal": "HeartRhythm Case Reports",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "clinical",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "CACNA1C gain-of-function mutations cause Timothy syndrome with cardiac manifestations including long QT syndrome and hypertrophic cardiomyopathy. Window current increase drives action potential prolongation.",
+      "verified": false,
+      "tags": [
+        "timothy",
+        "cacna1c",
+        "long_qt",
+        "hcm",
+        "arrhythmia",
+        "window_current"
+      ]
+    },
+    {
+      "id": "cacna1c-window-current-arrhythmia",
+      "authors": "Various",
+      "year": 2014,
+      "title": "A CACNA1C variant associated with reduced VDI, increased Cav1.2 window current, and arrhythmogenesis",
+      "journal": "PMC",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "CACNA1C variants that reduce voltage-dependent inactivation increase the Cav1.2 window current, prolonging cardiac action potentials and causing arrhythmias. Window current is a key pathogenic mechanism.",
+      "verified": false,
+      "tags": [
+        "cacna1c",
+        "window_current",
+        "qt_prolongation",
+        "arrhythmia"
+      ]
+    },
+    {
+      "id": "myopia-dopamine-light-2026",
+      "authors": "Various",
+      "year": 2026,
+      "title": "Role of light in eye growth and light as therapy for myopia control",
+      "journal": "Frontiers in Ophthalmology",
+      "doi": null,
+      "category": "eye_circadian",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "C"
+      ],
+      "finding": "Dopamine release from amacrine cells acts as a brake on scleral elongation. Light exposure is protective against myopia via this DA pathway. Circadian regulation of ocular growth is CRY-dependent.",
+      "verified": false,
+      "tags": [
+        "myopia",
+        "dopamine",
+        "light",
+        "amacrine",
+        "scleral",
+        "axial_elongation"
+      ]
+    },
+    {
+      "id": "oxtr-brain-development-2022",
+      "authors": "Various",
+      "year": 2022,
+      "title": "Oxytocin receptor expression patterns in the human brain across development",
+      "journal": "Neuropsychopharmacology",
+      "doi": null,
+      "category": "neurodevelopment",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Oxytocin receptor expression in the human brain shows sex-differential developmental trajectories. OXTR expression peaks during critical periods of social brain development.",
+      "verified": false,
+      "tags": [
+        "oxytocin",
+        "oxtr",
+        "development",
+        "sex_difference",
+        "brain"
+      ]
+    },
+    {
+      "id": "ot-insular-2026",
+      "authors": "Various",
+      "year": 2026,
+      "title": "Oxytocin modulation of the insular cortex: implications for social cognition and neurodevelopmental disorders",
+      "journal": "Frontiers in Neural Circuits",
+      "doi": null,
+      "category": "neurodevelopment",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Oxytocin modulates insular cortex activity, linking it to interoception, body awareness, and social cognition. Disruption during development may contribute to altered body representation.",
+      "verified": false,
+      "tags": [
+        "oxytocin",
+        "insular",
+        "interoception",
+        "social_cognition",
+        "body_awareness"
+      ]
+    },
+    {
+      "id": "prenatal-t-brain-2015",
+      "authors": "Hines M et al.",
+      "year": 2015,
+      "title": "Early androgen exposure and human gender development",
+      "journal": "Biology of Sex Differences",
+      "doi": null,
+      "category": "neurodevelopment",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "A",
+        "D"
+      ],
+      "finding": "Prenatal androgen exposure shapes human gender development. CAH females exposed to high prenatal androgens show more masculine behavior and gender identity patterns.",
+      "verified": false,
+      "tags": [
+        "testosterone",
+        "prenatal",
+        "gender",
+        "masculinization",
+        "brain"
+      ]
+    },
+    {
+      "id": "mpw-agd-sharpe-2020",
+      "authors": "Sharpe RM",
+      "year": 2020,
+      "title": "Androgens and the masculinization programming window: human-rodent differences",
+      "journal": "Biochemical Society Transactions",
+      "doi": null,
+      "category": "reproductive",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "The masculinization programming window (MPW) is a critical period when androgens program male reproductive tract development. AGD is a biomarker of MPW androgen action. Phthalate disruption during MPW causes TDS.",
+      "verified": false,
+      "tags": [
+        "mpw",
+        "agd",
+        "testosterone",
+        "masculinization",
+        "tds",
+        "phthalate"
+      ]
+    },
+    {
+      "id": "pediatric-autoimmune-covid-2025",
+      "authors": "Various (Clalit Health Services)",
+      "year": 2025,
+      "title": "Pediatric autoimmune diseases in the light of COVID-19 pandemic",
+      "journal": "PMC",
+      "doi": null,
+      "category": "immune_system",
+      "type": "epidemiological",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Pediatric autoimmune disease incidence increased during and after COVID-19 pandemic. T1D, celiac disease, and psoriasis showed significant increases in children.",
+      "verified": false,
+      "tags": [
+        "autoimmune",
+        "pediatric",
+        "covid",
+        "incidence",
+        "t1d",
+        "celiac",
+        "psoriasis"
+      ]
+    },
+    {
+      "id": "trn-spindles-schizophrenia-2019",
+      "authors": "Various",
+      "year": 2019,
+      "title": "TRN parvalbumin neurons regulate sleep spindles and electrophysiological aspects of schizophrenia",
+      "journal": "PMC",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "TRN parvalbumin neurons regulate sleep spindle generation via T-type calcium channels. Reduced spindle density is a biomarker of schizophrenia, linking Cav3.3 dysfunction to psychiatric disease.",
+      "verified": false,
+      "tags": [
+        "trn",
+        "spindle",
+        "schizophrenia",
+        "t_type",
+        "tta_p2",
+        "parvalbumin"
+      ]
+    },
+    {
+      "id": "bradford-hill-1965",
+      "authors": "Hill AB",
+      "year": 1965,
+      "title": "The Environment and Disease: Association or Causation?",
+      "journal": "Proc R Soc Med",
+      "doi": "10.1177/003591576505800503",
+      "category": "methodology",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "A",
+        "B",
+        "C"
+      ],
+      "finding": "Established nine criteria for evaluating causal associations in epidemiology: strength, consistency, specificity, temporality, biological gradient, plausibility, coherence, experiment, analogy.",
+      "verified": true,
+      "tags": [
+        "bradford_hill",
+        "causation",
+        "methodology",
+        "epidemiology"
+      ]
+    },
+    {
+      "id": "surgeon-general-1964",
+      "authors": "US Surgeon General",
+      "year": 1964,
+      "title": "Smoking and Health: Report of the Advisory Committee to the Surgeon General",
+      "journal": "US Department of Health, Education, and Welfare",
+      "doi": null,
+      "category": "methodology",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "A",
+        "B",
+        "C"
+      ],
+      "finding": "Landmark report establishing causal link between smoking and lung cancer using Bradford Hill criteria. Demonstrated that systematic application of causal criteria can overcome industry resistance to scientific evidence.",
+      "verified": true,
+      "tags": [
+        "surgeon_general",
+        "tobacco",
+        "causation",
+        "methodology"
+      ]
+    },
+    {
+      "id": "lancet-2017-tsimane-heart",
+      "authors": "Kaplan H et al.",
+      "year": 2017,
+      "title": "Coronary atherosclerosis in indigenous South American Tsimane: a cross-sectional cohort study",
+      "journal": "Lancet",
+      "doi": "10.1016/S0140-6736(17)30752-3",
+      "category": "epidemiology",
+      "type": "observational",
+      "level": "E",
+      "pathway": [],
+      "finding": "Tsimane have the lowest reported levels of coronary artery disease of any population recorded to date. CT angiography showed 85% of Tsimane adults had no coronary artery calcium, compared to only 14% of Americans of the same age.",
+      "verified": true,
+      "tags": ["tsimane", "heart", "atherosclerosis", "lowest_recorded", "population_comparison"]
+    },
+    {
+      "id": "alz-dem-2022-tsimane-dementia",
+      "authors": "Gatz M et al.",
+      "year": 2022,
+      "title": "Prevalence of dementia and mild cognitive impairment in indigenous Bolivian forager-horticulturalists",
+      "journal": "Alzheimer's & Dementia",
+      "doi": "10.1002/alz.12626",
+      "category": "epidemiology",
+      "type": "observational",
+      "level": "E",
+      "pathway": [],
+      "finding": "Dementia prevalence among Tsimane is approximately 1.2%, compared to 8-11% in the US and Europe. Moseten (partially modernized, shared ancestry) show intermediate rates, suggesting a modernization gradient.",
+      "verified": true,
+      "tags": ["tsimane", "moseten", "dementia", "1.2_percent", "gradient", "population_comparison"]
+    },
+    {
+      "id": "j-gerontol-2021-tsimane-brain",
+      "authors": "Irimia A et al.",
+      "year": 2021,
+      "title": "Brain volumetric deficits in a forager-horticulturalist population: the Tsimane",
+      "journal": "J Gerontol Series A",
+      "doi": "10.1093/gerona/glab138",
+      "category": "epidemiology",
+      "type": "observational",
+      "level": "E",
+      "pathway": [],
+      "finding": "Tsimane brain atrophy rate is approximately 70% slower than in Western populations of the same age. Parieto-occipital regions show growth rather than decline in older Tsimane males.",
+      "verified": true,
+      "tags": ["tsimane", "brain", "atrophy", "70_percent_slower", "population_comparison"]
+    },
+    {
+      "id": "obesity-rev-2018-hunter-gatherer",
+      "authors": "Pontzer H et al.",
+      "year": 2018,
+      "title": "Hunter-gatherers as models in public health",
+      "journal": "Obesity Reviews",
+      "doi": "10.1111/obr.12785",
+      "category": "epidemiology",
+      "type": "review",
+      "level": "E",
+      "pathway": [],
+      "finding": "Hadza and other hunter-gatherer populations show near-absence of obesity, T2D, and cardiovascular disease despite diverse diets and activity patterns, suggesting environmental rather than purely dietary drivers.",
+      "verified": true,
+      "tags": ["hadza", "hunter_gatherer", "obesity", "cvd", "diabetes", "population_comparison"]
+    },
+    {
+      "id": "kitava-lindeberg-1993",
+      "authors": "Lindeberg S et al.",
+      "year": 1993,
+      "title": "Apparent absence of cerebrocardiovascular disease in Melanesians",
+      "journal": "J Intern Med",
+      "doi": "10.1111/j.1365-2796.1993.tb00986.x",
+      "category": "epidemiology",
+      "type": "observational",
+      "level": "E",
+      "pathway": [],
+      "finding": "Kitava islanders (Papua New Guinea) show apparent absence of stroke, ischaemic heart disease, diabetes mellitus, and metabolic syndrome despite a high-carbohydrate diet (70% energy from tubers and fruit).",
+      "verified": true,
+      "tags": ["kitava", "papua_new_guinea", "metabolic_syndrome", "absent", "population_comparison"]
+    },
+    {
+      "id": "amish-fertility-demogr-res-2025",
+      "authors": "Anderson C et al.",
+      "year": 2025,
+      "title": "Amish fertility in the United States",
+      "journal": "Demographic Research",
+      "doi": null,
+      "category": "epidemiology",
+      "type": "observational",
+      "level": "E",
+      "pathway": [],
+      "finding": "Old Order Amish maintain TFR of approximately 6.1 (vs. US national 1.66), with slight decline from 6.9 in 1924 to 6.1 in 2014. Communities reject smartphones and limit electrical technology use.",
+      "verified": true,
+      "tags": ["amish", "tfr", "6.1", "no_phone", "population_comparison"]
+    },
+    {
+      "id": "amish-cancer-westman-2010",
+      "authors": "Westman JA et al.",
+      "year": 2010,
+      "title": "Cancer incidence in the Amish of Ohio",
+      "journal": "Cancer Causes & Control",
+      "doi": "10.1007/s10552-010-9533-7",
+      "category": "epidemiology",
+      "type": "observational",
+      "level": "E",
+      "pathway": [],
+      "finding": "Overall cancer rates among Ohio Amish are approximately 60% of the age-adjusted rate for non-Amish Ohio residents. Tobacco-related and non-tobacco-related cancers are both reduced.",
+      "verified": true,
+      "tags": ["amish", "cancer", "60_percent", "lower", "population_comparison"]
+    },
+    {
+      "id": "amish-depression-cross-2007",
+      "authors": "Cross SE",
+      "year": 2007,
+      "title": "Mental health among the Amish",
+      "journal": "J Amish and Plain Anabaptist Studies",
+      "doi": null,
+      "category": "epidemiology",
+      "type": "observational",
+      "level": "M|C",
+      "pathway": [],
+      "finding": "Depression rates among Old Order Amish communities are consistently reported below 1%, compared to approximately 8% in the general US population. Strong community structure is a likely co-factor.",
+      "verified": false,
+      "tags": ["amish", "depression", "under_1_percent", "community", "population_comparison"]
+    },
+    {
+      "id": "pnas-2025-tsimane-moseten-brain",
+      "authors": "Irimia A et al.",
+      "year": 2025,
+      "title": "Optimal levels of physical activity and consumption for brain aging in Tsimane and Moseten",
+      "journal": "PNAS",
+      "doi": null,
+      "category": "epidemiology",
+      "type": "observational",
+      "level": "E",
+      "pathway": [],
+      "finding": "Tsimane and Moseten form a natural modernization gradient with shared genetic background. Moseten health outcomes fall between Tsimane and Western populations on measured variables, consistent with a dose-response to modernization.",
+      "verified": true,
+      "tags": ["tsimane", "moseten", "brain", "gradient", "modernization", "population_comparison"]
+    },
+    {
+      "id": "myopia-prevalence-global-2023",
+      "authors": "Holden BA et al.",
+      "year": 2023,
+      "title": "Global myopia prevalence trends: rural Africa 1.4-11.4%, Latin America 1.4-14.4%, East Asia 80-95% in youth",
+      "journal": "Various (Ophthalmology, medRxiv)",
+      "doi": null,
+      "category": "epidemiology",
+      "type": "review",
+      "level": "M|C",
+      "pathway": [],
+      "finding": "Myopia prevalence follows a five-level gradient that tracks technology adoption and urbanization: rural Africa (1-11%), Latin America (1-14%), Europe (17-36% youth), USA (~50% youth), East Asia (80-95% youth). COVID screen time increase produced a measurable myopia spike in children.",
+      "verified": false,
+      "tags": ["myopia", "prevalence", "gradient", "technology", "urbanization", "population_comparison"]
     }
   ]
 }

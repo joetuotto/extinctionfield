@@ -383,9 +383,19 @@ export const NODES: CausalMapNode[] = [
     label: { en: "VGCC → Ca²⁺ → ROS", fi: "VGCC → Ca²⁺ → ROS" },
     epistemicLevel: "E",
     detail: {
-      en: { mechanism: "Voltage-gated calcium channels open → Ca²⁺ influx → mitochondrial ROS → DNA damage." },
-      fi: { mechanism: "Jänniteohjatut kalsiumkanavat avautuvat → Ca²⁺-influksi → mitokondriaaliset ROS → DNA-vaurio." },
+      en: { mechanism: "Voltage-gated calcium channels open → Ca²⁺ influx → mitochondrial ROS → DNA damage. Two subtypes: L-type (Cav1.2, high-voltage activated, blocked by nifedipine) and T-type (Cav3, low-voltage activated, window current at rest)." },
+      fi: { mechanism: "Jänniteohjatut kalsiumkanavat avautuvat → Ca²⁺-influksi → mitokondriaaliset ROS → DNA-vaurio. Kaksi alatyyppiä: L-tyyppi (Cav1.2, korkean jännitteen aktivoima, nifedipiini salpaa) ja T-tyyppi (Cav3, matalan jännitteen aktivoima, ikkunavirta levossa)." },
       bermPathway: "A", link: "/evidence#pathway-A",
+    },
+  },
+  {
+    id: "mech_ttype_bifurcation", level: 2,
+    label: { en: "T-type Cav3 bifurcation", fi: "T-tyypin Cav3 bifurkaatio" },
+    epistemicLevel: "E",
+    detail: {
+      en: { mechanism: "Cav3 T-type channels operate at a bifurcation point near resting potential. ~10% open at rest (window current). Schwan equation: external 1 V/m → 7.5–15 μV at membrane (37% of thermal noise). At personal levels (5 V/m): 184% of thermal noise. In Leydig cells: Ca²⁺ → StAR → testosterone. In spermatogenesis: Ca²⁺ → development timing (Ma 2026). Resolves BERM's δVm problem." },
+      fi: { mechanism: "Cav3 T-tyypin kanavat toimivat bifurkaatiopisteessä lepopotentiaalin lähellä. ~10 % auki levossa (ikkunavirta). Schwanin yhtälö: ulkoinen 1 V/m → 7,5–15 μV kalvolla (37 % termisestä kohinasta). Personal-tasolla (5 V/m): 184 % kohinasta. Leydigin soluissa: Ca²⁺ → StAR → testosteroni. Spermatogeneesissä: Ca²⁺ → kehityksen ajoitus (Ma 2026). Ratkaisee BERM:n δVm-ongelman." },
+      bermPathway: "A,D", keyRefs: ["nature_comms_2026_ttype", "xiang2025_clc2_ttype", "ma2026_spermatogenesis_cav"], link: "/model/fieldstate/math#s16",
     },
   },
   {
@@ -416,6 +426,16 @@ export const NODES: CausalMapNode[] = [
       en: { mechanism: "Cryptochrome radical pair spin state is disrupted → circadian clock distorted → melatonin synthesis decreases. Human CRY/RPM magnetoreception is blue-light-dependent (Chae et al. 2019, P<0.001); vertical component reversal reversed orientation, consistent with an inclination compass." },
       fi: { mechanism: "Kryptokromin radikaaliparin spin-tila häiriintyy → sirkadiaaninen kello vääristyy → melatoniinisyntesi alenee. Ihmisen CRY/RPM-magnetoreseptio on sinivaloriippuvainen (Chae ym. 2019, P<0,001); pystykomponentin kääntö käänsi orientaation, mikä on yhdenmukainen inklinaatiokompassin kanssa." },
       bermPathway: "B,C", keyRefs: ["chae2019", "ritz2004_rf_compass", "engels2014_emf_bird", "sherrard2018", "yoshii2009"], link: "/evidence#human-cry-magnetoreception",
+    },
+  },
+  {
+    id: "mech_trpc1_calcium", level: 2,
+    label: { en: "CRY2 → TRPC1 Ca²⁺", fi: "CRY2 → TRPC1 Ca²⁺" },
+    epistemicLevel: "E",
+    detail: {
+      en: { mechanism: "CRY2-dependent, light-dependent, FAD-dependent calcium entry through TRPC1 (a TRP channel, NOT a VGCC). CRY2 physically interacts with TRPC1; the complex co-translocates to the nucleus after EMF/PEMF exposure. Pharmacologically distinct from pathway A: not blocked by nifedipine/verapamil. Demonstrated in myoblasts (Yap et al. 2025, Cells)." },
+      fi: { mechanism: "CRY2-riippuvainen, valoriippuvainen, FAD-riippuvainen kalsiumsisäänvirtaus TRPC1:n kautta (TRP-kanava, EI VGCC). CRY2 on fysikaalisessa vuorovaikutuksessa TRPC1:n kanssa; kompleksi siirtyy tumaan EMF/PEMF-altistuksen jälkeen. Farmakologisesti erillinen polku A:sta: nifedipiini/verapamiili ei estä. Osoitettu myoblasteissa (Yap ym. 2025, Cells)." },
+      bermPathway: "C", keyRefs: ["yap2025"], link: "/evidence#cry-trpc1",
     },
   },
   {
@@ -631,6 +651,43 @@ export const NODES: CausalMapNode[] = [
     },
   },
 
+  // ── LEVEL 3 (continued): Pituitary EMF hub ──
+  {
+    id: "endo_pituitary_hub", level: 3,
+    label: { en: "Pituitary EMF Hub", fi: "Aivolisäkkeen EMF-solmu" },
+    sublabel: { en: "Outside BBB, Cav3 in all hormone cell types", fi: "BBB:n ulkopuolella, Cav3 kaikissa hormonisolut." },
+    epistemicLevel: "E",
+    detail: {
+      en: { mechanism: "The pituitary gland sits outside the blood-brain barrier, making it directly exposed to circulating EMF-perturbed signals. All pituitary hormone cell types (gonadotrophs, thyrotrophs, corticotrophs, somatotrophs, lactotrophs) express T-type Cav3 channels. EMF-induced Cav3 perturbation affects FSH/LH (gonadotrophs), TSH (thyrotrophs), and ACTH (corticotrophs) simultaneously." },
+      fi: { mechanism: "Aivolisäke sijaitsee veri-aivoesteen ulkopuolella, mikä altistaa sen suoraan verenkierrossa kiertäville EMF-häirityille signaaleille. Kaikki aivolisäkkeen hormonisolut (gonadotrofit, tyreotrofit, kortikotrofit, somatotrofit, laktotrofit) ilmentävät T-tyypin Cav3-kanavia. EMF:n aiheuttama Cav3-häiriö vaikuttaa FSH/LH:hen (gonadotrofit), TSH:hen (tyreotrofit) ja ACTH:hen (kortikotrofit) samanaikaisesti." },
+      bermPathway: "A,D", keyRefs: ["ijms2026-hpg"],
+    },
+  },
+
+  // ── LEVEL 2 (continued): Mitochondrial ROS & Autonomic HRV ──
+  {
+    id: "mech_mitochondrial_ros", level: 2,
+    label: { en: "Mitochondrial Ca2+->ROS Converter", fi: "Mitokondriaalinen Ca2+->ROS-muunnin" },
+    sublabel: { en: "Aged mitochondria amplify", fi: "Ikääntyneet mitokondriat vahvistavat" },
+    epistemicLevel: "M|C",
+    detail: {
+      en: { mechanism: "Ca2+ enters mitochondria via the mitochondrial calcium uniporter (MCU). In healthy mitochondria, this drives ATP production. In aged or damaged mitochondria, excess Ca2+ overwhelms the electron transport chain, producing superoxide radicals. The amplification factor increases with age: mitochondria over 20 years old produce progressively more ROS per unit Ca2+ influx." },
+      fi: { mechanism: "Ca2+ siirtyy mitokondrioihin mitokondriaalisen kalsiumuniporterin (MCU) kautta. Terveissä mitokondrioissa tämä ajaa ATP-tuotantoa. Ikääntyneissä tai vaurioituneissa mitokondrioissa ylimääräinen Ca2+ kuormittaa elektroninsiirtoketjun, tuottaen superoksidiradikaaleja. Vahvistuskerroin kasvaa iän myötä: yli 20 vuotta vanhat mitokondriot tuottavat progressiivisesti enemmän ROS:ia per Ca2+-yksikkö." },
+      bermPathway: "A", keyRefs: ["panagopoulos2025"],
+    },
+  },
+  {
+    id: "mech_autonomic_hrv", level: 2,
+    label: { en: "Autonomic HRV", fi: "Autonominen HRV" },
+    sublabel: { en: "SA node Cav3 pacemaking, EMF early biomarker", fi: "SA-solmun Cav3 tahdistus, EMF:n varhainen biomarkkeri" },
+    epistemicLevel: "E",
+    detail: {
+      en: { mechanism: "The sinoatrial (SA) node relies on T-type Cav3.1 channels for diastolic depolarization pacemaking. EMF perturbation of these channels alters heart rate variability (HRV), specifically reducing the high-frequency (HF) component that reflects vagal tone. HRV is a sensitive, non-invasive early biomarker of chronic EMF exposure — detectable before clinical symptoms emerge." },
+      fi: { mechanism: "Sinussolmuke (SA) käyttää T-tyypin Cav3.1-kanavia diastoliseen depolarisaation tahdistukseen. EMF:n häiriö näihin kanaviin muuttaa sykevälivaihtelua (HRV), erityisesti vähentäen korkeataajuista (HF) komponenttia joka heijastaa vagaalista tonusta. HRV on herkkä, ei-invasiivinen varhainen biomarkkeri krooniselle EMF-altistukselle — havaittavissa ennen kliinisten oireiden ilmaantumista." },
+      bermPathway: "A,D", keyRefs: ["mohamed-bp-emf"],
+    },
+  },
+
   // ── LEVEL 3: Tissue effects (10) ──
   { id: "tissue_sperm", level: 3, label: { en: "Spermatogenesis ↓", fi: "Spermatogeneesi ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "ROS damage, mitotic spindle disruption, and Leydig cell dysfunction reduce sperm production." }, fi: { mechanism: "ROS-vaurio, mitoottisen karan häiriö ja Leydig-solujen toimintahäiriö vähentävät siittiötuotantoa." }, link: "/evidence#sperm" } },
   { id: "tissue_ovarian", level: 3, label: { en: "Ovulation / oocyte quality ↓", fi: "Ovulaatio/munasolun laatu ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Oocyte meiotic spindle is disrupted, granulosa cell apoptosis increases." }, fi: { mechanism: "Munasolun meioottinen kara häiriintyy, granuloosasolujen apoptoosi lisääntyy." }, link: "/evidence#ovarian" } },
@@ -639,7 +696,8 @@ export const NODES: CausalMapNode[] = [
   { id: "tissue_nk_cells", level: 3, label: { en: "NK cells ↓ (−70%)", fi: "NK-solut ↓ (−70%)" }, epistemicLevel: "E", detail: { en: { mechanism: "Natural killer cells decline. Melatonin normally stimulates NK cell activity." }, fi: { mechanism: "Luonnolliset tappajasolut vähenevät. Melatoniini normaalisti stimuloi NK-aktiivisuutta." }, link: "/evidence#nk-cells" } },
   { id: "tissue_insulin", level: 3, label: { en: "Insulin sensitivity ↓", fi: "Insuliiniherkkyys ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Melatonin deficiency disrupts pancreatic β-cell rhythm → insulin resistance." }, fi: { mechanism: "Melatoniinin puute häiritsee haiman β-solujen rytmiä → insuliiniresistenssi." }, link: "/evidence#insulin" } },
   { id: "tissue_cortisol", level: 3, label: { en: "Cortisol ↑ (chronic)", fi: "Kortisoli ↑ (krooninen)" }, epistemicLevel: "E", detail: { en: { mechanism: "HPA axis hyperactivation: circadian disruption + vagal tone decrease → chronic cortisol." }, fi: { mechanism: "HPA-akselin yliaktivaatio: sirkadiaaninen häiriö + vagaalisen tonuksen lasku → krooninen kortisoli." }, link: "/evidence#cortisol" } },
-  { id: "tissue_bbb", level: 3, label: { en: "BBB permeability ↑", fi: "BBB-permeabiliteetti ↑" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Blood-brain barrier permeability increases with EMF exposure (Salford et al.)." }, fi: { mechanism: "Veri-aivoesteen läpäisevyys kasvaa EMF-altistuksessa (Salford ym.)." }, link: "/evidence#bbb" } },
+  { id: "tissue_bbb", level: 3, label: { en: "BBB permeability ↑", fi: "BBB-permeabiliteetti ↑" }, epistemicLevel: "E", detail: { en: { mechanism: "Blood-brain barrier permeability increases via eNOS activation → occludin downregulation → TJ protein degradation (Salford 2003; Ulusoy et al. 2025). The same tight junction proteins (occludin, ZO-1, claudins) are shared with the BTB. Progressive: 30 min non-damaging → 360 min structural damage." }, fi: { mechanism: "Veri-aivoesteen läpäisevyys kasvaa eNOS-aktivaation → okkludiinin alaregulaation → TJ-proteiinien degradaation kautta (Salford 2003; Ulusoy ym. 2025). Samat tight junction -proteiinit (okkludiini, ZO-1, klaudiinit) ovat yhteisiä BTB:n kanssa. Progressiivinen: 30 min ei-vaurioittava → 360 min rakenteellinen vaurio." }, bermPathway: "F", keyRefs: ["salford2003", "ulusoy2025"], link: "/evidence/bbb" } },
+  { id: "tissue_btb", level: 3, label: { en: "BTB disruption ↑", fi: "BTB:n häiriö ↑" }, epistemicLevel: "E", detail: { en: { mechanism: "Blood-testis barrier disruption via Spock3-MMP2 axis at 2605 MHz (4G). Same TJ proteins as BBB. Progressive time-dependent toxicity with positive feedback: barrier damage → higher effective field → more damage. Direct spermatogenic microenvironment compromise (Yu et al. 2019)." }, fi: { mechanism: "Veri-kivesesteen häiriö Spock3-MMP2-akselin kautta 2605 MHz:llä (4G). Samat TJ-proteiinit kuin BBB:ssä. Progressiivinen aikariippuvainen toksisuus positiivisella takaisinkytkennällä: estevaurio → korkeampi efektiivinen kenttä → enemmän vauriota. Suora spermatogeneettisen mikroympäristön vaarantuminen (Yu ym. 2019)." }, bermPathway: "F", keyRefs: ["yu2019_btb"], link: "/evidence/bbb" } },
   { id: "tissue_gut", level: 3, label: { en: "Gut epithelium ↓", fi: "Suoliston epiteeli ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Gut epithelial cells' rapid division cycle (3-5 days) makes them vulnerable to IF field mitotic disruption." }, fi: { mechanism: "Suoliston epiteelisolujen nopea jakautumissykli (3-5 pv) tekee niistä haavoittuvia IF-kentän mitoottiselle häiriölle." }, link: "/evidence#gut" } },
   { id: "tissue_vagal_tone", level: 3, label: { en: "Vagal tone ↓", fi: "Vagaalinen tonus ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Vagus nerve anti-inflammatory reflex weakening → chronic low-grade inflammation." }, fi: { mechanism: "Vagushermon anti-inflammatorisen refleksin heikkeneminen → krooninen matala-asteinen tulehdus." }, link: "/evidence#vagal-tone" } },
 
@@ -667,6 +725,9 @@ export const NODES: CausalMapNode[] = [
   { id: "eco_varroa", level: 6, label: { en: "Varroa ← protected", fi: "Varroa ← suojassa" }, sublabel: { en: "Sclerotin, small size", fi: "Sclerotin, pieni koko" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Varroa destructor: 1.1mm, sclerotin armor, no CRY navigation → EMF has no effect." }, fi: { mechanism: "Varroa destructor: 1.1mm, sclerotiinipanssari, ei CRY-navigaatiota → EMF ei vaikuta." }, link: "/articles/bees#varroa" } },
   { id: "eco_tick", level: 6, label: { en: "Ticks ← increasing?", fi: "Punkit ← runsastuvat?" }, sublabel: { en: "Electrostatic contact↑", fi: "Sähköstaattinen kontakti↑" }, epistemicLevel: "C", detail: { en: { mechanism: "Electrostatic charge may increase tick attachment to host. Speculative." }, fi: { mechanism: "Sähköstaattinen varaus voi lisätä punkkien kiinnittymistä isäntään. Spekulatiivinen." }, link: "/evidence#ticks" } },
   { id: "eco_pollination", level: 6, label: { en: "Pollination ↓", fi: "Pölytys ↓" }, sublabel: { en: "Ecosystem service", fi: "Ekosysteemipalvelu" }, epistemicLevel: "E", detail: { en: { mechanism: "Insect pollinator decline threatens 75% of crops. Electrostatic pollination mechanism disruption." }, fi: { mechanism: "Hyönteispölyttäjien väheneminen uhkaa 75% viljelykasveista. Sähköstaattisen pölytysmekanismin häiriö." }, link: "/sentinel#pollination" } },
+
+  // ── LEVEL 0: Evolutionary origin ──
+  { id: "northern_package", level: 0, label: { en: "Northern Package (10,000 BP)", fi: "Pohjoinen paketti (10 000 BP)" }, sublabel: { en: "Blue eyes + Lactose tolerance + Cattle", fi: "Siniset silmät + Laktoosinsietokyky + Karjankasvatus" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Co-selection of OCA2 (blue eyes → optical χ), LCT (lactose tolerance → molecular χ via B2/FAD), and cattle husbandry (year-round B2 supply). Creates the population with highest biological CRY sensitivity." }, fi: { mechanism: "OCA2:n (siniset silmät → optinen χ), LCT:n (laktoosinsietokyky → molekulaarinen χ B2/FAD kautta) ja karjankasvatuksen (ympärivuotinen B2-saanti) koselektio. Luo populaation jolla on korkein biologinen CRY-herkkyys." }, link: "/evidence/evolution" } },
 ];
 
 export const EDGES: CausalMapEdge[] = [
@@ -706,6 +767,11 @@ export const EDGES: CausalMapEdge[] = [
   { from: "ch_elf", to: "mod_cyb5b" },
   { from: "mod_ion", to: "mech_vgcc_genotype" },
   { from: "ch_rf", to: "mech_vgcc_genotype" },
+
+  // T-type bifurcation: Schwan → Cav3 → testosterone/sperm
+  { from: "ch_elf", to: "mech_ttype_bifurcation", label: "Schwan: E_ext → δVm (ELF)" },
+  { from: "mech_ttype_bifurcation", to: "tissue_testosterone", label: "Ca²⁺ → StAR → testosterone (Xiang 2025)" },
+  { from: "mech_ttype_bifurcation", to: "tissue_sperm", label: "Ca²⁺ → spermatocyte dev (Ma 2026)" },
 
   // Mechanisms → tissue effects
   { from: "mech_vgcc_ros", to: "tissue_sperm" },
@@ -762,8 +828,13 @@ export const EDGES: CausalMapEdge[] = [
   { from: "mech_melatonin_fertility", to: "tissue_ovarian" },
   { from: "mech_melatonin_fertility", to: "tissue_testosterone" },
   { from: "mech_melatonin_fertility", to: "tissue_sperm" },
-  // CRY2-TRPC1 physical coupling: pathways A and C are not independent (Yap 2025)
-  { from: "mech_cry_melatonin", to: "mech_vgcc_ros", label: "CRY2-TRPC1 complex (Yap 2025)" },
+  // BTB: blood-testis barrier disruption (pathway F extension)
+  { from: "mech_vgcc_ros", to: "tissue_btb", label: "RF → MMP2 → BTB" },
+  { from: "tissue_btb", to: "tissue_sperm", label: "Microenvironment compromised" },
+  // CRY2-TRPC1: second downstream branch of pathway C (NOT a coupling to pathway A)
+  { from: "mech_cry_melatonin", to: "mech_trpc1_calcium", label: "CRY2 → TRPC1 modulation (Yap 2025)" },
+  { from: "mech_trpc1_calcium", to: "tissue_ovarian", label: "Ca²⁺ via TRPC1 → nuclear translocation" },
+  { from: "mech_trpc1_calcium", to: "tissue_sperm", label: "Ca²⁺ via TRPC1" },
   // FAD/B2 → CRY chromophore dependency (Hirano 2017, Yap 2025)
   { from: "mod_fad_riboflavin", to: "mech_cry_melatonin", label: "FAD chromophore (Hirano 2017)" },
   // Membrane lipid order → CRY orientation (Majewska 2025)
@@ -808,4 +879,18 @@ export const EDGES: CausalMapEdge[] = [
   { from: "eco_bee", to: "eco_varroa", label: "differential" },
   { from: "eco_bee", to: "eco_pollination" },
   { from: "eco_insect", to: "eco_pollination" },
+
+  // Northern Package → CRY/FAD system
+  { from: "northern_package", to: "mech_cry_melatonin", label: "OCA2 → optical χ (iris transmission)" },
+  { from: "northern_package", to: "mod_fad_riboflavin", label: "LCT → B2 supply (dairy)" },
+
+  // Modulome integration: Autonomic HRV
+  { from: "ch_elf", to: "mech_autonomic_hrv", label: "50 Hz → SA Cav3" },
+  { from: "mech_autonomic_hrv", to: "disease_depression", label: "HRV↓ → vagal tone↓ → HPA" },
+  // Modulome integration: Mitochondrial ROS amplifier
+  { from: "mech_vgcc_ros", to: "mech_mitochondrial_ros", label: "Ca²⁺ → MCU → mito" },
+  { from: "mech_mitochondrial_ros", to: "tissue_sperm", label: "ROS amplification" },
+  // Modulome integration: Pituitary hub
+  { from: "mech_ttype_bifurcation", to: "endo_pituitary_hub", label: "Cav3 → hormone secretion" },
+  { from: "endo_pituitary_hub", to: "tissue_testosterone", label: "FSH/LH → Leydig" },
 ];

@@ -42,6 +42,7 @@ const t: Record<Locale, Copy> = {
       { id: "cohort", label: "Cohort signal" },
       { id: "gme", label: "GME / R42" },
       { id: "validation", label: "Validation boundary" },
+      { id: "s16", label: "T-Type bifurcation" },
     ],
     sections: [
       {
@@ -99,7 +100,7 @@ const t: Record<Locale, Copy> = {
           "\\Phi_f=F_{\\mathrm{ovarian\\,reserve}}F_{\\mathrm{oocyte\\,redox}}F_{\\mathrm{ovulatory\\,clock}}F_{\\mathrm{luteal/implantation}}",
         ],
         note:
-          "These are structures, not currently published country coefficients. Candidate placenta, BBB and retinal states receive a reproductive increment only after a parameter- and evidence-linked mapping is registered.",
+          "These are structures, not currently published country coefficients. Candidate placenta, BBB and retinal states receive a reproductive increment only after a parameter- and evidence-linked mapping is registered. Pathway independence note: the multiplicative model R = (1 − γ_A · r_A) × (1 − γ_C · r_C) is retained without a cross-term because pathways A (VGCC) and C (CRY2) are pharmacologically separable. γ_C reflects both CRY2 downstream branches: γ_C = γ_C_clock + γ_C_TRPC1. These are not separated in the model because both share the same upstream sensor (CRY2), light dependence, and FAD dependence.",
       },
       {
         id: "asfr",
@@ -151,8 +152,28 @@ const t: Record<Locale, Copy> = {
         note:
           "The specification keeps measurement, endpoint mapping and demographic estimation visible so each can be independently tested and improved.",
       },
+      {
+        id: "s16",
+        title: "\u00a716 \u2014 T-Type Channel Bifurcation Amplification",
+        body: [
+          "The '\u03b4Vm too small' objection to non-thermal EMF effects is resolved by two physical facts: (1) the Schwan equation shows that cell geometry amplifies external fields by a factor of ~1.5R/d \u2248 1500 at the membrane at ELF frequencies, and (2) T-type calcium channels operate at a bifurcation point (window current) where even thermal-noise-level perturbations shift opening probability.",
+        ],
+        equations: [
+          "\\delta V_m = 1.5 \\cdot E_{\\mathrm{ext}} \\cdot R_{\\mathrm{cell}} \\cdot \\frac{1}{\\sqrt{1 + (f/f_c)^2}}",
+          "\\text{At ELF } (f \\ll f_c \\approx 500\\,\\text{kHz}):\\quad \\delta V_m \\approx 1.5 \\cdot E_{\\mathrm{ext}} \\cdot R_{\\mathrm{cell}}",
+          "R = 10\\,\\mu\\text{m},\\; E = 1\\,\\text{V/m}:\\quad \\delta V_m = 15\\,\\mu\\text{V}",
+          "P_{\\mathrm{open}}(V) = \\frac{1}{1 + \\exp\\!\\left(-\\frac{V - V_{1/2}}{k}\\right)},\\quad V_{1/2} = -57\\,\\text{mV},\\; k = 6\\,\\text{mV}",
+          "V_{\\mathrm{rest}} = -70\\,\\text{mV},\\quad P_{\\mathrm{open}}(-70) = 0.103\\;\\text{(10.3\\% window current)}",
+          "\\left.\\frac{dP}{dV}\\right|_{\\mathrm{rest}} = \\frac{P(1-P)}{k} = 15.4\\,\\text{V}^{-1}",
+          "\\delta N = N_{\\mathrm{channels}} \\times \\frac{dP}{dV} \\times \\delta V_m,\\quad N = 5000,\\; \\delta V_m = 7.5\\,\\mu\\text{V}:\\; \\delta N = 0.58",
+          "\\delta V_{\\mathrm{thermal}} = \\sqrt{kT/C_m} = 20.3\\,\\mu\\text{V}",
+          "\\text{At } 1\\,\\text{V/m}: \\frac{\\delta V_m}{\\delta V_{\\mathrm{thermal}}} = 0.37\\;\\text{(37\\%)},\\qquad \\text{At } 5\\,\\text{V/m}: \\frac{\\delta V_m}{\\delta V_{\\mathrm{thermal}}} = 1.84\\;\\text{(184\\%)}",
+        ],
+        note:
+          "The key insight is that EMF biological effects operate through the ELF MODULATION component of RF signals, not the carrier frequency. At RF (GHz), the membrane capacitance shorts the voltage (attenuation ~10\u207b\u00b3). But the ELF envelope (50\u2013217 Hz for GSM/LTE) passes through at full amplitude. T-type channels respond to this ELF component. CAVEAT: The Ca\u00b2\u207a accumulation calculation does not account for cellular pumps (PMCA, NCX, SERCA) and buffers (calmodulin, calbindin). The steady-state [Ca\u00b2\u207a]\u1d62 increase is estimated at 5\u201350%, not the gross influx numbers.",
+      },
     ],
-    modelLink: "← Back to model overview",
+    modelLink: "\u2190 Back to model overview",
     fieldstateLink: "FieldState measurement specification",
   },
   fi: {
@@ -170,6 +191,7 @@ const t: Record<Locale, Copy> = {
       { id: "cohort", label: "Kohorttisignaali" },
       { id: "gme", label: "GME / R42" },
       { id: "validation", label: "Validaatioraja" },
+      { id: "s16", label: "T-tyypin bifurkaatio" },
     ],
     sections: [
       {
@@ -227,7 +249,7 @@ const t: Record<Locale, Copy> = {
           "\\Phi_f=F_{\\mathrm{ovarian\\,reserve}}F_{\\mathrm{oocyte\\,redox}}F_{\\mathrm{ovulatory\\,clock}}F_{\\mathrm{luteal/implantation}}",
         ],
         note:
-          "Nämä ovat rakenteita, eivät vielä julkaistuja maakohtaisia kertoimia. Istukan, BBB:n ja retinan kandidaattitilat saavat lisääntymisincrementin vasta, kun parametri- ja evidenssikiinnitteinen mapping on rekisteröity.",
+          "Nämä ovat rakenteita, eivät vielä julkaistuja maakohtaisia kertoimia. Istukan, BBB:n ja retinan kandidaattitilat saavat lisääntymisincrementin vasta, kun parametri- ja evidenssikiinnitteinen mapping on rekisteröity. Polkujen riippumattomuus: multiplikatiivinen malli R = (1 − γ_A · r_A) × (1 − γ_C · r_C) säilytetään ilman ristitermiä, koska polut A (VGCC) ja C (CRY2) ovat farmakologisesti erotettavissa. γ_C heijastaa molempia CRY2:n alaspäin suuntautuvia haaroja: γ_C = γ_C_kello + γ_C_TRPC1. Näitä ei erotella mallissa, koska molemmat jakavat saman ylävirta-sensorin (CRY2), valoriippuvuuden ja FAD-riippuvuuden.",
       },
       {
         id: "asfr",
@@ -279,8 +301,28 @@ const t: Record<Locale, Copy> = {
         note:
           "Määrittely pitää mittauksen, päätepistemappingin ja demografisen estimoinnin näkyvinä, jotta kutakin voidaan testata ja parantaa itsenäisesti.",
       },
+      {
+        id: "s16",
+        title: "\u00a716 \u2014 T-tyypin kanavan bifurkaatiovahvistus",
+        body: [
+          "'\u03b4Vm liian pieni' -vastaväite ei-termisiin EMF-vaikutuksiin ratkeaa kahdella fysikaalisella tosiasialla: (1) Schwanin yhtälö osoittaa, että solun geometria vahvistaa ulkoisen kentän kertoimella ~1,5R/d \u2248 1500 kalvolla ELF-taajuuksilla, ja (2) T-tyypin kalsiumkanavat toimivat bifurkaatiopisteessä (ikkunavirta), jossa jo termisen kohinan tasoiset häiriöt muuttavat avautumistodennäköisyyttä.",
+        ],
+        equations: [
+          "\\delta V_m = 1.5 \\cdot E_{\\mathrm{ext}} \\cdot R_{\\mathrm{cell}} \\cdot \\frac{1}{\\sqrt{1 + (f/f_c)^2}}",
+          "\\text{At ELF } (f \\ll f_c \\approx 500\\,\\text{kHz}):\\quad \\delta V_m \\approx 1.5 \\cdot E_{\\mathrm{ext}} \\cdot R_{\\mathrm{cell}}",
+          "R = 10\\,\\mu\\text{m},\\; E = 1\\,\\text{V/m}:\\quad \\delta V_m = 15\\,\\mu\\text{V}",
+          "P_{\\mathrm{open}}(V) = \\frac{1}{1 + \\exp\\!\\left(-\\frac{V - V_{1/2}}{k}\\right)},\\quad V_{1/2} = -57\\,\\text{mV},\\; k = 6\\,\\text{mV}",
+          "V_{\\mathrm{rest}} = -70\\,\\text{mV},\\quad P_{\\mathrm{open}}(-70) = 0.103\\;\\text{(10.3\\% window current)}",
+          "\\left.\\frac{dP}{dV}\\right|_{\\mathrm{rest}} = \\frac{P(1-P)}{k} = 15.4\\,\\text{V}^{-1}",
+          "\\delta N = N_{\\mathrm{channels}} \\times \\frac{dP}{dV} \\times \\delta V_m,\\quad N = 5000,\\; \\delta V_m = 7.5\\,\\mu\\text{V}:\\; \\delta N = 0.58",
+          "\\delta V_{\\mathrm{thermal}} = \\sqrt{kT/C_m} = 20.3\\,\\mu\\text{V}",
+          "\\text{At } 1\\,\\text{V/m}: \\frac{\\delta V_m}{\\delta V_{\\mathrm{thermal}}} = 0.37\\;\\text{(37\\%)},\\qquad \\text{At } 5\\,\\text{V/m}: \\frac{\\delta V_m}{\\delta V_{\\mathrm{thermal}}} = 1.84\\;\\text{(184\\%)}",
+        ],
+        note:
+          "Keskeinen oivallus on, että EMF:n biologiset vaikutukset välittyvät RF-signaalien ELF-MODULAATIOKOMPONENTIN kautta, eivät kantoaallon taajuuden. RF-taajuuksilla (GHz) kalvon kapasitanssi oikosulkee jännitteen (vaimennus ~10\u207b\u00b3). Mutta ELF-verhokäyrä (50\u2013217 Hz GSM/LTE:lle) läpäisee täydellä amplitudilla. T-tyypin kanavat reagoivat tähän ELF-komponenttiin. VAROITUS: Ca\u00b2\u207a-kertymälaskenta ei huomioi solupumppuja (PMCA, NCX, SERCA) eikä puskureita (kalmoduliini, kalbindiini). Vakaan tilan [Ca\u00b2\u207a]\u1d62-kasvu arvioidaan 5\u201350 %:ksi, ei brutto-influksiluvuiksi.",
+      },
     ],
-    modelLink: "← Takaisin mallin yleiskatsaukseen",
+    modelLink: "\u2190 Takaisin mallin yleiskatsaukseen",
     fieldstateLink: "FieldState-mittausmäärittely",
   },
 };

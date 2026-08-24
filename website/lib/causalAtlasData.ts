@@ -92,7 +92,7 @@ function stageX(stage: Stage): number {
 }
 
 const NODE_ORDER: Record<Stage, string[]> = {
-  sources: ["electrification_boundary", "ch_static", "ch_elf", "ch_rf", "ch_if"],
+  sources: ["electrification_boundary", "ch_static", "ch_elf", "ch_rf", "ch_if", "northern_package"],
   modulation: ["mod_bioelectric", "mod_mito", "mod_ion", "mod_geometry", "mod_dc", "mod_pineal", "mod_vagus", "mod_division", "mod_cyb5b"],
   mechanisms: ["mech_dep_quadratic", "mech_vgcc_ros", "mech_ifo_linear", "mech_mitotic_spindle", "mech_cry_melatonin", "mech_nav_plasticity", "mech_vagal_antiinflam", "mech_gpcr", "mech_cyb5b_ca", "mech_vgcc_genotype", "mech_ionic_hierarchy", "mech_skin_bioelectric", "mech_led_confound", "mech_hospital_emf", "mech_alzheimer_calcium", "mech_adhd_calibration", "mech_melatonin_fertility", "mech_beta_katp", "mech_window_effect", "epi_kaiser_series"],
   tissue: ["tissue_melatonin", "tissue_cortisol", "tissue_bbb", "tissue_insulin", "tissue_vagal_tone", "tissue_gut", "tissue_sperm", "tissue_ovarian", "tissue_testosterone", "tissue_nk_cells"],

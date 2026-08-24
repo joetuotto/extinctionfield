@@ -45,7 +45,7 @@ const t: Record<Locale, Copy> = {
     pulseTitle: "Pulse structure is biologically relevant",
     pulseText: [
       "FieldState measurement must preserve pulse structure: peak field, pulse duration, repetition rate and duty cycle are biologically relevant quantities that are lost in RMS averaging.",
-      "BERM pathways A, B and D respond to peak field (threshold and pulse mechanisms), not time-averaged power. Only pathway C (CRY → melatonin → HPG, 25%) responds to RMS. This distinguishes BERM from thermal models that use SAR (W/kg).",
+      "60% of BERM pathways by weight (A + D) respond to peak field. 40% (B + C) respond to RMS: pathway B (melatonin suppression, 15%) is a chronic-exposure mechanism, and pathway C (CRY → circadian disruption + TRPC1 calcium signaling, 25%) operates through the radical-pair mechanism which integrates over time. This distinguishes BERM from thermal models that use SAR (W/kg).",
     ],
     staticInterfaceTitle: "Static triboelectric interface: a native local-physics branch",
     staticInterfaceText: [
@@ -85,7 +85,7 @@ const t: Record<Locale, Copy> = {
     pulseTitle: "Pulssirakenne on biologisesti relevantti",
     pulseText: [
       "FieldState-mittauksen on säilytettävä pulssirakenne: huippukenttä, pulssin kesto, toistotaajuus ja duty cycle ovat biologisesti relevantteja suureita, jotka katoavat RMS-keskiarvostuksessa.",
-      "BERM:n polut A, B ja D vastaavat huippukenttään (kynnys- ja pulssimekanismit), eivät aikakeskiarvoistettuun tehoon. Vain polku C (CRY → melatoniini → HPG, 25 %) vastaa RMS:ään. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
+      "60 % BERM:n polkupainoista (A + D) vastaa huippukenttään. 40 % (B + C) vastaa RMS:ään: polku B (melatoniinisuppressio, 15 %) on kroonisen altistuksen mekanismi, ja polku C (CRY → sirkadiaaninen häiriö + TRPC1-kalsiumsignalointi, 25 %) toimii radikaalipari-mekanismin kautta, joka integroi ajan yli. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
     ],
     staticInterfaceTitle: "Staattinen triboelektrinen rajapinta: natiivi paikallisfysiikan haara",
     staticInterfaceText: [

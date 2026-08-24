@@ -120,7 +120,14 @@ def chemical_brain_dose(chemical: dict, bbb: float) -> float:
 
 
 def pathway_f(eac: float) -> dict[str, float]:
-    """BBB pathway: EMF increases BBB permeability -> neurotoxin entry."""
+    """Biological barrier pathway: EMF increases BBB/BTB permeability.
+
+    BBB: eNOS → occludin ↓ → barrier opens → neurotoxin entry
+    BTB: MMP2 → Spock3-MMP2-BTB axis → barrier opens → spermatogenic
+         microenvironment compromised (Yu et al. 2019, 2605 MHz 4G)
+
+    Both barriers use the same TJ proteins (occludin, ZO-1, claudins).
+    """
     bbb = bbb_permeability(eac)
     bbb_baseline = bbb_permeability(SCHUMANN_EAC)
 
@@ -134,6 +141,114 @@ def pathway_f(eac: float) -> dict[str, float]:
         "emf_attributable": with_emf - without_emf,
         "multiplier": with_emf / without_emf if without_emf > 0 else 1.0,
     }
+
+
+def v18_barrier_multiplier(
+    cumulative_exposure: float,
+    barrier_type: str = "both",
+) -> float:
+    """Biological barrier multiplier for BBB and/or BTB.
+
+    Expanded from BBB-only (pathway F) to cover both barriers.
+    Super-linear: barrier damage accelerates with cumulative exposure.
+
+    BBB: Salford 2003, Ulusoy 2025 (eNOS + occludin)
+    BTB: Yu 2019 (Spock3-MMP2 at 2605 MHz)
+    """
+    import math
+    bbb_mult = 1.0 + 1.5 / (1.0 + math.exp(-8 * (cumulative_exposure - 0.4)))
+    btb_mult = 1.0 + 2.0 / (1.0 + math.exp(-8 * (cumulative_exposure - 0.35)))
+
+    if barrier_type == "bbb":
+        return bbb_mult
+    elif barrier_type == "btb":
+        return btb_mult
+    return bbb_mult * btb_mult
+
+
+def t_type_window_probability(
+    v_mem: float = -70e-3,
+    v_half: float = -57e-3,
+    k_slope: float = 6e-3,
+) -> float:
+    """T-type (Cav3) channel opening probability at given Vmem.
+
+    At resting potential (-70 mV), ~10% of T-type channels are open
+    (window current). This bifurcation point makes them sensitive to
+    small voltage perturbations from EMF via Schwan equation.
+    """
+    return 1.0 / (1.0 + math.exp(-(v_mem - v_half) / k_slope))
+
+
+def schwan_induced_voltage(
+    e_external: float,
+    r_cell: float = 10e-6,
+    f_signal: float = 50.0,
+    f_cutoff: float = 500e3,
+    modulation_depth: float = 0.5,
+) -> float:
+    """Induced transmembrane voltage from external field (Schwan 1957).
+
+    For RF signals, the relevant component is the ELF MODULATION
+    envelope, not the carrier. The carrier is attenuated by membrane
+    capacitance (~10^-3 at GHz). The ELF component passes at full
+    amplitude.
+    """
+    attenuation = 1.0 / math.sqrt(1.0 + (f_signal / f_cutoff) ** 2)
+    return 1.5 * e_external * r_cell * attenuation * modulation_depth
+
+
+def t_type_calcium_influx_rate(
+    e_external: float,
+    n_channels: int = 5000,
+    f_modulation: float = 50.0,
+    r_cell: float = 10e-6,
+    i_single: float = 0.5e-12,
+    t_open: float = 2e-3,
+) -> float:
+    """Additional Ca2+ ions/cell/second from T-type window current
+    perturbation by EMF. GROSS influx before pump/buffer correction.
+
+    Steady-state [Ca2+]i increase is ~1-10% of gross due to PMCA,
+    NCX, SERCA pumps and calmodulin/calbindin buffers.
+    """
+    dVm = schwan_induced_voltage(e_external, r_cell, f_signal=f_modulation)
+    sensitivity = 15.4  # dP/dV at -70 mV for Cav3 (/V)
+    dP = sensitivity * dVm
+    dN_open = n_channels * dP
+    ca_per_opening = i_single * t_open / (2 * 1.6e-19)
+    return dN_open * f_modulation * ca_per_opening
+
+
+def v18_mitochondrial_ros_amplifier(
+    ca_influx_rate: float,
+    mito_health: float = 1.0,
+    age_years: float = 30,
+) -> float:
+    """Mitochondrial ROS production from Ca2+ influx.
+    Aged/damaged mitochondria produce MORE ROS per Ca2+ unit.
+    """
+    if mito_health >= 1.0:
+        mito_health = max(0.1, 1.0 - 0.01 * max(0, age_years - 20))
+    amplification = 1.0 / max(mito_health, 0.1)
+    return ca_influx_rate * amplification
+
+
+def v18_redox_buffer_threshold(
+    ros_rate: float,
+    gsh_reserve: float = 1.0,
+    b2_status: float = 1.0,
+) -> float:
+    """Net oxidative damage after redox buffering.
+    Below glutathione capacity: fully buffered. Above: exponential.
+    B2 links to layer 1: FAD needed for both CRY and GR.
+    """
+    effective_gsh = gsh_reserve * (0.3 + 0.7 * b2_status)
+    buffer_capacity = effective_gsh * 100
+    if ros_rate <= buffer_capacity:
+        return 0.0
+    excess = ros_rate - buffer_capacity
+    return excess * (1.0 + excess / buffer_capacity)
 
 
 def total_effect(eac: float) -> dict[str, float]:

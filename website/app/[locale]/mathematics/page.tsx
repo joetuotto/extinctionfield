@@ -27,6 +27,7 @@ const t = {
       { id: "pharmacological", num: "§10", label: "Pharmacological validation" },
       { id: "individual-susceptibility", num: "§11", label: "Individual susceptibility" },
       { id: "cross-sectional", num: "§12", label: "Cross-sectional validation" },
+      { id: "nested-chi", num: "§13", label: "Nested χ (population model)" },
     ],
     pageTitle: "Mathematical Foundation",
     pageSubtitle:
@@ -382,6 +383,15 @@ const t = {
       "GDP collinearity: EMF proxies and GDP per capita are correlated (r = 0.87). In linear models, neither is significant when the other is controlled. This is a symmetric identification problem — it does not favor GDP over EMF. Three structural differences break the symmetry: (1) binary electrification threshold, (2) mobile phone paradox, (3) sentinel species respond to EMF but not GDP.",
     s12Caveat:
       "Cross-sectional analysis cannot determine causal direction. Discriminating evidence comes from sentinel species, natural experiments, and populations without electricity.",
+    s13Title: "Nested χ (Population Model)",
+    s13Intro: "The χ selection rule generalizes to populations when biological background variables (optical, molecular) differ between groups. The combined reproductive suppression from pathways A and C, modulated by population-specific χ profiles:",
+    s13PathwayA: "Pathway A (VGIC)",
+    s13PathwayC: "Pathway C (CRY/RPM)",
+    s13Combined: "Combined suppression",
+    s13TFR: "Population TFR",
+    s13Where: "where γ_A, γ_C are pathway weights (0.75, 0.25); χ(Ā_env) is environmental coupling; χ(V_mem) is membrane background (≈ 1.0 for living cells); χ(I_blue) is optical coupling (iris-dependent); χ([FAD]) is molecular coupling (B2-dependent); and EMF_personal is the personal device contribution.",
+    s13Implication: "This formulation predicts that populations with higher biological χ values (blue-eyed, lactose-tolerant) experience steeper TFR decline per unit of environmental EMF increase. See the population χ profiles for estimated values.",
+    s13Level: "Epistemic level: L* (testable synthesis). Individual χ instantiations are E or M|C level; the population-level integration is the L* component.",
   },
   fi: {
     meta: {
@@ -405,6 +415,7 @@ const t = {
       { id: "pharmacological", num: "§10", label: "Farmakologinen validointi" },
       { id: "individual-susceptibility", num: "§11", label: "Yksilöllinen herkkyys" },
       { id: "cross-sectional", num: "§12", label: "Poikkileikkausvalidointi" },
+      { id: "nested-chi", num: "§13", label: "Sisäkkäinen χ (populaatiomalli)" },
     ],
     pageTitle: "Matemaattinen perusta",
     pageSubtitle:
@@ -761,6 +772,15 @@ const t = {
       "BKT-kollineaarisuus: EMF-proxy-muuttujat ja BKT/cap korreloivat (r = 0,87). Lineaarisissa malleissa kumpikaan ei ole merkitsevä toisen kontrolloinnin jälkeen. Tämä on symmetrinen identifikaatio-ongelma — se ei suosi BKT:tä EMF:n yli. Kolme rakenteellista eroa murtavat symmetrian: (1) binäärinen sähköistymiskynnys, (2) matkapuhelinparadoksi, (3) sentinelkilajit reagoivat EMF:ään mutta eivät BKT:hen.",
     s12Caveat:
       "Poikkileikkausanalyysi ei voi määrittää kausaalisuuntaa. Erotteleva evidenssi tulee sentinelkilajeista, luonnollisista kokeista ja väestöistä ilman sähköä.",
+    s13Title: "Sisäkkäinen χ (populaatiomalli)",
+    s13Intro: "χ-valintasääntö yleistyy populaatioihin kun biologiset taustamuuttujat (optinen, molekulaarinen) eroavat ryhmien välillä. Polkujen A ja C yhdistetty lisääntymissuppressio, moduloituna populaatiokohtaisilla χ-profiileilla:",
+    s13PathwayA: "Polku A (VGIC)",
+    s13PathwayC: "Polku C (CRY/RPM)",
+    s13Combined: "Yhdistetty suppressio",
+    s13TFR: "Populaation TFR",
+    s13Where: "missä γ_A, γ_C ovat polkujen painot (0,75; 0,25); χ(Ā_env) on ympäristökytkentä; χ(V_mem) on kalvotausta (≈ 1,0 eläville soluille); χ(I_blue) on optinen kytkentä (iiriksestä riippuvainen); χ([FAD]) on molekulaarinen kytkentä (B2-riippuvainen); ja EMF_personal on henkilökohtaisten laitteiden osuus.",
+    s13Implication: "Tämä muotoilu ennustaa, että populaatiot korkeammilla biologisilla χ-arvoilla (sinisilmäiset, laktoosinsietokykyiset) kokevat jyrkemmän TFR-laskun ympäristön EMF:n yksikköä kohden. Katso populaatioiden χ-profiilit arvioitujen arvojen osalta.",
+    s13Level: "Episteeminen taso: L* (testattava synteesi). Yksittäiset χ-instanssit ovat E- tai M|C-tasoa; populaatiotason integraatio on L*-komponentti.",
   },
 };
 
@@ -1782,6 +1802,53 @@ export function MathematicsSections({ locale }: { locale: string }) {
             <div className="mt-4 p-3 rounded border border-status-partial/40 bg-status-partial/5">
               <p className="text-xs text-foreground-muted leading-relaxed">
                 {d.s12Caveat}
+              </p>
+            </div>
+          </section>
+
+          {/* S13 Nested χ */}
+          <section id="nested-chi">
+            <h2 className="text-xl font-bold mb-2">
+              <span className="text-foreground-muted text-sm mr-2">{"§13"}</span>
+              {d.s13Title}
+            </h2>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.s13Intro}
+            </p>
+
+            <Derivation label={d.s13PathwayA}>
+              <DerivationLine>
+                R_A = γ_A × χ(Ā_env) × χ(V_mem) × EMF_personal
+              </DerivationLine>
+            </Derivation>
+
+            <Derivation label={d.s13PathwayC}>
+              <DerivationLine>
+                R_C = γ_C × χ(Ā_env) × χ(I_blue) × χ([FAD]) × EMF_personal
+              </DerivationLine>
+            </Derivation>
+
+            <Derivation label={d.s13Combined}>
+              <DerivationLine>
+                R = (1 − R_A) × (1 − R_C)
+              </DerivationLine>
+            </Derivation>
+
+            <Derivation label={d.s13TFR}>
+              <DerivationLine>
+                TFR(pop) = TFR_max × R(χ_env(pop), χ_opt(pop), χ_mol(pop))
+              </DerivationLine>
+            </Derivation>
+
+            <p className="text-sm text-foreground-muted mt-4 max-w-3xl leading-relaxed">
+              {d.s13Where}
+            </p>
+            <p className="text-sm text-foreground-muted mt-3 max-w-3xl leading-relaxed">
+              {d.s13Implication}
+            </p>
+            <div className="mt-4 p-3 rounded border border-status-partial/40 bg-status-partial/5">
+              <p className="text-xs text-foreground-muted leading-relaxed">
+                {d.s13Level}
               </p>
             </div>
           </section>

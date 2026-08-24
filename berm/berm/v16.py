@@ -430,6 +430,12 @@ GAMMA_MOTILITY = 0.015
 GAMMA_CAPACITATION = 0.005
 GAMMA_NAVIGATION = 0.003
 
+# Pathway-level weights (relative causal contribution).
+# Updated 2026-08-24: C=0.25 (was 0.15), B=0.15 (was 0.25).
+# CRY2-TRPC1 (Yap 2025) expands pathway C's biological footprint
+# from clock-only to clock + TRPC1-mediated calcium signaling.
+PATHWAY_WEIGHTS = {"A": 0.45, "B": 0.15, "C": 0.25, "D": 0.15}
+
 
 def v17_night_fraction(country: str, year: int) -> float:
     """Night EMF fraction: smartphone-in-bedroom * WiFi contribution.
@@ -506,12 +512,15 @@ def v17_cry_effect(country: str, year: int) -> float:
     Not implemented because population-level B2 status data requires
     integration with nutritional databases.
 
-    FUTURE EXTENSION — Pathway A-C Coupling:
-    CRY2-TRPC1 physical complex (Yap 2025) means pathways A and C
-    are not independent. Current multiplicative model
-    (1 - gamma_A * resp_A) * (1 - gamma_C * resp_C)
-    may need a cross-term: + gamma_AC * resp_A * resp_C.
-    Not implemented pending quantification of coupling strength.
+    NOTE — CRY2-TRPC1 extends pathway C, does NOT couple A and C:
+    Yap 2025 showed CRY2 modulates TRPC1 (a TRP channel, NOT a VGCC).
+    This gives pathway C two downstream branches:
+      C-clock: CRY2 → circadian transcription loop → melatonin → HPG
+      C-calcium: CRY2 → TRPC1 modulation → Ca²⁺ entry → nuclear translocation
+    Pathways A (VGCC, blocked by nifedipine) and C (CRY2-TRPC1, not
+    blocked by nifedipine) remain pharmacologically separable.
+    The multiplicative model (1 - γ_A·r_A) × (1 - γ_C·r_C) is correct
+    as-is; no cross-term needed.
     """
     cry_ann = v17_cry_annual_response(country, year)
     return max(0.85, min(1.0, 1.0 - GAMMA_CRY * cry_ann))
@@ -1688,3 +1697,63 @@ def feedback_loop_simulate(
     _feedback_density_overrides.clear()
 
     return results
+
+
+# === Population χ profiles (DIAGNOSTIC_ONLY) ===
+
+POPULATION_CHI_PROFILES = {
+    "amish": {
+        "label": "Old Order Amish",
+        "chi_env": 0.1,
+        "chi_optical": 0.85,
+        "chi_molecular": 0.9,
+        "dominant_pathway": "C (uncoupled)",
+        "observed_tfr": 6.5,
+        "note": "Control: high biological χ, near-zero environmental χ",
+    },
+    "mennonite": {
+        "label": "Conservative Mennonites",
+        "chi_env": 0.4,
+        "chi_optical": 0.75,
+        "chi_molecular": 0.8,
+        "dominant_pathway": "A+C (partial)",
+        "observed_tfr": 4.0,
+        "note": "Intermediate: similar biology, moderate EMF",
+    },
+    "scandinavia": {
+        "label": "Scandinavia",
+        "chi_env": 0.85,
+        "chi_optical": 0.8,
+        "chi_molecular": 0.85,
+        "dominant_pathway": "A+C (fully coupled)",
+        "observed_tfr": 1.6,
+        "note": "Maximum coupling: highest bio χ × highest env χ",
+    },
+    "south_korea": {
+        "label": "South Korea",
+        "chi_env": 0.95,
+        "chi_optical": 0.25,
+        "chi_molecular": 0.55,
+        "dominant_pathway": "A (VGIC dominant)",
+        "observed_tfr": 0.7,
+        "note": "A-pathway extreme: low optical χ but extreme screen/EMF density",
+    },
+    "urban_china": {
+        "label": "Urban China",
+        "chi_env": 0.8,
+        "chi_optical": 0.25,
+        "chi_molecular": 0.45,
+        "dominant_pathway": "A (VGIC dominant)",
+        "observed_tfr": 1.0,
+        "note": "Similar to South Korea, lower density",
+    },
+    "sub_saharan_africa": {
+        "label": "Sub-Saharan Africa",
+        "chi_env": 0.3,
+        "chi_optical": 0.075,
+        "chi_molecular": 0.35,
+        "dominant_pathway": "A (weak coupling)",
+        "observed_tfr": 4.5,
+        "note": "Minimal coupling: low bio χ × low-moderate env χ",
+    },
+}

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, ArrowRight, Shield, Zap } from "lucide-react";
+import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, ArrowRight, Shield, Dna } from "lucide-react";
 import { ThreeChannelSummary } from "@/components/ThreeChannelSummary";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
+import { TheraBionicProof } from "@/components/TheraBionicProof";
+import { BradfordHillCard } from "@/components/BradfordHillCard";
 import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
 import { LatestArticles } from "@/components/LatestArticles";
@@ -40,7 +42,7 @@ const SPARKLINE_DATA = [
   [100, 97, 93, 90, 87, 83, 80],
   [0, 2, 5, 10, 18, 15, 20, 35, 49],
   [1.47, 1.08, 1.23, 1.24, 0.84, 0.72],
-  [100, 100, 100, 30, 85, 90],
+  [6.9, 6.8, 6.7, 6.5, 6.3, 6.1, 6.1, 6.1],
 ];
 
 const COPY = {
@@ -57,7 +59,7 @@ const COPY = {
       { stat: "−1.2%/yr", label: "Testosterone decline, age-independent (Travison 2007)" },
       { stat: "49", label: "Countries below replacement TFR 1.4" },
       { stat: "$200B", label: "Korea pronatalism spending → TFR still dropped to 0.72" },
-      { stat: "−70%", label: "NK cells after one night of sleep deprivation (Irwin)" },
+      { stat: "TFR 6.1 vs 1.66", label: "Amish vs US fertility — communities without smartphones" },
     ],
 
     sentinelCta: "All sentinels",
@@ -78,13 +80,14 @@ const COPY = {
     causalTitle: "ELF · IF · RF — three frequency bands, three biological pathways",
     causalNote: "Mobile subscription density is a composite proxy for the overall electromagnetic environment. The model traces three independent channels — ELF (power grid, lighting), IF (switching electronics, LED flicker), RF (base stations, Wi-Fi, radar) — through cryptochrome disruption, calcium signaling and membrane voltage to paired reproductive capacity.",
 
+    npLabel: "EVOLUTIONARY ORIGINS",
+    npTitle: "The Northern Package",
+    npText: "Why did Northern Europe fall below replacement fertility first? BERM proposes that the same co-selection that optimised cryptochrome sensitivity — blue eyes (OCA2), lactose tolerance (LCT), and cattle husbandry — created the population most coupled to electromagnetic fields. The nested χ model formalises this: each population carries a biological χ profile that modulates the EMF-fertility relationship at five scales, from molecular to demographic.",
+    npCta: "Evidence: evolutionary origins",
+
     teaserLabel: "LOCKED PREDICTIONS · TFR 2030",
     teaserNote: "Locked under BERM v17 and falsifiable: each will be compared against observed data in the stated year.",
     allPredictions: "All predictions",
-
-    tdpTitle: "THE THERAPEUTIC DEVICE PARADOX",
-    tdpText: "24 regulatory-approved device categories — from DC bone stimulators to visible-light photobiomodulation — prove non-thermal electromagnetic biological activity across the full spectrum. If non-thermal EMF has no biological effect, these devices cannot work. They work.",
-    tdpCta: "The Spectrum of Proof",
 
     falsTitle: "FALSIFICATION STATUS",
     falsRan: "ran",
@@ -115,7 +118,7 @@ const COPY = {
       { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton (Travison 2007)" },
       { stat: "49", label: "Maata alle korvaavuustason TFR 1,4" },
       { stat: "200 mrd $", label: "Korean pronatalismi → TFR silti 0,72" },
-      { stat: "−70 %", label: "NK-solut yhden yön unideprivaation jälkeen (Irwin)" },
+      { stat: "TFR 6,1 vs 1,66", label: "Amissit vs USA — yhteisöt ilman älypuhelimia" },
     ],
 
     sentinelCta: "Kaikki sentinellit",
@@ -136,13 +139,14 @@ const COPY = {
     causalTitle: "ELF · IF · RF — kolme taajuuskaistaa, kolme biologista reittiä",
     causalNote: "Matkapuhelinliittymätiheys on yhdistelmäproksi koko sähkömagneettiselle ympäristölle. Malli jäljittää kolme itsenäistä kanavaa — ELF (sähköverkko, valaistus), IF (kytkentäelektroniikka, LED-välkyntä), RF (tukiasemat, Wi-Fi, tutka) — kryptokromihäiriön, kalsiumsignaloinnin ja kalvojännitteen kautta pariutumisen lisääntymiskapasiteettiin.",
 
+    npLabel: "EVOLUUTION ALKUPERÄT",
+    npTitle: "Pohjoinen paketti",
+    npText: "Miksi Pohjois-Eurooppa laski ensimmäisenä korvaavuustason hedelmällisyyden alle? BERM ehdottaa, että sama koselektio joka optimoi kryptokromiherkkyyden — siniset silmät (OCA2), laktoosinsietokyky (LCT) ja karjankasvatus — loi populaation, joka on voimakkaimmin kytketty sähkömagneettisiin kenttiin. Sisäkkäinen χ-malli formalisoi tämän: jokaisella populaatiolla on biologinen χ-profiili, joka moduloi EMF-hedelmällisyyssuhdetta viidessä skaalassa, molekulaarisesta demografiseen.",
+    npCta: "Evidenssi: evoluution alkuperät",
+
     teaserLabel: "LUKITUT ENNUSTEET · TFR 2030",
     teaserNote: "Lukittu BERM v17:lla ja falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna.",
     allPredictions: "Kaikki ennusteet",
-
-    tdpTitle: "TERAPEUTTINEN LAITEPARADOKSI",
-    tdpText: "24 regulaattorihyväksyttyä laiteluokkaa — tasavirtaisista luustimulaattoreista näkyvän valon fotobiomodulaatioon — todistavat ei-termisen sähkömagneettisen biologisen aktiivisuuden koko spektrillä. Jos ei-termisellä EMF:llä ei ole biologista vaikutusta, nämä laitteet eivät voi toimia. Ne toimivat.",
-    tdpCta: "Todisteiden spektri",
 
     falsTitle: "FALSIFIKAATIOTILANNE",
     falsRan: "ajettu",
@@ -284,6 +288,32 @@ export default async function Home({
         </figure>
       </section>
 
+      {/* ── 4b. Northern Package ── */}
+      <section className="pb-20">
+        <div className="rounded-xl border border-card-border bg-card-bg p-6 sm:p-8">
+          <div className="flex items-start gap-4">
+            <Dna size={28} className="text-accent/60 shrink-0 mt-1" strokeWidth={1.5} aria-hidden="true" />
+            <div>
+              <h2 className="editorial-kicker text-accent mb-3">{d.npLabel}</h2>
+              <p className="font-semibold mb-2">{d.npTitle}</p>
+              <p className="text-sm sm:text-[0.9375rem] leading-relaxed text-foreground-muted">{d.npText}</p>
+              <Link
+                href={`${prefix}/evidence/evolution`}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover mt-4"
+              >
+                {d.npCta} <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4c. TheraBionic clinical validation ── */}
+      <TheraBionicProof locale={activeLocale} prefix={prefix} />
+
+      {/* ── 4d. Bradford Hill criteria ── */}
+      <BradfordHillCard locale={activeLocale} prefix={prefix} />
+
       {/* ── 5. Locked predictions ── */}
       <section className="pb-20">
         <div className="rounded-xl border border-card-border bg-card-bg p-6 sm:p-8">
@@ -314,25 +344,6 @@ export default async function Home({
             ))}
           </div>
           <p className="mt-6 text-sm leading-relaxed text-foreground-muted">{d.teaserNote}</p>
-        </div>
-      </section>
-
-      {/* ── 6. Therapeutic device paradox ── */}
-      <section className="pb-20">
-        <div className="rounded-xl border border-card-border bg-card-bg p-6 sm:p-8">
-          <div className="flex items-start gap-4">
-            <Zap size={28} className="text-accent/60 shrink-0 mt-1" strokeWidth={1.5} aria-hidden="true" />
-            <div>
-              <h2 className="editorial-kicker text-accent mb-3">{d.tdpTitle}</h2>
-              <p className="text-sm sm:text-[0.9375rem] leading-relaxed text-foreground-muted">{d.tdpText}</p>
-              <Link
-                href={`${prefix}/evidence#therapeutic-device-paradox`}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover mt-4"
-              >
-                {d.tdpCta} <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 

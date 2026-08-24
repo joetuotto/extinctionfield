@@ -14,6 +14,9 @@ type Copy = {
   principles: readonly Principle[];
   statusTitle: string;
   statusText: string;
+  deepHistoryTitle: string;
+  deepHistoryText: readonly string[];
+  deepHistoryNote: string;
   licensingTitle: string;
   codeLabel: string;
   codeText: string;
@@ -70,6 +73,13 @@ const t: Record<Locale, Copy> = {
     statusTitle: "Current status",
     statusText:
       "The v2 code and causal registry exist, but a matched national FieldState–biomarker–couple–ASFR panel has not yet been assembled. The active model therefore makes no calibrated country-level TFR forecast.",
+    deepHistoryTitle: "Deep history: why Northern Europe first?",
+    deepHistoryText: [
+      "Between 10,000 and 6,000 years ago, a cluster of traits co-selected in Northern European populations: blue eyes (OCA2 mutation), lactose tolerance (LCT persistence), and cattle husbandry. All three optimise the same molecule — cryptochrome — through different pathways. Blue irises transmit more short-wavelength light to retinal CRY1. Dairy-derived riboflavin (B2) sustains the FAD chromophore that CRY requires for magnetic sensitivity. Cattle husbandry provided the selective pressure for both.",
+      "BERM formalises this as the Northern Package: a population-level biological χ profile that amplifies coupling to electromagnetic fields. The nested χ model describes five scales — molecular, optical, cellular, environmental, population — each governed by the same selection-rule function χ. When χ_env was near zero (pre-electrification), high biological χ was invisible. As electrification rose, the most biologically coupled population was the first to show fertility decline below replacement.",
+      "This framework generates falsifiable predictions: populations with high biological χ profiles (Scandinavian-origin) should show steeper TFR decline at equivalent EMF exposure than populations with low profiles (Sub-Saharan African-origin). The Amish–Mennonite gradient and the COVID work-from-home baby bump provide natural experiments.",
+    ],
+    deepHistoryNote: "The Northern Package hypothesis is rated L* (speculative). OCA2 + LCT co-selection is established (E-level); the cryptochrome interpretation is the novel, testable extension.",
     licensingTitle: "Licensing and data",
     codeLabel: "Code:",
     codeText: "MIT License. Use, modify and distribute the model code under the license terms.",
@@ -128,6 +138,13 @@ const t: Record<Locale, Copy> = {
     statusTitle: "Nykytila",
     statusText:
       "V2-koodi ja kausaalirekisteri ovat olemassa, mutta kohdistettua kansallista FieldState–biomarkkeri–pari–ASFR-paneelia ei ole vielä koottu. Aktiivinen malli ei siksi anna kalibroitua maakohtaista TFR-ennustetta.",
+    deepHistoryTitle: "Syvähistoria: miksi Pohjois-Eurooppa ensin?",
+    deepHistoryText: [
+      "Noin 10 000–6 000 vuotta sitten pohjoiseuroppalaisiin populaatioihin koselektoitui piirteiden klusteri: siniset silmät (OCA2-mutaatio), laktoosinsietokyky (LCT-persistenssi) ja karjankasvatus. Kaikki kolme optimoivat saman molekyylin — kryptokromin — eri reittien kautta. Siniset iirikset läpäisevät enemmän lyhytaaltoista valoa verkkokalvon CRY1:lle. Maitotuotteista saatava riboflaviini (B2) ylläpitää FAD-kromofooria, jota CRY tarvitsee magneettiseen herkkyyteen. Karjankasvatus tarjosi valintapaineen molemmille.",
+      "BERM formalisoi tämän Pohjoisena pakettina: populaatiotason biologinen χ-profiili, joka vahvistaa kytkentää sähkömagneettisiin kenttiin. Sisäkkäinen χ-malli kuvaa viisi skaalaa — molekulaarinen, optinen, solu-, ympäristö- ja populaatiotaso — joista kutakin hallitsee sama valintasääntöfunktio χ. Kun χ_env oli lähellä nollaa (ennen sähköistämistä), korkea biologinen χ oli näkymätön. Sähköistämisen kasvaessa biologisesti kytkentäisin populaatio oli ensimmäinen, joka osoitti hedelmällisyyslaskun korvaavuustason alle.",
+      "Tämä viitekehys tuottaa falsifioitavia ennusteita: populaatioiden, joilla on korkeat biologiset χ-profiilit (skandinaavisperäiset), pitäisi osoittaa jyrkempää TFR-laskua vastaavalla EMF-altistuksella kuin populaatioiden, joilla on matalat profiilit (Saharan eteläpuoleiset afrikkalaisperäiset). Amish–mennoniittigradientti ja COVID-etätyön baby bump tarjoavat luonnollisia kokeita.",
+    ],
+    deepHistoryNote: "Pohjoinen paketti -hypoteesi on arvioitu tasolle L* (spekulatiivinen). OCA2 + LCT -koselektio on vakiintunut (E-taso); kryptokromitulkinta on uusi, testattava laajennus.",
     licensingTitle: "Lisensointi ja data",
     codeLabel: "Koodi:",
     codeText: "MIT-lisenssi. Mallikoodia voi käyttää, muokata ja jakaa lisenssin ehtojen mukaisesti.",
@@ -193,6 +210,14 @@ export default async function AboutPage({
         <section className="rounded-xl border border-status-partial/35 bg-status-partial/5 p-5">
           <h2 className="text-lg font-semibold">{d.statusTitle}</h2>
           <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{d.statusText}</p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-3">{d.deepHistoryTitle}</h2>
+          <div className="space-y-3 text-foreground-muted leading-relaxed">
+            {d.deepHistoryText.map((paragraph) => <p key={paragraph.slice(0, 40)}>{paragraph}</p>)}
+          </div>
+          <p className="mt-4 text-xs text-foreground-muted/70 italic leading-relaxed border-l-2 border-accent/30 pl-3">{d.deepHistoryNote}</p>
         </section>
 
         <section>

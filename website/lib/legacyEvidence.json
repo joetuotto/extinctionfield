@@ -2520,8 +2520,17 @@
     "year": 2026,
     "pathway": "S",
     "level": "C",
-    "tags": ["csli", "sentinel", "bee", "coloss", "winter_loss", "panel"],
-    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
+    "tags": [
+      "csli",
+      "sentinel",
+      "bee",
+      "coloss",
+      "winter_loss",
+      "panel"
+    ],
+    "causalNodes": [
+      "ECOLOGICAL_ENCOUNTER"
+    ],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Source-verified 23-country COLOSS panel. Within-country bee winter loss → TFR correlation: pooled r=−0.272, optimal lag 2 years, circular-shift p=0.006. 20/23 countries BERM-direction. Replicates across World Bank and WPP 2024 TFR products.",
@@ -2533,8 +2542,17 @@
     "year": 2026,
     "pathway": "S",
     "level": "C",
-    "tags": ["csli", "sentinel", "bird", "pecbms", "breeding_bird", "population"],
-    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
+    "tags": [
+      "csli",
+      "sentinel",
+      "bird",
+      "pecbms",
+      "breeding_bird",
+      "population"
+    ],
+    "causalNodes": [
+      "ECOLOGICAL_ENCOUNTER"
+    ],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "27-country PECBMS breeding bird composite index. Detrended bird population decline precedes TFR decline by ~2.5 years: 21/27 countries BERM-direction, r=0.182, p=0.006. Signal weaker than bee but broader taxonomic scope.",
@@ -2546,8 +2564,19 @@
     "year": 2026,
     "pathway": "S",
     "level": "C",
-    "tags": ["csli", "sentinel", "bird", "nike", "radar", "spatial", "gradient", "bbs"],
-    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
+    "tags": [
+      "csli",
+      "sentinel",
+      "bird",
+      "nike",
+      "radar",
+      "spatial",
+      "gradient",
+      "bbs"
+    ],
+    "causalNodes": [
+      "ECOLOGICAL_ENCOUNTER"
+    ],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "1,381 BBS routes near 268 Cold War Nike sites. BERM-direction proximity gradient: <50km −0.526%/yr vs >100km +0.096%/yr (Welch p=0.031). Spearman ρ=+0.088 (p=0.001). However, site closure did not predict bird recovery. Correlational; not peer-reviewed.",
@@ -2559,8 +2588,17 @@
     "year": 2026,
     "pathway": "S",
     "level": "C",
-    "tags": ["csli", "sentinel", "aphid", "rothamsted", "insect", "uk"],
-    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
+    "tags": [
+      "csli",
+      "sentinel",
+      "aphid",
+      "rothamsted",
+      "insect",
+      "uk"
+    ],
+    "causalNodes": [
+      "ECOLOGICAL_ENCOUNTER"
+    ],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Rothamsted suction trap aphid abundance (UK, 1969–2016). First-difference analysis: aphid decline precedes TFR decline by ~2 years, r=0.660, p=0.021. Single-country result; consistent with short-lifecycle sentinel hypothesis.",
@@ -2572,8 +2610,18 @@
     "year": 2026,
     "pathway": "C",
     "level": "C",
-    "tags": ["led", "lighting", "emf", "kHz", "intermediate_frequency", "blue_light", "confound"],
-    "causalNodes": ["CIRCADIAN_DISRUPTION"],
+    "tags": [
+      "led",
+      "lighting",
+      "emf",
+      "kHz",
+      "intermediate_frequency",
+      "blue_light",
+      "confound"
+    ],
+    "causalNodes": [
+      "CIRCADIAN_DISRUPTION"
+    ],
     "evidenceRole": "CONFOUNDING_HYPOTHESIS",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "LED bulbs produce both blue light and kHz-range EMF; incandescent bulbs produce neither. Any study comparing LED to incandescent cannot separate spectral from electromagnetic effects. TTFields (FDA-approved, 100–300 kHz) confirms biological activity of these frequencies. BERM-identified research gap.",
@@ -2585,8 +2633,17 @@
     "year": 2021,
     "pathway": "S",
     "level": "C",
-    "tags": ["led", "street_lighting", "insects", "moths", "sentinel", "ecology"],
-    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
+    "tags": [
+      "led",
+      "street_lighting",
+      "insects",
+      "moths",
+      "sentinel",
+      "ecology"
+    ],
+    "causalNodes": [
+      "ECOLOGICAL_ENCOUNTER"
+    ],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "LED streetlights cause greater insect mortality than sodium lamps. Conventionally attributed to light spectrum, but LEDs also emit kHz EMF from drivers. BERM predicts the EMF component contributes independently. Street LED deployment (2012+) overlaps temporally with accelerating insect decline.",
@@ -2598,8 +2655,17 @@
     "year": 2026,
     "pathway": "S",
     "level": "C",
-    "tags": ["weather_radar", "nexrad", "insects", "temporal", "sentinel", "resonance"],
-    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
+    "tags": [
+      "weather_radar",
+      "nexrad",
+      "insects",
+      "temporal",
+      "sentinel",
+      "resonance"
+    ],
+    "causalNodes": [
+      "ECOLOGICAL_ENCOUNTER"
+    ],
     "evidenceRole": "OBSERVATIONAL_ASSOCIATION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "159 NEXRAD stations deployed 1988–1997 at 250 kW–1 MW peak power, 2.7–3.0 GHz (S-band). Hallmann's −76% insect biomass dataset begins 1989. S-band wavelength (λ/2 ≈ 5.4 cm) matches large flying insect body size, producing resonant absorption. Protected nature reserves are not shielded from radar signals.",
@@ -2611,8 +2677,17 @@
     "year": 2026,
     "pathway": "S",
     "level": "C",
-    "tags": ["wind_turbines", "bats", "sentinel", "compass", "emf", "mortality"],
-    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
+    "tags": [
+      "wind_turbines",
+      "bats",
+      "sentinel",
+      "compass",
+      "emf",
+      "mortality"
+    ],
+    "causalNodes": [
+      "ECOLOGICAL_ENCOUNTER"
+    ],
     "evidenceRole": "MECHANISTIC_HYPOTHESIS",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Wind turbines produce EMF in bat habitats. Lindecke 2026 shows RF disrupts bat compass for hours. BERM predicts: compass-disrupted bats near turbines have elevated collision risk. This mechanistic link (EMF → disorientation → mortality) is independent of direct blade-strike explanations.",
@@ -2624,8 +2699,19 @@
     "year": 2026,
     "pathway": "C",
     "level": "C",
-    "tags": ["display", "crt", "lcd", "led", "bedroom", "circadian", "wifi", "personal"],
-    "causalNodes": ["CIRCADIAN_DISRUPTION"],
+    "tags": [
+      "display",
+      "crt",
+      "lcd",
+      "led",
+      "bedroom",
+      "circadian",
+      "wifi",
+      "personal"
+    ],
+    "causalNodes": [
+      "CIRCADIAN_DISRUPTION"
+    ],
     "evidenceRole": "CONFOUNDING_HYPOTHESIS",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Display transition was a multiplicative EMF change: count × size × bedroom penetration × Wi-Fi × hours × proximity. Bedroom TV at 1.5–2m from pineal gland during melatonin window produces simultaneous blue light + EMF. BERM circadian weighting (2.5×) amplifies this. No single-factor analysis captures the multiplicative effect.",
@@ -2637,8 +2723,17 @@
     "year": 2026,
     "pathway": "S",
     "level": "P",
-    "tags": ["satellite", "starlink", "predictive", "speculative", "migratory", "sentinel"],
-    "causalNodes": ["ECOLOGICAL_ENCOUNTER"],
+    "tags": [
+      "satellite",
+      "starlink",
+      "predictive",
+      "speculative",
+      "migratory",
+      "sentinel"
+    ],
+    "causalNodes": [
+      "ECOLOGICAL_ENCOUNTER"
+    ],
     "evidenceRole": "PREDICTION",
     "status": "PREDICTION",
     "translationScope": "Satellite constellations represent a new EMF layer with unique properties: global coverage, independent of national policy, ground-based infrastructure not required. BERM predicts: migratory species using magnetic compass (birds, bats, sea turtles) will show measurable behavioral effects as constellation density increases. Speculative but falsifiable.",
@@ -2650,11 +2745,266 @@
     "year": 2026,
     "pathway": "M",
     "level": "C",
-    "tags": ["methodology", "orthogonal", "instruments", "confounding", "layers", "discrimination"],
-    "causalNodes": ["FIELDSTATE"],
+    "tags": [
+      "methodology",
+      "orthogonal",
+      "instruments",
+      "confounding",
+      "layers",
+      "discrimination"
+    ],
+    "causalNodes": [
+      "FIELDSTATE"
+    ],
     "evidenceRole": "METHODOLOGICAL",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "When all EMF layers correlate with GDP, a two-layer model cannot separate causation from confounding. Twelve layers with orthogonal drivers (energy policy, vehicle safety, Cold War, municipal decisions) create natural experiments. If insect decline tracks weather radar (energy-independent, 1988) but not smart meters (energy-dependent, 2005), discrimination improves.",
+    "n": null
+  },
+  {
+    "id": "yap2025_cry2_trpc1",
+    "citation": "Yap JLY et al. (2025). CRY2-TRPC1 complex mediates PEMF-induced calcium signaling and nuclear translocation. Cells 14(3):231",
+    "year": 2025,
+    "pathway": "B",
+    "level": "E",
+    "tags": [
+      "cry2",
+      "trpc1",
+      "calcium",
+      "pemf",
+      "nuclear-translocation",
+      "myoblast"
+    ],
+    "causalNodes": [
+      "B_CRY_MELATONIN"
+    ],
+    "evidenceRole": "MECHANISM_EXTENSION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "CRY2 physically interacts with TRPC1 (a TRP channel, NOT a VGCC) and the complex co-translocates to the nucleus after PEMF exposure. This gives pathway C (CRY/RPM) a second downstream branch: calcium signaling via TRPC1, independent of pathway A (VGCC). Blocked by CRY2 silencing, darkness, and RFK silencing — all RPM hallmarks. NOT blocked by L-type VGCC blockers (nifedipine), confirming pharmacological separability from pathway A. Demonstrated in myoblasts; gonadal cell confirmation pending (prediction TRPC1-1).",
+    "n": null
+  },
+  {
+    "id": "yu2019_btb_disruption",
+    "citation": "Yu G et al. (2019). Long-term exposure to 4G smartphone RF-EMR diminished male reproductive potential by directly disrupting Spock3-MMP2-BTB axis. Sci Total Environ",
+    "year": 2019,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "btb",
+      "blood_testis_barrier",
+      "tight_junction",
+      "4g",
+      "spermatogenesis",
+      "pathway_F",
+      "barrier"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISM_EXTENSION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "First direct demonstration of BTB disruption by telecom-frequency RF. Long-term 2605 MHz (4G) exposure gradually damaged spermatogenesis via the Spock3-MMP2-BTB axis. The BTB uses the same tight junction proteins (occludin, ZO-1) as the BBB. Validates extending BERM pathway F (BBB multiplier) to a Biological Barrier Multiplier covering both BBB and BTB. Time-dependent toxicity consistent with positive feedback.",
+    "n": null
+  },
+  {
+    "id": "ulusoy2025_bbb_enos",
+    "citation": "Ulusoy A et al. (2025). Acute exposure to 27.12 MHz RF-EMF disrupts BBB integrity via eNOS activation and occludin down-regulation. Int J Basic Med Sci",
+    "year": 2025,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "bbb",
+      "occludin",
+      "claudin",
+      "eNOS",
+      "tight_junction",
+      "pathway_F",
+      "non_thermal"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISM_EXTENSION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "30 min RF-EMF at 27.12 MHz significantly increased eNOS gene expression and decreased occludin — without oxidative stress or inflammation. Longer exposures (180, 360 min) produced HIF-1a increase, claudin-1 and occludin decrease, and histopathological edema. Confirms the BBB opening mechanism is TJ-protein mediated (occludin, claudin-1) — the same proteins as in BTB. The eNOS pathway is non-thermal and non-oxidative at short exposures.",
+    "n": null
+  },
+  {
+    "id": "nature_comms_2026_ttype",
+    "citation": "Nature Communications (2026). All four voltage-sensing domains of human CaV3.1 activate within a narrow voltage range near resting membrane potential.",
+    "year": 2026,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "t_type",
+      "cav3",
+      "voltage_sensing",
+      "bifurcation",
+      "window_current"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISM_EXTENSION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "T-type channels are maximally sensitive NEAR resting potential (-70 to -50 mV) — the exact voltage range where EMF-induced perturbations (via Schwan equation) are largest. This is the bifurcation amplifier that resolves BERM's dVm problem.",
+    "n": null
+  },
+  {
+    "id": "xiang2025_clc2_ttype",
+    "citation": "Xiang C et al. (2025). T-type VGCC inhibition reduces testosterone synthesis in Leydig cells. Reproduction (Oxford). doi:10.1530/REP-24-0432",
+    "year": 2025,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "t_type",
+      "leydig",
+      "testosterone",
+      "steroidogenesis",
+      "star_protein"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISM_EXTENSION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Completes the Lindgren-to-testosterone chain: EMF -> Schwan dVm -> T-type Cav3 activation -> Ca2+ -> StAR -> cholesterol transport -> testosterone. Elevates pathway D from 'Not derived' to 'Derived via T-type bifurcation.'",
+    "n": null
+  },
+  {
+    "id": "ma2026_spermatogenesis",
+    "citation": "Ma T et al. (2026). Cav1 and Cav3 are both essential for spermatogenesis. Andrology. doi:10.1111/andr.70119",
+    "year": 2026,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "t_type",
+      "l_type",
+      "spermatogenesis",
+      "cav1",
+      "cav3",
+      "ethosuximide",
+      "nifedipine"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISM_EXTENSION",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Both L-type AND T-type channels are required for spermatogenesis. EMF perturbation of T-type window current provides a mechanism for chronic, low-level disruption of spermatocyte development without requiring high-intensity L-type activation.",
+    "n": null
+  },
+  {
+    "id": "therabionic_ttype_tdp",
+    "citation": "Zimmerman et al. TheraBionic (FDA approved 2019): tumour-specific AM-RF-EMF at 27.12 MHz induces HCC differentiation via targeting Cav3.2 T-type calcium channels. British Journal of Cancer.",
+    "year": 2019,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "t_type",
+      "cav3_2",
+      "therapeutic_device_paradox",
+      "fda",
+      "non_thermal",
+      "tdp"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "THERAPEUTIC_DEVICE_PARADOX",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "FDA-approved device operating at non-thermal RF levels through T-type calcium channel Cav3.2. If non-thermal RF cannot affect biology (ICNIRP position), TheraBionic cannot work. Strongest single TDP in BERM's evidence base. Note: uses 27.12 MHz (not telecom frequency) and targets cancer cells — connection is analogical, not identical.",
+    "n": null
+  },
+  {
+    "id": "pgc_five_disorders_cacna1c",
+    "citation": "Cross-Disorder Group of the PGC. Lancet (2013): CACNA1C identified as shared risk locus across ASD, ADHD, bipolar disorder, major depression, and schizophrenia in genome-wide analysis of 33,332 cases and 27,888 controls.",
+    "year": 2013,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "cacna1c",
+      "vgcc",
+      "autism",
+      "adhd",
+      "bipolar",
+      "schizophrenia",
+      "gwas",
+      "psychiatric",
+      "chi_channel"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISTIC_LINK",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "CACNA1C encodes L-type VGCC Cav1.2 — the same channel through which EMF effects are mediated (pathway A). Genetic variants that alter channel gating change the individual's chi_channel, predicting differential EMF sensitivity. Not a direct EMF study — establishes that VGCC variants modulate psychiatric risk, supporting the gene × environment prediction.",
+    "n": 61220
+  },
+  {
+    "id": "timothy_syndrome_cacna1c_autism",
+    "citation": "Splawski I et al. Cell (2004): G406R gain-of-function mutation in CACNA1C (Cav1.2) causes Timothy syndrome with autism in 80% of affected individuals — highest penetrance of any syndromic ASD form.",
+    "year": 2004,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "timothy",
+      "cacna1c",
+      "gain_of_function",
+      "autism",
+      "calcium",
+      "cav1_2"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISTIC_LINK",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Direct proof that excessive Ca2+ influx through a single VGCC gene is sufficient to cause autism. The mechanism (too much calcium → disrupted neurodevelopment) parallels BERM's prediction that chronic EMF-induced Ca2+ elevation during neurodevelopment → similar but milder effects. Timothy syndrome is a RARE de novo mutation — significance is mechanistic, not epidemiological.",
+    "n": null
+  },
+  {
+    "id": "plos_genetics_2019_axon_targeting",
+    "citation": "Bhatt DK et al. PLOS Genetics (2019): Timothy syndrome gain-of-function mutation in Cav1.2 homolog disrupts axon targeting and behaviour through interaction with selective autophagy genes.",
+    "year": 2019,
+    "pathway": "A",
+    "level": "E",
+    "tags": [
+      "timothy",
+      "axon_targeting",
+      "autophagy",
+      "circuit",
+      "mechanism",
+      "neurodevelopment"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISTIC_LINK",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Identifies the cellular mechanism through which excessive VGCC Ca2+ causes autism: axon targeting errors → misplaced synapses → circuit defects → behavioural phenotype. EMF-induced chronic Ca2+ elevation could produce similar, milder axon targeting errors during critical neurodevelopmental periods.",
+    "n": null
+  },
+  {
+    "id": "cacna1g_asd_snps",
+    "citation": "Various GWAS (2012): Two SNPs in CACNA1G (rs757415, rs12603112), encoding T-type calcium channel Cav3.1, are associated with autism spectrum disorder.",
+    "year": 2012,
+    "pathway": "A",
+    "level": "M|C",
+    "tags": [
+      "cacna1g",
+      "t_type",
+      "cav3",
+      "autism",
+      "gwas",
+      "chi_channel"
+    ],
+    "causalNodes": [
+      "A_VGCC_ROS"
+    ],
+    "evidenceRole": "MECHANISTIC_LINK",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Connects BERM's T-type bifurcation mechanism directly to neurodevelopmental disorders. T-type channels operate at the bifurcation point near resting potential → maximally sensitive to EMF perturbation. Individuals with CACNA1G risk variants have altered T-type gating → altered chi_channel → differential prenatal EMF sensitivity.",
     "n": null
   }
 ]

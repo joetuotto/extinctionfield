@@ -14,6 +14,7 @@ import {
   Radio,
   Sigma,
   Network,
+  Activity,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -39,6 +40,7 @@ export const NAV_ROUTES: NavRoute[] = [
       { href: "/model/math", labelEn: "Mathematics", labelFi: "Matematiikka", icon: Sigma },
     ],
   },
+  { href: "/modulome", labelEn: "Modulome", labelFi: "Modulomi", icon: Activity },
   { href: "/map", labelEn: "Causal Map", labelFi: "Kausaalikartta", icon: Network },
   { href: "/predictions", labelEn: "Predictions", labelFi: "Ennusteet", icon: Target },
   { href: "/evidence", labelEn: "Evidence", labelFi: "Näyttö", icon: Layers },

@@ -1,7 +1,7 @@
 # BERM: Silmien väri, ravitsemus ja magnetoreseptio — hypoteesi ja integraatio
 **Päiväys:** 2026-08-24
 **Episteeminen taso:** L* (testattava hypoteesi, vahvat yksittäiset lenkit E-tasolla)
-**Status:** Toteutettu koodissa, projektidokumentit odottavat
+**Status:** Toteutettu koodissa (v1 + v2), projektidokumentit päivitetty
 
 ## Hypoteesin ydin
 

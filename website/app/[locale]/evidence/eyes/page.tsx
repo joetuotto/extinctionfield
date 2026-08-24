@@ -37,6 +37,20 @@ const COPY = {
       "Women are more often green-eyed. They did not show magnetoreception in behavioral tests. In BERM's framework, women's reproductive pathway (fFemale) depends primarily on circadian stability — a function of pathway C (CRY → melatonin → GnRH → HPG). Green eyes optimize precisely for this: the lipochrome filter maintains CRY in its magnetically sensitive semiquinone state longer, producing more stable circadian oscillation.",
       "The X-chromosome mosaicism mechanism (Bressan 2024) provides the proximate genetic explanation. The sex-specific adaptive pressure provides the ultimate evolutionary explanation: natural selection preserved the mosaicism because intermediate eye colors in women were adaptively advantageous for circadian function, while extreme blue in men was advantageous for magnetic navigation.",
     ],
+    fastingTitle: "The Fasting Paradox",
+    fastingText: [
+      "There is an apparent contradiction in the evidence. AMPK, the cell's nutrient sensor that activates during fasting, phosphorylates CRY1 and targets it for degradation (Lamia et al. 2009, Science). Yet the only study showing human magnetoreception used starved subjects (Chae 2019). If fasting destroys the very protein that senses magnetic fields, how can fasting enhance magnetoreception?",
+      "The resolution lies in CRY quality versus quantity. Fasting does degrade old CRY molecules via the AMPK-Ser71-FBXL3 pathway. But fasting simultaneously increases the pool of oxidized flavoproteins via fatty acid beta-oxidation — meaning more FAD is available. When the cell synthesizes replacement CRY molecules, they are loaded with fresh FAD chromophore more efficiently. The net result: fewer CRY molecules, but each one is better equipped for magnetoreception.",
+      "This also explains why chronic B2 deficiency is far more damaging than acute fasting. During a fast, the FAD pool is maintained or enhanced by metabolic shifts. During chronic B2 deficiency, the FAD pool itself is depleted — so even when new CRY is synthesized, it cannot be properly loaded with its essential chromophore. The protein exists but cannot function.",
+      "The fasting paradox resolution is an L*-level hypothesis. The individual biochemical steps (AMPK phosphorylation of CRY, FAD requirement for CRY function, beta-oxidation during fasting) are each E-level established facts. The synthesis — that net CRY quality improves during fasting despite lower quantity — has not been directly tested.",
+    ],
+    bartolkeTitle: "2025 Update: Two CRY Systems",
+    bartolkeText: [
+      "In 2025, the QuantumBirds consortium (Bartölke et al., FASEB J) made a discovery that transforms the eye color hypothesis. Using C-terminal specific antibodies, they found full-length CRY1 protein exclusively in the outer segments of short-wavelength-sensitive 'blue' cone photoreceptors — not in ganglion cells, not in rods, not in other cone types. Only in blue cones.",
+      "This means the human retina has not one but two cryptochrome systems. CRY1 sits in the phototransduction machinery of blue cones (C1: sensory), while CRY2 is in the ganglion cells that project to the brain's circadian clock (C2: circadian). They have different locations, different probable functions, and different relationships to eye color.",
+      "The C1 system (CRY1 in blue cones) is the one most affected by iris pigmentation. Blue eyes transmit ~100x more light to these specific photoreceptors. The stacked membrane lamellae of cone outer segments provide the structural order that CRY needs for directional magnetoreception (confirmed by Majewska et al. 2025: CRY associates with lipid membranes in oriented fashion).",
+      "The C2 system (CRY2 in ganglion cells) is the circadian system that controls melatonin production. It forms a physical complex with the ion channel TRPC1 (Yap et al. 2025), linking it directly to BERM's pathway A. This system is less directly affected by iris pigmentation but equally dependent on FAD/B2 status.",
+    ],
     section4Title: "Testable Predictions",
     epistemicTitle: "Epistemic Status",
     epistemicText: "This page presents a testable hypothesis (L* level). Individual links in the evidence chain are experimentally confirmed (E level: FAD→CRY stability, FAD→magnetic sensitivity, CRY photocycle wavelength dependence). The overall synthesis — that eye color is an adaptation specifically for magnetoreceptive optimization — has not been directly tested. The predictions above are designed to narrow this uncertainty. This is not established science. It is a structured research proposal grounded in published findings.",
@@ -90,6 +104,20 @@ const COPY = {
       "Miehillä on useammin siniset silmät. He ovat sukupuoli joka osoitti magnetoreseptiota käyttäytymiskokeissa. BERM:n kehyksessä miesten lisääntymispolku (fMale) riippuu ensisijaisesti siittiöiden laadusta — polku A:n (VGIC → ROS) funktio. Mutta heidän magnetoreseptiivinen etunsa (siniset silmät → maksimaalinen CRY-herkkyys) palveli eri tarkoitusta: avaruudellista navigointia metsästykseen, mikä epäsuorasti tuki lisääntymismenestystä.",
       "Naisilla on useammin vihreät silmät. He eivät osoittaneet magnetoreseptiota käyttäytymiskokeissa. BERM:n kehyksessä naisten lisääntymispolku (fFemale) riippuu ensisijaisesti sirkadiaanisesta stabiilisuudesta — polku C:n (CRY → melatoniini → GnRH → HPG) funktio. Vihreät silmät optimoivat juuri tätä: lipokromi-suodatin ylläpitää CRY:tä sen magneettisesti herkässä semikinoni-tilassa pidempään, tuottaen stabiilimman sirkadiaanisen oskillaation.",
       "X-kromosomimosaiikkimekanismi (Bressan 2024) tarjoaa proksimaalisen geneettisen selityksen. Sukupuolispesifinen adaptiivinen paine tarjoaa ultimaalisen evoluutiobiologisen selityksen: luonnonvalinta säilytti mosaiikin koska keskiväriset silmät naisilla olivat adaptiivisesti edullisia sirkadiaaniselle toiminnalle, kun taas äärimmäinen sininen miehillä oli edullinen magneettiselle navigoinnille.",
+    ],
+    fastingTitle: "Paastoparadoksi",
+    fastingText: [
+      "Evidenssissä on ilmeinen ristiriita. AMPK, solun ravintosensori joka aktivoituu paastossa, fosforyloi CRY1:n ja kohdistaa sen hajotettavaksi (Lamia ym. 2009, Science). Kuitenkin ainoa ihmisen magnetoreseptiota osoittanut tutkimus käytti nälkiintyneitä koehenkilöitä (Chae 2019). Jos paasto tuhoaa juuri sen proteiinin joka aistii magneettikenttiä, miten paasto voi tehostaa magnetoreseptiota?",
+      "Ratkaisu piilee CRY:n laadussa verrattuna määrään. Paasto hajottaa vanhoja CRY-molekyylejä AMPK-Ser71-FBXL3-reitin kautta. Mutta paasto lisää samanaikaisesti hapettuneiden flavoproteiinien poolia rasvahappojen beta-oksidaation kautta — mikä tarkoittaa enemmän FAD:ia saatavilla. Kun solu syntetisoi korvaavia CRY-molekyylejä, ne ladataan tuoreella FAD-kromoforilla tehokkaammin. Nettotulos: vähemmän CRY-molekyylejä, mutta jokainen on paremmin varustettu magnetoreseptioon.",
+      "Tämä selittää myös miksi krooninen B2-puutos on paljon vahingollisempi kuin akuutti paasto. Paaston aikana FAD-pooli ylläpidetään tai tehostetaan metabolisilla muutoksilla. Kroonisen B2-puutoksen aikana itse FAD-pooli on ehtynyt — joten vaikka uutta CRY:tä syntetisoitaisiin, sitä ei voida ladata kunnolla sen välttämättömällä kromoforilla. Proteiini on olemassa mutta ei voi toimia.",
+      "Paastoparadoksin ratkaisu on L*-tason hypoteesi. Yksittäiset biokemialliset vaiheet (AMPK:n CRY-fosforylaatio, FAD:n vaatimus CRY:n toiminnalle, beta-oksidaatio paastossa) ovat kukin E-tason vahvistettuja faktoja. Synteesi — että CRY:n nettolaatu paranee paastossa matalammasta määrästä huolimatta — ei ole suoraan testattu.",
+    ],
+    bartolkeTitle: "2025-päivitys: Kaksi CRY-järjestelmää",
+    bartolkeText: [
+      "Vuonna 2025 QuantumBirds-konsortio (Bartölke ym., FASEB J) teki löydöksen joka muuttaa silmien väri -hypoteesia. C-terminaalispesifisillä vasta-aineilla he löysivät täyspitkän CRY1-proteiinin yksinomaan lyhytaaltoherkissä sinisten tappisolujen ulkosegmenteistä — ei gangliosoluista, ei sauvoista, ei muista tappityypeistä. Vain sinisistä tapeista.",
+      "Tämä tarkoittaa, ettei ihmisen verkkokalvolla ole yhtä vaan kaksi kryptokromijärjestelmää. CRY1 sijaitsee sinisten tappisolujen fototransduktiokoneistossa (C1: sensorinen), kun taas CRY2 on gangliosoluissa jotka projisoivat aivojen sirkadiaaniseen kelloon (C2: sirkadiaaninen). Niillä on eri sijainnit, eri todennäköiset funktiot ja eri suhteet silmien väriin.",
+      "C1-järjestelmä (CRY1 sinisissä tapeissa) on se, johon iiriksen pigmentaatio vaikuttaa eniten. Siniset silmät päästävät ~100-kertaisesti enemmän valoa nimenomaan näihin fotoreseptoreihin. Tappisolujen ulkosegmenttien pinotut kalvolamellit tarjoavat rakenteellisen järjestyksen jota CRY tarvitsee suuntakohtaiseen magnetoreseptioon (vahvistettu: Majewska ym. 2025: CRY assosioituu lipidikalvoihin orientoituneesti).",
+      "C2-järjestelmä (CRY2 gangliosoluissa) on sirkadiaaninen järjestelmä joka ohjaa melatoniinituotantoa. Se muodostaa fysikaalisen kompleksin ionikanava TRPC1:n kanssa (Yap ym. 2025), yhdistäen sen suoraan BERM:n polku A:han. Tämä järjestelmä on vähemmän suoraan iiriksen pigmentaation vaikutuksen alainen mutta yhtä riippuvainen FAD/B2-tilasta.",
     ],
     section4Title: "Testattavat ennusteet",
     epistemicTitle: "Episteeminen tila",
@@ -277,6 +305,26 @@ export default async function EyeColorPage({ params }: { params: Promise<{ local
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-3xl mb-8">
           {d.section3cText.map((p, i) => (
             <p key={i}>{p}</p>
+          ))}
+        </div>
+      </section>
+
+      {/* Bartölke 2025: Two CRY Systems */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-6">{d.bartolkeTitle}</h2>
+        <div className="space-y-4 text-[0.95rem] leading-relaxed text-foreground max-w-3xl">
+          {d.bartolkeText.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+
+      {/* Fasting Paradox */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-6">{d.fastingTitle}</h2>
+        <div className="space-y-4 text-[0.95rem] leading-relaxed text-foreground max-w-3xl">
+          {d.fastingText.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
           ))}
         </div>
       </section>
