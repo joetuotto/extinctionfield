@@ -308,7 +308,39 @@ export const NODES: ChainNode[] = [
     recoveryAlpha: 0.7,
     recoveryTimescale: "viikkoja (vuorokausirytmin uudelleenkalibrointi)",
     bermComponent: "biology/cry.py",
-    keyReferences: [],
+    keyReferences: [
+      {
+        authors: "Ritz ym. 2004",
+        title: "Resonance effects indicate a radical-pair mechanism for avian compass",
+        journal: "Nature 429",
+        keyFinding: "RF häiritsee lintujen kompassia ~15 nT kynnyksellä, kulmariippuvasti",
+      },
+      {
+        authors: "Engels ym. 2014",
+        title: "Anthropogenic electromagnetic noise disrupts magnetic compass orientation",
+        journal: "Nature 509",
+        keyFinding: "Nykyiset antropogeeniset EM-kohinatasot riittävät häiritsemään orientaatiota",
+      },
+      {
+        authors: "Chae ym. 2019",
+        title: "Blue light-dependent human magnetoreception in geomagnetic food orientation",
+        journal: "PLOS ONE 14(2)",
+        keyFinding:
+          "Ihmisen magneettinen orientaatio edellyttää alle 500 nm valoa ja kääntyy pystykomponentin käännöllä — RPM:lle ominainen sormenjälki. Osoittaa substraatin, ei RF-häiriötä; n=41, ei replikoitu. Taso M|C.",
+      },
+      {
+        authors: "Sherrard ym. 2018",
+        title: "Low-intensity EMF induce human cryptochrome to modulate intracellular ROS",
+        journal: "PLOS Biology 16(10)",
+        keyFinding: "CRY-riippuvainen ROS-vaste ihmisen HEK293-soluissa ja hiiren fibroblasteissa",
+      },
+      {
+        authors: "Yoshii ym. 2009",
+        title: "Cryptochrome mediates light-dependent magnetosensitivity of Drosophila",
+        journal: "Nature",
+        keyFinding: "CRY-mutantit menettävät magneettivasteen — CRY on transduseri",
+      },
+    ],
   },
   {
     id: "pathway_c",
