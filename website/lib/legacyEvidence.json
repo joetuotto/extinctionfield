@@ -159,22 +159,46 @@
   },
   {
     "id": "sherrard2018",
-    "citation": "Sherrard RM et al. (2018). Low-intensity EMF activates CRY-dependent circadian pathway in Drosophila. PNAS",
+    "citation": "Sherrard RM et al. (2018). Low-intensity electromagnetic fields induce human cryptochrome to modulate intracellular reactive oxygen species. PLOS Biology",
     "year": 2018,
     "pathway": "B",
     "level": "M|C",
     "tags": [
       "cry",
-      "drosophila",
+      "human_cells",
+      "ros",
       "circadian"
     ],
     "causalNodes": [
       "B_RPM_CRY"
     ],
     "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
-    "status": "UNVERIFIED_CITATION",
+    "status": "VERIFIED",
     "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
     "n": null
+  },
+  {
+    "id": "chae2019",
+    "citation": "Chae K-S, Oh I-T, Lee S-H, Kim S-C (2019). Blue light-dependent human magnetoreception in geomagnetic food orientation. PLOS ONE",
+    "year": 2019,
+    "pathway": "B",
+    "level": "M|C",
+    "tags": [
+      "cry",
+      "rpm",
+      "human",
+      "magnetoreception",
+      "blue_light",
+      "inclination_compass"
+    ],
+    "causalNodes": [
+      "FIELDSTATE_VECTOR",
+      "B_RPM_CRY"
+    ],
+    "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
+    "status": "MIGRATION_CANDIDATE",
+    "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
+    "n": 41
   },
   {
     "id": "yoshii2009",

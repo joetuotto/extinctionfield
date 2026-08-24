@@ -28,6 +28,9 @@ PRIMARY_PATHWAY = "C_RPM"
 
 #: D1-D3 in docs/audit/DISCRIMINATING_TESTS.md. These test the primary branch
 #: itself, which none of the 13 reviewed findings did.
+#: Chae 2019 does not move this counter. It shows the CRY/RPM substrate is
+#: functional in humans (necessary condition) but applies no RF, so the
+#: disruption step (sufficient condition) is still untested: 0/3.
 DISCRIMINATING_TESTS_NEEDED = 3
 DISCRIMINATING_TESTS_COMPLETED = 0
 

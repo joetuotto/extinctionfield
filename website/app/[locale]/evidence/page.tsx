@@ -181,6 +181,23 @@ const COPY = {
         ],
       },
       {
+        id: "human-cry-magnetoreception",
+        title: "Human CRY/RPM magnetoreception is functional",
+        paragraphs: [
+          "Chae et al. (2019, PLOS ONE, n=41) provided the first behavioral evidence that CRY/RPM magnetoreception is functional in humans. Starved men (n=20) oriented significantly toward modulated magnetic north associated with food (α=350.0°, r=0.51, P=0.00043) and east (α=83.2°, r=0.34, P=0.015). The effect disappeared under blindfold (P=0.52) and at wavelengths >500 nm (P=0.44) — the diagnostic signature of the radical pair mechanism in cryptochrome, whose FAD chromophore absorbs specifically at 400–500 nm. Vertical field inversion reversed orientation to south (α=178.4°, r=0.50, P=0.00062), consistent with an inclination compass as RPM theory predicts. Women (n=21) showed no significant orientation under any condition.",
+          "BERM relevance: This establishes that the biological substrate of BERM's primary pathway (C_RPM) exists and is functional in humans. Prior CRY/RPM evidence was limited to Drosophila (Yoshii 2009), birds (Ritz 2004, Engels 2014), planarians (PNAS Nexus 2026), and human cell systems in vitro (Sherrard 2018). Chae 2019 demonstrates the necessary condition — that the human CRY system responds to geomagnetic fields via the RPM — but does not test RF disruption of that response (which awaits discriminating tests D1–D3).",
+          "The night-exposure pathway is particularly relevant: BERM's v17_night_fraction() models the scenario where a smartphone in the bedroom simultaneously produces blue light (activating CRY radical pairs) and RF fields (potentially disrupting them). Chae 2019 demonstrates that human CRY requires blue light to be magnetically active — meaning nighttime phone use creates precisely the conditions under which CRY is both active and vulnerable to RF interference.",
+          "Caveats: Small sample (n=41). Correction notice Oct 2019 corrects a misplaced table caption — no methodological changes. Not yet replicated. The sex difference (men only) may relate to glucose/motivation rather than CRY sensitivity per se.",
+        ],
+        studies: [
+          { citation: "Chae et al. (PLOS ONE)", year: 2019, note: "Blue-light-dependent human magnetoreception (P<0.001), consistent with inclination compass" },
+          { citation: "Ritz et al. (Nature)", year: 2004, note: "RF at Larmor frequency disrupts bird compass" },
+          { citation: "Engels et al. (Nature)", year: 2014, note: "Anthropogenic EM noise disrupts bird orientation" },
+          { citation: "Yoshii et al. (Nature)", year: 2009, note: "CRY mutants lose magnetosensitivity in Drosophila" },
+          { citation: "Sherrard et al. (PLOS Biology)", year: 2018, note: "EMF modulates CRY-dependent ROS in human cell systems" },
+        ],
+      },
+      {
         id: "lighting",
         title: "Lighting transition: the invisible EMF shift",
         paragraphs: [
@@ -441,6 +458,23 @@ const COPY = {
           { citation: "Sherrard RM ym. PLOS Biology", year: 2018, note: "CRY-riippuvainen ROS-tuotanto pulssi-EMF:ssä" },
           { citation: "REFLEX / Diem ym.", year: 2005, note: "Katkonainen > jatkuva genotoksisuus samalla SAR:lla" },
           { citation: "Hore & Mouritsen, Annual Review of Biophysics", year: 2016, note: "Radikaaliparimekanismin elinaika ~1 µs" },
+        ],
+      },
+      {
+        id: "human-cry-magnetoreception",
+        title: "Ihmisen CRY/RPM-magnetoreseptio on toiminnallinen",
+        paragraphs: [
+          "Chae ym. (2019, PLOS ONE, n=41) tarjosivat ensimmäisen käyttäytymistason näytön siitä, että CRY/RPM-magnetoreseptio on toiminnallinen ihmisessä. Nälkiintyneet miehet (n=20) orientoituivat tilastollisesti merkitsevästi kohti moduloitua magneettista pohjoista, joka yhdistettiin ruokaan (α=350,0°, r=0,51, P=0,00043) ja itään (α=83,2°, r=0,34, P=0,015). Vaikutus hävisi silmäsiteellä (P=0,52) ja aallonpituuksilla >500 nm (P=0,44) — kryptokromin radikaaliparimekanismin diagnostinen sormenjälki, jonka FAD-kromofori absorboi nimenomaan 400–500 nm:ssä. Pystykomponentin kääntäminen käänsi orientaation etelään (α=178,4°, r=0,50, P=0,00062), mikä on yhdenmukainen inklinaatiokompassin kanssa kuten RPM-teoria ennustaa. Naiset (n=21) eivät osoittaneet merkitsevää orientaatiota missään olosuhteissa.",
+          "BERM-merkitys: Osoittaa, että BERM:n ensisijaisen polun (C_RPM) biologinen substraatti on olemassa ja toiminnallinen ihmisessä. Aiempi CRY/RPM-näyttö rajoittui Drosophilaan (Yoshii 2009), lintuihin (Ritz 2004, Engels 2014), planarioihin (PNAS Nexus 2026) ja ihmisen solujärjestelmiin in vitro (Sherrard 2018). Chae 2019 osoittaa välttämättömän ehdon — että ihmisen CRY-järjestelmä reagoi geomagneettisiin kenttiin RPM:n kautta — mutta ei testaa RF-häiriön vaikutusta tähän vasteeseen (mikä odottaa diskriminoivia testejä D1–D3).",
+          "Yöaltistusreitti on erityisen merkityksellinen: BERM:n v17_night_fraction() mallintaa tilannetta, jossa älypuhelin makuuhuoneessa tuottaa samanaikaisesti sinistä valoa (aktivoi CRY:n radikaaliparit) ja RF-kenttiä (mahdollisesti häiritsee niitä). Chae 2019 osoittaa, että ihmisen CRY tarvitsee sinistä valoa ollakseen magneettisesti aktiivinen — yöllinen puhelimen käyttö luo juuri ne olosuhteet, joissa CRY on sekä aktiivinen että haavoittuvainen RF-häiriölle.",
+          "Varoitukset: Pieni otoskoko (n=41). Korjausilmoitus lokakuu 2019 koski taulukon otsikkotekstin sijoitusta — ei metodologisia muutoksia. Ei vielä replikoitu. Sukupuoliero (vain miehet) voi liittyä glukoosi-/motivaatiotekijöihin eikä välttämättä CRY-herkkyyteen sinänsä.",
+        ],
+        studies: [
+          { citation: "Chae ym. (PLOS ONE)", year: 2019, note: "Sinivalosta riippuva ihmisen magnetoreseptio (P<0,001), yhdenmukainen inklinaatiokompassin kanssa" },
+          { citation: "Ritz ym. (Nature)", year: 2004, note: "RF Larmor-taajuudella häiritsee lintujen kompassia" },
+          { citation: "Engels ym. (Nature)", year: 2014, note: "Ihmisen tuottama EM-kohina häiritsee lintujen orientaatiota" },
+          { citation: "Yoshii ym. (Nature)", year: 2009, note: "CRY-mutantit menettävät magnetoreseption Drosophilassa" },
+          { citation: "Sherrard ym. (PLOS Biology)", year: 2018, note: "EMF moduloi CRY-riippuvaista ROS:ia ihmisen solujärjestelmissä" },
         ],
       },
       {

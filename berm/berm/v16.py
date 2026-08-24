@@ -418,7 +418,17 @@ GAMMA_NAVIGATION = 0.003
 
 
 def v17_night_fraction(country: str, year: int) -> float:
-    """Night EMF fraction: smartphone-in-bedroom * WiFi contribution."""
+    """Night EMF fraction: smartphone-in-bedroom * WiFi contribution.
+
+    Night exposure is weighted separately because a phone in the bedroom
+    emits blue light and RF at the same time. Chae 2019 shows human
+    cryptochrome is magnetically responsive only under 400-500 nm light,
+    so the blue-light half of that emission is what puts CRY into the
+    state the RF half can perturb (Ritz 2004, Engels 2014). Night is
+    therefore the window where CRY is both active and exposed, which is
+    why this fraction is a separate term rather than folded into the
+    daily average.
+    """
     sp_pen = smartphone_penetration(country, year)
     bed_frac = SMARTPHONE_IN_BEDROOM.get(country, 0.55)
     wifi_pen = wifi_penetration(country, year)
@@ -433,7 +443,22 @@ def v17_cry_annual_response(country: str, year: int) -> float:
 
 
 def v17_cry_effect(country: str, year: int) -> float:
-    """CRY effect on female fertility: RPM/cryptochrome disruption."""
+    """CRY effect on female fertility: RPM/cryptochrome disruption.
+
+    Assumes a functional cryptochrome radical-pair magnetoreceptor in
+    humans. Chae 2019 (PLOS ONE 14(2): e0211826) supports that premise:
+    blue-light-dependent geomagnetic orientation with an inclination
+    compass, which is the diagnostic signature of the radical-pair
+    mechanism. Correction notice PLOS ONE 14(10): e0223635 is a misplaced
+    table caption only and leaves the result intact.
+
+    That establishes the substrate, not the disruption. Chae 2019 did not
+    apply RF; the step from "human CRY is magnetically responsive" to
+    "RF perturbs it enough to matter" is extrapolated from avian work
+    (Ritz 2004, Engels 2014) and is what discriminating tests D1-D3 exist
+    to settle. n=41, unreplicated, so this is a supported premise rather
+    than a calibrated coefficient.
+    """
     cry_ann = v17_cry_annual_response(country, year)
     return max(0.85, min(1.0, 1.0 - GAMMA_CRY * cry_ann))
 

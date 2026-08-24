@@ -2,8 +2,8 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 554,
-    "verified_count": 170,
+    "total_references": 555,
+    "verified_count": 171,
     "generated": "2026-08-20"
   },
   "categories": [
@@ -7502,24 +7502,52 @@
       "id": "sherrard2018",
       "authors": "Sherrard RM et al.",
       "year": 2018,
-      "title": "Low-intensity EMF activates CRY-dependent circadian pathway in Drosophila",
-      "journal": "PNAS",
+      "title": "Low-intensity electromagnetic fields induce human cryptochrome to modulate intracellular reactive oxygen species",
+      "journal": "PLOS Biology",
       "type": "experimental",
       "level": "M|C",
       "pathway": [
         "B"
       ],
-      "finding": "Pulsed EMF activates CRY-dependent signaling at non-thermal intensities in Drosophila. CRY is the transducer.",
+      "finding": "Pulsed EMF induces CRY-dependent ROS modulation in human HEK293 cells and mouse embryonic fibroblasts at non-thermal intensities. CRY is the transducer.",
       "tags": [
         "cry",
-        "drosophila",
+        "human_cells",
+        "ros",
         "circadian"
       ],
       "verified": true,
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1371/journal.pbio.2006229"
+    },
+    {
+      "id": "chae2019",
+      "authors": "Chae K-S, Oh I-T, Lee S-H, Kim S-C",
+      "year": 2019,
+      "title": "Blue light-dependent human magnetoreception in geomagnetic food orientation",
+      "journal": "PLOS ONE",
+      "type": "experimental",
+      "level": "M|C",
+      "pathway": ["B"],
+      "finding": "Starved men orient toward geomagnetic food-associated directions (P<0.001). Requires blue light (<500 nm), confirming radical pair mechanism via cryptochrome. Inclination compass confirmed. First behavioral evidence of functional CRY/RPM magnetoreception in humans.",
+      "tags": [
+        "cry",
+        "rpm",
+        "human",
+        "magnetoreception",
+        "blue_light",
+        "inclination_compass",
+        "sex_difference",
+        "glucose"
+      ],
+      "n": 41,
+      "verified": true,
+      "category": "reproduction_hormones",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1371/journal.pone.0211826"
     },
     {
       "id": "yoshii2009",
