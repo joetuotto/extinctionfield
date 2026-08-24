@@ -207,11 +207,13 @@ const COPY = {
         paragraphs: [
           "The radical-pair mechanism (RPM) lifetime in cryptochrome is approximately 1 µs — the time window during which the singlet-triplet interconversion is magnetically sensitive. This is temporally compatible with pulse durations used by air-defense radars (also ~1 µs). The coincidence is not designed but arises from the physical timescales involved: cryptochrome's singlet-triplet conversion time is the same order of magnitude as the pulse width of surveillance radars.",
           "Each radar pulse covers the radical pair's entire lifetime, delivering the magnetic perturbation during the full conversion window. At 400 pulses per second, this produces 400 complete RPM events per second near a radar installation. By contrast, a continuous-wave (CW) signal at the same RMS applies a steady field with no pulse structure — the radical pair experiences a constant perturbation rather than discrete 1 µs windows. This predicts that pulse-modulated RF is more biologically active than CW at the same SAR. The REFLEX project (Diem et al. 2005) formally reported greater genotoxic effects from intermittent versus continuous exposure, consistent with this prediction. The temporal match is a physical coincidence, not a demonstrated resonance mechanism — it remains a testable prediction.",
+          "Talbi, Zadeh-Haghighi & Simon 2025 (Front. Quantum Sci. Technol. 4:1544473): Computational simulations confirm RPM resonance ceiling at ~22.5 MHz. At 872 MHz, effect is 6×10⁻⁵ % — negligible. The paper's conclusion points to electric field/VGIC interactions (pathway A) as the mechanism for telecom-frequency biological effects. From BERM's perspective, this confirms the frequency-domain separation between pathways A and B. Note: This paper is frequently misread as 'RPM doesn't work.' It actually says 'RPM works for static/ELF fields, not for GHz carriers' — which is exactly what BERM's pathway architecture assumes.",
         ],
         studies: [
           { citation: "Sherrard RM et al. PLOS Biology", year: 2018, note: "CRY-dependent ROS generation under pulsed EMF" },
           { citation: "REFLEX / Diem et al.", year: 2005, note: "Intermittent > continuous genotoxicity at same SAR" },
           { citation: "Hore & Mouritsen, Annual Review of Biophysics", year: 2016, note: "Radical-pair mechanism lifetime ~1 µs" },
+          { citation: "Talbi, Zadeh-Haghighi & Simon (Front. Quantum Sci. Technol.)", year: 2025, note: "RPM resonance ceiling ~22.5 MHz. At 872 MHz: 6×10⁻⁵ % effect — negligible. Confirms pathway A/B frequency separation." },
         ],
       },
       {
@@ -340,6 +342,7 @@ const COPY = {
         paragraphs: [
           "Bektas et al. (2026, Bioelectromagnetics, bem.70043) provide the first 5G-frequency-specific testicular data: rats exposed to 3.5 GHz RF radiation (the 5G core frequency) showed testicular and oxidative damage, with decreased testis antioxidant capacity. CoQ10 supplementation ameliorated the damage, demonstrating mechanism reversibility. This operates directly on the Level 5A→6 edge (ROS → sperm cascade) and extends the oxidative stress evidence base (Yakymenko 2016: 93/100; Panagopoulos 2025: 95%) to the 5G frequency range.",
           "The tissue-specific nature of this damage is underscored by contemporaneous high-quality null results in skin cells: Meyer et al. (2026, Bioelectromagnetics, bem.70046) found no cell viability change, DNA damage, or micronucleus formation in HaCaT keratinocytes at 50 Hz, 200 µT (blinded sham-controlled, WST-1, alkaline comet assay, micronucleus/CREST); Haidar et al. (2025, Scientific Reports) found no effect on basal ROS or DNA damage in fibroblasts and keratinocytes at 5G-modulated 3.5 GHz (SAR 0.08 and 4 W/kg, 20–48h). Same or similar frequencies, different tissues, different outcomes — consistent with BERM's χ(Ā) selection rule where response depends on tissue-specific VGIC density, mitochondrial ROS capacity, and Ca²⁺ store architecture. Both possibilities (tissue specificity or insufficient effect) should be kept open.",
+          "Important: Lab baseline bias is symmetric. It does not only explain negative results — it also means that positive results underestimate the true effect size. When a study finds that RF exposure increases ROS by 30% compared to sham controls, the actual increase relative to a truly unexposed baseline may be larger, because sham controls are themselves partially exposed. This systematic underestimation affects all in vitro EMF research, not selectively.",
         ],
         studies: [
           { citation: "Bektas et al. (Bioelectromagnetics)", year: 2026, note: "3.5 GHz → testicular ROS damage; CoQ10 ameliorates. First 5G-frequency testicular data." },
@@ -353,9 +356,11 @@ const COPY = {
         paragraphs: [
           "Tbahriti et al. (2026, Sleep Biol Rhythms 24(2):195–214) present a PRISMA 2020 systematic review of 55 studies from 892 screened, examining EMF effects on circadian rhythms. 88% of high-quality animal studies report EMF-induced melatonin suppression of 20–50% from baseline. Clock gene expression altered. Sleep architecture changes documented. EMF-induced melatonin suppression is smaller than light-induced (>90%).",
           "This directly supports BERM pathway C (EMF → pineal melatonin suppression → GnRH pulsatility disruption → HPG → gonadal function). The 20–50% suppression magnitude is biologically significant and consistent with BERM's v17_night_fraction() function, where EMF is one component of the nocturnal triple hit (melanopsin + CRY + melatonin suppression). The suppression magnitude being smaller than light-induced (>90%) is consistent with BERM modeling EMF as one of multiple nocturnal disruption pathways, not the sole driver. Methodological note: only 27% of reviewed studies met high methodological standards; 48% of animal studies lacked adequate sham controls. The transition from cellular effects to systemic circadian disruption is not fully established clinically.",
+          "BERM interpretation: WHO and ICNIRP evidence classifications are subject to the same systematic biases BERM identifies: attenuation bias from proxy exposure measures, control group contamination (lab baseline bias), and funder bias (Huss 2007: industry-funded studies less likely to find harmful effects). If these biases are real, 'moderate certainty' in the standard framework may correspond to higher certainty in a bias-corrected framework. BERM treats institutional evidence hierarchies as CONTEXT_ONLY because they are external to BERM's own epistemology, not because the underlying evidence is weak.",
         ],
         studies: [
           { citation: "Tbahriti et al. (Sleep Biol Rhythms)", year: 2026, note: "PRISMA 55 studies: 88% of high-quality animal studies report melatonin suppression 20–50%. Only 27% met high standards." },
+          { citation: "Huss et al. (Environ Health Perspect)", year: 2007, note: "Industry-funded EMF studies less likely to report harmful effects. Systematic funder bias." },
         ],
       },
       {
@@ -398,6 +403,46 @@ const COPY = {
     paradoxCal1: "The human eye can detect a single photon — one quantum of electromagnetic radiation carrying ~4×10⁻¹⁹ joules, one-tenth of thermal noise energy (Vaziri et al. 2016, Nature Communications). Evolution optimized this electromagnetic sensor to the quantum limit because information is valuable for survival. If evolution pushed photon detection to the single-quantum boundary, why would it not have pushed electromagnetic field detection to comparable extremes?",
     paradoxCal2: "It did. Panagopoulos et al. 2025 (Frontiers in Public Health) demonstrate that voltage-gated ion channels respond to polarized, coherent electromagnetic fields as weak as 10⁻⁵ V/m — one hundred thousandth of a volt per meter — through the Ion Forced Oscillation mechanism. Typical environmental IF-EMF from LED drivers and power electronics ranges from 0.01 to 3 V/m, exceeding this biological threshold by a factor of 1,000 to 300,000. The 'intensity gap' between therapeutic devices and environmental exposure does not exist at the biological level.",
     paradoxCal3: "There is no evolved filter for IF or RF frequencies because these frequencies did not exist in the natural environment during the 3.8 billion years of biological evolution. Ion channels are 'wideband receivers' with no rejection of frequencies that nature never produced. Every technical signal is a potential disruption because biological sensors cannot distinguish it from a physiological signal. This is the same reason synthetic chemicals can disrupt the endocrine system — evolution did not build defenses against molecules it never encountered.",
+    dualInterpretationTitle: "Reading evidence: Standard vs. BERM interpretation",
+    dualInterpretationLead: "The same study can support opposite conclusions depending on which biases are assumed. This table shows how standard and BERM-corrected frameworks read the same evidence types.",
+    dualInterpretationHeaders: { evidence: "Evidence type", standard: "Standard interpretation", berm: "BERM interpretation" },
+    dualInterpretationRows: [
+      {
+        evidence: "Study finds no significant EMF effect",
+        standard: "EMF is safe at tested levels. No biological mechanism.",
+        berm: "Control group is contaminated (lab baseline bias). Attenuation bias reduces apparent effect. Null result is expected if true zero-exposure control is absent.",
+      },
+      {
+        evidence: "Study finds EMF effect at high SAR only",
+        standard: "Effect is thermal. Confirms ICNIRP thresholds.",
+        berm: "Dose-response curve may have a window effect (Adey/Blackman). Effect at high SAR does not exclude effect at low SAR — non-monotonic responses are predicted by RPM.",
+      },
+      {
+        evidence: "WHO systematic review rates certainty as ‘moderate’",
+        standard: "Evidence is moderate. More RCTs needed.",
+        berm: "WHO’s methodology is subject to 15+ identified biases that all attenuate apparent effect. ‘Moderate’ in a bias-afflicted framework may correspond to ‘high’ in a bias-corrected framework.",
+      },
+      {
+        evidence: "GDP correlates with TFR better than EMF proxy",
+        standard: "GDP/development is the real driver. EMF is a proxy for development.",
+        berm: "GDP is a ‘bad control’ (Pearl 2009): electrification causes both GDP and EMF. Controlling for GDP removes the causal effect of interest (included mediator bias).",
+      },
+      {
+        evidence: "Study shows positive EMF effect (e.g. ROS increase)",
+        standard: "Interesting but needs replication. Effect size may be small.",
+        berm: "Effect size is underestimated due to lab baseline bias. True effect relative to unexposed baseline is larger than reported.",
+      },
+      {
+        evidence: "RPM cannot explain effects at telecom frequencies",
+        standard: "CRY/RPM pathway is irrelevant for mobile phones.",
+        berm: "Correct for RF carrier. But telecom signals contain ELF modulation (GSM 217 Hz) within RPM’s resonance range. RPM responds to modulation envelope, not carrier. Electric field effects are mediated by pathway A (VGIC).",
+      },
+      {
+        evidence: "TFR prediction CI exceeded",
+        standard: "Model is wrong. Predictions failed.",
+        berm: "Three possibilities: (a) model overestimates, (b) exogenous compensation (immigration, IVF, policy), (c) CI too narrow. Discriminating tests exist for each.",
+      },
+    ],
   },
   fi: {
     title: "Evidenssirekisteri",
@@ -563,11 +608,13 @@ const COPY = {
         paragraphs: [
           "Radikaaliparimekanismin (RPM) elinaika kryptokromissa on noin 1 µs — aikaikkuna, jonka aikana singletti–tripletti-interkonversio on magneettisesti herkkä. Tämä on ajallisesti yhteensopiva ilmapuolustustutkien pulssikestojen kanssa (myös ~1 µs). Yhteensattuma ei ole suunniteltu vaan syntyy mukana olevista fysikaalisista aikaskaaloista: kryptokromin singletti–tripletti-konversioaika on samaa suuruusluokkaa kuin valvontatutkien pulssinkesto.",
           "Jokainen tutkapulssi kattaa radikaaliparin koko elinkaaren ja tuottaa magneettisen häiriön koko konversioikkunan ajan. 400 pulssia sekunnissa tuottaa 400 täydellistä RPM-tapahtumaa sekunnissa tutka-aseman lähellä. Sitä vastoin jatkuva aalto (CW) samalla RMS:llä tuottaa tasaisen kentän ilman pulssirakennetta — radikaalipari kokee vakiohäiriön yksittäisten 1 µs -ikkunoiden sijaan. Tämä ennustaa, että pulssimoduloitu RF on biologisesti aktiivisempi kuin CW samalla SAR-arvolla. REFLEX-projekti (Diem ym. 2005) raportoi muodollisesti suuremmat genotoksiset vaikutukset katkonaiselle altistukselle jatkuvaan verrattuna, mikä on yhteensopivaa tämän ennusteen kanssa. Ajallinen vastaavuus on fysikaalinen yhteensattuma, ei osoitettu resonanssimekanismi — se on testattava ennuste.",
+          "Talbi, Zadeh-Haghighi & Simon 2025 (Front. Quantum Sci. Technol. 4:1544473): Laskennalliset simulaatiot vahvistavat RPM-resonanssimaksimin ~22,5 MHz:ssä. 872 MHz:llä vaikutus on 6×10⁻⁵ % — mitätön. Artikkelin johtopäätös osoittaa sähkökenttä/VGIC-interaktioihin (polku A) telecom-taajuisten biologisten vaikutusten mekanismina. BERM:n näkökulmasta tämä vahvistaa polkujen A ja B taajuusalue-erottelun. Huom: Tätä artikkelia luetaan usein väärin 'RPM ei toimi'. Se sanoo 'RPM toimii staattisilla/ELF-kentillä, ei GHz-kantoaalloilla' — mikä on täsmälleen BERM:n polkuarkkitehtuurin oletus.",
         ],
         studies: [
           { citation: "Sherrard RM ym. PLOS Biology", year: 2018, note: "CRY-riippuvainen ROS-tuotanto pulssi-EMF:ssä" },
           { citation: "REFLEX / Diem ym.", year: 2005, note: "Katkonainen > jatkuva genotoksisuus samalla SAR:lla" },
           { citation: "Hore & Mouritsen, Annual Review of Biophysics", year: 2016, note: "Radikaaliparimekanismin elinaika ~1 µs" },
+          { citation: "Talbi, Zadeh-Haghighi & Simon (Front. Quantum Sci. Technol.)", year: 2025, note: "RPM-resonanssimaksimi ~22,5 MHz. 872 MHz:llä: 6×10⁻⁵ % vaikutus — mitätön. Vahvistaa polku A/B -taajuuserottelun." },
         ],
       },
       {
@@ -696,6 +743,7 @@ const COPY = {
         paragraphs: [
           "Bektas ym. (2026, Bioelectromagnetics, bem.70043) tarjoavat ensimmäisen 5G-taajuusspesifisen testisdatan: rotat altistettiin 3,5 GHz RF-säteilylle (5G:n ydintaajuus), jolloin havaittiin testis- ja oksidatiivinen vaurio sekä heikentynyt testiksen antioksidanttikapasiteetti. CoQ10-lisäravinto lievitti vauriota, osoittaen mekanismin reversiibeliuden. Tämä operoi suoraan tason 5A→6 nuolella (ROS → siittiökaskadi) ja laajentaa oksidatiivisen stressin evidenssipohjan (Yakymenko 2016: 93/100; Panagopoulos 2025: 95 %) 5G-taajuusalueelle.",
           "Vaurion kudosspesifisyyttä korostavat samanaikaiset laadukkaat nollatulokset ihosoluissa: Meyer ym. (2026, Bioelectromagnetics, bem.70046) eivät löytäneet solujen elinvoimaisuusmuutosta, DNA-vauriota eikä mikronukleusmuodostusta HaCaT-keratinosyyteissä 50 Hz, 200 µT:ssa (sokkoutettu, sham-kontrolloitu, WST-1, komet, mikronukleus/CREST); Haidar ym. (2025, Scientific Reports) eivät löytäneet vaikutusta basaaliin ROS-tasoon eikä DNA-vauriota fibroblasteissa ja keratinosyyteissä 5G-moduloidulla 3,5 GHz:llä (SAR 0,08 ja 4 W/kg, 20–48 h). Samat tai vastaavat taajuudet, eri kudokset, eri tulokset — yhdenmukainen BERM:n χ(Ā)-valintasäännön kanssa, jossa vaste riippuu kudosspesifisestä VGIC-tiheydestä, mitokondrioiden ROS-kapasiteetista ja Ca²⁺-varastojen arkkitehtuurista. Molemmat mahdollisuudet (kudosspesifisyys tai riittämätön vaikutus) on pidettävä avoimina.",
+          "Tärkeää: Lab baseline bias on symmetrinen. Se ei selitä ainoastaan negatiivisia tuloksia — se tarkoittaa myös, että positiiviset tulokset aliarvioivat todellista vaikutuskokoa. Kun tutkimus havaitsee RF-altistuksen nostavan ROS:ia 30 % sham-kontrolleihin verrattuna, todellinen nousu altistamattomaan lähtötasoon nähden voi olla suurempi, koska sham-kontrollit ovat itsekin osittain altistuneet. Tämä systemaattinen aliarviointi koskee kaikkea in vitro EMF-tutkimusta, ei valikoivasti.",
         ],
         studies: [
           { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, note: "3,5 GHz → testis-ROS-vaurio; CoQ10 lievittää. Ensimmäinen 5G-taajuusspesifinen testisdata." },
@@ -709,9 +757,11 @@ const COPY = {
         paragraphs: [
           "Tbahriti ym. (2026, Sleep Biol Rhythms 24(2):195–214) esittävät PRISMA 2020 -systemaattisen katsauksen: 55 tutkimusta 892 seulotusta, tarkastellen EMF:n vaikutuksia sirkadiaanirytmeihin. 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 % basaalitasosta). Kellogenien ekspressio muuttuu. Uniarkkitehtuurin muutokset dokumentoitu. EMF:n melatoniinisuppressio on pienempi kuin valon aiheuttama (>90 %).",
           "Tukee suoraan BERM:n polkua C (EMF → pineaalinen melatoniinisuppressio → GnRH-pulsaatiohäiriö → HPG → gonadifunktio). 20–50 %:n suppressio on biologisesti merkittävä ja yhdenmukainen BERM:n v17_night_fraction()-funktion kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniinisuppressio). Suppression suuruus on pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen sen kanssa, että BERM mallintaa EMF:n yhtenä useista yöllisistä häiriöreiteistä, ei ainoana ajurina. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat metodologiset standardit; 48 % eläintutkimuksista ilman riittävää sham-kontrollia. Siirtymä soluvaikutuksista systeemiseen sirkadiaaniseen häiriöön ei ole täysin osoitettu kliinisesti.",
+          "BERM-tulkinta: WHO:n ja ICNIRP:n evidenssiluokitukset ovat alttiina samoille systemaattisille vinoumille jotka BERM tunnistaa: proxy-altistusmittauksen vaimennusbias, kontrolliryhmän kontaminaatio (lab baseline bias) ja rahoittajan vinouma (Huss 2007: teollisuusrahoitteiset tutkimukset löytävät harvemmin haittoja). Jos nämä vinoumat ovat todellisia, 'kohtalainen varmuus' standardikehyksessä voi vastata korkeampaa varmuutta bias-korjatussa kehyksessä. BERM käsittelee institutionaalisia evidenssihierarkioita CONTEXT_ONLY-roolissa koska ne ovat BERM:n epistemologian ulkopuolisia, ei siksi että alla oleva evidenssi olisi heikkoa.",
         ],
         studies: [
           { citation: "Tbahriti ym. (Sleep Biol Rhythms)", year: 2026, note: "PRISMA, 55 tutkimusta: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota 20–50 %. Vain 27 % täytti korkeat standardit." },
+          { citation: "Huss ym. (Environ Health Perspect)", year: 2007, note: "Teollisuusrahoitteiset EMF-tutkimukset raportoivat harvemmin haittoja. Systemaattinen rahoittajan vinouma." },
         ],
       },
       {
@@ -754,6 +804,46 @@ const COPY = {
     paradoxCal1: "Ihmisen silmä havaitsee yksittäisen fotonin — yhden sähkömagneettisen säteilyn kvantin, joka kantaa ~4×10⁻¹⁹ joulea, kymmenesosan termisestä kohinaenergiasta (Vaziri ym. 2016, Nature Communications). Evoluutio optimoi tämän sähkömagneettisen sensorin kvanttirajaansa asti, koska informaatio on arvokasta selviytymiselle. Jos evoluutio painoi fotonihavaitsemisen yhden kvantin rajalle, miksi se ei olisi painanut sähkömagneettisen kentän havaitsemista vastaaviin äärirajoihin?",
     paradoxCal2: "Se painoi. Panagopoulos ym. 2025 (Frontiers in Public Health) osoittavat, että jänniteohjatut ionikanavat vastaavat polarisoituihin, koherentteihin sähkömagneettisiin kenttiin jo 10⁻⁵ V/m voimakkuudella — sadastuhannesosalla voltista metrillä — ionien pakko-oskillaatiomekanismilla (IFO). Tyypillinen ympäristön IF-EMF LED-hakkureista ja tehoelektroniikasta on 0,01–3 V/m, ylittäen tämän biologisen kynnyksen 1 000–300 000 -kertaisesti. Intensiteettikuilua terapeuttisten laitteiden ja ympäristöaltistuksen välillä ei ole biologisella tasolla.",
     paradoxCal3: "IF- tai RF-taajuuksille ei ole evoluution kehittämää suodatinta, koska näitä taajuuksia ei ollut luonnollisessa ympäristössä 3,8 miljardin vuoden biologisen evoluution aikana. Ionikanavat ovat 'laajakaistavastaanottimia' ilman hylkimistä taajuuksille, joita luonto ei koskaan tuottanut. Jokainen tekninen signaali on mahdollinen häiriö, koska biologiset sensorit eivät voi erottaa sitä fysiologisesta signaalista. Tämä on sama syy, miksi synteettiset kemikaalit voivat häiritä endokriinistä järjestelmää — evoluutio ei rakentanut puolustuksia molekyylejä vastaan, joita se ei kohdannut.",
+    dualInterpretationTitle: "Evidenssin tulkinta: Standardi- vs. BERM-kehys",
+    dualInterpretationLead: "Sama tutkimus voi tukea vastakkaisia johtopäätöksiä riippuen siitä, mitkä vinoumat oletetaan. Tämä taulukko näyttää miten standardi- ja BERM-korjattu kehys lukevat samoja evidenssityyppejä.",
+    dualInterpretationHeaders: { evidence: "Evidenssityyppi", standard: "Standarditulkinta", berm: "BERM-tulkinta" },
+    dualInterpretationRows: [
+      {
+        evidence: "Tutkimus ei löydä merkitsevää EMF-vaikutusta",
+        standard: "EMF on turvallinen testatuilla tasoilla. Ei biologista mekanismia.",
+        berm: "Kontrolliryhmä on kontaminoitu (lab baseline bias). Vaimennusbias pienentää näennäistä vaikutusta. Nollatulos on odotettavissa jos todellinen nolla-altistuskontrolli puuttuu.",
+      },
+      {
+        evidence: "Tutkimus löytää EMF-vaikutuksen vain korkealla SAR:lla",
+        standard: "Vaikutus on terminen. Vahvistaa ICNIRP-kynnykset.",
+        berm: "Annos-vastekäyrässä voi olla ikkunavaikutus (Adey/Blackman). Vaikutus korkealla SAR:lla ei sulje pois vaikutusta matalalla SAR:lla — ei-monotoniset vasteet ovat RPM:n ennustamia.",
+      },
+      {
+        evidence: "WHO:n systemaattinen katsaus arvioi varmuuden 'kohtalaiseksi'",
+        standard: "Evidenssi on kohtalaista. Lisää RCT:itä tarvitaan.",
+        berm: "WHO:n metodologia on alttiina 15+ tunnistetulle vinoumalle jotka kaikki vaimentavat näennäistä vaikutusta. 'Kohtalainen' bias-kärsiväisessä kehyksessä voi vastata 'korkeaa' bias-korjatussa kehyksessä.",
+      },
+      {
+        evidence: "BKT korreloi TFR:n kanssa paremmin kuin EMF-proxy",
+        standard: "BKT/kehitys on todellinen ajuri. EMF on kehityksen proxy.",
+        berm: "BKT on 'huono kontrolli' (Pearl 2009): sähköistys aiheuttaa sekä BKT:n että EMF:n. BKT:n kontrollointi poistaa kiinnostuksen kohteena olevan kausaalivaikutuksen (mukaan otetun mediaattorin vinouma).",
+      },
+      {
+        evidence: "Tutkimus näyttää positiivisen EMF-vaikutuksen (esim. ROS-nousu)",
+        standard: "Mielenkiintoista mutta vaatii replikaation. Vaikutuskoko voi olla pieni.",
+        berm: "Vaikutuskoko on aliarvioitu lab baseline biasin vuoksi. Todellinen vaikutus altistamattomaan lähtötasoon nähden on suurempi kuin raportoitu.",
+      },
+      {
+        evidence: "RPM ei voi selittää vaikutuksia telecom-taajuuksilla",
+        standard: "CRY/RPM-polku on irrelevantti matkapuhelimille.",
+        berm: "Oikein RF-kantoaallosta. Mutta telecom-signaalit sisältävät ELF-modulaation (GSM 217 Hz) RPM:n resonanssialueella. RPM reagoi modulaatioverhokäyrään, ei kantoaaltoon. Sähkökenttävaikutukset välittyvät polun A (VGIC) kautta.",
+      },
+      {
+        evidence: "TFR-ennusteen LV ylittyi",
+        standard: "Malli on väärä. Ennusteet epäonnistuivat.",
+        berm: "Kolme mahdollisuutta: (a) malli yliarvioi, (b) eksogeeninen kompensaatio (maahanmuutto, IVF, politiikka), (c) LV liian kapea. Diskriminoivat testit olemassa jokaiselle.",
+      },
+    ],
   },
 } as const;
 
@@ -781,6 +871,32 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
             </li>
           ))}
         </ol>
+      </section>
+
+      {/* Dual interpretation framework */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-4">{d.dualInterpretationTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.dualInterpretationLead}</p>
+        <div className="space-y-4 max-w-4xl">
+          {d.dualInterpretationRows.map((row, ri) => (
+            <div key={ri} className="rounded-lg border border-card-border bg-card-bg p-4">
+              <p className="text-sm font-semibold text-foreground mb-3">
+                <span className="font-mono-num text-xs text-accent mr-2">0{ri + 1}</span>
+                {row.evidence}
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="rounded border border-card-border/60 bg-background p-3">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted mb-1">{d.dualInterpretationHeaders.standard}</p>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{row.standard}</p>
+                </div>
+                <div className="rounded border border-accent/30 bg-background p-3">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">{d.dualInterpretationHeaders.berm}</p>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{row.berm}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Thematic evidence narratives */}

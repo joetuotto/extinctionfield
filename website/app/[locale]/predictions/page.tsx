@@ -11,14 +11,14 @@ import { FeedbackLoop } from "@/components/FeedbackLoop";
 const COPY = {
   en: {
     title: "Locked predictions",
-    subtitle: "These predictions were locked under the BERM v18 scalar-exposure architecture. They are falsifiable: each will be compared against observed data at the stated year. BERM v19 does not yet publish its own predictions.",
+    subtitle: "These predictions were locked under the BERM v17 scalar-exposure architecture. They are falsifiable: each will be compared against observed data at the stated year.",
     tfrTitle: "TFR predictions",
     tfrLead: "Country and global total-fertility-rate predictions with one-at-a-time parameter sensitivity envelopes (not confidence intervals).",
     bioTitle: "Biomarker predictions",
     bioLead: "Sperm concentration and sex-ratio predictions derived from the same model architecture.",
-    v2Title: "BERM v19 forecast status",
-    v2Status: "No country-level BERM v19 forecasts are published. The current route requires matched local FieldState, registered organ and couple endpoints, ASFR modelling and external temporal validation before a forecast can be locked.",
-    v2Note: "When v19 predictions are ready, they will be published alongside these v18 predictions for comparison. Both versions will remain visible.",
+    v2Title: "BERM v17 forecast status",
+    v2Status: "No country-level FieldState-calibrated forecasts are published. The current route requires matched local FieldState, registered organ and couple endpoints, ASFR modelling and external temporal validation before a forecast can be locked.",
+    v2Note: "When FieldState-calibrated predictions are ready, they will be published alongside these scalar-proxy predictions for comparison.",
     r43Title: "R43: Protocol-envelope resonance",
     r43Text: "Zandieh et al. (2025) reports frequency-dependent mitochondrial/ROS observations in ELF cancer-cell experiments (0.01–5 Hz; up to 100 mT). This supports an exploratory measured-PSD protocol for testing whether network-layer envelope modulation produces a cellular response. It does not establish RF network-envelope effects, eDRX causality or a reproductive/TFR parameter.",
     country: "Country",
@@ -33,7 +33,10 @@ const COPY = {
     sentinelTitle: "Sentinel cascade predictions",
     sentinelLead: "Cross-species lag predictions derived from the CSLI 31-country bee–TFR panel. These test whether sentinel species decline precedes human fertility decline at a locked lag.",
     architectureNote: "Architecture note",
-    architectureText: "These predictions use the scalar cumulative-exposure architecture (v17/v18). Mobile penetration enters as a technology-adoption timing proxy. The sensitivity envelope varies one parameter at a time; it is not a probabilistic confidence interval.",
+    architectureText: "These predictions use the scalar cumulative-exposure architecture (v17). Mobile penetration enters as a technology-adoption timing proxy. The sensitivity envelope varies one parameter at a time; it is not a probabilistic confidence interval.",
+    ciExceededTitle: "Three-branch falsification analysis",
+    finlandFalsification: "Status: CI EXCEEDED (observed ~1.30, upper bound 1.24). Three possible explanations within BERM’s framework: (a) Model overestimates biological effect in Finland — the exponential EMF-TFR relationship may saturate earlier than modeled. (b) Exogenous compensation: immigration TFR contribution larger than estimated — Finland’s immigrant TFR (~1.8–2.2) may lift national TFR above the native-population prediction. (c) CI too narrow: the model’s uncertainty bands underestimate stochastic variation in small-population TFR. Discriminating test: compare native-born TFR (if available from Statistics Finland) against the prediction. If native TFR ≤ 1.24, explanation (b) is confirmed and the model is not falsified.",
+    southKoreaFalsification: "Status: CI RISK ZONE (observed ~0.80, upper bound 0.72). Three possible explanations: (a) Model overestimates EMF suppression in Korea — cultural/policy factors may have independent negative effects on TFR that partially offset EMF. (b) Measurement lag: Korea’s pronatalist policies (cash transfers, housing subsidies) may have temporarily elevated TFR above the biological trajectory. (c) The model’s recovery estimate for Korea may be too optimistic. Discriminating test: track whether Korea’s TFR continues declining toward the predicted value or stabilizes at current levels.",
     modulomeTitle: "Modulome predictions",
     modulomeLead: "Mechanistic predictions derived from the eight-layer EMF modulome and therapeutic device evidence. These are qualitative, falsifiable predictions — each specifies a concrete experimental outcome.",
     modulomePredictions: [
@@ -64,6 +67,13 @@ const COPY = {
         description: "EU countries (mandatory LED transition 2009–2012 via Directive 244/2009) show faster TFR decline in 2015–2022 compared to countries with later or no incandescent ban, controlling for mobile density, GDP, and urbanization. Central estimate: TFR decline acceleration ≥0.02/year faster in EU vs non-EU controls.",
         timeline: "Testable immediately (existing demographic data)",
         falsification: "No acceleration difference, or non-EU countries show faster decline",
+      },
+      {
+        id: "SLEEP-1",
+        title: "Faraday-shielded LED sleep test",
+        description: "A Faraday-shielded bedroom (< 0.001 V/m IF) with identical LED lighting produces better sleep quality than an unshielded bedroom, even when blue light spectrum is identical. This isolates the IF emission channel from the optical channel. If true: IF emissions (not blue light) are the primary sleep disruptor from LED lighting. If false: blue light or other factors dominate. Cost estimate: < EUR 5,000.",
+        timeline: "Testable within 1–3 months (N=20 crossover)",
+        falsification: "No sleep quality difference between shielded and unshielded conditions with identical light spectrum",
       },
       {
         id: "M-5",
@@ -269,6 +279,13 @@ const COPY = {
         validation: "Fertility outcomes (time-to-pregnancy, IVF success) in shift vs. day workers, with and without melatonin supplementation",
         falsification: "Shift workers show equal melatonin supplement benefit as day workers, or shift work fertility deficit not mediated by melatonin levels",
       },
+      {
+        id: "IF-1",
+        title: "LED driver 20–100 kHz disrupts normal cell mitosis",
+        description: "LED driver switching frequencies (20–100 kHz) overlap the normal-cell mitotic disruption range identified by TTFields research (Neuhaus et al., Nature 2020: normal cells most affected at ~50 kHz, vs. cancer cells at 150–200 kHz). Prediction: in vitro exposure of normal dividing cells (e.g. spermatogonia, intestinal crypt cells) to 20–100 kHz pulsed fields at LED-driver-representative intensities will produce measurable increases in aneuploidy, mitotic spindle misalignment, or reduced proliferation rate. The Kaiser Permanente series (Li 2002–2020) provides epidemiological support: EMDEX-measured MF exposure associates with miscarriage, sperm quality decline, and childhood conditions across 6 cohorts.",
+        validation: "In vitro: normal cell lines exposed to 20–100 kHz pulsed waveform (LED-driver-representative) vs. sham → aneuploidy rate, spindle orientation, proliferation",
+        falsification: "No effect on normal cell mitosis at LED-driver-representative frequencies and intensities, or effect only at TTFields-level intensities (>100 V/m)",
+      },
     ],
     cascadeValidation: "Validation",
     cascadeFalsification: "Falsification criterion",
@@ -278,14 +295,14 @@ const COPY = {
   },
   fi: {
     title: "Lukitut ennusteet",
-    subtitle: "Nämä ennusteet lukittiin BERM v18:n skalaarialtistusarkkitehtuurilla. Ne ovat falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna. BERM v19 ei vielä julkaise omia ennusteita.",
+    subtitle: "Nämä ennusteet lukittiin BERM v17:n skalaarialtistusarkkitehtuurilla. Ne ovat falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna.",
     tfrTitle: "TFR-ennusteet",
     tfrLead: "Maa- ja globaalitason kokonaishedelmällisyysluvun ennusteet yksi-kerrallaan-parametriherkkyysalueella (ei luottamusvälejä).",
     bioTitle: "Biomarkkeriennusteet",
     bioLead: "Siittiökonsentraatio- ja sukupuolisuhde-ennusteet samasta malliarkkitehtuurista.",
-    v2Title: "BERM v19 -ennusteen tila",
-    v2Status: "BERM v19 ei julkaise maakohtaisia ennusteita. Nykyinen reitti tarvitsee kohdistetun paikallisen FieldStaten, rekisteröidyt elin- ja paripäätepisteet, ASFR-mallinnuksen ja ulkoisen ajallisen validoinnin ennen ennusteen lukitsemista.",
-    v2Note: "Kun v19-ennusteet ovat valmiita, ne julkaistaan rinnakkain näiden v18-ennusteiden kanssa vertailua varten. Molemmat versiot pysyvät näkyvissä.",
+    v2Title: "BERM v17 -ennusteen tila",
+    v2Status: "BERM v17 ei julkaise maakohtaisia FieldState-kalibroituja ennusteita. Nykyinen reitti tarvitsee kohdistetun paikallisen FieldStaten, rekisteröidyt elin- ja paripäätepisteet, ASFR-mallinnuksen ja ulkoisen ajallisen validoinnin ennen ennusteen lukitsemista.",
+    v2Note: "Kun FieldState-kalibroidut ennusteet ovat valmiita, ne julkaistaan rinnakkain näiden skalaariproxy-ennusteiden kanssa vertailua varten.",
     r43Title: "R43: Protokolla-verhokäyräresonanssi",
     r43Text: "Zandieh ym. (2025) raportoi taajuusriippuvaisia mitokondrio-/ROS-havaintoja ELF-syöpäsolukokeissa (0,01–5 Hz; enintään 100 mT). Se tukee eksploratiivista mitattua PSD-protokollaa sen testaamiseksi, tuottaako verkkokerroksen verhokäyrämodulaatio soluvasteen. Se ei osoita RF-verkon verhokäyrävaikutuksia, eDRX-kausaliteettia eikä lisääntymis-/TFR-parametria.",
     country: "Maa",
@@ -300,7 +317,10 @@ const COPY = {
     sentinelTitle: "Sentinellikaskadi-ennusteet",
     sentinelLead: "Lajienväliset viive-ennusteet CSLI:n 31 maan mehiläis–TFR-paneelista. Nämä testaavat, edeltääkö sentinellilajien lasku ihmisen hedelmällisyyden laskua lukitulla viiveellä.",
     architectureNote: "Arkkitehtuurihuomautus",
-    architectureText: "Nämä ennusteet käyttävät skalaarin kumulatiivisen altistuksen arkkitehtuuria (v17/v18). Mobiilipenetraatio on teknologian käyttöönoton ajoitusproxy. Herkkyysalue varioi yhtä parametria kerrallaan; se ei ole probabilistinen luottamusväli.",
+    architectureText: "Nämä ennusteet käyttävät skalaarin kumulatiivisen altistuksen arkkitehtuuria (v17). Mobiilipenetraatio on teknologian käyttöönoton ajoitusproxy. Herkkyysalue varioi yhtä parametria kerrallaan; se ei ole probabilistinen luottamusväli.",
+    ciExceededTitle: "Kolmihaarainen falsifikaatioanalyysi",
+    finlandFalsification: "Tila: CI YLITTYNYT (havaittu ~1,30, yläraja 1,24). Kolme mahdollista selitystä BERM:n kehyksessä: (a) Malli yliarvioi biologista vaikutusta Suomessa — eksponentiaalinen EMF–TFR-suhde voi saturoitua mallinnettua aiemmin. (b) Eksogeeninen kompensaatio: maahanmuuton TFR-panos suurempi kuin arvioitu — Suomen maahanmuuttajien TFR (~1,8–2,2) voi nostaa kansallista TFR:ää yli syntyperäisväestön ennusteen. (c) CI liian kapea: mallin epävarmuusvyöhykkeet aliarvioivat stokastista vaihtelua pienen väestön TFR:ssä. Erotteleva testi: vertaa syntyperäisten TFR:ää (jos saatavissa Tilastokeskuksesta) ennusteeseen. Jos syntyperäisten TFR ≤ 1,24, selitys (b) vahvistuu eikä malli ole falsifioitu.",
+    southKoreaFalsification: "Tila: CI RISKIALUE (havaittu ~0,80, yläraja 0,72). Kolme mahdollista selitystä: (a) Malli yliarvioi EMF-suppressiota Koreassa — kulttuuriset/poliittiset tekijät voivat vaikuttaa TFR:ään itsenäisesti EMF:stä riippumatta. (b) Mittausviive: Korean pronatalistiset politiikat (käteistuet, asumistuet) ovat voineet tilapäisesti nostaa TFR:ää biologisen trajektorin yläpuolelle. (c) Mallin palautumisarvio Korealle voi olla liian optimistinen. Erotteleva testi: seuraa laskeeko Korean TFR kohti ennustettua arvoa vai vakiintuuko se nykyiselle tasolle.",
     modulomeTitle: "Modulooma-ennusteet",
     modulomeLead: "Mekanistiset ennusteet jotka perustuvat kahdeksankerroksiseen EMF-moduloomiin ja terapeuttisten laitteiden evidenssiin. Nämä ovat kvalitatiivisia, falsifioitavia ennusteita — jokainen määrittää konkreettisen kokeellisen tuloksen.",
     modulomePredictions: [
@@ -331,6 +351,13 @@ const COPY = {
         description: "EU-maat (pakollinen LED-siirtymä 2009–2012, direktiivi 244/2009) osoittavat nopeampaa TFR-laskua 2015–2022 verrattuna maihin joissa hehkulamppukielto tuli myöhemmin tai ei lainkaan, kontrolloiden matkapuhelintiheyttä, BKT:ta ja kaupungistumista. Keskiarvio: TFR-laskun kiihtyminen ≥0,02/vuosi nopeampi EU:ssa vs ei-EU-kontrollit.",
         timeline: "Testattavissa heti (olemassa oleva demografinen data)",
         falsification: "Ei kiihtymiseroa, tai ei-EU-maat osoittavat nopeampaa laskua",
+      },
+      {
+        id: "SLEEP-1",
+        title: "Faraday-suojattu LED-unitesti",
+        description: "Faraday-suojattu makuuhuone (< 0,001 V/m IF) identtisellä LED-valaistuksella tuottaa paremman unenlaadun kuin suojaamaton makuuhuone, vaikka sinivalon spektri on identtinen. Tämä eristää IF-emissiokanavan optisesta kanavasta. Jos totta: IF-emissiot (eivät sinivalo) ovat ensisijainen LED-valaistuksen unihäiritsijä. Jos epätotta: sinivalo tai muut tekijät hallitsevat. Kustannusarvio: < 5 000 €.",
+        timeline: "Testattavissa 1–3 kuukaudessa (N=20 ristikkäisasetelma)",
+        falsification: "Ei unenlaatueroa suojatun ja suojaamattoman tilan välillä identtisellä valospektrillä",
       },
       {
         id: "M-5",
@@ -536,6 +563,13 @@ const COPY = {
         validation: "Hedelmällisyystulokset (raskaaksi tulon aika, IVF-onnistuminen) vuoro- vs. päivätyöntekijöillä, melatoniinilisällä ja ilman",
         falsification: "Vuorotyöntekijät osoittavat yhtäläistä melatoniinilisän hyötyä päivätyöntekijöihin verrattuna, tai vuorotyön hedelmällisyysvaje ei välity melatoniini­tasojen kautta",
       },
+      {
+        id: "IF-1",
+        title: "LED-hakkuri 20–100 kHz häiritsee normaalien solujen mitoosia",
+        description: "LED-hakkurien kytkentätaajuudet (20–100 kHz) osuvat normaalien solujen mitoottiseen häiriöalueeseen, jonka TTFields-tutkimus tunnisti (Neuhaus ym., Nature 2020: normaalit solut herkimmillään ~50 kHz:llä vs. syöpäsolut 150–200 kHz:llä). Ennuste: normaalien jakautuvien solujen (esim. spermatogoniat, suolen kryptasolut) in vitro -altistus 20–100 kHz:n pulssikentille LED-hakkureille tyypillisillä intensiteeteillä tuottaa mitattavan lisäyksen aneuploidiassa, mitoottisen karan virhesuuntauksessa tai alentuneessa proliferaationopeudessa. Kaiser Permanente -sarja (Li 2002–2020) tarjoaa epidemiologisen tuen: EMDEX-mitattu MF-altistus assosioituu keskenmenoon, sperman laadun laskuun ja lapsuuden sairauksiin kuudessa kohortissa.",
+        validation: "In vitro: normaalit solulinjat altistetuina 20–100 kHz:n pulssiaaltomuodolle (LED-hakkuria edustavalle) vs. sham → aneuploidia-aste, karan orientaatio, proliferaatio",
+        falsification: "Ei vaikutusta normaalien solujen mitoosiin LED-hakkureille tyypillisillä taajuuksilla ja intensiteeteillä, tai vaikutus vain TTFields-tason intensiteeteillä (>100 V/m)",
+      },
     ],
     cascadeValidation: "Validointi",
     cascadeFalsification: "Kumoamisehto",
@@ -620,6 +654,39 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* CI exceedance falsification analysis */}
+        <div className="mt-8 space-y-4 max-w-4xl">
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground-muted">{d.ciExceededTitle}</h3>
+
+          {/* Finland */}
+          <article className="rounded-xl border-2 border-amber-400/60 bg-amber-50/80 dark:bg-amber-950/20 p-5">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-amber-500 shrink-0" />
+              <h4 className="font-semibold text-sm">
+                {activeLocale === "fi" ? "Suomi 2030 — TFR" : "Finland 2030 — TFR"}
+              </h4>
+              <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-700 dark:text-amber-400 border border-amber-500/30 uppercase tracking-wider font-semibold">
+                CI {activeLocale === "fi" ? "ylittynyt" : "exceeded"}
+              </span>
+            </div>
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.finlandFalsification}</p>
+          </article>
+
+          {/* South Korea */}
+          <article className="rounded-xl border-2 border-amber-400/60 bg-amber-50/80 dark:bg-amber-950/20 p-5">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-amber-500 shrink-0" />
+              <h4 className="font-semibold text-sm">
+                {activeLocale === "fi" ? "Etelä-Korea 2030 — TFR" : "South Korea 2030 — TFR"}
+              </h4>
+              <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-700 dark:text-amber-400 border border-amber-500/30 uppercase tracking-wider font-semibold">
+                CI {activeLocale === "fi" ? "riskialue" : "risk zone"}
+              </span>
+            </div>
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.southKoreaFalsification}</p>
+          </article>
         </div>
       </section>
 
@@ -764,7 +831,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
       {/* v2 status */}
       <section className="mb-14 rounded-xl border border-status-partial/30 bg-status-partial/5 p-6 max-w-4xl">
-        <p className="text-xs uppercase tracking-[0.16em] text-status-partial font-semibold mb-2">BERM v19</p>
+        <p className="text-xs uppercase tracking-[0.16em] text-status-partial font-semibold mb-2">BERM v17</p>
         <h2 className="text-xl font-semibold mb-2">{d.v2Title}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.v2Status}</p>
         <p className="text-xs text-foreground-muted leading-relaxed italic">{d.v2Note}</p>

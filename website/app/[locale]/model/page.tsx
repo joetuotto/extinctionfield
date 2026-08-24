@@ -34,6 +34,10 @@ const t = {
     causalTitle: "Causal pathway diagram",
     causalDesc:
       "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Eight levels, 63 nodes, 107 edges. Two co-primary pathways operate in parallel: Pathway A (VGCC → Ca²⁺ → ROS) has the strongest experimental support (23–28 blocker studies), while Pathway B (RPM → CRY → circadian disruption) is the most complete theoretical bridge from Lindgren geometry to biology (87.5% of the RPM Hamiltonian is derivable from the metric ansatz). The CRY/RPM pathway has supporting evidence across species: disruption of magnetic compass in birds (Ritz 2004, Engels 2014), CRY-dependent magnetoreception in Drosophila (Yoshii 2009), CRY-dependent ROS modulation in human cells (Sherrard 2018), and — critically — functional blue-light-dependent magnetoreception in humans (Chae et al. 2019, PLOS ONE), indicating that the biological substrate is present in the species BERM models. Both pathways are independently supported at E-level evidence. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
+    pathwayHierarchyNote:
+      "Pathway weights reflect empirical calibration to community data (Amish–Korea gradient). They do not reflect theoretical hierarchy: Pathway B (CRY/RPM) is the PRIMARY pathway because 87.5% of the RPM Hamiltonian is derivable from Lindgren geometry, establishing the mechanism’s EXISTENCE as a geometric consequence. Pathway A has stronger experimental support (23–28 blocker studies) but requires ad hoc amplifiers (e.g. δV_m ≈ 10⁻²¹ V from geometry alone). Theoretical derivability establishes a mechanism’s EXISTENCE; empirical weight reflects its estimated MAGNITUDE. These measure different things.",
+    rpmFrequencyNote:
+      "CRY/RPM does not respond to the RF carrier frequency (900 MHz – 3.5 GHz). Its resonance ceiling is ~22.5 MHz (Talbi, Zadeh-Haghighi & Simon 2025, Front. Quantum Sci. Technol. 4:1544473). The biologically active components for Pathway B are the geomagnetic background (B_DC) and ELF modulation envelopes of telecom signals (GSM 217 Hz, WiFi 10 Hz beacon). Effects of the RF carrier itself are mediated by Pathway A through the electric field component. The two pathways have complementary frequency domains.",
 
     chiTitle: "Lindgren chi coupling equation",
     chiDesc:
@@ -217,6 +221,10 @@ const t = {
     causalTitle: "Kausaalireittikaavio",
     causalDesc:
       "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Kahdeksan tasoa, 63 solmua, 107 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatukimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). CRY/RPM-polulla on tukea useasta lajista: magneettikompassin häiriintyminen linnuissa (Ritz 2004, Engels 2014), CRY-riippuvainen magnetoreseptio Drosophilassa (Yoshii 2009), CRY-riippuvainen ROS-modulaatio ihmisen soluissa (Sherrard 2018) ja — kriittisesti — toiminnallinen sinivalosta riippuva magnetoreseptio ihmisessä (Chae ym. 2019, PLOS ONE), mikä osoittaa biologisen substraatin olemassaolon lajissa jota BERM mallintaa. Molemmat ovat itsenäisesti tuetut E-tason evidenssillä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
+    pathwayHierarchyNote:
+      "Polkujen painot perustuvat empiiriseen kalibrointiin yhteisödatalla (amissit–Korea-gradientti). Ne eivät heijasta teoreettista hierarkiaa: Polku B (CRY/RPM) on PRIMARY-polku koska 87,5 % RPM-Hamiltoniaanista on johdettavissa Lindgren-geometriasta — mekanismin OLEMASSAOLO seuraa geometrisena seurauksena. Polulla A on vahvempi kokeellinen tuki (23–28 salpaajatukimusta) mutta se vaatii ad hoc -vahvistajia (δV_m ≈ 10⁻²¹ V pelkästä geometriasta). Teoreettinen derivoitavuus osoittaa mekanismin OLEMASSAOLON; empiirinen paino arvioi sen SUURUUTTA. Nämä mittaavat eri asioita.",
+    rpmFrequencyNote:
+      "CRY/RPM ei vastaa RF-kantoaaltotaajuuteen (900 MHz – 3,5 GHz). Sen resonanssimaksimi on ~22,5 MHz (Talbi, Zadeh-Haghighi & Simon 2025, Front. Quantum Sci. Technol. 4:1544473). Polun B biologisesti aktiiviset komponentit ovat geomagneettinen tausta (B_DC) ja telecom-signaalien ELF-modulaatioverhoilukäyrät (GSM 217 Hz, WiFi 10 Hz beacon). RF-kantoaallon vaikutukset välittyvät polku A:n kautta sähkökentän komponenttina. Kahdella polulla on toisiaan täydentävät taajuusalueet.",
 
     chiTitle: "Lindgrenin chi-kytkentäyhtälö",
     chiDesc:
@@ -486,6 +494,12 @@ export default async function ModelPage({
             <h2 className="text-xl font-semibold mb-4">{d.causalTitle}</h2>
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
               {d.causalDesc}
+            </p>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.pathwayHierarchyNote}
+            </p>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.rpmFrequencyNote}
             </p>
             <div className="overflow-x-auto">
               <BermCausalDiagram />

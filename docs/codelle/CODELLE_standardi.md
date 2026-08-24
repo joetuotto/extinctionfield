@@ -193,6 +193,17 @@ Kanoninen versio on **repossa** — Claude-projekti on kopio.
 - Älä yritä arvata projektidokumenttien sisältöä
 - Älä muuta tämän standardin rakennetta ilman käyttäjän lupaa
 
+### 5.1 Episteeminen johdonmukaisuustarkistus
+
+Jokainen evidenssiä käsittelevä CODELLE-ohje sisältää osion:
+"BERM-tulkinta vs. standardimallin tulkinta". Tämä osio kertoo
+kumman kehyksen mukaan evidenssi on luokiteltu ja miksi.
+
+Jos luokitus noudattaa standardimallin logiikkaa (esim. WHO:n
+certainty-tasot sellaisenaan), se perustellaan eksplisiittisesti:
+"Tämä luokitus on standardimallin mukainen koska [syy]. BERM:n
+oman logiikan mukainen luokitus olisi [X] koska [peruste]."
+
 ---
 
 ## 6. PENDING-TIEDOSTON TARKKA MUOTO
