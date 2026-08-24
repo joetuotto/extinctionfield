@@ -35,11 +35,11 @@ const t = {
     effect: "Palautevaikutus",
     note: "Palautevaikutus on pieni (< 1 % TFR:stä vuoteen 2050). Mekanismi vaikuttaa enemmän pitkän aikavälin ennusteissa (2050+) ja maissa, jotka ovat jo lähellä maksimaalista kaupungistumista. Etelä-Korea on vahvin tapaus koska se alkaa matalimmalla TFR:llä ja korkeimmalla kaupungistumisasteella.",
     sexRatioTitle: "Sukupuolijakauman muutos",
-    sexRatioDesc: "EMF:n aiheuttama ROS vahingoittaa valikoivasti Y-kromosomia kantavia siittioita (pienempia, vahemman DNA-korjauskapasiteettia). Tama siirtaa syntymien sukupuolijakaumaa naispuolisten suuntaan. Muutos on pieni mutta mitattavissa vaestotasolla.",
+    sexRatioDesc: "EMF:n aiheuttama ROS vahingoittaa valikoivasti Y-kromosomia kantavia siittiöitä (pienempiä, vähemmän DNA-korjauskapasiteettia). Tämä siirtää syntymien sukupuolijakaumaa naispuolisten suuntaan. Muutos on pieni mutta mitattavissa väestötasolla.",
     baseline: "Perustaso (ei EMF:aa)",
     predicted: "Ennustettu 2024+",
     shift: "Muutos per altistusyksikko",
-    sexNote: "Ennustettu muutos (0,512 → 0,509) vastaa ~3 poikaa vahemman per 1000 syntymaa. Pohjoismaat nayttavat jo suhdelukuja 0,5105-0,5115, yhdenmukainen osittaisen ROS-valitteisen muutoksen kanssa. Tama ennuste on testattavissa: maissa joissa on korkein kumulatiivinen EMF-altistus tulisi olla matalin poikien osuus.",
+    sexNote: "Ennustettu muutos (0,512 → 0,509) vastaa ~3 poikaa vähemmän per 1000 syntymää. Pohjoismaat näyttävät jo suhdelukuja 0,5105–0,5115, yhdenmukainen osittaisen ROS-välitteisen muutoksen kanssa. Tämä ennuste on testattavissa: maissa joissa on korkein kumulatiivinen EMF-altistus tulisi olla matalin poikien osuus.",
   },
 } as const;
 

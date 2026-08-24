@@ -1,0 +1,20 @@
+{
+  "status": "WITHDRAWN",
+  "analysis": "legacy_csli_results",
+  "replacement": "/data/sentinel_readiness.json",
+  "reason": "This legacy artifact contained numerical lag, PCA, and leave-country-out claims derived from ineligible sentinel inputs. It has been withdrawn and must not be interpreted as evidence or a forecast.",
+  "reasons": [
+    {
+      "code": "CURRENT_SENTINEL_PANEL_NOT_ELIGIBLE",
+      "message": "Current sources lack matched measured RF exposure, verified comparable reproductive endpoints, exact geography, and complete endpoint-specific covariates."
+    },
+    {
+      "code": "LEGACY_LAG_AND_PROSPECTIVE_METHODS_RETIRED",
+      "message": "Sparse observation positions, reconstructed series, and same-series lag selection cannot yield calendar-year lags, confidence intervals, or prospective validation."
+    }
+  ],
+  "readiness": {
+    "schema_version": "csli-readiness/v1",
+    "eligible": false
+  }
+}

@@ -13,6 +13,16 @@ def emf_index(residential_kwh: float, broadband_per100: float,
     return w_elf * elf + w_rf * rf
 
 
+def emf_index_three_channel(residential_kwh: float, broadband_per100: float,
+                            led_market_share: float,
+                            w_elf: float = 0.50, w_if: float = 0.15,
+                            w_rf: float = 0.35) -> float:
+    elf = min(1.0, residential_kwh / 8500)
+    if_ch = min(1.0, max(0.0, led_market_share))
+    rf = min(1.0, broadband_per100 / 47)
+    return w_elf * elf + w_if * if_ch + w_rf * rf
+
+
 def emf_effective(residential_kwh: float, broadband_per100: float,
                   electricity_access_pct: float) -> float:
     idx = emf_index(residential_kwh, broadband_per100)

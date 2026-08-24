@@ -5,16 +5,10 @@
  * Uses viewBox for responsiveness. Colors keyed to epistemic level.
  */
 
-// Epistemic-level colors
-const LEVEL_COLORS = {
-  E: "#22C55E",     // observed endpoint / replicated element
-  "M|C": "#3B82F6", // mechanism + association
-  M: "#8B5CF6",     // mechanistic intermediate
-  C: "#F59E0B",     // observational association
-  "L*": "#9CA3AF", // theoretical / measurement hypothesis
-} as const;
+import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
+import type { EpistemicLevel } from "@/lib/types";
 
-type Level = keyof typeof LEVEL_COLORS;
+type Level = EpistemicLevel;
 
 // ── Node definitions ──
 
@@ -104,7 +98,7 @@ export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" })
       viewBox={`0 0 ${VIEWBOX_W[locale]} 330`}
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label={locale === "fi" ? "BERM v19-kausaalireitti" : "BERM v19 causal route"}
+      aria-label={locale === "fi" ? "BERM v17-kausaalireitti" : "BERM v17 causal route"}
       style={{
         width: "100%",
         // Below this the parent's overflow-x-auto scrolls, rather than
@@ -153,7 +147,7 @@ export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" })
       {/* Nodes */}
       {nodes.map((n) => {
         const w = n.w ?? 120;
-        const color = LEVEL_COLORS[n.level];
+        const color = CHAIN_EPISTEMIC_COLORS[n.level];
         return (
           <g key={n.id}>
             {/* Background rect */}
@@ -188,7 +182,7 @@ export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" })
       {/* Legend */}
       {legend.map(([lvl, lbl], i) => (
         <g key={lvl} transform={`translate(${40 + i * 215}, 300)`}>
-          <circle cx={0} cy={0} r={4} fill={LEVEL_COLORS[lvl]} />
+          <circle cx={0} cy={0} r={4} fill={CHAIN_EPISTEMIC_COLORS[lvl]} />
           <text
             x={12}
             y={1}

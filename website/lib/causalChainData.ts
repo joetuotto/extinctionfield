@@ -1,7 +1,20 @@
 import type { ChainNode, ChainEdge } from "./types";
-export { CHAIN_EPISTEMIC_COLORS as EPISTEMIC_COLORS, CHAIN_EPISTEMIC_LABELS as EPISTEMIC_LABELS } from "./epistemicConstants";
+export { CHAIN_EPISTEMIC_COLORS as EPISTEMIC_COLORS, CHAIN_EPISTEMIC_LABELS as EPISTEMIC_LABELS, getChainEpistemicLabel } from "./epistemicConstants";
 
-export const LEVEL_TITLES: Record<number, string> = {
+export const LEVEL_TITLES_EN: Record<number, string> = {
+  1: "Geometry",
+  2: "Selection rule",
+  3: "Exposure",
+  4: "Three channels",
+  5: "Membrane physics",
+  6: "Pathways",
+  7: "Cascade",
+  8: "Convergence",
+  9: "Demographic cascade",
+  10: "Feedback",
+};
+
+export const LEVEL_TITLES_FI: Record<number, string> = {
   1: "Geometria",
   2: "Valintasääntö",
   3: "Altistus",
@@ -13,6 +26,14 @@ export const LEVEL_TITLES: Record<number, string> = {
   9: "Demografinen kaskadi",
   10: "Takaisinkytkentä",
 };
+
+/** @deprecated Use LEVEL_TITLES_FI or _EN */
+export const LEVEL_TITLES = LEVEL_TITLES_FI;
+
+export function getLevelTitle(level: number, locale: string): string {
+  const titles = locale === "fi" ? LEVEL_TITLES_FI : LEVEL_TITLES_EN;
+  return titles[level] ?? `Level ${level}`;
+}
 
 export const NODES: ChainNode[] = [
   // TASO 1
@@ -99,6 +120,13 @@ export const NODES: ChainNode[] = [
         title: "RF-EMF exposure in European cities",
         journal: "PMC",
         keyFinding: "Mediaanikentät 0.67–1.51 V/m kaupungeissa",
+      },
+      {
+        authors: "Deprez ym. 2025",
+        title: "5G RF EMF Spectral Exposure Assessment in Four European Countries",
+        journal: "Bioelectromagnetics (bem.70019)",
+        keyFinding:
+          "5G:n spektraalimittaus 4 Euroopan maassa. Suunnattu keila muuttaa ambient/personal-suhdetta BERM:n kaksikanavamallissa: ambient↓ (vs 4G), personal↑ hetkittäin.",
       },
     ],
   },
@@ -251,7 +279,7 @@ export const NODES: ChainNode[] = [
     lindgrenInterpretation:
       "VGIC:n S4-heliksi on varattu partikkeli metrisessä kentässä gμν. Kun ulkoinen EMF muuttaa paikallista metriikkaa, S4:n liikerata muuttuu — se on geodeesimuutos. IFO on geometrinen seuraus: RF-kenttä muuttaa metriikkaa S4:n ympäristössä → S4:n tasapainoasema muuttuu → kanava avautuu.",
     quantitative:
-      "Tang ym. 2024 (Nature Communications): S4-heliksin protonidynamiikka määrää VGIC:n rakenteen ja toiminnan. Panagopoulos 2025: IFO-mekanismi polarisoituneelle koherentille kentälle.",
+      "Tang ym. 2024 (Nature Communications): S4-heliksin protonidynamiikka määrää VGIC:n rakenteen ja toiminnan. Panagopoulos 2025: IFO-mekanismi polarisoituneelle koherentille kentälle. Panagopoulos 2025: 131/131 tutkimuksesta 124 (95 %) raportoi oksidatiivisia vaikutuksia RF/Wi-Fi-altistuksessa. Bertagna 2025: inward currents ↓40%, transient outward ↓50%. Both RyR (dantrolene) and SERCA (CPA) blockade fully abrogated EMF effects.",
     keyReferences: [
       {
         authors: "Panagopoulos ym. 2015, 2021, 2025",
@@ -259,6 +287,13 @@ export const NODES: ChainNode[] = [
         journal: "BioMed Research International / Adv. Exp. Med. Biol.",
         keyFinding:
           "Polarisoitu, koherentti RF-EMF pakottaa S4-heliksin epäsäännölliseen oskillaatioon",
+      },
+      {
+        authors: "Panagopoulos ym. 2025",
+        title: "IFO-VGIC comprehensive review (131 studies)",
+        journal: "Bioelectromagnetics",
+        keyFinding:
+          "95 % raportoi oksidatiivisia vaikutuksia. VGIC-salpaajat estävät vasteen. Yhdenmukainen Yakymenko 2016 (93/100) kanssa.",
       },
       {
         authors: "Tang ym. 2024",
@@ -271,6 +306,31 @@ export const NODES: ChainNode[] = [
         title: "EMF act via activation of voltage-gated calcium channels",
         journal: "J. Cell. Mol. Med. 17(8)",
         keyFinding: "23 tutkimusta: VGCC-salpaajat estävät EMF-vasteen",
+      },
+      {
+        authors: "Bertagna ym. 2025",
+        title: "EMF modulates ionic currents via Ca²⁺ homeostasis (RyR/SERCA)",
+        journal: "Ann NY Acad Sci 1550(1)",
+        keyFinding:
+          "50 Hz, 1 mT → sisäänpäinvirrat ↓40%, transientit ↓50%. RyR-salpaaja ja SERCA-inhibiittori estivät vaikutukset. Ca²⁺-varastojen dysregulaatio laajentaa IFO-mekanismia.",
+      },
+      {
+        authors: "Koivisto ym. 2000",
+        title: "Effects of 902 MHz EMF on response times in humans",
+        journal: "NeuroReport",
+        keyFinding: "Kaksi kaksoissokkokokeetta (n=48+48): 902 MHz → kognitiivinen fasilitaatio. Ei replikoitu (Haarala 2003, 2005).",
+      },
+      {
+        authors: "Eliyahu ym. 2006",
+        title: "Lateralized cognitive effects of cellular phone radiation",
+        journal: "Bioelectromagnetics",
+        keyFinding: "890 MHz → lateralisoitunut RT-vaikutus. Tukee kaksikanavamallin spatiaalirakennetta.",
+      },
+      {
+        authors: "Luria ym. 2009",
+        title: "Cognitive effects of radiation emitted by cellular phones",
+        journal: "Bioelectromagnetics 30(3):198–204",
+        keyFinding: "890 MHz → aikariippuva lateralisoitunut vaikutus. GAS-dynamiikka (alarm → resistance).",
       },
     ],
     falsificationCondition:
@@ -292,7 +352,21 @@ export const NODES: ChainNode[] = [
     recoveryAlpha: 0.8,
     recoveryTimescale: "päivistä viikkoihin",
     bermComponent: "biology/sperm_cascade.py → ros_index()",
-    keyReferences: [],
+    keyReferences: [
+      {
+        authors: "Panagopoulos ym. 2025",
+        title: "IFO-VGIC comprehensive review (131 studies)",
+        journal: "Bioelectromagnetics",
+        keyFinding: "Ca²⁺ → mitokondriaali ROS → DNA-vauriot, siittiöhäiriöt. 95 % konsensus 131 tutkimuksessa, yhdenmukainen Yakymenko 2016 (93/100) kanssa.",
+      },
+      {
+        authors: "Bektas ym. 2026",
+        title: "CoQ10 ameliorates RF-induced testicular impairments at 3.5 GHz",
+        journal: "Bioelectromagnetics (bem.70043)",
+        keyFinding:
+          "3,5 GHz (5G) → testis-ROS + vaurio. CoQ10 amelioroi — mekanismi reversiibeli. Ensimmäinen 5G-taajuusspesifinen testisdata. Yhdenmukainen recovery window -konseptin kanssa.",
+      },
+    ],
   },
   {
     id: "pathway_b",
@@ -357,7 +431,15 @@ export const NODES: ChainNode[] = [
     recoveryTimescale: "päiviä (melatoniinisyklin palautuminen)",
     bermComponent:
       "biology/cry.py (jaettu CRY-kanavan kanssa sirkadiaanikomponentin osalta)",
-    keyReferences: [],
+    keyReferences: [
+      {
+        authors: "Tbahriti ym. 2026",
+        title: "EMF and circadian rhythms: PRISMA systematic review",
+        journal: "Sleep Biol Rhythms 24(2):195-214",
+        keyFinding:
+          "55 tutkimuksen PRISMA: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota (20–50 %). Tukee polkua C kvantitatiivisesti. Vain 27 % tutkimuksista täytti korkeat standardit.",
+      },
+    ],
   },
   {
     id: "pathway_d",
@@ -373,7 +455,14 @@ export const NODES: ChainNode[] = [
     recoveryAlpha: 0.5,
     recoveryTimescale: "viikkoja–kuukausia (HPA-akselin normalisoituminen)",
     bermComponent: "biology/hpa.py",
-    keyReferences: [],
+    keyReferences: [
+      {
+        authors: "Luria ym. 2009",
+        title: "Cognitive effects of cellular phone radiation",
+        journal: "Bioelectromagnetics 30(3):198–204",
+        keyFinding: "Akuutti alarm→resistance -adaptaatio 1 h sisällä (890 MHz, n=48 miestä). Yhteensopiva GAS-dynamiikan kanssa.",
+      },
+    ],
   },
   {
     id: "pathway_e",
@@ -389,7 +478,21 @@ export const NODES: ChainNode[] = [
     recoveryAlpha: 0.0,
     recoveryTimescale: "pysyvä (Salfordin rotilla neuronivauriot 50 pv jälkeen)",
     bermComponent: "biology/bbb.py",
-    keyReferences: [],
+    keyReferences: [
+      {
+        authors: "Eliyahu ym. 2006 / Luria ym. 2009",
+        title: "Lateralisoitunut kognitiivinen vaikutus",
+        journal: "Bioelectromagnetics",
+        keyFinding: "Lateralisoitunut kognitiivinen vaikutus yhteensopiva paikallisen BBB-avautumisen kanssa (vrt. Salford 2003: SAR 0,016 W/kg).",
+      },
+      {
+        authors: "Gao ym. 2024",
+        title: "EMP-induced BBB disruption via tight junction degradation",
+        journal: "Bioelectromagnetics (bem.22494)",
+        keyFinding:
+          "EMP → tight junction -proteiinien (okkludiini, klaudiini, ZO-1) degradaatio → BBB-avautuminen rotilla. Mekanistinen tuki polulle E (huom: EMP, ei krooninen RF).",
+      },
+    ],
   },
   {
     id: "pathway_f",
@@ -435,7 +538,14 @@ export const NODES: ChainNode[] = [
     recoveryAlpha: 0.2,
     recoveryTimescale:
       "kuukausia (uusi spermatogeneesisykli 74 pv, mutta kantasoluvaurio voi säilyä)",
-    keyReferences: [],
+    keyReferences: [
+      {
+        authors: "Panagopoulos ym. 2025",
+        title: "IFO-VGIC comprehensive review (131 studies)",
+        journal: "Bioelectromagnetics",
+        keyFinding: "Siittiövauriot (SDF, motiliteetti, viabiliteetti) raportoitu 131 tutkimuksen katsauksessa. IFO → Ca²⁺ → mitokondriaali ROS → siittiövauriot.",
+      },
+    ],
   },
   {
     id: "motility",
@@ -460,7 +570,14 @@ export const NODES: ChainNode[] = [
     recoveryAlpha: 0.3,
     recoveryTimescale:
       "kuukausia–vuosia (Leydigin solujen osittainen palautuminen)",
-    keyReferences: [],
+    keyReferences: [
+      {
+        authors: "Panagopoulos ym. 2025",
+        title: "IFO-VGIC comprehensive review (131 studies)",
+        journal: "Bioelectromagnetics",
+        keyFinding: "Siittiökonsentraation lasku raportoitu 131 tutkimuksen katsauksessa. IFO → Ca²⁺ → ROS → Leydigin soluvaurio → konsentraatio↓.",
+      },
+    ],
   },
   {
     id: "ovulation",

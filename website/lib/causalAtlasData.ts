@@ -5,11 +5,26 @@ import {
   type CausalMapNode,
   type CausalMapEdge,
   type EpistemicLevel,
+  type Locale,
+  type BilingualText,
+  type NodeDetail,
+  type LocalizedDetail,
 } from "./causalMapData";
 import { MAP_EPISTEMIC_COLORS, MAP_EPISTEMIC_LABELS } from "./epistemicConstants";
 
 export { NODES, EDGES, LEVEL_LABELS, MAP_EPISTEMIC_COLORS as EVIDENCE_COLORS, MAP_EPISTEMIC_LABELS as EVIDENCE_LABELS };
-export type { CausalMapNode, CausalMapEdge, EpistemicLevel };
+export type { CausalMapNode, CausalMapEdge, EpistemicLevel, Locale, BilingualText, NodeDetail, LocalizedDetail };
+
+// ── Helpers for bilingual access ──
+
+export function t(text: BilingualText, lang: Locale): string {
+  return text[lang];
+}
+
+export function localizedDetail(detail: NodeDetail | undefined, lang: Locale): LocalizedDetail | undefined {
+  if (!detail) return undefined;
+  return detail[lang];
+}
 
 // ── Stage types ──
 
@@ -24,7 +39,7 @@ export const LEVEL_TO_STAGE: Record<number, Stage> = {
 
 export interface StageBand {
   id: Stage;
-  label: { en: string; fi: string };
+  label: BilingualText;
   color: string;
   accent: string;
 }
@@ -45,73 +60,9 @@ export const ECOLOGY_BAND: StageBand = {
   accent: "#22C55E",
 };
 
-// ── English labels ──
+// ── All stages for UI ──
 
-export const EN_LABELS: Record<string, { label: string; sublabel?: string }> = {
-  ch_static: { label: "STATIC (0 Hz)", sublabel: "Polyester, triboelectric" },
-  ch_elf: { label: "ELF (< 1 kHz)", sublabel: "Power grid, motors, EV" },
-  ch_if: { label: "IF (1k–1M Hz)", sublabel: "LED lighting, HVAC, induction" },
-  ch_rf: { label: "RF (> 1 MHz)", sublabel: "Mobile, Wi-Fi, BT, IoT" },
-  mod_geometry: { label: "1. Geometric foundation", sublabel: "Lindgren χ(Ā) ≈ 1.0" },
-  mod_ion: { label: "2. Ion channel network", sublabel: "3 Byr conserved" },
-  mod_dc: { label: "3. DC control system", sublabel: "Becker 1985" },
-  mod_bioelectric: { label: "4. Bioelectric code", sublabel: "Levin" },
-  mod_pineal: { label: "5. Circadian clock", sublabel: "CRY, melatonin, SCN" },
-  mod_vagus: { label: "6. Vagus axis", sublabel: "Anti-inflammatory reflex" },
-  mod_division: { label: "7. Cell division", sublabel: "TTFields mechanism" },
-  mod_mito: { label: "8. Mitochondrial", sublabel: "CCO, photobiomodulation" },
-  mech_vgcc_ros: { label: "VGCC → Ca²⁺ → ROS" },
-  mech_gpcr: { label: "GPCR-adenosine → cAMP" },
-  mech_nav_plasticity: { label: "Nav → neuroplasticity" },
-  mech_cry_melatonin: { label: "CRY/RPM → melatonin" },
-  mech_vagal_antiinflam: { label: "Vagal anti-inflamm." },
-  mech_mitotic_spindle: { label: "Mitotic spindle → aneuploidy" },
-  mech_ifo_linear: { label: "IFO linear (10⁻⁵ V/m)" },
-  mech_dep_quadratic: { label: "DEP quadratic (>100 V/m)" },
-  tissue_sperm: { label: "Spermatogenesis ↓" },
-  tissue_ovarian: { label: "Ovulation / oocyte quality ↓" },
-  tissue_testosterone: { label: "Testosterone ↓" },
-  tissue_melatonin: { label: "Melatonin ↓" },
-  tissue_nk_cells: { label: "NK cells ↓ (−70%)" },
-  tissue_insulin: { label: "Insulin sensitivity ↓" },
-  tissue_cortisol: { label: "Cortisol ↑ (chronic)" },
-  tissue_bbb: { label: "BBB permeability ↑" },
-  tissue_gut: { label: "Gut epithelium ↓" },
-  tissue_vagal_tone: { label: "Vagal tone ↓" },
-  disease_sleep: { label: "1. Sleep disorders", sublabel: "Latency: months" },
-  disease_depression: { label: "2. Depression", sublabel: "Latency: 1–3 years" },
-  disease_adhd: { label: "3. ADHD / ASD", sublabel: "Latency: 2–5 years" },
-  disease_metabolic: { label: "4. Metabolic syndrome", sublabel: "Latency: 3–8 years" },
-  disease_autoimmune: { label: "5. Autoimmune diseases", sublabel: "Latency: 5–10 years" },
-  disease_fertility: { label: "6. Infertility", sublabel: "Latency: 5–15 years" },
-  disease_cancer: { label: "7. Young-onset cancer", sublabel: "Latency: 10–25 years" },
-  demo_biocap: { label: "Biological capacity ↓" },
-  demo_behavior: { label: "Reproductive motivation ↓" },
-  demo_asfr: { label: "ASFR ↓ (age-specific)" },
-  demo_tfr: { label: "TFR ↓ (total)", sublabel: "5.0 → 2.2 globally" },
-  eco_insect: { label: "Insects ↓", sublabel: "−75% Krefeld" },
-  eco_bird: { label: "Birds ↓", sublabel: "PECBMS" },
-  eco_bat: { label: "Bats ↓", sublabel: "Lindecke 2026" },
-  eco_amphibian: { label: "Amphibians ↓", sublabel: "Enigmatic declines" },
-  eco_bee: { label: "Bees ↓", sublabel: "CCD, grooming↓" },
-  eco_varroa: { label: "Varroa ← protected", sublabel: "Sclerotin, small size" },
-  eco_tick: { label: "Ticks ← increasing?", sublabel: "Electrostatic contact↑" },
-  eco_pollination: { label: "Pollination ↓", sublabel: "Ecosystem service" },
-  electrification_boundary: { label: "Electrification boundary" },
-  mod_cyb5b: { label: "9. Cyb5b EMF sensor" },
-  mech_cyb5b_ca: { label: "Cyb5b → Ca²⁺ oscillations" },
-  mech_vgcc_genotype: { label: "VGCC genotype × sensitivity" },
-  mech_ionic_hierarchy: { label: "Ionic treatment hierarchy", sublabel: "Ca²⁺ convergence" },
-  mech_skin_bioelectric: { label: "Dermal bioelectric system", sublabel: "TEP + piezo + VGCC" },
-  mech_led_confound: { label: "LED IF-EMF confound", sublabel: "65 kHz–2 MHz driver" },
-  mech_hospital_emf: { label: "Hospital EMF", sublabel: "PHS + modulome" },
-  mech_alzheimer_calcium: { label: "Amyloid-calcium feedback", sublabel: "Ca²⁺ → Aβ → pores → Ca²⁺" },
-  mech_adhd_calibration: { label: "ADHD calibration error", sublabel: "HCN/VGCC tuning → S/N ↓" },
-  mech_melatonin_fertility: { label: "Melatonin bridge", sublabel: "Cascade 1 → cascade 6" },
-  mech_beta_katp: { label: "β-cell K-ATP → insulin" },
-  mech_window_effect: { label: "Window effect", sublabel: "Adey-Blackman 1976" },
-  epi_kaiser_series: { label: "Kaiser Permanente series", sublabel: "Li 2002–2020, EMDEX" },
-};
+export const ALL_STAGES: StageBand[] = [...STAGE_BANDS, ECOLOGY_BAND];
 
 // ── Edge relation types ──
 
@@ -149,6 +100,8 @@ const NODE_ORDER: Record<Stage, string[]> = {
   demographic: ["demo_behavior", "demo_biocap", "demo_asfr", "demo_tfr"],
   ecology: ["eco_insect", "eco_bird", "eco_bat", "eco_amphibian", "eco_bee", "eco_tick", "eco_varroa", "eco_pollination"],
 };
+
+export { NODE_ORDER };
 
 const REF_HEIGHT = 720;
 
@@ -213,8 +166,8 @@ export const NODE_DIMENSIONS = { w: NODE_W, h: NODE_H };
 
 export interface GuidedScene {
   id: string;
-  title: { en: string; fi: string };
-  description: { en: string; fi: string };
+  title: BilingualText;
+  description: BilingualText;
   nodes: string[];
   edges: string[];
 }
@@ -284,7 +237,12 @@ export const GUIDED_SCENES: GuidedScene[] = [
 
 // ── Mobile stepper paths ──
 
-export const STEPPER_PATHS = {
+export interface StepperPath {
+  label: BilingualText;
+  ids: readonly string[];
+}
+
+export const STEPPER_PATHS: Record<string, StepperPath> = {
   main: {
     label: { en: "Fertility pathway", fi: "Hedelmällisyyspolku" },
     ids: ["ch_elf", "mod_ion", "mech_vgcc_ros", "tissue_sperm", "disease_fertility", "demo_biocap", "demo_tfr"],
@@ -297,6 +255,6 @@ export const STEPPER_PATHS = {
     label: { en: "Ecological mirror", fi: "Ekologinen peili" },
     ids: ["ch_rf", "eco_insect", "eco_bee", "eco_pollination"],
   },
-} as const;
+};
 
 export type StepperPathKey = keyof typeof STEPPER_PATHS;

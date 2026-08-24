@@ -28,9 +28,9 @@ type Copy = {
 
 const t: Record<Locale, Copy> = {
   en: {
-    metaTitle: "BERM v19 mathematics – Extinction Field",
-    metaDescription: "The measurement-aware BERM v19 specification of BERM.",
-    title: "BERM v19 mathematical specification",
+    metaTitle: "BERM v17 mathematics – Extinction Field",
+    metaDescription: "The measurement-aware BERM v17 specification of BERM.",
+    title: "BERM v17 mathematical specification",
     subtitle:
       "A measurement-aware route from Lindgren-derived field hypotheses to organ states, couple capacity, age-specific fertility and TFR.",
     nav: [
@@ -156,9 +156,9 @@ const t: Record<Locale, Copy> = {
     fieldstateLink: "FieldState measurement specification",
   },
   fi: {
-    metaTitle: "BERM v19 -matematiikka – Extinction Field",
-    metaDescription: "BERM:n mittaustietoinen BERM v19-määrittely.",
-    title: "BERM v19:n matemaattinen määrittely",
+    metaTitle: "BERM v17 -matematiikka – Extinction Field",
+    metaDescription: "BERM:n mittaustietoinen BERM v17-määrittely.",
+    title: "BERM v17:n matemaattinen määrittely",
     subtitle:
       "Mittaustietoinen reitti Lindgrenistä johdetuista kenttähypoteeseista elintiloihin, parikapasiteettiin, ikäkohtaiseen hedelmällisyyteen ja TFR:ään.",
     nav: [

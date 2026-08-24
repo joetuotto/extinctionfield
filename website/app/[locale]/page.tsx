@@ -12,6 +12,12 @@ import { join } from "path";
 
 const SPARKLINE_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon] as const;
 
+function getReferenceCount(): number {
+  const file = join(process.cwd(), "public/data/references_full.json");
+  const data = JSON.parse(readFileSync(file, "utf-8")) as { references: unknown[] };
+  return data.references.length;
+}
+
 function getFalsificationStats() {
   try {
     const raw = readFileSync(join(process.cwd(), "public/data/falsification_v19_1.json"), "utf-8");
@@ -86,7 +92,7 @@ const COPY = {
     falsPending: "pending",
     falsCta: "Test details",
 
-    epistemicNote: "BERM v17 is a falsifiable research model, not a certainty. 521 peer-reviewed references across 10 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Cross-sectional formula: LOOCV RMSE 0.522, 74% of countries within 0.5 children of prediction. Residential electricity consumption outperforms GDP as a TFR predictor by 21%. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.",
+    epistemicNote: (n: number) => `BERM v17 is a falsifiable research model, not a certainty. ${n} peer-reviewed references across 11 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Cross-sectional formula: LOOCV RMSE 0.522, 74% of countries within 0.5 children of prediction. Residential electricity consumption outperforms GDP as a TFR predictor by 21%. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.`,
     epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · Cross-sectional RMSE = 0.522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Independent research",
 
@@ -143,7 +149,7 @@ const COPY = {
     falsPending: "odottaa",
     falsCta: "Testien yksityiskohdat",
 
-    epistemicNote: "BERM v17 on falsifioitava tutkimusmalli, ei varmuus. 521 vertaisarvioitua viitettä 10 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava: LOOCV RMSE 0,522, 74 % maista 0,5 lapsen sisällä ennusteesta. Asumisen sähkönkulutus ylittää BKT:n TFR-ennustajana 21 %. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.",
+    epistemicNote: (n: number) => `BERM v17 on falsifioitava tutkimusmalli, ei varmuus. ${n} vertaisarvioitua viitettä 11 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava: LOOCV RMSE 0,522, 74 % maista 0,5 lapsen sisällä ennusteesta. Asumisen sähkönkulutus ylittää BKT:n TFR-ennustajana 21 %. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.`,
     epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · Poikkileikkaus-RMSE = 0,522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Itsenäinen tutkimus",
 
@@ -377,7 +383,7 @@ export default async function Home({
 
       {/* ── 10. Epistemic footer ── */}
       <footer className="pb-16 border-t border-card-border pt-8">
-        <p className="text-sm leading-relaxed text-foreground-muted max-w-3xl">{d.epistemicNote}</p>
+        <p className="text-sm leading-relaxed text-foreground-muted max-w-3xl">{d.epistemicNote(getReferenceCount())}</p>
         <p className="font-mono-num text-xs text-foreground-muted/60 mt-3">{d.epistemicStats}</p>
         <p className="text-xs text-foreground-muted/40 mt-2">{d.epistemicAuthor}</p>
       </footer>

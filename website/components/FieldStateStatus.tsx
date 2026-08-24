@@ -38,7 +38,7 @@ const COPY: Record<Locale, {
   statuses: readonly StatusDefinition[];
 }> = {
   en: {
-    title: "BERM v19: measurement status",
+    title: "BERM v17: measurement status",
     lead:
       "The v2 route keeps physical field state, organ transfer, biological capacity and demography distinct. It does not convert technology uptake or mobile subscriptions into a local dose, biological endpoint or TFR coefficient.",
     layersTitle: "Four observable layers",
@@ -111,7 +111,7 @@ const COPY: Record<Locale, {
     ],
   },
   fi: {
-    title: "BERM v19: mittaustila",
+    title: "BERM v17: mittaustila",
     lead:
       "V2-reitti pitää fysikaalisen kenttätilan, elinsiirron, biologisen kapasiteetin ja demografian erillisinä. Se ei muunna teknologian käyttöönottoa tai mobiililiittymiä paikalliseksi annokseksi, biologiseksi päätepisteeksi tai TFR-kertoimeksi.",
     layersTitle: "Neljä havaittavaa kerrosta",
@@ -197,7 +197,7 @@ function statusClasses(tone: StatusDefinition["tone"]) {
 }
 
 /**
- * A static, locale-aware status card for the BERM v19 input
+ * A static, locale-aware status card for the BERM v17 input
  * contract. It intentionally displays no numerical FieldState → TFR result.
  */
 export function FieldStateStatus({ locale }: { locale: string }) {
@@ -207,7 +207,7 @@ export function FieldStateStatus({ locale }: { locale: string }) {
   return (
     <section className="mb-12 border-y border-card-border py-7 sm:py-9">
       <header className="max-w-4xl">
-        <p className="editorial-kicker text-accent">BERM v19</p>
+        <p className="editorial-kicker text-accent">BERM v17</p>
         <h2 className="editorial-section-heading mt-2">{d.title}</h2>
         <p className="editorial-deck mt-3">{d.lead}</p>
       </header>

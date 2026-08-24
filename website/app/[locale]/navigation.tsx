@@ -69,6 +69,7 @@ function NavDropdown({
                 <Link
                   href={childHref}
                   onClick={() => setOpen(false)}
+                  aria-current={isChildActive ? "page" : undefined}
                   className={`flex items-center gap-2 px-3.5 py-2 text-[0.82rem] transition-colors ${
                     isChildActive
                       ? "text-accent font-medium"
@@ -93,7 +94,7 @@ export function Navigation({ locale }: { locale: string }) {
   const links = getNavRoutes(locale);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-nav-bg backdrop-blur-md">
+    <nav aria-label={locale === "fi" ? "Päävalikko" : "Main navigation"} className="sticky top-0 z-50 border-b border-border bg-nav-bg backdrop-blur-md">
       <div className="max-w-5xl mx-auto flex h-16 items-center justify-between gap-8 px-6">
         <Link
           href={`/${locale}`}
@@ -125,6 +126,7 @@ export function Navigation({ locale }: { locale: string }) {
                 <li key={link.href}>
                   <Link
                     href={fullHref}
+                    aria-current={isActive ? "page" : undefined}
                     className={`inline-flex items-center gap-1.5 text-[0.875rem] tracking-[0.005em] transition-colors ${
                       isActive
                         ? "text-accent font-medium"

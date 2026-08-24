@@ -16,7 +16,7 @@ interface TocGroup {
 const GROUPS: Record<"en" | "fi", TocGroup[]> = {
   en: [
     {
-      title: "BERM v19",
+      title: "BERM v17",
       sections: [
         { id: "architecture", label: "Scope and boundaries" },
         { id: "fieldstate-input", label: "FieldState input" },
@@ -50,7 +50,7 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
   ],
   fi: [
     {
-      title: "BERM v19",
+      title: "BERM v17",
       sections: [
         { id: "architecture", label: "Rajaus ja reunaehdot" },
         { id: "fieldstate-input", label: "FieldState-syöte" },

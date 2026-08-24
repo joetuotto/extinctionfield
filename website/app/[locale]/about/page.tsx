@@ -36,7 +36,7 @@ const t: Record<Locale, Copy> = {
       "A research programme for testing a measurement-aware field-to-reproduction hypothesis without collapsing exposure, biology and demography into one score.",
     whatTitle: "What is the active BERM specification?",
     whatText: [
-      "BERM (Bio-Electromagnetic Reproductive Model) is an open research model. Its active BERM v19 specification asks whether a documented physical field state can be linked, through measured organ and couple endpoints, to age-specific fertility patterns.",
+      "BERM (Bio-Electromagnetic Reproductive Model) is an open research model. Its active BERM v17 specification asks whether a documented physical field state can be linked, through measured organ and couple endpoints, to age-specific fertility patterns.",
       "It does not treat mobile subscriptions as an EMF dose, and it does not infer an individual biological effect from a country TFR series. The upstream Lindgren formulation is a theory-level premise that motivates testable field-state features; it is not a population-effect estimate.",
     ],
     principlesTitle: "Working principles",
@@ -94,7 +94,7 @@ const t: Record<Locale, Copy> = {
       "Tutkimusohjelma, joka testaa mittaustietoista kenttä–lisääntyminen-hypoteesia tiivistämättä altistusta, biologiaa ja demografiaa yhdeksi luvuksi.",
     whatTitle: "Mikä on BERM:n aktiivinen määrittely?",
     whatText: [
-      "BERM (Bio-Electromagnetic Reproductive Model) on avoin tutkimusmalli. Sen aktiivinen BERM v19-määrittely kysyy, voidaanko dokumentoitu fysikaalinen kenttätila yhdistää mitattujen elin- ja paripäätepisteiden kautta ikäkohtaisten hedelmällisyyslukujen kehitykseen.",
+      "BERM (Bio-Electromagnetic Reproductive Model) on avoin tutkimusmalli. Sen aktiivinen BERM v17-määrittely kysyy, voidaanko dokumentoitu fysikaalinen kenttätila yhdistää mitattujen elin- ja paripäätepisteiden kautta ikäkohtaisten hedelmällisyyslukujen kehitykseen.",
       "Se ei käsittele mobiililiittymiä EMF-annoksena eikä päättele yksilön biologista vaikutusta maan TFR-sarjasta. Upstream-Lindgren-muotoilu on teoriatason premissi, joka motivoi testattavia FieldState-piirteitä; se ei ole väestövaikutusarvio.",
     ],
     principlesTitle: "Toimintaperiaatteet",

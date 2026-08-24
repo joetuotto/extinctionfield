@@ -1,8 +1,8 @@
 /**
- * Unified BERM v19 evidence registry.
+ * Unified BERM v17 evidence registry.
  *
- * Contains the bounded FieldState study-to-node records (v19 causal graph)
- * and the extended legacy catalogue (v18 migration) in a single module.
+ * Contains the bounded FieldState study-to-node records (v17 causal graph)
+ * and the extended legacy catalogue in a single module.
  */
 import legacyData from "./legacyEvidence.json";
 
@@ -58,7 +58,7 @@ export const EPISTEMIC_LEVELS = {
   E: "Repeated component finding / endpoint",
 } as const;
 
-// ── Bounded v19 records ────────────────────────────────────────────
+// ── Bounded v17 records ────────────────────────────────────────────
 
 export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
   {

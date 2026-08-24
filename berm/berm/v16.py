@@ -487,6 +487,31 @@ def v17_cry_effect(country: str, year: int) -> float:
     (Ritz 2004, Engels 2014) and is what discriminating tests D1-D3 exist
     to settle. n=41, unreplicated, so this is a supported premise rather
     than a calibrated coefficient.
+
+    FUTURE EXTENSION — Eye Color Modifier (not yet implemented):
+    CRY sensitivity is modulated by iris pigmentation:
+    - Blue eyes: ~100x iris light transmission -> eyeColorMod ~ 1.0
+    - Green eyes: ~30x (lipochrome bandpass) -> eyeColorMod ~ 0.6
+    - Brown eyes: ~1x (baseline) -> eyeColorMod ~ 0.15
+    Source: Higuchi 2007 (89% vs 73% melatonin suppression).
+    Not implemented because population-level eye color data is not
+    available in the 54-country dataset. Could be added as a
+    Northern European sensitivity modifier when data permits.
+
+    FUTURE EXTENSION — Nutritional FAD Modifier:
+    CRY stability depends on FAD (from riboflavin/B2):
+    - FAD-replete: CRY stable, magnetically sensitive
+    - FAD-depleted: CRY degrades, magnetic directional selectivity lost
+    Source: Hirano 2017, Yap/Sherrard lab 2025 (Cells 14(3):231).
+    Not implemented because population-level B2 status data requires
+    integration with nutritional databases.
+
+    FUTURE EXTENSION — Pathway A-C Coupling:
+    CRY2-TRPC1 physical complex (Yap 2025) means pathways A and C
+    are not independent. Current multiplicative model
+    (1 - gamma_A * resp_A) * (1 - gamma_C * resp_C)
+    may need a cross-term: + gamma_AC * resp_A * resp_C.
+    Not implemented pending quantification of coupling strength.
     """
     cry_ann = v17_cry_annual_response(country, year)
     return max(0.85, min(1.0, 1.0 - GAMMA_CRY * cry_ann))

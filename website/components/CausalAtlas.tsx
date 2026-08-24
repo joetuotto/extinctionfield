@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ReactFlow,
   Background,
   Controls,
   Panel,
+  MiniMap,
   useNodesState,
   useEdgesState,
   useReactFlow,
@@ -21,26 +22,30 @@ import {
   type EdgeProps,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { ChevronLeft, ChevronRight, Map, Route } from "lucide-react";
+import { ChevronLeft, ChevronRight, Map, Route, Search, X, Filter, RotateCcw } from "lucide-react";
 import {
   NODES,
   EDGES,
-  EN_LABELS,
   EVIDENCE_COLORS,
   EVIDENCE_LABELS,
   LEVEL_TO_STAGE,
   STAGE_BANDS,
   ECOLOGY_BAND,
+  ALL_STAGES,
   GUIDED_SCENES,
   STEPPER_PATHS,
   NODE_DIMENSIONS,
   computeLayout,
   computeBands,
   getEdgeRelation,
+  t,
+  localizedDetail,
   type CausalMapNode,
   type EpistemicLevel,
+  type Locale,
   type GuidedScene,
   type StepperPathKey,
+  type Stage,
 } from "@/lib/causalAtlasData";
 import AtlasNode from "./atlas/AtlasNode";
 import { AtlasDetail } from "./atlas/AtlasDetail";
@@ -113,21 +118,43 @@ const edgeTypes: EdgeTypes = {
 // ── Build React Flow elements ──
 
 function buildElements(
-  lang: "en" | "fi",
+  lang: Locale,
   scene: GuidedScene | null,
+  stageFilter: Set<Stage> | null,
+  evidenceFilter: Set<EpistemicLevel> | null,
+  searchQuery: string,
+  onActivate: (nodeId: string, element: HTMLElement) => void,
 ) {
   const positions = computeLayout();
   const bands = computeBands();
   const sceneNodes = new Set(scene?.nodes ?? []);
   const sceneEdges = new Set(scene?.edges ?? []);
   const hasScene = scene !== null && scene.nodes.length > 0;
+  const searchLower = searchQuery.toLowerCase().trim();
+  const epistemicLabels = EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>;
+
+  const visibleNodeIds = new Set<string>();
+
+  NODES.forEach((n) => {
+    const pos = positions[n.id];
+    if (!pos) return;
+    const stage = LEVEL_TO_STAGE[n.level];
+    if (stageFilter && !stageFilter.has(stage)) return;
+    if (evidenceFilter && !evidenceFilter.has(n.epistemicLevel)) return;
+    if (searchLower) {
+      const label = t(n.label, lang).toLowerCase();
+      const sublabel = n.sublabel ? t(n.sublabel, lang).toLowerCase() : "";
+      if (!label.includes(searchLower) && !sublabel.includes(searchLower)) return;
+    }
+    visibleNodeIds.add(n.id);
+  });
 
   const bandNodes: Node[] = bands.map((b) => ({
     id: `band-${b.stage}`,
     type: "stageBand",
     position: { x: b.x, y: b.y },
     data: {
-      label: b.band.label[lang],
+      label: t(b.band.label, lang),
       width: b.width,
       height: b.height,
       color: b.band.color,
@@ -143,11 +170,12 @@ function buildElements(
   const datNodes: Node[] = NODES.map((n) => {
     const pos = positions[n.id];
     if (!pos) return null;
+    if (!visibleNodeIds.has(n.id)) return null;
+
     const stage = LEVEL_TO_STAGE[n.level];
     const band = stage === "ecology" ? ECOLOGY_BAND : STAGE_BANDS.find((b) => b.id === stage);
-    const en = EN_LABELS[n.id];
-    const label = lang === "en" && en ? en.label : n.label;
-    const sublabel = lang === "en" && en?.sublabel ? en.sublabel : n.sublabel;
+    const label = t(n.label, lang);
+    const sublabel = n.sublabel ? t(n.sublabel, lang) : undefined;
 
     return {
       id: n.id,
@@ -157,14 +185,18 @@ function buildElements(
         label,
         sublabel,
         epistemicLevel: n.epistemicLevel,
+        epistemicLabel: epistemicLabels[n.epistemicLevel],
         stageAccent: band?.accent ?? "#6B7280",
         highlighted: hasScene && sceneNodes.has(n.id),
         dimmed: hasScene && !sceneNodes.has(n.id),
+        nodeId: n.id,
+        onActivate,
       },
     } as Node;
   }).filter(Boolean) as Node[];
 
   const flowEdges: Edge[] = EDGES.map((e, i) => {
+    if (!visibleNodeIds.has(e.from) || !visibleNodeIds.has(e.to)) return null;
     const edgeKey = `${e.from}->${e.to}`;
     const relation = getEdgeRelation(e.from, e.to);
     const highlighted = hasScene && sceneEdges.has(edgeKey);
@@ -177,30 +209,153 @@ function buildElements(
       data: { relation, highlighted, dimmed },
       markerEnd: { type: MarkerType.ArrowClosed, width: 12, height: 12, color: highlighted ? "#60A5FA" : dimmed ? "#ffffff08" : "#ffffff25" },
     };
-  });
+  }).filter(Boolean) as Edge[];
 
-  return { nodes: [...bandNodes, ...datNodes], edges: flowEdges };
+  return { nodes: [...bandNodes, ...datNodes], edges: flowEdges, visibleCount: visibleNodeIds.size };
+}
+
+// ── Toolbar ──
+
+interface ToolbarProps {
+  lang: Locale;
+  searchQuery: string;
+  onSearchChange: (q: string) => void;
+  stageFilter: Set<Stage> | null;
+  onStageToggle: (stage: Stage) => void;
+  evidenceFilter: Set<EpistemicLevel> | null;
+  onEvidenceToggle: (level: EpistemicLevel) => void;
+  onClearFilters: () => void;
+  visibleCount: number;
+  hasFilters: boolean;
+}
+
+function AtlasToolbar({
+  lang, searchQuery, onSearchChange, stageFilter, onStageToggle,
+  evidenceFilter, onEvidenceToggle, onClearFilters, visibleCount, hasFilters,
+}: ToolbarProps) {
+  const searchRef = useRef<HTMLInputElement>(null);
+  const epistemicLabels = EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>;
+
+  return (
+    <div className="flex flex-wrap items-center gap-2 bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2">
+      {/* Search */}
+      <div className="relative">
+        <Search size={12} className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500" />
+        <input
+          ref={searchRef}
+          type="search"
+          value={searchQuery}
+          onChange={(e) => onSearchChange(e.target.value)}
+          placeholder={lang === "fi" ? "Etsi solmu..." : "Search nodes..."}
+          className="w-36 pl-7 pr-2 py-1.5 bg-white/5 border border-white/10 rounded-md text-xs text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-400/50"
+          aria-label={lang === "fi" ? "Etsi solmuja" : "Search nodes"}
+        />
+      </div>
+
+      {/* Stage filters */}
+      <div className="flex flex-wrap gap-1" role="group" aria-label={lang === "fi" ? "Vaihesuodattimet" : "Stage filters"}>
+        {ALL_STAGES.map((s) => {
+          const active = !stageFilter || stageFilter.has(s.id);
+          return (
+            <button
+              key={s.id}
+              onClick={() => onStageToggle(s.id)}
+              aria-pressed={active}
+              className={`px-2 py-1 rounded text-[10px] font-medium transition-colors min-h-[28px] ${
+                active
+                  ? "text-white"
+                  : "text-gray-500 hover:text-gray-300"
+              }`}
+              style={active ? { backgroundColor: `${s.accent}25`, color: s.accent } : undefined}
+            >
+              {t(s.label, lang)}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Evidence filters */}
+      <div className="flex gap-1" role="group" aria-label={lang === "fi" ? "Evidenssisuodattimet" : "Evidence filters"}>
+        {(Object.keys(EVIDENCE_COLORS) as EpistemicLevel[]).map((level) => {
+          const active = !evidenceFilter || evidenceFilter.has(level);
+          return (
+            <button
+              key={level}
+              onClick={() => onEvidenceToggle(level)}
+              aria-pressed={active}
+              className={`inline-flex items-center gap-1 px-1.5 py-1 rounded text-[10px] transition-colors min-h-[28px] ${
+                active ? "text-gray-200" : "text-gray-500 opacity-50"
+              }`}
+              title={epistemicLabels[level]}
+            >
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: EVIDENCE_COLORS[level] }} />
+              {level === "M|C" ? "M" : level}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Count + clear */}
+      <span className="text-[10px] text-gray-500 tabular-nums">{visibleCount}/{NODES.length}</span>
+      {hasFilters && (
+        <button
+          onClick={onClearFilters}
+          className="inline-flex items-center gap-1 px-2 py-1 rounded text-[10px] text-gray-400 hover:text-white hover:bg-white/10 transition-colors min-h-[28px]"
+        >
+          <RotateCcw size={10} />
+          {lang === "fi" ? "Tyhjennä" : "Clear"}
+        </button>
+      )}
+    </div>
+  );
 }
 
 // ── Atlas inner (needs ReactFlowProvider) ──
 
 function AtlasInner({ locale }: { locale: string }) {
-  const lang = (locale === "fi" ? "fi" : "en") as "en" | "fi";
+  const lang: Locale = locale === "fi" ? "fi" : "en";
   const [mode, setMode] = useState<"explore" | "guided">("explore");
   const [sceneIdx, setSceneIdx] = useState(0);
   const [selectedNode, setSelectedNode] = useState<CausalMapNode | null>(null);
+  const [originElement, setOriginElement] = useState<HTMLElement | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [stageFilter, setStageFilter] = useState<Set<Stage> | null>(null);
+  const [evidenceFilter, setEvidenceFilter] = useState<Set<EpistemicLevel> | null>(null);
   const { fitView } = useReactFlow();
 
   const scene = mode === "guided" ? GUIDED_SCENES[sceneIdx] : null;
-  const { nodes: initNodes, edges: initEdges } = useMemo(() => buildElements(lang, scene), [lang, scene]);
+  const hasFilters = !!stageFilter || !!evidenceFilter || !!searchQuery;
+
+  const openNode = useCallback((nodeId: string, element: HTMLElement) => {
+    const source = NODES.find((n) => n.id === nodeId);
+    if (source) {
+      setSelectedNode(source);
+      setOriginElement(element);
+      const url = new URL(window.location.href);
+      url.searchParams.set("node", nodeId);
+      window.history.replaceState(null, "", url.toString());
+    }
+  }, []);
+
+  const closeDetails = useCallback(() => {
+    setSelectedNode(null);
+    const url = new URL(window.location.href);
+    url.searchParams.delete("node");
+    window.history.replaceState(null, "", url.toString());
+  }, []);
+
+  const { nodes: initNodes, edges: initEdges, visibleCount } = useMemo(
+    () => buildElements(lang, scene, stageFilter, evidenceFilter, searchQuery, openNode),
+    [lang, scene, stageFilter, evidenceFilter, searchQuery, openNode],
+  );
   const [nodes, setNodes, onNodesChange] = useNodesState(initNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initEdges);
 
   useEffect(() => {
-    const { nodes: n, edges: e } = buildElements(lang, scene);
+    const { nodes: n, edges: e } = buildElements(lang, scene, stageFilter, evidenceFilter, searchQuery, openNode);
     setNodes(n);
     setEdges(e);
-  }, [lang, scene, setNodes, setEdges]);
+  }, [lang, scene, stageFilter, evidenceFilter, searchQuery, openNode, setNodes, setEdges]);
 
   const humanNodeIds = useMemo(() => new Set(NODES.filter((n) => n.level >= 0 && n.level <= 5).map((n) => n.id)), []);
 
@@ -211,17 +366,39 @@ function AtlasInner({ locale }: { locale: string }) {
       } else if (mode === "guided") {
         fitView({ padding: 0.15, duration: 600 });
       } else {
-        fitView({ nodes: Array.from(humanNodeIds).map((id) => ({ id })), padding: 0.12, duration: 600 });
+        fitView({ nodes: Array.from(humanNodeIds).map((id) => ({ id })), padding: 0.12, duration: 600, maxZoom: 1.0 });
       }
     }, 80);
     return () => clearTimeout(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, sceneIdx, fitView, humanNodeIds]);
+  }, [mode, sceneIdx, fitView, humanNodeIds, stageFilter, evidenceFilter, searchQuery]);
 
-  const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
-    const source = NODES.find((n) => n.id === node.id);
-    if (source) setSelectedNode(source);
-  }, []);
+  // Deep linking: read ?node= on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const nodeId = params.get("node");
+    if (nodeId) {
+      const source = NODES.find((n) => n.id === nodeId);
+      if (source) {
+        setSelectedNode(source);
+        setTimeout(() => {
+          fitView({ nodes: [{ id: nodeId }], padding: 0.5, duration: 600 });
+        }, 200);
+      }
+    }
+
+    const onPopState = () => {
+      const p = new URLSearchParams(window.location.search);
+      const nid = p.get("node");
+      if (nid) {
+        const s = NODES.find((n) => n.id === nid);
+        if (s) setSelectedNode(s);
+      } else {
+        setSelectedNode(null);
+      }
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [fitView]);
 
   const prevScene = () => setSceneIdx((i) => Math.max(0, i - 1));
   const nextScene = () => setSceneIdx((i) => Math.min(GUIDED_SCENES.length - 1, i + 1));
@@ -236,7 +413,58 @@ function AtlasInner({ locale }: { locale: string }) {
     return () => window.removeEventListener("keydown", handler);
   }, [mode]);
 
-  const epistemicLabels = EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>;
+  const handleStageToggle = useCallback((stage: Stage) => {
+    setStageFilter((prev) => {
+      if (!prev) {
+        const newSet = new Set(ALL_STAGES.map((s) => s.id));
+        newSet.delete(stage);
+        return newSet;
+      }
+      const next = new Set(prev);
+      if (next.has(stage)) next.delete(stage); else next.add(stage);
+      if (next.size === ALL_STAGES.length) return null;
+      if (next.size === 0) return null;
+      return next;
+    });
+  }, []);
+
+  const handleEvidenceToggle = useCallback((level: EpistemicLevel) => {
+    setEvidenceFilter((prev) => {
+      const allLevels = Object.keys(EVIDENCE_COLORS) as EpistemicLevel[];
+      if (!prev) {
+        const newSet = new Set(allLevels);
+        newSet.delete(level);
+        return newSet;
+      }
+      const next = new Set(prev);
+      if (next.has(level)) next.delete(level); else next.add(level);
+      if (next.size === allLevels.length) return null;
+      if (next.size === 0) return null;
+      return next;
+    });
+  }, []);
+
+  const handleClearFilters = useCallback(() => {
+    setStageFilter(null);
+    setEvidenceFilter(null);
+    setSearchQuery("");
+  }, []);
+
+  const COPY = {
+    en: {
+      explore: "Explore",
+      guided: "Guided",
+      instruction: "Scroll to zoom · Drag to pan · Click a node for details",
+      exitGuided: "Exit tour",
+    },
+    fi: {
+      explore: "Tutki",
+      guided: "Opastettu",
+      instruction: "Vieritä zoomataksesi · Raahaa panoroidaksesi · Klikkaa solmua yksityiskohtiin",
+      exitGuided: "Poistu kierrokselta",
+    },
+  };
+  const copy = COPY[lang];
 
   return (
     <div className="relative w-full h-[82vh] min-h-[600px] rounded-xl overflow-hidden bg-[#0a0a1a] border border-white/10">
@@ -245,94 +473,165 @@ function AtlasInner({ locale }: { locale: string }) {
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        onNodeClick={onNodeClick}
-        onPaneClick={() => setSelectedNode(null)}
+        onNodeClick={(event, node) => {
+          if (node.type === "atlasNode") {
+            const el = (event.target as HTMLElement).closest("[role=button]") as HTMLElement;
+            openNode(node.id, el ?? (event.target as HTMLElement));
+          }
+        }}
+        onPaneClick={() => { if (selectedNode) closeDetails(); }}
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
-        minZoom={0.15}
+        minZoom={0.2}
         maxZoom={2.5}
         nodesDraggable={false}
         nodesConnectable={false}
-        panOnScroll
+        nodesFocusable={false}
+        edgesFocusable={false}
+        elementsSelectable={false}
+        edgesReconnectable={false}
+        deleteKeyCode={null}
+        selectionKeyCode={null}
+        zoomOnScroll
+        panOnDrag
+        zoomOnPinch
         proOptions={{ hideAttribution: true }}
+        aria-label={lang === "fi" ? "BERM-kausaaliatlas" : "BERM Causal Atlas"}
       >
         <Background gap={30} size={1} color="#ffffff05" />
         <Controls
           showInteractive={false}
-          className="!bg-[#12122a] !border-white/10 !shadow-lg [&>button]:!bg-[#12122a] [&>button]:!border-white/10 [&>button]:!fill-gray-400 [&>button:hover]:!bg-white/10"
+          className="!bg-[#12122a] !border-white/10 !shadow-lg [&>button]:!bg-[#12122a] [&>button]:!border-white/10 [&>button]:!fill-gray-400 [&>button:hover]:!bg-white/10 [&>button]:!w-[44px] [&>button]:!h-[44px]"
+        />
+        <MiniMap
+          nodeColor={(n) => {
+            if (n.type === "stageBand") return "transparent";
+            const d = n.data as Record<string, unknown>;
+            return EVIDENCE_COLORS[d.epistemicLevel as EpistemicLevel] ?? "#6B7280";
+          }}
+          maskColor="rgba(0,0,0,0.7)"
+          className="!bg-[#12122a] !border-white/10"
         />
 
-        {/* Mode toggle */}
+        {/* Mode toggle + instruction */}
         <Panel position="top-right" className="!m-3">
-          <div className="flex gap-1 bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-lg p-1">
-            <button
-              onClick={() => { setMode("explore"); setSelectedNode(null); }}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${mode === "explore" ? "bg-white/10 text-white" : "text-gray-400 hover:text-gray-200"}`}
-            >
-              <Map size={12} />
-              {lang === "fi" ? "Tutki" : "Explore"}
-            </button>
-            <button
-              onClick={() => { setMode("guided"); setSceneIdx(0); setSelectedNode(null); }}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${mode === "guided" ? "bg-blue-500/20 text-blue-300" : "text-gray-400 hover:text-gray-200"}`}
-            >
-              <Route size={12} />
-              {lang === "fi" ? "Opastettu" : "Guided"}
-            </button>
+          <div className="flex flex-col gap-2 items-end">
+            <div className="flex gap-1 bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-lg p-1">
+              <button
+                onClick={() => { setMode("explore"); setSelectedNode(null); closeDetails(); }}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors min-h-[36px] ${mode === "explore" ? "bg-white/10 text-white" : "text-gray-400 hover:text-gray-200"}`}
+              >
+                <Map size={14} />
+                {copy.explore}
+              </button>
+              <button
+                onClick={() => { setMode("guided"); setSceneIdx(0); closeDetails(); }}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors min-h-[36px] ${mode === "guided" ? "bg-blue-500/20 text-blue-300" : "text-gray-400 hover:text-gray-200"}`}
+              >
+                <Route size={14} />
+                {copy.guided}
+              </button>
+            </div>
+            <p className="text-[11px] text-gray-400 bg-[#12122a]/80 backdrop-blur-sm rounded px-2 py-1">
+              {copy.instruction}
+            </p>
           </div>
         </Panel>
 
-        {/* Legend */}
-        <Panel position="top-left" className="!m-3">
-          <div className="bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2.5">
-            <p className="text-[9px] uppercase tracking-wider text-gray-500 mb-1.5">
-              {lang === "fi" ? "Evidenssitaso" : "Evidence Level"}
-            </p>
-            <div className="flex flex-wrap gap-x-3 gap-y-1">
-              {(Object.keys(EVIDENCE_COLORS) as EpistemicLevel[]).map((key) => (
-                <span key={key} className="inline-flex items-center gap-1.5 text-[10px] text-gray-400">
-                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: EVIDENCE_COLORS[key] }} />
-                  {epistemicLabels[key]}
-                </span>
-              ))}
+        {/* Toolbar with search + filters */}
+        {mode === "explore" && (
+          <Panel position="top-left" className="!m-3">
+            <AtlasToolbar
+              lang={lang}
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              stageFilter={stageFilter}
+              onStageToggle={handleStageToggle}
+              evidenceFilter={evidenceFilter}
+              onEvidenceToggle={handleEvidenceToggle}
+              onClearFilters={handleClearFilters}
+              visibleCount={visibleCount}
+              hasFilters={hasFilters}
+            />
+          </Panel>
+        )}
+
+        {/* Legend (in guided mode) */}
+        {mode === "guided" && (
+          <Panel position="top-left" className="!m-3">
+            <div className="bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2.5">
+              <p className="text-[10px] uppercase tracking-wider text-gray-400 mb-1.5">
+                {lang === "fi" ? "Evidenssitaso" : "Evidence Level"}
+              </p>
+              <div className="flex flex-wrap gap-x-3 gap-y-1">
+                {(Object.keys(EVIDENCE_COLORS) as EpistemicLevel[]).map((key) => (
+                  <span key={key} className="inline-flex items-center gap-1.5 text-[11px] text-gray-300">
+                    <span
+                      className="inline-flex items-center justify-center w-4 h-4 rounded-full text-[8px] font-bold text-white"
+                      style={{ backgroundColor: EVIDENCE_COLORS[key] }}
+                    >
+                      {key === "M|C" ? "M" : key}
+                    </span>
+                    {(EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>)[key]}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        </Panel>
+          </Panel>
+        )}
 
       </ReactFlow>
 
-      {/* Guided mode scene navigator — fixed to viewport bottom */}
+      {/* Guided mode scene navigator */}
       {mode === "guided" && scene && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-auto">
+        <div
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-auto"
+          role="region"
+          aria-label={lang === "fi" ? "Opastettu kierros" : "Guided tour"}
+        >
           <div className="bg-[#12122a]/95 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-4 max-w-lg text-center">
-            <h3 className="text-sm font-bold text-gray-100 mb-1.5">{scene.title[lang]}</h3>
-            <p className="text-xs text-gray-400 leading-relaxed mb-3">{scene.description[lang]}</p>
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-[10px] text-gray-500 tabular-nums">
+                {lang === "fi" ? `Kohtaus ${sceneIdx + 1} / ${GUIDED_SCENES.length}` : `Scene ${sceneIdx + 1} of ${GUIDED_SCENES.length}`}
+              </span>
+              <button
+                onClick={() => { setMode("explore"); closeDetails(); }}
+                className="text-[10px] text-gray-400 hover:text-white transition-colors px-2 py-1 rounded hover:bg-white/10 min-h-[28px]"
+              >
+                {copy.exitGuided}
+              </button>
+            </div>
+            <h3 className="text-sm font-bold text-gray-100 mb-1.5">{t(scene.title, lang)}</h3>
+            <p className="text-xs text-gray-400 leading-relaxed mb-3">{t(scene.description, lang)}</p>
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={prevScene}
                 disabled={sceneIdx === 0}
-                className="p-1.5 rounded-md hover:bg-white/10 transition-colors disabled:opacity-30 text-gray-300"
-                aria-label="Previous scene"
+                className="p-2.5 rounded-md hover:bg-white/10 transition-colors disabled:opacity-30 text-gray-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label={lang === "fi" ? "Edellinen kohtaus" : "Previous scene"}
               >
-                <ChevronLeft size={16} />
+                <ChevronLeft size={18} />
               </button>
-              <div className="flex gap-1.5">
-                {GUIDED_SCENES.map((_, i) => (
+              <div className="flex gap-2" role="tablist" aria-label={lang === "fi" ? "Kohtaukset" : "Scenes"}>
+                {GUIDED_SCENES.map((s, i) => (
                   <button
                     key={i}
+                    role="tab"
                     onClick={() => setSceneIdx(i)}
-                    className={`w-2 h-2 rounded-full transition-colors ${i === sceneIdx ? "bg-blue-400" : "bg-gray-600 hover:bg-gray-500"}`}
-                    aria-label={`Scene ${i + 1}`}
+                    aria-selected={i === sceneIdx}
+                    aria-current={i === sceneIdx ? "step" : undefined}
+                    aria-label={`${t(s.title, lang)} (${i + 1}/${GUIDED_SCENES.length})`}
+                    className={`w-3 h-3 rounded-full transition-colors ${i === sceneIdx ? "bg-blue-400 ring-2 ring-blue-400/30" : "bg-gray-600 hover:bg-gray-500"}`}
                   />
                 ))}
               </div>
               <button
                 onClick={nextScene}
                 disabled={sceneIdx === GUIDED_SCENES.length - 1}
-                className="p-1.5 rounded-md hover:bg-white/10 transition-colors disabled:opacity-30 text-gray-300"
-                aria-label="Next scene"
+                className="p-2.5 rounded-md hover:bg-white/10 transition-colors disabled:opacity-30 text-gray-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label={lang === "fi" ? "Seuraava kohtaus" : "Next scene"}
               >
-                <ChevronRight size={16} />
+                <ChevronRight size={18} />
               </button>
             </div>
           </div>
@@ -340,7 +639,12 @@ function AtlasInner({ locale }: { locale: string }) {
       )}
 
       {selectedNode && (
-        <AtlasDetail node={selectedNode} locale={locale} onClose={() => setSelectedNode(null)} />
+        <AtlasDetail
+          node={selectedNode}
+          locale={locale}
+          onClose={closeDetails}
+          originRef={originElement}
+        />
       )}
     </div>
   );
@@ -349,19 +653,20 @@ function AtlasInner({ locale }: { locale: string }) {
 // ── Mobile causal stepper ──
 
 function MobileStepper({ locale }: { locale: string }) {
-  const lang = (locale === "fi" ? "fi" : "en") as "en" | "fi";
+  const lang: Locale = locale === "fi" ? "fi" : "en";
   const [pathKey, setPathKey] = useState<StepperPathKey>("main");
   const [step, setStep] = useState(0);
   const path = STEPPER_PATHS[pathKey];
   const ids = path.ids;
   const currentId = ids[step];
   const node = NODES.find((n) => n.id === currentId);
-  const en = EN_LABELS[currentId];
+  const liveRef = useRef<HTMLDivElement>(null);
 
   if (!node) return null;
 
-  const label = lang === "en" && en ? en.label : node.label;
-  const sublabel = lang === "en" && en?.sublabel ? en.sublabel : node.sublabel;
+  const label = t(node.label, lang);
+  const sublabel = node.sublabel ? t(node.sublabel, lang) : undefined;
+  const d = localizedDetail(node.detail, lang);
   const stage = LEVEL_TO_STAGE[node.level];
   const band = stage === "ecology" ? ECOLOGY_BAND : STAGE_BANDS.find((b) => b.id === stage);
   const epColor = EVIDENCE_COLORS[node.epistemicLevel];
@@ -370,20 +675,28 @@ function MobileStepper({ locale }: { locale: string }) {
   return (
     <div className="bg-[#0a0a1a] rounded-xl border border-white/10 overflow-hidden">
       {/* Path selector */}
-      <div className="flex border-b border-white/10 overflow-x-auto">
+      <div
+        role="tablist"
+        aria-label={lang === "fi" ? "Kausaalipolut" : "Causal pathways"}
+        className="flex border-b border-white/10"
+      >
         {(Object.keys(STEPPER_PATHS) as StepperPathKey[]).map((k) => (
           <button
             key={k}
+            role="tab"
+            aria-selected={k === pathKey}
             onClick={() => { setPathKey(k); setStep(0); }}
-            className={`flex-1 min-w-0 px-3 py-2.5 text-xs font-medium whitespace-nowrap transition-colors ${k === pathKey ? "text-blue-300 border-b-2 border-blue-400 bg-blue-500/10" : "text-gray-500 hover:text-gray-300"}`}
+            className={`flex-1 px-3 py-3 text-xs font-medium transition-colors min-h-[44px] ${
+              k === pathKey ? "text-blue-300 border-b-2 border-blue-400 bg-blue-500/10" : "text-gray-500 hover:text-gray-300"
+            }`}
           >
-            {STEPPER_PATHS[k].label[lang]}
+            {t(STEPPER_PATHS[k].label, lang)}
           </button>
         ))}
       </div>
 
       {/* Progress bar */}
-      <div className="flex items-center gap-1 px-4 py-3">
+      <div className="flex items-center gap-1 px-4 py-3" role="progressbar" aria-valuenow={step + 1} aria-valuemin={1} aria-valuemax={ids.length}>
         {ids.map((_, i) => (
           <div key={i} className="flex-1 flex items-center">
             <div className={`h-1 w-full rounded-full transition-colors ${i <= step ? "bg-blue-400" : "bg-white/10"}`} />
@@ -391,17 +704,27 @@ function MobileStepper({ locale }: { locale: string }) {
         ))}
       </div>
 
+      {/* Live region for step changes */}
+      <div ref={liveRef} aria-live="polite" className="sr-only">
+        {lang === "fi" ? `Vaihe ${step + 1}/${ids.length}: ${label}` : `Step ${step + 1}/${ids.length}: ${label}`}
+      </div>
+
       {/* Card */}
-      <div className="px-4 pb-4">
+      <div className="px-4 pb-4" role="tabpanel">
         <div className="bg-[#12122a] border border-white/10 rounded-xl p-5">
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border border-white/10"
               style={{ color: band?.accent, borderColor: `${band?.accent}40` }}
             >
-              {band?.label[lang]}
+              {band ? t(band.label, lang) : ""}
             </span>
             <span className="flex items-center gap-1 text-[10px] text-gray-500">
-              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: epColor }} />
+              <span
+                className="inline-flex items-center justify-center w-4 h-4 rounded-full text-[8px] font-bold text-white"
+                style={{ backgroundColor: epColor }}
+              >
+                {node.epistemicLevel === "M|C" ? "M" : node.epistemicLevel}
+              </span>
               {epLabels[node.epistemicLevel]}
             </span>
           </div>
@@ -409,18 +732,18 @@ function MobileStepper({ locale }: { locale: string }) {
           <h3 className="text-base font-bold text-gray-100 mb-1">{label}</h3>
           {sublabel && <p className="text-xs text-gray-400 mb-3">{sublabel}</p>}
 
-          {node.detail?.mechanism && (
-            <p className="text-[13px] text-gray-300 leading-relaxed mb-3">{node.detail.mechanism}</p>
+          {d?.mechanism && (
+            <p className="text-[13px] text-gray-300 leading-relaxed mb-3">{d.mechanism}</p>
           )}
 
-          {node.detail?.fdaDevice && (
+          {d?.fdaDevice && (
             <p className="text-xs text-gray-400">
-              <span className="font-semibold text-gray-300">FDA:</span> {node.detail.fdaDevice}
+              <span className="font-semibold text-gray-300">{lang === "fi" ? "FDA-laite:" : "FDA Device:"}</span> {d.fdaDevice}
             </p>
           )}
 
           {node.detail?.link && (
-            <a href={`/${lang}${node.detail.link}`} className="inline-block text-xs text-blue-400 hover:text-blue-300 mt-2">
+            <a href={`/${lang}${node.detail.link}`} className="inline-block text-xs text-blue-400 hover:text-blue-300 mt-2 min-h-[44px] flex items-center">
               {lang === "fi" ? "Lue lisää →" : "Read more →"}
             </a>
           )}
@@ -431,26 +754,21 @@ function MobileStepper({ locale }: { locale: string }) {
           <button
             onClick={() => setStep((s) => Math.max(0, s - 1))}
             disabled={step === 0}
-            className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors disabled:opacity-30"
+            className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors disabled:opacity-30 min-h-[44px]"
           >
             <ChevronLeft size={14} />
             {lang === "fi" ? "Edellinen" : "Previous"}
           </button>
-          <span className="text-xs text-gray-500 font-mono">{step + 1} / {ids.length}</span>
+          <span className="text-xs text-gray-500 font-mono tabular-nums">{step + 1} / {ids.length}</span>
           <button
             onClick={() => setStep((s) => Math.min(ids.length - 1, s + 1))}
             disabled={step === ids.length - 1}
-            className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors disabled:opacity-30"
+            className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors disabled:opacity-30 min-h-[44px]"
           >
             {lang === "fi" ? "Seuraava" : "Next"}
             <ChevronRight size={14} />
           </button>
         </div>
-
-        {/* Connection arrow between steps */}
-        {step < ids.length - 1 && (
-          <div className="flex justify-center py-1 text-gray-600 text-lg">↓</div>
-        )}
       </div>
     </div>
   );

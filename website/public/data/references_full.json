@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 587,
+    "total_references": 594,
     "verified_count": 188,
     "generated": "2026-08-24"
   },
@@ -7741,6 +7741,51 @@
       "doi": "10.1371/journal.pone.0211826"
     },
     {
+      "id": "martinez-cadenas2013",
+      "authors": "Martinez-Cadenas C et al.",
+      "year": 2013,
+      "title": "Gender is a major factor explaining discrepancies in eye colour prediction",
+      "journal": "Forensic Sci Int Genet",
+      "doi": "10.1016/j.fsigen.2013.03.007",
+      "pmid": "23601698",
+      "type": "observational_cohort",
+      "level": "M|C",
+      "pathway": [
+        "C"
+      ],
+      "finding": "Males more likely blue-eyed; females show higher green and brown frequencies. Same genotype produces darker eyes in females (X-chromosome mosaicism).",
+      "tags": [
+        "sex_difference",
+        "eye_color",
+        "gender",
+        "genetics"
+      ],
+      "verified": false,
+      "category": "reproduction_hormones"
+    },
+    {
+      "id": "bressan2024",
+      "authors": "Bressan P",
+      "year": 2024,
+      "title": "Sex tweaks eye color",
+      "journal": "bioRxiv",
+      "doi": "10.1101/2024.07.26.605233",
+      "type": "observational_cross",
+      "level": "C",
+      "pathway": [
+        "C"
+      ],
+      "finding": "X-chromosome mosaicism mechanism for sex difference in eye color. Women have fewer extreme colors (blue, dark brown) and more intermediate (green, hazel).",
+      "tags": [
+        "sex_difference",
+        "eye_color",
+        "x_chromosome",
+        "mosaicism"
+      ],
+      "verified": false,
+      "category": "reproduction_hormones"
+    },
+    {
       "id": "yoshii2009",
       "authors": "Yoshii T et al.",
       "year": 2009,
@@ -7785,6 +7830,81 @@
       "pdf_section": null,
       "pdf_number": null,
       "doi": null
+    },
+    {
+      "id": "hirano2017",
+      "authors": "Hirano A, Braas D, Fu Y-H, Ptáček LJ",
+      "year": 2017,
+      "title": "FAD Regulates CRYPTOCHROME Protein Stability and Circadian Clock in Mice",
+      "journal": "Cell Reports",
+      "doi": "10.1016/j.celrep.2017.03.041",
+      "pmid": "28402850",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "C"
+      ],
+      "finding": "FAD stabilizes CRY1/CRY2. B2-deficient diet + RFK knockdown decreases CRY levels and alters circadian gene expression.",
+      "tags": [
+        "fad",
+        "cry",
+        "riboflavin",
+        "circadian",
+        "nutrition",
+        "b2"
+      ],
+      "verified": false,
+      "category": "transduction_rpm_calcium"
+    },
+    {
+      "id": "yap2025",
+      "authors": "Yap JLY, Tai YK, Franco-Obregón A et al.",
+      "year": 2025,
+      "title": "Magnetically Stimulated Myogenesis Recruits a CRY2-TRPC1 Photosensitive Signaling Axis",
+      "journal": "Cells",
+      "doi": "10.3390/cells14030231",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "B",
+        "A"
+      ],
+      "finding": "RFK silencing (FAD depletion) attenuates PEMF responses and inhibits magnetic field directional selectivity. CRY2-TRPC1 physical interaction confirmed. Reveals A-C pathway coupling.",
+      "tags": [
+        "cry2",
+        "trpc1",
+        "fad",
+        "rfk",
+        "magnetoreception",
+        "pathway_coupling",
+        "nutrition"
+      ],
+      "verified": false,
+      "category": "transduction_rpm_calcium"
+    },
+    {
+      "id": "niessner2014",
+      "authors": "Nießner C, Denzau S, Peichl L, Wiltschko W, Wiltschko R",
+      "year": 2014,
+      "title": "Magnetoreception in birds: I. Immunohistochemical studies concerning the cryptochrome cycle",
+      "journal": "J Exp Biol",
+      "doi": "10.1242/jeb.110965",
+      "pmid": "25472972",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "B"
+      ],
+      "finding": "CRY1a activation spectrum: UV-green (373-565nm). Oxidized CRY absorbs to 500nm; semiquinone absorbs to 570nm. Green light maintains but cannot initiate activation.",
+      "tags": [
+        "cry_photocycle",
+        "semiquinone",
+        "green_light",
+        "wavelength",
+        "activation_spectrum"
+      ],
+      "verified": false,
+      "category": "transduction_rpm_calcium"
     },
     {
       "id": "pnasnexus2026",
@@ -12055,6 +12175,30 @@
       "pdf_number": null
     },
     {
+      "id": "higuchi2007",
+      "authors": "Higuchi S, Motohashi Y, Ishibashi K, Maeda T",
+      "year": 2007,
+      "title": "Influence of eye colors of Caucasians and Asians on suppression of melatonin secretion by light",
+      "journal": "Am J Physiol Regul Integr Comp Physiol",
+      "doi": "10.1152/ajpregu.00355.2006",
+      "pmid": "17332164",
+      "type": "experimental",
+      "level": "M|C",
+      "pathway": [
+        "C"
+      ],
+      "finding": "Light-eyed Caucasians: 89% melatonin suppression. Dark-eyed Asians: 73%. Eye pigmentation directly modulates circadian light pathway.",
+      "tags": [
+        "eye_color",
+        "melatonin",
+        "iris",
+        "circadian",
+        "individual_susceptibility"
+      ],
+      "verified": false,
+      "category": "emf_melatonin"
+    },
+    {
       "id": "ijrb2022_if_review",
       "authors": "Ohkubo C, Okano H",
       "year": 2022,
@@ -12173,6 +12317,27 @@
       "category": "neurobiology_circadian",
       "pdf_section": null,
       "pdf_number": null
+    },
+    {
+      "id": "white2003",
+      "authors": "White TM, Terman M",
+      "year": 2003,
+      "title": "Effect of iris pigmentation and latitude on chronotype and sleep timing",
+      "journal": "Chronobiol Int",
+      "type": "observational_cross",
+      "level": "C",
+      "pathway": [
+        "C"
+      ],
+      "finding": "Light-eyed subjects had earlier sleep times and more morningness. Iris pigmentation modulates circadian light sensitivity.",
+      "tags": [
+        "eye_color",
+        "chronotype",
+        "sleep",
+        "latitude"
+      ],
+      "verified": false,
+      "category": "neurobiology_circadian"
     },
     {
       "id": "milham_stetzer2013_dirty_electricity",

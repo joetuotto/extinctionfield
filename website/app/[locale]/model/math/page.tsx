@@ -12,7 +12,7 @@ const COPY = {
     subtitle:
       "The equations behind the three-level scalar architecture: Lindgren geometry, selection rule, two-channel exposure model, biological capacity, behavioral factor, cultural compensation, Jacobian stability and locked predictions.",
     metaTitle: "BERM mathematics – Extinction Field",
-    metaDescription: "The BERM v19 mathematical specification: §1–§11 from geometry to falsification conditions.",
+    metaDescription: "The BERM v17 mathematical specification: §1–§11 from geometry to falsification conditions.",
     modelLink: "← Back to model overview",
     fieldstateLink: "FieldState measurement specification",
     baseDocTitle: "LBERM base document",
@@ -24,7 +24,7 @@ const COPY = {
     subtitle:
       "Kolmitasoisen skaalaariarkkitehtuurin yhtälöt: Lindgrenin geometria, valintasääntö, kaksikanavamalli, biologinen kapasiteetti, käyttäytymiskerroin, kulttuurikompensaatio, Jacobiaani ja lukitut ennusteet.",
     metaTitle: "BERM-matematiikka – Extinction Field",
-    metaDescription: "BERM v19:n matemaattinen määrittely: §1–§11 geometriasta falsifikaatioehtoihin.",
+    metaDescription: "BERM v17:n matemaattinen määrittely: §1–§11 geometriasta falsifikaatioehtoihin.",
     modelLink: "← Takaisin mallin yleiskatsaukseen",
     fieldstateLink: "FieldState-mittausmäärittely",
     baseDocTitle: "LBERM-perusdokumentti",

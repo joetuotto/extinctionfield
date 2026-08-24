@@ -36,7 +36,7 @@ const t: Record<Locale, Copy> = {
       "What a v2 record must contain: background, ambient and personal field components with organ-specific transfer, vector direction, pulse structure, circadian context and provenance.",
     metaTitle: "FieldState specification – Extinction Field",
     metaDescription:
-      "The BERM v19 measurement specification: what a record must contain and how it differs from a national exposure scalar.",
+      "The BERM v17 measurement specification: what a record must contain and how it differs from a national exposure scalar.",
     fieldStateTitle: "FieldState replaces a national exposure scalar",
     fieldStateText: [
       "For each organ, v2 keeps background, ambient and personal field components distinct after an organ-, posture- and geometry-specific transfer. It retains vector information, phase/coherence, envelope or beat PSD, circadian context, calibration and provenance.",
@@ -45,7 +45,7 @@ const t: Record<Locale, Copy> = {
     pulseTitle: "Pulse structure is biologically relevant",
     pulseText: [
       "FieldState measurement must preserve pulse structure: peak field, pulse duration, repetition rate and duty cycle are biologically relevant quantities that are lost in RMS averaging.",
-      "BERM pathways A, B and D respond to peak field (threshold and pulse mechanisms), not time-averaged power. Only pathway C (BBB, 15%) responds to RMS. This distinguishes BERM from thermal models that use SAR (W/kg).",
+      "BERM pathways A, B and D respond to peak field (threshold and pulse mechanisms), not time-averaged power. Only pathway C (CRY → melatonin → HPG, 25%) responds to RMS. This distinguishes BERM from thermal models that use SAR (W/kg).",
     ],
     staticInterfaceTitle: "Static triboelectric interface: a native local-physics branch",
     staticInterfaceText: [
@@ -64,7 +64,7 @@ const t: Record<Locale, Copy> = {
     asfrTitle: "ASFR first; TFR is a derived period identity",
     asfrText: [
       "The population layer combines paired male and female conception/live-birth capacity while preserving shared-household and partner covariance. It then reports biological capacity separately from demand/opportunity, tempo and ART/live-birth delivery for each age group.",
-      "A national BERM v19 coefficient is not yet estimated: the matched FieldState, biological-endpoint and couple panels required for calibration have not been assembled. Accordingly, v2 publishes no country TFR forecast.",
+      "A national BERM v17 coefficient is not yet estimated: the matched FieldState, biological-endpoint and couple panels required for calibration have not been assembled. Accordingly, v2 publishes no country TFR forecast.",
     ],
     evidenceLink: "Browse the bounded evidence registry",
     mathLink: "FieldState mathematics (§1–§8)",
@@ -76,7 +76,7 @@ const t: Record<Locale, Copy> = {
       "Mitä v2-tietueen on sisällettävä: tausta-, ambient- ja henkilökohtaiset kenttäkomponentit elinkohtaisella siirrolla, vektorin suunta, pulssirakenne, vuorokausikonteksti ja provenienssi.",
     metaTitle: "FieldState-määrittely – Extinction Field",
     metaDescription:
-      "BERM v19:n mittausmäärittely: mitä tietue vaatii ja miten se eroaa kansallisesta altistusskaalasta.",
+      "BERM v17:n mittausmäärittely: mitä tietue vaatii ja miten se eroaa kansallisesta altistusskaalasta.",
     fieldStateTitle: "FieldState korvaa kansallisen altistusskalaarin",
     fieldStateText: [
       "V2 säilyttää kullekin elimelle tausta-, ambient- ja henkilökohtaiset kenttäkomponentit erillään elin-, asento- ja geometriakohtaisen siirron jälkeen. Se säilyttää vektoritiedon, vaiheen/koherenssin, verhokäyrä- tai beat-PSD:n, vuorokausikontekstin, kalibroinnin ja provenienssin.",
@@ -85,7 +85,7 @@ const t: Record<Locale, Copy> = {
     pulseTitle: "Pulssirakenne on biologisesti relevantti",
     pulseText: [
       "FieldState-mittauksen on säilytettävä pulssirakenne: huippukenttä, pulssin kesto, toistotaajuus ja duty cycle ovat biologisesti relevantteja suureita, jotka katoavat RMS-keskiarvostuksessa.",
-      "BERM:n polut A, B ja D vastaavat huippukenttään (kynnys- ja pulssimekanismit), eivät aikakeskiarvoistettuun tehoon. Vain polku C (BBB, 15 %) vastaa RMS:ään. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
+      "BERM:n polut A, B ja D vastaavat huippukenttään (kynnys- ja pulssimekanismit), eivät aikakeskiarvoistettuun tehoon. Vain polku C (CRY → melatoniini → HPG, 25 %) vastaa RMS:ään. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
     ],
     staticInterfaceTitle: "Staattinen triboelektrinen rajapinta: natiivi paikallisfysiikan haara",
     staticInterfaceText: [
@@ -104,7 +104,7 @@ const t: Record<Locale, Copy> = {
     asfrTitle: "ASFR ensin; TFR on johdettu periodi-identiteetti",
     asfrText: [
       "Väestökerros yhdistää paritetun miehen ja naisen conception/live-birth-kapasiteetin säilyttäen yhteisen kotiympäristön ja partnerikovarianssin. Sen jälkeen se raportoi biologisen kapasiteetin erillään kysynnästä/mahdollisuudesta, temposta ja ART/live-birth-deliverystä jokaiselle ikäryhmälle.",
-      "Maakohtaista BERM v19-kerrointa ei vielä estimoida: kalibroinnin vaatimia kohdistettuja FieldState-, biologisten päätepisteiden ja paripaneeleja ei ole koottu. Siksi v2 ei julkaise maakohtaisia TFR-ennusteita.",
+      "Maakohtaista BERM v17-kerrointa ei vielä estimoida: kalibroinnin vaatimia kohdistettuja FieldState-, biologisten päätepisteiden ja paripaneeleja ei ole koottu. Siksi v2 ei julkaise maakohtaisia TFR-ennusteita.",
     ],
     evidenceLink: "Selaa rajattua evidenssirekisteriä",
     mathLink: "FieldState-matematiikka (§1–§8)",

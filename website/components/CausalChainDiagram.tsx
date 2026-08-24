@@ -19,7 +19,7 @@ const COPY: Record<Locale, {
   legend: [EpistemicLevel, string][];
 }> = {
   en: {
-    ariaLabel: "BERM v19 causal diagram",
+    ariaLabel: "BERM v17 causal diagram",
     clickHint: "→ click for details",
     levelTitles: {
       1: "Field state",
@@ -39,7 +39,7 @@ const COPY: Record<Locale, {
     ],
   },
   fi: {
-    ariaLabel: "BERM v19-kausaalikaavio",
+    ariaLabel: "BERM v17-kausaalikaavio",
     clickHint: "→ klikkaa tiedot",
     levelTitles: {
       1: "Kenttätila",

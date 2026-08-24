@@ -9,14 +9,30 @@ export const CHAIN_EPISTEMIC_COLORS: Record<EpistemicLevel, string> = {
   E: "#10B981",
 };
 
-export const CHAIN_EPISTEMIC_LABELS: Record<EpistemicLevel, string> = {
-  L: "Premissi",
-  "L*": "Premissi (ei validoitu)",
-  M: "Matemaattinen seuraus",
-  C: "Ehdokas",
-  "M|C": "Välttämätön seuraus",
-  E: "Empiirisesti vahvistettu",
+export const CHAIN_EPISTEMIC_LABELS_EN: Record<EpistemicLevel, string> = {
+  L: "Theoretical premise",
+  "L*": "Testable theory candidate",
+  M: "Mechanistic intermediate",
+  C: "Observational association",
+  "M|C": "Mechanism + association (not the full route)",
+  E: "Repeated component finding / endpoint",
 };
+
+export const CHAIN_EPISTEMIC_LABELS_FI: Record<EpistemicLevel, string> = {
+  L: "Teoreettinen premissi",
+  "L*": "Testattava teoriakandidaatti",
+  M: "Mekanistinen välivaihe",
+  C: "Havaintopohjainen assosiaatio",
+  "M|C": "Mekanismi + assosiaatio (ei koko reittiä)",
+  E: "Toistettu komponenttilöydös / päätepiste",
+};
+
+/** @deprecated Use CHAIN_EPISTEMIC_LABELS_FI or _EN */
+export const CHAIN_EPISTEMIC_LABELS = CHAIN_EPISTEMIC_LABELS_FI;
+
+export function getChainEpistemicLabel(level: EpistemicLevel, locale: string): string {
+  return locale === "fi" ? CHAIN_EPISTEMIC_LABELS_FI[level] : CHAIN_EPISTEMIC_LABELS_EN[level];
+}
 
 type MapEpistemicLevel = "E" | "M|C" | "C" | "L";
 

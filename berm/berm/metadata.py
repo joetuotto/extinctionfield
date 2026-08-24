@@ -31,6 +31,29 @@ PRIMARY_PATHWAY = "C_RPM"
 #: Chae 2019 does not move this counter. It shows the CRY/RPM substrate is
 #: functional in humans (necessary condition) but applies no RF, so the
 #: disruption step (sufficient condition) is still untested: 0/3.
+#:
+#: Level 3→4 support (causal chain edge): Koivisto 2000, Eliyahu 2006,
+#: Luria 2009 — three GSM RCTs demonstrating acute neural/EEG effects
+#: compatible with VGIC-mediated transduction. These support the
+#: membrane→VGIC edge but do NOT advance discriminating test count
+#: (they test pathway A, not the primary pathway C/RPM).
+#:
+#: Level 4 (VGIC mechanism): Panagopoulos 2025 IFO-VGIC review
+#: (131 studies) provides mechanistic consensus for irregular forced
+#: oscillation of voltage-gated ion channels. Compatible with pathway A
+#: modelling but does not test the RPM discriminating predictions.
+#:
+#: Level 4 (VGIC) multi-pathway Ca2+ mechanism supported by:
+#:   Panagopoulos 2025: IFO-VGIC, 131 studies, 95% oxidative (direct S4)
+#:   Bertagna 2025: RyR/SERCA intracellular Ca2+ stores (Ann NY Acad Sci)
+#: Level 5A->6 (ROS -> testis) 5G-frequency data:
+#:   Bektas 2026: 3.5 GHz -> testis ROS + damage; CoQ10 rescue (bem.70043)
+#:   Tissue-specific: Meyer 2026 + Haidar 2025 null in skin cells
+#: Level 5C (melatonin) systematic evidence:
+#:   Tbahriti 2026: PRISMA 55 studies, 88% melatonin suppression 20-50%
+#: Level 5E (BBB) mechanistic support:
+#:   Gao 2024: EMP -> tight junction degradation (bem.22494)
+#: Discriminating tests D1-D3 remain at 0/3.
 DISCRIMINATING_TESTS_NEEDED = 3
 DISCRIMINATING_TESTS_COMPLETED = 0
 

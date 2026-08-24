@@ -1,118 +1,158 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { X, ExternalLink } from "lucide-react";
 import Link from "next/link";
-import type { CausalMapNode, EpistemicLevel } from "@/lib/causalAtlasData";
-import { EVIDENCE_COLORS, EVIDENCE_LABELS, EN_LABELS, LEVEL_TO_STAGE, STAGE_BANDS, ECOLOGY_BAND } from "@/lib/causalAtlasData";
+import type { CausalMapNode, EpistemicLevel, Locale } from "@/lib/causalAtlasData";
+import { EVIDENCE_COLORS, EVIDENCE_LABELS, LEVEL_TO_STAGE, STAGE_BANDS, ECOLOGY_BAND, t, localizedDetail } from "@/lib/causalAtlasData";
 
 interface Props {
   node: CausalMapNode;
   locale: string;
   onClose: () => void;
+  originRef?: HTMLElement | null;
 }
 
-function stageLabel(level: number, lang: "en" | "fi"): string {
+const SECTION_LABELS: Record<string, Record<Locale, string>> = {
+  mechanism: { en: "Mechanism", fi: "Mekanismi" },
+  fdaDevice: { en: "FDA Device", fi: "FDA-laite" },
+  bermPathway: { en: "BERM Pathway", fi: "BERM-polku" },
+  prediction: { en: "Prediction", fi: "Ennuste" },
+  keyRefs: { en: "Key References", fi: "Avainviitteet" },
+  readMore: { en: "Read more", fi: "Lue lisää" },
+};
+
+function stageLabel(level: number, lang: Locale): string {
   const stage = LEVEL_TO_STAGE[level];
-  if (stage === "ecology") return ECOLOGY_BAND.label[lang];
+  if (stage === "ecology") return t(ECOLOGY_BAND.label, lang);
   const band = STAGE_BANDS.find((b) => b.id === stage);
-  return band?.label[lang] ?? "";
+  return band ? t(band.label, lang) : "";
 }
 
-export function AtlasDetail({ node, locale, onClose }: Props) {
-  const lang = locale === "fi" ? "fi" : "en";
+export function AtlasDetail({ node, locale, onClose, originRef }: Props) {
+  const lang: Locale = locale === "fi" ? "fi" : "en";
   const labels = EVIDENCE_LABELS[lang] as Record<EpistemicLevel, string>;
-  const d = node.detail;
-  const en = EN_LABELS[node.id];
+  const d = localizedDetail(node.detail, lang);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const asideRef = useRef<HTMLElement>(null);
 
-  const nodeLabel = lang === "en" && en ? en.label : node.label;
-  const nodeSublabel = lang === "en" && en?.sublabel ? en.sublabel : node.sublabel;
+  useEffect(() => {
+    closeRef.current?.focus();
+  }, [node.id]);
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+        originRef?.focus();
+      }
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [onClose, originRef]);
+
+  const handleClose = () => {
+    onClose();
+    originRef?.focus();
+  };
 
   return (
-    <div className="absolute right-0 top-0 h-full w-80 max-w-[90vw] bg-[#0e0e22] border-l border-white/10 z-50 overflow-y-auto shadow-2xl">
+    <aside
+      ref={asideRef}
+      role="complementary"
+      aria-labelledby="atlas-detail-title"
+      className="absolute right-0 top-0 h-full w-80 max-w-[90vw] bg-[#0e0e22] border-l border-white/10 z-50 overflow-y-auto shadow-2xl"
+    >
       <div className="sticky top-0 bg-[#0e0e22] border-b border-white/10 p-4 flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-[10px] uppercase tracking-wider text-gray-500 mb-1">
             {stageLabel(node.level, lang)}
           </p>
-          <h3 className="text-sm font-bold leading-tight text-gray-100">{nodeLabel}</h3>
-          {nodeSublabel && (
-            <p className="text-xs text-gray-400 mt-0.5">{nodeSublabel}</p>
+          <h2 id="atlas-detail-title" className="text-sm font-bold leading-tight text-gray-100">
+            {t(node.label, lang)}
+          </h2>
+          {node.sublabel && (
+            <p className="text-xs text-gray-400 mt-0.5">{t(node.sublabel, lang)}</p>
           )}
         </div>
         <button
-          onClick={onClose}
-          className="shrink-0 p-1.5 rounded-md hover:bg-white/10 transition-colors text-gray-400"
-          aria-label="Close"
+          ref={closeRef}
+          onClick={handleClose}
+          className="shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md hover:bg-white/10 transition-colors text-gray-400"
+          aria-label="Close details"
         >
-          <X size={14} />
+          <X size={16} />
         </button>
       </div>
 
       <div className="p-4 space-y-5 text-sm">
         <div className="flex items-center gap-2">
           <span
-            className="inline-block w-3 h-3 rounded-full"
+            className="inline-flex items-center justify-center w-5 h-5 rounded-full text-[9px] font-bold text-white"
             style={{ backgroundColor: EVIDENCE_COLORS[node.epistemicLevel] }}
-          />
+          >
+            {node.epistemicLevel === "M|C" ? "M" : node.epistemicLevel}
+          </span>
           <span className="text-xs font-medium text-gray-400">
             {labels[node.epistemicLevel]}
           </span>
         </div>
 
         {d?.mechanism && (
-          <Section title={lang === "fi" ? "Mekanismi" : "Mechanism"}>
+          <Section title={SECTION_LABELS.mechanism[lang]}>
             <p className="text-[13px] text-gray-300 leading-relaxed">{d.mechanism}</p>
           </Section>
         )}
 
         {d?.fdaDevice && (
-          <Section title="FDA Device">
+          <Section title={SECTION_LABELS.fdaDevice[lang]}>
             <p className="text-[13px] text-gray-300 leading-relaxed">{d.fdaDevice}</p>
           </Section>
         )}
 
-        {d?.bermPathway && (
-          <Section title="BERM Pathway">
-            <p className="text-[13px] text-gray-300 font-mono text-xs">{d.bermPathway}</p>
+        {node.detail?.bermPathway && (
+          <Section title={SECTION_LABELS.bermPathway[lang]}>
+            <p className="text-[13px] text-gray-300 font-mono text-xs">{node.detail.bermPathway}</p>
           </Section>
         )}
 
         {d?.prediction && (
-          <Section title={lang === "fi" ? "Ennuste" : "Prediction"}>
+          <Section title={SECTION_LABELS.prediction[lang]}>
             <p className="text-[13px] text-gray-300 leading-relaxed">{d.prediction}</p>
           </Section>
         )}
 
-        {d?.keyRefs && d.keyRefs.length > 0 && (
-          <Section title={lang === "fi" ? "Avainviitteet" : "Key References"}>
+        {node.detail?.keyRefs && node.detail.keyRefs.length > 0 && (
+          <Section title={SECTION_LABELS.keyRefs[lang]}>
             <ul className="space-y-0.5">
-              {d.keyRefs.map((ref) => (
+              {node.detail.keyRefs.map((ref) => (
                 <li key={ref} className="text-xs text-gray-400 font-mono">{ref}</li>
               ))}
             </ul>
           </Section>
         )}
 
-        {d?.link && (
+        {node.detail?.link && (
           <Link
-            href={`/${lang}${d.link}`}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors mt-2"
+            href={`/${lang}${node.detail.link}`}
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors mt-2 min-h-[44px]"
           >
-            {lang === "fi" ? "Lue lisää" : "Read more"}
-            <ExternalLink size={11} />
+            {SECTION_LABELS.readMore[lang]}
+            <ExternalLink size={12} />
           </Link>
         )}
       </div>
-    </div>
+    </aside>
   );
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h4 className="text-[10px] font-semibold uppercase tracking-wider text-gray-500 mb-1.5">
+      <h3 className="text-[10px] font-semibold uppercase tracking-wider text-gray-500 mb-1.5">
         {title}
-      </h4>
+      </h3>
       {children}
     </div>
   );

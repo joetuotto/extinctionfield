@@ -8,7 +8,7 @@ export function StatisticalValidation({ locale }: { locale: string }) {
   const d = fi
     ? {
         title: "Tilastollinen tila ja validointiraja",
-        lead: "BERM v19 erottaa kuvailevan ajastuskuvion, biologisen päätepisteen ja väestövaikutuksen. Validointitila kertoo, mitä aktiivisen reitin testaamiseen tarvitaan.",
+        lead: "BERM v17 erottaa kuvailevan ajastuskuvion, biologisen päätepisteen ja väestövaikutuksen. Validointitila kertoo, mitä aktiivisen reitin testaamiseen tarvitaan.",
         criteriaTitle: "Mitä v2-validointi edellyttää",
         criteria: [
           "Ennalta määritetty, mitattu FieldState: B₀, spektri/PSD, vaihe/koherenssi, sijainti, elinsiirto ja provenienssi.",
@@ -19,7 +19,7 @@ export function StatisticalValidation({ locale }: { locale: string }) {
       }
     : {
         title: "Statistical status and validation boundary",
-        lead: "BERM v19 separates a descriptive timing pattern, a biological endpoint and a population effect. The validation status states what is required to test the active route.",
+        lead: "BERM v17 separates a descriptive timing pattern, a biological endpoint and a population effect. The validation status states what is required to test the active route.",
         criteriaTitle: "What v2 validation requires",
         criteria: [
           "A pre-specified measured FieldState: B₀, spectrum/PSD, phase/coherence, position, organ transfer and provenance.",
@@ -32,7 +32,7 @@ export function StatisticalValidation({ locale }: { locale: string }) {
   return (
     <section id="statistical-validation" className="mb-14">
       <header className="mb-7 max-w-3xl">
-        <p className="text-xs uppercase tracking-[0.15em] text-accent font-semibold mb-2">BERM v19</p>
+        <p className="text-xs uppercase tracking-[0.15em] text-accent font-semibold mb-2">BERM v17</p>
         <h2 className="text-xl font-semibold mb-2">{d.title}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed">{d.lead}</p>
       </header>
