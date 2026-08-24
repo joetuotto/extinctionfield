@@ -509,7 +509,7 @@ function AtlasInner({ locale }: { locale: string }) {
             const d = n.data as Record<string, unknown>;
             return EVIDENCE_COLORS[d.epistemicLevel as EpistemicLevel] ?? "#6B7280";
           }}
-          maskColor="rgba(0,0,0,0.7)"
+          maskColor="var(--atlas-minimap-mask)"
           className="!bg-[var(--atlas-surface)] !border-[var(--border)]"
         />
 

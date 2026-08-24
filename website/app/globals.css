@@ -46,6 +46,7 @@
   --atlas-text: #f3f4f6;
   --atlas-text-dim: #9ca3af;
   --atlas-text-muted: #6b7280;
+  --atlas-minimap-mask: rgba(0, 0, 0, 0.7);
 }
 
 /* ── Light palette: system preference ── */
@@ -82,6 +83,7 @@
     --atlas-text: #111827;
     --atlas-text-dim: #4b5563;
     --atlas-text-muted: #9ca3af;
+    --atlas-minimap-mask: rgba(255, 255, 255, 0.7);
   }
 }
 
@@ -118,6 +120,7 @@
   --atlas-text: #f3f4f6;
   --atlas-text-dim: #9ca3af;
   --atlas-text-muted: #6b7280;
+  --atlas-minimap-mask: rgba(0, 0, 0, 0.7);
 }
 
 /* ── Light palette: explicit toggle ── */
@@ -153,6 +156,7 @@
   --atlas-text: #111827;
   --atlas-text-dim: #4b5563;
   --atlas-text-muted: #9ca3af;
+  --atlas-minimap-mask: rgba(255, 255, 255, 0.7);
 }
 
 @theme inline {
