@@ -19,6 +19,7 @@ import {
   Microscope,
   Bug,
   FlaskConical,
+  Pill,
   Dna,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -124,6 +125,14 @@ export const NAV_ROUTES: NavRoute[] = [
         descFi: "Interaktiiviset kartat, kuvaajat ja maadata",
       },
       {
+        href: "/evidence/pharmacology",
+        labelEn: "Pharmacological Evidence",
+        labelFi: "Farmakologinen evidenssi",
+        icon: Pill,
+        descEn: "8 drug classes converging on BERM pathways",
+        descFi: "8 lääkeryhmää konvergoivat BERM-reiteillä",
+      },
+      {
         href: "/evidence/populations",
         labelEn: "Populations",
         labelFi: "Populaatiot",
@@ -138,6 +147,14 @@ export const NAV_ROUTES: NavRoute[] = [
         icon: FlaskConical,
         descEn: "The Northern Package hypothesis",
         descFi: "Pohjoisen paketin hypoteesi",
+      },
+      {
+        href: "/evidence/replication",
+        labelEn: "Replication Crisis",
+        labelFi: "Replikaatiokriisi",
+        icon: FlaskConical,
+        descEn: "Blackman's five confounds and the five-parameter standard",
+        descFi: "Blackmanin viisi sekoittavaa tekijää ja viiden parametrin standardi",
       },
       {
         href: "/sentinel",
@@ -160,8 +177,8 @@ export const NAV_ROUTES: NavRoute[] = [
         labelEn: "All References",
         labelFi: "Kaikki lähteet",
         icon: BookOpen,
-        descEn: "688 peer-reviewed sources",
-        descFi: "688 vertaisarvioitua lähdettä",
+        descEn: "531 peer-reviewed sources",
+        descFi: "531 vertaisarvioitua lähdettä",
       },
     ],
   },
