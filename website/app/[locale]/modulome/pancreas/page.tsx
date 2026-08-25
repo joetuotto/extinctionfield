@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Droplets } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { CitationLink } from "@/components/CitationLink";
 
 const COPY = {
   en: {
@@ -489,7 +490,7 @@ export default async function PancreasPage({
               className="bg-card rounded-lg border border-card-border p-4"
             >
               <p className="text-xs font-semibold text-accent mb-1">
-                {ref.citation}
+                <CitationLink citation={ref.citation} />
               </p>
               <p className="text-xs text-foreground-muted leading-relaxed">
                 {ref.finding}

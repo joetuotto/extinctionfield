@@ -17,7 +17,8 @@
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1111/jcmm.12088"
   },
   {
     "id": "pall2018",
@@ -36,7 +37,8 @@
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.envres.2018.01.035"
   },
   {
     "id": "tang2024",
@@ -77,7 +79,8 @@
     "evidenceRole": "BARRIER_STATE_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate evidence for the named organ barrier state in the stated system; it does not create a global barrier multiplier or a human reproductive effect size.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1289/ehp.6039"
   },
   {
     "id": "yakymenko2016",
@@ -96,7 +99,8 @@
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.3109/15368378.2015.1043557"
   },
   {
     "id": "panagopoulos2025",
@@ -136,7 +140,8 @@
     "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1038/nature13290"
   },
   {
     "id": "hore2016",
@@ -155,7 +160,8 @@
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1146/annurev-biophys-032116-094545"
   },
   {
     "id": "sherrard2018",
@@ -175,7 +181,8 @@
     "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
     "status": "VERIFIED",
     "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1371/journal.pbio.2006229"
   },
   {
     "id": "chae2019",
@@ -198,7 +205,8 @@
     "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
-    "n": 41
+    "n": 41,
+    "url": "https://doi.org/10.1371/journal.pone.0211826"
   },
   {
     "id": "yoshii2009",
@@ -218,7 +226,8 @@
     "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1038/nature07183"
   },
   {
     "id": "natcomms2024rpm",
@@ -294,7 +303,8 @@
     "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
     "status": "CONTEXT_ONLY",
     "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1615/critrevoncog.v13.i4.30"
   },
   {
     "id": "pawlak2025",
@@ -371,7 +381,8 @@
     "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
     "status": "CONTEXT_ONLY",
     "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
-    "n": 1532
+    "n": 1532,
+    "url": "https://doi.org/10.1210/jc.2006-1375"
   },
   {
     "id": "santi2025",
@@ -447,7 +458,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": 119
+    "n": 119,
+    "url": "https://doi.org/10.1016/j.anbehav.2008.02.008"
   },
   {
     "id": "goetz2024",
@@ -483,7 +495,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1073/pnas.1608085113"
   },
   {
     "id": "mehta2015",
@@ -534,7 +547,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1111/j.1467-9280.1994.tb00629.x"
   },
   {
     "id": "porges2001",
@@ -552,7 +566,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/s0167-8760(01)00162-3"
   },
   {
     "id": "carter2021",
@@ -586,7 +601,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.yhbeh.2012.01.008"
   },
   {
     "id": "poutahidis2014",
@@ -606,7 +622,8 @@
     "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
     "status": "CONTEXT_ONLY",
     "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1371/journal.pone.0084877"
   },
   {
     "id": "erdman2016",
@@ -745,7 +762,8 @@
     "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
     "status": "CONTEXT_ONLY",
     "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1093/humupd/dmx022"
   },
   {
     "id": "levine2023",
@@ -805,7 +823,8 @@
     "evidenceRole": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
-    "n": 10497
+    "n": 10497,
+    "url": "https://doi.org/10.1002/bem.20400"
   },
   {
     "id": "catsper2024",
@@ -932,7 +951,8 @@
     "evidenceRole": "SOURCE_QUALIFICATION_PENDING",
     "status": "UNVERIFIED_CITATION",
     "translationScope": "The legacy bibliography points to a possible relevant source, but the identity, bibliographic metadata or protocol must be independently verified before it can enter active FieldState evidence.",
-    "n": 1
+    "n": 1,
+    "url": "https://doi.org/10.3109/00207454.2011.608139"
   },
   {
     "id": "manta2014",
@@ -1045,7 +1065,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1371/journal.pone.0185809"
   },
   {
     "id": "rosenberg2019",
@@ -1062,7 +1083,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1126/science.aaw1313"
   },
   {
     "id": "klimentidis2010",
@@ -1080,7 +1102,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1098/rspb.2010.1890"
   },
   {
     "id": "becker1985",
@@ -1138,7 +1161,8 @@
     "evidenceRole": "HISTORICAL_OR_PRECURSOR_CONTEXT",
     "status": "HISTORICAL_CONTEXT",
     "translationScope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1152/physrev.1981.61.2.435"
   },
   {
     "id": "lindgren2021",
@@ -1178,7 +1202,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": 2672
+    "n": 2672,
+    "url": "https://doi.org/10.3389/fendo.2025.1660662"
   },
   {
     "id": "covid_recovery_2024",
@@ -1196,7 +1221,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": 85
+    "n": 85,
+    "url": "https://doi.org/10.1186/s12985-024-02290-5"
   },
   {
     "id": "covid_6mo_recovery_2025",
@@ -1214,7 +1240,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": 74
+    "n": 74,
+    "url": "https://doi.org/10.1038/s41598-025-20637-y"
   },
   {
     "id": "zhang_china_covid_2025",
@@ -1271,7 +1298,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": 1689
+    "n": 1689,
+    "url": "https://doi.org/10.1186/s12889-023-14976-6"
   },
   {
     "id": "us_child_screen_2024",
@@ -1290,7 +1318,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": 280
+    "n": 280,
+    "url": "https://doi.org/10.2196/43315"
   },
   {
     "id": "india_screen_sleep_2025",
@@ -1309,7 +1338,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": 470
+    "n": 470,
+    "url": "https://doi.org/10.7759/cureus.94899"
   },
   {
     "id": "india_electricity_2022",
@@ -1328,7 +1358,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": 500
+    "n": 500,
+    "url": "https://doi.org/10.1186/s42162-022-00240-5"
   },
   {
     "id": "wfh_permanent_2021",
@@ -1384,7 +1415,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": 1056
+    "n": 1056,
+    "url": "https://doi.org/10.1002/jcv2.12213"
   },
   {
     "id": "swiss_screen_mh_2022",
@@ -1404,7 +1436,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": 674
+    "n": 674,
+    "url": "https://doi.org/10.3389/fpsyt.2022.981881"
   },
   {
     "id": "screen_child_behav_2024",
@@ -1423,7 +1456,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.4103/ijpvm.ijpvm_78_23"
   },
   {
     "id": "post_lockdown_mh_2025",
@@ -1442,7 +1476,8 @@
     "evidenceRole": "RECOVERY_WINDOW_OR_TECHNOLOGY_CONTEXT",
     "status": "CONTEXT_ONLY",
     "translationScope": "A behavioral, pandemic or recovery-window observation retained as context; it contains no matched FieldState measurement and is not a natural causal experiment for the active route.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.3389/fpubh.2025.1457895"
   },
   {
     "id": "italy_sleep_device_2020",
@@ -1485,7 +1520,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": 1925
+    "n": 1925,
+    "url": "https://doi.org/10.1038/srep31281"
   },
   {
     "id": "hensel2025",
@@ -1588,7 +1624,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.biocon.2019.01.020"
   },
   {
     "id": "thielens2018",
@@ -1610,7 +1647,8 @@
     "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1038/s41598-018-22271-3"
   },
   {
     "id": "balmori2015",
@@ -1629,7 +1667,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.scitotenv.2015.02.077"
   },
   {
     "id": "balmori2006",
@@ -1648,7 +1687,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1080/02772240600687200"
   },
   {
     "id": "stuart2004",
@@ -1666,7 +1706,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1126/science.1103538"
   },
   {
     "id": "favre2011",
@@ -1687,7 +1728,8 @@
     "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1007/s13592-011-0016-x"
   },
   {
     "id": "sharma_kumar2010",
@@ -1730,7 +1772,8 @@
     "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1038/s41598-018-26185-y"
   },
   {
     "id": "vanbergen2013",
@@ -1749,7 +1792,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1890/120126"
   },
   {
     "id": "wang2007",
@@ -1770,7 +1814,8 @@
     "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1098/rspb.2007.0904"
   },
   {
     "id": "frick2010",
@@ -1788,7 +1833,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1126/science.1188594"
   },
   {
     "id": "czerski1979",
@@ -1830,7 +1876,8 @@
     "evidenceRole": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1081/jbc-120039350"
   },
   {
     "id": "gandhi1996",
@@ -1852,7 +1899,8 @@
     "evidenceRole": "PHYSICS_SIGNATURE_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate evidence for a FieldState measurement signature, geometry or organ-transfer feature in the stated system; it does not establish a human reproductive exposure-response or TFR coefficient.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1109/22.539947"
   },
   {
     "id": "goldstein_kreyenfeld2011",
@@ -1872,7 +1920,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1111/j.1728-4457.2011.00430.x"
   },
   {
     "id": "belpomme2015",
@@ -1891,7 +1940,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1515/reveh-2015-0027"
   },
   {
     "id": "huss2007",
@@ -1909,7 +1959,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1097/00001648-200611001-01176"
   },
   {
     "id": "eurobarometer2018",
@@ -2034,7 +2085,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1093/ije/dyq079"
   },
   {
     "id": "agarwal2009",
@@ -2056,7 +2108,8 @@
     "evidenceRole": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.fertnstert.2008.08.022"
   },
   {
     "id": "adams2014",
@@ -2077,7 +2130,8 @@
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.envint.2014.04.015"
   },
   {
     "id": "avendano2012",
@@ -2099,7 +2153,8 @@
     "evidenceRole": "REPRODUCTIVE_ENDPOINT_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate reproductive-endpoint evidence in the stated system; it cannot by itself quantify human couple fecundability, ASFR or TFR.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.yuro.2012.07.027"
   },
   {
     "id": "kesari2018",
@@ -2120,7 +2175,8 @@
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1186/s12958-018-0431-1"
   },
   {
     "id": "lavignera2012",
@@ -2140,7 +2196,8 @@
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.2164/jandrol.111.014373"
   },
   {
     "id": "skakkebaek2016",
@@ -2161,7 +2218,8 @@
     "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
     "status": "CONTEXT_ONLY",
     "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1152/physrev.00017.2015"
   },
   {
     "id": "carlsen1992",
@@ -2181,7 +2239,8 @@
     "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
     "status": "CONTEXT_ONLY",
     "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1136/bmj.305.6854.609"
   },
   {
     "id": "swan2000",
@@ -2201,7 +2260,8 @@
     "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
     "status": "CONTEXT_ONLY",
     "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.2307/3435055"
   },
   {
     "id": "blank_goodman2009",
@@ -2222,7 +2282,8 @@
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.pathophys.2009.01.006"
   },
   {
     "id": "friedman2007",
@@ -2242,7 +2303,8 @@
     "evidenceRole": "RETRACTED_SOURCE_PROVENANCE_ONLY",
     "status": "RETRACTED_2024",
     "translationScope": "Retracted by Biochemical Journal in 2024. Retained for provenance only: it documents which source the legacy A-pathway narrative once leaned on, and carries no evidential weight for any causal node, endpoint or parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1042/bj20061653"
   },
   {
     "id": "panagopoulos2013",
@@ -2284,7 +2346,8 @@
     "evidenceRole": "MECHANISTIC_INTERMEDIATE_CANDIDATE",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Candidate evidence for the mapped biological intermediate in the stated system; it does not identify population exposure, couple fecundability or a TFR coefficient.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1289/ehp.6355"
   },
   {
     "id": "volkow2011",
@@ -2304,7 +2367,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1001/jama.2011.186"
   },
   {
     "id": "pall2016",
@@ -2326,7 +2390,8 @@
     "evidenceRole": "REVIEW_OR_SYNTHESIS_INDEX",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "A review or synthesis retained as an index to candidate primary studies; it does not independently activate a causal node or calibrate a model parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.jchemneu.2015.08.001"
   },
   {
     "id": "cucurachi2013",
@@ -2346,7 +2411,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.envint.2012.10.009"
   },
   {
     "id": "balmori2009",
@@ -2385,7 +2451,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1515/reveh-2016-0011"
   },
   {
     "id": "hardell_carlberg2015",
@@ -2404,7 +2471,8 @@
     "evidenceRole": "OUTSIDE_ACTIVE_GRAPH_CONTEXT",
     "status": "OUTSIDE_ACTIVE_GRAPH",
     "translationScope": "Retained bibliographic context outside the active FieldState–ASFR causal graph; forcing a canonical node would invent a causal edge not supported by this record.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1016/j.pathophys.2014.10.001"
   },
   {
     "id": "miller2019",
@@ -2425,7 +2493,8 @@
     "evidenceRole": "CONTEXTUAL_ENDPOINT_OR_COVARIATE",
     "status": "CONTEXT_ONLY",
     "translationScope": "Context for a mapped biological endpoint, co-exposure or alternative mechanism; no FieldState causal edge, population dose or TFR parameter is inferred.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.3389/fpubh.2019.00223"
   },
   {
     "id": "melnick2019",
@@ -2467,7 +2536,8 @@
     "evidenceRole": "HISTORICAL_OR_PRECURSOR_CONTEXT",
     "status": "HISTORICAL_CONTEXT",
     "translationScope": "Historical or precursor context retained for provenance; it does not satisfy the current FieldState measurement contract or establish a modern reproductive parameter.",
-    "n": null
+    "n": null,
+    "url": "https://doi.org/10.1136/bmj.1.4667.1383"
   },
   {
     "id": "schwan1957",

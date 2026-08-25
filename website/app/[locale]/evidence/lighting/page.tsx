@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Lightbulb } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { LightingTransitionTimeline } from "@/components/LightingTransitionTimeline";
+import { CitationLink } from "@/components/CitationLink";
 
 const COPY = {
   en: {
@@ -149,7 +150,7 @@ export default async function LightingPage({ params }: { params: Promise<{ local
                   <tbody>
                     {narrative.studies.map((s) => (
                       <tr key={`${s.citation}-${s.year}`} className="border-b border-card-border/40">
-                        <td className="py-2 pr-3 font-medium text-foreground">{s.citation}</td>
+                        <td className="py-2 pr-3 font-medium text-foreground"><CitationLink citation={s.citation} year={s.year} /></td>
                         <td className="py-2 pr-3 font-mono-num text-foreground-muted">{s.year}</td>
                         <td className="py-2 text-foreground-muted">{s.note}</td>
                       </tr>

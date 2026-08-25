@@ -781,7 +781,19 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                                 : "text-foreground"
                             }`}
                           >
-                            {r.citation}
+                            {r.url ? (
+                              <a
+                                href={r.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:underline decoration-dotted underline-offset-2"
+                              >
+                                {r.citation}
+                                <span aria-hidden="true"> ↗</span>
+                              </a>
+                            ) : (
+                              r.citation
+                            )}
                           </p>
                           {r.translationScope && (
                             <p className="mt-1 text-foreground-muted leading-relaxed">{r.translationScope}</p>

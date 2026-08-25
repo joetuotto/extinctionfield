@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Eye } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { CitationLink } from "@/components/CitationLink";
 
 const COPY = {
   en: {
@@ -473,7 +474,7 @@ export default async function EyePage({
                   className="border-b border-card-border/40"
                 >
                   <td className="py-2 pr-3 font-medium text-foreground">
-                    {s.citation}
+                    <CitationLink citation={s.citation} year={s.year} />
                   </td>
                   <td className="py-2 pr-3 font-mono-num text-foreground-muted">
                     {s.year}

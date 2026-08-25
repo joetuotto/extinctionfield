@@ -323,7 +323,7 @@
       "year": 1925,
       "title": "Electrodynamics in general relativity theory",
       "journal": "",
-      "doi": null,
+      "doi": "10.1090/s0002-9947-1925-1501302-6",
       "category": "physics_theory",
       "pathway": [
         "theory"
@@ -361,7 +361,7 @@
       "year": 1957,
       "title": "Classical physics as geometry",
       "journal": "",
-      "doi": null,
+      "doi": "10.1016/0003-4916(57)90049-0",
       "category": "physics_theory",
       "pathway": [
         "theory"
@@ -399,7 +399,7 @@
       "year": 2026,
       "title": "Emergent quantization from a dynamic vacuum",
       "journal": "",
-      "doi": null,
+      "doi": "10.1103/l8y7-r3rm",
       "category": "physics_theory",
       "pathway": [
         "theory"
@@ -418,7 +418,7 @@
       "year": 2019,
       "title": "A discussion on a dynamic vacuum model: Derivation of Helmholtz equation from Schrödinger equation",
       "journal": "",
-      "doi": null,
+      "doi": "10.1016/j.physo.2019.100009",
       "category": "physics_theory",
       "pathway": [
         "theory"
@@ -437,7 +437,7 @@
       "year": 2015,
       "title": "Dynamics of the Vacuum and Casimir Analogs to the Hydrogen Atom",
       "journal": "",
-      "doi": null,
+      "doi": "10.4236/jmp.2015.69136",
       "category": "physics_theory",
       "pathway": [
         "theory"
@@ -494,7 +494,7 @@
       "year": 2025,
       "title": "Magneto-oncology: a radical pair primer",
       "journal": "",
-      "doi": null,
+      "doi": "10.3389/fonc.2025.1539718",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -513,7 +513,7 @@
       "year": 2016,
       "title": "The radical-pair mechanism of magnetoreception",
       "journal": "",
-      "doi": null,
+      "doi": "10.1146/annurev-biophys-032116-094545",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -532,7 +532,7 @@
       "year": 2019,
       "title": "Upper bound on the biological effects of 50/60 Hz magnetic fields mediated by radical pairs",
       "journal": "",
-      "doi": null,
+      "doi": "10.1101/502344",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -551,7 +551,7 @@
       "year": 2025,
       "title": "Biological effects of weak magnetic fields: can the radicalpair mechanism provide a universal explanation?” Biological Reviews",
       "journal": "",
-      "doi": null,
+      "doi": "10.1111/brv.70108",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -570,7 +570,7 @@
       "year": 2022,
       "title": "Radical pairs may explain reactive oxygen species-mediated effects of hypomagnetic field on neurogenesis",
       "journal": "",
-      "doi": null,
+      "doi": "10.1101/2021.10.24.465632",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -589,7 +589,7 @@
       "year": 2026,
       "title": "Verification of quantum biological predictions for weak magnetic field effects on superoxide in planarians",
       "journal": "",
-      "doi": null,
+      "doi": "10.1093/pnasnexus/pgag152",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -608,7 +608,7 @@
       "year": 2022,
       "title": "Magnetic field effects in biology from the perspective of the radical pair mechanism",
       "journal": "",
-      "doi": null,
+      "doi": "10.26434/chemrxiv-2022-brd31",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -627,7 +627,7 @@
       "year": 2025,
       "title": "An amplification mechanism for weak ELF magnetic fields quantum-bio effects in cancer cells",
       "journal": "",
-      "doi": null,
+      "doi": "10.1101/2024.04.28.591462",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -646,7 +646,7 @@
       "year": 2021,
       "title": "Long-term exposure to a hypomagnetic field attenuates adult hippocampal neurogenesis and cognition",
       "journal": "",
-      "doi": null,
+      "doi": "10.1038/s41467-021-21468-x",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -665,7 +665,7 @@
       "year": 2022,
       "title": "Hypomagnetic Field Induces the Production of Reactive Oxygen Species and Cognitive Deficits in Mice Hippocampus",
       "journal": "",
-      "doi": null,
+      "doi": "10.3390/ijms23073622",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -684,7 +684,7 @@
       "year": 2011,
       "title": "Human cryptochrome exhibits lightdependent magnetosensitivity",
       "journal": "",
-      "doi": null,
+      "doi": "10.1038/ncomms1364",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "B"
@@ -798,7 +798,7 @@
       "year": 1985,
       "title": "Effects of ELF (1120 Hz) and modulated (50 Hz) RF fields on the efflux of calcium ions from brain tissue in vitro",
       "journal": "Bioelectromagnetics",
-      "doi": null,
+      "doi": "10.1002/bem.2250060102",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "A"
@@ -824,7 +824,7 @@
       "year": 1981,
       "title": "Tissue interactions with nonionizing electromagnetic fields",
       "journal": "",
-      "doi": null,
+      "doi": "10.1152/physrev.1981.61.2.435",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "A"
@@ -881,7 +881,7 @@
       "year": 2021,
       "title": "Radiofrequency Fields and Calcium Movements Into and Out of Cells",
       "journal": "",
-      "doi": null,
+      "doi": "10.1667/rade-20-00101.1",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "A"
@@ -900,7 +900,7 @@
       "year": 2016,
       "title": "Oxidative mechanisms of biological activity of low-intensity radiofrequency radiation",
       "journal": "",
-      "doi": null,
+      "doi": "10.3109/15368378.2015.1043557",
       "category": "cellular_ros_dna",
       "pathway": [
         "A",
@@ -940,7 +940,7 @@
       "year": 2017,
       "title": "Magnetic fields and reactive oxygen species",
       "journal": "",
-      "doi": null,
+      "doi": "10.3390/ijms18102175",
       "category": "cellular_ros_dna",
       "pathway": [
         "A",
@@ -980,7 +980,7 @@
       "year": 2017,
       "title": "Temporal trends in sperm count: a systematic review and meta-regression analysis",
       "journal": "",
-      "doi": null,
+      "doi": "10.1093/humupd/dmx022",
       "category": "reproduction_hormones",
       "pathway": [
         "T",
@@ -1060,7 +1060,7 @@
       "year": 2014,
       "title": "Effect of mobile telephones on sperm quality: A systematic review and meta-analysis",
       "journal": "",
-      "doi": null,
+      "doi": "10.1016/j.envint.2014.04.015",
       "category": "reproduction_hormones",
       "pathway": [
         "T",
@@ -1120,7 +1120,7 @@
       "year": 2018,
       "title": "Whole-body exposures to radiofrequency-electromagnetic energy can cause DNA damage in mouse spermatozoa via an oxidative mechanism",
       "journal": "",
-      "doi": null,
+      "doi": "10.1038/s41598-019-53983-9",
       "category": "reproduction_hormones",
       "pathway": [
         "T",
@@ -1140,7 +1140,7 @@
       "year": 2009,
       "title": "Mobile phone radiation induces reactive oxygen species production and DNA damage in human spermatozoa in vitro",
       "journal": "",
-      "doi": null,
+      "doi": "10.1371/journal.pone.0006446",
       "category": "reproduction_hormones",
       "pathway": [
         "T",
@@ -1160,7 +1160,7 @@
       "year": 2012,
       "title": "Use of laptop computers connected to internet through WiFi decreases human sperm motility and increases sperm DNA fragmentation",
       "journal": "",
-      "doi": null,
+      "doi": "10.1016/j.yuro.2012.07.027",
       "category": "reproduction_hormones",
       "pathway": [
         "T",
@@ -1180,7 +1180,7 @@
       "year": 2018,
       "title": "Radiations and male fertility",
       "journal": "",
-      "doi": null,
+      "doi": "10.1186/s12958-018-0431-1",
       "category": "reproduction_hormones",
       "pathway": [
         "T",
@@ -1360,7 +1360,7 @@
       "year": 2014,
       "title": "Anthropogenic electromagnetic noise disrupts magnetic compass orientation in a migratory bird",
       "journal": "",
-      "doi": null,
+      "doi": "10.1038/nature13290",
       "category": "ecology_sentinels",
       "pathway": [
         "S"
@@ -1379,7 +1379,7 @@
       "year": 2021,
       "title": "Electromagnetic radiation as an emerging driver factor for the decline of insects",
       "journal": "",
-      "doi": null,
+      "doi": "10.1016/j.scitotenv.2020.144913",
       "category": "ecology_sentinels",
       "pathway": [
         "S"
@@ -1455,7 +1455,7 @@
       "year": 2019,
       "title": "Effects of radiofrequency electromagnetic radiation (RF-EMF) on honey bee queen development and mating success",
       "journal": "",
-      "doi": null,
+      "doi": "10.1101/434142",
       "category": "ecology_sentinels",
       "pathway": [
         "S"
@@ -1474,7 +1474,7 @@
       "year": 2022,
       "title": "Effects of non-ionizing electromagnetic fields on flora and fauna, part 1",
       "journal": "",
-      "doi": "10.1515/reveh-20210026",
+      "doi": "10.1515/reveh-2021-0026",
       "category": "ecology_sentinels",
       "pathway": [
         "S"
@@ -1493,7 +1493,7 @@
       "year": 2017,
       "title": "More than 75 percent decline over 27 years in total flying insect biomass in protected areas",
       "journal": "",
-      "doi": null,
+      "doi": "10.1371/journal.pone.0185809",
       "category": "ecology_sentinels",
       "pathway": [
         "S"
@@ -1683,7 +1683,7 @@
       "year": 2019,
       "title": "Main regularities and health risks from exposure to non-thermal microwaves of mobile communication",
       "journal": "",
-      "doi": null,
+      "doi": "10.1109/telsiks46999.2019.9002324",
       "category": "rf_safety_regulation",
       "pathway": [
         "H"
@@ -1702,7 +1702,7 @@
       "year": 2020,
       "title": "Guidelines for limiting exposure to electromagnetic fields (100 kHz to 300 GHz)",
       "journal": "",
-      "doi": null,
+      "doi": "10.1097/hp.0000000000001210",
       "category": "rf_safety_regulation",
       "pathway": [
         "H"
@@ -1856,7 +1856,7 @@
       "year": 2012,
       "title": "Sleep EEG alterations: effects of different pulse-modulated radio frequency electromagnetic fields",
       "journal": "",
-      "doi": null,
+      "doi": "10.1111/j.1365-2869.2011.00918.x",
       "category": "neurobiology_circadian",
       "pathway": [
         "C",
@@ -1876,7 +1876,7 @@
       "year": 2007,
       "title": "Mechanism of short-term ERK activation by electromagnetic fields at mobile phone frequencies",
       "journal": "",
-      "doi": null,
+      "doi": "10.1042/bj20061653",
       "category": "neurobiology_circadian",
       "pathway": [
         "C",
@@ -1953,7 +1953,7 @@
       "year": 2004,
       "title": "Effect of GSM 900-MHz mobile phone radiation on the reproductive capacity of Drosophila melanogaster",
       "journal": "",
-      "doi": "10.1081/JBC120039350",
+      "doi": "10.1081/jbc-120039350",
       "category": "cellular_ros_dna",
       "pathway": [
         "A"
@@ -2053,7 +2053,7 @@
       "year": 2000,
       "title": "Effects of 902 MHz electromagnetic field emitted by cellular telephones on response times in humans",
       "journal": "NeuroReport",
-      "doi": null,
+      "doi": "10.1097/00001756-200002070-00038",
       "category": "neurobiology_circadian",
       "pathway": [
         "A"
@@ -2185,7 +2185,7 @@
       "year": 2012,
       "title": "Fetal radiofrequency radiation exposure from 800-1900 MHzrated cellular telephones affects neurodevelopment and behavior in mice",
       "journal": "",
-      "doi": null,
+      "doi": "10.1038/srep00312",
       "category": "cellular_ros_dna",
       "pathway": [
         "A"
@@ -2244,7 +2244,7 @@
       "year": 2002,
       "title": "Melatonin metabolite excretion among cellular telephone users",
       "journal": "",
-      "doi": null,
+      "doi": "10.1097/00001648-200309001-00158",
       "category": "neurobiology_circadian",
       "pathway": [
         "C",
@@ -2360,7 +2360,7 @@
       "year": 1980,
       "title": "Early research on the biological effects of microwave radiation: 1940–1960",
       "journal": "",
-      "doi": null,
+      "doi": "10.1080/00033798000200271",
       "category": "history_institutional",
       "pathway": [
         "H"
@@ -2436,7 +2436,7 @@
       "year": 2000,
       "title": "A comprehensive review of the research on biological effects of pulsed radiofrequency radiation in Russia and the former Soviet Union",
       "journal": "",
-      "doi": null,
+      "doi": "10.1007/978-1-4615-4203-2_7",
       "category": "history_institutional",
       "pathway": [
         "H"
@@ -2513,7 +2513,7 @@
       "year": 2014,
       "title": "Oxytocin pathways and the evolution of human behavior",
       "journal": "",
-      "doi": null,
+      "doi": "10.1146/annurev-psych-010213-115110",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -2533,7 +2533,7 @@
       "year": 2012,
       "title": "Brain-to-brain coupling: a mechanism for creating and sharing a social world",
       "journal": "",
-      "doi": null,
+      "doi": "10.1016/j.tics.2011.12.007",
       "category": "neurobiology_circadian",
       "pathway": [
         "D",
@@ -2553,7 +2553,7 @@
       "year": 2017,
       "title": "Brain-to-brain synchrony tracks real-world dynamic group interactions in the classroom",
       "journal": "",
-      "doi": null,
+      "doi": "10.1016/j.cub.2017.04.002",
       "category": "neurobiology_circadian",
       "pathway": [
         "D",
@@ -2593,7 +2593,7 @@
       "year": 2013,
       "title": "Radiation from wireless technology affects the blood, the heart, and the autonomic nervous system",
       "journal": "",
-      "doi": null,
+      "doi": "10.1515/reveh-2013-0004",
       "category": "rf_safety_regulation",
       "pathway": [
         "D",
@@ -3273,7 +3273,7 @@
       "year": 1962,
       "title": "Human auditory system response to modulated electromagnetic energy",
       "journal": "",
-      "doi": null,
+      "doi": "10.1152/jappl.1962.17.4.689",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -3313,7 +3313,7 @@
       "year": 2007,
       "title": "Evidence of a nonlinear human magnetic sense",
       "journal": "",
-      "doi": null,
+      "doi": "10.1016/j.neuroscience.2006.08.068",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -3333,7 +3333,7 @@
       "year": 2013,
       "title": "Detection and learning of floral electric fields by bumblebees",
       "journal": "",
-      "doi": null,
+      "doi": "10.1126/science.1230883",
       "category": "ecology_sentinels",
       "pathway": [
         "D",
@@ -3353,7 +3353,7 @@
       "year": 1972,
       "title": "Magnetoencephalography: Detection of the brain’s electrical activity with a superconducting magnetometer",
       "journal": "",
-      "doi": null,
+      "doi": "10.1126/science.175.4022.664",
       "category": "neurobiology_circadian",
       "pathway": [
         "D",
@@ -3433,7 +3433,7 @@
       "year": 2013,
       "title": "Dynamical systems modeling of physiological coregulation in dyadic interactions",
       "journal": "",
-      "doi": null,
+      "doi": "10.1016/j.ijpsycho.2012.10.013",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -3453,7 +3453,7 @@
       "year": 2002,
       "title": "Remote detection of human electroencephalograms using ultrahigh input impedance electric potential sensors",
       "journal": "",
-      "doi": null,
+      "doi": "10.1063/1.1516861",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -3473,7 +3473,7 @@
       "year": 2008,
       "title": "Magnetoreception in animals",
       "journal": "",
-      "doi": null,
+      "doi": "10.1063/1.2897947",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -3813,7 +3813,7 @@
       "year": 2007,
       "title": "Source of funding and results of studies of health effects of mobile phone use: systematic review of experimental studies",
       "journal": "",
-      "doi": null,
+      "doi": "10.1097/00001648-200611001-01176",
       "category": "rf_safety_regulation",
       "pathway": [
         "D",
@@ -4133,7 +4133,7 @@
       "year": 2007,
       "title": "A population-level decline in serum testosterone levels in American men",
       "journal": "",
-      "doi": null,
+      "doi": "10.1210/jc.2006-1375",
       "category": "reproduction_hormones",
       "pathway": [
         "D",
@@ -4153,7 +4153,7 @@
       "year": 2017,
       "title": "Harmonized reference ranges for circulating testosterone levels in men of four cohort studies in the United States and Europe",
       "journal": "",
-      "doi": null,
+      "doi": "10.1210/jc.2016-2935",
       "category": "reproduction_hormones",
       "pathway": [
         "D",
@@ -4193,7 +4193,7 @@
       "year": 2013,
       "title": "Approach–avoidance versus dominance– submissiveness: A multilevel neural framework on how testosterone promotes social status",
       "journal": "",
-      "doi": null,
+      "doi": "10.1177/1754073913477510",
       "category": "reproduction_hormones",
       "pathway": [
         "D",
@@ -4213,7 +4213,7 @@
       "year": 2017,
       "title": "Endocrinology of human female sexuality, mating, and reproductive behavior",
       "journal": "",
-      "doi": null,
+      "doi": "10.1016/j.yhbeh.2016.11.012",
       "category": "reproduction_hormones",
       "pathway": [
         "D",
@@ -4253,7 +4253,7 @@
       "year": 2019,
       "title": "Environmental neglect: endocrine disruptors as underappreciated but potentially modifiable diabetes risk factors",
       "journal": "",
-      "doi": null,
+      "doi": "10.1007/s00125-019-4940-z",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -4273,7 +4273,7 @@
       "year": 2013,
       "title": "Looking at the other side of the coin: The search for possible biopositive cognitive effects of the exposure to 900 MHz GSM mobile phone radiofrequency radiation",
       "journal": "",
-      "doi": null,
+      "doi": "10.1186/2052-336x-12-75",
       "category": "neurobiology_circadian",
       "pathway": [
         "D",
@@ -4353,7 +4353,7 @@
       "year": 2018,
       "title": "Role of the gut microbiota in nutrition and health",
       "journal": "",
-      "doi": null,
+      "doi": "10.1136/bmj.k2179",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -5213,7 +5213,7 @@
       "year": 1973,
       "title": "Death squared: the explosive growth and demise of a mouse population",
       "journal": "",
-      "doi": null,
+      "doi": "10.1177/00359157730661p202",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -5293,7 +5293,7 @@
       "year": 1936,
       "title": "A Syndrome Produced by Diverse Nocuous Agents",
       "journal": "",
-      "doi": null,
+      "doi": "10.1038/138032a0",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -5313,7 +5313,7 @@
       "year": 1998,
       "title": "Stress, Adaptation, and Disease: Allostasis and Allostatic Load",
       "journal": "",
-      "doi": null,
+      "doi": "10.1111/j.1749-6632.1998.tb09546.x",
       "category": "history_institutional",
       "pathway": [
         "D",
@@ -7469,7 +7469,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1111/jcmm.12088"
     },
     {
       "id": "pall2018_v2",
@@ -7492,7 +7492,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1016/j.envres.2018.01.035"
     },
     {
       "id": "tang2024_v2",
@@ -7541,7 +7541,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1289/ehp.6039"
     },
     {
       "id": "yakymenko2016",
@@ -7564,7 +7564,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.3109/15368378.2015.1043557"
     },
     {
       "id": "bektas2026",
@@ -7645,7 +7645,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1038/nature02534"
     },
     {
       "id": "engels2014",
@@ -7669,7 +7669,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1038/nature13290"
     },
     {
       "id": "hore2016_v2",
@@ -7692,7 +7692,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1146/annurev-biophys-032116-094545"
     },
     {
       "id": "sherrard2018",
@@ -7813,7 +7813,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1038/nature07183"
     },
     {
       "id": "natcomms2024rpm",
@@ -8031,7 +8031,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1615/critrevoncog.v13.i4.30"
     },
     {
       "id": "wacker2000",
@@ -8055,7 +8055,8 @@
         "fertility"
       ],
       "verified": false,
-      "category": "reproduction_hormones"
+      "category": "reproduction_hormones",
+      "doi": "10.1016/s0029-7844(00)00847-4"
     },
     {
       "id": "pawlak2025",
@@ -8148,7 +8149,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1210/jc.2006-1375"
     },
     {
       "id": "santi2025",
@@ -8249,7 +8250,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1016/j.anbehav.2008.02.008"
     },
     {
       "id": "goetz2024",
@@ -8297,7 +8298,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1073/pnas.1608085113"
     },
     {
       "id": "mehta2015_v2",
@@ -8366,7 +8367,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1111/j.1467-9280.1994.tb00629.x"
     },
     {
       "id": "porges2001",
@@ -8390,7 +8391,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1016/s0167-8760(01)00162-3"
     },
     {
       "id": "carter2021",
@@ -8436,7 +8437,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1016/j.yhbeh.2012.01.008"
     },
     {
       "id": "poutahidis2014",
@@ -8461,7 +8462,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1371/journal.pone.0084877"
     },
     {
       "id": "erdman2016",
@@ -8626,7 +8627,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1093/humupd/dmx022"
     },
     {
       "id": "levine2023_v2",
@@ -8697,7 +8698,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1002/bem.20400"
     },
     {
       "id": "ccb_fertility",
@@ -8817,7 +8818,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1016/j.mrgentox.2005.03.006"
     },
     {
       "id": "mccarty2011",
@@ -8842,7 +8843,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.3109/00207454.2011.608139"
     },
     {
       "id": "manta2014",
@@ -8913,7 +8914,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1016/j.envres.2022.113374"
     },
     {
       "id": "hallmann2017_v2",
@@ -8937,7 +8938,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1371/journal.pone.0185809"
     },
     {
       "id": "rosenberg2019",
@@ -8960,7 +8961,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1126/science.aaw1313"
     },
     {
       "id": "klimentidis2010",
@@ -8985,7 +8986,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1098/rspb.2010.1890"
     },
     {
       "id": "becker1985_v2",
@@ -9055,7 +9056,7 @@
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1152/physrev.1981.61.2.435"
     },
     {
       "id": "lindgren2021_v2",
@@ -9342,7 +9343,7 @@
       "category": "rf_safety_regulation",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.3390/s23031582"
     },
     {
       "id": "havas2006",
@@ -9393,7 +9394,7 @@
       "category": "transduction_rpm_calcium",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.3390/ijerph13111128"
     },
     {
       "id": "if_systematic_review_2019",
@@ -9751,7 +9752,7 @@
       "year": 2023,
       "title": "Global trends in incidence, death, burden and risk factors of early-onset cancer from 1990 to 2019",
       "journal": "BMJ Oncology",
-      "doi": null,
+      "doi": "10.1136/bmjonc-2023-000049",
       "category": "ecology_sentinels",
       "pathway": [
         "A"
@@ -9878,7 +9879,7 @@
       "year": 2024,
       "title": "Non-ionotropic voltage-gated calcium channel signaling",
       "journal": "Channels",
-      "doi": "10.1080/19336950.2024.2341670",
+      "doi": "10.1080/19336950.2024.2341077",
       "category": "transduction_rpm_calcium",
       "pathway": [
         "A"
@@ -10566,7 +10567,7 @@
       "verified": true,
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1016/j.cub.2024.06.028"
     },
     {
       "id": "england2024_caterpillar_predator",
@@ -10800,7 +10801,7 @@
       "year": 1996,
       "title": "Single- and double-strand DNA breaks in rat brain cells after acute exposure to radiofrequency electromagnetic radiation",
       "journal": "Int J Radiat Biol",
-      "doi": null,
+      "doi": "10.1080/095530096145814",
       "category": "mechanism",
       "pathway": [
         "RF",
@@ -10824,7 +10825,7 @@
       "year": 2012,
       "title": "Adaptive evolution of voltage-gated sodium channels: the first 800 million years",
       "journal": "Proc Natl Acad Sci USA",
-      "doi": null,
+      "doi": "10.1073/pnas.1201884109",
       "category": "mechanism",
       "pathway": [
         "evolution"
@@ -10956,7 +10957,7 @@
       "year": 2004,
       "title": "Ion homeostasis and the mechanism of action of lithium",
       "journal": "Clin Neurosci Res",
-      "doi": null,
+      "doi": "10.1016/j.cnr.2004.09.014",
       "category": "mechanism",
       "pathway": [
         "lithium",
@@ -11013,7 +11014,7 @@
       "year": 2025,
       "title": "Electroconvulsive therapy generates a postictal wave of spreading depolarization in mice and humans",
       "journal": "Nature Communications",
-      "doi": "10.1038/s41467-025-12345-x",
+      "doi": "10.1101/2024.10.31.621357",
       "category": "neurobiology_circadian",
       "pathway": [
         "ECT",
@@ -11043,7 +11044,7 @@
       "year": 2024,
       "title": "The skin battery: transepithelial potential in wound healing and regeneration",
       "journal": "SAGE Journals",
-      "doi": "10.1177/20417314241234567",
+      "doi": "",
       "category": "bioelectric",
       "pathway": [
         "TEP",
@@ -11328,7 +11329,7 @@
       "year": 1999,
       "title": "Electromagnetic fields in the intensive care unit",
       "journal": "Critical Care Medicine",
-      "doi": "10.1097/00003246-199908001-00028",
+      "doi": "",
       "category": "exposure_assessment",
       "pathway": [
         "ICU",
@@ -11356,7 +11357,7 @@
       "year": 2025,
       "title": "Radiofrequency electromagnetic field exposure in hospital environments",
       "journal": "Frontiers / PMC12815752",
-      "doi": "10.3389/fpubh.2025.1234567",
+      "doi": "",
       "category": "exposure_assessment",
       "pathway": [
         "hospital",
@@ -11568,7 +11569,7 @@
       "authors": "Immunity & Ageing authors",
       "year": 2015,
       "journal": "Immunity & Ageing",
-      "doi": "PMC4362825",
+      "doi": "10.1186/s12979-015-0029-9",
       "category": "neurobiology",
       "verified": true,
       "finding": "Aged mice (24 months vs 3 months): occludin significantly decreased, ZO-1 decreased, TNF-α elevated in brain endothelial cells, capillary permeability significantly increased.",
@@ -11579,7 +11580,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "25784952"
     },
     {
       "id": "tang2015_900mhz_bbb",
@@ -11587,7 +11589,7 @@
       "authors": "Tang J et al.",
       "year": 2015,
       "journal": "Brain Research",
-      "doi": "Tang2015_BBB",
+      "doi": "",
       "category": "neurobiology",
       "verified": false,
       "finding": "900 MHz, 3h/day, 28 days → spatial memory impairment AND BBB permeability increase in rat hippocampus and cortex. Mechanism: mkp-1/ERK pathway. Below safety standards.",
@@ -11606,7 +11608,7 @@
       "authors": "Dasdag S et al.",
       "year": 2015,
       "journal": "Electromagnetic Biology and Medicine",
-      "doi": "Dasdag2015_WiFi_miRNA",
+      "doi": "",
       "category": "neurobiology",
       "verified": false,
       "finding": "2.4 GHz Wi-Fi well below legal limit → significant changes in brain microRNA expression. Long-term 2.4 GHz exposure may lead to adverse effects including neurodegenerative diseases via miRNA changes.",
@@ -11625,7 +11627,7 @@
       "authors": "Leszczynski D et al.",
       "year": 2002,
       "journal": "Differentiation",
-      "doi": "Leszczynski2002",
+      "doi": "",
       "category": "cellular_effects",
       "verified": false,
       "finding": "900 MHz activates hsp27/p38MAPK stress response in human endothelial cells. Hypothesis: hsp27 activation may increase BBB permeability via endothelial stress fiber stabilization.",
@@ -11644,7 +11646,7 @@
       "authors": "LaFerla FM",
       "year": 2016,
       "journal": "Frontiers in Aging Neuroscience",
-      "doi": "PMC4909906",
+      "doi": "10.1155/2016/6701324",
       "category": "neurobiology",
       "verified": true,
       "finding": "Ca²⁺ dysregulation is a PROXIMAL CAUSE of Alzheimer's dysfunction. Intracellular calcium changes precede and drive amyloid pathology, not the reverse.",
@@ -11655,7 +11657,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "27340665"
     },
     {
       "id": "pmc3065491_bhatt_ca_oligomers",
@@ -11663,7 +11666,7 @@
       "authors": "Bhatt MP et al.",
       "year": 2009,
       "journal": "Journal of Biological Chemistry",
-      "doi": "PMC3065491",
+      "doi": "10.1371/journal.pone.0018250",
       "category": "neurobiology",
       "verified": true,
       "finding": "In the presence of Ca²⁺, Aβ(1-40) preferentially forms TOXIC OLIGOMERS rather than harmless fibrils. Calcium level determines whether amyloid is dangerous or not.",
@@ -11674,7 +11677,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "21464905"
     },
     {
       "id": "pmc7179355_oday_calcium",
@@ -11682,7 +11686,7 @@
       "authors": "O'Day DH",
       "year": 2020,
       "journal": "Frontiers in Neuroscience",
-      "doi": "PMC7179355",
+      "doi": "10.3934/neuroscience.2019.4.231",
       "category": "neurobiology",
       "verified": true,
       "finding": "Ca²⁺ dysregulation is an EARLY event in AD that precedes neurodegeneration. Calcium signaling changes occur before clinical symptoms.",
@@ -11693,7 +11697,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "32341979"
     },
     {
       "id": "pmc8125740_calcium_abeta",
@@ -11701,7 +11706,7 @@
       "authors": "Various",
       "year": 2021,
       "journal": "Frontiers in Molecular Neuroscience",
-      "doi": "PMC8125740",
+      "doi": "10.3390/ijms22094976",
       "category": "neurobiology",
       "verified": true,
       "finding": "Ca²⁺ homeostasis and neuronal excitability are key factors in Aβ neurotoxicity. Disruption of calcium regulation amplifies amyloid toxicity.",
@@ -11712,7 +11717,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "34067061"
     },
     {
       "id": "pmc7037278_presenilin_calcium",
@@ -11720,7 +11726,7 @@
       "authors": "Various",
       "year": 2020,
       "journal": "Biochimica et Biophysica Acta",
-      "doi": "PMC7037278",
+      "doi": "10.3390/ijms21030770",
       "category": "neurobiology",
       "verified": true,
       "finding": "PSEN1/PSEN2 mutations (familial AD) cause Ca²⁺ dysregulation genetically. Demonstrates genetic convergence on the same calcium pathway that EMF activates environmentally.",
@@ -11731,7 +11737,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "31991578"
     },
     {
       "id": "pmc8124842_anti_amyloid_failure",
@@ -11739,7 +11746,7 @@
       "authors": "Various",
       "year": 2021,
       "journal": "Nature Reviews Neuroscience",
-      "doi": "PMC8124842",
+      "doi": "10.3390/ijms22094914",
       "category": "neurobiology",
       "verified": true,
       "finding": "Anti-amyloid drugs remove plaques but do NOT improve cognition. Plaques are a symptom, not the cause. Need alternative mechanistic hypotheses for AD.",
@@ -11750,7 +11757,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "34066371"
     },
     {
       "id": "li2020_jama_adhd",
@@ -11783,7 +11791,7 @@
       "authors": "Various",
       "year": 2018,
       "journal": "Molecular Psychiatry",
-      "doi": "PMC6101623",
+      "doi": "10.1093/schbul/sby096",
       "category": "neurobiology",
       "verified": true,
       "finding": "CACNA1C rs1006737 repeatedly associates with bipolar disorder, schizophrenia, MDD, ADHD, and ASD in GWAS. Same gene/channel that modulates EMF sleep sensitivity (Sousouri 2025).",
@@ -11794,7 +11802,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "29982775"
     },
     {
       "id": "pmc6679227_cacna1c_review",
@@ -11802,7 +11811,7 @@
       "authors": "Various",
       "year": 2019,
       "journal": "Frontiers in Molecular Neuroscience",
-      "doi": "PMC6679227",
+      "doi": "10.3390/ijms20143537",
       "category": "neurobiology",
       "verified": true,
       "finding": "Comprehensive review of CACNA1C Cav1.2 role across psychiatric diagnoses. VGCC dysfunction is a convergence point for multiple neurodevelopmental and psychiatric disorders.",
@@ -11813,7 +11822,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "31331039"
     },
     {
       "id": "pmc6894750_timothy",
@@ -11821,7 +11831,7 @@
       "authors": "Various",
       "year": 2019,
       "journal": "PNAS / Genetics",
-      "doi": "PMC6894750",
+      "doi": "10.1371/journal.pgen.1008488",
       "category": "neurobiology",
       "verified": true,
       "finding": "Timothy syndrome CACNA1C gain-of-function (G406R) causes autism with high penetrance. VGCC overactivity = autistic phenotype. Channel function directly regulates neural network development.",
@@ -11832,7 +11842,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "31805042"
     },
     {
       "id": "wang2007_guanfacine_hcn",
@@ -11859,7 +11870,7 @@
       "authors": "Aldad TS, Gan G, Gao X-B, Taylor HS",
       "year": 2012,
       "journal": "Scientific Reports",
-      "doi": "PMC3306017",
+      "doi": "10.1038/srep00312",
       "category": "neurobiology",
       "verified": true,
       "finding": "800-1900 MHz fetal exposure in mice → neurodevelopmental and behavioral changes. Experimental confirmation of Kaiser Permanente epidemiological findings.",
@@ -11870,7 +11881,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "22428084"
     },
     {
       "id": "pmc7287020_hong_lifelong",
@@ -11878,7 +11890,7 @@
       "authors": "Hong S et al.",
       "year": 2020,
       "journal": "Frontiers in Aging Neuroscience",
-      "doi": "PMC7287020",
+      "doi": "10.3389/fnagi.2020.00162",
       "category": "neurobiology",
       "verified": true,
       "finding": "Prenatal mobile phone exposure → cognitive decline in AGED rat offspring. Effect is LIFELONG, not transient. Supports permanent calibration error hypothesis.",
@@ -11889,7 +11901,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "32581772"
     },
     {
       "id": "pmc4643966_cacna1a_asd",
@@ -11897,7 +11910,7 @@
       "authors": "Various",
       "year": 2015,
       "journal": "Molecular Neurobiology",
-      "doi": "PMC4643966",
+      "doi": "10.1371/journal.pone.0142887",
       "category": "neurobiology",
       "verified": true,
       "finding": "CACNA1A (P/Q-type VGCC) variants associate with ASD. Expressed in cortex, cerebellum, hippocampus. Multiple VGCC subtypes implicated in neurodevelopmental disorders.",
@@ -11908,7 +11921,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "26566276"
     },
     {
       "id": "pmc8957782_cacna1h_asd",
@@ -11916,7 +11930,7 @@
       "authors": "Various",
       "year": 2022,
       "journal": "Journal of Neurodevelopmental Disorders",
-      "doi": "PMC8957782",
+      "doi": "10.3389/fpsyt.2022.858238",
       "category": "neurobiology",
       "verified": true,
       "finding": "53 rare CACNA1H (T-type Cav3.2) variants identified in 40 ASD families. T-type calcium channel dysfunction contributes to ASD risk.",
@@ -11927,7 +11941,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "35350424"
     },
     {
       "id": "pmc4658333_vgcc_brain_dev",
@@ -11935,7 +11950,7 @@
       "authors": "Various",
       "year": 2015,
       "journal": "Frontiers in Cellular Neuroscience",
-      "doi": "PMC4658333",
+      "doi": "10.1016/j.pneurobio.2015.09.002",
       "category": "neurobiology",
       "verified": true,
       "finding": "VGCCs are critical for brain DEVELOPMENT, not just function. Channel expression regulates neural migration, synaptogenesis, and network formation during critical windows.",
@@ -11946,7 +11961,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "26386135"
     },
     {
       "id": "pubmed32278494_bipolar_ionic",
@@ -11954,7 +11970,7 @@
       "authors": "Various",
       "year": 2020,
       "journal": "Translational Psychiatry",
-      "doi": "32278494",
+      "doi": "10.1016/j.biopsych.2020.01.020",
       "category": "neurobiology",
       "verified": true,
       "finding": "Bipolar hippocampal neurons oscillate between hyperexcitability and hypoexcitability due to Na⁺ current decrease + K⁺ current increase. Li-responsive neurons are hyperexcitable (stable, correctable); Li-nonresponsive are UNSTABLE (oscillating).",
@@ -11965,7 +11981,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "32278494"
     },
     {
       "id": "elmallakh2004_nakatpase",
@@ -11973,7 +11990,7 @@
       "authors": "El-Mallakh RS, Wyatt RJ",
       "year": 2004,
       "journal": "Biological Psychiatry",
-      "doi": "ElMallakh2004",
+      "doi": "",
       "category": "neurobiology",
       "verified": true,
       "finding": "MILD Na,K-ATPase dysfunction → excitability ↑ → MANIA. MORE SEVERE dysfunction → neurotransmitter release ↓ → DEPRESSION. Two levels of the SAME ionic disruption produce OPPOSITE clinical states.",
@@ -11992,7 +12009,7 @@
       "authors": "Various",
       "year": 2013,
       "journal": "Molecular Psychiatry",
-      "doi": "PMC3678088",
+      "doi": "10.3389/fgene.2013.00105",
       "category": "neurobiology",
       "verified": true,
       "finding": "Comprehensive review of K⁺ channel roles in bipolar disorder. Multiple potassium channel genes implicated in mood regulation and bipolar risk.",
@@ -12003,7 +12020,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "23781230"
     },
     {
       "id": "pmc12533209_leukemia_bioelectric",
@@ -12011,7 +12029,7 @@
       "authors": "Various",
       "year": 2025,
       "journal": "Nature Cell Biology",
-      "doi": "PMC12533209",
+      "doi": "10.1002/advs.202508940",
       "category": "cellular_effects",
       "verified": true,
       "finding": "Leukemia cells 'hijack' stromal cell bioelectricity through CaV1.2 depolarization. Direct evidence that cancer manipulates ion channel bioelectricity for survival.",
@@ -12022,7 +12040,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "40834435"
     },
     {
       "id": "koopman2016_vns_ra",
@@ -12049,7 +12068,7 @@
       "authors": "Various",
       "year": 2016,
       "journal": "Molecular and Cellular Biochemistry",
-      "doi": "PMC5034549",
+      "doi": "10.1186/s12935-016-0348-8",
       "category": "cellular_effects",
       "verified": true,
       "finding": "Verapamil (VGCC L-type blocker) inhibits breast cancer cell growth in vitro. Ion channel modulation as anti-cancer strategy.",
@@ -12060,7 +12079,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "27688735"
     },
     {
       "id": "pmc12564203_pi3k_kcnq2",
@@ -12068,7 +12088,7 @@
       "authors": "Various",
       "year": 2025,
       "journal": "Frontiers in Pharmacology",
-      "doi": "PMC12564203",
+      "doi": "10.3390/ijms262010026",
       "category": "neurobiology",
       "verified": true,
       "finding": "PI3K/AKT → GSK3β → KCNQ2 signaling pathway links lithium's mechanism to potassium channel regulation in bipolar disorder.",
@@ -12079,7 +12099,8 @@
       "level": "P",
       "type": "journal",
       "pdf_section": null,
-      "pdf_number": null
+      "pdf_number": null,
+      "pmid": "41155319"
     },
     {
       "id": "tong2017_melatonin_ivf",
@@ -12201,7 +12222,7 @@
       "year": 2007,
       "title": "Melatonin in reproduction revisited",
       "journal": "Biology of Reproduction",
-      "doi": "10.1095/biolreprod.107.060655",
+      "doi": "",
       "category": "melatonin_fertility",
       "verified": true,
       "finding": "Melatonin protects sperm from oxidative damage, regulates HPG axis, and modulates seasonal reproduction",
@@ -12598,7 +12619,7 @@
       "year": 2015,
       "title": "Mitotic Spindle Disruption by Alternating Electric Fields Leads to Improper Chromosome Segregation and Mitotic Catastrophe in Cancer Cells",
       "journal": "Mol Cancer Ther",
-      "doi": "10.1158/1535-7163",
+      "doi": "10.1038/srep18046",
       "category": "mechanism",
       "level": "E",
       "type": "journal",
@@ -12760,7 +12781,7 @@
       "year": 2010,
       "title": "Exposure to magnetic fields and the risk of poor sperm quality",
       "journal": "Reproductive Toxicology",
-      "doi": null,
+      "doi": "10.1016/j.reprotox.2009.09.004",
       "category": "reproduction_hormones",
       "level": "E",
       "type": "report",
@@ -12851,7 +12872,7 @@
       "year": 2018,
       "title": "Behavioral testing of mice exposed to intermediate frequency magnetic fields indicates mild memory impairment",
       "journal": "PLOS ONE",
-      "doi": null,
+      "doi": "10.1371/journal.pone.0188880",
       "category": "neurobiology",
       "level": "M",
       "type": "report",
@@ -12875,7 +12896,7 @@
       "year": 2015,
       "title": "Early Exposure to Intermediate-Frequency Magnetic Fields Alters Brain Biomarkers without Histopathological Changes in Adult Mice",
       "journal": "Int J Environ Res Public Health",
-      "doi": null,
+      "doi": "10.3390/ijerph120404406",
       "category": "neurobiology",
       "level": "M",
       "type": "report",
@@ -12900,7 +12921,7 @@
       "year": 2024,
       "title": "Comparison of pulsed and continuous electromagnetic field generated by WPT system on human dermal and neural cells",
       "journal": "PMC10918061",
-      "doi": null,
+      "doi": "10.1038/s41598-024-56051-z",
       "category": "mechanism",
       "level": "M",
       "type": "report",
@@ -12922,7 +12943,7 @@
       "year": 1991,
       "title": "The influence of temperature during electric- and magnetic-field-induced alteration of calcium-ion release from in vitro brain tissue",
       "journal": "Bioelectromagnetics",
-      "doi": null,
+      "doi": "10.1002/bem.2250120305",
       "category": "transduction_rpm_calcium",
       "level": "E",
       "type": "journal",
@@ -12945,7 +12966,7 @@
       "year": 1990,
       "title": "Importance of alignment between local DC magnetic field and an oscillating magnetic field in responses of brain tissue in vitro and in vivo",
       "journal": "Bioelectromagnetics",
-      "doi": null,
+      "doi": "10.1002/bem.2250110207",
       "category": "transduction_rpm_calcium",
       "level": "E",
       "type": "journal",
@@ -13162,7 +13183,7 @@
       "year": 2024,
       "title": "Do electromagnetic fields significantly affect thyroid cells and their functions? A systematic review",
       "journal": "F1000Research",
-      "doi": "10.12688/f1000research.143498.1",
+      "doi": "10.12688/f1000research.128740.1",
       "category": "reproduction_hormones",
       "level": "M|C",
       "type": "journal",
@@ -13208,7 +13229,7 @@
       "year": 2025,
       "title": "Genome-wide sperm DNA methylation alterations in individuals exposed to radar electromagnetic radiation",
       "journal": "Research Square (preprint)",
-      "doi": null,
+      "doi": "10.21203/rs.3.rs-8312864/v1",
       "category": "reproduction_hormones",
       "pathway": [
         "A"
@@ -13283,7 +13304,7 @@
       "year": 2023,
       "title": "Genotoxic Risks to Male Reproductive Health from Radiofrequency Radiation",
       "journal": "Cells",
-      "doi": null,
+      "doi": "10.3390/cells12040594",
       "category": "reproduction_hormones",
       "pathway": [
         "A"
@@ -13690,7 +13711,7 @@
       "year": 2021,
       "title": "Targeting T-type/CaV3.2 channels for chronic pain",
       "journal": "Mol Aspects Med",
-      "doi": null,
+      "doi": "10.1016/j.trsl.2021.01.002",
       "category": "transduction_rpm_calcium",
       "type": "review",
       "level": "E",
@@ -13761,7 +13782,7 @@
       "year": 2022,
       "title": "Investigation of CACNA1I Cav3.3 dysfunction in hemiplegic migraine",
       "journal": "PMC",
-      "doi": null,
+      "doi": "10.3389/fnmol.2022.892820",
       "category": "transduction_rpm_calcium",
       "type": "genetic",
       "level": "M|C",
@@ -13855,7 +13876,7 @@
       "year": 2023,
       "title": "Hypertrophic cardiomyopathy and long QT syndrome in cardiac-only Timothy syndrome",
       "journal": "HeartRhythm Case Reports",
-      "doi": null,
+      "doi": "10.1016/j.hrcr.2023.05.012",
       "category": "transduction_rpm_calcium",
       "type": "clinical",
       "level": "E",
@@ -13901,7 +13922,7 @@
       "year": 2026,
       "title": "Role of light in eye growth and light as therapy for myopia control",
       "journal": "Frontiers in Ophthalmology",
-      "doi": null,
+      "doi": "10.3389/fopht.2026.1812006",
       "category": "eye_circadian",
       "type": "review",
       "level": "E",
@@ -13925,7 +13946,7 @@
       "year": 2022,
       "title": "Oxytocin receptor expression patterns in the human brain across development",
       "journal": "Neuropsychopharmacology",
-      "doi": null,
+      "doi": "10.31219/osf.io/j3b5d",
       "category": "neurodevelopment",
       "type": "experimental",
       "level": "E",
@@ -13948,7 +13969,7 @@
       "year": 2026,
       "title": "Oxytocin modulation of the insular cortex: implications for social cognition and neurodevelopmental disorders",
       "journal": "Frontiers in Neural Circuits",
-      "doi": null,
+      "doi": "10.3389/fncir.2026.1791625",
       "category": "neurodevelopment",
       "type": "review",
       "level": "E",
@@ -13971,7 +13992,7 @@
       "year": 2015,
       "title": "Early androgen exposure and human gender development",
       "journal": "Biology of Sex Differences",
-      "doi": null,
+      "doi": "10.1186/s13293-015-0022-1",
       "category": "neurodevelopment",
       "type": "review",
       "level": "E",
@@ -13995,7 +14016,7 @@
       "year": 2020,
       "title": "Androgens and the masculinization programming window: human-rodent differences",
       "journal": "Biochemical Society Transactions",
-      "doi": null,
+      "doi": "10.1042/bst20200200",
       "category": "reproductive",
       "type": "review",
       "level": "E",
@@ -14244,7 +14265,7 @@
       "year": 2010,
       "title": "Cancer incidence in the Amish of Ohio",
       "journal": "Cancer Causes & Control",
-      "doi": "10.1007/s10552-010-9533-7",
+      "doi": "",
       "category": "epidemiology",
       "type": "observational",
       "level": "E",
@@ -14353,7 +14374,7 @@
       "year": 2014,
       "title": "L-type CaV1.2 calcium channels: from in vitro findings to in vivo function",
       "journal": "Physiol Rev 94:303-326",
-      "doi": null,
+      "doi": "10.1152/physrev.00016.2013",
       "category": "transduction_rpm_calcium",
       "type": "review",
       "level": "E",
@@ -14375,7 +14396,7 @@
       "year": 2003,
       "title": "Molecular physiology of low-voltage-activated T-type calcium channels",
       "journal": "Physiol Rev 83:117-161",
-      "doi": null,
+      "doi": "10.1152/physrev.00018.2002",
       "category": "transduction_rpm_calcium",
       "type": "review",
       "level": "E",
@@ -14546,7 +14567,8 @@
         "usa",
         "1_percent_year",
         "age_independent"
-      ]
+      ],
+      "doi": "10.1210/jc.2006-1375"
     },
     {
       "id": "andersson-2007-denmark",
@@ -14579,7 +14601,8 @@
         "finland",
         "cohort_effect",
         "37_percent"
-      ]
+      ],
+      "doi": "10.1530/eje-12-0288"
     },
     {
       "id": "chodick-2020-israel",
@@ -14596,7 +14619,8 @@
         "israel",
         "102334_men",
         "2006_2019"
-      ]
+      ],
+      "doi": "10.21203/rs.2.20358/v2"
     },
     {
       "id": "santi-2025-meta-analysis",
@@ -14631,7 +14655,8 @@
         "edc",
         "mechanisms",
         "1_2_percent_year"
-      ]
+      ],
+      "doi": "10.3390/antiox15060778"
     },
     {
       "id": "skakkebaek-2015-physrev",
@@ -14649,7 +14674,8 @@
         "testicular_cancer",
         "hypospadias",
         "environment"
-      ]
+      ],
+      "doi": "10.1152/physrev.00017.2015"
     },
     {
       "id": "mazur2013",
@@ -14697,7 +14723,8 @@
         "RF-EMF",
         "human",
         "rat"
-      ]
+      ],
+      "doi": "10.3390/nu14020339"
     },
     {
       "id": "maalouf2023",
@@ -14737,7 +14764,8 @@
         "PRDM16",
         "brown-adipogenesis",
         "differentiation"
-      ]
+      ],
+      "doi": "10.3390/ijms26062792"
     },
     {
       "id": "prenatal_wifi2023",
@@ -14819,7 +14847,8 @@
         "AgRP",
         "appetite",
         "calcium"
-      ]
+      ],
+      "doi": "10.7554/elife.18716"
     },
     {
       "id": "yang2015_astro",
@@ -14839,7 +14868,8 @@
         "appetite",
         "ghrelin",
         "adenosine"
-      ]
+      ],
+      "doi": "10.1016/j.celrep.2015.04.002"
     },
     {
       "id": "bhatt2012_glp1",
@@ -14902,7 +14932,8 @@
         "weight-loss",
         "PGC-1alpha",
         "inverse-test"
-      ]
+      ],
+      "doi": "10.1038/hr.2011.129"
     },
     {
       "id": "screentime_meta2022",
@@ -14922,7 +14953,8 @@
         "meta-analysis",
         "dose-response",
         "adolescent"
-      ]
+      ],
+      "doi": "10.1186/s12875-022-01761-4"
     },
     {
       "id": "shiftwork_mets2025",
@@ -14943,7 +14975,8 @@
         "melatonin",
         "circadian",
         "meta-analysis"
-      ]
+      ],
+      "doi": "10.1097/md.0000000000043598"
     },
     {
       "id": "trumble2012",

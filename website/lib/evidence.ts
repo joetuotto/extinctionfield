@@ -47,6 +47,8 @@ export interface LegacyEvidenceRecord {
   readonly status: string;
   readonly translationScope: string;
   readonly n: number | null;
+  /** Resolved source link; filled by berm/resolve_reference_links.py. */
+  readonly url?: string | null;
 }
 
 export const EPISTEMIC_LEVELS = {
