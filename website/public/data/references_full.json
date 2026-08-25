@@ -2,9 +2,9 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 667,
-    "verified_count": 188,
-    "generated": "2026-08-24"
+    "total_references": 671,
+    "verified_count": 192,
+    "generated": "2026-08-25"
   },
   "categories": [
     {
@@ -8152,26 +8152,32 @@
     },
     {
       "id": "santi2025",
-      "authors": "Santi D et al.",
+      "authors": "Santi D, Spaggiari G, Furini C, Griseta V, Zizzi EA, Granata ARM, Simoni M",
       "year": 2025,
-      "title": "Meta-analysis: secular testosterone decline 1971-2024",
-      "journal": "Various",
-      "type": "report",
+      "title": "Temporal trends in serum testosterone and luteinizing hormone levels indicate an ongoing resetting of hypothalamic-pituitary-gonadal function in healthy men: a systematic review",
+      "journal": "Journal of Endocrinological Investigation",
+      "type": "meta-analysis",
       "level": "E",
       "pathway": [
+        "A",
+        "C",
         "D"
       ],
-      "finding": "Linear negative regression across decades in >1M subjects. Confirms Travison.",
+      "finding": "Largest meta-analysis (n=1,064,891, 1971-2024). Both T and LH declining independent of age, BMI, and assay method. First to show simultaneous T and LH decline, indicating HPG-level disruption. No BMI temporal trend in this population.",
       "tags": [
         "testosterone",
-        "meta",
-        "decline"
+        "LH",
+        "meta-analysis",
+        "secular-decline",
+        "HPG-resetting",
+        "bmi-independent",
+        "multi-pathway"
       ],
       "verified": true,
       "category": "reproduction_hormones",
       "pdf_section": null,
       "pdf_number": null,
-      "doi": null
+      "doi": "10.1007/s40618-025-02671-9"
     },
     {
       "id": "lokeshwar2021",
@@ -14646,21 +14652,404 @@
       ]
     },
     {
-      "id": "plosone-2013-obesity-testosterone",
-      "authors": "Various (AFHS cohort)",
+      "id": "mazur2013",
+      "authors": "Mazur A, Westerman R, Mueller U",
       "year": 2013,
       "title": "Is rising obesity causing a secular (age-independent) decline in testosterone among American men?",
       "journal": "PLOS ONE",
+      "type": "report",
       "level": "E",
-      "finding": "Even at constant weight, testosterone declined 117 ng/dL over 20 years — obesity does not explain the secular trend",
-      "pathway": "D (HPA→HPG)",
+      "pathway": [
+        "D"
+      ],
+      "finding": "Weight-stable men lost 117 ng/dL (19%) over 20 years. Excludes obesity as sufficient explanation for secular T decline. 991 US Air Force veterans, 6 waves 1982-2002.",
       "tags": [
         "testosterone",
         "obesity",
-        "independent",
-        "117ngdl_loss_constant_weight",
-        "20_years"
+        "bmi-mediator",
+        "weight-stable",
+        "117ngdl",
+        "secular-decline",
+        "causal-analysis"
+      ],
+      "verified": true,
+      "category": "reproduction_hormones",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1371/journal.pone.0076178"
+    },
+    {
+      "id": "alshammari2022",
+      "authors": "Alshammari TK et al.",
+      "year": 2022,
+      "title": "Mobile Phone Radiation Deflects Brain Energy Homeostasis and Prompts Human Food Ingestion",
+      "journal": "Nutrients",
+      "level": "E",
+      "finding": "RF-EMF acute exposure increased food intake in humans. 2h/day prepubertal rats showed appetite increase and weight gain at 3 weeks, continuing through 5-22 weeks.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "obesity",
+        "appetite",
+        "hypothalamus",
+        "RF-EMF",
+        "human",
+        "rat"
       ]
+    },
+    {
+      "id": "maalouf2023",
+      "authors": "Maalouf J et al.",
+      "year": 2023,
+      "title": "Dose- and Time-Dependent Effects of RF-EMF on Adipose Tissue: Implications of Thermoregulation and Mitochondrial Signaling",
+      "journal": "Int J Mol Sci",
+      "level": "E",
+      "finding": "900 MHz at SAR 0.1-0.4 W/kg reduced BAT thermogenesis and mitochondrial activity. Effects were dose- and time-dependent.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "BAT",
+        "thermogenesis",
+        "mitochondria",
+        "adipose",
+        "dose-response"
+      ]
+    },
+    {
+      "id": "5g_bat2025",
+      "authors": "French group",
+      "year": 2025,
+      "title": "5G Radiofrequency Exposure Reduces PRDM16 and C/EBPbeta mRNA Expression, Two Key Biomarkers for Brown Adipogenesis",
+      "journal": "Int J Mol Sci",
+      "level": "E",
+      "finding": "3.5 GHz 5G exposure reduced PRDM16 by 49% and C/EBPbeta by 32% — key brown adipocyte differentiation markers. Age- and exposure-duration independent.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "5G",
+        "BAT",
+        "PRDM16",
+        "brown-adipogenesis",
+        "differentiation"
+      ]
+    },
+    {
+      "id": "prenatal_wifi2023",
+      "authors": "Various",
+      "year": 2023,
+      "title": "Prenatal WiFi exposure effects on body weight and behavior in rats",
+      "journal": "Various",
+      "level": "M",
+      "finding": "Prenatal WiFi exposure increased body weight and caused behavioral hyperactivity in male rats. Suggests metabolic programming.",
+      "pathway": [
+        "A",
+        "MET",
+        "D"
+      ],
+      "tags": [
+        "prenatal",
+        "WiFi",
+        "obesity",
+        "ADHD",
+        "metabolic-programming",
+        "rat"
+      ]
+    },
+    {
+      "id": "thyroid_rf2024",
+      "authors": "Various",
+      "year": 2024,
+      "title": "RF-EMF effects on thyroid-mediated metabolism",
+      "journal": "Various",
+      "level": "M",
+      "finding": "RF-EMF may affect metabolism through thyroid axis disruption, mediated via pituitary thyrotroph Cav3 channels affecting TSH secretion.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "thyroid",
+        "TSH",
+        "metabolism",
+        "Cav3",
+        "pituitary"
+      ]
+    },
+    {
+      "id": "pancreas_rf2018",
+      "authors": "Various",
+      "year": 2018,
+      "title": "EMF effects on pancreatic function",
+      "journal": "Various",
+      "level": "M",
+      "finding": "EMF exposure disrupts pancreatic beta-cell function and insulin secretion dynamics.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "pancreas",
+        "beta-cell",
+        "insulin",
+        "VGCC"
+      ]
+    },
+    {
+      "id": "chen2016_glia",
+      "authors": "Chen N et al.",
+      "year": 2016,
+      "title": "Direct modulation of GFAP-expressing glia in the arcuate nucleus bi-directionally regulates feeding",
+      "journal": "eLife",
+      "level": "E",
+      "finding": "Ca2+ activation of ARC glia increased AgRP/NPY neuron activity and food intake. Ca2+ disruption decreased food intake. Direct Ca2+ to appetite link.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "hypothalamus",
+        "ARC",
+        "glia",
+        "AgRP",
+        "appetite",
+        "calcium"
+      ]
+    },
+    {
+      "id": "yang2015_astro",
+      "authors": "Yang L et al.",
+      "year": 2015,
+      "title": "Astrocytes control food intake by inhibiting AGRP neuron activity via adenosine A1 receptors",
+      "journal": "Cell Reports",
+      "level": "E",
+      "finding": "Astrocyte stimulation in medial basal hypothalamus reduced ghrelin-evoked food intake via adenosine A1 receptor pathway.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "astrocyte",
+        "hypothalamus",
+        "appetite",
+        "ghrelin",
+        "adenosine"
+      ]
+    },
+    {
+      "id": "bhatt2012_glp1",
+      "authors": "Bhatt DK et al.",
+      "year": 2012,
+      "title": "Evidence That Ca2+ within the Microdomain of the L-Type VGCC Activates ERK in MIN6 Cells in Response to GLP-1",
+      "journal": "PLoS ONE",
+      "level": "E",
+      "finding": "GLP-1 activates ERK through L-type VGCC Ca2+ microdomain in beta-cells. Sustained ERK activation requires continual L-type VGCC activation.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "GLP-1",
+        "VGCC",
+        "L-type",
+        "ERK",
+        "beta-cell",
+        "insulin",
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "alpha2d1_glp1_2024",
+      "authors": "Harada N et al.",
+      "year": 2024,
+      "title": "VGCC alpha2delta-1 subunit regulates glucose-stimulated GLP-1 secretion",
+      "journal": "Am J Physiol Gastrointest Liver Physiol",
+      "level": "E",
+      "finding": "VGCC alpha2delta-1 is highly expressed in intestinal L-cells. Gabapentin (alpha2delta inhibitor) reduced GLP-1 secretion, confirming VGCC dependence.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "GLP-1",
+        "L-cell",
+        "intestine",
+        "alpha2delta",
+        "gabapentin",
+        "VGCC"
+      ]
+    },
+    {
+      "id": "nifedipine_weight2011",
+      "authors": "Matsui H et al.",
+      "year": 2011,
+      "title": "Nifedipine increases energy expenditure by increasing PGC-1alpha expression in skeletal muscle",
+      "journal": "Hypertension Research (Nature)",
+      "level": "E",
+      "finding": "Nifedipine (L-type VGCC blocker) decreased body weight gain ratio and white adipose tissue weight. Mechanism: PGC-1alpha upregulation in skeletal muscle.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "nifedipine",
+        "VGCC-blocker",
+        "weight-loss",
+        "PGC-1alpha",
+        "inverse-test"
+      ]
+    },
+    {
+      "id": "screentime_meta2022",
+      "authors": "Haghjoo P et al.",
+      "year": 2022,
+      "title": "Screen time increases overweight and obesity risk among adolescents: a systematic review and dose-response meta-analysis",
+      "journal": "BMC Primary Care",
+      "level": "E",
+      "finding": "44 studies: screen time OR 1.273 (95% CI 1.166-1.390) for overweight/obesity. Dose-response relationship confirmed.",
+      "pathway": [
+        "A",
+        "MET"
+      ],
+      "tags": [
+        "screen-time",
+        "obesity",
+        "meta-analysis",
+        "dose-response",
+        "adolescent"
+      ]
+    },
+    {
+      "id": "shiftwork_mets2025",
+      "authors": "Various",
+      "year": 2025,
+      "title": "Night-shift work and its association with metabolic syndrome",
+      "journal": "Various",
+      "level": "E",
+      "finding": "Night-shift work associated with metabolic syndrome OR 1.17 (95% CI 1.02-1.35). Melatonin, cortisol, thyroid and sex hormones all affected.",
+      "pathway": [
+        "B",
+        "C",
+        "MET"
+      ],
+      "tags": [
+        "shift-work",
+        "metabolic-syndrome",
+        "melatonin",
+        "circadian",
+        "meta-analysis"
+      ]
+    },
+    {
+      "id": "trumble2012",
+      "authors": "Trumble BC, Cummings D, von Rueden C, O'Connor KA, Smith EA, Gurven M, Kaplan H",
+      "year": 2012,
+      "title": "Physical competition increases testosterone among Amazonian forager-horticulturalists: a test of the 'challenge hypothesis'",
+      "journal": "Proceedings of the Royal Society B",
+      "type": "report",
+      "level": "E",
+      "pathway": [
+        "D"
+      ],
+      "finding": "Tsimane baseline T 33% lower than US men but does NOT decline with age. Normal reactivity to competition (30% boost). Absent age-decline in zero-EMF population.",
+      "tags": [
+        "testosterone",
+        "tsimane",
+        "no-emf",
+        "no-age-decline",
+        "reference-population",
+        "challenge-hypothesis"
+      ],
+      "verified": true,
+      "category": "reproduction_hormones",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1098/rspb.2012.0455"
+    },
+    {
+      "id": "saad2016",
+      "authors": "Saad F et al.",
+      "year": 2016,
+      "title": "Effects of long-term treatment with testosterone on weight and waist size in 411 hypogonadal men with obesity classes I-III",
+      "journal": "International Journal of Obesity",
+      "type": "report",
+      "level": "E",
+      "pathway": [
+        "D",
+        "MET"
+      ],
+      "finding": "T therapy produced weight loss up to 30 kg in class III obesity. Confirms bidirectional T-BMI causation: T suppression drives weight gain, not just the reverse.",
+      "tags": [
+        "testosterone",
+        "obesity",
+        "bidirectional-causation",
+        "trt",
+        "inverse-pharmacological",
+        "weight-loss"
+      ],
+      "verified": true,
+      "category": "reproduction_hormones",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": null
+    },
+    {
+      "id": "korea2026",
+      "authors": "Korean multi-hospital study",
+      "year": 2026,
+      "title": "Age-Related Testosterone Decline and Metabolic Determinants in 27,687 Korean Men",
+      "journal": "World Journal of Men's Health",
+      "type": "report",
+      "level": "E",
+      "pathway": [
+        "D"
+      ],
+      "finding": "Mean T = 480 ng/dL (n=27,687). Biochemical hypogonadism 5.5% (40-49y) to 11.6% (70+y). First large Korean T dataset.",
+      "tags": [
+        "testosterone",
+        "korea",
+        "hypogonadism",
+        "population-data"
+      ],
+      "verified": false,
+      "category": "reproduction_hormones",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.5534/wjmh.250369"
+    },
+    {
+      "id": "perheentupa2013",
+      "authors": "Perheentupa A et al.",
+      "year": 2013,
+      "title": "A cohort effect on serum testosterone levels in Finnish men",
+      "journal": "European Journal of Endocrinology",
+      "type": "report",
+      "level": "E",
+      "pathway": [
+        "A",
+        "C",
+        "D"
+      ],
+      "finding": "Birth cohort effect: later-born men have lower T. LH and FSH ALSO declined in later cohorts. 3,271 men, BMI-adjusted. Independent Finnish confirmation of Santi 2025 LH finding.",
+      "tags": [
+        "testosterone",
+        "LH",
+        "FSH",
+        "cohort-effect",
+        "finland",
+        "bmi-adjusted",
+        "secular-decline"
+      ],
+      "verified": true,
+      "category": "reproduction_hormones",
+      "pdf_section": null,
+      "pdf_number": null,
+      "doi": "10.1530/EJE-12-0288"
     }
   ]
 }

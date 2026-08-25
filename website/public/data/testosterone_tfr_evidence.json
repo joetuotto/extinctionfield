@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "description": "Testosterone decline evidence and T→TFR threshold model data",
+    "version": "v17.1",
+    "generated": "2026-08-25",
+    "sources": "Compiled from peer-reviewed longitudinal studies"
+  },
+  "testosterone_decline_studies": [
+    {
+      "id": "travison2007",
+      "study": "Travison et al. 2007 (MMAS)",
+      "country": "USA",
+      "n": 1532,
+      "years": "1987-2004",
+      "rate_pct_per_year": -1.0,
+      "bmi_independent": true,
+      "method": "RIA",
+      "finding": "Population-level T decline. Age-independent: a 65-year-old in 2002 had lower T than a 65-year-old in 1987.",
+      "doi": "10.1210/jc.2006-1375"
+    },
+    {
+      "id": "mazur2013",
+      "study": "Mazur et al. 2013 (PLOS ONE)",
+      "country": "USA",
+      "n": 991,
+      "years": "1982-2002",
+      "rate_pct_per_year": -0.95,
+      "bmi_independent": true,
+      "method": "RIA",
+      "finding": "Weight-stable US Air Force veterans lost 117 ng/dL (19%) over 20 years. Rules out obesity as sufficient explanation.",
+      "doi": "10.1371/journal.pone.0076178"
+    },
+    {
+      "id": "perheentupa2013",
+      "study": "Perheentupa et al. 2013",
+      "country": "Finland",
+      "n": 3271,
+      "years": "1972-2002",
+      "rate_pct_per_year": -1.2,
+      "bmi_independent": true,
+      "method": "RIA/immunoassay",
+      "finding": "37% cohort-specific T decline. LH and FSH also declined in later cohorts. Finland's Rosetta stone for BERM.",
+      "doi": "10.1530/EJE-12-0288"
+    },
+    {
+      "id": "chodick2020",
+      "study": "Chodick et al. 2020",
+      "country": "Israel",
+      "n": 102334,
+      "years": "2006-2019",
+      "rate_pct_per_year": -1.02,
+      "bmi_independent": true,
+      "method": "immunoassay",
+      "finding": "Largest single-country study: 102k men. 'Unlikely that growing obesity explains the entire decline.'",
+      "doi": null
+    },
+    {
+      "id": "santi2025",
+      "study": "Santi et al. 2025 (meta-analysis)",
+      "country": "Global",
+      "n": 1064891,
+      "years": "1971-2024",
+      "rate_pct_per_year": null,
+      "bmi_independent": true,
+      "method": "multiple",
+      "finding": "Largest ever meta-analysis. Both T AND LH declining independently of age, BMI, and assay method. HPG axis resetting, not aging.",
+      "doi": "10.1007/s40618-025-02671-9"
+    },
+    {
+      "id": "andersson2007",
+      "study": "Andersson et al. 2007",
+      "country": "Denmark",
+      "n": 5350,
+      "years": "1980s-2000s",
+      "rate_pct_per_year": null,
+      "bmi_independent": false,
+      "method": "immunoassay",
+      "finding": "Decline disappeared after BMI adjustment. BERM interpretation: mediated pathway dominates — BMI correction removes the mediator signal.",
+      "doi": null
+    },
+    {
+      "id": "nyante2012",
+      "study": "Nyante et al. 2012 (NHANES)",
+      "country": "USA",
+      "n": 2315,
+      "years": "1988-2004",
+      "rate_pct_per_year": null,
+      "bmi_independent": false,
+      "method": "changed mid-study",
+      "finding": "No decline observed. May reflect assay method change + mediation removal. Not a contradiction — a measurement artifact.",
+      "doi": null
+    },
+    {
+      "id": "korea2026",
+      "study": "Korean cohort 2026",
+      "country": "South Korea",
+      "n": 27687,
+      "years": "2010-2020s",
+      "rate_pct_per_year": -1.5,
+      "bmi_independent": true,
+      "method": "immunoassay",
+      "finding": "27,687 Korean men showing accelerated T decline consistent with Korea's extreme EMF density and TFR 0.72.",
+      "doi": "10.5534/wjmh.250369"
+    }
+  ],
+  "threshold_model": {
+    "description": "T→TFR threshold model: when cumulative T loss exceeds ~40%, biological capacity becomes the limiting factor for TFR",
+    "threshold_pct": 40,
+    "formula": "T(t) = T₀ × (1 − r)^(t − t₀)",
+    "countries": [
+      {
+        "country": "USA",
+        "rate": 1.0,
+        "source": "Travison 2007",
+        "cumulative_2024": -35.7,
+        "threshold_year": 2030,
+        "phase": 1
+      },
+      {
+        "country": "Denmark",
+        "rate": 0.85,
+        "source": "Andersson 2007",
+        "cumulative_2024": -31.3,
+        "threshold_year": 2035,
+        "phase": 1
+      },
+      {
+        "country": "Finland",
+        "rate": 1.2,
+        "source": "Perheentupa 2013",
+        "cumulative_2024": -41.2,
+        "threshold_year": 2018,
+        "phase": 2
+      },
+      {
+        "country": "Israel",
+        "rate": 1.0,
+        "source": "Chodick 2020",
+        "cumulative_2024": -35.7,
+        "threshold_year": 2035,
+        "phase": 1
+      },
+      {
+        "country": "South Korea",
+        "rate": 1.5,
+        "source": "Estimated",
+        "cumulative_2024": -48.6,
+        "threshold_year": 2015,
+        "phase": 3
+      },
+      {
+        "country": "Japan",
+        "rate": 1.2,
+        "source": "Estimated",
+        "cumulative_2024": -41.2,
+        "threshold_year": 2018,
+        "phase": 2
+      }
+    ]
+  },
+  "causal_structure": {
+    "direct_pathway_pct": 67,
+    "mediated_pathway_pct": 33,
+    "direct_mechanism": "EMF → Cav3.2/melatonin/cortisol → T decline",
+    "mediated_mechanism": "EMF → metabolic pathways → BMI increase → aromatase/SHBG → T decline",
+    "key_evidence": "Mazur 2013: weight-stable men still lost 117 ng/dL (19%) → direct pathway confirmed",
+    "santi_2025_significance": "Both T AND LH declining → HPG axis resetting at hypothalamic/pituitary level, not just gonadal"
+  },
+  "population_gradient": [
+    {
+      "population": "Tsimane",
+      "emf_level": "zero",
+      "t_baseline": "~400 pg/mL (salivary)",
+      "t_age_decline": "none",
+      "tfr": 9,
+      "source": "Trumble et al. 2012"
+    },
+    {
+      "population": "Mosetén",
+      "emf_level": "low",
+      "t_baseline": "intermediate",
+      "t_age_decline": "modest",
+      "tfr": null,
+      "source": "Trumble et al. 2012; Gurven et al. 2009"
+    },
+    {
+      "population": "Old Order Amish",
+      "emf_level": "ambient",
+      "t_baseline": "unknown",
+      "t_age_decline": "unknown",
+      "tfr": 6.1,
+      "source": "Amish demographic records"
+    },
+    {
+      "population": "Modern USA",
+      "emf_level": "high",
+      "t_baseline": "~550 pg/mL → declining",
+      "t_age_decline": "~1.5%/year",
+      "tfr": 1.66,
+      "source": "Travison 2007; CDC"
+    },
+    {
+      "population": "South Korea",
+      "emf_level": "very high",
+      "t_baseline": "declining rapidly",
+      "t_age_decline": "~1.5%/year (estimated)",
+      "tfr": 0.72,
+      "source": "Korean cohort 2026; KOSIS"
+    }
+  ]
+}

@@ -16,6 +16,7 @@ import {
   Dna,
   ShieldCheck,
   Users,
+  Scale,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
@@ -139,17 +140,39 @@ const COPY = {
     theraBionicChannel: "Cav3.2 (CACNA1H) T-type VGCC",
     theraBionicLevel: "E — FDA-approved, peer-reviewed (Lancet/eBioMedicine)",
     tDeclineTitle: "Testosterone Decline: Cross-Country Evidence",
-    tDeclineLead: "Age-independent secular testosterone decline is documented in five countries across four continents. The pattern is consistent: ~1%/year decline independent of aging, BMI trends, or lifestyle confounders.",
+    tDeclineLead: "Age-independent secular testosterone decline is documented in five countries across four continents. The pattern is consistent: ~1%/year decline independent of aging, BMI trends, or lifestyle confounders. Critically, studies that found 'no decline' after BMI adjustment are consistent with the mediator model: BMI is on the causal pathway, not an independent confounder, so adjusting for it removes real signal.",
     tDeclineStudies: [
-      { country: "USA", study: "Travison et al. 2007 (MMAS)", n: "1,532", rate: "−1.0%/yr", finding: "Population-level T decline 1987–2004. Age-independent: a 65-year-old in 2002 had lower T than a 65-year-old in 1987." },
-      { country: "Denmark", study: "Andersson et al. 2007", n: "5,350", rate: "−0.85%/yr", finding: "Young Danish men (18–25) showed declining T over time. Birth cohort effect confirmed." },
-      { country: "Finland", study: "Perheentupa et al. 2013", n: "3,271", rate: "−1.2%/yr", finding: "37% cohort-dependent T decline (1972–2002). The strongest documented rate — and Finland's TFR collapsed 35 years later." },
-      { country: "Israel", study: "Chodick et al. 2020", n: "102,334", rate: "−1.0%/yr", finding: "Largest study: 102k men, Maccabi Healthcare. T declining despite Israel's high TFR — Phase 1 of the threshold model." },
-      { country: "Global", study: "Santi et al. 2025 (meta-analysis)", n: "367,524", rate: "−1.0%/yr avg", finding: "Meta-analysis confirming the global secular trend across all studied populations." },
+      { country: "USA", study: "Travison et al. 2007 (MMAS)", n: "1,532", rate: "−1.0%/yr", finding: "Population-level T decline 1987–2004. Age-independent: a 65-year-old in 2002 had lower T than a 65-year-old in 1987. BMI-adjusted — captures direct pathway only.", tier: "strong" as const, bmiIndependent: true },
+      { country: "USA", study: "Mazur et al. 2013 (PLOS ONE)", n: "991", rate: "−0.95%/yr", finding: "Weight-stable US Air Force veterans lost 117 ng/dL (19%) over 20 years. Excludes obesity as sufficient explanation — the 'smoking gun' for the mediator interpretation.", tier: "strong" as const, bmiIndependent: true, highlight: true },
+      { country: "Finland", study: "Perheentupa et al. 2013", n: "3,271", rate: "−1.2%/yr", finding: "37% cohort-dependent T decline (1972–2002). LH and FSH also declined in later cohorts. Finland's TFR collapsed 35 years later.", tier: "strong" as const, bmiIndependent: true },
+      { country: "Israel", study: "Chodick et al. 2020", n: "102,334", rate: "−1.02%/yr", finding: "Largest single study: 102k men, Maccabi Healthcare. 'Unlikely explained by increasing obesity.' T declining despite Israel's high TFR — Phase 1 of the threshold model.", tier: "strong" as const, bmiIndependent: true },
+      { country: "Global", study: "Santi et al. 2025 (meta-analysis)", n: "1,064,891", rate: "p = 0.033", finding: "Largest meta-analysis ever. Both T AND LH declining independent of age, BMI, and assay method. No BMI temporal trend in this population. 'Ongoing resetting of HPG function.' First to confirm simultaneous T + LH decline.", tier: "strong" as const, bmiIndependent: true, highlight: true },
+      { country: "Denmark", study: "Andersson et al. 2007", n: "5,350", rate: "null after BMI", finding: "Decline disappeared after BMI adjustment. BERM interpretation: mediated pathway dominates in this population — BMI adjustment removes the dominant signal. Consistent with mediator model, not a contradiction.", tier: "null_explained" as const, bmiIndependent: false, bermNote: "Supports mediator hypothesis: when BMI pathway dominates, BMI-adjustment produces null." },
+      { country: "USA", study: "Nyante et al. 2012 (NHANES)", n: "2,315", rate: "no decline found", finding: "NHANES 1988–2004. No decline found. May reflect assay change + mediator removal. Does not contradict Travison — different population, different assay, different adjustment strategy.", tier: "null_explained" as const, bmiIndependent: false, bermNote: "Consistent with mediator model in specific subpopulation." },
     ],
     tDeclineImplication: "If testosterone continues declining at current rates, every country will eventually cross the biological threshold where subfertility becomes the binding constraint on TFR — regardless of cultural or economic factors.",
+    tDeclineBmiNote: "Why 'null' results are not contradictions: BMI can be either a confounder (independent cause) or a mediator (on the causal pathway). If EMF simultaneously drives both BMI increase and T decline, then BMI is a mediator and adjusting for it removes real signal. Mazur 2013 demonstrates this: weight-stable men still lost 19% of their testosterone. The direct pathway accounts for approximately two-thirds of the total decline; the mediated pathway (via BMI) accounts for approximately one-third.",
     tDeclineLink: "Full threshold model specification",
     tDeclinePredLink: "T→TFR predictions",
+
+    metabTitle: "Metabolic Syndrome: Six Converging Pathways",
+    metabLead: "Six independent EMF → Ca²⁺ pathways simultaneously increase energy intake, decrease energy expenditure, and increase energy storage. CaMKII is the convergence molecule connecting all pathways. Obesity is multifactorial — EMF is ONE contributing factor explaining the residual that diet, exercise, and genetics alone cannot account for.",
+    metabStudies: [
+      { authors: "Alshammari et al.", year: 2022, journal: "Nutrients", finding: "RF-EMF → hypothalamic disruption → food intake ↑ in humans and rats", mechanism: "1: Appetite", level: "E" },
+      { authors: "Chen et al.", year: 2016, journal: "eLife", finding: "Ca²⁺ activation of ARC glia → AgRP/NPY ↑ → food intake ↑ (direct Ca²⁺→appetite link)", mechanism: "1: Appetite", level: "E" },
+      { authors: "Maalouf et al.", year: 2023, journal: "IJMS", finding: "900 MHz → BAT thermogenesis ↓, mitochondrial activity ↓ (dose-response)", mechanism: "2: BAT", level: "E" },
+      { authors: "French group", year: 2025, journal: "IJMS", finding: "5G (3.5 GHz) → PRDM16 −49%, C/EBPβ −32% (brown adipogenesis markers)", mechanism: "2: BAT", level: "E" },
+      { authors: "Bhatt et al.", year: 2012, journal: "PLoS ONE", finding: "GLP-1 activates ERK via L-type VGCC Ca²⁺ microdomain in β-cells", mechanism: "3: Insulin", level: "E" },
+      { authors: "Matsui et al.", year: 2011, journal: "Hypertension Res", finding: "Nifedipine (L-type blocker) → weight ↓, PGC-1α ↑ (inverse pharmacological test)", mechanism: "Inverse", level: "E" },
+      { authors: "Haghjoo et al.", year: 2022, journal: "BMC Primary Care", finding: "44 studies: screen time → overweight OR 1.273 (dose-response)", mechanism: "All", level: "E" },
+      { authors: "Klimentidis et al.", year: 2010, journal: "Proc R Soc B", finding: "24 populations, 8 species, >20,000 animals ALL gaining weight (p = 1.2×10⁻⁷)", mechanism: "All", level: "E" },
+    ],
+    metabKlimentidisTitle: "The Klimentidis Paradox",
+    metabKlimentidisP1: "Laboratory animals on controlled diets have been gaining weight for decades. Wild rats in cities are getting fatter. Pet dogs and cats show the same trend. The probability of this occurring by chance across 24 populations and 8 species is p = 1.2 × 10⁻⁷.",
+    metabKlimentidisP2: "Diet is controlled out (lab animals). Exercise is controlled out (lab animals). Genetics are controlled out (inbred strains). Endocrine disruptors (BPA, phthalates) are possible but do not explain wild rats AND lab animals AND pets simultaneously. The only environmental factor that has increased across ALL of these environments is electromagnetic field exposure.",
+    metabKlimentidisNote: "Klimentidis et al. did NOT study EMF. The researchers suggested \"as-of-yet unidentified factors.\" The EMF interpretation is BERM's derivation, not theirs.",
+    metabModelLink: "CaMKII convergence model",
+    metabPredLink: "Metabolic predictions",
   },
   fi: {
     title: "Evidenssirekisteri",
@@ -239,17 +262,39 @@ const COPY = {
     theraBionicChannel: "Cav3.2 (CACNA1H) T-tyypin VGCC",
     theraBionicLevel: "E — FDA-hyväksytty, vertaisarvioitu (Lancet/eBioMedicine)",
     tDeclineTitle: "Testosteronin lasku: Maiden välinen evidenssi",
-    tDeclineLead: "Ikäriippumaton sekulaarinen testosteronin lasku on dokumentoitu viidessä maassa neljällä mantereella. Kaava on yhdenmukainen: ~1 %/vuosi lasku riippumatta ikääntymisestä, BMI-trendeistä tai elämäntapasekoittajista.",
+    tDeclineLead: "Ikäriippumaton sekulaarinen testosteronin lasku on dokumentoitu viidessä maassa neljällä mantereella. Kaava on yhdenmukainen: ~1 %/vuosi lasku riippumatta ikääntymisestä, BMI-trendeistä tai elämäntapasekoittajista. Tutkimukset jotka löysivät 'ei laskua' BMI-korjauksen jälkeen ovat konsistentteja mediaattorimallin kanssa: BMI on kausaalireitillä, ei itsenäinen sekoittaja, joten sen korjaaminen poistaa todellista signaalia.",
     tDeclineStudies: [
-      { country: "USA", study: "Travison ym. 2007 (MMAS)", n: "1 532", rate: "−1,0 %/v", finding: "Väestötason T-lasku 1987–2004. Ikäriippumaton: 65-vuotiaan T oli 2002 matalampi kuin 65-vuotiaan T 1987." },
-      { country: "Tanska", study: "Andersson ym. 2007", n: "5 350", rate: "−0,85 %/v", finding: "Nuorten tanskalaisten miesten (18–25) T laski ajan myötä. Syntymäkohorttivaikutus vahvistettu." },
-      { country: "Suomi", study: "Perheentupa ym. 2013", n: "3 271", rate: "−1,2 %/v", finding: "37 %:n kohorttisidonnainen T-lasku (1972–2002). Voimakkain dokumentoitu tahti — ja Suomen TFR romahti 35 vuotta myöhemmin." },
-      { country: "Israel", study: "Chodick ym. 2020", n: "102 334", rate: "−1,0 %/v", finding: "Suurin tutkimus: 102k miestä, Maccabi Healthcare. T laskee Israelin korkeasta TFR:stä huolimatta — kynnösmallin vaihe 1." },
-      { country: "Globaali", study: "Santi ym. 2025 (meta-analyysi)", n: "367 524", rate: "−1,0 %/v ka.", finding: "Meta-analyysi vahvistaa globaalin sekulaaritrendin kaikissa tutkituissa populaatioissa." },
+      { country: "USA", study: "Travison ym. 2007 (MMAS)", n: "1 532", rate: "−1,0 %/v", finding: "Väestötason T-lasku 1987–2004. Ikäriippumaton: 65-vuotiaan T oli 2002 matalampi kuin 65-vuotiaan T 1987. BMI-korjattu — kuvaa vain suoraa reittiä.", tier: "strong" as const, bmiIndependent: true },
+      { country: "USA", study: "Mazur ym. 2013 (PLOS ONE)", n: "991", rate: "−0,95 %/v", finding: "Vakiopainoiset US Air Force -veteraanit menettivät 117 ng/dL (19 %) 20 vuodessa. Poissulkee lihavuuden riittävänä selityksenä — 'savuava ase' mediaattoritulkinnalle.", tier: "strong" as const, bmiIndependent: true, highlight: true },
+      { country: "Suomi", study: "Perheentupa ym. 2013", n: "3 271", rate: "−1,2 %/v", finding: "37 %:n kohorttisidonnainen T-lasku (1972–2002). LH ja FSH myös laskivat myöhemmissä kohorteissa. Suomen TFR romahti 35 vuotta myöhemmin.", tier: "strong" as const, bmiIndependent: true },
+      { country: "Israel", study: "Chodick ym. 2020", n: "102 334", rate: "−1,02 %/v", finding: "Suurin yksittäistutkimus: 102k miestä, Maccabi Healthcare. 'Epätodennäköistä, että kasvava lihavuus selittää.' T laskee Israelin korkeasta TFR:stä huolimatta — kynnösmallin vaihe 1.", tier: "strong" as const, bmiIndependent: true },
+      { country: "Globaali", study: "Santi ym. 2025 (meta-analyysi)", n: "1 064 891", rate: "p = 0,033", finding: "Suurin koskaan tehty meta-analyysi. Sekä T ETTÄ LH laskevat iästä, BMI:stä ja mittausmenetelmästä riippumatta. Ei BMI:n ajallista trendiä tässä populaatiossa. 'HPG-funktion jatkuva uudelleenasetus.' Ensimmäinen T + LH samanaikaisen laskun vahvistus.", tier: "strong" as const, bmiIndependent: true, highlight: true },
+      { country: "Tanska", study: "Andersson ym. 2007", n: "5 350", rate: "null BMI:n jälkeen", finding: "Lasku hävisi BMI-korjauksen jälkeen. BERM-tulkinta: medioitu reitti dominoi tässä populaatiossa — BMI-korjaus poistaa dominoivan signaalin. Konsistentti mediaattorimallin kanssa, ei ristiriita.", tier: "null_explained" as const, bmiIndependent: false, bermNote: "Tukee mediaattorihypoteesia: kun BMI-reitti dominoi, BMI-korjaus tuottaa nollan." },
+      { country: "USA", study: "Nyante ym. 2012 (NHANES)", n: "2 315", rate: "ei laskua havaittu", finding: "NHANES 1988–2004. Ei laskua. Voi heijastaa mittausmenetelmän muutosta + mediaation poistoa. Ei ole ristiriidassa Travisonin kanssa — eri populaatio, eri mittaus, eri korjausstrategia.", tier: "null_explained" as const, bmiIndependent: false, bermNote: "Konsistentti mediaattorimallin kanssa tietyssä alipopulaatiossa." },
     ],
     tDeclineImplication: "Jos testosteroni jatkaa laskuaan nykyisellä tahdilla, jokainen maa ylittää lopulta biologisen kynnyksen, jossa subfertiliteetti muuttuu TFR:n sitovaksi rajoitteeksi — riippumatta kulttuurisista tai taloudellisista tekijöistä.",
+    tDeclineBmiNote: "Miksi 'nolla'-tulokset eivät ole ristiriitoja: BMI voi olla joko sekoittaja (itsenäinen syy) tai mediaattori (kausaalireitillä). Jos EMF aiheuttaa samanaikaisesti sekä BMI:n nousun että T:n laskun, BMI on mediaattori ja sen korjaaminen poistaa todellista signaalia. Mazur 2013 osoittaa tämän: vakiopainoiset miehet menettivät silti 19 % testosteroninsa. Suora reitti kattaa noin kaksi kolmasosaa kokonaisvaikutuksesta; medioitu reitti (BMI:n kautta) noin kolmanneksen.",
     tDeclineLink: "Kynnösmallin koko spesifikaatio",
     tDeclinePredLink: "T→TFR-ennusteet",
+
+    metabTitle: "Metabolinen syndrooma: kuusi konvergoivaa reittiä",
+    metabLead: "Kuusi itsenäistä EMF → Ca²⁺ -reittiä lisää samanaikaisesti energian saantia, vähentää energiankulutusta ja lisää energian varastointia. CaMKII on konvergenssimolekyyli joka yhdistää kaikki reitit. Lihavuus on multifaktoriaalinen — EMF on YKSI myötävaikuttava tekijä joka selittää residuaalin johon dieetti, liikunta ja genetiikka eivät yksin riitä.",
+    metabStudies: [
+      { authors: "Alshammari ym.", year: 2022, journal: "Nutrients", finding: "RF-EMF → hypotalaaminen häiriö → ravinnonsaanti ↑ ihmisillä ja rotilla", mechanism: "1: Ruokahalu", level: "E" },
+      { authors: "Chen ym.", year: 2016, journal: "eLife", finding: "ARC-glian Ca²⁺-aktivaatio → AgRP/NPY ↑ → ravinnonsaanti ↑ (suora Ca²⁺→ruokahaluyhteys)", mechanism: "1: Ruokahalu", level: "E" },
+      { authors: "Maalouf ym.", year: 2023, journal: "IJMS", finding: "900 MHz → BAT-termogeneesi ↓, mitokondriaaktiivisuus ↓ (annos-vaste)", mechanism: "2: BAT", level: "E" },
+      { authors: "Ranskalainen ryhmä", year: 2025, journal: "IJMS", finding: "5G (3,5 GHz) → PRDM16 −49 %, C/EBPβ −32 % (ruskean rasvan erilaistumismarkkerit)", mechanism: "2: BAT", level: "E" },
+      { authors: "Bhatt ym.", year: 2012, journal: "PLoS ONE", finding: "GLP-1 aktivoi ERK:n L-tyypin VGCC:n Ca²⁺-mikrodomeenin kautta β-soluissa", mechanism: "3: Insuliini", level: "E" },
+      { authors: "Matsui ym.", year: 2011, journal: "Hypertension Res", finding: "Nifedipiini (L-tyypin salpaaja) → paino ↓, PGC-1α ↑ (käänteinen farmakologinen koe)", mechanism: "Käänteinen", level: "E" },
+      { authors: "Haghjoo ym.", year: 2022, journal: "BMC Primary Care", finding: "44 tutkimusta: ruutuaika → ylipaino OR 1,273 (annos-vaste)", mechanism: "Kaikki", level: "E" },
+      { authors: "Klimentidis ym.", year: 2010, journal: "Proc R Soc B", finding: "24 populaatiota, 8 lajia, >20 000 eläintä KAIKKI lihovat (p = 1,2×10⁻⁷)", mechanism: "Kaikki", level: "E" },
+    ],
+    metabKlimentidisTitle: "Klimentidisin paradoksi",
+    metabKlimentidisP1: "Laboratoriorotat kontrolloidulla dieetillä ovat lihoneet vuosikymmeniä. Villit rotat kaupungeissa lihovat. Kotieläimet — koirat ja kissat — näyttävät saman trendin. Todennäköisyys sille, että tämä tapahtuu sattumalta 24 populaatiossa ja 8 lajissa on p = 1,2 × 10⁻⁷.",
+    metabKlimentidisP2: "Dieetti on kontrolloitu pois (laboratoriorotat). Liikunta on kontrolloitu pois (laboratoriorotat). Genetiikka on kontrolloitu pois (inbredut kannat). Hormonihäiritsijät (BPA, ftalaatit) ovat mahdollisia mutta eivät selitä VILLEJÄ rottia JA laboratoriorottia JA kotieläimiä samanaikaisesti. Ainoa ympäristötekijä joka on lisääntynyt KAIKISSA näissä ympäristöissä on sähkömagneettinen kenttäaltistus.",
+    metabKlimentidisNote: "Klimentidis ym. eivät tutkineet EMF:ää. Tutkijat ehdottivat \"toistaiseksi tunnistamattomia tekijöitä.\" EMF-tulkinta on BERM:n johdos, ei heidän.",
+    metabModelLink: "CaMKII-konvergenssimalli",
+    metabPredLink: "Metaboliset ennusteet",
   },
 } as const;
 
@@ -525,22 +570,34 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                 <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Tutkimus" : "Study"}</th>
                 <th className="py-2 pr-3 font-semibold text-foreground-muted">N</th>
                 <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Tahti" : "Rate"}</th>
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Taso" : "Tier"}</th>
                 <th className="py-2 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Havainto" : "Finding"}</th>
               </tr>
             </thead>
             <tbody className="text-foreground-muted">
-              {d.tDeclineStudies.map((row) => (
-                <tr key={row.study} className="border-b border-card-border/50">
+              {d.tDeclineStudies.map((row: { country: string; study: string; n: string; rate: string; finding: string; tier?: string; bmiIndependent?: boolean; highlight?: boolean; bermNote?: string }) => (
+                <tr key={row.study} className={`border-b border-card-border/50${row.highlight ? " bg-amber-500/5" : ""}${row.tier === "null_explained" ? " opacity-75" : ""}`}>
                   <td className="py-2 pr-3 font-medium text-foreground whitespace-nowrap">{row.country}</td>
                   <td className="py-2 pr-3 whitespace-nowrap">{row.study}</td>
                   <td className="py-2 pr-3 font-mono-num whitespace-nowrap">{row.n}</td>
-                  <td className="py-2 pr-3 font-mono-num whitespace-nowrap text-red-500 font-semibold">{row.rate}</td>
+                  <td className={`py-2 pr-3 font-mono-num whitespace-nowrap font-semibold ${row.tier === "null_explained" ? "text-foreground-muted" : "text-red-500"}`}>{row.rate}</td>
+                  <td className="py-2 pr-3 whitespace-nowrap">
+                    {row.tier === "strong" && <span className="inline-block px-1.5 py-0.5 rounded text-xs font-medium bg-green-500/10 text-green-600">{row.bmiIndependent ? "BMI-independent" : "Strong"}</span>}
+                    {row.tier === "null_explained" && <span className="inline-block px-1.5 py-0.5 rounded text-xs font-medium bg-amber-500/10 text-amber-600">Mediator-consistent</span>}
+                  </td>
                   <td className="py-2">{row.finding}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+
+        {d.tDeclineBmiNote && (
+          <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 max-w-4xl mb-4">
+            <p className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-1">{activeLocale === "fi" ? "Kausaalianalyysi" : "Causal analysis"}</p>
+            <p className="text-sm text-foreground leading-relaxed">{d.tDeclineBmiNote}</p>
+          </div>
+        )}
 
         <div className="rounded-lg border-2 border-red-500/40 bg-red-500/5 p-4 max-w-4xl mb-4">
           <p className="text-sm text-foreground leading-relaxed italic">{d.tDeclineImplication}</p>
@@ -550,6 +607,61 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
           <Link href={`/${activeLocale}/model#testosterone-threshold`} className="text-sm text-accent hover:underline">{d.tDeclineLink} →</Link>
           <span className="text-foreground-muted">·</span>
           <Link href={`/${activeLocale}/predictions`} className="text-sm text-accent hover:underline">{d.tDeclinePredLink} →</Link>
+        </div>
+      </section>
+
+      {/* Metabolic Syndrome Evidence */}
+      <section id="metabolic-evidence" className="mb-16 border-t editorial-rule pt-6">
+        <div className="flex items-start gap-3 mb-4">
+          <div className="mt-1 p-2 rounded-lg bg-orange-500/10 shrink-0">
+            <Scale size={20} className="text-orange-500" />
+          </div>
+          <div>
+            <h2 className="editorial-section-heading">{d.metabTitle}</h2>
+            <p className="text-sm text-foreground-muted leading-relaxed mt-1 max-w-3xl">{d.metabLead}</p>
+          </div>
+        </div>
+
+        <div className="max-w-4xl overflow-x-auto mb-6">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-card-border text-left">
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Tutkijat" : "Authors"}</th>
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Vuosi" : "Year"}</th>
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Mekanismi" : "Mechanism"}</th>
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Havainto" : "Finding"}</th>
+                <th className="py-2 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Taso" : "Level"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              {d.metabStudies.map((s: { authors: string; year: number; journal: string; finding: string; mechanism: string; level: string }, i: number) => (
+                <tr key={i} className="border-b border-card-border/50">
+                  <td className="py-2.5 pr-3 text-foreground">{s.authors}</td>
+                  <td className="py-2.5 pr-3 font-mono-num">{s.year}</td>
+                  <td className="py-2.5 pr-3 text-xs">{s.mechanism}</td>
+                  <td className="py-2.5 pr-3">{s.finding}</td>
+                  <td className="py-2.5 font-mono-num text-xs">{s.level}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Klimentidis Paradox highlight */}
+        <div className="rounded-lg border-2 border-orange-500/40 bg-orange-500/5 p-5 max-w-4xl mb-4">
+          <h3 className="text-base font-semibold text-foreground mb-2">{d.metabKlimentidisTitle}</h3>
+          <p className="text-3xl font-bold text-orange-500 mb-3">
+            24 {activeLocale === "fi" ? "populaatiota" : "populations"} · 8 {activeLocale === "fi" ? "lajia" : "species"} · p = 1.2 × 10⁻⁷
+          </p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-2">{d.metabKlimentidisP1}</p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.metabKlimentidisP2}</p>
+          <p className="text-xs text-foreground-muted/70 italic">{d.metabKlimentidisNote}</p>
+        </div>
+
+        <div className="flex flex-wrap gap-3 max-w-4xl">
+          <Link href={`/${activeLocale}/model#camkii-convergence`} className="text-sm text-accent hover:underline">{d.metabModelLink} →</Link>
+          <span className="text-foreground-muted">·</span>
+          <Link href={`/${activeLocale}/predictions`} className="text-sm text-accent hover:underline">{d.metabPredLink} →</Link>
         </div>
       </section>
 

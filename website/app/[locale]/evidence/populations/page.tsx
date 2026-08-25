@@ -66,6 +66,23 @@ const COPY = {
     ],
     gradientPunchline:
       "Same genes. Same region. Same base diet. Different technology. Different health. On every variable.",
+    tProfileKicker: "TESTOSTERONE PROFILE",
+    tProfileTitle: "Tsimane: testosterone does not decline with age",
+    tProfileLead: "If testosterone decline were biological inevitability, it should appear in every population. It does not. Tsimane men show no age-related testosterone decline despite 33% lower baseline levels — a natural experiment against the 'aging' explanation.",
+    tProfileBaseline: "Baseline",
+    tProfileAgeDecline: "Age decline",
+    tProfileReactivity: "Reactivity",
+    tProfileImplication: "Implication",
+    tProfileParadox: "Paradox: by age 60, Tsimane men may have HIGHER testosterone than American men — despite starting 33% lower. The American trajectory (declining ~1.5%/year from a higher baseline) crosses the Tsimane level (stable) around age 55.",
+    tGradientKicker: "TESTOSTERONE GRADIENT",
+    tGradientTitle: "Tsimane → Mosetén → USA: dose-response in testosterone aging",
+    tGradientLead: "Three populations sharing Amazonian ancestry but differing in technology adoption show a testosterone trajectory gradient that tracks EMF exposure — not genetics, diet, or latitude.",
+    tGradientRows: [
+      { pop: "Tsimane", emf: "Zero", baseline: "~400 pg/mL (salivary)", decline: "None", trajectory: "Flat across age" },
+      { pop: "Mosetén", emf: "Low", baseline: "Intermediate", decline: "Modest", trajectory: "Slight decline with age" },
+      { pop: "Modern USA", emf: "High", baseline: "~550 pg/mL → declining", decline: "~1.5%/year", trajectory: "Steep decline; crosses Tsimane by ~55" },
+    ],
+    tGradientNote: "This gradient controls for the strongest confounders: Tsimane and Mosetén share ancestry, geography, and subsistence base. Technology adoption is the primary variable that differs — and testosterone trajectory follows it.",
     s4Kicker: "SECTION 4",
     s4Title: "Myopia Gradient",
     s4Text: [
@@ -173,6 +190,23 @@ const COPY = {
     ],
     gradientPunchline:
       "Samat geenit. Sama alue. Sama perusruokavalio. Eri teknologia. Eri terveys. Jokaisessa muuttujassa.",
+    tProfileKicker: "TESTOSTERONIPROFIILI",
+    tProfileTitle: "Tsimane: testosteroni ei laske iän myötä",
+    tProfileLead: "Jos testosteronin lasku olisi biologinen väistämättömyys, sen pitäisi ilmetä jokaisessa populaatiossa. Ei ilmene. Tsimane-miehillä ei ole ikään liittyvää testosteronilaskua 33 % matalammasta lähtötasosta huolimatta — luonnollinen koe 'ikääntymis'-selitystä vastaan.",
+    tProfileBaseline: "Lähtötaso",
+    tProfileAgeDecline: "Ikälasku",
+    tProfileReactivity: "Reaktiivisuus",
+    tProfileImplication: "Merkitys",
+    tProfileParadox: "Paradoksi: 60-vuotiaana Tsimane-miesten testosteroni voi olla KORKEAMPI kuin amerikkalaismiesten — vaikka he aloittavat 33 % matalammalta. Amerikkalainen laskusuunta (~1,5 %/v korkeammasta lähtötasosta) leikkaa Tsimane-tason (vakio) noin 55 vuoden iässä.",
+    tGradientKicker: "TESTOSTERONIGRADIENTTI",
+    tGradientTitle: "Tsimane → Mosetén → USA: annos-vaste testosteronin ikääntymisessä",
+    tGradientLead: "Kolme populaatiota, jotka jakavat amazonialaisen syntyperän mutta eroavat teknologian omaksumisessa, osoittavat testosteronitrajektorigradienttia joka seuraa EMF-altistusta — ei genetiikkaa, ruokavaliota tai leveysastetta.",
+    tGradientRows: [
+      { pop: "Tsimane", emf: "Nolla", baseline: "~400 pg/mL (sylki)", decline: "Ei", trajectory: "Tasainen iän yli" },
+      { pop: "Mosetén", emf: "Matala", baseline: "Välitaso", decline: "Maltillinen", trajectory: "Lievä lasku iän myötä" },
+      { pop: "Moderni USA", emf: "Korkea", baseline: "~550 pg/mL → laskussa", decline: "~1,5 %/v", trajectory: "Jyrkkä lasku; leikkaa Tsimanen ~55 v" },
+    ],
+    tGradientNote: "Tämä gradientti kontrolloi vahvimmat sekoittavat tekijät: Tsimane ja Mosetén jakavat syntyperän, maantieteen ja elinkeinopohjan. Teknologian omaksuminen on ensisijainen muuttuja joka eroaa — ja testosteronitrajektoria seuraa sitä.",
     s4Kicker: "OSIO 4",
     s4Title: "Likitaitteisuusgradientti",
     s4Text: [
@@ -429,6 +463,82 @@ export default async function PopulationsPage({
         <p className="text-sm font-semibold text-foreground italic text-center">
           {d.gradientPunchline}
         </p>
+      </section>
+
+      {/* Section 3b: Tsimane testosterone profile */}
+      {(() => {
+        const tsimane = LOW_EMF_POPULATIONS.find((p) => p.id === "tsimane");
+        const tp = tsimane?.testosteroneProfile;
+        if (!tp) return null;
+        return (
+          <section className="mb-16 border-t editorial-rule pt-6">
+            <p className="editorial-kicker text-purple-500 mb-2">{d.tProfileKicker}</p>
+            <h2 className="editorial-section-heading mb-4">{d.tProfileTitle}</h2>
+            <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">{d.tProfileLead}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mb-6">
+              <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-4">
+                <p className="text-xs font-semibold text-purple-500 mb-1">{d.tProfileBaseline}</p>
+                <p className="text-sm text-foreground leading-relaxed">{isFi ? tp.baselineFi : tp.baselineEn}</p>
+              </div>
+              <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-4">
+                <p className="text-xs font-semibold text-green-600 mb-1">{d.tProfileAgeDecline}</p>
+                <p className="text-sm text-foreground leading-relaxed font-semibold">{isFi ? tp.ageDeclineFi : tp.ageDeclineEn}</p>
+              </div>
+              <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-4">
+                <p className="text-xs font-semibold text-blue-500 mb-1">{d.tProfileReactivity}</p>
+                <p className="text-sm text-foreground leading-relaxed">{isFi ? tp.reactivityFi : tp.reactivityEn}</p>
+              </div>
+              <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4">
+                <p className="text-xs font-semibold text-amber-500 mb-1">{d.tProfileImplication}</p>
+                <p className="text-sm text-foreground-muted leading-relaxed">{isFi ? tp.implicationFi : tp.implicationEn}</p>
+              </div>
+            </div>
+            <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 max-w-4xl">
+              <p className="text-xs text-foreground-muted leading-relaxed italic">{d.tProfileParadox}</p>
+            </div>
+            <p className="text-xs text-foreground-muted mt-3">{tp.source}</p>
+          </section>
+        );
+      })()}
+
+      {/* Section 3c: Testosterone gradient Tsimane → Mosetén → USA */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <p className="editorial-kicker text-purple-500 mb-2">{d.tGradientKicker}</p>
+        <h2 className="editorial-section-heading mb-4">{d.tGradientTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">{d.tGradientLead}</p>
+        <div className="rounded-xl border border-card-border bg-card-bg p-5 max-w-4xl mb-4">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                  <th className="py-2 pr-3">{isFi ? "Populaatio" : "Population"}</th>
+                  <th className="py-2 pr-3">EMF</th>
+                  <th className="py-2 pr-3">{isFi ? "Lähtötaso" : "Baseline"}</th>
+                  <th className="py-2 pr-3">{isFi ? "Lasku" : "Decline"}</th>
+                  <th className="py-2">{isFi ? "Trajektoria" : "Trajectory"}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.tGradientRows.map((row: { pop: string; emf: string; baseline: string; decline: string; trajectory: string }, i: number) => (
+                  <tr key={i} className="border-b border-card-border/40">
+                    <td className="py-2 pr-3 font-medium text-foreground">{row.pop}</td>
+                    <td className="py-2 pr-3">
+                      <span className={`text-xs px-1.5 py-0.5 rounded ${i === 0 ? "bg-green-500/10 text-green-600 dark:text-green-400" : i === 1 ? "bg-amber-500/10 text-amber-600 dark:text-amber-400" : "bg-red-500/10 text-red-600 dark:text-red-400"}`}>
+                        {row.emf}
+                      </span>
+                    </td>
+                    <td className="py-2 pr-3 font-mono-num text-foreground">{row.baseline}</td>
+                    <td className="py-2 pr-3 font-mono-num text-foreground">{row.decline}</td>
+                    <td className="py-2 text-foreground-muted">{row.trajectory}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="rounded-lg border border-purple-500/20 bg-purple-500/5 p-4 max-w-4xl">
+          <p className="text-xs text-foreground-muted leading-relaxed italic">{d.tGradientNote}</p>
+        </div>
       </section>
 
       {/* Section 4: Myopia gradient */}

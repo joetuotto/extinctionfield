@@ -52,17 +52,17 @@ const COPY = {
   en: {
     heroTitle: "Something is happening to fertility",
     heroDeck: "Human sperm counts, testosterone and birth rates are falling worldwide. Bee colonies, bird populations and amphibians are declining on the same timeline. No single conventional explanation accounts for the breadth, simultaneity and cross-species convergence of these trends.",
-    whatIsThis: "This site documents the Bio-Electromagnetic Reproductive Model (BERM) — a falsifiable research model that investigates whether non-thermal electromagnetic field exposure contributes to global fertility decline. BERM traces three frequency channels (ELF, IF, RF) through established biophysical mechanisms to reproductive endpoints. Every claim is bounded by epistemic level, every prediction is locked with a falsification criterion, and every negative finding is catalogued. This is not advocacy — it is an open research framework designed to be tested and, if wrong, to fail visibly.",
+    whatIsThis: "This site documents the Bio-Electromagnetic Reproductive Model (BERM) — a falsifiable research model that investigates whether non-thermal electromagnetic field exposure contributes to global fertility decline. BERM traces three frequency channels (ELF, IF, RF) through established biophysical mechanisms to reproductive endpoints. Every claim is assigned an epistemic level, every prediction is locked with a falsification criterion, and every negative finding is catalogued. This is not advocacy — it is an open research framework designed to be tested and, if wrong, to fail visibly.",
 
     s1Title: "THE NUMBERS",
 
     impactGrid: [
-      { stat: "5.0 → 2.2", label: "Global TFR since 1960 — decline is accelerating" },
-      { stat: "−62%", label: "Sperm concentration (Levine 2023, 223 studies)" },
-      { stat: "−1.2%/yr", label: "Testosterone decline, age-independent (Travison 2007)" },
-      { stat: "49", label: "Countries below replacement TFR 1.4" },
-      { stat: "$200B", label: "Korea pronatalism spending → TFR still dropped to 0.72" },
-      { stat: "TFR 6.1 vs 1.66", label: "Amish vs US fertility — communities without smartphones" },
+      { stat: "5.0 → 2.2", label: "Global TFR since 1960 — decline is accelerating", href: "/explore" },
+      { stat: "−62%", label: "Sperm concentration (Levine 2023, 223 studies)", href: "/model#causal-diagram" },
+      { stat: "−1.2%/yr", label: "Testosterone decline, age-independent (Travison 2007)", href: "/model#testosterone-threshold" },
+      { stat: "49", label: "Countries below replacement TFR 1.4", href: "/explore" },
+      { stat: "$200B", label: "Korea pronatalism spending → TFR still dropped to 0.72", href: "/model#testosterone-threshold" },
+      { stat: "TFR 6.1 vs 1.66", label: "Amish vs US fertility — communities without smartphones", href: "/evidence/populations" },
     ],
 
     sentinelCta: "All sentinels",
@@ -94,6 +94,17 @@ const COPY = {
     warningCaveat: "Testosterone decline rates are age-independent secular trends documented in peer-reviewed longitudinal studies across five countries. TFR projections assume continuation of current rates. The threshold model is calibrated against Finland and South Korea; other country projections are extrapolations.",
     warningReadMore: "Read the full threshold model specification",
 
+    mazurQuote: "We have not identified the reason for secular decline in testosterone, but we exclude increasing obesity as a sufficient or primary explanation, and we dispute the assumption that men who avoid excessive weight gain will maintain their youthful testosterone levels.",
+    mazurSource: "Mazur et al. 2013, PLOS ONE",
+    mazurContext: "991 US Air Force veterans, 20-year follow-up. Even weight-stable men lost 19% of their testosterone.",
+    mazurLink: "Read the causal analysis",
+
+    klimentidisLabel: "THE KLIMENTIDIS PARADOX",
+    klimentidisTitle: "Even lab animals are getting fatter",
+    klimentidisText: "Laboratory rats on controlled diets, wild rats, pet dogs and cats — all gaining weight across decades. 24 populations, 8 species, p = 1.2 × 10⁻⁷. BERM identifies EMF as the only environmental factor increasing across all these environments simultaneously.",
+    klimentidisNote: "Klimentidis et al. (2010) did not study EMF. They suggested \"as-of-yet unidentified factors.\" The EMF interpretation is BERM's derivation.",
+    klimentidisLink: "Read the metabolic cascade",
+
     teaserLabel: "LOCKED PREDICTIONS · TFR 2030",
     teaserNote: "Locked under BERM v17 and falsifiable: each will be compared against observed data in the stated year.",
     allPredictions: "All predictions",
@@ -117,17 +128,17 @@ const COPY = {
   fi: {
     heroTitle: "Jotain tapahtuu hedelmällisyydelle",
     heroDeck: "Ihmisen siittiömäärät, testosteroni ja syntyvyys laskevat maailmanlaajuisesti. Mehiläisyhdyskunnat, lintupopulaatiot ja sammakkoeläimet vähenevät samalla aikajanalla. Mikään yksittäinen tavanomainen selitys ei kata näiden trendien laajuutta, samanaikaisuutta ja lajienvälisyyttä.",
-    whatIsThis: "Tämä sivusto dokumentoi Bio-Electromagnetic Reproductive Model (BERM) -tutkimusmallin — falsifioitavan tutkimuskehikon, joka tutkii vaikuttaako ei-terminen sähkömagneettinen kenttäaltistus globaaliin hedelmällisyyden laskuun. BERM jäljittää kolme taajuuskanavaa (ELF, IF, RF) tunnettujen biofysikaalisten mekanismien kautta lisääntymisen päätepisteisiin. Jokainen väite on rajattu episteemisellä tasolla, jokainen ennuste on lukittu kumoamisehdolla, ja jokainen negatiivinen löydös on katalogissa. Tämä ei ole kannanotto — se on avoin tutkimuskehys, joka on suunniteltu testattavaksi ja, jos väärässä, epäonnistumaan näkyvästi.",
+    whatIsThis: "Tämä sivusto dokumentoi Bio-Electromagnetic Reproductive Model (BERM) -tutkimusmallin — falsifioitavan tutkimuskehikon, joka tutkii vaikuttaako ei-terminen sähkömagneettinen kenttäaltistus globaaliin hedelmällisyyden laskuun. BERM jäljittää kolme taajuuskanavaa (ELF, IF, RF) tunnettujen biofysikaalisten mekanismien kautta lisääntymisen päätepisteisiin. Jokaiselle väitteelle on määritetty episteeminen taso, jokainen ennuste on lukittu kumoamisehdolla, ja jokainen negatiivinen löydös on katalogissa. Tämä ei ole kannanotto — se on avoin tutkimuskehys, joka on suunniteltu testattavaksi ja, jos väärässä, epäonnistumaan näkyvästi.",
 
     s1Title: "LUVUT",
 
     impactGrid: [
-      { stat: "5,0 → 2,2", label: "Globaali TFR vuodesta 1960 — lasku kiihtyy" },
-      { stat: "−62 %", label: "Siittiökonsentraatio (Levine 2023, 223 tutkimusta)" },
-      { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton (Travison 2007)" },
-      { stat: "49", label: "Maata alle korvaavuustason TFR 1,4" },
-      { stat: "200 mrd $", label: "Korean pronatalismi → TFR silti 0,72" },
-      { stat: "TFR 6,1 vs 1,66", label: "Amissit vs USA — yhteisöt ilman älypuhelimia" },
+      { stat: "5,0 → 2,2", label: "Globaali TFR vuodesta 1960 — lasku kiihtyy", href: "/explore" },
+      { stat: "−62 %", label: "Siittiökonsentraatio (Levine 2023, 223 tutkimusta)", href: "/model#causal-diagram" },
+      { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton (Travison 2007)", href: "/model#testosterone-threshold" },
+      { stat: "49", label: "Maata alle korvaavuustason TFR 1,4", href: "/explore" },
+      { stat: "200 mrd $", label: "Korean pronatalismi → TFR silti 0,72", href: "/model#testosterone-threshold" },
+      { stat: "TFR 6,1 vs 1,66", label: "Amissit vs USA — yhteisöt ilman älypuhelimia", href: "/evidence/populations" },
     ],
 
     sentinelCta: "Kaikki sentinellit",
@@ -158,6 +169,17 @@ const COPY = {
     warningNarrative: "Suomen testosteronitasot alkoivat laskea 1970-luvulla. 40 vuoden ajan hedelmällisyys pysyi vakaana. Sitten se romahti: 1,87 lasta naista kohden (2010) → 1,26 (2024) — 33 %:n pudotus viidessätoista vuodessa. Testosteronidata olisi ennustanut tämän 15 vuotta etukäteen. Sama data ennustaa nyt Yhdysvalloille samaa noin vuodelle 2030.",
     warningCaveat: "Testosteronin laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä jotka on dokumentoitu vertaisarvioiduissa pitkittäistutkimuksissa viidessä maassa. TFR-ennusteet olettavat nykyisten vauhtien jatkumisen. Kynnösmalli on kalibroitu Suomen ja Etelä-Korean datalla; muiden maiden ennusteet ovat ekstrapolointeja.",
     warningReadMore: "Lue koko kynnösmallin spesifikaatio",
+
+    mazurQuote: "Emme ole tunnistaneet syytä testosteronin sekulaarilaskuun, mutta suljemme pois kasvavan lihavuuden riittävänä tai ensisijaisena selityksenä, ja kiistämme oletuksen, jonka mukaan miehet jotka välttävät liiallista painonnousua säilyttävät nuoruutensa testosteronitasot.",
+    mazurSource: "Mazur ym. 2013, PLOS ONE",
+    mazurContext: "991 US Air Force -veteraania, 20 vuoden seuranta. Vakiopainoiset miehet menettivät 19 % testosteroninsa.",
+    mazurLink: "Lue kausaalianalyysi",
+
+    klimentidisLabel: "KLIMENTIDISIN PARADOKSI",
+    klimentidisTitle: "Jopa laboratoriorotat lihovat",
+    klimentidisText: "Laboratoriorotat kontrolloidulla dieetillä, villit rotat, kotieläimet — koirat ja kissat — kaikki lihovat vuosikymmenestä toiseen. 24 populaatiota, 8 lajia, p = 1,2 × 10⁻⁷. BERM tunnistaa EMF:n ainoaksi ympäristötekijäksi joka on lisääntynyt kaikissa näissä ympäristöissä samanaikaisesti.",
+    klimentidisNote: "Klimentidis ym. (2010) eivät tutkineet EMF:ää. He ehdottivat \"toistaiseksi tunnistamattomia tekijöitä.\" EMF-tulkinta on BERM:n johdos.",
+    klimentidisLink: "Lue metabolinen kaskadi",
 
     teaserLabel: "LUKITUT ENNUSTEET · TFR 2030",
     teaserNote: "Lukittu BERM v17:lla ja falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna.",
@@ -235,12 +257,14 @@ export default async function Home({
           {d.impactGrid.map((item, i) => {
             const Icon = SPARKLINE_ICONS[i];
             return (
-              <article key={item.stat} className="rounded-xl border border-card-border bg-card-bg p-5 flex flex-col">
-                <Icon size={22} className="text-accent/50 mb-3" strokeWidth={1.5} aria-hidden="true" />
-                <p className="font-mono-num text-2xl font-semibold text-accent leading-tight">{item.stat}</p>
-                <p className="text-[0.8125rem] text-foreground-muted mt-2 leading-snug flex-1">{item.label}</p>
-                <Sparkline data={SPARKLINE_DATA[i]} index={i} />
-              </article>
+              <Link key={item.stat} href={`${prefix}${item.href}`} className="group">
+                <article className="rounded-xl border border-card-border bg-card-bg p-5 flex flex-col h-full transition-colors group-hover:border-accent/50 group-hover:bg-accent/5">
+                  <Icon size={22} className="text-accent/50 mb-3" strokeWidth={1.5} aria-hidden="true" />
+                  <p className="font-mono-num text-2xl font-semibold text-accent leading-tight">{item.stat}</p>
+                  <p className="text-[0.8125rem] text-foreground-muted mt-2 leading-snug flex-1">{item.label}</p>
+                  <Sparkline data={SPARKLINE_DATA[i]} index={i} />
+                </article>
+              </Link>
             );
           })}
         </div>
@@ -344,6 +368,44 @@ export default async function Home({
             className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover mt-4"
           >
             {d.warningReadMore} <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
+
+      {/* ── 4e2. Mazur quote ── */}
+      <section className="pb-14">
+        <div className="max-w-3xl">
+          <blockquote className="border-l-4 border-amber-500/50 pl-5 py-3">
+            <p className="text-base sm:text-lg text-foreground italic leading-relaxed mb-3">&ldquo;{d.mazurQuote}&rdquo;</p>
+            <footer className="text-sm text-foreground-muted">
+              <cite className="not-italic font-medium">{d.mazurSource}</cite>
+              <span className="block text-xs mt-1">{d.mazurContext}</span>
+            </footer>
+          </blockquote>
+          <Link
+            href={`${prefix}/model#causal-structure`}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover mt-3"
+          >
+            {d.mazurLink} <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
+
+      {/* ── 4f. Klimentidis Paradox ── */}
+      <section className="pb-20">
+        <div className="max-w-4xl rounded-xl border border-orange-500/30 bg-orange-500/5 p-6 sm:p-8">
+          <p className="text-xs uppercase tracking-wider text-orange-500 font-semibold mb-2">{d.klimentidisLabel}</p>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.klimentidisTitle}</h2>
+          <p className="text-3xl font-bold text-orange-500 mb-4">
+            24 {activeLocale === "fi" ? "populaatiota" : "populations"} · 8 {activeLocale === "fi" ? "lajia" : "species"} · p = 1.2 × 10⁻⁷
+          </p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.klimentidisText}</p>
+          <p className="text-xs text-foreground-muted/70 italic mb-4">{d.klimentidisNote}</p>
+          <Link
+            href={`${prefix}/model#camkii-convergence`}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+          >
+            {d.klimentidisLink} <ArrowRight size={14} />
           </Link>
         </div>
       </section>

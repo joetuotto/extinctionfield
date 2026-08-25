@@ -361,6 +361,44 @@ const COPY = {
     nutritionalFalsification: "Falsification criterion",
     nutritionalLocked: "Locked: 2026-08-24",
     nutritionalStatus: "LOCKED — awaiting test",
+    metabTitle: "Metabolic syndrome predictions",
+    metabLead: "Predictions derived from the six-pathway EMF → metabolic syndrome model. CaMKII convergence predicts that obesity, diabetes, and energy metabolism disruption share a common upstream cause testable through shielding, pharmacology, and epidemiology. Obesity is multifactorial — these predictions test whether EMF is a contributing factor, not whether it is the sole cause.",
+    metabPredictions: [
+      {
+        id: "METAB-1",
+        title: "Faraday-shielded laboratory animals weigh less than unshielded controls",
+        description: "Identical diet, identical genetics, identical temperature — only difference is EMF environment. Predicted: shielded animals weigh 5-15% less after 6 months. Based on Klimentidis paradox (24 populations, 8 species ALL gaining weight, p = 1.2×10⁻⁷) and BAT thermogenesis mechanism (Maalouf 2023, 5G BAT 2025). This is the single most discriminating test for the EMF-metabolic hypothesis.",
+        timeline: "1-3 years (experimental, requires shielded facility)",
+        falsification: "No weight difference after 12 months under identical conditions",
+        critical: true,
+      },
+      {
+        id: "METAB-2",
+        title: "CaMKII inhibition attenuates EMF-induced weight gain in rodents",
+        description: "KN-93 or AIP (CaMKII inhibitors) administered to EMF-exposed rodents should reduce weight gain, BAT dysfunction, and insulin resistance compared to EMF-exposed untreated controls. CaMKII is the convergence molecule connecting EMF sensitivity (Cav3.2 threshold shift), BAT thermogenesis (UCP1 transcription), testosterone (StAR expression), and insulin secretion (β-cell Ca²⁺ dynamics). If CaMKII convergence is real, its inhibition should attenuate multiple metabolic endpoints simultaneously.",
+        timeline: "1-2 years (experimental, rodent model)",
+        falsification: "CaMKII inhibition has no effect on EMF-induced metabolic changes",
+      },
+      {
+        id: "METAB-3",
+        title: "Semaglutide efficacy correlates with ambient EMF level",
+        description: "If EMF disrupts the L-type VGCC → Ca²⁺ → ERK pathway that GLP-1/semaglutide amplifies (Bhatt 2012, PMC3556522), then semaglutide should be MORE effective in high-EMF populations (more pathway disruption to correct) but show diminishing returns as EMF increases beyond a threshold (overwhelms correction capacity). This is a SPECULATIVE prediction — mechanistically derived but no clinical data yet. Evidence level: L*.",
+        timeline: "3-5 years (clinical data mining from existing RCTs)",
+        falsification: "No correlation between EMF environment and semaglutide efficacy",
+      },
+      {
+        id: "METAB-4",
+        title: "Obesity prevalence in low-EMF communities remains <10% through 2035",
+        description: "Old Order Amish, Tsimane, Hadza, and comparable low-EMF communities will maintain obesity rates below 10% regardless of dietary modernization, as long as EMF exposure remains low. The Tsimane currently show <5% obesity; Kitava ~0%. If EMF is a contributing factor, these populations should remain lean even as processed food access increases — provided their EMF environment doesn't change.",
+        timeline: "9 years (longitudinal observation)",
+        falsification: "Low-EMF community obesity rises above 15% without significant EMF adoption",
+      },
+    ],
+    metabTimeline: "Timeline",
+    metabFalsification: "Falsification criterion",
+    metabLocked: "Locked: 2026-08-25",
+    metabStatus: "LOCKED — awaiting test",
+
     trpc1Title: "Pharmacological pathway separation predictions",
     trpc1Lead: "Predictions testing the independence of pathway A (VGCC) and pathway C's TRPC1 calcium branch. The CRY2-TRPC1 complex (Yap et al. 2025) predicts that EMF reproductive effects can be pharmacologically decomposed into VGCC-dependent and TRPC1-dependent components.",
     trpc1Predictions: [
@@ -710,6 +748,41 @@ const COPY = {
         id: "T-TFR-5",
         title: "T decline rate predicts TFR change better than GDP or education",
         description: "Cross-national regression: T decline rate (age-independent secular trend) predicts TFR change better than GDP, education, or urbanization alone. Testable with existing data from USA, Denmark, Finland, Israel and pending Asian studies. Falsification: GDP or education explain >80% of TFR variance after controlling for T decline.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+    ],
+
+    causalTitle: "Causal structure predictions",
+    causalLead: "Predictions derived from the BMI-as-mediator causal analysis and HPG resetting evidence. These test the specific causal pathways BERM proposes.",
+    causalNote: "These predictions test the causal STRUCTURE of the model — not its magnitude. They are falsifiable by formal mediation analysis and cross-country endocrine data.",
+    causalLocked: "Locked: 2026-08-25",
+    causalStatus: "LOCKED — awaiting test",
+    causalPredictions: [
+      {
+        id: "CAUS-1",
+        title: "BMI mediation accounts for 25–40% of total T decline",
+        description: "Formal mediation analysis (Baron & Kenny or SEM) on longitudinal T data with concurrent BMI: indirect effect via BMI = 25–40% of total effect. Based on Mazur 2013 quantification (117/175 ng/dL = 67% direct). Falsification: mediation analysis shows <10% or >60% indirect effect via BMI.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "CAUS-2",
+        title: "Faraday-shielded men show neither T decline nor BMI increase",
+        description: "If EMF drives both T decline and BMI increase, then men in EMF-shielded environments should show attenuation of BOTH trends. Testable in occupational cohorts (submarine crews, shielded facilities). Falsification: shielded cohort shows same T decline rate as unshielded.",
+        discriminating: true,
+        critical: true,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "CAUS-3",
+        title: "LH decline rate correlates with EMF-proxy across countries",
+        description: "Santi 2025 found global LH decline. BERM predicts this is Route C/D mediated. Countries with higher EMF-proxy (residential electricity, broadband penetration) should show steeper LH decline. Testable with country-level LH data + EMF-proxy. Falsification: no correlation between EMF-proxy and LH decline rate.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -1112,6 +1185,44 @@ const COPY = {
     nutritionalFalsification: "Falsifikaatiokriteeri",
     nutritionalLocked: "Lukittu: 2026-08-24",
     nutritionalStatus: "LUKITTU — odottaa testiä",
+    metabTitle: "Metabolisen syndrooman ennusteet",
+    metabLead: "Kuuden reitin EMF → metabolinen syndrooma -mallista johdetut ennusteet. CaMKII-konvergenssi ennustaa, että lihavuus, diabetes ja energiametabolian häiriö jakavat yhteisen ylävirran syyn, joka on testattavissa suojauksen, farmakologian ja epidemiologian avulla. Lihavuus on multifaktoriaalinen — nämä ennusteet testaavat onko EMF myötävaikuttava tekijä, ei onko se ainoa syy.",
+    metabPredictions: [
+      {
+        id: "METAB-1",
+        title: "Faraday-suojatut laboratoriorotat painavat vähemmän kuin suojaamattomat kontrollit",
+        description: "Identtinen dieetti, identtinen genetiikka, identtinen lämpötila — ainoa ero on EMF-ympäristö. Ennuste: suojatut eläimet painavat 5-15 % vähemmän 6 kuukauden jälkeen. Perustuu Klimentidisin paradoksiin (24 populaatiota, 8 lajia KAIKKI lihovat, p = 1,2×10⁻⁷) ja BAT-termogeneesimekanismiin (Maalouf 2023, 5G BAT 2025). Tämä on yksittäisesti erottelevin koe EMF-metaboliahypoteesille.",
+        timeline: "1-3 vuotta (kokeellinen, vaatii suojatun tilan)",
+        falsification: "Ei painoeroa 12 kuukauden jälkeen identtisissä olosuhteissa",
+        critical: true,
+      },
+      {
+        id: "METAB-2",
+        title: "CaMKII-inhibitio vaimentaa EMF-indusoitua painonnousua jyrsijöillä",
+        description: "KN-93 tai AIP (CaMKII-inhibiittorit) EMF-altistetuille jyrsijöille tulisi vähentää painonnousua, BAT-dysfunktiota ja insuliiniresistenssiä verrattuna EMF-altistettuihin hoitamattomiin kontrolleihin. CaMKII on konvergenssimolekyyli joka yhdistää EMF-herkkyyden (Cav3.2-kynnyksen siirtymä), BAT-termogeneesin (UCP1-transkriptio), testosteronin (StAR-ekspressio) ja insuliinierityksen (β-solun Ca²⁺-dynamiikka). Jos CaMKII-konvergenssi on todellinen, sen inhibitio vaimentaa useita metabolisia päätetapahtumia samanaikaisesti.",
+        timeline: "1-2 vuotta (kokeellinen, jyrsijämalli)",
+        falsification: "CaMKII-inhibitio ei vaikuta EMF-indusoituihin metabolisiin muutoksiin",
+      },
+      {
+        id: "METAB-3",
+        title: "Semaglutidin teho korreloi ympäristön EMF-tason kanssa",
+        description: "Jos EMF häiritsee L-tyypin VGCC → Ca²⁺ → ERK -reittiä jota GLP-1/semaglutidi vahvistaa (Bhatt 2012, PMC3556522), semaglutidin tulisi olla TEHOKKAAMPI korkean EMF:n populaatioissa (enemmän reittihaäiriötä korjattavaksi) mutta näyttää laskevia tuottoja EMF:n ylittäessä kynnyksen. Tämä on SPEKULATIIVINEN ennuste — mekanistisesti johdettu mutta kliinistä dataa ei vielä ole. Evidenssitaso: L*.",
+        timeline: "3-5 vuotta (olemassa olevien RCT:iden data-analyysi)",
+        falsification: "Ei korrelaatiota EMF-ympäristön ja semaglutiditehon välillä",
+      },
+      {
+        id: "METAB-4",
+        title: "Matalan EMF:n yhteisöjen lihavuusprevalenssi pysyy <10 % vuoteen 2035",
+        description: "Vanhojen ammattikuntien amissit, tsimane, hadza ja vastaavat matalan EMF:n yhteisöt ylläpitävät lihavuuslukuja alle 10 % riippumatta ruokavalion modernisoitumisesta, kunhan EMF-altistus pysyy matalana. Tsimaneilla on tällä hetkellä <5 % lihavuus; Kitavalla ~0 %. Jos EMF on myötävaikuttava tekijä, nämä populaatiot pysyvät laihoina prosessoidun ruoan saatavuuden kasvaessakin — edellyttäen ettei EMF-ympäristö muutu.",
+        timeline: "9 vuotta (pitkittäisseuranta)",
+        falsification: "Matalan EMF:n yhteisön lihavuus nousee yli 15 % ilman merkittävää EMF-adoptiota",
+      },
+    ],
+    metabTimeline: "Aikataulu",
+    metabFalsification: "Falsifikaatiokriteeri",
+    metabLocked: "Lukittu: 2026-08-25",
+    metabStatus: "LUKITTU — odottaa testiä",
+
     trpc1Title: "Farmakologiset polkujen erotusennusteet",
     trpc1Lead: "Ennusteet jotka testaavat polku A:n (VGCC) ja polku C:n TRPC1-kalsiumhaaran riippumattomuutta. CRY2-TRPC1-kompleksi (Yap ym. 2025) ennustaa, että EMF:n reproduktiovaikutukset voidaan farmakologisesti jakaa VGCC-riippuvaisiin ja TRPC1-riippuvaisiin komponentteihin.",
     trpc1Predictions: [
@@ -1468,6 +1579,41 @@ const COPY = {
       },
     ],
 
+    causalTitle: "Kausaalirakenteen ennusteet",
+    causalLead: "Ennusteet jotka perustuvat BMI-mediaattori-kausaalianalyysiin ja HPG-uudelleenasetuksen evidenssiin. Nämä testaavat BERM:n ehdottamia spesifisiä kausaalireittejä.",
+    causalNote: "Nämä ennusteet testaavat mallin kausaaliRAKENNETTA — eivät sen suuruusluokkaa. Ne ovat falsifioitavissa formaalilla mediaatioanalyysilla ja maiden välisellä endokriinidatalla.",
+    causalLocked: "Lukittu: 2026-08-25",
+    causalStatus: "LUKITTU — odottaa testiä",
+    causalPredictions: [
+      {
+        id: "CAUS-1",
+        title: "BMI-mediaatio kattaa 25–40 % T:n kokonaislaskusta",
+        description: "Formaali mediaatioanalyysi (Baron & Kenny tai SEM) pitkittäis-T-datalla samanaikaisilla BMI-mittauksilla: epäsuora vaikutus BMI:n kautta = 25–40 % kokonaisvaikutuksesta. Perustuu Mazur 2013 kvantifiointiin (117/175 ng/dL = 67 % suora). Falsifikaatio: mediaatioanalyysi osoittaa <10 % tai >60 % epäsuora vaikutus BMI:n kautta.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "CAUS-2",
+        title: "Faradayn häkillä suojatut miehet eivät osoita T-laskua eivätkä BMI-nousua",
+        description: "Jos EMF ajaa sekä T-laskua että BMI-nousua, EMF-suojatuissa ympäristöissä olevien miesten tulisi osoittaa MOLEMPIEN trendien vaimentumista. Testattavissa ammatillisissa kohorteissa (sukellusveneen miehistöt, suojatut tilat). Falsifikaatio: suojattu kohortti osoittaa saman T-laskutahdin kuin suojaamaton.",
+        discriminating: true,
+        critical: true,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "CAUS-3",
+        title: "LH:n laskutahti korreloi EMF-proxyn kanssa maiden välillä",
+        description: "Santi 2025 löysi globaalin LH-laskun. BERM ennustaa tämän olevan reitti C/D -välitteistä. Maissa joissa korkeampi EMF-proxy (asuinrakennusten sähköistys, laajakaistapenetraatio) tulisi olla jyrkempi LH-lasku. Testattavissa maatason LH-datalla + EMF-proxylla. Falsifikaatio: ei korrelaatiota EMF-proxyn ja LH:n laskutahdin välillä.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+    ],
+
     popTitle: "Populaatiovertailun ennusteet",
     popLead: "Ennusteet jotka perustuvat 9 matalan EMF:n populaation systemaattiseen vertailuun moderneihin populaatioihin. Nämä testaavat seuraako havaittu terveysgradientti EMF-altistusta BERM:n ennusteiden mukaisesti.",
     popPredictions: [
@@ -1795,6 +1941,40 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
+      {/* Metabolic syndrome predictions METAB-1 to METAB-4 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.metabTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.metabLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.metabPredictions.map((mp: { id: string; title: string; description: string; timeline: string; falsification: string; critical?: boolean }) => (
+            <article key={mp.id} className={`rounded-xl border bg-card-bg p-5 ${mp.critical ? "border-orange-500/50" : "border-card-border"}`}>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{mp.id}</span>
+                    <h3 className="font-semibold">{mp.title}</h3>
+                    {mp.critical && (
+                      <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-500 border border-orange-500/30">
+                        CRITICAL
+                      </span>
+                    )}
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.metabStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{mp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.metabTimeline}:</span> {mp.timeline}</p>
+                <p><span className="font-semibold">{d.metabFalsification}:</span> {mp.falsification}</p>
+                <p className="font-mono-num">{d.metabLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {/* Pharmacological pathway separation predictions TRPC1-1 */}
       <section className="mb-14 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">{d.trpc1Title}</h2>
@@ -2043,6 +2223,47 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               <p className="text-sm text-foreground-muted leading-relaxed mb-3">{tp.description}</p>
               <div className="space-y-1 text-xs text-foreground-muted">
                 <p className="font-mono-num">{d.tTfrLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Causal structure predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.causalTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-4xl">{d.causalLead}</p>
+        <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.causalNote}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.causalPredictions.map((cp: { id: string; title: string; description: string; discriminating: boolean; critical: boolean; level: string; verified: boolean }) => (
+            <article key={cp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{cp.id}</span>
+                    <h3 className="font-semibold">{cp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.causalStatus}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent/10 text-accent border border-accent/20">{cp.level}</span>
+                    {cp.critical && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 font-semibold">
+                        {d.tTfrCritical}
+                      </span>
+                    )}
+                    {cp.discriminating && !cp.critical && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">
+                        {d.tTfrDiscriminating}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{cp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p className="font-mono-num">{d.causalLocked}</p>
               </div>
             </article>
           ))}

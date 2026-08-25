@@ -171,6 +171,16 @@ const t: Record<Locale, Copy> = {
         boundary: "No single cross-country pattern establishes dominance of one environmental cause. V2 must earn any attribution through discriminating data.",
       },
       {
+        question: "Danish and NHANES studies found no BMI-independent decline",
+        response: [
+          "This interpretation assumes BMI is a confounder (independent cause). BERM's causal model treats BMI as a mediator: EMF simultaneously causes both BMI increase (via six metabolic pathways) and testosterone decline (via direct Cav3.2/melatonin/cortisol pathways). BMI adjustment then removes the mediated signal — an overcorrection that discards real biological effect.",
+          "Mazur et al. 2013 (PLOS ONE, n = 991 US Air Force veterans, 20-year follow-up) provides the critical test: men who MAINTAINED THEIR WEIGHT still lost 117 ng/dL (19%) of their testosterone over 20 years. Obesity cannot explain this decline. The direct pathway accounts for approximately two-thirds of the total effect; the mediated pathway (via BMI) accounts for approximately one-third.",
+          "Santi et al. 2025 (n = 1,064,891, the largest meta-analysis ever conducted) found no BMI temporal trend in their study population, yet testosterone declined significantly. Rising obesity is not the driver in this dataset.",
+          "Klimentidis et al. 2010 (Proc R Soc B) showed that laboratory animals on CONTROLLED diets gained weight over decades (p = 1.2×10⁻⁷). An environmental factor beyond diet drives weight gain — the same factor may simultaneously drive testosterone decline through the mediated pathway.",
+        ],
+        boundary: "The mediator interpretation is testable via formal mediation analysis (Baron & Kenny or SEM) on longitudinal datasets with concurrent T and BMI measurements. If the indirect effect via BMI is less than 10% of the total effect, the mediator model is weakened.",
+      },
+      {
         question: "What would move the model from structure to a result?",
         response: [
           "A measurement-ready FieldState needs documented calibration, B₀ vector, organ transfer, PSD, circadian context, phase/coherence and provenance. It must then be joined to a pre-specified organ or couple endpoint with evidence- and parameter-linked mappings.",
@@ -395,6 +405,16 @@ const t: Record<Locale, Copy> = {
           "Hyödyllinen testi mittaa tai suunnittelee uskottavien yhteisaltisteiden ympärille, vertailee vaihtoehtoisia kausaalimalleja ja raportoi, miten päätelmä muuttuu, kun ne sisällytetään.",
         ],
         boundary: "Yksittäinen maidenvälinen kuvio ei osoita yhden ympäristösyyn hallitsevuutta. V2:n on ansaittava attribuutio erottavalla datalla.",
+      },
+      {
+        question: "Tanskalaiset ja NHANES-tutkimukset eivät löytäneet BMI-riippumatonta laskua",
+        response: [
+          "Tämä tulkinta olettaa BMI:n olevan sekoittaja (itsenäinen syy). BERM:n kausaalimalli käsittelee BMI:tä mediaattorina: EMF aiheuttaa samanaikaisesti sekä BMI:n nousun (kuuden metabolisen reitin kautta) että testosteronin laskun (suorasti Cav3.2/melatoniini/kortisoli-reittien kautta). BMI-korjaus poistaa medioidun signaalin — ylikorjaus joka hävittää todellista biologista vaikutusta.",
+          "Mazur ym. 2013 (PLOS ONE, n = 991 US Air Force -veteraania, 20 vuoden seuranta) tarjoaa kriittisen testin: miehet jotka PITIVÄT PAINONSA VAKIONA menettivät silti 117 ng/dL (19 %) testosteroninsa 20 vuodessa. Lihavuus ei voi selittää tätä laskua. Suora reitti kattaa noin kaksi kolmasosaa kokonaisvaikutuksesta; medioitu reitti (BMI:n kautta) noin kolmanneksen.",
+          "Santi ym. 2025 (n = 1 064 891, suurin koskaan tehty meta-analyysi) ei havainnut BMI:n ajallista trendiä tutkimuspopulaatiossaan, mutta testosteroni laski merkitsevästi. Kasvava lihavuus ei ole ajuri tässä aineistossa.",
+          "Klimentidis ym. 2010 (Proc R Soc B) osoittivat, että laboratorieläimet KONTROLLOIDUILLA ruokavalioilla lihoivat vuosikymmenten kuluessa (p = 1,2×10⁻⁷). Ruokavalion ulkopuolinen ympäristötekijä ajaa painonnousua — sama tekijä voi samanaikaisesti ajaa testosteronin laskua medioidun reitin kautta.",
+        ],
+        boundary: "Mediaattoritulkinta on testattavissa formaalilla mediaatioanalyysilla (Baron & Kenny tai SEM) pitkittäisaineistoilla joissa on samanaikaiset T- ja BMI-mittaukset. Jos BMI:n epäsuora vaikutus on alle 10 % kokonaisvaikutuksesta, mediaattorimalli heikkenee.",
       },
       {
         question: "Mikä siirtäisi mallin rakenteesta tulokseksi?",
