@@ -25,6 +25,10 @@ const COPY = {
     thresholdYear: "Threshold year",
     phase: "Phase",
     tfr2024: "TFR 2024",
+    tTfrTitle: "T-Loss vs TFR: the correlation",
+    tTfrSubtitle: "Each dot is a country-year. X-axis: cumulative testosterone loss from 1970 baseline. Y-axis: observed TFR. The 40% threshold is where TFR begins accelerating downward.",
+    tTfrXLabel: "Cumulative T-loss (%)",
+    tTfrYLabel: "TFR",
     caveat:
       "T decline rates are age-independent secular trends. Korean and Japanese rates are estimates (*). The 40% threshold is calibrated against Finnish and Korean data.",
   },
@@ -44,6 +48,10 @@ const COPY = {
     thresholdYear: "Kynnysvuosi",
     phase: "Vaihe",
     tfr2024: "TFR 2024",
+    tTfrTitle: "T-menetys vs TFR: korrelaatio",
+    tTfrSubtitle: "Jokainen piste on maa-vuosi. X-akseli: kumulatiivinen testosteronimenetys 1970 lähtötasosta. Y-akseli: havaittu TFR. 40 %:n kynnys on kohta jossa TFR alkaa kiihtyä alaspäin.",
+    tTfrXLabel: "Kumulatiivinen T-menetys (%)",
+    tTfrYLabel: "TFR",
     caveat:
       "T-laskuprosentit ovat ikäriippumattomia sekulaaritrendejä. Korean ja Japanin arvot ovat arvioita (*). 40 %:n kynnysarvo on kalibroitu suomalaisella ja korealaisella datalla.",
   },
@@ -389,8 +397,79 @@ export function ThresholdExplorer({ locale }: { locale: string }) {
         </table>
       </div>
 
+      {/* T-Loss vs TFR scatter */}
+      {(() => {
+        const S_W = 720;
+        const S_H = 400;
+        const S_PAD = { top: 32, right: 32, bottom: 56, left: 56 };
+        const S_CW = S_W - S_PAD.left - S_PAD.right;
+        const S_CH = S_H - S_PAD.top - S_PAD.bottom;
+        const X_MIN = 0;
+        const X_MAX = 55;
+        const Y_MIN = 0;
+        const Y_MAX = 5;
+
+        function scx(loss: number) {
+          return S_PAD.left + (loss / X_MAX) * S_CW;
+        }
+        function scy(tfr: number) {
+          return S_PAD.top + S_CH - ((tfr - Y_MIN) / (Y_MAX - Y_MIN)) * S_CH;
+        }
+
+        const dots: { x: number; y: number; color: string; label: string }[] = [];
+        for (const country of selectedCountries) {
+          for (const pt of country.tfrHistory) {
+            const elapsed = pt.year - T0_YEAR;
+            if (elapsed < 0) continue;
+            const tLoss = 100 - computeTIndex(pt.year, T0_YEAR, country.tDeclinePct);
+            dots.push({ x: tLoss, y: pt.tfr, color: country.color, label: `${lang === "fi" ? country.nameFi : country.nameEn} ${pt.year}` });
+          }
+        }
+
+        const xTicks = [0, 10, 20, 30, 40, 50];
+        const yTicks = [0, 1, 2, 3, 4, 5];
+
+        return (
+          <div className="mt-8 pt-6 border-t" style={{ borderColor: "var(--card-border)" }}>
+            <h3 className="text-lg font-semibold" style={{ color: "var(--foreground)" }}>
+              {t.tTfrTitle}
+            </h3>
+            <p className="text-sm mt-1 mb-4" style={{ color: "var(--foreground-muted)" }}>
+              {t.tTfrSubtitle}
+            </p>
+            <div className="overflow-x-auto">
+              <svg viewBox={`0 0 ${S_W} ${S_H}`} className="w-full min-w-[600px]" role="img" aria-label={t.tTfrTitle}>
+                {yTicks.map(val => (
+                  <g key={`y-${val}`}>
+                    <line x1={S_PAD.left} y1={scy(val)} x2={S_W - S_PAD.right} y2={scy(val)} stroke="var(--card-border)" strokeWidth={0.5} />
+                    <text x={S_PAD.left - 8} y={scy(val) + 4} textAnchor="end" fill="var(--foreground-muted)" fontSize={10}>{val}</text>
+                  </g>
+                ))}
+                {xTicks.map(val => (
+                  <g key={`x-${val}`}>
+                    <line x1={scx(val)} y1={S_PAD.top} x2={scx(val)} y2={S_PAD.top + S_CH} stroke="var(--card-border)" strokeWidth={0.5} />
+                    <text x={scx(val)} y={S_PAD.top + S_CH + 20} textAnchor="middle" fill="var(--foreground-muted)" fontSize={10}>{val}%</text>
+                  </g>
+                ))}
+                <line x1={scx(40)} y1={S_PAD.top} x2={scx(40)} y2={S_PAD.top + S_CH} stroke="#EF4444" strokeWidth={1.5} strokeDasharray="6 4" />
+                <text x={scx(40) + 4} y={S_PAD.top + 12} fill="#EF4444" fontSize={9} fontWeight={600}>40%</text>
+                {dots.map((dot, i) => (
+                  <circle key={i} cx={scx(dot.x)} cy={scy(dot.y)} r={4} fill={dot.color} opacity={0.75}>
+                    <title>{dot.label}: T-loss {dot.x.toFixed(1)}%, TFR {dot.y.toFixed(2)}</title>
+                  </circle>
+                ))}
+                <line x1={S_PAD.left} y1={S_PAD.top} x2={S_PAD.left} y2={S_PAD.top + S_CH} stroke="var(--card-border)" strokeWidth={1} />
+                <line x1={S_PAD.left} y1={S_PAD.top + S_CH} x2={S_W - S_PAD.right} y2={S_PAD.top + S_CH} stroke="var(--card-border)" strokeWidth={1} />
+                <text x={S_PAD.left - 8} y={S_PAD.top - 12} fill="var(--foreground-muted)" fontSize={10} fontWeight={600}>{t.tTfrYLabel}</text>
+                <text x={S_W - S_PAD.right} y={S_PAD.top + S_CH + 42} textAnchor="end" fill="var(--foreground-muted)" fontSize={10} fontWeight={600}>{t.tTfrXLabel}</text>
+              </svg>
+            </div>
+          </div>
+        );
+      })()}
+
       <p
-        className="text-xs leading-relaxed"
+        className="text-xs leading-relaxed mt-4"
         style={{ color: "var(--foreground-muted)" }}
       >
         {t.caveat}
