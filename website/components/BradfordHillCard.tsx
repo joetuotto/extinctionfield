@@ -101,7 +101,7 @@ const COPY = {
     total: "Total",
     strongestEvidence: "Strongest evidence",
     explanation:
-      "BERM scores higher overall than both tobacco (at the time of the Surgeon General's report) and BPA (at the time regulatory action began). Its strongest areas are biological plausibility (the mechanism is known at atomic resolution and FDA-validated) and analogy (four independent parallel lines of evidence). Its weakest area is specificity — but this is a predicted feature of calcium biology, not a model failure.",
+      "BERM scores higher overall than both tobacco (at the time of the Surgeon General's report) and bisphenol A (at the time regulatory action began). Its strongest areas are biological plausibility (the mechanism is known at atomic resolution and FDA-validated) and analogy (four independent parallel lines of evidence). Its weakest area is specificity — but this is a predicted feature of calcium biology, not a model failure.",
     disclaimer:
       "These scores represent our assessment. Readers are encouraged to evaluate each criterion independently.",
     cta: "Read the full Bradford Hill analysis",
@@ -117,7 +117,7 @@ const COPY = {
     total: "Yhteensä",
     strongestEvidence: "Vahvin todiste",
     explanation:
-      "BERM saa korkeamman kokonaispistemäärän kuin tupakka (Surgeon Generalin raportin aikaan) ja BPA (regulatorisen toiminnan alkaessa). Sen vahvimmat alueet ovat biologinen uskottavuus (mekanismi tunnetaan atomitasolla ja on FDA-validoitu) ja analogia (neljä itsenäistä rinnakkaista todistelinjaa). Sen heikoin alue on spesifisyys — mutta tämä on kalsiumbiologian ennustettu ominaisuus, ei mallin epäonnistuminen.",
+      "BERM saa korkeamman kokonaispistemäärän kuin tupakka (Surgeon Generalin raportin aikaan) ja bisfenoli A (regulatorisen toiminnan alkaessa). Sen vahvimmat alueet ovat biologinen uskottavuus (mekanismi tunnetaan atomitasolla ja on FDA-validoitu) ja analogia (neljä itsenäistä rinnakkaista todistelinjaa). Sen heikoin alue on spesifisyys — mutta tämä on kalsiumbiologian ennustettu ominaisuus, ei mallin epäonnistuminen.",
     disclaimer:
       "Nämä pisteet ovat meidän arviomme. Lukijoita kannustetaan arvioimaan jokainen kriteeri itsenäisesti.",
     cta: "Lue koko Bradford Hill -analyysi",
@@ -168,7 +168,7 @@ export function BradfordHillCard({ locale, prefix }: { locale: string; prefix: s
               <div>{d.criterion}</div>
               <div className="text-center font-semibold text-accent">BERM</div>
               <div className="text-center">{d.tobacco}</div>
-              <div className="text-center">BPA</div>
+              <div className="text-center">Bisphenol A</div>
             </div>
 
             <div className="space-y-0.5">

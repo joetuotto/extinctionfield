@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { ClipboardList, Orbit, Zap, Dna, Microscope, Brain, Bug, Radio, BookOpen } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Reference, ReferenceCategory, ReferenceData } from "@/lib/references";
-import { categoryName, levelLabel, loadReferences } from "@/lib/references";
+import { categoryName, levelLabel, loadReferences, referenceUrl } from "@/lib/references";
 
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
   physics_theory: Orbit,
@@ -76,7 +76,7 @@ const COPY = {
 
 function ReferenceStats({ data, locale }: { data: ReferenceData; locale: "en" | "fi" }) {
   const d = COPY[locale].stats;
-  const withDoi = data.references.filter((r) => r.doi).length;
+  const withDoi = data.references.filter((r) => referenceUrl(r)).length;
   const stats = [
     { value: data.metadata.total_references, label: d.total },
     { value: data.metadata.verified_count, label: d.verified },
@@ -161,11 +161,7 @@ function ReferenceCard({
   onToggle: () => void;
 }) {
   const d = COPY[locale];
-  const doiUrl = r.doi
-    ? r.doi.startsWith("http")
-      ? r.doi
-      : `https://doi.org/${r.doi}`
-    : null;
+  const doiUrl = referenceUrl(r);
 
   return (
     <article id={r.id} className="border border-card-border bg-card-bg rounded-lg p-4 scroll-mt-24">

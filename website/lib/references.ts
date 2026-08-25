@@ -25,6 +25,39 @@ export interface Reference {
   readonly pdf_section: string | null;
   readonly pdf_number: number | null;
   readonly verified: boolean;
+  /** Canonical source URL for entries that have no DOI (books, reports, records). */
+  readonly url?: string | null;
+  readonly pmid?: string | number | null;
+}
+
+/**
+ * Resolve a reference to an external source URL.
+ *
+ * Order of preference: explicit url, DOI, PubMed Central id, PubMed id.
+ * Returns null when the entry carries no resolvable identifier — callers must
+ * render the citation as plain text rather than emit a link that 404s.
+ */
+export function referenceUrl(
+  r: {
+    readonly doi?: string | null;
+    readonly url?: string | null;
+    readonly pmid?: string | number | null;
+  },
+): string | null {
+  const url = (r.url ?? "").trim();
+  if (url) return url;
+
+  const doi = (r.doi ?? "").trim();
+  if (doi.startsWith("10.")) return `https://doi.org/${doi}`;
+  if (doi.startsWith("http")) return doi;
+  if (/^PMC\d+$/i.test(doi)) {
+    return `https://pmc.ncbi.nlm.nih.gov/articles/${doi.toUpperCase()}/`;
+  }
+
+  const pmid = String(r.pmid ?? "").trim() || (/^\d{7,9}$/.test(doi) ? doi : "");
+  if (pmid) return `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`;
+
+  return null;
 }
 
 export interface ReferenceData {

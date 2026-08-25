@@ -129,7 +129,7 @@ export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
           aria-label={fi ? "Sentinellikaskadi-kaavio" : "Sentinel cascade chart"}
         >
           {[0, 2, 4, 6, 8, 10, 12, 14].map((tick) => {
-            const x = labelWidth + (tick / maxLag) * chartWidth;
+            const x = labelWidth + chartWidth - (tick / maxLag) * chartWidth;
             return (
               <g key={tick}>
                 <line
@@ -141,26 +141,26 @@ export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
                   fill="var(--foreground-muted)" fontSize={11} textAnchor="middle"
                   fontFamily="var(--font-mono)"
                 >
-                  {tick === 0 ? (fi ? "Muutos" : "Change") : `+${tick}${fi ? "v" : "y"}`}
+                  {tick === 0 ? (fi ? "Nyt" : "Now") : `−${tick}${fi ? "v" : "y"}`}
                 </text>
               </g>
             );
           })}
 
           <rect
-            x={labelWidth + chartWidth + 8} y={0}
+            x={labelWidth + chartWidth} y={0}
             width={3} height={SENTINEL_DATA.length * barHeight}
             fill="#ef4444" rx={1.5}
           />
           <text
-            x={labelWidth + chartWidth + 18}
+            x={labelWidth + chartWidth + 10}
             y={SENTINEL_DATA.length * barHeight / 2 - 8}
             fill="#ef4444" fontSize={12} fontWeight="bold"
           >
             {fi ? "Ihmisen" : "Human"}
           </text>
           <text
-            x={labelWidth + chartWidth + 18}
+            x={labelWidth + chartWidth + 10}
             y={SENTINEL_DATA.length * barHeight / 2 + 8}
             fill="#ef4444" fontSize={12} fontWeight="bold"
           >
@@ -169,9 +169,10 @@ export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
 
           {SENTINEL_DATA.map((sp, i) => {
             const y = i * barHeight + barHeight / 2;
-            const barEnd = labelWidth + (sp.lag / maxLag) * chartWidth;
+            const nowX = labelWidth + chartWidth;
+            const barStart = nowX - (sp.lag / maxLag) * chartWidth;
             const barW = Math.max(3, Math.abs(sp.r) * 14);
-            const rangeX = labelWidth + (sp.lagRange[0] / maxLag) * chartWidth;
+            const rangeX = nowX - (sp.lagRange[1] / maxLag) * chartWidth;
             const rangeW = ((sp.lagRange[1] - sp.lagRange[0]) / maxLag) * chartWidth;
             const circleR = sp.nCountries > 1 ? Math.sqrt(sp.nCountries) * 2.8 : 5;
 
@@ -194,31 +195,33 @@ export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
                 />
 
                 <line
-                  x1={labelWidth} y1={y} x2={barEnd} y2={y}
+                  x1={barStart} y1={y} x2={nowX} y2={y}
                   stroke={sp.color} strokeWidth={barW}
                   strokeLinecap="round" opacity={0.75}
                 />
 
                 <polygon
-                  points={`${barEnd},${y - 5} ${barEnd + 8},${y} ${barEnd},${y + 5}`}
+                  points={`${barStart},${y - 5} ${barStart - 8},${y} ${barStart},${y + 5}`}
                   fill={sp.color} opacity={0.75}
                 />
 
                 <circle
-                  cx={barEnd} cy={y} r={circleR}
+                  cx={barStart} cy={y} r={circleR}
                   fill={sp.color} opacity={0.2}
                   stroke={sp.color} strokeWidth={1.5}
                 />
 
                 <text
-                  x={barEnd + circleR + 5} y={y - 5}
+                  x={barStart - circleR - 5} y={y - 5}
                   fill={sp.color} fontSize={9.5} opacity={0.9}
+                  textAnchor="end"
                 >
                   r={Math.abs(sp.r).toFixed(2)}
                 </text>
                 <text
-                  x={barEnd + circleR + 5} y={y + 8}
+                  x={barStart - circleR - 5} y={y + 8}
                   fill="var(--foreground-muted)" fontSize={8.5}
+                  textAnchor="end"
                 >
                   {sp.nCountries > 1
                     ? `${sp.direction}/${sp.directionTotal} ${fi ? "maata" : "countries"}`
