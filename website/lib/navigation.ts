@@ -15,6 +15,11 @@ import {
   Sigma,
   Network,
   Activity,
+  FileText,
+  Microscope,
+  Bug,
+  FlaskConical,
+  Dna,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -23,30 +28,137 @@ export interface NavRoute {
   labelEn: string;
   labelFi: string;
   icon: LucideIcon;
+  descEn?: string;
+  descFi?: string;
+  badge?: string;
   children?: NavRoute[];
 }
 
 export const NAV_ROUTES: NavRoute[] = [
   { href: "", labelEn: "Home", labelFi: "Etusivu", icon: House },
-  { href: "/explore", labelEn: "Data", labelFi: "Data", icon: Database },
   {
     href: "/model",
     labelEn: "Model",
     labelFi: "Malli",
     icon: GitBranch,
     children: [
-      { href: "/model", labelEn: "Overview", labelFi: "Yleiskatsaus", icon: GitBranch },
-      { href: "/model/fieldstate", labelEn: "FieldState spec", labelFi: "FieldState-määrittely", icon: Radio },
-      { href: "/model/math", labelEn: "Mathematics", labelFi: "Matematiikka", icon: Sigma },
+      {
+        href: "/model",
+        labelEn: "Overview",
+        labelFi: "Yleiskatsaus",
+        icon: GitBranch,
+        descEn: "Three-level architecture, five routes, disease cascades",
+        descFi: "Kolmitasoarkkitehtuuri, viisi reittiä, sairauskaskadit",
+      },
+      {
+        href: "/modulome",
+        labelEn: "Modulome",
+        labelFi: "Modulomi",
+        icon: Activity,
+        descEn: "12 layers, 10 target organs, 4 routes",
+        descFi: "12 kerrosta, 10 kohde-elintä, 4 reittiä",
+      },
+      {
+        href: "/map",
+        labelEn: "Causal Map",
+        labelFi: "Kausaalikartta",
+        icon: Network,
+        descEn: "Interactive causal chain from physics to TFR",
+        descFi: "Interaktiivinen kausaaliketju fysiikasta TFR:ään",
+      },
+      {
+        href: "/model#vgcc-gene-family",
+        labelEn: "VGCC Gene Family",
+        labelFi: "VGCC-geeniperhe",
+        icon: Dna,
+        descEn: "Six genes, six disease clusters",
+        descFi: "Kuusi geeniä, kuusi sairausklusteria",
+      },
+      {
+        href: "/model#testosterone-threshold",
+        labelEn: "T→TFR Threshold",
+        labelFi: "T→TFR-kynnys",
+        icon: ChartLine,
+        descEn: "Why testosterone predicts fertility collapse",
+        descFi: "Miksi testosteroni ennustaa syntyvyysromahduksen",
+        badge: "NEW",
+      },
+      {
+        href: "/mathematics",
+        labelEn: "Mathematics",
+        labelFi: "Matematiikka",
+        icon: Sigma,
+        descEn: "Complete derivation from Lindgren geometry to TFR",
+        descFi: "Täydellinen derivaatio Lindgren-geometriasta TFR:ään",
+      },
     ],
   },
-  { href: "/modulome", labelEn: "Modulome", labelFi: "Modulomi", icon: Activity },
-  { href: "/map", labelEn: "Causal Map", labelFi: "Kausaalikartta", icon: Network },
+  {
+    href: "/evidence",
+    labelEn: "Evidence",
+    labelFi: "Näyttö",
+    icon: Layers,
+    children: [
+      {
+        href: "/evidence",
+        labelEn: "Overview",
+        labelFi: "Yleiskatsaus",
+        icon: Layers,
+        descEn: "Study-by-study evidence register",
+        descFi: "Tutkimuskohtainen evidenssirekisteri",
+      },
+      {
+        href: "/explore",
+        labelEn: "Data Explorer",
+        labelFi: "Data-selain",
+        icon: Database,
+        descEn: "Interactive maps, charts, and country data",
+        descFi: "Interaktiiviset kartat, kuvaajat ja maadata",
+      },
+      {
+        href: "/evidence/populations",
+        labelEn: "Populations",
+        labelFi: "Populaatiot",
+        icon: Globe2,
+        descEn: "Nine low-EMF communities vs modern",
+        descFi: "Yhdeksän matala-EMF-yhteisöä vs moderni",
+      },
+      {
+        href: "/evidence/evolution",
+        labelEn: "Evolutionary Origins",
+        labelFi: "Evolutiiviset juuret",
+        icon: FlaskConical,
+        descEn: "The Northern Package hypothesis",
+        descFi: "Pohjoisen paketin hypoteesi",
+      },
+      {
+        href: "/sentinel",
+        labelEn: "Sentinel Species",
+        labelFi: "Sentinel-lajit",
+        icon: Bug,
+        descEn: "Bee, bird, and amphibian decline patterns",
+        descFi: "Mehiläisten, lintujen ja sammakkoeläinten laskumallit",
+      },
+      {
+        href: "/objections",
+        labelEn: "Criticism & Responses",
+        labelFi: "Kritiikki ja vastaukset",
+        icon: ShieldQuestion,
+        descEn: "Counterarguments and our responses",
+        descFi: "Vastaväitteet ja vastauksemme",
+      },
+      {
+        href: "/references",
+        labelEn: "All References",
+        labelFi: "Kaikki lähteet",
+        icon: BookOpen,
+        descEn: "658 peer-reviewed sources",
+        descFi: "658 vertaisarvioitua lähdettä",
+      },
+    ],
+  },
   { href: "/predictions", labelEn: "Predictions", labelFi: "Ennusteet", icon: Target },
-  { href: "/evidence", labelEn: "Evidence", labelFi: "Näyttö", icon: Layers },
-  { href: "/sentinel", labelEn: "Sentinel", labelFi: "Lajit", icon: Leaf },
-  { href: "/objections", labelEn: "Criticism", labelFi: "Kritiikki", icon: ShieldQuestion },
-  { href: "/references", labelEn: "Sources", labelFi: "Lähteet", icon: BookOpen },
+  { href: "/articles", labelEn: "Articles", labelFi: "Artikkelit", icon: FileText },
   { href: "/about", labelEn: "About", labelFi: "Tietoa", icon: Info },
 ];
 
@@ -54,18 +166,25 @@ export interface ResolvedNavRoute {
   href: string;
   label: string;
   icon: LucideIcon;
+  desc?: string;
+  badge?: string;
   children?: ResolvedNavRoute[];
 }
 
 export function getNavRoutes(locale: string): ResolvedNavRoute[] {
+  const fi = locale === "fi";
   return NAV_ROUTES.map((route) => ({
     href: route.href,
-    label: locale === "fi" ? route.labelFi : route.labelEn,
+    label: fi ? route.labelFi : route.labelEn,
     icon: route.icon,
+    desc: fi ? route.descFi : route.descEn,
+    badge: route.badge,
     children: route.children?.map((child) => ({
       href: child.href,
-      label: locale === "fi" ? child.labelFi : child.labelEn,
+      label: fi ? child.labelFi : child.labelEn,
       icon: child.icon,
+      desc: fi ? child.descFi : child.descEn,
+      badge: child.badge,
     })),
   }));
 }
