@@ -41,6 +41,10 @@ function NavDropdown({
 
   useEffect(() => () => clearTimeout(hoverTimeout.current), []);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   const groupHref = `/${locale}${link.href}`;
   const isGroupActive =
     pathname.startsWith(groupHref) ||
@@ -91,7 +95,6 @@ function NavDropdown({
               <li key={child.href} role="none">
                 <Link
                   href={childHref}
-                  onClick={() => setOpen(false)}
                   role="menuitem"
                   aria-current={isChildActive ? "page" : undefined}
                   className={`flex items-start gap-3 px-4 py-2.5 transition-colors ${
@@ -137,12 +140,10 @@ function MobileAccordion({
   link,
   locale,
   pathname,
-  onNavigate,
 }: {
   link: ResolvedNavRoute;
   locale: string;
   pathname: string;
-  onNavigate: () => void;
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -188,7 +189,6 @@ function MobileAccordion({
               <li key={child.href}>
                 <Link
                   href={childHref}
-                  onClick={onNavigate}
                   aria-current={isChildActive ? "page" : undefined}
                   className={`flex items-center gap-2 py-1.5 text-sm transition-colors ${
                     isChildActive
@@ -323,7 +323,6 @@ export function Navigation({ locale }: { locale: string }) {
                     link={link}
                     locale={locale}
                     pathname={pathname}
-                    onNavigate={() => setMenuOpen(false)}
                   />
                 );
               }
@@ -337,7 +336,6 @@ export function Navigation({ locale }: { locale: string }) {
                 <li key={link.href}>
                   <Link
                     href={fullHref}
-                    onClick={() => setMenuOpen(false)}
                     aria-current={isActive ? "page" : undefined}
                     className={`flex items-center gap-2.5 py-2 text-sm transition-colors ${
                       isActive
