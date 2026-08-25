@@ -543,7 +543,7 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
             const y = barY + barH - h;
             const isSelected = selectedBand === band.id;
             return (
-              <g key={band.id} style={{ cursor: "pointer" }} onClick={() => { setSelectedBand(isSelected ? null : band.id); setSelectedDevice(null); }}>
+              <g key={band.id} tabIndex={0} role="button" style={{ cursor: "pointer" }} onClick={() => { setSelectedBand(isSelected ? null : band.id); setSelectedDevice(null); }} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedBand(isSelected ? null : band.id); setSelectedDevice(null); } }}>
                 <rect x={x1} y={y} width={x2 - x1} height={h} rx={3} fill={band.color} opacity={isSelected ? 0.95 : 0.7} stroke={isSelected ? "var(--foreground)" : "none"} strokeWidth={isSelected ? 2 : 0} />
                 <text x={(x1 + x2) / 2} y={y - 4} fill="var(--foreground)" fontSize={10} fontWeight="700" textAnchor="middle" fontFamily="ui-monospace, monospace">
                   {band.count}
@@ -691,8 +691,10 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
                     {bandDevices.map((dev) => (
                       <tr
                         key={dev.id}
+                        tabIndex={0}
                         className={`border-b border-card-border/50 cursor-pointer ${selectedDevice?.id === dev.id ? "bg-accent/10" : "hover:bg-card-bg"}`}
                         onClick={() => setSelectedDevice(selectedDevice?.id === dev.id ? null : dev)}
+                        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedDevice(selectedDevice?.id === dev.id ? null : dev); } }}
                       >
                         <td className="py-1.5 pr-3 font-mono-num whitespace-nowrap">
                           <span className="inline-block w-2 h-2 rounded-full mr-1.5" style={{ backgroundColor: dev.color }} />

@@ -11,6 +11,7 @@ const METRIC_LABELS_FI: Record<string, string> = {
   SpermConc_pctOf2020: "Siittiökonsentraatio (% vuodesta 2020)",
   sex_ratio_male_frac: "Sukupuolisuhde syntymässä (miesten osuus)",
   sentinel_cascade_TFR_acceleration: "TFR-laskun kiihtyminen (sentinellikaskadi)",
+  sleep_quality_faraday: "Unenlaatu Faradayn häkissä",
 };
 
 const COUNTRY_LABELS_FI: Record<string, string> = {

@@ -125,6 +125,8 @@ export function ThresholdChart({ locale }: { locale: string }) {
           xmlns="http://www.w3.org/2000/svg"
           className="w-full min-w-[600px]"
           style={{ fontFamily: "system-ui, sans-serif" }}
+          role="img"
+          aria-label="TFR threshold chart showing fertility rate trends by country"
         >
           {yearTicks.map((yr) => (
             <line

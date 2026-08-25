@@ -596,6 +596,8 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                 return (
                   <path
                     key={d.id}
+                    tabIndex={0}
+                    role="button"
                     d={trendToPath(d.trend)}
                     fill="none"
                     stroke={d.color}
@@ -605,6 +607,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                     opacity={dimmed ? 0.15 : 1}
                     className="cursor-pointer transition-opacity"
                     onClick={() => setSelected(isSelected ? null : d.id)}
+                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelected(isSelected ? null : d.id); } }}
                   />
                 );
               })}

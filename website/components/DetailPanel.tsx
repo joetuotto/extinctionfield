@@ -42,6 +42,9 @@ export function DetailPanel({
         aria-hidden
       />
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={locale === "en" && node.title_en ? node.title_en : node.title}
         className="relative w-full max-h-[85vh] lg:max-h-none lg:max-w-md bg-card-bg border-t lg:border-t-0 lg:border-l border-card-border overflow-y-auto animate-slide-in rounded-t-2xl lg:rounded-t-none"
         onClick={(e) => e.stopPropagation()}
       >

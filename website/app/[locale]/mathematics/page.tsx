@@ -1202,7 +1202,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <DerivationLine>{d.s4d3}</DerivationLine>
               <DerivationLine>{d.s4d4}</DerivationLine>
               <p className="text-xs text-accent mt-3">
-                <Link href={`${lp}/sentinel#lab-mammals`} className="hover:underline">
+                <Link href={`${lp}/evidence#metabolic-evidence`} className="hover:underline">
                   {d.s4d5Link}
                 </Link>
               </p>
@@ -1686,7 +1686,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
               </div>
 
               <p className="text-xs text-accent mt-3">
-                <Link href={`${lp}/sentinel#lab-mammals`} className="hover:underline">
+                <Link href={`${lp}/evidence#metabolic-evidence`} className="hover:underline">
                   {d.s10d7Link}
                 </Link>
               </p>
@@ -1734,7 +1734,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
               </div>
 
               <p className="text-xs text-accent mt-3">
-                <Link href={`${lp}/evidence#individual-susceptibility`} className="hover:underline">
+                <Link href={`${lp}/evidence/magnetoreception#individual-susceptibility`} className="hover:underline">
                   {d.s11d9Link}
                 </Link>
               </p>

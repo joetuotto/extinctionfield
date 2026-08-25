@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getLatestArticles } from "@/lib/articles";
+import { BermIcon } from "@/components/BermIcon";
 import type { Locale } from "@/lib/i18n";
 
 export function LatestArticles({ locale }: { locale: Locale }) {
@@ -19,8 +20,8 @@ export function LatestArticles({ locale }: { locale: Locale }) {
         className="group block rounded-xl border border-card-border bg-card-bg p-6 sm:p-8 transition-colors hover:border-accent/40"
       >
         <div className="flex items-start gap-4">
-          <span className="text-3xl shrink-0 mt-1" aria-hidden="true">
-            {hero.icon}
+          <span className="shrink-0 mt-1 text-foreground-muted" aria-hidden="true">
+            <BermIcon name={hero.icon} size={32} />
           </span>
           <div className="min-w-0 flex-1">
             <h3 className="font-serif text-xl sm:text-2xl font-semibold leading-snug tracking-[-0.01em] mb-2 group-hover:text-accent transition-colors">
@@ -50,8 +51,8 @@ export function LatestArticles({ locale }: { locale: Locale }) {
               href={`${prefix}/articles/${a.slug}`}
               className="group rounded-xl border border-card-border bg-card-bg p-4 transition-colors hover:border-accent/40"
             >
-              <p className="text-xl mb-2" aria-hidden="true">
-                {a.icon}
+              <p className="mb-2 text-foreground-muted" aria-hidden="true">
+                <BermIcon name={a.icon} size={22} />
               </p>
               <h4 className="font-serif text-sm font-semibold leading-snug mb-2 group-hover:text-accent transition-colors">
                 {isFi ? a.titleFi : a.title}

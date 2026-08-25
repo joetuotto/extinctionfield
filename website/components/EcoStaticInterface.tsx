@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { EcoCausalVisuals, EcoSpeciesCueRow, TickEvidenceBoundary } from "./EcoCausalVisuals";
+import { BermIcon } from "@/components/BermIcon";
 
 type Locale = "en" | "fi";
 
@@ -917,37 +918,37 @@ export function EcoStaticInterface({ locale }: { locale: string }) {
               <div className="absolute left-0 right-0 top-1/2 border-t border-dashed border-card-border/50" />
               {/* Varroa — low sensitivity, fitness improves */}
               <div className="absolute left-[8%] top-[15%] text-center">
-                <span className="text-lg">🕷️</span>
+                <BermIcon name="varroa" size={20} className="text-status-confirmed mx-auto" />
                 <p className="text-[0.625rem] text-status-confirmed mt-0.5">Varroa</p>
               </div>
               {/* Ixodes — low sensitivity, fitness improves */}
               <div className="absolute left-[15%] top-[22%] text-center">
-                <span className="text-lg">🪲</span>
+                <BermIcon name="tick" size={20} className="text-status-confirmed mx-auto" />
                 <p className="text-[0.625rem] text-status-confirmed mt-0.5">Ixodes</p>
               </div>
               {/* Human — medium sensitivity */}
               <div className="absolute left-[48%] top-[52%] text-center">
-                <span className="text-lg">👤</span>
+                <BermIcon name="human" size={20} className="text-foreground-muted mx-auto" />
                 <p className="text-[0.625rem] text-foreground-muted mt-0.5">{language === "fi" ? "Ihminen" : "Human"}</p>
               </div>
               {/* Moth — high sensitivity */}
               <div className="absolute left-[68%] top-[62%] text-center">
-                <span className="text-lg">🦋</span>
+                <BermIcon name="moth" size={20} className="text-status-refuted mx-auto" />
                 <p className="text-[0.625rem] text-status-refuted mt-0.5">{language === "fi" ? "Yöperhonen" : "Moth"}</p>
               </div>
               {/* Bat — high sensitivity */}
               <div className="absolute left-[72%] top-[72%] text-center">
-                <span className="text-lg">🦇</span>
+                <BermIcon name="bat" size={20} className="text-status-refuted mx-auto" />
                 <p className="text-[0.625rem] text-status-refuted mt-0.5">{language === "fi" ? "Lepakko" : "Bat"}</p>
               </div>
               {/* Honeybee — very high sensitivity */}
               <div className="absolute left-[85%] top-[78%] text-center">
-                <span className="text-lg">🐝</span>
+                <BermIcon name="honeybee" size={20} className="text-status-refuted mx-auto" />
                 <p className="text-[0.625rem] text-status-refuted mt-0.5">{language === "fi" ? "Mehiläinen" : "Honeybee"}</p>
               </div>
               {/* Migratory bird — very high sensitivity */}
               <div className="absolute left-[88%] top-[85%] text-center">
-                <span className="text-lg">🐦</span>
+                <BermIcon name="bird" size={20} className="text-status-refuted mx-auto" />
                 <p className="text-[0.625rem] text-status-refuted mt-0.5">{language === "fi" ? "Muuttolintu" : "Bird"}</p>
               </div>
             </div>

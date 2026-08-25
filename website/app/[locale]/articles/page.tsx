@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { ARTICLES } from "@/lib/articles";
+import { BermIcon } from "@/components/BermIcon";
 import type { Locale } from "@/lib/i18n";
 
 const COPY = {
@@ -83,8 +84,8 @@ export default async function ArticlesPage({
               )}
               <div className="flex-1 min-w-0">
                 <div className="flex items-start gap-3 mb-2">
-                  <span className="text-2xl shrink-0" aria-hidden="true">
-                    {article.icon}
+                  <span className="shrink-0 text-foreground-muted" aria-hidden="true">
+                    <BermIcon name={article.icon} size={28} />
                   </span>
                   <h2 className="text-lg font-semibold leading-snug group-hover:text-accent transition-colors">
                     {isFi ? article.titleFi : article.title}

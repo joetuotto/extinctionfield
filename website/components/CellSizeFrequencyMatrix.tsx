@@ -190,7 +190,10 @@ export function CellSizeFrequencyMatrix({ locale }: { locale: string }) {
             return (
               <g
                 key={pt.id}
+                tabIndex={0}
+                role="button"
                 onClick={() => setSelected(isSelected ? null : pt.id)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelected(isSelected ? null : pt.id); } }}
                 className="cursor-pointer"
               >
                 <circle

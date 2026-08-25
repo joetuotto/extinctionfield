@@ -175,7 +175,7 @@ export function IonicHierarchyDiagram({ locale }: { locale: string }) {
             const isSelected = selected === t.id;
 
             return (
-              <g key={t.id}>
+              <g key={t.id} tabIndex={0} role="button" style={{ cursor: "pointer" }} onClick={() => setSelected(isSelected ? null : t.id)} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelected(isSelected ? null : t.id); } }}>
                 {/* Bar */}
                 <rect
                   x={barX + (barW - widthFrac) / 2}
@@ -187,8 +187,6 @@ export function IonicHierarchyDiagram({ locale }: { locale: string }) {
                   opacity={isSelected ? 0.95 : 0.7}
                   stroke={isSelected ? "var(--foreground, #fff)" : "none"}
                   strokeWidth={isSelected ? 2 : 0}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => setSelected(isSelected ? null : t.id)}
                 />
                 {/* Level number */}
                 <text

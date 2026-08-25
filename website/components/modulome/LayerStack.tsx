@@ -56,7 +56,7 @@ export function LayerStack({
               </span>
               {layer.newInSession && (
                 <span className="shrink-0 text-[0.6rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-accent/10 text-accent">
-                  NEW
+                  {locale === "fi" ? "UUSI" : "NEW"}
                 </span>
               )}
             </button>

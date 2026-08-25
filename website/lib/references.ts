@@ -77,7 +77,10 @@ let _cache: ReferenceData | null = null;
 export async function loadReferences(): Promise<ReferenceData> {
   if (_cache) return _cache;
   const res = await fetch("/data/references_full.json");
-  _cache = await res.json();
+  if (!res.ok) throw new Error(`references fetch failed: ${res.status}`);
+  const data = await res.json();
+  if (!data?.references) throw new Error("invalid references data");
+  _cache = data;
   return _cache!;
 }
 

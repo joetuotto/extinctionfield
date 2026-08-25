@@ -374,8 +374,11 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: Locale }
             return (
               <g
                 key={n.id}
+                tabIndex={0}
+                role="button"
                 style={{ cursor: "pointer" }}
                 onClick={() => handleNodeClick(n)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleNodeClick(n); } }}
                 onMouseEnter={() => setHoveredNode(n.id)}
                 onMouseLeave={() => setHoveredNode(null)}
                 opacity={hoveredNode && !isHovered && ![...connectedEdges].some(i => EDGES[i]?.from === n.id || EDGES[i]?.to === n.id) ? 0.4 : 1}

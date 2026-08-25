@@ -435,7 +435,7 @@ export default async function Home({
           <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.pharmaPenetrant}</p>
           <p className="text-xs text-foreground-muted/70 italic mb-4 max-w-3xl">{d.pharmaTrial}</p>
           <Link
-            href={`${prefix}/evidence#pharmacological`}
+            href={`${prefix}/mathematics#pharmacological`}
             className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
           >
             {d.pharmaCta} <ArrowRight size={14} />
@@ -585,7 +585,7 @@ export default async function Home({
               <h2 className="editorial-kicker text-accent">{d.falsTitle}</h2>
             </div>
             <Link
-              href={`${prefix}/model#falsification`}
+              href={`${prefix}/mathematics#falsification`}
               className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
             >
               {d.falsCta} <ArrowRight size={14} />

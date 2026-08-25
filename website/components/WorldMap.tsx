@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState, useCallback } from "react";
-import * as d3 from "d3";
+import { select } from "d3-selection";
+import { interpolateViridis, interpolateCividis } from "d3-scale-chromatic";
 import { geoNaturalEarth1, geoPath } from "d3-geo";
 import type { FeatureCollection, Feature, Geometry } from "geojson";
 import { CountryDetailPanel } from "@/components/CountryDetailPanel";
@@ -43,14 +44,14 @@ const LAYER_CONFIG: Record<
     domain: [0.5, 7],
     // Sequential, colour-vision-safe: low TFR reads as the dark, saturated end.
     // Reversed so the darkest colour marks the lowest fertility.
-    colorScale: (t: number) => d3.interpolateViridis(1 - t),
+    colorScale: (t: number) => interpolateViridis(1 - t),
     format: (v: number) => v.toFixed(2),
   },
   mobile: {
     label: "Mobile subscriptions (technology-timing proxy)",
     unit: "per 100 people",
     domain: [0, 200],
-    colorScale: (t: number) => d3.interpolateCividis(t),
+    colorScale: (t: number) => interpolateCividis(t),
     format: (v: number) => v.toFixed(0),
   },
 };
@@ -119,13 +120,23 @@ export function WorldMap({ locale }: { locale: string }) {
   }, [mapData, layer, year, displayNames]);
 
   useEffect(() => {
+    const controller = new AbortController();
     Promise.all([
-      fetch("/data/map_data.json").then((r) => r.json()),
-      fetch("/data/geojson/ne_110m_countries.json").then((r) => r.json()),
+      fetch("/data/map_data.json", { signal: controller.signal }).then((r) => {
+        if (!r.ok) throw new Error(`map_data: ${r.status}`);
+        return r.json();
+      }),
+      fetch("/data/geojson/ne_110m_countries.json", { signal: controller.signal }).then((r) => {
+        if (!r.ok) throw new Error(`geojson: ${r.status}`);
+        return r.json();
+      }),
     ]).then(([md, geo]) => {
       setMapData(md);
       setGeoData(geo);
+    }).catch((e) => {
+      if (e.name !== "AbortError") console.error("WorldMap data fetch failed:", e);
     });
+    return () => controller.abort();
   }, []);
 
   const getValueFor = useCallback(
@@ -156,7 +167,7 @@ export function WorldMap({ locale }: { locale: string }) {
   useEffect(() => {
     if (!svgRef.current || !geoData || !mapData) return;
 
-    const svg = d3.select(svgRef.current);
+    const svg = select(svgRef.current);
     const width = svgRef.current.clientWidth || 800;
     const height = width * 0.52;
 
@@ -183,7 +194,7 @@ export function WorldMap({ locale }: { locale: string }) {
       .on("mouseenter", function (_event, d) {
         const iso3 = getISO3(d);
         const { mapData: md, layer: ly, year: yr } = stateRef.current;
-        d3.select(this).attr("stroke", "var(--accent)").attr("stroke-width", 1.5);
+        select(this).attr("stroke", "var(--accent)").attr("stroke-width", 1.5);
 
         const tooltip = tooltipRef.current;
         if (tooltip) {
@@ -206,7 +217,7 @@ export function WorldMap({ locale }: { locale: string }) {
         }
       })
       .on("mouseleave", function () {
-        d3.select(this)
+        select(this)
           .attr("stroke", "var(--card-border)")
           .attr("stroke-width", 0.5);
         if (tooltipRef.current) tooltipRef.current.style.display = "none";
@@ -233,7 +244,7 @@ export function WorldMap({ locale }: { locale: string }) {
         .attr("stroke-width", 1.5)
         .style("cursor", "pointer")
         .on("mouseenter", function (event) {
-          d3.select(this).attr("r", 6);
+          select(this).attr("r", 6);
           const tooltip = tooltipRef.current;
           if (tooltip) {
             tooltip.innerHTML = `<strong>${m.name}</strong><br/>${m.detail}`;
@@ -252,7 +263,7 @@ export function WorldMap({ locale }: { locale: string }) {
           }
         })
         .on("mouseleave", function () {
-          d3.select(this).attr("r", 4);
+          select(this).attr("r", 4);
           if (tooltipRef.current) tooltipRef.current.style.display = "none";
         });
     });
@@ -263,7 +274,7 @@ export function WorldMap({ locale }: { locale: string }) {
   useEffect(() => {
     if (!svgRef.current || !geoData) return;
 
-    d3.select(svgRef.current)
+    select(svgRef.current)
       .select(".countries")
       .selectAll<SVGPathElement, Feature<Geometry, GeoProperties>>("path")
       .attr("fill", (d) => getColorFor(getISO3(d), layer, year, mapData));

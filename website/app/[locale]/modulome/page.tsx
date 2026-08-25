@@ -215,7 +215,7 @@ export default async function ModulomePage({
                   </h4>
                   {route.isNew && (
                     <span className="shrink-0 text-[0.6rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-accent/10 text-accent">
-                      NEW
+                      {l === "fi" ? "UUSI" : "NEW"}
                     </span>
                   )}
                 </div>

@@ -1,20 +1,20 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { ClipboardList, Orbit, Zap, Dna, Microscope, Brain, Bug, Radio, BookOpen } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 import type { Reference, ReferenceCategory, ReferenceData } from "@/lib/references";
 import { categoryName, levelLabel, loadReferences, referenceUrl } from "@/lib/references";
+import { BermIcon } from "@/components/BermIcon";
+import type { BermIconName } from "@/components/BermIcon";
 
-const CATEGORY_ICONS: Record<string, LucideIcon> = {
-  physics_theory: Orbit,
-  transduction_rpm_calcium: Zap,
-  cellular_ros_dna: Dna,
-  reproduction_hormones: Microscope,
-  neurobiology_circadian: Brain,
-  ecology_sentinels: Bug,
-  rf_safety_regulation: Radio,
-  history_institutional: BookOpen,
+const CATEGORY_ICONS: Record<string, BermIconName> = {
+  physics_theory: "physics",
+  transduction_rpm_calcium: "signal",
+  cellular_ros_dna: "cellular",
+  reproduction_hormones: "reproduction",
+  neurobiology_circadian: "neurobiology",
+  ecology_sentinels: "honeybee",
+  rf_safety_regulation: "rf-safety",
+  history_institutional: "history",
 };
 
 const PAGE_SIZE = 20;
@@ -120,7 +120,7 @@ function CategoryTabs({
             : "border-card-border bg-card-bg text-foreground-muted hover:border-foreground-muted"
         }`}
       >
-        <ClipboardList size={14} className="mr-1.5 inline-block" strokeWidth={1.5} aria-hidden="true" />
+        <BermIcon name="history" size={14} className="mr-1.5 inline-block align-[-0.1em]" />
         {d.allCategories}
         <span className="font-mono-num text-xs ml-1 opacity-60">({counts["all"] ?? 0})</span>
       </button>
@@ -140,7 +140,7 @@ function CategoryTabs({
               : undefined
           }
         >
-          {(() => { const CatIcon = CATEGORY_ICONS[cat.id]; return CatIcon ? <CatIcon size={14} className="mr-1.5 inline-block" strokeWidth={1.5} aria-hidden="true" /> : <span className="mr-1.5">{cat.icon}</span>; })()}
+          {(() => { const iconName = CATEGORY_ICONS[cat.id]; return iconName ? <BermIcon name={iconName} size={14} className="mr-1.5 inline-block align-[-0.1em]" /> : <span className="mr-1.5">{cat.icon}</span>; })()}
           {categoryName(cat, locale)}
           <span className="font-mono-num text-xs ml-1 opacity-60">({counts[cat.id] ?? 0})</span>
         </button>

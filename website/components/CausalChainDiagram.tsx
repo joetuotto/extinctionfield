@@ -433,8 +433,11 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
             return (
               <g
                 key={n.id}
+                tabIndex={0}
+                role="button"
                 style={{ cursor: "pointer" }}
                 onClick={() => handleNodeClick(n)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleNodeClick(n); } }}
                 onMouseEnter={() => setHoveredNode(n.id)}
                 onMouseLeave={() => setHoveredNode(null)}
                 opacity={hoveredNode && !isHovered && ![...connectedEdges].some(i => edges[i]?.from === n.id || edges[i]?.to === n.id) ? 0.4 : 1}

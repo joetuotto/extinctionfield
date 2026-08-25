@@ -61,7 +61,7 @@ export function FinlandLagChart({ locale }: { locale: string }) {
 
   return (
     <div className="overflow-x-auto">
-      <svg viewBox="0 0 700 350" className="w-full max-w-[700px]" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 700 350" className="w-full max-w-[700px]" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Finland mobile subscriptions vs TFR lag chart, 1975–2023">
         <defs>
           <marker id="lag-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
             <path d="M0,0.5 L7,3 L0,5.5" fill="none" stroke="var(--foreground-muted)" strokeWidth="1.5" />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { BermIcon } from "@/components/BermIcon";
 
 interface EMFLayer {
   id: string;
@@ -176,12 +177,12 @@ const LAYERS: EMFLayer[] = [
 ];
 
 const SENTINEL_SPECIES = [
-  { id: "aphid", nameEn: "Aphid", nameFi: "Kirva", icon: "🦟" },
-  { id: "bee", nameEn: "Bee", nameFi: "Mehiläinen", icon: "🐝" },
-  { id: "moth", nameEn: "Moth", nameFi: "Yöperhonen", icon: "🦋" },
-  { id: "bird", nameEn: "Bird", nameFi: "Lintu", icon: "🐦" },
-  { id: "bat", nameEn: "Bat", nameFi: "Lepakko", icon: "🦇" },
-  { id: "toad", nameEn: "Toad", nameFi: "Rupikonna", icon: "🐸" },
+  { id: "aphid", nameEn: "Aphid", nameFi: "Kirva", icon: "aphid" as const },
+  { id: "bee", nameEn: "Bee", nameFi: "Mehiläinen", icon: "honeybee" as const },
+  { id: "moth", nameEn: "Moth", nameFi: "Yöperhonen", icon: "moth" as const },
+  { id: "bird", nameEn: "Bird", nameFi: "Lintu", icon: "bird" as const },
+  { id: "bat", nameEn: "Bat", nameFi: "Lepakko", icon: "bat" as const },
+  { id: "toad", nameEn: "Toad", nameFi: "Rupikonna", icon: "toad" as const },
 ];
 
 type Relevance = 3 | 2 | 1 | 0;
@@ -468,7 +469,7 @@ export function LayersExplorer({ locale }: { locale: string }) {
                 <th className="py-2 pr-4 font-medium text-xs">{d.freq}</th>
                 {SENTINEL_SPECIES.map((sp) => (
                   <th key={sp.id} className="py-2 px-2 font-medium text-center whitespace-nowrap">
-                    <span className="mr-1">{sp.icon}</span>
+                    <BermIcon name={sp.icon} size={14} className="inline-block mr-1 align-[-0.1em]" />
                     <span className="text-xs">{fi ? sp.nameFi : sp.nameEn}</span>
                   </th>
                 ))}

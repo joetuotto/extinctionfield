@@ -136,6 +136,7 @@ const COPY = {
         studies: [
           { citation: "Belpomme ym.", year: 2022, note: "EHS-biomarkkerit (~1 000 potilasta)" },
           { citation: "Sousouri ym. (NeuroImage, ETH Zürich)", year: 2025, note: "Kaksoissokko-RCT: CACNA1C rs7304986 T/C → muuttunut unisukkuladynamiikka 3,6 GHz:ssä ICNIRP-rajan alla" },
+          { citation: "CACNA1C-genotyypitys", year: 2024, note: "VGCC-polymorfismi → EMF-herkkyys" },
           { citation: "HRV Wi-Fi -altistus", year: 2023, note: "Autonomiset muutokset herkässä osajoukossa" },
           { citation: "Higuchi ym.", year: 2007, note: "Silmien väri → melatoniinisuppressio (89 % vs. 73 %)" },
           { citation: "Yap/Sherrard-lab (Cells)", year: 2025, note: "FAD-puutos → magneettisen suuntaerottelun menetys" },
@@ -171,6 +172,7 @@ export default async function MagnetoreceptionPage({ params }: { params: Promise
             <article key={narrative.id} id={`narrative-${narrative.id}`} className="scroll-mt-24">
               {narrative.id === "human-cry-magnetoreception" && <span id="human-cry-magnetoreception" />}
               {narrative.id === "susceptibility" && <span id="individual-susceptibility" />}
+              {narrative.id === "cry-pulse-resonance" && <span id="cry-trpc1" />}
               <h3 className="text-lg font-semibold mb-4">
                 <span className="font-mono-num text-xs text-accent mr-2">0{ni + 1}</span>
                 {narrative.title}

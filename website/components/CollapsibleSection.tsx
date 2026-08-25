@@ -23,6 +23,7 @@ export function CollapsibleSection({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
         className="w-full flex items-start gap-3 text-left group"
       >
         <ChevronRight

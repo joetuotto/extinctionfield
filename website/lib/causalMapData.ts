@@ -82,7 +82,7 @@ export const NODES: CausalMapNode[] = [
       },
       bermPathway: "STATIC_TRIBO_INTERFACE",
       keyRefs: ["shafik1992", "england_2023_ticks"],
-      link: "/evidence#static-interface",
+      link: "/evidence/ecology#static-interface",
     },
   },
   {
@@ -124,7 +124,7 @@ export const NODES: CausalMapNode[] = [
       },
       bermPathway: "Pathways A_mitotic, Cyb5b",
       keyRefs: ["ttfields_ef14_jama_2017", "heliyon_150khz_fertility_2022", "boyes2021_led_insects", "ijrb2022_if_review", "kim2026_cell_gene_switch", "duraccio2019_blue_light", "milham_stetzer2013_dirty_electricity"],
-      link: "/evidence#lighting-transition",
+      link: "/evidence/lighting#lighting-transition",
     },
   },
   {
@@ -166,7 +166,7 @@ export const NODES: CausalMapNode[] = [
       },
       bermPathway: "All channels",
       keyRefs: ["panagopoulos2025", "delong2010_plosone"],
-      link: "/evidence#electrification-boundary",
+      link: "/evidence/epidemiology#electrification-boundary",
     },
   },
 
@@ -204,7 +204,7 @@ export const NODES: CausalMapNode[] = [
       },
       bermPathway: "All pathways",
       keyRefs: ["panagopoulos2025", "trus_atlas2024"],
-      link: "/evidence#therapeutic-devices",
+      link: "/evidence/devices#therapeutic-devices",
     },
   },
   {
@@ -279,7 +279,7 @@ export const NODES: CausalMapNode[] = [
       },
       bermPathway: "Pathway E",
       keyRefs: ["vns_gammacore"],
-      link: "/evidence#pathway-E",
+      link: "/evidence/circadian#pathway-E",
     },
   },
   {
@@ -298,7 +298,7 @@ export const NODES: CausalMapNode[] = [
       },
       bermPathway: "Pathway A_mitotic",
       keyRefs: ["ttfields_ef14_jama_2017", "ttfields_patent_7016725"],
-      link: "/evidence#pathway-A-mitotic",
+      link: "/evidence/lighting#pathway-A-mitotic",
     },
   },
   {
@@ -317,7 +317,7 @@ export const NODES: CausalMapNode[] = [
       },
       bermPathway: "Mitochondrial",
       keyRefs: ["lllt_fda_2007_alopecia", "hamblin2013_photomedicine"],
-      link: "/evidence#therapeutic-devices",
+      link: "/evidence/devices#therapeutic-devices",
     },
   },
   {
@@ -338,7 +338,7 @@ export const NODES: CausalMapNode[] = [
       },
       bermPathway: "Cyb5b transduction pathway",
       keyRefs: ["kim2026_cell_emf_gene_switch"],
-      link: "/evidence#therapeutic-devices",
+      link: "/evidence/devices#therapeutic-devices",
     },
   },
 
@@ -385,7 +385,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "Voltage-gated calcium channels open → Ca²⁺ influx → mitochondrial ROS → DNA damage. EMF sensitivity hierarchy at resting potential: Cav3 (T-type, ~10% open at rest) >> Cav1.3 (low-threshold L-type, activates at −50 mV) >> Cav1.2 (canonical L-type, activates at −30 mV, significant only during action potentials). CaMKII positive feedback: Ca²⁺ influx activates CaMKII, which shifts Cav3.2 activation threshold to more negative potentials — making the channel progressively MORE sensitive to EMF (PMC9913649). This explains cumulative sensitization over chronic exposure." },
       fi: { mechanism: "Jänniteohjatut kalsiumkanavat avautuvat → Ca²⁺-influksi → mitokondriaaliset ROS → DNA-vaurio. EMF-herkkyyhierarkia lepopotentiaalissa: Cav3 (T-tyyppi, ~10 % auki levossa) >> Cav1.3 (matalan kynnyksen L-tyyppi, aktivoituu −50 mV:ssa) >> Cav1.2 (kanoninen L-tyyppi, aktivoituu −30 mV:ssa, merkitsevä vain aktiopotentiaalin aikana). CaMKII-positiivinen takaisinkytkentä: Ca²⁺-influksi aktivoi CaMKII:n, joka siirtää Cav3.2:n aktivaatiokynnystä negatiivisempaan — tehden kanavan progressiivisesti HERKEMMÄKSI EMF:lle (PMC9913649). Tämä selittää kumulatiivisen herkistymisen kroonisessa altistuksessa." },
-      bermPathway: "A", link: "/evidence#pathway-A",
+      bermPathway: "A", link: "/evidence/devices#pathway-A",
     },
   },
   {
@@ -405,7 +405,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "PEMF mechanism: adenosine A2A receptor activation → cAMP cascade → anti-inflammatory response." },
       fi: { mechanism: "PEMF-mekanismi: adenosiini-A2A-reseptorin aktivointi → cAMP-kaskadi → anti-inflammatorinen vaste." },
-      bermPathway: "GPCR", link: "/evidence#pathway-GPCR",
+      bermPathway: "GPCR", link: "/evidence/devices#pathway-GPCR",
     },
   },
   {
@@ -415,7 +415,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "Sodium channel modulation → cortical plasticity. The basic mechanism of rTMS and tDCS." },
       fi: { mechanism: "Natriumkanavien modulointi → kortikaalinen plastisuus. rTMS:n ja tDCS:n perusmekanismi." },
-      bermPathway: "neural", link: "/evidence#pathway-neural",
+      bermPathway: "neural", link: "/evidence/devices#pathway-neural",
     },
   },
   {
@@ -425,7 +425,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "Cryptochrome radical pair spin state is disrupted → circadian clock distorted → melatonin synthesis decreases. Human CRY/RPM magnetoreception is blue-light-dependent (Chae et al. 2019, P<0.001); vertical component reversal reversed orientation, consistent with an inclination compass." },
       fi: { mechanism: "Kryptokromin radikaaliparin spin-tila häiriintyy → sirkadiaaninen kello vääristyy → melatoniinisyntesi alenee. Ihmisen CRY/RPM-magnetoreseptio on sinivaloriippuvainen (Chae ym. 2019, P<0,001); pystykomponentin kääntö käänsi orientaation, mikä on yhdenmukainen inklinaatiokompassin kanssa." },
-      bermPathway: "B,C", keyRefs: ["chae2019", "ritz2004_rf_compass", "engels2014_emf_bird", "sherrard2018", "yoshii2009"], link: "/evidence#human-cry-magnetoreception",
+      bermPathway: "B,C", keyRefs: ["chae2019", "ritz2004_rf_compass", "engels2014_emf_bird", "sherrard2018", "yoshii2009"], link: "/evidence/magnetoreception#human-cry-magnetoreception",
     },
   },
   {
@@ -435,7 +435,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "CRY2-dependent, light-dependent, FAD-dependent calcium entry through TRPC1 (a TRP channel, NOT a VGCC). CRY2 physically interacts with TRPC1; the complex co-translocates to the nucleus after EMF/PEMF exposure. Pharmacologically distinct from pathway A: not blocked by nifedipine/verapamil. Demonstrated in myoblasts (Yap et al. 2025, Cells)." },
       fi: { mechanism: "CRY2-riippuvainen, valoriippuvainen, FAD-riippuvainen kalsiumsisäänvirtaus TRPC1:n kautta (TRP-kanava, EI VGCC). CRY2 on fysikaalisessa vuorovaikutuksessa TRPC1:n kanssa; kompleksi siirtyy tumaan EMF/PEMF-altistuksen jälkeen. Farmakologisesti erillinen polku A:sta: nifedipiini/verapamiili ei estä. Osoitettu myoblasteissa (Yap ym. 2025, Cells)." },
-      bermPathway: "C", keyRefs: ["yap2025"], link: "/evidence#cry-trpc1",
+      bermPathway: "C", keyRefs: ["yap2025"], link: "/evidence/magnetoreception#cry-trpc1",
     },
   },
   {
@@ -445,7 +445,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "Vagus nerve cholinergic reflex: acetylcholine → α7nAChR → NF-κB inhibition → inflammation control." },
       fi: { mechanism: "Vagushermon kolinerginen refleksi: asetyylikoliini → α7nAChR → NF-κB-inhibitio → tulehduksen hallinta." },
-      bermPathway: "E", link: "/evidence#pathway-E",
+      bermPathway: "E", link: "/evidence/circadian#pathway-E",
     },
   },
   {
@@ -455,7 +455,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "IF field disrupts tubulin polymerization and spindle orientation → incorrect chromosome segregation." },
       fi: { mechanism: "IF-kenttä häiritsee tubuliinipolymerisaatiota ja karan orientaatiota → väärä kromosomijakauma." },
-      bermPathway: "A_mitotic", link: "/evidence#pathway-A-mitotic",
+      bermPathway: "A_mitotic", link: "/evidence/lighting#pathway-A-mitotic",
     },
   },
   {
@@ -475,7 +475,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "Dielectrophoresis: quadratic force on polarized particles in an inhomogeneous field. TTFields intensity." },
       fi: { mechanism: "Dielektroforeesi: neliöllinen voima polarisoituneille partikkeleille epähomogeenisessa kentässä. TTFields-intensiteetti." },
-      bermPathway: "A_mitotic (TTFields)", link: "/evidence#ttfields",
+      bermPathway: "A_mitotic (TTFields)", link: "/evidence/lighting#ttfields",
     },
   },
   {
@@ -486,7 +486,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "CRISPR-screen-identified Cyb5b functions as an EMF sensor on the outer mitochondrial membrane. Produces rhythmic Ca²⁺ oscillations that activate gene promoters. Third transduction pathway alongside IFO and RPM. 4 kHz (IF range) was used in the gene switch demonstration — links the IF channel directly to gene expression control cascade." },
       fi: { mechanism: "CRISPR-seulonnalla tunnistettu Cyb5b toimii EMF-sensorina mitokondrion ulkokalvolla. Tuottaa rytmiset Ca²⁺-oskillaatiot jotka aktivoivat geenipromoottoreita. Kolmas transduktioreitti IFO:n ja RPM:n rinnalla. 4 kHz (IF-alue) käytettiin geenikytkin-demonstraatiossa — yhdistää IF-kanavan suoraan geeniekspression kontrollikaskadiin." },
-      bermPathway: "Cyb5b", keyRefs: ["kim2026_cell_emf_gene_switch", "kim2026_cell_gene_switch"], link: "/evidence#lighting-transition",
+      bermPathway: "Cyb5b", keyRefs: ["kim2026_cell_emf_gene_switch", "kim2026_cell_gene_switch"], link: "/evidence/lighting#lighting-transition",
     },
   },
   {
@@ -496,7 +496,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "CACNA1C rs7304986 T/C carriers show measurable neurophysiological response to 5G exposure (3.6 GHz) below ICNIRP limits. T/T carriers show no effect. Double-blind design." },
       fi: { mechanism: "CACNA1C rs7304986 T/C-kantajat osoittavat mitattavan neurofysiologisen vasteen 5G-altistukselle (3.6 GHz) ICNIRP-rajojen alla. T/T-kantajilla ei vaikutusta. Kaksoissokkoasetelma." },
-      bermPathway: "Individual susceptibility", keyRefs: ["sousouri2025_cacna1c_5g_sleep"], link: "/evidence#individual-susceptibility",
+      bermPathway: "Individual susceptibility", keyRefs: ["sousouri2025_cacna1c_5g_sleep"], link: "/evidence/magnetoreception#individual-susceptibility",
     },
   },
   {
@@ -506,7 +506,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "US Patent 4,850,959 (1989): resonance-frequency EMF controls pancreatic β-cell insulin secretion via Ca²⁺ channels. Resonance → Ca²⁺ influx → insulin↑. Non-resonance → Ca²⁺ efflux → insulin↓." },
       fi: { mechanism: "US Patent 4,850,959 (1989): resonanssitaajuinen EMF kontrolloi haiman β-solujen insuliinieritystä Ca²⁺-kanavien kautta. Resonanssi → Ca²⁺-influksi → insuliini↑. Ei-resonanssi → Ca²⁺-effluksi → insuliini↓." },
-      bermPathway: "metabolic", keyRefs: ["patent_4850959_insulin"], link: "/evidence#metabolic",
+      bermPathway: "metabolic", keyRefs: ["patent_4850959_insulin"], link: "/evidence/cascades#metabolic",
     },
   },
   {
@@ -534,7 +534,7 @@ export const NODES: CausalMapNode[] = [
         mechanism: "Kaikki mielialahäiriöiden hoidot konvergoivat Ca²⁺-homeostaasiin: SSRI (epäsuora, NNT 7) < TMS/tDCS (sähkömagneettinen, NNT 5) < litium (ioninen, Li⁺→VGSC) < psykedeelit (ioninen reset, 5-HT2A→Cav1.2/CACNA1C, NNT 3). Tehokkuus seuraa ionisen kohdistuksen astetta.",
         prediction: "P14: EMF-altistus × psykedeelien vaste; P15: CACNA1C-genotyyppi × vaste; P16: litium suojaa EMF-mielialavaikutuksilta",
       },
-      bermPathway: "Ionic treatment", keyRefs: ["cipriani2018_antidepressants", "goodwin2022_psilocybin", "sousouri2025_cacna1c", "elmallakh2004_lithium_ion", "zarate2006_ketamine"], link: "/evidence#ionic-hierarchy",
+      bermPathway: "Ionic treatment", keyRefs: ["cipriani2018_antidepressants", "goodwin2022_psilocybin", "sousouri2025_cacna1c", "elmallakh2004_lithium_ion", "zarate2006_ketamine"], link: "/evidence/cascades#ionic-hierarchy",
     },
   },
   {
@@ -551,7 +551,7 @@ export const NODES: CausalMapNode[] = [
         mechanism: "Epidermis ylläpitää transepiteliaalista potentiaalia (TEP, 10–60 mV) Na⁺/K⁺-ATPaasin avulla. Dermiksen kollageeni on pietsosähköinen (7–8 pC/N) ja muuntaa mekaanisen voiman jännitteeksi joka avaa VGCC-kanavat. PIEZO1/TRPV4/VGCC konvergoivat Ca²⁺-vasteeseen. EMF häiritsee kaikkia kolmea järjestelmää samanaikaisesti.",
         prediction: "P17: EMF vähentää TEP:ia; P18: EMF hidastaa haavan paranemista",
       },
-      bermPathway: "Dermal bioelectric", keyRefs: ["lim2024_skin_battery", "zhao2006_wound_ef", "fukada1957_piezo", "skedung2013_nanoscale_touch"], link: "/evidence#skin-battery",
+      bermPathway: "Dermal bioelectric", keyRefs: ["lim2024_skin_battery", "zhao2006_wound_ef", "fukada1957_piezo", "skedung2013_nanoscale_touch"], link: "/evidence/cascades#skin-battery",
     },
   },
   {
@@ -568,7 +568,7 @@ export const NODES: CausalMapNode[] = [
         mechanism: "Kaikki LED-valonlähteet sisältävät hakkuriteholähteen (20–300 kHz IF-EMF). Verkkokalvon Cav1.4-kanavat ovat VGCC-tyyppisiä ja IF-EMF:n kohteita. Sinivalotutkimuksissa hehkulamppu vs. LED -vertailu sekoittuu IF-EMF:ään. A2E-fotosensitisaatio on todellinen, mutta IF-EMF voi vahvistaa sitä synergistisesti. Yötila poistaa sinivalon mutta EI IF-EMF:ää. Duraccio 2019: sinisen valon suodatuslasit EIVÄT parantaneet unta — viittaa IF:n rooliin.",
         prediction: "P19–P22: IF-EMF välittää LED-sinivalovauriota. SLEEP-1: Faraday-suojattu LED vs. suojaamaton.",
       },
-      bermPathway: "LED confound", keyRefs: ["pmc4896623_cav14", "pmc3885580_retinal_vgcc", "pmc7830240_blue_light", "duraccio2019_blue_light", "ijrb2022_if_review"], link: "/evidence#lighting-transition",
+      bermPathway: "LED confound", keyRefs: ["pmc4896623_cav14", "pmc3885580_retinal_vgcc", "pmc7830240_blue_light", "duraccio2019_blue_light", "ijrb2022_if_review"], link: "/evidence/lighting#lighting-transition",
     },
   },
   {
@@ -585,7 +585,7 @@ export const NODES: CausalMapNode[] = [
         mechanism: "Post-hospital syndrome (Krumholz NEJM 2013): riski kaikille diagnooseille 30 pv kotiutumisen jälkeen. Sairaalat ovat korkeimman EMF:n ympäristö: 24/7 LED (IF), Wi-Fi (RF), monitorit (IF+ELF), sähkösängyt (ELF). ICU: 40 µT laitteiden lähellä. Vanhukset 95% ajasta sängyssä. BERM: simultaaninen modulooma-aktivaatio heikentyneessä ionikanavahomeostaasissa.",
         prediction: "P23–P25: sairaala-EMF korrelaatio ja interventio",
       },
-      bermPathway: "Hospital EMF", keyRefs: ["krumholz2013_phs", "pubmed10447544_icu_emf"], link: "/evidence#hospital-emf",
+      bermPathway: "Hospital EMF", keyRefs: ["krumholz2013_phs", "pubmed10447544_icu_emf"], link: "/evidence/bbb#hospital-emf",
     },
   },
   {
@@ -602,7 +602,7 @@ export const NODES: CausalMapNode[] = [
         mechanism: "EMF → VGCC → Ca²⁺ ↑ → BACE1 → Aβ-oligomeerit. Ca²⁺:n läsnäollessa Aβ muodostaa toksisia oligomeereja (Bhatt PMC3065491). Oligomeerit muodostavat kalvon Ca²⁺-huokosia → positiivinen palautesilmukka. Preseniini-konvergenssi: PSEN1/2-mutaatiot (geneettinen) ja EMF-VGCC (ympäristöllinen) konvergoivat samaan Ca²⁺-polkuun. Arendash-paradoksi: kontrolloitu EMF suojaa (918 MHz, MemorEM/TEMT) — annos/taajuus/konteksti ratkaisevat.",
         prediction: "P29–P32: AD korreloi EMF:n kanssa, CACNA1C moduloi, matala-EMF hidastaa",
       },
-      bermPathway: "Alzheimer calcium", keyRefs: ["pmc4909906_calcium_ad", "pmc3065491_bhatt_ca_oligomers", "pmc7179355_oday_calcium", "pmc8125740_calcium_abeta"], link: "/evidence#alzheimer-calcium",
+      bermPathway: "Alzheimer calcium", keyRefs: ["pmc4909906_calcium_ad", "pmc3065491_bhatt_ca_oligomers", "pmc7179355_oday_calcium", "pmc8125740_calcium_abeta"], link: "/evidence/bbb#alzheimer-calcium",
     },
   },
   {
@@ -619,7 +619,7 @@ export const NODES: CausalMapNode[] = [
         mechanism: "Raskausaikainen EMF → sikiön VGCC-aktivaatio → Ca²⁺-häiriö kriittisessä kehitysikkunassa → ionikanavien (HCN, VGCC, KCNQ) kalibraatiovirhe PFC:n pyramidaalineuroneissa → signaali-kohinasuhteen vaje → ADHD-fenotyyppi. CACNA1C-variantit assosioituvat ADHD:hen, ASD:hen, bipolaarihäiriöön GWAS:ssa. Timothy-syndrooma (CACNA1C GoF) → autismi = geneettinen ääriesimerkki. Guanfasiini (FDA/EMA ADHD) toimii SUORAAN ionikanaviin: α2A → cAMP↓ → HCN sulkeutuu → Vm stabiloituu. Li 2020 (JAMA, 1482 paria): objektiivisesti mitattu raskausaikainen EMF → ADHD-riski.",
         prediction: "P33–P35: CACNA1C × EMF → ADHD, guanfasiini suojaa, prevalenssi seuraa EMF:ää",
       },
-      bermPathway: "ADHD calibration", keyRefs: ["li2020_jama_adhd", "pmc6101623_cacna1c_gwas", "pmc6894750_timothy", "wang2007_guanfacine_hcn"], link: "/evidence#adhd-calibration",
+      bermPathway: "ADHD calibration", keyRefs: ["li2020_jama_adhd", "pmc6101623_cacna1c_gwas", "pmc6894750_timothy", "wang2007_guanfacine_hcn"], link: "/evidence/cascades#adhd-calibration",
     },
   },
   {
@@ -636,7 +636,7 @@ export const NODES: CausalMapNode[] = [
         mechanism: "EMF → pinealirauhanen → melatoniini ↓ kytkee unikaskadin (1) hedelmällisyyskaskadiin (6): kaskadit ovat SARJASSA, eivät rinnakkain. Viisi polkua: (1) HPG-akseli: melatoniini → hypotalamus → GnRH → LH/FSH → gonadit; (2) antioksidantti: follikkelinesteen melatoniini → ROS-neutralointi → munasolun suoja (Tamura 2012); (3) anti-inflammatorinen: NF-κB ↓; (4) mitokondriaalinen: AMPK/SIRT1 ↑; (5) epigeneettinen: Gdf9/Bmp15-säätely. VAROITUS: melatoniinin HPG-vaikutus on KAKSISUUNTAINEN — korkeina pitoisuuksina se voi suppressoida GnRH:ta.",
         prediction: "P38–P40: IVF × EMF, melatoniinilisä × EMF -interaktio, vuorotyö",
       },
-      bermPathway: "Melatonin bridge", keyRefs: ["tamura2012_follicular_melatonin", "tong2017_melatonin_ivf", "battelle1980_emf_melatonin", "reiter2007_melatonin_male"], link: "/evidence#melatonin-bridge",
+      bermPathway: "Melatonin bridge", keyRefs: ["tamura2012_follicular_melatonin", "tong2017_melatonin_ivf", "battelle1980_emf_melatonin", "reiter2007_melatonin_male"], link: "/evidence/circadian#melatonin-bridge",
     },
   },
   {
@@ -647,7 +647,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "De-Kun Li's 6 cohorts (n = 801–10,931) in the Kaiser Permanente system, EMDEX-measured MF exposure (16 mG threshold). 5 endpoints across 4 BERM cascades: miscarriage (2002), sperm ↓ (2010), childhood asthma (2011), childhood obesity (2012), ADHD (2020). Li 2017: early-onset cancer (EOC) from maternal exposure. Cohort design, objective measurement, consistent results across endpoints." },
       fi: { mechanism: "De-Kun Li:n 6 kohorttia (n = 801–10 931) Kaiser Permanente -järjestelmässä, EMDEX-mitattu MF-altistus (16 mG -kynnys). 5 päätetapahtumaa 4 BERM-kaskadissa: keskenmeno (2002), sperma ↓ (2010), lapsuusastma (2011), lapsuuslihavuus (2012), ADHD (2020). Li 2017: varhain alkava syöpä (EOC) äitien altistuksesta. Kohorttiasetelma, objektiivinen mittaus, konsistentteja tuloksia eri päätepisteissä." },
-      bermPathway: "IF,A_mitotic", keyRefs: ["li2002_miscarriage_mf", "li2010_sperm_mf", "li2011_asthma_mf", "li2012_obesity_mf", "li2017", "li2020_jama_adhd"], link: "/evidence#kaiser-permanente-series",
+      bermPathway: "IF,A_mitotic", keyRefs: ["li2002_miscarriage_mf", "li2010_sperm_mf", "li2011_asthma_mf", "li2012_obesity_mf", "li2017", "li2020_jama_adhd"], link: "/evidence/epidemiology#kaiser-permanente-series",
     },
   },
 
@@ -689,30 +689,30 @@ export const NODES: CausalMapNode[] = [
   },
 
   // ── LEVEL 3: Tissue effects (10) ──
-  { id: "tissue_sperm", level: 3, label: { en: "Spermatogenesis ↓", fi: "Spermatogeneesi ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "ROS damage, mitotic spindle disruption, and Leydig cell dysfunction reduce sperm production." }, fi: { mechanism: "ROS-vaurio, mitoottisen karan häiriö ja Leydig-solujen toimintahäiriö vähentävät siittiötuotantoa." }, link: "/evidence#sperm" } },
-  { id: "tissue_ovarian", level: 3, label: { en: "Ovulation / oocyte quality ↓", fi: "Ovulaatio/munasolun laatu ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Oocyte meiotic spindle is disrupted, granulosa cell apoptosis increases." }, fi: { mechanism: "Munasolun meioottinen kara häiriintyy, granuloosasolujen apoptoosi lisääntyy." }, link: "/evidence#ovarian" } },
-  { id: "tissue_testosterone", level: 3, label: { en: "Testosterone ↓", fi: "Testosteroni ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Leydig cell steroidogenesis disruption: StAR protein expression decreases → testosterone synthesis declines." }, fi: { mechanism: "Leydig-solujen steroidogeneesin häiriö: StAR-proteiinin ilmentyminen alenee → testosteronisyntesi vähenee." }, link: "/evidence#testosterone" } },
-  { id: "tissue_melatonin", level: 3, label: { en: "Melatonin ↓", fi: "Melatoniini ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Pineal gland melatonin synthesis decreases via CRY/RPM disruption and display device blue light." }, fi: { mechanism: "Pinealirauhasen melatoniinisyntesi alenee CRY/RPM-häiriön ja näyttölaitteiden sinisen valon kautta." }, link: "/evidence#melatonin" } },
-  { id: "tissue_nk_cells", level: 3, label: { en: "NK cells ↓ (−70%)", fi: "NK-solut ↓ (−70%)" }, epistemicLevel: "E", detail: { en: { mechanism: "Natural killer cells decline. Melatonin normally stimulates NK cell activity." }, fi: { mechanism: "Luonnolliset tappajasolut vähenevät. Melatoniini normaalisti stimuloi NK-aktiivisuutta." }, link: "/evidence#nk-cells" } },
-  { id: "tissue_insulin", level: 3, label: { en: "Insulin sensitivity ↓", fi: "Insuliiniherkkyys ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Melatonin deficiency disrupts pancreatic β-cell rhythm → insulin resistance." }, fi: { mechanism: "Melatoniinin puute häiritsee haiman β-solujen rytmiä → insuliiniresistenssi." }, link: "/evidence#insulin" } },
-  { id: "tissue_cortisol", level: 3, label: { en: "Cortisol ↑ (chronic)", fi: "Kortisoli ↑ (krooninen)" }, epistemicLevel: "E", detail: { en: { mechanism: "HPA axis hyperactivation: circadian disruption + vagal tone decrease → chronic cortisol." }, fi: { mechanism: "HPA-akselin yliaktivaatio: sirkadiaaninen häiriö + vagaalisen tonuksen lasku → krooninen kortisoli." }, link: "/evidence#cortisol" } },
+  { id: "tissue_sperm", level: 3, label: { en: "Spermatogenesis ↓", fi: "Spermatogeneesi ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "ROS damage, mitotic spindle disruption, and Leydig cell dysfunction reduce sperm production." }, fi: { mechanism: "ROS-vaurio, mitoottisen karan häiriö ja Leydig-solujen toimintahäiriö vähentävät siittiötuotantoa." }, link: "/evidence/lighting#sperm" } },
+  { id: "tissue_ovarian", level: 3, label: { en: "Ovulation / oocyte quality ↓", fi: "Ovulaatio/munasolun laatu ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Oocyte meiotic spindle is disrupted, granulosa cell apoptosis increases." }, fi: { mechanism: "Munasolun meioottinen kara häiriintyy, granuloosasolujen apoptoosi lisääntyy." }, link: "/evidence/circadian#ovarian" } },
+  { id: "tissue_testosterone", level: 3, label: { en: "Testosterone ↓", fi: "Testosteroni ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Leydig cell steroidogenesis disruption: StAR protein expression decreases → testosterone synthesis declines." }, fi: { mechanism: "Leydig-solujen steroidogeneesin häiriö: StAR-proteiinin ilmentyminen alenee → testosteronisyntesi vähenee." }, link: "/evidence/circadian#testosterone" } },
+  { id: "tissue_melatonin", level: 3, label: { en: "Melatonin ↓", fi: "Melatoniini ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Pineal gland melatonin synthesis decreases via CRY/RPM disruption and display device blue light." }, fi: { mechanism: "Pinealirauhasen melatoniinisyntesi alenee CRY/RPM-häiriön ja näyttölaitteiden sinisen valon kautta." }, link: "/evidence/circadian#melatonin" } },
+  { id: "tissue_nk_cells", level: 3, label: { en: "NK cells ↓ (−70%)", fi: "NK-solut ↓ (−70%)" }, epistemicLevel: "E", detail: { en: { mechanism: "Natural killer cells decline. Melatonin normally stimulates NK cell activity." }, fi: { mechanism: "Luonnolliset tappajasolut vähenevät. Melatoniini normaalisti stimuloi NK-aktiivisuutta." }, link: "/evidence/circadian#nk-cells" } },
+  { id: "tissue_insulin", level: 3, label: { en: "Insulin sensitivity ↓", fi: "Insuliiniherkkyys ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Melatonin deficiency disrupts pancreatic β-cell rhythm → insulin resistance." }, fi: { mechanism: "Melatoniinin puute häiritsee haiman β-solujen rytmiä → insuliiniresistenssi." }, link: "/evidence/cascades#insulin" } },
+  { id: "tissue_cortisol", level: 3, label: { en: "Cortisol ↑ (chronic)", fi: "Kortisoli ↑ (krooninen)" }, epistemicLevel: "E", detail: { en: { mechanism: "HPA axis hyperactivation: circadian disruption + vagal tone decrease → chronic cortisol." }, fi: { mechanism: "HPA-akselin yliaktivaatio: sirkadiaaninen häiriö + vagaalisen tonuksen lasku → krooninen kortisoli." }, link: "/evidence/circadian#cortisol" } },
   { id: "tissue_bbb", level: 3, label: { en: "BBB permeability ↑", fi: "BBB-permeabiliteetti ↑" }, epistemicLevel: "E", detail: { en: { mechanism: "Blood-brain barrier permeability increases via eNOS activation → occludin downregulation → TJ protein degradation (Salford 2003; Ulusoy et al. 2025). The same tight junction proteins (occludin, ZO-1, claudins) are shared with the BTB. Progressive: 30 min non-damaging → 360 min structural damage." }, fi: { mechanism: "Veri-aivoesteen läpäisevyys kasvaa eNOS-aktivaation → okkludiinin alaregulaation → TJ-proteiinien degradaation kautta (Salford 2003; Ulusoy ym. 2025). Samat tight junction -proteiinit (okkludiini, ZO-1, klaudiinit) ovat yhteisiä BTB:n kanssa. Progressiivinen: 30 min ei-vaurioittava → 360 min rakenteellinen vaurio." }, bermPathway: "F", keyRefs: ["salford2003", "ulusoy2025"], link: "/evidence/bbb" } },
   { id: "tissue_btb", level: 3, label: { en: "BTB disruption ↑", fi: "BTB:n häiriö ↑" }, epistemicLevel: "E", detail: { en: { mechanism: "Blood-testis barrier disruption via Spock3-MMP2 axis at 2605 MHz (4G). Same TJ proteins as BBB. Progressive time-dependent toxicity with positive feedback: barrier damage → higher effective field → more damage. Direct spermatogenic microenvironment compromise (Yu et al. 2019)." }, fi: { mechanism: "Veri-kivesesteen häiriö Spock3-MMP2-akselin kautta 2605 MHz:llä (4G). Samat TJ-proteiinit kuin BBB:ssä. Progressiivinen aikariippuvainen toksisuus positiivisella takaisinkytkennällä: estevaurio → korkeampi efektiivinen kenttä → enemmän vauriota. Suora spermatogeneettisen mikroympäristön vaarantuminen (Yu ym. 2019)." }, bermPathway: "F", keyRefs: ["yu2019_btb"], link: "/evidence/bbb" } },
-  { id: "tissue_gut", level: 3, label: { en: "Gut epithelium ↓", fi: "Suoliston epiteeli ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Gut epithelial cells' rapid division cycle (3-5 days) makes them vulnerable to IF field mitotic disruption." }, fi: { mechanism: "Suoliston epiteelisolujen nopea jakautumissykli (3-5 pv) tekee niistä haavoittuvia IF-kentän mitoottiselle häiriölle." }, link: "/evidence#gut" } },
-  { id: "tissue_vagal_tone", level: 3, label: { en: "Vagal tone ↓", fi: "Vagaalinen tonus ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Vagus nerve anti-inflammatory reflex weakening → chronic low-grade inflammation." }, fi: { mechanism: "Vagushermon anti-inflammatorisen refleksin heikkeneminen → krooninen matala-asteinen tulehdus." }, link: "/evidence#vagal-tone" } },
+  { id: "tissue_gut", level: 3, label: { en: "Gut epithelium ↓", fi: "Suoliston epiteeli ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Gut epithelial cells' rapid division cycle (3-5 days) makes them vulnerable to IF field mitotic disruption." }, fi: { mechanism: "Suoliston epiteelisolujen nopea jakautumissykli (3-5 pv) tekee niistä haavoittuvia IF-kentän mitoottiselle häiriölle." }, link: "/evidence/circadian#gut" } },
+  { id: "tissue_vagal_tone", level: 3, label: { en: "Vagal tone ↓", fi: "Vagaalinen tonus ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Vagus nerve anti-inflammatory reflex weakening → chronic low-grade inflammation." }, fi: { mechanism: "Vagushermon anti-inflammatorisen refleksin heikkeneminen → krooninen matala-asteinen tulehdus." }, link: "/evidence/circadian#vagal-tone" } },
 
   // ── LEVEL 4: Disease cascade (7) ──
-  { id: "disease_sleep", level: 4, label: { en: "1. Sleep disorders", fi: "1. Unihäiriöt" }, sublabel: { en: "Latency: months", fi: "Viive: kuukausia" }, color: "#9B7FD4", cascadeOrder: 1, epistemicLevel: "E", detail: { en: { mechanism: "Melatonin deficiency + circadian disruption → sleep disorders. The first clinical symptom." }, fi: { mechanism: "Melatoniinin puute + sirkadiaaninen häiriö → unihäiriöt. Ensimmäinen kliininen oire." }, link: "/evidence#sleep" } },
-  { id: "disease_depression", level: 4, label: { en: "2. Depression", fi: "2. Masennus" }, sublabel: { en: "Latency: 1–3 years", fi: "Viive: 1-3 vuotta" }, color: "#6B9FD4", cascadeOrder: 2, epistemicLevel: "E", detail: { en: { mechanism: "Chronic sleep disorder + cortisol + testosterone decline → depression." }, fi: { mechanism: "Krooninen unihäiriö + kortisoli + testosteronin lasku → masennus." }, link: "/evidence#depression" } },
-  { id: "disease_adhd", level: 4, label: { en: "3. ADHD / ASD", fi: "3. ADHD/ASD" }, sublabel: { en: "Latency: 2–5 years", fi: "Viive: 2-5 vuotta" }, color: "#5AAD8B", cascadeOrder: 3, epistemicLevel: "M|C", detail: { en: { mechanism: "Prenatal EMF exposure disrupts neuronal migration and synaptogenesis." }, fi: { mechanism: "Prenataalinen EMF-altistus häiritsee hermosolujen migraatiota ja synaptogeneesiä." }, link: "/evidence#adhd" } },
-  { id: "disease_metabolic", level: 4, label: { en: "4. Metabolic syndrome", fi: "4. Metabolinen oireyht." }, sublabel: { en: "Latency: 3–8 y | Klimentidis 2011", fi: "Viive: 3-8 v | Klimentidis 2011" }, color: "#D4A85A", cascadeOrder: 4, epistemicLevel: "E", detail: { en: { mechanism: "Insulin resistance + chronic cortisol → metabolic syndrome. Klimentidis et al. 2011 (Proc R Soc B): 24 populations of 8 species show parallel weight gain, including laboratory animals on controlled diets (p < 10⁻⁷)." }, fi: { mechanism: "Insuliiniresistenssi + krooninen kortisoli → metabolinen oireyhtymä. Klimentidis ym. 2011 (Proc R Soc B): 24 populaatiota 8 lajissa osoittaa rinnakkaista painonnousua, ml. laboratorio­eläimet kontrolloiduilla ruokavalioilla (p < 10⁻⁷)." }, keyRefs: ["klimentidis2011_procrsocb"], link: "/evidence#metabolic" } },
-  { id: "disease_autoimmune", level: 4, label: { en: "5. Autoimmune diseases", fi: "5. Autoimmuunisairaudet" }, sublabel: { en: "Latency: 5–10 years", fi: "Viive: 5-10 vuotta" }, color: "#D47A8B", cascadeOrder: 5, epistemicLevel: "M|C", detail: { en: { mechanism: "Vagal tone decline + chronic inflammation + gut permeability → autoimmunity." }, fi: { mechanism: "Vagaalisen tonuksen lasku + krooninen tulehdus + suoliston läpäisevyys → autoimmuniteetti." }, link: "/evidence#autoimmune" } },
-  { id: "disease_fertility", level: 4, label: { en: "6. Infertility", fi: "6. Hedelmättömyys" }, sublabel: { en: "Latency: 5–15 years", fi: "Viive: 5-15 vuotta" }, color: "#D4845A", cascadeOrder: 6, epistemicLevel: "E", detail: { en: { mechanism: "Cumulative: sperm quality + ovulation + testosterone + hormonal disruption → infertility." }, fi: { mechanism: "Kumulatiivinen: sperman laatu + ovulaatio + testosteroni + hormonaalinen häiriö → hedelmättömyys." }, link: "/evidence#fertility" } },
-  { id: "disease_cancer", level: 4, label: { en: "7. Young-onset cancer", fi: "7. Nuorten syöpä" }, sublabel: { en: "Latency: 10–25 years", fi: "Viive: 10-25 vuotta" }, color: "#A85A5A", cascadeOrder: 7, epistemicLevel: "E", detail: { en: { mechanism: "NK cell decline + ROS damage + mitotic disruption + immunosuppression → cancer risk." }, fi: { mechanism: "NK-solujen lasku + ROS-vaurio + mitoottinen häiriö + immunosuppressio → syöpäriski." }, link: "/evidence#cancer" } },
+  { id: "disease_sleep", level: 4, label: { en: "1. Sleep disorders", fi: "1. Unihäiriöt" }, sublabel: { en: "Latency: months", fi: "Viive: kuukausia" }, color: "#9B7FD4", cascadeOrder: 1, epistemicLevel: "E", detail: { en: { mechanism: "Melatonin deficiency + circadian disruption → sleep disorders. The first clinical symptom." }, fi: { mechanism: "Melatoniinin puute + sirkadiaaninen häiriö → unihäiriöt. Ensimmäinen kliininen oire." }, link: "/evidence/circadian#sleep" } },
+  { id: "disease_depression", level: 4, label: { en: "2. Depression", fi: "2. Masennus" }, sublabel: { en: "Latency: 1–3 years", fi: "Viive: 1-3 vuotta" }, color: "#6B9FD4", cascadeOrder: 2, epistemicLevel: "E", detail: { en: { mechanism: "Chronic sleep disorder + cortisol + testosterone decline → depression." }, fi: { mechanism: "Krooninen unihäiriö + kortisoli + testosteronin lasku → masennus." }, link: "/evidence/cascades#depression" } },
+  { id: "disease_adhd", level: 4, label: { en: "3. ADHD / ASD", fi: "3. ADHD/ASD" }, sublabel: { en: "Latency: 2–5 years", fi: "Viive: 2-5 vuotta" }, color: "#5AAD8B", cascadeOrder: 3, epistemicLevel: "M|C", detail: { en: { mechanism: "Prenatal EMF exposure disrupts neuronal migration and synaptogenesis." }, fi: { mechanism: "Prenataalinen EMF-altistus häiritsee hermosolujen migraatiota ja synaptogeneesiä." }, link: "/evidence/cascades#adhd" } },
+  { id: "disease_metabolic", level: 4, label: { en: "4. Metabolic syndrome", fi: "4. Metabolinen oireyht." }, sublabel: { en: "Latency: 3–8 y | Klimentidis 2011", fi: "Viive: 3-8 v | Klimentidis 2011" }, color: "#D4A85A", cascadeOrder: 4, epistemicLevel: "E", detail: { en: { mechanism: "Insulin resistance + chronic cortisol → metabolic syndrome. Klimentidis et al. 2011 (Proc R Soc B): 24 populations of 8 species show parallel weight gain, including laboratory animals on controlled diets (p < 10⁻⁷)." }, fi: { mechanism: "Insuliiniresistenssi + krooninen kortisoli → metabolinen oireyhtymä. Klimentidis ym. 2011 (Proc R Soc B): 24 populaatiota 8 lajissa osoittaa rinnakkaista painonnousua, ml. laboratorio­eläimet kontrolloiduilla ruokavalioilla (p < 10⁻⁷)." }, keyRefs: ["klimentidis2011_procrsocb"], link: "/evidence/cascades#metabolic" } },
+  { id: "disease_autoimmune", level: 4, label: { en: "5. Autoimmune diseases", fi: "5. Autoimmuunisairaudet" }, sublabel: { en: "Latency: 5–10 years", fi: "Viive: 5-10 vuotta" }, color: "#D47A8B", cascadeOrder: 5, epistemicLevel: "M|C", detail: { en: { mechanism: "Vagal tone decline + chronic inflammation + gut permeability → autoimmunity." }, fi: { mechanism: "Vagaalisen tonuksen lasku + krooninen tulehdus + suoliston läpäisevyys → autoimmuniteetti." }, link: "/evidence/cascades#autoimmune" } },
+  { id: "disease_fertility", level: 4, label: { en: "6. Infertility", fi: "6. Hedelmättömyys" }, sublabel: { en: "Latency: 5–15 years", fi: "Viive: 5-15 vuotta" }, color: "#D4845A", cascadeOrder: 6, epistemicLevel: "E", detail: { en: { mechanism: "Cumulative: sperm quality + ovulation + testosterone + hormonal disruption → infertility." }, fi: { mechanism: "Kumulatiivinen: sperman laatu + ovulaatio + testosteroni + hormonaalinen häiriö → hedelmättömyys." }, link: "/evidence/circadian#fertility" } },
+  { id: "disease_cancer", level: 4, label: { en: "7. Young-onset cancer", fi: "7. Nuorten syöpä" }, sublabel: { en: "Latency: 10–25 years", fi: "Viive: 10-25 vuotta" }, color: "#A85A5A", cascadeOrder: 7, epistemicLevel: "E", detail: { en: { mechanism: "NK cell decline + ROS damage + mitotic disruption + immunosuppression → cancer risk." }, fi: { mechanism: "NK-solujen lasku + ROS-vaurio + mitoottinen häiriö + immunosuppressio → syöpäriski." }, link: "/evidence/cascades#cancer" } },
 
   // ── LEVEL 5: Demographic cascade (4) ──
   { id: "demo_biocap", level: 5, label: { en: "Biological capacity ↓", fi: "Biologinen kapasiteetti ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Combined effect of spermatogenesis, ovulation, and hormonal disruptions lowers biological reproductive capacity." }, fi: { mechanism: "Spermatogeneesin, ovulaation ja hormonaalisten häiriöiden yhteisvaikutus alentaa biologista lisääntymiskapasiteettia." }, link: "/model#biocap" } },
-  { id: "demo_behavior", level: 5, label: { en: "Reproductive motivation ↓", fi: "Lisääntymismotivaatio ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Testosterone and oxytocin decline + depression + sleep disorders → approach behavior and libido decrease." }, fi: { mechanism: "Testosteronin ja oksitosiinin lasku + masennus + unihäiriöt → lähestymiskäyttäytyminen ja libido laskevat." }, link: "/evidence#qbs" } },
+  { id: "demo_behavior", level: 5, label: { en: "Reproductive motivation ↓", fi: "Lisääntymismotivaatio ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Testosterone and oxytocin decline + depression + sleep disorders → approach behavior and libido decrease." }, fi: { mechanism: "Testosteronin ja oksitosiinin lasku + masennus + unihäiriöt → lähestymiskäyttäytyminen ja libido laskevat." }, link: "/evidence/circadian#qbs" } },
   { id: "demo_asfr", level: 5, label: { en: "ASFR ↓ (age-specific)", fi: "ASFR ↓ (ikäkohtainen)" }, epistemicLevel: "E", detail: { en: { mechanism: "Decline in biological capacity and motivation produces age-specific fertility rate (ASFR) decline." }, fi: { mechanism: "Biologisen kapasiteetin ja motivaation lasku tuottaa ikäkohtaisen hedelmällisyysluvun (ASFR) laskun." }, link: "/model#asfr" } },
   { id: "demo_tfr", level: 5, label: { en: "TFR ↓ (total)", fi: "TFR ↓ (kokonais)" }, sublabel: { en: "5.0 → 2.2 globally", fi: "5.0 → 2.2 globaalisti" }, epistemicLevel: "E", detail: { en: { mechanism: "Sum of ASFRs across age groups = total fertility rate (TFR). Global trend: 5.0 → 2.2." }, fi: { mechanism: "ASFR-lukujen summa yli ikäryhmien = kokonaishedelmällisyysluku (TFR). Globaali trendi: 5.0 → 2.2." }, link: "/explore" } },
 
@@ -723,7 +723,7 @@ export const NODES: CausalMapNode[] = [
   { id: "eco_amphibian", level: 6, label: { en: "Amphibians ↓", fi: "Sammakkoeläimet ↓" }, sublabel: { en: "Enigmatic declines", fi: "Selittämättömät vähenemät" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Unexplained declines in areas without habitat destruction or disease." }, fi: { mechanism: "Selittämättömät vähenemät alueilla ilman habitaatin tuhoa tai tauteja." }, link: "/sentinel#amphibians" } },
   { id: "eco_bee", level: 6, label: { en: "Bees ↓", fi: "Mehiläiset ↓" }, sublabel: { en: "CCD, grooming↓", fi: "CCD, puhdistuskäyttäytyminen↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Colony Collapse Disorder + grooming behavior impairment → loss of Varroa resistance." }, fi: { mechanism: "Colony Collapse Disorder + grooming-käyttäytymisen heikkeneminen → Varroa-resistenssin menetys." }, link: "/articles/bees" } },
   { id: "eco_varroa", level: 6, label: { en: "Varroa ← protected", fi: "Varroa ← suojassa" }, sublabel: { en: "Sclerotin, small size", fi: "Sclerotin, pieni koko" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Varroa destructor: 1.1mm, sclerotin armor, no CRY navigation → EMF has no effect." }, fi: { mechanism: "Varroa destructor: 1.1mm, sclerotiinipanssari, ei CRY-navigaatiota → EMF ei vaikuta." }, link: "/articles/bees#varroa" } },
-  { id: "eco_tick", level: 6, label: { en: "Ticks ← increasing?", fi: "Punkit ← runsastuvat?" }, sublabel: { en: "Electrostatic contact↑", fi: "Sähköstaattinen kontakti↑" }, epistemicLevel: "C", detail: { en: { mechanism: "Electrostatic charge may increase tick attachment to host. Speculative." }, fi: { mechanism: "Sähköstaattinen varaus voi lisätä punkkien kiinnittymistä isäntään. Spekulatiivinen." }, link: "/evidence#ticks" } },
+  { id: "eco_tick", level: 6, label: { en: "Ticks ← increasing?", fi: "Punkit ← runsastuvat?" }, sublabel: { en: "Electrostatic contact↑", fi: "Sähköstaattinen kontakti↑" }, epistemicLevel: "C", detail: { en: { mechanism: "Electrostatic charge may increase tick attachment to host. Speculative." }, fi: { mechanism: "Sähköstaattinen varaus voi lisätä punkkien kiinnittymistä isäntään. Spekulatiivinen." }, link: "/evidence/ecology#ticks" } },
   { id: "eco_pollination", level: 6, label: { en: "Pollination ↓", fi: "Pölytys ↓" }, sublabel: { en: "Ecosystem service", fi: "Ekosysteemipalvelu" }, epistemicLevel: "E", detail: { en: { mechanism: "Insect pollinator decline threatens 75% of crops. Electrostatic pollination mechanism disruption." }, fi: { mechanism: "Hyönteispölyttäjien väheneminen uhkaa 75% viljelykasveista. Sähköstaattisen pölytysmekanismin häiriö." }, link: "/sentinel#pollination" } },
 
   // ── LEVEL 0: Evolutionary origin ──

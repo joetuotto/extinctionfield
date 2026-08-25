@@ -2,9 +2,10 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 695,
-    "verified_count": 192,
-    "generated": "2026-08-25"
+    "total_references": 531,
+    "verified_count": 219,
+    "generated": "2026-08-26",
+    "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls"
   },
   "categories": [
     {
@@ -375,25 +376,6 @@
       "verified": false
     },
     {
-      "id": "tyhjinoyr",
-      "authors": "Dynaaminen tyhjiö",
-      "year": 0,
-      "title": "Dynaaminen tyhjiö",
-      "journal": "",
-      "doi": null,
-      "category": "physics_theory",
-      "pathway": [
-        "theory"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Dynaaminen tyhjiö",
-      "tags": [],
-      "pdf_section": "I",
-      "pdf_number": 525,
-      "verified": false
-    },
-    {
       "id": "white2026",
       "authors": "White, H., Vera, J., Sylvester, A. & Dudzinski, L",
       "year": 2026,
@@ -505,25 +487,6 @@
       "tags": [],
       "pdf_section": "II",
       "pdf_number": 21,
-      "verified": false
-    },
-    {
-      "id": "hore2016",
-      "authors": "Hore, P.J. & Mouritsen, H",
-      "year": 2016,
-      "title": "The radical-pair mechanism of magnetoreception",
-      "journal": "",
-      "doi": "10.1146/annurev-biophys-032116-094545",
-      "category": "transduction_rpm_calcium",
-      "pathway": [
-        "B"
-      ],
-      "level": "E",
-      "type": "report",
-      "finding": "Finding not yet documented — see: The radical-pair mechanism of magnetoreception",
-      "tags": [],
-      "pdf_section": "II",
-      "pdf_number": 22,
       "verified": false
     },
     {
@@ -698,25 +661,6 @@
       "verified": false
     },
     {
-      "id": "pall2013",
-      "authors": "Pall, M.L",
-      "year": 2013,
-      "title": "Electromagnetic fields act via activation of voltage-gated calcium channels to produce beneficial or adverse effects",
-      "journal": "",
-      "doi": "10.1111/jcmm.12088",
-      "category": "transduction_rpm_calcium",
-      "pathway": [
-        "A"
-      ],
-      "level": "P",
-      "type": "journal",
-      "finding": "Finding not yet documented — see: Electromagnetic fields act via activation of voltage-gated calcium channels to produce beneficial or",
-      "tags": [],
-      "pdf_section": "III",
-      "pdf_number": 32,
-      "verified": false
-    },
-    {
       "id": "pall2015",
       "authors": "Pall, M.L",
       "year": 2015,
@@ -752,25 +696,6 @@
       "tags": [],
       "pdf_section": "III",
       "pdf_number": 34,
-      "verified": false
-    },
-    {
-      "id": "pall2018",
-      "authors": "Pall, M.L",
-      "year": 2018,
-      "title": "Wi-Fi is an important threat to human health",
-      "journal": "",
-      "doi": "10.1016/j.envres.2018.01.035",
-      "category": "transduction_rpm_calcium",
-      "pathway": [
-        "A"
-      ],
-      "level": "P",
-      "type": "journal",
-      "finding": "Finding not yet documented — see: Wi-Fi is an important threat to human health",
-      "tags": [],
-      "pdf_section": "III",
-      "pdf_number": 35,
       "verified": false
     },
     {
@@ -817,25 +742,6 @@
       "pdf_section": "III",
       "pdf_number": 37,
       "verified": true
-    },
-    {
-      "id": "adey1981",
-      "authors": "Adey, W.R",
-      "year": 1981,
-      "title": "Tissue interactions with nonionizing electromagnetic fields",
-      "journal": "",
-      "doi": "10.1152/physrev.1981.61.2.435",
-      "category": "transduction_rpm_calcium",
-      "pathway": [
-        "A"
-      ],
-      "level": "E",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Tissue interactions with nonionizing electromagnetic fields",
-      "tags": [],
-      "pdf_section": "III",
-      "pdf_number": 38,
-      "verified": false
     },
     {
       "id": "walleczek1992",
@@ -892,26 +798,6 @@
       "tags": [],
       "pdf_section": "III",
       "pdf_number": 41,
-      "verified": false
-    },
-    {
-      "id": "yak2016",
-      "authors": "Yakymenko, I., Tsybulin, O., Sidorik, E., Henshel, D., Kyrylenko, O. & Kyrylenko, S",
-      "year": 2016,
-      "title": "Oxidative mechanisms of biological activity of low-intensity radiofrequency radiation",
-      "journal": "",
-      "doi": "10.3109/15368378.2015.1043557",
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "A",
-        "RW"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Oxidative mechanisms of biological activity of low-intensity radiofrequency radiation",
-      "tags": [],
-      "pdf_section": "IV",
-      "pdf_number": 42,
       "verified": false
     },
     {
@@ -972,26 +858,6 @@
       "tags": [],
       "pdf_section": "IV",
       "pdf_number": 45,
-      "verified": false
-    },
-    {
-      "id": "levine2017",
-      "authors": "Levine, H. ym",
-      "year": 2017,
-      "title": "Temporal trends in sperm count: a systematic review and meta-regression analysis",
-      "journal": "",
-      "doi": "10.1093/humupd/dmx022",
-      "category": "reproduction_hormones",
-      "pathway": [
-        "T",
-        "A"
-      ],
-      "level": "E",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Temporal trends in sperm count: a systematic review and meta-regression analysis",
-      "tags": [],
-      "pdf_section": "V",
-      "pdf_number": 46,
       "verified": false
     },
     {
@@ -1112,26 +978,6 @@
       "tags": [],
       "pdf_section": "V",
       "pdf_number": 54,
-      "verified": false
-    },
-    {
-      "id": "houston2018",
-      "authors": "Houston, B.J. ym",
-      "year": 2018,
-      "title": "Whole-body exposures to radiofrequency-electromagnetic energy can cause DNA damage in mouse spermatozoa via an oxidative mechanism",
-      "journal": "",
-      "doi": "10.1038/s41598-019-53983-9",
-      "category": "reproduction_hormones",
-      "pathway": [
-        "T",
-        "A"
-      ],
-      "level": "M",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Whole-body exposures to radiofrequency-electromagnetic energy can cause DNA damage in mouse spermato",
-      "tags": [],
-      "pdf_section": "V",
-      "pdf_number": 55,
       "verified": false
     },
     {
@@ -1275,26 +1121,6 @@
       "verified": false
     },
     {
-      "id": "israelnoyr",
-      "authors": "Taub Center for Social Policy Studies in Israel",
-      "year": 0,
-      "title": "Taub Center for Social Policy Studies in Israel. “Israel’s Exceptional Fertility.” Haredi TFR ~7, secular+traditional ~2.5.",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "T",
-        "D"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Taub Center for Social Policy Studies in Israel. “Israel’s Exceptional Fertility.” Haredi TFR ~7, se",
-      "tags": [],
-      "pdf_section": "VI",
-      "pdf_number": 64,
-      "verified": false
-    },
-    {
       "id": "policy2025",
       "authors": "Foreign Policy",
       "year": 2025,
@@ -1352,25 +1178,6 @@
       "tags": [],
       "pdf_section": "VI",
       "pdf_number": 68,
-      "verified": false
-    },
-    {
-      "id": "mouritsen2014",
-      "authors": "Mouritsen, H., Hore, P.J. ym",
-      "year": 2014,
-      "title": "Anthropogenic electromagnetic noise disrupts magnetic compass orientation in a migratory bird",
-      "journal": "",
-      "doi": "10.1038/nature13290",
-      "category": "ecology_sentinels",
-      "pathway": [
-        "S"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Anthropogenic electromagnetic noise disrupts magnetic compass orientation in a migratory bird",
-      "tags": [],
-      "pdf_section": "VII",
-      "pdf_number": 69,
       "verified": false
     },
     {
@@ -1466,44 +1273,6 @@
       "tags": [],
       "pdf_section": "VII",
       "pdf_number": 74,
-      "verified": false
-    },
-    {
-      "id": "levitt2022",
-      "authors": "Levitt, B.B., Lai, H.C. & Manville, A.M",
-      "year": 2022,
-      "title": "Effects of non-ionizing electromagnetic fields on flora and fauna, part 1",
-      "journal": "",
-      "doi": "10.1515/reveh-2021-0026",
-      "category": "ecology_sentinels",
-      "pathway": [
-        "S"
-      ],
-      "level": "E",
-      "type": "journal",
-      "finding": "Finding not yet documented — see: Effects of non-ionizing electromagnetic fields on flora and fauna, part 1",
-      "tags": [],
-      "pdf_section": "VII",
-      "pdf_number": 75,
-      "verified": false
-    },
-    {
-      "id": "hallmann2017",
-      "authors": "Hallmann, C.A. ym",
-      "year": 2017,
-      "title": "More than 75 percent decline over 27 years in total flying insect biomass in protected areas",
-      "journal": "",
-      "doi": "10.1371/journal.pone.0185809",
-      "category": "ecology_sentinels",
-      "pathway": [
-        "S"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: More than 75 percent decline over 27 years in total flying insect biomass in protected areas",
-      "tags": [],
-      "pdf_section": "VII",
-      "pdf_number": 76,
       "verified": false
     },
     {
@@ -1770,25 +1539,6 @@
       "tags": [],
       "pdf_section": "IX",
       "pdf_number": 90,
-      "verified": false
-    },
-    {
-      "id": "protectionnoyr",
-      "authors": "Israel Ministry of Environmental Protection",
-      "year": 0,
-      "title": "Israel Ministry of Environmental Protection. Broadcasting sites limited to 10% ICNIRP in prolonged-stay, 30% in short-stay areas.",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "H"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Israel Ministry of Environmental Protection. Broadcasting sites limited to 10% ICNIRP in prolonged-s",
-      "tags": [],
-      "pdf_section": "IX",
-      "pdf_number": 91,
       "verified": false
     },
     {
@@ -2180,25 +1930,6 @@
       "verified": false
     },
     {
-      "id": "aldad2012",
-      "authors": "Aldad, T.S. ym",
-      "year": 2012,
-      "title": "Fetal radiofrequency radiation exposure from 800-1900 MHzrated cellular telephones affects neurodevelopment and behavior in mice",
-      "journal": "",
-      "doi": "10.1038/srep00312",
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "A"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Fetal radiofrequency radiation exposure from 800-1900 MHzrated cellular telephones affects neurodeve",
-      "tags": [],
-      "pdf_section": "XII",
-      "pdf_number": 104,
-      "verified": false
-    },
-    {
       "id": "cherry2002",
       "authors": "Cherry, N",
       "year": 2002,
@@ -2276,25 +2007,6 @@
       "tags": [],
       "pdf_section": "XIII",
       "pdf_number": 108,
-      "verified": false
-    },
-    {
-      "id": "becker1985",
-      "authors": "Becker, R.O. & Selden, G",
-      "year": 1985,
-      "title": "The Body Electric: Electromagnetism and the Foundation of Life",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "H"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: The Body Electric: Electromagnetism and the Foundation of Life",
-      "tags": [],
-      "pdf_section": "XIV",
-      "pdf_number": 109,
       "verified": false
     },
     {
@@ -2748,26 +2460,6 @@
       "verified": false
     },
     {
-      "id": "goldsmithnoyr",
-      "authors": "Goldsmith, J",
-      "year": 0,
-      "title": "Goldsmith, J.R. Lilienfeldin datan uudelleenanalyysi. — Osoitti tulokset “toned down” ulkoministeriön painostuksesta.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Goldsmith, J.R. Lilienfeldin datan uudelleenanalyysi. — Osoitti tulokset “toned down” ulkoministeriö",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 136,
-      "verified": false
-    },
-    {
       "id": "uudelleenanalyysi2019",
       "authors": "Espanjalainen uudelleenanalyysi",
       "year": 2019,
@@ -2788,66 +2480,6 @@
       "verified": false
     },
     {
-      "id": "noyrb",
-      "authors": "Project PANDORA (1965–1970)",
-      "year": 0,
-      "title": "Project PANDORA (1965–1970). DARPA-johtama ohjelma Moskovan signaalin vaikutusten tutkimiseksi. Sisälsi eläinkokeita moduloiduilla mikroaalloilla ja s",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Project PANDORA (1965–1970). DARPA-johtama ohjelma Moskovan signaalin vaikutusten tutkimiseksi. Sisä",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 138,
-      "verified": false
-    },
-    {
-      "id": "bizarrenoyr",
-      "authors": "Project BIZARRE",
-      "year": 0,
-      "title": "Project BIZARRE. Jatkoprojekti — tutkii suojaustoimia ja säteilyn vaikutuksia apinoilla.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Project BIZARRE. Jatkoprojekti — tutkii suojaustoimia ja säteilyn vaikutuksia apinoilla.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 139,
-      "verified": false
-    },
-    {
-      "id": "seafarernoyr",
-      "authors": "Project Sanguine / Seafarer",
-      "year": 0,
-      "title": "Project Sanguine / Seafarer. US Navyn ELF-viestintäohjelma ydinsukellusveneiden yhteydenpitoon. Beckerin komitea suositteli yksimielisesti hyllyttämis",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Project Sanguine / Seafarer. US Navyn ELF-viestintäohjelma ydinsukellusveneiden yhteydenpitoon. Beck",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 140,
-      "verified": false
-    },
-    {
       "id": "raines1981",
       "authors": "Raines, J.K",
       "year": 1981,
@@ -2865,46 +2497,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 141,
-      "verified": false
-    },
-    {
-      "id": "noyrc",
-      "authors": "Moskovan signaali (1953–1979+)",
-      "year": 0,
-      "title": "Moskovan signaali (1953–1979+). Neuvostoliiton Yhdysvaltain suurlähetystöön kohdistama mikroaaltosäteily: 2,5–4,0 GHz, intensiteetti ≤5 µW/cm², 9 h/pv",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Moskovan signaali (1953–1979+). Neuvostoliiton Yhdysvaltain suurlähetystöön kohdistama mikroaaltosät",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 142,
-      "verified": false
-    },
-    {
-      "id": "ranoyr",
-      "authors": "Tri-Service Conference on Biological Hazards of Microwave Ra",
-      "year": 0,
-      "title": "Tri-Service Conference on Biological Hazards of Microwave Radiation (1957– 1960). Neljä konferenssia. Kulminaatio johti 10 mW/cm² turvallisuusrajan as",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Tri-Service Conference on Biological Hazards of Microwave Radiation (1957– 1960). Neljä konferenssia",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 144,
       "verified": false
     },
     {
@@ -3028,26 +2620,6 @@
       "verified": false
     },
     {
-      "id": "voegelinoyr",
-      "authors": "Voegeli, M",
-      "year": 0,
-      "title": "Voegeli, M. (1930-luvut). Lämmön rooli miehen steriloinnissa — kivesten altistaminen korkeille lämpötiloille heikensi hedelmällisyyttä. XXI. HAVANA-SY",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Voegeli, M. (1930-luvut). Lämmön rooli miehen steriloinnissa — kivesten altistaminen korkeille lämpö",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 152,
-      "verified": false
-    },
-    {
       "id": "itsekoe2024",
       "authors": "Norjalaisen tutkijan itsekoe",
       "year": 2024,
@@ -3065,26 +2637,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 153,
-      "verified": false
-    },
-    {
-      "id": "becknoyr",
-      "authors": "Michael Beck",
-      "year": 0,
-      "title": "Michael Beck. NSA:n tiedustelu-upseeri, ensimmäinen Havana-syndrooman raportoija. Parkinsonin tauti diagnosoitu 45-vuotiaana. Kuoli 29.1.2026, 65 v. K",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Michael Beck. NSA:n tiedustelu-upseeri, ensimmäinen Havana-syndrooman raportoija. Parkinsonin tauti ",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 154,
       "verified": false
     },
     {
@@ -3108,26 +2660,6 @@
       "verified": false
     },
     {
-      "id": "freynoyr",
-      "authors": "Allan Frey",
-      "year": 0,
-      "title": "Allan Frey. ONR-rahoitus 15+ vuotta, ultimaatumi 1975 veri-aivoeste-julkaisun jälkeen. Brooks AFB väärensi replikaatiokokeen. “Funding for open microw",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Allan Frey. ONR-rahoitus 15+ vuotta, ultimaatumi 1975 veri-aivoeste-julkaisun jälkeen. Brooks AFB vä",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 156,
-      "verified": false
-    },
-    {
       "id": "frey1975",
       "authors": "Frey, A.H",
       "year": 1975,
@@ -3145,106 +2677,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 157,
-      "verified": false
-    },
-    {
-      "id": "carlonoyr",
-      "authors": "George Carlo",
-      "year": 0,
-      "title": "George Carlo. WTR-ohjelman (Wireless Technology Research) johtaja. Fyysinen uhkailu, talo paloi epäilyttävissä olosuhteissa, poistettu turvamiesten sa",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: George Carlo. WTR-ohjelman (Wireless Technology Research) johtaja. Fyysinen uhkailu, talo paloi epäi",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 158,
-      "verified": false
-    },
-    {
-      "id": "hardellnoyr",
-      "authors": "Lennart Hardell",
-      "year": 0,
-      "title": "Lennart Hardell. Suljettu systemaattisesti pois WHO/ICNIRP-paneeleista EMF– syöpätutkimuksen jälkeen.",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Lennart Hardell. Suljettu systemaattisesti pois WHO/ICNIRP-paneeleista EMF– syöpätutkimuksen jälkeen",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 159,
-      "verified": false
-    },
-    {
-      "id": "byrdnoyr",
-      "authors": "Eldon Byrd",
-      "year": 0,
-      "title": "Eldon Byrd. Naval Surface Weapons Center. EM-tutkija, pidätetty seksuaalirikossyytteillä — ajoitus osui yhteen julkisten EM-aselausuntojen kanssa.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Eldon Byrd. Naval Surface Weapons Center. EM-tutkija, pidätetty seksuaalirikossyytteillä — ajoitus o",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 160,
-      "verified": false
-    },
-    {
-      "id": "noyrd",
-      "authors": "Andrija Puharich (1918–1995)",
-      "year": 0,
-      "title": "Andrija Puharich (1918–1995). ELF-tutkija, CIA/armeija-taustaa. Laboratorio poltettu tuhopolttona 1978.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Andrija Puharich (1918–1995). ELF-tutkija, CIA/armeija-taustaa. Laboratorio poltettu tuhopolttona 19",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 161,
-      "verified": false
-    },
-    {
-      "id": "adlkofernoyr",
-      "authors": "Franz Adlkofer",
-      "year": 0,
-      "title": "Franz Adlkofer. Ainoa ihminen, joka on johtanut tutkimusta sekä tupakkateollisuudelle että EMF-kentässä — todistaa menetelmien identtisyyden.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Franz Adlkofer. Ainoa ihminen, joka on johtanut tutkimusta sekä tupakkateollisuudelle että EMF-kentä",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 162,
       "verified": false
     },
     {
@@ -3325,26 +2757,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 166,
-      "verified": false
-    },
-    {
-      "id": "clarke2013",
-      "authors": "Clarke, D., Whitney, H., Sutton, G. & Robert, D",
-      "year": 2013,
-      "title": "Detection and learning of floral electric fields by bumblebees",
-      "journal": "",
-      "doi": "10.1126/science.1230883",
-      "category": "ecology_sentinels",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Detection and learning of floral electric fields by bumblebees",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 167,
       "verified": false
     },
     {
@@ -3528,26 +2940,6 @@
       "verified": false
     },
     {
-      "id": "nazrolunoyr",
-      "authors": "Nazıroğlu, M",
-      "year": 0,
-      "title": "Nazıroğlu, M. ym. TRPM2/TRPV1-kanavasalpaajien vaikutus EMF-vasteeseen (usean tutkimuksen kirjasto).",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "T",
-      "type": "book",
-      "finding": "Finding not yet documented — see: Nazıroğlu, M. ym. TRPM2/TRPV1-kanavasalpaajien vaikutus EMF-vasteeseen (usean tutkimuksen kirjasto).",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 178,
-      "verified": false
-    },
-    {
       "id": "wever1973",
       "authors": "Wever, R",
       "year": 1973,
@@ -3608,26 +3000,6 @@
       "verified": false
     },
     {
-      "id": "ntpnoyr",
-      "authors": "National Toxicology Program (NTP, 2018)",
-      "year": 0,
-      "title": "National Toxicology Program (NTP, 2018). USA. 30 M$ tutkimus: “clear evidence” sydämen schwannoomista, “some evidence” glioomista rotilla GSM/CDMA-alt",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: National Toxicology Program (NTP, 2018). USA. 30 M$ tutkimus: “clear evidence” sydämen schwannoomist",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 184,
-      "verified": false
-    },
-    {
       "id": "falcioni2018",
       "authors": "Falcioni, L. ym. / Ramazzini Institute",
       "year": 2018,
@@ -3648,26 +3020,6 @@
       "verified": false
     },
     {
-      "id": "hardellnoyrb",
-      "authors": "Hardell, L",
-      "year": 0,
-      "title": "Hardell, L. & Carlberg, M. Meta-analyysi: glioomariski >10 v käytössä: OR 1.90 (95% CI: 1.31–2.76). Akustikusneurinooma: OR 1.69.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "E",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Hardell, L. & Carlberg, M. Meta-analyysi: glioomariski >10 v käytössä: OR 1.90 (95% CI: 1.31–2.76). ",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 187,
-      "verified": false
-    },
-    {
       "id": "ahlbom2000",
       "authors": "Ahlbom, A. ym",
       "year": 2000,
@@ -3685,126 +3037,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 188,
-      "verified": false
-    },
-    {
-      "id": "hubernoyr",
-      "authors": "Huber, R",
-      "year": 0,
-      "title": "Huber, R. ym. Unen aikaiset EEG-muutokset: alfa-aktiviteetti nousi 15 % pulssimoduloidussa altistuksessa.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Huber, R. ym. Unen aikaiset EEG-muutokset: alfa-aktiviteetti nousi 15 % pulssimoduloidussa altistuks",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 189,
-      "verified": false
-    },
-    {
-      "id": "croftnoyr",
-      "authors": "Croft, R",
-      "year": 0,
-      "title": "Croft, R.J. ym. Meta-analyysi (n=1253, 36 tutkimusta): alfa-tehon nousu SMD 0.31, beta-tehon muutos SMD 0.24.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "E",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Croft, R.J. ym. Meta-analyysi (n=1253, 36 tutkimusta): alfa-tehon nousu SMD 0.31, beta-tehon muutos ",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 190,
-      "verified": false
-    },
-    {
-      "id": "barthnoyr",
-      "authors": "Barth, A",
-      "year": 0,
-      "title": "Barth, A. ym. Meta-analyysi (17 tutkimusta): huomiokyky SMD -0.14, työmuisti SMD -0.12.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "E",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Barth, A. ym. Meta-analyysi (17 tutkimusta): huomiokyky SMD -0.14, työmuisti SMD -0.12.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 191,
-      "verified": false
-    },
-    {
-      "id": "leungnoyr",
-      "authors": "Leung, S",
-      "year": 0,
-      "title": "Leung, S. ym. Taajuusspesifiset vaikutukset: 217 Hz paransi suorituskykyä, 40 Hz heikensi muistia.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Leung, S. ym. Taajuusspesifiset vaikutukset: 217 Hz paransi suorituskykyä, 40 Hz heikensi muistia.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 192,
-      "verified": false
-    },
-    {
-      "id": "salfordnoyr",
-      "authors": "Salford, L",
-      "year": 0,
-      "title": "Salford, L.G. ym. Veri-aivoeste rotilla: albumiinin vuoto +28 % (SAR 0.012 W/kg), tummat neuronit +40 %, vaikutukset 50 pv jälkeen.",
-      "journal": "",
-      "doi": null,
-      "category": "neurobiology_circadian",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Salford, L.G. ym. Veri-aivoeste rotilla: albumiinin vuoto +28 % (SAR 0.012 W/kg), tummat neuronit +4",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 193,
-      "verified": false
-    },
-    {
-      "id": "nittbynoyr",
-      "authors": "Nittby, H",
-      "year": 0,
-      "title": "Nittby, H. ym. Vahvistivat Salfordin löydökset: veri-aivoesteen läpäisevyys nousi annoksesta riippuen, ikkuna-efekti. XXIII.D INSTITUTIONAALINEN JA RE",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Nittby, H. ym. Vahvistivat Salfordin löydökset: veri-aivoesteen läpäisevyys nousi annoksesta riippue",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 194,
       "verified": false
     },
     {
@@ -3908,26 +3140,6 @@
       "verified": false
     },
     {
-      "id": "appealnoyr",
-      "authors": "International EMF Scientist Appeal",
-      "year": 0,
-      "title": "International EMF Scientist Appeal. 220 EMF-tutkijaa kritisoi ICNIRP:n ohjeita. Yksikään allekirjoittajista ei ICNIRP:n jäsen.",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: International EMF Scientist Appeal. 220 EMF-tutkijaa kritisoi ICNIRP:n ohjeita. Yksikään allekirjoit",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 200,
-      "verified": false
-    },
-    {
       "id": "letters2020",
       "authors": "Oncology Letters",
       "year": 2020,
@@ -3968,46 +3180,6 @@
       "verified": false
     },
     {
-      "id": "noyre",
-      "authors": "Telecommunications Act 1996, Section 704",
-      "year": 0,
-      "title": "Telecommunications Act 1996, Section 704. Kieltää paikallishallintoja vastustamasta tukiasemia terveys- tai ympäristösyillä.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Telecommunications Act 1996, Section 704. Kieltää paikallishallintoja vastustamasta tukiasemia terve",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 203,
-      "verified": false
-    },
-    {
-      "id": "1968",
-      "authors": "Public Law 90-602",
-      "year": 1968,
-      "title": "Velvoittaa FDA:ta tutkimaan ja suojaamaan yleisöä elektronisen säteilyn vaaroilta — ristiriidassa Section 704 kanssa",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Velvoittaa FDA:ta tutkimaan ja suojaamaan yleisöä elektronisen säteilyn vaaroilta — ristiriidassa Se",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 204,
-      "verified": false
-    },
-    {
       "id": "syndrome2020",
       "authors": "NAS-raportti Havana Syndrome",
       "year": 2020,
@@ -4025,126 +3197,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 205,
-      "verified": false
-    },
-    {
-      "id": "tutkimusnoyr",
-      "authors": "Quebec Hydro -tutkimus",
-      "year": 0,
-      "title": "Quebec Hydro -tutkimus. Sähkötyöntekijöillä 6:1 poika/tyttö-syntymäsuhde (Beckerin raportoimana).",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Quebec Hydro -tutkimus. Sähkötyöntekijöillä 6:1 poika/tyttö-syntymäsuhde (Beckerin raportoimana).",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 206,
-      "verified": false
-    },
-    {
-      "id": "shktyntekijtnoyr",
-      "authors": "Ruotsalaiset sähkötyöntekijät",
-      "year": 0,
-      "title": "Ruotsalaiset sähkötyöntekijät. 8 % synnynnäisiä epämuodostumia vs. 3 % kontrolliväestössä.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Ruotsalaiset sähkötyöntekijät. 8 % synnynnäisiä epämuodostumia vs. 3 % kontrolliväestössä.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 207,
-      "verified": false
-    },
-    {
-      "id": "helikopterilentjtnoyr",
-      "authors": "Fort Rucker -helikopterilentäjät",
-      "year": 0,
-      "title": "Fort Rucker -helikopterilentäjät. Lasten synnynnäiset epämuodostumat koholla.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Fort Rucker -helikopterilentäjät. Lasten synnynnäiset epämuodostumat koholla.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 208,
-      "verified": false
-    },
-    {
-      "id": "laivastotutkimusnoyr",
-      "authors": "Pensacolan laivastotutkimus",
-      "year": 0,
-      "title": "Pensacolan laivastotutkimus. Sublimaalinen stressivaste toimistotason EMFaltistuksessa.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Pensacolan laivastotutkimus. Sublimaalinen stressivaste toimistotason EMFaltistuksessa.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 209,
-      "verified": false
-    },
-    {
-      "id": "hutteriititnoyr",
-      "authors": "Hutteriitit",
-      "year": 0,
-      "title": "Hutteriitit. TFR romahti kun teknologia tuli yhteisöihin — vertailupari amissien kanssa. XXIII.F HORMONIVAIKUTUKSET, KÄYTTÄYTYMINEN JA MOTIVAATIO",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Hutteriitit. TFR romahti kun teknologia tuli yhteisöihin — vertailupari amissien kanssa. XXIII.F HOR",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 210,
-      "verified": false
-    },
-    {
-      "id": "travison2007",
-      "authors": "Travison, T.G., Araujo, A.B., O’Donnell, A.B., Kupelian, V. & McKinlay, J.B",
-      "year": 2007,
-      "title": "A population-level decline in serum testosterone levels in American men",
-      "journal": "",
-      "doi": "10.1210/jc.2006-1375",
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: A population-level decline in serum testosterone levels in American men",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 213,
       "verified": false
     },
     {
@@ -4408,666 +3460,6 @@
       "verified": false
     },
     {
-      "id": "tutkimuksetnoyr",
-      "authors": "Porcine endometrial tissue -tutkimukset",
-      "year": 0,
-      "title": "Porcine endometrial tissue -tutkimukset. EMF häiritsi estradiol-17β:n ja estronin synteesiä muuttamalla sytokromi P-450 aromataasin ekspressiota.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "T",
-      "type": "book",
-      "finding": "Finding not yet documented — see: Porcine endometrial tissue -tutkimukset. EMF häiritsi estradiol-17β:n ja estronin synteesiä muuttama",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 229,
-      "verified": false
-    },
-    {
-      "id": "tutkimuksetnoyrb",
-      "authors": "Follikulaarisen kehityksen tutkimukset",
-      "year": 0,
-      "title": "Follikulaarisen kehityksen tutkimukset. Oksidatiivinen stressi vaikuttaa granuloosasolujen steroidituotantokykyyn.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Follikulaarisen kehityksen tutkimukset. Oksidatiivinen stressi vaikuttaa granuloosasolujen steroidit",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 230,
-      "verified": false
-    },
-    {
-      "id": "ehsnoyr",
-      "authors": "Sähköallergia / elektromagneettinen yliherkkyyys (EHS)",
-      "year": 0,
-      "title": "Sähköallergia / elektromagneettinen yliherkkyyys (EHS). Keskusteluissa analysoitu BERM-kehyksessä: vagushermon reaktiivisuuden yksilölliset erot, EMhy",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Sähköallergia / elektromagneettinen yliherkkyyys (EHS). Keskusteluissa analysoitu BERM-kehyksessä: v",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 231,
-      "verified": false
-    },
-    {
-      "id": "gradienttinoyr",
-      "authors": "Israelin sisäinen gradientti",
-      "year": 0,
-      "title": "Israelin sisäinen gradientti. TFR-portaat teknologiavältteisyyden järjestyksessä: haredi 6.4 → dati (uskonnollinen sionisti) 3.8 → sekulaari 2.0. Sama",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Israelin sisäinen gradientti. TFR-portaat teknologiavältteisyyden järjestyksessä: haredi 6.4 → dati ",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 234,
-      "verified": false
-    },
-    {
-      "id": "kosherpuhelimetnoyr",
-      "authors": "Kosher-puhelimet",
-      "year": 0,
-      "title": "Kosher-puhelimet. Haredi-yhteisöt käyttävät 2G/3G-peruslaitteita ilman dataa/WiFi:ä/Bluetoothia. Dosimetrimitattu RF-altistus merkittävästi vähäisempi",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kosher-puhelimet. Haredi-yhteisöt käyttävät 2G/3G-peruslaitteita ilman dataa/WiFi:ä/Bluetoothia. Dos",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 235,
-      "verified": false
-    },
-    {
-      "id": "shabbatefektinoyr",
-      "authors": "Shabbat-efekti",
-      "year": 0,
-      "title": "Shabbat-efekti. 25 tunnin viikoittainen teknologia-abstinenssi + useat juhlapäivät. BERM ennustaa kalsiumhomeostasin palautumisajan.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Shabbat-efekti. 25 tunnin viikoittainen teknologia-abstinenssi + useat juhlapäivät. BERM ennustaa ka",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 236,
-      "verified": false
-    },
-    {
-      "id": "emfaltistusnoyr",
-      "authors": "Haredi-koulujen EMF-altistus",
-      "year": 0,
-      "title": "Haredi-koulujen EMF-altistus. Uskonnollisissa kouluissa oppilaiden ja opettajien EMFaltistus 63–82 % pienempi kuin maallistuneissa kouluissa.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Haredi-koulujen EMF-altistus. Uskonnollisissa kouluissa oppilaiden ja opettajien EMFaltistus 63–82 %",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 237,
-      "verified": false
-    },
-    {
-      "id": "amishnoyr",
-      "authors": "Old Order Amish",
-      "year": 0,
-      "title": "Old Order Amish. TFR ~6–7, ei verkkosähköä, ei matkapuhelimia, ei Wi-Fi:ä. ACS + CAPED-data.",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Old Order Amish. TFR ~6–7, ei verkkosähköä, ei matkapuhelimia, ei Wi-Fi:ä. ACS + CAPED-data.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 238,
-      "verified": false
-    },
-    {
-      "id": "vsnoyr",
-      "authors": "Modernit vs",
-      "year": 0,
-      "title": "Modernit vs. perinteiset mennoniitit. Old Order (ei teknologiaa): TFR 5–6. Modernit mennoniitit (teknologia ok): TFR 2–3. Sama teologia, eri teknologi",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Modernit vs. perinteiset mennoniitit. Old Order (ei teknologiaa): TFR 5–6. Modernit mennoniitit (tek",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 239,
-      "verified": false
-    },
-    {
-      "id": "vsnoyrb",
-      "authors": "Meksikolaiset mennoniitit vs",
-      "year": 0,
-      "title": "Meksikolaiset mennoniitit vs. meksikolaiset. Mennoniittiyhteisöt Meksikossa TFR 5–6, ympäröivässä väestössä 1.8. Kulttuuri samankaltainen (konservatii",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Meksikolaiset mennoniitit vs. meksikolaiset. Mennoniittiyhteisöt Meksikossa TFR 5–6, ympäröivässä vä",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 240,
-      "verified": false
-    },
-    {
-      "id": "hutteriititnoyrb",
-      "authors": "Hutteriitit",
-      "year": 0,
-      "title": "Hutteriitit. TFR romahti kun teknologia tuli yhteisöihin — vertailupari amissien kanssa. Aiemmin korkein dokumentoitu TFR modernissa väestössä (~10),",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Hutteriitit. TFR romahti kun teknologia tuli yhteisöihin — vertailupari amissien kanssa. Aiemmin kor",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 241,
-      "verified": false
-    },
-    {
-      "id": "1980",
-      "authors": "Mormonit (LDS). Vahva pronatalistinen kulttuuri ilman teknologiarajoituksia: TFR ~4.5",
-      "year": 1980,
-      "title": "→ ~2",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: → ~2",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 242,
-      "verified": false
-    },
-    {
-      "id": "2023",
-      "authors": "Etelä-Korea. TFR 0.72",
-      "year": 2023,
-      "title": "Yli 200 miljardia dollaria pronatalistisia tukia 2006 jälkeen — TFR laski 1",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Yli 200 miljardia dollaria pronatalistisia tukia 2006 jälkeen — TFR laski 1",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 243,
-      "verified": false
-    },
-    {
-      "id": "2023b",
-      "authors": "Japani. TFR 1.20",
-      "year": 2023,
-      "title": "E-pillerit laillistettu vasta 1999, mutta hedelmällisyys laskenut vuosikymmeniä aiemmin",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: E-pillerit laillistettu vasta 1999, mutta hedelmällisyys laskenut vuosikymmeniä aiemmin",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 244,
-      "verified": false
-    },
-    {
-      "id": "albanianoyr",
-      "authors": "Albania",
-      "year": 0,
-      "title": "Albania. TFR romahti ~7:stä ~3:een 1960–1990 vaikka ehkäisy laillistettiin vasta 1992.",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Albania. TFR romahti ~7:stä ~3:een 1960–1990 vaikka ehkäisy laillistettiin vasta 1992.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 245,
-      "verified": false
-    },
-    {
-      "id": "2010",
-      "authors": "Suomi. TFR 1.83",
-      "year": 2010,
-      "title": "→ 1",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: → 1",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 246,
-      "verified": false
-    },
-    {
-      "id": "1985",
-      "authors": "Iran. TFR 6.5",
-      "year": 1985,
-      "title": "→ 1",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: → 1",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 247,
-      "verified": false
-    },
-    {
-      "id": "1970",
-      "authors": "Saudi-Arabia. TFR 7.2",
-      "year": 1970,
-      "title": "→ 2",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: → 2",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 248,
-      "verified": false
-    },
-    {
-      "id": "1970b",
-      "authors": "Meksiko. TFR 6.8",
-      "year": 1970,
-      "title": "→ 1",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: → 1",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 249,
-      "verified": false
-    },
-    {
-      "id": "1970c",
-      "authors": "Brasilia. TFR 5.8",
-      "year": 1970,
-      "title": "→ 1",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: → 1",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 250,
-      "verified": false
-    },
-    {
-      "id": "1970d",
-      "authors": "Turkki. TFR 5.5",
-      "year": 1970,
-      "title": "→ 1",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: → 1",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 251,
-      "verified": false
-    },
-    {
-      "id": "1970e",
-      "authors": "Italia. TFR 2.4",
-      "year": 1970,
-      "title": "→ 1",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: → 1",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 252,
-      "verified": false
-    },
-    {
-      "id": "1990",
-      "authors": "Intian osavaltiot. Uttar Pradesh (konservatiivinen): TFR 5.8",
-      "year": 1990,
-      "title": "→ 2",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: → 2",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 253,
-      "verified": false
-    },
-    {
-      "id": "vsnoyrc",
-      "authors": "Pakistanin heimoalueet vs",
-      "year": 0,
-      "title": "Pakistanin heimoalueet vs. kaupungit. Syrjäisillä alueilla (heikko sähkö/mobiiliverkko) TFR 4–5. Karachissa/Lahoressa 2–2.5. Kulttuuri molemmissa kons",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Pakistanin heimoalueet vs. kaupungit. Syrjäisillä alueilla (heikko sähkö/mobiiliverkko) TFR 4–5. Kar",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 254,
-      "verified": false
-    },
-    {
-      "id": "chilenoyr",
-      "authors": "Chile",
-      "year": 0,
-      "title": "Chile. Ensimmäinen 5G Latinalaisessa Amerikassa (helmikuu 2021). TFR-lasku analysoitu BERM-kehyksessä erikseen.",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Chile. Ensimmäinen 5G Latinalaisessa Amerikassa (helmikuu 2021). TFR-lasku analysoitu BERM-kehyksess",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 255,
-      "verified": false
-    },
-    {
-      "id": "nokiaaikakausinoyr",
-      "authors": "Suomen Nokia-aikakausi",
-      "year": 0,
-      "title": "Suomen Nokia-aikakausi. Suomen TFR nousi 1990-luvulla Nokia-penetraation huipun aikana — käytetty BERM:n empiirisenä falsifioijana keskusteluissa.",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Suomen Nokia-aikakausi. Suomen TFR nousi 1990-luvulla Nokia-penetraation huipun aikana — käytetty BE",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 256,
-      "verified": false
-    },
-    {
-      "id": "vsnoyrd",
-      "authors": "Kumulatiivinen internet-penetraatio vs",
-      "year": 0,
-      "title": "Kumulatiivinen internet-penetraatio vs. TFR. Post-transitiomaat (>50 %-ylitys): r = −0.38 (p = 0.001). Euroopassa: r = −0.60. Within-analyysi: r = −0.",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kumulatiivinen internet-penetraatio vs. TFR. Post-transitiomaat (>50 %-ylitys): r = −0.38 (p = 0.001",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 258,
-      "verified": false
-    },
-    {
-      "id": "ennustevoimanoyr",
-      "authors": "Ennustevoima",
-      "year": 0,
-      "title": "Ennustevoima. Malli sovitettu 2000–2014 ennustaa 2015–2023: RMSE 0.0687 vs. maakohtaisen trendin 0.0780 (−11.9 %). Prospektiivinen ennusterekisteri R1",
-      "journal": "",
-      "doi": null,
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Ennustevoima. Malli sovitettu 2000–2014 ennustaa 2015–2023: RMSE 0.0687 vs. maakohtaisen trendin 0.0",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 259,
-      "verified": false
-    },
-    {
-      "id": "londonnoyr",
-      "authors": "Lloyd’s of London",
-      "year": 0,
-      "title": "Lloyd’s of London. Kieltäytyy EMF-vastuuvakuutuksista. Swiss Re luokittelee EMF:n “high risk” -kategoriaan. Keskusteluissa käytetty institutionaalisen",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Lloyd’s of London. Kieltäytyy EMF-vastuuvakuutuksista. Swiss Re luokittelee EMF:n “high risk” -kateg",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 260,
-      "verified": false
-    },
-    {
-      "id": "interferenssifysiikkanoyr",
-      "authors": "Multi-source interferenssifysiikka",
-      "year": 0,
-      "title": "Multi-source interferenssifysiikka. N koherenttia lähdettä: Imax = N² × |Eavg|². 10 WiFi-lähdettä kaupunkiasunnossa: hot spotin teho 5–20-kertainen ke",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Multi-source interferenssifysiikka. N koherenttia lähdettä: Imax = N² × |Eavg|². 10 WiFi-lähdettä ka",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 262,
-      "verified": false
-    },
-    {
-      "id": "nutspaneelitutkimusnoyr",
-      "authors": "Eurostat demo_r_frate3 NUTS-3-paneelitutkimus",
-      "year": 0,
-      "title": "Eurostat demo_r_frate3 NUTS-3-paneelitutkimus. Keskusteluissa kehitetty koko tutkimusprotokolla: 1 km² EMF-tiheys → TFR, käyttäen OpenCelliD-tukiasema",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Eurostat demo_r_frate3 NUTS-3-paneelitutkimus. Keskusteluissa kehitetty koko tutkimusprotokolla: 1 k",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 263,
-      "verified": false
-    },
-    {
-      "id": "emfproxynanoyr",
-      "authors": "Kaupungistuminen EMF-proxyna",
-      "year": 0,
-      "title": "Kaupungistuminen EMF-proxyna. Keskusteluissa analysoitu systemaattisesti: kaupungistuminen = tiheämpi tukiasemaverkko + enemmän WiFi-hotspotteja + ene",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kaupungistuminen EMF-proxyna. Keskusteluissa analysoitu systemaattisesti: kaupungistuminen = tiheämp",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 264,
-      "verified": false
-    },
-    {
-      "id": "emfproxynanoyrb",
-      "authors": "Koulutus EMF-proxyna",
-      "year": 0,
-      "title": "Koulutus EMF-proxyna. Päivittäinen tietokone-/laitealtistus korreloi koulutuksen kanssa. SEM-polkuanalyysi: EMF → koulutus/urbanisaatio → TFR, missä s",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Koulutus EMF-proxyna. Päivittäinen tietokone-/laitealtistus korreloi koulutuksen kanssa. SEM-polkuan",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 265,
-      "verified": false
-    },
-    {
       "id": "nist1997b",
       "authors": "Sisätila vs. ulkotila -altistus. NIST",
       "year": 1997,
@@ -5085,106 +3477,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 267,
-      "verified": false
-    },
-    {
-      "id": "kartoitusnoyr",
-      "authors": "Hot spot -kartoitus",
-      "year": 0,
-      "title": "Hot spot -kartoitus. BERM ennustaa, ettei kolmiulotteista senttimetriresoluution kenttämittausta tehdä rutiinisti asuinympäristöissä. SAR-mittarit ant",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Hot spot -kartoitus. BERM ennustaa, ettei kolmiulotteista senttimetriresoluution kenttämittausta teh",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 268,
-      "verified": false
-    },
-    {
-      "id": "vsnoyre",
-      "authors": "Pulssimodulaatio vs",
-      "year": 0,
-      "title": "Pulssimodulaatio vs. jatkuva aalto (CW). WiFi lähettää datapaketteina, 4G/5G käyttää aikavälimultipleksointia, Bluetooth hyppii taajuuksien välillä. T",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Pulssimodulaatio vs. jatkuva aalto (CW). WiFi lähettää datapaketteina, 4G/5G käyttää aikavälimultipl",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 269,
-      "verified": false
-    },
-    {
-      "id": "mediaatioanalyysinoyr",
-      "authors": "Mediaatioanalyysi",
-      "year": 0,
-      "title": "Mediaatioanalyysi. BERM ennustaa: EMF selittää ≥30 % urbanisaation TFRvaikutuksesta. Suora efekti (EMF → TFR), epäsuora biologinen (EMF → VGCC → ROS →",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Mediaatioanalyysi. BERM ennustaa: EMF selittää ≥30 % urbanisaation TFRvaikutuksesta. Suora efekti (E",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 271,
-      "verified": false
-    },
-    {
-      "id": "etisyysgradienttinoyr",
-      "authors": "Etäisyysgradientti",
-      "year": 0,
-      "title": "Etäisyysgradientti. Çiğ & Nazıroğlu: VGCC-vaste laskee jyrkästi >10 cm etäisyydellä. Puhelimen taskussa kantaminen vs. pöydällä pitäminen tuottaa merk",
-      "journal": "",
-      "doi": null,
-      "category": "transduction_rpm_calcium",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Etäisyysgradientti. Çiğ & Nazıroğlu: VGCC-vaste laskee jyrkästi >10 cm etäisyydellä. Puhelimen tasku",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 273,
-      "verified": false
-    },
-    {
-      "id": "vsnoyrf",
-      "authors": "Lapset vs",
-      "year": 0,
-      "title": "Lapset vs. aikuiset. Lasten kallon ohuempi luukudos, pienemmät mitat (suurempi SAR kehon kokoon suhteutettuna), kehittyvä hermosto — BERM ennustaa suu",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Lapset vs. aikuiset. Lasten kallon ohuempi luukudos, pienemmät mitat (suurempi SAR kehon kokoon suht",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 274,
       "verified": false
     },
     {
@@ -5225,66 +3517,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 276,
-      "verified": false
-    },
-    {
-      "id": "emfkontaminaationoyr",
-      "authors": "Laboratorion EMF-kontaminaatio",
-      "year": 0,
-      "title": "Laboratorion EMF-kontaminaatio. Keskusteluissa analysoitu: sentrifugit, inkubaattorit, Wi-Fi, LED-valaistus tuottavat 5–20 V/m taustakentän 24/7. BERM",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Laboratorion EMF-kontaminaatio. Keskusteluissa analysoitu: sentrifugit, inkubaattorit, Wi-Fi, LED-va",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 277,
-      "verified": false
-    },
-    {
-      "id": "testinnoyr",
-      "authors": "Faraday-suojaus diskriminoivana testinä",
-      "year": 0,
-      "title": "Faraday-suojaus diskriminoivana testinä. Identtinen biologinen protokolla suojatussa (<0.001 V/m) vs. normaalilaboratoriossa. Kustannus <1 M€ — murto-",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Faraday-suojaus diskriminoivana testinä. Identtinen biologinen protokolla suojatussa (<0.001 V/m) vs",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 278,
-      "verified": false
-    },
-    {
-      "id": "shiftnoyr",
-      "authors": "Historiallinen “baseline shift”",
-      "year": 0,
-      "title": "Historiallinen “baseline shift”. Spontaani syöpä laboratoriorotissa: trendi 1940→2024 korreloi laboratorioiden sähköistysasteen kanssa. Solujen kasvun",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Historiallinen “baseline shift”. Spontaani syöpä laboratoriorotissa: trendi 1940→2024 korreloi labor",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 279,
       "verified": false
     },
     {
@@ -5345,46 +3577,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 282,
-      "verified": false
-    },
-    {
-      "id": "caatpbifurkaationoyr",
-      "authors": "Ca²⁺–ATP-bifurkaatio",
-      "year": 0,
-      "title": "Ca²⁺–ATP-bifurkaatio. BERM:n matemaattinen ydin: positiivinen palautesilmukka — kohonnut pumppaustarve → ATP-vajaus → heikompi pumppaus → pysyvästi ko",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Ca²⁺–ATP-bifurkaatio. BERM:n matemaattinen ydin: positiivinen palautesilmukka — kohonnut pumppaustar",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 283,
-      "verified": false
-    },
-    {
-      "id": "lukittuminennoyr",
-      "authors": "Epigeneettinen lukittuminen",
-      "year": 0,
-      "title": "Epigeneettinen lukittuminen. Krooninen kalsiumdysregulaatio muuttaa DNAmetylaatiota ja histonimodifikaatioita. CREB, NFAT, NF-κB transkriptiotekijöinä",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Epigeneettinen lukittuminen. Krooninen kalsiumdysregulaatio muuttaa DNAmetylaatiota ja histonimodifi",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 284,
       "verified": false
     },
     {
@@ -5468,86 +3660,6 @@
       "verified": false
     },
     {
-      "id": "ketjunoyr",
-      "authors": "Calmodulin (CaM) -ketju",
-      "year": 0,
-      "title": "Calmodulin (CaM) -ketju. 4 Ca²⁺-ionia → konformaatiomuutos → CaMK, NOS, fosfataasit. Lähdeviite: BERM steelman -dokumentaatio.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Calmodulin (CaM) -ketju. 4 Ca²⁺-ionia → konformaatiomuutos → CaMK, NOS, fosfataasit. Lähdeviite: BER",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 289,
-      "verified": false
-    },
-    {
-      "id": "luokitusnoyr",
-      "authors": "Kuusiportainen episteeminen luokitus",
-      "year": 0,
-      "title": "Kuusiportainen episteeminen luokitus. [L] = Lindgrenin eksplisiittinen premissi. [L*] = Lindgrenin tulos ilman validoitua johtoa. [M] = Välttämätön ma",
-      "journal": "",
-      "doi": null,
-      "category": "physics_theory",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kuusiportainen episteeminen luokitus. [L] = Lindgrenin eksplisiittinen premissi. [L*] = Lindgrenin t",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 291,
-      "verified": false
-    },
-    {
-      "id": "tulonanoyr",
-      "authors": "Kausaaliketju yhtenä tulona",
-      "year": 0,
-      "title": "Kausaaliketju yhtenä tulona. ∂TFR/∂E = ∂H_RP/∂E × ∂c_R/∂H_RP × ∂X/∂c_R × ∂V_B/∂X × ∂M_repro/∂V_B × ∂TFR/∂M_repro. Jos yksikin osittaisderivaatta → 0,",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "T",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kausaaliketju yhtenä tulona. ∂TFR/∂E = ∂H_RP/∂E × ∂c_R/∂H_RP × ∂X/∂c_R × ∂V_B/∂X × ∂M_repro/∂V_B × ∂",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 292,
-      "verified": false
-    },
-    {
-      "id": "mnoyr",
-      "authors": "Tyhjän taustan kieltosääntö [M]",
-      "year": 0,
-      "title": "Tyhjän taustan kieltosääntö [M]. Lindgrenin premissi g_µν = η_µν + A_µA_ν. Perturboidaan A_µ = εa_µ tyhjässä taustassa (Ā = 0): δg_µν^(1) = 0. Levi-Ci",
-      "journal": "",
-      "doi": null,
-      "category": "physics_theory",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Tyhjän taustan kieltosääntö [M]. Lindgrenin premissi g_µν = η_µν + A_µA_ν. Perturboidaan A_µ = εa_µ ",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 293,
-      "verified": false
-    },
-    {
       "id": "uweyl2025",
       "authors": "Weyl-generaattori [C_W]. D_W = □_LC − 2U^µ∂_µ. Kriittinen solmu: Weyl-vektoria U_Weyl",
       "year": 2025,
@@ -5565,66 +3677,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 294,
-      "verified": false
-    },
-    {
-      "id": "mcwnoyrb",
-      "authors": "Varauksen etumerkki [M|C_W]",
-      "year": 0,
-      "title": "Varauksen etumerkki [M|C_W]. Varaus ρ = −A_µU^µ on dynaaminen geometrinen identiteetti, ei sisäinen kvanttiluku. Kaksi järjestelmää vastakkaisissa tau",
-      "journal": "",
-      "doi": null,
-      "category": "physics_theory",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "T",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Varauksen etumerkki [M|C_W]. Varaus ρ = −A_µU^µ on dynaaminen geometrinen identiteetti, ei sisäinen ",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 296,
-      "verified": false
-    },
-    {
-      "id": "2024",
-      "authors": "c_R: koko ketjun kriittisin puuttuva tekijä. Radikaaliparimekanismin (RPM) tuoton ja ROS-vuon välinen absoluuttinen kytkentävakio. Ehdokasalue 10^−2 … 10^1. Jos kokeellisesti c_R < 10^−3, ketju katkea",
-      "year": 2024,
-      "title": "RPM:n kokeellinen validaatio kryptokromiflavoproteiinijärjestelmässä",
-      "journal": "",
-      "doi": null,
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: RPM:n kokeellinen validaatio kryptokromiflavoproteiinijärjestelmässä",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 298,
-      "verified": false
-    },
-    {
-      "id": "mnoyrb",
-      "authors": "Saddle-node fold ja divergoiva vahvistuslaki [M]",
-      "year": 0,
-      "title": "Saddle-node fold ja divergoiva vahvistuslaki [M]. Lähellä bifurkaatiokynnystä (etäisyys µ): G ∝ 1/√(2µ). Hill-tyyppiset positiiviset takaisinkytkennät",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Saddle-node fold ja divergoiva vahvistuslaki [M]. Lähellä bifurkaatiokynnystä (etäisyys µ): G ∝ 1/√(",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 299,
       "verified": false
     },
     {
@@ -5648,46 +3700,6 @@
       "verified": false
     },
     {
-      "id": "adlerreduktionoyr",
-      "authors": "Kuramoto-oskillaattorit ja Adler-reduktio",
-      "year": 0,
-      "title": "Kuramoto-oskillaattorit ja Adler-reduktio. φ̇ = Δω − F sin φ. Lukkiutumisalue muodostaa Arnoldin kielen. Ennuste R42: ikkunan leveys kaventuu lineaari",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kuramoto-oskillaattorit ja Adler-reduktio. φ̇ = Δω − F sin φ. Lukkiutumisalue muodostaa Arnoldin kie",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 301,
-      "verified": false
-    },
-    {
-      "id": "resonanssinoyr",
-      "authors": "Stokastinen resonanssi",
-      "year": 0,
-      "title": "Stokastinen resonanssi. Voi parantaa heikon signaalin havaittavuutta monistabiileissa järjestelmissä. Taajuusvaste riippuu vahvasti staattisesta taust",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "T",
-      "type": "book",
-      "finding": "Finding not yet documented — see: Stokastinen resonanssi. Voi parantaa heikon signaalin havaittavuutta monistabiileissa järjestelmissä",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 302,
-      "verified": false
-    },
-    {
       "id": "membraanipotentiaalit2013",
       "authors": "Bioelektrinen verkkotila V_B. Membraanipotentiaalit, ionivirrat, gap-junktiot. Levinlinjan kokeellinen näyttö: V_B on instruktiivinen ohjaaja anatomian ja regeneraation suhteen. VGCC:n rooli olennaine",
       "year": 2013,
@@ -5708,106 +3720,6 @@
       "verified": false
     },
     {
-      "id": "vsnoyrg",
-      "authors": "Monistabiili hystereesi vs",
-      "year": 0,
-      "title": "Monistabiili hystereesi vs. lineaarinen palautuminen. Jos bioelektrinen verkkomuisti Q_V noudattaa monistabiilia potentiaalia U(Q_V) = Q_V⁴/4 − Q_V²/2",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Monistabiili hystereesi vs. lineaarinen palautuminen. Jos bioelektrinen verkkomuisti Q_V noudattaa m",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 304,
-      "verified": false
-    },
-    {
-      "id": "qxnoyr",
-      "authors": "Kumulatiivinen kuorma K ja epigeneettinen muisti Q_X",
-      "year": 0,
-      "title": "Kumulatiivinen kuorma K ja epigeneettinen muisti Q_X. Transientit signaalit suodattuvat varastoiksi. Hystereesi-ilmiö epigeneettisessä/redox-muistissa",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kumulatiivinen kuorma K ja epigeneettinen muisti Q_X. Transientit signaalit suodattuvat varastoiksi.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 305,
-      "verified": false
-    },
-    {
-      "id": "syntnoyr",
-      "authors": "Multiplikatiivinen syntymähazardi",
-      "year": 0,
-      "title": "Multiplikatiivinen syntymähazardi. h(t) = F_bio(t) × M_repro(t) × S_preg(t). Biologinen kyky arvoton ilman yritystä ja päinvastoin. S_preg = selviytym",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Multiplikatiivinen syntymähazardi. h(t) = F_bio(t) × M_repro(t) × S_preg(t). Biologinen kyky arvoton",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 306,
-      "verified": false
-    },
-    {
-      "id": "fbionoyr",
-      "authors": "Fekunditeetti F_bio",
-      "year": 0,
-      "title": "Fekunditeetti F_bio. StAR-proteiinin herkkyys (Leydig-solut), siittiöindeksi S_m (ROSDNA-vauriot, motiliteetti), oosyyttien laatu O_q ja follikkelipoo",
-      "journal": "",
-      "doi": null,
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Fekunditeetti F_bio. StAR-proteiinin herkkyys (Leydig-solut), siittiöindeksi S_m (ROSDNA-vauriot, mo",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 307,
-      "verified": false
-    },
-    {
-      "id": "mrepronoyr",
-      "authors": "Motivaatio M_repro",
-      "year": 0,
-      "title": "Motivaatio M_repro. Striataalisen dopamiinijärjestelmän vahvistuskerroin D_r ja oksitosiinipohjaisen parinmuodostushazardin romahdus. R.10 TFR: identi",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Motivaatio M_repro. Striataalisen dopamiinijärjestelmän vahvistuskerroin D_r ja oksitosiinipohjaisen",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 308,
-      "verified": false
-    },
-    {
       "id": "hellstrand2021",
       "authors": "Identifikaatiokatto [E]. Placebo-testit osoittavat: 86 % satunnaisista monotonisista sarjoista sopii TFR-dataan paremmin kuin mallin oma altistusindeksi. TFR-korrelaatiot eivät koskaan ole mekanismin ",
       "year": 2021,
@@ -5825,206 +3737,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 309,
-      "verified": false
-    },
-    {
-      "id": "sisltnoyr",
-      "authors": "Kilpaileva H3-hypoteesi (digitaalinen sisältö)",
-      "year": 0,
-      "title": "Kilpaileva H3-hypoteesi (digitaalinen sisältö). Motivaatiokerroksen kausaalisesti paremmin tunnistettu selittäjä. Erotettavissa EMF-vaikutuksista vain",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kilpaileva H3-hypoteesi (digitaalinen sisältö). Motivaatiokerroksen kausaalisesti paremmin tunnistet",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 310,
-      "verified": false
-    },
-    {
-      "id": "icrnoyr",
-      "authors": "Hylätty: Klassinen vapaa-ionin syklotroniresonanssi (ICR)",
-      "year": 0,
-      "title": "Hylätty: Klassinen vapaa-ionin syklotroniresonanssi (ICR). Adairin kT-kritiikki validi. Korvattu Adler/Kuramoto-vaihelukituksella.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Hylätty: Klassinen vapaa-ionin syklotroniresonanssi (ICR). Adairin kT-kritiikki validi. Korvattu Adl",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 318,
-      "verified": false
-    },
-    {
-      "id": "puolijohteetnoyr",
-      "authors": "Hylätty: Perineuraaliset puolijohteet",
-      "year": 0,
-      "title": "Hylätty: Perineuraaliset puolijohteet. Beckerin alkuperäinen malli ei kestä nykyistä evidenssiä.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Hylätty: Perineuraaliset puolijohteet. Beckerin alkuperäinen malli ei kestä nykyistä evidenssiä.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 319,
-      "verified": false
-    },
-    {
-      "id": "esphealervitteetnoyr",
-      "authors": "Hylätty: ESP/healer-väitteet",
-      "year": 0,
-      "title": "Hylätty: ESP/healer-väitteet. Poissuljettu L-BERM:stä. R.13 Muuttujastandardointi (koko dokumentin läpi)",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Hylätty: ESP/healer-väitteet. Poissuljettu L-BERM:stä. R.13 Muuttujastandardointi (koko dokumentin l",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 320,
-      "verified": false
-    },
-    {
-      "id": "muuttujanimetnoyr",
-      "authors": "Standardoidut muuttujanimet",
-      "year": 0,
-      "title": "Standardoidut muuttujanimet. E_{t,x} = kenttäfunktio; H_RP^B = radikaaliparin Hamiltonin operaattori; c_R = kemiallinen transfer-kerroin; X = nopea re",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Standardoidut muuttujanimet. E_{t,x} = kenttäfunktio; H_RP^B = radikaaliparin Hamiltonin operaattori",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 321,
-      "verified": false
-    },
-    {
-      "id": "checknoyr",
-      "authors": "Strict Geometry Check",
-      "year": 0,
-      "title": "Strict Geometry Check. Tyhjän taustan (Ā=0) ensimmäisen kertaluvun sokeus (δg=0 ⟹ δH^(1)=0) säilytetty aitona selection rulena ilman oikoteitä.",
-      "journal": "",
-      "doi": null,
-      "category": "physics_theory",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "T",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Strict Geometry Check. Tyhjän taustan (Ā=0) ensimmäisen kertaluvun sokeus (δg=0 ⟹ δH^(1)=0) säilytet",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 322,
-      "verified": false
-    },
-    {
-      "id": "checknoyrb",
-      "authors": "Noise-Matching Check",
-      "year": 0,
-      "title": "Noise-Matching Check. Kaarevan avaruuden HJB-yhtälön lokaali paino w(A) pidetty erillään diffuusiokertoimen valinnasta [C_match].",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Noise-Matching Check. Kaarevan avaruuden HJB-yhtälön lokaali paino w(A) pidetty erillään diffuusioke",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 323,
-      "verified": false
-    },
-    {
-      "id": "checknoyrc",
-      "authors": "Jacobian Chain Check",
-      "year": 0,
-      "title": "Jacobian Chain Check. Ketju J_BERM katkeamaton alusta loppuun. Jokainen kerros nojaa edellisen osittaisderivaattaan. Adjektiivit korvattu derivaatoill",
-      "journal": "",
-      "doi": null,
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Jacobian Chain Check. Ketju J_BERM katkeamaton alusta loppuun. Jokainen kerros nojaa edellisen ositt",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 324,
-      "verified": false
-    },
-    {
-      "id": "fitzhughnagumomallinoyr",
-      "authors": "FitzHugh-Nagumo-malli",
-      "year": 0,
-      "title": "FitzHugh-Nagumo-malli. Dimensioitu kalsiumskaaloihin: eksitaatiokynnys, coincidence-AND gating (~3 µm, ~1–2 s), subthreshold-resonanssi f₀ ≈ 0.08–0.11",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: FitzHugh-Nagumo-malli. Dimensioitu kalsiumskaaloihin: eksitaatiokynnys, coincidence-AND gating (~3 µ",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 325,
-      "verified": false
-    },
-    {
-      "id": "kuormanoyr",
-      "authors": "Kumulatiivinen allostaattinen kuorma",
-      "year": 0,
-      "title": "Kumulatiivinen allostaattinen kuorma. Hidas aikaskaala τ_m ≈ 250 s, delayed-onset saturaatio.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kumulatiivinen allostaattinen kuorma. Hidas aikaskaala τ_m ≈ 250 s, delayed-onset saturaatio.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 326,
       "verified": false
     },
     {
@@ -6105,46 +3817,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 298,
-      "verified": false
-    },
-    {
-      "id": "nokiaaikakausinoyrb",
-      "authors": "Suomen Nokia-aikakausi",
-      "year": 0,
-      "title": "Suomen Nokia-aikakausi. TFR nousi 1990-luvulla huippupenetraation aikana — BERM:n empiirinen falsifioija. BERM:n vastaus: kumulatiivinen varasto ei ol",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Suomen Nokia-aikakausi. TFR nousi 1990-luvulla huippupenetraation aikana — BERM:n empiirinen falsifi",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 299,
-      "verified": false
-    },
-    {
-      "id": "naisetnoyr",
-      "authors": "Israelin sekulaarit naiset",
-      "year": 0,
-      "title": "Israelin sekulaarit naiset. TFR alle korvaustason vain täysin sekulaareilla — mutta Israel kokonaisuutena 3.0 korkealla EMF-altistuksella. BERM:n vast",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Israelin sekulaarit naiset. TFR alle korvaustason vain täysin sekulaareilla — mutta Israel kokonaisu",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 300,
       "verified": false
     },
     {
@@ -6288,46 +3960,6 @@
       "verified": false
     },
     {
-      "id": "bermkehyksessnoyr",
-      "authors": "Sosiaalisen koheesion heikkeneminen BERM-kehyksessä",
-      "year": 0,
-      "title": "Sosiaalisen koheesion heikkeneminen BERM-kehyksessä. Oksitosiini-vasopressiinijärjestelmän häiriö → ryhmäkoheesion ja luottamuksen heikkeneminen → ind",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "T",
-      "type": "book",
-      "finding": "Finding not yet documented — see: Sosiaalisen koheesion heikkeneminen BERM-kehyksessä. Oksitosiini-vasopressiinijärjestelmän häiriö → ",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 308,
-      "verified": false
-    },
-    {
-      "id": "romahdusnoyr",
-      "authors": "Pitkäjänteisyyden romahdus",
-      "year": 0,
-      "title": "Pitkäjänteisyyden romahdus. Kortisoli-noradrenaliini-tasapainon muutos EMFaltistuksessa → lyhytaikainen tyydytys > pitkäaikaiset tavoitteet → kulutusk",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Pitkäjänteisyyden romahdus. Kortisoli-noradrenaliini-tasapainon muutos EMFaltistuksessa → lyhytaikai",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 309,
-      "verified": false
-    },
-    {
       "id": "krishnan2024",
       "authors": "Krishnan, A",
       "year": 2024,
@@ -6345,66 +3977,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 311,
-      "verified": false
-    },
-    {
-      "id": "emftukahduttamiseenoyr",
-      "authors": "Krishnanin 5GW-tunnusmerkit sovellettuna EMF-tukahduttamisee",
-      "year": 0,
-      "title": "Krishnanin 5GW-tunnusmerkit sovellettuna EMF-tukahduttamiseen. Keskusteluissa analysoitu: toimijoiden koalitio (puolustussektori + telecom + ICNIRP),",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Krishnanin 5GW-tunnusmerkit sovellettuna EMF-tukahduttamiseen. Keskusteluissa analysoitu: toimijoide",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 312,
-      "verified": false
-    },
-    {
-      "id": "sodankyntinoyr",
-      "authors": "Kognitiivinen sodankäynti",
-      "year": 0,
-      "title": "Kognitiivinen sodankäynti. Kyberneettinen palautesilmukkamalli: algorithmic manipulation → data ingestion → psychometric profiling → content generatio",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kognitiivinen sodankäynti. Kyberneettinen palautesilmukkamalli: algorithmic manipulation → data inge",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 313,
-      "verified": false
-    },
-    {
-      "id": "resonaattorikammionanoyr",
-      "authors": "Suomalainen kerrostalo resonaattorikammiona",
-      "year": 0,
-      "title": "Suomalainen kerrostalo resonaattorikammiona. Betonivälipohjat ja -seinät heijastavat RF-signaalia takaisin sisään. Asunto ei ole vain altistuskammio v",
-      "journal": "",
-      "doi": null,
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Suomalainen kerrostalo resonaattorikammiona. Betonivälipohjat ja -seinät heijastavat RF-signaalia ta",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 316,
       "verified": false
     },
     {
@@ -6448,106 +4020,6 @@
       "verified": false
     },
     {
-      "id": "noyrf",
-      "authors": "Sveitsin ja Euroopan mittaukset (2014–2023)",
-      "year": 0,
-      "title": "Sveitsin ja Euroopan mittaukset (2014–2023). Ulkotilojen RF-EMF ei muuttunut merkittävästi 18-kertaisesta dataliikenteen kasvusta huolimatta. Sisätilo",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Sveitsin ja Euroopan mittaukset (2014–2023). Ulkotilojen RF-EMF ei muuttunut merkittävästi 18-kertai",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 319,
-      "verified": false
-    },
-    {
-      "id": "suojahuonenoyr",
-      "authors": "Mamad (Israelin suojahuone)",
-      "year": 0,
-      "title": "Mamad (Israelin suojahuone). Laki 1992: jokaisessa uudessa asunnossa teräsbetoninen suojahuone. 20–30 cm betoni, teräsovet, ilmatiiviys. Vaimentaa RF",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Mamad (Israelin suojahuone). Laki 1992: jokaisessa uudessa asunnossa teräsbetoninen suojahuone. 20–3",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 320,
-      "verified": false
-    },
-    {
-      "id": "vsnoyrh",
-      "authors": "Kerrostalo vs",
-      "year": 0,
-      "title": "Kerrostalo vs. omakotitalo -ennuste. BERM ennustaa: kerrostaloasukkaiden hedelmällisyyden pitäisi olla alhaisempi kuin omakotitaloasukkaiden, kontroll",
-      "journal": "",
-      "doi": null,
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kerrostalo vs. omakotitalo -ennuste. BERM ennustaa: kerrostaloasukkaiden hedelmällisyyden pitäisi ol",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 321,
-      "verified": false
-    },
-    {
-      "id": "rajanoyr",
-      "authors": "Italia 6 V/m -raja",
-      "year": 0,
-      "title": "Italia 6 V/m -raja. Euroopan tiukimpia EMF-rajoituksia asuinalueilla ja kouluissa — mutta TFR 1.2. Tiukemmat säännökset eivät korreloi korkeamman hede",
-      "journal": "",
-      "doi": null,
-      "category": "reproduction_hormones",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Italia 6 V/m -raja. Euroopan tiukimpia EMF-rajoituksia asuinalueilla ja kouluissa — mutta TFR 1.2. T",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 322,
-      "verified": false
-    },
-    {
-      "id": "mrd2010",
-      "authors": "GSMA Intelligence. Mobile Economy Reports 2011–2025. Mobiilitilaajat: 0 → 3.2 mrd",
-      "year": 2010,
-      "title": "→ 5",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: → 5",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 323,
-      "verified": false
-    },
-    {
       "id": "analytics2025",
       "authors": "IoT Analytics",
       "year": 2025,
@@ -6588,26 +4060,6 @@
       "verified": false
     },
     {
-      "id": "tukiasematornitnoyr",
-      "authors": "Globaalit tukiasematornit",
-      "year": 0,
-      "title": "Globaalit tukiasematornit. ~4.93 miljoonaa asennusta vuonna 2024. 5G vaatii 3–5× enemmän tukiasemia kuin 4G (small cell -arkkitehtuuri).",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Globaalit tukiasematornit. ~4.93 miljoonaa asennusta vuonna 2024. 5G vaatii 3–5× enemmän tukiasemia ",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 326,
-      "verified": false
-    },
-    {
       "id": "ined2024",
       "authors": "INED",
       "year": 2024,
@@ -6645,126 +4097,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 328,
-      "verified": false
-    },
-    {
-      "id": "kaupunkinoyr",
-      "authors": "Beat-taajuudet kaupunkiympäristössä",
-      "year": 0,
-      "title": "Beat-taajuudet kaupunkiympäristössä. WiFi (2.4 GHz) + Bluetooth (2.45 GHz) = 50 MHz beat. Kaksi WiFi-reititintä vierekkäisillä kanavilla = kHz-alueen",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Beat-taajuudet kaupunkiympäristössä. WiFi (2.4 GHz) + Bluetooth (2.45 GHz) = 50 MHz beat. Kaksi WiFi",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 329,
-      "verified": false
-    },
-    {
-      "id": "kudosinterfensinoyr",
-      "authors": "Kudosinterfensi",
-      "year": 0,
-      "title": "Kudosinterfensi. RF-aallot heijastuvat kudosrajoilta (iho/rasva, rasva/lihas, lihas/luu, CSF/aivot) luoden seisovan aallon kuvioita kudoksen sisällä.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "T",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kudosinterfensi. RF-aallot heijastuvat kudosrajoilta (iho/rasva, rasva/lihas, lihas/luu, CSF/aivot) ",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 330,
-      "verified": false
-    },
-    {
-      "id": "couplingnoyr",
-      "authors": "Ephaptic coupling",
-      "year": 0,
-      "title": "Ephaptic coupling. Aivoissa solujen välinen sähköinen kytkentä ilman synaptista yhteyttä. Herkkyys ulkoisille kentille korostuu.",
-      "journal": "",
-      "doi": null,
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Ephaptic coupling. Aivoissa solujen välinen sähköinen kytkentä ilman synaptista yhteyttä. Herkkyys u",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 331,
-      "verified": false
-    },
-    {
-      "id": "ihmisaivoissanoyr",
-      "authors": "Magnetiitti ihmisaivoissa",
-      "year": 0,
-      "title": "Magnetiitti ihmisaivoissa. Kirschvink ym.: biogeneettinen magnetiitti (Fe₃O₄) ihmisen aivokudoksessa. Potentiaalinen ferromagneettinen transduktori he",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Magnetiitti ihmisaivoissa. Kirschvink ym.: biogeneettinen magnetiitti (Fe₃O₄) ihmisen aivokudoksessa",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 332,
-      "verified": false
-    },
-    {
-      "id": "regelnoyr",
-      "authors": "Regel, S",
-      "year": 0,
-      "title": "Regel, S. ym. NRP 57: 14 Hz vs. 217 Hz modulaation ero biologisessa vasteessa. Modulaatiotaajuus ratkaisee, ei kantotaajuus — erottaa BERM:n kilpailij",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Regel, S. ym. NRP 57: 14 Hz vs. 217 Hz modulaation ero biologisessa vasteessa. Modulaatiotaajuus rat",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 334,
-      "verified": false
-    },
-    {
-      "id": "rfaltistusnoyr",
-      "authors": "Koulujen RF-altistus",
-      "year": 0,
-      "title": "Koulujen RF-altistus. Luokkahuone-WiFi: 0.05–0.3 mW/m² (≈0.14–0.3 V/m). Puhelin taskussa: 10³–10⁴ kertaa suurempi. Ruotsalaiskartoitus: piikkejä 10 00",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Koulujen RF-altistus. Luokkahuone-WiFi: 0.05–0.3 mW/m² (≈0.14–0.3 V/m). Puhelin taskussa: 10³–10⁴ ke",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 335,
       "verified": false
     },
     {
@@ -6868,106 +4200,6 @@
       "verified": false
     },
     {
-      "id": "lepakotnoyr",
-      "authors": "Lepakot",
-      "year": 0,
-      "title": "Lepakot. 1–4 GHz radar vähentää lentotoimintaa −60 %. Kaupunkipopulaatiot −65 %, luolapopulaatiot +12 % — EMF-gradientti selittää 71 % varianssista.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Lepakot. 1–4 GHz radar vähentää lentotoimintaa −60 %. Kaupunkipopulaatiot −65 %, luolapopulaatiot +1",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 342,
-      "verified": false
-    },
-    {
-      "id": "absorptioherkkyysnoyr",
-      "authors": "Sammakkoeläinten absorptioherkkyys",
-      "year": 0,
-      "title": "Sammakkoeläinten absorptioherkkyys. Ihon läpäisevyys 8.7× korkeampi kuin nisäkkäillä. Absorptio maksimaalinen 0.3–3 GHz. Salamanterit: regeneraatiokyv",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Sammakkoeläinten absorptioherkkyys. Ihon läpäisevyys 8.7× korkeampi kuin nisäkkäillä. Absorptio maks",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 343,
-      "verified": false
-    },
-    {
-      "id": "merinoyr",
-      "authors": "Meriympäristö",
-      "year": 0,
-      "title": "Meriympäristö. Valaiden ja delfiinien rantautumiset +380 % sonar/5G-alueilla. Syvänmeren lajit: ei vaikutusta (EMF ei läpäise >10 m).",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Meriympäristö. Valaiden ja delfiinien rantautumiset +380 % sonar/5G-alueilla. Syvänmeren lajit: ei v",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 344,
-      "verified": false
-    },
-    {
-      "id": "laajennettunoyr",
-      "authors": "Krefeld-tutkimus laajennettu",
-      "year": 0,
-      "title": "Krefeld-tutkimus laajennettu. Lentävä hyönteisbiomassa −76.8 % (1989–2024, 95 % CI: −81.2, −71.9). Korrelaatio EMF-infrastruktuuriin r = −0.83 (p < 0.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Krefeld-tutkimus laajennettu. Lentävä hyönteisbiomassa −76.8 % (1989–2024, 95 % CI: −81.2, −71.9). K",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 346,
-      "verified": false
-    },
-    {
-      "id": "kaskadiefektinoyr",
-      "authors": "Trofisten tasojen kaskadiefekti",
-      "year": 0,
-      "title": "Trofisten tasojen kaskadiefekti. EMF → plankton ↓ → eläinplankton ↓ → kalat ↓ → linnut ↓. Pölyttäjät ↓ 60 % → hedelmäntuotto ↓ 35 % → siemensyöjälinnu",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Trofisten tasojen kaskadiefekti. EMF → plankton ↓ → eläinplankton ↓ → kalat ↓ → linnut ↓. Pölyttäjät",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 347,
-      "verified": false
-    },
-    {
       "id": "favre2023",
       "authors": "Favre, D. ym",
       "year": 2023,
@@ -6985,386 +4217,6 @@
       "tags": [],
       "pdf_section": "XVI",
       "pdf_number": 348,
-      "verified": false
-    },
-    {
-      "id": "2000",
-      "authors": "Log-RR 1.70 [1.52–1.88], 421 lajia. Cross-species meta-analyysi. ELF-spesifisesti: Ahlbom ym",
-      "year": 2000,
-      "title": "lasten leukemia >0",
-      "journal": "",
-      "doi": null,
-      "category": "cellular_ros_dna",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "E",
-      "type": "report",
-      "finding": "Finding not yet documented — see: lasten leukemia >0",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 349,
-      "verified": false
-    },
-    {
-      "id": "kirschvinknoyr",
-      "authors": "Kirschvink, J",
-      "year": 0,
-      "title": "Kirschvink, J.L. ym. Biogeneettinen magnetiitti (Fe₃O₄) ihmisaivoissa. Ferromagneettinen transduktori heikoille kentille. Ei rajoitu ihmisiin: magneti",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Kirschvink, J.L. ym. Biogeneettinen magnetiitti (Fe₃O₄) ihmisaivoissa. Ferromagneettinen transduktor",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 351,
-      "verified": false
-    },
-    {
-      "id": "asnoyr",
-      "authors": "Epistemologinen asymmetria",
-      "year": 0,
-      "title": "Epistemologinen asymmetria. Keskusteluissa analysoitu: konventionaalisia selityksiä hyväksytään ekologisten korrelaatioiden perusteella ilman mekanist",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "E",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Epistemologinen asymmetria. Keskusteluissa analysoitu: konventionaalisia selityksiä hyväksytään ekol",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 353,
-      "verified": false
-    },
-    {
-      "id": "toimijaanoyr",
-      "authors": "Intressikonvergenssi (10 toimijaa)",
-      "year": 0,
-      "title": "Intressikonvergenssi (10 toimijaa). Keskusteluissa koottu taulukko: telekommunikaatioteollisuus (~$1.8 biljoonaa/v), sähköteollisuus, puolustusministe",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Intressikonvergenssi (10 toimijaa). Keskusteluissa koottu taulukko: telekommunikaatioteollisuus (~$1",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 355,
-      "verified": false
-    },
-    {
-      "id": "nashtasapainonoyr",
-      "authors": "Nash-tasapaino",
-      "year": 0,
-      "title": "Nash-tasapaino. Kukaan ei hyödy yksipuolisesta poikkeamisesta. Poikkeava toimija kantaisi kaikki kustannukset (oikeudenkäynnit, kaupanestesyytökset, p",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Nash-tasapaino. Kukaan ei hyödy yksipuolisesta poikkeamisesta. Poikkeava toimija kantaisi kaikki kus",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 356,
-      "verified": false
-    },
-    {
-      "id": "noyrg",
-      "authors": "India 2012",
-      "year": 0,
-      "title": "India 2012. Laski rajat 1/10 ICNIRP:stä. Telecom-operaattorit vastustivat voimakkaasti, verkkoperformanssiongelmia raportoitiin — painostus palata.",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: India 2012. Laski rajat 1/10 ICNIRP:stä. Telecom-operaattorit vastustivat voimakkaasti, verkkoperfor",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 359,
-      "verified": false
-    },
-    {
-      "id": "noyrh",
-      "authors": "Bryssel 2021",
-      "year": 0,
-      "title": "Bryssel 2021. Nosti EMF-rajoja 5G-käyttöönoton mahdollistamiseksi Proximuslobbauksen jälkeen. Aiemmin EU:n tiukimpia.",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Bryssel 2021. Nosti EMF-rajoja 5G-käyttöönoton mahdollistamiseksi Proximuslobbauksen jälkeen. Aiemmi",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 360,
-      "verified": false
-    },
-    {
-      "id": "sveitsinoyr",
-      "authors": "Italia ja Sveitsi",
-      "year": 0,
-      "title": "Italia ja Sveitsi. EU:n tiukimmat rajat (Italia 6 V/m). 5G-painostus löysentämiseen käynnissä.",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Italia ja Sveitsi. EU:n tiukimmat rajat (Italia 6 V/m). 5G-painostus löysentämiseen käynnissä.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 361,
-      "verified": false
-    },
-    {
-      "id": "kaksoistandardistrategianoyr",
-      "authors": "Israelin kaksoistandardistrategia",
-      "year": 0,
-      "title": "Israelin kaksoistandardistrategia. Kotimaa: 10 % ICNIRP (pitkäaikainen oleskelu), 30 % (lyhytaikainen), Wi-Fi kielletty esikouluissa 2013. Kansainväli",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Israelin kaksoistandardistrategia. Kotimaa: 10 % ICNIRP (pitkäaikainen oleskelu), 30 % (lyhytaikaine",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 362,
-      "verified": false
-    },
-    {
-      "id": "suurvaltapelotenoyr",
-      "authors": "Suurvaltapelote",
-      "year": 0,
-      "title": "Suurvaltapelote. USA, Venäjä, Kiina — kaikki lukittu omiin intresseihinsä. USA: Section 704, asekehitysohjelmat. Venäjä: psykotroninen aseohjelma + om",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Suurvaltapelote. USA, Venäjä, Kiina — kaikki lukittu omiin intresseihinsä. USA: Section 704, asekehi",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 363,
-      "verified": false
-    },
-    {
-      "id": "noyri",
-      "authors": "Venäjän Lopatin-aloite 1997–2001",
-      "year": 0,
-      "title": "Venäjän Lopatin-aloite 1997–2001. YK-vetoomus ei-termisistä vaikutuksista. Duuma hyväksyi lain 2001, mutta kansainvälistä konventiota ei syntynyt. Ven",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Venäjän Lopatin-aloite 1997–2001. YK-vetoomus ei-termisistä vaikutuksista. Duuma hyväksyi lain 2001,",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 364,
-      "verified": false
-    },
-    {
-      "id": "lausuntonoyr",
-      "authors": "Putinin 2012 lausunto",
-      "year": 0,
-      "title": "Putinin 2012 lausunto. Julisti “psykofyysisten aseiden” kehittämisen osaksi valtion asehankintaohjelmaa.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Putinin 2012 lausunto. Julisti “psykofyysisten aseiden” kehittämisen osaksi valtion asehankintaohjel",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 365,
-      "verified": false
-    },
-    {
-      "id": "usanoyr",
-      "authors": "Invention Secrecy Act (USA)",
-      "year": 0,
-      "title": "Invention Secrecy Act (USA). Patenttien salaaminen kansallisen turvallisuuden perusteella. V2K (voice-to-skull) -patentit luokiteltu.",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Invention Secrecy Act (USA). Patenttien salaaminen kansallisen turvallisuuden perusteella. V2K (voic",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 366,
-      "verified": false
-    },
-    {
-      "id": "wheelernoyr",
-      "authors": "Tom Wheeler",
-      "year": 0,
-      "title": "Tom Wheeler. CTIA (telecom-lobbausjärjestö) puheenjohtaja → FCC:n puheenjohtaja. Pyöröovi-esimerkki.",
-      "journal": "",
-      "doi": null,
-      "category": "rf_safety_regulation",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Tom Wheeler. CTIA (telecom-lobbausjärjestö) puheenjohtaja → FCC:n puheenjohtaja. Pyöröovi-esimerkki.",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 367,
-      "verified": false
-    },
-    {
-      "id": "adlkofernoyrb",
-      "authors": "Adlkofer, F",
-      "year": 0,
-      "title": "Adlkofer, F. REFLEX-tutkimuksen johtaja, aiemmin tupakkateollisuuden rahoittama. Havaitsi saman menetelmällisen vääristelykuvion sekä tupakka- että EM",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Adlkofer, F. REFLEX-tutkimuksen johtaja, aiemmin tupakkateollisuuden rahoittama. Havaitsi saman mene",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 368,
-      "verified": false
-    },
-    {
-      "id": "noyrl",
-      "authors": "Telecom Act §704",
-      "year": 0,
-      "title": "Telecom Act §704. Estää paikallisviranomaisia hylkäämästä tukiasemahakemuksia terveysvaikutusten perusteella. XXIII.AA BECKER JA MURU HISTORIALLISTA T",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Telecom Act §704. Estää paikallisviranomaisia hylkäämästä tukiasemahakemuksia terveysvaikutusten per",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 372,
-      "verified": false
-    },
-    {
-      "id": "becker1985b",
-      "authors": "Becker, R.O",
-      "year": 1985,
-      "title": "The Body Electric: Electromagnetism and the Foundation of Life",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: The Body Electric: Electromagnetism and the Foundation of Life",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 373,
-      "verified": false
-    },
-    {
-      "id": "ketjunoyrb",
-      "authors": "Becker-Motorola-Frey -ketju",
-      "year": 0,
-      "title": "Becker-Motorola-Frey -ketju. Keskusteluissa dokumentoitu: Motorolan 1994 memo (strategia tutkimuksen kääntämiseksi), Freyn marginalisointi, Carlon rah",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Becker-Motorola-Frey -ketju. Keskusteluissa dokumentoitu: Motorolan 1994 memo (strategia tutkimuksen",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 374,
-      "verified": false
-    },
-    {
-      "id": "tupakkaemfparallelinoyr",
-      "authors": "Adlkofer ja tupakka-EMF-paralleli",
-      "year": 0,
-      "title": "Adlkofer ja tupakka-EMF-paralleli. Tupakkateollisuuden ja telekommunikaatioteollisuuden taktiikat identtiset: epäilyn tuottaminen, rahoitusriippuvuus,",
-      "journal": "",
-      "doi": null,
-      "category": "history_institutional",
-      "pathway": [
-        "D",
-        "E"
-      ],
-      "level": "P",
-      "type": "report",
-      "finding": "Finding not yet documented — see: Adlkofer ja tupakka-EMF-paralleli. Tupakkateollisuuden ja telekommunikaatioteollisuuden taktiikat id",
-      "tags": [],
-      "pdf_section": "XVI",
-      "pdf_number": 375,
       "verified": false
     },
     {
@@ -10619,30 +7471,6 @@
       "pdf_number": null
     },
     {
-      "id": "england2023_tick_electrostatic",
-      "authors": "England, S.J., Lihou, K.L. & Robert, D.",
-      "year": 2023,
-      "title": "Static electricity passively attracts ticks onto hosts",
-      "journal": "Current Biology",
-      "doi": "10.1016/j.cub.2023.06.021",
-      "category": "ecology_sentinels",
-      "pathway": [
-        "STATIC"
-      ],
-      "level": "E",
-      "type": "journal",
-      "finding": "Ticks attracted across air gaps of mm/cm by host electrostatic charge. Mechanism: induced polarization within tick. Quantified force sufficient to overcome gravity.",
-      "tags": [
-        "electroecology",
-        "tick",
-        "electrostatic",
-        "parasitology"
-      ],
-      "verified": true,
-      "pdf_section": null,
-      "pdf_number": null
-    },
-    {
       "id": "colin1992_varroa_electrostatic",
       "authors": "Colin, M.E., Richard, D. & Chauzy, S.",
       "year": 1992,
@@ -10776,7 +7604,7 @@
       "title": "Acute low-intensity microwave exposure increases DNA single-strand breaks in rat brain cells",
       "journal": "Bioelectromagnetics",
       "doi": "10.1002/bem.2250160309",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "pathway": [
         "RF",
         "DNA_damage"
@@ -10802,7 +7630,7 @@
       "title": "Single- and double-strand DNA breaks in rat brain cells after acute exposure to radiofrequency electromagnetic radiation",
       "journal": "Int J Radiat Biol",
       "doi": "10.1080/095530096145814",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "pathway": [
         "RF",
         "DNA_damage"
@@ -10826,7 +7654,7 @@
       "title": "Adaptive evolution of voltage-gated sodium channels: the first 800 million years",
       "journal": "Proc Natl Acad Sci USA",
       "doi": "10.1073/pnas.1201884109",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "pathway": [
         "evolution"
       ],
@@ -10850,7 +7678,7 @@
       "title": "Bibliography of Reported Biological Phenomena ('Effects') and Clinical Manifestations Attributed to Microwave and Radio-Frequency Radiation",
       "journal": "US Naval Medical Research Institute",
       "doi": null,
-      "category": "history",
+      "category": "history_institutional",
       "pathway": [
         "RF",
         "ELF",
@@ -10876,7 +7704,7 @@
       "title": "Comparative efficacy and acceptability of 21 antidepressant drugs for the acute treatment of adults with major depressive disorder: a systematic review and network meta-analysis",
       "journal": "Lancet",
       "doi": "10.1016/S0140-6736(17)32802-7",
-      "category": "clinical",
+      "category": "reproduction_hormones",
       "pathway": [
         "depression",
         "pharmacology"
@@ -10902,7 +7730,7 @@
       "title": "Single-Dose Psilocybin for a Treatment-Resistant Episode of Major Depression",
       "journal": "N Engl J Med",
       "doi": "10.1056/NEJMoa2206443",
-      "category": "clinical",
+      "category": "reproduction_hormones",
       "pathway": [
         "depression",
         "psychedelic",
@@ -10929,7 +7757,7 @@
       "title": "5-HT2A receptor signaling converges on Cav1.2 (CACNA1C) calcium channels",
       "journal": "PMC12491688",
       "doi": null,
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "pathway": [
         "Ca2+",
         "CACNA1C",
@@ -10958,7 +7786,7 @@
       "title": "Ion homeostasis and the mechanism of action of lithium",
       "journal": "Clin Neurosci Res",
       "doi": "10.1016/j.cnr.2004.09.014",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "pathway": [
         "lithium",
         "ion_channel",
@@ -10986,7 +7814,7 @@
       "title": "A randomized trial of an N-methyl-D-aspartate antagonist in treatment-resistant depression",
       "journal": "Arch Gen Psychiatry",
       "doi": "10.1001/archpsyc.63.8.856",
-      "category": "clinical",
+      "category": "reproduction_hormones",
       "pathway": [
         "depression",
         "NMDA",
@@ -11044,8 +7872,8 @@
       "year": 2024,
       "title": "The skin battery: transepithelial potential in wound healing and regeneration",
       "journal": "SAGE Journals",
-      "doi": "",
-      "category": "bioelectric",
+      "doi": null,
+      "category": "physics_theory",
       "pathway": [
         "TEP",
         "wound_healing",
@@ -11073,7 +7901,7 @@
       "title": "Electrical signals control wound healing through phosphatidylinositol-3-OH kinase-gamma and PTEN",
       "journal": "Nature",
       "doi": "10.1038/nature04925",
-      "category": "bioelectric",
+      "category": "physics_theory",
       "pathway": [
         "wound_EF",
         "electrotaxis",
@@ -11101,7 +7929,7 @@
       "title": "On the piezoelectric effect of bone",
       "journal": "Journal of the Physical Society of Japan",
       "doi": "10.1143/JPSJ.12.1158",
-      "category": "bioelectric",
+      "category": "physics_theory",
       "pathway": [
         "piezoelectricity",
         "collagen",
@@ -11129,7 +7957,7 @@
       "title": "Feeling small: exploring the tactile perception limits",
       "journal": "Scientific Reports",
       "doi": "10.1038/srep02617",
-      "category": "bioelectric",
+      "category": "physics_theory",
       "pathway": [
         "touch",
         "nanoscale",
@@ -11157,7 +7985,7 @@
       "title": "PIEZO1 in keratinocytes: mechanotransduction and calcium signaling",
       "journal": "eLife",
       "doi": "10.7554/eLife.77578",
-      "category": "bioelectric",
+      "category": "physics_theory",
       "pathway": [
         "PIEZO1",
         "keratinocyte",
@@ -11185,7 +8013,7 @@
       "title": "TRPV4 mediates histaminergic itch in keratinocytes",
       "journal": "PMC4858974",
       "doi": "10.1016/j.jid.2016.02.001",
-      "category": "bioelectric",
+      "category": "physics_theory",
       "pathway": [
         "TRPV4",
         "keratinocyte",
@@ -11215,7 +8043,7 @@
       "title": "Calcium dynamics change in degenerating cone photoreceptors",
       "journal": "Human Molecular Genetics / PMC4896623",
       "doi": "10.1093/hmg/ddw219",
-      "category": "bioelectric",
+      "category": "physics_theory",
       "pathway": [
         "Cav1.4",
         "VGCC",
@@ -11244,7 +8072,7 @@
       "title": "Voltage-gated calcium channel subtypes in the retina",
       "journal": "PMC3885580",
       "doi": "10.4103/0301-4738.126987",
-      "category": "bioelectric",
+      "category": "physics_theory",
       "pathway": [
         "VGCC",
         "retina",
@@ -11274,7 +8102,7 @@
       "title": "Mechanisms of blue light-induced eye disease",
       "journal": "PMC7830240",
       "doi": "10.1016/j.preteyeres.2020.100901",
-      "category": "bioelectric",
+      "category": "physics_theory",
       "pathway": [
         "blue_light",
         "retina",
@@ -11304,7 +8132,7 @@
       "title": "Post-hospital syndrome — an acquired, transient condition of generalized risk",
       "journal": "New England Journal of Medicine",
       "doi": "10.1056/NEJMp1212324",
-      "category": "clinical",
+      "category": "reproduction_hormones",
       "pathway": [
         "post_hospital_syndrome",
         "generalized_risk",
@@ -11329,8 +8157,8 @@
       "year": 1999,
       "title": "Electromagnetic fields in the intensive care unit",
       "journal": "Critical Care Medicine",
-      "doi": "",
-      "category": "exposure_assessment",
+      "doi": null,
+      "category": "rf_safety_regulation",
       "pathway": [
         "ICU",
         "EMF",
@@ -11357,8 +8185,8 @@
       "year": 2025,
       "title": "Radiofrequency electromagnetic field exposure in hospital environments",
       "journal": "Frontiers / PMC12815752",
-      "doi": "",
-      "category": "exposure_assessment",
+      "doi": null,
+      "category": "rf_safety_regulation",
       "pathway": [
         "hospital",
         "RF_EMF",
@@ -11381,72 +8209,13 @@
       "pdf_number": null
     },
     {
-      "id": "lai1995_dna_damage",
-      "authors": "Lai H, Singh NP.",
-      "year": 1995,
-      "title": "Acute low-intensity microwave exposure increases DNA single-strand breaks in rat brain cells",
-      "journal": "Bioelectromagnetics",
-      "doi": "10.1002/bem.2250160309",
-      "category": "mechanism",
-      "pathway": [
-        "DNA_damage",
-        "microwave",
-        "2.45_GHz",
-        "single_strand_breaks"
-      ],
-      "level": "E",
-      "type": "journal",
-      "finding": "Low-intensity microwave exposure (2.45 GHz, 1 mW/cm², 2 hours) significantly increased DNA single-strand breaks in rat brain cells. This was one of the first studies showing non-thermal DNA damage from RF-EMF and became a target of industry-documented suppression efforts.",
-      "tags": [
-        "DNA_damage",
-        "Lai",
-        "microwave",
-        "non_thermal",
-        "brain",
-        "suppression"
-      ],
-      "verified": true,
-      "pdf_section": null,
-      "pdf_number": null
-    },
-    {
-      "id": "mouritsen2012_cry_rf",
-      "authors": "Engels S, Schneider NL, Lefeldt N, et al.",
-      "year": 2014,
-      "title": "Anthropogenic electromagnetic noise disrupts magnetic compass orientation in a migratory bird",
-      "journal": "Nature / PMC5522499",
-      "doi": "10.1038/nature13290",
-      "category": "ecological",
-      "pathway": [
-        "CRY",
-        "magnetic_compass",
-        "bird",
-        "RF_disruption",
-        "radical_pair"
-      ],
-      "level": "E",
-      "type": "journal",
-      "finding": "Broadband RF electromagnetic noise (50 kHz – 5 MHz) disrupts magnetic compass orientation in European robins via the radical pair mechanism (RPM) in cryptochrome. Faraday shielding restored orientation. This directly demonstrates that anthropogenic EMF disrupts CRY-based biological navigation.",
-      "tags": [
-        "CRY",
-        "cryptochrome",
-        "bird_navigation",
-        "radical_pair",
-        "RF",
-        "Faraday"
-      ],
-      "verified": true,
-      "pdf_section": null,
-      "pdf_number": null
-    },
-    {
       "id": "had2024_meta",
       "authors": "Various authors.",
       "year": 2024,
       "title": "Hospital-acquired disability in older adults: systematic review and meta-analysis",
       "journal": "Age and Ageing",
       "doi": "10.1093/ageing/afae123",
-      "category": "clinical",
+      "category": "reproduction_hormones",
       "pathway": [
         "hospital_acquired_disability",
         "elderly",
@@ -11475,7 +8244,7 @@
       "year": 2024,
       "journal": "Bioelectromagnetics",
       "doi": "10.1002/bem.22494",
-      "category": "cellular_effects",
+      "category": "cellular_ros_dna",
       "verified": true,
       "finding": "Electromagnetic pulse (EMP) caused BBB disruption in rat brains via tight junction protein (occludin, claudin, ZO-1) degradation. Note: EMP is high-amplitude short-duration, different from BERM's chronic low-intensity RF exposure. Mechanistic relevance: same molecular target (tight junctions) as Salford 2003 GSM study.",
       "pathway": [
@@ -11504,7 +8273,7 @@
       "year": 2026,
       "journal": "Physics in Medicine and Biology",
       "doi": "10.1088/1361-6560/ae6e17",
-      "category": "cellular_effects",
+      "category": "cellular_ros_dna",
       "verified": true,
       "finding": "Evidence contradictory but positive results replicated in multiple independent labs (Salford, Tang, Ulusoy, Gao). Negative results partly explained by measurement method differences.",
       "pathway": [
@@ -11551,7 +8320,7 @@
       "year": 2010,
       "journal": "Journal of Alzheimer Disease",
       "doi": "10.3233/JAD-2010-1228",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "918 MHz EMF (2h/day) disaggregates Aβ oligomers, enhances mitochondria, reverses cognitive decline in AD mice. BBB opening beneficial in clean blood context.",
       "pathway": [
@@ -11570,7 +8339,7 @@
       "year": 2015,
       "journal": "Immunity & Ageing",
       "doi": "10.1186/s12979-015-0029-9",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Aged mice (24 months vs 3 months): occludin significantly decreased, ZO-1 decreased, TNF-α elevated in brain endothelial cells, capillary permeability significantly increased.",
       "pathway": [
@@ -11589,8 +8358,8 @@
       "authors": "Tang J et al.",
       "year": 2015,
       "journal": "Brain Research",
-      "doi": "",
-      "category": "neurobiology",
+      "doi": null,
+      "category": "neurobiology_circadian",
       "verified": false,
       "finding": "900 MHz, 3h/day, 28 days → spatial memory impairment AND BBB permeability increase in rat hippocampus and cortex. Mechanism: mkp-1/ERK pathway. Below safety standards.",
       "pathway": [
@@ -11608,8 +8377,8 @@
       "authors": "Dasdag S et al.",
       "year": 2015,
       "journal": "Electromagnetic Biology and Medicine",
-      "doi": "",
-      "category": "neurobiology",
+      "doi": null,
+      "category": "neurobiology_circadian",
       "verified": false,
       "finding": "2.4 GHz Wi-Fi well below legal limit → significant changes in brain microRNA expression. Long-term 2.4 GHz exposure may lead to adverse effects including neurodegenerative diseases via miRNA changes.",
       "pathway": [
@@ -11627,8 +8396,8 @@
       "authors": "Leszczynski D et al.",
       "year": 2002,
       "journal": "Differentiation",
-      "doi": "",
-      "category": "cellular_effects",
+      "doi": null,
+      "category": "cellular_ros_dna",
       "verified": false,
       "finding": "900 MHz activates hsp27/p38MAPK stress response in human endothelial cells. Hypothesis: hsp27 activation may increase BBB permeability via endothelial stress fiber stabilization.",
       "pathway": [
@@ -11647,7 +8416,7 @@
       "year": 2016,
       "journal": "Frontiers in Aging Neuroscience",
       "doi": "10.1155/2016/6701324",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Ca²⁺ dysregulation is a PROXIMAL CAUSE of Alzheimer's dysfunction. Intracellular calcium changes precede and drive amyloid pathology, not the reverse.",
       "pathway": [
@@ -11667,7 +8436,7 @@
       "year": 2009,
       "journal": "Journal of Biological Chemistry",
       "doi": "10.1371/journal.pone.0018250",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "In the presence of Ca²⁺, Aβ(1-40) preferentially forms TOXIC OLIGOMERS rather than harmless fibrils. Calcium level determines whether amyloid is dangerous or not.",
       "pathway": [
@@ -11687,7 +8456,7 @@
       "year": 2020,
       "journal": "Frontiers in Neuroscience",
       "doi": "10.3934/neuroscience.2019.4.231",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Ca²⁺ dysregulation is an EARLY event in AD that precedes neurodegeneration. Calcium signaling changes occur before clinical symptoms.",
       "pathway": [
@@ -11707,7 +8476,7 @@
       "year": 2021,
       "journal": "Frontiers in Molecular Neuroscience",
       "doi": "10.3390/ijms22094976",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Ca²⁺ homeostasis and neuronal excitability are key factors in Aβ neurotoxicity. Disruption of calcium regulation amplifies amyloid toxicity.",
       "pathway": [
@@ -11727,7 +8496,7 @@
       "year": 2020,
       "journal": "Biochimica et Biophysica Acta",
       "doi": "10.3390/ijms21030770",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "PSEN1/PSEN2 mutations (familial AD) cause Ca²⁺ dysregulation genetically. Demonstrates genetic convergence on the same calcium pathway that EMF activates environmentally.",
       "pathway": [
@@ -11747,7 +8516,7 @@
       "year": 2021,
       "journal": "Nature Reviews Neuroscience",
       "doi": "10.3390/ijms22094914",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Anti-amyloid drugs remove plaques but do NOT improve cognition. Plaques are a symptom, not the cause. Need alternative mechanistic hypotheses for AD.",
       "pathway": [
@@ -11767,7 +8536,7 @@
       "year": 2020,
       "journal": "JAMA Network Open",
       "doi": "10.1001/jamanetworkopen.2020.1417",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "1482 mother-child pairs with objective MF measurement (24h dosimetry). High prenatal MF → ADHD risk ↑, especially persistent/severe ADHD and ADHD with immune comorbidities. Dose-response relationship. Modifiable risk factor.",
       "pathway": [
@@ -11792,7 +8561,7 @@
       "year": 2018,
       "journal": "Molecular Psychiatry",
       "doi": "10.1093/schbul/sby096",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "CACNA1C rs1006737 repeatedly associates with bipolar disorder, schizophrenia, MDD, ADHD, and ASD in GWAS. Same gene/channel that modulates EMF sleep sensitivity (Sousouri 2025).",
       "pathway": [
@@ -11812,7 +8581,7 @@
       "year": 2019,
       "journal": "Frontiers in Molecular Neuroscience",
       "doi": "10.3390/ijms20143537",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Comprehensive review of CACNA1C Cav1.2 role across psychiatric diagnoses. VGCC dysfunction is a convergence point for multiple neurodevelopmental and psychiatric disorders.",
       "pathway": [
@@ -11832,7 +8601,7 @@
       "year": 2019,
       "journal": "PNAS / Genetics",
       "doi": "10.1371/journal.pgen.1008488",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Timothy syndrome CACNA1C gain-of-function (G406R) causes autism with high penetrance. VGCC overactivity = autistic phenotype. Channel function directly regulates neural network development.",
       "pathway": [
@@ -11852,7 +8621,7 @@
       "year": 2007,
       "journal": "Cell",
       "doi": "10.1016/j.cell.2007.03.015",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Guanfacine mechanism: α2A → cAMP↓ → HCN channels close → membrane potential stabilized → PFC signal-to-noise ratio improves. Direct ion channel intervention for ADHD, not neurotransmitter modulation.",
       "pathway": [
@@ -11871,7 +8640,7 @@
       "year": 2012,
       "journal": "Scientific Reports",
       "doi": "10.1038/srep00312",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "800-1900 MHz fetal exposure in mice → neurodevelopmental and behavioral changes. Experimental confirmation of Kaiser Permanente epidemiological findings.",
       "pathway": [
@@ -11891,7 +8660,7 @@
       "year": 2020,
       "journal": "Frontiers in Aging Neuroscience",
       "doi": "10.3389/fnagi.2020.00162",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Prenatal mobile phone exposure → cognitive decline in AGED rat offspring. Effect is LIFELONG, not transient. Supports permanent calibration error hypothesis.",
       "pathway": [
@@ -11911,7 +8680,7 @@
       "year": 2015,
       "journal": "Molecular Neurobiology",
       "doi": "10.1371/journal.pone.0142887",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "CACNA1A (P/Q-type VGCC) variants associate with ASD. Expressed in cortex, cerebellum, hippocampus. Multiple VGCC subtypes implicated in neurodevelopmental disorders.",
       "pathway": [
@@ -11931,7 +8700,7 @@
       "year": 2022,
       "journal": "Journal of Neurodevelopmental Disorders",
       "doi": "10.3389/fpsyt.2022.858238",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "53 rare CACNA1H (T-type Cav3.2) variants identified in 40 ASD families. T-type calcium channel dysfunction contributes to ASD risk.",
       "pathway": [
@@ -11951,7 +8720,7 @@
       "year": 2015,
       "journal": "Frontiers in Cellular Neuroscience",
       "doi": "10.1016/j.pneurobio.2015.09.002",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "VGCCs are critical for brain DEVELOPMENT, not just function. Channel expression regulates neural migration, synaptogenesis, and network formation during critical windows.",
       "pathway": [
@@ -11971,7 +8740,7 @@
       "year": 2020,
       "journal": "Translational Psychiatry",
       "doi": "10.1016/j.biopsych.2020.01.020",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Bipolar hippocampal neurons oscillate between hyperexcitability and hypoexcitability due to Na⁺ current decrease + K⁺ current increase. Li-responsive neurons are hyperexcitable (stable, correctable); Li-nonresponsive are UNSTABLE (oscillating).",
       "pathway": [
@@ -11990,8 +8759,8 @@
       "authors": "El-Mallakh RS, Wyatt RJ",
       "year": 2004,
       "journal": "Biological Psychiatry",
-      "doi": "",
-      "category": "neurobiology",
+      "doi": null,
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "MILD Na,K-ATPase dysfunction → excitability ↑ → MANIA. MORE SEVERE dysfunction → neurotransmitter release ↓ → DEPRESSION. Two levels of the SAME ionic disruption produce OPPOSITE clinical states.",
       "pathway": [
@@ -12010,7 +8779,7 @@
       "year": 2013,
       "journal": "Molecular Psychiatry",
       "doi": "10.3389/fgene.2013.00105",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "Comprehensive review of K⁺ channel roles in bipolar disorder. Multiple potassium channel genes implicated in mood regulation and bipolar risk.",
       "pathway": [
@@ -12030,7 +8799,7 @@
       "year": 2025,
       "journal": "Nature Cell Biology",
       "doi": "10.1002/advs.202508940",
-      "category": "cellular_effects",
+      "category": "cellular_ros_dna",
       "verified": true,
       "finding": "Leukemia cells 'hijack' stromal cell bioelectricity through CaV1.2 depolarization. Direct evidence that cancer manipulates ion channel bioelectricity for survival.",
       "pathway": [
@@ -12050,7 +8819,7 @@
       "year": 2016,
       "journal": "PNAS",
       "doi": "10.1073/pnas.1605635113",
-      "category": "immunology",
+      "category": "cellular_ros_dna",
       "verified": true,
       "finding": "VNS activates α7nAChR (ligand-gated ion channel) → NF-κB ↓ → TNF-α ↓ → significant response in rheumatoid arthritis. Direct ionic intervention for autoimmune disease.",
       "pathway": [
@@ -12069,7 +8838,7 @@
       "year": 2016,
       "journal": "Molecular and Cellular Biochemistry",
       "doi": "10.1186/s12935-016-0348-8",
-      "category": "cellular_effects",
+      "category": "cellular_ros_dna",
       "verified": true,
       "finding": "Verapamil (VGCC L-type blocker) inhibits breast cancer cell growth in vitro. Ion channel modulation as anti-cancer strategy.",
       "pathway": [
@@ -12089,7 +8858,7 @@
       "year": 2025,
       "journal": "Frontiers in Pharmacology",
       "doi": "10.3390/ijms262010026",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "PI3K/AKT → GSK3β → KCNQ2 signaling pathway links lithium's mechanism to potassium channel regulation in bipolar disorder.",
       "pathway": [
@@ -12109,7 +8878,7 @@
       "title": "Melatonin levels in follicular fluid as markers for IVF outcomes and predicting ovarian reserve",
       "journal": "Reproduction",
       "doi": "10.1530/REP-16-0641",
-      "category": "melatonin_fertility",
+      "category": "reproduction_hormones",
       "verified": true,
       "finding": "Meta-analysis showing melatonin supplementation improves IVF fertilization rate, embryo quality, and clinical pregnancy rate",
       "pathway": [
@@ -12128,7 +8897,7 @@
       "title": "The role of melatonin as an antioxidant in the follicle",
       "journal": "Journal of Ovarian Research",
       "doi": "10.1186/1757-2215-5-5",
-      "category": "melatonin_fertility",
+      "category": "reproduction_hormones",
       "verified": true,
       "finding": "Follicular fluid melatonin correlates with oocyte quality; melatonin acts as critical antioxidant protector of oocytes",
       "pathway": [
@@ -12146,8 +8915,8 @@
       "year": 2025,
       "title": "Systematic review of melatonin effects on oocyte and embryo quality in IVF",
       "journal": "Reproductive Biology and Endocrinology",
-      "doi": "",
-      "category": "melatonin_fertility",
+      "doi": null,
+      "category": "reproduction_hormones",
       "verified": false,
       "finding": "Systematic review confirms melatonin supplementation improves oocyte quality, embryo development, and IVF success rates",
       "pathway": [
@@ -12165,8 +8934,8 @@
       "year": 2024,
       "title": "Meta-analysis of melatonin supplementation and clinical pregnancy rate in IVF",
       "journal": "Frontiers in Endocrinology",
-      "doi": "",
-      "category": "melatonin_fertility",
+      "doi": null,
+      "category": "reproduction_hormones",
       "verified": false,
       "finding": "Meta-analysis: melatonin supplementation significantly improves clinical pregnancy rate in IVF",
       "pathway": [
@@ -12184,8 +8953,8 @@
       "year": 2023,
       "title": "Melatonin and female reproductive function: five mechanistic pathways",
       "journal": "International Journal of Molecular Sciences",
-      "doi": "",
-      "category": "melatonin_fertility",
+      "doi": null,
+      "category": "reproduction_hormones",
       "verified": false,
       "finding": "Review: melatonin affects female fertility via HPG axis, antioxidant, anti-inflammatory, mitochondrial, and epigenetic pathways",
       "pathway": [
@@ -12204,7 +8973,7 @@
       "title": "Chronic exposure to 60-Hz electric fields: effects on pineal function in the rat",
       "journal": "Bioelectromagnetics",
       "doi": "10.1002/bem.2250010109",
-      "category": "emf_melatonin",
+      "category": "neurobiology_circadian",
       "verified": true,
       "finding": "ELF EMF suppresses nocturnal melatonin peak in rats via pineal gland pathway",
       "pathway": [
@@ -12222,8 +8991,8 @@
       "year": 2007,
       "title": "Melatonin in reproduction revisited",
       "journal": "Biology of Reproduction",
-      "doi": "",
-      "category": "melatonin_fertility",
+      "doi": null,
+      "category": "reproduction_hormones",
       "verified": true,
       "finding": "Melatonin protects sperm from oxidative damage, regulates HPG axis, and modulates seasonal reproduction",
       "pathway": [
@@ -12242,7 +9011,7 @@
       "title": "Effect of a supplementation with myo-inositol plus melatonin on oocyte quality in women undergoing IVF",
       "journal": "Gynecological Endocrinology",
       "doi": "10.3109/09513590.2011.631627",
-      "category": "melatonin_fertility",
+      "category": "reproduction_hormones",
       "verified": true,
       "finding": "Melatonin + myo-inositol improves oocyte quality in IVF; small N, blinding challenges",
       "pathway": [
@@ -12260,8 +9029,8 @@
       "year": 2014,
       "title": "Oral melatonin supplementation improves human sperm motility",
       "journal": "Journal of Clinical Endocrinology & Metabolism",
-      "doi": "",
-      "category": "melatonin_fertility",
+      "doi": null,
+      "category": "reproduction_hormones",
       "verified": true,
       "finding": "Melatonin supplementation improves sperm motility in vitro and in vivo",
       "pathway": [
@@ -12279,8 +9048,8 @@
       "year": 2013,
       "title": "Radiofrequency electromagnetic fields and melatonin: epidemiological review",
       "journal": "Radiation Protection Dosimetry",
-      "doi": "",
-      "category": "emf_melatonin",
+      "doi": null,
+      "category": "neurobiology_circadian",
       "verified": false,
       "finding": "Review of RF-EMF and melatonin suppression in humans: inconsistent results, plausible mechanism",
       "pathway": [
@@ -12314,7 +9083,7 @@
         "individual_susceptibility"
       ],
       "verified": false,
-      "category": "emf_melatonin"
+      "category": "neurobiology_circadian"
     },
     {
       "id": "ijrb2022_if_review",
@@ -12323,7 +9092,7 @@
       "title": "Systematic review of intermediate frequency electromagnetic field animal studies",
       "journal": "Int J Radiat Biol",
       "doi": "10.1080/09553002.2022.2094016",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "pathway": [
         "A"
       ],
@@ -12344,7 +9113,7 @@
       "title": "Effects of 150 kHz intermediate frequency electromagnetic radiation on rat reproductive parameters",
       "journal": "Heliyon",
       "doi": "10.1016/j.heliyon.2023.e13753",
-      "category": "reproduction",
+      "category": "reproduction_hormones",
       "pathway": [
         "A"
       ],
@@ -12366,7 +9135,7 @@
       "title": "Electromagnetic field-inducible in vivo gene switch for remote spatiotemporal control of gene expression",
       "journal": "Cell",
       "doi": "10.1016/j.cell.2026.03.029",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "pathway": [
         "A"
       ],
@@ -12403,7 +9172,8 @@
         "blue_light",
         "sleep",
         "IF"
-      ]
+      ],
+      "doi": null
     },
     {
       "id": "tbahriti2026",
@@ -12455,7 +9225,8 @@
         "latitude"
       ],
       "verified": false,
-      "category": "neurobiology_circadian"
+      "category": "neurobiology_circadian",
+      "doi": null
     },
     {
       "id": "lamia2009",
@@ -12489,7 +9260,7 @@
       "title": "Dirty electricity, chronic stress, neurotransmitters and disease",
       "journal": "Electromagn Biol Med",
       "doi": "10.3109/15368378.2012.743909",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "pathway": [
         "D"
       ],
@@ -12508,7 +9279,7 @@
       "year": 2008,
       "title": "Dirty electricity elevates blood sugar among electrically sensitive diabetics",
       "journal": "Electromagn Biol Med",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "pathway": [
         "A"
       ],
@@ -12520,7 +9291,8 @@
         "IF",
         "diabetes",
         "metabolic"
-      ]
+      ],
+      "doi": null
     },
     {
       "id": "ttfields_novocure_fda",
@@ -12528,7 +9300,7 @@
       "year": 2011,
       "title": "Tumor Treating Fields (TTFields) FDA approval for glioblastoma",
       "journal": "FDA PMA",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "pathway": [
         "A"
       ],
@@ -12542,7 +9314,8 @@
         "FDA",
         "cancer",
         "mitotic_spindle"
-      ]
+      ],
+      "doi": null
     },
     {
       "id": "eshre2021",
@@ -12568,35 +9341,13 @@
       "verified": false
     },
     {
-      "id": "kirson2007_pnas_ttfields",
-      "authors": "Kirson ED, Dbalý V, Tovarys F ym.",
-      "year": 2007,
-      "title": "Alternating electric fields arrest cell proliferation in animal tumor models and human brain tumors",
-      "journal": "PNAS",
-      "doi": "10.1073/pnas.0702916104",
-      "category": "mechanism",
-      "level": "E",
-      "type": "journal",
-      "pathway": [
-        "IF"
-      ],
-      "finding": "100-500 kHz electric fields inhibit cancer cell proliferation in vitro and in vivo. Normal cell mitosis disrupted at ~50 kHz. FDA approval followed.",
-      "verified": true,
-      "tags": [
-        "TTFields",
-        "IF",
-        "mitotic_spindle",
-        "FDA"
-      ]
-    },
-    {
       "id": "neuhaus2019_cav12_ttfields",
       "authors": "Neuhaus E, Zirjacks L, Ganser K ym.",
       "year": 2019,
       "title": "Alternating Electric Fields (TTFields) Activate Cav1.2 Channels in Human Glioblastoma Cells",
       "journal": "Cancers",
       "doi": "10.3390/cancers11010110",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "level": "E",
       "type": "journal",
       "pathway": [
@@ -12620,7 +9371,7 @@
       "title": "Mitotic Spindle Disruption by Alternating Electric Fields Leads to Improper Chromosome Segregation and Mitotic Catastrophe in Cancer Cells",
       "journal": "Mol Cancer Ther",
       "doi": "10.1038/srep18046",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "level": "E",
       "type": "journal",
       "pathway": [
@@ -12734,7 +9485,7 @@
       "title": "A Prospective Study of In-utero Exposure to Magnetic Fields and the Risk of Childhood Obesity",
       "journal": "Scientific Reports",
       "doi": "10.1038/srep00540",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "level": "E",
       "type": "journal",
       "pathway": [
@@ -12758,7 +9509,7 @@
       "title": "Maternal Exposure to Magnetic Fields During Pregnancy in Relation to the Risk of Asthma in Offspring",
       "journal": "Arch Pediatr Adolesc Med",
       "doi": "10.1001/archpediatrics.2011.135",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "level": "E",
       "type": "journal",
       "pathway": [
@@ -12828,7 +9579,7 @@
       "title": "Assessment of combined exposure to intermediate-frequency electromagnetic fields and pulsed electromagnetic fields among library workers in Japan",
       "journal": "Front Public Health",
       "doi": "10.3389/fpubh.2022.870784",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "level": "C",
       "type": "journal",
       "pathway": [
@@ -12851,7 +9602,7 @@
       "title": "Measurement and Exposure Assessment of Intermediate Frequency Magnetic Fields From Electronic Article Surveillance (EAS) Gates in Libraries",
       "journal": "Front Public Health",
       "doi": "10.3389/fpubh.2022.871134",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "level": "C",
       "type": "journal",
       "pathway": [
@@ -12873,7 +9624,7 @@
       "title": "Behavioral testing of mice exposed to intermediate frequency magnetic fields indicates mild memory impairment",
       "journal": "PLOS ONE",
       "doi": "10.1371/journal.pone.0188880",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "level": "M",
       "type": "report",
       "pathway": [
@@ -12897,7 +9648,7 @@
       "title": "Early Exposure to Intermediate-Frequency Magnetic Fields Alters Brain Biomarkers without Histopathological Changes in Adult Mice",
       "journal": "Int J Environ Res Public Health",
       "doi": "10.3390/ijerph120404406",
-      "category": "neurobiology",
+      "category": "neurobiology_circadian",
       "level": "M",
       "type": "report",
       "pathway": [
@@ -12922,7 +9673,7 @@
       "title": "Comparison of pulsed and continuous electromagnetic field generated by WPT system on human dermal and neural cells",
       "journal": "PMC10918061",
       "doi": "10.1038/s41598-024-56051-z",
-      "category": "mechanism",
+      "category": "transduction_rpm_calcium",
       "level": "M",
       "type": "report",
       "pathway": [
@@ -13426,7 +10177,7 @@
       "title": "CACNA1C variants associated with five major psychiatric disorders",
       "journal": "Lancet",
       "doi": null,
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "pathway": [
         "A",
         "E"
@@ -13452,7 +10203,7 @@
       "title": "Timothy syndrome G406R CACNA1C mutation causes autism via disrupted axon targeting",
       "journal": "PLOS Genetics",
       "doi": null,
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "pathway": [
         "A"
       ],
@@ -13476,7 +10227,7 @@
       "title": "Central precocious puberty increase in Denmark 1998-2017",
       "journal": "Various",
       "doi": null,
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "pathway": [
         "C"
       ],
@@ -13499,7 +10250,7 @@
       "title": "ASD-gender dysphoria comorbidity in large clinical datasets",
       "journal": "Various",
       "doi": null,
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "pathway": [
         "A",
         "E"
@@ -13523,7 +10274,7 @@
       "title": "OXTR expression develops in two waves: perinatal and pubertal",
       "journal": "Neuropsychopharmacology",
       "doi": null,
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "pathway": [
         "E"
       ],
@@ -13546,7 +10297,7 @@
       "title": "Oxytocin modulates interoceptive attention in insular cortex",
       "journal": "Frontiers in Neural Circuits",
       "doi": null,
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "pathway": [
         "E"
       ],
@@ -13569,7 +10320,7 @@
       "title": "Alpha-fetoprotein protects female fetal brain from estrogen masculinization",
       "journal": "Various",
       "doi": null,
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "pathway": [
         "A"
       ],
@@ -13593,7 +10344,7 @@
       "title": "Brain aromatase (CYP19) expression requires Ca²⁺-dependent MAPK phosphorylation",
       "journal": "Various",
       "doi": null,
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "pathway": [
         "A"
       ],
@@ -13853,7 +10604,7 @@
       "title": "Global and Chinese epidemiologic study of PCOS in women of childbearing age, 1990-2021, projections to 2035",
       "journal": "PMC",
       "doi": null,
-      "category": "reproductive",
+      "category": "reproduction_hormones",
       "type": "epidemiological",
       "level": "E",
       "pathway": [
@@ -13923,7 +10674,7 @@
       "title": "Role of light in eye growth and light as therapy for myopia control",
       "journal": "Frontiers in Ophthalmology",
       "doi": "10.3389/fopht.2026.1812006",
-      "category": "eye_circadian",
+      "category": "neurobiology_circadian",
       "type": "review",
       "level": "E",
       "pathway": [
@@ -13947,7 +10698,7 @@
       "title": "Oxytocin receptor expression patterns in the human brain across development",
       "journal": "Neuropsychopharmacology",
       "doi": "10.31219/osf.io/j3b5d",
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "type": "experimental",
       "level": "E",
       "pathway": [
@@ -13970,7 +10721,7 @@
       "title": "Oxytocin modulation of the insular cortex: implications for social cognition and neurodevelopmental disorders",
       "journal": "Frontiers in Neural Circuits",
       "doi": "10.3389/fncir.2026.1791625",
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "type": "review",
       "level": "E",
       "pathway": [
@@ -13993,7 +10744,7 @@
       "title": "Early androgen exposure and human gender development",
       "journal": "Biology of Sex Differences",
       "doi": "10.1186/s13293-015-0022-1",
-      "category": "neurodevelopment",
+      "category": "neurobiology_circadian",
       "type": "review",
       "level": "E",
       "pathway": [
@@ -14017,7 +10768,7 @@
       "title": "Androgens and the masculinization programming window: human-rodent differences",
       "journal": "Biochemical Society Transactions",
       "doi": "10.1042/bst20200200",
-      "category": "reproductive",
+      "category": "reproduction_hormones",
       "type": "review",
       "level": "E",
       "pathway": [
@@ -14041,7 +10792,7 @@
       "title": "Pediatric autoimmune diseases in the light of COVID-19 pandemic",
       "journal": "PMC",
       "doi": null,
-      "category": "immune_system",
+      "category": "cellular_ros_dna",
       "type": "epidemiological",
       "level": "E",
       "pathway": [
@@ -14090,7 +10841,7 @@
       "title": "The Environment and Disease: Association or Causation?",
       "journal": "Proc R Soc Med",
       "doi": "10.1177/003591576505800503",
-      "category": "methodology",
+      "category": "rf_safety_regulation",
       "type": "review",
       "level": "E",
       "pathway": [
@@ -14114,7 +10865,7 @@
       "title": "Smoking and Health: Report of the Advisory Committee to the Surgeon General",
       "journal": "US Department of Health, Education, and Welfare",
       "doi": null,
-      "category": "methodology",
+      "category": "rf_safety_regulation",
       "type": "review",
       "level": "E",
       "pathway": [
@@ -14138,7 +10889,7 @@
       "title": "Coronary atherosclerosis in indigenous South American Tsimane: a cross-sectional cohort study",
       "journal": "Lancet",
       "doi": "10.1016/S0140-6736(17)30752-3",
-      "category": "epidemiology",
+      "category": "reproduction_hormones",
       "type": "observational",
       "level": "E",
       "pathway": [],
@@ -14159,7 +10910,7 @@
       "title": "Prevalence of dementia and mild cognitive impairment in indigenous Bolivian forager-horticulturalists",
       "journal": "Alzheimer's & Dementia",
       "doi": "10.1002/alz.12626",
-      "category": "epidemiology",
+      "category": "reproduction_hormones",
       "type": "observational",
       "level": "E",
       "pathway": [],
@@ -14181,7 +10932,7 @@
       "title": "Brain volumetric deficits in a forager-horticulturalist population: the Tsimane",
       "journal": "J Gerontol Series A",
       "doi": "10.1093/gerona/glab138",
-      "category": "epidemiology",
+      "category": "reproduction_hormones",
       "type": "observational",
       "level": "E",
       "pathway": [],
@@ -14202,7 +10953,7 @@
       "title": "Hunter-gatherers as models in public health",
       "journal": "Obesity Reviews",
       "doi": "10.1111/obr.12785",
-      "category": "epidemiology",
+      "category": "reproduction_hormones",
       "type": "review",
       "level": "E",
       "pathway": [],
@@ -14224,7 +10975,7 @@
       "title": "Apparent absence of cerebrocardiovascular disease in Melanesians",
       "journal": "J Intern Med",
       "doi": "10.1111/j.1365-2796.1993.tb00986.x",
-      "category": "epidemiology",
+      "category": "reproduction_hormones",
       "type": "observational",
       "level": "E",
       "pathway": [],
@@ -14245,7 +10996,7 @@
       "title": "Amish fertility in the United States",
       "journal": "Demographic Research",
       "doi": null,
-      "category": "epidemiology",
+      "category": "reproduction_hormones",
       "type": "observational",
       "level": "E",
       "pathway": [],
@@ -14265,8 +11016,8 @@
       "year": 2010,
       "title": "Cancer incidence in the Amish of Ohio",
       "journal": "Cancer Causes & Control",
-      "doi": "",
-      "category": "epidemiology",
+      "doi": null,
+      "category": "reproduction_hormones",
       "type": "observational",
       "level": "E",
       "pathway": [],
@@ -14287,7 +11038,7 @@
       "title": "Mental health among the Amish",
       "journal": "J Amish and Plain Anabaptist Studies",
       "doi": null,
-      "category": "epidemiology",
+      "category": "reproduction_hormones",
       "type": "observational",
       "level": "M|C",
       "pathway": [],
@@ -14308,7 +11059,7 @@
       "title": "Optimal levels of physical activity and consumption for brain aging in Tsimane and Moseten",
       "journal": "PNAS",
       "doi": null,
-      "category": "epidemiology",
+      "category": "reproduction_hormones",
       "type": "observational",
       "level": "E",
       "pathway": [],
@@ -14330,7 +11081,7 @@
       "title": "Global myopia prevalence trends: rural Africa 1.4-11.4%, Latin America 1.4-14.4%, East Asia 80-95% in youth",
       "journal": "Various (Ophthalmology, medRxiv)",
       "doi": null,
-      "category": "epidemiology",
+      "category": "reproduction_hormones",
       "type": "review",
       "level": "M|C",
       "pathway": [],
@@ -14553,24 +11304,6 @@
       ]
     },
     {
-      "id": "travison-2007-mmas",
-      "authors": "Travison TG, Araujo AB, O'Donnell AB, Kupelian V, McKinlay JB",
-      "year": 2007,
-      "title": "A population-level decline in serum testosterone levels in American men",
-      "journal": "J Clin Endocrinol Metab 92:196-202",
-      "level": "E",
-      "finding": "Age-independent secular decline in testosterone ~1%/year in US men from 1987-2004",
-      "pathway": "D (HPA→HPG)",
-      "tags": [
-        "testosterone",
-        "secular_decline",
-        "usa",
-        "1_percent_year",
-        "age_independent"
-      ],
-      "doi": "10.1210/jc.2006-1375"
-    },
-    {
       "id": "andersson-2007-denmark",
       "authors": "Andersson AM, Jensen TK, Juul A, et al.",
       "year": 2007,
@@ -14584,25 +11317,9 @@
         "secular_decline",
         "denmark",
         "cohort_effect"
-      ]
-    },
-    {
-      "id": "perheentupa-2013-finland",
-      "authors": "Perheentupa A, Mäkinen J, Laatikainen T, et al.",
-      "year": 2013,
-      "title": "A cohort effect on serum testosterone levels in Finnish men",
-      "journal": "Eur J Endocrinol 168:227-233",
-      "level": "E",
-      "finding": "Birth cohort effect: 37% lower testosterone in later-born Finnish men (n=3271, 1972-2002)",
-      "pathway": "D (HPA→HPG)",
-      "tags": [
-        "testosterone",
-        "secular_decline",
-        "finland",
-        "cohort_effect",
-        "37_percent"
       ],
-      "doi": "10.1530/eje-12-0288"
+      "category": "reproduction_hormones",
+      "doi": null
     },
     {
       "id": "chodick-2020-israel",
@@ -14620,7 +11337,8 @@
         "102334_men",
         "2006_2019"
       ],
-      "doi": "10.21203/rs.2.20358/v2"
+      "doi": "10.21203/rs.2.20358/v2",
+      "category": "reproduction_hormones"
     },
     {
       "id": "santi-2025-meta-analysis",
@@ -14637,7 +11355,9 @@
         "54_percent",
         "global",
         "acceleration"
-      ]
+      ],
+      "category": "reproduction_hormones",
+      "doi": null
     },
     {
       "id": "antioxidants-2026-global-decline",
@@ -14656,7 +11376,8 @@
         "mechanisms",
         "1_2_percent_year"
       ],
-      "doi": "10.3390/antiox15060778"
+      "doi": "10.3390/antiox15060778",
+      "category": "reproduction_hormones"
     },
     {
       "id": "skakkebaek-2015-physrev",
@@ -14675,7 +11396,8 @@
         "hypospadias",
         "environment"
       ],
-      "doi": "10.1152/physrev.00017.2015"
+      "doi": "10.1152/physrev.00017.2015",
+      "category": "reproduction_hormones"
     },
     {
       "id": "mazur2013",
@@ -14724,7 +11446,8 @@
         "human",
         "rat"
       ],
-      "doi": "10.3390/nu14020339"
+      "doi": "10.3390/nu14020339",
+      "category": "neurobiology_circadian"
     },
     {
       "id": "maalouf2023",
@@ -14744,7 +11467,9 @@
         "mitochondria",
         "adipose",
         "dose-response"
-      ]
+      ],
+      "category": "cellular_ros_dna",
+      "doi": null
     },
     {
       "id": "5g_bat2025",
@@ -14765,7 +11490,8 @@
         "brown-adipogenesis",
         "differentiation"
       ],
-      "doi": "10.3390/ijms26062792"
+      "doi": "10.3390/ijms26062792",
+      "category": "cellular_ros_dna"
     },
     {
       "id": "prenatal_wifi2023",
@@ -14787,7 +11513,9 @@
         "ADHD",
         "metabolic-programming",
         "rat"
-      ]
+      ],
+      "category": "reproduction_hormones",
+      "doi": null
     },
     {
       "id": "thyroid_rf2024",
@@ -14807,7 +11535,9 @@
         "metabolism",
         "Cav3",
         "pituitary"
-      ]
+      ],
+      "category": "cellular_ros_dna",
+      "doi": null
     },
     {
       "id": "pancreas_rf2018",
@@ -14826,7 +11556,9 @@
         "beta-cell",
         "insulin",
         "VGCC"
-      ]
+      ],
+      "category": "cellular_ros_dna",
+      "doi": null
     },
     {
       "id": "chen2016_glia",
@@ -14848,7 +11580,8 @@
         "appetite",
         "calcium"
       ],
-      "doi": "10.7554/elife.18716"
+      "doi": "10.7554/elife.18716",
+      "category": "neurobiology_circadian"
     },
     {
       "id": "yang2015_astro",
@@ -14869,7 +11602,8 @@
         "ghrelin",
         "adenosine"
       ],
-      "doi": "10.1016/j.celrep.2015.04.002"
+      "doi": "10.1016/j.celrep.2015.04.002",
+      "category": "neurobiology_circadian"
     },
     {
       "id": "bhatt2012_glp1",
@@ -14891,7 +11625,9 @@
         "beta-cell",
         "insulin",
         "semaglutide"
-      ]
+      ],
+      "category": "transduction_rpm_calcium",
+      "doi": null
     },
     {
       "id": "alpha2d1_glp1_2024",
@@ -14912,7 +11648,9 @@
         "alpha2delta",
         "gabapentin",
         "VGCC"
-      ]
+      ],
+      "category": "transduction_rpm_calcium",
+      "doi": null
     },
     {
       "id": "nifedipine_weight2011",
@@ -14933,7 +11671,8 @@
         "PGC-1alpha",
         "inverse-test"
       ],
-      "doi": "10.1038/hr.2011.129"
+      "doi": "10.1038/hr.2011.129",
+      "category": "transduction_rpm_calcium"
     },
     {
       "id": "screentime_meta2022",
@@ -14954,7 +11693,8 @@
         "dose-response",
         "adolescent"
       ],
-      "doi": "10.1186/s12875-022-01761-4"
+      "doi": "10.1186/s12875-022-01761-4",
+      "category": "reproduction_hormones"
     },
     {
       "id": "shiftwork_mets2025",
@@ -14976,7 +11716,8 @@
         "circadian",
         "meta-analysis"
       ],
-      "doi": "10.1097/md.0000000000043598"
+      "doi": "10.1097/md.0000000000043598",
+      "category": "neurobiology_circadian"
     },
     {
       "id": "trumble2012",
@@ -15113,7 +11854,7 @@
       "year": 2021,
       "title": "Dual-hormone hypothesis meta-analysis",
       "journal": "Various",
-      "doi": "",
+      "doi": null,
       "category": "reproduction_hormones",
       "pathway": [
         "D"
@@ -15135,7 +11876,7 @@
       "year": 2026,
       "title": "Male labor force participation rate",
       "journal": "BLS",
-      "doi": "",
+      "doi": null,
       "category": "history_institutional",
       "pathway": [],
       "level": "IV",
