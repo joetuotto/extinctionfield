@@ -1,3 +1,5 @@
+import type { BermIconName } from "@/components/BermIcon";
+
 export interface Article {
   id: string;
   slug: string;
@@ -5,7 +7,7 @@ export interface Article {
   titleFi: string;
   subtitle: string;
   subtitleFi: string;
-  icon: string;
+  icon: BermIconName;
   publishedDate: string;
   readingTimeMinutes: number;
   tags: string[];
@@ -24,7 +26,7 @@ export const ARTICLES: Article[] = [
       "How electromagnetic fields tilt the balance between honeybees and their deadliest parasite",
     subtitleFi:
       "Miten sähkömagneettiset kentät kallistavat tasapainoa mehiläisten ja niiden tappavimman loisen välillä",
-    icon: "🐝",
+    icon: "honeybee",
     publishedDate: "2026-08-21",
     readingTimeMinutes: 12,
     tags: ["ecology", "varroa", "sentinel", "faraday"],
@@ -41,7 +43,7 @@ export const ARTICLES: Article[] = [
       "Every frequency has been proven biologically active — except the one worth $1.9 trillion a year",
     subtitleFi:
       "Jokainen taajuus on todistettu biologisesti aktiiviseksi — paitsi se joka on 1,9 biljoonan dollarin arvoinen vuodessa",
-    icon: "⚡",
+    icon: "rf-safety",
     publishedDate: "2026-08-22",
     readingTimeMinutes: 14,
     tags: ["therapeutic", "FDA", "paradox"],
@@ -55,10 +57,24 @@ export const ARTICLES: Article[] = [
       "How missing physics led to 50 years of dismissal — and what changed",
     subtitleFi:
       "Miten puuttuva fysiikka johti 50 vuoden hylkäämiseen — ja mikä muuttui",
-    icon: "🔬",
+    icon: "physics",
     publishedDate: "2026-08-22",
     readingTimeMinutes: 16,
     tags: ["mechanism", "history", "lindgren", "VGCC"],
+  },
+  {
+    id: "dual-lock",
+    slug: "dual-lock",
+    title: "The Dual Lock",
+    titleFi: "Kaksoislukkoteoria",
+    subtitle:
+      "Why testosterone decline and cortisol rise produce behavioral suppression greater than either alone",
+    subtitleFi:
+      "Miksi testosteronin lasku ja kortisolin nousu tuottavat käyttäytymisen suppression joka on suurempi kuin kummankaan yksinään",
+    icon: "human",
+    publishedDate: "2026-08-25",
+    readingTimeMinutes: 11,
+    tags: ["testosterone", "cortisol", "societal", "dual-hormone"],
   },
 ];
 

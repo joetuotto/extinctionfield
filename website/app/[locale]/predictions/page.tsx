@@ -835,6 +835,32 @@ const COPY = {
     popCritical: "Critical discriminating",
     popLocked: "Locked: 2026-08-24",
     popStatus: "LOCKED — awaiting test",
+    societalTitle: "Societal predictions",
+    societalLead: "Predictions derived from the dual-lock theory: population-wide testosterone decline combined with cortisol rise produces multiplicative behavioral suppression. These test whether societal behavioral trends track the hormonal shifts BERM predicts from EMF exposure.",
+    societalPredictions: [
+      {
+        id: "SOC-1",
+        title: "Male labor force participation continues declining in all high-EMF countries",
+        description: "Male labor force participation rate will continue declining in every G20 country through 2030, absent a major policy intervention (e.g. universal basic income, mandatory employment programs). The dual lock predicts that population-wide testosterone decline reduces status motivation while cortisol elevation makes workplace competition aversive — producing progressive 'opting out' behavior.",
+        falsification: "Male LFP increases >2 percentage points in any G20 country without major policy change by 2030",
+      },
+      {
+        id: "SOC-2",
+        title: "Sexlessness rates correlate with smartphone adoption timing across countries",
+        description: "Cross-country analysis will show a significant correlation between smartphone adoption timing (year when penetration exceeded 50%) and the onset of rising sexlessness rates among 18–30 year old males. Countries with earlier smartphone adoption (e.g. South Korea, Japan) should show earlier onset of sexlessness trends than later-adopting countries.",
+        falsification: "No correlation between smartphone adoption year and sexlessness trend onset across ≥10 countries",
+      },
+      {
+        id: "SOC-3",
+        title: "Low-EMF communities show stable or rising marriage rates",
+        description: "Amish and Mennonite communities — which maintain low personal EMF exposure due to restricted technology use — will show stable or rising marriage rates during 2020–2030, while US national marriage rates continue declining. This tests the dual lock's prediction that the behavioral effects (reduced approach behavior, increased avoidance) are biologically mediated, not purely cultural.",
+        falsification: "Amish/Mennonite marriage rates decline at a rate comparable to the US national average during 2020–2030",
+      },
+    ],
+    societalTimeline: "Timeline",
+    societalFalsification: "Falsification criterion",
+    societalLocked: "Locked: 2026-08-25",
+    societalStatus: "LOCKED — awaiting test",
   },
   fi: {
     title: "Lukitut ennusteet",
@@ -1659,6 +1685,32 @@ const COPY = {
     popCritical: "Kriittinen erotteleva",
     popLocked: "Lukittu: 2026-08-24",
     popStatus: "LUKITTU — odottaa testiä",
+    societalTitle: "Yhteiskunnalliset ennusteet",
+    societalLead: "Ennusteet jotka perustuvat kaksoislukkoteoriaan: populaatiotason testosteronin lasku yhdistettynä kortisolin nousuun tuottaa multiplikatiivisen käyttäytymissuppression. Nämä testaavat, seuraavatko yhteiskunnalliset käyttäytymistrendit hormonaalisia muutoksia joita BERM ennustaa EMF-altistuksesta.",
+    societalPredictions: [
+      {
+        id: "SOC-1",
+        title: "Miesten työvoimaosuus jatkaa laskuaan kaikissa korkean EMF:n maissa",
+        description: "Miesten työvoimaosuus jatkaa laskuaan jokaisessa G20-maassa vuoteen 2030 asti ilman merkittävää poliittista interventiota (esim. perustulo, pakolliset työllistämisohjelmat). Kaksoislukkoteoria ennustaa, että populaatiotason testosteronin lasku vähentää statusmotivaatiota samalla kun kortisolin nousu tekee työpaikkakilpailusta ahdistavaa — tuottaen asteittaista 'vetäytymiskäyttäytymistä'.",
+        falsification: "Miesten työvoimaosuus nousee >2 prosenttiyksikköä missä tahansa G20-maassa ilman merkittävää politiikkamuutosta vuoteen 2030 mennessä",
+      },
+      {
+        id: "SOC-2",
+        title: "Seksittömyysluvut korreloivat älypuhelinten omaksumisajankohdan kanssa maittain",
+        description: "Maiden välinen analyysi osoittaa merkitsevän korrelaation älypuhelinten omaksumisajankohdan (vuosi jolloin penetraatio ylitti 50 %) ja 18–30-vuotiaiden miesten seksittömyyslukujen nousun alkamisen välillä. Maissa joissa älypuhelimet omaksuttiin aikaisemmin (esim. Etelä-Korea, Japani) pitäisi näkyä aikaisempi seksittömyystrendin alku kuin myöhemmin omaksuneissa maissa.",
+        falsification: "Ei korrelaatiota älypuhelinten omaksumisajankohdan ja seksittömyystrendin alkamisen välillä ≥10 maassa",
+      },
+      {
+        id: "SOC-3",
+        title: "Matalan EMF:n yhteisöissä avioliittoluvut pysyvät vakaina tai nousevat",
+        description: "Amish- ja mennoniittiyhteisöt — joissa henkilökohtainen EMF-altistus on matala rajoitetun teknologiankäytön vuoksi — osoittavat vakaita tai nousevia avioliittolukuja 2020–2030 samalla kun Yhdysvaltain kansalliset avioliittoluvut jatkavat laskuaan. Tämä testaa kaksoislukkoteorian ennustetta, jonka mukaan käyttäytymisvaikutukset (vähentynyt lähestymiskäyttäytyminen, lisääntynyt välttäminen) ovat biologisesti välittyneitä, eivät puhtaasti kulttuurisia.",
+        falsification: "Amish/mennoniittien avioliittoluvut laskevat Yhdysvaltain kansalliseen keskiarvoon verrattavalla nopeudella 2020–2030",
+      },
+    ],
+    societalTimeline: "Aikajana",
+    societalFalsification: "Kumoamisehto",
+    societalLocked: "Lukittu: 2026-08-25",
+    societalStatus: "LUKITTU — odottaa testiä",
   },
 } as const;
 
@@ -2310,6 +2362,34 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               <p className="text-sm text-foreground-muted leading-relaxed mb-3">{pp.description}</p>
               <div className="space-y-1 text-xs text-foreground-muted">
                 <p className="font-mono-num">{d.popLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Societal predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.societalTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.societalLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.societalPredictions.map((sp) => (
+            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{sp.id}</span>
+                    <h3 className="font-semibold">{sp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.societalStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{sp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.societalFalsification}:</span> {sp.falsification}</p>
+                <p className="font-mono-num">{d.societalLocked}</p>
               </div>
             </article>
           ))}

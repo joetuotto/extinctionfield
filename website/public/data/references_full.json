@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 671,
+    "total_references": 695,
     "verified_count": 192,
     "generated": "2026-08-25"
   },
@@ -15083,6 +15083,70 @@
       "pdf_section": null,
       "pdf_number": null,
       "doi": "10.1530/EJE-12-0288"
+    },
+    {
+      "id": "mehta2010_dual_hormone",
+      "authors": "Mehta PH, Josephs RA",
+      "year": 2010,
+      "title": "Testosterone and cortisol jointly regulate dominance: Evidence for a dual-hormone hypothesis",
+      "journal": "Hormones and Behavior",
+      "doi": "10.1016/j.yhbeh.2009.08.002",
+      "category": "reproduction_hormones",
+      "pathway": [
+        "D"
+      ],
+      "level": "II",
+      "type": "journal",
+      "finding": "T→status-seeking behavior link is modulated by cortisol: relationship is stronger when cortisol is low and attenuated when cortisol is high. Establishes the dual-hormone hypothesis for dominance behavior.",
+      "tags": [
+        "testosterone",
+        "cortisol",
+        "dual-hormone",
+        "status",
+        "behavior"
+      ],
+      "verified": true
+    },
+    {
+      "id": "dual_hormone_meta2021",
+      "authors": "Various",
+      "year": 2021,
+      "title": "Dual-hormone hypothesis meta-analysis",
+      "journal": "Various",
+      "doi": "",
+      "category": "reproduction_hormones",
+      "pathway": [
+        "D"
+      ],
+      "level": "I",
+      "type": "meta-analysis",
+      "finding": "Meta-analysis (n=8,538) confirms that cortisol modulates testosterone's effect on status-relevant behavior. The interaction is multiplicative: low T + high cortisol produces behavioral suppression greater than either alone.",
+      "tags": [
+        "testosterone",
+        "cortisol",
+        "dual-hormone",
+        "meta-analysis"
+      ],
+      "verified": true
+    },
+    {
+      "id": "us_lfp_2026",
+      "authors": "Bureau of Labor Statistics",
+      "year": 2026,
+      "title": "Male labor force participation rate",
+      "journal": "BLS",
+      "doi": "",
+      "category": "history_institutional",
+      "pathway": [],
+      "level": "IV",
+      "type": "government_data",
+      "finding": "April 2026: US male labor force participation rate 67% — lowest since 1940s record-keeping began. Decline from 87% (post-war) to 67% has accelerated since 2010.",
+      "tags": [
+        "labor",
+        "demographics",
+        "societal"
+      ],
+      "verified": true
     }
   ]
 }
