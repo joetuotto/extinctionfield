@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Layers } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { LayerStack } from "@/components/modulome/LayerStack";
+import { ModulomeLayers } from "@/components/ModulomeLayers";
 import { MODULOME_LAYERS } from "@/lib/modulome/layers";
 import { ORGAN_PROFILES } from "@/lib/modulome/organs";
 import { FERTILITY_ROUTES } from "@/lib/modulome/routes";
@@ -31,7 +32,7 @@ const COPY = {
     routesBlocked: "Blocked by",
     routesOrgans: "Organ links",
     /* Section 5: Organs */
-    organsHeading: "Ten Target Organs",
+    organsHeading: "Twelve Target Organs",
     organCav3: "Cav3 subtype",
     organLevel: "Level",
     organView: "View organ profile",
@@ -82,7 +83,7 @@ const COPY = {
     routesBlocked: "Estet\u00E4\u00E4n",
     routesOrgans: "Elinlinkit",
     /* Section 5: Organs */
-    organsHeading: "Kymmenen kohde-elint\u00E4",
+    organsHeading: "Kaksitoista kohde-elint\u00E4",
     organCav3: "Cav3-alatyyppi",
     organLevel: "Taso",
     organView: "N\u00E4yt\u00E4 elinprofiili",
@@ -181,6 +182,10 @@ export default async function ModulomePage({
         <p className="text-sm text-foreground-muted mb-6">{d.layersSubtitle}</p>
 
         <LayerStack layers={MODULOME_LAYERS} locale={l} />
+
+        <div className="mt-10">
+          <ModulomeLayers locale={l} />
+        </div>
       </section>
 
       {/* ── 04 Four Independent Routes ── */}

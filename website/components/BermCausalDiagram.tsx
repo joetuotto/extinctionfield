@@ -195,7 +195,7 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: Locale }
           viewBox={`0 0 ${canvasW} ${canvasH}`}
           xmlns="http://www.w3.org/2000/svg"
           role="img"
-          aria-label="BERM causal chain diagram"
+          aria-label={fi ? "BERM-kausaaliketjukaavio" : "BERM causal chain diagram"}
           style={{ width: "100%", height: "auto", minWidth: 600 }}
         >
           <defs>
@@ -460,14 +460,14 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: Locale }
             const items: [EpistemicLevel, string][] = fi
               ? [
                   ["E", "Empiirisesti todennettu"],
-                  ["M|C", "Mekanistinen + korrelaatio"],
+                  ["M|C", "Mekanismi + assosiaatio"],
                   ["M", "Matemaattinen seuraus"],
                   ["C", "Kandidaatti"],
                   ["L*", "Premissi (ei validoitu)"],
                 ]
               : [
                   ["E", "Empirically established"],
-                  ["M|C", "Mechanistic + correlational"],
+                  ["M|C", "Mechanism + association"],
                   ["M", "Mathematical consequence"],
                   ["C", "Candidate"],
                   ["L*", "Premise (not validated)"],

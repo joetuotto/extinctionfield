@@ -12,6 +12,7 @@ import type { EpistemicLevel } from "@/lib/types";
 import { VGCCGeneFamilyDiagram } from "@/components/VGCCGeneFamilyDiagram";
 import { ThresholdChart } from "@/components/ThresholdChart";
 import { SixFactorSummary } from "@/components/SixFactorSummary";
+import { CaMKIIConvergenceDiagram } from "@/components/CaMKIIConvergenceDiagram";
 
 const t = {
   en: {
@@ -86,7 +87,7 @@ const t = {
     twoChSub: "ELF + IF + RF decomposition with 12 technology layers and TCBM",
     twoChTitle: "Three-channel exposure model",
     twoChDesc:
-      "Total effective EMF exposure decomposes into three frequency channels — ELF (f < 1 kHz, membrane modulation), IF (1 kHz – 1 MHz, intracellular/mitotic), and RF (> 1 MHz, spin chemistry) — each weighted by its biological mechanism and modulated by the chi coupling.",
+      "Total effective EMF exposure decomposes into three frequency channels — ELF (f < 300 Hz, membrane modulation), IF (300 Hz – 10 MHz, intracellular/mitotic), and RF (> 10 MHz, spin chemistry) — each weighted by its biological mechanism and modulated by the chi coupling.",
     twoChExplain:
       "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, where the current diagnostic weights are w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35. These are DIAGNOSTIC weights requiring empirical calibration, not fitted parameters -- the three-channel decomposition is structurally derived from membrane biophysics, but the relative weights are uncertain. In a country with near-zero cellular infrastructure, even heavy personal phone use contributes little total exposure (chi is near zero). Conversely, in a fully saturated environment, the personal component is added almost linearly across all three channels.",
     twoChLayersTitle: "12 technology layers composing the ambient field",
@@ -171,6 +172,12 @@ const t = {
     compExplain:
       "When α = 0, there is no compensation and biological decline passes through directly to TFR. When α = 1, compensation is complete and biological decline has no effect on observed TFR. The calibrated value of 0.43 implies partial but incomplete compensation -- biological decline still manifests in TFR, but at roughly half the rate it would without societal adaptation.",
 
+    camkiiConvTitle: "CaMKII: The Convergence Molecule",
+    camkiiConvSub: "One molecule explains why obesity, diabetes, infertility, and sleep disorders all increase simultaneously",
+    camkiiConvDesc: "CaMKII (calcium/calmodulin-dependent protein kinase II) is activated downstream of VGCC-mediated Ca²⁺ influx. Five verified downstream targets connect it to five disease cascades simultaneously. This convergence resolves a central puzzle in modern epidemiology: why are obesity, diabetes, infertility, and sleep disorders all increasing in parallel across all industrialized societies? They share a common upstream cause (EMF-induced Ca²⁺ dysregulation) acting through a common downstream effector (CaMKII) in different target organs.",
+    camkiiConvCaveat: "Epistemic note: CaMKII convergence is IDENTIFIED from independent literature but not yet experimentally tested as an integrated EMF mechanism. Each pathway is verified separately; the integrated test (EMF → CaMKII → all five targets simultaneously) is a prediction, not established fact. Evidence level: M.",
+    camkiiConvLink: "See metabolic evidence →",
+
     mtorSub: "EMF, caloric restriction, and rapamycin converge on the same aging pathway",
     mtorTitle: "mTOR convergence hypothesis",
     mtorDesc1:
@@ -246,9 +253,9 @@ const t = {
     modulationDesc: "A large study (Fertility and Sterility 2023) found mobile phone use associated with lower sperm concentration — but the association was STRONGER in 2005-2007 than in 2012-2018. BERM explains this via the Schwan equation: the biologically active component is not the RF carrier but its ELF MODULATION ENVELOPE. GSM (2G): hard TDMA pulse at 217 Hz, ~100% modulation depth → strong ELF component → large T-type bifurcation effect. LTE (4G): OFDM, ~30-50% modulation depth, lower transmit power → weaker ELF component → smaller effect. This predicts the time trend WITHOUT invoking 'less radiation is safer.' The AMOUNT of radiation may be similar, but the MODULATION STRUCTURE changed.",
     modulationWarning: "Note: This time trend is a CORRELATION. Other factors changed concurrently (phone position, usage patterns, other exposures). The Schwan explanation is parsimonious but not the only possibility.",
 
-    modulomeSub: "Nine-layer synthesis from Becker to Cyb5b — unified susceptibility model",
+    modulomeSub: "Twelve-layer susceptibility model — from molecular spin physics to population patterns",
     modulomeTitle: "EMF Modulome",
-    modulomeDesc: "The nine-layer modulome synthesizes six independent research traditions — Becker's DC control system, Adee's electrome, Levin's bioelectric code, Lindgren's geometric framework, the chromophore generalization (CCO/CRY), and the Cyb5b EMF receptor (Kim 2026, Cell) — into a unified model of EMF biological susceptibility. Each layer is independently supported by regulatory-approved therapeutic devices that exploit the same mechanism.",
+    modulomeDesc: "The twelve-layer modulome maps electromagnetic susceptibility from molecular spin physics to population-level patterns. Each layer modulates χ — the dimensionless coupling between external EMF and biological function. Twelve layers, ten target organs, four independent routes to fertility decline.",
 
     btnEvidence: "Browse evidence",
     btnPredictions: "View predictions",
@@ -285,6 +292,47 @@ const t = {
     thresholdChartTitle: "Interactive threshold model",
     thresholdCaveat: "T decline rates are age-independent secular trends from peer-reviewed longitudinal studies. Korean and Japanese rates are estimates. The 40% threshold is calibrated, not derived. Projections assume continuation of current rates.",
 
+    causalStructureTitle: "Why BMI does not explain the decline",
+    causalStructureLead: "A persistent objection holds that rising obesity, not an environmental exposure, explains the secular testosterone decline. Formal causal analysis using Pearl's framework reveals that BMI is a mediator (on the causal pathway), not a confounder (independent cause). Adjusting for a mediator removes real signal.",
+    causalDagConventionalTitle: "Conventional interpretation",
+    causalDagConventionalCaption: "BMI as confounder: adjustment is correct, null result = no decline",
+    causalDagBermTitle: "BERM interpretation",
+    causalDagBermCaption: "BMI as mediator: adjustment removes mediated signal, null = overcorrection",
+    causalMazurTitle: "The weight-stable test: Mazur et al. 2013",
+    causalMazurText: "991 US Air Force veterans tracked across 6 measurement waves over 20 years (1982-2002). Men who maintained their weight still lost 117 ng/dL (19%) of their testosterone. This is a natural experiment that controls for BMI without statistical adjustment.",
+    causalMazurQuote: "We have not identified the reason for secular decline in testosterone, but we exclude increasing obesity as a sufficient or primary explanation.",
+    causalMazurSource: "Mazur, Westerman & Mueller 2013, PLOS ONE",
+    causalPathwayTitle: "Quantitative pathway decomposition",
+    causalPathwayDirect: "Direct pathway",
+    causalPathwayDirectDesc: "EMF -> Cav3.2/melatonin/cortisol -> T decline",
+    causalPathwayDirectEst: "~117 ng/dL / 20yr (~67%)",
+    causalPathwayMediated: "Mediated pathway",
+    causalPathwayMediatedDesc: "EMF -> metabolic mechanisms -> BMI increase -> aromatase/SHBG -> T decline",
+    causalPathwayMediatedEst: "~58 ng/dL / 20yr (~33%)",
+    causalPathwayCaveat: "These proportions are approximate, derived from Mazur 2013 (weight-stable vs weight-gain groups). Formal mediation analysis (SEM) could refine these estimates.",
+    causalReconciliationTitle: "Reconciling 'contradictory' results",
+    causalReconciliationLead: "When the causal structure is understood, all existing studies — including those reporting null results — become consistent:",
+    causalReconciliationStudies: [
+      { study: "Travison 2007", bmiAdj: true, result: "-1.0%/yr", interpretation: "Direct pathway captured (BMI-adjusted)" },
+      { study: "Mazur 2013", bmiAdj: false, result: "-0.95%/yr", interpretation: "Direct pathway confirmed naturally (weight-stable group)" },
+      { study: "Chodick 2020", bmiAdj: false, result: "-1.02%/yr", interpretation: "Total effect (direct + mediated)" },
+      { study: "Santi 2025", bmiAdj: true, result: "T and LH decline", interpretation: "Direct pathway + HPG-level disruption confirmed" },
+      { study: "Andersson 2007", bmiAdj: true, result: "Null", interpretation: "Mediated pathway dominates -> BMI adjustment removes dominant signal" },
+      { study: "Nyante 2012", bmiAdj: true, result: "Null", interpretation: "Assay change + mediator removal -> signal masked" },
+    ],
+    causalSantiTitle: "Santi 2025: both testosterone AND LH are declining",
+    causalSantiText: "The largest meta-analysis ever conducted (1,064,891 men, 1971-2024) found that serum testosterone is declining independent of age, BMI, and assay method. Critically, it also found that LH (the pituitary signal that drives testosterone production) is also declining - ruling out simple testicular failure and pointing to disruption at the hypothalamic-pituitary level.",
+    causalSantiMechanism: "BERM predicts exactly this: Route A (direct Leydig cell via Cav3.2 -> StAR) reduces testosterone, while Route C (melatonin -> GnRH) and Route D (cortisol -> HPG) reduce LH. The simultaneous decline of both hormones is the signature of multi-level disruption - not aging, not obesity.",
+    causalSantiSource: "Santi et al. 2025, J Endocrinol Invest 48:2721-2734",
+    causalInverseTitle: "Inverse pharmacological test: testosterone therapy reverses obesity",
+    causalInverseText: "If obesity caused testosterone decline, then raising testosterone should not affect weight. But testosterone therapy in hypogonadal obese men produces dramatic weight loss (up to 30 kg in class III obesity), confirming bidirectional causation: T suppression drives weight gain, not just the reverse.",
+    causalInverseData: [
+      { label: "Class I obesity", loss: "-16.3 kg", bmi: "-5.52" },
+      { label: "Class II obesity", loss: "-25.3 kg", bmi: "-8.15" },
+      { label: "Class III obesity", loss: "-30.5 kg", bmi: "-9.96" },
+    ],
+    causalInverseSource: "Saad et al. 2016, registry studies",
+
     whyPronatTitle: "Why $200 billion couldn't raise South Korea's fertility",
     whyPronatText: "BERM's three-level architecture separates fertility into biological capacity (Level 1), EMF-behavioral coupling (Level 2), and cultural choice (Level 3). Pronatalist policies — cash bonuses, parental leave, childcare subsidies — target Level 3 (motivation). But when Level 1 (biological capacity) becomes the binding constraint, no amount of Level 3 incentive can compensate. South Korea's cumulative testosterone loss exceeds 48%. A growing fraction of couples who want children cannot conceive naturally. The $200 billion addressed the wrong level of the model.",
     whyPronatPrediction: "T-TFR-4: Korea's TFR will not sustainably exceed 1.0 through 2035, regardless of policy spending.",
@@ -304,7 +352,7 @@ const t = {
     sixFactorLead: "Testosterone is the single most informative biomarker in the BERM framework because six independent biophysical properties make it exceptionally sensitive to the EMF → VGCC → Ca²⁺ mechanism.",
 
     diseaseCascadesTitle: "Extended Disease Cascades",
-    diseaseCascadesLead: "Ten additional disease cascades derived from the VGCC gene family analysis. Each cascade links a specific VGCC subtype to a disease mechanism with its own evidence level.",
+    diseaseCascadesLead: "Eleven additional disease cascades derived from the VGCC gene family analysis. Each cascade links a specific VGCC subtype to a disease mechanism with its own evidence level.",
     diseaseCascades: [
       { num: 9, title: "Myopia", mechanism: "EMF → VGCC in dopaminergic amacrine cells → DA release disrupted → scleral elongation brake weakened + CRY → melatonin → circadian ocular growth dysregulated. THREE converging channels.", level: "M", trend: "22.9% (2000) → 34% (2020) → 50% (2050)" },
       { num: 10, title: "Autoimmune Diseases", mechanism: "EMF → chronic Ca²⁺ perturbation in T-cells → Ca²⁺-calcineurin-NFAT pathway dysregulated → autoreactive T-cell activation. Calcineurin inhibitors (cyclosporine, tacrolimus) are standard treatment — pharmacological confirmation.", level: "M|C", trend: "5% US prevalence, +19.1%/year globally" },
@@ -316,6 +364,7 @@ const t = {
       { num: 16, title: "Cardiac Arrhythmia (QT)", mechanism: "CACNA1C GoF → Cav1.2 window current ↑ → QT ↑. Timothy syndrome: extreme QT + autism from SAME mutation.", level: "E", trend: "Timothy: most die before age 3 without treatment" },
       { num: 17, title: "Neurodevelopment & Sexual Differentiation", mechanism: "7 causal channels × 3 developmental windows. Prenatal: Leydig Cav3 → T↓, aromatase, pituitary. Pubertal: PFC, melatonin, OT/AVP, insular cortex.", level: "L*", trend: "Gender clinic referrals: Sweden +19,700%; ASD-GD 6-26%" },
       { num: 18, title: "TheraBionic: Proof of Mechanism", mechanism: "FDA-approved (2019) device for HCC. 27.12 MHz, AM at tumor-specific frequencies. SAR 100-1000× below phone. Mechanism: EMF → Cav3.2 → Ca²⁺ → HCC differentiation. CONFIRMS non-thermal EMF → VGCC.", level: "E", trend: "34% survival increase in advanced HCC" },
+      { num: 19, title: "Metabolic Syndrome / Obesity", mechanism: "SIX converging EMF → Ca²⁺ pathways: (1) hypothalamic appetite ↑ via ARC glia Ca²⁺ → AgRP/NPY, (2) BAT thermogenesis ↓ via CaMKII/CREB → UCP1 and SERCA2b/RyR2 disruption, (3) β-cell insulin dynamics ↓ via L-type VGCC, (4) thyroid axis → metabolic rate ↓ via Cav3 in thyrotrophs, (5) melatonin → metabolic circadian disruption, (6) adipocyte Ca²⁺ → lipogenesis ↑. CaMKII is the CONVERGENCE MOLECULE connecting all pathways. Klimentidis paradox: 24 populations, 8 species ALL gaining weight (p = 1.2×10⁻⁷) including lab animals on controlled diets. Obesity is multifactorial — EMF is ONE contributing factor explaining the residual that diet/exercise/genetics cannot.", level: "M", trend: "Global obesity: 4% (1975) → 13% (2016) → 42% (USA 2024)" },
     ],
     vgccDiagramTitle: "VGCC Gene Family",
     vgccDiagramSubtitle: "Six genes, six disease clusters, one mechanism",
@@ -399,7 +448,7 @@ const t = {
     twoChSub: "ELF + IF + RF -hajottelu 12 teknologiakerroksella ja TCBM",
     twoChTitle: "Kolmikanavainen altistusmalli",
     twoChDesc:
-      "Kokonaistehokas EMF-altistus jakautuu kolmeen taajuuskanavaan — ELF (f < 1 kHz, kalvomodulaatio), IF (1 kHz – 1 MHz, solunjakautuminen/mitoottinen), RF (> 1 MHz, spin-kemia) — kukin painotettuna biologisen mekanisminsa mukaan ja chi-kytkennällä moduloituna.",
+      "Kokonaistehokas EMF-altistus jakautuu kolmeen taajuuskanavaan — ELF (f < 300 Hz, kalvomodulaatio), IF (300 Hz – 10 MHz, solunjakautuminen/mitoottinen), RF (> 10 MHz, spin-kemia) — kukin painotettuna biologisen mekanisminsa mukaan ja chi-kytkennällä moduloituna.",
     twoChExplain:
       "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, missä nykyiset diagnostiset painot ovat w_ELF = 0,05, w_IF = 0,60, w_RF = 0,35. Nämä ovat DIAGNOSTISIA painoja, jotka vaativat empiirisen kalibraation, eivät sovitettuja parametreja -- kolmikanavadekompositio on rakenteellisesti johdettu kalvobiofysiikasta, mutta suhteelliset painot ovat epävarmoja. Maassa, jossa matkapuhelininfrastruktuuri on lähes nolla, jopa runsas puhelinkäyttö tuottaa vähän kokonaisaltistusta (chi on lähellä nollaa). Vastaavasti täysin saturoituneessa ympäristössä henkilökohtainen komponentti lisätään lähes lineaarisesti kaikkien kolmen kanavan kautta.",
     twoChLayersTitle: "12 teknologiakerrosta ambient-kentän komponentteina",
@@ -484,6 +533,12 @@ const t = {
     compExplain:
       "Kun α = 0, kompensaatiota ei ole ja biologinen lasku siirtyy suoraan TFR:ään. Kun α = 1, kompensaatio on täydellinen eikä biologinen lasku vaikuta havaittuun TFR:ään. Kalibroitu arvo 0,43 tarkoittaa osittaista mutta epätäydellistä kompensaatiota -- biologinen lasku näkyy edelleen TFR:ssä, mutta noin puolella nopeudella verrattuna tilanteeseen ilman yhteiskunnallista sopeutumista.",
 
+    camkiiConvTitle: "CaMKII: konvergenssimolekyyli",
+    camkiiConvSub: "Yksi molekyyli selittää miksi lihavuus, diabetes, hedelmättömyys ja unihäiriöt lisääntyvät samanaikaisesti",
+    camkiiConvDesc: "CaMKII (kalsium/kalmoduliini-riippuvainen proteiinikinaasi II) aktivoituu VGCC-välitteisen Ca²⁺-sisäänvirtauksen jälkeen. Viisi verifioitua kohdetta yhdistää sen viiteen sairauskaskadiin samanaikaisesti. Tämä konvergenssi ratkaisee modernin epidemiologian keskeisen arvoituksen: miksi lihavuus, diabetes, hedelmättömyys ja unihäiriöt lisääntyvät rinnakkain kaikissa teollistuneissa yhteiskunnissa? Niillä on yhteinen ylävirran syy (EMF-indusoitu Ca²⁺-dysregulaatio) joka vaikuttaa yhteisen alavirran effektorin (CaMKII) kautta eri kohde-elimissä.",
+    camkiiConvCaveat: "Episteeminen huomio: CaMKII-konvergenssi on TUNNISTETTU itsenäisestä kirjallisuudesta mutta ei vielä kokeellisesti testattu integroituna EMF-mekanismina. Jokainen reitti on verifioitu erikseen; integroitu koe (EMF → CaMKII → kaikki viisi kohdetta samanaikaisesti) on ennuste, ei vahvistettu fakta. Evidenssitaso: M.",
+    camkiiConvLink: "Katso metabolinen evidenssi →",
+
     mtorSub: "EMF, kalorirajoitus ja rapamysiini konvergoivat samaan ikääntymispolkuun",
     mtorTitle: "mTOR-konvergenssihypoteesi",
     mtorDesc1:
@@ -559,9 +614,9 @@ const t = {
     modulationDesc: "Laaja tutkimus (Fertility and Sterility 2023) havaitsi matkapuhelimen käytön yhteyden matalampaan siittiöpitoisuuteen — mutta yhteys oli VAHVEMPI vuosina 2005–2007 kuin 2012–2018. BERM selittää tämän Schwanin yhtälön kautta: biologisesti aktiivinen komponentti ei ole RF-kantoaalto vaan sen ELF-MODULAATIOVERHOKÄYRÄ. GSM (2G): kova TDMA-pulssi 217 Hz, ~100 % modulaatiosyvyys → vahva ELF-komponentti → suuri T-tyypin bifurkaatiovaikutus. LTE (4G): OFDM, ~30–50 % modulaatiosyvyys, matalampi lähetysteho → heikompi ELF-komponentti → pienempi vaikutus. Tämä ennustaa aikatrendin ILMAN 'vähemmän säteilyä on turvallisempaa' -selitystä. Säteilyn MÄÄRÄ voi olla samankaltainen, mutta MODULAATIORAKENNE muuttui.",
     modulationWarning: "Huomautus: tämä aikatrendi on KORRELAATIO. Muut tekijät muuttuivat samanaikaisesti (puhelimen sijainti, käyttötottumukset, muut altistukset). Schwanin selitys on parsimonisin mutta ei ainoa mahdollisuus.",
 
-    modulomeSub: "Yhdeksänkerroksinen synteesi Beckeristä Cyb5b:hen — yhtenäinen alttiusmalli",
-    modulomeTitle: "EMF-modulooma",
-    modulomeDesc: "Yhdeksäntasoinen modulooma yhdistää kuusi itsenäistä tutkimusperinnettä — Beckerin DC-ohjausjärjestelmän, Adeen elektromin, Levinin bioelektrisen koodin, Lindgrenin geometrisen viitekehyksen, kromoforien yleistyksen (CCO/CRY) ja Cyb5b-EMF-reseptorin (Kim 2026, Cell) — yhtenäiseksi malliksi EMF:n biologisesta herkkyydestä. Jokaista tasoa tukevat itsenäisesti regulaattorihyväksytyt terapeuttiset laitteet, jotka hyödyntävät samaa mekanismia.",
+    modulomeSub: "Kaksitoistakerroksinen alttiusmalli — molekulaarisesta spinfysiikasta populaatiotason malleihin",
+    modulomeTitle: "EMF-moduloomi",
+    modulomeDesc: "Kaksitoistatasoinen moduloomi kartoittaa sähkömagneettista herkkyyttä molekulaarisesta spinfysiikasta populaatiotason malleihin. Kukin kerros moduloi χ:ä — dimensiotonta kytkentäkerrointa ulkoisen EMF:n ja biologisen toiminnan välillä. Kaksitoista kerrosta, kymmenen kohde-elintä, neljä itsenäistä reittiä fertiliteetin laskuun.",
 
     btnEvidence: "Selaa näyttöä",
     btnPredictions: "Näytä ennusteet",
@@ -598,6 +653,47 @@ const t = {
     thresholdChartTitle: "Interaktiivinen kynnösmalli",
     thresholdCaveat: "T-laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä vertaisarvioiduista pitkittäistutkimuksista. Korean ja Japanin vauhdit ovat arvioita. 40 %:n kynnös on kalibroitu, ei derivoitu. Ennusteet olettavat nykyisten vauhtien jatkumisen.",
 
+    causalStructureTitle: "Miksi BMI ei selitä laskua",
+    causalStructureLead: "Sitkeä vastaväite esittää, että kasvava lihavuus, ei ympäristöaltistus, selittää testosteronin sekulaarilaskun. Pearlin kausaalikehyksellä tehty formaali analyysi paljastaa, että BMI on mediaattori (kausaalireitillä), ei sekoittaja (itsenäinen syy). Mediaattorin korjaaminen poistaa todellista signaalia.",
+    causalDagConventionalTitle: "Konventionaalinen tulkinta",
+    causalDagConventionalCaption: "BMI sekoittajana: korjaus on oikein, nollatulos = ei laskua",
+    causalDagBermTitle: "BERM-tulkinta",
+    causalDagBermCaption: "BMI mediaattorina: korjaus poistaa medioidun signaalin, nolla = ylikorjaus",
+    causalMazurTitle: "Vakiopainotesti: Mazur ym. 2013",
+    causalMazurText: "991 US Air Force -veteraania seurattiin 6 mittausaallon yli 20 vuoden ajan (1982-2002). Painonsa vakiona pitäneet miehet menettivät silti 117 ng/dL (19 %) testosteroninsa. Tämä on luonnollinen koe joka kontrolloi BMI:n ilman tilastollista korjausta.",
+    causalMazurQuote: "Emme ole tunnistaneet syytä sekulaarilaskuun, mutta suljemme pois kasvavan lihavuuden riittävänä tai ensisijaisena selityksenä.",
+    causalMazurSource: "Mazur, Westerman & Mueller 2013, PLOS ONE",
+    causalPathwayTitle: "Kvantitatiivinen reittihajotelma",
+    causalPathwayDirect: "Suora reitti",
+    causalPathwayDirectDesc: "EMF -> Cav3.2/melatoniini/kortisoli -> T-lasku",
+    causalPathwayDirectEst: "~117 ng/dL / 20v (~67 %)",
+    causalPathwayMediated: "Medioitu reitti",
+    causalPathwayMediatedDesc: "EMF -> metaboliset mekanismit -> BMI-nousu -> aromatase/SHBG -> T-lasku",
+    causalPathwayMediatedEst: "~58 ng/dL / 20v (~33 %)",
+    causalPathwayCaveat: "Nämä osuudet ovat suuntaa-antavia, johdettu Mazur 2013:sta (vakiopaino- vs painonnousuryhmät). Formaali mediaatioanalyysi (SEM) voisi tarkentaa arvioita.",
+    causalReconciliationTitle: "'Ristiriitaisten' tulosten sovittaminen",
+    causalReconciliationLead: "Kun kausaalirakenne ymmärretään, kaikki olemassa olevat tutkimukset — nollatulokset mukaan lukien — ovat konsistentteja:",
+    causalReconciliationStudies: [
+      { study: "Travison 2007", bmiAdj: true, result: "-1,0 %/v", interpretation: "Suora reitti kuvattu (BMI-korjattu)" },
+      { study: "Mazur 2013", bmiAdj: false, result: "-0,95 %/v", interpretation: "Suora reitti vahvistettu luonnollisesti (vakiopainoryhmä)" },
+      { study: "Chodick 2020", bmiAdj: false, result: "-1,02 %/v", interpretation: "Kokonaisvaikutus (suora + medioitu)" },
+      { study: "Santi 2025", bmiAdj: true, result: "T ja LH lasku", interpretation: "Suora reitti + HPG-tason häiriö vahvistettu" },
+      { study: "Andersson 2007", bmiAdj: true, result: "Nolla", interpretation: "Medioitu reitti dominoi -> BMI-korjaus poistaa dominoivan signaalin" },
+      { study: "Nyante 2012", bmiAdj: true, result: "Nolla", interpretation: "Mittausmenetelmän muutos + mediaation poisto -> signaali peittyy" },
+    ],
+    causalSantiTitle: "Santi 2025: sekä testosteroni ETTÄ LH laskevat",
+    causalSantiText: "Suurin koskaan tehty meta-analyysi (1 064 891 miestä, 1971-2024) osoitti, että seerumitestosteroni laskee iästä, BMI:stä ja mittausmenetelmästä riippumatta. Kriittisesti myös LH (aivolisäkkeen signaali joka ohjaa testosteronin tuotantoa) laskee — mikä sulkee pois yksinkertaisen kivestoiminnan heikkenemisen ja viittaa häiriöön hypotalamus-aivolisäketasolla.",
+    causalSantiMechanism: "BERM ennustaa juuri tämän: reitti A (suora Leydigin solun Cav3.2 -> StAR) vähentää testosteronia, kun taas reitti C (melatoniini -> GnRH) ja reitti D (kortisoli -> HPG) vähentävät LH:ta. Molempien hormonien samanaikainen lasku on monitasoisen häiriön tunnusmerkki — ei ikääntyminen, ei lihavuus.",
+    causalSantiSource: "Santi ym. 2025, J Endocrinol Invest 48:2721-2734",
+    causalInverseTitle: "Käänteinen farmakologinen testi: testosteronihoito kääntää lihavuuden",
+    causalInverseText: "Jos lihavuus aiheuttaisi testosteronin laskun, testosteronin nostamisen ei pitäisi vaikuttaa painoon. Mutta testosteronihoito hypogonadaalisilla lihavilla miehillä tuottaa dramaattisen painonlaskun (jopa 30 kg luokan III lihavuudessa), mikä vahvistaa kaksisuuntaisen kausaalisuuden: T-suppressio ajaa painonnousua, ei vain päinvastoin.",
+    causalInverseData: [
+      { label: "Luokan I lihavuus", loss: "-16,3 kg", bmi: "-5,52" },
+      { label: "Luokan II lihavuus", loss: "-25,3 kg", bmi: "-8,15" },
+      { label: "Luokan III lihavuus", loss: "-30,5 kg", bmi: "-9,96" },
+    ],
+    causalInverseSource: "Saad ym. 2016, rekisteritutkimukset",
+
     whyPronatTitle: "Miksi 200 miljardia dollaria ei nostanut Etelä-Korean syntyvyyttä",
     whyPronatText: "BERM:n kolmitasoarkkitehtuuri jakaa syntyvyyden biologiseen kapasiteettiin (taso 1), EMF-käyttäytymiskytkentään (taso 2) ja kulttuuriseen valintaan (taso 3). Pronatalismipolitiikat — käteisbonukset, vanhempainvapaat, päivähoitotuet — kohdistuvat tasoon 3 (motivaatio). Mutta kun taso 1 (biologinen kapasiteetti) muodostuu sitovaksi rajoitteeksi, mikään tason 3 kannustin ei voi kompensoida. Etelä-Korean kumulatiivinen testosteronihävikki ylittää 48 %. Kasvava osuus lasta haluavista pareista ei pysty hedelmöittymään luonnollisesti. 200 miljardia kohdistui mallin väärään tasoon.",
     whyPronatPrediction: "T-TFR-4: Korean TFR ei ylitä kestävästi 1,0:aa vuoteen 2035 mennessä, riippumatta politiikkapanostuksesta.",
@@ -617,7 +713,7 @@ const t = {
     sixFactorLead: "Testosteroni on BERM-viitekehyksen informatiivisin yksittäinen biomarkkeri, koska kuusi itsenäistä biofysikaalista ominaisuutta tekevät siitä poikkeuksellisen herkän EMF → VGCC → Ca²⁺ -mekanismille.",
 
     diseaseCascadesTitle: "Laajennetut sairauskaskadit",
-    diseaseCascadesLead: "Kymmenen lisäsairauskaskadia VGCC-geeniperheen analyysistä. Kukin kaskadi yhdistää tietyn VGCC-alatyypin sairausmekanismiin omalla evidenssitasollaan.",
+    diseaseCascadesLead: "Yksitoista lisäsairauskaskadia VGCC-geeniperheen analyysistä. Kukin kaskadi yhdistää tietyn VGCC-alatyypin sairausmekanismiin omalla evidenssitasollaan.",
     diseaseCascades: [
       { num: 9, title: "Myopia (likinäköisyys)", mechanism: "EMF → VGCC dopamiiniergisissä amakriinisoluissa → DA-vapautuminen häiriintyy → skleraalinen pidentymisjarru heikkenee + CRY → melatoniini → sirkadiaaninen silmän kasvu dysreguloituu. KOLME konvergoivaa kanavaa.", level: "M", trend: "22,9 % (2000) → 34 % (2020) → 50 % (2050)" },
       { num: 10, title: "Autoimmuunisairaudet", mechanism: "EMF → krooninen Ca²⁺-perturbaatio T-soluissa → Ca²⁺-kalsineruiini-NFAT-reitti dysreguloituu → autoreaktiivisten T-solujen aktivaatio. Kalsineruiini-inhibiittorit (siklosporiini, takrolimuusi) ovat vakiohoito — farmakologinen vahvistus.", level: "M|C", trend: "5 % USA:n prevalenssi, +19,1 %/vuosi globaalisti" },
@@ -629,6 +725,7 @@ const t = {
       { num: 16, title: "Sydämen rytmihäiriö (QT)", mechanism: "CACNA1C GoF → Cav1.2 ikkunavirta ↑ → QT ↑. Timothyn oireyhtymä: äärimmäinen QT + autismi SAMASTA mutaatiosta.", level: "E", trend: "Timothy: useimmat kuolevat ennen 3v ilman hoitoa" },
       { num: 17, title: "Neurokehitys ja sukupuolen erilaistuminen", mechanism: "7 kausaalikanavaa × 3 kehitysikkunaa. Prenataalinen: Leydig Cav3 → T↓, aromataasi, aivolisäke. Pubertaalinen: PFC, melatoniini, OT/AVP, insulaarinen korteksi.", level: "L*", trend: "Sukupuoliklinikkälähetteet: Ruotsi +19 700 %; ASD-GD 6-26 %" },
       { num: 18, title: "TheraBionic: mekanismin todistus", mechanism: "FDA-hyväksytty (2019) laite HCC:lle. 27,12 MHz, AM tumorispesifisillä taajuuksilla. SAR 100-1000× alle puhelimen. Mekanismi: EMF → Cav3.2 → Ca²⁺ → HCC-differentaatio. VAHVISTAA ei-termisen EMF → VGCC.", level: "E", trend: "34 % selviytymislisäys pitkälle edenneessä HCC:ssä" },
+      { num: 19, title: "Metabolinen syndrooma / Lihavuus", mechanism: "KUUSI konvergoivaa EMF → Ca²⁺ -reittiä: (1) hypotalaaminen ruokahalun nousu ARC-glian Ca²⁺ → AgRP/NPY, (2) BAT-termogeneesi ↓ CaMKII/CREB → UCP1 ja SERCA2b/RyR2 häiriön kautta, (3) β-solun insuliinidynamiikka ↓ L-tyypin VGCC:n kautta, (4) kilpirauhasakseli → perusaineenvaihdunta ↓ Cav3:n kautta tyrotrofeissa, (5) melatoniini → metabolinen sirkadiaanihäiriö, (6) adiposyytin Ca²⁺ → lipogeneesi ↑. CaMKII on KONVERGENSSIMOLEKYYLI joka yhdistää kaikki reitit. Klimentidisin paradoksi: 24 populaatiota, 8 lajia KAIKKI lihovat (p = 1,2×10⁻⁷) — myös laboratoriorotat kontrolloidulla dieetillä. Lihavuus on multifaktoriaalinen — EMF on YKSI myötävaikuttava tekijä joka selittää residuaalin johon dieetti/liikunta/genetiikka eivät riitä.", level: "M", trend: "Globaali lihavuus: 4 % (1975) → 13 % (2016) → 42 % (USA 2024)" },
     ],
     vgccDiagramTitle: "VGCC-geeniperhe",
     vgccDiagramSubtitle: "Kuusi geeniä, kuusi sairausklusteria, yksi mekanismi",
@@ -1119,6 +1216,139 @@ export default async function ModelPage({
               {d.thresholdCaveat}
             </p>
 
+            {/* Causal structure: Why BMI does not explain the decline */}
+            <div id="causal-structure" className="mt-10 max-w-4xl">
+              <h3 className="text-base font-semibold mb-2">{d.causalStructureTitle}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-3xl">{d.causalStructureLead}</p>
+
+              {/* Two parallel DAGs */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div className="rounded-xl border border-card-border bg-card-bg p-4">
+                  <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wider mb-3">{d.causalDagConventionalTitle}</p>
+                  <svg viewBox="0 0 280 180" className="w-full" role="img" aria-label="Conventional DAG: BMI as confounder">
+                    <rect x="90" y="10" width="100" height="30" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
+                    <text x="140" y="30" textAnchor="middle" className="fill-foreground text-[11px] font-medium">Diet / Lifestyle</text>
+                    <rect x="10" y="90" width="80" height="30" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
+                    <text x="50" y="110" textAnchor="middle" className="fill-foreground text-[11px] font-medium">BMI ↑</text>
+                    <rect x="190" y="90" width="80" height="30" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
+                    <text x="230" y="110" textAnchor="middle" className="fill-foreground text-[11px] font-medium">T ↓</text>
+                    <line x1="120" y1="40" x2="60" y2="88" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
+                    <line x1="160" y1="40" x2="220" y2="88" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
+                    <line x1="90" y1="105" x2="188" y2="105" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
+                    <text x="140" y="145" textAnchor="middle" className="fill-green-500 text-[10px] font-semibold">BMI adjustment: CORRECT</text>
+                    <text x="140" y="160" textAnchor="middle" className="fill-foreground-muted text-[9px]">null = no real decline</text>
+                    <defs><marker id="arrowConv" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-foreground-muted/50" /></marker></defs>
+                  </svg>
+                  <p className="text-[10px] text-foreground-muted mt-2 text-center">{d.causalDagConventionalCaption}</p>
+                </div>
+
+                <div className="rounded-xl border-2 border-accent/30 bg-accent/5 p-4">
+                  <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-3">{d.causalDagBermTitle}</p>
+                  <svg viewBox="0 0 280 200" className="w-full" role="img" aria-label="BERM DAG: BMI as mediator">
+                    <rect x="90" y="5" width="100" height="30" rx="6" className="fill-purple-500/10 stroke-purple-500/50" strokeWidth="1.5" />
+                    <text x="140" y="24" textAnchor="middle" className="fill-foreground text-[11px] font-medium">EMF</text>
+                    <rect x="10" y="80" width="80" height="30" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
+                    <text x="50" y="100" textAnchor="middle" className="fill-foreground text-[11px] font-medium">BMI ↑</text>
+                    <rect x="190" y="80" width="80" height="30" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
+                    <text x="230" y="100" textAnchor="middle" className="fill-foreground text-[11px] font-medium">T ↓</text>
+                    <text x="50" y="72" textAnchor="middle" className="fill-amber-500 text-[8px]">6 metabolic</text>
+                    <text x="50" y="62" textAnchor="middle" className="fill-amber-500 text-[8px]">pathways</text>
+                    <line x1="120" y1="35" x2="60" y2="78" className="stroke-amber-500/60" strokeWidth="1.5" markerEnd="url(#arrowBerm)" />
+                    <line x1="90" y1="95" x2="188" y2="95" className="stroke-amber-500/60" strokeWidth="1.5" strokeDasharray="4 2" markerEnd="url(#arrowBerm)" />
+                    <text x="140" y="89" textAnchor="middle" className="fill-amber-500 text-[8px]">mediated (~33%)</text>
+                    <line x1="170" y1="35" x2="225" y2="78" className="stroke-red-500/80" strokeWidth="2" markerEnd="url(#arrowBermR)" />
+                    <text x="215" y="55" textAnchor="middle" className="fill-red-500 text-[8px]">direct (~67%)</text>
+                    <text x="210" y="65" textAnchor="middle" className="fill-red-500 text-[8px]">Cav3.2 / mel / cort</text>
+                    <line x1="140" y1="130" x2="140" y2="145" className="stroke-red-500/60" strokeWidth="1.5" strokeDasharray="3 2" />
+                    <text x="140" y="160" textAnchor="middle" className="fill-red-500 text-[10px] font-semibold">BMI adjustment: OVERCORRECTION</text>
+                    <text x="140" y="175" textAnchor="middle" className="fill-foreground-muted text-[9px]">removes ~33% of real signal</text>
+                    <defs>
+                      <marker id="arrowBerm" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-amber-500/60" /></marker>
+                      <marker id="arrowBermR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-red-500/80" /></marker>
+                    </defs>
+                  </svg>
+                  <p className="text-[10px] text-foreground-muted mt-2 text-center">{d.causalDagBermCaption}</p>
+                </div>
+              </div>
+
+              {/* Mazur 2013 highlight */}
+              <div className="rounded-xl border-2 border-amber-500/40 bg-amber-500/5 p-5 mb-8">
+                <p className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2">{d.causalMazurTitle}</p>
+                <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.causalMazurText}</p>
+                <blockquote className="border-l-4 border-amber-500/50 pl-4 py-2 mb-2">
+                  <p className="text-sm text-foreground italic leading-relaxed">&ldquo;{d.causalMazurQuote}&rdquo;</p>
+                </blockquote>
+                <p className="text-xs text-foreground-muted">{d.causalMazurSource}</p>
+              </div>
+
+              {/* Pathway proportions */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-4">
+                  <p className="text-xs font-semibold text-red-500 mb-1">{d.causalPathwayDirect}</p>
+                  <p className="text-lg font-bold font-mono-num text-foreground mb-1">{d.causalPathwayDirectEst}</p>
+                  <p className="text-xs text-foreground-muted">{d.causalPathwayDirectDesc}</p>
+                </div>
+                <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4">
+                  <p className="text-xs font-semibold text-amber-500 mb-1">{d.causalPathwayMediated}</p>
+                  <p className="text-lg font-bold font-mono-num text-foreground mb-1">{d.causalPathwayMediatedEst}</p>
+                  <p className="text-xs text-foreground-muted">{d.causalPathwayMediatedDesc}</p>
+                </div>
+              </div>
+              <p className="text-xs text-foreground-muted italic border-l-2 border-amber-500/30 pl-3 mb-8">{d.causalPathwayCaveat}</p>
+
+              {/* Reconciliation table */}
+              <div className="mb-8">
+                <h4 className="text-sm font-semibold mb-2">{d.causalReconciliationTitle}</h4>
+                <p className="text-xs text-foreground-muted mb-3">{d.causalReconciliationLead}</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-xs border-collapse">
+                    <thead>
+                      <tr className="border-b border-card-border text-left">
+                        <th className="py-2 pr-3 font-medium text-foreground-muted">{locale_key === "fi" ? "Tutkimus" : "Study"}</th>
+                        <th className="py-2 pr-3 font-medium text-foreground-muted">{locale_key === "fi" ? "BMI-korj." : "BMI adj."}</th>
+                        <th className="py-2 pr-3 font-medium text-foreground-muted">{locale_key === "fi" ? "Tulos" : "Result"}</th>
+                        <th className="py-2 font-medium text-foreground-muted">{locale_key === "fi" ? "BERM-tulkinta" : "BERM interpretation"}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {d.causalReconciliationStudies.map((row: { study: string; bmiAdj: boolean; result: string; interpretation: string }) => (
+                        <tr key={row.study} className={`border-b border-card-border/50${row.result.toLowerCase().includes("null") || row.result.toLowerCase().includes("nolla") ? " opacity-70" : ""}`}>
+                          <td className="py-2 pr-3 font-medium text-foreground whitespace-nowrap">{row.study}</td>
+                          <td className="py-2 pr-3">{row.bmiAdj ? "✓" : "—"}</td>
+                          <td className={`py-2 pr-3 font-mono-num whitespace-nowrap ${row.result.toLowerCase().includes("null") || row.result.toLowerCase().includes("nolla") ? "text-foreground-muted" : "text-red-500 font-semibold"}`}>{row.result}</td>
+                          <td className="py-2 text-foreground-muted">{row.interpretation}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Santi 2025 highlight */}
+              <div className="rounded-xl border-2 border-purple-500/40 bg-purple-500/5 p-5 mb-8">
+                <p className="text-xs font-semibold text-purple-500 uppercase tracking-wider mb-2">{d.causalSantiTitle}</p>
+                <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.causalSantiText}</p>
+                <p className="text-sm text-foreground-muted leading-relaxed mb-2">{d.causalSantiMechanism}</p>
+                <p className="text-xs text-foreground-muted">{d.causalSantiSource}</p>
+              </div>
+
+              {/* Inverse pharmacological test */}
+              <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-5 mb-4">
+                <p className="text-xs font-semibold text-green-600 uppercase tracking-wider mb-2">{d.causalInverseTitle}</p>
+                <p className="text-sm text-foreground-muted leading-relaxed mb-4">{d.causalInverseText}</p>
+                <div className="grid grid-cols-3 gap-2 mb-3">
+                  {d.causalInverseData.map((row: { label: string; loss: string; bmi: string }) => (
+                    <div key={row.label} className="rounded-lg border border-green-500/20 bg-green-500/5 p-3 text-center">
+                      <p className="text-[10px] text-foreground-muted mb-1">{row.label}</p>
+                      <p className="text-base font-bold font-mono-num text-green-600">{row.loss}</p>
+                      <p className="text-[10px] text-foreground-muted mt-0.5">BMI {row.bmi}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-foreground-muted">{d.causalInverseSource}</p>
+              </div>
+            </div>
+
             {/* Why pronatalism fails */}
             <div className="mt-10 max-w-3xl">
               <h3 className="text-base font-semibold mb-3">{d.whyPronatTitle}</h3>
@@ -1461,6 +1691,25 @@ export default async function ModelPage({
                 </tbody>
               </table>
             </div>
+          </CollapsibleSection>
+
+          {/* CaMKII Convergence */}
+          <CollapsibleSection id="camkii-convergence" title={d.camkiiConvTitle} subtitle={d.camkiiConvSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.camkiiConvDesc}
+            </p>
+            <CaMKIIConvergenceDiagram locale={locale} />
+            <div className="mt-6 p-4 rounded-lg border border-amber-500/30 bg-amber-500/5">
+              <p className="text-xs text-foreground-muted leading-relaxed">
+                {d.camkiiConvCaveat}
+              </p>
+            </div>
+            <Link
+              href={`${prefix}/evidence#metabolic-evidence`}
+              className="inline-flex items-center gap-1 text-sm text-accent hover:underline mt-4"
+            >
+              {d.camkiiConvLink}
+            </Link>
           </CollapsibleSection>
 
           {/* Mathematical Foundation */}

@@ -170,7 +170,7 @@ export const NODES: CausalMapNode[] = [
     },
   },
 
-  // ── LEVEL 1: Modulation layers (9) ──
+  // ── LEVEL 1: Modulation layers (12) ──
   {
     id: "mod_geometry", level: 1,
     label: { en: "1. Geometric foundation", fi: "1. Geometrinen perusta" },
@@ -195,7 +195,7 @@ export const NODES: CausalMapNode[] = [
     color: "#8B5CF6", epistemicLevel: "E",
     detail: {
       en: {
-        mechanism: "VGCC, Nav, K-ATP, CatSper — all electrically modulable. S4 voltage sensor responds via IFO mechanism at 10⁻⁵ V/m. Non-ionotropic signaling (Bhatt & Atlas 2024) lowers the threshold.",
+        mechanism: "VGCC, Nav, K-ATP, CatSper — all electrically modulable. S4 voltage sensor responds via IFO mechanism at 10⁻⁵ V/m. Non-ionotropic signaling (Trus & Atlas 2024) lowers the threshold.",
         fdaDevice: "ALL 26 device classes utilize ion channels",
       },
       fi: {
@@ -720,8 +720,8 @@ export const NODES: CausalMapNode[] = [
   { id: "eco_insect", level: 6, label: { en: "Insects ↓", fi: "Hyönteiset ↓" }, sublabel: { en: "−75% Krefeld", fi: "−75% Krefeld" }, epistemicLevel: "E", detail: { en: { mechanism: "Flying insect biomass collapse. CRY navigation disruption + increased LED attraction." }, fi: { mechanism: "Lentävän hyönteisbiomassan romahdus. CRY-navigaation häiriö + LED-attraktion kasvu." }, link: "/sentinel#insects" } },
   { id: "eco_bird", level: 6, label: { en: "Birds ↓", fi: "Linnut ↓" }, sublabel: { en: "PECBMS", fi: "PECBMS" }, epistemicLevel: "E", detail: { en: { mechanism: "CRY compass disruption + insect food decline. PECBMS: long-term declining trend." }, fi: { mechanism: "CRY-kompassin häiriö + hyönteisravinnon väheneminen. PECBMS: pitkän aikavälin laskutrendi." }, link: "/sentinel#birds" } },
   { id: "eco_bat", level: 6, label: { en: "Bats ↓", fi: "Lepakot ↓" }, sublabel: { en: "Lindecke 2026", fi: "Lindecke 2026" }, epistemicLevel: "E", detail: { en: { mechanism: "Lindecke et al. 2026 Science: bats use magnetoreception for navigation. RF disrupts it." }, fi: { mechanism: "Lindecke ym. 2026 Science: lepakot hyödyntävät magnetoreseptiota navigoinnissa. RF häiritsee." }, link: "/sentinel#bats" } },
-  { id: "eco_amphibian", level: 6, label: { en: "Amphibians ↓", fi: "Sammakkoeläimet ↓" }, sublabel: { en: "Enigmatic declines", fi: "Enigmatic declines" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Unexplained declines in areas without habitat destruction or disease." }, fi: { mechanism: "Selittämättömät vähenemät alueilla ilman habitaatin tuhoa tai tauteja." }, link: "/sentinel#amphibians" } },
-  { id: "eco_bee", level: 6, label: { en: "Bees ↓", fi: "Mehiläiset ↓" }, sublabel: { en: "CCD, grooming↓", fi: "CCD, grooming↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Colony Collapse Disorder + grooming behavior impairment → loss of Varroa resistance." }, fi: { mechanism: "Colony Collapse Disorder + grooming-käyttäytymisen heikkeneminen → Varroa-resistenssin menetys." }, link: "/articles/bees" } },
+  { id: "eco_amphibian", level: 6, label: { en: "Amphibians ↓", fi: "Sammakkoeläimet ↓" }, sublabel: { en: "Enigmatic declines", fi: "Selittämättömät vähenemät" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Unexplained declines in areas without habitat destruction or disease." }, fi: { mechanism: "Selittämättömät vähenemät alueilla ilman habitaatin tuhoa tai tauteja." }, link: "/sentinel#amphibians" } },
+  { id: "eco_bee", level: 6, label: { en: "Bees ↓", fi: "Mehiläiset ↓" }, sublabel: { en: "CCD, grooming↓", fi: "CCD, puhdistuskäyttäytyminen↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Colony Collapse Disorder + grooming behavior impairment → loss of Varroa resistance." }, fi: { mechanism: "Colony Collapse Disorder + grooming-käyttäytymisen heikkeneminen → Varroa-resistenssin menetys." }, link: "/articles/bees" } },
   { id: "eco_varroa", level: 6, label: { en: "Varroa ← protected", fi: "Varroa ← suojassa" }, sublabel: { en: "Sclerotin, small size", fi: "Sclerotin, pieni koko" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Varroa destructor: 1.1mm, sclerotin armor, no CRY navigation → EMF has no effect." }, fi: { mechanism: "Varroa destructor: 1.1mm, sclerotiinipanssari, ei CRY-navigaatiota → EMF ei vaikuta." }, link: "/articles/bees#varroa" } },
   { id: "eco_tick", level: 6, label: { en: "Ticks ← increasing?", fi: "Punkit ← runsastuvat?" }, sublabel: { en: "Electrostatic contact↑", fi: "Sähköstaattinen kontakti↑" }, epistemicLevel: "C", detail: { en: { mechanism: "Electrostatic charge may increase tick attachment to host. Speculative." }, fi: { mechanism: "Sähköstaattinen varaus voi lisätä punkkien kiinnittymistä isäntään. Spekulatiivinen." }, link: "/evidence#ticks" } },
   { id: "eco_pollination", level: 6, label: { en: "Pollination ↓", fi: "Pölytys ↓" }, sublabel: { en: "Ecosystem service", fi: "Ekosysteemipalvelu" }, epistemicLevel: "E", detail: { en: { mechanism: "Insect pollinator decline threatens 75% of crops. Electrostatic pollination mechanism disruption." }, fi: { mechanism: "Hyönteispölyttäjien väheneminen uhkaa 75% viljelykasveista. Sähköstaattisen pölytysmekanismin häiriö." }, link: "/sentinel#pollination" } },

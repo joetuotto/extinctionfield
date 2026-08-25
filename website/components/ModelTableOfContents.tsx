@@ -24,12 +24,14 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
         { id: "causal-diagram", label: "Registered causal route" },
         { id: "organ-states", label: "Organ states" },
         { id: "asfr-tfr", label: "ASFR → TFR" },
+        { id: "testosterone-threshold", label: "T → TFR threshold" },
+        { id: "causal-structure", label: "Causal structure" },
       ],
     },
     {
       title: "Modulome",
       sections: [
-        { id: "modulome", label: "7-layer modulome" },
+        { id: "modulome", label: "12-layer modulome" },
       ],
     },
     {
@@ -58,6 +60,8 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
         { id: "causal-diagram", label: "Rekisteröity kausaalireitti" },
         { id: "organ-states", label: "Elintilat" },
         { id: "asfr-tfr", label: "ASFR → TFR" },
+        { id: "testosterone-threshold", label: "T → TFR -kynnös" },
+        { id: "causal-structure", label: "Kausaalirakenne" },
       ],
     },
     {
