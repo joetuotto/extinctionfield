@@ -414,6 +414,51 @@ const COPY = {
     trpc1Falsification: "Falsification criterion",
     trpc1Locked: "Locked: 2026-08-24",
     trpc1Status: "LOCKED — awaiting test",
+    pharmTitle: "Pharmacological predictions",
+    pharmLead: "Predictions derived from the pharmacological convergence argument. If VGCC activation is the primary EMF transduction mechanism, specific drug classes should produce measurable differences in EMF-associated endpoints. These predictions leverage existing prescription databases — no new drug exposure required.",
+    pharmPredictions: [
+      {
+        id: "PHARM-1",
+        title: "CCB users show attenuated sperm quality decline compared to ARB/ACE inhibitor users",
+        description: "Compare sperm parameters (concentration, motility, morphology, DNA fragmentation) between men taking calcium channel blockers vs. men taking ARB or ACE inhibitors for hypertension. Both groups have the same underlying condition; only the drug mechanism differs. CCBs block the same VGCC that BERM identifies as the EMF transduction node. If EMF-induced VGCC activation contributes to sperm decline, CCB users should show relative protection. Data source: existing fertility clinic databases cross-referenced with prescription records.",
+        timeline: "1-2 years (retrospective database study)",
+        falsification: "No difference in sperm parameters between CCB and ARB/ACE inhibitor users after controlling for age, BMI, and comorbidities",
+        critical: true,
+      },
+      {
+        id: "PHARM-2",
+        title: "Verapamil shows stronger EMF-protective effect than amlodipine due to use-dependent blockade",
+        description: "Among CCB users, verapamil (frequency-dependent VGCC blocker) should show greater attenuation of EMF biomarkers than amlodipine (voltage-dependent blocker). The IFO mechanism predicts high-frequency channel cycling during EMF exposure — verapamil's use-dependent kinetics should provide disproportionate blockade during these bursts. Compare oxidative stress markers, sperm parameters, or melatonin levels between verapamil and amlodipine users.",
+        timeline: "2-3 years (retrospective, requires sufficient verapamil sample size)",
+        falsification: "No difference between verapamil and amlodipine users on any EMF-relevant biomarker",
+      },
+      {
+        id: "PHARM-3",
+        title: "Lithium-treated bipolar patients show less circadian disruption in high-EMF environments",
+        description: "Compare circadian markers (melatonin secretion timing, sleep onset latency, dim-light melatonin onset) between bipolar patients on lithium vs. bipolar patients on valproate or lamotrigine in matched EMF environments. Lithium stabilizes CRY proteins via GSK-3β inhibition, directly opposing BERM pathway C. If CRY-mediated melatonin suppression contributes to EMF-associated circadian disruption, lithium users should be partially protected.",
+        timeline: "1-3 years (prospective or retrospective with wearable data)",
+        falsification: "Lithium users show equal or greater circadian disruption than valproate users in high-EMF environments",
+      },
+      {
+        id: "PHARM-4",
+        title: "Nimodipine attenuates EMF-induced cognitive effects while peripheral CCBs do not",
+        description: "Nimodipine (BBB-penetrant dihydropyridine CCB) should attenuate EMF-associated cognitive effects, while amlodipine (non-BBB-penetrant) should not. This tests whether VGCC activation in CNS neurons contributes to cognitive endpoints independently of peripheral effects. If both CCBs attenuate cognitive effects equally, the mechanism is peripheral (vascular); if only nimodipine attenuates, the mechanism is central (neuronal VGCC).",
+        timeline: "2-4 years (prospective cohort or RCT extension study)",
+        falsification: "No difference between nimodipine and amlodipine on cognitive endpoints in high-EMF environments",
+      },
+      {
+        id: "PHARM-5",
+        title: "CoQ10 supplementation reduces EMF-associated oxidative damage in a dose-dependent manner",
+        description: "Building on Bektas 2026 (3.5 GHz → testicular ROS; CoQ10 ameliorates): CoQ10 supplementation (100-400 mg/day) should reduce urinary 8-OHdG (oxidative DNA damage marker) in men with high smartphone usage (>4h/day, phone in pocket) in a dose-dependent manner. The dose-response relationship tests whether the antioxidant mechanism scales linearly (simple ROS scavenging) or saturates (enzyme-limited repair).",
+        timeline: "6-12 months (RCT feasible with existing supplement)",
+        falsification: "No reduction in 8-OHdG at any CoQ10 dose compared to placebo in high-smartphone-usage men",
+        critical: true,
+      },
+    ],
+    pharmTimeline: "Timeline",
+    pharmFalsification: "Falsification criterion",
+    pharmLocked: "Locked: 2026-08-26",
+    pharmStatus: "LOCKED — awaiting test",
     modIntTitle: "Modulome integration predictions",
     modIntLead: "Predictions derived from the modulome integration — pituitary hub, mitochondrial ROS amplification, redox buffering, autonomic HRV, placental barriers, and thyroid-EMF interactions. These test whether newly identified EMF target tissues and mechanisms produce the predicted downstream effects.",
     modIntPredictions: [
@@ -1239,7 +1284,7 @@ const COPY = {
       {
         id: "METAB-4",
         title: "Matalan EMF:n yhteisöjen lihavuusprevalenssi pysyy <10 % vuoteen 2035",
-        description: "Vanhojen ammattikuntien amissit, tsimane, hadza ja vastaavat matalan EMF:n yhteisöt ylläpitävät lihavuuslukuja alle 10 % riippumatta ruokavalion modernisoitumisesta, kunhan EMF-altistus pysyy matalana. Tsimaneilla on tällä hetkellä <5 % lihavuus; Kitavalla ~0 %. Jos EMF on myötävaikuttava tekijä, nämä populaatiot pysyvät laihoina prosessoidun ruoan saatavuuden kasvaessakin — edellyttäen ettei EMF-ympäristö muutu.",
+        description: "Vanhan järjestyksen amissit, tsimane, hadza ja vastaavat matalan EMF:n yhteisöt ylläpitävät lihavuuslukuja alle 10 % riippumatta ruokavalion modernisoitumisesta, kunhan EMF-altistus pysyy matalana. Tsimaneilla on tällä hetkellä <5 % lihavuus; Kitavalla ~0 %. Jos EMF on myötävaikuttava tekijä, nämä populaatiot pysyvät laihoina prosessoidun ruoan saatavuuden kasvaessakin — edellyttäen ettei EMF-ympäristö muutu.",
         timeline: "9 vuotta (pitkittäisseuranta)",
         falsification: "Matalan EMF:n yhteisön lihavuus nousee yli 15 % ilman merkittävää EMF-adoptiota",
       },
@@ -1264,6 +1309,51 @@ const COPY = {
     trpc1Falsification: "Falsifikaatiokriteeri",
     trpc1Locked: "Lukittu: 2026-08-24",
     trpc1Status: "LUKITTU — odottaa testiä",
+    pharmTitle: "Farmakologiset ennusteet",
+    pharmLead: "Farmakologisesta konvergenssista johdetut ennusteet. Jos VGCC-aktivaatio on EMF:n primaarinen transduutiomekanismi, tiettyjen lääkeryhmien pitäisi tuottaa mitattavia eroja EMF-assosioituihin päätepisteisiin. Nämä ennusteet hyödyntävät olemassa olevia reseptitietokantoja — uutta lääkealtistusta ei tarvita.",
+    pharmPredictions: [
+      {
+        id: "PHARM-1",
+        title: "CCB-käyttäjillä on vaimentunut siittiölaadun lasku verrattuna ARB/ACE-inhibiittori-käyttäjiin",
+        description: "Vertaa siittiöparametreja (konsentraatio, motiliteetti, morfologia, DNA-fragmentaatio) kalsiumkanavan salpaajia käyttävien miesten ja ARB- tai ACE-inhibiittoreja verenpainetautiin käyttävien miesten välillä. Molemmilla ryhmillä on sama perussairaus; vain lääkemekanismi eroaa. CCB:t blokkaavat saman VGCC:n jonka BERM tunnistaa EMF-transduutiopisteeksi. Datalähde: olemassa olevat hedelmällisyysklinikkatietokannat ristiinviitattuna reseptitietojen kanssa.",
+        timeline: "1–2 vuotta (retrospektiivinen tietokanta-tutkimus)",
+        falsification: "Ei eroa siittiöparametreissa CCB- ja ARB/ACE-inhibiittori-käyttäjien välillä ikä-, BMI- ja liitännäissairausvakioinnin jälkeen",
+        critical: true,
+      },
+      {
+        id: "PHARM-2",
+        title: "Verapamiili osoittaa vahvemman EMF-suojavaikutuksen kuin amlodipiini käyttöriippuvaisen salppauksen takia",
+        description: "CCB-käyttäjien joukossa verapamiilin (taajuusriippuvainen VGCC-salpaaja) pitäisi osoittaa suurempaa EMF-biomarkkerien vaimentamista kuin amlodipiinin (jänniteriippuvainen salpaaja). IFO-mekanismi ennustaa korkeataajuista kanavasykilä EMF-altistuksen aikana — verapamiilin käyttöriippuvaisen kinetiikan pitäisi tarjota suhteettoman tehokas salppaus näiden purskahduksien aikana.",
+        timeline: "2–3 vuotta (retrospektiivinen, vaatii riittävän verapamiili-otoskoon)",
+        falsification: "Ei eroa verapamiili- ja amlodipiini-käyttäjien välillä missään EMF-relevantissa biomarkkerissa",
+      },
+      {
+        id: "PHARM-3",
+        title: "Litiumilla hoidetut bipolaaripotilaat osoittavat vähemmän sirkadiaanista häiriötä korkean EMF:n ympäristöissä",
+        description: "Vertaa sirkadiaanisia markkereita (melatoniininerityksen ajoitus, nukahtamisviive, hämärämelatoniinialku) litium- vs. valproaatti/lamotrigiinipotilaiden välillä vastaavissa EMF-ympäristöissä. Litium stabiloi CRY-proteiineja GSK-3β-inhibition kautta, vastaten suoraan BERM:n reittiä C.",
+        timeline: "1–3 vuotta (prospektiivinen tai retrospektiivinen puettavien laitteiden datalla)",
+        falsification: "Litiumkäyttäjillä on yhtä suuri tai suurempi sirkadiaaninen häiriö kuin valproaattikäyttäjillä korkean EMF:n ympäristöissä",
+      },
+      {
+        id: "PHARM-4",
+        title: "Nimodipiini vaimentaa EMF:n aiheuttamia kognitiivisia vaikutuksia kun perifeeriset CCB:t eivät",
+        description: "Nimodipiinin (BBB:n läpäisevä dihydropyridiini-CCB) pitäisi vaimentaa EMF-assosioituja kognitiivisia vaikutuksia, kun amlodipiinin (ei-BBB-penetrantti) ei pitäisi. Tämä testaa osallistuuko VGCC-aktivaatio CNS-neuroneissa kognitiivisiin päätepisteisiin riippumatta perifeerisistä vaikutuksista.",
+        timeline: "2–4 vuotta (prospektiivinen kohortti tai RCT-laajennustutkimus)",
+        falsification: "Ei eroa nimodipiinin ja amlodipiinin välillä kognitiivisissa päätepisteissä korkean EMF:n ympäristöissä",
+      },
+      {
+        id: "PHARM-5",
+        title: "CoQ10-supplementaatio vähentää EMF-assosioitua oksidatiivista vauriota annosriippuvaisesti",
+        description: "Perustuen Bektas 2026:een (3,5 GHz → kivesten ROS; CoQ10 lievittää): CoQ10-supplementaation (100–400 mg/pv) pitäisi vähentää virtsan 8-OHdG:tä (oksidatiivinen DNA-vauriomarkkeri) miehillä joilla on korkea älypuhelinkäyttö (>4h/pv, puhelin taskussa) annosriippuvaisesti.",
+        timeline: "6–12 kuukautta (RCT toteutettavissa olemassa olevalla lisäravinteella)",
+        falsification: "Ei 8-OHdG:n vähenemistä millään CoQ10-annoksella placeboon verrattuna korkean älypuhelinkäytön miehillä",
+        critical: true,
+      },
+    ],
+    pharmTimeline: "Aikataulu",
+    pharmFalsification: "Falsifikaatiokriteeri",
+    pharmLocked: "Lukittu: 2026-08-26",
+    pharmStatus: "LUKITTU — odottaa testiä",
     modIntTitle: "Modulooma-integraation ennusteet",
     modIntLead: "Ennusteet jotka perustuvat modulooma-integraatioon — aivolisäkesolmu, mitokondriaalinen ROS-vahvistus, redox-puskurointi, autonominen HRV, istukkaesteet ja kilpirauhas-EMF-vuorovaikutukset. Nämä testaavat tuottavatko äskettäin tunnistetut EMF:n kohdekudokset ja -mekanismit ennustetut alavirtavaikutukset.",
     modIntPredictions: [
@@ -2050,6 +2140,40 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
                 <p><span className="font-semibold">{d.trpc1Timeline}:</span> {tp.timeline}</p>
                 <p><span className="font-semibold">{d.trpc1Falsification}:</span> {tp.falsification}</p>
                 <p className="font-mono-num">{d.trpc1Locked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Pharmacological predictions PHARM-1 through PHARM-5 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.pharmTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.pharmLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.pharmPredictions.map((pp) => (
+            <article key={pp.id} className={`rounded-xl border ${pp.critical ? "border-green-500/40 bg-green-500/[0.03]" : "border-card-border bg-card-bg"} p-5`}>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{pp.id}</span>
+                    <h3 className="font-semibold">{pp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.pharmStatus}
+                    </span>
+                    {pp.critical && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">
+                        {locale === "fi" ? "Kriittinen" : "Critical"}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{pp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.pharmTimeline}:</span> {pp.timeline}</p>
+                <p><span className="font-semibold">{d.pharmFalsification}:</span> {pp.falsification}</p>
+                <p className="font-mono-num">{d.pharmLocked}</p>
               </div>
             </article>
           ))}

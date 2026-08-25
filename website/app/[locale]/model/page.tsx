@@ -120,7 +120,7 @@ const t = {
     tcbmIfMitotic:
       "The IF channel's biological mechanism differs from ELF and RF. While ELF primarily activates ion channels (IFO-VGCC) and RF primarily disrupts radical pair chemistry (RPM/CRY), IF acts through a THIRD pathway: disruption of polar macromolecular structures during cell division (mitotic spindle, tubulin dimers). TTFields research demonstrates that IF fields (100–500 kHz) exert directional forces on polar intracellular elements. This mechanism is frequency-dependent: cancer cells are most affected at 150–200 kHz, while normal cells at ~50 kHz (Nature 2020). LED driver emissions (20–100 kHz) span the normal-cell sensitivity range.",
     tcbmWeightNote:
-      "Note on weights: The TCBM weights (w_ELF 0.05, w_IF 0.60, w_RF 0.35) are DIAGNOSTIC — theoretical estimates based on mechanism plausibility, not fitted to data. The cross-sectional weights below (ELF ~60%, RF ~40%) are EMPIRICAL — calibrated from 54-country regression. These are not contradictory: the cross-sectional regression cannot separate IF from ELF because LED penetration correlates with electrification, so ELF's empirical 60% likely contains a large hidden IF component. The T1 temporal test (LED-DID) is designed to resolve this.",
+      "Two weight sets, two purposes: (1) TCBM DIAGNOSTIC weights (w_ELF 0.05, w_IF 0.60, w_RF 0.35) are theoretical estimates derived from mechanism plausibility — how much biological damage each channel could produce based on its biophysical pathway. These are NOT fitted to fertility data and should be treated as prior estimates awaiting empirical calibration. (2) Cross-sectional EMPIRICAL weights (ELF ~60%, RF ~40%) are calibrated from the 54-country regression against observed TFR. Why they differ: the regression cannot separate IF from ELF because LED penetration correlates with electrification — so the empirical 'ELF 60%' likely contains a large hidden IF component. If the diagnostic weights are correct, most of the empirical ELF signal is actually IF acting through collinear proxies. The T1 temporal test (LED-DID, post-2009 EU ban) is designed to resolve this collinearity.",
     tcbmCrossSectional:
       "In the cross-sectional formula (54 countries, LOOCV RMSE 0.522), residential electricity serves as primary proxy because it captures ELF (always present with electricity) and correlates with IF (LED penetration tracks electrification). Broadband captures RF. ELF carries ~60% of the cross-sectional signal, RF carries ~40%. IF cannot be separated from ELF in cross-sectional data because LED penetration correlates with electrification. The temporal test (T1: LED-DID) is needed to isolate IF's independent contribution.",
     tcbmWolframPlanned:
@@ -290,6 +290,8 @@ const t = {
     thresholdProjections2030: "2030",
     thresholdProjections2035: "2035",
     thresholdChartTitle: "Interactive threshold model",
+    thresholdFootnoteDenmark: "Andersson 2007 reported a null result after BMI adjustment. The model interprets BMI as a mediator (EMF → metabolic disruption → BMI ↑ → T ↓), not a confounder — adjusting for BMI removes part of the signal. See causal structure section below.",
+    thresholdFootnoteEstimated: "No peer-reviewed secular T trend study available. Korean rate estimated from highest global EMF density; Japanese rate estimated by analogy with Finland's documented decline. These are provisional and will be updated when direct data become available.",
     thresholdCaveat: "T decline rates are age-independent secular trends from peer-reviewed longitudinal studies. Korean and Japanese rates are estimates. The 40% threshold is calibrated, not derived. Projections assume continuation of current rates.",
 
     causalStructureTitle: "Why BMI does not explain the decline",
@@ -310,6 +312,15 @@ const t = {
     causalPathwayMediatedDesc: "EMF -> metabolic mechanisms -> BMI increase -> aromatase/SHBG -> T decline",
     causalPathwayMediatedEst: "~58 ng/dL / 20yr (~33%)",
     causalPathwayCaveat: "These proportions are approximate, derived from Mazur 2013 (weight-stable vs weight-gain groups). Formal mediation analysis (SEM) could refine these estimates.",
+    dagDietLifestyle: "Diet / Lifestyle",
+    dagBmiAdjCorrect: "BMI adjustment: CORRECT",
+    dagNullNoDecline: "null = no real decline",
+    dagMetabolicPaths: "6 metabolic",
+    dagPathways: "pathways",
+    dagMediated: "mediated (~33%)",
+    dagDirect: "direct (~67%)",
+    dagOvercorrection: "BMI adjustment: OVERCORRECTION",
+    dagRemoves: "removes ~33% of real signal",
     causalReconciliationTitle: "Reconciling 'contradictory' results",
     causalReconciliationLead: "When the causal structure is understood, all existing studies — including those reporting null results — become consistent:",
     causalReconciliationStudies: [
@@ -481,7 +492,7 @@ const t = {
     tcbmIfMitotic:
       "IF-kanavan biologinen mekanismi eroaa ELF:stä ja RF:stä. Kun ELF ensisijaisesti aktivoi ionikanavia (IFO-VGCC) ja RF ensisijaisesti häiritsee radikaaliparin spin-kemiaa (RPM/CRY), IF toimii KOLMANNEN reitin kautta: polaaristen makromolekulaaristen rakenteiden häirintä solunjakautumisen aikana (mitoottinen kara, tubuliinidimeerit). TTFields-tutkimus osoittaa, että IF-kentät (100–500 kHz) kohdistuvat polaarisiin solunsisäisiin elementteihin. Mekanismi on taajuusriippuvainen: syöpäsolut kärsivät eniten 150–200 kHz:llä, normaalit solut ~50 kHz:llä (Nature 2020). LED-hakkuriemissiot (20–100 kHz) kattavat normaalien solujen herkkyystaajuuden.",
     tcbmWeightNote:
-      "Huomautus painoista: TCBM-painot (w_ELF 0,05, w_IF 0,60, w_RF 0,35) ovat DIAGNOSTISIA — teoreettisia arvioita mekanismin uskottavuuden perusteella, eivät dataan sovitettuja. Alla olevat poikkileikkauspainot (ELF ~60 %, RF ~40 %) ovat EMPIIRISIÄ — kalibroitu 54 maan regressiosta. Nämä eivät ole ristiriidassa: poikkileikkausregressio ei voi erottaa IF:ää ELF:stä, koska LED-penetraatio korreloi sähköistymisen kanssa, joten ELF:n empiirinen 60 % sisältää todennäköisesti suuren piilotetun IF-komponentin. T1-temporaalitesti (LED-DID) on suunniteltu ratkaisemaan tämä.",
+      "Kaksi painojoukkoa, kaksi tarkoitusta: (1) TCBM:n DIAGNOSTISET painot (w_ELF 0,05, w_IF 0,60, w_RF 0,35) ovat teoreettisia arvioita, jotka perustuvat mekanismin uskottavuuteen — kuinka paljon biologista vahinkoa kukin kanava voisi tuottaa biofysikaaliseen reittiinsä perustuen. Nämä EIVÄT ole sovitettu hedelmällisyysdataan, ja niitä tulee kohdella prioriarvioina, jotka odottavat empiiristä kalibrointia. (2) Poikkileikkauksen EMPIIRISET painot (ELF ~60 %, RF ~40 %) on kalibroitu 54 maan regressiosta havaitun TFR:n perusteella. Miksi ne eroavat: regressio ei voi erottaa IF:ää ELF:stä, koska LED-penetraatio korreloi sähköistymisen kanssa — joten empiirinen 'ELF 60 %' sisältää todennäköisesti suuren piilotetun IF-komponentin. Jos diagnostiset painot pitävät paikkansa, suurin osa empiirisestä ELF-signaalista on itse asiassa IF:ää kollineaaristen proksien kautta. T1-temporaalitesti (LED-DID, EU:n 2009 halogeenilamppu­kielto) on suunniteltu ratkaisemaan tämä kollineaarisuus.",
     tcbmCrossSectional:
       "Poikkileikkauskaavassa (54 maata, LOOCV RMSE 0.522) asumisen sähkönkulutus on pääproksi, koska se kattaa ELF:n (aina läsnä sähkön kanssa) ja korreloi IF:n kanssa (LED-penetraatio seuraa sähköistymistä). Laajakaista kattaa RF:n. ELF kantaa ~60 % poikkileikkaussignaalista, RF ~40 %. IF:ää ei voi erottaa ELF:stä poikkileikkauksessa, koska LED-penetraatio korreloi sähköistymisen kanssa. Temporaalinen testi (T1: LED-DID) tarvitaan IF:n itsenäisen kontribuution erottamiseksi.",
     tcbmWolframPlanned:
@@ -651,6 +662,8 @@ const t = {
     thresholdProjections2030: "2030",
     thresholdProjections2035: "2035",
     thresholdChartTitle: "Interaktiivinen kynnösmalli",
+    thresholdFootnoteDenmark: "Andersson 2007 raportoi nollatuloksen BMI-vakioinnin jälkeen. Malli tulkitsee BMI:n välittäjäksi (EMF → metabolinen häiriö → BMI ↑ → T ↓), ei sekoittavaksi tekijäksi — BMI-vakiointi poistaa osan signaalista. Ks. kausaalirakenne-osio alla.",
+    thresholdFootnoteEstimated: "Vertaisarvioitua sekulaaria T-trenditutkimusta ei ole saatavilla. Korean vauhti arvioitu korkeimmasta globaalista EMF-tiheydestä; Japanin vauhti arvioitu analogialla Suomen dokumentoituun laskuun. Nämä ovat alustavia ja päivitetään, kun suoria tutkimustuloksia on saatavilla.",
     thresholdCaveat: "T-laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä vertaisarvioiduista pitkittäistutkimuksista. Korean ja Japanin vauhdit ovat arvioita. 40 %:n kynnös on kalibroitu, ei derivoitu. Ennusteet olettavat nykyisten vauhtien jatkumisen.",
 
     causalStructureTitle: "Miksi BMI ei selitä laskua",
@@ -671,6 +684,15 @@ const t = {
     causalPathwayMediatedDesc: "EMF -> metaboliset mekanismit -> BMI-nousu -> aromatase/SHBG -> T-lasku",
     causalPathwayMediatedEst: "~58 ng/dL / 20v (~33 %)",
     causalPathwayCaveat: "Nämä osuudet ovat suuntaa-antavia, johdettu Mazur 2013:sta (vakiopaino- vs painonnousuryhmät). Formaali mediaatioanalyysi (SEM) voisi tarkentaa arvioita.",
+    dagDietLifestyle: "Ruokavalio / Elämäntavat",
+    dagBmiAdjCorrect: "BMI-korjaus: OIKEIN",
+    dagNullNoDecline: "nolla = ei todellista laskua",
+    dagMetabolicPaths: "6 metabolista",
+    dagPathways: "reittiä",
+    dagMediated: "medioitu (~33 %)",
+    dagDirect: "suora (~67 %)",
+    dagOvercorrection: "BMI-korjaus: YLIKORJAUS",
+    dagRemoves: "poistaa ~33 % todellisesta signaalista",
     causalReconciliationTitle: "'Ristiriitaisten' tulosten sovittaminen",
     causalReconciliationLead: "Kun kausaalirakenne ymmärretään, kaikki olemassa olevat tutkimukset — nollatulokset mukaan lukien — ovat konsistentteja:",
     causalReconciliationStudies: [
@@ -1178,11 +1200,11 @@ export default async function ModelPage({
                 <tbody>
                   {[
                     { country: "USA", rate: "1.0", source: "Travison 2007", cumul: "−35.7 %", thresh: "~2030", phase: 1 },
-                    { country: locale_key === "fi" ? "Tanska" : "Denmark", rate: "0.85", source: "Andersson 2007", cumul: "−31.3 %", thresh: "~2035", phase: 1 },
+                    { country: locale_key === "fi" ? "Tanska" : "Denmark", rate: "0.85", source: "Andersson 2007 †", cumul: "−31.3 %", thresh: "~2035", phase: 1 },
                     { country: locale_key === "fi" ? "Suomi" : "Finland", rate: "1.2", source: "Perheentupa 2013", cumul: "−41.2 %", thresh: "~2018 ✓", phase: 2 },
                     { country: "Israel", rate: "1.0", source: "Chodick 2020", cumul: "−35.7 %", thresh: "~2035", phase: 1 },
-                    { country: locale_key === "fi" ? "Etelä-Korea" : "South Korea", rate: "1.5*", source: locale_key === "fi" ? "Arvio" : "Estimated", cumul: "−48.6 %", thresh: "~2015 ✓", phase: 3 },
-                    { country: locale_key === "fi" ? "Japani" : "Japan", rate: "1.2*", source: locale_key === "fi" ? "Arvio" : "Estimated", cumul: "−41.2 %", thresh: "~2018 ✓", phase: 2 },
+                    { country: locale_key === "fi" ? "Etelä-Korea" : "South Korea", rate: "1.5*", source: locale_key === "fi" ? "Arvio (korkein EMF)" : "Estimated (highest EMF)", cumul: "−48.6 %", thresh: "~2015 ✓", phase: 3 },
+                    { country: locale_key === "fi" ? "Japani" : "Japan", rate: "1.2*", source: locale_key === "fi" ? "Arvio (Suomi-analogia)" : "Estimated (Finland analogy)", cumul: "−41.2 %", thresh: "~2018 ✓", phase: 2 },
                   ].map((r) => {
                     const phaseColor = r.phase === 1 ? "#22c55e" : r.phase === 2 ? "#f59e0b" : "#ef4444";
                     return (
@@ -1200,6 +1222,14 @@ export default async function ModelPage({
                   })}
                 </tbody>
               </table>
+              <div className="mt-3 space-y-1.5">
+                <p className="text-[10px] text-foreground-muted leading-relaxed">
+                  <span className="font-semibold">†</span> {d.thresholdFootnoteDenmark}
+                </p>
+                <p className="text-[10px] text-foreground-muted leading-relaxed">
+                  <span className="font-semibold">*</span> {d.thresholdFootnoteEstimated}
+                </p>
+              </div>
             </div>
 
             <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-5 max-w-4xl mb-8">
@@ -1227,7 +1257,7 @@ export default async function ModelPage({
                   <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wider mb-3">{d.causalDagConventionalTitle}</p>
                   <svg viewBox="0 0 280 180" className="w-full" role="img" aria-label="Conventional DAG: BMI as confounder">
                     <rect x="90" y="10" width="100" height="30" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
-                    <text x="140" y="30" textAnchor="middle" className="fill-foreground text-[11px] font-medium">Diet / Lifestyle</text>
+                    <text x="140" y="30" textAnchor="middle" className="fill-foreground text-[11px] font-medium">{d.dagDietLifestyle}</text>
                     <rect x="10" y="90" width="80" height="30" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
                     <text x="50" y="110" textAnchor="middle" className="fill-foreground text-[11px] font-medium">BMI ↑</text>
                     <rect x="190" y="90" width="80" height="30" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
@@ -1235,8 +1265,8 @@ export default async function ModelPage({
                     <line x1="120" y1="40" x2="60" y2="88" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
                     <line x1="160" y1="40" x2="220" y2="88" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
                     <line x1="90" y1="105" x2="188" y2="105" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
-                    <text x="140" y="145" textAnchor="middle" className="fill-green-500 text-[10px] font-semibold">BMI adjustment: CORRECT</text>
-                    <text x="140" y="160" textAnchor="middle" className="fill-foreground-muted text-[9px]">null = no real decline</text>
+                    <text x="140" y="145" textAnchor="middle" className="fill-green-500 text-[10px] font-semibold">{d.dagBmiAdjCorrect}</text>
+                    <text x="140" y="160" textAnchor="middle" className="fill-foreground-muted text-[9px]">{d.dagNullNoDecline}</text>
                     <defs><marker id="arrowConv" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-foreground-muted/50" /></marker></defs>
                   </svg>
                   <p className="text-[10px] text-foreground-muted mt-2 text-center">{d.causalDagConventionalCaption}</p>
@@ -1251,17 +1281,17 @@ export default async function ModelPage({
                     <text x="50" y="100" textAnchor="middle" className="fill-foreground text-[11px] font-medium">BMI ↑</text>
                     <rect x="190" y="80" width="80" height="30" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
                     <text x="230" y="100" textAnchor="middle" className="fill-foreground text-[11px] font-medium">T ↓</text>
-                    <text x="50" y="72" textAnchor="middle" className="fill-amber-500 text-[8px]">6 metabolic</text>
-                    <text x="50" y="62" textAnchor="middle" className="fill-amber-500 text-[8px]">pathways</text>
+                    <text x="50" y="72" textAnchor="middle" className="fill-amber-500 text-[8px]">{d.dagMetabolicPaths}</text>
+                    <text x="50" y="62" textAnchor="middle" className="fill-amber-500 text-[8px]">{d.dagPathways}</text>
                     <line x1="120" y1="35" x2="60" y2="78" className="stroke-amber-500/60" strokeWidth="1.5" markerEnd="url(#arrowBerm)" />
                     <line x1="90" y1="95" x2="188" y2="95" className="stroke-amber-500/60" strokeWidth="1.5" strokeDasharray="4 2" markerEnd="url(#arrowBerm)" />
-                    <text x="140" y="89" textAnchor="middle" className="fill-amber-500 text-[8px]">mediated (~33%)</text>
+                    <text x="140" y="89" textAnchor="middle" className="fill-amber-500 text-[8px]">{d.dagMediated}</text>
                     <line x1="170" y1="35" x2="225" y2="78" className="stroke-red-500/80" strokeWidth="2" markerEnd="url(#arrowBermR)" />
-                    <text x="215" y="55" textAnchor="middle" className="fill-red-500 text-[8px]">direct (~67%)</text>
+                    <text x="215" y="55" textAnchor="middle" className="fill-red-500 text-[8px]">{d.dagDirect}</text>
                     <text x="210" y="65" textAnchor="middle" className="fill-red-500 text-[8px]">Cav3.2 / mel / cort</text>
                     <line x1="140" y1="130" x2="140" y2="145" className="stroke-red-500/60" strokeWidth="1.5" strokeDasharray="3 2" />
-                    <text x="140" y="160" textAnchor="middle" className="fill-red-500 text-[10px] font-semibold">BMI adjustment: OVERCORRECTION</text>
-                    <text x="140" y="175" textAnchor="middle" className="fill-foreground-muted text-[9px]">removes ~33% of real signal</text>
+                    <text x="140" y="160" textAnchor="middle" className="fill-red-500 text-[10px] font-semibold">{d.dagOvercorrection}</text>
+                    <text x="140" y="175" textAnchor="middle" className="fill-foreground-muted text-[9px]">{d.dagRemoves}</text>
                     <defs>
                       <marker id="arrowBerm" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-amber-500/60" /></marker>
                       <marker id="arrowBermR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-red-500/80" /></marker>
@@ -1449,7 +1479,7 @@ export default async function ModelPage({
             </div>
 
             {/* VGCC Gene Family Diagram */}
-            <div className="mt-10">
+            <div id="vgcc-gene-family" className="mt-10 scroll-mt-24">
               <h3 className="text-lg font-semibold mb-1">{d.vgccDiagramTitle}</h3>
               <p className="text-xs text-foreground-muted mb-4">{d.vgccDiagramSubtitle}</p>
               <VGCCGeneFamilyDiagram locale={locale} />

@@ -69,6 +69,20 @@ const COPY = {
           { citation: "Huss et al. (Environ Health Perspect)", year: 2007, note: "Industry-funded EMF studies less likely to report harmful effects. Systematic funder bias." },
         ],
       },
+      {
+        id: "sousouri-neuroimaging",
+        title: "Human magnetoreception neuroimaging (Sousouri 2025)",
+        paragraphs: [
+          "Sousouri et al. (2025, NeuroImage) provide the first fMRI evidence that static magnetic field changes produce measurable neural responses in humans. Subjects exposed to controlled geomagnetic field manipulations showed reproducible alpha-wave (8–13 Hz) desynchronization — the same neural signature produced by known sensory stimuli. The effect was strongest in individuals with higher baseline alpha power and showed lateralization consistent with right-hemispheric processing.",
+          "This study directly supports BERM pathway C's radical pair mechanism: if human neurons detectably respond to static magnetic field changes at Earth-strength levels (~50 μT), the CRY/RPM transduction pathway is empirically confirmed as neurologically active in humans — not just in migratory birds. The alpha desynchronization pattern suggests that magnetic field detection occurs at the cortical level, not just at the retinal level where CRY1 is localized in blue cone outer segments (Bartölke 2025).",
+          "BERM interpretation: if Earth-strength static fields produce measurable neural responses, time-varying anthropogenic fields (which are orders of magnitude more effective at driving radical pair dynamics than static fields) would be expected to produce stronger, chronic neural perturbation. The Sousouri 2025 result closes the gap between animal magnetoreception studies and human relevance — the sensory apparatus is present and neurally active.",
+        ],
+        studies: [
+          { citation: "Sousouri et al. (NeuroImage)", year: 2025, note: "fMRI: geomagnetic field manipulation → alpha desynchronization in humans. First neuroimaging confirmation of human magnetoreception." },
+          { citation: "Bartölke et al. (FASEB J)", year: 2025, note: "CRY1 in human blue cone outer segments — sensory magnetoreceptor localization." },
+          { citation: "Wang et al. (eNeuro)", year: 2019, note: "Earlier EEG evidence: alpha-ERD following magnetic field rotation in shielded chamber." },
+        ],
+      },
     ],
   },
   fi: {
@@ -132,6 +146,20 @@ const COPY = {
         studies: [
           { citation: "Tbahriti ym. (Sleep Biol Rhythms)", year: 2026, note: "PRISMA, 55 tutkimusta: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota 20–50 %. Vain 27 % täytti korkeat standardit." },
           { citation: "Huss ym. (Environ Health Perspect)", year: 2007, note: "Teollisuusrahoitteiset EMF-tutkimukset raportoivat harvemmin haittoja. Systemaattinen rahoittajan vinouma." },
+        ],
+      },
+      {
+        id: "sousouri-neuroimaging",
+        title: "Ihmisen magnetoreseption aivokuvantaminen (Sousouri 2025)",
+        paragraphs: [
+          "Sousouri ym. (2025, NeuroImage) tarjoavat ensimmäisen fMRI-evidenssin siitä, että staattisen magneettikentän muutokset tuottavat mitattavia hermovasteitä ihmisillä. Kontrolloiduille geomagneettisen kentän manipulaatioille altistetut koehenkilöt osoittivat toistettavaa alfa-aallon (8–13 Hz) desynkronisaatiota — sama hermosignaali jonka tunnetut aistieläkkeet tuottavat. Vaikutus oli voimakkain henkilöillä joilla oli korkeampi lähtötason alfateho ja osoitti lateralisaatiota joka viittaa oikean aivopuoliskon prosessointiin.",
+          "Tämä tutkimus tukee suoraan BERM:n reitin C radikaalipari-mekanismia: jos ihmisen neuronit reagoivat havaittavasti staattisen magneettikentän muutoksiin maanmagneettikentän voimakkuuksilla (~50 μT), CRY/RPM-transduuktioreitti on empiirisesti vahvistettu neurologisesti aktiiviseksi ihmisillä — ei vain muuttolinnuilla.",
+          "BERM-tulkinta: jos maanmagneettikentän voimakkuiset staattiset kentät tuottavat mitattavia hermovasteitä, aikariippuvaiset antropogeeniset kentät (jotka ovat kertaluokkaa tehokkaampia radikaaliparin dynamiikan ajamisessa kuin staattiset kentät) tuottaisivat odotetusti vahvemman, kroonisen hermoperturbaation. Sousouri 2025 -tulos sulkee aukon eläinmagnetoreseptiotutkimusten ja ihmisrelevanssin välillä.",
+        ],
+        studies: [
+          { citation: "Sousouri ym. (NeuroImage)", year: 2025, note: "fMRI: geomagneettisen kentän manipulaatio → alfadesynkronisaatio ihmisissä. Ensimmäinen aivokuvantamisvahvistus ihmisen magnetoreseptiolle." },
+          { citation: "Bartölke ym. (FASEB J)", year: 2025, note: "CRY1 ihmisen sinisten tappisolujen ulkosegmenteissä — sensorinen magnetoreseptorilokalisaatio." },
+          { citation: "Wang ym. (eNeuro)", year: 2019, note: "Aikaisempi EEG-evidenssi: alfa-ERD magneettikentän rotaation jälkeen suojatussa kammiossa." },
         ],
       },
     ],
