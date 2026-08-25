@@ -71,7 +71,7 @@ export function getNavRoutes(locale: string): ResolvedNavRoute[] {
 }
 
 export interface ExploreTab {
-  key: "map" | "country" | "global" | "sentinel" | "data" | "layers";
+  key: "map" | "country" | "global" | "sentinel" | "data" | "layers" | "threshold";
   labelEn: string;
   labelFi: string;
   icon: LucideIcon;
@@ -81,6 +81,7 @@ export const EXPLORE_TABS: ExploreTab[] = [
   { key: "map", labelEn: "Map", labelFi: "Kartta", icon: Map },
   { key: "country", labelEn: "Country", labelFi: "Maa", icon: ChartLine },
   { key: "global", labelEn: "Global", labelFi: "Globaali", icon: Globe2 },
+  { key: "threshold", labelEn: "T→TFR", labelFi: "T→TFR", icon: Activity },
   { key: "sentinel", labelEn: "Sentinel", labelFi: "Indikaattorit", icon: Leaf },
   { key: "data", labelEn: "Data", labelFi: "Data", icon: Database },
   { key: "layers", labelEn: "Layers", labelFi: "Kerrokset", icon: Layers },

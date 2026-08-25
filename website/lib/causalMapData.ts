@@ -383,8 +383,8 @@ export const NODES: CausalMapNode[] = [
     label: { en: "VGCC → Ca²⁺ → ROS", fi: "VGCC → Ca²⁺ → ROS" },
     epistemicLevel: "E",
     detail: {
-      en: { mechanism: "Voltage-gated calcium channels open → Ca²⁺ influx → mitochondrial ROS → DNA damage. Two subtypes: L-type (Cav1.2, high-voltage activated, blocked by nifedipine) and T-type (Cav3, low-voltage activated, window current at rest)." },
-      fi: { mechanism: "Jänniteohjatut kalsiumkanavat avautuvat → Ca²⁺-influksi → mitokondriaaliset ROS → DNA-vaurio. Kaksi alatyyppiä: L-tyyppi (Cav1.2, korkean jännitteen aktivoima, nifedipiini salpaa) ja T-tyyppi (Cav3, matalan jännitteen aktivoima, ikkunavirta levossa)." },
+      en: { mechanism: "Voltage-gated calcium channels open → Ca²⁺ influx → mitochondrial ROS → DNA damage. EMF sensitivity hierarchy at resting potential: Cav3 (T-type, ~10% open at rest) >> Cav1.3 (low-threshold L-type, activates at −50 mV) >> Cav1.2 (canonical L-type, activates at −30 mV, significant only during action potentials). CaMKII positive feedback: Ca²⁺ influx activates CaMKII, which shifts Cav3.2 activation threshold to more negative potentials — making the channel progressively MORE sensitive to EMF (PMC9913649). This explains cumulative sensitization over chronic exposure." },
+      fi: { mechanism: "Jänniteohjatut kalsiumkanavat avautuvat → Ca²⁺-influksi → mitokondriaaliset ROS → DNA-vaurio. EMF-herkkyyhierarkia lepopotentiaalissa: Cav3 (T-tyyppi, ~10 % auki levossa) >> Cav1.3 (matalan kynnyksen L-tyyppi, aktivoituu −50 mV:ssa) >> Cav1.2 (kanoninen L-tyyppi, aktivoituu −30 mV:ssa, merkitsevä vain aktiopotentiaalin aikana). CaMKII-positiivinen takaisinkytkentä: Ca²⁺-influksi aktivoi CaMKII:n, joka siirtää Cav3.2:n aktivaatiokynnystä negatiivisempaan — tehden kanavan progressiivisesti HERKEMMÄKSI EMF:lle (PMC9913649). Tämä selittää kumulatiivisen herkistymisen kroonisessa altistuksessa." },
       bermPathway: "A", link: "/evidence#pathway-A",
     },
   },

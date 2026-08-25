@@ -5,6 +5,8 @@ import { ThreeChannelSummary } from "@/components/ThreeChannelSummary";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
 import { TheraBionicProof } from "@/components/TheraBionicProof";
 import { BradfordHillCard } from "@/components/BradfordHillCard";
+import { FinlandLagChart } from "@/components/FinlandLagChart";
+import { ThreePhaseIndicator } from "@/components/ThreePhaseIndicator";
 import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
 import { LatestArticles } from "@/components/LatestArticles";
@@ -85,6 +87,12 @@ const COPY = {
     npText: "Why did Northern Europe fall below replacement fertility first? BERM proposes that the same co-selection that optimised cryptochrome sensitivity — blue eyes (OCA2), lactose tolerance (LCT), and cattle husbandry — created the population most coupled to electromagnetic fields. The nested χ model formalises this: each population carries a biological χ profile that modulates the EMF-fertility relationship at five scales, from molecular to demographic.",
     npCta: "Evidence: evolutionary origins",
 
+    warningLabel: "PREDICTIVE POWER",
+    warningTitle: "The 35-year warning",
+    warningNarrative: "Finland's testosterone levels began declining in the 1970s. For 40 years, fertility remained stable. Then it collapsed: from 1.87 children per woman (2010) to 1.26 (2024) — a 33% drop in fifteen years. The testosterone data could have predicted this 15 years in advance. The same data now points to the United States reaching the same threshold around 2030.",
+    warningCaveat: "Testosterone decline rates are age-independent secular trends documented in peer-reviewed longitudinal studies across five countries. TFR projections assume continuation of current rates. The threshold model is calibrated against Finland and South Korea; other country projections are extrapolations.",
+    warningReadMore: "Read the full threshold model specification",
+
     teaserLabel: "LOCKED PREDICTIONS · TFR 2030",
     teaserNote: "Locked under BERM v17 and falsifiable: each will be compared against observed data in the stated year.",
     allPredictions: "All predictions",
@@ -143,6 +151,12 @@ const COPY = {
     npTitle: "Pohjoinen paketti",
     npText: "Miksi Pohjois-Eurooppa laski ensimmäisenä korvaavuustason hedelmällisyyden alle? BERM ehdottaa, että sama koselektio joka optimoi kryptokromiherkkyyden — siniset silmät (OCA2), laktoosinsietokyky (LCT) ja karjankasvatus — loi populaation, joka on voimakkaimmin kytketty sähkömagneettisiin kenttiin. Sisäkkäinen χ-malli formalisoi tämän: jokaisella populaatiolla on biologinen χ-profiili, joka moduloi EMF-hedelmällisyyssuhdetta viidessä skaalassa, molekulaarisesta demografiseen.",
     npCta: "Evidenssi: evoluution alkuperät",
+
+    warningLabel: "ENNUSTUSVOIMA",
+    warningTitle: "35 vuoden varoitus",
+    warningNarrative: "Suomen testosteronitasot alkoivat laskea 1970-luvulla. 40 vuoden ajan hedelmällisyys pysyi vakaana. Sitten se romahti: 1,87 lasta naista kohden (2010) → 1,26 (2024) — 33 %:n pudotus viidessätoista vuodessa. Testosteronidata olisi ennustanut tämän 15 vuotta etukäteen. Sama data ennustaa nyt Yhdysvalloille samaa noin vuodelle 2030.",
+    warningCaveat: "Testosteronin laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä jotka on dokumentoitu vertaisarvioiduissa pitkittäistutkimuksissa viidessä maassa. TFR-ennusteet olettavat nykyisten vauhtien jatkumisen. Kynnösmalli on kalibroitu Suomen ja Etelä-Korean datalla; muiden maiden ennusteet ovat ekstrapolointeja.",
+    warningReadMore: "Lue koko kynnösmallin spesifikaatio",
 
     teaserLabel: "LUKITUT ENNUSTEET · TFR 2030",
     teaserNote: "Lukittu BERM v17:lla ja falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna.",
@@ -313,6 +327,24 @@ export default async function Home({
 
       {/* ── 4d. Bradford Hill criteria ── */}
       <BradfordHillCard locale={activeLocale} prefix={prefix} />
+
+      {/* ── 4e. The 35-Year Warning ── */}
+      <section className="pb-20">
+        <div className="max-w-4xl">
+          <p className="editorial-kicker text-accent mb-2">{d.warningLabel}</p>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-6">{d.warningTitle}</h2>
+          <FinlandLagChart locale={activeLocale} />
+          <p className="text-sm text-foreground-muted leading-relaxed mt-6 mb-6 max-w-3xl">{d.warningNarrative}</p>
+          <ThreePhaseIndicator locale={activeLocale} />
+          <p className="text-xs text-foreground-muted mt-4 max-w-3xl leading-relaxed">{d.warningCaveat}</p>
+          <Link
+            href={`${prefix}/model#testosterone-threshold`}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover mt-4"
+          >
+            {d.warningReadMore} <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
 
       {/* ── 5. Locked predictions ── */}
       <section className="pb-20">

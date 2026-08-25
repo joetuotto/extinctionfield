@@ -73,6 +73,7 @@ export function ThreeChannelSummary({ locale = "en" }: { locale?: Locale }) {
     <svg
       viewBox={`0 0 ${W} ${H}`}
       className="w-full"
+      style={{ minWidth: 560 }}
       role="img"
       aria-label={locale === "fi" ? "Kolmikanavamekanismi" : "Three-channel mechanism"}
     >

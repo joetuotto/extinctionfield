@@ -138,6 +138,18 @@ const COPY = {
     theraBionicDevice: "27.12 MHz AM-RF, tumor-specific frequencies",
     theraBionicChannel: "Cav3.2 (CACNA1H) T-type VGCC",
     theraBionicLevel: "E — FDA-approved, peer-reviewed (Lancet/eBioMedicine)",
+    tDeclineTitle: "Testosterone Decline: Cross-Country Evidence",
+    tDeclineLead: "Age-independent secular testosterone decline is documented in five countries across four continents. The pattern is consistent: ~1%/year decline independent of aging, BMI trends, or lifestyle confounders.",
+    tDeclineStudies: [
+      { country: "USA", study: "Travison et al. 2007 (MMAS)", n: "1,532", rate: "−1.0%/yr", finding: "Population-level T decline 1987–2004. Age-independent: a 65-year-old in 2002 had lower T than a 65-year-old in 1987." },
+      { country: "Denmark", study: "Andersson et al. 2007", n: "5,350", rate: "−0.85%/yr", finding: "Young Danish men (18–25) showed declining T over time. Birth cohort effect confirmed." },
+      { country: "Finland", study: "Perheentupa et al. 2013", n: "3,271", rate: "−1.2%/yr", finding: "37% cohort-dependent T decline (1972–2002). The strongest documented rate — and Finland's TFR collapsed 35 years later." },
+      { country: "Israel", study: "Chodick et al. 2020", n: "102,334", rate: "−1.0%/yr", finding: "Largest study: 102k men, Maccabi Healthcare. T declining despite Israel's high TFR — Phase 1 of the threshold model." },
+      { country: "Global", study: "Santi et al. 2025 (meta-analysis)", n: "367,524", rate: "−1.0%/yr avg", finding: "Meta-analysis confirming the global secular trend across all studied populations." },
+    ],
+    tDeclineImplication: "If testosterone continues declining at current rates, every country will eventually cross the biological threshold where subfertility becomes the binding constraint on TFR — regardless of cultural or economic factors.",
+    tDeclineLink: "Full threshold model specification",
+    tDeclinePredLink: "T→TFR predictions",
   },
   fi: {
     title: "Evidenssirekisteri",
@@ -226,6 +238,18 @@ const COPY = {
     theraBionicDevice: "27,12 MHz AM-RF, kasvainspesifiset taajuudet",
     theraBionicChannel: "Cav3.2 (CACNA1H) T-tyypin VGCC",
     theraBionicLevel: "E — FDA-hyväksytty, vertaisarvioitu (Lancet/eBioMedicine)",
+    tDeclineTitle: "Testosteronin lasku: Maiden välinen evidenssi",
+    tDeclineLead: "Ikäriippumaton sekulaarinen testosteronin lasku on dokumentoitu viidessä maassa neljällä mantereella. Kaava on yhdenmukainen: ~1 %/vuosi lasku riippumatta ikääntymisestä, BMI-trendeistä tai elämäntapasekoittajista.",
+    tDeclineStudies: [
+      { country: "USA", study: "Travison ym. 2007 (MMAS)", n: "1 532", rate: "−1,0 %/v", finding: "Väestötason T-lasku 1987–2004. Ikäriippumaton: 65-vuotiaan T oli 2002 matalampi kuin 65-vuotiaan T 1987." },
+      { country: "Tanska", study: "Andersson ym. 2007", n: "5 350", rate: "−0,85 %/v", finding: "Nuorten tanskalaisten miesten (18–25) T laski ajan myötä. Syntymäkohorttivaikutus vahvistettu." },
+      { country: "Suomi", study: "Perheentupa ym. 2013", n: "3 271", rate: "−1,2 %/v", finding: "37 %:n kohorttisidonnainen T-lasku (1972–2002). Voimakkain dokumentoitu tahti — ja Suomen TFR romahti 35 vuotta myöhemmin." },
+      { country: "Israel", study: "Chodick ym. 2020", n: "102 334", rate: "−1,0 %/v", finding: "Suurin tutkimus: 102k miestä, Maccabi Healthcare. T laskee Israelin korkeasta TFR:stä huolimatta — kynnösmallin vaihe 1." },
+      { country: "Globaali", study: "Santi ym. 2025 (meta-analyysi)", n: "367 524", rate: "−1,0 %/v ka.", finding: "Meta-analyysi vahvistaa globaalin sekulaaritrendin kaikissa tutkituissa populaatioissa." },
+    ],
+    tDeclineImplication: "Jos testosteroni jatkaa laskuaan nykyisellä tahdilla, jokainen maa ylittää lopulta biologisen kynnyksen, jossa subfertiliteetti muuttuu TFR:n sitovaksi rajoitteeksi — riippumatta kulttuurisista tai taloudellisista tekijöistä.",
+    tDeclineLink: "Kynnösmallin koko spesifikaatio",
+    tDeclinePredLink: "T→TFR-ennusteet",
   },
 } as const;
 
@@ -480,6 +504,52 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
           <div className="rounded-lg border-2 border-emerald-500/40 bg-emerald-500/5 p-4">
             <p className="text-sm text-foreground leading-relaxed italic">{d.theraBionicImplication}</p>
           </div>
+        </div>
+      </section>
+
+      {/* Testosterone Decline Evidence */}
+      <section id="testosterone" className="mb-16 border-t editorial-rule pt-6">
+        <div className="border-l-4 border-red-500 pl-5 mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <Activity className="w-5 h-5 text-red-500 shrink-0" />
+            <h2 className="editorial-section-heading">{d.tDeclineTitle}</h2>
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">{d.tDeclineLead}</p>
+        </div>
+
+        <div className="max-w-4xl overflow-x-auto mb-6">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b-2 border-card-border text-left">
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Maa" : "Country"}</th>
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Tutkimus" : "Study"}</th>
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">N</th>
+                <th className="py-2 pr-3 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Tahti" : "Rate"}</th>
+                <th className="py-2 font-semibold text-foreground-muted">{activeLocale === "fi" ? "Havainto" : "Finding"}</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              {d.tDeclineStudies.map((row) => (
+                <tr key={row.study} className="border-b border-card-border/50">
+                  <td className="py-2 pr-3 font-medium text-foreground whitespace-nowrap">{row.country}</td>
+                  <td className="py-2 pr-3 whitespace-nowrap">{row.study}</td>
+                  <td className="py-2 pr-3 font-mono-num whitespace-nowrap">{row.n}</td>
+                  <td className="py-2 pr-3 font-mono-num whitespace-nowrap text-red-500 font-semibold">{row.rate}</td>
+                  <td className="py-2">{row.finding}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="rounded-lg border-2 border-red-500/40 bg-red-500/5 p-4 max-w-4xl mb-4">
+          <p className="text-sm text-foreground leading-relaxed italic">{d.tDeclineImplication}</p>
+        </div>
+
+        <div className="flex flex-wrap gap-3 max-w-4xl">
+          <Link href={`/${activeLocale}/model#testosterone-threshold`} className="text-sm text-accent hover:underline">{d.tDeclineLink} →</Link>
+          <span className="text-foreground-muted">·</span>
+          <Link href={`/${activeLocale}/predictions`} className="text-sm text-accent hover:underline">{d.tDeclinePredLink} →</Link>
         </div>
       </section>
 

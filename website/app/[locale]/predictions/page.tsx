@@ -662,6 +662,61 @@ const COPY = {
     vgccLocked: "Locked: 2026-08-24",
     vgccStatus: "LOCKED — awaiting test",
     vgccVerifiedStatus: "VERIFIED",
+    tTfrTitle: "Testosterone → TFR threshold predictions",
+    tTfrLead: "Country-level predictions from the testosterone threshold model. Each is locked with a falsification criterion. The model is calibrated against Finnish and Korean data; USA and Israel projections are extrapolations.",
+    tTfrNote: "These predictions test the core claim that cumulative testosterone decline (~1%/year, age-independent) creates a biological fertility constraint that manifests ~35 years after onset.",
+    tTfrLocked: "Locked: 2026-08-25",
+    tTfrStatus: "LOCKED — awaiting test",
+    tTfrDiscriminating: "Discriminating",
+    tTfrCritical: "Critical",
+    tTfrPredictions: [
+      {
+        id: "T-TFR-1",
+        title: "USA TFR will drop below 1.30 by 2035",
+        description: "Based on testosterone threshold model: USA cumulative T loss reaches ~40% around 2030. Prediction: TFR will begin accelerating decline after 2028, dropping below 1.30 by 2035. Falsification: USA TFR remains above 1.40 in 2035.",
+        discriminating: true,
+        critical: true,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "T-TFR-2",
+        title: "Finland TFR will drop below 1.00 by 2032",
+        description: "Finland is already past the biological threshold. Current trajectory: 1.87 (2010) → 1.26 (2024), −4.5%/year. Projection: 1.26 × 0.955^8 ≈ 0.87 by 2032. Falsification: Finland TFR stabilizes above 1.10.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "T-TFR-3",
+        title: "Israel TFR will begin declining measurably by 2035",
+        description: "Israel's cultural buffer has maintained TFR ~3.0 despite T decline comparable to USA. Prediction: biological threshold (~40% cumulative loss) reached ~2035, at which point even religiously motivated couples will experience subfertility. Falsification: Israel TFR remains above 2.8 in 2040.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "T-TFR-4",
+        title: "Korea's $200B pronatalist spending will not raise TFR above 1.0",
+        description: "Korea is past the biological threshold (~49% cumulative T loss). Social incentives cannot compensate for biological incapacity. Prediction: TFR stays below 1.0 through 2035 regardless of policy spending. Falsification: Korea TFR rises above 1.0 sustained for 3+ years.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "T-TFR-5",
+        title: "T decline rate predicts TFR change better than GDP or education",
+        description: "Cross-national regression: T decline rate (age-independent secular trend) predicts TFR change better than GDP, education, or urbanization alone. Testable with existing data from USA, Denmark, Finland, Israel and pending Asian studies. Falsification: GDP or education explain >80% of TFR variance after controlling for T decline.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+    ],
+
     popTitle: "Population comparison predictions",
     popLead: "Predictions derived from the systematic comparison of 9 low-EMF populations against modern populations. These test whether the observed health gradient tracks EMF exposure as BERM predicts.",
     popPredictions: [
@@ -1358,6 +1413,61 @@ const COPY = {
     vgccLocked: "Lukittu: 2026-08-24",
     vgccStatus: "LUKITTU — odottaa testiä",
     vgccVerifiedStatus: "VAHVISTETTU",
+    tTfrTitle: "Testosteroni → TFR -kynnösennusteet",
+    tTfrLead: "Maakohtaiset ennusteet testosteronikynnösmallista. Jokainen on lukittu kumoamisehdolla. Malli on kalibroitu Suomen ja Korean datalla; USA:n ja Israelin ennusteet ovat ekstrapolointeja.",
+    tTfrNote: "Nämä ennusteet testaavat ydinväitettä, jonka mukaan kumulatiivinen testosteronilasku (~1 %/vuosi, ikäriippumaton) luo biologisen hedelmällisyysrajoitteen, joka ilmenee ~35 vuotta alkamisen jälkeen.",
+    tTfrLocked: "Lukittu: 2026-08-25",
+    tTfrStatus: "LUKITTU — odottaa testiä",
+    tTfrDiscriminating: "Erotteleva",
+    tTfrCritical: "Kriittinen",
+    tTfrPredictions: [
+      {
+        id: "T-TFR-1",
+        title: "USA:n TFR laskee alle 1,30:n vuoteen 2035 mennessä",
+        description: "Testosteronikynnösmalliin perustuen: USA:n kumulatiivinen T-menetys saavuttaa ~40 % noin 2030. Ennuste: TFR alkaa kiihtyvään laskuun 2028 jälkeen ja laskee alle 1,30:n vuoteen 2035 mennessä. Kumoaminen: USA:n TFR pysyy yli 1,40 vuonna 2035.",
+        discriminating: true,
+        critical: true,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "T-TFR-2",
+        title: "Suomen TFR laskee alle 1,00:n vuoteen 2032 mennessä",
+        description: "Suomi on jo ylittänyt biologisen kynnyksen. Nykyinen kehityskulku: 1,87 (2010) → 1,26 (2024), −4,5 %/vuosi. Projisointi: 1,26 × 0,955^8 ≈ 0,87 vuoteen 2032. Kumoaminen: Suomen TFR vakautuu yli 1,10:n.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "T-TFR-3",
+        title: "Israelin TFR alkaa laskea mitattavasti vuoteen 2035 mennessä",
+        description: "Israelin kulttuurinen puskuri on ylläpitänyt TFR:ää ~3,0 huolimatta USA:n kaltaisesta T-laskusta. Ennuste: biologinen kynnys (~40 % kumulatiivinen menetys) saavutetaan ~2035, jolloin myös uskonnollisesti motivoituneet pariskunnat kokevat subfertiliteettiä. Kumoaminen: Israelin TFR pysyy yli 2,8 vuonna 2040.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "T-TFR-4",
+        title: "Korean 200 mrd $:n pronatalistiset menot eivät nosta TFR:ää yli 1,0:n",
+        description: "Korea on ylittänyt biologisen kynnyksen (~49 % kumulatiivinen T-menetys). Sosiaaliset kannustimet eivät voi kompensoida biologista kyvyttömyyttä. Ennuste: TFR pysyy alle 1,0 vuoteen 2035 riippumatta politiikkamenoista. Kumoaminen: Korean TFR nousee yli 1,0:n kestävästi 3+ vuodeksi.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+      {
+        id: "T-TFR-5",
+        title: "T-laskuvauhti ennustaa TFR-muutosta paremmin kuin BKT tai koulutus",
+        description: "Maiden välinen regressio: T-laskuvauhti (ikäriippumaton sekulaaritrendi) ennustaa TFR-muutosta paremmin kuin BKT, koulutus tai kaupungistuminen yksinään. Testattavissa olemassa olevalla datalla USA:sta, Tanskasta, Suomesta, Israelista ja tulevista aasialaisista tutkimuksista. Kumoaminen: BKT tai koulutus selittävät >80 % TFR-varianssista T-laskun kontrolloinnin jälkeen.",
+        discriminating: true,
+        critical: false,
+        level: "M|C",
+        verified: false,
+      },
+    ],
+
     popTitle: "Populaatiovertailun ennusteet",
     popLead: "Ennusteet jotka perustuvat 9 matalan EMF:n populaation systemaattiseen vertailuun moderneihin populaatioihin. Nämä testaavat seuraako havaittu terveysgradientti EMF-altistusta BERM:n ennusteiden mukaisesti.",
     popPredictions: [
@@ -1892,6 +2002,47 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               <p className="text-sm text-foreground-muted leading-relaxed mb-3">{vp.description}</p>
               <div className="space-y-1 text-xs text-foreground-muted">
                 <p className="font-mono-num">{d.vgccLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* T→TFR threshold predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.tTfrTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-4xl">{d.tTfrLead}</p>
+        <p className="text-xs text-foreground-muted leading-relaxed mb-6 max-w-4xl italic">{d.tTfrNote}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.tTfrPredictions.map((tp: { id: string; title: string; description: string; discriminating: boolean; critical: boolean; level: string; verified: boolean }) => (
+            <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{tp.id}</span>
+                    <h3 className="font-semibold">{tp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.tTfrStatus}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent/10 text-accent border border-accent/20">{tp.level}</span>
+                    {tp.critical && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 font-semibold">
+                        {d.tTfrCritical}
+                      </span>
+                    )}
+                    {tp.discriminating && !tp.critical && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">
+                        {d.tTfrDiscriminating}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{tp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p className="font-mono-num">{d.tTfrLocked}</p>
               </div>
             </article>
           ))}

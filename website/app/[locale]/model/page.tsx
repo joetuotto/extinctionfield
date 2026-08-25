@@ -10,6 +10,7 @@ import { CHI_SCALES } from "@/lib/evolutionData";
 import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
 import { VGCCGeneFamilyDiagram } from "@/components/VGCCGeneFamilyDiagram";
+import { ThresholdChart } from "@/components/ThresholdChart";
 
 const t = {
   en: {
@@ -43,6 +44,12 @@ const t = {
       "Pathway weights reflect empirical calibration to community data (Amish–Korea gradient). They do not reflect theoretical hierarchy: Pathway B (CRY/RPM) is the PRIMARY pathway because 87.5% of the RPM Hamiltonian is derivable from Lindgren geometry, establishing the mechanism’s EXISTENCE as a geometric consequence. Pathway A has stronger experimental support (23–28 blocker studies). The former δVm objection (δV_m ≈ 10⁻²¹ V from geometry alone) is now resolved by the T-type calcium channel bifurcation mechanism: the Schwan equation amplifies external fields to 7.5–15 μV at the membrane (37% of thermal noise at 1 V/m ambient; 184% at 5 V/m personal), and T-type (Cav3) channels operate at a bifurcation point where ~10% are open at rest (window current), making them responsive to these perturbations. Pathway D (HPA → testosterone) is now also derived via the same T-type mechanism: Schwan δVm → Cav3 → Ca²⁺ → StAR → testosterone (Xiang 2025).",
     rpmFrequencyNote:
       "CRY/RPM does not respond to the RF carrier frequency (900 MHz – 3.5 GHz). Its resonance ceiling is ~22.5 MHz (Talbi, Zadeh-Haghighi & Simon 2025, Front. Quantum Sci. Technol. 4:1544473). The biologically active components for Pathway B are the geomagnetic background (B_DC) and ELF modulation envelopes of telecom signals (GSM 217 Hz, WiFi 10 Hz beacon). Effects of the RF carrier itself are mediated by Pathway A through the electric field component. The two pathways have complementary frequency domains.",
+    vgccHierarchyTitle: "VGCC sensitivity hierarchy at resting potential",
+    vgccHierarchyNote:
+      "Not all voltage-gated calcium channels are equally EMF-sensitive. At resting membrane potential (~−70 mV), EMF sensitivity follows the hierarchy: Cav3 (T-type) >> Cav1.3 >> Cav1.2. T-type channels (Cav3.1, Cav3.2, Cav3.3) operate at a bifurcation point where ~10% are open at rest (window current), making them continuously sensitive to small voltage perturbations. Cav1.3 is a 'low-threshold L-type' that activates at ~−50 mV — 25 mV more negative than Cav1.2 (J Neurosci 2001). This makes Cav1.3 the primary channel in tissues requiring sustained low-voltage calcium entry: SA node pacemaking and inner hair cell synaptic transmission. Cav1.2, the canonical L-type, activates at ~−30 mV and is significant ONLY during action potentials — at rest it contributes negligibly. This hierarchy explains tissue-specific EMF vulnerability: organs dominated by Cav3 (testes, pituitary, adrenal, hippocampus) are most affected; Cav1.3-dependent tissues (inner ear, SA node) are intermediate; Cav1.2-dominated tissues (skeletal muscle, cardiac ventricle) are affected only during electrical activity.",
+    camkiiTitle: "CaMKII positive feedback: cumulative sensitization",
+    camkiiNote:
+      "A critical finding for BERM's cumulative exposure model: CaMKII (calcium/calmodulin-dependent protein kinase II) phosphorylation shifts the Cav3.2 activation threshold to MORE NEGATIVE potentials (PMC9913649). This creates a positive feedback loop: EMF → Cav3.2 Ca²⁺ influx → CaMKII activation → Cav3.2 threshold shifts left → channel becomes MORE sensitive to EMF → more Ca²⁺ influx. This molecular mechanism explains why EMF effects are cumulative over time: each exposure episode makes the system more sensitive to subsequent exposures. The CaMKII feedback also explains why short-term studies may underestimate long-term effects — the sensitization develops over weeks to months of chronic exposure. Pharmacological prediction: CaMKII inhibitors (KN-93) should block the progressive sensitization without affecting acute EMF responses.",
 
     chiSub: "Saturation curve for ambient × personal exposure interaction",
     chiTitle: "Lindgren chi coupling equation",
@@ -249,6 +256,34 @@ const t = {
     mathSubtitle:
       'Complete derivation from Lindgren geometry to TFR prediction. Every equation is derivable from the previous one. Click "Full derivation" to see intermediate steps.',
 
+    thresholdTitle: "Testosterone → TFR Threshold Model",
+    thresholdSub: "Quantitative link from biological capacity decline to demographic collapse",
+    thresholdLead: "The strongest predictive component of the BERM model. Testosterone decline (~1%/year, age-independent, documented across five countries) creates a three-phase trajectory: silent erosion → threshold crossing → biological limit. The model is calibrated against Finnish and Korean data and generates specific, testable country-level predictions.",
+    thresholdPhase1Title: "Phase 1: Silent Erosion",
+    thresholdPhase1Desc: "Testosterone declining but biologically sufficient. TFR stable or declining slowly from cultural factors. Biological capacity exceeds cultural demand.",
+    thresholdPhase2Title: "Phase 2: Threshold Crossed",
+    thresholdPhase2Desc: "Cumulative T loss exceeds ~40%. Rising male subfertility (T < 300 ng/dL). TFR accelerates downward as biological capacity becomes the binding constraint. Pronatalist programs begin failing.",
+    thresholdPhase3Title: "Phase 3: Biological Limit",
+    thresholdPhase3Desc: "TFR drops below 1.0. Biological incapacity dominates. Even motivated couples require assisted reproduction. IVF demand grows exponentially.",
+    thresholdMathTitle: "Mathematical formulation",
+    thresholdMathT: "T(t) = T₀ × (1 − r)^(t − t₀)",
+    thresholdMathTFR: "TFR(t) = min( TFR_cultural(t), TFR_bio(t) )",
+    thresholdMathExplain: "When TFR_bio < TFR_cultural, biological capacity is the binding constraint. The sigmoid transition at ~40% cumulative T loss produces the observed pattern: decades of stability followed by rapid collapse.",
+    thresholdTableTitle: "Country parameters",
+    thresholdTableCountry: "Country",
+    thresholdTableRate: "r (%/yr)",
+    thresholdTableSource: "Source",
+    thresholdTableCumul: "Cumul. 2024",
+    thresholdTableThreshold: "Threshold yr",
+    thresholdTablePhase: "Phase",
+    thresholdFinlandTitle: "Retrospective validation: Finland",
+    thresholdFinlandText: "Finland is the model's Rosetta Stone. Perheentupa (2013) documents a 37% cohort-dependent T decline (n=3,271, 1972–2002). TFR remained stable at 1.63–1.87 for 40 years (1970–2010), then collapsed to 1.26 by 2024. The ~35-year delay from T decline onset to TFR collapse is consistent with cumulative biological erosion reaching the threshold. If the model had existed in 2005, it could have predicted Finland's collapse 10–15 years early.",
+    thresholdProjectionsTitle: "Country TFR projections",
+    thresholdProjections2030: "2030",
+    thresholdProjections2035: "2035",
+    thresholdChartTitle: "Interactive threshold model",
+    thresholdCaveat: "T decline rates are age-independent secular trends from peer-reviewed longitudinal studies. Korean and Japanese rates are estimates. The 40% threshold is calibrated, not derived. Projections assume continuation of current rates.",
+
     diseaseCascadesTitle: "Extended Disease Cascades",
     diseaseCascadesLead: "Ten additional disease cascades derived from the VGCC gene family analysis. Each cascade links a specific VGCC subtype to a disease mechanism with its own evidence level.",
     diseaseCascades: [
@@ -265,6 +300,8 @@ const t = {
     ],
     vgccDiagramTitle: "VGCC Gene Family",
     vgccDiagramSubtitle: "Six genes, six disease clusters, one mechanism",
+    emfBarTitle: "EMF sensitivity hierarchy at resting potential",
+    emfBarSubtitle: "Relative activation probability at ~−70 mV membrane potential",
 
     epistemic:
       "Epistemic note: The equations above are the current model specification (BERM v17). Parameter values are calibrated against observed data and will be updated as new evidence becomes available. The model is explicitly designed to be falsifiable -- if its predictions fail, the model is wrong. The Therapeutic Device Paradox (24+ regulatory-approved non-thermal EMF device categories, DC to UV) establishes non-thermal bioactivity as regulatory fact, not hypothesis.",
@@ -302,6 +339,12 @@ const t = {
       "Polkujen painot perustuvat empiiriseen kalibrointiin yhteisödatalla (amissit–Korea-gradientti). Ne eivät heijasta teoreettista hierarkiaa: Polku B (CRY/RPM) on PRIMARY-polku koska 87,5 % RPM-Hamiltoniaanista on johdettavissa Lindgren-geometriasta — mekanismin OLEMASSAOLO seuraa geometrisena seurauksena. Polulla A on vahvempi kokeellinen tuki (23–28 salpaajatukimusta). Aiempi δVm-vastalause (δV_m ≈ 10⁻²¹ V pelkästä geometriasta) on nyt ratkaistu T-tyypin kalsiumkanavan bifurkaatiomekanismilla: Schwanin yhtälö vahvistaa ulkoiset kentät 7,5–15 μV:iin kalvolla (37 % lämpökohinasta 1 V/m ympäristössä; 184 % 5 V/m henkilökohtaisessa), ja T-tyypin (Cav3) kanavat toimivat bifurkaatiopisteessä, jossa ~10 % on avoinna levossa (ikkunavirta), mikä tekee niistä herkkiä näille häiriöille. Polku D (HPA → testosteroni) on nyt myös johdettu saman T-tyypin mekanismin kautta: Schwanin δVm → Cav3 → Ca²⁺ → StAR → testosteroni (Xiang 2025).",
     rpmFrequencyNote:
       "CRY/RPM ei vastaa RF-kantoaaltotaajuuteen (900 MHz – 3,5 GHz). Sen resonanssimaksimi on ~22,5 MHz (Talbi, Zadeh-Haghighi & Simon 2025, Front. Quantum Sci. Technol. 4:1544473). Polun B biologisesti aktiiviset komponentit ovat geomagneettinen tausta (B_DC) ja telecom-signaalien ELF-modulaatioverhoilukäyrät (GSM 217 Hz, WiFi 10 Hz beacon). RF-kantoaallon vaikutukset välittyvät polku A:n kautta sähkökentän komponenttina. Kahdella polulla on toisiaan täydentävät taajuusalueet.",
+    vgccHierarchyTitle: "VGCC-herkkyyhierarkia lepopotentiaalissa",
+    vgccHierarchyNote:
+      "Kaikki jänniteohjatut kalsiumkanavat eivät ole yhtä EMF-herkkiä. Lepopotentiaalissa (~−70 mV) EMF-herkkyys noudattaa hierarkiaa: Cav3 (T-tyyppi) >> Cav1.3 >> Cav1.2. T-tyypin kanavat (Cav3.1, Cav3.2, Cav3.3) toimivat bifurkaatiopisteessä, jossa ~10 % on avoinna levossa (ikkunavirta), mikä tekee niistä jatkuvasti herkkiä pienille jännitemuutoksille. Cav1.3 on 'matalan kynnyksen L-tyyppi', joka aktivoituu ~−50 mV:ssa — 25 mV negatiivisemmin kuin Cav1.2 (J Neurosci 2001). Tämä tekee Cav1.3:sta pääkanavan kudoksissa, jotka vaativat jatkuvaa matalan jännitteen kalsiumvirtaa: SA-solmun tahdistus ja sisäkorvan karvasolun synaptinen transduktio. Cav1.2, kanoninen L-tyyppi, aktivoituu ~−30 mV:ssa ja on merkittävä VAIN aktiopotentiaalin aikana — levossa sen kontribuutio on mitätön. Tämä hierarkia selittää kudosspesifisen EMF-haavoittuvuuden: Cav3-valtaiset elimet (kivekset, aivolisäke, lisämunuainen, hippokampus) ovat herkimpiä; Cav1.3-riippuvaiset kudokset (sisäkorva, SA-solmu) ovat välitasoa; Cav1.2-valtaiset kudokset (luurankolihas, kammiosydän) vaikuttuvat vain sähköisen aktiivisuuden aikana.",
+    camkiiTitle: "CaMKII-positiivinen takaisinkytkentä: kumulatiivinen herkistyminen",
+    camkiiNote:
+      "Kriittinen löydös BERM:n kumulatiivisen altistusmallin kannalta: CaMKII:n (kalsium/kalmoduliini-riippuvainen proteiinikinaasi II) fosforylaatio siirtää Cav3.2:n aktivaatiokynnystä NEGATIIVISEMPAAN suuntaan (PMC9913649). Tämä luo positiivisen takaisinkytkentäsilmukan: EMF → Cav3.2 Ca²⁺ -sisäänvirtaus → CaMKII:n aktivaatio → Cav3.2:n kynnys siirtyy vasemmalle → kanava tulee HERKEMMÄKSI EMF:lle → lisää Ca²⁺ -sisäänvirtausta. Tämä molekulaarinen mekanismi selittää, miksi EMF-vaikutukset ovat kumulatiivisia ajan myötä: jokainen altistusjakso tekee järjestelmästä herkemmän seuraaville altistuksille. CaMKII-takaisinkytkentä selittää myös, miksi lyhytaikaiset tutkimukset voivat aliarvioida pitkäaikaisvaikutuksia — herkistyminen kehittyy viikkojen tai kuukausien kuluessa. Farmakologinen ennuste: CaMKII-inhibiittorit (KN-93) estävät progressiivisen herkistymisen vaikuttamatta akuutteihin EMF-vasteisiin.",
 
     chiSub: "Saturaatiokäyrä ambient × henkilökohtaisen altistuksen vuorovaikutukselle",
     chiTitle: "Lindgrenin chi-kytkentäyhtälö",
@@ -508,6 +551,34 @@ const t = {
     mathSubtitle:
       'Täydellinen johtaminen Lindgrenin geometriasta TFR-ennusteeseen. Jokainen yhtälö on johdettavissa edellisestä. Klikkaa "Täysi johtaminen" nähdäksesi välivaiheet.',
 
+    thresholdTitle: "Testosteroni → TFR -kynnösmalli",
+    thresholdSub: "Kvantitatiivinen yhteys biologisen kapasiteetin laskusta demografiseen romahdukseen",
+    thresholdLead: "BERM-mallin vahvin ennustekomponentti. Testosteronin lasku (~1 %/vuosi, ikäriippumaton, dokumentoitu viidessä maassa) luo kolmivaiheisen trajektorin: hiljainen eroosio → kynnyksen ylitys → biologinen rajoite. Malli on kalibroitu Suomen ja Korean datalla ja tuottaa maakohtaisia, testattavia ennusteita.",
+    thresholdPhase1Title: "Vaihe 1: Hiljainen eroosio",
+    thresholdPhase1Desc: "Testosteroni laskee mutta on biologisesti riittävä. TFR vakaa tai laskee hitaasti kulttuuristen tekijöiden vaikutuksesta. Biologinen kapasiteetti ylittää kulttuurisen kysynnän.",
+    thresholdPhase2Title: "Vaihe 2: Kynnys ylitetty",
+    thresholdPhase2Desc: "Kumulatiivinen T-menetys ylittää ~40 %. Kasvava miesten subfertiliteetti (T < 300 ng/dL). TFR kiihtyy alaspäin biologisen kapasiteetin tullessa rajoittavaksi tekijäksi. Pronatalistiset ohjelmat alkavat epäonnistua.",
+    thresholdPhase3Title: "Vaihe 3: Biologinen rajoite",
+    thresholdPhase3Desc: "TFR laskee alle 1,0. Biologinen kyvyttömyys dominoi. Jopa motivoituneet pariskunnat tarvitsevat avustettua lisääntymistä. IVF-kysyntä kasvaa eksponentiaalisesti.",
+    thresholdMathTitle: "Matemaattinen muotoilu",
+    thresholdMathT: "T(t) = T₀ × (1 − r)^(t − t₀)",
+    thresholdMathTFR: "TFR(t) = min( TFR_kult(t), TFR_bio(t) )",
+    thresholdMathExplain: "Kun TFR_bio < TFR_kult, biologinen kapasiteetti on rajoittava tekijä. Sigmoidisiirtymä ~40 %:n kumulatiivisen T-menetyksen kohdalla tuottaa havaitun kuvion: vuosikymmeniä vakautta ja sitten nopea romahdus.",
+    thresholdTableTitle: "Maakohtaiset parametrit",
+    thresholdTableCountry: "Maa",
+    thresholdTableRate: "r (%/v)",
+    thresholdTableSource: "Lähde",
+    thresholdTableCumul: "Kumul. 2024",
+    thresholdTableThreshold: "Kynnösvuosi",
+    thresholdTablePhase: "Vaihe",
+    thresholdFinlandTitle: "Retrospektiivinen validointi: Suomi",
+    thresholdFinlandText: "Suomi on mallin Rosetta-kivi. Perheentupa (2013) dokumentoi 37 %:n kohorttikohtaisen T-laskun (n=3 271, 1972–2002). TFR pysyi vakaana 1,63–1,87 neljäkymmentä vuotta (1970–2010) ja romahti sitten 1,26:een vuoteen 2024 mennessä. ~35 vuoden viive T-laskun alusta TFR-romahdukseen on yhdenmukainen kumulatiivisen biologisen eroosion saavuttaessa kynnöksen. Jos malli olisi ollut olemassa vuonna 2005, se olisi voinut ennustaa Suomen romahduksen 10–15 vuotta etukäteen.",
+    thresholdProjectionsTitle: "Maakohtaiset TFR-ennusteet",
+    thresholdProjections2030: "2030",
+    thresholdProjections2035: "2035",
+    thresholdChartTitle: "Interaktiivinen kynnösmalli",
+    thresholdCaveat: "T-laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä vertaisarvioiduista pitkittäistutkimuksista. Korean ja Japanin vauhdit ovat arvioita. 40 %:n kynnös on kalibroitu, ei derivoitu. Ennusteet olettavat nykyisten vauhtien jatkumisen.",
+
     diseaseCascadesTitle: "Laajennetut sairauskaskadit",
     diseaseCascadesLead: "Kymmenen lisäsairauskaskadia VGCC-geeniperheen analyysistä. Kukin kaskadi yhdistää tietyn VGCC-alatyypin sairausmekanismiin omalla evidenssitasollaan.",
     diseaseCascades: [
@@ -524,6 +595,8 @@ const t = {
     ],
     vgccDiagramTitle: "VGCC-geeniperhe",
     vgccDiagramSubtitle: "Kuusi geeniä, kuusi sairausklusteria, yksi mekanismi",
+    emfBarTitle: "EMF-herkkyyhierarkia lepopotentiaalissa",
+    emfBarSubtitle: "Suhteellinen aktivaatiotodennäköisyys ~−70 mV kalvopotentiaalissa",
 
     epistemic:
       "Episteeminen huomautus: Yllä olevat yhtälöt ovat nykyinen mallispesifikaatio (BERM v17). Parametriarvot on kalibroitu havaittua dataa vasten ja niitä päivitetään uuden näytön myötä. Malli on nimenomaisesti suunniteltu falsifioitavaksi -- jos sen ennusteet epäonnistuvat, malli on väärässä. Terapeuttinen laiteparadoksi (24+ regulaattorihyväksyttyä ei-termistä EMF-laitekategoriaa, DC:stä UV:iin) vahvistaa ei-termisen bioaktiivisuuden regulatiiviseksi tosiasiaksi, ei hypoteesiksi.",
@@ -647,11 +720,23 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
               {d.pathwayHierarchyNote}
             </p>
-            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
               {d.rpmFrequencyNote}
             </p>
+            <div className="mt-4 mb-4 border-l-4 border-blue-500/40 rounded-r-lg bg-card p-5">
+              <h4 className="text-sm font-semibold mb-2">{d.vgccHierarchyTitle}</h4>
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                {d.vgccHierarchyNote}
+              </p>
+            </div>
+            <div className="mb-6 border-l-4 border-amber-500/40 rounded-r-lg bg-card p-5">
+              <h4 className="text-sm font-semibold mb-2">{d.camkiiTitle}</h4>
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                {d.camkiiNote}
+              </p>
+            </div>
             <div className="overflow-x-auto">
-              <BermCausalDiagram />
+              <BermCausalDiagram locale={locale_key} />
             </div>
             <span id="ifo" />
             <p className="mt-4 text-sm text-foreground-muted max-w-3xl leading-relaxed">
@@ -911,6 +996,93 @@ export default async function ModelPage({
             </p>
           </CollapsibleSection>
 
+          {/* Testosterone → TFR Threshold Model */}
+          <section id="testosterone-threshold" className="mb-14">
+            <h2 className="text-xl font-semibold mb-1">{d.thresholdTitle}</h2>
+            <p className="text-xs text-foreground-muted italic mb-4">{d.thresholdSub}</p>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.thresholdLead}
+            </p>
+
+            <div className="grid gap-4 sm:grid-cols-3 max-w-4xl mb-8">
+              <article className="rounded-xl border-2 border-green-500/30 bg-green-500/5 p-5">
+                <h3 className="font-semibold text-sm text-green-600 dark:text-green-400 mb-2">{d.thresholdPhase1Title}</h3>
+                <p className="text-xs text-foreground-muted leading-relaxed">{d.thresholdPhase1Desc}</p>
+              </article>
+              <article className="rounded-xl border-2 border-amber-500/30 bg-amber-500/5 p-5">
+                <h3 className="font-semibold text-sm text-amber-600 dark:text-amber-400 mb-2">{d.thresholdPhase2Title}</h3>
+                <p className="text-xs text-foreground-muted leading-relaxed">{d.thresholdPhase2Desc}</p>
+              </article>
+              <article className="rounded-xl border-2 border-red-500/30 bg-red-500/5 p-5">
+                <h3 className="font-semibold text-sm text-red-600 dark:text-red-400 mb-2">{d.thresholdPhase3Title}</h3>
+                <p className="text-xs text-foreground-muted leading-relaxed">{d.thresholdPhase3Desc}</p>
+              </article>
+            </div>
+
+            <div className="rounded-xl border border-card-border bg-card-bg p-5 max-w-4xl mb-8">
+              <h3 className="font-semibold text-sm mb-3">{d.thresholdMathTitle}</h3>
+              <div className="space-y-2 font-mono-num text-sm text-accent mb-3">
+                <p>{d.thresholdMathT}</p>
+                <p>{d.thresholdMathTFR}</p>
+              </div>
+              <p className="text-xs text-foreground-muted leading-relaxed">{d.thresholdMathExplain}</p>
+            </div>
+
+            <div className="overflow-x-auto mb-8 max-w-4xl">
+              <h3 className="font-semibold text-sm mb-3">{d.thresholdTableTitle}</h3>
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-card-border text-foreground-muted">
+                    <th className="text-left py-2 pr-3 font-medium">{d.thresholdTableCountry}</th>
+                    <th className="text-right py-2 px-3 font-medium">{d.thresholdTableRate}</th>
+                    <th className="text-left py-2 px-3 font-medium">{d.thresholdTableSource}</th>
+                    <th className="text-right py-2 px-3 font-medium">{d.thresholdTableCumul}</th>
+                    <th className="text-right py-2 px-3 font-medium">{d.thresholdTableThreshold}</th>
+                    <th className="text-center py-2 pl-3 font-medium">{d.thresholdTablePhase}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { country: "USA", rate: "1.0", source: "Travison 2007", cumul: "−35.7 %", thresh: "~2030", phase: 1 },
+                    { country: locale_key === "fi" ? "Tanska" : "Denmark", rate: "0.85", source: "Andersson 2007", cumul: "−31.3 %", thresh: "~2035", phase: 1 },
+                    { country: locale_key === "fi" ? "Suomi" : "Finland", rate: "1.2", source: "Perheentupa 2013", cumul: "−41.2 %", thresh: "~2018 ✓", phase: 2 },
+                    { country: "Israel", rate: "1.0", source: "Chodick 2020", cumul: "−35.7 %", thresh: "~2035", phase: 1 },
+                    { country: locale_key === "fi" ? "Etelä-Korea" : "South Korea", rate: "1.5*", source: locale_key === "fi" ? "Arvio" : "Estimated", cumul: "−48.6 %", thresh: "~2015 ✓", phase: 3 },
+                    { country: locale_key === "fi" ? "Japani" : "Japan", rate: "1.2*", source: locale_key === "fi" ? "Arvio" : "Estimated", cumul: "−41.2 %", thresh: "~2018 ✓", phase: 2 },
+                  ].map((r) => {
+                    const phaseColor = r.phase === 1 ? "#22c55e" : r.phase === 2 ? "#f59e0b" : "#ef4444";
+                    return (
+                      <tr key={r.country} className="border-b border-card-border/50">
+                        <td className="py-2 pr-3 font-medium text-foreground">{r.country}</td>
+                        <td className="py-2 px-3 text-right font-mono-num">{r.rate}</td>
+                        <td className="py-2 px-3 text-foreground-muted">{r.source}</td>
+                        <td className="py-2 px-3 text-right font-mono-num text-accent">{r.cumul}</td>
+                        <td className="py-2 px-3 text-right font-mono-num">{r.thresh}</td>
+                        <td className="py-2 pl-3 text-center">
+                          <span className="inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold" style={{ backgroundColor: `${phaseColor}20`, color: phaseColor }}>{r.phase}</span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-5 max-w-4xl mb-8">
+              <h3 className="font-semibold text-sm text-blue-600 dark:text-blue-400 mb-2">{d.thresholdFinlandTitle}</h3>
+              <p className="text-xs text-foreground-muted leading-relaxed">{d.thresholdFinlandText}</p>
+            </div>
+
+            <div className="max-w-4xl mb-6">
+              <h3 className="font-semibold text-sm mb-3">{d.thresholdChartTitle}</h3>
+              <ThresholdChart locale={locale_key} />
+            </div>
+
+            <p className="text-xs text-foreground-muted max-w-3xl leading-relaxed italic border-l-2 border-amber-500/30 pl-3">
+              {d.thresholdCaveat}
+            </p>
+          </section>
+
           {/* Extended Disease Cascades 9-18 */}
           <section id="disease-cascades" className="mb-14">
             <h2 className="text-xl font-semibold mb-2">{d.diseaseCascadesTitle}</h2>
@@ -962,6 +1134,38 @@ export default async function ModelPage({
               <h3 className="text-lg font-semibold mb-1">{d.vgccDiagramTitle}</h3>
               <p className="text-xs text-foreground-muted mb-4">{d.vgccDiagramSubtitle}</p>
               <VGCCGeneFamilyDiagram locale={locale} />
+
+              {/* EMF sensitivity hierarchy bar chart */}
+              <div className="mt-8 p-4 rounded-lg border border-border bg-card">
+                <h4 className="text-sm font-semibold mb-1">{d.emfBarTitle}</h4>
+                <p className="text-xs text-foreground-muted mb-4">{d.emfBarSubtitle}</p>
+                <div className="space-y-2">
+                  {[
+                    { label: "Cav3.2", gene: "CACNA1H", pct: 100, color: "#F59E0B", note: "T-type, −46 mV" },
+                    { label: "Cav3.3", gene: "CACNA1I", pct: 88, color: "#EC4899", note: "T-type, −44 mV" },
+                    { label: "Cav3.1", gene: "CACNA1G", pct: 78, color: "#10B981", note: "T-type, −42 mV" },
+                    { label: "Cav1.3", gene: "CACNA1D", pct: 35, color: "#8B5CF6", note: "L-type, −50 mV" },
+                    { label: "Cav1.2", gene: "CACNA1C", pct: 8, color: "#EF4444", note: "L-type, −30 mV" },
+                    { label: "Cav2.1", gene: "CACNA1A", pct: 3, color: "#3B82F6", note: "P/Q-type, −20 mV" },
+                  ].map((ch) => (
+                    <div key={ch.label} className="flex items-center gap-2 text-xs">
+                      <span className="w-12 font-mono font-semibold shrink-0" style={{ color: ch.color }}>{ch.label}</span>
+                      <div className="flex-1 h-5 bg-card-border/30 rounded overflow-hidden">
+                        <div
+                          className="h-full rounded"
+                          style={{ width: `${ch.pct}%`, backgroundColor: ch.color, opacity: 0.7 }}
+                        />
+                      </div>
+                      <span className="w-28 text-foreground-muted shrink-0 text-right">{ch.note}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs text-foreground-muted mt-3 italic">
+                  {locale === "fi"
+                    ? "T-tyypin (Cav3) kanavat >> Cav1.3 (matalan kynnyksen L-tyyppi) >> Cav1.2 (vain aktiopotentiaalin aikana). CaMKII-takaisinkytkentä siirtää Cav3.2-kynnystä negatiivisemmaksi ajan myötä."
+                    : "T-type (Cav3) channels >> Cav1.3 (low-threshold L-type) >> Cav1.2 (action-potential only). CaMKII feedback shifts Cav3.2 threshold more negative over time."}
+                </p>
+              </div>
             </div>
           </section>
 

@@ -6,9 +6,11 @@ import {
   NODES,
   EDGES,
   EPISTEMIC_COLORS,
-  LEVEL_TITLES,
+  getLevelTitle,
 } from "@/lib/causalChainData";
 import { DetailPanel } from "./DetailPanel";
+
+type Locale = "en" | "fi";
 
 const NODE_H = 72;
 const NODE_RX = 12;
@@ -50,6 +52,7 @@ interface LevelBand {
 function computeLayout(
   nodes: ChainNode[],
   canvasW: number,
+  locale: Locale = "fi",
 ): { layoutNodes: LayoutNode[]; canvasH: number; bands: LevelBand[] } {
   const levels = new Map<number, ChainNode[]>();
   for (const n of nodes) {
@@ -106,7 +109,7 @@ function computeLayout(
     const bandBottom = currentY + BAND_PAD_Y;
     bands.push({
       level: lvl,
-      title: LEVEL_TITLES[lvl] ?? `Level ${lvl}`,
+      title: getLevelTitle(lvl, locale),
       top: bandTop,
       bottom: bandBottom,
       color: EPISTEMIC_COLORS[dominant] ?? "#6B7280",
@@ -142,7 +145,8 @@ function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
   return `M ${x1} ${y1} C ${x1} ${y1 + dy * 0.35} ${x2} ${y2 - dy * 0.35} ${x2} ${y2}`;
 }
 
-export default function BermCausalDiagram() {
+export default function BermCausalDiagram({ locale = "fi" }: { locale?: Locale }) {
+  const fi = locale === "fi";
   const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -161,8 +165,8 @@ export default function BermCausalDiagram() {
 
   const canvasW = containerW;
   const { layoutNodes, canvasH, bands } = useMemo(
-    () => computeLayout(NODES, canvasW),
-    [canvasW],
+    () => computeLayout(NODES, canvasW, locale),
+    [canvasW, locale],
   );
 
   const nodeMap = useMemo(() => {
@@ -353,7 +357,7 @@ export default function BermCausalDiagram() {
                     dominantBaseline="middle"
                     fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                   >
-                    {edge.label}
+                    {(!fi && edge.label_en) || edge.label}
                   </text>
                 )}
               </g>
@@ -419,10 +423,10 @@ export default function BermCausalDiagram() {
                   dominantBaseline="middle"
                   fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                 >
-                  {n.label}
+                  {(!fi && n.label_en) || n.label}
                 </text>
                 {/* Sublabel */}
-                {n.sublabel && (
+                {(n.sublabel || n.sublabel_en) && (
                   <text
                     x={n.x + 14}
                     y={n.y + 46}
@@ -431,7 +435,7 @@ export default function BermCausalDiagram() {
                     dominantBaseline="middle"
                     fontFamily="ui-monospace, SFMono-Regular, monospace"
                   >
-                    {n.sublabel}
+                    {(!fi && n.sublabel_en) || n.sublabel}
                   </text>
                 )}
                 {/* Click hint on hover */}
@@ -444,7 +448,7 @@ export default function BermCausalDiagram() {
                     dominantBaseline="auto"
                     fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                   >
-                    {"→ click for details"}
+                    {fi ? "→ klikkaa tiedot" : "→ click for details"}
                   </text>
                 )}
               </g>
@@ -453,13 +457,21 @@ export default function BermCausalDiagram() {
 
           {/* Legend */}
           {(() => {
-            const items: [EpistemicLevel, string][] = [
-              ["E", "Empirically established"],
-              ["M|C", "Mechanistic + correlational"],
-              ["M", "Mathematical consequence"],
-              ["C", "Candidate"],
-              ["L*", "Premise (not validated)"],
-            ];
+            const items: [EpistemicLevel, string][] = fi
+              ? [
+                  ["E", "Empiirisesti todennettu"],
+                  ["M|C", "Mekanistinen + korrelaatio"],
+                  ["M", "Matemaattinen seuraus"],
+                  ["C", "Kandidaatti"],
+                  ["L*", "Premissi (ei validoitu)"],
+                ]
+              : [
+                  ["E", "Empirically established"],
+                  ["M|C", "Mechanistic + correlational"],
+                  ["M", "Mathematical consequence"],
+                  ["C", "Candidate"],
+                  ["L*", "Premise (not validated)"],
+                ];
             const legendY = canvasH - 24;
             const legendX = LEVEL_LABEL_W + FEEDBACK_MARGIN;
             const spacing = (canvasW - legendX - 20) / items.length;
@@ -485,6 +497,7 @@ export default function BermCausalDiagram() {
         <DetailPanel
           node={selectedNode}
           onClose={() => setSelectedNode(null)}
+          locale={locale}
         />
       )}
     </>

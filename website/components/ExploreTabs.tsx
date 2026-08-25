@@ -8,9 +8,10 @@ import { WorldMap } from "./WorldMap";
 import { SentinelExplorer } from "./SentinelExplorer";
 import { GlobalDataExplorer } from "./GlobalDataExplorer";
 import { LayersExplorer } from "./LayersExplorer";
+import { ThresholdExplorer } from "./ThresholdExplorer";
 import { getExploreTabs } from "@/lib/navigation";
 
-type Tab = "map" | "country" | "global" | "data" | "sentinel" | "layers";
+type Tab = "map" | "country" | "global" | "data" | "sentinel" | "layers" | "threshold";
 
 function ExploreTabsInner({ locale }: { locale: string }) {
   const searchParams = useSearchParams();
@@ -30,7 +31,7 @@ function ExploreTabsInner({ locale }: { locale: string }) {
 
   return (
     <div>
-      <nav className="flex gap-1 border-b border-border mb-8" role="tablist">
+      <nav className="flex gap-1 border-b border-border mb-8 overflow-x-auto" role="tablist">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.key;
@@ -40,7 +41,7 @@ function ExploreTabsInner({ locale }: { locale: string }) {
               role="tab"
               aria-selected={isActive}
               onClick={() => setTab(tab.key)}
-              className={`inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+              className={`inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium border-b-2 transition-colors whitespace-nowrap shrink-0 ${
                 isActive
                   ? "border-accent text-accent"
                   : "border-transparent text-foreground-muted hover:text-foreground"
@@ -58,6 +59,8 @@ function ExploreTabsInner({ locale }: { locale: string }) {
       {activeTab === "country" && <ExplorerDashboard locale={locale} />}
 
       {activeTab === "global" && <GlobalDataExplorer locale={locale} />}
+
+      {activeTab === "threshold" && <ThresholdExplorer locale={locale} />}
 
       {activeTab === "sentinel" && <SentinelExplorer locale={locale} />}
 

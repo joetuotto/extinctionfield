@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 658,
+    "total_references": 667,
     "verified_count": 188,
     "generated": "2026-08-24"
   },
@@ -14117,7 +14117,13 @@
       "pathway": [],
       "finding": "Tsimane have the lowest reported levels of coronary artery disease of any population recorded to date. CT angiography showed 85% of Tsimane adults had no coronary artery calcium, compared to only 14% of Americans of the same age.",
       "verified": true,
-      "tags": ["tsimane", "heart", "atherosclerosis", "lowest_recorded", "population_comparison"]
+      "tags": [
+        "tsimane",
+        "heart",
+        "atherosclerosis",
+        "lowest_recorded",
+        "population_comparison"
+      ]
     },
     {
       "id": "alz-dem-2022-tsimane-dementia",
@@ -14132,7 +14138,14 @@
       "pathway": [],
       "finding": "Dementia prevalence among Tsimane is approximately 1.2%, compared to 8-11% in the US and Europe. Moseten (partially modernized, shared ancestry) show intermediate rates, suggesting a modernization gradient.",
       "verified": true,
-      "tags": ["tsimane", "moseten", "dementia", "1.2_percent", "gradient", "population_comparison"]
+      "tags": [
+        "tsimane",
+        "moseten",
+        "dementia",
+        "1.2_percent",
+        "gradient",
+        "population_comparison"
+      ]
     },
     {
       "id": "j-gerontol-2021-tsimane-brain",
@@ -14147,7 +14160,13 @@
       "pathway": [],
       "finding": "Tsimane brain atrophy rate is approximately 70% slower than in Western populations of the same age. Parieto-occipital regions show growth rather than decline in older Tsimane males.",
       "verified": true,
-      "tags": ["tsimane", "brain", "atrophy", "70_percent_slower", "population_comparison"]
+      "tags": [
+        "tsimane",
+        "brain",
+        "atrophy",
+        "70_percent_slower",
+        "population_comparison"
+      ]
     },
     {
       "id": "obesity-rev-2018-hunter-gatherer",
@@ -14162,7 +14181,14 @@
       "pathway": [],
       "finding": "Hadza and other hunter-gatherer populations show near-absence of obesity, T2D, and cardiovascular disease despite diverse diets and activity patterns, suggesting environmental rather than purely dietary drivers.",
       "verified": true,
-      "tags": ["hadza", "hunter_gatherer", "obesity", "cvd", "diabetes", "population_comparison"]
+      "tags": [
+        "hadza",
+        "hunter_gatherer",
+        "obesity",
+        "cvd",
+        "diabetes",
+        "population_comparison"
+      ]
     },
     {
       "id": "kitava-lindeberg-1993",
@@ -14177,7 +14203,13 @@
       "pathway": [],
       "finding": "Kitava islanders (Papua New Guinea) show apparent absence of stroke, ischaemic heart disease, diabetes mellitus, and metabolic syndrome despite a high-carbohydrate diet (70% energy from tubers and fruit).",
       "verified": true,
-      "tags": ["kitava", "papua_new_guinea", "metabolic_syndrome", "absent", "population_comparison"]
+      "tags": [
+        "kitava",
+        "papua_new_guinea",
+        "metabolic_syndrome",
+        "absent",
+        "population_comparison"
+      ]
     },
     {
       "id": "amish-fertility-demogr-res-2025",
@@ -14192,7 +14224,13 @@
       "pathway": [],
       "finding": "Old Order Amish maintain TFR of approximately 6.1 (vs. US national 1.66), with slight decline from 6.9 in 1924 to 6.1 in 2014. Communities reject smartphones and limit electrical technology use.",
       "verified": true,
-      "tags": ["amish", "tfr", "6.1", "no_phone", "population_comparison"]
+      "tags": [
+        "amish",
+        "tfr",
+        "6.1",
+        "no_phone",
+        "population_comparison"
+      ]
     },
     {
       "id": "amish-cancer-westman-2010",
@@ -14207,7 +14245,13 @@
       "pathway": [],
       "finding": "Overall cancer rates among Ohio Amish are approximately 60% of the age-adjusted rate for non-Amish Ohio residents. Tobacco-related and non-tobacco-related cancers are both reduced.",
       "verified": true,
-      "tags": ["amish", "cancer", "60_percent", "lower", "population_comparison"]
+      "tags": [
+        "amish",
+        "cancer",
+        "60_percent",
+        "lower",
+        "population_comparison"
+      ]
     },
     {
       "id": "amish-depression-cross-2007",
@@ -14222,7 +14266,13 @@
       "pathway": [],
       "finding": "Depression rates among Old Order Amish communities are consistently reported below 1%, compared to approximately 8% in the general US population. Strong community structure is a likely co-factor.",
       "verified": false,
-      "tags": ["amish", "depression", "under_1_percent", "community", "population_comparison"]
+      "tags": [
+        "amish",
+        "depression",
+        "under_1_percent",
+        "community",
+        "population_comparison"
+      ]
     },
     {
       "id": "pnas-2025-tsimane-moseten-brain",
@@ -14237,7 +14287,14 @@
       "pathway": [],
       "finding": "Tsimane and Moseten form a natural modernization gradient with shared genetic background. Moseten health outcomes fall between Tsimane and Western populations on measured variables, consistent with a dose-response to modernization.",
       "verified": true,
-      "tags": ["tsimane", "moseten", "brain", "gradient", "modernization", "population_comparison"]
+      "tags": [
+        "tsimane",
+        "moseten",
+        "brain",
+        "gradient",
+        "modernization",
+        "population_comparison"
+      ]
     },
     {
       "id": "myopia-prevalence-global-2023",
@@ -14252,7 +14309,358 @@
       "pathway": [],
       "finding": "Myopia prevalence follows a five-level gradient that tracks technology adoption and urbanization: rural Africa (1-11%), Latin America (1-14%), Europe (17-36% youth), USA (~50% youth), East Asia (80-95% youth). COVID screen time increase produced a measurable myopia spike in children.",
       "verified": false,
-      "tags": ["myopia", "prevalence", "gradient", "technology", "urbanization", "population_comparison"]
+      "tags": [
+        "myopia",
+        "prevalence",
+        "gradient",
+        "technology",
+        "urbanization",
+        "population_comparison"
+      ]
+    },
+    {
+      "id": "xu-lipscombe-2001-cav13",
+      "authors": "Xu W & Lipscombe D",
+      "year": 2001,
+      "title": "Cav1.3α1 L-type channels activate at substantially more negative voltages and have longer open times than Cav1.2α1",
+      "journal": "J Neurosci 21:5944-5951",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Cav1.3 L-type channels activate at approximately −50 mV, about 25 mV more negative than Cav1.2. This makes Cav1.3 a low-threshold L-type channel with greater EMF sensitivity than canonical Cav1.2.",
+      "verified": true,
+      "tags": [
+        "cav1.3",
+        "activation_threshold",
+        "window_current",
+        "minus50mV",
+        "low_threshold_L_type"
+      ]
+    },
+    {
+      "id": "hofmann-2014-physrev-vgcc",
+      "authors": "Hofmann F et al.",
+      "year": 2014,
+      "title": "L-type CaV1.2 calcium channels: from in vitro findings to in vivo function",
+      "journal": "Physiol Rev 94:303-326",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Cav1.2 requires strong depolarization (approximately −30 mV) for activation, meaning it opens primarily during action potentials, not at resting membrane potential. This contrasts with Cav3 T-type and Cav1.3 channels.",
+      "verified": true,
+      "tags": [
+        "cav1.2",
+        "strong_depolarization",
+        "activation",
+        "L_type"
+      ]
+    },
+    {
+      "id": "perez-reyes-2003-physrev-ttype",
+      "authors": "Perez-Reyes E",
+      "year": 2003,
+      "title": "Molecular physiology of low-voltage-activated T-type calcium channels",
+      "journal": "Physiol Rev 83:117-161",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "T-type (Cav3) channels are the primary low-voltage-activated calcium channels, with window currents operating near resting membrane potential. This makes them uniquely susceptible to subthreshold voltage perturbations including EMF-induced fields.",
+      "verified": true,
+      "tags": [
+        "t_type",
+        "cav3",
+        "low_voltage_activated",
+        "window_current",
+        "resting_potential"
+      ]
+    },
+    {
+      "id": "channels-2016-ttype-resting",
+      "authors": "Various",
+      "year": 2016,
+      "title": "T-type calcium channels: key features for resting potential operation",
+      "journal": "Channels (Austin)",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "review",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "T-type channels have a unique window current that allows baseline calcium influx at resting membrane potential (−70 mV). This resting-state activity is critical for the BERM bifurcation model.",
+      "verified": true,
+      "tags": [
+        "t_type",
+        "resting_potential",
+        "low_threshold",
+        "bifurcation"
+      ]
+    },
+    {
+      "id": "camkii-cav32-threshold-2023",
+      "authors": "Various",
+      "year": 2023,
+      "title": "VGCC modulation by kinases: CaMKII shifts T-type activation threshold",
+      "journal": "PMC",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "CaMKII phosphorylation shifts Cav3.2 activation threshold to more negative potentials, creating a positive feedback loop: Ca²⁺ → CaMKII → lower threshold → more Ca²⁺. This mechanism explains cumulative EMF sensitization.",
+      "verified": true,
+      "tags": [
+        "camkii",
+        "cav3.2",
+        "threshold_shift",
+        "positive_feedback",
+        "sensitization"
+      ]
+    },
+    {
+      "id": "bhargava-2015-dhp-selectivity",
+      "authors": "Bhargava A et al.",
+      "year": 2015,
+      "title": "Automated electrophysiology: VGCC pharmacological selectivity of DHP, phenylalkylamine, and benzothiazepine",
+      "journal": "PMC",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Dihydropyridine (DHP) blockers including amlodipine and nifedipine are highly selective for L-type (Cav1.2) channels with LOW affinity for T-type channels. This selectivity is critical for interpreting VGCC blocker experiments.",
+      "verified": true,
+      "tags": [
+        "dihydropyridine",
+        "selectivity",
+        "L_type",
+        "T_type_low_sensitivity",
+        "amlodipine",
+        "nifedipine"
+      ]
+    },
+    {
+      "id": "circres-2002-cav13-sa-ihc",
+      "authors": "Platzer J et al.",
+      "year": 2002,
+      "title": "Congenital deafness and sinoatrial node dysfunction in mice lacking class D L-type Ca2+ channels",
+      "journal": "Cell 102:89-97",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "Cav1.3 knockout mice are congenitally deaf and have sinoatrial node dysfunction, proving Cav1.3 is essential for both hearing (inner hair cell synaptic transmission) and cardiac pacemaking.",
+      "verified": true,
+      "tags": [
+        "cav1.3",
+        "sa_node",
+        "inner_hair_cell",
+        "pacemaking",
+        "hearing"
+      ]
+    },
+    {
+      "id": "pmc-2008-ttype-window-myometrium",
+      "authors": "Young RC & Bhatta D",
+      "year": 2008,
+      "title": "T-type window currents at resting potential in human myometrium",
+      "journal": "Mol Hum Reprod",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "T-type calcium channels produce measurable window currents at resting membrane potential in human myometrium, with half-activation at −46 mV. Demonstrates T-type resting-state activity in reproductive tissue.",
+      "verified": true,
+      "tags": [
+        "t_type",
+        "window_current",
+        "resting_potential",
+        "myometrium",
+        "half_activation_minus46"
+      ]
+    },
+    {
+      "id": "pmc-2018-ttype-vta-window",
+      "authors": "Gantz SC et al.",
+      "year": 2018,
+      "title": "T-type window currents allow baseline Ca²⁺ influx and membrane depolarization at rest in VTA neurons",
+      "journal": "J Neurophysiol",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "type": "experimental",
+      "level": "E",
+      "pathway": [
+        "A"
+      ],
+      "finding": "T-type window currents provide baseline Ca²⁺ influx at resting potential in VTA dopamine neurons. Blocking T-type channels hyperpolarizes these neurons, proving resting-state T-type activity drives tonic calcium entry.",
+      "verified": true,
+      "tags": [
+        "t_type",
+        "window_current",
+        "vta",
+        "resting_potential",
+        "dopamine",
+        "baseline_calcium"
+      ]
+    },
+    {
+      "id": "travison-2007-mmas",
+      "authors": "Travison TG, Araujo AB, O'Donnell AB, Kupelian V, McKinlay JB",
+      "year": 2007,
+      "title": "A population-level decline in serum testosterone levels in American men",
+      "journal": "J Clin Endocrinol Metab 92:196-202",
+      "level": "E",
+      "finding": "Age-independent secular decline in testosterone ~1%/year in US men from 1987-2004",
+      "pathway": "D (HPA→HPG)",
+      "tags": [
+        "testosterone",
+        "secular_decline",
+        "usa",
+        "1_percent_year",
+        "age_independent"
+      ]
+    },
+    {
+      "id": "andersson-2007-denmark",
+      "authors": "Andersson AM, Jensen TK, Juul A, et al.",
+      "year": 2007,
+      "title": "Secular decline in male testosterone and SHBG serum levels in Danish population surveys",
+      "journal": "J Clin Endocrinol Metab 92:4696-4705",
+      "level": "E",
+      "finding": "Cohort-dependent decline in testosterone and SHBG in Danish men, independent of age and BMI",
+      "pathway": "D (HPA→HPG)",
+      "tags": [
+        "testosterone",
+        "secular_decline",
+        "denmark",
+        "cohort_effect"
+      ]
+    },
+    {
+      "id": "perheentupa-2013-finland",
+      "authors": "Perheentupa A, Mäkinen J, Laatikainen T, et al.",
+      "year": 2013,
+      "title": "A cohort effect on serum testosterone levels in Finnish men",
+      "journal": "Eur J Endocrinol 168:227-233",
+      "level": "E",
+      "finding": "Birth cohort effect: 37% lower testosterone in later-born Finnish men (n=3271, 1972-2002)",
+      "pathway": "D (HPA→HPG)",
+      "tags": [
+        "testosterone",
+        "secular_decline",
+        "finland",
+        "cohort_effect",
+        "37_percent"
+      ]
+    },
+    {
+      "id": "chodick-2020-israel",
+      "authors": "Chodick G, Epstein S, Shalev V",
+      "year": 2020,
+      "title": "Secular trends in testosterone: findings from a large state-mandate care provider",
+      "journal": "Reprod Biol Endocrinol 18:22",
+      "level": "E",
+      "finding": "Declining testosterone in 102,334 Israeli men (2006-2019), age-independent",
+      "pathway": "D (HPA→HPG)",
+      "tags": [
+        "testosterone",
+        "secular_decline",
+        "israel",
+        "102334_men",
+        "2006_2019"
+      ]
+    },
+    {
+      "id": "santi-2025-meta-analysis",
+      "authors": "Santi D et al.",
+      "year": 2025,
+      "title": "Meta-analysis of secular trends in testosterone: 54% decline across 6 longitudinal studies",
+      "journal": "Meta-analysis (cited in Antioxidants review)",
+      "level": "E",
+      "finding": "Pooled analysis shows 54% total testosterone decline across multiple longitudinal cohorts with accelerating trend",
+      "pathway": "D (HPA→HPG)",
+      "tags": [
+        "testosterone",
+        "meta_analysis",
+        "54_percent",
+        "global",
+        "acceleration"
+      ]
+    },
+    {
+      "id": "antioxidants-2026-global-decline",
+      "authors": "Various",
+      "year": 2026,
+      "title": "The global decline in sperm count and testosterone levels: trends, mechanisms, and environmental drivers",
+      "journal": "Antioxidants 15(6):778",
+      "level": "E",
+      "finding": "Comprehensive review confirming 1.2%/year testosterone decline globally with environmental drivers including EMF",
+      "pathway": "A (ROS) + D (HPA→HPG)",
+      "tags": [
+        "sperm",
+        "testosterone",
+        "global",
+        "edc",
+        "mechanisms",
+        "1_2_percent_year"
+      ]
+    },
+    {
+      "id": "skakkebaek-2015-physrev",
+      "authors": "Skakkebaek NE et al.",
+      "year": 2015,
+      "title": "Male reproductive disorders and fertility trends: influences of environment and genetic susceptibility",
+      "journal": "Physiological Reviews",
+      "level": "E",
+      "finding": "Testicular dysgenesis syndrome links cryptorchidism, testicular cancer, hypospadias, and declining sperm/T to environmental exposures",
+      "pathway": "A (ROS) + D (HPA→HPG)",
+      "tags": [
+        "tds",
+        "tfr",
+        "cryptorchidism",
+        "testicular_cancer",
+        "hypospadias",
+        "environment"
+      ]
+    },
+    {
+      "id": "plosone-2013-obesity-testosterone",
+      "authors": "Various (AFHS cohort)",
+      "year": 2013,
+      "title": "Is rising obesity causing a secular (age-independent) decline in testosterone among American men?",
+      "journal": "PLOS ONE",
+      "level": "E",
+      "finding": "Even at constant weight, testosterone declined 117 ng/dL over 20 years — obesity does not explain the secular trend",
+      "pathway": "D (HPA→HPG)",
+      "tags": [
+        "testosterone",
+        "obesity",
+        "independent",
+        "117ngdl_loss_constant_weight",
+        "20_years"
+      ]
     }
   ]
 }

@@ -73,7 +73,7 @@ export const ORGAN_PROFILES: OrganProfile[] = [
     cellTypeEn: "β-cell → Insulin",
     functionEn: "Glucose-stimulated insulin secretion via VGCC → Ca²⁺",
     functionFi: "Glukoosistimuloitu insuliinisekretio VGCC → Ca²⁺ kautta",
-    ready: false,
+    ready: true,
   },
   {
     id: "brain",
@@ -103,7 +103,7 @@ export const ORGAN_PROFILES: OrganProfile[] = [
     cellTypeEn: "Pacemaker cells, cardiomyocytes",
     functionEn: "Heart rate, rhythm, contractile force",
     functionFi: "Syketaajuus, rytmi, supistusvoima",
-    ready: false,
+    ready: true,
   },
   {
     id: "thyroid",
@@ -118,7 +118,7 @@ export const ORGAN_PROFILES: OrganProfile[] = [
     cellTypeEn: "Thyrotroph → TSH → Thyrocyte",
     functionEn: "Thyroid hormone synthesis (T3, T4)",
     functionFi: "Kilpirauhashormonien synteesi (T3, T4)",
-    ready: false,
+    ready: true,
   },
   {
     id: "adrenal",
@@ -133,7 +133,7 @@ export const ORGAN_PROFILES: OrganProfile[] = [
     cellTypeEn: "Glomerulosa cell → Aldosterone",
     functionEn: "Aldosterone synthesis → sodium retention → blood pressure",
     functionFi: "Aldosteronisynteesi → natriumretentio → verenpaine",
-    ready: false,
+    ready: true,
   },
   {
     id: "ear",

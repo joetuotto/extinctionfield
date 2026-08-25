@@ -106,9 +106,37 @@ const COPY = {
     s5p2:
       "χ_eye = f(iris_pigmentation, FAD_status, I_blue). A blue-eyed, B2-replete individual under blue-rich lighting has maximum χ_eye. A brown-eyed, B2-deficient individual in darkness has minimum χ_eye. This is why EMF-eye studies produce inconsistent results: they do not control for the three dominant modulators.",
 
-    /* 06 Predictions */
-    s6Title: "Predictions",
-    s6Predictions: [
+    /* 06 Myopia */
+    s6Title: "Myopia: Three-Channel Convergence",
+    s6Lead:
+      "Myopia prevalence has risen dramatically in technology-adopting populations. The BERM model identifies three independent EMF-mediated channels that converge on scleral elongation — the structural cause of myopia.",
+    s6Channels: [
+      {
+        name: "Channel 1 — DA/VGCC",
+        chain: "EMF → VGCC in dopaminergic amacrine cells → dopamine release disrupted → scleral elongation brake weakened",
+        detail: "Dopamine is the primary signal that stops the eye from growing too long. Without sufficient DA signaling, the axial length increases → myopia.",
+      },
+      {
+        name: "Channel 2 — CRY/Melatonin",
+        chain: "EMF → CRY disruption → melatonin suppression → circadian ocular growth dysregulated",
+        detail: "The eye has its own circadian growth rhythm — it grows during the day and shrinks at night. Melatonin is critical for this cycle. Disrupted melatonin → unregulated growth → elongation.",
+      },
+      {
+        name: "Channel 3 — Smooth Muscle/Cav",
+        chain: "Ciliary smooth muscle Cav channels → accommodation (focusing)",
+        detail: "Chronic Cav perturbation → accommodative dysfunction → refractive error.",
+      },
+    ],
+    s6Prevalence:
+      "Myopia prevalence gradient: Rural Africa 1–11%, Latin America 1–14%, Europe 17–36%, USA ~50%, East Asia 80–95%. This tracks technology adoption, not genetics — East Asian children raised in less urbanized settings have lower myopia rates.",
+    s6Covid:
+      "COVID-19 lockdowns → increased screen time → 1.5–3× increase in childhood myopia progression (meta-analyses). This natural experiment confirms screen/near-work exposure as a proximal driver, consistent with the three-channel model.",
+    s6CascadeRef:
+      "Disease cascade #9 in the model page describes this three-channel convergence mechanism.",
+
+    /* 07 Predictions */
+    s7Title: "Predictions",
+    s7Predictions: [
       {
         id: "EYE-1",
         text: "Blue-eyed men outperform green-eyed men in geomagnetic orientation tasks under identical blue light conditions (replicate Chae 2019 with eye color grouping).",
@@ -235,8 +263,35 @@ const COPY = {
     s5p2:
       "χ_eye = f(iiris_pigmentaatio, FAD_tila, I_sininen). Sinisilmainen, B2-rikas henkiloo sinisessa valossa omaa maksimaalisen χ_eye:n. Ruskesilmainen, B2-puutteinen henkiloo pimeassa omaa minimaalisen χ_eye:n. Tama selittaa miksi EMF-silmatutkimukset tuottavat ristiriitaisia tuloksia: ne eivat kontrolloi kolmea dominoivaa modulaattoria.",
 
-    s6Title: "Ennusteet",
-    s6Predictions: [
+    s6Title: "Likitaitteisuus: Kolmen kanavan konvergenssi",
+    s6Lead:
+      "Likitaitteisuuden esiintyvyys on noussut dramaattisesti teknologiaa omaksuvissa vaestoissa. BERM-malli tunnistaa kolme riippumatonta EMF-valitteista kanavaa, jotka konvergoivat skleraalisen elongaation — likitaitteisuuden rakenteellisen syyn — suuntaan.",
+    s6Channels: [
+      {
+        name: "Kanava 1 — DA/VGCC",
+        chain: "EMF → VGCC dopamiiniergisissa amakriinisoluissa → dopamiinin vapautuminen hairiytyy → skleraalisen elongaation jarru heikkenee",
+        detail: "Dopamiini on ensisijainen signaali, joka estaa silmaa kasvamasta liian pitkaksi. Ilman riittavaa DA-signalointia aksiaalinen pituus kasvaa → likitaitteisuus.",
+      },
+      {
+        name: "Kanava 2 — CRY/Melatoniini",
+        chain: "EMF → CRY-hairio → melatoniinisuppressio → silman sirkadiaaninen kasvurytmi hairiytyy",
+        detail: "Silmalla on oma sirkadiaaninen kasvurytminsa — se kasvaa paivalla ja kutistuu yolla. Melatoniini on kriittinen talle syklille. Hairioitynyt melatoniini → saatelematon kasvu → elongaatio.",
+      },
+      {
+        name: "Kanava 3 — Silea lihas/Cav",
+        chain: "Siliaarisen silean lihaksen Cav-kanavat → akkommodaatio (tarkennus)",
+        detail: "Krooninen Cav-hairio → akkommodaatiodisfunktio → taittovirhe.",
+      },
+    ],
+    s6Prevalence:
+      "Likitaitteisuuden esiintyvyysgradientti: maaseutu-Afrikka 1–11 %, Latinalainen Amerikka 1–14 %, Eurooppa 17–36 %, USA ~50 %, Ita-Aasia 80–95 %. Tama seuraa teknologian omaksumista, ei genetiikkaa — Ita-Aasiassa vahemman kaupungistuneissa ymparistoissa kasvaneiden lasten likitaitteisuus on matalampi.",
+    s6Covid:
+      "COVID-19-sulkutoimet → lisaantynyt ruutuaika → 1,5–3-kertainen lisays lasten likitaitteisuuden etenemisessa (meta-analyysit). Tama luonnollinen koe vahvistaa ruutu- ja lahityoaltistuksen proksimaalisena ajurina, yhteensopivasti kolmen kanavan mallin kanssa.",
+    s6CascadeRef:
+      "Mallisivun sairauskaskadi #9 kuvaa taman kolmen kanavan konvergenssimekanismin.",
+
+    s7Title: "Ennusteet",
+    s7Predictions: [
       {
         id: "EYE-1",
         text: "Sinisilmaiset miehet suoriutuvat vihreasilmaisia paremmin geomagneettisissa orientaatiotehtavissa identtisissa sinisen valon olosuhteissa (toista Chae 2019 silmanvariryhmittelylla).",
@@ -470,15 +525,58 @@ export default async function EyePage({
         </div>
       </section>
 
-      {/* 06 — Predictions */}
+      {/* 06 — Myopia */}
       <section className="mb-16 border-t editorial-rule pt-6">
-        <h3 className="text-lg font-semibold mb-6">
+        <h3 className="text-lg font-semibold mb-4">
           <span className="font-mono-num text-xs text-accent mr-2">06</span>
           {d.s6Title}
         </h3>
 
+        <p className="editorial-rail mb-6 text-[0.95rem] leading-relaxed text-foreground">
+          {d.s6Lead}
+        </p>
+
+        <div className="grid gap-6 md:grid-cols-3 mb-6">
+          {d.s6Channels.map((ch, i) => (
+            <div
+              key={i}
+              className="border-l-4 border-accent/40 rounded-r-lg bg-card p-5 space-y-3"
+            >
+              <h4 className="font-bold text-foreground text-sm leading-tight">
+                {ch.name}
+              </h4>
+              <div className="rounded border border-card-border p-3">
+                <p className="font-mono text-xs text-accent leading-relaxed">
+                  {ch.chain}
+                </p>
+              </div>
+              <p className="text-xs text-foreground-muted leading-relaxed">
+                {ch.detail}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p className="editorial-rail text-[0.95rem] text-foreground">
+            {d.s6Prevalence}
+          </p>
+          <p>{d.s6Covid}</p>
+          <p className="border-l-2 border-accent/20 pl-3 italic">
+            {d.s6CascadeRef}
+          </p>
+        </div>
+      </section>
+
+      {/* 07 — Predictions */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h3 className="text-lg font-semibold mb-6">
+          <span className="font-mono-num text-xs text-accent mr-2">07</span>
+          {d.s7Title}
+        </h3>
+
         <div className="space-y-4">
-          {d.s6Predictions.map((p) => (
+          {d.s7Predictions.map((p) => (
             <div
               key={p.id}
               className="border-l-4 border-green-500 rounded-r-lg bg-card p-4"

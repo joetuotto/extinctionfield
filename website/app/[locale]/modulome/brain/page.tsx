@@ -31,7 +31,7 @@ const COPY = {
     /* 02 EMF Evidence */
     emfEvidence: "EMF Evidence Summary",
     emfEvidenceText:
-      "Pall 2022: 18 types of evidence for EMF → VGCC → Ca²⁺ → Alzheimer's. 34% brain cell death in 4 weeks of EMF exposure in rats — blocked by VGCC blocker amlodipine. BBB opening → amyloid entry.",
+      "Pall 2022: 18 types of evidence for EMF → VGCC → Ca²⁺ → Alzheimer's. 34% brain cell death in 4 weeks of EMF exposure in rats — partially blocked by L-type blocker amlodipine (DHP, Cav1.2-selective; low T-type affinity — PMC4657039). Note: amlodipine does NOT block T-type channels — its efficacy here indicates L-type (Cav1.2) involvement alongside the dominant T-type pathway. BBB opening → amyloid entry.",
 
     /* 03 Chi Analysis */
     chiAnalysis: "Lindgren χ Analysis",
@@ -189,7 +189,7 @@ const COPY = {
     /* 02 EMF-evidenssi */
     emfEvidence: "EMF-evidenssin yhteenveto",
     emfEvidenceText:
-      "Pall 2022: 18 tyyppistä evidenssiä EMF → VGCC → Ca²⁺ → Alzheimer -ketjulle. 34 % aivosolujen kuolema 4 viikossa EMF-altistusta rotilla — estetty VGCC-salpaajalla amlodipiinilla. BBB:n avautuminen → amyloidin pääsy.",
+      "Pall 2022: 18 tyyppistä evidenssiä EMF → VGCC → Ca²⁺ → Alzheimer -ketjulle. 34 % aivosolujen kuolema 4 viikossa EMF-altistusta rotilla — osittain estetty L-tyypin salpaajalla amlodipiinilla (DHP, Cav1.2-selektiivinen; matala T-tyypin affiniteetti — PMC4657039). Huom: amlodipiini EI salpaa T-tyypin kanavia — sen teho tässä osoittaa L-tyypin (Cav1.2) osallisuuden dominoivan T-tyypin reitin rinnalla. BBB:n avautuminen → amyloidin pääsy.",
 
     /* 03 Chi-analyysi */
     chiAnalysis: "Lindgren χ -analyysi",

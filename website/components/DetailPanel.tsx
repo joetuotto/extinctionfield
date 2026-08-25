@@ -55,7 +55,7 @@ export function DetailPanel({
             <div className="space-y-2">
               <EpistemicBadge level={node.epistemicLevel} size="lg" />
               <h2 className="text-lg font-semibold text-foreground">
-                {node.title}
+                {locale === "en" && node.title_en ? node.title_en : node.title}
               </h2>
             </div>
             <button
@@ -76,12 +76,12 @@ export function DetailPanel({
               {d.mechanism}
             </h3>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              {node.mechanism}
+              {locale === "en" && node.mechanism_en ? node.mechanism_en : node.mechanism}
             </p>
           </section>
 
           {/* Lindgren interpretation */}
-          {node.lindgrenInterpretation && (
+          {(node.lindgrenInterpretation || node.lindgrenInterpretation_en) && (
             <section
               className="rounded-lg p-4"
               style={{ backgroundColor: `${EPISTEMIC_COLORS.M}12` }}
@@ -90,19 +90,19 @@ export function DetailPanel({
                 {d.lindgren}
               </h3>
               <p className="text-sm text-foreground-muted leading-relaxed">
-                {node.lindgrenInterpretation}
+                {locale === "en" && node.lindgrenInterpretation_en ? node.lindgrenInterpretation_en : node.lindgrenInterpretation}
               </p>
             </section>
           )}
 
           {/* Quantitative */}
-          {node.quantitative && (
+          {(node.quantitative || node.quantitative_en) && (
             <section>
               <h3 className="text-xs uppercase tracking-wider text-foreground-muted mb-2">
                 {d.quantitative}
               </h3>
               <pre className="text-xs font-mono text-foreground-muted bg-background-secondary rounded-lg p-4 overflow-x-auto whitespace-pre-wrap">
-                {node.quantitative}
+                {locale === "en" && node.quantitative_en ? node.quantitative_en : node.quantitative}
               </pre>
             </section>
           )}
@@ -136,9 +136,9 @@ export function DetailPanel({
                     {Math.round(node.recoveryAlpha * 100)}%
                   </span>
                 </div>
-                {node.recoveryTimescale && (
+                {(node.recoveryTimescale || node.recoveryTimescale_en) && (
                   <p className="text-xs text-foreground-muted">
-                    {d.timescale}: {node.recoveryTimescale}
+                    {d.timescale}: {locale === "en" && node.recoveryTimescale_en ? node.recoveryTimescale_en : node.recoveryTimescale}
                   </p>
                 )}
               </div>
@@ -158,7 +158,7 @@ export function DetailPanel({
                     <p className="text-xs text-foreground-muted italic">{ref.title}</p>
                     <p className="text-xs text-foreground-muted opacity-70">{ref.journal}</p>
                     <p className="text-xs text-foreground-muted mt-1">
-                      → {ref.keyFinding}
+                      → {locale === "en" && ref.keyFinding_en ? ref.keyFinding_en : ref.keyFinding}
                     </p>
                   </li>
                 ))}
@@ -179,7 +179,7 @@ export function DetailPanel({
                 {d.falsification}
               </h3>
               <p className="text-sm text-foreground-muted leading-relaxed">
-                {node.falsificationCondition}
+                {locale === "en" && node.falsificationCondition_en ? node.falsificationCondition_en : node.falsificationCondition}
               </p>
             </section>
           )}
