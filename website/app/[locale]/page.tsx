@@ -7,6 +7,7 @@ import { TheraBionicProof } from "@/components/TheraBionicProof";
 import { BradfordHillCard } from "@/components/BradfordHillCard";
 import { FinlandLagChart } from "@/components/FinlandLagChart";
 import { ThreePhaseIndicator } from "@/components/ThreePhaseIndicator";
+import { SixFactorSummary } from "@/components/SixFactorSummary";
 import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
 import { LatestArticles } from "@/components/LatestArticles";
@@ -336,6 +337,7 @@ export default async function Home({
           <FinlandLagChart locale={activeLocale} />
           <p className="text-sm text-foreground-muted leading-relaxed mt-6 mb-6 max-w-3xl">{d.warningNarrative}</p>
           <ThreePhaseIndicator locale={activeLocale} />
+          <SixFactorSummary locale={activeLocale} />
           <p className="text-xs text-foreground-muted mt-4 max-w-3xl leading-relaxed">{d.warningCaveat}</p>
           <Link
             href={`${prefix}/model#testosterone-threshold`}

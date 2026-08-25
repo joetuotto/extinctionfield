@@ -11,6 +11,7 @@ import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
 import { VGCCGeneFamilyDiagram } from "@/components/VGCCGeneFamilyDiagram";
 import { ThresholdChart } from "@/components/ThresholdChart";
+import { SixFactorSummary } from "@/components/SixFactorSummary";
 
 const t = {
   en: {
@@ -283,6 +284,24 @@ const t = {
     thresholdProjections2035: "2035",
     thresholdChartTitle: "Interactive threshold model",
     thresholdCaveat: "T decline rates are age-independent secular trends from peer-reviewed longitudinal studies. Korean and Japanese rates are estimates. The 40% threshold is calibrated, not derived. Projections assume continuation of current rates.",
+
+    whyPronatTitle: "Why $200 billion couldn't raise South Korea's fertility",
+    whyPronatText: "BERM's three-level architecture separates fertility into biological capacity (Level 1), EMF-behavioral coupling (Level 2), and cultural choice (Level 3). Pronatalist policies — cash bonuses, parental leave, childcare subsidies — target Level 3 (motivation). But when Level 1 (biological capacity) becomes the binding constraint, no amount of Level 3 incentive can compensate. South Korea's cumulative testosterone loss exceeds 48%. A growing fraction of couples who want children cannot conceive naturally. The $200 billion addressed the wrong level of the model.",
+    whyPronatPrediction: "T-TFR-4: Korea's TFR will not sustainably exceed 1.0 through 2035, regardless of policy spending.",
+    whyPronatFalsification: "Falsification: Korea TFR above 1.0 sustained for 3+ years.",
+
+    bioFloorTitle: "The biological floor",
+    bioFloorText: "Spermatogenesis requires intratesticular testosterone 50–100× serum concentration. When serum testosterone drops below ~200 ng/dL, spermatogenesis is severely impaired. At current decline rates (1%/year from ~500 ng/dL baseline):",
+    bioFloorTimeline: [
+      { year: "2024", value: "~320 ng/dL", note: "population mean, young men" },
+      { year: "2035", value: "~285 ng/dL", note: "" },
+      { year: "2050", value: "~240 ng/dL", note: "" },
+      { year: "2070", value: "~190 ng/dL", note: "below spermatogenic threshold" },
+    ],
+    bioFloorConsequence: "Below this floor, even IVF cannot use the man's own sperm. Donor sperm, testicular sperm extraction, or future technologies (in vitro spermatogenesis) become necessary. This is not speculation — it is arithmetic applied to measured decline rates.",
+
+    sixFactorTitle: "Why testosterone is the integration variable",
+    sixFactorLead: "Testosterone is the single most informative biomarker in the BERM framework because six independent biophysical properties make it exceptionally sensitive to the EMF → VGCC → Ca²⁺ mechanism.",
 
     diseaseCascadesTitle: "Extended Disease Cascades",
     diseaseCascadesLead: "Ten additional disease cascades derived from the VGCC gene family analysis. Each cascade links a specific VGCC subtype to a disease mechanism with its own evidence level.",
@@ -578,6 +597,24 @@ const t = {
     thresholdProjections2035: "2035",
     thresholdChartTitle: "Interaktiivinen kynnösmalli",
     thresholdCaveat: "T-laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä vertaisarvioiduista pitkittäistutkimuksista. Korean ja Japanin vauhdit ovat arvioita. 40 %:n kynnös on kalibroitu, ei derivoitu. Ennusteet olettavat nykyisten vauhtien jatkumisen.",
+
+    whyPronatTitle: "Miksi 200 miljardia dollaria ei nostanut Etelä-Korean syntyvyyttä",
+    whyPronatText: "BERM:n kolmitasoarkkitehtuuri jakaa syntyvyyden biologiseen kapasiteettiin (taso 1), EMF-käyttäytymiskytkentään (taso 2) ja kulttuuriseen valintaan (taso 3). Pronatalismipolitiikat — käteisbonukset, vanhempainvapaat, päivähoitotuet — kohdistuvat tasoon 3 (motivaatio). Mutta kun taso 1 (biologinen kapasiteetti) muodostuu sitovaksi rajoitteeksi, mikään tason 3 kannustin ei voi kompensoida. Etelä-Korean kumulatiivinen testosteronihävikki ylittää 48 %. Kasvava osuus lasta haluavista pareista ei pysty hedelmöittymään luonnollisesti. 200 miljardia kohdistui mallin väärään tasoon.",
+    whyPronatPrediction: "T-TFR-4: Korean TFR ei ylitä kestävästi 1,0:aa vuoteen 2035 mennessä, riippumatta politiikkapanostuksesta.",
+    whyPronatFalsification: "Falsifiointi: Korean TFR yli 1,0 kestävästi 3+ vuotta.",
+
+    bioFloorTitle: "Biologinen lattia",
+    bioFloorText: "Spermatogeneesi vaatii intratesticulaarisen testosteronin 50–100× seerumipitoisuuden. Kun seerumitestosteroni laskee alle ~200 ng/dL, spermatogeneesi on vakavasti heikentynyt. Nykyisillä laskuvauhdilla (1 %/vuosi ~500 ng/dL lähtötasosta):",
+    bioFloorTimeline: [
+      { year: "2024", value: "~320 ng/dL", note: "populaatiokeskiarvo, nuoret miehet" },
+      { year: "2035", value: "~285 ng/dL", note: "" },
+      { year: "2050", value: "~240 ng/dL", note: "" },
+      { year: "2070", value: "~190 ng/dL", note: "spermatogeneesikynnyksen alapuolella" },
+    ],
+    bioFloorConsequence: "Tämän lattian alapuolella edes IVF ei voi käyttää miehen omia siittiöitä. Luovuttajasiittiöt, testikulaarinen siittiöuutto tai tulevaisuuden teknologiat (in vitro -spermatogeneesi) tulevat välttämättömiksi. Tämä ei ole spekulaatiota — se on aritmetiikkaa sovellettuna mitattuihin laskuvauhteihin.",
+
+    sixFactorTitle: "Miksi testosteroni on integraatiomuuttuja",
+    sixFactorLead: "Testosteroni on BERM-viitekehyksen informatiivisin yksittäinen biomarkkeri, koska kuusi itsenäistä biofysikaalista ominaisuutta tekevät siitä poikkeuksellisen herkän EMF → VGCC → Ca²⁺ -mekanismille.",
 
     diseaseCascadesTitle: "Laajennetut sairauskaskadit",
     diseaseCascadesLead: "Kymmenen lisäsairauskaskadia VGCC-geeniperheen analyysistä. Kukin kaskadi yhdistää tietyn VGCC-alatyypin sairausmekanismiin omalla evidenssitasollaan.",
@@ -1081,6 +1118,58 @@ export default async function ModelPage({
             <p className="text-xs text-foreground-muted max-w-3xl leading-relaxed italic border-l-2 border-amber-500/30 pl-3">
               {d.thresholdCaveat}
             </p>
+
+            {/* Why pronatalism fails */}
+            <div className="mt-10 max-w-3xl">
+              <h3 className="text-base font-semibold mb-3">{d.whyPronatTitle}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+                {d.whyPronatText}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex-1 rounded-lg border border-blue-500/20 bg-blue-500/5 p-3">
+                  <p className="text-xs font-semibold text-blue-400 mb-1">{locale_key === "fi" ? "Ennuste" : "Prediction"}</p>
+                  <p className="text-xs text-foreground-muted leading-relaxed">{d.whyPronatPrediction}</p>
+                </div>
+                <div className="flex-1 rounded-lg border border-red-500/20 bg-red-500/5 p-3">
+                  <p className="text-xs font-semibold text-red-400 mb-1">{locale_key === "fi" ? "Falsifiointi" : "Falsification"}</p>
+                  <p className="text-xs text-foreground-muted leading-relaxed">{d.whyPronatFalsification}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Biological floor */}
+            <div className="mt-10 max-w-3xl">
+              <h3 className="text-base font-semibold mb-3">{d.bioFloorTitle}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+                {d.bioFloorText}
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+                {d.bioFloorTimeline.map((row: { year: string; value: string; note: string }) => (
+                  <div
+                    key={row.year}
+                    className="rounded-lg border border-card-border bg-card-bg p-3 text-center"
+                  >
+                    <p className="text-xs text-foreground-muted">{row.year}</p>
+                    <p className="text-lg font-bold font-mono-num">{row.value}</p>
+                    {row.note && (
+                      <p className="text-[10px] text-foreground-muted/70 mt-1">{row.note}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-foreground-muted leading-relaxed italic border-l-2 border-red-500/30 pl-3">
+                {d.bioFloorConsequence}
+              </p>
+            </div>
+
+            {/* Six-factor summary */}
+            <div className="mt-10 max-w-4xl">
+              <h3 className="text-base font-semibold mb-2">{d.sixFactorTitle}</h3>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-2 max-w-3xl">
+                {d.sixFactorLead}
+              </p>
+              <SixFactorSummary locale={locale_key} />
+            </div>
           </section>
 
           {/* Extended Disease Cascades 9-18 */}
