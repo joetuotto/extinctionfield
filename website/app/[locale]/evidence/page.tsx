@@ -18,6 +18,7 @@ import {
   ShieldCheck,
   Users,
   Scale,
+  FlaskConical,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
@@ -377,6 +378,12 @@ const SUB_PAGES = [
     icon: Users,
     en: { title: "Natural Control Groups: 9 Low-EMF Communities", desc: "Systematic comparison of pre-industrial and technology-refusing populations. Tsimane→Mosetén dose-response gradient, myopia five-level gradient, 11/16 disease cascades confirmed." },
     fi: { title: "Luonnolliset kontrolliryhmät: 9 matalan EMF:n yhteisöä", desc: "Esi-teollisten ja teknologian kieltävien populaatioiden systemaattinen vertailu. Tsimane→Mosetén annos-vastegradientti, likitaitteisuuden viisitasoinen gradientti, 11/16 sairauskaskadia vahvistettu." },
+  },
+  {
+    slug: "replication",
+    icon: FlaskConical,
+    en: { title: "Resolution of the Replication Crisis", desc: "Why EMF biology seems inconsistent, Blackman's five confounds, and the five-parameter standard that resolves 50 years of contradictory results." },
+    fi: { title: "Replikaatiokriisin ratkaisu", desc: "Miksi EMF-biologia vaikuttaa ristiriitaiselta, Blackmanin viisi sekoittavaa tekijää ja viiden parametrin standardi joka ratkaisee 50 vuoden ristiriitaiset tulokset." },
   },
 ] as const;
 

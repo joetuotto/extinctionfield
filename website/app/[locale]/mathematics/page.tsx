@@ -1690,6 +1690,11 @@ export function MathematicsSections({ locale }: { locale: string }) {
                   {d.s10d7Link}
                 </Link>
               </p>
+              <p className="text-xs text-accent mt-1">
+                <Link href={`${lp}/evidence/pharmacology`} className="hover:underline">
+                  {lp.startsWith("/fi") ? "→ Farmakologinen evidenssi: 8 lääkeryhmän konvergenssi" : "→ Pharmacological evidence: 8 drug class convergence"}
+                </Link>
+              </p>
             </Derivation>
           </section>
 

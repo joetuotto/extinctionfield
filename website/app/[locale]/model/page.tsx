@@ -1134,6 +1134,11 @@ export default async function ModelPage({
               <p className="text-xs text-foreground-muted mt-3 italic leading-relaxed border-l-2 border-amber-500/30 pl-3">{d.tcbmWeightNote}</p>
               <p className="text-sm text-foreground-muted mt-4 leading-relaxed">{d.tcbmCrossSectional}</p>
               <p className="text-xs text-foreground-muted mt-3 italic leading-relaxed">{d.tcbmWolframPlanned}</p>
+              <p className="mt-4 text-sm">
+                <Link href={`${prefix}/evidence/pharmacology`} className="text-accent hover:underline">
+                  {locale_key === "fi" ? "Farmakologinen evidenssi: 8 lääkeryhmää konvergoivat BERM-reiteillä →" : "Pharmacological evidence: 8 drug classes converging on BERM pathways →"}
+                </Link>
+              </p>
             </div>
           </CollapsibleSection>
 

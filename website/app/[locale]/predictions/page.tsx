@@ -2178,6 +2178,11 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             </article>
           ))}
         </div>
+        <p className="mt-4 text-sm">
+          <Link href={`/${locale}/evidence/pharmacology`} className="text-accent hover:underline">
+            {locale === "fi" ? "Farmakologinen evidenssi →" : "Pharmacological evidence →"}
+          </Link>
+        </p>
       </section>
 
       {/* Modulome integration predictions MOD-1 through MOD-6 */}
