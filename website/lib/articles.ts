@@ -72,6 +72,7 @@ export const ARTICLES: Article[] = [
     subtitleFi:
       "Miksi testosteronin lasku ja kortisolin nousu tuottavat käyttäytymisen suppression joka on suurempi kuin kummankaan yksinään",
     icon: "human",
+    heroImage: "/images/testosterone-molecule.png",
     publishedDate: "2026-08-25",
     readingTimeMinutes: 11,
     tags: ["testosterone", "cortisol", "societal", "dual-hormone"],
