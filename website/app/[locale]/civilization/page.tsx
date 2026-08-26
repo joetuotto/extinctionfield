@@ -589,6 +589,19 @@ const COPY = {
       },
     ],
 
+    lostRecoveryTitle: "The Lost Recovery Window",
+    lostRecoveryDesc: "For the first time in human history, there is no period in the day without significant EMF exposure. The power grid runs 24/7. WiFi routers are never turned off. LED lights operate until sleep. The phone sits on the bedside table through the night. Bluetooth devices maintain connections continuously.",
+    lostRecoveryMechanism: "CaMKII dephosphorylation — the molecular recovery process — requires time without Ca²⁺ overload. Pre-electrification humans had 22+ hours per day without any artificial EMF. Modern urbanites have approximately zero. The COVID lockdown demonstrated this experimentally: 24 hours/day at home with WiFi + LED + multiple devices eliminated the last recovery window — and T2D acceleration jumped from 2.90% to 3.52%/yr.",
+    lostRecoveryIntervention: "This is also the most actionable insight from the model: an EMF-free bedroom is the single simplest intervention. No dietary change, no medication, no lifestyle overhaul — just remove the router, use airplane mode at night, and switch to incandescent light before sleep.",
+
+    buildingTitle: "Concrete Cities: Built-In EMF Amplification",
+    buildingDesc: "Urbanization is not just a social change — it is an electromagnetic change. Reinforced concrete reflects RF internally (steel rebar acts as a partial Faraday cage in reverse), increasing indoor field strength. Wood is RF-transparent — the field passes through and dissipates. When rural populations moved to concrete cities, they simultaneously increased their ambient EMF exposure through a mechanism no one was measuring.",
+    buildingEvidence: "Wood rooms produce better sleep, lower heart rate, and better cognitive performance compared to concrete rooms (BIOBUILDS 2026). Conventional explanation: biophilia. BERM addition: RF reflection coefficient. Both may be correct — but the EMF mechanism is testable and the biophilia mechanism is not.",
+
+    animalsFellTitle: "The Animals Fell First",
+    animalsFellDesc: "If EMF is affecting biology at fundamental Ca²⁺ and CRY levels, then species with higher sensitivity should have declined first — and they did. Frogs (moist skin, direct Ca²⁺ coupling) began declining around 1987 as GSM rolled out. Bees (CRY-dependent navigation) collapsed in 2006 as cell towers reached rural areas. Insect biomass dropped 75% over 27 years. Bird populations followed. Mammals — including humans — are the least sensitive due to dry skin and large body mass, but the effects are cumulative over long lifespans.",
+    animalsFellAnalogy: "The canary-in-the-coal-mine analogy is not metaphorical — it is mechanistic. The same ion channels, the same magnetoreceptors, the same Ca²⁺ signaling. The animals did not decline for separate reasons that happen to correlate. They declined through the same mechanism at different sensitivity thresholds.",
+
     s10title: "Epistemic Boundaries",
     s10claims: [
       "Seven RCTs establish causal links between testosterone and specific behaviors in men.",
@@ -617,7 +630,7 @@ const COPY = {
     subtitle:
       "Mitä tapahtuu yhteiskunnalle, kun molempien sukupuolten hormonaalinen perusta muuttuu samanaikaisesti?",
     heroLead:
-      "Testosteroni, estrogeeni, dopamiini, kortisoli, oksitosiini ja melatoniini eivät ole pelkkiä lääketieteellisiä termejä. Ne ovat motivaation, luottamuksen, kiintymyksen, unen, lisääntymisen ja kognition biologinen infrastruktuuri. Kun sähkömagneettisest kentät häiritsevät näitä hormoneja sääteleviä kalsiumkanavia, vaikutukset eteenvät molekyyleistä soluihin, elimiin, yksilöihin, perheisiin ja instituutioihin.",
+      "Testosteroni, estrogeeni, dopamiini, kortisoli, oksitosiini ja melatoniini eivät ole pelkkiä lääketieteellisiä termejä. Ne ovat motivaation, luottamuksen, kiintymyksen, unen, lisääntymisen ja kognition biologinen infrastruktuuri. Kun sähkömagneettiset kentät häiritsevät näitä hormoneja sääteleviä kalsiumkanavia, vaikutukset etenevät molekyyleistä soluihin, elimiin, yksilöihin, perheisiin ja instituutioihin.",
     heroTrail:
       "Tämä sivu jäljittää tuon etenemisen — seitsemästä satunnaistetusta kontrolloidusta tutkimuksesta väestötason käyttäytymisdataan ja sivilisaation muutoksen dynamiikkaan.",
     levelNote:
@@ -631,7 +644,7 @@ const COPY = {
     maleSecondary: "Dopamiini ↓ (VTA Cav1.3)",
     maleTertiary: "Kortisoli ↑ (HPA-aktivaatio)",
     maleReproductive:
-      "Siittiiöt: −62 % pitoisuus (Levine 2023), DNA-fragmentaatio ↑, liikkuvuus ↓. Testosteroni spermatogeneesikynnyksen alapuolella arviolta ~2070.",
+      "Siittiöt: −62 % pitoisuus (Levine 2023), DNA-fragmentaatio ↑, liikkuvuus ↓. Testosteroni spermatogeneesikynnyksen alapuolella arviolta ~2070.",
     femaleTitle: "Naisten häiriöprofiili",
     femalePrimary: "Estrogeeni/progesteronisyklin häiriö",
     femaleSecondary: "Kortisoli ↑↑ (vahvistettu estrogeenisyklillä)",
@@ -677,9 +690,9 @@ const COPY = {
         mechanism:
           "Munasarjan VGCC → follikulogeneesi häiriintyy. Granuloosisolun Ca²⁺ → steroidogeneesi muuttuu.",
         behavioral:
-          "Libidovaihtelu ↑, emotionaalinen dysäätely ↑, hedelmallisyysikkuna kapenee",
+          "Libidovaihtelu ↑, emotionaalinen dysäätely ↑, hedelmällisyysikkuna kapenee",
         evidence:
-          "Yüksel 2016: EMF → progesteroni↓, estrogeeni↓ rotilla. Türedi 2016: 900 MHz → munasarjan follikkkelireservi ehtynyt. PCOS: 5–20 % esiintyvyys, kasvussa.",
+          "Yüksel 2016: EMF → progesteroni↓, estrogeeni↓ rotilla. Türedi 2016: 900 MHz → munasarjan follikkelireservi ehtynyt. PCOS: 5–20 % esiintyvyys, kasvussa.",
         magnitude:
           "AMH laskee nuoremmilla naisilla. PCOS-esiintyvyys kasvaa maailmanlaajuisesti.",
       },
@@ -690,14 +703,14 @@ const COPY = {
         behavioral:
           "Ahdistus 2× miesten esiintyvyys. Masennus 2× miesten esiintyvyys. Molemmat kasvavat naisilla nopeammin.",
         evidence:
-          "Lukuisia systemaattisia katsauksia: naiset 2× ahdistus, 2× masennus. Sukuhormonivaihtelu → HPA-sensitisaatio (Li & Graham 2017, Lancet Psychiatry). Neuroinflammaaatio sukupuolierot (PMC12843241, 2025).",
+          "Lukuisia systemaattisia katsauksia: naiset 2× ahdistus, 2× masennus. Sukuhormonivaihtelu → HPA-sensitisaatio (Li & Graham 2017, Lancet Psychiatry). Neuroinflammaatio sukupuolierot (PMC12843241, 2025).",
         magnitude:
           "Naisten masennusprevalenssi kasvaa nopeammin kuin miesten vuodesta 2010 useimmissa maissa.",
       },
       {
         hormone: "Oksitosiini",
         mechanism:
-          "EMF → vagaalitonus ↓ → oksitosiinivapautuminen ↓. Oksitosiini säätelee: luottamusta, kiintymystä, empatiaa, äidillistä käyttäytymistä, pariside-muodostusta.",
+          "EMF → vagaalitonus ↓ → oksitosiinivapautuminen ↓. Oksitosiini säätelee: luottamusta, kiintymystä, empatiaa, äidillistä käyttäytymistä, paristeen muodostusta.",
         behavioral:
           "Luottamus ↓, sosiaalinen kiintymys ↓, äiti-lapsi-kiintymys ↓, parisuhteen muodostuminen ↓, empatia ↓",
         evidence:
@@ -769,30 +782,30 @@ const COPY = {
 
     s4title: "Naisten rinnakkaishäiriö",
     s4lead:
-      "Siinl missä miehet kokevat käyttäytymissuppression kolmoislukon kautta (T↓ × kortisoli↑ × dopamiini↓), naiset kokevat rinnakkaisen mutta erillisen häiriön: emotionaalisen dysäätelyn kortisoliamplifikaation kautta, kiintymyshäiriön oksitosiiinlaskun kautta ja lisääntymishäiriön munasarjojen Ca²⁺-häiriön kautta.",
+      "Siinä missä miehet kokevat käyttäytymissuppression kolmoislukon kautta (T↓ × kortisoli↑ × dopamiini↓), naiset kokevat rinnakkaisen mutta erillisen häiriön: emotionaalisen dysäätelyn kortisoliamplifikaation kautta, kiintymyshäiriön oksitosiinilaskun kautta ja lisääntymishäiriön munasarjojen Ca²⁺-häiriön kautta.",
     s4note:
       "Naiset eivät ole “vähemmän alttiita” EMF:lle kuin miehet. He ovat eri tavalla alttiita — ja naisspesifiset vaikutukset osuvat mekanismeihin, jotka pitävät sosiaalisia rakenteita koossa.",
     s4aTitle: "Kortisoliamplifikaatio",
     s4aBody:
       "Naiset kokevat ahdistusta kaksi kertaa miesten tahtiin ja masennusta kaksi kertaa miesten tahtiin. Tämä ei ole puhtaasti sosiaalista. Estrogeenisykli vahvistaa HPA-akselin reaktiivisuutta: jokaisen kuukautiskierron, raskauden ja perimenopaussin aikana kortisolivaste on biologisesti korostunut. EMF:n aiheuttama HPA-hyperaktivaatio (BERM-reitti D) osuu siksi naisiin kovemmin kuin miehiin — ei siksi että EMF-annos olisi eri, vaan koska biologinen vahvistin (estrogeeni–HPA-kytkentä) on naisspesifinen.",
     s4aPrediction:
-      "EMF:n kasvaessa naisten ahdistuksen/masennuksen sukupuolikuilun pitäisi leventä — ja niin on tapahtunut.",
+      "EMF:n kasvaessa naisten ahdistuksen/masennuksen sukupuolikuilun pitäisi leventyä — ja niin on tapahtunut.",
     s4bTitle: "Oksitosiini ja sosiaalinen koheesio",
     s4bBody:
-      "Oksitosiini säätelee luottamusta, empatiaa, äidillistä kiintymystä, paristeen muodostumista ja sosiaalista yhteistyötä. Sitä vapautuu vagushermon stimulaatiosta, fyysisestä kosketuksesta, katsekontaktista ja imetyksestä. BERM-reitti D häiritsee vagaalitonusta → oksitsisinivapautuminen ↓. Yksilötasolla tämä vähentää kiintymyskapasiteettia. Väestötasolla se rapautttaa luottamuksen infrastruktuuria, jota instituutiot vaativat.",
+      "Oksitosiini säätelee luottamusta, empatiaa, äidillistä kiintymystä, paristeen muodostumista ja sosiaalista yhteistyötä. Sitä vapautuu vagushermon stimulaatiosta, fyysisestä kosketuksesta, katsekontaktista ja imetyksestä. BERM-reitti D häiritsee vagaalitonusta → oksitosiinivapautuminen ↓. Yksilötasolla tämä vähentää kiintymyskapasiteettia. Väestötasolla se rapauttaa luottamuksen infrastruktuuria, jota instituutiot vaativat.",
     s4bData:
-      "Edelman Trust Barometer 2025: luottamus hallitukseen, mediaan, kansalaisjärjestöihin ja työnantajiin on saavuttanut historiallisen pohjan lähes kaikissa demografioissa. Yhdysvaltain entinen pääkirurgi Vivek Murthy julisti yksinäisyyden ”kansanterveyskirisiksi” vuonna 2023.",
+      "Edelman Trust Barometer 2025: luottamus hallitukseen, mediaan, kansalaisjärjestöihin ja työnantajiin on saavuttanut historiallisen pohjan lähes kaikissa demografioissa. Yhdysvaltain entinen pääkirurgi Vivek Murthy julisti yksinäisyyden ”kansanterveyskriisiksi” vuonna 2023.",
     s4bCaveat:
-      "BERM ei väitä EMF:n olevan ainoa syy. Se ehdottaa, että oksitosiinalasku tarjoaa biologisen substraatin, joka tekee yhteiskunnista alttiimpia luottamuksen rapautumiselle sosiaalisista, taloudellisista ja teknologisista syistä.",
+      "BERM ei väitä EMF:n olevan ainoa syy. Se ehdottaa, että oksitosiinilasku tarjoaa biologisen substraatin, joka tekee yhteiskunnista alttiimpia luottamuksen rapautumiselle sosiaalisista, taloudellisista ja teknologisista syistä.",
     s4cTitle: "Munasarjareservi",
     s4cBody:
-      "Prenataali 900 MHz EMF -altistus ehdytti munasarjan follikkelireserviä rottapoikasissa — vähentäen primordiaalisia ja tertiiäärisiä follikkeleita, lisäten atreettisia follikkeleita, vakavaa degeneraatiota (Türedi 2016, PMID 27007703). Pitkäaikainen matkapuhelin- ja WiFi-altistus vähensi plasman progesteronia ja estrogeenia naarasrotilla (Yüksel 2016). PCOS — naisten hedälmättömyyden yleisin syy — sisältää VGCC-välitteisen häiriön neljässä elimessä samanaikaisesti (haima, munasarja, aivolisake, lisämunuainen). Esiintyvyys kasvaa maailmanlaajuisesti.",
+      "Prenataali 900 MHz EMF -altistus ehdytti munasarjan follikkelireserviä rottapoikasissa — vähentäen primordiaalisia ja tertiäärisiä follikkeleita, lisäten atreettisia follikkeleita, vakavaa degeneraatiota (Türedi 2016, PMID 27007703). Pitkäaikainen matkapuhelin- ja WiFi-altistus vähensi plasman progesteronia ja estrogeenia naarasrotilla (Yüksel 2016). PCOS — naisten hedelmättömyyden yleisin syy — sisältää VGCC-välitteisen häiriön neljässä elimessä samanaikaisesti (haima, munasarja, aivolisake, lisämunuainen). Esiintyvyys kasvaa maailmanlaajuisesti.",
     s4cNote:
-      "Naisten hedelmallisyysikkuna on biologisesti kiinteä ja uusiutumaton. Toisin kuin siittiiöt (jotka uusiutuvat 74 päivässä), munasolut muodostuvat ennen syntymää ja ehtyvat peruuttamattomasti. EMF:n aiheuttama munasarjavaurio on siksi kumulatiivista ja pysyvää tavalla, joka ei koske miesten vaurioita.",
+      "Naisten hedelmällisyysikkuna on biologisesti kiinteä ja uusiutumaton. Toisin kuin siittiöt (jotka uusiutuvat 74 päivässä), munasolut muodostuvat ennen syntymää ja ehtyvat peruuttamattomasti. EMF:n aiheuttama munasarjavaurio on siksi kumulatiivista ja pysyvää tavalla, joka ei koske miesten vaurioita.",
 
     s5title: "Yhdistelmävaikutukset",
     s5lead:
-      "Yksilötason hormonaaaliset muutokset muuttuvat sivilisatorisiksi, kun ne vaikuttavat jokaisen inhimillisen dyadin molempiin osapuoliin samanaikaisesti. Paristeen muodostuminen vaatii miehen joka lähestyy ja naisen joka luottaa. Lisääntyminen vaatii toimivat siittiiöt ja toimivat munasolut. Lasten kasvattaminen vaatii isän panostuksen ja äidin kiintymyksen. Kun EMF häiritsee molempia puolia samanaikaisesti, tulos ei ole summautuva — se on kertautuva.",
+      "Yksilötason hormonaaliset muutokset muuttuvat sivilisatorisiksi, kun ne vaikuttavat jokaisen inhimillisen dyadin molempiin osapuoliin samanaikaisesti. Paristeen muodostuminen vaatii miehen, joka lähestyy, ja naisen, joka luottaa. Lisääntyminen vaatii toimivat siittiöt ja toimivat munasolut. Lasten kasvattaminen vaatii isän panostuksen ja äidin kiintymyksen. Kun EMF häiritsee molempia puolia samanaikaisesti, tulos ei ole summautuva — se on kertautuva.",
 
     s5aTitle: "Parinmuodostuksen bifurkaatio",
     s5aMaleDeficit:
@@ -810,28 +823,28 @@ const COPY = {
       "Deittisovellusten käyttö kasvaa mutta suhteiden muodostuminen vähenee",
       "Ensimmäisen avioliiton keskiikä nousee",
       "Naimattomien osuus 40-vuotiaista kasvaa",
-      "Japani: 43 % 18–34-vuotiaista miehistii neitsyitä (2015)",
-      "Etelä-Korea: syntyyvyys 0,72 (2024)",
+      "Japani: 43 % 18–34-vuotiaista miehistä neitsyitä (2015)",
+      "Etelä-Korea: syntyvyys 0,72 (2024)",
     ],
 
-    s5bTitle: "Multiplikatiivinen hedelmallisyysromahdus",
+    s5bTitle: "Multiplikatiivinen hedelmällisyysromahdus",
     s5bFormula:
-      "Hedelmallisyys = f(siittiiöt) × g(munasolu) × h(ajoitus) × j(motivaatio)",
+      "Hedelmällisyys = f(siittiöt) × g(munasolu) × h(ajoitus) × j(motivaatio)",
     s5bFactors: [
-      "f(siittiiöt): −62 % pitoisuus (Levine 2023)",
+      "f(siittiöt): −62 % pitoisuus (Levine 2023)",
       "g(munasolu): AMH laskee, PCOS kasvaa, reservi ehtyy aiemmin",
       "h(ajoitus): Vuorokausirytmihäiriö → ovulaation ajoitusvirheet",
       "j(motivaatio): T↓ (miehet) × OT↓ (naiset) → vähemmän yrityksiä",
     ],
     s5bCompound:
-      "Jos jokainen tekijä laskee 30 %, kokonaishedelmallisyys laskee 76 % (0,7⁴ = 0,24). Tämä selittää miksi kokonaishedelmallisyysluku laskee nopeammin kuin mikään yksittäinen tekijä ennustaisi — ja miksi pronataltisetpolitiikat epäonnistuvat. Politiikka osoittaa j(motivaatio)-tekijään rahalla. Se ei voi osoittaa f-, g- tai h-tekijöitä — jotka ovat biologisia.",
+      "Jos jokainen tekijä laskee 30 %, kokonaishedelmällisyys laskee 76 % (0,7⁴ = 0,24). Tämä selittää, miksi kokonaishedelmällisyysluku laskee nopeammin kuin mikään yksittäinen tekijä ennustaisi — ja miksi pronatalistiset politiikat epäonnistuvat. Politiikka osoittaa j(motivaatio)-tekijään rahalla. Se ei voi osoittaa f-, g- tai h-tekijöitä — jotka ovat biologisia.",
 
     s5cTitle: "Lapsen kehityskaskadi",
     s5cBurdens: [
       {
         title: "Isän epigeneettinen kuorma",
         detail:
-          "Isän EMF-vaurioituneen siittiiön metyloomi → muuttunut geeniekspressio jälkeläisissä. Siittiiöiden DNA-fragmentaatio → kehitysepävakaus.",
+          "Isän EMF-vaurioituneen siittiön metyloomi → muuttunut geeniekspressio jälkeläisissä. Siittiöiden DNA-fragmentaatio → kehitysepävakaus.",
       },
       {
         title: "Äidin hormonaalinen ympäristö",
@@ -845,7 +858,7 @@ const COPY = {
       },
     ],
     s5cSpiral:
-      "Jokainen sukupolvi aloittaa heikemmaltä lähtötasolta kuin edellinen. CaMKII-välitteinen sensitisaatio tarkoittaa, että jokainen sukupolvi on myös herkempi samalle EMF-annokselle. Tämä tuottaa kiihtyyvän kierteen.",
+      "Jokainen sukupolvi aloittaa heikommalta lähtötasolta kuin edellinen. CaMKII-välitteinen sensitisaatio tarkoittaa, että jokainen sukupolvi on myös herkempi samalle EMF-annokselle. Tämä tuottaa kiihtyvän kierteen.",
 
     s5dTitle: "Institutionaalinen rapautuminen",
     s5dLead:
@@ -855,13 +868,13 @@ const COPY = {
     s5dMaintaining:
       "Ylläpito (historiallisesti OT-korreloitu): luottamus, yhteistyö, empatia, konfliktin ratkaisu, hoiva, sosiaalisten normien valvonta, sisäryhmäkoheesio.",
     s5dConclusion:
-      "Instituutio, jota ei rakenneta eikä ylläpidetä, ei romahda dramaattisesti — se rapautuu. Palvelut heikkenevät. Luottamus erodoituu. Pätevyys vähenee. Standardit laskevat. Tämä ei näy kriisnä — se näkyy hitaana laadun menetyksnä kaikessa samanaikaisesti.",
+      "Instituutio, jota ei rakenneta eikä ylläpidetä, ei romahda dramaattisesti — se rapautuu. Palvelut heikkenevät. Luottamus murenee. Pätevyys vähenee. Standardit laskevat. Tämä ei näy kriisinä — se näkyy hitaana laadun menetyksenä kaikessa samanaikaisesti.",
 
-    s5eTitle: "Kiihtyyvä kierre",
+    s5eTitle: "Kiihtyvä kierre",
     generations: [
       {
         label: "Sukupolvi 1 (syntyneet ~1940–1960)",
-        emf: "Matala (ennen massasähköistymiistä)",
+        emf: "Matala (ennen massasähköistymistä)",
         tLevel: "Lähtötaso (~550 ng/dL 30-vuotiaana)",
         otLevel: "Lähtötaso",
         tfr: "2,5–3,5",
@@ -897,31 +910,31 @@ const COPY = {
       },
     ],
     generationInsight:
-      "Jokainen sukupolvi on herkempi samalle EMF-annokselle (CaMKII-sensitisaatio) ja aloittaa heikemmaltä hormonaaliselta lähtötasolta (epigeneettinen transmissio). Kierre kiihtyy ilman EMF:n kasvua — mutta EMF kasvaa (5G, IoT, LED IF -emissiot).",
+      "Jokainen sukupolvi on herkempi samalle EMF-annokselle (CaMKII-sensitisaatio) ja aloittaa heikommalta hormonaaliselta lähtötasolta (epigeneettinen transmissio). Kierre kiihtyy ilman EMF:n kasvua — mutta EMF kasvaa (5G, IoT, LED IF -emissiot).",
 
     s6title: "Kaksitoista ennustetta, kaksitoista havaintoa",
     s6lead:
-      "BERM ennustaa spesifejä käyttäytymis- ja yhteiskuntamuutoksia hormonaalimallnsa pohjalta. Jokainen ennuste perustuu RCT-evidenssiin hormonilinkistä; jokainen havainto viittaa väestötason dataan, joka on yhdenmukainen ennusteen kanssa.",
+      "BERM ennustaa spesifejä käyttäytymis- ja yhteiskuntamuutoksia hormonaalimallinsa pohjalta. Jokainen ennuste perustuu RCT-evidenssiin hormonilinkistä; jokainen havainto viittaa väestötason dataan, joka on yhdenmukainen ennusteen kanssa.",
     predictions: [
       {
         prediction: "Miesten statushakuisuus vähenee",
         basis: "T → statusmotivaatio (Dreher 2016, n=121)",
         observed:
-          "Yrittajyysaste laskee, ‘quiet quitting’, vähentynyt uratavoitteisuus kyselyissä",
+          "Yrittäjyysaste laskee, ‘quiet quitting’, vähentynyt uratavoitteisuus kyselyissä",
         consistent: true,
       },
       {
         prediction: "Miesten riskinotto vähenee",
         basis: "T → kilpailullinen riski (Competition 2024, n=220)",
         observed:
-          "Yritysperustanta laskee, vähemmän fyysisiä riskiaktiviteetteja, kasvanut riskinkaihtaminen",
+          "Yritysten perustaminen laskee, vähemmän fyysisiä riskiaktiviteetteja, kasvanut riskinkaihtaminen",
         consistent: true,
       },
       {
         prediction: "Miesten seksuaalinen lähestyminen vähenee",
         basis: "T → seksuaalinen motivaatio (Goetz 2024, n=139)",
         observed:
-          "Seksittmyys kasvaa, parisuhteen aloittaminen vähenee, Japani 43 % neitsyitä 18–34",
+          "Seksittömyys kasvaa, parisuhteen aloittaminen vähenee, Japani 43 % neitsyitä 18–34",
         consistent: true,
       },
       {
@@ -942,14 +955,14 @@ const COPY = {
         prediction: "Miesten provokaatiovaste vähenee",
         basis: "T → reaktiivinen aggressio (Carré 2017, n=308)",
         observed:
-          "Väkivaltalrikollisuus laskee, konfrontaatiovalmius vähenee, konfliktien välttely",
+          "Väkivaltarikollisuus laskee, konfrontaatiovalmius vähenee, konfliktien välttely",
         consistent: true,
       },
       {
         prediction: "Miesten kognitiivinen tyyli siirtyy harkinnaan",
         basis: "T → vaistonvaraisuus harkinnan yli (Nave 2018, n=243)",
         observed:
-          "Päätösparalyysi lisääntyy, analyysihalpaus, spontaani toiminta vähenee",
+          "Päätösparalyysi lisääntyy, analyysihalvaus, spontaani toiminta vähenee",
         consistent: true,
       },
       {
@@ -964,7 +977,7 @@ const COPY = {
         basis:
           "Estrogeeni vahvistaa HPA-reaktiivisuutta. EMF → kortisoli↑ osuu naisiin kovemmin.",
         observed:
-          "Naiset 2× ahdistus, 2× masennus. Kuilu levenee 2010 jälkeen. Teiniyttojen mielenterveysriisi ~2012 lähtien.",
+          "Naiset 2× ahdistus, 2× masennus. Kuilu levenee 2010 jälkeen. Teinityttöjen mielenterveyskriisi ~2012 lähtien.",
         consistent: true,
       },
       {
@@ -978,17 +991,17 @@ const COPY = {
       {
         prediction: "PCOS-esiintyvyys kasvaa EMF-adoption myötä",
         basis:
-          "PCOS = 4 elimen VGCC-konvergenssi (haima + munasarja + aivolisake + lisaamunuainen).",
+          "PCOS = 4 elimen VGCC-konvergenssi (haima + munasarja + aivolisake + lisämunuainen).",
         observed:
-          "PCOS 5–20 % ja kasvussa. Naisten hedelmattömyyden yleisin syy. Korreloi metabolisen syndrooman kanssa.",
+          "PCOS 5–20 % ja kasvussa. Naisten hedelmättömyyden yleisin syy. Korreloi metabolisen syndrooman kanssa.",
         consistent: true,
       },
       {
         prediction: "Jokainen sukupolvi herkempi kuin edellinen",
         basis:
-          "CaMKII → Cav3.2-kynnys ↓ (PMC9913649). Epigeneettinen transmissio (siittiiömetyloomi).",
+          "CaMKII → Cav3.2-kynnys ↓ (PMC9913649). Epigeneettinen transmissio (siittiömetyloomi).",
         observed:
-          "Mielenterveyskrriisi alkaa aiemmin jokaisessa kohortissa. ASD/ADHD-prevalenssi kasvaa sukupolvittain. Puberteetti alkaa aiemmin tytöillä.",
+          "Mielenterveyskriisi alkaa aiemmin jokaisessa kohortissa. ASD/ADHD-prevalenssi kasvaa sukupolvittain. Puberteetti alkaa aiemmin tytöillä.",
         consistent: true,
       },
     ],
@@ -1007,7 +1020,7 @@ const COPY = {
     spolarExplain:
       "Tämä ei ole tekopyhyyttä. Se on biologiaa. Matala testosteroni nostaa autenttisen konfrontaation kynnystä. Digitaaliset ympäristöt laskevat konfrontaation sosiaalisen kustannuksen lähelle nollaa. Biologisen kynnyksen ja ympäristökustannuksen epäsuhta tuottaa kuvion: rohkea verkossa, hiljainen kasvotusten.",
     spolarPrediction:
-      "BERM-ennuste: väestöissä joilla on korkeampi keskimääräinen T (esim. matala-EMF-yhteisöt), verkko- ja kasvokkais-käyttäytymisen välinen ero pitäisi olla pienempi.",
+      "BERM-ennuste: väestöissä, joilla on korkeampi keskimääräinen T (esim. matala-EMF-yhteisöt), verkko- ja kasvokkais-käyttäytymisen välinen ero pitäisi olla pienempi.",
     spolarPhysical: "Fyysinen ympäristö",
     spolarPhysicalThreshold: "Korkea (kasvokkais sosiaalinen kustannus)",
     spolarPhysicalBehavior: "Konformismi, itsesensuri, myöntyminen",
@@ -1015,15 +1028,15 @@ const COPY = {
     spolarDigital: "Digitaalinen ympäristö",
     spolarDigitalThreshold: "Lähellä nollaa (anonymiteetti, etäisyys)",
     spolarDigitalBehavior: "Raivo, polarisaatio, konfrontaatio",
-    spolarDigitalRct: "Carré 2017: provokaatiovaste säilyy kun kustannus on matala",
+    spolarDigitalRct: "Carré 2017: provokaatiovaste säilyy, kun kustannus on matala",
 
     ssafetyTitle: "Turvallisuushakuisuus: hormonaalinen kynnys, ei arvovalinta",
     ssafetyBody:
-      "Riskinotto vähenee testosteronin myötä (Competition RCT 2024, n=333). Ahdistus kasvaa kortisolin myötä (kaksoishormonimeta, n=8 538). Uhkaherkkyys kasvaa kun molemmat muuttuvat samanaikaisesti. Väestötasolla tämä tuottaa yhteiskunnan, joka kokee enemmän tilanteita uhkaavina — ei siksi että ympäristö olisi vaarallisempi (väkivaltarikollisuus on historiallisen matalalla) vaan koska biologinen kynnys uhkan havaitsemiselle on laskenut.",
+      "Riskinotto vähenee testosteronin myötä (Competition RCT 2024, n=333). Ahdistus kasvaa kortisolin myötä (kaksoishormonimeta, n=8 538). Uhkaherkkyys kasvaa, kun molemmat muuttuvat samanaikaisesti. Väestötasolla tämä tuottaa yhteiskunnan, joka kokee enemmän tilanteita uhkaavina — ei siksi että ympäristö olisi vaarallisempi (väkivaltarikollisuus on historiallisen matalalla) vaan koska biologinen kynnys uhkan havaitsemiselle on laskenut.",
     ssafetyParadox:
       "Tämä selittää muuten paradoksaalisen kuvion: ihmiskunnan historian turvallisimmat yhteiskunnat raportoivat korkeinta ahdistusta. Objektiivinen vaara on laskenut. Subjektiivinen uhka on noussut. Näiden välinen ero on hormonaalinen muutos.",
     ssafetyCreep:
-      "Kun uhkahavainnointi kasvaa ilman todellisen uhkan kasvua, tuloksena on se mitä psykologit kutsuvat \"concept creepiksi\": haittaan liittyvien käsitteiden laajeneminen kattamaan aiemmin neutraaleja ilmiöitä. Sanat muuttuvat väkivallaksi. Erimielisyys muuttuu aggressioksi. Epämukavuus muuttuu traumaksi. Tämä ei ole moraalista edistystä eikä moraalista rappeutumista. Se on uudelleenkalibtoitu uhkantunnistusjärjestelmä joka toimii eri hormonaalisella substraatilla.",
+      "Kun uhkahavainnointi kasvaa ilman todellisen uhkan kasvua, tuloksena on se mitä psykologit kutsuvat \"concept creepiksi\": haittaan liittyvien käsitteiden laajeneminen kattamaan aiemmin neutraaleja ilmiöitä. Sanat muuttuvat väkivallaksi. Erimielisyys muuttuu aggressioksi. Epämukavuus muuttuu traumaksi. Tämä ei ole moraalista edistystä eikä moraalista rappeutumista. Se on uudelleenkalibroitu uhkantunnistusjärjestelmä, joka toimii eri hormonaalisella substraatilla.",
 
     sinstitutionTitle: "Institutionaalinen rapautuminen: miksi kaikki heikkenee hieman",
     sinstitutionBody:
@@ -1043,11 +1056,11 @@ const COPY = {
       "Fyysinen kontakti ja yhteisö (oksitosiinin palautus)",
     ],
     sfixableConclusion:
-      "Mikään näistä ei vaadi kenenkään muuttavan uskomuksiaan. Ne vaativat sähkömagneettisen ympäristön muuttamista ja hormoneja säätelevien biologisten järjestelmien tukemista. Jos edes 20–30 % nykyisestä motivaation, luottamuksen ja sosiaalisen koheesion kriisistä on biologista eikä ideologista, se on 20–30 % joka voidaan osoittaa ilman poliittista konfliktia. Tämä on BERM-mallin käytännöllisesti tärkein implikaatio: ei se, että sivilisaatio on tuomittu, vaan se, että osa sen rapautumisesta johtuu spesifistä, tunnistettavasta ja mahdollisesti palautettavissa olevasta syystä.",
+      "Mikään näistä ei vaadi kenenkään muuttavan uskomuksiaan. Ne vaativat sähkömagneettisen ympäristön muuttamista ja hormoneja säätelevien biologisten järjestelmien tukemista. Jos edes 20–30 % nykyisestä motivaation, luottamuksen ja sosiaalisen koheesion kriisistä on biologista eikä ideologista, se on 20–30 %, joka voidaan osoittaa ilman poliittista konfliktia. Tämä on BERM-mallin käytännöllisesti tärkein implikaatio: ei se, että sivilisaatio on tuomittu, vaan se, että osa sen rapautumisesta johtuu spesifistä, tunnistettavasta ja mahdollisesti palautettavissa olevasta syystä.",
 
     shistoryTitle: "Historianluenta hormonaalisen linssin läpi",
     shistoryBody:
-      "Jokainen sukupolvi kokee saman objektiivisen maailman eri hormonaalisen substraatin läpi. Mies vuonna 1960 testosteronilla 600 ng/dL, normaalilla kortisolilla ja ehjällä dopaminergisellä signaloinnilla kokee uravastoinkäymisen haasteena joka voitetaan. Mies vuonna 2024 testosteronilla 350 ng/dL, kohonneella kortisolilla ja vähentyneellä dopaminergisellä tonuksella kokee saman vastoinkäymisen uhkana jota vältetään. Heidän arvonsa voivat olla identtiset. Heidän biologinen kykynsä toimia noiden arvojen mukaisesti ei ole.",
+      "Jokainen sukupolvi kokee saman objektiivisen maailman eri hormonaalisen substraatin läpi. Mies vuonna 1960 testosteronilla 600 ng/dL, normaalilla kortisolilla ja ehjällä dopaminergisellä signaloinnilla kokee uravastoinkäymisen haasteena, joka voitetaan. Mies vuonna 2024 testosteronilla 350 ng/dL, kohonneella kortisolilla ja vähentyneellä dopaminergisellä tonuksella kokee saman vastoinkäymisen uhkana, jota vältetään. Heidän arvonsa voivat olla identtiset. Heidän biologinen kykynsä toimia noiden arvojen mukaisesti ei ole.",
     shistoryOlder:
       "Kun vanhemmat sukupolvet sanovat \"me vain tehtiin se\", he eivät kuvaile ylivertaista luonnetta. He kuvailevat eri hormonaalista ympäristöä, jossa toiminnan kynnys oli matalampi ja välttelyn kynnys korkeampi.",
     shistoryYounger:
@@ -1057,19 +1070,19 @@ const COPY = {
 
     sideologyTitle: "Ideologia alavirrassa",
     sideologyBody:
-      "Sama idea — \"turvallisuus on tärkeää\" — tuottaa eri poliittisia tuloksia riippuen sen väestön hormonaalisesta substraatista joka sitä kannattaa.",
+      "Sama idea — \"turvallisuus on tärkeää\" — tuottaa eri poliittisia tuloksia riippuen sen väestön hormonaalisesta substraatista, joka sitä kannattaa.",
     sideologyHigh:
       "T=500 ng/dL, kortisoli=normaali: \"Turvallisuus on tärkeää\" → rakenna turvallinen infrastruktuuri, valvo lakeja, kohtaa uhkat suoraan.",
     sideologyLow:
-      "T=320 ng/dL, kortisoli=koholla: \"Turvallisuus on tärkeää\" → eliminoi kaikki riski, laajenna haitan määritelmää, vältä konfrontaatiota poistamalla konfrontaation aiheuttava ärsyke.",
+      "T=320 ng/dL, kortisoli=koholla: \"Turvallisuus on tärkeää\" → poista kaikki riski, laajenna haitan määritelmää, vältä konfrontaatiota poistamalla konfrontaation aiheuttava ärsyke.",
     sideologyExplain:
-      "Idea ei ole muuttunut. Biologinen kyky toteuttaa sitä on. Tämä ei ole vasemmisto vs oikeisto. Se ei ole progressiivinen vs konservatiivinen. Se on biologinen muutos toteutuskynnksessä samoille arvoille, jotka molemmat puolet suurelta osin jakavat. Molemmat puolet haluavat turvallisuutta. Molemmat puolet haluavat oikeudenmukaisuutta. Molemmat puolet haluavat mahdollisuuksia. Erimielisyys koskee sitä miten — ja \"miten\" on moderoitu hormonaalisilla kynnyksillä.",
+      "Idea ei ole muuttunut. Biologinen kyky toteuttaa sitä on. Tämä ei ole vasemmisto vs oikeisto. Se ei ole progressiivinen vs konservatiivinen. Se on biologinen muutos toteutuskynnyksessä samoille arvoille, jotka molemmat puolet suurelta osin jakavat. Molemmat puolet haluavat turvallisuutta. Molemmat puolet haluavat oikeudenmukaisuutta. Molemmat puolet haluavat mahdollisuuksia. Erimielisyys koskee sitä miten — ja \"miten\" on moderoitu hormonaalisilla kynnyksillä.",
     sideologyTestable:
       "Tämä on testattavissa. Jos poliittiset asenteet turvallisuuteen, riskiin ja auktoriteettiin korreloivat yksilön hormoniprofiilien (T, kortisoli, OT) kanssa demografisten tekijöiden ja ilmoitetun ideologian vakioinnin jälkeen, biologisen moderoinnin hypoteesi saa tukea. Useat tutkimukset ovat löytäneet juuri tämän: testosteroni korreloi poliittisten asenteiden kanssa auktoriteettiin, kilpailuun ja tulonjakoon eri kulttuureissa.",
 
     s7title: "Rekursiivinen ennuste",
     s7body:
-      "BERM tekee epätavallisen ennusteen: sen oma vastaanotto on todistetta sen teesistä. Jos testosteronilelasku vähentää riskinottoa, kilpailuviettiä ja autenttista itseilmaisua väestötasolla, tiedeyhteisn — joka koostuu samojen hormonaalisten olosuhteiden alaisista ihmisistä — pitäisi osoittaa vähentynyt halukkuus haastaa konsensusta, tutkia kiistanalaisia suuntia ja puolustaa epäsuosittuja tuloksia. Malli ennustaa, että EMF-biovaikutustutkimus on alirahoitettua, stigmatisoitua ja institutionaalisesti torpattua — ei siksi että evidenssi olisi heikkoa, vaan koska intellektuaalista riskinottoa ajava hormonaalinen substraatti vähenee. Tämä on testattavissa: EMF-biovaikutustutkimuksen rahoitusosuuden NIH/ERC-kokonaisrahoituksesta pitäisi laskea, ja alan tutkijoiden pitäisi raportoida kasvavia uraseuraamuksia positiivisten tulosten julkaisemisesta.",
+      "BERM tekee epätavallisen ennusteen: sen oma vastaanotto on todistetta sen teesistä. Jos testosteronilasku vähentää riskinottoa, kilpailuviettiä ja autenttista itseilmaisua väestötasolla, tiedeyhteisön — joka koostuu samojen hormonaalisten olosuhteiden alaisista ihmisistä — pitäisi osoittaa vähentynyt halukkuus haastaa konsensusta, tutkia kiistanalaisia suuntia ja puolustaa epäsuosittuja tuloksia. Malli ennustaa, että EMF-biovaikutustutkimus on alirahoitettua, stigmatisoitua ja institutionaalisesti torpattua — ei siksi että evidenssi olisi heikkoa, vaan koska intellektuaalista riskinottoa ajava hormonaalinen substraatti vähenee. Tämä on testattavissa: EMF-biovaikutustutkimuksen rahoitusosuuden NIH/ERC-kokonaisrahoituksesta pitäisi laskea, ja alan tutkijoiden pitäisi raportoida kasvavia uraseuraamuksia positiivisten tulosten julkaisemisesta.",
 
     s8title: "Dopaminerginen mieli",
     s8body:
@@ -1077,7 +1090,7 @@ const COPY = {
 
     s9title: "Testattavat ennusteet",
     s9lead:
-      "Jokainen ennuste määrittelee falsifikaatiokriteerin. Malli jota ei voida falsifioida ei ole tiedettä.",
+      "Jokainen ennuste määrittelee falsifikaatiokriteerin. Malli, jota ei voida falsifioida, ei ole tiedettä.",
     civPredictions: [
       {
         id: "CIV-1",
@@ -1097,7 +1110,7 @@ const COPY = {
       },
       {
         id: "CIV-3",
-        title: "CCB-käyttäjät osoittavat väistyneemmän käyttäytymislaskun",
+        title: "CCB-käyttäjät osoittavat lievemmän käyttäytymislaskun",
         detail:
           "Pitkäaikaisten CCB-käyttäjien pitäisi osoittaa vähemmän laskua T-riippuvaisissa käyttäytymisissä (yrittäjyys, riskinotto) verrattuna ei-CCB-verenpainelääkkeiden käyttäjiin.",
         falsification:
@@ -1107,9 +1120,9 @@ const COPY = {
         id: "CIV-4",
         title: "TFR korreloi EMF-tiheyden kanssa, ei pelkästään BKT:n",
         detail:
-          "BKT:n, koulutuksen ja kaupungistumisen vakionnin jälkeen EMF-infrastruktuuritiheyden pitäisi itsenäisesti ennustaa TFR-laskua maiden välillä.",
+          "BKT:n, koulutuksen ja kaupungistumisen vakioinnin jälkeen EMF-infrastruktuuritiheyden pitäisi itsenäisesti ennustaa TFR-laskua maiden välillä.",
         falsification:
-          "Ei residuaalikorrelaatiota EMF-tiheyden ja TFR:n välillä sosioekonomisen vakionnin jälkeen",
+          "Ei residuaalikorrelaatiota EMF-tiheyden ja TFR:n välillä sosioekonomisen vakioinnin jälkeen",
       },
       {
         id: "CIV-5",
@@ -1130,9 +1143,9 @@ const COPY = {
       {
         id: "CIV-7",
         title:
-          "Teiniyttojen mielenterveyskriisi korreloi laitteiston, ei sisällön kanssa",
+          "Teinityttöjen mielenterveyskriisi korreloi laitteiston, ei sisällön kanssa",
         detail:
-          "BERM ennustaa EMF-laitteistokomponentin (kortisoli HPA:n kautta, melatoniini käpyräisen kautta) vaikuttavan enemmän kuin sosiaalisen median sisällön. Tytöt jotka käyttävät älypuhelimia yhtä paljon mutta matala-EMF-ympäristöissä pitäisi osoittaa vähemmän ahdistuksen kasvua.",
+          "BERM ennustaa EMF-laitteistokomponentin (kortisoli HPA:n kautta, melatoniini käpyrauhasen kautta) vaikuttavan enemmän kuin sosiaalisen median sisällön. Tytöt, jotka käyttävät älypuhelimia yhtä paljon mutta matala-EMF-ympäristöissä pitäisi osoittaa vähemmän ahdistuksen kasvua.",
         falsification:
           "Ei eroa ahdistuksessa korkea-EMF- ja matala-EMF-älypuhelinkäyttäjien välillä",
       },
@@ -1141,7 +1154,7 @@ const COPY = {
         title:
           "Sukupolvien välinen hormonilasku kiihtyy ilman EMF:n kasvua",
         detail:
-          "CaMKII-sensitisaatio + epigeneettinen transmissio ennustavat, että jopa vakio-EMF tuottaa kiihtyvvän hormoniilaskun sukupolvien yli. Testattavissa vertaamalla T-laskuvauhia sukupolvikohorttiien välillä samassa iässä.",
+          "CaMKII-sensitisaatio + epigeneettinen transmissio ennustavat, että jopa vakio-EMF tuottaa kiihtyvän hormonilaskun sukupolvien yli. Testattavissa vertaamalla T-laskuvauhtia sukupolvikohorttien välillä samassa iässä.",
         falsification:
           "T-laskuvauhti on vakio sukupolvien välillä vastaavissa iäissä",
       },
@@ -1150,7 +1163,7 @@ const COPY = {
         title:
           "Oksitosiiniriippuvaiset käyttäytymiset vähenevät EMF-ympäristön myötä",
         detail:
-          "Vapaaehtoistyö, yhteisöllinen osallistuminen, hyväntekeväisyys, ihmistenvillinen luottamus — kaikki OT-riippuvaisia — pitäisi korreloida negatiivisesti EMF-ympäristön kanssa maiden välillä ja ajan yli.",
+          "Vapaaehtoistyö, yhteisöllinen osallistuminen, hyväntekeväisyys, ihmistenvälinen luottamus — kaikki OT-riippuvaisia — pitäisi korreloida negatiivisesti EMF-ympäristön kanssa maiden välillä ja ajan yli.",
         falsification:
           "Ei korrelaatiota EMF-ympäristön ja OT-riippuvaisten sosiaalisten käyttäytymisten välillä",
       },
@@ -1158,7 +1171,7 @@ const COPY = {
         id: "CIV-10",
         title: "IVF muuttuu demografiseksi infrastruktuuriksi 2040 mennessä",
         detail:
-          "Kun biologinen hedelmallisyyskyky laskee alle ~30 % pareista saavuttaa raskauden 12 kuukaudessa ilman apua, IVF siirtyy lääketieteellisestä interventiosta väestötason infrastruktuuriksi. Ennuste: Etelä-Korea 2030 mennessä, Japani 2035, suurin osa Eurooppaa 2040.",
+          "Kun biologinen hedelmällisyyskyky laskee alle ~30 % pareista saavuttaa raskauden 12 kuukaudessa ilman apua, IVF siirtyy lääketieteellisestä interventiosta väestötason infrastruktuuriksi. Ennuste: Etelä-Korea 2030 mennessä, Japani 2035, suurin osa Eurooppaa 2040.",
         falsification:
           "Avustamattoman raskauden osuus pysyy yli 70 % vuoteen 2040 korkea-EMF-maissa",
       },
@@ -1166,7 +1179,7 @@ const COPY = {
         id: "CIV-11",
         title: "Verkko-kasvokkais-käyttäytymiskuilu korreloi väestön T-tason kanssa",
         detail:
-          "Väestöt joilla on korkeampi keskimääräinen T osoittavat vähemmän eroa verkko- ja kasvokkais-käyttäytymisen välillä. Matala-EMF-yhteisöt osoittavat minimaalista eroa.",
+          "Väestöt, joilla on korkeampi keskimääräinen T, osoittavat vähemmän eroa verkko- ja kasvokkais-käyttäytymisen välillä. Matala-EMF-yhteisöt osoittavat minimaalista eroa.",
         falsification:
           "Ei korrelaatiota väestön T:n ja verkko-kasvokkais-käyttäytymiseron välillä",
       },
@@ -1174,7 +1187,7 @@ const COPY = {
         id: "CIV-12",
         title: "Concept creep -vauhti korreloi kortisolitrendien kanssa maittain",
         detail:
-          "Maat joissa kortisoli kasvaa nopeammin (tai T laskee nopeammin) osoittavat nopeampaa haittakäsitteiden laajenemista oikeudellisessa, akateemisessa ja mediakielessä.",
+          "Maat, joissa kortisoli kasvaa nopeammin (tai T laskee nopeammin) osoittavat nopeampaa haittakäsitteiden laajenemista oikeudellisessa, akateemisessa ja mediakielessä.",
         falsification:
           "Ei korrelaatiota hormonaalisten trendien ja concept creep -vauhdin välillä",
       },
@@ -1182,7 +1195,7 @@ const COPY = {
         id: "CIV-13",
         title: "Sukupolvien välinen jännite on heikoin matala-EMF-yhteisöissä",
         detail:
-          "Amish- ja vastaavat yhteisöt joilla on vakaat hormonaaliset lähtötasot sukupolvien yli osoittavat vähemmän sukupolvien välistä konfliktia kuin korkea-EMF-yhteiskunnat.",
+          "Amish- ja vastaavat yhteisöt, joilla on vakaat hormonaaliset lähtötasot sukupolvien yli, osoittavat vähemmän sukupolvien välistä konfliktia kuin korkea-EMF-yhteiskunnat.",
         falsification:
           "Matala-EMF-yhteisöt osoittavat verrattavaa sukupolvijännitettä kansallisiin keskiarvoihin",
       },
@@ -1196,10 +1209,23 @@ const COPY = {
       },
     ],
 
+    lostRecoveryTitle: "Menetetty palautumisikkuna",
+    lostRecoveryDesc: "Ensimmäistä kertaa ihmiskunnan historiassa ei ole ajanjaksoa päivässä ilman merkittävää EMF-altistusta. Sähköverkko toimii 24/7. WiFi-reitittimiä ei koskaan sammuteta. LED-valot toimivat uneen asti. Puhelin makaa yöpöydällä koko yön. Bluetooth-laitteet ylläpitävät yhteyksiä jatkuvasti.",
+    lostRecoveryMechanism: "CaMKII-defosforylaatio — molekulaarinen palautumisprosessi — vaatii aikaa ilman Ca²⁺-ylikuormaa. Ennen sähköistystä ihmisillä oli 22+ tuntia päivässä ilman keinotekoista EMF:ää. Modernit kaupunkilaiset: noin nolla. COVID-sulut osoittivat tämän kokeellisesti: 24 tuntia/vrk kotona WiFin + LEDien + useiden laitteiden kanssa eliminoivat viimeisen palautumisikkunan — ja T2D-kiihdytys hyppäsi 2,90 %:sta 3,52 %/v.",
+    lostRecoveryIntervention: "Tämä on myös mallin toiminnallisin oivallus: EMF-vapaa makuuhuone on yksinkertaisin interventio. Ei ruokavaliomuutosta, ei lääkitystä, ei elämäntaparemonttia — vain poista reititin, käytä lentokonetilaa yöllä ja vaihda hehkulamppuun ennen unta.",
+
+    buildingTitle: "Betonikaupungit: sisäänrakennettu EMF-vahvistus",
+    buildingDesc: "Kaupungistuminen ei ole vain sosiaalinen muutos — se on sähkömagneettinen muutos. Teräsbetoni heijastaa RF:ää sisäisesti (teräsraudoitus toimii osittaisena käänteisena Faradayn häkkinä), lisäten sisäistä kenttävoimakkuutta. Puu on RF-läpäisevä — kenttä kulkee läpi ja hajoaa. Kun maaseudun väestöt muuttivat betonikaupunkeihin, he samanaikaisesti lisäsivät ympäröivää EMF-altistustaan mekanismilla jota kukaan ei mitannut.",
+    buildingEvidence: "Puuhuoneet tuottavat parempaa unta, matalamman sykkeen ja paremman kognitiivisen suorituskyvyn verrattuna betonihuoneisiin (BIOBUILDS 2026). Perinteinen selitys: biofiilia. BERM:n lisäys: RF-heijastuskerroin. Molemmat voivat olla oikeassa — mutta EMF-mekanismi on testattavissa ja biofiiliamekanismi ei.",
+
+    animalsFellTitle: "Eläimet kaatuivat ensin",
+    animalsFellDesc: "Jos EMF vaikuttaa biologiaan perustavanlaatuisilla Ca²⁺- ja CRY-tasoilla, herkempien lajien olisi pitänyt laskea ensin — ja niin tapahtui. Sammakot (kostea iho, suora Ca²⁺-kytkentä) alkoivat laskea noin 1987 GSM:n käyttöönoton myötä. Mehiläiset (CRY-riippuvainen navigaatio) romahtivat 2006 tukiasemien saavuttaessa maaseudun. Hyönteisbiomassa laski 75 % 27 vuodessa. Lintupopulaatiot seurasivat. Nisäkkäät — mukaan lukien ihmiset — ovat vähiten herkkiä kuivan ihon ja suuren kehon massan vuoksi, mutta vaikutukset ovat kumulatiivisia pitkien elinikien aikana.",
+    animalsFellAnalogy: "Kanarialintu kaivoksessa -analogia ei ole vertauskuvallinen — se on mekanistinen. Samat ionikanavat, samat magnetoreseptorit, sama Ca²⁺-signalointi. Eläimet eivät laskeneet erillisistä syistä jotka sattuvat korreloimaan. Ne laskivat saman mekanismin kautta eri herkkyyskynnyksissä.",
+
     s10title: "Episteemiset rajat",
     s10claims: [
       "Seitsemän RCT:tä osoittaa kausaalilinkit testosteronin ja spesifien käyttäytymisten välillä miehillä.",
-      "Rinnakkaiset hormonaalishäiriöt naisilla on dokumentoitu mutta vähemmillä kausaalisilla (RCT) tutkimuksilla.",
+      "Rinnakkaiset hormonaaliset häiriöt naisilla on dokumentoitu, mutta vähemmillä kausaalisilla (RCT) tutkimuksilla.",
       "Yhdistelmävaikutus (molemmat sukupuolet samanaikaisesti) on loogisesti johdettu yksilötason evidenssistä, ei suoraan mitattu väestötasolla.",
       "Sukupolvien välinen kiihtyminen on ennustettu CaMKII-mekaniikalla ja epigeneettisellä transmissiolla, ei vielä vahvistettu longitudinaalisesti.",
     ],
@@ -1212,9 +1238,9 @@ const COPY = {
     s10recursive:
       "Jos malli on väärässä, ennusteet epäonnistuvat näkyvästi. Se on tarkoituksellista.",
     s10summary:
-      "Hormonit asettavat kynnyksiä, eivät tuloksia. Tämä sivu jäljittää mihin kynnykset ovat siirtymässä, mitä se ennustaa väestötasolla, ja miksi osa siitä mikä näyttää ideologiselta muutokselta saattaa olla biologista muutosta koettuna kulttuurisena muutoksena.",
+      "Hormonit asettavat kynnyksiä, eivät tuloksia. Tämä sivu jäljittää, mihin kynnykset ovat siirtymässä, mitä se ennustaa väestötasolla ja miksi osa siitä, mikä näyttää ideologiselta muutokselta saattaa olla biologista muutosta koettuna kulttuurisena muutoksena.",
     s10fixable:
-      "Jos se osuus on edes 20–30 %, se on osuus joka on korjattavissa ilman poliittista konfliktia.",
+      "Jos se osuus on edes 20–30 %, se on osuus, joka on korjattavissa ilman poliittista konfliktia.",
     modelLink: "Lue mekanismi",
     evidenceLink: "Tutki evidenssiä",
     predictionsLink: "Katso kaikki ennusteet",
@@ -1245,39 +1271,46 @@ export default async function CivilizationPage({
   const d = COPY[locale as Locale] ?? COPY.en;
 
   return (
-    <main id="main-content" className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-      <PageHeader title={d.title} subtitle={d.subtitle} icon={Landmark} />
-
-      {/* Hero illustration */}
-      <figure className="mb-12 -mx-4 sm:-mx-6 lg:-mx-12">
-        <div className="relative w-full overflow-hidden rounded-xl shadow-lg">
+    <main id="main-content">
+      <div className="max-w-5xl mx-auto px-6">
+      {/* Hero — cinematic banner with painting overlay, matching home page pattern */}
+      <header className="relative -mx-6 overflow-hidden rounded-b-2xl sm:rounded-2xl sm:mx-0 mt-0 sm:mt-8 mb-14">
+        <div className="relative h-[340px] sm:h-[440px] lg:h-[550px]">
           <Image
-            src="/images/spengler-seasons.png"
+            src="/images/spengler-seasons.jpg"
             alt="Four allegorical figures representing civilizational seasons — spring, summer, autumn, winter"
-            width={1500}
-            height={884}
-            className="w-full h-auto"
+            fill
             priority
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 1024px"
           />
-          <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+          <div className="relative z-10 flex flex-col justify-end h-full p-6 sm:p-10 lg:p-14">
+            <p className="text-white/50 text-xs font-medium tracking-[0.2em] uppercase mb-3">
+              {locale === "fi" ? "Taso III — Seuraukset" : "Level III — Consequences"}
+            </p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold tracking-[-0.02em] leading-[1.12] mb-4 text-white drop-shadow-lg">
+              {d.title}
+            </h1>
+            <p className="text-base sm:text-lg leading-relaxed text-white/80 max-w-2xl drop-shadow">
+              {d.subtitle}
+            </p>
+          </div>
         </div>
-        <figcaption className="mt-3 text-center text-xs text-foreground-muted/60 italic">
-          The Four Seasons of Civilization
-        </figcaption>
-      </figure>
+      </header>
 
-      {/* S1: Hero */}
-      <section className="mb-16">
-        <p className="text-lg leading-relaxed text-muted-foreground mb-4">
-          {d.heroLead}
-        </p>
-        <p className="text-lg leading-relaxed text-muted-foreground mb-4">
-          {d.heroTrail}
-        </p>
-        <p className="text-sm italic text-muted-foreground/80">
-          {d.levelNote}
-        </p>
-      </section>
+      {/* Lead section */}
+        <section className="mb-16 max-w-3xl">
+          <p className="text-lg sm:text-xl leading-relaxed text-foreground/80 mb-5 first-letter:text-4xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:leading-none">
+            {d.heroLead}
+          </p>
+          <p className="text-base leading-relaxed text-foreground-muted mb-5">
+            {d.heroTrail}
+          </p>
+          <p className="text-sm italic text-foreground-muted/70 border-l-2 border-foreground-muted/20 pl-4">
+            {d.levelNote}
+          </p>
+        </section>
 
       {/* S2: Two Parallel Disruptions */}
       <section className="mb-16">
@@ -1728,6 +1761,38 @@ export default async function CivilizationPage({
         </div>
       </section>
 
+      {/* The Lost Recovery Window */}
+      <section className="mb-16 border-t editorial-rule pt-8">
+        <h2 className="text-2xl font-bold mb-4">{d.lostRecoveryTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p>{d.lostRecoveryDesc}</p>
+          <p>{d.lostRecoveryMechanism}</p>
+        </div>
+        <div className="mt-4 rounded-xl border border-green-500/30 bg-green-500/5 p-4 max-w-4xl">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.lostRecoveryIntervention}</p>
+        </div>
+      </section>
+
+      {/* Concrete Cities */}
+      <section className="mb-16 border-t editorial-rule pt-8">
+        <h2 className="text-2xl font-bold mb-4">{d.buildingTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p>{d.buildingDesc}</p>
+          <p>{d.buildingEvidence}</p>
+        </div>
+      </section>
+
+      {/* The Animals Fell First */}
+      <section className="mb-16 border-t editorial-rule pt-8">
+        <h2 className="text-2xl font-bold mb-4">{d.animalsFellTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p>{d.animalsFellDesc}</p>
+        </div>
+        <div className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 max-w-4xl">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.animalsFellAnalogy}</p>
+        </div>
+      </section>
+
       {/* S10: Epistemic Boundaries */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold mb-4">{d.s10title}</h2>
@@ -1773,6 +1838,7 @@ export default async function CivilizationPage({
           {d.predictionsLink} <ArrowRight className="w-4 h-4" />
         </Link>
       </section>
+      </div>
     </main>
   );
 }

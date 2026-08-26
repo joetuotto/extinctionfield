@@ -28,6 +28,7 @@ const t = {
       { id: "individual-susceptibility", num: "§11", label: "Individual susceptibility" },
       { id: "cross-sectional", num: "§12", label: "Cross-sectional validation" },
       { id: "nested-chi", num: "§13", label: "Nested χ (population model)" },
+      { id: "layered-formula", num: "§14", label: "Layered formula v20→v21" },
     ],
     pageTitle: "Mathematical Foundation",
     pageSubtitle:
@@ -392,6 +393,32 @@ const t = {
     s13Where: "where γ_A, γ_C are pathway weights (0.75, 0.25); χ(Ā_env) is environmental coupling; χ(V_mem) is membrane background (≈ 1.0 for living cells); χ(I_blue) is optical coupling (iris-dependent); χ([FAD]) is molecular coupling (B2-dependent); and EMF_personal is the personal device contribution.",
     s13Implication: "This formulation predicts that populations with higher biological χ values (blue-eyed, lactose-tolerant) experience steeper TFR decline per unit of environmental EMF increase. See the population χ profiles for estimated values.",
     s13Level: "Epistemic level: L* (testable synthesis). Individual χ instantiations are E or M|C level; the population-level integration is the L* component.",
+
+    // S14 Layered Formula
+    s14Title: "Layered Formula v20 → v21",
+    s14Intro: "The original cross-sectional formula (v19.1) uses a two-channel EMF index. The layered formula extends this by incorporating priming history, recovery capacity, seasonal modulation, and population genotype.",
+    s14V20Title: "Formula v20 (Priming × Recovery)",
+    s14V20: "TFR ≈ A × exp(−B × EMF_eff) + C",
+    s14V20Detail: "EMF_eff = EMF_comp × P × (1/R)",
+    s14V20Composite: "EMF_comp = w_ELF × ELF + w_IF × IF + w_RF × RF",
+    s14V20Priming: "P = 1 + α × min(electrification_years, P_max)",
+    s14V20Recovery: "R = 1 + β × EMF_free_hours/day",
+    s14V20Desc: "Where EMF_comp is the three-channel weighted composite (ELF < 300 Hz, IF 300 Hz–10 MHz, RF > 10 MHz). P captures cumulative priming from decades of power grid exposure — years of electrification upregulate VGCC expression, making cells more sensitive to all subsequent EMF. R captures the recovery window: hours per day without significant EMF allow CaMKII dephosphorylation and Ca²⁺ homeostasis restoration.",
+    s14V21Title: "Formula v21 (proposed: + Season × Genotype)",
+    s14V21: "EMF_eff = EMF_comp × P × (1/R) × S × G_pop",
+    s14V21Season: "S = 1 + γ × f(latitude, season)",
+    s14V21Genotype: "G_pop = 1 + δ × CACNA1C_A_allele_frequency",
+    s14V21Optional: "Optional correction factors (data-dependent): H = humidity/coastal correction, B = building material RF reflection coefficient",
+    s14V21Desc: "S captures seasonal variation in CRY magnetoreceptor sensitivity: winter at high latitudes increases CRY sensitivity to EMF perturbation (Halgamuge 2015). G_pop captures population-level genetic susceptibility via CACNA1C rs1006737 A-allele frequency, which determines Cav1.2 channel density and therefore Ca²⁺ response per EMF stimulus (Sousouri 2025).",
+    s14ParamsTitle: "Parameter interpretation",
+    s14Params: [
+      { param: "P (Priming)", amish: "1.0 (no priming)", finland: "2.2 (100+ yr electrification)", nigeria: "1.45 (~15 yr)", desc: "How 'ready' are cells for EMF response" },
+      { param: "1/R (Recovery deficit)", amish: "0.48 (full recovery)", finland: "1.0 (WiFi 24/7)", nigeria: "0.67 (partial)", desc: "Does Ca²⁺ homeostasis restore overnight" },
+      { param: "S (Season)", amish: "~1.0", finland: "0.9–1.3", nigeria: "~1.0", desc: "CRY sensitivity modulation by light" },
+      { param: "G_pop (Genotype)", amish: "~1.0", finland: "~1.1", nigeria: "~0.95", desc: "Population CACNA1C A-allele prevalence" },
+    ],
+    s14Evolution: "Formula evolution: v17 (scalar cumEMF, RMSE ~1.15) → v19.1 (two-channel, 54 countries, RMSE 0.522) → v20 (+ Priming × Recovery, predicted RMSE < 0.45) → v21 (+ Season × Genotype, requires calibration data).",
+    s14Level: "Epistemic level: v20 is M|C (mechanism-derived, calibration pending). v21 is L* (proposed extension, calibration data not yet collected for S and G_pop).",
   },
   fi: {
     meta: {
@@ -416,6 +443,7 @@ const t = {
       { id: "individual-susceptibility", num: "§11", label: "Yksilöllinen herkkyys" },
       { id: "cross-sectional", num: "§12", label: "Poikkileikkausvalidointi" },
       { id: "nested-chi", num: "§13", label: "Sisäkkäinen χ (populaatiomalli)" },
+      { id: "layered-formula", num: "§14", label: "Kerrostumaformula v20→v21" },
     ],
     pageTitle: "Matemaattinen perusta",
     pageSubtitle:
@@ -454,17 +482,17 @@ const t = {
     s2bIntro:
       "Kaksi biologista rajataajuutta jakaa EMF-spektrin kolmeen regiimiin, joilla on erilliset biofysikaaliset mekanismit. Nämä rajataajuudet ovat solubiologian perustavanlaatuisia ominaisuuksia, eivät mielivaltaisia parametreja.",
     s2bFC:
-      "f_c ≈ 1 kHz — solukalvon RC-aikavakio. Alle f_c: kenttä putoaa kalvon yli ja perturboi V_mem:iä. Yli f_c: kenttä penetroituu solun sisälle.",
+      "f_c ≈ 1 kHz — solukalvon RC-aikavakio. Alle f_c: kenttä putoaa kalvon yli ja perturboi V_mem:iä. Yli f_c: kenttä tunkeutuu solun sisälle.",
     s2bFRPM:
-      "f_RPM ≈ 1 MHz — radikaaliparin koherenssin raja. Yli f_RPM: klassinen kenttä-kalvo-vuorovaikutus heikkenee mutta kvantti-spin-efektit tulevat relevantiksi.",
+      "f_RPM ≈ 1 MHz — radikaaliparin koherenssin raja. Yli f_RPM: klassinen kenttä-kalvo-vuorovaikutus heikkenee mutta kvantti-spin-efektit tulevat merkityksellisiksi.",
     s2bELF:
       "ELF-kanava (f < ~1 kHz): kenttä putoaa kalvon yli. ΔV_mem = E_ext · d_cell · H(f). χ_mem saturoitunut 7×10⁶ V/m:ssä. Lineaarinen vaste. Mekanismit: VGCC→Ca²⁺→ROS (reitti A), GPCR-adenosiini (PEMF, FDA 1979), Nav-modulaatio (TMS, FDA 2008), vagushermo (VNS, FDA 2017).",
     s2bIF:
-      "IF-kanava (f_c < f < f_RPM): kenttä penetroituu solun sisälle. T(f) = 1/√(1+(f_c/f)²). Päämekanismi ympäristötasoilla: IFO-VGIC (lineaarinen, kynnys 10⁻⁵ V/m). Geometrinen kenttävahvistus kaulakuroutumassa: G ≈ (d_cell/d_furrow)² ≈ 25×. Valikoiva vaikutus jakautuviin soluihin. TTFields (FDA 2011+) validoi mekanismin terapeuttisella intensiteetillä DEP:n kautta.",
+      "IF-kanava (f_c < f < f_RPM): kenttä tunkeutuu solun sisälle. T(f) = 1/√(1+(f_c/f)²). Päämekanismi ympäristötasoilla: IFO-VGIC (lineaarinen, kynnys 10⁻⁵ V/m). Geometrinen kenttävahvistus kaulakuroutumassa: G ≈ (d_cell/d_furrow)² ≈ 25×. Valikoiva vaikutus jakautuviin soluihin. TTFields (FDA 2011+) validoi mekanismin terapeuttisella intensiteetillä DEP:n kautta.",
     s2bIFSources:
       "Ympäristön IF-lähteiden karakterisointi: tyypillinen LED-ajuri toimii kytkintaajuudella f_sw alueella 20–200 kHz harmonisella sisällöllä taajuuksilla 2f_sw, 3f_sw, 5f_sw megahertsialueelle asti. Aaltomuoto on suorakaideaalto, ei siniaalto, joka tuottaa rikkaampaa harmonista sisältöä kuin jatkuva-aaltolähteet. Panagopoulos 2025 osoittaa, että pulssitetut kentät ovat biologisesti aktiivisempia kuin jatkuva-aaltokentät samalla keskimääräisellä intensiteetillä. Zeghoudi ym. 2025 mittasi suoraan LED-ajurin lähikenttäemission vahvistaen mitattavat sähkökentän komponentit senttimetrien etäisyydellä.",
     s2bRF:
-      "RF-kanava (f > ~1 MHz): kalvo on läpinäkyvä. Klassinen kenttä-kalvo-vuorovaikutus on heikko. Kvantti-spin-efektit tulevat relevantiksi. Lindgrenin kovariantti spin-korjaus: B_local = (1/w)b + (A·b)A/(w(1+w)). Anisotrooppinen vaste. Mekanismit: CRY/RPM→sirkadiaaninen häiriö (reitti B), magneettikompassin korruptoituminen (Lindecke 2026).",
+      "RF-kanava (f > ~1 MHz): kalvo on läpinäkyvä. Klassinen kenttä-kalvo-vuorovaikutus on heikko. Kvantti-spin-efektit tulevat merkityksellisiksi. Lindgrenin kovariantti spin-korjaus: B_local = (1/w)b + (A·b)A/(w(1+w)). Anisotrooppinen vaste. Mekanismit: CRY/RPM→sirkadiaaninen häiriö (reitti B), magneettikompassin häiriintyminen (Lindecke 2026).",
     s2bRegGapTitle: "IF-säätelyaukko",
     s2bRegGap:
       "ICNIRP 2010 asettaa altistusrajat taajuuksille f < 300 Hz (ELF). ICNIRP 2020 asettaa rajat taajuuksille f > 100 kHz (RF). Alue 300 Hz < f < 100 kHz:lla on päällekkäiset, epäjohdonmukaiset rajat. LED-ajuriemissiot (20–300 kHz) osuvat tähän aukkoon. Vuoden 2022 systemaattinen katsaus (IJRB, Ohkubo & Okano) vahvisti: 'IF-EMF:n terveysvaikutuksia EI ole tutkittu monipuolisemmista näkökulmista.' Biologinen relevanssi näillä taajuuksilla tuettu: IFO-kynnys 10⁻⁵ V/m ylittyy LED-ajurilla 1 m:ssä; Kim 2026 geeniekspression aktivointi 4 kHz:llä (Cyb5b); TTFields FDA-hyväksytty syöpähoito 200 kHz:llä; 150 kHz rottatutkimuksen kivesvaikutukset (Heliyon 2022).",
@@ -690,7 +718,7 @@ const t = {
     // S10 Pharmacological
     s10Title: "Farmakologinen validointimatriisi",
     s10Intro:
-      "Kolme itsenäistä farmakologista interventiota tarjoavat kvantitatiiviset kalibrointiankkurit erillisille reiteille. Kukin lääke eristää tietyn mekanismin, mikä mahdollistaa mallin reittirakennteen itsenäisen testaamisen.",
+      "Kolme itsenäistä farmakologista interventiota tarjoavat kvantitatiiviset kalibrointiankkurit erillisille reiteille. Kukin lääke eristää tietyn mekanismin, mikä mahdollistaa mallin reittirakenteen itsenäisen testaamisen.",
     s10Drug: "Lääke",
     s10Target: "Kohde",
     s10Pathway: "Reitti",
@@ -747,7 +775,7 @@ const t = {
       "Resistenssivaiheessa kompensaatiokapasiteetti laskee lineaarisesti. Uupumusvaiheessa (allostaattinen kuorma > 15) kompensaatio romahtaa ja efektiivinen kerroin vahvistuu jyrkästi — tämä on ennustettu EHS:n alkamisregime.",
     s11d7: "Yhdistetty yksilökerroin kertautuu populaation χ:hin:",
     s11d8:
-      "Populaatiotason TFR-ennusteessa BERM integroi genotyyppifrekvenssisjakauman (Hardy-Weinberg) × anatominen demografia × altistuskeston jakauman yli. Keskimääräinen yksilökerroin on 1,0 konstruktion mukaan — se supistuu populaatiokeskiarvossa. DIAGNOSTINEN arvo on hännissä: korkean herkkyyden yksilöillä (AA, nuoret, uupumusvaihe) yhdistetty kerroin voi olla 5–10×, mikä selittää miksi osajoukko raportoi oireita enemmistön ollessa oireeton.",
+      "Populaatiotason TFR-ennusteessa BERM integroi genotyyppifrekvenssijakauman (Hardy-Weinberg) × anatominen demografia × altistuskeston jakauman yli. Keskimääräinen yksilökerroin on 1,0 konstruktion mukaan — se supistuu populaatiokeskiarvossa. DIAGNOSTINEN arvo on hännissä: korkean herkkyyden yksilöillä (AA, nuoret, uupumusvaihe) yhdistetty kerroin voi olla 5–10×, mikä selittää, miksi osajoukko raportoi oireita enemmistön ollessa oireeton.",
     s11d9Link: "→ Yksilöllisen herkkyyden todisteet",
 
     // S12 Poikkileikkausvalidointi
@@ -781,6 +809,32 @@ const t = {
     s13Where: "missä γ_A, γ_C ovat polkujen painot (0,75; 0,25); χ(Ā_env) on ympäristökytkentä; χ(V_mem) on kalvotausta (≈ 1,0 eläville soluille); χ(I_blue) on optinen kytkentä (iiriksestä riippuvainen); χ([FAD]) on molekulaarinen kytkentä (B2-riippuvainen); ja EMF_personal on henkilökohtaisten laitteiden osuus.",
     s13Implication: "Tämä muotoilu ennustaa, että populaatiot korkeammilla biologisilla χ-arvoilla (sinisilmäiset, laktoosinsietokykyiset) kokevat jyrkemmän TFR-laskun ympäristön EMF:n yksikköä kohden. Katso populaatioiden χ-profiilit arvioitujen arvojen osalta.",
     s13Level: "Episteeminen taso: L* (testattava synteesi). Yksittäiset χ-instanssit ovat E- tai M|C-tasoa; populaatiotason integraatio on L*-komponentti.",
+
+    // S14 Layered Formula
+    s14Title: "Kerrostumaformula v20 → v21",
+    s14Intro: "Alkuperäinen poikkileikkausformula (v19.1) käyttää kaksikanavaista EMF-indeksiä. Kerrostumaformula laajentaa tätä sisällyttämällä priming-historian, palautumiskyvyn, vuodenaika­modulaation ja populaation genotyypin.",
+    s14V20Title: "Formula v20 (Priming × Palautuminen)",
+    s14V20: "TFR ≈ A × exp(−B × EMF_eff) + C",
+    s14V20Detail: "EMF_eff = EMF_comp × P × (1/R)",
+    s14V20Composite: "EMF_comp = w_ELF × ELF + w_IF × IF + w_RF × RF",
+    s14V20Priming: "P = 1 + α × min(sähköistys_vuodet, P_max)",
+    s14V20Recovery: "R = 1 + β × EMF_vapaat_tunnit/vrk",
+    s14V20Desc: "Missä EMF_comp on kolmikanavainen painotettu komposiitti (ELF < 300 Hz, IF 300 Hz–10 MHz, RF > 10 MHz). P kuvaa kumulatiivista primingia vuosikymmenten sähköverkkoaltistuksesta — sähköistysvuodet ylös­säätelevät VGCC-ekspressiota tehden soluista herkempiä kaikelle myöhemmälle EMF:lle. R kuvaa palautumisikkunaa: tunnit päivässä ilman merkittävää EMF:ää mahdollistavat CaMKII-defosforylaation ja Ca²⁺-homeo­staasin palautumisen.",
+    s14V21Title: "Formula v21 (ehdotettu: + Vuodenaika × Genotyyppi)",
+    s14V21: "EMF_eff = EMF_comp × P × (1/R) × S × G_pop",
+    s14V21Season: "S = 1 + γ × f(leveysaste, vuodenaika)",
+    s14V21Genotype: "G_pop = 1 + δ × CACNA1C_A-alleelitaajuus",
+    s14V21Optional: "Valinnaiset korjauskertoimet (datariippuvaisia): H = kosteus/rannikkokorjaus, B = rakennusmateriaalin RF-heijastuskerroin",
+    s14V21Desc: "S kuvaa CRY-magnetoreseptorin herkkyyden vuodenaikavaihtelua: talvi korkeilla leveysasteilla lisää CRY:n herkkyyttä EMF-perturbaalioille (Halgamuge 2015). G_pop kuvaa populaatiotason geneettistä herkkyyttä CACNA1C rs1006737 A-alleelitaajuuden kautta, joka määrittää Cav1.2-kanavatiheyden ja siten Ca²⁺-vasteen per EMF-stimulus (Sousouri 2025).",
+    s14ParamsTitle: "Parametrien tulkinta",
+    s14Params: [
+      { param: "P (Priming)", amish: "1,0 (ei primingia)", finland: "2,2 (100+ v sähköistys)", nigeria: "1,45 (~15 v)", desc: "Kuinka 'valmiita' solut ovat EMF-vasteeseen" },
+      { param: "1/R (Palautumis­vajaus)", amish: "0,48 (täysi palautuminen)", finland: "1,0 (WiFi 24/7)", nigeria: "0,67 (osittainen)", desc: "Palautuuko Ca²⁺-homeostaasi yön aikana" },
+      { param: "S (Vuodenaika)", amish: "~1,0", finland: "0,9–1,3", nigeria: "~1,0", desc: "CRY-herkkyyden modulaatio valon kautta" },
+      { param: "G_pop (Genotyyppi)", amish: "~1,0", finland: "~1,1", nigeria: "~0,95", desc: "Populaation CACNA1C A-alleelin prevalenssi" },
+    ],
+    s14Evolution: "Formulan evoluutio: v17 (skalaari cumEMF, RMSE ~1,15) → v19.1 (kaksikanavainen, 54 maata, RMSE 0,522) → v20 (+ Priming × Palautuminen, ennustettu RMSE < 0,45) → v21 (+ Vuodenaika × Genotyyppi, vaatii kalibrointidataa).",
+    s14Level: "Episteeminen taso: v20 on M|C (mekanismijohdettu, kalibrointi kesken). v21 on L* (ehdotettu laajennus, kalibrointidataa S- ja G_pop-parametreille ei vielä kerätty).",
   },
 };
 
@@ -1854,6 +1908,69 @@ export function MathematicsSections({ locale }: { locale: string }) {
             <div className="mt-4 p-3 rounded border border-status-partial/40 bg-status-partial/5">
               <p className="text-xs text-foreground-muted leading-relaxed">
                 {d.s13Level}
+              </p>
+            </div>
+          </section>
+
+          {/* S14 Layered Formula */}
+          <section id="layered-formula" className="scroll-mt-24">
+            <h2 className="text-lg font-semibold mb-1">
+              <span className="text-foreground-muted text-sm mr-2">{"§14"}</span>
+              {d.s14Title}
+            </h2>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.s14Intro}
+            </p>
+
+            <h4 className="text-sm font-semibold mb-3">{d.s14V20Title}</h4>
+            <div className="rounded-xl border border-card-border bg-card-bg p-5 mb-6 font-mono text-sm space-y-1">
+              <p className="font-semibold">{d.s14V20}</p>
+              <p className="text-foreground-muted">{d.s14V20Detail}</p>
+              <p className="text-foreground-muted text-xs mt-2">{d.s14V20Composite}</p>
+              <p className="text-foreground-muted text-xs">{d.s14V20Priming}</p>
+              <p className="text-foreground-muted text-xs">{d.s14V20Recovery}</p>
+            </div>
+            <p className="text-sm text-foreground-muted mb-8 max-w-3xl leading-relaxed">{d.s14V20Desc}</p>
+
+            <h4 className="text-sm font-semibold mb-3">{d.s14V21Title}</h4>
+            <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-5 mb-4 font-mono text-sm space-y-1">
+              <p className="font-semibold">{d.s14V21}</p>
+              <p className="text-foreground-muted text-xs mt-2">{d.s14V21Season}</p>
+              <p className="text-foreground-muted text-xs">{d.s14V21Genotype}</p>
+            </div>
+            <p className="text-xs text-foreground-muted/70 italic mb-6">{d.s14V21Optional}</p>
+            <p className="text-sm text-foreground-muted mb-8 max-w-3xl leading-relaxed">{d.s14V21Desc}</p>
+
+            <h4 className="text-sm font-semibold mb-3">{d.s14ParamsTitle}</h4>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Parametri" : "Parameter"}</th>
+                    <th className="text-left py-2 px-2 font-semibold">Amish</th>
+                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Suomi" : "Finland"}</th>
+                    <th className="text-left py-2 px-2 font-semibold">Nigeria</th>
+                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Tulkinta" : "Interpretation"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.s14Params.map((row: { param: string; amish: string; finland: string; nigeria: string; desc: string }) => (
+                    <tr key={row.param} className="border-b border-border/50">
+                      <td className="py-2 px-2 font-mono font-medium">{row.param}</td>
+                      <td className="py-2 px-2 font-mono text-green-500">{row.amish}</td>
+                      <td className="py-2 px-2 font-mono text-amber-500">{row.finland}</td>
+                      <td className="py-2 px-2 font-mono text-foreground-muted">{row.nigeria}</td>
+                      <td className="py-2 px-2 text-foreground-muted">{row.desc}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">{d.s14Evolution}</p>
+            <div className="mt-4 p-3 rounded border border-status-partial/40 bg-status-partial/5">
+              <p className="text-xs text-foreground-muted leading-relaxed">
+                {d.s14Level}
               </p>
             </div>
           </section>
