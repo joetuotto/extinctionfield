@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 553,
+    "total_references": 557,
     "verified_count": 240,
     "generated": "2026-08-26",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls"
@@ -12360,6 +12360,69 @@
         "building",
         "rf"
       ],
+      "verified": false
+    },
+    {
+      "id": "shift_mets_meta2022",
+      "authors": "Various",
+      "year": 2022,
+      "title": "Shift work and metabolic syndrome: systematic review and meta-analysis",
+      "journal": "Int J Environ Res Public Health",
+      "pmcid": "PMC9539605",
+      "doi": null,
+      "category": "epidemiology",
+      "pathway": ["circadian"],
+      "level": "E",
+      "type": "meta_analysis",
+      "finding": "Shift work MetS OR 2.17 (95% CI 1.31-3.60). 10/12 studies showed higher risk.",
+      "tags": ["shift_work", "metabolic_syndrome", "meta_analysis"],
+      "verified": false
+    },
+    {
+      "id": "shift_health_review2024",
+      "authors": "Various",
+      "year": 2024,
+      "title": "Shift work health effects: comprehensive review",
+      "journal": "Review",
+      "doi": null,
+      "category": "epidemiology",
+      "pathway": ["circadian"],
+      "level": "E",
+      "type": "review",
+      "finding": "Shift workers: increased risks for diabetes, hypertension, CVD, MetS, mental health, cancer. IARC 2A for night shift. Endocrine: melatonin, cortisol, thyroid, sex hormones all affected.",
+      "tags": ["shift_work", "health", "IARC"],
+      "verified": false
+    },
+    {
+      "id": "shift_cvd_meta2025",
+      "authors": "Various",
+      "year": 2025,
+      "title": "Night shift work dose-response association with CVD",
+      "journal": "Meta-analysis",
+      "pmcid": "PMC12506678",
+      "doi": null,
+      "category": "epidemiology",
+      "pathway": ["circadian"],
+      "level": "E",
+      "type": "meta_analysis",
+      "finding": "Night shift work dose-response association with CVD incidence and mortality. 6 databases, meta-analysis.",
+      "tags": ["shift_work", "cardiovascular", "dose_response"],
+      "verified": false
+    },
+    {
+      "id": "office_cvd2020",
+      "authors": "Various",
+      "year": 2020,
+      "title": "Office work and cardiovascular risk factors",
+      "journal": "Int J Environ Res Public Health",
+      "pmcid": "PMC7084259",
+      "doi": null,
+      "category": "epidemiology",
+      "pathway": [],
+      "level": "E",
+      "type": "review",
+      "finding": "Office workers: prolonged sedentary work tied to increased morbidity. Cardiovascular risk factors elevated. 1950s research: physically active work → lower CVD.",
+      "tags": ["office_work", "sedentary", "cardiovascular"],
       "verified": false
     }
   ]

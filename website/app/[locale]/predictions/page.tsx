@@ -442,9 +442,9 @@ const COPY = {
       {
         id: "PHARM-4",
         title: "Nimodipine attenuates EMF-induced cognitive effects while peripheral CCBs do not",
-        description: "Nimodipine (BBB-penetrant dihydropyridine CCB) should attenuate EMF-associated cognitive effects, while amlodipine (non-BBB-penetrant) should not. This tests whether VGCC activation in CNS neurons contributes to cognitive endpoints independently of peripheral effects. If both CCBs attenuate cognitive effects equally, the mechanism is peripheral (vascular); if only nimodipine attenuates, the mechanism is central (neuronal VGCC).",
+        description: "Nimodipine (BBB-penetrant dihydropyridine CCB) should attenuate EMF-associated cognitive effects, while amlodipine (non-BBB-penetrant) should not. Three moderators differentiate BERM from a simple Ca²⁺-blockade hypothesis: (a) the effect should be LARGER in winter than summer (CRY more sensitive), (b) LARGER in AA-genotype carriers (more Cav1.2), and (c) LARGER in subjects with home Wi-Fi (more primed baseline). ETH Zürich 5G-sleep study is the first opportunity to test these moderators directly.",
         timeline: "2-4 years (prospective cohort or RCT extension study)",
-        falsification: "No difference between nimodipine and amlodipine on cognitive endpoints in high-EMF environments",
+        falsification: "No difference between nimodipine and amlodipine on cognitive endpoints, OR no moderator-dependent variation (season, genotype, home EMF)",
       },
       {
         id: "PHARM-5",
@@ -1054,6 +1054,23 @@ const COPY = {
     sentinelPredFalsification: "Falsification criterion",
     sentinelPredLocked: "Locked: 2026-08-26",
     sentinelPredStatus: "LOCKED — awaiting test",
+
+    supplementTitle: "Supplement predictions",
+    supplementLead: "Predictions from six supplementary analysis lines: shift work, indoor/outdoor occupational gradient, phone pocket transition, power frequency geography, and replication moderator analysis.",
+    supplementPredictions: [
+      { id: "SHIFT-1", title: "Faraday bedroom improves shift worker outcomes", description: "Shift workers who sleep in a Faraday-shielded bedroom (EMF-free) show better melatonin recovery and less metabolic syndrome than shift workers sleeping in conventional bedrooms — with the same total sleep time. The difference isolates the EMF component from the sleep deprivation component.", falsification: "No difference in metabolic or hormonal outcomes between shielded and unshielded bedrooms for shift workers" },
+      { id: "SHIFT-2", title: "Shift work health effects worse in winter", description: "Shift work health effects (metabolic syndrome, depression, cardiovascular risk) should be measurably worse during winter months at high latitudes, because CRY magnetoreceptor sensitivity is higher when ambient light is reduced — amplifying EMF disruption during the critical night shift period.", falsification: "No seasonal variation in shift work health outcomes, or effects are worse in summer" },
+      { id: "SHIFT-3", title: "Shift work MetS OR exceeds sleep deprivation OR", description: "The metabolic syndrome odds ratio for shift workers (OR 2.17) exceeds what pure sleep deprivation alone would predict. The excess risk is attributable to the EMF component: LED IF exposure during melatonin peak hours and eliminated recovery window.", falsification: "Sleep deprivation alone fully accounts for shift work MetS risk with no residual" },
+      { id: "INDOOR-1", title: "Indoor workers have higher MetS than outdoor workers after activity matching", description: "Indoor workers (office, data center) show higher metabolic syndrome prevalence than outdoor workers (farmers, fishermen) even after matching for physical activity level. The difference is attributable to cumulative EMF exposure differential.", falsification: "No MetS difference between physically active indoor and outdoor workers" },
+      { id: "INDOOR-2", title: "Indoor workers have lower melatonin than outdoor workers after light matching", description: "Indoor workers show lower nighttime melatonin levels than outdoor workers even after controlling for light exposure patterns. The residual difference reflects EMF exposure from office WiFi, LED lighting IF, and device proximity.", falsification: "No melatonin difference after controlling for light exposure" },
+      { id: "POCKET-1", title: "Breast pocket users have better sperm quality than hip pocket users", description: "Men who carry their phone in a breast pocket show better sperm quality than men who carry it in a hip/front pocket — despite the same total usage time. The difference is explained by testes being in the near-field only for hip pocket users.", falsification: "No difference in sperm quality by pocket position with matched usage time" },
+      { id: "POCKET-2", title: "Sperm decline acceleration correlates with data usage, not voice calls", description: "The doubling of sperm decline rate (1.16%→2.64%/yr after 2000) correlates with 3G/4G data adoption (phone stays in pocket continuously) rather than 2G voice call adoption (phone held to ear during calls only). This is a behavioral exposure change, not a technology power change.", falsification: "Sperm decline rate correlates with voice call volume rather than data usage patterns" },
+      { id: "FREQ-1", title: "50 Hz countries show slightly stronger CRY-dependent effects than 60 Hz countries", description: "50 Hz (Europe) is within 2 Hz of the 8th Schumann resonance harmonic (52.0 Hz), potentially producing stronger CRY interference. European populations may show slightly stronger CRY-dependent cascade effects (melatonin suppression, depression) than American populations at matched total EMF levels.", falsification: "No difference in CRY-dependent endpoints between 50 Hz and 60 Hz countries at matched EMF" },
+      { id: "REPL-1", title: "Retrospective moderator analysis predicts positive vs. null EMF studies", description: "A retrospective analysis of 50–100 published EMF bio-assay studies, coding for study month, laboratory latitude, building material, and subject background, will show that these four moderators significantly predict whether a study found a positive or null result. This is testable WITHOUT new data.", falsification: "Moderator variables do not predict study outcomes in logistic regression (p > 0.05)" },
+    ],
+    supplementFalsification: "Falsification criterion",
+    supplementLocked: "Locked: 2026-08-26",
+    supplementStatus: "LOCKED — awaiting test",
   },
   fi: {
     title: "Lukitut ennusteet",
@@ -1485,9 +1502,9 @@ const COPY = {
       {
         id: "PHARM-4",
         title: "Nimodipiini vaimentaa EMF:n aiheuttamia kognitiivisia vaikutuksia kun perifeeriset CCB:t eivät",
-        description: "Nimodipiinin (BBB:n läpäisevä dihydropyridiini-CCB) pitäisi vaimentaa EMF-assosioituja kognitiivisia vaikutuksia, kun amlodipiinin (ei-BBB-penetrantti) ei pitäisi. Tämä testaa osallistuuko VGCC-aktivaatio CNS-neuroneissa kognitiivisiin päätepisteisiin riippumatta perifeerisistä vaikutuksista.",
+        description: "Nimodipiinin (BBB:n läpäisevä dihydropyridiini-CCB) pitäisi vaimentaa EMF-assosioituja kognitiivisia vaikutuksia, kun amlodipiinin (ei-BBB-penetrantti) ei pitäisi. Kolme moderaattoria erottavat BERM:n yksinkertaisesta Ca²⁺-blokkaus-hypoteesista: (a) vaikutuksen pitäisi olla SUUREMPI talvella kuin kesällä (CRY herkempi), (b) SUUREMPI AA-genotyypin kantajilla (enemmän Cav1.2), ja (c) SUUREMPI koehenkilöillä joilla WiFi kotona (primatumpi baseline). ETH Zürichin 5G-unitutkimus on ensimmäinen mahdollisuus testata näitä moderaattoreita suoraan.",
         timeline: "2–4 vuotta (prospektiivinen kohortti tai RCT-laajennustutkimus)",
-        falsification: "Ei eroa nimodipiinin ja amlodipiinin välillä kognitiivisissa päätepisteissä korkean EMF:n ympäristöissä",
+        falsification: "Ei eroa nimodipiinin ja amlodipiinin välillä kognitiivisissa päätepisteissä, TAI ei moderaattorista riippuvaa vaihtelua (vuodenaika, genotyyppi, kodin EMF)",
       },
       {
         id: "PHARM-5",
@@ -2097,6 +2114,23 @@ const COPY = {
     sentinelPredFalsification: "Kumoamisehto",
     sentinelPredLocked: "Lukittu: 2026-08-26",
     sentinelPredStatus: "LUKITTU — odottaa testiä",
+
+    supplementTitle: "Täydentävät ennusteet",
+    supplementLead: "Ennusteet kuudesta täydentävästä analyysialueesta: vuorotyö, sisä-/ulkotyön ammattigradientti, puhelimen taskusiirtymä, verkkotaajuusmaantiede ja replikaatiomoderaattorianalyysi.",
+    supplementPredictions: [
+      { id: "SHIFT-1", title: "Faraday-makuuhuone parantaa vuorotyöntekijöiden terveyttä", description: "Vuorotyöntekijät jotka nukkuvat Faraday-suojatussa makuuhuoneessa (EMF-vapaa) osoittavat parempaa melatoniinipalautumista ja vähemmän metabolista syndroomaa kuin tavanomaisessa makuuhuoneessa nukkuvat — samalla kokonaisuniajalla. Ero eristää EMF-komponentin unenpuutekomponentista.", falsification: "Ei eroa metabolisissa tai hormonaalisissa tuloksissa suojatun ja suojaamattoman makuuhuoneen välillä" },
+      { id: "SHIFT-2", title: "Vuorotyön terveysvaikutukset pahempia talvella", description: "Vuorotyön terveysvaikutusten (metabolinen syndrooma, masennus, kardiovaskulaarinen riski) tulisi olla mitattavasti pahempia talvikuukausina korkeilla leveysasteilla, koska CRY-magnetoreseptorin herkkyys on korkeampi vähentyneessä valossa.", falsification: "Ei vuodenaikavaihtelua vuorotyön terveysvaikutuksissa" },
+      { id: "SHIFT-3", title: "Vuorotyön MetS OR ylittää unenpuutteen OR:n", description: "Vuorotyöntekijöiden metabolisen syndrooman vedonlyöntisuhde (OR 2,17) ylittää sen mitä pelkkä unenpuute selittäisi. Ylimääräinen riski johtuu EMF-komponentista: LED IF -altistus melatoniinihuipun aikana ja eliminoitu palautumisikkuna.", falsification: "Unenpuute yksin selittää täysin vuorotyön MetS-riskin" },
+      { id: "INDOOR-1", title: "Sisätyöntekijöillä korkeampi MetS kuin ulkotyöntekijöillä aktiivisuusvakioinnin jälkeen", description: "Sisätyöntekijöillä (toimisto, datakeskus) on korkeampi metabolisen syndrooman esiintyvyys kuin ulkotyöntekijöillä (maanviljelijät, kalastajat) myös fyysisen aktiivisuustason sovittamisen jälkeen.", falsification: "Ei MetS-eroa fyysisesti aktiivisten sisä- ja ulkotyöntekijöiden välillä" },
+      { id: "INDOOR-2", title: "Sisätyöntekijöillä matalampi melatoniini kuin ulkotyöntekijöillä valovakioinnin jälkeen", description: "Sisätyöntekijöillä on matalammat yölliset melatoninitasot kuin ulkotyöntekijöillä myös valoaltistuksen kontrolloinnin jälkeen. Jäännösero heijastaa EMF-altistusta toimiston WiFi:stä, LED-valaistuksen IF:stä ja laitteiden läheisyydestä.", falsification: "Ei melatoniinieroa valoaltistuksen kontrolloinnin jälkeen" },
+      { id: "POCKET-1", title: "Rintataskun käyttäjillä parempi siittiölaatu kuin lonkkatasku", description: "Miehillä jotka kantavat puhelintaan rintataskussa on parempi siittiölaatu kuin lonkka-/etutaskuun kantavilla — samasta kokonaiskäyttöajasta huolimatta. Ero selittyy sillä, että kivekset ovat lähikentässä vain lonkkatasku-käyttäjillä.", falsification: "Ei eroa siittiölaadussa taskupaikan mukaan samalla käyttöajalla" },
+      { id: "POCKET-2", title: "Siittiölaskun kiihtyminen korreloi datakäytön kanssa, ei puhelujen", description: "Siittiölaskun kaksinkertaistuminen (1,16→2,64 %/v vuoden 2000 jälkeen) korreloi 3G/4G-datakäytön yleistymisen (puhelin pysyy taskussa jatkuvasti) kanssa, ei 2G-puhelujen yleistymisen (puhelin korvalla puhelun ajan) kanssa.", falsification: "Siittiölaskun nopeus korreloi puheluvolyymin eikä datakäytön kanssa" },
+      { id: "FREQ-1", title: "50 Hz -maissa hieman vahvempia CRY-riippuvaisia vaikutuksia kuin 60 Hz -maissa", description: "50 Hz (Eurooppa) on 2 Hz:n sisällä Schumann-resonanssin 8. harmonisesta (52,0 Hz), mikä saattaa tuottaa vahvempaa CRY-häiriötä. Eurooppalaiset populaatiot saattavat osoittaa hieman vahvempia CRY-riippuvaisia kaskadivaikutuksia kuin amerikkalaiset sovitetuilla EMF-tasoilla.", falsification: "Ei eroa CRY-riippuvaisissa päätepisteissä 50 Hz:n ja 60 Hz:n maiden välillä sovitetulla EMF:llä" },
+      { id: "REPL-1", title: "Retrospektiivinen moderaattorianalyysi ennustaa positiiviset vs. nollatulokset", description: "Retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta, koodaten tutkimuksen kuukausi, laboratorion leveysaste, rakennusmateriaali ja koehenkilöiden tausta, osoittaa näiden neljän moderaattorin ennustavan merkitsevästi löytääkö tutkimus positiivisen vai nollatuloksen. Testattavissa ILMAN uutta dataa.", falsification: "Moderaattorimuuttujat eivät ennusta tutkimustuloksia logistisessa regressiossa (p > 0,05)" },
+    ],
+    supplementFalsification: "Kumoamisehto",
+    supplementLocked: "Lukittu: 2026-08-26",
+    supplementStatus: "LUKITTU — odottaa testiä",
   },
 } as const;
 
@@ -2933,6 +2967,34 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               <div className="space-y-1 text-xs text-foreground-muted">
                 <p><span className="font-semibold">{d.sentinelPredFalsification}:</span> {sp.falsification}</p>
                 <p className="font-mono-num">{d.sentinelPredLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Supplement predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.supplementTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.supplementLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.supplementPredictions.map((sp) => (
+            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{sp.id}</span>
+                    <h3 className="font-semibold">{sp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.supplementStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{sp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.supplementFalsification}:</span> {sp.falsification}</p>
+                <p className="font-mono-num">{d.supplementLocked}</p>
               </div>
             </article>
           ))}

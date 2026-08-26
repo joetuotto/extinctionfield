@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Moon } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { BermIcon } from "@/components/BermIcon";
 import { BehavioralSuppression } from "@/components/BehavioralSuppression";
 import { CitationLink } from "@/components/CitationLink";
 
@@ -103,7 +104,7 @@ const COPY = {
         studies: [
           { citation: "REFLEX / Diem ym.", year: 2005, note: "Katkonainen > jatkuva genotoksisuus" },
           { citation: "Palautumisikkunamalli (BERM)", year: 2026, note: "20,6 % vs 90,1 % EMF-vapaata aikaa" },
-          { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, note: "3,5 GHz → testis-ROS-vaurio; CoQ10 lievittää — mekanismin reversiibeilyys, yhdenmukainen palautumisikkunan kanssa." },
+          { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, note: "3,5 GHz → testis-ROS-vaurio; CoQ10 lievittää — mekanismin palautuvuus, yhdenmukainen palautumisikkunan kanssa." },
         ],
       },
       {
@@ -122,7 +123,7 @@ const COPY = {
       },
       {
         id: "oxytocin",
-        title: "Kaksoisoksitossiinireitti",
+        title: "Kaksoisoksitosiinireitti",
         paragraphs: [
           "Kaksi itsenäistä biologista reittiä konvergoi oksitosiinin suppressioon. Porgesin polyvagaalireitti: krooninen sympaattinen aktivaatio (yhteensopiva EMF:n aiheuttaman autonomisen stressin kanssa) alassäätelee ventraalista vagaali-kompleksia, vähentäen parasympaattista OT-vapautumista. Tämä vaikuttaa parisiteeseen, seksuaaliseen vastaanottavuuteen ja kohdun supistuvuuteen.",
           "Poutahidiksen/Erdmanin (MIT) mikrobiomireitti: Lactobacillus reuteri stimuloi OT-eritystä vagushermon kautta. EMF-altistuksen on osoitettu muuttavan suoliston mikrobiomikoostumusta eläinmalleissa. Jos L. reuteri -populaatiot vähenevät kroonisen RF-altistuksen alla, vagaalinen OT-signalointireitti suppressoituu itsenäisesti. Molemmat reitit — autonominen ja mikrobinen — konvergoivat vähäisempään kiertävään OT:iin, vaikuttaen lisääntymiskäyttäytymiseen ja -fysiologiaan eri suunnista.",
@@ -141,7 +142,7 @@ const COPY = {
         paragraphs: [
           "Tbahriti ym. (2026, Sleep Biol Rhythms 24(2):195–214) esittävät PRISMA 2020 -systemaattisen katsauksen: 55 tutkimusta 892 seulotusta, tarkastellen EMF:n vaikutuksia sirkadiaanirytmeihin. 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 % basaalitasosta). Kellogenien ekspressio muuttuu. Uniarkkitehtuurin muutokset dokumentoitu. EMF:n melatoniinisuppressio on pienempi kuin valon aiheuttama (>90 %).",
           "Tukee suoraan BERM:n polkua C (EMF → pineaalinen melatoniinisuppressio → GnRH-pulsaatiohäiriö → HPG → gonadifunktio). 20–50 %:n suppressio on biologisesti merkittävä ja yhdenmukainen BERM:n v17_night_fraction()-funktion kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniinisuppressio). Suppression suuruus on pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen sen kanssa, että BERM mallintaa EMF:n yhtenä useista yöllisistä häiriöreiteistä, ei ainoana ajurina. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat metodologiset standardit; 48 % eläintutkimuksista ilman riittävää sham-kontrollia. Siirtymä soluvaikutuksista systeemiseen sirkadiaaniseen häiriöön ei ole täysin osoitettu kliinisesti.",
-          "BERM-tulkinta: WHO:n ja ICNIRP:n evidenssiluokitukset ovat alttiina samoille systemaattisille vinoumille jotka BERM tunnistaa: proxy-altistusmittauksen vaimennusbias, kontrolliryhmän kontaminaatio (lab baseline bias) ja rahoittajan vinouma (Huss 2007: teollisuusrahoitteiset tutkimukset löytävät harvemmin haittoja). Jos nämä vinoumat ovat todellisia, 'kohtalainen varmuus' standardikehyksessä voi vastata korkeampaa varmuutta bias-korjatussa kehyksessä. BERM käsittelee institutionaalisia evidenssihierarkioita CONTEXT_ONLY-roolissa koska ne ovat BERM:n epistemologian ulkopuolisia, ei siksi että alla oleva evidenssi olisi heikkoa.",
+          "BERM-tulkinta: WHO:n ja ICNIRP:n evidenssiluokitukset ovat alttiina samoille systemaattisille vinoumille jotka BERM tunnistaa: proxy-altistusmittauksen vaimennusvinouma, kontrolliryhmän kontaminaatio (laboratorion lähtötasovinouma) ja rahoittajan vinouma (Huss 2007: teollisuusrahoitteiset tutkimukset löytävät harvemmin haittoja). Jos nämä vinoumat ovat todellisia, 'kohtalainen varmuus' standardikehyksessä voi vastata korkeampaa varmuutta vinoumakorjatussa kehyksessä. BERM käsittelee institutionaalisia evidenssihierarkioita CONTEXT_ONLY-roolissa koska ne ovat BERM:n epistemologian ulkopuolisia, ei siksi että alla oleva evidenssi olisi heikkoa.",
         ],
         studies: [
           { citation: "Tbahriti ym. (Sleep Biol Rhythms)", year: 2026, note: "PRISMA, 55 tutkimusta: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota 20–50 %. Vain 27 % täytti korkeat standardit." },
@@ -152,7 +153,7 @@ const COPY = {
         id: "sousouri-neuroimaging",
         title: "Ihmisen magnetoreseption aivokuvantaminen (Sousouri 2025)",
         paragraphs: [
-          "Sousouri ym. (2025, NeuroImage) tarjoavat ensimmäisen fMRI-evidenssin siitä, että staattisen magneettikentän muutokset tuottavat mitattavia hermovasteitä ihmisillä. Kontrolloiduille geomagneettisen kentän manipulaatioille altistetut koehenkilöt osoittivat toistettavaa alfa-aallon (8–13 Hz) desynkronisaatiota — sama hermosignaali jonka tunnetut aistieläkkeet tuottavat. Vaikutus oli voimakkain henkilöillä joilla oli korkeampi lähtötason alfateho ja osoitti lateralisaatiota joka viittaa oikean aivopuoliskon prosessointiin.",
+          "Sousouri ym. (2025, NeuroImage) tarjoavat ensimmäisen fMRI-evidenssin siitä, että staattisen magneettikentän muutokset tuottavat mitattavia hermovasteitä ihmisillä. Kontrolloiduille geomagneettisen kentän manipulaatioille altistetut koehenkilöt osoittivat toistettavaa alfa-aallon (8–13 Hz) desynkronisaatiota — sama hermosignaali jonka tunnetut aistiärsykkeet tuottavat. Vaikutus oli voimakkain henkilöillä joilla oli korkeampi lähtötason alfateho ja osoitti lateralisaatiota joka viittaa oikean aivopuoliskon prosessointiin.",
           "Tämä tutkimus tukee suoraan BERM:n reitin C radikaalipari-mekanismia: jos ihmisen neuronit reagoivat havaittavasti staattisen magneettikentän muutoksiin maanmagneettikentän voimakkuuksilla (~50 μT), CRY/RPM-transduuktioreitti on empiirisesti vahvistettu neurologisesti aktiiviseksi ihmisillä — ei vain muuttolinnuilla.",
           "BERM-tulkinta: jos maanmagneettikentän voimakkuiset staattiset kentät tuottavat mitattavia hermovasteitä, aikariippuvaiset antropogeeniset kentät (jotka ovat kertaluokkaa tehokkaampia radikaaliparin dynamiikan ajamisessa kuin staattiset kentät) tuottaisivat odotetusti vahvemman, kroonisen hermoperturbaation. Sousouri 2025 -tulos sulkee aukon eläinmagnetoreseptiotutkimusten ja ihmisrelevanssin välillä.",
         ],
@@ -183,7 +184,7 @@ export default async function CircadianPage({ params }: { params: Promise<{ loca
         {d.backLink}
       </Link>
 
-      <PageHeader icon={Moon} title={d.title} subtitle={d.subtitle} />
+      <PageHeader icon={Moon} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="neurobiology" size={28} className="text-accent" />} />
 
       {/* Thematic evidence narratives */}
       <section className="mb-16 border-t editorial-rule pt-6">
@@ -402,7 +403,7 @@ export default async function CircadianPage({ params }: { params: Promise<{ loca
           </p>
           <p>
             {activeLocale === "fi"
-              ? "Jos uniepidemia johtuisi yksinomaan sinisestä valosta, sinisen valon suodatus (Night Shift, f.lux, keltaiset lasit) korjaisi sen. Se ei korjaa: Duraccio ym. (2021) osoitti, ettei Night Shift-tila parantanut merkittävästi objektiivista unenlaatua. BERM ehdottaa, että sähkömagneettisen kentän komponentti (laitteen RF, LED-valaistuksen IF) on itsenäinen unihäiritsijä joka toimii CRY/RPM-mekanismin kautta, ei retinaalisen melanopsiinin. Tämä selittää miksi valon suodatus ei riitä — EMF-polku ohittaa silmän kokonaan."
+              ? "Jos uniepidemia johtuisi yksinomaan sinisestä valosta, sinisen valon suodatus (Night Shift, f.lux, keltaiset lasit) korjaisi sen. Se ei korjaa: Duraccio ym. (2021) osoitti, ettei Night Shift-tila parantanut merkittävästi objektiivista unenlaatua. BERM ehdottaa, että sähkömagneettisen kentän komponentti (laitteen RF, LED-valaistuksen IF) on itsenäinen unihäiritsijä, joka toimii CRY/RPM-mekanismin kautta, ei retinaalisen melanopsiinin. Tämä selittää, miksi valon suodatus ei riitä — EMF-polku ohittaa silmän kokonaan."
               : "If the sleep epidemic were caused solely by blue light from screens, blue-light filtering (Night Shift, f.lux, amber glasses) should resolve it. It does not: Duraccio et al. (2021) showed that Night Shift mode did not significantly improve objective sleep quality. BERM proposes that the electromagnetic field component (RF from the device, IF from LED lighting) is an independent sleep disruptor that operates through the CRY/RPM mechanism, not through retinal melanopsin. This explains why filtering light is insufficient — the EMF pathway bypasses the eye entirely."}
           </p>
         </div>
@@ -468,6 +469,65 @@ export default async function CircadianPage({ params }: { params: Promise<{ loca
               : "A paradigmatic example: Matthew Walker's 'Why We Sleep' (2017) is perhaps the most influential sleep science book ever written. Walker devotes extensive analysis to how LED screens suppress melatonin through blue light. He documents that LED blue light has twice the melatonin-suppressing effect of incandescent light at matched intensity. Yet he never asks whether LED devices produce anything other than light — specifically, whether the switch-mode power supplies in every LED device emit intermediate-frequency electromagnetic fields (20–200 kHz) that might independently disrupt the circadian system through the CRY/RPM mechanism. The electromagnetic field is not in his conceptual vocabulary. This is not a criticism of Walker — it is a demonstration of how completely the EMF hypothesis is absent from mainstream sleep science."}
           </p>
         </div>
+      </section>
+
+      {/* Shift work as natural experiment */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">
+          {activeLocale === "fi" ? "Vuorotyö BERM:n luonnollisena kokeena" : "Shift Work as Natural Experiment"}
+        </h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-4xl">
+          {activeLocale === "fi"
+            ? "Vuorotyöntekijä altistuu kolmelle BERM-mekanismille samanaikaisesti: (1) palautumisikkuna eliminoitu — yötyö ja päiväuni EMF-ympäristössä tarkoittavat, että CaMKII ei defosforyloidu koskaan; (2) IF-altistus kriittisellä hetkellä — yötyö LED/loisteputkivalossa juuri kun melatoniinin pitäisi olla huipussa; (3) CRY-herkkyyden maksimi — pimeässä CRY on herkimmillään, ja keinovalolle siirryttäessä CRY-signaali sekoittuu EMF + valo -yhdistelmään."
+            : "Shift workers experience all three BERM mechanisms simultaneously: (1) recovery window eliminated — night work and daytime sleep in an EMF environment means CaMKII never dephosphorylates; (2) IF exposure at the critical moment — night work under LED/fluorescent lighting precisely when melatonin should peak; (3) maximal CRY sensitivity — in darkness CRY is most sensitive, and transitioning to artificial light scrambles the CRY signal with an EMF + light combination."}
+        </p>
+        <div className="max-w-4xl rounded-lg border border-card-border bg-card-bg p-5 mb-4">
+          <h3 className="font-semibold text-sm mb-3">
+            {activeLocale === "fi" ? "Vuorotyön terveysprofiilin vastaavuus BERM-kaskadeihin" : "Shift work health profile matches BERM cascades"}
+          </h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs border-collapse">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-left py-2 px-2 font-semibold">{activeLocale === "fi" ? "BERM-kaskadi" : "BERM cascade"}</th>
+                  <th className="text-left py-2 px-2 font-semibold">{activeLocale === "fi" ? "Vuorotyön vaikutus" : "Shift work effect"}</th>
+                  <th className="text-left py-2 px-2 font-semibold">OR/HR</th>
+                </tr>
+              </thead>
+              <tbody className="text-foreground-muted">
+                {[
+                  { cascade: activeLocale === "fi" ? "Uni/melatoniini" : "Sleep/melatonin", effect: activeLocale === "fi" ? "Melatoniini↓, uni↓" : "Melatonin↓, sleep↓", or: "—" },
+                  { cascade: activeLocale === "fi" ? "Masennus" : "Depression", effect: activeLocale === "fi" ? "Masennus↑, ahdistus↑" : "Depression↑, anxiety↑", or: "OR ~1.4" },
+                  { cascade: activeLocale === "fi" ? "Metabolinen syndr." : "Metabolic syndrome", effect: "MetS 2.17×", or: "OR 2.17" },
+                  { cascade: "T2D", effect: activeLocale === "fi" ? "T2D-riski↑" : "T2D risk↑", or: "HR ~1.1–1.4" },
+                  { cascade: activeLocale === "fi" ? "Kardiovaskulaari" : "Cardiovascular", effect: "CVD, MI↑", or: "HR ~1.2" },
+                  { cascade: activeLocale === "fi" ? "Fertiliteetti" : "Fertility", effect: activeLocale === "fi" ? "Keskenmenot↑, T↓" : "Miscarriage↑, T↓", or: "OR ~1.3" },
+                  { cascade: activeLocale === "fi" ? "Syöpä" : "Cancer", effect: activeLocale === "fi" ? "Rintasyöpä (IARC 2A)" : "Breast cancer (IARC 2A)", or: "OR ~1.2" },
+                  { cascade: activeLocale === "fi" ? "Endokriininen" : "Endocrine", effect: activeLocale === "fi" ? "Kortisoli↑, kilpirauhanen" : "Cortisol↑, thyroid", or: "—" },
+                ].map((row) => (
+                  <tr key={row.cascade} className="border-b border-border/50">
+                    <td className="py-1.5 px-2 font-medium">{row.cascade}</td>
+                    <td className="py-1.5 px-2">{row.effect}</td>
+                    <td className="py-1.5 px-2 font-mono-num">{row.or}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="max-w-4xl rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 mb-4">
+          <p className="text-sm text-foreground-muted leading-relaxed">
+            <span className="font-semibold">{activeLocale === "fi" ? "BERM:n erotteleva ennuste: " : "BERM's differentiating prediction: "}</span>
+            {activeLocale === "fi"
+              ? "Unenpuute yksin EI selitä kaikkea. EMF-komponentti (LED IF yöllä + WiFi-ympäristö päiväunella + CRY-häiriö pimeässä) tuottaa lisävaikutuksen unenpuutteen päälle. Testattavissa: vuorotyöntekijä joka nukkuu Faraday-suojatussa makuuhuoneessa (EMF-vapaa yö) vs. tavanomainen makuuhuone — samalla uniajalla. Jos Faraday-ryhmä osoittaa parempaa melatoniinipalautumista ja vähemmän metabolista syndroomaa, ero on EMF-komponentti."
+              : "Sleep deprivation alone does NOT explain everything. The EMF component (LED IF at night + WiFi environment during daytime sleep + CRY disruption in darkness) produces an additional effect beyond sleep deprivation. Testable: shift worker sleeping in a Faraday-shielded bedroom (EMF-free night) vs. conventional bedroom — with the same sleep time. If the Faraday group shows better melatonin recovery and less metabolic syndrome, the difference is the EMF component."}
+          </p>
+        </div>
+        <p className="text-xs text-foreground-muted/70 max-w-4xl">
+          {activeLocale === "fi"
+            ? "Episteeminen taso: vuorotyön terveysvaikutukset [E] (meta-analyysit). BERM-tulkinta (kolme samanaikaista mekanismia) [M|C]. Faraday-interventio [C] (ehdotettu, ei vielä testattu)."
+            : "Epistemic level: shift work health effects [E] (meta-analyses). BERM interpretation (three simultaneous mechanisms) [M|C]. Faraday intervention [C] (proposed, not yet tested)."}
+        </p>
       </section>
 
       {/* See also navigation */}

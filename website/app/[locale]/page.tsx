@@ -94,7 +94,7 @@ const COPY = {
 
     klimentidisLabel: "THE KLIMENTIDIS PARADOX",
     klimentidisTitle: "Even lab animals are getting fatter",
-    klimentidisText: "Laboratory rats on controlled diets, wild rats, pet dogs and cats — all gaining weight across decades. 24 populations, 8 species, p = 1.2 × 10⁻⁷. BERM identifies EMF as the only environmental factor increasing across all these environments simultaneously.",
+    klimentidisText: "Laboratory rats on controlled diets, wild rats, pet dogs and cats — all gaining weight across decades. 24 populations, 8 species, p = 1.2 × 10⁻⁷. Controlled animal laboratories rule out diet, exercise, stress, and chemicals — leaving the EMF environment. BERM predicts that Faraday-shielded laboratories will produce leaner animals on the same diet.",
     klimentidisNote: "Klimentidis et al. (2010) did not study EMF. They suggested \"as-of-yet unidentified factors.\" The EMF interpretation is BERM's derivation.",
     klimentidisLink: "Read the metabolic cascade",
 
@@ -215,7 +215,7 @@ const COPY = {
 
     klimentidisLabel: "KLIMENTIDISIN PARADOKSI",
     klimentidisTitle: "Jopa laboratoriorotat lihovat",
-    klimentidisText: "Laboratoriorotat kontrolloidulla ruokavaliolla, villit rotat, lemmikit — koirat ja kissat — kaikki lihovat vuosikymmenestä toiseen. 24 populaatiota, 8 lajia, p = 1,2 × 10⁻⁷. BERM tunnistaa EMF:n ainoaksi ympäristötekijäksi, joka on lisääntynyt kaikissa näissä ympäristöissä samanaikaisesti.",
+    klimentidisText: "Laboratoriorotat kontrolloidulla ruokavaliolla, villit rotat, lemmikit — koirat ja kissat — kaikki lihovat vuosikymmenestä toiseen. 24 populaatiota, 8 lajia, p = 1,2 × 10⁻⁷. Kontrolloidut eläinlaboratoriot sulkevat pois ruokavalion, liikunnan, stressin ja kemikaalit — jäljelle jää EMF-ympäristö. BERM ennustaa: Faraday-suojattu laboratorio tuottaa laihempia rottia samalla dieetillä.",
     klimentidisNote: "Klimentidis ym. (2010) eivät tutkineet EMF:ää. He ehdottivat \"toistaiseksi tunnistamattomia tekijöitä.\" EMF-tulkinta on BERM:n johtopäätös.",
     klimentidisLink: "Lue metabolinen kaskadi",
 
@@ -336,7 +336,7 @@ export default async function Home({
       <header className="relative -mx-6 overflow-hidden rounded-b-2xl sm:rounded-2xl sm:mx-0 mt-0 sm:mt-8 mb-14">
         <div className="relative min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
           <Image
-            src="/images/hero-fertilization.png"
+            src="/images/hero-fertilization.jpg"
             alt=""
             fill
             priority

@@ -269,11 +269,15 @@ const t: Record<Locale, Copy> = {
       {
         question: "If EMF effects are real, why do labs get contradictory results?",
         response: [
-          "Because the biological response depends on five variables that are not standardized across laboratories: (1) Tissue temperature — Blackman 1991 showed that 1°C changes the result from positive to null to negative; (2) Lighting spectrum — CRY's radical pair mechanism is light-dependent; (3) Geomagnetic field orientation — Blackman 1990 showed DC-AC angle is critical; (4) Geomagnetic field intensity — varies with latitude; (5) Developmental exposure history — Blackman 1985 showed frequency imprinting.",
-          "When Blackman controlled these variables, his results were consistent across hundreds of experiments over six years. When other labs did not control them — because no one had yet identified them as critical — results varied.",
-          "This is analogous to early drug trials before dose standardization: different labs gave different doses and got different results. The solution was not to conclude drugs don't work — it was to standardize dosing. EMF biology needs the same standardization.",
+          "EMF research has produced contradictory results for decades. BERM identifies four uncontrolled moderators that predict which studies find positive results and which find null:",
+          "1. SEASON: CRY magnetoreceptor sensitivity is light-dependent. In winter (less light), CRY is more sensitive to EMF — biological effects on melatonin are stronger. A study conducted in summer produces a different result than the same study in winter. This has been directly demonstrated in calves (Halgamuge 2015, Nature Sci Rep).",
+          "2. GENOTYPE: CACNA1C rs1006737 polymorphism regulates Cav1.2 channel expression. A-allele carriers produce more channels and show greater Ca²⁺ response per EMF stimulus. Sousouri 2025 (ETH Zürich) demonstrated directly: CACNA1C genotype determines the 5G sleep response. A study population with low A-allele frequency produces weaker results.",
+          "3. LABORATORY ELF BACKGROUND: The 50/60 Hz power grid upregulates VGCC expression in nerve endings after 8–10 days of exposure (PMC4757866). A laboratory with high ELF background 'primes' cells to respond more strongly. A laboratory with low ELF background produces a weaker response.",
+          "4. SUBJECTS' NIGHTTIME EMF: A Wi-Fi router in the bedroom versus an EMF-free night affects CaMKII recovery. A subject who slept in an EMF-free environment enters the experiment at a different baseline state than one who slept next to Wi-Fi and a phone.",
+          "Study A (winter, northern latitude, AA-genotype subjects, high lab-ELF, Wi-Fi homes) finds a positive result. Study B (summer, southern latitude, GG-genotype subjects, low lab-ELF, EMF-free homes) finds a null result. Both are CORRECT. Meta-analyses report 'contradictory evidence' because they do not control for these four variables.",
+          "This is testable WITHOUT new data: a retrospective analysis of 50–100 published EMF bio-assay studies, coding for study month, laboratory latitude, building material (if reported), and subject background — logistic regression predicting positive vs. null outcome from moderators.",
         ],
-        boundary: "Blackman's individual findings are experimental (E-level). Their synthesis into a unified five-confound framework is BERM's contribution (M-level).",
+        boundary: "The four-moderator framework is BERM's synthesis (M-level). Individual moderators have empirical support: season (Halgamuge 2015, E-level), genotype (Sousouri 2025, E-level), ELF priming (PMC4757866, E-level). The retrospective meta-moderator test (REPL-1) would elevate this from M-level to E-level.",
       },
     ],
     closingTitle: "Constructive ways to test the programme",
@@ -285,14 +289,14 @@ const t: Record<Locale, Copy> = {
     subtitle:
       "Kaikki tunnistetut negatiiviset havainnot, avoimet ongelmat ja falsifioidut aiemmat versiot — sekä se, mitä kukin niistä todella koskee.",
     introduction:
-      "BERM v17 pitää avoimuutta epistemologisena periaatteena. Alla oleva luokittelu soveltaa BERM-päättelyprotokollaa (v1.0) aiemmin negatiivisiksi tulkittuihin havaintoihin. Uudelleenluokittelu ei tarkoita, että havainto tukisi BERM:ää — se tarkoittaa, ettei alkuperäinen testi ollut erotteleva tai kohdistui oikeaan kohteeseen. BERM:n primäärihaara (polku C / RPM / kohorttivaikutus) on edelleen empiirisesti testaamaton erottelevilla testeillä.",
+      "BERM v17 pitää avoimuutta epistemologisena periaatteena. Alla oleva luokittelu soveltaa BERM-päättelyprotokollaa (v1.0) aiemmin negatiivisiksi tulkittuihin havaintoihin. Uudelleenluokittelu ei tarkoita, että havainto tukisi BERM:ää — se tarkoittaa, ettei alkuperäinen testi ollut erotteleva tai ei kohdistunut siihen, mitä sen katsottiin testaavan. BERM:n primäärihaara (polku C / RPM / kohorttivaikutus) on edelleen empiirisesti testaamaton erottelevilla testeillä.",
     summaryLabel: "NEGATIIVISTEN HAVAINTOJEN UUDELLEENARVIOINTI",
     activeTitle: "Aktiiviset ongelmat (pysyvät negatiivisina)",
     activeLead:
       "Nämä pätevät. Kaksi on falsifioituja mekanismeja BERM v6–v9:stä, yksi on matemaattinen este solitonikerroksessa, yksi on dokumentaation eheysvirhe ja kaksi on avoimia teoreettisia ongelmia Lindgrenin kehyksessä.",
     reclassifiedTitle: "Uudelleenluokitellut (eivät erottele malleja)",
     reclassifiedLead:
-      "Jokainen näistä tulkittiin falsifikaatioksi. Protokollan mukaan yksikään ei testannut ennustetta, joka erottaa BERM:n konsensusmallista — joko BERM:n ennustetta ei koskaan johdettu, tai testi kohdistui väitteeseen jota malli ei esitä.",
+      "Jokainen näistä tulkittiin falsifikaatioksi. Protokollan mukaan yksikään ei testannut ennustetta, joka erottaa BERM:n konsensusmallista — joko BERM:n ennustetta ei koskaan johdettu, tai testi kohdistui väitteeseen, jota malli ei esitä.",
     refinementTitle: "Sisäiset tarkennukset (johtivat mallin parantamiseen)",
     refinementLead:
       "Nämä olivat aitoja tietyn muotoilun epäonnistumisia, ja kumpikin tuotti rakenteellisen korjauksen puolustuksen sijaan.",
@@ -332,7 +336,7 @@ const t: Record<Locale, Copy> = {
       { version: "BERM 6–9", mechanism: "Vesiresonanssi 2,45 GHz", status: "Hylätty", why: "Käänteinen fysiikka: absorptio on rotaatiovaimennusta, ei vahvistavaa resonanssia" },
       { version: "BERM 6–9", mechanism: "Solitonipropagaatio", status: "Hylätty", why: "Ghost-obstruktio: π₂ = 0 aikakaltaiselle A:lle, ghost-energia avaruuskaltaiselle" },
       { version: "L-BERM", mechanism: "VGCC puhtaan geometrian kautta", status: "Demotoitu", why: "δV_m on 10¹⁷× liian pieni ilman biologisia vahvistimia" },
-      { version: "BERM < v6", mechanism: "EMF selittää koko demografisen transition", status: "Hylätty", why: "Pre-EMF-lasku on D-termin (kulttuurinen kysyntä) ajamaa" },
+      { version: "BERM < v6", mechanism: "EMF selittää koko demografisen siirtymän", status: "Hylätty", why: "Pre-EMF-lasku on D-termin (kulttuurinen kysyntä) ajamaa" },
     ],
     questionsTitle: "Tutkimuskysymykset ja evidenssirajat",
     objections: [
@@ -360,8 +364,8 @@ const t: Record<Locale, Copy> = {
       {
         question: "Voivatko demografiset ja sosiaaliset syyt selittää periodin TFR-muutoksen?",
         response: [
-          "Kyllä. Koulutus, ehkäisy, asuminen, työmarkkinat, parinmuodostus, muuttoliike, politiikka, toivottu perhekoko, tempo ja ART vaikuttavat havaittuun hedelmällisyyteen. Periodin TFR on viisivuotisikäryhmien summa, ei suora gametti- tai conception-testi.",
-          "V2 mallintaa siksi ASFR:n ennen TFR:ää ja pitää kysynnän/mahdollisuuden, tempon sekä ART/live-birth-deliveryn eksplisiittisinä. Se ei kohdista niiden residuaalivaihtelua biologiseen kenttäreittiin.",
+          "Kyllä. Koulutus, ehkäisy, asuminen, työmarkkinat, parinmuodostus, muuttoliike, politiikka, toivottu perhekoko, tempo ja ART vaikuttavat havaittuun hedelmällisyyteen. Periodin TFR on viisivuotisikäryhmien summa, ei suora gametti- tai hedelmöitystesti.",
+          "V2 mallintaa siksi ASFR:n ennen TFR:ää ja pitää kysynnän/mahdollisuuden, tempon sekä ART:n ja elävänä syntymisen eksplisiittisinä. Se ei kohdista niiden residuaalivaihtelua biologiseen kenttäreittiin.",
           "Kuitenkin: pelkkä unideprivaatio alentaa testosteronia 10–15 % ja siittiömäärää 29 % kontrolloiduissa laboratoriokokeissa terveillä nuorilla miehillä — ilman kulttuurista, käyttäytymisen tai kemiallisen altistuksen muutosta (Leproult & Van Cauter 2011; Walker 2017). Kysymys ei ole vaikuttaako uni hedelmällisyyteen (vaikuttaa, kiistattomasti) vaan häiritseekö EMF unta (CRY/RPM-mekanismi ja LED-melatoniinisuppressiodata sanovat kyllä).",
         ],
         boundary: "Maakohtainen trendi ei yksin tunnista biologista syytä. Väestöpäättely vaatii kohdistetun FieldState-, päätepiste-, pari- ja ASFR-paneelin sekä uskottavat kilpailevat mallit.",
@@ -370,7 +374,7 @@ const t: Record<Locale, Copy> = {
         question: "Osoittaako Lindgren-fysiikka ihmisen lisääntymismekanismin?",
         response: [
           "Lindgrenin geometria tarjoaa teoreettisen viitekehyksen, joka tuottaa BERM:n testattavat ennusteet — taustariippuvuuden, vektoriorientaation, spektrirakenteen ja geometriaherkkyyden. Nämä ennusteet erottavat BERM:n malleista, jotka käsittelevät EMF-altistusta skalaariannoksena. 87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa Lindgrenin metriikka-ansatzista, mikä antaa CRY-reitille suoran geometrisen perustan.",
-          "Jokainen alajuoksuinen biologinen lenkki — kentän geometriasta kromoforin vasteeseen ja elintason päätepisteisiin — vaatii oman kokeellisen validointinsa. Relevantit testit ovat erottavia fysikaalisia ja biologisia kokeita: ennalta määritelty kulma-, tausta- tai PSD-riippuvuus kalibroiduilla kentillä ja asianmukaisilla sham-/lämpökontrolleilla.",
+          "Jokainen alajuoksuinen biologinen lenkki — kentän geometriasta kromoforin vasteeseen ja elinkohtaisiin päätepisteisiin — vaatii oman kokeellisen validointinsa. Relevantit testit ovat erottavia fysikaalisia ja biologisia kokeita: ennalta määritelty kulma-, tausta- tai PSD-riippuvuus kalibroiduilla kentillä ja asianmukaisilla sham-/lämpökontrolleilla.",
         ],
         boundary: "Teoreettinen viitekehys tuottaa ennusteet; ennusteet testataan empiirisesti. Jokainen lenkki tarvitsee oman mitatun evidenssinsä.",
       },
@@ -386,9 +390,9 @@ const t: Record<Locale, Copy> = {
         question: "Voivatko mobiililiittymät tai eDRX osoittaa fysikaalisen altistusreitin?",
         response: [
           "Mobiililiittymätiheys on yhdistelmäproksi koko sähkömagneettiselle ympäristölle — se seuraa tukiasemien käyttöönottoa, Wi-Fin leviämistä, IoT-tiheyttä ja sisätilaelektroniikan yleistymistä, ei pelkkää RF-altistusta. Nykyinen N = 163 -kohorttitulos käyttää tätä yhdistelmäproksia kuvailevaan kohorttianalyysiin.",
-          "Samoin eDRX on laitteen vastaanoton/sivutuksen ajoitusmetadataa, ei yksin tunnettu downlink-RF-kenttäallekirjoitus. Mahdollinen verhokäyrä- tai beat-piirre on mitattava todellisessa kentässä ennen biologista testiä.",
+          "Samoin eDRX on laitteen vastaanoton/sivutuksen ajoitusmetadataa, ei yksin tunnettu downlink-RF-kenttäallekirjoitus. Mahdollinen verhokäyrä- tai huojuntapiirre on mitattava todellisessa kentässä ennen biologista testiä.",
         ],
-        boundary: "Proxyn ajoitus ja fysikaalinen dosimetria vastaavat eri kysymyksiin, ja ne on merkittävä eri tavoin.",
+        boundary: "Sijaismuuttujan ajoitus ja fysikaalinen dosimetria vastaavat eri kysymyksiin, ja ne on merkittävä eri tavoin.",
       },
       {
         question: "Entä vaihteleva EMF-kirjallisuus ja systemaattiset katsaukset?",
@@ -410,7 +414,7 @@ const t: Record<Locale, Copy> = {
         question: "Tanskalaiset ja NHANES-tutkimukset eivät löytäneet BMI-riippumatonta laskua",
         response: [
           "Tämä tulkinta olettaa BMI:n olevan sekoittaja (itsenäinen syy). BERM:n kausaalimalli käsittelee BMI:tä mediaattorina: EMF aiheuttaa samanaikaisesti sekä BMI:n nousun (kuuden metabolisen reitin kautta) että testosteronin laskun (suorasti Cav3.2/melatoniini/kortisoli-reittien kautta). BMI-korjaus poistaa medioidun signaalin — ylikorjaus joka hävittää todellista biologista vaikutusta.",
-          "Mazur ym. 2013 (PLOS ONE, n = 991 US Air Force -veteraania, 20 vuoden seuranta) tarjoaa kriittisen testin: miehet jotka PITIVÄT PAINONSA VAKIONA menettivät silti 117 ng/dL (19 %) testosteroninsa 20 vuodessa. Lihavuus ei voi selittää tätä laskua. Suora reitti kattaa noin kaksi kolmasosaa kokonaisvaikutuksesta; medioitu reitti (BMI:n kautta) noin kolmanneksen.",
+          "Mazur ym. 2013 (PLOS ONE, n = 991 US Air Force -veteraania, 20 vuoden seuranta) tarjoaa kriittisen testin: miehet, jotka PITIVÄT PAINONSA VAKIONA menettivät silti 117 ng/dL (19 %) testosteroninsa 20 vuodessa. Lihavuus ei voi selittää tätä laskua. Suora reitti kattaa noin kaksi kolmasosaa kokonaisvaikutuksesta; medioitu reitti (BMI:n kautta) noin kolmanneksen.",
           "Santi ym. 2025 (n = 1 064 891, suurin koskaan tehty meta-analyysi) ei havainnut BMI:n ajallista trendiä tutkimuspopulaatiossaan, mutta testosteroni laski merkitsevästi. Kasvava lihavuus ei ole ajuri tässä aineistossa.",
           "Klimentidis ym. 2010 (Proc R Soc B) osoittivat, että laboratorieläimet KONTROLLOIDUILLA ruokavalioilla lihoivat vuosikymmenten kuluessa (p = 1,2×10⁻⁷). Ruokavalion ulkopuolinen ympäristötekijä ajaa painonnousua — sama tekijä voi samanaikaisesti ajaa testosteronin laskua medioidun reitin kautta.",
         ],
@@ -419,15 +423,15 @@ const t: Record<Locale, Copy> = {
       {
         question: "Mikä siirtäisi mallin rakenteesta tulokseksi?",
         response: [
-          "Mittausvalmis FieldState tarvitsee dokumentoidun kalibroinnin, B₀-vektorin, elinsiirron, PSD:n, vuorokausikontekstin, vaiheen/koherenssin ja provenienssin. Se on sen jälkeen yhdistettävä ennalta määriteltyyn elin- tai paripäätepisteeseen evidenssi- ja parametri-ID:hin kiinnittyvillä mappingeilla.",
+          "Mittausvalmis FieldState tarvitsee dokumentoidun kalibroinnin, B₀-vektorin, elinkohtaisen siirtofunktion, PSD:n, vuorokausikontekstin, vaiheen/koherenssin ja provenienssin. Se on sen jälkeen yhdistettävä ennalta määriteltyyn elin- tai paripäätepisteeseen evidenssi- ja parametri-ID:hin kiinnittyvillä vastaavuuksilla.",
           "Kalibrointi tehdään vain opetusjaksolla, jota seuraavat riippumaton laboratorioreplikaatio ja sovituksen ulkopuolelle jätetty ASFR/TFR-jakso. Sekä nolla- että ei-nollatulosten tulee päivittää kausaalirekisteriä.",
         ],
-        boundary: "Kunnes nämä joinit ovat olemassa, v2 on tutkimusmäärittely ja kausaalikartta, ei kalibroitu maakohtainen ennustemalli.",
+        boundary: "Kunnes nämä kytkennät ovat olemassa, v2 on tutkimusmäärittely ja kausaalikartta, ei kalibroitu maakohtainen ennustemalli.",
       },
       {
         question: "LED-lamput ovat energiatehokkaita ja sertifioituja turvallisiksi",
         response: [
-          "LED-lamput on sertifioitu sähkömagneettisen yhteensopivuuden (EMC) osalta — eli niiden emissiot eivät häiritse muita elektronisia laitteita yli sääntelyrajojen. Niitä ei ole sertifioitu välitaajuusemissioidensa biologisen turvallisuuden osalta. CISPR 15, standardi joka koskee LED-valaistuksen EMF:ää, suunniteltiin suojaamaan radiovastaanottoa, ei biologisia järjestelmiä.",
+          "LED-lamput on sertifioitu sähkömagneettisen yhteensopivuuden (EMC) osalta — eli niiden emissiot eivät häiritse muita elektronisia laitteita yli sääntelyrajojen. Niitä ei ole sertifioitu välitaajuusemissioidensa biologisen turvallisuuden osalta. CISPR 15, standardi, joka koskee LED-valaistuksen EMF:ää, suunniteltiin suojaamaan radiovastaanottoa, ei biologisia järjestelmiä.",
           "Mikään sääntelyelin ei ole arvioinut LED-ajureiden jatkuvien 20–200 kHz kenttien biologisia vaikutuksia. Panagopouloksen 2025 IFO-VGIC-kynnys (10⁻⁵ V/m) on kertaluokkia minkä tahansa EMC-rajan alapuolella. EMC-vaatimustenmukaisuus ja biologinen turvallisuus ovat täysin erilaisia standardeja, jotka mittaavat täysin erilaisia asioita.",
           "Zeghoudi ym. 2025 (Optics & Laser Technology) mittasi suoraan LED-ajurin lähikenttäemission ja vahvisti sähkökentän komponentit senttimetrien etäisyydellä. Tyypillisessä kodissa on 15–30 LED-lamppua, joista jokaisessa on hakkuriteholähde. EU:n hehkulamppukielto (2009–2012) korvasi nolla-IF-lähteet jatkuvilla IF-lähteillä ~450 miljoonalle ihmiselle ilman minkäänlaista sähkömagneettisen muutoksen arviointia.",
           "Vuoden 2022 IJRB:n systemaattinen katsaus IF-EMF:n (300 Hz–10 MHz) eläintutkimuksista vahvisti, että tämä taajuuskaista on saanut minimaalisen määrän terveystutkimusta verrattuna ELF:ään ja RF:ään — sääntelyn aukko on nyt dokumentoitu vertaisarvioidussa kirjallisuudessa.",
@@ -496,7 +500,7 @@ const t: Record<Locale, Copy> = {
       {
         question: "Miksi polku C saa 25 % kun se oli alun perin 15 %?",
         response: [
-          "Polku C sai alun perin 15 % perustuen tunnettuun rooliinsa sirkadiaanisen kellon modulaattorina. Vuonna 2025 Yap ja kollegat löysivät, että CRY2 — polku C:n pääproteiini — on myös fysikaalisessa vuorovaikutuksessa TRPC1:n, kationikanavan, kanssa ja moduloi kalsiumsignalointia mekanismilla joka vaatii sekä valon että FAD:n. Tämä tarkoittaa, että polku C kattaa KAKSI alaspäin suuntautuvaa vaikutusta: sirkadiaanisen kellon häiriön JA CRY2-riippuvaisen kalsiumsignaloinnin. Korotettu paino (25 %) heijastaa tätä laajennettua biologista vaikutuskenttää.",
+          "Polku C sai alun perin 15 % perustuen tunnettuun rooliinsa sirkadiaanisen kellon modulaattorina. Vuonna 2025 Yap ja kollegat löysivät, että CRY2 — polku C:n pääproteiini — on myös fysikaalisessa vuorovaikutuksessa TRPC1:n, kationikanavan, kanssa ja moduloi kalsiumsignalointia mekanismilla, joka vaatii sekä valon että FAD:n. Tämä tarkoittaa, että polku C kattaa KAKSI alaspäin suuntautuvaa vaikutusta: sirkadiaanisen kellon häiriön JA CRY2-riippuvaisen kalsiumsignaloinnin. Korotettu paino (25 %) heijastaa tätä laajennettua biologista vaikutuskenttää.",
           "TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polku A toimii VGCC:iden kautta ja nifedipiini estää sen. Polku C:n TRPC1-haara EI ole nifedipiinin estämä. Kaksi polkua pysyy farmakologisesti erillisinä — ne jakavat saman ylävirtastimulaation (EMF) mutta toimivat täysin eri kanavaperheiden kautta.",
           "Ennuste TRPC1-1 testaa tämän suoraan: EMF-altistus reproduktiosoluille nifedipiinin (estää A:n), anti-TRPC1:n (estää C-kalsiumin) tai molempien kanssa paljastaa kunkin polun suhteellisen kontribuution.",
         ],
@@ -505,11 +509,15 @@ const t: Record<Locale, Copy> = {
       {
         question: "Jos EMF-vaikutukset ovat todellisia, miksi laboratoriot saavat ristiriitaisia tuloksia?",
         response: [
-          "Koska biologinen vaste riippuu viidestä muuttujasta, joita ei ole standardoitu laboratorioiden välillä: (1) Kudoslämpötila — Blackman 1991 osoitti, että 1 °C muuttaa tuloksen positiivisesta nollaan ja negatiiviseen; (2) Valaistusspektri — CRY:n radikaalipari-mekanismi on valoriippuvainen; (3) Geomagneettisen kentän orientaatio — Blackman 1990 osoitti, että DC-AC-kulma on kriittinen; (4) Geomagneettisen kentän intensiteetti — vaihtelee leveysasteen mukaan; (5) Kehityksenaikainen altistushistoria — Blackman 1985 osoitti taajuusleimaantumisen.",
-          "Kun Blackman kontrolloi näitä muuttujia, hänen tuloksensa olivat johdonmukaisia satojen kokeiden yli kuuden vuoden aikana. Kun muut laboratoriot eivät kontrolloineet niitä — koska kukaan ei ollut vielä tunnistanut niitä kriittisiksi — tulokset vaihtelivat.",
-          "Tämä on analoginen varhaisten lääketutkimusten kanssa ennen annostuksen standardointia: eri laboratoriot antoivat eri annoksia ja saivat eri tuloksia. Ratkaisu ei ollut päätellä, etteivät lääkkeet toimi — vaan standardoida annostus. EMF-biologia tarvitsee saman standardoinnin.",
+          "EMF-tutkimus on tuottanut ristiriitaisia tuloksia vuosikymmeniä. BERM tunnistaa neljä kontrolloimatonta moderaattoria, jotka ennustavat mitkä tutkimukset löytävät positiivisen tuloksen ja mitkä nollatuloksen:",
+          "1. VUODENAIKA: CRY-magnetoreseptorin herkkyys on valoriippuvainen. Talvella (vähemmän valoa) CRY on herkempi — biologiset vaikutukset melatoniiniin ovat voimakkaampia. Kesällä tehty tutkimus tuottaa eri tuloksen kuin sama tutkimus talvella. Tämä on suoraan osoitettu vasikoilla (Halgamuge 2015, Nature Sci Rep).",
+          "2. GENOTYYPPI: CACNA1C rs1006737 -polymorfismi säätelee Cav1.2-kanavien ekspressiota. A-alleelin kantajat tuottavat enemmän kanavia ja suuremman Ca²⁺-vasteen per EMF-stimulus. Sousouri 2025 (ETH Zürich) osoitti suoraan: CACNA1C-genotyyppi määrittää 5G-univasteen. Tutkimuspopulaatio jossa A-alleeli on harvinainen tuottaa heikomman tuloksen.",
+          "3. LABORATORION ELF-TAUSTA: 50/60 Hz sähköverkko lisää VGCC-ekspressiota hermopäätteissä 8–10 päivän altistuksen jälkeen (PMC4757866). Laboratorio jossa on korkea ELF-tausta 'primaa' solut reagoimaan vahvemmin. Matalan ELF-taustan laboratorio tuottaa heikomman vasteen.",
+          "4. KOEHENKILÖIDEN YÖLLINEN EMF: WiFi-reititin makuuhuoneessa vs. EMF-vapaa yö vaikuttaa CaMKII:n palautumiseen. Koehenkilö joka nukkui EMF-vapaassa ympäristössä tulee kokeeseen eri baseline-tilassa kuin koehenkilö joka nukkui WiFi:n ja puhelimen vieressä.",
+          "Tutkimus A (talvi, pohjoinen leveysaste, AA-genotyypin koehenkilöt, korkea lab-ELF, WiFi-kodit) löytää positiivisen tuloksen. Tutkimus B (kesä, etelä, GG-genotyypin koehenkilöt, matala lab-ELF, EMF-vapaat kodit) löytää nollatuloksen. Molemmat ovat OIKEITA. Meta-analyysit raportoivat 'ristiriitaista evidenssiä' koska ne eivät kontrolloi näitä neljää muuttujaa.",
+          "Testattavissa ILMAN uutta dataa: retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta, koodaten tutkimuksen kuukausi, laboratorion leveysaste, rakennusmateriaali ja koehenkilöiden tausta — logistinen regressio ennustaa positiivisen vs. nollatuloksen moderaattoreista.",
         ],
-        boundary: "Blackmanin yksittäiset löydökset ovat kokeellisia (E-taso). Niiden synteesi yhtenäiseksi viiden sekoittajan viitekehykseksi on BERM:n kontribuutio (M-taso).",
+        boundary: "Neljän moderaattorin kehys on BERM:n synteesi (M-taso). Yksittäisillä moderaattoreilla on empiiristä tukea: vuodenaika (Halgamuge 2015, E-taso), genotyyppi (Sousouri 2025, E-taso), ELF-priming (PMC4757866, E-taso). Retrospektiivinen metamoderaattoritesti (REPL-1) nostaisi tämän M-tasolta E-tasolle.",
       },
     ],
     closingTitle: "Rakentavia tapoja testata tutkimusohjelmaa",

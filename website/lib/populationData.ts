@@ -254,8 +254,8 @@ export const LOW_EMF_POPULATIONS: LowEMFPopulation[] = [
     emfLevel: "ambient",
     emfLabelEn: "Ambient only",
     emfLabelFi: "Vain ympäristö",
-    descriptionEn: "No phones, no smartphones, limited electricity. Surrounded by modern infrastructure but refuse personal technology. TFR has declined slightly (6.9 → 6.1, 1924–2014).",
-    descriptionFi: "Ei puhelimia, ei älypuhelimia, rajoitettu sähkö. Modernin infrastruktuurin ympäröimiä mutta kieltäytyvät henkilökohtaisesta teknologiasta. TFR laskenut lievästi (6,9 → 6,1, 1924–2014).",
+    descriptionEn: "No phones, no smartphones, limited electricity. Surrounded by modern infrastructure but refuse personal technology. TFR has declined slightly (6.9 → 6.1, 1924–2014). Amish = zero technology layers. Their health profile resembles pre-electrification statistics from the early 1900s. An Amish man who moves to the city begins to gain weight and experience testosterone decline within ~2–5 years as ELF-priming progresses.",
+    descriptionFi: "Ei puhelimia, ei älypuhelimia, rajoitettu sähkö. Modernin infrastruktuurin ympäröimiä mutta kieltäytyvät henkilökohtaisesta teknologiasta. TFR laskenut lievästi (6,9 → 6,1, 1924–2014). Amissit = nolla teknologiakerrosta. Heidän terveysprofiili muistuttaa sähköistystä edeltävien 1900-luvun alun tilastoja. Amissi, joka muuttaa kaupunkiin, alkaa lihoa ja kokea testosteronin laskua ~2–5 vuodessa ELF-primauksen edetessä.",
     keyFindingEn: "TFR 6.1 (vs US 1.66). Cancer ~60% of US rates. Depression <1%. Allergic sensitization 7.2% (vs 44%).",
     keyFindingFi: "TFR 6,1 (vs USA 1,66). Syöpä ~60 % USA:n tasosta. Masennus <1 %. Allerginen herkistyminen 7,2 % (vs 44 %).",
     health: {

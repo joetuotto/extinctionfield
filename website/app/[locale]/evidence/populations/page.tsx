@@ -82,7 +82,7 @@ const COPY = {
       { pop: "Mosetén", emf: "Low", baseline: "Intermediate", decline: "Modest", trajectory: "Slight decline with age" },
       { pop: "Modern USA", emf: "High", baseline: "~550 pg/mL → declining", decline: "~1.5%/year", trajectory: "Steep decline; crosses Tsimane by ~55" },
     ],
-    tGradientNote: "This gradient controls for the strongest confounders: Tsimane and Mosetén share ancestry, geography, and subsistence base. Technology adoption is the primary variable that differs — and testosterone trajectory follows it.",
+    tGradientNote: "This gradient controls for the strongest confounders: Tsimane and Mosetén share ancestry, geography, and subsistence base. Technology adoption is the primary variable that differs — and testosterone trajectory follows it. In BERM terms: Tsimane P=1.0, R=2.1 → EMF_eff ≈ 0. Mosetén P=1.2, R=1.5 → EMF_eff = low. USA P=2.2, R=1.0 → EMF_eff = high. Same RF exposure → different response because different priming history.",
     s4Kicker: "SECTION 4",
     s4Title: "Myopia Gradient",
     s4Text: [
@@ -206,7 +206,7 @@ const COPY = {
       { pop: "Mosetén", emf: "Matala", baseline: "Välitaso", decline: "Maltillinen", trajectory: "Lievä lasku iän myötä" },
       { pop: "Moderni USA", emf: "Korkea", baseline: "~550 pg/mL → laskussa", decline: "~1,5 %/v", trajectory: "Jyrkkä lasku; leikkaa Tsimanen ~55 v" },
     ],
-    tGradientNote: "Tämä gradientti kontrolloi vahvimmat sekoittavat tekijät: Tsimane ja Mosetén jakavat syntyperän, maantieteen ja elinkeinopohjan. Teknologian omaksuminen on ensisijainen muuttuja joka eroaa — ja testosteronitrajektoria seuraa sitä.",
+    tGradientNote: "Tämä gradientti kontrolloi vahvimmat sekoittavat tekijät: Tsimane ja Mosetén jakavat syntyperän, maantieteen ja elinkeinopohjan. Teknologian omaksuminen on ensisijainen muuttuja joka eroaa — ja testosteronitrajektoria seuraa sitä. BERM-termeissä: Tsimane P=1,0, R=2,1 → EMF_eff ≈ 0. Mosetén P=1,2, R=1,5 → EMF_eff = matala. USA P=2,2, R=1,0 → EMF_eff = korkea. Sama RF-altistus → eri vaste, koska eri primaushistoria.",
     s4Kicker: "OSIO 4",
     s4Title: "Likitaitteisuusgradientti",
     s4Text: [

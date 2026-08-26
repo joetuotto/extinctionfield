@@ -185,6 +185,7 @@ const t = {
 
     elfPrimingTitle: "ELF Priming Hypothesis",
     elfPrimingDesc: "The power grid does not merely add 50 Hz exposure. It upregulates voltage-gated calcium channel expression (P/Q, N, R subtypes increase after 8–10 days — PMC4757866). This makes every cell more sensitive to every other EMF source. This explains why residential electricity consumption is the strongest predictor of fertility decline (RMSE 0.522) while mobile phone density is the weakest (RMSE 1.053): electricity measures the priming state, not just one exposure source.",
+    elfFreqNote: "Note: The ELF channel operates at 50 Hz in Europe and 60 Hz in the Americas. 50 Hz is within 2 Hz of the 8th Schumann resonance harmonic (52.0 Hz), potentially producing stronger CRY interference in European populations. This is speculative but testable by comparing melatonin profiles between 50 Hz and 60 Hz countries at matched total EMF levels.",
 
     layerModelTitle: "The Layered Exposure Model",
     layerModelSub: "Five epidemics, five technology layers — historical verification and formula update",
@@ -402,17 +403,19 @@ const t = {
     causalReconciliationTitle: "Reconciling 'contradictory' results",
     causalReconciliationLead: "When the causal structure is understood, all existing studies — including those reporting null results — become consistent:",
     causalReconciliationStudies: [
-      { study: "Travison 2007", bmiAdj: true, result: "-1.0%/yr", interpretation: "Direct pathway captured (BMI-adjusted)" },
-      { study: "Mazur 2013", bmiAdj: false, result: "-0.95%/yr", interpretation: "Direct pathway confirmed naturally (weight-stable group)" },
-      { study: "Chodick 2020", bmiAdj: false, result: "-1.02%/yr", interpretation: "Total effect (direct + mediated)" },
-      { study: "Santi 2025", bmiAdj: true, result: "T and LH decline", interpretation: "Direct pathway + HPG-level disruption confirmed" },
-      { study: "Andersson 2007", bmiAdj: true, result: "Null", interpretation: "Mediated pathway dominates -> BMI adjustment removes dominant signal" },
-      { study: "Nyante 2012", bmiAdj: true, result: "Null", interpretation: "Assay change + mediator removal -> signal masked" },
+      { study: "Travison 2007", bmiAdj: true, result: "-1.0%/yr", interpretation: "Direct pathway captured (BMI-adjusted). ELF-priming grew over the same period (WiFi + 3G spread)" },
+      { study: "Mazur 2013", bmiAdj: false, result: "-0.95%/yr", interpretation: "Direct pathway confirmed naturally (weight-stable). 20yr = layers 2→4. Direct route ~67%. Priming: P grew 1.5 → 2.0 in same period" },
+      { study: "Chodick 2020", bmiAdj: false, result: "-1.02%/yr", interpretation: "Total effect (direct + mediated). Israel: high RF density → strong layering effect" },
+      { study: "Santi 2025", bmiAdj: true, result: "T and LH decline", interpretation: "Direct pathway + HPG disruption confirmed. LH↓ indicates pituitary disruption. Brain is most primed organ (near-field 24/7). CACNA1C genotype moderates LH response" },
+      { study: "Andersson 2007", bmiAdj: true, result: "Null", interpretation: "Mediated pathway dominates → BMI adjustment removes signal. Denmark 56°N: if study was in SUMMER → CRY saturated → smaller effect. Season correction may reveal signal" },
+      { study: "Nyante 2012", bmiAdj: true, result: "Null", interpretation: "Assay change + mediator removal → signal masked. US (60 Hz) vs Europe (50 Hz): different ELF frequency → possibly different CRY interference profile" },
     ],
     causalSantiTitle: "Santi 2025: both testosterone AND LH are declining",
     causalSantiText: "The largest meta-analysis ever conducted (1,064,891 men, 1971-2024) found that serum testosterone is declining independent of age, BMI, and assay method. Critically, it also found that LH (the pituitary signal that drives testosterone production) is also declining - ruling out simple testicular failure and pointing to disruption at the hypothalamic-pituitary level.",
     causalSantiMechanism: "BERM predicts exactly this: Route A (direct Leydig cell via Cav3.2 -> StAR) reduces testosterone, while Route C (melatonin -> GnRH) and Route D (cortisol -> HPG) reduce LH. The simultaneous decline of both hormones is the signature of multi-level disruption - not aging, not obesity.",
     causalSantiSource: "Santi et al. 2025, J Endocrinol Invest 48:2721-2734",
+    pocketTitle: "The Pocket Transition",
+    pocketText: "The doubling of sperm decline rate after 2000 (1.16%→2.64%/yr) coincides with a single behavioral change: the phone moved from ear to pocket. 3G data capability meant the phone stayed in the pocket continuously rather than being used only for calls. Testes entered the near-field for 16 hours per day.",
     causalInverseTitle: "Inverse pharmacological test: testosterone therapy reverses obesity",
     causalInverseText: "If obesity caused testosterone decline, then raising testosterone should not affect weight. But testosterone therapy in hypogonadal obese men produces dramatic weight loss (up to 30 kg in class III obesity), confirming bidirectional causation: T suppression drives weight gain, not just the reverse.",
     causalInverseData: [
@@ -635,6 +638,7 @@ const t = {
 
     elfPrimingTitle: "ELF-priming-hypoteesi",
     elfPrimingDesc: "Sähköverkko ei ainoastaan lisää 50 Hz -altistusta. Se ylössäätelee jänniteherkkien kalsiumkanavien ekspressiota (P/Q-, N- ja R-alatyypit kasvavat 8–10 päivässä — PMC4757866). Tämä tekee jokaisesta solusta herkemmän kaikille muille EMF-lähteille. Tämä selittää miksi asuinalueen sähkönkulutus on hedelmällisyyslaskun vahvin ennustaja (RMSE 0,522) kun taas matkapuhelintiheys on heikoin (RMSE 1,053): sähkönkulutus mittaa priming-tilaa, ei pelkkää yhtä altistuslähdettä.",
+    elfFreqNote: "Huomautus: ELF-kanava toimii 50 Hz:llä Euroopassa ja 60 Hz:llä Amerikoissa. 50 Hz on 2 Hz:n sisällä Schumann-resonanssin 8. harmonisesta (52,0 Hz), mikä saattaa tuottaa vahvempaa CRY-häiriötä eurooppalaisissa populaatioissa. Tämä on spekulatiivista mutta testattavissa vertaamalla melatoniiniprofiileja 50 Hz:n ja 60 Hz:n maiden välillä sovitetuilla kokonais-EMF-tasoilla.",
 
     layerModelTitle: "Kerrostumamalli",
     layerModelSub: "Viisi epidemiaa, viisi teknologiakerrosta — historiallinen verifikaatio ja formulapäivitys",
@@ -852,17 +856,19 @@ const t = {
     causalReconciliationTitle: "'Ristiriitaisten' tulosten sovittaminen",
     causalReconciliationLead: "Kun kausaalirakenne ymmärretään, kaikki olemassa olevat tutkimukset — nollatulokset mukaan lukien — ovat yhdenmukaisia:",
     causalReconciliationStudies: [
-      { study: "Travison 2007", bmiAdj: true, result: "-1,0 %/v", interpretation: "Suora reitti kuvattu (BMI-korjattu)" },
-      { study: "Mazur 2013", bmiAdj: false, result: "-0,95 %/v", interpretation: "Suora reitti vahvistettu luonnollisesti (vakiopainoryhmä)" },
-      { study: "Chodick 2020", bmiAdj: false, result: "-1,02 %/v", interpretation: "Kokonaisvaikutus (suora + medioitu)" },
-      { study: "Santi 2025", bmiAdj: true, result: "T ja LH lasku", interpretation: "Suora reitti + HPG-tason häiriö vahvistettu" },
-      { study: "Andersson 2007", bmiAdj: true, result: "Nolla", interpretation: "Medioitu reitti dominoi -> BMI-korjaus poistaa dominoivan signaalin" },
-      { study: "Nyante 2012", bmiAdj: true, result: "Nolla", interpretation: "Mittausmenetelmän muutos + mediaation poisto -> signaali peittyy" },
+      { study: "Travison 2007", bmiAdj: true, result: "-1,0 %/v", interpretation: "Suora reitti havaittu (BMI-vakioitu). ELF-priming kasvoi samana ajanjaksona (WiFi + 3G levisivät)" },
+      { study: "Mazur 2013", bmiAdj: false, result: "-0,95 %/v", interpretation: "Suora reitti vahvistettu luonnollisesti (vakiopaino). 20v = kerrostumat 2→4. Suora reitti ~67 %. Priming: P kasvoi 1,5 → 2,0 samassa ajassa" },
+      { study: "Chodick 2020", bmiAdj: false, result: "-1,02 %/v", interpretation: "Kokonaisvaikutus (suora + välitetty). Israel: korkea RF-tiheys → vahva kerrostumavaikutus" },
+      { study: "Santi 2025", bmiAdj: true, result: "T ja LH lasku", interpretation: "Suora reitti + HPG-tason häiriö vahvistettu. LH↓ viittaa aivolisäkehäiriöön. Aivot eniten primatut (lähikentässä 24/7). CACNA1C-genotyyppi moderoi LH-vastetta" },
+      { study: "Andersson 2007", bmiAdj: true, result: "Nolla", interpretation: "Välitetty reitti dominoi → BMI-vakiointi poistaa signaalin. Tanska 56°N: jos tutkimus KESÄLLÄ → CRY saturoitunut → pienempi vaikutus. Vuodenaikakorjaus saattaa paljastaa signaalin" },
+      { study: "Nyante 2012", bmiAdj: true, result: "Nolla", interpretation: "Menetelmämuutos + välittäjän poisto → signaali peittynyt. USA (60 Hz) vs. Eurooppa (50 Hz): eri ELF-taajuus → mahdollisesti eri CRY-häiriöprofiili" },
     ],
     causalSantiTitle: "Santi 2025: sekä testosteroni ETTÄ LH laskevat",
     causalSantiText: "Suurin koskaan tehty meta-analyysi (1 064 891 miestä, 1971-2024) osoitti, että seerumitestosteroni laskee iästä, BMI:stä ja mittausmenetelmästä riippumatta. Kriittisesti myös LH (aivolisäkkeen signaali, joka ohjaa testosteronin tuotantoa) laskee — mikä sulkee pois yksinkertaisen kivestoiminnan heikkenemisen ja viittaa häiriöön hypotalamus-aivolisäketasolla.",
     causalSantiMechanism: "BERM ennustaa juuri tämän: reitti A (suora Leydigin solun Cav3.2 -> StAR) vähentää testosteronia, kun taas reitti C (melatoniini -> GnRH) ja reitti D (kortisoli -> HPG) vähentävät LH:ta. Molempien hormonien samanaikainen lasku on monitasoisen häiriön tunnusmerkki — ei ikääntyminen, ei lihavuus.",
     causalSantiSource: "Santi ym. 2025, J Endocrinol Invest 48:2721-2734",
+    pocketTitle: "Taskusiirtymä",
+    pocketText: "Siittiölaskun kiihtyminen vuoden 2000 jälkeen (1,16→2,64 %/v) osuu yhteen yhden käyttäytymismuutoksen kanssa: puhelin siirtyi korvalta taskuun. 3G-datakyky tarkoitti, että puhelin pysyi taskussa jatkuvasti eikä sitä nostettu vain puhelujen ajaksi. Kivekset joutuivat lähikenttään 16 tunniksi päivässä.",
     causalInverseTitle: "Käänteinen farmakologinen testi: testosteronihoito kääntää lihavuuden",
     causalInverseText: "Jos lihavuus aiheuttaisi testosteronin laskun, testosteronin nostamisen ei pitäisi vaikuttaa painoon. Mutta testosteronihoito hypogonadaalisilla lihavilla miehillä tuottaa dramaattisen painonlaskun (jopa 30 kg luokan III lihavuudessa), mikä vahvistaa kaksisuuntaisen kausaalisuuden: T-suppressio ajaa painonnousua, ei vain päinvastoin.",
     causalInverseData: [
@@ -1523,6 +1529,9 @@ export default async function ModelPage({
                 <p className="text-xs text-foreground-muted">{d.causalSantiSource}</p>
               </div>
 
+            <h3 className="text-base font-semibold mt-10 mb-2">{d.pocketTitle}</h3>
+            <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">{d.pocketText}</p>
+
               {/* Inverse pharmacological test */}
               <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-5 mb-4">
                 <p className="text-xs font-semibold text-green-600 uppercase tracking-wider mb-2">{d.causalInverseTitle}</p>
@@ -1907,6 +1916,7 @@ export default async function ModelPage({
           <section className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/5 p-5">
             <h3 className="text-sm font-semibold mb-2">{d.elfPrimingTitle}</h3>
             <p className="text-xs text-foreground-muted leading-relaxed">{d.elfPrimingDesc}</p>
+            <p className="text-xs text-foreground-muted/70 leading-relaxed mt-2 italic">{d.elfFreqNote}</p>
           </section>
 
           {/* Technology Layers */}
@@ -2094,6 +2104,77 @@ export default async function ModelPage({
             </div>
             <p className="text-[10px] text-foreground-muted/60">{d.recovWindowRef}</p>
           </CollapsibleSection>
+
+          {/* Why Studies Disagree */}
+        <CollapsibleSection
+          id="why-studies-disagree"
+          title={locale === "fi" ? "Miksi tutkimukset ovat ristiriidassa" : "Why Studies Disagree"}
+          subtitle={locale === "fi"
+            ? "Neljä kontrolloimatonta moderaattoria selittävät vuosikymmenten 'ristiriitaisen evidenssin'"
+            : "Four uncontrolled moderators explain decades of 'contradictory evidence'"
+          }
+        >
+          <div className="max-w-4xl space-y-4">
+            <p className="text-sm text-foreground-muted leading-relaxed">
+              {locale === "fi"
+                ? "EMF-tutkimus on tuottanut ristiriitaisia tuloksia vuosikymmeniä. BERM tunnistaa neljä kontrolloimatonta moderaattoria, jotka ennustavat mitkä tutkimukset löytävät positiivisen tuloksen ja mitkä nollatuloksen:"
+                : "EMF research has produced contradictory results for decades. BERM identifies four uncontrolled moderators that predict which studies find positive results and which find null:"}
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                {
+                  num: "1",
+                  title: locale === "fi" ? "Vuodenaika" : "Season",
+                  desc: locale === "fi"
+                    ? "CRY-magnetoreseptorin herkkyys on valoriippuvainen. Talvella CRY on herkempi → EMF-vaikutus melatoniiniin voimakkaampi. Osoitettu vasikoilla (Halgamuge 2015)."
+                    : "CRY magnetoreceptor sensitivity is light-dependent. In winter, CRY is more sensitive → EMF effect on melatonin is stronger. Demonstrated in calves (Halgamuge 2015).",
+                },
+                {
+                  num: "2",
+                  title: locale === "fi" ? "Genotyyppi" : "Genotype",
+                  desc: locale === "fi"
+                    ? "CACNA1C rs1006737 A-alleeli → enemmän Cav1.2 → suurempi Ca²⁺-vaste. Sousouri 2025 (ETH): CACNA1C-genotyyppi määrittää 5G-univasteen."
+                    : "CACNA1C rs1006737 A-allele → more Cav1.2 → larger Ca²⁺ response. Sousouri 2025 (ETH): CACNA1C genotype determines 5G sleep response.",
+                },
+                {
+                  num: "3",
+                  title: locale === "fi" ? "Laboratorion ELF-tausta" : "Laboratory ELF background",
+                  desc: locale === "fi"
+                    ? "50/60 Hz sähköverkko lisää VGCC-ekspressiota 8–10 päivässä (PMC4757866). Korkean ELF-taustan laboratorio 'primaa' solut."
+                    : "50/60 Hz power grid upregulates VGCC expression in 8–10 days (PMC4757866). High-ELF-background labs 'prime' cells.",
+                },
+                {
+                  num: "4",
+                  title: locale === "fi" ? "Yöllinen EMF" : "Nighttime EMF",
+                  desc: locale === "fi"
+                    ? "WiFi-reititin makuuhuoneessa vs. EMF-vapaa yö → eri CaMKII-palautumistila → eri baseline-Ca²⁺ kokeeseen tullessa."
+                    : "Wi-Fi router in bedroom vs. EMF-free night → different CaMKII recovery state → different baseline Ca²⁺ when entering the experiment.",
+                },
+              ].map((mod) => (
+                <div key={mod.num} className="rounded-lg border border-card-border bg-card-bg p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-6 h-6 rounded-full bg-accent/10 text-accent text-xs font-semibold flex items-center justify-center">{mod.num}</span>
+                    <h4 className="font-semibold text-sm">{mod.title}</h4>
+                  </div>
+                  <p className="text-xs text-foreground-muted leading-relaxed">{mod.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                <span className="font-semibold">{locale === "fi" ? "Ennuste REPL-1: " : "Prediction REPL-1: "}</span>
+                {locale === "fi"
+                  ? "Retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta osoittaa näiden neljän moderaattorin ennustavan merkitsevästi positiivisen vs. nollatuloksen. Testattavissa ILMAN uutta dataa."
+                  : "A retrospective analysis of 50–100 published EMF bio-assay studies will show these four moderators significantly predict positive vs. null outcomes. Testable WITHOUT new data."}
+              </p>
+            </div>
+            <p className="text-xs text-foreground-muted/70">
+              {locale === "fi"
+                ? "Episteeminen taso: neljän moderaattorin kehys on BERM:n synteesi (M-taso). Yksittäisillä moderaattoreilla on empiiristä tukea (E-taso)."
+                : "Epistemic level: the four-moderator framework is BERM's synthesis (M-level). Individual moderators have empirical support (E-level)."}
+            </p>
+          </div>
+        </CollapsibleSection>
 
           {/* Mathematical Foundation */}
           <CollapsibleSection id="mathematics" title={d.mathTitle} subtitle={d.mathSub}>
