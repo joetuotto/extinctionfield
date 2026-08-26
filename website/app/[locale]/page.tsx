@@ -98,6 +98,13 @@ const COPY = {
     klimentidisNote: "Klimentidis et al. (2010) did not study EMF. They suggested \"as-of-yet unidentified factors.\" The EMF interpretation is BERM's derivation.",
     klimentidisLink: "Read the metabolic cascade",
 
+    why2012Label: "THE 2012 INFLECTION",
+    why2012Title: "Why 2012? It was the device, not the content",
+    why2012Text: "Social media existed since 2003 — with no mental health crisis. The crisis began in 2012, when smartphones crossed 50% adoption among teenagers. BERM's explanation: 2012 was not about content — it was about the device. The smartphone brought continuous body-contact EMF exposure (WiFi + 4G + Bluetooth, 24/7, including in bed at night).",
+    why2012Detail: "Combined with existing power grid ELF priming and newly mandated LED lighting (EU incandescent ban 2009–2012), 2012 was the year when cumulative multi-frequency Ca²⁺ load exceeded the CaMKII autophosphorylation threshold at population level.",
+    why2012Prediction: "Prediction: content restrictions (Australia, Norway) will NOT resolve the crisis because the mechanism is the hardware, not the content.",
+    why2012Cta: "Technology exposure analysis",
+
     pharmaLabel: "THE PHARMACOLOGICAL TEST",
     pharmaTitle: "Calcium blockers reduce the diseases BERM predicts",
     pharmaText: "If BERM's calcium mechanism is correct, then drugs that block calcium channels should reduce disease rates across BERM's cascades — even when prescribed for other conditions.",
@@ -152,21 +159,26 @@ const COPY = {
     ctaEvidence: "Evidence register",
     ctaData: "Explore data",
     ctaMath: "Mathematics",
+
+    thesisBreak1Kicker: "FROM SYMPTOMS TO MECHANISM",
+    thesisBreak1: "If all these declining indicators share one upstream cause, there should be a single biological pathway that explains each of them independently. There is.",
+    thesisBreak2Kicker: "FROM EVIDENCE TO PREDICTION",
+    thesisBreak2: "A model that only explains the past is a narrative. A model that predicts the future is falsifiable.",
   },
   fi: {
     heroTitle: "Jotain tapahtuu hedelmällisyydelle",
     heroDeck: "Ihmisen lisääntymiselle tapahtuu jotain, jota pronatalistiset politiikat, taloudelliset kannustimet ja kulttuuriset interventiot eivät ole onnistuneet kääntämään.",
-    heroContext: "Syntyvyys romahtaa maailmanlaajuisesti. Siittiöiden määrä on puolittunut. Testosteroni laskee jokaisessa teollistuneessa populaatiossa — jopa miehillä jotka eivät ole lihoneet. Mehiläisyhdyskunnat, lintupopulaatiot ja sammakkoeläimet vähenevät samalla aikajanalla.",
-    whatIsThis: "Biosähkömagneettinen riskimalli (BERM) tarjoaa selityksen: modernin sähköinfrastruktuurin tuottamat sähkömagneettiset kentät vaikuttavat jänniteherkiin kalsiumkanaviin — proteiineihin jotka löytyvät jokaisesta solusta — häiriten biologisia järjestelmiä jotka säätelevät lisääntymistä, aineenvaihduntaa, unta ja neurologista terveyttä.",
+    heroContext: "Syntyvyys romahtaa maailmanlaajuisesti. Siittiöiden määrä on puolittunut. Testosteroni laskee jokaisessa teollistuneessa populaatiossa — jopa miehillä, jotka eivät ole lihoneet. Mehiläisyhdyskunnat, lintupopulaatiot ja sammakkoeläimet vähenevät samalla aikajanalla.",
+    whatIsThis: "Biosähkömagneettinen riskimalli (BERM) tarjoaa selityksen: modernin sähköinfrastruktuurin tuottamat sähkömagneettiset kentät vaikuttavat jänniteherkiin kalsiumkanaviin — proteiineihin, jotka löytyvät jokaisesta solusta — häiriten biologisia järjestelmiä, jotka säätelevät lisääntymistä, aineenvaihduntaa, unta ja neurologista terveyttä.",
     heroEpistemic: "Tämä sivusto esittää mallin, sen evidenssin ja falsifioitavat ennusteet. Jokainen väite on rajattu episteemisellä tasolla. Jokainen ennuste on lukittu kumoamiskriteerillä. Jos malli on väärässä, se on suunniteltu epäonnistumaan näkyvästi.",
 
     s1Title: "KRIISI LUVUISSA",
-    s1Intro: "Nämä trendit on dokumentoitu itsenäisesti tuhansissa tutkimuksissa. Selittämättä jää miksi ne kaikki tapahtuvat samanaikaisesti, kaikissa teollistuneissa maissa, ja miksi mikään interventio ei ole kääntänyt niitä.",
+    s1Intro: "Nämä trendit on dokumentoitu itsenäisesti tuhansissa tutkimuksissa. Selittämättä jää, miksi ne kaikki tapahtuvat samanaikaisesti, kaikissa teollistuneissa maissa, ja miksi mikään interventio ei ole kääntänyt niitä.",
 
     impactGrid: [
       { stat: "5,0 → 2,2", label: "Globaali TFR vuodesta 1960 — lasku kiihtyy", sub: "Alle 2,1:n populaatiot supistuvat. Alle 1,3:n palautumista ei ole koskaan havaittu ilman maahanmuuttoa.", href: "/explore" },
       { stat: "−62 %", label: "Siittiökonsentraatio (Levine 2023, 223 tutkimusta)", sub: "Lasku ei osoita tasaantumisen merkkejä. Nykyisellä vauhdilla mediaaniluvut saavuttavat subfertiliteettikynnyksen yhden sukupolven sisällä.", href: "/model#causal-diagram" },
-      { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton (Travison 2007)", sub: "Tämä lasku jatkuu jopa miehillä jotka pitävät painonsa — eliminoiden lihavuuden ensisijaisena syynä.", href: "/model#testosterone-threshold" },
+      { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton (Travison 2007)", sub: "Tämä lasku jatkuu jopa miehillä, jotka pitävät painonsa — sulkien pois lihavuuden ensisijaisena syynä.", href: "/model#testosterone-threshold" },
       { stat: "49", label: "Maata alle korvaavuustason TFR 1,4", sub: "Ei vain vauraita maita. Keskituloiset maat seuraavat samaa kehityskulkua, 15–20 vuotta jäljessä.", href: "/explore" },
       { stat: "200 mrd $", label: "Korean pronatalismi → TFR silti 0,72", sub: "Historian kallein pronatalistinen ohjelma ei ole vaikuttanut hedelmällisyyteen mitattavasti.", href: "/model#testosterone-threshold" },
       { stat: "TFR 6,1 vs 1,66", label: "Amissit vs USA — yhteisöt ilman älypuhelimia", sub: "Vaikka muut elämäntapatekijät eroavat, hedelmällisyyseron suuruus ylittää sen, mitä ruokavalio- tai elämäntapatutkimukset ovat selittäneet.", href: "/evidence/populations" },
@@ -174,13 +186,13 @@ const COPY = {
 
     bridgeTitle: "MIKSI NÄMÄ LUVUT KUULUVAT YHTEEN",
     bridgeP1: "Tavanomaiset selitykset käsittelevät jokaista trendiä erikseen: hedelmällisyyden lasku selitetään taloudella ja kulttuurilla, siittiölasku kemikaaleilla ja elämäntavoilla, testosteronilasku lihavuudella ja unihäiriöt ruuduilla.",
-    bridgeP2: "Mutta nämä selitykset epäonnistuvat perustestissä: ne eivät pysty selittämään miksi kaikki nämä trendit tapahtuvat samanaikaisesti, kaikissa teollistuneissa maissa, ja miksi ne korreloivat vahvemmin sähköinfrastruktuurin kuin minkään sosiaalisen tai taloudellisen muuttujan kanssa.",
-    bridgeP3: "BERM ehdottaa yhtä ylävirran mekanismia: sähköjohdoista, langattomista laitteista ja tukiasemainfrastruktuurista tulevat sähkömagneettiset kentät vaikuttavat jänniteherkiin kalsiumkanaviin (VGCC) — samoihin proteiineihin jotka säätelevät hormonien eritystä, siittiöiden liikkuvuutta, hermosignalointia ja aineenvaihduntatoimintaa. Kun kalsiumsignalointi häiriintyy, jälkivaikutukset ilmenevät erillisinä sairauksina. Eivät ole. Ne ovat saman fysiologisen häiriön eri oireita.",
+    bridgeP2: "Mutta nämä selitykset epäonnistuvat perustestissä: ne eivät pysty selittämään, miksi kaikki nämä trendit tapahtuvat samanaikaisesti, kaikissa teollistuneissa maissa, ja miksi ne korreloivat vahvemmin sähköinfrastruktuurin kuin minkään sosiaalisen tai taloudellisen muuttujan kanssa.",
+    bridgeP3: "BERM ehdottaa yhtä ylävirran mekanismia: sähköjohdoista, langattomista laitteista ja tukiasemainfrastruktuurista tulevat sähkömagneettiset kentät vaikuttavat jänniteherkiin kalsiumkanaviin (VGCC) — samoihin proteiineihin, jotka säätelevät hormonien eritystä, siittiöiden liikkuvuutta, hermosignalointia ja aineenvaihduntatoimintaa. Kun kalsiumsignalointi häiriintyy, jälkivaikutukset ilmenevät erillisinä sairauksina. Ne eivät ole. Ne ovat saman fysiologisen häiriön eri oireita.",
     bridgeCta1: "Tutki mekanismia",
     bridgeCta2: "Katso evidenssi",
     bridgeCta3: "Lue ennusteet",
 
-    paradoxIntro: "Jos hedelmällisyyden lasku johtuisi informaatiosta — pääsy ehkäisyyn, arvojen muutos, taloudellinen laskelmointi — niin tietolaitteen (matkapuhelin) pitäisi olla vahvin ennustaja. Ei ole.",
+    paradoxIntro: "Jos hedelmällisyyden lasku johtuisi informaatiosta — pääsy ehkäisyyn, arvojen muutos, taloudellinen harkinta — niin tietolaitteen (matkapuhelin) pitäisi olla vahvin ennustaja. Ei ole.",
 
     sentinelCta: "Kaikki sentinellit",
 
@@ -197,27 +209,34 @@ const COPY = {
 
     klimentidisLabel: "KLIMENTIDISIN PARADOKSI",
     klimentidisTitle: "Jopa laboratoriorotat lihovat",
-    klimentidisText: "Laboratoriorotat kontrolloidulla dieetillä, villit rotat, kotieläimet — koirat ja kissat — kaikki lihovat vuosikymmenestä toiseen. 24 populaatiota, 8 lajia, p = 1,2 × 10⁻⁷. BERM tunnistaa EMF:n ainoaksi ympäristötekijäksi joka on lisääntynyt kaikissa näissä ympäristöissä samanaikaisesti.",
-    klimentidisNote: "Klimentidis ym. (2010) eivät tutkineet EMF:ää. He ehdottivat \"toistaiseksi tunnistamattomia tekijöitä.\" EMF-tulkinta on BERM:n johdos.",
+    klimentidisText: "Laboratoriorotat kontrolloidulla ruokavaliolla, villit rotat, lemmikit — koirat ja kissat — kaikki lihovat vuosikymmenestä toiseen. 24 populaatiota, 8 lajia, p = 1,2 × 10⁻⁷. BERM tunnistaa EMF:n ainoaksi ympäristötekijäksi, joka on lisääntynyt kaikissa näissä ympäristöissä samanaikaisesti.",
+    klimentidisNote: "Klimentidis ym. (2010) eivät tutkineet EMF:ää. He ehdottivat \"toistaiseksi tunnistamattomia tekijöitä.\" EMF-tulkinta on BERM:n johtopäätös.",
     klimentidisLink: "Lue metabolinen kaskadi",
+
+    why2012Label: "2012-INFLEKTIO",
+    why2012Title: "Miksi 2012? Se oli laite, ei sisältö",
+    why2012Text: "Sosiaalinen media on ollut olemassa vuodesta 2003 — ilman mielenterveyskriisiä. Kriisi alkoi 2012, kun älypuhelimet ylittivät 50 % adoption nuorten keskuudessa. BERM:n selitys: 2012 ei ollut sisällöstä — se oli laitteesta. Älypuhelin toi jatkuvan kehokontakti-EMF-altistuksen (WiFi + 4G + Bluetooth, 24/7, myös sängyssä yöllä).",
+    why2012Detail: "Yhdistettynä olemassa olevaan sähköverkon ELF-primingiin ja juuri pakotettuun LED-valaistukseen (EU:n hehkulamppukielto 2009–2012), 2012 oli vuosi jolloin kumulatiivinen monitaajuinen Ca²⁺-kuorma ylitti CaMKII:n autofosforylaatiokynnyksen väestötasolla.",
+    why2012Prediction: "Ennuste: sisältörajoitukset (Australia, Norja) EIVÄT ratkaise kriisiä koska mekanismi on laitteisto, ei sisältö.",
+    why2012Cta: "Teknologia-altistusanalyysi",
 
     pharmaLabel: "FARMAKOLOGINEN TESTI",
     pharmaTitle: "Kalsiumsalpaajat vähentävät BERM:n ennustamia sairauksia",
     pharmaText: "Jos BERM:n kalsiummekanismi on oikea, kalsiumkanavia salpaavien lääkkeiden pitäisi vähentää sairauksien esiintyvyyttä BERM:n kaskadeissa — vaikka ne on määrätty muihin tarkoituksiin.",
-    pharmaEvidence: "Kolme rekisteritutkimusta (Suomi, UK) joissa 264 625 vaikeasta mielenterveydenhäiriöstä kärsivää potilasta löysi juuri tämän: sydänverisuonitautiin määrätyt kalsiumsalpaajat vähensivät psykiatrisia sairaalahoitoja (HR 0,79–0,83) ja itsetuhoisuutta.",
-    pharmaPenetrant: "Aivoja läpäisevät kalsiumsalpaajat (nifedipiini) tuottivat 12 % paremmat psykiatriset tulokset kuin ei-läpäisevät (amlodipiini) — mallin ennustaman mukaisesti.",
+    pharmaEvidence: "Kolme rekisteritutkimusta (Suomi, Iso-Britannia), joissa 264 625 vaikeasta mielenterveydenhäiriöstä kärsivää potilasta, löysi juuri tämän: sydänverisuonitautiin määrätyt kalsiumsalpaajat vähensivät psykiatrisia sairaalahoitoja (HR 0,79–0,83) ja itsetuhoisuutta.",
+    pharmaPenetrant: "Aivoja läpäisevät kalsiumsalpaajat (nifedipiini) tuottivat 12 % paremmat psykiatriset tulokset kuin ei-läpäisevät (amlodipiini) — mallin ennusteen mukaisesti.",
     pharmaTrial: "ETH Zürichin meneillään oleva kliininen koe (NCT06998368) testaa suoraan voiko aivoja läpäisevä kalsiumsalpaaja nimodipiini estää 5G:n vaikutuksia uneen.",
     pharmaCta: "Katso farmakologinen evidenssi",
 
     weightLabel: "PAINOVAKAA LASKU",
-    weightTitle: "Testosteroni laskee jopa miehillä jotka eivät ole lihoneet",
+    weightTitle: "Testosteroni laskee jopa miehillä, jotka eivät ole lihoneet",
     weightIntro: "Yleinen vastaväite: \"Testosteroni laskee koska miehet lihovat.\" Jos totta, painonsa säilyttävien miesten testosteronin pitäisi pysyä ennallaan. Ei pysy.",
     weightSanti: "Vuonna 2025 kaikkien aikojen suurin meta-analyysi (Santi ym., 1 064 891 miestä) vahvisti: sekä testosteroni että luteinisoiva hormoni laskevat, riippumatta painoindeksistä. Ongelma ei ole vain kiveksissä — se ulottuu aivolisäkkeeseen ja hypotalamukseen.",
     weightMechanism: "BERM selittää molemmat löydökset: EMF häiritsee testosteronituotantoa suoraan (kalsiumkanavien kautta Leydigin soluissa) ja epäsuorasti hypotalamus-aivolisäke-akselin kautta (melatoniini- ja kortisoolireittien kautta).",
 
-    mazurQuote: "Emme ole tunnistaneet syytä testosteronin sekulaarilaskuun, mutta suljemme pois kasvavan lihavuuden riittävänä tai ensisijaisena selityksenä, ja kiistämme oletuksen, jonka mukaan miehet jotka välttävät liiallista painonnousua säilyttävät nuoruutensa testosteronitasot.",
+    mazurQuote: "Emme ole tunnistaneet syytä testosteronin sekulaarilaskuun, mutta suljemme pois kasvavan lihavuuden riittävänä tai ensisijaisena selityksenä, ja kiistämme oletuksen, jonka mukaan miehet, jotka välttävät liiallista painonnousua, säilyttävät nuoruutensa testosteronitasot.",
     mazurSource: "Mazur ym. 2013, PLOS ONE",
-    mazurContext: "991 US Air Force -veteraania, 20 vuoden seuranta. Vakiopainoiset miehet menettivät 19 % testosteroninsa.",
+    mazurContext: "991 US Air Force -veteraania, 20 vuoden seuranta. Painonsa säilyttäneet miehet menettivät 19 % testosteroninsa.",
     mazurLink: "Lue kausaalianalyysi",
 
     howTitle: "Miten malli toimii",
@@ -233,8 +252,8 @@ const COPY = {
     warningLabel: "ENNUSTUSVOIMA",
     warningTitle: "35 vuoden varoitus",
     warningNarrative: "Suomen testosteronitasot alkoivat laskea 1970-luvulla. 40 vuoden ajan hedelmällisyys pysyi vakaana. Sitten se romahti: 1,87 lasta naista kohden (2010) → 1,26 (2024) — 33 %:n pudotus viidessätoista vuodessa. Testosteronidata olisi ennustanut tämän 15 vuotta etukäteen. Sama data ennustaa nyt Yhdysvalloille samaa noin vuodelle 2030.",
-    warningCaveat: "Testosteronin laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä jotka on dokumentoitu vertaisarvioiduissa pitkittäistutkimuksissa viidessä maassa. TFR-ennusteet olettavat nykyisten vauhtien jatkumisen. Kynnösmalli on kalibroitu Suomen ja Etelä-Korean datalla; muiden maiden ennusteet ovat ekstrapolointeja.",
-    warningReadMore: "Lue koko kynnösmallin spesifikaatio",
+    warningCaveat: "Testosteronin laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä, jotka on dokumentoitu vertaisarvioiduissa pitkittäistutkimuksissa viidessä maassa. TFR-ennusteet olettavat nykyisten vauhtien jatkumisen. Kynnysmalli on kalibroitu Suomen ja Etelä-Korean datalla; muiden maiden ennusteet ovat ekstrapolointeja.",
+    warningReadMore: "Lue koko kynnysmallin määrittely",
 
     teaserLabel: "LUKITUT ENNUSTEET · TFR 2030",
     teaserNote: "Lukittu BERM v17:lla ja falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna.",
@@ -247,7 +266,7 @@ const COPY = {
     falsPending: "odottaa",
     falsCta: "Testien yksityiskohdat",
 
-    epistemicNote: (n: number) => `BERM v17 on falsifioitava tutkimusmalli, ei varmuus. ${n} vertaisarvioitua viitettä 11 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava: LOOCV RMSE 0,522, 74 % maista 0,5 lapsen sisällä ennusteesta. Asumisen sähkönkulutus ylittää BKT:n TFR-ennustajana 21 %. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.`,
+    epistemicNote: (n: number) => `BERM v17 on falsifioitava tutkimusmalli, ei varma tieto. ${n} vertaisarvioitua viitettä 11 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava: LOOCV RMSE 0,522, 74 % maista 0,5 lapsen sisällä ennusteesta. Asumisen sähkönkulutus ylittää BKT:n TFR-ennustajana 21 %. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.`,
     epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · Poikkileikkaus-RMSE = 0,522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Itsenäinen tutkimus",
 
@@ -255,6 +274,11 @@ const COPY = {
     ctaEvidence: "Evidenssirekisteri",
     ctaData: "Tutki dataa",
     ctaMath: "Matematiikka",
+
+    thesisBreak1Kicker: "OIREISTA MEKANISMIIN",
+    thesisBreak1: "Jos kaikki nämä laskevat indikaattorit jakavat yhden yhteisen syyn, sen pitäisi selittyä yhdellä biologisella reitillä. Sellainen on.",
+    thesisBreak2Kicker: "EVIDENSSISTÄ ENNUSTEESEEN",
+    thesisBreak2: "Malli, joka selittää vain menneisyyden, on narratiivi. Malli, joka ennustaa tulevaisuuden, on falsifioitavissa.",
   },
 } as const;
 
@@ -298,7 +322,7 @@ export default async function Home({
     <div className="max-w-5xl mx-auto px-6">
       {/* ── 1. Hero — cinematic banner with overlay text ── */}
       <header className="relative -mx-6 overflow-hidden rounded-b-2xl sm:rounded-2xl sm:mx-0 mt-0 sm:mt-8 mb-14">
-        <div className="relative h-[420px] sm:h-[480px] lg:h-[520px]">
+        <div className="relative min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
           <Image
             src="/images/hero-fertilization.png"
             alt=""
@@ -408,10 +432,10 @@ export default async function Home({
 
       {/* ── 5A. Klimentidis Paradox ── */}
       <section className="pb-20">
-        <div className="max-w-4xl rounded-xl border border-orange-500/30 bg-orange-500/5 p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-wider text-orange-500 font-semibold mb-2">{d.klimentidisLabel}</p>
+        <div className="max-w-4xl rounded-xl border border-status-partial/30 bg-status-partial/5 p-6 sm:p-8">
+          <p className="text-xs uppercase tracking-wider text-status-partial font-semibold mb-2">{d.klimentidisLabel}</p>
           <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.klimentidisTitle}</h2>
-          <p className="text-3xl font-bold text-orange-500 mb-4">
+          <p className="text-3xl font-bold text-status-partial mb-4">
             24 {activeLocale === "fi" ? "populaatiota" : "populations"} · 8 {activeLocale === "fi" ? "lajia" : "species"} · p = 1.2 × 10⁻⁷
           </p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.klimentidisText}</p>
@@ -425,10 +449,27 @@ export default async function Home({
         </div>
       </section>
 
+      {/* ── 5A½. Why 2012? ── */}
+      <section className="pb-20">
+        <div className="max-w-4xl rounded-xl border border-amber-500/30 bg-amber-500/5 p-6 sm:p-8">
+          <p className="text-xs uppercase tracking-wider text-amber-500 font-semibold mb-2">{d.why2012Label}</p>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.why2012Title}</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.why2012Text}</p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.why2012Detail}</p>
+          <p className="text-sm font-medium text-amber-500 mb-4">{d.why2012Prediction}</p>
+          <Link
+            href={`${prefix}/evidence/technology`}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+          >
+            {d.why2012Cta} <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
+
       {/* ── 5B. Pharmacological Test ── */}
       <section className="pb-20">
-        <div className="max-w-4xl rounded-xl border border-blue-500/30 bg-blue-500/5 p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-wider text-blue-500 font-semibold mb-2">{d.pharmaLabel}</p>
+        <div className="max-w-4xl rounded-xl border border-accent/20 bg-accent/5 p-6 sm:p-8">
+          <p className="text-xs uppercase tracking-wider text-accent font-semibold mb-2">{d.pharmaLabel}</p>
           <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.pharmaTitle}</h2>
           <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.pharmaText}</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.pharmaEvidence}</p>
@@ -449,7 +490,7 @@ export default async function Home({
           <p className="editorial-kicker text-accent mb-2">{d.weightLabel}</p>
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">{d.weightTitle}</h2>
           <p className="text-[0.9375rem] text-foreground-muted leading-relaxed mb-6">{d.weightIntro}</p>
-          <blockquote className="border-l-4 border-amber-500/50 pl-5 py-3 mb-5">
+          <blockquote className="border-l-4 border-status-partial/50 pl-5 py-3 mb-5">
             <p className="text-base sm:text-lg text-foreground italic leading-relaxed mb-3">&ldquo;{d.mazurQuote}&rdquo;</p>
             <footer className="text-sm text-foreground-muted">
               <cite className="not-italic font-medium">{d.mazurSource}</cite>
@@ -464,6 +505,14 @@ export default async function Home({
           >
             {d.mazurLink} <ArrowRight size={14} />
           </Link>
+        </div>
+      </section>
+
+      {/* ── Thesis break 1: symptoms → mechanism ── */}
+      <section className="pb-20">
+        <div className="thesis-break">
+          <p className="editorial-kicker mb-3">{d.thesisBreak1Kicker}</p>
+          <p className="text-lg sm:text-xl font-serif font-semibold leading-snug max-w-2xl">{d.thesisBreak1}</p>
         </div>
       </section>
 
@@ -520,6 +569,14 @@ export default async function Home({
 
       {/* ── 10. Bradford Hill criteria ── */}
       <BradfordHillCard locale={activeLocale} prefix={prefix} />
+
+      {/* ── Thesis break 2: evidence → prediction ── */}
+      <section className="pb-20">
+        <div className="thesis-break">
+          <p className="editorial-kicker mb-3">{d.thesisBreak2Kicker}</p>
+          <p className="text-lg sm:text-xl font-serif font-semibold leading-snug max-w-2xl">{d.thesisBreak2}</p>
+        </div>
+      </section>
 
       {/* ── 11. The 35-Year Warning ── */}
       <section className="pb-20">
@@ -594,8 +651,8 @@ export default async function Home({
           <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
             <span><span className="font-mono-num font-semibold text-accent">{fals.total}</span> tests</span>
             <span><span className="font-mono-num font-semibold text-accent">{fals.ran}</span> {d.falsRan}</span>
-            <span><span className="font-mono-num font-semibold text-green-500">{fals.consistent}</span> {d.falsConsistent}</span>
-            <span><span className="font-mono-num font-semibold text-red-500">{fals.falsified}</span> {d.falsFalsified}</span>
+            <span><span className="font-mono-num font-semibold text-status-confirmed">{fals.consistent}</span> {d.falsConsistent}</span>
+            <span><span className="font-mono-num font-semibold text-status-refuted">{fals.falsified}</span> {d.falsFalsified}</span>
             <span><span className="font-mono-num font-semibold text-foreground-muted">{fals.pending}</span> {d.falsPending}</span>
           </div>
         </div>
