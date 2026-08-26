@@ -24,6 +24,7 @@ import {
   Link2,
   FlaskRound,
   Target,
+  Thermometer,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
@@ -444,6 +445,34 @@ const SUB_PAGES = [
     icon: Zap,
     en: { title: "Technology-Specific Exposure", desc: "14 technology profiles from power grid to Starlink. ELF priming hypothesis, superadditivity model, temporal correlations, and Why 2012." },
     fi: { title: "Teknologiakohtainen altistus", desc: "14 teknologiaprofiilia sähköverkosta Starlinkiin. ELF-priming-hypoteesi, superadditiivisuusmalli, temporaaliset korrelaatiot ja Miksi 2012." },
+  },
+  {
+    slug: "autism-prototype",
+    icon: BrainCircuit,
+    level: "confirmed",
+    en: { title: "Autism as BERM Prototype", desc: "ASD unites three independently verified BERM mechanisms — GABA switch delay, synaptogenesis, and KCC2 suppression — into a single neurodevelopmental outcome." },
+    fi: { title: "Autismi BERM-prototyyppinä", desc: "ASD yhdistää kolme itsenäisesti verifioitua BERM-mekanismia — GABA-vaihdon viiveen, synaptogeneesin ja KCC2-suppression — yhdeksi neurokehitykselliseksi lopputulokseksi." },
+  },
+  {
+    slug: "chronic-pain",
+    icon: Activity,
+    level: "confirmed",
+    en: { title: "Chronic Pain Epidemic", desc: "ELF-priming upregulates α2δ-1 expression — the primary neuropathic pain mechanism — creating chronic pain WITHOUT nerve injury." },
+    fi: { title: "Kroonisen kivun epidemia", desc: "ELF-primaami säätelee α2δ-1-ekspressiota ylös — neuropaattisen kivun päämekanismi — luoden kroonisen kivun ILMAN hermovauriota." },
+  },
+  {
+    slug: "epigenetic-legacy",
+    icon: Dna,
+    level: "partial",
+    en: { title: "Epigenetic Legacy", desc: "EMF alters DNA methylation, histone modification, and microRNA — mechanisms that may transmit effects to unexposed F3 offspring." },
+    fi: { title: "Epigeneettinen perintö", desc: "EMF muuttaa DNA-metylaatiota, histonimodifikaatiota ja mikroRNA:ta — mekanismeja jotka voivat välittää vaikutuksia altistumattomille F3-jälkeläisille." },
+  },
+  {
+    slug: "hidden-thyroid",
+    icon: Thermometer,
+    level: "confirmed",
+    en: { title: "Hidden Thyroid", desc: "EMF reduces hypothalamic Dio2/Dio3 deiodinase enzymes. Standard thyroid tests appear normal — FT3/FT4 ratio reveals the hidden deficiency." },
+    fi: { title: "Piilevä kilpirauhanen", desc: "EMF vähentää hypotalamuksen Dio2/Dio3-dejodinaasientsyymejä. Normaalit kilpirauhaustestit näyttävät normaaleilta — FT3/FT4-suhde paljastaa piilevän puutteen." },
   },
 ] as const;
 

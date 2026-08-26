@@ -916,6 +916,70 @@ const COPY = {
     suppFalsification: "Falsification criterion",
     suppLocked: "Locked: 2026-08-26",
     suppStatus: "LOCKED — awaiting test",
+    finalTitle: "Final layer predictions (VK26–31)",
+    finalLead: "Predictions from the final convergence layers: thyroid Dio2/Dio3, epigenetic transgenerational inheritance, telomere aging spiral, oxytocin Ca²⁺ disruption, ELF-priming chronic pain, and ASD as BERM prototype.",
+    finalPredictions: [
+      {
+        id: "E-NEW-9",
+        title: "Hidden hypothyroid: FT3/FT4 ratio is lower in high-EMF workers",
+        description: "EMF reduces hypothalamic Dio2/Dio3 → T4→T3 conversion is inhibited → blood T4 appears 'normal' but tissues don't receive T3. Test: measure FT3/FT4 ratio in high-EMF occupations (telecom, electricians) vs matched low-EMF controls. Prediction: high-EMF group has significantly lower FT3/FT4 ratio despite normal TSH and T4.",
+        timeline: "Testable immediately (occupational cohort with blood draw)",
+        falsification: "No difference in FT3/FT4 ratio between EMF exposure groups",
+      },
+      {
+        id: "E-NEW-10",
+        title: "Transgenerational sperm methylation persists to F3",
+        description: "EMF alters sperm epigenome dose-dependently (1 mT: methylation↓, 3 mT: methylation↑). If EMF effects follow the DDT transgenerational model, methylation changes should persist to F3. Test: expose F0 rodents to chronic EMF; analyze sperm methylation profiles in F1, F2, F3. Prediction: F3 sperm methylation retains EMF-signature from F0 exposure. BERM's HIGHEST PRIORITY research proposal.",
+        timeline: "Testable within 18-24 months (multigenerational rodent study)",
+        falsification: "F3 sperm methylation is indistinguishable from controls",
+      },
+      {
+        id: "E-NEW-11",
+        title: "EMF exposure duration correlates with telomere shortening",
+        description: "EMF→ROS↑ + melatonin↓→telomerase↓ + SIRT1↓ should accelerate telomere shortening. Test: measure leukocyte telomere length in occupational EMF cohort stratified by exposure years. Control for age, smoking, BMI. Prediction: cumulative EMF exposure correlates with shorter telomeres after controlling for confounders.",
+        timeline: "Testable immediately (occupational cohort with blood draw)",
+        falsification: "No correlation between EMF exposure duration and telomere length",
+      },
+      {
+        id: "E-NEW-12",
+        title: "Melatonin supplementation slows telomere shortening in high-EMF population",
+        description: "Melatonin activates telomerase + SIRT1 (anti-aging). EMF→melatonin↓ removes this protection. Test: RCT of melatonin supplementation (3-5 mg/night, 12 months) in high-EMF workers. Measure telomere length at baseline and 12 months. Prediction: melatonin group shows significantly less telomere shortening than placebo.",
+        timeline: "Testable within 12 months (supplementation RCT)",
+        falsification: "Melatonin supplementation does not affect telomere attrition rate",
+      },
+      {
+        id: "E-NEW-13",
+        title: "Oxytocin levels inversely correlate with EMF exposure",
+        description: "Oxytocin release is directly VGCC-dependent (N-type + L-type Ca²⁺ channels). EMF disrupts VGCC → OXT release disrupted. Test: measure salivary or plasma oxytocin in controlled EMF exposure study (pre/post acute exposure). Prediction: acute EMF exposure reduces oxytocin response to social stimuli.",
+        timeline: "Testable within 6 months (controlled lab study)",
+        falsification: "No change in oxytocin levels after EMF exposure",
+      },
+      {
+        id: "E-NEW-14",
+        title: "ELF-exposed animals show α2δ-1↑ WITHOUT nerve injury",
+        description: "ELF-priming (VK4) upregulates VGCC expression including α2δ-1 subunits. α2δ-1 overexpression alone produces neuropathic pain behavior WITHOUT nerve injury. Test: expose rodents to chronic ELF (50 Hz, 8-10 days); measure α2δ-1 expression in DRG and spinal dorsal horn. Prediction: ELF produces α2δ-1 upregulation and pain-like behavior without nerve damage.",
+        timeline: "Testable within 6 months (rodent ELF exposure model)",
+        falsification: "No change in α2δ-1 expression after chronic ELF exposure",
+      },
+      {
+        id: "E-NEW-15",
+        title: "ASD children's NKCC1/KCC2 ratio correlates with prenatal EMF",
+        description: "NKCC1/KCC2 ratio is elevated in ASD (GABA stays excitatory). EMF disrupts KCC2 maturation via IL-1β (S9) and ROS. Test: measure plasma NKCC1/KCC2 ratio in ASD children; correlate with maternal prenatal EMF exposure history (occupation, device use, residential proximity to base stations). Prediction: higher prenatal EMF correlates with higher NKCC1/KCC2 ratio in ASD cases.",
+        timeline: "Testable within 12 months (case-control with maternal history)",
+        falsification: "No correlation between prenatal EMF exposure and NKCC1/KCC2 ratio",
+      },
+      {
+        id: "E-NEW-16",
+        title: "Bumetanide + EMF reduction outperforms either alone for ASD",
+        description: "Bumetanide blocks NKCC1 → restores inhibitory GABA. EMF reduction removes the upstream driver of KCC2↓. Together they should be superadditive. Test: 2×2 RCT in ASD children: bumetanide/placebo × EMF reduction/standard. Measure CARS score, SRS, sensory sensitivity. Prediction: combined group shows significantly better improvement than either intervention alone.",
+        timeline: "Testable within 12 months (pediatric 2×2 RCT)",
+        falsification: "No interaction effect — bumetanide and EMF reduction are purely additive",
+      },
+    ],
+    finalTimeline: "Timeline",
+    finalFalsification: "Falsification criterion",
+    finalLocked: "Locked: 2026-08-26",
+    finalStatus: "LOCKED — awaiting test",
     ttypeTitle: "T-Type Channel Predictions",
     ttypeLead: "Testable predictions from the T-type calcium channel bifurcation mechanism.",
     ttypePredictions: [
@@ -2396,6 +2460,70 @@ const COPY = {
     suppFalsification: "Falsifikaatiokriteeri",
     suppLocked: "Lukittu: 2026-08-26",
     suppStatus: "LUKITTU — odottaa testiä",
+    finalTitle: "Viimeisten kerrosten ennusteet (VK26–31)",
+    finalLead: "Ennusteet viimeisistä konvergenssikerroksista: kilpirauhasen Dio2/Dio3, epigeneettinen transgenerationaalinen periytyminen, telomeeri-ikääntymiskierre, oksitosiinin Ca²⁺-häiriö, ELF-primaami-krooninen kipu ja ASD BERM-prototyyppinä.",
+    finalPredictions: [
+      {
+        id: "E-NEW-9",
+        title: "Piilevä kilpirauhasen vajaatoiminta: FT3/FT4-suhde on matalampi korkean EMF:n työntekijöillä",
+        description: "EMF vähentää hypotalaamista Dio2/Dio3:a → T4→T3-muunnos estyy → veren T4 näyttää 'normaalilta' mutta kudokset eivät saa T3:a. Testi: mittaa FT3/FT4-suhde korkean EMF:n ammateissa (telecom, sähköasentajat) vs. vastaavat matalan EMF:n kontrollit. Ennuste: korkean EMF:n ryhmällä merkittävästi matalampi FT3/FT4-suhde normaalista TSH:sta ja T4:stä huolimatta.",
+        timeline: "Testattavissa heti (ammattikohortti verinäytteellä)",
+        falsification: "Ei eroa FT3/FT4-suhteessa EMF-altistusryhmien välillä",
+      },
+      {
+        id: "E-NEW-10",
+        title: "Transgenerationaalinen siittiöiden metylaatio säilyy F3-sukupolveen",
+        description: "EMF muuttaa siittiöiden epigenomia annosriippuvaisesti (1 mT: metylaatio↓, 3 mT: metylaatio↑). Jos EMF-vaikutukset noudattavat DDT:n transgenerationaalista mallia, metylaatiomuutosten pitäisi säilyä F3:een. Testi: altista F0-jyrsijät krooniselle EMF:lle; analysoi siittiöiden metylaatioprofilit F1:ssä, F2:ssa, F3:ssa. Ennuste: F3-siittiöiden metylaatio säilyttää EMF-sormenjäljen F0-altistuksesta. BERM:n KORKEIN PRIORITEETTI tutkimusehdotuksena.",
+        timeline: "Testattavissa 18–24 kuukaudessa (monisukupolvinen jyrsijätutkimus)",
+        falsification: "F3-siittiöiden metylaatio on erottamaton kontrolleista",
+      },
+      {
+        id: "E-NEW-11",
+        title: "EMF-altistuksen kesto korreloi telomeerien lyhenemisen kanssa",
+        description: "EMF→ROS↑ + melatoniini↓→telomeraasi↓ + SIRT1↓ pitäisi kiihdyttää telomeerien lyhenemistä. Testi: mittaa leukosyyttien telomeeripituus ammatillisessa EMF-kohortissa altistusvuosien mukaan kerrostettuna. Kontrolloi ikä, tupakointi, BMI. Ennuste: kumulatiivinen EMF-altistus korreloi lyhyempien telomeerien kanssa sekoittavien tekijöiden vakioinnin jälkeen.",
+        timeline: "Testattavissa heti (ammattikohortti verinäytteellä)",
+        falsification: "Ei korrelaatiota EMF-altistuksen keston ja telomeeripituuden välillä",
+      },
+      {
+        id: "E-NEW-12",
+        title: "Melatoniinilisä hidastaa telomeerien lyhenemistä korkean EMF:n populaatiossa",
+        description: "Melatoniini aktivoi telomeraasin + SIRT1:n (ikääntymistä hidastava). EMF→melatoniini↓ poistaa tämän suojan. Testi: melatoniinilisän RCT (3–5 mg/yö, 12 kuukautta) korkean EMF:n työntekijöillä. Mittaa telomeeripituus lähtötasolla ja 12 kuukauden kohdalla. Ennuste: melatoniiniryhmä osoittaa merkittävästi vähemmän telomeerien lyhenemistä kuin plasebo.",
+        timeline: "Testattavissa 12 kuukaudessa (lisäravinteiden RCT)",
+        falsification: "Melatoniinilisä ei vaikuta telomeerien kulumisasteeseen",
+      },
+      {
+        id: "E-NEW-13",
+        title: "Oksitosiinitasot korreloivat käänteisesti EMF-altistuksen kanssa",
+        description: "Oksitosiinin vapautuminen on suoraan VGCC-riippuvaista (N-tyypin + L-tyypin Ca²⁺-kanavat). EMF häiritsee VGCC:tä → OXT:n vapautuminen häiriintyy. Testi: mittaa sylki- tai plasman oksitosiini kontrolloidussa EMF-altistustutkimuksessa (ennen/jälkeen akuutin altistuksen). Ennuste: akuutti EMF-altistus vähentää oksitosiiivastetta sosiaalisiin ärsykkeisiin.",
+        timeline: "Testattavissa 6 kuukaudessa (kontrolloitu laboratoriotutkimus)",
+        falsification: "Ei muutosta oksitosiinitasoissa EMF-altistuksen jälkeen",
+      },
+      {
+        id: "E-NEW-14",
+        title: "ELF-altistetut eläimet osoittavat α2δ-1↑ ILMAN hermovauriota",
+        description: "ELF-primaami (VK4) ylössäätelee VGCC-ilmentymistä mukaan lukien α2δ-1-alayksiköt. α2δ-1:n yliekspressio yksinään tuottaa neuropaattista kipukäyttäytymistä ILMAN hermovauriota. Testi: altista jyrsijät krooniselle ELF:lle (50 Hz, 8–10 päivää); mittaa α2δ-1-ilmentyminen DRG:ssä ja selkäytimen takasarvessa. Ennuste: ELF tuottaa α2δ-1:n ylössäätelyn ja kipukäyttäytymistä ilman hermovauriota.",
+        timeline: "Testattavissa 6 kuukaudessa (jyrsijän ELF-altistusmalli)",
+        falsification: "Ei muutosta α2δ-1-ilmentymisessä kroonisen ELF-altistuksen jälkeen",
+      },
+      {
+        id: "E-NEW-15",
+        title: "ASD-lasten NKCC1/KCC2-suhde korreloi prenataali-EMF:n kanssa",
+        description: "NKCC1/KCC2-suhde on kohonnut ASD:ssä (GABA pysyy eksitatorisena). EMF häiritsee KCC2:n kypsymistä IL-1β:n (S9) ja ROS:n kautta. Testi: mittaa plasman NKCC1/KCC2-suhde ASD-lapsilla; korreloi äidin prenataali-EMF-altistushistorian kanssa (ammatti, laitteiden käyttö, asuinpaikan läheisyys tukiasemiin). Ennuste: korkeampi prenataali-EMF korreloi korkeamman NKCC1/KCC2-suhteen kanssa ASD-tapauksissa.",
+        timeline: "Testattavissa 12 kuukaudessa (tapaus-verrokkitutkimus äidin historialla)",
+        falsification: "Ei korrelaatiota prenataali-EMF-altistuksen ja NKCC1/KCC2-suhteen välillä",
+      },
+      {
+        id: "E-NEW-16",
+        title: "Bumetanidi + EMF-vähennys ylittää kummankin yksinään ASD:ssä",
+        description: "Bumetanidi estää NKCC1:n → palauttaa inhibitorisen GABA:n. EMF-vähennys poistaa KCC2↓:n ylävirran ajurin. Yhdessä niiden pitäisi olla superadditiivisia. Testi: 2×2 RCT ASD-lapsilla: bumetanidi/plasebo × EMF-vähennys/standardi. Mittaa CARS-pisteet, SRS, sensorinen herkkyys. Ennuste: yhdistelmäryhmä osoittaa merkittävästi paremman parannuksen kuin kumpikaan interventio yksinään.",
+        timeline: "Testattavissa 12 kuukaudessa (pediatrinen 2×2 RCT)",
+        falsification: "Ei interaktiovaikutusta — bumetanidi ja EMF-vähennys ovat puhtaasti additiivisia",
+      },
+    ],
+    finalTimeline: "Aikajana",
+    finalFalsification: "Falsifikaatiokriteeri",
+    finalLocked: "Lukittu: 2026-08-26",
+    finalStatus: "LUKITTU — odottaa testiä",
     ttypeTitle: "T-tyypin kanavan ennusteet",
     ttypeLead: "T-tyypin kalsiumkanavan bifurkaatiomekanismista johdetut testattavat ennusteet.",
     ttypePredictions: [
@@ -3581,6 +3709,35 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
                 <p><span className="font-semibold">{d.suppTimeline}:</span> {sp.timeline}</p>
                 <p><span className="font-semibold">{d.suppFalsification}:</span> {sp.falsification}</p>
                 <p className="font-mono-num">{d.suppLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Final layer predictions E-NEW-9 through E-NEW-16 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.finalTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.finalLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.finalPredictions.map((fp) => (
+            <article key={fp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{fp.id}</span>
+                    <h3 className="font-semibold">{fp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.finalStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{fp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.finalTimeline}:</span> {fp.timeline}</p>
+                <p><span className="font-semibold">{d.finalFalsification}:</span> {fp.falsification}</p>
+                <p className="font-mono-num">{d.finalLocked}</p>
               </div>
             </article>
           ))}

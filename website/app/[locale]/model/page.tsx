@@ -259,9 +259,9 @@ const t = {
     neonatalQSpectrum: "The neonatal Q → ∞ condition is one end of a continuous spectrum. The same Q-factor mechanism — with varying damping coefficient γ — unifies SIDS, epilepsy, SUDEP, migraine, and cluster headache. Spreading depolarization (CSD) is the common terminal pathway; the Q-factor determines whether CSD is triggered, how far it propagates, and whether it reaches the brainstem.",
     neonatalQSpectrumLink: "See full neurological spectrum analysis →",
 
-    feedbackLoopsTitle: "Fourteen Positive Feedback Loops",
+    feedbackLoopsTitle: "Sixteen Positive Feedback Loops",
     feedbackLoopsSub: "Self-amplifying cycles forming a network — any entry point activates multiple degradation spirals simultaneously",
-    feedbackLoopsDesc: "Convergence verification revealed fourteen positive feedback loops within the BERM cascade. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each means the system degrades itself without any increase in external exposure.",
+    feedbackLoopsDesc: "Convergence verification revealed sixteen positive feedback loops within the BERM cascade. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each means the system degrades itself without any increase in external exposure.",
     feedbackLoops: [
       { id: "S1", name: "Monitor feedback resonance", steps: "Baby's sound → microphone → RF modulation → VGCC → Ca²⁺ → stronger oscillation → louder sound → more RF → cascade amplification", status: "Mechanistically coherent, untested as complete loop", color: "amber" },
       { id: "S2", name: "Serotonin lock-open", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → thalamocortical gate OPEN → EMF penetrates deeper → more CaMKII disruption → more 5-HT↓ → ...", status: "Each link verified independently", color: "green" },
@@ -277,6 +277,8 @@ const t = {
       { id: "S12", name: "NK-cancer-inflammation", steps: "ELF → NK cytotoxicity↓ → cancer surveillance↓ → tumor growth → inflammation → VGCC sensitization↑ → more NK suppression", status: "NK Ca²⁺ dependence + ELF suppression verified", color: "green" },
       { id: "S13", name: "HPA-HPG cross-spiral", steps: "EMF → cortisol↑ → GnIH↑ → T↓ → neuroprotection↓ → hippocampus vulnerable → HPA braking lost → cortisol↑↑ → more GnIH", status: "RF9 restored T in cortisol-treated primates", color: "green" },
       { id: "S14", name: "Gut-brain inflammation", steps: "EMF → melatonin↓ → Per2↓ in gut → gut barrier↓ → LPS enters blood → neuroinflammation → hippocampal neurogenesis↓ → more HPA activation → more melatonin↓", status: "Per2 KO → gut barrier → LPS → depression verified", color: "green" },
+      { id: "S15", name: "Melatonin-telomere aging spiral", steps: "EMF → melatonin↓ → telomerase↓ + SIRT1↓ → telomere shortening → SASP → inflammation → ROS↑ → more telomere damage → more SASP → ...", status: "Melatonin → telomerase + SIRT1 verified; depression = 7y accelerated aging", color: "green" },
+      { id: "S16", name: "Pain-sleep-cortisol spiral", steps: "EMF → α2δ-1↑ → central sensitization → chronic pain → sleep↓ (S4) → cortisol↑ (S7) + GABA↓ → inflammation → more sensitization → depression → sleep↓ → ...", status: "α2δ-1 → pain without injury verified; pain-sleep-cortisol each verified", color: "green" },
     ],
     feedbackLoopsLink: "See full convergence verification →",
 
@@ -304,6 +306,17 @@ const t = {
     ],
     tripleLockSynergy: "The triple lock is not three independent effects — it is a synergistic trap. T↓ × F↑ = accelerated neurodegeneration. F↑ × DA↓ = treatment-resistant depression. T↓ × DA↓ = motivational collapse. T↓ × F↑ × DA↓ = the complete modern phenotype.",
 
+    quadLockTitle: "Quad Lock: The Fourth Dimension",
+    quadLockSub: "T↓ × F↑ × DA↓ × OXT↓ — adding oxytocin completes the social-reproductive collapse",
+    quadLockDesc: "Oxytocin release is directly VGCC-dependent (N-type + L-type Ca²⁺ channels, PMC3197583). EMF disrupts VGCC function → OXT release disrupted. Adding OXT↓ to the triple lock creates a quad lock that explains the full modern phenotype: not just physiological decline but social fragmentation.",
+    quadLockComponents: [
+      { component: "T↓ × OXT↓", effect: "Reproductive-social collapse: fertility decline + pair bond weakening" },
+      { component: "DA↓ × OXT↓", effect: "Social motivation collapse: reduced desire for social connection + reduced reward from it" },
+      { component: "F↑ × OXT↓", effect: "Stress without buffering: cortisol rises while OXT (the social stress buffer) falls" },
+      { component: "T↓ × F↑ × DA↓ × OXT↓", effect: "Complete modern phenotype: biological decline + social isolation + motivational collapse" },
+    ],
+    quadLockNote: "Insulin stimulates OXT release via Ca²⁺ (PMC6039480). Obese individuals have lower OXT. This creates a metabolic-social bridge: metabolic syndrome (S7) → insulin resistance → OXT↓ → social isolation → depression → metabolic syndrome worsens.",
+
     dualBarrierTitle: "Dual barrier principle",
     dualBarrierSubtitle: "BBB + gut barrier share ZO-1, occludin, claudins",
     dualBarrierBody: "The blood-brain barrier and intestinal epithelial barrier share the same tight junction proteins: ZO-1, occludin, and claudins. Melatonin protects both barriers. EMF→melatonin↓ creates simultaneous dual vulnerability: BBB opens (heavy metals enter brain) AND gut barrier weakens (LPS enters bloodstream → neuroinflammation). This is not two separate effects — it is one mechanism (melatonin loss) attacking two barriers built from the same molecular toolkit.",
@@ -311,6 +324,18 @@ const t = {
     hormesisTitle: "BDNF hormesis: frequency determines direction",
     hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — same pathway, opposite outcomes",
     hormesisBody: "BDNF (brain-derived neurotrophic factor) is essential for neuroplasticity, memory, and neurogenesis. RF-EMF (835–2650 MHz) reduces BDNF in hippocampus with dendritic spine loss and cognitive impairment. Meanwhile, ELF (50 Hz) INCREASES BDNF and promotes neurogenesis. This is frequency-dependent hormesis via the same VGCC pathway. TTFields validation: 200 kHz intermediate frequency increases NK cell cytotoxicity while 50 Hz ELF suppresses it. The Lindgren χ-parameter predicts these directional differences — different resonance conditions at different frequencies produce opposite biological outcomes.",
+
+    agingSpiralTitle: "Aging Spiral: Melatonin as Anti-Aging Molecule",
+    agingSpiralSub: "EMF → melatonin↓ → telomerase↓ + SIRT1↓ → accelerated aging (depression = 7 years)",
+    agingSpiralDesc: "Melatonin is not just a sleep hormone — it is the key anti-aging molecule. It activates telomerase (maintaining telomere length), upregulates SIRT1 (→ ROS↓ → p53↓ → NF-κB↓), and alleviates endothelial aging. EMF→melatonin↓ removes this entire protective cascade.",
+    agingSpiralSteps: [
+      { step: "EMF → melatonin↓", detail: "Pineal suppression via CRY pathway (VK1-VK3)" },
+      { step: "Melatonin↓ → telomerase↓", detail: "Melatonin activates telomerase directly (Front Aging Neurosci 2022)" },
+      { step: "Melatonin↓ → SIRT1↓", detail: "SIRT1 → ROS↓ → p53↓ → NF-κB↓ anti-inflammatory cascade lost" },
+      { step: "Telomere shortening → SASP", detail: "Shortened telomeres trigger senescence-associated secretory phenotype → chronic inflammation" },
+      { step: "SASP → ROS↑ → more telomere damage", detail: "Feedback loop S15: inflammation causes oxidative damage to remaining telomeres" },
+    ],
+    agingSpiralQuantitative: "Quantitative anchor: major depression is associated with telomeres 281 bp shorter, equivalent to 7 years of accelerated aging (PMC3063175). Metabolic syndrome is similarly associated with shorter telomeres and reduced telomerase activity (PMC12744432). Both conditions are BERM-predicted outcomes — their aging acceleration is consistent with EMF→melatonin↓→telomerase↓.",
 
     genSuscTitle: "Genetic Susceptibility Map: The 15-Gene Calcium Profile",
     genSuscSub: "EMF sensitivity is not one gene — it is a polygenic profile across five functional tiers of the calcium cascade",
@@ -818,9 +843,9 @@ const t = {
     neonatalQSpectrum: "Neonataalin Q → ∞ -tila on jatkuvan spektrin toinen pää. Sama Q-tekijämekanismi — vaihtelevalla vaimennuskertoimella γ — yhdistää SIDS:n, epilepsian, SUDEP:n, migreenin ja klusteripäänsäryn. Spreading depolarization (CSD) on yhteinen terminaalireitti; Q-tekijä määrittää laukaistaanko CSD, kuinka pitkälle se leviää ja saavuttaako se aivorungon.",
     neonatalQSpectrumLink: "Ks. koko neurologisen spektrin analyysi →",
 
-    feedbackLoopsTitle: "Neljätoista positiivista takaisinkytkentäsilmukkaa",
+    feedbackLoopsTitle: "Kuusitoista positiivista takaisinkytkentäsilmukkaa",
     feedbackLoopsSub: "Itseään vahvistavat syklit muodostavat verkoston — mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti",
-    feedbackLoopsDesc: "Konvergenssiverifiointi paljasti neljätoista positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti.",
+    feedbackLoopsDesc: "Konvergenssiverifiointi paljasti kuusitoista positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti.",
     feedbackLoops: [
       { id: "S1", name: "Monitorin palauteresonanssi", steps: "Vauvan ääni → mikrofoni → RF-modulaatio → VGCC → Ca²⁺ → voimakkaampi oskillaatio → kovempi ääni → lisää RF:ää → kaskadivahvistus", status: "Mekanistisesti koherentti, testaamaton kokonaisuutena", color: "amber" },
       { id: "S2", name: "Serotoniin-lukitusavaus", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → talamokortikaalinen portti AUKI → EMF tunkeutuu syvemmälle → lisää CaMKII-häiriötä → lisää 5-HT↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
@@ -836,6 +861,8 @@ const t = {
       { id: "S12", name: "NK-syöpä-tulehdus", steps: "ELF → NK-sytotoksisuus↓ → syöpävalvonta↓ → kasvainkasvu → tulehdus → VGCC-sensitisaatio↑ → lisää NK-suppressiota", status: "NK:n Ca²⁺-riippuvuus + ELF-suppressio verifioitu", color: "green" },
       { id: "S13", name: "HPA-HPG-ristispiraali", steps: "EMF → kortisoli↑ → GnIH↑ → T↓ → neuroprotektio↓ → hippokampus haavoittuva → HPA-jarru menetetty → kortisoli↑↑ → lisää GnIH:ta", status: "RF9 palautti T:n kortisolikäsitellyissä kädellisisssä", color: "green" },
       { id: "S14", name: "Suolisto-aivo-tulehdus", steps: "EMF → melatoniini↓ → Per2↓ suolistossa → suoliston este↓ → LPS verenkiertoon → neurotulehdus → hippokampaalinen neurogeneesi↓ → lisää HPA-aktivaatiota → lisää melatoniini↓", status: "Per2 KO → suoliston este → LPS → masennus verifioitu", color: "green" },
+      { id: "S15", name: "Melatoniini-telomeeri-ikääntymiskierre", steps: "EMF → melatoniini↓ → telomeraasi↓ + SIRT1↓ → telomeerien lyheneminen → SASP → tulehdus → ROS↑ → lisää telomeerivaurioita → lisää SASP:ia → ...", status: "Melatoniini → telomeraasi + SIRT1 verifioitu; masennus = 7v kiihtynyt ikääntyminen", color: "green" },
+      { id: "S16", name: "Kipu-uni-kortisoli-kierre", steps: "EMF → α2δ-1↑ → sentraalinen sensitisaatio → krooninen kipu → uni↓ (S4) → kortisoli↑ (S7) + GABA↓ → tulehdus → lisää sensitisaatiota → masennus → uni↓ → ...", status: "α2δ-1 → kipu ilman vauriota verifioitu; kipu-uni-kortisoli jokainen verifioitu", color: "green" },
     ],
     feedbackLoopsLink: "Ks. koko konvergenssiverifiointi →",
 
@@ -863,6 +890,17 @@ const t = {
     ],
     tripleLockSynergy: "Kolmoislukkoteoria ei ole kolme itsenäistä vaikutusta — vaan synergistinen ansa. T↓ × F↑ = kiihtynyt neurodegeneraatio. F↑ × DA↓ = hoitoresistentti masennus. T↓ × DA↓ = motivaation romahdus. T↓ × F↑ × DA↓ = täydellinen moderni fenotyyppi.",
 
+    quadLockTitle: "Nelilukko: Neljäs ulottuvuus",
+    quadLockSub: "T↓ × F↑ × DA↓ × OXT↓ — oksitosiinin lisääminen täydentää sosiaalisen-reproduktiivisen romahduksen",
+    quadLockDesc: "Oksitosiinin vapautuminen on suoraan VGCC-riippuvaista (N-tyypin + L-tyypin Ca²⁺-kanavat, PMC3197583). EMF häiritsee VGCC-toimintaa → OXT-vapautus häiriintyy. OXT↓:n lisääminen kolmoislukkoon luo nelilukon joka selittää täydellisen modernin fenotyypin: ei vain fysiologista rappeutumista vaan sosiaalista pirstoutumista.",
+    quadLockComponents: [
+      { component: "T↓ × OXT↓", effect: "Reproduktiivis-sosiaalinen romahdus: hedelmällisyyden lasku + parisideoksen heikkeneminen" },
+      { component: "DA↓ × OXT↓", effect: "Sosiaalisen motivaation romahdus: vähentynyt halu sosiaaliseen yhteyteen + vähentynyt palkitsevuus siitä" },
+      { component: "F↑ × OXT↓", effect: "Stressi ilman puskurointia: kortisoli nousee kun OXT (sosiaalinen stressipuskuri) laskee" },
+      { component: "T↓ × F↑ × DA↓ × OXT↓", effect: "Täydellinen moderni fenotyyppi: biologinen rappeutuminen + sosiaalinen eristäytyminen + motivaation romahdus" },
+    ],
+    quadLockNote: "Insuliini stimuloi OXT-vapautumista Ca²⁺:n kautta (PMC6039480). Lihavilla henkilöillä on matalampi OXT. Tämä luo metabolis-sosiaalisen sillan: metabolinen oireyhtymä (S7) → insuliiniresistenssi → OXT↓ → sosiaalinen eristäytyminen → masennus → metabolinen oireyhtymä pahenee.",
+
     dualBarrierTitle: "Kaksoisestemekanismi",
     dualBarrierSubtitle: "BBB + suoliston este jakavat ZO-1:n, okludiinin, klaudiinit",
     dualBarrierBody: "Veri-aivoeste ja suoliston epitheelinen este jakavat samat tiiviin liitoksen proteiinit: ZO-1, okludiini ja klaudiinit. Melatoniini suojaa molempia esteitä. EMF→melatoniini↓ luo samanaikaisen kaksoishaavottuvuuden: BBB avautuu (raskasmetallit pääsevät aivoihin) JA suoliston este heikkenee (LPS pääsee verenkiertoon → neurotulehdus). Tämä ei ole kaksi erillistä vaikutusta — se on yksi mekanismi (melatoniinin menetys) joka hyökkää kahta samasta molekulaarisesta työkalupakista rakennettua estettä vastaan.",
@@ -870,6 +908,18 @@ const t = {
     hormesisTitle: "BDNF-hormeesi: taajuus määrää suunnan",
     hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — sama reitti, vastakkaiset lopputulokset",
     hormesisBody: "BDNF (aivoista peräisin oleva neurotrofinen tekijä) on välttämätön neuroplastisuudelle, muistille ja neurogeneeisille. RF-EMF (835–2650 MHz) vähentää BDNF:ää hippokampuksessa dendriittien piikkien menetyksen ja kognitiivisen heikentymisen kera. Samalla ELF (50 Hz) KASVATTAA BDNF:ää ja edistää neurogeneesiä. Tämä on taajuusriippuvaista hormeesia saman VGCC-reitin kautta. TTFields-validaatio: 200 kHz välitaajuus kasvattaa NK-solujen sytotoksisuutta kun 50 Hz ELF suppressoi sitä. Lindgrenin χ-parametri ennustaa nämä suuntaerot — erilaiset resonanssiolosuhteet eri taajuuksilla tuottavat vastakkaisia biologisia lopputuloksia.",
+
+    agingSpiralTitle: "Ikääntymiskierre: Melatoniini anti-aging-molekyylinä",
+    agingSpiralSub: "EMF → melatoniini↓ → telomeraasi↓ + SIRT1↓ → kiihtynyt ikääntyminen (masennus = 7 vuotta)",
+    agingSpiralDesc: "Melatoniini ei ole vain unihormoni — se on avain-anti-aging-molekyyli. Se aktivoi telomeraasia (ylläpitää telomeeripituutta), säätelee SIRT1:tä ylös (→ ROS↓ → p53↓ → NF-κB↓) ja lievittää endoteelien ikääntymistä. EMF→melatoniini↓ poistaa tämän koko suojaavan kaskadin.",
+    agingSpiralSteps: [
+      { step: "EMF → melatoniini↓", detail: "Käpylisäkkeen suppressio CRY-reitin kautta (VK1-VK3)" },
+      { step: "Melatoniini↓ → telomeraasi↓", detail: "Melatoniini aktivoi telomeraasia suoraan (Front Aging Neurosci 2022)" },
+      { step: "Melatoniini↓ → SIRT1↓", detail: "SIRT1 → ROS↓ → p53↓ → NF-κB↓ anti-inflammatorinen kaskadi menetetty" },
+      { step: "Telomeerien lyheneminen → SASP", detail: "Lyhentyneet telomeerit laukaisevat senescence-associated secretory phenotype → krooninen tulehdus" },
+      { step: "SASP → ROS↑ → lisää telomeerivaurioita", detail: "Takaisinkytkentäsilmukka S15: tulehdus aiheuttaa oksidatiivista vahinkoa jäljellä oleville telomeereille" },
+    ],
+    agingSpiralQuantitative: "Kvantitatiivinen ankkuri: vakava masennus liittyy 281 bp lyhyempiin telomeereihin, mikä vastaa 7 vuoden kiihtynyttä ikääntymistä (PMC3063175). Metabolinen oireyhtymä on samoin yhteydessä lyhyempiin telomeereihin ja alentuneeseen telomeraasiaktiivisuuteen (PMC12744432). Molemmat tilat ovat BERM-ennustettuja lopputuloksia — niiden ikääntymisen kiihtyminen on konsistentti EMF→melatoniini↓→telomeraasi↓ kanssa.",
 
     genSuscTitle: "Geneettinen herkkyyskartta: 15 geenin kalsiumprofiili",
     genSuscSub: "EMF-herkkyys ei ole yksi geeni — se on polygeeninen profiili kalsiumkaskadin viidellä funktionaalisella tasolla",
@@ -2392,6 +2442,24 @@ export default async function ModelPage({
             </div>
           </CollapsibleSection>
 
+          {/* Quad Lock */}
+          <CollapsibleSection id="quad-lock" title={d.quadLockTitle} subtitle={d.quadLockSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.quadLockDesc}
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 mb-4">
+              {d.quadLockComponents.map((c: { component: string; effect: string }) => (
+                <div key={c.component} className="rounded-xl border border-purple-500/20 bg-purple-500/5 p-4">
+                  <h4 className="font-semibold text-sm mb-1 font-mono">{c.component}</h4>
+                  <p className="text-xs text-foreground-muted leading-relaxed">{c.effect}</p>
+                </div>
+              ))}
+            </div>
+            <div className="rounded-lg border border-purple-500/20 bg-purple-500/5 p-4">
+              <p className="text-sm leading-relaxed text-foreground-muted">{d.quadLockNote}</p>
+            </div>
+          </CollapsibleSection>
+
           {/* Dual barrier principle */}
           <CollapsibleSection id="dual-barrier" title={d.dualBarrierTitle} subtitle={d.dualBarrierSubtitle}>
             <p className="text-sm text-foreground-muted leading-relaxed">{d.dualBarrierBody}</p>
@@ -2400,6 +2468,24 @@ export default async function ModelPage({
           {/* Hormesis */}
           <CollapsibleSection id="hormesis" title={d.hormesisTitle} subtitle={d.hormesisSubtitle}>
             <p className="text-sm text-foreground-muted leading-relaxed">{d.hormesisBody}</p>
+          </CollapsibleSection>
+
+          {/* Aging Spiral */}
+          <CollapsibleSection id="aging-spiral" title={d.agingSpiralTitle} subtitle={d.agingSpiralSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.agingSpiralDesc}
+            </p>
+            <div className="space-y-2 mb-4">
+              {d.agingSpiralSteps.map((s: { step: string; detail: string }, i: number) => (
+                <div key={i} className="rounded-lg border border-card-border bg-card-bg p-3">
+                  <p className="text-sm font-semibold mb-0.5">{s.step}</p>
+                  <p className="text-xs text-foreground-muted leading-relaxed">{s.detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="rounded-lg border border-accent/20 bg-accent/5 p-4">
+              <p className="text-sm leading-relaxed text-foreground-muted">{d.agingSpiralQuantitative}</p>
+            </div>
           </CollapsibleSection>
 
           {/* Genetic Susceptibility Map */}

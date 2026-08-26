@@ -116,3 +116,34 @@ Unexecutable [DATA] items from Codelle: KONVERGENSSIVERIFIOINTI — Ultimaattine
 - Include: spatial memory testing (Morris-type), screen time, sleep quality
 - Prediction: higher RF exposure correlates with lower BDNF and poorer spatial memory scores
 - Note: tests E-NEW-7 — the BDNF hormesis prediction in humans
+
+## D21: F3 transgenerational sperm methylation (VK27)
+- Multigenerational rodent study: expose F0 to chronic EMF, analyze sperm methylation profiles in F1, F2, F3
+- Measure: genome-wide DNA methylation (RRBS/WGBS), piRNA profile, histone retention at developmental loci
+- Prediction: F3 sperm retains EMF-specific methylation signature from F0 exposure
+- Note: BERM's HIGHEST PRIORITY research proposal — 18-24 month timeline
+
+## D22: FT3/FT4 ratio in occupational EMF cohort (VK26)
+- Cross-sectional: FT3/FT4 ratio in telecom workers, electricians vs matched low-EMF controls
+- Include: personal EMF dosimetry, TSH, T4, FT3, FT4, exposure duration
+- Prediction: high-EMF group has FT3/FT4 < 0.20 despite normal TSH and T4
+- Note: testable immediately with existing occupational health cohorts
+
+## D23: Bumetanide + EMF reduction ASD RCT (VK31)
+- 2×2 RCT in ASD children: bumetanide/placebo × EMF reduction/standard environment
+- Measure: CARS score, SRS, sensory sensitivity, plasma NKCC1/KCC2 ratio
+- Prediction: combined group shows superadditive improvement vs either intervention alone
+- Note: tests the ASD prototype hypothesis directly
+
+## D24: α2δ-1 expression after chronic ELF exposure (VK30)
+- Rodent model: chronic ELF (50 Hz, 1 mT, 8-10 days), measure α2δ-1 expression in DRG + spinal dorsal horn
+- Include: pain behavior testing (von Frey, hot plate), gabapentin rescue
+- Prediction: ELF produces α2δ-1↑ and pain-like behavior WITHOUT nerve injury; gabapentin reverses it
+- Note: directly tests E-NEW-14 and the chronic pain hypothesis
+
+## D25: Telomere length × EMF occupational cohort (VK28)
+- Cross-sectional: leukocyte telomere length in high-EMF vs low-EMF workers
+- Control for: age, smoking, BMI, exercise, stress (PSS), depression (PHQ-9)
+- Include: melatonin levels (6-sulfatoxymelatonin), SIRT1 activity
+- Prediction: cumulative EMF exposure correlates with shorter telomeres after controlling for confounders
+- Note: tests E-NEW-11; melatonin levels should mediate the telomere-EMF relationship

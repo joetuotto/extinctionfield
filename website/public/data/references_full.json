@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 682,
+    "total_references": 708,
     "verified_count": 240,
     "generated": "2026-08-26",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls"
@@ -14791,6 +14791,214 @@
       "pathway": ["sleep", "testosterone"],
       "tags": ["sleep", "testosterone", "rct"],
       "source": "Sleep Med 2019 10.1016/j.sleep.2019.05.014"
+    },
+    {
+      "id": "lte_thyroid_2024",
+      "pdf_number": 1016,
+      "finding": "LTE (4G) EMF in young mice reduces hypothalamic Dio2 and Dio3 deiodinase enzymes that convert T4→T3, causing impaired thyroid hormone conversion",
+      "pathway": ["emf", "hypothalamus", "dio2", "thyroid"],
+      "tags": ["rf", "thyroid", "hypothalamus", "experimental"],
+      "source": "PMC11507962 2024"
+    },
+    {
+      "id": "elf_thyroid_2022",
+      "pdf_number": 1017,
+      "finding": "Long-term ELF-EMF exposure in humans: FT3 decreases slowly while FT4 increases slowly over time, indicating T4→T3 deiodination is inhibited",
+      "pathway": ["emf", "ft3", "ft4", "thyroid"],
+      "tags": ["elf", "thyroid", "human", "occupational"],
+      "source": "PMID:35963949 2022"
+    },
+    {
+      "id": "thyroid_shift_2024",
+      "pdf_number": 1018,
+      "finding": "Shift work × ELF × noise produces significant interaction effect on T4 levels; combined environmental exposures affect thyroid function",
+      "pathway": ["shift_work", "elf", "thyroid"],
+      "tags": ["elf", "thyroid", "occupational", "interaction"],
+      "source": "ScienceDirect 2024 10.1016/j.ecoenv.2023.115812"
+    },
+    {
+      "id": "epigen_endo_2024",
+      "pdf_number": 1019,
+      "finding": "ELF-EMF alters three epigenetic mechanisms in endometrium: DNA methylation (DNMT1), histone modification (HDAC), and microRNA biogenesis (DICER1, DGCR8)",
+      "pathway": ["emf", "dnmt1", "hdac", "microrna"],
+      "tags": ["elf", "epigenetics", "endometrium"],
+      "source": "ScienceDirect 2024 10.1016/j.theriogenology.2024.01.011"
+    },
+    {
+      "id": "gc2_methylation",
+      "pdf_number": 1020,
+      "finding": "50 Hz ELF in sperm cells: global methylation decreases at 1 mT but increases at 3 mT — dose-dependent bidirectional epigenetic effect",
+      "pathway": ["emf", "sperm", "methylation"],
+      "tags": ["elf", "epigenetics", "sperm", "dose_response"],
+      "source": "PMC4538330"
+    },
+    {
+      "id": "ddt_transgener",
+      "pdf_number": 1021,
+      "finding": "Environmental exposures (DDT, stress) produce transgenerational inheritance via sperm DNA methylation, piRNA, and histone retention persisting to F3 generation",
+      "pathway": ["transgenerational", "sperm", "methylation", "pirna"],
+      "tags": ["epigenetics", "transgenerational", "inheritance"],
+      "source": "PMC5827984"
+    },
+    {
+      "id": "emf_epigen_review",
+      "pdf_number": 1022,
+      "finding": "EMF affects gene expression and may alter epigenetic regulation through DNA methylation, histone modification, and microRNA biogenesis pathways",
+      "pathway": ["emf", "epigenetics", "gene_expression"],
+      "tags": ["emf", "epigenetics", "review"],
+      "source": "ScienceDirect 2024 EMF epigenetics review"
+    },
+    {
+      "id": "telomere_ros",
+      "pdf_number": 1023,
+      "finding": "Non-ionizing radiation increases ROS which damages telomeres (G-rich sequences are especially vulnerable to oxidative damage)",
+      "pathway": ["emf", "ros", "telomere"],
+      "tags": ["radiation", "telomere", "oxidative_stress"],
+      "source": "PMID:36582083 2022"
+    },
+    {
+      "id": "depression_telomere",
+      "pdf_number": 1024,
+      "finding": "Major depressive disorder is associated with telomeres 281 bp shorter, equivalent to 7 years of accelerated aging",
+      "pathway": ["depression", "telomere", "aging"],
+      "tags": ["depression", "telomere", "aging"],
+      "source": "PMC3063175"
+    },
+    {
+      "id": "mets_telomere",
+      "pdf_number": 1025,
+      "finding": "Metabolic syndrome is associated with shorter telomeres and reduced telomerase activity; bidirectional relationship with cellular aging",
+      "pathway": ["metabolic_syndrome", "telomere", "telomerase"],
+      "tags": ["metabolic", "telomere", "aging"],
+      "source": "PMC12744432 2026"
+    },
+    {
+      "id": "mel_telomerase",
+      "pdf_number": 1026,
+      "finding": "Melatonin activates telomerase and SIRT1, providing mitochondrial protection; melatonin is an anti-aging molecule",
+      "pathway": ["melatonin", "telomerase", "sirt1"],
+      "tags": ["melatonin", "aging", "telomerase", "sirt1"],
+      "source": "Front Aging Neurosci 2022 10.3389/fnagi.2022.888292"
+    },
+    {
+      "id": "mel_sirt1",
+      "pdf_number": 1027,
+      "finding": "Melatonin provides anti-aging effects via SIRT1 upregulation → ROS↓ → p53↓ → NF-κB↓ signaling cascade",
+      "pathway": ["melatonin", "sirt1", "ros", "nfkb"],
+      "tags": ["melatonin", "aging", "sirt1", "anti_inflammatory"],
+      "source": "ScienceDirect 2021 10.1016/j.bj.2021.01.015"
+    },
+    {
+      "id": "mel_atheroscl",
+      "pdf_number": 1028,
+      "finding": "Melatonin alleviates age-related endothelial damage by regulating telomere function; protective against vascular aging",
+      "pathway": ["melatonin", "telomere", "endothelium"],
+      "tags": ["melatonin", "aging", "vascular", "telomere"],
+      "source": "PMC8674670"
+    },
+    {
+      "id": "oxt_vgcc",
+      "pdf_number": 1029,
+      "finding": "Oxytocin somatodendritic release requires both Ca²⁺ influx through N-type and L-type VGCCs and intracellular Ca²⁺ release; L-type especially important in neonates",
+      "pathway": ["calcium", "vgcc", "oxytocin"],
+      "tags": ["oxytocin", "calcium", "vgcc", "neonatal"],
+      "source": "PLoS ONE 2011 PMC3197583"
+    },
+    {
+      "id": "oxt_ca_pvn",
+      "pdf_number": 1030,
+      "finding": "Ca²⁺ dynamics in PVN oxytocin neurons: social stimulus → Ca²⁺↑ → OXT release; stress stimulus → Ca²⁺↑ → OXT as buffer",
+      "pathway": ["calcium", "pvn", "oxytocin", "social"],
+      "tags": ["oxytocin", "calcium", "social_behavior"],
+      "source": "eNeuro 2025 ENEURO.0196-24.2025"
+    },
+    {
+      "id": "insulin_oxt",
+      "pdf_number": 1031,
+      "finding": "Insulin stimulates oxytocin release via Ca²⁺ signaling; obese individuals have lower OXT levels; metabolic-social behavior link",
+      "pathway": ["insulin", "oxytocin", "calcium"],
+      "tags": ["oxytocin", "insulin", "obesity"],
+      "source": "PMC6039480"
+    },
+    {
+      "id": "a2d1_pain",
+      "pdf_number": 1032,
+      "finding": "α2δ-1 overexpression alone produces pain behavior WITHOUT nerve injury in transgenic mice; α2δ-1 is the primary mechanism of neuropathic pain",
+      "pathway": ["alpha2delta1", "pain", "neuropathic"],
+      "tags": ["pain", "alpha2delta", "transgenic"],
+      "source": "PMID:16764990"
+    },
+    {
+      "id": "a2d1_injury",
+      "pdf_number": 1033,
+      "finding": "Nerve injury upregulates α2δ-1 in DRG and spinal dorsal horn causing central sensitization and allodynia; gabapentin blocks α2δ-1 trafficking",
+      "pathway": ["alpha2delta1", "drg", "spinal_cord", "sensitization"],
+      "tags": ["pain", "alpha2delta", "gabapentin"],
+      "source": "Br J Pharmacol 2018 10.1111/bph.13930"
+    },
+    {
+      "id": "a2d1_epigen",
+      "pdf_number": 1034,
+      "finding": "α2δ-1 expression is regulated by epigenetic factors: HDAC inhibitors increase α2δ-1 expression leading to pain states",
+      "pathway": ["alpha2delta1", "hdac", "epigenetics"],
+      "tags": ["pain", "alpha2delta", "epigenetics"],
+      "source": "PMC8514986"
+    },
+    {
+      "id": "a2d1_spinal",
+      "pdf_number": 1035,
+      "finding": "Spinal cord injury increases α2δ-1 expression in dorsal root ganglia neurons; mechanism for chronic pain after injury",
+      "pathway": ["alpha2delta1", "spinal_injury", "drg"],
+      "tags": ["pain", "alpha2delta", "spinal"],
+      "source": "ScienceDirect 2008 10.1016/j.pain.2008.06.019"
+    },
+    {
+      "id": "asd_nkcc1_2025",
+      "pdf_number": 1036,
+      "finding": "ASD patients have KCC2↓ and elevated NKCC1/KCC2 ratio causing GABA to remain excitatory; chloride homeostasis disruption is a core ASD mechanism",
+      "pathway": ["nkcc1", "kcc2", "gaba", "asd"],
+      "tags": ["asd", "gaba", "kcc2", "nkcc1"],
+      "source": "Front Psychiatry 2025 10.3389/fpsyt.2025.1587432"
+    },
+    {
+      "id": "asd_gabaa_2026",
+      "pdf_number": 1037,
+      "finding": "GABAergic dysfunction in ASD: GABA-A receptor subunit alterations and chloride transporter imbalance contribute to excitation/inhibition ratio increase",
+      "pathway": ["gaba_a", "asd", "ei_balance"],
+      "tags": ["asd", "gaba", "pharmacology"],
+      "source": "Front Pharmacol 2026 10.3389/fphar.2026.1840553"
+    },
+    {
+      "id": "asd_biomarker",
+      "pdf_number": 1038,
+      "finding": "Plasma KCC2, NKCC1, and GABA levels serve as peripheral biomarkers for ASD diagnosis; KCC2 expression shows sex dimorphism explaining male predominance",
+      "pathway": ["kcc2", "nkcc1", "gaba", "biomarker"],
+      "tags": ["asd", "biomarker", "sex_dimorphism"],
+      "source": "Springer 2026 10.1007/s11011-026-01791-2"
+    },
+    {
+      "id": "a2d_network",
+      "pdf_number": 1039,
+      "finding": "CACNA2D3 (α2δ-3) is an autism susceptibility gene; α2δ-1 overexpression increases excitatory synaptogenesis causing E/I imbalance characteristic of ASD",
+      "pathway": ["cacna2d3", "alpha2delta", "synaptogenesis", "asd"],
+      "tags": ["asd", "alpha2delta", "genetics", "synaptogenesis"],
+      "source": "PMC7326358"
+    },
+    {
+      "id": "kcc2_review",
+      "pdf_number": 1040,
+      "finding": "KCC2 is the master regulator of neuronal chloride homeostasis; its developmental upregulation switches GABA from excitatory to inhibitory; environmental disruption causes neurodevelopmental disorders",
+      "pathway": ["kcc2", "chloride", "gaba", "neurodevelopment"],
+      "tags": ["kcc2", "gaba", "development", "review"],
+      "source": "PMC9305173"
+    },
+    {
+      "id": "asd_gaba_2014",
+      "pdf_number": 1041,
+      "finding": "GABA signaling abnormalities in ASD: reduced GABAergic interneurons, altered GABA-A receptor subunits, and disrupted chloride homeostasis",
+      "pathway": ["gaba", "interneuron", "asd"],
+      "tags": ["asd", "gaba", "interneuron", "review"],
+      "source": "PMC4085902 10.3389/fped.2014.00070"
     }
   ]
 }

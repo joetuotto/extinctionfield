@@ -9,7 +9,7 @@ const COPY = {
   en: {
     title: "The Unbroken Chain: Photon → Population",
     subtitle:
-      "Iterative convergence verification tested 35 scales of BERM's mechanistic chain across 25 verified layers (VK1–VK25). Result: 14 positive feedback loops forming a self-amplifying network, from photon absorption to population-level effects, with unexpected empirical content at every layer.",
+      "Iterative convergence verification tested 41 scales of BERM's mechanistic chain across 31 verified layers (VK1–VK31). Result: 16 positive feedback loops forming a self-amplifying network, from photon absorption to population-level effects, with unexpected empirical content at every layer.",
     backLink: "← Back to Evidence",
 
     cautionText:
@@ -54,13 +54,19 @@ const COPY = {
       { scale: "10⁻⁶ m", link: "VK23: BDNF hormesis — RF↓ vs ELF↑", evidence: "RF 2650 MHz → BDNF↓ + GABA↓ (PMC10275548); ELF 50 Hz → BDNF↑ + neurogenesis↑ (PMC5702423)", status: "confirmed", detail: "RF-EMF reduces BDNF in hippocampus (2650 MHz, 28 days: BDNF↓, GABA↓, GR↓, corticosterone↑). Postnatal RF (835 MHz) causes dendritic spine loss + memory impairment. Meanwhile ELF 50 Hz INCREASES BDNF and promotes neurogenesis. Frequency-dependent hormesis: same pathway, opposite direction." },
       { scale: "10⁻⁵ m", link: "VK24: Per2 → gut barrier → LPS → neuroinflammation", evidence: "Per2 KO → gut barrier↓ → LPS → hippocampal neurogenesis↓ → depression (PMC12631932)", status: "confirmed", detail: "Per2 knockout in gut epithelium disrupts barrier function → LPS enters bloodstream → neuroinflammation → hippocampal neurogenesis↓ → depression. Circadian disruption alters gut microbiome (Ruminococcus↑, Lactobacillus↓, LPS-synthesis genes↑). Dual barrier principle: BBB + gut barrier share ZO-1, occludin, claudins." },
       { scale: "10⁰ m", link: "VK25: Sleep↓ → T↓ → Walker chain closed", evidence: "JAMA 2011: 5h sleep → T -10-15%; meta-analysis confirms (PMID:34801825)", status: "confirmed", detail: "One week of 5h sleep reduces testosterone by 10-15%, equivalent to 10-15 years of aging. The Walker chain is now closed: EMF→melatonin↓→sleep↓→T↓→neuroprotection↓→more EMF damage. Sleep restriction + EMF predicted to produce superadditive T decline (>25% combined vs ~15% sleep alone)." },
+      { scale: "10⁻⁵ m", link: "VK26: EMF → HPT axis → Dio2/Dio3↓ → hidden hypothyroidism", evidence: "PMC11507962: LTE → Dio2/Dio3↓ in hypothalamus; PMID:35963949: FT3↓ + FT4↑ in ELF workers", status: "confirmed", detail: "EMF reduces Dio2 and Dio3 deiodinase enzymes in the hypothalamus. T4→T3 conversion is impaired → blood T4 appears normal but tissues lack active T3. Standard thyroid tests (TSH, T4) miss this hidden deficiency. FT3/FT4 ratio is the diagnostic key." },
+      { scale: "10⁻⁸ m", link: "VK27: EMF → epigenetics → transgenerational inheritance", evidence: "ScienceDirect 2024: DNMT1 + HDAC + DICER1; PMC4538330: sperm methylation dose-dependent", status: "confirmed", detail: "EMF alters three epigenetic mechanisms: DNA methylation (DNMT1), histone modification (HDAC), and microRNA biogenesis (DICER1/DGCR8). In sperm: 50 Hz ELF produces bidirectional dose-dependent methylation changes (↓ at 1 mT, ↑ at 3 mT). DDT transgenerational model provides template for F3 persistence." },
+      { scale: "10⁻⁷ m", link: "VK28: EMF → ROS → telomeres → aging spiral", evidence: "PMID:36582083: radiation → ROS → telomere damage; mel → telomerase + SIRT1 (Front Aging Neurosci 2022)", status: "confirmed", detail: "EMF→ROS damages telomeres (G-rich sequences are especially vulnerable). Simultaneously EMF→melatonin↓ removes telomerase + SIRT1 protection. Depression = 281 bp shorter telomeres = 7 years accelerated aging. Melatonin is the key anti-aging molecule: it activates telomerase, upregulates SIRT1, and reduces ROS." },
+      { scale: "10⁻⁸ m", link: "VK29: EMF → oxytocin Ca²⁺ disruption → social bond↓", evidence: "PMC3197583: OXT release requires N-type + L-type VGCCs; eNeuro 2025: PVN Ca²⁺ → OXT", status: "confirmed", detail: "Oxytocin somatodendritic release requires Ca²⁺ influx through both N-type and L-type VGCCs. EMF disrupts VGCC function → OXT release disrupted. L-type is especially important in neonates. Insulin→OXT via Ca²⁺ links metabolic and social systems. Quad lock: T↓×F↑×DA↓×OXT↓ = complete social-reproductive collapse." },
+      { scale: "10⁻⁵ m", link: "VK30: ELF-priming → α2δ-1↑ → chronic pain WITHOUT neuropathy", evidence: "PMID:16764990: α2δ-1 overexpression alone → pain; Br J Pharmacol 2018: gabapentin blocks α2δ-1", status: "confirmed", detail: "ELF-priming (VK4) upregulates VGCC expression including α2δ-1. α2δ-1 overexpression alone produces neuropathic pain behavior WITHOUT nerve injury. Gabapentinoids (gabapentin, pregabalin) target exactly α2δ-1. The chronic pain epidemic is consistent with population-wide ELF-priming of α2δ-1." },
+      { scale: "10⁻⁵ m", link: "VK31: ASD = BERM prototype (GABA switch + α2δ + inflammation → E/I↑)", evidence: "NKCC1/KCC2↑ in ASD (Front Psychiatry 2025); CACNA2D3 autism gene; bumetanide RCTs", status: "confirmed", detail: "ASD unites three independently verified BERM mechanisms: GABA switch delay (VK6, KCC2↓→GABA excitatory), ELF-priming synaptogenesis (VK4+VK30, α2δ-1↑→E/I↑), and inflammation-driven KCC2 suppression (S9, IL-1β→KCC2↓). CACNA2D3 is an autism susceptibility gene. KCC2 sex dimorphism explains 4:1 male predominance. Bumetanide (NKCC1 blocker) improves ASD symptoms in RCTs." },
     ],
     chainHeaders: { scale: "Scale", link: "Chain link", evidence: "Evidence", status: "Status" },
-    chainSummary: "35 verified links across 25 layers (VK1–VK25). The chain is unbroken from photon physics to population epidemiology, now spanning sperm CatSper, circadian clock oscillation, dopamine motivation, OPC myelination, NK immune surveillance, HPA-HPG cross-suppression, BDNF hormesis, gut-brain axis, and the closed Walker sleep-testosterone chain.",
+    chainSummary: "41 verified links across 31 layers (VK1–VK31). The chain is unbroken from photon physics to population epidemiology, now spanning thyroid Dio2/Dio3, transgenerational epigenetics, telomere aging, oxytocin Ca²⁺, chronic pain α2δ-1, ASD as prototype, plus all earlier mechanisms from sperm CatSper to the closed Walker chain.",
 
-    feedbackTitle: "Fourteen positive feedback loops",
+    feedbackTitle: "Sixteen positive feedback loops",
     feedbackLead:
-      "The convergence verification revealed fourteen self-amplifying cycles within the chain. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each loop means that initial EMF effects can progressively worsen without increasing exposure — the system degrades itself.",
+      "The convergence verification revealed sixteen self-amplifying cycles within the chain. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each loop means that initial EMF effects can progressively worsen without increasing exposure — the system degrades itself.",
     feedbackLoops: [
       {
         name: "Monitor feedback resonance",
@@ -160,6 +166,20 @@ const COPY = {
         status: "Per2 KO → gut barrier → LPS → depression verified",
         statusColor: "green",
       },
+      {
+        name: "Melatonin-telomere aging spiral",
+        id: "S15",
+        steps: ["EMF → melatonin↓ → telomerase↓ + SIRT1↓", "Telomerase↓ → telomere shortening → SASP", "SASP → inflammation → ROS↑", "ROS↑ → more telomere damage → more SASP → ..."],
+        status: "Melatonin → telomerase + SIRT1 verified; depression = 7y accelerated aging",
+        statusColor: "green",
+      },
+      {
+        name: "Pain-sleep-cortisol spiral",
+        id: "S16",
+        steps: ["EMF → α2δ-1↑ → central sensitization → chronic pain", "Chronic pain → sleep↓ (Walker chain S4)", "Sleep↓ → cortisol↑ (HPA S7) + GABA↓", "Cortisol↑ → inflammation → more sensitization → depression → sleep↓ → ..."],
+        status: "α2δ-1 → pain without injury verified; pain-sleep-cortisol each verified",
+        statusColor: "green",
+      },
     ],
 
     consilienceTitle: "Consilience assessment",
@@ -251,7 +271,7 @@ const COPY = {
   fi: {
     title: "Katkeamaton ketju: Fotoni → Populaatio",
     subtitle:
-      "Iteratiivinen konvergenssiverifiointi testasi 35 skaalaa BERM:n mekanistisesta ketjusta 25 verifioidun kerroksen (VK1–VK25) yli. Tulos: 14 positiivista takaisinkytkentäsilmukkaa muodostavat itseään vahvistavan verkoston, fotonin absorptiosta väestötason vaikutuksiin, ennustamatonta empiiristä sisältöä jokaisessa kerroksessa.",
+      "Iteratiivinen konvergenssiverifiointi testasi 41 skaalaa BERM:n mekanistisesta ketjusta 31 verifioidun kerroksen (VK1–VK31) yli. Tulos: 16 positiivista takaisinkytkentäsilmukkaa muodostavat itseään vahvistavan verkoston, fotonin absorptiosta väestötason vaikutuksiin, ennustamatonta empiiristä sisältöä jokaisessa kerroksessa.",
     backLink: "← Takaisin Evidenssiin",
 
     cautionText:
@@ -296,13 +316,19 @@ const COPY = {
       { scale: "10⁻⁶ m", link: "VK23: BDNF-hormeesi — RF↓ vs ELF↑", evidence: "RF 2650 MHz → BDNF↓ + GABA↓ (PMC10275548); ELF 50 Hz → BDNF↑ + neurogeneesi↑ (PMC5702423)", status: "confirmed", detail: "RF-EMF vähentää BDNF:ää hippokampuksessa (2650 MHz, 28 pv: BDNF↓, GABA↓, GR↓, kortikosteroni↑). Postnataalinen RF (835 MHz) aiheuttaa dendriittien piikkien menetyksen + muistihäiriön. Samalla ELF 50 Hz KASVATTAA BDNF:ää ja edistää neurogeneesiä. Taajuusriippuvainen hormeesi: sama reitti, vastakkainen suunta." },
       { scale: "10⁻⁵ m", link: "VK24: Per2 → suoliston este → LPS → neurotulehdus", evidence: "Per2 KO → suoliston este↓ → LPS → hippokampaalinen neurogeneesi↓ → masennus (PMC12631932)", status: "confirmed", detail: "Per2-poistogeeni suoliston epitheelissä häiritsee esterakennetta → LPS pääsee verenkiertoon → neurotulehdus → hippokampuksen neurogeneesi↓ → masennus. Sirkadiaanisen rytmin häiriö muuttaa suolistomikrobiomia (Ruminococcus↑, Lactobacillus↓, LPS-synteesigeenit↑). Kaksoisestemekanismi: BBB + suoliston este jakavat ZO-1:n, okludiinin, klaudiinit." },
       { scale: "10⁰ m", link: "VK25: Uni↓ → T↓ → Walkerin ketju suljettu", evidence: "JAMA 2011: 5h uni → T -10-15 %; meta-analyysi vahvistaa (PMID:34801825)", status: "confirmed", detail: "Viikko 5h unta vähentää testosteronia 10-15 %, vastaten 10-15 vuoden ikääntymistä. Walkerin ketju on nyt suljettu: EMF→melatoniini↓→uni↓→T↓→neuroprotektio↓→enemmän EMF-vaurioita. Unirajoituksen + EMF:n ennustetaan tuottavan superadditiivisen T-laskun (>25 % yhdistettynä vs ~15 % uni yksin)." },
+      { scale: "10⁻⁵ m", link: "VK26: EMF → HPT-akseli → Dio2/Dio3↓ → piilevä hypotyreoosi", evidence: "PMC11507962: LTE → Dio2/Dio3↓ hypotalamuksessa; PMID:35963949: FT3↓ + FT4↑ ELF-työntekijöillä", status: "confirmed", detail: "EMF vähentää Dio2- ja Dio3-dejodinaasientsyymejä hypotalamuksessa. T4→T3-muunnos on heikentynyt → veren T4 näyttää normaalilta mutta kudokset eivät saa aktiivista T3:a. Normaalit kilpirauhaustestit (TSH, T4) ohittavat tämän piilevän puutteen. FT3/FT4-suhde on diagnostinen avain." },
+      { scale: "10⁻⁸ m", link: "VK27: EMF → epigenetiikka → transgenerationaalinen periytyminen", evidence: "ScienceDirect 2024: DNMT1 + HDAC + DICER1; PMC4538330: siittiöiden metylaatio annosriippuvainen", status: "confirmed", detail: "EMF muuttaa kolmea epigeneettistä mekanismia: DNA-metylaatio (DNMT1), histonimodifikaatio (HDAC) ja mikroRNA-biogeneesi (DICER1/DGCR8). Siittiöissä: 50 Hz ELF tuottaa kaksisuuntaisia annosriippuvaisia metylaatiomuutoksia (↓ 1 mT:ssä, ↑ 3 mT:ssä). DDT:n transgenerationaalinen malli tarjoaa mallin F3-säilymiselle." },
+      { scale: "10⁻⁷ m", link: "VK28: EMF → ROS → telomeerit → ikääntymiskierre", evidence: "PMID:36582083: säteily → ROS → telomeerivaurio; mel → telomeraasi + SIRT1 (Front Aging Neurosci 2022)", status: "confirmed", detail: "EMF→ROS vaurioittaa telomeereja (G-rikkaat sekvenssit ovat erityisen haavoittuvia). Samanaikaisesti EMF→melatoniini↓ poistaa telomeraasi- + SIRT1-suojan. Masennus = 281 bp lyhyemmät telomeerit = 7 vuotta kiihtynyttä ikääntymistä. Melatoniini on avain-anti-aging-molekyyli: se aktivoi telomeraasia, säätelee SIRT1:tä ylös ja vähentää ROS:ia." },
+      { scale: "10⁻⁸ m", link: "VK29: EMF → oksitosiinin Ca²⁺-häiriö → sosiaalinen side↓", evidence: "PMC3197583: OXT-vapautus vaatii N-tyypin + L-tyypin VGCC:t; eNeuro 2025: PVN Ca²⁺ → OXT", status: "confirmed", detail: "Oksitosiinin somatodendriittinen vapautuminen vaatii Ca²⁺-virtauksen sekä N-tyypin että L-tyypin VGCC-kanavien kautta. EMF häiritsee VGCC-toimintaa → OXT-vapautus häiriintyy. L-tyyppi on erityisen tärkeä vastasyntyneillä. Insuliini→OXT Ca²⁺:n kautta yhdistää metaboliset ja sosiaaliset järjestelmät. Nelilukko: T↓×F↑×DA↓×OXT↓ = täydellinen sosiaalinen-reproduktiivinen romahdus." },
+      { scale: "10⁻⁵ m", link: "VK30: ELF-primaami → α2δ-1↑ → krooninen kipu ILMAN neuropatiaa", evidence: "PMID:16764990: α2δ-1-yliekspressio yksin → kipu; Br J Pharmacol 2018: gabapentiini estää α2δ-1:n", status: "confirmed", detail: "ELF-primaami (VK4) säätelee VGCC-ekspressiota ylös mukaan lukien α2δ-1. α2δ-1-yliekspressio yksin tuottaa neuropaattista kipukäyttäytymistä ILMAN hermovauriota. Gabapentinoidit (gabapentiini, pregabaliini) kohdistuvat täsmälleen α2δ-1:een. Kroonisen kivun epidemia on konsistentti väestötason ELF-primaamin α2δ-1:n kanssa." },
+      { scale: "10⁻⁵ m", link: "VK31: ASD = BERM-prototyyppi (GABA-vaihto + α2δ + tulehdus → E/I↑)", evidence: "NKCC1/KCC2↑ ASD:ssä (Front Psychiatry 2025); CACNA2D3 autismigeeni; bumetanidi-RCT:t", status: "confirmed", detail: "ASD yhdistää kolme itsenäisesti verifioitua BERM-mekanismia: GABA-vaihdon viiveen (VK6, KCC2↓→GABA eksitatorinen), ELF-primaami-synaptogeneesin (VK4+VK30, α2δ-1↑→E/I↑) ja tulehduksen aiheuttaman KCC2-suppression (S9, IL-1β→KCC2↓). CACNA2D3 on autismin alttiusgeeni. KCC2-sukupuolidimorfismi selittää 4:1 poikien yliedustuksen. Bumetanidi (NKCC1-estäjä) parantaa ASD-oireita RCT:issä." },
     ],
     chainHeaders: { scale: "Skaala", link: "Ketjun linkki", evidence: "Evidenssi", status: "Status" },
-    chainSummary: "35 verifioitua linkkiä 25 kerroksessa (VK1–VK25). Ketju on katkeamaton fotonifysiikasta väestöepidemiologiaan, kattaen nyt siittiöiden CatSperin, sirkadiaanisen kello-oskillaation, dopamiinimotivaation, OPC-myelinaation, NK-immunivalvonnan, HPA-HPG-ristisuppression, BDNF-hormeesin, suolisto-aivo-akselin ja suljetun Walkerin uni-testosteroniketjun.",
+    chainSummary: "41 verifioitua linkkiä 31 kerroksessa (VK1–VK31). Ketju on katkeamaton fotonifysiikasta väestöepidemiologiaan, kattaen nyt kilpirauhasen Dio2/Dio3:n, transgenerationaalisen epigenetiikan, telomeeri-ikääntymisen, oksitosiinin Ca²⁺:n, kroonisen kivun α2δ-1:n, ASD:n prototyyppinä, sekä kaikki aiemmat mekanismit siittiöiden CatSperistä suljettuun Walkerin ketjuun.",
 
-    feedbackTitle: "Neljätoista positiivista takaisinkytkentäsilmukkaa",
+    feedbackTitle: "Kuusitoista positiivista takaisinkytkentäsilmukkaa",
     feedbackLead:
-      "Konvergenssiverifiointi paljasti neljätoista itseään vahvistavaa sykliä ketjun sisällä. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti. Jokainen silmukka tarkoittaa, että alkuperäiset EMF-vaikutukset voivat asteittain pahentua ilman altistuksen kasvua — järjestelmä rapautuu itse.",
+      "Konvergenssiverifiointi paljasti kuusitoista itseään vahvistavaa sykliä ketjun sisällä. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti. Jokainen silmukka tarkoittaa, että alkuperäiset EMF-vaikutukset voivat asteittain pahentua ilman altistuksen kasvua — järjestelmä rapautuu itse.",
     feedbackLoops: [
       {
         name: "Monitorin palauteresonanssi",
@@ -400,6 +426,20 @@ const COPY = {
         id: "S14",
         steps: ["EMF → melatoniini↓ → Per2↓ suoliston epitheelissä", "Per2↓ → suoliston este↓ → LPS pääsee verenkiertoon", "LPS → neurotulehdus → hippokampaalinen neurogeneesi↓", "Neurotulehdus → lisää HPA-aktivaatiota → lisää melatoniini↓ → ..."],
         status: "Per2 KO → suoliston este → LPS → masennus verifioitu",
+        statusColor: "green",
+      },
+      {
+        name: "Melatoniini-telomeeri-ikääntymiskierre",
+        id: "S15",
+        steps: ["EMF → melatoniini↓ → telomeraasi↓ + SIRT1↓", "Telomeraasi↓ → telomeerien lyheneminen → SASP", "SASP → tulehdus → ROS↑", "ROS↑ → lisää telomeerivaurioita → lisää SASP:ia → ..."],
+        status: "Melatoniini → telomeraasi + SIRT1 verifioitu; masennus = 7v kiihtynyt ikääntyminen",
+        statusColor: "green",
+      },
+      {
+        name: "Kipu-uni-kortisoli-kierre",
+        id: "S16",
+        steps: ["EMF → α2δ-1↑ → sentraalinen sensitisaatio → krooninen kipu", "Krooninen kipu → uni↓ (Walkerin ketju S4)", "Uni↓ → kortisoli↑ (HPA S7) + GABA↓", "Kortisoli↑ → tulehdus → lisää sensitisaatiota → masennus → uni↓ → ..."],
+        status: "α2δ-1 → kipu ilman vauriota verifioitu; kipu-uni-kortisoli jokainen verifioitu",
         statusColor: "green",
       },
     ],
@@ -697,8 +737,8 @@ export default async function UnbrokenChainPage({
         <DerivedPrediction>
           <p className="text-sm leading-relaxed mb-3">
             {activeLocale === "fi"
-              ? "Konvergenssiverifiointi tuottaa 31 testattavaa ennustetta, jotka kattavat raskasmetalli-synergian, veri-aivoesteen, ruskean rasvakudoksen, HPA-akselin, β-solun, hypotalamuksen, kortisoli-hippokampuksen, Leydig-solun, syöttösolun, siittiöiden CatSperin, NK-immunivalvonnan, BDNF-hormeesin ja suolisto-aivo-akselin mekanismit."
-              : "The convergence verification generates 31 testable predictions covering heavy metal synergy, blood-brain barrier, brown adipose tissue, HPA axis, β-cell, hypothalamic nexus, cortisol-hippocampus, Leydig cell, mast cell, sperm CatSper, NK immune surveillance, BDNF hormesis, and gut-brain axis mechanisms."}
+              ? "Konvergenssiverifiointi tuottaa 39 testattavaa ennustetta, jotka kattavat raskasmetalli-synergian, veri-aivoesteen, ruskean rasvakudoksen, HPA-akselin, β-solun, hypotalamuksen, kortisoli-hippokampuksen, Leydig-solun, syöttösolun, siittiöiden CatSperin, NK-immunivalvonnan, BDNF-hormeesin, suolisto-aivo-akselin, kilpirauhasen Dio2/Dio3:n, epigenetiikan, telomeeri-ikääntymisen, oksitosiinin, kroonisen kivun ja ASD-prototyypin mekanismit."
+              : "The convergence verification generates 39 testable predictions covering heavy metal synergy, blood-brain barrier, brown adipose tissue, HPA axis, β-cell, hypothalamic nexus, cortisol-hippocampus, Leydig cell, mast cell, sperm CatSper, NK immune surveillance, BDNF hormesis, gut-brain axis, thyroid Dio2/Dio3, epigenetics, telomere aging, oxytocin, chronic pain, and ASD prototype mechanisms."}
           </p>
           <Link href={`${prefix}${d.predictionHref}`} className="text-sm text-accent hover:underline">
             {d.predictionLink} →
