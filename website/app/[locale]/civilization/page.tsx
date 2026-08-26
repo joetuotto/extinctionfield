@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Landmark, ArrowRight, AlertTriangle, Baby, Building2, Users, Brain, Heart, Shield, TrendingDown, Zap, Target } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 
@@ -385,6 +386,80 @@ const COPY = {
       },
     ],
 
+    sProjectionTitle: "What the Hormone Data Predicts About Society",
+    sProjectionLead:
+      "The twelve predictions above trace individual behavioral changes. But individuals do not exist in isolation. They form couples, families, teams, institutions, and nations. When the hormonal substrate of an entire population shifts, the aggregate effects produce emergent social phenomena that look like ideological change, cultural conflict, or moral decline but may be, in significant part, biological shift experienced as cultural change.",
+    sProjectionNote:
+      "This distinction matters. If a social problem is ideological, the solution requires changing minds. If it is partly biological, the solution includes changing the environment. The second is easier.",
+
+    spolarTitle: "Polarization: digital courage, physical conformity",
+    spolarBody:
+      "The audience effect RCT (2020) showed that low testosterone increases strategic prosociality — saying what the audience expects rather than what you believe. The provocation RCT (Carré 2017) showed that low testosterone reduces reactive response to injustice. Together, these predict a specific pattern: people will be conformist in physical presence but confrontational from behind screens.",
+    spolarObserved:
+      "This is precisely what is observed. Online polarization is at historic highs. Physical confrontation is at historic lows. People express views anonymously that they would never state in person. Comment sections are battlefields; meeting rooms are echo chambers.",
+    spolarExplain:
+      "This is not hypocrisy. It is biology. Low testosterone raises the threshold for authentic confrontation. Digital environments lower the social cost of confrontation to near zero. The mismatch between biological threshold and environmental cost creates the pattern: bold online, silent offline.",
+    spolarPrediction:
+      "BERM prediction: populations with higher average T (e.g., lower-EMF communities) should show less divergence between online and offline behavior.",
+    spolarPhysical: "Physical environment",
+    spolarPhysicalThreshold: "High (face-to-face social cost)",
+    spolarPhysicalBehavior: "Conformity, self-censorship, agreement",
+    spolarPhysicalRct: "Audience 2020: low T → strategic prosociality",
+    spolarDigital: "Digital environment",
+    spolarDigitalThreshold: "Near zero (anonymity, distance)",
+    spolarDigitalBehavior: "Outrage, polarization, confrontation",
+    spolarDigitalRct: "Carré 2017: provocation response persists when cost is low",
+
+    ssafetyTitle: "Safety-seeking: hormonal threshold, not value choice",
+    ssafetyBody:
+      "Risk-taking declines with testosterone (Competition RCT 2024, n=333). Anxiety increases with cortisol (dual hormone meta, n=8,538). Threat sensitivity increases when both shift simultaneously. At the population level, this produces a society that experiences more situations as threatening — not because the environment is more dangerous (violent crime is at historic lows) but because the biological threshold for threat perception has lowered.",
+    ssafetyParadox:
+      "This explains an otherwise paradoxical pattern: the safest societies in human history report the highest anxiety. Objective danger is down. Subjective threat is up. The gap between the two is the hormonal shift.",
+    ssafetyCreep:
+      "When threat perception rises without actual threat increasing, the result is what psychologists call \"concept creep\": the expansion of harm-related concepts to encompass previously neutral phenomena. Words become violence. Disagreement becomes aggression. Discomfort becomes trauma. This is not moral progress or moral decline. It is a recalibrated threat detection system operating on a different hormonal substrate.",
+
+    sinstitutionTitle: "Institutional decay: why everything gets slightly worse",
+    sinstitutionBody:
+      "The result is not dramatic collapse. It is pervasive, slow-motion quality loss. Healthcare gets slightly worse. Education gets slightly worse. Infrastructure maintenance falls slightly behind. Customer service declines. Political candidates are slightly less competent. Each individually unremarkable. Together, the pattern is civilizational.",
+    sinstitutionData:
+      "The 2025 Edelman Trust Barometer confirms: trust in all institutions — government, media, NGOs, employers — has declined across nearly every demographic. This is not a partisan phenomenon. It is a substrate phenomenon.",
+
+    sfixableTitle: "The Fixable Fraction",
+    sfixableLead:
+      "If the behavioral changes documented on this page were entirely ideological — if people were less motivated, more anxious, more conformist, and less trusting purely because of ideas — the solution would require changing billions of minds. History suggests this is extremely difficult. But if a significant fraction of these changes has a biological basis, then part of the solution is environmental, not ideological.",
+    sfixableSolutions: [
+      "Reducing EMF exposure in living and working spaces",
+      "Calcium channel modulation (264,625 patients already show psychiatric benefit from CCBs prescribed for cardiovascular conditions)",
+      "Magnesium supplementation (natural Ca²⁺ antagonist)",
+      "Melatonin restoration (circadian repair)",
+      "Sleep hygiene (melatonin → GnRH → T recovery)",
+      "Physical contact and community (oxytocin restoration)",
+    ],
+    sfixableConclusion:
+      "None of these require anyone to change their beliefs. They require changing the electromagnetic environment and supporting the biological systems that hormones regulate. If even 20–30% of the current crisis in motivation, trust, and social cohesion is biological rather than ideological, that is 20–30% that can be addressed without political conflict. This is the most practically important implication of the BERM model: not that civilization is doomed, but that part of its decline has a specific, identifiable, and potentially reversible cause.",
+
+    shistoryTitle: "Reading history through the hormonal lens",
+    shistoryBody:
+      "Every generation experiences the same objective world through a different hormonal substrate. A man in 1960 with testosterone at 600 ng/dL, normal cortisol, and intact dopaminergic signaling experiences a career setback as a challenge to overcome. A man in 2024 with testosterone at 350 ng/dL, elevated cortisol, and reduced dopaminergic tone experiences the same setback as a threat to avoid. Their values may be identical. Their biological capacity to act on those values is not.",
+    shistoryOlder:
+      "When older generations say \"we just got on with it,\" they are not describing superior character. They are describing a different hormonal environment in which the threshold for action was lower and the threshold for avoidance was higher.",
+    shistoryYounger:
+      "When younger generations say \"the world is more stressful,\" they are not describing a more dangerous world (it is objectively safer). They are describing the same world experienced through a hormonal substrate that detects more threat and generates less motivation to confront it.",
+    shistoryConclusion:
+      "Neither generation is wrong. They are describing the same reality through different biological filters. The intergenerational conflict that results — \"lazy kids\" vs \"out-of-touch boomers\" — is itself a consequence of the hormonal shift, not evidence of moral failure on either side.",
+
+    sideologyTitle: "Ideology as downstream",
+    sideologyBody:
+      "The same idea — \"safety is important\" — produces different political outcomes depending on the hormonal substrate of the population that holds it.",
+    sideologyHigh:
+      "At T=500 ng/dL, cortisol=normal: \"Safety is important\" → build safe infrastructure, enforce laws, confront threats directly.",
+    sideologyLow:
+      "At T=320 ng/dL, cortisol=elevated: \"Safety is important\" → eliminate all risk, expand definitions of harm, avoid confrontation by removing the confrontation-causing stimulus.",
+    sideologyExplain:
+      "The idea has not changed. The biological capacity to implement it has. This is not left vs right. It is not progressive vs conservative. It is a biological shift in the implementation threshold for the same set of values that both sides largely share. Both sides want safety. Both sides want fairness. Both sides want opportunity. The disagreement is about how — and \"how\" is moderated by hormonal thresholds.",
+    sideologyTestable:
+      "This is testable. If political attitudes on safety, risk, and authority correlate with individual hormone profiles (T, cortisol, OT) after controlling for demographics and stated ideology, the biological moderation hypothesis gains support. Multiple studies have found exactly this: testosterone correlates with political attitudes on authority, competition, and redistribution across cultures.",
+
     s7title: "The Recursive Prediction",
     s7body:
       "BERM makes an unusual prediction: its own reception is evidence for its thesis. If testosterone decline reduces risk-taking, competitive drive, and authentic self-presentation at the population level, then the scientific community — composed of humans subject to the same hormonal environment — should exhibit reduced willingness to challenge consensus, pursue controversial research directions, and defend unpopular findings. The model predicts that research into EMF bioeffects will be underfunded, stigmatized, and institutionally discouraged — not because the evidence is weak, but because the hormonal substrate that drives intellectual risk-taking is declining. This is testable: funding allocation for EMF bioeffects research as a proportion of total NIH/ERC funding should be declining, and researchers in the field should report increasing career penalties for publishing positive findings.",
@@ -480,6 +555,38 @@ const COPY = {
         falsification:
           "Unassisted pregnancy rates remain above 70% through 2040 in high-EMF countries",
       },
+      {
+        id: "CIV-11",
+        title: "Online-offline behavior gap correlates with population T level",
+        detail:
+          "Populations with higher average T show less divergence between online and in-person behavior. Low-EMF communities show minimal gap.",
+        falsification:
+          "No correlation between population T and online-offline behavior divergence",
+      },
+      {
+        id: "CIV-12",
+        title: "Concept creep rate correlates with cortisol trends across countries",
+        detail:
+          "Countries with faster cortisol increases (or faster T decline) show faster expansion of harm-related concepts in legal, academic, and media language.",
+        falsification:
+          "No correlation between hormonal trends and concept creep rate",
+      },
+      {
+        id: "CIV-13",
+        title: "Intergenerational tension is weakest in low-EMF communities",
+        detail:
+          "Amish and similar communities with stable hormonal baselines across generations show less intergenerational conflict than high-EMF societies.",
+        falsification:
+          "Low-EMF communities show comparable intergenerational tension to national averages",
+      },
+      {
+        id: "CIV-14",
+        title: "Political attitudes on risk and authority correlate with individual T after demographic controls",
+        detail:
+          "Within-population: individuals with higher T favor confrontation-based solutions; lower T favors avoidance-based solutions — independent of stated ideology.",
+        falsification:
+          "No residual T correlation with policy preferences after demographic controls",
+      },
     ],
 
     s10title: "Epistemic Boundaries",
@@ -490,14 +597,17 @@ const COPY = {
       "The generational acceleration is predicted by CaMKII mechanics and epigenetic transmission, not yet confirmed longitudinally.",
     ],
     s10notClaims: [
-      "That hormones determine behavior. They set thresholds.",
-      "That all social change is hormonally driven.",
-      "That earlier societies were superior. High-T societies were more violent and hierarchical.",
-      "That women are passive victims. Female-specific disruption (cortisol amplification, oxytocin decline) affects active social functions: trust-building, community maintenance, empathic regulation.",
-      "That this analysis is complete. The female RCT evidence is thinner than the male evidence. More causal studies on estrogen, progesterone, and oxytocin effects on social behavior are needed.",
+      "That hormones determine individual choices or political beliefs.",
+      "That behavioral trends are entirely biological — culture, economics, and policy matter.",
+      "That any individual's behavior can be predicted from their hormone levels.",
+      "That reversing EMF exposure would reverse all observed social trends.",
     ],
     s10recursive:
-      "The strongest epistemic claim is the recursive prediction: a model that predicts its own findings will face resistance is making a testable claim about the relationship between biology and epistemology.",
+      "If the model is wrong, the predictions will fail visibly. That is the design.",
+    s10summary:
+      "Hormones set thresholds, not outcomes. This page traces where the thresholds are moving, what that predicts at population level, and why part of what looks like ideological change may be biological shift experienced as cultural change.",
+    s10fixable:
+      "If that fraction is even 20–30%, it is the fraction that is fixable without political conflict.",
     modelLink: "Read the mechanism",
     evidenceLink: "Study the evidence",
     predictionsLink: "See all predictions",
@@ -883,6 +993,80 @@ const COPY = {
       },
     ],
 
+    sProjectionTitle: "Mitä hormonidata ennustaa yhteiskunnasta",
+    sProjectionLead:
+      "Yllä olevat kaksitoista ennustetta jäljittävät yksilötason käyttäytymismuutoksia. Mutta yksilöt eivät elä eristyksissä. He muodostavat pareja, perheitä, tiimejä, instituutioita ja kansakuntia. Kun kokonaisen väestön hormonaalinen substraatti muuttuu, aggregoidut vaikutukset tuottavat emergenttejä sosiaalisia ilmiöitä, jotka näyttävät ideologiselta muutokselta, kulttuuriselta konfliktilta tai moraaliselta rapautumiselta — mutta saattavat merkittäviltä osin olla biologista muutosta koettuna kulttuurisena muutoksena.",
+    sProjectionNote:
+      "Tämä erottelu on tärkeä. Jos sosiaalinen ongelma on ideologinen, ratkaisu vaatii mielten muuttamista. Jos se on osittain biologinen, ratkaisuun sisältyy ympäristön muuttaminen. Jälkimmäinen on helpompaa.",
+
+    spolarTitle: "Polarisaatio: digitaalinen rohkeus, fyysinen konformismi",
+    spolarBody:
+      "Yleisövaikutus-RCT (2020) osoitti, että matala testosteroni lisää strategista prososiaalisuutta — sen sanomista mitä yleisö odottaa, ei sitä mitä uskoo. Provokaatio-RCT (Carré 2017) osoitti, että matala testosteroni vähentää reaktiivista vastetta epäoikeudenmukaisuuteen. Yhdessä nämä ennustavat spesifin kuvion: ihmiset ovat konformistisia fyysisessä läsnäolossa mutta konfrontatiivisia ruutujen takaa.",
+    spolarObserved:
+      "Juuri tätä havaitaan. Verkossa polarisaatio on historiallisen korkealla. Fyysinen konfrontaatio on historiallisen matalalla. Ihmiset ilmaisevat anonyymisti näkemyksiä, joita he eivät koskaan sanoisi kasvotusten.",
+    spolarExplain:
+      "Tämä ei ole tekopyhyyttä. Se on biologiaa. Matala testosteroni nostaa autenttisen konfrontaation kynnystä. Digitaaliset ympäristöt laskevat konfrontaation sosiaalisen kustannuksen lähelle nollaa. Biologisen kynnyksen ja ympäristökustannuksen epäsuhta tuottaa kuvion: rohkea verkossa, hiljainen kasvotusten.",
+    spolarPrediction:
+      "BERM-ennuste: väestöissä joilla on korkeampi keskimääräinen T (esim. matala-EMF-yhteisöt), verkko- ja kasvokkais-käyttäytymisen välinen ero pitäisi olla pienempi.",
+    spolarPhysical: "Fyysinen ympäristö",
+    spolarPhysicalThreshold: "Korkea (kasvokkais sosiaalinen kustannus)",
+    spolarPhysicalBehavior: "Konformismi, itsesensuri, myöntyminen",
+    spolarPhysicalRct: "Audience 2020: matala T → strateginen prososiaalisuus",
+    spolarDigital: "Digitaalinen ympäristö",
+    spolarDigitalThreshold: "Lähellä nollaa (anonymiteetti, etäisyys)",
+    spolarDigitalBehavior: "Raivo, polarisaatio, konfrontaatio",
+    spolarDigitalRct: "Carré 2017: provokaatiovaste säilyy kun kustannus on matala",
+
+    ssafetyTitle: "Turvallisuushakuisuus: hormonaalinen kynnys, ei arvovalinta",
+    ssafetyBody:
+      "Riskinotto vähenee testosteronin myötä (Competition RCT 2024, n=333). Ahdistus kasvaa kortisolin myötä (kaksoishormonimeta, n=8 538). Uhkaherkkyys kasvaa kun molemmat muuttuvat samanaikaisesti. Väestötasolla tämä tuottaa yhteiskunnan, joka kokee enemmän tilanteita uhkaavina — ei siksi että ympäristö olisi vaarallisempi (väkivaltarikollisuus on historiallisen matalalla) vaan koska biologinen kynnys uhkan havaitsemiselle on laskenut.",
+    ssafetyParadox:
+      "Tämä selittää muuten paradoksaalisen kuvion: ihmiskunnan historian turvallisimmat yhteiskunnat raportoivat korkeinta ahdistusta. Objektiivinen vaara on laskenut. Subjektiivinen uhka on noussut. Näiden välinen ero on hormonaalinen muutos.",
+    ssafetyCreep:
+      "Kun uhkahavainnointi kasvaa ilman todellisen uhkan kasvua, tuloksena on se mitä psykologit kutsuvat \"concept creepiksi\": haittaan liittyvien käsitteiden laajeneminen kattamaan aiemmin neutraaleja ilmiöitä. Sanat muuttuvat väkivallaksi. Erimielisyys muuttuu aggressioksi. Epämukavuus muuttuu traumaksi. Tämä ei ole moraalista edistystä eikä moraalista rappeutumista. Se on uudelleenkalibtoitu uhkantunnistusjärjestelmä joka toimii eri hormonaalisella substraatilla.",
+
+    sinstitutionTitle: "Institutionaalinen rapautuminen: miksi kaikki heikkenee hieman",
+    sinstitutionBody:
+      "Tulos ei ole dramaattinen romahdus. Se on laaja-alainen, hidaskäyntinen laadun menetys. Terveydenhuolto heikkenee hieman. Koulutus heikkenee hieman. Infrastruktuurin ylläpito jää hieman jälkeen. Asiakaspalvelu heikkenee. Poliittiset ehdokkaat ovat hieman vähemmän päteviä. Jokainen yksinään huomaamaton. Yhdessä kuvio on sivilisatorinen.",
+    sinstitutionData:
+      "Vuoden 2025 Edelman Trust Barometer vahvistaa: luottamus kaikkiin instituutioihin — hallitukseen, mediaan, kansalaisjärjestöihin, työnantajiin — on laskenut lähes kaikissa demografioissa. Tämä ei ole puoluepoliittinen ilmiö. Se on substraatti-ilmiö.",
+
+    sfixableTitle: "Korjattavissa oleva osuus",
+    sfixableLead:
+      "Jos tällä sivulla dokumentoidut käyttäytymismuutokset olisivat kokonaan ideologisia — jos ihmiset olisivat vähemmän motivoituneita, ahdistuneempia, konformistisempia ja vähemmän luottavaisia puhtaasti ideoiden takia — ratkaisu vaatisi miljardien mielten muuttamista. Historia viittaa siihen, että tämä on äärimmäisen vaikeaa. Mutta jos merkittävä osa näistä muutoksista on biologista, osa ratkaisusta on ympäristöllistä, ei ideologista.",
+    sfixableSolutions: [
+      "EMF-altistuksen vähentäminen elin- ja työtiloissa",
+      "Kalsiumkanavamodulaatio (264 625 potilasta jo osoittaa psykiatrista hyötyä sydän- ja verisuonitauteihin määrätyistä CCB-lääkkeistä)",
+      "Magnesiumlisä (luonnollinen Ca²⁺-antagonisti)",
+      "Melatoniinin palautus (vuorokausirytmin korjaus)",
+      "Unihygienia (melatoniini → GnRH → T-palautuminen)",
+      "Fyysinen kontakti ja yhteisö (oksitosiinin palautus)",
+    ],
+    sfixableConclusion:
+      "Mikään näistä ei vaadi kenenkään muuttavan uskomuksiaan. Ne vaativat sähkömagneettisen ympäristön muuttamista ja hormoneja säätelevien biologisten järjestelmien tukemista. Jos edes 20–30 % nykyisestä motivaation, luottamuksen ja sosiaalisen koheesion kriisistä on biologista eikä ideologista, se on 20–30 % joka voidaan osoittaa ilman poliittista konfliktia. Tämä on BERM-mallin käytännöllisesti tärkein implikaatio: ei se, että sivilisaatio on tuomittu, vaan se, että osa sen rapautumisesta johtuu spesifistä, tunnistettavasta ja mahdollisesti palautettavissa olevasta syystä.",
+
+    shistoryTitle: "Historianluenta hormonaalisen linssin läpi",
+    shistoryBody:
+      "Jokainen sukupolvi kokee saman objektiivisen maailman eri hormonaalisen substraatin läpi. Mies vuonna 1960 testosteronilla 600 ng/dL, normaalilla kortisolilla ja ehjällä dopaminergisellä signaloinnilla kokee uravastoinkäymisen haasteena joka voitetaan. Mies vuonna 2024 testosteronilla 350 ng/dL, kohonneella kortisolilla ja vähentyneellä dopaminergisellä tonuksella kokee saman vastoinkäymisen uhkana jota vältetään. Heidän arvonsa voivat olla identtiset. Heidän biologinen kykynsä toimia noiden arvojen mukaisesti ei ole.",
+    shistoryOlder:
+      "Kun vanhemmat sukupolvet sanovat \"me vain tehtiin se\", he eivät kuvaile ylivertaista luonnetta. He kuvailevat eri hormonaalista ympäristöä, jossa toiminnan kynnys oli matalampi ja välttelyn kynnys korkeampi.",
+    shistoryYounger:
+      "Kun nuoremmat sukupolvet sanovat \"maailma on stressaavampi\", he eivät kuvaile vaarallisempaa maailmaa (se on objektiivisesti turvallisempi). He kuvailevat samaa maailmaa koettuna hormonaalisen substraatin läpi, joka havaitsee enemmän uhkaa ja tuottaa vähemmän motivaatiota kohdata sitä.",
+    shistoryConclusion:
+      "Kumpikaan sukupolvi ei ole väärässä. He kuvailevat samaa todellisuutta eri biologisten suodattimien läpi. Tuloksena oleva sukupolvien välinen konflikti — \"laiskaat nuoret\" vs \"todellisuudesta vieraantuneet boomerit\" — on itsessään hormonaalisen muutoksen seuraus, ei todiste kummankaan osapuolen moraalisesta epäonnistumisesta.",
+
+    sideologyTitle: "Ideologia alavirrassa",
+    sideologyBody:
+      "Sama idea — \"turvallisuus on tärkeää\" — tuottaa eri poliittisia tuloksia riippuen sen väestön hormonaalisesta substraatista joka sitä kannattaa.",
+    sideologyHigh:
+      "T=500 ng/dL, kortisoli=normaali: \"Turvallisuus on tärkeää\" → rakenna turvallinen infrastruktuuri, valvo lakeja, kohtaa uhkat suoraan.",
+    sideologyLow:
+      "T=320 ng/dL, kortisoli=koholla: \"Turvallisuus on tärkeää\" → eliminoi kaikki riski, laajenna haitan määritelmää, vältä konfrontaatiota poistamalla konfrontaation aiheuttava ärsyke.",
+    sideologyExplain:
+      "Idea ei ole muuttunut. Biologinen kyky toteuttaa sitä on. Tämä ei ole vasemmisto vs oikeisto. Se ei ole progressiivinen vs konservatiivinen. Se on biologinen muutos toteutuskynnksessä samoille arvoille, jotka molemmat puolet suurelta osin jakavat. Molemmat puolet haluavat turvallisuutta. Molemmat puolet haluavat oikeudenmukaisuutta. Molemmat puolet haluavat mahdollisuuksia. Erimielisyys koskee sitä miten — ja \"miten\" on moderoitu hormonaalisilla kynnyksillä.",
+    sideologyTestable:
+      "Tämä on testattavissa. Jos poliittiset asenteet turvallisuuteen, riskiin ja auktoriteettiin korreloivat yksilön hormoniprofiilien (T, kortisoli, OT) kanssa demografisten tekijöiden ja ilmoitetun ideologian vakioinnin jälkeen, biologisen moderoinnin hypoteesi saa tukea. Useat tutkimukset ovat löytäneet juuri tämän: testosteroni korreloi poliittisten asenteiden kanssa auktoriteettiin, kilpailuun ja tulonjakoon eri kulttuureissa.",
+
     s7title: "Rekursiivinen ennuste",
     s7body:
       "BERM tekee epätavallisen ennusteen: sen oma vastaanotto on todistetta sen teesistä. Jos testosteronilelasku vähentää riskinottoa, kilpailuviettiä ja autenttista itseilmaisua väestötasolla, tiedeyhteisn — joka koostuu samojen hormonaalisten olosuhteiden alaisista ihmisistä — pitäisi osoittaa vähentynyt halukkuus haastaa konsensusta, tutkia kiistanalaisia suuntia ja puolustaa epäsuosittuja tuloksia. Malli ennustaa, että EMF-biovaikutustutkimus on alirahoitettua, stigmatisoitua ja institutionaalisesti torpattua — ei siksi että evidenssi olisi heikkoa, vaan koska intellektuaalista riskinottoa ajava hormonaalinen substraatti vähenee. Tämä on testattavissa: EMF-biovaikutustutkimuksen rahoitusosuuden NIH/ERC-kokonaisrahoituksesta pitäisi laskea, ja alan tutkijoiden pitäisi raportoida kasvavia uraseuraamuksia positiivisten tulosten julkaisemisesta.",
@@ -978,6 +1162,38 @@ const COPY = {
         falsification:
           "Avustamattoman raskauden osuus pysyy yli 70 % vuoteen 2040 korkea-EMF-maissa",
       },
+      {
+        id: "CIV-11",
+        title: "Verkko-kasvokkais-käyttäytymiskuilu korreloi väestön T-tason kanssa",
+        detail:
+          "Väestöt joilla on korkeampi keskimääräinen T osoittavat vähemmän eroa verkko- ja kasvokkais-käyttäytymisen välillä. Matala-EMF-yhteisöt osoittavat minimaalista eroa.",
+        falsification:
+          "Ei korrelaatiota väestön T:n ja verkko-kasvokkais-käyttäytymiseron välillä",
+      },
+      {
+        id: "CIV-12",
+        title: "Concept creep -vauhti korreloi kortisolitrendien kanssa maittain",
+        detail:
+          "Maat joissa kortisoli kasvaa nopeammin (tai T laskee nopeammin) osoittavat nopeampaa haittakäsitteiden laajenemista oikeudellisessa, akateemisessa ja mediakielessä.",
+        falsification:
+          "Ei korrelaatiota hormonaalisten trendien ja concept creep -vauhdin välillä",
+      },
+      {
+        id: "CIV-13",
+        title: "Sukupolvien välinen jännite on heikoin matala-EMF-yhteisöissä",
+        detail:
+          "Amish- ja vastaavat yhteisöt joilla on vakaat hormonaaliset lähtötasot sukupolvien yli osoittavat vähemmän sukupolvien välistä konfliktia kuin korkea-EMF-yhteiskunnat.",
+        falsification:
+          "Matala-EMF-yhteisöt osoittavat verrattavaa sukupolvijännitettä kansallisiin keskiarvoihin",
+      },
+      {
+        id: "CIV-14",
+        title: "Poliittiset asenteet riskiin ja auktoriteettiin korreloivat yksilön T:n kanssa demografisen vakioinnin jälkeen",
+        detail:
+          "Väestön sisällä: korkeamman T:n yksilöt suosivat konfrontaatioperustaisia ratkaisuja; matalamman T:n yksilöt välttämisperustaisia — riippumatta ilmoitetusta ideologiasta.",
+        falsification:
+          "Ei residuaali-T-korrelaatiota politiikkapreferenssien kanssa demografisen vakioinnin jälkeen",
+      },
     ],
 
     s10title: "Episteemiset rajat",
@@ -988,14 +1204,17 @@ const COPY = {
       "Sukupolvien välinen kiihtyminen on ennustettu CaMKII-mekaniikalla ja epigeneettisellä transmissiolla, ei vielä vahvistettu longitudinaalisesti.",
     ],
     s10notClaims: [
-      "Että hormonit määräävät käyttäytymisen. Ne asettavat kynnyksiä.",
-      "Että kaikki sosiaalinen muutos on hormonaalisesti ajettua.",
-      "Että aikaisemmat yhteiskunnat olivat parrempia. Korkea-T-yhteiskunnat olivat väkivaltaisempia ja hierarkkisempia.",
-      "Että naiset ovat passiivisia uhreja. Naisspesifinen häiriö (kortisoliamplifikaatio, oksitosiinilasku) vaikuttaa aktiivisiin sosiaalisiin toimintoihin: luottamuksen rakentamiseen, yhteisön ylläpitoon, empaattiseen säätelyyn.",
-      "Että tämä analyysi on täydellinen. Naisten RCT-evidenssi on ohuempaa kuin miesten. Lisää kausaalisia tutkimuksia estrogeenin, progesteronin ja oksitosiinin vaikutuksista sosiaaliseen käyttäytymiseen tarvitaan.",
+      "Että hormonit määräävät yksilöiden valintoja tai poliittisia uskomuksia.",
+      "Että käyttäytymistrendit ovat täysin biologisia — kulttuuri, talous ja politiikka vaikuttavat.",
+      "Että yksittäisen ihmisen käyttäytymistä voi ennustaa hormonitasoista.",
+      "Että EMF-altistuksen kääntäminen kumoaisi kaikki havaitut sosiaaliset trendit.",
     ],
     s10recursive:
-      "Vahvin episteeminen väite on rekursiivinen ennuste: malli joka ennustaa että sen omat tulokset kohtaavat vastustusta tekee testattavan väitteen biologian ja epistemologian suhteesta.",
+      "Jos malli on väärässä, ennusteet epäonnistuvat näkyvästi. Se on tarkoituksellista.",
+    s10summary:
+      "Hormonit asettavat kynnyksiä, eivät tuloksia. Tämä sivu jäljittää mihin kynnykset ovat siirtymässä, mitä se ennustaa väestötasolla, ja miksi osa siitä mikä näyttää ideologiselta muutokselta saattaa olla biologista muutosta koettuna kulttuurisena muutoksena.",
+    s10fixable:
+      "Jos se osuus on edes 20–30 %, se on osuus joka on korjattavissa ilman poliittista konfliktia.",
     modelLink: "Lue mekanismi",
     evidenceLink: "Tutki evidenssiä",
     predictionsLink: "Katso kaikki ennusteet",
@@ -1028,6 +1247,24 @@ export default async function CivilizationPage({
   return (
     <main id="main-content" className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
       <PageHeader title={d.title} subtitle={d.subtitle} icon={Landmark} />
+
+      {/* Hero illustration */}
+      <figure className="mb-12 -mx-4 sm:-mx-6 lg:-mx-12">
+        <div className="relative w-full overflow-hidden rounded-xl shadow-lg">
+          <Image
+            src="/images/spengler-seasons.png"
+            alt="Four allegorical figures representing civilizational seasons — spring, summer, autumn, winter"
+            width={1500}
+            height={884}
+            className="w-full h-auto"
+            priority
+          />
+          <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10" />
+        </div>
+        <figcaption className="mt-3 text-center text-xs text-foreground-muted/60 italic">
+          The Four Seasons of Civilization
+        </figcaption>
+      </figure>
 
       {/* S1: Hero */}
       <section className="mb-16">
@@ -1342,6 +1579,104 @@ export default async function CivilizationPage({
         </div>
       </section>
 
+      {/* Societal Projection */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
+          <Users className="w-6 h-6 text-violet-500" />
+          {d.sProjectionTitle}
+        </h2>
+        <p className="text-muted-foreground mb-2">{d.sProjectionLead}</p>
+        <p className="text-sm italic text-muted-foreground/80 mb-8">
+          {d.sProjectionNote}
+        </p>
+
+        {/* Polarization */}
+        <div className="mb-8 rounded-xl border p-6">
+          <h3 className="text-lg font-semibold mb-3">{d.spolarTitle}</h3>
+          <p className="text-sm text-muted-foreground mb-3">{d.spolarBody}</p>
+          <div className="grid md:grid-cols-2 gap-4 mb-4">
+            <div className="rounded-lg bg-blue-500/10 p-4">
+              <p className="text-sm font-semibold text-blue-400 mb-2">{d.spolarPhysical}</p>
+              <p className="text-xs text-muted-foreground"><span className="font-medium">T threshold:</span> {d.spolarPhysicalThreshold}</p>
+              <p className="text-xs text-muted-foreground mt-1"><span className="font-medium">Behavior:</span> {d.spolarPhysicalBehavior}</p>
+              <p className="text-xs text-muted-foreground/70 mt-1">{d.spolarPhysicalRct}</p>
+            </div>
+            <div className="rounded-lg bg-amber-500/10 p-4">
+              <p className="text-sm font-semibold text-amber-400 mb-2">{d.spolarDigital}</p>
+              <p className="text-xs text-muted-foreground"><span className="font-medium">T threshold:</span> {d.spolarDigitalThreshold}</p>
+              <p className="text-xs text-muted-foreground mt-1"><span className="font-medium">Behavior:</span> {d.spolarDigitalBehavior}</p>
+              <p className="text-xs text-muted-foreground/70 mt-1">{d.spolarDigitalRct}</p>
+            </div>
+          </div>
+          <p className="text-sm text-muted-foreground mb-2">{d.spolarObserved}</p>
+          <p className="text-sm text-muted-foreground mb-3">{d.spolarExplain}</p>
+          <p className="text-sm font-medium text-violet-400">{d.spolarPrediction}</p>
+        </div>
+
+        {/* Safety-seeking */}
+        <div className="mb-8 rounded-xl border p-6">
+          <h3 className="text-lg font-semibold mb-3">{d.ssafetyTitle}</h3>
+          <p className="text-sm text-muted-foreground mb-3">{d.ssafetyBody}</p>
+          <div className="rounded-lg bg-amber-500/10 p-4 mb-3">
+            <p className="text-sm font-medium">{d.ssafetyParadox}</p>
+          </div>
+          <p className="text-sm text-muted-foreground">{d.ssafetyCreep}</p>
+        </div>
+
+        {/* Institutional decay (expanded) */}
+        <div className="mb-8 rounded-xl border p-6">
+          <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+            <Building2 className="w-5 h-5" />
+            {d.sinstitutionTitle}
+          </h3>
+          <p className="text-sm text-muted-foreground mb-3">{d.sinstitutionBody}</p>
+          <p className="text-sm text-muted-foreground">{d.sinstitutionData}</p>
+        </div>
+
+        {/* The Fixable Fraction */}
+        <div className="mb-8 rounded-xl border border-green-500/30 bg-green-500/5 p-6">
+          <h3 className="text-lg font-semibold mb-3 text-green-400">{d.sfixableTitle}</h3>
+          <p className="text-sm text-muted-foreground mb-4">{d.sfixableLead}</p>
+          <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground mb-4">
+            {d.sfixableSolutions.map((s, i) => (
+              <li key={i}>{s}</li>
+            ))}
+          </ul>
+          <p className="text-sm font-medium">{d.sfixableConclusion}</p>
+        </div>
+
+        {/* Reading history */}
+        <div className="mb-8 rounded-xl border p-6">
+          <h3 className="text-lg font-semibold mb-3">{d.shistoryTitle}</h3>
+          <p className="text-sm text-muted-foreground mb-3">{d.shistoryBody}</p>
+          <div className="grid md:grid-cols-2 gap-4 mb-3">
+            <div className="rounded-lg bg-blue-500/10 p-4">
+              <p className="text-xs text-muted-foreground">{d.shistoryOlder}</p>
+            </div>
+            <div className="rounded-lg bg-rose-500/10 p-4">
+              <p className="text-xs text-muted-foreground">{d.shistoryYounger}</p>
+            </div>
+          </div>
+          <p className="text-sm font-medium">{d.shistoryConclusion}</p>
+        </div>
+
+        {/* Ideology as downstream */}
+        <div className="mb-8 rounded-xl border p-6">
+          <h3 className="text-lg font-semibold mb-3">{d.sideologyTitle}</h3>
+          <p className="text-sm text-muted-foreground mb-3">{d.sideologyBody}</p>
+          <div className="grid md:grid-cols-2 gap-4 mb-4">
+            <div className="rounded-lg bg-green-500/10 p-4">
+              <p className="text-xs font-medium">{d.sideologyHigh}</p>
+            </div>
+            <div className="rounded-lg bg-red-500/10 p-4">
+              <p className="text-xs font-medium">{d.sideologyLow}</p>
+            </div>
+          </div>
+          <p className="text-sm text-muted-foreground mb-3">{d.sideologyExplain}</p>
+          <p className="text-sm text-muted-foreground">{d.sideologyTestable}</p>
+        </div>
+      </section>
+
       {/* S7: Recursive Prediction */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
@@ -1396,36 +1731,24 @@ export default async function CivilizationPage({
       {/* S10: Epistemic Boundaries */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold mb-4">{d.s10title}</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="rounded-xl border border-green-500/30 p-5">
-            <h3 className="text-sm font-semibold mb-3 text-green-400">
-              {locale === "fi" ? "Tämä sivu väittää:" : "This page claims:"}
-            </h3>
-            <ul className="space-y-2">
-              {d.s10claims.map((c, i) => (
-                <li key={i} className="text-xs text-muted-foreground flex gap-2">
-                  <span className="text-green-400 flex-shrink-0">✓</span>
-                  {c}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-xl border border-red-500/30 p-5">
-            <h3 className="text-sm font-semibold mb-3 text-red-400">
-              {locale === "fi" ? "Tämä sivu ei väitä:" : "This page does not claim:"}
-            </h3>
-            <ul className="space-y-2">
-              {d.s10notClaims.map((c, i) => (
-                <li key={i} className="text-xs text-muted-foreground flex gap-2">
-                  <span className="text-red-400 flex-shrink-0">✗</span>
-                  {c}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="rounded-xl border border-green-500/30 p-5 mb-4">
+          <h3 className="text-sm font-semibold mb-3 text-green-400">
+            {locale === "fi" ? "Tämä sivu väittää:" : "This page claims:"}
+          </h3>
+          <ul className="space-y-2">
+            {d.s10claims.map((c, i) => (
+              <li key={i} className="text-xs text-muted-foreground flex gap-2">
+                <span className="text-green-400 flex-shrink-0">✓</span>
+                {c}
+              </li>
+            ))}
+          </ul>
         </div>
-        <p className="mt-4 text-sm font-medium text-center">
-          {d.s10recursive}
+        <p className="text-sm text-muted-foreground text-center mb-2">
+          {d.s10summary}
+        </p>
+        <p className="text-sm font-medium text-center">
+          {d.s10fixable}
         </p>
       </section>
 
