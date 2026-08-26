@@ -102,6 +102,32 @@ const COPY = {
       status: "Status",
     },
     cascadeSummary: "11/16 confirmed · 5/16 no data · 0/16 contradicted",
+    preElecKicker: "RETRODICTION",
+    preElecTitle: "Pre-electric Baselines",
+    preElecLead: "BERM predicts that pre-electric populations should exhibit lower prevalence of ALL cascade outcomes. This is a retrodiction — the model predicts the PAST.",
+    preElecRows: [
+      { cascade: "Obesity", preElectric: "~5%", modern: "42% (USA)", change: "8×" },
+      { cascade: "Type 2 Diabetes", preElectric: "Rare", modern: "~10% (global)", change: "10×+" },
+      { cascade: "Autism", preElectric: "<3 / 10,000", modern: "320 / 10,000", change: "100×" },
+      { cascade: "Depression", preElectric: "Low (est.)", modern: "~10% (global)", change: "?" },
+      { cascade: "Sperm count", preElectric: "No data", modern: "−51.6% (1973→)", change: "—" },
+      { cascade: "TFR", preElectric: "~5–6 (West)", modern: "1.66 (USA)", change: "−3×" },
+    ],
+    preElecAmish: "The Amish health profile — low obesity, low diabetes, low depression, high fertility (TFR 6.1) — resembles pre-electrification health data from the early 1900s. BERM interprets this as evidence that the difference between pre-modern and modern health profiles is substantially driven by the electromagnetic environment, not by genetics, diet, or lifestyle alone.",
+    preElecHeaders: { cascade: "Cascade", preElectric: "Pre-electric (~1900)", modern: "Modern (2024)", change: "Change" },
+    occKicker: "OCCUPATIONAL GRADIENT",
+    occTitle: "Indoor vs. Outdoor Workers",
+    occLead: "EMF exposure varies dramatically by occupation. Conventional indoor/outdoor comparisons focus on sedentary behavior and UV exposure. BERM adds: indoor workers’ metabolic risk is higher EVEN after controlling for physical activity, because their cumulative EMF load is greater.",
+    occGradient: [
+      { occupation: "Data center worker", stars: 5, sources: "ELF+IF+RF, multi-source, 8–12h" },
+      { occupation: "Office worker", stars: 4, sources: "WiFi+LED+screen+phone, 8–10h" },
+      { occupation: "Retail worker", stars: 3, sources: "LED+WiFi+POS system" },
+      { occupation: "Factory worker", stars: 3, sources: "ELF+IF, industrial equipment" },
+      { occupation: "Construction worker", stars: 2, sources: "ELF power tools, phone" },
+      { occupation: "Farmer", stars: 1, sources: "Tractor ELF, phone, otherwise low" },
+      { occupation: "Fisher / logger", stars: 1, sources: "Near EMF-free work environment" },
+    ],
+    occPrediction: "Testable: physically active indoor workers (gym-going office workers) vs. outdoor workers with the same physical activity level but different EMF environment — metabolic markers should differ.",
     s6Kicker: "SECTION 6",
     s6Title: "What This Does NOT Prove",
     s6Text: [
@@ -226,6 +252,32 @@ const COPY = {
       status: "Tila",
     },
     cascadeSummary: "11/16 vahvistettu · 5/16 ei dataa · 0/16 ristiriidassa",
+    preElecKicker: "RETRODIKTIO",
+    preElecTitle: "Pre-elektriset lähtötasot",
+    preElecLead: "BERM ennustaa, että pre-sähköisten populaatioiden tulisi osoittaa matalampi esiintyvyys KAIKISSA kaskadituloksissa. Tämä on retrodiktio — malli ennustaa MENNEISYYTTÄ.",
+    preElecRows: [
+      { cascade: "Obesiteetti", preElectric: "~5 %", modern: "42 % (USA)", change: "8×" },
+      { cascade: "T2D", preElectric: "Harvinainen", modern: "~10 % (globaali)", change: "10×+" },
+      { cascade: "Autismi", preElectric: "<3/10 000", modern: "320/10 000", change: "100×" },
+      { cascade: "Masennus", preElectric: "Matala (arvio)", modern: "~10 % (globaali)", change: "?" },
+      { cascade: "Siittiölasku", preElectric: "Ei dataa", modern: "−51,6 % (1973→)", change: "—" },
+      { cascade: "TFR", preElectric: "~5–6 (länsimaat)", modern: "1,66 (USA)", change: "−3×" },
+    ],
+    preElecAmish: "Amish-yhteisöjen terveysprofiiili — matala obesiteetti, matala diabetes, matala masennus, korkea hedelmällisyys (TFR 6,1) — muistuttaa 1900-luvun alun pre-sähköistysajan terveystilastoja. BERM tulkitsee tämän evidenssiksi siitä, että ero pre-modernien ja modernien terveysprofiilien välillä johtuu merkittävästi sähkömagneettisesta ympäristöstä, ei pelkästään genetiikasta, ruokavaliosta tai elämäntavasta.",
+    preElecHeaders: { cascade: "Kaskadi", preElectric: "Pre-elektrinen (~1900)", modern: "Moderni (2024)", change: "Muutos" },
+    occKicker: "AMMATILLINEN GRADIENTTI",
+    occTitle: "Sisä- vs. ulkotyöntekijät",
+    occLead: "EMF-altistus vaihtelee dramaattisesti ammateittain. Konventionaaliset sisä/ulko-vertailut keskittyvät liikkumattomuuteen ja UV-altistukseen. BERM lisää: sisätyöntekijöiden metabolinen riski on korkeampi MYÖS fyysisen aktiivisuuden vakioinnin jälkeen, koska heidän kumulatiivinen EMF-kuormansa on suurempi.",
+    occGradient: [
+      { occupation: "Datakeskustyöntekijä", stars: 5, sources: "ELF+IF+RF, monilähde, 8–12h" },
+      { occupation: "Toimistotyöntekijä", stars: 4, sources: "WiFi+LED+näyttö+puhelin, 8–10h" },
+      { occupation: "Myymälätyöntekijä", stars: 3, sources: "LED+WiFi+kassajärjestelmä" },
+      { occupation: "Tehdastyöntekijä", stars: 3, sources: "ELF+IF, teollisuuslaitteet" },
+      { occupation: "Rakennustyöntekijä", stars: 2, sources: "ELF sähkötyökalut, puhelin" },
+      { occupation: "Maanviljelijä", stars: 1, sources: "Traktori ELF, puhelin, muuten matala" },
+      { occupation: "Kalastaja/metsuri", stars: 1, sources: "Lähes EMF-vapaa työympäristö" },
+    ],
+    occPrediction: "Testattavissa: fyysisesti aktiiviset sisätyöntekijät (kuntosalilla käyvät toimistotyöntekijät) vs. ulkotyöntekijät samalla fyysisellä aktiivisuustasolla mutta eri EMF-ympäristössä — metaboliset mittarit pitäisi erota.",
     s6Kicker: "OSIO 6",
     s6Title: "Mitä tämä EI todista",
     s6Text: [
@@ -271,6 +323,12 @@ function cellColor(value: string, isModern: boolean): string {
 function techBar(level: number): string {
   const filled = "█".repeat(level);
   const empty = "░".repeat(5 - level);
+  return filled + empty;
+}
+
+function starBar(level: number): string {
+  const filled = "★".repeat(level);
+  const empty = "☆".repeat(5 - level);
   return filled + empty;
 }
 
@@ -581,6 +639,42 @@ export default async function PopulationsPage({
         </div>
       </section>
 
+      {/* Occupational EMF gradient */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <p className="editorial-kicker text-accent mb-2">{d.occKicker}</p>
+        <h2 className="editorial-section-heading mb-4">{d.occTitle}</h2>
+        <p className="editorial-rail text-[0.95rem] text-foreground mb-6 max-w-4xl">{d.occLead}</p>
+        <div className="rounded-xl border border-card-border bg-card-bg p-5 max-w-4xl mb-4">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                  <th className="py-2 pr-3">{isFi ? "Ammatti" : "Occupation"}</th>
+                  <th className="py-2 pr-3">EMF</th>
+                  <th className="py-2">{isFi ? "Lähteet" : "Sources"}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.occGradient.map((row: { occupation: string; stars: number; sources: string }, i: number) => (
+                  <tr key={i} className="border-b border-card-border/40">
+                    <td className="py-2 pr-3 font-medium text-foreground">{row.occupation}</td>
+                    <td className="py-2 pr-3 font-mono-num text-xs tracking-widest whitespace-nowrap">
+                      <span className={row.stars >= 4 ? "text-red-500 dark:text-red-400" : row.stars >= 3 ? "text-amber-500 dark:text-amber-400" : "text-green-600 dark:text-green-400"}>
+                        {starBar(row.stars)}
+                      </span>
+                    </td>
+                    <td className="py-2 text-xs text-foreground-muted">{row.sources}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 max-w-4xl">
+          <p className="text-xs text-foreground-muted leading-relaxed italic">{d.occPrediction}</p>
+        </div>
+      </section>
+
       {/* Section 5: BERM cascade test */}
       <section className="mb-16 border-t editorial-rule pt-6">
         <p className="editorial-kicker text-accent mb-2">{d.s5Kicker}</p>
@@ -630,6 +724,40 @@ export default async function PopulationsPage({
         <p className="text-sm font-semibold text-foreground text-center font-mono-num">
           {d.cascadeSummary}
         </p>
+      </section>
+
+      {/* Pre-electric baselines (retrodiction) */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <p className="editorial-kicker text-purple-500 mb-2">{d.preElecKicker}</p>
+        <h2 className="editorial-section-heading mb-4">{d.preElecTitle}</h2>
+        <p className="editorial-rail text-[0.95rem] text-foreground mb-6 max-w-4xl">{d.preElecLead}</p>
+        <div className="rounded-xl border border-card-border bg-card-bg p-5 max-w-4xl mb-4">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                  <th className="py-2 pr-3">{d.preElecHeaders.cascade}</th>
+                  <th className="py-2 pr-3">{d.preElecHeaders.preElectric}</th>
+                  <th className="py-2 pr-3">{d.preElecHeaders.modern}</th>
+                  <th className="py-2">{d.preElecHeaders.change}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.preElecRows.map((row: { cascade: string; preElectric: string; modern: string; change: string }, i: number) => (
+                  <tr key={i} className="border-b border-card-border/40">
+                    <td className="py-2 pr-3 font-medium text-foreground">{row.cascade}</td>
+                    <td className="py-2 pr-3 text-green-600 dark:text-green-400 font-mono-num">{row.preElectric}</td>
+                    <td className="py-2 pr-3 text-red-500 dark:text-red-400 font-mono-num">{row.modern}</td>
+                    <td className="py-2 font-mono-num font-semibold text-foreground">{row.change}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="rounded-lg border border-purple-500/20 bg-purple-500/5 p-4 max-w-4xl">
+          <p className="text-xs text-foreground-muted leading-relaxed italic">{d.preElecAmish}</p>
+        </div>
       </section>
 
       {/* Section 6: What this does NOT prove */}
