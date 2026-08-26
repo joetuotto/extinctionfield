@@ -219,7 +219,7 @@ const COPY = {
       {
         evidence: "Tutkimus ei löydä merkitsevää EMF-vaikutusta",
         standard: "EMF on turvallinen testatuilla tasoilla. Ei biologista mekanismia.",
-        berm: "Kontrolliryhmä on kontaminoitu (lab baseline bias). Vaimennusbias pienentää näennäistä vaikutusta. Nollatulos on odotettavissa jos todellinen nolla-altistuskontrolli puuttuu.",
+        berm: "Kontrolliryhmä on kontaminoitu (laboratorion lähtötasovinouma). Vaimennusvinouma pienentää näennäistä vaikutusta. Nollatulos on odotettavissa jos todellinen nolla-altistuskontrolli puuttuu.",
       },
       {
         evidence: "Tutkimus löytää EMF-vaikutuksen vain korkealla SAR:lla",
@@ -229,7 +229,7 @@ const COPY = {
       {
         evidence: "WHO:n systemaattinen katsaus arvioi varmuuden 'kohtalaiseksi'",
         standard: "Evidenssi on kohtalaista. Lisää RCT:itä tarvitaan.",
-        berm: "WHO:n metodologia on alttiina 15+ tunnistetulle vinoumalle jotka kaikki vaimentavat näennäistä vaikutusta. 'Kohtalainen' bias-kärsiväisessä kehyksessä voi vastata 'korkeaa' bias-korjatussa kehyksessä.",
+        berm: "WHO:n metodologia on alttiina 15+ tunnistetulle vinoumalle, jotka kaikki vaimentavat näennäistä vaikutusta. 'Kohtalainen' vinoumille alttiissa kehyksessä voi vastata 'korkeaa' vinoumakorjatussa kehyksessä.",
       },
       {
         evidence: "BKT korreloi TFR:n kanssa paremmin kuin EMF-proxy",
@@ -239,12 +239,13 @@ const COPY = {
       {
         evidence: "Tutkimus näyttää positiivisen EMF-vaikutuksen (esim. ROS-nousu)",
         standard: "Mielenkiintoista mutta vaatii replikaation. Vaikutuskoko voi olla pieni.",
-        berm: "Vaikutuskoko on aliarvioitu lab baseline biasin vuoksi. Todellinen vaikutus altistamattomaan lähtötasoon nähden on suurempi kuin raportoitu.",
+        berm: "Vaikutuskoko on aliarvioitu laboratorion lähtötasovinouman vuoksi. Todellinen vaikutus altistamattomaan lähtötasoon nähden on suurempi kuin raportoitu.",
       },
       {
         evidence: "RPM ei voi selittää vaikutuksia telecom-taajuuksilla",
-        standard: "CRY/RPM-polku on irrelevantti matkapuhelimille.",
+        standard: "CRY/RPM-polku on merkityksetön matkapuhelimille.",
         berm: "Oikein RF-kantoaallosta. Mutta telecom-signaalit sisältävät ELF-modulaation (GSM 217 Hz) RPM:n resonanssialueella. RPM reagoi modulaatioverhokäyrään, ei kantoaaltoon. Sähkökenttävaikutukset välittyvät polun A (VGIC) kautta.",
+
       },
       {
         evidence: "TFR-ennusteen LV ylittyi",
@@ -264,23 +265,23 @@ const COPY = {
     theraBionicChannel: "Cav3.2 (CACNA1H) T-tyypin VGCC",
     theraBionicLevel: "E — FDA-hyväksytty, vertaisarvioitu (Lancet/eBioMedicine)",
     tDeclineTitle: "Testosteronin lasku: Maiden välinen evidenssi",
-    tDeclineLead: "Ikäriippumaton sekulaarinen testosteronin lasku on dokumentoitu viidessä maassa neljällä mantereella. Kaava on yhdenmukainen: ~1 %/vuosi lasku riippumatta ikääntymisestä, BMI-trendeistä tai elämäntapasekoittajista. Tutkimukset jotka löysivät 'ei laskua' BMI-korjauksen jälkeen ovat konsistentteja mediaattorimallin kanssa: BMI on kausaalireitillä, ei itsenäinen sekoittaja, joten sen korjaaminen poistaa todellista signaalia.",
+    tDeclineLead: "Ikäriippumaton sekulaarinen testosteronin lasku on dokumentoitu viidessä maassa neljällä mantereella. Kuvio on yhdenmukainen: ~1 %/vuosi lasku riippumatta ikääntymisestä, BMI-trendeistä tai elämäntapasekoittajista. Tutkimukset, jotka löysivät 'ei laskua' BMI-korjauksen jälkeen, ovat yhdenmukaisia mediaattorimallin kanssa: BMI on kausaalireitillä, ei itsenäinen sekoittaja, joten sen korjaaminen poistaa todellista signaalia.",
     tDeclineStudies: [
       { country: "USA", study: "Travison ym. 2007 (MMAS)", n: "1 532", rate: "−1,0 %/v", finding: "Väestötason T-lasku 1987–2004. Ikäriippumaton: 65-vuotiaan T oli 2002 matalampi kuin 65-vuotiaan T 1987. BMI-korjattu — kuvaa vain suoraa reittiä.", tier: "strong" as const, bmiIndependent: true },
-      { country: "USA", study: "Mazur ym. 2013 (PLOS ONE)", n: "991", rate: "−0,95 %/v", finding: "Vakiopainoiset US Air Force -veteraanit menettivät 117 ng/dL (19 %) 20 vuodessa. Poissulkee lihavuuden riittävänä selityksenä — 'savuava ase' mediaattoritulkinnalle.", tier: "strong" as const, bmiIndependent: true, highlight: true },
+      { country: "USA", study: "Mazur ym. 2013 (PLOS ONE)", n: "991", rate: "−0,95 %/v", finding: "Painonsa säilyttäneet US Air Force -veteraanit menettivät 117 ng/dL (19 %) 20 vuodessa. Poissulkee lihavuuden riittävänä selityksenä — ratkaiseva todiste mediaattoritulkinnalle.", tier: "strong" as const, bmiIndependent: true, highlight: true },
       { country: "Suomi", study: "Perheentupa ym. 2013", n: "3 271", rate: "−1,2 %/v", finding: "37 %:n kohorttisidonnainen T-lasku (1972–2002). LH ja FSH myös laskivat myöhemmissä kohorteissa. Suomen TFR romahti 35 vuotta myöhemmin.", tier: "strong" as const, bmiIndependent: true },
-      { country: "Israel", study: "Chodick ym. 2020", n: "102 334", rate: "−1,02 %/v", finding: "Suurin yksittäistutkimus: 102k miestä, Maccabi Healthcare. 'Epätodennäköistä, että kasvava lihavuus selittää.' T laskee Israelin korkeasta TFR:stä huolimatta — kynnösmallin vaihe 1.", tier: "strong" as const, bmiIndependent: true },
+      { country: "Israel", study: "Chodick ym. 2020", n: "102 334", rate: "−1,02 %/v", finding: "Suurin yksittäistutkimus: 102k miestä, Maccabi Healthcare. 'Epätodennäköistä, että kasvava lihavuus selittää.' T laskee Israelin korkeasta TFR:stä huolimatta — kynnysmallin vaihe 1.", tier: "strong" as const, bmiIndependent: true },
       { country: "Globaali", study: "Santi ym. 2025 (meta-analyysi)", n: "1 064 891", rate: "p = 0,033", finding: "Suurin koskaan tehty meta-analyysi. Sekä T ETTÄ LH laskevat iästä, BMI:stä ja mittausmenetelmästä riippumatta. Ei BMI:n ajallista trendiä tässä populaatiossa. 'HPG-funktion jatkuva uudelleenasetus.' Ensimmäinen T + LH samanaikaisen laskun vahvistus.", tier: "strong" as const, bmiIndependent: true, highlight: true },
-      { country: "Tanska", study: "Andersson ym. 2007", n: "5 350", rate: "null BMI:n jälkeen", finding: "Lasku hävisi BMI-korjauksen jälkeen. BERM-tulkinta: medioitu reitti dominoi tässä populaatiossa — BMI-korjaus poistaa dominoivan signaalin. Konsistentti mediaattorimallin kanssa, ei ristiriita.", tier: "null_explained" as const, bmiIndependent: false, bermNote: "Tukee mediaattorihypoteesia: kun BMI-reitti dominoi, BMI-korjaus tuottaa nollan." },
-      { country: "USA", study: "Nyante ym. 2012 (NHANES)", n: "2 315", rate: "ei laskua havaittu", finding: "NHANES 1988–2004. Ei laskua. Voi heijastaa mittausmenetelmän muutosta + mediaation poistoa. Ei ole ristiriidassa Travisonin kanssa — eri populaatio, eri mittaus, eri korjausstrategia.", tier: "null_explained" as const, bmiIndependent: false, bermNote: "Konsistentti mediaattorimallin kanssa tietyssä alipopulaatiossa." },
+      { country: "Tanska", study: "Andersson ym. 2007", n: "5 350", rate: "null BMI:n jälkeen", finding: "Lasku hävisi BMI-korjauksen jälkeen. BERM-tulkinta: medioitu reitti dominoi tässä populaatiossa — BMI-korjaus poistaa dominoivan signaalin. Yhdenmukainen mediaattorimallin kanssa, ei ristiriita.", tier: "null_explained" as const, bmiIndependent: false, bermNote: "Tukee mediaattorihypoteesia: kun BMI-reitti dominoi, BMI-korjaus tuottaa nollan." },
+      { country: "USA", study: "Nyante ym. 2012 (NHANES)", n: "2 315", rate: "ei laskua havaittu", finding: "NHANES 1988–2004. Ei laskua. Voi heijastaa mittausmenetelmän muutosta + mediaation poistoa. Ei ole ristiriidassa Travisonin kanssa — eri populaatio, eri mittaus, eri korjausstrategia.", tier: "null_explained" as const, bmiIndependent: false, bermNote: "Yhdenmukainen mediaattorimallin kanssa tietyssä alipopulaatiossa." },
     ],
     tDeclineImplication: "Jos testosteroni jatkaa laskuaan nykyisellä tahdilla, jokainen maa ylittää lopulta biologisen kynnyksen, jossa subfertiliteetti muuttuu TFR:n sitovaksi rajoitteeksi — riippumatta kulttuurisista tai taloudellisista tekijöistä.",
     tDeclineBmiNote: "Miksi 'nolla'-tulokset eivät ole ristiriitoja: BMI voi olla joko sekoittaja (itsenäinen syy) tai mediaattori (kausaalireitillä). Jos EMF aiheuttaa samanaikaisesti sekä BMI:n nousun että T:n laskun, BMI on mediaattori ja sen korjaaminen poistaa todellista signaalia. Mazur 2013 osoittaa tämän: vakiopainoiset miehet menettivät silti 19 % testosteroninsa. Suora reitti kattaa noin kaksi kolmasosaa kokonaisvaikutuksesta; medioitu reitti (BMI:n kautta) noin kolmanneksen.",
-    tDeclineLink: "Kynnösmallin koko spesifikaatio",
+    tDeclineLink: "Kynnysmallin koko määrittely",
     tDeclinePredLink: "T→TFR-ennusteet",
 
     metabTitle: "Metabolinen syndrooma: kuusi konvergoivaa reittiä",
-    metabLead: "Kuusi itsenäistä EMF → Ca²⁺ -reittiä lisää samanaikaisesti energian saantia, vähentää energiankulutusta ja lisää energian varastointia. CaMKII on konvergenssimolekyyli joka yhdistää kaikki reitit. Lihavuus on multifaktoriaalinen — EMF on YKSI myötävaikuttava tekijä joka selittää residuaalin johon dieetti, liikunta ja genetiikka eivät yksin riitä.",
+    metabLead: "Kuusi itsenäistä EMF → Ca²⁺ -reittiä lisää samanaikaisesti energian saantia, vähentää energiankulutusta ja lisää energian varastointia. CaMKII on konvergenssimolekyyli, joka yhdistää kaikki reitit. Lihavuus on monitekijäinen — EMF on YKSI myötävaikuttava tekijä, joka selittää residuaalin, johon ruokavalio, liikunta ja genetiikka eivät yksin riitä.",
     metabStudies: [
       { authors: "Alshammari ym.", year: 2022, journal: "Nutrients", finding: "RF-EMF → hypotalaaminen häiriö → ravinnonsaanti ↑ ihmisillä ja rotilla", mechanism: "1: Ruokahalu", level: "E" },
       { authors: "Chen ym.", year: 2016, journal: "eLife", finding: "ARC-glian Ca²⁺-aktivaatio → AgRP/NPY ↑ → ravinnonsaanti ↑ (suora Ca²⁺→ruokahaluyhteys)", mechanism: "1: Ruokahalu", level: "E" },
@@ -323,7 +324,7 @@ const SUB_PAGES = [
     slug: "cascades",
     icon: Activity,
     en: { title: "Disease Cascade: Ion Channel Convergence", desc: "Ionic hierarchy, skin battery, ADHD calibration, and 8 diseases traced to one ion channel model." },
-    fi: { title: "Sairaskaskadi: Ionikanavakonvergenssi", desc: "Ioninen hierarkia, ihon akku, ADHD-kalibraatio ja 8 sairautta jäljitettynä yhteen ionikanavamalliin." },
+    fi: { title: "Sairauskaskadi: Ionikanavakonvergenssi", desc: "Ioninen hierarkia, ihon akku, ADHD-kalibraatio ja 8 sairautta jäljitettynä yhteen ionikanavamalliin." },
   },
   {
     slug: "bbb",
@@ -384,6 +385,12 @@ const SUB_PAGES = [
     icon: FlaskConical,
     en: { title: "Resolution of the Replication Crisis", desc: "Why EMF biology seems inconsistent, Blackman's five confounds, and the five-parameter standard that resolves 50 years of contradictory results." },
     fi: { title: "Replikaatiokriisin ratkaisu", desc: "Miksi EMF-biologia vaikuttaa ristiriitaiselta, Blackmanin viisi sekoittavaa tekijää ja viiden parametrin standardi joka ratkaisee 50 vuoden ristiriitaiset tulokset." },
+  },
+  {
+    slug: "technology",
+    icon: Zap,
+    en: { title: "Technology-Specific Exposure", desc: "14 technology profiles from power grid to Starlink. ELF priming hypothesis, superadditivity model, temporal correlations, and Why 2012." },
+    fi: { title: "Teknologiakohtainen altistus", desc: "14 teknologiaprofiilia sähköverkosta Starlinkiin. ELF-priming-hypoteesi, superadditiivisuusmalli, temporaaliset korrelaatiot ja Miksi 2012." },
   },
 ] as const;
 

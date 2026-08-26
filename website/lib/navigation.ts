@@ -158,6 +158,14 @@ export const NAV_ROUTES: NavRoute[] = [
         descFi: "Blackmanin viisi sekoittavaa tekijää ja viiden parametrin standardi",
       },
       {
+        href: "/evidence/technology",
+        labelEn: "Technology Profiles",
+        labelFi: "Teknologiaprofiilit",
+        icon: Radio,
+        descEn: "14 technology profiles, ELF priming, superadditivity model",
+        descFi: "14 teknologiaprofiilia, ELF-priming, superadditiivisuusmalli",
+      },
+      {
         href: "/sentinel",
         labelEn: "Sentinel Species",
         labelFi: "Sentinel-lajit",

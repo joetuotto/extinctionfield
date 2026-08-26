@@ -906,6 +906,71 @@ const COPY = {
     societalFalsification: "Falsification criterion",
     societalLocked: "Locked: 2026-08-25",
     societalStatus: "LOCKED — awaiting test",
+
+    techTitle: "Technology-specific predictions",
+    techLead: "Predictions derived from the ELF priming hypothesis, superadditivity model, and technology-specific exposure analysis. These test whether multi-frequency interactions produce non-additive biological effects and whether specific technology transitions caused observed health inflections.",
+    techPredictions: [
+      {
+        id: "PRIME-1",
+        title: "ELF-primed cells show amplified RF calcium response",
+        description: "Pre-expose neuronal cultures to 50 Hz ELF for 10 days (priming). Then expose to standardized RF (e.g. 2.4 GHz WiFi). Prediction: primed cells show 2–3× larger Ca²⁺ response to identical RF stimulus compared to unprimed controls. The mechanism: ELF upregulates VGCC expression (PMC4757866), making each cell more sensitive to subsequent RF activation. This is the core ELF priming prediction.",
+        timeline: "Testable within 3–6 months (in vitro, standard Ca²⁺ imaging)",
+        falsification: "No difference in Ca²⁺ response between ELF-primed and unprimed cells under identical RF exposure",
+      },
+      {
+        id: "PRIME-2",
+        title: "Amish (no grid priming) show minimal RF bioresponse",
+        description: "Compare RF-induced biomarkers (salivary cortisol, melatonin, HRV) between Old Order Amish (no residential ELF priming) and matched modern controls after identical acute RF exposure. Prediction: Amish show significantly attenuated response because their VGCC expression is at baseline (not upregulated by 50 Hz). This explains why Amish maintain TFR ~6.1 despite occasional RF exposure from neighboring infrastructure.",
+        timeline: "Testable within 1–2 years (requires Amish community cooperation)",
+        falsification: "Amish show equal or greater RF bioresponse than modern controls",
+      },
+      {
+        id: "PRIME-3",
+        title: "Residential electricity consumption predicts EMF biomarkers better than mobile phone use",
+        description: "In a cohort study with personal EMF dosimetry, residential electricity consumption (kWh/month) will predict chronic EMF biomarkers (melatonin suppression, sperm quality, HRV) more strongly than mobile phone usage hours. The mechanism: electricity measures the ELF priming state, which amplifies ALL subsequent exposures. Mobile phone measures only one RF source. This explains the cross-sectional finding (RMSE 0.522 vs 1.053).",
+        timeline: "Testable within 1–2 years (cohort study with dosimetry)",
+        falsification: "Mobile phone usage is a stronger predictor of biomarkers than electricity consumption",
+      },
+      {
+        id: "MULTI-1",
+        title: "Multi-frequency exposure produces superadditive CaMKII activation",
+        description: "Expose cells to: (1) 50 Hz alone, (2) 2.4 GHz alone, (3) 50 kHz IF alone, (4) all three simultaneously. Measure CaMKII autophosphorylation. Prediction: combined exposure produces CaMKII activation greater than the sum of individual exposures, because different frequencies activate different VGCC subtypes but CaMKII integrates total Ca²⁺ regardless of source.",
+        timeline: "Testable within 3–6 months (in vitro, standard Western blot)",
+        falsification: "Combined exposure produces additive or sub-additive CaMKII activation",
+      },
+      {
+        id: "MULTI-2",
+        title: "Recovery window elimination accelerates cumulative damage",
+        description: "Expose matched cell groups to identical total EMF dose: (A) continuous multi-band (simulating modern home: 50 Hz + WiFi + LED), (B) same dose but with 8-hour nightly gap (Faraday-shielded sleep period). Prediction: group B shows significantly less cumulative CaMKII activation and less oxidative damage after 30 days, because the recovery window allows Ca²⁺ homeostasis restoration. This tests whether the 24/7 nature of modern exposure — not just the dose — drives the cumulative effect.",
+        timeline: "Testable within 2–4 months (in vitro, longitudinal)",
+        falsification: "No difference between continuous and gapped exposure at equal total dose",
+      },
+      {
+        id: "MULTI-5",
+        title: "WiFi beacon 10 Hz pulse produces ELF-like biological effects independent of carrier",
+        description: "WiFi routers emit a 10 Hz beacon pulse even when no data is transmitted (Schmid 2012). The beacon's crest factor is 100:1 — peak power is 100× higher than average (Schmid 2020). Prediction: an isolated 10 Hz pulsed signal at WiFi beacon intensity produces ELF-type biological effects (melatonin suppression, EEG alpha changes) comparable to a continuous 10 Hz sinusoidal field, despite SAR being negligible. This tests whether SAR systematically underestimates WiFi exposure by measuring average instead of peak.",
+        timeline: "Testable within 3–6 months (EEG/melatonin study)",
+        falsification: "WiFi beacon pulse produces no ELF-type biological effects, or effects scale with SAR not peak",
+      },
+      {
+        id: "TECH-LED",
+        title: "EU LED transition countries show steeper sperm decline than late-adopting countries",
+        description: "The EU Directive 244/2009 forced incandescent ban between 2009–2012, mandatory LED adoption. Prediction: EU countries show a statistically significant acceleration in sperm quality decline starting 2012–2015 compared to countries that adopted LED lighting later (e.g. some Asian, African countries). This tests whether the IF channel (20–300 kHz LED driver frequencies) contributes independently to reproductive decline beyond the RF channel.",
+        timeline: "Testable immediately (existing meta-analysis data)",
+        falsification: "No acceleration difference between early and late LED-adopting countries",
+      },
+      {
+        id: "TECH-EV",
+        title: "EV drivers show higher IF-band biomarkers than ICE vehicle drivers",
+        description: "Electric vehicle inverters produce 5–50 kHz IF fields in the cabin. Compare IF-relevant biomarkers (testicular function, HRV during driving) between matched EV and internal combustion engine (ICE) vehicle drivers with equivalent daily commute times. The Israeli patent US12379429 (active field cancellation for EV cabins) demonstrates that industry recognizes in-cabin fields as problematic. Prediction: EV drivers show measurably higher oxidative stress markers and lower HRV during driving compared to ICE drivers.",
+        timeline: "Testable within 1–2 years (cohort study with dosimetry)",
+        falsification: "No difference in any biomarker between EV and ICE drivers, or ICE drivers show worse markers",
+      },
+    ],
+    techTimeline: "Timeline",
+    techFalsification: "Falsification criterion",
+    techLocked: "Locked: 2026-08-26",
+    techStatus: "LOCKED — awaiting test",
   },
   fi: {
     title: "Lukitut ennusteet",
@@ -920,7 +985,7 @@ const COPY = {
     histTitle: "Historialliset / evoluutioennusteet",
     histLead: "Ennusteet jotka on johdettu sisäkkäisestä χ-mallista ja Pohjoinen paketti -hypoteesista. Nämä testaavat, moduloivatko populaatiokohtaiset biologiset χ-profiilit EMF-hedelmällisyyssuhdetta.",
     r43Title: "R43: Protokolla-verhokäyräresonanssi",
-    r43Text: "Zandieh ym. (2025) raportoi taajuusriippuvaisia mitokondrio-/ROS-havaintoja ELF-syöpäsolukokeissa (0,01–5 Hz; enintään 100 mT). Se tukee eksploratiivista mitattua PSD-protokollaa sen testaamiseksi, tuottaako verkkokerroksen verhokäyrämodulaatio soluvasteen. Se ei osoita RF-verkon verhokäyrävaikutuksia, eDRX-kausaliteettia eikä lisääntymis-/TFR-parametria.",
+    r43Text: "Zandieh ym. (2025) raportoi taajuusriippuvaisia mitokondrio-/ROS-havaintoja ELF-syöpäsolukokeissa (0,01–5 Hz; enintään 100 mT). Se tukee alustavaa mitattua PSD-protokollaa sen testaamiseksi, tuottaako verkkokerroksen verhokäyrämodulaatio soluvasteen. Se ei osoita RF-verkon verhokäyrävaikutuksia, eDRX-kausaliteettia eikä lisääntymis-/TFR-parametria.",
     country: "Maa",
     year: "Vuosi",
     metric: "Mittari",
@@ -978,7 +1043,7 @@ const COPY = {
       {
         id: "M-5",
         title: "LLLT parantaa spermatogeneesiä CCO-aktivaation kautta",
-        description: "Matalan tason laserterapia (620–1100 nm) kiveksiin kontroloidussa eläinkokeessa parantaa spermatogeneesin merkkiaineita (liikkuvuus, konsentraatio, morfologia) mitokondriaalisen sytokromi c -oksidaasiaktivaation kautta — sama kromoforimekanismi kuin FDA-hyväksytyissä fotobiomodulaatiolaitteissa. Jos LLLT (optinen EM) parantaa hedelmällisyyttä CCO:n kautta ja RF (matalampi EM) heikentää hedelmällisyyttä CRY:n kautta, kromoforien yleistys ennustaa, että sekä optiset että RF-taajuudet moduloivat lisääntymisbiologiaa taajuusspesifisten kromofoorikohteiden kautta.",
+        description: "Matalan tason laserterapia (620–1100 nm) kiveksiin kontrolloidussa eläinkokeessa parantaa spermatogeneesin merkkiaineita (liikkuvuus, konsentraatio, morfologia) mitokondriaalisen sytokromi c -oksidaasiaktivaation kautta — sama kromoforimekanismi kuin FDA-hyväksytyissä fotobiomodulaatiolaitteissa. Jos LLLT (optinen EM) parantaa hedelmällisyyttä CCO:n kautta ja RF (matalampi EM) heikentää hedelmällisyyttä CRY:n kautta, kromoforien yleistys ennustaa, että sekä optiset että RF-taajuudet moduloivat lisääntymisbiologiaa taajuusspesifisten kromofoorikohteiden kautta.",
         timeline: "Testattavissa 3–6 kuukaudessa (eläinkoe)",
         falsification: "Ei parannusta missään spermatogeneesin mittarissa, tai parannus on luonteeltaan terminen",
       },
@@ -999,7 +1064,7 @@ const COPY = {
       {
         id: "EPI-1",
         title: "EMF-altistettujen isien jälkeläisten siittiöiden metylaatiomuutokset",
-        description: "Altista uroshhiiret krooniselle RF-EMF:lle. Parrita altistamattomien naaraiden kanssa. Analysoi F1-urospojukaisten siittiöiden DNA-metylaatiomallit. Ennuste: spesifiset DMR:t ovat päällekkäisiä ihmisten tutka-tutkimuksen kanssa (Research Square 2025). Jos DMR:t sisältävät CACNA1C:n tai muita VGCC-geenejä, tämä sulkee epigeneettisen takaisinkytkentäsilmukan.",
+        description: "Altista uroshhiiret krooniselle RF-EMF:lle. Parrita altistamattomien naaraiden kanssa. Analysoi F1-urospoikasten siittiöiden DNA-metylaatiomallit. Ennuste: spesifiset DMR:t ovat päällekkäisiä ihmisten tutka-tutkimuksen kanssa (Research Square 2025). Jos DMR:t sisältävät CACNA1C:n tai muita VGCC-geenejä, tämä sulkee epigeneettisen takaisinkytkentäsilmukan.",
         timeline: "Testattavissa 6–12 kuukaudessa (eläinkoe)",
         falsification: "Ei DMR-päällekkäisyyttä tutkatutkimuksen kanssa tai ei VGCC-geeni-DMR:iä F1:ssä",
       },
@@ -1084,7 +1149,7 @@ const COPY = {
       {
         id: "P19",
         title: "LED-sinivalon verkkokalvovaurio on IF-EMF-välitteinen",
-        description: "LED-sinivalolle attribuoitu verkkokalvovaurio johtuu osittain LED:n hakkuriteholähteen IF-EMF:stä (65 kHz – 2 MHz), ei pelkästä sinivalosta. Hehkulamppu joka on suodatettu identtiseen sinispektriin (ei IF-EMF:ää) tuottaa merkittävästi vähemmän verkkokalvon oksidatiivista stressiä kuin LED-sinivalo samalla intensiteetillä ja spektrillä.",
+        description: "LED-sinivalolle yhdistetty verkkokalvovaurio johtuu osittain LED:n hakkuriteholähteen IF-EMF:stä (65 kHz – 2 MHz), ei pelkästä sinivalosta. Hehkulamppu joka on suodatettu identtiseen sinispektriin (ei IF-EMF:ää) tuottaa merkittävästi vähemmän verkkokalvon oksidatiivista stressiä kuin LED-sinivalo samalla intensiteetillä ja spektrillä.",
         validation: "LED vs. hehkulamppu (sama sinispektri) verkkokalvosolujen elinkykytesti; LED vs. hehkulamppu + IF-EMF-lähde",
         falsification: "Hehkulampun sinivalo tuottaa yhtäläisen verkkokalvovaurion kuin LED-sinivalo sovitetuilla spektreillä ja intensiteetillä",
       },
@@ -1613,7 +1678,7 @@ const COPY = {
       {
         id: "QT-1",
         title: "QTc-intervalli korreloi positiivisesti kumulatiivisen EMF-altistuksen kanssa nuorilla aikuisilla",
-        description: "EKG-seulontatutkimus EMF-dosimetrialla. Ennuste: krooninen EMF → Cav1.2-ikkunavirta ↑ → aktiopotetiaalin pidentyminen → mitattava QTc-nousu.",
+        description: "EKG-seulontatutkimus EMF-dosimetrialla. Ennuste: krooninen EMF → Cav1.2-ikkunavirta ↑ → aktiopotentiaalin pidentyminen → mitattava QTc-nousu.",
         level: "M|C",
         discriminating: false,
         verified: false,
@@ -1640,8 +1705,8 @@ const COPY = {
     vgccLocked: "Lukittu: 2026-08-24",
     vgccStatus: "LUKITTU — odottaa testiä",
     vgccVerifiedStatus: "VAHVISTETTU",
-    tTfrTitle: "Testosteroni → TFR -kynnösennusteet",
-    tTfrLead: "Maakohtaiset ennusteet testosteronikynnösmallista. Jokainen on lukittu kumoamisehdolla. Malli on kalibroitu Suomen ja Korean datalla; USA:n ja Israelin ennusteet ovat ekstrapolointeja.",
+    tTfrTitle: "Testosteroni → TFR -kynnysennusteet",
+    tTfrLead: "Maakohtaiset ennusteet testosteronikynnysmallistä. Jokainen on lukittu kumoamisehdolla. Malli on kalibroitu Suomen ja Korean datalla; USA:n ja Israelin ennusteet ovat ekstrapolointeja.",
     tTfrNote: "Nämä ennusteet testaavat ydinväitettä, jonka mukaan kumulatiivinen testosteronilasku (~1 %/vuosi, ikäriippumaton) luo biologisen hedelmällisyysrajoitteen, joka ilmenee ~35 vuotta alkamisen jälkeen.",
     tTfrLocked: "Lukittu: 2026-08-25",
     tTfrStatus: "LUKITTU — odottaa testiä",
@@ -1651,7 +1716,7 @@ const COPY = {
       {
         id: "T-TFR-1",
         title: "USA:n TFR laskee alle 1,30:n vuoteen 2035 mennessä",
-        description: "Testosteronikynnösmalliin perustuen: USA:n kumulatiivinen T-menetys saavuttaa ~40 % noin 2030. Ennuste: TFR alkaa kiihtyvään laskuun 2028 jälkeen ja laskee alle 1,30:n vuoteen 2035 mennessä. Kumoaminen: USA:n TFR pysyy yli 1,40 vuonna 2035.",
+        description: "Testosteronikynnysmallin perusteella: USA:n kumulatiivinen T-menetys saavuttaa ~40 % noin 2030. Ennuste: TFR alkaa kiihtyvään laskuun 2028 jälkeen ja laskee alle 1,30:n vuoteen 2035 mennessä. Kumoaminen: USA:n TFR pysyy yli 1,40 vuonna 2035.",
         discriminating: true,
         critical: true,
         level: "M|C",
@@ -1801,6 +1866,71 @@ const COPY = {
     societalFalsification: "Kumoamisehto",
     societalLocked: "Lukittu: 2026-08-25",
     societalStatus: "LUKITTU — odottaa testiä",
+
+    techTitle: "Teknologiakohtaiset ennusteet",
+    techLead: "Ennusteet jotka perustuvat ELF-priming-hypoteesiin, superadditiivisuusmalliin ja teknologiakohtaiseen altistusanalyysiin. Nämä testaavat tuottavatko monitaajuiset vuorovaikutukset ei-additiivisia biologisia vaikutuksia ja aiheuttiko tietyt teknologiasiirtymät havaitut terveysinflektiot.",
+    techPredictions: [
+      {
+        id: "PRIME-1",
+        title: "ELF-primatut solut osoittavat vahvistuneen RF-kalsiumvasteen",
+        description: "Esialtista hermosoluviljelmät 50 Hz ELF:lle 10 päivää (priming). Altista sitten standardoidulle RF:lle (esim. 2,4 GHz WiFi). Ennuste: primatut solut osoittavat 2–3× suuremman Ca²⁺-vasteen identtiseen RF-stimulukseen verrattuna primaamattomiin kontrolleihin. Mekanismi: ELF ylössäätelee VGCC-ekspressiota (PMC4757866), tehden jokaisesta solusta herkemmän myöhemmälle RF-aktivaatiolle.",
+        timeline: "Testattavissa 3–6 kuukaudessa (in vitro, standardi Ca²⁺-kuvantaminen)",
+        falsification: "Ei eroa Ca²⁺-vasteessa ELF-primattujen ja primaamattomien solujen välillä identtisessä RF-altistuksessa",
+      },
+      {
+        id: "PRIME-2",
+        title: "Amishit (ei verkko-primingia) osoittavat minimaalisen RF-biovasteen",
+        description: "Vertaa RF-indusoituja biomarkkereita (sylkikortisoli, melatoniini, HRV) vanhojen amishien (ei asuinalueen ELF-primingia) ja sovitettujen modernien kontrollien välillä identtisen akuutin RF-altistuksen jälkeen. Ennuste: amishit osoittavat merkittävästi vaimentuneen vasteen koska heidän VGCC-ekspressioonsa on perusviivalla.",
+        timeline: "Testattavissa 1–2 vuodessa (vaatii amish-yhteisön yhteistyötä)",
+        falsification: "Amishit osoittavat yhtäläisen tai suuremman RF-biovasteen kuin modernit kontrollit",
+      },
+      {
+        id: "PRIME-3",
+        title: "Asuinalueen sähkönkulutus ennustaa EMF-biomarkkerit paremmin kuin matkapuhelimen käyttö",
+        description: "Kohorttitutkimuksessa henkilökohtaisella EMF-dosimetrialla asuinalueen sähkönkulutus (kWh/kk) ennustaa kroonisia EMF-biomarkkereita (melatoniinisuppressio, siittiölaatu, HRV) vahvemmin kuin matkapuhelimen käyttötunnit.",
+        timeline: "Testattavissa 1–2 vuodessa (kohorttitutkimus dosimetrialla)",
+        falsification: "Matkapuhelimen käyttö on vahvempi biomarkkeriennustaja kuin sähkönkulutus",
+      },
+      {
+        id: "MULTI-1",
+        title: "Monitaajuusaltistus tuottaa superadditiivisen CaMKII-aktivaation",
+        description: "Altista soluja: (1) 50 Hz yksin, (2) 2,4 GHz yksin, (3) 50 kHz IF yksin, (4) kaikki kolme samanaikaisesti. Mittaa CaMKII-autofosforylaatio. Ennuste: yhdistetty altistus tuottaa CaMKII-aktivaation joka on suurempi kuin yksittäisten altistusten summa.",
+        timeline: "Testattavissa 3–6 kuukaudessa (in vitro, standardi Western blot)",
+        falsification: "Yhdistetty altistus tuottaa additiivisen tai sub-additiivisen CaMKII-aktivaation",
+      },
+      {
+        id: "MULTI-2",
+        title: "Palautumisikkunan eliminaatio kiihdyttää kumulatiivista vahinkoa",
+        description: "Altista sovitetut soluryhmät identtiselle kokonais-EMF-annokselle: (A) jatkuva monikaistainen (simuloiden modernia kotia), (B) sama annos mutta 8 tunnin yötauko (Faraday-suojattu unijakso). Ennuste: ryhmä B osoittaa merkittävästi vähemmän kumulatiivista CaMKII-aktivaatiota 30 päivän jälkeen.",
+        timeline: "Testattavissa 2–4 kuukaudessa (in vitro, pitkittäinen)",
+        falsification: "Ei eroa jatkuvan ja tauotetun altistuksen välillä samalla kokonaisannoksella",
+      },
+      {
+        id: "MULTI-5",
+        title: "WiFi-beacon 10 Hz -pulssi tuottaa ELF-tyyppisiä biologisia vaikutuksia kantajasta riippumatta",
+        description: "WiFi-reitittimet lähettävät 10 Hz beacon-pulssin myös ilman datasiirtoa (Schmid 2012). Beaconin huippukerroin on 100:1. Ennuste: eristetty 10 Hz pulssoitu signaali WiFi-beacon-intensiteetillä tuottaa ELF-tyyppisiä biologisia vaikutuksia verrattavina jatkuvaan 10 Hz sinisignaaaliin.",
+        timeline: "Testattavissa 3–6 kuukaudessa (EEG/melatoniinitutkimus)",
+        falsification: "WiFi-beacon-pulssi ei tuota ELF-tyyppisiä biologisia vaikutuksia",
+      },
+      {
+        id: "TECH-LED",
+        title: "EU:n LED-siirtymämaat osoittavat jyrkemmän siittiölaskun kuin myöhään adoptoineet maat",
+        description: "EU:n direktiivi 244/2009 pakotti hehkulamppukiellon 2009–2012 ja pakollisen LED-adoption. Ennuste: EU-maat osoittavat tilastollisesti merkittävän kiihtymisen siittiölaadun laskussa alkaen 2012–2015 verrattuna maihin jotka adoptoivat LED-valaistuksen myöhemmin.",
+        timeline: "Testattavissa välittömästi (olemassa oleva meta-analyysidatat)",
+        falsification: "Ei kiihtymiseroa varhaisen ja myöhäisen LED-adoption maiden välillä",
+      },
+      {
+        id: "TECH-EV",
+        title: "Sähköautoilijat osoittavat korkeampia IF-kaistan biomarkkereita kuin polttomoottoriautoilijat",
+        description: "Sähköautojen invertterit tuottavat 5–50 kHz IF-kenttiä hytissä. Vertaa IF-relevantteja biomarkkereita (kivesten toiminta, HRV ajon aikana) sovitettujen sähköauto- ja polttomoottoriauton kuljettajien välillä vastaavilla päivittäisillä työmatka-ajoilla. Israelilainen patentti US12379429 osoittaa teollisuuden tunnistavan hytin kentät ongelmallisiksi.",
+        timeline: "Testattavissa 1–2 vuodessa (kohorttitutkimus dosimetrialla)",
+        falsification: "Ei eroa biomarkkereissa sähköauto- ja polttomoottoriauton kuljettajien välillä",
+      },
+    ],
+    techTimeline: "Aikajana",
+    techFalsification: "Kumoamisehto",
+    techLocked: "Lukittu: 2026-08-26",
+    techStatus: "LUKITTU — odottaa testiä",
   },
 } as const;
 
@@ -2519,6 +2649,35 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               <div className="space-y-1 text-xs text-foreground-muted">
                 <p><span className="font-semibold">{d.societalFalsification}:</span> {sp.falsification}</p>
                 <p className="font-mono-num">{d.societalLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Technology-specific predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.techTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.techLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.techPredictions.map((tp) => (
+            <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{tp.id}</span>
+                    <h3 className="font-semibold">{tp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.techStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{tp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.techTimeline}:</span> {tp.timeline}</p>
+                <p><span className="font-semibold">{d.techFalsification}:</span> {tp.falsification}</p>
+                <p className="font-mono-num">{d.techLocked}</p>
               </div>
             </article>
           ))}
