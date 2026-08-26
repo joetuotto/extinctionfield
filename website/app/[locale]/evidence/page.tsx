@@ -23,6 +23,7 @@ import {
   BrainCircuit,
   Link2,
   FlaskRound,
+  Target,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
@@ -333,8 +334,8 @@ const SUB_PAGES = [
   {
     slug: "unbroken-chain",
     icon: Link2,
-    en: { title: "The Unbroken Chain: Photon → Population", desc: "Convergence verification across 15 scales — from photon metric distortion to population-level epidemiology. 7/8 intermediate layers confirmed, 4 positive feedback loops, 0 falsified." },
-    fi: { title: "Katkeamaton ketju: Fotoni → Populaatio", desc: "Konvergenssiverifiointi 15 skaalan yli — fotonin metriikkahäiriöstä väestötason epidemiologiaan. 7/8 välikerrosta vahvistettu, 4 positiivista takaisinkytkentäsilmukkaa, 0 kumottu." },
+    en: { title: "The Unbroken Chain: Photon → Population", desc: "Convergence verification across 35 scales — 25 verified layers (VK1–VK25), 14 positive feedback loops forming a self-amplifying network from photon physics to population epidemiology." },
+    fi: { title: "Katkeamaton ketju: Fotoni → Populaatio", desc: "Konvergenssiverifiointi 35 skaalan yli — 25 verifioitua kerrosta (VK1–VK25), 14 positiivista takaisinkytkentäsilmukkaa muodostavat itseään vahvistavan verkoston fotonifysiikasta väestöepidemiologiaan." },
   },
   {
     slug: "heavy-metal-synergy",
@@ -347,6 +348,24 @@ const SUB_PAGES = [
     icon: FlaskConical,
     en: { title: "Klimentidis Paradox", desc: "Three Ca²⁺ mechanisms explaining cross-species obesity" },
     fi: { title: "Klimentidiksen paradoksi", desc: "Kolme Ca²⁺-mekanismia selittämässä lajienvälisen lihavuuden" },
+  },
+  {
+    slug: "triple-strikes",
+    icon: Target,
+    en: { title: "Triple Strikes: Convergent Destruction", desc: "Three triple blows — testosterone, fertility, and cognition each attacked via three independent routes simultaneously. Convergent destruction through one upstream mechanism." },
+    fi: { title: "Kolmoisisku: Konvergentti tuho", desc: "Kolme kolmoisiskua — testosteroni, hedelmällisyys ja kognitio kukin hyökkäyksen kohteena kolmea itsenäistä reittiä pitkin samanaikaisesti. Konvergentti tuho yhden ylävirran mekanismin kautta." },
+  },
+  {
+    slug: "walker-chain",
+    icon: Link2,
+    en: { title: "Walker Chain: Sleep → T → Collapse", desc: "The complete causal chain from EMF to testosterone decline via sleep is now closed. Seven verified branches form a self-amplifying loop." },
+    fi: { title: "Walkerin ketju: Uni → T → Romahdus", desc: "Täydellinen kausaaliketju EMF:stä testosteronin laskuun unen kautta on nyt suljettu. Seitsemän verifioitua haaraa muodostavat itseään vahvistavan silmukan." },
+  },
+  {
+    slug: "gut-brain-axis",
+    icon: FlaskConical,
+    en: { title: "Gut-Brain Axis: The Second Barrier Falls", desc: "Circadian disruption → Per2↓ → gut barrier↓ → LPS → neuroinflammation. The gut barrier uses the same tight junction proteins as the BBB." },
+    fi: { title: "Suolisto-aivo-akseli: Toinen este murtuu", desc: "Sirkadiaanihäiriö → Per2↓ → suoliston este↓ → LPS → neurotulehdus. Suoliston este käyttää samoja tiiviin liitoksen proteiineja kuin BBB." },
   },
   {
     slug: "lighting",

@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 652,
+    "total_references": 682,
     "verified_count": 240,
     "generated": "2026-08-26",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls"
@@ -14551,6 +14551,246 @@
         "arrhythmia"
       ],
       "source": "PMC6896164"
+    },
+    {
+      "id": "catsper_2021",
+      "pdf_number": 986,
+      "finding": "2100 MHz RF activates CatSper Ca²⁺ channels in sperm prematurely, causing energy depletion before reaching the egg",
+      "pathway": ["emf", "catsper", "calcium", "sperm"],
+      "tags": ["rf", "fertility", "sperm", "experimental"],
+      "source": "Hum Reprod 2021 10.1093/humrep/deab130.035"
+    },
+    {
+      "id": "sperm_meta_2024",
+      "pdf_number": 987,
+      "finding": "RF-EMF causes sperm DNA/chromatin damage with SMD -1.92 (95% CI -2.78 to -1.05) at mean SAR 1.59 W/kg (mobile phone level)",
+      "pathway": ["emf", "sperm", "dna_damage"],
+      "tags": ["rf", "fertility", "meta_analysis"],
+      "source": "Environ Int 2024 10.1016/S0160412024000953"
+    },
+    {
+      "id": "ivf_emf_2025",
+      "pdf_number": 988,
+      "finding": "Mobile phone and WiFi EMF in IVF laboratory significantly reduces progressive sperm motility",
+      "pathway": ["emf", "sperm", "motility"],
+      "tags": ["rf", "wifi", "fertility", "ivf"],
+      "source": "PMC12197507 2025"
+    },
+    {
+      "id": "bernabo_elf_sperm",
+      "pdf_number": 989,
+      "finding": "50 Hz ELF-EMF causes acrosome damage in sperm; post-zona pellucida stimulation fertilization fails; Ca²⁺-dependent mechanism",
+      "pathway": ["emf", "sperm", "acrosome", "calcium"],
+      "tags": ["elf", "fertility", "sperm"],
+      "source": "Bernabo et al ELF sperm"
+    },
+    {
+      "id": "pb_ca_sperm_2024",
+      "pdf_number": 990,
+      "finding": "Pb²⁺ competes with Ca²⁺ in sperm causing acrosome damage and hyperpolarization; heavy metal-calcium interaction in fertility",
+      "pathway": ["lead", "calcium", "sperm", "acrosome"],
+      "tags": ["heavy_metal", "fertility", "sperm"],
+      "source": "PMC11225213 2024"
+    },
+    {
+      "id": "scn_ca_oscillation",
+      "pdf_number": 991,
+      "finding": "SCN neurons oscillate in Ca²⁺ concentration with circadian rhythm; Ca²⁺ oscillations are the physical basis of the circadian clock",
+      "pathway": ["scn", "calcium", "circadian"],
+      "tags": ["circadian", "calcium", "scn"],
+      "source": "PMC6170461"
+    },
+    {
+      "id": "circadian_emf_2024",
+      "pdf_number": 992,
+      "finding": "Light entrains SCN which synchronizes hypothalamic and peripheral clocks; SCN is the master circadian pacemaker",
+      "pathway": ["light", "scn", "hypothalamus", "circadian"],
+      "tags": ["circadian", "scn", "review"],
+      "source": "ScienceDirect 2024 10.1016/S2319417024001276"
+    },
+    {
+      "id": "berridge_wanting",
+      "pdf_number": 993,
+      "finding": "Nucleus accumbens dopamine mediates 'wanting' (motivation) but not 'liking' (pleasure); DA↓ causes motivation loss while hedonic capacity is preserved",
+      "pathway": ["dopamine", "nucleus_accumbens", "motivation"],
+      "tags": ["dopamine", "motivation", "behavioral"],
+      "source": "Berridge & Robinson PNAS"
+    },
+    {
+      "id": "inflam_da_2022",
+      "pdf_number": 994,
+      "finding": "Inflammation (IFN-α) reduces striatal dopamine causing anhedonia; reversed by L-DOPA; CRP correlates with DA↓ and reward-seeking↓",
+      "pathway": ["inflammation", "dopamine", "anhedonia"],
+      "tags": ["dopamine", "inflammation", "depression"],
+      "source": "PMC9718669"
+    },
+    {
+      "id": "addiction_nt_2025",
+      "pdf_number": 995,
+      "finding": "Low tonic dopamine increases phasic DA response to stimuli; screens feel more rewarding with low baseline DA; addiction vulnerability mechanism",
+      "pathway": ["dopamine", "addiction", "reward"],
+      "tags": ["dopamine", "addiction", "behavioral"],
+      "source": "PMC11773674"
+    },
+    {
+      "id": "opc_cav12_2019",
+      "pdf_number": 996,
+      "finding": "Cav1.2 (L-type) is essential for OPC differentiation and myelination; Cav1.2 knockout causes hypomyelination; adult knockout impairs remyelination",
+      "pathway": ["cav12", "opc", "myelination"],
+      "tags": ["myelination", "calcium", "neurodevelopment"],
+      "source": "PMC6916379"
+    },
+    {
+      "id": "smf_opc_2017",
+      "pdf_number": 997,
+      "finding": "Static magnetic field increases Ca²⁺ influx and Cav1.2/Cav1.3 expression in oligodendrocyte precursor cells, promoting differentiation",
+      "pathway": ["emf", "cav12", "opc", "calcium"],
+      "tags": ["myelination", "calcium", "experimental"],
+      "source": "Sci Rep 2017 10.1038/s41598-017-06331-8"
+    },
+    {
+      "id": "pemf_opc_2019",
+      "pdf_number": 998,
+      "finding": "Pulsed EMF promotes OPC differentiation into mature oligodendrocytes; potential therapeutic application for demyelinating diseases",
+      "pathway": ["emf", "opc", "myelination"],
+      "tags": ["pemf", "myelination", "therapeutic"],
+      "source": "Life Sci 2019 10.1016/j.lfs.2019.03.005"
+    },
+    {
+      "id": "nk_ca_2024",
+      "pdf_number": 999,
+      "finding": "NK cell cytotoxicity is Ca²⁺-dependent: Ca²⁺ influx activates NFAT1 → granzyme B expression; electrical stimulation increases NK killing 1.36-1.58×",
+      "pathway": ["calcium", "nk_cell", "nfat1", "granzyme"],
+      "tags": ["immune", "nk_cell", "calcium"],
+      "source": "PLoS ONE 2024 PMC11025832"
+    },
+    {
+      "id": "nk_elf_suppress",
+      "pdf_number": 1000,
+      "finding": "50 Hz ELF-EMF suppresses NK cell cytotoxicity; frequency-dependent immune modulation",
+      "pathway": ["emf", "nk_cell", "immune_suppression"],
+      "tags": ["elf", "immune", "nk_cell"],
+      "source": "PMID:16771296"
+    },
+    {
+      "id": "ttfields_nk_2024",
+      "pdf_number": 1001,
+      "finding": "200 kHz TTFields (tumor treating fields) INCREASE NK cell cytotoxicity; opposite effect to 50 Hz ELF; frequency-dependent immune response",
+      "pathway": ["ttfields", "nk_cell", "immune_activation"],
+      "tags": ["ttfields", "immune", "nk_cell", "therapeutic"],
+      "source": "Cell Rep Phys Sci 2024"
+    },
+    {
+      "id": "gnih_stress",
+      "pdf_number": 1002,
+      "finding": "Stress induces GnIH/RFRP-3 which suppresses GnRH → LH → testosterone; GnIH gene silencing RESTORED fertility in stressed animals",
+      "pathway": ["stress", "gnih", "gnrh", "testosterone"],
+      "tags": ["hpa_hpg", "testosterone", "fertility"],
+      "source": "PMC5380668"
+    },
+    {
+      "id": "rf9_cortisol_2021",
+      "pdf_number": 1003,
+      "finding": "RF9 (GnIH antagonist) RESTORED testosterone in hydrocortisone-treated primates; direct proof that cortisol suppresses T via GnIH pathway",
+      "pathway": ["gnih", "cortisol", "testosterone", "rf9"],
+      "tags": ["hpa_hpg", "testosterone", "intervention"],
+      "source": "PMC7946976"
+    },
+    {
+      "id": "crf_gnrh_2013",
+      "pdf_number": 1004,
+      "finding": "CRF (corticotropin-releasing factor) directly suppresses GnRH pulse generator in hypothalamus; mechanism for stress-induced reproductive suppression",
+      "pathway": ["crf", "gnrh", "hypothalamus", "stress"],
+      "tags": ["hpa_hpg", "hypothalamus", "neuroendocrine"],
+      "source": "PMC3576618"
+    },
+    {
+      "id": "stress_t_2026",
+      "pdf_number": 1005,
+      "finding": "Psychological stress suppresses testosterone CENTRALLY via hypothalamic mechanisms in humans; confirmed in controlled human study",
+      "pathway": ["stress", "testosterone", "hypothalamus"],
+      "tags": ["testosterone", "stress", "human"],
+      "source": "JCEM 2026 10.1210/clinem/dgag181"
+    },
+    {
+      "id": "bdnf_rf_2023",
+      "pdf_number": 1006,
+      "finding": "RF 2650 MHz (28 days) reduces BDNF in hippocampus plus GABA↓, GR↓, and corticosterone↑; cognitive impairment",
+      "pathway": ["emf", "bdnf", "hippocampus", "gaba"],
+      "tags": ["rf", "bdnf", "cognition", "experimental"],
+      "source": "PMC10275548"
+    },
+    {
+      "id": "bdnf_rf_dev_2021",
+      "pdf_number": 1007,
+      "finding": "RF 835 MHz postnatal (P1-P28) reduces BDNF in CA1 and dentate gyrus, causes dendritic spine loss, and decreases memory index",
+      "pathway": ["emf", "bdnf", "hippocampus", "dendrite"],
+      "tags": ["rf", "bdnf", "neurodevelopment"],
+      "source": "PMC8159076"
+    },
+    {
+      "id": "bdnf_elf_up_2017",
+      "pdf_number": 1008,
+      "finding": "ELF 50 Hz INCREASES BDNF, promotes neurogenesis, and improves learning and memory; opposite direction to RF effects (hormesis)",
+      "pathway": ["emf", "bdnf", "neurogenesis"],
+      "tags": ["elf", "bdnf", "therapeutic", "hormesis"],
+      "source": "PMC5702423"
+    },
+    {
+      "id": "bdnf_prenatal",
+      "pdf_number": 1009,
+      "finding": "Prenatal ELF + stress disrupts memory acquisition phase in offspring; combined environmental exposure effect",
+      "pathway": ["emf", "prenatal", "memory", "stress"],
+      "tags": ["elf", "prenatal", "cognition"],
+      "source": "PMC11266742"
+    },
+    {
+      "id": "gut_per2_2026",
+      "pdf_number": 1010,
+      "finding": "Per2 knockout in gut epithelium disrupts barrier function → LPS enters bloodstream → neuroinflammation → hippocampal neurogenesis↓ → depression",
+      "pathway": ["per2", "gut_barrier", "lps", "neuroinflammation"],
+      "tags": ["circadian", "gut_brain", "depression"],
+      "source": "PMC12631932 2026"
+    },
+    {
+      "id": "gut_circadian_2018",
+      "pdf_number": 1011,
+      "finding": "Circadian rhythm disruption alters gut microbiome: Ruminococcus torques↑, Lactobacillus↓, LPS-synthesis genes↑",
+      "pathway": ["circadian", "microbiome", "lps"],
+      "tags": ["circadian", "gut_brain", "microbiome"],
+      "source": "PMC5909328"
+    },
+    {
+      "id": "gut_light_2025",
+      "pdf_number": 1012,
+      "finding": "Continuous light exposure disrupts gut epithelial barrier in male mice via apoptosis-inflammation-oxidative stress cascade",
+      "pathway": ["light", "gut_barrier", "oxidative_stress"],
+      "tags": ["circadian", "gut_brain", "experimental"],
+      "source": "biorxiv 2025"
+    },
+    {
+      "id": "sleep_t_jama_2011",
+      "pdf_number": 1013,
+      "finding": "One week of 5h sleep reduces testosterone by 10-15%, equivalent to 10-15 years of aging; threshold effect below 5h/night",
+      "pathway": ["sleep", "testosterone"],
+      "tags": ["sleep", "testosterone", "human", "rct"],
+      "source": "JAMA 2011 305:2173"
+    },
+    {
+      "id": "sleep_t_meta_2021",
+      "pdf_number": 1014,
+      "finding": "Total sleep deprivation significantly reduces testosterone; partial sleep restriction shows trend (p=0.067); dose-dependent relationship",
+      "pathway": ["sleep", "testosterone"],
+      "tags": ["sleep", "testosterone", "meta_analysis"],
+      "source": "PMID:34801825"
+    },
+    {
+      "id": "sleep_t_rct_2019",
+      "pdf_number": 1015,
+      "finding": "Sleep restriction vs healthy sleep: dose-dependent testosterone reduction; wellbeing score decreases parallel to T decline",
+      "pathway": ["sleep", "testosterone"],
+      "tags": ["sleep", "testosterone", "rct"],
+      "source": "Sleep Med 2019 10.1016/j.sleep.2019.05.014"
     }
   ]
 }

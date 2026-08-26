@@ -9,7 +9,7 @@ const COPY = {
   en: {
     title: "The Unbroken Chain: Photon → Population",
     subtitle:
-      "Iterative convergence verification tested 26 scales of BERM's mechanistic chain across 16 verified layers (VK1–VK16). Result: 10 positive feedback loops forming a self-amplifying network, from photon absorption to population-level effects, with unexpected empirical content at every layer.",
+      "Iterative convergence verification tested 35 scales of BERM's mechanistic chain across 25 verified layers (VK1–VK25). Result: 14 positive feedback loops forming a self-amplifying network, from photon absorption to population-level effects, with unexpected empirical content at every layer.",
     backLink: "← Back to Evidence",
 
     cautionText:
@@ -45,13 +45,22 @@ const COPY = {
       { scale: "10⁻² m", link: "VK14: Cortisol↑ → hippocampal atrophy", evidence: "Sapolsky 2009: dendritic retraction + neurogenesis↓; cortisol→AD (Frontiers 2026)", status: "confirmed", detail: "Chronic cortisol causes hippocampal dendritic retraction, neurogenesis cessation, and volume loss. Hippocampus is HPA negative feedback center — its damage removes cortisol braking → cortisol↑↑ (loop S6). Accelerates Alzheimer's progression." },
       { scale: "10⁻⁵ m", link: "VK15: EMF → Leydig → StAR↓ → T↓", evidence: "Multiple: RF → Leydig morphology changes, StAR↓, T↓ dose-dependently", status: "confirmed", detail: "EMF reduces StAR protein in Leydig cells — the rate-limiting step in steroidogenesis. Molecular mechanism behind population-wide T↓ independent of obesity, confirmed by Mazur's weight-stable data." },
       { scale: "10⁻⁵ m", link: "VK16: EMF → VGCC → Ca²⁺ → mast cell degranulation", evidence: "Johansson 2000: EMF → mast cell changes; cardiac mast cells → arrhythmias (PMC6896164)", status: "confirmed", detail: "Ca²⁺ triggers mast cell degranulation. EMF → VGCC → Ca²⁺ → mast cell releases histamine + IL-1β + tryptase. Skin biopsies from display users show changes. Cardiac mast cells → arrhythmias. IL-1β from mast cells → KCC2↓ → GABA excitatory longer." },
+      { scale: "10⁻⁶ m", link: "VK17: RF → CatSper Ca²⁺ → sperm energy depletion", evidence: "2100 MHz activates CatSper prematurely; sperm meta SMD -1.92 (Environ Int 2024)", status: "confirmed", detail: "RF-EMF activates CatSper Ca²⁺ channels in sperm prematurely, causing energy depletion before reaching the egg. Sperm meta-analysis shows DNA/chromatin damage at mobile phone SAR levels (SMD -1.92, 95% CI -2.78 to -1.05). Pb²⁺ competes with Ca²⁺ at sperm acrosome — heavy metal synergy in fertility." },
+      { scale: "10⁻⁵ m", link: "VK18: SCN Ca²⁺ oscillation = circadian clock", evidence: "PMC6170461: SCN neurons oscillate in Ca²⁺ with circadian rhythm", status: "confirmed", detail: "SCN neurons oscillate in Ca²⁺ concentration with circadian rhythm — Ca²⁺ oscillations ARE the physical basis of the circadian clock. EMF disrupts Ca²⁺ → EMF disrupts the clock itself. SCN is the master pacemaker that synchronizes hypothalamic and peripheral clocks." },
+      { scale: "10⁻⁷ m", link: "VK19: Inflammation → DA↓ → motivation loss", evidence: "Berridge: NAcc DA = 'wanting'; IFN-α → striatal DA↓ → anhedonia (PMC9718669)", status: "confirmed", detail: "Nucleus accumbens dopamine mediates 'wanting' (motivation) but not 'liking' (pleasure). Inflammation (IFN-α) reduces striatal dopamine causing anhedonia, reversed by L-DOPA. Low tonic DA increases phasic response → screens feel more rewarding with low baseline DA. EMF→inflammation→DA↓→addiction vulnerability." },
+      { scale: "10⁻⁶ m", link: "VK20: Cav1.2 → OPC differentiation → myelination", evidence: "PMC6916379: Cav1.2 KO → hypomyelination; SMF → Cav1.2↑ in OPCs (Sci Rep 2017)", status: "confirmed", detail: "Cav1.2 (L-type VGCC) is essential for oligodendrocyte precursor cell differentiation and myelination. Cav1.2 knockout causes hypomyelination. Static magnetic field increases Cav1.2/Cav1.3 expression in OPCs. EMF-induced Cav1.2 dysregulation → myelination timing disruption in developing brain." },
+      { scale: "10⁻⁵ m", link: "VK21: NK cell Ca²⁺ → immune surveillance", evidence: "Ca²⁺→NFAT1→granzyme B (PLoS ONE 2024); 50 Hz ELF→NK↓; 200 kHz TTFields→NK↑", status: "confirmed", detail: "NK cell cytotoxicity is Ca²⁺-dependent: Ca²⁺ influx activates NFAT1 → granzyme B expression. 50 Hz ELF suppresses NK cytotoxicity while 200 kHz TTFields INCREASE it — direct validation of frequency-dependent pathway hierarchy. Same VGCC mechanism, opposite outcomes at different frequencies." },
+      { scale: "10⁻⁵ m", link: "VK22: Cortisol → GnIH → GnRH↓ → T↓", evidence: "PMC5380668: GnIH silencing restored fertility; RF9 restored T in cortisol-treated primates (PMC7946976)", status: "confirmed", detail: "Stress induces GnIH/RFRP-3 which suppresses GnRH → LH → testosterone. GnIH gene silencing RESTORED fertility in stressed animals. RF9 (GnIH antagonist) RESTORED testosterone in hydrocortisone-treated primates. CRF directly suppresses GnRH pulse generator. Three independent routes to T↓." },
+      { scale: "10⁻⁶ m", link: "VK23: BDNF hormesis — RF↓ vs ELF↑", evidence: "RF 2650 MHz → BDNF↓ + GABA↓ (PMC10275548); ELF 50 Hz → BDNF↑ + neurogenesis↑ (PMC5702423)", status: "confirmed", detail: "RF-EMF reduces BDNF in hippocampus (2650 MHz, 28 days: BDNF↓, GABA↓, GR↓, corticosterone↑). Postnatal RF (835 MHz) causes dendritic spine loss + memory impairment. Meanwhile ELF 50 Hz INCREASES BDNF and promotes neurogenesis. Frequency-dependent hormesis: same pathway, opposite direction." },
+      { scale: "10⁻⁵ m", link: "VK24: Per2 → gut barrier → LPS → neuroinflammation", evidence: "Per2 KO → gut barrier↓ → LPS → hippocampal neurogenesis↓ → depression (PMC12631932)", status: "confirmed", detail: "Per2 knockout in gut epithelium disrupts barrier function → LPS enters bloodstream → neuroinflammation → hippocampal neurogenesis↓ → depression. Circadian disruption alters gut microbiome (Ruminococcus↑, Lactobacillus↓, LPS-synthesis genes↑). Dual barrier principle: BBB + gut barrier share ZO-1, occludin, claudins." },
+      { scale: "10⁰ m", link: "VK25: Sleep↓ → T↓ → Walker chain closed", evidence: "JAMA 2011: 5h sleep → T -10-15%; meta-analysis confirms (PMID:34801825)", status: "confirmed", detail: "One week of 5h sleep reduces testosterone by 10-15%, equivalent to 10-15 years of aging. The Walker chain is now closed: EMF→melatonin↓→sleep↓→T↓→neuroprotection↓→more EMF damage. Sleep restriction + EMF predicted to produce superadditive T decline (>25% combined vs ~15% sleep alone)." },
     ],
     chainHeaders: { scale: "Scale", link: "Chain link", evidence: "Evidence", status: "Status" },
-    chainSummary: "26 verified links across 16 layers (VK1–VK16). The chain is unbroken from photon physics to population epidemiology. Newly verified layers include BBB permeability, BAT thermogenesis, HPA axis, β-cell insulin dynamics, hypothalamic nexus, cortisol-hippocampus feedback, Leydig cell steroidogenesis, and mast cell degranulation.",
+    chainSummary: "35 verified links across 25 layers (VK1–VK25). The chain is unbroken from photon physics to population epidemiology, now spanning sperm CatSper, circadian clock oscillation, dopamine motivation, OPC myelination, NK immune surveillance, HPA-HPG cross-suppression, BDNF hormesis, gut-brain axis, and the closed Walker sleep-testosterone chain.",
 
-    feedbackTitle: "Ten positive feedback loops",
+    feedbackTitle: "Fourteen positive feedback loops",
     feedbackLead:
-      "The convergence verification revealed ten self-amplifying cycles within the chain. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each loop means that initial EMF effects can progressively worsen without increasing exposure — the system degrades itself.",
+      "The convergence verification revealed fourteen self-amplifying cycles within the chain. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each loop means that initial EMF effects can progressively worsen without increasing exposure — the system degrades itself.",
     feedbackLoops: [
       {
         name: "Monitor feedback resonance",
@@ -121,6 +130,34 @@ const COPY = {
         id: "S10",
         steps: ["EMF → hypothalamic synaptic vesicles↓", "Vesicle↓ → GnRH↓ + CRH dysregulation + TRH↓", "Multi-hormone deficit → systemic disruption", "Systemic stress → more HPA activation → ..."],
         status: "Kim 2019 synaptic changes verified",
+        statusColor: "green",
+      },
+      {
+        name: "Circadian clock self-disruption",
+        id: "S11",
+        steps: ["EMF → SCN Ca²⁺ oscillation disrupted", "SCN disrupted → melatonin timing lost → sleep↓", "Sleep↓ → Per2↓ in gut + peripheral clocks desync", "Desync → more SCN vulnerability → ..."],
+        status: "SCN Ca²⁺ oscillation + Per2 gut link verified",
+        statusColor: "green",
+      },
+      {
+        name: "NK-cancer-inflammation",
+        id: "S12",
+        steps: ["ELF → NK cell cytotoxicity↓", "NK↓ → cancer surveillance↓ → tumor growth", "Tumor → inflammation → more VGCC sensitization", "More Ca²⁺ disruption → more NK suppression → ..."],
+        status: "NK Ca²⁺ dependence + ELF suppression verified",
+        statusColor: "green",
+      },
+      {
+        name: "HPA-HPG cross-spiral",
+        id: "S13",
+        steps: ["EMF → cortisol↑ → GnIH↑ → T↓", "T↓ → neuroprotection↓ → hippocampus vulnerable", "Hippocampus↓ → HPA braking lost → cortisol↑↑", "More GnIH → more T↓ → ..."],
+        status: "RF9 restored T in cortisol-treated primates",
+        statusColor: "green",
+      },
+      {
+        name: "Gut-brain inflammation",
+        id: "S14",
+        steps: ["EMF → melatonin↓ → Per2↓ in gut epithelium", "Per2↓ → gut barrier↓ → LPS enters bloodstream", "LPS → neuroinflammation → hippocampal neurogenesis↓", "Neuroinflammation → more HPA activation → more melatonin↓ → ..."],
+        status: "Per2 KO → gut barrier → LPS → depression verified",
         statusColor: "green",
       },
     ],
@@ -214,7 +251,7 @@ const COPY = {
   fi: {
     title: "Katkeamaton ketju: Fotoni → Populaatio",
     subtitle:
-      "Iteratiivinen konvergenssiverifiointi testasi 26 skaalaa BERM:n mekanistisesta ketjusta 16 verifioidun kerroksen (VK1–VK16) yli. Tulos: 10 positiivista takaisinkytkentäsilmukkaa muodostavat itseään vahvistavan verkoston, fotonin absorptiosta väestötason vaikutuksiin, ennustamatonta empiiristä sisältöä jokaisessa kerroksessa.",
+      "Iteratiivinen konvergenssiverifiointi testasi 35 skaalaa BERM:n mekanistisesta ketjusta 25 verifioidun kerroksen (VK1–VK25) yli. Tulos: 14 positiivista takaisinkytkentäsilmukkaa muodostavat itseään vahvistavan verkoston, fotonin absorptiosta väestötason vaikutuksiin, ennustamatonta empiiristä sisältöä jokaisessa kerroksessa.",
     backLink: "← Takaisin Evidenssiin",
 
     cautionText:
@@ -250,13 +287,22 @@ const COPY = {
       { scale: "10⁻² m", link: "VK14: Kortisoli↑ → hippokampuksen atrofia", evidence: "Sapolsky 2009: dendriittien vetäytyminen + neurogeneesi↓; kortisoli→AD (Frontiers 2026)", status: "confirmed", detail: "Krooninen kortisoli aiheuttaa hippokampuksen dendriittien vetäytymisen, neurogeneesin loppumisen ja volyymin pienenemisen. Hippokampus on HPA:n negatiivinen palautekeskus — sen vaurioituminen poistaa kortisolijarrun → kortisoli↑↑ (silmukka S6). Nopeuttaa Alzheimerin etenemistä." },
       { scale: "10⁻⁵ m", link: "VK15: EMF → Leydig → StAR↓ → T↓", evidence: "Useita: RF → Leydig-morfologiamuutokset, StAR↓, T↓ annosriippuvaisesti", status: "confirmed", detail: "EMF vähentää StAR-proteiinia Leydig-soluissa — steroidogeneesin nopeutta rajoittava vaihe. Molekulaarinen mekanismi väestötason T↓:n takana painosta riippumatta, vahvistettu Mazurin painovakaalla datalla." },
       { scale: "10⁻⁵ m", link: "VK16: EMF → VGCC → Ca²⁺ → syöttösolujen degranulaatio", evidence: "Johansson 2000: EMF → syöttösolumuutokset ihossa; kardiaaliset syöttösolut → rytmihäiriöt (PMC6896164)", status: "confirmed", detail: "Ca²⁺ laukaisee syöttösolujen degranulaation. EMF → VGCC → Ca²⁺ → syöttösolu vapauttaa histamiinia + IL-1β + tryptaasia. Näyttöpäätealtistettujen iho-biopsiat osoittavat muutoksia. Kardiaaliset syöttösolut → rytmihäiriöt. IL-1β syöttösoluista → KCC2↓ → GABA eksitatorinen pidempään." },
+      { scale: "10⁻⁶ m", link: "VK17: RF → CatSper Ca²⁺ → siittiön energiankulutus", evidence: "2100 MHz aktivoi CatSperin ennenaikaisesti; siittiö-meta SMD -1,92 (Environ Int 2024)", status: "confirmed", detail: "RF-EMF aktivoi CatSper Ca²⁺ -kanavat siittiöissä ennenaikaisesti aiheuttaen energiankulutuksen ennen munasoluun pääsyä. Siittiö-meta-analyysi osoittaa DNA/kromatiinivaurion matkapuhelimen SAR-tasoilla (SMD -1,92, 95% CI -2,78 – -1,05). Pb²⁺ kilpailee Ca²⁺:n kanssa siittiön akrosomissa — raskasmetalli-synergia hedelmällisyydessä." },
+      { scale: "10⁻⁵ m", link: "VK18: SCN Ca²⁺ -oskillaatio = sirkadiaaninen kello", evidence: "PMC6170461: SCN-neuronit oskilloivat Ca²⁺:ssa vuorokausirytmillä", status: "confirmed", detail: "SCN-neuronit oskilloivat Ca²⁺-pitoisuudessa vuorokausirytmillä — Ca²⁺-oskillaatiot OVAT sirkadiaanisen kellon fysikaalinen perusta. EMF häiritsee Ca²⁺:ta → EMF häiritsee itse kelloa. SCN on pääkello joka synkronoi hypotalamuksen ja periferiset kellot." },
+      { scale: "10⁻⁷ m", link: "VK19: Tulehdus → DA↓ → motivaation menetys", evidence: "Berridge: NAcc DA = 'wanting'; IFN-α → striataalinen DA↓ → anhedonia (PMC9718669)", status: "confirmed", detail: "Accumbens-tumakkeen dopamiini välittää 'wantingin' (motivaation) mutta ei 'likingiä' (mielihyvää). Tulehdus (IFN-α) vähentää striataalista dopamiinia aiheuttaen anhedoniaa, palautettavissa L-DOPAlla. Matala tooninen DA kasvattaa faasista vastetta → ruudut tuntuvat palkitsevammilta matalalla DA-tasolla. EMF→tulehdus→DA↓→riippuvuusalttius." },
+      { scale: "10⁻⁶ m", link: "VK20: Cav1.2 → OPC-erilaistuminen → myelinaatio", evidence: "PMC6916379: Cav1.2 KO → hypomyelinaatio; SMF → Cav1.2↑ OPC:issä (Sci Rep 2017)", status: "confirmed", detail: "Cav1.2 (L-tyypin VGCC) on välttämätön oligodendrosyyttiprogenitorisolujen erilaistumiselle ja myelinaatiolle. Cav1.2-poistogeeni aiheuttaa hypomyelinaation. Staattinen magneettikenttä kasvattaa Cav1.2/Cav1.3-ekspressiota OPC:issä. EMF-indusoitu Cav1.2-häiriö → myelinaation ajoitushäiriö kehittyvissä aivoissa." },
+      { scale: "10⁻⁵ m", link: "VK21: NK-solujen Ca²⁺ → immunovalvonta", evidence: "Ca²⁺→NFAT1→grantsyymi B (PLoS ONE 2024); 50 Hz ELF→NK↓; 200 kHz TTFields→NK↑", status: "confirmed", detail: "NK-solujen sytotoksisuus on Ca²⁺-riippuvaista: Ca²⁺-sisäänvirtaus aktivoi NFAT1 → grantsyymi B -ekspressio. 50 Hz ELF suppressoi NK-sytotoksisuutta kun taas 200 kHz TTFields KASVATTAA sitä — suora validaatio taajuusriippuvaisesta reittihierarkiasta. Sama VGCC-mekanismi, vastakkaiset lopputulokset eri taajuuksilla." },
+      { scale: "10⁻⁵ m", link: "VK22: Kortisoli → GnIH → GnRH↓ → T↓", evidence: "PMC5380668: GnIH-hiljennys palautti hedelmällisyyden; RF9 palautti T:n kortisolikäsitellyissä kädellississä (PMC7946976)", status: "confirmed", detail: "Stressi indusoi GnIH/RFRP-3:n joka suppressoi GnRH → LH → testosteroni. GnIH-geenin hiljennys PALAUTTI hedelmällisyyden stressatuissa eläimissä. RF9 (GnIH-antagonisti) PALAUTTI testosteronin hydrokortisonikäsitellyissä kädellississä. CRF suppressoi suoraan GnRH-pulssigeneraattoria. Kolme itsenäistä reittiä T↓:iin." },
+      { scale: "10⁻⁶ m", link: "VK23: BDNF-hormeesi — RF↓ vs ELF↑", evidence: "RF 2650 MHz → BDNF↓ + GABA↓ (PMC10275548); ELF 50 Hz → BDNF↑ + neurogeneesi↑ (PMC5702423)", status: "confirmed", detail: "RF-EMF vähentää BDNF:ää hippokampuksessa (2650 MHz, 28 pv: BDNF↓, GABA↓, GR↓, kortikosteroni↑). Postnataalinen RF (835 MHz) aiheuttaa dendriittien piikkien menetyksen + muistihäiriön. Samalla ELF 50 Hz KASVATTAA BDNF:ää ja edistää neurogeneesiä. Taajuusriippuvainen hormeesi: sama reitti, vastakkainen suunta." },
+      { scale: "10⁻⁵ m", link: "VK24: Per2 → suoliston este → LPS → neurotulehdus", evidence: "Per2 KO → suoliston este↓ → LPS → hippokampaalinen neurogeneesi↓ → masennus (PMC12631932)", status: "confirmed", detail: "Per2-poistogeeni suoliston epitheelissä häiritsee esterakennetta → LPS pääsee verenkiertoon → neurotulehdus → hippokampuksen neurogeneesi↓ → masennus. Sirkadiaanisen rytmin häiriö muuttaa suolistomikrobiomia (Ruminococcus↑, Lactobacillus↓, LPS-synteesigeenit↑). Kaksoisestemekanismi: BBB + suoliston este jakavat ZO-1:n, okludiinin, klaudiinit." },
+      { scale: "10⁰ m", link: "VK25: Uni↓ → T↓ → Walkerin ketju suljettu", evidence: "JAMA 2011: 5h uni → T -10-15 %; meta-analyysi vahvistaa (PMID:34801825)", status: "confirmed", detail: "Viikko 5h unta vähentää testosteronia 10-15 %, vastaten 10-15 vuoden ikääntymistä. Walkerin ketju on nyt suljettu: EMF→melatoniini↓→uni↓→T↓→neuroprotektio↓→enemmän EMF-vaurioita. Unirajoituksen + EMF:n ennustetaan tuottavan superadditiivisen T-laskun (>25 % yhdistettynä vs ~15 % uni yksin)." },
     ],
     chainHeaders: { scale: "Skaala", link: "Ketjun linkki", evidence: "Evidenssi", status: "Status" },
-    chainSummary: "26 verifioitua linkkiä 16 kerroksessa (VK1–VK16). Ketju on katkeamaton fotonifysiikasta väestöepidemiologiaan. Vastikään verifioidut kerrokset sisältävät veri-aivoesteen läpäisevyyden, BAT-termogeneesin, HPA-akselin, β-solun insuliinidynamiikan, hypotalamuksen keskuspisteen, kortisoli-hippokampus-palautteen, Leydig-solun steroidogeneesin ja syöttösolun degranulaation.",
+    chainSummary: "35 verifioitua linkkiä 25 kerroksessa (VK1–VK25). Ketju on katkeamaton fotonifysiikasta väestöepidemiologiaan, kattaen nyt siittiöiden CatSperin, sirkadiaanisen kello-oskillaation, dopamiinimotivaation, OPC-myelinaation, NK-immunivalvonnan, HPA-HPG-ristisuppression, BDNF-hormeesin, suolisto-aivo-akselin ja suljetun Walkerin uni-testosteroniketjun.",
 
-    feedbackTitle: "Kymmenen positiivista takaisinkytkentäsilmukkaa",
+    feedbackTitle: "Neljätoista positiivista takaisinkytkentäsilmukkaa",
     feedbackLead:
-      "Konvergenssiverifiointi paljasti kymmenen itseään vahvistavaa sykliä ketjun sisällä. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti. Jokainen silmukka tarkoittaa, että alkuperäiset EMF-vaikutukset voivat asteittain pahentua ilman altistuksen kasvua — järjestelmä rapautuu itse.",
+      "Konvergenssiverifiointi paljasti neljätoista itseään vahvistavaa sykliä ketjun sisällä. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti. Jokainen silmukka tarkoittaa, että alkuperäiset EMF-vaikutukset voivat asteittain pahentua ilman altistuksen kasvua — järjestelmä rapautuu itse.",
     feedbackLoops: [
       {
         name: "Monitorin palauteresonanssi",
@@ -326,6 +372,34 @@ const COPY = {
         id: "S10",
         steps: ["EMF → hypotalamuksen synapttiset vesikkelit↓", "Vesikkelit↓ → GnRH↓ + CRH-häiriö + TRH↓", "Monihormonipuutos → systeeminen häiriö", "Systeeminen stressi → lisää HPA-aktivaatiota → ..."],
         status: "Kimin 2019 synapttiset muutokset verifioitu",
+        statusColor: "green",
+      },
+      {
+        name: "Sirkadiaanisen kellon itsehäiriö",
+        id: "S11",
+        steps: ["EMF → SCN Ca²⁺ -oskillaatio häiriintyy", "SCN häiriintyy → melatoniinin ajoitus katoaa → uni↓", "Uni↓ → Per2↓ suolistossa + perifeeriset kellot desynkronoituvat", "Desynkronia → SCN haavoittuvampi → ..."],
+        status: "SCN Ca²⁺ -oskillaatio + Per2 suolisto -linkki verifioitu",
+        statusColor: "green",
+      },
+      {
+        name: "NK-syöpä-tulehdus",
+        id: "S12",
+        steps: ["ELF → NK-solujen sytotoksisuus↓", "NK↓ → syöpävalvonta↓ → kasvainten kasvu", "Kasvain → tulehdus → VGCC-sensitisaatio↑", "Lisää Ca²⁺-häiriötä → lisää NK-suppressiota → ..."],
+        status: "NK:n Ca²⁺-riippuvuus + ELF-suppressio verifioitu",
+        statusColor: "green",
+      },
+      {
+        name: "HPA-HPG-ristispiraali",
+        id: "S13",
+        steps: ["EMF → kortisoli↑ → GnIH↑ → T↓", "T↓ → neuroprotektio↓ → hippokampus haavoittuva", "Hippokampus↓ → HPA-jarru menetetty → kortisoli↑↑", "Lisää GnIH:ta → lisää T↓ → ..."],
+        status: "RF9 palautti T:n kortisolikäsitellyissä kädellississä",
+        statusColor: "green",
+      },
+      {
+        name: "Suolisto-aivo-tulehdus",
+        id: "S14",
+        steps: ["EMF → melatoniini↓ → Per2↓ suoliston epitheelissä", "Per2↓ → suoliston este↓ → LPS pääsee verenkiertoon", "LPS → neurotulehdus → hippokampaalinen neurogeneesi↓", "Neurotulehdus → lisää HPA-aktivaatiota → lisää melatoniini↓ → ..."],
+        status: "Per2 KO → suoliston este → LPS → masennus verifioitu",
         statusColor: "green",
       },
     ],
@@ -623,8 +697,8 @@ export default async function UnbrokenChainPage({
         <DerivedPrediction>
           <p className="text-sm leading-relaxed mb-3">
             {activeLocale === "fi"
-              ? "Konvergenssiverifiointi tuottaa 23 testattavaa ennustetta, jotka kattavat raskasmetalli-synergian, veri-aivoesteen, ruskean rasvakudoksen, HPA-akselin, β-solun, hypotalamuksen, kortisoli-hippokampuksen, Leydig-solun ja syöttösolun mekanismit."
-              : "The convergence verification generates 23 testable predictions covering heavy metal synergy, blood-brain barrier, brown adipose tissue, HPA axis, β-cell, hypothalamic nexus, cortisol-hippocampus, Leydig cell, and mast cell mechanisms."}
+              ? "Konvergenssiverifiointi tuottaa 31 testattavaa ennustetta, jotka kattavat raskasmetalli-synergian, veri-aivoesteen, ruskean rasvakudoksen, HPA-akselin, β-solun, hypotalamuksen, kortisoli-hippokampuksen, Leydig-solun, syöttösolun, siittiöiden CatSperin, NK-immunivalvonnan, BDNF-hormeesin ja suolisto-aivo-akselin mekanismit."
+              : "The convergence verification generates 31 testable predictions covering heavy metal synergy, blood-brain barrier, brown adipose tissue, HPA axis, β-cell, hypothalamic nexus, cortisol-hippocampus, Leydig cell, mast cell, sperm CatSper, NK immune surveillance, BDNF hormesis, and gut-brain axis mechanisms."}
           </p>
           <Link href={`${prefix}${d.predictionHref}`} className="text-sm text-accent hover:underline">
             {d.predictionLink} →

@@ -852,6 +852,70 @@ const COPY = {
     mechFalsification: "Falsification criterion",
     mechLocked: "Locked: 2026-08-26",
     mechStatus: "LOCKED — awaiting test",
+    suppTitle: "Supplementary layer predictions (VK17–25)",
+    suppLead: "Predictions from newly verified layers: sperm Ca²⁺/CatSper, circadian clock, dopamine motivation, OPC myelination, NK cell immunity, HPA-HPG cross-suppression, BDNF hormesis, gut-brain axis, and the Walker sleep-testosterone link.",
+    suppPredictions: [
+      {
+        id: "E-NEW-1",
+        title: "Sperm CatSper Ca²⁺ response is EMF-exposure dependent",
+        description: "CatSper channels in sperm activate prematurely under RF-EMF, causing energy depletion before reaching the egg (‘premature energy expenditure’). Test: dose-response study of CatSper activation vs SAR level in human sperm samples. Prediction: CatSper activation increases with SAR; sperm exposed to mobile-phone-level RF show premature hyperactivation and reduced fertilization capacity.",
+        timeline: "Testable within 6 months (in vitro sperm + RF exposure)",
+        falsification: "No dose-dependent relationship between SAR and CatSper activation",
+      },
+      {
+        id: "E-NEW-2",
+        title: "GnIH antagonist protects testosterone during EMF exposure",
+        description: "Cortisol↑ → GnIH↑ → GnRH↓ → T↓ is a verified cross-suppression pathway. RF9 (GnIH antagonist) restored T in cortisol-treated primates. Test: expose rodents to chronic EMF with/without RF9-type GnIH antagonist. Prediction: GnIH antagonist prevents EMF-induced T decline, confirming HPA-HPG cross-suppression as the mechanism.",
+        timeline: "Testable within 12 months (rodent model with pharmacological intervention)",
+        falsification: "GnIH antagonist does NOT prevent EMF-induced testosterone decline",
+      },
+      {
+        id: "E-NEW-3",
+        title: "Chronic RF alters OPC Cav1.2 expression and myelination timing",
+        description: "Cav1.2 is essential for OPC differentiation and myelination. SMF increases Cav1.2 in OPCs. Chronic RF may dysregulate Cav1.2 in developing brain → myelination timing disruption → white matter integrity↓. Test: expose developing rodent brains to chronic RF; measure Cav1.2 expression in OPCs and myelination markers (MBP, PLP) at developmental timepoints. Prediction: RF-exposed animals show altered myelination timing.",
+        timeline: "Testable within 12 months (developmental rodent model)",
+        falsification: "No change in OPC Cav1.2 expression or myelination timing after chronic RF",
+      },
+      {
+        id: "E-NEW-4",
+        title: "200 kHz intermediate frequency INCREASES NK cell activity",
+        description: "TTFields (200 kHz) increase NK cytotoxicity while 50 Hz ELF suppresses it — direct validation of BERM’s frequency-dependent pathway hierarchy. Test: compare NK cell cytotoxicity across ELF (50 Hz), RF (900 MHz, 2.4 GHz), and IF (200 kHz) exposures. Prediction: IF range shows NK activation while ELF and RF show suppression — different frequencies, different biological outcomes via the same VGCC mechanism.",
+        timeline: "Testable within 6 months (in vitro NK cell assay across frequencies)",
+        falsification: "All frequencies produce the same NK cell response direction",
+      },
+      {
+        id: "E-NEW-5",
+        title: "Gut Per2 expression correlates with EMF exposure",
+        description: "Per2 knockout disrupts gut barrier → LPS enters bloodstream → neuroinflammation → depression. EMF disrupts circadian rhythm → Per2↓. Test: measure Per2 expression in gut epithelial biopsies of shift workers (circadian disruption proxy) vs day workers, correlated with EMF exposure history and serum LPS levels. Prediction: EMF/circadian disruption → Per2↓ → elevated serum LPS.",
+        timeline: "Testable within 12 months (occupational cohort with gut biopsies)",
+        falsification: "No correlation between EMF exposure and gut Per2 expression or serum LPS",
+      },
+      {
+        id: "E-NEW-6",
+        title: "Sleep restriction + EMF produces superadditive testosterone decline",
+        description: "5h sleep → T -10-15% (JAMA 2011). EMF → T↓ via three routes (VK13, VK15, VK22). Combined sleep restriction + EMF should produce GREATER T decline than either alone (superadditive). Test: 2×2 factorial RCT: normal sleep/restricted sleep × low EMF/high EMF. Measure T at baseline and after 1 week. Prediction: interaction term is significant — combined group shows >25% T decline vs ~15% for sleep alone.",
+        timeline: "Testable within 3 months (controlled sleep + EMF study)",
+        falsification: "No interaction effect — sleep and EMF effects on T are purely additive",
+      },
+      {
+        id: "E-NEW-7",
+        title: "RF-exposed children have lower BDNF and dendritic spine density",
+        description: "RF 835 MHz (postnatal) reduces BDNF in CA1 and dentate gyrus with dendritic spine loss and memory impairment (PMC8159076). Meanwhile ELF increases BDNF (hormesis). Test: measure serum BDNF in children stratified by personal RF exposure (phone use, WiFi proximity). Prediction: higher RF exposure correlates with lower BDNF and poorer spatial memory scores.",
+        timeline: "Testable within 12 months (pediatric cohort with EMF dosimetry)",
+        falsification: "No correlation between RF exposure and BDNF levels in children",
+      },
+      {
+        id: "E-NEW-8",
+        title: "Gut barrier permeability (LPS marker) correlates with EMF exposure",
+        description: "EMF → melatonin↓ → Per2↓ in gut → barrier disruption → LPS enters bloodstream → systemic inflammation. Gut barrier uses the SAME tight junction proteins as BBB (ZO-1, occludin, claudins), and melatonin protects both. Test: measure serum LPS-binding protein and zonulin (gut permeability markers) in high-EMF vs low-EMF occupation workers. Prediction: high-EMF group has elevated gut permeability markers.",
+        timeline: "Testable immediately (occupational cohort with blood draw)",
+        falsification: "No difference in gut permeability markers between EMF exposure groups",
+      },
+    ],
+    suppTimeline: "Timeline",
+    suppFalsification: "Falsification criterion",
+    suppLocked: "Locked: 2026-08-26",
+    suppStatus: "LOCKED — awaiting test",
     ttypeTitle: "T-Type Channel Predictions",
     ttypeLead: "Testable predictions from the T-type calcium channel bifurcation mechanism.",
     ttypePredictions: [
@@ -2268,6 +2332,70 @@ const COPY = {
     mechFalsification: "Falsifikaatiokriteeri",
     mechLocked: "Lukittu: 2026-08-26",
     mechStatus: "LUKITTU — odottaa testiä",
+    suppTitle: "Täydennyskerrosten ennusteet (VK17–25)",
+    suppLead: "Ennusteet vasta verifioiduista kerroksista: siittiöiden Ca²⁺/CatSper, sirkadiaaninen kello, dopamiinin motivaatio, OPC-myelinaatio, NK-solujen immuniteetti, HPA-HPG-ristisuppressio, BDNF-hormeesi, suolisto-aivo-akseli ja Walkerin uni-testosteroniyhteys.",
+    suppPredictions: [
+      {
+        id: "E-NEW-1",
+        title: "Siittiöiden CatSper Ca²⁺ -vaste on EMF-altistuksesta riippuvainen",
+        description: "CatSper-kanavat siittiöissä aktivoituvat ennenaikaisesti RF-EMF:n alaisena, aiheuttaen energian ehtymisen ennen munasolun saavuttamista ('ennenaikainen energiankulutus'). Testi: annosvaste-tutkimus CatSper-aktivaatiosta vs. SAR-taso ihmisen siittiönäytteissä. Ennuste: CatSper-aktivaatio kasvaa SAR:n myötä; matkapuhelintason RF:lle altistetut siittiöt osoittavat ennenaikaista hyperaktivaatiota ja heikentynyttä hedelmöityskykyä.",
+        timeline: "Testattavissa 6 kuukaudessa (in vitro siittiö + RF-altistus)",
+        falsification: "Ei annosriippuvaista suhdetta SAR:n ja CatSper-aktivaation välillä",
+      },
+      {
+        id: "E-NEW-2",
+        title: "GnIH-antagonisti suojaa testosteronia EMF-altistuksen aikana",
+        description: "Kortisoli↑ → GnIH↑ → GnRH↓ → T↓ on verifioitu ristisuppressioreitti. RF9 (GnIH-antagonisti) palautti T:n kortisolikäsitellyissä kädellisistä. Testi: altista jyrsijät krooniselle EMF:lle RF9-tyyppisellä GnIH-antagonistilla/ilman. Ennuste: GnIH-antagonisti estää EMF:n aiheuttaman T-laskun, vahvistaen HPA-HPG-ristisuppression mekanismina.",
+        timeline: "Testattavissa 12 kuukaudessa (jyrsijämalli farmakologisella interventiolla)",
+        falsification: "GnIH-antagonisti EI estä EMF:n aiheuttamaa testosteronin laskua",
+      },
+      {
+        id: "E-NEW-3",
+        title: "Krooninen RF muuttaa OPC:n Cav1.2-ilmentymistä ja myelinaation ajoitusta",
+        description: "Cav1.2 on välttämätön OPC:n erilaistumiselle ja myelinaatiolle. SMF lisää Cav1.2:ta OPC:issä. Krooninen RF voi dysreguloida Cav1.2:ta kehittyvissä aivoissa → myelinaation ajoitushäiriö → valkoisen aineen integriteetti↓. Testi: altista kehittyvät jyrsijäaivot krooniselle RF:lle; mittaa Cav1.2-ilmentyminen OPC:issä ja myelinaatiomarkkerit (MBP, PLP) kehityksen aikapisteissä. Ennuste: RF-altistetut eläimet osoittavat muuttunutta myelinaation ajoitusta.",
+        timeline: "Testattavissa 12 kuukaudessa (kehityksellinen jyrsijämalli)",
+        falsification: "Ei muutosta OPC:n Cav1.2-ilmentymisessä tai myelinaation ajoituksessa kroonisen RF:n jälkeen",
+      },
+      {
+        id: "E-NEW-4",
+        title: "200 kHz välitaajuus LISÄÄ NK-solujen aktiivisuutta",
+        description: "TTFields (200 kHz) lisäävät NK-solujen sytotoksisuutta, kun taas 50 Hz ELF suppressoi sitä — suora validaatio BERM:n taajuusriippuvaiselle reittiherarkkialle. Testi: vertaa NK-solujen sytotoksisuutta ELF (50 Hz), RF (900 MHz, 2,4 GHz) ja IF (200 kHz) altistuksissa. Ennuste: IF-alue osoittaa NK-aktivaatiota kun ELF ja RF osoittavat suppressiota — eri taajuudet, eri biologiset tulokset saman VGCC-mekanismin kautta.",
+        timeline: "Testattavissa 6 kuukaudessa (in vitro NK-solumääritys eri taajuuksilla)",
+        falsification: "Kaikki taajuudet tuottavat saman NK-soluvasteen suunnan",
+      },
+      {
+        id: "E-NEW-5",
+        title: "Suoliston Per2-ilmentyminen korreloi EMF-altistuksen kanssa",
+        description: "Per2-poisto häiritsee suolistoestettä → LPS pääsee verenkiertoon → neuroinflammaatio → masennus. EMF häiritsee sirkadiaanista rytmiä → Per2↓. Testi: mittaa Per2-ilmentyminen suoliston epiteelbiopsioissa vuorotyöntekijöiltä (sirkadiaanisen häiriön proksi) vs. päivätyöntekijöiltä, korreloituna EMF-altistushistorian ja seerumin LPS-tasojen kanssa. Ennuste: EMF/sirkadiaaninen häiriö → Per2↓ → kohonnut seerumin LPS.",
+        timeline: "Testattavissa 12 kuukaudessa (ammattikohortti suolistobiopsioilla)",
+        falsification: "Ei korrelaatiota EMF-altistuksen ja suoliston Per2-ilmentymisen tai seerumin LPS:n välillä",
+      },
+      {
+        id: "E-NEW-6",
+        title: "Univaje + EMF tuottaa superadditiivisen testosteronilaskun",
+        description: "5 h unta → T -10-15 % (JAMA 2011). EMF → T↓ kolmen reitin kautta (VK13, VK15, VK22). Yhdistetyn univajeen + EMF:n pitäisi tuottaa SUUREMPI T-lasku kuin kumpikaan yksinään (superadditiivinen). Testi: 2×2 faktoriaalinen RCT: normaali uni/rajoitettu uni × matala EMF/korkea EMF. Mittaa T lähtötasolla ja 1 viikon jälkeen. Ennuste: interaktiotermi on merkitsevä — yhdistelmäryhmä osoittaa >25 % T-laskun vs. ~15 % pelkällä univajeella.",
+        timeline: "Testattavissa 3 kuukaudessa (kontrolloitu uni + EMF -tutkimus)",
+        falsification: "Ei interaktiovaikutusta — unen ja EMF:n vaikutukset T:hen ovat puhtaasti additiivisia",
+      },
+      {
+        id: "E-NEW-7",
+        title: "RF-altistetuilla lapsilla on matalampi BDNF ja dendriittinen tiheys",
+        description: "RF 835 MHz (postnataalinen) vähentää BDNF:ää CA1:ssä ja gyrus dentatuksessa dendriittisten okaspiikkien menetyksellä ja muistihäiriöllä (PMC8159076). Samaan aikaan ELF lisää BDNF:ää (hormeesi). Testi: mittaa seerumin BDNF lapsilla henkilökohtaisen RF-altistuksen mukaan (puhelinkäyttö, WiFi-läheisyys). Ennuste: korkeampi RF-altistus korreloi matalamman BDNF:n ja heikompien spatiaalisten muistipisteiden kanssa.",
+        timeline: "Testattavissa 12 kuukaudessa (pediatrinen kohortti EMF-dosimetrialla)",
+        falsification: "Ei korrelaatiota RF-altistuksen ja BDNF-tasojen välillä lapsilla",
+      },
+      {
+        id: "E-NEW-8",
+        title: "Suolistoesteen läpäisevyys (LPS-markkeri) korreloi EMF-altistuksen kanssa",
+        description: "EMF → melatoniini↓ → Per2↓ suolistossa → estehäiriö → LPS pääsee verenkiertoon → systeeminen tulehdus. Suolistoeste käyttää SAMOJA tiiviin liitoksen proteiineja kuin BBB (ZO-1, okludiini, klaudiinit), ja melatoniini suojaa molempia. Testi: mittaa seerumin LPS:ää sitova proteiini ja zonuliini (suoliston läpäisevyysmarkkerit) korkean EMF:n vs. matalan EMF:n ammattien työntekijöiltä. Ennuste: korkean EMF:n ryhmällä kohonneet suoliston läpäisevyysmarkkerit.",
+        timeline: "Testattavissa heti (ammattikohortti verinäytteellä)",
+        falsification: "Ei eroa suoliston läpäisevyysmarkkereissa EMF-altistusryhmien välillä",
+      },
+    ],
+    suppTimeline: "Aikajana",
+    suppFalsification: "Falsifikaatiokriteeri",
+    suppLocked: "Lukittu: 2026-08-26",
+    suppStatus: "LUKITTU — odottaa testiä",
     ttypeTitle: "T-tyypin kanavan ennusteet",
     ttypeLead: "T-tyypin kalsiumkanavan bifurkaatiomekanismista johdetut testattavat ennusteet.",
     ttypePredictions: [
@@ -3424,6 +3552,35 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
                 <p><span className="font-semibold">{d.mechTimeline}:</span> {mp.timeline}</p>
                 <p><span className="font-semibold">{d.mechFalsification}:</span> {mp.falsification}</p>
                 <p className="font-mono-num">{d.mechLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Supplementary layer predictions E-NEW-1 through E-NEW-8 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.suppTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.suppLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.suppPredictions.map((sp) => (
+            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{sp.id}</span>
+                    <h3 className="font-semibold">{sp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.suppStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{sp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.suppTimeline}:</span> {sp.timeline}</p>
+                <p><span className="font-semibold">{d.suppFalsification}:</span> {sp.falsification}</p>
+                <p className="font-mono-num">{d.suppLocked}</p>
               </div>
             </article>
           ))}

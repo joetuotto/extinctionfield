@@ -80,3 +80,39 @@ Unexecutable [DATA] items from Codelle: KONVERGENSSIVERIFIOINTI — Ultimaattine
 - Include: personal EMF dosimetry (24-hour), perceived stress scale, lifestyle factors
 - Prediction: hair cortisol correlates with cumulative EMF exposure after controlling for perceived stress
 - Note: tests the HPA sensitization mechanism (VK11) using a long-term cortisol biomarker
+
+## D15: CatSper dose-response vs SAR (VK17)
+- In vitro study: expose human sperm to graded RF-SAR (0.1–4 W/kg) and measure CatSper Ca²⁺ activation kinetics
+- Control: sham-exposed sperm; measure hyperactivation timing, acrosome reaction rate, fertilization capacity
+- Prediction: CatSper activation is dose-dependent; mobile-phone-level SAR causes premature hyperactivation
+- Note: directly tests the E-NEW-1 prediction from VK17
+
+## D16: GnIH antagonist + EMF rodent study (VK22)
+- Rodent model: chronic EMF (12 weeks) with/without RF9-type GnIH antagonist
+- Measure: serum T, GnIH/RFRP-3, GnRH, LH, fertility parameters
+- Prediction: GnIH antagonist prevents EMF-induced T decline
+- Note: directly tests E-NEW-2 prediction — would confirm HPA-HPG cross-suppression as the mechanism
+
+## D17: OPC Cav1.2 + chronic RF developmental study (VK20)
+- Expose developing rodent brains to chronic RF (postnatal days 1-28)
+- Measure: Cav1.2 expression in OPCs, myelination markers (MBP, PLP), white matter integrity (DTI)
+- Prediction: RF-exposed animals show altered myelination timing and reduced white matter integrity
+- Note: tests E-NEW-3 — critical for understanding EMF effects on neurodevelopment
+
+## D18: Sleep + EMF 2×2 factorial RCT (VK25)
+- 2×2 RCT: normal sleep/5h restricted × low EMF/high EMF bedroom; 1 week duration
+- Measure: T at baseline and day 7, melatonin, cortisol, sleep quality (PSG), subjective wellbeing
+- Prediction: interaction term is significant — combined group shows >25% T decline vs ~15% for sleep alone
+- Note: tests E-NEW-6 — the Walker chain superadditivity prediction
+
+## D19: Gut permeability × EMF occupational cohort (VK24)
+- Cross-sectional: serum LPS-binding protein, zonulin, fecal calprotectin in high-EMF vs low-EMF workers
+- Include: personal EMF dosimetry, gut Per2 expression (biopsy if feasible), microbiome 16S sequencing
+- Prediction: high-EMF group has elevated gut permeability markers and shifted microbiome
+- Note: tests E-NEW-5 and E-NEW-8 simultaneously
+
+## D20: BDNF + RF exposure pediatric cohort (VK23)
+- Cross-sectional: serum BDNF in children (8-14 years) stratified by personal RF dosimetry
+- Include: spatial memory testing (Morris-type), screen time, sleep quality
+- Prediction: higher RF exposure correlates with lower BDNF and poorer spatial memory scores
+- Note: tests E-NEW-7 — the BDNF hormesis prediction in humans

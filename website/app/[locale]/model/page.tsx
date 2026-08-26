@@ -259,9 +259,9 @@ const t = {
     neonatalQSpectrum: "The neonatal Q → ∞ condition is one end of a continuous spectrum. The same Q-factor mechanism — with varying damping coefficient γ — unifies SIDS, epilepsy, SUDEP, migraine, and cluster headache. Spreading depolarization (CSD) is the common terminal pathway; the Q-factor determines whether CSD is triggered, how far it propagates, and whether it reaches the brainstem.",
     neonatalQSpectrumLink: "See full neurological spectrum analysis →",
 
-    feedbackLoopsTitle: "Ten Positive Feedback Loops",
+    feedbackLoopsTitle: "Fourteen Positive Feedback Loops",
     feedbackLoopsSub: "Self-amplifying cycles forming a network — any entry point activates multiple degradation spirals simultaneously",
-    feedbackLoopsDesc: "Convergence verification revealed ten positive feedback loops within the BERM cascade. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each means the system degrades itself without any increase in external exposure.",
+    feedbackLoopsDesc: "Convergence verification revealed fourteen positive feedback loops within the BERM cascade. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each means the system degrades itself without any increase in external exposure.",
     feedbackLoops: [
       { id: "S1", name: "Monitor feedback resonance", steps: "Baby's sound → microphone → RF modulation → VGCC → Ca²⁺ → stronger oscillation → louder sound → more RF → cascade amplification", status: "Mechanistically coherent, untested as complete loop", color: "amber" },
       { id: "S2", name: "Serotonin lock-open", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → thalamocortical gate OPEN → EMF penetrates deeper → more CaMKII disruption → more 5-HT↓ → ...", status: "Each link verified independently", color: "green" },
@@ -273,6 +273,10 @@ const t = {
       { id: "S8", name: "Testosterone neuroprotection loss", steps: "EMF → Leydig → StAR↓ → T↓ → neuroprotection↓ + synaptic plasticity↓ → more vulnerable to EMF → more Leydig damage → ...", status: "T↓ neuroprotection link verified", color: "green" },
       { id: "S9", name: "IL-1β → KCC2 loop", steps: "EMF → mast cell → IL-1β → KCC2 maturation delayed → GABA stays excitatory longer → Q↑ → more neuronal damage → more IL-1β → ...", status: "KCC2 environmental regulation verified", color: "green" },
       { id: "S10", name: "Hypothalamic multi-axis cascade", steps: "EMF → hypothalamic synaptic vesicles↓ → GnRH↓ + CRH dysreg. + TRH↓ → multi-hormone deficit → systemic stress → more HPA activation → ...", status: "Kim 2019 synaptic changes verified", color: "green" },
+      { id: "S11", name: "Circadian clock self-disruption", steps: "EMF → SCN Ca²⁺ disrupted → melatonin timing lost → Per2↓ in gut → peripheral clocks desync → more SCN vulnerability", status: "SCN Ca²⁺ oscillation verified", color: "green" },
+      { id: "S12", name: "NK-cancer-inflammation", steps: "ELF → NK cytotoxicity↓ → cancer surveillance↓ → tumor growth → inflammation → VGCC sensitization↑ → more NK suppression", status: "NK Ca²⁺ dependence + ELF suppression verified", color: "green" },
+      { id: "S13", name: "HPA-HPG cross-spiral", steps: "EMF → cortisol↑ → GnIH↑ → T↓ → neuroprotection↓ → hippocampus vulnerable → HPA braking lost → cortisol↑↑ → more GnIH", status: "RF9 restored T in cortisol-treated primates", color: "green" },
+      { id: "S14", name: "Gut-brain inflammation", steps: "EMF → melatonin↓ → Per2↓ in gut → gut barrier↓ → LPS enters blood → neuroinflammation → hippocampal neurogenesis↓ → more HPA activation → more melatonin↓", status: "Per2 KO → gut barrier → LPS → depression verified", color: "green" },
     ],
     feedbackLoopsLink: "See full convergence verification →",
 
@@ -299,6 +303,14 @@ const t = {
       { component: "DA↓ (Dopamine)", mechanism: "EMF → CaMKII → DA synthesis disruption", consequence: "Anhedonia, motivation loss, addiction vulnerability" },
     ],
     tripleLockSynergy: "The triple lock is not three independent effects — it is a synergistic trap. T↓ × F↑ = accelerated neurodegeneration. F↑ × DA↓ = treatment-resistant depression. T↓ × DA↓ = motivational collapse. T↓ × F↑ × DA↓ = the complete modern phenotype.",
+
+    dualBarrierTitle: "Dual barrier principle",
+    dualBarrierSubtitle: "BBB + gut barrier share ZO-1, occludin, claudins",
+    dualBarrierBody: "The blood-brain barrier and intestinal epithelial barrier share the same tight junction proteins: ZO-1, occludin, and claudins. Melatonin protects both barriers. EMF→melatonin↓ creates simultaneous dual vulnerability: BBB opens (heavy metals enter brain) AND gut barrier weakens (LPS enters bloodstream → neuroinflammation). This is not two separate effects — it is one mechanism (melatonin loss) attacking two barriers built from the same molecular toolkit.",
+
+    hormesisTitle: "BDNF hormesis: frequency determines direction",
+    hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — same pathway, opposite outcomes",
+    hormesisBody: "BDNF (brain-derived neurotrophic factor) is essential for neuroplasticity, memory, and neurogenesis. RF-EMF (835–2650 MHz) reduces BDNF in hippocampus with dendritic spine loss and cognitive impairment. Meanwhile, ELF (50 Hz) INCREASES BDNF and promotes neurogenesis. This is frequency-dependent hormesis via the same VGCC pathway. TTFields validation: 200 kHz intermediate frequency increases NK cell cytotoxicity while 50 Hz ELF suppresses it. The Lindgren χ-parameter predicts these directional differences — different resonance conditions at different frequencies produce opposite biological outcomes.",
 
     genSuscTitle: "Genetic Susceptibility Map: The 15-Gene Calcium Profile",
     genSuscSub: "EMF sensitivity is not one gene — it is a polygenic profile across five functional tiers of the calcium cascade",
@@ -806,9 +818,9 @@ const t = {
     neonatalQSpectrum: "Neonataalin Q → ∞ -tila on jatkuvan spektrin toinen pää. Sama Q-tekijämekanismi — vaihtelevalla vaimennuskertoimella γ — yhdistää SIDS:n, epilepsian, SUDEP:n, migreenin ja klusteripäänsäryn. Spreading depolarization (CSD) on yhteinen terminaalireitti; Q-tekijä määrittää laukaistaanko CSD, kuinka pitkälle se leviää ja saavuttaako se aivorungon.",
     neonatalQSpectrumLink: "Ks. koko neurologisen spektrin analyysi →",
 
-    feedbackLoopsTitle: "Kymmenen positiivista takaisinkytkentäsilmukkaa",
+    feedbackLoopsTitle: "Neljätoista positiivista takaisinkytkentäsilmukkaa",
     feedbackLoopsSub: "Itseään vahvistavat syklit muodostavat verkoston — mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti",
-    feedbackLoopsDesc: "Konvergenssiverifiointi paljasti kymmenen positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti.",
+    feedbackLoopsDesc: "Konvergenssiverifiointi paljasti neljätoista positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti.",
     feedbackLoops: [
       { id: "S1", name: "Monitorin palauteresonanssi", steps: "Vauvan ääni → mikrofoni → RF-modulaatio → VGCC → Ca²⁺ → voimakkaampi oskillaatio → kovempi ääni → lisää RF:ää → kaskadivahvistus", status: "Mekanistisesti koherentti, testaamaton kokonaisuutena", color: "amber" },
       { id: "S2", name: "Serotoniin-lukitusavaus", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → talamokortikaalinen portti AUKI → EMF tunkeutuu syvemmälle → lisää CaMKII-häiriötä → lisää 5-HT↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
@@ -820,6 +832,10 @@ const t = {
       { id: "S8", name: "Testosteronin neuroprotektio-menetys", steps: "EMF → Leydig → StAR↓ → T↓ → neuroprotektio↓ + synaptinen plastisuus↓ → haavoittuvampi EMF:lle → lisää Leydig-vauriota → ...", status: "T↓ neuroprotektiolinkki verifioitu", color: "green" },
       { id: "S9", name: "IL-1β → KCC2 -silmukka", steps: "EMF → syöttösolu → IL-1β → KCC2-kypsyminen viivästyy → GABA eksitatorinen pidempään → Q↑ → lisää neuronivaurioita → lisää IL-1β:tä → ...", status: "KCC2:n ympäristösäätely verifioitu", color: "green" },
       { id: "S10", name: "Hypotalamuksen moniakselikaskadi", steps: "EMF → hypotalamuksen synapttiset vesikkelit↓ → GnRH↓ + CRH-häiriö + TRH↓ → monihormonipuutos → systeeminen stressi → lisää HPA-aktivaatiota → ...", status: "Kimin 2019 synapttiset muutokset verifioitu", color: "green" },
+      { id: "S11", name: "Sirkadiaanisen kellon itsehäiriö", steps: "EMF → SCN Ca²⁺ häiriintyy → melatoniinin ajoitus katoaa → Per2↓ suolistossa → perifeeriset kellot desynkronoituvat → SCN haavoittuvampi", status: "SCN Ca²⁺ -oskillaatio verifioitu", color: "green" },
+      { id: "S12", name: "NK-syöpä-tulehdus", steps: "ELF → NK-sytotoksisuus↓ → syöpävalvonta↓ → kasvainkasvu → tulehdus → VGCC-sensitisaatio↑ → lisää NK-suppressiota", status: "NK:n Ca²⁺-riippuvuus + ELF-suppressio verifioitu", color: "green" },
+      { id: "S13", name: "HPA-HPG-ristispiraali", steps: "EMF → kortisoli↑ → GnIH↑ → T↓ → neuroprotektio↓ → hippokampus haavoittuva → HPA-jarru menetetty → kortisoli↑↑ → lisää GnIH:ta", status: "RF9 palautti T:n kortisolikäsitellyissä kädellisisssä", color: "green" },
+      { id: "S14", name: "Suolisto-aivo-tulehdus", steps: "EMF → melatoniini↓ → Per2↓ suolistossa → suoliston este↓ → LPS verenkiertoon → neurotulehdus → hippokampaalinen neurogeneesi↓ → lisää HPA-aktivaatiota → lisää melatoniini↓", status: "Per2 KO → suoliston este → LPS → masennus verifioitu", color: "green" },
     ],
     feedbackLoopsLink: "Ks. koko konvergenssiverifiointi →",
 
@@ -846,6 +862,14 @@ const t = {
       { component: "DA↓ (Dopamiini)", mechanism: "EMF → CaMKII → DA-synteesihäiriö", consequence: "Anhedonia, motivaation menetys, addiktion haavoittuvuus" },
     ],
     tripleLockSynergy: "Kolmoislukkoteoria ei ole kolme itsenäistä vaikutusta — vaan synergistinen ansa. T↓ × F↑ = kiihtynyt neurodegeneraatio. F↑ × DA↓ = hoitoresistentti masennus. T↓ × DA↓ = motivaation romahdus. T↓ × F↑ × DA↓ = täydellinen moderni fenotyyppi.",
+
+    dualBarrierTitle: "Kaksoisestemekanismi",
+    dualBarrierSubtitle: "BBB + suoliston este jakavat ZO-1:n, okludiinin, klaudiinit",
+    dualBarrierBody: "Veri-aivoeste ja suoliston epitheelinen este jakavat samat tiiviin liitoksen proteiinit: ZO-1, okludiini ja klaudiinit. Melatoniini suojaa molempia esteitä. EMF→melatoniini↓ luo samanaikaisen kaksoishaavottuvuuden: BBB avautuu (raskasmetallit pääsevät aivoihin) JA suoliston este heikkenee (LPS pääsee verenkiertoon → neurotulehdus). Tämä ei ole kaksi erillistä vaikutusta — se on yksi mekanismi (melatoniinin menetys) joka hyökkää kahta samasta molekulaarisesta työkalupakista rakennettua estettä vastaan.",
+
+    hormesisTitle: "BDNF-hormeesi: taajuus määrää suunnan",
+    hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — sama reitti, vastakkaiset lopputulokset",
+    hormesisBody: "BDNF (aivoista peräisin oleva neurotrofinen tekijä) on välttämätön neuroplastisuudelle, muistille ja neurogeneeisille. RF-EMF (835–2650 MHz) vähentää BDNF:ää hippokampuksessa dendriittien piikkien menetyksen ja kognitiivisen heikentymisen kera. Samalla ELF (50 Hz) KASVATTAA BDNF:ää ja edistää neurogeneesiä. Tämä on taajuusriippuvaista hormeesia saman VGCC-reitin kautta. TTFields-validaatio: 200 kHz välitaajuus kasvattaa NK-solujen sytotoksisuutta kun 50 Hz ELF suppressoi sitä. Lindgrenin χ-parametri ennustaa nämä suuntaerot — erilaiset resonanssiolosuhteet eri taajuuksilla tuottavat vastakkaisia biologisia lopputuloksia.",
 
     genSuscTitle: "Geneettinen herkkyyskartta: 15 geenin kalsiumprofiili",
     genSuscSub: "EMF-herkkyys ei ole yksi geeni — se on polygeeninen profiili kalsiumkaskadin viidellä funktionaalisella tasolla",
@@ -2366,6 +2390,16 @@ export default async function ModelPage({
             <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-4">
               <p className="text-sm leading-relaxed text-foreground-muted">{d.tripleLockSynergy}</p>
             </div>
+          </CollapsibleSection>
+
+          {/* Dual barrier principle */}
+          <CollapsibleSection id="dual-barrier" title={d.dualBarrierTitle} subtitle={d.dualBarrierSubtitle}>
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.dualBarrierBody}</p>
+          </CollapsibleSection>
+
+          {/* Hormesis */}
+          <CollapsibleSection id="hormesis" title={d.hormesisTitle} subtitle={d.hormesisSubtitle}>
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.hormesisBody}</p>
           </CollapsibleSection>
 
           {/* Genetic Susceptibility Map */}
