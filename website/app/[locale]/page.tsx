@@ -105,6 +105,12 @@ const COPY = {
     why2012Prediction: "Prediction: content restrictions (Australia, Norway) will NOT resolve the crisis because the mechanism is the hardware, not the content.",
     why2012Cta: "Technology exposure analysis",
 
+    fiveAnomaliesLabel: "THE LAYERED MODEL",
+    fiveAnomaliesTitle: "Five anomalies that only stacking explains",
+    fiveAnomaliesText: "Why do Americans eat less but weigh more? Why did the teen mental health crisis start in 2012 when social media existed since 2003? Why did T2D accelerate during COVID lockdowns? Why do developing countries follow the same health trajectory with a 15–30 year delay? Why are the Amish immune?",
+    fiveAnomaliesExplanation: "The layered exposure model answers all five: each technology generation adds EMF on top of existing layers. The power grid primes cells for sensitivity. WiFi adds a hidden 10 Hz ELF pulse. LED lighting opens the intermediate frequency channel. Smartphones bring continuous body-contact RF. When all layers combine, the cumulative Ca²⁺ load exceeds the CaMKII threshold — and biological systems begin failing.",
+    fiveAnomaliesCta: "Explore the layered model",
+
     pharmaLabel: "THE PHARMACOLOGICAL TEST",
     pharmaTitle: "Calcium blockers reduce the diseases BERM predicts",
     pharmaText: "If BERM's calcium mechanism is correct, then drugs that block calcium channels should reduce disease rates across BERM's cascades — even when prescribed for other conditions.",
@@ -220,6 +226,12 @@ const COPY = {
     why2012Prediction: "Ennuste: sisältörajoitukset (Australia, Norja) EIVÄT ratkaise kriisiä koska mekanismi on laitteisto, ei sisältö.",
     why2012Cta: "Teknologia-altistusanalyysi",
 
+    fiveAnomaliesLabel: "KERROSTUMAMALLI",
+    fiveAnomaliesTitle: "Viisi anomaliaa, jotka vain kerrostuminen selittää",
+    fiveAnomaliesText: "Miksi amerikkalaiset syövät vähemmän mutta painavat enemmän? Miksi teini-ikäisten mielenterveyskriisi alkoi 2012, vaikka sosiaalinen media on ollut olemassa vuodesta 2003? Miksi T2D kiihtyi COVID-sulkujen aikana? Miksi kehitysmaat seuraavat samaa terveystrajektoria 15–30 vuoden viiveellä? Miksi amishit ovat immuuneja?",
+    fiveAnomaliesExplanation: "Kerrostumamalli vastaa kaikkiin viiteen: jokainen teknologiasukupolvi lisää EMF:ää olemassa olevien kerrosten päälle. Sähköverkko primaa solut herkkyydelle. WiFi lisää piilotetun 10 Hz ELF-pulssin. LED-valaistus avaa välitaajuuskanavan. Älypuhelimet tuovat jatkuvan kehokontakti-RF:n. Kun kaikki kerrokset yhdistyvät, kumulatiivinen Ca²⁺-kuorma ylittää CaMKII-kynnyksen — ja biologiset järjestelmät alkavat pettää.",
+    fiveAnomaliesCta: "Tutustu kerrostumamalliin",
+
     pharmaLabel: "FARMAKOLOGINEN TESTI",
     pharmaTitle: "Kalsiumsalpaajat vähentävät BERM:n ennustamia sairauksia",
     pharmaText: "Jos BERM:n kalsiummekanismi on oikea, kalsiumkanavia salpaavien lääkkeiden pitäisi vähentää sairauksien esiintyvyyttä BERM:n kaskadeissa — vaikka ne on määrätty muihin tarkoituksiin.",
@@ -333,12 +345,14 @@ export default async function Home({
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/5" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-          <div className="relative z-10 flex flex-col justify-end h-full p-6 sm:p-10 lg:p-14 max-w-2xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold tracking-[-0.02em] leading-[1.12] mb-4 text-white drop-shadow-lg">
-              {d.heroTitle}
-            </h1>
-            <p className="text-base sm:text-lg leading-relaxed text-white/90 mb-3 drop-shadow">{d.heroDeck}</p>
-            <p className="text-sm sm:text-base leading-relaxed text-white/70">{d.heroContext}</p>
+          <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 sm:p-10 lg:p-14">
+            <div className="max-w-2xl">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold tracking-[-0.02em] leading-[1.12] mb-4 text-white drop-shadow-lg">
+                {d.heroTitle}
+              </h1>
+              <p className="text-base sm:text-lg leading-relaxed text-white/90 mb-3 drop-shadow">{d.heroDeck}</p>
+              <p className="text-sm sm:text-base leading-relaxed text-white/70">{d.heroContext}</p>
+            </div>
           </div>
         </div>
       </header>
@@ -462,6 +476,22 @@ export default async function Home({
             className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
           >
             {d.why2012Cta} <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
+
+      {/* ── 5A¾. Five Anomalies — Layered Model ── */}
+      <section className="pb-20">
+        <div className="max-w-4xl rounded-xl border border-purple-500/30 bg-purple-500/5 p-6 sm:p-8">
+          <p className="text-xs uppercase tracking-wider text-purple-500 font-semibold mb-2">{d.fiveAnomaliesLabel}</p>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.fiveAnomaliesTitle}</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.fiveAnomaliesText}</p>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-3xl">{d.fiveAnomaliesExplanation}</p>
+          <Link
+            href={`${prefix}/model#layered-exposure-model`}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-purple-500 transition-colors hover:text-purple-400"
+          >
+            {d.fiveAnomaliesCta} <ArrowRight size={14} />
           </Link>
         </div>
       </section>

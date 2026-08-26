@@ -971,6 +971,57 @@ const COPY = {
     techFalsification: "Falsification criterion",
     techLocked: "Locked: 2026-08-26",
     techStatus: "LOCKED — awaiting test",
+
+    layerTitle: "Layered exposure model predictions",
+    layerLead: "Predictions derived from the layered exposure model — five technology layers stacking superadditively through CaMKII threshold integration. These test whether the layer model's historical verification extends to prospective predictions.",
+    layerPredictions: [
+      {
+        id: "LAYER-1",
+        title: "Countries adopting LED later show later health acceleration",
+        description: "EU LED mandate 2009–2012 forced IF channel opening. Countries that resisted or delayed LED adoption should show later IF-specific health effects (metabolic, sleep). Testable with country-level LED market share timelines vs health data acceleration points.",
+        falsification: "No temporal correlation between LED adoption timing and health trend inflection points",
+      },
+      {
+        id: "LAYER-2",
+        title: "Content restrictions do NOT reduce teen mental health crisis",
+        description: "If 2012 inflection is DEVICE (EMF) not CONTENT (social media), then banning social media for teens while allowing smartphone use will not reduce depression/anxiety rates. Australia's social media ban (2024) is the direct test. Norway's age verification is a secondary test.",
+        falsification: "Australian social media ban produces >20% reduction in teen depression within 3 years",
+        critical: true,
+      },
+      {
+        id: "LAYER-3",
+        title: "Developing country epidemics follow electrification timeline, not GDP",
+        description: "For 20+ developing countries: T2D/obesity onset year correlates more strongly with electrification date (year electricity access exceeded 50%) than with GDP crossing any threshold. China T2D: 1.3% (1980) → 8.7% (2014) parallels electrification 60%→100%, not GDP per se.",
+        falsification: "GDP crossing correlates more strongly than electrification date across 20+ countries",
+      },
+      {
+        id: "LAYER-4",
+        title: "EV professional drivers show IF-specific health effects by 2035",
+        description: "Taxi/delivery drivers using EVs 8+ hours/day accumulate IF exposure (inverter 5–50 kHz in cabin). Predicted effects: metabolic, reproductive, cardiac — at higher rates than ICE vehicle drivers matched for sedentary time. Israeli patent US12379429 demonstrates industry awareness.",
+        falsification: "No difference between EV and ICE professional drivers after 10 years on any metabolic or reproductive metric",
+      },
+      {
+        id: "LAYER-5",
+        title: "Starlink coverage eliminates last EMF-free control populations by 2035",
+        description: "Tsimane, Hadza, and comparable populations will begin showing RF background exposure from LEO satellite constellations. Their health metrics will begin converging toward industrialized patterns within 10–15 years of exposure onset. IRREVERSIBLE loss of verification capacity.",
+        falsification: "Starlink-covered indigenous populations show no health metric changes within 15 years",
+      },
+      {
+        id: "LAYER-6",
+        title: "The next major epidemic is IF-specific",
+        description: "LED drivers + EV inverters + induction cookers + wireless charging all operate at 20–300 kHz. This is the fastest-growing and least-regulated EMF band. IF-specific health effects (distinct from ELF or RF) will emerge as a recognized category by 2035. TTFields (FDA-approved, 200 kHz) already demonstrates IF bioactivity.",
+        falsification: "No IF-specific health effects identified despite increasing IF exposure by 2035",
+      },
+      {
+        id: "LAYER-7",
+        title: "COVID lockdown T2D acceleration correlates with EMF-at-home intensity",
+        description: "Workers who were remote (high home EMF: WiFi+LED 24h/day, multiple devices, no commute recovery) show greater T2D acceleration than workers who continued commuting (mixed EMF environments with outdoor recovery time). Recovery_deficit is the distinguishing variable, not just sedentary time.",
+        falsification: "Remote workers show same or lower T2D acceleration than commuters after controlling for physical activity",
+      },
+    ],
+    layerFalsification: "Falsification criterion",
+    layerLocked: "Locked: 2026-08-26",
+    layerStatus: "LOCKED — awaiting test",
   },
   fi: {
     title: "Lukitut ennusteet",
@@ -1931,6 +1982,57 @@ const COPY = {
     techFalsification: "Kumoamisehto",
     techLocked: "Lukittu: 2026-08-26",
     techStatus: "LUKITTU — odottaa testiä",
+
+    layerTitle: "Kerrostumamallin ennusteet",
+    layerLead: "Ennusteet jotka perustuvat kerrostumamalliin — viisi teknologiakerrosta kerrostuvat superadditiivisesti CaMKII-kynnysintegraation kautta. Nämä testaavat ulottuuko kerrostumamallin historiallinen verifikaatio prospektiivisiin ennusteisiin.",
+    layerPredictions: [
+      {
+        id: "LAYER-1",
+        title: "Myöhemmin LED:n adoptoineet maat osoittavat myöhemmän terveyskiihdytyksen",
+        description: "EU:n LED-mandaatti 2009–2012 pakotti IF-kanavan avaamisen. Maat jotka vastustivat tai viivyttivät LED-adoptiota osoittavat myöhemmät IF-spesifiset terveysvaikutukset (metaboliset, uneen liittyvät).",
+        falsification: "Ei temporaalista korrelaatiota LED-adoptioajankohdan ja terveystrendien inflektiopisteiden välillä",
+      },
+      {
+        id: "LAYER-2",
+        title: "Sisältörajoitukset EIVÄT vähennä nuorten mielenterveyskriisiä",
+        description: "Jos 2012-inflektio on LAITE (EMF) eikä SISÄLTÖ (sosiaalinen media), somen kieltäminen nuorilta älypuhelimen käytön salliessa ei vähennä masennus-/ahdistusasteita. Australian somekielto (2024) on suora testi.",
+        falsification: "Australian somekielto tuottaa >20 % vähennyksen nuorten masennuksessa 3 vuodessa",
+        critical: true,
+      },
+      {
+        id: "LAYER-3",
+        title: "Kehitysmaiden epidemiat seuraavat sähköistysaikataulua, eivät BKT:ta",
+        description: "20+ kehitysmaalle: T2D/obesiteetin alkamisvuosi korreloi vahvemmin sähköistyspäivämäärän (vuosi jolloin sähkön saatavuus ylitti 50 %) kuin BKT:n minkään kynnyksen ylityksen kanssa.",
+        falsification: "BKT:n ylitys korreloi vahvemmin kuin sähköistyspäivämäärä 20+ maassa",
+      },
+      {
+        id: "LAYER-4",
+        title: "Ammattikuljettajat sähköautoilla osoittavat IF-spesifisiä terveysvaikutuksia vuoteen 2035 mennessä",
+        description: "Taksi-/jakelukuljettajat jotka käyttävät sähköautoja 8+ tuntia/päivä kumuloivat IF-altistusta (invertteri 5–50 kHz hytissä). Ennustetut vaikutukset: metaboliset, reproduktiiviset, kardiaaliset — korkeammalla asteella kuin polttomoottoriautojen kuljettajat samalla istumatyöajalla.",
+        falsification: "Ei eroa sähköauto- ja polttomoottoriauton ammattikuljettajien välillä 10 vuoden jälkeen",
+      },
+      {
+        id: "LAYER-5",
+        title: "Starlink-kattavuus eliminoi viimeiset EMF-vapaat kontrollipopulaatiot vuoteen 2035",
+        description: "Tsimane, hadza ja vertailupopulaatiot alkavat osoittaa RF-tausta-altistusta LEO-satelliittikonstellaatioista. Heidän terveysmetriikkansa alkavat konvergoida teollistuneita kaavoja kohti 10–15 vuodessa altistuksen alusta.",
+        falsification: "Starlink-katetuissa alkuperäispopulaatioissa ei terveysmetriikkamuutoksia 15 vuodessa",
+      },
+      {
+        id: "LAYER-6",
+        title: "Seuraava suuri epidemia on IF-spesifinen",
+        description: "LED-ajurit + sähköautojen invertterit + induktioliedet + langaton lataus toimivat kaikki 20–300 kHz:llä. Tämä on nopeimmin kasvava ja vähiten säännelty EMF-kaista. IF-spesifiset terveysvaikutukset tunnistetaan omaksi kategoriakseen vuoteen 2035 mennessä.",
+        falsification: "Ei IF-spesifisiä terveysvaikutuksia tunnistettu IF-altistuksen kasvusta huolimatta vuoteen 2035",
+      },
+      {
+        id: "LAYER-7",
+        title: "COVID-lockdownin T2D-kiihdytys korreloi kotona-EMF-intensiteetin kanssa",
+        description: "Etätyöntekijät (korkea koti-EMF: WiFi+LED 24h/pv, useita laitteita, ei työmatkapalautumista) osoittavat suurempaa T2D-kiihdytystä kuin työmatkailevat työntekijät (vaihtelevat EMF-ympäristöt ulkoilmapalautumisajalla).",
+        falsification: "Etätyöntekijöillä sama tai matalampi T2D-kiihdytys kuin työmatkailevilla fyysisen aktiivisuuden kontrolloinnin jälkeen",
+      },
+    ],
+    layerFalsification: "Kumoamisehto",
+    layerLocked: "Lukittu: 2026-08-26",
+    layerStatus: "LUKITTU — odottaa testiä",
   },
 } as const;
 
@@ -2678,6 +2780,39 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
                 <p><span className="font-semibold">{d.techTimeline}:</span> {tp.timeline}</p>
                 <p><span className="font-semibold">{d.techFalsification}:</span> {tp.falsification}</p>
                 <p className="font-mono-num">{d.techLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Layered exposure model predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.layerTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.layerLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.layerPredictions.map((lp) => (
+            <article key={lp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{lp.id}</span>
+                    <h3 className="font-semibold">{lp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.layerStatus}
+                    </span>
+                    {"critical" in lp && lp.critical && (
+                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 font-semibold">
+                        CRITICAL
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{lp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.layerFalsification}:</span> {lp.falsification}</p>
+                <p className="font-mono-num">{d.layerLocked}</p>
               </div>
             </article>
           ))}

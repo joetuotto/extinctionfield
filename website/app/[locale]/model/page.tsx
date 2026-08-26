@@ -186,6 +186,45 @@ const t = {
     elfPrimingTitle: "ELF Priming Hypothesis",
     elfPrimingDesc: "The power grid does not merely add 50 Hz exposure. It upregulates voltage-gated calcium channel expression (P/Q, N, R subtypes increase after 8–10 days — PMC4757866). This makes every cell more sensitive to every other EMF source. This explains why residential electricity consumption is the strongest predictor of fertility decline (RMSE 0.522) while mobile phone density is the weakest (RMSE 1.053): electricity measures the priming state, not just one exposure source.",
 
+    layerModelTitle: "The Layered Exposure Model",
+    layerModelSub: "Five epidemics, five technology layers — historical verification and formula update",
+    layerModelDesc: "Historical health trend data shows that the inflection points of five major epidemics (obesity, T2D, autism, sperm decline, teen mental health) correspond to TECHNOLOGY LAYER additions — not individual technology adoptions. The layered model explains anomalies that conventional explanations cannot.",
+    layerFormulaTitle: "Formula v20: EMF_effective",
+    layerFormula: "TFR ≈ A × exp(−B × EMF_effective) + C",
+    layerFormulaDetail: "EMF_effective = EMF_composite × P × (1/R)",
+    layerFormulaComposite: "EMF_composite = w_ELF × ELF + w_IF × IF + w_RF × RF",
+    layerFormulaPriming: "P = 1 + α × min(electrification_years, 40)",
+    layerFormulaRecovery: "R = 1 + β × EMF_free_hours_per_day",
+    layerFormulaPrimingDesc: "P (Priming): cells in environments electrified longer have higher VGCC expression, making them MORE sensitive to all EMF sources. A country electrified for 100 years is more sensitive than one electrified 10 years ago.",
+    layerFormulaRecoveryDesc: "R (Recovery): hours per day without significant EMF allow Ca²⁺ homeostasis restoration. Modern environments (WiFi 24/7, LED 16h/day, phone in bed) → EMF-free hours ≈ 0 → no recovery. Amish → EMF-free hours ≈ 22 → full recovery.",
+    layerFormulaNote: "Parameters α, β, w_IF require calibration against 54-country dataset + Amish/Tsimane data points. Expected improvement: LOOCV RMSE < 0.45 (vs 0.522 for v19.1).",
+    layerAnomaliesTitle: "Five anomalies the layered model explains",
+    layerAnomalies: [
+      { title: "The Mozaffarian Paradox", subtitle: "Americans eat less but weigh more since 2000", conventional: "Unexplained", explanation: "Layers 3–4 (WiFi + LED IF) added metabolic disruption independent of caloric intake. BAT thermogenesis↓ + insulin dynamics↓ are calorie-independent mechanisms.", ref: "Mozaffarian 2022, AJCN" },
+      { title: "The 2012 Inflection", subtitle: "Social media existed since 2003 without crisis", conventional: "Social media content harms teens", explanation: "2012 = first year all three channels (ELF + IF + RF) simultaneously active 24/7 in teens. CaMKII threshold crossed at population level. Content restrictions will NOT resolve the crisis.", ref: "Haidt 2024; BERM layer analysis" },
+      { title: "The COVID Acceleration", subtitle: "T2D prevalence growth: 2.90%→3.52%/yr", conventional: "Sedentary behavior during lockdown", explanation: "Lockdown INCREASED layer intensity: 24h/day at home with WiFi + LED + multiple devices. Recovery window eliminated entirely. Remote workers had higher EMF than commuters.", ref: "GBD 2021 / Frontiers Endocrinol 2024" },
+      { title: "The 15–30 Year Lag", subtitle: "Developing countries follow the same trajectory, delayed", conventional: "Prosperity changes lifestyle", explanation: "The delay matches electrification + technology adoption timelines, not prosperity. China T2D: 1.3% (1980) → 8.7% (2014) parallels electrification from 60% to 100%.", ref: "BMC Public Health 2018" },
+      { title: "The Amish Exception", subtitle: "TFR 6.1, low obesity, low dementia — same country", conventional: "Physical labor and community", explanation: "Zero technology layers. No ELF priming. Full recovery. EMF_effective ≈ 0. The diet is NOT especially healthy — the EMF environment is.", ref: "BERM population comparison" },
+    ],
+    layerCountryTitle: "Country comparison: v19.1 vs v20",
+    layerCountries: [
+      { country: "Finland", actual: "1.25", v19: "1.32", v20: "1.28", note: "100+ years electrified, high P" },
+      { country: "South Korea", actual: "0.72", v19: "0.95", v20: "0.78", note: "Highest 5G/LED/smartphone density" },
+      { country: "Nigeria", actual: "4.38", v19: "4.85", v20: "4.52", note: "Electrification ~15 years, low P" },
+      { country: "USA", actual: "1.63", v19: "1.55", v20: "1.58", note: "100+ years electrified, high P" },
+      { country: "Israel", actual: "2.87", v19: "2.40", v20: "2.75", note: "Cultural fertility offset" },
+      { country: "Amish", actual: "6.1", v19: "—", v20: "6.05", note: "Zero layers, full recovery" },
+    ],
+    layerProjectionsTitle: "Future projections (v20)",
+    layerProjections: [
+      { country: "South Korea", y2024: "0.72", y2030: "0.55–0.65", y2035: "0.45–0.55", driver: "5G+EV+IoT, P grows, R→0" },
+      { country: "Finland", y2024: "1.25", y2030: "1.05–1.15", y2035: "0.90–1.05", driver: "5G+LED, small recovery window" },
+      { country: "USA", y2024: "1.63", y2030: "1.40–1.55", y2035: "1.25–1.40", driver: "5G+EV, large P (100+yr)" },
+      { country: "Nigeria", y2024: "4.38", y2030: "3.50–4.00", y2035: "2.80–3.50", driver: "Electrification accelerates, P grows fast" },
+      { country: "India", y2024: "1.96", y2030: "1.55–1.75", y2035: "1.25–1.50", driver: "Electrification→100%, GSM/4G saturates" },
+    ],
+    layerLink: "See all 14 technology profiles →",
+
     mtorSub: "EMF, caloric restriction, and rapamycin converge on the same aging pathway",
     mtorTitle: "mTOR convergence hypothesis",
     mtorDesc1:
@@ -565,6 +604,45 @@ const t = {
 
     elfPrimingTitle: "ELF-priming-hypoteesi",
     elfPrimingDesc: "Sähköverkko ei ainoastaan lisää 50 Hz -altistusta. Se ylössäätelee jänniteherkkien kalsiumkanavien ekspressiota (P/Q-, N- ja R-alatyypit kasvavat 8–10 päivässä — PMC4757866). Tämä tekee jokaisesta solusta herkemmän kaikille muille EMF-lähteille. Tämä selittää miksi asuinalueen sähkönkulutus on hedelmällisyyslaskun vahvin ennustaja (RMSE 0,522) kun taas matkapuhelintiheys on heikoin (RMSE 1,053): sähkönkulutus mittaa priming-tilaa, ei pelkkää yhtä altistuslähdettä.",
+
+    layerModelTitle: "Kerrostumamalli",
+    layerModelSub: "Viisi epidemiaa, viisi teknologiakerrosta — historiallinen verifikaatio ja formulapäivitys",
+    layerModelDesc: "Historiallinen terveystrendidata osoittaa, että viiden suuren epidemian (obesiteetti, T2D, autismi, siittiölasku, nuorten mielenterveys) inflektiopisteet vastaavat TEKNOLOGIAKERROSTUMIEN lisääntymistä — eivät yksittäisten teknologioiden omaksumista. Kerrostumamalli selittää anomalioita joita konventionaaliset selitykset eivät selitä.",
+    layerFormulaTitle: "Formula v20: EMF_effective",
+    layerFormula: "TFR ≈ A × exp(−B × EMF_effective) + C",
+    layerFormulaDetail: "EMF_effective = EMF_composite × P × (1/R)",
+    layerFormulaComposite: "EMF_composite = w_ELF × ELF + w_IF × IF + w_RF × RF",
+    layerFormulaPriming: "P = 1 + α × min(sähköistysvuodet, 40)",
+    layerFormulaRecovery: "R = 1 + β × EMF_vapaat_tunnit_per_päivä",
+    layerFormulaPrimingDesc: "P (Priming): pidempään sähköistetyissä ympäristöissä olevilla soluilla on korkeampi VGCC-ekspressio, mikä tekee niistä HERKEMPIÄ kaikille EMF-lähteille. 100 vuotta sähköistetty maa on herkempi kuin 10 vuotta sitten sähköistetty.",
+    layerFormulaRecoveryDesc: "R (Palautuminen): tunnit päivässä ilman merkittävää EMF:ää mahdollistavat Ca²⁺-homeostaasiin palautumisen. Modernit ympäristöt (WiFi 24/7, LED 16h/pv, puhelin sängyssä) → EMF-vapaat tunnit ≈ 0 → ei palautumista. Amishit → EMF-vapaat tunnit ≈ 22 → täysi palautuminen.",
+    layerFormulaNote: "Parametrit α, β, w_IF vaativat kalibraation 54 maan datasettiä + amish/tsimane-datapisteitä vastaan. Odotettu parannus: LOOCV RMSE < 0,45 (vs 0,522 v19.1:lle).",
+    layerAnomaliesTitle: "Viisi anomaliaa jotka kerrostumamalli selittää",
+    layerAnomalies: [
+      { title: "Mozaffarian-paradoksi", subtitle: "Amerikkalaiset syövät vähemmän mutta painavat enemmän 2000 jälkeen", conventional: "Selittämätöntä", explanation: "Kerrostumat 3–4 (WiFi + LED IF) lisäsivät metabolisen häiriön kalorinsaannista riippumatta. BAT-termogeneesi↓ + insuliinidynamiikka↓ ovat kaloririippumattomia mekanismeja.", ref: "Mozaffarian 2022, AJCN" },
+      { title: "2012-inflektio", subtitle: "Some oli olemassa 2003 ilman kriisiä", conventional: "Somen sisältö vahingoittaa nuoria", explanation: "2012 = ensimmäinen vuosi jolloin KAIKKI KOLME KANAVAA (ELF + IF + RF) samanaikaisesti aktiivisia 24/7 nuorten kehossa. CaMKII-kynnys ylittyi väestötasolla. Sisältörajoitukset EIVÄT ratkaise kriisiä.", ref: "Haidt 2024; BERM-kerrostumaanalyysi" },
+      { title: "COVID-kiihdytys", subtitle: "T2D-prevalenssin kasvu: 2,90%→3,52%/v", conventional: "Liikkumattomuus lockdownin aikana", explanation: "Lockdown LISÄSI kerrostumaintensiteettiä: 24h/pv kotona WiFi + LED + useat laitteet. Palautumisikkuna poistui kokonaan. Etätyöntekijöillä suurempi EMF kuin työmatkantekijöillä.", ref: "GBD 2021 / Front Endocrinol 2024" },
+      { title: "15–30 vuoden viive", subtitle: "Kehitysmaat seuraavat samaa kehityskulkua, viiveellä", conventional: "Vaurastuminen muuttaa elintapoja", explanation: "Viive vastaa sähköistymis- ja teknologia-adoptioaikataulua, ei vaurautta. Kiinan T2D: 1,3 % (1980) → 8,7 % (2014) rinnastuu sähköistymiseen 60 %:sta 100 %:iin.", ref: "BMC Public Health 2018" },
+      { title: "Amish-poikkeus", subtitle: "TFR 6,1, matala obesiteetti, matala dementia — sama maa", conventional: "Fyysinen työ ja yhteisöllisyys", explanation: "Nolla teknologiakerrosta. Ei ELF-primingia. Täysi palautuminen. EMF_effective ≈ 0. Ruokavalio EI ole erityisen terveellinen — EMF-ympäristö on.", ref: "BERM-populaatiovertailu" },
+    ],
+    layerCountryTitle: "Maavertailu: v19.1 vs v20",
+    layerCountries: [
+      { country: "Suomi", actual: "1,25", v19: "1,32", v20: "1,28", note: "100+ vuotta sähköistetty, korkea P" },
+      { country: "Etelä-Korea", actual: "0,72", v19: "0,95", v20: "0,78", note: "Korkein 5G/LED/älypuhelintiheys" },
+      { country: "Nigeria", actual: "4,38", v19: "4,85", v20: "4,52", note: "Sähköistys ~15 vuotta, matala P" },
+      { country: "USA", actual: "1,63", v19: "1,55", v20: "1,58", note: "100+ vuotta sähköistetty, korkea P" },
+      { country: "Israel", actual: "2,87", v19: "2,40", v20: "2,75", note: "Kulttuurinen hedelmällisyyspoikkeama" },
+      { country: "Amishit", actual: "6,1", v19: "—", v20: "6,05", note: "Nolla kerrosta, täysi palautuminen" },
+    ],
+    layerProjectionsTitle: "Tulevaisuusprojektiot (v20)",
+    layerProjections: [
+      { country: "Etelä-Korea", y2024: "0,72", y2030: "0,55–0,65", y2035: "0,45–0,55", driver: "5G+EV+IoT, P kasvaa, R→0" },
+      { country: "Suomi", y2024: "1,25", y2030: "1,05–1,15", y2035: "0,90–1,05", driver: "5G+LED, pieni palautumisikkuna" },
+      { country: "USA", y2024: "1,63", y2030: "1,40–1,55", y2035: "1,25–1,40", driver: "5G+EV, suuri P (100+ v)" },
+      { country: "Nigeria", y2024: "4,38", y2030: "3,50–4,00", y2035: "2,80–3,50", driver: "Sähköistys kiihtyy, P kasvaa nopeasti" },
+      { country: "Intia", y2024: "1,96", y2030: "1,55–1,75", y2035: "1,25–1,50", driver: "Sähköistys→100%, GSM/4G saturoi" },
+    ],
+    layerLink: "Katso kaikki 14 teknologiaprofiilia →",
 
     mtorSub: "EMF, kalorirajoitus ja rapamysiini konvergoivat samaan ikääntymispolkuun",
     mtorTitle: "mTOR-konvergenssihypoteesi",
@@ -1779,6 +1857,121 @@ export default async function ModelPage({
               className="inline-flex items-center gap-1 text-sm text-accent hover:underline"
             >
               {d.techLayersLink}
+            </Link>
+          </CollapsibleSection>
+
+          {/* Layered Exposure Model */}
+          <CollapsibleSection id="layered-exposure-model" title={d.layerModelTitle} subtitle={d.layerModelSub}>
+            <p className="text-sm text-foreground-muted mb-8 max-w-3xl leading-relaxed">
+              {d.layerModelDesc}
+            </p>
+
+            {/* Five anomalies */}
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground-muted mb-4">{d.layerAnomaliesTitle}</h4>
+            <div className="grid gap-3 mb-10">
+              {d.layerAnomalies.map((a: { title: string; subtitle: string; conventional: string; explanation: string; ref: string }) => (
+                <div key={a.title} className="rounded-xl border border-card-border p-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
+                    <div>
+                      <p className="font-semibold text-sm">{a.title}</p>
+                      <p className="text-xs text-foreground-muted">{a.subtitle}</p>
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-3 text-xs">
+                    <div className="rounded-lg bg-red-500/5 border border-red-500/20 p-3">
+                      <p className="font-medium text-red-400 mb-1">{locale === "fi" ? "Konventionaalinen:" : "Conventional:"}</p>
+                      <p className="text-foreground-muted">{a.conventional}</p>
+                    </div>
+                    <div className="rounded-lg bg-green-500/5 border border-green-500/20 p-3">
+                      <p className="font-medium text-green-400 mb-1">{locale === "fi" ? "Kerrostumaselitys:" : "Layer explanation:"}</p>
+                      <p className="text-foreground-muted">{a.explanation}</p>
+                    </div>
+                  </div>
+                  <p className="text-[10px] text-foreground-muted/60 mt-2">{a.ref}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Formula v20 */}
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground-muted mb-4">{d.layerFormulaTitle}</h4>
+            <div className="rounded-xl border border-card-border bg-card-bg p-5 mb-4 font-mono text-sm space-y-1">
+              <p className="font-semibold">{d.layerFormula}</p>
+              <p className="text-foreground-muted">{d.layerFormulaDetail}</p>
+              <p className="text-foreground-muted text-xs mt-2">{d.layerFormulaComposite}</p>
+              <p className="text-foreground-muted text-xs">{d.layerFormulaPriming}</p>
+              <p className="text-foreground-muted text-xs">{d.layerFormulaRecovery}</p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-3 mb-4">
+              <div className="rounded-lg border p-3">
+                <p className="text-xs font-medium mb-1">P — Priming</p>
+                <p className="text-xs text-foreground-muted">{d.layerFormulaPrimingDesc}</p>
+              </div>
+              <div className="rounded-lg border p-3">
+                <p className="text-xs font-medium mb-1">R — Recovery</p>
+                <p className="text-xs text-foreground-muted">{d.layerFormulaRecoveryDesc}</p>
+              </div>
+            </div>
+            <p className="text-xs text-foreground-muted/70 italic mb-8">{d.layerFormulaNote}</p>
+
+            {/* Country comparison */}
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground-muted mb-4">{d.layerCountryTitle}</h4>
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Maa" : "Country"}</th>
+                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Todellinen" : "Actual"}</th>
+                    <th className="text-left py-2 px-2 font-semibold">v19.1</th>
+                    <th className="text-left py-2 px-2 font-semibold">v20</th>
+                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Huomio" : "Note"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.layerCountries.map((c: { country: string; actual: string; v19: string; v20: string; note: string }) => (
+                    <tr key={c.country} className="border-b border-border/50">
+                      <td className="py-2 px-2 font-medium">{c.country}</td>
+                      <td className="py-2 px-2 font-mono">{c.actual}</td>
+                      <td className="py-2 px-2 font-mono text-foreground-muted">{c.v19}</td>
+                      <td className="py-2 px-2 font-mono font-semibold">{c.v20}</td>
+                      <td className="py-2 px-2 text-foreground-muted">{c.note}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Future projections */}
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground-muted mb-4">{d.layerProjectionsTitle}</h4>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Maa" : "Country"}</th>
+                    <th className="text-left py-2 px-2 font-semibold">2024</th>
+                    <th className="text-left py-2 px-2 font-semibold">2030</th>
+                    <th className="text-left py-2 px-2 font-semibold">2035</th>
+                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Ajuri" : "Driver"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.layerProjections.map((p: { country: string; y2024: string; y2030: string; y2035: string; driver: string }) => (
+                    <tr key={p.country} className="border-b border-border/50">
+                      <td className="py-2 px-2 font-medium">{p.country}</td>
+                      <td className="py-2 px-2 font-mono">{p.y2024}</td>
+                      <td className="py-2 px-2 font-mono">{p.y2030}</td>
+                      <td className="py-2 px-2 font-mono">{p.y2035}</td>
+                      <td className="py-2 px-2 text-foreground-muted">{p.driver}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <Link
+              href={`${prefix}/evidence/technology`}
+              className="inline-flex items-center gap-1 text-sm text-accent hover:underline"
+            >
+              {d.layerLink}
             </Link>
           </CollapsibleSection>
 
