@@ -248,6 +248,15 @@ const t = {
     cacna1cPred2: "GEN-2: A/A genotype individuals show stronger EMF responses than G/G in controlled exposure studies",
     cacna1cRef: "Sousouri 2025 (ETH) · PMC4898738 · PMC3577650",
 
+    neonatalQTitle: "Neonatal Q-Factor: The Resonance Threshold",
+    neonatalQSub: "Why the neonatal brain is an undamped resonator — GABA excitatory via NKCC1/KCC2 switch",
+    neonatalQDesc: "In adult neurons, GABA is inhibitory — it provides the damping (γ > 0) that keeps Ca²⁺ oscillations bounded. In neonates, the NKCC1/KCC2 chloride transporter ratio is reversed: NKCC1 dominates, chloride is high intracellularly, and GABA is excitatory. This means γ < 0 — the system has negative damping, and the quality factor Q → ∞. The neonatal brain is effectively an undamped resonator: any EMF-induced Ca²⁺ oscillation, however small, rings without attenuation. This is why the 2–4 month age window has peak SIDS risk — the KCC2 switch has not yet introduced damping.",
+    neonatalQFormulaLabel: "Neonatal Q-factor decay:",
+    neonatalQFormula: "Q_neonatal(age) = Q₀ / (1 + (age / τ_KCC2)²)",
+    neonatalQFormulaDesc: "Q₀ = quality factor at birth (maximal, ~undamped). τ_KCC2 ≈ 2–4 weeks = NKCC1→KCC2 switch time constant. At birth: Q ≈ Q₀. At 2–4 months: Q declining but dangerously high. At 12 months: Q approaches adult levels (~1–5).",
+    neonatalQVerification: "Bumetanide (NKCC1 blocker) → restores inhibitory GABA → terminates neonatal seizures = introduces damping. KCNQ2 mutations → neonatal seizures that spontaneously remit at 3–6 months = KCC2 maturation timeline.",
+    neonatalQRef: "Neonatal seizure review 2021 · Bumetanide NKCC1 2015 · NKCC1/KCC2 Bookshelf 2020",
+
     genSuscTitle: "Genetic Susceptibility Map: The 15-Gene Calcium Profile",
     genSuscSub: "EMF sensitivity is not one gene — it is a polygenic profile across five functional tiers of the calcium cascade",
     genSuscDesc: "BERM identifies 15 genes whose polymorphisms modulate individual EMF sensitivity. They divide into five functional tiers: INFLUX (5 CACNA genes controlling Ca²⁺ entry), MODULATION (CACNA2D1 controlling channel density), INTEGRATION (CAMK2A/B at the convergence point), EXTRUSION (3 genes controlling Ca²⁺ removal), and SIGNALING (4 genes modulating downstream response). Each gene's disease associations match BERM cascade predictions.",
@@ -742,6 +751,15 @@ const t = {
     cacna1cPred1: "GEN-1: Populaatiot, joilla korkeampi CACNA1C A-alleelitaajuus, osoittavat jyrkempää terveyslaskua per EMF-yksikkö",
     cacna1cPred2: "GEN-2: A/A-genotyypin yksilöt osoittavat voimakkaampia EMF-vasteita kuin G/G kontrolloiduissa altistustutkimuksissa",
     cacna1cRef: "Sousouri 2025 (ETH) · PMC4898738 · PMC3577650",
+
+    neonatalQTitle: "Neonataalinen Q-tekijä: resonanssikynnys",
+    neonatalQSub: "Miksi vastasyntyneen aivot ovat vaimentamaton resonaattori — GABA eksitatorinen NKCC1/KCC2-kytkimen kautta",
+    neonatalQDesc: "Aikuisen neuroneissa GABA on inhibitorinen — se tarjoaa vaimennuksen (γ > 0) joka pitää Ca²⁺-oskillaatiot rajattuina. Vastasyntyneillä NKCC1/KCC2-kloridikuljettajasuhde on kääntynyt: NKCC1 dominoi, kloridi on korkea solunsisäisesti ja GABA on eksitatorinen. Tämä tarkoittaa γ < 0 — järjestelmällä on negatiivinen vaimennus ja laatutekijä Q → ∞. Vastasyntyneen aivot ovat käytännössä vaimentamaton resonaattori: mikä tahansa EMF:n aiheuttama Ca²⁺-oskillaatio, kuinka pieni tahansa, soi ilman vaimenemista. Tästä syystä 2–4 kuukauden ikäikkuna on SIDS:n huippuriskikausi — KCC2-kytkin ei ole vielä tuonut vaimennusta.",
+    neonatalQFormulaLabel: "Neonataalinen Q-tekijän vaimeneminen:",
+    neonatalQFormula: "Q_neonatal(ikä) = Q₀ / (1 + (ikä / τ_KCC2)²)",
+    neonatalQFormulaDesc: "Q₀ = laatutekijä syntyessä (maksimaalinen, ~vaimentamaton). τ_KCC2 ≈ 2–4 viikkoa = NKCC1→KCC2-kytkimen aikavakio. Syntyessä: Q ≈ Q₀. 2–4 kuukauden iässä: Q laskeva mutta vaarallisen korkea. 12 kuukauden iässä: Q lähestyy aikuistasoja (~1–5).",
+    neonatalQVerification: "Bumetanidi (NKCC1-salpaaja) → palauttaa inhibitorisen GABAn → lopettaa neonataalit kohtaukset = tuo vaimennuksen. KCNQ2-mutaatiot → neonataalit kohtaukset jotka remittoituvat spontaanisti 3–6 kk iässä = KCC2:n kypsymisaikataulu.",
+    neonatalQRef: "Neonatal seizure review 2021 · Bumetanide NKCC1 2015 · NKCC1/KCC2 Bookshelf 2020",
 
     genSuscTitle: "Geneettinen herkkyyskartta: 15 geenin kalsiumprofiili",
     genSuscSub: "EMF-herkkyys ei ole yksi geeni — se on polygeeninen profiili kalsiumkaskadin viidellä funktionaalisella tasolla",
@@ -2169,6 +2187,22 @@ export default async function ModelPage({
               <p className="text-xs font-mono text-amber-500">{d.cacna1cPred2}</p>
             </div>
             <p className="text-[10px] text-foreground-muted/60">{d.cacna1cRef}</p>
+          </CollapsibleSection>
+
+          {/* Neonatal Q-Factor */}
+          <CollapsibleSection id="neonatal-q-factor" title={d.neonatalQTitle} subtitle={d.neonatalQSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.neonatalQDesc}
+            </p>
+            <div className="rounded-lg border border-accent/20 bg-accent/5 p-4 mb-4 font-mono text-sm">
+              <p className="text-xs font-medium mb-2">{d.neonatalQFormulaLabel}</p>
+              <p className="font-mono text-sm font-semibold mb-2">{d.neonatalQFormula}</p>
+              <p className="text-xs text-foreground-muted">{d.neonatalQFormulaDesc}</p>
+            </div>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-4">
+              {d.neonatalQVerification}
+            </p>
+            <p className="text-[10px] text-foreground-muted/60">{d.neonatalQRef}</p>
           </CollapsibleSection>
 
           {/* Genetic Susceptibility Map */}

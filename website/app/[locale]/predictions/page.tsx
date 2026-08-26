@@ -574,6 +574,57 @@ const COPY = {
     sidsFalsification: "Falsification criterion",
     sidsLocked: "Locked: 2026-08-26",
     sidsStatus: "LOCKED — awaiting test",
+    sidsResTitle: "SIDS resonance model predictions",
+    sidsResLead: "Predictions derived from the Q-factor resonance model: the neonatal brain as undamped oscillator (GABA excitatory via NKCC1>KCC2), with SIDS as the fatal endpoint of a neurodevelopmental impact spectrum.",
+    sidsResNote: "These predictions address a sensitive topic. BERM offers a mechanistic hypothesis — not a proven explanation. Known protective measures (supine sleeping, avoiding tobacco, breastfeeding) remain the most important interventions.",
+    sidsResPredictions: [
+      {
+        id: "SIDS-RESONANCE-1",
+        title: "Q-factor predicts SIDS risk better than age alone",
+        description: "If the resonance model is correct, SIDS risk should correlate with Q_neonatal(age) = Q₀/(1+(age/τ_KCC2)²) better than with age alone. The Q-factor declines as KCC2 matures and GABA transitions from excitatory to inhibitory. Test: fit SIDS incidence-by-age curves to Q_neonatal(age) vs. linear/quadratic age models. Prediction: Q-factor model fits SIDS age distribution better (lower AIC) than purely age-based models.",
+        timeline: "Testable immediately (existing SIDS age-distribution datasets)",
+        falsification: "Q-factor model fits no better than simple age-based models for SIDS incidence distribution",
+      },
+      {
+        id: "SIDS-RESONANCE-2",
+        title: "Bumetanide prophylaxis reduces apnea in high-risk neonates",
+        description: "Bumetanide blocks NKCC1, restoring inhibitory GABA and introducing damping (reducing Q). If SIDS results from resonance failure in an undamped system, bumetanide should reduce apnea and bradycardia episodes in high-risk neonates (those with ion channel variants or prior apparent life-threatening events). Test: randomized trial of low-dose bumetanide in NICU infants with recurrent apnea. Prediction: bumetanide reduces apnea/bradycardia episode frequency.",
+        timeline: "Testable within 12–18 months (NICU pharmacological trial)",
+        falsification: "No reduction in apnea/bradycardia episodes with bumetanide in high-risk neonates",
+      },
+      {
+        id: "SIDS-RESONANCE-3",
+        title: "Neonatal EEG shows higher coherence at resonant frequencies in SIDS-risk infants",
+        description: "An undamped resonator (Q→∞) concentrates energy at its natural frequency. Neonatal EEG in high-risk infants should show narrower spectral peaks and higher inter-channel coherence in delta/theta bands compared to low-risk controls. This spectral signature should diminish as KCC2 matures (3–6 months). Test: serial EEG in SIDS-risk vs. control infants from birth to 6 months. Prediction: high-risk infants show elevated spectral coherence that normalizes on the KCC2 maturation timeline.",
+        timeline: "Testable within 12 months (neonatal EEG longitudinal study)",
+        falsification: "No difference in EEG spectral coherence between high-risk and control neonates, or coherence does not change on the predicted KCC2 timeline",
+      },
+      {
+        id: "SIDS-RESONANCE-4",
+        title: "Co-sleeping cultures have low SIDS despite high ambient EMF",
+        description: "The three-protections model predicts that cultures practicing co-sleeping (no monitor), breastfeeding (>90%), and continuous skin contact should maintain low SIDS rates regardless of ambient EMF level. Test: compare SIDS rates across cultures stratified by (1) ambient EMF density and (2) co-sleeping/breastfeeding/skin-contact practices. Prediction: SIDS rate correlates with monitor use and formula feeding, not with ambient EMF density, after controlling for the three protections.",
+        timeline: "Testable immediately (ecological analysis of existing cross-national SIDS data)",
+        falsification: "SIDS rate correlates with ambient EMF density regardless of co-sleeping/breastfeeding/skin-contact practices",
+      },
+      {
+        id: "SIDS-RESONANCE-5",
+        title: "NKCC1/KCC2 ratio at time of death predicts SIDS vs. non-SIDS infant death",
+        description: "If the resonance model is correct, SIDS victims should have higher NKCC1/KCC2 ratios (less mature chloride transporter switch → higher Q → more excitatory GABA) compared to age-matched infants who died of non-SIDS causes. Test: immunohistochemistry for NKCC1 and KCC2 in brainstem tissue from SIDS vs. non-SIDS infant post-mortem samples. Prediction: SIDS victims show elevated NKCC1/KCC2 ratio compared to age-matched controls.",
+        timeline: "Testable with existing biobanked tissue (retrospective immunohistochemistry)",
+        falsification: "NKCC1/KCC2 ratio in SIDS victims equals that in age-matched non-SIDS infant deaths",
+      },
+      {
+        id: "SIDS-SPECTRUM-1",
+        title: "Prenatal EMF exposure predicts neurodevelopmental outcomes on a dose-response curve",
+        description: "The resonance spectrum model predicts a continuous dose-response relationship between prenatal/neonatal EMF exposure and neurodevelopmental outcomes: highest exposure → SIDS risk, moderate → developmental delay, low → subtle motor/cognitive differences. Test: prospective birth cohort with personal EMF dosimetry (phone use, WiFi proximity, monitor use) followed to 36 months with standardized developmental assessment. Prediction: EMF exposure shows graded dose-response with developmental outcomes, with fine motor (OR ≥ 2.5) and problem-solving (OR ≥ 3.0) most affected, consistent with the prospective cohort finding (OR 2.74 fine motor, OR 3.67 problem-solving).",
+        timeline: "Testable within 3 years (prospective birth cohort with dosimetry)",
+        falsification: "No dose-response relationship between prenatal/neonatal EMF exposure and developmental outcomes at 36 months",
+      },
+    ],
+    sidsResTimeline: "Timeline",
+    sidsResFalsification: "Falsification criterion",
+    sidsResLocked: "Locked: 2026-08-26",
+    sidsResStatus: "LOCKED — awaiting test",
     ttypeTitle: "T-Type Channel Predictions",
     ttypeLead: "Testable predictions from the T-type calcium channel bifurcation mechanism.",
     ttypePredictions: [
@@ -1712,6 +1763,57 @@ const COPY = {
     sidsFalsification: "Falsifikaatiokriteeri",
     sidsLocked: "Lukittu: 2026-08-26",
     sidsStatus: "LUKITTU — odottaa testiä",
+    sidsResTitle: "SIDS-resonanssimallin ennusteet",
+    sidsResLead: "Q-tekijä-resonanssimallista johdetut ennusteet: vastasyntyneen aivot vaimentamattomana oskillaattorina (GABA eksitatorinen NKCC1>KCC2:n kautta), SIDS neurokehityksellisen vaikutusspektrin fataalina päätepisteenä.",
+    sidsResNote: "Nämä ennusteet käsittelevät herkkää aihetta. BERM tarjoaa mekanistisen hypoteesin — ei todistettua selitystä. Tunnetut suojelutoimet (selällään nukkuminen, tupakansavun välttäminen, imetys) ovat edelleen tärkeimmät interventiot.",
+    sidsResPredictions: [
+      {
+        id: "SIDS-RESONANCE-1",
+        title: "Q-tekijä ennustaa SIDS-riskin paremmin kuin pelkkä ikä",
+        description: "Jos resonanssimalli on oikea, SIDS-riskin tulisi korreloida Q_neonatal(ikä) = Q₀/(1+(ikä/τ_KCC2)²):n kanssa paremmin kuin pelkän iän. Q-tekijä laskee KCC2:n kypsyessä ja GABAn siirtyessä eksitatoorisesta inhibitoriseksi. Testi: sovita SIDS-ilmaantuvuuden ikäjakaumat Q_neonatal(ikä) vs. lineaarisiin/neliöllisiin ikämalleihin. Ennuste: Q-tekijämalli sopii SIDS:n ikäjakaumaan paremmin (matalampi AIC) kuin puhtaasti ikäperusteiset mallit.",
+        timeline: "Testattavissa heti (olemassa olevat SIDS-ikäjakaumatietoaineistot)",
+        falsification: "Q-tekijämalli ei sovi paremmin kuin yksinkertaiset ikäperusteiset mallit SIDS-ilmaantuvuusjakaumaan",
+      },
+      {
+        id: "SIDS-RESONANCE-2",
+        title: "Bumetanidiprofylaksia vähentää apneaa korkean riskin vastasyntyneillä",
+        description: "Bumetanidi salpaaa NKCC1:n, palauttaen inhibitorisen GABAn ja tuoden vaimennuksen (vähentäen Q:ta). Jos SIDS johtuu resonanssihäiriöstä vaimentamattomassa järjestelmässä, bumetanidin tulisi vähentää apnea- ja bradykardiajaksoja korkean riskin vastasyntyneillä (ionikanavavarianttien kantajat tai aiemmat ALTE-tapahtumat). Testi: satunnaistettu tutkimus matalasta bumetanidiannoksesta NICU:n imeväisillä joilla on toistuvia apneajaksoja. Ennuste: bumetanidi vähentää apnea/bradykardiajaksojen tiheyttä.",
+        timeline: "Testattavissa 12–18 kuukaudessa (NICU-farmakologinen tutkimus)",
+        falsification: "Ei vähennystä apnea/bradykardiajaksoissa bumetanidilla korkean riskin vastasyntyneillä",
+      },
+      {
+        id: "SIDS-RESONANCE-3",
+        title: "Neonataalinen EEG osoittaa korkeampaa koherenssia resonanssitaajuuksilla SIDS-riskiimeväisillä",
+        description: "Vaimentamaton resonaattori (Q→∞) keskittää energian ominaistaajuudelleen. Neonataalisen EEG:n korkean riskin imeväisillä tulisi osoittaa kapeampia spektrihuippuja ja korkeampaa kanavien välistä koherenssia delta/theta-kaistoilla verrattuna matalan riskin kontrolleihin. Tämän spektraalisen sormenjäljen tulisi heiketä KCC2:n kypsyessä (3–6 kk). Testi: sarjallinen EEG SIDS-riski- vs. kontrolli-imeväisillä syntymästä 6 kuukauteen. Ennuste: korkean riskin imeväiset osoittavat kohonnutta spektraalista koherenssia joka normalisoituu KCC2:n kypsymisaikataulun mukaisesti.",
+        timeline: "Testattavissa 12 kuukaudessa (neonataalinen EEG-pitkittäistutkimus)",
+        falsification: "Ei eroa EEG:n spektraalisessa koherenssissa korkean riskin ja kontrollien välillä, tai koherenssi ei muutu ennustetulla KCC2-aikataululla",
+      },
+      {
+        id: "SIDS-RESONANCE-4",
+        title: "Yhdessä nukkuvissa kulttuureissa matala SIDS korkeasta ympäristö-EMF:stä huolimatta",
+        description: "Kolmen suojan malli ennustaa, että kulttuureissa joissa harjoitetaan yhdessä nukkumista (ei hälytintä), imetystä (>90 %) ja jatkuvaa ihokontaktia SIDS-luvut pysyvät matalina ympäristö-EMF:n tasosta riippumatta. Testi: vertaa SIDS-lukuja kulttuurien välillä jaoteltuna (1) ympäristö-EMF-tiheyden ja (2) yhdessä nukkumisen/imetyksen/ihokontaktikäytäntöjen mukaan. Ennuste: SIDS-luku korreloi hälyttimen käytön ja korvikemaidon, ei ympäristö-EMF-tiheyden kanssa, kolmen suojan kontrolloinnin jälkeen.",
+        timeline: "Testattavissa heti (ekologinen analyysi olemassa olevasta kansainvälisestä SIDS-datasta)",
+        falsification: "SIDS-luku korreloi ympäristö-EMF-tiheyden kanssa yhdessä nukkumisen/imetyksen/ihokontaktikäytännöistä riippumatta",
+      },
+      {
+        id: "SIDS-RESONANCE-5",
+        title: "NKCC1/KCC2-suhde kuolinhetkellä ennustaa SIDS vs. muu imeväiskuolema",
+        description: "Jos resonanssimalli on oikea, SIDS-uhreilla tulisi olla korkeampi NKCC1/KCC2-suhde (kypsymättömämpi kloridikuljettajakytkin → korkeampi Q → enemmän eksitatorista GABAa) verrattuna samanikäisiin imeväisiin jotka kuolivat muihin syihin. Testi: immunohistokemia NKCC1:lle ja KCC2:lle aivorunkonäytteissä SIDS- vs. ei-SIDS-imeväisten post mortem -näytteistä. Ennuste: SIDS-uhreilla on kohonnut NKCC1/KCC2-suhde verrattuna samanikäisiin kontrolleihin.",
+        timeline: "Testattavissa olemassa olevilla biopankkikudoksilla (retrospektiivinen immunohistokemia)",
+        falsification: "NKCC1/KCC2-suhde SIDS-uhreissa on sama kuin samanikäisissä ei-SIDS-imeväiskuolemissa",
+      },
+      {
+        id: "SIDS-SPECTRUM-1",
+        title: "Prenataalinen EMF-altistus ennustaa neurokehitystuloksia annos-vastemaisesti",
+        description: "Resonanssispektrimalli ennustaa jatkuvan annos-vastesuhteen prenataalisen/neonataalisen EMF-altistuksen ja neurokehitystulosten välille: korkein altistus → SIDS-riski, kohtalainen → kehitysviive, matala → hienovaraiset motoriset/kognitiiviset erot. Testi: prospektiivinen syntymäkohortti henkilökohtaisella EMF-dosimetrialla (puhelimen käyttö, WiFi-läheisyys, hälyttimen käyttö) seurattuna 36 kuukauteen standardoidulla kehitysarvioinnilla. Ennuste: EMF-altistus osoittaa portaittaisen annos-vasteen kehitystulosten kanssa, hienomotoriikka (OR ≥ 2,5) ja ongelmanratkaisu (OR ≥ 3,0) eniten vaikutettuna, yhdenmukainen prospektiivisen kohorttilöydöksen kanssa (OR 2,74 hienomotoriikka, OR 3,67 ongelmanratkaisu).",
+        timeline: "Testattavissa 3 vuodessa (prospektiivinen syntymäkohortti dosimetrialla)",
+        falsification: "Ei annos-vastesuhdetta prenataalisen/neonataalisen EMF-altistuksen ja kehitystulosten välillä 36 kuukauden iässä",
+      },
+    ],
+    sidsResTimeline: "Aikajana",
+    sidsResFalsification: "Falsifikaatiokriteeri",
+    sidsResLocked: "Lukittu: 2026-08-26",
+    sidsResStatus: "LUKITTU — odottaa testiä",
     ttypeTitle: "T-tyypin kanavan ennusteet",
     ttypeLead: "T-tyypin kalsiumkanavan bifurkaatiomekanismista johdetut testattavat ennusteet.",
     ttypePredictions: [
@@ -2734,6 +2836,43 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
                 <p><span className="font-semibold">{d.sidsTimeline}:</span> {sp.timeline}</p>
                 <p><span className="font-semibold">{d.sidsFalsification}:</span> {sp.falsification}</p>
                 <p className="font-mono-num">{d.sidsLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="mt-4 text-sm">
+          <Link href={`/${locale}/evidence/infant-vulnerability`} className="text-accent hover:underline">
+            {locale === "fi" ? "Imeväisen haavoittuvuus -evidenssi →" : "Infant vulnerability evidence →"}
+          </Link>
+        </p>
+      </section>
+
+      {/* SIDS resonance model predictions SIDS-RESONANCE-1 through SIDS-SPECTRUM-1 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.sidsResTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-4xl">{d.sidsResLead}</p>
+        <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 mb-6 max-w-4xl">
+          <p className="text-sm text-foreground-muted leading-relaxed">{d.sidsResNote}</p>
+        </div>
+        <div className="grid gap-4 max-w-4xl">
+          {d.sidsResPredictions.map((srp) => (
+            <article key={srp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{srp.id}</span>
+                    <h3 className="font-semibold">{srp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.sidsResStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{srp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.sidsResTimeline}:</span> {srp.timeline}</p>
+                <p><span className="font-semibold">{d.sidsResFalsification}:</span> {srp.falsification}</p>
+                <p className="font-mono-num">{d.sidsResLocked}</p>
               </div>
             </article>
           ))}
