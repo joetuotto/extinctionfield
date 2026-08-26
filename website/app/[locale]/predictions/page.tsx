@@ -1022,6 +1022,38 @@ const COPY = {
     layerFalsification: "Falsification criterion",
     layerLocked: "Locked: 2026-08-26",
     layerStatus: "LOCKED — awaiting test",
+
+    investigationTitle: "Investigation line predictions",
+    investigationLead: "Predictions from six new investigation lines: seasonal sensitivity, genotype, water, building materials, recovery window, and prenatal exposure. Each line opens a new modulating variable in the BERM framework.",
+    investigationPredictions: [
+      { id: "SEASON-1", title: "SAD correlates with latitude × EMF, not latitude alone", description: "SAD/depression prevalence should correlate with latitude × EMF density interaction, not with latitude as a standalone predictor. High-latitude, low-EMF communities (Amish in northern US, rural Scandinavia pre-electrification) should show lower SAD than predicted by latitude alone.", falsification: "Latitude alone predicts SAD as well as latitude × EMF interaction term" },
+      { id: "SEASON-2", title: "EMF-free bedroom benefit is larger in winter", description: "The health benefit of sleeping in an EMF-free environment (Faraday cage, airplane mode, no WiFi) should be measurably LARGER in winter months at high latitudes, because CRY magnetoreceptor sensitivity is higher when ambient light is reduced.", falsification: "No seasonal variation in EMF-free sleep benefit, or benefit is larger in summer" },
+      { id: "GEN-1", title: "CACNA1C A-allele frequency predicts population EMF sensitivity", description: "Populations with higher CACNA1C rs1006737 A-allele frequency show steeper health decline per unit EMF exposure. This predicts population-level variation in EMF sensitivity that is genetic, not cultural.", falsification: "No correlation between A-allele frequency and rate of EMF-associated health changes across populations" },
+      { id: "GEN-2", title: "A/A genotype shows stronger EMF response than G/G", description: "In controlled EMF exposure studies, individuals with CACNA1C rs1006737 A/A genotype show larger physiological responses (sleep EEG, HRV, calcium markers) than G/G genotype individuals. Already supported by Sousouri 2025 (ETH) for 5G sleep response.", falsification: "No genotype-dependent difference in EMF response in multiple independent controlled studies" },
+      { id: "WATER-1", title: "Island and coastal populations show higher EMF sensitivity", description: "Water's dielectric constant (~80 vs air ~1) amplifies electric field conduction. Island nations and coastal populations may show higher EMF-associated health effects per unit exposure than inland populations. Japan (island, highest ASD globally) is consistent but not proof.", falsification: "No coastal/inland difference in EMF-associated health metrics after controlling for other variables" },
+      { id: "BUILD-1", title: "Wood buildings produce better health outcomes than concrete", description: "Reinforced concrete reflects RF internally, increasing indoor field strength. Wood is RF-transparent. Occupants of wood buildings should show better sleep, lower stress markers, and better cardiovascular metrics than concrete building occupants, beyond what biofiilia theory predicts.", falsification: "No difference after controlling for socioeconomic factors, or concrete outperforms wood" },
+      { id: "RECOV-1", title: "EMF-free bedroom increases melatonin within 2 weeks", description: "Removing all EMF sources from the bedroom (WiFi router, phone, LED lights) and sleeping in an EMF-reduced environment should produce measurable melatonin increases within 2 weeks, even without any other lifestyle change.", falsification: "No melatonin change after 4 weeks of EMF-free sleep environment" },
+      { id: "RECOV-2", title: "Minimum recovery window: 4–6 hours EMF-free", description: "CaMKII dephosphorylation kinetics predict a minimum EMF-free period of 4–6 hours for meaningful Ca²⁺ homeostasis restoration. Less than 4 hours provides negligible recovery; more than 6 hours shows diminishing returns.", falsification: "No dose-response relationship between EMF-free hours and recovery markers" },
+      { id: "PRENATAL-1", title: "First trimester EMF exposure correlates with ASD risk", description: "CACNA1C is critical for synaptogenesis. Prenatal Ca²⁺ disruption during developmental windows → timing errors → ASD/ADHD phenotype. Kaiser Permanente (Li et al. 2017) already showed prenatal EMF → ASD risk. First trimester should show strongest effect.", falsification: "No trimester-specific difference in EMF-ASD association" },
+      { id: "MULTI-SEAS", title: "Winter × high EMF produces worst health outcomes", description: "The interaction of winter (high CRY sensitivity) and high EMF exposure should produce the worst health outcomes — worse than either factor alone. Nordic countries in winter should show peak EMF sensitivity.", falsification: "No interaction effect between season and EMF level on health outcomes" },
+    ],
+    investigationFalsification: "Falsification criterion",
+    investigationLocked: "Locked: 2026-08-26",
+    investigationStatus: "LOCKED — awaiting test",
+
+    sentinelPredTitle: "Sentinel species predictions",
+    sentinelPredLead: "Predictions from sentinel species layer analysis. Animals with higher EMF sensitivity (frogs > bees > insects > birds > mammals) should decline in order corresponding to technology layer stacking, not random environmental factors.",
+    sentinelPredPredictions: [
+      { id: "SENT-1", title: "EMF × pesticide interaction is superadditive", description: "Combined EMF + pesticide exposure produces more severe effects than either alone. The interaction is superadditive because pesticides stress cells → Ca²⁺ dysregulation → EMF sensitivity increases. Lupi 2021 already demonstrated this in bee biochemical and behavioral markers.", falsification: "Combined effects are merely additive or sub-additive in multiple species" },
+      { id: "SENT-2", title: "Bumblebee decline correlates with WiFi density", description: "Bumblebee population decline should correlate with local WiFi access point density, independent of pesticide use and habitat loss. New 2025 study already showed RF reduces bumblebee flower visitation.", falsification: "No correlation between WiFi density and bumblebee populations after controlling for pesticides" },
+      { id: "SENT-3", title: "LED streetlights cause more insect decline than sodium (IF component)", description: "Boyes 2021 found LED streetlights reduced insect abundance by 52% vs sodium's 41%. The 11% difference is not explained by light spectrum alone — LED's IF emission (from SMPS drivers, 20–300 kHz) adds an EMF exposure channel that sodium lacks.", falsification: "Faraday-shielded LED shows same insect decline as unshielded LED (ruling out IF component)" },
+      { id: "SENT-4", title: "Migratory birds decline faster than resident species", description: "Migratory birds depend on CRY-based magnetoreception for navigation. RF disrupts CRY. Therefore migratory species should show steeper population decline than resident species in the same habitat, independent of habitat loss.", falsification: "Resident species decline as fast or faster than migratory species in shared habitats" },
+      { id: "SENT-5", title: "Faraday-shielded beehives produce more honey", description: "Bee colonies in Faraday-shielded hives (blocking ambient RF/ELF) should produce measurably more honey, show lower colony loss rates, and demonstrate better navigation (fewer lost foragers) than unshielded hives in the same location.", falsification: "No difference in honey production or colony survival between shielded and unshielded hives" },
+      { id: "SENT-6", title: "Frog populations survive near EMF-free areas", description: "Frog populations should persist in areas with minimal power grid infrastructure and low RF background, while declining in electrified areas — even controlling for habitat quality, water contamination, and UV exposure. Frogs' moist skin provides direct environmental Ca²⁺ coupling.", falsification: "Frog decline is equally severe in low-EMF and high-EMF areas after controlling for habitat" },
+    ],
+    sentinelPredFalsification: "Falsification criterion",
+    sentinelPredLocked: "Locked: 2026-08-26",
+    sentinelPredStatus: "LOCKED — awaiting test",
   },
   fi: {
     title: "Lukitut ennusteet",
@@ -2033,6 +2065,38 @@ const COPY = {
     layerFalsification: "Kumoamisehto",
     layerLocked: "Lukittu: 2026-08-26",
     layerStatus: "LUKITTU — odottaa testiä",
+
+    investigationTitle: "Johdoslinjojen ennusteet",
+    investigationLead: "Ennusteet kuudesta uudesta johdoslinjasta: vuodenaikaherkkyys, genotyyppi, vesi, rakennusmateriaalit, palautumisikkuna ja prenataalinen altistus. Jokainen linja avaa uuden moduloivan muuttujan BERM-kehykseen.",
+    investigationPredictions: [
+      { id: "SEASON-1", title: "SAD korreloi leveysaste × EMF, ei pelkkä leveysaste", description: "SAD/masennusprevalenssi korreloi leveysaste × EMF-tiheys -interaktion kanssa, ei pelkän leveysasteen kanssa. Korkean leveysasteen, matalan EMF:n yhteisöt (amishit pohjoisessa USA:ssa, maaseutu-Skandinavia ennen sähköistystä) osoittavat matalampaa SAD:ia kuin pelkkä leveysaste ennustaa.", falsification: "Pelkkä leveysaste ennustaa SAD:ia yhtä hyvin kuin leveysaste × EMF -interaktiotermi" },
+      { id: "SEASON-2", title: "EMF-vapaan makuuhuoneen hyöty suurempi talvella", description: "EMF-vapaassa ympäristössä nukkumisen terveyshyödyn tulisi olla mitattavasti SUUREMPI talvikuukausina korkeilla leveysasteilla, koska CRY-magnetoreseptorin herkkyys on korkeampi ympäristövalon vähentyessä.", falsification: "Ei vuodenaikavaihtelua EMF-vapaan unen hyödyssä, tai hyöty on suurempi kesällä" },
+      { id: "GEN-1", title: "CACNA1C A-alleelitaajuus ennustaa populaation EMF-herkkyyttä", description: "Populaatiot, joilla on korkeampi CACNA1C rs1006737 A-alleelitaajuus, osoittavat jyrkempää terveyslaskua per EMF-altistusyksikkö. Tämä ennustaa populaatiotason vaihtelua EMF-herkkyydessä, joka on geneettistä, ei kulttuurista.", falsification: "Ei korrelaatiota A-alleelitaajuuden ja EMF-liitännäisten terveysmuutosten nopeuden välillä populaatioiden välillä" },
+      { id: "GEN-2", title: "A/A-genotyyppi osoittaa voimakkaamman EMF-vasteen kuin G/G", description: "Kontrolloiduissa EMF-altistustutkimuksissa CACNA1C rs1006737 A/A -genotyypin yksilöt osoittavat suurempia fysiologisia vasteita (uni-EEG, HRV, kalsiummerkkiaineet) kuin G/G-genotyypin yksilöt. Sousouri 2025 (ETH) jo tuki 5G-univasteessa.", falsification: "Ei genotyypistä riippuvaa eroa EMF-vasteessa useissa itsenäisissä kontrolloiduissa tutkimuksissa" },
+      { id: "WATER-1", title: "Saari- ja rannikkoyhteisöt osoittavat korkeampaa EMF-herkkyyttä", description: "Veden dielektrisyysvakio (~80 vs ilma ~1) vahvistaa sähkökentän johtumista. Saarikansakunnat ja rannikkoyhteisöt voivat osoittaa korkeampia EMF-liitännäisiä terveysvaikutuksia per altistusyksikkö kuin sisämaan populaatiot.", falsification: "Ei rannikko/sisämaa-eroa EMF-liitännäisissä terveysmittareissa muiden muuttujien kontrolloinnin jälkeen" },
+      { id: "BUILD-1", title: "Puutalot tuottavat parempia terveystuloksia kuin betoni", description: "Teräsbetoni heijastaa RF:ää sisäisesti, lisäten sisäistä kenttävoimakkuutta. Puu on RF-läpäisevä. Puutalojen asukkaiden tulisi osoittaa parempaa unta, matalampia stressimerkkiaineita ja parempia kardiovaskulaarisia mittareita kuin betonitalon asukkaiden.", falsification: "Ei eroa sosioekonomisten tekijöiden kontrolloinnin jälkeen, tai betoni ylittää puun" },
+      { id: "RECOV-1", title: "EMF-vapaa makuuhuone nostaa melatoniinia 2 viikossa", description: "Kaikkien EMF-lähteiden poistaminen makuuhuoneesta (WiFi-reititin, puhelin, LED-valot) ja EMF-vähennetyssä ympäristössä nukkuminen tuottaa mitattavan melatoniininousun 2 viikossa ilman muita elämäntapamuutoksia.", falsification: "Ei melatoniinimuutosta 4 viikon EMF-vapaan uniympäristön jälkeen" },
+      { id: "RECOV-2", title: "Minimipalautumisikkuna: 4–6 tuntia EMF-vapaata", description: "CaMKII:n defosforylaatiokinetiikka ennustaa 4–6 tunnin EMF-vapaan minimiajan merkittävälle Ca²⁺-homeostaasiin palautumiselle. Alle 4 tuntia tuottaa merkityksettömän palautumisen; yli 6 tuntia osoittaa vähenevää tuottoa.", falsification: "Ei annos-vastetta EMF-vapaiden tuntien ja palautumismerkkiaineiden välillä" },
+      { id: "PRENATAL-1", title: "Ensimmäisen trimesterin EMF-altistus korreloi ASD-riskin kanssa", description: "CACNA1C on kriittinen synaptogeneesissä. Prenataalinen Ca²⁺-häiriö kehitysikkunoiden aikana → ajoitusvirheet → ASD/ADHD-fenotyyppi. Kaiser Permanente (Li et al. 2017) jo osoitti prenataalinen EMF → ASD-riski. Ensimmäisen trimesterin tulisi osoittaa voimakkain vaikutus.", falsification: "Ei trimesterispesifistä eroa EMF-ASD-assosiaatiossa" },
+      { id: "MULTI-SEAS", title: "Talvi × korkea EMF tuottaa pahimmat terveystulokset", description: "Talven (korkea CRY-herkkyys) ja korkean EMF-altistuksen interaktion tulisi tuottaa pahimmat terveystulokset — pahemmat kuin kumpikaan tekijä yksin. Pohjoismaiden tulisi talvella osoittaa huippu-EMF-herkkyyttä.", falsification: "Ei interaktiovaikutusta vuodenajan ja EMF-tason välillä terveysvaikutuksissa" },
+    ],
+    investigationFalsification: "Kumoamisehto",
+    investigationLocked: "Lukittu: 2026-08-26",
+    investigationStatus: "LUKITTU — odottaa testiä",
+
+    sentinelPredTitle: "Sentinel-lajienniusteet",
+    sentinelPredLead: "Ennusteet sentinel-lajien kerrostuma-analyysistä. Eläimet, joilla on korkeampi EMF-herkkyys (sammakot > mehiläiset > hyönteiset > linnut > nisäkkäät), vähenevät teknologiakerrosten kerrostumista vastaavassa järjestyksessä.",
+    sentinelPredPredictions: [
+      { id: "SENT-1", title: "EMF × pestisidi -interaktio on superadditiivinen", description: "Yhdistetty EMF + pestiside -altistus tuottaa vakavampia vaikutuksia kuin kumpikaan yksin. Interaktio on superadditiivinen koska pestisidit stressaavat soluja → Ca²⁺-dysregulaatio → EMF-herkkyys kasvaa. Lupi 2021 jo osoitti tämän mehiläisten biokemiallisissa ja käyttäytymismerkkiaineissa.", falsification: "Yhdistelmävaikutukset ovat pelkästään additiivisia tai subadditiivisia useissa lajeissa" },
+      { id: "SENT-2", title: "Kimalaisten lasku korreloi WiFi-tiheyden kanssa", description: "Kimalaispopulaatioiden laskun tulisi korreloida paikallisen WiFi-tukiasematiheyden kanssa, riippumatta pestisidien käytöstä ja elinympäristön menetyksestä. Uusi 2025 tutkimus jo osoitti RF:n vähentävän kimalaisten kukkavierailuja.", falsification: "Ei korrelaatiota WiFi-tiheyden ja kimalaispopulaatioiden välillä pestisidien kontrolloinnin jälkeen" },
+      { id: "SENT-3", title: "LED-katuvalot aiheuttavat enemmän hyönteislaskua kuin natrium (IF-komponentti)", description: "Boyes 2021 havaitsi LED-katuvalot vähensivät hyönteismäärää 52 % vs natriumin 41 %. 11 %:n eroa ei selitä pelkkä valospektri — LEDin IF-emissio (SMPS-ohjaimista, 20–300 kHz) lisää EMF-altistuskanavan jota natriumilla ei ole.", falsification: "Faraday-suojattu LED osoittaa saman hyönteislaskun kuin suojaamaton LED (sulkien pois IF-komponentin)" },
+      { id: "SENT-4", title: "Muuttolinnut vähenevät nopeammin kuin paikalliset lajit", description: "Muuttolinnut riippuvat CRY-pohjaisesta magnetoreseptiosta navigointiin. RF häiritsee CRY:tä. Siksi muuttolajien tulisi osoittaa jyrkempää populaatiolaskua kuin paikallisten lajien samassa elinympäristössä, riippumatta elinympäristön menetyksestä.", falsification: "Paikalliset lajit vähenevät yhtä nopeasti tai nopeammin kuin muuttolajit jaetuissa elinympäristöissä" },
+      { id: "SENT-5", title: "Faraday-suojatut mehiläispesät tuottavat enemmän hunajaa", description: "Mehiläisyhdyskunnat Faraday-suojatuissa pesissä (estäen ympäröivän RF/ELF:n) tuottavat mitattavasti enemmän hunajaa, osoittavat matalampia yhdyskuntamenetyksiä ja parempaa navigaatiota kuin suojaamattomat pesät samassa sijainnissa.", falsification: "Ei eroa hunajantuotannossa tai yhdyskunnan selviytymisessä suojattujen ja suojaamattomien pesien välillä" },
+      { id: "SENT-6", title: "Sammakoiden populaatiot säilyvät EMF-vapailla alueilla", description: "Sammakoiden populaatioiden tulisi säilyä alueilla joilla on minimaalinen sähköverkkoinfrastruktuuri ja matala RF-tausta, kun taas vähentyä sähköistetyillä alueilla — jopa elinympäristön laadun, vesisaasteiden ja UV-altistuksen kontrolloinnin jälkeen.", falsification: "Sammakoiden lasku on yhtä vakava matalan ja korkean EMF:n alueilla elinympäristön kontrolloinnin jälkeen" },
+    ],
+    sentinelPredFalsification: "Kumoamisehto",
+    sentinelPredLocked: "Lukittu: 2026-08-26",
+    sentinelPredStatus: "LUKITTU — odottaa testiä",
   },
 } as const;
 
@@ -2813,6 +2877,62 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               <div className="space-y-1 text-xs text-foreground-muted">
                 <p><span className="font-semibold">{d.layerFalsification}:</span> {lp.falsification}</p>
                 <p className="font-mono-num">{d.layerLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Investigation line predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.investigationTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.investigationLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.investigationPredictions.map((ip) => (
+            <article key={ip.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{ip.id}</span>
+                    <h3 className="font-semibold">{ip.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.investigationStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{ip.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.investigationFalsification}:</span> {ip.falsification}</p>
+                <p className="font-mono-num">{d.investigationLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Sentinel species predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.sentinelPredTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.sentinelPredLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.sentinelPredPredictions.map((sp) => (
+            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{sp.id}</span>
+                    <h3 className="font-semibold">{sp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.sentinelPredStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{sp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.sentinelPredFalsification}:</span> {sp.falsification}</p>
+                <p className="font-mono-num">{d.sentinelPredLocked}</p>
               </div>
             </article>
           ))}

@@ -225,6 +225,37 @@ const t = {
     ],
     layerLink: "See all 14 technology profiles →",
 
+    seasonTitle: "Seasonal Sensitivity: CRY × Latitude",
+    seasonSub: "CRY magnetoreceptor sensitivity is light-dependent — winter amplifies EMF biological effects",
+    seasonDesc: "Cryptochrome (CRY) is a light-dependent magnetoreceptor. In winter (less light), CRY is more sensitive to magnetic field perturbation — EMF effects on melatonin are STRONGER in winter. Halgamuge 2015 (Nature Sci Rep) demonstrated this directly: ELF suppressed melatonin in winter but INCREASED it in summer in calves. This seasonal modulation explains why Nordic countries (high latitude + high EMF) show disproportionate health burden (SAD prevalence: Finland 21%), and why EMF studies conducted in different seasons produce contradictory results.",
+    seasonFormulaLabel: "Formula v21 correction factor:",
+    seasonFormula: "S = 1 + γ × f(latitude, season)",
+    seasonFormulaDesc: "S increases in winter at high latitudes (CRY more sensitive to EMF perturbation), decreases in summer (CRY saturated by ambient light). Near the equator, S ≈ 1.0 (stable day length). Finland in winter: S ≈ 1.3. Finland in summer: S ≈ 0.9.",
+    seasonPred1: "SEASON-1: SAD/depression prevalence correlates with latitude × EMF density, not latitude alone",
+    seasonPred2: "SEASON-2: EMF-free bedroom benefit should be LARGER in winter months",
+    seasonRef: "Halgamuge 2015 (PMC4585560) · CRY light dependence (biorxiv 2024)",
+
+    cacna1cTitle: "CACNA1C rs1006737: Individual Susceptibility",
+    cacna1cSub: "Your Cav1.2 genotype determines your EMF sensitivity threshold",
+    cacna1cDesc: "The rs1006737 A-allele increases CACNA1C transcription → more Cav1.2 channels per cell → greater Ca²⁺ influx per EMF stimulus → lower CaMKII autophosphorylation threshold. This variant has been linked by GWAS to bipolar disorder, schizophrenia, autism, cardiac arrhythmias, and neurodevelopmental disorders — ALL conditions predicted by BERM's Ca²⁺ mechanism.",
+    cacna1cEvidence: "Sousouri 2025 (ETH Zurich): In a double-blind study, CACNA1C genotype DIRECTLY determined the sleep response to 5G exposure. This is the first demonstration that EMF sensitivity is genotype-dependent, not psychosomatic. PMC4898738: rs1006737 is a quantitative trait locus for CACNA1C transcript levels. PMC3577650: A-allele → altered amygdala activity across diagnoses AND healthy controls.",
+    cacna1cImplication: "EHS (electromagnetic hypersensitivity) reinterpretation: EHS is not psychosomatic — it reflects genotype-dependent threshold variation. Individuals with CACNA1C A/A genotype have more Cav1.2 channels, reach the CaMKII threshold at lower EMF exposure, and experience symptoms earlier.",
+    cacna1cFormulaLabel: "Population-level correction:",
+    cacna1cFormula: "G_pop = 1 + δ × CACNA1C_A_allele_frequency",
+    cacna1cFormulaDesc: "G_pop adjusts the population's aggregate EMF sensitivity based on A-allele prevalence. European-origin populations (higher A-allele frequency) may have higher aggregate sensitivity than East Asian populations, though this requires further verification.",
+    cacna1cPred1: "GEN-1: Populations with higher CACNA1C A-allele frequency show steeper health decline per unit EMF",
+    cacna1cPred2: "GEN-2: A/A genotype individuals show stronger EMF responses than G/G in controlled exposure studies",
+    cacna1cRef: "Sousouri 2025 (ETH) · PMC4898738 · PMC3577650",
+
+    recovWindowTitle: "Recovery Window: CaMKII Dephosphorylation",
+    recovWindowSub: "Modern life eliminates the EMF-free hours needed for Ca²⁺ homeostasis restoration",
+    recovWindowDesc: "CaMKII dephosphorylation (recovery from autophosphorylated state) requires time without Ca²⁺ overload. EMF-free sleep allows this recovery. But modern environments eliminate EMF-free hours: WiFi router 24/7, phone on bedside table, LED lighting until sleep, Bluetooth devices. The Recovery factor (R) captures this: when EMF-free hours approach zero, the denominator 1/R approaches 1.0 (no recovery), and cumulative damage accelerates.",
+    recovWindowEvidence: "Shift work: OR 1.17 for metabolic syndrome — night shift disrupts both melatonin and recovery window. Walker (2017): one night of poor sleep → testosterone −15%, NK cells −70%. Good sleep RESTORES → the recovery window is real. COVID lockdown natural experiment: 24h/day at home with WiFi + LED + multiple devices → recovery window eliminated → T2D acceleration from 2.90% to 3.52%/yr.",
+    recovWindowIntervention: "The simplest intervention the model predicts: an EMF-free bedroom. Remove WiFi router from bedroom, use airplane mode on phone at night, switch to incandescent or candle light before sleep. This restores the recovery window without requiring any other lifestyle change.",
+    recovWindowPred1: "RECOV-1: EMF-free bedroom → melatonin levels increase measurably within 2 weeks",
+    recovWindowPred2: "RECOV-2: Minimum recovery window for CaMKII dephosphorylation: 4–6 hours EMF-free",
+    recovWindowRef: "Walker 2017 · COVID lockdown data · Shift work meta-analyses",
+
     mtorSub: "EMF, caloric restriction, and rapamycin converge on the same aging pathway",
     mtorTitle: "mTOR convergence hypothesis",
     mtorDesc1:
@@ -643,6 +674,37 @@ const t = {
       { country: "Intia", y2024: "1,96", y2030: "1,55–1,75", y2035: "1,25–1,50", driver: "Sähköistys→100%, GSM/4G saturoi" },
     ],
     layerLink: "Katso kaikki 14 teknologiaprofiilia →",
+
+    seasonTitle: "Vuodenaikaherkkyys: CRY × leveysaste",
+    seasonSub: "CRY-magnetoreseptori on valoriippuvainen — talvi vahvistaa EMF:n biologisia vaikutuksia",
+    seasonDesc: "Kryptokromi (CRY) on valoriippuvainen magnetoreseptori. Talvella (vähemmän valoa) CRY on herkempi magneettikentän häiriöille — EMF:n vaikutukset melatoniiniin ovat VOIMAKKAAMPIA talvella. Halgamuge 2015 (Nature Sci Rep) osoitti tämän suoraan: ELF suppressoi melatoniinia talvella mutta LISÄSI sitä kesällä vasikoilla. Tämä vuodenaikamodulaatio selittää miksi Pohjoismaat (korkea leveysaste + korkea EMF) kantavat suhteettoman terveystaakan (SAD-prevalenssi: Suomi 21 %), ja miksi eri vuodenaikoina tehdyt EMF-tutkimukset tuottavat ristiriitaisia tuloksia.",
+    seasonFormulaLabel: "Formula v21 -korjauskerroin:",
+    seasonFormula: "S = 1 + γ × f(leveysaste, vuodenaika)",
+    seasonFormulaDesc: "S kasvaa talvella korkeilla leveysasteilla (CRY herkempi EMF-perturbaalioille), laskee kesällä (CRY saturoitunut ympäröivästä valosta). Päiväntasaajan lähellä S ≈ 1,0 (tasainen päivänpituus). Suomi talvella: S ≈ 1,3. Suomi kesällä: S ≈ 0,9.",
+    seasonPred1: "SEASON-1: SAD/masennusprevalenssi korreloi leveysaste × EMF-tiheys, ei pelkkä leveysaste",
+    seasonPred2: "SEASON-2: EMF-vapaan makuuhuoneen hyöty on SUUREMPI talvikuukausina",
+    seasonRef: "Halgamuge 2015 (PMC4585560) · CRY-valoriippuvuus (biorxiv 2024)",
+
+    cacna1cTitle: "CACNA1C rs1006737: yksilöllinen herkkyys",
+    cacna1cSub: "Cav1.2-genotyyppi määrittää EMF-herkkyyskynnyksen",
+    cacna1cDesc: "rs1006737 A-alleeli lisää CACNA1C-transkriptiota → enemmän Cav1.2-kanavia per solu → suurempi Ca²⁺-sisäänvirtaus per EMF-stimulus → matalampi CaMKII-autofosforylaatiokynnys. Tämä variantti on yhdistetty GWAS-tutkimuksissa bipolaarihäiriöön, skitsofreniaan, autismiin, sydämen rytmihäiriöihin ja kehityshäiriöihin — KAIKKI BERM:n Ca²⁺-mekanismin ennustamia tiloja.",
+    cacna1cEvidence: "Sousouri 2025 (ETH Zürich): kaksoissokkotutkimuksessa CACNA1C-genotyyppi SUORAAN määritti univasteen 5G-altistukselle. Tämä on ensimmäinen osoitus siitä, että EMF-herkkyys on genotyypistä riippuvainen, ei psykosomaattinen. PMC4898738: rs1006737 on kvantitatiivinen ominaisuuslokus CACNA1C-transkriptiotasoille. PMC3577650: A-alleeli → muuttunut amygdala-aktiivisuus eri diagnooseissa JA terveillä kontrolleilla.",
+    cacna1cImplication: "EHS-uudelleentulkinta: sähköherkkyysoireyhtymä ei ole psykosomaattinen — se heijastaa genotyypistä riippuvaa kynnysvaihtelua. CACNA1C A/A -genotyypin yksilöillä on enemmän Cav1.2-kanavia, he saavuttavat CaMKII-kynnyksen matalammalla EMF-altistuksella ja kokevat oireita aikaisemmin.",
+    cacna1cFormulaLabel: "Populaatiotason korjaus:",
+    cacna1cFormula: "G_pop = 1 + δ × CACNA1C_A-alleelitaajuus",
+    cacna1cFormulaDesc: "G_pop säätää populaation kokonais-EMF-herkkyyttä A-alleelin prevalenssin perusteella. Eurooppalaista alkuperää olevilla populaatioilla (korkeampi A-alleelitaajuus) voi olla korkeampi kokonaisherkkyys kuin itäaasialaisilla populaatioilla, vaikka tämä vaatii lisäverifiointia.",
+    cacna1cPred1: "GEN-1: Populaatiot, joilla korkeampi CACNA1C A-alleelitaajuus, osoittavat jyrkempää terveyslaskua per EMF-yksikkö",
+    cacna1cPred2: "GEN-2: A/A-genotyypin yksilöt osoittavat voimakkaampia EMF-vasteita kuin G/G kontrolloiduissa altistustutkimuksissa",
+    cacna1cRef: "Sousouri 2025 (ETH) · PMC4898738 · PMC3577650",
+
+    recovWindowTitle: "Palautumisikkuna: CaMKII-defosforylaatio",
+    recovWindowSub: "Moderni elämä eliminoi EMF-vapaat tunnit, joita Ca²⁺-homeostaasin palautuminen vaatii",
+    recovWindowDesc: "CaMKII:n defosforylaatio (palautuminen autofosforyloidusta tilasta) vaatii aikaa ilman Ca²⁺-ylikuormaa. EMF-vapaa uni mahdollistaa tämän palautumisen. Mutta modernit ympäristöt eliminoivat EMF-vapaat tunnit: WiFi-reititin 24/7, puhelin yöpöydällä, LED-valaistus uneen asti, Bluetooth-laitteet. Palautumiskerroin (R) kuvaa tämän: kun EMF-vapaat tunnit lähestyvät nollaa, nimittäjä 1/R lähestyy arvoa 1,0 (ei palautumista), ja kumulatiivinen vaurio kiihtyy.",
+    recovWindowEvidence: "Vuorotyö: OR 1,17 metaboliselle oireyhtymälle — yövuoro häiritsee sekä melatoniinia että palautumisikkunaa. Walker (2017): yksi yö huonoa unta → testosteroni −15 %, NK-solut −70 %. Hyvä uni PALAUTTAA → palautumisikkuna ON todellinen. COVID-sulkujen luonnollinen koe: 24 h/vrk kotona WiFin + LEDien + useiden laitteiden kanssa → palautumisikkuna eliminoitu → T2D-kiihdytys 2,90 %:sta 3,52 %/v.",
+    recovWindowIntervention: "Yksinkertaisin interventio, jonka malli ennustaa: EMF-vapaa makuuhuone. Poista WiFi-reititin makuuhuoneesta, käytä lentokonetilaa yöllä, vaihda hehkulamppuun tai kynttilänvaloon ennen unta. Tämä palauttaa palautumisikkunan ilman muita elämäntapamuutoksia.",
+    recovWindowPred1: "RECOV-1: EMF-vapaa makuuhuone → melatoniini nousee mitattavasti 2 viikossa",
+    recovWindowPred2: "RECOV-2: Minimipalautumisaika CaMKII-defosforylaatiolle: 4–6 tuntia EMF-vapaata",
+    recovWindowRef: "Walker 2017 · COVID-sulkudata · Vuorotyön meta-analyysit",
 
     mtorSub: "EMF, kalorirajoitus ja rapamysiini konvergoivat samaan ikääntymispolkuun",
     mtorTitle: "mTOR-konvergenssihypoteesi",
@@ -1973,6 +2035,64 @@ export default async function ModelPage({
             >
               {d.layerLink}
             </Link>
+          </CollapsibleSection>
+
+          {/* Seasonal Sensitivity */}
+          <CollapsibleSection id="seasonal-sensitivity" title={d.seasonTitle} subtitle={d.seasonSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.seasonDesc}
+            </p>
+            <div className="rounded-xl border border-card-border bg-card-bg p-5 mb-6">
+              <p className="text-xs font-medium mb-2">{d.seasonFormulaLabel}</p>
+              <p className="font-mono text-sm font-semibold mb-2">{d.seasonFormula}</p>
+              <p className="text-xs text-foreground-muted">{d.seasonFormulaDesc}</p>
+            </div>
+            <div className="space-y-2 mb-4">
+              <p className="text-xs font-mono text-amber-500">{d.seasonPred1}</p>
+              <p className="text-xs font-mono text-amber-500">{d.seasonPred2}</p>
+            </div>
+            <p className="text-[10px] text-foreground-muted/60">{d.seasonRef}</p>
+          </CollapsibleSection>
+
+          {/* CACNA1C Individual Susceptibility */}
+          <CollapsibleSection id="cacna1c-susceptibility" title={d.cacna1cTitle} subtitle={d.cacna1cSub}>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.cacna1cDesc}
+            </p>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.cacna1cEvidence}
+            </p>
+            <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 mb-6">
+              <p className="text-xs text-foreground-muted leading-relaxed">{d.cacna1cImplication}</p>
+            </div>
+            <div className="rounded-xl border border-card-border bg-card-bg p-5 mb-6">
+              <p className="text-xs font-medium mb-2">{d.cacna1cFormulaLabel}</p>
+              <p className="font-mono text-sm font-semibold mb-2">{d.cacna1cFormula}</p>
+              <p className="text-xs text-foreground-muted">{d.cacna1cFormulaDesc}</p>
+            </div>
+            <div className="space-y-2 mb-4">
+              <p className="text-xs font-mono text-amber-500">{d.cacna1cPred1}</p>
+              <p className="text-xs font-mono text-amber-500">{d.cacna1cPred2}</p>
+            </div>
+            <p className="text-[10px] text-foreground-muted/60">{d.cacna1cRef}</p>
+          </CollapsibleSection>
+
+          {/* Recovery Window */}
+          <CollapsibleSection id="recovery-window" title={d.recovWindowTitle} subtitle={d.recovWindowSub}>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.recovWindowDesc}
+            </p>
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+              {d.recovWindowEvidence}
+            </p>
+            <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-4 mb-6">
+              <p className="text-xs text-foreground-muted leading-relaxed">{d.recovWindowIntervention}</p>
+            </div>
+            <div className="space-y-2 mb-4">
+              <p className="text-xs font-mono text-amber-500">{d.recovWindowPred1}</p>
+              <p className="text-xs font-mono text-amber-500">{d.recovWindowPred2}</p>
+            </div>
+            <p className="text-[10px] text-foreground-muted/60">{d.recovWindowRef}</p>
           </CollapsibleSection>
 
           {/* Mathematical Foundation */}

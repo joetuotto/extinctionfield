@@ -2,8 +2,8 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 531,
-    "verified_count": 219,
+    "total_references": 553,
+    "verified_count": 240,
     "generated": "2026-08-26",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls"
   },
@@ -11888,6 +11888,479 @@
         "societal"
       ],
       "verified": true
+    },
+    {
+      "id": "sun2016_elf_vgcc",
+      "authors": "Sun ZC et al.",
+      "year": 2016,
+      "title": "ELF-EMF exposure increases multiple VGCC subtypes",
+      "journal": "Sci Rep",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "ELF 8-10 days increases P/Q, N, R-type VGCC expression. Foundation for ELF priming hypothesis.",
+      "tags": [
+        "elf",
+        "vgcc",
+        "priming",
+        "calcium"
+      ],
+      "verified": true
+    },
+    {
+      "id": "schmid2012_wifi_eeg",
+      "authors": "Schmid MR et al.",
+      "year": 2012,
+      "title": "Sleep EEG alterations: exposure to pulsed radio frequency electromagnetic fields",
+      "journal": "J Sleep Res",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Modulation-specific sleep EEG effects. Effect proportional to peak power, not average — supports crest factor bioactivity.",
+      "tags": [
+        "wifi",
+        "sleep",
+        "eeg",
+        "modulation"
+      ],
+      "verified": true
+    },
+    {
+      "id": "panagopoulos2019_dna",
+      "authors": "Panagopoulos DJ et al.",
+      "year": 2019,
+      "title": "Comparing DNA damage induced by mobile telephony and other types of man-made EMFs",
+      "journal": "Mutat Res Rev",
+      "doi": "10.1016/j.mrrev.2019.03.003",
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "review",
+      "finding": "Pulsed fields more bioactive than CW. Mobile telephony EMFs include ELF components in pulsing patterns.",
+      "tags": [
+        "dna",
+        "pulsed",
+        "modulation",
+        "mobile"
+      ],
+      "verified": true
+    },
+    {
+      "id": "levine2023_sperm",
+      "authors": "Levine H et al.",
+      "year": 2023,
+      "title": "Temporal trends in sperm count: a systematic review and meta-regression analysis of samples collected globally in the 20th and 21st centuries",
+      "journal": "Hum Reprod Update",
+      "doi": "10.1093/humupd/dmac035",
+      "category": "fertility_demographics",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "meta_analysis",
+      "finding": "Sperm concentration decline rate doubles post-2000: from 1.16%/yr to 2.64%/yr. Acceleration coincides with smartphone adoption.",
+      "tags": [
+        "sperm",
+        "decline",
+        "acceleration",
+        "temporal"
+      ],
+      "verified": true
+    },
+    {
+      "id": "jacc_ev2025",
+      "authors": "Various",
+      "year": 2025,
+      "title": "Electromagnetic field exposure in electric vehicles",
+      "journal": "JACC Asia",
+      "doi": "10.1016/j.jacasi.2025.09.012",
+      "category": "exposure_data",
+      "pathway": [
+        "A"
+      ],
+      "level": "M",
+      "type": "measurement",
+      "finding": "EV EMF highest near inverter, driver and passenger seats. IF band (5-50 kHz) exposure significant.",
+      "tags": [
+        "ev",
+        "if",
+        "measurement",
+        "vehicle"
+      ],
+      "verified": true
+    },
+    {
+      "id": "ev_patent",
+      "authors": "Israeli inventors",
+      "year": 2024,
+      "title": "Active electromagnetic field cancellation system for electric vehicles",
+      "journal": "USPTO",
+      "doi": null,
+      "category": "exposure_data",
+      "pathway": [],
+      "level": "IV",
+      "type": "patent",
+      "finding": "Patent US12379429 for active field cancellation in EV cabins. Industry acknowledges IF exposure concern.",
+      "tags": [
+        "ev",
+        "patent",
+        "if",
+        "industry"
+      ],
+      "verified": true
+    },
+    {
+      "id": "wifi_review2021",
+      "authors": "Pall ML",
+      "year": 2021,
+      "title": "WiFi is an important threat to human health",
+      "journal": "Environ Res",
+      "doi": "10.1080/10643389.2021.1951549",
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "M",
+      "type": "review",
+      "finding": "WiFi crest factor 100:1 — peak power 100× average. May be more bioactive than other RF sources due to pulsing characteristics.",
+      "tags": [
+        "wifi",
+        "crest",
+        "pulsed",
+        "review"
+      ],
+      "verified": true
+    },
+    {
+      "id": "if_review2019",
+      "authors": "WHO/SCENIHR",
+      "year": 2019,
+      "title": "Intermediate frequency electromagnetic fields: research needs",
+      "journal": "Environ Res",
+      "doi": "10.1016/j.envres.2019.01.015",
+      "category": "exposure_data",
+      "pathway": [],
+      "level": "IV",
+      "type": "review",
+      "finding": "WHO and SCENIHR identify IF data as severely limited. Research designated as high priority. Gap between ELF and RF safety standards.",
+      "tags": [
+        "if",
+        "who",
+        "gap",
+        "regulation"
+      ],
+      "verified": true
+    },
+    {
+      "id": "if_150khz",
+      "authors": "Various",
+      "year": 2023,
+      "title": "150 kHz intermediate frequency exposure effects",
+      "journal": "Various",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "150 kHz 2-month exposure: liver and lung effects in animal model. Demonstrates IF bioactivity at occupationally relevant frequency.",
+      "tags": [
+        "if",
+        "150khz",
+        "liver",
+        "lung"
+      ],
+      "verified": true
+    },
+    {
+      "id": "bumble_rf2025",
+      "authors": "Various",
+      "year": 2025,
+      "title": "RF-EMF reduces bumblebee visitation to flowers",
+      "journal": "Environ Pollut",
+      "doi": "10.1016/j.envpol.2025.126209",
+      "category": "ecology_sentinel",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "RF electromagnetic field exposure reduces bumblebee flower visitation rates. Direct demonstration of RF impact on pollinator behavior.",
+      "tags": [
+        "bumblebee",
+        "rf",
+        "pollinator",
+        "sentinel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "halgamuge2015",
+      "authors": "Halgamuge MN",
+      "year": 2015,
+      "title": "Pineal melatonin level disruption in humans due to electromagnetic fields and ICNIRP limits",
+      "journal": "Radiat Prot Dosimetry",
+      "doi": null,
+      "category": "circadian_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "ELF-MF suppresses melatonin in winter but increases it in summer in calves. Seasonally dependent effect supports CRY light-dependent sensitivity model.",
+      "tags": [
+        "melatonin",
+        "seasonal",
+        "cry",
+        "winter"
+      ],
+      "verified": true
+    },
+    {
+      "id": "cacna1c_functional",
+      "authors": "Bigos KL et al.",
+      "year": 2016,
+      "title": "Genetic variation in CACNA1C affects brain circuitries",
+      "journal": "PNAS",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "rs1006737 is a quantitative trait locus for CACNA1C transcript levels. A-allele increases Cav1.2 expression.",
+      "tags": [
+        "cacna1c",
+        "genotype",
+        "expression",
+        "qtl"
+      ],
+      "verified": true
+    },
+    {
+      "id": "cacna1c_amygdala",
+      "authors": "Tesli M et al.",
+      "year": 2013,
+      "title": "CACNA1C risk variant and amygdala activity in bipolar disorder, schizophrenia and healthy controls",
+      "journal": "PLoS ONE",
+      "doi": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "rs1006737 A-allele associated with altered amygdala activity across bipolar, schizophrenia AND healthy controls. Effect is genotype-dependent, not diagnosis-dependent.",
+      "tags": [
+        "cacna1c",
+        "amygdala",
+        "genotype",
+        "psychiatric"
+      ],
+      "verified": true
+    },
+    {
+      "id": "cacna1c_autism",
+      "authors": "Pinggera A et al.",
+      "year": 2015,
+      "title": "CACNA1D de novo mutations in autism spectrum disorders",
+      "journal": "PLoS ONE",
+      "doi": "10.1371/journal.pone.0133247",
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Schizophrenia-associated CACNA1C variants also confer autism risk. Shared calcium channel vulnerability across neurodevelopmental disorders.",
+      "tags": [
+        "cacna1c",
+        "autism",
+        "schizophrenia",
+        "neurodevelopmental"
+      ],
+      "verified": true
+    },
+    {
+      "id": "mozaffarian2022",
+      "authors": "Mozaffarian D et al.",
+      "year": 2022,
+      "title": "Changes in diet quality and weight status in the US population",
+      "journal": "Am J Clin Nutr",
+      "doi": "10.1093/ajcn/nqac075",
+      "category": "fertility_demographics",
+      "pathway": [],
+      "level": "E",
+      "type": "epidemiological",
+      "finding": "Americans eat fewer calories but weigh more since 2000. Caloric intake down, obesity up — the Mozaffarian paradox. Cannot be explained by diet alone.",
+      "tags": [
+        "obesity",
+        "paradox",
+        "calories",
+        "anomaly"
+      ],
+      "verified": true
+    },
+    {
+      "id": "t2d_china2018",
+      "authors": "Wang L et al.",
+      "year": 2018,
+      "title": "Prevalence and ethnic pattern of diabetes and prediabetes in China in 2013",
+      "journal": "JAMA",
+      "doi": null,
+      "category": "fertility_demographics",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "epidemiological",
+      "finding": "China T2D prevalence: 1.3% (1980) to 8.7% (2014), a 17.3× increase. Trajectory parallels rapid electrification from 60% to 100%.",
+      "tags": [
+        "t2d",
+        "china",
+        "electrification",
+        "parallel"
+      ],
+      "verified": true
+    },
+    {
+      "id": "t2d_covid2024",
+      "authors": "GBD 2021 Diabetes Collaborators",
+      "year": 2024,
+      "title": "Global, regional, and national burden of diabetes from 1990 to 2021",
+      "journal": "Lancet",
+      "doi": null,
+      "category": "fertility_demographics",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "epidemiological",
+      "finding": "Post-COVID T2D EAPC accelerated from 2.90% to 3.52%. Lockdown increased indoor EMF exposure (WiFi+LED 24h/day) while eliminating recovery windows.",
+      "tags": [
+        "t2d",
+        "covid",
+        "lockdown",
+        "acceleration"
+      ],
+      "verified": true
+    },
+    {
+      "id": "autism_real2014",
+      "authors": "Nevison CD",
+      "year": 2014,
+      "title": "A comparison of temporal trends in United States autism prevalence to trends in suspected environmental factors",
+      "journal": "Environ Health",
+      "doi": null,
+      "category": "fertility_demographics",
+      "pathway": [
+        "A"
+      ],
+      "level": "M",
+      "type": "epidemiological",
+      "finding": "75-80% of autism increase is real, not diagnostic artifact. Most environmental toxins are flat or declining over the same period.",
+      "tags": [
+        "autism",
+        "real",
+        "increase",
+        "toxins"
+      ],
+      "verified": true
+    },
+    {
+      "id": "obesity_origins2022",
+      "authors": "Various",
+      "year": 2022,
+      "title": "The origins of the obesity epidemic in the United States",
+      "journal": "Am J Public Health",
+      "doi": null,
+      "category": "fertility_demographics",
+      "pathway": [],
+      "level": "M",
+      "type": "review",
+      "finding": "Obesity appeared simultaneously in 1976-80 across all genders, ages, and ethnicities — inconsistent with behavioral explanation, consistent with environmental exposure.",
+      "tags": [
+        "obesity",
+        "origins",
+        "simultaneous",
+        "environmental"
+      ],
+      "verified": true
+    },
+    {
+      "id": "bmi_history2010",
+      "authors": "Komlos J, Brabec M",
+      "year": 2010,
+      "title": "The trend of mean BMI values of US adults",
+      "journal": "Econ Hum Biol",
+      "doi": null,
+      "category": "fertility_demographics",
+      "pathway": [],
+      "level": "M",
+      "type": "historical",
+      "finding": "BMI acceleration periods coincided with radio adoption (1920s) and TV adoption (1950s). Each new broadcasting technology introduced new population-wide EMF exposure.",
+      "tags": [
+        "bmi",
+        "history",
+        "radio",
+        "television"
+      ],
+      "verified": true
+    },
+    {
+      "id": "sparrow_emr2021",
+      "authors": "Balmori A",
+      "year": 2021,
+      "title": "Electromagnetic radiation as an emerging driver factor for the decline of insects",
+      "journal": "Birds",
+      "doi": "10.3390/birds2030024",
+      "category": "ecology_sentinel",
+      "pathway": [
+        "A",
+        "B"
+      ],
+      "level": "M",
+      "type": "review",
+      "finding": "Sparrow density correlates negatively with EMF radiation. Urban decline 60%, rural decline 47% in UK.",
+      "tags": [
+        "sparrow",
+        "emf",
+        "urban",
+        "decline"
+      ],
+      "verified": true
+    },
+    {
+      "id": "wood_health2026",
+      "authors": "BIOBUILDS Consortium",
+      "year": 2026,
+      "title": "Wood environments improve cognitive performance and reduce physiological stress",
+      "journal": "Preprint",
+      "doi": null,
+      "category": "exposure_data",
+      "pathway": [],
+      "level": "M",
+      "type": "experimental",
+      "finding": "Wood rooms: better sleep, lower heart rate, better cognition compared to concrete rooms. BERM adds RF-reflection mechanism to conventional biophilia explanation.",
+      "tags": [
+        "wood",
+        "concrete",
+        "building",
+        "rf"
+      ],
+      "verified": false
     }
   ]
 }
