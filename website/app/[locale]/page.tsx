@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, ArrowRight, Shield, Dna } from "lucide-react";
+import { BermMasterInfographic } from "@/components/BermMasterInfographic";
 import { ThreeChannelSummary } from "@/components/ThreeChannelSummary";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
 import { TheraBionicProof } from "@/components/TheraBionicProof";
@@ -13,6 +13,7 @@ import type { Locale } from "@/lib/i18n";
 import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
 import { LatestArticles } from "@/components/LatestArticles";
 import { Sparkline } from "@/components/SparklineCard";
+import ProxyMaskingInfographic from "@/components/ProxyMaskingInfographic";
 import { readFileSync } from "fs";
 import { join } from "path";
 
@@ -161,6 +162,10 @@ const COPY = {
     epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · Cross-sectional RMSE = 0.522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Independent research",
 
+    ctaStatement: "Five technology layers. Five health epidemics. One integrating mechanism.",
+    ctaExploreModel: "Explore the model",
+    ctaReadEvidence: "Read the evidence",
+
     ctaModel: "Model specification",
     ctaEvidence: "Evidence register",
     ctaData: "Explore data",
@@ -282,6 +287,10 @@ const COPY = {
     epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · Poikkileikkaus-RMSE = 0,522",
     epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Itsenäinen tutkimus",
 
+    ctaStatement: "Viisi teknologiakerrosta. Viisi terveysepidemaa. Yksi integroiva mekanismi.",
+    ctaExploreModel: "Tutustu malliin",
+    ctaReadEvidence: "Lue todisteet",
+
     ctaModel: "Mallin määrittely",
     ctaEvidence: "Evidenssirekisteri",
     ctaData: "Tutki dataa",
@@ -332,37 +341,39 @@ export default async function Home({
 
   return (
     <div className="max-w-5xl mx-auto px-6">
-      {/* ── 1. Hero — cinematic banner with overlay text ── */}
-      <header className="relative -mx-6 overflow-hidden rounded-b-2xl sm:rounded-2xl sm:mx-0 mt-0 sm:mt-8 mb-14">
-        <div className="relative min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
-          <Image
-            src="/images/hero-fertilization.jpg"
-            alt=""
-            fill
-            priority
-            className="object-cover object-[65%_center]"
-            sizes="(max-width: 1024px) 100vw, 1024px"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/5" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-          <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 sm:p-10 lg:p-14">
-            <div className="max-w-2xl">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold tracking-[-0.02em] leading-[1.12] mb-4 text-white drop-shadow-lg">
-                {d.heroTitle}
-              </h1>
-              <p className="text-base sm:text-lg leading-relaxed text-white/90 mb-3 drop-shadow">{d.heroDeck}</p>
-              <p className="text-sm sm:text-base leading-relaxed text-white/70">{d.heroContext}</p>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* ── 1. Hero infographic ── */}
+      <BermMasterInfographic locale={activeLocale} />
 
+      {/* ── 2. Proxy-masking elimination ── */}
+      <div className="-mx-6 sm:mx-0">
+        <ProxyMaskingInfographic locale={activeLocale} />
+      </div>
+
+      {/* ── 3. CTA ── */}
+      <section className="py-16 text-center">
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link
+            href={`${prefix}/model`}
+            className="inline-flex items-center gap-2 rounded-lg border border-accent bg-accent/10 px-6 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent/20"
+          >
+            {d.ctaExploreModel} <ArrowRight size={14} />
+          </Link>
+          <Link
+            href={`${prefix}/evidence`}
+            className="inline-flex items-center gap-2 rounded-lg border border-card-border bg-card-bg px-6 py-3 text-sm font-medium transition-colors hover:border-accent/40 hover:text-accent"
+          >
+            {d.ctaReadEvidence} <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
+
+      {/* ── 4. What is BERM ── */}
       <div className="max-w-3xl mb-14 space-y-4">
         <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.whatIsThis}</p>
         <p className="text-sm leading-relaxed text-foreground-muted border-l-2 border-accent/30 pl-4">{d.heroEpistemic}</p>
       </div>
 
-      {/* ── 2. Crisis in Numbers — contextualized stat cards ── */}
+      {/* ── 5. Crisis in Numbers — contextualized stat cards ── */}
       <section className="pb-20">
         <h2 className="editorial-kicker text-accent mb-3">{d.s1Title}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-3xl">{d.s1Intro}</p>
