@@ -109,6 +109,19 @@ export const NAV_ROUTES: NavRoute[] = [
         },
       },
       {
+        href: "/model/q-factor",
+        labels: { en: "Q-Factor Spectrum", fi: "Q-tekijäspektri", ja: "Q因子スペクトラム", fr: "Spectre Q-facteur", ko: "Q인자 스펙트럼" },
+        icon: Activity,
+        descs: {
+          en: "Seven neural pathways, one damped oscillator",
+          fi: "Seitsemän hermorataa, yksi vaimennettu oskillaattori",
+          ja: "7つの神経経路、1つの減衰振動子",
+          fr: "Sept voies neurales, un oscillateur amorti",
+          ko: "7개의 신경 경로, 하나의 감쇠 진동자",
+        },
+        badge: "NEW",
+      },
+      {
         href: "/model#camkii-convergence",
         labels: { en: "CaMKII Convergence", fi: "CaMKII-konvergenssi", ja: "CaMKII収束", fr: "Convergence CaMKII", ko: "CaMKII 수렴" },
         icon: Activity,
@@ -119,7 +132,6 @@ export const NAV_ROUTES: NavRoute[] = [
           fr: "Une molécule, cinq cascades pathologiques",
           ko: "하나의 분자, 다섯 가지 질병 캐스케이드",
         },
-        badge: "NEW",
       },
       {
         href: "/mathematics",
@@ -169,12 +181,25 @@ export const NAV_ROUTES: NavRoute[] = [
         labels: { en: "Pharmacological Evidence", fi: "Farmakologinen evidenssi", ja: "薬理学的エビデンス", fr: "Preuves pharmacologiques", ko: "약리학적 증거" },
         icon: Pill,
         descs: {
-          en: "8 drug classes converging on BERM pathways",
-          fi: "8 lääkeryhmää konvergoivat BERM-reiteillä",
-          ja: "BERM経路に収束する8つの薬物クラス",
-          fr: "8 classes de médicaments convergent sur les voies BERM",
-          ko: "BERM 경로에 수렴하는 8가지 약물 클래스",
+          en: "14 drug classes converging on BERM pathways",
+          fi: "14 lääkeryhmää konvergoivat BERM-reiteillä",
+          ja: "BERM経路に収束する14の薬物クラス",
+          fr: "14 classes de médicaments convergent sur les voies BERM",
+          ko: "BERM 경로에 수렴하는 14가지 약물 클래스",
         },
+      },
+      {
+        href: "/evidence/timothy-experiment",
+        labels: { en: "Timothy Syndrome", fi: "Timothyn syndrooma", ja: "ティモシー症候群", fr: "Syndrome de Timothy", ko: "티모시 증후군" },
+        icon: Dna,
+        descs: {
+          en: "CACNA1C gain-of-function — nature's experiment",
+          fi: "CACNA1C gain-of-function — luonnon kokeilu",
+          ja: "CACNA1C機能獲得 — 自然の実験",
+          fr: "CACNA1C gain-of-function — l'expérience de la nature",
+          ko: "CACNA1C 기능 획득 — 자연의 실험",
+        },
+        badge: "NEW",
       },
       {
         href: "/evidence/populations",

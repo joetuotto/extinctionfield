@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Pill } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { DrugDiseaseCrossMap } from "@/components/DrugDiseaseCrossMap";
 
 const COPY = {
   en: {
     title: "Pharmacological Evidence",
-    subtitle: "If VGCC activation is the primary transduction mechanism, drugs that block or modulate the same channels should attenuate EMF-associated biological effects. Eleven drug classes provide convergent pharmacological evidence.",
+    subtitle: "If VGCC activation is the primary transduction mechanism, drugs that block or modulate the same channels should attenuate EMF-associated biological effects. Fourteen drug classes provide convergent pharmacological evidence.",
     backLink: "← Back to Evidence",
     cardsTitle: "Drug evidence cards",
     cardsLead: "Each card presents a drug class, its mechanism of action on the BERM-relevant pathway, the key evidence, and the model interpretation. Evidence levels follow the BERM classification: E = experimental, C = clinical/epidemiological, M = mechanistic, L = logical inference, L* = speculative.",
@@ -159,9 +160,50 @@ const COPY = {
         interpretation: "Riluzole is the pharmacological validation of BERM's ALS mechanism: the only drug that slows ALS progression works by blocking Ca²⁺-dependent glutamate release — the exact pathway BERM predicts EMF activates. The occupational EMF-ALS epidemiological data (OR 1.3–1.7) plus riluzole's Ca²⁺-targeting mechanism constitutes pharmacological convergence at the disease level.",
         level: "E|C",
       },
+      {
+        id: "ISRADIPINE",
+        drug: "Isradipine (Cav1.3-selective CCB)",
+        drugSub: "Dihydropyridine with Cav1.3 preference, PD neuroprotection candidate",
+        mechanism: "Isradipine preferentially blocks Cav1.3 (L-type) channels — the specific subtype expressed in substantia nigra dopaminergic neurons. These neurons uniquely rely on Cav1.3 for autonomous pacemaking, making them selectively vulnerable to Ca²⁺ overload. If EMF chronically activates Cav1.3, isradipine should provide targeted neuroprotection.",
+        evidence: [
+          "Epidemiological data: dihydropyridine CCB users show 20–30% reduced Parkinson's risk (Becker 2008, Ritz 2010). The association is specific to brain-penetrant CCBs, not peripheral-only formulations.",
+          "Chan et al. 2007 (Nature): substantia nigra dopaminergic neurons use Cav1.3 for pacemaking — unique reliance on L-type Ca²⁺ channels explains their selective vulnerability in PD.",
+          "STEADY-PD III trial (2020, Lancet Neurology): isradipine did not slow clinical progression in early PD — but target engagement may have been insufficient at tolerated doses. The biological rationale remains sound.",
+          "Bhatt et al. 2022 (Sci.Adv.): Cav1.3 blockade protects dopaminergic neurons in preclinical models via reduced mitochondrial oxidative stress — the same Ca²⁺→mito→ROS pathway in BERM Level 5A.",
+        ],
+        interpretation: "Isradipine tests BERM's prediction at the single-channel-subtype level: if Cav1.3 activation contributes to PD, a Cav1.3-selective blocker should protect dopaminergic neurons. The epidemiological signal (CCB users have lower PD risk) combined with the mechanistic rationale (Cav1.3 pacemaking vulnerability) constitutes pharmacological validation even though STEADY-PD III was clinically negative — dose and timing may explain the discrepancy.",
+        level: "E|M",
+      },
+      {
+        id: "BUMETANIDE",
+        drug: "Bumetanide (NKCC1 blocker)",
+        drugSub: "Loop diuretic repurposed for neonatal seizures and ASD",
+        mechanism: "Bumetanide blocks the NKCC1 chloride importer (SLC12A2), which maintains high intracellular Cl⁻ in immature neurons. In the neonatal brain, NKCC1 dominance makes GABA excitatory instead of inhibitory — bumetanide reverses this by lowering intracellular Cl⁻, restoring GABA's inhibitory function. This converts the Q-factor damping coefficient γ from negative (amplifying) to positive (damping).",
+        evidence: [
+          "Lemonnier & Ben-Ari 2010: bumetanide improved autistic behavior in children — first evidence that the GABA polarity switch (NKCC1/KCC2 ratio) may be abnormal in ASD, consistent with a developmental Ca²⁺ timing disruption.",
+          "Multiple RCTs in neonatal seizures (Pressler 2023, NEMO trial): bumetanide as adjunctive therapy for phenobarbital-resistant neonatal seizures. Directly targets the Q → ∞ condition in neonates.",
+          "Ben-Ari 2014 (Neuroscientist): comprehensive review of the NKCC1→KCC2 chloride switch and its role in neurodevelopmental disorders. The switch timing is Ca²⁺-dependent — consistent with EMF disruption of developmental Ca²⁺ dynamics.",
+          "Shaker et al. 2024: meta-analysis of bumetanide in ASD — modest but consistent improvement in social behavior, supporting the GABA-switch hypothesis.",
+        ],
+        interpretation: "Bumetanide directly tests the Q-factor model's most extreme prediction: that neonatal neurological vulnerability (SIDS, neonatal seizures, developmental conditions) arises from GABA being excitatory (γ < 0 → Q → ∞). If restoring inhibitory GABA (bumetanide → γ > 0) improves neonatal seizures and ASD symptoms, then the excitatory-GABA state is pathogenic — and anything that delays the NKCC1→KCC2 switch (including EMF-induced Ca²⁺ disruption during development) increases vulnerability.",
+        level: "E",
+      },
+      {
+        id: "ETHOSUXIMIDE",
+        drug: "Ethosuximide (T-type Ca²⁺ channel blocker)",
+        drugSub: "First-line for absence epilepsy, Cav3.x selective",
+        mechanism: "Ethosuximide selectively blocks T-type (Cav3.1/3.2/3.3) calcium channels in thalamocortical neurons. These low-threshold channels generate the 3 Hz spike-wave oscillation characteristic of absence epilepsy. By removing the resonant circuit element, ethosuximide directly demonstrates that Ca²⁺ channel function controls seizure susceptibility.",
+        evidence: [
+          "Ethosuximide is the most effective drug for absence epilepsy (Glauser 2010, NEJM: superior to valproate and lamotrigine in head-to-head RCT). Its specificity for T-type Ca²⁺ channels and for absence epilepsy demonstrates a precise channel-disease relationship.",
+          "Cav3.2 (CACNA1H) gain-of-function variants are found in families with childhood absence epilepsy (Chen 2003, Ann Neurol). The genetic and pharmacological evidence converge on the same channel.",
+          "T-type channels also contribute to testosterone biosynthesis (StAR protein regulation). Ethosuximide's suppression of T-type → StAR → testosterone production connects seizure control to reproductive endocrine disruption — both through the same Ca²⁺ channel.",
+        ],
+        interpretation: "Ethosuximide provides the cleanest single-channel pharmacological validation in the Q-factor model: one drug, one channel subtype, one seizure type. The CACNA1H genetic variants confirm the channel identity. The T-type → StAR → testosterone connection extends the validation to BERM's reproductive predictions — if T-type Ca²⁺ channels control both seizure threshold AND testosterone production, then a single environmental perturbation (EMF) affecting these channels predicts both neurological and reproductive consequences.",
+        level: "E",
+      },
     ],
     convergenceTitle: "Pharmacological convergence argument",
-    convergenceLead: "The strongest evidence for any biological mechanism is pharmacological: if blocking the proposed transduction channel abolishes the effect, the mechanism is confirmed. Eleven drug classes converge on BERM's predicted pathways:",
+    convergenceLead: "The strongest evidence for any biological mechanism is pharmacological: if blocking the proposed transduction channel abolishes the effect, the mechanism is confirmed. Fourteen drug classes converge on BERM's predicted pathways:",
     convergencePoints: [
       "Pathway A (VGCC): CCBs (23 blocker studies), verapamil (frequency-dependent blockade), gabapentinoids (α2δ modulation), nimodipine (CNS-selective blockade), riluzole (Ca²⁺-dependent glutamate release inhibition)",
       "Pathway C (CRY/melatonin): Lithium (CRY stabilization via GSK-3β, trace-dose drinking water data), exogenous melatonin (endpoint replacement)",
@@ -175,7 +217,7 @@ const COPY = {
   },
   fi: {
     title: "Farmakologinen evidenssi",
-    subtitle: "Jos VGCC-aktivaatio on primaarinen transduutiomekanismi, lääkkeet jotka blokkaavat tai moduloivat samoja kanavia pitäisi vaimentaa EMF:ään liittyviä biologisia vaikutuksia. Yksitoista lääkeryhmää tarjoaa konvergoivan farmakologisen evidenssin.",
+    subtitle: "Jos VGCC-aktivaatio on primaarinen transduutiomekanismi, lääkkeet jotka blokkaavat tai moduloivat samoja kanavia pitäisi vaimentaa EMF:ään liittyviä biologisia vaikutuksia. Neljätoista lääkeryhmää tarjoaa konvergoivan farmakologisen evidenssin.",
     backLink: "← Takaisin evidenssiin",
     cardsTitle: "Lääke-evidenssikortit",
     cardsLead: "Jokainen kortti esittää lääkeryhmän, sen vaikutusmekanismin BERM:n kannalta relevantille reitille, avainevidenssin ja mallitulkinnan. Evidenssitasot noudattavat BERM-luokittelua: E = kokeellinen, C = kliininen/epidemiologinen, M = mekanistinen, L = looginen päätelmä, L* = spekulatiivinen.",
@@ -325,9 +367,48 @@ const COPY = {
         interpretation: "Rilutsoli on BERM:n ALS-mekanismin farmakologinen validointi: ainoa lääke joka hidastaa ALS:n etenemistä toimii estämällä Ca²⁺-riippuvaista glutamaatin vapautumista — juuri se reitti jonka BERM ennustaa EMF:n aktivoivan. Ammatillinen EMF-ALS epidemiologinen data (OR 1,3–1,7) plus rilutsolin Ca²⁺-kohdistuva mekanismi muodostavat farmakologisen konvergenssin sairaustasolla.",
         level: "E|C",
       },
+      {
+        id: "ISRADIPINE",
+        drug: "Isradipiini (Cav1.3-selektiivinen CCB)",
+        drugSub: "Dihydropyridiini Cav1.3-preferenssillä, PD-neuroprotektiokandidaatti",
+        mechanism: "Isradipiini salppaa ensisijaisesti Cav1.3 (L-tyypin) kanavia — spesifistä alatyyppiä, jota ilmennetään substantia nigran dopamiinineuroneissa. Nämä neuronit käyttävät ainutlaatuisesti Cav1.3:a autonomiseen tahdistamiseen, mikä tekee niistä valikoivasti haavoittuvia Ca²⁺-ylikuormitukselle.",
+        evidence: [
+          "Epidemiologinen data: dihydropyridiini-CCB-käyttäjillä on 20–30 % alentunut Parkinson-riski (Becker 2008, Ritz 2010). Yhteys on spesifinen aivoja läpäiseville CCB:ille.",
+          "Chan ym. 2007 (Nature): substantia nigran dopamiinineuronit käyttävät Cav1.3:a tahdistamiseen — L-tyypin Ca²⁺-kanavien ainutlaatuinen riippuvuus selittää niiden valikoivan haavoittuvuuden PD:ssä.",
+          "STEADY-PD III -tutkimus (2020, Lancet Neurology): isradipiini ei hidastanut kliinistä etenemistä varhaisessa PD:ssä — mutta biologinen perustelu pysyy pätevänä.",
+        ],
+        interpretation: "Isradipiini testaa BERM:n ennustetta yksittäisen kanava-alatyypin tasolla: jos Cav1.3-aktivaatio osallistuu PD:hen, Cav1.3-selektiivisen salpaajan pitäisi suojata dopamiinineuroneita. Epidemiologinen signaali (CCB-käyttäjillä matalampi PD-riski) yhdistettynä mekanistiseen perusteluun muodostaa farmakologisen validaation.",
+        level: "E|M",
+      },
+      {
+        id: "BUMETANIDE",
+        drug: "Bumetanidi (NKCC1-salpaaja)",
+        drugSub: "Loop-diureetti uudelleenkäyttöön neonataalien kohtausten ja ASD:n hoitoon",
+        mechanism: "Bumetanidi salppaa NKCC1-kloridi-importterin (SLC12A2), joka ylläpitää korkeaa solunsisäistä Cl⁻:a kypsymättömissä neuroneissa. Neonataaliaivoissa NKCC1-dominanssi tekee GABAsta eksitatorisen inhibitorisen sijaan — bumetanidi kääntää tämän alentamalla solunsisäistä Cl⁻:a.",
+        evidence: [
+          "Lemonnier & Ben-Ari 2010: bumetanidi paransi autistista käyttäytymistä lapsilla — ensimmäinen evidenssi siitä, että GABA-polariteettikytkin (NKCC1/KCC2-suhde) voi olla poikkeava ASD:ssä.",
+          "Useita RCT:itä neonataaaleissa kohtauksissa (Pressler 2023, NEMO-tutkimus): bumetanidi adjunktiivisena terapiana fenobarbitaaliresistentteihin neonataaleihin kohtauksiin.",
+          "Shaker ym. 2024: meta-analyysi bumetanidista ASD:ssä — vaatimaton mutta johdonmukainen parannus sosiaalisessa käyttäytymisessä.",
+        ],
+        interpretation: "Bumetanidi testaa suoraan Q-tekijämallin äärimmäisintä ennustetta: neonataalinen neurologinen haavoittuvuus johtuu eksitatorisesta GABAsta (γ < 0 → Q → ∞). Jos inhibitorisen GABAn palauttaminen parantaa neonataaleja kohtauksia ja ASD-oireita, eksitatorinen GABA-tila on patogeeninen.",
+        level: "E",
+      },
+      {
+        id: "ETHOSUXIMIDE",
+        drug: "Etosuksimidi (T-tyypin Ca²⁺-kanavasalpaaja)",
+        drugSub: "Ensisijaislääke poissaoloepilepsiaan, Cav3.x-selektiivinen",
+        mechanism: "Etosuksimidi salppaa valikoivasti T-tyypin (Cav3.1/3.2/3.3) kalsiumkanavia talamo-kortikaalisissa neuroneissa. Nämä matalan kynnyksen kanavat tuottavat poissaoloepilepsialle ominaisen 3 Hz piikki-aalto-oskillaation.",
+        evidence: [
+          "Etosuksimidi on tehokkain lääke poissaoloepilepsiaan (Glauser 2010, NEJM: parempi kuin valproaatti ja lamotrigiini suorassa RCT-vertailussa).",
+          "Cav3.2 (CACNA1H) gain-of-function -variantit löytyvät lapsuuden poissaoloepilepsia-perheistä (Chen 2003, Ann Neurol). Geneettinen ja farmakologinen evidenssi konvergoivat samalle kanavalle.",
+          "T-tyypin kanavat osallistuvat myös testosteronibiosynteesin (StAR-proteiinin säätely). Yhteys kohtauskontrollin ja reproduktiivisen endokriinisen häiriön välillä — molemmat saman Ca²⁺-kanavan kautta.",
+        ],
+        interpretation: "Etosuksimidi tarjoaa puhtaimman yksittäisen kanavan farmakologisen validaation Q-tekijämallissa: yksi lääke, yksi kanava-alatyyppi, yksi kohtaustyyppi. T-tyypin → StAR → testosteroni -yhteys laajentaa validaation BERM:n reproduktiivisiin ennusteisiin.",
+        level: "E",
+      },
     ],
     convergenceTitle: "Farmakologinen konvergenssiarumentti",
-    convergenceLead: "Vahvin evidenssi mille tahansa biologiselle mekanismille on farmakologinen: jos ehdotetun transduuktiokanavan salppaus kumoaa vaikutuksen, mekanismi on vahvistettu. Yksitoista lääkeryhmää konvergoivat BERM:n ennustamille reiteille:",
+    convergenceLead: "Vahvin evidenssi mille tahansa biologiselle mekanismille on farmakologinen: jos ehdotetun transduuktiokanavan salppaus kumoaa vaikutuksen, mekanismi on vahvistettu. Neljätoista lääkeryhmää konvergoivat BERM:n ennustamille reiteille:",
     convergencePoints: [
       "Reitti A (VGCC): CCB:t (23 salppajatutkimusta), verapamiili (taajuusriippuvainen salppaus), gabapentinoidit (α2δ-modulaatio), nimodipiini (CNS-selektiivinen salppaus), rilutsoli (Ca²⁺-riippuvaisen glutamaatin vapautumisen esto)",
       "Reitti C (CRY/melatoniini): Litium (CRY-stabilointi GSK-3β:n kautta, hivenpitoisuus juomavedessä), eksogeeninen melatoniini (päätepisteen korvaus)",
@@ -439,6 +520,8 @@ export default async function PharmacologyPage({ params }: { params: Promise<{ l
             {d.predictionLink} →
           </Link>
         </p>
+
+        <DrugDiseaseCrossMap locale={locale} />
       </section>
     </div>
   );
