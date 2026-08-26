@@ -25,6 +25,8 @@ import {
   FlaskRound,
   Target,
   Thermometer,
+  Sun,
+  Heart,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
@@ -473,6 +475,41 @@ const SUB_PAGES = [
     level: "confirmed",
     en: { title: "Hidden Thyroid", desc: "EMF reduces hypothalamic Dio2/Dio3 deiodinase enzymes. Standard thyroid tests appear normal — FT3/FT4 ratio reveals the hidden deficiency." },
     fi: { title: "Piilevä kilpirauhanen", desc: "EMF vähentää hypotalamuksen Dio2/Dio3-dejodinaasientsyymejä. Normaalit kilpirauhaustestit näyttävät normaaleilta — FT3/FT4-suhde paljastaa piilevän puutteen." },
+  },
+  {
+    slug: "adhd-prototype",
+    icon: BrainCircuit,
+    level: "confirmed",
+    en: { title: "ADHD: The Second Prototype", desc: "ADHD unites three BERM mechanisms — DA deficit in PFC, myelination delay via Cav1.2, and E/I shift — into the second neurodevelopmental prototype after ASD." },
+    fi: { title: "ADHD: Toinen prototyyppi", desc: "ADHD yhdistää kolme BERM-mekanismia — DA-puutoksen PFC:ssä, myelinaatioviiveen Cav1.2:n kautta ja E/I-siirtymän — toiseksi neurokehitykselliseksi prototyypiksi ASD:n jälkeen." },
+  },
+  {
+    slug: "four-neurodegenerations",
+    icon: BrainCircuit,
+    level: "confirmed",
+    en: { title: "Four Neurodegenerations", desc: "Alzheimer's, MS, Parkinson's, and ALS each attack a different cell type through Ca²⁺-dependent mechanisms. Same cascade, four manifestations." },
+    fi: { title: "Neljä neurodegeneraatiota", desc: "Alzheimerin tauti, MS, Parkinsonin tauti ja ALS hyökkäävät kukin eri solutyyppiin Ca²⁺-riippuvaisten mekanismien kautta. Sama kaskadi, neljä ilmentymää." },
+  },
+  {
+    slug: "allergy-epidemic",
+    icon: Activity,
+    level: "confirmed",
+    en: { title: "The Allergy Epidemic", desc: "Mast cell degranulation is Ca²⁺-dependent. EMF creates a quadruple sensitization cascade explaining the dramatic increase in allergy prevalence." },
+    fi: { title: "Allergiaepidemia", desc: "Syöttösolun degranulaatio on Ca²⁺-riippuvainen. EMF luo nelinkertaisen herkistymiskaskadin, joka selittää allergioiden dramaattisen yleistymisen." },
+  },
+  {
+    slug: "vitamin-d-channel-blocker",
+    icon: Sun,
+    level: "confirmed",
+    en: { title: "Vitamin D: Nature's Channel Blocker", desc: "Vitamin D downregulates CACNA1C/1D mRNA — the same VGCCs EMF activates. The 10th BERM moderator explains individual EMF sensitivity variation." },
+    fi: { title: "D-vitamiini: Luonnon kanavasalpaaja", desc: "D-vitamiini vaimentaa CACNA1C/1D-mRNA:ta — samoja VGCC:itä joita EMF aktivoi. 10. BERM-moderaattori selittää yksilöllistä EMF-herkkyysvaihtelua." },
+  },
+  {
+    slug: "reproductive-arc",
+    icon: Heart,
+    level: "confirmed",
+    en: { title: "The Reproductive Arc", desc: "From fertilization to first year of life, every critical reproductive stage depends on Ca²⁺ channels. Nifedipine — a Ca²⁺ blocker — is first-line treatment at multiple stages." },
+    fi: { title: "Reproduktiivinen kaari", desc: "Hedelmöityksestä ensimmäiseen elinvuoteen jokainen kriittinen reproduktiivinen vaihe riippuu Ca²⁺-kanavista. Nifedipiini — Ca²⁺-salpaaja — on ensilinjan hoito useissa vaiheissa." },
   },
 ] as const;
 

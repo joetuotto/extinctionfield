@@ -2631,15 +2631,15 @@ export default async function ModelPage({
           id="why-studies-disagree"
           title={locale === "fi" ? "Miksi tutkimukset ovat ristiriidassa" : "Why Studies Disagree"}
           subtitle={locale === "fi"
-            ? "Seitsemän kontrolloimatonta moderaattoria selittävät vuosikymmenten 'ristiriitaisen evidenssin'"
-            : "Seven uncontrolled moderators explain decades of 'contradictory evidence'"
+            ? "Kahdeksan kontrolloimatonta moderaattoria selittävät vuosikymmenten 'ristiriitaisen evidenssin'"
+            : "Eight uncontrolled moderators explain decades of 'contradictory evidence'"
           }
         >
           <div className="max-w-4xl space-y-4">
             <p className="text-sm text-foreground-muted leading-relaxed">
               {locale === "fi"
-                ? "EMF-tutkimus on tuottanut ristiriitaisia tuloksia vuosikymmeniä. BERM tunnistaa seitsemän kontrolloimatonta moderaattoria, jotka ennustavat mitkä tutkimukset löytävät positiivisen tuloksen ja mitkä nollatuloksen:"
-                : "EMF research has produced contradictory results for decades. BERM identifies seven uncontrolled moderators that predict which studies find positive results and which find null:"}
+                ? "EMF-tutkimus on tuottanut ristiriitaisia tuloksia vuosikymmeniä. BERM tunnistaa kahdeksan kontrolloimatonta moderaattoria, jotka ennustavat mitkä tutkimukset löytävät positiivisen tuloksen ja mitkä nollatuloksen:"
+                : "EMF research has produced contradictory results for decades. BERM identifies eight uncontrolled moderators that predict which studies find positive results and which find null:"}
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
               {[
@@ -2692,6 +2692,13 @@ export default async function ModelPage({
                     ? "Pulssitetut signaalit tuottavat positiivisen tuloksen 88 %. CW tuottaa 48 %. IFO-VGIC-mekanismi vaatii vaihtelevia kenttiä. p=0,048."
                     : "Pulsed signals produce positive results 88%. CW produces 48%. IFO-VGIC mechanism requires varying fields. p=0.048.",
                 },
+                {
+                  num: "8",
+                  title: locale === "fi" ? "D-vitamiinitaso" : "Vitamin D status",
+                  desc: locale === "fi"
+                    ? "D-vitamiini (1,25(OH)₂D₃) vaimentaa CACNA1C/1D-mRNA:ta (J Neurosci 2001). D-vitamiinipuutos → VGCC-yliekspressio = sama tila kuin ELF-primaami. Tutkimukset D-vitamiinipuutteisissa populaatioissa (talvi, korkea leveysaste) näyttävät vahvempia EMF-vaikutuksia."
+                    : "Vitamin D (1,25(OH)₂D₃) downregulates CACNA1C/1D mRNA (J Neurosci 2001). Vitamin D deficiency → VGCC over-expression = same state as ELF-priming. Studies in vitamin D-deficient populations (winter, high latitudes) should show stronger EMF effects.",
+                },
               ].map((mod) => (
                 <div key={mod.num} className="rounded-lg border border-card-border bg-card-bg p-4">
                   <div className="flex items-center gap-2 mb-2">
@@ -2732,14 +2739,14 @@ export default async function ModelPage({
               <p className="text-sm text-foreground-muted leading-relaxed">
                 <span className="font-semibold">{locale === "fi" ? "Ennuste REPL-1: " : "Prediction REPL-1: "}</span>
                 {locale === "fi"
-                  ? "Retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta osoittaa näiden seitsemän moderaattorin ennustavan merkitsevästi positiivisen vs. nollatuloksen. Testattavissa ILMAN uutta dataa."
-                  : "A retrospective analysis of 50–100 published EMF bio-assay studies will show these seven moderators significantly predict positive vs. null outcomes. Testable WITHOUT new data."}
+                  ? "Retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta osoittaa näiden kahdeksan moderaattorin ennustavan merkitsevästi positiivisen vs. nollatuloksen. Testattavissa ILMAN uutta dataa."
+                  : "A retrospective analysis of 50–100 published EMF bio-assay studies will show these eight moderators significantly predict positive vs. null outcomes. Testable WITHOUT new data."}
               </p>
             </div>
             <p className="text-xs text-foreground-muted/70">
               {locale === "fi"
-                ? "Episteeminen taso: seitsemän moderaattorin kehys on BERM:n synteesi (M-taso). Yksittäisillä moderaattoreilla on empiiristä tukea (E-taso)."
-                : "Epistemic level: the seven-moderator framework is BERM's synthesis (M-level). Individual moderators have empirical support (E-level)."}
+                ? "Episteeminen taso: kahdeksan moderaattorin kehys on BERM:n synteesi (M-taso). Yksittäisillä moderaattoreilla on empiiristä tukea (E-taso)."
+                : "Epistemic level: the eight-moderator framework is BERM's synthesis (M-level). Individual moderators have empirical support (E-level)."}
             </p>
           </div>
         </CollapsibleSection>

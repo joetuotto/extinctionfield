@@ -980,6 +980,70 @@ const COPY = {
     finalFalsification: "Falsification criterion",
     finalLocked: "Locked: 2026-08-26",
     finalStatus: "LOCKED — awaiting test",
+    extTitle: "Extended layer predictions (VK41–50)",
+    extLead: "Predictions from the extended convergence layers: ADHD as second prototype, ALS calcium vulnerability, gut-brain serotonin, allergy epidemic, vitamin D as natural channel blocker, PEMF hormesis paradox, and reproductive arc completion.",
+    extPredictions: [
+      {
+        id: "E-NEW-24",
+        title: "ADHD children's PFC myelination correlates with prenatal EMF",
+        description: "ADHD shows 5-year PFC maturation delay (Shaw 2007 PNAS). EMF disrupts OPC myelination via Cav1.2 (VK20) and reduces DA in PFC. Test: DTI white matter integrity in PFC of ADHD children correlated with prenatal/neonatal EMF exposure history. Prediction: higher prenatal EMF correlates with delayed PFC myelination markers.",
+        timeline: "Testable within 12 months (pediatric cohort with DTI + maternal history)",
+        falsification: "No correlation between prenatal EMF exposure and PFC myelination timing",
+      },
+      {
+        id: "E-NEW-25",
+        title: "EMF occupational exposure correlates with ALS risk",
+        description: "Motor neurons have low Ca²⁺ buffering + Ca²⁺-permeable AMPA receptors making them selectively vulnerable to Ca²⁺ overload. Multiple meta-analyses show OR 1.3-1.7 for electrical workers. Test: pooled analysis of existing occupational cohorts controlling for confounders. Prediction: EMF exposure is an independent ALS risk factor (OR > 1.2).",
+        timeline: "Testable immediately (existing meta-analyses support, need pooled re-analysis)",
+        falsification: "Pooled analysis controlling for all confounders shows OR < 1.1",
+      },
+      {
+        id: "E-NEW-26",
+        title: "Gut microbiome composition changes with EMF exposure",
+        description: "90%+ of serotonin is produced in gut enterochromaffin cells. EMF→circadian disruption→Per2↓→gut barrier↓ (S14) should alter microbiome. Test: 16S rRNA sequencing of gut microbiome in EMF-exposed vs controls. Prediction: EMF exposure shifts microbiome composition, specifically reducing 5-HT-producing species (Lactobacillus, Bifidobacterium).",
+        timeline: "Testable within 6 months (occupational cohort with stool samples)",
+        falsification: "No significant microbiome composition difference between groups",
+      },
+      {
+        id: "E-NEW-27",
+        title: "Mast cell degranulation threshold is lower in EMF-exposed individuals",
+        description: "Mast cell degranulation is Ca²⁺-dependent. EMF→VGCC→Ca²⁺ should lower the activation threshold. Test: in vitro mast cell degranulation assay comparing cells from EMF-exposed vs control subjects, measuring histamine release threshold. Prediction: mast cells from EMF-exposed individuals degranulate at lower stimulation thresholds.",
+        timeline: "Testable within 6 months (in vitro assay with patient-derived mast cells)",
+        falsification: "No difference in degranulation threshold between groups",
+      },
+      {
+        id: "E-NEW-28",
+        title: "Vitamin D supplementation reduces EMF-induced VGCC upregulation",
+        description: "Vitamin D (1,25(OH)₂D₃) downregulates CACNA1C/1D mRNA (J Neurosci 2001). Vitamin D deficiency → VGCC over-expression = same state as ELF-priming (VK4). Test: measure VGCC expression in PBMCs before/after vitamin D supplementation in deficient individuals. Prediction: vitamin D repletion reduces VGCC protein expression.",
+        timeline: "Testable within 6 months (supplementation study with PBMC analysis)",
+        falsification: "Vitamin D repletion does not change VGCC expression levels",
+      },
+      {
+        id: "E-NEW-29",
+        title: "Vitamin D status modulates individual EMF sensitivity",
+        description: "Low vitamin D → VGCC over-expressed → more Ca²⁺ per EMF photon = higher EMF sensitivity. Test: correlate vitamin D status with EMF-induced biomarker changes (CaMKII Thr286, sleep EEG) in controlled exposure study. Prediction: vitamin D-deficient individuals show larger EMF-induced biomarker changes.",
+        timeline: "Testable within 12 months (controlled EMF exposure stratified by vitamin D status)",
+        falsification: "No correlation between vitamin D status and magnitude of EMF biomarker response",
+      },
+      {
+        id: "E-NEW-30",
+        title: "PEMF therapy parameters map to Ca²⁺ hormesis curve",
+        description: "PEMF promotes bone growth at specific parameters while chronic EMF causes harm. Both operate through Ca²⁺ channels. Test: measure Ca²⁺ signaling in osteoblasts across PEMF parameter space (frequency, intensity, duration). Prediction: optimal PEMF parameters correspond to the Lindgren χ-parameter hormesis peak; deviation in either direction reduces benefit.",
+        timeline: "Testable within 12 months (in vitro osteoblast Ca²⁺ dose-response)",
+        falsification: "PEMF effects do not follow a hormesis curve through Ca²⁺ channels",
+      },
+      {
+        id: "E-NEW-31",
+        title: "Schizophrenia risk highest with CACNA1C variant + low vitamin D + high EMF",
+        description: "Triple hit: CACNA1C risk variant (genetic) + vitamin D deficiency (→VGCC↑) + EMF exposure (→Ca²⁺↑) should produce highest schizophrenia risk. Test: genotype CACNA1C + measure vitamin D + estimate EMF exposure in schizophrenia case-control study. Prediction: three-way interaction is significant — triple-hit individuals have highest odds ratio.",
+        timeline: "Testable within 12 months (case-control with genotyping + biomarkers)",
+        falsification: "No significant three-way interaction between CACNA1C genotype, vitamin D, and EMF",
+      },
+    ],
+    extTimeline: "Timeline",
+    extFalsification: "Falsification criterion",
+    extLocked: "Locked: 2026-08-26",
+    extStatus: "LOCKED — awaiting test",
     ttypeTitle: "T-Type Channel Predictions",
     ttypeLead: "Testable predictions from the T-type calcium channel bifurcation mechanism.",
     ttypePredictions: [
@@ -2524,6 +2588,70 @@ const COPY = {
     finalFalsification: "Falsifikaatiokriteeri",
     finalLocked: "Lukittu: 2026-08-26",
     finalStatus: "LUKITTU — odottaa testiä",
+    extTitle: "Laajennettujen kerrosten ennusteet (VK41–50)",
+    extLead: "Ennusteet laajennetuista konvergenssikerroksista: ADHD toisena prototyyppinä, ALS:n kalsiumhaavoittuvuus, suolisto-aivo-serotoniini, allergiaepidemia, D-vitamiini luonnollisena kanavasalpaajana, PEMF-hormeesiparadoksi ja reproduktiivisen kaaren täydentyminen.",
+    extPredictions: [
+      {
+        id: "E-NEW-24",
+        title: "ADHD-lasten PFC-myelinaatio korreloi prenataali-EMF:n kanssa",
+        description: "ADHD osoittaa 5 vuoden PFC-kypsymisviiveen (Shaw 2007 PNAS). EMF häiritsee OPC-myelinaatiota Cav1.2:n kautta (VK20) ja vähentää DA:ta PFC:ssä. Testi: DTI-valkoisen aineen integriteetti ADHD-lasten PFC:ssä korreloituna prenataali/neonataalin EMF-altistushistorian kanssa. Ennuste: korkeampi prenataali-EMF korreloi viivästyneiden PFC-myelinaatiomarkkereiden kanssa.",
+        timeline: "Testattavissa 12 kuukaudessa (pediatrinen kohortti DTI:llä + äidin historia)",
+        falsification: "Ei korrelaatiota prenataali-EMF-altistuksen ja PFC-myelinaation ajoituksen välillä",
+      },
+      {
+        id: "E-NEW-25",
+        title: "EMF:n ammatillinen altistus korreloi ALS-riskin kanssa",
+        description: "Motoneuroneilla on matala Ca²⁺-puskurointi + Ca²⁺-läpäisevät AMPA-reseptorit, mikä tekee niistä selektiivisesti haavoittuvia Ca²⁺-ylikuormitukselle. Useat meta-analyysit osoittavat OR 1,3–1,7 sähkötyöntekijöille. Testi: olemassa olevien ammattikohorttien yhdistetty analyysi sekoittavien tekijöiden vakioinnilla. Ennuste: EMF-altistus on itsenäinen ALS-riskitekijä (OR > 1,2).",
+        timeline: "Testattavissa heti (olemassa olevat meta-analyysit tukevat, tarvitsee yhdistetyn uudelleenanalyysin)",
+        falsification: "Yhdistetty analyysi kaikkien sekoittavien tekijöiden vakioinnilla osoittaa OR < 1,1",
+      },
+      {
+        id: "E-NEW-26",
+        title: "Suoliston mikrobiomin koostumus muuttuu EMF-altistuksella",
+        description: "Yli 90 % serotoniinista tuotetaan suoliston enterokromaffiinisoluissa. EMF→sirkadiaaninen häiriö→Per2↓→suolistoeste↓ (S14) pitäisi muuttaa mikrobiomia. Testi: suoliston mikrobiomin 16S rRNA -sekvensointi EMF-altistetuilla vs. kontrolleilla. Ennuste: EMF-altistus muuttaa mikrobiomin koostumusta, erityisesti vähentäen 5-HT:tä tuottavia lajeja (Lactobacillus, Bifidobacterium).",
+        timeline: "Testattavissa 6 kuukaudessa (ammattikohortti ulostenäytteillä)",
+        falsification: "Ei merkittävää mikrobiomin koostumuseroa ryhmien välillä",
+      },
+      {
+        id: "E-NEW-27",
+        title: "Syöttösolujen degranulaatiokynnys on matalampi EMF-altistetuilla henkilöillä",
+        description: "Syöttösolujen degranulaatio on Ca²⁺-riippuvaista. EMF→VGCC→Ca²⁺ pitäisi laskea aktivaatiokynnystä. Testi: in vitro -syöttösolujen degranulaatiomääritys vertaillen EMF-altistettujen vs. kontrollihenkilöiden soluja, mitaten histamiinin vapautumiskynnystä. Ennuste: EMF-altistettujen henkilöiden syöttösolut degranuloituvat matalammilla stimulaatiokynnyksillä.",
+        timeline: "Testattavissa 6 kuukaudessa (in vitro -määritys potilasperäisillä syöttösoluilla)",
+        falsification: "Ei eroa degranulaatiokynnyksessä ryhmien välillä",
+      },
+      {
+        id: "E-NEW-28",
+        title: "D-vitamiinilisä vähentää EMF:n aiheuttamaa VGCC-ylössäätelyä",
+        description: "D-vitamiini (1,25(OH)₂D₃) alassäätelee CACNA1C/1D mRNA:ta (J Neurosci 2001). D-vitamiinin puutos → VGCC:n yliekspressio = sama tila kuin ELF-primaami (VK4). Testi: mittaa VGCC-ilmentyminen PBMC:issä ennen/jälkeen D-vitamiinilisän puutteellisilla henkilöillä. Ennuste: D-vitamiinitason korjaantuminen vähentää VGCC-proteiini-ilmentymistä.",
+        timeline: "Testattavissa 6 kuukaudessa (lisäravinnetutkimus PBMC-analyysillä)",
+        falsification: "D-vitamiinitason korjaantuminen ei muuta VGCC-ilmentymistasoja",
+      },
+      {
+        id: "E-NEW-29",
+        title: "D-vitamiinitaso moduloi yksilöllistä EMF-herkkyyttä",
+        description: "Matala D-vitamiini → VGCC yliekspressoitu → enemmän Ca²⁺:ta per EMF-fotoni = korkeampi EMF-herkkyys. Testi: korreloi D-vitamiinitaso EMF:n aiheuttamiin biomarkkerien muutoksiin (CaMKII Thr286, uni-EEG) kontrolloidussa altistustutkimuksessa. Ennuste: D-vitamiinipuutteiset henkilöt osoittavat suurempia EMF:n aiheuttamia biomarkkerien muutoksia.",
+        timeline: "Testattavissa 12 kuukaudessa (kontrolloitu EMF-altistus D-vitamiinitason mukaan kerrostettuna)",
+        falsification: "Ei korrelaatiota D-vitamiinitason ja EMF-biomarkkerivasteiden suuruuden välillä",
+      },
+      {
+        id: "E-NEW-30",
+        title: "PEMF-terapian parametrit karttuvat Ca²⁺-hormeesikäyrälle",
+        description: "PEMF edistää luunkasvua tietyillä parametreilla, kun taas krooninen EMF aiheuttaa haittaa. Molemmat toimivat Ca²⁺-kanavien kautta. Testi: mittaa Ca²⁺-signalointi osteoblasteissa PEMF-parametriavaruudessa (taajuus, intensiteetti, kesto). Ennuste: optimaaliset PEMF-parametrit vastaavat Lindgrenin χ-parametrin hormeesihuippua; poikkeama kumpaankin suuntaan vähentää hyötyä.",
+        timeline: "Testattavissa 12 kuukaudessa (in vitro osteoblastien Ca²⁺-annosvaste)",
+        falsification: "PEMF-vaikutukset eivät noudata hormeesikäyrää Ca²⁺-kanavien kautta",
+      },
+      {
+        id: "E-NEW-31",
+        title: "Skitsofrenian riski korkein CACNA1C-variantti + matala D-vitamiini + korkea EMF -yhdistelmällä",
+        description: "Kolmoisisku: CACNA1C-riskivariantti (geneettinen) + D-vitamiinipuutos (→VGCC↑) + EMF-altistus (→Ca²⁺↑) pitäisi tuottaa korkeimman skitsofreniariskin. Testi: genotyypitä CACNA1C + mittaa D-vitamiini + arvioi EMF-altistus skitsofrenian tapaus-verrokkitutkimuksessa. Ennuste: kolmisuuntainen interaktio on merkitsevä — kolmoisiskun henkilöillä korkein vetosuhde.",
+        timeline: "Testattavissa 12 kuukaudessa (tapaus-verrokkitutkimus genotyypityksellä + biomarkkereilla)",
+        falsification: "Ei merkitsevää kolmisuuntaista interaktiota CACNA1C-genotyypin, D-vitamiinin ja EMF:n välillä",
+      },
+    ],
+    extTimeline: "Aikajana",
+    extFalsification: "Falsifikaatiokriteeri",
+    extLocked: "Lukittu: 2026-08-26",
+    extStatus: "LUKITTU — odottaa testiä",
     ttypeTitle: "T-tyypin kanavan ennusteet",
     ttypeLead: "T-tyypin kalsiumkanavan bifurkaatiomekanismista johdetut testattavat ennusteet.",
     ttypePredictions: [
@@ -3738,6 +3866,35 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
                 <p><span className="font-semibold">{d.finalTimeline}:</span> {fp.timeline}</p>
                 <p><span className="font-semibold">{d.finalFalsification}:</span> {fp.falsification}</p>
                 <p className="font-mono-num">{d.finalLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Extended layer predictions E-NEW-24 through E-NEW-31 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.extTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.extLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.extPredictions.map((ep) => (
+            <article key={ep.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{ep.id}</span>
+                    <h3 className="font-semibold">{ep.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.extStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{ep.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.extTimeline}:</span> {ep.timeline}</p>
+                <p><span className="font-semibold">{d.extFalsification}:</span> {ep.falsification}</p>
+                <p className="font-mono-num">{d.extLocked}</p>
               </div>
             </article>
           ))}

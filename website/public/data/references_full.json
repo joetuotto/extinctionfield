@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 708,
+    "total_references": 745,
     "verified_count": 240,
     "generated": "2026-08-26",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls"
@@ -14999,6 +14999,302 @@
       "pathway": ["gaba", "interneuron", "asd"],
       "tags": ["asd", "gaba", "interneuron", "review"],
       "source": "PMC4085902 10.3389/fped.2014.00070"
+    },
+    {
+      "id": "adhd_pfc_delay",
+      "pdf_number": 1042,
+      "finding": "ADHD shows cortical maturation delay of 5 years in median prefrontal cortex; sequence of maturation is preserved but timing is delayed",
+      "pathway": ["pfc", "maturation", "adhd"],
+      "tags": ["adhd", "neurodevelopment", "cortical"],
+      "source": "Shaw et al. PNAS 2007 104:19649"
+    },
+    {
+      "id": "adhd_goldilocks",
+      "pdf_number": 1043,
+      "finding": "PFC function requires optimal DA levels (inverted U-curve / Goldilocks phenomenon): too little or too much dopamine impairs working memory and attention",
+      "pathway": ["dopamine", "pfc", "attention"],
+      "tags": ["adhd", "dopamine", "pfc", "cognition"],
+      "source": "Arnsten 2009 review"
+    },
+    {
+      "id": "iarc_2a_shift",
+      "pdf_number": 1044,
+      "finding": "IARC classifies shift work involving circadian disruption as Group 2A (probably carcinogenic to humans); melatonin suppression is the primary proposed mechanism",
+      "pathway": ["shift_work", "circadian", "melatonin", "cancer"],
+      "tags": ["iarc", "cancer", "melatonin", "shift_work"],
+      "source": "IARC Monograph 98 2010"
+    },
+    {
+      "id": "shift_breast",
+      "pdf_number": 1045,
+      "finding": "Night shift work is associated with increased breast cancer risk OR 2.34; high-intensity night work OR 2.66 in meta-analysis",
+      "pathway": ["shift_work", "breast_cancer", "melatonin"],
+      "tags": ["cancer", "shift_work", "breast", "meta_analysis"],
+      "source": "Meta-analysis night shift breast cancer"
+    },
+    {
+      "id": "mel_antitumor",
+      "pdf_number": 1046,
+      "finding": "Melatonin has antitumoral properties: antioxidant, anti-apoptotic, anti-angiogenic; melatonin suppression increases hormone-dependent cancer risk",
+      "pathway": ["melatonin", "cancer", "antioxidant"],
+      "tags": ["melatonin", "cancer", "anti_tumor"],
+      "source": "Reiter 2017 review"
+    },
+    {
+      "id": "verap_t1d_jama",
+      "pdf_number": 1047,
+      "finding": "Verapamil preserves beta-cell function in children with new-onset T1D: C-peptide +30% vs placebo at 52 weeks in double-blind RCT (N=88, ages 7-17)",
+      "pathway": ["verapamil", "cav12", "beta_cell", "t1d"],
+      "tags": ["verapamil", "t1d", "rct", "beta_cell"],
+      "source": "Forlenza JAMA 2023 10.1001/jama.2023.2064"
+    },
+    {
+      "id": "verap_t1d_natmed",
+      "pdf_number": 1048,
+      "finding": "Verapamil increases C-peptide levels at 3 and 12 months in adults with recent-onset T1D via TXNIP reduction and beta-cell protection",
+      "pathway": ["verapamil", "txnip", "beta_cell"],
+      "tags": ["verapamil", "t1d", "rct", "natmed"],
+      "source": "Ovalle Nat Med 2018 10.1038/s41591-018-0089-4"
+    },
+    {
+      "id": "verap_t2d_dc",
+      "pdf_number": 1049,
+      "finding": "Verapamil use is associated with lower T2D incidence compared to other calcium channel blockers in large observational study",
+      "pathway": ["verapamil", "t2d", "beta_cell"],
+      "tags": ["verapamil", "t2d", "observational"],
+      "source": "Diabetes Care 2025"
+    },
+    {
+      "id": "uterine_cav",
+      "pdf_number": 1050,
+      "finding": "Uterine contractions depend on Ca2+ influx through VGCCs; KCa2.3 channels and VGCCs together regulate myometrial excitability",
+      "pathway": ["calcium", "vgcc", "uterus", "contraction"],
+      "tags": ["uterus", "calcium", "contraction"],
+      "source": "PMC8709448"
+    },
+    {
+      "id": "nifed_tocolytic",
+      "pdf_number": 1051,
+      "finding": "Nifedipine (Ca2+ channel blocker) is first-line tocolytic agent for preterm labor; superior to beta-agonists with fewer side effects",
+      "pathway": ["nifedipine", "cav12", "tocolysis"],
+      "tags": ["nifedipine", "preterm", "tocolysis", "cochrane"],
+      "source": "Cochrane 2014 10.1002/14651858.CD002255.pub2"
+    },
+    {
+      "id": "nifed_preterm",
+      "pdf_number": 1052,
+      "finding": "Nifedipine effectively delays preterm delivery by blocking L-type Ca2+ channels in myometrium, reducing uterine contractility",
+      "pathway": ["nifedipine", "uterus", "preterm"],
+      "tags": ["nifedipine", "preterm", "calcium"],
+      "source": "Sci Rep 2023 10.1038/s41598-023-31077-x"
+    },
+    {
+      "id": "p4_cav12",
+      "pdf_number": 1053,
+      "finding": "Progesterone:estrogen ratio regulates Cav1.2 expression in uterus; P4 down leads to Cav1.2 up leading to increased uterine contractility and preterm risk",
+      "pathway": ["progesterone", "estrogen", "cav12", "uterus"],
+      "tags": ["progesterone", "cav12", "uterus", "preterm"],
+      "source": "PMC3816733"
+    },
+    {
+      "id": "als_ca_vuln",
+      "pdf_number": 1054,
+      "finding": "Motor neurons have selective vulnerability due to low Ca2+ buffering capacity and Ca2+-permeable AMPA receptors; Ca2+ overload leads to mitochondrial dysfunction and death",
+      "pathway": ["calcium", "motor_neuron", "ampa", "als"],
+      "tags": ["als", "calcium", "motor_neuron", "vulnerability"],
+      "source": "PMC4452055"
+    },
+    {
+      "id": "als_excitotox",
+      "pdf_number": 1055,
+      "finding": "Excitotoxic Ca2+ overload through Ca2+-permeable AMPA receptors is a primary mechanism of motor neuron death in ALS",
+      "pathway": ["excitotoxicity", "ampa", "calcium", "als"],
+      "tags": ["als", "excitotoxicity", "ampa"],
+      "source": "Brain Comms 2026 10.1093/braincomms/fcag098"
+    },
+    {
+      "id": "als_riluzole",
+      "pdf_number": 1056,
+      "finding": "Riluzole (the only ALS drug for decades) works by inhibiting Na+ channels, reducing depolarization, decreasing glutamate release, and reducing Ca2+ influx indirectly",
+      "pathway": ["riluzole", "sodium", "glutamate", "calcium"],
+      "tags": ["als", "riluzole", "pharmacology"],
+      "source": "PMC2842587"
+    },
+    {
+      "id": "als_glutamate",
+      "pdf_number": 1057,
+      "finding": "Glutamate excitotoxicity in ALS: excessive glutamate leads to Ca2+-permeable AMPA activation, Ca2+ overload, mitochondrial damage, and motor neuron death",
+      "pathway": ["glutamate", "ampa", "calcium", "mitochondria"],
+      "tags": ["als", "glutamate", "excitotoxicity"],
+      "source": "Springer 2023 10.1007/978-3-031-15080-7_147"
+    },
+    {
+      "id": "als_ca_connect",
+      "pdf_number": 1058,
+      "finding": "Ca2+ dysregulation connects multiple ALS mechanisms: protein aggregation, mitochondrial dysfunction, ER stress, and neuroinflammation all converge on Ca2+ homeostasis",
+      "pathway": ["calcium", "als", "mitochondria", "aggregation"],
+      "tags": ["als", "calcium", "review"],
+      "source": "Cells 2026 10.3390/cells15040322"
+    },
+    {
+      "id": "gut_5ht_90",
+      "pdf_number": 1059,
+      "finding": "Over 90% of the body's serotonin is produced in the gut by enterochromaffin cells; gut 5-HT regulates motility, secretion, and visceral sensation",
+      "pathway": ["serotonin", "gut", "enterochromaffin"],
+      "tags": ["serotonin", "gut", "enterochromaffin"],
+      "source": "Cell Host Microbe review"
+    },
+    {
+      "id": "trp_gut_brain",
+      "pdf_number": 1060,
+      "finding": "Gut microbiota modulate tryptophan availability to the brain indirectly, affecting central 5-HT synthesis; gut 5-HT itself does not cross BBB",
+      "pathway": ["tryptophan", "microbiome", "serotonin", "brain"],
+      "tags": ["gut_brain", "tryptophan", "microbiome"],
+      "source": "PMC7231603"
+    },
+    {
+      "id": "gut_mel_trp",
+      "pdf_number": 1061,
+      "finding": "Melatonin is synthesized from serotonin in the gut as well as the pineal gland; gut melatonin has local protective effects on intestinal mucosa",
+      "pathway": ["melatonin", "serotonin", "gut"],
+      "tags": ["melatonin", "gut", "serotonin"],
+      "source": "PMC5748205"
+    },
+    {
+      "id": "gut_microbiome_cns",
+      "pdf_number": 1062,
+      "finding": "Specific gut bacteria (Lactobacillus, Bifidobacterium) modulate serotonin levels; gut microbiome composition affects CNS function via vagal and immune pathways",
+      "pathway": ["microbiome", "serotonin", "vagus", "cns"],
+      "tags": ["microbiome", "serotonin", "gut_brain"],
+      "source": "Frontiers Microbiol 2025"
+    },
+    {
+      "id": "mast_ca_deg",
+      "pdf_number": 1063,
+      "finding": "Mast cell degranulation is Ca2+-dependent: Ca2+ ionophores trigger degranulation WITHOUT IgE; Ca2+ depletion blocks degranulation even with IgE crosslinking",
+      "pathway": ["calcium", "mast_cell", "degranulation"],
+      "tags": ["mast_cell", "calcium", "allergy"],
+      "source": "ScienceDirect 2011 10.1016/j.rmed.2011.09.007"
+    },
+    {
+      "id": "exca_allergy",
+      "pdf_number": 1064,
+      "finding": "Elevated extracellular Ca2+ activates GPRC6A on mast cells leading to increased degranulation, histamine, and cytokines; Ca2+ is a direct mast cell activator",
+      "pathway": ["calcium", "gprc6a", "mast_cell", "histamine"],
+      "tags": ["mast_cell", "calcium", "allergy", "histamine"],
+      "source": "ScienceDirect 2022 10.1016/j.lfs.2022.120920"
+    },
+    {
+      "id": "env_estrogen_mast",
+      "pdf_number": 1065,
+      "finding": "Environmental estrogens increase mast cell degranulation and IgE-mediated release; allergy prevalence has increased dramatically over 30 years",
+      "pathway": ["estrogen", "mast_cell", "allergy"],
+      "tags": ["allergy", "estrogen", "mast_cell", "prevalence"],
+      "source": "PMC1797832"
+    },
+    {
+      "id": "mast_ca_diff",
+      "pdf_number": 1066,
+      "finding": "Ca2+ signaling pathways in mast cells control differentiation, migration, and activation; different Ca2+ channel subtypes mediate distinct mast cell functions",
+      "pathway": ["calcium", "mast_cell", "differentiation"],
+      "tags": ["mast_cell", "calcium", "signaling"],
+      "source": "ScienceDirect 2017 10.1016/j.ceca.2017.08.002"
+    },
+    {
+      "id": "preecl_cav12",
+      "pdf_number": 1067,
+      "finding": "Cav1.2 is the primary blood pressure regulator; pre-eclampsia involves Cav1.2 + ROS dysregulation in pregnancy context",
+      "pathway": ["cav12", "blood_pressure", "preeclampsia", "ros"],
+      "tags": ["preeclampsia", "cav12", "hypertension"],
+      "source": "PMC9774363 10.3390/antiox11122432"
+    },
+    {
+      "id": "preecl_et1_cav",
+      "pdf_number": 1068,
+      "finding": "Endothelin-1 activates Cav1.2 in placental blood vessels; nifedipine partially blocks this activation in pre-eclampsia",
+      "pathway": ["endothelin", "cav12", "placenta", "nifedipine"],
+      "tags": ["preeclampsia", "endothelin", "cav12", "nifedipine"],
+      "source": "ScienceDirect 2024 10.1016/j.placenta.2024.10.008"
+    },
+    {
+      "id": "preecl_sparks",
+      "pdf_number": 1069,
+      "finding": "Ca2+ spark frequency is reduced in pre-eclampsia leading to decreased vasodilation capacity; Ca2+ signaling dysfunction underlies endothelial and smooth muscle impairment",
+      "pathway": ["calcium", "spark", "preeclampsia", "vasodilation"],
+      "tags": ["preeclampsia", "calcium", "endothelium"],
+      "source": "medRxiv 2025 10.1101/2025.11.04.25339536"
+    },
+    {
+      "id": "preecl_ros_ca",
+      "pdf_number": 1070,
+      "finding": "ROS disrupts Ca2+ signaling in pre-eclampsia: oxidative stress leads to Ca2+ homeostasis loss, endothelial and smooth muscle dysfunction",
+      "pathway": ["ros", "calcium", "preeclampsia", "endothelium"],
+      "tags": ["preeclampsia", "ros", "calcium"],
+      "source": "PMID:19125611"
+    },
+    {
+      "id": "bone_ca_channels",
+      "pdf_number": 1071,
+      "finding": "Ca2+ channels regulate both osteoclast and osteoblast function; multiple VGCC subtypes contribute to bone homeostasis",
+      "pathway": ["calcium", "osteoclast", "osteoblast", "bone"],
+      "tags": ["bone", "calcium", "vgcc"],
+      "source": "Frontiers Endocrinol 2024 10.3389/fendo.2024.1450328"
+    },
+    {
+      "id": "pemf_bone",
+      "pdf_number": 1072,
+      "finding": "PEMF therapy promotes bone growth, reduces osteoclast activity, and decreases inflammation; therapeutic EMF for fracture healing and osteoporosis",
+      "pathway": ["pemf", "bone", "osteoclast", "inflammation"],
+      "tags": ["pemf", "bone", "therapy", "hormesis"],
+      "source": "PMC11919207 2023"
+    },
+    {
+      "id": "vdh_lvscc",
+      "pdf_number": 1073,
+      "finding": "Vitamin D hormone (1,25(OH)2D3) downregulates CACNA1C and CACNA1D mRNA in hippocampal neurons; U-shaped neuroprotection -- low VDH reduces L-VSCC providing protection",
+      "pathway": ["vitamin_d", "cacna1c", "cacna1d", "hippocampus"],
+      "tags": ["vitamin_d", "vgcc", "neuroprotection"],
+      "source": "J Neurosci 2001 PMC6762438"
+    },
+    {
+      "id": "vdr_cav_silence",
+      "pdf_number": 1074,
+      "finding": "VDR silencing prevents Cav1.2 and Cav1.3 downregulation leading to NGF decrease; vitamin D receptor is required for VGCC transcriptional regulation",
+      "pathway": ["vdr", "cav12", "cav13", "ngf"],
+      "tags": ["vitamin_d", "vdr", "vgcc", "transcription"],
+      "source": "PLoS ONE 2011 10.1371/journal.pone.0017553"
+    },
+    {
+      "id": "vd_cav_cortex",
+      "pdf_number": 1075,
+      "finding": "1,25D modulates L-type VDCCs in cortical neurons: VDR membrane receptor leads to Ca2+ + kinase activation; genomic and non-genomic pathways",
+      "pathway": ["vitamin_d", "vdr", "ltype", "cortex"],
+      "tags": ["vitamin_d", "vgcc", "cortex", "signaling"],
+      "source": "ScienceDirect 2012 10.1016/j.bbalip.2012.06.007"
+    },
+    {
+      "id": "vd_pfc_schiz",
+      "pdf_number": 1076,
+      "finding": "Neonatal vitamin D deficiency + CACNA1C GWAS risk variants converge on schizophrenia risk: two risk factors both target Cav1.2 in developing PFC",
+      "pathway": ["vitamin_d", "cacna1c", "schizophrenia", "pfc"],
+      "tags": ["vitamin_d", "schizophrenia", "cacna1c", "genetics"],
+      "source": "Transl Psychiatry 2019 10.1038/s41398-019-0626-z"
+    },
+    {
+      "id": "cav12_dendrite",
+      "pdf_number": 1077,
+      "finding": "Cav1.2 regulates dendritic complexity and synaptic connectivity; vitamin D modulates this process during neurodevelopment",
+      "pathway": ["cav12", "dendrite", "synapse", "development"],
+      "tags": ["cav12", "dendrite", "neurodevelopment"],
+      "source": "bioRxiv 2025 10.64898/2025.12.11.693636"
+    },
+    {
+      "id": "gut_brain_5ht_review",
+      "pdf_number": 1078,
+      "finding": "Gut-brain serotonin axis: 5-HT produced by enterochromaffin cells regulates gut function; microbiome-5-HT-brain connection links IBS with depression",
+      "pathway": ["serotonin", "gut_brain", "ibs", "depression"],
+      "tags": ["gut_brain", "serotonin", "ibs", "review"],
+      "source": "PMC8607755"
     }
   ]
 }

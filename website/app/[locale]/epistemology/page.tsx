@@ -134,6 +134,41 @@ const COPY = {
       { step: "6. Epidemiology consistent", detail: "54-country R²=0.851, Klimentidis 8-species (p=10⁻⁷), Amish/Mennonite data — consistent across multiple designs" },
     ],
     burdenConclusion: "The chain is not a hypothesis — it is a verified sequence. Dismissing it requires identifying a specific broken link, not demanding a single study that spans the entire chain. This is the same epistemic standard we apply to evolution, plate tectonics, and germ theory.",
+
+    iarcTitle: "The IARC 2A Precedent",
+    iarcLead: "IARC classifies shift work involving circadian disruption as Group 2A — 'probably carcinogenic to humans.' The proposed mechanism is melatonin suppression. BERM identifies the same mechanism through a different exposure route.",
+    iarcPoints: [
+      "IARC classifies shift work involving circadian disruption as Group 2A (probably carcinogenic)",
+      "The proposed mechanism: shift work → melatonin suppression → hormone-dependent cancer risk↑",
+      "BERM connection: EMF → melatonin suppression is the SAME mechanism (VK3: PGC → melatonin↓)",
+      "If IARC accepts melatonin suppression via circadian disruption as 2A-level evidence for cancer, then EMF → melatonin suppression should carry equal weight",
+      "This is not BERM speculation — it is applying IARC's own logic consistently",
+    ],
+    iarcStats: [
+      { label: "Night shift workers — breast cancer", value: "OR 2.34" },
+      { label: "High-intensity night work — breast cancer", value: "OR 2.66" },
+    ],
+    iarcQuestion: "Key question: why is circadian disruption via shift work classified as 2A, but circadian disruption via EMF remains at only 2B?",
+
+    pemfTitle: "The PEMF Paradox: When EMF Heals",
+    pemfLead: "Pulsed electromagnetic field (PEMF) therapy is FDA-approved for bone fracture non-union. If EMF is harmful, why does PEMF heal? The resolution lies in the Lindgren χ-parameter hormesis model.",
+    pemfParadox: [
+      "PEMF promotes bone growth, reduces osteoclast activity, and decreases inflammation",
+      "This seems to CONTRADICT BERM: 'if EMF is harmful, why does PEMF heal?'",
+    ],
+    pemfResolutionTitle: "Resolution: Lindgren χ-parameter hormesis",
+    pemfResolution: [
+      "Ca²⁺ channels mediate BOTH therapeutic and harmful effects",
+      "Controlled parameters (frequency, intensity, duration) → beneficial Ca²⁺ transient",
+      "Chronic uncontrolled exposure → sustained Ca²⁺ overload",
+      "This is the SAME as any drug: therapeutic dose vs. toxic dose",
+    ],
+    pemfConclusion: [
+      "BERM does NOT predict 'all EMF is harmful'",
+      "BERM predicts: outcome depends on Ca²⁺ dynamics (dose, timing, cell type)",
+      "PEMF validation: if PEMF works THROUGH Ca²⁺ channels, this CONFIRMS that EMF affects biology through Ca²⁺ channels — which is BERM's core claim",
+      "The paradox dissolves: PEMF is not an exception to BERM, it is a confirmation",
+    ],
   },
 
   fi: {
@@ -265,6 +300,41 @@ const COPY = {
       { step: "6. Epidemiologia konsistentti", detail: "54 maan R²=0,851, Klimentidis 8 lajia (p=10⁻⁷), Amish/mennoniittidata — konsistentti eri tutkimusasetelmissa" },
     ],
     burdenConclusion: "Ketju ei ole hypoteesi — se on verifioitu sekvenssi. Sen kumoaminen edellyttää spesifisen rikkoutuneen linkin tunnistamista, ei yhtä tutkimusta joka kattaa koko ketjun. Tämä on sama episteeminen standardi jonka sovellamme evoluutioteoriaan, laattatektoniikkaan ja bakteeriteoriaan.",
+
+    iarcTitle: "IARC 2A -ennakkotapaus",
+    iarcLead: "IARC luokittelee vuorotyön, johon liittyy vuorokausirytmin häiriintyminen, ryhmään 2A — 'todennäköisesti karsinogeeninen ihmisille.' Ehdotettu mekanismi on melatoniinin suppressio. BERM tunnistaa saman mekanismin eri altistumisreitin kautta.",
+    iarcPoints: [
+      "IARC luokittelee vuorotyön, johon liittyy vuorokausirytmin häiriintyminen, ryhmään 2A (todennäköisesti karsinogeeninen)",
+      "Ehdotettu mekanismi: vuorotyö → melatoniinin suppressio → hormoniriippuvaisen syövän riski↑",
+      "BERM-yhteys: EMF → melatoniinin suppressio on SAMA mekanismi (VK3: PGC → melatoniini↓)",
+      "Jos IARC hyväksyy melatoniinin suppression vuorokausirytmin häiriön kautta 2A-tason evidenssiksi syövälle, niin EMF → melatoniinin suppression tulisi kantaa sama painoarvo",
+      "Tämä ei ole BERM-spekulaatiota — se soveltaa IARC:n omaa logiikkaa johdonmukaisesti",
+    ],
+    iarcStats: [
+      { label: "Yövuorotyöntekijät — rintasyöpä", value: "OR 2,34" },
+      { label: "Intensiivinen yötyö — rintasyöpä", value: "OR 2,66" },
+    ],
+    iarcQuestion: "Avainkysymys: miksi vuorokausirytmin häiriö vuorotyön kautta luokitellaan 2A:ksi, mutta vuorokausirytmin häiriö EMF:n kautta on vain 2B?",
+
+    pemfTitle: "PEMF-paradoksi: Kun EMF parantaa",
+    pemfLead: "Pulssimainen sähkömagneettinen kenttähoito (PEMF) on FDA:n hyväksymä luunmurtumien luutumattomuuteen. Jos EMF on haitallinen, miksi PEMF parantaa? Ratkaisu löytyy Lindgrenin χ-parametrin hormesis-mallista.",
+    pemfParadox: [
+      "PEMF edistää luun kasvua, vähentää osteoklastiaktiivisuutta ja vähentää tulehdusta",
+      "Tämä näyttää KUMOAVAN BERM:n: 'jos EMF on haitallinen, miksi PEMF parantaa?'",
+    ],
+    pemfResolutionTitle: "Ratkaisu: Lindgrenin χ-parametrin hormesis",
+    pemfResolution: [
+      "Ca²⁺-kanavat välittävät SEKÄ terapeuttisia ETTÄ haitallisia vaikutuksia",
+      "Kontrolloidut parametrit (taajuus, intensiteetti, kesto) → hyödyllinen Ca²⁺-transientti",
+      "Krooninen kontrolloimaton altistus → jatkuva Ca²⁺-ylikuormitus",
+      "Tämä on SAMA kuin millä tahansa lääkkeellä: terapeuttinen annos vs. toksinen annos",
+    ],
+    pemfConclusion: [
+      "BERM EI ennusta 'kaikki EMF on haitallista'",
+      "BERM ennustaa: lopputulos riippuu Ca²⁺-dynamiikasta (annos, ajoitus, solutyyppi)",
+      "PEMF-validaatio: jos PEMF toimii Ca²⁺-kanavien KAUTTA, tämä VAHVISTAA, että EMF vaikuttaa biologiaan Ca²⁺-kanavien kautta — mikä on BERM:n ydinväite",
+      "Paradoksi liukenee: PEMF ei ole poikkeus BERM:stä, se on vahvistus",
+    ],
   },
 } as const;
 
@@ -488,6 +558,66 @@ export default async function EpistemologyPage({
         </div>
         <div className="rounded-lg border border-accent/20 bg-accent/5 p-4">
           <p className="text-sm leading-relaxed text-foreground-muted">{d.burdenConclusion}</p>
+        </div>
+      </section>
+
+      {/* IARC 2A Precedent (VK42) */}
+      <section className="mt-14 border-t editorial-rule pt-6">
+        <h2 className="text-lg font-semibold mb-2">{d.iarcTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-3xl">{d.iarcLead}</p>
+        <div className="space-y-2 mb-6">
+          {d.iarcPoints.map((point, i) => (
+            <div key={i} className="flex gap-2 text-sm text-foreground-muted leading-relaxed">
+              <span className="text-accent shrink-0 mt-0.5">-</span>
+              <p>{point}</p>
+            </div>
+          ))}
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 mb-6">
+          {d.iarcStats.map((stat, i) => (
+            <div key={i} className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">{stat.label}</p>
+              <p className="text-xl font-bold text-foreground">{stat.value}</p>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-4">
+          <p className="text-sm leading-relaxed text-foreground-muted font-medium">{d.iarcQuestion}</p>
+        </div>
+      </section>
+
+      {/* PEMF Paradox (VK49) */}
+      <section className="mt-14 border-t editorial-rule pt-6">
+        <h2 className="text-lg font-semibold mb-2">{d.pemfTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-3xl">{d.pemfLead}</p>
+        <div className="space-y-2 mb-4">
+          {d.pemfParadox.map((point, i) => (
+            <div key={i} className="flex gap-2 text-sm text-foreground-muted leading-relaxed">
+              <span className="text-red-500 shrink-0 mt-0.5">!</span>
+              <p>{point}</p>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-4 mb-4">
+          <h3 className="font-semibold text-sm mb-3">{d.pemfResolutionTitle}</h3>
+          <div className="space-y-2">
+            {d.pemfResolution.map((point, i) => (
+              <div key={i} className="flex gap-2 text-sm text-foreground-muted leading-relaxed">
+                <span className="text-green-500 shrink-0 mt-0.5">-</span>
+                <p>{point}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="rounded-lg border border-accent/20 bg-accent/5 p-4">
+          <div className="space-y-2">
+            {d.pemfConclusion.map((point, i) => (
+              <div key={i} className="flex gap-2 text-sm text-foreground-muted leading-relaxed">
+                <span className="text-accent shrink-0 mt-0.5">-</span>
+                <p>{point}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

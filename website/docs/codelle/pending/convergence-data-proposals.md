@@ -147,3 +147,51 @@ Unexecutable [DATA] items from Codelle: KONVERGENSSIVERIFIOINTI — Ultimaattine
 - Include: melatonin levels (6-sulfatoxymelatonin), SIRT1 activity
 - Prediction: cumulative EMF exposure correlates with shorter telomeres after controlling for confounders
 - Note: tests E-NEW-11; melatonin levels should mediate the telomere-EMF relationship
+
+## D26: ADHD PFC myelination × prenatal EMF DTI study (VK41)
+- DTI white matter integrity in PFC of ADHD children correlated with prenatal/neonatal EMF exposure history
+- Maternal questionnaire: phone use, WiFi proximity, baby monitor type during pregnancy
+- Prediction: higher prenatal EMF correlates with delayed PFC myelination markers
+- Note: tests E-NEW-24; requires pediatric cohort with DTI + maternal history
+
+## D27: EMF occupational exposure × ALS pooled analysis (VK45)
+- Pooled re-analysis of existing occupational cohorts controlling for all confounders
+- Include: personal EMF dosimetry, job-exposure matrix, motor neuron biomarkers
+- Prediction: EMF exposure is independent ALS risk factor (OR > 1.2)
+- Note: tests E-NEW-25; existing meta-analyses show OR 1.3-1.7
+
+## D28: Gut microbiome composition × EMF exposure (VK46)
+- 16S rRNA sequencing of gut microbiome in occupational EMF-exposed vs controls
+- Measure: 5-HT-producing species (Lactobacillus, Bifidobacterium), tryptophan metabolites, zonulin
+- Prediction: EMF shifts microbiome, reducing 5-HT-producing species
+- Note: tests E-NEW-26; extends D19 (gut permeability)
+
+## D29: Mast cell degranulation threshold × EMF (VK47)
+- In vitro mast cell degranulation assay: cells from EMF-exposed vs control subjects
+- Measure: histamine release threshold, Ca²⁺ ionophore dose-response, IgE-independent activation
+- Prediction: mast cells from EMF-exposed degranulate at lower stimulation thresholds
+- Note: tests E-NEW-27
+
+## D30: Vitamin D supplementation × VGCC expression (VK50)
+- Measure VGCC expression in PBMCs before/after vitamin D supplementation in deficient individuals
+- Include: CACNA1C/1D mRNA levels, CaMKII Thr286, sleep quality
+- Prediction: vitamin D repletion reduces VGCC protein expression
+- Note: tests E-NEW-28; potentially the most translatable finding
+
+## D31: Vitamin D status × EMF sensitivity biomarkers (VK50)
+- Controlled EMF exposure stratified by vitamin D status
+- Measure: CaMKII Thr286 phosphorylation, sleep EEG, melatonin
+- Prediction: vitamin D-deficient individuals show larger EMF-induced biomarker changes
+- Note: tests E-NEW-29
+
+## D32: PEMF Ca²⁺ hormesis dose-response (VK49)
+- Measure Ca²⁺ signaling in osteoblasts across PEMF parameter space (frequency, intensity, duration)
+- Map optimal parameters to Lindgren χ-parameter hormesis curve
+- Prediction: optimal PEMF corresponds to hormesis peak; deviation reduces benefit
+- Note: tests E-NEW-30; bridges therapeutic PEMF with BERM mechanism
+
+## D33: Triple-hit schizophrenia study (VK50)
+- Case-control: genotype CACNA1C + measure vitamin D + estimate EMF exposure
+- Stratify by all three risk factors
+- Prediction: three-way interaction is significant — triple-hit individuals have highest OR
+- Note: tests E-NEW-31; if confirmed, would be the strongest gene×environment×nutrition interaction in psychiatry
