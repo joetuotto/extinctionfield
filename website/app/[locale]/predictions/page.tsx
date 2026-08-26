@@ -675,6 +675,70 @@ const COPY = {
     neuroFalsification: "Falsification criterion",
     neuroLocked: "Locked: 2026-08-26",
     neuroStatus: "LOCKED — awaiting test",
+    metalTitle: "Heavy metal synergy & convergence predictions",
+    metalLead: "Predictions derived from the convergence verification process, covering heavy metal × EMF synergy, pineal calcification, the photon→population chain, and intervention studies.",
+    metalPredictions: [
+      {
+        id: "METAL-EMF-1",
+        title: "Chelation therapy + EMF reduction produces superadditive health improvement in EHS patients",
+        description: "Heavy metals (Cd²⁺, Pb²⁺) enter cells through EMF-opened VGCCs and mimic Ca²⁺ at calmodulin/CaMKII binding sites. Chelation removes metals; EMF reduction closes the entry pathway. Combined intervention should be superadditive. Test: RCT of chelation + EMF reduction vs. chelation alone vs. EMF reduction alone in EHS patients with elevated heavy metal levels. Prediction: combined group shows >50% improvement vs. <25% for either alone.",
+        timeline: "Testable within 18 months (RCT with heavy metal panel + EHS symptom scores)",
+        falsification: "No superadditive effect — chelation + EMF reduction equals sum of individual effects",
+      },
+      {
+        id: "METAL-EMF-2",
+        title: "PGC grade correlates with cumulative lifetime EMF exposure",
+        description: "Pineal gland calcification (PGC) reduces melatonin production (r=0.569 for uncalcified tissue↔melatonin). EMF accelerates PGC via oxidative stress and Ca²⁺ deposition. Test: cross-sectional study correlating PGC volume (CT/MRI) with occupational EMF exposure history. Prediction: high-EMF occupations (electricians, telecom workers) have significantly higher PGC volume than matched low-EMF controls.",
+        timeline: "Testable immediately (CT/MRI + occupational exposure questionnaire)",
+        falsification: "No correlation between occupational EMF exposure history and PGC grade",
+      },
+      {
+        id: "METAL-EMF-3",
+        title: "Cadmium tissue levels are higher in high-EMF environments via Cav3.1 window current",
+        description: "Cd²⁺ permeates through Cav3.1 T-type calcium channels (confirmed with radiolabeled ¹⁰⁹Cd²⁺). Cav3.1 has a window current near resting potential — EMF increases open probability → more Cd entry. Test: compare tissue Cd levels in workers with equal dietary/occupational Cd exposure but different EMF exposure. Prediction: high-EMF group has higher tissue Cd accumulation at equivalent external Cd levels.",
+        timeline: "Testable within 12 months (occupational cohort with Cd biomonitoring + EMF dosimetry)",
+        falsification: "No difference in tissue Cd levels between EMF-matched groups at equivalent external Cd exposure",
+      },
+      {
+        id: "METAL-EMF-4",
+        title: "MeHg neurotoxicity threshold is lower in high-EMF environments",
+        description: "Methylmercury increases T-type Ca²⁺ currents; EMF independently opens VGCCs. Combined effect: double Ca²⁺ loading. Populations with both high MeHg (fish diet) and high EMF (urban) should show neurotoxicity at lower MeHg levels than high-MeHg + low-EMF populations. Test: compare neurodevelopmental outcomes in Faroe Islands (high MeHg, low EMF) vs. urban Japan (high MeHg, high EMF) at equivalent MeHg exposure. Prediction: urban Japan shows effects at lower MeHg thresholds.",
+        timeline: "Testable immediately (existing Faroe Islands and Japanese cohort data)",
+        falsification: "No difference in MeHg neurotoxicity threshold between high-EMF and low-EMF populations",
+      },
+      {
+        id: "CHAIN-1",
+        title: "Ca²⁺ channel blocker prevents EMF-induced sleep effects (ETH nimodipine-5G)",
+        description: "The VGCC hypothesis predicts that blocking the Ca²⁺ channel should prevent ALL downstream EMF effects. Sousouri 2025 showed CACNA1C genotype determines 5G sleep response. Test: ETH Zürich nimodipine-5G follow-up — administer nimodipine (L-type Ca²⁺ blocker) before 5G exposure and measure sleep EEG. Prediction: nimodipine abolishes the genotype-dependent sleep EEG changes seen in the original study.",
+        timeline: "Testable within 12 months (RCT extension of Sousouri 2025 protocol)",
+        falsification: "Nimodipine does NOT prevent EMF-induced sleep EEG changes → VGCC is not the primary target → entire BERM cascade must be reconsidered",
+      },
+      {
+        id: "CHAIN-2",
+        title: "Amish communities show different chronic disease trends than mainstream population",
+        description: "Amish communities have minimal EMF exposure (no grid electricity, no wireless devices), high co-sleeping, high breastfeeding. If EMF is a significant driver of chronic disease trends, Amish should show divergent trajectories for BERM-predicted conditions. Test: compare age-adjusted incidence trends (1990→2025) for T2D, obesity, autism, ADHD, depression, myopia, SIDS in Amish vs. general US population. Prediction: Amish show stable or declining rates where the general population shows increase.",
+        timeline: "Testable immediately (Amish health registries + CDC NHANES comparison)",
+        falsification: "Amish communities show the same chronic disease trend increases as the general US population",
+      },
+      {
+        id: "CHAIN-3",
+        title: "EMF reduction intervention produces measurable health improvement in a controlled study",
+        description: "This is BERM's critical missing piece: interventional verification. All current evidence is observational or mechanistic. Test: RCT of comprehensive EMF reduction (shielded sleeping environment, wired devices, no LED at night) in symptomatic individuals for 3 months. Measure: CaMKII Thr286 phosphorylation in lymphocytes, sleep quality (actigraphy), melatonin (urine 6-sulfatoxymelatonin), blood pressure. Prediction: EMF reduction group shows significant improvement in all four biomarkers.",
+        timeline: "Testable within 12 months (RCT with biomarker panel)",
+        falsification: "No improvement in any biomarker after comprehensive EMF reduction → EMF exposure has no measurable health impact → model lacks clinical relevance",
+      },
+      {
+        id: "CHAIN-4",
+        title: "Walker sleep chain: EMF→melatonin↓→sleep↓→GABA↓→Q↑ measured as complete cascade",
+        description: "Feedback loop 4 predicts a cascading cycle: EMF suppresses melatonin → sleep deteriorates → GABA tonic inhibition decreases → Q-factor increases → brain becomes MORE sensitive to EMF → further melatonin suppression. Test: longitudinal study measuring evening EMF exposure, overnight melatonin (saliva), sleep quality (PSG), morning GABA (MRS spectroscopy), and EEG coherence (Q proxy) over 4 weeks. Prediction: initial EMF exposure produces self-amplifying deterioration across all measures.",
+        timeline: "Testable within 6 months (longitudinal PSG + MRS + EEG protocol)",
+        falsification: "No self-amplifying cascade — EMF effects on sleep/melatonin/GABA remain constant rather than progressively worsening",
+      },
+    ],
+    metalTimeline: "Timeline",
+    metalFalsification: "Falsification criterion",
+    metalLocked: "Locked: 2026-08-26",
+    metalStatus: "LOCKED — awaiting test",
     ttypeTitle: "T-Type Channel Predictions",
     ttypeLead: "Testable predictions from the T-type calcium channel bifurcation mechanism.",
     ttypePredictions: [
@@ -1914,6 +1978,70 @@ const COPY = {
     neuroFalsification: "Falsifikaatiokriteeri",
     neuroLocked: "Lukittu: 2026-08-26",
     neuroStatus: "LUKITTU — odottaa testiä",
+    metalTitle: "Raskasmetallisynergian ja konvergenssin ennusteet",
+    metalLead: "Konvergenssiverifokaatioprosessista johdetut ennusteet, jotka kattavat raskasmetalli × EMF -synergian, pineaalisen kalsifikaation, fotoni→populaatio-ketjun ja interventiotutkimukset.",
+    metalPredictions: [
+      {
+        id: "METAL-EMF-1",
+        title: "Kelaatioterapia + EMF-vähennys tuottaa superadditiivisen terveyshyödyn EHS-potilailla",
+        description: "Raskasmetallit (Cd²⁺, Pb²⁺) kulkeutuvat soluihin EMF:n avaamien VGCC-kanavien kautta ja matkivat Ca²⁺:ia kalmoduliini/CaMKII-sitoutumispaikoissa. Kelaatio poistaa metallit; EMF-vähennys sulkee sisääntuloreitin. Yhdistetyn intervention pitäisi olla superadditiivinen. Testi: RCT kelaatiosta + EMF-vähennyksestä vs. kelaatio yksin vs. EMF-vähennys yksin EHS-potilailla joilla kohonneet raskasmetallitasot. Ennuste: yhdistetty ryhmä osoittaa >50 % parannus vs. <25 % kummallekin yksin.",
+        timeline: "Testattavissa 18 kuukaudessa (RCT raskasmetallipaneelilla + EHS-oirepisteillä)",
+        falsification: "Ei superadditiivista vaikutusta — kelaatio + EMF-vähennys yhtä suuri kuin yksittäisten vaikutusten summa",
+      },
+      {
+        id: "METAL-EMF-2",
+        title: "PGC-aste korreloi kumulatiivisen elinikäisen EMF-altistuksen kanssa",
+        description: "Pineaalirauhasen kalsifikaatio (PGC) vähentää melatoniinin tuotantoa (r=0,569 kalsifioitumattomalle kudokselle↔melatoniini). EMF kiihdyttää PGC:tä oksidatiivisen stressin ja Ca²⁺-kertymisen kautta. Testi: poikkileikkaustutkimus joka korreloi PGC-tilavuuden (TT/MRI) ammatillisen EMF-altistushistorian kanssa. Ennuste: korkean EMF:n ammatit (sähköasentajat, televiestintätyöntekijät) omaavat merkittävästi korkeamman PGC-tilavuuden kuin vakioidut matalan EMF:n kontrollit.",
+        timeline: "Testattavissa heti (TT/MRI + ammatillinen altistuskyselylomake)",
+        falsification: "Ei korrelaatiota ammatillisen EMF-altistushistorian ja PGC-asteen välillä",
+      },
+      {
+        id: "METAL-EMF-3",
+        title: "Kadmiumin kudostasot ovat korkeammat korkean EMF:n ympäristöissä Cav3.1-ikkunavirran kautta",
+        description: "Cd²⁺ permeoi Cav3.1 T-tyypin kalsiumkanavien läpi (vahvistettu radioleimatulla ¹⁰⁹Cd²⁺:lla). Cav3.1:llä on ikkunavirta lähellä lepokalvopotentiaalia — EMF kasvattaa avautumistodennäköisyyttä → enemmän Cd:n sisäänvirtausta. Testi: vertaa kudosten Cd-tasoja työntekijöillä joilla sama ravinnon/ammatillinen Cd-altistus mutta eri EMF-altistus. Ennuste: korkean EMF:n ryhmällä on korkeampi kudosten Cd-kertymä vastaavilla ulkoisilla Cd-tasoilla.",
+        timeline: "Testattavissa 12 kuukaudessa (ammattikohortti Cd-biomonitoroinnilla + EMF-dosimetrialla)",
+        falsification: "Ei eroa kudosten Cd-tasoissa EMF-vakioitujen ryhmien välillä vastaavilla ulkoisilla Cd-altistuksilla",
+      },
+      {
+        id: "METAL-EMF-4",
+        title: "MeHg:n neurotoksisuuskynnys on matalampi korkean EMF:n ympäristöissä",
+        description: "Metyylielohopea kasvattaa T-tyypin Ca²⁺-virtoja; EMF avaa itsenäisesti VGCC:itä. Yhteisvaikutus: kaksinkertainen Ca²⁺-kuormitus. Populaatioissa joissa sekä korkea MeHg (kalaruokavalio) että korkea EMF (kaupunki) pitäisi neurotoksisuutta ilmetä matalammilla MeHg-tasoilla kuin korkea-MeHg + matala-EMF -populaatioissa. Testi: vertaa neurokehitystuloksia Färsaarilla (korkea MeHg, matala EMF) vs. urbaanissa Japanissa (korkea MeHg, korkea EMF) vastaavilla MeHg-altistuksilla. Ennuste: urbaani Japani osoittaa vaikutuksia matalammilla MeHg-kynnyksillä.",
+        timeline: "Testattavissa heti (olemassa olevat Färsaarten ja japanilaiset kohorttitiedot)",
+        falsification: "Ei eroa MeHg:n neurotoksisuuskynnyksessä korkean EMF:n ja matalan EMF:n populaatioiden välillä",
+      },
+      {
+        id: "CHAIN-1",
+        title: "Ca²⁺-kanavasalpaaja estää EMF:n aiheuttamat univaikutukset (ETH:n nimodipiini-5G)",
+        description: "VGCC-hypoteesi ennustaa, että kalsiumkanavan salpauksen pitäisi estää KAIKKI alavirran EMF-vaikutukset. Sousouri 2025 osoitti, että CACNA1C-genotyyppi määrittää 5G-univasteen. Testi: ETH Zürichin nimodipiini-5G-jatkotutkimus — anna nimodipiinia (L-tyypin Ca²⁺-salpaaja) ennen 5G-altistusta ja mittaa uni-EEG. Ennuste: nimodipiini kumoaa alkuperäisessä tutkimuksessa nähdyt genotyyppiriippuvaiset uni-EEG-muutokset.",
+        timeline: "Testattavissa 12 kuukaudessa (RCT Sousouri 2025 -protokollan laajennus)",
+        falsification: "Nimodipiini EI estä EMF:n aiheuttamia uni-EEG-muutoksia → VGCC ei ole ensisijainen kohde → koko BERM-kaskadi on arvioitava uudelleen",
+      },
+      {
+        id: "CHAIN-2",
+        title: "Amish-yhteisöt osoittavat erilaisia kroonisen sairauden trendejä kuin valtaväestö",
+        description: "Amish-yhteisöillä on minimaalinen EMF-altistus (ei sähköverkkoa, ei langattomia laitteita), korkea yhteisuniminen, korkea imetysaste. Jos EMF on merkittävä kroonisten sairaustrendien ajuri, Amisheilla pitäisi olla eriävät kehityskulut BERM:n ennustamille tiloille. Testi: vertaa ikävakioituja ilmaantuvuustrendejä (1990→2025) T2D:lle, liikalihavuudelle, autismille, ADHD:lle, masennukselle, likitaitteisuudelle, SIDS:lle Amish vs. USA:n yleisväestössä. Ennuste: Amisheilla vakaat tai laskevat luvut siellä missä yleisväestöllä kasvua.",
+        timeline: "Testattavissa heti (Amish-terveysrekisterit + CDC NHANES -vertailu)",
+        falsification: "Amish-yhteisöt osoittavat samat kroonisten sairauksien trendien kasvut kuin USA:n yleisväestö",
+      },
+      {
+        id: "CHAIN-3",
+        title: "EMF-vähennysinterventio tuottaa mitattavan terveyshyödyn kontrolloidussa tutkimuksessa",
+        description: "Tämä on BERM:n kriittinen puuttuva pala: interventionaalinen verifiointi. Kaikki nykyinen evidenssi on havainnollista tai mekanistista. Testi: RCT kattavasta EMF-vähennyksestä (suojattu nukkumisympäristö, langalliset laitteet, ei LED:iä yöllä) oireisilla henkilöillä 3 kuukauden ajan. Mittaa: CaMKII Thr286 -fosforylaatio lymfosyyteissä, unenlaatu (aktigrafia), melatoniini (virtsan 6-sulfatoksimelatoniini), verenpaine. Ennuste: EMF-vähennysryhmä osoittaa merkittävää parannusta kaikissa neljässä biomarkkerissa.",
+        timeline: "Testattavissa 12 kuukaudessa (RCT biomarkkeripaneelilla)",
+        falsification: "Ei parannusta missään biomarkkerissa kattavan EMF-vähennyksen jälkeen → EMF-altistuksella ei ole mitattavaa terveysvaikutusta → mallilta puuttuu kliininen merkitys",
+      },
+      {
+        id: "CHAIN-4",
+        title: "Walkerin uniketju: EMF→melatoniini↓→uni↓→GABA↓→Q↑ mitataan kokonaisena kaskadina",
+        description: "Takaisinkytkentäsilmukka 4 ennustaa kaskadoivan syklin: EMF suppressoi melatoniinia → uni heikkenee → GABA:n tooninen inhibitio vähenee → Q-tekijä kasvaa → aivot tulevat HERKEMMIKSI EMF:lle → lisää melatoniinisuppressiota. Testi: pitkittäistutkimus joka mittaa ilta-EMF-altistuksen, yön melatoniinin (sylki), unenlaadun (PSG), aamu-GABA:n (MRS-spektroskopia) ja EEG-koherenssin (Q-proksi) 4 viikon ajan. Ennuste: alkuperäinen EMF-altistus tuottaa itseään vahvistavan heikkenemisen kaikissa mittareissa.",
+        timeline: "Testattavissa 6 kuukaudessa (pitkittäinen PSG + MRS + EEG -protokolla)",
+        falsification: "Ei itseään vahvistavaa kaskadia — EMF:n vaikutukset uneen/melatoniiniin/GABAan pysyvät vakiona eivätkä pahene asteittain",
+      },
+    ],
+    metalTimeline: "Aikajana",
+    metalFalsification: "Falsifikaatiokriteeri",
+    metalLocked: "Lukittu: 2026-08-26",
+    metalStatus: "LUKITTU — odottaa testiä",
     ttypeTitle: "T-tyypin kanavan ennusteet",
     ttypeLead: "T-tyypin kalsiumkanavan bifurkaatiomekanismista johdetut testattavat ennusteet.",
     ttypePredictions: [
@@ -3016,6 +3144,35 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             {locale === "fi" ? "Neurologisen spektrin evidenssi →" : "Neurological spectrum evidence →"}
           </Link>
         </p>
+      </section>
+
+      {/* Heavy metal synergy & convergence predictions METAL-EMF-1 through CHAIN-4 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.metalTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.metalLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.metalPredictions.map((mp) => (
+            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{mp.id}</span>
+                    <h3 className="font-semibold">{mp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.metalStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{mp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.metalTimeline}:</span> {mp.timeline}</p>
+                <p><span className="font-semibold">{d.metalFalsification}:</span> {mp.falsification}</p>
+                <p className="font-mono-num">{d.metalLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       {/* T-Type channel predictions TTYPE-1 through TTYPE-2 */}

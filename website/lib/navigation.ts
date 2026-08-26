@@ -21,6 +21,7 @@ import {
   Pill,
   Dna,
   Landmark,
+  Scale,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -190,6 +191,7 @@ export const NAV_ROUTES: NavRoute[] = [
       },
     ],
   },
+  { href: "/epistemology", labelEn: "Epistemology", labelFi: "Epistemologia", icon: Scale },
   { href: "/civilization", labelEn: "Civilization", labelFi: "Sivilisaatio", icon: Landmark },
   { href: "/predictions", labelEn: "Predictions", labelFi: "Ennusteet", icon: Target },
   { href: "/articles", labelEn: "Articles", labelFi: "Artikkelit", icon: FileText },

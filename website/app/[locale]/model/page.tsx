@@ -259,6 +259,17 @@ const t = {
     neonatalQSpectrum: "The neonatal Q → ∞ condition is one end of a continuous spectrum. The same Q-factor mechanism — with varying damping coefficient γ — unifies SIDS, epilepsy, SUDEP, migraine, and cluster headache. Spreading depolarization (CSD) is the common terminal pathway; the Q-factor determines whether CSD is triggered, how far it propagates, and whether it reaches the brainstem.",
     neonatalQSpectrumLink: "See full neurological spectrum analysis →",
 
+    feedbackLoopsTitle: "Four Positive Feedback Loops",
+    feedbackLoopsSub: "Self-amplifying cycles within the Ca²⁺ cascade — initial EMF effects progressively worsen without increasing exposure",
+    feedbackLoopsDesc: "Convergence verification revealed four positive feedback loops within the BERM cascade. Each means the system degrades itself: a small initial perturbation grows over time without any increase in external exposure.",
+    feedbackLoops: [
+      { id: "LOOP-1", name: "Monitor feedback resonance", steps: "Baby's sound → microphone → RF modulation → VGCC → Ca²⁺ → stronger oscillation → louder sound → more RF → cascade amplification", status: "Mechanistically coherent, untested as complete loop", color: "amber" },
+      { id: "LOOP-2", name: "Serotonin lock-open", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → thalamocortical gate OPEN → EMF penetrates deeper → more CaMKII disruption → more 5-HT↓ → ...", status: "Each link verified independently", color: "green" },
+      { id: "LOOP-3", name: "Hypoxia-NKCC1", steps: "CSD → local hypoxia → NKCC1↑ → GABA more excitatory → γ↓ → Q↑ → CSD propagates more easily → more hypoxia → ...", status: "NKCC1↑ in hypoxia verified", color: "green" },
+      { id: "LOOP-4", name: "Walker sleep chain", steps: "EMF → melatonin↓ → sleep↓ → GABA tonic inhibition↓ → γ↓ → Q↑ → EMF affects brain MORE → more melatonin↓ → ...", status: "Each link verified independently", color: "green" },
+    ],
+    feedbackLoopsLink: "See full convergence verification →",
+
     genSuscTitle: "Genetic Susceptibility Map: The 15-Gene Calcium Profile",
     genSuscSub: "EMF sensitivity is not one gene — it is a polygenic profile across five functional tiers of the calcium cascade",
     genSuscDesc: "BERM identifies 15 genes whose polymorphisms modulate individual EMF sensitivity. They divide into five functional tiers: INFLUX (5 CACNA genes controlling Ca²⁺ entry), MODULATION (CACNA2D1 controlling channel density), INTEGRATION (CAMK2A/B at the convergence point), EXTRUSION (3 genes controlling Ca²⁺ removal), and SIGNALING (4 genes modulating downstream response). Each gene's disease associations match BERM cascade predictions.",
@@ -764,6 +775,17 @@ const t = {
     neonatalQRef: "Neonatal seizure review 2021 · Bumetanide NKCC1 2015 · NKCC1/KCC2 Bookshelf 2020",
     neonatalQSpectrum: "Neonataalin Q → ∞ -tila on jatkuvan spektrin toinen pää. Sama Q-tekijämekanismi — vaihtelevalla vaimennuskertoimella γ — yhdistää SIDS:n, epilepsian, SUDEP:n, migreenin ja klusteripäänsäryn. Spreading depolarization (CSD) on yhteinen terminaalireitti; Q-tekijä määrittää laukaistaanko CSD, kuinka pitkälle se leviää ja saavuttaako se aivorungon.",
     neonatalQSpectrumLink: "Ks. koko neurologisen spektrin analyysi →",
+
+    feedbackLoopsTitle: "Neljä positiivista takaisinkytkentäsilmukkaa",
+    feedbackLoopsSub: "Itseään vahvistavat syklit Ca²⁺-kaskadin sisällä — alkuperäiset EMF-vaikutukset pahentuvat asteittain ilman altistuksen kasvua",
+    feedbackLoopsDesc: "Konvergenssiverifiointi paljasti neljä positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Jokainen tarkoittaa, että järjestelmä rapautuu itse: pieni alkuvaiheen häiriö kasvaa ajan myötä ilman ulkoisen altistuksen kasvua.",
+    feedbackLoops: [
+      { id: "LOOP-1", name: "Monitorin palauteresonanssi", steps: "Vauvan ääni → mikrofoni → RF-modulaatio → VGCC → Ca²⁺ → voimakkaampi oskillaatio → kovempi ääni → lisää RF:ää → kaskadivahvistus", status: "Mekanistisesti koherentti, testaamaton kokonaisuutena", color: "amber" },
+      { id: "LOOP-2", name: "Serotoniin-lukitusavaus", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → talamokortikaalinen portti AUKI → EMF tunkeutuu syvemmälle → lisää CaMKII-häiriötä → lisää 5-HT↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
+      { id: "LOOP-3", name: "Hypoksia-NKCC1", steps: "CSD → paikallinen hypoksia → NKCC1↑ → GABA eksitatorisempi → γ↓ → Q↑ → CSD leviää helpommin → lisää hypoksiaa → ...", status: "NKCC1↑ hypoksiassa verifioitu", color: "green" },
+      { id: "LOOP-4", name: "Walkerin uniketju", steps: "EMF → melatoniini↓ → uni↓ → GABA-tooninen inhibitio↓ → γ↓ → Q↑ → EMF vaikuttaa aivoihin enemmän → lisää melatoniini↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
+    ],
+    feedbackLoopsLink: "Ks. koko konvergenssiverifiointi →",
 
     genSuscTitle: "Geneettinen herkkyyskartta: 15 geenin kalsiumprofiili",
     genSuscSub: "EMF-herkkyys ei ole yksi geeni — se on polygeeninen profiili kalsiumkaskadin viidellä funktionaalisella tasolla",
@@ -2213,6 +2235,28 @@ export default async function ModelPage({
                 {d.neonatalQSpectrumLink}
               </Link>
             </div>
+          </CollapsibleSection>
+
+          {/* Feedback Loops */}
+          <CollapsibleSection id="feedback-loops" title={d.feedbackLoopsTitle} subtitle={d.feedbackLoopsSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.feedbackLoopsDesc}
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2 mb-4">
+              {d.feedbackLoops.map((loop: { id: string; name: string; steps: string; status: string; color: string }) => (
+                <div key={loop.id} className={`rounded-xl border p-4 ${loop.color === "green" ? "border-green-500/30 bg-green-500/5" : "border-amber-500/30 bg-amber-500/5"}`}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="font-mono-num text-xs text-accent">{loop.id}</span>
+                    <h4 className="font-semibold text-sm">{loop.name}</h4>
+                  </div>
+                  <p className="text-xs text-foreground-muted leading-relaxed mb-2">{loop.steps}</p>
+                  <p className="text-[10px] text-foreground-muted italic">{loop.status}</p>
+                </div>
+              ))}
+            </div>
+            <Link href={`${prefix}/evidence/unbroken-chain`} className="text-sm text-accent hover:underline">
+              {d.feedbackLoopsLink}
+            </Link>
           </CollapsibleSection>
 
           {/* Genetic Susceptibility Map */}

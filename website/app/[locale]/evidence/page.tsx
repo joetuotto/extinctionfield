@@ -21,6 +21,8 @@ import {
   FlaskConical,
   Baby,
   BrainCircuit,
+  Link2,
+  FlaskRound,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
@@ -327,6 +329,18 @@ const SUB_PAGES = [
     icon: BrainCircuit,
     en: { title: "Neurological Spectrum: Epilepsy, Migraine, Cluster Headache", desc: "One Q-factor mechanism, four neurological disorders: SIDS, epilepsy/SUDEP, migraine (CSD), cluster headache. López-Martín validation, pharmacological cross-map, psilocybin tryptamine reset." },
     fi: { title: "Neurologinen spektri: Epilepsia, migreeni, klusteripäänsärky", desc: "Yksi Q-tekijämekanismi, neljä neurologista sairautta: SIDS, epilepsia/SUDEP, migreeni (CSD), klusteripäänsärky. López-Martín-validaatio, farmakologinen ristikartta, psilosybiini-tryptamiiniresetti." },
+  },
+  {
+    slug: "unbroken-chain",
+    icon: Link2,
+    en: { title: "The Unbroken Chain: Photon → Population", desc: "Convergence verification across 15 scales — from photon metric distortion to population-level epidemiology. 7/8 intermediate layers confirmed, 4 positive feedback loops, 0 falsified." },
+    fi: { title: "Katkeamaton ketju: Fotoni → Populaatio", desc: "Konvergenssiverifiointi 15 skaalan yli — fotonin metriikkahäiriöstä väestötason epidemiologiaan. 7/8 välikerrosta vahvistettu, 4 positiivista takaisinkytkentäsilmukkaa, 0 kumottu." },
+  },
+  {
+    slug: "heavy-metal-synergy",
+    icon: FlaskRound,
+    en: { title: "Heavy Metal × EMF Synergy", desc: "Cd²⁺ permeates Cav3.1, Pb²⁺ mimics Ca²⁺ at CaM, MeHg increases T-type currents. Pineal gland calcification (PGC) as convergent mechanism. Five metals, one VGCC entry pathway." },
+    fi: { title: "Raskasmetalli × EMF -synergismi", desc: "Cd²⁺ permeoi Cav3.1:n, Pb²⁺ matkii Ca²⁺:ia CaM:ssa, MeHg kasvattaa T-tyypin virtoja. Pineaalirauhasen kalsifikaatio (PGC) konvergenttina mekanismina. Viisi metallia, yksi VGCC-sisäänreitti." },
   },
   {
     slug: "lighting",
