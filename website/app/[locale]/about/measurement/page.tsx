@@ -18,7 +18,7 @@ type Copy = {
   boundaryText: string;
 };
 
-const t: Record<Locale, Copy> = {
+const t: Record<string, Copy> = {
   en: {
     title: "FieldState measurement protocol",
     subtitle:

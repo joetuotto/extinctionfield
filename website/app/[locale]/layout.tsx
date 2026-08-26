@@ -27,7 +27,7 @@ export default async function LocaleLayout({
     <>
       <SetLang locale={locale} />
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-background focus:text-foreground focus:px-4 focus:py-2 focus:rounded-md focus:border focus:border-border focus:shadow-lg">
-        {locale === "fi" ? "Siirry sisältöön" : "Skip to content"}
+        {{ en: "Skip to content", fi: "Siirry sisältöön", ja: "コンテンツへスキップ", fr: "Aller au contenu", ko: "콘텐츠로 건너뛰기" }[locale as string] ?? "Skip to content"}
       </a>
       <Navigation locale={locale} />
       <main id="main-content" className="flex-1">{children}</main>

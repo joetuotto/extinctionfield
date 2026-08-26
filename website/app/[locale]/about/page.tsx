@@ -32,7 +32,7 @@ type Copy = {
   authorIndependence: string;
 };
 
-const t: Record<Locale, Copy> = {
+const t: Record<string, Copy> = {
   en: {
     title: "About BERM",
     subtitle:

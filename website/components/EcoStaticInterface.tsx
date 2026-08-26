@@ -106,7 +106,7 @@ type Copy = {
   tickText: string;
 };
 
-const COPY: Record<Locale, Copy> = {
+const COPY: Record<string, Copy> = {
   en: {
     frameworkTitle: "BERM–Eco: FieldState, ecological sorting and selection",
     frameworkLead:

@@ -13,7 +13,7 @@ type Copy = {
   outcomeText: string;
 };
 
-const t: Record<Locale, Copy> = {
+const t: Record<string, Copy> = {
   en: {
     title: "Laboratory FieldState replication protocol",
     subtitle:

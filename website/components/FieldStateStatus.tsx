@@ -19,7 +19,7 @@ interface Layer {
   readonly description: string;
 }
 
-const COPY: Record<Locale, {
+const COPY: Record<string, {
   title: string;
   lead: string;
   layersTitle: string;

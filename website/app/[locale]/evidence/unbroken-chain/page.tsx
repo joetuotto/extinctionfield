@@ -9,7 +9,7 @@ const COPY = {
   en: {
     title: "The Unbroken Chain: Photon → Population",
     subtitle:
-      "Iterative convergence verification tested 51 scales of BERM's mechanistic chain across 41 verified layers (VK1–VK31, VK41–VK50). Result: 16 positive feedback loops forming a self-amplifying network, from photon absorption to population-level effects, with unexpected empirical content at every layer.",
+      "Iterative convergence verification tested 57 scales of BERM's mechanistic chain across 47 verified layers (VK1–VK31, VK41–VK56). Result: 17 positive feedback loops forming a self-amplifying network, from photon absorption to population-level effects, with unexpected empirical content at every layer.",
     backLink: "← Back to Evidence",
 
     cautionText:
@@ -70,13 +70,19 @@ const COPY = {
       { scale: "10⁻⁴ m", link: "VK48: Pre-eclampsia = pregnancy Cav1.2 + ROS dysregulation", evidence: "PMC9774363: Cav1.2 BP regulation; ET-1→Cav1.2 in placenta; nifedipine for pre-eclampsia", status: "confirmed", detail: "Pre-eclampsia involves Cav1.2 + ROS dysregulation in pregnancy. ET-1 activates Cav1.2 in placental vessels; nifedipine partially blocks this. Ca²⁺ spark frequency reduced in pre-eclampsia → vasodilation↓. Nifedipine used for both tocolysis AND pre-eclampsia hypertension — same Ca²⁺ mechanism in reproductive tissue." },
       { scale: "10⁻⁴ m", link: "VK49: Osteoporosis + PEMF hormesis paradox", evidence: "Frontiers Endocrinol 2024: Ca²⁺ channels in bone; PMC11919207: PEMF → bone growth", status: "confirmed", detail: "Ca²⁺ channels regulate both osteoclasts and osteoblasts. PEMF therapy promotes bone growth and reduces inflammation — seeming to contradict BERM. Resolution: Lindgren hormesis. Controlled PEMF parameters → beneficial Ca²⁺ transient; chronic uncontrolled EMF → Ca²⁺ overload. PEMF validates that EMF acts through Ca²⁺ channels." },
       { scale: "10⁻⁸ m", link: "VK50: Vitamin D → CACNA1C/1D mRNA↓ (10th moderator)", evidence: "J Neurosci 2001: VDH→L-VSCC↓; PLoS ONE 2011: VDR silencing → Cav1.2↑; Transl Psychiatry 2019", status: "confirmed", detail: "Vitamin D (1,25(OH)₂D₃) downregulates CACNA1C and CACNA1D mRNA — nature's channel blocker. VDR silencing prevents Cav1.2/Cav1.3 downregulation. Vitamin D deficiency → VGCC over-expression = same state as ELF-priming. Triple hit: CACNA1C variant + low vitamin D + EMF = highest risk (schizophrenia). 10th BERM moderator." },
+      { scale: "10⁻⁶ m", link: "VK51: CatSper = sperm-specific Ca²⁺ channel (5 infertility routes)", evidence: "RBMO 2014: knockout = sterile; Nature Comms 2025: temp-gated Q₁₀=5.1; JCI 2024: human mutations", status: "confirmed", detail: "CatSper is the ONLY sperm-specific Ca²⁺ channel — knockout males are completely sterile despite normal sperm production. Temperature-gated (threshold 33.5°C, Q₁₀=5.1): premature activation → energy depletion → death before reaching egg. Five independent routes to male infertility: hormonal (T↓), DNA (ROS), epigenetic (methylation), channel (CatSper), and thermal." },
+      { scale: "10⁻⁷ m", link: "VK52: Psilocybin = Ca²⁺ cascade reset via 5-HT2A→BDNF→mTOR", evidence: "Trends Pharmacol Sci 2025; Science 2023: intracellular 5-HT2A; Mol Psychiatry 2025", status: "confirmed", detail: "Psilocybin promotes dendritic spine growth via 5-HT2A→Gq→Ca²⁺→BDNF→mTOR — precisely reversing VK14 (cortisol→dendritic atrophy) and VK23 (BDNF↓). Intracellular 5-HT2A activation required (Science 2023) — serotonin itself cannot access these receptors. A pharmacological RESET of the Ca²⁺-damaged neural architecture." },
+      { scale: "10⁻⁷ m", link: "VK53: Caffeine = A2A→Ca²⁺ modulation → PD neuroprotection", evidence: "Frontiers Neurosci 2020: PD inverse assoc; PMID:11319241: MPTP protection; J Neurol Sci 2016", status: "confirmed", detail: "Strong epidemiological inverse association between caffeine and Parkinson's disease. A2A receptor antagonism → DA neuron protection in MPTP/6-OHDA models. Neuroprotection extends beyond PD: stroke, excitotoxicity, α-synuclein clearance. Caffeine is the ONE natural Ca²⁺ modulator whose consumption is INCREASING — potentially compensatory self-medication." },
+      { scale: "10⁰ m", link: "VK54: Lithium in drinking water → dementia↓ + suicide↓", evidence: "Int J Bipolar Disord 2024: 5 studies dementia↓; Br J Psychiatry 2020: suicide meta; ScienceDirect 2026: US counties", status: "confirmed", detail: "Higher natural lithium in drinking water is associated with lower dementia and suicide rates at population level. GSK-3β inhibition + CaMKII modulation + BDNF↑ + circadian stabilization = multiple BERM Ca²⁺ cascade nodes. Modern water filtration REMOVES trace lithium — a fifth natural protective mechanism lost." },
+      { scale: "10⁻⁵ m", link: "VK55: Amygdala hypertrophy ↔ hippocampal atrophy (S17 loop)", evidence: "PNAS 2008: single cortisol dose → BLA hypertrophy; PLoS ONE 2012: opposite BDNF; Neurosci Lett 2023: persistence", status: "confirmed", detail: "Cortisol produces OPPOSITE effects in amygdala vs hippocampus: BLA gains dendrites while hippocampus loses them. BDNF↑ in amygdala / BDNF↓ in hippocampus under same cortisol. BLA hypertrophy persists 21+ days after stress ends while hippocampal atrophy recovers. S17: cortisol→amygdala↑→anxiety↑→cortisol↑ = self-amplifying anxiety spiral." },
+      { scale: "10³ m", link: "VK56: Amish = BERM's closest control group (confirmed with reservations)", evidence: "STAT 2025: obesity -89%, T2D -75%; Anderson & Potts 2022: 126-study review; massive lifestyle confounders", status: "partial", detail: "Old Order Amish have dramatically lower rates of every BERM-predicted condition. However, massive confounders (diet, exercise, smoking, community) prevent direct attribution. Cross-validated by Klimentidis (animals gaining weight on controlled diets, p=10⁻⁷) and Mazur (weight-stable T↓). The Amish-Mennonite EMF gradient test would be the critical discriminator." },
     ],
     chainHeaders: { scale: "Scale", link: "Chain link", evidence: "Evidence", status: "Status" },
-    chainSummary: "51 verified links across 41 layers (VK1–VK31, VK41–VK50). The chain is unbroken from photon physics to population epidemiology, now spanning ADHD as second prototype, IARC 2A shift work validation, verapamil β-cell RCT, preterm birth nifedipine, ALS motor neuron vulnerability, gut-brain serotonin, allergy mast cell Ca²⁺, pre-eclampsia, PEMF hormesis paradox, and vitamin D as 10th moderator — plus all earlier mechanisms.",
+    chainSummary: "57 verified links across 47 layers (VK1–VK31, VK41–VK56). The chain is unbroken from photon physics to population epidemiology, now spanning CatSper fertility, psilocybin neural reset, caffeine neuroprotection, lithium water epidemiology, amygdala-anxiety feedback loop, and Amish control group — plus all mechanisms from ADHD prototype to vitamin D modulator.",
 
-    feedbackTitle: "Sixteen positive feedback loops",
+    feedbackTitle: "Seventeen positive feedback loops",
     feedbackLead:
-      "The convergence verification revealed sixteen self-amplifying cycles within the chain. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each loop means that initial EMF effects can progressively worsen without increasing exposure — the system degrades itself.",
+      "The convergence verification revealed seventeen self-amplifying cycles within the chain. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each loop means that initial EMF effects can progressively worsen without increasing exposure — the system degrades itself.",
     feedbackLoops: [
       {
         name: "Monitor feedback resonance",
@@ -190,6 +196,13 @@ const COPY = {
         status: "α2δ-1 → pain without injury verified; pain-sleep-cortisol each verified",
         statusColor: "green",
       },
+      {
+        name: "Amygdala-anxiety spiral",
+        id: "S17",
+        steps: ["EMF → cortisol↑ (HPA axis, VK11)", "Cortisol → BLA hypertrophy + BDNF↑ in amygdala", "BLA hypertrophy → anxiety↑ → MORE cortisol", "Simultaneously: hippocampus atrophies → HPA brake LOST → cortisol↑↑", "Amygdala hypertrophy PERSISTS 21+ days after stress → structural lock-in"],
+        status: "Single cortisol dose → BLA hypertrophy verified (PNAS 2008); persistence verified (Neurosci Lett 2023)",
+        statusColor: "green",
+      },
     ],
 
     consilienceTitle: "Consilience assessment",
@@ -281,7 +294,7 @@ const COPY = {
   fi: {
     title: "Katkeamaton ketju: Fotoni → Populaatio",
     subtitle:
-      "Iteratiivinen konvergenssiverifiointi testasi 51 skaalaa BERM:n mekanistisesta ketjusta 41 verifioidun kerroksen (VK1–VK31, VK41–VK50) yli. Tulos: 16 positiivista takaisinkytkentäsilmukkaa muodostavat itseään vahvistavan verkoston, fotonin absorptiosta väestötason vaikutuksiin, ennustamatonta empiiristä sisältöä jokaisessa kerroksessa.",
+      "Iteratiivinen konvergenssiverifiointi testasi 57 skaalaa BERM:n mekanistisesta ketjusta 47 verifioidun kerroksen (VK1–VK31, VK41–VK56) yli. Tulos: 17 positiivista takaisinkytkentäsilmukkaa muodostavat itseään vahvistavan verkoston, fotonin absorptiosta väestötason vaikutuksiin, ennustamatonta empiiristä sisältöä jokaisessa kerroksessa.",
     backLink: "← Takaisin Evidenssiin",
 
     cautionText:
@@ -342,13 +355,19 @@ const COPY = {
       { scale: "10⁻⁴ m", link: "VK48: Pre-eklampsia = raskauden Cav1.2 + ROS -häiriö", evidence: "PMC9774363: Cav1.2 verenpaineen säätely; ET-1→Cav1.2 istukassa; nifedipiini pre-eklampsiassa", status: "confirmed", detail: "Pre-eklampsia sisältää Cav1.2 + ROS -häiriön raskaudessa. ET-1 aktivoi Cav1.2:n istukan suonissa; nifedipiini estää tämän osittain. Ca²⁺-kipinätaajuus on alentunut pre-eklampsiassa → vasodilataatio↓. Nifedipiiniä käytetään sekä tokolyysiin ETTÄ pre-eklampsian verenpaineeseen — sama Ca²⁺-mekanismi reproduktiivisessa kudoksessa." },
       { scale: "10⁻⁴ m", link: "VK49: Osteoporoosi + PEMF-hormesiparadoksi", evidence: "Frontiers Endocrinol 2024: Ca²⁺-kanavat luussa; PMC11919207: PEMF → luun kasvu", status: "confirmed", detail: "Ca²⁺-kanavat säätelevät sekä osteoklasteja että osteoblasteja. PEMF-hoito edistää luun kasvua ja vähentää tulehdusta — näennäisesti ristiriidassa BERM:n kanssa. Ratkaisu: Lindgrenin hormesi. Kontrolloidut PEMF-parametrit → hyödyllinen Ca²⁺-transientti; krooninen hallitsematon EMF → Ca²⁺-ylikuorma. PEMF validoi, että EMF vaikuttaa Ca²⁺-kanavien kautta." },
       { scale: "10⁻⁸ m", link: "VK50: D-vitamiini → CACNA1C/1D mRNA↓ (10. moderaattori)", evidence: "J Neurosci 2001: VDH→L-VSCC↓; PLoS ONE 2011: VDR-hiljennys → Cav1.2↑; Transl Psychiatry 2019", status: "confirmed", detail: "D-vitamiini (1,25(OH)₂D₃) vaimentaa CACNA1C- ja CACNA1D-mRNA:ta — luonnon kanavasalpaaja. VDR-hiljennys estää Cav1.2/Cav1.3-alassäätelyn. D-vitamiinipuutos → VGCC-yliekspressio = sama tila kuin ELF-primaami. Kolmoisisku: CACNA1C-variantti + matala D-vitamiini + EMF = korkein riski (skitsofrenia). 10. BERM-moderaattori." },
+      { scale: "10⁻⁶ m", link: "VK51: CatSper = siittiöspesifinen Ca²⁺-kanava (5 infertiliteettireittiä)", evidence: "RBMO 2014: knockout = steriili; Nature Comms 2025: lämpötilakynnys Q₁₀=5,1; JCI 2024: ihmismutaatiot", status: "confirmed", detail: "CatSper on AINOA siittiöspesifinen Ca²⁺-kanava — knockout-urokset ovat täysin steriilejä normaalista siittiötuotannosta huolimatta. Lämpötilakynnys 33,5°C (Q₁₀=5,1): ennenaikainen aktivaatio → energian ehtyminen → kuolema ennen munasoluun pääsyä. Viisi itsenäistä reittiä miehen infertiliteettiin: hormonaalinen (T↓), DNA (ROS), epigeneettinen (metylaatio), kanava (CatSper) ja terminen." },
+      { scale: "10⁻⁷ m", link: "VK52: Psilosybiini = Ca²⁺-kaskadin resetti 5-HT2A→BDNF→mTOR kautta", evidence: "Trends Pharmacol Sci 2025; Science 2023: solunsisäinen 5-HT2A; Mol Psychiatry 2025", status: "confirmed", detail: "Psilosybiini edistää dendriittipiikkien kasvua 5-HT2A→Gq→Ca²⁺→BDNF→mTOR-reitin kautta — kääntäen täsmälleen VK14:n (kortisoli→dendriittiatrofia) ja VK23:n (BDNF↓) patologiat. Solunsisäinen 5-HT2A-aktivaatio vaaditaan (Science 2023) — serotoniini itsessään ei pääse näihin reseptoreihin. Farmakologinen RESETTI Ca²⁺-vaurioituneelle hermoarkkitehtuurille." },
+      { scale: "10⁻⁷ m", link: "VK53: Kofeiini = A2A→Ca²⁺-modulaatio → PD-neuroprotektio", evidence: "Frontiers Neurosci 2020: PD käänteinen yhteys; PMID:11319241: MPTP-suoja; J Neurol Sci 2016", status: "confirmed", detail: "Vahva epidemiologinen käänteinen yhteys kofeiinin ja Parkinsonin taudin välillä. A2A-reseptorin antagonismi → DA-neuronien suoja MPTP/6-OHDA-malleissa. Neuroprotektio ylittää PD:n: aivohalvaus, eksitotoksisuus, α-synukleiinin puhdistuma. Kofeiini on AINOA luonnollinen Ca²⁺-modulaattori jonka kulutus KASVAA — mahdollisesti kompensoiva itselääkintä." },
+      { scale: "10⁰ m", link: "VK54: Litium juomavedessä → dementia↓ + itsemurha↓", evidence: "Int J Bipolar Disord 2024: 5 tutkimusta dementia↓; Br J Psychiatry 2020: itsemurha-meta; ScienceDirect 2026: US maakunnat", status: "confirmed", detail: "Korkeampi luonnollinen litium juomavedessä yhdistyy matalampiin dementia- ja itsemurhalukuihin väestötasolla. GSK-3β-esto + CaMKII-modulaatio + BDNF↑ + vuorokausirytmin stabilointi = useita BERM Ca²⁺-kaskadin solmukohtia. Moderni vedensuodatus POISTAA litiumin — viides luonnollinen suojamekanismi häviää." },
+      { scale: "10⁻⁵ m", link: "VK55: Amygdalan hypertrofia ↔ hippokampuksen atrofia (S17-silmukka)", evidence: "PNAS 2008: yksi kortisoli-annos → BLA-hypertrofia; PLoS ONE 2012: vastakkainen BDNF; Neurosci Lett 2023: pysyvyys", status: "confirmed", detail: "Kortisoli tuottaa VASTAKKAISET vaikutukset amygdalassa vs. hippokampuksessa: BLA saa dendriittejä samalla kun hippokampus menettää niitä. BDNF↑ amygdalassa / BDNF↓ hippokampuksessa saman kortisolin alla. BLA-hypertrofia säilyy 21+ päivää stressin jälkeen. S17: kortisoli→amygdala↑→ahdistus↑→kortisoli↑ = itseään vahvistava ahdistuskierre." },
+      { scale: "10³ m", link: "VK56: Amish = BERM:n lähin kontrolliryhmä (vahvistettu varauksella)", evidence: "STAT 2025: lihavuus -89 %, T2D -75 %; Anderson & Potts 2022: 126 tutkimuksen katsaus; massiiviset lifestyle-konfoundarit", status: "partial", detail: "Vanhojen sääntöjen amishilla dramaattisesti matalammat luvut JOKAISESSA BERM:n ennustamassa tilassa. Massiiviset konfoundarit (ruokavalio, liikunta, tupakointi, yhteisö) estävät suoran attribuution. Ristiin vahvistettu Klimentidisin (eläimet lihovat kontrollidieetillä, p=10⁻⁷) ja Mazurin (painovakaat T↓) tutkimuksilla. Amish-Mennonite-EMF-gradienttitesti olisi kriittinen erottelija." },
     ],
     chainHeaders: { scale: "Skaala", link: "Ketjun linkki", evidence: "Evidenssi", status: "Status" },
-    chainSummary: "51 verifioitua linkkiä 41 kerroksessa (VK1–VK31, VK41–VK50). Ketju on katkeamaton fotonifysiikasta väestöepidemiologiaan, kattaen nyt ADHD:n toisena prototyyppinä, IARC 2A -vuorotyövalidoinnin, verapamiilin β-solu-RCT:n, ennenaikaisen synnytyksen nifedipiinin, ALS:n motoneuronihaavoittuvuuden, suolisto-aivo-serotoniinin, allergian syöttösolun Ca²⁺:n, pre-eklampsian, PEMF-hormesiparadoksin ja D-vitamiinin 10. moderaattorina — sekä kaikki aiemmat mekanismit.",
+    chainSummary: "57 verifioitua linkkiä 47 kerroksessa (VK1–VK31, VK41–VK56). Ketju on katkeamaton fotonifysiikasta väestöepidemiologiaan, kattaen nyt CatSperin hedelmällisyyden, psilosybiinin hermoreset:n, kofeiinin neuroprotektion, litiumveden epidemiologian, amygdalan ahdistussilmukan ja Amish-kontrolliryhmän — sekä kaikki mekanismit ADHD-prototyypistä D-vitamiinimodulaattoriin.",
 
-    feedbackTitle: "Kuusitoista positiivista takaisinkytkentäsilmukkaa",
+    feedbackTitle: "Seitsemäntoista positiivista takaisinkytkentäsilmukkaa",
     feedbackLead:
-      "Konvergenssiverifiointi paljasti kuusitoista itseään vahvistavaa sykliä ketjun sisällä. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti. Jokainen silmukka tarkoittaa, että alkuperäiset EMF-vaikutukset voivat asteittain pahentua ilman altistuksen kasvua — järjestelmä rapautuu itse.",
+      "Konvergenssiverifiointi paljasti seitsemäntoista itseään vahvistavaa sykliä ketjun sisällä. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti. Jokainen silmukka tarkoittaa, että alkuperäiset EMF-vaikutukset voivat asteittain pahentua ilman altistuksen kasvua — järjestelmä rapautuu itse.",
     feedbackLoops: [
       {
         name: "Monitorin palauteresonanssi",
@@ -460,6 +479,13 @@ const COPY = {
         id: "S16",
         steps: ["EMF → α2δ-1↑ → sentraalinen sensitisaatio → krooninen kipu", "Krooninen kipu → uni↓ (Walkerin ketju S4)", "Uni↓ → kortisoli↑ (HPA S7) + GABA↓", "Kortisoli↑ → tulehdus → lisää sensitisaatiota → masennus → uni↓ → ..."],
         status: "α2δ-1 → kipu ilman vauriota verifioitu; kipu-uni-kortisoli jokainen verifioitu",
+        statusColor: "green",
+      },
+      {
+        name: "Amygdalan ahdistuskierre",
+        id: "S17",
+        steps: ["EMF → kortisoli↑ (HPA-akseli, VK11)", "Kortisoli → BLA-hypertrofia + BDNF↑ amygdalassa", "BLA-hypertrofia → ahdistus↑ → ENEMMÄN kortisolia", "Samanaikaisesti: hippokampus atrofioituu → HPA-jarru HÄVIÄÄ → kortisoli↑↑", "Amygdalan hypertrofia SÄILYY 21+ pv stressin jälkeen → rakenteellinen lukittuminen"],
+        status: "Yksi kortisoli-annos → BLA-hypertrofia verifioitu (PNAS 2008); pysyvyys verifioitu (Neurosci Lett 2023)",
         statusColor: "green",
       },
     ],
@@ -757,8 +783,8 @@ export default async function UnbrokenChainPage({
         <DerivedPrediction>
           <p className="text-sm leading-relaxed mb-3">
             {activeLocale === "fi"
-              ? "Konvergenssiverifiointi tuottaa 47 testattavaa ennustetta, jotka kattavat raskasmetalli-synergian, veri-aivoesteen, ruskean rasvakudoksen, HPA-akselin, β-solun, hypotalamuksen, kortisoli-hippokampuksen, Leydig-solun, syöttösolun, siittiöiden CatSperin, NK-immunivalvonnan, BDNF-hormeesin, suolisto-aivo-akselin, kilpirauhasen Dio2/Dio3:n, epigenetiikan, telomeeri-ikääntymisen, oksitosiinin, kroonisen kivun, ASD-prototyypin, ADHD:n, ALS:n, allergioiden, D-vitamiinin ja PEMF-hormeesin mekanismit."
-              : "The convergence verification generates 47 testable predictions covering heavy metal synergy, blood-brain barrier, brown adipose tissue, HPA axis, β-cell, hypothalamic nexus, cortisol-hippocampus, Leydig cell, mast cell, sperm CatSper, NK immune surveillance, BDNF hormesis, gut-brain axis, thyroid Dio2/Dio3, epigenetics, telomere aging, oxytocin, chronic pain, ASD prototype, ADHD, ALS, allergy, vitamin D, and PEMF hormesis mechanisms."}
+              ? "Konvergenssiverifiointi tuottaa 55 testattavaa ennustetta, jotka kattavat raskasmetalli-synergian, veri-aivoesteen, ruskean rasvakudoksen, HPA-akselin, β-solun, hypotalamuksen, kortisoli-hippokampuksen, Leydig-solun, syöttösolun, siittiöiden CatSperin, NK-immunivalvonnan, BDNF-hormeesin, suolisto-aivo-akselin, kilpirauhasen Dio2/Dio3:n, epigenetiikan, telomeeri-ikääntymisen, oksitosiinin, kroonisen kivun, ASD-prototyypin, ADHD:n, ALS:n, allergioiden, D-vitamiinin, PEMF-hormeesin, psilosybiinin, kofeiinin, litiumveden, amygdalan ja Amish-kontrolliryhmän mekanismit."
+              : "The convergence verification generates 55 testable predictions covering heavy metal synergy, blood-brain barrier, brown adipose tissue, HPA axis, β-cell, hypothalamic nexus, cortisol-hippocampus, Leydig cell, mast cell, sperm CatSper, NK immune surveillance, BDNF hormesis, gut-brain axis, thyroid Dio2/Dio3, epigenetics, telomere aging, oxytocin, chronic pain, ASD prototype, ADHD, ALS, allergy, vitamin D, PEMF hormesis, psilocybin, caffeine, lithium water, amygdala, and Amish control group mechanisms."}
           </p>
           <Link href={`${prefix}${d.predictionHref}`} className="text-sm text-accent hover:underline">
             {d.predictionLink} →

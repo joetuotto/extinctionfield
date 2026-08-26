@@ -511,6 +511,27 @@ const SUB_PAGES = [
     en: { title: "The Reproductive Arc", desc: "From fertilization to first year of life, every critical reproductive stage depends on Ca²⁺ channels. Nifedipine — a Ca²⁺ blocker — is first-line treatment at multiple stages." },
     fi: { title: "Reproduktiivinen kaari", desc: "Hedelmöityksestä ensimmäiseen elinvuoteen jokainen kriittinen reproduktiivinen vaihe riippuu Ca²⁺-kanavista. Nifedipiini — Ca²⁺-salpaaja — on ensilinjan hoito useissa vaiheissa." },
   },
+  {
+    slug: "natural-modulators",
+    icon: Leaf,
+    level: "confirmed",
+    en: { title: "Five Natural Ca²⁺ Modulators", desc: "Vitamin D, melatonin, magnesium, lithium, and caffeine — five endogenous or dietary substances that modulate the same VGCC channels EMF activates." },
+    fi: { title: "Viisi luonnollista Ca²⁺-modulaattoria", desc: "D-vitamiini, melatoniini, magnesium, litium ja kofeiini — viisi endogeenistä tai ravinnosta saatavaa ainetta jotka moduloivat samoja VGCC-kanavia joita EMF aktivoi." },
+  },
+  {
+    slug: "amish-control",
+    icon: Users,
+    level: "partial",
+    en: { title: "Amish: The Missing Control Group", desc: "Old Order Amish reject most electrical technology. Their disease rates provide the closest approximation to a zero-EMF control group in a modern Western population." },
+    fi: { title: "Amish: Puuttuva kontrolliryhmä", desc: "Vanhan järjestyksen amishit hylkäävät suurimman osan sähköteknologiasta. Heidän sairastuvuuslukunsa tarjoavat lähimmän vastineen nolla-EMF-kontrolliryhmälle modernissa länsimaisessa väestössä." },
+  },
+  {
+    slug: "counter-evidence",
+    icon: Scale,
+    level: "partial",
+    en: { title: "Counter-Evidence: An Honest Assessment", desc: "Five categories of evidence that appear to contradict BERM, and the model's response to each — from null studies to WHO reviews." },
+    fi: { title: "Vastaevidenssi: Rehellinen arviointi", desc: "Viisi evidenssikategoriaa jotka näyttävät olevan ristiriidassa BERM:n kanssa, ja mallin vastaus kuhunkin — nollatuloksista WHO:n katsauksiin." },
+  },
 ] as const;
 
 
@@ -543,6 +564,28 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
       <section className="mb-14 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-4">{d.dualInterpretationTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.dualInterpretationLead}</p>
+
+        {/* Dual interpretation visual comparison */}
+        <div className="max-w-4xl mb-6">
+          <svg viewBox="0 0 700 160" className="w-full" role="img" aria-label={activeLocale === "fi" ? "Standardi vs BERM" : "Standard vs BERM"}>
+            <rect x="2" y="2" width="340" height="156" rx="6" fill="currentColor" className="text-foreground-muted" opacity="0.06" />
+            <rect x="358" y="2" width="340" height="156" rx="6" fill="currentColor" className="text-accent" opacity="0.08" />
+            <line x1="350" y1="8" x2="350" y2="152" stroke="currentColor" className="text-foreground-muted" strokeWidth="1" strokeDasharray="4 2" opacity="0.3" />
+            <text x="172" y="22" textAnchor="middle" fontSize="10" fontWeight="700" letterSpacing="0.08em" fill="currentColor" className="text-foreground-muted">{activeLocale === "fi" ? "STANDARDI" : "STANDARD"}</text>
+            <text x="528" y="22" textAnchor="middle" fontSize="10" fontWeight="700" letterSpacing="0.08em" fill="currentColor" className="text-accent">BERM</text>
+            <text x="172" y="55" textAnchor="middle" fontSize="9.5" fill="currentColor" className="text-foreground-muted">{activeLocale === "fi" ? "Heikko kenttä → Ei vaikutusta" : "Weak field → No effect"}</text>
+            <text x="528" y="55" textAnchor="middle" fontSize="9.5" fontWeight="600" fill="currentColor" className="text-accent">{activeLocale === "fi" ? "Heikko kenttä → Vahvistettu kalvolla" : "Weak field → Amplified at membrane"}</text>
+            <line x1="20" y1="68" x2="330" y2="68" stroke="currentColor" className="text-foreground-muted" strokeWidth="0.5" opacity="0.12" />
+            <line x1="370" y1="68" x2="688" y2="68" stroke="currentColor" className="text-accent" strokeWidth="0.5" opacity="0.2" />
+            <text x="172" y="95" textAnchor="middle" fontSize="9.5" fill="currentColor" className="text-foreground-muted">{activeLocale === "fi" ? "Ei annos-vastetta → Ei mekanismia" : "No dose-response → No mechanism"}</text>
+            <text x="528" y="95" textAnchor="middle" fontSize="9.5" fontWeight="600" fill="currentColor" className="text-accent">{activeLocale === "fi" ? "Ikkunavaikutus → Resonanssi" : "Window effect → Resonance"}</text>
+            <line x1="20" y1="108" x2="330" y2="108" stroke="currentColor" className="text-foreground-muted" strokeWidth="0.5" opacity="0.12" />
+            <line x1="370" y1="108" x2="688" y2="108" stroke="currentColor" className="text-accent" strokeWidth="0.5" opacity="0.2" />
+            <text x="172" y="138" textAnchor="middle" fontSize="9.5" fill="currentColor" className="text-foreground-muted">{activeLocale === "fi" ? "Sekavat tulokset → Epäselvä" : "Mixed results → Inconclusive"}</text>
+            <text x="528" y="138" textAnchor="middle" fontSize="9.5" fontWeight="600" fill="currentColor" className="text-accent">{activeLocale === "fi" ? "Moderaattorit → Ennustettava" : "Uncontrolled moderators → Predictable"}</text>
+          </svg>
+        </div>
+
         <div className="space-y-4 max-w-4xl">
           {d.dualInterpretationRows.map((row, ri) => (
             <div key={ri} className="rounded-lg border border-card-border bg-card-bg p-4">
@@ -562,6 +605,80 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Dual interpretation visual: bias funnel */}
+        <div className="mt-8 max-w-3xl mx-auto">
+          <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label="Bias attenuation funnel">
+            {/* True effect on left */}
+            <rect x="10" y="50" width="120" height="80" rx="8" fill="#22c55e" fillOpacity="0.12" stroke="#22c55e" strokeWidth="1.5" />
+            <text x="70" y="80" textAnchor="middle" fontSize="11" fontWeight="700" fill="#22c55e" fontFamily="system-ui">
+              {activeLocale === "fi" ? "Todellinen" : "True effect"}
+            </text>
+            <text x="70" y="100" textAnchor="middle" fontSize="22" fontWeight="700" fill="#22c55e" fontFamily="system-ui">100%</text>
+            <text x="70" y="120" textAnchor="middle" fontSize="8" fill="#22c55e" fillOpacity="0.6" fontFamily="system-ui">
+              {activeLocale === "fi" ? "nollaskenaarion suhteen" : "vs. zero exposure"}
+            </text>
+            {/* Attenuation funnel */}
+            <polygon points="140,60 140,120 420,85 420,95" fill="#ef4444" fillOpacity="0.08" stroke="#ef4444" strokeWidth="0.8" strokeOpacity="0.3" />
+            {/* Bias labels on the funnel */}
+            {[
+              { x: 180, label: activeLocale === "fi" ? "Lab-lähtötaso" : "Lab baseline" },
+              { x: 230, label: activeLocale === "fi" ? "Kontrolli-kontam." : "Control contam." },
+              { x: 280, label: activeLocale === "fi" ? "SAR-kynnys" : "SAR threshold" },
+              { x: 330, label: activeLocale === "fi" ? "Julkaisuvinouma" : "Publication bias" },
+              { x: 380, label: activeLocale === "fi" ? "Mediaattori" : "Mediator adj." },
+            ].map((b, i) => (
+              <g key={i}>
+                <text x={b.x} y={55 + i * 3} textAnchor="middle" fontSize="7" fill="#ef4444" fillOpacity="0.7" fontFamily="system-ui">{b.label}</text>
+                <line x1={b.x} y1={57 + i * 3} x2={b.x} y2={68 + i * 2} stroke="#ef4444" strokeWidth="0.5" strokeOpacity="0.3" />
+              </g>
+            ))}
+            <text x="280" y="145" textAnchor="middle" fontSize="8" fill="#ef4444" fillOpacity="0.5" fontFamily="system-ui">
+              {activeLocale === "fi" ? "15+ tunnistettua vinoumaa vaimentavat havaittua vaikutusta" : "15+ identified biases attenuate observed effect"}
+            </text>
+            {/* Observed effect on right */}
+            <rect x="430" y="65" width="150" height="60" rx="8" fill="#ef4444" fillOpacity="0.12" stroke="#ef4444" strokeWidth="1.5" />
+            <text x="505" y="88" textAnchor="middle" fontSize="11" fontWeight="700" fill="#ef4444" fontFamily="system-ui">
+              {activeLocale === "fi" ? "Havaittu" : "Observed"}
+            </text>
+            <text x="505" y="110" textAnchor="middle" fontSize="18" fontWeight="700" fill="#ef4444" fontFamily="system-ui">~20-40%</text>
+            {/* Caption */}
+            <text x="300" y="185" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.4" fontFamily="system-ui">
+              {activeLocale === "fi" ? "Sama tutkimus → eri johtopäätös riippuen oletetusta vinoumamallista" : "Same study → different conclusion depending on assumed bias model"}
+            </text>
+          </svg>
+        </div>
+
+        {/* Dual interpretation visual summary */}
+        <div className="mt-6 max-w-4xl rounded-lg border border-card-border overflow-hidden">
+          <div className="grid grid-cols-[1fr_auto_1fr]">
+            <div className="p-4 bg-slate-500/5">
+              <p className="text-[0.65rem] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                {activeLocale === "fi" ? "Standarditulkinta" : "Standard interpretation"}
+              </p>
+              <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-400">
+                <li>{activeLocale === "fi" ? "Nollatulos = ei vaikutusta" : "Null result = no effect"}</li>
+                <li>{activeLocale === "fi" ? "Korkea SAR = terminen" : "High SAR only = thermal"}</li>
+                <li>{activeLocale === "fi" ? "BKT > EMF-proxy" : "GDP > EMF proxy"}</li>
+                <li>{activeLocale === "fi" ? "Lineaarinen annos-vaste" : "Linear dose-response"}</li>
+              </ul>
+            </div>
+            <div className="w-px bg-card-border relative">
+              <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background px-1 text-xs text-foreground-muted font-mono">vs</span>
+            </div>
+            <div className="p-4 bg-accent/5">
+              <p className="text-[0.65rem] font-semibold uppercase tracking-wider text-accent mb-2">
+                {activeLocale === "fi" ? "BERM-tulkinta" : "BERM interpretation"}
+              </p>
+              <ul className="space-y-1.5 text-xs text-accent/80">
+                <li>{activeLocale === "fi" ? "Kontaminoitu kontrolli" : "Contaminated control group"}</li>
+                <li>{activeLocale === "fi" ? "Ikkunavaikutus (Adey)" : "Window effect (Adey/Blackman)"}</li>
+                <li>{activeLocale === "fi" ? "BKT = huono kontrolli (Pearl)" : "GDP = bad control (Pearl 2009)"}</li>
+                <li>{activeLocale === "fi" ? "Ei-monotoninen vaste" : "Non-monotonic response"}</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -607,6 +724,47 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
             ? "BERM:n mekanistiset polut perustuvat 10 toisistaan riippumattomaan tutkimusalaan. Mikään yksittäinen ala ei riitä, mutta niiden konvergenssi samaan ennusteeseen — sähkömagneettisten kenttien biologinen aktiivisuus — on epätodennäköistä sattumalta."
             : "BERM's mechanistic pathways draw on 10 mutually independent research domains. No single domain is sufficient, but their convergence on the same prediction — biological activity of electromagnetic fields — is unlikely by chance."}
         </p>
+
+        {/* Convergence diagram */}
+        <div className="max-w-md mx-auto mb-8">
+          <svg viewBox="0 0 500 260" className="w-full" role="img" aria-label={activeLocale === "fi" ? "Konvergenssikaavio" : "Convergence diagram"}>
+            <circle cx="250" cy="130" r="30" fill="currentColor" className="text-accent" opacity="0.12" />
+            <circle cx="250" cy="130" r="30" fill="none" stroke="currentColor" className="text-accent" strokeWidth="2" />
+            <text x="250" y="127" textAnchor="middle" fontSize="9" fontWeight="700" fill="currentColor" className="text-accent">EMF</text>
+            <text x="250" y="138" textAnchor="middle" fontSize="7.5" fill="currentColor" className="text-accent">{activeLocale === "fi" ? "bio-aktiivisuus" : "bio-activity"}</text>
+            {(() => {
+              const domains = [
+                { en: "Biophysics", fi: "Biofysiikka", c: "#3b82f6" },
+                { en: "Epidemiology", fi: "Epidemiologia", c: "#10b981" },
+                { en: "Animal", fi: "Eläinkoe", c: "#f59e0b" },
+                { en: "Cellular", fi: "Solututkimus", c: "#ef4444" },
+                { en: "Clinical", fi: "Kliininen", c: "#8b5cf6" },
+                { en: "Sentinel", fi: "Sentinelli", c: "#06b6d4" },
+                { en: "Genetics", fi: "Genetiikka", c: "#f97316" },
+                { en: "Sleep", fi: "Uni", c: "#6366f1" },
+                { en: "Metabolic", fi: "Metabolinen", c: "#84cc16" },
+                { en: "Reproductive", fi: "Reproduktio", c: "#ec4899" },
+              ];
+              const hubX = 250, hubY = 130, sr = 85, lr = 112;
+              return domains.map((domain, i) => {
+                const a = ((i * 36 - 90) * Math.PI) / 180;
+                const sx = Math.round(hubX + sr * Math.cos(a));
+                const sy = Math.round(hubY + sr * Math.sin(a));
+                const lx = Math.round(hubX + lr * Math.cos(a));
+                const ly = Math.round(hubY + lr * Math.sin(a));
+                const anchor = i === 0 || i === 5 ? "middle" : i < 5 ? "start" : "end";
+                return (
+                  <g key={i}>
+                    <line x1={hubX} y1={hubY} x2={sx} y2={sy} stroke={domain.c} strokeWidth="2" opacity="0.7" />
+                    <circle cx={sx} cy={sy} r="5" fill={domain.c} />
+                    <text x={lx} y={ly + 3} textAnchor={anchor} fontSize="9" fontWeight="500" fill={domain.c}>{activeLocale === "fi" ? domain.fi : domain.en}</text>
+                  </g>
+                );
+              });
+            })()}
+          </svg>
+        </div>
+
         <div className="grid gap-3 sm:grid-cols-2 max-w-4xl">
           {(activeLocale === "fi" ? RESEARCH_DOMAINS.fi : RESEARCH_DOMAINS.en).map((item) => (
             <div key={item.n} className="flex gap-3 rounded-lg border border-card-border bg-card-bg p-3">
@@ -617,6 +775,39 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Research convergence diagram */}
+        <div className="mt-8 max-w-md mx-auto text-foreground-muted">
+          <svg viewBox="0 0 400 400" className="w-full" role="img" aria-label={activeLocale === "fi" ? "10 tutkimusalan konvergenssi Ca-häiriöön" : "10 research domains converging on Ca disruption"}>
+            <circle cx="200" cy="200" r="45" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.2" />
+            <text x="200" y="195" textAnchor="middle" fontSize="11" fill="currentColor" className="text-foreground" fontWeight="600">{"Ca²⁺"}</text>
+            <text x="200" y="210" textAnchor="middle" fontSize="9" fill="currentColor" opacity="0.6">{activeLocale === "fi" ? "häiriö" : "disruption"}</text>
+            {(activeLocale === "fi" ? RESEARCH_DOMAINS.fi : RESEARCH_DOMAINS.en).map((domain, i) => {
+              const angle = ((i * 36) - 90) * (Math.PI / 180);
+              const cosA = Math.cos(angle);
+              const sinA = Math.sin(angle);
+              const ox = 200 + 155 * cosA;
+              const oy = 200 + 155 * sinA;
+              const ix = 200 + 50 * cosA;
+              const iy = 200 + 50 * sinA;
+              const anchor = cosA > 0.3 ? "start" : cosA < -0.3 ? "end" : "middle";
+              const tx = ox + (cosA > 0.3 ? 10 : cosA < -0.3 ? -10 : 0);
+              const ty = oy + (sinA < -0.3 ? -8 : sinA > 0.3 ? 14 : 4);
+              return (
+                <g key={domain.n}>
+                  <line x1={ox} y1={oy} x2={ix} y2={iy} stroke="currentColor" strokeWidth="1.5" opacity="0.2" markerEnd="url(#convergenceArrow)" />
+                  <circle cx={ox} cy={oy} r="3.5" fill="currentColor" opacity="0.3" />
+                  <text x={tx} y={ty} textAnchor={anchor as "start" | "end" | "middle"} fontSize="8.5" fill="currentColor" opacity="0.7">{domain.t}</text>
+                </g>
+              );
+            })}
+            <defs>
+              <marker id="convergenceArrow" viewBox="0 0 6 6" refX="6" refY="3" markerWidth="4" markerHeight="4" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="currentColor" opacity="0.25" />
+              </marker>
+            </defs>
+          </svg>
         </div>
       </section>
 
@@ -732,12 +923,89 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
           </table>
         </div>
 
+        {/* T-Decline Forest Plot */}
+        <div className="max-w-3xl mx-auto mb-6">
+          <svg viewBox="0 0 600 230" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label="Testosterone decline forest plot">
+            <text x="300" y="18" textAnchor="middle" fontSize="10" fontWeight="600" fill="currentColor" fillOpacity="0.6" fontFamily="system-ui">
+              {activeLocale === "fi" ? "Vuotuinen T-lasku (%/v)" : "Annual T decline (%/yr)"}
+            </text>
+            {/* Zero line */}
+            <line x1="300" y1="30" x2="300" y2="200" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.2" />
+            <text x="300" y="215" textAnchor="middle" fontSize="7" fill="currentColor" fillOpacity="0.3" fontFamily="system-ui">0</text>
+            {/* Scale labels */}
+            <text x="150" y="215" textAnchor="middle" fontSize="7" fill="currentColor" fillOpacity="0.3" fontFamily="system-ui">−1.5%</text>
+            <text x="450" y="215" textAnchor="middle" fontSize="7" fill="currentColor" fillOpacity="0.3" fontFamily="system-ui">+0.5%</text>
+            {[
+              { y: 48, study: "Travison (USA)", rate: -1.0, n: 1532, strong: true },
+              { y: 72, study: "Mazur (USA)", rate: -0.95, n: 991, strong: true },
+              { y: 96, study: "Perheentupa (FIN)", rate: -1.2, n: 3271, strong: true },
+              { y: 120, study: "Chodick (ISR)", rate: -1.02, n: 102334, strong: true },
+              { y: 144, study: "Santi (Global)", rate: -0.8, n: 1064891, strong: true },
+              { y: 168, study: "Andersson (DK)", rate: 0, n: 5350, strong: false },
+              { y: 192, study: "Nyante (USA)", rate: 0, n: 2315, strong: false },
+            ].map((s) => {
+              const x = 300 + s.rate * 100;
+              const barW = Math.min(Math.log10(s.n) * 5, 25);
+              return (
+                <g key={s.study}>
+                  <text x="30" y={s.y + 4} fontSize="8" fill="currentColor" fillOpacity={s.strong ? 0.7 : 0.4} fontFamily="system-ui">{s.study}</text>
+                  {s.strong ? (
+                    <>
+                      <rect x={Math.min(x, 300)} y={s.y - 4} width={Math.abs(x - 300)} height="8" rx="2" fill="#ef4444" fillOpacity="0.3" />
+                      <circle cx={x} cy={s.y} r={barW / 5} fill="#ef4444" fillOpacity="0.7" />
+                    </>
+                  ) : (
+                    <circle cx={300} cy={s.y} r="3" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.3" />
+                  )}
+                  <text x="540" y={s.y + 4} textAnchor="end" fontSize="7" fill="currentColor" fillOpacity="0.4" fontFamily="monospace">
+                    n={s.n.toLocaleString()}
+                  </text>
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+
         {d.tDeclineBmiNote && (
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 max-w-4xl mb-4">
             <p className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-1">{activeLocale === "fi" ? "Kausaalianalyysi" : "Causal analysis"}</p>
             <p className="text-sm text-foreground leading-relaxed">{d.tDeclineBmiNote}</p>
           </div>
         )}
+
+        {/* T-Decline Forest Plot */}
+        <div className="max-w-4xl mb-6">
+          <svg viewBox="0 0 700 210" className="w-full" role="img" aria-label={activeLocale === "fi" ? "Testosteronin lasku" : "Testosterone decline forest plot"}>
+            <line x1="410" y1="10" x2="410" y2="188" stroke="currentColor" className="text-red-500" strokeWidth="1" strokeDasharray="4 3" opacity="0.5" />
+            <text x="410" y="7" textAnchor="middle" fontSize="7.5" fill="currentColor" className="text-red-500" opacity="0.7">{activeLocale === "fi" ? "keskiarvo −1,0 %/v" : "mean −1.0%/yr"}</text>
+            {[
+              { label: "USA (Travison)", rate: "−1.0", x: 410, y: 28 },
+              { label: activeLocale === "fi" ? "Tanska (Andersson)" : "Denmark (Andersson)", rate: "−0.9", x: 445, y: 52 },
+              { label: "Australia (Sartorius)", rate: "−1.2", x: 340, y: 76 },
+              { label: "Israel (Levine)", rate: "−1.4", x: 270, y: 100 },
+              { label: activeLocale === "fi" ? "Suomi (Perheentupa)" : "Finland (Perheentupa)", rate: "−1.0", x: 410, y: 124 },
+              { label: "Iran (Darbandi)", rate: "−0.8", x: 480, y: 148 },
+              { label: activeLocale === "fi" ? "Globaali (Santi)" : "Global (Santi)", rate: "−0.6", x: 550, y: 172, hi: true },
+            ].map((s) => (
+              <g key={s.label}>
+                <text x="195" y={s.y + 4} textAnchor="end" fontSize="9" fill="currentColor" className={s.hi ? "text-accent" : "text-foreground-muted"}>{s.label}</text>
+                <line x1={s.x - 18} y1={s.y} x2={s.x + 18} y2={s.y} stroke="currentColor" className={s.hi ? "text-accent" : "text-red-500"} strokeWidth="1.5" />
+                <circle cx={s.x} cy={s.y} r={s.hi ? 5 : 3.5} fill="currentColor" className={s.hi ? "text-accent" : "text-red-500"} />
+                <text x="660" y={s.y + 4} textAnchor="end" fontSize="8" fill="currentColor" className={s.hi ? "text-accent" : "text-foreground-muted"}>{s.rate}</text>
+              </g>
+            ))}
+            <line x1="200" y1="192" x2="620" y2="192" stroke="currentColor" className="text-foreground-muted" strokeWidth="0.5" />
+            {[
+              { v: "−1.4", x: 270 }, { v: "−1.2", x: 340 }, { v: "−1.0", x: 410 }, { v: "−0.8", x: 480 }, { v: "−0.6", x: 550 },
+            ].map((t) => (
+              <g key={t.v}>
+                <line x1={t.x} y1="189" x2={t.x} y2="195" stroke="currentColor" className="text-foreground-muted" strokeWidth="0.5" />
+                <text x={t.x} y="206" textAnchor="middle" fontSize="7.5" fill="currentColor" className="text-foreground-muted">{t.v}</text>
+              </g>
+            ))}
+            <text x="595" y="206" textAnchor="start" fontSize="7" fill="currentColor" className="text-foreground-muted">{activeLocale === "fi" ? "%/v" : "%/yr"}</text>
+          </svg>
+        </div>
 
         <div className="rounded-lg border-2 border-red-500/40 bg-red-500/5 p-4 max-w-4xl mb-4">
           <p className="text-sm text-foreground leading-relaxed italic">{d.tDeclineImplication}</p>
@@ -787,6 +1055,62 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
           </table>
         </div>
 
+        {/* MetS evidence summary grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-4xl mb-6">
+          {d.metabStudies.map((s: { authors: string; year: number; journal: string; finding: string; mechanism: string; level: string }, i: number) => (
+            <div key={i} className="rounded-lg border border-orange-500/20 bg-orange-500/5 p-2.5">
+              <p className="text-xs font-semibold text-foreground truncate">{s.authors} ({s.year})</p>
+              <p className="text-[0.6rem] text-foreground-muted mt-0.5 truncate">{s.mechanism}</p>
+              <div className="mt-1.5 flex items-center justify-between">
+                <span className="text-[0.6rem] font-mono-num bg-orange-500/15 text-orange-600 dark:text-orange-400 rounded px-1 py-0.5">{s.level}</span>
+                <span className="text-[0.55rem] text-foreground-muted/60 italic truncate ml-1">{s.journal}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* MetS Evidence Matrix */}
+        <div className="max-w-4xl mb-6">
+          <svg viewBox="0 0 600 170" className="w-full" role="img" aria-label={activeLocale === "fi" ? "Metabolinen evidenssimatriisi" : "Metabolic evidence matrix"}>
+            {["Ca²⁺", "ROS", activeLocale === "fi" ? "Paino" : "Weight", activeLocale === "fi" ? "Insuliini" : "Insulin", "BAT", "T↓"].map((col, ci) => (
+              <text key={ci} x={170 + ci * 72} y={15} textAnchor="middle" fontSize="8.5" fontWeight="600" fill="currentColor" className="text-foreground-muted">{col}</text>
+            ))}
+            {[
+              { name: "Alshammari", cells: ["full","empty","half","empty","empty","empty"] },
+              { name: "Chen", cells: ["full","empty","half","empty","empty","empty"] },
+              { name: "Maalouf", cells: ["half","full","half","empty","full","empty"] },
+              { name: "Bhatt", cells: ["full","empty","empty","full","empty","empty"] },
+              { name: "Haghjoo", cells: ["empty","empty","full","half","empty","empty"] },
+              { name: "Klimentidis", cells: ["empty","empty","full","half","half","half"] },
+            ].map((row, ri) => (
+              <g key={ri}>
+                <text x="130" y={38 + ri * 22} textAnchor="end" fontSize="9" fill="currentColor" className="text-foreground-muted">{row.name}</text>
+                {row.cells.map((cell, ci) => {
+                  const mx = 170 + ci * 72;
+                  const my = 34 + ri * 22;
+                  if (cell === "full") return <circle key={ci} cx={mx} cy={my} r="6" fill="currentColor" className="text-orange-500" />;
+                  if (cell === "half") return (
+                    <g key={ci}>
+                      <circle cx={mx} cy={my} r="6" fill="none" stroke="currentColor" className="text-orange-500" strokeWidth="1" />
+                      <path d={`M ${mx} ${my - 6} A 6 6 0 0 0 ${mx} ${my + 6} Z`} fill="currentColor" className="text-orange-500" />
+                    </g>
+                  );
+                  return <circle key={ci} cx={mx} cy={my} r="6" fill="none" stroke="currentColor" className="text-foreground-muted" strokeWidth="1" opacity="0.3" />;
+                })}
+              </g>
+            ))}
+            <circle cx="165" cy="160" r="5" fill="currentColor" className="text-orange-500" />
+            <text x="175" y="163" fontSize="7.5" fill="currentColor" className="text-foreground-muted">{activeLocale === "fi" ? "Suora" : "Direct"}</text>
+            <g>
+              <circle cx="235" cy="160" r="5" fill="none" stroke="currentColor" className="text-orange-500" strokeWidth="1" />
+              <path d="M 235 155 A 5 5 0 0 0 235 165 Z" fill="currentColor" className="text-orange-500" />
+            </g>
+            <text x="245" y="163" fontSize="7.5" fill="currentColor" className="text-foreground-muted">{activeLocale === "fi" ? "Epäsuora" : "Indirect"}</text>
+            <circle cx="315" cy="160" r="5" fill="none" stroke="currentColor" className="text-foreground-muted" strokeWidth="1" opacity="0.3" />
+            <text x="325" y="163" fontSize="7.5" fill="currentColor" className="text-foreground-muted">{activeLocale === "fi" ? "Ei testattu" : "Not tested"}</text>
+          </svg>
+        </div>
+
         {/* Klimentidis Paradox highlight */}
         <div className="rounded-lg border-2 border-orange-500/40 bg-orange-500/5 p-5 max-w-4xl mb-4">
           <h3 className="text-base font-semibold text-foreground mb-2">{d.metabKlimentidisTitle}</h3>
@@ -796,6 +1120,42 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
           <p className="text-sm text-foreground-muted leading-relaxed mb-2">{d.metabKlimentidisP1}</p>
           <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.metabKlimentidisP2}</p>
           <p className="text-xs text-foreground-muted/70 italic">{d.metabKlimentidisNote}</p>
+        </div>
+
+        {/* MetS convergence diagram */}
+        <div className="max-w-3xl mx-auto my-6">
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label="Metabolic syndrome convergence">
+            {/* EMF source */}
+            <rect x="245" y="5" width="110" height="30" rx="6" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="1.2" />
+            <text x="300" y="25" textAnchor="middle" fontSize="11" fontWeight="700" fill="#f59e0b" fontFamily="system-ui">EMF → Ca²⁺</text>
+            {/* Six pathways */}
+            {[
+              { x: 50, label: activeLocale === "fi" ? "Ruokahalu↑" : "Appetite↑", color: "#ef4444" },
+              { x: 150, label: "BAT↓", color: "#f97316" },
+              { x: 250, label: activeLocale === "fi" ? "Insuliini" : "Insulin", color: "#8b5cf6" },
+              { x: 350, label: activeLocale === "fi" ? "Kortisoli" : "Cortisol", color: "#ec4899" },
+              { x: 450, label: activeLocale === "fi" ? "Uni↓" : "Sleep↓", color: "#3b82f6" },
+              { x: 550, label: activeLocale === "fi" ? "Mikrobioomi" : "Microbiome", color: "#14b8a6" },
+            ].map((p) => (
+              <g key={p.label}>
+                <line x1="300" y1="35" x2={p.x} y2="70" stroke={p.color} strokeWidth="1" strokeOpacity="0.4" />
+                <rect x={p.x - 40} y="70" width="80" height="28" rx="5" fill={p.color} fillOpacity="0.1" stroke={p.color} strokeWidth="1" />
+                <text x={p.x} y="88" textAnchor="middle" fontSize="8" fontWeight="600" fill={p.color} fontFamily="system-ui">{p.label}</text>
+                <line x1={p.x} y1="98" x2="300" y2="140" stroke={p.color} strokeWidth="0.7" strokeOpacity="0.3" />
+              </g>
+            ))}
+            {/* CaMKII hub */}
+            <circle cx="300" cy="120" r="14" fill="#f59e0b" fillOpacity="0.2" stroke="#f59e0b" strokeWidth="1" />
+            <text x="300" y="124" textAnchor="middle" fontSize="7" fontWeight="700" fill="#f59e0b" fontFamily="system-ui">CaMKII</text>
+            {/* Outcome */}
+            <rect x="200" y="150" width="200" height="30" rx="6" fill="#ef4444" fillOpacity="0.12" stroke="#ef4444" strokeWidth="1.2" />
+            <text x="300" y="170" textAnchor="middle" fontSize="10" fontWeight="600" fill="#ef4444" fontFamily="system-ui">
+              {activeLocale === "fi" ? "Metabolinen syndrooma" : "Metabolic syndrome"}
+            </text>
+            <text x="300" y="205" textAnchor="middle" fontSize="8" fill="currentColor" fillOpacity="0.4" fontFamily="system-ui">
+              {activeLocale === "fi" ? "24 populaatiota, 8 lajia — kaikki lihovat (p = 1.2×10⁻⁷)" : "24 populations, 8 species — all gaining weight (p = 1.2×10⁻⁷)"}
+            </text>
+          </svg>
         </div>
 
         <div className="flex flex-wrap gap-3 max-w-4xl">

@@ -259,9 +259,9 @@ const t = {
     neonatalQSpectrum: "The neonatal Q → ∞ condition is one end of a continuous spectrum. The same Q-factor mechanism — with varying damping coefficient γ — unifies SIDS, epilepsy, SUDEP, migraine, and cluster headache. Spreading depolarization (CSD) is the common terminal pathway; the Q-factor determines whether CSD is triggered, how far it propagates, and whether it reaches the brainstem.",
     neonatalQSpectrumLink: "See full neurological spectrum analysis →",
 
-    feedbackLoopsTitle: "Sixteen Positive Feedback Loops",
+    feedbackLoopsTitle: "Seventeen Positive Feedback Loops",
     feedbackLoopsSub: "Self-amplifying cycles forming a network — any entry point activates multiple degradation spirals simultaneously",
-    feedbackLoopsDesc: "Convergence verification revealed sixteen positive feedback loops within the BERM cascade. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each means the system degrades itself without any increase in external exposure.",
+    feedbackLoopsDesc: "Convergence verification revealed seventeen positive feedback loops within the BERM cascade. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each means the system degrades itself without any increase in external exposure.",
     feedbackLoops: [
       { id: "S1", name: "Monitor feedback resonance", steps: "Baby's sound → microphone → RF modulation → VGCC → Ca²⁺ → stronger oscillation → louder sound → more RF → cascade amplification", status: "Mechanistically coherent, untested as complete loop", color: "amber" },
       { id: "S2", name: "Serotonin lock-open", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → thalamocortical gate OPEN → EMF penetrates deeper → more CaMKII disruption → more 5-HT↓ → ...", status: "Each link verified independently", color: "green" },
@@ -279,6 +279,7 @@ const t = {
       { id: "S14", name: "Gut-brain inflammation", steps: "EMF → melatonin↓ → Per2↓ in gut → gut barrier↓ → LPS enters blood → neuroinflammation → hippocampal neurogenesis↓ → more HPA activation → more melatonin↓", status: "Per2 KO → gut barrier → LPS → depression verified", color: "green" },
       { id: "S15", name: "Melatonin-telomere aging spiral", steps: "EMF → melatonin↓ → telomerase↓ + SIRT1↓ → telomere shortening → SASP → inflammation → ROS↑ → more telomere damage → more SASP → ...", status: "Melatonin → telomerase + SIRT1 verified; depression = 7y accelerated aging", color: "green" },
       { id: "S16", name: "Pain-sleep-cortisol spiral", steps: "EMF → α2δ-1↑ → central sensitization → chronic pain → sleep↓ (S4) → cortisol↑ (S7) + GABA↓ → inflammation → more sensitization → depression → sleep↓ → ...", status: "α2δ-1 → pain without injury verified; pain-sleep-cortisol each verified", color: "green" },
+      { id: "S17", name: "Amygdala-anxiety spiral", steps: "EMF → Ca²⁺↑ → CaMKII → cortisol↑ → BLA hypertrophy → amygdala hyperactive → anxiety↑ → HPA activation → cortisol↑↑ → more BLA hypertrophy → ...", status: "Single cortisol dose → BLA hypertrophy verified (PNAS 2008); persistence verified (Neurosci Lett 2023)", color: "green" },
     ],
     feedbackLoopsLink: "See full convergence verification →",
 
@@ -843,9 +844,9 @@ const t = {
     neonatalQSpectrum: "Neonataalin Q → ∞ -tila on jatkuvan spektrin toinen pää. Sama Q-tekijämekanismi — vaihtelevalla vaimennuskertoimella γ — yhdistää SIDS:n, epilepsian, SUDEP:n, migreenin ja klusteripäänsäryn. Spreading depolarization (CSD) on yhteinen terminaalireitti; Q-tekijä määrittää laukaistaanko CSD, kuinka pitkälle se leviää ja saavuttaako se aivorungon.",
     neonatalQSpectrumLink: "Ks. koko neurologisen spektrin analyysi →",
 
-    feedbackLoopsTitle: "Kuusitoista positiivista takaisinkytkentäsilmukkaa",
+    feedbackLoopsTitle: "Seitsemäntoista positiivista takaisinkytkentäsilmukkaa",
     feedbackLoopsSub: "Itseään vahvistavat syklit muodostavat verkoston — mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti",
-    feedbackLoopsDesc: "Konvergenssiverifiointi paljasti kuusitoista positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti.",
+    feedbackLoopsDesc: "Konvergenssiverifiointi paljasti seitsemäntoista positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti.",
     feedbackLoops: [
       { id: "S1", name: "Monitorin palauteresonanssi", steps: "Vauvan ääni → mikrofoni → RF-modulaatio → VGCC → Ca²⁺ → voimakkaampi oskillaatio → kovempi ääni → lisää RF:ää → kaskadivahvistus", status: "Mekanistisesti koherentti, testaamaton kokonaisuutena", color: "amber" },
       { id: "S2", name: "Serotoniin-lukitusavaus", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → talamokortikaalinen portti AUKI → EMF tunkeutuu syvemmälle → lisää CaMKII-häiriötä → lisää 5-HT↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
@@ -863,6 +864,7 @@ const t = {
       { id: "S14", name: "Suolisto-aivo-tulehdus", steps: "EMF → melatoniini↓ → Per2↓ suolistossa → suoliston este↓ → LPS verenkiertoon → neurotulehdus → hippokampaalinen neurogeneesi↓ → lisää HPA-aktivaatiota → lisää melatoniini↓", status: "Per2 KO → suoliston este → LPS → masennus verifioitu", color: "green" },
       { id: "S15", name: "Melatoniini-telomeeri-ikääntymiskierre", steps: "EMF → melatoniini↓ → telomeraasi↓ + SIRT1↓ → telomeerien lyheneminen → SASP → tulehdus → ROS↑ → lisää telomeerivaurioita → lisää SASP:ia → ...", status: "Melatoniini → telomeraasi + SIRT1 verifioitu; masennus = 7v kiihtynyt ikääntyminen", color: "green" },
       { id: "S16", name: "Kipu-uni-kortisoli-kierre", steps: "EMF → α2δ-1↑ → sentraalinen sensitisaatio → krooninen kipu → uni↓ (S4) → kortisoli↑ (S7) + GABA↓ → tulehdus → lisää sensitisaatiota → masennus → uni↓ → ...", status: "α2δ-1 → kipu ilman vauriota verifioitu; kipu-uni-kortisoli jokainen verifioitu", color: "green" },
+      { id: "S17", name: "Amygdala-ahdistuskierre", steps: "EMF → Ca²⁺↑ → CaMKII → kortisoli↑ → BLA-hypertrofia → amygdala yliaktiivinen → ahdistus↑ → HPA-aktivaatio → kortisoli↑↑ → lisää BLA-hypertrofiaa → ...", status: "Yksittäinen kortisoliannos → BLA-hypertrofia verifioitu (PNAS 2008); pysyvyys verifioitu (Neurosci Lett 2023)", color: "green" },
     ],
     feedbackLoopsLink: "Ks. koko konvergenssiverifiointi →",
 
@@ -1217,8 +1219,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const locale_key = (locale as Locale) in t ? (locale as Locale) : "en";
-  const d = t[locale_key];
+  const locale_key = locale in t ? locale : "en";
+  const d = (t as Record<string, typeof t.en>)[locale_key] ?? t.en;
   return {
     title: d.metaTitle,
     description: d.metaDesc,
@@ -1231,8 +1233,8 @@ export default async function ModelPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const locale_key = (locale as Locale) in t ? (locale as Locale) : "en";
-  const d = t[locale_key];
+  const locale_key = locale in t ? locale : "en";
+  const d = (t as Record<string, typeof t.en>)[locale_key] ?? t.en;
   const prefix = `/${locale}`;
 
   return (
@@ -1349,6 +1351,92 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
               {d.fourRoutesDesc}
             </p>
+            <div className="my-8 max-w-4xl mx-auto" style={{display:'none'}}>
+              <svg viewBox="0 0 750 350" className="w-full" role="img" aria-label={locale_key === "fi" ? "Viisi reittiä TFR:n laskuun" : "Five routes to TFR decline (hidden duplicate)"}>
+                <defs>
+                  <marker id="fr_arG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" className="fill-green-500/70" /></marker>
+                  <marker id="fr_arB" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" className="fill-blue-500/70" /></marker>
+                  <marker id="fr_arP" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" className="fill-purple-500/70" /></marker>
+                  <marker id="fr_arA" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" className="fill-amber-500/70" /></marker>
+                  <marker id="fr_arR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" className="fill-red-500/70" /></marker>
+                </defs>
+
+                {/* Route A: VGCC -> Ca2+ -> ROS -> Sperm damage (green) */}
+                <circle cx="18" cy="43" r="13" className="fill-green-500/15 stroke-green-500/60" strokeWidth="1.5" />
+                <text x="18" y="47" textAnchor="middle" className="fill-green-500 text-[10px] font-bold">A</text>
+                <rect x="40" y="29" width="95" height="28" rx="6" className="fill-green-500/10 stroke-green-500/50" strokeWidth="1.5" />
+                <text x="87" y="47" textAnchor="middle" className="fill-foreground text-[9px] font-medium">VGCC</text>
+                <line x1="135" y1="43" x2="155" y2="43" className="stroke-green-500/60" strokeWidth="1.5" markerEnd="url(#fr_arG)" />
+                <rect x="155" y="29" width="95" height="28" rx="6" className="fill-green-500/10 stroke-green-500/50" strokeWidth="1.5" />
+                <text x="202" y="47" textAnchor="middle" className="fill-foreground text-[9px] font-medium">Ca²⁺</text>
+                <line x1="250" y1="43" x2="270" y2="43" className="stroke-green-500/60" strokeWidth="1.5" markerEnd="url(#fr_arG)" />
+                <rect x="270" y="29" width="95" height="28" rx="6" className="fill-green-500/10 stroke-green-500/50" strokeWidth="1.5" />
+                <text x="317" y="47" textAnchor="middle" className="fill-foreground text-[9px] font-medium">ROS</text>
+                <line x1="365" y1="43" x2="385" y2="43" className="stroke-green-500/60" strokeWidth="1.5" markerEnd="url(#fr_arG)" />
+                <rect x="385" y="29" width="95" height="28" rx="6" className="fill-green-500/10 stroke-green-500/50" strokeWidth="1.5" />
+                <text x="432" y="47" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Siittiövaurio" : "Sperm damage"}</text>
+
+                {/* Route B: CRY/RPM -> Circadian -> Melatonin -> HPG (blue) */}
+                <circle cx="18" cy="109" r="13" className="fill-blue-500/15 stroke-blue-500/60" strokeWidth="1.5" />
+                <text x="18" y="113" textAnchor="middle" className="fill-blue-500 text-[10px] font-bold">B</text>
+                <rect x="40" y="95" width="95" height="28" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
+                <text x="87" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">CRY / RPM</text>
+                <line x1="135" y1="109" x2="155" y2="109" className="stroke-blue-500/60" strokeWidth="1.5" markerEnd="url(#fr_arB)" />
+                <rect x="155" y="95" width="95" height="28" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
+                <text x="202" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Vuorokausirytmi" : "Circadian"}</text>
+                <line x1="250" y1="109" x2="270" y2="109" className="stroke-blue-500/60" strokeWidth="1.5" markerEnd="url(#fr_arB)" />
+                <rect x="270" y="95" width="95" height="28" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
+                <text x="317" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Melatoniini ↓" : "Melatonin ↓"}</text>
+                <line x1="365" y1="109" x2="385" y2="109" className="stroke-blue-500/60" strokeWidth="1.5" markerEnd="url(#fr_arB)" />
+                <rect x="385" y="95" width="95" height="28" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
+                <text x="432" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">HPG ↓</text>
+
+                {/* Route C: CRY2-TRPC1 -> Ca2+ entry (purple) */}
+                <circle cx="18" cy="175" r="13" className="fill-purple-500/15 stroke-purple-500/60" strokeWidth="1.5" />
+                <text x="18" y="179" textAnchor="middle" className="fill-purple-500 text-[10px] font-bold">C</text>
+                <rect x="40" y="161" width="95" height="28" rx="6" className="fill-purple-500/10 stroke-purple-500/50" strokeWidth="1.5" />
+                <text x="87" y="179" textAnchor="middle" className="fill-foreground text-[9px] font-medium">CRY2-TRPC1</text>
+                <line x1="135" y1="175" x2="155" y2="175" className="stroke-purple-500/60" strokeWidth="1.5" markerEnd="url(#fr_arP)" />
+                <rect x="155" y="161" width="95" height="28" rx="6" className="fill-purple-500/10 stroke-purple-500/50" strokeWidth="1.5" />
+                <text x="202" y="179" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Ca²⁺-virtaus" : "Ca²⁺ entry"}</text>
+
+                {/* Route D: HPA -> Cortisol -> Testosterone (amber) */}
+                <circle cx="18" cy="241" r="13" className="fill-amber-500/15 stroke-amber-500/60" strokeWidth="1.5" />
+                <text x="18" y="245" textAnchor="middle" className="fill-amber-500 text-[10px] font-bold">D</text>
+                <rect x="40" y="227" width="95" height="28" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
+                <text x="87" y="245" textAnchor="middle" className="fill-foreground text-[9px] font-medium">HPA</text>
+                <line x1="135" y1="241" x2="155" y2="241" className="stroke-amber-500/60" strokeWidth="1.5" markerEnd="url(#fr_arA)" />
+                <rect x="155" y="227" width="95" height="28" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
+                <text x="202" y="245" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Kortisoli ↑" : "Cortisol ↑"}</text>
+                <line x1="250" y1="241" x2="270" y2="241" className="stroke-amber-500/60" strokeWidth="1.5" markerEnd="url(#fr_arA)" />
+                <rect x="270" y="227" width="95" height="28" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
+                <text x="317" y="245" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Testosteroni ↓" : "Testosterone ↓"}</text>
+
+                {/* Route E: mTOR -> Autophagy -> Cell growth (red) */}
+                <circle cx="18" cy="307" r="13" className="fill-red-500/15 stroke-red-500/60" strokeWidth="1.5" />
+                <text x="18" y="311" textAnchor="middle" className="fill-red-500 text-[10px] font-bold">E</text>
+                <rect x="40" y="293" width="95" height="28" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
+                <text x="87" y="311" textAnchor="middle" className="fill-foreground text-[9px] font-medium">mTOR</text>
+                <line x1="135" y1="307" x2="155" y2="307" className="stroke-red-500/60" strokeWidth="1.5" markerEnd="url(#fr_arR)" />
+                <rect x="155" y="293" width="95" height="28" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
+                <text x="202" y="311" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Autofagia ↓" : "Autophagy ↓"}</text>
+                <line x1="250" y1="307" x2="270" y2="307" className="stroke-red-500/60" strokeWidth="1.5" markerEnd="url(#fr_arR)" />
+                <rect x="270" y="293" width="95" height="28" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
+                <text x="317" y="311" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Solukasvu ↓" : "Cell growth ↓"}</text>
+
+                {/* Convergence arrows to TFR decline */}
+                <line x1="480" y1="43" x2="583" y2="110" className="stroke-green-500/40" strokeWidth="1.5" strokeDasharray="4 2" markerEnd="url(#fr_arG)" />
+                <line x1="480" y1="109" x2="583" y2="140" className="stroke-blue-500/40" strokeWidth="1.5" strokeDasharray="4 2" markerEnd="url(#fr_arB)" />
+                <line x1="250" y1="175" x2="583" y2="175" className="stroke-purple-500/40" strokeWidth="1.5" strokeDasharray="4 2" markerEnd="url(#fr_arP)" />
+                <line x1="365" y1="241" x2="583" y2="210" className="stroke-amber-500/40" strokeWidth="1.5" strokeDasharray="4 2" markerEnd="url(#fr_arA)" />
+                <line x1="365" y1="307" x2="583" y2="245" className="stroke-red-500/40" strokeWidth="1.5" strokeDasharray="4 2" markerEnd="url(#fr_arR)" />
+
+                {/* TFR decline box */}
+                <rect x="585" y="95" width="125" height="165" rx="8" className="fill-red-500/10 stroke-red-500/60" strokeWidth="2" />
+                <text x="647" y="172" textAnchor="middle" className="fill-foreground text-[11px] font-bold">{locale_key === "fi" ? "TFR:n" : "TFR"}</text>
+                <text x="647" y="188" textAnchor="middle" className="fill-foreground text-[11px] font-bold">{locale_key === "fi" ? "lasku" : "decline"}</text>
+              </svg>
+            </div>
             <div className="grid gap-4 sm:grid-cols-2 max-w-4xl mb-6">
               <article className="rounded-xl border border-card-border bg-card-bg p-5">
                 <h3 className="font-semibold text-sm mb-2">{d.fourRoutesGonadal}</h3>
@@ -1383,6 +1471,41 @@ export default async function ModelPage({
             <p className="text-xs text-foreground-muted max-w-3xl leading-relaxed italic border-l-2 border-amber-500/30 pl-3">
               {d.fourRoutesImplication}
             </p>
+
+            {/* Five Routes Flow Diagram */}
+            <div className="my-8 max-w-3xl mx-auto">
+              <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label="Five routes to TFR decline">
+                {/* EMF source box */}
+                <rect x="280" y="8" width="140" height="32" rx="6" fill="#f59e0b" fillOpacity="0.2" stroke="#f59e0b" strokeWidth="1.5" />
+                <text x="350" y="29" textAnchor="middle" fontSize="12" fontWeight="700" fill="#f59e0b" fontFamily="system-ui">EMF</text>
+                {/* Branching arrows */}
+                {[
+                  { x: 70, label: "A", color: "#3b82f6", route: locale_key === "fi" ? "Gonadaalinen" : "Gonadal", mech: "VGCC→Ca²⁺→ROS" },
+                  { x: 210, label: "B", color: "#8b5cf6", route: locale_key === "fi" ? "Vuorokausirytmi" : "Circadian", mech: "CRY/RPM→clock" },
+                  { x: 350, label: "C", color: "#ec4899", route: "CRY2-TRPC1", mech: "CRY2→TRPC1→Ca²⁺" },
+                  { x: 490, label: "D", color: "#ef4444", route: locale_key === "fi" ? "Autonominen" : "Autonomic", mech: "HPA→T↓" },
+                  { x: 630, label: "E", color: "#14b8a6", route: locale_key === "fi" ? "Neurokehitys" : "Neurodevel.", mech: "CACNA1C→brain" },
+                ].map((r) => (
+                  <g key={r.label}>
+                    <line x1="350" y1="40" x2={r.x} y2="80" stroke={r.color} strokeWidth="1.5" strokeOpacity="0.5" />
+                    <rect x={r.x - 50} y="80" width="100" height="56" rx="6" fill={r.color} fillOpacity="0.12" stroke={r.color} strokeWidth="1.2" />
+                    <text x={r.x} y="98" textAnchor="middle" fontSize="11" fontWeight="700" fill={r.color} fontFamily="system-ui">
+                      {locale_key === "fi" ? "Reitti" : "Route"} {r.label}
+                    </text>
+                    <text x={r.x} y="113" textAnchor="middle" fontSize="9" fill={r.color} fillOpacity="0.8" fontFamily="system-ui">{r.route}</text>
+                    <text x={r.x} y="128" textAnchor="middle" fontSize="7.5" fill="currentColor" fillOpacity="0.5" fontFamily="monospace">{r.mech}</text>
+                    <line x1={r.x} y1="136" x2={r.x} y2="170" stroke={r.color} strokeWidth="1" strokeOpacity="0.4" strokeDasharray="3 2" />
+                  </g>
+                ))}
+                {/* Convergence: TFR */}
+                <rect x="200" y="170" width="300" height="36" rx="8" fill="#ef4444" fillOpacity="0.15" stroke="#ef4444" strokeWidth="1.5" />
+                <text x="350" y="194" textAnchor="middle" fontSize="13" fontWeight="700" fill="#ef4444" fontFamily="system-ui">TFR ↓</text>
+                {/* Caption */}
+                <text x="350" y="240" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.4" fontFamily="system-ui">
+                  {locale_key === "fi" ? "Jokainen reitti on itsenäisesti riittävä — ne toimivat rinnakkain" : "Each route is independently sufficient — they operate in parallel"}
+                </text>
+              </svg>
+            </div>
           </section>
 
           {/* Why modulation matters more than SAR */}
@@ -2024,6 +2147,51 @@ export default async function ModelPage({
                 </tbody>
               </table>
             </div>
+
+            {/* Recovery Rates Bar Chart */}
+            <div className="my-8 max-w-2xl mx-auto">
+              <svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label={locale === "fi" ? "Palautumisasteiden pylvaskaavio" : "Recovery rates bar chart"}>
+                {/* VGIC gating - alpha=1.0 (100%) */}
+                <text x="150" y="38" textAnchor="end" fontSize="10" fill="currentColor" fillOpacity="0.8" fontFamily="system-ui">{d.recovVgicLayer}</text>
+                <rect x="160" y="24" width="280" height="22" rx="4" ry="4" fill="#22c55e" fillOpacity="0.7" />
+                <text x="448" y="39" fontSize="10" fontWeight="600" fill="#22c55e" fontFamily="monospace">100%</text>
+                <text x="300" y="39" textAnchor="middle" fontSize="9" fill="#fff" fontWeight="500" fontFamily="system-ui">{"α = 1.0"}</text>
+
+                {/* ROS clearance - alpha=0.8 (80%) */}
+                <text x="150" y="78" textAnchor="end" fontSize="10" fill="currentColor" fillOpacity="0.8" fontFamily="system-ui">{d.recovRosLayer}</text>
+                <rect x="160" y="64" width="224" height="22" rx="4" ry="4" fill="#84cc16" fillOpacity="0.7" />
+                <text x="392" y="79" fontSize="10" fontWeight="600" fill="#84cc16" fontFamily="monospace">80%</text>
+                <text x="272" y="79" textAnchor="middle" fontSize="9" fill="#fff" fontWeight="500" fontFamily="system-ui">{"α = 0.8"}</text>
+
+                {/* Leydig cells - alpha=0.3 (30%) */}
+                <text x="150" y="118" textAnchor="end" fontSize="10" fill="currentColor" fillOpacity="0.8" fontFamily="system-ui">{d.recovLeydigLayer}</text>
+                <rect x="160" y="104" width="84" height="22" rx="4" ry="4" fill="#f59e0b" fillOpacity="0.7" />
+                <text x="252" y="119" fontSize="10" fontWeight="600" fill="#f59e0b" fontFamily="monospace">30%</text>
+                <text x="202" y="119" textAnchor="middle" fontSize="9" fill="#fff" fontWeight="500" fontFamily="system-ui">{"α = 0.3"}</text>
+
+                {/* DNA repair - alpha=0.1 (10%) */}
+                <text x="150" y="158" textAnchor="end" fontSize="10" fill="currentColor" fillOpacity="0.8" fontFamily="system-ui">{d.recovDnaLayer}</text>
+                <rect x="160" y="144" width="28" height="22" rx="4" ry="4" fill="#f97316" fillOpacity="0.7" />
+                <text x="196" y="159" fontSize="10" fontWeight="600" fill="#f97316" fontFamily="monospace">10%</text>
+                <text x="174" y="159" textAnchor="middle" fontSize="8" fill="#fff" fontWeight="500" fontFamily="system-ui">{"α"}</text>
+
+                {/* BBB - alpha=0.0 (0%) */}
+                <text x="150" y="198" textAnchor="end" fontSize="10" fill="currentColor" fillOpacity="0.8" fontFamily="system-ui">{d.recovBbbLayer}</text>
+                <rect x="160" y="184" width="4" height="22" rx="2" ry="2" fill="#ef4444" fillOpacity="0.7" />
+                <text x="172" y="199" fontSize="10" fontWeight="600" fill="#ef4444" fontFamily="monospace">0%</text>
+
+                {/* Baseline axis */}
+                <line x1="160" y1="20" x2="160" y2="210" stroke="currentColor" strokeOpacity="0.15" strokeWidth="1" />
+
+                {/* Caption */}
+                <text x="250" y="240" textAnchor="middle" fontSize="10" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui">
+                  {locale === "fi"
+                    ? "Palautumisaste (α): 1.0 = taydellinen, 0.0 = palautumaton"
+                    : "Recovery rate (α): 1.0 = full recovery, 0.0 = irreversible"}
+                </text>
+              </svg>
+            </div>
+
             <p className="mt-4 text-sm text-foreground-muted max-w-3xl leading-relaxed">
               {d.recoveryWindowNote}
             </p>
@@ -2096,6 +2264,45 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
               {d.mtorEqExplain}
             </p>
+            <div className="my-8 max-w-md mx-auto">
+              <svg viewBox="0 0 500 400" className="w-full" role="img" aria-label={locale_key === "fi" ? "mTOR-keskuskaavio" : "mTOR hub diagram"}>
+                <defs>
+                  <marker id="mh_arFwd" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-foreground-muted/50" /></marker>
+                  <marker id="mh_arRev" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto"><path d="M8,0 L0,3 L8,6" className="fill-foreground-muted/50" /></marker>
+                </defs>
+
+                {/* Spoke lines (drawn first so circles render on top) */}
+                <line x1="250" y1="165" x2="250" y2="92" className="stroke-cyan-500/40" strokeWidth="2" markerStart="url(#mh_arRev)" markerEnd="url(#mh_arFwd)" />
+                <line x1="283" y1="189" x2="353" y2="167" className="stroke-green-500/40" strokeWidth="2" markerStart="url(#mh_arRev)" markerEnd="url(#mh_arFwd)" />
+                <line x1="271" y1="228" x2="313" y2="287" className="stroke-amber-500/40" strokeWidth="2" markerStart="url(#mh_arRev)" markerEnd="url(#mh_arFwd)" />
+                <line x1="229" y1="228" x2="187" y2="287" className="stroke-orange-500/40" strokeWidth="2" markerStart="url(#mh_arRev)" markerEnd="url(#mh_arFwd)" />
+                <line x1="217" y1="189" x2="147" y2="167" className="stroke-purple-500/40" strokeWidth="2" markerStart="url(#mh_arRev)" markerEnd="url(#mh_arFwd)" />
+
+                {/* Center: mTOR */}
+                <circle cx="250" cy="200" r="35" className="fill-red-500/15 stroke-red-500/60" strokeWidth="2" />
+                <text x="250" y="205" textAnchor="middle" className="fill-foreground text-[13px] font-bold">mTOR</text>
+
+                {/* VGCC pathway (top, cyan) */}
+                <circle cx="250" cy="70" r="22" className="fill-cyan-500/15 stroke-cyan-500/60" strokeWidth="1.5" />
+                <text x="250" y="40" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "VGCC-reitti" : "VGCC pathway"}</text>
+
+                {/* Autophagy (top-right, green) */}
+                <circle cx="374" cy="160" r="22" className="fill-green-500/15 stroke-green-500/60" strokeWidth="1.5" />
+                <text x="400" y="155" textAnchor="start" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Autofagia" : "Autophagy"}</text>
+
+                {/* Protein synthesis (bottom-right, amber) */}
+                <circle cx="326" cy="305" r="22" className="fill-amber-500/15 stroke-amber-500/60" strokeWidth="1.5" />
+                <text x="326" y="340" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Proteiinisynteesi" : "Protein synthesis"}</text>
+
+                {/* Cell growth (bottom-left, orange) */}
+                <circle cx="174" cy="305" r="22" className="fill-orange-500/15 stroke-orange-500/60" strokeWidth="1.5" />
+                <text x="174" y="340" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Solukasvu" : "Cell growth"}</text>
+
+                {/* Immune regulation (left, purple) */}
+                <circle cx="126" cy="160" r="22" className="fill-purple-500/15 stroke-purple-500/60" strokeWidth="1.5" />
+                <text x="100" y="155" textAnchor="end" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Immunosäätely" : "Immune regulation"}</text>
+              </svg>
+            </div>
 
             <h3 className="text-base font-semibold mb-3">{d.mtorThreeTitle}</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -2123,6 +2330,68 @@ export default async function ModelPage({
                   {d.mtorCancerDesc}
                 </p>
               </SectionCard>
+            </div>
+
+            {/* mTOR Hub Diagram */}
+            <div className="my-8 max-w-3xl mx-auto">
+              <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label="mTOR signaling hub">
+                {/* Central mTOR hub */}
+                <circle cx="300" cy="180" r="44" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="2" />
+                <text x="300" y="176" textAnchor="middle" fontSize="14" fontWeight="700" fill="#f59e0b" fontFamily="system-ui">mTOR</text>
+                <text x="300" y="192" textAnchor="middle" fontSize="9" fill="#f59e0b" fillOpacity="0.7" fontFamily="system-ui">
+                  {locale_key === "fi" ? "integraattori" : "integrator"}
+                </text>
+
+                {/* Input: EMF */}
+                <rect x="30" y="30" width="120" height="44" rx="6" fill="#3b82f6" fillOpacity="0.12" stroke="#3b82f6" strokeWidth="1.2" />
+                <text x="90" y="49" textAnchor="middle" fontSize="10" fontWeight="600" fill="#3b82f6" fontFamily="system-ui">EMF</text>
+                <text x="90" y="63" textAnchor="middle" fontSize="8" fill="#3b82f6" fillOpacity="0.7" fontFamily="system-ui">VGCC→Ca²⁺→mTOR↑</text>
+                <line x1="150" y1="60" x2="260" y2="155" stroke="#3b82f6" strokeWidth="1.2" strokeOpacity="0.5" markerEnd="url(#arrowBlue)" />
+
+                {/* Input: Caloric excess */}
+                <rect x="240" y="10" width="120" height="44" rx="6" fill="#10b981" fillOpacity="0.12" stroke="#10b981" strokeWidth="1.2" />
+                <text x="300" y="29" textAnchor="middle" fontSize="10" fontWeight="600" fill="#10b981" fontFamily="system-ui">
+                  {locale_key === "fi" ? "Kalorit" : "Calories"}
+                </text>
+                <text x="300" y="43" textAnchor="middle" fontSize="8" fill="#10b981" fillOpacity="0.7" fontFamily="system-ui">insulin→PI3K→mTOR↑</text>
+                <line x1="300" y1="54" x2="300" y2="136" stroke="#10b981" strokeWidth="1.2" strokeOpacity="0.5" />
+
+                {/* Input: Aging */}
+                <rect x="450" y="30" width="120" height="44" rx="6" fill="#8b5cf6" fillOpacity="0.12" stroke="#8b5cf6" strokeWidth="1.2" />
+                <text x="510" y="49" textAnchor="middle" fontSize="10" fontWeight="600" fill="#8b5cf6" fontFamily="system-ui">
+                  {locale_key === "fi" ? "Ikääntyminen" : "Aging"}
+                </text>
+                <text x="510" y="63" textAnchor="middle" fontSize="8" fill="#8b5cf6" fillOpacity="0.7" fontFamily="system-ui">AMPK↓→mTOR↑</text>
+                <line x1="450" y1="60" x2="340" y2="155" stroke="#8b5cf6" strokeWidth="1.2" strokeOpacity="0.5" />
+
+                {/* Inhibitor: Metformin */}
+                <rect x="30" y="155" width="110" height="50" rx="6" fill="#14b8a6" fillOpacity="0.12" stroke="#14b8a6" strokeWidth="1.2" strokeDasharray="4 2" />
+                <text x="85" y="174" textAnchor="middle" fontSize="10" fontWeight="600" fill="#14b8a6" fontFamily="system-ui">Metformin</text>
+                <text x="85" y="188" textAnchor="middle" fontSize="8" fill="#14b8a6" fillOpacity="0.7" fontFamily="system-ui">AMPK↑→mTOR↓</text>
+                <text x="85" y="200" textAnchor="middle" fontSize="7" fill="#14b8a6" fillOpacity="0.5" fontFamily="system-ui">
+                  {locale_key === "fi" ? "(vastavaikutus)" : "(counteracts)"}
+                </text>
+                <line x1="140" y1="180" x2="256" y2="180" stroke="#14b8a6" strokeWidth="1.2" strokeOpacity="0.5" strokeDasharray="3 2" />
+
+                {/* Output arrows to three epidemics */}
+                {[
+                  { x: 130, label: locale_key === "fi" ? "Ikääntyminen" : "Aging", detail: "autophagy↓ senescence↑", color: "#ef4444" },
+                  { x: 300, label: locale_key === "fi" ? "Hedelmällisyys↓" : "Fertility↓", detail: "spermatogonia↓ AMH↓", color: "#ec4899" },
+                  { x: 470, label: locale_key === "fi" ? "Syöpä" : "Cancer", detail: "proliferation↑ growth↑", color: "#f97316" },
+                ].map((o) => (
+                  <g key={o.label}>
+                    <line x1="300" y1="224" x2={o.x} y2="280" stroke={o.color} strokeWidth="1.2" strokeOpacity="0.5" />
+                    <rect x={o.x - 65} y="280" width="130" height="44" rx="6" fill={o.color} fillOpacity="0.12" stroke={o.color} strokeWidth="1.2" />
+                    <text x={o.x} y="300" textAnchor="middle" fontSize="11" fontWeight="600" fill={o.color} fontFamily="system-ui">{o.label}</text>
+                    <text x={o.x} y="315" textAnchor="middle" fontSize="8" fill={o.color} fillOpacity="0.7" fontFamily="system-ui">{o.detail}</text>
+                  </g>
+                ))}
+
+                {/* Caption */}
+                <text x="300" y="360" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.4" fontFamily="system-ui">
+                  {locale_key === "fi" ? "mTOR on yhteinen soluttaja — kolme epidemiaa, yksi mekanismi" : "mTOR is the shared hub — three epidemics, one mechanism"}
+                </text>
+              </svg>
             </div>
 
             <h3 className="text-base font-semibold mb-3">{d.mtorPredTitle}</h3>
@@ -2186,6 +2455,76 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
               {d.techLayersDesc}
             </p>
+
+            {/* Technology Layers Stacked Area Chart */}
+            <div className="my-8 max-w-3xl mx-auto">
+              <svg viewBox="0 0 700 370" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label={locale === "fi" ? "Teknologiakerrosten kasautuva altistuskaavio" : "Technology layers cumulative exposure chart"}>
+                <defs>
+                  <linearGradient id="gridFade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="currentColor" stopOpacity="0.06" />
+                    <stop offset="100%" stopColor="currentColor" stopOpacity="0.02" />
+                  </linearGradient>
+                </defs>
+
+                {/* Chart area background */}
+                <rect x="80" y="20" width="580" height="280" fill="url(#gridFade)" rx="4" />
+
+                {/* Y-axis gridlines */}
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <line key={`grid-${i}`} x1="80" y1={20 + i * 70} x2="660" y2={20 + i * 70} stroke="currentColor" strokeOpacity="0.08" strokeWidth="1" />
+                ))}
+
+                {/* Stacked area paths - each layer starts at its deployment year */}
+                {/* X scale: 1900=80, 2030=660 => px = 80 + (year-1900) * (580/130) */}
+                {/* Y scale: 0=300, max=20 => py = 300 - val * 14 */}
+
+                {/* Layer 1: Power Grid (1900+) - slate/dark blue */}
+                <path d="M 80,300 L 80,286 C 170,272 260,265 350,258 C 440,251 530,244 660,237 L 660,300 Z" fill="#475569" fillOpacity="0.55" />
+                <text x="160" y="290" fontSize="9" fontWeight="600" fill="#cbd5e1" fontFamily="system-ui">{locale === "fi" ? "Sahkoverkko" : "Power Grid"}</text>
+
+                {/* Layer 2: Radio/TV (1950+) - teal */}
+                <path d="M 303,300 L 303,258 C 370,244 440,230 530,216 C 580,209 620,202 660,195 L 660,237 C 620,244 530,251 440,258 C 370,265 303,272 303,286 Z" fill="#0d9488" fillOpacity="0.5" />
+                <text x="450" y="248" fontSize="9" fontWeight="600" fill="#5eead4" fontFamily="system-ui">{locale === "fi" ? "Radio/TV" : "Radio/TV"}</text>
+
+                {/* Layer 3: Cellular (1990+) - amber */}
+                <path d="M 482,300 L 482,216 C 520,195 560,174 620,153 L 660,139 L 660,195 C 620,202 560,216 520,230 C 500,237 490,244 482,258 Z" fill="#d97706" fillOpacity="0.5" />
+                <text x="560" y="195" fontSize="9" fontWeight="600" fill="#fbbf24" fontFamily="system-ui">{locale === "fi" ? "GSM" : "Cellular"}</text>
+
+                {/* Layer 4: WiFi/4G (2005+) - orange */}
+                <path d="M 549,300 L 549,174 C 575,153 610,125 640,104 L 660,90 L 660,139 C 640,146 610,160 575,174 C 560,181 552,195 549,216 Z" fill="#ea580c" fillOpacity="0.5" />
+                <text x="600" y="140" fontSize="9" fontWeight="600" fill="#fb923c" fontFamily="system-ui">WiFi/4G</text>
+
+                {/* Layer 5: 5G/IoT (2020+) - red */}
+                <path d="M 616,300 L 616,104 C 630,83 645,62 655,48 L 660,42 L 660,90 C 650,97 640,104 630,118 C 622,132 618,153 616,174 Z" fill="#dc2626" fillOpacity="0.55" />
+                <text x="635" y="80" fontSize="9" fontWeight="600" fill="#f87171" fontFamily="system-ui">5G/IoT</text>
+
+                {/* X-axis */}
+                <line x1="80" y1="300" x2="660" y2="300" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1" />
+                {[1900, 1920, 1940, 1960, 1980, 2000, 2020].map((year) => {
+                  const xPos = 80 + ((year - 1900) / 130) * 580;
+                  return (
+                    <g key={year}>
+                      <line x1={xPos} y1="300" x2={xPos} y2="305" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1" />
+                      <text x={xPos} y="318" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui">{year}</text>
+                    </g>
+                  );
+                })}
+
+                {/* Y-axis */}
+                <line x1="80" y1="20" x2="80" y2="300" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1" />
+                <text x="40" y="165" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui" transform="rotate(-90 40 165)">
+                  {locale === "fi" ? "Kumulatiivinen altistus" : "Cumulative exposure"}
+                </text>
+
+                {/* Caption */}
+                <text x="370" y="345" textAnchor="middle" fontSize="10" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui">
+                  {locale === "fi"
+                    ? "Viisi teknologiakerrosta: jokainen sukupolvi kerrostuu aiempien paalle"
+                    : "Five technology layers: each generation stacks on previous ones"}
+                </text>
+              </svg>
+            </div>
+
             <Link
               href={`${prefix}/evidence/technology`}
               className="inline-flex items-center gap-1 text-sm text-accent hover:underline"
@@ -2224,6 +2563,82 @@ export default async function ModelPage({
                   <p className="text-[10px] text-foreground-muted/60 mt-2">{a.ref}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Anomalies comparison chart */}
+            <div className="my-8 max-w-3xl mx-auto">
+              <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                {/* Background panels */}
+                <rect x="0" y="0" width="340" height="300" rx="8" className="fill-red-500/5 dark:fill-red-500/10" />
+                <rect x="360" y="0" width="340" height="300" rx="8" className="fill-green-500/5 dark:fill-green-500/10" />
+                {/* Headers */}
+                <text x="170" y="28" textAnchor="middle" className="fill-red-500 dark:fill-red-400" fontSize="13" fontWeight="700">
+                  {locale === "fi" ? "Konventionaalinen" : "Conventional"}
+                </text>
+                <text x="530" y="28" textAnchor="middle" className="fill-green-600 dark:fill-green-400" fontSize="13" fontWeight="700">
+                  BERM
+                </text>
+                <line x1="0" y1="40" x2="700" y2="40" stroke="currentColor" strokeOpacity="0.15" />
+                {/* Row data */}
+                {[
+                  {
+                    anomaly: locale === "fi" ? "Selittymytmn lasku" : "Unexplained decline",
+                    conv: locale === "fi" ? "Selittmtn" : "Unexplained",
+                    berm: locale === "fi" ? "WiFi+LED-kerrokset" : "WiFi+LED layers",
+                  },
+                  {
+                    anomaly: locale === "fi" ? "Sosiaalinen media" : "Social media",
+                    conv: locale === "fi" ? "Some-teoria" : "Social media",
+                    berm: locale === "fi" ? "Kolmoiskanava" : "Triple channel",
+                  },
+                  {
+                    anomaly: locale === "fi" ? "Istuminen" : "Sedentary",
+                    conv: locale === "fi" ? "Istuminen" : "Sedentary",
+                    berm: locale === "fi" ? "24/7 EMF" : "24/7 EMF",
+                  },
+                  {
+                    anomaly: locale === "fi" ? "Vauraus" : "Prosperity",
+                    conv: locale === "fi" ? "Vauraus" : "Prosperity",
+                    berm: locale === "fi" ? "Shkistysviive" : "Electrification lag",
+                  },
+                  {
+                    anomaly: locale === "fi" ? "Fyysinen ty" : "Physical labor",
+                    conv: locale === "fi" ? "Fyysinen ty" : "Physical labor",
+                    berm: locale === "fi" ? "Nolla kerrosta" : "Zero layers",
+                  },
+                ].map((row, i) => {
+                  const y = 65 + i * 48;
+                  return (
+                    <g key={i}>
+                      {i > 0 && <line x1="20" y1={y - 14} x2="680" y2={y - 14} stroke="currentColor" strokeOpacity="0.08" />}
+                      {/* Conventional label */}
+                      <text x="170" y={y + 4} textAnchor="middle" fontSize="11" className="fill-red-600/80 dark:fill-red-400/80">
+                        {row.conv}
+                      </text>
+                      {/* Anomaly center label */}
+                      <rect x="280" y={y - 14} width="140" height="28" rx="14" className="fill-card-bg dark:fill-card-bg" stroke="currentColor" strokeOpacity="0.15" />
+                      <text x="350" y={y + 4} textAnchor="middle" fontSize="10" fontWeight="600" fill="currentColor">
+                        {row.anomaly}
+                      </text>
+                      {/* Arrows */}
+                      <line x1="230" y1={y} x2="278" y2={y} stroke="currentColor" strokeOpacity="0.25" strokeWidth="1" markerEnd="url(#arrowR7)" />
+                      <line x1="470" y1={y} x2="422" y2={y} stroke="currentColor" strokeOpacity="0.25" strokeWidth="1" markerEnd="url(#arrowL7)" />
+                      {/* BERM label */}
+                      <text x="530" y={y + 4} textAnchor="middle" fontSize="11" className="fill-green-700/80 dark:fill-green-400/80">
+                        {row.berm}
+                      </text>
+                    </g>
+                  );
+                })}
+                <defs>
+                  <marker id="arrowR7" viewBox="0 0 6 6" refX="6" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M0,0 L6,3 L0,6" fill="currentColor" fillOpacity="0.3" />
+                  </marker>
+                  <marker id="arrowL7" viewBox="0 0 6 6" refX="0" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+                    <path d="M6,0 L0,3 L6,6" fill="currentColor" fillOpacity="0.3" />
+                  </marker>
+                </defs>
+              </svg>
             </div>
 
             {/* Formula v20 */}
@@ -2274,6 +2689,79 @@ export default async function ModelPage({
               </table>
             </div>
 
+            {/* 6-country TFR bar chart */}
+            <div className="my-8 max-w-3xl mx-auto">
+              <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                {/* Y-axis */}
+                <text x="18" y="16" fontSize="10" fontWeight="600" fill="currentColor" fillOpacity="0.6">TFR</text>
+                {[0, 1, 2, 3, 4, 5, 6, 7].map((v) => {
+                  const y = 310 - v * (260 / 7);
+                  return (
+                    <g key={v}>
+                      <text x="28" y={y + 3} textAnchor="end" fontSize="9" fill="currentColor" fillOpacity="0.5">{v}</text>
+                      <line x1="32" y1={y} x2="690" y2={y} stroke="currentColor" strokeOpacity="0.07" />
+                    </g>
+                  );
+                })}
+                {/* Bars */}
+                {(() => {
+                  const countries = [
+                    { name: locale === "fi" ? "Suomi" : "Finland", actual: 1.25, v19: 1.32, v20: 1.28 },
+                    { name: locale === "fi" ? "Etel-Korea" : "South Korea", actual: 0.72, v19: 0.95, v20: 0.78 },
+                    { name: "Nigeria", actual: 4.38, v19: 4.85, v20: 4.52 },
+                    { name: locale === "fi" ? "USA" : "USA", actual: 1.63, v19: 1.55, v20: 1.58 },
+                    { name: "Israel", actual: 2.87, v19: 2.40, v20: 2.75 },
+                    { name: locale === "fi" ? "Amissit" : "Amish", actual: 6.1, v19: null as number | null, v20: 6.05 },
+                  ];
+                  const barW = 18;
+                  const groupW = 100;
+                  const startX = 60;
+                  const baseY = 310;
+                  const scale = 260 / 7;
+                  return countries.map((c, i) => {
+                    const gx = startX + i * groupW;
+                    return (
+                      <g key={i}>
+                        {/* Actual bar */}
+                        <rect x={gx} y={baseY - c.actual * scale} width={barW} height={c.actual * scale} rx="2" className="fill-gray-400/60 dark:fill-gray-500/60" />
+                        <text x={gx + barW / 2} y={baseY - c.actual * scale - 4} textAnchor="middle" fontSize="8" fill="currentColor" fillOpacity="0.6">{c.actual}</text>
+                        {/* v19 bar */}
+                        {c.v19 !== null && (
+                          <>
+                            <rect x={gx + barW + 3} y={baseY - c.v19 * scale} width={barW} height={c.v19 * scale} rx="2" className="fill-indigo-500/50 dark:fill-indigo-400/50" />
+                            <text x={gx + barW + 3 + barW / 2} y={baseY - c.v19 * scale - 4} textAnchor="middle" fontSize="8" fill="currentColor" fillOpacity="0.6">{c.v19}</text>
+                          </>
+                        )}
+                        {/* v20 bar */}
+                        <rect
+                          x={gx + (c.v19 !== null ? 2 * (barW + 3) : barW + 3)}
+                          y={baseY - c.v20 * scale}
+                          width={barW}
+                          height={c.v20 * scale}
+                          rx="2"
+                          className="fill-teal-500/60 dark:fill-teal-400/60"
+                        />
+                        <text
+                          x={gx + (c.v19 !== null ? 2 * (barW + 3) : barW + 3) + barW / 2}
+                          y={baseY - c.v20 * scale - 4}
+                          textAnchor="middle" fontSize="8" fill="currentColor" fillOpacity="0.6"
+                        >{c.v20}</text>
+                        {/* Country label */}
+                        <text x={gx + (c.v19 !== null ? 30 : 20)} y={baseY + 16} textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.7">{c.name}</text>
+                      </g>
+                    );
+                  });
+                })()}
+                {/* Legend */}
+                <rect x="440" y="8" width="10" height="10" rx="2" className="fill-gray-400/60 dark:fill-gray-500/60" />
+                <text x="454" y="17" fontSize="9" fill="currentColor" fillOpacity="0.7">{locale === "fi" ? "Todellinen" : "Actual"}</text>
+                <rect x="510" y="8" width="10" height="10" rx="2" className="fill-indigo-500/50 dark:fill-indigo-400/50" />
+                <text x="524" y="17" fontSize="9" fill="currentColor" fillOpacity="0.7">v19</text>
+                <rect x="550" y="8" width="10" height="10" rx="2" className="fill-teal-500/60 dark:fill-teal-400/60" />
+                <text x="564" y="17" fontSize="9" fill="currentColor" fillOpacity="0.7">v20</text>
+              </svg>
+            </div>
+
             {/* Future projections */}
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground-muted mb-4">{d.layerProjectionsTitle}</h4>
             <div className="overflow-x-auto mb-6">
@@ -2299,6 +2787,73 @@ export default async function ModelPage({
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            {/* 5-country TFR projections line chart */}
+            <div className="my-8 max-w-3xl mx-auto">
+              <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                {/* Axes */}
+                <line x1="60" y1="30" x2="60" y2="300" stroke="currentColor" strokeOpacity="0.2" />
+                <line x1="60" y1="300" x2="670" y2="300" stroke="currentColor" strokeOpacity="0.2" />
+                {/* Y-axis labels (TFR 0-5) */}
+                {[0, 1, 2, 3, 4, 5].map((v) => {
+                  const y = 300 - v * 54;
+                  return (
+                    <g key={v}>
+                      <text x="50" y={y + 3} textAnchor="end" fontSize="9" fill="currentColor" fillOpacity="0.5">{v}</text>
+                      <line x1="60" y1={y} x2="670" y2={y} stroke="currentColor" strokeOpacity="0.06" />
+                    </g>
+                  );
+                })}
+                {/* X-axis labels */}
+                {[
+                  { label: "2024", x: 120 },
+                  { label: "2030", x: 365 },
+                  { label: "2035", x: 610 },
+                ].map((tick) => (
+                  <g key={tick.label}>
+                    <text x={tick.x} y={318} textAnchor="middle" fontSize="10" fill="currentColor" fillOpacity="0.6">{tick.label}</text>
+                    <line x1={tick.x} y1={300} x2={tick.x} y2={305} stroke="currentColor" strokeOpacity="0.2" />
+                  </g>
+                ))}
+                {/* Replacement level dashed line */}
+                <line x1="60" y1={300 - 2.1 * 54} x2="670" y2={300 - 2.1 * 54} stroke="currentColor" strokeOpacity="0.3" strokeDasharray="6 4" />
+                <text x="672" y={300 - 2.1 * 54 + 3} fontSize="8" fill="currentColor" fillOpacity="0.5">
+                  {locale === "fi" ? "Uusiutumistaso" : "Replacement"}
+                </text>
+                {/* Country lines */}
+                {(() => {
+                  const xVals = [120, 365, 610];
+                  const scale = 54;
+                  const baseY = 300;
+                  const countries = [
+                    { name: locale === "fi" ? "Etel-Korea" : "S. Korea", values: [0.72, 0.60, 0.50], color: "#ef4444" },
+                    { name: locale === "fi" ? "Suomi" : "Finland", values: [1.25, 1.10, 0.975], color: "#3b82f6" },
+                    { name: "USA", values: [1.63, 1.475, 1.325], color: "#a855f7" },
+                    { name: "Nigeria", values: [4.38, 3.75, 3.15], color: "#f59e0b" },
+                    { name: locale === "fi" ? "Intia" : "India", values: [1.96, 1.65, 1.375], color: "#10b981" },
+                  ];
+                  return countries.map((c, ci) => {
+                    const points = c.values.map((v, vi) => `${xVals[vi]},${baseY - v * scale}`);
+                    return (
+                      <g key={ci}>
+                        <polyline points={points.join(" ")} fill="none" stroke={c.color} strokeWidth="2" strokeLinejoin="round" strokeOpacity="0.8" />
+                        {c.values.map((v, vi) => (
+                          <g key={vi}>
+                            <circle cx={xVals[vi]} cy={baseY - v * scale} r="4" fill={c.color} fillOpacity="0.9" />
+                            <text x={xVals[vi]} y={baseY - v * scale - 8} textAnchor="middle" fontSize="8" fill={c.color} fillOpacity="0.9">{v}</text>
+                          </g>
+                        ))}
+                        {/* Legend label at end */}
+                        <text x="618" y={baseY - c.values[2] * scale + (ci === 2 ? 14 : ci === 4 ? -8 : 4)} fontSize="8" fill={c.color} fillOpacity="0.9" fontWeight="600">
+                          {c.name}
+                        </text>
+                      </g>
+                    );
+                  });
+                })()}
+                <text x="18" y="16" fontSize="10" fontWeight="600" fill="currentColor" fillOpacity="0.6">TFR</text>
+              </svg>
             </div>
 
             <Link
@@ -2376,6 +2931,49 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
               {d.feedbackLoopsDesc}
             </p>
+            <div className="my-8 max-w-2xl mx-auto">
+              <svg viewBox="0 0 600 400" className="w-full" role="img" aria-label={locale_key === "fi" ? "Palautesilmukat" : "Feedback loops network"}>
+                <defs>
+                  <marker id="fb_arPos" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-rose-500/70" /></marker>
+                  <marker id="fb_arNeg" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-cyan-500/70" /></marker>
+                </defs>
+
+                {/* Positive feedback paths (rose) */}
+                <path d="M330,62 Q390,45 450,113" fill="none" className="stroke-rose-500/50" strokeWidth="1.5" markerEnd="url(#fb_arPos)" />
+                <path d="M480,157 Q520,195 480,233" fill="none" className="stroke-rose-500/50" strokeWidth="1.5" markerEnd="url(#fb_arPos)" />
+                <path d="M459,240 Q560,125 321,75" fill="none" className="stroke-rose-500/40" strokeWidth="1.5" strokeDasharray="5 3" markerEnd="url(#fb_arPos)" />
+                <path d="M152,265 Q300,325 448,265" fill="none" className="stroke-rose-500/50" strokeWidth="1.5" markerEnd="url(#fb_arPos)" />
+
+                {/* Negative feedback paths (cyan) */}
+                <path d="M150,113 Q210,40 270,62" fill="none" className="stroke-cyan-500/50" strokeWidth="1.5" markerEnd="url(#fb_arNeg)" />
+                <path d="M270,328 Q210,345 150,277" fill="none" className="stroke-cyan-500/50" strokeWidth="1.5" markerEnd="url(#fb_arNeg)" />
+
+                {/* Nodes */}
+                <circle cx="300" cy="50" r="32" className="fill-green-500/10 stroke-green-500/50" strokeWidth="1.5" />
+                <text x="300" y="54" textAnchor="middle" className="fill-foreground text-[10px] font-medium">Ca²⁺</text>
+
+                <circle cx="480" cy="125" r="32" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
+                <text x="480" y="129" textAnchor="middle" className="fill-foreground text-[10px] font-medium">CaMKII</text>
+
+                <circle cx="480" cy="265" r="32" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
+                <text x="480" y="269" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Tulehdus" : "Inflammation"}</text>
+
+                <circle cx="300" cy="340" r="32" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
+                <text x="300" y="344" textAnchor="middle" className="fill-foreground text-[10px] font-medium">GABA</text>
+
+                <circle cx="120" cy="265" r="32" className="fill-orange-500/10 stroke-orange-500/50" strokeWidth="1.5" />
+                <text x="120" y="269" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Kortisoli" : "Cortisol"}</text>
+
+                <circle cx="120" cy="125" r="32" className="fill-purple-500/10 stroke-purple-500/50" strokeWidth="1.5" />
+                <text x="120" y="129" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Melatoniini" : "Melatonin"}</text>
+
+                {/* Legend */}
+                <line x1="30" y1="390" x2="60" y2="390" className="stroke-rose-500/60" strokeWidth="2" markerEnd="url(#fb_arPos)" />
+                <text x="68" y="394" className="fill-foreground-muted text-[8px]">{locale_key === "fi" ? "Positiivinen palaute" : "Positive feedback"}</text>
+                <line x1="280" y1="390" x2="310" y2="390" className="stroke-cyan-500/60" strokeWidth="2" markerEnd="url(#fb_arNeg)" />
+                <text x="318" y="394" className="fill-foreground-muted text-[8px]">{locale_key === "fi" ? "Negatiivinen palaute" : "Negative feedback"}</text>
+              </svg>
+            </div>
             <div className="grid gap-3 sm:grid-cols-2 mb-4">
               {d.feedbackLoops.map((loop: { id: string; name: string; steps: string; status: string; color: string }) => (
                 <div key={loop.id} className={`rounded-xl border p-4 ${loop.color === "green" ? "border-green-500/30 bg-green-500/5" : "border-amber-500/30 bg-amber-500/5"}`}>
@@ -2388,6 +2986,53 @@ export default async function ModelPage({
                 </div>
               ))}
             </div>
+
+            {/* Feedback Loops Network Diagram */}
+            <div className="my-8 max-w-3xl mx-auto">
+              <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label="Feedback loops network">
+                {/* Central node: Ca²⁺ */}
+                <circle cx="350" cy="160" r="36" fill="#ef4444" fillOpacity="0.15" stroke="#ef4444" strokeWidth="1.8" />
+                <text x="350" y="157" textAnchor="middle" fontSize="13" fontWeight="700" fill="#ef4444" fontFamily="system-ui">Ca²⁺↑</text>
+                <text x="350" y="172" textAnchor="middle" fontSize="8" fill="#ef4444" fillOpacity="0.7" fontFamily="system-ui">
+                  {locale_key === "fi" ? "soluttaja" : "hub"}
+                </text>
+                {/* Loop nodes around the hub */}
+                {[
+                  { angle: -90, label: "CaMKII", sub: "→Cav3.2↓ threshold", color: "#3b82f6" },
+                  { angle: -45, label: "ROS", sub: "→mitochondria↓→ROS↑", color: "#f97316" },
+                  { angle: 0, label: "NF-κB", sub: "→inflammation→Ca²⁺↑", color: "#ec4899" },
+                  { angle: 45, label: "mTOR", sub: "→autophagy↓→damage↑", color: "#f59e0b" },
+                  { angle: 90, label: "DNA", sub: "→repair↓→mutations↑", color: "#8b5cf6" },
+                  { angle: 135, label: "ER stress", sub: "→UPR→Ca²⁺ release", color: "#14b8a6" },
+                  { angle: 180, label: "GSH↓", sub: "→antioxidant↓→ROS↑", color: "#6366f1" },
+                  { angle: -135, label: "TRPV1", sub: "→permeability↑→Ca²⁺↑", color: "#84cc16" },
+                ].map((node) => {
+                  const rad = (node.angle * Math.PI) / 180;
+                  const cx = 350 + Math.cos(rad) * 135;
+                  const cy = 160 + Math.sin(rad) * 115;
+                  const lx = 350 + Math.cos(rad) * 52;
+                  const ly = 160 + Math.sin(rad) * 44;
+                  return (
+                    <g key={node.label}>
+                      <line x1={lx} y1={ly} x2={cx} y2={cy} stroke={node.color} strokeWidth="1" strokeOpacity="0.35" />
+                      <circle cx={cx} cy={cy} r="4" fill={node.color} fillOpacity="0.6" />
+                      <text x={cx} y={cy - 10} textAnchor="middle" fontSize="9" fontWeight="600" fill={node.color} fontFamily="system-ui">{node.label}</text>
+                      <text x={cx} y={cy + 14} textAnchor="middle" fontSize="6.5" fill="currentColor" fillOpacity="0.45" fontFamily="system-ui">{node.sub}</text>
+                      {/* Curved feedback arrow back to hub */}
+                      <path
+                        d={`M ${cx + Math.cos(rad + 0.3) * 20} ${cy + Math.sin(rad + 0.3) * 20} Q ${350 + Math.cos(rad) * 85} ${160 + Math.sin(rad) * 72} ${350 + Math.cos(rad) * 42} ${160 + Math.sin(rad) * 36}`}
+                        fill="none" stroke={node.color} strokeWidth="0.7" strokeOpacity="0.25" strokeDasharray="2 2"
+                      />
+                    </g>
+                  );
+                })}
+                {/* Caption */}
+                <text x="350" y="320" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.4" fontFamily="system-ui">
+                  {locale_key === "fi" ? "17 positiivista takaisinkytkentäsilmukkaa — mikä tahansa sisääntulopiste aktivoi koko verkoston" : "17 positive feedback loops — any entry point activates the entire network"}
+                </text>
+              </svg>
+            </div>
+
             <Link href={`${prefix}/evidence/unbroken-chain`} className="text-sm text-accent hover:underline">
               {d.feedbackLoopsLink}
             </Link>
@@ -2494,6 +3139,86 @@ export default async function ModelPage({
               {d.genSuscDesc}
             </p>
 
+            {/* 15-Gene Cascade Diagram */}
+            <div className="my-8 max-w-3xl mx-auto">
+              <svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label={locale === "fi" ? "15 geenin kaskadidiagrammi" : "15-gene cascade diagram"}>
+                {/* Background */}
+                <rect width="700" height="520" fill="none" />
+
+                {/* Tier 1: INFLUX - cyan/teal */}
+                <text x="12" y="52" fontSize="11" fontWeight="bold" fill="#0d9488" fontFamily="system-ui">{locale === "fi" ? "SISAANVIRTAUS" : "INFLUX"}</text>
+                <text x="12" y="64" fontSize="9" fill="#5eead4" fontFamily="system-ui">Tier 1</text>
+                {[["CACNA1C", 130], ["CACNA1H", 245], ["CACNA1D", 360], ["CACNA1A", 475], ["CACNA1B", 590]].map(([gene, x]) => (
+                  <g key={gene as string}>
+                    <rect x={Number(x)} y="35" width="95" height="36" rx="6" ry="6" fill="#0d9488" fillOpacity="0.15" stroke="#0d9488" strokeWidth="1.5" className="dark:fill-teal-900/40" />
+                    <text x={Number(x) + 47.5} y="58" textAnchor="middle" fontSize="11" fontWeight="600" fill="#0d9488" fontFamily="monospace">{gene as string}</text>
+                  </g>
+                ))}
+
+                {/* Arrow Tier 1 -> 2 */}
+                <line x1="350" y1="75" x2="350" y2="115" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" markerEnd="url(#cascadeArrow)" />
+
+                {/* Tier 2: MODULATION - blue */}
+                <text x="12" y="145" fontSize="11" fontWeight="bold" fill="#3b82f6" fontFamily="system-ui">{locale === "fi" ? "MODULAATIO" : "MODULATION"}</text>
+                <text x="12" y="157" fontSize="9" fill="#93c5fd" fontFamily="system-ui">Tier 2</text>
+                <rect x="300" y="128" width="100" height="36" rx="6" ry="6" fill="#3b82f6" fillOpacity="0.15" stroke="#3b82f6" strokeWidth="1.5" />
+                <text x="350" y="151" textAnchor="middle" fontSize="11" fontWeight="600" fill="#3b82f6" fontFamily="monospace">CACNA2D1</text>
+
+                {/* Arrow Tier 2 -> 3 */}
+                <line x1="350" y1="168" x2="350" y2="208" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" markerEnd="url(#cascadeArrow)" />
+
+                {/* Tier 3: INTEGRATION - red/rose */}
+                <text x="12" y="238" fontSize="11" fontWeight="bold" fill="#e11d48" fontFamily="system-ui">{locale === "fi" ? "INTEGRAATIO" : "INTEGRATION"}</text>
+                <text x="12" y="250" fontSize="9" fill="#fda4af" fontFamily="system-ui">Tier 3</text>
+                {[["CAMK2A", 260], ["CAMK2B", 390]].map(([gene, x]) => (
+                  <g key={gene as string}>
+                    <rect x={Number(x)} y="221" width="95" height="36" rx="6" ry="6" fill="#e11d48" fillOpacity="0.15" stroke="#e11d48" strokeWidth="1.5" />
+                    <text x={Number(x) + 47.5} y="244" textAnchor="middle" fontSize="11" fontWeight="600" fill="#e11d48" fontFamily="monospace">{gene as string}</text>
+                  </g>
+                ))}
+
+                {/* Arrow Tier 3 -> 4 */}
+                <line x1="350" y1="261" x2="350" y2="301" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" markerEnd="url(#cascadeArrow)" />
+
+                {/* Tier 4: EXTRUSION - amber */}
+                <text x="12" y="331" fontSize="11" fontWeight="bold" fill="#d97706" fontFamily="system-ui">{locale === "fi" ? "POISTO" : "EXTRUSION"}</text>
+                <text x="12" y="343" fontSize="9" fill="#fcd34d" fontFamily="system-ui">Tier 4</text>
+                {[["SLC8A1", 200], ["ATP2B1", 340], ["ATP2B2", 480]].map(([gene, x]) => (
+                  <g key={gene as string}>
+                    <rect x={Number(x)} y="314" width="95" height="36" rx="6" ry="6" fill="#d97706" fillOpacity="0.15" stroke="#d97706" strokeWidth="1.5" />
+                    <text x={Number(x) + 47.5} y="337" textAnchor="middle" fontSize="11" fontWeight="600" fill="#d97706" fontFamily="monospace">{gene as string}</text>
+                  </g>
+                ))}
+
+                {/* Arrow Tier 4 -> 5 */}
+                <line x1="350" y1="354" x2="350" y2="394" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" markerEnd="url(#cascadeArrow)" />
+
+                {/* Tier 5: SIGNALING - purple */}
+                <text x="12" y="424" fontSize="11" fontWeight="bold" fill="#9333ea" fontFamily="system-ui">{locale === "fi" ? "SIGNALOINTI" : "SIGNALING"}</text>
+                <text x="12" y="436" fontSize="9" fill="#c4b5fd" fontFamily="system-ui">Tier 5</text>
+                {[["CRY1", 155], ["CRY2", 280], ["MTNR1B", 405], ["COMT", 540]].map(([gene, x]) => (
+                  <g key={gene as string}>
+                    <rect x={Number(x)} y="407" width="95" height="36" rx="6" ry="6" fill="#9333ea" fillOpacity="0.15" stroke="#9333ea" strokeWidth="1.5" />
+                    <text x={Number(x) + 47.5} y="430" textAnchor="middle" fontSize="11" fontWeight="600" fill="#9333ea" fontFamily="monospace">{gene as string}</text>
+                  </g>
+                ))}
+
+                {/* Caption */}
+                <text x="350" y="475" textAnchor="middle" fontSize="10" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui">
+                  {locale === "fi"
+                    ? "Ca²⁺-kaskadi: 15 geeniä viidessä toiminnallisessa kerroksessa"
+                    : "Ca²⁺ cascade: 15 genes across five functional tiers"}
+                </text>
+
+                {/* Arrow marker */}
+                <defs>
+                  <marker id="cascadeArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" fillOpacity="0.4" />
+                  </marker>
+                </defs>
+              </svg>
+            </div>
+
             {/* Tier 1: Influx */}
             <h4 className="text-sm font-semibold mb-3">{d.genSuscInfluxTitle}</h4>
             <div className="overflow-x-auto mb-6">
@@ -2581,6 +3306,74 @@ export default async function ModelPage({
             <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 mb-2">
               <p className="text-xs text-foreground-muted leading-relaxed mb-2">{d.genSuscEhsDesc}</p>
               <p className="text-xs text-foreground-muted leading-relaxed font-medium">{d.genSuscEhsBiomarker}</p>
+            </div>
+
+            {/* EHS Diagnostic Flowchart */}
+            <div className="my-8 max-w-sm mx-auto">
+              <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                {/* Level 1: CaMKII Thr286 assay */}
+                <rect x="80" y="10" width="240" height="56" rx="12" className="fill-green-500/10 dark:fill-green-500/15" stroke="#22c55e" strokeWidth="1.5" strokeOpacity="0.5" />
+                <text x="200" y="34" textAnchor="middle" fontSize="11" fontWeight="700" className="fill-green-700 dark:fill-green-400">
+                  CaMKII Thr286 {locale === "fi" ? "mrittely" : "assay"}
+                </text>
+                <text x="200" y="52" textAnchor="middle" fontSize="9" className="fill-green-600/70 dark:fill-green-400/70">
+                  {locale === "fi" ? "Lymfosyytti-autofosforylaatio" : "Lymphocyte autophosphorylation"}
+                </text>
+                {/* Arrow 1 */}
+                <line x1="200" y1="66" x2="200" y2="120" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" markerEnd="url(#flowArrow10)" />
+                <text x="214" y="98" fontSize="9" fill="currentColor" fillOpacity="0.5" fontStyle="italic">
+                  {locale === "fi" ? "Kohonnut" : "Elevated"}
+                </text>
+                {/* Level 2: CACNA genotyping */}
+                <rect x="80" y="120" width="240" height="56" rx="12" className="fill-blue-500/10 dark:fill-blue-500/15" stroke="#3b82f6" strokeWidth="1.5" strokeOpacity="0.5" />
+                <text x="200" y="144" textAnchor="middle" fontSize="11" fontWeight="700" className="fill-blue-700 dark:fill-blue-400">
+                  CACNA {locale === "fi" ? "genotyypitys" : "genotyping"}
+                </text>
+                <text x="200" y="162" textAnchor="middle" fontSize="9" className="fill-blue-600/70 dark:fill-blue-400/70">
+                  {locale === "fi" ? "Kalsiumkanavavariantit" : "Calcium channel variants"}
+                </text>
+                {/* Arrow 2 */}
+                <line x1="200" y1="176" x2="200" y2="230" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" markerEnd="url(#flowArrow10)" />
+                <text x="214" y="208" fontSize="9" fill="currentColor" fillOpacity="0.5" fontStyle="italic">
+                  {locale === "fi" ? "Riskialleelit" : "Risk alleles"}
+                </text>
+                {/* Level 3: Signaling markers */}
+                <rect x="60" y="230" width="280" height="56" rx="12" className="fill-purple-500/10 dark:fill-purple-500/15" stroke="#a855f7" strokeWidth="1.5" strokeOpacity="0.5" />
+                <text x="200" y="254" textAnchor="middle" fontSize="11" fontWeight="700" className="fill-purple-700 dark:fill-purple-400">
+                  {locale === "fi" ? "Signalointimarkkerit" : "Signaling markers"}
+                </text>
+                <text x="200" y="272" textAnchor="middle" fontSize="10" fontFamily="monospace" className="fill-purple-600/80 dark:fill-purple-400/80">
+                  CRY1, MTNR1B, COMT
+                </text>
+                {/* Arrow 3 */}
+                <line x1="200" y1="286" x2="200" y2="340" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" markerEnd="url(#flowArrow10)" />
+                <text x="214" y="318" fontSize="9" fill="currentColor" fillOpacity="0.5" fontStyle="italic">
+                  {locale === "fi" ? "Korkea riski" : "High-risk profile"}
+                </text>
+                {/* Level 4: Polygenic risk score */}
+                <rect x="60" y="340" width="280" height="56" rx="12" className="fill-rose-500/10 dark:fill-rose-500/15" stroke="#f43f5e" strokeWidth="1.5" strokeOpacity="0.5" />
+                <text x="200" y="364" textAnchor="middle" fontSize="11" fontWeight="700" className="fill-rose-700 dark:fill-rose-400">
+                  {locale === "fi" ? "Polygeeninen riskipistemr" : "Polygenic risk score"}
+                </text>
+                <text x="200" y="382" textAnchor="middle" fontSize="9" className="fill-rose-600/70 dark:fill-rose-400/70">
+                  {locale === "fi" ? "EMF-herkkyyden kokonaisarvio" : "Overall EMF sensitivity assessment"}
+                </text>
+                {/* Arrow 4 */}
+                <line x1="200" y1="396" x2="200" y2="430" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" markerEnd="url(#flowArrow10)" />
+                {/* Final assessment box */}
+                <rect x="100" y="430" width="200" height="44" rx="10" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1" />
+                <text x="200" y="450" textAnchor="middle" fontSize="10" fontWeight="600" fill="currentColor" fillOpacity="0.8">
+                  {locale === "fi" ? "EHS-diagnostinen luokitus" : "EHS diagnostic classification"}
+                </text>
+                <text x="200" y="465" textAnchor="middle" fontSize="8" fill="currentColor" fillOpacity="0.5">
+                  {locale === "fi" ? "Matala / Keskitaso / Korkea" : "Low / Moderate / High"}
+                </text>
+                <defs>
+                  <marker id="flowArrow10" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+                    <path d="M0,0 L8,4 L0,8 Z" fill="currentColor" fillOpacity="0.3" />
+                  </marker>
+                </defs>
+              </svg>
             </div>
 
             {/* Epistatic Interactions */}

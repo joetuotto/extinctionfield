@@ -195,3 +195,50 @@ Unexecutable [DATA] items from Codelle: KONVERGENSSIVERIFIOINTI — Ultimaattine
 - Stratify by all three risk factors
 - Prediction: three-way interaction is significant — triple-hit individuals have highest OR
 - Note: tests E-NEW-31; if confirmed, would be the strongest gene×environment×nutrition interaction in psychiatry
+
+## D34: CatSper premature activation × phone position (VK51)
+- Prospective cohort: sperm CatSper activation kinetics in men stratified by phone carry position (front pocket vs. back pocket vs. bag)
+- Measure: hyperactivation timing, capacitation markers, acrosome reaction rate
+- Prediction: front-pocket carriers show earlier CatSper activation and higher premature acrosome reaction rates
+- Note: tests E-NEW-32; direct test of VK51 CatSper mechanism in humans
+
+## D35: Psilocybin × EMF sensitivity cluster headache RCT (VK52)
+- RCT: psilocybin (10 mg) vs. placebo in cluster headache patients stratified by occupational EMF exposure
+- Measure: attack frequency reduction, 5-HT2A receptor density (PET), BDNF levels pre/post
+- Prediction: psilocybin efficacy is enhanced in high-EMF group (more Ca²⁺ disruption to reset)
+- Note: tests E-NEW-33; would demonstrate Ca²⁺ hormesis principle clinically
+
+## D36: Caffeine neuroprotection × EMF exposure interaction (VK53)
+- Cross-sectional: cognitive outcomes and Parkinson's/Alzheimer's incidence stratified by coffee consumption AND occupational EMF exposure
+- Use existing cohort data (e.g., UK Biobank, Nurses' Health Study) with job-exposure matrix
+- Prediction: coffee's neuroprotective effect is stronger in high-EMF occupations (interaction term significant)
+- Note: tests E-NEW-34; population-level test of Ca²⁺ modulation hypothesis
+
+## D37: Drinking water lithium × mental health × EMF proxy (VK54)
+- Ecological study: municipal water lithium concentration × suicide/dementia/depression rates × regional EMF proxy (cell tower density, urbanization)
+- Prediction: three-way interaction — lithium's protective effect on mental health is LARGER in high-EMF regions
+- Note: tests E-NEW-35; would demonstrate trace-dose CRY-pathway protection at population level
+
+## D38: Amygdala BLA volume × chronic EMF exposure MRI (VK55)
+- Cross-sectional: amygdala subregion volumetrics (high-resolution MRI) in high-EMF vs. low-EMF workers
+- Include: anxiety scores (GAD-7), hair cortisol, sleep quality
+- Prediction: high-EMF group has larger BLA volume and higher anxiety scores with elevated cortisol
+- Note: tests E-NEW-36; directly validates S17 amygdala-anxiety spiral
+
+## D39: Amish comprehensive health comparison (VK56)
+- Prospective: age- and BMI-matched Amish vs. general US population, 20-disease panel
+- Measure: T2D, obesity, ASD, ADHD, depression, anxiety, insomnia, allergies, autoimmune, neurodegeneration, SIDS, myopia, chronic pain, CFS, infertility, endometriosis
+- Prediction: ≥14/20 diseases show significantly lower Amish prevalence with dose-response by EMF exposure level
+- Note: tests E-NEW-38; BERM's Level 2 falsification test — comprehensive version
+
+## D40: Cow infertility × EMF proximity dairy farm study (VK56)
+- Prospective dairy cohort: reproductive parameters (pregnancy rate, days-open, calf mortality) vs. distance to cell towers and power lines
+- Measure: milk yield, BCS, serum cortisol, progesterone patterns
+- Prediction: farms within 300m of towers show lower pregnancy rates and higher calf mortality
+- Note: tests E-NEW-39; extends Löscher & Käs 1998 with modern exposure assessment
+
+## D41: Five natural modulators RCT panel (VK51-54)
+- 2×5 factorial RCT: each of the five natural Ca²⁺ modulators (vitamin D, melatonin, magnesium, lithium trace, caffeine) individually and combined vs. placebo
+- Measure: CaMKII Thr286 phosphorylation, sleep quality, anxiety, sperm parameters
+- Prediction: combined five-modulator panel shows superadditive protection exceeding any single agent
+- Note: tests whether the natural modulatory panel provides meaningful Ca²⁺ pathway protection — highest translational value if confirmed

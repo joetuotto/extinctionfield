@@ -930,6 +930,65 @@ export function MathematicsSections({ locale }: { locale: string }) {
 
   return (
     <div className="space-y-14">
+          {/* Version Timeline */}
+          <div className="w-full overflow-x-auto mb-2">
+            <svg viewBox="0 0 700 85" className="w-full h-auto max-w-2xl mx-auto" xmlns="http://www.w3.org/2000/svg">
+              {/* Title */}
+              <text x="350" y="14" textAnchor="middle" fill="currentColor" fontSize="10" fontWeight="500" opacity="0.6">
+                {locale === "fi" ? "BERM-mallin versioevoluutio" : "BERM model version evolution"}
+              </text>
+              {/* Timeline line */}
+              <line x1="70" y1="38" x2="630" y2="38" stroke="currentColor" strokeWidth="2" opacity="0.15" />
+              {/* v17 */}
+              <circle cx="70" cy="38" r="5" fill="#3b82f6" fillOpacity="0.7" stroke="#3b82f6" strokeWidth="1.5" />
+              <text x="70" y="30" textAnchor="middle" fill="#3b82f6" fontSize="9" fontWeight="600">v17</text>
+              <text x="70" y="55" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                {locale === "fi" ? "Skalaari-" : "Scalar"}
+              </text>
+              <text x="70" y="64" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                {locale === "fi" ? "arkkitehtuuri" : "architecture"}
+              </text>
+              {/* v18 */}
+              <circle cx="210" cy="38" r="5" fill="#8b5cf6" fillOpacity="0.7" stroke="#8b5cf6" strokeWidth="1.5" />
+              <text x="210" y="30" textAnchor="middle" fill="#8b5cf6" fontSize="9" fontWeight="600">v18</text>
+              <text x="210" y="55" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                {locale === "fi" ? "Kolmikanava" : "Three-channel"}
+              </text>
+              {/* v19 */}
+              <circle cx="350" cy="38" r="5" fill="#10b981" fillOpacity="0.7" stroke="#10b981" strokeWidth="1.5" />
+              <text x="350" y="30" textAnchor="middle" fill="#10b981" fontSize="9" fontWeight="600">v19</text>
+              <text x="350" y="55" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                {locale === "fi" ? "Palautumis-" : "Recovery"}
+              </text>
+              <text x="350" y="64" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                {locale === "fi" ? "funktio" : "function"}
+              </text>
+              {/* v20 */}
+              <circle cx="490" cy="38" r="5" fill="#f59e0b" fillOpacity="0.7" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="490" y="30" textAnchor="middle" fill="#f59e0b" fontSize="9" fontWeight="600">v20</text>
+              <text x="490" y="55" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                {locale === "fi" ? "Kerrostettu" : "Layered"}
+              </text>
+              <text x="490" y="64" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                {locale === "fi" ? "formula" : "formula"}
+              </text>
+              {/* v21 */}
+              <circle cx="630" cy="38" r="5" fill="#ef4444" fillOpacity="0.7" stroke="#ef4444" strokeWidth="1.5" />
+              <text x="630" y="30" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="600">v21</text>
+              <text x="630" y="55" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                {locale === "fi" ? "Populaatio-" : "Population"}
+              </text>
+              <text x="630" y="64" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                {locale === "fi" ? "malli" : "model"}
+              </text>
+              {/* Connecting arrows between dots */}
+              <polygon points="138,38 130,34 130,42" fill="currentColor" opacity="0.12" />
+              <polygon points="278,38 270,34 270,42" fill="currentColor" opacity="0.12" />
+              <polygon points="418,38 410,34 410,42" fill="currentColor" opacity="0.12" />
+              <polygon points="558,38 550,34 550,42" fill="currentColor" opacity="0.12" />
+            </svg>
+          </div>
+
           {/* S1 Lindgren geometry */}
           <section id="lindgren">
             <span id="section-1" />
@@ -1093,6 +1152,66 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 </div>
                 <p className="text-xs text-foreground-muted">{d.s2bFRPM}</p>
               </div>
+            </div>
+
+            {/* Frequency Spectrum Diagram */}
+            <div className="my-6 w-full overflow-x-auto">
+              <svg viewBox="0 0 700 170" className="w-full h-auto max-w-2xl mx-auto" xmlns="http://www.w3.org/2000/svg">
+                {/* Title */}
+                <text x="350" y="14" textAnchor="middle" fill="currentColor" fontSize="10" fontWeight="500" opacity="0.6">
+                  {locale === "fi" ? "Kolmen kanavan taajuusspektri" : "Three-Channel Frequency Spectrum"}
+                </text>
+                {/* ELF band */}
+                <rect x="50" y="24" width="160" height="60" rx="4" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="1" strokeOpacity="0.4" />
+                <text x="130" y="42" textAnchor="middle" fill="#10b981" fontSize="12" fontWeight="700">ELF</text>
+                <text x="130" y="56" textAnchor="middle" fill="#10b981" fontSize="8" opacity="0.9">{"w_ELF = 0.05"}</text>
+                <text x="130" y="72" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                  {locale === "fi" ? "Kalvomodulaatio" : "Membrane modulation"}
+                </text>
+                {/* IF band */}
+                <rect x="210" y="24" width="190" height="60" rx="4" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="1" strokeOpacity="0.4" />
+                <text x="305" y="42" textAnchor="middle" fill="#f59e0b" fontSize="12" fontWeight="700">IF</text>
+                <text x="305" y="56" textAnchor="middle" fill="#f59e0b" fontSize="8" opacity="0.9">{"w_IF = 0.60"}</text>
+                <text x="305" y="72" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">IFO-VGIC</text>
+                {/* RF band */}
+                <rect x="400" y="24" width="260" height="60" rx="4" fill="#3b82f6" fillOpacity="0.15" stroke="#3b82f6" strokeWidth="1" strokeOpacity="0.4" />
+                <text x="530" y="42" textAnchor="middle" fill="#3b82f6" fontSize="12" fontWeight="700">RF</text>
+                <text x="530" y="56" textAnchor="middle" fill="#3b82f6" fontSize="8" opacity="0.9">{"w_RF = 0.35"}</text>
+                <text x="530" y="72" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.5">
+                  {locale === "fi" ? "Spin-kemia" : "Spin chemistry"}
+                </text>
+                {/* Frequency axis */}
+                <line x1="50" y1="100" x2="660" y2="100" stroke="currentColor" strokeWidth="1.5" opacity="0.25" />
+                <polygon points="660,100 652,96 652,104" fill="currentColor" opacity="0.2" />
+                {/* Log-scale ticks: 0 Hz to 10 GHz */}
+                <line x1="50" y1="96" x2="50" y2="104" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                <text x="50" y="116" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">0 Hz</text>
+                <line x1="130" y1="96" x2="130" y2="104" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                <text x="130" y="116" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">100 Hz</text>
+                <line x1="210" y1="96" x2="210" y2="104" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                <text x="210" y="116" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">1 kHz</text>
+                <line x1="305" y1="96" x2="305" y2="104" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                <text x="305" y="116" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">100 kHz</text>
+                <line x1="400" y1="96" x2="400" y2="104" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                <text x="400" y="116" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">1 MHz</text>
+                <line x1="530" y1="96" x2="530" y2="104" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                <text x="530" y="116" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">100 MHz</text>
+                <line x1="660" y1="96" x2="660" y2="104" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                <text x="660" y="116" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">10 GHz</text>
+                {/* Cutoff dashed lines */}
+                <line x1="210" y1="20" x2="210" y2="100" stroke="currentColor" strokeWidth="1" strokeDasharray="4,3" opacity="0.4" />
+                <text x="210" y="135" textAnchor="middle" fill="currentColor" fontSize="8" fontStyle="italic" opacity="0.55">
+                  {"f_c ≈ 1 kHz"}
+                </text>
+                <line x1="400" y1="20" x2="400" y2="100" stroke="currentColor" strokeWidth="1" strokeDasharray="4,3" opacity="0.4" />
+                <text x="400" y="135" textAnchor="middle" fill="currentColor" fontSize="8" fontStyle="italic" opacity="0.55">
+                  {"f_RPM ≈ 1 MHz"}
+                </text>
+                {/* Axis title */}
+                <text x="355" y="155" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+                  {locale === "fi" ? "Taajuus (log-asteikko)" : "Frequency (log scale)"}
+                </text>
+              </svg>
             </div>
 
             <Derivation>
@@ -1471,6 +1590,75 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 <DerivationLine>{d.s5bd5}</DerivationLine>
               </div>
             </Derivation>
+
+            {/* Cell Size x Frequency Scatter Plot (log-log) */}
+            <div className="my-6 w-full overflow-x-auto">
+              <svg viewBox="0 0 500 350" className="w-full h-auto max-w-2xl mx-auto" xmlns="http://www.w3.org/2000/svg">
+                {/* Title */}
+                <text x="270" y="16" textAnchor="middle" fill="currentColor" fontSize="10" fontWeight="500" opacity="0.6">
+                  {locale === "fi" ? "Solukoko vs. optimaalinen taajuus (log-log)" : "Cell Size vs. Optimal Frequency (log-log)"}
+                </text>
+                {/* Axes: X=70-470 (2 decades, 200px/dec), Y=300-30 (6 decades, 45px/dec) */}
+                <line x1="70" y1="30" x2="70" y2="300" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                <line x1="70" y1="300" x2="470" y2="300" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                {/* Y grid lines */}
+                <line x1="70" y1="255" x2="470" y2="255" stroke="currentColor" strokeWidth="0.5" opacity="0.07" strokeDasharray="2,4" />
+                <line x1="70" y1="210" x2="470" y2="210" stroke="currentColor" strokeWidth="0.5" opacity="0.07" strokeDasharray="2,4" />
+                <line x1="70" y1="165" x2="470" y2="165" stroke="currentColor" strokeWidth="0.5" opacity="0.07" strokeDasharray="2,4" />
+                <line x1="70" y1="120" x2="470" y2="120" stroke="currentColor" strokeWidth="0.5" opacity="0.07" strokeDasharray="2,4" />
+                <line x1="70" y1="75" x2="470" y2="75" stroke="currentColor" strokeWidth="0.5" opacity="0.07" strokeDasharray="2,4" />
+                {/* X-axis labels (log): 1, 5, 10, 20, 50, 100 um */}
+                <text x="70" y="316" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">{"1 µm"}</text>
+                <text x="210" y="316" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">{"5"}</text>
+                <text x="270" y="316" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">{"10 µm"}</text>
+                <text x="330" y="316" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">{"20"}</text>
+                <text x="410" y="316" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">{"50"}</text>
+                <text x="470" y="316" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.45">{"100 µm"}</text>
+                {/* X-axis title */}
+                <text x="270" y="338" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+                  {locale === "fi" ? "Solun halkaisija (log)" : "Cell diameter (log)"}
+                </text>
+                {/* Y-axis labels (log): 1kHz to 1GHz */}
+                <text x="62" y="303" textAnchor="end" fill="currentColor" fontSize="7.5" opacity="0.45">1 kHz</text>
+                <text x="62" y="258" textAnchor="end" fill="currentColor" fontSize="7.5" opacity="0.45">10 kHz</text>
+                <text x="62" y="213" textAnchor="end" fill="currentColor" fontSize="7.5" opacity="0.45">100 kHz</text>
+                <text x="62" y="168" textAnchor="end" fill="currentColor" fontSize="7.5" opacity="0.45">1 MHz</text>
+                <text x="62" y="123" textAnchor="end" fill="currentColor" fontSize="7.5" opacity="0.45">10 MHz</text>
+                <text x="62" y="78" textAnchor="end" fill="currentColor" fontSize="7.5" opacity="0.45">100 MHz</text>
+                <text x="62" y="33" textAnchor="end" fill="currentColor" fontSize="7.5" opacity="0.45">1 GHz</text>
+                {/* Y-axis title */}
+                <text x="16" y="165" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5" transform="rotate(-90,16,165)">
+                  {locale === "fi" ? "Optimaalinen taajuus (log)" : "Optimal frequency (log)"}
+                </text>
+                {/* Trend line: f=K/d. At d=1um f=3.7MHz(y=139), at d=100um f=37kHz(y=229) */}
+                <line x1="70" y1="139" x2="470" y2="229" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6,3" opacity="0.18" />
+                <text x="475" y="226" textAnchor="start" fill="currentColor" fontSize="7.5" fontStyle="italic" opacity="0.35">f = K/d</text>
+                {/* Data points */}
+                {/* Bacterium: 1um, 1GHz -> x=70, y=30 */}
+                <circle cx="70" cy="30" r="5" fill="#f59e0b" fillOpacity="0.7" stroke="#f59e0b" strokeWidth="1" />
+                <text x="80" y="28" textAnchor="start" fill="currentColor" fontSize="7.5" opacity="0.7">
+                  {locale === "fi" ? "Bakteeri (~1 µm)" : "Bacterium (~1 µm)"}
+                </text>
+                {/* Sperm: 5um, 400kHz -> x=210, y=183 */}
+                <circle cx="210" cy="183" r="5" fill="#ef4444" fillOpacity="0.7" stroke="#ef4444" strokeWidth="1" />
+                <text x="220" y="180" textAnchor="start" fill="currentColor" fontSize="7.5" opacity="0.7">
+                  {locale === "fi" ? "Siittiö (~5 µm)" : "Sperm (~5 µm)"}
+                </text>
+                {/* Lymphocyte: 10um, 200kHz -> x=270, y=197 */}
+                <circle cx="270" cy="197" r="5" fill="#10b981" fillOpacity="0.7" stroke="#10b981" strokeWidth="1" />
+                <text x="280" y="208" textAnchor="start" fill="currentColor" fontSize="7.5" opacity="0.7">
+                  {locale === "fi" ? "Lymfosyytti (~10 µm)" : "Lymphocyte (~10 µm)"}
+                </text>
+                {/* GBM tumor: 15um, 200kHz -> x=305, y=197 */}
+                <circle cx="305" cy="197" r="5" fill="#a855f7" fillOpacity="0.7" stroke="#a855f7" strokeWidth="1" />
+                <text x="315" y="193" textAnchor="start" fill="currentColor" fontSize="7.5" opacity="0.7">{"GBM (~15 µm)"}</text>
+                {/* Neuron: 20um, 100kHz -> x=330, y=210 */}
+                <circle cx="330" cy="210" r="5" fill="#3b82f6" fillOpacity="0.7" stroke="#3b82f6" strokeWidth="1" />
+                <text x="340" y="221" textAnchor="start" fill="currentColor" fontSize="7.5" opacity="0.7">
+                  {locale === "fi" ? "Neuroni (~20 µm)" : "Neuron (~20 µm)"}
+                </text>
+              </svg>
+            </div>
           </section>
 
           {/* S6 Cultural / compensation */}
@@ -1882,6 +2070,86 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 {d.s12Caveat}
               </p>
             </div>
+
+            {/* 54-Country Scatter: Predicted vs Observed TFR */}
+            <div className="my-6 w-full overflow-x-auto">
+              <svg viewBox="0 0 500 400" className="w-full h-auto max-w-2xl mx-auto" xmlns="http://www.w3.org/2000/svg">
+                {/* Title */}
+                <text x="260" y="16" textAnchor="middle" fill="currentColor" fontSize="10" fontWeight="500" opacity="0.6">
+                  {locale === "fi" ? "Ennustettu vs. havaittu TFR (54 maata)" : "Predicted vs. Observed TFR (54 countries)"}
+                </text>
+                {/* Plot area: x=60-460 (0-7), y=360-40 (0-7) */}
+                {/* Axes */}
+                <line x1="60" y1="40" x2="60" y2="360" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                <line x1="60" y1="360" x2="460" y2="360" stroke="currentColor" strokeWidth="1" opacity="0.3" />
+                {/* Grid + tick labels: 1-6 */}
+                {[1,2,3,4,5,6].map(v => (
+                  <g key={`g-${v}`}>
+                    <line x1={60+v/7*400} y1="40" x2={60+v/7*400} y2="360" stroke="currentColor" strokeWidth="0.5" opacity="0.06" />
+                    <line x1="60" y1={360-v/7*320} x2="460" y2={360-v/7*320} stroke="currentColor" strokeWidth="0.5" opacity="0.06" />
+                    <text x={60+v/7*400} y="375" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.4">{v}</text>
+                    <text x="52" y={364-v/7*320} textAnchor="end" fill="currentColor" fontSize="7.5" opacity="0.4">{v}</text>
+                  </g>
+                ))}
+                <text x="60" y="375" textAnchor="middle" fill="currentColor" fontSize="7.5" opacity="0.4">0</text>
+                {/* Axis titles */}
+                <text x="260" y="393" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+                  {locale === "fi" ? "Ennustettu TFR" : "Predicted TFR"}
+                </text>
+                <text x="16" y="200" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5" transform="rotate(-90,16,200)">
+                  {locale === "fi" ? "Havaittu TFR" : "Observed TFR"}
+                </text>
+                {/* Perfect fit diagonal (dashed) */}
+                <line x1="60" y1="360" x2="460" y2="40" stroke="currentColor" strokeWidth="1" strokeDasharray="6,4" opacity="0.15" />
+                <text x="462" y="38" textAnchor="start" fill="currentColor" fontSize="7" fontStyle="italic" opacity="0.3">y = x</text>
+                {/* R-squared */}
+                <rect x="370" y="340" width="82" height="18" rx="4" fill="currentColor" fillOpacity="0.04" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.12" />
+                <text x="411" y="353" textAnchor="middle" fill="currentColor" fontSize="10" fontWeight="600" opacity="0.65">{"R² = 0.89"}</text>
+                {/* Data points: x=60+pred/7*400, y=360-obs/7*320 */}
+                {/* South Korea: pred=0.82, obs=0.72 -> (107,327) */}
+                <circle cx="107" cy="327" r="4.5" fill="#ef4444" fillOpacity="0.75" stroke="#ef4444" strokeWidth="1" />
+                <text x="116" y="338" fill="currentColor" fontSize="7" opacity="0.65">
+                  {locale === "fi" ? "Etelä-Korea (0.72)" : "S. Korea (0.72)"}
+                </text>
+                {/* Japan: pred=1.15, obs=1.20 -> (126,305) */}
+                <circle cx="126" cy="305" r="4.5" fill="#f59e0b" fillOpacity="0.75" stroke="#f59e0b" strokeWidth="1" />
+                <text x="135" y="302" fill="currentColor" fontSize="7" opacity="0.65">
+                  {locale === "fi" ? "Japani (1.20)" : "Japan (1.20)"}
+                </text>
+                {/* Finland: pred=1.35, obs=1.26 -> (137,302) */}
+                <circle cx="137" cy="302" r="4.5" fill="#3b82f6" fillOpacity="0.75" stroke="#3b82f6" strokeWidth="1" />
+                <text x="147" y="315" fill="currentColor" fontSize="7" opacity="0.65">
+                  {locale === "fi" ? "Suomi (1.26)" : "Finland (1.26)"}
+                </text>
+                {/* Germany: pred=1.25, obs=1.36 -> (131,298) */}
+                <circle cx="131" cy="298" r="4.5" fill="#8b5cf6" fillOpacity="0.75" stroke="#8b5cf6" strokeWidth="1" />
+                <text x="122" y="290" textAnchor="end" fill="currentColor" fontSize="7" opacity="0.65">
+                  {locale === "fi" ? "Saksa (1.36)" : "Germany (1.36)"}
+                </text>
+                {/* USA: pred=1.55, obs=1.62 -> (149,286) */}
+                <circle cx="149" cy="286" r="4.5" fill="#06b6d4" fillOpacity="0.75" stroke="#06b6d4" strokeWidth="1" />
+                <text x="140" y="278" textAnchor="end" fill="currentColor" fontSize="7" opacity="0.65">USA (1.62)</text>
+                {/* Brazil: pred=1.80, obs=1.65 -> (163,285) */}
+                <circle cx="163" cy="285" r="4.5" fill="#10b981" fillOpacity="0.75" stroke="#10b981" strokeWidth="1" />
+                <text x="173" y="296" fill="currentColor" fontSize="7" opacity="0.65">
+                  {locale === "fi" ? "Brasilia (1.65)" : "Brazil (1.65)"}
+                </text>
+                {/* India: pred=2.20, obs=2.00 -> (186,269) */}
+                <circle cx="186" cy="269" r="4.5" fill="#f97316" fillOpacity="0.75" stroke="#f97316" strokeWidth="1" />
+                <text x="196" y="266" fill="currentColor" fontSize="7" opacity="0.65">
+                  {locale === "fi" ? "Intia (2.00)" : "India (2.00)"}
+                </text>
+                {/* Israel: pred=2.60, obs=2.90 -> (209,227) */}
+                <circle cx="209" cy="227" r="4.5" fill="#14b8a6" fillOpacity="0.75" stroke="#14b8a6" strokeWidth="1" />
+                <text x="219" y="224" fill="currentColor" fontSize="7" opacity="0.65">Israel (2.90)</text>
+                {/* Nigeria: pred=5.40, obs=5.10 -> (369,127) */}
+                <circle cx="369" cy="127" r="4.5" fill="#eab308" fillOpacity="0.75" stroke="#eab308" strokeWidth="1" />
+                <text x="379" y="124" fill="currentColor" fontSize="7" opacity="0.65">Nigeria (5.10)</text>
+                {/* Amish: pred=6.20, obs=6.10 -> (414,81) */}
+                <circle cx="414" cy="81" r="4.5" fill="#22c55e" fillOpacity="0.75" stroke="#22c55e" strokeWidth="1" />
+                <text x="406" y="73" textAnchor="end" fill="currentColor" fontSize="7" opacity="0.65">Amish (6.10)</text>
+              </svg>
+            </div>
           </section>
 
           {/* S13 Nested χ */}
@@ -1928,6 +2196,61 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <p className="text-xs text-foreground-muted leading-relaxed">
                 {d.s13Level}
               </p>
+            </div>
+
+            {/* Radar Chart: Population chi Profiles */}
+            <div className="my-6 w-full overflow-x-auto">
+              <svg viewBox="0 0 440 240" className="w-full h-auto max-w-md mx-auto" xmlns="http://www.w3.org/2000/svg">
+                <text x="220" y="14" textAnchor="middle" fill="currentColor" fontSize="10" fontWeight="500" opacity="0.6">
+                  {locale === "fi" ? "Populaation χ-profiilit" : "Population χ profiles"}
+                </text>
+                {/* Axis lines */}
+                <line x1="220" y1="30" x2="220" y2="200" stroke="currentColor" strokeWidth="0.8" opacity="0.15" />
+                <line x1="130" y1="115" x2="310" y2="115" stroke="currentColor" strokeWidth="0.8" opacity="0.15" />
+                {/* Axis guide circles */}
+                <circle cx="220" cy="115" r="28" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.08" />
+                <circle cx="220" cy="115" r="56" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.08" />
+                <circle cx="220" cy="115" r="85" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.08" />
+                {/* Axis labels */}
+                <text x="220" y="24" textAnchor="middle" fill="currentColor" fontSize="9" fontWeight="600" opacity="0.7">P</text>
+                <text x="316" y="118" textAnchor="start" fill="currentColor" fontSize="9" fontWeight="600" opacity="0.7">R</text>
+                <text x="220" y="214" textAnchor="middle" fill="currentColor" fontSize="9" fontWeight="600" opacity="0.7">S</text>
+                <text x="124" y="118" textAnchor="end" fill="currentColor" fontSize="9" fontWeight="600" opacity="0.7">G</text>
+                {/* Axis sublabels */}
+                <text x="236" y="24" textAnchor="start" fill="currentColor" fontSize="7" opacity="0.4">
+                  {locale === "fi" ? "(altistus)" : "(exposure)"}
+                </text>
+                <text x="316" y="128" textAnchor="start" fill="currentColor" fontSize="7" opacity="0.4">
+                  {locale === "fi" ? "(palautuminen)" : "(recovery)"}
+                </text>
+                <text x="236" y="212" textAnchor="start" fill="currentColor" fontSize="7" opacity="0.4">
+                  {locale === "fi" ? "(herkkyys)" : "(susceptibility)"}
+                </text>
+                <text x="124" y="128" textAnchor="end" fill="currentColor" fontSize="7" opacity="0.4">
+                  {locale === "fi" ? "(genotyyppi)" : "(genotype)"}
+                </text>
+                {/* South Korea polygon (red, back layer) */}
+                <polygon points="220,39 233,115 220,183 178,115" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeWidth="1.5" strokeOpacity="0.6" />
+                {/* Finland polygon (blue, middle layer) */}
+                <polygon points="220,64 254,115 220,158 169,115" fill="#3b82f6" fillOpacity="0.12" stroke="#3b82f6" strokeWidth="1.5" strokeOpacity="0.6" />
+                {/* Amish polygon (green, front layer) */}
+                <polygon points="220,102 297,115 220,132 195,115" fill="#10b981" fillOpacity="0.15" stroke="#10b981" strokeWidth="1.5" strokeOpacity="0.7" />
+                {/* Center dot */}
+                <circle cx="220" cy="115" r="2" fill="currentColor" opacity="0.3" />
+                {/* Legend */}
+                <line x1="50" y1="230" x2="65" y2="230" stroke="#10b981" strokeWidth="2" />
+                <text x="69" y="233" fill="currentColor" fontSize="8" opacity="0.6">
+                  {locale === "fi" ? "Amissit" : "Amish"}
+                </text>
+                <line x1="145" y1="230" x2="160" y2="230" stroke="#3b82f6" strokeWidth="2" />
+                <text x="164" y="233" fill="currentColor" fontSize="8" opacity="0.6">
+                  {locale === "fi" ? "Suomi" : "Finland"}
+                </text>
+                <line x1="245" y1="230" x2="260" y2="230" stroke="#ef4444" strokeWidth="2" />
+                <text x="264" y="233" fill="currentColor" fontSize="8" opacity="0.6">
+                  {locale === "fi" ? "Etelä-Korea" : "South Korea"}
+                </text>
+              </svg>
             </div>
           </section>
 
@@ -2056,6 +2379,69 @@ export function MathematicsSections({ locale }: { locale: string }) {
                   </tr>
                 </tbody>
               </table>
+            </div>
+
+            {/* Recovery Scenarios Bar Chart */}
+            <div className="my-6 w-full overflow-x-auto">
+              <svg viewBox="0 0 600 220" className="w-full h-auto max-w-2xl mx-auto" xmlns="http://www.w3.org/2000/svg">
+                <text x="300" y="14" textAnchor="middle" fill="currentColor" fontSize="10" fontWeight="500" opacity="0.6">
+                  {locale === "fi" ? "Historiallinen altistus ja palautuminen" : "Historical exposure and recovery"}
+                </text>
+                {/* Legend */}
+                <rect x="160" y="22" width="10" height="10" rx="2" fill="#3b82f6" fillOpacity="0.7" />
+                <text x="174" y="31" fill="currentColor" fontSize="8" opacity="0.6">
+                  {locale === "fi" ? "Altistus (h/vrk)" : "Exposure (h/day)"}
+                </text>
+                <rect x="310" y="22" width="10" height="10" rx="2" fill="#10b981" fillOpacity="0.7" />
+                <text x="324" y="31" fill="currentColor" fontSize="8" opacity="0.6">
+                  {locale === "fi" ? "Palautuminen (%)" : "Recovery (%)"}
+                </text>
+                {/* Y axis */}
+                <line x1="65" y1="40" x2="65" y2="175" stroke="currentColor" strokeWidth="1" opacity="0.2" />
+                {/* Grid lines */}
+                <line x1="65" y1="40" x2="545" y2="40" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
+                <line x1="65" y1="107" x2="545" y2="107" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
+                {/* X axis */}
+                <line x1="65" y1="175" x2="545" y2="175" stroke="currentColor" strokeWidth="1" opacity="0.2" />
+                {/* Group 1: Pre-1900 */}
+                <rect x="72" y="169" width="28" height="6" rx="2" fill="#3b82f6" fillOpacity="0.7" />
+                <rect x="104" y="45" width="28" height="130" rx="2" fill="#10b981" fillOpacity="0.7" />
+                <text x="72" y="166" fill="#3b82f6" fontSize="7" opacity="0.8">1h</text>
+                <text x="104" y="42" fill="#10b981" fontSize="7" opacity="0.8">93%</text>
+                <text x="100" y="192" textAnchor="middle" fill="currentColor" fontSize="8" opacity="0.5">
+                  {locale === "fi" ? "Ennen 1900" : "Pre-1900"}
+                </text>
+                {/* Group 2: 1950-1990 */}
+                <rect x="168" y="140" width="28" height="35" rx="2" fill="#3b82f6" fillOpacity="0.7" />
+                <rect x="200" y="53" width="28" height="122" rx="2" fill="#10b981" fillOpacity="0.7" />
+                <text x="168" y="137" fill="#3b82f6" fontSize="7" opacity="0.8">6h</text>
+                <text x="200" y="50" fill="#10b981" fontSize="7" opacity="0.8">87%</text>
+                <text x="198" y="192" textAnchor="middle" fill="currentColor" fontSize="8" opacity="0.5">1950-90</text>
+                {/* Group 3: 1990-2010 */}
+                <rect x="264" y="82" width="28" height="93" rx="2" fill="#3b82f6" fillOpacity="0.7" />
+                <rect x="296" y="91" width="28" height="84" rx="2" fill="#10b981" fillOpacity="0.7" />
+                <text x="264" y="79" fill="#3b82f6" fontSize="7" opacity="0.8">16h</text>
+                <text x="296" y="88" fill="#10b981" fontSize="7" opacity="0.8">60%</text>
+                <text x="294" y="192" textAnchor="middle" fill="currentColor" fontSize="8" opacity="0.5">1990-2010</text>
+                {/* Group 4: 2010-2020 */}
+                <rect x="360" y="47" width="28" height="128" rx="2" fill="#3b82f6" fillOpacity="0.7" />
+                <rect x="392" y="146" width="28" height="29" rx="2" fill="#10b981" fillOpacity="0.7" />
+                <text x="360" y="44" fill="#3b82f6" fontSize="7" opacity="0.8">22h</text>
+                <text x="392" y="143" fill="#10b981" fontSize="7" opacity="0.8">21%</text>
+                <text x="390" y="192" textAnchor="middle" fill="currentColor" fontSize="8" opacity="0.5">2010-20</text>
+                {/* Group 5: Amish */}
+                <rect x="456" y="169" width="28" height="6" rx="2" fill="#3b82f6" fillOpacity="0.7" />
+                <rect x="488" y="45" width="28" height="130" rx="2" fill="#10b981" fillOpacity="0.7" />
+                <text x="456" y="166" fill="#3b82f6" fontSize="7" opacity="0.8">1h</text>
+                <text x="488" y="42" fill="#10b981" fontSize="7" opacity="0.8">93%</text>
+                <text x="486" y="192" textAnchor="middle" fill="currentColor" fontSize="8" opacity="0.5">
+                  {locale === "fi" ? "Amissit" : "Amish"}
+                </text>
+                {/* Y-axis labels */}
+                <text x="60" y="178" textAnchor="end" fill="currentColor" fontSize="7" opacity="0.4">0</text>
+                <text x="60" y="110" textAnchor="end" fill="currentColor" fontSize="7" opacity="0.4">50%</text>
+                <text x="60" y="44" textAnchor="end" fill="currentColor" fontSize="7" opacity="0.4">100%</text>
+              </svg>
             </div>
 
             <div className="text-center my-4">

@@ -1044,6 +1044,70 @@ const COPY = {
     extFalsification: "Falsification criterion",
     extLocked: "Locked: 2026-08-26",
     extStatus: "LOCKED — awaiting test",
+    ultTitle: "Final integration predictions (VK51–56)",
+    ultLead: "Predictions from the final convergence integration: CatSper temperature gating, psilocybin Ca²⁺ reset, caffeine-Parkinson's dose-response, lithium water neuroprotection, amygdala-anxiety feedback loop, and Amish control group validation.",
+    ultPredictions: [
+      {
+        id: "E-NEW-32",
+        title: "CatSper premature activation threshold correlates with EMF exposure",
+        description: "CatSper is temperature-gated (threshold 33.5°C, Q₁₀=5.1). EMF→Ca²⁺ could lower the thermal activation threshold. Test: measure CatSper activation temperature in sperm from men with different occupational EMF exposure levels. Prediction: higher EMF exposure correlates with lower CatSper activation threshold.",
+        timeline: "Testable within 6 months (in vitro CatSper electrophysiology)",
+        falsification: "No correlation between EMF history and CatSper activation temperature",
+      },
+      {
+        id: "E-NEW-33",
+        title: "Psilocybin reverses EMF-induced dendritic atrophy in hippocampus",
+        description: "Psilocybin promotes dendritic spine growth via 5-HT2A→Ca²⁺→BDNF→mTOR (VK52). EMF→cortisol→hippocampal dendritic atrophy (VK14). Test: chronic EMF exposure → dendritic loss, then single psilocybin dose → measure dendritic recovery. Prediction: psilocybin reverses EMF-induced hippocampal dendritic loss.",
+        timeline: "Testable within 12 months (rodent model: EMF exposure + psilocybin rescue)",
+        falsification: "Psilocybin does not restore dendritic density after EMF-induced loss",
+      },
+      {
+        id: "E-NEW-34",
+        title: "Caffeine consumption inversely correlates with EMF biomarker response",
+        description: "Caffeine blocks A2A receptors → reduces neuroinflammation → Ca²⁺ modulation. Regular caffeine consumers should show attenuated EMF biomarker responses. Test: controlled EMF exposure, stratify by caffeine consumption. Prediction: habitual caffeine consumers show smaller CaMKII Thr286 and sleep EEG changes from EMF.",
+        timeline: "Testable within 6 months (add caffeine stratification to existing protocols)",
+        falsification: "No difference in EMF biomarkers between caffeine consumers and non-consumers",
+      },
+      {
+        id: "E-NEW-35",
+        title: "Drinking water lithium inversely correlates with EMF-associated health outcomes",
+        description: "Lithium modulates GSK-3β and CaMKII — key nodes in the BERM Ca²⁺ cascade. Areas with higher natural lithium in drinking water should show attenuated EMF health effects. Test: correlate drinking water lithium with EMF-associated disease incidence (dementia, suicide, depression) at county level. Prediction: interaction term (lithium × EMF) is significant and protective.",
+        timeline: "Testable immediately (existing county-level data for lithium, EMF infrastructure, disease rates)",
+        falsification: "No interaction between water lithium levels and EMF-associated health outcomes",
+      },
+      {
+        id: "E-NEW-36",
+        title: "Amygdala volume increases with chronic EMF exposure",
+        description: "EMF→cortisol↑ (VK11) → amygdala BLA hypertrophy (VK55). Chronically elevated cortisol from EMF should produce measurable amygdala enlargement. Test: MRI volumetric analysis in high-EMF occupational workers vs matched controls. Prediction: amygdala volume is significantly larger in high-EMF group.",
+        timeline: "Testable within 12 months (occupational cohort with MRI)",
+        falsification: "No amygdala volume difference between high-EMF and low-EMF workers",
+      },
+      {
+        id: "E-NEW-37",
+        title: "Amish chronic disease gradient follows EMF exposure gradient",
+        description: "Old Order Amish (no electricity) → Conservative Amish (some electricity) → Mennonite (modern electricity) → general population. Test: compare chronic disease rates across this cultural gradient. Prediction: disease rates increase monotonically with EMF exposure level, even after controlling for diet, exercise, and lifestyle factors.",
+        timeline: "Testable within 12 months (cross-sectional comparison of existing health registries)",
+        falsification: "Disease gradient does not follow EMF exposure after controlling for lifestyle confounders",
+      },
+      {
+        id: "E-NEW-38",
+        title: "Amish dairy cows have better fertility than modern dairy cows",
+        description: "Amish dairy farms have minimal EMF. If EMF affects bovine reproduction through the same Ca²⁺ mechanisms, Amish-farm cows should show better fertility. Test: compare conception rates, services per conception, hormone profiles in Amish vs modern dairy. Prediction: Amish-farm cows have significantly better fertility despite same breeds.",
+        timeline: "Testable within 6 months (existing agricultural data + hormone sampling)",
+        falsification: "No fertility difference between Amish and modern dairy cows of same breed",
+      },
+      {
+        id: "E-NEW-39",
+        title: "Modern water filtration reduces lithium → increased neuropsychiatric disease",
+        description: "Modern water treatment removes trace lithium. Areas that switched to advanced filtration should show increased dementia/suicide rates after the switch. Test: before-after analysis of water treatment upgrades and neuropsychiatric outcomes. Prediction: advanced filtration introduction correlates with subsequent increase in dementia and suicide rates.",
+        timeline: "Testable immediately (municipal water treatment records + health data)",
+        falsification: "No change in neuropsychiatric outcomes after water treatment upgrades that remove lithium",
+      },
+    ],
+    ultTimeline: "Timeline",
+    ultFalsification: "Falsification criterion",
+    ultLocked: "Locked: 2026-08-26",
+    ultStatus: "LOCKED — awaiting test",
     ttypeTitle: "T-Type Channel Predictions",
     ttypeLead: "Testable predictions from the T-type calcium channel bifurcation mechanism.",
     ttypePredictions: [
@@ -2652,6 +2716,70 @@ const COPY = {
     extFalsification: "Falsifikaatiokriteeri",
     extLocked: "Lukittu: 2026-08-26",
     extStatus: "LUKITTU — odottaa testiä",
+    ultTitle: "Lopullisen integraation ennusteet (VK51–56)",
+    ultLead: "Ennusteet lopullisesta konvergenssi-integraatiosta: CatSperin lämpötilakynnys, psilosybiinin Ca²⁺-resetti, kofeiini-Parkinson-annosriippuvuus, litiumveden neuroprotektio, amygdalan ahdistussilmukka ja Amish-kontrolliryhmän validaatio.",
+    ultPredictions: [
+      {
+        id: "E-NEW-32",
+        title: "CatSperin ennenaikaisen aktivaation kynnys korreloi EMF-altistuksen kanssa",
+        description: "CatSper on lämpötilasäädelty (kynnys 33,5°C, Q₁₀=5,1). EMF→Ca²⁺ voisi laskea termistä aktivaatiokynnystä. Testi: mittaa CatSperin aktivaatiolämpötila siittiöissä miehiltä, joilla on eri ammatillisen EMF-altistuksen tasot. Ennuste: korkeampi EMF-altistus korreloi matalamman CatSper-aktivaatiokynnyksen kanssa.",
+        timeline: "Testattavissa 6 kuukaudessa (in vitro CatSper-elektrofysiologia)",
+        falsification: "Ei korrelaatiota EMF-historian ja CatSper-aktivaatiolämpötilan välillä",
+      },
+      {
+        id: "E-NEW-33",
+        title: "Psilosybiini palauttaa EMF:n aiheuttaman dendriittiatrofian hippokampuksessa",
+        description: "Psilosybiini edistää dendriittisten okien kasvua 5-HT2A→Ca²⁺→BDNF→mTOR -reitin kautta (VK52). EMF→kortisoli→hippokampuksen dendriittiatrofia (VK14). Testi: krooninen EMF-altistus → dendriittikato, sitten yksittäinen psilosybiiniannos → mittaa dendriittien palautuminen. Ennuste: psilosybiini palauttaa EMF:n aiheuttaman hippokampuksen dendriittikadon.",
+        timeline: "Testattavissa 12 kuukaudessa (jyrsijämalli: EMF-altistus + psilosybiinipelastus)",
+        falsification: "Psilosybiini ei palauta dendriittitiheyttä EMF:n aiheuttaman kadon jälkeen",
+      },
+      {
+        id: "E-NEW-34",
+        title: "Kofeiinin kulutus korreloi käänteisesti EMF-biomarkkerivasteiden kanssa",
+        description: "Kofeiini salpaa A2A-reseptoreita → vähentää neuroinflammaatiota → Ca²⁺-modulaatio. Säännöllisten kofeiininkäyttäjien pitäisi osoittaa vaimentuneita EMF-biomarkkerivastetta. Testi: kontrolloitu EMF-altistus, kerrostettuna kofeiinin kulutuksen mukaan. Ennuste: totuneet kofeiininkäyttäjät osoittavat pienempiä CaMKII Thr286- ja uni-EEG-muutoksia EMF:stä.",
+        timeline: "Testattavissa 6 kuukaudessa (lisää kofeiinikerrostus olemassa oleviin protokolliin)",
+        falsification: "Ei eroa EMF-biomarkkereissa kofeiininkäyttäjien ja ei-käyttäjien välillä",
+      },
+      {
+        id: "E-NEW-35",
+        title: "Juomaveden litium korreloi käänteisesti EMF:ään liittyvien terveystulosten kanssa",
+        description: "Litium moduloi GSK-3β:ta ja CaMKII:ta — BERM:n Ca²⁺-kaskadin avainsolmuja. Alueiden, joilla on korkeampi luonnollinen litium juomavedessä, pitäisi osoittaa vaimentuneita EMF-terveysvaikutuksia. Testi: korreloi juomaveden litium EMF:ään liittyvään sairastavuuteen (dementia, itsemurha, masennus) piirikuntatason datalla. Ennuste: interaktiotermi (litium × EMF) on merkitsevä ja suojaava.",
+        timeline: "Testattavissa heti (olemassa oleva piirikuntatason data litiumista, EMF-infrastruktuurista, sairastavuudesta)",
+        falsification: "Ei interaktiota veden litiumtasojen ja EMF:ään liittyvien terveystulosten välillä",
+      },
+      {
+        id: "E-NEW-36",
+        title: "Amygdalan tilavuus kasvaa kroonisella EMF-altistuksella",
+        description: "EMF→kortisoli↑ (VK11) → amygdalan BLA-hypertrofia (VK55). Kroonisesti kohonneen kortisolin EMF:stä pitäisi tuottaa mitattava amygdalan suureneminen. Testi: MRI-tilavuusanalyysi korkean EMF:n ammattilaisten ja verrokkien välillä. Ennuste: amygdalan tilavuus on merkitsevästi suurempi korkean EMF:n ryhmässä.",
+        timeline: "Testattavissa 12 kuukaudessa (ammattikohortti MRI:llä)",
+        falsification: "Ei amygdalan tilavuuseroa korkean ja matalan EMF:n työntekijöiden välillä",
+      },
+      {
+        id: "E-NEW-37",
+        title: "Amish-yhteisön kroonisten sairauksien gradientti seuraa EMF-altistusgradienttia",
+        description: "Old Order Amish (ei sähköä) → konservatiiviset amisit (jonkin verran sähköä) → mennoniitta (moderni sähkö) → yleinen väestö. Testi: vertaa kroonisten sairauksien esiintyvyyttä tämän kulttuurisen gradientin yli. Ennuste: sairastavuus kasvaa monotonisesti EMF-altistustason mukaan, myös ruokavalion, liikunnan ja elämäntapatekijöiden vakioinnin jälkeen.",
+        timeline: "Testattavissa 12 kuukaudessa (poikkileikkausvertailu olemassa olevista terveysrekistereistä)",
+        falsification: "Sairausgradientti ei seuraa EMF-altistusta elämäntapasekoittajien vakioinnin jälkeen",
+      },
+      {
+        id: "E-NEW-38",
+        title: "Amish-lypsykarjalla on parempi hedelmällisyys kuin modernilla lypsykarjalla",
+        description: "Amish-maitotiloilla on minimaalinen EMF. Jos EMF vaikuttaa naudan lisääntymiseen samojen Ca²⁺-mekanismien kautta, Amish-tilojen lehmien pitäisi osoittaa parempaa hedelmällisyyttä. Testi: vertaa tiinehtymisprosentteja, siemennyksiä per tiinehtyminen ja hormoniprofiileja Amish- vs. modernissa karjataloudessa. Ennuste: Amish-tilojen lehmillä merkitsevästi parempi hedelmällisyys samasta rodusta huolimatta.",
+        timeline: "Testattavissa 6 kuukaudessa (olemassa oleva maatalousdata + hormoninäytteenotto)",
+        falsification: "Ei hedelmällisyyseroa Amish- ja modernin lypsykarjan välillä samasta rodusta",
+      },
+      {
+        id: "E-NEW-39",
+        title: "Moderni vedenpuhdistus poistaa litiumin → lisääntyneet neuropsykiatriset sairaudet",
+        description: "Moderni vedenkäsittely poistaa hivenlitiumin. Alueiden, jotka siirtyivät kehittyneeseen suodatukseen, pitäisi osoittaa kohonneita dementia-/itsemurhatasoja vaihdon jälkeen. Testi: ennen-jälkeen-analyysi vedenkäsittelyn päivityksistä ja neuropsykiatrisista tuloksista. Ennuste: kehittyneen suodatuksen käyttöönotto korreloi myöhemmän dementian ja itsemurhien lisääntymisen kanssa.",
+        timeline: "Testattavissa heti (kuntien vedenkäsittelytiedot + terveysdata)",
+        falsification: "Ei muutosta neuropsykiatrisissa tuloksissa litiumin poistavien vedenkäsittelypäivitysten jälkeen",
+      },
+    ],
+    ultTimeline: "Aikajana",
+    ultFalsification: "Falsifikaatiokriteeri",
+    ultLocked: "Lukittu: 2026-08-26",
+    ultStatus: "LUKITTU — odottaa testiä",
     ttypeTitle: "T-tyypin kanavan ennusteet",
     ttypeLead: "T-tyypin kalsiumkanavan bifurkaatiomekanismista johdetut testattavat ennusteet.",
     ttypePredictions: [
@@ -3254,6 +3382,80 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Target} title={d.title} subtitle={d.subtitle} />
 
+      {/* Prediction Dashboard Summary */}
+      <section className="mb-12 max-w-4xl">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+          {/* Total predictions */}
+          <div className="rounded-xl border border-card-border bg-card-bg p-5 text-center">
+            <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
+            </svg>
+            <p className="text-3xl font-bold text-accent">260</p>
+            <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
+              {activeLocale === "fi" ? "Ennustetta" : "Predictions"}
+            </p>
+          </div>
+          {/* Categories */}
+          <div className="rounded-xl border border-card-border bg-card-bg p-5 text-center">
+            <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
+            </svg>
+            <p className="text-3xl font-bold text-accent">33</p>
+            <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
+              {activeLocale === "fi" ? "Kategoriaa" : "Categories"}
+            </p>
+          </div>
+          {/* Verified */}
+          <div className="rounded-xl border border-card-border bg-card-bg p-5 text-center">
+            <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6" style={{ color: "#22c55e" }} fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+            <p className="text-3xl font-bold" style={{ color: "#22c55e" }}>4</p>
+            <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
+              {activeLocale === "fi" ? "Vahvistettua" : "Verified"}
+            </p>
+          </div>
+          {/* Awaiting test */}
+          <div className="rounded-xl border border-card-border bg-card-bg p-5 text-center">
+            <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6" style={{ color: "#f59e0b" }} fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+            </svg>
+            <p className="text-3xl font-bold" style={{ color: "#f59e0b" }}>256</p>
+            <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
+              {activeLocale === "fi" ? "Odottaa testiä" : "Awaiting test"}
+            </p>
+          </div>
+        </div>
+        {/* Status bar */}
+        <div className="rounded-xl border border-card-border bg-card-bg p-4">
+          <p className="text-xs text-foreground-muted uppercase tracking-wider mb-2">
+            {activeLocale === "fi" ? "Ennusteiden tila" : "Prediction status"}
+          </p>
+          <svg viewBox="0 0 600 28" className="w-full" role="img" aria-label={activeLocale === "fi" ? "Tilapalkki: 4 vahvistettua, 254 odottaa, 2 CI ylitetty" : "Status bar: 4 verified, 254 pending, 2 CI exceeded"}>
+            {/* Green: verified — 4/260 = 1.54% ≈ 9.2px of 600 */}
+            <rect x="0" y="0" width="9.2" height="20" rx="4" fill="#22c55e" />
+            {/* Amber: pending — 254/260 = 97.7% ≈ 586.2px */}
+            <rect x="11.2" y="0" width="580.2" height="20" rx="4" fill="#f59e0b" opacity="0.7" />
+            {/* Red: CI exceeded — 2/260 = 0.77% ≈ 4.6px */}
+            <rect x="593.4" y="0" width="6.6" height="20" rx="4" fill="#ef4444" />
+          </svg>
+          <div className="flex flex-wrap gap-4 mt-2 text-xs text-foreground-muted">
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#22c55e" }} />
+              {activeLocale === "fi" ? "Vahvistettu" : "Verified"} (4)
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#f59e0b", opacity: 0.7 }} />
+              {activeLocale === "fi" ? "Odottaa testiä" : "Awaiting test"} (254)
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#ef4444" }} />
+              {activeLocale === "fi" ? "CI ylitetty" : "CI exceeded"} (2)
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* Architecture note */}
       <section className="mb-12 max-w-4xl rounded-xl border border-card-border bg-card-bg p-6">
         <h2 className="text-xs uppercase tracking-[0.16em] text-accent font-semibold mb-2">{d.architectureNote}</h2>
@@ -3388,6 +3590,41 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <section className="mb-14 border-t editorial-rule pt-6">
           <h2 className="editorial-section-heading mb-3">{d.sentinelTitle}</h2>
           <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.sentinelLead}</p>
+
+          {/* Sentinel species sensitivity hierarchy */}
+          <div className="mb-6 max-w-sm">
+            <svg viewBox="0 0 360 295" className="w-full" role="img" aria-label={activeLocale === "fi" ? "Lajien herkkyys kehon massan mukaan" : "Species sensitivity by body mass"}>
+              {/* Sensitivity arrow */}
+              <line x1="28" y1="265" x2="28" y2="22" stroke="currentColor" strokeWidth="1.5" opacity="0.2" />
+              <polygon points="23 26, 28 14, 33 26" fill="currentColor" opacity="0.2" />
+              <text x="28" y="284" textAnchor="middle" fontSize="9" fill="currentColor" opacity="0.4">{activeLocale === "fi" ? "Herkkyys" : "Sensitivity"}</text>
+
+              {/* Insects - most sensitive */}
+              <circle cx="72" cy="28" r="5" fill="#ef4444" opacity="0.85" />
+              <text x="100" y="28" dominantBaseline="central" fontSize="12" fill="currentColor">{activeLocale === "fi" ? "Hyönteiset" : "Insects"}</text>
+
+              {/* Small birds */}
+              <circle cx="72" cy="72" r="8" fill="#f97316" opacity="0.85" />
+              <text x="100" y="72" dominantBaseline="central" fontSize="12" fill="currentColor">{activeLocale === "fi" ? "Pienet linnut" : "Small birds"}</text>
+
+              {/* Amphibians */}
+              <circle cx="72" cy="122" r="11" fill="#eab308" opacity="0.85" />
+              <text x="100" y="122" dominantBaseline="central" fontSize="12" fill="currentColor">{activeLocale === "fi" ? "Sammakkoeläimet" : "Amphibians"}</text>
+
+              {/* Small mammals */}
+              <circle cx="72" cy="175" r="14" fill="#22c55e" opacity="0.85" />
+              <text x="100" y="175" dominantBaseline="central" fontSize="12" fill="currentColor">{activeLocale === "fi" ? "Pienet nisäkkäät" : "Small mammals"}</text>
+
+              {/* Large mammals */}
+              <circle cx="72" cy="225" r="17" fill="#3b82f6" opacity="0.85" />
+              <text x="100" y="225" dominantBaseline="central" fontSize="12" fill="currentColor">{activeLocale === "fi" ? "Suuret nisäkkäät" : "Large mammals"}</text>
+
+              {/* Humans - least sensitive */}
+              <circle cx="72" cy="265" r="20" fill="#6366f1" opacity="0.85" />
+              <text x="100" y="265" dominantBaseline="central" fontSize="12" fill="currentColor">{activeLocale === "fi" ? "Ihmiset" : "Humans"}</text>
+            </svg>
+          </div>
+
           <div className="grid gap-4 max-w-4xl">
             {SENTINEL_IDS.map((p) => (
               <article key={p.id} className="rounded-xl border border-card-border bg-card-bg p-5">
@@ -3421,6 +3658,51 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
       <section className="mb-14 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">{d.modulomeTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.modulomeLead}</p>
+
+        {/* Modulome prediction matrix */}
+        <div className="mb-6 overflow-x-auto">
+          <svg viewBox="0 0 420 165" className="w-full max-w-lg" role="img" aria-label={activeLocale === "fi" ? "Ennustematriisi" : "Prediction matrix"}>
+            {/* Column headers */}
+            <text x="170" y="20" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.55">In vitro</text>
+            <text x="230" y="20" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.55">{activeLocale === "fi" ? "Eläin" : "Animal"}</text>
+            <text x="290" y="20" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.55">{activeLocale === "fi" ? "Ihminen" : "Human"}</text>
+            <text x="360" y="20" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.55">{activeLocale === "fi" ? "Populaatio" : "Population"}</text>
+            {/* Separator */}
+            <line x1="130" y1="30" x2="400" y2="30" stroke="currentColor" opacity="0.08" />
+            {/* Row labels */}
+            <text x="8" y="52" dominantBaseline="central" fontSize="11" fill="currentColor">{activeLocale === "fi" ? "Lisääntyminen" : "Reproductive"}</text>
+            <text x="8" y="76" dominantBaseline="central" fontSize="11" fill="currentColor">{activeLocale === "fi" ? "Hermosto" : "Neural"}</text>
+            <text x="8" y="100" dominantBaseline="central" fontSize="11" fill="currentColor">{activeLocale === "fi" ? "Aineenvaihdunta" : "Metabolic"}</text>
+            <text x="8" y="124" dominantBaseline="central" fontSize="11" fill="currentColor">{activeLocale === "fi" ? "Immuuni" : "Immune"}</text>
+            <text x="8" y="148" dominantBaseline="central" fontSize="11" fill="currentColor">{activeLocale === "fi" ? "Vuorokausirytmi" : "Circadian"}</text>
+            {/* Dots - Row 1: Reproductive */}
+            <circle cx="170" cy="52" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="230" cy="52" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="290" cy="52" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="360" cy="52" r="5" fill="currentColor" opacity="0.55" />
+            {/* Row 2: Neural */}
+            <circle cx="170" cy="76" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="230" cy="76" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="290" cy="76" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="360" cy="76" r="5" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.2" />
+            {/* Row 3: Metabolic */}
+            <circle cx="170" cy="100" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="230" cy="100" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="290" cy="100" r="5" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.2" />
+            <circle cx="360" cy="100" r="5" fill="currentColor" opacity="0.55" />
+            {/* Row 4: Immune */}
+            <circle cx="170" cy="124" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="230" cy="124" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="290" cy="124" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="360" cy="124" r="5" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.2" />
+            {/* Row 5: Circadian */}
+            <circle cx="170" cy="148" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="230" cy="148" r="5" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.2" />
+            <circle cx="290" cy="148" r="5" fill="currentColor" opacity="0.55" />
+            <circle cx="360" cy="148" r="5" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.2" />
+          </svg>
+        </div>
+
         <div className="grid gap-4 max-w-4xl">
           {d.modulomePredictions.map((mp) => (
             <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
@@ -3450,6 +3732,36 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
       <section className="mb-14 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">{d.cascadeTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.cascadeLead}</p>
+
+        {/* Cascade confirmation path */}
+        <div className="mb-6 overflow-x-auto">
+          <svg viewBox="0 0 520 92" className="w-full max-w-xl" role="img" aria-label={activeLocale === "fi" ? "Kaskadipolku" : "Cascade path"}>
+            <defs>
+              <marker id="cascade-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="currentColor" opacity="0.35" />
+              </marker>
+            </defs>
+            {/* NUT box */}
+            <rect x="15" y="8" width="130" height="42" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.25" />
+            <text x="80" y="24" textAnchor="middle" fontSize="14" fontWeight="600" fill="currentColor">NUT</text>
+            <text x="80" y="40" textAnchor="middle" fontSize="9" fill="currentColor" opacity="0.45">{activeLocale === "fi" ? "Ravitsemus" : "Nutritional"}</text>
+            {/* Arrow 1 */}
+            <line x1="150" y1="29" x2="192" y2="29" stroke="currentColor" strokeWidth="1.5" opacity="0.3" markerEnd="url(#cascade-arr)" />
+            {/* METAB box */}
+            <rect x="195" y="8" width="130" height="42" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.25" />
+            <text x="260" y="24" textAnchor="middle" fontSize="14" fontWeight="600" fill="currentColor">METAB</text>
+            <text x="260" y="40" textAnchor="middle" fontSize="9" fill="currentColor" opacity="0.45">{activeLocale === "fi" ? "Metabolia" : "Metabolic"}</text>
+            {/* Arrow 2 */}
+            <line x1="330" y1="29" x2="372" y2="29" stroke="currentColor" strokeWidth="1.5" opacity="0.3" markerEnd="url(#cascade-arr)" />
+            {/* PHARM box */}
+            <rect x="375" y="8" width="130" height="42" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.25" />
+            <text x="440" y="24" textAnchor="middle" fontSize="14" fontWeight="600" fill="currentColor">PHARM</text>
+            <text x="440" y="40" textAnchor="middle" fontSize="9" fill="currentColor" opacity="0.45">{activeLocale === "fi" ? "Farmakologia" : "Pharmacological"}</text>
+            {/* Subtitle */}
+            <text x="260" y="76" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.4">{activeLocale === "fi" ? "Yhden ennusteen vahvistaminen tukee seuraavaa" : "Confirming one prediction feeds evidence to the next"}</text>
+          </svg>
+        </div>
+
         <div className="grid gap-4 max-w-4xl">
           {d.cascadePredictions.map((cp) => (
             <article key={cp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
@@ -3478,6 +3790,56 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             &rarr; {d.cascadeLink}
           </Link>
         </p>
+      </section>
+
+      {/* Cascade Path Diagram: NUT → METAB → PHARM evidence flow */}
+      <section className="mb-8 max-w-4xl">
+        <div className="rounded-xl border border-card-border bg-card-bg p-5 overflow-x-auto">
+          <h3 className="text-xs uppercase tracking-[0.16em] text-accent font-semibold mb-3">
+            {activeLocale === "fi" ? "Näyttöketjun polku" : "Evidence cascade path"}
+          </h3>
+          <p className="text-xs text-foreground-muted mb-4">
+            {activeLocale === "fi"
+              ? "Ravitsemuksellinen, metabolinen ja farmakologinen tutkimuslinja rakentuvat peräkkäin. Yhden kategorian vahvistaminen tukee seuraavan näyttöpohjaa."
+              : "Nutritional, metabolic, and pharmacological prediction lines build sequentially. Confirming one category feeds evidence to the next."}
+          </p>
+          <svg viewBox="0 0 600 90" className="w-full" role="img" aria-label={activeLocale === "fi" ? "Näyttöketjun kaskadi: Ravitsemus, Metabolia, Farmakologia" : "Evidence cascade: Nutritional, Metabolic, Pharmacological"}>
+            {/* Box 1: Nutritional */}
+            <rect x="10" y="20" width="160" height="50" rx="8" fill="currentColor" opacity="0.08" stroke="currentColor" strokeOpacity="0.25" strokeWidth="1.5" />
+            <text x="90" y="40" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
+              {activeLocale === "fi" ? "Ravitsemuksellinen" : "Nutritional"}
+            </text>
+            <text x="90" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+              NUT-1 .. NUT-3 (CRY/FAD)
+            </text>
+            {/* Arrow 1 */}
+            <line x1="170" y1="45" x2="210" y2="45" stroke="currentColor" strokeOpacity="0.4" strokeWidth="1.5" />
+            <polygon points="210,40 220,45 210,50" fill="currentColor" opacity="0.4" />
+            {/* Box 2: Metabolic */}
+            <rect x="220" y="20" width="160" height="50" rx="8" fill="currentColor" opacity="0.08" stroke="currentColor" strokeOpacity="0.25" strokeWidth="1.5" />
+            <text x="300" y="40" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
+              {activeLocale === "fi" ? "Metabolinen" : "Metabolic"}
+            </text>
+            <text x="300" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+              METAB-1 .. METAB-4 (CaMKII)
+            </text>
+            {/* Arrow 2 */}
+            <line x1="380" y1="45" x2="420" y2="45" stroke="currentColor" strokeOpacity="0.4" strokeWidth="1.5" />
+            <polygon points="420,40 430,45 420,50" fill="currentColor" opacity="0.4" />
+            {/* Box 3: Pharmacological */}
+            <rect x="430" y="20" width="160" height="50" rx="8" fill="currentColor" opacity="0.08" stroke="currentColor" strokeOpacity="0.25" strokeWidth="1.5" />
+            <text x="510" y="40" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
+              {activeLocale === "fi" ? "Farmakologinen" : "Pharmacological"}
+            </text>
+            <text x="510" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+              PHARM-1 .. PHARM-5 (VGCC)
+            </text>
+            {/* Bottom annotation */}
+            <text x="300" y="85" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.35" fontStyle="italic">
+              {activeLocale === "fi" ? "Vahvistaminen vasemmalla tukee oikealla olevia ennusteita" : "Confirmation on the left strengthens predictions on the right"}
+            </text>
+          </svg>
+        </div>
       </section>
 
       {/* Nutritional CRY modulation predictions NUT-1 to NUT-3 */}
@@ -3901,6 +4263,35 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
+      {/* Final integration predictions E-NEW-32 through E-NEW-39 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.ultTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.ultLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.ultPredictions.map((up) => (
+            <article key={up.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{up.id}</span>
+                    <h3 className="font-semibold">{up.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.ultStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{up.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.ultTimeline}:</span> {up.timeline}</p>
+                <p><span className="font-semibold">{d.ultFalsification}:</span> {up.falsification}</p>
+                <p className="font-mono-num">{d.ultLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {/* T-Type channel predictions TTYPE-1 through TTYPE-2 */}
       <section className="mb-14 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">{d.ttypeTitle}</h2>
@@ -4298,6 +4689,80 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
       <section className="mb-14 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">{d.sentinelPredTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.sentinelPredLead}</p>
+
+        {/* Sentinel Species Hierarchy Diagram */}
+        <div className="mb-8 max-w-4xl rounded-xl border border-card-border bg-card-bg p-5 overflow-x-auto">
+          <h3 className="text-xs uppercase tracking-[0.16em] text-accent font-semibold mb-3">
+            {activeLocale === "fi" ? "Sentinellilajien herkkyyshierarkia" : "Sentinel species sensitivity hierarchy"}
+          </h3>
+          <p className="text-xs text-foreground-muted mb-4">
+            {activeLocale === "fi"
+              ? "EMF-herkkyys skaalautuu kehonmassan mukaan: M^(-0.25). Pienet lajit ovat alttiimpia."
+              : "EMF sensitivity scales with body mass: M^(-0.25). Smaller species are more susceptible."}
+          </p>
+          <svg viewBox="0 0 600 260" className="w-full" role="img" aria-label={activeLocale === "fi" ? "Sentinellilajien herkkyyshierarkia" : "Sentinel species sensitivity hierarchy"}>
+            {/* Title */}
+            <text x="300" y="18" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600" opacity="0.6">
+              {activeLocale === "fi" ? "Herkkyys (korkein ylhäällä)" : "Sensitivity (highest at top)"}
+            </text>
+            {/* Scaling rule */}
+            <text x="560" y="18" textAnchor="end" fill="currentColor" fontSize="9" opacity="0.4" fontFamily="monospace">
+              M^(-0.25)
+            </text>
+            {/* Steps - descending staircase from most to least sensitive */}
+            {/* Step 1: Insects (highest sensitivity) */}
+            <rect x="40" y="30" width="100" height="32" rx="4" fill="currentColor" opacity="0.15" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1" />
+            <text x="90" y="50" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
+              {activeLocale === "fi" ? "Hyönteiset" : "Insects"}
+            </text>
+            <rect x="22" y="36" width="12" height="20" rx="2" fill="#ef4444" opacity="0.7" />
+            {/* Connector line */}
+            <line x1="140" y1="50" x2="155" y2="70" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" strokeDasharray="3,2" />
+            {/* Step 2: Small birds */}
+            <rect x="130" y="68" width="100" height="32" rx="4" fill="currentColor" opacity="0.12" stroke="currentColor" strokeOpacity="0.25" strokeWidth="1" />
+            <text x="180" y="88" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
+              {activeLocale === "fi" ? "Pienet linnut" : "Small birds"}
+            </text>
+            <rect x="112" y="74" width="12" height="20" rx="2" fill="#f97316" opacity="0.7" />
+            {/* Connector */}
+            <line x1="230" y1="88" x2="245" y2="108" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" strokeDasharray="3,2" />
+            {/* Step 3: Amphibians */}
+            <rect x="220" y="106" width="110" height="32" rx="4" fill="currentColor" opacity="0.10" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1" />
+            <text x="275" y="126" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
+              {activeLocale === "fi" ? "Sammakkoeläimet" : "Amphibians"}
+            </text>
+            <rect x="202" y="112" width="12" height="20" rx="2" fill="#f59e0b" opacity="0.7" />
+            {/* Connector */}
+            <line x1="330" y1="126" x2="345" y2="146" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" strokeDasharray="3,2" />
+            {/* Step 4: Small mammals */}
+            <rect x="315" y="144" width="120" height="32" rx="4" fill="currentColor" opacity="0.08" stroke="currentColor" strokeOpacity="0.15" strokeWidth="1" />
+            <text x="375" y="164" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
+              {activeLocale === "fi" ? "Pienet nisäkkäät" : "Small mammals"}
+            </text>
+            <rect x="297" y="150" width="12" height="20" rx="2" fill="#eab308" opacity="0.6" />
+            {/* Connector */}
+            <line x1="435" y1="164" x2="445" y2="184" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" strokeDasharray="3,2" />
+            {/* Step 5: Large mammals */}
+            <rect x="405" y="182" width="120" height="32" rx="4" fill="currentColor" opacity="0.06" stroke="currentColor" strokeOpacity="0.12" strokeWidth="1" />
+            <text x="465" y="202" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
+              {activeLocale === "fi" ? "Suuret nisäkkäät" : "Large mammals"}
+            </text>
+            <rect x="387" y="188" width="12" height="20" rx="2" fill="#84cc16" opacity="0.6" />
+            {/* Connector */}
+            <line x1="490" y1="210" x2="498" y2="222" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" strokeDasharray="3,2" />
+            {/* Step 6: Humans (lowest sensitivity) */}
+            <rect x="460" y="220" width="100" height="32" rx="4" fill="currentColor" opacity="0.04" stroke="currentColor" strokeOpacity="0.10" strokeWidth="1" />
+            <text x="510" y="240" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
+              {activeLocale === "fi" ? "Ihmiset" : "Humans"}
+            </text>
+            <rect x="442" y="226" width="12" height="20" rx="2" fill="#22c55e" opacity="0.5" />
+            {/* Vertical axis label */}
+            <text x="12" y="140" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.4" transform="rotate(-90, 12, 140)">
+              {activeLocale === "fi" ? "EMF-herkkyys" : "EMF sensitivity"}
+            </text>
+          </svg>
+        </div>
+
         <div className="grid gap-4 max-w-4xl">
           {d.sentinelPredPredictions.map((sp) => (
             <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">

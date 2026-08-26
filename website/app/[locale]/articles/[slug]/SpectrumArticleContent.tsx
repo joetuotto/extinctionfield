@@ -126,7 +126,7 @@ const COPY = {
 } as const;
 
 export function SpectrumArticleContent({ locale }: { locale: Locale }) {
-  const c = COPY[locale];
+  const c = (COPY as Record<string, typeof COPY.en>)[locale] ?? COPY.en;
 
   return (
     <div className="prose-article">

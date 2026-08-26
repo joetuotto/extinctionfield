@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
+import { locales } from "@/lib/i18n";
 
 const BASE_URL = "https://extinctionfield.com";
-
-const LOCALES = ["en", "fi"] as const;
 
 const ROUTES = [
   { path: "/", changeFrequency: "weekly" as const, priority: 1.0 },
@@ -49,7 +48,7 @@ const ROUTES = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
-  for (const locale of LOCALES) {
+  for (const locale of locales) {
     for (const route of ROUTES) {
       entries.push({
         url: `${BASE_URL}/${locale}${route.path === "/" ? "" : route.path}`,

@@ -13,7 +13,7 @@ interface Props {
   originRef?: HTMLElement | null;
 }
 
-const SECTION_LABELS: Record<string, Record<Locale, string>> = {
+const SECTION_LABELS: Record<string, Record<string, string>> = {
   mechanism: { en: "Mechanism", fi: "Mekanismi" },
   fdaDevice: { en: "FDA Device", fi: "FDA-laite" },
   bermPathway: { en: "BERM Pathway", fi: "BERM-polku" },

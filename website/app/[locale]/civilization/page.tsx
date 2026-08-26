@@ -1384,6 +1384,49 @@ export default async function CivilizationPage({
             </div>
           </div>
         </div>
+
+        {/* Butterfly/Mirror Chart: Sex-specific disruptions from shared mechanism */}
+        <div className="mt-8">
+          <svg viewBox="0 0 680 240" className="w-full max-w-2xl mx-auto" role="img" aria-label="Butterfly chart showing sex-specific disruptions from shared EMF mechanism">
+            {/* Center mechanism box */}
+            <rect x="220" y="6" width="240" height="52" rx="8" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1.5" />
+            <text x="340" y="27" textAnchor="middle" fill="currentColor" fontSize="14" fontWeight="700">EMF → VGCC → Ca²⁺</text>
+            <text x="340" y="46" textAnchor="middle" fill="currentColor" fillOpacity="0.45" fontSize="10">{locale === "fi" ? "Sama mekanismi molemmilla sukupuolilla" : "Same mechanism in both sexes"}</text>
+
+            {/* Branch curves from center to sides */}
+            <path d="M220,35 Q170,35 130,80" stroke="#3b82f6" strokeWidth="2" fill="none" strokeOpacity="0.5" />
+            <path d="M460,35 Q510,35 550,80" stroke="#f43f5e" strokeWidth="2" fill="none" strokeOpacity="0.5" />
+
+            {/* Male header */}
+            <text x="120" y="78" textAnchor="middle" fill="#3b82f6" fontSize="12" fontWeight="700" letterSpacing="0.08em">{locale === "fi" ? "MIEHET" : "MALE"}</text>
+
+            {/* Male disruption boxes */}
+            <rect x="16" y="90" width="208" height="34" rx="6" fill="#3b82f6" fillOpacity="0.13" stroke="#3b82f6" strokeOpacity="0.35" strokeWidth="1" />
+            <text x="120" y="112" textAnchor="middle" fill="#3b82f6" fontSize="12" fontWeight="600">T ↓ (Cav3.2 → StAR)</text>
+
+            <rect x="16" y="132" width="208" height="34" rx="6" fill="#3b82f6" fillOpacity="0.08" stroke="#3b82f6" strokeOpacity="0.22" strokeWidth="1" />
+            <text x="120" y="154" textAnchor="middle" fill="#3b82f6" fontSize="12">DA ↓ (VTA Cav1.3)</text>
+
+            <rect x="16" y="174" width="208" height="34" rx="6" fill="#3b82f6" fillOpacity="0.05" stroke="#3b82f6" strokeOpacity="0.15" strokeWidth="1" />
+            <text x="120" y="196" textAnchor="middle" fill="#3b82f6" fontSize="12">{locale === "fi" ? "Kortisoli ↑ (HPA)" : "Cortisol ↑ (HPA)"}</text>
+
+            {/* Female header */}
+            <text x="560" y="78" textAnchor="middle" fill="#f43f5e" fontSize="12" fontWeight="700" letterSpacing="0.08em">{locale === "fi" ? "NAISET" : "FEMALE"}</text>
+
+            {/* Female disruption boxes */}
+            <rect x="456" y="90" width="208" height="34" rx="6" fill="#f43f5e" fillOpacity="0.13" stroke="#f43f5e" strokeOpacity="0.35" strokeWidth="1" />
+            <text x="560" y="112" textAnchor="middle" fill="#f43f5e" fontSize="12" fontWeight="600">E/P {locale === "fi" ? "sykli" : "cycle"} ↓</text>
+
+            <rect x="456" y="132" width="208" height="34" rx="6" fill="#f43f5e" fillOpacity="0.08" stroke="#f43f5e" strokeOpacity="0.22" strokeWidth="1" />
+            <text x="560" y="154" textAnchor="middle" fill="#f43f5e" fontSize="12">{locale === "fi" ? "Kortisoli ↑↑" : "Cortisol ↑↑"}</text>
+
+            <rect x="456" y="174" width="208" height="34" rx="6" fill="#f43f5e" fillOpacity="0.05" stroke="#f43f5e" strokeOpacity="0.15" strokeWidth="1" />
+            <text x="560" y="196" textAnchor="middle" fill="#f43f5e" fontSize="12">OT ↓ ({locale === "fi" ? "vagaalinen" : "vagal"})</text>
+
+            {/* Center spine dashed line */}
+            <line x1="340" y1="62" x2="340" y2="230" stroke="currentColor" strokeOpacity="0.08" strokeWidth="1" strokeDasharray="4 3" />
+          </svg>
+        </div>
       </section>
 
       {/* S3: Triple Lock */}
@@ -1425,6 +1468,37 @@ export default async function CivilizationPage({
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Forest Plot: RCT sample sizes */}
+        <div className="mt-6 mb-2">
+          <p className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wider">{locale === "fi" ? "RCT-otoskoot (yhteensä n = 1 297)" : "RCT sample sizes (total n = 1,297)"}</p>
+          <svg viewBox="0 0 520 220" className="w-full max-w-xl" role="img" aria-label="Forest plot of 7 RCTs">
+            {/* Study rows */}
+            {[
+              { name: "Dreher 2016", n: 121 },
+              { name: "Nave 2018", n: 243 },
+              { name: "Goetz 2024", n: 139 },
+              { name: "Audience 2020", n: 166 },
+              { name: "Carré 2017", n: 308 },
+              { name: "Parochial 2015", n: 100 },
+              { name: "Competition 2024", n: 220 },
+            ].map((study, i) => {
+              const y = 10 + i * 28;
+              const barWidth = (study.n / 308) * 220;
+              return (
+                <g key={i}>
+                  <text x="130" y={y + 16} textAnchor="end" fill="currentColor" fillOpacity="0.7" fontSize="11" fontFamily="monospace">{study.name}</text>
+                  <rect x="140" y={y + 4} width={barWidth} height="16" rx="3" fill="#3b82f6" fillOpacity="0.6" />
+                  <text x={148 + barWidth} y={y + 16} fill="currentColor" fillOpacity="0.5" fontSize="10" fontFamily="monospace">n={study.n}</text>
+                </g>
+              );
+            })}
+            {/* Total bar */}
+            <line x1="140" y1="204" x2="460" y2="204" stroke="currentColor" strokeOpacity="0.15" strokeWidth="1" />
+            <text x="130" y="218" textAnchor="end" fill="currentColor" fontSize="11" fontWeight="700" fontFamily="monospace">{locale === "fi" ? "Yhteensä" : "Total"}</text>
+            <text x="140" y="218" fill="#3b82f6" fontSize="11" fontWeight="700" fontFamily="monospace">n = 1,297</text>
+          </svg>
         </div>
 
         <p className="mt-4 text-sm text-muted-foreground">{d.tripleLockExplain}</p>
@@ -1489,6 +1563,35 @@ export default async function CivilizationPage({
           </div>
           <div className="rounded-lg bg-amber-500/10 p-4 mb-4">
             <p className="text-sm font-medium">{d.s5aCompound}</p>
+            {/* Multiplication diagram */}
+            <div className="mt-3">
+              <svg viewBox="0 0 420 60" className="w-full max-w-md mx-auto" role="img" aria-label="Multiplication diagram: 0.6 x 0.6 = 0.36">
+                {/* Male circle */}
+                <circle cx="50" cy="30" r="24" fill="#3b82f6" fillOpacity="0.2" stroke="#3b82f6" strokeOpacity="0.5" strokeWidth="1.5" />
+                <text x="50" y="27" textAnchor="middle" fill="#3b82f6" fontSize="14" fontWeight="700">0.6</text>
+                <text x="50" y="42" textAnchor="middle" fill="#3b82f6" fillOpacity="0.6" fontSize="8">{locale === "fi" ? "mies" : "male"}</text>
+
+                {/* Multiply symbol */}
+                <text x="105" y="35" textAnchor="middle" fill="currentColor" fillOpacity="0.5" fontSize="18" fontWeight="300">&times;</text>
+
+                {/* Female circle */}
+                <circle cx="160" cy="30" r="24" fill="#f43f5e" fillOpacity="0.2" stroke="#f43f5e" strokeOpacity="0.5" strokeWidth="1.5" />
+                <text x="160" y="27" textAnchor="middle" fill="#f43f5e" fontSize="14" fontWeight="700">0.6</text>
+                <text x="160" y="42" textAnchor="middle" fill="#f43f5e" fillOpacity="0.6" fontSize="8">{locale === "fi" ? "nainen" : "female"}</text>
+
+                {/* Equals */}
+                <text x="215" y="35" textAnchor="middle" fill="currentColor" fillOpacity="0.5" fontSize="18" fontWeight="300">=</text>
+
+                {/* Result */}
+                <text x="262" y="27" textAnchor="middle" fill="#f59e0b" fontSize="18" fontWeight="800">0.36</text>
+
+                {/* Reduction bar */}
+                <rect x="300" y="12" width="100" height="14" rx="3" fill="currentColor" fillOpacity="0.08" />
+                <rect x="300" y="12" width="64" height="14" rx="3" fill="#ef4444" fillOpacity="0.5" />
+                <text x="350" y="44" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="600">-64%</text>
+                <text x="350" y="55" textAnchor="middle" fill="currentColor" fillOpacity="0.4" fontSize="8">{locale === "fi" ? "vähennys" : "reduction"}</text>
+              </svg>
+            </div>
           </div>
           <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground">
             {d.s5aObserved.map((o, i) => (
@@ -1506,6 +1609,62 @@ export default async function CivilizationPage({
               <li key={i}>{f}</li>
             ))}
           </ul>
+
+          {/* Waterfall Chart: Multiplicative fertility cascade */}
+          <div className="my-4">
+            <svg viewBox="0 0 500 190" className="w-full max-w-lg mx-auto" role="img" aria-label="Waterfall chart showing multiplicative fertility decline">
+              {/* Axis line */}
+              <line x1="45" y1="155" x2="480" y2="155" stroke="currentColor" strokeOpacity="0.15" strokeWidth="1" />
+
+              {/* Starting bar: 1.00 */}
+              <rect x="55" y="15" width="60" height="140" rx="4" fill="#ef4444" fillOpacity="0.15" stroke="#ef4444" strokeOpacity="0.3" strokeWidth="1" />
+              <text x="85" y="10" textAnchor="middle" fill="currentColor" fontSize="12" fontWeight="700">1.00</text>
+              <text x="85" y="172" textAnchor="middle" fill="currentColor" fillOpacity="0.5" fontSize="8">{locale === "fi" ? "alkutila" : "start"}</text>
+
+              {/* Drop connector 1 */}
+              <line x1="115" y1="57" x2="140" y2="57" stroke="#ef4444" strokeOpacity="0.3" strokeWidth="1" strokeDasharray="3 2" />
+
+              {/* f(sperm) → 0.70 */}
+              <rect x="140" y="57" width="60" height="98" rx="4" fill="#ef4444" fillOpacity="0.25" stroke="#ef4444" strokeOpacity="0.4" strokeWidth="1" />
+              <text x="170" y="50" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="700">0.70</text>
+              <text x="170" y="172" textAnchor="middle" fill="currentColor" fillOpacity="0.5" fontSize="7">f({locale === "fi" ? "siittiöt" : "sperm"})</text>
+              <text x="170" y="182" textAnchor="middle" fill="#ef4444" fillOpacity="0.7" fontSize="7">-30%</text>
+
+              {/* Drop connector 2 */}
+              <line x1="200" y1="86" x2="225" y2="86" stroke="#ef4444" strokeOpacity="0.3" strokeWidth="1" strokeDasharray="3 2" />
+
+              {/* g(oocyte) → 0.49 */}
+              <rect x="225" y="86" width="60" height="69" rx="4" fill="#ef4444" fillOpacity="0.38" stroke="#ef4444" strokeOpacity="0.5" strokeWidth="1" />
+              <text x="255" y="80" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="700">0.49</text>
+              <text x="255" y="172" textAnchor="middle" fill="currentColor" fillOpacity="0.5" fontSize="7">g({locale === "fi" ? "munasolu" : "oocyte"})</text>
+              <text x="255" y="182" textAnchor="middle" fill="#ef4444" fillOpacity="0.7" fontSize="7">-30%</text>
+
+              {/* Drop connector 3 */}
+              <line x1="285" y1="107" x2="310" y2="107" stroke="#ef4444" strokeOpacity="0.3" strokeWidth="1" strokeDasharray="3 2" />
+
+              {/* h(timing) → 0.34 */}
+              <rect x="310" y="107" width="60" height="48" rx="4" fill="#ef4444" fillOpacity="0.52" stroke="#ef4444" strokeOpacity="0.6" strokeWidth="1" />
+              <text x="340" y="101" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="700">0.34</text>
+              <text x="340" y="172" textAnchor="middle" fill="currentColor" fillOpacity="0.5" fontSize="7">h({locale === "fi" ? "ajoitus" : "timing"})</text>
+              <text x="340" y="182" textAnchor="middle" fill="#ef4444" fillOpacity="0.7" fontSize="7">-30%</text>
+
+              {/* Drop connector 4 */}
+              <line x1="370" y1="121" x2="395" y2="121" stroke="#ef4444" strokeOpacity="0.3" strokeWidth="1" strokeDasharray="3 2" />
+
+              {/* j(motivation) → 0.24 */}
+              <rect x="395" y="121" width="60" height="34" rx="4" fill="#ef4444" fillOpacity="0.7" stroke="#ef4444" strokeOpacity="0.8" strokeWidth="1" />
+              <text x="425" y="115" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="700">0.24</text>
+              <text x="425" y="172" textAnchor="middle" fill="currentColor" fillOpacity="0.5" fontSize="7">j({locale === "fi" ? "motivaatio" : "motivation"})</text>
+              <text x="425" y="182" textAnchor="middle" fill="#ef4444" fillOpacity="0.7" fontSize="7">-30%</text>
+
+              {/* Result label */}
+              <text x="460" y="142" fill="#ef4444" fontSize="10" fontWeight="700">-76%</text>
+
+              {/* Y-axis label */}
+              <text x="10" y="85" fill="currentColor" fillOpacity="0.3" fontSize="9" transform="rotate(-90,10,85)">{locale === "fi" ? "hedelmällisyys" : "fecundability"}</text>
+            </svg>
+          </div>
+
           <div className="rounded-lg bg-red-500/10 p-4">
             <p className="text-sm">{d.s5bCompound}</p>
           </div>
@@ -1554,6 +1713,73 @@ export default async function CivilizationPage({
             <TrendingDown className="w-5 h-5 text-red-500" />
             {d.s5eTitle}
           </h3>
+
+          {/* Generation Timeline: Declining trends with rising EMF */}
+          <div className="my-4">
+            <svg viewBox="0 0 580 200" className="w-full max-w-2xl mx-auto" role="img" aria-label="Timeline showing generational hormone decline against rising EMF">
+              {/* EMF rising background area */}
+              <defs>
+                <linearGradient id="emfGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#6b7280" stopOpacity="0.03" />
+                  <stop offset="100%" stopColor="#ef4444" stopOpacity="0.12" />
+                </linearGradient>
+              </defs>
+              <polygon points="80,150 540,150 540,30 80,140" fill="url(#emfGrad)" />
+              <text x="520" y="25" textAnchor="end" fill="#ef4444" fillOpacity="0.5" fontSize="9" fontWeight="600">EMF ↑</text>
+
+              {/* X-axis */}
+              <line x1="80" y1="155" x2="540" y2="155" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1" />
+
+              {/* Generation markers */}
+              {[
+                { x: 110, label: "Gen 1", year: "~1950" },
+                { x: 240, label: "Gen 2", year: "~1975" },
+                { x: 370, label: "Gen 3", year: "~2000" },
+                { x: 500, label: "Gen 4", year: "~2025" },
+              ].map((g, i) => (
+                <g key={i}>
+                  <line x1={g.x} y1="150" x2={g.x} y2="158" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1" />
+                  <text x={g.x} y="170" textAnchor="middle" fill="currentColor" fillOpacity="0.5" fontSize="9" fontWeight="600">{g.label}</text>
+                  <text x={g.x} y="182" textAnchor="middle" fill="currentColor" fillOpacity="0.3" fontSize="8">{g.year}</text>
+                </g>
+              ))}
+
+              {/* T declining line (blue) */}
+              <polyline points="110,45 240,65 370,95 500,120" fill="none" stroke="#3b82f6" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+              <circle cx="110" cy="45" r="3" fill="#3b82f6" />
+              <circle cx="240" cy="65" r="3" fill="#3b82f6" />
+              <circle cx="370" cy="95" r="3" fill="#3b82f6" />
+              <circle cx="500" cy="120" r="3" fill="#3b82f6" />
+              <text x="56" y="48" textAnchor="end" fill="#3b82f6" fontSize="10" fontWeight="600">T</text>
+
+              {/* OT declining line (rose) */}
+              <polyline points="110,55 240,72 370,105 500,132" fill="none" stroke="#f43f5e" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" strokeDasharray="6 3" />
+              <circle cx="110" cy="55" r="2.5" fill="#f43f5e" />
+              <circle cx="240" cy="72" r="2.5" fill="#f43f5e" />
+              <circle cx="370" cy="105" r="2.5" fill="#f43f5e" />
+              <circle cx="500" cy="132" r="2.5" fill="#f43f5e" />
+              <text x="56" y="58" textAnchor="end" fill="#f43f5e" fontSize="10" fontWeight="600">OT</text>
+
+              {/* TFR declining line (amber) */}
+              <polyline points="110,60 240,82 370,110 500,140" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" strokeDasharray="2 3" />
+              <circle cx="110" cy="60" r="2.5" fill="#f59e0b" />
+              <circle cx="240" cy="82" r="2.5" fill="#f59e0b" />
+              <circle cx="370" cy="110" r="2.5" fill="#f59e0b" />
+              <circle cx="500" cy="140" r="2.5" fill="#f59e0b" />
+              <text x="56" y="64" textAnchor="end" fill="#f59e0b" fontSize="10" fontWeight="600">TFR</text>
+
+              {/* Legend */}
+              <line x1="80" y1="195" x2="96" y2="195" stroke="#3b82f6" strokeWidth="2" />
+              <text x="100" y="198" fill="currentColor" fillOpacity="0.5" fontSize="8">{locale === "fi" ? "Testosteroni" : "Testosterone"}</text>
+              <line x1="180" y1="195" x2="196" y2="195" stroke="#f43f5e" strokeWidth="2" strokeDasharray="4 2" />
+              <text x="200" y="198" fill="currentColor" fillOpacity="0.5" fontSize="8">{locale === "fi" ? "Oksitosiini" : "Oxytocin"}</text>
+              <line x1="275" y1="195" x2="291" y2="195" stroke="#f59e0b" strokeWidth="2" strokeDasharray="2 2" />
+              <text x="295" y="198" fill="currentColor" fillOpacity="0.5" fontSize="8">TFR</text>
+              <rect x="330" y="190" width="12" height="8" rx="1" fill="#ef4444" fillOpacity="0.1" stroke="#ef4444" strokeOpacity="0.3" strokeWidth="0.5" />
+              <text x="346" y="198" fill="currentColor" fillOpacity="0.5" fontSize="8">EMF</text>
+            </svg>
+          </div>
+
           <div className="overflow-x-auto">
             <table className="w-full text-xs border-collapse">
               <thead>
@@ -1588,6 +1814,18 @@ export default async function CivilizationPage({
       <section className="mb-16">
         <h2 className="text-2xl font-bold mb-2">{d.s6title}</h2>
         <p className="text-muted-foreground mb-6">{d.s6lead}</p>
+
+        {/* Prediction Scorecard: 12/12 consistent */}
+        <div className="mb-6 rounded-lg border border-green-500/30 bg-green-500/5 p-3 flex items-center gap-3 flex-wrap">
+          <span className="text-lg font-bold text-green-400">12/12</span>
+          <span className="text-xs text-muted-foreground">{locale === "fi" ? "yhdenmukainen" : "consistent"}</span>
+          <div className="flex gap-0.5 flex-1 min-w-[200px]">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="flex-1 h-5 rounded-sm bg-green-500/50 min-w-[14px]" />
+            ))}
+          </div>
+        </div>
+
         <div className="space-y-3">
           {d.predictions.map((p, i) => (
             <div
@@ -1640,6 +1878,31 @@ export default async function CivilizationPage({
               <p className="text-xs text-muted-foreground/70 mt-1">{d.spolarDigitalRct}</p>
             </div>
           </div>
+
+          {/* Polarization Diverging Chart */}
+          <div className="my-4">
+            <svg viewBox="0 0 500 90" className="w-full max-w-lg mx-auto" role="img" aria-label="Diverging bar chart: physical conformity vs digital outrage">
+              {/* Center axis */}
+              <line x1="250" y1="10" x2="250" y2="80" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1" />
+              <text x="250" y="8" textAnchor="middle" fill="currentColor" fillOpacity="0.3" fontSize="8">{locale === "fi" ? "neutraali" : "neutral"}</text>
+
+              {/* Physical / Conformity (left, blue, low intensity) */}
+              <rect x="170" y="18" width="80" height="24" rx="4" fill="#3b82f6" fillOpacity="0.25" stroke="#3b82f6" strokeOpacity="0.4" strokeWidth="1" />
+              <text x="160" y="34" textAnchor="end" fill="#3b82f6" fontSize="9" fontWeight="600">{locale === "fi" ? "Fyysinen" : "Physical"}</text>
+              <text x="210" y="34" textAnchor="middle" fill="#3b82f6" fillOpacity="0.8" fontSize="9">{locale === "fi" ? "Konformismi" : "Conformity"}</text>
+              <text x="160" y="47" textAnchor="end" fill="currentColor" fillOpacity="0.3" fontSize="7">{locale === "fi" ? "korkea kynnys" : "high threshold"}</text>
+
+              {/* Digital / Outrage (right, amber, high intensity) */}
+              <rect x="250" y="52" width="180" height="24" rx="4" fill="#f59e0b" fillOpacity="0.35" stroke="#f59e0b" strokeOpacity="0.5" strokeWidth="1" />
+              <text x="440" y="68" fill="#f59e0b" fontSize="9" fontWeight="600">{locale === "fi" ? "Digitaalinen" : "Digital"}</text>
+              <text x="340" y="68" textAnchor="middle" fill="#f59e0b" fillOpacity="0.9" fontSize="9">{locale === "fi" ? "Raivo & polarisaatio" : "Outrage & polarization"}</text>
+              <text x="440" y="81" fill="currentColor" fillOpacity="0.3" fontSize="7">{locale === "fi" ? "lähes nolla kustannus" : "near-zero cost"}</text>
+
+              {/* Asymmetry arrow */}
+              <text x="250" y="88" textAnchor="middle" fill="currentColor" fillOpacity="0.25" fontSize="7">{locale === "fi" ? "biologinen kynnys vs. digitaalinen kustannus" : "biological threshold vs. digital cost"}</text>
+            </svg>
+          </div>
+
           <p className="text-sm text-muted-foreground mb-2">{d.spolarObserved}</p>
           <p className="text-sm text-muted-foreground mb-3">{d.spolarExplain}</p>
           <p className="text-sm font-medium text-violet-400">{d.spolarPrediction}</p>
@@ -1737,6 +2000,27 @@ export default async function CivilizationPage({
           {d.s9title}
         </h2>
         <p className="text-muted-foreground mb-6">{d.s9lead}</p>
+
+        {/* CIV Prediction Tracker: 14 pending predictions */}
+        <div className="mb-6 rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/20 text-amber-400 text-xs font-mono px-2.5 py-1 font-semibold">
+              0/14 {locale === "fi" ? "testattu" : "tested"}
+            </span>
+            <span className="text-xs text-muted-foreground">{locale === "fi" ? "Kaikki odottavat empiiristä testausta" : "All awaiting empirical testing"}</span>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {Array.from({ length: 14 }).map((_, i) => (
+              <span
+                key={i}
+                className="inline-block rounded-md bg-amber-500/15 border border-amber-500/25 text-amber-400/80 text-[10px] font-mono px-2 py-0.5"
+              >
+                CIV-{i + 1}
+              </span>
+            ))}
+          </div>
+        </div>
+
         <div className="space-y-4">
           {d.civPredictions.map((p) => (
             <div key={p.id} className="rounded-xl border p-5">

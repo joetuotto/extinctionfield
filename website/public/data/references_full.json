@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 745,
+    "total_references": 769,
     "verified_count": 240,
     "generated": "2026-08-26",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls"
@@ -15295,6 +15295,198 @@
       "pathway": ["serotonin", "gut_brain", "ibs", "depression"],
       "tags": ["gut_brain", "serotonin", "ibs", "review"],
       "source": "PMC8607755"
+    },
+    {
+      "id": "catsper_review",
+      "pdf_number": 1079,
+      "finding": "CatSper is the only sperm-specific Ca²⁺ channel; CatSper knockout males are completely sterile despite normal sperm production",
+      "pathway": ["catsper", "calcium", "sperm", "fertility"],
+      "tags": ["catsper", "fertility", "knockout"],
+      "source": "Reprod Biomed Online 2014 PMID:25457194"
+    },
+    {
+      "id": "catsper_temp",
+      "pdf_number": 1080,
+      "finding": "CatSper is temperature-gated with threshold at 33.5°C and Q₁₀ of 5.1; premature activation leads to energy depletion and sperm death before reaching egg",
+      "pathway": ["catsper", "temperature", "sperm", "activation"],
+      "tags": ["catsper", "temperature", "fertility"],
+      "source": "Nature Comms 2025 10.1038/s41467-025-58824-0"
+    },
+    {
+      "id": "catsper_human",
+      "pdf_number": 1081,
+      "finding": "Human CatSper mutations cause male infertility; channel dysfunction impairs hyperactivation, chemotaxis, and acrosome reaction required for fertilization",
+      "pathway": ["catsper", "human", "infertility", "acrosome"],
+      "tags": ["catsper", "human", "infertility"],
+      "source": "JCI 2024 10.1172/jci.insight.173564"
+    },
+    {
+      "id": "psilo_plast",
+      "pdf_number": 1082,
+      "finding": "Psilocybin promotes structural neuroplasticity via 5-HT2A→Gq→Ca²⁺→BDNF→mTOR pathway, producing rapid dendritic spine growth that reverses stress-induced dendritic atrophy",
+      "pathway": ["psilocybin", "5ht2a", "bdnf", "mtor", "dendrite"],
+      "tags": ["psilocybin", "neuroplasticity", "bdnf"],
+      "source": "Trends Pharmacol Sci 2025"
+    },
+    {
+      "id": "psilo_intra",
+      "pdf_number": 1083,
+      "finding": "Psychedelic effects require intracellular 5-HT2A activation, not surface receptor binding; serotonin itself cannot access intracellular receptors",
+      "pathway": ["psilocybin", "5ht2a", "intracellular"],
+      "tags": ["psilocybin", "5ht2a", "mechanism"],
+      "source": "Science 2023 10.1126/science.adf0435"
+    },
+    {
+      "id": "psilo_5ht2a_ca",
+      "pdf_number": 1084,
+      "finding": "Psilocybin via 5-HT2A→Gq→PLC→IP3→Ca²⁺ release from ER, plus BDNF upregulation, produces sustained neuroplastic changes that outlast acute drug effects",
+      "pathway": ["psilocybin", "calcium", "bdnf", "neuroplasticity"],
+      "tags": ["psilocybin", "calcium", "neuroplasticity"],
+      "source": "Mol Psychiatry 2025 10.1038/s41380-025-03169-9"
+    },
+    {
+      "id": "caffeine_pd",
+      "pdf_number": 1085,
+      "finding": "Epidemiological studies show strong inverse association between caffeine consumption and Parkinson's disease risk; A2A receptor antagonism provides DA neuron protection",
+      "pathway": ["caffeine", "a2a", "dopamine", "parkinson"],
+      "tags": ["caffeine", "parkinson", "neuroprotection"],
+      "source": "Frontiers Neurosci 2020"
+    },
+    {
+      "id": "caffeine_mptp",
+      "pdf_number": 1086,
+      "finding": "Caffeine protects against MPTP-induced dopaminergic neuron death in animal models of Parkinson's disease via A2A receptor antagonism",
+      "pathway": ["caffeine", "a2a", "mptp", "dopamine"],
+      "tags": ["caffeine", "parkinson", "mptp", "animal"],
+      "source": "PMID:11319241"
+    },
+    {
+      "id": "caffeine_a2a_neuro",
+      "pdf_number": 1087,
+      "finding": "Caffeine's neuroprotection extends beyond Parkinson's: reduced stroke damage, excitotoxicity protection, and α-synuclein clearance via adenosine A2A receptor blockade",
+      "pathway": ["caffeine", "a2a", "neuroprotection", "stroke"],
+      "tags": ["caffeine", "neuroprotection", "a2a"],
+      "source": "ScienceDirect 2016 J Neurol Sci"
+    },
+    {
+      "id": "li_dementia",
+      "pdf_number": 1088,
+      "finding": "Systematic review of 5 studies: higher lithium levels in drinking water are associated with lower dementia incidence at population level",
+      "pathway": ["lithium", "dementia", "drinking_water"],
+      "tags": ["lithium", "dementia", "epidemiology"],
+      "source": "Int J Bipolar Disord 2024 10.1186/s40345-024-00348-5"
+    },
+    {
+      "id": "li_suicide",
+      "pdf_number": 1089,
+      "finding": "Meta-analysis confirms inverse association between lithium in drinking water and suicide rates at population level",
+      "pathway": ["lithium", "suicide", "drinking_water"],
+      "tags": ["lithium", "suicide", "meta_analysis"],
+      "source": "Br J Psychiatry 2020"
+    },
+    {
+      "id": "li_usa_county",
+      "pdf_number": 1090,
+      "finding": "US county-level analysis confirms inverse association between drinking water lithium and suicide rates, extending findings to a large heterogeneous population",
+      "pathway": ["lithium", "suicide", "county", "usa"],
+      "tags": ["lithium", "suicide", "usa", "epidemiology"],
+      "source": "ScienceDirect 2026"
+    },
+    {
+      "id": "amygdala_cort",
+      "pdf_number": 1091,
+      "finding": "A single acute dose of corticosterone produces basolateral amygdala (BLA) hypertrophy and increased anxiety within days; effect persists 21+ days after stress ends",
+      "pathway": ["cortisol", "amygdala", "hypertrophy", "anxiety"],
+      "tags": ["amygdala", "cortisol", "anxiety", "hypertrophy"],
+      "source": "PNAS 2008 10.1073/pnas.0705615105"
+    },
+    {
+      "id": "amygdala_persist",
+      "pdf_number": 1092,
+      "finding": "Amygdala dendritic hypertrophy persists long after chronic stress ends, while hippocampal dendritic atrophy recovers — opposite plasticity in same brain",
+      "pathway": ["amygdala", "hippocampus", "stress", "plasticity"],
+      "tags": ["amygdala", "hippocampus", "stress", "persistence"],
+      "source": "Neurosci Lett 2023 PMID:37473795"
+    },
+    {
+      "id": "bdnf_hippo_amyg",
+      "pdf_number": 1093,
+      "finding": "BDNF is upregulated in BLA but downregulated in hippocampus under same cortisol exposure — opposite BDNF regulation in two structures explains divergent plasticity",
+      "pathway": ["bdnf", "amygdala", "hippocampus", "cortisol"],
+      "tags": ["bdnf", "amygdala", "hippocampus"],
+      "source": "PLoS ONE 2012 PMC3260293"
+    },
+    {
+      "id": "amyg_v_hippo_review",
+      "pdf_number": 1094,
+      "finding": "Chronic stress produces opposite structural changes: amygdala neurons gain dendrites and spines (hypertrophy) while hippocampal neurons lose them (atrophy)",
+      "pathway": ["stress", "amygdala", "hippocampus", "dendrite"],
+      "tags": ["stress", "amygdala", "hippocampus", "review"],
+      "source": "J Neurosci 2002 22:6810"
+    },
+    {
+      "id": "amish_health_stat",
+      "pdf_number": 1095,
+      "finding": "Old Order Amish have dramatically lower rates of obesity (-89%), T2D (-75%), hypertension (-66%), and cancer (-40%) compared to general US population",
+      "pathway": ["amish", "obesity", "diabetes", "cancer"],
+      "tags": ["amish", "health", "epidemiology"],
+      "source": "STAT 2025"
+    },
+    {
+      "id": "amish_lifestyle",
+      "pdf_number": 1096,
+      "finding": "Amish lifestyle includes minimal electricity, no personal electronic devices, extensive physical labor, and community-based living — providing near-zero chronic EMF exposure",
+      "pathway": ["amish", "emf", "lifestyle"],
+      "tags": ["amish", "lifestyle", "emf"],
+      "source": "Time 2018"
+    },
+    {
+      "id": "amish_review",
+      "pdf_number": 1097,
+      "finding": "Systematic review of 126 studies on Amish health: consistently lower chronic disease prevalence, higher physical activity, different dietary patterns",
+      "pathway": ["amish", "health", "systematic_review"],
+      "tags": ["amish", "review", "health"],
+      "source": "Anderson & Potts 2022"
+    },
+    {
+      "id": "cow_emf_mel",
+      "pdf_number": 1098,
+      "finding": "60 Hz EMF exposure reduces melatonin in dairy cows and disrupts LHRH secretion patterns, affecting estrous cycle — EMF acts as 'long day' signal",
+      "pathway": ["emf", "melatonin", "cow", "lhrh", "estrous"],
+      "tags": ["cow", "melatonin", "emf", "fertility"],
+      "source": "Rodriguez/Burchard 1998-2003"
+    },
+    {
+      "id": "cow_stray_meta",
+      "pdf_number": 1099,
+      "finding": "Stray voltage in dairy facilities delays oxytocin release, increases cortisol, and causes behavioral changes in cattle — meta-analysis",
+      "pathway": ["stray_voltage", "oxytocin", "cortisol", "cow"],
+      "tags": ["cow", "stray_voltage", "oxytocin", "cortisol"],
+      "source": "J Dairy Sci meta 2010"
+    },
+    {
+      "id": "cow_emf_dairy",
+      "pdf_number": 1100,
+      "finding": "EMF from milking parlor equipment reduces oxytocin release in dairy cows, increases insemination costs, and alters calcium/magnesium balance",
+      "pathway": ["emf", "oxytocin", "cow", "calcium", "dairy"],
+      "tags": ["cow", "dairy", "emf", "oxytocin"],
+      "source": "Progressive Dairy 2022"
+    },
+    {
+      "id": "cow_led_night",
+      "pdf_number": 1101,
+      "finding": "LED lighting at night in dairy facilities disrupts circadian rhythm in cattle, affecting milk composition and reproductive hormones",
+      "pathway": ["led", "circadian", "cow", "milk"],
+      "tags": ["cow", "led", "circadian", "milk"],
+      "source": "PMC9775544"
+    },
+    {
+      "id": "cow_fertility_emf",
+      "pdf_number": 1102,
+      "finding": "Electromagnetic field exposure is associated with reduced fertility parameters in dairy cattle",
+      "pathway": ["emf", "cow", "fertility"],
+      "tags": ["cow", "emf", "fertility"],
+      "source": "PMID:17491151"
     }
   ]
 }

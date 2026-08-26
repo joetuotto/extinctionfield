@@ -1,19 +1,33 @@
 import type { Metadata } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
+import { Inter, Source_Serif_4, Noto_Sans_JP, Noto_Sans_KR } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const interFont = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-interface-loaded",
 });
 
 const serifFont = Source_Serif_4({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
   weight: ["400", "600", "700"],
   variable: "--font-editorial-loaded",
+});
+
+const notoJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cjk-ja",
+});
+
+const notoKR = Noto_Sans_KR({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cjk-ko",
 });
 
 export const metadata: Metadata = {
@@ -25,14 +39,14 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "BERM — Bio-Electromagnetic Response Model",
     locale: "en_US",
-    alternateLocale: "fi_FI",
+    alternateLocale: ["fi_FI", "ja_JP", "fr_FR", "ko_KR"],
   },
   twitter: {
     card: "summary",
   },
 };
 
-const initScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}}catch(e){};document.documentElement.lang=location.pathname.startsWith('/fi')?'fi':'en'})()`;
+const initScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}}catch(e){};var p=location.pathname.split('/')[1];var m={'fi':'fi','ja':'ja','fr':'fr','ko':'ko'};document.documentElement.lang=m[p]||'en'})()`;
 
 export default function RootLayout({
   children,
@@ -43,7 +57,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`h-full antialiased font-sans ${interFont.variable} ${serifFont.variable}`}
+      className={`h-full antialiased font-sans ${interFont.variable} ${serifFont.variable} ${notoJP.variable} ${notoKR.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: initScript }} />

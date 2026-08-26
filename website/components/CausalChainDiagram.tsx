@@ -12,7 +12,7 @@ import { DetailPanel } from "./DetailPanel";
 
 type Locale = "en" | "fi";
 
-const COPY: Record<Locale, {
+const COPY: Record<string, {
   ariaLabel: string;
   clickHint: string;
   levelTitles: Record<number, string>;

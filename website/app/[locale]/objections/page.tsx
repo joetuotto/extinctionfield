@@ -43,7 +43,7 @@ type Copy = {
   closingText: string;
 };
 
-const t: Record<Locale, Copy> = {
+const t: Record<string, Copy> = {
   en: {
     title: "Criticism and open problems",
     subtitle:
@@ -593,6 +593,40 @@ export default async function ObjectionsPage({
           </p>
         </section>
 
+        {/* Classification donut chart */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 rounded-xl border border-card-border bg-card-bg p-4 sm:p-5">
+          <svg
+            viewBox="0 0 200 200"
+            className="w-[160px] h-[160px] shrink-0"
+            role="img"
+            aria-label={locale === "fi" ? "Havaintojen jakauma" : "Findings distribution"}
+          >
+            <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="20" opacity="0.08" />
+            <circle className="text-status-refuted" cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="20" strokeDasharray="174 203" strokeDashoffset="0" transform="rotate(-90 100 100)" />
+            <circle className="text-status-partial" cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="20" strokeDasharray="116 261" strokeDashoffset="-174" transform="rotate(-90 100 100)" />
+            <circle className="text-accent" cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="20" strokeDasharray="87 290" strokeDashoffset="-290" transform="rotate(-90 100 100)" />
+            <text x="100" y="96" textAnchor="middle" fill="currentColor" className="text-foreground" fontSize="26" fontWeight="600">{CLASSIFICATION_SUMMARY.total}</text>
+            <text x="100" y="116" textAnchor="middle" fill="currentColor" className="text-foreground-muted" fontSize="10">{locale === "fi" ? "havaintoa" : "findings"}</text>
+          </svg>
+          <div className="flex flex-col gap-2 text-xs">
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-3 h-3 rounded-full bg-status-refuted shrink-0" />
+              <span className="font-mono-num text-status-refuted">{CLASSIFICATION_SUMMARY.remains_negative}</span>
+              <span className="text-foreground-muted">{locale === "fi" ? "pysyy negatiivisena" : "remain negative"}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-3 h-3 rounded-full bg-status-partial shrink-0" />
+              <span className="font-mono-num text-status-partial">{CLASSIFICATION_SUMMARY.reclassified}</span>
+              <span className="text-foreground-muted">{locale === "fi" ? "uudelleenluokiteltu" : "reclassified"}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-3 h-3 rounded-full bg-accent shrink-0" />
+              <span className="font-mono-num text-accent">{CLASSIFICATION_SUMMARY.internal_refinement}</span>
+              <span className="text-foreground-muted">{locale === "fi" ? "sisäinen tarkennus" : "internal refinement"}</span>
+            </div>
+          </div>
+        </div>
+
         {/* Three outcome groups, read from the shared table */}
         {(
           [
@@ -614,6 +648,36 @@ export default async function ObjectionsPage({
         <section className="space-y-3">
           <h2 className="editorial-section-heading">{d.testsTitle}</h2>
           <p className="text-sm leading-relaxed text-foreground-muted">{d.testsLead}</p>
+
+          {/* Discriminating tests comparison matrix */}
+          <div className="overflow-x-auto rounded-lg border border-card-border/60 bg-card-bg/50 p-3 sm:p-4">
+            <svg viewBox="0 0 560 120" className="w-full min-w-[480px]" style={{ height: "140px" }} role="img" aria-label={locale === "fi" ? "Erottelevien testien vertailu" : "Discriminating tests comparison"}>
+              <text x="5" y="14" fill="currentColor" className="text-foreground-muted" fontSize="9" fontWeight="600" letterSpacing="0.05em">{locale === "fi" ? "TESTI" : "TEST"}</text>
+              <text x="50" y="14" fill="currentColor" className="text-accent" fontSize="9" fontWeight="600" letterSpacing="0.05em">BERM</text>
+              <text x="220" y="14" fill="currentColor" className="text-foreground-muted" fontSize="9" fontWeight="600" letterSpacing="0.05em">{locale === "fi" ? "KONSENSUS" : "CONSENSUS"}</text>
+              <text x="390" y="14" fill="currentColor" className="text-foreground-muted" fontSize="9" fontWeight="600" letterSpacing="0.05em">{locale === "fi" ? "EROTTELU" : "DIVERGENCE"}</text>
+              <line x1="0" y1="22" x2="560" y2="22" stroke="currentColor" opacity="0.15" />
+
+              <text x="5" y="48" fill="currentColor" className="text-accent" fontSize="14" fontWeight="700">D1</text>
+              <text x="50" y="48" fill="currentColor" className="text-foreground" fontSize="11">{locale === "fi" ? "Kulmariippuvainen" : "Angle-dependent"}</text>
+              <text x="220" y="48" fill="currentColor" className="text-foreground-muted" fontSize="11">{locale === "fi" ? "Isotrooppinen" : "Isotropic"}</text>
+              <rect x="390" y="38" width="88" height="14" rx="3" fill="#22c55e" opacity="0.8" />
+              <text x="486" y="49" fill="currentColor" className="text-foreground-muted" fontSize="9" fontWeight="500">{locale === "fi" ? "KORKEA" : "HIGH"}</text>
+
+              <text x="5" y="78" fill="currentColor" className="text-accent" fontSize="14" fontWeight="700">D2</text>
+              <text x="50" y="78" fill="currentColor" className="text-foreground" fontSize="11">{locale === "fi" ? "Kohorttipporras" : "Cohort step"}</text>
+              <text x="220" y="78" fill="currentColor" className="text-foreground-muted" fontSize="11">{locale === "fi" ? "Ei porrasta" : "No cohort step"}</text>
+              <rect x="390" y="68" width="88" height="14" rx="3" fill="#22c55e" opacity="0.8" />
+              <text x="486" y="79" fill="currentColor" className="text-foreground-muted" fontSize="9" fontWeight="500">{locale === "fi" ? "KORKEA" : "HIGH"}</text>
+
+              <text x="5" y="108" fill="currentColor" className="text-accent" fontSize="14" fontWeight="700">D3</text>
+              <text x="50" y="108" fill="currentColor" className="text-foreground" fontSize="11">{locale === "fi" ? "CRY ennustaa" : "CRY predicts order"}</text>
+              <text x="220" y="108" fill="currentColor" className="text-foreground-muted" fontSize="11">{locale === "fi" ? "Ei ennustetta" : "No prediction"}</text>
+              <rect x="390" y="98" width="125" height="14" rx="3" fill="#22c55e" />
+              <text x="523" y="109" fill="currentColor" className="text-foreground-muted" fontSize="9" fontWeight="600">MAX</text>
+            </svg>
+          </div>
+
           {d.tests.map((test) => (
             <article key={test.id} className="rounded-xl border border-card-border bg-card-bg p-4 sm:p-5">
               <h3 className="text-sm font-semibold">
@@ -642,6 +706,39 @@ export default async function ObjectionsPage({
         {/* Version history: what was abandoned and why */}
         <section className="space-y-3">
           <h2 className="editorial-section-heading">{d.historyTitle}</h2>
+
+          {/* Version history timeline */}
+          <div className="overflow-x-auto">
+            <svg viewBox="0 0 600 75" className="w-full min-w-[500px]" style={{ height: "90px" }} role="img" aria-label={locale === "fi" ? "Versioaikajana" : "Version timeline"}>
+              <line x1="40" y1="22" x2="560" y2="22" stroke="currentColor" opacity="0.2" strokeWidth="2" />
+
+              <circle cx="40" cy="22" r="6" fill="#ef4444" />
+              <text x="40" y="44" textAnchor="middle" fill="currentColor" className="text-foreground" fontSize="9" fontWeight="500">{"<v6"}</text>
+              <text x="40" y="56" textAnchor="middle" fill="#ef4444" fontSize="8">{locale === "fi" ? "Hylätty" : "Abandoned"}</text>
+
+              <circle cx="144" cy="22" r="6" fill="#ef4444" />
+              <text x="144" y="44" textAnchor="middle" fill="currentColor" className="text-foreground" fontSize="9" fontWeight="500">v6–9</text>
+              <text x="144" y="56" textAnchor="middle" fill="#ef4444" fontSize="8">{locale === "fi" ? "Hylätty" : "Abandoned"}</text>
+
+              <circle cx="248" cy="22" r="6" fill="#f59e0b" />
+              <text x="248" y="44" textAnchor="middle" fill="currentColor" className="text-foreground" fontSize="9" fontWeight="500">L-BERM</text>
+              <text x="248" y="56" textAnchor="middle" fill="#f59e0b" fontSize="8">{locale === "fi" ? "Demotoitu" : "Demoted"}</text>
+
+              <circle cx="352" cy="22" r="6" fill="#22c55e" />
+              <text x="352" y="44" textAnchor="middle" fill="currentColor" className="text-foreground" fontSize="9" fontWeight="500">v15</text>
+              <text x="352" y="56" textAnchor="middle" fill="#22c55e" fontSize="8">{locale === "fi" ? "Aktiivinen" : "Active"}</text>
+
+              <circle cx="456" cy="22" r="6" fill="#22c55e" />
+              <text x="456" y="44" textAnchor="middle" fill="currentColor" className="text-foreground" fontSize="9" fontWeight="500">v16</text>
+              <text x="456" y="56" textAnchor="middle" fill="#22c55e" fontSize="8">{locale === "fi" ? "Aktiivinen" : "Active"}</text>
+
+              <circle cx="560" cy="22" r="10" fill="none" stroke="#22c55e" strokeWidth="2" />
+              <circle cx="560" cy="22" r="6" fill="#22c55e" />
+              <text x="560" y="44" textAnchor="middle" fill="currentColor" className="text-foreground" fontSize="9" fontWeight="600">v17</text>
+              <text x="560" y="56" textAnchor="middle" fill="#22c55e" fontSize="8" fontWeight="600">{locale === "fi" ? "Nykyinen" : "Current"}</text>
+            </svg>
+          </div>
+
           <div className="overflow-x-auto">
             <table className="w-full min-w-[34rem] border-collapse text-xs">
               <thead>

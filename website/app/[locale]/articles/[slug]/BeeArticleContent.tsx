@@ -130,7 +130,7 @@ const COPY = {
 } as const;
 
 export function BeeArticleContent({ locale }: { locale: Locale }) {
-  const d = COPY[locale];
+  const d = (COPY as Record<string, typeof COPY.en>)[locale] ?? COPY.en;
 
   return (
     <div className="article-body">

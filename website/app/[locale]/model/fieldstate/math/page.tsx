@@ -26,7 +26,7 @@ type Copy = {
   fieldstateLink: string;
 };
 
-const t: Record<Locale, Copy> = {
+const t: Record<string, Copy> = {
   en: {
     metaTitle: "BERM v17 mathematics – Extinction Field",
     metaDescription: "The measurement-aware BERM v17 specification of BERM.",

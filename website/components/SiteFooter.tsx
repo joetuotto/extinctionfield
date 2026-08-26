@@ -1,8 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import type { Locale } from "@/lib/i18n";
 
-const COPY = {
+const COPY: Record<string, {
+  label: string;
+  summary: (n: number) => string;
+  license: string;
+  specLink: string;
+  author: string;
+}> = {
   en: {
     label: "BERM v17 · Bio-Electromagnetic Reproductive Model",
     summary: (n: number) => `Three-channel framework (ELF · IF · RF). ${n} peer-reviewed references.`,
@@ -17,10 +24,31 @@ const COPY = {
     specLink: "Mallin määrittely",
     author: "Otto Juote · MSc Biomedicine (LSE) · Itsenäinen tutkimus",
   },
-} as const;
+  ja: {
+    label: "BERM v17 · 生体電磁気生殖モデル",
+    summary: (n: number) => `3チャネルフレームワーク（ELF · IF · RF）。${n}件の査読済み文献。`,
+    license: "コード: MIT · ドキュメント: CC BY-4.0",
+    specLink: "モデル仕様",
+    author: "Otto Juote · MSc Biomedicine (LSE) · 独立研究",
+  },
+  fr: {
+    label: "BERM v17 · Modèle bio-électromagnétique de la reproduction",
+    summary: (n: number) => `Cadre à trois canaux (ELF · IF · RF). ${n} références évaluées par des pairs.`,
+    license: "Code : MIT · Docs : CC BY-4.0",
+    specLink: "Spécification du modèle",
+    author: "Otto Juote · MSc Biomedicine (LSE) · Recherche indépendante",
+  },
+  ko: {
+    label: "BERM v17 · 생체전자기 생식 모델",
+    summary: (n: number) => `3채널 프레임워크 (ELF · IF · RF). ${n}개의 동료심사 참고문헌.`,
+    license: "코드: MIT · 문서: CC BY-4.0",
+    specLink: "모델 사양",
+    author: "Otto Juote · MSc Biomedicine (LSE) · 독립 연구",
+  },
+};
 
 export function SiteFooter({ locale, referenceCount }: { locale: string; referenceCount: number }) {
-  const language = locale === "fi" ? "fi" : "en";
+  const language = (["fi", "ja", "fr", "ko"].includes(locale) ? locale : "en") as Locale;
   const c = COPY[language];
 
   return (

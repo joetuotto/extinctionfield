@@ -29,7 +29,7 @@ type Copy = {
   modelLink: string;
 };
 
-const t: Record<Locale, Copy> = {
+const t: Record<string, Copy> = {
   en: {
     title: "FieldState measurement specification",
     subtitle:
