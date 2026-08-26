@@ -474,15 +474,6 @@ function logToX(logF: number, chartX: number, chartW: number): number {
   return chartX + ((logF - logMin) / (logMax - logMin)) * chartW;
 }
 
-function formatFreq(hz: number): string {
-  if (hz < 1) return `${hz} Hz`;
-  if (hz < 1000) return `${hz} Hz`;
-  if (hz < 1_000_000) return `${(hz / 1000).toFixed(hz % 1000 === 0 ? 0 : 1)} kHz`;
-  if (hz < 1_000_000_000) return `${(hz / 1_000_000).toFixed(hz % 1_000_000 === 0 ? 0 : 1)} MHz`;
-  if (hz < 1_000_000_000_000) return `${(hz / 1_000_000_000).toFixed(1)} GHz`;
-  return `${(hz / 1_000_000_000_000).toFixed(0)} THz`;
-}
-
 const TICK_FREQS: [number, string][] = [
   [0.1, "0.1 Hz"],
   [1, "1 Hz"],

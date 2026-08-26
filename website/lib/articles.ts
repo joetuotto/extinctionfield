@@ -38,11 +38,11 @@ export const ARTICLES: Article[] = [
     id: "spectrum",
     slug: "spectrum",
     title: "The Spectrum of Proof",
-    titleFi: "Todistuksen spektri",
+    titleFi: "Todisteiden kirjo",
     subtitle:
       "Every frequency has been proven biologically active — except the one worth $1.9 trillion a year",
     subtitleFi:
-      "Jokainen taajuus on todistettu biologisesti aktiiviseksi — paitsi se joka on 1,9 biljoonan dollarin arvoinen vuodessa",
+      "Jokainen taajuus on todistettu biologisesti aktiiviseksi — paitsi se, joka on 1,9 biljoonan dollarin arvoinen vuodessa",
     icon: "rf-safety",
     publishedDate: "2026-08-22",
     readingTimeMinutes: 14,
@@ -70,7 +70,7 @@ export const ARTICLES: Article[] = [
     subtitle:
       "Why testosterone decline and cortisol rise produce behavioral suppression greater than either alone",
     subtitleFi:
-      "Miksi testosteronin lasku ja kortisolin nousu tuottavat käyttäytymisen suppression joka on suurempi kuin kummankaan yksinään",
+      "Miksi testosteronin lasku ja kortisolin nousu tuottavat voimakkaamman käyttäytymisen vaimentumisen kuin kumpikin yksinään",
     icon: "human",
     heroImage: "/images/testosterone-molecule.png",
     publishedDate: "2026-08-25",

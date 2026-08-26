@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CausalAtlas } from "@/components/CausalAtlas";
-import { NODES, ALL_STAGES, GUIDED_SCENES, t, type Locale } from "@/lib/causalAtlasData";
+import { NODES, ALL_STAGES, t, type Locale } from "@/lib/causalAtlasData";
 
 const COPY = {
   en: {

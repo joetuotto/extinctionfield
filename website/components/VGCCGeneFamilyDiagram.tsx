@@ -34,16 +34,6 @@ const NODE_RX = 72;
 const NODE_RY = 28;
 const ORBIT = 200;
 
-/* Angular positions (6 nodes evenly spaced, offset so top-left/top-right split) */
-const ANGLES = [
-  -120, // top-left  -> CACNA1C
-  -60,  // top-right -> CACNA1D
-  -180, // left      -> CACNA1A
-  120,  // bottom-left  -> CACNA1G
-  180,  // bottom (mapped to 180 = left-bottom center, shift to 160 for clarity) -> CACNA1H
-  60,   // bottom-right -> CACNA1I
-];
-
 /* Adjusted angles for better spacing */
 const NODE_ANGLES = [-110, -50, -170, 130, 180, 50];
 

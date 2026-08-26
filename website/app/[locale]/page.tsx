@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, ArrowRight, Shield, Dna } from "lucide-react";
 import { BermMasterInfographic } from "@/components/BermMasterInfographic";
@@ -341,7 +342,32 @@ export default async function Home({
 
   return (
     <div className="max-w-5xl mx-auto px-6">
-      {/* ── 1. Hero infographic ── */}
+      {/* ── 1. Hero image ── */}
+      <header className="relative -mx-6 overflow-hidden rounded-b-2xl sm:rounded-2xl sm:mx-0 mt-0 sm:mt-8 mb-14">
+        <div className="relative min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
+          <Image
+            src="/images/hero-fertilization.jpg"
+            alt=""
+            fill
+            priority
+            className="object-cover object-[65%_center]"
+            sizes="(max-width: 1024px) 100vw, 1024px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/5" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 sm:p-10 lg:p-14">
+            <div className="max-w-2xl">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold tracking-[-0.02em] leading-[1.12] mb-4 text-white drop-shadow-lg">
+                {d.heroTitle}
+              </h1>
+              <p className="text-base sm:text-lg leading-relaxed text-white/90 mb-3 drop-shadow">{d.heroDeck}</p>
+              <p className="text-sm sm:text-base leading-relaxed text-white/70">{d.heroContext}</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* ── 1b. Master infographic ── */}
       <BermMasterInfographic locale={activeLocale} />
 
       {/* ── 2. Proxy-masking elimination ── */}

@@ -60,12 +60,12 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
         { id: "causal-diagram", label: "Rekisteröity kausaalireitti" },
         { id: "organ-states", label: "Elintilat" },
         { id: "asfr-tfr", label: "ASFR → TFR" },
-        { id: "testosterone-threshold", label: "T → TFR -kynnös" },
+        { id: "testosterone-threshold", label: "T → TFR -kynnys" },
         { id: "causal-structure", label: "Kausaalirakenne" },
       ],
     },
     {
-      title: "Modulooma",
+      title: "Modulomi",
       sections: [
         { id: "modulome", label: "7-tasoinen modulooma" },
       ],
@@ -74,8 +74,8 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
       title: "Matemaattinen määrittely",
       sections: [
         { id: "premise", num: "§1", label: "Fysiikan premissi" },
-        { id: "evo-calibration", num: "§1b", label: "Evoluutionäärinen kalibraatio" },
-        { id: "three-channel-derivation", num: "§2b", label: "Kolmikanavajohdannainen" },
+        { id: "evo-calibration", num: "§1b", label: "Evolutiivinen kalibrointi" },
+        { id: "three-channel-derivation", num: "§2b", label: "Kolmikanavajohtaminen" },
         { id: "fieldstate", num: "§2", label: "FieldState" },
         { id: "static-interface-math", num: "§3", label: "Staattinen rajapinta" },
         { id: "organ-state", num: "§4", label: "Elintila" },

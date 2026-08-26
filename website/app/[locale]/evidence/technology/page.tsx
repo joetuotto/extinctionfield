@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Radio, Zap, Lightbulb, Wifi, Smartphone, Car, ArrowRight } from "lucide-react";
+import { Radio, Zap, Smartphone, ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 
 interface TechProfile {

@@ -96,7 +96,7 @@ const t: Record<Locale, Copy> = {
       {
         title: "4. Analysoi FieldState-kontrasti, ei oletettua skalaaria",
         text: [
-          "Raportoi nimettyjen FieldState-piirteiden havaitut erot ja niiden epävarmuus. Testaa ensisijainen päätepiste ennakkorekisteröityä kontrastia vasten; käsittele toissijaisia spektri-, orientaatio- ja ajoitusanalyysejä eksploratiivisina, ellei niitä rekisteröity ennakolta.",
+          "Raportoi nimettyjen FieldState-piirteiden havaitut erot ja niiden epävarmuus. Testaa ensisijainen päätepiste ennakkorekisteröityä kontrastia vasten; käsittele toissijaisia spektri-, orientaatio- ja ajoitusanalyysejä alustavina, ellei niitä rekisteröity ennakolta.",
           "Toista protokolla riippumattomassa laboratoriossa ja mahdollisuuksien mukaan toisella instrumenttiketjulla. Protokolla ei ennusta kiinteää kertavaikutusta: vaikutuksen koko on empiirinen kysymys.",
         ],
       },
@@ -104,7 +104,7 @@ const t: Record<Locale, Copy> = {
         title: "5. Julkaise auditoitava paketti",
         text: [
           "Julkaise ennakkorekisteröinti, raaka- tai pääsykontrolloidut raakakenttätallenteet, kalibrointisertifikaatit, kammiolokit, biologinen data, analyysikoodi, satunnaistus-/sokkoutustieto, poikkeamat ja nollatulokset.",
-          "Luokittele syötteen laatu osittaiseksi tai mittausvalmiiksi FieldState-dataksi. Mittausvalmis data vaatii silti replikaation ja itsenäisesti tulkittavan päätepisteen ennen kuin se voi informoida elintilan mappingia.",
+          "Luokittele syötteen laatu osittaiseksi tai mittausvalmiiksi FieldState-dataksi. Mittausvalmis data vaatii silti replikaation ja itsenäisesti tulkittavan päätepisteen ennen kuin se voi tukea elintilan kartoitusta.",
         ],
       },
     ],

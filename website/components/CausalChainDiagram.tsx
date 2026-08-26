@@ -328,7 +328,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
                 x={22}
                 y={band.top + (band.bottom - band.top) / 2 + 12}
                 fill="var(--foreground-muted)"
-                fontSize="11"
+                fontSize="13"
                 fontWeight="600"
                 dominantBaseline="middle"
                 fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -403,7 +403,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
                         : (from.y + from.h + to.y) / 2
                     }
                     fill={color}
-                    fontSize={10}
+                    fontSize={11}
                     fontWeight="500"
                     textAnchor="middle"
                     dominantBaseline="middle"
@@ -467,7 +467,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
                   x={n.x + n.w - 22}
                   y={n.y + 17}
                   fill={color}
-                  fontSize={9}
+                  fontSize={11}
                   fontWeight="700"
                   textAnchor="middle"
                   dominantBaseline="middle"
@@ -481,7 +481,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
                     x={n.x + 12}
                     y={n.y + (n.sublabel ? 24 : n.h / 2 + 1)}
                     fill="var(--foreground)"
-                    fontSize={n.label.length > 18 ? 12 : 13}
+                    fontSize={13}
                     fontWeight="600"
                     dominantBaseline="middle"
                     fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
@@ -496,7 +496,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
                       x={n.x + 12}
                       y={n.y + 44}
                       fill="var(--foreground-muted)"
-                      fontSize={10}
+                      fontSize={11}
                       dominantBaseline="middle"
                       fontFamily="ui-monospace, SFMono-Regular, monospace"
                       textLength={n.sublabel.length * 6 > textW ? textW : undefined}
@@ -511,7 +511,7 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
                       x={n.x + 12}
                       y={n.y + n.h - 8}
                       fill="var(--foreground-muted)"
-                      fontSize={9}
+                      fontSize={11}
                       dominantBaseline="auto"
                       fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                     >
@@ -534,10 +534,10 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
               return (
                 <g key={lvl} transform={`translate(${legendX + i * spacing}, ${legendY})`}>
                   <rect x={0} y={-7} width={14} height={14} rx={3} fill={`${c}25`} stroke={c} strokeWidth={1} />
-                  <text x={8} y={0} fill={c} fontSize={8} fontWeight="700" textAnchor="middle" dominantBaseline="middle" fontFamily="ui-monospace, monospace">
+                  <text x={8} y={0} fill={c} fontSize={11} fontWeight="700" textAnchor="middle" dominantBaseline="middle" fontFamily="ui-monospace, monospace">
                     {lvl}
                   </text>
-                  <text x={20} y={1} fill="var(--foreground-muted)" fontSize={9} fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" dominantBaseline="middle" textLength={Math.min(lbl.length * 5, spacing - 26)} lengthAdjust="spacingAndGlyphs">
+                  <text x={20} y={1} fill="var(--foreground-muted)" fontSize={11} fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" dominantBaseline="middle" textLength={Math.min(lbl.length * 5, spacing - 26)} lengthAdjust="spacingAndGlyphs">
                     {lbl}
                   </text>
                 </g>

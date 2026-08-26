@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Compass } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { BermIcon } from "@/components/BermIcon";
 import { DifferentialSusceptibility } from "@/components/DifferentialSusceptibility";
 import { CitationLink } from "@/components/CitationLink";
 
@@ -118,7 +119,7 @@ const COPY = {
         paragraphs: [
           "Tbahriti ym. (2026, Sleep Biol Rhythms 24(2):195–214) esittävät PRISMA 2020 -systemaattisen katsauksen: 55 tutkimusta 892 seulotusta, tarkastellen EMF:n vaikutuksia sirkadiaanirytmeihin. 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 % basaalitasosta). Kellogenien ekspressio muuttuu. Uniarkkitehtuurin muutokset dokumentoitu. EMF:n melatoniinisuppressio on pienempi kuin valon aiheuttama (>90 %).",
           "Tukee suoraan BERM:n polkua C (EMF → pineaalinen melatoniinisuppressio → GnRH-pulsaatiohäiriö → HPG → gonadifunktio). 20–50 %:n suppressio on biologisesti merkittävä ja yhdenmukainen BERM:n v17_night_fraction()-funktion kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniinisuppressio). Suppression suuruus on pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen sen kanssa, että BERM mallintaa EMF:n yhtenä useista yöllisistä häiriöreiteistä, ei ainoana ajurina. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat metodologiset standardit; 48 % eläintutkimuksista ilman riittävää sham-kontrollia. Siirtymä soluvaikutuksista systeemiseen sirkadiaaniseen häiriöön ei ole täysin osoitettu kliinisesti.",
-          "BERM-tulkinta: WHO:n ja ICNIRP:n evidenssiluokitukset ovat alttiina samoille systemaattisille vinoumille jotka BERM tunnistaa: proxy-altistusmittauksen vaimennusbias, kontrolliryhmän kontaminaatio (lab baseline bias) ja rahoittajan vinouma (Huss 2007: teollisuusrahoitteiset tutkimukset löytävät harvemmin haittoja). Jos nämä vinoumat ovat todellisia, 'kohtalainen varmuus' standardikehyksessä voi vastata korkeampaa varmuutta bias-korjatussa kehyksessä. BERM käsittelee institutionaalisia evidenssihierarkioita CONTEXT_ONLY-roolissa koska ne ovat BERM:n epistemologian ulkopuolisia, ei siksi että alla oleva evidenssi olisi heikkoa.",
+          "BERM-tulkinta: WHO:n ja ICNIRP:n evidenssiluokitukset ovat alttiina samoille systemaattisille vinoumille jotka BERM tunnistaa: proxy-altistusmittauksen vaimennusvinouma, kontrolliryhmän kontaminaatio (laboratorion lähtötasovinouma) ja rahoittajan vinouma (Huss 2007: teollisuusrahoitteiset tutkimukset löytävät harvemmin haittoja). Jos nämä vinoumat ovat todellisia, 'kohtalainen varmuus' standardikehyksessä voi vastata korkeampaa varmuutta vinoumakorjatussa kehyksessä. BERM käsittelee institutionaalisia evidenssihierarkioita CONTEXT_ONLY-roolissa koska ne ovat BERM:n epistemologian ulkopuolisia, ei siksi että alla oleva evidenssi olisi heikkoa.",
         ],
         studies: [
           { citation: "Tbahriti ym. (Sleep Biol Rhythms)", year: 2026, note: "PRISMA, 55 tutkimusta: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota 20–50 %. Vain 27 % täytti korkeat standardit." },
@@ -163,7 +164,7 @@ export default async function MagnetoreceptionPage({ params }: { params: Promise
         {d.backLink}
       </Link>
 
-      <PageHeader icon={Compass} title={d.title} subtitle={d.subtitle} />
+      <PageHeader icon={Compass} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="physics" size={28} className="text-accent" />} />
 
       {/* Thematic evidence narratives */}
       <section className="mb-16 border-t editorial-rule pt-6">

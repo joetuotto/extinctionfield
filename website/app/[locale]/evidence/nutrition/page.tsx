@@ -103,10 +103,10 @@ const COPY = {
     ],
     section2Title: "Avainevidence",
     section3Title: "Ravitsemukselliset modulaattorit",
-    section3Sub: "Neljä tekijää jotka kontrolloivat CRY-toimintaa eri mekanismein.",
+    section3Sub: "Neljä tekijää, jotka kontrolloivat CRY-toimintaa eri mekanismein.",
     section4Title: "Paastoparadoksi",
     section4: [
-      "Evidenssissä on ilmeinen ristiriita. AMPK, solun ravintosensori joka aktivoituu paastossa, fosforyloi CRY1:n ja kohdistaa sen hajotettavaksi (Lamia ym. 2009, Science). Kuitenkin ainoa ihmisen magnetoreseptiota osoittanut tutkimus käytti nälkiintyneitä koehenkilöitä (Chae 2019). Jos paasto tuhoaa juuri sen proteiinin joka aistii magneettikenttiä, miten paasto voi tehostaa magnetoreseptiota?",
+      "Evidenssissä on ilmeinen ristiriita. AMPK, solun ravintosensori, joka aktivoituu paastossa, fosforyloi CRY1:n ja kohdistaa sen hajotettavaksi (Lamia ym. 2009, Science). Kuitenkin ainoa ihmisen magnetoreseptiota osoittanut tutkimus käytti nälkiintyneitä koehenkilöitä (Chae 2019). Jos paasto tuhoaa juuri sen proteiinin, joka aistii magneettikenttiä, miten paasto voi tehostaa magnetoreseptiota?",
       "Ratkaisu piilee CRY:n laadussa verrattuna määrään. Paasto hajottaa vanhoja CRY-molekyylejä AMPK-Ser71-FBXL3-reitin kautta. Mutta paasto lisää samanaikaisesti hapettuneiden flavoproteiinien poolia rasvahappojen beta-oksidaation kautta — mikä tarkoittaa enemmän FAD:ia saatavilla. Kun solu syntetisoi korvaavia CRY-molekyylejä, ne ladataan tuoreella FAD-kromoforilla tehokkaammin. Nettotulos: vähemmän CRY-molekyylejä, mutta jokainen on paremmin varustettu magnetoreseptioon.",
       "Tämä ennustaa käänteisen U-annosvasteen: lyhyt paasto (4-12t) parantaa CRY:n laatua; pitkitetty paasto (>24t) ehdyttää proteiinipoolin alle toiminnallisen kynnyksen. B2-lisä siirtää huippua oikealle.",
       "Paastoparadoksin ratkaisu on L*-tason hypoteesi. Yksittäiset biokemialliset vaiheet ovat kukin E-tason vahvistettuja faktoja. Synteesi ei ole suoraan testattu.",

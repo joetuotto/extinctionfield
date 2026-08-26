@@ -6,7 +6,6 @@ import {
   EVIDENCE_LABELS,
   LEVEL_TO_STAGE,
   STAGE_BANDS,
-  ECOLOGY_BAND,
   ALL_STAGES,
   GUIDED_SCENES,
   STEPPER_PATHS,
@@ -17,7 +16,6 @@ import {
   t,
   localizedDetail,
   type EpistemicLevel,
-  type Locale,
 } from "../causalAtlasData";
 
 describe("Bilingual data completeness", () => {

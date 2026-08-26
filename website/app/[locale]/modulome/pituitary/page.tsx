@@ -125,20 +125,20 @@ const COPY = {
     hormoneLabel: "Hormone",
   },
   fi: {
-    title: "Suojaamaton paarauhanen",
+    title: "Suojaamaton päärauhanen",
     subtitle:
-      "Aivolisake on sirkumventrikulaarinen elin veri-aivoesteen ULKOPUOLELLA. Se saatelee KAIKKIA endokriinisia akseleita. T-tyypin kalsiumkanavat jokaisessa solutyypissa.",
+      "Aivolisäke on sirkumventrikulaarinen elin veri-aivoesteen ULKOPUOLELLA. Se säätelee KAIKKIA endokriinisiä akseleita. T-tyypin kalsiumkanavat jokaisessa solutyypissä.",
     backLink: "← Takaisin moduloomiin",
 
     s1Title: "Veri-aivoesteen ulkopuolella",
     s1p1:
-      "Aivolisake on ihmiskehon EMF-herkin endokriininen elin. Toisin kuin aivot, se on sirkumventrikulaarinen elin — se sijaitsee veri-aivoesteen ULKOPUOLELLA. Jokaisella veressa kiertavalla molekyylilla on suora paasy aivolisakkeen soluihin. Ei ole suojaavaa estetta vaimentamaan sahkomagneettisen kentan vaikutuksia. Esteen vaimennuskerroin chi_barrier = 1,0 (ei vaimennusta).",
+      "Aivolisäke on ihmiskehon EMF-herkin endokriininen elin. Toisin kuin aivot, se on sirkumventrikulaarinen elin — se sijaitsee veri-aivoesteen ULKOPUOLELLA. Jokaisella veressa kiertävällä molekyylillä on suora pääsy aivolisäkkeen soluihin. Ei ole suojaavaa estettä vaimentamaan sähkömagneettisen kentän vaikutuksia. Esteen vaimennuskerroin chi_barrier = 1,0 (ei vaimennusta).",
     s1p2:
-      "Tama yksittainen rauhanen saatelee samanaikaisesti lisaantymista (FSH, LH), kasvua (GH), stressia (ACTH), kilpirauhasen toimintaa (TSH), laktaatiota (prolaktiini) ja vesitasapainoa (ADH). Aivolisakkeen toiminnan hairio ei vaikuta yhteen jarjestelmaan — se vaikuttaa kaikkiin samanaikaisesti. Aivolisake on konvergenssipiste, jossa EMF-altistus muuttuu monisysteemiseksi endokriiniseksi hairioksi.",
+      "Tämä yksittäinen rauhanen säätelee samanaikaisesti lisääntymistä (FSH, LH), kasvua (GH), stressia (ACTH), kilpirauhasen toimintaa (TSH), laktaatiota (prolaktiini) ja vesitasapainoa (ADH). Aivolisakkeen toiminnan häiriö ei vaikuta yhteen järjestelmään — se vaikuttaa kaikkiin samanaikaisesti. Aivolisäke on konvergenssipiste, jossa EMF-altistus muuttuu monisysteemiseksi endokriiniseksi häiriöksi.",
     s1p3:
-      "Jokainen hormoneja erittava solutyyppi aivolisakkessa kayttaa T-tyypin (Cav3) janniteherkkia kalsiumkanavia stimulus-sekreetio-kytkentaan. Nama matalan jannitekynnyksen kanavat toimivat lahella lepopotentiaalia — juuri siella missa Schwanin ennustamat EMF-indusoidut jannitehairtiot ovat suurimpia.",
+      "Jokainen hormoneja erittävä solutyyppi aivolisäkkeessä käyttää T-tyypin (Cav3) jänniteherkkiä kalsiumkanavia stimulus-sekreetio-kytkentään. Nämä matalan jännitekynnyksen kanavat toimivat lähellä lepopotentiaalia — juuri siellä missä Schwanin ennustamat EMF-indusoidut jännitehäiriöt ovat suurimpia.",
 
-    s2Title: "Kanavaprofiiili",
+    s2Title: "Kanavaprofiili",
     s2Channels: [
       {
         name: "Gonadotrofi (Cav3)",
@@ -149,88 +149,88 @@ const COPY = {
       {
         name: "Laktotrofi (Cav3)",
         function: "Spontaani syttyminen → toninen prolaktiinin vapautuminen",
-        mechanism: "T-tyypin kanavat yllapitavat tahdistinaktiivisuutta; DA-inhibitio moduloi",
+        mechanism: "T-tyypin kanavat ylläpitävät tahdistinaktiivisuutta; DA-inhibitio moduloi",
         hormone: "Prolaktiini",
       },
       {
         name: "Kortikotrofi (Cav3)",
         function: "CRH-stimuloitu ACTH:n eritys",
-        mechanism: "T-tyypin Ca2+-sisaanvirtaus → vesikulien eksosytoosi → ACTH-vapautuminen",
+        mechanism: "T-tyypin Ca2+-sisäänvirtaus → vesikulien eksosytoosi → ACTH-vapautuminen",
         hormone: "ACTH",
       },
       {
         name: "Tyreotrofi (Cav3)",
         function: "TRH-stimuloitu TSH:n eritys",
-        mechanism: "T-tyypin Ca2+-sisaanvirtaus → TSH-eksosytoosi",
+        mechanism: "T-tyypin Ca2+-sisäänvirtaus → TSH-eksosytoosi",
         hormone: "TSH",
       },
     ],
     s2Note:
-      "T-tyypin (Cav3) kanavat ovat JOKAISESSA aivolisakkeen solutyypissa. Ne ovat matalan jannitekynnyksen kanavia jotka toimivat lahella lepopotentiaalia — alueella jossa Schwanin delta-Vm on suurin. Tama tekee aivolisakkeen ainutlaatuisesti haavoittuvaksi: chi_channel on maksimissaan koska kanavat ovat jannite-bifurkaatiopisteessaan.",
+      "T-tyypin (Cav3) kanavat ovat JOKAISESSA aivolisäkkeen solutyypissä. Ne ovat matalan jännitekynnyksen kanavia jotka toimivat lähellä lepopotentiaalia — alueella jossa Schwanin delta-Vm on suurin. Tämä tekee aivolisäkkeen ainutlaatuisesti haavoittuvaksi: chi_channel on maksimissaan koska kanavat ovat jännite-bifurkaatiopisteessaan.",
 
     s3Title: "Mekanismiketju",
     s3Chain:
-      "EMF → Schwanin delta-Vm → Cav3-ikkunavirran siirtymaa → Ca2+ ↑ → GnRH-pulssin dekoodauksen hairio → FSH/LH-suhteen vaaristyminen → follikkelikypsymisen / spermatogeneesin hairio",
+      "EMF → Schwanin delta-Vm → Cav3-ikkunavirran siirtymää → Ca2+ ↑ → GnRH-pulssin dekoodauksen häiriö → FSH/LH-suhteen vääristyminen → follikkelikypsymisen / spermatogeneesin häiriö",
     s3p1:
-      "Kriittinen mekanismi on GnRH-pulssitaajuuden dekoodaus. Hypotalamus lahettaa GnRH:ta erillisinaa pulsseina: nopeat pulssit (30 min valein) vapauttavat ensisijaisesti LH:ta, hitaat pulssit (2–4 h valein) ensisijaisesti FSH:ta. Gonadotrofisolu erottelee nama taajuudet T-tyypin kanavien valittaman Ca2+-dynamiikan avulla. EMF-indusoitu Cav3-ikkunavirran hairiö ei yksinkertaisesti lisaa tai vahenna hormonivolyymia — se vaaristaa taajuusdekooderin, aiheuttaen vaaran FSH/LH-suhteen.",
+      "Kriittinen mekanismi on GnRH-pulssitaajuuden dekoodaus. Hypotalamus lähettää GnRH:ta erillisinä pulsseina: nopeat pulssit (30 min välein) vapauttavat ensisijaisesti LH:ta, hitaat pulssit (2–4 h välein) ensisijaisesti FSH:ta. Gonadotrofisolu erottelee nämä taajuudet T-tyypin kanavien välittämän Ca2+-dynamiikan avulla. EMF-indusoitu Cav3-ikkunavirran häiriö ei yksinkertaisesti lisää tai vähennä hormonivolyymia — se vääristää taajuusdekooderin, aiheuttaen väärän FSH/LH-suhteen.",
     s3p2:
-      "Alavirran seuraukset eroavat sukupuolittain. Naisilla FSH/LH-suhteen vaaristyminen hairitsee follikulaari-luteaali-siirtymaa, heikentaen ovulaatiota. Miehilla se hairitsee Sertoli-solujen tukea spermatogeneesille. Molemmat vaikutukset konvergoivat hedelmallisyyden heikkenemiseen ilman etta gonadotropiinitasot valttamatta muuttuvat — mika on miksi standardit endokriiniset paneelit voivat ohittaa vaikutuksen.",
+      "Alavirran seuraukset eroavat sukupuolittain. Naisilla FSH/LH-suhteen vääristyminen häiritsee follikulaari-luteaali-siirtymää, heikentäen ovulaatiota. Miehillä se häiritsee Sertoli-solujen tukea spermatogeneesille. Molemmat vaikutukset konvergoivat hedelmällisyyden heikkenemiseen ilman että gonadotropiinitasot välttämättä muuttuvat — mikä on miksi standardit endokriiniset paneelit voivat ohittaa vaikutuksen.",
 
     s4Title: "Keskeinen evidenssi",
     s4Studies: [
       {
         citation: "IJMS 2026",
         year: 2026,
-        finding: "GnRH-reseptorin ekspressio kasvoi 2,45 GHz RF-altistuksessa. Aivolisake reagoi RF:aan saaadtelemalla omaa GnRH-herkkyyttaan — kompensatorinen vaste joka osoittaa toiminnallisen hairioon.",
+        finding: "GnRH-reseptorin ekspressio kasvoi 2,45 GHz RF-altistuksessa. Aivolisäke reagoi RF:aan säätelemällä omaa GnRH-herkkyyttään — kompensatorinen vaste joka osoittaa toiminnallisen häiriön.",
         level: "E",
       },
       {
         citation: "ELF 18 viikon tutkimus",
         year: 2024,
-        finding: "FSH laski naarasrotilla 18 viikon ELF-EMF-altistuksen jalkeen. Vaikutus oli aikariippuvainen ja progressiivinen, yhdenmukainen kumulatiivisen Cav3-hairioon kanssa.",
+        finding: "FSH laski naarasrotilla 18 viikon ELF-EMF-altistuksen jälkeen. Vaikutus oli aikariippuvainen ja progressiivinen, yhdenmukainen kumulatiivisen Cav3-häiriön kanssa.",
         level: "E",
       },
       {
-        citation: "Kalsium-LH-kytkenta",
+        citation: "Kalsium-LH-kytkentä",
         year: 2015,
-        finding: "LH:n vapautumista ohjaa ensisijaisesti Ca2+-nousu gonadotrofisoluissa. T-tyypin kanavat tarjoavat ensisijaisen Ca2+-sisaanvirtausreitin GnRH-stimuloidulle LH-eritykselle.",
+        finding: "LH:n vapautumista ohjaa ensisijaisesti Ca2+-nousu gonadotrofisoluissa. T-tyypin kanavat tarjoavat ensisijaisen Ca2+-sisäänvirtausreitin GnRH-stimuloidulle LH-eritykselle.",
         level: "E",
       },
       {
         citation: "Schwan 1957/Pall 2013",
         year: 1957,
-        finding: "Sahkomagneettiset kentat indusoivat kalvojannitehairioon delta-Vm:n joka on verrannollinen solun sateeseen ja kenttavoimakkuuteen. Suurin vaikutus lepopotentiaalissa — juuri missa T-tyypin kanavat toimivat.",
+        finding: "Sähkömagneettiset kentät indusoivat kalvojännitehäiriön delta-Vm:n joka on verrannollinen solun säteeseen ja kenttävoimakkuuteen. Suurin vaikutus lepopotentiaalissa — juuri missä T-tyypin kanavat toimivat.",
         level: "E",
       },
     ],
 
     s5Title: "Lindgren-analyysi",
     s5p1:
-      "Aivolisake edustaa suurinta EMF-herkkyyskonfiguraatiota BERM-kehyksessa:",
+      "Aivolisäke edustaa suurinta EMF-herkkyyskonfiguraatiota BERM-kehyksessä:",
     s5Criteria: [
-      "chi_barrier = 1,0 — BBB:n ulkopuolella, ei vaimennusta. Suora veripaasy.",
-      "chi_channel = maksimi — Cav3 jannite-bifurkaatiopisteessa. Matalan jannitekynnyksen kanavat lepo-Vm:ssa.",
-      "chi_convergence = maksimi — yksittainen elin saatelee KAIKKIA endokriinisia akseleita samanaikaisesti.",
-      "chi_cumulative — progressiivinen hairio osoitettu 18 viikon ELF-tutkimuksessa. Ei toipumistasannetta.",
+      "chi_barrier = 1,0 — BBB:n ulkopuolella, ei vaimennusta. Suora veripääsy.",
+      "chi_channel = maksimi — Cav3 jännite-bifurkaatiopisteessa. Matalan jännitekynnyksen kanavat lepo-Vm:ssa.",
+      "chi_convergence = maksimi — yksittäinen elin säätelee KAIKKIA endokriinisiä akseleita samanaikaisesti.",
+      "chi_cumulative — progressiivinen häiriö osoitettu 18 viikon ELF-tutkimuksessa. Ei toipumistasannetta.",
     ],
     s5p2:
-      "Aivolisake on EMF-herkin endokriininen elin koska se yhdistaa: ei estesuojausta (sirkumventrikulaarinen), maksimaalisen kanavaherkkyyden (Cav3 bifurkaatiossa) ja maksimaalisen alavirran vaikutuksen (saatelee kaikkia akseleita). Mika tahansa vaikutus tahan yhteen elimeen leviaa lisaantymiseen, aineenvaihduntaan, stressivasteeseen, kasvuun ja laktaatioon samanaikaisesti.",
+      "Aivolisäke on EMF-herkin endokriininen elin koska se yhdistää: ei estesuojausta (sirkumventrikulaarinen), maksimaalisen kanavaherkkyyden (Cav3 bifurkaatiossa) ja maksimaalisen alavirran vaikutuksen (säätelee kaikkia akseleita). Mikä tahansa vaikutus tähän yhteen elimeen leviaa lisääntymiseen, aineenvaihduntaan, stressivasteeseen, kasvuun ja laktaatioon samanaikaisesti.",
 
     s6Title: "Ennusteet",
     s6Predictions: [
       {
         id: "MOD-1",
-        text: "Selektiivinen T-tyypin kalsiumkanavan salpaaja (esim. TTA-P2 tai mibefradiili) estaa EMF-indusoidun FSH/LH-suhteen vaaristymisen aivolisakkeen gonadotrofisoluissa in vitro. Jos EMF-vaikutus toimii Cav3-ikkunavirran hairioon kautta, T-tyypin kanavien spesifinen salpaaaminen tulisi kumota FSH/LH-dekoodausvirhe vaikuttamatta L-tyypin tai muiden kanavien riippuvaisiin toimintoihin.",
+        text: "Selektiivinen T-tyypin kalsiumkanavan salpaaja (esim. TTA-P2 tai mibefradiili) estää EMF-indusoidun FSH/LH-suhteen vääristymisen aivolisäkkeen gonadotrofisoluissa in vitro. Jos EMF-vaikutus toimii Cav3-ikkunavirran häiriön kautta, T-tyypin kanavien spesifinen salpaaminen tulisi kumota FSH/LH-dekoodausvirhe vaikuttamatta L-tyypin tai muiden kanavien riippuvaisiin toimintoihin.",
         discriminating: true,
       },
     ],
 
-    seeAlso: "Katso myos",
+    seeAlso: "Katso myös",
     modulomeOverview: "Moduloomin yleiskatsaus",
     evidencePortal: "Evidenssirekisteri",
     citationLabel: "Viite",
     yearLabel: "Vuosi",
-    findingLabel: "Loydos",
+    findingLabel: "Löydös",
     levelLabel: "Taso",
     cellLabel: "Solutyyppi",
     functionLabel: "Toiminto",

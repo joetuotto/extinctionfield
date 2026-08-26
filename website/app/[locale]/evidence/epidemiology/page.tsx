@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BarChart3 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { BermIcon } from "@/components/BermIcon";
 import { ThreeChannelDiagram } from "@/components/ThreeChannelDiagram";
 import { RetrodictionCards } from "@/components/RetrodictionCards";
 import { CitationLink } from "@/components/CitationLink";
@@ -139,9 +140,9 @@ const COPY = {
         id: "5g-testis-ros",
         title: "5G-taajuusspesifinen testisevidenssi (Bektas 2026)",
         paragraphs: [
-          "Bektas ym. (2026, Bioelectromagnetics, bem.70043) tarjoavat ensimmäisen 5G-taajuusspesifisen testisdatan: rotat altistettiin 3,5 GHz RF-säteilylle (5G:n ydintaajuus), jolloin havaittiin testis- ja oksidatiivinen vaurio sekä heikentynyt testiksen antioksidanttikapasiteetti. CoQ10-lisäravinto lievitti vauriota, osoittaen mekanismin reversiibeliuden. Tämä operoi suoraan tason 5A→6 nuolella (ROS → siittiökaskadi) ja laajentaa oksidatiivisen stressin evidenssipohjan (Yakymenko 2016: 93/100; Panagopoulos 2025: 95 %) 5G-taajuusalueelle.",
+          "Bektas ym. (2026, Bioelectromagnetics, bem.70043) tarjoavat ensimmäisen 5G-taajuusspesifisen testisdatan: rotat altistettiin 3,5 GHz RF-säteilylle (5G:n ydintaajuus), jolloin havaittiin testis- ja oksidatiivinen vaurio sekä heikentynyt testiksen antioksidanttikapasiteetti. CoQ10-lisäravinto lievitti vauriota, osoittaen mekanismin palautuvuuden. Tämä toimii suoraan tason 5A→6 nuolella (ROS → siittiökaskadi) ja laajentaa oksidatiivisen stressin evidenssipohjan (Yakymenko 2016: 93/100; Panagopoulos 2025: 95 %) 5G-taajuusalueelle.",
           "Vaurion kudosspesifisyyttä korostavat samanaikaiset laadukkaat nollatulokset ihosoluissa: Meyer ym. (2026, Bioelectromagnetics, bem.70046) eivät löytäneet solujen elinvoimaisuusmuutosta, DNA-vauriota eikä mikronukleusmuodostusta HaCaT-keratinosyyteissä 50 Hz, 200 µT:ssa (sokkoutettu, sham-kontrolloitu, WST-1, komet, mikronukleus/CREST); Haidar ym. (2025, Scientific Reports) eivät löytäneet vaikutusta basaaliin ROS-tasoon eikä DNA-vauriota fibroblasteissa ja keratinosyyteissä 5G-moduloidulla 3,5 GHz:llä (SAR 0,08 ja 4 W/kg, 20–48 h). Samat tai vastaavat taajuudet, eri kudokset, eri tulokset — yhdenmukainen BERM:n χ(Ā)-valintasäännön kanssa, jossa vaste riippuu kudosspesifisestä VGIC-tiheydestä, mitokondrioiden ROS-kapasiteetista ja Ca²⁺-varastojen arkkitehtuurista. Molemmat mahdollisuudet (kudosspesifisyys tai riittämätön vaikutus) on pidettävä avoimina.",
-          "Tärkeää: Lab baseline bias on symmetrinen. Se ei selitä ainoastaan negatiivisia tuloksia — se tarkoittaa myös, että positiiviset tulokset aliarvioivat todellista vaikutuskokoa. Kun tutkimus havaitsee RF-altistuksen nostavan ROS:ia 30 % sham-kontrolleihin verrattuna, todellinen nousu altistamattomaan lähtötasoon nähden voi olla suurempi, koska sham-kontrollit ovat itsekin osittain altistuneet. Tämä systemaattinen aliarviointi koskee kaikkea in vitro EMF-tutkimusta, ei valikoivasti.",
+          "Tärkeää: Laboratorion lähtötasovinouma on symmetrinen. Se ei selitä ainoastaan negatiivisia tuloksia — se tarkoittaa myös, että positiiviset tulokset aliarvioivat todellista vaikutuskokoa. Kun tutkimus havaitsee RF-altistuksen nostavan ROS:ia 30 % sham-kontrolleihin verrattuna, todellinen nousu altistamattomaan lähtötasoon nähden voi olla suurempi, koska sham-kontrollit ovat itsekin osittain altistuneet. Tämä systemaattinen aliarviointi koskee kaikkea in vitro EMF-tutkimusta, ei valikoivasti.",
         ],
         studies: [
           { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, note: "3,5 GHz → testis-ROS-vaurio; CoQ10 lievittää. Ensimmäinen 5G-taajuusspesifinen testisdata." },
@@ -198,6 +199,7 @@ export default async function EpidemiologyPage({
         icon={BarChart3}
         title={d.title}
         subtitle={d.subtitle}
+        lensIcon={<BermIcon name="reproduction" size={28} className="text-accent" />}
       />
 
       {/* Thematic evidence narratives */}

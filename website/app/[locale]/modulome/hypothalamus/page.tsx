@@ -158,16 +158,16 @@ const COPY = {
     s3SectionTitle: "Kliininen rinnakkaisuus ja konteksti",
 
     /* 05 GLP-1 / Ozempic */
-    s5Title: "GLP-1-agonistit (semagluktidi / Ozempic)",
+    s5Title: "GLP-1-agonistit (semaglutiidi / Ozempic)",
     s5p1:
-      "GLP-1-reseptoriagonistit kuten semagluktidi (Ozempic/Wegovy) hillitsevät ruokahalua vaikuttamalla samaan nucleus arcuatus -kohteeseen. GLP-1-agonistit vähentävät AgRP/NPY-neuronien aktiivisuutta ja tehostavat POMC-neuronien signalointia — täsmälleen päinvastainen suunta kuin yllä kuvattu EMF-indusoitu Ca²⁺-vaikutus.",
+      "GLP-1-reseptoriagonistit kuten semaglutiidi (Ozempic/Wegovy) hillitsevät ruokahalua vaikuttamalla samaan nucleus arcuatus -kohteeseen. GLP-1-agonistit vähentävät AgRP/NPY-neuronien aktiivisuutta ja tehostavat POMC-neuronien signalointia — täsmälleen päinvastainen suunta kuin yllä kuvattu EMF-indusoitu Ca²⁺-vaikutus.",
     s5p2:
       "Tämä farmakologinen rinnakkaisuus on merkittävä: sama hermopiiri, jota GLP-1-agonistit terapeuttisesti vaimentavat, on piiri jonka EMF-indusoitu Ca²⁺-nousu voi kroonisesti aktivoida. Sama kohde, vastakkainen suunta. GLP-1-agonistien kliininen menestys ruokahalun ja painon vähentämisessä validoi ARC:n kriittiisenä solmuna ruokahalun säätelyssä ja vahvistaa, että tämän piirin modulointi tuottaa merkittäviä metabolisia vaikutuksia.",
 
     /* 06 Monitekijäinen konteksti */
     s6Title: "Monitekijäinen konteksti",
     s6p1:
-      "Lihavuus on monitekijäinen tila, jota ohjaavat genetiikka, ruokavalion koostumus, fyysinen aktiivisuus, suolistomikrobiomi, sosioekonomioset tekijät, unitottumukset, stressi ja endokriiniset häiriötekijät. BERM-kehys tunnistaa EMF-indusoidun hypotalamuksen Ca²⁺-dysregulaation YHTENÄ myötävaikuttavana tekijänä — ei ainoana syynä.",
+      "Lihavuus on monitekijäinen tila, jota ohjaavat genetiikka, ruokavalion koostumus, fyysinen aktiivisuus, suolistomikrobiomi, sosioekonomiset tekijät, unitottumukset, stressi ja endokriiniset häiriötekijät. BERM-kehys tunnistaa EMF-indusoidun hypotalamuksen Ca²⁺-dysregulaation YHTENÄ myötävaikuttavana tekijänä — ei ainoana syynä.",
     s6Points: [
       "Hypotalamus on EMF-indusoitujen Ca²⁺-muutosten KOHDE, joka myötävaikuttaa ruokahalun dysregulaatioon yhtenä tekijänä monien joukossa",
       "Väestötason lihavuustrendeillä on useita ajureita; EMF-altistus voi toimia aiemmin tunnistamattomana nälänsignaloinnin vahvistajana",

@@ -124,7 +124,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
           viewBox={`0 0 ${W} ${H}`}
           xmlns="http://www.w3.org/2000/svg"
           className="w-full min-w-[600px]"
-          style={{ fontFamily: "system-ui, sans-serif" }}
+
           role="img"
           aria-label="TFR threshold chart showing fertility rate trends by country"
         >
@@ -163,7 +163,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
             y={thresholdY}
             width={CW}
             height={PAD.top + CH - thresholdY}
-            fill="#EF4444"
+            fill="var(--status-refuted)"
             opacity={0.08}
           />
 
@@ -172,7 +172,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
             y1={thresholdY}
             x2={PAD.left + CW}
             y2={thresholdY}
-            stroke="#EF4444"
+            stroke="var(--status-refuted)"
             strokeWidth={1.5}
             strokeDasharray="6 4"
           />
@@ -180,8 +180,8 @@ export function ThresholdChart({ locale }: { locale: string }) {
             x={PAD.left + CW - 4}
             y={thresholdY - 5}
             textAnchor="end"
-            fill="#EF4444"
-            fontSize={10}
+            fill="var(--status-refuted)"
+            fontSize={13}
             fontWeight={500}
           >
             {copy.thresholdLabel}
@@ -269,7 +269,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
               y={PAD.top + CH + 18}
               textAnchor="middle"
               fill="var(--foreground)"
-              fontSize={10}
+              fontSize={11}
             >
               {yr}
             </text>
@@ -279,7 +279,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
             y={PAD.top + CH + 38}
             textAnchor="middle"
             fill="var(--foreground-muted)"
-            fontSize={11}
+            fontSize={13}
           >
             {copy.yearLabel}
           </text>
@@ -291,7 +291,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
               y={yLeftScale(t) + 4}
               textAnchor="end"
               fill="var(--foreground)"
-              fontSize={10}
+              fontSize={11}
             >
               {t}
             </text>
@@ -301,7 +301,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
             y={PAD.top + CH / 2}
             textAnchor="middle"
             fill={country.color}
-            fontSize={11}
+            fontSize={13}
             fontWeight={500}
             transform={`rotate(-90, 14, ${PAD.top + CH / 2})`}
           >
@@ -315,7 +315,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
               y={yRightScale(v) + 4}
               textAnchor="start"
               fill="var(--foreground)"
-              fontSize={10}
+              fontSize={11}
             >
               {v.toFixed(1)}
             </text>
@@ -325,7 +325,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
             y={PAD.top + CH / 2}
             textAnchor="middle"
             fill="var(--foreground-muted)"
-            fontSize={11}
+            fontSize={13}
             fontWeight={500}
             transform={`rotate(90, ${W - 8}, ${PAD.top + CH / 2})`}
           >

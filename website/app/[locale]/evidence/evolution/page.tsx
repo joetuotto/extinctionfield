@@ -77,8 +77,8 @@ const COPY = {
     section2Title: "Pohjoinen paketti",
     section2Intro: [
       "Kolme piirrettä koselektoitui Pohjois-Euroopan populaatioissa 10 000–6 000 vuotta sitten: siniset silmät (OCA2), laktoosinsietokyky (LCT) ja karjankasvatus. Perinteinen selitys käsittelee kutakin itsenäisenä adaptaationa — sinisiä silmiä D-vitamiinisynteesille, laktoosinsietokykyä kalsiumin imeytymiselle, karjaa ruokaturvalle.",
-      "BERM ehdottaa, että nämä kolme piirrettä optimoivat yhden molekyläärisen järjestelmän: kryptokromin. Siniset silmät maksimoivat fotonien pääsyn CRY1:lle verkkokalvon sinisissä tapeissa (optinen χ). Laktoosinsietokyky varmistaa ympärivuotisen riboflaviinin (B2) saannin maitotuotteiden kautta, tarjoten FAD-kromoforin jota CRY vaatii (molekulaarinen χ). Karjankasvatus on kulttuurinen adaptaatio joka ylläpitää B2-saantia pohjoisen talvien läpi kun keräily ja auringon synteesi eivät riitä.",
-      "Jos tämä pitää paikkansa, Pohjoinen paketti edustaa voimakkainta biologista EMF-herkkyyden vahvistinta missään ihmispopulaatiossa — ja selittää miksi Pohjois-Eurooppa sekä sähköistyi ensimmäisenä että laski ensimmäisenä alle uusiutumistason hedelmällisyyden.",
+      "BERM ehdottaa, että nämä kolme piirrettä optimoivat yhden molekyläärisen järjestelmän: kryptokromin. Siniset silmät maksimoivat fotonien pääsyn CRY1:lle verkkokalvon sinisissä tapeissa (optinen χ). Laktoosinsietokyky varmistaa ympärivuotisen riboflaviinin (B2) saannin maitotuotteiden kautta, tarjoten FAD-kromoforin jota CRY vaatii (molekulaarinen χ). Karjankasvatus on kulttuurinen adaptaatio, joka ylläpitää B2-saantia pohjoisen talvien läpi kun keräily ja auringon synteesi eivät riitä.",
+      "Jos tämä pitää paikkansa, Pohjoinen paketti edustaa voimakkainta biologista EMF-herkkyyden vahvistinta missään ihmispopulaatiossa — ja selittää, miksi Pohjois-Eurooppa sekä sähköistyi ensimmäisenä että laski ensimmäisenä alle uusiutumistason hedelmällisyyden.",
     ],
     section3Title: "Neljä historiallista vaihetta",
     section3Intro: "Biologisten χ-arvojen (kehittyneiden) ja ympäristön χ-arvojen (teknologisten) vuorovaikutus luo neljävaiheisen historiallisen kaavan joka heijastuu havaittuihin hedelmällisyyssiirtymiin.",
@@ -163,7 +163,6 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
 
         <div className="space-y-4">
           {CHI_SCALES.map((scale, i) => {
-            const color = CHAIN_EPISTEMIC_COLORS[scale.level as EpistemicLevel] ?? "#6B7280";
             return (
               <article
                 key={scale.id}
@@ -235,7 +234,7 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
             </thead>
             <tbody>
               {NORTHERN_TRAITS.map((trait) => {
-                const color = CHAIN_EPISTEMIC_COLORS[trait.level as EpistemicLevel] ?? "#6B7280";
+                const traitColor = CHAIN_EPISTEMIC_COLORS[trait.level as EpistemicLevel] ?? "#6B7280";
                 return (
                   <tr key={trait.id} className="border-b border-card-border/40">
                     <td className="py-3 pr-3 font-medium text-foreground">{isFi ? trait.trait_fi : trait.trait_en}</td>
@@ -243,7 +242,7 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
                     <td className="py-3 pr-3 text-foreground-muted text-xs leading-relaxed">{isFi ? trait.mechanism_fi : trait.mechanism_en}</td>
                     <td className="py-3 pr-3 text-foreground-muted text-xs leading-relaxed">{isFi ? trait.cry_link_fi : trait.cry_link_en}</td>
                     <td className="py-3">
-                      <span className="rounded-full px-1.5 py-0.5 text-xs font-semibold" style={{ backgroundColor: `${color}20`, color }}>
+                      <span className="rounded-full px-1.5 py-0.5 text-xs font-semibold" style={{ backgroundColor: `${traitColor}20`, color: traitColor }}>
                         {trait.level}
                       </span>
                     </td>
@@ -263,7 +262,7 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
         </p>
 
         <div className="space-y-4">
-          {HISTORICAL_PHASES.map((phase, i) => (
+          {HISTORICAL_PHASES.map((phase) => (
             <article
               key={phase.id}
               className="rounded-lg border border-card-border bg-card-bg p-5"

@@ -5,7 +5,6 @@ import {
   BROADCAST_BASE,
   MILITARY_BASE,
   type AttenuationParams,
-  type CountryParams,
   type TechDiffusion,
 } from "./countries";
 

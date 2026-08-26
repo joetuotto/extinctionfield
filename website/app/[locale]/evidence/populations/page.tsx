@@ -358,9 +358,6 @@ export default async function PopulationsPage({
   const isFi = locale === "fi";
   const d = isFi ? COPY.fi : COPY.en;
 
-  const confirmed = CASCADE_COMPARISON.filter((c) => c.confirmed === true).length;
-  const noData = CASCADE_COMPARISON.filter((c) => c.confirmed === null).length;
-  const contradicted = CASCADE_COMPARISON.filter((c) => c.confirmed === false).length;
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">

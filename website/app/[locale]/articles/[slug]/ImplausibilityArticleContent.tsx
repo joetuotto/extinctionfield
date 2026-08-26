@@ -119,7 +119,7 @@ const COPY = {
         "Miksi kritiikki on väärässä: York laskee kentän energian makroskooppisella tasolla. Lindgrenin χ(Ā) laskee sen SOLUKALVON IONIKANAVAN tasolla.",
         "Solukalvon kenttä: ~10⁷ V/m (70 mV / 7 nm). Ulkoinen kenttä: ~10⁻¹ V/m (60 Hz, 2 mT). Suhde: 10⁻⁸.",
         "York: ”10⁻⁸ suhteellinen muutos on liian pieni.”",
-        "Lindgren: ”Fotonin energia on 10⁻¹⁹ J. Rodopsiini havaitsee sen koska se on evoluutiossa optimoitu kvanttirajoille. Ionikanavan S4-sensori on evoluutiossa optimoitu solukalvon jännitteen havaitsemiseen kvanttirajoille. 10⁻⁸ suhteellinen muutos riittää koska sensori operoi saturaatiossa (χ ≈ 1).”",
+        "Lindgren: ”Fotonin energia on 10⁻¹⁹ J. Rodopsiini havaitsee sen, koska se on evoluutiossa optimoitu kvanttirajoille. Ionikanavan S4-sensori on evoluutiossa optimoitu solukalvon jännitteen havaitsemiseen kvanttirajoille. 10⁻⁸ suhteellinen muutos riittää, koska sensori toimii saturaatiossa (χ ≈ 1).”",
         "Tämä on TÄSMÄLLEEN sama argumentti kuin fotonin havaitseminen: York sanoisi ”yksi fotoni on liian heikko vaikuttamaan biologiaan” jos hän ei tietäisi miten silmä toimii.",
       ],
       [

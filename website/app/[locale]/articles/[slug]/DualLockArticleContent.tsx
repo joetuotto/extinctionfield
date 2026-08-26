@@ -1,5 +1,4 @@
 import type { Locale } from "@/lib/i18n";
-import { CitationLink } from "@/components/CitationLink";
 
 const COPY = {
   en: {

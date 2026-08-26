@@ -105,14 +105,14 @@ const t: Record<Locale, Copy> = {
     whatTitle: "Mikä on BERM:n aktiivinen määrittely?",
     whatText: [
       "BERM (Bio-Electromagnetic Reproductive Model) on avoin tutkimusmalli. Sen aktiivinen BERM v17-määrittely kysyy, voidaanko dokumentoitu fysikaalinen kenttätila yhdistää mitattujen elin- ja paripäätepisteiden kautta ikäkohtaisten hedelmällisyyslukujen kehitykseen.",
-      "Se ei käsittele mobiililiittymiä EMF-annoksena eikä päättele yksilön biologista vaikutusta maan TFR-sarjasta. Upstream-Lindgren-muotoilu on teoriatason premissi, joka motivoi testattavia FieldState-piirteitä; se ei ole väestövaikutusarvio.",
+      "Se ei käsittele mobiililiittymiä EMF-annoksena eikä päättele yksilön biologista vaikutusta maan TFR-sarjasta. Edeltävä Lindgren-muotoilu on teoriatason premissi, joka motivoi testattavia FieldState-piirteitä; se ei ole väestövaikutusarvio.",
     ],
     principlesTitle: "Toimintaperiaatteet",
     principles: [
       {
         num: "01",
         bold: "Mitatut syötteet ennen kalibrointia.",
-        text: "V2:n päätepistearvio edellyttää dokumentoitua FieldStatea, elinsiirtoa, biologista tai paripäätepistettä, parametri-/evidence-ID:tä ja ennalta määriteltyä mappingia.",
+        text: "V2:n päätepistearvio edellyttää dokumentoitua FieldStatea, elinkohtaista siirtoa, biologista tai paripäätepistettä, parametri-/evidence-ID:tä ja ennalta määriteltyä vastaavuuskuvausta.",
       },
       {
         num: "02",
@@ -122,7 +122,7 @@ const t: Record<Locale, Copy> = {
       {
         num: "03",
         bold: "ASFR ennen TFR:ää.",
-        text: "TFR on ikäkohtaisten hedelmällisyyslukujen periodisumma. Kysyntä/mahdollisuus, tempo ja ART/live-birth-delivery säilyvät eksplisiittisinä demografisina syötteinä, eivät biologian residuaaleina.",
+        text: "TFR on ikäkohtaisten hedelmällisyyslukujen periodisumma. Kysyntä/mahdollisuus, tempo ja ART-syntymätoimitus säilyvät eksplisiittisinä demografisina syötteinä, eivät biologian residuaaleina.",
       },
       {
         num: "04",
@@ -132,7 +132,7 @@ const t: Record<Locale, Copy> = {
       {
         num: "05",
         bold: "Avoin, kriittinen testaaminen.",
-        text: "Projekti priorisoi ennalta määriteltyjä mittauksia, sham- ja lämpökontrolleja, riippumatonta replikaatiota, sovituksen ulkopuolelle jätettyjä jaksoja ja negatiivisten tulosten julkaisemista.",
+        text: "Projekti priorisoi ennalta määriteltyjä mittauksia, lume- ja lämpökontrolleja, riippumatonta replikaatiota, sovituksen ulkopuolelle jätettyjä jaksoja ja negatiivisten tulosten julkaisemista.",
       },
     ],
     statusTitle: "Nykytila",
@@ -154,14 +154,14 @@ const t: Record<Locale, Copy> = {
     dataText: "Kolmannen osapuolen datasetit säilyttävät omat lisenssinsä ja provenienssinsa. Johdetut taulukot kertovat lähteensä ja tarkoitetun analyyttisen käytön.",
     contributeTitle: "Osallistu tai haasta malli",
     contributeText:
-      "Hyödyllisiä kontribuutioita ovat mittausaineistot proveniensseineen, päätepistetutkimukset, lähdekorjaukset, ennakkorekisteröidyt replikaatiot, kilpailevat kausaalimallit ja koodikatselmointi. Raportoi sekä tukeva että ei-tukeva tulos.",
+      "Hyödyllisiä panoksia ovat mittausaineistot alkuperätietoineen, päätepistetutkimukset, lähdekorjaukset, ennakkorekisteröidyt replikaatiot, kilpailevat kausaalimallit ja koodikatselmointi. Raportoi sekä tukevat että ei-tukevat tulokset.",
     authorTitle: "Tekijä",
     authorName: "Otto Juote",
     authorDegrees: [
       "MSc Biomedicine, Bioscience and Society — London School of Economics",
       "VTK Yleinen valtio-oppi — Helsingin yliopisto",
     ],
-    authorIndependence: "Itsenäinen tutkija. Ei yliopistoaffiliatiota, ei teollisuusrahoitusta, ei apurahaveloitteita.",
+    authorIndependence: "Itsenäinen tutkija. Ei yliopistosidonnaisuutta, ei teollisuusrahoitusta, ei apurahavelvoitteita.",
   },
 };
 

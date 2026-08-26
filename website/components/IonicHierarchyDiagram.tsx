@@ -163,7 +163,7 @@ export function IonicHierarchyDiagram({ locale }: { locale: string }) {
             strokeWidth="1.5"
             markerEnd="url(#ionic-arrow)"
           />
-          <text x="30" y={startY + rowH * totalLevels / 2 + 5} textAnchor="middle" fontSize="9" fill="var(--foreground-muted, #999)" transform={`rotate(-90, 30, ${startY + rowH * totalLevels / 2 + 5})`}>
+          <text x="30" y={startY + rowH * totalLevels / 2 + 5} textAnchor="middle" fontSize="11" fill="var(--foreground-muted, #999)" transform={`rotate(-90, 30, ${startY + rowH * totalLevels / 2 + 5})`}>
             {d.levelLabel}
           </text>
 
@@ -204,7 +204,7 @@ export function IonicHierarchyDiagram({ locale }: { locale: string }) {
                 <text
                   x={barX + barW + 10}
                   y={y + rowH / 2 + 1}
-                  fontSize="10"
+                  fontSize="11"
                   fill="var(--foreground-muted, #999)"
                   dominantBaseline="middle"
                 >
@@ -215,7 +215,7 @@ export function IonicHierarchyDiagram({ locale }: { locale: string }) {
           })}
 
           {/* Convergence label at bottom */}
-          <text x={barX + barW / 2} y={startY + rowH * totalLevels + 25} textAnchor="middle" fontSize="11" fontWeight="600" fill="var(--accent, #e88d4e)">
+          <text x={barX + barW / 2} y={startY + rowH * totalLevels + 25} textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--accent, #e88d4e)">
             {d.convergence}: Ca²⁺
           </text>
         </svg>

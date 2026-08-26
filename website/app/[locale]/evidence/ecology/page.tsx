@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { TreePine } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { BermIcon } from "@/components/BermIcon";
 import { CitationLink } from "@/components/CitationLink";
 
 const COPY = {
@@ -62,7 +63,7 @@ const COPY = {
         id: "electroecology",
         title: "Sähköekologia: sähkösaasteen tutkimus",
         paragraphs: [
-          "Ilman sähkökentän havaitseminen (aerial electroreception) on tunnistettu omana aistimodaalisuutenaan niveljalkaisilla (Robert 2024, Current Biology). Mehiläiset havaitsevat kukkien sähkökentät ravinnonhaun optimoimiseksi (Clarke 2013, Science). Niiden mekanosensoriset karvat taipuvat fyysisesti sähkökentässä ja välittävät hermosignaaleja (Sutton 2016, PNAS). Mehiläiset viestivät pesässä sähköstaattisilla signaaleilla tanssitanssin aikana, yksittäisen mehiläisen varauksen ollessa jopa 450 V (Greggers 2013, Proc R Soc B). Hämähäkit havaitsevat ilmakehän sähkökenttiä lentämistä (ballooning) varten (Morley & Robert 2018, Current Biology). Toukat havaitsevat lähestyvän ampiaisen sähköisesti ennen kontaktia (England & Robert 2024, PNAS). Punkkeja vedetään isäntiin ilmarakojen yli sähköstaattisilla voimilla (England 2023, Current Biology).",
+          "Ilman sähkökentän havaitseminen (aerial electroreception) on tunnistettu omana aistimodaalisuutenaan niveljalkaisilla (Robert 2024, Current Biology). Mehiläiset havaitsevat kukkien sähkökentät ravinnonhaun optimoimiseksi (Clarke 2013, Science). Niiden mekanosensoriset karvat taipuvat fyysisesti sähkökentässä ja välittävät hermosignaaleja (Sutton 2016, PNAS). Mehiläiset viestivät pesässä sähköstaattisilla signaaleilla heiluritanssin aikana, yksittäisen mehiläisen varauksen ollessa jopa 450 V (Greggers 2013, Proc R Soc B). Hämähäkit havaitsevat ilmakehän sähkökenttiä lentämistä (ballooning) varten (Morley & Robert 2018, Current Biology). Toukat havaitsevat lähestyvän ampiaisen sähköisesti ennen kontaktia (England & Robert 2024, PNAS). Punkkeja vedetään isäntiin ilmarakojen yli sähköstaattisilla voimilla (England 2023, Current Biology).",
           "Sähköstaattinen varautuminen ei ole lennon passiivinen sivutuote. Vuoden 2024 tutkimus 269 perhosesta ja yöperhosesta 11 lajin poikki osoitti, että staattisen varauksen määrä vaihtelee systemaattisesti ekologian mukaan — vieraileeko laji kukilla, onko se trooppinen vai lentääkö se yöllä (England & Robert 2024, J R Soc Interface). Tämä on ensimmäinen todiste siitä, että sähköstaattiset ominaisuudet ovat adaptiivisia piirteitä, joita luonnonvalinta on muokannut. Jos evoluutio on optimoinut eliöiden sähköstaattisia ominaisuuksia, muuttunut sähköstaattinen ympäristö (synteettiset materiaalit, muovipinnat, sähkölaitteet) häiritsee tätä optimointia — sama logiikka kuin BERM:n evolutionäärinen kalibraatioperiaate STATIC-kanavassa.",
           "Kenttäkokeissa kaupunkiniityillä Mallinson ym. (2025, iScience) osoittivat, että heikot ihmisperäiset sähkökentät vähensivät mehiläisten kukille laskeutumista 71 % (AC-kentät) ja 53 % (positiiviset DC-kentät). Suurjännitevoimalinjojen lähellä mitatut kenttävoimakkuudet olivat verrattavissa kokeellisiin, ulottuen kymmenien metrien etäisyydelle mehiläisten ravinnonhakukorkeudella. Tekijät käyttävät termiä ‘electric pollution’ (sähkösaaste) — ensimmäinen kerta kun tätä termiä käytetään Cell Press -lehdessä.",
           "Nämä löydökset tarjoavat empiirisen perustan BERM:n STATIC- ja ELF-kanaville. Jos ihmisperäiset sähkökentät vähentävät pölyttäjien tehokkuutta 71 %, jokainen uusi voimalinja, muuntaja ja sähkölaite vähentää pölytystä. Yhdistettynä LED-valaistuksen IF-emissioihin (jotka vaikuttavat hyönteispopulaatioihin eri mekanismilla), sähkömagneettinen ympäristö kohdistaa kaksinkertaisen paineen pölyttäjäriippuvaisiin ekosysteemeihin. Tämä on yhdenmukaista IPBES:n ja FAO:n dokumentoiman globaalin pölyttäjäkadon kanssa.",
@@ -72,7 +73,7 @@ const COPY = {
           { citation: "Greggers ym. (Proc R Soc B)", year: 2013, note: "Mehiläisten sähköinen viestintä pesässä, varaus 450 V" },
           { citation: "Sutton ym. (PNAS)", year: 2016, note: "Mekanosensoriset karvat = sähköreseptorit kimalaisilla" },
           { citation: "Morley & Robert (Current Biology)", year: 2018, note: "Hämähäkit havaitsevat sähkökenttiä lentämistä varten" },
-          { citation: "England ym. (Current Biology)", year: 2023, note: "Punkit vetäytyvät sähköstaattisesti ilmarakojen yli" },
+          { citation: "England ym. (Current Biology)", year: 2023, note: "Punkit kulkeutuvat sähköstaattisesti ilmarakojen yli" },
           { citation: "England & Robert (J R Soc Interface)", year: 2024, note: "Perhosten sähkövaraus adaptiivinen (luonnonvalinta)" },
           { citation: "England & Robert (PNAS)", year: 2024, note: "Toukat havaitsevat saalistajan sähköisesti ennen kontaktia" },
           { citation: "Robert (Current Biology)", year: 2024, note: "Ilman sähköreseptio virallistettu aistimodaalisuutena" },
@@ -81,12 +82,12 @@ const COPY = {
       },
       {
         id: "weather-radar",
-        title: "Säätukaverkostot ja indikaattorilajit",
+        title: "Säätutkäverkostot ja indikaattorilajit",
         paragraphs: [
           "Säävalvontatutkat ovat ympäristön voimakkaimpia EMF-lähteitä. NEXRAD (USA, 159 asemaa) ja vastaavat eurooppalaiset verkostot toimivat S-kaistalla (2,7–3,0 GHz — lähes identtinen Wi-Fi:n kanssa) tai C-kaistalla (5,6 GHz), lähettäen 250 kW – 1 MW huipputehoa pyörivissä keiloissa jotka pyyhkäisevät koko maiseman 24/7. Luonnonsuojelualueet eivät ole suojattuja tutkasignaaleilta.",
           "Ajallinen yhteensattuma hyönteiskadon kanssa on huomattava: NEXRAD-asennus alkoi 1988 ja valmistui 1997. Hallmannin hyönteisbiomassadata alkaa 1989 — vuosi ensimmäisten NEXRAD-asennusten jälkeen. Eurooppalaiset Doppler-tutkaverkostot rakennettiin vastaavalla aikataululla. S-kaistan taajuus (2,8 GHz, λ/2 ≈ 5,4 cm) vastaa suurten lentävien hyönteisten kehon kokoa, tuottaen resonanssityyppistä absorptiota (Thielens 2018).",
           "Nicholls & Racey (2007, PLOS ONE) osoittivat, että lepakkoaktiivisuus laski merkittävästi tutka-asemien lähellä kenttävoimakkuuksilla yli 2 V/m. Jatkotutkimuksessa (2009) kannettava tutka vähensi saalistavien lepakoiden aktiivisuutta, viitaten siihen, että EMF eikä melu tai visuaaliset vihjeet oli vastuussa.",
-          "Säätutkadataa käytetään nykyisin laajasti hyönteispopulaatioiden seuraamiseen. Nämä tutkimukset käyttävät tutkaa hyönteistiheyden mittaamiseen mutta eivät harkitse, vaikuttaako tutka itse mitattaviin hyönteisiin — metodologinen sokea piste, jonka BERM tunnistaa kriittiseksi tutkimusaukoksi. Vuoden 2024 saksalaisanalyysi (Archiv für Naturschutz und Landschaftsforschung) analysoi uudelleen Hallmann-tyyppistä dataa matkapuhelintukiasemien ja säätutkien läheisyydellä kovariaatteina — molemmat ennustivat hyönteiskatoa riippumatta torjunta-ainekuormasta ja maankäytöstä. Tämä on proksimaskausta käytännössä: tavanomaiset analyysit attribuoivat laskut torjunta-aineille ja ilmastolle, koska ne eivät koskaan sisällytä EMF:ää kovariaatiksi. BERM ennustaa, että kun EMF-läheisyys lisätään, tavanomaisten muuttujien selittämä varianssi laskee.",
+          "Säätutkadataa käytetään nykyisin laajasti hyönteispopulaatioiden seuraamiseen. Nämä tutkimukset käyttävät tutkaa hyönteistiheyden mittaamiseen mutta eivät harkitse, vaikuttaako tutka itse mitattaviin hyönteisiin — metodologinen sokea piste, jonka BERM tunnistaa kriittiseksi tutkimusaukoksi. Vuoden 2024 saksalaisanalyysi (Archiv für Naturschutz und Landschaftsforschung) analysoi uudelleen Hallmann-tyyppistä dataa matkapuhelintukiasemien ja säätutkien läheisyydellä kovariaatteina — molemmat ennustivat hyönteiskatoa riippumatta torjunta-ainekuormasta ja maankäytöstä. Tämä on proksimaskausta käytännössä: tavanomaiset analyysit yhdistävät laskut torjunta-aineisiin ja ilmastolle, koska ne eivät koskaan sisällytä EMF:ää kovariaatiksi. BERM ennustaa, että kun EMF-läheisyys lisätään, tavanomaisten muuttujien selittämä varianssi laskee.",
         ],
         studies: [
           { citation: "Nicholls & Racey (PLOS ONE)", year: 2007, note: "Lepakkoaktiivisuus laski tutkan lähellä (>2 V/m)" },
@@ -134,7 +135,7 @@ export default async function EcologyPage({
         {d.backLink}
       </Link>
 
-      <PageHeader icon={TreePine} title={d.title} subtitle={d.subtitle} />
+      <PageHeader icon={TreePine} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="ecology" size={28} className="text-accent" />} />
 
       {/* Narratives */}
       <section className="mb-16 border-t editorial-rule pt-6">

@@ -22,7 +22,7 @@ import {
   type EdgeProps,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { ChevronLeft, ChevronRight, Map, Route, Search, X, Filter, RotateCcw } from "lucide-react";
+import { ChevronLeft, ChevronRight, Map, Route, Search, RotateCcw } from "lucide-react";
 import {
   NODES,
   EDGES,
@@ -34,7 +34,6 @@ import {
   ALL_STAGES,
   GUIDED_SCENES,
   STEPPER_PATHS,
-  NODE_DIMENSIONS,
   computeLayout,
   computeBands,
   getEdgeRelation,
@@ -316,7 +315,11 @@ function AtlasInner({ locale }: { locale: string }) {
   const lang: Locale = locale === "fi" ? "fi" : "en";
   const [mode, setMode] = useState<"explore" | "guided">("explore");
   const [sceneIdx, setSceneIdx] = useState(0);
-  const [selectedNode, setSelectedNode] = useState<CausalMapNode | null>(null);
+  const [selectedNode, setSelectedNode] = useState<CausalMapNode | null>(() => {
+    if (typeof window === "undefined") return null;
+    const nodeId = new URLSearchParams(window.location.search).get("node");
+    return nodeId ? NODES.find((n) => n.id === nodeId) ?? null : null;
+  });
   const [originElement, setOriginElement] = useState<HTMLElement | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [stageFilter, setStageFilter] = useState<Set<Stage> | null>(null);
@@ -370,20 +373,15 @@ function AtlasInner({ locale }: { locale: string }) {
       }
     }, 80);
     return () => clearTimeout(timer);
-  }, [mode, sceneIdx, fitView, humanNodeIds, stageFilter, evidenceFilter, searchQuery]);
+  }, [mode, scene, sceneIdx, fitView, humanNodeIds, stageFilter, evidenceFilter, searchQuery]);
 
-  // Deep linking: read ?node= on mount
+  // Deep linking: fit view on mount + popstate listener
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const nodeId = params.get("node");
-    if (nodeId) {
-      const source = NODES.find((n) => n.id === nodeId);
-      if (source) {
-        setSelectedNode(source);
-        setTimeout(() => {
-          fitView({ nodes: [{ id: nodeId }], padding: 0.5, duration: 600 });
-        }, 200);
-      }
+    const nodeId = new URLSearchParams(window.location.search).get("node");
+    if (nodeId && NODES.some((n) => n.id === nodeId)) {
+      setTimeout(() => {
+        fitView({ nodes: [{ id: nodeId }], padding: 0.5, duration: 600 });
+      }, 200);
     }
 
     const onPopState = () => {

@@ -252,18 +252,28 @@ export function ReferenceDatabase({ locale }: { locale: string }) {
     loadReferences().then(setData).catch(() => setError(true));
   }, []);
 
-  useEffect(() => {
-    if (typeof window === "undefined" || !data) return;
-    const hash = window.location.hash.slice(1);
-    if (hash) {
-      const ref = data.references.find((r) => r.id === hash);
-      if (ref) {
-        setCategory(ref.category);
-        setExpanded(new Set([hash]));
-        requestAnimationFrame(() => {
-          document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "center" });
-        });
+  const [prevData, setPrevData] = useState<ReferenceData | null>(null);
+  if (data !== prevData) {
+    setPrevData(data);
+    if (data && typeof window !== "undefined") {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        const ref = data.references.find((r) => r.id === hash);
+        if (ref) {
+          setCategory(ref.category);
+          setExpanded(new Set([hash]));
+        }
       }
+    }
+  }
+
+  useEffect(() => {
+    if (!data) return;
+    const hash = window.location.hash.slice(1);
+    if (hash && data.references.some((r) => r.id === hash)) {
+      requestAnimationFrame(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
     }
   }, [data]);
 
@@ -314,9 +324,17 @@ export function ReferenceDatabase({ locale }: { locale: string }) {
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const pageItems = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
-  useEffect(() => {
+  const [prevFilters, setPrevFilters] = useState({ search, category, levelFilter, typeFilter, verifiedOnly });
+  if (
+    search !== prevFilters.search ||
+    category !== prevFilters.category ||
+    levelFilter !== prevFilters.levelFilter ||
+    typeFilter !== prevFilters.typeFilter ||
+    verifiedOnly !== prevFilters.verifiedOnly
+  ) {
+    setPrevFilters({ search, category, levelFilter, typeFilter, verifiedOnly });
     setPage(0);
-  }, [search, category, levelFilter, typeFilter, verifiedOnly]);
+  }
 
   const toggleExpand = useCallback((id: string) => {
     setExpanded((prev) => {

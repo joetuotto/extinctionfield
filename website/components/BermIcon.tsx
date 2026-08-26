@@ -76,8 +76,8 @@ const ICONS: Record<BermIconName, () => JSX.Element> = {
   physics: () => (
     <>
       <circle cx="12" cy="12" r="2.25"/>
-      <ellipse cx="12" cy="12" rx="9.35" ry="2.18" transform="rotate(-30 12 12)"/>
-      <ellipse cx="12" cy="12" rx="9.35" ry="2.18" transform="rotate(30 12 12)"/>
+      <ellipse cx="12" cy="12" rx="9.35" ry="2.18" transform="rotate(-30 12 12)" fill="none" stroke="currentColor" strokeWidth="1"/>
+      <ellipse cx="12" cy="12" rx="9.35" ry="2.18" transform="rotate(30 12 12)" fill="none" stroke="currentColor" strokeWidth="1"/>
       <circle cx="4.58" cy="16.37" r="1.15"/><circle cx="18.66" cy="16.1" r="1.15"/>
     </>
   ),

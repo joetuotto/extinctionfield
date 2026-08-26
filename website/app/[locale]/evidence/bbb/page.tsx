@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Brain } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { BermIcon } from "@/components/BermIcon";
 import { BBBMechanismDiagram } from "@/components/BBBMechanismDiagram";
 import { CitationLink } from "@/components/CitationLink";
 
@@ -63,7 +64,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
         {d.backLink}
       </Link>
 
-      <PageHeader icon={Brain} title={d.title} subtitle={d.subtitle} />
+      <PageHeader icon={Brain} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="neurobiology" size={28} className="text-accent" />} />
 
       {/* BBB tight junction narrative */}
       <section className="mb-16 border-t editorial-rule pt-6">
@@ -126,7 +127,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
           </p>
           <p>
             {activeLocale === "fi"
-              ? "Gao ym. (2024, Bioelectromagnetics) osoittivat kriittisen löydöksen: sähkömagneettinen pulssi avasi tight junctionit FYYSISESTI (TEM-kuvissa näkyvä aukko) vaikka TJ-proteiinien (ZO-1, klaudiini-5, okludiini) TASOT eivät muuttuneet western blotissa. Proteiinit ovat paikalla, mutta niiden 3D-konformaatio on muuttunut — ne eivät enää tiivistä liitosta. Tämä selittää miksi tutkimukset jotka mittaavat vain proteiiniespressiota (de Gannes, Franke) eivät löydä BBB-vaikutuksia."
+              ? "Gao ym. (2024, Bioelectromagnetics) osoittivat kriittisen löydöksen: sähkömagneettinen pulssi avasi tight junctionit FYYSISESTI (TEM-kuvissa näkyvä aukko) vaikka TJ-proteiinien (ZO-1, klaudiini-5, okkludiini) TASOT eivät muuttuneet western blotissa. Proteiinit ovat paikalla, mutta niiden 3D-konformaatio on muuttunut — ne eivät enää tiivistä liitosta. Tämä selittää, miksi tutkimukset, jotka mittaavat vain proteiiniespressiota (de Gannes, Franke) eivät löydä BBB-vaikutuksia."
               : "Gao et al. (2024, Bioelectromagnetics) demonstrated a critical finding: electromagnetic pulse opened tight junctions PHYSICALLY (visible gap in TEM images) even though TJ protein LEVELS (ZO-1, claudin-5, occludin) did not change on western blot. The proteins are present but their 3D conformation has changed — they no longer seal the junction. This explains why studies measuring only protein expression (de Gannes, Franke) do not find BBB effects."}
           </p>
           <p>
@@ -136,7 +137,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
           </p>
           <p>
             {activeLocale === "fi"
-              ? "Ulusoy ym. (2025, Iranian J Basic Medical Sciences) ehdottavat RF-EMF:ää TERAPEUTTISEKSI TYÖKALUKSI BBB:n avaamiseen lääkeaineiden toimittamiseksi aivoihin: 27.12 MHz → eNOS → NO → okludiini ↓ → TJ auki. Tämä on terapeuttisten laitteiden paradoksin uusi variantti: tutkijat hyödyntävät EMF:n biologista aktiivisuutta samalla kun ICNIRP kieltää sen olemassaolon."
+              ? "Ulusoy ym. (2025, Iranian J Basic Medical Sciences) ehdottavat RF-EMF:ää TERAPEUTTISEKSI TYÖKALUKSI BBB:n avaamiseen lääkeaineiden toimittamiseksi aivoihin: 27.12 MHz → eNOS → NO → okkludiini ↓ → TJ auki. Tämä on terapeuttisten laitteiden paradoksin uusi variantti: tutkijat hyödyntävät EMF:n biologista aktiivisuutta samalla kun ICNIRP kieltää sen olemassaolon."
               : "Ulusoy et al. (2025, Iranian J Basic Medical Sciences) propose RF-EMF as a THERAPEUTIC TOOL for opening the BBB to deliver drugs to the brain: 27.12 MHz → eNOS → NO → occludin ↓ → TJ open. This is a new variant of the therapeutic device paradox: researchers exploit EMF's biological activity while ICNIRP denies its existence."}
           </p>
         </div>
@@ -201,11 +202,11 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
 
         <div className="mt-6 space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
           <h3 className="text-sm font-semibold text-foreground">
-            {activeLocale === "fi" ? "Sairaala-BBB iatogeeninen hypoteesi" : "Hospital-BBB iatrogenic hypothesis"}
+            {activeLocale === "fi" ? "Sairaala-BBB iatrogeeninen hypoteesi" : "Hospital-BBB iatrogenic hypothesis"}
           </h3>
           <p>
             {activeLocale === "fi"
-              ? "Lääkkeiden annostelussa oletetaan normaali BBB. Vanhusten sairaalapotilailla BBB on heikentynyt KAHDESTA syystä: ikääntyminen (okludiini ↓, ZO-1 ↓) JA sairaalan EMF (konformaatiomuutos + eNOS-reitti). Efektiivinen aivoannos on suurempi kuin farmakokineettinen malli ennustaa. Tämä voi selittää osan sairaalahoitojakson aikaisesta deliriumista (esiintyvyys 15–53 % kirurgisilla, jopa 80 % tehohoidossa)."
+              ? "Lääkkeiden annostelussa oletetaan normaali BBB. Vanhusten sairaalapotilailla BBB on heikentynyt KAHDESTA syystä: ikääntyminen (okkludiini ↓, ZO-1 ↓) JA sairaalan EMF (konformaatiomuutos + eNOS-reitti). Efektiivinen aivoannos on suurempi kuin farmakokineettinen malli ennustaa. Tämä voi selittää osan sairaalahoitojakson aikaisesta deliriumista (esiintyvyys 15–53 % kirurgisilla, jopa 80 % tehohoidossa)."
               : "Drug dosing assumes normal BBB. In elderly hospital patients, BBB is compromised for TWO reasons: aging (occludin ↓, ZO-1 ↓) AND hospital EMF (conformational change + eNOS pathway). Effective brain dose is higher than pharmacokinetic models predict. This may explain part of hospital-acquired delirium (incidence 15–53% surgical, up to 80% ICU)."}
           </p>
         </div>
@@ -233,7 +234,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
               <tr className="border-b border-card-border/40">
                 <td className="py-2 pr-3 font-medium text-foreground">Ulusoy ym. (Iranian J Basic Med Sci)</td>
                 <td className="py-2 pr-3 font-mono-num">2025</td>
-                <td className="py-2">{activeLocale === "fi" ? "RF-EMF BBB-modulaatio ehdotettu terapeuttiseksi työkaluksi; eNOS→NO→okludiini↓" : "RF-EMF BBB modulation proposed as therapeutic tool; eNOS→NO→occludin↓"}</td>
+                <td className="py-2">{activeLocale === "fi" ? "RF-EMF BBB-modulaatio ehdotettu terapeuttiseksi työkaluksi; eNOS→NO→okkludiini↓" : "RF-EMF BBB modulation proposed as therapeutic tool; eNOS→NO→occludin↓"}</td>
               </tr>
               <tr className="border-b border-card-border/40">
                 <td className="py-2 pr-3 font-medium text-foreground">Arendash ym.</td>
@@ -243,7 +244,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
               <tr className="border-b border-card-border/40">
                 <td className="py-2 pr-3 font-medium text-foreground">Immunity & Ageing</td>
                 <td className="py-2 pr-3 font-mono-num">2015</td>
-                <td className="py-2">{activeLocale === "fi" ? "Ikääntyneiden hiirten BBB: okludiini ↓, ZO-1 ↓, TNF-α ↑, permeabiliteetti ↑" : "Aged mice BBB: occludin ↓, ZO-1 ↓, TNF-α ↑, permeability ↑"}</td>
+                <td className="py-2">{activeLocale === "fi" ? "Ikääntyneiden hiirten BBB: okkludiini ↓, ZO-1 ↓, TNF-α ↑, permeabiliteetti ↑" : "Aged mice BBB: occludin ↓, ZO-1 ↓, TNF-α ↑, permeability ↑"}</td>
               </tr>
               <tr className="border-b border-card-border/40">
                 <td className="py-2 pr-3 font-medium text-foreground">Tang ym.</td>
@@ -265,7 +266,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
         </div>
         <p className="text-xs text-foreground-muted italic mt-4 max-w-4xl">
           {activeLocale === "fi"
-            ? "Episteeminen taso: BBB-avaus konformaatiomekanismi [E] (Gao 2024, TEM). BBB-evidenssi kokonaisuutena [M/C] (IOP 2026 scoping review). Ikääntymis-synergia [C] (samat proteiinit, testaamaton yhdistelmä). Arendash kaksisuuntaisuus [E] (kliininen pilotti). Sairaala-iatogeeninen [C] (hypoteesi, P27–P28)."
+            ? "Episteeminen taso: BBB-avaus konformaatiomekanismi [E] (Gao 2024, TEM). BBB-evidenssi kokonaisuutena [M/C] (IOP 2026 scoping review). Ikääntymis-synergia [C] (samat proteiinit, testaamaton yhdistelmä). Arendash kaksisuuntaisuus [E] (kliininen pilotti). Sairaala-iatrogeeninen [C] (hypoteesi, P27–P28)."
             : "Epistemic level: BBB opening conformational mechanism [E] (Gao 2024, TEM). BBB evidence overall [M/C] (IOP 2026 scoping review). Aging synergy [C] (same proteins, untested combination). Arendash bidirectionality [E] (clinical pilot). Hospital-iatrogenic [C] (hypothesis, P27–P28)."}
         </p>
       </section>
@@ -283,7 +284,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
           </p>
           <p>
             {activeLocale === "fi"
-              ? "Kriittinen löydös (Bhatt ym., PMC3065491): Ca²⁺:n läsnäollessa Aβ(1-40) muodostaa ensisijaisesti TOKSISIA OLIGOMEEREJA, kun taas ilman Ca²⁺:a se aggregoituu HARMITTOMIKSI FIBRILLEIKSI. Kalsiumtaso ei vain lisää amyloidin tuotantoa — se ratkaisee onko amyloidi vaarallista vai ei. Tämä selittää miksi plakkien poistaminen ei auta: oligomeerit (ei plakit) ovat toksinen muoto, ja niiden muodostumista ohjaa Ca²⁺."
+              ? "Kriittinen löydös (Bhatt ym., PMC3065491): Ca²⁺:n läsnäollessa Aβ(1-40) muodostaa ensisijaisesti TOKSISIA OLIGOMEEREJA, kun taas ilman Ca²⁺:a se aggregoituu HARMITTOMIKSI FIBRILLEIKSI. Kalsiumtaso ei vain lisää amyloidin tuotantoa — se ratkaisee, onko amyloidi vaarallista vai ei. Tämä selittää, miksi plakkien poistaminen ei auta: oligomeerit (ei plakit) ovat toksinen muoto, ja niiden muodostumista ohjaa Ca²⁺."
               : "Critical finding (Bhatt et al., PMC3065491): in the presence of Ca²⁺, Aβ(1-40) preferentially forms TOXIC OLIGOMERS, whereas in the absence of Ca²⁺ it aggregates into HARMLESS FIBRILS. Calcium level does not just increase amyloid production — it determines whether amyloid is dangerous or not. This explains why removing plaques doesn't help: oligomers (not plaques) are the toxic form, and their formation is directed by Ca²⁺."}
           </p>
           <p>
@@ -293,7 +294,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
           </p>
           <p>
             {activeLocale === "fi"
-              ? "Positiivinen palautesilmukka: Aβ-oligomeerit muodostavat UUSIA kalsiumhuokosia solukalvoon → lisää Ca²⁺-influksia → lisää Aβ-tuotantoa → kiihtyvä kierre. Alkuvaiheessa EMF:n Ca²⁺-vaikutus on palautuva ja kompensoitavissa. Mutta kun oligomeerien omat Ca²⁺-huokoset aktivoituvat, prosessi tulee EMF:stä RIIPPUMATTOMAKSI. Tämä 'point of no return' selittää miksi AD kiihtyy."
+              ? "Positiivinen palautesilmukka: Aβ-oligomeerit muodostavat UUSIA kalsiumhuokosia solukalvoon → lisää Ca²⁺-influksia → lisää Aβ-tuotantoa → kiihtyvä kierre. Alkuvaiheessa EMF:n Ca²⁺-vaikutus on palautuva ja kompensoitavissa. Mutta kun oligomeerien omat Ca²⁺-huokoset aktivoituvat, prosessi tulee EMF:stä RIIPPUMATTOMAKSI. Tämä 'point of no return' selittää, miksi AD kiihtyy."
               : "Positive feedback loop: Aβ oligomers form NEW calcium pores in the cell membrane → more Ca²⁺ influx → more Aβ production → accelerating cycle. Initially, EMF's Ca²⁺ effect is reversible and compensable. But once oligomer-formed Ca²⁺ pores activate, the process becomes EMF-INDEPENDENT. This 'point of no return' explains why AD accelerates."}
           </p>
           <p>
@@ -324,7 +325,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
                 <td className="py-2">{activeLocale === "fi" ? "Ca²⁺ ohjaa Aβ → toksiset oligomeerit (ei fibrillit)" : "Ca²⁺ directs Aβ → toxic oligomers (not fibrils)"}</td>
               </tr>
               <tr className="border-b border-card-border/40">
-                <td className="py-2 pr-3 font-medium text-foreground">O'Day (PMC7179355)</td>
+                <td className="py-2 pr-3 font-medium text-foreground">O&apos;Day (PMC7179355)</td>
                 <td className="py-2 pr-3 font-mono-num">2020</td>
                 <td className="py-2">{activeLocale === "fi" ? "Ca²⁺-dysregulaatio on VARHAINEN tapahtuma, edeltää neurodegeneraatiota" : "Ca²⁺ dysregulation is an EARLY event, precedes neurodegeneration"}</td>
               </tr>

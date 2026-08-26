@@ -239,7 +239,7 @@ const t: Record<Locale, Copy> = {
         id: "organ-state",
         title: "4. Biologinen kapasiteetti on elinkohtainen palautuva/persistentti tila",
         body: [
-          "Kenttäpiirre vaikuttaa rekisteröityyn elinpäätepisteeseen vain eksplisiittisen, evidenssiin kiinnitetyn incrementtimallin kautta. Jokaisella elimellä on palautuva R-tila ja persistentti P-tila. Niiden retentio ja endpoint-mapping parametroituu vasta, kun mukana ovat parameter-ID ja evidence-ID.",
+          "Kenttäpiirre vaikuttaa rekisteröityyn elinpäätepisteeseen vain eksplisiittisen, evidenssiin kiinnitetyn incrementtimallin kautta. Jokaisella elimellä on palautuva R-tila ja persistentti P-tila. Niiden retentio ja päätepistekuvaus parametroituu vasta, kun mukana ovat parametri-ID ja evidenssi-ID.",
           "Mieshaara erottaa veri–kivesesteen, ituradan varannon, steroidogeneesin, siittiötuoton/toiminnan ja DNA-eheyden. Naishaara erottaa munasarjavarannon, oosyyttiredoxin, ovulaation kellotuksen sekä luteaali-/implantaatiotuen. BTB:llä on rekisteröity suora lisääntymishaara; BBB, istukka ja retina ovat erillisiä kandidaatti-estetiloja, eivät yhteinen kerroin.",
         ],
         equations: [
@@ -285,7 +285,7 @@ const t: Record<Locale, Copy> = {
         title: "7. GME / R42 on kokeellinen haara, ei verkkopäätelmä",
         body: [
           "Neliöllinen sekoitus motivoi envelope/beat-PSD:n säilyttämistä FieldStatessa. Zandieh ym. (2025) havaitsi taajuusriippuvaista mitokondrio-/ROS-käyttäytymistä syöpäsolukokeissa ELF-olosuhteissa (0,01–5 Hz; kenttiä enintään 100 mT). Tämä tarjoaa kokeellisen ehdokkaan solutilariippuvaiselle vasteikkunalle.",
-          "Se ei osoita RF-verkon envelope-vaikutusta, eDRX-kenttäallekirjoitusta eikä lisääntymishaittaa. Mahdollinen R42-analyysi on siksi eksploratiivinen: lähtökohtana ovat mitattu PSD, sham-/lämpökontrollit ja ennalta määritelty biologinen päätepiste.",
+          "Se ei osoita RF-verkon envelope-vaikutusta, eDRX-kenttäallekirjoitusta eikä lisääntymishaittaa. Mahdollinen R42-analyysi on siksi alustava: lähtökohtana ovat mitattu PSD, sham-/lämpökontrollit ja ennalta määritelty biologinen päätepiste.",
         ],
         equations: ["I_{\\mathrm{GME},o}=\\int PSD_{\\mathrm{envelope},o}(f)W_{\\mathrm{mito},o}(f;f_0,Q,\\mathrm{redox})\\,df"],
         note:

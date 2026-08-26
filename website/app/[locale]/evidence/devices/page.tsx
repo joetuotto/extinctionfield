@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Zap } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { BermIcon } from "@/components/BermIcon";
 import { TherapeuticFrequencyMap } from "@/components/TherapeuticFrequencyMap";
 import { CellSizeFrequencyMatrix } from "@/components/CellSizeFrequencyMatrix";
 import { CitationLink } from "@/components/CitationLink";
@@ -106,8 +107,8 @@ const COPY = {
         title: "IFO-VGIC: transduktiomekanismi (Panagopoulos 2025)",
         paragraphs: [
           "Panagopoulos ym. (2025, Bioelectromagnetics) esittävät 131 tutkimuksen kattavan katsauksen RF/Wi-Fi:n biologisista vaikutuksista. 95 % raportoi oksidatiivista stressiä — konsensus, joka on yhdenmukainen Yakymenko ym. 2016 (93/100 tutkimusta) kanssa. IFO-mekanismi (Irregular Forced Opening) selittää: polarisoitu, koherentti RF-EMF pakottaa VGCC:n S4-jännitesensorin epäfysiologiseen oskillaatioon → hallitsematon kanavan avautuminen → kontrolloimaton Ca²⁺-influksi → mitokondriaalinen ROS → DNA-vauriot, siittiöhäiriöt, hormonaaliset muutokset.",
-          "Mekanismia tukevat VGCC-salpaajat: nifedipiini ja muut kalsiumkanavasalpaajat estävät RF:n biologiset vaikutukset useissa koeasetelmissa (Pall 2013: 23 salpaajatukimusta). Tämä on tason 4 (VGIC-aktivaatio) ja tason 4→5A nuolen (Ca²⁺ → ROS) vahvin yksittäinen kokoava evidenssilähde. 95 %:n konsensus 131 tutkimuksessa tukee tason 5A→6 nuolia (ROS → siittiökaskadi: SDF, motiliteetti, konsentraatio). Kvantitatiivisesti: Yu 2021: −8,1 % motiliteetti per tunti altistusta; Levine 2023: −51 % siittiökonsentraation lasku (1973–2018).",
-          "Bertagna ym. (2025, Ann NY Acad Sci) laajentavat IFO-VGIC-mekanismia solunsisäisiin kalsiumvarastoihin. Hiiren hippokampuksen CA1-pyramidaalineuronit altistettiin 50 Hz, 1 mT ELF-EMF:lle 60 minuutin ajan: sisäänpäinsuuntaiset virrat ↓40 % ja transientit ulospäinsuuntaiset virrat ↓50 %. Kaksi itsenäistä Ca²⁺-reittiä tunnistettiin: (1) RyR-reitti — dantroleeni (ryanodiinireseptorisalpaaja) esti EMF-vaikutukset kokonaan; (2) SERCA-reitti — CPA (SERCA-inhibiittori) esti samoin EMF-vaikutukset. Tason 4 Ca²⁺-häiriö operoi siten useamman itsenäisen reitin kautta: suora S4-jännitesensorin pakotettu oskillaatio (Panagopoulos 2025) ja solunsisäisten kalsiumvarastojen dysregulaatio RyR:n ja SERCA:n kautta (Bertagna 2025). Monireittiisyys selittää kudosspesifisen herkkyyden: solut joissa on korkea VGIC-tiheys ja suuret solunsisäiset Ca²⁺-varastot (neuronit, gonaadisolut) ovat herkempiä kuin matalan varastotiheyden solut (keratinosyytit — vrt. Meyer 2026, Haidar 2025: nollatulokset ihosoluissa). Huom: ELF (50 Hz), ei RF — mekanismin siirto RF:lle ei suoraviivainen, mutta Ca²⁺-reitti on jaettu (vrt. Panagopoulos 2025: IFO operoi sekä ELF- että RF-alueella eri voimakkuusriippuvuudella).",
+          "Mekanismia tukevat VGCC-salpaajat: nifedipiini ja muut kalsiumkanavasalpaajat estävät RF:n biologiset vaikutukset useissa koeasetelmissa (Pall 2013: 23 salpaajatutkimusta). Tämä on tason 4 (VGIC-aktivaatio) ja tason 4→5A nuolen (Ca²⁺ → ROS) vahvin yksittäinen kokoava evidenssilähde. 95 %:n konsensus 131 tutkimuksessa tukee tason 5A→6 nuolia (ROS → siittiökaskadi: SDF, motiliteetti, konsentraatio). Kvantitatiivisesti: Yu 2021: −8,1 % motiliteetti per tunti altistusta; Levine 2023: −51 % siittiökonsentraation lasku (1973–2018).",
+          "Bertagna ym. (2025, Ann NY Acad Sci) laajentavat IFO-VGIC-mekanismia solunsisäisiin kalsiumvarastoihin. Hiiren hippokampuksen CA1-pyramidaalineuronit altistettiin 50 Hz, 1 mT ELF-EMF:lle 60 minuutin ajan: sisäänpäinsuuntaiset virrat ↓40 % ja transientit ulospäinsuuntaiset virrat ↓50 %. Kaksi itsenäistä Ca²⁺-reittiä tunnistettiin: (1) RyR-reitti — dantroleeni (ryanodiinireseptorisalpaaja) esti EMF-vaikutukset kokonaan; (2) SERCA-reitti — CPA (SERCA-inhibiittori) esti samoin EMF-vaikutukset. Tason 4 Ca²⁺-häiriö toimii siten useamman itsenäisen reitin kautta: suora S4-jännitesensorin pakotettu oskillaatio (Panagopoulos 2025) ja solunsisäisten kalsiumvarastojen dysregulaatio RyR:n ja SERCA:n kautta (Bertagna 2025). Monireittiisyys selittää kudosspesifisen herkkyyden: solut, joissa on korkea VGIC-tiheys ja suuret solunsisäiset Ca²⁺-varastot (neuronit, gonaadisolut) ovat herkempiä kuin matalan varastotiheyden solut (keratinosyytit — vrt. Meyer 2026, Haidar 2025: nollatulokset ihosoluissa). Huom: ELF (50 Hz), ei RF — mekanismin siirto RF:lle ei suoraviivainen, mutta Ca²⁺-reitti on jaettu (vrt. Panagopoulos 2025: IFO toimii sekä ELF- että RF-alueella eri voimakkuusriippuvuudella).",
         ],
         studies: [
           { citation: "Panagopoulos ym. (Bioelectromagnetics)", year: 2025, note: "131 tutkimuksen katsaus: 95 % raportoi oksidatiivisia vaikutuksia. IFO-VGIC-mekanismi." },
@@ -165,7 +166,7 @@ export default async function DevicesPage({ params }: { params: Promise<{ locale
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
-      <PageHeader icon={Zap} title={d.title} subtitle={d.subtitle} />
+      <PageHeader icon={Zap} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="physics" size={28} className="text-accent" />} />
 
       <section className="mb-16 border-t editorial-rule pt-6">
         <div className="space-y-12 max-w-4xl">
@@ -238,12 +239,12 @@ export default async function DevicesPage({ params }: { params: Promise<{ locale
                     </h4>
                     <p className="text-sm text-foreground-muted leading-relaxed mb-3">
                       {activeLocale === "fi"
-                        ? "Flock Off (nyk. Symterra, 10 000+ asennusta) on kaupallinen tuote joka käyttää 120 Hz ELF-pulssia häiritsemään lintujen kryptokromi-pohjaista (CRY) navigointijärjestelmää. Tuote MYYDÄÄN sillä perusteella, että EMF vaikuttaa biologisiin järjestelmiin ei-termisesti. Mekanismi on radikaaliparimenetelmä (RPM) jossa ELF-EMF häiritsee CRY-proteiinin kvanttitilaa."
+                        ? "Flock Off (nyk. Symterra, 10 000+ asennusta) on kaupallinen tuote, joka käyttää 120 Hz ELF-pulssia häiritsemään lintujen kryptokromi-pohjaista (CRY) navigointijärjestelmää. Tuote MYYDÄÄN sillä perusteella, että EMF vaikuttaa biologisiin järjestelmiin ei-termisesti. Mekanismi on radikaaliparimenetelmä (RPM), jossa ELF-EMF häiritsee CRY-proteiinin kvanttitilaa."
                         : "Flock Off (now Symterra, 10,000+ installations) is a commercial product that uses 120 Hz ELF pulses to disrupt birds’ cryptochrome-based (CRY) navigation system. The product is SOLD on the premise that EMF affects biological systems non-thermally. The mechanism is the radical pair mechanism (RPM) where ELF-EMF disrupts the quantum state of CRY protein."}
                     </p>
                     <p className="text-sm text-foreground-muted leading-relaxed mb-3">
                       {activeLocale === "fi"
-                        ? "Paradoksi: 120 Hz = sähköverkon toinen harmoninen (2 × 60 Hz). CRY1/CRY2 ovat SAMAT proteiinit ihmisen sirkadiaanisessa kellossa. Cry4 on linnuille spesifinen magnetoreseptori, mutta 120 Hz ELF vaikuttaa MYÖS Cry1/Cry2:een jotka säätelevät nisäkkäiden vuorokausirytmiä. ICNIRP väittää, ettei ELF-EMF vaikuta biologisiin järjestelmiin — yritys myy kaupallisesti tuotetta joka toimii juuri tällä vaikutuksella."
+                        ? "Paradoksi: 120 Hz = sähköverkon toinen harmoninen (2 × 60 Hz). CRY1/CRY2 ovat SAMAT proteiinit ihmisen sirkadiaanisessa kellossa. Cry4 on linnuille spesifinen magnetoreseptori, mutta 120 Hz ELF vaikuttaa MYÖS Cry1/Cry2:een, jotka säätelevät nisäkkäiden vuorokausirytmiä. ICNIRP väittää, ettei ELF-EMF vaikuta biologisiin järjestelmiin — yritys myy kaupallisesti tuotetta, joka toimii juuri tällä vaikutuksella."
                         : "Paradox: 120 Hz = second harmonic of power grid (2 × 60 Hz). CRY1/CRY2 are the SAME proteins in the human circadian clock. Cry4 is bird-specific magnetoreceptor, but 120 Hz ELF ALSO affects Cry1/Cry2 which regulate mammalian circadian rhythm. ICNIRP maintains that ELF-EMF does not affect biological systems — a company commercially sells a product that works by precisely this effect."}
                     </p>
                     <p className="text-sm text-foreground-muted leading-relaxed">

@@ -11,7 +11,7 @@ export function StatisticalValidation({ locale }: { locale: string }) {
         lead: "BERM v17 erottaa kuvailevan ajastuskuvion, biologisen päätepisteen ja väestövaikutuksen. Validointitila kertoo, mitä aktiivisen reitin testaamiseen tarvitaan.",
         criteriaTitle: "Mitä v2-validointi edellyttää",
         criteria: [
-          "Ennalta määritetty, mitattu FieldState: B₀, spektri/PSD, vaihe/koherenssi, sijainti, elinsiirto ja provenienssi.",
+          "Ennalta määritetty, mitattu FieldState: B₀, spektri/PSD, vaihe/koherenssi, sijainti, elinkohtainen siirto ja provenienssi.",
           "Rekisteröity elinkohtainen päätepiste ja parametrit, joiden suora soveltamisala on näkyvissä.",
           "Paritila sekä ikäryhmäkohtainen ASFR, erikseen raportoiduilla kysyntä-, tempo- ja ART-termeillä.",
           "Ulkoisesti lukittu ajallinen ennuste tai replikaatio; TFR johdetaan vasta ASFR:stä.",

@@ -168,20 +168,20 @@ const COPY = {
     evidenceLabel: "Evidence",
   },
   fi: {
-    title: "Silmasi ovat sahkomagneettisia sensoreita",
+    title: "Silmäsi ovat sähkömagneettisia sensoreita",
     subtitle:
-      "CRY1 sinisten tappisolujen ulkosegmenteissa, CRY2 verkkokalvon gangliosoluissa, FAD-kromofori — silma kaksoismagneettireseptiiivisena elimena",
+      "CRY1 sinisten tappisolujen ulkosegmenteissa, CRY2 verkkokalvon gangliosoluissa, FAD-kromofori — silmä kaksoismagneettireseptiivisenä elimenä",
     backLink: "← Takaisin moduloomiin",
 
     s1Title: "Verkkokalvon magnetoreseption anatomia",
     s1p1:
-      "Ihmisen verkkokalvo sisaltaa kaksi erillistaa kryptokromijarjestelmaa. Bartolke ym. (2025, FASEB Journal) osoittivat, etta tayspitkaa CRY1-proteiinia esiintyy yksinomaan lyhytaaltoherkissa sinisten tappisolujen ulkosegmenteissa ihmisen, bonobon ja gorillan verkkokalvoilla. Tama sijainti kaukana tumista viittaa ei-sirkadiaaniseen, fototransduktiiviseen toimintaan. Tappisolujen ulkosegmenttien pinotut kalvolamellit tarjoavat orientoituneelle radikaaliparin magnetoreseptiolle tarvittavan rakenteellisen jarjestyksen.",
+      "Ihmisen verkkokalvo sisältää kaksi erillistaa kryptokromijärjestelmää. Bartolke ym. (2025, FASEB Journal) osoittivat, että täyspitkää CRY1-proteiinia esiintyy yksinomaan lyhytaaltoherkissä sinisten tappisolujen ulkosegmenteissa ihmisen, bonobon ja gorillan verkkokalvoilla. Tämä sijainti kaukana tumista viittaa ei-sirkadiaaniseen, fototransduktiiviseen toimintaan. Tappisolujen ulkosegmenttien pinotut kalvolamellit tarjoavat orientoituneelle radikaaliparin magnetoreseptiolle tarvittavan rakenteellisen järjestyksen.",
     s1p2:
-      "CRY2 toimii verkkokalvon gangliosoluissa osana sirkadiaanista valosyotereittia suprakiasmaattiseen tumakkeeseen (SCN). Yap ym. (2025, Cells) osoittivat, etta CRY2 muodostaa fyysisen interaktion TRPC1:n kanssa, ja kompleksi siirtyy yhdessa tumaan pulssisahkomagneettisen kenttan altistuksen jalkeen. FAD-kromofori vaaditaan molemmissa jarjestelmissa: ilman FAD:ta CRY-proteiinit ovat epastabiileja ja magneettisesti epaherkkia.",
+      "CRY2 toimii verkkokalvon gangliosoluissa osana sirkadiaanista valosyötereittiä suprakiasmaattiseen tumakkeeseen (SCN). Yap ym. (2025, Cells) osoittivat, että CRY2 muodostaa fyysisen interaktion TRPC1:n kanssa, ja kompleksi siirtyy yhdessä tumaan pulssisähkömagneettisen kenttan altistuksen jälkeen. FAD-kromofori vaaditaan molemmissa jarjestelmissa: ilman FAD:ta CRY-proteiinit ovat epästabiileja ja magneettisesti epäherkkiä.",
     s1p3:
-      "Tama kaksoiskryptokromiarkkitehtuuri tarkoittaa, etta silma kayttaa kahta rinnakkaista sahkomagneettista aistikanavaa: CRY1 sinisissatapeissa suuntakohtaiseen magnetoreseptioon ja CRY2 gangliosoluissa sirkadiaaniseen magneettiseen integraatioon.",
+      "Tämä kaksoiskryptokromiarkkitehtuuri tarkoittaa, että silmä käyttää kahta rinnakkaista sähkömagneettista aistikanavaa: CRY1 sinisissä tapeissa suuntakohtaiseen magnetoreseptioon ja CRY2 gangliosoluissa sirkadiaaniseen magneettiseen integraatioon.",
 
-    s2Title: "Kanavaprofiiili",
+    s2Title: "Kanavaprofiili",
     s2Channels: [
       {
         name: "CRY1 (sinisten tappisolujen ulkosegmentit)",
@@ -197,40 +197,40 @@ const COPY = {
       },
       {
         name: "FAD-kromofori",
-        function: "Radikaaliparin substraatti molemmille CRY-jarjestelmille",
+        function: "Radikaaliparin substraatti molemmille CRY-järjestelmille",
         mechanism: "Sininen valo virittaa FAD:n → FADH•-semikinoni → magneettisesti herkka radikaalipari",
         evidence: "Hirano 2017 (Cell Reports) — B2-puutos → CRY-degradaatio",
       },
     ],
     s2Convergence:
-      "Kaksikaistakohdennus: optinen sininen valo (∼450 nm) aktivoi CRY-fotosyklin, kun taas RF/ELF-sahkomagneettiset kentat moduloivat radikaaliparin spindynamiikkaa. Molemmat kanavat konvergoivat samaan FAD-riippuvaiseen radikaaliparin valitilaan.",
+      "Kaksikaistakohdennus: optinen sininen valo (∼450 nm) aktivoi CRY-fotosyklin, kun taas RF/ELF-sähkömagneettiset kentät moduloivat radikaaliparin spindynamiikkaa. Molemmat kanavat konvergoivat samaan FAD-riippuvaiseen radikaaliparin valitilaan.",
 
     s3Title: "Mekanismiketju",
     s3Chain:
-      "Sininen valo → CRY → FAD•-radikaalipari → RPM-spindynamiikka → sirkadiaaninen hairio → melatoniini ↓ → HPG-akseli ↓",
+      "Sininen valo → CRY → FAD•-radikaalipari → RPM-spindynamiikka → sirkadiaaninen häiriö → melatoniini ↓ → HPG-akseli ↓",
     s3Iris:
-      "Iiriksen pigmentaatio moduloi koko ketjun syottopisteessa. Siniset silmat paastavat noin 100× enemman sinista valoa verkkokalvolle kuin ruskeat silmat (Higuchi 2007: 89 % vs 73 % melatoniinisuppressio identtisessa 1000 luksin altistuksessa). Tama ei ole pieni efekti — se on lahes kaksinkertainen ero koko alavirran kaskadin vahvistuksessa.",
+      "Iiriksen pigmentaatio moduloi koko ketjun syöttöpisteessä. Siniset silmat päästävät noin 100× enemmän sinista valoa verkkokalvolle kuin ruskeat silmat (Higuchi 2007: 89 % vs 73 % melatoniinisuppressio identtisessa 1000 luksin altistuksessa). Tämä ei ole pieni efekti — se on lähes kaksinkertainen ero koko alavirran kaskadin vahvistuksessa.",
     s3Green:
-      "Vihreat silmat ovat ainutlaatuisessa asemassa: niiden lipokromipigmentti toimii kaistanpaaastosuodattimena, joka paastaa 450–570 nm CRY:n operointikaistan samalla vahentaen UV:ta ja aarimmaaista sinista, joka aiheuttaa semikinoni yliredusointia (Niessner 2014). Tama voi optimoida CRY-stabiilisuuden CRY-aktivaation sijaan — suosien sirkadiaanista robustisuutta raaan magnetoreseptiivisen herkkyyden sijaan.",
+      "Vihreät silmät ovat ainutlaatuisessa asemassa: niiden lipokromipigmentti toimii kaistanpäästösuodattimena, joka päästää 450–570 nm CRY:n toimintakaistan samalla vähentäen UV:ta ja äärimmäistä sinista, joka aiheuttaa semikinoni yliredusointia (Niessner 2014). Tämä voi optimoida CRY-stabiilisuuden CRY-aktivaation sijaan — suosien sirkadiaanista robustisuutta raa'an magnetoreseptiivisen herkkyyden sijaan.",
 
-    s4Title: "Keskeinene evidenssi",
+    s4Title: "Keskeinen evidenssi",
     s4Studies: [
       {
         citation: "Bartolke ym. (FASEB J)",
         year: 2025,
-        finding: "Tayspitkaa CRY1 ihmisen sinisten tappisolujen ulkosegmenteissa. C-terminaalivasta-aine erottaa tayspitkaan katkaistusta. QuantumBirds-konsortio.",
+        finding: "Täyspitkää CRY1 ihmisen sinisten tappisolujen ulkosegmenteissa. C-terminaalivasta-aine erottaa täyspitkään katkaistusta. QuantumBirds-konsortio.",
         level: "E",
       },
       {
         citation: "Chae ym. (PLOS ONE)",
         year: 2019,
-        finding: "Nalkiintyneet miehet (n=20) orientoituivat kohti geomagneettista ruokasuuntaa (P<0,001). Vaikutus vaati sinista valoa (<500 nm). Naiset (n=21) eivat osoittaneet merkitsevaa orientaatiota.",
+        finding: "Nälkiintyneet miehet (n=20) orientoituivat kohti geomagneettista ruokasuuntaa (P<0,001). Vaikutus vaati sinista valoa (<500 nm). Naiset (n=21) eivat osoittaneet merkitsevaa orientaatiota.",
         level: "M|C",
       },
       {
         citation: "Higuchi ym. (Am J Physiol)",
         year: 2007,
-        finding: "Vaaleasilmaiset kaukaasialaiset: 89 % melatoniinisuppressio vs 73 % tummasilmaisilla aasialaisilla identtisessa 1000 luksin 2h altistuksessa.",
+        finding: "Vaalesilmäiset kaukaasialaiset: 89 % melatoniinisuppressio vs 73 % tummasilmäisillä aasialaisilla identtisessa 1000 luksin 2h altistuksessa.",
         level: "M|C",
       },
       {
@@ -242,52 +242,52 @@ const COPY = {
       {
         citation: "Yap ym. (Cells)",
         year: 2025,
-        finding: "CRY2-TRPC1-fyysinen kompleksi. FAD-puutos (RFK-hiljennys) kumosi seka PEMF-vasteen etta magneettisen suuntaerottelun. Pimea tuotti saman vaikutuksen.",
+        finding: "CRY2-TRPC1-fyysinen kompleksi. FAD-puutos (RFK-hiljennys) kumosi sekä PEMF-vasteen että magneettisen suuntaerottelun. Pimea tuotti saman vaikutuksen.",
         level: "E",
       },
       {
         citation: "Niessner ym. (J Exp Biol)",
         year: 2014,
-        finding: "CRY-fotosykli: hapettunut absorboi UV/sinista (≤500 nm), semikinoni lisaksi vihreaa (≤570 nm). Vihrea valo yllapitaa mutta ei voi kaynnistaa CRY-aktivaatiota.",
+        finding: "CRY-fotosykli: hapettunut absorboi UV/sinista (≤500 nm), semikinoni lisäksi vihreaa (≤570 nm). Vihrea valo ylläpitää mutta ei voi käynnistää CRY-aktivaatiota.",
         level: "E",
       },
     ],
 
     s5Title: "Lindgren-analyysi",
     s5p1:
-      "Silma tayttaa kaikki kuusi Lindgrenin kriteeria EMF-herkkyydelle. Valintafunktio χ_eye riippuu kolmesta paamodulaattorista:",
+      "Silmä täyttää kaikki kuusi Lindgrenin kriteeria EMF-herkkyydelle. Valintafunktio χ_eye riippuu kolmesta päämodulaattorista:",
     s5Criteria: [
-      "Iiriksen pigmentaatio — moduloi fotonivuota CRY:lle (sininen ≈ 100×, vihrea ≈ 30×, ruskea ≈ 1×)",
-      "FAD/B2-ravitsemustila — maaraa CRY-proteiinin stabiilisuuden ja radikaaliparin muodostuskyvyn",
-      "Ympariston valospektri — sininen sisalto maaraa CRY:n aktivaatiotilan; pimeys = magneettisesti sokea",
+      "Iiriksen pigmentaatio — moduloi fotonivuota CRY:lle (sininen ≈ 100×, vihreä ≈ 30×, ruskea ≈ 1×)",
+      "FAD/B2-ravitsemustila — määrää CRY-proteiinin stabiilisuuden ja radikaaliparin muodostuskyvyn",
+      "Ympäristön valospektri — sininen sisältö määrää CRY:n aktivaatiotilan; pimeys = magneettisesti sokea",
     ],
     s5p2:
-      "χ_eye = f(iiris_pigmentaatio, FAD_tila, I_sininen). Sinisilmainen, B2-rikas henkiloo sinisessa valossa omaa maksimaalisen χ_eye:n. Ruskesilmainen, B2-puutteinen henkiloo pimeassa omaa minimaalisen χ_eye:n. Tama selittaa miksi EMF-silmatutkimukset tuottavat ristiriitaisia tuloksia: ne eivat kontrolloi kolmea dominoivaa modulaattoria.",
+      "χ_eye = f(iiris_pigmentaatio, FAD_tila, I_sininen). Sinisilmainen, B2-rikas henkilö sinisessä valossa omaa maksimaalisen χ_eye:n. Ruskesilmäinen, B2-puutteinen henkilö pimeässä omaa minimaalisen χ_eye:n. Tämä selittää, miksi EMF-silmatutkimukset tuottavat ristiriitaisia tuloksia: ne eivät kontrolloi kolmea dominoivaa modulaattoria.",
 
     s6Title: "Likitaitteisuus: Kolmen kanavan konvergenssi",
     s6Lead:
-      "Likitaitteisuuden esiintyvyys on noussut dramaattisesti teknologiaa omaksuvissa vaestoissa. BERM-malli tunnistaa kolme riippumatonta EMF-valitteista kanavaa, jotka konvergoivat skleraalisen elongaation — likitaitteisuuden rakenteellisen syyn — suuntaan.",
+      "Likitaitteisuuden esiintyvyys on noussut dramaattisesti teknologiaa omaksuvissa väestöissä. BERM-malli tunnistaa kolme riippumatonta EMF-valitteista kanavaa, jotka konvergoivat skleraalisen elongaation — likitaitteisuuden rakenteellisen syyn — suuntaan.",
     s6Channels: [
       {
         name: "Kanava 1 — DA/VGCC",
-        chain: "EMF → VGCC dopamiiniergisissa amakriinisoluissa → dopamiinin vapautuminen hairiytyy → skleraalisen elongaation jarru heikkenee",
-        detail: "Dopamiini on ensisijainen signaali, joka estaa silmaa kasvamasta liian pitkaksi. Ilman riittavaa DA-signalointia aksiaalinen pituus kasvaa → likitaitteisuus.",
+        chain: "EMF → VGCC dopamiiniergisissa amakriinisoluissa → dopamiinin vapautuminen häiriytyy → skleraalisen elongaation jarru heikkenee",
+        detail: "Dopamiini on ensisijainen signaali, joka estää silmää kasvamasta liian pitkäksi. Ilman riittavaa DA-signalointia aksiaalinen pituus kasvaa → likitaitteisuus.",
       },
       {
         name: "Kanava 2 — CRY/Melatoniini",
-        chain: "EMF → CRY-hairio → melatoniinisuppressio → silman sirkadiaaninen kasvurytmi hairiytyy",
-        detail: "Silmalla on oma sirkadiaaninen kasvurytminsa — se kasvaa paivalla ja kutistuu yolla. Melatoniini on kriittinen talle syklille. Hairioitynyt melatoniini → saatelematon kasvu → elongaatio.",
+        chain: "EMF → CRY-häiriö → melatoniinisuppressio → silmän sirkadiaaninen kasvurytmi häiriytyy",
+        detail: "Silmalla on oma sirkadiaaninen kasvurytminsä — se kasvaa päivällä ja kutistuu yöllä. Melatoniini on kriittinen talle syklille. Häiriöitynyt melatoniini → säätelemätön kasvu → elongaatio.",
       },
       {
         name: "Kanava 3 — Silea lihas/Cav",
         chain: "Siliaarisen silean lihaksen Cav-kanavat → akkommodaatio (tarkennus)",
-        detail: "Krooninen Cav-hairio → akkommodaatiodisfunktio → taittovirhe.",
+        detail: "Krooninen Cav-häiriö → akkommodaatiodisfunktio → taittovirhe.",
       },
     ],
     s6Prevalence:
-      "Likitaitteisuuden esiintyvyysgradientti: maaseutu-Afrikka 1–11 %, Latinalainen Amerikka 1–14 %, Eurooppa 17–36 %, USA ~50 %, Ita-Aasia 80–95 %. Tama seuraa teknologian omaksumista, ei genetiikkaa — Ita-Aasiassa vahemman kaupungistuneissa ymparistoissa kasvaneiden lasten likitaitteisuus on matalampi.",
+      "Likitaitteisuuden esiintyvyysgradientti: maaseutu-Afrikka 1–11 %, Latinalainen Amerikka 1–14 %, Eurooppa 17–36 %, USA ~50 %, Ita-Aasia 80–95 %. Tämä seuraa teknologian omaksumista, ei genetiikkaa — Ita-Aasiassa vähemmän kaupungistuneissa ympäristöissä kasvaneiden lasten likitaitteisuus on matalampi.",
     s6Covid:
-      "COVID-19-sulkutoimet → lisaantynyt ruutuaika → 1,5–3-kertainen lisays lasten likitaitteisuuden etenemisessa (meta-analyysit). Tama luonnollinen koe vahvistaa ruutu- ja lahityoaltistuksen proksimaalisena ajurina, yhteensopivasti kolmen kanavan mallin kanssa.",
+      "COVID-19-sulkutoimet → lisääntynyt ruutuaika → 1,5–3-kertainen lisays lasten likitaitteisuuden etenemisessa (meta-analyysit). Tämä luonnollinen koe vahvistaa ruutu- ja lahityoaltistuksen proksimaalisena ajurina, yhteensopivasti kolmen kanavan mallin kanssa.",
     s6CascadeRef:
       "Mallisivun sairauskaskadi #9 kuvaa taman kolmen kanavan konvergenssimekanismin.",
 
@@ -295,27 +295,27 @@ const COPY = {
     s7Predictions: [
       {
         id: "EYE-1",
-        text: "Sinisilmaiset miehet suoriutuvat vihreasilmaisia paremmin geomagneettisissa orientaatiotehtavissa identtisissa sinisen valon olosuhteissa (toista Chae 2019 silmanvariryhmittelylla).",
+        text: "Sinisilmäiset miehet suoriutuvat vihreasilmaisia paremmin geomagneettisissa orientaatiotehtävissä identtisissa sinisen valon olosuhteissa (toista Chae 2019 silmänvariryhmittelylla).",
         discriminating: true,
       },
       {
         id: "EYE-2",
-        text: "Vihreasilmaisilla naisilla on vakaampi 24h melatoniiniprofiili kuin sinisilmaisilla (pienempi CV melatoniinirytmin amplitudissa).",
+        text: "Vihreasilmaisilla naisilla on vakaampi 24h melatoniiniprofiili kuin sinisilmäisillä (pienempi CV melatoniinirytmin amplitudissa).",
         discriminating: true,
       },
       {
         id: "EYE-3",
-        text: "B2-lisa (25 mg/pv) parantaa sirkadiaanista resilienssia yolliselle EMF-altistukselle henkiloilla joilla on runsas ruutuaika ja huono unenlaatu.",
+        text: "B2-lisa (25 mg/pv) parantaa sirkadiaanista resilienssia yölliselle EMF-altistukselle henkiloilla joilla on runsas ruutuaika ja huono unenlaatu.",
         discriminating: true,
       },
     ],
 
-    seeAlso: "Katso myos",
+    seeAlso: "Katso myös",
     modulomeOverview: "Moduloomin yleiskatsaus",
     evidencePortal: "Evidenssirekisteri",
     citationLabel: "Viite",
     yearLabel: "Vuosi",
-    findingLabel: "Loydos",
+    findingLabel: "Löydös",
     levelLabel: "Taso",
     channelLabel: "Kanava",
     functionLabel: "Toiminto",

@@ -38,7 +38,7 @@ const READINESS_TIERS = {
       borderColor: "border-status-confirmed/30",
       bgColor: "bg-status-confirmed/5",
       status: "163 maata",
-      description: "Maatason mobiililiittymä- ja internetpenetraatiosarjat ovat saatavilla teknologian käyttöönoton ajoitusproxyna. Ne tukevat kuvailevaa kohorttianalyysiä, mutta eivät ole fysikaalinen FieldState, paikallinen RF-annos tai elinkohtainen altistussyöte.",
+      description: "Maatason mobiililiittymä- ja internet-levinneisyyssarjat ovat saatavilla teknologian käyttöönoton ajoitusproxyna. Ne tukevat kuvailevaa kohorttianalyysiä, mutta eivät ole fysikaalinen FieldState, paikallinen RF-annos tai elinkohtainen altistussyöte.",
       sources: "Maailmanpankki WDI, ITU, GSMA Intelligence",
     },
     {
@@ -47,16 +47,16 @@ const READINESS_TIERS = {
       borderColor: "border-status-partial/30",
       bgColor: "bg-status-partial/5",
       status: "Protokolla määritelty, data rajallista",
-      description: "Alueellisia RF-mittaustietoja on olemassa (esim. ANFR Ranskassa, Ofcom UK:ssa), mutta niitä ei ole yhdistetty elinsiirtomalliin. Dokumentoidut yksiköt, kalibrointi, spektri/PSD, B₀-konteksti ja vuorokausiajoitus vaaditaan ennen FieldState-paneeliin liittämistä.",
+      description: "Alueellisia RF-mittaustietoja on olemassa (esim. ANFR Ranskassa, Ofcom UK:ssa), mutta niitä ei ole yhdistetty elinkohtaiseen siirtomalliin. Dokumentoidut yksiköt, kalibrointi, spektri/PSD, B₀-konteksti ja vuorokausiajoitus vaaditaan ennen FieldState-paneeliin liittämistä.",
       sources: "ANFR (Ranska), Ofcom (UK), kansalliset sääntelyviranomaiset",
     },
     {
-      tier: "Mittaamisvalmis FieldState",
+      tier: "Mittausvalmis FieldState",
       color: "text-status-pending",
       borderColor: "border-status-pending/30",
       bgColor: "bg-status-pending/5",
       status: "Ei yhtään maata vielä",
-      description: "Mittaamisvalmis FieldState vaatii dokumentoidut paikalliset kenttävektorit (B₀, ambientin RF-spektri/PSD, henkilökohtaisen laitteen geometria), elinkohtaisen siirron asennolla ja vuorokausikontekstilla, rekisteröidyt biologiset päätepisteet ja paripaneelit. Missään maassa ei ole kaikkia komponentteja koottuna.",
+      description: "Mittausvalmis FieldState vaatii dokumentoidut paikalliset kenttävektorit (B₀, ambientin RF-spektri/PSD, henkilökohtaisen laitteen geometria), elinkohtaisen siirron asennolla ja vuorokausikontekstilla, rekisteröidyt biologiset päätepisteet ja paripaneelit. Missään maassa ei ole kaikkia komponentteja koottuna.",
       sources: "Vaatii tarkoitukseen rakennetun mittauskampanjan",
     },
   ],
@@ -108,15 +108,15 @@ const t = {
     title: "Datalähteet",
     subtitle:
       "BERM v17:n dataluettelo. Lähteet erotellaan sen mukaan, mitä ne todella mittaavat; saatavuutta ei käsitellä biologisen tai demografisen vaikutuksen evidenssinä.",
-    readinessTitle: "Mittaamisvalmius maatasoittain",
-    readinessLead: "BERM v17 luokittelee jokaisen maan sen mukaan, mitä syötedataa on todella saatavilla. Tämä tekee eron ajoitusproxyn ja mittaamisvalmiin FieldStaten välillä näkyväksi piilossa pitämisen sijaan.",
-    readinessNote: "Mittaamisvalmis tarkoittaa, että kaikki nimetyt fysikaaliset syötteet on dokumentoitu. Se ei tarkoita, että biologinen vaikutus, kausaaliarvio tai tuloskerroin olisi osoitettu.",
+    readinessTitle: "Mittausvalmius maatasoittain",
+    readinessLead: "BERM v17 luokittelee jokaisen maan sen mukaan, mitä syötedataa on todella saatavilla. Tämä tekee eron ajoitusproxyn ja mittausvalmiin FieldStaten välillä näkyväksi piilossa pitämisen sijaan.",
+    readinessNote: "Mittausvalmis tarkoittaa, että kaikki nimetyt fysikaaliset syötteet on dokumentoitu. Se ei tarkoita, että biologinen vaikutus, kausaaliarvio tai tuloskerroin olisi osoitettu.",
     primaryTitle: "Teknologian ajoitusproksit",
     primaryDesc:
       "Maatason käyttöönotto- ja yhteyssarjat tukevat kuvailevaa teknologia-ajoitus- ja kohorttianalyysiä. Ne eivät ole fysikaalinen FieldState, paikallinen RF-annos tai elinkohtainen altistussyöte.",
     rfTitle: "RF-mittausdata",
     rfDesc:
-      "Sääntely- ja spatiaalisen RF-datan tietueet ovat FieldState-paneelin mahdollisia osia. Ne tarvitsevat dokumentoidut yksiköt, kalibroinnin, spektrin/PSD:n, sijainnin, B₀-kontekstin ja elinsiirto-oletukset ennen endpoint-analyysiä.",
+      "Sääntely- ja spatiaalisen RF-datan tietueet ovat FieldState-paneelin mahdollisia osia. Ne tarvitsevat dokumentoidut yksiköt, kalibroinnin, spektrin/PSD:n, sijainnin, B₀-kontekstin ja elinkohtaisen siirron oletukset ennen päätepisteanalyysiä.",
     infraTitle: "Infrastruktuuridata",
     infraDesc:
       "Masto- ja antennirekisterit antavat lähdesijainnin kontekstia. Ne eivät yksin osoita maantieteellistä elinkohtaista altistusgradienttia.",

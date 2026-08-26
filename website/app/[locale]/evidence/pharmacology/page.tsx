@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Pill } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import { CitationLink } from "@/components/CitationLink";
 
 const COPY = {
   en: {
@@ -297,7 +296,7 @@ export default async function PharmacologyPage({ params }: { params: Promise<{ l
             return (
               <div
                 key={card.id}
-                className={`rounded-xl border ${card.critical ? "border-green-500/40 bg-green-500/[0.03]" : "border-card-border bg-card-bg"} p-5 sm:p-6`}
+                className={`rounded-xl border ${"critical" in card && card.critical ? "border-green-500/40 bg-green-500/[0.03]" : "border-card-border bg-card-bg"} p-5 sm:p-6`}
               >
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div>

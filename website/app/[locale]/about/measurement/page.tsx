@@ -76,7 +76,7 @@ const t: Record<Locale, Copy> = {
   fi: {
     title: "FieldState-mittausprotokolla",
     subtitle:
-      "Protokolla fysikaalisen kenttätilan dokumentoimiseen ja ennalta määritellyn biologisen päätepisteen testaamiseen. Protokolla testaa tuottaako tietty kenttäpiirre mitattavan biologisen vasteen kontrolloiduissa olosuhteissa.",
+      "Protokolla fysikaalisen kenttätilan dokumentoimiseen ja ennalta määritellyn biologisen päätepisteen testaamiseen. Protokolla testaa, tuottaako tietty kenttäpiirre mitattavan biologisen vasteen kontrolloiduissa olosuhteissa.",
     introduction: [
       "BERM v17 vaatii enemmän kuin kansallisen teknologiaproxyn tai yhden laajakaistatason. Hyödyllinen koe dokumentoi mitatut kenttäkomponentit, kalibroinnin, geometrian, ajoituksen ja provenienssin, joilla kilpailevia fysikaalisia hypoteeseja voidaan erottaa.",
       "Protokollan tarkoitus on tehdä fysikaalisesta mittauksesta ja biologisesta kokeesta erikseen auditoitavia. Havaittu fysikaalinen allekirjoitus on mekanismitestin ennakkoehto — ei todiste haitasta eikä TFR-kerroin.",
@@ -104,8 +104,8 @@ const t: Record<Locale, Copy> = {
       {
         title: "3. Käsittele eDRX ja R42 oikein",
         text: [
-          "eDRX on käyttäjälaitteen katkonaisen vastaanoton/sivutuksen ajoitusmekanismi. Se ei yksinään ole tunnettu solukkoverkon downlink-RF-aaltomuoto eikä ambient-kentän allekirjoitus. eDRX-ajastin voidaan kirjata verkko-/laitemetadatana, mutta sitä ei saa korvata mitatulla downlink-verhokäyrän PSD:llä.",
-          "Zandieh ym. (2025) raportoi taajuusriippuvaista mitokondrio-/ROS-käyttäytymistä syöpäsolukokeissa ELF-magneettikenttäolosuhteissa (0,01–5 Hz; enintään 100 mT, mukana 0,02 ja 0,04 Hz -olosuhteet). Tulos motivoi eksploratiivista PSD-testiä; se ei osoita RF-verkon modulaatiota, eDRX-spektriviivoja eikä lisääntymisvaikutuksia.",
+          "eDRX on käyttäjälaitteen katkonaisen vastaanoton ja hakutoiminnon ajoitusmekanismi. Se ei yksinään ole tunnettu solukkoverkon downlink-RF-aaltomuoto eikä ambient-kentän allekirjoitus. eDRX-ajastin voidaan kirjata verkko-/laitemetadatana, mutta sitä ei saa korvata mitatulla downlink-verhokäyrän PSD:llä.",
+          "Zandieh ym. (2025) raportoi taajuusriippuvaista mitokondrio-/ROS-käyttäytymistä syöpäsolukokeissa ELF-magneettikenttäolosuhteissa (0,01–5 Hz; enintään 100 mT, mukana 0,02 ja 0,04 Hz -olosuhteet). Tulos motivoi alustavaa PSD-testiä; se ei osoita RF-verkon modulaatiota, eDRX-spektriviivoja eikä lisääntymisvaikutuksia.",
         ],
       },
       {

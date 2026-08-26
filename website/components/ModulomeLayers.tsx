@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MODULOME_LAYERS, type ModulomeLayer } from "@/lib/modulome/layers";
+import { MODULOME_LAYERS } from "@/lib/modulome/layers";
 
 const LAYER_COLORS: Record<string, string> = {
   molecular: "#FFC107",

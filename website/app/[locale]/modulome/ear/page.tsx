@@ -151,7 +151,7 @@ const COPY = {
     s3p1:
       "Aging Cell 2024 -tutkimus: IL-6-riippuvainen inflammaging ylössäätelee Cav1.3-ekspressiota sisäisissä karvasoluissa. Krooninen matala-asteinen tulehdus, ikääntymisen tunnusmerkki (inflammaging), nostaa kiertotien ja paikallisia IL-6-tasoja. IL-6-signalointi JAK/STAT-reittien kautta lisää CACNA1D-transkriptiota, mikä johtaa korkeampaan Cav1.3-kanavatiheyteen IHC-kalvolla.",
     s3p2:
-      "Krooninen Cav1.3-ylössäätely johtaa liialliseen Ca²⁺-sisäänvirtaukseen IHC:n nauhasynapsissa. Tuloksena syntynyt kalsiumin ylikuormitus ajaa eksitotoksista vauriota spiraaliganglioneuroneille — sama glutamaattieksitotoksisuusmekanismi kuin neurodegeneratiivisissa sairauksissa. Tämä mekanismi selittää miksi ikääntymiseen liittyvä kuulonmenetys (presbyakusis) kiihtyy henkilöillä joilla on korkeampi systeeminen tulehdus.",
+      "Krooninen Cav1.3-ylössäätely johtaa liialliseen Ca²⁺-sisäänvirtaukseen IHC:n nauhasynapsissa. Tuloksena syntynyt kalsiumin ylikuormitus ajaa eksitotoksista vauriota spiraaliganglioneuroneille — sama glutamaattieksitotoksisuusmekanismi kuin neurodegeneratiivisissa sairauksissa. Tämä mekanismi selittää, miksi ikääntymiseen liittyvä kuulonmenetys (presbyakusis) kiihtyy henkilöillä, joilla on korkeampi systeeminen tulehdus.",
 
     /* 04 Tinnitusreitti */
     s4Title: "Tinnitusreitti",
@@ -163,7 +163,7 @@ const COPY = {
     s5Chain:
       "Krooninen EMF-altistus → matala-asteinen tulehdus → IL-6 ↑ → Cav1.3 ↑ → Ca²⁺-ylikuormitus → kiihtynyt kuulovaurio",
     s5Text:
-      "BERM-kehys yhdistää EMF-altistuksen kuulonmenetykseen tulehdusreitin kautta. Krooninen EMF-altistus indusoi matala-asteisen systeemisen tulehduksen (dokumentoitu useissa tutkimuksissa). Kohonnut IL-6 ylössäätelee Cav1.3:a IHC:issä (Aging Cell 2024). Tuloksena syntynyt Ca²⁺-dysregulaatio kiihdyttää sekä kuulonmenytystä että tinnituksen alkamista. Tämä reitti on synergistinen akustisen vaurion kanssa: EMF-indusoitu Cav1.3-ylössäätely laskee meluvauriokynnystä.",
+      "BERM-kehys yhdistää EMF-altistuksen kuulonmenetykseen tulehdusreitin kautta. Krooninen EMF-altistus indusoi matala-asteisen systeemisen tulehduksen (dokumentoitu useissa tutkimuksissa). Kohonnut IL-6 ylössäätelee Cav1.3:a IHC:issä (Aging Cell 2024). Tuloksena syntynyt Ca²⁺-dysregulaatio kiihdyttää sekä kuulonmenetystä että tinnituksen alkamista. Tämä reitti on synergistinen akustisen vaurion kanssa: EMF-indusoitu Cav1.3-ylössäätely laskee meluvauriokynnystä.",
 
     /* --- OSIO 3: Bluetooth/kuulokkeiden EMF-läheisyys --- */
     s3SectionTitle: "Bluetooth/kuulokkeiden EMF-läheisyys",
@@ -201,7 +201,7 @@ const COPY = {
         id: "aging-cell-2024-cav13-hearing",
         citation: "Aging Cell 2024",
         finding:
-          "IL-6-riippuvainen inflammaging ylössäätelee Cav1.3:a sisäisissä karvasoluissa, ajaen ikääntymiseen liittyvää kuulonmenytystä eksitotoksisuuden kautta IHC–spiraaliganglioneuronien synapsissa.",
+          "IL-6-riippuvainen inflammaging ylössäätelee Cav1.3:a sisäisissä karvasoluissa, ajaen ikääntymiseen liittyvää kuulonmenetystä eksitotoksisuuden kautta IHC–spiraaliganglioneuronien synapsissa.",
       },
       {
         id: "brain-2026-cav32-human-drg",

@@ -41,9 +41,11 @@ function NavDropdown({
 
   useEffect(() => () => clearTimeout(hoverTimeout.current), []);
 
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   const groupHref = `/${locale}${link.href}`;
   const isGroupActive =
@@ -64,9 +66,9 @@ function NavDropdown({
       <button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className={`inline-flex items-center gap-1.5 text-[0.875rem] tracking-[0.005em] transition-colors ${
+        className={`inline-flex items-center gap-1.5 text-[0.875rem] tracking-[0.005em] ${
           isGroupActive
-            ? "text-accent font-medium"
+            ? "text-accent font-medium nav-active-link"
             : "text-foreground-muted hover:text-foreground"
         }`}
       >
@@ -81,7 +83,7 @@ function NavDropdown({
 
       {open && (
         <ul
-          className="absolute left-0 top-full mt-2 w-72 rounded-xl border border-card-border bg-background py-2 shadow-lg animate-in fade-in slide-in-from-top-1 duration-150"
+          className="absolute left-0 top-full mt-2 w-72 rounded-xl border border-card-border bg-background py-2 shadow-xl shadow-black/20 animate-in fade-in slide-in-from-top-1 duration-150"
           role="menu"
         >
           {link.children!.map((child) => {
@@ -218,9 +220,11 @@ export function Navigation({ locale }: { locale: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const links = getNavRoutes(locale);
 
-  useEffect(() => {
+  const [prevPath, setPrevPath] = useState(pathname);
+  if (pathname !== prevPath) {
+    setPrevPath(pathname);
     setMenuOpen(false);
-  }, [pathname]);
+  }
 
   return (
     <nav
@@ -259,9 +263,9 @@ export function Navigation({ locale }: { locale: string }) {
                   <Link
                     href={fullHref}
                     aria-current={isActive ? "page" : undefined}
-                    className={`inline-flex items-center gap-1.5 text-[0.875rem] tracking-[0.005em] transition-colors ${
+                    className={`inline-flex items-center gap-1.5 text-[0.875rem] tracking-[0.005em] ${
                       isActive
-                        ? "text-accent font-medium"
+                        ? "text-accent font-medium nav-active-link"
                         : "text-foreground-muted hover:text-foreground"
                     }`}
                   >

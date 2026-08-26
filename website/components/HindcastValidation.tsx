@@ -20,7 +20,7 @@ const copy = {
     lead: "Aiempi hindcast sovelsi myöhäiseen havaintoon kalibroitua v17-skalaariproxya taaksepäin samaan maa-aikasarjaan. Se säilytetään vain menetelmähistoriana eikä sitä esitetä BERM v17:n validointituloksena.",
     whyTitle: "Miksi numeerinen näyttö poistettiin",
     points: [
-      "Syötteinä oli teknologia-ajoituksen ja oletetun altistuksen proxeja, ei mitattua paikallista FieldStatea tai elinsiirtoa.",
+      "Syötteinä oli teknologia-ajoituksen ja oletetun altistuksen proxeja, ei mitattua paikallista FieldStatea tai elinkohtaista siirtoa.",
       "Skalaariset biologisen kapasiteetin ja TFR:n trajektorit olivat mallinnettuja suureita, eivät riippumattomasti havaittuja päätepisteitä.",
       "Taaksepäin sovitus myöhäisestä kalibrointipisteestä ei ole ulkoisesti lukittu ennuste eikä identifikaatiostrategia.",
     ],

@@ -113,16 +113,16 @@ const COPY: Record<Locale, {
   fi: {
     title: "BERM v17: mittaustila",
     lead:
-      "V2-reitti pitää fysikaalisen kenttätilan, elinsiirron, biologisen kapasiteetin ja demografian erillisinä. Se ei muunna teknologian käyttöönottoa tai mobiililiittymiä paikalliseksi annokseksi, biologiseksi päätepisteeksi tai TFR-kertoimeksi.",
+      "V2-reitti pitää fysikaalisen kenttätilan, elinkohtaisen siirron, biologisen kapasiteetin ja demografian erillisinä. Se ei muunna teknologian käyttöönottoa tai mobiililiittymiä paikalliseksi annokseksi, biologiseksi päätepisteeksi tai TFR-kertoimeksi.",
     layersTitle: "Neljä havaittavaa kerrosta",
     statusTitle: "Syötteen täydellisyys ilmoitetaan eksplisiittisesti",
     useLabel: "Sallittu käyttö",
     readinessNote:
-      "Mittaamisvalmis tarkoittaa, että kaikki nimetyt fysikaaliset syötteet on dokumentoitu. Se ei tarkoita, että biologinen vaikutus, kausaaliarvio tai tuloskerroin olisi osoitettu.",
+      "Mittausvalmis tarkoittaa, että kaikki nimetyt fysikaaliset syötteet on dokumentoitu. Se ei tarkoita, että biologinen vaikutus, kausaaliarvio tai tuloskerroin olisi osoitettu.",
     evidenceNote: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tutkimus–solmu-tietuetta tukee reitin osia. Jokainen on rakenteellista tai kontekstuaalista evidenssiä, ei suora TFR-kulmakerroin.`,
     identityTitle: "ASFR ensin; TFR on johdettu identiteetti",
     identityDescription:
-      "Reitti projisoi ensin ikäkohtaiset hedelmällisyysluvut ja summaa ne vasta sitten. Kysyntä/mahdollisuus, tempo ja ART/live-birth-delivery säilyvät erillisinä syötteinä eivätkä piiloudu biologisiksi termeiksi.",
+      "Reitti projisoi ensin ikäkohtaiset hedelmällisyysluvut ja summaa ne vasta sitten. Kysyntä/mahdollisuus, tempo ja ART-syntymätoimitus säilyvät erillisinä syötteinä eivätkä piiloudu biologisiksi termeiksi.",
     identityNote:
       "Kerroin 5 kuvaa viisivuotisikäryhmiä (15–19 … 45–49); yhtälö ei tunnista TFR-muutoksen syytä.",
     cohortTitle: "Nykyinen kohorttisignaali: vain ajoitusproxy",
@@ -141,19 +141,19 @@ const COPY: Record<Locale, {
         index: "02",
         title: "Elinkohtainen siirto ja muisti",
         description:
-          "Eksplisiittinen elinsiirto Tₒ, reseptoritila ja vuorokausikonteksti syöttävät elinkohtaisia palautuvia (R) ja persistenttejä (P) tiloja. Incrementit vaativat rekisteröidyn evidenssin ja parametri-ID:n.",
+          "Eksplisiittinen elinkohtainen siirto Tₒ, reseptoritila ja vuorokausikonteksti syöttävät elinkohtaisia palautuvia (R) ja persistenttejä (P) tiloja. Incrementit vaativat rekisteröidyn evidenssin ja parametri-ID:n.",
       },
       {
         index: "03",
         title: "Reproduktiivinen kapasiteetti ja pari",
         description:
-          "Mies-, nais-, este- ja implantaatio-osat pysyvät erillään ennen niiden yhdistämistä parin conception/live-birth-kapasiteetiksi. Kansallista keskiarvoa ei käsitellä hiljaisesti paritilana.",
+          "Mies-, nais-, este- ja implantaatio-osat pysyvät erillään ennen niiden yhdistämistä parin hedelmöitys-/syntymäkapasiteetiksi. Kansallista keskiarvoa ei käsitellä hiljaisesti paritilana.",
       },
       {
         index: "04",
         title: "Ikäkohtainen hedelmällisyys ja demografiset termit",
         description:
-          "Biologinen suhde, kysyntä/mahdollisuus, tempo sekä ART/live-birth-delivery-suhteet raportoidaan ikäryhmittäin ennen kuin TFR johdetaan.",
+          "Biologinen suhde, kysyntä/mahdollisuus, tempo sekä ART-syntymätoimitussuhteet raportoidaan ikäryhmittäin ennen kuin TFR johdetaan.",
       },
     ],
     statuses: [
@@ -161,7 +161,7 @@ const COPY: Record<Locale, {
         id: "TECHNOLOGY_TIMING_PROXY",
         title: "Teknologian ajoitusproxy",
         description:
-          "Kansallinen teknologiasarja voi kuvata digitaalisen ympäristön leviämisen ajoitusta. Se on eri asia kuin paikallisesti mitattu FieldState ja elinsiirto.",
+          "Kansallinen teknologiasarja voi kuvata digitaalisen ympäristön leviämisen ajoitusta. Se on eri asia kuin paikallisesti mitattu FieldState ja elinkohtainen siirto.",
         use: "Vain kuvailevaan ajoitus- ja kohorttisignaalin analyysiin; ei paikalliseksi annokseksi eikä päätepistekalibrointiin.",
         tone: "pending",
       },
@@ -169,16 +169,16 @@ const COPY: Record<Locale, {
         id: "PARTIAL_FIELD_STATE",
         title: "Osittainen FieldState",
         description:
-          "Osa fysikaalisista komponenteista on mitattu, mutta yksi tai useampi vaadittu syöte puuttuu: normalisointikalibrointi, B0-vektori, elinsiirto, verhokäyrä-/beat-PSD, vuorokausikonteksti, vaihe/koherenssi tai provenienssi.",
+          "Osa fysikaalisista komponenteista on mitattu, mutta yksi tai useampi vaadittu syöte puuttuu: normalisointikalibrointi, B0-vektori, elinkohtainen siirto, verhokäyrä-/beat-PSD, vuorokausikonteksti, vaihe/koherenssi tai provenienssi.",
         use: "Diagnostiseen data-aukkoraportointiin ja protokollan kehittämiseen; ei päätepistekalibrointiin.",
         tone: "partial",
       },
       {
         id: "MEASUREMENT_READY_FIELD_STATE",
-        title: "Mittaamisvalmis FieldState",
+        title: "Mittausvalmis FieldState",
         description:
-          "Kaikki nimetyt fysikaaliset syötteet on dokumentoitu: kalibrointi, mitattu B0-vektori, ei-identtinen elinsiirto, PSD, vuorokausikonteksti, vaihe/koherenssi ja mittausprovenienssi.",
-        use: "Sopii elinpäätepisteen kalibrointiin vain, kun mukana ovat myös endpoint-join ja ennalta määritelty mapping.",
+          "Kaikki nimetyt fysikaaliset syötteet on dokumentoitu: kalibrointi, mitattu B0-vektori, ei-identtinen elinkohtainen siirto, PSD, vuorokausikonteksti, vaihe/koherenssi ja mittausprovenienssi.",
+        use: "Sopii elinpäätepisteen kalibrointiin vain, kun mukana ovat myös päätepisteliitos ja ennalta määritelty vastaavuuskuvaus.",
         tone: "confirmed",
       },
     ],

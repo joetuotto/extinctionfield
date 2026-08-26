@@ -99,11 +99,11 @@ const t: Record<Locale, Copy> = {
     organTitle: "Elinkohtainen lisääntymistila ennen väestötason yhdistämistä",
     organText: [
       "Mieshaara pitää veri–kivesesteen, ituradan varannon, steroidogeneesin, siittiötuoton/toiminnan ja DNA-eheyden erillisinä. Naishaara pitää munasarjavarannon, oosyyttiredoxin, ovulaation kellotuksen, luteaali-/implantaatio-tuen ja istukkaesteen erillisinä.",
-      "Jokaisella tilalla on palautuva (R) ja persistentti (P) osa vain silloin, kun eksplisiittinen incrementtimapping, parametri-ID ja sitä tukeva evidenssitietue on määritelty. BTB:llä on oma rekisteröity lisääntymishaara. BBB, istukka ja retina ovat erillisiä kandidaattitiloja, eivät näyttöä globaalista estekertoimesta tai naiskapasiteetin kertoimesta.",
+      "Jokaisella tilalla on palautuva (R) ja persistentti (P) osa vain silloin, kun eksplisiittinen inkrementtikartoitus, parametri-ID ja sitä tukeva evidenssitietue on määritelty. BTB:llä on oma rekisteröity lisääntymishaara. BBB, istukka ja retina ovat erillisiä kandidaattitiloja, eivät näyttöä globaalista estekertoimesta tai naiskapasiteetin kertoimesta.",
     ],
     asfrTitle: "ASFR ensin; TFR on johdettu periodi-identiteetti",
     asfrText: [
-      "Väestökerros yhdistää paritetun miehen ja naisen conception/live-birth-kapasiteetin säilyttäen yhteisen kotiympäristön ja partnerikovarianssin. Sen jälkeen se raportoi biologisen kapasiteetin erillään kysynnästä/mahdollisuudesta, temposta ja ART/live-birth-deliverystä jokaiselle ikäryhmälle.",
+      "Väestökerros yhdistää paritetun miehen ja naisen hedelmöitys-/syntymäkapasiteetin säilyttäen yhteisen kotiympäristön ja partnerikovarianssin. Sen jälkeen se raportoi biologisen kapasiteetin erillään kysynnästä/mahdollisuudesta, temposta ja ART-syntymätoimituksesta jokaiselle ikäryhmälle.",
       "Maakohtaista BERM v17-kerrointa ei vielä estimoida: kalibroinnin vaatimia kohdistettuja FieldState-, biologisten päätepisteiden ja paripaneeleja ei ole koottu. Siksi v2 ei julkaise maakohtaisia TFR-ennusteita.",
     ],
     evidenceLink: "Selaa rajattua evidenssirekisteriä",

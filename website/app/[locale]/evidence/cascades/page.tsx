@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Activity } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { BermIcon } from "@/components/BermIcon";
 import { IonicHierarchyDiagram } from "@/components/IonicHierarchyDiagram";
 import { DiseaseCascadeTimeline } from "@/components/DiseaseCascadeTimeline";
 import Link from "next/link";
@@ -30,7 +31,7 @@ export default async function CascadesPage({ params }: { params: Promise<{ local
         {backLink}
       </Link>
 
-      <PageHeader icon={Activity} title={title} subtitle={subtitle} />
+      <PageHeader icon={Activity} title={title} subtitle={subtitle} lensIcon={<BermIcon name="signal" size={28} className="text-accent" />} />
 
       {/* R4b-d: Ionic Treatment Hierarchy */}
       <section id="ionic-hierarchy" className="mb-16 border-t editorial-rule pt-6">
@@ -40,12 +41,12 @@ export default async function CascadesPage({ params }: { params: Promise<{ local
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
           <p className="editorial-rail text-[0.95rem] text-foreground">
             {activeLocale === "fi"
-              ? "Retrodiktio R4 esittää, että masennus reagoi paremmin sähköön kuin kemiaan. Ioninen hoitohierarkia selittää miksi: kaikki mielialahäiriöiden hoidot — SSRI:istä psykedeeeleihin — konvergoivat lopulta kalsiumhomeostaasiin. Niiden tehokkuus seuraa ionisen kohdistuksen astetta."
+              ? "Retrodiktio R4 esittää, että masennus reagoi paremmin sähköön kuin kemiaan. Ioninen hoitohierarkia selittää, miksi: kaikki mielialahäiriöiden hoidot — SSRI:istä psykedeeleihin — konvergoivat lopulta kalsiumhomeostaasiin. Niiden tehokkuus seuraa ionisen kohdistuksen astetta."
               : "Retrodiction R4 states that depression responds better to electricity than chemistry. The ionic treatment hierarchy explains why: all mood disorder treatments — from SSRIs to psychedelics — ultimately converge on calcium homeostasis. Their efficacy tracks with the degree of ionic directness."}
           </p>
           <p>
             {activeLocale === "fi"
-              ? "R4b — Litium: Litium on maailman vanhin ja tehokkain mielialastabilisaattori, ja ainoa joka vähentää itsemurhakuolleisuutta (meta-analyysi >14 000 potilasta). Sen mekanismi on ioninen, ei kemiallinen: Li⁺-ioni läpäisee jänniteriippuvaisen natriumkanavan (VGSC), korvaa Na⁺:n 1:1-suhteessa ja normalisoi solujen Na⁺/Ca²⁺-tasapainon. GWAS-tutkimukset liittävät litiumvasteen ionikanavageeneihin — ei serotoniiniteihin. Yhtään serotoniinilääkettä ei ole koskaan osoitettu vähentävän itsemurhakuolleisuutta."
+              ? "R4b — Litium: Litium on maailman vanhin ja tehokkain mielialastabilisaattori, ja ainoa, joka vähentää itsemurhakuolleisuutta (meta-analyysi >14 000 potilasta). Sen mekanismi on ioninen, ei kemiallinen: Li⁺-ioni läpäisee jänniteriippuvaisen natriumkanavan (VGSC), korvaa Na⁺:n 1:1-suhteessa ja normalisoi solujen Na⁺/Ca²⁺-tasapainon. GWAS-tutkimukset liittävät litiumvasteen ionikanavageeneihin — ei serotoniiniteihin. Yhtään serotoniinilääkettä ei ole koskaan osoitettu vähentävän itsemurhakuolleisuutta."
               : "R4b — Lithium: Lithium is the world's oldest and most effective mood stabilizer, and the only one shown to reduce suicide mortality (meta-analysis of >14,000 patients). Its mechanism is ionic, not chemical: the Li⁺ ion permeates the voltage-gated sodium channel (VGSC), replaces Na⁺ at a 1:1 ratio, and normalizes cellular Na⁺/Ca²⁺ balance. GWAS studies link lithium response to ion channel genes — not serotonin pathways. No serotonin-based drug has ever been shown to reduce suicide mortality."}
           </p>
           <p>
@@ -55,7 +56,7 @@ export default async function CascadesPage({ params }: { params: Promise<{ local
           </p>
           <p>
             {activeLocale === "fi"
-              ? "R4d — Hierarkia: Viisitasoinen hierarkia (kemiallinen < sähkömagneettinen < ioninen krooninen < ioninen reset < totaalinen ioninen nollaus) selittää miksi nopeampi vaikutusmekanismi ennustaa suurempaa tehoa. SSRI:t (NNT 7) vaikuttavat ionikanaviin epäsuorasti viikkojen viiveellä. TMS/tDCS (NNT 5–6) indusoivat ionivirtoja suoraan. Litium korvaa Na⁺-ionin suoraan. Psykedeelit tuottavat akuutin Ca²⁺-resetin tunneissa. ECT — psykiatrian tehokkain hoito (70–80 % vaste hoitoresistenteissä) — laukaisee leviävän depolarisaatioaallon (CSD) joka nollaa koko korteksin ionigradientit (Rosenthal ym. 2025, Nature Communications). Tämä kuvio on yhteensopiva vain ionikanavahypoteesin kanssa."
+              ? "R4d — Hierarkia: Viisitasoinen hierarkia (kemiallinen < sähkömagneettinen < ioninen krooninen < ioninen reset < totaalinen ioninen nollaus) selittää, miksi nopeampi vaikutusmekanismi ennustaa suurempaa tehoa. SSRI:t (NNT 7) vaikuttavat ionikanaviin epäsuorasti viikkojen viiveellä. TMS/tDCS (NNT 5–6) indusoivat ionivirtoja suoraan. Litium korvaa Na⁺-ionin suoraan. Psykedeelit tuottavat akuutin Ca²⁺-resetin tunneissa. ECT — psykiatrian tehokkain hoito (70–80 % vaste hoitoresistenteissä) — laukaisee leviävän depolarisaatioaallon (CSD), joka nollaa koko korteksin ionigradientit (Rosenthal ym. 2025, Nature Communications). Tämä kuvio on yhteensopiva vain ionikanavahypoteesin kanssa."
               : "R4d — The hierarchy: The five-level hierarchy (chemical < electromagnetic < ionic chronic < ionic reset < total ionic reset) explains why faster mechanisms predict greater efficacy. SSRIs (NNT 7) affect ion channels indirectly over weeks. TMS/tDCS (NNT 5–6) induce ion currents directly. Lithium replaces the Na⁺ ion directly. Psychedelics produce an acute Ca²⁺ reset within hours. ECT — psychiatry's most effective treatment (70–80% response in treatment-resistant cases) — triggers cortical spreading depolarization (CSD) that resets all ionic gradients across the entire cortex (Rosenthal et al. 2025, Nature Communications). This pattern is consistent only with the ion channel hypothesis."}
           </p>
         </div>
@@ -120,22 +121,22 @@ export default async function CascadesPage({ params }: { params: Promise<{ local
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
           <p className="editorial-rail text-[0.95rem] text-foreground">
             {activeLocale === "fi"
-              ? "Iho ei ole passiivinen suoja vaan aktiivinen biosähköinen sensoriverkko. Epidermis ylläpitää jatkuvaa transepiteliaalista potentiaalia (TEP, 10–60 mV) Na⁺/K⁺-ATPaasin avulla — kirjaimellinen paristo joka generoi sähkökentän ihon läpi. Kun iho vaurioituu, TEP romahtaa ja generoi lateraalisen sähkökentän (100–200 mV/mm) joka ohjaa keratinosyyttien ja fibroblastien elektrotaksista. Tämä sähköinen signaali on ensimmäinen parantava signaali — ENNEN biokemiallisia signaaleja."
+              ? "Iho ei ole passiivinen suoja vaan aktiivinen biosähköinen sensoriverkko. Epidermis ylläpitää jatkuvaa transepiteliaalista potentiaalia (TEP, 10–60 mV) Na⁺/K⁺-ATPaasin avulla — kirjaimellinen paristo, joka generoi sähkökentän ihon läpi. Kun iho vaurioituu, TEP romahtaa ja generoi lateraalisen sähkökentän (100–200 mV/mm), joka ohjaa keratinosyyttien ja fibroblastien elektrotaksista. Tämä sähköinen signaali on ensimmäinen parantava signaali — ENNEN biokemiallisia signaaleja."
               : "Skin is not a passive barrier but an active bioelectric sensor network. The epidermis maintains a continuous transepithelial potential (TEP, 10–60 mV) via Na⁺/K⁺-ATPase — a literal battery that generates an electric field across the skin. When skin is wounded, TEP collapses and generates a lateral electric field (100–200 mV/mm) that guides keratinocyte and fibroblast electrotaxis. This electrical signal is the first healing signal — BEFORE biochemical signals."}
           </p>
           <p>
             {activeLocale === "fi"
-              ? "Ihon dermis on pääasiassa kollageenia, joka on pietsosähköinen (7–8 pC/N): se muuntaa mekaanisen voiman suoraan sähköiseksi signaaliksi. Kosketuksen havaitseminen ei ole pelkästään mekaanisten reseptorien (PIEZO1/2) toimintaa — se on myös pietsosähköinen prosessi jossa kollageeni generoi jännitteen joka avaa SAMAT jänniteohjatut kalsiumkanavat (VGCC) jotka BERM identifioi EMF:n kohteiksi. Mekaaninen kosketus ja EMF konvergoivat samaan Ca²⁺-kanavaan."
+              ? "Ihon dermis on pääasiassa kollageenia, joka on pietsosähköinen (7–8 pC/N): se muuntaa mekaanisen voiman suoraan sähköiseksi signaaliksi. Kosketuksen havaitseminen ei ole pelkästään mekaanisten reseptorien (PIEZO1/2) toimintaa — se on myös pietsosähköinen prosessi, jossa kollageeni generoi jännitteen, joka avaa SAMAT jänniteohjatut kalsiumkanavat (VGCC) jotka BERM identifioi EMF:n kohteiksi. Mekaaninen kosketus ja EMF konvergoivat samaan Ca²⁺-kanavaan."
               : "The skin dermis is primarily collagen, which is piezoelectric (7–8 pC/N): it converts mechanical force directly into electrical signal. Touch perception is not solely the work of mechanical receptors (PIEZO1/2) — it is also a piezoelectric process where collagen generates voltage that opens the SAME voltage-gated calcium channels (VGCC) that BERM identifies as EMF targets. Mechanical touch and EMF converge on the same Ca²⁺ channel."}
           </p>
           <p>
             {activeLocale === "fi"
-              ? "Keratinosyyttien TRPV4 on multimodaalinen ionikanava joka reagoi mekaaniseen paineeseen, lämpöön (>27°C), UVB-säteilyyn ja osmoottiseen paineeseen — kaikki samaksi Ca²⁺-vasteeksi. TRPV4 välittää myös histaminergista kutinaa. Jos EMF aktivoi TRPV4:ää, tuloksena on kutina joka on erottamaton allergisesta kutinasta. Tämä selittää miksi EHS:n yleisimmät iho-oireet (pistely, polttelu, kutina) ovat biologisesti ennustettavia vasteita, eivät nocebo-ilmiöitä."
+              ? "Keratinosyyttien TRPV4 on multimodaalinen ionikanava, joka reagoi mekaaniseen paineeseen, lämpöön (>27°C), UVB-säteilyyn ja osmoottiseen paineeseen — kaikki samaksi Ca²⁺-vasteeksi. TRPV4 välittää myös histaminergista kutinaa. Jos EMF aktivoi TRPV4:ää, tuloksena on kutina, joka on erottamaton allergisesta kutinasta. Tämä selittää, miksi EHS:n yleisimmät iho-oireet (pistely, polttelu, kutina) ovat biologisesti ennustettavia vasteita, eivät nocebo-ilmiöitä."
               : "Keratinocyte TRPV4 is a multimodal ion channel that responds to mechanical pressure, heat (>27°C), UVB radiation, and osmotic pressure — all producing the same Ca²⁺ response. TRPV4 also mediates histaminergic itch. If EMF activates TRPV4, the result is itch indistinguishable from allergic itch. This explains why the most common EHS skin symptoms (tingling, burning, itching) are biologically predictable responses, not nocebo phenomena."}
           </p>
           <p>
             {activeLocale === "fi"
-              ? "Skedung ym. (2013, Scientific Reports) osoittivat, että ihmisen sormi havaitsee 13 nm kohoumat — kokoluokkaero sormenjälkiharjanteeseen nähden on 15 000:1. Mekaaniset mallit eivät selitä tätä tarkkuutta. Pietsosähköinen + ionikanavaselitys voi: nanometritason pintarakenne generoi sähköisen signaalin joka on riittävän voimakas aktivoimaan VGCC/PIEZO1/TRPV4-kanavia. Tämä todistaa, että ihon sensorijärjestelmä operoi tasolla jossa EMF:n ja luonnollisten biosähköisten signaalien erottaminen on mahdotonta."
+              ? "Skedung ym. (2013, Scientific Reports) osoittivat, että ihmisen sormi havaitsee 13 nm kohoumat — kokoluokkaero sormenjälkiharjanteeseen nähden on 15 000:1. Mekaaniset mallit eivät selitä tätä tarkkuutta. Pietsosähköinen + ionikanavaselitys voi: nanometritason pintarakenne generoi sähköisen signaalin, joka on riittävän voimakas aktivoimaan VGCC/PIEZO1/TRPV4-kanavia. Tämä todistaa, että ihon sensorijärjestelmä toimii tasolla, jossa EMF:n ja luonnollisten biosähköisten signaalien erottaminen on mahdotonta."
               : "Skedung et al. (2013, Scientific Reports) demonstrated that the human finger detects 13 nm ridges — a scale difference of 15,000:1 relative to fingerprint ridges. Mechanical models cannot explain this precision. The piezoelectric + ion channel explanation can: nanometer surface structure generates an electrical signal sufficient to activate VGCC/PIEZO1/TRPV4 channels. This proves the skin sensory system operates at a level where distinguishing EMF from natural bioelectric signals is impossible."}
           </p>
         </div>
@@ -204,7 +205,7 @@ export default async function CascadesPage({ params }: { params: Promise<{ local
           </p>
           <p>
             {activeLocale === "fi"
-              ? "GWAS-todiste: CACNA1C (Cav1.2) -geenin variantit assosioituvat toistuvasti ADHD:hen, autismiin, bipolaarihäiriöön ja masennukseen (PMC6101623, PMC6679227). Tämä on SAMA geeni/kanava joka moduloi EMF:n uni-vaikutusta (Sousouri 2025), on psykedeelien signaaliketjun kohde ja osallistuu AD:n Ca²⁺-kaskadiin. Timothy-syndrooma (de novo CACNA1C gain-of-function G406R) aiheuttaa autismin korkealla penetranssilla — VGCC:n YLITOIMINTA = autistinen fenotyyppi. Muut VGCC-geenit (CACNA1A, CACNA1H, CACNA1I) assosioituvat myös neurokehityshäiriöihin (PMC4643966, PMC8957782)."
+              ? "GWAS-todiste: CACNA1C (Cav1.2) -geenin variantit assosioituvat toistuvasti ADHD:hen, autismiin, bipolaarihäiriöön ja masennukseen (PMC6101623, PMC6679227). Tämä on SAMA geeni/kanava, joka moduloi EMF:n uni-vaikutusta (Sousouri 2025), on psykedeelien signaaliketjun kohde ja osallistuu AD:n Ca²⁺-kaskadiin. Timothy-syndrooma (de novo CACNA1C gain-of-function G406R) aiheuttaa autismin korkealla penetranssilla — VGCC:n YLITOIMINTA = autistinen fenotyyppi. Muut VGCC-geenit (CACNA1A, CACNA1H, CACNA1I) assosioituvat myös neurokehityshäiriöihin (PMC4643966, PMC8957782)."
               : "GWAS evidence: CACNA1C (Cav1.2) gene variants repeatedly associate with ADHD, autism, bipolar disorder, and depression (PMC6101623, PMC6679227). This is the SAME gene/channel that modulates EMF sleep effects (Sousouri 2025), is the psychedelic signal chain target, and participates in AD's Ca²⁺ cascade. Timothy syndrome (de novo CACNA1C gain-of-function G406R) causes autism with high penetrance — VGCC OVERACTIVITY = autistic phenotype. Other VGCC genes (CACNA1A, CACNA1H, CACNA1I) also associate with neurodevelopmental disorders (PMC4643966, PMC8957782)."}
           </p>
           <p>
@@ -214,7 +215,7 @@ export default async function CascadesPage({ params }: { params: Promise<{ local
           </p>
           <p>
             {activeLocale === "fi"
-              ? "Farmakologinen todiste: Guanfasiini (Intuniv, FDA/EMA-hyväksytty ADHD:hen) EI koske dopamiiniin. Se on α2A-adrenerginen agonisti joka estää cAMP:n → SULKEE HCN-kanavat → stabiloi membraanipotentiaalin → prefrontaalisen korteksin signaali-kohinasuhde paranee (Wang ym. 2007, Cell). Tämä on SUORA ionikanavainterventio. Guanfasiini toimii juuri niihin ADHD-oireisiin (impulsiivisuus, emotionaalinen säätely) jotka vaativat tarkinta ionista kontrollia. Stimulantit sen sijaan KOMPENSOIVAT kalibraatiovirhettä nostamalla signaalia — guanfasiini KORJAA kynnystä."
+              ? "Farmakologinen todiste: Guanfasiini (Intuniv, FDA/EMA-hyväksytty ADHD:hen) EI koske dopamiiniin. Se on α2A-adrenerginen agonisti, joka estää cAMP:n → SULKEE HCN-kanavat → stabiloi membraanipotentiaalin → prefrontaalisen korteksin signaali-kohinasuhde paranee (Wang ym. 2007, Cell). Tämä on SUORA ionikanavainterventio. Guanfasiini toimii juuri niihin ADHD-oireisiin (impulsiivisuus, emotionaalinen säätely), jotka vaativat tarkinta ionista kontrollia. Stimulantit sen sijaan KOMPENSOIVAT kalibraatiovirhettä nostamalla signaalia — guanfasiini KORJAA kynnystä."
               : "Pharmacological evidence: Guanfacine (Intuniv, FDA/EMA-approved for ADHD) does NOT touch dopamine. It is an α2A-adrenergic agonist that inhibits cAMP → CLOSES HCN channels → stabilizes membrane potential → prefrontal cortex signal-to-noise ratio improves (Wang et al. 2007, Cell). This is a DIRECT ion channel intervention. Guanfacine works precisely on those ADHD symptoms (impulsivity, emotional regulation) requiring the finest ionic control. Stimulants instead COMPENSATE for the calibration error by raising the signal — guanfacine CORRECTS the threshold."}
           </p>
           <p>

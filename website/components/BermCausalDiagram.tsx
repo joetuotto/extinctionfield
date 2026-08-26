@@ -369,8 +369,6 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: Locale }
             const color = EPISTEMIC_COLORS[n.epistemicLevel];
             const isHovered = hoveredNode === n.id;
             const isSelected = selectedNode?.id === n.id;
-            const dimmed = hoveredNode !== null && !isHovered && !connectedEdges.size;
-
             return (
               <g
                 key={n.id}

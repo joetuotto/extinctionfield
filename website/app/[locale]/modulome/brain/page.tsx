@@ -271,7 +271,7 @@ const COPY = {
     s7Preds: [
       {
         id: "DIFF-1",
-        text: "Anogenitaalinen etäisyys (AGD) korreloi käänteisesti prenataalisen EMF-altistuksen kanssa. AGD on maskulinisaatio-ohjelmointiikkunan kultastandardi-biomarkkeri — pienentynytt AGD miehillä kertoo riittämättömästä sikiön androgeenivaikutuksesta viikoilla 8–14.",
+        text: "Anogenitaalinen etäisyys (AGD) korreloi käänteisesti prenataalisen EMF-altistuksen kanssa. AGD on maskulinisaatio-ohjelmointiikkunan kultastandardi-biomarkkeri — pienentynyt AGD miehillä kertoo riittämättömästä sikiön androgeenivaikutuksesta viikoilla 8–14.",
         discriminating: true,
         verified: false,
       },

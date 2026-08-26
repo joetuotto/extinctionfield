@@ -248,6 +248,48 @@ const t = {
     cacna1cPred2: "GEN-2: A/A genotype individuals show stronger EMF responses than G/G in controlled exposure studies",
     cacna1cRef: "Sousouri 2025 (ETH) · PMC4898738 · PMC3577650",
 
+    genSuscTitle: "Genetic Susceptibility Map: The 15-Gene Calcium Profile",
+    genSuscSub: "EMF sensitivity is not one gene — it is a polygenic profile across five functional tiers of the calcium cascade",
+    genSuscDesc: "BERM identifies 15 genes whose polymorphisms modulate individual EMF sensitivity. They divide into five functional tiers: INFLUX (5 CACNA genes controlling Ca²⁺ entry), MODULATION (CACNA2D1 controlling channel density), INTEGRATION (CAMK2A/B at the convergence point), EXTRUSION (3 genes controlling Ca²⁺ removal), and SIGNALING (4 genes modulating downstream response). Each gene's disease associations match BERM cascade predictions.",
+    genSuscInfluxTitle: "Tier 1 — Influx: Ca²⁺ entry channels",
+    genSuscInfluxGenes: [
+      { gene: "CACNA1C", protein: "Cav1.2 (L-type)", role: "Primary RF target. Neurons, heart, β-cells.", variant: "rs1006737 A-allele", diseases: "Bipolar, schizophrenia, ASD, depression, Timothy syndrome", evidence: "CONFIRMED (Sousouri 2025 RCT)" },
+      { gene: "CACNA1H", protein: "Cav3.2 (T-type)", role: "ELF target. Leydig cells, pineal, thalamus.", variant: "GoF mutations", diseases: "Childhood epilepsy, febrile seizures, primary aldosteronism, ASD", evidence: "CONSISTENT" },
+      { gene: "CACNA1D", protein: "Cav1.3 (L-type)", role: "Inner ear, SA node, substantia nigra.", variant: "GoF/LoF variants", diseases: "Bradycardia, epilepsy, hearing loss, ADHD, ASD", evidence: "CONSISTENT" },
+      { gene: "CACNA1A", protein: "Cav2.1 (P/Q-type)", role: "Presynaptic release. ELF priming target.", variant: "rs16023 B-allele", diseases: "DD + epilepsy, familial hemiplegic migraine, episodic ataxia", evidence: "CONFIRMED (ELF priming + GWAS)" },
+      { gene: "CACNA1B", protein: "Cav2.2 (N-type)", role: "Pain pathways, sympathetic nervous system.", variant: "Rare mutations", diseases: "Chronic pain, sympathetic dysfunction", evidence: "CONSISTENT" },
+    ],
+    genSuscModTitle: "Tier 2 — Modulation: Channel density control",
+    genSuscModDesc: "CACNA2D1 encodes α2δ-1, the protein that controls VGCC trafficking to synapses. This is the molecular basis of ELF priming: 50/60 Hz exposure upregulates α2δ-1 → more VGCCs reach the cell surface → cells become more sensitive to ALL subsequent EMF. Gabapentinoids (pregabalin, gabapentin) bind α2δ-1 and BLOCK this trafficking — making them mechanistically ELF-priming ANTAGONISTS.",
+    genSuscModRef: "Field 2006 (PNAS) · Hoppa 2012 (Nature)",
+    genSuscIntTitle: "Tier 3 — Integration: CaMKII convergence",
+    genSuscIntDesc: "CAMK2A/B de novo mutations that INCREASE autophosphorylation at Thr286/287 produce epilepsy, intellectual disability, and autism — the EXACT phenotypes BERM predicts from environmental (EMF) autophosphorylation increase. Mutations that DECREASE autophosphorylation also cause intellectual disability. Both directions = disorder → precise regulation is critical. This is BERM's most direct genetic validation: genetic and environmental CaMKII dysregulation converge on identical clinical outcomes.",
+    genSuscIntRef: "Küry 2017 (AJHG, PMC5673671) · Al-Tawashi 2018 (eLife, PMC5963920)",
+    genSuscExtTitle: "Tier 4 — Extrusion: Ca²⁺ removal",
+    genSuscExtDesc: "Three genes control Ca²⁺ removal from cells. Slow extrusion + high influx = Ca²⁺ accumulates → CaMKII threshold crossed at lower EMF levels. SLC8A1 (NCX1): cardiac/neuronal Ca²⁺ export. ATP2B1 (PMCA1): general Ca²⁺ pump (GWAS: hypertension). ATP2B2 (PMCA2): inner ear — slow PMCA2 + Bluetooth earbuds = tinnitus risk.",
+    genSuscSigTitle: "Tier 5 — Signaling: Downstream response",
+    genSuscSigGenes: [
+      { gene: "CRY1", variant: "CRY1Δ11 (0.6%)", effect: "GoF → longer circadian period → delayed sleep → shorter recovery window. EMF disrupts CRY → ADDITIVE with genetic lengthening.", diseases: "DSPD, metabolic disruption, insomnia", evidence: "CONFIRMED (Patke 2017 Cell)" },
+      { gene: "MTNR1B", variant: "rs10830963 G", effect: "eQTL → more MT2 receptors on β-cells → HYPERSENSITIVE to melatonin changes. EMF suppresses melatonin → G/G carriers affected MORE → T2D risk SUPERADDITIVE.", diseases: "T2D, fasting glucose, gestational diabetes", evidence: "CONFIRMED (GWAS + eQTL)" },
+      { gene: "COMT", variant: "Val158Met (rs4680)", effect: "Val/Val = fast dopamine clearance = low DA baseline → EMF-induced DA synthesis drop hits HARDER (smaller buffer).", diseases: "Stress vulnerability, addiction, pain sensitivity", evidence: "DERIVABLE" },
+    ],
+    genSuscEhsTitle: "EHS Redefined: A Polygenic Calcium Threshold Disorder",
+    genSuscEhsDesc: "EHS (electromagnetic hypersensitivity) is not psychosomatic — it is a polygenically predictable Ca²⁺ threshold disorder. High VGCC influx (CACNA GoF) + slow extrusion (SLC8A1/ATP2B LoF) + sensitive signaling (CRY1Δ11, MTNR1B GG, COMT Val/Val) = low CaMKII autophosphorylation threshold = symptoms at EMF levels below the population average.",
+    genSuscEhsBiomarker: "Proposed biomarker: CaMKII Thr286 autophosphorylation level in lymphocytes. Higher level = closer to threshold = more EMF-sensitive. This could be the first OBJECTIVE biomarker for EHS.",
+    genSuscEpistaticTitle: "Epistatic interactions",
+    genSuscEpistatic: [
+      { pair: "CACNA1C × MTNR1B", effect: "Depression + T2D from the same melatonin suppression in different organs. AA + GG carriers: highest comorbidity.", status: "TESTABLE (biobank)" },
+      { pair: "CRY1Δ11 × MTNR1B", effect: "Delayed melatonin × β-cell hypersensitivity → morning fasting glucose especially elevated.", status: "DERIVABLE" },
+      { pair: "CACNA × SLC8A1/ATP2B", effect: "High influx + slow extrusion = Ca²⁺ accumulation → EHS phenotype.", status: "TESTABLE (genotype EHS cohort)" },
+      { pair: "CAMK2A × CACNA2D1", effect: "CaMKII near threshold + more channels = critically sensitive to any EMF.", status: "CONSISTENT" },
+    ],
+    genSuscPrinciples: [
+      { id: "GXEMF-1", title: "Gene × EMF interactions are superadditive", desc: "Genetic risk manifestation depends on EMF exposure. EMF 'activates' genetic risks that would be latent in an EMF-free environment." },
+      { id: "GXEMF-2", title: "Gabapentinoids reverse ELF priming via α2δ-1", desc: "Pregabalin/gabapentin bind α2δ-1, blocking VGCC trafficking. Gabapentinoid users have lower synaptic VGCC density → less EMF-sensitive." },
+      { id: "GXEMF-3", title: "CaMKII autophosphorylation is a measurable biomarker", desc: "CaMKII Thr286 phosphorylation level in lymphocytes: higher = more EMF-sensitive. Testable in EHS cohorts." },
+    ],
+    genSuscRef: "Küry 2017 · Patke 2017 · Lyssenko 2009 · Tuomi 2016 · Scholl 2015 · Korean 2025 · Field 2006 · Hoppa 2012",
+
     recovWindowTitle: "Recovery Window: CaMKII Dephosphorylation",
     recovWindowSub: "Modern life eliminates the EMF-free hours needed for Ca²⁺ homeostasis restoration",
     recovWindowDesc: "CaMKII dephosphorylation (recovery from autophosphorylated state) requires time without Ca²⁺ overload. EMF-free sleep allows this recovery. But modern environments eliminate EMF-free hours: WiFi router 24/7, phone on bedside table, LED lighting until sleep, Bluetooth devices. The Recovery factor (R) captures this: when EMF-free hours approach zero, the denominator 1/R approaches 1.0 (no recovery), and cumulative damage accelerates.",
@@ -700,6 +742,48 @@ const t = {
     cacna1cPred1: "GEN-1: Populaatiot, joilla korkeampi CACNA1C A-alleelitaajuus, osoittavat jyrkempää terveyslaskua per EMF-yksikkö",
     cacna1cPred2: "GEN-2: A/A-genotyypin yksilöt osoittavat voimakkaampia EMF-vasteita kuin G/G kontrolloiduissa altistustutkimuksissa",
     cacna1cRef: "Sousouri 2025 (ETH) · PMC4898738 · PMC3577650",
+
+    genSuscTitle: "Geneettinen herkkyyskartta: 15 geenin kalsiumprofiili",
+    genSuscSub: "EMF-herkkyys ei ole yksi geeni — se on polygeeninen profiili kalsiumkaskadin viidellä funktionaalisella tasolla",
+    genSuscDesc: "BERM tunnistaa 15 geeniä, joiden polymorfismit moduloivat yksilön EMF-herkkyyttä. Ne jakautuvat viiteen funktionaaliseen tasoon: INFLUKSI (5 CACNA-geeniä Ca²⁺-sisäänvirtaukselle), MODULAATIO (CACNA2D1 kanavatiheydelle), INTEGRAATIO (CAMK2A/B konvergenssipisteessä), ERITYS (3 geeniä Ca²⁺-poistolle) ja SIGNALOINTI (4 geeniä vastemuokkaukselle). Jokaisen geenin tautiassosiaatiot vastaavat BERM-kaskadien ennusteita.",
+    genSuscInfluxTitle: "Taso 1 — Influksi: Ca²⁺-sisäänvirtauskanavat",
+    genSuscInfluxGenes: [
+      { gene: "CACNA1C", protein: "Cav1.2 (L-tyyppi)", role: "Pää-RF-kohde. Neuronit, sydän, β-solut.", variant: "rs1006737 A-alleeli", diseases: "Bipolaari, skitsofrenia, ASD, masennus, Timothy", evidence: "VAHVISTETTU (Sousouri 2025 RCT)" },
+      { gene: "CACNA1H", protein: "Cav3.2 (T-tyyppi)", role: "ELF-kohde. Leydig-solut, pineaali, talamus.", variant: "GoF-mutaatiot", diseases: "Lapsuuden epilepsia, kuumekouristukset, primäärinen aldosteronismi, ASD", evidence: "KONSISTENTTI" },
+      { gene: "CACNA1D", protein: "Cav1.3 (L-tyyppi)", role: "Sisäkorva, SA-solmu, substantia nigra.", variant: "GoF/LoF-variantit", diseases: "Bradykardia, epilepsia, kuulovaurio, ADHD, ASD", evidence: "KONSISTENTTI" },
+      { gene: "CACNA1A", protein: "Cav2.1 (P/Q-tyyppi)", role: "Presynaptinen vapautus. ELF-priming-kohde.", variant: "rs16023 B-alleeli", diseases: "DD + epilepsia, familiaalinen hemipleginen migreeni, episodinen ataksia", evidence: "VAHVISTETTU (ELF-priming + GWAS)" },
+      { gene: "CACNA1B", protein: "Cav2.2 (N-tyyppi)", role: "Kipuradat, sympaattinen hermosto.", variant: "Harvinaisia mutaatioita", diseases: "Krooninen kipu, sympaattinen häiriö", evidence: "KONSISTENTTI" },
+    ],
+    genSuscModTitle: "Taso 2 — Modulaatio: Kanavien tiheyden säätely",
+    genSuscModDesc: "CACNA2D1 koodaa α2δ-1:tä, proteiinia joka säätelee VGCC:iden kuljetusta synapseihin. Tämä on ELF-primaamin molekulaarinen perusta: 50/60 Hz -altistus lisää α2δ-1:tä → enemmän VGCC:itä solupinnalle → solut herkistyvät KAIKELLE myöhemmälle EMF:lle. Gabapentinoidit (pregabaliini, gabapentiini) sitoutuvat α2δ-1:een ja ESTÄVÄT tämän kuljetuksen — mikä tekee niistä mekanistisesti ELF-primaamin ANTAGONISTEJA.",
+    genSuscModRef: "Field 2006 (PNAS) · Hoppa 2012 (Nature)",
+    genSuscIntTitle: "Taso 3 — Integraatio: CaMKII-konvergenssi",
+    genSuscIntDesc: "CAMK2A/B de novo -mutaatiot, jotka LISÄÄVÄT autofosforylaatiota Thr286/287:ssä, tuottavat epilepsian, kehitysvamman ja autismin — TÄSMÄLLEEN ne fenotyypit, joita BERM ennustaa ympäristöllisestä (EMF) autofosforylaation lisäyksestä. Mutaatiot jotka VÄHENTÄVÄT autofosforylaatiota aiheuttavat myös kehitysvamman. Molemmat suunnat = häiriö → tarkka säätely on kriittistä. Tämä on BERM:n SUORIN geneettinen validaatio: geneettinen ja ympäristöllinen CaMKII-häiriö konvergoivat identtisiin kliinisiin lopputuloksiin.",
+    genSuscIntRef: "Küry 2017 (AJHG, PMC5673671) · Al-Tawashi 2018 (eLife, PMC5963920)",
+    genSuscExtTitle: "Taso 4 — Eritys: Ca²⁺-poisto",
+    genSuscExtDesc: "Kolme geeniä säätelee Ca²⁺:n poistoa soluista. Hidas eritys + korkea influksi = Ca²⁺ kasaantuu → CaMKII-kynnys ylittyy matalammilla EMF-tasoilla. SLC8A1 (NCX1): sydämen/neuronien Ca²⁺-vienti. ATP2B1 (PMCA1): yleinen Ca²⁺-pumppu (GWAS: hypertensio). ATP2B2 (PMCA2): sisäkorva — hidas PMCA2 + Bluetooth-kuulokkeet = tinnitusriski.",
+    genSuscSigTitle: "Taso 5 — Signalointi: Jatkovaste",
+    genSuscSigGenes: [
+      { gene: "CRY1", variant: "CRY1Δ11 (0,6 %)", effect: "GoF → pidempi sirkadiaaninen jakso → viivästynyt uni → lyhyempi palautumisikkuna. EMF häiritsee CRY:tä → ADDITIIVINEN geneettisen pidennyksen kanssa.", diseases: "DSPD, metabolinen häiriö, unettomuus", evidence: "VAHVISTETTU (Patke 2017 Cell)" },
+      { gene: "MTNR1B", variant: "rs10830963 G", effect: "eQTL → enemmän MT2-reseptoreita β-soluissa → YLIHERKÄT melatoniinimuutoksille. EMF suppressoi melatoniinia → G/G-kantajat kärsivät ENEMMÄN → T2D-riski SUPERADDITIIVINEN.", diseases: "T2D, paastoglukoosi, raskausdiabetes", evidence: "VAHVISTETTU (GWAS + eQTL)" },
+      { gene: "COMT", variant: "Val158Met (rs4680)", effect: "Val/Val = nopea dopamiinipuhdistuma = matala DA-perusviiva → EMF:n aiheuttama DA-synteesilasku iskee ANKARAMMIN (pienempi puskuri).", diseases: "Stressihaavoittuvuus, addiktio, kipuherkkyys", evidence: "JOHDETTAVISSA" },
+    ],
+    genSuscEhsTitle: "EHS uudelleenmääriteltynä: polygeeninen kalsiumkynnöshäiriö",
+    genSuscEhsDesc: "EHS (sähköherkkyysoireyhtymä) ei ole psykosomaattinen — se on polygeenisesti ennustettavissa oleva Ca²⁺-kynnöshäiriö. Korkea VGCC-influksi (CACNA GoF) + hidas eritys (SLC8A1/ATP2B LoF) + herkkä signalointi (CRY1Δ11, MTNR1B GG, COMT Val/Val) = matala CaMKII-autofosforylaatiokynnys = oireet EMF-tasoilla, jotka ovat väestön keskiarvon alapuolella.",
+    genSuscEhsBiomarker: "Ehdotettu biomarkkeri: CaMKII Thr286 -autofosforylaatiotaso lymfosyyteissä. Korkeampi taso = lähempänä kynnystä = EMF-herkempi. Tämä voisi olla EHS:n ensimmäinen OBJEKTIIVINEN biomarkkeri.",
+    genSuscEpistaticTitle: "Epistattiset interaktiot",
+    genSuscEpistatic: [
+      { pair: "CACNA1C × MTNR1B", effect: "Masennus + T2D samasta melatoniinisuppressiosta eri elimissä. AA + GG -kantajilla: korkein komorbiditeetti.", status: "TESTATTAVISSA (biopankki)" },
+      { pair: "CRY1Δ11 × MTNR1B", effect: "Viivästynyt melatoniini × β-solu-yliherkkyys → aamupaastoglukoosi erityisesti koholla.", status: "JOHDETTAVISSA" },
+      { pair: "CACNA × SLC8A1/ATP2B", effect: "Korkea influksi + hidas eritys = Ca²⁺ kasaantuu → EHS-fenotyyppi.", status: "TESTATTAVISSA (EHS-kohortin genotyypitys)" },
+      { pair: "CAMK2A × CACNA2D1", effect: "CaMKII lähellä kynnystä + enemmän kanavia = kriittisesti herkkä kaikelle EMF:lle.", status: "KONSISTENTTI" },
+    ],
+    genSuscPrinciples: [
+      { id: "GXEMF-1", title: "Geeni × EMF -interaktiot ovat superadditiivisia", desc: "Geneettisen riskin manifestoituminen riippuu EMF-altistuksesta. EMF 'aktivoi' geneettisiä riskejä, jotka olisivat piilevät EMF-vapaassa ympäristössä." },
+      { id: "GXEMF-2", title: "Gabapentinoidit kumoavat ELF-primaamin α2δ-1:n kautta", desc: "Pregabaliini/gabapentiini sitoutuvat α2δ-1:een ja estävät VGCC-kuljetuksen. Gabapentinoidien käyttäjillä on matalampi synaptinen VGCC-tiheys → vähemmän EMF-herkkiä." },
+      { id: "GXEMF-3", title: "CaMKII-autofosforylaatio on mitattavissa oleva biomarkkeri", desc: "CaMKII Thr286 -fosforylaatiotaso lymfosyyteissä: korkeampi = EMF-herkempi. Testattavissa EHS-kohorteissa." },
+    ],
+    genSuscRef: "Küry 2017 · Patke 2017 · Lyssenko 2009 · Tuomi 2016 · Scholl 2015 · Korean 2025 · Field 2006 · Hoppa 2012",
 
     recovWindowTitle: "Palautumisikkuna: CaMKII-defosforylaatio",
     recovWindowSub: "Moderni elämä eliminoi EMF-vapaat tunnit, joita Ca²⁺-homeostaasin palautuminen vaatii",
@@ -2085,6 +2169,126 @@ export default async function ModelPage({
               <p className="text-xs font-mono text-amber-500">{d.cacna1cPred2}</p>
             </div>
             <p className="text-[10px] text-foreground-muted/60">{d.cacna1cRef}</p>
+          </CollapsibleSection>
+
+          {/* Genetic Susceptibility Map */}
+          <CollapsibleSection id="genetic-susceptibility" title={d.genSuscTitle} subtitle={d.genSuscSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.genSuscDesc}
+            </p>
+
+            {/* Tier 1: Influx */}
+            <h4 className="text-sm font-semibold mb-3">{d.genSuscInfluxTitle}</h4>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-card-border">
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Geeni" : "Gene"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Proteiini" : "Protein"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "BERM-rooli" : "BERM role"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Avainvariantti" : "Key variant"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Taudit" : "Diseases"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Evidenssi" : "Evidence"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.genSuscInfluxGenes.map((g: { gene: string; protein: string; role: string; variant: string; diseases: string; evidence: string }) => (
+                    <tr key={g.gene} className="border-b border-card-border/50">
+                      <td className="p-2 font-mono font-semibold text-accent">{g.gene}</td>
+                      <td className="p-2 text-foreground-muted">{g.protein}</td>
+                      <td className="p-2 text-foreground-muted">{g.role}</td>
+                      <td className="p-2 text-foreground-muted">{g.variant}</td>
+                      <td className="p-2 text-foreground-muted">{g.diseases}</td>
+                      <td className="p-2">
+                        <span className={`text-[10px] px-1.5 py-0.5 rounded ${g.evidence.startsWith("CONFIRMED") || g.evidence.startsWith("VAHVISTETTU") ? "bg-green-500/20 text-green-400" : "bg-amber-500/20 text-amber-400"}`}>
+                          {g.evidence}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Tier 2: Modulation */}
+            <h4 className="text-sm font-semibold mb-3">{d.genSuscModTitle}</h4>
+            <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-4 mb-2">
+              <p className="text-xs text-foreground-muted leading-relaxed">{d.genSuscModDesc}</p>
+            </div>
+            <p className="text-[10px] text-foreground-muted/60 mb-6">{d.genSuscModRef}</p>
+
+            {/* Tier 3: Integration */}
+            <h4 className="text-sm font-semibold mb-3">{d.genSuscIntTitle}</h4>
+            <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-4 mb-2">
+              <p className="text-xs text-foreground-muted leading-relaxed">{d.genSuscIntDesc}</p>
+            </div>
+            <p className="text-[10px] text-foreground-muted/60 mb-6">{d.genSuscIntRef}</p>
+
+            {/* Tier 4: Extrusion */}
+            <h4 className="text-sm font-semibold mb-3">{d.genSuscExtTitle}</h4>
+            <p className="text-xs text-foreground-muted leading-relaxed mb-6">{d.genSuscExtDesc}</p>
+
+            {/* Tier 5: Signaling */}
+            <h4 className="text-sm font-semibold mb-3">{d.genSuscSigTitle}</h4>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-card-border">
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Geeni" : "Gene"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Variantti" : "Variant"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Vaikutus" : "Effect"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Taudit" : "Diseases"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Evidenssi" : "Evidence"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.genSuscSigGenes.map((g: { gene: string; variant: string; effect: string; diseases: string; evidence: string }) => (
+                    <tr key={g.gene} className="border-b border-card-border/50">
+                      <td className="p-2 font-mono font-semibold text-accent">{g.gene}</td>
+                      <td className="p-2 text-foreground-muted">{g.variant}</td>
+                      <td className="p-2 text-foreground-muted">{g.effect}</td>
+                      <td className="p-2 text-foreground-muted">{g.diseases}</td>
+                      <td className="p-2">
+                        <span className={`text-[10px] px-1.5 py-0.5 rounded ${g.evidence.startsWith("CONFIRMED") || g.evidence.startsWith("VAHVISTETTU") ? "bg-green-500/20 text-green-400" : g.evidence.startsWith("DERIVABLE") || g.evidence.startsWith("JOHDETTAVISSA") ? "bg-slate-500/20 text-slate-400" : "bg-amber-500/20 text-amber-400"}`}>
+                          {g.evidence}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* EHS Redefinition */}
+            <h4 className="text-sm font-semibold mb-3">{d.genSuscEhsTitle}</h4>
+            <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 mb-2">
+              <p className="text-xs text-foreground-muted leading-relaxed mb-2">{d.genSuscEhsDesc}</p>
+              <p className="text-xs text-foreground-muted leading-relaxed font-medium">{d.genSuscEhsBiomarker}</p>
+            </div>
+
+            {/* Epistatic Interactions */}
+            <h4 className="text-sm font-semibold mt-6 mb-3">{d.genSuscEpistaticTitle}</h4>
+            <div className="grid gap-3 sm:grid-cols-2 mb-6">
+              {d.genSuscEpistatic.map((e: { pair: string; effect: string; status: string }) => (
+                <div key={e.pair} className="rounded-lg border border-card-border bg-card-bg p-3">
+                  <p className="text-xs font-mono font-semibold text-accent mb-1">{e.pair}</p>
+                  <p className="text-[11px] text-foreground-muted leading-relaxed mb-1">{e.effect}</p>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-400">{e.status}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Three Principles */}
+            <div className="space-y-3 mb-6">
+              {d.genSuscPrinciples.map((p: { id: string; title: string; desc: string }) => (
+                <div key={p.id} className="rounded-lg border border-card-border bg-card-bg p-3">
+                  <p className="text-xs font-mono text-amber-500 mb-1">{p.id}: {p.title}</p>
+                  <p className="text-[11px] text-foreground-muted leading-relaxed">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-[10px] text-foreground-muted/60">{d.genSuscRef}</p>
           </CollapsibleSection>
 
           {/* Recovery Window */}

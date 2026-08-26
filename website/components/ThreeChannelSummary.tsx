@@ -77,8 +77,7 @@ function multiline(
       fill={fill}
       fontSize={fontSize}
       fontWeight={opts?.weight ?? 400}
-      fontFamily="system-ui, -apple-system, sans-serif"
-    >
+         >
       {line}
     </text>
   ));
@@ -139,7 +138,7 @@ export function ThreeChannelSummary({ locale = "en" }: { locale?: Locale }) {
       >
         {/* EMF source node */}
         <rect x={col.emf - 50} y={rows.mid - nodeH / 2} width={100} height={nodeH} rx={12} fill="var(--card-bg, #fff)" stroke="var(--card-border, #d1d5db)" strokeWidth={1.5} />
-        {multiline(d.emf, col.emf, rows.mid, 12, "var(--foreground, #111)", { weight: 600 })}
+        {multiline(d.emf, col.emf, rows.mid, 13, "var(--foreground, #111)", { weight: 600 })}
 
         {channels.map((ch) => (
           <g key={ch.key}>
@@ -155,17 +154,17 @@ export function ThreeChannelSummary({ locale = "en" }: { locale?: Locale }) {
               {ch.label}
             </text>
             {/* Frequency range */}
-            <text x={col.band + 4} y={ch.y + 3} textAnchor="middle" fill={ch.c.main} fontSize={9} fontWeight={500} fontFamily="system-ui, -apple-system, sans-serif" opacity={0.8}>
+            <text x={col.band + 4} y={ch.y + 3} textAnchor="middle" fill={ch.c.main} fontSize={11} fontWeight={500} fontFamily="system-ui, -apple-system, sans-serif" opacity={0.8}>
               {ch.range}
             </text>
             {/* Sources */}
-            <text x={col.band + 4} y={ch.y + 17} textAnchor="middle" fill="var(--foreground-muted, #666)" fontSize={8} fontFamily="system-ui, -apple-system, sans-serif">
+            <text x={col.band + 4} y={ch.y + 17} textAnchor="middle" fill="var(--foreground-muted, #666)" fontSize={11} fontFamily="system-ui, -apple-system, sans-serif">
               {ch.sub}
             </text>
 
             {/* Weight badge */}
             <rect x={col.band + bandW / 2 - 30} y={ch.y - nodeH / 2 - 1} width={31} height={16} rx={8} fill={ch.c.main} opacity={0.18} />
-            <text x={col.band + bandW / 2 - 14.5} y={ch.y - nodeH / 2 + 11} textAnchor="middle" fill={ch.c.main} fontSize={8} fontWeight={700} fontFamily="system-ui, -apple-system, sans-serif">
+            <text x={col.band + bandW / 2 - 14.5} y={ch.y - nodeH / 2 + 11} textAnchor="middle" fill={ch.c.main} fontSize={11} fontWeight={700} fontFamily="system-ui, -apple-system, sans-serif">
               w={ch.w}
             </text>
 
@@ -174,8 +173,8 @@ export function ThreeChannelSummary({ locale = "en" }: { locale?: Locale }) {
 
             {/* Mechanism node */}
             <rect x={col.mech - mechW / 2} y={ch.y - nodeH / 2} width={mechW} height={nodeH} rx={10} fill="var(--card-bg, #fff)" stroke={ch.c.main} strokeWidth={1} strokeDasharray="6 3" opacity={0.9} />
-            {multiline(ch.mech, col.mech, ch.y - 8, 11, "var(--foreground, #111)", { weight: 600 })}
-            {multiline(ch.mechSub, col.mech, ch.y + 12, 9, "var(--foreground-muted, #666)")}
+            {multiline(ch.mech, col.mech, ch.y - 8, 13, "var(--foreground, #111)", { weight: 600 })}
+            {multiline(ch.mechSub, col.mech, ch.y + 12, 11, "var(--foreground-muted, #666)")}
 
             {/* Arrow to capacity */}
             <Arrow x1={col.mech + mechW / 2 + 2} y1={ch.y} x2={col.cap - 56} y2={rows.mid} color="var(--foreground-muted, #888)" width={1} />
@@ -184,7 +183,7 @@ export function ThreeChannelSummary({ locale = "en" }: { locale?: Locale }) {
 
         {/* Capacity node */}
         <rect x={col.cap - 55} y={rows.mid - nodeH / 2} width={110} height={nodeH} rx={12} fill="var(--card-bg, #fff)" stroke="var(--card-border, #d1d5db)" strokeWidth={1.5} />
-        {multiline(d.capacity, col.cap, rows.mid, 11, "var(--foreground, #111)", { weight: 600 })}
+        {multiline(d.capacity, col.cap, rows.mid, 13, "var(--foreground, #111)", { weight: 600 })}
 
         {/* Arrow to TFR */}
         <Arrow x1={col.cap + 55} y1={rows.mid} x2={col.tfr - 28} y2={rows.mid} color="#16A34A" width={2.5} />

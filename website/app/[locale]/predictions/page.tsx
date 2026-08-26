@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Target, BookOpen, FlaskConical } from "lucide-react";
+import { Target, BookOpen } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
 import { LOCKED_PREDICTIONS, metricLabel, countryLabel } from "@/lib/predictions";
@@ -523,6 +523,57 @@ const COPY = {
     modIntDiscriminating: "Discriminating",
     modIntLocked: "Locked: 2026-08-24",
     modIntStatus: "LOCKED — awaiting test",
+    sidsTitle: "Infant vulnerability & SIDS predictions",
+    sidsLead: "Predictions derived from BERM's calcium framework applied to infant cardiorespiratory vulnerability. These test whether ion channel genetics, nighttime EMF exposure, and circadian Ca²⁺ dynamics contribute to SIDS risk through the same pathways identified in adult populations.",
+    sidsNote: "These predictions address a sensitive topic. BERM offers a mechanistic hypothesis — not a proven explanation. Known protective measures (supine sleeping, avoiding tobacco, breastfeeding) remain the most important interventions.",
+    sidsPredictions: [
+      {
+        id: "SIDS-1",
+        title: "Baby monitor proximity correlates with SIDS risk",
+        description: "Retrospective case-control study: compare baby monitor type (DECT vs. WiFi vs. wired vs. none) and placement distance (< 0.5 m, 0.5–1 m, > 1 m) between SIDS cases and age-matched controls. DECT monitors at < 0.5 m produce 2.5–3.5 V/m continuous RF through a 2 mm infant skull. Prediction: DECT or WiFi monitor placement within 0.5 m of the crib is more common in SIDS cases than controls, after controlling for known risk factors.",
+        timeline: "Testable retrospectively (parent questionnaire in existing SIDS registries)",
+        falsification: "No association between monitor type/distance and SIDS incidence after controlling for prone sleeping, tobacco, overheating, and breastfeeding status",
+      },
+      {
+        id: "SIDS-2",
+        title: "CACNA1C rs1006737 AA genotype is overrepresented in SIDS victims",
+        description: "Post-mortem genotyping of SIDS victims for CACNA1C rs1006737 (the BERM risk allele). The AA genotype increases Cav1.2 expression and is associated with psychiatric and cardiac risk in adults. In infants with immature Ca²⁺ homeostasis, this gain-of-function variant should increase vulnerability to any Ca²⁺-disrupting stressor. Prediction: AA genotype frequency in SIDS victims exceeds population baseline.",
+        timeline: "Testable with existing biobanked SIDS tissue (retrospective genotyping)",
+        falsification: "AA genotype frequency in SIDS victims equals or is lower than population frequency",
+      },
+      {
+        id: "SIDS-3",
+        title: "Maternal EMF exposure correlates with lower breast milk melatonin",
+        description: "Measure melatonin concentration in night breast milk samples from mothers with high vs. low personal EMF exposure (smartphone use, WiFi proximity, LED lighting assessed by questionnaire and dosimetry). Melatonin in night milk is the infant's exogenous Ca²⁺ antagonist. If maternal CRY pathway is disrupted by EMF, milk melatonin should be reduced. Prediction: mothers with higher EMF exposure produce night milk with lower melatonin concentration.",
+        timeline: "Testable within 6–12 months (lactation cohort with dosimetry)",
+        falsification: "No correlation between maternal EMF exposure metrics and night milk melatonin concentration",
+      },
+      {
+        id: "SIDS-4",
+        title: "Night-pumped breast milk offered at night has lower SIDS risk than day-pumped milk offered at night",
+        description: "Retrospective cohort: among mothers who pump and bottle-feed, compare SIDS incidence between those who offer time-matched milk (night-pumped at night, day-pumped during day) vs. those who do not label by time. Night milk contains melatonin (Ca²⁺ antagonist) and tryptophan absent from day milk. Prediction: chronomatched milk feeding is associated with lower SIDS risk.",
+        timeline: "Testable retrospectively (feeding practice questionnaire in existing cohorts)",
+        falsification: "No difference in SIDS incidence between chronomatched and non-matched pumped milk feeding practices",
+      },
+      {
+        id: "SIDS-5",
+        title: "EMF-free nursery environment reduces apnea/bradycardia episodes in NICU",
+        description: "Interventional study in NICU: compare apnea and bradycardia episode frequency in preterm infants in standard NICU environment vs. EMF-minimized environment (wired monitors, no WiFi, RF-shielded incubator, amber lighting). Prediction: EMF-minimized NICU environment reduces apnea/bradycardia episodes, with larger effect in infants with known ion channel variants.",
+        timeline: "Testable within 12–18 months (NICU intervention study)",
+        falsification: "No reduction in apnea/bradycardia episodes in EMF-minimized NICU environment compared to standard environment",
+      },
+      {
+        id: "SIDS-6",
+        title: "ADORA1/ADORA2A polymorphisms predict both SIDS risk and caffeine response",
+        description: "Pharmacogenetic analysis: genotype ADORA1 and ADORA2A receptor polymorphisms in SIDS victims (post-mortem) and in preterm infants receiving caffeine therapy. The same adenosine receptor variants that modulate caffeine response in apnea of prematurity should predict SIDS susceptibility, because both conditions involve adenosine-Ca²⁺ pathway disruption in the respiratory center. Prediction: ADORA variants that predict poor caffeine response are overrepresented in SIDS victims.",
+        timeline: "Testable with existing SIDS biobanks and NICU pharmacogenetic databases",
+        falsification: "No association between ADORA genotype and SIDS incidence, or ADORA genotypes associated with SIDS do not predict caffeine response",
+      },
+    ],
+    sidsTimeline: "Timeline",
+    sidsFalsification: "Falsification criterion",
+    sidsLocked: "Locked: 2026-08-26",
+    sidsStatus: "LOCKED — awaiting test",
     ttypeTitle: "T-Type Channel Predictions",
     ttypeLead: "Testable predictions from the T-type calcium channel bifurcation mechanism.",
     ttypePredictions: [
@@ -1074,6 +1125,30 @@ const COPY = {
     supplementFalsification: "Falsification criterion",
     supplementLocked: "Locked: 2026-08-26",
     supplementStatus: "LOCKED — awaiting test",
+
+    geneticTitle: "Genetic susceptibility predictions",
+    geneticLead: "Predictions from the 15-gene calcium susceptibility profile. These test the hypothesis that EMF sensitivity is polygenically determined and that gene × EMF interactions are superadditive.",
+    geneticPredictions: [
+      { id: "GENE-MTNR1B-1", title: "MTNR1B GG carriers show larger T2D risk increase per unit EMF than AA carriers", description: "rs10830963 G-allele → more MT2 receptors → β-cells hypersensitive to melatonin changes. EMF-induced melatonin suppression differentially affects GG carriers. The gene × EMF interaction is SUPERADDITIVE: EMF 'activates' the genetic risk that would be latent in a normal melatonin environment.", falsification: "No genotype × EMF interaction on T2D incidence in biobank analysis" },
+      { id: "GENE-CRY1-1", title: "CRY1Δ11 carriers show worse sleep outcomes under residential EMF than non-carriers", description: "CRY1Δ11 (rs184039278, 0.6% frequency) lengthens the circadian period. EMF disrupts CRY → the effects are ADDITIVE: genetic lengthening + EMF disruption = longer sleep latency, shorter recovery window, and worse metabolic outcomes.", falsification: "No difference in sleep or metabolic outcomes between CRY1Δ11 carriers and non-carriers under matched EMF exposure" },
+      { id: "GENE-COMT-1", title: "COMT Val/Val individuals show greater EMF-associated depression risk than Met/Met", description: "Val/Val = fast dopamine clearance = low DA baseline. EMF-induced dopamine synthesis reduction hits harder (smaller buffer). Met/Met has a higher baseline DA buffer → more resilient to EMF-induced DA reduction.", falsification: "No COMT genotype × EMF interaction on depression prevalence" },
+      { id: "GENE-CACNA1D-1", title: "CACNA1D GoF carriers show higher tinnitus rates with Bluetooth earphone use", description: "Cav1.3 GoF → inner ear hypersensitivity. Bluetooth earphones activate Cav1.3 in hair cells → Ca²⁺ overload. GoF carriers reach damage threshold at lower exposure levels → tinnitus earlier.", falsification: "No association between CACNA1D genotype and tinnitus in Bluetooth users" },
+      { id: "GENE-COMORBID-1", title: "Depression-T2D comorbidity is higher in CACNA1C AA + MTNR1B GG compound carriers", description: "Both conditions arise from the same melatonin suppression pathway acting in different organs (brain vs. pancreas). Compound carriers of CACNA1C rs1006737 AA (more Ca²⁺ influx → more melatonin suppression) and MTNR1B rs10830963 GG (β-cells hypersensitive to melatonin) should show the highest comorbidity rate.", falsification: "Depression-T2D comorbidity does not stratify by CACNA1C × MTNR1B genotype" },
+      { id: "GENE-INTERACT-1", title: "CRY1Δ11 + MTNR1B GG compound carriers show specifically elevated morning fasting glucose", description: "CRY1Δ11 delays melatonin offset → morning melatonin still elevated. MTNR1B GG → β-cells hypersensitive to this elevated morning melatonin → insulin suppression specifically in the morning → fasting glucose elevated.", falsification: "No CRY1 × MTNR1B interaction on morning fasting glucose" },
+      { id: "GENE-EHS-1", title: "EHS patients have higher CACNA GoF + lower SLC8A1/ATP2B function than matched controls", description: "EHS is a polygenic calcium threshold disorder: high influx (CACNA GoF) + slow extrusion (SLC8A1/ATP2B LoF) = Ca²⁺ accumulates → CaMKII threshold crossed at lower EMF. Genotyping EHS cohorts for these 15 genes will show enrichment of high-influx/slow-extrusion combinations.", falsification: "No calcium channel gene enrichment in EHS cohorts vs. matched controls" },
+      { id: "GENE-PRS-1", title: "A 15-gene polygenic risk score predicts EMF sensitivity in controlled exposure studies", description: "Combining CACNA1C, CACNA1H, CACNA1D, CACNA1A, CACNA1B, CACNA2D1, CAMK2A, CAMK2B, SLC8A1, ATP2B1, ATP2B2, CRY1, CRY2, MTNR1B, and COMT into a single PRS should predict the magnitude of biological response to standardized EMF exposure.", falsification: "PRS does not correlate with measured EMF response in controlled exposure" },
+      { id: "GXEMF-1", title: "Gene × EMF interactions are superadditive across populations", description: "Genetic risk (MTNR1B GG T2D risk ~1.5×) × EMF risk (~1.3×) produces observed risk ~2.5× (> 1.5 × 1.3 = 1.95×). EMF 'activates' genetic risks that would be latent in EMF-free environments. Testable via biobank stratification by residential EMF exposure.", falsification: "Gene × EMF interaction is purely multiplicative (no superadditivity)" },
+      { id: "GXEMF-2", title: "Gabapentinoid users show reduced EMF sensitivity via α2δ-1 blockade", description: "Pregabalin/gabapentin bind α2δ-1 → block VGCC trafficking to synapses → lower synaptic VGCC density → reduced ELF priming effect. Gabapentinoid users should show attenuated biological responses to EMF exposure compared to matched non-users.", falsification: "No difference in EMF response between gabapentinoid users and non-users" },
+      { id: "GXEMF-3", title: "CaMKII Thr286 autophosphorylation level in lymphocytes correlates with subjective EMF sensitivity", description: "CaMKII autophosphorylation at Thr286 is measurable in peripheral lymphocytes. Higher baseline autophosphorylation = closer to threshold = more sensitive to EMF. This could be the first OBJECTIVE biomarker for EHS.", falsification: "No correlation between lymphocyte CaMKII autophosphorylation and reported EMF sensitivity" },
+      { id: "GENE-A2D-1", title: "α2δ-1 expression level predicts individual ELF priming magnitude", description: "CACNA2D1 encodes α2δ-1, the bottleneck for VGCC trafficking. Individuals with higher baseline α2δ-1 expression should show faster VGCC density increase under ELF exposure (faster priming).", falsification: "No correlation between α2δ-1 expression and VGCC density change under ELF" },
+      { id: "GENE-A2D-2", title: "Pregabalin pre-treatment blocks ELF-induced VGCC upregulation in cell culture", description: "If α2δ-1 is the molecular mediator of ELF priming (PMC4757866), then pregabalin (which binds α2δ-1) should prevent the VGCC density increase observed after 8-10 days of 50/60 Hz exposure.", falsification: "Pregabalin does not prevent ELF-induced VGCC upregulation" },
+      { id: "GENE-CAMK2-1", title: "CAMK2A GoF mutation phenotype matches BERM population-level prediction", description: "CAMK2A GoF mutations that increase Thr286 autophosphorylation produce epilepsy, intellectual disability, and autism (Küry 2017). BERM predicts EMF increases population-level autophosphorylation → same phenotypes at population level. Genetic validation of the mechanism.", falsification: "CAMK2A GoF phenotypes do not match EMF-predicted population health trends" },
+      { id: "GENE-CAMK2-2", title: "Lymphocyte CaMKII autophosphorylation is higher in high-EMF urban residents than rural controls", description: "Urban residents (higher cumulative EMF) should show higher baseline CaMKII Thr286 autophosphorylation in peripheral lymphocytes than rural controls matched for age, diet, and activity.", falsification: "No urban-rural difference in lymphocyte CaMKII autophosphorylation" },
+      { id: "GENE-NETWORK-1", title: "Multi-gene calcium channel polymorphism interaction predicts neurodevelopmental outcomes", description: "Korean 2025 study showed CACNA1A + CACNA1C + CACNA1H polymorphisms interact in pediatric DD/epilepsy. BERM predicts this extends to all 5 influx genes: compound carriers of multiple CACNA risk alleles show disproportionately higher neurodevelopmental risk.", falsification: "No multi-gene interaction effect beyond individual gene effects" },
+    ],
+    geneticFalsification: "Falsification criterion",
+    geneticLocked: "Locked: 2026-08-26",
+    geneticStatus: "LOCKED — awaiting test",
   },
   fi: {
     title: "Lukitut ennusteet",
@@ -1586,6 +1661,57 @@ const COPY = {
     modIntDiscriminating: "Erotteleva",
     modIntLocked: "Lukittu: 2026-08-24",
     modIntStatus: "LUKITTU — odottaa testiä",
+    sidsTitle: "Imeväisen haavoittuvuus- ja SIDS-ennusteet",
+    sidsLead: "BERM:n kalsiumkehyksestä johdetut ennusteet imeväisen kardiorespiratorisesta haavoittuvuudesta. Nämä testaavat, osallistuvatko ionikanavagenetiikka, yöllinen EMF-altistus ja sirkadiaaninen Ca²⁺-dynamiikka SIDS-riskiin samojen reittien kautta kuin aikuispopulaatioissa.",
+    sidsNote: "Nämä ennusteet käsittelevät herkkää aihetta. BERM tarjoaa mekanistisen hypoteesin — ei todistettua selitystä. Tunnetut suojelutoimet (selällään nukkuminen, tupakansavun välttäminen, imetys) ovat edelleen tärkeimmät interventiot.",
+    sidsPredictions: [
+      {
+        id: "SIDS-1",
+        title: "Itkuhälyttimen läheisyys korreloi SIDS-riskin kanssa",
+        description: "Retrospektiivinen tapaus-kontrollitutkimus: vertaa itkuhälyttimen tyyppiä (DECT vs. WiFi vs. langallinen vs. ei hälytintä) ja sijoitusetäisyyttä (< 0,5 m, 0,5–1 m, > 1 m) SIDS-tapausten ja ikävakioitujen kontrollien välillä. DECT-hälyttimet < 0,5 m etäisyydellä tuottavat 2,5–3,5 V/m jatkuvan RF:n 2 mm imeväisen kallon läpi. Ennuste: DECT- tai WiFi-hälyttimen sijoitus alle 0,5 m etäisyydelle sängystä on yleisempää SIDS-tapauksissa kuin kontrolleissa, kun tunnetut riskitekijät on vakioitu.",
+        timeline: "Testattavissa retrospektiivisesti (vanhempien kyselylomake olemassa olevissa SIDS-rekistereissä)",
+        falsification: "Ei assosiaatiota hälytintyypin/etäisyyden ja SIDS-ilmaantuvuuden välillä kun vatsamakuu, tupakka, ylikuumeneminen ja imetysstatus on vakioitu",
+      },
+      {
+        id: "SIDS-2",
+        title: "CACNA1C rs1006737 AA-genotyyppi on yliedustettu SIDS-uhreissa",
+        description: "SIDS-uhrien post mortem -genotyypitys CACNA1C rs1006737:lle (BERM:n riskialleeli). AA-genotyyppi lisää Cav1.2-ekspressiota ja on assosioitu psykiatriseen ja sydänriskiin aikuisilla. Imeväisillä joiden Ca²⁺-homeostaasi on kypsymätön, tämä gain-of-function-variantti lisännee haavoittuvuutta mille tahansa Ca²⁺-häiriötekijälle. Ennuste: AA-genotyyppifrekvenssi SIDS-uhreissa ylittää väestön perustaajuuden.",
+        timeline: "Testattavissa olemassa olevilla biopankkien SIDS-kudosnäytteillä (retrospektiivinen genotyypitys)",
+        falsification: "AA-genotyyppifrekvenssi SIDS-uhreissa on sama tai matalampi kuin väestössä",
+      },
+      {
+        id: "SIDS-3",
+        title: "Äidin EMF-altistus korreloi matalamman äidinmaidon melatoniinin kanssa",
+        description: "Mittaa melatoniinipitoisuus yöllisistä äidinmaitonäytteistä äideiltä, joilla on korkea vs. matala henkilökohtainen EMF-altistus (älypuhelimen käyttö, WiFi-läheisyys, LED-valaistus arvioituna kyselylomakkeella ja dosimetrialla). Yömaidon melatoniini on imeväisen eksogeeninen Ca²⁺-antagonisti. Jos äidin CRY-reitti häiriintyy EMF:stä, maidon melatoniinin pitäisi laskea. Ennuste: korkeamman EMF-altistuksen äidit tuottavat yömaitoa jossa on matalampi melatoniinipitoisuus.",
+        timeline: "Testattavissa 6–12 kuukaudessa (imetyskohortti dosimetrialla)",
+        falsification: "Ei korrelaatiota äidin EMF-altistusmittarien ja yömaidon melatoniinipitoisuuden välillä",
+      },
+      {
+        id: "SIDS-4",
+        title: "Yöllä pumpattu äidinmaito yöllä annettuna on matalampi SIDS-riski kuin päivällä pumpattu yöllä",
+        description: "Retrospektiivinen kohortti: äideistä jotka pumppaavat ja pulloruokkivat, vertaa SIDS-ilmaantuvuutta aikavakioidun maidon (yöllä pumpattu yöllä, päivällä pumpattu päivällä) ja ei-aikavakioidun maidon välillä. Yömaito sisältää melatoniinia (Ca²⁺-antagonisti) ja tryptofaania jotka puuttuvat päivämaidosta. Ennuste: kronovakioitu maidonanto on assosioitu matalampaan SIDS-riskiin.",
+        timeline: "Testattavissa retrospektiivisesti (ruokintakäytäntökyselylomake olemassa olevissa kohorteissa)",
+        falsification: "Ei eroa SIDS-ilmaantuvuudessa kronovakioidun ja ei-vakioidun pumpatun maidon ruokintakäytäntöjen välillä",
+      },
+      {
+        id: "SIDS-5",
+        title: "EMF-vapaa lastenhuoneympäristö vähentää apnea/bradykardiajaksoja NICU:ssa",
+        description: "Interventiotutkimus NICU:ssa: vertaa apnea- ja bradykardiajaksojen tiheyttä keskosilla standardi-NICU-ympäristössä vs. EMF-minimoidussa ympäristössä (langalliset monitorit, ei WiFi:ä, RF-suojattu inkubaattori, keltainen valaistus). Ennuste: EMF-minimoitu NICU-ympäristö vähentää apnea/bradykardiajaksoja, suuremmalla vaikutuksella imeväisillä joilla on tunnettuja ionikanavavariantteja.",
+        timeline: "Testattavissa 12–18 kuukaudessa (NICU-interventiotutkimus)",
+        falsification: "Ei vähennystä apnea/bradykardiajaksoissa EMF-minimoidussa NICU-ympäristössä verrattuna standardiympäristöön",
+      },
+      {
+        id: "SIDS-6",
+        title: "ADORA1/ADORA2A-polymorfismit ennustavat sekä SIDS-riskiä että kofeiinivastetta",
+        description: "Farmakogeneettinen analyysi: genotyypitä ADORA1- ja ADORA2A-reseptoripolymorfismit SIDS-uhreista (post mortem) ja kofeiinihoitoa saavista keskosista. Samat adenosiinireseptorivariantit jotka moduloivat kofeiinivastetta keskosen apneassa pitäisi ennustaa SIDS-herkkyyttä, koska molemmat tilat liittyvät adenosiini-Ca²⁺-reitin häiriöön hengityskeskuksessa. Ennuste: ADORA-variantit jotka ennustavat heikkoa kofeiinivastetta ovat yliedustettuja SIDS-uhreissa.",
+        timeline: "Testattavissa olemassa olevilla SIDS-biopankeilla ja NICU:n farmakogeneettisillä tietokannoilla",
+        falsification: "Ei assosiaatiota ADORA-genotyypin ja SIDS-ilmaantuvuuden välillä, tai SIDS:iin assosioituvat ADORA-genotyypit eivät ennusta kofeiinivastetta",
+      },
+    ],
+    sidsTimeline: "Aikajana",
+    sidsFalsification: "Falsifikaatiokriteeri",
+    sidsLocked: "Lukittu: 2026-08-26",
+    sidsStatus: "LUKITTU — odottaa testiä",
     ttypeTitle: "T-tyypin kanavan ennusteet",
     ttypeLead: "T-tyypin kalsiumkanavan bifurkaatiomekanismista johdetut testattavat ennusteet.",
     ttypePredictions: [
@@ -2137,6 +2263,30 @@ const COPY = {
     supplementFalsification: "Kumoamisehto",
     supplementLocked: "Lukittu: 2026-08-26",
     supplementStatus: "LUKITTU — odottaa testiä",
+
+    geneticTitle: "Geneettiset herkkyysennusteet",
+    geneticLead: "Ennusteet 15 geenin kalsiumherkkyysprofiilin perusteella. Nämä testaavat hypoteesia, että EMF-herkkyys on polygeenisesti määräytyvä ja että geeni × EMF -interaktiot ovat superadditiivisia.",
+    geneticPredictions: [
+      { id: "GENE-MTNR1B-1", title: "MTNR1B GG -kantajilla suurempi T2D-riskin kasvu per EMF-yksikkö kuin AA:lla", description: "rs10830963 G-alleeli → enemmän MT2-reseptoreita → β-solut yliherkät melatoniinimuutoksille. EMF:n aiheuttama melatoniinisuppressio vaikuttaa eri tavalla GG-kantajiin. Geeni × EMF -interaktio on SUPERADDITIIVINEN.", falsification: "Ei genotyyppi × EMF -interaktiota T2D-ilmaantuvuuteen biopankkianalyysissä" },
+      { id: "GENE-CRY1-1", title: "CRY1Δ11-kantajilla huonommat unitulokset kotona EMF:n alla kuin ei-kantajilla", description: "CRY1Δ11 (rs184039278, 0,6 %) pidentää sirkadiaanista jaksoa. EMF häiritsee CRY:tä → vaikutukset ADDITIIVISIA: geneettinen pidennys + EMF-häiriö = pidempi unilatenssi, lyhyempi palautumisikkuna.", falsification: "Ei eroa uni- tai metabolisissa tuloksissa CRY1Δ11-kantajien ja ei-kantajien välillä sovitetulla EMF-altistuksella" },
+      { id: "GENE-COMT-1", title: "COMT Val/Val -yksilöillä suurempi EMF-assosioitu masennusriski kuin Met/Met:llä", description: "Val/Val = nopea dopamiinipuhdistuma = matala DA-perusviiva. EMF:n aiheuttama DA-synteesilasku iskee ankarammin (pienempi puskuri). Met/Met kestää pidempään.", falsification: "Ei COMT-genotyyppi × EMF -interaktiota masennuksen esiintyvyyteen" },
+      { id: "GENE-CACNA1D-1", title: "CACNA1D GoF -kantajilla korkeampi tinnitusaste Bluetooth-kuulokkeiden käytössä", description: "Cav1.3 GoF → sisäkorvan yliherkkyys. Bluetooth-kuulokkeet aktivoivat Cav1.3:a karvasoluissa → Ca²⁺-ylikuorma. GoF-kantajat saavuttavat vauriokynnyksen matalammalla altistuksella.", falsification: "Ei yhteyttä CACNA1D-genotyypin ja tinnituksen välillä Bluetooth-käyttäjillä" },
+      { id: "GENE-COMORBID-1", title: "Masennus-T2D-komorbiditeetti korkeampi CACNA1C AA + MTNR1B GG -yhdistelmäkantajilla", description: "Molemmat tilat syntyvät samasta melatoniinisuppressiopolusta eri elimissä (aivot vs. haima). Yhdistelmäkantajilla korkein komorbiditeetti.", falsification: "Masennus-T2D-komorbiditeetti ei stratifioidu CACNA1C × MTNR1B -genotyypin mukaan" },
+      { id: "GENE-INTERACT-1", title: "CRY1Δ11 + MTNR1B GG -yhdistelmäkantajilla erityisesti kohonnut aamupaastoglukoosi", description: "CRY1Δ11 viivästyttää melatoniini-offsetia → aamumelatoniini koholla. MTNR1B GG → β-solut yliherkät tälle kohoamiselle → insuliinisuppressio erityisesti aamuisin.", falsification: "Ei CRY1 × MTNR1B -interaktiota aamupaastoglukoosiin" },
+      { id: "GENE-EHS-1", title: "EHS-potilailla enemmän CACNA GoF + vähemmän SLC8A1/ATP2B-toimintaa kuin kontrolleilla", description: "EHS on polygeeninen kalsiumkynnöshäiriö: korkea influksi + hidas eritys = Ca²⁺ kasaantuu → CaMKII-kynnys ylittyy matalalla EMF:llä. 15 geenin genotyypitys osoittaa rikastumisen.", falsification: "Ei kalsiumkanavageenien rikastumista EHS-kohorteissa kontrolleihin verrattuna" },
+      { id: "GENE-PRS-1", title: "15 geenin polygeeninen riskipistemäärä ennustaa EMF-herkkyyttä kontrolloiduissa altistustutkimuksissa", description: "Yhdistämällä kaikki 15 Ca²⁺-kaskadin geeniä yhdeksi PRS:ksi voidaan ennustaa biologisen vasteen suuruus standardoidussa EMF-altistuksessa.", falsification: "PRS ei korreloi mitatun EMF-vasteen kanssa kontrolloidussa altistuksessa" },
+      { id: "GXEMF-1", title: "Geeni × EMF -interaktiot ovat superadditiivisia populaatioiden välillä", description: "Geneettinen riski (MTNR1B GG T2D-riski ~1,5×) × EMF-riski (~1,3×) tuottaa havaitun riskin ~2,5× (> 1,5 × 1,3 = 1,95×). EMF 'aktivoi' geneettisiä riskejä jotka olisivat piilevät EMF-vapaissa ympäristöissä.", falsification: "Geeni × EMF -interaktio on puhtaasti multiplikatiivinen (ei superadditiivisuutta)" },
+      { id: "GXEMF-2", title: "Gabapentinoidien käyttäjillä alentunut EMF-herkkyys α2δ-1-eston kautta", description: "Pregabaliini/gabapentiini sitoutuvat α2δ-1:een → estävät VGCC-kuljetuksen synapseihin → matalampi VGCC-tiheys → alentunut ELF-priming-vaikutus.", falsification: "Ei eroa EMF-vasteessa gabapentinoidien käyttäjien ja ei-käyttäjien välillä" },
+      { id: "GXEMF-3", title: "CaMKII Thr286 -autofosforylaatiotaso lymfosyyteissä korreloi subjektiivisen EMF-herkkyyden kanssa", description: "CaMKII-autofosforylaatio Thr286:ssa on mitattavissa perifeerisistä lymfosyyteistä. Korkeampi perusviiva = lähempänä kynnystä = herkempi EMF:lle. EHS:n ensimmäinen mahdollinen OBJEKTIIVINEN biomarkkeri.", falsification: "Ei korrelaatiota lymfosyyttien CaMKII-autofosforylaation ja raportoidun EMF-herkkyyden välillä" },
+      { id: "GENE-A2D-1", title: "α2δ-1-ekspressiotaso ennustaa yksilöllisen ELF-primaamin suuruuden", description: "CACNA2D1 koodaa α2δ-1:tä, VGCC-kuljetuksen pullonkaulaa. Korkeampi perus-α2δ-1-ekspressio → nopeampi VGCC-tiheyden kasvu ELF-altistuksessa.", falsification: "Ei korrelaatiota α2δ-1-ekspression ja VGCC-tiheyden muutoksen välillä ELF:ssä" },
+      { id: "GENE-A2D-2", title: "Pregabaliini-esikäsittely estää ELF:n aiheuttaman VGCC-ylössäätelyn soluviljelmässä", description: "Jos α2δ-1 välittää ELF-primaamin (PMC4757866), pregabaliini (joka sitoutuu α2δ-1:een) estää VGCC-tiheyden kasvun 8–10 päivän 50/60 Hz -altistuksessa.", falsification: "Pregabaliini ei estä ELF:n aiheuttamaa VGCC-ylössäätelyä" },
+      { id: "GENE-CAMK2-1", title: "CAMK2A GoF -mutaation fenotyyppi vastaa BERM:n populaatiotason ennustetta", description: "CAMK2A GoF-mutaatiot jotka lisäävät Thr286-autofosforylaatiota tuottavat epilepsian, kehitysvamman ja autismin (Küry 2017). BERM ennustaa EMF:n lisäävän populaatiotason autofosforylaatiota → samat fenotyypit. Mekanismin geneettinen validaatio.", falsification: "CAMK2A GoF -fenotyypit eivät vastaa EMF:n ennustamia populaatioterveyden trendejä" },
+      { id: "GENE-CAMK2-2", title: "Lymfosyyttien CaMKII-autofosforylaatio korkeampi korkean EMF:n kaupunkiasukkailla kuin maaseudun kontrolleilla", description: "Kaupunkiasukkailla (korkeampi kumulatiivinen EMF) tulisi olla korkeampi CaMKII Thr286 -autofosforylaation perusviiva perifeerisissa lymfosyyteissä kuin maaseudun kontrolleilla iän, ruokavalion ja aktiivisuuden sovittamisen jälkeen.", falsification: "Ei kaupunki-maaseutu-eroa lymfosyyttien CaMKII-autofosforylaatiossa" },
+      { id: "GENE-NETWORK-1", title: "Usean geenin kalsiumkanavapolymorfismi-interaktio ennustaa kehitysneurologisia tuloksia", description: "Korean 2025 -tutkimus osoitti CACNA1A + CACNA1C + CACNA1H -polymorfismien interaktion lasten DD/epilepsiassa. BERM ennustaa tämän ulottuvan kaikkiin 5 influksigeeniin: usean CACNA-riskialleelin yhdistelmäkantajilla suhteettomasti korkeampi riski.", falsification: "Ei monigeenistä interaktiovaikutusta yksittäisten geenivaikutusten ylitse" },
+    ],
+    geneticFalsification: "Kumoamisehto",
+    geneticLocked: "Lukittu: 2026-08-26",
+    geneticStatus: "LUKITTU — odottaa testiä",
   },
 } as const;
 
@@ -2556,6 +2706,43 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             </article>
           ))}
         </div>
+      </section>
+
+      {/* SIDS predictions SIDS-1 through SIDS-6 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.sidsTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-4xl">{d.sidsLead}</p>
+        <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 mb-6 max-w-4xl">
+          <p className="text-sm text-foreground-muted leading-relaxed">{d.sidsNote}</p>
+        </div>
+        <div className="grid gap-4 max-w-4xl">
+          {d.sidsPredictions.map((sp) => (
+            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{sp.id}</span>
+                    <h3 className="font-semibold">{sp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.sidsStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{sp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.sidsTimeline}:</span> {sp.timeline}</p>
+                <p><span className="font-semibold">{d.sidsFalsification}:</span> {sp.falsification}</p>
+                <p className="font-mono-num">{d.sidsLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="mt-4 text-sm">
+          <Link href={`/${locale}/evidence/infant-vulnerability`} className="text-accent hover:underline">
+            {locale === "fi" ? "Imeväisen haavoittuvuus -evidenssi →" : "Infant vulnerability evidence →"}
+          </Link>
+        </p>
       </section>
 
       {/* T-Type channel predictions TTYPE-1 through TTYPE-2 */}
@@ -3001,6 +3188,34 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               <div className="space-y-1 text-xs text-foreground-muted">
                 <p><span className="font-semibold">{d.supplementFalsification}:</span> {sp.falsification}</p>
                 <p className="font-mono-num">{d.supplementLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Genetic susceptibility predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.geneticTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.geneticLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.geneticPredictions.map((gp) => (
+            <article key={gp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{gp.id}</span>
+                    <h3 className="font-semibold">{gp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.geneticStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{gp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.geneticFalsification}:</span> {gp.falsification}</p>
+                <p className="font-mono-num">{d.geneticLocked}</p>
               </div>
             </article>
           ))}

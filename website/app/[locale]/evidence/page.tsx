@@ -19,6 +19,7 @@ import {
   Users,
   Scale,
   FlaskConical,
+  Baby,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
@@ -313,6 +314,12 @@ const SUB_PAGES = [
     icon: Pill,
     en: { title: "Pharmacological Evidence", desc: "8 drug classes converging on BERM pathways: CCBs (264k studies), verapamil, lithium, semaglutide, gabapentinoids, nimodipine, melatonin, CoQ10. The model's clinically strongest argument." },
     fi: { title: "Farmakologinen evidenssi", desc: "8 lääkeryhmää konvergoivat BERM-reiteillä: CCB:t (264k tutkimusta), verapamiili, litium, semaglutidi, gabapentinoidit, nimodipiini, melatoniini, CoQ10. Mallin kliinisesti vahvin argumentti." },
+  },
+  {
+    slug: "infant-vulnerability",
+    icon: Baby,
+    en: { title: "Infant Vulnerability & SIDS", desc: "The calcium threshold at its lowest: triple risk model through a Ca²⁺ lens, baby monitor RF quantified, breast milk melatonin as endogenous Ca²⁺ antagonist, and zero-risk precautionary measures. 3 pharmacological cards, 6 predictions." },
+    fi: { title: "Imeväisen haavoittuvuus ja SIDS", desc: "Kalsiumkynnys matalimmillaan: kolmoisriskimalli Ca²⁺-linssin läpi, itkuhälyttimien RF kvantifioituna, äidinmaidon melatoniini endogeenisenä Ca²⁺-antagonistina ja riskittömät varotoimenpiteet. 3 farmakologista korttia, 6 ennustetta." },
   },
   {
     slug: "lighting",

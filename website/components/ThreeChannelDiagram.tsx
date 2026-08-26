@@ -62,7 +62,6 @@ const H = 340;
 const COL_W = 180;
 const GAP = 25;
 const BAR_W = 40;
-const TOP = 50;
 const BAR_BASE = 250;
 
 interface BarSpec {
@@ -115,7 +114,7 @@ export function ThreeChannelDiagram({ locale }: { locale: string }) {
             return (
               <g key={phase.key}>
                 {/* Phase label */}
-                <text x={colX + COL_W / 2} y={30} textAnchor="middle" fontSize={11} fontWeight={600} fill="currentColor" opacity={0.8}>
+                <text x={colX + COL_W / 2} y={30} textAnchor="middle" fontSize={13} fontWeight={600} fill="currentColor" opacity={0.8}>
                   {phase.label}
                 </text>
 
@@ -141,13 +140,13 @@ export function ThreeChannelDiagram({ locale }: { locale: string }) {
                       />
                       {/* Channel label at top of first column */}
                       {pi === 0 && (
-                        <text x={barX + BAR_W / 2} y={BAR_BASE + 14} textAnchor="middle" fontSize={8} fill={bar.color} fontWeight={600}>
+                        <text x={barX + BAR_W / 2} y={BAR_BASE + 14} textAnchor="middle" fontSize={11} fill={bar.color} fontWeight={600}>
                           {channelLabels[bi]}
                         </text>
                       )}
                       {/* Change annotation for lockdown and post */}
                       {pi > 0 && (
-                        <text x={barX + BAR_W / 2} y={barY - 5} textAnchor="middle" fontSize={9} fontWeight={600} fill={bar.color}>
+                        <text x={barX + BAR_W / 2} y={barY - 5} textAnchor="middle" fontSize={13} fontWeight={600} fill={bar.color}>
                           {changeLabels[bi][pi - 1]}
                         </text>
                       )}
@@ -179,21 +178,21 @@ export function ThreeChannelDiagram({ locale }: { locale: string }) {
           <g>
             {/* Sperm quality */}
             <rect x={40} y={BAR_BASE + 30} width={COL_W * 3 + GAP * 2} height={22} rx={4} fill="#4CAF50" opacity={0.08} />
-            <text x={50} y={BAR_BASE + 44} fontSize={10} fontWeight={600} fill="#4CAF50">{d.spermLabel}:</text>
-            <text x={50 + (COL_W + GAP)} y={BAR_BASE + 44} fontSize={10} fill="#4CAF50" textAnchor="middle">
+            <text x={50} y={BAR_BASE + 44} fontSize={13} fontWeight={600} fill="#4CAF50">{d.spermLabel}:</text>
+            <text x={50 + (COL_W + GAP)} y={BAR_BASE + 44} fontSize={11} fill="#4CAF50" textAnchor="middle">
               ↑ {d.spermUp}
             </text>
-            <text x={50 + 2 * (COL_W + GAP)} y={BAR_BASE + 44} fontSize={10} fill="#F44336" textAnchor="middle">
+            <text x={50 + 2 * (COL_W + GAP)} y={BAR_BASE + 44} fontSize={11} fill="#F44336" textAnchor="middle">
               ↓ {d.spermDown}
             </text>
 
             {/* Mental health */}
             <rect x={40} y={BAR_BASE + 56} width={COL_W * 3 + GAP * 2} height={22} rx={4} fill="#F44336" opacity={0.08} />
-            <text x={50} y={BAR_BASE + 70} fontSize={10} fontWeight={600} fill="#F44336">{d.mentalLabel}:</text>
-            <text x={50 + (COL_W + GAP)} y={BAR_BASE + 70} fontSize={10} fill="#F44336" textAnchor="middle">
+            <text x={50} y={BAR_BASE + 70} fontSize={13} fontWeight={600} fill="#F44336">{d.mentalLabel}:</text>
+            <text x={50 + (COL_W + GAP)} y={BAR_BASE + 70} fontSize={11} fill="#F44336" textAnchor="middle">
               ↓ {d.mentalDown}
             </text>
-            <text x={50 + 2 * (COL_W + GAP)} y={BAR_BASE + 70} fontSize={10} fill="#FF9800" textAnchor="middle">
+            <text x={50 + 2 * (COL_W + GAP)} y={BAR_BASE + 70} fontSize={11} fill="#FF9800" textAnchor="middle">
               ~ {d.mentalPartial}
             </text>
           </g>

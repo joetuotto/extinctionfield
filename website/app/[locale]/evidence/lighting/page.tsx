@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Lightbulb } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { BermIcon } from "@/components/BermIcon";
 import { LightingTransitionTimeline } from "@/components/LightingTransitionTimeline";
 import { CitationLink } from "@/components/CitationLink";
 
@@ -63,7 +64,7 @@ const COPY = {
         title: "Valaistussiirtymä: näkymätön EMF-muutos",
         paragraphs: [
           "Hehkulamppujen korvaaminen LED-valaistuksella (EU-kielto 2009–2012, vastaavat muualla) muutti jokaisen lampunkannan passiivisesta resistanssista, joka ei tuota EMF:ää yli 50 Hz:n, aktiiviseksi kilohertsitaajuiseksi EMF-lähteeksi. Tyypillisessä kodissa on 15–30 LED-lamppua, joista jokaisessa on hakkuriteholähde, joka toimii 20–200 kHz:n taajuudella ja tuottaa korkeampia harmonisia.",
-          "Tutkimukset, jotka attribuoivat LED:n terveysvaikutukset ‘siniselle valolle’ (Tosini 2016), eivät kontrolloineet EMF-komponenttia. LED-lamput tuottavat sekä sinistä valoa että kHz-EMF:ää; hehkulamput eivät kumpaakaan. Kun tutkimus vertaa LED:ää hehkulamppuun ja havaitsee melatoniinin suppression, se ei pysty erottamaan, oliko syy spektraalinen (sininen valo verkkokalvon kautta → SCN) vai sähkömagneettinen (kHz-kentät pineaalirauhasen tai VGCC:n kautta). Erottelututkimusta ei ole tehty.",
+          "Tutkimukset, jotka yhdistävät LED:n terveysvaikutukset ‘siniselle valolle’ (Tosini 2016), eivät kontrolloineet EMF-komponenttia. LED-lamput tuottavat sekä sinistä valoa että kHz-EMF:ää; hehkulamput eivät kumpaakaan. Kun tutkimus vertaa LED:ää hehkulamppuun ja havaitsee melatoniinin suppression, se ei pysty erottamaan, oliko syy spektraalinen (sininen valo verkkokalvon kautta → SCN) vai sähkömagneettinen (kHz-kentät pineaalirauhasen tai VGCC:n kautta). Erottelututkimusta ei ole tehty.",
           "Välitaajuisten kenttien (kHz-alue) biologinen aktiivisuus on vahvistettu Tumor Treating Fields (TTFields) -hoidolla, FDA:n hyväksymällä syöpähoidolla, joka käyttää 100–300 kHz:n vaihtokenttiä solunjakautumisen häiritsemiseen. Jos nämä taajuudet ovat terapeuttisesti aktiivisia syöpäsoluissa, ne eivät voi olla biologisesti inerttejä normaalissa kudoksessa.",
           "LED-katuvalaistus vahvistaa vaikutusta: Boyes ym. 2021 (Science Advances) havaitsivat 47 %:n vähenemisen yöperhosten toukkamäärissä LED-katuvalojen alla verrattuna valaisemattomiin kohteisiin. Pawson & Bader 2014 havaitsivat LED-loukkujen pyydystäneen 48 % enemmän hyönteisiä kuin natriumlamppu. Sciencen toimituksellinen huomautus Lindecke 2026 -tutkimuksessa tunnistaa nimenomaisesti LED-valot biologisen RF-kohinan lähteeksi.",
           "EU:n hehkulamppukielto (direktiivi 244/2009) tarjoaa testattavan luonnollisen kokeen. Kielto vaiheistettiin: >100 W syyskuussa 2009, >75 W 2010, >60 W 2011, kaikki loput 2012, halogeenit 2018. Tämä oli hallinnollisesti pakotettu, ei-itsevalittu, väestönlaajuinen siirtymä nollasta IF-EMF-lähteestä jatkuviin IF-EMF-lähteisiin, joka koski ~450 miljoonaa ihmistä. Zeghoudi ym. 2025 (Optics & Laser Technology) mittasi suoraan LED-ajurin lähikenttäemission ja vahvisti mitattavat sähkökentän komponentit senttimetrien etäisyydellä.",
@@ -117,7 +118,7 @@ export default async function LightingPage({ params }: { params: Promise<{ local
         {d.backLink}
       </Link>
 
-      <PageHeader icon={Lightbulb} title={d.title} subtitle={d.subtitle} />
+      <PageHeader icon={Lightbulb} title={d.title} subtitle={d.subtitle} lensIcon={<BermIcon name="physics" size={28} className="text-accent" />} />
 
       {/* Thematic narratives */}
       <section className="mb-16">
@@ -286,7 +287,7 @@ export default async function LightingPage({ params }: { params: Promise<{ local
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
           <p className="editorial-rail text-[0.95rem] text-foreground">
             {activeLocale === "fi"
-              ? "Spermatogeneesi — kypsien siittiöiden tuottaminen kantasoluista — on MITOOTTINEN prosessi. Kantasolut jakautuvat klonaalisten mitoottisten kierrosten kautta ennen erilaistumista siittiöiksi. Tämä tekee spermatogeneesistä luonnostaan haavoittuvan mille tahansa tekijälle joka häiritsee mitoosia."
+              ? "Spermatogeneesi — kypsien siittiöiden tuottaminen kantasoluista — on MITOOTTINEN prosessi. Kantasolut jakautuvat klonaalisten mitoottisten kierrosten kautta ennen erilaistumista siittiöiksi. Tämä tekee spermatogeneesistä luonnostaan haavoittuvan mille tahansa tekijälle, joka häiritsee mitoosia."
               : "Spermatogenesis — the production of mature sperm from germ cells — is a MITOTIC process. Germ cells divide clonally through multiple rounds of mitosis before differentiating into spermatozoa. This makes spermatogenesis inherently vulnerable to any agent that disrupts mitosis."}
           </p>
           <p>
@@ -296,7 +297,7 @@ export default async function LightingPage({ params }: { params: Promise<{ local
           </p>
           <p>
             {activeLocale === "fi"
-              ? "LED-hakkurien kytkentätaajuudet (20–100 kHz) osuvat juuri tälle alueelle. Ympäristön IF-altistus LED-valaistuksesta operoi taajuudella jonka TTFields-tutkimus tunnisti normaalin solunjakautumisen kannalta haitallisimmaksi."
+              ? "LED-hakkurien kytkentätaajuudet (20–100 kHz) osuvat juuri tälle alueelle. Ympäristön IF-altistus LED-valaistuksesta toimii taajuudella, jonka TTFields-tutkimus tunnisti normaalin solunjakautumisen kannalta haitallisimmaksi."
               : "LED driver switching frequencies (20–100 kHz) fall squarely in this range. The environmental IF exposure from LED lighting operates at the frequency that TTFields research identified as most disruptive to normal cell division."}
           </p>
           <p>

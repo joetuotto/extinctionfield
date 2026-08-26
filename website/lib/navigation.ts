@@ -16,7 +16,6 @@ import {
   Network,
   Activity,
   FileText,
-  Microscope,
   Bug,
   FlaskConical,
   Pill,

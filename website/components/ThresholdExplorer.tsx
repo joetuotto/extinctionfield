@@ -404,7 +404,6 @@ export function ThresholdExplorer({ locale }: { locale: string }) {
         const S_PAD = { top: 32, right: 32, bottom: 56, left: 56 };
         const S_CW = S_W - S_PAD.left - S_PAD.right;
         const S_CH = S_H - S_PAD.top - S_PAD.bottom;
-        const X_MIN = 0;
         const X_MAX = 55;
         const Y_MIN = 0;
         const Y_MAX = 5;

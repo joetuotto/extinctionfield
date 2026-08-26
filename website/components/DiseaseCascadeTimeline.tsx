@@ -446,7 +446,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                       x={ML - 4}
                       y={valueToY(v) + 3}
                       textAnchor="end"
-                      fontSize={8}
+                      fontSize={11}
                       fontFamily="var(--font-data)"
                       fill="var(--color-foreground-muted)"
                       opacity={0.6}
@@ -462,7 +462,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                 x={ML - 4}
                 y={valueToY(100) - 6}
                 textAnchor="end"
-                fontSize={7}
+                fontSize={11}
                 fontFamily="var(--font-data)"
                 fill="var(--color-foreground-muted)"
                 opacity={0.5}
@@ -474,7 +474,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
               <text
                 x={ML}
                 y={TECH_TOP - 7}
-                fontSize={8}
+                fontSize={13}
                 fontFamily="var(--font-data)"
                 fill="var(--color-foreground-muted)"
                 letterSpacing="0.04em"
@@ -504,7 +504,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                       x={ML - 4}
                       y={ry + TECH_ROW_H / 2 + 3}
                       textAnchor="end"
-                      fontSize={7}
+                      fontSize={11}
                       fontFamily="var(--font-data)"
                       fill={chColor}
                       fontWeight={500}
@@ -527,12 +527,12 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                             opacity={era.opacity}
                             rx={2}
                           />
-                          {ew > 30 && (
+                          {ew > 50 && (
                             <text
                               x={x1 + ew / 2}
                               y={ry + TECH_ROW_H / 2 + 3}
                               textAnchor="middle"
-                              fontSize={ew > 60 ? 7.5 : 6}
+                              fontSize={11}
                               fontFamily="var(--font-data)"
                               fill="var(--color-foreground)"
                               opacity={0.85}
@@ -561,7 +561,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                 x={(covidX1 + covidX2) / 2}
                 y={CHART_TOP + 14}
                 textAnchor="middle"
-                fontSize={9}
+                fontSize={13}
                 fontFamily="var(--font-data)"
                 fill="var(--color-foreground-muted)"
                 fontWeight={500}
@@ -572,7 +572,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                 x={(covidX1 + covidX2) / 2}
                 y={CHART_TOP + 26}
                 textAnchor="middle"
-                fontSize={7.5}
+                fontSize={11}
                 fontFamily="var(--font-data)"
                 fill={CHANNEL_COLORS.IF}
               >
@@ -582,7 +582,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                 x={(covidX1 + covidX2) / 2}
                 y={CHART_TOP + 37}
                 textAnchor="middle"
-                fontSize={7.5}
+                fontSize={11}
                 fontFamily="var(--font-data)"
                 fill={CHANNEL_COLORS.RF}
               >
@@ -621,7 +621,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                     key={`lbl-${d.id}`}
                     x={yearToX(2023) + 4}
                     y={valueToY(lastVal) + 3}
-                    fontSize={7.5}
+                    fontSize={11}
                     fontFamily="var(--font-data)"
                     fill={d.color}
                     opacity={dimmed ? 0.15 : 0.9}
@@ -678,7 +678,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                       x={midX}
                       y={midY - 4}
                       textAnchor="middle"
-                      fontSize={7.5}
+                      fontSize={11}
                       fontFamily="var(--font-data)"
                       fill={detail.color}
                       fontWeight={500}
@@ -704,7 +704,7 @@ export function DiseaseCascadeTimeline({ locale }: Props) {
                   x={yearToX(y)}
                   y={AXIS_Y + 14}
                   textAnchor="middle"
-                  fontSize={9}
+                  fontSize={11}
                   fontFamily="var(--font-data)"
                   fill="var(--color-foreground-muted)"
                 >
