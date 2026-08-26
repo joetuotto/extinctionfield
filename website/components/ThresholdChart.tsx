@@ -321,13 +321,13 @@ export function ThresholdChart({ locale }: { locale: string }) {
             </text>
           ))}
           <text
-            x={W - 8}
+            x={W - 14}
             y={PAD.top + CH / 2}
             textAnchor="middle"
             fill="var(--foreground-muted)"
             fontSize={13}
             fontWeight={500}
-            transform={`rotate(90, ${W - 8}, ${PAD.top + CH / 2})`}
+            transform={`rotate(90, ${W - 14}, ${PAD.top + CH / 2})`}
           >
             {copy.tfrLabel}
           </text>

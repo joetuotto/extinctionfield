@@ -328,7 +328,7 @@ const DISEASES: Disease[] = [
 
 /* ── SVG layout constants ── */
 const W = 860;
-const ML = 52;
+const ML = 112;
 const MR = 16;
 const CW = W - ML - MR;
 

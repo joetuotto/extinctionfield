@@ -10,7 +10,7 @@ import {
 } from "@/lib/causalChainData";
 import { DetailPanel } from "./DetailPanel";
 
-type Locale = "en" | "fi";
+type DiagramLocale = "en" | "fi";
 
 const NODE_H = 72;
 const NODE_RX = 12;
@@ -52,7 +52,7 @@ interface LevelBand {
 function computeLayout(
   nodes: ChainNode[],
   canvasW: number,
-  locale: Locale = "fi",
+  locale: DiagramLocale = "fi",
 ): { layoutNodes: LayoutNode[]; canvasH: number; bands: LevelBand[] } {
   const levels = new Map<number, ChainNode[]>();
   for (const n of nodes) {
@@ -145,7 +145,8 @@ function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
   return `M ${x1} ${y1} C ${x1} ${y1 + dy * 0.35} ${x2} ${y2 - dy * 0.35} ${x2} ${y2}`;
 }
 
-export default function BermCausalDiagram({ locale = "fi" }: { locale?: Locale }) {
+export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }) {
+  const l: DiagramLocale = locale === "fi" ? "fi" : "en";
   const fi = locale === "fi";
   const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
@@ -165,8 +166,8 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: Locale }
 
   const canvasW = containerW;
   const { layoutNodes, canvasH, bands } = useMemo(
-    () => computeLayout(NODES, canvasW, locale),
-    [canvasW, locale],
+    () => computeLayout(NODES, canvasW, l),
+    [canvasW, l],
   );
 
   const nodeMap = useMemo(() => {
@@ -223,6 +224,15 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: Locale }
               >
                 <path d="M 0 0 L 10 3.5 L 0 7 z" fill={color} />
               </marker>
+            ))}
+          </defs>
+
+          {/* Node text clip paths */}
+          <defs>
+            {layoutNodes.map((n) => (
+              <clipPath key={`clip-${n.id}`} id={`node-clip-${n.id}`}>
+                <rect x={n.x} y={n.y} width={n.w - 40} height={n.h} />
+              </clipPath>
             ))}
           </defs>
 
@@ -414,44 +424,46 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: Locale }
                 >
                   {EPISTEMIC_LABELS[n.epistemicLevel] ?? n.epistemicLevel}
                 </text>
-                {/* Label */}
-                <text
-                  x={n.x + 14}
-                  y={n.y + (n.sublabel ? 24 : n.h / 2 + 1)}
-                  fill="var(--foreground)"
-                  fontSize={14}
-                  fontWeight="600"
-                  dominantBaseline="middle"
-                  fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                >
-                  {(!fi && n.label_en) || n.label}
-                </text>
-                {/* Sublabel */}
-                {(n.sublabel || n.sublabel_en) && (
+                <g clipPath={`url(#node-clip-${n.id})`}>
+                  {/* Label */}
                   <text
                     x={n.x + 14}
-                    y={n.y + 46}
-                    fill="var(--foreground-muted)"
-                    fontSize={11}
+                    y={n.y + (n.sublabel ? 24 : n.h / 2 + 1)}
+                    fill="var(--foreground)"
+                    fontSize={14}
+                    fontWeight="600"
                     dominantBaseline="middle"
-                    fontFamily="ui-monospace, SFMono-Regular, monospace"
-                  >
-                    {(!fi && n.sublabel_en) || n.sublabel}
-                  </text>
-                )}
-                {/* Click hint on hover */}
-                {isHovered && (
-                  <text
-                    x={n.x + 14}
-                    y={n.y + n.h - 8}
-                    fill="var(--foreground-muted)"
-                    fontSize={9}
-                    dominantBaseline="auto"
                     fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                   >
-                    {fi ? "→ klikkaa tiedot" : "→ click for details"}
+                    {(!fi && n.label_en) || n.label}
                   </text>
-                )}
+                  {/* Sublabel */}
+                  {(n.sublabel || n.sublabel_en) && (
+                    <text
+                      x={n.x + 14}
+                      y={n.y + 46}
+                      fill="var(--foreground-muted)"
+                      fontSize={11}
+                      dominantBaseline="middle"
+                      fontFamily="ui-monospace, SFMono-Regular, monospace"
+                    >
+                      {(!fi && n.sublabel_en) || n.sublabel}
+                    </text>
+                  )}
+                  {/* Click hint on hover */}
+                  {isHovered && (
+                    <text
+                      x={n.x + 14}
+                      y={n.y + n.h - 8}
+                      fill="var(--foreground-muted)"
+                      fontSize={9}
+                      dominantBaseline="auto"
+                      fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+                    >
+                      {fi ? "→ klikkaa tiedot" : "→ click for details"}
+                    </text>
+                  )}
+                </g>
               </g>
             );
           })}
@@ -498,7 +510,7 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: Locale }
         <DetailPanel
           node={selectedNode}
           onClose={() => setSelectedNode(null)}
-          locale={locale}
+          locale={l}
         />
       )}
     </>
