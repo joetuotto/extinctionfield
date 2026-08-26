@@ -21,6 +21,7 @@ import {
   FlaskConical,
   Pill,
   Dna,
+  Landmark,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -182,6 +183,7 @@ export const NAV_ROUTES: NavRoute[] = [
       },
     ],
   },
+  { href: "/civilization", labelEn: "Civilization", labelFi: "Sivilisaatio", icon: Landmark },
   { href: "/predictions", labelEn: "Predictions", labelFi: "Ennusteet", icon: Target },
   { href: "/articles", labelEn: "Articles", labelFi: "Artikkelit", icon: FileText },
   { href: "/about", labelEn: "About", labelFi: "Tietoa", icon: Info },

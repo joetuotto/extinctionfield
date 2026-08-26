@@ -25,6 +25,7 @@ const ROUTES = [
   { path: "/evidence/evolution", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "/evidence/populations", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "/evidence/replication", changeFrequency: "monthly" as const, priority: 0.7 },
+  { path: "/civilization", changeFrequency: "monthly" as const, priority: 0.9 },
   { path: "/predictions", changeFrequency: "weekly" as const, priority: 0.8 },
   { path: "/sentinel", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "/objections", changeFrequency: "monthly" as const, priority: 0.7 },
