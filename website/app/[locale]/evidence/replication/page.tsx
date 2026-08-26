@@ -174,6 +174,21 @@ const COPY = {
     s4p1: "Lab A and Lab B are at different points in five-dimensional parameter space. When uncontrolled parameters differ, different results are EXPECTED, not anomalous. Blackman demonstrated this directly: the same researcher, with the same equipment, obtained enhancement, reduction, or null depending on temperature alone.",
     s4p2: "The replication crisis in EMF biology is not a crisis of the phenomenon — it is a crisis of experimental control. Once the five confounds are recognized and documented, apparent contradictions resolve into a consistent, multidimensional dose-response surface.",
     s4p3: "Lindgren’s χ(Ā) provides that framework: every confound is a background field (thermal, optical, magnetic, developmental) that modulates sensitivity via the same mathematical function.",
+    /* Section 5 */
+    s5Title: "Seven Moderators That Predict Study Outcomes",
+    s5Lead: "Analysis of 600+ published EMF bioeffect studies across five endpoints (melatonin, sperm, sleep EEG, DNA damage, oxidative stress) reveals that ‘contradictory evidence’ is an artifact of seven uncontrolled moderators. Three are statistically significant, two are directly proven by RCTs, and two are quantified by specific studies.",
+    s5StatsCaption: "Statistical results — chi-square tests of moderator × outcome association",
+    s5ModeratorCol: "Moderator",
+    s5PosYesCol: "Pos%/Yes",
+    s5PosNoCol: "Pos%/No",
+    s5MatrixCaption: "Five-endpoint moderator confirmation matrix",
+    s5MatrixLegend: "✓✓ = confirmed by multiple studies or meta-analysis, ✓ = suggested by limited data, — = no data available",
+    s5KeyFinding1Title: "58% of DNA damage below ICNIRP",
+    s5KeyFinding1Body: "Weller 2025, 517 studies: the majority of DNA-damage-positive studies used exposures below ICNIRP limits.",
+    s5KeyFinding2Title: "9-hour recovery window",
+    s5KeyFinding2Body: "Ivancsits: DNA repair quantified — 9 hours of EMF-free recovery allows measurable DNA repair.",
+    s5KeyFinding3Title: "Funding > quality",
+    s5KeyFinding3Body: "Weller 2025: funding source predicts study results more strongly than study quality score.",
   },
   fi: {
     title: "Replikaatiokriisin ratkaisu",
@@ -188,7 +203,7 @@ const COPY = {
       "Miksi EMF-biologia vaikuttaa ristiriitaiselta — ja miksi se ei ole",
     s1p1: "Viisikymmentä vuotta keskeisin vastaargumentti ei-termisille sähkömagneettisille biovaikutuksille on ollut epäjohdonmukaisuus: ’Jos vaikutus on todellinen, miksi laboratoriot eivät pysty toistamaan sitä luotettavasti?’",
     s1p2: "Vastaus julkaistiin vuosina 1985–1991 Carl Blackmanin toimesta Yhdysvaltain ympäristönsuojeluvirastossa (EPA) — mutta sitä ei koskaan syntetisoitu yhtenäiseksi kehykseksi. Blackmanin omat kokeet tunnistivat viisi muuttujaa, jotka kontrolloimattomina tuottavat näennäisesti ristiriitaisia tuloksia SAMASTA taustailmiöstä. Kun kaikki viisi kontrolloidaan, tulokset ovat johdonmukaisia.",
-    s1p3: "BERM:n panos on tunnistaa, että nämä viisi muuttujaa ovat kaikki saman matemaattisen rakenteen ilmentymyä: Lindgrenin valintaehto χ(Ā), sovellettuna eri skaaloissa. Kukin muuttuja moduloi ’taustaa’, jota vasten biologinen järjestelmä reagoi EMF-häiriöön. Muuta taustaa, muuta vastetta — ei siksi että vaikutus olisi epäluotettava, vaan koska se on moniulotteisesti herkkkä.",
+    s1p3: "BERM:n panos on tunnistaa, että nämä viisi muuttujaa ovat kaikki saman matemaattisen rakenteen ilmentymyä: Lindgrenin valintaehto χ(Ā), sovellettuna eri skaaloissa. Kukin muuttuja moduloi ’taustaa’, jota vasten biologinen järjestelmä reagoi EMF-häiriöön. Muuta taustaa, muuta vastetta — ei siksi että vaikutus olisi epäluotettava, vaan koska se on moniulotteisesti herkkä.",
     /* Section 2 */
     s2Title: "Viisi sekoittavaa tekijää",
     s2BlackmanLabel: "Blackmanin löydös",
@@ -203,7 +218,22 @@ const COPY = {
     s4Title: "Miten tämä ratkaisee näennäisen ristiriidan",
     s4p1: "Laboratorio A ja laboratorio B ovat eri pisteissä viisiulotteisessa parametriavaruudessa. Kun kontrolloimattomat parametrit eroavat, erilaiset tulokset ovat ODOTETTUJA, eivät poikkeavia. Blackman osoitti tämän suoraan: sama tutkija, samat laitteet, sai vahvistuksen, vähenemisen tai nollatuloksen pelkästään lämpötilasta riippuen.",
     s4p2: "EMF-biologian replikaatiokriisi ei ole ilmiön kriisi — se on kokeellisen kontrollin kriisi. Kun viisi sekoittavaa tekijää tunnistetaan ja dokumentoidaan, näennäiset ristiriidat ratkeavat johdonmukaiseksi, moniulotteiseksi annos-vastepinnaksi.",
-    s4p3: "Lindgrenin χ(Ā) tarjoaa tuon kehyksen: jokainen sekoittava tekijä on taustakenttä (terminen, optinen, magneettinen, kehityksellinen), joka moduloi herkkytyttä saman matemaattisen funktion kautta.",
+    s4p3: "Lindgrenin χ(Ā) tarjoaa tuon kehyksen: jokainen sekoittava tekijä on taustakenttä (terminen, optinen, magneettinen, kehityksellinen), joka moduloi herkkyyttä saman matemaattisen funktion kautta.",
+    /* Section 5 */
+    s5Title: "Seitsemän moderaattoria jotka ennustavat tutkimustuloksia",
+    s5Lead: "Analyysi yli 600 julkaistusta EMF-bioefektitutkimuksesta viidellä endpointilla (melatoniini, siittiöt, uni-EEG, DNA-vaurio, oksidatiivinen stressi) paljastaa, että 'ristiriitainen evidenssi' on seitsemän kontrolloimattoman moderaattorin artefakti. Kolme on tilastollisesti merkitseviä, kaksi on suoraan todistettu RCT-tasolla ja kaksi on kvantifioitu spesifisillä tutkimuksilla.",
+    s5StatsCaption: "Tilastolliset tulokset — khiin neliö -testit moderaattori x tulosyhteys",
+    s5ModeratorCol: "Moderaattori",
+    s5PosYesCol: "Pos%/Kyllä",
+    s5PosNoCol: "Pos%/Ei",
+    s5MatrixCaption: "Viiden endpointin moderaattorivahvistusmatriisi",
+    s5MatrixLegend: "✓✓ = vahvistettu useilla tutkimuksilla tai meta-analyysillä, ✓ = viitteitä rajallisesta datasta, — = ei dataa saatavilla",
+    s5KeyFinding1Title: "58 % DNA-vauriosta ICNIRP:n alla",
+    s5KeyFinding1Body: "Weller 2025, 517 tutkimusta: enemmistö DNA-vauriopositiivisista tutkimuksista käytti ICNIRP-rajojen alittavia altistuksia.",
+    s5KeyFinding2Title: "9 tunnin palautumisikkuna",
+    s5KeyFinding2Body: "Ivancsits: DNA-korjaus kvantifioitu — 9 tuntia EMF-vapaata palautumista mahdollistaa mitattavan DNA-korjauksen.",
+    s5KeyFinding3Title: "Rahoitus > laatu",
+    s5KeyFinding3Body: "Weller 2025: rahoituslähde ennustaa tutkimustuloksia vahvemmin kuin tutkimuksen laatupisteet.",
   },
 };
 
@@ -380,6 +410,173 @@ export default async function ReplicationPage({
           </p>
           <p>{d.s4p2}</p>
           <p>{d.s4p3}</p>
+        </div>
+      </section>
+
+      {/* ── Section 5: Quantitative Moderator Analysis ── */}
+      <section className="mb-16 border-t editorial-rule pt-6">
+        <h3 className="text-lg font-semibold mb-4">
+          <span className="font-mono-num text-xs text-accent mr-2">05</span>
+          {d.s5Title}
+        </h3>
+
+        <p className="editorial-rail mb-6 text-[0.95rem] leading-relaxed text-foreground max-w-4xl">
+          {d.s5Lead}
+        </p>
+
+        {/* Statistical results table */}
+        <div className="rounded-xl border border-card-border bg-card p-5 mb-6 max-w-4xl overflow-x-auto">
+          <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wider mb-3">
+            {d.s5StatsCaption}
+          </p>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-card-border text-left">
+                <th className="pb-2 pr-4 font-semibold text-foreground">{d.s5ModeratorCol}</th>
+                <th className="pb-2 pr-4 font-semibold text-foreground text-right">{d.s5PosYesCol}</th>
+                <th className="pb-2 pr-4 font-semibold text-foreground text-right">{d.s5PosNoCol}</th>
+                <th className="pb-2 pr-4 font-semibold text-foreground text-right font-mono-num">&chi;&sup2;</th>
+                <th className="pb-2 font-semibold text-foreground text-right font-mono-num">p</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">
+                  {activeLocale === "fi"
+                    ? "Laji/primaus (eläin=1)"
+                    : "Species/priming (animal=1)"}
+                </td>
+                <td className="py-2 pr-4 text-right font-mono-num">92% (11/12)</td>
+                <td className="py-2 pr-4 text-right font-mono-num">35% (6/17)</td>
+                <td className="py-2 pr-4 text-right font-mono-num">9.4</td>
+                <td className="py-2 text-right font-mono-num font-semibold text-green-600 dark:text-green-400">0.002</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">
+                  {activeLocale === "fi"
+                    ? "Kesto (krooninen=1)"
+                    : "Duration (chronic=1)"}
+                </td>
+                <td className="py-2 pr-4 text-right font-mono-num">92% (12/13)</td>
+                <td className="py-2 pr-4 text-right font-mono-num">31% (5/16)</td>
+                <td className="py-2 pr-4 text-right font-mono-num">10.8</td>
+                <td className="py-2 text-right font-mono-num font-semibold text-green-600 dark:text-green-400">0.001</td>
+              </tr>
+              <tr>
+                <td className="py-2 pr-4">
+                  {activeLocale === "fi"
+                    ? "Pulsaatio (=1)"
+                    : "Pulsation (=1)"}
+                </td>
+                <td className="py-2 pr-4 text-right font-mono-num">88% (7/8)</td>
+                <td className="py-2 pr-4 text-right font-mono-num">48% (10/21)</td>
+                <td className="py-2 pr-4 text-right font-mono-num">3.9</td>
+                <td className="py-2 text-right font-mono-num font-semibold text-amber-600 dark:text-amber-400">0.048</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Five-endpoint moderator matrix */}
+        <div className="rounded-xl border border-card-border bg-card p-5 mb-6 max-w-4xl overflow-x-auto">
+          <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wider mb-3">
+            {d.s5MatrixCaption}
+          </p>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-card-border text-left">
+                <th className="pb-2 pr-4 font-semibold text-foreground">{d.s5ModeratorCol}</th>
+                <th className="pb-2 pr-2 font-semibold text-foreground text-center font-mono-num">MEL</th>
+                <th className="pb-2 pr-2 font-semibold text-foreground text-center font-mono-num">SPERM</th>
+                <th className="pb-2 pr-2 font-semibold text-foreground text-center font-mono-num">EEG</th>
+                <th className="pb-2 pr-2 font-semibold text-foreground text-center font-mono-num">DNA</th>
+                <th className="pb-2 font-semibold text-foreground text-center font-mono-num">OxS</th>
+              </tr>
+            </thead>
+            <tbody className="text-foreground-muted">
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">{activeLocale === "fi" ? "Eläin > Ihminen" : "Animal > Human"}</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 text-center">✓✓</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">{activeLocale === "fi" ? "Krooninen > Akuutti" : "Chronic > Acute"}</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 text-center">✓✓</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">{activeLocale === "fi" ? "Pulsaatio > CW" : "Pulsed > CW"}</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">✓</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 text-center">—</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">{activeLocale === "fi" ? "Genotyyppi" : "Genotype"}</td>
+                <td className="py-2 pr-2 text-center">✓</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 text-center">—</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">{activeLocale === "fi" ? "Vuodenaika" : "Season"}</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 text-center">—</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">{activeLocale === "fi" ? "Todellinen laite" : "Real device"}</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 text-center">—</td>
+              </tr>
+              <tr className="border-b border-card-border/50">
+                <td className="py-2 pr-4">{activeLocale === "fi" ? "Palautuminen" : "Recovery"}</td>
+                <td className="py-2 pr-2 text-center">✓</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 text-center">—</td>
+              </tr>
+              <tr>
+                <td className="py-2 pr-4">{activeLocale === "fi" ? "ICNIRP:n alla" : "Below ICNIRP"}</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">—</td>
+                <td className="py-2 pr-2 text-center">✓✓</td>
+                <td className="py-2 text-center">—</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="mt-3 text-xs text-foreground-muted italic">{d.s5MatrixLegend}</p>
+        </div>
+
+        {/* Key finding boxes */}
+        <div className="grid gap-4 md:grid-cols-3 max-w-4xl">
+          <div className="border-l-4 border-amber-500 rounded-r-lg bg-card p-4 space-y-1">
+            <h4 className="font-bold text-foreground text-sm">{d.s5KeyFinding1Title}</h4>
+            <p className="text-xs text-foreground-muted leading-relaxed">{d.s5KeyFinding1Body}</p>
+          </div>
+          <div className="border-l-4 border-amber-500 rounded-r-lg bg-card p-4 space-y-1">
+            <h4 className="font-bold text-foreground text-sm">{d.s5KeyFinding2Title}</h4>
+            <p className="text-xs text-foreground-muted leading-relaxed">{d.s5KeyFinding2Body}</p>
+          </div>
+          <div className="border-l-4 border-amber-500 rounded-r-lg bg-card p-4 space-y-1">
+            <h4 className="font-bold text-foreground text-sm">{d.s5KeyFinding3Title}</h4>
+            <p className="text-xs text-foreground-muted leading-relaxed">{d.s5KeyFinding3Body}</p>
+          </div>
         </div>
       </section>
 

@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 557,
+    "total_references": 565,
     "verified_count": 240,
     "generated": "2026-08-26",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls"
@@ -12423,6 +12423,100 @@
       "type": "review",
       "finding": "Office workers: prolonged sedentary work tied to increased morbidity. Cardiovascular risk factors elevated. 1950s research: physically active work → lower CVD.",
       "tags": ["office_work", "sedentary", "cardiovascular"],
+      "verified": false
+    },
+    {
+      "id": "weller2025_dna",
+      "year": 2025,
+      "category": "cellular_ros_dna",
+      "pathway": ["ELF_priming", "IF_channel"],
+      "level": "E",
+      "type": "meta_analysis",
+      "finding": "RF-EMF genotoxicity systematic review of 517 studies. Pulsed/real devices produce more effects than CW. Duration is critical factor. 58% of DNA damage effects observed below ICNIRP safety limits. Funding source predicts results more than study quality. U-shaped dose-response observed.",
+      "tags": ["DNA", "genotoxicity", "meta-analysis", "ICNIRP"],
+      "verified": false
+    },
+    {
+      "id": "circadian_systematic2026",
+      "year": 2026,
+      "journal": "Sleep and Biological Rhythms",
+      "category": "neurobiology_circadian",
+      "pathway": ["recovery_window"],
+      "level": "E",
+      "type": "meta_analysis",
+      "finding": "Systematic review of 55 studies on EMF and circadian disruption. 88% of high-quality animal studies show melatonin suppression. Human evidence varies considerably due to uncontrolled moderators.",
+      "tags": ["melatonin", "circadian", "systematic-review"],
+      "verified": false
+    },
+    {
+      "id": "ivancsits_dna_recovery",
+      "year": 2003,
+      "category": "cellular_ros_dna",
+      "pathway": ["ELF_priming"],
+      "level": "E",
+      "type": "journal",
+      "finding": "ELF-EMF at 50 Hz and 35 µT with intermittent exposure caused DNA strand breaks in human fibroblasts. Damage reversed within 9 hours after exposure ceased. Effects observed well below ICNIRP 200 µT occupational limit.",
+      "tags": ["DNA", "recovery", "ELF", "below-ICNIRP"],
+      "verified": false
+    },
+    {
+      "id": "sousouri2025_cacna1c",
+      "year": 2025,
+      "journal": "NeuroImage",
+      "category": "neurobiology_circadian",
+      "pathway": ["ELF_priming"],
+      "level": "E",
+      "type": "journal",
+      "finding": "5G at 3.6 GHz modulates sleep spindle frequency in CACNA1C genotype-dependent manner. T/C carriers show significant response while T/T carriers do not. Double-blind RCT demonstrating genetic susceptibility to RF-EMF.",
+      "tags": ["5G", "sleep", "genotype", "CACNA1C", "RCT"],
+      "verified": false
+    },
+    {
+      "id": "cordelli2024_who",
+      "year": 2024,
+      "journal": "Environment International",
+      "category": "reproduction_hormones",
+      "pathway": ["ELF_priming", "IF_channel"],
+      "level": "E",
+      "type": "meta_analysis",
+      "finding": "WHO-commissioned systematic review of RF-EMF and fertility. 117 animal studies and 10 in vitro studies analyzed. Animal meta-analyses show adverse effects in all endpoints except infertile male rate and litter size.",
+      "tags": ["fertility", "sperm", "WHO", "systematic-review"],
+      "verified": false
+    },
+    {
+      "id": "sperm_meta2014",
+      "year": 2014,
+      "doi": "10.1016/S0160-4120(14)00135-4",
+      "category": "reproduction_hormones",
+      "pathway": ["IF_channel"],
+      "level": "E",
+      "type": "meta_analysis",
+      "finding": "Meta-analysis of mobile phone EMF and sperm quality. Phone use associated with reduced motility, viability, and concentration. Hedges g = -0.547 for motility.",
+      "tags": ["sperm", "mobile-phone", "meta-analysis"],
+      "verified": false
+    },
+    {
+      "id": "rat_5g_sperm2025",
+      "year": 2025,
+      "pmcid": "PMC12562081",
+      "category": "reproduction_hormones",
+      "pathway": ["IF_channel"],
+      "level": "E",
+      "type": "journal",
+      "finding": "3.5 GHz reduces sperm motility while 24 GHz reduces concentration and viability in rats. Effects amplified by 7h vs 1h daily exposure duration, confirming dose-duration relationship.",
+      "tags": ["5G", "sperm", "animal", "dose-response"],
+      "verified": false
+    },
+    {
+      "id": "rat_50hz_sperm2015",
+      "year": 2015,
+      "doi": "10.1016/S2305-0500(15)00004-4",
+      "category": "reproduction_hormones",
+      "pathway": ["ELF_priming"],
+      "level": "E",
+      "type": "journal",
+      "finding": "50 Hz 1 mT ELF-EMF for 85 days reduced sperm motility and testosterone in rats. Seminiferous tubule diameter decreased, confirming chronic ELF exposure affects male reproductive system.",
+      "tags": ["ELF", "sperm", "testosterone", "animal"],
       "verified": false
     }
   ]

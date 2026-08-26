@@ -1067,6 +1067,9 @@ const COPY = {
       { id: "POCKET-2", title: "Sperm decline acceleration correlates with data usage, not voice calls", description: "The doubling of sperm decline rate (1.16%→2.64%/yr after 2000) correlates with 3G/4G data adoption (phone stays in pocket continuously) rather than 2G voice call adoption (phone held to ear during calls only). This is a behavioral exposure change, not a technology power change.", falsification: "Sperm decline rate correlates with voice call volume rather than data usage patterns" },
       { id: "FREQ-1", title: "50 Hz countries show slightly stronger CRY-dependent effects than 60 Hz countries", description: "50 Hz (Europe) is within 2 Hz of the 8th Schumann resonance harmonic (52.0 Hz), potentially producing stronger CRY interference. European populations may show slightly stronger CRY-dependent cascade effects (melatonin suppression, depression) than American populations at matched total EMF levels.", falsification: "No difference in CRY-dependent endpoints between 50 Hz and 60 Hz countries at matched EMF" },
       { id: "REPL-1", title: "Retrospective moderator analysis predicts positive vs. null EMF studies", description: "A retrospective analysis of 50–100 published EMF bio-assay studies, coding for study month, laboratory latitude, building material, and subject background, will show that these four moderators significantly predict whether a study found a positive or null result. This is testable WITHOUT new data.", falsification: "Moderator variables do not predict study outcomes in logistic regression (p > 0.05)" },
+      { id: "REPL-2", title: "Future study controlling all 7 moderators replicates consistently regardless of laboratory", description: "Winter + CACNA1C-genotyped + low lab-ELF + EMF-free sleep + chronic + pulsed + real device = positive result in EVERY lab.", falsification: "Fully controlled study still fails to replicate" },
+      { id: "REPL-3", title: "CACNA1C AA-genotype individuals show measurable melatonin suppression from residential WiFi in winter at 60°N", description: "Most specific single prediction combining 3 moderators: genotype + season + exposure.", falsification: "No melatonin difference between AA and GG in winter WiFi exposure" },
+      { id: "REPL-4", title: "9-hour EMF-free sleep produces measurable DNA repair vs 0-hour (WiFi on, phone in bed)", description: "Ivancsits showed 9h recovery. Subjects sleeping EMF-free show lower comet tail factor than subjects sleeping with WiFi.", falsification: "No difference in DNA damage markers between EMF-free and WiFi-exposed sleep" },
     ],
     supplementFalsification: "Falsification criterion",
     supplementLocked: "Locked: 2026-08-26",
@@ -2127,6 +2130,9 @@ const COPY = {
       { id: "POCKET-2", title: "Siittiölaskun kiihtyminen korreloi datakäytön kanssa, ei puhelujen", description: "Siittiölaskun kaksinkertaistuminen (1,16→2,64 %/v vuoden 2000 jälkeen) korreloi 3G/4G-datakäytön yleistymisen (puhelin pysyy taskussa jatkuvasti) kanssa, ei 2G-puhelujen yleistymisen (puhelin korvalla puhelun ajan) kanssa.", falsification: "Siittiölaskun nopeus korreloi puheluvolyymin eikä datakäytön kanssa" },
       { id: "FREQ-1", title: "50 Hz -maissa hieman vahvempia CRY-riippuvaisia vaikutuksia kuin 60 Hz -maissa", description: "50 Hz (Eurooppa) on 2 Hz:n sisällä Schumann-resonanssin 8. harmonisesta (52,0 Hz), mikä saattaa tuottaa vahvempaa CRY-häiriötä. Eurooppalaiset populaatiot saattavat osoittaa hieman vahvempia CRY-riippuvaisia kaskadivaikutuksia kuin amerikkalaiset sovitetuilla EMF-tasoilla.", falsification: "Ei eroa CRY-riippuvaisissa päätepisteissä 50 Hz:n ja 60 Hz:n maiden välillä sovitetulla EMF:llä" },
       { id: "REPL-1", title: "Retrospektiivinen moderaattorianalyysi ennustaa positiiviset vs. nollatulokset", description: "Retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta, koodaten tutkimuksen kuukausi, laboratorion leveysaste, rakennusmateriaali ja koehenkilöiden tausta, osoittaa näiden neljän moderaattorin ennustavan merkitsevästi löytääkö tutkimus positiivisen vai nollatuloksen. Testattavissa ILMAN uutta dataa.", falsification: "Moderaattorimuuttujat eivät ennusta tutkimustuloksia logistisessa regressiossa (p > 0,05)" },
+      { id: "REPL-2", title: "Kaikki 7 moderaattoria kontrolloiva tulevaisuuden tutkimus replikoituu johdonmukaisesti laboratoriosta riippumatta", description: "Talvi + CACNA1C-genotyypitetty + matala laboratorio-ELF + EMF-vapaa uni + krooninen + pulsaatio + todellinen laite = positiivinen tulos JOKAISESSA laboratoriossa.", falsification: "Täysin kontrolloitu tutkimus ei silti replikoidu" },
+      { id: "REPL-3", title: "CACNA1C AA-genotyypin yksilöt osoittavat mitattavaa melatoniinisuppressiota kodin WiFistä talvella 60°N leveysasteella", description: "Spesifein yksittäinen ennuste joka yhdistää 3 moderaattoria: genotyyppi + vuodenaika + altistus.", falsification: "Ei melatoniinieroa AA:n ja GG:n välillä talvisessa WiFi-altistuksessa" },
+      { id: "REPL-4", title: "9 tunnin EMF-vapaa uni tuottaa mitattavan DNA-korjauksen vs. 0 tuntia (WiFi päällä, puhelin sängyssä)", description: "Ivancsits osoitti 9h palautumisen. EMF-vapaassa ympäristössä nukkuvilla on matalampi komet-häntätekijä kuin WiFi-altistuneilla.", falsification: "Ei eroa DNA-vauriomarkkereissa EMF-vapaan ja WiFi-altistuneen unen välillä" },
     ],
     supplementFalsification: "Kumoamisehto",
     supplementLocked: "Lukittu: 2026-08-26",
@@ -2482,7 +2488,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.pharmLead}</p>
         <div className="grid gap-4 max-w-4xl">
           {d.pharmPredictions.map((pp) => (
-            <article key={pp.id} className={`rounded-xl border ${pp.critical ? "border-green-500/40 bg-green-500/[0.03]" : "border-card-border bg-card-bg"} p-5`}>
+            <article key={pp.id} className={`rounded-xl border ${"critical" in pp && pp.critical ? "border-green-500/40 bg-green-500/[0.03]" : "border-card-border bg-card-bg"} p-5`}>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -2491,7 +2497,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
                     <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
                       {d.pharmStatus}
                     </span>
-                    {pp.critical && (
+                    {"critical" in pp && pp.critical && (
                       <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">
                         {locale === "fi" ? "Kriittinen" : "Critical"}
                       </span>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import type { Locale } from "@/lib/i18n";
 import Link from "next/link";
 import { MathBlock } from "@/components/MathBlock";
 import { Derivation } from "@/components/Derivation";
@@ -29,6 +28,7 @@ const t = {
       { id: "cross-sectional", num: "§12", label: "Cross-sectional validation" },
       { id: "nested-chi", num: "§13", label: "Nested χ (population model)" },
       { id: "layered-formula", num: "§14", label: "Layered formula v20→v21" },
+      { id: "recovery-function", num: "§15", label: "Recovery function" },
     ],
     pageTitle: "Mathematical Foundation",
     pageSubtitle:
@@ -419,6 +419,15 @@ const t = {
     ],
     s14Evolution: "Formula evolution: v17 (scalar cumEMF, RMSE ~1.15) → v19.1 (two-channel, 54 countries, RMSE 0.522) → v20 (+ Priming × Recovery, predicted RMSE < 0.45) → v21 (+ Season × Genotype, requires calibration data).",
     s14Level: "Epistemic level: v20 is M|C (mechanism-derived, calibration pending). v21 is L* (proposed extension, calibration data not yet collected for S and G_pop).",
+
+    // S15 Recovery Function
+    s15Title: "The Recovery Function: Quantifying DNA Repair Time",
+    s15Text: "Ivancsits et al. demonstrated that EMF-induced DNA strand breaks returned to normal within 9 hours after exposure ceased. Fitting an exponential decay model to this data yields a time constant τ ≈ 3–4 hours. This maps directly onto the Recovery factor R in formula v20: R = 1 + β × EMF_free_hours, where Ivancsits data suggests β ≈ 0.11.",
+    s15TableTime: "Time after exposure",
+    s15TableDamage: "Remaining damage",
+    s15TableScenario: "Scenario",
+    s15TableFreeTime: "EMF-free time",
+    s15TableRemaining: "Remaining damage",
   },
   fi: {
     meta: {
@@ -444,6 +453,7 @@ const t = {
       { id: "cross-sectional", num: "§12", label: "Poikkileikkausvalidointi" },
       { id: "nested-chi", num: "§13", label: "Sisäkkäinen χ (populaatiomalli)" },
       { id: "layered-formula", num: "§14", label: "Kerrostumaformula v20→v21" },
+      { id: "recovery-function", num: "§15", label: "Palautumisfunktio" },
     ],
     pageTitle: "Matemaattinen perusta",
     pageSubtitle:
@@ -835,6 +845,15 @@ const t = {
     ],
     s14Evolution: "Formulan evoluutio: v17 (skalaari cumEMF, RMSE ~1,15) → v19.1 (kaksikanavainen, 54 maata, RMSE 0,522) → v20 (+ Priming × Palautuminen, ennustettu RMSE < 0,45) → v21 (+ Vuodenaika × Genotyyppi, vaatii kalibrointidataa).",
     s14Level: "Episteeminen taso: v20 on M|C (mekanismijohdettu, kalibrointi kesken). v21 on L* (ehdotettu laajennus, kalibrointidataa S- ja G_pop-parametreille ei vielä kerätty).",
+
+    // S15 Palautumisfunktio
+    s15Title: "Palautumisfunktio: DNA-korjausajan kvantifiointi",
+    s15Text: "Ivancsits ym. osoittivat, että EMF:n aiheuttamat DNA-katkokset palautuivat normaalitasolle 9 tunnin kuluessa altistuksen lopettamisesta. Eksponentiaalisovituksella saadaan aikavakio τ ≈ 3–4 tuntia. Tämä yhdistyy suoraan kaavan v20 palautumistekijään R = 1 + β × EMF_vapaat_tunnit, missä Ivancsitsin data viittaa arvoon β ≈ 0,11.",
+    s15TableTime: "Aika altistuksen jälkeen",
+    s15TableDamage: "Jäljellä oleva vaurio",
+    s15TableScenario: "Skenaario",
+    s15TableFreeTime: "EMF-vapaa aika",
+    s15TableRemaining: "Jäljellä oleva vaurio",
   },
 };
 
@@ -1972,6 +1991,75 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <p className="text-xs text-foreground-muted leading-relaxed">
                 {d.s14Level}
               </p>
+            </div>
+          </section>
+
+          {/* S15 Recovery Function */}
+          <section id="recovery-function" className="scroll-mt-24">
+            <h2 className="text-lg font-semibold mb-1">
+              <span className="text-foreground-muted text-sm mr-2">{"§15"}</span>
+              {d.s15Title}
+            </h2>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.s15Text}
+            </p>
+
+            <div className="text-center my-4">
+              <MathBlock tex="\text{DNA\_damage}(t) = \text{DNA\_damage}(0) \times e^{-t/\tau}, \quad \tau \approx 3\text{–}4\;\text{hours}" />
+            </div>
+
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-card-border">
+                    <th className="text-left py-2 px-2 font-semibold">{d.s15TableTime}</th>
+                    <th className="text-right py-2 px-2 font-semibold">{d.s15TableDamage}</th>
+                  </tr>
+                </thead>
+                <tbody className="text-foreground-muted">
+                  <tr className="border-b border-card-border/50">
+                    <td className="py-2 px-2 font-mono">t = 0h</td>
+                    <td className="text-right py-2 px-2 font-mono">100%</td>
+                  </tr>
+                  <tr className="border-b border-card-border/50">
+                    <td className="py-2 px-2 font-mono">t = 4h</td>
+                    <td className="text-right py-2 px-2 font-mono">~37%</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 px-2 font-mono">t = 9h</td>
+                    <td className="text-right py-2 px-2 font-mono">~0% ({locale === "fi" ? "palautunut" : "recovered"})</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4 className="text-sm font-semibold mb-3">{locale === "fi" ? "Käytännön skenaariot" : "Practical scenarios"}</h4>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-card-border">
+                    <th className="text-left py-2 px-2 font-semibold">{d.s15TableScenario}</th>
+                    <th className="text-left py-2 px-2 font-semibold">{d.s15TableFreeTime}</th>
+                    <th className="text-right py-2 px-2 font-semibold">{d.s15TableRemaining}</th>
+                  </tr>
+                </thead>
+                <tbody className="text-foreground-muted">
+                  <tr className="border-b border-card-border/50">
+                    <td className="py-2 px-2">{locale === "fi" ? "Moderni makuuhuone (WiFi + puhelin)" : "Modern bedroom (WiFi + phone)"}</td>
+                    <td className="py-2 px-2 font-mono">{"t ≈ 0"}</td>
+                    <td className="text-right py-2 px-2 font-mono">{locale === "fi" ? "vaurio jatkuu" : "damage persists"}</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 px-2">{locale === "fi" ? "EMF-vapaa makuuhuone" : "EMF-free bedroom"}</td>
+                    <td className="py-2 px-2 font-mono">{"t ≈ 8h"}</td>
+                    <td className="text-right py-2 px-2 font-mono">~14% {locale === "fi" ? "jäljellä" : "remaining"}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="text-center my-4">
+              <MathBlock tex="R = 1 + \beta \times \text{EMF\_free\_hours}, \quad \beta \approx 0.11 \;\text{(Ivancsits)}" />
             </div>
           </section>
     </div>

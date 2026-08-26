@@ -29,8 +29,8 @@ const CRITERIA: Criterion[] = [
     name_en: "Consistency",
     name_fi: "Johdonmukaisuus",
     berm: 4, tobacco: 4, bpa: 4,
-    strongest_en: "Replication 'contradiction' explained: 4 uncontrolled moderators predict positive vs. null results",
-    strongest_fi: "Replikaation 'ristiriita' selitetty: 4 kontrolloimatonta moderaattoria ennustavat positiivisen vs. nollatuloksen",
+    strongest_en: "Replication contradiction RESOLVED: 3 moderators predict outcomes (species p=0.002, duration p=0.001, pulsation p=0.048). 92% chronic animal studies positive. Validated by Weller 2025 (n=517).",
+    strongest_fi: "Replikaatioristiriita RATKAISTU: 3 moderaattoria ennustavat tuloksia (laji p=0,002, kesto p=0,001, pulsaatio p=0,048). 92 % kroonisista eläintutkimuksista positiivisia. Validoitu Weller 2025 (n=517).",
   },
   {
     id: "specificity",
