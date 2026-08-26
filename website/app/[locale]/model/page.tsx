@@ -256,6 +256,8 @@ const t = {
     neonatalQFormulaDesc: "Q₀ = quality factor at birth (maximal, ~undamped). τ_KCC2 ≈ 2–4 weeks = NKCC1→KCC2 switch time constant. At birth: Q ≈ Q₀. At 2–4 months: Q declining but dangerously high. At 12 months: Q approaches adult levels (~1–5).",
     neonatalQVerification: "Bumetanide (NKCC1 blocker) → restores inhibitory GABA → terminates neonatal seizures = introduces damping. KCNQ2 mutations → neonatal seizures that spontaneously remit at 3–6 months = KCC2 maturation timeline.",
     neonatalQRef: "Neonatal seizure review 2021 · Bumetanide NKCC1 2015 · NKCC1/KCC2 Bookshelf 2020",
+    neonatalQSpectrum: "The neonatal Q → ∞ condition is one end of a continuous spectrum. The same Q-factor mechanism — with varying damping coefficient γ — unifies SIDS, epilepsy, SUDEP, migraine, and cluster headache. Spreading depolarization (CSD) is the common terminal pathway; the Q-factor determines whether CSD is triggered, how far it propagates, and whether it reaches the brainstem.",
+    neonatalQSpectrumLink: "See full neurological spectrum analysis →",
 
     genSuscTitle: "Genetic Susceptibility Map: The 15-Gene Calcium Profile",
     genSuscSub: "EMF sensitivity is not one gene — it is a polygenic profile across five functional tiers of the calcium cascade",
@@ -760,6 +762,8 @@ const t = {
     neonatalQFormulaDesc: "Q₀ = laatutekijä syntyessä (maksimaalinen, ~vaimentamaton). τ_KCC2 ≈ 2–4 viikkoa = NKCC1→KCC2-kytkimen aikavakio. Syntyessä: Q ≈ Q₀. 2–4 kuukauden iässä: Q laskeva mutta vaarallisen korkea. 12 kuukauden iässä: Q lähestyy aikuistasoja (~1–5).",
     neonatalQVerification: "Bumetanidi (NKCC1-salpaaja) → palauttaa inhibitorisen GABAn → lopettaa neonataalit kohtaukset = tuo vaimennuksen. KCNQ2-mutaatiot → neonataalit kohtaukset jotka remittoituvat spontaanisti 3–6 kk iässä = KCC2:n kypsymisaikataulu.",
     neonatalQRef: "Neonatal seizure review 2021 · Bumetanide NKCC1 2015 · NKCC1/KCC2 Bookshelf 2020",
+    neonatalQSpectrum: "Neonataalin Q → ∞ -tila on jatkuvan spektrin toinen pää. Sama Q-tekijämekanismi — vaihtelevalla vaimennuskertoimella γ — yhdistää SIDS:n, epilepsian, SUDEP:n, migreenin ja klusteripäänsäryn. Spreading depolarization (CSD) on yhteinen terminaalireitti; Q-tekijä määrittää laukaistaanko CSD, kuinka pitkälle se leviää ja saavuttaako se aivorungon.",
+    neonatalQSpectrumLink: "Ks. koko neurologisen spektrin analyysi →",
 
     genSuscTitle: "Geneettinen herkkyyskartta: 15 geenin kalsiumprofiili",
     genSuscSub: "EMF-herkkyys ei ole yksi geeni — se on polygeeninen profiili kalsiumkaskadin viidellä funktionaalisella tasolla",
@@ -2202,7 +2206,13 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted leading-relaxed mb-4">
               {d.neonatalQVerification}
             </p>
-            <p className="text-[10px] text-foreground-muted/60">{d.neonatalQRef}</p>
+            <p className="text-[10px] text-foreground-muted/60 mb-4">{d.neonatalQRef}</p>
+            <div className="rounded-lg border border-card-border bg-card-bg p-4">
+              <p className="text-sm text-foreground-muted leading-relaxed mb-2">{d.neonatalQSpectrum}</p>
+              <Link href={`${prefix}/evidence/neurological-spectrum`} className="text-sm text-accent hover:underline">
+                {d.neonatalQSpectrumLink}
+              </Link>
+            </div>
           </CollapsibleSection>
 
           {/* Genetic Susceptibility Map */}

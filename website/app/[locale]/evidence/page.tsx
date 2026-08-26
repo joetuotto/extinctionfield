@@ -20,6 +20,7 @@ import {
   Scale,
   FlaskConical,
   Baby,
+  BrainCircuit,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
@@ -318,8 +319,14 @@ const SUB_PAGES = [
   {
     slug: "infant-vulnerability",
     icon: Baby,
-    en: { title: "Infant Vulnerability & SIDS", desc: "The calcium threshold at its lowest: triple risk model through a Ca²⁺ lens, baby monitor RF quantified, breast milk melatonin as endogenous Ca²⁺ antagonist, and zero-risk precautionary measures. 3 pharmacological cards, 6 predictions." },
-    fi: { title: "Imeväisen haavoittuvuus ja SIDS", desc: "Kalsiumkynnys matalimmillaan: kolmoisriskimalli Ca²⁺-linssin läpi, itkuhälyttimien RF kvantifioituna, äidinmaidon melatoniini endogeenisenä Ca²⁺-antagonistina ja riskittömät varotoimenpiteet. 3 farmakologista korttia, 6 ennustetta." },
+    en: { title: "Infant Vulnerability & SIDS", desc: "The resonance threshold: Q-factor physics (GABA excitatory → undamped oscillator), Japan/Hong Kong three-protections paradox, 8 pharmacological pathways, neurodevelopmental impact spectrum, 12 predictions." },
+    fi: { title: "Imeväisen haavoittuvuus ja SIDS", desc: "Resonanssikynnys: Q-tekijäfysiikka (GABA eksitatorinen → vaimentamaton oskillaattori), Japanin/Hongkongin kolmen suojan paradoksi, 8 farmakologista reittiä, neurokehitysspektri, 12 ennustetta." },
+  },
+  {
+    slug: "neurological-spectrum",
+    icon: BrainCircuit,
+    en: { title: "Neurological Spectrum: Epilepsy, Migraine, Cluster Headache", desc: "One Q-factor mechanism, four neurological disorders: SIDS, epilepsy/SUDEP, migraine (CSD), cluster headache. López-Martín validation, pharmacological cross-map, psilocybin tryptamine reset." },
+    fi: { title: "Neurologinen spektri: Epilepsia, migreeni, klusteripäänsärky", desc: "Yksi Q-tekijämekanismi, neljä neurologista sairautta: SIDS, epilepsia/SUDEP, migreeni (CSD), klusteripäänsärky. López-Martín-validaatio, farmakologinen ristikartta, psilosybiini-tryptamiiniresetti." },
   },
   {
     slug: "lighting",

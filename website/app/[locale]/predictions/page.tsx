@@ -625,6 +625,56 @@ const COPY = {
     sidsResFalsification: "Falsification criterion",
     sidsResLocked: "Locked: 2026-08-26",
     sidsResStatus: "LOCKED — awaiting test",
+    neuroTitle: "Neurological spectrum predictions",
+    neuroLead: "Predictions derived from the Q-factor spectrum model unifying SIDS, epilepsy, SUDEP, migraine, and cluster headache through a common Ca²⁺-dependent oscillation mechanism with varying damping.",
+    neuroPredictions: [
+      {
+        id: "NEURO-EMF-1",
+        title: "Chronic migraine prevalence correlates with cumulative EMF layer exposure",
+        description: "The Q-factor model predicts that chronic migraine prevalence should increase with cumulative EMF exposure (ELF-priming → α2δ-1↑ → CSD threshold↓). Test: correlate chronic migraine prevalence trends (1990→2025) with cumulative EMF technology adoption (mobile, WiFi, LED) across countries. Prediction: countries with earlier and denser EMF adoption show steeper migraine prevalence increase.",
+        timeline: "Testable immediately (existing migraine prevalence data + ITU technology adoption data)",
+        falsification: "No temporal correlation between EMF technology adoption and chronic migraine prevalence trends across countries",
+      },
+      {
+        id: "NEURO-EMF-2",
+        title: "ELF-priming lowers CSD threshold; gabapentin reverses this",
+        description: "ELF exposure upregulates α2δ-1 (CACNA2D1), increasing VGCC density at synapses and lowering CSD threshold. Gabapentin blocks α2δ-1 trafficking. Test: expose cortical slices to chronic ELF (50 Hz, 7 days), then measure CSD threshold (KCl concentration needed to trigger CSD). Repeat with gabapentin co-treatment. Prediction: ELF lowers CSD threshold; gabapentin co-treatment normalizes it.",
+        timeline: "Testable within 6–12 months (cortical slice electrophysiology)",
+        falsification: "ELF exposure does not alter CSD threshold, or gabapentin does not reverse the ELF effect",
+      },
+      {
+        id: "NEURO-EMF-3",
+        title: "Cluster headache patients have higher EMF exposure history",
+        description: "The cluster headache patient profile (male 3:1, smoker 60–90%, onset ~30 years, attacks 00–03) maps onto a cumulative Ca²⁺-loading profile. EMF exposure history (occupational, residential) should be higher in cluster headache patients than matched controls. Test: case-control study with detailed EMF exposure assessment (occupation, residential proximity to infrastructure, device use). Prediction: cluster headache patients have statistically higher lifetime EMF exposure.",
+        timeline: "Testable within 12 months (case-control with EMF questionnaire)",
+        falsification: "No difference in EMF exposure history between cluster headache patients and matched controls",
+      },
+      {
+        id: "NEURO-EMF-4",
+        title: "SUDEP risk is higher in higher-EMF environments",
+        description: "SUDEP shares the same spreading depolarization → brainstem mechanism as SIDS. If EMF contributes to CSD propagation, SUDEP incidence should be higher in high-EMF environments (urban) compared to low-EMF environments (rural), after controlling for seizure frequency and medication compliance. Test: registry study comparing SUDEP incidence in urban vs. rural epilepsy patients. Prediction: urban epilepsy patients have higher SUDEP rate after controlling for seizure frequency.",
+        timeline: "Testable immediately (epilepsy registry with residential data)",
+        falsification: "No difference in SUDEP incidence between urban and rural epilepsy patients after controlling for seizure frequency and medication compliance",
+      },
+      {
+        id: "NEURO-EMF-5",
+        title: "Psilocybin efficacy in cluster headache improves with concurrent EMF reduction",
+        description: "Psilocybin resets the tryptamine pathway (5-HT2A → thalamo-cortical reset → SCN circadian reset). If ongoing EMF exposure re-primes α2δ-1 and disrupts the SCN after reset, psilocybin efficacy should be greater when combined with EMF reduction. Test: RCT of psilocybin + EMF reduction protocol vs. psilocybin alone in episodic cluster headache. Prediction: combined intervention produces longer remission than psilocybin alone.",
+        timeline: "Testable within 24 months (RCT with EMF reduction protocol)",
+        falsification: "No difference in remission duration between psilocybin + EMF reduction and psilocybin alone",
+      },
+      {
+        id: "NEURO-EMF-6",
+        title: "EMF triggers seizures in neonatal animal models without pharmacological GABAergic reduction",
+        description: "López-Martín showed GSM + picrotoxin (GABA antagonist) = seizures, while neither alone sufficed. The neonatal brain has endogenously excitatory GABA (NKCC1>KCC2), equivalent to pharmacological GABAergic reduction. Test: expose neonatal rodents (P3–P7, before KCC2 switch) to pulsed GSM 900 MHz at mobile-phone intensity without picrotoxin. Prediction: neonatal animals show seizure activity or epileptiform EEG changes without pharmacological pre-treatment, while adult animals do not.",
+        timeline: "Testable within 6–12 months (neonatal rodent EMF exposure model)",
+        falsification: "No seizure activity or epileptiform EEG changes in neonatal animals exposed to GSM without pharmacological GABAergic reduction",
+      },
+    ],
+    neuroTimeline: "Timeline",
+    neuroFalsification: "Falsification criterion",
+    neuroLocked: "Locked: 2026-08-26",
+    neuroStatus: "LOCKED — awaiting test",
     ttypeTitle: "T-Type Channel Predictions",
     ttypeLead: "Testable predictions from the T-type calcium channel bifurcation mechanism.",
     ttypePredictions: [
@@ -1814,6 +1864,56 @@ const COPY = {
     sidsResFalsification: "Falsifikaatiokriteeri",
     sidsResLocked: "Lukittu: 2026-08-26",
     sidsResStatus: "LUKITTU — odottaa testiä",
+    neuroTitle: "Neurologisen spektrin ennusteet",
+    neuroLead: "Q-tekijä-spektrimallista johdetut ennusteet, jotka yhdistävät SIDS:n, epilepsian, SUDEP:n, migreenin ja klusteripäänsäryn yhteiseksi Ca²⁺-riippuvaiseksi oskillaatiomekanismiksi vaihtelevalla vaimennuksella.",
+    neuroPredictions: [
+      {
+        id: "NEURO-EMF-1",
+        title: "Kroonisen migreenin prevalenssi korreloi kumulatiivisen EMF-kerrostuma-altistuksen kanssa",
+        description: "Q-tekijämalli ennustaa, että kroonisen migreenin prevalenssin tulisi kasvaa kumulatiivisen EMF-altistuksen myötä (ELF-priming → α2δ-1↑ → CSD-kynnys↓). Testi: korreloi kroonisen migreenin prevalenssitrendit (1990→2025) kumulatiivisen EMF-teknologian käyttöönoton kanssa (mobiili, WiFi, LED) maiden välillä. Ennuste: maat joissa aikaisempi ja tiheämpi EMF-käyttöönotto osoittavat jyrkempää migreenin prevalenssin kasvua.",
+        timeline: "Testattavissa heti (olemassa oleva migreeniprevalenssidata + ITU:n teknologian käyttöönottotiedot)",
+        falsification: "Ei ajallista korrelaatiota EMF-teknologian käyttöönoton ja kroonisen migreenin prevalenssitrendien välillä maiden välillä",
+      },
+      {
+        id: "NEURO-EMF-2",
+        title: "ELF-priming alentaa CSD-kynnystä; gabapentiini kumoaa tämän",
+        description: "ELF-altistus säätelee α2δ-1:tä (CACNA2D1) ylöspäin, lisäten VGCC-tiheyttä synapseissa ja alentaen CSD-kynnystä. Gabapentiini estää α2δ-1-kuljetuksen. Testi: altista kortikaalileikkeet krooniselle ELF:lle (50 Hz, 7 päivää) ja mittaa CSD-kynnys (KCl-pitoisuus CSD:n laukaisemiseksi). Toista gabapentiini-yhteishoidolla. Ennuste: ELF alentaa CSD-kynnystä; gabapentiini-yhteishoito normalisoi sen.",
+        timeline: "Testattavissa 6–12 kuukaudessa (kortikaalileikkeen elektrofysiologia)",
+        falsification: "ELF-altistus ei muuta CSD-kynnystä, tai gabapentiini ei kumoa ELF-vaikutusta",
+      },
+      {
+        id: "NEURO-EMF-3",
+        title: "Klusteripäänsärkypotilailla on korkeampi EMF-altistushistoria",
+        description: "Klusteripäänsärkypotilaan profiili (mies 3:1, tupakoija 60–90 %, alkaminen ~30 v, kohtaukset 00–03) kartoittuu kumulatiiviselle Ca²⁺-kuormitusprofiilille. EMF-altistushistorian (ammatillinen, asuinpaikan) tulisi olla korkeampi klusteripotilailla kuin vakioiduilla kontrolleilla. Testi: tapaus-verrokkitutkimus yksityiskohtaisella EMF-altistusarviolla. Ennuste: klusteripotilailla on tilastollisesti korkeampi elinikäinen EMF-altistus.",
+        timeline: "Testattavissa 12 kuukaudessa (tapaus-verrokki EMF-kyselylomakkeella)",
+        falsification: "Ei eroa EMF-altistushistoriassa klusteripäänsärkypotilaiden ja vakioitujen kontrollien välillä",
+      },
+      {
+        id: "NEURO-EMF-4",
+        title: "SUDEP-riski on korkeampi korkeamman EMF:n ympäristöissä",
+        description: "SUDEP jakaa saman spreading depolarization → aivorunko -mekanismin kuin SIDS. Jos EMF edistää CSD:n leviämistä, SUDEP-ilmaantuvuuden tulisi olla korkeampi korkean EMF:n ympäristöissä (kaupunki) verrattuna matalan EMF:n ympäristöihin (maaseutu), kohtaustiheyden ja lääkityshoitomyöntyvyyden kontrolloinnin jälkeen. Testi: rekisteritutkimus joka vertaa SUDEP-ilmaantuvuutta kaupunki- vs. maaseutuepilepsiapotilailla. Ennuste: kaupunkien epilepsiapotilailla on korkeampi SUDEP-luku kohtaustiheyden kontrolloinnin jälkeen.",
+        timeline: "Testattavissa heti (epilepsiarekisteri asuinpaikkatiedoilla)",
+        falsification: "Ei eroa SUDEP-ilmaantuvuudessa kaupunki- ja maaseutuepilepsiapotilaiden välillä kohtaustiheyden ja lääkityshoitomyöntyvyyden kontrolloinnin jälkeen",
+      },
+      {
+        id: "NEURO-EMF-5",
+        title: "Psilosybiinin teho klusteripäänsärkyyn paranee samanaikaisella EMF-vähennyksellä",
+        description: "Psilosybiini resetoi tryptamiinireitin (5-HT2A → talamokortikaalinen resetti → SCN:n sirkadiaaninen resetti). Jos jatkuva EMF-altistus uudelleen-primaa α2δ-1:n ja häiritsee SCN:ää resetin jälkeen, psilosybiinin tehon tulisi olla parempi yhdistettynä EMF-vähennykseen. Testi: RCT psilosybiini + EMF-vähennysprotokolla vs. psilosybiini yksin episodisessa klusteripäänsäryssä. Ennuste: yhdistetty interventio tuottaa pidemmän remission kuin psilosybiini yksin.",
+        timeline: "Testattavissa 24 kuukaudessa (RCT EMF-vähennysprotokollalla)",
+        falsification: "Ei eroa remission kestossa psilosybiini + EMF-vähennyksen ja pelkän psilosybiinin välillä",
+      },
+      {
+        id: "NEURO-EMF-6",
+        title: "EMF laukaisee kohtauksia neonataalieläinmallissa ilman farmakologista GABAergisen toiminnan vähennystä",
+        description: "López-Martín osoitti, että GSM + pikrotoksiini (GABA-antagonisti) = kohtaukset, mutta kumpikaan yksin ei riittänyt. Neonataaliaivot sisältävät endogeenisesti eksitatorista GABAa (NKCC1>KCC2), mikä vastaa farmakologista GABAergisen toiminnan vähennystä. Testi: altista neonataalirottia (P3–P7, ennen KCC2-kytkintä) pulssitetulle GSM 900 MHz:lle matkapuhelinintensiteetillä ilman pikrotoksiinia. Ennuste: neonataalieläimet osoittavat kohtausaktiivisuutta tai epileptiformisia EEG-muutoksia ilman farmakologista esikäsittelyä, kun taas aikuiset eivät.",
+        timeline: "Testattavissa 6–12 kuukaudessa (neonataalirottien EMF-altistusmalli)",
+        falsification: "Ei kohtausaktiivisuutta tai epileptiformisia EEG-muutoksia neonataalieläimissä jotka altistettiin GSM:lle ilman farmakologista GABAergisen toiminnan vähennystä",
+      },
+    ],
+    neuroTimeline: "Aikajana",
+    neuroFalsification: "Falsifikaatiokriteeri",
+    neuroLocked: "Lukittu: 2026-08-26",
+    neuroStatus: "LUKITTU — odottaa testiä",
     ttypeTitle: "T-tyypin kanavan ennusteet",
     ttypeLead: "T-tyypin kalsiumkanavan bifurkaatiomekanismista johdetut testattavat ennusteet.",
     ttypePredictions: [
@@ -2880,6 +2980,40 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="mt-4 text-sm">
           <Link href={`/${locale}/evidence/infant-vulnerability`} className="text-accent hover:underline">
             {locale === "fi" ? "Imeväisen haavoittuvuus -evidenssi →" : "Infant vulnerability evidence →"}
+          </Link>
+        </p>
+      </section>
+
+      {/* Neurological spectrum predictions NEURO-EMF-1 through NEURO-EMF-6 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.neuroTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.neuroLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.neuroPredictions.map((np) => (
+            <article key={np.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{np.id}</span>
+                    <h3 className="font-semibold">{np.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.neuroStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{np.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.neuroTimeline}:</span> {np.timeline}</p>
+                <p><span className="font-semibold">{d.neuroFalsification}:</span> {np.falsification}</p>
+                <p className="font-mono-num">{d.neuroLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="mt-4 text-sm">
+          <Link href={`/${locale}/evidence/neurological-spectrum`} className="text-accent hover:underline">
+            {locale === "fi" ? "Neurologisen spektrin evidenssi →" : "Neurological spectrum evidence →"}
           </Link>
         </p>
       </section>
