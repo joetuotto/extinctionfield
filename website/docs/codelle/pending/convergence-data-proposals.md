@@ -1,6 +1,6 @@
 # Convergence Verification — DATA/Research Proposals
 
-Unexecutable [DATA] items from Codelle: KONVERGENSSIVERIFIOINTI — Kattava integraatio-ohje.
+Unexecutable [DATA] items from Codelle: KONVERGENSSIVERIFIOINTI — Ultimaattinen integraatio-ohje.
 
 ## D1: Chelation + EMF reduction superadditivity RCT
 - RCT: chelation therapy + EMF reduction vs chelation alone vs EMF reduction alone in EHS patients with elevated heavy metal levels
@@ -43,4 +43,40 @@ Unexecutable [DATA] items from Codelle: KONVERGENSSIVERIFIOINTI — Kattava inte
 ## D8: Walker sleep chain longitudinal measurement
 - Longitudinal study: evening EMF exposure, overnight melatonin (saliva), sleep quality (PSG), morning GABA (MRS spectroscopy), EEG coherence (Q proxy)
 - Duration: 4 weeks continuous monitoring
-- Prediction: initial EMF exposure produces self-amplifying deterioration across all measures (feedback loop 4)
+- Prediction: initial EMF exposure produces self-amplifying deterioration across all measures (feedback loop S4)
+
+## D9: Breast milk melatonin × baby monitor proximity
+- Cross-sectional study: measure breast milk melatonin levels in mothers using different baby monitor types (DECT, WiFi, analog, no monitor)
+- Control for: sleep schedule, light exposure, maternal age, supplement use
+- Prediction: DECT/WiFi monitor users have significantly lower breast milk melatonin than analog/no-monitor users
+- Note: connects EMF → melatonin↓ → neonatal vulnerability pathway via breast milk
+
+## D10: Amish SIDS rate analysis
+- Retrospective analysis of SIDS rates in Old Order Amish vs general US population (1990-2025)
+- Use existing Amish health registries and CDC vital statistics
+- Prediction: Amish SIDS rate is lower AND did not show the late-1990s rise seen in general population
+- Note: Amish communities have minimal household EMF; if BERM's mechanism is correct, they should be protected
+
+## D11: Baby monitor type × SIDS risk retrospective
+- Retrospective case-control: SIDS cases vs controls matched by demographics, sleeping position, etc.
+- Measure: baby monitor type (analog AM, DECT, WiFi), proximity to infant, usage duration
+- Prediction: DECT/WiFi monitor use is a significant risk factor after controlling for confounders
+- Note: DECT monitors operate at 1.9 GHz with continuous base station transmission
+
+## D12: Bumetanide + EMF exposure neonatal seizure study
+- Animal model: induce neonatal seizure susceptibility with subconvulsive stimulus + EMF
+- Pre-treat with bumetanide (NKCC1 blocker) to restore inhibitory GABA
+- Prediction: bumetanide pre-treatment blocks EMF-induced seizure enhancement (by restoring γ > 0)
+- Note: tests the Q-factor mechanism directly — if bumetanide restores damping, EMF cannot drive Q→∞
+
+## D13: BAT thermogenesis × EMF reduction thermal imaging
+- Intervention study: measure supraclavicular BAT activity (infrared thermography after cold challenge) before and after 3-month EMF reduction protocol
+- Compare: EMF reduction group vs sham (identical lifestyle changes except EMF)
+- Prediction: EMF reduction group shows increased BAT thermogenesis and modest weight loss without dietary change
+- Note: tests the Klimentidis mechanism — if EMF→BAT suppression is reversible, this is a novel obesity intervention
+
+## D14: Hair cortisol × occupational EMF dosimetry
+- Cross-sectional study: measure 3-month integrated cortisol (hair cortisol) in high-EMF workers (telecom, electricians) vs matched low-EMF workers
+- Include: personal EMF dosimetry (24-hour), perceived stress scale, lifestyle factors
+- Prediction: hair cortisol correlates with cumulative EMF exposure after controlling for perceived stress
+- Note: tests the HPA sensitization mechanism (VK11) using a long-term cortisol biomarker

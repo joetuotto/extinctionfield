@@ -739,6 +739,119 @@ const COPY = {
     metalFalsification: "Falsification criterion",
     metalLocked: "Locked: 2026-08-26",
     metalStatus: "LOCKED — awaiting test",
+    mechTitle: "Mechanistic chain predictions",
+    mechLead: "Predictions from newly verified intermediate layers: blood-brain barrier, brown adipose tissue, HPA axis, β-cell insulin dynamics, hypothalamic nexus, cortisol-hippocampus, Leydig cell, and mast cell degranulation.",
+    mechPredictions: [
+      {
+        id: "BBB-EMF-1",
+        title: "EMF increases BBB permeability; melatonin supplementation prevents it",
+        description: "RF-EMF (27.12 MHz) increases BBB permeability via eNOS↑ and occludin↓. Melatonin protects tight junction proteins (occludin, claudin-5, ZO-1). Test: measure BBB permeability (gadolinium-enhanced MRI) during RF exposure with and without melatonin pre-treatment. Prediction: melatonin pre-treatment prevents EMF-induced BBB opening.",
+        timeline: "Testable within 12 months (MRI + melatonin RCT)",
+        falsification: "Melatonin does NOT prevent EMF-induced BBB permeability changes",
+      },
+      {
+        id: "BBB-EMF-2",
+        title: "Heavy metal brain accumulation higher in high-EMF populations via BBB opening",
+        description: "EMF opens BBB → heavy metals (Pb, Cd, MeHg) enter brain more easily. EMF also suppresses melatonin → BBB protection↓ → DOUBLE vulnerability. Test: compare brain heavy metal accumulation (post-mortem or CSF) between high-EMF occupations and matched low-EMF controls with equivalent peripheral heavy metal levels. Prediction: high-EMF group has higher brain metal levels at equivalent blood levels.",
+        timeline: "Testable within 18 months (occupational cohort with CSF/autopsy samples)",
+        falsification: "No difference in brain heavy metal accumulation between EMF-exposure groups at equivalent blood levels",
+      },
+      {
+        id: "BAT-EMF-1",
+        title: "5G reduces BAT PRDM16 expression and thermogenesis in rodents",
+        description: "5G (3.5 GHz) → PRDM16 mRNA↓ + C/EBPβ mRNA↓ in brown adipose tissue. BAT uses Ca²⁺ cycling (SERCA) for energy expenditure. Test: expose rodents to 5G and measure BAT PRDM16 protein, thermogenic capacity (cold challenge), and energy expenditure. Prediction: 5G-exposed animals show reduced cold-induced thermogenesis and weight gain on identical caloric intake.",
+        timeline: "Testable within 6 months (rodent model with metabolic cages)",
+        falsification: "No change in BAT thermogenesis or weight in 5G-exposed vs control animals on identical diet",
+      },
+      {
+        id: "HPA-EMF-1",
+        title: "Chronic EMF elevates hair cortisol in exposed workers",
+        description: "EMF sets a new HPA axis setpoint with sensitization rather than adaptation. Chronic exposure → sustained cortisol elevation + adrenal hypertrophy. Test: measure hair cortisol (3-month integrated cortisol) in telecom workers vs matched office workers. Prediction: telecom workers show significantly higher hair cortisol after controlling for perceived stress and lifestyle factors.",
+        timeline: "Testable immediately (hair cortisol + occupational exposure questionnaire)",
+        falsification: "No difference in hair cortisol between high-EMF and low-EMF occupation groups",
+      },
+      {
+        id: "HPA-EMF-2",
+        title: "EMF produces adrenal hypertrophy measurable by imaging",
+        description: "Animal studies show EMF → ACTH↑ + corticosterone↑ + adrenal hypertrophy. This anatomical change should be detectable in chronically exposed humans. Test: compare adrenal gland volume (CT/MRI) in workers with >10 years high-EMF exposure vs matched controls. Prediction: high-EMF group has significantly larger adrenal glands.",
+        timeline: "Testable immediately (retrospective imaging study)",
+        falsification: "No adrenal volume difference between chronic high-EMF and low-EMF occupation groups",
+      },
+      {
+        id: "BETA-EMF-1",
+        title: "EMF disrupts glucose-stimulated insulin secretion via Ca²⁺ channel activation",
+        description: "Electric fields can induce insulin secretion WITHOUT glucose. ELF-EMF alters glucose-stimulated insulin dynamics. CaVγ4→CaMKII→MafA pathway: CaMKII dysregulation → β-cell maturity loss. Test: measure insulin secretion dynamics (first-phase insulin response) in EMF-exposed vs control subjects during OGTT. Prediction: EMF-exposed group shows blunted first-phase insulin with elevated basal insulin.",
+        timeline: "Testable within 12 months (OGTT study with EMF exposure history)",
+        falsification: "No difference in insulin secretion dynamics between EMF-exposure groups",
+      },
+      {
+        id: "BETA-EMF-2",
+        title: "Verapamil protects β-cells from EMF-induced dysfunction",
+        description: "Verapamil (L-type Ca²⁺ blocker) protects β-cells and improves T1D outcomes (JAMA 2023). If EMF damages β-cells via Ca²⁺ channels, verapamil should also prevent EMF-induced β-cell dysfunction. Test: expose β-cell cultures to EMF with/without verapamil; measure insulin secretion and MafA expression. Prediction: verapamil prevents EMF-induced insulin secretion changes and MafA↓.",
+        timeline: "Testable within 6 months (in vitro β-cell culture)",
+        falsification: "Verapamil does NOT prevent EMF-induced β-cell dysfunction → Ca²⁺ channel is not the primary mechanism",
+      },
+      {
+        id: "HYPO-EMF-1",
+        title: "Chronic EMF reduces hypothalamic synaptic vesicle density",
+        description: "835 MHz (12 weeks) reduces synaptic vesicle number, size, and docking in hypothalamus, plus synapsin I/II↓ and synaptotagmin 1↓. Synaptotagmin 1 is the Ca²⁺ sensor for vesicle release. Its loss means ALL hypothalamic hormone release is impaired. Test: replicate Kim 2019 with additional hormone panel (GnRH, CRH, TRH, GHRH, dopamine). Prediction: multi-hormone deficit pattern matching BERM predictions.",
+        timeline: "Testable within 12 months (rodent model with hypothalamic dissection + hormone panel)",
+        falsification: "No synaptic vesicle changes and no multi-hormone deficit after chronic RF exposure",
+      },
+      {
+        id: "HYPO-EMF-2",
+        title: "EMF produces simultaneous T↓ + cortisol↑ + GH↓ via hypothalamic disruption",
+        description: "If EMF disrupts hypothalamic synaptic transmission broadly (VK13), ALL hormone axes should be affected simultaneously. The triple lock (T↓ × cortisol↑ × DA↓) should be accompanied by GH↓ and thyroid changes. Test: measure full hormone panel (T, LH, cortisol, ACTH, GH, IGF-1, TSH, fT4, dopamine) in chronic EMF-exposed vs controls. Prediction: coherent multi-axis disruption pattern.",
+        timeline: "Testable immediately (occupational cohort with comprehensive hormone panel)",
+        falsification: "EMF-exposed group shows changes in only one hormonal axis rather than coordinated multi-axis disruption",
+      },
+      {
+        id: "MAST-EMF-1",
+        title: "EMF triggers mast cell degranulation measurable by serum tryptase",
+        description: "Ca²⁺ is the primary trigger for mast cell degranulation. EMF → VGCC → Ca²⁺ → mast cell releases histamine + IL-1β + tryptase. Johansson 2000 showed mast cell changes in skin biopsies after display terminal exposure. Test: measure serum tryptase (specific mast cell degranulation marker) before and after standardized EMF exposure. Prediction: acute EMF exposure produces measurable tryptase elevation.",
+        timeline: "Testable within 3 months (blood draw + EMF exposure, simple protocol)",
+        falsification: "No tryptase elevation after EMF exposure",
+      },
+      {
+        id: "MAST-EMF-2",
+        title: "Mast cell stabilizers prevent EMF-induced skin and systemic reactions",
+        description: "If EMF symptoms are partly mediated by mast cell degranulation, mast cell stabilizers (cromolyn sodium, ketotifen) should prevent them. Test: RCT of cromolyn + EMF exposure vs placebo + EMF exposure in EHS patients. Measure: skin reactions, systemic symptoms, serum histamine/tryptase. Prediction: cromolyn group shows significantly fewer symptoms and lower histamine/tryptase.",
+        timeline: "Testable within 6 months (RCT with existing approved drugs)",
+        falsification: "Mast cell stabilizers do NOT reduce EMF-induced symptoms",
+      },
+      {
+        id: "KCC2-EMF-1",
+        title: "Prenatal EMF exposure delays GABA excitatory→inhibitory switch in offspring",
+        description: "Environmental disruptions (stress, inflammation) delay KCC2 maturation → GABA stays excitatory longer → Q-factor elevated longer → wider vulnerability window. IL-1β (from mast cells or glia) → KCC2↓. ROS → KCC2↓. EMF → both ROS and IL-1β. Test: expose pregnant rodents to EMF; measure KCC2/NKCC1 ratio in offspring hippocampus at P7, P14, P21. Prediction: EMF-exposed offspring show delayed KCC2 switch.",
+        timeline: "Testable within 9 months (rodent prenatal exposure model)",
+        falsification: "No difference in KCC2 maturation timeline between EMF-exposed and control offspring",
+      },
+      {
+        id: "TRIPLE-1",
+        title: "T↓ × cortisol↑ × DA↓ triple deficit measurable in high-EMF populations",
+        description: "The triple lock theory predicts that EMF simultaneously reduces testosterone (HPG), elevates cortisol (HPA), and reduces dopamine (mesolimbic). Each has been verified independently; the prediction is that they co-occur in the SAME individuals proportional to EMF exposure. Test: measure T, cortisol, and urinary HVA (dopamine metabolite) in high vs low EMF occupations. Prediction: triple deficit pattern (T↓ + cortisol↑ + HVA↓) correlates with cumulative EMF exposure.",
+        timeline: "Testable immediately (occupational cohort with hormone + neurotransmitter panel)",
+        falsification: "The three deficits do not co-occur — they are independent of each other and of EMF exposure",
+      },
+      {
+        id: "HIPPO-1",
+        title: "Chronic EMF exposure correlates with hippocampal volume loss",
+        description: "EMF → cortisol↑ → hippocampal dendritic retraction + neurogenesis↓ → volume loss. Hippocampus is also the HPA negative feedback center — its damage removes cortisol braking → cortisol↑↑ (feedback loop S9). Test: compare hippocampal volume (MRI volumetry) in workers with >10 years high-EMF exposure vs matched controls, controlling for age, stress, depression. Prediction: high-EMF group shows reduced hippocampal volume.",
+        timeline: "Testable immediately (retrospective MRI volumetry study)",
+        falsification: "No hippocampal volume difference between chronic high-EMF and low-EMF occupation groups after controlling for confounders",
+      },
+      {
+        id: "KLIM-1",
+        title: "EMF reduction reverses BAT suppression measurable by thermal imaging",
+        description: "If EMF → PRDM16↓ → BAT↓ → thermogenesis↓ → weight gain, then EMF reduction should restore BAT function. Test: measure supraclavicular BAT activity (infrared thermography after cold challenge) before and after 3-month EMF reduction protocol. Prediction: EMF reduction group shows increased BAT thermogenesis and modest weight loss without dietary change.",
+        timeline: "Testable within 6 months (thermal imaging + EMF reduction protocol)",
+        falsification: "No change in BAT thermogenesis after EMF reduction",
+      },
+    ],
+    mechTimeline: "Timeline",
+    mechFalsification: "Falsification criterion",
+    mechLocked: "Locked: 2026-08-26",
+    mechStatus: "LOCKED — awaiting test",
     ttypeTitle: "T-Type Channel Predictions",
     ttypeLead: "Testable predictions from the T-type calcium channel bifurcation mechanism.",
     ttypePredictions: [
@@ -2042,6 +2155,119 @@ const COPY = {
     metalFalsification: "Falsifikaatiokriteeri",
     metalLocked: "Lukittu: 2026-08-26",
     metalStatus: "LUKITTU — odottaa testiä",
+    mechTitle: "Mekanistisen ketjun ennusteet",
+    mechLead: "Ennusteet vasta verifioiduista välikerroksista: veri-aivoeste, ruskea rasvakudos, HPA-akseli, β-solun insuliinidynamiikka, hypotalamuksen keskuspiste, kortisoli-hippokampus, Leydig-solu ja syöttösolu-degranulaatio.",
+    mechPredictions: [
+      {
+        id: "BBB-EMF-1",
+        title: "EMF lisää veri-aivoesteen läpäisevyyttä; melatoniinilisä estää sen",
+        description: "RF-EMF (27,12 MHz) lisää veri-aivoesteen läpäisevyyttä eNOS↑:n ja okkludiini↓:n kautta. Melatoniini suojaa tiiviin liitoksen proteiineja (okkludiini, klaudiini-5, ZO-1). Testi: mittaa veri-aivoesteen läpäisevyys (gadolinium-tehostettu MRI) RF-altistuksen aikana melatoniini-esilääkityksellä ja ilman. Ennuste: melatoniini-esilääkitys estää EMF:n aiheuttaman veri-aivoesteen avautumisen.",
+        timeline: "Testattavissa 12 kuukaudessa (MRI + melatoniini-RCT)",
+        falsification: "Melatoniini EI estä EMF:n aiheuttamia veri-aivoesteen läpäisevyysmuutoksia",
+      },
+      {
+        id: "BBB-EMF-2",
+        title: "Raskasmetallien aivokertymä korkeampi korkean EMF:n populaatioissa veri-aivoesteen avautumisen kautta",
+        description: "EMF avaa veri-aivoesteen → raskasmetallit (Pb, Cd, MeHg) pääsevät aivoihin helpommin. EMF myös suppressoi melatoniinia → veri-aivoesteen suojaus↓ → KAKSINKERTAINEN haavoittuvuus. Testi: vertaa aivojen raskasmetallikertymää (post mortem tai likvor) korkean EMF:n ammateissa ja vakioiduissa matalan EMF:n kontrolleissa vastaavilla perifeerisillä raskasmetallitasoilla. Ennuste: korkean EMF:n ryhmällä on korkeammat aivojen metallitasot vastaavilla veritasoilla.",
+        timeline: "Testattavissa 18 kuukaudessa (ammattikohortti likvor-/ruumiinavausnäytteillä)",
+        falsification: "Ei eroa aivojen raskasmetallikertymässä EMF-altistusryhmien välillä vastaavilla veritasoilla",
+      },
+      {
+        id: "BAT-EMF-1",
+        title: "5G vähentää BAT:n PRDM16-ilmentymistä ja termogeneesiä jyrsijöissä",
+        description: "5G (3,5 GHz) → PRDM16 mRNA↓ + C/EBPβ mRNA↓ ruskeassa rasvakudoksessa. BAT käyttää Ca²⁺-syklausta (SERCA) energiankulutukseen. Testi: altista jyrsijät 5G:lle ja mittaa BAT:n PRDM16-proteiini, termogeneettinen kapasiteetti (kylmäaltistus) ja energiankulutus. Ennuste: 5G-altistetut eläimet osoittavat alentunutta kylmän indusoimaa termogeneesiä ja painonnousua identtisellä kalorimäärällä.",
+        timeline: "Testattavissa 6 kuukaudessa (jyrsijämalli metaboliahäkeillä)",
+        falsification: "Ei muutosta BAT:n termogeneesissä tai painossa 5G-altistetuilla vs. kontrollieläimillä identtisellä ruokavaliolla",
+      },
+      {
+        id: "HPA-EMF-1",
+        title: "Krooninen EMF kohottaa hiuskortisolia altistetuilla työntekijöillä",
+        description: "EMF asettaa HPA-akselille uuden asetuspisteen herkistymisellä sopeutumisen sijaan. Krooninen altistus → jatkuva kortisolinousu + lisämunuaisen hypertrofia. Testi: mittaa hiuskortisoli (3 kuukauden integroitu kortisoli) televiestintätyöntekijöiltä vs. vakioiduilta toimistotyöntekijöiltä. Ennuste: televiestintätyöntekijöillä merkittävästi korkeampi hiuskortisoli koetun stressin ja elämäntapatekijöiden vakioinnin jälkeen.",
+        timeline: "Testattavissa heti (hiuskortisoli + ammatillinen altistuskyselylomake)",
+        falsification: "Ei eroa hiuskortisolissa korkean EMF:n ja matalan EMF:n ammattiryhmien välillä",
+      },
+      {
+        id: "HPA-EMF-2",
+        title: "EMF tuottaa kuvantamisella mitattavan lisämunuaisen hypertrofian",
+        description: "Eläinkokeet osoittavat EMF → ACTH↑ + kortikosteroni↑ + lisämunuaisen hypertrofia. Tämän anatomisen muutoksen pitäisi olla havaittavissa kroonisesti altistetuilla ihmisillä. Testi: vertaa lisämunuaisten tilavuutta (TT/MRI) työntekijöillä joilla >10 vuotta korkean EMF:n altistusta vs. vakioidut kontrollit. Ennuste: korkean EMF:n ryhmällä merkittävästi suuremmat lisämunuaiset.",
+        timeline: "Testattavissa heti (retrospektiivinen kuvantamistutkimus)",
+        falsification: "Ei lisämunuaisten tilavuuseroa kroonisen korkean EMF:n ja matalan EMF:n ammattiryhmien välillä",
+      },
+      {
+        id: "BETA-EMF-1",
+        title: "EMF häiritsee glukoosistimuloitua insuliinieritystä Ca²⁺-kanava-aktivaation kautta",
+        description: "Sähkökentät voivat indusoida insuliinierityksen ILMAN glukoosia. ELF-EMF muuttaa glukoosistimuloitua insuliinidynamiikkaa. CaVγ4→CaMKII→MafA-reitti: CaMKII:n dysregulaatio → β-solun kypsyyden menetys. Testi: mittaa insuliinierityksen dynamiikkaa (ensimmäisen vaiheen insuliinivaste) EMF-altistetuilla vs. kontrolleilla OGTT:n aikana. Ennuste: EMF-altistetulla ryhmällä tylsistynyt ensimmäisen vaiheen insuliini ja kohonnut perusinsuliinitaso.",
+        timeline: "Testattavissa 12 kuukaudessa (OGTT-tutkimus EMF-altistushistorialla)",
+        falsification: "Ei eroa insuliinierityksen dynamiikassa EMF-altistusryhmien välillä",
+      },
+      {
+        id: "BETA-EMF-2",
+        title: "Verapamiili suojaa β-soluja EMF:n aiheuttamalta toimintahäiriöltä",
+        description: "Verapamiili (L-tyypin Ca²⁺-salpaaja) suojaa β-soluja ja parantaa T1D-tuloksia (JAMA 2023). Jos EMF vahingoittaa β-soluja Ca²⁺-kanavien kautta, verapamiilin pitäisi myös estää EMF:n aiheuttama β-solun toimintahäiriö. Testi: altista β-soluviljelmät EMF:lle verapamiililla/ilman; mittaa insuliinieritys ja MafA-ilmentyminen. Ennuste: verapamiili estää EMF:n aiheuttamat insuliinierityksen muutokset ja MafA↓:n.",
+        timeline: "Testattavissa 6 kuukaudessa (in vitro β-soluviljely)",
+        falsification: "Verapamiili EI estä EMF:n aiheuttamaa β-solun toimintahäiriötä → Ca²⁺-kanava ei ole ensisijainen mekanismi",
+      },
+      {
+        id: "HYPO-EMF-1",
+        title: "Krooninen EMF vähentää hypotalamuksen synaptisten vesikkelien tiheyttä",
+        description: "835 MHz (12 viikkoa) vähentää synaptisten vesikkelien määrää, kokoa ja telakoitumista hypotalamuksessa sekä synapsiini I/II↓ ja synaptotagmiini 1↓. Synaptotagmiini 1 on Ca²⁺-sensori vesikkelin vapautumiselle. Sen menetys tarkoittaa, että KAIKKIEN hypotalamuksen hormonien vapautuminen heikkenee. Testi: toista Kim 2019 lisähormonipaneelilla (GnRH, CRH, TRH, GHRH, dopamiini). Ennuste: BERM-ennusteiden mukainen monihormonaalinen vajaatoimintakuvio.",
+        timeline: "Testattavissa 12 kuukaudessa (jyrsijämalli hypotalamuksen dissektiolla + hormonipaneeli)",
+        falsification: "Ei synaptisten vesikkelien muutoksia eikä monihormonaalista vajaatoimintaa kroonisen RF-altistuksen jälkeen",
+      },
+      {
+        id: "HYPO-EMF-2",
+        title: "EMF tuottaa samanaikaisen T↓ + kortisoli↑ + GH↓ hypotalamuksen häiriön kautta",
+        description: "Jos EMF häiritsee hypotalamuksen synaptista transmissiota laaja-alaisesti (VK13), KAIKKIEN hormoniakselien pitäisi häiriintyä samanaikaisesti. Kolmoislukituksen (T↓ × kortisoli↑ × DA↓) pitäisi liittyä GH↓:n ja kilpirauhasmuutoksiin. Testi: mittaa täydellinen hormonipaneeli (T, LH, kortisoli, ACTH, GH, IGF-1, TSH, fT4, dopamiini) kroonisesti EMF-altistetuilla vs. kontrolleilla. Ennuste: koherentti moniakselinen häiriökuvio.",
+        timeline: "Testattavissa heti (ammattikohortti kattavalla hormonipaneelilla)",
+        falsification: "EMF-altistettu ryhmä osoittaa muutoksia vain yhdessä hormoniakselissa koordinoidun moniakselisen häiriön sijaan",
+      },
+      {
+        id: "MAST-EMF-1",
+        title: "EMF laukaisee syöttösolu-degranulaation mitattavissa seerumi-tryptaasilla",
+        description: "Ca²⁺ on syöttösolun degranulaation ensisijainen laukaisin. EMF → VGCC → Ca²⁺ → syöttösolu vapauttaa histamiinia + IL-1β + tryptaasia. Johansson 2000 osoitti syöttösolumuutoksia ihobiopsioissa näyttöpäätealtistuksen jälkeen. Testi: mittaa seerumi-tryptaasi (spesifinen syöttösolu-degranulaatiomarkkeri) ennen ja jälkeen standardoidun EMF-altistuksen. Ennuste: akuutti EMF-altistus tuottaa mitattavan tryptaasinousun.",
+        timeline: "Testattavissa 3 kuukaudessa (verinäyte + EMF-altistus, yksinkertainen protokolla)",
+        falsification: "Ei tryptaasinousua EMF-altistuksen jälkeen",
+      },
+      {
+        id: "MAST-EMF-2",
+        title: "Syöttösolustabilisaattorit estävät EMF:n aiheuttamat iho- ja systeemiset reaktiot",
+        description: "Jos EMF-oireet välittyvät osittain syöttösolu-degranulaation kautta, syöttösolustabilisaattorien (kromoglykaatti, ketotifeeni) pitäisi estää ne. Testi: RCT kromoglykaatti + EMF-altistus vs. plasebo + EMF-altistus EHS-potilailla. Mittaa: ihoreaktiot, systeemiset oireet, seerumin histamiini/tryptaasi. Ennuste: kromoglykaattiryhmällä merkittävästi vähemmän oireita ja matalampi histamiini/tryptaasi.",
+        timeline: "Testattavissa 6 kuukaudessa (RCT olemassa olevilla hyväksytyillä lääkkeillä)",
+        falsification: "Syöttösolustabilisaattorit EIVÄT vähennä EMF:n aiheuttamia oireita",
+      },
+      {
+        id: "KCC2-EMF-1",
+        title: "Prenataalinen EMF-altistus viivästyttää GABA:n eksitatorinen→inhibitorinen -kytkintä jälkeläisissä",
+        description: "Ympäristöhäiriöt (stressi, tulehdus) viivästyttävät KCC2:n kypsymistä → GABA pysyy eksitatorisena pidempään → Q-tekijä kohonneena pidempään → laajempi haavoittuvuusikkuna. IL-1β (syöttösoluista tai gliasta) → KCC2↓. ROS → KCC2↓. EMF → sekä ROS:ia että IL-1β:ta. Testi: altista tiineet jyrsijät EMF:lle; mittaa KCC2/NKCC1-suhde jälkeläisten hippokampuksessa P7, P14, P21. Ennuste: EMF-altistetut jälkeläiset osoittavat viivästyneen KCC2-kytkimen.",
+        timeline: "Testattavissa 9 kuukaudessa (jyrsijöiden prenataalinen altistusmalli)",
+        falsification: "Ei eroa KCC2:n kypsymisaikataulussa EMF-altistettujen ja kontrollien jälkeläisten välillä",
+      },
+      {
+        id: "TRIPLE-1",
+        title: "T↓ × kortisoli↑ × DA↓ kolmoisvaje mitattavissa korkean EMF:n populaatioissa",
+        description: "Kolmoislukitusteoria ennustaa, että EMF samanaikaisesti vähentää testosteronia (HPG), kohottaa kortisolia (HPA) ja vähentää dopamiinia (mesolimbinen). Kukin on verifioitu itsenäisesti; ennuste on, että ne esiintyvät yhdessä SAMOILLA yksilöillä suhteessa EMF-altistukseen. Testi: mittaa T, kortisoli ja virtsan HVA (dopamiinimetaboliitti) korkean vs. matalan EMF:n ammateissa. Ennuste: kolmoisvajakuvio (T↓ + kortisoli↑ + HVA↓) korreloi kumulatiivisen EMF-altistuksen kanssa.",
+        timeline: "Testattavissa heti (ammattikohortti hormoni- + välittäjäainepaneelilla)",
+        falsification: "Kolme vajetta eivät esiinny yhdessä — ne ovat toisistaan ja EMF-altistuksesta riippumattomia",
+      },
+      {
+        id: "HIPPO-1",
+        title: "Krooninen EMF-altistus korreloi hippokampuksen tilavuuden pienenemisen kanssa",
+        description: "EMF → kortisoli↑ → hippokampuksen dendriittinen vetäytyminen + neurogeneesi↓ → tilavuuden menetys. Hippokampus on myös HPA:n negatiivisen palautteen keskus — sen vaurioituminen poistaa kortisolijarrutuksen → kortisoli↑↑ (takaisinkytkentäsilmukka S9). Testi: vertaa hippokampuksen tilavuutta (MRI-volumetria) työntekijöillä joilla >10 vuotta korkean EMF:n altistusta vs. vakioidut kontrollit, vakioiden iän, stressin, masennuksen. Ennuste: korkean EMF:n ryhmällä pienempi hippokampuksen tilavuus.",
+        timeline: "Testattavissa heti (retrospektiivinen MRI-volumetriatutkimus)",
+        falsification: "Ei hippokampuksen tilavuuseroa kroonisen korkean EMF:n ja matalan EMF:n ammattiryhmien välillä sekoittavien tekijöiden vakioinnin jälkeen",
+      },
+      {
+        id: "KLIM-1",
+        title: "EMF-vähennys palauttaa BAT-suppression mitattavissa lämpökuvauksella",
+        description: "Jos EMF → PRDM16↓ → BAT↓ → termogeneesi↓ → painonnousu, niin EMF-vähennyksen pitäisi palauttaa BAT:n toiminta. Testi: mittaa supraklavikulaarinen BAT-aktiivisuus (infrapunalämpökuvaus kylmäaltistuksen jälkeen) ennen ja jälkeen 3 kuukauden EMF-vähennysprotokolla. Ennuste: EMF-vähennysryhmä osoittaa lisääntynyttä BAT-termogeneesiä ja maltillista painonlaskua ilman ruokavaliomuutosta.",
+        timeline: "Testattavissa 6 kuukaudessa (lämpökuvaus + EMF-vähennysprotokolla)",
+        falsification: "Ei muutosta BAT:n termogeneesissä EMF-vähennyksen jälkeen",
+      },
+    ],
+    mechTimeline: "Aikajana",
+    mechFalsification: "Falsifikaatiokriteeri",
+    mechLocked: "Lukittu: 2026-08-26",
+    mechStatus: "LUKITTU — odottaa testiä",
     ttypeTitle: "T-tyypin kanavan ennusteet",
     ttypeLead: "T-tyypin kalsiumkanavan bifurkaatiomekanismista johdetut testattavat ennusteet.",
     ttypePredictions: [
@@ -3169,6 +3395,35 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
                 <p><span className="font-semibold">{d.metalTimeline}:</span> {mp.timeline}</p>
                 <p><span className="font-semibold">{d.metalFalsification}:</span> {mp.falsification}</p>
                 <p className="font-mono-num">{d.metalLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Mechanistic chain predictions BBB-EMF-1 through KLIM-1 */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.mechTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.mechLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.mechPredictions.map((mp) => (
+            <article key={mp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{mp.id}</span>
+                    <h3 className="font-semibold">{mp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.mechStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{mp.description}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.mechTimeline}:</span> {mp.timeline}</p>
+                <p><span className="font-semibold">{d.mechFalsification}:</span> {mp.falsification}</p>
+                <p className="font-mono-num">{d.mechLocked}</p>
               </div>
             </article>
           ))}

@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 633,
+    "total_references": 652,
     "verified_count": 240,
     "generated": "2026-08-26",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls"
@@ -12371,11 +12371,17 @@
       "pmcid": "PMC9539605",
       "doi": null,
       "category": "epidemiology",
-      "pathway": ["circadian"],
+      "pathway": [
+        "circadian"
+      ],
       "level": "E",
       "type": "meta_analysis",
       "finding": "Shift work MetS OR 2.17 (95% CI 1.31-3.60). 10/12 studies showed higher risk.",
-      "tags": ["shift_work", "metabolic_syndrome", "meta_analysis"],
+      "tags": [
+        "shift_work",
+        "metabolic_syndrome",
+        "meta_analysis"
+      ],
       "verified": false
     },
     {
@@ -12386,11 +12392,17 @@
       "journal": "Review",
       "doi": null,
       "category": "epidemiology",
-      "pathway": ["circadian"],
+      "pathway": [
+        "circadian"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Shift workers: increased risks for diabetes, hypertension, CVD, MetS, mental health, cancer. IARC 2A for night shift. Endocrine: melatonin, cortisol, thyroid, sex hormones all affected.",
-      "tags": ["shift_work", "health", "IARC"],
+      "tags": [
+        "shift_work",
+        "health",
+        "IARC"
+      ],
       "verified": false
     },
     {
@@ -12402,11 +12414,17 @@
       "pmcid": "PMC12506678",
       "doi": null,
       "category": "epidemiology",
-      "pathway": ["circadian"],
+      "pathway": [
+        "circadian"
+      ],
       "level": "E",
       "type": "meta_analysis",
       "finding": "Night shift work dose-response association with CVD incidence and mortality. 6 databases, meta-analysis.",
-      "tags": ["shift_work", "cardiovascular", "dose_response"],
+      "tags": [
+        "shift_work",
+        "cardiovascular",
+        "dose_response"
+      ],
       "verified": false
     },
     {
@@ -12422,18 +12440,30 @@
       "level": "E",
       "type": "review",
       "finding": "Office workers: prolonged sedentary work tied to increased morbidity. Cardiovascular risk factors elevated. 1950s research: physically active work → lower CVD.",
-      "tags": ["office_work", "sedentary", "cardiovascular"],
+      "tags": [
+        "office_work",
+        "sedentary",
+        "cardiovascular"
+      ],
       "verified": false
     },
     {
       "id": "weller2025_dna",
       "year": 2025,
       "category": "cellular_ros_dna",
-      "pathway": ["ELF_priming", "IF_channel"],
+      "pathway": [
+        "ELF_priming",
+        "IF_channel"
+      ],
       "level": "E",
       "type": "meta_analysis",
       "finding": "RF-EMF genotoxicity systematic review of 517 studies. Pulsed/real devices produce more effects than CW. Duration is critical factor. 58% of DNA damage effects observed below ICNIRP safety limits. Funding source predicts results more than study quality. U-shaped dose-response observed.",
-      "tags": ["DNA", "genotoxicity", "meta-analysis", "ICNIRP"],
+      "tags": [
+        "DNA",
+        "genotoxicity",
+        "meta-analysis",
+        "ICNIRP"
+      ],
       "verified": false
     },
     {
@@ -12441,22 +12471,35 @@
       "year": 2026,
       "journal": "Sleep and Biological Rhythms",
       "category": "neurobiology_circadian",
-      "pathway": ["recovery_window"],
+      "pathway": [
+        "recovery_window"
+      ],
       "level": "E",
       "type": "meta_analysis",
       "finding": "Systematic review of 55 studies on EMF and circadian disruption. 88% of high-quality animal studies show melatonin suppression. Human evidence varies considerably due to uncontrolled moderators.",
-      "tags": ["melatonin", "circadian", "systematic-review"],
+      "tags": [
+        "melatonin",
+        "circadian",
+        "systematic-review"
+      ],
       "verified": false
     },
     {
       "id": "ivancsits_dna_recovery",
       "year": 2003,
       "category": "cellular_ros_dna",
-      "pathway": ["ELF_priming"],
+      "pathway": [
+        "ELF_priming"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "ELF-EMF at 50 Hz and 35 µT with intermittent exposure caused DNA strand breaks in human fibroblasts. Damage reversed within 9 hours after exposure ceased. Effects observed well below ICNIRP 200 µT occupational limit.",
-      "tags": ["DNA", "recovery", "ELF", "below-ICNIRP"],
+      "tags": [
+        "DNA",
+        "recovery",
+        "ELF",
+        "below-ICNIRP"
+      ],
       "verified": false
     },
     {
@@ -12464,11 +12507,19 @@
       "year": 2025,
       "journal": "NeuroImage",
       "category": "neurobiology_circadian",
-      "pathway": ["ELF_priming"],
+      "pathway": [
+        "ELF_priming"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "5G at 3.6 GHz modulates sleep spindle frequency in CACNA1C genotype-dependent manner. T/C carriers show significant response while T/T carriers do not. Double-blind RCT demonstrating genetic susceptibility to RF-EMF.",
-      "tags": ["5G", "sleep", "genotype", "CACNA1C", "RCT"],
+      "tags": [
+        "5G",
+        "sleep",
+        "genotype",
+        "CACNA1C",
+        "RCT"
+      ],
       "verified": false
     },
     {
@@ -12476,11 +12527,19 @@
       "year": 2024,
       "journal": "Environment International",
       "category": "reproduction_hormones",
-      "pathway": ["ELF_priming", "IF_channel"],
+      "pathway": [
+        "ELF_priming",
+        "IF_channel"
+      ],
       "level": "E",
       "type": "meta_analysis",
       "finding": "WHO-commissioned systematic review of RF-EMF and fertility. 117 animal studies and 10 in vitro studies analyzed. Animal meta-analyses show adverse effects in all endpoints except infertile male rate and litter size.",
-      "tags": ["fertility", "sperm", "WHO", "systematic-review"],
+      "tags": [
+        "fertility",
+        "sperm",
+        "WHO",
+        "systematic-review"
+      ],
       "verified": false
     },
     {
@@ -12488,11 +12547,17 @@
       "year": 2014,
       "doi": "10.1016/S0160-4120(14)00135-4",
       "category": "reproduction_hormones",
-      "pathway": ["IF_channel"],
+      "pathway": [
+        "IF_channel"
+      ],
       "level": "E",
       "type": "meta_analysis",
       "finding": "Meta-analysis of mobile phone EMF and sperm quality. Phone use associated with reduced motility, viability, and concentration. Hedges g = -0.547 for motility.",
-      "tags": ["sperm", "mobile-phone", "meta-analysis"],
+      "tags": [
+        "sperm",
+        "mobile-phone",
+        "meta-analysis"
+      ],
       "verified": false
     },
     {
@@ -12500,11 +12565,18 @@
       "year": 2025,
       "pmcid": "PMC12562081",
       "category": "reproduction_hormones",
-      "pathway": ["IF_channel"],
+      "pathway": [
+        "IF_channel"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "3.5 GHz reduces sperm motility while 24 GHz reduces concentration and viability in rats. Effects amplified by 7h vs 1h daily exposure duration, confirming dose-duration relationship.",
-      "tags": ["5G", "sperm", "animal", "dose-response"],
+      "tags": [
+        "5G",
+        "sperm",
+        "animal",
+        "dose-response"
+      ],
       "verified": false
     },
     {
@@ -12512,11 +12584,18 @@
       "year": 2015,
       "doi": "10.1016/S2305-0500(15)00004-4",
       "category": "reproduction_hormones",
-      "pathway": ["ELF_priming"],
+      "pathway": [
+        "ELF_priming"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "50 Hz 1 mT ELF-EMF for 85 days reduced sperm motility and testosterone in rats. Seminiferous tubule diameter decreased, confirming chronic ELF exposure affects male reproductive system.",
-      "tags": ["ELF", "sperm", "testosterone", "animal"],
+      "tags": [
+        "ELF",
+        "sperm",
+        "testosterone",
+        "animal"
+      ],
       "verified": false
     },
     {
@@ -12527,11 +12606,20 @@
       "journal": "American Journal of Human Genetics",
       "pmcid": "PMC5673671",
       "category": "mechanism",
-      "pathway": ["VGCC_calcium"],
+      "pathway": [
+        "VGCC_calcium"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "19 de novo CAMK2A/B variants in 24 individuals with intellectual disability. Variants affecting Thr286/287 autophosphorylation produced epilepsy, ID, and ASD — the same phenotypes BERM predicts from environmental CaMKII dysregulation.",
-      "tags": ["CaMKII", "genetics", "autism", "epilepsy", "intellectual-disability", "de-novo"],
+      "tags": [
+        "CaMKII",
+        "genetics",
+        "autism",
+        "epilepsy",
+        "intellectual-disability",
+        "de-novo"
+      ],
       "verified": false
     },
     {
@@ -12541,11 +12629,18 @@
       "journal": "eLife",
       "pmcid": "PMC5963920",
       "category": "mechanism",
-      "pathway": ["VGCC_calcium"],
+      "pathway": [
+        "VGCC_calcium"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Biallelic CAMK2A mutation causes defective oligomerization and failed neuronal rescue. Both GoF and LoF of CaMKII cause neurodevelopmental disorders, confirming precise regulation is critical.",
-      "tags": ["CaMKII", "genetics", "loss-of-function", "neurodevelopment"],
+      "tags": [
+        "CaMKII",
+        "genetics",
+        "loss-of-function",
+        "neurodevelopment"
+      ],
       "verified": false
     },
     {
@@ -12556,11 +12651,19 @@
       "journal": "Cell",
       "pmid": "28388406",
       "category": "circadian",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "CRY1Δ11 (c.1657+3A>C, rs184039278): gain-of-function variant with enhanced Clock/Bmal1 affinity, lengthened circadian period. Frequency 0.6%. Causes familial delayed sleep phase disorder.",
-      "tags": ["CRY1", "circadian", "sleep", "genetics", "gain-of-function"],
+      "tags": [
+        "CRY1",
+        "circadian",
+        "sleep",
+        "genetics",
+        "gain-of-function"
+      ],
       "verified": false
     },
     {
@@ -12571,11 +12674,20 @@
       "journal": "Nature Genetics",
       "pmid": "19060908",
       "category": "metabolic",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "rs10830963 G-allele predicts future T2D. MTNR1B mRNA is higher in risk carriers. Melatonin inhibits β-cell insulin secretion via MT2 receptor — EMF-induced melatonin changes differentially affect G/G carriers.",
-      "tags": ["MTNR1B", "melatonin", "T2D", "genetics", "GWAS", "insulin"],
+      "tags": [
+        "MTNR1B",
+        "melatonin",
+        "T2D",
+        "genetics",
+        "GWAS",
+        "insulin"
+      ],
       "verified": false
     },
     {
@@ -12585,11 +12697,19 @@
       "title": "Increased melatonin signaling is a risk factor for type 2 diabetes",
       "journal": "Cell Metabolism",
       "category": "metabolic",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "rs10830963 G → eQTL → increased MTNR1B expression → stronger melatonin inhibition of insulin. Daily melatonin accentuates repression in G/G carriers. Explains gene × environment interaction.",
-      "tags": ["MTNR1B", "melatonin", "T2D", "eQTL", "genetics"],
+      "tags": [
+        "MTNR1B",
+        "melatonin",
+        "T2D",
+        "eQTL",
+        "genetics"
+      ],
       "verified": false
     },
     {
@@ -12599,11 +12719,19 @@
       "title": "Recurrent gain of function mutation in calcium channel CACNA1H causes early-onset hypertension with primary aldosteronism",
       "journal": "eLife",
       "category": "mechanism",
-      "pathway": ["VGCC_calcium"],
+      "pathway": [
+        "VGCC_calcium"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "CACNA1H GoF mutations cause aldosterone overproduction and hypertension. T-type calcium channel in adrenal cortex — gain-of-function lowers activation threshold.",
-      "tags": ["CACNA1H", "T-type", "calcium-channel", "hypertension", "gain-of-function"],
+      "tags": [
+        "CACNA1H",
+        "T-type",
+        "calcium-channel",
+        "hypertension",
+        "gain-of-function"
+      ],
       "verified": false
     },
     {
@@ -12613,11 +12741,20 @@
       "journal": "Genes",
       "pmcid": "PMC12294729",
       "category": "mechanism",
-      "pathway": ["VGCC_calcium"],
+      "pathway": [
+        "VGCC_calcium"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "CACNA1A rs16023 B-allele associated with developmental delay and epilepsy. Multi-gene calcium channel polymorphism interaction confirmed in Korean pediatric cohort.",
-      "tags": ["CACNA1A", "CACNA1C", "CACNA1H", "calcium-channel", "genetics", "epilepsy"],
+      "tags": [
+        "CACNA1A",
+        "CACNA1C",
+        "CACNA1H",
+        "calcium-channel",
+        "genetics",
+        "epilepsy"
+      ],
       "verified": false
     },
     {
@@ -12627,11 +12764,20 @@
       "journal": "International Journal of Molecular Sciences",
       "pmcid": "PMC9693521",
       "category": "mechanism",
-      "pathway": ["VGCC_calcium"],
+      "pathway": [
+        "VGCC_calcium"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "CACNA1D R930H: sinus bradycardia + AV block + epilepsy + learning disability in one family. Isoform-specific GoF/LoF demonstrates Cav1.3 multi-organ role.",
-      "tags": ["CACNA1D", "L-type", "calcium-channel", "cardiac", "epilepsy", "genetics"],
+      "tags": [
+        "CACNA1D",
+        "L-type",
+        "calcium-channel",
+        "cardiac",
+        "epilepsy",
+        "genetics"
+      ],
       "verified": false
     },
     {
@@ -12641,11 +12787,19 @@
       "title": "Identification of the α2δ-1 subunit of voltage-dependent calcium channels as a molecular target for pain mediating the analgesic actions of pregabalin",
       "journal": "Proceedings of the National Academy of Sciences",
       "category": "pharmacology",
-      "pathway": ["ELF_priming"],
+      "pathway": [
+        "ELF_priming"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "R217A mutant mice: pregabalin has no analgesic effect. α2δ-1 binding is necessary AND sufficient for analgesia. This identifies α2δ-1 as the molecular target shared by ELF priming and gabapentinoid therapy.",
-      "tags": ["alpha2delta", "pregabalin", "gabapentinoid", "VGCC-trafficking", "pharmacology"],
+      "tags": [
+        "alpha2delta",
+        "pregabalin",
+        "gabapentinoid",
+        "VGCC-trafficking",
+        "pharmacology"
+      ],
       "verified": false
     },
     {
@@ -12655,11 +12809,18 @@
       "title": "α2δ expression sets presynaptic calcium channel abundance and release probability",
       "journal": "Nature",
       "category": "mechanism",
-      "pathway": ["ELF_priming"],
+      "pathway": [
+        "ELF_priming"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "α2δ controls VGCC trafficking to presynaptic terminals. Overexpression of α1 alone does NOT increase synaptic VGCC levels — α2δ is the bottleneck. This is the molecular basis of ELF priming.",
-      "tags": ["alpha2delta", "VGCC-trafficking", "synapse", "mechanism"],
+      "tags": [
+        "alpha2delta",
+        "VGCC-trafficking",
+        "synapse",
+        "mechanism"
+      ],
       "verified": false
     },
     {
@@ -12669,11 +12830,18 @@
       "journal": "Scientific Reports",
       "pmcid": "PMC8505610",
       "category": "circadian",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "O",
       "type": "journal",
       "finding": "CRY1Δ11 carriers show later wake time, later midpoint of sleep, greater latency to persistent sleep, and later bowel movements. Confirms functional circadian lengthening in real-world conditions.",
-      "tags": ["CRY1", "circadian", "sleep", "observational"],
+      "tags": [
+        "CRY1",
+        "circadian",
+        "sleep",
+        "observational"
+      ],
       "verified": false
     },
     {
@@ -12683,11 +12851,19 @@
       "journal": "Journal of Translational Medicine",
       "pmcid": "PMC10054309",
       "category": "metabolic",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "O",
       "type": "journal",
       "finding": "MTNR1B rs10830963 G associated with delayed melatonin offset, prolonged peak melatonin, and ethnic diversity consistent with thrifty gene hypothesis. Links circadian genetics to metabolic disease.",
-      "tags": ["MTNR1B", "melatonin", "evolution", "T2D", "circadian"],
+      "tags": [
+        "MTNR1B",
+        "melatonin",
+        "evolution",
+        "T2D",
+        "circadian"
+      ],
       "verified": false
     },
     {
@@ -12698,11 +12874,19 @@
       "journal": "Biology of the Neonate",
       "doi": "10.1159/000244305",
       "category": "clinical",
-      "pathway": ["VGCC", "CRY_circadian"],
+      "pathway": [
+        "VGCC",
+        "CRY_circadian"
+      ],
       "level": "T",
       "type": "journal",
       "finding": "Triple risk model: vulnerable infant × critical developmental period × exogenous stressor. Foundation for modern SIDS research.",
-      "tags": ["SIDS", "triple_risk", "infant", "neuropathology"],
+      "tags": [
+        "SIDS",
+        "triple_risk",
+        "infant",
+        "neuropathology"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 1,
       "verified": true
@@ -12715,11 +12899,19 @@
       "journal": "ISRN Cardiology",
       "pmcid": "PMC3529486",
       "category": "clinical",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "At least 1 in 5 SIDS victims carries an ion channel mutation. Majority have malignant phenotype when functionally characterized.",
-      "tags": ["SIDS", "channelopathy", "CACNA1C", "SCN5A", "ion_channel"],
+      "tags": [
+        "SIDS",
+        "channelopathy",
+        "CACNA1C",
+        "SCN5A",
+        "ion_channel"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 2,
       "verified": true
@@ -12730,11 +12922,19 @@
       "title": "Genetic basis of sudden infant death syndrome: ion channel and cardiac arrhythmia genes",
       "journal": "Genes",
       "category": "clinical",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "RYR2 variants identified in 14% of post-mortem SIDS cases. CACNA1C underlies Timothy syndrome and Brugada syndrome phenotypes.",
-      "tags": ["SIDS", "RYR2", "CACNA1C", "genetics", "post_mortem"],
+      "tags": [
+        "SIDS",
+        "RYR2",
+        "CACNA1C",
+        "genetics",
+        "post_mortem"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 3,
       "verified": false
@@ -12746,11 +12946,19 @@
       "journal": "Forensic Science International: Genetics",
       "doi": "10.1016/S1872497320300375",
       "category": "clinical",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "CACNA1C mutations associated with long QT syndrome and Brugada syndrome identified in SIDS post-mortem genetic screening.",
-      "tags": ["SIDS", "CACNA1C", "LQTS", "Brugada", "forensic"],
+      "tags": [
+        "SIDS",
+        "CACNA1C",
+        "LQTS",
+        "Brugada",
+        "forensic"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 4,
       "verified": true
@@ -12763,11 +12971,19 @@
       "journal": "New England Journal of Medicine",
       "doi": "10.1056/NEJMoa054065",
       "category": "clinical",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Caffeine citrate significantly reduces apnea episodes, bronchopulmonary dysplasia, and cerebral palsy in preterm infants. Landmark CAP trial.",
-      "tags": ["caffeine", "apnea", "prematurity", "adenosine", "SIDS"],
+      "tags": [
+        "caffeine",
+        "apnea",
+        "prematurity",
+        "adenosine",
+        "SIDS"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 5,
       "verified": true
@@ -12778,11 +12994,20 @@
       "title": "Adenosine and dopamine receptor gene polymorphisms affect caffeine response in infant apnea",
       "pmcid": "PMC11520374",
       "category": "clinical",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "ADORA1 and ADORA2A gene polymorphisms modulate caffeine efficacy in apnea of prematurity. Pharmacogenetic evidence linking adenosine-Ca2+ pathway to infant respiratory regulation.",
-      "tags": ["adenosine", "ADORA1", "ADORA2A", "caffeine", "pharmacogenetics", "SIDS"],
+      "tags": [
+        "adenosine",
+        "ADORA1",
+        "ADORA2A",
+        "caffeine",
+        "pharmacogenetics",
+        "SIDS"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 6,
       "verified": true
@@ -12793,11 +13018,19 @@
       "title": "Melatonin in human breast milk and its potential role in circadian entrainment",
       "pmcid": "PMC11124029",
       "category": "circadian",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Night breast milk contains melatonin and tryptophan. Breastfed infants achieve earlier circadian entrainment (6 weeks vs. 12 weeks), better sleep efficiency, and less colic.",
-      "tags": ["melatonin", "breast_milk", "circadian", "infant", "SIDS"],
+      "tags": [
+        "melatonin",
+        "breast_milk",
+        "circadian",
+        "infant",
+        "SIDS"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 7,
       "verified": true
@@ -12808,11 +13041,20 @@
       "title": "Baby monitor RF exposure assessment",
       "journal": "Building Biology Institute",
       "category": "exposure",
-      "pathway": ["VGCC", "CRY_circadian"],
+      "pathway": [
+        "VGCC",
+        "CRY_circadian"
+      ],
       "level": "M",
       "type": "report",
       "finding": "All wireless baby monitors emit continuous RF. DECT monitors: 250 mW constant transmission. RF absorption approximately 10× higher in infants due to thinner skull and higher brain water content.",
-      "tags": ["baby_monitor", "RF", "exposure", "infant", "SIDS"],
+      "tags": [
+        "baby_monitor",
+        "RF",
+        "exposure",
+        "infant",
+        "SIDS"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 8,
       "verified": false
@@ -12822,11 +13064,19 @@
       "year": 2023,
       "title": "RF exposure from baby monitors: measurement study",
       "category": "exposure",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "M",
       "type": "report",
       "finding": "RF exposure from baby monitors within 3 feet (1 m) of the infant exceeds recommended nighttime exposure limits by 300-400%.",
-      "tags": ["baby_monitor", "RF", "exposure", "measurement", "SIDS"],
+      "tags": [
+        "baby_monitor",
+        "RF",
+        "exposure",
+        "measurement",
+        "SIDS"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 9,
       "verified": false
@@ -12837,11 +13087,18 @@
       "title": "Seasonal patterns in SIDS: United States 1980-1987",
       "journal": "CDC MMWR",
       "category": "epidemiological",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "O",
       "type": "report",
       "finding": "SIDS risk greatest at age 1-4 months and during cold season. US national surveillance data 1980-1987.",
-      "tags": ["SIDS", "seasonal", "epidemiology", "CDC"],
+      "tags": [
+        "SIDS",
+        "seasonal",
+        "epidemiology",
+        "CDC"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 10,
       "verified": true
@@ -12852,11 +13109,18 @@
       "title": "Climate and SIDS incidence correlation",
       "doi": "10.1007/BF02184936",
       "category": "epidemiological",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "O",
       "type": "journal",
       "finding": "SIDS incidence correlates strongly with cold-wet weather patterns across US, UK, and Australia. Cold-wet Pacific Northwest has highest SIDS rates.",
-      "tags": ["SIDS", "climate", "seasonal", "epidemiology"],
+      "tags": [
+        "SIDS",
+        "climate",
+        "seasonal",
+        "epidemiology"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 11,
       "verified": true
@@ -12868,11 +13132,19 @@
       "journal": "Frontiers in Pediatrics",
       "doi": "10.3389/fped.2022.816136",
       "category": "clinical",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Heat stress and hyperthermia as SIDS risk factors. Thermoregulation, cardiovascular stability, and circadian function all reach peak vulnerability at SIDS-risk age.",
-      "tags": ["SIDS", "hyperthermia", "thermoregulation", "BAT", "CaMKII"],
+      "tags": [
+        "SIDS",
+        "hyperthermia",
+        "thermoregulation",
+        "BAT",
+        "CaMKII"
+      ],
       "pdf_section": "SIDS",
       "pdf_number": 12,
       "verified": true
@@ -12883,11 +13155,22 @@
       "title": "Neonatal seizures: pathophysiology, mechanisms, and the NKCC1/KCC2 chloride transporter switch",
       "journal": "Seminars in Fetal and Neonatal Medicine",
       "category": "clinical",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Neonatal seizures arise from excitatory GABA action due to high NKCC1/KCC2 ratio. The chloride transporter switch (NKCC1 dominant → KCC2 dominant) occurs postnatally over weeks to months, making the neonatal brain uniquely susceptible to hyperexcitability.",
-      "tags": ["neonatal", "seizure", "NKCC1", "KCC2", "GABA", "SIDS", "resonance"],
+      "tags": [
+        "neonatal",
+        "seizure",
+        "NKCC1",
+        "KCC2",
+        "GABA",
+        "SIDS",
+        "resonance"
+      ],
       "pdf_section": "SIDS_resonance",
       "pdf_number": 13,
       "verified": true
@@ -12899,11 +13182,21 @@
       "journal": "Epilepsia",
       "doi": "10.1111/epi.12946",
       "category": "clinical",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Bumetanide blocks NKCC1 chloride importer, reducing intracellular chloride and restoring inhibitory GABA action. Effective in reducing neonatal seizure burden, demonstrating that NKCC1/KCC2 ratio directly controls neuronal excitability in the developing brain.",
-      "tags": ["bumetanide", "NKCC1", "neonatal", "seizure", "GABA", "SIDS", "resonance"],
+      "tags": [
+        "bumetanide",
+        "NKCC1",
+        "neonatal",
+        "seizure",
+        "GABA",
+        "SIDS",
+        "resonance"
+      ],
       "pdf_section": "SIDS_resonance",
       "pdf_number": 14,
       "verified": true
@@ -12913,11 +13206,21 @@
       "year": 2026,
       "title": "Status epilepticus in neonates: the undamped oscillator model",
       "category": "theoretical",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "M",
       "type": "preprint",
       "finding": "Neonatal status epilepticus can be modeled as resonance in an undamped oscillator where excitatory GABA (NKCC1>KCC2) removes the damping term. Q-factor predicts seizure severity better than age alone.",
-      "tags": ["neonatal", "status_epilepticus", "Q_factor", "resonance", "NKCC1", "SIDS"],
+      "tags": [
+        "neonatal",
+        "status_epilepticus",
+        "Q_factor",
+        "resonance",
+        "NKCC1",
+        "SIDS"
+      ],
       "pdf_section": "SIDS_resonance",
       "pdf_number": 15,
       "verified": false
@@ -12928,11 +13231,21 @@
       "title": "NKCC1 and KCC2 chloride transporters: developmental expression and the GABA excitatory-to-inhibitory switch",
       "journal": "NCBI Bookshelf / Bhatt et al.",
       "category": "basic_science",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "book_chapter",
       "finding": "NKCC1 expression is high at birth and declines postnatally. KCC2 expression is low at birth and increases over the first months of life. The NKCC1>KCC2 ratio at birth results in high intracellular chloride, making GABA depolarizing (excitatory). The switch to KCC2 dominance and inhibitory GABA occurs at approximately 2-4 weeks in rodents, 2-6 months in humans.",
-      "tags": ["NKCC1", "KCC2", "GABA", "development", "chloride", "SIDS", "resonance"],
+      "tags": [
+        "NKCC1",
+        "KCC2",
+        "GABA",
+        "development",
+        "chloride",
+        "SIDS",
+        "resonance"
+      ],
       "pdf_section": "SIDS_resonance",
       "pdf_number": 16,
       "verified": true
@@ -12943,11 +13256,21 @@
       "title": "Bed-sharing, co-sleeping, and SIDS: international comparisons and cultural context",
       "journal": "Pediatrics International",
       "category": "epidemiological",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "O",
       "type": "journal",
       "finding": "Countries with high co-sleeping rates (Japan, Hong Kong) have among the lowest SIDS rates globally despite high population density and EMF exposure. Cultural practices including co-sleeping, high breastfeeding rates, and continuous infant carrying provide multiple protective mechanisms.",
-      "tags": ["cosleeping", "SIDS", "Japan", "Hong_Kong", "breastfeeding", "cultural", "resonance"],
+      "tags": [
+        "cosleeping",
+        "SIDS",
+        "Japan",
+        "Hong_Kong",
+        "breastfeeding",
+        "cultural",
+        "resonance"
+      ],
       "pdf_section": "SIDS_resonance",
       "pdf_number": 17,
       "verified": true
@@ -12958,11 +13281,21 @@
       "title": "SIDS rates in Japan: epidemiological analysis and cultural protective factors",
       "journal": "Journal of Epidemiology",
       "category": "epidemiological",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "O",
       "type": "journal",
       "finding": "Japan SIDS rate of 0.09/1000 live births is among the world lowest. Three cultural factors are protective: near-universal co-sleeping (futon, no baby monitor needed), breastfeeding rates >95%, and traditional infant carrying practices (onbu) providing continuous skin contact.",
-      "tags": ["Japan", "SIDS", "cosleeping", "breastfeeding", "onbu", "skin_contact", "resonance"],
+      "tags": [
+        "Japan",
+        "SIDS",
+        "cosleeping",
+        "breastfeeding",
+        "onbu",
+        "skin_contact",
+        "resonance"
+      ],
       "pdf_section": "SIDS_resonance",
       "pdf_number": 18,
       "verified": true
@@ -12973,11 +13306,22 @@
       "title": "KCNQ2 mutations and neonatal seizures: spontaneous remission at 3-6 months correlates with KCC2 maturation",
       "journal": "Neurology",
       "category": "clinical",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "KCNQ2 (Kv7.2) mutations cause benign familial neonatal seizures with characteristic spontaneous remission at 3-6 months of age. The remission timeline correlates precisely with KCC2 chloride transporter maturation and the transition of GABA from excitatory to inhibitory, suggesting seizure cessation reflects restoration of neural damping.",
-      "tags": ["KCNQ2", "neonatal", "seizure", "KCC2", "GABA", "remission", "SIDS", "resonance"],
+      "tags": [
+        "KCNQ2",
+        "neonatal",
+        "seizure",
+        "KCC2",
+        "GABA",
+        "remission",
+        "SIDS",
+        "resonance"
+      ],
       "pdf_section": "SIDS_resonance",
       "pdf_number": 19,
       "verified": true
@@ -12988,11 +13332,23 @@
       "title": "Prenatal radiofrequency electromagnetic field exposure and neurodevelopmental outcomes: prospective birth cohort",
       "journal": "Environment International",
       "category": "epidemiological",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Prospective birth cohort with prenatal RF-EMF exposure assessment. Higher prenatal EMF exposure associated with fine motor delay (OR 2.74, 95% CI 1.16-6.49) and problem-solving delay (OR 3.67, 95% CI 1.39-9.73) at 36 months. Dose-response relationship observed across exposure quartiles.",
-      "tags": ["prenatal", "EMF", "neurodevelopment", "motor", "cognition", "prospective", "SIDS", "resonance"],
+      "tags": [
+        "prenatal",
+        "EMF",
+        "neurodevelopment",
+        "motor",
+        "cognition",
+        "prospective",
+        "SIDS",
+        "resonance"
+      ],
       "pdf_section": "SIDS_resonance",
       "pdf_number": 20,
       "verified": true
@@ -13004,11 +13360,21 @@
       "journal": "Bioelectromagnetics",
       "pmid": "16448750",
       "category": "experimental",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "GSM 900 MHz radiation triggers seizures in rats pretreated with subconvulsive doses of picrotoxin (GABA antagonist). Neither GSM alone nor picrotoxin alone at this dose causes seizures. c-Fos expression increased in neocortex, hippocampus, and thalamus.",
-      "tags": ["seizure", "GSM", "picrotoxin", "GABA", "epilepsy", "neuro_spectrum"],
+      "tags": [
+        "seizure",
+        "GSM",
+        "picrotoxin",
+        "GABA",
+        "epilepsy",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 21,
       "verified": true
@@ -13020,11 +13386,19 @@
       "journal": "Bioelectromagnetics",
       "pmid": "19115403",
       "category": "experimental",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Pulse-modulated GSM 900 MHz radiation is more effective than continuous wave at triggering seizures in the picrotoxin model. Specific pulsation pattern has biological significance beyond time-averaged SAR.",
-      "tags": ["GSM", "pulsation", "seizure", "modulation", "neuro_spectrum"],
+      "tags": [
+        "GSM",
+        "pulsation",
+        "seizure",
+        "modulation",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 22,
       "verified": true
@@ -13036,11 +13410,20 @@
       "journal": "Toxicology Letters",
       "pmid": "21524663",
       "category": "experimental",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "GSM 900 MHz in picrotoxin-pretreated rats increases neurotoxic biomarkers c-fos and GFAP in cortex, hippocampus, and thalamus, confirming neuronal activation and glial stress response from EMF + reduced GABAergic inhibition.",
-      "tags": ["c-fos", "GFAP", "GSM", "neurotoxicity", "neuro_spectrum"],
+      "tags": [
+        "c-fos",
+        "GFAP",
+        "GSM",
+        "neurotoxicity",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 23,
       "verified": true
@@ -13052,11 +13435,19 @@
       "journal": "Cell",
       "doi": "10.1016/j.cell.2009.09.005",
       "category": "basic_science",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "α2δ-1 (CACNA2D1) is the neuronal thrombospondin receptor that controls excitatory synaptogenesis. Gabapentin blocks α2δ-1 and inhibits aberrant synaptogenesis. This is the molecular basis of ELF-priming: ELF upregulates α2δ-1 → more VGCCs at synapses → cells become more sensitive to subsequent EMF.",
-      "tags": ["alpha2delta1", "synaptogenesis", "gabapentin", "ELF_priming", "neuro_spectrum"],
+      "tags": [
+        "alpha2delta1",
+        "synaptogenesis",
+        "gabapentin",
+        "ELF_priming",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 24,
       "verified": true
@@ -13066,11 +13457,19 @@
       "year": 2012,
       "title": "Gabapentin decreases epileptiform discharges and reverses α2δ-1 expression",
       "category": "experimental",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Gabapentin decreases posttraumatic epileptiform discharges and reverses TSP1/2 and α2δ-1 expression increase. Demonstrates that α2δ-1 blockade reduces aberrant excitatory circuit formation.",
-      "tags": ["gabapentin", "alpha2delta1", "epilepsy", "synaptogenesis", "neuro_spectrum"],
+      "tags": [
+        "gabapentin",
+        "alpha2delta1",
+        "epilepsy",
+        "synaptogenesis",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 25,
       "verified": true
@@ -13080,11 +13479,20 @@
       "year": 2015,
       "title": "Spreading depolarization in brainstem mediates sudden death in SUDEP mouse models",
       "category": "experimental",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Spreading depolarization propagating into the brainstem mediates sudden cardiorespiratory arrest in mouse models of SUDEP. L-type calcium channel antagonist prevented seizure-induced death.",
-      "tags": ["SUDEP", "spreading_depolarization", "brainstem", "CACNA1A", "neuro_spectrum"],
+      "tags": [
+        "SUDEP",
+        "spreading_depolarization",
+        "brainstem",
+        "CACNA1A",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 26,
       "verified": true
@@ -13095,11 +13503,20 @@
       "title": "SUDEP pathophysiology: serotonin system defects and overlap with SIDS mechanisms",
       "pmid": "36031303",
       "category": "clinical",
-      "pathway": ["VGCC", "CRY_circadian"],
+      "pathway": [
+        "VGCC",
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "SUDEP pathophysiology linked to serotonin system defects and CO2 chemoreception failure. Significant mechanistic overlap with SIDS: both involve brainstem spreading depolarization, serotonin deficiency, and arousal response failure.",
-      "tags": ["SUDEP", "SIDS", "serotonin", "brainstem", "neuro_spectrum"],
+      "tags": [
+        "SUDEP",
+        "SIDS",
+        "serotonin",
+        "brainstem",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 27,
       "verified": true
@@ -13110,11 +13527,20 @@
       "title": "CACNA1A model: spreading depolarization initiates apnea in SUDEP",
       "pmcid": "PMC10472423",
       "category": "experimental",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "In CACNA1A mouse model, spreading depolarization into brainstem initiates apnea and cardiac arrest. Serotonergic neuron damage shared with SIDS pathology. SUDEP described as 'adult SIDS'.",
-      "tags": ["SUDEP", "CACNA1A", "spreading_depolarization", "apnea", "SIDS", "neuro_spectrum"],
+      "tags": [
+        "SUDEP",
+        "CACNA1A",
+        "spreading_depolarization",
+        "apnea",
+        "SIDS",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 28,
       "verified": true
@@ -13126,11 +13552,20 @@
       "journal": "Cardiovascular Research",
       "doi": "10.1093/cvr/cvae170",
       "category": "experimental",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "L-type VGCC antagonist prevented seizure-induced death in SUDEP model. Spreading depolarization in brainstem mediates SUDEP. Direct evidence that Ca²⁺ channel blockade prevents fatal outcome.",
-      "tags": ["SUDEP", "L_type", "VGCC", "antagonist", "brainstem", "neuro_spectrum"],
+      "tags": [
+        "SUDEP",
+        "L_type",
+        "VGCC",
+        "antagonist",
+        "brainstem",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 29,
       "verified": true
@@ -13141,11 +13576,19 @@
       "title": "CSD as common therapeutic target for migraine prophylactic drugs",
       "pmcid": "PMC3728002",
       "category": "clinical",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Cortical spreading depression (CSD) is the common therapeutic target for migraine prophylactic drugs. CSD involves massive intracellular Ca²⁺ rise. All effective migraine preventives reduce CSD susceptibility.",
-      "tags": ["CSD", "migraine", "prophylaxis", "calcium", "neuro_spectrum"],
+      "tags": [
+        "CSD",
+        "migraine",
+        "prophylaxis",
+        "calcium",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 30,
       "verified": true
@@ -13157,11 +13600,20 @@
       "journal": "International Journal of Molecular Sciences",
       "doi": "10.3390/ijms22052688",
       "category": "basic_science",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Familial hemiplegic migraine type 1 (FHM1) caused by CACNA1A gain-of-function mutations. P/Q-type Ca²⁺ channel enhanced function → increased glutamate release → glia interactions → lowered CSD threshold.",
-      "tags": ["FHM1", "CACNA1A", "migraine", "CSD", "P_Q_type", "neuro_spectrum"],
+      "tags": [
+        "FHM1",
+        "CACNA1A",
+        "migraine",
+        "CSD",
+        "P_Q_type",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 31,
       "verified": true
@@ -13173,11 +13625,21 @@
       "journal": "Chronobiology International",
       "doi": "10.1080/07420528.2021.1892127",
       "category": "experimental",
-      "pathway": ["VGCC", "CRY_circadian"],
+      "pathway": [
+        "VGCC",
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Verapamil (L-type Ca²⁺ channel blocker, first-line cluster headache preventive) shortens circadian period and alters Per2 clock gene expression. Shared circadian mechanism with melatonin and lithium.",
-      "tags": ["verapamil", "cluster", "circadian", "Per2", "L_type", "neuro_spectrum"],
+      "tags": [
+        "verapamil",
+        "cluster",
+        "circadian",
+        "Per2",
+        "L_type",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 32,
       "verified": true
@@ -13189,11 +13651,20 @@
       "journal": "Current Treatment Options in Neurology",
       "doi": "10.1007/s11940-020-00655-z",
       "category": "clinical",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Verapamil prevents CGRP release by inhibiting presynaptic calcium influx. First-line preventive at 240-960 mg/day. CGRP is Ca²⁺-dependent neuropeptide central to cluster headache pathophysiology.",
-      "tags": ["verapamil", "CGRP", "cluster", "calcium", "presynaptic", "neuro_spectrum"],
+      "tags": [
+        "verapamil",
+        "CGRP",
+        "cluster",
+        "calcium",
+        "presynaptic",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 33,
       "verified": true
@@ -13204,11 +13675,21 @@
       "title": "Cluster headache preventive treatments: evidence for verapamil, lithium, gabapentin, melatonin",
       "pmid": "34919214",
       "category": "clinical",
-      "pathway": ["VGCC", "CRY_circadian"],
+      "pathway": [
+        "VGCC",
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Best documented cluster headache preventives: verapamil (Ca²⁺ channel blocker) and lithium (GSK3β/circadian). Possibly effective: gabapentin (α2δ-1), topiramate, melatonin (Ca²⁺ antagonist). Every effective treatment targets a BERM pathway component.",
-      "tags": ["cluster", "verapamil", "lithium", "gabapentin", "melatonin", "neuro_spectrum"],
+      "tags": [
+        "cluster",
+        "verapamil",
+        "lithium",
+        "gabapentin",
+        "melatonin",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 34,
       "verified": true
@@ -13220,11 +13701,20 @@
       "journal": "Journal of the Neurological Sciences",
       "doi": "10.1016/j.jns.2024.122868",
       "category": "clinical",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Psilocybin pulse regimen reduces cluster headache frequency by 31-50% in randomized trials. Sub-psychedelic doses effective. 2-bromo-LSD (BOL, non-psychedelic) also works, demonstrating receptor-level mechanism rather than psychedelic experience.",
-      "tags": ["psilocybin", "cluster", "RCT", "5HT2A", "BOL", "neuro_spectrum"],
+      "tags": [
+        "psilocybin",
+        "cluster",
+        "RCT",
+        "5HT2A",
+        "BOL",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 35,
       "verified": true
@@ -13235,11 +13725,20 @@
       "title": "Psilocybin (4-OH-DMT): 5-HT2A agonist mechanism in cluster headache, depression, addiction",
       "pmcid": "PMC13003063",
       "category": "clinical",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Psilocybin (converted to psilocin/4-OH-DMT) is a 5-HT2A agonist. Therapeutic in cluster headache, treatment-resistant depression, and addiction. Mechanism involves thalamo-cortical reset and 5-HT2A downregulation.",
-      "tags": ["psilocybin", "5HT2A", "tryptamine", "cluster", "depression", "neuro_spectrum"],
+      "tags": [
+        "psilocybin",
+        "5HT2A",
+        "tryptamine",
+        "cluster",
+        "depression",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 36,
       "verified": true
@@ -13249,11 +13748,20 @@
       "year": 2019,
       "title": "Cluster headache epidemiology: smoking, male predominance, nocturnal attacks, comorbidity profile",
       "category": "epidemiological",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "O",
       "type": "review",
       "finding": "Cluster headache epidemiological profile: 60-90% smokers, male 3:1, attacks predominantly midnight-3am, onset typically around age 30, comorbid with restless legs syndrome and impulse control issues. This profile maps onto cumulative Ca²⁺-loading pattern.",
-      "tags": ["cluster", "smoking", "epidemiology", "nocturnal", "male", "neuro_spectrum"],
+      "tags": [
+        "cluster",
+        "smoking",
+        "epidemiology",
+        "nocturnal",
+        "male",
+        "neuro_spectrum"
+      ],
       "pdf_section": "neuro_spectrum",
       "pdf_number": 37,
       "verified": true
@@ -13264,11 +13772,21 @@
       "title": "ELF-EMF enhanced synaptic facilitation and increased seizure susceptibility in neocortex",
       "doi": "10.1002/bem.20517",
       "category": "experimental",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "ELF-EMF causes enhanced synaptic facilitation in hippocampus AND increased seizure susceptibility in neocortex. Transient priming effect demonstrates ELF modulates neuronal excitability.",
-      "tags": ["ELF", "seizure", "priming", "neocortex", "hippocampus", "convergence"],
+      "tags": [
+        "ELF",
+        "seizure",
+        "priming",
+        "neocortex",
+        "hippocampus",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 38,
       "verified": true
@@ -13278,11 +13796,21 @@
       "year": 2021,
       "title": "RF-EMF region-specific neurotransmitter changes: 5-HT and monoamines in hypothalamus and medulla",
       "category": "experimental",
-      "pathway": ["CaMKII", "CRY_circadian"],
+      "pathway": [
+        "CaMKII",
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "900 MHz 21 days: 5-HT increased, 5-HIAA decreased in cerebellum. 1800 MHz: monoamines changed in hypothalamus, medulla, hippocampus. Region-specific neurotransmitter alterations confirm CaMKII→TPH-2→5-HT pathway.",
-      "tags": ["serotonin", "5-HT", "RF", "neurotransmitter", "region_specific", "convergence"],
+      "tags": [
+        "serotonin",
+        "5-HT",
+        "RF",
+        "neurotransmitter",
+        "region_specific",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 39,
       "verified": true
@@ -13294,11 +13822,20 @@
       "doi": "10.1038/s41598-018-37874-z",
       "journal": "Scientific Reports",
       "category": "experimental",
-      "pathway": ["CaMKII"],
+      "pathway": [
+        "CaMKII"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "RF-EMF 12 weeks: dopamine decreased approximately 25% in striatum. Locomotor recovery impaired. Demonstrates chronic RF exposure produces measurable neurotransmitter depletion.",
-      "tags": ["dopamine", "striatum", "RF", "chronic", "locomotor", "convergence"],
+      "tags": [
+        "dopamine",
+        "striatum",
+        "RF",
+        "chronic",
+        "locomotor",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 40,
       "verified": true
@@ -13309,11 +13846,20 @@
       "title": "Pineal calcification in Alzheimer's disease: 76% vs 64% controls with reduced uncalcified tissue",
       "pmid": "17097768",
       "category": "clinical",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Alzheimer's disease patients: pineal gland calcification (PGC) 76.2% vs controls 64.5% (p=0.021). Uncalcified pineal tissue volume: AD 0.15 cm² vs controls 0.25 cm² (p=0.027). PGC reduces functional melatonin-producing tissue.",
-      "tags": ["PGC", "Alzheimer", "melatonin", "pineal", "calcification", "convergence"],
+      "tags": [
+        "PGC",
+        "Alzheimer",
+        "melatonin",
+        "pineal",
+        "calcification",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 41,
       "verified": true
@@ -13324,11 +13870,20 @@
       "title": "Pineal calcification volume correlates with melatonin levels: r=0.569 and sleep parameters",
       "pmid": "18755628",
       "category": "clinical",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Uncalcified pineal tissue volume correlates with melatonin production: r=0.569 (p=0.002). Degree of calcification inversely correlates with REM sleep: r=-0.567 (p=0.001) and total sleep time: r=-0.463 (p=0.010). Direct quantitative link between PGC and sleep disruption.",
-      "tags": ["PGC", "melatonin", "sleep", "calcification", "correlation", "convergence"],
+      "tags": [
+        "PGC",
+        "melatonin",
+        "sleep",
+        "calcification",
+        "correlation",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 42,
       "verified": true
@@ -13338,11 +13893,21 @@
       "year": 2020,
       "title": "Pinealectomy increases reperfusion arrhythmias; chronic melatonin provides arrhythmia protection",
       "category": "experimental",
-      "pathway": ["CRY_circadian", "VGCC"],
+      "pathway": [
+        "CRY_circadian",
+        "VGCC"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Pinealectomy increases reperfusion arrhythmias. Chronic melatonin supplementation provides arrhythmia protection through multiple mechanisms: antifibrotic effects, Cx43 gap junction preservation, mitochondrial protection. Direct evidence that melatonin loss → cardiac electrical instability.",
-      "tags": ["pinealectomy", "arrhythmia", "melatonin", "cardiac", "Cx43", "convergence"],
+      "tags": [
+        "pinealectomy",
+        "arrhythmia",
+        "melatonin",
+        "cardiac",
+        "Cx43",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 43,
       "verified": true
@@ -13353,11 +13918,20 @@
       "title": "Sleep deprivation reduces GABA tonic inhibition and activates epileptiform discharges in 23-62%",
       "doi": "10.5935/1984-0063.20220046",
       "category": "clinical",
-      "pathway": ["CaMKII"],
+      "pathway": [
+        "CaMKII"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Sleep deprivation reduces GABA tonic inhibition (γ decreases). Both epilepsy and sleep deprivation show reduced GABA. Sleep deprivation activates epileptiform discharges in 23-62% of cases. Clinically used as diagnostic provocation — confirms sleep loss → Q-factor increase.",
-      "tags": ["sleep", "GABA", "seizure", "deprivation", "diagnostic", "convergence"],
+      "tags": [
+        "sleep",
+        "GABA",
+        "seizure",
+        "deprivation",
+        "diagnostic",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 44,
       "verified": true
@@ -13369,11 +13943,19 @@
       "doi": "10.1074/jbc.M111.323022",
       "journal": "Journal of Biological Chemistry",
       "category": "experimental",
-      "pathway": ["CaMKII"],
+      "pathway": [
+        "CaMKII"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "CaMKII inhibition leads to hyperexcitability, increased glutamate release, and neurotoxicity. CaMKII loss sensitizes neurons to excitotoxic glutamate signaling. Both too much and too little CaMKII activity = pathology — precise regulation is critical.",
-      "tags": ["CaMKII", "glutamate", "excitotoxicity", "hyperexcitability", "convergence"],
+      "tags": [
+        "CaMKII",
+        "glutamate",
+        "excitotoxicity",
+        "hyperexcitability",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 45,
       "verified": true
@@ -13384,11 +13966,20 @@
       "title": "Both NMDA-R and CaV channels necessary for CSD initiation",
       "pmcid": "PMC10408042",
       "category": "experimental",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Both NMDA receptors and voltage-gated calcium channels (CaV) are necessary for cortical spreading depolarization (CSD) initiation. CaV-dependent NMDA threshold activation is the critical mechanism. Neither alone is sufficient — convergent activation required.",
-      "tags": ["CSD", "NMDA", "VGCC", "spreading_depolarization", "convergence"],
+      "tags": [
+        "CSD",
+        "NMDA",
+        "VGCC",
+        "spreading_depolarization",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 46,
       "verified": true
@@ -13398,11 +13989,21 @@
       "year": 2024,
       "title": "Maternal sevoflurane disrupts interneuron development causing permanent GABAergic inhibition deficit",
       "category": "experimental",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Maternal sevoflurane exposure (Ca²⁺ modulator) disrupts interneuron development in offspring, producing permanent GABAergic inhibition deficit (γ↓) and increased seizure susceptibility. Demonstrates that prenatal Ca²⁺ disruption permanently alters damping coefficient.",
-      "tags": ["prenatal", "sevoflurane", "interneuron", "GABA", "seizure", "convergence"],
+      "tags": [
+        "prenatal",
+        "sevoflurane",
+        "interneuron",
+        "GABA",
+        "seizure",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 47,
       "verified": true
@@ -13413,11 +14014,21 @@
       "title": "Cd and Pb mimic Ca²⁺ at calmodulin and PKC binding sites; Cd permeates VGCC pore",
       "pmcid": "PMC3658387",
       "category": "basic_science",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Cadmium and lead mimic calcium at critical binding sites including calmodulin and PKC. Cd²⁺ permeates directly through the VGCC pore. Pb²⁺ blocks VGCC externally but mimics Ca²⁺ intracellularly. EMF-opened VGCCs become entry pathway for toxic metals.",
-      "tags": ["cadmium", "lead", "VGCC", "calmodulin", "heavy_metal", "synergy"],
+      "tags": [
+        "cadmium",
+        "lead",
+        "VGCC",
+        "calmodulin",
+        "heavy_metal",
+        "synergy"
+      ],
       "pdf_section": "heavy_metal",
       "pdf_number": 48,
       "verified": true
@@ -13428,11 +14039,20 @@
       "title": "Cd²⁺ carries sizable inward currents through Cav3.1 confirmed with radiolabeled ¹⁰⁹Cd²⁺",
       "pmid": "22973059",
       "category": "experimental",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Cadmium carries sizable inward currents through Cav3.1 (T-type calcium channel). Confirmed with radiolabeled ¹⁰⁹Cd²⁺ flux measurements. Window current near resting potential makes Cav3.1 a candidate pathway for chronic Cd entry into cells.",
-      "tags": ["cadmium", "Cav3.1", "T_type", "permeation", "heavy_metal", "synergy"],
+      "tags": [
+        "cadmium",
+        "Cav3.1",
+        "T_type",
+        "permeation",
+        "heavy_metal",
+        "synergy"
+      ],
       "pdf_section": "heavy_metal",
       "pdf_number": 49,
       "verified": true
@@ -13442,11 +14062,20 @@
       "year": 2025,
       "title": "Pineal gland calcification affects >60% of adults; fluoride incorporated into hydroxyapatite",
       "category": "epidemiological",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "O",
       "type": "review",
       "finding": "Pineal gland calcification (PGC) affects over 60% of adults. Fluoride is incorporated into hydroxyapatite deposits. Pineal gland has highest blood perfusion per volume of any organ, maximizing exposure to circulating heavy metals and fluoride.",
-      "tags": ["PGC", "fluoride", "hydroxyapatite", "pineal", "calcification", "heavy_metal"],
+      "tags": [
+        "PGC",
+        "fluoride",
+        "hydroxyapatite",
+        "pineal",
+        "calcification",
+        "heavy_metal"
+      ],
       "pdf_section": "heavy_metal",
       "pdf_number": 50,
       "verified": true
@@ -13456,11 +14085,20 @@
       "year": 2026,
       "title": "PGC as convergent pathological mechanism: circadian dysregulation, melatonin decline, neuropsychiatric vulnerability",
       "category": "theoretical",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "M",
       "type": "review",
       "finding": "Pineal gland calcification is a convergent pathological mechanism producing circadian dysregulation, melatonin decline, oxidative stress, amyloid-beta accumulation, and neuropsychiatric vulnerability. EMF and heavy metals independently accelerate PGC — their effects are additive.",
-      "tags": ["PGC", "circadian", "melatonin", "neurodegeneration", "convergent", "heavy_metal"],
+      "tags": [
+        "PGC",
+        "circadian",
+        "melatonin",
+        "neurodegeneration",
+        "convergent",
+        "heavy_metal"
+      ],
       "pdf_section": "heavy_metal",
       "pdf_number": 51,
       "verified": false
@@ -13470,11 +14108,20 @@
       "year": 2024,
       "title": "Shift-working mothers produce lower breast milk melatonin during night shifts",
       "category": "clinical",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Shift-working mothers produce lower breast milk melatonin during night shifts compared to non-working nights. Effect increases over consecutive night shifts. Demonstrates that maternal circadian disruption directly reduces the Ca²⁺ antagonist delivered to infants.",
-      "tags": ["shiftwork", "breast_milk", "melatonin", "circadian", "infant", "convergence"],
+      "tags": [
+        "shiftwork",
+        "breast_milk",
+        "melatonin",
+        "circadian",
+        "infant",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 52,
       "verified": true
@@ -13484,11 +14131,21 @@
       "year": 2025,
       "title": "CACNA1C genotype determines sleep EEG response to 5G exposure in double-blind study (ETH Zürich)",
       "category": "experimental",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "In a double-blind study at ETH Zürich, CACNA1C genotype directly determined the sleep EEG response to 5G NR exposure. First demonstration that EMF sensitivity is genotype-dependent, not psychosomatic. rs1006737 A-allele carriers showed significant sleep architecture changes.",
-      "tags": ["CACNA1C", "5G", "genotype", "sleep", "double_blind", "ETH", "convergence"],
+      "tags": [
+        "CACNA1C",
+        "5G",
+        "genotype",
+        "sleep",
+        "double_blind",
+        "ETH",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 53,
       "verified": true
@@ -13499,11 +14156,22 @@
       "title": "Neonatal GABA is excitatory via NKCC1 dominance; hypoxia upregulates NKCC1",
       "pmcid": "PMC7847733",
       "category": "basic_science",
-      "pathway": ["VGCC", "CaMKII"],
+      "pathway": [
+        "VGCC",
+        "CaMKII"
+      ],
       "level": "E",
       "type": "review",
       "finding": "Neonatal GABA is excitatory due to NKCC1 chloride transporter dominance over KCC2. This produces the lowest seizure threshold of any developmental stage. Hypoxia further upregulates NKCC1, creating positive feedback: seizure → hypoxia → more NKCC1 → lower threshold.",
-      "tags": ["NKCC1", "KCC2", "GABA", "neonatal", "seizure", "hypoxia", "convergence"],
+      "tags": [
+        "NKCC1",
+        "KCC2",
+        "GABA",
+        "neonatal",
+        "seizure",
+        "hypoxia",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 54,
       "verified": true
@@ -13513,11 +14181,21 @@
       "year": 2024,
       "title": "Baby monitor EMF measurements: DECT 2.5-3.5 V/m at crib distance, 300-400% above nighttime limits",
       "category": "measurement",
-      "pathway": ["VGCC"],
+      "pathway": [
+        "VGCC"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "DECT baby monitors produce 2.5-3.5 V/m at crib distance (0.5 m). WiFi cameras produce 1.8 V/m at 30 cm. 78% of monitors exceed 1.0 V/m. Exposure levels 300-400% above SBM recommended nighttime limits. DECT transmits continuously even in silence.",
-      "tags": ["baby_monitor", "DECT", "WiFi", "EMF", "measurement", "infant", "convergence"],
+      "tags": [
+        "baby_monitor",
+        "DECT",
+        "WiFi",
+        "EMF",
+        "measurement",
+        "infant",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 55,
       "verified": true
@@ -13528,14 +14206,351 @@
       "title": "Night breast milk contains melatonin; breastfed infants establish circadian rhythm at 6 weeks vs 12 weeks",
       "pmcid": "PMC11124029",
       "category": "clinical",
-      "pathway": ["CRY_circadian"],
+      "pathway": [
+        "CRY_circadian"
+      ],
       "level": "E",
       "type": "journal",
       "finding": "Night breast milk contains melatonin peaking after midnight. Breastfed infants establish circadian rhythm at 6 weeks versus 12 weeks for mixed-fed infants. Better nighttime sleep efficiency, longer and less fragmented sleep, fewer colic episodes.",
-      "tags": ["melatonin", "breast_milk", "circadian", "infant", "chrononutrition", "convergence"],
+      "tags": [
+        "melatonin",
+        "breast_milk",
+        "circadian",
+        "infant",
+        "chrononutrition",
+        "convergence"
+      ],
       "pdf_section": "convergence",
       "pdf_number": 56,
       "verified": true
+    },
+    {
+      "id": "bbb_emf_2026",
+      "pdf_number": 967,
+      "finding": "RF-EMF (27.12 MHz, 30min) increases BBB permeability via eNOS upregulation and occludin downregulation",
+      "pathway": [
+        "emf",
+        "bbb",
+        "enos",
+        "occludin"
+      ],
+      "tags": [
+        "bbb",
+        "experimental",
+        "rf"
+      ],
+      "source": "PMC12829706 2026"
+    },
+    {
+      "id": "melatonin_bbb_protection",
+      "pdf_number": 968,
+      "finding": "Melatonin protects blood-brain barrier tight junction proteins (occludin, claudin-5, ZO-1) against oxidative damage",
+      "pathway": [
+        "melatonin",
+        "bbb",
+        "tight_junction"
+      ],
+      "tags": [
+        "melatonin",
+        "bbb",
+        "neuroprotection"
+      ],
+      "source": "PMC6932927"
+    },
+    {
+      "id": "li2026_bbb_offspring",
+      "pdf_number": 969,
+      "finding": "Maternal melatonin supplementation protects offspring BBB integrity via tight junction protein preservation",
+      "pathway": [
+        "melatonin",
+        "bbb",
+        "prenatal",
+        "offspring"
+      ],
+      "tags": [
+        "melatonin",
+        "bbb",
+        "prenatal"
+      ],
+      "source": "Li 2026 Brain Behav 10.1002/brb3.71321"
+    },
+    {
+      "id": "bat_5g_prdm16",
+      "pdf_number": 970,
+      "finding": "5G (3.5 GHz) exposure reduces PRDM16 and C/EBPβ mRNA in brown adipose tissue, impairing BAT thermogenesis",
+      "pathway": [
+        "emf",
+        "bat",
+        "prdm16",
+        "thermogenesis"
+      ],
+      "tags": [
+        "5g",
+        "obesity",
+        "bat",
+        "experimental"
+      ],
+      "source": "PMC11942954 2025"
+    },
+    {
+      "id": "klimek2023_hpa",
+      "pdf_number": 971,
+      "finding": "ELF-EMF sets a new setpoint for the HPA axis; 7 mT exposure produces sensitization rather than adaptation",
+      "pathway": [
+        "emf",
+        "hpa",
+        "cortisol",
+        "sensitization"
+      ],
+      "tags": [
+        "elf",
+        "hpa",
+        "neuroendocrine"
+      ],
+      "source": "Neuroendocrinology 2023 10.1159/000527557"
+    },
+    {
+      "id": "rf_hpa_stress_2026",
+      "pdf_number": 972,
+      "finding": "RF-EMF (0.8-2.65 GHz, 21 days) increases anxiety behavior and corticosterone levels in rodents",
+      "pathway": [
+        "emf",
+        "hpa",
+        "cortisol",
+        "anxiety"
+      ],
+      "tags": [
+        "rf",
+        "hpa",
+        "behavioral",
+        "experimental"
+      ],
+      "source": "Frontiers Mol Neurosci 2026"
+    },
+    {
+      "id": "betacell_efield",
+      "pdf_number": 973,
+      "finding": "Electric field induces insulin secretion from β-cells WITHOUT glucose stimulation via Ca²⁺ channel activation",
+      "pathway": [
+        "emf",
+        "beta_cell",
+        "insulin",
+        "calcium"
+      ],
+      "tags": [
+        "emf",
+        "diabetes",
+        "insulin",
+        "experimental"
+      ],
+      "source": "PubMed 32323041"
+    },
+    {
+      "id": "cavg4_camkii_mafa",
+      "pdf_number": 974,
+      "finding": "CaVγ4→CaMKII→MafA pathway controls β-cell maturity; CaMKII dysregulation causes loss of β-cell identity",
+      "pathway": [
+        "calcium",
+        "camkii",
+        "mafa",
+        "beta_cell"
+      ],
+      "tags": [
+        "diabetes",
+        "camkii",
+        "beta_cell"
+      ],
+      "source": "PMC9030882"
+    },
+    {
+      "id": "insulin_emf_dynamics",
+      "pdf_number": 975,
+      "finding": "ELF-EMF alters glucose-stimulated insulin secretion dynamics and increases intracellular Ca²⁺ in β-cells",
+      "pathway": [
+        "emf",
+        "insulin",
+        "calcium",
+        "beta_cell"
+      ],
+      "tags": [
+        "elf",
+        "diabetes",
+        "insulin",
+        "experimental"
+      ],
+      "source": "Nat Sci Rep 2021 10.1038/s41598-021-91228-w"
+    },
+    {
+      "id": "kim2019_hypothalamus",
+      "pdf_number": 976,
+      "finding": "835 MHz (12 weeks) reduces synaptic vesicle number, size, and docking, plus synapsin I/II and synaptotagmin 1 in hypothalamus",
+      "pathway": [
+        "emf",
+        "hypothalamus",
+        "synapse",
+        "synaptotagmin"
+      ],
+      "tags": [
+        "rf",
+        "hypothalamus",
+        "synapse",
+        "experimental"
+      ],
+      "source": "Kim et al 2019 PMID:31411574"
+    },
+    {
+      "id": "5g_hpa_axis",
+      "pdf_number": 977,
+      "finding": "5G-simulated exposure (4 months) alters HPA axis function and stress hormone regulation",
+      "pathway": [
+        "emf",
+        "hpa",
+        "5g",
+        "stress"
+      ],
+      "tags": [
+        "5g",
+        "hpa",
+        "neuroendocrine"
+      ],
+      "source": "Springer 2023 10.1007/s10517-023-05689-2"
+    },
+    {
+      "id": "sapolsky2009_cortisol",
+      "pdf_number": 978,
+      "finding": "Chronic cortisol elevation causes hippocampal dendritic retraction, neurogenesis cessation, and volume loss; PFC weakens while amygdala grows",
+      "pathway": [
+        "cortisol",
+        "hippocampus",
+        "neurodegeneration"
+      ],
+      "tags": [
+        "cortisol",
+        "hippocampus",
+        "neurodegeneration"
+      ],
+      "source": "ScienceDirect 2009 10.1016/S0967586809001088"
+    },
+    {
+      "id": "cortisol_ad_2026",
+      "pdf_number": 979,
+      "finding": "Chronic stress-induced cortisol elevation accelerates Alzheimer's disease progression via hippocampal atrophy and HPA feedback failure",
+      "pathway": [
+        "cortisol",
+        "hippocampus",
+        "alzheimer",
+        "hpa"
+      ],
+      "tags": [
+        "cortisol",
+        "alzheimer",
+        "neurodegeneration"
+      ],
+      "source": "Frontiers Aging Neurosci 2026"
+    },
+    {
+      "id": "kcc2_environmental_2020",
+      "pdf_number": 980,
+      "finding": "Environmental disruptions (stress, inflammation, IL-1β) delay KCC2 upregulation, prolonging excitatory GABA in development; linked to ASD, schizophrenia, epilepsy",
+      "pathway": [
+        "kcc2",
+        "gaba",
+        "development",
+        "inflammation"
+      ],
+      "tags": [
+        "kcc2",
+        "gaba",
+        "neurodevelopment"
+      ],
+      "source": "Transl Psychiatry 2020 10.1038/s41398-020-01027-6"
+    },
+    {
+      "id": "vpa_nox_kcc2",
+      "pdf_number": 981,
+      "finding": "Valproic acid model: NOX4↑ + ROS → KCC2↓, GABA remains excitatory longer; mechanism for ASD-like phenotype",
+      "pathway": [
+        "vpa",
+        "nox4",
+        "ros",
+        "kcc2",
+        "gaba"
+      ],
+      "tags": [
+        "asd",
+        "kcc2",
+        "oxidative_stress"
+      ],
+      "source": "PMC12162577 2025"
+    },
+    {
+      "id": "johansson2000_mast",
+      "pdf_number": 982,
+      "finding": "Skin biopsies from healthy volunteers show mast cell changes after EMF exposure from visual display terminals",
+      "pathway": [
+        "emf",
+        "mast_cell",
+        "skin",
+        "histamine"
+      ],
+      "tags": [
+        "emf",
+        "mast_cell",
+        "ehs",
+        "experimental"
+      ],
+      "source": "Gangi & Johansson 2000 Med Hypotheses 10.1016/S0306987799009234"
+    },
+    {
+      "id": "elf_serotonin_1995",
+      "pdf_number": 983,
+      "finding": "ELF-EMF (1000 mG, 1 month) elevates serotonin in hypothalamus of male rats",
+      "pathway": [
+        "emf",
+        "serotonin",
+        "hypothalamus"
+      ],
+      "tags": [
+        "elf",
+        "serotonin",
+        "hypothalamus",
+        "experimental"
+      ],
+      "source": "Physiol Behav 1995 10.1016/0031938495000906"
+    },
+    {
+      "id": "spinal_nsc_elf_2025",
+      "pdf_number": 984,
+      "finding": "ELF-EMF activates T-type calcium channels in spinal neural stem cells",
+      "pathway": [
+        "emf",
+        "t_type",
+        "calcium",
+        "stem_cell"
+      ],
+      "tags": [
+        "elf",
+        "t_type",
+        "stem_cell"
+      ],
+      "source": "PMID:40789910 2025"
+    },
+    {
+      "id": "mast_cell_cardiac",
+      "pdf_number": 985,
+      "finding": "Cardiac mast cells release histamine and cytokines that promote arrhythmias; EMF-induced mast cell degranulation in the heart creates arrhythmia risk",
+      "pathway": [
+        "mast_cell",
+        "heart",
+        "histamine",
+        "arrhythmia"
+      ],
+      "tags": [
+        "mast_cell",
+        "cardiac",
+        "arrhythmia"
+      ],
+      "source": "PMC6896164"
     }
   ]
 }

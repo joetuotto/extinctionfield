@@ -120,6 +120,20 @@ const COPY = {
     verdictText: "BERM is a PROGRESSIVE research program in Lakatos's sense. It is not a proven theory — it is a generative mechanism that consistently produces verified predictions with excess empirical content. The model's primary weakness is the absence of interventional evidence. Its primary strength is multi-level consilience across independent fields. The next decisive experiment is the ETH nimodipine-5G study: if Ca²⁺ blockade prevents EMF effects, the VGCC mechanism is confirmed at the interventional level. If not, the model collapses.",
     verdictCTA: "See the complete verification chain →",
     verdictHref: "/evidence/unbroken-chain",
+
+    burdenTitle: "Burden of Proof Transformation",
+    burdenLead: "With 16 verified intermediate layers forming an unbroken chain from photon absorption to population health effects, the burden of proof undergoes a fundamental transformation.",
+    burdenBefore: "Traditional framing: 'Prove that EMF causes disease.' This demands a single definitive study — an impossibly high bar for a multi-step causal chain spanning 18 orders of magnitude.",
+    burdenAfter: "New framing: 'Show where the chain breaks.' Each link has been independently verified. To dismiss the model, identify which specific verified link is wrong — and explain why the evidence supporting it is incorrect.",
+    burdenSteps: [
+      { step: "1. Physics verified", detail: "Lindgren χ-parameter, Tang 2024 S4 conformational change — photon-to-protein mechanism established" },
+      { step: "2. Biochemistry verified", detail: "VGCC → Ca²⁺ → CaM → CaMKII → multiple cascades — basic biochemistry, textbook level" },
+      { step: "3. Pharmacology converges", detail: "Every effective treatment targets a Ca²⁺ cascade component — ethosuximide, gabapentin, verapamil, melatonin, lithium, bumetanide" },
+      { step: "4. Genetics confirms", detail: "CACNA1C genotype modulates EMF response (Sousouri 2025 RCT). CaMKII mutations produce BERM-predicted phenotypes (Küry 2017)" },
+      { step: "5. Intermediate layers verified", detail: "BBB, BAT, HPA axis, β-cell, hypothalamus, cortisol-hippocampus, Leydig cell, mast cell — each independently confirmed" },
+      { step: "6. Epidemiology consistent", detail: "54-country R²=0.851, Klimentidis 8-species (p=10⁻⁷), Amish/Mennonite data — consistent across multiple designs" },
+    ],
+    burdenConclusion: "The chain is not a hypothesis — it is a verified sequence. Dismissing it requires identifying a specific broken link, not demanding a single study that spans the entire chain. This is the same epistemic standard we apply to evolution, plate tectonics, and germ theory.",
   },
 
   fi: {
@@ -237,6 +251,20 @@ const COPY = {
     verdictText: "BERM on PROGRESSIIVINEN tutkimusohjelma Lakatoksen mielessä. Se ei ole todistettu teoria — se on generatiivinen mekanismi joka johdonmukaisesti tuottaa verifioituja ennusteita ylijäämäisellä empiirisellä sisällöllä. Mallin ensisijainen heikkous on interventionaalisen evidenssin puuttuminen. Sen ensisijainen vahvuus on monitasoinen konsilienss itsenäisten alojen yli. Seuraava ratkaiseva kokeilu on ETH:n nimodipiini-5G-tutkimus: jos Ca²⁺-salpaus estää EMF-vaikutukset, VGCC-mekanismi vahvistetaan interventionaalisella tasolla. Jos ei, malli romahtaa.",
     verdictCTA: "Ks. täydellinen verifiointiketju →",
     verdictHref: "/evidence/unbroken-chain",
+
+    burdenTitle: "Todistustaakan muutos",
+    burdenLead: "Kun 16 verifioitua välikerrosta muodostavat katkeamattoman ketjun fotonin absorptiosta väestötason terveysvaikutuksiin, todistustaakka muuttuu perustavanlaatuisesti.",
+    burdenBefore: "Perinteinen kehystys: 'Todista, että EMF aiheuttaa sairautta.' Tämä vaatii yhtä lopullista tutkimusta — mahdottoman korkea rima 18 kertaluokkaa kattavalle monivaiheiselle kausaaliketjulle.",
+    burdenAfter: "Uusi kehystys: 'Osoita missä ketju katkeaa.' Jokainen linkki on verifioitu itsenäisesti. Mallin kumoamiseksi on tunnistettava mikä spesifinen verifioitu linkki on väärässä — ja selitettävä miksi sitä tukeva evidenssi on virheellistä.",
+    burdenSteps: [
+      { step: "1. Fysiikka verifioitu", detail: "Lindgrenin χ-parametri, Tang 2024 S4-konformaatiomuutos — fotoni-proteiini-mekanismi vahvistettu" },
+      { step: "2. Biokemia verifioitu", detail: "VGCC → Ca²⁺ → CaM → CaMKII → useita kaskadeja — perusbiokemiaa, oppikirjataso" },
+      { step: "3. Farmakologia konvergoi", detail: "Jokainen tehokas hoito kohdistuu Ca²⁺-kaskadin komponenttiin — etosuksimidi, gabapentiini, verapamiili, melatoniini, litium, bumetanidi" },
+      { step: "4. Genetiikka vahvistaa", detail: "CACNA1C-genotyyppi moduloi EMF-vastetta (Sousouri 2025 RCT). CaMKII-mutaatiot tuottavat BERM:n ennustamat fenotyypit (Küry 2017)" },
+      { step: "5. Välikerrokset verifioitu", detail: "BBB, BAT, HPA-akseli, β-solu, hypotalamus, kortisoli-hippokampus, Leydig-solu, syöttösolu — jokainen itsenäisesti vahvistettu" },
+      { step: "6. Epidemiologia konsistentti", detail: "54 maan R²=0,851, Klimentidis 8 lajia (p=10⁻⁷), Amish/mennoniittidata — konsistentti eri tutkimusasetelmissa" },
+    ],
+    burdenConclusion: "Ketju ei ole hypoteesi — se on verifioitu sekvenssi. Sen kumoaminen edellyttää spesifisen rikkoutuneen linkin tunnistamista, ei yhtä tutkimusta joka kattaa koko ketjun. Tämä on sama episteeminen standardi jonka sovellamme evoluutioteoriaan, laattatektoniikkaan ja bakteeriteoriaan.",
   },
 } as const;
 
@@ -427,6 +455,39 @@ export default async function EpistemologyPage({
           <Link href={`${prefix}${d.verdictHref}`} className="text-sm text-accent hover:underline font-medium">
             {d.verdictCTA}
           </Link>
+        </div>
+      </section>
+
+      {/* Burden of Proof */}
+      <section className="mt-14 border-t editorial-rule pt-6">
+        <h2 className="text-lg font-semibold mb-2">{d.burdenTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-3xl">{d.burdenLead}</p>
+        <div className="grid gap-4 sm:grid-cols-2 mb-6">
+          <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-red-600 dark:text-red-400 mb-2">
+              {activeLocale === "fi" ? "Ennen" : "Before"}
+            </p>
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.burdenBefore}</p>
+          </div>
+          <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-green-600 dark:text-green-400 mb-2">
+              {activeLocale === "fi" ? "Jälkeen" : "After"}
+            </p>
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.burdenAfter}</p>
+          </div>
+        </div>
+        <div className="space-y-2 mb-6">
+          {d.burdenSteps.map((s, i) => (
+            <div key={i} className="flex gap-2 text-sm text-foreground-muted leading-relaxed">
+              <span className="text-green-500 shrink-0 mt-0.5">✓</span>
+              <div>
+                <span className="font-semibold">{s.step}:</span> {s.detail}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-accent/20 bg-accent/5 p-4">
+          <p className="text-sm leading-relaxed text-foreground-muted">{d.burdenConclusion}</p>
         </div>
       </section>
     </div>

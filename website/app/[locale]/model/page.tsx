@@ -259,16 +259,46 @@ const t = {
     neonatalQSpectrum: "The neonatal Q → ∞ condition is one end of a continuous spectrum. The same Q-factor mechanism — with varying damping coefficient γ — unifies SIDS, epilepsy, SUDEP, migraine, and cluster headache. Spreading depolarization (CSD) is the common terminal pathway; the Q-factor determines whether CSD is triggered, how far it propagates, and whether it reaches the brainstem.",
     neonatalQSpectrumLink: "See full neurological spectrum analysis →",
 
-    feedbackLoopsTitle: "Four Positive Feedback Loops",
-    feedbackLoopsSub: "Self-amplifying cycles within the Ca²⁺ cascade — initial EMF effects progressively worsen without increasing exposure",
-    feedbackLoopsDesc: "Convergence verification revealed four positive feedback loops within the BERM cascade. Each means the system degrades itself: a small initial perturbation grows over time without any increase in external exposure.",
+    feedbackLoopsTitle: "Ten Positive Feedback Loops",
+    feedbackLoopsSub: "Self-amplifying cycles forming a network — any entry point activates multiple degradation spirals simultaneously",
+    feedbackLoopsDesc: "Convergence verification revealed ten positive feedback loops within the BERM cascade. The loops form a network: any entry point activates multiple degradation spirals simultaneously. Each means the system degrades itself without any increase in external exposure.",
     feedbackLoops: [
-      { id: "LOOP-1", name: "Monitor feedback resonance", steps: "Baby's sound → microphone → RF modulation → VGCC → Ca²⁺ → stronger oscillation → louder sound → more RF → cascade amplification", status: "Mechanistically coherent, untested as complete loop", color: "amber" },
-      { id: "LOOP-2", name: "Serotonin lock-open", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → thalamocortical gate OPEN → EMF penetrates deeper → more CaMKII disruption → more 5-HT↓ → ...", status: "Each link verified independently", color: "green" },
-      { id: "LOOP-3", name: "Hypoxia-NKCC1", steps: "CSD → local hypoxia → NKCC1↑ → GABA more excitatory → γ↓ → Q↑ → CSD propagates more easily → more hypoxia → ...", status: "NKCC1↑ in hypoxia verified", color: "green" },
-      { id: "LOOP-4", name: "Walker sleep chain", steps: "EMF → melatonin↓ → sleep↓ → GABA tonic inhibition↓ → γ↓ → Q↑ → EMF affects brain MORE → more melatonin↓ → ...", status: "Each link verified independently", color: "green" },
+      { id: "S1", name: "Monitor feedback resonance", steps: "Baby's sound → microphone → RF modulation → VGCC → Ca²⁺ → stronger oscillation → louder sound → more RF → cascade amplification", status: "Mechanistically coherent, untested as complete loop", color: "amber" },
+      { id: "S2", name: "Serotonin lock-open", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → thalamocortical gate OPEN → EMF penetrates deeper → more CaMKII disruption → more 5-HT↓ → ...", status: "Each link verified independently", color: "green" },
+      { id: "S3", name: "Hypoxia-NKCC1", steps: "CSD → local hypoxia → NKCC1↑ → GABA more excitatory → γ↓ → Q↑ → CSD propagates more easily → more hypoxia → ...", status: "NKCC1↑ in hypoxia verified", color: "green" },
+      { id: "S4", name: "Walker sleep chain", steps: "EMF → melatonin↓ → sleep↓ → GABA tonic inhibition↓ → γ↓ → Q↑ → EMF affects brain MORE → more melatonin↓ → ...", status: "Each link verified independently", color: "green" },
+      { id: "S5", name: "PGC → BBB spiral", steps: "EMF → PGC → melatonin↓ → BBB tight junctions↓ → heavy metals enter brain MORE easily → more PGC → less melatonin → ...", status: "Each link verified independently", color: "green" },
+      { id: "S6", name: "Cortisol-hippocampus vortex", steps: "EMF → HPA → cortisol↑ → hippocampal atrophy → HPA negative feedback LOST → no braking → cortisol↑↑ → more atrophy → ...", status: "Sapolsky mechanism verified", color: "green" },
+      { id: "S7", name: "BAT metabolic spiral", steps: "EMF → BAT PRDM16↓ → thermogenesis↓ → metabolic syndrome → inflammation → more VGCC sensitivity → more Ca²⁺ disruption → ...", status: "Mechanistically coherent, animal data", color: "amber" },
+      { id: "S8", name: "Testosterone neuroprotection loss", steps: "EMF → Leydig → StAR↓ → T↓ → neuroprotection↓ + synaptic plasticity↓ → more vulnerable to EMF → more Leydig damage → ...", status: "T↓ neuroprotection link verified", color: "green" },
+      { id: "S9", name: "IL-1β → KCC2 loop", steps: "EMF → mast cell → IL-1β → KCC2 maturation delayed → GABA stays excitatory longer → Q↑ → more neuronal damage → more IL-1β → ...", status: "KCC2 environmental regulation verified", color: "green" },
+      { id: "S10", name: "Hypothalamic multi-axis cascade", steps: "EMF → hypothalamic synaptic vesicles↓ → GnRH↓ + CRH dysreg. + TRH↓ → multi-hormone deficit → systemic stress → more HPA activation → ...", status: "Kim 2019 synaptic changes verified", color: "green" },
     ],
     feedbackLoopsLink: "See full convergence verification →",
+
+    hypoNexusTitle: "Hypothalamic Nexus (VK13)",
+    hypoNexusSub: "The hypothalamus as anatomical convergence point for seven hormone axes",
+    hypoNexusDesc: "Kim 2019 demonstrated that 835 MHz (12 weeks) reduces synaptic vesicle number, size, and docking in hypothalamus. Crucially, synaptotagmin 1 — the Ca²⁺ sensor for vesicle release — is also reduced. Since ALL hypothalamic hormone release depends on Ca²⁺-triggered vesicle fusion, synaptotagmin 1 loss means ALL axes are simultaneously impaired.",
+    hypoNexusAxes: [
+      { axis: "GnRH → LH/FSH → T↓", organ: "Gonads", consequence: "Testosterone decline, fertility loss" },
+      { axis: "CRH → ACTH → cortisol↑", organ: "Adrenals", consequence: "HPA sensitization, chronic stress" },
+      { axis: "TRH → TSH → T3/T4", organ: "Thyroid", consequence: "Subclinical hypothyroidism" },
+      { axis: "GHRH → GH → IGF-1", organ: "Liver/bone", consequence: "Growth and metabolic disruption" },
+      { axis: "Dopamine → prolactin", organ: "Pituitary", consequence: "Hyperprolactinemia" },
+      { axis: "Somatostatin → GH/TSH", organ: "Multiple", consequence: "Loss of inhibitory control" },
+      { axis: "Oxytocin / AVP", organ: "Multiple", consequence: "Social behavior, water balance" },
+    ],
+    hypoNexusKey: "VK13 is the anatomical explanation for why EMF produces SIMULTANEOUS multi-system effects that appear unrelated. It is not 25 separate diseases — it is one disrupted nexus with 7 output channels.",
+
+    tripleLockTitle: "Triple Lock Theory",
+    tripleLockSub: "Three simultaneous deficits that create a self-reinforcing trap: T↓ × F↑ × DA↓",
+    tripleLockDesc: "EMF simultaneously reduces testosterone (T↓ via Leydig/StAR), elevates cortisol (F↑ via HPA sensitization), and reduces dopamine (DA↓ via mesolimbic pathway). Each deficit reinforces the others, creating a synergistic trap.",
+    tripleLockComponents: [
+      { component: "T↓ (Testosterone)", mechanism: "EMF → Leydig → StAR↓ → steroidogenesis↓", consequence: "Neuroprotection loss, muscle loss, fertility decline, depression" },
+      { component: "F↑ (Cortisol)", mechanism: "EMF → HPA sensitization → cortisol baseline↑", consequence: "Hippocampal atrophy, immune suppression, metabolic syndrome" },
+      { component: "DA↓ (Dopamine)", mechanism: "EMF → CaMKII → DA synthesis disruption", consequence: "Anhedonia, motivation loss, addiction vulnerability" },
+    ],
+    tripleLockSynergy: "The triple lock is not three independent effects — it is a synergistic trap. T↓ × F↑ = accelerated neurodegeneration. F↑ × DA↓ = treatment-resistant depression. T↓ × DA↓ = motivational collapse. T↓ × F↑ × DA↓ = the complete modern phenotype.",
 
     genSuscTitle: "Genetic Susceptibility Map: The 15-Gene Calcium Profile",
     genSuscSub: "EMF sensitivity is not one gene — it is a polygenic profile across five functional tiers of the calcium cascade",
@@ -776,16 +806,46 @@ const t = {
     neonatalQSpectrum: "Neonataalin Q → ∞ -tila on jatkuvan spektrin toinen pää. Sama Q-tekijämekanismi — vaihtelevalla vaimennuskertoimella γ — yhdistää SIDS:n, epilepsian, SUDEP:n, migreenin ja klusteripäänsäryn. Spreading depolarization (CSD) on yhteinen terminaalireitti; Q-tekijä määrittää laukaistaanko CSD, kuinka pitkälle se leviää ja saavuttaako se aivorungon.",
     neonatalQSpectrumLink: "Ks. koko neurologisen spektrin analyysi →",
 
-    feedbackLoopsTitle: "Neljä positiivista takaisinkytkentäsilmukkaa",
-    feedbackLoopsSub: "Itseään vahvistavat syklit Ca²⁺-kaskadin sisällä — alkuperäiset EMF-vaikutukset pahentuvat asteittain ilman altistuksen kasvua",
-    feedbackLoopsDesc: "Konvergenssiverifiointi paljasti neljä positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Jokainen tarkoittaa, että järjestelmä rapautuu itse: pieni alkuvaiheen häiriö kasvaa ajan myötä ilman ulkoisen altistuksen kasvua.",
+    feedbackLoopsTitle: "Kymmenen positiivista takaisinkytkentäsilmukkaa",
+    feedbackLoopsSub: "Itseään vahvistavat syklit muodostavat verkoston — mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti",
+    feedbackLoopsDesc: "Konvergenssiverifiointi paljasti kymmenen positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti.",
     feedbackLoops: [
-      { id: "LOOP-1", name: "Monitorin palauteresonanssi", steps: "Vauvan ääni → mikrofoni → RF-modulaatio → VGCC → Ca²⁺ → voimakkaampi oskillaatio → kovempi ääni → lisää RF:ää → kaskadivahvistus", status: "Mekanistisesti koherentti, testaamaton kokonaisuutena", color: "amber" },
-      { id: "LOOP-2", name: "Serotoniin-lukitusavaus", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → talamokortikaalinen portti AUKI → EMF tunkeutuu syvemmälle → lisää CaMKII-häiriötä → lisää 5-HT↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
-      { id: "LOOP-3", name: "Hypoksia-NKCC1", steps: "CSD → paikallinen hypoksia → NKCC1↑ → GABA eksitatorisempi → γ↓ → Q↑ → CSD leviää helpommin → lisää hypoksiaa → ...", status: "NKCC1↑ hypoksiassa verifioitu", color: "green" },
-      { id: "LOOP-4", name: "Walkerin uniketju", steps: "EMF → melatoniini↓ → uni↓ → GABA-tooninen inhibitio↓ → γ↓ → Q↑ → EMF vaikuttaa aivoihin enemmän → lisää melatoniini↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
+      { id: "S1", name: "Monitorin palauteresonanssi", steps: "Vauvan ääni → mikrofoni → RF-modulaatio → VGCC → Ca²⁺ → voimakkaampi oskillaatio → kovempi ääni → lisää RF:ää → kaskadivahvistus", status: "Mekanistisesti koherentti, testaamaton kokonaisuutena", color: "amber" },
+      { id: "S2", name: "Serotoniin-lukitusavaus", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → talamokortikaalinen portti AUKI → EMF tunkeutuu syvemmälle → lisää CaMKII-häiriötä → lisää 5-HT↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
+      { id: "S3", name: "Hypoksia-NKCC1", steps: "CSD → paikallinen hypoksia → NKCC1↑ → GABA eksitatorisempi → γ↓ → Q↑ → CSD leviää helpommin → lisää hypoksiaa → ...", status: "NKCC1↑ hypoksiassa verifioitu", color: "green" },
+      { id: "S4", name: "Walkerin uniketju", steps: "EMF → melatoniini↓ → uni↓ → GABA-tooninen inhibitio↓ → γ↓ → Q↑ → EMF vaikuttaa aivoihin enemmän → lisää melatoniini↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
+      { id: "S5", name: "PGC → BBB -spiraali", steps: "EMF → PGC → melatoniini↓ → BBB tiiviin liitoksen proteiinit↓ → raskasmetallit pääsevät aivoihin helpommin → lisää PGC:tä → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
+      { id: "S6", name: "Kortisoli-hippokampus-pyörre", steps: "EMF → HPA → kortisoli↑ → hippokampuksen atrofia → HPA:n negatiivinen palaute MENETETTY → ei jarrua → kortisoli↑↑ → ...", status: "Sapolskyn mekanismi verifioitu", color: "green" },
+      { id: "S7", name: "BAT metabolinen spiraali", steps: "EMF → BAT PRDM16↓ → termogeneesi↓ → metabolinen oireyhtymä → tulehdus → VGCC-herkkyys↑ → lisää Ca²⁺-häiriötä → ...", status: "Mekanistisesti koherentti, eläindata", color: "amber" },
+      { id: "S8", name: "Testosteronin neuroprotektio-menetys", steps: "EMF → Leydig → StAR↓ → T↓ → neuroprotektio↓ + synaptinen plastisuus↓ → haavoittuvampi EMF:lle → lisää Leydig-vauriota → ...", status: "T↓ neuroprotektiolinkki verifioitu", color: "green" },
+      { id: "S9", name: "IL-1β → KCC2 -silmukka", steps: "EMF → syöttösolu → IL-1β → KCC2-kypsyminen viivästyy → GABA eksitatorinen pidempään → Q↑ → lisää neuronivaurioita → lisää IL-1β:tä → ...", status: "KCC2:n ympäristösäätely verifioitu", color: "green" },
+      { id: "S10", name: "Hypotalamuksen moniakselikaskadi", steps: "EMF → hypotalamuksen synapttiset vesikkelit↓ → GnRH↓ + CRH-häiriö + TRH↓ → monihormonipuutos → systeeminen stressi → lisää HPA-aktivaatiota → ...", status: "Kimin 2019 synapttiset muutokset verifioitu", color: "green" },
     ],
     feedbackLoopsLink: "Ks. koko konvergenssiverifiointi →",
+
+    hypoNexusTitle: "Hypotalamuksen keskuspiste (VK13)",
+    hypoNexusSub: "Hypotalamus seitsemän hormoniakselin anatomisena konvergenssipisteenä",
+    hypoNexusDesc: "Kim 2019 osoitti, että 835 MHz (12 viikkoa) vähentää synaptisten vesikkelien lukumäärää, kokoa ja telakoitumista hypotalamuksessa. Kriittisesti myös synaptotagmiini 1 — Ca²⁺-sensori vesikkelien vapautumiselle — vähenee. Koska KAIKKIEN hypotalamuksen hormonien vapautuminen riippuu Ca²⁺-laukaisemasta vesikkelien fuusiosta, synaptotagmiini 1:n menetys tarkoittaa KAIKKIEN akselien samanaikaista heikentymistä.",
+    hypoNexusAxes: [
+      { axis: "GnRH → LH/FSH → T↓", organ: "Sukurauhaset", consequence: "Testosteronin lasku, hedelmällisyyden menetys" },
+      { axis: "CRH → ACTH → kortisoli↑", organ: "Lisämunuaiset", consequence: "HPA-sensitisaatio, krooninen stressi" },
+      { axis: "TRH → TSH → T3/T4", organ: "Kilpirauhanen", consequence: "Subkliininen hypotyreoosi" },
+      { axis: "GHRH → GH → IGF-1", organ: "Maksa/luu", consequence: "Kasvu- ja metabolinen häiriö" },
+      { axis: "Dopamiini → prolaktiini", organ: "Aivolisäke", consequence: "Hyperprolaktinemia" },
+      { axis: "Somatostatiini → GH/TSH", organ: "Useita", consequence: "Inhibitorisen kontrollin menetys" },
+      { axis: "Oksitosiini / AVP", organ: "Useita", consequence: "Sosiaalinen käyttäytyminen, vesitasapaino" },
+    ],
+    hypoNexusKey: "VK13 on anatominen selitys sille, miksi EMF tuottaa SAMANAIKAISIA monijärjestelmävaikutuksia jotka vaikuttavat toisiinsa liittymättömiltä. Kyseessä ei ole 25 erillistä sairautta — vaan yksi häiriintynyt keskuspiste jolla on 7 ulostuloa.",
+
+    tripleLockTitle: "Kolmoislukkoteoria",
+    tripleLockSub: "Kolme samanaikaista puutosta jotka luovat itseään vahvistavan ansarakenteen: T↓ × F↑ × DA↓",
+    tripleLockDesc: "EMF vähentää samanaikaisesti testosteronia (T↓ Leydig/StAR kautta), kohottaa kortisolia (F↑ HPA-sensitisaation kautta) ja vähentää dopamiinia (DA↓ mesolimbisen reitin kautta). Jokainen puutos vahvistaa toisia, luoden synergistisen ansarakenteen.",
+    tripleLockComponents: [
+      { component: "T↓ (Testosteroni)", mechanism: "EMF → Leydig → StAR↓ → steroidogeneesi↓", consequence: "Neuroprotektion menetys, lihasmassan lasku, hedelmällisyyden lasku, masennus" },
+      { component: "F↑ (Kortisoli)", mechanism: "EMF → HPA-sensitisaatio → kortisolitaso↑", consequence: "Hippokampuksen atrofia, immuunisuppressio, metabolinen oireyhtymä" },
+      { component: "DA↓ (Dopamiini)", mechanism: "EMF → CaMKII → DA-synteesihäiriö", consequence: "Anhedonia, motivaation menetys, addiktion haavoittuvuus" },
+    ],
+    tripleLockSynergy: "Kolmoislukkoteoria ei ole kolme itsenäistä vaikutusta — vaan synergistinen ansa. T↓ × F↑ = kiihtynyt neurodegeneraatio. F↑ × DA↓ = hoitoresistentti masennus. T↓ × DA↓ = motivaation romahdus. T↓ × F↑ × DA↓ = täydellinen moderni fenotyyppi.",
 
     genSuscTitle: "Geneettinen herkkyyskartta: 15 geenin kalsiumprofiili",
     genSuscSub: "EMF-herkkyys ei ole yksi geeni — se on polygeeninen profiili kalsiumkaskadin viidellä funktionaalisella tasolla",
@@ -2257,6 +2317,55 @@ export default async function ModelPage({
             <Link href={`${prefix}/evidence/unbroken-chain`} className="text-sm text-accent hover:underline">
               {d.feedbackLoopsLink}
             </Link>
+          </CollapsibleSection>
+
+          {/* Hypothalamic Nexus */}
+          <CollapsibleSection id="hypothalamic-nexus" title={d.hypoNexusTitle} subtitle={d.hypoNexusSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.hypoNexusDesc}
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-card-border">
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Akseli" : "Axis"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Kohde-elin" : "Target organ"}</th>
+                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Seuraus" : "Consequence"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.hypoNexusAxes.map((a: { axis: string; organ: string; consequence: string }) => (
+                    <tr key={a.axis} className="border-b border-card-border/50">
+                      <td className="p-2 font-mono text-accent text-xs">{a.axis}</td>
+                      <td className="p-2 text-foreground-muted">{a.organ}</td>
+                      <td className="p-2 text-foreground-muted">{a.consequence}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="rounded-lg border border-accent/20 bg-accent/5 p-4">
+              <p className="text-sm leading-relaxed text-foreground-muted">{d.hypoNexusKey}</p>
+            </div>
+          </CollapsibleSection>
+
+          {/* Triple Lock Theory */}
+          <CollapsibleSection id="triple-lock" title={d.tripleLockTitle} subtitle={d.tripleLockSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.tripleLockDesc}
+            </p>
+            <div className="grid gap-3 sm:grid-cols-3 mb-4">
+              {d.tripleLockComponents.map((c: { component: string; mechanism: string; consequence: string }) => (
+                <div key={c.component} className="rounded-xl border border-red-500/20 bg-red-500/5 p-4">
+                  <h4 className="font-semibold text-sm mb-2">{c.component}</h4>
+                  <p className="text-xs text-foreground-muted leading-relaxed mb-1 font-mono">{c.mechanism}</p>
+                  <p className="text-xs text-foreground-muted leading-relaxed">{c.consequence}</p>
+                </div>
+              ))}
+            </div>
+            <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-4">
+              <p className="text-sm leading-relaxed text-foreground-muted">{d.tripleLockSynergy}</p>
+            </div>
           </CollapsibleSection>
 
           {/* Genetic Susceptibility Map */}

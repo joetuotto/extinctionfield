@@ -343,6 +343,12 @@ const SUB_PAGES = [
     fi: { title: "Raskasmetalli × EMF -synergismi", desc: "Cd²⁺ permeoi Cav3.1:n, Pb²⁺ matkii Ca²⁺:ia CaM:ssa, MeHg kasvattaa T-tyypin virtoja. Pineaalirauhasen kalsifikaatio (PGC) konvergenttina mekanismina. Viisi metallia, yksi VGCC-sisäänreitti." },
   },
   {
+    slug: "klimentidis-explained",
+    icon: FlaskConical,
+    en: { title: "Klimentidis Paradox", desc: "Three Ca²⁺ mechanisms explaining cross-species obesity" },
+    fi: { title: "Klimentidiksen paradoksi", desc: "Kolme Ca²⁺-mekanismia selittämässä lajienvälisen lihavuuden" },
+  },
+  {
     slug: "lighting",
     icon: Lightbulb,
     en: { title: "IF Channel: Lighting & Display Transition", desc: "LED switch-mode power supplies, spermatogenesis connection, and the VDT precedent. The overlooked intermediate-frequency channel." },
