@@ -1,34 +1,22 @@
-import { citationHref } from "@/lib/citationLinks";
+import { StudyCitation } from "@/components/StudyCitation";
 
 /**
  * Renders an inline study citation as a link to its source when one is known.
  *
- * Sources are resolved from the reference registries via `lib/citationLinks`.
- * Citations with no known source render as plain text — the site never emits a
- * link it cannot resolve.
+ * Compatibility name for the migrated page tables. Resolution is exclusively
+ * ID-based; visible translated text and year are never used as lookup keys.
  */
 export function CitationLink({
   citation,
-  year,
+  referenceId,
+  locale = "en",
   className,
 }: {
   citation: string;
   year?: number | string;
+  referenceId: string;
+  locale?: string;
   className?: string;
 }) {
-  const href = citationHref(citation, year);
-
-  if (!href) return <>{citation}</>;
-
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={className ?? "hover:underline decoration-dotted underline-offset-2"}
-    >
-      {citation}
-      <span aria-hidden="true"> ↗</span>
-    </a>
-  );
+  return <StudyCitation referenceId={referenceId} locale={locale} label={citation} className={className} />;
 }

@@ -9,8 +9,57 @@ import {
   getLevelTitle,
 } from "@/lib/causalChainData";
 import { DetailPanel } from "./DetailPanel";
+import { pickCopy } from "@/lib/i18n";
 
 type DiagramLocale = "en" | "fi";
+
+const DIAGRAM_COPY = {
+  en: {
+    ariaLabel: "BERM causal chain diagram",
+    clickHint: "→ click for details",
+    legendE: "Empirically established",
+    legendMC: "Mechanism + association",
+    legendM: "Mathematical consequence",
+    legendC: "Candidate",
+    legendL: "Premise (not validated)",
+  },
+  fi: {
+    ariaLabel: "BERM-kausaaliketjukaavio",
+    clickHint: "→ klikkaa tiedot",
+    legendE: "Empiirisesti todennettu",
+    legendMC: "Mekanismi + assosiaatio",
+    legendM: "Matemaattinen seuraus",
+    legendC: "Kandidaatti",
+    legendL: "Premissi (ei validoitu)",
+  },
+  ja: {
+    ariaLabel: "BERM因果連鎖図",
+    clickHint: "→ クリックで詳細",
+    legendE: "経験的に確立",
+    legendMC: "メカニズム + 関連性",
+    legendM: "数学的帰結",
+    legendC: "候補",
+    legendL: "前提(未検証)",
+  },
+  fr: {
+    ariaLabel: "Diagramme de chaine causale BERM",
+    clickHint: "→ cliquer pour details",
+    legendE: "Empiriquement etabli",
+    legendMC: "Mecanisme + association",
+    legendM: "Consequence mathematique",
+    legendC: "Candidat",
+    legendL: "Premisse (non validee)",
+  },
+  ko: {
+    ariaLabel: "BERM 인과 사슬 다이어그램",
+    clickHint: "→ 클릭하여 상세 보기",
+    legendE: "경험적으로 확립됨",
+    legendMC: "메커니즘 + 연관성",
+    legendM: "수학적 귀결",
+    legendC: "후보",
+    legendL: "전제 (미검증)",
+  },
+} as const;
 
 const NODE_H = 72;
 const NODE_RX = 12;
@@ -33,6 +82,50 @@ const EPISTEMIC_LABELS: Record<string, string> = {
   "L*": "L*",
   L: "L",
 };
+
+function wrapSvgLabel(value: string, maxChars: number, maxLines = 2): string[] {
+  const words = value
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .flatMap((word) => {
+      if (word.length <= maxChars) return [word];
+
+      const hyphen = word.indexOf("-");
+      if (hyphen > 0) {
+        const first = word.slice(0, hyphen + 1);
+        const second = word.slice(hyphen + 1);
+        if (first.length <= maxChars && second.length <= maxChars) {
+          return [first, second];
+        }
+      }
+
+      return [`${word.slice(0, Math.max(1, maxChars - 1))}\u2026`];
+    });
+  const lines: string[] = [];
+  let current = "";
+
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word;
+    if (candidate.length <= maxChars || !current) {
+      current = candidate;
+      continue;
+    }
+    lines.push(current);
+    current = word;
+  }
+  if (current) lines.push(current);
+
+  if (lines.length <= maxLines) return lines;
+  const visible = lines.slice(0, maxLines);
+  const remainder = lines.slice(maxLines - 1).join(" ");
+  visible[maxLines - 1] = `${remainder.slice(0, Math.max(1, maxChars - 1)).trimEnd()}…`;
+  return visible;
+}
+
+function truncateSvgLabel(value: string, maxChars: number): string {
+  return value.length <= maxChars ? value : `${value.slice(0, Math.max(1, maxChars - 1)).trimEnd()}…`;
+}
 
 interface LayoutNode extends ChainNode {
   x: number;
@@ -148,6 +241,7 @@ function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
 export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }) {
   const l: DiagramLocale = locale === "fi" ? "fi" : "en";
   const fi = locale === "fi";
+  const dc = pickCopy(DIAGRAM_COPY, locale);
   const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -189,14 +283,23 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
     setSelectedNode(node);
   }, []);
 
+  const legendItems: [EpistemicLevel, string][] = [
+    ["E", dc.legendE],
+    ["M|C", dc.legendMC],
+    ["M", dc.legendM],
+    ["C", dc.legendC],
+    ["L*", dc.legendL],
+  ];
+
   return (
     <>
-      <div ref={containerRef} className="w-full overflow-x-auto">
+      <div ref={containerRef} className="chart-scroll w-full">
         <svg
           viewBox={`0 0 ${canvasW} ${canvasH}`}
           xmlns="http://www.w3.org/2000/svg"
           role="img"
-          aria-label={fi ? "BERM-kausaaliketjukaavio" : "BERM causal chain diagram"}
+          aria-label={dc.ariaLabel}
+          className="chart-svg"
           style={{ width: "100%", height: "auto", minWidth: 600 }}
         >
           <defs>
@@ -224,15 +327,6 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
               >
                 <path d="M 0 0 L 10 3.5 L 0 7 z" fill={color} />
               </marker>
-            ))}
-          </defs>
-
-          {/* Node text clip paths */}
-          <defs>
-            {layoutNodes.map((n) => (
-              <clipPath key={`clip-${n.id}`} id={`node-clip-${n.id}`}>
-                <rect x={n.x} y={n.y} width={n.w - 40} height={n.h} />
-              </clipPath>
             ))}
           </defs>
 
@@ -379,6 +473,13 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
             const color = EPISTEMIC_COLORS[n.epistemicLevel];
             const isHovered = hoveredNode === n.id;
             const isSelected = selectedNode?.id === n.id;
+            const label = (!fi && n.label_en) || n.label;
+            const sublabel = (!fi && n.sublabel_en) || n.sublabel;
+            const maxLabelChars = Math.max(11, Math.floor((n.w - 28) / 7.1));
+            const labelLines = wrapSvgLabel(label, maxLabelChars, 2);
+            const labelStartY = sublabel
+              ? n.y + 34 - ((labelLines.length - 1) * 15) / 2
+              : n.y + n.h / 2 + 4 - ((labelLines.length - 1) * 15) / 2;
             return (
               <g
                 key={n.id}
@@ -391,6 +492,7 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
                 onMouseLeave={() => setHoveredNode(null)}
                 opacity={hoveredNode && !isHovered && ![...connectedEdges].some(i => EDGES[i]?.from === n.id || EDGES[i]?.to === n.id) ? 0.4 : 1}
               >
+                <title>{sublabel ? `${label} — ${sublabel}` : label}</title>
                 {/* Node background */}
                 <rect
                   x={n.x}
@@ -424,30 +526,32 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
                 >
                   {EPISTEMIC_LABELS[n.epistemicLevel] ?? n.epistemicLevel}
                 </text>
-                <g clipPath={`url(#node-clip-${n.id})`}>
+                <g>
                   {/* Label */}
-                  <text
-                    x={n.x + 14}
-                    y={n.y + (n.sublabel ? 24 : n.h / 2 + 1)}
-                    fill="var(--foreground)"
-                    fontSize={14}
-                    fontWeight="600"
-                    dominantBaseline="middle"
-                    fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                  >
-                    {(!fi && n.label_en) || n.label}
-                  </text>
+                  {labelLines.map((line, lineIndex) => (
+                    <text
+                      key={`${n.id}-label-${lineIndex}`}
+                      x={n.x + 14}
+                      y={labelStartY + lineIndex * 15}
+                      fill="var(--foreground)"
+                      fontSize={12.5}
+                      fontWeight="600"
+                      dominantBaseline="middle"
+                    >
+                      {line}
+                    </text>
+                  ))}
                   {/* Sublabel */}
-                  {(n.sublabel || n.sublabel_en) && (
+                  {sublabel && (
                     <text
                       x={n.x + 14}
-                      y={n.y + 46}
+                      y={n.y + 59}
                       fill="var(--foreground-muted)"
-                      fontSize={11}
+                      fontSize={9.5}
                       dominantBaseline="middle"
                       fontFamily="ui-monospace, SFMono-Regular, monospace"
                     >
-                      {(!fi && n.sublabel_en) || n.sublabel}
+                      {truncateSvgLabel(sublabel, Math.max(13, Math.floor((n.w - 28) / 5.7)))}
                     </text>
                   )}
                   {/* Click hint on hover */}
@@ -460,7 +564,7 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
                       dominantBaseline="auto"
                       fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
                     >
-                      {fi ? "→ klikkaa tiedot" : "→ click for details"}
+                      {dc.clickHint}
                     </text>
                   )}
                 </g>
@@ -468,43 +572,26 @@ export default function BermCausalDiagram({ locale = "fi" }: { locale?: string }
             );
           })}
 
-          {/* Legend */}
-          {(() => {
-            const items: [EpistemicLevel, string][] = fi
-              ? [
-                  ["E", "Empiirisesti todennettu"],
-                  ["M|C", "Mekanismi + assosiaatio"],
-                  ["M", "Matemaattinen seuraus"],
-                  ["C", "Kandidaatti"],
-                  ["L*", "Premissi (ei validoitu)"],
-                ]
-              : [
-                  ["E", "Empirically established"],
-                  ["M|C", "Mechanism + association"],
-                  ["M", "Mathematical consequence"],
-                  ["C", "Candidate"],
-                  ["L*", "Premise (not validated)"],
-                ];
-            const legendY = canvasH - 24;
-            const legendX = LEVEL_LABEL_W + FEEDBACK_MARGIN;
-            const spacing = (canvasW - legendX - 20) / items.length;
-            return items.map(([lvl, lbl], i) => {
-              const c = EPISTEMIC_COLORS[lvl];
-              return (
-                <g key={lvl} transform={`translate(${legendX + i * spacing}, ${legendY})`}>
-                  <rect x={0} y={-7} width={14} height={14} rx={3} fill={`${c}25`} stroke={c} strokeWidth={1} />
-                  <text x={8} y={0} fill={c} fontSize={8} fontWeight="700" textAnchor="middle" dominantBaseline="middle" fontFamily="ui-monospace, monospace">
-                    {lvl}
-                  </text>
-                  <text x={20} y={1} fill="var(--foreground-muted)" fontSize={10} fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" dominantBaseline="middle">
-                    {lbl}
-                  </text>
-                </g>
-              );
-            });
-          })()}
         </svg>
       </div>
+
+      <ul className="chart-legend mt-3" aria-label={fi ? "Episteeminen selite" : "Epistemic legend"}>
+        {legendItems.map(([level, label]) => {
+          const color = EPISTEMIC_COLORS[level];
+          return (
+            <li key={level} className="chart-key">
+              <span
+                aria-hidden="true"
+                className="inline-flex h-4 min-w-4 items-center justify-center rounded px-1 font-mono-num text-[9px] font-bold"
+                style={{ backgroundColor: `${color}20`, color, boxShadow: `inset 0 0 0 1px ${color}` }}
+              >
+                {level}
+              </span>
+              {label}
+            </li>
+          );
+        })}
+      </ul>
 
       {selectedNode && (
         <DetailPanel

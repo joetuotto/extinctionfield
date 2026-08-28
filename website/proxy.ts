@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-const locales = ["en", "fi"];
+const locales = ["en", "fi", "ja", "fr", "ko"];
 const defaultLocale = "en";
 
 const REDIRECTS: Record<string, string> = {
@@ -33,9 +33,13 @@ export function proxy(request: NextRequest) {
     return;
   }
 
-  const acceptLanguage = request.headers.get("accept-language") || "";
-  const prefersFinnish = acceptLanguage.toLowerCase().includes("fi");
-  const locale = prefersFinnish ? "fi" : defaultLocale;
+  const acceptLanguage = request.headers.get("accept-language")?.toLowerCase() || "";
+  const locale =
+    acceptLanguage.includes("fi") ? "fi" :
+    acceptLanguage.includes("ja") ? "ja" :
+    acceptLanguage.includes("fr") ? "fr" :
+    acceptLanguage.includes("ko") ? "ko" :
+    defaultLocale;
 
   const target = REDIRECTS[pathname];
   request.nextUrl.pathname = `/${locale}${target ?? pathname}`;

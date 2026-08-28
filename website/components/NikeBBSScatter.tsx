@@ -234,7 +234,7 @@ function Chart({ compact, fi }: { compact: boolean; fi: boolean }) {
   );
 }
 
-export function NikeBBSScatter({ locale = "en" }: { locale?: "fi" | "en" }) {
+export function NikeBBSScatter({ locale = "en" }: { locale?: string }) {
   const fi = locale === "fi";
 
   return (

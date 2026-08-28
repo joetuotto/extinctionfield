@@ -3,8 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { ARTICLES } from "@/lib/articles";
-import { BermIcon } from "@/components/BermIcon";
-import type { Locale } from "@/lib/i18n";
+import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: {
@@ -21,7 +20,32 @@ const COPY = {
     minRead: "min lukuaika",
     readMore: "Lue artikkeli",
   },
+  ja: {
+    title: "記事",
+    subtitle:
+      "BERMフレームワークの科学、歴史、そしてその意味を探る長編エッセイ。",
+    minRead: "分で読む",
+    readMore: "記事を読む",
+  },
+  fr: {
+    title: "Articles",
+    subtitle:
+      "Essais approfondis explorant la science, l'histoire et les implications du cadre BERM.",
+    minRead: "min de lecture",
+    readMore: "Lire l'article",
+  },
+  ko: {
+    title: "기사",
+    subtitle:
+      "BERM 프레임워크의 과학, 역사 및 함의를 탐구하는 장문 에세이.",
+    minRead: "분 읽기",
+    readMore: "기사 읽기",
+  },
 } as const;
+
+const DATE_LOCALES: Record<string, string> = {
+  en: "en-US", fi: "fi-FI", ja: "ja-JP", fr: "fr-FR", ko: "ko-KR",
+};
 
 export async function generateMetadata({
   params,
@@ -29,10 +53,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const isFi = locale === "fi";
+  const d = pickCopy(COPY, locale);
   return {
-    title: `${isFi ? COPY.fi.title : COPY.en.title} – Extinction Field`,
-    description: isFi ? COPY.fi.subtitle : COPY.en.subtitle,
+    title: `${d.title} – Extinction Field`,
+    description: d.subtitle,
   };
 }
 
@@ -42,10 +66,9 @@ export default async function ArticlesPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const activeLocale: Locale = locale === "fi" ? "fi" : "en";
-  const d = COPY[activeLocale];
-  const isFi = activeLocale === "fi";
-  const prefix = `/${activeLocale}`;
+  const d = pickCopy(COPY, locale);
+  const isFi = locale === "fi";
+  const prefix = `/${locale}`;
 
   const sorted = [...ARTICLES].sort(
     (a, b) =>
@@ -83,14 +106,9 @@ export default async function ArticlesPage({
                 </div>
               )}
               <div className="flex-1 min-w-0">
-                <div className="flex items-start gap-3 mb-2">
-                  <span className="shrink-0 text-foreground-muted" aria-hidden="true">
-                    <BermIcon name={article.icon} size={28} />
-                  </span>
-                  <h2 className="text-lg font-semibold leading-snug group-hover:text-accent transition-colors">
-                    {isFi ? article.titleFi : article.title}
-                  </h2>
-                </div>
+                <h2 className="mb-2 text-lg font-semibold leading-snug transition-colors group-hover:text-accent">
+                  {isFi ? article.titleFi : article.title}
+                </h2>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3 line-clamp-2">
                   {isFi ? article.subtitleFi : article.subtitle}
                 </p>
@@ -98,7 +116,7 @@ export default async function ArticlesPage({
                   <span className="inline-flex items-center gap-1">
                     <Calendar size={12} />
                     {new Date(article.publishedDate).toLocaleDateString(
-                      isFi ? "fi-FI" : "en-US",
+                      DATE_LOCALES[locale] ?? "en-US",
                       { year: "numeric", month: "short", day: "numeric" },
                     )}
                   </span>

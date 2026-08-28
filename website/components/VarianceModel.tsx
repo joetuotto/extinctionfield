@@ -1,5 +1,7 @@
 "use client";
 
+import { pickCopy } from "@/lib/i18n";
+
 const COPY = {
   en: {
     title: "Variance Model: Population Distribution",
@@ -27,7 +29,46 @@ const COPY = {
     popFreq: "Populaatiofrekvenssi",
     note: "Malli ennustaa, että EMF-altistus leventää sukupuolispesifisten piirteiden populaatiojakaumaa siirtämättä keskiarvoa",
   },
-} as const;
+  ja: {
+    title: "分散モデル：集団分布",
+    subtitle: "EMFは方向性シフトなしに形質の分散を増加させる",
+    baseline: "ベースライン",
+    emfExposed: "EMF曝露",
+    meanUnchanged: "平均値不変",
+    increasedTail: "尾部密度の増加",
+    femaleTypical: "より女性典型的",
+    traitValue: "形質値",
+    maleTypical: "より男性典型的",
+    popFreq: "集団頻度",
+    note: "本モデルは、EMF曝露が平均値をシフトさせることなく、性的二型形質の集団分布を拡大させると予測する",
+  },
+  fr: {
+    title: "Modèle de variance : distribution de la population",
+    subtitle: "L'EMF augmente la variance des traits sans déplacement directionnel",
+    baseline: "Référence",
+    emfExposed: "Exposé aux EMF",
+    meanUnchanged: "Moyenne inchangée",
+    increasedTail: "Densité de queue accrue",
+    femaleTypical: "Plus typiquement féminin",
+    traitValue: "Valeur du trait",
+    maleTypical: "Plus typiquement masculin",
+    popFreq: "Fréquence de population",
+    note: "Le modèle prédit que l'exposition aux EMF élargit la distribution de la population des traits sexuellement dimorphiques sans déplacer la moyenne",
+  },
+  ko: {
+    title: "분산 모델: 집단 분포",
+    subtitle: "EMF는 방향 이동 없이 형질 분산을 증가시킨다",
+    baseline: "기준선",
+    emfExposed: "EMF 노출",
+    meanUnchanged: "평균 불변",
+    increasedTail: "꼬리 밀도 증가",
+    femaleTypical: "더 여성 전형적",
+    traitValue: "형질 값",
+    maleTypical: "더 남성 전형적",
+    popFreq: "집단 빈도",
+    note: "본 모델은 EMF 노출이 평균을 이동시키지 않으면서 성적 이형 형질의 집단 분포를 확대한다고 예측한다",
+  },
+};
 
 const W = 700;
 const H = 350;
@@ -75,7 +116,7 @@ function areaPath(sigma: number, x0: number, x1: number): string {
 }
 
 export function VarianceModel({ locale }: { locale: string }) {
-  const d = locale === "fi" ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
 
   const basePath = curvePath(SIGMA_BASE);
   const emfCurve = curvePath(SIGMA_EMF);

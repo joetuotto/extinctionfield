@@ -7,6 +7,8 @@ import {
   computeTIndex,
 } from "@/lib/thresholdModel";
 import type { CountryThresholdData } from "@/lib/thresholdModel";
+import { pickCopy } from "@/lib/i18n";
+import { StudyCitation } from "@/components/StudyCitation";
 
 const COPY = {
   en: {
@@ -55,6 +57,75 @@ const COPY = {
     caveat:
       "T-laskuprosentit ovat ikäriippumattomia sekulaaritrendejä. Korean ja Japanin arvot ovat arvioita (*). 40 %:n kynnysarvo on kalibroitu suomalaisella ja korealaisella datalla.",
   },
+  ja: {
+    title: "T-Index 閾値エクスプローラー",
+    subtitle: "各国のテストステロン低下軌跡を比較",
+    selectCountries: "国を選択",
+    selectAll: "すべて選択",
+    deselectAll: "すべて解除",
+    tIndex: "T-Index",
+    year: "年",
+    threshold: "40%閾値",
+    country: "国",
+    tDecline: "T低下率",
+    source: "出典",
+    cumulativeLoss: "2024年累積損失",
+    thresholdYear: "閾値到達年",
+    phase: "フェーズ",
+    tfr2024: "TFR 2024",
+    tTfrTitle: "T損失 vs TFR：相関",
+    tTfrSubtitle: "各点は国・年を表す。X軸：1970年基準からの累積テストステロン損失。Y軸：観測TFR。40%閾値はTFRが加速的に低下し始める地点。",
+    tTfrXLabel: "累積T損失 (%)",
+    tTfrYLabel: "TFR",
+    caveat:
+      "T低下率は年齢非依存の長期トレンド。韓国と日本の値は推定値（*）。40%閾値はフィンランドと韓国のデータで較正。",
+  },
+  fr: {
+    title: "Explorateur de seuil T-Index",
+    subtitle: "Comparer les trajectoires de déclin de la testostérone entre pays",
+    selectCountries: "Sélectionner les pays",
+    selectAll: "Tout sélectionner",
+    deselectAll: "Tout désélectionner",
+    tIndex: "T-Index",
+    year: "Année",
+    threshold: "Seuil de 40 %",
+    country: "Pays",
+    tDecline: "Taux de déclin T",
+    source: "Source",
+    cumulativeLoss: "Perte cumulative 2024",
+    thresholdYear: "Année seuil",
+    phase: "Phase",
+    tfr2024: "TFR 2024",
+    tTfrTitle: "Perte T vs TFR : la corrélation",
+    tTfrSubtitle: "Chaque point représente un pays-année. Axe X : perte cumulative de testostérone par rapport à la base de 1970. Axe Y : TFR observé. Le seuil de 40 % est le point où le TFR commence à accélérer sa baisse.",
+    tTfrXLabel: "Perte cumulative T (%)",
+    tTfrYLabel: "TFR",
+    caveat:
+      "Les taux de déclin T sont des tendances séculaires indépendantes de l'âge. Les taux coréens et japonais sont des estimations (*). Le seuil de 40 % est calibré sur les données finlandaises et coréennes.",
+  },
+  ko: {
+    title: "T-Index 임계값 탐색기",
+    subtitle: "국가별 테스토스테론 감소 추이 비교",
+    selectCountries: "국가 선택",
+    selectAll: "모두 선택",
+    deselectAll: "모두 해제",
+    tIndex: "T-Index",
+    year: "연도",
+    threshold: "40% 임계값",
+    country: "국가",
+    tDecline: "T 감소율",
+    source: "출처",
+    cumulativeLoss: "2024년 누적 손실",
+    thresholdYear: "임계값 도달 연도",
+    phase: "단계",
+    tfr2024: "TFR 2024",
+    tTfrTitle: "T 손실 vs TFR: 상관관계",
+    tTfrSubtitle: "각 점은 국가-연도를 나타냄. X축: 1970년 기준선 대비 누적 테스토스테론 손실. Y축: 관측 TFR. 40% 임계값은 TFR이 가속적으로 하락하기 시작하는 지점.",
+    tTfrXLabel: "누적 T 손실 (%)",
+    tTfrYLabel: "TFR",
+    caveat:
+      "T 감소율은 연령 비의존적 장기 추세. 한국과 일본의 수치는 추정값(*). 40% 임계값은 핀란드와 한국 데이터로 보정.",
+  },
 };
 
 const T0_YEAR = 1970;
@@ -90,8 +161,7 @@ function buildCurvePath(country: CountryThresholdData): string {
 }
 
 function PhaseBadge({ phase, locale }: { phase: 1 | 2 | 3; locale: string }) {
-  const lang = locale === "fi" ? "fi" : "en";
-  const label = PHASE_LABELS[lang][phase];
+  const label = (PHASE_LABELS[locale] ?? PHASE_LABELS["en"])[phase];
   const colors: Record<number, string> = {
     1: "bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300",
     2: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
@@ -108,8 +178,7 @@ function PhaseBadge({ phase, locale }: { phase: 1 | 2 | 3; locale: string }) {
 }
 
 export function ThresholdExplorer({ locale }: { locale: string }) {
-  const lang = locale === "fi" ? "fi" : "en";
-  const t = COPY[lang];
+  const t = pickCopy(COPY, locale);
 
   const [selected, setSelected] = useState<Set<string>>(
     () => new Set(THRESHOLD_COUNTRIES.map((c) => c.id)),
@@ -167,7 +236,7 @@ export function ThresholdExplorer({ locale }: { locale: string }) {
               className="inline-block w-2.5 h-2.5 rounded-full"
               style={{ backgroundColor: country.color }}
             />
-            {lang === "fi" ? country.nameFi : country.nameEn}
+            {country.names[locale] ?? country.names.en}
           </label>
         ))}
         <button
@@ -182,13 +251,67 @@ export function ThresholdExplorer({ locale }: { locale: string }) {
         </button>
       </div>
 
-      <div className="overflow-x-auto">
-        <svg
-          viewBox={`0 0 ${W} ${H}`}
-          className="w-full min-w-[600px]"
-          role="img"
-          aria-label={t.title}
+      <figure className="data-figure">
+        <figcaption
+          className="data-figure__legend flex flex-wrap items-center gap-x-4 gap-y-2 border-b pb-3"
+          style={{ borderColor: "var(--card-border)" }}
         >
+          <span className="inline-flex items-center gap-2 font-medium text-red-500">
+            <span className="w-7 border-t-2 border-dashed border-current" aria-hidden="true" />
+            {t.threshold}
+          </span>
+          {selectedCountries.map((country) => (
+            <span
+              key={country.id}
+              className="inline-flex items-center gap-1.5 whitespace-nowrap"
+            >
+              <span
+                className="h-4 border-l-2 border-dashed"
+                style={{ borderColor: country.color }}
+                aria-hidden="true"
+              />
+              <span style={{ color: "var(--foreground)" }}>
+                {country.names[locale] ?? country.names.en}
+              </span>
+              <span
+                className="font-mono tabular-nums"
+                style={{ color: country.color }}
+              >
+                {country.thresholdYear}
+              </span>
+            </span>
+          ))}
+        </figcaption>
+
+        <div
+          className="-mx-1 overflow-x-auto overscroll-x-contain px-1 pb-2 pt-3 touch-pan-x"
+          role="region"
+          aria-label={t.title}
+          tabIndex={0}
+        >
+          <svg
+            viewBox={`0 0 ${W} ${H}`}
+            className="block w-full min-w-[680px]"
+            role="img"
+            aria-label={t.title}
+          >
+          <rect
+            x={PAD.left}
+            y={PAD.top}
+            width={CW}
+            height={CH}
+            rx={5}
+            fill="var(--figure-caption-bg)"
+            opacity={0.28}
+          />
+          <rect
+            x={PAD.left}
+            y={sy(THRESHOLD_VALUE)}
+            width={CW}
+            height={PAD.top + CH - sy(THRESHOLD_VALUE)}
+            fill="#EF4444"
+            opacity={0.035}
+          />
           {tTicks.map((val) => (
             <g key={val}>
               <line
@@ -242,23 +365,15 @@ export function ThresholdExplorer({ locale }: { locale: string }) {
             strokeWidth={1.5}
             strokeDasharray="6 4"
           />
-          <text
-            x={W - PAD.right + 4}
-            y={sy(THRESHOLD_VALUE) + 4}
-            fill="#EF4444"
-            fontSize={9}
-            fontWeight={600}
-          >
-            {t.threshold}
-          </text>
-
           {selectedCountries.map((country) => (
             <g key={country.id}>
               <path
                 d={buildCurvePath(country)}
                 fill="none"
                 stroke={country.color}
-                strokeWidth={2}
+                strokeWidth={2.25}
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <line
                 x1={sx(country.thresholdYear)}
@@ -268,18 +383,16 @@ export function ThresholdExplorer({ locale }: { locale: string }) {
                 stroke={country.color}
                 strokeWidth={1}
                 strokeDasharray="4 3"
-                opacity={0.6}
+                opacity={0.68}
               />
-              <text
-                x={sx(country.thresholdYear)}
-                y={PAD.top - 6}
-                textAnchor="middle"
-                fill={country.color}
-                fontSize={9}
-                fontWeight={500}
-              >
-                {lang === "fi" ? country.nameFi : country.nameEn} {country.thresholdYear}
-              </text>
+              <circle
+                cx={sx(country.thresholdYear)}
+                cy={sy(THRESHOLD_VALUE)}
+                r={3.25}
+                fill="var(--figure-bg)"
+                stroke={country.color}
+                strokeWidth={1.75}
+              />
             </g>
           ))}
 
@@ -319,8 +432,9 @@ export function ThresholdExplorer({ locale }: { locale: string }) {
             stroke="var(--card-border)"
             strokeWidth={1}
           />
-        </svg>
-      </div>
+          </svg>
+        </div>
+      </figure>
 
       <div className="overflow-x-auto">
         <table className="w-full text-sm border-collapse">
@@ -365,14 +479,22 @@ export function ThresholdExplorer({ locale }: { locale: string }) {
                       className="inline-block w-2.5 h-2.5 rounded-full shrink-0"
                       style={{ backgroundColor: country.color }}
                     />
-                    {lang === "fi" ? country.nameFi : country.nameEn}
+                    {country.names[locale] ?? country.names.en}
                   </span>
                 </td>
                 <td className="py-2 pr-4" style={{ color: "var(--foreground)" }}>
                   {country.tDeclinePct}% / yr
                 </td>
                 <td className="py-2 pr-4" style={{ color: "var(--foreground-muted)" }}>
-                  {country.tSource}
+                  {country.tReferenceId ? (
+                    <StudyCitation
+                      referenceId={country.tReferenceId}
+                      locale={locale}
+                      label={country.tSource}
+                    />
+                  ) : (
+                    country.tSource
+                  )}
                   {country.tSourceEstimated && (
                     <span className="text-amber-500 ml-0.5" title="Estimated">
                       *
@@ -421,7 +543,7 @@ export function ThresholdExplorer({ locale }: { locale: string }) {
             const elapsed = pt.year - T0_YEAR;
             if (elapsed < 0) continue;
             const tLoss = 100 - computeTIndex(pt.year, T0_YEAR, country.tDeclinePct);
-            dots.push({ x: tLoss, y: pt.tfr, color: country.color, label: `${lang === "fi" ? country.nameFi : country.nameEn} ${pt.year}` });
+            dots.push({ x: tLoss, y: pt.tfr, color: country.color, label: `${country.names[locale] ?? country.names.en} ${pt.year}` });
           }
         }
 

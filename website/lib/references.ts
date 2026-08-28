@@ -28,34 +28,44 @@ export interface Reference {
   /** Canonical source URL for entries that have no DOI (books, reports, records). */
   readonly url?: string | null;
   readonly pmid?: string | number | null;
+  readonly pmcid?: string | null;
+  readonly aliases?: readonly string[];
+  readonly link_status?: "verified" | "registered" | "pending" | "missing";
+  readonly link_source?: string | null;
+  readonly link_checked_at?: string | null;
 }
 
 /**
  * Resolve a reference to an external source URL.
  *
- * Order of preference: explicit url, DOI, PubMed Central id, PubMed id.
- * Returns null when the entry carries no resolvable identifier — callers must
- * render the citation as plain text rather than emit a link that 404s.
+ * Order of preference: DOI, PubMed Central id, PubMed id, official URL.
+ * Returns null until the identifier has been matched to the bibliography.
+ * Callers must keep registered, pending and missing records non-clickable so a
+ * valid identifier for the wrong paper is never presented as the source.
  */
 export function referenceUrl(
   r: {
     readonly doi?: string | null;
     readonly url?: string | null;
     readonly pmid?: string | number | null;
+    readonly pmcid?: string | null;
+    readonly link_status?: string | null;
   },
 ): string | null {
-  const url = (r.url ?? "").trim();
-  if (url) return url;
+  if (r.link_status !== "verified") return null;
 
   const doi = (r.doi ?? "").trim();
   if (doi.startsWith("10.")) return `https://doi.org/${doi}`;
-  if (doi.startsWith("http")) return doi;
-  if (/^PMC\d+$/i.test(doi)) {
-    return `https://pmc.ncbi.nlm.nih.gov/articles/${doi.toUpperCase()}/`;
-  }
+
+  const pmcid = (r.pmcid ?? "").trim() || (/^PMC\d+$/i.test(doi) ? doi : "");
+  if (pmcid) return `https://pmc.ncbi.nlm.nih.gov/articles/${pmcid.toUpperCase()}/`;
 
   const pmid = String(r.pmid ?? "").trim() || (/^\d{7,9}$/.test(doi) ? doi : "");
   if (pmid) return `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`;
+
+  const url = (r.url ?? "").trim();
+  if (url.startsWith("https://")) return url;
+  if (doi.startsWith("https://")) return doi;
 
   return null;
 }
@@ -66,6 +76,9 @@ export interface ReferenceData {
     readonly source: string;
     readonly total_references: number;
     readonly verified_count: number;
+    readonly linked_count?: number;
+    readonly unlinked_count?: number;
+    readonly alias_count?: number;
     readonly generated: string;
   };
   readonly categories: readonly ReferenceCategory[];
@@ -84,16 +97,19 @@ export async function loadReferences(): Promise<ReferenceData> {
   return _cache!;
 }
 
-const LEVEL_LABELS = {
+const LEVEL_LABELS: Record<string, Record<string, string>> = {
   en: { A: "Meta-analysis", B: "RCT / cohort", C: "Case-control", M: "Mechanistic", R: "Review", O: "Observational", D: "Descriptive", T: "Theoretical" },
   fi: { A: "Meta-analyysi", B: "RCT / kohortti", C: "Tapaus-verrokki", M: "Mekanistinen", R: "Katsaus", O: "Havainnointitutkimus", D: "Kuvaileva", T: "Teoreettinen" },
-} as const;
+  ja: { A: "メタ分析", B: "RCT／コホート", C: "症例対照", M: "メカニズム", R: "レビュー", O: "観察研究", D: "記述的", T: "理論的" },
+  fr: { A: "Méta-analyse", B: "ECR / cohorte", C: "Cas-témoin", M: "Mécanistique", R: "Revue", O: "Observationnel", D: "Descriptif", T: "Théorique" },
+  ko: { A: "메타분석", B: "RCT / 코호트", C: "환자-대조군", M: "기전 연구", R: "리뷰", O: "관찰 연구", D: "기술적", T: "이론적" },
+};
 
-export function levelLabel(level: string | null, locale: "en" | "fi"): string {
+export function levelLabel(level: string | null, locale: string): string {
   if (!level) return "";
-  return (LEVEL_LABELS[locale] as Record<string, string>)[level] ?? level;
+  return (LEVEL_LABELS[locale] ?? LEVEL_LABELS.en)[level] ?? level;
 }
 
-export function categoryName(cat: ReferenceCategory, locale: "en" | "fi"): string {
+export function categoryName(cat: ReferenceCategory, locale: string): string {
   return locale === "fi" ? cat.name_fi : cat.name_en;
 }

@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowLeft, Clock, Calendar } from "lucide-react";
 import { getArticleBySlug, ARTICLES } from "@/lib/articles";
-import type { Locale } from "@/lib/i18n";
+import { pickCopy, locales } from "@/lib/i18n";
+import { BermIcon } from "@/components/BermIcon";
 import { BeeArticleContent } from "./BeeArticleContent";
 import { SpectrumArticleContent } from "./SpectrumArticleContent";
 import { ImplausibilityArticleContent } from "./ImplausibilityArticleContent";
@@ -19,6 +20,8 @@ const COPY = {
     predictions: "All Predictions",
     minRead: "min read",
     more: "More from Extinction Field",
+    prevLabel: "Previous",
+    nextLabel: "Next",
   },
   fi: {
     partOf: "Tämä artikkeli on osa",
@@ -28,14 +31,52 @@ const COPY = {
     predictions: "Kaikki ennusteet",
     minRead: "min lukuaika",
     more: "Lisää Extinction Fieldistä",
+    prevLabel: "Edellinen",
+    nextLabel: "Seuraava",
+  },
+  ja: {
+    partOf: "この記事は",
+    framework: "Extinction Field研究フレームワーク",
+    sentinel: "センチネルデータ",
+    evidence: "エビデンス",
+    predictions: "すべての予測",
+    minRead: "分で読む",
+    more: "Extinction Fieldのその他の記事",
+    prevLabel: "前へ",
+    nextLabel: "次へ",
+  },
+  fr: {
+    partOf: "Cet article fait partie du",
+    framework: "cadre de recherche Extinction Field",
+    sentinel: "Données sentinelles",
+    evidence: "Preuves",
+    predictions: "Toutes les prédictions",
+    minRead: "min de lecture",
+    more: "Plus d'Extinction Field",
+    prevLabel: "Précédent",
+    nextLabel: "Suivant",
+  },
+  ko: {
+    partOf: "이 기사는",
+    framework: "Extinction Field 연구 프레임워크",
+    sentinel: "센티널 데이터",
+    evidence: "증거",
+    predictions: "모든 예측",
+    minRead: "분 읽기",
+    more: "Extinction Field에서 더 보기",
+    prevLabel: "이전",
+    nextLabel: "다음",
   },
 } as const;
 
+const DATE_LOCALES: Record<string, string> = {
+  en: "en-US", fi: "fi-FI", ja: "ja-JP", fr: "fr-FR", ko: "ko-KR",
+};
+
 export async function generateStaticParams() {
-  return ARTICLES.flatMap((a) => [
-    { locale: "en", slug: a.slug },
-    { locale: "fi", slug: a.slug },
-  ]);
+  return ARTICLES.flatMap((a) =>
+    locales.map((locale) => ({ locale, slug: a.slug })),
+  );
 }
 
 export async function generateMetadata({
@@ -65,10 +106,9 @@ export default async function ArticlePage({
   const article = getArticleBySlug(slug);
   if (!article) notFound();
 
-  const activeLocale: Locale = locale === "fi" ? "fi" : "en";
-  const d = COPY[activeLocale];
-  const prefix = `/${activeLocale}`;
-  const isFi = activeLocale === "fi";
+  const d = pickCopy(COPY, locale);
+  const prefix = `/${locale}`;
+  const isFi = locale === "fi";
 
   const currentIdx = ARTICLES.findIndex((a) => a.slug === slug);
   const prevArticle = currentIdx > 0 ? ARTICLES[currentIdx - 1] : null;
@@ -79,9 +119,11 @@ export default async function ArticlePage({
     <article className="max-w-3xl mx-auto px-6 py-12 sm:py-20">
       {/* Hero */}
       <header className="mb-12 sm:mb-16">
-        <p className="text-4xl mb-6" aria-hidden="true">
-          {article.icon}
-        </p>
+        {!article.heroImage && (
+          <p className="mb-6 text-foreground-muted" aria-hidden="true">
+            <BermIcon name={article.icon} size={40} />
+          </p>
+        )}
         <h1 className="font-serif text-3xl sm:text-[2.75rem] leading-[1.15] tracking-[-0.02em] mb-5">
           {isFi ? article.titleFi : article.title}
         </h1>
@@ -96,7 +138,7 @@ export default async function ArticlePage({
           <span className="inline-flex items-center gap-1.5">
             <Calendar size={14} />
             {new Date(article.publishedDate).toLocaleDateString(
-              isFi ? "fi-FI" : "en-US",
+              DATE_LOCALES[locale] ?? "en-US",
               { year: "numeric", month: "long", day: "numeric" },
             )}
           </span>
@@ -111,8 +153,8 @@ export default async function ArticlePage({
             <Image
               src={article.heroImage}
               alt={isFi ? article.titleFi : article.title}
-              width={1200}
-              height={630}
+              width={1448}
+              height={1086}
               className="w-full h-auto"
               priority
             />
@@ -121,10 +163,10 @@ export default async function ArticlePage({
       </header>
 
       {/* Article body */}
-      {slug === "bees" && <BeeArticleContent locale={activeLocale} />}
-      {slug === "spectrum" && <SpectrumArticleContent locale={activeLocale} />}
-      {slug === "implausibility" && <ImplausibilityArticleContent locale={activeLocale} />}
-      {slug === "dual-lock" && <DualLockArticleContent locale={activeLocale} />}
+      {slug === "bees" && <BeeArticleContent locale={locale} />}
+      {slug === "spectrum" && <SpectrumArticleContent locale={locale} />}
+      {slug === "implausibility" && <ImplausibilityArticleContent locale={locale} />}
+      {slug === "dual-lock" && <DualLockArticleContent locale={locale} />}
 
       {/* End navigation */}
       <footer className="mt-16 pt-8 border-t border-card-border">
@@ -167,7 +209,7 @@ export default async function ArticlePage({
                 <ArrowLeft size={16} className="text-foreground-muted shrink-0" />
                 <div className="min-w-0">
                   <p className="text-xs text-foreground-muted">
-                    {isFi ? "Edellinen" : "Previous"}
+                    {d.prevLabel}
                   </p>
                   <p className="text-sm font-medium truncate">
                     {isFi ? prevArticle.titleFi : prevArticle.title}
@@ -182,7 +224,7 @@ export default async function ArticlePage({
               >
                 <div className="min-w-0 text-right">
                   <p className="text-xs text-foreground-muted">
-                    {isFi ? "Seuraava" : "Next"}
+                    {d.nextLabel}
                   </p>
                   <p className="text-sm font-medium truncate">
                     {isFi ? nextArticle.titleFi : nextArticle.title}

@@ -1,5 +1,7 @@
 "use client";
 
+import { pickCopy } from "@/lib/i18n";
+
 const SCENARIOS = [
   { id: "young_clean", emf: false, aged: false },
   { id: "young_emf", emf: true, aged: false },
@@ -34,6 +36,45 @@ const LABELS = {
     gradient: "Turvallinen → Vaarallinen",
     note: "Samat tight junction -proteiinit heikkenevät ikääntymisessä JA EMF-altistuksessa → synergistinen avaus",
   },
+  ja: {
+    title: "血液脳関門：加齢 × EMF 相乗効果",
+    young_clean: "若年、EMFなし",
+    young_emf: "若年、EMF曝露",
+    old_clean: "高齢、EMFなし",
+    old_hospital: "高齢、病院",
+    occludin: "オクルディン",
+    zo1: "ZO-1",
+    claudin: "クローディン",
+    protection: "保護",
+    gradient: "安全 → 危険",
+    note: "同じタイトジャンクションタンパク質が加齢とEMFの両方で分解 → 相乗的開口",
+  },
+  fr: {
+    title: "Barriere hemato-encephalique : vieillissement x synergie EMF",
+    young_clean: "Jeune, sans EMF",
+    young_emf: "Jeune, exposition EMF",
+    old_clean: "Age, sans EMF",
+    old_hospital: "Age, hopital",
+    occludin: "Occludine",
+    zo1: "ZO-1",
+    claudin: "Claudine",
+    protection: "Protection",
+    gradient: "Sur → Dangereux",
+    note: "Les memes proteines de jonction serree degradees par le vieillissement ET les EMF → ouverture synergique",
+  },
+  ko: {
+    title: "혈액뇌장벽: 노화 x EMF 시너지",
+    young_clean: "젊은, EMF 없음",
+    young_emf: "젊은, EMF 노출",
+    old_clean: "고령, EMF 없음",
+    old_hospital: "고령, 병원",
+    occludin: "오클루딘",
+    zo1: "ZO-1",
+    claudin: "클라우딘",
+    protection: "보호",
+    gradient: "안전 → 위험",
+    note: "동일한 밀착연접 단백질이 노화와 EMF 모두에 의해 분해 → 시너지 개방",
+  },
 } as const;
 
 function BarrierBlock({ integrity }: { integrity: number }) {
@@ -62,7 +103,7 @@ function ProteinDot({ level }: { level: number }) {
 }
 
 export function BBBMechanismDiagram({ locale }: { locale: string }) {
-  const l = locale === "fi" ? LABELS.fi : LABELS.en;
+  const l = pickCopy(LABELS, locale);
 
   const data = [
     { ...SCENARIOS[0], integrity: 1.0, proteins: [1, 1, 1], pct: "~100%" },

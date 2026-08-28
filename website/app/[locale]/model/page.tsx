@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { Locale } from "@/lib/i18n";
+import { pickCopy } from "@/lib/i18n";
 import Link from "next/link";
 import BermCausalDiagram from "@/components/BermCausalDiagram";
 import { ModelTableOfContents } from "@/components/ModelTableOfContents";
@@ -13,6 +13,9 @@ import { VGCCGeneFamilyDiagram } from "@/components/VGCCGeneFamilyDiagram";
 import { ThresholdChart } from "@/components/ThresholdChart";
 import { SixFactorSummary } from "@/components/SixFactorSummary";
 import { CaMKIIConvergenceDiagram } from "@/components/CaMKIIConvergenceDiagram";
+import { CitationLink } from "@/components/CitationLink";
+import { StudyCitation } from "@/components/StudyCitation";
+import { InlineReferenceText } from "@/components/InlineReferenceText";
 
 const t = {
   en: {
@@ -41,11 +44,11 @@ const t = {
 
     causalTitle: "Causal pathway diagram",
     causalDesc:
-      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Eight levels, 63 nodes, 107 edges. Two co-primary pathways operate in parallel: Pathway A (VGCC → Ca²⁺ → ROS) has the strongest experimental support (23–28 blocker studies), while Pathway B (RPM → CRY → circadian disruption) is the most complete theoretical bridge from Lindgren geometry to biology (87.5% of the RPM Hamiltonian is derivable from the metric ansatz). The CRY/RPM pathway has supporting evidence across species: disruption of magnetic compass in birds (Ritz 2004, Engels 2014), CRY-dependent magnetoreception in Drosophila (Yoshii 2009), CRY-dependent ROS modulation in human cells (Sherrard 2018), and — critically — functional blue-light-dependent magnetoreception in humans (Chae et al. 2019, PLOS ONE), indicating that the biological substrate is present in the species BERM models. Both pathways are independently supported at E-level evidence. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
+      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Eight levels, 63 nodes, 107 edges. Two co-primary pathways operate in parallel: Pathway A (VGCC → Ca²⁺ → ROS) has the strongest experimental support (23–28 blocker studies), while Pathway B (RPM → CRY → circadian disruption) is the most complete theoretical bridge from Lindgren geometry to biology (87.5% of the RPM Hamiltonian is derivable from the metric ansatz). The CRY/RPM pathway has supporting evidence across species: disruption of magnetic compass in birds ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), CRY-dependent magnetoreception in Drosophila ([[ref:yoshii2009|Yoshii 2009]]), CRY-dependent ROS modulation in human cells ([[ref:sherrard2018|Sherrard 2018]]), and — critically — functional blue-light-dependent magnetoreception in humans ([[ref:chae2019|Chae et al. 2019]], PLOS ONE), indicating that the biological substrate is present in the species BERM models. Both pathways are independently supported at E-level evidence. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
     pathwayHierarchyNote:
-      "Pathway weights reflect empirical calibration to community data (Amish–Korea gradient). They do not reflect theoretical hierarchy: Pathway B (CRY/RPM) is the PRIMARY pathway because 87.5% of the RPM Hamiltonian is derivable from Lindgren geometry, establishing the mechanism’s EXISTENCE as a geometric consequence. Pathway A has stronger experimental support (23–28 blocker studies). The former δVm objection (δV_m ≈ 10⁻²¹ V from geometry alone) is now resolved by the T-type calcium channel bifurcation mechanism: the Schwan equation amplifies external fields to 7.5–15 μV at the membrane (37% of thermal noise at 1 V/m ambient; 184% at 5 V/m personal), and T-type (Cav3) channels operate at a bifurcation point where ~10% are open at rest (window current), making them responsive to these perturbations. Pathway D (HPA → testosterone) is now also derived via the same T-type mechanism: Schwan δVm → Cav3 → Ca²⁺ → StAR → testosterone (Xiang 2025).",
+      "Pathway weights reflect empirical calibration to community data (Amish–Korea gradient). They do not reflect theoretical hierarchy: Pathway B (CRY/RPM) is the PRIMARY pathway because 87.5% of the RPM Hamiltonian is derivable from Lindgren geometry, establishing the mechanism’s EXISTENCE as a geometric consequence. Pathway A has stronger experimental support (23–28 blocker studies). The former δVm objection (δV_m ≈ 10⁻²¹ V from geometry alone) is now resolved by the T-type calcium channel bifurcation mechanism: the Schwan equation amplifies external fields to 7.5–15 μV at the membrane (37% of thermal noise at 1 V/m ambient; 184% at 5 V/m personal), and T-type (Cav3) channels operate at a bifurcation point where ~10% are open at rest (window current), making them responsive to these perturbations. Pathway D (HPA → testosterone) is now also derived via the same T-type mechanism: Schwan δVm → Cav3 → Ca²⁺ → StAR → testosterone ([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
     rpmFrequencyNote:
-      "CRY/RPM does not respond to the RF carrier frequency (900 MHz – 3.5 GHz). Its resonance ceiling is ~22.5 MHz (Talbi, Zadeh-Haghighi & Simon 2025, Front. Quantum Sci. Technol. 4:1544473). The biologically active components for Pathway B are the geomagnetic background (B_DC) and ELF modulation envelopes of telecom signals (GSM 217 Hz, WiFi 10 Hz beacon). Effects of the RF carrier itself are mediated by Pathway A through the electric field component. The two pathways have complementary frequency domains.",
+      "CRY/RPM does not respond to the RF carrier frequency (900 MHz – 3.5 GHz). Its resonance ceiling is ~22.5 MHz ([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473). The biologically active components for Pathway B are the geomagnetic background (B_DC) and ELF modulation envelopes of telecom signals (GSM 217 Hz, WiFi 10 Hz beacon). Effects of the RF carrier itself are mediated by Pathway A through the electric field component. The two pathways have complementary frequency domains.",
     vgccHierarchyTitle: "VGCC sensitivity hierarchy at resting potential",
     vgccHierarchyNote:
       "Not all voltage-gated calcium channels are equally EMF-sensitive. At resting membrane potential (~−70 mV), EMF sensitivity follows the hierarchy: Cav3 (T-type) >> Cav1.3 >> Cav1.2. T-type channels (Cav3.1, Cav3.2, Cav3.3) operate at a bifurcation point where ~10% are open at rest (window current), making them continuously sensitive to small voltage perturbations. Cav1.3 is a 'low-threshold L-type' that activates at ~−50 mV — 25 mV more negative than Cav1.2 (J Neurosci 2001). This makes Cav1.3 the primary channel in tissues requiring sustained low-voltage calcium entry: SA node pacemaking and inner hair cell synaptic transmission. Cav1.2, the canonical L-type, activates at ~−30 mV and is significant ONLY during action potentials — at rest it contributes negligibly. This hierarchy explains tissue-specific EMF vulnerability: organs dominated by Cav3 (testes, pituitary, adrenal, hippocampus) are most affected; Cav1.3-dependent tissues (inner ear, SA node) are intermediate; Cav1.2-dominated tissues (skeletal muscle, cardiac ventricle) are affected only during electrical activity.",
@@ -76,12 +79,12 @@ const t = {
     chiEvidenceSub: "How the selection rule manifests in six independent biological domains",
     chiEvidenceDesc: "The χ function is not an abstract construct — it predicts specific, testable modulations in six evidence families. Each family has its own χ modulator that determines when and how strongly EMF affects that system.",
     chiEvidenceFamilies: [
-      { family: "Diabetes (β-cells)", chi: "χ(glucose): K_ATP → V_mem → VGCC priming", mechanism: "High glucose closes K_ATP channels → membrane depolarizes → VGCCs primed → χ HIGH. Low glucose → K_ATP open → χ LOW.", prediction: "EMF × high-GI diet produces synergistic diabetes risk. Fasting protects β-cells.", verification: "Sakurai 2008: ELF reduced insulin secretion 30%", level: "M|C" },
-      { family: "Sperm quality (BTB)", chi: "χ(BTB integrity): barrier attenuates effective field", mechanism: "Intact BTB shields spermatogenic cells → low χ. EMF opens BTB → shielding lost → χ rises → positive feedback.", prediction: "Sperm quality decline accelerates over time (super-linear).", verification: "Yu 2019: 4G RF directly disrupts BTB, time-dependent", level: "E" },
-      { family: "Barriers (BBB + BTB)", chi: "χ(barrier permeability): continuous modulator", mechanism: "Barriers are continuous χ modulators. Partially damaged barrier = partial χ increase. Produces multiplicative amplification.", prediction: "Super-linear dose-response with cumulative exposure.", verification: "Ulusoy 2025: progressive BBB degradation 30–360 min", level: "E" },
+      { referenceId: "sakurai2008", family: "Diabetes (β-cells)", chi: "χ(glucose): K_ATP → V_mem → VGCC priming", mechanism: "High glucose closes K_ATP channels → membrane depolarizes → VGCCs primed → χ HIGH. Low glucose → K_ATP open → χ LOW.", prediction: "EMF × high-GI diet produces synergistic diabetes risk. Fasting protects β-cells.", verification: "Sakurai 2008: ELF reduced insulin secretion 30%", level: "M|C" },
+      { referenceId: "yu2019_btb", family: "Sperm quality (BTB)", chi: "χ(BTB integrity): barrier attenuates effective field", mechanism: "Intact BTB shields spermatogenic cells → low χ. EMF opens BTB → shielding lost → χ rises → positive feedback.", prediction: "Sperm quality decline accelerates over time (super-linear).", verification: "Yu 2019: 4G RF directly disrupts BTB, time-dependent", level: "E" },
+      { referenceId: "ulusoy2025_bbb_therapeutic", family: "Barriers (BBB + BTB)", chi: "χ(barrier permeability): continuous modulator", mechanism: "Barriers are continuous χ modulators. Partially damaged barrier = partial χ increase. Produces multiplicative amplification.", prediction: "Super-linear dose-response with cumulative exposure.", verification: "Ulusoy 2025: progressive BBB degradation 30–360 min", level: "E" },
       { family: "Sentinel species", chi: "χ(metabolic rate): M^(−0.25) scaling", mechanism: "Small animals: higher mass-specific metabolic rate → higher baseline ROS → higher χ → larger EMF response.", prediction: "Insects and small birds affected first; larger mammals later.", verification: "Temporal order matches body mass scaling", level: "M|C" },
-      { family: "Cardiac (CRY2-TRPC1)", chi: "χ(CRY2 state): light- and FAD-dependent", mechanism: "If CRY2-TRPC1 operates in cardiomyocytes (as in myoblasts, Yap 2025), cardiac calcium entry is light/FAD-dependent.", prediction: "Nighttime phone use → higher arrhythmia risk than daytime.", verification: "Not yet tested. TRPC channels confirmed in myocytes.", level: "L*" },
-      { family: "Adey-Blackman window", chi: "χ(photocycle) × χ(temperature) × χ(DC orientation)", mechanism: "The 'biological window' emerges from three superimposed χ windows. Labs controlling all three find consistent results.", prediction: "Five-parameter standard resolves 50-year replication debate.", verification: "Blackman 1985–1991: demonstrated each window independently", level: "M" },
+      { family: "Cardiac (CRY2-TRPC1)", chi: "χ(CRY2 state): light- and FAD-dependent", mechanism: "If CRY2-TRPC1 operates in cardiomyocytes (as in myoblasts, [[ref:yap2025|Yap 2025]]), cardiac calcium entry is light/FAD-dependent.", prediction: "Nighttime phone use → higher arrhythmia risk than daytime.", verification: "Not yet tested. TRPC channels confirmed in myocytes.", level: "L*" },
+      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackman window", chi: "χ(photocycle) × χ(temperature) × χ(DC orientation)", mechanism: "The 'biological window' emerges from three superimposed χ windows. Labs controlling all three find consistent results.", prediction: "Five-parameter standard resolves 50-year replication debate.", verification: "Blackman 1985–1991: demonstrated each window independently", level: "M" },
     ],
 
     twoChSub: "ELF + IF + RF decomposition with 12 technology layers and TCBM",
@@ -93,30 +96,30 @@ const t = {
     twoChLayersTitle: "12 technology layers composing the ambient field",
     twoChLayersDesc:
       "The ambient term is not monolithic. It decomposes into 12 independent technology layers, each with its own driver, deployment timeline, and frequency profile. This decomposition improves the model's discriminative power because each layer acts as an orthogonal instrument.",
-    ifoVgicNote: "The IFO-VGIC mechanism is supported by a comprehensive review of 131 studies (Panagopoulos et al. 2025, Bioelectromagnetics): 95% report oxidative effects from RF/Wi-Fi exposure. This consensus, consistent with Yakymenko et al. 2016 (93/100), establishes the Ca²⁺ influx → ROS pathway as the most robustly documented non-thermal mechanism.",
-    multiPathwayCa2Note: "The Ca²⁺ disruption at Level 4 operates through multiple independent pathways: (1) direct S4 voltage sensor forced oscillation (Panagopoulos et al. 2025, IFO-VGIC); (2) intracellular calcium store dysregulation via ryanodine receptors (RyR) and SERCA pumps (Bertagna et al. 2025, Ann NY Acad Sci). Both pharmacological blockade experiments (VGCC blockers for pathway 1; dantrolene for RyR, CPA for SERCA in pathway 2) abrogate EMF effects, confirming mechanism. The multi-pathway nature explains tissue-specific sensitivity: cells with high VGIC density AND large intracellular Ca²⁺ stores (neurons, gonadal cells) are more sensitive than cells with low stores (keratinocytes — cf. Meyer 2026, Haidar 2025: null results in skin cells). Note: Bertagna 2025 is ELF (50 Hz), not RF — translation to RF is not direct, but the Ca²⁺ pathway is shared.",
-    fiveGReproNote: "The first 5G-frequency-specific testicular data (Bektas et al. 2026, Bioelectromagnetics): 3.5 GHz RF induced testicular and oxidative damage in rats. CoQ10 supplementation ameliorated the damage, demonstrating mechanism reversibility — consistent with BERM's recovery window model where antioxidant capacity determines net daily damage. This extends the oxidative stress evidence base (Yakymenko 2016: 93/100; Panagopoulos 2025: 95%) to the 5G frequency range.",
-    pathwayCQuantNote: "The melatonin suppression pathway is quantitatively supported by a PRISMA systematic review of 55 studies (Tbahriti et al. 2026, Sleep Biol Rhythms): 88% of high-quality animal studies report EMF-induced melatonin suppression of 20-50% from baseline. This suppression is biologically significant for GnRH pulsatility but smaller than light-induced suppression (>90%), consistent with BERM's v17_night_fraction() modeling EMF as one component of the nocturnal triple hit (melanopsin + CRY + melatonin), not the sole driver. Methodological note: only 27% of reviewed studies met high standards.",
-    pathwayCWeightNote: "Note on pathway C weight: Pathway C's 25% reflects both its circadian function (CRY2 → clock gene transcription → melatonin → HPG) and its recently discovered calcium signaling function (CRY2 → TRPC1 modulation → Ca²⁺ entry; Yap et al. 2025, Cells). TRPC1 is a TRP channel, not a voltage-gated calcium channel (VGCC). Pathways A and C are therefore pharmacologically separable: L-type VGCC blockers (nifedipine) block pathway A effects but not CRY2-TRPC1 effects.",
-    cryIndividualVariationNote: "Individual variation: CRY sensitivity is modulated by iris pigmentation (blue > green > brown; Higuchi 2007), nutritional FAD status (Hirano 2017), and sex (males > females in acute magnetoreception; Chae 2019). These modulators may explain part of the inter-individual and inter-population variance in pathway C effectiveness. The CRY2-TRPC1 physical complex (Yap/Sherrard 2025) further reveals that pathway C has a second downstream branch: CRY2 modulates TRPC1 (a TRP channel, NOT a VGCC), enabling calcium signaling independently of pathway A. Pathways A and C remain pharmacologically separable — L-type VGCC blockers inhibit A but not CRY2-TRPC1. See the detailed analysis at /evidence/eyes.",
-    cryDualSystemNote: "Dual CRY system: Pathway C operates through two distinct cryptochrome systems in the retina. C1 (sensory): Full-length CRY1 protein was found exclusively in the outer segments of short-wavelength-sensitive 'blue' cone photoreceptors in human, bonobo, and gorilla retinas (Bartölke et al. 2025, FASEB J). This location far from nuclei — in the phototransduction machinery — suggests a sensory function beyond circadian clock regulation. The stacked membrane lamellae of cone outer segments provide the orientational order required for directional magnetoreception (cf. Majewska et al. 2025, ACS Chem Biol: CRY associates with lipid bilayers in ordered manner). This is the system most directly affected by iris pigmentation: blue eyes transmit ~100× more light to blue cones, increasing CRY1 activation. C2 (circadian): CRY2 is expressed in retinal ganglion cells, particularly ipRGCs that project to the SCN. CRY2 forms a physical complex with TRPC1 (Yap et al. 2025), linking the circadian pathway to ion channel signaling. Both systems require FAD as their chromophore and are therefore both dependent on riboflavin (B2) status.",
-    recoveryWindowNote: "The distinction between acute and chronic exposure is empirically supported: Koivisto et al. (2000) observed cognitive facilitation after 30–60 min exposure (compatible with acute Ca²⁺-mediated synaptic enhancement), while Panagopoulos et al. (2025) report 95% oxidative stress in studies with chronic or repeated exposure. The recovery window model resolves this apparent contradiction: 30 min + 23.5h recovery → 97% repair (no net damage); 22h exposure + 2h recovery → 21% repair (cumulative damage).",
-    lateralizationNote: "The two-channel model's spatial structure is empirically supported by lateralization studies: Eliyahu et al. (2006) and Luria et al. (2009) demonstrated that 890 MHz exposure affects specifically the hemisphere nearest the phone. This confirms that personal-EMF effects are local, not systemic — EMF attenuates with the square of distance — supporting BERM's premise that phone-in-pocket targets testes, phone-at-ear targets hypothalamus.",
+    ifoVgicNote: "The IFO-VGIC mechanism is supported by a comprehensive review of 131 studies ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics): 95% report oxidative effects from RF/Wi-Fi exposure. This consensus, consistent with [[ref:yakymenko2016|Yakymenko et al. 2016]] (93/100), establishes the Ca²⁺ influx → ROS pathway as the most robustly documented non-thermal mechanism.",
+    multiPathwayCa2Note: "The Ca²⁺ disruption at Level 4 operates through multiple independent pathways: (1) direct S4 voltage sensor forced oscillation ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC); (2) intracellular calcium store dysregulation via ryanodine receptors (RyR) and SERCA pumps ([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci). Both pharmacological blockade experiments (VGCC blockers for pathway 1; dantrolene for RyR, CPA for SERCA in pathway 2) abrogate EMF effects, confirming mechanism. The multi-pathway nature explains tissue-specific sensitivity: cells with high VGIC density AND large intracellular Ca²⁺ stores (neurons, gonadal cells) are more sensitive than cells with low stores (keratinocytes — cf. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: null results in skin cells). Note: [[ref:bertagna2025|Bertagna 2025]] is ELF (50 Hz), not RF — translation to RF is not direct, but the Ca²⁺ pathway is shared.",
+    fiveGReproNote: "The first 5G-frequency-specific testicular data ([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics): 3.5 GHz RF induced testicular and oxidative damage in rats. CoQ10 supplementation ameliorated the damage, demonstrating mechanism reversibility — consistent with BERM's recovery window model where antioxidant capacity determines net daily damage. This extends the oxidative stress evidence base ([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95%) to the 5G frequency range.",
+    pathwayCQuantNote: "The melatonin suppression pathway is quantitatively supported by a PRISMA systematic review of 55 studies ([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms): 88% of high-quality animal studies report EMF-induced melatonin suppression of 20-50% from baseline. This suppression is biologically significant for GnRH pulsatility but smaller than light-induced suppression (>90%), consistent with BERM's v17_night_fraction() modeling EMF as one component of the nocturnal triple hit (melanopsin + CRY + melatonin), not the sole driver. Methodological note: only 27% of reviewed studies met high standards.",
+    pathwayCWeightNote: "Note on pathway C weight: Pathway C's 25% reflects both its circadian function (CRY2 → clock gene transcription → melatonin → HPG) and its recently discovered calcium signaling function (CRY2 → TRPC1 modulation → Ca²⁺ entry; [[ref:yap2025|Yap et al. 2025]], Cells). TRPC1 is a TRP channel, not a voltage-gated calcium channel (VGCC). Pathways A and C are therefore pharmacologically separable: L-type VGCC blockers (nifedipine) block pathway A effects but not CRY2-TRPC1 effects.",
+    cryIndividualVariationNote: "Individual variation: CRY sensitivity is modulated by iris pigmentation (blue > green > brown; [[ref:higuchi2007|Higuchi 2007]]), nutritional FAD status ([[ref:hirano2017|Hirano 2017]]), and sex (males > females in acute magnetoreception; [[ref:chae2019|Chae 2019]]). These modulators may explain part of the inter-individual and inter-population variance in pathway C effectiveness. The CRY2-TRPC1 physical complex ([[ref:yap2025|Yap/Sherrard 2025]]) further reveals that pathway C has a second downstream branch: CRY2 modulates TRPC1 (a TRP channel, NOT a VGCC), enabling calcium signaling independently of pathway A. Pathways A and C remain pharmacologically separable — L-type VGCC blockers inhibit A but not CRY2-TRPC1. See the detailed analysis at /evidence/eyes.",
+    cryDualSystemNote: "Dual CRY system: Pathway C operates through two distinct cryptochrome systems in the retina. C1 (sensory): Full-length CRY1 protein was found exclusively in the outer segments of short-wavelength-sensitive 'blue' cone photoreceptors in human, bonobo, and gorilla retinas ([[ref:bartolke2025|Bartölke et al. 2025]], FASEB J). This location far from nuclei — in the phototransduction machinery — suggests a sensory function beyond circadian clock regulation. The stacked membrane lamellae of cone outer segments provide the orientational order required for directional magnetoreception (cf. [[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol: CRY associates with lipid bilayers in ordered manner). This is the system most directly affected by iris pigmentation: blue eyes transmit ~100× more light to blue cones, increasing CRY1 activation. C2 (circadian): CRY2 is expressed in retinal ganglion cells, particularly ipRGCs that project to the SCN. CRY2 forms a physical complex with TRPC1 ([[ref:yap2025|Yap et al. 2025]]), linking the circadian pathway to ion channel signaling. Both systems require FAD as their chromophore and are therefore both dependent on riboflavin (B2) status.",
+    recoveryWindowNote: "The distinction between acute and chronic exposure is empirically supported: [[ref:koivisto2000|Koivisto et al. (2000)]] observed cognitive facilitation after 30–60 min exposure (compatible with acute Ca²⁺-mediated synaptic enhancement), while [[ref:panagopoulos2025_ifo|Panagopoulos et al. (2025)]] report 95% oxidative stress in studies with chronic or repeated exposure. The recovery window model resolves this apparent contradiction: 30 min + 23.5h recovery → 97% repair (no net damage); 22h exposure + 2h recovery → 21% repair (cumulative damage).",
+    lateralizationNote: "The two-channel model's spatial structure is empirically supported by lateralization studies: [[ref:eliyahu2006|Eliyahu et al. (2006)]] and [[ref:luria2009|Luria et al. (2009)]] demonstrated that 890 MHz exposure affects specifically the hemisphere nearest the phone. This confirms that personal-EMF effects are local, not systemic — EMF attenuates with the square of distance — supporting BERM's premise that phone-in-pocket targets testes, phone-at-ear targets hypothalamus.",
     ifChannelTitle: "IF channel: LED lighting as primary source",
     ifChannelDesc:
-      "The IF channel (1 kHz – 1 MHz) targets dividing cells through the same frequency–cell size relationship as FDA-approved TTFields cancer therapy. The primary environmental source of IF fields is LED lighting: every LED bulb contains a switch-mode power supply operating at 20–200 kHz with harmonics extending to megahertz. A typical home contains 15–30 such sources; a typical office contains 200–500. Additional IF sources include HVAC variable frequency drives (5–50 kHz), induction cooktops (20–75 kHz), and all switch-mode power supplies (laptop chargers, phone chargers). The mechanism operates via Ion Forced Oscillation (IFO-VGIC), with a biological threshold of 10⁻⁵ V/m (Panagopoulos 2025) — orders of magnitude below measured LED driver emissions.",
+      "The IF channel (1 kHz – 1 MHz) targets dividing cells through the same frequency–cell size relationship as FDA-approved TTFields cancer therapy. The primary environmental source of IF fields is LED lighting: every LED bulb contains a switch-mode power supply operating at 20–200 kHz with harmonics extending to megahertz. A typical home contains 15–30 such sources; a typical office contains 200–500. Additional IF sources include HVAC variable frequency drives (5–50 kHz), induction cooktops (20–75 kHz), and all switch-mode power supplies (laptop chargers, phone chargers). The mechanism operates via Ion Forced Oscillation (IFO-VGIC), with a biological threshold of 10⁻⁵ V/m ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) — orders of magnitude below measured LED driver emissions.",
     tcbmTitle: "Three-Channel Biological Model (TCBM)",
     tcbmIntro:
       "BERM v19.1 identifies three independent electromagnetic channels, each with distinct frequency ranges, exposure sources, biological mechanisms, and temporal histories:",
     tcbmElfTitle: "Channel 1: ELF (0–300 Hz)",
     tcbmElfDesc:
-      "Source: power grid, household wiring, appliances, transformers. Mechanism: IFO-VGIC forced ion oscillation (Panagopoulos 2025). History: present since electrification (1880s), stable since ~1970. Proxy: residential electricity consumption (kWh per capita). Always on, 24/7, entire home.",
+      "Source: power grid, household wiring, appliances, transformers. Mechanism: IFO-VGIC forced ion oscillation ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). History: present since electrification (1880s), stable since ~1970. Proxy: residential electricity consumption (kWh per capita). Always on, 24/7, entire home.",
     tcbmIfTitle: "Channel 2: IF (300 Hz – 10 MHz)",
     tcbmIfDesc:
-      "Source: LED drivers (20–300 kHz), SMPS, VFDs, induction cooktops. Mechanism: Cyb5b → Ca²⁺ oscillations (Kim 2026 Cell), IFO at higher frequencies. History: near-zero before 2009, exponential growth 2009–2019 (EU LED transition). Proxy: LED market share × residential electricity. Pulsed, high dV/dt, regulatory gap (IJRB 2022).",
+      "Source: LED drivers (20–300 kHz), SMPS, VFDs, induction cooktops. Mechanism: Cyb5b → Ca²⁺ oscillations ([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]]), IFO at higher frequencies. History: near-zero before 2009, exponential growth 2009–2019 (EU LED transition). Proxy: LED market share × residential electricity. Pulsed, high dV/dt, regulatory gap ([[ref:ijrb2022_if_review|IJRB 2022]]).",
     tcbmRfTitle: "Channel 3: RF (100 kHz – 300 GHz)",
     tcbmRfDesc:
-      "Source: mobile phones, Wi-Fi, Bluetooth, base stations, IoT. Mechanism: RPM/CRY spin chemistry (Ritz 2004), thermal deposition at high SAR. History: 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Proxy: broadband subscriptions per 100, mobile subscriptions. Modulated (data encoding), personal + ambient.",
+      "Source: mobile phones, Wi-Fi, Bluetooth, base stations, IoT. Mechanism: RPM/CRY spin chemistry ([[ref:ritz2004|Ritz 2004]]), thermal deposition at high SAR. History: 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Proxy: broadband subscriptions per 100, mobile subscriptions. Modulated (data encoding), personal + ambient.",
     tcbmIfMitotic:
       "The IF channel's biological mechanism differs from ELF and RF. While ELF primarily activates ion channels (IFO-VGCC) and RF primarily disrupts radical pair chemistry (RPM/CRY), IF acts through a THIRD pathway: disruption of polar macromolecular structures during cell division (mitotic spindle, tubulin dimers). TTFields research demonstrates that IF fields (100–500 kHz) exert directional forces on polar intracellular elements. This mechanism is frequency-dependent: cancer cells are most affected at 150–200 kHz, while normal cells at ~50 kHz (Nature 2020). LED driver emissions (20–100 kHz) span the normal-cell sensitivity range.",
     tcbmWeightNote:
@@ -153,7 +156,7 @@ const t = {
     recovBbbLayer: "Biological barriers (BBB + BTB)",
     recovBbbTime: "BBB: irreversible; BTB: partially reversible",
     recovBbbNote:
-      "Neuronal damage from chronic BBB leakage is assumed permanent. BTB disruption (Yu et al. 2019: Spock3-MMP2 axis at 4G) compromises the spermatogenic microenvironment directly. Both barriers use the same tight junction proteins (occludin, ZO-1). Positive feedback: barrier damage → higher effective field → more damage.",
+      "Neuronal damage from chronic BBB leakage is assumed permanent. BTB disruption ([[ref:yu2019_btb|Yu et al. 2019]]: Spock3-MMP2 axis at 4G) compromises the spermatogenic microenvironment directly. Both barriers use the same tight junction proteins (occludin, ZO-1). Positive feedback: barrier damage → higher effective field → more damage.",
 
     compSub: "How TFR formula separates biological capacity from cultural demand",
     compTitle: "Compensation mechanism",
@@ -184,7 +187,7 @@ const t = {
     techLayersLink: "See all 14 technology profiles →",
 
     elfPrimingTitle: "ELF Priming Hypothesis",
-    elfPrimingDesc: "The power grid does not merely add 50 Hz exposure. It upregulates voltage-gated calcium channel expression (P/Q, N, R subtypes increase after 8–10 days — PMC4757866). This makes every cell more sensitive to every other EMF source. This explains why residential electricity consumption is the strongest predictor of fertility decline (RMSE 0.522) while mobile phone density is the weakest (RMSE 1.053): electricity measures the priming state, not just one exposure source.",
+    elfPrimingDesc: "The power grid does not merely add 50 Hz exposure. It upregulates voltage-gated calcium channel expression (P/Q, N, R subtypes increase after 8–10 days — [[ref:sun2016_elf_vgcc|PMC4757866]]). This makes every cell more sensitive to every other EMF source. This explains why residential electricity consumption is the strongest predictor of fertility decline (RMSE 0.522) while mobile phone density is the weakest (RMSE 1.053): electricity measures the priming state, not just one exposure source.",
     elfFreqNote: "Note: The ELF channel operates at 50 Hz in Europe and 60 Hz in the Americas. 50 Hz is within 2 Hz of the 8th Schumann resonance harmonic (52.0 Hz), potentially producing stronger CRY interference in European populations. This is speculative but testable by comparing melatonin profiles between 50 Hz and 60 Hz countries at matched total EMF levels.",
 
     layerModelTitle: "The Layered Exposure Model",
@@ -201,9 +204,9 @@ const t = {
     layerFormulaNote: "Parameters α, β, w_IF require calibration against 54-country dataset + Amish/Tsimane data points. Expected improvement: LOOCV RMSE < 0.45 (vs 0.522 for v19.1).",
     layerAnomaliesTitle: "Five anomalies the layered model explains",
     layerAnomalies: [
-      { title: "The Mozaffarian Paradox", subtitle: "Americans eat less but weigh more since 2000", conventional: "Unexplained", explanation: "Layers 3–4 (WiFi + LED IF) added metabolic disruption independent of caloric intake. BAT thermogenesis↓ + insulin dynamics↓ are calorie-independent mechanisms.", ref: "Mozaffarian 2022, AJCN" },
+      { referenceId: "mozaffarian2022", title: "The Mozaffarian Paradox", subtitle: "Americans eat less but weigh more since 2000", conventional: "Unexplained", explanation: "Layers 3–4 (WiFi + LED IF) added metabolic disruption independent of caloric intake. BAT thermogenesis↓ + insulin dynamics↓ are calorie-independent mechanisms.", ref: "Mozaffarian 2022, AJCN" },
       { title: "The 2012 Inflection", subtitle: "Social media existed since 2003 without crisis", conventional: "Social media content harms teens", explanation: "2012 = first year all three channels (ELF + IF + RF) simultaneously active 24/7 in teens. CaMKII threshold crossed at population level. Content restrictions will NOT resolve the crisis.", ref: "Haidt 2024; BERM layer analysis" },
-      { title: "The COVID Acceleration", subtitle: "T2D prevalence growth: 2.90%→3.52%/yr", conventional: "Sedentary behavior during lockdown", explanation: "Lockdown INCREASED layer intensity: 24h/day at home with WiFi + LED + multiple devices. Recovery window eliminated entirely. Remote workers had higher EMF than commuters.", ref: "GBD 2021 / Frontiers Endocrinol 2024" },
+      { referenceId: "t2d_covid2024", title: "The COVID Acceleration", subtitle: "T2D prevalence growth: 2.90%→3.52%/yr", conventional: "Sedentary behavior during lockdown", explanation: "Lockdown INCREASED layer intensity: 24h/day at home with WiFi + LED + multiple devices. Recovery window eliminated entirely. Remote workers had higher EMF than commuters.", ref: "GBD 2021 / Frontiers Endocrinol 2024" },
       { title: "The 15–30 Year Lag", subtitle: "Developing countries follow the same trajectory, delayed", conventional: "Prosperity changes lifestyle", explanation: "The delay matches electrification + technology adoption timelines, not prosperity. China T2D: 1.3% (1980) → 8.7% (2014) parallels electrification from 60% to 100%.", ref: "BMC Public Health 2018" },
       { title: "The Amish Exception", subtitle: "TFR 6.1, low obesity, low dementia — same country", conventional: "Physical labor and community", explanation: "Zero technology layers. No ELF priming. Full recovery. EMF_effective ≈ 0. The diet is NOT especially healthy — the EMF environment is.", ref: "BERM population comparison" },
     ],
@@ -228,25 +231,25 @@ const t = {
 
     seasonTitle: "Seasonal Sensitivity: CRY × Latitude",
     seasonSub: "CRY magnetoreceptor sensitivity is light-dependent — winter amplifies EMF biological effects",
-    seasonDesc: "Cryptochrome (CRY) is a light-dependent magnetoreceptor. In winter (less light), CRY is more sensitive to magnetic field perturbation — EMF effects on melatonin are STRONGER in winter. Halgamuge 2015 (Nature Sci Rep) demonstrated this directly: ELF suppressed melatonin in winter but INCREASED it in summer in calves. This seasonal modulation explains why Nordic countries (high latitude + high EMF) show disproportionate health burden (SAD prevalence: Finland 21%), and why EMF studies conducted in different seasons produce contradictory results.",
+    seasonDesc: "Cryptochrome (CRY) is a light-dependent magnetoreceptor. In winter (less light), CRY is more sensitive to magnetic field perturbation — EMF effects on melatonin are STRONGER in winter. [[ref:halgamuge2015|Halgamuge 2015]] (Nature Sci Rep) demonstrated this directly: ELF suppressed melatonin in winter but INCREASED it in summer in calves. This seasonal modulation explains why Nordic countries (high latitude + high EMF) show disproportionate health burden (SAD prevalence: Finland 21%), and why EMF studies conducted in different seasons produce contradictory results.",
     seasonFormulaLabel: "Formula v21 correction factor:",
     seasonFormula: "S = 1 + γ × f(latitude, season)",
     seasonFormulaDesc: "S increases in winter at high latitudes (CRY more sensitive to EMF perturbation), decreases in summer (CRY saturated by ambient light). Near the equator, S ≈ 1.0 (stable day length). Finland in winter: S ≈ 1.3. Finland in summer: S ≈ 0.9.",
     seasonPred1: "SEASON-1: SAD/depression prevalence correlates with latitude × EMF density, not latitude alone",
     seasonPred2: "SEASON-2: EMF-free bedroom benefit should be LARGER in winter months",
-    seasonRef: "Halgamuge 2015 (PMC4585560) · CRY light dependence (biorxiv 2024)",
+    seasonRef: "[[ref:halgamuge2015|Halgamuge 2015]] · [[ref:kolbabova2015_melatonin_seasonal|Kolbabová et al. 2015]] · CRY light dependence (biorxiv 2024)",
 
     cacna1cTitle: "CACNA1C rs1006737: Individual Susceptibility",
     cacna1cSub: "Your Cav1.2 genotype determines your EMF sensitivity threshold",
     cacna1cDesc: "The rs1006737 A-allele increases CACNA1C transcription → more Cav1.2 channels per cell → greater Ca²⁺ influx per EMF stimulus → lower CaMKII autophosphorylation threshold. This variant has been linked by GWAS to bipolar disorder, schizophrenia, autism, cardiac arrhythmias, and neurodevelopmental disorders — ALL conditions predicted by BERM's Ca²⁺ mechanism.",
-    cacna1cEvidence: "Sousouri 2025 (ETH Zurich): In a double-blind study, CACNA1C genotype DIRECTLY determined the sleep response to 5G exposure. This is the first demonstration that EMF sensitivity is genotype-dependent, not psychosomatic. PMC4898738: rs1006737 is a quantitative trait locus for CACNA1C transcript levels. PMC3577650: A-allele → altered amygdala activity across diagnoses AND healthy controls.",
+    cacna1cEvidence: "[[ref:sousouri2025|Sousouri 2025]] (ETH Zurich): In a double-blind study, CACNA1C genotype DIRECTLY determined the sleep response to 5G exposure. This is the first demonstration that EMF sensitivity is genotype-dependent, not psychosomatic. [[ref:cacna1c_functional|Eckart et al. 2016]]: rs1006737 is a quantitative trait locus for CACNA1C transcript levels. [[ref:cacna1c_amygdala|Tesli et al. 2013]]: A-allele → altered amygdala activity across diagnoses AND healthy controls.",
     cacna1cImplication: "EHS (electromagnetic hypersensitivity) reinterpretation: EHS is not psychosomatic — it reflects genotype-dependent threshold variation. Individuals with CACNA1C A/A genotype have more Cav1.2 channels, reach the CaMKII threshold at lower EMF exposure, and experience symptoms earlier.",
     cacna1cFormulaLabel: "Population-level correction:",
     cacna1cFormula: "G_pop = 1 + δ × CACNA1C_A_allele_frequency",
     cacna1cFormulaDesc: "G_pop adjusts the population's aggregate EMF sensitivity based on A-allele prevalence. European-origin populations (higher A-allele frequency) may have higher aggregate sensitivity than East Asian populations, though this requires further verification.",
     cacna1cPred1: "GEN-1: Populations with higher CACNA1C A-allele frequency show steeper health decline per unit EMF",
     cacna1cPred2: "GEN-2: A/A genotype individuals show stronger EMF responses than G/G in controlled exposure studies",
-    cacna1cRef: "Sousouri 2025 (ETH) · PMC4898738 · PMC3577650",
+    cacna1cRef: "[[ref:sousouri2025|Sousouri 2025]] (ETH) · [[ref:cacna1c_functional|Eckart et al. 2016]] · [[ref:cacna1c_amygdala|Tesli et al. 2013]]",
 
     neonatalQTitle: "Neonatal Q-Factor: The Resonance Threshold",
     neonatalQSub: "Why the neonatal brain is an undamped resonator — GABA excitatory via NKCC1/KCC2 switch",
@@ -255,7 +258,7 @@ const t = {
     neonatalQFormula: "Q_neonatal(age) = Q₀ / (1 + (age / τ_KCC2)²)",
     neonatalQFormulaDesc: "Q₀ = quality factor at birth (maximal, ~undamped). τ_KCC2 ≈ 2–4 weeks = NKCC1→KCC2 switch time constant. At birth: Q ≈ Q₀. At 2–4 months: Q declining but dangerously high. At 12 months: Q approaches adult levels (~1–5).",
     neonatalQVerification: "Bumetanide (NKCC1 blocker) → restores inhibitory GABA → terminates neonatal seizures = introduces damping. KCNQ2 mutations → neonatal seizures that spontaneously remit at 3–6 months = KCC2 maturation timeline.",
-    neonatalQRef: "Neonatal seizure review 2021 · Bumetanide NKCC1 2015 · NKCC1/KCC2 Bookshelf 2020",
+    neonatalQRef: "[[ref:neonatal_seizure_review2021|Neonatal seizure review 2021]] · [[ref:bumetanide_nkcc1|Bumetanide NKCC1 2015]] · [[ref:nkcc1_kcc2_bookshelf|NKCC1/KCC2 Bookshelf 2020]]",
     neonatalQSpectrum: "The neonatal Q → ∞ condition is one end of a continuous spectrum. The same Q-factor mechanism — with varying damping coefficient γ — unifies SIDS, epilepsy, SUDEP, migraine, and cluster headache. Spreading depolarization (CSD) is the common terminal pathway; the Q-factor determines whether CSD is triggered, how far it propagates, and whether it reaches the brainstem.",
     neonatalQSpectrumLink: "See full neurological spectrum analysis →",
 
@@ -272,20 +275,20 @@ const t = {
       { id: "S7", name: "BAT metabolic spiral", steps: "EMF → BAT PRDM16↓ → thermogenesis↓ → metabolic syndrome → inflammation → more VGCC sensitivity → more Ca²⁺ disruption → ...", status: "Mechanistically coherent, animal data", color: "amber" },
       { id: "S8", name: "Testosterone neuroprotection loss", steps: "EMF → Leydig → StAR↓ → T↓ → neuroprotection↓ + synaptic plasticity↓ → more vulnerable to EMF → more Leydig damage → ...", status: "T↓ neuroprotection link verified", color: "green" },
       { id: "S9", name: "IL-1β → KCC2 loop", steps: "EMF → mast cell → IL-1β → KCC2 maturation delayed → GABA stays excitatory longer → Q↑ → more neuronal damage → more IL-1β → ...", status: "KCC2 environmental regulation verified", color: "green" },
-      { id: "S10", name: "Hypothalamic multi-axis cascade", steps: "EMF → hypothalamic synaptic vesicles↓ → GnRH↓ + CRH dysreg. + TRH↓ → multi-hormone deficit → systemic stress → more HPA activation → ...", status: "Kim 2019 synaptic changes verified", color: "green" },
+      { id: "S10", name: "Hypothalamic multi-axis cascade", steps: "EMF → hypothalamic synaptic vesicles↓ → GnRH↓ + CRH dysreg. + TRH↓ → multi-hormone deficit → systemic stress → more HPA activation → ...", status: "[[ref:kim2019_hypothalamus|Kim 2019]] synaptic changes verified", color: "green" },
       { id: "S11", name: "Circadian clock self-disruption", steps: "EMF → SCN Ca²⁺ disrupted → melatonin timing lost → Per2↓ in gut → peripheral clocks desync → more SCN vulnerability", status: "SCN Ca²⁺ oscillation verified", color: "green" },
       { id: "S12", name: "NK-cancer-inflammation", steps: "ELF → NK cytotoxicity↓ → cancer surveillance↓ → tumor growth → inflammation → VGCC sensitization↑ → more NK suppression", status: "NK Ca²⁺ dependence + ELF suppression verified", color: "green" },
       { id: "S13", name: "HPA-HPG cross-spiral", steps: "EMF → cortisol↑ → GnIH↑ → T↓ → neuroprotection↓ → hippocampus vulnerable → HPA braking lost → cortisol↑↑ → more GnIH", status: "RF9 restored T in cortisol-treated primates", color: "green" },
       { id: "S14", name: "Gut-brain inflammation", steps: "EMF → melatonin↓ → Per2↓ in gut → gut barrier↓ → LPS enters blood → neuroinflammation → hippocampal neurogenesis↓ → more HPA activation → more melatonin↓", status: "Per2 KO → gut barrier → LPS → depression verified", color: "green" },
       { id: "S15", name: "Melatonin-telomere aging spiral", steps: "EMF → melatonin↓ → telomerase↓ + SIRT1↓ → telomere shortening → SASP → inflammation → ROS↑ → more telomere damage → more SASP → ...", status: "Melatonin → telomerase + SIRT1 verified; depression = 7y accelerated aging", color: "green" },
       { id: "S16", name: "Pain-sleep-cortisol spiral", steps: "EMF → α2δ-1↑ → central sensitization → chronic pain → sleep↓ (S4) → cortisol↑ (S7) + GABA↓ → inflammation → more sensitization → depression → sleep↓ → ...", status: "α2δ-1 → pain without injury verified; pain-sleep-cortisol each verified", color: "green" },
-      { id: "S17", name: "Amygdala-anxiety spiral", steps: "EMF → Ca²⁺↑ → CaMKII → cortisol↑ → BLA hypertrophy → amygdala hyperactive → anxiety↑ → HPA activation → cortisol↑↑ → more BLA hypertrophy → ...", status: "Single cortisol dose → BLA hypertrophy verified (PNAS 2008); persistence verified (Neurosci Lett 2023)", color: "green" },
+      { id: "S17", name: "Amygdala-anxiety spiral", steps: "EMF → Ca²⁺↑ → CaMKII → cortisol↑ → BLA hypertrophy → amygdala hyperactive → anxiety↑ → HPA activation → cortisol↑↑ → more BLA hypertrophy → ...", status: "Single cortisol dose → BLA hypertrophy verified ([[ref:amygdala_cort|PNAS 2008]]); persistence verified ([[ref:amygdala_persist|Neurosci Lett 2023]])", color: "green" },
     ],
     feedbackLoopsLink: "See full convergence verification →",
 
     hypoNexusTitle: "Hypothalamic Nexus (VK13)",
     hypoNexusSub: "The hypothalamus as anatomical convergence point for seven hormone axes",
-    hypoNexusDesc: "Kim 2019 demonstrated that 835 MHz (12 weeks) reduces synaptic vesicle number, size, and docking in hypothalamus. Crucially, synaptotagmin 1 — the Ca²⁺ sensor for vesicle release — is also reduced. Since ALL hypothalamic hormone release depends on Ca²⁺-triggered vesicle fusion, synaptotagmin 1 loss means ALL axes are simultaneously impaired.",
+    hypoNexusDesc: "[[ref:kim2019_hypothalamus|Kim 2019]] demonstrated that 835 MHz (12 weeks) reduces synaptic vesicle number, size, and docking in hypothalamus. Crucially, synaptotagmin 1 — the Ca²⁺ sensor for vesicle release — is also reduced. Since ALL hypothalamic hormone release depends on Ca²⁺-triggered vesicle fusion, synaptotagmin 1 loss means ALL axes are simultaneously impaired.",
     hypoNexusAxes: [
       { axis: "GnRH → LH/FSH → T↓", organ: "Gonads", consequence: "Testosterone decline, fertility loss" },
       { axis: "CRH → ACTH → cortisol↑", organ: "Adrenals", consequence: "HPA sensitization, chronic stress" },
@@ -309,14 +312,14 @@ const t = {
 
     quadLockTitle: "Quad Lock: The Fourth Dimension",
     quadLockSub: "T↓ × F↑ × DA↓ × OXT↓ — adding oxytocin completes the social-reproductive collapse",
-    quadLockDesc: "Oxytocin release is directly VGCC-dependent (N-type + L-type Ca²⁺ channels, PMC3197583). EMF disrupts VGCC function → OXT release disrupted. Adding OXT↓ to the triple lock creates a quad lock that explains the full modern phenotype: not just physiological decline but social fragmentation.",
+    quadLockDesc: "Oxytocin release is directly VGCC-dependent (N-type + L-type Ca²⁺ channels, [[ref:oxt_vgcc|PMC3197583]]). EMF disrupts VGCC function → OXT release disrupted. Adding OXT↓ to the triple lock creates a quad lock that explains the full modern phenotype: not just physiological decline but social fragmentation.",
     quadLockComponents: [
       { component: "T↓ × OXT↓", effect: "Reproductive-social collapse: fertility decline + pair bond weakening" },
       { component: "DA↓ × OXT↓", effect: "Social motivation collapse: reduced desire for social connection + reduced reward from it" },
       { component: "F↑ × OXT↓", effect: "Stress without buffering: cortisol rises while OXT (the social stress buffer) falls" },
       { component: "T↓ × F↑ × DA↓ × OXT↓", effect: "Complete modern phenotype: biological decline + social isolation + motivational collapse" },
     ],
-    quadLockNote: "Insulin stimulates OXT release via Ca²⁺ (PMC6039480). Obese individuals have lower OXT. This creates a metabolic-social bridge: metabolic syndrome (S7) → insulin resistance → OXT↓ → social isolation → depression → metabolic syndrome worsens.",
+    quadLockNote: "Insulin stimulates OXT release via Ca²⁺ ([[ref:insulin_oxt|PMC6039480]]). Obese individuals have lower OXT. This creates a metabolic-social bridge: metabolic syndrome (S7) → insulin resistance → OXT↓ → social isolation → depression → metabolic syndrome worsens.",
 
     dualBarrierTitle: "Dual barrier principle",
     dualBarrierSubtitle: "BBB + gut barrier share ZO-1, occludin, claudins",
@@ -331,19 +334,19 @@ const t = {
     agingSpiralDesc: "Melatonin is not just a sleep hormone — it is the key anti-aging molecule. It activates telomerase (maintaining telomere length), upregulates SIRT1 (→ ROS↓ → p53↓ → NF-κB↓), and alleviates endothelial aging. EMF→melatonin↓ removes this entire protective cascade.",
     agingSpiralSteps: [
       { step: "EMF → melatonin↓", detail: "Pineal suppression via CRY pathway (VK1-VK3)" },
-      { step: "Melatonin↓ → telomerase↓", detail: "Melatonin activates telomerase directly (Front Aging Neurosci 2022)" },
+      { step: "Melatonin↓ → telomerase↓", detail: "Melatonin activates telomerase directly ([[ref:mel_telomerase|Front Aging Neurosci 2022]])" },
       { step: "Melatonin↓ → SIRT1↓", detail: "SIRT1 → ROS↓ → p53↓ → NF-κB↓ anti-inflammatory cascade lost" },
       { step: "Telomere shortening → SASP", detail: "Shortened telomeres trigger senescence-associated secretory phenotype → chronic inflammation" },
       { step: "SASP → ROS↑ → more telomere damage", detail: "Feedback loop S15: inflammation causes oxidative damage to remaining telomeres" },
     ],
-    agingSpiralQuantitative: "Quantitative anchor: major depression is associated with telomeres 281 bp shorter, equivalent to 7 years of accelerated aging (PMC3063175). Metabolic syndrome is similarly associated with shorter telomeres and reduced telomerase activity (PMC12744432). Both conditions are BERM-predicted outcomes — their aging acceleration is consistent with EMF→melatonin↓→telomerase↓.",
+    agingSpiralQuantitative: "Quantitative anchor: major depression is associated with telomeres 281 bp shorter, equivalent to 7 years of accelerated aging ([[ref:depression_telomere|PMC3063175]]). Metabolic syndrome is similarly associated with shorter telomeres and reduced telomerase activity ([[ref:mets_telomere|PMC12744432]]). Both conditions are BERM-predicted outcomes — their aging acceleration is consistent with EMF→melatonin↓→telomerase↓.",
 
     genSuscTitle: "Genetic Susceptibility Map: The 15-Gene Calcium Profile",
     genSuscSub: "EMF sensitivity is not one gene — it is a polygenic profile across five functional tiers of the calcium cascade",
     genSuscDesc: "BERM identifies 15 genes whose polymorphisms modulate individual EMF sensitivity. They divide into five functional tiers: INFLUX (5 CACNA genes controlling Ca²⁺ entry), MODULATION (CACNA2D1 controlling channel density), INTEGRATION (CAMK2A/B at the convergence point), EXTRUSION (3 genes controlling Ca²⁺ removal), and SIGNALING (4 genes modulating downstream response). Each gene's disease associations match BERM cascade predictions.",
     genSuscInfluxTitle: "Tier 1 — Influx: Ca²⁺ entry channels",
     genSuscInfluxGenes: [
-      { gene: "CACNA1C", protein: "Cav1.2 (L-type)", role: "Primary RF target. Neurons, heart, β-cells.", variant: "rs1006737 A-allele", diseases: "Bipolar, schizophrenia, ASD, depression, Timothy syndrome", evidence: "CONFIRMED (Sousouri 2025 RCT)" },
+      { gene: "CACNA1C", protein: "Cav1.2 (L-type)", role: "Primary RF target. Neurons, heart, β-cells.", variant: "rs1006737 A-allele", diseases: "Bipolar, schizophrenia, ASD, depression, Timothy syndrome", evidence: "CONFIRMED ([[ref:sousouri2025|Sousouri 2025]] RCT)" },
       { gene: "CACNA1H", protein: "Cav3.2 (T-type)", role: "ELF target. Leydig cells, pineal, thalamus.", variant: "GoF mutations", diseases: "Childhood epilepsy, febrile seizures, primary aldosteronism, ASD", evidence: "CONSISTENT" },
       { gene: "CACNA1D", protein: "Cav1.3 (L-type)", role: "Inner ear, SA node, substantia nigra.", variant: "GoF/LoF variants", diseases: "Bradycardia, epilepsy, hearing loss, ADHD, ASD", evidence: "CONSISTENT" },
       { gene: "CACNA1A", protein: "Cav2.1 (P/Q-type)", role: "Presynaptic release. ELF priming target.", variant: "rs16023 B-allele", diseases: "DD + epilepsy, familial hemiplegic migraine, episodic ataxia", evidence: "CONFIRMED (ELF priming + GWAS)" },
@@ -351,15 +354,15 @@ const t = {
     ],
     genSuscModTitle: "Tier 2 — Modulation: Channel density control",
     genSuscModDesc: "CACNA2D1 encodes α2δ-1, the protein that controls VGCC trafficking to synapses. This is the molecular basis of ELF priming: 50/60 Hz exposure upregulates α2δ-1 → more VGCCs reach the cell surface → cells become more sensitive to ALL subsequent EMF. Gabapentinoids (pregabalin, gabapentin) bind α2δ-1 and BLOCK this trafficking — making them mechanistically ELF-priming ANTAGONISTS.",
-    genSuscModRef: "Field 2006 (PNAS) · Hoppa 2012 (Nature)",
+    genSuscModRef: "[[ref:field2006_cacna2d1|Field 2006]] (PNAS) · [[ref:hoppa2012_a2d|Hoppa 2012]] (Nature)",
     genSuscIntTitle: "Tier 3 — Integration: CaMKII convergence",
     genSuscIntDesc: "CAMK2A/B de novo mutations that INCREASE autophosphorylation at Thr286/287 produce epilepsy, intellectual disability, and autism — the EXACT phenotypes BERM predicts from environmental (EMF) autophosphorylation increase. Mutations that DECREASE autophosphorylation also cause intellectual disability. Both directions = disorder → precise regulation is critical. This is BERM's most direct genetic validation: genetic and environmental CaMKII dysregulation converge on identical clinical outcomes.",
-    genSuscIntRef: "Küry 2017 (AJHG, PMC5673671) · Al-Tawashi 2018 (eLife, PMC5963920)",
+    genSuscIntRef: "[[ref:kury2017_camk2|Küry 2017]] (AJHG, PMC5673671) · [[ref:altawashi2018_camk2a|Al-Tawashi 2018]] (eLife, PMC5963920)",
     genSuscExtTitle: "Tier 4 — Extrusion: Ca²⁺ removal",
     genSuscExtDesc: "Three genes control Ca²⁺ removal from cells. Slow extrusion + high influx = Ca²⁺ accumulates → CaMKII threshold crossed at lower EMF levels. SLC8A1 (NCX1): cardiac/neuronal Ca²⁺ export. ATP2B1 (PMCA1): general Ca²⁺ pump (GWAS: hypertension). ATP2B2 (PMCA2): inner ear — slow PMCA2 + Bluetooth earbuds = tinnitus risk.",
     genSuscSigTitle: "Tier 5 — Signaling: Downstream response",
     genSuscSigGenes: [
-      { gene: "CRY1", variant: "CRY1Δ11 (0.6%)", effect: "GoF → longer circadian period → delayed sleep → shorter recovery window. EMF disrupts CRY → ADDITIVE with genetic lengthening.", diseases: "DSPD, metabolic disruption, insomnia", evidence: "CONFIRMED (Patke 2017 Cell)" },
+      { gene: "CRY1", variant: "CRY1Δ11 (0.6%)", effect: "GoF → longer circadian period → delayed sleep → shorter recovery window. EMF disrupts CRY → ADDITIVE with genetic lengthening.", diseases: "DSPD, metabolic disruption, insomnia", evidence: "CONFIRMED ([[ref:patke2017_cry1|Patke 2017]] Cell)" },
       { gene: "MTNR1B", variant: "rs10830963 G", effect: "eQTL → more MT2 receptors on β-cells → HYPERSENSITIVE to melatonin changes. EMF suppresses melatonin → G/G carriers affected MORE → T2D risk SUPERADDITIVE.", diseases: "T2D, fasting glucose, gestational diabetes", evidence: "CONFIRMED (GWAS + eQTL)" },
       { gene: "COMT", variant: "Val158Met (rs4680)", effect: "Val/Val = fast dopamine clearance = low DA baseline → EMF-induced DA synthesis drop hits HARDER (smaller buffer).", diseases: "Stress vulnerability, addiction, pain sensitivity", evidence: "DERIVABLE" },
     ],
@@ -378,16 +381,16 @@ const t = {
       { id: "GXEMF-2", title: "Gabapentinoids reverse ELF priming via α2δ-1", desc: "Pregabalin/gabapentin bind α2δ-1, blocking VGCC trafficking. Gabapentinoid users have lower synaptic VGCC density → less EMF-sensitive." },
       { id: "GXEMF-3", title: "CaMKII autophosphorylation is a measurable biomarker", desc: "CaMKII Thr286 phosphorylation level in lymphocytes: higher = more EMF-sensitive. Testable in EHS cohorts." },
     ],
-    genSuscRef: "Küry 2017 · Patke 2017 · Lyssenko 2009 · Tuomi 2016 · Scholl 2015 · Korean 2025 · Field 2006 · Hoppa 2012",
+    genSuscRef: "[[ref:kury2017_camk2|Küry 2017]] · [[ref:patke2017_cry1|Patke 2017]] · [[ref:lyssenko2009_mtnr1b|Lyssenko 2009]] · [[ref:tuomi2016_mtnr1b|Tuomi 2016]] · [[ref:scholl2015_cacna1h|Scholl 2015]] · [[ref:korean2025_cacna|Korean 2025]] · [[ref:field2006_cacna2d1|Field 2006]] · [[ref:hoppa2012_a2d|Hoppa 2012]]",
 
     recovWindowTitle: "Recovery Window: CaMKII Dephosphorylation",
     recovWindowSub: "Modern life eliminates the EMF-free hours needed for Ca²⁺ homeostasis restoration",
     recovWindowDesc: "CaMKII dephosphorylation (recovery from autophosphorylated state) requires time without Ca²⁺ overload. EMF-free sleep allows this recovery. But modern environments eliminate EMF-free hours: WiFi router 24/7, phone on bedside table, LED lighting until sleep, Bluetooth devices. The Recovery factor (R) captures this: when EMF-free hours approach zero, the denominator 1/R approaches 1.0 (no recovery), and cumulative damage accelerates.",
-    recovWindowEvidence: "Shift work: OR 1.17 for metabolic syndrome — night shift disrupts both melatonin and recovery window. Walker (2017): one night of poor sleep → testosterone −15%, NK cells −70%. Good sleep RESTORES → the recovery window is real. COVID lockdown natural experiment: 24h/day at home with WiFi + LED + multiple devices → recovery window eliminated → T2D acceleration from 2.90% to 3.52%/yr.",
+    recovWindowEvidence: "Shift work: [[ref:shiftwork_mets2025|OR 1.17]] for metabolic syndrome — night shift disrupts both melatonin and recovery window. [[ref:walker2017_why_we_sleep|Walker (2017)]]: one night of poor sleep → testosterone −15%, NK cells −70%. Good sleep RESTORES → the recovery window is real. COVID lockdown natural experiment: 24h/day at home with WiFi + LED + multiple devices → recovery window eliminated → T2D acceleration from [[ref:t2d_covid2024|2.90% to 3.52%/yr]].",
     recovWindowIntervention: "The simplest intervention the model predicts: an EMF-free bedroom. Remove WiFi router from bedroom, use airplane mode on phone at night, switch to incandescent or candle light before sleep. This restores the recovery window without requiring any other lifestyle change.",
     recovWindowPred1: "RECOV-1: EMF-free bedroom → melatonin levels increase measurably within 2 weeks",
     recovWindowPred2: "RECOV-2: Minimum recovery window for CaMKII dephosphorylation: 4–6 hours EMF-free",
-    recovWindowRef: "Walker 2017 · COVID lockdown data · Shift work meta-analyses",
+    recovWindowRef: "[[ref:walker2017_why_we_sleep|Walker 2017]] · COVID lockdown data · Shift work meta-analyses",
 
     mtorSub: "EMF, caloric restriction, and rapamycin converge on the same aging pathway",
     mtorTitle: "mTOR convergence hypothesis",
@@ -461,7 +464,7 @@ const t = {
     fourRoutesImplication: "Clinical implication: interventions targeting only one route (e.g., antioxidants for Route 1) will show partial but incomplete protection. Full protection requires either EMF reduction (addressing all routes simultaneously) or a multi-target intervention strategy.",
 
     modulationTitle: "Why Modulation Matters More Than SAR",
-    modulationDesc: "A large study (Fertility and Sterility 2023) found mobile phone use associated with lower sperm concentration — but the association was STRONGER in 2005-2007 than in 2012-2018. BERM explains this via the Schwan equation: the biologically active component is not the RF carrier but its ELF MODULATION ENVELOPE. GSM (2G): hard TDMA pulse at 217 Hz, ~100% modulation depth → strong ELF component → large T-type bifurcation effect. LTE (4G): OFDM, ~30-50% modulation depth, lower transmit power → weaker ELF component → smaller effect. This predicts the time trend WITHOUT invoking 'less radiation is safer.' The AMOUNT of radiation may be similar, but the MODULATION STRUCTURE changed.",
+    modulationDesc: "A large study ([[ref:fert-steril-2023-phone-sperm-trend|Fertility and Sterility 2023]]) found mobile phone use associated with lower sperm concentration — but the association was STRONGER in 2005-2007 than in 2012-2018. BERM explains this via the Schwan equation: the biologically active component is not the RF carrier but its ELF MODULATION ENVELOPE. GSM (2G): hard TDMA pulse at 217 Hz, ~100% modulation depth → strong ELF component → large T-type bifurcation effect. LTE (4G): OFDM, ~30-50% modulation depth, lower transmit power → weaker ELF component → smaller effect. This predicts the time trend WITHOUT invoking 'less radiation is safer.' The AMOUNT of radiation may be similar, but the MODULATION STRUCTURE changed.",
     modulationWarning: "Note: This time trend is a CORRELATION. Other factors changed concurrently (phone position, usage patterns, other exposures). The Schwan explanation is parsimonious but not the only possibility.",
 
     modulomeSub: "Twelve-layer susceptibility model — from molecular spin physics to population patterns",
@@ -496,12 +499,12 @@ const t = {
     thresholdTableThreshold: "Threshold yr",
     thresholdTablePhase: "Phase",
     thresholdFinlandTitle: "Retrospective validation: Finland",
-    thresholdFinlandText: "Finland is the model's Rosetta Stone. Perheentupa (2013) documents a 37% cohort-dependent T decline (n=3,271, 1972–2002). TFR remained stable at 1.63–1.87 for 40 years (1970–2010), then collapsed to 1.26 by 2024. The ~35-year delay from T decline onset to TFR collapse is consistent with cumulative biological erosion reaching the threshold. If the model had existed in 2005, it could have predicted Finland's collapse 10–15 years early.",
+    thresholdFinlandText: "Finland is the model's Rosetta Stone. [[ref:perheentupa2013|Perheentupa (2013)]] documents a 37% cohort-dependent T decline (n=3,271, 1972–2002). TFR remained stable at 1.63–1.87 for 40 years (1970–2010), then collapsed to 1.26 by 2024. The ~35-year delay from T decline onset to TFR collapse is consistent with cumulative biological erosion reaching the threshold. If the model had existed in 2005, it could have predicted Finland's collapse 10–15 years early.",
     thresholdProjectionsTitle: "Country TFR projections",
     thresholdProjections2030: "2030",
     thresholdProjections2035: "2035",
     thresholdChartTitle: "Interactive threshold model",
-    thresholdFootnoteDenmark: "Andersson 2007 reported a null result after BMI adjustment. The model interprets BMI as a mediator (EMF → metabolic disruption → BMI ↑ → T ↓), not a confounder — adjusting for BMI removes part of the signal. See causal structure section below.",
+    thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]] reported a null result after BMI adjustment. The model interprets BMI as a mediator (EMF → metabolic disruption → BMI ↑ → T ↓), not a confounder — adjusting for BMI removes part of the signal. See causal structure section below.",
     thresholdFootnoteEstimated: "No peer-reviewed secular T trend study available. Korean rate estimated from highest global EMF density; Japanese rate estimated by analogy with Finland's documented decline. These are provisional and will be updated when direct data become available.",
     thresholdCaveat: "T decline rates are age-independent secular trends from peer-reviewed longitudinal studies. Korean and Japanese rates are estimates. The 40% threshold is calibrated, not derived. Projections assume continuation of current rates.",
 
@@ -511,10 +514,10 @@ const t = {
     causalDagConventionalCaption: "BMI as confounder: adjustment is correct, null result = no decline",
     causalDagBermTitle: "BERM interpretation",
     causalDagBermCaption: "BMI as mediator: adjustment removes mediated signal, null = overcorrection",
-    causalMazurTitle: "The weight-stable test: Mazur et al. 2013",
+    causalMazurTitle: "The weight-stable test: [[ref:mazur2013|Mazur et al. 2013]]",
     causalMazurText: "991 US Air Force veterans tracked across 6 measurement waves over 20 years (1982-2002). Men who maintained their weight still lost 117 ng/dL (19%) of their testosterone. This is a natural experiment that controls for BMI without statistical adjustment.",
     causalMazurQuote: "We have not identified the reason for secular decline in testosterone, but we exclude increasing obesity as a sufficient or primary explanation.",
-    causalMazurSource: "Mazur, Westerman & Mueller 2013, PLOS ONE",
+    causalMazurSource: "[[ref:mazur2013|Mazur, Westerman & Mueller 2013]], PLOS ONE",
     causalPathwayTitle: "Quantitative pathway decomposition",
     causalPathwayDirect: "Direct pathway",
     causalPathwayDirectDesc: "EMF -> Cav3.2/melatonin/cortisol -> T decline",
@@ -522,7 +525,7 @@ const t = {
     causalPathwayMediated: "Mediated pathway",
     causalPathwayMediatedDesc: "EMF -> metabolic mechanisms -> BMI increase -> aromatase/SHBG -> T decline",
     causalPathwayMediatedEst: "~58 ng/dL / 20yr (~33%)",
-    causalPathwayCaveat: "These proportions are approximate, derived from Mazur 2013 (weight-stable vs weight-gain groups). Formal mediation analysis (SEM) could refine these estimates.",
+    causalPathwayCaveat: "These proportions are approximate, derived from [[ref:mazur2013|Mazur 2013]] (weight-stable vs weight-gain groups). Formal mediation analysis (SEM) could refine these estimates.",
     dagDietLifestyle: "Diet / Lifestyle",
     dagBmiAdjCorrect: "BMI adjustment: CORRECT",
     dagNullNoDecline: "null = no real decline",
@@ -535,19 +538,19 @@ const t = {
     causalReconciliationTitle: "Reconciling 'contradictory' results",
     causalReconciliationLead: "When the causal structure is understood, all existing studies — including those reporting null results — become consistent:",
     causalReconciliationStudies: [
-      { study: "Travison 2007", bmiAdj: true, result: "-1.0%/yr", interpretation: "Direct pathway captured (BMI-adjusted). ELF-priming grew over the same period (WiFi + 3G spread)" },
-      { study: "Mazur 2013", bmiAdj: false, result: "-0.95%/yr", interpretation: "Direct pathway confirmed naturally (weight-stable). 20yr = layers 2→4. Direct route ~67%. Priming: P grew 1.5 → 2.0 in same period" },
-      { study: "Chodick 2020", bmiAdj: false, result: "-1.02%/yr", interpretation: "Total effect (direct + mediated). Israel: high RF density → strong layering effect" },
-      { study: "Santi 2025", bmiAdj: true, result: "T and LH decline", interpretation: "Direct pathway + HPG disruption confirmed. LH↓ indicates pituitary disruption. Brain is most primed organ (near-field 24/7). CACNA1C genotype moderates LH response" },
-      { study: "Andersson 2007", bmiAdj: true, result: "Null", interpretation: "Mediated pathway dominates → BMI adjustment removes signal. Denmark 56°N: if study was in SUMMER → CRY saturated → smaller effect. Season correction may reveal signal" },
-      { study: "Nyante 2012", bmiAdj: true, result: "Null", interpretation: "Assay change + mediator removal → signal masked. US (60 Hz) vs Europe (50 Hz): different ELF frequency → possibly different CRY interference profile" },
+      { referenceId: "travison2007_v2", study: "Travison 2007", bmiAdj: true, result: "-1.0%/yr", interpretation: "Direct pathway captured (BMI-adjusted). ELF-priming grew over the same period (WiFi + 3G spread)" },
+      { referenceId: "mazur2013", study: "Mazur 2013", bmiAdj: false, result: "-0.95%/yr", interpretation: "Direct pathway confirmed naturally (weight-stable). 20yr = layers 2→4. Direct route ~67%. Priming: P grew 1.5 → 2.0 in same period" },
+      { referenceId: "chodick-2020-israel", study: "Chodick 2020", bmiAdj: false, result: "-1.02%/yr", interpretation: "Total effect (direct + mediated). Israel: high RF density → strong layering effect" },
+      { referenceId: "santi2025", study: "Santi 2025", bmiAdj: true, result: "T and LH decline", interpretation: "Direct pathway + HPG disruption confirmed. LH↓ indicates pituitary disruption. Brain is most primed organ (near-field 24/7). CACNA1C genotype moderates LH response" },
+      { referenceId: "andersson-2007-denmark", study: "Andersson 2007", bmiAdj: true, result: "Null", interpretation: "Mediated pathway dominates → BMI adjustment removes signal. Denmark 56°N: if study was in SUMMER → CRY saturated → smaller effect. Season correction may reveal signal" },
+      { referenceId: "nyante2012_nhanes", study: "Nyante 2012", bmiAdj: true, result: "Null", interpretation: "Assay change + mediator removal → signal masked. US (60 Hz) vs Europe (50 Hz): different ELF frequency → possibly different CRY interference profile" },
     ],
-    causalSantiTitle: "Santi 2025: both testosterone AND LH are declining",
+    causalSantiTitle: "[[ref:santi2025|Santi 2025]]: both testosterone AND LH are declining",
     causalSantiText: "The largest meta-analysis ever conducted (1,064,891 men, 1971-2024) found that serum testosterone is declining independent of age, BMI, and assay method. Critically, it also found that LH (the pituitary signal that drives testosterone production) is also declining - ruling out simple testicular failure and pointing to disruption at the hypothalamic-pituitary level.",
     causalSantiMechanism: "BERM predicts exactly this: Route A (direct Leydig cell via Cav3.2 -> StAR) reduces testosterone, while Route C (melatonin -> GnRH) and Route D (cortisol -> HPG) reduce LH. The simultaneous decline of both hormones is the signature of multi-level disruption - not aging, not obesity.",
-    causalSantiSource: "Santi et al. 2025, J Endocrinol Invest 48:2721-2734",
+    causalSantiSource: "[[ref:santi2025|Santi et al. 2025]], J Endocrinol Invest 48:2721-2734",
     pocketTitle: "The Pocket Transition",
-    pocketText: "The doubling of sperm decline rate after 2000 (1.16%→2.64%/yr) coincides with a single behavioral change: the phone moved from ear to pocket. 3G data capability meant the phone stayed in the pocket continuously rather than being used only for calls. Testes entered the near-field for 16 hours per day.",
+    pocketText: "The doubling of sperm decline rate after 2000 ([[ref:levine2023_sperm|1.16%→2.64%/yr]]) coincides with a single behavioral change: the phone moved from ear to pocket. 3G data capability meant the phone stayed in the pocket continuously rather than being used only for calls. Testes entered the near-field for 16 hours per day.",
     causalInverseTitle: "Inverse pharmacological test: testosterone therapy reverses obesity",
     causalInverseText: "If obesity caused testosterone decline, then raising testosterone should not affect weight. But testosterone therapy in hypogonadal obese men produces dramatic weight loss (up to 30 kg in class III obesity), confirming bidirectional causation: T suppression drives weight gain, not just the reverse.",
     causalInverseData: [
@@ -555,7 +558,7 @@ const t = {
       { label: "Class II obesity", loss: "-25.3 kg", bmi: "-8.15" },
       { label: "Class III obesity", loss: "-30.5 kg", bmi: "-9.96" },
     ],
-    causalInverseSource: "Saad et al. 2016, registry studies",
+    causalInverseSource: "[[ref:saad2016|Saad et al. 2016]], registry studies",
 
     whyPronatTitle: "Why $200 billion couldn't raise South Korea's fertility",
     whyPronatText: "BERM's three-level architecture separates fertility into biological capacity (Level 1), EMF-behavioral coupling (Level 2), and cultural choice (Level 3). Pronatalist policies — cash bonuses, parental leave, childcare subsidies — target Level 3 (motivation). But when Level 1 (biological capacity) becomes the binding constraint, no amount of Level 3 incentive can compensate. South Korea's cumulative testosterone loss exceeds 48%. A growing fraction of couples who want children cannot conceive naturally. The $200 billion addressed the wrong level of the model.",
@@ -588,7 +591,7 @@ const t = {
       { num: 16, title: "Cardiac Arrhythmia (QT)", mechanism: "CACNA1C GoF → Cav1.2 window current ↑ → QT ↑. Timothy syndrome: extreme QT + autism from SAME mutation.", level: "E", trend: "Timothy: most die before age 3 without treatment" },
       { num: 17, title: "Neurodevelopment & Sexual Differentiation", mechanism: "7 causal channels × 3 developmental windows. Prenatal: Leydig Cav3 → T↓, aromatase, pituitary. Pubertal: PFC, melatonin, OT/AVP, insular cortex.", level: "L*", trend: "Gender clinic referrals: Sweden +19,700%; ASD-GD 6-26%" },
       { num: 18, title: "TheraBionic: Proof of Mechanism", mechanism: "FDA-approved (2019) device for HCC. 27.12 MHz, AM at tumor-specific frequencies. SAR 100-1000× below phone. Mechanism: EMF → Cav3.2 → Ca²⁺ → HCC differentiation. CONFIRMS non-thermal EMF → VGCC.", level: "E", trend: "34% survival increase in advanced HCC" },
-      { num: 19, title: "Metabolic Syndrome / Obesity", mechanism: "SIX converging EMF → Ca²⁺ pathways: (1) hypothalamic appetite ↑ via ARC glia Ca²⁺ → AgRP/NPY, (2) BAT thermogenesis ↓ via CaMKII/CREB → UCP1 and SERCA2b/RyR2 disruption, (3) β-cell insulin dynamics ↓ via L-type VGCC, (4) thyroid axis → metabolic rate ↓ via Cav3 in thyrotrophs, (5) melatonin → metabolic circadian disruption, (6) adipocyte Ca²⁺ → lipogenesis ↑. CaMKII is the CONVERGENCE MOLECULE connecting all pathways. Klimentidis paradox: 24 populations, 8 species ALL gaining weight (p = 1.2×10⁻⁷) including lab animals on controlled diets. Obesity is multifactorial — EMF is ONE contributing factor explaining the residual that diet/exercise/genetics cannot.", level: "M", trend: "Global obesity: 4% (1975) → 13% (2016) → 42% (USA 2024)" },
+      { num: 19, title: "Metabolic Syndrome / Obesity", mechanism: "SIX converging EMF → Ca²⁺ pathways: (1) hypothalamic appetite ↑ via ARC glia Ca²⁺ → AgRP/NPY, (2) BAT thermogenesis ↓ via CaMKII/CREB → UCP1 and SERCA2b/RyR2 disruption, (3) β-cell insulin dynamics ↓ via L-type VGCC, (4) thyroid axis → metabolic rate ↓ via Cav3 in thyrotrophs, (5) melatonin → metabolic circadian disruption, (6) adipocyte Ca²⁺ → lipogenesis ↑. CaMKII is the CONVERGENCE MOLECULE connecting all pathways. [[ref:klimentidis2010|Klimentidis]] paradox: 24 populations, 8 species ALL gaining weight (p = 1.2×10⁻⁷) including lab animals on controlled diets. Obesity is multifactorial — EMF is ONE contributing factor explaining the residual that diet/exercise/genetics cannot.", level: "M", trend: "Global obesity: 4% (1975) → 13% (2016) → 42% (USA 2024)" },
     ],
     vgccDiagramTitle: "VGCC Gene Family",
     vgccDiagramSubtitle: "Six genes, six disease clusters, one mechanism",
@@ -599,6 +602,160 @@ const t = {
       "Epistemic note: The equations above are the current model specification (BERM v17). Parameter values are calibrated against observed data and will be updated as new evidence becomes available. The model is explicitly designed to be falsifiable -- if its predictions fail, the model is wrong. The Therapeutic Device Paradox (24+ regulatory-approved non-thermal EMF device categories, DC to UV) establishes non-thermal bioactivity as regulatory fact, not hypothesis.",
     lbermRef:
       "Formal Jacobian product structure (chapter 17), proof-obligation register and safety systems are described in the base document (LBERM_final.docx).",
+    svgSpermDamage: "Sperm damage",
+    svgCircadian: "Circadian",
+    svgMelatoninDown: "Melatonin ↓",
+    svgCa2Entry: "Ca²⁺ entry",
+    svgCortisolUp: "Cortisol ↑",
+    svgTestosteroneDown: "Testosterone ↓",
+    svgAutophagyDown: "Autophagy ↓",
+    svgCellGrowthDown: "Cell growth ↓",
+    svgTfr: "TFR",
+    svgDecline: "decline",
+    svgFiveRoutesAria: "Five routes to TFR decline",
+    brainModulomeLink: "Brain modulome",
+    routeGonadal: "Gonadal",
+    routeAutonomic: "Autonomic",
+    routeNeurodevel: "Neurodevel.",
+    routeLabel: "Route",
+    routeParallelCaption: "Each route is independently sufficient — they operate in parallel",
+    labelWarning: "Warning",
+    labelPrediction: "Prediction",
+    labelFalsification: "Falsification",
+    colStudy: "Study",
+    colBmiAdj: "BMI adj.",
+    colResult: "Result",
+    colBermInterpretation: "BERM interpretation",
+    countryDenmark: "Denmark",
+    countryFinland: "Finland",
+    countrySouthKorea: "South Korea",
+    countryJapan: "Japan",
+    estHighestEmf: "Estimated (highest EMF)",
+    estFinlandAnalogy: "Estimated (Finland analogy)",
+    layerMilitaryRadar: "Military radar",
+    layerWeatherRadar: "Weather radar",
+    layerMobileNetworks: "Mobile networks",
+    layerWindTurbines: "Wind turbines",
+    layerDisplayTransition: "Display transition",
+    layerSmartMeters: "Smart meters",
+    layerIndoorLed: "Indoor LED",
+    layerSolarInverters: "Solar inverters",
+    layerStreetLed: "Street LED",
+    pharmEvidenceLink: "Pharmacological evidence: 8 drug classes converging on BERM pathways →",
+    svgVgccPathway: "VGCC pathway",
+    svgAutophagy: "Autophagy",
+    svgProteinSynthesis: "Protein synthesis",
+    svgCellGrowth: "Cell growth",
+    svgImmuneRegulation: "Immune regulation",
+    svgIntegrator: "integrator",
+    svgCalories: "Calories",
+    svgAging: "Aging",
+    svgCounteracts: "(counteracts)",
+    svgFertilityDown: "Fertility↓",
+    svgCancer: "Cancer",
+    svgMtorSharedHub: "mTOR is the shared hub — three epidemics, one mechanism",
+    svgInflammation: "Inflammation",
+    svgCortisol: "Cortisol",
+    svgMelatonin: "Melatonin",
+    svgPosFeedback: "Positive feedback",
+    svgNegFeedback: "Negative feedback",
+    svgHub: "hub",
+    svgFeedbackCaption: "17 positive feedback loops — any entry point activates the entire network",
+    svgVgccHierarchyCaption: "T-type (Cav3) channels >> Cav1.3 (low-threshold L-type) >> Cav1.2 (action-potential only). CaMKII feedback shifts Cav3.2 threshold more negative over time.",
+    svgRecoveryBarAria: "Recovery rates bar chart",
+    svgRecoveryCaption: "Recovery rate (α): 1.0 = full recovery, 0.0 = irreversible",
+    svgTechLayersAria: "Technology layers cumulative exposure chart",
+    layerPowerGrid: "Power Grid",
+    layerRadioTv: "Radio/TV",
+    layerCellular: "Cellular",
+    svgCumulativeExposure: "Cumulative exposure",
+    svgTechLayersCaption: "Five technology layers: each generation stacks on previous ones",
+    conventionalLabel: "Conventional:",
+    layerExplanationLabel: "Layer explanation:",
+    conventional: "Conventional",
+    anomalyUnexplainedDecline: "Unexplained decline",
+    anomalyUnexplained: "Unexplained",
+    anomalyWifiLedLayers: "WiFi+LED layers",
+    anomalySocialMedia: "Social media",
+    anomalySomeTheory: "Social media",
+    anomalyTripleChannel: "Triple channel",
+    anomalySedentary: "Sedentary",
+    anomaly247Emf: "24/7 EMF",
+    anomalyProsperity: "Prosperity",
+    anomalyElectrificationLag: "Electrification lag",
+    anomalyPhysicalLabor: "Physical labor",
+    anomalyZeroLayers: "Zero layers",
+    colCountry: "Country",
+    colActual: "Actual",
+    colNote: "Note",
+    countryFinlandName: "Finland",
+    countrySouthKoreaName: "South Korea",
+    countryUsaName: "USA",
+    countryAmishName: "Amish",
+    colDriver: "Driver",
+    replacementLabel: "Replacement",
+    countrySKoreaShort: "S. Korea",
+    countryIndiaName: "India",
+    colAxis: "Axis",
+    colTargetOrgan: "Target organ",
+    colConsequence: "Consequence",
+    svgGenesCascadeAria: "15-gene cascade diagram",
+    tierInflux: "INFLUX",
+    tierModulation: "MODULATION",
+    tierIntegration: "INTEGRATION",
+    tierExtrusion: "EXTRUSION",
+    tierSignaling: "SIGNALING",
+    svgGenesCascadeCaption: "Ca²⁺ cascade: 15 genes across five functional tiers",
+    colGene: "Gene",
+    colProtein: "Protein",
+    colBermRole: "BERM role",
+    colKeyVariant: "Key variant",
+    colDiseases: "Diseases",
+    colEvidence: "Evidence",
+    colVariant: "Variant",
+    colEffect: "Effect",
+    ehsAssay: "assay",
+    ehsLymphocyte: "Lymphocyte autophosphorylation",
+    ehsElevated: "Elevated",
+    ehsGenotyping: "genotyping",
+    ehsCalciumVariants: "Calcium channel variants",
+    ehsRiskAlleles: "Risk alleles",
+    ehsSignalingMarkers: "Signaling markers",
+    ehsHighRisk: "High-risk profile",
+    ehsPolygenicScore: "Polygenic risk score",
+    ehsOverallAssessment: "Overall EMF sensitivity assessment",
+    ehsDiagnosticClass: "EHS diagnostic classification",
+    ehsLowModHigh: "Low / Moderate / High",
+    whyDisagreeTitle: "Why Studies Disagree",
+    whyDisagreeSub: "Eight uncontrolled moderators explain decades of 'contradictory evidence'",
+    whyDisagreeDesc: "EMF research has produced contradictory results for decades. BERM identifies eight uncontrolled moderators that predict which studies find positive results and which find null:",
+    modSeason: "Season",
+    modSeasonDesc: "CRY magnetoreceptor sensitivity is light-dependent. In winter, CRY is more sensitive → EMF effect on melatonin is stronger. Demonstrated in calves ([[ref:halgamuge2015|Halgamuge 2015]]).",
+    modGenotype: "Genotype",
+    modGenotypeDesc: "CACNA1C rs1006737 A-allele → more Cav1.2 → larger Ca²⁺ response. [[ref:sousouri2025|Sousouri 2025]] (ETH): CACNA1C genotype determines 5G sleep response.",
+    modLabElf: "Laboratory ELF background",
+    modLabElfDesc: "50/60 Hz power grid upregulates VGCC expression in 8–10 days ([[ref:sun2016_elf_vgcc|PMC4757866]]). High-ELF-background labs 'prime' cells.",
+    modNighttimeEmf: "Nighttime EMF",
+    modNighttimeEmfDesc: "Wi-Fi router in bedroom vs. EMF-free night → different CaMKII recovery state → different baseline Ca²⁺ when entering the experiment.",
+    modSpeciesPriming: "Species / Priming",
+    modSpeciesPrimingDesc: "Animal studies in lab environments (24/7 ELF priming, homogeneous genetics) find positive results 92% of the time. Human studies with heterogeneous environments find 35%. Both correct — lab animals are chronically primed (VGCC expression elevated, [[ref:sun2016_elf_vgcc|PMC4757866]]). p=0.002.",
+    modDuration: "Duration",
+    modDurationDesc: "Chronic exposure (>1 week) produces positive results 92%. Acute (1–2 nights) produces 31%. CaMKII autophosphorylation requires cumulative Ca²⁺ loading. p=0.001.",
+    modPulsation: "Pulsation",
+    modPulsationDesc: "Pulsed signals produce positive results 88%. CW produces 48%. IFO-VGIC mechanism requires varying fields. p=0.048.",
+    modVitaminD: "Vitamin D status",
+    modVitaminDDesc: "Vitamin D (1,25(OH)₂D₃) downregulates CACNA1C/1D mRNA ([[ref:vdh_lvscc|J Neurosci 2001]]). Vitamin D deficiency → VGCC over-expression = same state as ELF-priming. Studies in vitamin D-deficient populations (winter, high latitudes) should show stronger EMF effects.",
+    modThreePredictors: "Three moderators predict study outcome with statistical significance:",
+    modAnalysisBasis: "Based on analysis of 29 studies across 3 endpoints. Validated by [[ref:weller2025_dna|Weller 2025]] (n=517).",
+    predRepl1Label: "Prediction REPL-1: ",
+    predRepl1Desc: "A retrospective analysis of 50–100 published EMF bio-assay studies will show these eight moderators significantly predict positive vs. null outcomes. Testable WITHOUT new data.",
+    modEpistemicNote: "Epistemic level: the eight-moderator framework is BERM's synthesis (M-level). Individual moderators have empirical support (E-level).",
+    dnaBelow58Title: "58% of DNA Damage Occurs Below ICNIRP Limits",
+    dnaBelow58Desc: "[[ref:weller2025_dna|Weller et al. (2025)]] analyzed 517 genotoxicity studies and found that 58% of studies reporting DNA damage used exposure levels BELOW current ICNIRP guidelines. The [[ref:ivancsits_dna_recovery|Ivancsits study]] found DNA strand breaks at 35 µT — less than one-fifth of ICNIRP’s 200 µT occupational limit.",
+    dnaBelow58Mechanism: "ICNIRP limits are designed to prevent THERMAL effects. DNA damage from EMF is a NON-THERMAL mechanism operating through voltage-gated calcium channel dysfunction.",
+    dnaRepairTitle: "DNA Damage Reverses in 9 Hours — If Exposure Stops",
+    dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]] showed that EMF-induced DNA strand breaks returned to normal within 9 hours after exposure ceased. This quantifies BERM’s recovery window: the body CAN repair EMF-induced damage, but only if given sufficient EMF-free time.",
+    dnaModernEnv: "Modern environments with 24/7 WiFi, LED lighting, and smartphones in bed eliminate this recovery window entirely. The typical modern bedroom provides zero EMF-free recovery time.",
   },
   fi: {
     title: "Mallin dokumentaatio",
@@ -626,11 +783,11 @@ const t = {
 
     causalTitle: "Kausaalireittikaavio",
     causalDesc:
-      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Kahdeksan tasoa, 63 solmua, 107 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatutkimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). CRY/RPM-polulla on tukea useasta lajista: magneettikompassin häiriintyminen linnuissa (Ritz 2004, Engels 2014), CRY-riippuvainen magnetoreseptio Drosophilassa (Yoshii 2009), CRY-riippuvainen ROS-modulaatio ihmisen soluissa (Sherrard 2018) ja — kriittisesti — toiminnallinen sinivalosta riippuva magnetoreseptio ihmisessä (Chae ym. 2019, PLOS ONE), mikä osoittaa biologisen substraatin olemassaolon lajissa jota BERM mallintaa. Molemmat ovat itsenäisesti tuetut E-tason evidenssillä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
+      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Kahdeksan tasoa, 63 solmua, 107 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatutkimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). CRY/RPM-polulla on tukea useasta lajista: magneettikompassin häiriintyminen linnuissa ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), CRY-riippuvainen magnetoreseptio Drosophilassa ([[ref:yoshii2009|Yoshii 2009]]), CRY-riippuvainen ROS-modulaatio ihmisen soluissa ([[ref:sherrard2018|Sherrard 2018]]) ja — kriittisesti — toiminnallinen sinivalosta riippuva magnetoreseptio ihmisessä ([[ref:chae2019|Chae ym. 2019]], PLOS ONE), mikä osoittaa biologisen substraatin olemassaolon lajissa jota BERM mallintaa. Molemmat ovat itsenäisesti tuetut E-tason evidenssillä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
     pathwayHierarchyNote:
-      "Polkujen painot perustuvat empiiriseen kalibrointiin yhteisödatalla (amissit–Korea-gradientti). Ne eivät heijasta teoreettista hierarkiaa: Polku B (CRY/RPM) on ENSISIJAINEN polku, koska 87,5 % RPM-Hamiltoniaanista on johdettavissa Lindgren-geometriasta — mekanismin OLEMASSAOLO seuraa geometrisena seurauksena. Polulla A on vahvempi kokeellinen tuki (23–28 salpaajatutkimusta). Aiempi δVm-vastalause (δV_m ≈ 10⁻²¹ V pelkästä geometriasta) on nyt ratkaistu T-tyypin kalsiumkanavan bifurkaatiomekanismilla: Schwanin yhtälö vahvistaa ulkoiset kentät 7,5–15 μV:iin kalvolla (37 % lämpökohinasta 1 V/m ympäristössä; 184 % 5 V/m henkilökohtaisessa), ja T-tyypin (Cav3) kanavat toimivat bifurkaatiopisteessä, jossa ~10 % on avoinna levossa (ikkunavirta), mikä tekee niistä herkkiä näille häiriöille. Polku D (HPA → testosteroni) on nyt myös johdettu saman T-tyypin mekanismin kautta: Schwanin δVm → Cav3 → Ca²⁺ → StAR → testosteroni (Xiang 2025).",
+      "Polkujen painot perustuvat empiiriseen kalibrointiin yhteisödatalla (amissit–Korea-gradientti). Ne eivät heijasta teoreettista hierarkiaa: Polku B (CRY/RPM) on ENSISIJAINEN polku, koska 87,5 % RPM-Hamiltoniaanista on johdettavissa Lindgren-geometriasta — mekanismin OLEMASSAOLO seuraa geometrisena seurauksena. Polulla A on vahvempi kokeellinen tuki (23–28 salpaajatutkimusta). Aiempi δVm-vastalause (δV_m ≈ 10⁻²¹ V pelkästä geometriasta) on nyt ratkaistu T-tyypin kalsiumkanavan bifurkaatiomekanismilla: Schwanin yhtälö vahvistaa ulkoiset kentät 7,5–15 μV:iin kalvolla (37 % lämpökohinasta 1 V/m ympäristössä; 184 % 5 V/m henkilökohtaisessa), ja T-tyypin (Cav3) kanavat toimivat bifurkaatiopisteessä, jossa ~10 % on avoinna levossa (ikkunavirta), mikä tekee niistä herkkiä näille häiriöille. Polku D (HPA → testosteroni) on nyt myös johdettu saman T-tyypin mekanismin kautta: Schwanin δVm → Cav3 → Ca²⁺ → StAR → testosteroni ([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
     rpmFrequencyNote:
-      "CRY/RPM ei vastaa RF-kantoaaltotaajuuteen (900 MHz – 3,5 GHz). Sen resonanssimaksimi on ~22,5 MHz (Talbi, Zadeh-Haghighi & Simon 2025, Front. Quantum Sci. Technol. 4:1544473). Polun B biologisesti aktiiviset komponentit ovat geomagneettinen tausta (B_DC) ja telecom-signaalien ELF-modulaatioverhoilukäyrät (GSM 217 Hz, WiFi 10 Hz beacon). RF-kantoaallon vaikutukset välittyvät polku A:n kautta sähkökentän komponenttina. Kahdella polulla on toisiaan täydentävät taajuusalueet.",
+      "CRY/RPM ei vastaa RF-kantoaaltotaajuuteen (900 MHz – 3,5 GHz). Sen resonanssimaksimi on ~22,5 MHz ([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473). Polun B biologisesti aktiiviset komponentit ovat geomagneettinen tausta (B_DC) ja telecom-signaalien ELF-modulaatioverhoilukäyrät (GSM 217 Hz, WiFi 10 Hz beacon). RF-kantoaallon vaikutukset välittyvät polku A:n kautta sähkökentän komponenttina. Kahdella polulla on toisiaan täydentävät taajuusalueet.",
     vgccHierarchyTitle: "VGCC-herkkyyshierarkia lepopotentiaalissa",
     vgccHierarchyNote:
       "Kaikki jänniteohjatut kalsiumkanavat eivät ole yhtä EMF-herkkiä. Lepopotentiaalissa (~−70 mV) EMF-herkkyys noudattaa hierarkiaa: Cav3 (T-tyyppi) >> Cav1.3 >> Cav1.2. T-tyypin kanavat (Cav3.1, Cav3.2, Cav3.3) toimivat bifurkaatiopisteessä, jossa ~10 % on avoinna levossa (ikkunavirta), mikä tekee niistä jatkuvasti herkkiä pienille jännitemuutoksille. Cav1.3 on 'matalan kynnyksen L-tyyppi', joka aktivoituu ~−50 mV:ssa — 25 mV negatiivisemmin kuin Cav1.2 (J Neurosci 2001). Tämä tekee Cav1.3:sta pääkanavan kudoksissa, jotka vaativat jatkuvaa matalan jännitteen kalsiumvirtaa: SA-solmun tahdistus ja sisäkorvan karvasolun synaptinen transduktio. Cav1.2, kanoninen L-tyyppi, aktivoituu ~−30 mV:ssa ja on merkittävä VAIN aktiopotentiaalin aikana — levossa sen osuus on mitätön. Tämä hierarkia selittää kudosspesifisen EMF-haavoittuvuuden: Cav3-valtaiset elimet (kivekset, aivolisäke, lisämunuainen, hippokampus) ovat herkimpiä; Cav1.3-riippuvaiset kudokset (sisäkorva, SA-solmu) ovat välitasoa; Cav1.2-valtaiset kudokset (luurankolihas, kammiosydän) vaikuttuvat vain sähköisen aktiivisuuden aikana.",
@@ -661,12 +818,12 @@ const t = {
     chiEvidenceSub: "Miten valintasääntö ilmenee kuudessa itsenäisessä biologisessa alueella",
     chiEvidenceDesc: "χ-funktio ei ole abstrakti rakenne — se ennustaa tarkkoja, testattavia modulaatioita kuudessa evidenssiperheessä. Jokaisella perheellä on oma χ-modulaattorinsa, joka määrää milloin ja kuinka voimakkaasti EMF vaikuttaa kyseiseen järjestelmään.",
     chiEvidenceFamilies: [
-      { family: "Diabetes (β-solut)", chi: "χ(glukoosi): K_ATP → V_mem → VGCC-esiviriytys", mechanism: "Korkea glukoosi sulkee K_ATP-kanavat → kalvo depolarisoituu → VGCC:t virittyvät → χ KORKEA. Matala glukoosi → K_ATP auki → χ MATALA.", prediction: "EMF × korkea-GI-ruokavalio tuottaa synergistisen diabetesriskin. Paasto suojaa β-soluja.", verification: "Sakurai 2008: ELF vähensi insuliinineritystä 30 %", level: "M|C" },
-      { family: "Siittiölaatu (BTB)", chi: "χ(BTB:n eheys): este vaimentaa efektiivistä kenttää", mechanism: "Ehjä BTB suojaa spermatogeneettisiä soluja → matala χ. EMF avaa BTB:n → suoja menetetään → χ nousee → positiivinen takaisinkytkentä.", prediction: "Siittiölaadun lasku kiihtyy ajan myötä (superlineaarinen).", verification: "Yu 2019: 4G-RF häiritsee BTB:tä suoraan, aikariippuvainen", level: "E" },
-      { family: "Esteet (BBB + BTB)", chi: "χ(esteen läpäisevyys): jatkuva modulaattori", mechanism: "Esteet ovat jatkuvia χ-modulaattoreita. Osittain vaurioitunut este = osittainen χ:n kasvu. Tuottaa multiplikatiivisen vahvistuksen.", prediction: "Superlineaarinen annos-vaste kumulatiivisella altistuksella.", verification: "Ulusoy 2025: progressiivinen BBB-degradaatio 30–360 min", level: "E" },
+      { referenceId: "sakurai2008", family: "Diabetes (β-solut)", chi: "χ(glukoosi): K_ATP → V_mem → VGCC-esiviriytys", mechanism: "Korkea glukoosi sulkee K_ATP-kanavat → kalvo depolarisoituu → VGCC:t virittyvät → χ KORKEA. Matala glukoosi → K_ATP auki → χ MATALA.", prediction: "EMF × korkea-GI-ruokavalio tuottaa synergistisen diabetesriskin. Paasto suojaa β-soluja.", verification: "Sakurai 2008: ELF vähensi insuliinineritystä 30 %", level: "M|C" },
+      { referenceId: "yu2019_btb", family: "Siittiölaatu (BTB)", chi: "χ(BTB:n eheys): este vaimentaa efektiivistä kenttää", mechanism: "Ehjä BTB suojaa spermatogeneettisiä soluja → matala χ. EMF avaa BTB:n → suoja menetetään → χ nousee → positiivinen takaisinkytkentä.", prediction: "Siittiölaadun lasku kiihtyy ajan myötä (superlineaarinen).", verification: "Yu 2019: 4G-RF häiritsee BTB:tä suoraan, aikariippuvainen", level: "E" },
+      { referenceId: "ulusoy2025_bbb_therapeutic", family: "Esteet (BBB + BTB)", chi: "χ(esteen läpäisevyys): jatkuva modulaattori", mechanism: "Esteet ovat jatkuvia χ-modulaattoreita. Osittain vaurioitunut este = osittainen χ:n kasvu. Tuottaa multiplikatiivisen vahvistuksen.", prediction: "Superlineaarinen annos-vaste kumulatiivisella altistuksella.", verification: "Ulusoy 2025: progressiivinen BBB-degradaatio 30–360 min", level: "E" },
       { family: "Sentinellilajit", chi: "χ(aineenvaihduntanopeus): M^(−0.25) skaalaus", mechanism: "Pienet eläimet: korkeampi massaspesifinen metabolianopeus → korkeampi perus-ROS → korkeampi χ → suurempi EMF-vaste.", prediction: "Hyönteiset ja pienet linnut kärsivät ensin; suuret nisäkkäät myöhemmin.", verification: "Ajallinen järjestys vastaa kehon massan skaalausta", level: "M|C" },
-      { family: "Sydän (CRY2-TRPC1)", chi: "χ(CRY2:n tila): valo- ja FAD-riippuvainen", mechanism: "Jos CRY2-TRPC1 toimii kardiomyosyyteissä (kuten myoblasteissa, Yap 2025), sydämen kalsiumsisäänvirtaus on valo/FAD-riippuvainen.", prediction: "Yöllinen puhelimen käyttö → korkeampi arytmiariski kuin päivällä.", verification: "Ei vielä testattu. TRPC-kanavat vahvistettu myosyyteissä.", level: "L*" },
-      { family: "Adeyn–Blackmanin ikkuna", chi: "χ(fotosykli) × χ(lämpötila) × χ(DC-orientaatio)", mechanism: "'Biologinen ikkuna' syntyy kolmesta päällekkäisestä χ-ikkunasta. Kaikkia kolmea kontrolloivat laboratoriot saavat yhdenmukaisia tuloksia.", prediction: "Viiden parametrin standardi ratkaisee 50 vuoden replikaatiodebatin.", verification: "Blackman 1985–1991: osoitti jokaisen ikkunan erikseen", level: "M" },
+      { family: "Sydän (CRY2-TRPC1)", chi: "χ(CRY2:n tila): valo- ja FAD-riippuvainen", mechanism: "Jos CRY2-TRPC1 toimii kardiomyosyyteissä (kuten myoblasteissa, [[ref:yap2025|Yap 2025]]), sydämen kalsiumsisäänvirtaus on valo/FAD-riippuvainen.", prediction: "Yöllinen puhelimen käyttö → korkeampi arytmiariski kuin päivällä.", verification: "Ei vielä testattu. TRPC-kanavat vahvistettu myosyyteissä.", level: "L*" },
+      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adeyn–Blackmanin ikkuna", chi: "χ(fotosykli) × χ(lämpötila) × χ(DC-orientaatio)", mechanism: "'Biologinen ikkuna' syntyy kolmesta päällekkäisestä χ-ikkunasta. Kaikkia kolmea kontrolloivat laboratoriot saavat yhdenmukaisia tuloksia.", prediction: "Viiden parametrin standardi ratkaisee 50 vuoden replikaatiodebatin.", verification: "Blackman 1985–1991: osoitti jokaisen ikkunan erikseen", level: "M" },
     ],
 
     twoChSub: "ELF + IF + RF -hajotelma 12 teknologiakerroksella ja TCBM",
@@ -678,30 +835,30 @@ const t = {
     twoChLayersTitle: "12 teknologiakerrosta ambient-kentän komponentteina",
     twoChLayersDesc:
       "Ambient-termi ei ole monoliittinen. Se hajoaa 12 itsenäiseen teknologiakerrokseen, joista jokaisella on oma ajurinsa, käyttöönottoaikataulunsa ja taajuusprofiilinsa. Tämä hajotus parantaa mallin erottelukykyä, koska jokainen kerros toimii ortogonaalisena instrumenttina.",
-    ifoVgicNote: "IFO-VGIC-mekanismia tukee 131 tutkimuksen kattava katsaus (Panagopoulos ym. 2025, Bioelectromagnetics): 95 % raportoi oksidatiivisia vaikutuksia RF/Wi-Fi-altistuksessa. Tämä konsensus, joka on yhdenmukainen Yakymenko ym. 2016 (93/100) kanssa, vahvistaa Ca²⁺-sisäänvirtaus → ROS -reitin aseman parhaiten dokumentoituna ei-termisenä mekanismina.",
-    multiPathwayCa2Note: "Tason 4 Ca²⁺-häiriö toimii useamman itsenäisen reitin kautta: (1) suora S4-jännitesensorin pakotettu oskillaatio (Panagopoulos ym. 2025, IFO-VGIC); (2) solunsisäisten kalsiumvarastojen dysregulaatio ryanodiinireseptoreiden (RyR) ja SERCA-pumppujen kautta (Bertagna ym. 2025, Ann NY Acad Sci). Molemmat farmakologiset salpauskokeet (VGCC-salpaajat reitille 1; dantroleeni RyR:lle, CPA SERCA:lle reitille 2) estävät EMF-vaikutukset — tukee mekanismia. Monireittiisyys selittää kudosspesifisen herkkyyden: solut, joissa on korkea VGIC-tiheys JA suuret solunsisäiset Ca²⁺-varastot (neuronit, gonaadisolut) ovat herkempiä kuin matalan varastotiheyden solut (keratinosyytit — vrt. Meyer 2026, Haidar 2025: nollatulokset ihosoluissa). Huom: Bertagna 2025 on ELF (50 Hz), ei RF — mekanismin siirto RF:lle ei suoraviivainen, mutta Ca²⁺-reitti on jaettu.",
-    fiveGReproNote: "Ensimmäinen 5G-taajuusspesifinen testisdata (Bektas ym. 2026, Bioelectromagnetics): 3,5 GHz RF aiheutti testis- ja oksidatiivista vauriota rotilla. CoQ10-lisäravinto lievitti vauriota — osoittaa mekanismin palautuvuuden. Yhdenmukainen BERM:n palautumisikkuna-mallin kanssa, jossa antioksidanttikapasiteetti määrittää nettovaurion. Laajentaa oksidatiivisen stressin evidenssipohjan (Yakymenko 2016: 93/100; Panagopoulos 2025: 95 %) 5G-taajuusalueelle.",
-    pathwayCQuantNote: "Melatoniinisuppressiopolkua tukee kvantitatiivisesti 55 tutkimuksen PRISMA-katsaus (Tbahriti ym. 2026, Sleep Biol Rhythms): 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 % basaalitasosta). Suppressio on biologisesti merkittävä GnRH-pulsaatiolle mutta pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen BERM:n v17_night_fraction() -mallinnuksen kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniini), ei ainoa ajuri. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat standardit.",
-    pathwayCWeightNote: "Huomautus polku C:n painosta: Polku C:n 25 % heijastaa sekä sen sirkadiaanista funktiota (CRY2 → kellogeenitranskriptio → melatoniini → HPG) että äskettäin löydettyä kalsiumsignalointifunktiota (CRY2 → TRPC1-modulaatio → Ca²⁺-sisäänvirtaus; Yap ym. 2025, Cells). TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polut A ja C ovat siten farmakologisesti erotettavissa: L-tyypin VGCC-salpaajat (nifedipiini) estävät polku A:n vaikutuksia mutta eivät CRY2-TRPC1-vaikutuksia.",
-    cryIndividualVariationNote: "Yksilöllinen vaihtelu: CRY-herkkyyttä moduloivat iiriksen pigmentaatio (sininen > vihreä > ruskea; Higuchi 2007), ravitsemuksellinen FAD-tila (Hirano 2017) ja sukupuoli (miehet > naiset akuutissa magnetoreseptiossa; Chae 2019). Nämä modulaattorit voivat selittää osan polku C:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta. CRY2-TRPC1-fyysinen kompleksi (Yap/Sherrard 2025) paljastaa lisäksi, että polku C:llä on toinen alaspäin suuntautuva haara: CRY2 moduloi TRPC1:tä (TRP-kanava, EI VGCC), mahdollistaen kalsiumsignaloinnin polku A:sta riippumatta. Polut A ja C ovat farmakologisesti erotettavissa — L-tyypin VGCC-salpaajat estävät A:n mutta eivät CRY2-TRPC1:tä. Katso yksityiskohtainen analyysi /evidence/eyes.",
-    cryDualSystemNote: "CRY:n kaksoissysteemi: Polku C toimii verkkokalvon kahden erillisen kryptokromisysteemin kautta. C1 (sensorinen): Täyspitkä CRY1-proteiini löydettiin yksinomaan lyhyen aallonpituuden herkkien sinisten tappisolujen ulkosegmenteistä ihmisen, bonobon ja gorillan verkkokalvoissa (Bartölke ym. 2025, FASEB J). Tämä sijainti kaukana tumista — fototransduktiokoneistossa — viittaa sensoriseen toimintaan sirkadiaanisen kellon säätelyn ohella. Tappisolujen ulkosegmenttien pinotut kalvolamellat tarjoavat magnetoreseptiolle tarvittavan suuntajärjestyksen (vrt. Majewska ym. 2025, ACS Chem Biol: CRY assosioituu lipidikaksoiskerrosten kanssa järjestäytyneesti). Tämä on systeemi, johon iiriksen pigmentaatio vaikuttaa eniten: siniset silmät päästävät ~100× enemmän valoa sinisiin tappisoluihin, mikä lisää CRY1-aktivaatiota. C2 (sirkadiaaninen): CRY2 ekspressoituu verkkokalvon gangliosoluissa, erityisesti SCN:iin projisoivissa ipRGC-soluissa. CRY2 muodostaa fysikaalisen kompleksin TRPC1:n kanssa (Yap ym. 2025), yhdistäen sirkadiaanisen polun ionikanavaviestintään. Molemmat systeemit vaativat FAD:n kromoforinaan ja ovat siten molemmat riippuvaisia riboflaviini (B2) -tilasta.",
-    recoveryWindowNote: "Akuutin ja kroonisen altistuksen ero on empiirisesti tuettu: Koivisto ym. (2000) havaitsi kognitiivisen fasilitaation 30–60 min altistuksen jälkeen (yhteensopiva akuutin Ca²⁺-välitteisen synaptisen vahvistuksen kanssa), kun taas Panagopoulos ym. (2025) raportoi 95 %:n oksidatiivista stressiä kroonisissa/toistuvissa altistuksissa. Palautumisikkuna-malli ratkaisee tämän: 30 min + 23,5 h palautuminen → 97 % korjaus; 22 h altistus + 2 h palautuminen → 21 % korjaus.",
-    lateralizationNote: "Kaksikanavamallin spatiaalista rakennetta tukevat lateralisaatiotutkimukset: Eliyahu ym. (2006) ja Luria ym. (2009) osoittivat, että 890 MHz:n altistus vaikuttaa nimenomaan puhelinta lähimpänä olevaan aivopuoliskoon. Tämä osoittaa, ettei henkilökohtaisen EMF:n vaikutus ole systeeminen vaan paikallinen — EMF vaimenee etäisyyden neliössä — ja tukee BERM:n premissiä: puhelin taskussa → kivekset, puhelin korvalla → hypotalamus.",
+    ifoVgicNote: "IFO-VGIC-mekanismia tukee 131 tutkimuksen kattava katsaus ([[ref:panagopoulos2025_ifo|Panagopoulos ym. 2025]], Bioelectromagnetics): 95 % raportoi oksidatiivisia vaikutuksia RF/Wi-Fi-altistuksessa. Tämä konsensus, joka on yhdenmukainen [[ref:yakymenko2016|Yakymenko ym. 2016]] (93/100) kanssa, vahvistaa Ca²⁺-sisäänvirtaus → ROS -reitin aseman parhaiten dokumentoituna ei-termisenä mekanismina.",
+    multiPathwayCa2Note: "Tason 4 Ca²⁺-häiriö toimii useamman itsenäisen reitin kautta: (1) suora S4-jännitesensorin pakotettu oskillaatio ([[ref:panagopoulos2025_ifo|Panagopoulos ym. 2025]], IFO-VGIC); (2) solunsisäisten kalsiumvarastojen dysregulaatio ryanodiinireseptoreiden (RyR) ja SERCA-pumppujen kautta ([[ref:bertagna2025|Bertagna ym. 2025]], Ann NY Acad Sci). Molemmat farmakologiset salpauskokeet (VGCC-salpaajat reitille 1; dantroleeni RyR:lle, CPA SERCA:lle reitille 2) estävät EMF-vaikutukset — tukee mekanismia. Monireittiisyys selittää kudosspesifisen herkkyyden: solut, joissa on korkea VGIC-tiheys JA suuret solunsisäiset Ca²⁺-varastot (neuronit, gonaadisolut) ovat herkempiä kuin matalan varastotiheyden solut (keratinosyytit — vrt. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: nollatulokset ihosoluissa). Huom: [[ref:bertagna2025|Bertagna 2025]] on ELF (50 Hz), ei RF — mekanismin siirto RF:lle ei suoraviivainen, mutta Ca²⁺-reitti on jaettu.",
+    fiveGReproNote: "Ensimmäinen 5G-taajuusspesifinen testisdata ([[ref:bektas2026|Bektas ym. 2026]], Bioelectromagnetics): 3,5 GHz RF aiheutti testis- ja oksidatiivista vauriota rotilla. CoQ10-lisäravinto lievitti vauriota — osoittaa mekanismin palautuvuuden. Yhdenmukainen BERM:n palautumisikkuna-mallin kanssa, jossa antioksidanttikapasiteetti määrittää nettovaurion. Laajentaa oksidatiivisen stressin evidenssipohjan ([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95 %) 5G-taajuusalueelle.",
+    pathwayCQuantNote: "Melatoniinisuppressiopolkua tukee kvantitatiivisesti 55 tutkimuksen PRISMA-katsaus ([[ref:tbahriti2026|Tbahriti ym. 2026]], Sleep Biol Rhythms): 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 % basaalitasosta). Suppressio on biologisesti merkittävä GnRH-pulsaatiolle mutta pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen BERM:n v17_night_fraction() -mallinnuksen kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniini), ei ainoa ajuri. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat standardit.",
+    pathwayCWeightNote: "Huomautus polku C:n painosta: Polku C:n 25 % heijastaa sekä sen sirkadiaanista funktiota (CRY2 → kellogeenitranskriptio → melatoniini → HPG) että äskettäin löydettyä kalsiumsignalointifunktiota (CRY2 → TRPC1-modulaatio → Ca²⁺-sisäänvirtaus; [[ref:yap2025|Yap ym. 2025]], Cells). TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polut A ja C ovat siten farmakologisesti erotettavissa: L-tyypin VGCC-salpaajat (nifedipiini) estävät polku A:n vaikutuksia mutta eivät CRY2-TRPC1-vaikutuksia.",
+    cryIndividualVariationNote: "Yksilöllinen vaihtelu: CRY-herkkyyttä moduloivat iiriksen pigmentaatio (sininen > vihreä > ruskea; [[ref:higuchi2007|Higuchi 2007]]), ravitsemuksellinen FAD-tila ([[ref:hirano2017|Hirano 2017]]) ja sukupuoli (miehet > naiset akuutissa magnetoreseptiossa; [[ref:chae2019|Chae 2019]]). Nämä modulaattorit voivat selittää osan polku C:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta. CRY2-TRPC1-fyysinen kompleksi ([[ref:yap2025|Yap/Sherrard 2025]]) paljastaa lisäksi, että polku C:llä on toinen alaspäin suuntautuva haara: CRY2 moduloi TRPC1:tä (TRP-kanava, EI VGCC), mahdollistaen kalsiumsignaloinnin polku A:sta riippumatta. Polut A ja C ovat farmakologisesti erotettavissa — L-tyypin VGCC-salpaajat estävät A:n mutta eivät CRY2-TRPC1:tä. Katso yksityiskohtainen analyysi /evidence/eyes.",
+    cryDualSystemNote: "CRY:n kaksoissysteemi: Polku C toimii verkkokalvon kahden erillisen kryptokromisysteemin kautta. C1 (sensorinen): Täyspitkä CRY1-proteiini löydettiin yksinomaan lyhyen aallonpituuden herkkien sinisten tappisolujen ulkosegmenteistä ihmisen, bonobon ja gorillan verkkokalvoissa ([[ref:bartolke2025|Bartölke ym. 2025]], FASEB J). Tämä sijainti kaukana tumista — fototransduktiokoneistossa — viittaa sensoriseen toimintaan sirkadiaanisen kellon säätelyn ohella. Tappisolujen ulkosegmenttien pinotut kalvolamellat tarjoavat magnetoreseptiolle tarvittavan suuntajärjestyksen (vrt. [[ref:majewska2025|Majewska ym. 2025]], ACS Chem Biol: CRY assosioituu lipidikaksoiskerrosten kanssa järjestäytyneesti). Tämä on systeemi, johon iiriksen pigmentaatio vaikuttaa eniten: siniset silmät päästävät ~100× enemmän valoa sinisiin tappisoluihin, mikä lisää CRY1-aktivaatiota. C2 (sirkadiaaninen): CRY2 ekspressoituu verkkokalvon gangliosoluissa, erityisesti SCN:iin projisoivissa ipRGC-soluissa. CRY2 muodostaa fysikaalisen kompleksin TRPC1:n kanssa ([[ref:yap2025|Yap ym. 2025]]), yhdistäen sirkadiaanisen polun ionikanavaviestintään. Molemmat systeemit vaativat FAD:n kromoforinaan ja ovat siten molemmat riippuvaisia riboflaviini (B2) -tilasta.",
+    recoveryWindowNote: "Akuutin ja kroonisen altistuksen ero on empiirisesti tuettu: [[ref:koivisto2000|Koivisto ym. (2000)]] havaitsi kognitiivisen fasilitaation 30–60 min altistuksen jälkeen (yhteensopiva akuutin Ca²⁺-välitteisen synaptisen vahvistuksen kanssa), kun taas [[ref:panagopoulos2025_ifo|Panagopoulos ym. (2025)]] raportoi 95 %:n oksidatiivista stressiä kroonisissa/toistuvissa altistuksissa. Palautumisikkuna-malli ratkaisee tämän: 30 min + 23,5 h palautuminen → 97 % korjaus; 22 h altistus + 2 h palautuminen → 21 % korjaus.",
+    lateralizationNote: "Kaksikanavamallin spatiaalista rakennetta tukevat lateralisaatiotutkimukset: [[ref:eliyahu2006|Eliyahu ym. (2006)]] ja [[ref:luria2009|Luria ym. (2009)]] osoittivat, että 890 MHz:n altistus vaikuttaa nimenomaan puhelinta lähimpänä olevaan aivopuoliskoon. Tämä osoittaa, ettei henkilökohtaisen EMF:n vaikutus ole systeeminen vaan paikallinen — EMF vaimenee etäisyyden neliössä — ja tukee BERM:n premissiä: puhelin taskussa → kivekset, puhelin korvalla → hypotalamus.",
     ifChannelTitle: "IF-kanava: LED-valaistus päälähteinä",
     ifChannelDesc:
-      "IF-kanava (1 kHz – 1 MHz) kohdistuu jakautuviin soluihin saman taajuus–solukoko-suhteen kautta kuin FDA:n hyväksymä TTFields-syöpähoito. Ympäristön IF-kenttien pääasiallinen lähde on LED-valaistus: jokainen LED-lamppu sisältää hakkuriteholähteen, joka toimii 20–200 kHz:n taajuudella ja tuottaa harmonisia megahertsialueelle asti. Tyypillisessä kodissa on 15–30 tällaista lähdettä; tyypillisessä toimistossa 200–500. Muita IF-lähteitä ovat ilmanvaihdon taajuusmuuttajat (5–50 kHz), induktioliedet (20–75 kHz) ja kaikki hakkuriteholähteet (kannettavan laturit, puhelinlaturit). Mekanismi toimii ionien pakko-oskillaation (IFO-VGIC) kautta, biologisella kynnysarvolla 10⁻⁵ V/m (Panagopoulos 2025) — kertaluokkia mitattujen LED-ajuriemissioiden alapuolella.",
+      "IF-kanava (1 kHz – 1 MHz) kohdistuu jakautuviin soluihin saman taajuus–solukoko-suhteen kautta kuin FDA:n hyväksymä TTFields-syöpähoito. Ympäristön IF-kenttien pääasiallinen lähde on LED-valaistus: jokainen LED-lamppu sisältää hakkuriteholähteen, joka toimii 20–200 kHz:n taajuudella ja tuottaa harmonisia megahertsialueelle asti. Tyypillisessä kodissa on 15–30 tällaista lähdettä; tyypillisessä toimistossa 200–500. Muita IF-lähteitä ovat ilmanvaihdon taajuusmuuttajat (5–50 kHz), induktioliedet (20–75 kHz) ja kaikki hakkuriteholähteet (kannettavan laturit, puhelinlaturit). Mekanismi toimii ionien pakko-oskillaation (IFO-VGIC) kautta, biologisella kynnysarvolla 10⁻⁵ V/m ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) — kertaluokkia mitattujen LED-ajuriemissioiden alapuolella.",
     tcbmTitle: "Kolmikanavainen biologinen malli (TCBM)",
     tcbmIntro:
       "BERM v19.1 tunnistaa kolme riippumatonta sähkömagneettista kanavaa, joilla kullakin on omat taajuusalueensa, altistuslähteet, biologiset mekanismit ja ajalliset historiat:",
     tcbmElfTitle: "Kanava 1: ELF (0–300 Hz)",
     tcbmElfDesc:
-      "Lähde: sähköverkko, kodin johdotus, kodinkoneet, muuntajat. Mekanismi: IFO-VGIC pakko-oskillaatio (Panagopoulos 2025). Historia: läsnä sähköistymisestä (1880-luku), vakaa n. 1970 jälkeen. Sijaismuuttuja: asumisen sähkönkulutus (kWh per capita). Aina päällä, 24/7, koko koti.",
+      "Lähde: sähköverkko, kodin johdotus, kodinkoneet, muuntajat. Mekanismi: IFO-VGIC pakko-oskillaatio ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Historia: läsnä sähköistymisestä (1880-luku), vakaa n. 1970 jälkeen. Sijaismuuttuja: asumisen sähkönkulutus (kWh per capita). Aina päällä, 24/7, koko koti.",
     tcbmIfTitle: "Kanava 2: IF (300 Hz – 10 MHz)",
     tcbmIfDesc:
-      "Lähde: LED-ajurit (20–300 kHz), SMPS, VFD, induktioliedet. Mekanismi: Cyb5b → Ca²⁺-oskillaatiot (Kim 2026 Cell), IFO korkeammilla taajuuksilla. Historia: lähes nolla ennen 2009, eksponentiaalinen kasvu 2009–2019 (EU LED-siirtymä). Sijaismuuttuja: LED-markkinaosuus × asumisen sähkönkulutus. Pulssitettu, korkea dV/dt, säätelyaukko (IJRB 2022).",
+      "Lähde: LED-ajurit (20–300 kHz), SMPS, VFD, induktioliedet. Mekanismi: Cyb5b → Ca²⁺-oskillaatiot ([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]]), IFO korkeammilla taajuuksilla. Historia: lähes nolla ennen 2009, eksponentiaalinen kasvu 2009–2019 (EU LED-siirtymä). Sijaismuuttuja: LED-markkinaosuus × asumisen sähkönkulutus. Pulssitettu, korkea dV/dt, säätelyaukko ([[ref:ijrb2022_if_review|IJRB 2022]]).",
     tcbmRfTitle: "Kanava 3: RF (100 kHz – 300 GHz)",
     tcbmRfDesc:
-      "Lähde: matkapuhelimet, Wi-Fi, Bluetooth, tukiasemat, IoT. Mekanismi: RPM/CRY spin-kemia (Ritz 2004), terminen absorptio korkealla SAR:lla. Historia: 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Sijaismuuttuja: laajakaistaliittymät per 100, matkapuhelinliittymät. Moduloitu (datakoodaus), henkilökohtainen + ympäristö.",
+      "Lähde: matkapuhelimet, Wi-Fi, Bluetooth, tukiasemat, IoT. Mekanismi: RPM/CRY spin-kemia ([[ref:ritz2004|Ritz 2004]]), terminen absorptio korkealla SAR:lla. Historia: 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Sijaismuuttuja: laajakaistaliittymät per 100, matkapuhelinliittymät. Moduloitu (datakoodaus), henkilökohtainen + ympäristö.",
     tcbmIfMitotic:
       "IF-kanavan biologinen mekanismi eroaa ELF:stä ja RF:stä. Kun ELF ensisijaisesti aktivoi ionikanavia (IFO-VGCC) ja RF ensisijaisesti häiritsee radikaaliparin spin-kemiaa (RPM/CRY), IF toimii KOLMANNEN reitin kautta: polaaristen makromolekulaaristen rakenteiden häirintä solunjakautumisen aikana (mitoottinen kara, tubuliinidimeerit). TTFields-tutkimus osoittaa, että IF-kentät (100–500 kHz) kohdistuvat polaarisiin solunsisäisiin elementteihin. Mekanismi on taajuusriippuvainen: syöpäsolut kärsivät eniten 150–200 kHz:llä, normaalit solut ~50 kHz:llä (Nature 2020). LED-hakkuriemissiot (20–100 kHz) kattavat normaalien solujen herkkyystaajuuden.",
     tcbmWeightNote:
@@ -738,7 +895,7 @@ const t = {
     recovBbbLayer: "Biologiset esteet (BBB + BTB)",
     recovBbbTime: "BBB: palautumaton; BTB: osittain palautuva",
     recovBbbNote:
-      "Kroonisesta BBB-vuodosta johtuvan hermostovaurion oletetaan olevan pysyvä. BTB:n häiriö (Yu ym. 2019: Spock3-MMP2-akseli 4G:llä) vaarantaa spermatogeneettisen mikroympäristön suoraan. Molemmat esteet käyttävät samoja tight junction -proteiineja (okkludiini, ZO-1). Positiivinen takaisinkytkentä: estevaurio → korkeampi efektiivinen kenttä → enemmän vauriota.",
+      "Kroonisesta BBB-vuodosta johtuvan hermostovaurion oletetaan olevan pysyvä. BTB:n häiriö ([[ref:yu2019_btb|Yu ym. 2019]]: Spock3-MMP2-akseli 4G:llä) vaarantaa spermatogeneettisen mikroympäristön suoraan. Molemmat esteet käyttävät samoja tight junction -proteiineja (okkludiini, ZO-1). Positiivinen takaisinkytkentä: estevaurio → korkeampi efektiivinen kenttä → enemmän vauriota.",
 
     compSub: "Miten TFR-kaava erottaa biologisen kapasiteetin kulttuurisesta kysynnästä",
     compTitle: "Kompensaatiomekanismi",
@@ -769,7 +926,7 @@ const t = {
     techLayersLink: "Katso kaikki 14 teknologiaprofiilia →",
 
     elfPrimingTitle: "ELF-priming-hypoteesi",
-    elfPrimingDesc: "Sähköverkko ei ainoastaan lisää 50 Hz -altistusta. Se ylössäätelee jänniteherkkien kalsiumkanavien ekspressiota (P/Q-, N- ja R-alatyypit kasvavat 8–10 päivässä — PMC4757866). Tämä tekee jokaisesta solusta herkemmän kaikille muille EMF-lähteille. Tämä selittää miksi asuinalueen sähkönkulutus on hedelmällisyyslaskun vahvin ennustaja (RMSE 0,522) kun taas matkapuhelintiheys on heikoin (RMSE 1,053): sähkönkulutus mittaa priming-tilaa, ei pelkkää yhtä altistuslähdettä.",
+    elfPrimingDesc: "Sähköverkko ei ainoastaan lisää 50 Hz -altistusta. Se ylössäätelee jänniteherkkien kalsiumkanavien ekspressiota (P/Q-, N- ja R-alatyypit kasvavat 8–10 päivässä — [[ref:sun2016_elf_vgcc|PMC4757866]]). Tämä tekee jokaisesta solusta herkemmän kaikille muille EMF-lähteille. Tämä selittää miksi asuinalueen sähkönkulutus on hedelmällisyyslaskun vahvin ennustaja (RMSE 0,522) kun taas matkapuhelintiheys on heikoin (RMSE 1,053): sähkönkulutus mittaa priming-tilaa, ei pelkkää yhtä altistuslähdettä.",
     elfFreqNote: "Huomautus: ELF-kanava toimii 50 Hz:llä Euroopassa ja 60 Hz:llä Amerikoissa. 50 Hz on 2 Hz:n sisällä Schumann-resonanssin 8. harmonisesta (52,0 Hz), mikä saattaa tuottaa vahvempaa CRY-häiriötä eurooppalaisissa populaatioissa. Tämä on spekulatiivista mutta testattavissa vertaamalla melatoniiniprofiileja 50 Hz:n ja 60 Hz:n maiden välillä sovitetuilla kokonais-EMF-tasoilla.",
 
     layerModelTitle: "Kerrostumamalli",
@@ -786,9 +943,9 @@ const t = {
     layerFormulaNote: "Parametrit α, β, w_IF vaativat kalibraation 54 maan datasettiä + amish/tsimane-datapisteitä vastaan. Odotettu parannus: LOOCV RMSE < 0,45 (vs 0,522 v19.1:lle).",
     layerAnomaliesTitle: "Viisi anomaliaa jotka kerrostumamalli selittää",
     layerAnomalies: [
-      { title: "Mozaffarian-paradoksi", subtitle: "Amerikkalaiset syövät vähemmän mutta painavat enemmän 2000 jälkeen", conventional: "Selittämätöntä", explanation: "Kerrostumat 3–4 (WiFi + LED IF) lisäsivät metabolisen häiriön kalorinsaannista riippumatta. BAT-termogeneesi↓ + insuliinidynamiikka↓ ovat kaloririippumattomia mekanismeja.", ref: "Mozaffarian 2022, AJCN" },
+      { referenceId: "mozaffarian2022", title: "Mozaffarian-paradoksi", subtitle: "Amerikkalaiset syövät vähemmän mutta painavat enemmän 2000 jälkeen", conventional: "Selittämätöntä", explanation: "Kerrostumat 3–4 (WiFi + LED IF) lisäsivät metabolisen häiriön kalorinsaannista riippumatta. BAT-termogeneesi↓ + insuliinidynamiikka↓ ovat kaloririippumattomia mekanismeja.", ref: "Mozaffarian 2022, AJCN" },
       { title: "2012-inflektio", subtitle: "Some oli olemassa 2003 ilman kriisiä", conventional: "Somen sisältö vahingoittaa nuoria", explanation: "2012 = ensimmäinen vuosi jolloin KAIKKI KOLME KANAVAA (ELF + IF + RF) samanaikaisesti aktiivisia 24/7 nuorten kehossa. CaMKII-kynnys ylittyi väestötasolla. Sisältörajoitukset EIVÄT ratkaise kriisiä.", ref: "Haidt 2024; BERM-kerrostumaanalyysi" },
-      { title: "COVID-kiihdytys", subtitle: "T2D-prevalenssin kasvu: 2,90%→3,52%/v", conventional: "Liikkumattomuus lockdownin aikana", explanation: "Lockdown LISÄSI kerrostumaintensiteettiä: 24h/pv kotona WiFi + LED + useat laitteet. Palautumisikkuna poistui kokonaan. Etätyöntekijöillä suurempi EMF kuin työmatkantekijöillä.", ref: "GBD 2021 / Front Endocrinol 2024" },
+      { referenceId: "t2d_covid2024", title: "COVID-kiihdytys", subtitle: "T2D-prevalenssin kasvu: 2,90%→3,52%/v", conventional: "Liikkumattomuus lockdownin aikana", explanation: "Lockdown LISÄSI kerrostumaintensiteettiä: 24h/pv kotona WiFi + LED + useat laitteet. Palautumisikkuna poistui kokonaan. Etätyöntekijöillä suurempi EMF kuin työmatkantekijöillä.", ref: "GBD 2021 / Front Endocrinol 2024" },
       { title: "15–30 vuoden viive", subtitle: "Kehitysmaat seuraavat samaa kehityskulkua, viiveellä", conventional: "Vaurastuminen muuttaa elintapoja", explanation: "Viive vastaa sähköistymis- ja teknologia-adoptioaikataulua, ei vaurautta. Kiinan T2D: 1,3 % (1980) → 8,7 % (2014) rinnastuu sähköistymiseen 60 %:sta 100 %:iin.", ref: "BMC Public Health 2018" },
       { title: "Amish-poikkeus", subtitle: "TFR 6,1, matala obesiteetti, matala dementia — sama maa", conventional: "Fyysinen työ ja yhteisöllisyys", explanation: "Nolla teknologiakerrosta. Ei ELF-primingia. Täysi palautuminen. EMF_effective ≈ 0. Ruokavalio EI ole erityisen terveellinen — EMF-ympäristö on.", ref: "BERM-populaatiovertailu" },
     ],
@@ -813,25 +970,25 @@ const t = {
 
     seasonTitle: "Vuodenaikaherkkyys: CRY × leveysaste",
     seasonSub: "CRY-magnetoreseptori on valoriippuvainen — talvi vahvistaa EMF:n biologisia vaikutuksia",
-    seasonDesc: "Kryptokromi (CRY) on valoriippuvainen magnetoreseptori. Talvella (vähemmän valoa) CRY on herkempi magneettikentän häiriöille — EMF:n vaikutukset melatoniiniin ovat VOIMAKKAAMPIA talvella. Halgamuge 2015 (Nature Sci Rep) osoitti tämän suoraan: ELF suppressoi melatoniinia talvella mutta LISÄSI sitä kesällä vasikoilla. Tämä vuodenaikamodulaatio selittää miksi Pohjoismaat (korkea leveysaste + korkea EMF) kantavat suhteettoman terveystaakan (SAD-prevalenssi: Suomi 21 %), ja miksi eri vuodenaikoina tehdyt EMF-tutkimukset tuottavat ristiriitaisia tuloksia.",
+    seasonDesc: "Kryptokromi (CRY) on valoriippuvainen magnetoreseptori. Talvella (vähemmän valoa) CRY on herkempi magneettikentän häiriöille — EMF:n vaikutukset melatoniiniin ovat VOIMAKKAAMPIA talvella. [[ref:halgamuge2015|Halgamuge 2015]] (Nature Sci Rep) osoitti tämän suoraan: ELF suppressoi melatoniinia talvella mutta LISÄSI sitä kesällä vasikoilla. Tämä vuodenaikamodulaatio selittää miksi Pohjoismaat (korkea leveysaste + korkea EMF) kantavat suhteettoman terveystaakan (SAD-prevalenssi: Suomi 21 %), ja miksi eri vuodenaikoina tehdyt EMF-tutkimukset tuottavat ristiriitaisia tuloksia.",
     seasonFormulaLabel: "Formula v21 -korjauskerroin:",
     seasonFormula: "S = 1 + γ × f(leveysaste, vuodenaika)",
     seasonFormulaDesc: "S kasvaa talvella korkeilla leveysasteilla (CRY herkempi EMF-perturbaalioille), laskee kesällä (CRY saturoitunut ympäröivästä valosta). Päiväntasaajan lähellä S ≈ 1,0 (tasainen päivänpituus). Suomi talvella: S ≈ 1,3. Suomi kesällä: S ≈ 0,9.",
     seasonPred1: "SEASON-1: SAD/masennusprevalenssi korreloi leveysaste × EMF-tiheys, ei pelkkä leveysaste",
     seasonPred2: "SEASON-2: EMF-vapaan makuuhuoneen hyöty on SUUREMPI talvikuukausina",
-    seasonRef: "Halgamuge 2015 (PMC4585560) · CRY-valoriippuvuus (biorxiv 2024)",
+    seasonRef: "[[ref:halgamuge2015|Halgamuge 2015]] · [[ref:kolbabova2015_melatonin_seasonal|Kolbabová et al. 2015]] · CRY-valoriippuvuus (biorxiv 2024)",
 
     cacna1cTitle: "CACNA1C rs1006737: yksilöllinen herkkyys",
     cacna1cSub: "Cav1.2-genotyyppi määrittää EMF-herkkyyskynnyksen",
     cacna1cDesc: "rs1006737 A-alleeli lisää CACNA1C-transkriptiota → enemmän Cav1.2-kanavia per solu → suurempi Ca²⁺-sisäänvirtaus per EMF-stimulus → matalampi CaMKII-autofosforylaatiokynnys. Tämä variantti on yhdistetty GWAS-tutkimuksissa bipolaarihäiriöön, skitsofreniaan, autismiin, sydämen rytmihäiriöihin ja kehityshäiriöihin — KAIKKI BERM:n Ca²⁺-mekanismin ennustamia tiloja.",
-    cacna1cEvidence: "Sousouri 2025 (ETH Zürich): kaksoissokkotutkimuksessa CACNA1C-genotyyppi SUORAAN määritti univasteen 5G-altistukselle. Tämä on ensimmäinen osoitus siitä, että EMF-herkkyys on genotyypistä riippuvainen, ei psykosomaattinen. PMC4898738: rs1006737 on kvantitatiivinen ominaisuuslokus CACNA1C-transkriptiotasoille. PMC3577650: A-alleeli → muuttunut amygdala-aktiivisuus eri diagnooseissa JA terveillä kontrolleilla.",
+    cacna1cEvidence: "[[ref:sousouri2025|Sousouri 2025]] (ETH Zürich): kaksoissokkotutkimuksessa CACNA1C-genotyyppi SUORAAN määritti univasteen 5G-altistukselle. Tämä on ensimmäinen osoitus siitä, että EMF-herkkyys on genotyypistä riippuvainen, ei psykosomaattinen. [[ref:cacna1c_functional|Eckart et al. 2016]]: rs1006737 on kvantitatiivinen ominaisuuslokus CACNA1C-transkriptiotasoille. [[ref:cacna1c_amygdala|Tesli et al. 2013]]: A-alleeli → muuttunut amygdala-aktiivisuus eri diagnooseissa JA terveillä kontrolleilla.",
     cacna1cImplication: "EHS-uudelleentulkinta: sähköherkkyysoireyhtymä ei ole psykosomaattinen — se heijastaa genotyypistä riippuvaa kynnysvaihtelua. CACNA1C A/A -genotyypin yksilöillä on enemmän Cav1.2-kanavia, he saavuttavat CaMKII-kynnyksen matalammalla EMF-altistuksella ja kokevat oireita aikaisemmin.",
     cacna1cFormulaLabel: "Populaatiotason korjaus:",
     cacna1cFormula: "G_pop = 1 + δ × CACNA1C_A-alleelitaajuus",
     cacna1cFormulaDesc: "G_pop säätää populaation kokonais-EMF-herkkyyttä A-alleelin prevalenssin perusteella. Eurooppalaista alkuperää olevilla populaatioilla (korkeampi A-alleelitaajuus) voi olla korkeampi kokonaisherkkyys kuin itäaasialaisilla populaatioilla, vaikka tämä vaatii lisäverifiointia.",
     cacna1cPred1: "GEN-1: Populaatiot, joilla korkeampi CACNA1C A-alleelitaajuus, osoittavat jyrkempää terveyslaskua per EMF-yksikkö",
     cacna1cPred2: "GEN-2: A/A-genotyypin yksilöt osoittavat voimakkaampia EMF-vasteita kuin G/G kontrolloiduissa altistustutkimuksissa",
-    cacna1cRef: "Sousouri 2025 (ETH) · PMC4898738 · PMC3577650",
+    cacna1cRef: "[[ref:sousouri2025|Sousouri 2025]] (ETH) · [[ref:cacna1c_functional|Eckart et al. 2016]] · [[ref:cacna1c_amygdala|Tesli et al. 2013]]",
 
     neonatalQTitle: "Neonataalinen Q-tekijä: resonanssikynnys",
     neonatalQSub: "Miksi vastasyntyneen aivot ovat vaimentamaton resonaattori — GABA eksitatorinen NKCC1/KCC2-kytkimen kautta",
@@ -840,7 +997,7 @@ const t = {
     neonatalQFormula: "Q_neonatal(ikä) = Q₀ / (1 + (ikä / τ_KCC2)²)",
     neonatalQFormulaDesc: "Q₀ = laatutekijä syntyessä (maksimaalinen, ~vaimentamaton). τ_KCC2 ≈ 2–4 viikkoa = NKCC1→KCC2-kytkimen aikavakio. Syntyessä: Q ≈ Q₀. 2–4 kuukauden iässä: Q laskeva mutta vaarallisen korkea. 12 kuukauden iässä: Q lähestyy aikuistasoja (~1–5).",
     neonatalQVerification: "Bumetanidi (NKCC1-salpaaja) → palauttaa inhibitorisen GABAn → lopettaa neonataalit kohtaukset = tuo vaimennuksen. KCNQ2-mutaatiot → neonataalit kohtaukset jotka remittoituvat spontaanisti 3–6 kk iässä = KCC2:n kypsymisaikataulu.",
-    neonatalQRef: "Neonatal seizure review 2021 · Bumetanide NKCC1 2015 · NKCC1/KCC2 Bookshelf 2020",
+    neonatalQRef: "[[ref:neonatal_seizure_review2021|Neonatal seizure review 2021]] · [[ref:bumetanide_nkcc1|Bumetanide NKCC1 2015]] · [[ref:nkcc1_kcc2_bookshelf|NKCC1/KCC2 Bookshelf 2020]]",
     neonatalQSpectrum: "Neonataalin Q → ∞ -tila on jatkuvan spektrin toinen pää. Sama Q-tekijämekanismi — vaihtelevalla vaimennuskertoimella γ — yhdistää SIDS:n, epilepsian, SUDEP:n, migreenin ja klusteripäänsäryn. Spreading depolarization (CSD) on yhteinen terminaalireitti; Q-tekijä määrittää laukaistaanko CSD, kuinka pitkälle se leviää ja saavuttaako se aivorungon.",
     neonatalQSpectrumLink: "Ks. koko neurologisen spektrin analyysi →",
 
@@ -857,20 +1014,20 @@ const t = {
       { id: "S7", name: "BAT metabolinen spiraali", steps: "EMF → BAT PRDM16↓ → termogeneesi↓ → metabolinen oireyhtymä → tulehdus → VGCC-herkkyys↑ → lisää Ca²⁺-häiriötä → ...", status: "Mekanistisesti koherentti, eläindata", color: "amber" },
       { id: "S8", name: "Testosteronin neuroprotektio-menetys", steps: "EMF → Leydig → StAR↓ → T↓ → neuroprotektio↓ + synaptinen plastisuus↓ → haavoittuvampi EMF:lle → lisää Leydig-vauriota → ...", status: "T↓ neuroprotektiolinkki verifioitu", color: "green" },
       { id: "S9", name: "IL-1β → KCC2 -silmukka", steps: "EMF → syöttösolu → IL-1β → KCC2-kypsyminen viivästyy → GABA eksitatorinen pidempään → Q↑ → lisää neuronivaurioita → lisää IL-1β:tä → ...", status: "KCC2:n ympäristösäätely verifioitu", color: "green" },
-      { id: "S10", name: "Hypotalamuksen moniakselikaskadi", steps: "EMF → hypotalamuksen synapttiset vesikkelit↓ → GnRH↓ + CRH-häiriö + TRH↓ → monihormonipuutos → systeeminen stressi → lisää HPA-aktivaatiota → ...", status: "Kimin 2019 synapttiset muutokset verifioitu", color: "green" },
+      { id: "S10", name: "Hypotalamuksen moniakselikaskadi", steps: "EMF → hypotalamuksen synapttiset vesikkelit↓ → GnRH↓ + CRH-häiriö + TRH↓ → monihormonipuutos → systeeminen stressi → lisää HPA-aktivaatiota → ...", status: "[[ref:kim2019_hypothalamus|Kimin 2019]] synapttiset muutokset verifioitu", color: "green" },
       { id: "S11", name: "Sirkadiaanisen kellon itsehäiriö", steps: "EMF → SCN Ca²⁺ häiriintyy → melatoniinin ajoitus katoaa → Per2↓ suolistossa → perifeeriset kellot desynkronoituvat → SCN haavoittuvampi", status: "SCN Ca²⁺ -oskillaatio verifioitu", color: "green" },
       { id: "S12", name: "NK-syöpä-tulehdus", steps: "ELF → NK-sytotoksisuus↓ → syöpävalvonta↓ → kasvainkasvu → tulehdus → VGCC-sensitisaatio↑ → lisää NK-suppressiota", status: "NK:n Ca²⁺-riippuvuus + ELF-suppressio verifioitu", color: "green" },
       { id: "S13", name: "HPA-HPG-ristispiraali", steps: "EMF → kortisoli↑ → GnIH↑ → T↓ → neuroprotektio↓ → hippokampus haavoittuva → HPA-jarru menetetty → kortisoli↑↑ → lisää GnIH:ta", status: "RF9 palautti T:n kortisolikäsitellyissä kädellisisssä", color: "green" },
       { id: "S14", name: "Suolisto-aivo-tulehdus", steps: "EMF → melatoniini↓ → Per2↓ suolistossa → suoliston este↓ → LPS verenkiertoon → neurotulehdus → hippokampaalinen neurogeneesi↓ → lisää HPA-aktivaatiota → lisää melatoniini↓", status: "Per2 KO → suoliston este → LPS → masennus verifioitu", color: "green" },
       { id: "S15", name: "Melatoniini-telomeeri-ikääntymiskierre", steps: "EMF → melatoniini↓ → telomeraasi↓ + SIRT1↓ → telomeerien lyheneminen → SASP → tulehdus → ROS↑ → lisää telomeerivaurioita → lisää SASP:ia → ...", status: "Melatoniini → telomeraasi + SIRT1 verifioitu; masennus = 7v kiihtynyt ikääntyminen", color: "green" },
       { id: "S16", name: "Kipu-uni-kortisoli-kierre", steps: "EMF → α2δ-1↑ → sentraalinen sensitisaatio → krooninen kipu → uni↓ (S4) → kortisoli↑ (S7) + GABA↓ → tulehdus → lisää sensitisaatiota → masennus → uni↓ → ...", status: "α2δ-1 → kipu ilman vauriota verifioitu; kipu-uni-kortisoli jokainen verifioitu", color: "green" },
-      { id: "S17", name: "Amygdala-ahdistuskierre", steps: "EMF → Ca²⁺↑ → CaMKII → kortisoli↑ → BLA-hypertrofia → amygdala yliaktiivinen → ahdistus↑ → HPA-aktivaatio → kortisoli↑↑ → lisää BLA-hypertrofiaa → ...", status: "Yksittäinen kortisoliannos → BLA-hypertrofia verifioitu (PNAS 2008); pysyvyys verifioitu (Neurosci Lett 2023)", color: "green" },
+      { id: "S17", name: "Amygdala-ahdistuskierre", steps: "EMF → Ca²⁺↑ → CaMKII → kortisoli↑ → BLA-hypertrofia → amygdala yliaktiivinen → ahdistus↑ → HPA-aktivaatio → kortisoli↑↑ → lisää BLA-hypertrofiaa → ...", status: "Yksittäinen kortisoliannos → BLA-hypertrofia verifioitu ([[ref:amygdala_cort|PNAS 2008]]); pysyvyys verifioitu ([[ref:amygdala_persist|Neurosci Lett 2023]])", color: "green" },
     ],
     feedbackLoopsLink: "Ks. koko konvergenssiverifiointi →",
 
     hypoNexusTitle: "Hypotalamuksen keskuspiste (VK13)",
     hypoNexusSub: "Hypotalamus seitsemän hormoniakselin anatomisena konvergenssipisteenä",
-    hypoNexusDesc: "Kim 2019 osoitti, että 835 MHz (12 viikkoa) vähentää synaptisten vesikkelien lukumäärää, kokoa ja telakoitumista hypotalamuksessa. Kriittisesti myös synaptotagmiini 1 — Ca²⁺-sensori vesikkelien vapautumiselle — vähenee. Koska KAIKKIEN hypotalamuksen hormonien vapautuminen riippuu Ca²⁺-laukaisemasta vesikkelien fuusiosta, synaptotagmiini 1:n menetys tarkoittaa KAIKKIEN akselien samanaikaista heikentymistä.",
+    hypoNexusDesc: "[[ref:kim2019_hypothalamus|Kim 2019]] osoitti, että 835 MHz (12 viikkoa) vähentää synaptisten vesikkelien lukumäärää, kokoa ja telakoitumista hypotalamuksessa. Kriittisesti myös synaptotagmiini 1 — Ca²⁺-sensori vesikkelien vapautumiselle — vähenee. Koska KAIKKIEN hypotalamuksen hormonien vapautuminen riippuu Ca²⁺-laukaisemasta vesikkelien fuusiosta, synaptotagmiini 1:n menetys tarkoittaa KAIKKIEN akselien samanaikaista heikentymistä.",
     hypoNexusAxes: [
       { axis: "GnRH → LH/FSH → T↓", organ: "Sukurauhaset", consequence: "Testosteronin lasku, hedelmällisyyden menetys" },
       { axis: "CRH → ACTH → kortisoli↑", organ: "Lisämunuaiset", consequence: "HPA-sensitisaatio, krooninen stressi" },
@@ -894,14 +1051,14 @@ const t = {
 
     quadLockTitle: "Nelilukko: Neljäs ulottuvuus",
     quadLockSub: "T↓ × F↑ × DA↓ × OXT↓ — oksitosiinin lisääminen täydentää sosiaalisen-reproduktiivisen romahduksen",
-    quadLockDesc: "Oksitosiinin vapautuminen on suoraan VGCC-riippuvaista (N-tyypin + L-tyypin Ca²⁺-kanavat, PMC3197583). EMF häiritsee VGCC-toimintaa → OXT-vapautus häiriintyy. OXT↓:n lisääminen kolmoislukkoon luo nelilukon joka selittää täydellisen modernin fenotyypin: ei vain fysiologista rappeutumista vaan sosiaalista pirstoutumista.",
+    quadLockDesc: "Oksitosiinin vapautuminen on suoraan VGCC-riippuvaista (N-tyypin + L-tyypin Ca²⁺-kanavat, [[ref:oxt_vgcc|PMC3197583]]). EMF häiritsee VGCC-toimintaa → OXT-vapautus häiriintyy. OXT↓:n lisääminen kolmoislukkoon luo nelilukon joka selittää täydellisen modernin fenotyypin: ei vain fysiologista rappeutumista vaan sosiaalista pirstoutumista.",
     quadLockComponents: [
       { component: "T↓ × OXT↓", effect: "Reproduktiivis-sosiaalinen romahdus: hedelmällisyyden lasku + parisideoksen heikkeneminen" },
       { component: "DA↓ × OXT↓", effect: "Sosiaalisen motivaation romahdus: vähentynyt halu sosiaaliseen yhteyteen + vähentynyt palkitsevuus siitä" },
       { component: "F↑ × OXT↓", effect: "Stressi ilman puskurointia: kortisoli nousee kun OXT (sosiaalinen stressipuskuri) laskee" },
       { component: "T↓ × F↑ × DA↓ × OXT↓", effect: "Täydellinen moderni fenotyyppi: biologinen rappeutuminen + sosiaalinen eristäytyminen + motivaation romahdus" },
     ],
-    quadLockNote: "Insuliini stimuloi OXT-vapautumista Ca²⁺:n kautta (PMC6039480). Lihavilla henkilöillä on matalampi OXT. Tämä luo metabolis-sosiaalisen sillan: metabolinen oireyhtymä (S7) → insuliiniresistenssi → OXT↓ → sosiaalinen eristäytyminen → masennus → metabolinen oireyhtymä pahenee.",
+    quadLockNote: "Insuliini stimuloi OXT-vapautumista Ca²⁺:n kautta ([[ref:insulin_oxt|PMC6039480]]). Lihavilla henkilöillä on matalampi OXT. Tämä luo metabolis-sosiaalisen sillan: metabolinen oireyhtymä (S7) → insuliiniresistenssi → OXT↓ → sosiaalinen eristäytyminen → masennus → metabolinen oireyhtymä pahenee.",
 
     dualBarrierTitle: "Kaksoisestemekanismi",
     dualBarrierSubtitle: "BBB + suoliston este jakavat ZO-1:n, okludiinin, klaudiinit",
@@ -916,19 +1073,19 @@ const t = {
     agingSpiralDesc: "Melatoniini ei ole vain unihormoni — se on avain-anti-aging-molekyyli. Se aktivoi telomeraasia (ylläpitää telomeeripituutta), säätelee SIRT1:tä ylös (→ ROS↓ → p53↓ → NF-κB↓) ja lievittää endoteelien ikääntymistä. EMF→melatoniini↓ poistaa tämän koko suojaavan kaskadin.",
     agingSpiralSteps: [
       { step: "EMF → melatoniini↓", detail: "Käpylisäkkeen suppressio CRY-reitin kautta (VK1-VK3)" },
-      { step: "Melatoniini↓ → telomeraasi↓", detail: "Melatoniini aktivoi telomeraasia suoraan (Front Aging Neurosci 2022)" },
+      { step: "Melatoniini↓ → telomeraasi↓", detail: "Melatoniini aktivoi telomeraasia suoraan ([[ref:mel_telomerase|Front Aging Neurosci 2022]])" },
       { step: "Melatoniini↓ → SIRT1↓", detail: "SIRT1 → ROS↓ → p53↓ → NF-κB↓ anti-inflammatorinen kaskadi menetetty" },
       { step: "Telomeerien lyheneminen → SASP", detail: "Lyhentyneet telomeerit laukaisevat senescence-associated secretory phenotype → krooninen tulehdus" },
       { step: "SASP → ROS↑ → lisää telomeerivaurioita", detail: "Takaisinkytkentäsilmukka S15: tulehdus aiheuttaa oksidatiivista vahinkoa jäljellä oleville telomeereille" },
     ],
-    agingSpiralQuantitative: "Kvantitatiivinen ankkuri: vakava masennus liittyy 281 bp lyhyempiin telomeereihin, mikä vastaa 7 vuoden kiihtynyttä ikääntymistä (PMC3063175). Metabolinen oireyhtymä on samoin yhteydessä lyhyempiin telomeereihin ja alentuneeseen telomeraasiaktiivisuuteen (PMC12744432). Molemmat tilat ovat BERM-ennustettuja lopputuloksia — niiden ikääntymisen kiihtyminen on konsistentti EMF→melatoniini↓→telomeraasi↓ kanssa.",
+    agingSpiralQuantitative: "Kvantitatiivinen ankkuri: vakava masennus liittyy 281 bp lyhyempiin telomeereihin, mikä vastaa 7 vuoden kiihtynyttä ikääntymistä ([[ref:depression_telomere|PMC3063175]]). Metabolinen oireyhtymä on samoin yhteydessä lyhyempiin telomeereihin ja alentuneeseen telomeraasiaktiivisuuteen ([[ref:mets_telomere|PMC12744432]]). Molemmat tilat ovat BERM-ennustettuja lopputuloksia — niiden ikääntymisen kiihtyminen on konsistentti EMF→melatoniini↓→telomeraasi↓ kanssa.",
 
     genSuscTitle: "Geneettinen herkkyyskartta: 15 geenin kalsiumprofiili",
     genSuscSub: "EMF-herkkyys ei ole yksi geeni — se on polygeeninen profiili kalsiumkaskadin viidellä funktionaalisella tasolla",
     genSuscDesc: "BERM tunnistaa 15 geeniä, joiden polymorfismit moduloivat yksilön EMF-herkkyyttä. Ne jakautuvat viiteen funktionaaliseen tasoon: INFLUKSI (5 CACNA-geeniä Ca²⁺-sisäänvirtaukselle), MODULAATIO (CACNA2D1 kanavatiheydelle), INTEGRAATIO (CAMK2A/B konvergenssipisteessä), ERITYS (3 geeniä Ca²⁺-poistolle) ja SIGNALOINTI (4 geeniä vastemuokkaukselle). Jokaisen geenin tautiassosiaatiot vastaavat BERM-kaskadien ennusteita.",
     genSuscInfluxTitle: "Taso 1 — Influksi: Ca²⁺-sisäänvirtauskanavat",
     genSuscInfluxGenes: [
-      { gene: "CACNA1C", protein: "Cav1.2 (L-tyyppi)", role: "Pää-RF-kohde. Neuronit, sydän, β-solut.", variant: "rs1006737 A-alleeli", diseases: "Bipolaari, skitsofrenia, ASD, masennus, Timothy", evidence: "VAHVISTETTU (Sousouri 2025 RCT)" },
+      { gene: "CACNA1C", protein: "Cav1.2 (L-tyyppi)", role: "Pää-RF-kohde. Neuronit, sydän, β-solut.", variant: "rs1006737 A-alleeli", diseases: "Bipolaari, skitsofrenia, ASD, masennus, Timothy", evidence: "VAHVISTETTU ([[ref:sousouri2025|Sousouri 2025]] RCT)" },
       { gene: "CACNA1H", protein: "Cav3.2 (T-tyyppi)", role: "ELF-kohde. Leydig-solut, pineaali, talamus.", variant: "GoF-mutaatiot", diseases: "Lapsuuden epilepsia, kuumekouristukset, primäärinen aldosteronismi, ASD", evidence: "KONSISTENTTI" },
       { gene: "CACNA1D", protein: "Cav1.3 (L-tyyppi)", role: "Sisäkorva, SA-solmu, substantia nigra.", variant: "GoF/LoF-variantit", diseases: "Bradykardia, epilepsia, kuulovaurio, ADHD, ASD", evidence: "KONSISTENTTI" },
       { gene: "CACNA1A", protein: "Cav2.1 (P/Q-tyyppi)", role: "Presynaptinen vapautus. ELF-priming-kohde.", variant: "rs16023 B-alleeli", diseases: "DD + epilepsia, familiaalinen hemipleginen migreeni, episodinen ataksia", evidence: "VAHVISTETTU (ELF-priming + GWAS)" },
@@ -936,15 +1093,15 @@ const t = {
     ],
     genSuscModTitle: "Taso 2 — Modulaatio: Kanavien tiheyden säätely",
     genSuscModDesc: "CACNA2D1 koodaa α2δ-1:tä, proteiinia joka säätelee VGCC:iden kuljetusta synapseihin. Tämä on ELF-primaamin molekulaarinen perusta: 50/60 Hz -altistus lisää α2δ-1:tä → enemmän VGCC:itä solupinnalle → solut herkistyvät KAIKELLE myöhemmälle EMF:lle. Gabapentinoidit (pregabaliini, gabapentiini) sitoutuvat α2δ-1:een ja ESTÄVÄT tämän kuljetuksen — mikä tekee niistä mekanistisesti ELF-primaamin ANTAGONISTEJA.",
-    genSuscModRef: "Field 2006 (PNAS) · Hoppa 2012 (Nature)",
+    genSuscModRef: "[[ref:field2006_cacna2d1|Field 2006]] (PNAS) · [[ref:hoppa2012_a2d|Hoppa 2012]] (Nature)",
     genSuscIntTitle: "Taso 3 — Integraatio: CaMKII-konvergenssi",
     genSuscIntDesc: "CAMK2A/B de novo -mutaatiot, jotka LISÄÄVÄT autofosforylaatiota Thr286/287:ssä, tuottavat epilepsian, kehitysvamman ja autismin — TÄSMÄLLEEN ne fenotyypit, joita BERM ennustaa ympäristöllisestä (EMF) autofosforylaation lisäyksestä. Mutaatiot jotka VÄHENTÄVÄT autofosforylaatiota aiheuttavat myös kehitysvamman. Molemmat suunnat = häiriö → tarkka säätely on kriittistä. Tämä on BERM:n SUORIN geneettinen validaatio: geneettinen ja ympäristöllinen CaMKII-häiriö konvergoivat identtisiin kliinisiin lopputuloksiin.",
-    genSuscIntRef: "Küry 2017 (AJHG, PMC5673671) · Al-Tawashi 2018 (eLife, PMC5963920)",
+    genSuscIntRef: "[[ref:kury2017_camk2|Küry 2017]] (AJHG, PMC5673671) · [[ref:altawashi2018_camk2a|Al-Tawashi 2018]] (eLife, PMC5963920)",
     genSuscExtTitle: "Taso 4 — Eritys: Ca²⁺-poisto",
     genSuscExtDesc: "Kolme geeniä säätelee Ca²⁺:n poistoa soluista. Hidas eritys + korkea influksi = Ca²⁺ kasaantuu → CaMKII-kynnys ylittyy matalammilla EMF-tasoilla. SLC8A1 (NCX1): sydämen/neuronien Ca²⁺-vienti. ATP2B1 (PMCA1): yleinen Ca²⁺-pumppu (GWAS: hypertensio). ATP2B2 (PMCA2): sisäkorva — hidas PMCA2 + Bluetooth-kuulokkeet = tinnitusriski.",
     genSuscSigTitle: "Taso 5 — Signalointi: Jatkovaste",
     genSuscSigGenes: [
-      { gene: "CRY1", variant: "CRY1Δ11 (0,6 %)", effect: "GoF → pidempi sirkadiaaninen jakso → viivästynyt uni → lyhyempi palautumisikkuna. EMF häiritsee CRY:tä → ADDITIIVINEN geneettisen pidennyksen kanssa.", diseases: "DSPD, metabolinen häiriö, unettomuus", evidence: "VAHVISTETTU (Patke 2017 Cell)" },
+      { gene: "CRY1", variant: "CRY1Δ11 (0,6 %)", effect: "GoF → pidempi sirkadiaaninen jakso → viivästynyt uni → lyhyempi palautumisikkuna. EMF häiritsee CRY:tä → ADDITIIVINEN geneettisen pidennyksen kanssa.", diseases: "DSPD, metabolinen häiriö, unettomuus", evidence: "VAHVISTETTU ([[ref:patke2017_cry1|Patke 2017]] Cell)" },
       { gene: "MTNR1B", variant: "rs10830963 G", effect: "eQTL → enemmän MT2-reseptoreita β-soluissa → YLIHERKÄT melatoniinimuutoksille. EMF suppressoi melatoniinia → G/G-kantajat kärsivät ENEMMÄN → T2D-riski SUPERADDITIIVINEN.", diseases: "T2D, paastoglukoosi, raskausdiabetes", evidence: "VAHVISTETTU (GWAS + eQTL)" },
       { gene: "COMT", variant: "Val158Met (rs4680)", effect: "Val/Val = nopea dopamiinipuhdistuma = matala DA-perusviiva → EMF:n aiheuttama DA-synteesilasku iskee ANKARAMMIN (pienempi puskuri).", diseases: "Stressihaavoittuvuus, addiktio, kipuherkkyys", evidence: "JOHDETTAVISSA" },
     ],
@@ -963,16 +1120,16 @@ const t = {
       { id: "GXEMF-2", title: "Gabapentinoidit kumoavat ELF-primaamin α2δ-1:n kautta", desc: "Pregabaliini/gabapentiini sitoutuvat α2δ-1:een ja estävät VGCC-kuljetuksen. Gabapentinoidien käyttäjillä on matalampi synaptinen VGCC-tiheys → vähemmän EMF-herkkiä." },
       { id: "GXEMF-3", title: "CaMKII-autofosforylaatio on mitattavissa oleva biomarkkeri", desc: "CaMKII Thr286 -fosforylaatiotaso lymfosyyteissä: korkeampi = EMF-herkempi. Testattavissa EHS-kohorteissa." },
     ],
-    genSuscRef: "Küry 2017 · Patke 2017 · Lyssenko 2009 · Tuomi 2016 · Scholl 2015 · Korean 2025 · Field 2006 · Hoppa 2012",
+    genSuscRef: "[[ref:kury2017_camk2|Küry 2017]] · [[ref:patke2017_cry1|Patke 2017]] · [[ref:lyssenko2009_mtnr1b|Lyssenko 2009]] · [[ref:tuomi2016_mtnr1b|Tuomi 2016]] · [[ref:scholl2015_cacna1h|Scholl 2015]] · [[ref:korean2025_cacna|Korean 2025]] · [[ref:field2006_cacna2d1|Field 2006]] · [[ref:hoppa2012_a2d|Hoppa 2012]]",
 
     recovWindowTitle: "Palautumisikkuna: CaMKII-defosforylaatio",
     recovWindowSub: "Moderni elämä eliminoi EMF-vapaat tunnit, joita Ca²⁺-homeostaasin palautuminen vaatii",
     recovWindowDesc: "CaMKII:n defosforylaatio (palautuminen autofosforyloidusta tilasta) vaatii aikaa ilman Ca²⁺-ylikuormaa. EMF-vapaa uni mahdollistaa tämän palautumisen. Mutta modernit ympäristöt eliminoivat EMF-vapaat tunnit: WiFi-reititin 24/7, puhelin yöpöydällä, LED-valaistus uneen asti, Bluetooth-laitteet. Palautumiskerroin (R) kuvaa tämän: kun EMF-vapaat tunnit lähestyvät nollaa, nimittäjä 1/R lähestyy arvoa 1,0 (ei palautumista), ja kumulatiivinen vaurio kiihtyy.",
-    recovWindowEvidence: "Vuorotyö: OR 1,17 metaboliselle oireyhtymälle — yövuoro häiritsee sekä melatoniinia että palautumisikkunaa. Walker (2017): yksi yö huonoa unta → testosteroni −15 %, NK-solut −70 %. Hyvä uni PALAUTTAA → palautumisikkuna ON todellinen. COVID-sulkujen luonnollinen koe: 24 h/vrk kotona WiFin + LEDien + useiden laitteiden kanssa → palautumisikkuna eliminoitu → T2D-kiihdytys 2,90 %:sta 3,52 %/v.",
+    recovWindowEvidence: "Vuorotyö: [[ref:shiftwork_mets2025|OR 1,17]] metaboliselle oireyhtymälle — yövuoro häiritsee sekä melatoniinia että palautumisikkunaa. [[ref:walker2017_why_we_sleep|Walker (2017)]]: yksi yö huonoa unta → testosteroni −15 %, NK-solut −70 %. Hyvä uni PALAUTTAA → palautumisikkuna ON todellinen. COVID-sulkujen luonnollinen koe: 24 h/vrk kotona WiFin + LEDien + useiden laitteiden kanssa → palautumisikkuna eliminoitu → T2D-kiihdytys [[ref:t2d_covid2024|2,90 %:sta 3,52 %/v]].",
     recovWindowIntervention: "Yksinkertaisin interventio, jonka malli ennustaa: EMF-vapaa makuuhuone. Poista WiFi-reititin makuuhuoneesta, käytä lentokonetilaa yöllä, vaihda hehkulamppuun tai kynttilänvaloon ennen unta. Tämä palauttaa palautumisikkunan ilman muita elämäntapamuutoksia.",
     recovWindowPred1: "RECOV-1: EMF-vapaa makuuhuone → melatoniini nousee mitattavasti 2 viikossa",
     recovWindowPred2: "RECOV-2: Minimipalautumisaika CaMKII-defosforylaatiolle: 4–6 tuntia EMF-vapaata",
-    recovWindowRef: "Walker 2017 · COVID-sulkudata · Vuorotyön meta-analyysit",
+    recovWindowRef: "[[ref:walker2017_why_we_sleep|Walker 2017]] · COVID-sulkudata · Vuorotyön meta-analyysit",
 
     mtorSub: "EMF, kalorirajoitus ja rapamysiini konvergoivat samaan ikääntymispolkuun",
     mtorTitle: "mTOR-konvergenssihypoteesi",
@@ -1046,7 +1203,7 @@ const t = {
     fourRoutesImplication: "Kliininen implikaatio: interventiot, jotka kohdistuvat vain yhteen reittiin (esim. antioksidantit reitille 1) osoittavat osittaista mutta epätäydellistä suojaa. Täysi suoja vaatii joko EMF-vähennyksen (käsittelee kaikkia reittejä samanaikaisesti) tai useaan kohteeseen suunnatun interventiostrategian.",
 
     modulationTitle: "Miksi modulaatio merkitsee enemmän kuin SAR",
-    modulationDesc: "Laaja tutkimus (Fertility and Sterility 2023) havaitsi matkapuhelimen käytön yhteyden matalampaan siittiöpitoisuuteen — mutta yhteys oli VAHVEMPI vuosina 2005–2007 kuin 2012–2018. BERM selittää tämän Schwanin yhtälön kautta: biologisesti aktiivinen komponentti ei ole RF-kantoaalto vaan sen ELF-MODULAATIOVERHOKÄYRÄ. GSM (2G): kova TDMA-pulssi 217 Hz, ~100 % modulaatiosyvyys → vahva ELF-komponentti → suuri T-tyypin bifurkaatiovaikutus. LTE (4G): OFDM, ~30–50 % modulaatiosyvyys, matalampi lähetysteho → heikompi ELF-komponentti → pienempi vaikutus. Tämä ennustaa aikatrendin ILMAN 'vähemmän säteilyä on turvallisempaa' -selitystä. Säteilyn MÄÄRÄ voi olla samankaltainen, mutta MODULAATIORAKENNE muuttui.",
+    modulationDesc: "Laaja tutkimus ([[ref:fert-steril-2023-phone-sperm-trend|Fertility and Sterility 2023]]) havaitsi matkapuhelimen käytön yhteyden matalampaan siittiöpitoisuuteen — mutta yhteys oli VAHVEMPI vuosina 2005–2007 kuin 2012–2018. BERM selittää tämän Schwanin yhtälön kautta: biologisesti aktiivinen komponentti ei ole RF-kantoaalto vaan sen ELF-MODULAATIOVERHOKÄYRÄ. GSM (2G): kova TDMA-pulssi 217 Hz, ~100 % modulaatiosyvyys → vahva ELF-komponentti → suuri T-tyypin bifurkaatiovaikutus. LTE (4G): OFDM, ~30–50 % modulaatiosyvyys, matalampi lähetysteho → heikompi ELF-komponentti → pienempi vaikutus. Tämä ennustaa aikatrendin ILMAN 'vähemmän säteilyä on turvallisempaa' -selitystä. Säteilyn MÄÄRÄ voi olla samankaltainen, mutta MODULAATIORAKENNE muuttui.",
     modulationWarning: "Huomautus: tämä aikatrendi on KORRELAATIO. Muut tekijät muuttuivat samanaikaisesti (puhelimen sijainti, käyttötottumukset, muut altistukset). Schwanin selitys on parsimonisin mutta ei ainoa mahdollisuus.",
 
     modulomeSub: "Kaksitoistakerroksinen alttiusmalli — molekulaarisesta spinfysiikasta populaatiotason malleihin",
@@ -1081,12 +1238,12 @@ const t = {
     thresholdTableThreshold: "Kynnysvuosi",
     thresholdTablePhase: "Vaihe",
     thresholdFinlandTitle: "Retrospektiivinen validointi: Suomi",
-    thresholdFinlandText: "Suomi on mallin Rosetta-kivi. Perheentupa (2013) dokumentoi 37 %:n kohorttikohtaisen T-laskun (n=3 271, 1972–2002). TFR pysyi vakaana 1,63–1,87 neljäkymmentä vuotta (1970–2010) ja romahti sitten 1,26:een vuoteen 2024 mennessä. ~35 vuoden viive T-laskun alusta TFR-romahdukseen on yhdenmukainen kumulatiivisen biologisen eroosion saavuttaessa kynnyksen. Jos malli olisi ollut olemassa vuonna 2005, se olisi voinut ennustaa Suomen romahduksen 10–15 vuotta etukäteen.",
+    thresholdFinlandText: "Suomi on mallin Rosetta-kivi. [[ref:perheentupa2013|Perheentupa (2013)]] dokumentoi 37 %:n kohorttikohtaisen T-laskun (n=3 271, 1972–2002). TFR pysyi vakaana 1,63–1,87 neljäkymmentä vuotta (1970–2010) ja romahti sitten 1,26:een vuoteen 2024 mennessä. ~35 vuoden viive T-laskun alusta TFR-romahdukseen on yhdenmukainen kumulatiivisen biologisen eroosion saavuttaessa kynnyksen. Jos malli olisi ollut olemassa vuonna 2005, se olisi voinut ennustaa Suomen romahduksen 10–15 vuotta etukäteen.",
     thresholdProjectionsTitle: "Maakohtaiset TFR-ennusteet",
     thresholdProjections2030: "2030",
     thresholdProjections2035: "2035",
     thresholdChartTitle: "Interaktiivinen kynnysmalli",
-    thresholdFootnoteDenmark: "Andersson 2007 raportoi nollatuloksen BMI-vakioinnin jälkeen. Malli tulkitsee BMI:n välittäjäksi (EMF → metabolinen häiriö → BMI ↑ → T ↓), ei sekoittavaksi tekijäksi — BMI-vakiointi poistaa osan signaalista. Ks. kausaalirakenne-osio alla.",
+    thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]] raportoi nollatuloksen BMI-vakioinnin jälkeen. Malli tulkitsee BMI:n välittäjäksi (EMF → metabolinen häiriö → BMI ↑ → T ↓), ei sekoittavaksi tekijäksi — BMI-vakiointi poistaa osan signaalista. Ks. kausaalirakenne-osio alla.",
     thresholdFootnoteEstimated: "Vertaisarvioitua sekulaaria T-trenditutkimusta ei ole saatavilla. Korean vauhti arvioitu korkeimmasta globaalista EMF-tiheydestä; Japanin vauhti arvioitu analogialla Suomen dokumentoituun laskuun. Nämä ovat alustavia ja päivitetään, kun suoria tutkimustuloksia on saatavilla.",
     thresholdCaveat: "T-laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä vertaisarvioiduista pitkittäistutkimuksista. Korean ja Japanin vauhdit ovat arvioita. 40 %:n kynnys on kalibroitu, ei derivoitu. Ennusteet olettavat nykyisten vauhtien jatkumisen.",
 
@@ -1096,10 +1253,10 @@ const t = {
     causalDagConventionalCaption: "BMI sekoittajana: korjaus on oikein, nollatulos = ei laskua",
     causalDagBermTitle: "BERM-tulkinta",
     causalDagBermCaption: "BMI mediaattorina: korjaus poistaa medioidun signaalin, nolla = ylikorjaus",
-    causalMazurTitle: "Vakiopainotesti: Mazur ym. 2013",
+    causalMazurTitle: "Vakiopainotesti: [[ref:mazur2013|Mazur ym. 2013]]",
     causalMazurText: "991 US Air Force -veteraania seurattiin 6 mittausaallon yli 20 vuoden ajan (1982-2002). Painonsa vakiona pitäneet miehet menettivät silti 117 ng/dL (19 %) testosteroninsa. Tämä on luonnollinen koe, joka kontrolloi BMI:n ilman tilastollista korjausta.",
     causalMazurQuote: "Emme ole tunnistaneet syytä sekulaarilaskuun, mutta suljemme pois kasvavan lihavuuden riittävänä tai ensisijaisena selityksenä.",
-    causalMazurSource: "Mazur, Westerman & Mueller 2013, PLOS ONE",
+    causalMazurSource: "[[ref:mazur2013|Mazur, Westerman & Mueller 2013]], PLOS ONE",
     causalPathwayTitle: "Kvantitatiivinen reittihajotelma",
     causalPathwayDirect: "Suora reitti",
     causalPathwayDirectDesc: "EMF -> Cav3.2/melatoniini/kortisoli -> T-lasku",
@@ -1107,7 +1264,7 @@ const t = {
     causalPathwayMediated: "Medioitu reitti",
     causalPathwayMediatedDesc: "EMF -> metaboliset mekanismit -> BMI-nousu -> aromatase/SHBG -> T-lasku",
     causalPathwayMediatedEst: "~58 ng/dL / 20v (~33 %)",
-    causalPathwayCaveat: "Nämä osuudet ovat suuntaa-antavia, johdettu Mazur 2013:sta (vakiopaino- vs painonnousuryhmät). Formaali mediaatioanalyysi (SEM) voisi tarkentaa arvioita.",
+    causalPathwayCaveat: "Nämä osuudet ovat suuntaa-antavia, johdettu [[ref:mazur2013|Mazur 2013]]:sta (vakiopaino- vs painonnousuryhmät). Formaali mediaatioanalyysi (SEM) voisi tarkentaa arvioita.",
     dagDietLifestyle: "Ruokavalio / Elämäntavat",
     dagBmiAdjCorrect: "BMI-korjaus: OIKEIN",
     dagNullNoDecline: "nolla = ei todellista laskua",
@@ -1120,19 +1277,19 @@ const t = {
     causalReconciliationTitle: "'Ristiriitaisten' tulosten sovittaminen",
     causalReconciliationLead: "Kun kausaalirakenne ymmärretään, kaikki olemassa olevat tutkimukset — nollatulokset mukaan lukien — ovat yhdenmukaisia:",
     causalReconciliationStudies: [
-      { study: "Travison 2007", bmiAdj: true, result: "-1,0 %/v", interpretation: "Suora reitti havaittu (BMI-vakioitu). ELF-priming kasvoi samana ajanjaksona (WiFi + 3G levisivät)" },
-      { study: "Mazur 2013", bmiAdj: false, result: "-0,95 %/v", interpretation: "Suora reitti vahvistettu luonnollisesti (vakiopaino). 20v = kerrostumat 2→4. Suora reitti ~67 %. Priming: P kasvoi 1,5 → 2,0 samassa ajassa" },
-      { study: "Chodick 2020", bmiAdj: false, result: "-1,02 %/v", interpretation: "Kokonaisvaikutus (suora + välitetty). Israel: korkea RF-tiheys → vahva kerrostumavaikutus" },
-      { study: "Santi 2025", bmiAdj: true, result: "T ja LH lasku", interpretation: "Suora reitti + HPG-tason häiriö vahvistettu. LH↓ viittaa aivolisäkehäiriöön. Aivot eniten primatut (lähikentässä 24/7). CACNA1C-genotyyppi moderoi LH-vastetta" },
-      { study: "Andersson 2007", bmiAdj: true, result: "Nolla", interpretation: "Välitetty reitti dominoi → BMI-vakiointi poistaa signaalin. Tanska 56°N: jos tutkimus KESÄLLÄ → CRY saturoitunut → pienempi vaikutus. Vuodenaikakorjaus saattaa paljastaa signaalin" },
-      { study: "Nyante 2012", bmiAdj: true, result: "Nolla", interpretation: "Menetelmämuutos + välittäjän poisto → signaali peittynyt. USA (60 Hz) vs. Eurooppa (50 Hz): eri ELF-taajuus → mahdollisesti eri CRY-häiriöprofiili" },
+      { referenceId: "travison2007_v2", study: "Travison 2007", bmiAdj: true, result: "-1,0 %/v", interpretation: "Suora reitti havaittu (BMI-vakioitu). ELF-priming kasvoi samana ajanjaksona (WiFi + 3G levisivät)" },
+      { referenceId: "mazur2013", study: "Mazur 2013", bmiAdj: false, result: "-0,95 %/v", interpretation: "Suora reitti vahvistettu luonnollisesti (vakiopaino). 20v = kerrostumat 2→4. Suora reitti ~67 %. Priming: P kasvoi 1,5 → 2,0 samassa ajassa" },
+      { referenceId: "chodick-2020-israel", study: "Chodick 2020", bmiAdj: false, result: "-1,02 %/v", interpretation: "Kokonaisvaikutus (suora + välitetty). Israel: korkea RF-tiheys → vahva kerrostumavaikutus" },
+      { referenceId: "santi2025", study: "Santi 2025", bmiAdj: true, result: "T ja LH lasku", interpretation: "Suora reitti + HPG-tason häiriö vahvistettu. LH↓ viittaa aivolisäkehäiriöön. Aivot eniten primatut (lähikentässä 24/7). CACNA1C-genotyyppi moderoi LH-vastetta" },
+      { referenceId: "andersson-2007-denmark", study: "Andersson 2007", bmiAdj: true, result: "Nolla", interpretation: "Välitetty reitti dominoi → BMI-vakiointi poistaa signaalin. Tanska 56°N: jos tutkimus KESÄLLÄ → CRY saturoitunut → pienempi vaikutus. Vuodenaikakorjaus saattaa paljastaa signaalin" },
+      { referenceId: "nyante2012_nhanes", study: "Nyante 2012", bmiAdj: true, result: "Nolla", interpretation: "Menetelmämuutos + välittäjän poisto → signaali peittynyt. USA (60 Hz) vs. Eurooppa (50 Hz): eri ELF-taajuus → mahdollisesti eri CRY-häiriöprofiili" },
     ],
-    causalSantiTitle: "Santi 2025: sekä testosteroni ETTÄ LH laskevat",
+    causalSantiTitle: "[[ref:santi2025|Santi 2025]]: sekä testosteroni ETTÄ LH laskevat",
     causalSantiText: "Suurin koskaan tehty meta-analyysi (1 064 891 miestä, 1971-2024) osoitti, että seerumitestosteroni laskee iästä, BMI:stä ja mittausmenetelmästä riippumatta. Kriittisesti myös LH (aivolisäkkeen signaali, joka ohjaa testosteronin tuotantoa) laskee — mikä sulkee pois yksinkertaisen kivestoiminnan heikkenemisen ja viittaa häiriöön hypotalamus-aivolisäketasolla.",
     causalSantiMechanism: "BERM ennustaa juuri tämän: reitti A (suora Leydigin solun Cav3.2 -> StAR) vähentää testosteronia, kun taas reitti C (melatoniini -> GnRH) ja reitti D (kortisoli -> HPG) vähentävät LH:ta. Molempien hormonien samanaikainen lasku on monitasoisen häiriön tunnusmerkki — ei ikääntyminen, ei lihavuus.",
-    causalSantiSource: "Santi ym. 2025, J Endocrinol Invest 48:2721-2734",
+    causalSantiSource: "[[ref:santi2025|Santi ym. 2025]], J Endocrinol Invest 48:2721-2734",
     pocketTitle: "Taskusiirtymä",
-    pocketText: "Siittiölaskun kiihtyminen vuoden 2000 jälkeen (1,16→2,64 %/v) osuu yhteen yhden käyttäytymismuutoksen kanssa: puhelin siirtyi korvalta taskuun. 3G-datakyky tarkoitti, että puhelin pysyi taskussa jatkuvasti eikä sitä nostettu vain puhelujen ajaksi. Kivekset joutuivat lähikenttään 16 tunniksi päivässä.",
+    pocketText: "Siittiölaskun kiihtyminen vuoden 2000 jälkeen ([[ref:levine2023_sperm|1,16→2,64 %/v]]) osuu yhteen yhden käyttäytymismuutoksen kanssa: puhelin siirtyi korvalta taskuun. 3G-datakyky tarkoitti, että puhelin pysyi taskussa jatkuvasti eikä sitä nostettu vain puhelujen ajaksi. Kivekset joutuivat lähikenttään 16 tunniksi päivässä.",
     causalInverseTitle: "Käänteinen farmakologinen testi: testosteronihoito kääntää lihavuuden",
     causalInverseText: "Jos lihavuus aiheuttaisi testosteronin laskun, testosteronin nostamisen ei pitäisi vaikuttaa painoon. Mutta testosteronihoito hypogonadaalisilla lihavilla miehillä tuottaa dramaattisen painonlaskun (jopa 30 kg luokan III lihavuudessa), mikä vahvistaa kaksisuuntaisen kausaalisuuden: T-suppressio ajaa painonnousua, ei vain päinvastoin.",
     causalInverseData: [
@@ -1140,7 +1297,7 @@ const t = {
       { label: "Luokan II lihavuus", loss: "-25,3 kg", bmi: "-8,15" },
       { label: "Luokan III lihavuus", loss: "-30,5 kg", bmi: "-9,96" },
     ],
-    causalInverseSource: "Saad ym. 2016, rekisteritutkimukset",
+    causalInverseSource: "[[ref:saad2016|Saad ym. 2016]], rekisteritutkimukset",
 
     whyPronatTitle: "Miksi 200 miljardia dollaria ei nostanut Etelä-Korean syntyvyyttä",
     whyPronatText: "BERM:n kolmitasoarkkitehtuuri jakaa syntyvyyden biologiseen kapasiteettiin (taso 1), EMF-käyttäytymiskytkentään (taso 2) ja kulttuuriseen valintaan (taso 3). Pronatalismipolitiikat — käteisbonukset, vanhempainvapaat, päivähoitotuet — kohdistuvat tasoon 3 (motivaatio). Mutta kun taso 1 (biologinen kapasiteetti) muodostuu sitovaksi rajoitteeksi, mikään tason 3 kannustin ei voi kompensoida. Etelä-Korean kumulatiivinen testosteronihävikki ylittää 48 %. Kasvava osuus lasta haluavista pareista ei pysty hedelmöittymään luonnollisesti. 200 miljardia kohdistui mallin väärään tasoon.",
@@ -1173,7 +1330,7 @@ const t = {
       { num: 16, title: "Sydämen rytmihäiriö (QT)", mechanism: "CACNA1C GoF → Cav1.2 ikkunavirta ↑ → QT ↑. Timothyn oireyhtymä: äärimmäinen QT + autismi SAMASTA mutaatiosta.", level: "E", trend: "Timothy: useimmat kuolevat ennen 3v ilman hoitoa" },
       { num: 17, title: "Neurokehitys ja sukupuolen erilaistuminen", mechanism: "7 kausaalikanavaa × 3 kehitysikkunaa. Prenataalinen: Leydig Cav3 → T↓, aromataasi, aivolisäke. Pubertaalinen: PFC, melatoniini, OT/AVP, insulaarinen korteksi.", level: "L*", trend: "Sukupuoliklinikkälähetteet: Ruotsi +19 700 %; ASD-GD 6-26 %" },
       { num: 18, title: "TheraBionic: mekanismin todistus", mechanism: "FDA-hyväksytty (2019) laite HCC:lle. 27,12 MHz, AM tumorispesifisillä taajuuksilla. SAR 100-1000× alle puhelimen. Mekanismi: EMF → Cav3.2 → Ca²⁺ → HCC-differentaatio. VAHVISTAA ei-termisen EMF → VGCC.", level: "E", trend: "34 % selviytymislisäys pitkälle edenneessä HCC:ssä" },
-      { num: 19, title: "Metabolinen syndrooma / Lihavuus", mechanism: "KUUSI konvergoivaa EMF → Ca²⁺ -reittiä: (1) hypotalaaminen ruokahalun nousu ARC-glian Ca²⁺ → AgRP/NPY, (2) BAT-termogeneesi ↓ CaMKII/CREB → UCP1 ja SERCA2b/RyR2 häiriön kautta, (3) β-solun insuliinidynamiikka ↓ L-tyypin VGCC:n kautta, (4) kilpirauhasakseli → perusaineenvaihdunta ↓ Cav3:n kautta tyrotrofeissa, (5) melatoniini → metabolinen sirkadiaanihäiriö, (6) adiposyytin Ca²⁺ → lipogeneesi ↑. CaMKII on KONVERGENSSIMOLEKYYLI, joka yhdistää kaikki reitit. Klimentidisin paradoksi: 24 populaatiota, 8 lajia KAIKKI lihovat (p = 1,2×10⁻⁷) — myös laboratoriorotat kontrolloidulla dieetillä. Lihavuus on multifaktoriaalinen — EMF on YKSI myötävaikuttava tekijä, joka selittää residuaalin, johon dieetti/liikunta/genetiikka eivät riitä.", level: "M", trend: "Globaali lihavuus: 4 % (1975) → 13 % (2016) → 42 % (USA 2024)" },
+      { num: 19, title: "Metabolinen syndrooma / Lihavuus", mechanism: "KUUSI konvergoivaa EMF → Ca²⁺ -reittiä: (1) hypotalaaminen ruokahalun nousu ARC-glian Ca²⁺ → AgRP/NPY, (2) BAT-termogeneesi ↓ CaMKII/CREB → UCP1 ja SERCA2b/RyR2 häiriön kautta, (3) β-solun insuliinidynamiikka ↓ L-tyypin VGCC:n kautta, (4) kilpirauhasakseli → perusaineenvaihdunta ↓ Cav3:n kautta tyrotrofeissa, (5) melatoniini → metabolinen sirkadiaanihäiriö, (6) adiposyytin Ca²⁺ → lipogeneesi ↑. CaMKII on KONVERGENSSIMOLEKYYLI, joka yhdistää kaikki reitit. [[ref:klimentidis2010|Klimentidisin]] paradoksi: 24 populaatiota, 8 lajia KAIKKI lihovat (p = 1,2×10⁻⁷) — myös laboratoriorotat kontrolloidulla dieetillä. Lihavuus on multifaktoriaalinen — EMF on YKSI myötävaikuttava tekijä, joka selittää residuaalin, johon dieetti/liikunta/genetiikka eivät riitä.", level: "M", trend: "Globaali lihavuus: 4 % (1975) → 13 % (2016) → 42 % (USA 2024)" },
     ],
     vgccDiagramTitle: "VGCC-geeniperhe",
     vgccDiagramSubtitle: "Kuusi geeniä, kuusi sairausklusteria, yksi mekanismi",
@@ -1184,8 +1341,2307 @@ const t = {
       "Episteeminen huomautus: Yllä olevat yhtälöt ovat nykyinen mallispesifikaatio (BERM v17). Parametriarvot on kalibroitu havaittua dataa vasten ja niitä päivitetään uuden näytön myötä. Malli on nimenomaisesti suunniteltu falsifioitavaksi -- jos sen ennusteet epäonnistuvat, malli on väärässä. Terapeuttinen laiteparadoksi (24+ regulaattorihyväksyttyä ei-termistä EMF-laitekategoriaa, DC:stä UV:iin) vahvistaa ei-termisen bioaktiivisuuden regulatiiviseksi tosiasiaksi, ei hypoteesiksi.",
     lbermRef:
       "Formaali jakobiaanitulorakenne (luku 17), todistusvelvollisuusrekisteri ja turvajärjestelmät on kuvattu perusdokumentissa (LBERM_final.docx).",
+    svgSpermDamage: "Siittiövaurio",
+    svgCircadian: "Vuorokausirytmi",
+    svgMelatoninDown: "Melatoniini ↓",
+    svgCa2Entry: "Ca²⁺-virtaus",
+    svgCortisolUp: "Kortisoli ↑",
+    svgTestosteroneDown: "Testosteroni ↓",
+    svgAutophagyDown: "Autofagia ↓",
+    svgCellGrowthDown: "Solukasvu ↓",
+    svgTfr: "TFR:n",
+    svgDecline: "lasku",
+    svgFiveRoutesAria: "Viisi reittiä TFR:n laskuun",
+    brainModulomeLink: "Aivojen moduloomi",
+    routeGonadal: "Gonadaalinen",
+    routeAutonomic: "Autonominen",
+    routeNeurodevel: "Neurokehitys",
+    routeLabel: "Reitti",
+    routeParallelCaption: "Jokainen reitti on itsenäisesti riittävä — ne toimivat rinnakkain",
+    labelWarning: "Varoitus",
+    labelPrediction: "Ennuste",
+    labelFalsification: "Falsifiointi",
+    colStudy: "Tutkimus",
+    colBmiAdj: "BMI-korj.",
+    colResult: "Tulos",
+    colBermInterpretation: "BERM-tulkinta",
+    countryDenmark: "Tanska",
+    countryFinland: "Suomi",
+    countrySouthKorea: "Etelä-Korea",
+    countryJapan: "Japani",
+    estHighestEmf: "Arvio (korkein EMF)",
+    estFinlandAnalogy: "Arvio (Suomi-analogia)",
+    layerMilitaryRadar: "Sotilastutka",
+    layerWeatherRadar: "Säätutka",
+    layerMobileNetworks: "Matkapuhelinverkot",
+    layerWindTurbines: "Tuuliturbiinit",
+    layerDisplayTransition: "Näyttösiirtymä",
+    layerSmartMeters: "Älymittarit",
+    layerIndoorLed: "Sisä-LED",
+    layerSolarInverters: "Aurinkoinvertterit",
+    layerStreetLed: "LED-katuvalaistus",
+    pharmEvidenceLink: "Farmakologinen evidenssi: 8 lääkeryhmää konvergoivat BERM-reiteillä →",
+    svgVgccPathway: "VGCC-reitti",
+    svgAutophagy: "Autofagia",
+    svgProteinSynthesis: "Proteiinisynteesi",
+    svgCellGrowth: "Solukasvu",
+    svgImmuneRegulation: "Immunosäätely",
+    svgIntegrator: "integraattori",
+    svgCalories: "Kalorit",
+    svgAging: "Ikääntyminen",
+    svgCounteracts: "(vastavaikutus)",
+    svgFertilityDown: "Hedelmällisyys↓",
+    svgCancer: "Syöpä",
+    svgMtorSharedHub: "mTOR on yhteinen soluttaja — kolme epidemiaa, yksi mekanismi",
+    svgInflammation: "Tulehdus",
+    svgCortisol: "Kortisoli",
+    svgMelatonin: "Melatoniini",
+    svgPosFeedback: "Positiivinen palaute",
+    svgNegFeedback: "Negatiivinen palaute",
+    svgHub: "soluttaja",
+    svgFeedbackCaption: "17 positiivista takaisinkytkentäsilmukkaa — mikä tahansa sisääntulopiste aktivoi koko verkoston",
+    svgVgccHierarchyCaption: "T-tyypin (Cav3) kanavat >> Cav1.3 (matalan kynnyksen L-tyyppi) >> Cav1.2 (vain aktiopotentiaalin aikana). CaMKII-takaisinkytkentä siirtää Cav3.2-kynnystä negatiivisemmaksi ajan myötä.",
+    svgRecoveryBarAria: "Palautumisasteiden pylväskaavio",
+    svgRecoveryCaption: "Palautumisaste (α): 1.0 = täydellinen, 0.0 = palautumaton",
+    svgTechLayersAria: "Teknologiakerrosten kasautuva altistuskaavio",
+    layerPowerGrid: "Sähköverkko",
+    layerRadioTv: "Radio/TV",
+    layerCellular: "GSM",
+    svgCumulativeExposure: "Kumulatiivinen altistus",
+    svgTechLayersCaption: "Viisi teknologiakerrosta: jokainen sukupolvi kerrostuu aiempien päälle",
+    conventionalLabel: "Konventionaalinen:",
+    layerExplanationLabel: "Kerrostumaselitys:",
+    conventional: "Konventionaalinen",
+    anomalyUnexplainedDecline: "Selittymatton lasku",
+    anomalyUnexplained: "Selittymatton",
+    anomalyWifiLedLayers: "WiFi+LED-kerrokset",
+    anomalySocialMedia: "Sosiaalinen media",
+    anomalySomeTheory: "Some-teoria",
+    anomalyTripleChannel: "Kolmoiskanava",
+    anomalySedentary: "Istuminen",
+    anomaly247Emf: "24/7 EMF",
+    anomalyProsperity: "Vauraus",
+    anomalyElectrificationLag: "Sahkoistysviive",
+    anomalyPhysicalLabor: "Fyysinen tyo",
+    anomalyZeroLayers: "Nolla kerrosta",
+    colCountry: "Maa",
+    colActual: "Todellinen",
+    colNote: "Huomio",
+    countryFinlandName: "Suomi",
+    countrySouthKoreaName: "Etela-Korea",
+    countryUsaName: "USA",
+    countryAmishName: "Amissit",
+    colDriver: "Ajuri",
+    replacementLabel: "Uusiutumistaso",
+    countrySKoreaShort: "Etela-Korea",
+    countryIndiaName: "Intia",
+    colAxis: "Akseli",
+    colTargetOrgan: "Kohde-elin",
+    colConsequence: "Seuraus",
+    svgGenesCascadeAria: "15 geenin kaskadidiagrammi",
+    tierInflux: "SISÄÄNVIRTAUS",
+    tierModulation: "MODULAATIO",
+    tierIntegration: "INTEGRAATIO",
+    tierExtrusion: "POISTO",
+    tierSignaling: "SIGNALOINTI",
+    svgGenesCascadeCaption: "Ca²⁺-kaskadi: 15 geeniä viidessä toiminnallisessa kerroksessa",
+    colGene: "Geeni",
+    colProtein: "Proteiini",
+    colBermRole: "BERM-rooli",
+    colKeyVariant: "Avainvariantti",
+    colDiseases: "Taudit",
+    colEvidence: "Evidenssi",
+    colVariant: "Variantti",
+    colEffect: "Vaikutus",
+    ehsAssay: "maarittely",
+    ehsLymphocyte: "Lymfosyytti-autofosforylaatio",
+    ehsElevated: "Kohonnut",
+    ehsGenotyping: "genotyypitys",
+    ehsCalciumVariants: "Kalsiumkanavavariantit",
+    ehsRiskAlleles: "Riskialleelit",
+    ehsSignalingMarkers: "Signalointimarkkerit",
+    ehsHighRisk: "Korkea riski",
+    ehsPolygenicScore: "Polygeeninen riskipistemr",
+    ehsOverallAssessment: "EMF-herkkyyden kokonaisarvio",
+    ehsDiagnosticClass: "EHS-diagnostinen luokitus",
+    ehsLowModHigh: "Matala / Keskitaso / Korkea",
+    whyDisagreeTitle: "Miksi tutkimukset ovat ristiriidassa",
+    whyDisagreeSub: "Kahdeksan kontrolloimatonta moderaattoria selittävät vuosikymmenten 'ristiriitaisen evidenssin'",
+    whyDisagreeDesc: "EMF-tutkimus on tuottanut ristiriitaisia tuloksia vuosikymmeniä. BERM tunnistaa kahdeksan kontrolloimatonta moderaattoria, jotka ennustavat mitkä tutkimukset löytävät positiivisen tuloksen ja mitkä nollatuloksen:",
+    modSeason: "Vuodenaika",
+    modSeasonDesc: "CRY-magnetoreseptorin herkkyys on valoriippuvainen. Talvella CRY on herkempi → EMF-vaikutus melatoniiniin voimakkaampi. Osoitettu vasikoilla ([[ref:halgamuge2015|Halgamuge 2015]]).",
+    modGenotype: "Genotyyppi",
+    modGenotypeDesc: "CACNA1C rs1006737 A-alleeli → enemmän Cav1.2 → suurempi Ca²⁺-vaste. [[ref:sousouri2025|Sousouri 2025]] (ETH): CACNA1C-genotyyppi määrittää 5G-univasteen.",
+    modLabElf: "Laboratorion ELF-tausta",
+    modLabElfDesc: "50/60 Hz sähköverkko lisää VGCC-ekspressiota 8–10 päivässä ([[ref:sun2016_elf_vgcc|PMC4757866]]). Korkean ELF-taustan laboratorio 'primaa' solut.",
+    modNighttimeEmf: "Yöllinen EMF",
+    modNighttimeEmfDesc: "WiFi-reititin makuuhuoneessa vs. EMF-vapaa yö → eri CaMKII-palautumistila → eri baseline-Ca²⁺ kokeeseen tullessa.",
+    modSpeciesPriming: "Laji / Esiviriytys",
+    modSpeciesPrimingDesc: "Eläintutkimukset laboratorioympäristössä (24/7 ELF-esiviriytys, homogeeninen genetiikka) löytävät positiivisen tuloksen 92 % ajasta. Ihmistutkimukset heterogeenisillä ympäristöillä löytävät 35 %. Molemmat oikein — laboratorion eläimet ovat kroonisesti viritettyjä (VGCC-ekspressio kohonnut, [[ref:sun2016_elf_vgcc|PMC4757866]]). p=0,002.",
+    modDuration: "Kesto",
+    modDurationDesc: "Krooninen altistus (>1 viikko) tuottaa positiivisen tuloksen 92 %. Akuutti (1–2 yötä) tuottaa 31 %. CaMKII:n autofosforylaatio vaatii kumulatiivista Ca²⁺-kuormitusta. p=0,001.",
+    modPulsation: "Pulsaatio",
+    modPulsationDesc: "Pulssitetut signaalit tuottavat positiivisen tuloksen 88 %. CW tuottaa 48 %. IFO-VGIC-mekanismi vaatii vaihtelevia kenttiä. p=0,048.",
+    modVitaminD: "D-vitamiinitaso",
+    modVitaminDDesc: "D-vitamiini (1,25(OH)₂D₃) vaimentaa CACNA1C/1D-mRNA:ta ([[ref:vdh_lvscc|J Neurosci 2001]]). D-vitamiinipuutos → VGCC-yliekspressio = sama tila kuin ELF-primaami. Tutkimukset D-vitamiinipuutteisissa populaatioissa (talvi, korkea leveysaste) näyttävät vahvempia EMF-vaikutuksia.",
+    modThreePredictors: "Kolme moderaattoria ennustaa tutkimustuloksen tilastollisesti merkitsevästi:",
+    modAnalysisBasis: "Perustuu 29 tutkimuksen analyysiin kolmella päätepisteellä. Validoitu [[ref:weller2025_dna|Weller 2025]]:llä (n=517).",
+    predRepl1Label: "Ennuste REPL-1: ",
+    predRepl1Desc: "Retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta osoittaa näiden kahdeksan moderaattorin ennustavan merkitsevästi positiivisen vs. nollatuloksen. Testattavissa ILMAN uutta dataa.",
+    modEpistemicNote: "Episteeminen taso: kahdeksan moderaattorin kehys on BERM:n synteesi (M-taso). Yksittäisillä moderaattoreilla on empiiristä tukea (E-taso).",
+    dnaBelow58Title: "58 % DNA-vaurioista tapahtuu ICNIRP-rajojen ALAPUOLELLA",
+    dnaBelow58Desc: "[[ref:weller2025_dna|Weller ym. (2025)]] analysoi 517 genotoksisuustutkimusta ja havaitsi, että 58 % DNA-vaurion raportoineista tutkimuksista käytti altistustasoja ALLE nykyisten ICNIRP-ohjearvojen. [[ref:ivancsits_dna_recovery|Ivancsitsin tutkimus]] havaitsi DNA-katkoksia jo 35 µT:llä — alle viidesosa ICNIRP:n 200 µT:n työperäisestä rajasta.",
+    dnaBelow58Mechanism: "ICNIRP-rajat on suunniteltu estämään TERMISIÄ vaikutuksia. DNA-vaurio EMF:stä on EI-TERMINEN mekanismi, joka toimii jänniteohjattujen kalsiumkanavien toimintahäiriön kautta.",
+    dnaRepairTitle: "DNA-vaurio korjaantuu 9 tunnissa — jos altistus loppuu",
+    dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits ym.]] osoitti, että EMF:n aiheuttamat DNA-katkokset palautuivat normaaliksi 9 tunnissa altistuksen päättymisen jälkeen. Tämä kvantifioi BERM:n palautumisikkunan: keho VOI korjata EMF:n aiheuttamia vaurioita, mutta vain jos sille annetaan riittävästi EMF-vapaata aikaa.",
+    dnaModernEnv: "Modernit ympäristöt 24/7 WiFillä, LED-valaistuksella ja älypuhelimella sängyssä poistavat tämän palautumisikkunan kokonaan. Tyypillinen moderni makuuhuone tarjoaa nolla EMF-vapaata palautumisaikaa.",
   },
-} as const;
+  ja: {
+    title: "モデル文書",
+    subtitle:
+      "生体電磁生殖モデル(BERM)の完全な文書:三層アーキテクチャ、因果経路、結合方程式、回復動態。",
+    metaTitle: "モデル文書 - Extinction Field",
+    metaDesc:
+      "BERMモデル文書:三層アーキテクチャ、因果経路、方程式、回復動態。",
+
+    archTitle: "三層アーキテクチャ",
+    archDesc:
+      "BERMは出生率低下を三つの異なる因果層に分離する。各レベルはそれぞれ独自の動態、タイムスケール、エビデンス基盤を持つ。各国の合計特殊出生率(TFR)は三つのレベルの積であり、和ではない -- 各レベルは他のレベルに対する乗数として作用する。",
+    level1Label: "レベル1",
+    level1Title: "生物学的容量",
+    level1Desc:
+      "現在の環境暴露下での生理学的最大出生率。精子品質(濃度、運動性、DNA断片化)、卵母細胞品質、ホルモン環境、血液脳関門(BBB)の完全性を含む。EMF暴露の影響を最も直接的に受けるレベル。",
+    level2Label: "レベル2",
+    level2Title: "EMF-行動結合",
+    level2Desc:
+      "個人デバイスの使用と周囲のEMF暴露がどのように相互作用するか。高い環境暴露地域で携帯電話を持つ人は非線形の結合効果を経験する。このレベルはインフラレベルと個人レベルの暴露間の相互作用を捕捉する。",
+    level3Label: "レベル3",
+    level3Title: "真の文化",
+    level3Desc:
+      "生物学的容量に依存しない自発的な出生選択。教育、都市化、避妊へのアクセス、経済的機会、文化的規範。この構成要素はすべての人口学モデルに存在する。BERMはその下に生物学的およびEMF層を追加する。",
+
+    causalTitle: "因果経路図",
+    causalDesc:
+      "下図はLindgren幾何学からTFR低下までの完全な機構的連鎖を示す。8レベル、63ノード、107エッジ。二つの共同主経路が並行して動作する:経路A(VGCC → Ca²⁺ → ROS)は最も強い実験的支持を持ち(23-28のブロッカー研究)、経路B(RPM → CRY → 概日リズム障害)はLindgren幾何学から生物学への最も完全な理論的橋渡し(RPMハミルトニアンの87.5%がメトリック仮説から導出可能)。CRY/RPM経路は種を超えた支持的証拠を持つ:鳥類の磁気コンパスの撹乱([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]])、ショウジョウバエのCRY依存性磁気受容([[ref:yoshii2009|Yoshii 2009]])、ヒト細胞のCRY依存性ROS調節([[ref:sherrard2018|Sherrard 2018]])、そして決定的に、ヒトにおける機能的な青色光依存性磁気受容([[ref:chae2019|Chae et al. 2019]], PLOS ONE)。これはBERMがモデル化する種に生物学的基盤が存在することを示す。両経路はE-レベルのエビデンスで独立に支持されている。任意のノードをクリックすると、そのメカニズム、Lindgren解釈、定量的定式化、回復パラメータ、主要な参考文献が表示される。ノードの境界線は認識論的レベルに応じて着色されている。",
+    pathwayHierarchyNote:
+      "経路の重みはコミュニティデータ(アーミッシュ-韓国勾配)に対する経験的較正を反映する。理論的階層は反映しない:経路B(CRY/RPM)はPRIMARY経路である。RPMハミルトニアンの87.5%がLindgren幾何学から導出可能であり、メカニズムの存在が幾何学的帰結として確立されるためである。経路Aはより強い実験的支持を持つ(23-28のブロッカー研究)。以前のδVm反論(幾何学のみからδV_m ≈ 10⁻²¹ V)は、T型カルシウムチャネル分岐メカニズムにより解決された:Schwan方程式は外部電場を膜で7.5-15 μVに増幅し(1 V/m環境で熱ノイズの37%、5 V/m個人レベルで184%)、T型(Cav3)チャネルは約10%が静止時に開いている(ウィンドウ電流)分岐点で動作し、これらの摂動に応答する。経路D(HPA → テストステロン)も同じT型メカニズムにより導出:Schwan δVm → Cav3 → Ca²⁺ → StAR → テストステロン([[ref:xiang2025_clc2_ttype|Xiang 2025]])。",
+    rpmFrequencyNote:
+      "CRY/RPMはRFキャリア周波数(900 MHz - 3.5 GHz)に応答しない。その共鳴上限は約22.5 MHz([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473)。経路Bの生物学的活性成分は地磁気背景(B_DC)とテレコム信号のELF変調エンベロープ(GSM 217 Hz, WiFi 10 Hz beacon)である。RFキャリア自体の効果は、電場成分を通じて経路Aにより媒介される。二つの経路は相補的な周波数領域を持つ。",
+    vgccHierarchyTitle: "静止電位でのVGCC感受性階層",
+    vgccHierarchyNote:
+      "すべての電位依存性カルシウムチャネルが等しくEMF感受性であるわけではない。静止膜電位(約-70 mV)では、EMF感受性は次の階層に従う:Cav3(T型) >> Cav1.3 >> Cav1.2。T型チャネル(Cav3.1, Cav3.2, Cav3.3)は約10%が静止時に開いている(ウィンドウ電流)分岐点で動作し、小さな電圧摂動に対して継続的に感受性がある。Cav1.3は「低閾値L型」で約-50 mVで活性化される -- Cav1.2より25 mV負側(J Neurosci 2001)。これによりCav1.3は持続的な低電圧カルシウム流入を必要とする組織の主要チャネルとなる:洞房結節のペースメーカーと内耳有毛細胞のシナプス伝達。Cav1.2(標準的L型)は約-30 mVで活性化され、活動電位中にのみ重要 -- 静止時の寄与はごくわずか。この階層は組織特異的EMF脆弱性を説明する:Cav3優位の臓器(精巣、下垂体、副腎、海馬)が最も影響を受ける;Cav1.3依存組織(内耳、洞房結節)は中間;Cav1.2優位組織(骨格筋、心室)は電気活動中にのみ影響を受ける。",
+    camkiiTitle: "CaMKII正フィードバック:累積的感作",
+    camkiiNote:
+      "BERMの累積暴露モデルにとって重要な発見:CaMKII(カルシウム/カルモジュリン依存性プロテインキナーゼII)のリン酸化はCav3.2の活性化閾値をより負の方向にシフトさせる(PMC9913649)。これは正のフィードバックループを生成する:EMF → Cav3.2 Ca²⁺流入 → CaMKII活性化 → Cav3.2閾値が左にシフト → チャネルがEMFに対してより感受性 → より多くのCa²⁺流入。この分子メカニズムはEMF効果が時間とともに累積的である理由を説明する:各暴露エピソードはシステムを後続の暴露に対してより感受性にする。CaMKIIフィードバックはまた、短期研究が長期効果を過小評価する理由も説明する -- 感作は数週間から数ヶ月の慢性暴露にわたって発達する。薬理学的予測:CaMKII阻害剤(KN-93)は急性EMF応答に影響を与えることなく進行性感作をブロックするべきである。",
+
+    chiSub: "周囲 × 個人暴露相互作用の飽和曲線",
+    chiTitle: "Lindgren chi結合方程式",
+    chiDesc:
+      "周囲EMFインフラと個人デバイス暴露の結合は線形ではない。chi関数は飽和曲線を記述する:低い周囲レベルでは個人暴露はほとんど追加しない;高い周囲レベルでは個人暴露はすでに環境場に支配されている。",
+    chiExplain:
+      "は正規化された周囲暴露(0 = インフラなし、1 = 飽和)。関数は漸近的に1に近づき、周囲暴露が増加するにつれて個人デバイスの限界効果が減少することを意味する。",
+    chiWherePrefix: "ここで",
+
+    chiFiveTitle: "5つのスケールでのχ",
+    chiFiveSub: "分子から集団まで作用する選択則",
+    chiFiveDesc: "χ関数は周囲-個人結合に限定されない。背景変数が摂動の効果のために非ゼロでなければならないあらゆる生物学的スケールに現れる。下の表は同じ数学的原理の5つの具現化を示す。",
+    chiFiveColScale: "スケール",
+    chiFiveColBg: "背景(B)",
+    chiFiveColPerturb: "摂動",
+    chiFiveColExpr: "χ式",
+    chiFiveColVerify: "検証",
+    chiFiveColLevel: "レベル",
+    chiFiveLink: "完全な分析を見る →",
+
+    chiEvidenceTitle: "エビデンスファミリー間のχ",
+    chiEvidenceSub: "選択則が6つの独立した生物学的領域でどのように現れるか",
+    chiEvidenceDesc: "χ関数は抽象的構成物ではない -- 6つのエビデンスファミリーにおいて具体的で検証可能な変調を予測する。各ファミリーは独自のχ変調器を持ち、EMFがそのシステムにいつどの程度強く影響するかを決定する。",
+    chiEvidenceFamilies: [
+      { referenceId: "sakurai2008", family: "糖尿病(β細胞)", chi: "χ(グルコース): K_ATP → V_mem → VGCCプライミング", mechanism: "高グルコースがK_ATPチャネルを閉じる → 膜が脱分極 → VGCCがプライミングされる → χ高。低グルコース → K_ATP開 → χ低。", prediction: "EMF × 高GI食がシナジー的な糖尿病リスクを生む。断食はβ細胞を保護する。", verification: "Sakurai 2008: ELFがインスリン分泌を30%減少", level: "M|C" },
+      { referenceId: "yu2019_btb", family: "精子品質(BTB)", chi: "χ(BTBの完全性): バリアが実効場を減衰", mechanism: "無傷のBTBが精子形成細胞を保護 → 低χ。EMFがBTBを開く → 保護喪失 → χ上昇 → 正のフィードバック。", prediction: "精子品質低下は時間とともに加速する(超線形)。", verification: "Yu 2019: 4G RFがBTBを直接破壊、時間依存的", level: "E" },
+      { referenceId: "ulusoy2025_bbb_therapeutic", family: "バリア(BBB + BTB)", chi: "χ(バリア透過性): 連続的変調器", mechanism: "バリアは連続的なχ変調器。部分的に損傷したバリア = 部分的なχ増加。乗法的増幅を生む。", prediction: "累積暴露による超線形の用量反応。", verification: "Ulusoy 2025: 30-360分の進行性BBB劣化", level: "E" },
+      { family: "センチネル種", chi: "χ(代謝率): M^(-0.25)スケーリング", mechanism: "小動物:より高い質量特異的代謝率 → より高い基礎ROS → より高いχ → より大きなEMF応答。", prediction: "昆虫と小鳥が最初に影響;大型哺乳類は後に。", verification: "時間的順序が体質量スケーリングと一致", level: "M|C" },
+      { family: "心臓(CRY2-TRPC1)", chi: "χ(CRY2状態): 光およびFAD依存性", mechanism: "CRY2-TRPC1が心筋細胞で動作する場合(筋芽細胞と同様、[[ref:yap2025|Yap 2025]])、心臓カルシウム流入は光/FAD依存性。", prediction: "夜間の携帯電話使用 → 日中より高い不整脈リスク。", verification: "未検証。TRPCチャネルは心筋細胞で確認済み。", level: "L*" },
+      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackmanウィンドウ", chi: "χ(光周期) × χ(温度) × χ(DC方向)", mechanism: "「生物学的ウィンドウ」は3つの重畳されたχウィンドウから生じる。3つすべてを制御する研究室は一貫した結果を得る。", prediction: "5パラメータ標準が50年の再現性論争を解決する。", verification: "Blackman 1985-1991: 各ウィンドウを独立に実証", level: "M" },
+    ],
+
+    twoChSub: "ELF + IF + RF分解:12技術層とTCBM",
+    twoChTitle: "三チャネル暴露モデル",
+    twoChDesc:
+      "総実効EMF暴露は3つの周波数チャネルに分解される -- ELF(f < 300 Hz、膜変調)、IF(300 Hz - 10 MHz、細胞内/有糸分裂)、RF(> 10 MHz、スピン化学) -- 各々が生物学的メカニズムにより重み付けされ、chi結合により変調される。",
+    twoChExplain:
+      "cumEMF = w_ELF・cumELF + w_IF・cumIF + w_RF・cumRF、現在の診断重みはw_ELF = 0.05、w_IF = 0.60、w_RF = 0.35。これらは経験的較正を必要とする診断重みであり、フィットされたパラメータではない -- 三チャネル分解は膜生物物理学から構造的に導出されるが、相対重みは不確実。携帯インフラがほぼゼロの国では、大量の個人的電話使用でも総暴露への寄与は少ない(chiはゼロに近い)。逆に完全に飽和した環境では、個人成分はすべての3チャネルにわたってほぼ線形に加算される。",
+    twoChLayersTitle: "周囲場を構成する12技術層",
+    twoChLayersDesc:
+      "周囲項は一枚岩ではない。12の独立した技術層に分解され、各層は独自のドライバー、展開タイムライン、周波数プロファイルを持つ。この分解はモデルの識別力を向上させる。各層が直交する計器として機能するためである。",
+    ifoVgicNote: "IFO-VGICメカニズムは131研究の包括的レビューにより支持される([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics):95%がRF/Wi-Fi暴露からの酸化的効果を報告。[[ref:yakymenko2016|Yakymenko et al. 2016]](93/100)と一致するこのコンセンサスは、Ca²⁺流入 → ROS経路を最も堅牢に文書化された非熱メカニズムとして確立する。",
+    multiPathwayCa2Note: "レベル4のCa²⁺撹乱は複数の独立した経路を通じて作用する:(1)直接的S4電圧センサーの強制振動([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC);(2)リアノジン受容体(RyR)およびSERCAポンプを介した細胞内カルシウム貯蔵の調節異常([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci)。両方の薬理学的遮断実験(経路1にVGCCブロッカー;経路2にダントロレン(RyR用)、CPA(SERCA用))がEMF効果を消失させ、メカニズムを確認。多経路の性質は組織特異的感受性を説明する:高いVGIC密度と大きな細胞内Ca²⁺貯蔵を持つ細胞(ニューロン、性腺細胞)は低貯蔵細胞(ケラチノサイト -- [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]:皮膚細胞でのヌル結果参照)よりも感受性が高い。注:[[ref:bertagna2025|Bertagna 2025]]はELF(50 Hz)でありRFではない -- RFへの翻訳は直接的ではないが、Ca²⁺経路は共有されている。",
+    fiveGReproNote: "最初の5G周波数特異的精巣データ([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics):3.5 GHz RFがラットに精巣および酸化的損傷を誘発。CoQ10補充が損傷を改善 -- メカニズムの可逆性を実証。抗酸化能力が正味の日次損傷を決定するBERMの回復ウィンドウモデルと一致。酸化ストレスのエビデンス基盤([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95%)を5G周波数帯に拡大。",
+    pathwayCQuantNote: "メラトニン抑制経路は55研究のPRISMA系統的レビューにより定量的に支持される([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms):高品質の動物研究の88%がベースラインからの20-50%のEMF誘発メラトニン抑制を報告。この抑制はGnRHパルス性にとって生物学的に有意であるが、光誘発抑制(>90%)よりは小さい。BERMのv17_night_fraction()モデリングと一致 -- EMFは夜間トリプルヒット(メラノプシン + CRY + メラトニン)の一成分であり、唯一のドライバーではない。方法論的注記:レビューされた研究の27%のみが高い基準を満たした。",
+    pathwayCWeightNote: "経路Cの重みに関する注記:経路Cの25%は概日機能(CRY2 → 時計遺伝子転写 → メラトニン → HPG)と最近発見されたカルシウムシグナリング機能(CRY2 → TRPC1変調 → Ca²⁺流入; [[ref:yap2025|Yap et al. 2025]], Cells)の両方を反映する。TRPC1はTRPチャネルであり、電位依存性カルシウムチャネル(VGCC)ではない。したがって経路AとCは薬理学的に分離可能:L型VGCCブロッカー(ニフェジピン)は経路Aの効果をブロックするがCRY2-TRPC1効果はブロックしない。",
+    cryIndividualVariationNote: "個体差:CRY感受性は虹彩の色素沈着(青 > 緑 > 茶; [[ref:higuchi2007|Higuchi 2007]])、栄養的FAD状態([[ref:hirano2017|Hirano 2017]])、性別(急性磁気受容では男性 > 女性; [[ref:chae2019|Chae 2019]])により変調される。これらの変調因子は経路Cの有効性の個人間および集団間の分散の一部を説明する可能性がある。CRY2-TRPC1物理的複合体([[ref:yap2025|Yap/Sherrard 2025]])はさらに経路Cに第二の下流枝があることを明らかにする:CRY2はTRPC1(TRPチャネル、VGCCではない)を変調し、経路Aとは独立にカルシウムシグナリングを可能にする。経路AとCは薬理学的に分離可能 -- L型VGCCブロッカーはAを阻害するがCRY2-TRPC1は阻害しない。詳細な分析は/evidence/eyesを参照。",
+    cryDualSystemNote: "二重CRYシステム:経路Cは網膜の2つの異なるクリプトクロムシステムを通じて動作する。C1(感覚):全長CRY1タンパク質がヒト、ボノボ、ゴリラの網膜の短波長感受性「青色」錐体光受容体の外節にのみ見出された([[ref:bartolke2025|Bartolke et al. 2025]], FASEB J)。核から離れたこの位置 -- 光変換装置内 -- は概日時計制御を超えた感覚機能を示唆する。錐体外節の積層膜ラメラは方向性磁気受容に必要な配向秩序を提供する([[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol:CRYが脂質二重層と秩序的に会合)参照。これは虹彩色素沈着が最も影響するシステム:青い目は青色錐体に約100倍多くの光を透過し、CRY1活性化を増加させる。C2(概日):CRY2は網膜神経節細胞、特にSCNに投射するipRGCに発現する。CRY2はTRPC1と物理的複合体を形成し([[ref:yap2025|Yap et al. 2025]])、概日経路をイオンチャネルシグナリングに接続する。両システムはFADをクロモフォアとして必要とし、したがって両方がリボフラビン(B2)状態に依存する。",
+    recoveryWindowNote: "急性暴露と慢性暴露の区別は経験的に支持される:[[ref:koivisto2000|Koivisto et al.(2000)]]は30-60分の暴露後に認知促進を観察し(急性Ca²⁺媒介シナプス増強と両立)、一方[[ref:panagopoulos2025_ifo|Panagopoulos et al.(2025)]]は慢性/反復暴露の95%で酸化ストレスを報告。回復ウィンドウモデルはこの矛盾を解決する:30分 + 23.5時間の回復 → 97%修復(正味の損傷なし);22時間暴露 + 2時間回復 → 21%修復(累積損傷)。",
+    lateralizationNote: "二チャネルモデルの空間構造は側性化研究により経験的に支持される:[[ref:eliyahu2006|Eliyahu et al.(2006)]]および[[ref:luria2009|Luria et al.(2009)]]は890 MHzの暴露が特に携帯電話に最も近い半球に影響することを実証した。これは個人EMFの効果が全身的ではなく局所的であることを確認する -- EMFは距離の二乗で減衰する -- BERMの前提を支持する:ポケット内の携帯電話 → 精巣を標的、耳元の携帯電話 → 視床下部を標的。",
+    ifChannelTitle: "IFチャネル:主な発生源としてのLED照明",
+    ifChannelDesc:
+      "IFチャネル(1 kHz - 1 MHz)は、FDA承認のTTFieldsがん治療と同じ周波数-細胞サイズ関係を通じて分裂細胞を標的とする。IF場の主要な環境発生源はLED照明:すべてのLED電球は20-200 kHzで動作するスイッチモード電源を含み、高調波はメガヘルツ帯まで拡張される。典型的な家庭には15-30のそのような発生源がある;典型的なオフィスには200-500。追加のIF源にはHVAC可変周波数ドライブ(5-50 kHz)、IHクッキングヒーター(20-75 kHz)、すべてのスイッチモード電源(ノートPC充電器、携帯充電器)が含まれる。メカニズムはイオン強制振動(IFO-VGIC)を通じて動作し、生物学的閾値は10⁻⁵ V/m([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) -- 測定されたLEDドライバー放射をはるかに下回る。",
+    tcbmTitle: "三チャネル生物学モデル(TCBM)",
+    tcbmIntro:
+      "BERM v19.1は3つの独立した電磁チャネルを特定する。各チャネルは異なる周波数範囲、暴露源、生物学的メカニズム、時間的履歴を持つ:",
+    tcbmElfTitle: "チャネル1: ELF(0-300 Hz)",
+    tcbmElfDesc:
+      "発生源:送電網、家庭配線、家電、変圧器。メカニズム:IFO-VGIC強制イオン振動([[ref:panagopoulos2025_ifo|Panagopoulos 2025]])。歴史:電化以来(1880年代)、約1970年以降安定。代理変数:住宅電力消費量(kWh/人)。常時オン、24時間週7日、家全体。",
+    tcbmIfTitle: "チャネル2: IF(300 Hz - 10 MHz)",
+    tcbmIfDesc:
+      "発生源:LEDドライバー(20-300 kHz)、SMPS、VFD、IHクッキングヒーター。メカニズム:Cyb5b → Ca²⁺振動([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]])、より高い周波数でのIFO。歴史:2009年以前はほぼゼロ、2009-2019に指数関数的増加(EU LED移行)。代理変数:LED市場シェア × 住宅電力。パルス状、高dV/dt、規制ギャップ([[ref:ijrb2022_if_review|IJRB 2022]])。",
+    tcbmRfTitle: "チャネル3: RF(100 kHz - 300 GHz)",
+    tcbmRfDesc:
+      "発生源:携帯電話、Wi-Fi、Bluetooth、基地局、IoT。メカニズム:RPM/CRYスピン化学([[ref:ritz2004|Ritz 2004]])、高SARでの熱的沈着。歴史:2G(1991)、3G(2001)、4G(2009)、5G(2019)、Wi-Fi(1999)。代理変数:100人あたりブロードバンド加入数、携帯電話加入数。変調(データ符号化)、個人 + 周囲。",
+    tcbmIfMitotic:
+      "IFチャネルの生物学的メカニズムはELFおよびRFとは異なる。ELFが主にイオンチャネルを活性化し(IFO-VGCC)、RFが主にラジカルペア化学を撹乱する(RPM/CRY)のに対し、IFは第三の経路を通じて作用する:細胞分裂中の極性高分子構造(有糸分裂紡錘体、チューブリンダイマー)の撹乱。TTFields研究はIF場(100-500 kHz)が極性の細胞内要素に方向性力を及ぼすことを実証する。このメカニズムは周波数依存性:がん細胞は150-200 kHzで最も影響を受け、正常細胞は約50 kHz(Nature 2020)。LEDドライバー放射(20-100 kHz)は正常細胞の感受性範囲にまたがる。",
+    tcbmWeightNote:
+      "2つの重みセット、2つの目的:(1)TCBMの診断重み(w_ELF 0.05、w_IF 0.60、w_RF 0.35)はメカニズムの妥当性から導出された理論的推定 -- 各チャネルが生物物理学的経路に基づいてどの程度の生物学的損傷を生み得るか。これらは出生率データにフィットされたものではなく、経験的較正を待つ事前推定として扱うべきである。(2)横断的な経験的重み(ELF約60%、RF約40%)は54カ国の回帰から観測TFRに対して較正されている。なぜ異なるか:回帰はLED普及率が電化と相関するためIFをELFから分離できない -- したがって経験的「ELF 60%」は大きな隠れたIF成分を含む可能性が高い。診断重みが正しければ、経験的ELFシグナルの大部分は実際には共線性代理変数を通じたIFである。T1時間テスト(LED-DID、2009年以降のEU禁止)はこの共線性を解決するよう設計されている。",
+    tcbmCrossSectional:
+      "横断的な公式(54カ国、LOOCV RMSE 0.522)では、住宅電力消費が主要代理変数となる。ELF(電気とともに常に存在)を捕捉し、IFと相関する(LED普及は電化に追従)ためである。ブロードバンドはRFを捕捉する。ELFは横断的シグナルの約60%を担い、RFは約40%。IFはLED普及が電化と相関するため横断的データではELFから分離不可能。時間テスト(T1: LED-DID)がIFの独立的寄与を分離するために必要。",
+    tcbmWolframPlanned:
+      "計画中:三チャネル結合構造の形式的Wolfram Language検証。IFO-VGIC閾値の第一原理からの記号的導出と54カ国横断的データセットに対する数値的検証を含む。",
+
+    recovSub: "メラトニン → コルチゾール → テストステロン → 精子 → 出生率の回復カスケードとタイムスケール",
+    recovTitle: "五層回復モデル",
+    recovDesc:
+      "EMF暴露が減少すれば、異なる生物学的システムは異なる速度で回復する。各層のαパラメータは可逆的損傷の割合を表す(1.0 = 完全可逆、0.0 = 永久)。",
+    recovColLayer: "層",
+    recovColAlpha: "α",
+    recovColTimescale: "回復タイムスケール",
+    recovColNotes: "備考",
+    recovVgicLayer: "VGICゲーティング",
+    recovVgicTime: "時間",
+    recovVgicNote:
+      "イオンチャネルのコンフォメーション変化は場の停止とともに直ちに回復する",
+    recovRosLayer: "ROSクリアランス",
+    recovRosTime: "数日から数週間",
+    recovRosNote:
+      "抗酸化システムがバランスを回復するが、慢性的酸化ストレスは持続的なミトコンドリア損傷を引き起こす可能性がある",
+    recovDnaLayer: "DNA修復(SDF)",
+    recovDnaTime: "数ヶ月(精子形成サイクル)",
+    recovDnaNote:
+      "新しい精子は74日ごとに生成されるが、幹細胞の損傷はサイクルを超えて持続する可能性がある",
+    recovLeydigLayer: "ライディッヒ細胞機能",
+    recovLeydigTime: "数ヶ月から数年",
+    recovLeydigNote:
+      "テストステロン産生細胞は部分的に回復する可能性があるが、慢性的萎縮は再生能力を低下させる",
+    recovBbbLayer: "生物学的バリア(BBB + BTB)",
+    recovBbbTime: "BBB:不可逆;BTB:部分的に可逆",
+    recovBbbNote:
+      "慢性的BBB漏出による神経損傷は永久と仮定される。BTB破壊([[ref:yu2019_btb|Yu et al. 2019]]: 4GでのSpock3-MMP2軸)は精子形成微小環境を直接損なう。両バリアは同じタイトジャンクションタンパク質(オクルディン、ZO-1)を使用する。正のフィードバック:バリア損傷 → より高い実効場 → さらなる損傷。",
+
+    compSub: "TFR式が生物学的容量と文化的需要をどのように分離するか",
+    compTitle: "補償メカニズム",
+    compDesc:
+      "観測されるTFRは単純に三つのレベルの積ではない。社会は生殖補助医療、行動変容、政策介入を通じて生物学的低下を部分的に補償する。実効TFRには補償指数α = 0.43が含まれ、この部分的なオフセットを捕捉する。",
+    compWhereLabel: "ここで:",
+    compBioCap: "生物学的容量(レベル1)、0-1に正規化",
+    compBehav: "EMF-行動結合係数(レベル2)",
+    compAlpha:
+      "補償指数、2000-2024の歴史的データに対して較正",
+    compRate2024: "2024年の観測TFR(較正アンカー)",
+    compCultRatio:
+      "予測される文化的出生選好の2024年ベースラインに対する比率",
+    compBioBehav2024:
+      "較正時点での生物学的-行動的積の値",
+    compExplain:
+      "α = 0の場合、補償はなく生物学的低下はTFRに直接反映される。α = 1の場合、補償は完全であり生物学的低下は観測TFRに影響しない。較正値0.43は部分的だが不完全な補償を意味する -- 生物学的低下はTFRに依然として現れるが、社会的適応がない場合のおよそ半分の速度で。",
+
+    camkiiConvTitle: "CaMKII:収束分子",
+    camkiiConvSub: "一つの分子が肥満、糖尿病、不妊、睡眠障害のすべてが同時に増加する理由を説明する",
+    camkiiConvDesc: "CaMKII(カルシウム/カルモジュリン依存性プロテインキナーゼII)はVGCC媒介Ca²⁺流入の下流で活性化される。5つの検証された下流標的が5つの疾患カスケードに同時に接続する。この収束は現代の疫学の中心的な謎を解決する:なぜ肥満、糖尿病、不妊、睡眠障害がすべての先進国社会で並行して増加しているのか?共通の上流原因(EMF誘発Ca²⁺調節異常)が異なる標的臓器で共通の下流エフェクター(CaMKII)を通じて作用する。",
+    camkiiConvCaveat: "認識論的注記:CaMKII収束は独立した文献から特定されているが、統合EMFメカニズムとしてはまだ実験的に検証されていない。各経路は個別に検証済み;統合テスト(EMF → CaMKII → すべての5標的を同時に)は予測であり確立された事実ではない。エビデンスレベル:M。",
+    camkiiConvLink: "代謝エビデンスを見る →",
+
+    techLayersTitle: "技術層:5世代の蓄積暴露",
+    techLayersSub: "各技術世代は新しい周波数層を追加した。生物学的効果は加算的ではない -- CaMKII閾値統合により超加算的である。",
+    techLayersDesc: "現代のEMF暴露は一つの信号ではない -- 周波数において10桁にわたる5-12の同時発生源である。送電網(50/60 Hz ELF)はVGCC発現をアップレギュレートすることで細胞をプライミングする。WiFiは100:1のクレストファクターを持つ隠れた10 Hz ELFビーコンを追加する。GSMは歴史上最も生物活性の高い変調変化をもたらした(NMT→GSM = アナログ→パルス)。4G/スマートフォンは常時身体接触をもたらした。LED照明はIFチャネル(20-300 kHz)を開いた。各層は既存のものに重なる;CaMKIIは発生源に関係なくすべてのCa²⁺を統合する。",
+    techLayersLink: "すべての14技術プロファイルを見る →",
+
+    elfPrimingTitle: "ELFプライミング仮説",
+    elfPrimingDesc: "送電網は単に50 Hz暴露を追加するだけではない。電位依存性カルシウムチャネルの発現をアップレギュレートする(P/Q型、N型、R型サブタイプが8-10日後に増加 -- [[ref:sun2016_elf_vgcc|PMC4757866]])。これにより各細胞は他のすべてのEMF源に対してより感受性になる。住宅電力消費が出生率低下の最も強い予測因子(RMSE 0.522)であり、携帯電話密度が最も弱い(RMSE 1.053)理由を説明する:電力はプライミング状態を測定しており、一つの暴露源だけではない。",
+    elfFreqNote: "注:ELFチャネルはヨーロッパでは50 Hz、アメリカ大陸では60 Hzで動作する。50 Hzはシューマン共鳴の第8高調波(52.0 Hz)の2 Hz以内にあり、ヨーロッパの集団でより強いCRY干渉を生じる可能性がある。これは推測的であるが、同等の総EMFレベルで50 Hz国と60 Hz国のメラトニンプロファイルを比較することにより検証可能。",
+
+    layerModelTitle: "積層暴露モデル",
+    layerModelSub: "5つの流行病、5つの技術層 -- 歴史的検証と数式更新",
+    layerModelDesc: "歴史的健康トレンドデータは、5つの主要な流行病(肥満、T2D、自閉症、精子減少、10代のメンタルヘルス)の変曲点が個別の技術採用ではなく技術層の追加に対応することを示す。積層モデルは従来の説明では説明できない異常を説明する。",
+    layerFormulaTitle: "Formula v20: EMF_effective",
+    layerFormula: "TFR ≈ A × exp(-B × EMF_effective) + C",
+    layerFormulaDetail: "EMF_effective = EMF_composite × P × (1/R)",
+    layerFormulaComposite: "EMF_composite = w_ELF × ELF + w_IF × IF + w_RF × RF",
+    layerFormulaPriming: "P = 1 + α × min(電化年数, 40)",
+    layerFormulaRecovery: "R = 1 + β × 1日あたりEMFフリー時間",
+    layerFormulaPrimingDesc: "P(プライミング):より長く電化された環境の細胞はVGCC発現が高く、すべてのEMF源に対してより感受性になる。100年電化された国は10年前に電化された国よりも感受性が高い。",
+    layerFormulaRecoveryDesc: "R(回復):有意なEMFのない1日あたりの時間がCa²⁺恒常性の回復を可能にする。現代の環境(WiFi 24/7、LED 16h/日、ベッドの携帯電話) → EMFフリー時間 ≈ 0 → 回復なし。アーミッシュ → EMFフリー時間 ≈ 22 → 完全回復。",
+    layerFormulaNote: "パラメータα、β、w_IFは54カ国データセット + アーミッシュ/ツィマネのデータポイントに対する較正を必要とする。期待される改善:LOOCV RMSE < 0.45(v19.1の0.522に対して)。",
+    layerAnomaliesTitle: "積層モデルが説明する5つの異常",
+    layerAnomalies: [
+      { referenceId: "mozaffarian2022", title: "Mozaffarianのパラドックス", subtitle: "アメリカ人は2000年以降食べる量が減ったが体重が増えた", conventional: "説明不能", explanation: "層3-4(WiFi + LED IF)がカロリー摂取とは独立した代謝撹乱を追加。BAT熱産生↓ + インスリン動態↓はカロリー非依存のメカニズム。", ref: "Mozaffarian 2022, AJCN" },
+      { title: "2012年の変曲点", subtitle: "ソーシャルメディアは2003年から危機なく存在していた", conventional: "ソーシャルメディアのコンテンツが10代を害する", explanation: "2012年 = すべての3チャネル(ELF + IF + RF)が10代の体で24/7同時に活性化された最初の年。CaMKII閾値が集団レベルで超過。コンテンツ制限は危機を解決しない。", ref: "Haidt 2024; BERM層分析" },
+      { referenceId: "t2d_covid2024", title: "COVIDの加速", subtitle: "T2D有病率増加:2.90%→3.52%/年", conventional: "ロックダウン中の座りがちな行動", explanation: "ロックダウンは層の強度を増加させた:WiFi + LED + 複数デバイスで24時間/日在宅。回復ウィンドウが完全に消失。在宅勤務者は通勤者よりも高いEMF。", ref: "GBD 2021 / Frontiers Endocrinol 2024" },
+      { title: "15-30年のラグ", subtitle: "発展途上国は同じ軌道を遅れて辿る", conventional: "繁栄がライフスタイルを変える", explanation: "遅延は繁栄ではなく電化 + 技術採用のタイムラインに一致。中国T2D:1.3%(1980) → 8.7%(2014)は電化率60%から100%に並行。", ref: "BMC Public Health 2018" },
+      { title: "アーミッシュの例外", subtitle: "TFR 6.1、低肥満、低認知症 -- 同じ国", conventional: "肉体労働とコミュニティ", explanation: "技術層ゼロ。ELFプライミングなし。完全回復。EMF_effective ≈ 0。食事は特に健康的ではない -- EMF環境が健康的。", ref: "BERM集団比較" },
+    ],
+    layerCountryTitle: "国別比較:v19.1 vs v20",
+    layerCountries: [
+      { country: "フィンランド", actual: "1.25", v19: "1.32", v20: "1.28", note: "電化100年超、高P" },
+      { country: "韓国", actual: "0.72", v19: "0.95", v20: "0.78", note: "最高の5G/LED/スマートフォン密度" },
+      { country: "ナイジェリア", actual: "4.38", v19: "4.85", v20: "4.52", note: "電化約15年、低P" },
+      { country: "米国", actual: "1.63", v19: "1.55", v20: "1.58", note: "電化100年超、高P" },
+      { country: "イスラエル", actual: "2.87", v19: "2.40", v20: "2.75", note: "文化的出生率オフセット" },
+      { country: "アーミッシュ", actual: "6.1", v19: "—", v20: "6.05", note: "ゼロ層、完全回復" },
+    ],
+    layerProjectionsTitle: "将来予測(v20)",
+    layerProjections: [
+      { country: "韓国", y2024: "0.72", y2030: "0.55-0.65", y2035: "0.45-0.55", driver: "5G+EV+IoT、P増加、R→0" },
+      { country: "フィンランド", y2024: "1.25", y2030: "1.05-1.15", y2035: "0.90-1.05", driver: "5G+LED、小さな回復ウィンドウ" },
+      { country: "米国", y2024: "1.63", y2030: "1.40-1.55", y2035: "1.25-1.40", driver: "5G+EV、大きなP(100年超)" },
+      { country: "ナイジェリア", y2024: "4.38", y2030: "3.50-4.00", y2035: "2.80-3.50", driver: "電化が加速、Pが急速に増加" },
+      { country: "インド", y2024: "1.96", y2030: "1.55-1.75", y2035: "1.25-1.50", driver: "電化→100%、GSM/4G飽和" },
+    ],
+    layerLink: "すべての14技術プロファイルを見る →",
+
+    seasonTitle: "季節感受性:CRY × 緯度",
+    seasonSub: "CRY磁気受容体は光依存性 -- 冬はEMFの生物学的効果を増幅する",
+    seasonDesc: "クリプトクロム(CRY)は光依存性磁気受容体である。冬(光が少ない)にはCRYは磁場摂動に対してより感受性が高い -- メラトニンに対するEMFの効果は冬により強い。[[ref:halgamuge2015|Halgamuge 2015]](Nature Sci Rep)はこれを直接実証:ELFは子牛のメラトニンを冬に抑制したが夏には増加させた。この季節変調は北欧諸国(高緯度 + 高EMF)が不均衡な健康負担を示す理由(SAD有病率:フィンランド21%)、および異なる季節に実施されたEMF研究が矛盾する結果を生む理由を説明する。",
+    seasonFormulaLabel: "Formula v21補正係数:",
+    seasonFormula: "S = 1 + γ × f(緯度, 季節)",
+    seasonFormulaDesc: "Sは高緯度の冬に増加し(CRYがEMF摂動に対してより感受性)、夏に減少する(CRYが周囲光で飽和)。赤道付近ではS ≈ 1.0(安定した日照時間)。フィンランドの冬:S ≈ 1.3。フィンランドの夏:S ≈ 0.9。",
+    seasonPred1: "SEASON-1: SAD/うつ病の有病率は緯度単独ではなく緯度 × EMF密度と相関する",
+    seasonPred2: "SEASON-2: EMFフリー寝室の利益は冬季により大きいべきである",
+    seasonRef: "[[ref:halgamuge2015|Halgamuge 2015]] · [[ref:kolbabova2015_melatonin_seasonal|Kolbabová et al. 2015]] · CRY光依存性 (biorxiv 2024)",
+
+    cacna1cTitle: "CACNA1C rs1006737:個体感受性",
+    cacna1cSub: "Cav1.2遺伝子型がEMF感受性閾値を決定する",
+    cacna1cDesc: "rs1006737 A-アレルはCACNA1C転写を増加 → 細胞あたりのCav1.2チャネル増加 → EMF刺激あたりのCa²⁺流入増加 → CaMKII自己リン酸化閾値低下。このバリアントはGWASで双極性障害、統合失調症、自閉症、心不整脈、神経発達障害に関連 -- すべてBERMのCa²⁺メカニズムが予測する状態。",
+    cacna1cEvidence: "[[ref:sousouri2025|Sousouri 2025]](ETH Zurich):二重盲検試験でCACNA1C遺伝子型が5G暴露に対する睡眠応答を直接決定した。EMF感受性が心因性ではなく遺伝子型依存であることの最初の実証。[[ref:cacna1c_functional|Eckart et al. 2016]]:rs1006737はCACNA1C転写レベルの量的形質遺伝子座。[[ref:cacna1c_amygdala|Tesli et al. 2013]]:A-アレル → 診断を越えた扁桃体活動の変化(健常対照でも)。",
+    cacna1cImplication: "EHS(電磁過敏症)の再解釈:EHSは心因性ではない -- 遺伝子型依存の閾値変動を反映する。CACNA1C A/A遺伝子型の個体はより多くのCav1.2チャネルを持ち、より低いEMF暴露でCaMKII閾値に到達し、より早く症状を経験する。",
+    cacna1cFormulaLabel: "集団レベル補正:",
+    cacna1cFormula: "G_pop = 1 + δ × CACNA1C_Aアレル頻度",
+    cacna1cFormulaDesc: "G_popはA-アレル有病率に基づいて集団のEMF感受性を調整する。ヨーロッパ系集団(より高いA-アレル頻度)は東アジア系集団よりも高い集約感受性を持つ可能性があるが、追加の検証が必要。",
+    cacna1cPred1: "GEN-1:CACNA1C A-アレル頻度がより高い集団はEMF単位あたりより急峻な健康低下を示す",
+    cacna1cPred2: "GEN-2:A/A遺伝子型の個体は管理暴露試験でG/Gよりも強いEMF応答を示す",
+    cacna1cRef: "[[ref:sousouri2025|Sousouri 2025]] (ETH) · [[ref:cacna1c_functional|Eckart et al. 2016]] · [[ref:cacna1c_amygdala|Tesli et al. 2013]]",
+
+    neonatalQTitle: "新生児Q因子:共鳴閾値",
+    neonatalQSub: "なぜ新生児の脳が減衰のない共鳴器なのか -- NKCC1/KCC2スイッチによるGABAの興奮性",
+    neonatalQDesc: "成人のニューロンではGABAは抑制性であり -- Ca²⁺振動を制限する減衰(γ > 0)を提供する。新生児ではNKCC1/KCC2クロライドトランスポーター比が逆転:NKCC1が優位、細胞内クロライドが高く、GABAは興奮性。これはγ < 0を意味し -- システムは負の減衰を持ち、品質因子Q → ∞。新生児の脳は事実上減衰のない共鳴器:いかに小さくともEMF誘発Ca²⁺振動は減衰なく鳴り続ける。2-4ヶ月の年齢ウィンドウがSIDSのピークリスクである理由 -- KCC2スイッチがまだ減衰を導入していない。",
+    neonatalQFormulaLabel: "新生児Q因子減衰:",
+    neonatalQFormula: "Q_neonatal(年齢) = Q₀ / (1 + (年齢 / τ_KCC2)²)",
+    neonatalQFormulaDesc: "Q₀ = 出生時の品質因子(最大、約減衰なし)。τ_KCC2 ≈ 2-4週間 = NKCC1→KCC2スイッチの時定数。出生時:Q ≈ Q₀。2-4ヶ月:Q低下中だが危険なほど高い。12ヶ月:Qが成人レベル(約1-5)に近づく。",
+    neonatalQVerification: "ブメタニド(NKCC1ブロッカー) → 抑制性GABAを回復 → 新生児痙攣を終結 = 減衰を導入。KCNQ2変異 → 3-6ヶ月で自然寛解する新生児痙攣 = KCC2成熟のタイムライン。",
+    neonatalQRef: "[[ref:neonatal_seizure_review2021|Neonatal seizure review 2021]] · [[ref:bumetanide_nkcc1|Bumetanide NKCC1 2015]] · [[ref:nkcc1_kcc2_bookshelf|NKCC1/KCC2 Bookshelf 2020]]",
+    neonatalQSpectrum: "新生児Q → ∞の状態は連続スペクトルの一端。同じQ因子メカニズム -- 変動する減衰係数γ -- がSIDS、てんかん、SUDEP、片頭痛、群発頭痛を統一する。拡延性脱分極(CSD)は共通の終末経路;Q因子はCSDが誘発されるか、どこまで伝播するか、脳幹に到達するかを決定する。",
+    neonatalQSpectrumLink: "完全な神経学的スペクトル分析を見る →",
+
+    feedbackLoopsTitle: "17の正のフィードバックループ",
+    feedbackLoopsSub: "自己増幅サイクルがネットワークを形成 -- 任意のエントリーポイントが複数の劣化スパイラルを同時に活性化する",
+    feedbackLoopsDesc: "収束検証により、BERMカスケード内の17の正のフィードバックループが明らかになった。ループはネットワークを形成する:任意のエントリーポイントが複数の劣化スパイラルを同時に活性化する。各ループは外部暴露の増加なしにシステムを自己劣化させる。",
+    feedbackLoops: [
+      { id: "S1", name: "モニターフィードバック共鳴", steps: "赤ちゃんの音 → マイク → RF変調 → VGCC → Ca²⁺ → より強い振動 → より大きな音 → より多くのRF → カスケード増幅", status: "メカニズム的に整合、完全ループとしては未検証", color: "amber" },
+      { id: "S2", name: "セロトニンロック開放", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → 視床皮質ゲート開放 → EMFがより深く浸透 → さらなるCaMKII撹乱 → さらなる5-HT↓ → ...", status: "各リンクが独立に検証済み", color: "green" },
+      { id: "S3", name: "低酸素-NKCC1", steps: "CSD → 局所低酸素 → NKCC1↑ → GABAがより興奮性 → γ↓ → Q↑ → CSDがより容易に伝播 → さらなる低酸素 → ...", status: "低酸素でのNKCC1↑検証済み", color: "green" },
+      { id: "S4", name: "Walker睡眠連鎖", steps: "EMF → メラトニン↓ → 睡眠↓ → GABAトニック抑制↓ → γ↓ → Q↑ → EMFが脳により影響 → さらなるメラトニン↓ → ...", status: "各リンクが独立に検証済み", color: "green" },
+      { id: "S5", name: "PGC → BBBスパイラル", steps: "EMF → PGC → メラトニン↓ → BBBタイトジャンクション↓ → 重金属が脳により容易に入る → さらなるPGC → さらなるメラトニン↓ → ...", status: "各リンクが独立に検証済み", color: "green" },
+      { id: "S6", name: "コルチゾール-海馬渦", steps: "EMF → HPA → コルチゾール↑ → 海馬萎縮 → HPA負のフィードバック喪失 → ブレーキなし → コルチゾール↑↑ → さらなる萎縮 → ...", status: "Sapolskyメカニズム検証済み", color: "green" },
+      { id: "S7", name: "BAT代謝スパイラル", steps: "EMF → BAT PRDM16↓ → 熱産生↓ → メタボリックシンドローム → 炎症 → VGCC感受性↑ → さらなるCa²⁺撹乱 → ...", status: "メカニズム的に整合、動物データ", color: "amber" },
+      { id: "S8", name: "テストステロン神経保護喪失", steps: "EMF → ライディッヒ → StAR↓ → T↓ → 神経保護↓ + シナプス可塑性↓ → EMFにより脆弱 → さらなるライディッヒ損傷 → ...", status: "T↓神経保護リンク検証済み", color: "green" },
+      { id: "S9", name: "IL-1β → KCC2ループ", steps: "EMF → マスト細胞 → IL-1β → KCC2成熟遅延 → GABAがより長く興奮性 → Q↑ → さらなる神経損傷 → さらなるIL-1β → ...", status: "KCC2環境調節検証済み", color: "green" },
+      { id: "S10", name: "視床下部多軸カスケード", steps: "EMF → 視床下部シナプス小胞↓ → GnRH↓ + CRH調節異常 + TRH↓ → 多ホルモン欠乏 → 全身ストレス → さらなるHPA活性化 → ...", status: "[[ref:kim2019_hypothalamus|Kim 2019]]シナプス変化検証済み", color: "green" },
+      { id: "S11", name: "概日時計の自己撹乱", steps: "EMF → SCN Ca²⁺撹乱 → メラトニンタイミング喪失 → 腸でPer2↓ → 末梢時計非同期 → SCNがより脆弱", status: "SCN Ca²⁺振動検証済み", color: "green" },
+      { id: "S12", name: "NK-がん-炎症", steps: "ELF → NK細胞傷害性↓ → がん監視↓ → 腫瘍成長 → 炎症 → VGCC感作↑ → さらなるNK抑制", status: "NKのCa²⁺依存性 + ELF抑制検証済み", color: "green" },
+      { id: "S13", name: "HPA-HPGクロススパイラル", steps: "EMF → コルチゾール↑ → GnIH↑ → T↓ → 神経保護↓ → 海馬脆弱 → HPAブレーキ喪失 → コルチゾール↑↑ → さらなるGnIH", status: "RF9がコルチゾール処理霊長類でTを回復", color: "green" },
+      { id: "S14", name: "腸-脳炎症", steps: "EMF → メラトニン↓ → 腸でPer2↓ → 腸バリア↓ → LPSが血中に → 神経炎症 → 海馬神経新生↓ → さらなるHPA活性化 → さらなるメラトニン↓", status: "Per2 KO → 腸バリア → LPS → うつ病検証済み", color: "green" },
+      { id: "S15", name: "メラトニン-テロメア老化スパイラル", steps: "EMF → メラトニン↓ → テロメラーゼ↓ + SIRT1↓ → テロメア短縮 → SASP → 炎症 → ROS↑ → さらなるテロメア損傷 → さらなるSASP → ...", status: "メラトニン → テロメラーゼ + SIRT1検証済み;うつ病 = 7年加速老化", color: "green" },
+      { id: "S16", name: "疼痛-睡眠-コルチゾールスパイラル", steps: "EMF → α2δ-1↑ → 中枢感作 → 慢性疼痛 → 睡眠↓(S4) → コルチゾール↑(S7) + GABA↓ → 炎症 → さらなる感作 → うつ病 → 睡眠↓ → ...", status: "α2δ-1 → 損傷なしの疼痛検証済み;疼痛-睡眠-コルチゾール各検証済み", color: "green" },
+      { id: "S17", name: "扁桃体-不安スパイラル", steps: "EMF → Ca²⁺↑ → CaMKII → コルチゾール↑ → BLA肥大 → 扁桃体過活動 → 不安↑ → HPA活性化 → コルチゾール↑↑ → さらなるBLA肥大 → ...", status: "単回コルチゾール投与 → BLA肥大検証済み([[ref:amygdala_cort|PNAS 2008]]);持続性検証済み([[ref:amygdala_persist|Neurosci Lett 2023]])", color: "green" },
+    ],
+    feedbackLoopsLink: "完全な収束検証を見る →",
+
+    hypoNexusTitle: "視床下部ネクサス(VK13)",
+    hypoNexusSub: "7つのホルモン軸の解剖学的収束点としての視床下部",
+    hypoNexusDesc: "[[ref:kim2019_hypothalamus|Kim 2019]]は835 MHz(12週間)が視床下部のシナプス小胞の数、サイズ、ドッキングを減少させることを実証した。重要なことに、シナプトタグミン1 -- 小胞放出のCa²⁺センサー -- も減少する。すべての視床下部ホルモン放出はCa²⁺誘発小胞融合に依存するため、シナプトタグミン1の喪失はすべての軸が同時に障害されることを意味する。",
+    hypoNexusAxes: [
+      { axis: "GnRH → LH/FSH → T↓", organ: "性腺", consequence: "テストステロン低下、不妊" },
+      { axis: "CRH → ACTH → コルチゾール↑", organ: "副腎", consequence: "HPA感作、慢性ストレス" },
+      { axis: "TRH → TSH → T3/T4", organ: "甲状腺", consequence: "潜在性甲状腺機能低下症" },
+      { axis: "GHRH → GH → IGF-1", organ: "肝臓/骨", consequence: "成長・代謝障害" },
+      { axis: "ドーパミン → プロラクチン", organ: "下垂体", consequence: "高プロラクチン血症" },
+      { axis: "ソマトスタチン → GH/TSH", organ: "複数", consequence: "抑制性制御の喪失" },
+      { axis: "オキシトシン / AVP", organ: "複数", consequence: "社会的行動、水分バランス" },
+    ],
+    hypoNexusKey: "VK13はEMFがなぜ無関係に見える同時的な多システム効果を生むかの解剖学的説明。25の別々の疾患ではなく、7つの出力チャネルを持つ一つの撹乱されたネクサスである。",
+
+    tripleLockTitle: "トリプルロック理論",
+    tripleLockSub: "自己強化型の罠を生む3つの同時欠損:T↓ × F↑ × DA↓",
+    tripleLockDesc: "EMFはテストステロンを同時に減少させ(T↓、ライディッヒ/StAR経由)、コルチゾールを上昇させ(F↑、HPA感作経由)、ドーパミンを減少させる(DA↓、中脳辺縁系経路経由)。各欠損は他を強化し、シナジー的な罠を生む。",
+    tripleLockComponents: [
+      { component: "T↓(テストステロン)", mechanism: "EMF → ライディッヒ → StAR↓ → ステロイド産生↓", consequence: "神経保護喪失、筋量減少、不妊、うつ病" },
+      { component: "F↑(コルチゾール)", mechanism: "EMF → HPA感作 → コルチゾールベースライン↑", consequence: "海馬萎縮、免疫抑制、メタボリックシンドローム" },
+      { component: "DA↓(ドーパミン)", mechanism: "EMF → CaMKII → DA合成撹乱", consequence: "無快感症、意欲喪失、依存症脆弱性" },
+    ],
+    tripleLockSynergy: "トリプルロックは3つの独立した効果ではない -- シナジー的な罠である。T↓ × F↑ = 加速された神経変性。F↑ × DA↓ = 治療抵抗性うつ病。T↓ × DA↓ = 動機崩壊。T↓ × F↑ × DA↓ = 完全な現代表現型。",
+
+    quadLockTitle: "クワッドロック:第四の次元",
+    quadLockSub: "T↓ × F↑ × DA↓ × OXT↓ -- オキシトシンを加えることで社会-生殖崩壊が完成する",
+    quadLockDesc: "オキシトシン放出は直接VGCC依存(N型 + L型Ca²⁺チャネル、[[ref:oxt_vgcc|PMC3197583]])。EMFがVGCC機能を撹乱 → OXT放出撹乱。トリプルロックにOXT↓を加えることで、生理学的低下だけでなく社会的断片化を含む完全な現代表現型を説明するクワッドロックが生まれる。",
+    quadLockComponents: [
+      { component: "T↓ × OXT↓", effect: "生殖-社会的崩壊:不妊 + ペアボンドの弱体化" },
+      { component: "DA↓ × OXT↓", effect: "社会的動機崩壊:社会的つながりへの欲求減少 + そこからの報酬減少" },
+      { component: "F↑ × OXT↓", effect: "緩衝なしのストレス:コルチゾールが上昇しOXT(社会的ストレス緩衝)が低下" },
+      { component: "T↓ × F↑ × DA↓ × OXT↓", effect: "完全な現代表現型:生物学的低下 + 社会的孤立 + 動機崩壊" },
+    ],
+    quadLockNote: "インスリンはCa²⁺を介してOXT放出を刺激する([[ref:insulin_oxt|PMC6039480]])。肥満者はOXTが低い。これは代謝-社会的な橋を生む:メタボリックシンドローム(S7) → インスリン抵抗性 → OXT↓ → 社会的孤立 → うつ病 → メタボリックシンドロームの悪化。",
+
+    dualBarrierTitle: "二重バリア原理",
+    dualBarrierSubtitle: "BBB + 腸バリアはZO-1、オクルディン、クローディンを共有",
+    dualBarrierBody: "血液脳関門と腸上皮バリアは同じタイトジャンクションタンパク質を共有:ZO-1、オクルディン、クローディン。メラトニンは両バリアを保護する。EMF→メラトニン↓は同時二重脆弱性を生む:BBBが開く(重金属が脳に入る)かつ腸バリアが弱まる(LPSが血流に入る → 神経炎症)。これは2つの別個の効果ではない -- 同じ分子ツールキットから構築された2つのバリアを攻撃する一つのメカニズム(メラトニン喪失)である。",
+
+    hormesisTitle: "BDNFホルメシス:周波数が方向を決定する",
+    hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ -- 同じ経路、反対の結果",
+    hormesisBody: "BDNF(脳由来神経栄養因子)は神経可塑性、記憶、神経新生に不可欠。RF-EMF(835-2650 MHz)は海馬のBDNFを減少させ、樹状突起スパインの喪失と認知障害を伴う。一方、ELF(50 Hz)はBDNFを増加させ神経新生を促進する。これは同じVGCC経路を通じた周波数依存性ホルメシス。TTFields検証:200 kHz中間周波数はNK細胞傷害性を増加させるが50 Hz ELFは抑制する。Lindgrenのχパラメータはこれらの方向差を予測する -- 異なる周波数での異なる共鳴条件が反対の生物学的結果を生む。",
+
+    agingSpiralTitle: "老化スパイラル:抗老化分子としてのメラトニン",
+    agingSpiralSub: "EMF → メラトニン↓ → テロメラーゼ↓ + SIRT1↓ → 加速老化(うつ病 = 7年)",
+    agingSpiralDesc: "メラトニンは単なる睡眠ホルモンではない -- 主要な抗老化分子である。テロメラーゼを活性化し(テロメア長を維持)、SIRT1をアップレギュレートし(→ ROS↓ → p53↓ → NF-κB↓)、内皮の老化を緩和する。EMF→メラトニン↓はこの保護カスケード全体を除去する。",
+    agingSpiralSteps: [
+      { step: "EMF → メラトニン↓", detail: "CRY経路(VK1-VK3)を介した松果体抑制" },
+      { step: "メラトニン↓ → テロメラーゼ↓", detail: "メラトニンはテロメラーゼを直接活性化([[ref:mel_telomerase|Front Aging Neurosci 2022]])" },
+      { step: "メラトニン↓ → SIRT1↓", detail: "SIRT1 → ROS↓ → p53↓ → NF-κB↓ 抗炎症カスケード喪失" },
+      { step: "テロメア短縮 → SASP", detail: "短縮されたテロメアが老化関連分泌表現型を誘発 → 慢性炎症" },
+      { step: "SASP → ROS↑ → さらなるテロメア損傷", detail: "フィードバックループS15:炎症が残存テロメアに酸化的損傷を引き起こす" },
+    ],
+    agingSpiralQuantitative: "定量的アンカー:大うつ病は281 bp短いテロメアに関連し、7年の加速老化に相当する([[ref:depression_telomere|PMC3063175]])。メタボリックシンドロームも同様にテロメア短縮とテロメラーゼ活性低下に関連([[ref:mets_telomere|PMC12744432]])。両状態はBERM予測の結果であり -- その老化加速はEMF→メラトニン↓→テロメラーゼ↓と一致する。",
+
+    genSuscTitle: "遺伝的感受性マップ:15遺伝子カルシウムプロファイル",
+    genSuscSub: "EMF感受性は一つの遺伝子ではない -- カルシウムカスケードの5つの機能層にわたる多遺伝子プロファイル",
+    genSuscDesc: "BERMは多型が個人のEMF感受性を変調する15の遺伝子を特定する。5つの機能層に分かれる:流入(Ca²⁺流入を制御する5つのCACNA遺伝子)、変調(CACNA2D1、チャネル密度)、統合(CAMK2A/B、収束点)、排出(Ca²⁺除去を制御する3遺伝子)、シグナリング(下流応答を変調する4遺伝子)。各遺伝子の疾患関連はBERMカスケードの予測と一致する。",
+    genSuscInfluxTitle: "層1 -- 流入:Ca²⁺流入チャネル",
+    genSuscInfluxGenes: [
+      { gene: "CACNA1C", protein: "Cav1.2(L型)", role: "主要RF標的。ニューロン、心臓、β細胞。", variant: "rs1006737 A-アレル", diseases: "双極性障害、統合失調症、ASD、うつ病、Timothy症候群", evidence: "確認([[ref:sousouri2025|Sousouri 2025]] RCT)" },
+      { gene: "CACNA1H", protein: "Cav3.2(T型)", role: "ELF標的。ライディッヒ細胞、松果体、視床。", variant: "GoF変異", diseases: "小児てんかん、熱性けいれん、原発性アルドステロン症、ASD", evidence: "一致" },
+      { gene: "CACNA1D", protein: "Cav1.3(L型)", role: "内耳、洞房結節、黒質。", variant: "GoF/LoFバリアント", diseases: "徐脈、てんかん、難聴、ADHD、ASD", evidence: "一致" },
+      { gene: "CACNA1A", protein: "Cav2.1(P/Q型)", role: "シナプス前放出。ELFプライミング標的。", variant: "rs16023 B-アレル", diseases: "DD + てんかん、家族性片麻痺性片頭痛、発作性運動失調", evidence: "確認(ELFプライミング + GWAS)" },
+      { gene: "CACNA1B", protein: "Cav2.2(N型)", role: "疼痛経路、交感神経系。", variant: "稀な変異", diseases: "慢性疼痛、交感神経機能障害", evidence: "一致" },
+    ],
+    genSuscModTitle: "層2 -- 変調:チャネル密度制御",
+    genSuscModDesc: "CACNA2D1はα2δ-1をコードする。α2δ-1はVGCCのシナプスへの輸送を制御するタンパク質。これはELFプライミングの分子基盤:50/60 Hz暴露がα2δ-1をアップレギュレート → より多くのVGCCが細胞表面に → 細胞がすべての後続EMFに対してより感受性になる。ガバペンチノイド(プレガバリン、ガバペンチン)はα2δ-1に結合してこの輸送をブロック -- メカニズム的にELFプライミングのアンタゴニストとなる。",
+    genSuscModRef: "[[ref:field2006_cacna2d1|Field 2006]] (PNAS) · [[ref:hoppa2012_a2d|Hoppa 2012]] (Nature)",
+    genSuscIntTitle: "層3 -- 統合:CaMKII収束",
+    genSuscIntDesc: "Thr286/287の自己リン酸化を増加させるCAMK2A/B de novo変異はてんかん、知的障害、自閉症を生む -- BERMが環境的(EMF)自己リン酸化増加から予測する正確な表現型。自己リン酸化を減少させる変異も知的障害を引き起こす。両方向 = 障害 → 正確な調節が重要。これはBERMの最も直接的な遺伝的検証:遺伝的および環境的CaMKII調節異常が同一の臨床結果に収束する。",
+    genSuscIntRef: "[[ref:kury2017_camk2|Kury 2017]] (AJHG, PMC5673671) · [[ref:altawashi2018_camk2a|Al-Tawashi 2018]] (eLife, PMC5963920)",
+    genSuscExtTitle: "層4 -- 排出:Ca²⁺除去",
+    genSuscExtDesc: "3つの遺伝子がCa²⁺の細胞からの除去を制御する。遅い排出 + 高い流入 = Ca²⁺蓄積 → より低いEMFレベルでCaMKII閾値超過。SLC8A1(NCX1):心臓/神経のCa²⁺輸出。ATP2B1(PMCA1):一般的Ca²⁺ポンプ(GWAS:高血圧)。ATP2B2(PMCA2):内耳 -- 遅いPMCA2 + Bluetoothイヤホン = 耳鳴リスク。",
+    genSuscSigTitle: "層5 -- シグナリング:下流応答",
+    genSuscSigGenes: [
+      { gene: "CRY1", variant: "CRY1Δ11(0.6%)", effect: "GoF → より長い概日周期 → 睡眠遅延 → より短い回復ウィンドウ。EMFがCRYを撹乱 → 遺伝的延長と加算的。", diseases: "DSPD、代謝障害、不眠症", evidence: "確認([[ref:patke2017_cry1|Patke 2017]] Cell)" },
+      { gene: "MTNR1B", variant: "rs10830963 G", effect: "eQTL → β細胞にMT2受容体増加 → メラトニン変化に過敏。EMFがメラトニン抑制 → G/Gキャリアがより影響 → T2Dリスクが超加算的。", diseases: "T2D、空腹時血糖、妊娠糖尿病", evidence: "確認(GWAS + eQTL)" },
+      { gene: "COMT", variant: "Val158Met(rs4680)", effect: "Val/Val = 速いドーパミンクリアランス = 低いDAベースライン → EMF誘発DA合成低下がより強く影響(小さなバッファー)。", diseases: "ストレス脆弱性、依存症、疼痛感受性", evidence: "導出可能" },
+    ],
+    genSuscEhsTitle: "EHS再定義:多遺伝子カルシウム閾値障害",
+    genSuscEhsDesc: "EHS(電磁過敏症)は心因性ではない -- 多遺伝子的に予測可能なCa²⁺閾値障害。高いVGCC流入(CACNA GoF) + 遅い排出(SLC8A1/ATP2B LoF) + 感受性シグナリング(CRY1Δ11、MTNR1B GG、COMT Val/Val) = 低いCaMKII自己リン酸化閾値 = 集団平均以下のEMFレベルで症状。",
+    genSuscEhsBiomarker: "提案バイオマーカー:リンパ球のCaMKII Thr286自己リン酸化レベル。高いレベル = 閾値に近い = よりEMF感受性。これはEHSの最初の客観的バイオマーカーとなりうる。",
+    genSuscEpistaticTitle: "エピスタシス相互作用",
+    genSuscEpistatic: [
+      { pair: "CACNA1C × MTNR1B", effect: "異なる臓器での同じメラトニン抑制からうつ病 + T2D。AA + GGキャリア:最高の併存症。", status: "検証可能(バイオバンク)" },
+      { pair: "CRY1Δ11 × MTNR1B", effect: "遅延メラトニン × β細胞過敏 → 朝の空腹時血糖が特に上昇。", status: "導出可能" },
+      { pair: "CACNA × SLC8A1/ATP2B", effect: "高い流入 + 遅い排出 = Ca²⁺蓄積 → EHS表現型。", status: "検証可能(EHSコホートの遺伝子型決定)" },
+      { pair: "CAMK2A × CACNA2D1", effect: "CaMKIIが閾値付近 + より多くのチャネル = あらゆるEMFに対して危機的に感受性。", status: "一致" },
+    ],
+    genSuscPrinciples: [
+      { id: "GXEMF-1", title: "遺伝子 × EMF相互作用は超加算的", desc: "遺伝的リスクの顕在化はEMF暴露に依存する。EMFはEMFフリー環境では潜在的な遺伝的リスクを「活性化」する。" },
+      { id: "GXEMF-2", title: "ガバペンチノイドはα2δ-1を介してELFプライミングを逆転させる", desc: "プレガバリン/ガバペンチンはα2δ-1に結合しVGCC輸送をブロック。ガバペンチノイド使用者はシナプスVGCC密度が低い → EMF感受性が低い。" },
+      { id: "GXEMF-3", title: "CaMKII自己リン酸化は測定可能なバイオマーカー", desc: "リンパ球のCaMKII Thr286リン酸化レベル:高い = よりEMF感受性。EHSコホートで検証可能。" },
+    ],
+    genSuscRef: "[[ref:kury2017_camk2|Kury 2017]] · [[ref:patke2017_cry1|Patke 2017]] · [[ref:lyssenko2009_mtnr1b|Lyssenko 2009]] · [[ref:tuomi2016_mtnr1b|Tuomi 2016]] · [[ref:scholl2015_cacna1h|Scholl 2015]] · [[ref:korean2025_cacna|Korean 2025]] · [[ref:field2006_cacna2d1|Field 2006]] · [[ref:hoppa2012_a2d|Hoppa 2012]]",
+
+    recovWindowTitle: "回復ウィンドウ:CaMKII脱リン酸化",
+    recovWindowSub: "現代生活はCa²⁺恒常性回復に必要なEMFフリー時間を排除する",
+    recovWindowDesc: "CaMKII脱リン酸化(自己リン酸化状態からの回復)にはCa²⁺過負荷のない時間が必要。EMFフリーの睡眠がこの回復を可能にする。しかし現代の環境はEMFフリー時間を排除する:WiFiルーター24/7、ベッドサイドの携帯電話、就寝までのLED照明、Bluetoothデバイス。回復因子(R)はこれを捕捉する:EMFフリー時間がゼロに近づくと、分母1/Rは1.0に近づき(回復なし)、累積損傷が加速する。",
+    recovWindowEvidence: "シフト勤務:メタボリックシンドロームの[[ref:shiftwork_mets2025|OR 1.17]] -- 夜勤はメラトニンと回復ウィンドウの両方を撹乱。[[ref:walker2017_why_we_sleep|Walker(2017)]]:一晩の睡眠不足 → テストステロン-15%、NK細胞-70%。良い睡眠は回復させる → 回復ウィンドウは実在。COVIDロックダウンの自然実験:WiFi + LED + 複数デバイスで24時間/日在宅 → 回復ウィンドウ排除 → T2D加速[[ref:t2d_covid2024|2.90%から3.52%/年]]。",
+    recovWindowIntervention: "モデルが予測する最も単純な介入:EMFフリーの寝室。寝室からWiFiルーターを撤去、夜間の携帯電話機内モード、就寝前の白熱灯またはろうそくの光への切替。他の生活習慣変更なしに回復ウィンドウを回復させる。",
+    recovWindowPred1: "RECOV-1:EMFフリー寝室 → 2週間以内にメラトニンレベルが測定可能に増加",
+    recovWindowPred2: "RECOV-2:CaMKII脱リン酸化の最小回復ウィンドウ:4-6時間EMFフリー",
+    recovWindowRef: "[[ref:walker2017_why_we_sleep|Walker 2017]] · COVIDロックダウンデータ · シフト勤務メタアナリシス",
+
+    mtorSub: "EMF、カロリー制限、ラパマイシンが同じ老化経路に収束する",
+    mtorTitle: "mTOR収束仮説",
+    mtorDesc1:
+      "mTORはEMF誘発Ca²⁺流入が老化、出生率、がん経路と収束する下流統合器。Sempou経路:EMF → VGIC → Ca²⁺↑ → mTOR過活性化 → オートファジー↓、老化細胞蓄積、ミトコンドリア品質管理↓、慢性炎症↑。",
+    mtorDesc2:
+      "メトホルミンはAMPKを活性化し、mTORを抑制する -- EMF誘発経路の正反対。仮説:メトホルミンの長寿効果は本来の抗老化ではなく、EMF加速老化に対する抗老化。自然なEMF環境(アーミッシュ)では利益は最小であるべき。",
+    mtorEqExplain:
+      "EMFは正規化暴露(0 = インフラなし、1 = 現代都市)、減少因子にはメトホルミン(0.30)、ラパマイシン(0.85)、カロリー制限(0.20)、間欠的断食(0.10)が含まれる。",
+    mtorThreeTitle: "3つの流行病、1つのメカニズム",
+    mtorAging: "老化",
+    mtorAgingDesc:
+      "mTOR↑ → オートファジー↓、老化↑、炎症↑、ミトコンドリア↓ → 加速老化",
+    mtorFertility: "出生率",
+    mtorFertilityDesc:
+      "mTOR↑ → 精原細胞分化↓、卵胞バーンアウト↑、AMH↓ → TFR↓",
+    mtorCancer: "がん",
+    mtorCancerDesc:
+      "mTOR↑ → 増殖↑、腫瘍増殖↑、転移↑ → がんリスク↑",
+    mtorPredTitle: "検証可能な予測",
+    mtorPredColId: "ID",
+    mtorPredColPred: "予測",
+    mtorPredColTest: "検証",
+    mtorPreds: [
+      { id: "E1", pred: "メトホルミンの長寿効果は高EMF環境でより大きい", test: "UK CPRDを都市/農村で層別化" },
+      { id: "E2", pred: "アーミッシュのメトホルミン使用者は一般集団より小さい長寿ボーナスを示す", test: "アーミッシュ糖尿病コホート比較" },
+      { id: "E3", pred: "ブルーゾーンの長寿優位は4G/5G到着とともに消失する", test: "沖縄、サルデーニャ、イカリアのコホート追跡" },
+      { id: "E4", pred: "CR実験の効果量は10年ごとに増加する(研究室EMFの上昇)", test: "メタアナリシス:効果量 vs 出版年" },
+      { id: "E5", pred: "TAME試験の利益はEMF暴露により層別化される", test: "都市 vs 農村のサブグループ分析" },
+      { id: "E6", pred: "シャバット(週25時間EMFフリー)が間欠的mTOR断食として機能し、超正統派のTFRと長寿を支持する", test: "超正統派 vs 世俗的イスラエルコホート" },
+    ],
+
+    fourRoutesTitle: "EMF → TFRの5つの独立経路",
+    fourRoutesSub: "性腺、概日、下垂体、自律神経、神経発達 -- 各々が単独で十分",
+    fourRoutesDesc: "BERMはEMF暴露が出生率を低下させる5つの独立した生物学的経路を特定する。各経路は異なるメカニズムと標的組織を通じて動作する。重要なのは、各経路が独立にTFRを低下させるのに十分であること -- 並列に動作し、直列ではない。一つの経路をブロック(例:性腺経路への抗酸化剤補充)しても効果は排除されない。4つの他の経路が活性のままだからである。",
+    fourRoutesGonadal: "経路1:性腺(確立)",
+    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> 精子DNA損傷 + ライディッヒ細胞StAR抑制 -> テストステロン低下 + 精子形成障害。標的組織:精巣。エビデンスレベル:E(23-28のブロッカー研究)。主チャネル:RF + ELF。",
+    fourRoutesCircadian: "経路2:概日(確立)",
+    fourRoutesCircadianDesc: "EMF -> CRY/RPM -> 概日時計撹乱 -> メラトニン抑制 -> HPG軸撹乱 + 卵胞液中の酸化ストレス。標的組織:松果体、SCN。エビデンスレベル:E。主チャネル:RF(磁気成分)。",
+    fourRoutesPituitary: "経路3:下垂体(新規)",
+    fourRoutesPituitaryDesc: "EMF -> ゴナドトロフのCav3 T型チャネル -> FSH/LH分泌撹乱 -> 下流の性腺機能障害。下垂体はBBBの外にあり直接暴露される。すべてのホルモン産生細胞がCav3を発現。この経路は性腺損傷とは独立に出生率を低下させる。標的組織:下垂体。エビデンスレベル:E。主チャネル:ELF + RF。",
+    fourRoutesAutonomic: "経路4:自律神経(新規)",
+    fourRoutesAutonomicDesc: "EMF -> 洞房結節Cav3.1 -> HRV低下 -> 迷走神経トーン低下 -> HPA軸過活性化 -> 慢性コルチゾール -> HPG交差抑制。HRVは感度の高い早期バイオマーカー。標的組織:洞房結節、迷走神経。エビデンスレベル:E。主チャネル:ELF(50 Hz)。",
+    fourRoutesNeurodevelopmental: "経路5:神経発達(導出)",
+    fourRoutesNeurodevelopmentalDesc: "EMF → 臨界的発達ウィンドウ中のVGCC/Ca²⁺ → 脳の性分化、PFC成熟、アイデンティティ形成の撹乱。化学的EDC(BPA、フタル酸エステル)と同じメカニズム。化学的EDC効果と加算的。阻止:出生前EMF減少、B2/グルタチオンサポート。標的組織:胎児/乳児の脳。エビデンスレベル:L*(導出予測 -- DIFF-1 AGD検証待ち)。主チャネル:RF + ELF。",
+    cascadeNeurodevExt: "拡張分析:ASD、ADHD、双極性障害、うつ病、統合失調症にわたる共有遺伝的脆弱性としてのCACNA1C。7つの発達チャネルが同じCa²⁺経路を通じてEMFと脳の性分化を結ぶ。完全な分析は脳モジュロームを参照。",
+    fourRoutesImplication: "臨床的意味:一つの経路のみを標的とする介入(例:経路1への抗酸化剤)は部分的だが不完全な保護を示す。完全な保護にはEMF削減(すべての経路に同時に対処)または多標的介入戦略が必要。",
+
+    modulationTitle: "なぜ変調がSARより重要か",
+    modulationDesc: "大規模研究([[ref:fert-steril-2023-phone-sperm-trend|Fertility and Sterility 2023]])は携帯電話使用と精子濃度低下の関連を見出した -- しかし関連は2012-2018より2005-2007でより強かった。BERMはSchwan方程式を通じてこれを説明する:生物学的活性成分はRFキャリアではなくそのELF変調エンベロープ。GSM(2G):217 Hzの硬いTDMAパルス、約100%の変調深度 → 強いELF成分 → 大きなT型分岐効果。LTE(4G):OFDM、約30-50%の変調深度、低い送信電力 → 弱いELF成分 → 小さい効果。これは「放射線が少ないほど安全」を援用せずに時間トレンドを予測する。放射線の量は似ている可能性があるが、変調構造が変化した。",
+    modulationWarning: "注:この時間トレンドは相関である。他の要因が同時に変化した(電話位置、使用パターン、他の暴露)。Schwanの説明は簡潔だが唯一の可能性ではない。",
+
+    modulomeSub: "分子スピン物理から集団パターンまでの12層感受性モデル",
+    modulomeTitle: "EMFモジュローム",
+    modulomeDesc: "12層モジュロームは分子スピン物理から集団レベルパターンまでの電磁感受性をマッピングする。各層はχを変調する -- 外部EMFと生物学的機能間の無次元結合。12層、10標的臓器、出生率低下への4つの独立経路。",
+
+    btnEvidence: "エビデンスを閲覧",
+    btnPredictions: "予測を表示",
+    mathSub: "Lindgren幾何学からTFR予測までの完全な導出",
+    mathTitle: "数学的基礎",
+    mathSubtitle:
+      "Lindgren幾何学からTFR予測までの完全な導出。すべての方程式は前の方程式から導出可能。「完全な導出」をクリックして中間ステップを表示。",
+
+    thresholdTitle: "テストステロン → TFR閾値モデル",
+    thresholdSub: "生物学的容量低下から人口学的崩壊への定量的リンク",
+    thresholdLead: "BERMモデルの最も強力な予測成分。テストステロン低下(年約1%、年齢非依存、5カ国で記録)は三相軌道を生む:静かな侵食 → 閾値超過 → 生物学的限界。モデルはフィンランドと韓国のデータに対して較正され、具体的で検証可能な国レベルの予測を生成する。",
+    thresholdPhase1Title: "フェーズ1:静かな侵食",
+    thresholdPhase1Desc: "テストステロンは低下しているが生物学的に十分。TFRは安定または文化的要因により緩やかに低下。生物学的容量が文化的需要を超えている。",
+    thresholdPhase2Title: "フェーズ2:閾値超過",
+    thresholdPhase2Desc: "累積T損失が約40%を超える。男性不妊の増加(T < 300 ng/dL)。生物学的容量が拘束条件となりTFRが加速的に低下。出生促進プログラムが失敗し始める。",
+    thresholdPhase3Title: "フェーズ3:生物学的限界",
+    thresholdPhase3Desc: "TFRが1.0を下回る。生物学的不能が支配的。意欲のあるカップルでも生殖補助技術が必要。IVF需要が指数関数的に増加。",
+    thresholdMathTitle: "数学的定式化",
+    thresholdMathT: "T(t) = T₀ × (1 - r)^(t - t₀)",
+    thresholdMathTFR: "TFR(t) = min( TFR_cultural(t), TFR_bio(t) )",
+    thresholdMathExplain: "TFR_bio < TFR_culturalの場合、生物学的容量が拘束条件。累積T損失約40%でのシグモイド遷移が観測パターンを生む:数十年の安定の後の急速な崩壊。",
+    thresholdTableTitle: "国別パラメータ",
+    thresholdTableCountry: "国",
+    thresholdTableRate: "r(%/年)",
+    thresholdTableSource: "出典",
+    thresholdTableCumul: "2024年累積",
+    thresholdTableThreshold: "閾値年",
+    thresholdTablePhase: "フェーズ",
+    thresholdFinlandTitle: "回顧的検証:フィンランド",
+    thresholdFinlandText: "フィンランドはモデルのロゼッタストーン。[[ref:perheentupa2013|Perheentupa(2013)]]は37%のコホート依存性T低下を記録(n=3,271、1972-2002)。TFRは40年間(1970-2010)1.63-1.87で安定し、2024年までに1.26に崩壊した。T低下の開始からTFR崩壊までの約35年の遅延は、累積的生物学的侵食が閾値に到達することと一致する。2005年にモデルが存在していれば、フィンランドの崩壊を10-15年早く予測できたはず。",
+    thresholdProjectionsTitle: "国別TFR予測",
+    thresholdProjections2030: "2030",
+    thresholdProjections2035: "2035",
+    thresholdChartTitle: "インタラクティブ閾値モデル",
+    thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]]はBMI調整後にヌル結果を報告。モデルはBMIを交絡因子ではなく媒介因子(EMF → 代謝撹乱 → BMI↑ → T↓)と解釈する -- BMI調整はシグナルの一部を除去する。下の因果構造セクションを参照。",
+    thresholdFootnoteEstimated: "査読済みの世俗的Tトレンド研究は利用不可。韓国の率は最高のグローバルEMF密度から推定;日本の率はフィンランドの記録された低下との類推により推定。これらは暫定的であり、直接データが利用可能になり次第更新される。",
+    thresholdCaveat: "T低下率は査読済み縦断研究からの年齢非依存の世俗的トレンド。韓国と日本の率は推定。40%閾値は較正値であり導出値ではない。予測は現在の率の継続を仮定。",
+
+    causalStructureTitle: "なぜBMIは低下を説明しないのか",
+    causalStructureLead: "持続的な反論は、環境暴露ではなく肥満の増加が世俗的テストステロン低下を説明するというもの。Pearlのフレームワークを用いた正式な因果分析は、BMIが交絡因子(独立の原因)ではなく媒介因子(因果経路上)であることを明らかにする。媒介因子の調整は実際のシグナルを除去する。",
+    causalDagConventionalTitle: "従来の解釈",
+    causalDagConventionalCaption: "交絡因子としてのBMI:調整は正しく、ヌル結果 = 低下なし",
+    causalDagBermTitle: "BERMの解釈",
+    causalDagBermCaption: "媒介因子としてのBMI:調整は媒介シグナルを除去、ヌル = 過剰補正",
+    causalMazurTitle: "体重安定テスト:[[ref:mazur2013|Mazur et al. 2013]]",
+    causalMazurText: "991人の米空軍退役軍人を20年間(1982-2002)6回の測定で追跡。体重を維持した男性でもテストステロンの117 ng/dL(19%)を失った。これは統計的調整なしにBMIを制御する自然実験。",
+    causalMazurQuote: "テストステロンの世俗的低下の理由は特定していないが、肥満の増加を十分または主要な説明として除外する。",
+    causalMazurSource: "[[ref:mazur2013|Mazur, Westerman & Mueller 2013]], PLOS ONE",
+    causalPathwayTitle: "定量的経路分解",
+    causalPathwayDirect: "直接経路",
+    causalPathwayDirectDesc: "EMF -> Cav3.2/メラトニン/コルチゾール -> T低下",
+    causalPathwayDirectEst: "~117 ng/dL / 20年(約67%)",
+    causalPathwayMediated: "媒介経路",
+    causalPathwayMediatedDesc: "EMF -> 代謝メカニズム -> BMI増加 -> アロマターゼ/SHBG -> T低下",
+    causalPathwayMediatedEst: "~58 ng/dL / 20年(約33%)",
+    causalPathwayCaveat: "これらの比率は近似であり、[[ref:mazur2013|Mazur 2013]](体重安定群 vs 体重増加群)から導出。正式な媒介分析(SEM)がこれらの推定を精緻化できる。",
+    dagDietLifestyle: "食事 / 生活習慣",
+    dagBmiAdjCorrect: "BMI調整:正しい",
+    dagNullNoDecline: "ヌル = 実際の低下なし",
+    dagMetabolicPaths: "6つの代謝",
+    dagPathways: "経路",
+    dagMediated: "媒介(約33%)",
+    dagDirect: "直接(約67%)",
+    dagOvercorrection: "BMI調整:過剰補正",
+    dagRemoves: "実際のシグナルの約33%を除去",
+    causalReconciliationTitle: "「矛盾する」結果の調和",
+    causalReconciliationLead: "因果構造が理解されれば、ヌル結果を報告するものを含むすべての既存研究が一致する:",
+    causalReconciliationStudies: [
+      { referenceId: "travison2007_v2", study: "Travison 2007", bmiAdj: true, result: "-1.0%/年", interpretation: "直接経路を捕捉(BMI調整済み)。同時期にELFプライミングが増加(WiFi + 3G普及)" },
+      { referenceId: "mazur2013", study: "Mazur 2013", bmiAdj: false, result: "-0.95%/年", interpretation: "直接経路が自然に確認(体重安定)。20年 = 層2→4。直接経路約67%。プライミング:同期間にPが1.5→2.0に増加" },
+      { referenceId: "chodick-2020-israel", study: "Chodick 2020", bmiAdj: false, result: "-1.02%/年", interpretation: "総効果(直接 + 媒介)。イスラエル:高RF密度 → 強い層効果" },
+      { referenceId: "santi2025", study: "Santi 2025", bmiAdj: true, result: "TとLHの低下", interpretation: "直接経路 + HPG撹乱確認。LH↓は下垂体撹乱を示す。脳は最もプライミングされた臓器(近接場24/7)。CACNA1C遺伝子型がLH応答を調節" },
+      { referenceId: "andersson-2007-denmark", study: "Andersson 2007", bmiAdj: true, result: "ヌル", interpretation: "媒介経路が優位 → BMI調整がシグナルを除去。デンマーク56°N:夏に実施なら → CRY飽和 → より小さい効果。季節補正でシグナルが明らかに" },
+      { referenceId: "nyante2012_nhanes", study: "Nyante 2012", bmiAdj: true, result: "ヌル", interpretation: "アッセイ変更 + 媒介因子除去 → シグナルマスク。米国(60 Hz) vs ヨーロッパ(50 Hz):異なるELF周波数 → 異なるCRY干渉プロファイルの可能性" },
+    ],
+    causalSantiTitle: "[[ref:santi2025|Santi 2025]]:テストステロンとLHの両方が低下",
+    causalSantiText: "史上最大のメタアナリシス(1,064,891人の男性、1971-2024)は、血清テストステロンが年齢、BMI、アッセイ法に独立して低下していることを発見した。重要なことに、LH(テストステロン産生を駆動する下垂体シグナル)も低下していることが判明 -- 単純な精巣不全を除外し、視床下部-下垂体レベルでの撹乱を示唆する。",
+    causalSantiMechanism: "BERMはこれを正確に予測する:経路A(Cav3.2 -> StARを介した直接的ライディッヒ細胞)がテストステロンを減少させ、経路C(メラトニン -> GnRH)と経路D(コルチゾール -> HPG)がLHを減少させる。両ホルモンの同時低下は多レベル撹乱のシグネチャー -- 老化でも肥満でもない。",
+    causalSantiSource: "[[ref:santi2025|Santi et al. 2025]], J Endocrinol Invest 48:2721-2734",
+    pocketTitle: "ポケット移行",
+    pocketText: "2000年以降の精子低下率の倍増([[ref:levine2023_sperm|1.16%→2.64%/年]])は一つの行動変化と一致する:携帯電話が耳からポケットに移動した。3Gデータ機能により携帯電話は通話のみではなく継続的にポケットに留まるようになった。精巣は1日16時間近接場に入った。",
+    causalInverseTitle: "逆薬理学的テスト:テストステロン療法は肥満を逆転させる",
+    causalInverseText: "肥満がテストステロン低下を引き起こすなら、テストステロンを上げても体重に影響しないはず。しかし低ゴナドの肥満男性へのテストステロン療法は劇的な体重減少(クラスIII肥満で最大30 kg)を生み、双方向因果を確認:T抑制が体重増加を駆動し、逆方向だけではない。",
+    causalInverseData: [
+      { label: "クラスI肥満", loss: "-16.3 kg", bmi: "-5.52" },
+      { label: "クラスII肥満", loss: "-25.3 kg", bmi: "-8.15" },
+      { label: "クラスIII肥満", loss: "-30.5 kg", bmi: "-9.96" },
+    ],
+    causalInverseSource: "[[ref:saad2016|Saad et al. 2016]], registry studies",
+
+    whyPronatTitle: "なぜ2000億ドルで韓国の出生率を上げられなかったか",
+    whyPronatText: "BERMの三層アーキテクチャは出生率を生物学的容量(レベル1)、EMF-行動結合(レベル2)、文化的選択(レベル3)に分離する。出生促進政策 -- 現金ボーナス、育児休暇、保育補助金 -- はレベル3(動機)を対象とする。しかしレベル1(生物学的容量)が拘束条件になると、レベル3の報奨では補償できない。韓国の累積テストステロン損失は48%を超える。子供を望むカップルの増加する割合が自然妊娠できない。2000億ドルはモデルの間違ったレベルに対処した。",
+    whyPronatPrediction: "T-TFR-4:韓国のTFRは政策支出に関係なく2035年まで持続的に1.0を超えない。",
+    whyPronatFalsification: "反証:韓国TFRが3年以上1.0以上を持続。",
+
+    bioFloorTitle: "生物学的下限",
+    bioFloorText: "精子形成には血清濃度の50-100倍の精巣内テストステロンが必要。血清テストステロンが約200 ng/dL以下に低下すると精子形成は深刻に障害される。現在の低下率(約500 ng/dLベースラインから年1%)では:",
+    bioFloorTimeline: [
+      { year: "2024", value: "~320 ng/dL", note: "若年男性の集団平均" },
+      { year: "2035", value: "~285 ng/dL", note: "" },
+      { year: "2050", value: "~240 ng/dL", note: "" },
+      { year: "2070", value: "~190 ng/dL", note: "精子形成閾値以下" },
+    ],
+    bioFloorConsequence: "この下限以下では、IVFでも男性自身の精子を使用できない。ドナー精子、精巣精子採取、または将来の技術(体外精子形成)が必要になる。これは推測ではない -- 測定された低下率に算術を適用した結果である。",
+
+    sixFactorTitle: "なぜテストステロンが統合変数なのか",
+    sixFactorLead: "テストステロンはBERMフレームワークで最も情報量の多い単一バイオマーカーである。6つの独立した生物物理学的特性がEMF → VGCC → Ca²⁺メカニズムに対して例外的に感受性にする。",
+
+    diseaseCascadesTitle: "拡張疾患カスケード",
+    diseaseCascadesLead: "VGCC遺伝子ファミリー分析から導出された11の追加疾患カスケード。各カスケードは特定のVGCCサブタイプを独自のエビデンスレベルを持つ疾患メカニズムに結びつける。",
+    diseaseCascades: [
+      { num: 9, title: "近視", mechanism: "EMF → ドーパミン作動性アマクリン細胞のVGCC → DA放出撹乱 → 強膜伸長ブレーキ弱体化 + CRY → メラトニン → 概日眼成長調節異常。3つの収束チャネル。", level: "M", trend: "22.9%(2000) → 34%(2020) → 50%(2050)" },
+      { num: 10, title: "自己免疫疾患", mechanism: "EMF → T細胞のCa²⁺慢性摂動 → Ca²⁺-カルシニューリン-NFAT経路調節異常 → 自己反応性T細胞活性化。カルシニューリン阻害剤(シクロスポリン、タクロリムス)が標準治療 -- 薬理学的確認。", level: "M|C", trend: "米国有病率5%、世界的に+19.1%/年" },
+      { num: 11, title: "難聴と耳鳴", mechanism: "EMF → 内耳有毛細胞シナプスのCav1.3 → 慢性Ca²⁺過負荷 → 興奮毒性 → シナプス損傷。Bluetooth/イヤホンEMFが蝸牛に直接隣接。", level: "M|C", trend: "17.7%の若年成人が耳鳴を報告;10億人以上がリスク" },
+      { num: 12, title: "片頭痛", mechanism: "CACNA1A(P/Q型)GoF → CSD。CACNA1I(Cav3.3)バリアント → 片麻痺性片頭痛(OR 2.30)。女性:男性比2.5-4.3:1は性差のあるVGCCと一致。", level: "E", trend: "有病率増加中;発症年齢12-17" },
+      { num: 13, title: "睡眠構造障害", mechanism: "nRtのCav3.3 → 紡錘体ペースメーキング。TCニューロンのCav3.1 → デルタ波。T型ウィンドウ電流 → 徐波振動。EMF → 紡錘体/デルタ撹乱 → 睡眠の質↓。", level: "M|C", trend: "不眠症増加中;世界的に睡眠時間減少" },
+      { num: 14, title: "PCOS", mechanism: "4臓器収束:膵臓β細胞(Cav1+3 → インスリン↓) → 高インスリン血症 → 莢膜アンドロゲン↑ + 顆粒膜アロマターゼ → E2↓ + 下垂体Cav3 → LH/FSH↑。4つすべてがEMF感受性。", level: "M", trend: "生殖年齢女性の5-20%;2035年まで増加" },
+      { num: 15, title: "慢性疼痛", mechanism: "Cav3.2はDRG侵害受容器の主要疼痛チャネル。炎症性/神経障害性疼痛でアップレギュレート。雌のDRGニューロンはより顕著なCav3.2電流を示す → 性差。", level: "M|C", trend: "慢性疼痛の流行;数億人が罹患" },
+      { num: 16, title: "心不整脈(QT)", mechanism: "CACNA1C GoF → Cav1.2ウィンドウ電流↑ → QT↑。Timothy症候群:同じ変異からの極端なQT + 自閉症。", level: "E", trend: "Timothy:治療なしでは3歳前に大多数が死亡" },
+      { num: 17, title: "神経発達と性分化", mechanism: "7つの因果チャネル × 3つの発達ウィンドウ。出生前:ライディッヒCav3 → T↓、アロマターゼ、下垂体。思春期:PFC、メラトニン、OT/AVP、島皮質。", level: "L*", trend: "ジェンダークリニック紹介:スウェーデン+19,700%;ASD-GD 6-26%" },
+      { num: 18, title: "TheraBionic:メカニズムの証明", mechanism: "FDA承認(2019)のHCC用デバイス。27.12 MHz、腫瘍特異的周波数でAM。SARは携帯電話の100-1000倍以下。メカニズム:EMF → Cav3.2 → Ca²⁺ → HCC分化。非熱EMF → VGCCを確認。", level: "E", trend: "進行HCCで34%の生存率向上" },
+      { num: 19, title: "メタボリックシンドローム / 肥満", mechanism: "6つの収束EMF → Ca²⁺経路:(1)ARCグリアCa²⁺ → AgRP/NPYによる視床下部食欲↑、(2)CaMKII/CREB → UCP1およびSERCA2b/RyR2撹乱によるBAT熱産生↓、(3)L型VGCCによるβ細胞インスリン動態↓、(4)サイロトロフのCav3による甲状腺軸 → 代謝率↓、(5)メラトニン → 代謝概日撹乱、(6)脂肪細胞Ca²⁺ → 脂肪生成↑。CaMKIIはすべての経路を結ぶ収束分子。[[ref:klimentidis2010|Klimentidis]]のパラドックス:管理された食事の実験動物を含む24集団、8種すべてが体重増加(p = 1.2×10⁻⁷)。肥満は多因子 -- EMFは食事/運動/遺伝学で説明できない残差を説明する一因。", level: "M", trend: "世界の肥満:4%(1975) → 13%(2016) → 42%(米国2024)" },
+    ],
+    vgccDiagramTitle: "VGCC遺伝子ファミリー",
+    vgccDiagramSubtitle: "6遺伝子、6疾患クラスター、1メカニズム",
+    emfBarTitle: "静止電位でのEMF感受性階層",
+    emfBarSubtitle: "約-70 mV膜電位での相対活性化確率",
+
+    epistemic:
+      "認識論的注記:上の方程式は現在のモデル仕様(BERM v17)。パラメータ値は観測データに対して較正されており、新しいエビデンスが利用可能になれば更新される。モデルは明示的に反証可能に設計されている -- 予測が失敗すればモデルは誤り。治療デバイスのパラドックス(24以上の規制承認された非熱EMFデバイスカテゴリー、DCからUV)は非熱生物活性を仮説ではなく規制上の事実として確立する。",
+    lbermRef:
+      "正式なヤコビアン積構造(第17章)、証明義務レジスターと安全システムは基本文書(LBERM_final.docx)に記載されている。",
+    svgSpermDamage: "精子損傷",
+    svgCircadian: "概日",
+    svgMelatoninDown: "メラトニン↓",
+    svgCa2Entry: "Ca²⁺流入",
+    svgCortisolUp: "コルチゾール↑",
+    svgTestosteroneDown: "テストステロン↓",
+    svgAutophagyDown: "オートファジー↓",
+    svgCellGrowthDown: "細胞増殖↓",
+    svgTfr: "TFR",
+    svgDecline: "低下",
+    svgFiveRoutesAria: "TFR低下への5つの経路",
+    brainModulomeLink: "脳モジュローム",
+    routeGonadal: "性腺",
+    routeAutonomic: "自律神経",
+    routeNeurodevel: "神経発達",
+    routeLabel: "経路",
+    routeParallelCaption: "各経路は独立に十分 -- 並列に動作する",
+    labelWarning: "警告",
+    labelPrediction: "予測",
+    labelFalsification: "反証",
+    colStudy: "研究",
+    colBmiAdj: "BMI調整",
+    colResult: "結果",
+    colBermInterpretation: "BERM解釈",
+    countryDenmark: "デンマーク",
+    countryFinland: "フィンランド",
+    countrySouthKorea: "韓国",
+    countryJapan: "日本",
+    estHighestEmf: "推定(最高EMF)",
+    estFinlandAnalogy: "推定(フィンランド類推)",
+    layerMilitaryRadar: "軍事レーダー",
+    layerWeatherRadar: "気象レーダー",
+    layerMobileNetworks: "携帯電話ネットワーク",
+    layerWindTurbines: "風力タービン",
+    layerDisplayTransition: "ディスプレイ移行",
+    layerSmartMeters: "スマートメーター",
+    layerIndoorLed: "屋内LED",
+    layerSolarInverters: "ソーラーインバーター",
+    layerStreetLed: "街灯LED",
+    pharmEvidenceLink: "薬理学的エビデンス:BERM経路に収束する8つの薬物クラス →",
+    svgVgccPathway: "VGCC経路",
+    svgAutophagy: "オートファジー",
+    svgProteinSynthesis: "タンパク質合成",
+    svgCellGrowth: "細胞増殖",
+    svgImmuneRegulation: "免疫調節",
+    svgIntegrator: "統合器",
+    svgCalories: "カロリー",
+    svgAging: "老化",
+    svgCounteracts: "(対抗)",
+    svgFertilityDown: "出生率↓",
+    svgCancer: "がん",
+    svgMtorSharedHub: "mTORは共有ハブ -- 3つの流行病、1つのメカニズム",
+    svgInflammation: "炎症",
+    svgCortisol: "コルチゾール",
+    svgMelatonin: "メラトニン",
+    svgPosFeedback: "正のフィードバック",
+    svgNegFeedback: "負のフィードバック",
+    svgHub: "ハブ",
+    svgFeedbackCaption: "17の正のフィードバックループ -- 任意のエントリーポイントがネットワーク全体を活性化する",
+    svgVgccHierarchyCaption: "T型(Cav3)チャネル >> Cav1.3（低閾値L型）>> Cav1.2（活動電位時のみ）。CaMKIIフィードバックがCav3.2閾値を経時的により負にシフトさせる。",
+    svgRecoveryBarAria: "回復率棒グラフ",
+    svgRecoveryCaption: "回復率(α): 1.0 = 完全回復, 0.0 = 不可逆",
+    svgTechLayersAria: "技術層累積暴露チャート",
+    layerPowerGrid: "電力網",
+    layerRadioTv: "ラジオ/TV",
+    layerCellular: "携帯電話",
+    svgCumulativeExposure: "累積暴露",
+    svgTechLayersCaption: "5つの技術層：各世代が前の層に積み重なる",
+    conventionalLabel: "従来の説明：",
+    layerExplanationLabel: "層の説明：",
+    conventional: "従来",
+    anomalyUnexplainedDecline: "原因不明の低下",
+    anomalyUnexplained: "原因不明",
+    anomalyWifiLedLayers: "WiFi+LED層",
+    anomalySocialMedia: "ソーシャルメディア",
+    anomalySomeTheory: "SNS理論",
+    anomalyTripleChannel: "トリプルチャネル",
+    anomalySedentary: "座位行動",
+    anomaly247Emf: "24時間EMF",
+    anomalyProsperity: "繁栄",
+    anomalyElectrificationLag: "電化の遅延",
+    anomalyPhysicalLabor: "肉体労動",
+    anomalyZeroLayers: "ゼロ層",
+    colCountry: "国",
+    colActual: "実測値",
+    colNote: "注記",
+    countryFinlandName: "フィンランド",
+    countrySouthKoreaName: "韓国",
+    countryUsaName: "アメリカ",
+    countryAmishName: "アーミッシュ",
+    colDriver: "駆動要因",
+    replacementLabel: "置換水準",
+    countrySKoreaShort: "韓国",
+    countryIndiaName: "インド",
+    colAxis: "軸",
+    colTargetOrgan: "標的臓器",
+    colConsequence: "結果",
+    svgGenesCascadeAria: "15遺伝子カスケード図",
+    tierInflux: "流入",
+    tierModulation: "調節",
+    tierIntegration: "統合",
+    tierExtrusion: "排出",
+    tierSignaling: "シグナル伝達",
+    svgGenesCascadeCaption: "Ca²⁺カスケード：5つの機能層にわたる15遺伝子",
+    colGene: "遺伝子",
+    colProtein: "タンパク質",
+    colBermRole: "BERMにおける役割",
+    colKeyVariant: "主要変異",
+    colDiseases: "疾患",
+    colEvidence: "証拠",
+    colVariant: "変異",
+    colEffect: "効果",
+    ehsAssay: "アッセイ",
+    ehsLymphocyte: "リンパ球自己リン酸化",
+    ehsElevated: "上昇",
+    ehsGenotyping: "遺伝子型判定",
+    ehsCalciumVariants: "カルシウムチャネル変異",
+    ehsRiskAlleles: "リスクアレル",
+    ehsSignalingMarkers: "シグナルマーカー",
+    ehsHighRisk: "高リスクプロファイル",
+    ehsPolygenicScore: "ポリジェニックリスクスコア",
+    ehsOverallAssessment: "EMF感受性の総合評価",
+    ehsDiagnosticClass: "EHS診断分類",
+    ehsLowModHigh: "低 / 中 / 高",
+    whyDisagreeTitle: "なぜ研究は矛盾するのか",
+    whyDisagreeSub: "8つの未制御モデレーターが数十年にわたる「矛盾したエビデンス」を説明する",
+    whyDisagreeDesc: "EMF研究は数十年にわたり矛盾する結果を生み出してきた。BERMは、どの研究が陽性結果を示し、どの研究がヌル結果を示すかを予測する8つの未制御モデレーターを特定する：",
+    modSeason: "季節",
+    modSeasonDesc: "CRY磁気受容体の感受性は光依存性である。冬季はCRYの感受性が高まり → メラトニンに対するEMF効果が強くなる。子牛で実証された（[[ref:halgamuge2015|Halgamuge 2015]]）。",
+    modGenotype: "遺伝子型",
+    modGenotypeDesc: "CACNA1C rs1006737 Aアレル → より多くのCav1.2 → より大きなCa²⁺応答。[[ref:sousouri2025|Sousouri 2025]]（ETH）：CACNA1C遺伝子型が5G睡眠応答を決定する。",
+    modLabElf: "実験室のELF背景",
+    modLabElfDesc: "50/60 Hz電力網は8〜10日でVGCC発現を上方制御する（[[ref:sun2016_elf_vgcc|PMC4757866]]）。ELF背景が高い実験室は細胞を「プライミング」する。",
+    modNighttimeEmf: "夜間EMF",
+    modNighttimeEmfDesc: "寝室のWi-Fiルーター vs. EMFフリーの夜 → 異なるCaMKII回復状態 → 実験開始時の異なるベースラインCa²⁺。",
+    modSpeciesPriming: "種 / プライミング",
+    modSpeciesPrimingDesc: "実験室環境での動物研究（24時間ELFプライミング、均質な遺伝的背景）は92%で陽性結果を示す。異質な環境でのヒト研究は35%である。どちらも正しい — 実験動物は慢性的にプライミングされている（VGCC発現上昇、[[ref:sun2016_elf_vgcc|PMC4757866]]）。p=0.002。",
+    modDuration: "持続時間",
+    modDurationDesc: "慢性暴露（＞1週間）は92%で陽性結果を示す。急性暴露（1〜2夜）は31%である。CaMKIIの自己リン酸化には累積Ca²⁺負荷が必要である。p=0.001。",
+    modPulsation: "パルス",
+    modPulsationDesc: "パルス信号は88%で陽性結果を示す。CWは48%である。IFO-VGIC機構には変動する電磁場が必要である。p=0.048。",
+    modVitaminD: "ビタミンD状態",
+    modVitaminDDesc: "ビタミンD（1,25(OH)₂D₃）はCACNA1C/1D mRNAを下方制御する（[[ref:vdh_lvscc|J Neurosci 2001]]）。ビタミンD欠乏 → VGCC過剰発現 = ELFプライミングと同じ状態。ビタミンD欠乏集団（冬季、高緯度）の研究では、より強いEMF効果が示されるはずである。",
+    modThreePredictors: "3つのモデレーターが統計的有意性で研究結果を予測する：",
+    modAnalysisBasis: "3つのエンドポイントにわたる29研究の分析に基づく。[[ref:weller2025_dna|Weller 2025]]（n=517）により検証された。",
+    predRepl1Label: "予測REPL-1：",
+    predRepl1Desc: "公開済みのEMFバイオアッセイ研究50〜100件を後ろ向きに分析すると、これら8つのモデレーターが陽性結果とヌル結果を有意に予測することが示される。新しいデータなしで検証可能である。",
+    modEpistemicNote: "認識論的レベル：8モデレーターフレームワークはBERMの統合（Mレベル）。個々のモデレーターには経験的な裏付けがある（Eレベル）。",
+    dnaBelow58Title: "DNA損傷の58%がICNIRP制限値以下で発生",
+    dnaBelow58Desc: "[[ref:weller2025_dna|Weller et al.（2025）]]は517件の遺伝毒性研究を分析し、DNA損傷を報告した研究の58%が現行のICNIRP指針を下回る暴露レベルを使用していたことを示した。[[ref:ivancsits_dna_recovery|Ivancsitsの研究]]では35 µTでDNA鎖切断が観察された — ICNIRPの職業暴露限度200 µTの5分の1未満である。",
+    dnaBelow58Mechanism: "ICNIRP制限値は熱的影響を防ぐために設計されている。EMFによるDNA損傷は、電位依存性カルシウムチャネルの機能障害を介して作用する非熱的メカニズムである。",
+    dnaRepairTitle: "DNA損傷は9時間で回復する — 暴露が止まれば",
+    dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]]は、EMF誘発DNA鎖切断が暴露停止後9時間以内に正常へ戻ることを示した。これはBERMの回復ウィンドウを定量化する：十分なEMFフリー時間が与えられれば、身体はEMF誘発損傷を修復できる。",
+    dnaModernEnv: "24時間稼働のWiFi、LED照明、ベッド内のスマートフォンがある現代環境は、この回復ウィンドウを完全に取り除く。典型的な現代の寝室にはEMFフリーの回復時間がまったくない。",
+  },
+  fr: {
+    title: "Documentation du modele",
+    subtitle:
+      "Documentation complete du modele bio-electromagnetique de reproduction (BERM) : architecture a trois niveaux, voies causales, equations de couplage et dynamiques de recuperation.",
+    metaTitle: "Documentation du modele - Extinction Field",
+    metaDesc:
+      "Documentation du modele BERM : architecture a trois niveaux, voies causales, equations et dynamiques de recuperation.",
+
+    archTitle: "Architecture a trois niveaux",
+    archDesc:
+      "BERM decompose le declin de la fecondite en trois couches causales distinctes. Chaque niveau possede sa propre dynamique, echelle temporelle et base de preuves. L'indice synthetique de fecondite (TFR) d'un pays est le produit des trois niveaux, pas leur somme -- chacun agit comme multiplicateur des autres.",
+    level1Label: "Niveau 1",
+    level1Title: "Capacite biologique",
+    level1Desc:
+      "La fecondite physiologique maximale compte tenu des expositions environnementales actuelles. Inclut la qualite du sperme (concentration, motilite, fragmentation de l'ADN), la qualite ovocytaire, le milieu hormonal et l'integrite de la barriere hemato-encephalique (BBB). C'est le niveau le plus directement affecte par l'exposition EMF.",
+    level2Label: "Niveau 2",
+    level2Title: "Couplage EMF-comportemental",
+    level2Desc:
+      "Comment l'utilisation des appareils personnels interagit avec l'exposition EMF ambiante. Une personne dans un environnement a forte exposition ambiante qui porte egalement un telephone subit un effet de couplage non lineaire. Ce niveau capture l'interaction entre l'exposition au niveau de l'infrastructure et au niveau personnel.",
+    level3Label: "Niveau 3",
+    level3Title: "Culture veritable",
+    level3Desc:
+      "Choix volontaires de fecondite independants de la capacite biologique. Education, urbanisation, acces a la contraception, opportunites economiques et normes culturelles. Ce composant existe dans tous les modeles demographiques ; BERM ajoute les couches biologiques et EMF en dessous.",
+
+    causalTitle: "Diagramme des voies causales",
+    causalDesc:
+      "Le diagramme ci-dessous montre la chaine mecanistique complete de la geometrie de Lindgren au declin du TFR. Huit niveaux, 63 noeuds, 107 aretes. Deux voies co-primaires operent en parallele : la Voie A (VGCC → Ca²⁺ → ROS) a le support experimental le plus fort (23-28 etudes de blocage), tandis que la Voie B (RPM → CRY → perturbation circadienne) est le pont theorique le plus complet de la geometrie de Lindgren a la biologie (87,5 % du Hamiltonien RPM est derivable de l'ansatz metrique). La voie CRY/RPM a des preuves de soutien inter-especes : perturbation du compas magnetique chez les oiseaux ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), magnetoreception CRY-dependante chez la Drosophile ([[ref:yoshii2009|Yoshii 2009]]), modulation ROS CRY-dependante dans les cellules humaines ([[ref:sherrard2018|Sherrard 2018]]), et -- de maniere cruciale -- magnetoreception fonctionnelle dependante de la lumiere bleue chez l'humain ([[ref:chae2019|Chae et al. 2019]], PLOS ONE), indiquant que le substrat biologique est present chez l'espece modelisee par BERM. Les deux voies sont independamment soutenues au niveau de preuve E. Cliquez sur un noeud pour voir son mecanisme, son interpretation de Lindgren, sa formulation quantitative, ses parametres de recuperation et ses references cles. Les bordures des noeuds sont colorees par niveau epistemique.",
+    pathwayHierarchyNote:
+      "Les poids des voies refletent la calibration empirique sur les donnees communautaires (gradient Amish-Coree). Ils ne refletent pas la hierarchie theorique : la Voie B (CRY/RPM) est la voie PRIMAIRE car 87,5 % du Hamiltonien RPM est derivable de la geometrie de Lindgren, etablissant l'EXISTENCE du mecanisme comme consequence geometrique. La Voie A a un support experimental plus fort (23-28 etudes de blocage). L'ancienne objection δVm (δV_m ≈ 10⁻²¹ V de la geometrie seule) est maintenant resolue par le mecanisme de bifurcation du canal calcique de type T : l'equation de Schwan amplifie les champs externes a 7,5-15 μV a la membrane (37 % du bruit thermique a 1 V/m ambiant ; 184 % a 5 V/m personnel), et les canaux de type T (Cav3) operent a un point de bifurcation ou ~10 % sont ouverts au repos (courant de fenetre), les rendant sensibles a ces perturbations. La Voie D (HPA → testosterone) est egalement derivee via le meme mecanisme de type T : Schwan δVm → Cav3 → Ca²⁺ → StAR → testosterone ([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
+    rpmFrequencyNote:
+      "CRY/RPM ne repond pas a la frequence porteuse RF (900 MHz – 3,5 GHz). Son plafond de resonance est ~22,5 MHz ([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473). Les composants biologiquement actifs pour la Voie B sont le fond geomagnetique (B_DC) et les enveloppes de modulation ELF des signaux telecoms (GSM 217 Hz, WiFi 10 Hz beacon). Les effets de la porteuse RF elle-meme sont medies par la Voie A via la composante du champ electrique. Les deux voies ont des domaines frequentiels complementaires.",
+    vgccHierarchyTitle: "Hierarchie de sensibilite VGCC au potentiel de repos",
+    vgccHierarchyNote:
+      "Tous les canaux calciques voltage-dependants ne sont pas egalement sensibles a l'EMF. Au potentiel membranaire de repos (~−70 mV), la sensibilite EMF suit la hierarchie : Cav3 (type T) >> Cav1.3 >> Cav1.2. Les canaux de type T (Cav3.1, Cav3.2, Cav3.3) operent a un point de bifurcation ou ~10 % sont ouverts au repos (courant de fenetre), les rendant continuellement sensibles aux petites perturbations de tension. Cav1.3 est un « type L a seuil bas » qui s'active a ~−50 mV — 25 mV plus negatif que Cav1.2 (J Neurosci 2001). Ceci fait de Cav1.3 le canal principal dans les tissus necessitant une entree calcique soutenue a basse tension : le pacemaker du noeud sinusal et la transmission synaptique des cellules ciliees internes. Cav1.2, le type L canonique, s'active a ~−30 mV et n'est significatif que pendant les potentiels d'action — au repos sa contribution est negligeable. Cette hierarchie explique la vulnerabilite tissulaire specifique a l'EMF : les organes domines par Cav3 (testicules, hypophyse, surrenales, hippocampe) sont les plus affectes ; les tissus dependants de Cav1.3 (oreille interne, noeud sinusal) sont intermediaires ; les tissus domines par Cav1.2 (muscle squelettique, ventricule cardiaque) ne sont affectes que pendant l'activite electrique.",
+    camkiiTitle: "Retroaction positive CaMKII : sensibilisation cumulative",
+    camkiiNote:
+      "Une decouverte critique pour le modele d'exposition cumulative de BERM : la phosphorylation de CaMKII (proteine kinase II dependante du calcium/calmoduline) deplace le seuil d'activation de Cav3.2 vers des potentiels PLUS NEGATIFS (PMC9913649). Ceci cree une boucle de retroaction positive : EMF → afflux Ca²⁺ via Cav3.2 → activation de CaMKII → seuil de Cav3.2 se deplace vers la gauche → le canal devient PLUS sensible a l'EMF → plus d'afflux Ca²⁺. Ce mecanisme moleculaire explique pourquoi les effets EMF sont cumulatifs dans le temps : chaque episode d'exposition rend le systeme plus sensible aux expositions subsequentes. La retroaction CaMKII explique aussi pourquoi les etudes a court terme peuvent sous-estimer les effets a long terme — la sensibilisation se developpe sur des semaines a des mois d'exposition chronique. Prediction pharmacologique : les inhibiteurs de CaMKII (KN-93) devraient bloquer la sensibilisation progressive sans affecter les reponses EMF aigues.",
+
+    chiSub: "Courbe de saturation pour l'interaction exposition ambiante × personnelle",
+    chiTitle: "Equation de couplage chi de Lindgren",
+    chiDesc:
+      "Le couplage entre l'infrastructure EMF ambiante et l'exposition aux appareils personnels n'est pas lineaire. La fonction chi decrit une courbe de saturation : a de faibles niveaux ambiants, l'exposition personnelle ajoute peu ; a de hauts niveaux ambiants, l'exposition personnelle est deja dominee par le champ environnemental.",
+    chiExplain:
+      "est l'exposition ambiante normalisee (0 = pas d'infrastructure, 1 = saturation). La fonction approche asymptotiquement 1, ce qui signifie que l'effet marginal des appareils personnels diminue a mesure que l'exposition ambiante croit.",
+    chiWherePrefix: "Ou",
+
+    chiFiveTitle: "χ a cinq echelles",
+    chiFiveSub: "La regle de selection operant de la molecule a la population",
+    chiFiveDesc: "La fonction χ ne se limite pas au couplage ambiant-personnel. Elle apparait a chaque echelle biologique ou une variable de fond doit etre non nulle pour qu'une perturbation ait un effet. Le tableau ci-dessous montre cinq instanciations du meme principe mathematique.",
+    chiFiveColScale: "Echelle",
+    chiFiveColBg: "Fond (B)",
+    chiFiveColPerturb: "Perturbation",
+    chiFiveColExpr: "Expression χ",
+    chiFiveColVerify: "Verification",
+    chiFiveColLevel: "Niveau",
+    chiFiveLink: "Voir l'analyse complete →",
+
+    chiEvidenceTitle: "χ a travers les familles de preuves",
+    chiEvidenceSub: "Comment la regle de selection se manifeste dans six domaines biologiques independants",
+    chiEvidenceDesc: "La fonction χ n'est pas un construit abstrait — elle predit des modulations specifiques et testables dans six familles de preuves. Chaque famille possede son propre modulateur χ qui determine quand et avec quelle intensite l'EMF affecte ce systeme.",
+    chiEvidenceFamilies: [
+      { referenceId: "sakurai2008", family: "Diabete (cellules β)", chi: "χ(glucose) : K_ATP → V_mem → amorcage VGCC", mechanism: "Un glucose eleve ferme les canaux K_ATP → la membrane se depolarise → les VGCC sont amorces → χ ELEVE. Glucose bas → K_ATP ouvert → χ BAS.", prediction: "EMF × regime a IG eleve produit un risque synergique de diabete. Le jeune protege les cellules β.", verification: "Sakurai 2008 : ELF a reduit la secretion d'insuline de 30 %", level: "M|C" },
+      { referenceId: "yu2019_btb", family: "Qualite du sperme (BTB)", chi: "χ(integrite BTB) : la barriere attenue le champ effectif", mechanism: "BTB intacte protege les cellules spermatogeniques → χ bas. EMF ouvre la BTB → protection perdue → χ augmente → retroaction positive.", prediction: "Le declin de la qualite du sperme s'accelere dans le temps (super-lineaire).", verification: "Yu 2019 : RF 4G perturbe directement la BTB, dependant du temps", level: "E" },
+      { referenceId: "ulusoy2025_bbb_therapeutic", family: "Barrieres (BBB + BTB)", chi: "χ(permeabilite de la barriere) : modulateur continu", mechanism: "Les barrieres sont des modulateurs χ continus. Barriere partiellement endommagee = augmentation partielle de χ. Produit une amplification multiplicative.", prediction: "Relation dose-reponse super-lineaire avec l'exposition cumulative.", verification: "Ulusoy 2025 : degradation progressive de la BBB 30–360 min", level: "E" },
+      { family: "Especes sentinelles", chi: "χ(taux metabolique) : echelle M^(−0,25)", mechanism: "Petits animaux : taux metabolique specifique a la masse plus eleve → ROS de base plus eleves → χ plus eleve → reponse EMF plus grande.", prediction: "Les insectes et petits oiseaux sont affectes en premier ; les grands mammiferes ensuite.", verification: "L'ordre temporel correspond a l'echelle de masse corporelle", level: "M|C" },
+      { family: "Cardiaque (CRY2-TRPC1)", chi: "χ(etat CRY2) : dependant de la lumiere et du FAD", mechanism: "Si CRY2-TRPC1 opere dans les cardiomyocytes (comme dans les myoblastes, [[ref:yap2025|Yap 2025]]), l'entree calcique cardiaque est dependante de la lumiere/FAD.", prediction: "Utilisation du telephone la nuit → risque d'arythmie plus eleve que le jour.", verification: "Pas encore teste. Canaux TRPC confirmes dans les myocytes.", level: "L*" },
+      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Fenetre Adey-Blackman", chi: "χ(photocycle) × χ(temperature) × χ(orientation DC)", mechanism: "La « fenetre biologique » emerge de trois fenetres χ superposees. Les laboratoires controlant les trois obtiennent des resultats coherents.", prediction: "Le standard a cinq parametres resout 50 ans de debat sur la replication.", verification: "Blackman 1985–1991 : a demontre chaque fenetre independamment", level: "M" },
+    ],
+
+    twoChSub: "Decomposition ELF + IF + RF avec 12 couches technologiques et TCBM",
+    twoChTitle: "Modele d'exposition a trois canaux",
+    twoChDesc:
+      "L'exposition EMF effective totale se decompose en trois canaux de frequence — ELF (f < 300 Hz, modulation membranaire), IF (300 Hz – 10 MHz, intracellulaire/mitotique), RF (> 10 MHz, chimie de spin) — chacun pondere par son mecanisme biologique et module par le couplage chi.",
+    twoChExplain:
+      "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, ou les poids diagnostiques actuels sont w_ELF = 0,05, w_IF = 0,60, w_RF = 0,35. Ce sont des poids DIAGNOSTIQUES necessitant une calibration empirique, pas des parametres ajustes -- la decomposition a trois canaux est structurellement derivee de la biophysique membranaire, mais les poids relatifs sont incertains. Dans un pays avec une infrastructure cellulaire quasi nulle, meme une utilisation intensive du telephone contribue peu a l'exposition totale (chi est proche de zero). Inversement, dans un environnement completement sature, la composante personnelle est ajoutee presque lineairement a travers les trois canaux.",
+    twoChLayersTitle: "12 couches technologiques composant le champ ambiant",
+    twoChLayersDesc:
+      "Le terme ambiant n'est pas monolithique. Il se decompose en 12 couches technologiques independantes, chacune avec son propre moteur, calendrier de deploiement et profil frequentiel. Cette decomposition ameliore le pouvoir discriminant du modele car chaque couche agit comme un instrument orthogonal.",
+    ifoVgicNote: "Le mecanisme IFO-VGIC est soutenu par une revue exhaustive de 131 etudes ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics) : 95 % rapportent des effets oxydatifs de l'exposition RF/Wi-Fi. Ce consensus, coherent avec [[ref:yakymenko2016|Yakymenko et al. 2016]] (93/100), etablit la voie afflux Ca²⁺ → ROS comme le mecanisme non thermique le plus robustement documente.",
+    multiPathwayCa2Note: "La perturbation du Ca²⁺ au Niveau 4 opere par de multiples voies independantes : (1) oscillation forcee directe du senseur de tension S4 ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC) ; (2) dysregulation des reserves calciques intracellulaires via les recepteurs ryanodine (RyR) et les pompes SERCA ([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci). Les deux experiences de blocage pharmacologique (bloqueurs VGCC pour la voie 1 ; dantrolene pour RyR, CPA pour SERCA dans la voie 2) suppriment les effets EMF, confirmant le mecanisme. La nature multi-voies explique la sensibilite tissu-specifique : les cellules avec une haute densite VGIC ET de larges reserves intracellulaires de Ca²⁺ (neurones, cellules gonadiques) sont plus sensibles que les cellules a faibles reserves (keratinocytes — cf. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]] : resultats nuls dans les cellules cutanees). Note : [[ref:bertagna2025|Bertagna 2025]] concerne l'ELF (50 Hz), pas le RF — la traduction au RF n'est pas directe, mais la voie Ca²⁺ est partagee.",
+    fiveGReproNote: "Les premieres donnees testiculaires specifiques a la frequence 5G ([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics) : 3,5 GHz RF a induit des dommages testiculaires et oxydatifs chez le rat. La supplementation en CoQ10 a ameliore les dommages, demontrant la reversibilite du mecanisme — coherent avec le modele de fenetre de recuperation de BERM ou la capacite antioxydante determine les dommages journaliers nets. Ceci etend la base de preuves du stress oxydatif ([[ref:yakymenko2016|Yakymenko 2016]] : 93/100 ; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]] : 95 %) a la gamme de frequences 5G.",
+    pathwayCQuantNote: "La voie de suppression de la melatonine est quantitativement soutenue par une revue systematique PRISMA de 55 etudes ([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms) : 88 % des etudes animales de haute qualite rapportent une suppression de melatonine induite par l'EMF de 20-50 % par rapport au niveau basal. Cette suppression est biologiquement significative pour la pulsatilite du GnRH mais plus petite que la suppression induite par la lumiere (>90 %), coherent avec la modelisation v17_night_fraction() de BERM ou l'EMF est une composante du triple hit nocturne (melanopsine + CRY + melatonine), pas le seul moteur. Note methodologique : seulement 27 % des etudes revues repondaient aux normes elevees.",
+    pathwayCWeightNote: "Note sur le poids de la voie C : les 25 % de la voie C refletent a la fois sa fonction circadienne (CRY2 → transcription de genes d'horloge → melatonine → HPG) et sa fonction de signalisation calcique recemment decouverte (CRY2 → modulation TRPC1 → entree Ca²⁺ ; [[ref:yap2025|Yap et al. 2025]], Cells). TRPC1 est un canal TRP, pas un canal calcique voltage-dependant (VGCC). Les voies A et C sont donc pharmacologiquement separables : les bloqueurs VGCC de type L (nifedipine) bloquent les effets de la voie A mais pas les effets CRY2-TRPC1.",
+    cryIndividualVariationNote: "Variation individuelle : la sensibilite CRY est modulee par la pigmentation de l'iris (bleu > vert > brun ; [[ref:higuchi2007|Higuchi 2007]]), le statut nutritionnel en FAD ([[ref:hirano2017|Hirano 2017]]) et le sexe (hommes > femmes en magnetoreception aigue ; [[ref:chae2019|Chae 2019]]). Ces modulateurs peuvent expliquer une partie de la variance inter-individuelle et inter-population dans l'efficacite de la voie C. Le complexe physique CRY2-TRPC1 ([[ref:yap2025|Yap/Sherrard 2025]]) revele en outre que la voie C possede une seconde branche en aval : CRY2 module TRPC1 (un canal TRP, PAS un VGCC), permettant la signalisation calcique independamment de la voie A. Les voies A et C restent pharmacologiquement separables — les bloqueurs VGCC de type L inhibent A mais pas CRY2-TRPC1. Voir l'analyse detaillee a /evidence/eyes.",
+    cryDualSystemNote: "Systeme CRY double : la voie C opere a travers deux systemes cryptochrome distincts dans la retine. C1 (sensoriel) : la proteine CRY1 pleine longueur a ete trouvee exclusivement dans les segments externes des photorecepteurs a cones « bleus » sensibles aux courtes longueurs d'onde dans les retines humaines, de bonobos et de gorilles ([[ref:bartolke2025|Bartolke et al. 2025]], FASEB J). Cet emplacement loin des noyaux — dans la machinerie de phototransduction — suggere une fonction sensorielle au-dela de la regulation de l'horloge circadienne. Les lamelles membranaires empilees des segments externes des cones fournissent l'ordre orientationnel requis pour la magnetoreception directionnelle (cf. [[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol : CRY s'associe aux bicouches lipidiques de maniere ordonnee). C'est le systeme le plus affecte par la pigmentation de l'iris : les yeux bleus transmettent ~100× plus de lumiere aux cones bleus, augmentant l'activation de CRY1. C2 (circadien) : CRY2 est exprime dans les cellules ganglionnaires retiniennes, en particulier les ipRGC qui projettent au SCN. CRY2 forme un complexe physique avec TRPC1 ([[ref:yap2025|Yap et al. 2025]]), reliant la voie circadienne a la signalisation par canaux ioniques. Les deux systemes necessitent le FAD comme chromophore et dependent donc tous deux du statut en riboflavine (B2).",
+    recoveryWindowNote: "La distinction entre exposition aigue et chronique est empiriquement soutenue : [[ref:koivisto2000|Koivisto et al. (2000)]] ont observe une facilitation cognitive apres 30-60 min d'exposition (compatible avec une potentiation synaptique aigue mediee par le Ca²⁺), tandis que [[ref:panagopoulos2025_ifo|Panagopoulos et al. (2025)]] rapportent un stress oxydatif dans 95 % des etudes avec exposition chronique ou repetee. Le modele de fenetre de recuperation resout cette contradiction : 30 min + 23,5 h de recuperation → 97 % de reparation (pas de dommage net) ; 22 h d'exposition + 2 h de recuperation → 21 % de reparation (dommage cumulatif).",
+    lateralizationNote: "La structure spatiale du modele a deux canaux est empiriquement soutenue par les etudes de lateralisation : [[ref:eliyahu2006|Eliyahu et al. (2006)]] et [[ref:luria2009|Luria et al. (2009)]] ont demontre que l'exposition a 890 MHz affecte specifiquement l'hemisphere le plus proche du telephone. Ceci confirme que les effets EMF personnels sont locaux, pas systemiques — l'EMF s'attenue avec le carre de la distance — soutenant la premisse de BERM : telephone dans la poche → cible les testicules, telephone a l'oreille → cible l'hypothalamus.",
+    ifChannelTitle: "Canal IF : l'eclairage LED comme source principale",
+    ifChannelDesc:
+      "Le canal IF (1 kHz – 1 MHz) cible les cellules en division a travers la meme relation frequence-taille cellulaire que la therapie anticancereuse TTFields approuvee par la FDA. La source environnementale principale de champs IF est l'eclairage LED : chaque ampoule LED contient une alimentation a decoupage operant a 20-200 kHz avec des harmoniques s'etendant jusqu'aux megahertz. Un foyer typique contient 15-30 de ces sources ; un bureau typique 200-500. Les sources IF supplementaires comprennent les variateurs de frequence HVAC (5-50 kHz), les plaques a induction (20-75 kHz) et toutes les alimentations a decoupage (chargeurs d'ordinateur portable, chargeurs de telephone). Le mecanisme opere par oscillation ionique forcee (IFO-VGIC), avec un seuil biologique de 10⁻⁵ V/m ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) — des ordres de grandeur en dessous des emissions mesurees des drivers LED.",
+    tcbmTitle: "Modele biologique a trois canaux (TCBM)",
+    tcbmIntro:
+      "BERM v19.1 identifie trois canaux electromagnetiques independants, chacun avec des gammes de frequences, sources d'exposition, mecanismes biologiques et histoires temporelles distincts :",
+    tcbmElfTitle: "Canal 1 : ELF (0–300 Hz)",
+    tcbmElfDesc:
+      "Source : reseau electrique, cablage domestique, appareils menagers, transformateurs. Mecanisme : oscillation ionique forcee IFO-VGIC ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Histoire : present depuis l'electrification (annees 1880), stable depuis ~1970. Indicateur : consommation electrique residentielle (kWh par habitant). Toujours actif, 24/7, tout le foyer.",
+    tcbmIfTitle: "Canal 2 : IF (300 Hz – 10 MHz)",
+    tcbmIfDesc:
+      "Source : drivers LED (20-300 kHz), SMPS, VFD, plaques a induction. Mecanisme : Cyb5b → oscillations Ca²⁺ ([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]]), IFO a des frequences plus elevees. Histoire : quasi nul avant 2009, croissance exponentielle 2009-2019 (transition LED UE). Indicateur : part de marche LED × electricite residentielle. Pulse, dV/dt eleve, lacune reglementaire ([[ref:ijrb2022_if_review|IJRB 2022]]).",
+    tcbmRfTitle: "Canal 3 : RF (100 kHz – 300 GHz)",
+    tcbmRfDesc:
+      "Source : telephones mobiles, Wi-Fi, Bluetooth, stations de base, IoT. Mecanisme : chimie de spin RPM/CRY ([[ref:ritz2004|Ritz 2004]]), depot thermique a SAR eleve. Histoire : 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Indicateur : abonnements haut debit pour 100, abonnements mobiles. Module (encodage de donnees), personnel + ambiant.",
+    tcbmIfMitotic:
+      "Le mecanisme biologique du canal IF differe de l'ELF et du RF. Alors que l'ELF active principalement les canaux ioniques (IFO-VGCC) et le RF perturbe principalement la chimie des paires de radicaux (RPM/CRY), l'IF agit par une TROISIEME voie : la perturbation des structures macromoleculaires polaires pendant la division cellulaire (fuseau mitotique, dimeres de tubuline). La recherche TTFields demontre que les champs IF (100-500 kHz) exercent des forces directionnelles sur les elements intracellulaires polaires. Ce mecanisme est dependant de la frequence : les cellules cancereuses sont le plus affectees a 150-200 kHz, tandis que les cellules normales a ~50 kHz (Nature 2020). Les emissions des drivers LED (20-100 kHz) couvrent la gamme de sensibilite des cellules normales.",
+    tcbmWeightNote:
+      "Deux jeux de poids, deux objectifs : (1) Les poids DIAGNOSTIQUES du TCBM (w_ELF 0,05, w_IF 0,60, w_RF 0,35) sont des estimations theoriques derivees de la plausibilite du mecanisme — combien de dommages biologiques chaque canal pourrait produire en fonction de sa voie biophysique. Ceux-ci ne sont PAS ajustes aux donnees de fecondite et doivent etre traites comme des estimations a priori en attente de calibration empirique. (2) Les poids EMPIRIQUES transversaux (ELF ~60 %, RF ~40 %) sont calibres a partir de la regression sur 54 pays par rapport au TFR observe. Pourquoi ils different : la regression ne peut separer l'IF de l'ELF car la penetration LED correle avec l'electrification — donc l'« ELF 60 % » empirique contient probablement une grande composante IF cachee. Si les poids diagnostiques sont corrects, la majeure partie du signal empirique ELF est en fait de l'IF agissant a travers des indicateurs colineaires. Le test temporel T1 (LED-DID, apres l'interdiction UE de 2009) est concu pour resoudre cette colinearite.",
+    tcbmCrossSectional:
+      "Dans la formule transversale (54 pays, LOOCV RMSE 0,522), la consommation electrique residentielle sert d'indicateur principal car elle capture l'ELF (toujours present avec l'electricite) et correle avec l'IF (la penetration LED suit l'electrification). Le haut debit capture le RF. L'ELF porte ~60 % du signal transversal, le RF ~40 %. L'IF ne peut etre separe de l'ELF dans les donnees transversales car la penetration LED correle avec l'electrification. Le test temporel (T1 : LED-DID) est necessaire pour isoler la contribution independante de l'IF.",
+    tcbmWolframPlanned:
+      "Prevu : verification formelle en Wolfram Language de la structure de couplage a trois canaux, incluant la derivation symbolique du seuil IFO-VGIC a partir des premiers principes et la validation numerique sur le jeu de donnees transversal de 54 pays.",
+
+    recovSub: "Cascade de recuperation melatonine → cortisol → testosterone → sperme → fecondite avec echelles temporelles",
+    recovTitle: "Modele de recuperation a cinq couches",
+    recovDesc:
+      "Si l'exposition EMF etait reduite, differents systemes biologiques recupereraient a des taux differents. Le parametre α pour chaque couche represente la fraction de dommage reversible (1,0 = totalement reversible, 0,0 = permanent).",
+    recovColLayer: "Couche",
+    recovColAlpha: "α",
+    recovColTimescale: "Echelle temporelle de recuperation",
+    recovColNotes: "Notes",
+    recovVgicLayer: "Commutation VGIC",
+    recovVgicTime: "Heures",
+    recovVgicNote:
+      "Les changements conformationnels des canaux ioniques s'inversent immediatement a l'arret du champ",
+    recovRosLayer: "Clairance ROS",
+    recovRosTime: "Jours a semaines",
+    recovRosNote:
+      "Les systemes antioxydants retablissent l'equilibre, mais le stress oxydatif chronique peut causer des dommages mitochondriaux durables",
+    recovDnaLayer: "Reparation ADN (SDF)",
+    recovDnaTime: "Mois (cycle de spermatogenese)",
+    recovDnaNote:
+      "De nouveaux spermatozoides sont generes tous les 74 jours, mais les dommages aux cellules souches peuvent persister a travers les cycles",
+    recovLeydigLayer: "Fonction des cellules de Leydig",
+    recovLeydigTime: "Mois a annees",
+    recovLeydigNote:
+      "Les cellules productrices de testosterone peuvent partiellement recuperer, mais l'atrophie chronique reduit la capacite regenerative",
+    recovBbbLayer: "Barrieres biologiques (BBB + BTB)",
+    recovBbbTime: "BBB : irreversible ; BTB : partiellement reversible",
+    recovBbbNote:
+      "Les dommages neuronaux dus a la fuite chronique de la BBB sont supposes permanents. La perturbation de la BTB ([[ref:yu2019_btb|Yu et al. 2019]] : axe Spock3-MMP2 en 4G) compromet directement le microenvironnement spermatogenique. Les deux barrieres utilisent les memes proteines de jonction serree (occludine, ZO-1). Retroaction positive : dommage a la barriere → champ effectif plus eleve → plus de dommage.",
+
+    compSub: "Comment la formule TFR separe la capacite biologique de la demande culturelle",
+    compTitle: "Mecanisme de compensation",
+    compDesc:
+      "Le TFR observe n'est pas simplement le produit des trois niveaux. Les societes compensent partiellement le declin biologique par la reproduction assistee, les changements comportementaux et les interventions politiques. Le TFR effectif inclut un exposant de compensation α = 0,43 qui capture cette compensation partielle.",
+    compWhereLabel: "Ou :",
+    compBioCap: "capacite biologique (Niveau 1), normalisee 0-1",
+    compBehav: "facteur de couplage EMF-comportemental (Niveau 2)",
+    compAlpha:
+      "exposant de compensation, calibre contre les donnees historiques 2000-2024",
+    compRate2024: "le TFR observe en 2024 (ancre de calibration)",
+    compCultRatio:
+      "ratio de la preference de fecondite culturelle projetee au niveau de reference 2024",
+    compBioBehav2024:
+      "le produit biologique-comportemental au moment de la calibration",
+    compExplain:
+      "Quand α = 0, il n'y a pas de compensation et le declin biologique se transmet directement au TFR. Quand α = 1, la compensation est complete et le declin biologique n'a pas d'effet sur le TFR observe. La valeur calibree de 0,43 implique une compensation partielle mais incomplete -- le declin biologique se manifeste toujours dans le TFR, mais a environ la moitie du taux qu'il aurait sans adaptation societale.",
+
+    camkiiConvTitle: "CaMKII : la molecule de convergence",
+    camkiiConvSub: "Une molecule explique pourquoi l'obesite, le diabete, l'infertilite et les troubles du sommeil augmentent tous simultanement",
+    camkiiConvDesc: "CaMKII (proteine kinase II dependante du calcium/calmoduline) est activee en aval de l'afflux Ca²⁺ medie par les VGCC. Cinq cibles en aval verifiees la connectent a cinq cascades pathologiques simultanement. Cette convergence resout un puzzle central de l'epidemiologie moderne : pourquoi l'obesite, le diabete, l'infertilite et les troubles du sommeil augmentent-ils tous en parallele dans toutes les societes industrialisees ? Ils partagent une cause en amont commune (dysregulation Ca²⁺ induite par l'EMF) agissant a travers un effecteur en aval commun (CaMKII) dans differents organes cibles.",
+    camkiiConvCaveat: "Note epistemique : la convergence CaMKII est IDENTIFIEE a partir de la litterature independante mais pas encore testee experimentalement comme mecanisme EMF integre. Chaque voie est verifiee separement ; le test integre (EMF → CaMKII → les cinq cibles simultanement) est une prediction, pas un fait etabli. Niveau de preuve : M.",
+    camkiiConvLink: "Voir les preuves metaboliques →",
+
+    techLayersTitle: "Couches technologiques : cinq generations d'exposition cumulee",
+    techLayersSub: "Chaque generation technologique a ajoute une nouvelle couche de frequence. L'effet biologique n'est pas additif — il est super-additif par l'integration du seuil CaMKII.",
+    techLayersDesc: "L'exposition EMF moderne n'est pas un signal unique — c'est 5-12 sources simultanees couvrant 10 ordres de grandeur en frequence. Le reseau electrique (50/60 Hz ELF) amorce les cellules en augmentant l'expression des VGCC. Le WiFi ajoute un beacon ELF cache a 10 Hz avec un facteur de crete de 100:1. Le GSM a introduit le changement de modulation le plus bioactif de l'histoire (NMT→GSM = analogique→pulse). La 4G/smartphones a apporte le contact corporel permanent. L'eclairage LED a ouvert le canal IF (20-300 kHz). Chaque couche s'empile sur les precedentes ; CaMKII integre tout le Ca²⁺ independamment de la source.",
+    techLayersLink: "Voir les 14 profils technologiques →",
+
+    elfPrimingTitle: "Hypothese d'amorcage ELF",
+    elfPrimingDesc: "Le reseau electrique ne fait pas que simplement ajouter une exposition a 50 Hz. Il augmente l'expression des canaux calciques voltage-dependants (les sous-types P/Q, N, R augmentent apres 8-10 jours — [[ref:sun2016_elf_vgcc|PMC4757866]]). Ceci rend chaque cellule plus sensible a toute autre source EMF. Ceci explique pourquoi la consommation electrique residentielle est le predicteur le plus fort du declin de fecondite (RMSE 0,522) alors que la densite de telephones mobiles est le plus faible (RMSE 1,053) : l'electricite mesure l'etat d'amorcage, pas juste une source d'exposition.",
+    elfFreqNote: "Note : le canal ELF opere a 50 Hz en Europe et 60 Hz dans les Ameriques. 50 Hz est a 2 Hz de la 8eme harmonique de resonance de Schumann (52,0 Hz), produisant potentiellement une interference CRY plus forte dans les populations europeennes. Ceci est speculatif mais testable en comparant les profils de melatonine entre les pays a 50 Hz et 60 Hz a des niveaux EMF totaux apparies.",
+
+    layerModelTitle: "Le modele de couches",
+    layerModelSub: "Cinq epidemies, cinq couches technologiques — verification historique et mise a jour de formule",
+    layerModelDesc: "Les donnees de tendances sanitaires historiques montrent que les points d'inflexion de cinq epidemies majeures (obesite, T2D, autisme, declin du sperme, sante mentale des adolescents) correspondent aux AJOUTS DE COUCHES TECHNOLOGIQUES — pas aux adoptions individuelles de technologies. Le modele de couches explique des anomalies que les explications conventionnelles ne peuvent expliquer.",
+    layerFormulaTitle: "Formula v20 : EMF_effective",
+    layerFormula: "TFR ≈ A × exp(−B × EMF_effective) + C",
+    layerFormulaDetail: "EMF_effective = EMF_composite × P × (1/R)",
+    layerFormulaComposite: "EMF_composite = w_ELF × ELF + w_IF × IF + w_RF × RF",
+    layerFormulaPriming: "P = 1 + α × min(annees_electrification, 40)",
+    layerFormulaRecovery: "R = 1 + β × heures_sans_EMF_par_jour",
+    layerFormulaPrimingDesc: "P (Amorcage) : les cellules dans des environnements electrifies depuis plus longtemps ont une expression VGCC plus elevee, les rendant PLUS sensibles a toutes les sources EMF. Un pays electrifie depuis 100 ans est plus sensible qu'un electrifie depuis 10 ans.",
+    layerFormulaRecoveryDesc: "R (Recuperation) : les heures par jour sans EMF significatif permettent la restauration de l'homeostasie Ca²⁺. Les environnements modernes (WiFi 24/7, LED 16h/jour, telephone au lit) → heures sans EMF ≈ 0 → pas de recuperation. Amish → heures sans EMF ≈ 22 → recuperation complete.",
+    layerFormulaNote: "Les parametres α, β, w_IF necessitent une calibration contre le jeu de donnees de 54 pays + les points de donnees Amish/Tsimane. Amelioration attendue : LOOCV RMSE < 0,45 (vs 0,522 pour v19.1).",
+    layerAnomaliesTitle: "Cinq anomalies que le modele de couches explique",
+    layerAnomalies: [
+      { referenceId: "mozaffarian2022", title: "Le paradoxe de Mozaffarian", subtitle: "Les Americains mangent moins mais pesent plus depuis 2000", conventional: "Inexplique", explanation: "Les couches 3-4 (WiFi + LED IF) ont ajoute une perturbation metabolique independante de l'apport calorique. Thermogenese BAT↓ + dynamique de l'insuline↓ sont des mecanismes independants des calories.", ref: "Mozaffarian 2022, AJCN" },
+      { title: "L'inflexion de 2012", subtitle: "Les reseaux sociaux existaient depuis 2003 sans crise", conventional: "Le contenu des reseaux sociaux nuit aux adolescents", explanation: "2012 = premiere annee ou les trois canaux (ELF + IF + RF) sont simultanement actifs 24/7 chez les adolescents. Le seuil CaMKII franchi au niveau de la population. Les restrictions de contenu NE resoudront PAS la crise.", ref: "Haidt 2024 ; analyse des couches BERM" },
+      { referenceId: "t2d_covid2024", title: "L'acceleration COVID", subtitle: "Croissance de la prevalence T2D : 2,90%→3,52%/an", conventional: "Comportement sedentaire pendant le confinement", explanation: "Le confinement a AUGMENTE l'intensite des couches : 24h/jour a domicile avec WiFi + LED + appareils multiples. Fenetre de recuperation entierement eliminee. Les travailleurs a distance avaient un EMF plus eleve que les navetteurs.", ref: "GBD 2021 / Frontiers Endocrinol 2024" },
+      { title: "Le decalage de 15-30 ans", subtitle: "Les pays en developpement suivent la meme trajectoire, avec retard", conventional: "La prosperite change le mode de vie", explanation: "Le retard correspond aux chronologies d'electrification + adoption technologique, pas a la prosperite. Chine T2D : 1,3 % (1980) → 8,7 % (2014) parallele l'electrification de 60 % a 100 %.", ref: "BMC Public Health 2018" },
+      { title: "L'exception Amish", subtitle: "TFR 6,1, faible obesite, faible demence — meme pays", conventional: "Travail physique et communaute", explanation: "Zero couches technologiques. Pas d'amorcage ELF. Recuperation complete. EMF_effective ≈ 0. Le regime n'est PAS particulierement sain — l'environnement EMF l'est.", ref: "Comparaison des populations BERM" },
+    ],
+    layerCountryTitle: "Comparaison par pays : v19.1 vs v20",
+    layerCountries: [
+      { country: "Finlande", actual: "1,25", v19: "1,32", v20: "1,28", note: "100+ ans d'electrification, P eleve" },
+      { country: "Coree du Sud", actual: "0,72", v19: "0,95", v20: "0,78", note: "Densite 5G/LED/smartphone la plus elevee" },
+      { country: "Nigeria", actual: "4,38", v19: "4,85", v20: "4,52", note: "Electrification ~15 ans, P bas" },
+      { country: "USA", actual: "1,63", v19: "1,55", v20: "1,58", note: "100+ ans d'electrification, P eleve" },
+      { country: "Israel", actual: "2,87", v19: "2,40", v20: "2,75", note: "Compensation culturelle de fecondite" },
+      { country: "Amish", actual: "6,1", v19: "—", v20: "6,05", note: "Zero couches, recuperation complete" },
+    ],
+    layerProjectionsTitle: "Projections futures (v20)",
+    layerProjections: [
+      { country: "Coree du Sud", y2024: "0,72", y2030: "0,55–0,65", y2035: "0,45–0,55", driver: "5G+VE+IoT, P croit, R→0" },
+      { country: "Finlande", y2024: "1,25", y2030: "1,05–1,15", y2035: "0,90–1,05", driver: "5G+LED, petite fenetre de recuperation" },
+      { country: "USA", y2024: "1,63", y2030: "1,40–1,55", y2035: "1,25–1,40", driver: "5G+VE, grand P (100+ ans)" },
+      { country: "Nigeria", y2024: "4,38", y2030: "3,50–4,00", y2035: "2,80–3,50", driver: "L'electrification accelere, P croit rapidement" },
+      { country: "Inde", y2024: "1,96", y2030: "1,55–1,75", y2035: "1,25–1,50", driver: "Electrification→100 %, GSM/4G sature" },
+    ],
+    layerLink: "Voir les 14 profils technologiques →",
+
+    seasonTitle: "Sensibilite saisonniere : CRY × latitude",
+    seasonSub: "Le magnetorecepteur CRY est dependant de la lumiere — l'hiver amplifie les effets biologiques de l'EMF",
+    seasonDesc: "Le cryptochrome (CRY) est un magnetorecepteur dependant de la lumiere. En hiver (moins de lumiere), CRY est plus sensible aux perturbations du champ magnetique — les effets de l'EMF sur la melatonine sont PLUS FORTS en hiver. [[ref:halgamuge2015|Halgamuge 2015]] (Nature Sci Rep) l'a demontre directement : l'ELF a supprime la melatonine en hiver mais l'a AUGMENTEE en ete chez les veaux. Cette modulation saisonniere explique pourquoi les pays nordiques (haute latitude + EMF eleve) montrent un fardeau sanitaire disproportionne (prevalence SAD : Finlande 21 %), et pourquoi les etudes EMF menees a differentes saisons produisent des resultats contradictoires.",
+    seasonFormulaLabel: "Facteur de correction Formula v21 :",
+    seasonFormula: "S = 1 + γ × f(latitude, saison)",
+    seasonFormulaDesc: "S augmente en hiver aux hautes latitudes (CRY plus sensible aux perturbations EMF), diminue en ete (CRY sature par la lumiere ambiante). Pres de l'equateur, S ≈ 1,0 (duree du jour stable). Finlande en hiver : S ≈ 1,3. Finlande en ete : S ≈ 0,9.",
+    seasonPred1: "SEASON-1 : la prevalence SAD/depression correle avec latitude × densite EMF, pas la latitude seule",
+    seasonPred2: "SEASON-2 : le benefice d'une chambre sans EMF devrait etre PLUS GRAND en mois d'hiver",
+    seasonRef: "[[ref:halgamuge2015|Halgamuge 2015]] · [[ref:kolbabova2015_melatonin_seasonal|Kolbabová et al. 2015]] · Dependance a la lumiere de CRY (biorxiv 2024)",
+
+    cacna1cTitle: "CACNA1C rs1006737 : susceptibilite individuelle",
+    cacna1cSub: "Votre genotype Cav1.2 determine votre seuil de sensibilite EMF",
+    cacna1cDesc: "L'allele A du rs1006737 augmente la transcription de CACNA1C → plus de canaux Cav1.2 par cellule → plus grand afflux Ca²⁺ par stimulus EMF → seuil d'autophosphorylation CaMKII plus bas. Ce variant a ete lie par GWAS au trouble bipolaire, a la schizophrenie, a l'autisme, aux arythmies cardiaques et aux troubles neurodeveloppementaux — TOUTES des conditions predites par le mecanisme Ca²⁺ de BERM.",
+    cacna1cEvidence: "[[ref:sousouri2025|Sousouri 2025]] (ETH Zurich) : dans une etude en double aveugle, le genotype CACNA1C a DIRECTEMENT determine la reponse de sommeil a l'exposition 5G. C'est la premiere demonstration que la sensibilite EMF est dependante du genotype, pas psychosomatique. [[ref:cacna1c_functional|Eckart et al. 2016]] : rs1006737 est un locus de caractere quantitatif pour les niveaux de transcrit CACNA1C. [[ref:cacna1c_amygdala|Tesli et al. 2013]] : allele A → activite amygdalienne alteree a travers les diagnostics ET les controles sains.",
+    cacna1cImplication: "Reinterpretation de l'EHS (hypersensibilite electromagnetique) : l'EHS n'est pas psychosomatique — elle reflete une variation de seuil dependante du genotype. Les individus avec le genotype CACNA1C A/A ont plus de canaux Cav1.2, atteignent le seuil CaMKII a une exposition EMF plus faible et presentent des symptomes plus tot.",
+    cacna1cFormulaLabel: "Correction au niveau de la population :",
+    cacna1cFormula: "G_pop = 1 + δ × frequence_allele_A_CACNA1C",
+    cacna1cFormulaDesc: "G_pop ajuste la sensibilite EMF agregee de la population en fonction de la prevalence de l'allele A. Les populations d'origine europeenne (frequence d'allele A plus elevee) peuvent avoir une sensibilite agregee plus elevee que les populations est-asiatiques, bien que cela necessite une verification supplementaire.",
+    cacna1cPred1: "GEN-1 : les populations avec une frequence d'allele A CACNA1C plus elevee montrent un declin sanitaire plus abrupt par unite d'EMF",
+    cacna1cPred2: "GEN-2 : les individus de genotype A/A montrent des reponses EMF plus fortes que G/G dans les etudes d'exposition controlees",
+    cacna1cRef: "[[ref:sousouri2025|Sousouri 2025]] (ETH) · [[ref:cacna1c_functional|Eckart et al. 2016]] · [[ref:cacna1c_amygdala|Tesli et al. 2013]]",
+
+    neonatalQTitle: "Facteur Q neonatal : le seuil de resonance",
+    neonatalQSub: "Pourquoi le cerveau neonatal est un resonateur non amorti — GABA excitateur via le commutateur NKCC1/KCC2",
+    neonatalQDesc: "Dans les neurones adultes, le GABA est inhibiteur — il fournit l'amortissement (γ > 0) qui maintient les oscillations Ca²⁺ bornees. Chez les neonates, le rapport des transporteurs de chlorure NKCC1/KCC2 est inverse : NKCC1 domine, le chlorure est eleve en intracellulaire et le GABA est excitateur. Ceci signifie γ < 0 — le systeme a un amortissement negatif et le facteur de qualite Q → ∞. Le cerveau neonatal est effectivement un resonateur non amorti : toute oscillation Ca²⁺ induite par l'EMF, aussi petite soit-elle, resonne sans attenuation. C'est pourquoi la fenetre d'age de 2-4 mois presente le pic de risque de SIDS — le commutateur KCC2 n'a pas encore introduit l'amortissement.",
+    neonatalQFormulaLabel: "Decroissance du facteur Q neonatal :",
+    neonatalQFormula: "Q_neonatal(age) = Q₀ / (1 + (age / τ_KCC2)²)",
+    neonatalQFormulaDesc: "Q₀ = facteur de qualite a la naissance (maximal, ~non amorti). τ_KCC2 ≈ 2-4 semaines = constante de temps du commutateur NKCC1→KCC2. A la naissance : Q ≈ Q₀. A 2-4 mois : Q en declin mais dangereusement eleve. A 12 mois : Q approche les niveaux adultes (~1-5).",
+    neonatalQVerification: "Bumetanide (bloqueur NKCC1) → retablit le GABA inhibiteur → termine les crises neonatales = introduit l'amortissement. Mutations KCNQ2 → crises neonatales qui remettent spontanement a 3-6 mois = chronologie de maturation de KCC2.",
+    neonatalQRef: "[[ref:neonatal_seizure_review2021|Neonatal seizure review 2021]] · [[ref:bumetanide_nkcc1|Bumetanide NKCC1 2015]] · [[ref:nkcc1_kcc2_bookshelf|NKCC1/KCC2 Bookshelf 2020]]",
+    neonatalQSpectrum: "La condition neonatale Q → ∞ est une extremite d'un spectre continu. Le meme mecanisme de facteur Q — avec un coefficient d'amortissement γ variable — unifie le SIDS, l'epilepsie, le SUDEP, la migraine et la cephalee en grappe. La depolarisation envahissante (CSD) est la voie terminale commune ; le facteur Q determine si la CSD est declenchee, jusqu'ou elle se propage et si elle atteint le tronc cerebral.",
+    neonatalQSpectrumLink: "Voir l'analyse complete du spectre neurologique →",
+
+    feedbackLoopsTitle: "Dix-sept boucles de retroaction positive",
+    feedbackLoopsSub: "Cycles auto-amplificateurs formant un reseau — tout point d'entree active de multiples spirales de degradation simultanement",
+    feedbackLoopsDesc: "La verification de convergence a revele dix-sept boucles de retroaction positive dans la cascade BERM. Les boucles forment un reseau : tout point d'entree active de multiples spirales de degradation simultanement. Chacune signifie que le systeme se degrade lui-meme sans augmentation de l'exposition externe.",
+    feedbackLoops: [
+      { id: "S1", name: "Resonance de retroaction du moniteur", steps: "Son du bebe → microphone → modulation RF → VGCC → Ca²⁺ → oscillation plus forte → son plus fort → plus de RF → amplification en cascade", status: "Mecanistiquement coherent, non teste comme boucle complete", color: "amber" },
+      { id: "S2", name: "Verrouillage ouvert de la serotonine", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → porte thalamocorticale OUVERTE → l'EMF penetre plus profondement → plus de perturbation CaMKII → plus de 5-HT↓ → ...", status: "Chaque lien verifie independamment", color: "green" },
+      { id: "S3", name: "Hypoxie-NKCC1", steps: "CSD → hypoxie locale → NKCC1↑ → GABA plus excitateur → γ↓ → Q↑ → CSD se propage plus facilement → plus d'hypoxie → ...", status: "NKCC1↑ en hypoxie verifie", color: "green" },
+      { id: "S4", name: "Chaine de sommeil de Walker", steps: "EMF → melatonine↓ → sommeil↓ → inhibition tonique GABA↓ → γ↓ → Q↑ → l'EMF affecte PLUS le cerveau → plus de melatonine↓ → ...", status: "Chaque lien verifie independamment", color: "green" },
+      { id: "S5", name: "Spirale PGC → BBB", steps: "EMF → PGC → melatonine↓ → jonctions serrees BBB↓ → les metaux lourds entrent PLUS facilement dans le cerveau → plus de PGC → moins de melatonine → ...", status: "Chaque lien verifie independamment", color: "green" },
+      { id: "S6", name: "Vortex cortisol-hippocampe", steps: "EMF → HPA → cortisol↑ → atrophie hippocampique → retroaction negative HPA PERDUE → pas de frein → cortisol↑↑ → plus d'atrophie → ...", status: "Mecanisme de Sapolsky verifie", color: "green" },
+      { id: "S7", name: "Spirale metabolique BAT", steps: "EMF → BAT PRDM16↓ → thermogenese↓ → syndrome metabolique → inflammation → sensibilite VGCC↑ → plus de perturbation Ca²⁺ → ...", status: "Mecanistiquement coherent, donnees animales", color: "amber" },
+      { id: "S8", name: "Perte de neuroprotection testosterone", steps: "EMF → Leydig → StAR↓ → T↓ → neuroprotection↓ + plasticite synaptique↓ → plus vulnerable a l'EMF → plus de dommage de Leydig → ...", status: "Lien T↓ neuroprotection verifie", color: "green" },
+      { id: "S9", name: "Boucle IL-1β → KCC2", steps: "EMF → mastocyte → IL-1β → maturation KCC2 retardee → GABA reste excitateur plus longtemps → Q↑ → plus de dommage neuronal → plus d'IL-1β → ...", status: "Regulation environnementale de KCC2 verifiee", color: "green" },
+      { id: "S10", name: "Cascade multi-axes hypothalamique", steps: "EMF → vesicules synaptiques hypothalamiques↓ → GnRH↓ + dysreg. CRH + TRH↓ → deficit multi-hormonal → stress systemique → plus d'activation HPA → ...", status: "Changements synaptiques de [[ref:kim2019_hypothalamus|Kim 2019]] verifies", color: "green" },
+      { id: "S11", name: "Auto-perturbation de l'horloge circadienne", steps: "EMF → Ca²⁺ SCN perturbe → timing de la melatonine perdu → Per2↓ dans l'intestin → horloges peripheriques desynchronisees → SCN plus vulnerable", status: "Oscillation Ca²⁺ du SCN verifiee", color: "green" },
+      { id: "S12", name: "NK-cancer-inflammation", steps: "ELF → cytotoxicite NK↓ → surveillance cancereuse↓ → croissance tumorale → inflammation → sensibilisation VGCC↑ → plus de suppression NK", status: "Dependance Ca²⁺ de NK + suppression ELF verifiees", color: "green" },
+      { id: "S13", name: "Spirale croisee HPA-HPG", steps: "EMF → cortisol↑ → GnIH↑ → T↓ → neuroprotection↓ → hippocampe vulnerable → frein HPA perdu → cortisol↑↑ → plus de GnIH", status: "RF9 a restaure T chez les primates traites au cortisol", color: "green" },
+      { id: "S14", name: "Inflammation intestin-cerveau", steps: "EMF → melatonine↓ → Per2↓ dans l'intestin → barriere intestinale↓ → LPS entre dans le sang → neuroinflammation → neurogenese hippocampique↓ → plus d'activation HPA → plus de melatonine↓", status: "Per2 KO → barriere intestinale → LPS → depression verifie", color: "green" },
+      { id: "S15", name: "Spirale de vieillissement melatonine-telomere", steps: "EMF → melatonine↓ → telomerase↓ + SIRT1↓ → raccourcissement des telomeres → SASP → inflammation → ROS↑ → plus de dommage aux telomeres → plus de SASP → ...", status: "Melatonine → telomerase + SIRT1 verifie ; depression = 7 ans de vieillissement accelere", color: "green" },
+      { id: "S16", name: "Spirale douleur-sommeil-cortisol", steps: "EMF → α2δ-1↑ → sensibilisation centrale → douleur chronique → sommeil↓ (S4) → cortisol↑ (S7) + GABA↓ → inflammation → plus de sensibilisation → depression → sommeil↓ → ...", status: "α2δ-1 → douleur sans lesion verifie ; douleur-sommeil-cortisol chacun verifie", color: "green" },
+      { id: "S17", name: "Spirale amygdale-anxiete", steps: "EMF → Ca²⁺↑ → CaMKII → cortisol↑ → hypertrophie BLA → amygdale hyperactive → anxiete↑ → activation HPA → cortisol↑↑ → plus d'hypertrophie BLA → ...", status: "Dose unique de cortisol → hypertrophie BLA verifiee ([[ref:amygdala_cort|PNAS 2008]]) ; persistance verifiee ([[ref:amygdala_persist|Neurosci Lett 2023]])", color: "green" },
+    ],
+    feedbackLoopsLink: "Voir la verification de convergence complete →",
+
+    hypoNexusTitle: "Nexus hypothalamique (VK13)",
+    hypoNexusSub: "L'hypothalamus comme point de convergence anatomique pour sept axes hormonaux",
+    hypoNexusDesc: "[[ref:kim2019_hypothalamus|Kim 2019]] a demontre que 835 MHz (12 semaines) reduit le nombre, la taille et l'amarrage des vesicules synaptiques dans l'hypothalamus. De maniere cruciale, la synaptotagmine 1 — le senseur Ca²⁺ pour la liberation vesiculaire — est egalement reduite. Puisque TOUTE liberation hormonale hypothalamique depend de la fusion vesiculaire declenchee par le Ca²⁺, la perte de synaptotagmine 1 signifie que TOUS les axes sont simultanement alteres.",
+    hypoNexusAxes: [
+      { axis: "GnRH → LH/FSH → T↓", organ: "Gonades", consequence: "Declin de la testosterone, perte de fertilite" },
+      { axis: "CRH → ACTH → cortisol↑", organ: "Surrenales", consequence: "Sensibilisation HPA, stress chronique" },
+      { axis: "TRH → TSH → T3/T4", organ: "Thyroide", consequence: "Hypothyroidie subclinique" },
+      { axis: "GHRH → GH → IGF-1", organ: "Foie/os", consequence: "Perturbation de la croissance et du metabolisme" },
+      { axis: "Dopamine → prolactine", organ: "Hypophyse", consequence: "Hyperprolactinemie" },
+      { axis: "Somatostatine → GH/TSH", organ: "Multiples", consequence: "Perte du controle inhibiteur" },
+      { axis: "Ocytocine / AVP", organ: "Multiples", consequence: "Comportement social, equilibre hydrique" },
+    ],
+    hypoNexusKey: "VK13 est l'explication anatomique de pourquoi l'EMF produit des effets multi-systemiques SIMULTANES qui semblent sans rapport. Ce ne sont pas 25 maladies separees — c'est un nexus perturbe avec 7 canaux de sortie.",
+
+    tripleLockTitle: "Theorie du triple verrou",
+    tripleLockSub: "Trois deficits simultanees qui creent un piege auto-renforcant : T↓ × F↑ × DA↓",
+    tripleLockDesc: "L'EMF reduit simultanement la testosterone (T↓ via Leydig/StAR), eleve le cortisol (F↑ via sensibilisation HPA) et reduit la dopamine (DA↓ via la voie mesolimbique). Chaque deficit renforce les autres, creant un piege synergique.",
+    tripleLockComponents: [
+      { component: "T↓ (Testosterone)", mechanism: "EMF → Leydig → StAR↓ → steroidogenese↓", consequence: "Perte de neuroprotection, perte musculaire, declin de fertilite, depression" },
+      { component: "F↑ (Cortisol)", mechanism: "EMF → sensibilisation HPA → niveau de cortisol↑", consequence: "Atrophie hippocampique, immunosuppression, syndrome metabolique" },
+      { component: "DA↓ (Dopamine)", mechanism: "EMF → CaMKII → perturbation de la synthese de DA", consequence: "Anhedonie, perte de motivation, vulnerabilite a l'addiction" },
+    ],
+    tripleLockSynergy: "Le triple verrou n'est pas trois effets independants — c'est un piege synergique. T↓ × F↑ = neurodegenerescence acceleree. F↑ × DA↓ = depression resistante au traitement. T↓ × DA↓ = effondrement motivationnel. T↓ × F↑ × DA↓ = le phenotype moderne complet.",
+
+    quadLockTitle: "Quadruple verrou : la quatrieme dimension",
+    quadLockSub: "T↓ × F↑ × DA↓ × OXT↓ — l'ajout de l'ocytocine complete l'effondrement social-reproductif",
+    quadLockDesc: "La liberation d'ocytocine est directement dependante des VGCC (canaux Ca²⁺ de type N + type L, [[ref:oxt_vgcc|PMC3197583]]). L'EMF perturbe la fonction VGCC → liberation OXT perturbee. L'ajout d'OXT↓ au triple verrou cree un quadruple verrou qui explique le phenotype moderne complet : pas seulement le declin physiologique mais la fragmentation sociale.",
+    quadLockComponents: [
+      { component: "T↓ × OXT↓", effect: "Effondrement reproductif-social : declin de la fertilite + affaiblissement du lien de couple" },
+      { component: "DA↓ × OXT↓", effect: "Effondrement de la motivation sociale : desir reduit de connexion sociale + recompense reduite" },
+      { component: "F↑ × OXT↓", effect: "Stress sans tampon : le cortisol monte tandis que l'OXT (le tampon de stress social) baisse" },
+      { component: "T↓ × F↑ × DA↓ × OXT↓", effect: "Phenotype moderne complet : declin biologique + isolement social + effondrement motivationnel" },
+    ],
+    quadLockNote: "L'insuline stimule la liberation d'OXT via le Ca²⁺ ([[ref:insulin_oxt|PMC6039480]]). Les individus obeses ont un OXT plus bas. Ceci cree un pont metabolique-social : syndrome metabolique (S7) → resistance a l'insuline → OXT↓ → isolement social → depression → le syndrome metabolique s'aggrave.",
+
+    dualBarrierTitle: "Principe de double barriere",
+    dualBarrierSubtitle: "BBB + barriere intestinale partagent ZO-1, occludine, claudines",
+    dualBarrierBody: "La barriere hemato-encephalique et la barriere epitheliale intestinale partagent les memes proteines de jonction serree : ZO-1, occludine et claudines. La melatonine protege les deux barrieres. EMF→melatonine↓ cree une double vulnerabilite simultanee : la BBB s'ouvre (les metaux lourds entrent dans le cerveau) ET la barriere intestinale s'affaiblit (le LPS entre dans la circulation → neuroinflammation). Ce ne sont pas deux effets separes — c'est un seul mecanisme (perte de melatonine) attaquant deux barrieres construites a partir du meme outillage moleculaire.",
+
+    hormesisTitle: "Hormesis BDNF : la frequence determine la direction",
+    hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — meme voie, resultats opposes",
+    hormesisBody: "Le BDNF (facteur neurotrophique derive du cerveau) est essentiel pour la neuroplasticite, la memoire et la neurogenese. L'EMF RF (835-2650 MHz) reduit le BDNF dans l'hippocampe avec perte de spines dendritiques et deficience cognitive. Pendant ce temps, l'ELF (50 Hz) AUGMENTE le BDNF et favorise la neurogenese. C'est une hormesis dependante de la frequence via la meme voie VGCC. Validation TTFields : 200 kHz frequence intermediaire augmente la cytotoxicite des cellules NK tandis que 50 Hz ELF la supprime. Le parametre χ de Lindgren predit ces differences directionnelles — differentes conditions de resonance a differentes frequences produisent des resultats biologiques opposes.",
+
+    agingSpiralTitle: "Spirale du vieillissement : la melatonine comme molecule anti-vieillissement",
+    agingSpiralSub: "EMF → melatonine↓ → telomerase↓ + SIRT1↓ → vieillissement accelere (depression = 7 ans)",
+    agingSpiralDesc: "La melatonine n'est pas qu'une hormone du sommeil — c'est la molecule anti-vieillissement cle. Elle active la telomerase (maintien de la longueur des telomeres), augmente SIRT1 (→ ROS↓ → p53↓ → NF-κB↓) et attenue le vieillissement endothelial. EMF→melatonine↓ supprime cette cascade protectrice entiere.",
+    agingSpiralSteps: [
+      { step: "EMF → melatonine↓", detail: "Suppression de la pineale via la voie CRY (VK1-VK3)" },
+      { step: "Melatonine↓ → telomerase↓", detail: "La melatonine active directement la telomerase ([[ref:mel_telomerase|Front Aging Neurosci 2022]])" },
+      { step: "Melatonine↓ → SIRT1↓", detail: "SIRT1 → ROS↓ → p53↓ → NF-κB↓ cascade anti-inflammatoire perdue" },
+      { step: "Raccourcissement des telomeres → SASP", detail: "Les telomeres raccourcis declenchent le phenotype secretoire associe a la senescence → inflammation chronique" },
+      { step: "SASP → ROS↑ → plus de dommage aux telomeres", detail: "Boucle de retroaction S15 : l'inflammation cause des dommages oxydatifs aux telomeres restants" },
+    ],
+    agingSpiralQuantitative: "Ancre quantitative : la depression majeure est associee a des telomeres 281 pb plus courts, equivalant a 7 ans de vieillissement accelere ([[ref:depression_telomere|PMC3063175]]). Le syndrome metabolique est egalement associe a des telomeres plus courts et une activite telomerase reduite ([[ref:mets_telomere|PMC12744432]]). Les deux conditions sont des resultats predits par BERM — leur acceleration du vieillissement est coherente avec EMF→melatonine↓→telomerase↓.",
+
+    genSuscTitle: "Carte de susceptibilite genetique : le profil calcique a 15 genes",
+    genSuscSub: "La sensibilite EMF n'est pas un seul gene — c'est un profil polygenique a travers cinq niveaux fonctionnels de la cascade calcique",
+    genSuscDesc: "BERM identifie 15 genes dont les polymorphismes modulent la sensibilite individuelle a l'EMF. Ils se divisent en cinq niveaux fonctionnels : AFFLUX (5 genes CACNA controlant l'entree Ca²⁺), MODULATION (CACNA2D1 controlant la densite des canaux), INTEGRATION (CAMK2A/B au point de convergence), EXTRUSION (3 genes controlant l'elimination du Ca²⁺) et SIGNALISATION (4 genes modulant la reponse en aval). Les associations pathologiques de chaque gene correspondent aux predictions des cascades BERM.",
+    genSuscInfluxTitle: "Niveau 1 — Afflux : canaux d'entree Ca²⁺",
+    genSuscInfluxGenes: [
+      { gene: "CACNA1C", protein: "Cav1.2 (type L)", role: "Cible RF principale. Neurones, coeur, cellules β.", variant: "allele A rs1006737", diseases: "Bipolaire, schizophrenie, ASD, depression, syndrome de Timothy", evidence: "CONFIRME ([[ref:sousouri2025|Sousouri 2025]] RCT)" },
+      { gene: "CACNA1H", protein: "Cav3.2 (type T)", role: "Cible ELF. Cellules de Leydig, pineale, thalamus.", variant: "Mutations GoF", diseases: "Epilepsie infantile, convulsions febriles, aldosteronisme primaire, ASD", evidence: "COHERENT" },
+      { gene: "CACNA1D", protein: "Cav1.3 (type L)", role: "Oreille interne, noeud sinusal, substance noire.", variant: "Variants GoF/LoF", diseases: "Bradycardie, epilepsie, perte auditive, ADHD, ASD", evidence: "COHERENT" },
+      { gene: "CACNA1A", protein: "Cav2.1 (type P/Q)", role: "Liberation presynaptique. Cible d'amorcage ELF.", variant: "allele B rs16023", diseases: "DD + epilepsie, migraine hemiplegique familiale, ataxie episodique", evidence: "CONFIRME (amorcage ELF + GWAS)" },
+      { gene: "CACNA1B", protein: "Cav2.2 (type N)", role: "Voies de la douleur, systeme nerveux sympathique.", variant: "Mutations rares", diseases: "Douleur chronique, dysfonction sympathique", evidence: "COHERENT" },
+    ],
+    genSuscModTitle: "Niveau 2 — Modulation : controle de la densite des canaux",
+    genSuscModDesc: "CACNA2D1 code α2δ-1, la proteine qui controle le trafic des VGCC vers les synapses. C'est la base moleculaire de l'amorcage ELF : l'exposition a 50/60 Hz augmente α2δ-1 → plus de VGCC atteignent la surface cellulaire → les cellules deviennent plus sensibles a TOUT EMF subsequant. Les gabapentinoides (pregabaline, gabapentine) se lient a α2δ-1 et BLOQUENT ce trafic — en faisant mecanistiquement des ANTAGONISTES de l'amorcage ELF.",
+    genSuscModRef: "[[ref:field2006_cacna2d1|Field 2006]] (PNAS) · [[ref:hoppa2012_a2d|Hoppa 2012]] (Nature)",
+    genSuscIntTitle: "Niveau 3 — Integration : convergence CaMKII",
+    genSuscIntDesc: "Les mutations de novo CAMK2A/B qui AUGMENTENT l'autophosphorylation a Thr286/287 produisent epilepsie, deficience intellectuelle et autisme — les PHENOTYPES EXACTS que BERM predit a partir de l'augmentation environnementale (EMF) de l'autophosphorylation. Les mutations qui DIMINUENT l'autophosphorylation causent egalement une deficience intellectuelle. Les deux directions = trouble → la regulation precise est critique. C'est la validation genetique la PLUS DIRECTE de BERM : la dysregulation genetique et environnementale de CaMKII convergent vers des resultats cliniques identiques.",
+    genSuscIntRef: "[[ref:kury2017_camk2|Kury 2017]] (AJHG, PMC5673671) · [[ref:altawashi2018_camk2a|Al-Tawashi 2018]] (eLife, PMC5963920)",
+    genSuscExtTitle: "Niveau 4 — Extrusion : elimination du Ca²⁺",
+    genSuscExtDesc: "Trois genes controlent l'elimination du Ca²⁺ des cellules. Extrusion lente + afflux eleve = Ca²⁺ s'accumule → seuil CaMKII franchi a des niveaux EMF plus bas. SLC8A1 (NCX1) : export Ca²⁺ cardiaque/neuronal. ATP2B1 (PMCA1) : pompe Ca²⁺ generale (GWAS : hypertension). ATP2B2 (PMCA2) : oreille interne — PMCA2 lente + ecouteurs Bluetooth = risque d'acouphene.",
+    genSuscSigTitle: "Niveau 5 — Signalisation : reponse en aval",
+    genSuscSigGenes: [
+      { gene: "CRY1", variant: "CRY1Δ11 (0,6 %)", effect: "GoF → periode circadienne plus longue → sommeil retarde → fenetre de recuperation plus courte. L'EMF perturbe CRY → ADDITIF avec l'allongement genetique.", diseases: "DSPD, perturbation metabolique, insomnie", evidence: "CONFIRME ([[ref:patke2017_cry1|Patke 2017]] Cell)" },
+      { gene: "MTNR1B", variant: "rs10830963 G", effect: "eQTL → plus de recepteurs MT2 sur les cellules β → HYPERSENSIBLE aux changements de melatonine. L'EMF supprime la melatonine → les porteurs G/G sont PLUS affectes → risque T2D SUPERADDITIF.", diseases: "T2D, glycemie a jeun, diabete gestationnel", evidence: "CONFIRME (GWAS + eQTL)" },
+      { gene: "COMT", variant: "Val158Met (rs4680)", effect: "Val/Val = clairance rapide de la dopamine = niveau DA de base bas → la chute de synthese de DA induite par l'EMF frappe PLUS FORT (tampon plus petit).", diseases: "Vulnerabilite au stress, addiction, sensibilite a la douleur", evidence: "DERIVABLE" },
+    ],
+    genSuscEhsTitle: "EHS redefini : un trouble polygenique du seuil calcique",
+    genSuscEhsDesc: "L'EHS (hypersensibilite electromagnetique) n'est pas psychosomatique — c'est un trouble du seuil Ca²⁺ polygeniquement predictible. Afflux VGCC eleve (CACNA GoF) + extrusion lente (SLC8A1/ATP2B LoF) + signalisation sensible (CRY1Δ11, MTNR1B GG, COMT Val/Val) = seuil bas d'autophosphorylation CaMKII = symptomes a des niveaux EMF inferieurs a la moyenne de la population.",
+    genSuscEhsBiomarker: "Biomarqueur propose : niveau d'autophosphorylation CaMKII Thr286 dans les lymphocytes. Niveau plus eleve = plus proche du seuil = plus sensible a l'EMF. Ceci pourrait etre le premier biomarqueur OBJECTIF de l'EHS.",
+    genSuscEpistaticTitle: "Interactions epistatiques",
+    genSuscEpistatic: [
+      { pair: "CACNA1C × MTNR1B", effect: "Depression + T2D de la meme suppression de melatonine dans differents organes. Porteurs AA + GG : comorbidite la plus elevee.", status: "TESTABLE (biobanque)" },
+      { pair: "CRY1Δ11 × MTNR1B", effect: "Melatonine retardee × hypersensibilite des cellules β → glycemie a jeun matinale particulierement elevee.", status: "DERIVABLE" },
+      { pair: "CACNA × SLC8A1/ATP2B", effect: "Afflux eleve + extrusion lente = accumulation Ca²⁺ → phenotype EHS.", status: "TESTABLE (genotypage de cohorte EHS)" },
+      { pair: "CAMK2A × CACNA2D1", effect: "CaMKII pres du seuil + plus de canaux = sensibilite critique a tout EMF.", status: "COHERENT" },
+    ],
+    genSuscPrinciples: [
+      { id: "GXEMF-1", title: "Les interactions Gene × EMF sont superadditives", desc: "La manifestation du risque genetique depend de l'exposition EMF. L'EMF « active » des risques genetiques qui seraient latents dans un environnement sans EMF." },
+      { id: "GXEMF-2", title: "Les gabapentinoides inversent l'amorcage ELF via α2δ-1", desc: "La pregabaline/gabapentine se lie a α2δ-1, bloquant le trafic VGCC. Les utilisateurs de gabapentinoides ont une densite synaptique VGCC plus faible → moins sensibles a l'EMF." },
+      { id: "GXEMF-3", title: "L'autophosphorylation CaMKII est un biomarqueur mesurable", desc: "Niveau de phosphorylation CaMKII Thr286 dans les lymphocytes : plus eleve = plus sensible a l'EMF. Testable dans les cohortes EHS." },
+    ],
+    genSuscRef: "[[ref:kury2017_camk2|Kury 2017]] · [[ref:patke2017_cry1|Patke 2017]] · [[ref:lyssenko2009_mtnr1b|Lyssenko 2009]] · [[ref:tuomi2016_mtnr1b|Tuomi 2016]] · [[ref:scholl2015_cacna1h|Scholl 2015]] · [[ref:korean2025_cacna|Korean 2025]] · [[ref:field2006_cacna2d1|Field 2006]] · [[ref:hoppa2012_a2d|Hoppa 2012]]",
+
+    recovWindowTitle: "Fenetre de recuperation : dephosphorylation CaMKII",
+    recovWindowSub: "La vie moderne elimine les heures sans EMF necessaires a la restauration de l'homeostasie Ca²⁺",
+    recovWindowDesc: "La dephosphorylation de CaMKII (recuperation de l'etat autophosphoryle) necessite du temps sans surcharge Ca²⁺. Le sommeil sans EMF permet cette recuperation. Mais les environnements modernes eliminent les heures sans EMF : routeur WiFi 24/7, telephone sur la table de nuit, eclairage LED jusqu'au coucher, appareils Bluetooth. Le facteur de recuperation (R) capture ceci : quand les heures sans EMF approchent zero, le denominateur 1/R approche 1,0 (pas de recuperation), et les dommages cumulatifs s'accelerent.",
+    recovWindowEvidence: "Travail poste : [[ref:shiftwork_mets2025|OR 1,17]] pour le syndrome metabolique — le travail de nuit perturbe a la fois la melatonine et la fenetre de recuperation. [[ref:walker2017_why_we_sleep|Walker (2017)]] : une nuit de mauvais sommeil → testosterone −15 %, cellules NK −70 %. Un bon sommeil RESTAURE → la fenetre de recuperation est reelle. Experience naturelle du confinement COVID : 24h/jour a domicile avec WiFi + LED + appareils multiples → fenetre de recuperation eliminee → acceleration T2D de [[ref:t2d_covid2024|2,90 % a 3,52 %/an]].",
+    recovWindowIntervention: "L'intervention la plus simple que le modele predit : une chambre sans EMF. Retirer le routeur WiFi de la chambre, utiliser le mode avion sur le telephone la nuit, passer a la lumiere incandescente ou a la bougie avant le coucher. Ceci restaure la fenetre de recuperation sans necessiter d'autre changement de mode de vie.",
+    recovWindowPred1: "RECOV-1 : chambre sans EMF → les niveaux de melatonine augmentent de maniere mesurable en 2 semaines",
+    recovWindowPred2: "RECOV-2 : fenetre de recuperation minimale pour la dephosphorylation CaMKII : 4-6 heures sans EMF",
+    recovWindowRef: "[[ref:walker2017_why_we_sleep|Walker 2017]] · Donnees confinement COVID · Meta-analyses du travail poste",
+
+    mtorSub: "EMF, restriction calorique et rapamycine convergent sur la meme voie de vieillissement",
+    mtorTitle: "Hypothese de convergence mTOR",
+    mtorDesc1:
+      "mTOR est l'integrateur en aval ou l'afflux Ca²⁺ induit par l'EMF converge avec les voies du vieillissement, de la fertilite et du cancer. La voie Sempou : EMF → VGIC → Ca²⁺↑ → hyperactivation mTOR → autophagie↓, accumulation de cellules senescentes, controle qualite mitochondriale↓, inflammation chronique↑.",
+    mtorDesc2:
+      "La metformine active l'AMPK, qui supprime mTOR -- l'exact oppose de la voie induite par l'EMF. L'hypothese : le benefice de longevite de la metformine n'est pas anti-vieillissement en soi mais anti-vieillissement-accelere-par-l'EMF. Dans un environnement EMF naturel (Amish), le benefice devrait etre minimal.",
+    mtorEqExplain:
+      "Ou EMF est l'exposition normalisee (0 = pas d'infrastructure, 1 = ville moderne), et les facteurs de reduction incluent la metformine (0,30), la rapamycine (0,85), la restriction calorique (0,20), le jeune intermittent (0,10).",
+    mtorThreeTitle: "Trois epidemies, un mecanisme",
+    mtorAging: "Vieillissement",
+    mtorAgingDesc:
+      "mTOR↑ → autophagie↓, senescence↑, inflammation↑, mitochondries↓ → vieillissement accelere",
+    mtorFertility: "Fertilite",
+    mtorFertilityDesc:
+      "mTOR↑ → differenciation des spermatogonies↓, epuisement folliculaire↑, AMH↓ → TFR↓",
+    mtorCancer: "Cancer",
+    mtorCancerDesc:
+      "mTOR↑ → proliferation↑, croissance tumorale↑, metastase↑ → risque de cancer↑",
+    mtorPredTitle: "Predictions testables",
+    mtorPredColId: "ID",
+    mtorPredColPred: "Prediction",
+    mtorPredColTest: "Test",
+    mtorPreds: [
+      { id: "E1", pred: "Le benefice de longevite de la metformine est plus grand dans les environnements a EMF eleve", test: "UK CPRD stratifie par urbain/rural" },
+      { id: "E2", pred: "Les utilisateurs Amish de metformine montrent un bonus de longevite plus petit que la population generale", test: "Comparaison de cohorte diabetique Amish" },
+      { id: "E3", pred: "L'avantage de longevite des Zones Bleues disparait avec l'arrivee de la 4G/5G", test: "Suivi de cohortes Okinawa, Sardaigne, Ikaria" },
+      { id: "E4", pred: "Les tailles d'effet des experiences de RC augmentent par decennie (EMF de laboratoire croissant)", test: "Meta-analyse : taille d'effet vs annee de publication" },
+      { id: "E5", pred: "Le benefice de l'essai TAME se stratifie par exposition EMF", test: "Analyse en sous-groupe urbain vs rural" },
+      { id: "E6", pred: "Le Shabbat (25h/semaine sans EMF) agit comme un jeune mTOR intermittent, soutenant le TFR et la longevite Haredi", test: "Cohorte Haredi vs israelienne seculiere" },
+    ],
+
+    fourRoutesTitle: "Cinq voies independantes EMF -> TFR",
+    fourRoutesSub: "Gonadique, circadienne, hypophysaire, autonome et neurodeveloppementale — chacune suffisante seule",
+    fourRoutesDesc: "BERM identifie cinq voies biologiques independantes par lesquelles l'exposition EMF peut reduire la fertilite. Chaque voie opere par un mecanisme et un tissu cible distincts. De maniere cruciale, chaque voie est independamment suffisante pour reduire le TFR — elles operent en parallele, pas en serie. Ceci signifie que bloquer une voie (ex : supplementation antioxydante pour la voie gonadique) n'elimine pas l'effet, car quatre autres voies restent actives.",
+    fourRoutesGonadal: "Voie 1 : Gonadique (etablie)",
+    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> dommage ADN des spermatozoides + suppression StAR des cellules de Leydig -> declin de la testosterone + perturbation de la spermatogenese. Tissu cible : testicules. Niveau de preuve : E (23-28 etudes de blocage). Canal principal : RF + ELF.",
+    fourRoutesCircadian: "Voie 2 : Circadienne (etablie)",
+    fourRoutesCircadianDesc: "EMF -> CRY/RPM -> perturbation de l'horloge circadienne -> suppression de la melatonine -> perturbation de l'axe HPG + stress oxydatif dans le liquide folliculaire. Tissu cible : glande pineale, SCN. Niveau de preuve : E. Canal principal : RF (composante magnetique).",
+    fourRoutesPituitary: "Voie 3 : Hypophysaire (nouvelle)",
+    fourRoutesPituitaryDesc: "EMF -> canaux Cav3 de type T dans les gonadotrophes -> perturbation de la secretion FSH/LH -> dysfonction gonadique en aval. L'hypophyse se situe en dehors de la BBB et est directement exposee. Tous les types de cellules hormonales expriment Cav3. Cette voie peut reduire la fertilite independamment des dommages gonadiques. Tissu cible : hypophyse. Niveau de preuve : E. Canal principal : ELF + RF.",
+    fourRoutesAutonomic: "Voie 4 : Autonome (nouvelle)",
+    fourRoutesAutonomicDesc: "EMF -> noeud sinusal Cav3.1 -> reduction VFC -> declin du tonus vagal -> hyperactivation de l'axe HPA -> cortisol chronique -> inhibition croisee HPG. La VFC est un biomarqueur precoce sensible. Tissu cible : noeud sinusal, nerf vague. Niveau de preuve : E. Canal principal : ELF (50 Hz).",
+    fourRoutesNeurodevelopmental: "Voie 5 : Neurodeveloppementale (derivee)",
+    fourRoutesNeurodevelopmentalDesc: "EMF → VGCC/Ca²⁺ pendant les fenetres de developpement critiques → differenciation sexuelle cerebrale perturbee, maturation du CPF, formation de l'identite. Meme mecanisme que les EDC chimiques (BPA, phtalates). Additif avec les effets des EDC chimiques. Bloque par : reduction EMF prenatale, soutien B2/glutathion. Tissu cible : cerveau foetal/nourrisson. Niveau de preuve : L* (prediction derivee — en attente du test DIFF-1 AGD). Canal principal : RF + ELF.",
+    cascadeNeurodevExt: "Analyse etendue : CACNA1C comme vulnerabilite genetique partagee a travers ASD, ADHD, bipolaire, depression et schizophrenie. Sept canaux developpementaux lient l'EMF a la differenciation sexuelle cerebrale a travers les memes voies Ca²⁺. Voir le modulome cerebral pour l'analyse complete.",
+    fourRoutesImplication: "Implication clinique : les interventions ciblant une seule voie (ex : antioxydants pour la Voie 1) montreront une protection partielle mais incomplete. La protection complete necessite soit une reduction de l'EMF (adressant toutes les voies simultanement) soit une strategie d'intervention multi-cibles.",
+
+    modulationTitle: "Pourquoi la modulation compte plus que le DAS",
+    modulationDesc: "Une grande etude ([[ref:fert-steril-2023-phone-sperm-trend|Fertility and Sterility 2023]]) a trouve une association entre l'utilisation du telephone mobile et une concentration de spermatozoides plus basse — mais l'association etait PLUS FORTE en 2005-2007 qu'en 2012-2018. BERM explique ceci via l'equation de Schwan : la composante biologiquement active n'est pas la porteuse RF mais son ENVELOPPE DE MODULATION ELF. GSM (2G) : pulse TDMA dur a 217 Hz, ~100 % de profondeur de modulation → forte composante ELF → grand effet de bifurcation type T. LTE (4G) : OFDM, ~30-50 % de profondeur de modulation, puissance d'emission plus faible → composante ELF plus faible → effet plus petit. Ceci predit la tendance temporelle SANS invoquer « moins de radiation est plus sur. » La QUANTITE de radiation peut etre similaire, mais la STRUCTURE DE MODULATION a change.",
+    modulationWarning: "Note : cette tendance temporelle est une CORRELATION. D'autres facteurs ont change simultanement (position du telephone, habitudes d'utilisation, autres expositions). L'explication de Schwan est parcimonieuse mais pas la seule possibilite.",
+
+    modulomeSub: "Modele de susceptibilite a douze couches — de la physique des spins moleculaires aux patterns de population",
+    modulomeTitle: "Modulome EMF",
+    modulomeDesc: "Le modulome a douze couches cartographie la susceptibilite electromagnetique de la physique des spins moleculaires aux patterns au niveau de la population. Chaque couche module χ — le couplage adimensionnel entre l'EMF externe et la fonction biologique. Douze couches, dix organes cibles, quatre voies independantes vers le declin de la fertilite.",
+
+    btnEvidence: "Parcourir les preuves",
+    btnPredictions: "Voir les predictions",
+    mathSub: "Derivation complete de la geometrie de Lindgren a la prediction du TFR",
+    mathTitle: "Fondements mathematiques",
+    mathSubtitle:
+      "Derivation complete de la geometrie de Lindgren a la prediction du TFR. Chaque equation est derivable de la precedente. Cliquez sur « Derivation complete » pour voir les etapes intermediaires.",
+
+    thresholdTitle: "Modele de seuil testosterone → TFR",
+    thresholdSub: "Lien quantitatif du declin de la capacite biologique a l'effondrement demographique",
+    thresholdLead: "La composante predictive la plus forte du modele BERM. Le declin de la testosterone (~1 %/an, independant de l'age, documente dans cinq pays) cree une trajectoire a trois phases : erosion silencieuse → franchissement du seuil → limite biologique. Le modele est calibre contre les donnees finlandaises et coreennes et genere des predictions specifiques et testables au niveau national.",
+    thresholdPhase1Title: "Phase 1 : Erosion silencieuse",
+    thresholdPhase1Desc: "La testosterone decline mais est biologiquement suffisante. Le TFR est stable ou decline lentement en raison de facteurs culturels. La capacite biologique depasse la demande culturelle.",
+    thresholdPhase2Title: "Phase 2 : Seuil franchi",
+    thresholdPhase2Desc: "La perte cumulative de T depasse ~40 %. Subfertilite masculine croissante (T < 300 ng/dL). Le TFR accelere a la baisse car la capacite biologique devient la contrainte limitante. Les programmes pro-natalistes commencent a echouer.",
+    thresholdPhase3Title: "Phase 3 : Limite biologique",
+    thresholdPhase3Desc: "Le TFR passe sous 1,0. L'incapacite biologique domine. Meme les couples motives necessitent la reproduction assistee. La demande d'FIV croit exponentiellement.",
+    thresholdMathTitle: "Formulation mathematique",
+    thresholdMathT: "T(t) = T₀ × (1 − r)^(t − t₀)",
+    thresholdMathTFR: "TFR(t) = min( TFR_culturel(t), TFR_bio(t) )",
+    thresholdMathExplain: "Quand TFR_bio < TFR_culturel, la capacite biologique est la contrainte limitante. La transition sigmoide a ~40 % de perte cumulative de T produit le pattern observe : des decennies de stabilite suivies d'un effondrement rapide.",
+    thresholdTableTitle: "Parametres par pays",
+    thresholdTableCountry: "Pays",
+    thresholdTableRate: "r (%/an)",
+    thresholdTableSource: "Source",
+    thresholdTableCumul: "Cumul. 2024",
+    thresholdTableThreshold: "Annee seuil",
+    thresholdTablePhase: "Phase",
+    thresholdFinlandTitle: "Validation retrospective : Finlande",
+    thresholdFinlandText: "La Finlande est la Pierre de Rosette du modele. [[ref:perheentupa2013|Perheentupa (2013)]] documente un declin de T de 37 % dependant de la cohorte (n=3 271, 1972-2002). Le TFR est reste stable a 1,63-1,87 pendant 40 ans (1970-2010), puis s'est effondre a 1,26 en 2024. Le delai de ~35 ans entre le debut du declin de T et l'effondrement du TFR est coherent avec l'erosion biologique cumulative atteignant le seuil. Si le modele avait existe en 2005, il aurait pu predire l'effondrement de la Finlande 10-15 ans a l'avance.",
+    thresholdProjectionsTitle: "Projections TFR par pays",
+    thresholdProjections2030: "2030",
+    thresholdProjections2035: "2035",
+    thresholdChartTitle: "Modele de seuil interactif",
+    thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]] a rapporte un resultat nul apres ajustement pour le BMI. Le modele interprete le BMI comme un mediateur (EMF → perturbation metabolique → BMI ↑ → T ↓), pas un facteur de confusion — ajuster pour le BMI supprime une partie du signal. Voir la section structure causale ci-dessous.",
+    thresholdFootnoteEstimated: "Aucune etude publiee de tendance seculaire de T n'est disponible. Le taux coreen est estime a partir de la densite EMF mondiale la plus elevee ; le taux japonais est estime par analogie avec le declin documente de la Finlande. Ceux-ci sont provisoires et seront mis a jour lorsque des donnees directes seront disponibles.",
+    thresholdCaveat: "Les taux de declin de T sont des tendances seculaires independantes de l'age provenant d'etudes longitudinales evaluees par les pairs. Les taux coreen et japonais sont des estimations. Le seuil de 40 % est calibre, pas derive. Les projections supposent la continuation des taux actuels.",
+
+    causalStructureTitle: "Pourquoi le BMI n'explique pas le declin",
+    causalStructureLead: "Une objection persistante soutient que l'obesite croissante, pas une exposition environnementale, explique le declin seculaire de la testosterone. L'analyse causale formelle utilisant le cadre de Pearl revele que le BMI est un mediateur (sur la voie causale), pas un facteur de confusion (cause independante). Ajuster pour un mediateur supprime le signal reel.",
+    causalDagConventionalTitle: "Interpretation conventionnelle",
+    causalDagConventionalCaption: "BMI comme facteur de confusion : l'ajustement est correct, resultat nul = pas de declin",
+    causalDagBermTitle: "Interpretation BERM",
+    causalDagBermCaption: "BMI comme mediateur : l'ajustement supprime le signal medie, nul = surcorrection",
+    causalMazurTitle: "Le test de poids stable : [[ref:mazur2013|Mazur et al. 2013]]",
+    causalMazurText: "991 veterans de l'US Air Force suivis sur 6 vagues de mesure pendant 20 ans (1982-2002). Les hommes qui ont maintenu leur poids ont quand meme perdu 117 ng/dL (19 %) de leur testosterone. C'est une experience naturelle qui controle le BMI sans ajustement statistique.",
+    causalMazurQuote: "Nous n'avons pas identifie la raison du declin seculaire de la testosterone, mais nous excluons l'obesite croissante comme explication suffisante ou primaire.",
+    causalMazurSource: "[[ref:mazur2013|Mazur, Westerman & Mueller 2013]], PLOS ONE",
+    causalPathwayTitle: "Decomposition quantitative des voies",
+    causalPathwayDirect: "Voie directe",
+    causalPathwayDirectDesc: "EMF -> Cav3.2/melatonine/cortisol -> declin T",
+    causalPathwayDirectEst: "~117 ng/dL / 20 ans (~67 %)",
+    causalPathwayMediated: "Voie mediee",
+    causalPathwayMediatedDesc: "EMF -> mecanismes metaboliques -> augmentation BMI -> aromatase/SHBG -> declin T",
+    causalPathwayMediatedEst: "~58 ng/dL / 20 ans (~33 %)",
+    causalPathwayCaveat: "Ces proportions sont approximatives, derivees de [[ref:mazur2013|Mazur 2013]] (groupes poids stable vs prise de poids). Une analyse de mediation formelle (SEM) pourrait affiner ces estimations.",
+    dagDietLifestyle: "Regime / Mode de vie",
+    dagBmiAdjCorrect: "Ajustement BMI : CORRECT",
+    dagNullNoDecline: "nul = pas de vrai declin",
+    dagMetabolicPaths: "6 voies metaboliques",
+    dagPathways: "voies",
+    dagMediated: "mediee (~33 %)",
+    dagDirect: "directe (~67 %)",
+    dagOvercorrection: "Ajustement BMI : SURCORRECTION",
+    dagRemoves: "supprime ~33 % du signal reel",
+    causalReconciliationTitle: "Reconcilier les resultats « contradictoires »",
+    causalReconciliationLead: "Quand la structure causale est comprise, toutes les etudes existantes — y compris celles rapportant des resultats nuls — deviennent coherentes :",
+    causalReconciliationStudies: [
+      { referenceId: "travison2007_v2", study: "Travison 2007", bmiAdj: true, result: "-1,0 %/an", interpretation: "Voie directe capturee (ajuste pour BMI). L'amorcage ELF a cru pendant la meme periode (propagation WiFi + 3G)" },
+      { referenceId: "mazur2013", study: "Mazur 2013", bmiAdj: false, result: "-0,95 %/an", interpretation: "Voie directe confirmee naturellement (poids stable). 20 ans = couches 2→4. Voie directe ~67 %. Amorcage : P a cru de 1,5 → 2,0 sur la meme periode" },
+      { referenceId: "chodick-2020-israel", study: "Chodick 2020", bmiAdj: false, result: "-1,02 %/an", interpretation: "Effet total (direct + medie). Israel : haute densite RF → fort effet de couches" },
+      { referenceId: "santi2025", study: "Santi 2025", bmiAdj: true, result: "Declin T et LH", interpretation: "Voie directe + perturbation HPG confirmees. LH↓ indique perturbation hypophysaire. Le cerveau est l'organe le plus amorce (champ proche 24/7). Le genotype CACNA1C modere la reponse LH" },
+      { referenceId: "andersson-2007-denmark", study: "Andersson 2007", bmiAdj: true, result: "Nul", interpretation: "La voie mediee domine → l'ajustement BMI supprime le signal. Danemark 56°N : si l'etude etait en ETE → CRY sature → effet plus petit. La correction saisonniere peut reveler le signal" },
+      { referenceId: "nyante2012_nhanes", study: "Nyante 2012", bmiAdj: true, result: "Nul", interpretation: "Changement de dosage + retrait du mediateur → signal masque. USA (60 Hz) vs Europe (50 Hz) : frequence ELF differente → profil d'interference CRY possiblement different" },
+    ],
+    causalSantiTitle: "[[ref:santi2025|Santi 2025]] : la testosterone ET la LH declinent",
+    causalSantiText: "La plus grande meta-analyse jamais realisee (1 064 891 hommes, 1971-2024) a trouve que la testosterone serique decline independamment de l'age, du BMI et de la methode de dosage. De maniere cruciale, elle a aussi trouve que la LH (le signal hypophysaire qui pilote la production de testosterone) decline egalement — excluant une simple insuffisance testiculaire et pointant vers une perturbation au niveau hypothalamo-hypophysaire.",
+    causalSantiMechanism: "BERM predit exactement ceci : la Voie A (cellule de Leydig directe via Cav3.2 -> StAR) reduit la testosterone, tandis que la Voie C (melatonine -> GnRH) et la Voie D (cortisol -> HPG) reduisent la LH. Le declin simultane des deux hormones est la signature d'une perturbation multi-niveaux — pas le vieillissement, pas l'obesite.",
+    causalSantiSource: "[[ref:santi2025|Santi et al. 2025]], J Endocrinol Invest 48:2721-2734",
+    pocketTitle: "La transition de la poche",
+    pocketText: "Le doublement du taux de declin des spermatozoides apres 2000 ([[ref:levine2023_sperm|1,16 %→2,64 %/an]]) coincide avec un seul changement comportemental : le telephone est passe de l'oreille a la poche. La capacite de donnees 3G signifiait que le telephone restait dans la poche continuellement plutot que d'etre utilise uniquement pour les appels. Les testicules sont entres dans le champ proche pendant 16 heures par jour.",
+    causalInverseTitle: "Test pharmacologique inverse : la therapie de testosterone inverse l'obesite",
+    causalInverseText: "Si l'obesite causait le declin de la testosterone, alors augmenter la testosterone ne devrait pas affecter le poids. Mais la therapie de testosterone chez les hommes obeses hypogonadiques produit une perte de poids dramatique (jusqu'a 30 kg dans l'obesite de classe III), confirmant une causalite bidirectionnelle : la suppression de T entraine la prise de poids, pas seulement l'inverse.",
+    causalInverseData: [
+      { label: "Obesite classe I", loss: "-16,3 kg", bmi: "-5,52" },
+      { label: "Obesite classe II", loss: "-25,3 kg", bmi: "-8,15" },
+      { label: "Obesite classe III", loss: "-30,5 kg", bmi: "-9,96" },
+    ],
+    causalInverseSource: "[[ref:saad2016|Saad et al. 2016]], etudes de registre",
+
+    whyPronatTitle: "Pourquoi 200 milliards de dollars n'ont pas pu relever la fecondite de la Coree du Sud",
+    whyPronatText: "L'architecture a trois niveaux de BERM separe la fecondite en capacite biologique (Niveau 1), couplage EMF-comportemental (Niveau 2) et choix culturel (Niveau 3). Les politiques pro-natalistes — bonus en especes, conge parental, subventions de garde d'enfants — ciblent le Niveau 3 (motivation). Mais quand le Niveau 1 (capacite biologique) devient la contrainte limitante, aucune incitation de Niveau 3 ne peut compenser. La perte cumulative de testosterone de la Coree du Sud depasse 48 %. Une fraction croissante de couples voulant des enfants ne peuvent pas concevoir naturellement. Les 200 milliards de dollars ont adresse le mauvais niveau du modele.",
+    whyPronatPrediction: "T-TFR-4 : le TFR de la Coree ne depassera pas durablement 1,0 jusqu'en 2035, independamment des depenses politiques.",
+    whyPronatFalsification: "Falsification : TFR Coree au-dessus de 1,0 soutenu pendant 3+ ans.",
+
+    bioFloorTitle: "Le plancher biologique",
+    bioFloorText: "La spermatogenese necessite une testosterone intratesticulaire 50-100× la concentration serique. Quand la testosterone serique descend sous ~200 ng/dL, la spermatogenese est severement alteree. Aux taux de declin actuels (1 %/an depuis une base de ~500 ng/dL) :",
+    bioFloorTimeline: [
+      { year: "2024", value: "~320 ng/dL", note: "moyenne de la population, hommes jeunes" },
+      { year: "2035", value: "~285 ng/dL", note: "" },
+      { year: "2050", value: "~240 ng/dL", note: "" },
+      { year: "2070", value: "~190 ng/dL", note: "sous le seuil spermatogenique" },
+    ],
+    bioFloorConsequence: "Sous ce plancher, meme la FIV ne peut utiliser le sperme propre de l'homme. Le sperme de donneur, l'extraction de spermatozoides testiculaires ou les technologies futures (spermatogenese in vitro) deviennent necessaires. Ce n'est pas de la speculation — c'est de l'arithmetique appliquee aux taux de declin mesures.",
+
+    sixFactorTitle: "Pourquoi la testosterone est la variable d'integration",
+    sixFactorLead: "La testosterone est le biomarqueur unique le plus informatif dans le cadre BERM car six proprietes biophysiques independantes la rendent exceptionnellement sensible au mecanisme EMF → VGCC → Ca²⁺.",
+
+    diseaseCascadesTitle: "Cascades pathologiques etendues",
+    diseaseCascadesLead: "Onze cascades pathologiques supplementaires derivees de l'analyse de la famille de genes VGCC. Chaque cascade lie un sous-type VGCC specifique a un mecanisme pathologique avec son propre niveau de preuve.",
+    diseaseCascades: [
+      { num: 9, title: "Myopie", mechanism: "EMF → VGCC dans les cellules amacrines dopaminergiques → liberation DA perturbee → frein d'elongation sclerale affaibli + CRY → melatonine → croissance oculaire circadienne dysregulee. TROIS canaux convergents.", level: "M", trend: "22,9 % (2000) → 34 % (2020) → 50 % (2050)" },
+      { num: 10, title: "Maladies auto-immunes", mechanism: "EMF → perturbation chronique du Ca²⁺ dans les cellules T → voie Ca²⁺-calcineurine-NFAT dysregulee → activation des cellules T autoreactives. Les inhibiteurs de calcineurine (cyclosporine, tacrolimus) sont le traitement standard — confirmation pharmacologique.", level: "M|C", trend: "5 % de prevalence aux USA, +19,1 %/an mondialement" },
+      { num: 11, title: "Perte auditive et acouphenes", mechanism: "EMF → Cav1.3 dans les synapses des cellules ciliees internes → surcharge chronique en Ca²⁺ → excitotoxicite → dommage synaptique. EMF Bluetooth/ecouteurs directement adjacent a la cochlee.", level: "M|C", trend: "17,7 % des jeunes adultes rapportent des acouphenes ; 1Md+ a risque" },
+      { num: 12, title: "Migraine", mechanism: "CACNA1A (type P/Q) GoF → CSD. Variants CACNA1I (Cav3.3) → migraine hemiplegique (OR 2,30). Ratio femme:homme 2,5-4,3:1 coherent avec VGCC differentiel par sexe.", level: "E", trend: "Prevalence en augmentation ; age de debut 12-17" },
+      { num: 13, title: "Perturbation de l'architecture du sommeil", mechanism: "Cav3.3 dans le nRt → pacemaker des fuseaux. Cav3.1 dans les neurones TC → ondes delta. Courant de fenetre type T → oscillation lente. EMF → perturbation fuseaux/delta → qualite de sommeil ↓.", level: "M|C", trend: "Insomnie en hausse ; duree de sommeil en baisse mondialement" },
+      { num: 14, title: "SOPK", mechanism: "Convergence a 4 organes : cellule β pancreatique (Cav1+3 → insuline ↓) → hyperinsulinemie → androgene thequal ↑ + aromatase granulosale → E2 ↓ + Cav3 hypophysaire → LH/FSH ↑. Les quatre sont sensibles a l'EMF.", level: "M", trend: "5-20 % des femmes en age de reproduction ; en hausse jusqu'en 2035" },
+      { num: 15, title: "Douleur chronique", mechanism: "Cav3.2 est le canal de douleur PRIMAIRE dans les nocicepteurs DRG. Surregule dans la douleur inflammatoire/neuropathique. Les neurones DRG feminins montrent des courants Cav3.2 plus importants → difference de sexe.", level: "M|C", trend: "Epidemie de douleur chronique ; des centaines de millions affectes" },
+      { num: 16, title: "Arythmie cardiaque (QT)", mechanism: "CACNA1C GoF → courant de fenetre Cav1.2 ↑ → QT ↑. Syndrome de Timothy : QT extreme + autisme de la MEME mutation.", level: "E", trend: "Timothy : la plupart meurent avant 3 ans sans traitement" },
+      { num: 17, title: "Neurodeveloppement et differenciation sexuelle", mechanism: "7 canaux causaux × 3 fenetres de developpement. Prenatal : Leydig Cav3 → T↓, aromatase, hypophyse. Pubertaire : CPF, melatonine, OT/AVP, cortex insulaire.", level: "L*", trend: "Orientations vers les cliniques de genre : Suede +19 700 % ; ASD-GD 6-26 %" },
+      { num: 18, title: "TheraBionic : preuve de mecanisme", mechanism: "Dispositif approuve FDA (2019) pour le CHC. 27,12 MHz, AM a des frequences specifiques aux tumeurs. DAS 100-1000× inferieur au telephone. Mecanisme : EMF → Cav3.2 → Ca²⁺ → differenciation CHC. CONFIRME EMF non thermique → VGCC.", level: "E", trend: "34 % d'augmentation de survie dans le CHC avance" },
+      { num: 19, title: "Syndrome metabolique / Obesite", mechanism: "SIX voies convergentes EMF → Ca²⁺ : (1) appetit hypothalamique ↑ via glie ARC Ca²⁺ → AgRP/NPY, (2) thermogenese BAT ↓ via CaMKII/CREB → UCP1 et perturbation SERCA2b/RyR2, (3) dynamique d'insuline des cellules β ↓ via VGCC type L, (4) axe thyroidien → taux metabolique ↓ via Cav3 dans les thyreotrophes, (5) melatonine → perturbation circadienne metabolique, (6) Ca²⁺ adipocytaire → lipogenese ↑. CaMKII est la MOLECULE DE CONVERGENCE connectant toutes les voies. Paradoxe de [[ref:klimentidis2010|Klimentidis]] : 24 populations, 8 especes TOUTES prenant du poids (p = 1,2×10⁻⁷) y compris les animaux de laboratoire avec regime controle. L'obesite est multifactorielle — l'EMF est UN facteur contribuant expliquant le residu que le regime/exercice/genetique ne peut expliquer.", level: "M", trend: "Obesite mondiale : 4 % (1975) → 13 % (2016) → 42 % (USA 2024)" },
+    ],
+    vgccDiagramTitle: "Famille de genes VGCC",
+    vgccDiagramSubtitle: "Six genes, six clusters pathologiques, un mecanisme",
+    emfBarTitle: "Hierarchie de sensibilite EMF au potentiel de repos",
+    emfBarSubtitle: "Probabilite d'activation relative a ~−70 mV de potentiel membranaire",
+
+    epistemic:
+      "Note epistemique : les equations ci-dessus sont la specification actuelle du modele (BERM v17). Les valeurs des parametres sont calibrees contre les donnees observees et seront mises a jour au fur et a mesure que de nouvelles preuves deviennent disponibles. Le modele est explicitement concu pour etre falsifiable -- si ses predictions echouent, le modele est faux. Le paradoxe des dispositifs therapeutiques (24+ categories de dispositifs EMF non thermiques approuves par les regulateurs, DC a UV) etablit la bioactivite non thermique comme un fait reglementaire, pas une hypothese.",
+    lbermRef:
+      "La structure formelle du produit Jacobien (chapitre 17), le registre des obligations de preuve et les systemes de securite sont decrits dans le document de base (LBERM_final.docx).",
+    svgSpermDamage: "Dommage spermatique",
+    svgCircadian: "Circadien",
+    svgMelatoninDown: "Melatonine ↓",
+    svgCa2Entry: "Entree Ca²⁺",
+    svgCortisolUp: "Cortisol ↑",
+    svgTestosteroneDown: "Testosterone ↓",
+    svgAutophagyDown: "Autophagie ↓",
+    svgCellGrowthDown: "Croissance cellulaire ↓",
+    svgTfr: "TFR",
+    svgDecline: "declin",
+    svgFiveRoutesAria: "Cinq voies vers le declin du TFR",
+    brainModulomeLink: "Modulome cerebral",
+    routeGonadal: "Gonadique",
+    routeAutonomic: "Autonome",
+    routeNeurodevel: "Neurodevel.",
+    routeLabel: "Voie",
+    routeParallelCaption: "Chaque voie est independamment suffisante — elles operent en parallele",
+    labelWarning: "Avertissement",
+    labelPrediction: "Prediction",
+    labelFalsification: "Falsification",
+    colStudy: "Etude",
+    colBmiAdj: "Ajust. BMI",
+    colResult: "Resultat",
+    colBermInterpretation: "Interpretation BERM",
+    countryDenmark: "Danemark",
+    countryFinland: "Finlande",
+    countrySouthKorea: "Coree du Sud",
+    countryJapan: "Japon",
+    estHighestEmf: "Estime (EMF le plus eleve)",
+    estFinlandAnalogy: "Estime (analogie Finlande)",
+    layerMilitaryRadar: "Radar militaire",
+    layerWeatherRadar: "Radar meteorologique",
+    layerMobileNetworks: "Reseaux mobiles",
+    layerWindTurbines: "Eoliennes",
+    layerDisplayTransition: "Transition d'ecrans",
+    layerSmartMeters: "Compteurs intelligents",
+    layerIndoorLed: "LED interieur",
+    layerSolarInverters: "Onduleurs solaires",
+    layerStreetLed: "LED de rue",
+    pharmEvidenceLink: "Preuves pharmacologiques : 8 classes de medicaments convergeant sur les voies BERM →",
+    svgVgccPathway: "Voie VGCC",
+    svgAutophagy: "Autophagie",
+    svgProteinSynthesis: "Synthese proteique",
+    svgCellGrowth: "Croissance cellulaire",
+    svgImmuneRegulation: "Regulation immunitaire",
+    svgIntegrator: "integrateur",
+    svgCalories: "Calories",
+    svgAging: "Vieillissement",
+    svgCounteracts: "(contrecarre)",
+    svgFertilityDown: "Fecondite↓",
+    svgCancer: "Cancer",
+    svgMtorSharedHub: "mTOR est le hub partage — trois epidemies, un mecanisme",
+    svgInflammation: "Inflammation",
+    svgCortisol: "Cortisol",
+    svgMelatonin: "Melatonine",
+    svgPosFeedback: "Retroaction positive",
+    svgNegFeedback: "Retroaction negative",
+    svgHub: "hub",
+    svgFeedbackCaption: "17 boucles de retroaction positive — tout point d'entree active le reseau entier",
+    svgVgccHierarchyCaption: "Canaux T-type (Cav3) >> Cav1.3 (L-type a seuil bas) >> Cav1.2 (potentiel d'action uniquement). La retroaction CaMKII deplace le seuil Cav3.2 vers des valeurs plus negatives au fil du temps.",
+    svgRecoveryBarAria: "Diagramme a barres des taux de recuperation",
+    svgRecoveryCaption: "Taux de recuperation (α) : 1,0 = recuperation complete, 0,0 = irreversible",
+    svgTechLayersAria: "Diagramme d'exposition cumulative des couches technologiques",
+    layerPowerGrid: "Reseau electrique",
+    layerRadioTv: "Radio/TV",
+    layerCellular: "Cellulaire",
+    svgCumulativeExposure: "Exposition cumulative",
+    svgTechLayersCaption: "Cinq couches technologiques : chaque generation s'empile sur les precedentes",
+    conventionalLabel: "Conventionnel :",
+    layerExplanationLabel: "Explication par couches :",
+    conventional: "Conventionnel",
+    anomalyUnexplainedDecline: "Decline inexplique",
+    anomalyUnexplained: "Inexplique",
+    anomalyWifiLedLayers: "Couches WiFi+LED",
+    anomalySocialMedia: "Reseaux sociaux",
+    anomalySomeTheory: "Theorie reseaux sociaux",
+    anomalyTripleChannel: "Triple canal",
+    anomalySedentary: "Sedentarite",
+    anomaly247Emf: "EMF 24h/24",
+    anomalyProsperity: "Prosperite",
+    anomalyElectrificationLag: "Retard d'electrification",
+    anomalyPhysicalLabor: "Travail physique",
+    anomalyZeroLayers: "Zero couche",
+    colCountry: "Pays",
+    colActual: "Reel",
+    colNote: "Note",
+    countryFinlandName: "Finlande",
+    countrySouthKoreaName: "Coree du Sud",
+    countryUsaName: "USA",
+    countryAmishName: "Amish",
+    colDriver: "Facteur",
+    replacementLabel: "Remplacement",
+    countrySKoreaShort: "Coree S.",
+    countryIndiaName: "Inde",
+    colAxis: "Axe",
+    colTargetOrgan: "Organe cible",
+    colConsequence: "Consequence",
+    svgGenesCascadeAria: "Diagramme en cascade de 15 genes",
+    tierInflux: "INFLUX",
+    tierModulation: "MODULATION",
+    tierIntegration: "INTEGRATION",
+    tierExtrusion: "EXTRUSION",
+    tierSignaling: "SIGNALISATION",
+    svgGenesCascadeCaption: "Cascade Ca²⁺ : 15 genes repartis sur cinq niveaux fonctionnels",
+    colGene: "Gene",
+    colProtein: "Proteine",
+    colBermRole: "Role BERM",
+    colKeyVariant: "Variant cle",
+    colDiseases: "Maladies",
+    colEvidence: "Evidence",
+    colVariant: "Variant",
+    colEffect: "Effet",
+    ehsAssay: "dosage",
+    ehsLymphocyte: "Autophosphorylation lymphocytaire",
+    ehsElevated: "Eleve",
+    ehsGenotyping: "genotypage",
+    ehsCalciumVariants: "Variants des canaux calciques",
+    ehsRiskAlleles: "Alleles a risque",
+    ehsSignalingMarkers: "Marqueurs de signalisation",
+    ehsHighRisk: "Profil a haut risque",
+    ehsPolygenicScore: "Score de risque polygenique",
+    ehsOverallAssessment: "Evaluation globale de la sensibilite aux EMF",
+    ehsDiagnosticClass: "Classification diagnostique EHS",
+    ehsLowModHigh: "Faible / Modere / Eleve",
+    whyDisagreeTitle: "Pourquoi les etudes se contredisent",
+    whyDisagreeSub: "Huit modérateurs non contrôlés expliquent des décennies de preuves « contradictoires »",
+    whyDisagreeDesc: "La recherche sur les EMF produit des résultats contradictoires depuis des décennies. BERM identifie huit modérateurs non contrôlés qui prédisent quelles études trouvent des résultats positifs et lesquelles trouvent des résultats nuls :",
+    modSeason: "Saison",
+    modSeasonDesc: "La sensibilité du magnétorécepteur CRY dépend de la lumière. En hiver, CRY est plus sensible → l'effet des EMF sur la mélatonine est plus fort. Démontré chez les veaux ([[ref:halgamuge2015|Halgamuge 2015]]).",
+    modGenotype: "Genotype",
+    modGenotypeDesc: "Allèle A de CACNA1C rs1006737 → davantage de Cav1.2 → réponse Ca²⁺ plus forte. [[ref:sousouri2025|Sousouri 2025]] (ETH) : le génotype CACNA1C détermine la réponse du sommeil à la 5G.",
+    modLabElf: "Fond ELF du laboratoire",
+    modLabElfDesc: "Le réseau électrique de 50/60 Hz augmente l'expression des VGCC en 8 à 10 jours ([[ref:sun2016_elf_vgcc|PMC4757866]]). Les laboratoires à fond ELF élevé « préparent » les cellules.",
+    modNighttimeEmf: "EMF nocturne",
+    modNighttimeEmfDesc: "Routeur Wi-Fi dans la chambre vs nuit sans EMF → état de récupération CaMKII différent → niveau basal de Ca²⁺ différent à l'entrée dans l'expérience.",
+    modSpeciesPriming: "Espece / Amorcage",
+    modSpeciesPrimingDesc: "Les études animales en laboratoire (préparation ELF 24 h/24, génétique homogène) trouvent des résultats positifs dans 92 % des cas. Les études humaines menées dans des environnements hétérogènes en trouvent 35 %. Les deux sont correctes — les animaux de laboratoire sont préparés de façon chronique (expression des VGCC élevée, [[ref:sun2016_elf_vgcc|PMC4757866]]). p=0,002.",
+    modDuration: "Duree",
+    modDurationDesc: "L'exposition chronique (>1 semaine) produit des résultats positifs dans 92 % des cas. L'exposition aiguë (1 à 2 nuits) en produit 31 %. L'autophosphorylation de CaMKII nécessite une charge cumulative de Ca²⁺. p=0,001.",
+    modPulsation: "Pulsation",
+    modPulsationDesc: "Les signaux pulsés produisent des résultats positifs dans 88 % des cas. Les signaux CW en produisent 48 %. Le mécanisme IFO-VGIC nécessite des champs variables. p=0,048.",
+    modVitaminD: "Statut en vitamine D",
+    modVitaminDDesc: "La vitamine D (1,25(OH)₂D₃) diminue l'ARNm de CACNA1C/1D ([[ref:vdh_lvscc|J Neurosci 2001]]). Carence en vitamine D → surexpression des VGCC = même état que la préparation ELF. Les études menées dans des populations carencées en vitamine D (hiver, hautes latitudes) devraient montrer des effets EMF plus forts.",
+    modThreePredictors: "Trois moderateurs predisent les resultats des etudes avec une signification statistique :",
+    modAnalysisBasis: "Fondé sur l'analyse de 29 études portant sur 3 critères. Validé par [[ref:weller2025_dna|Weller 2025]] (n=517).",
+    predRepl1Label: "Prediction REPL-1 : ",
+    predRepl1Desc: "Une analyse rétrospective de 50 à 100 bioessais EMF publiés montrera que ces huit modérateurs prédisent significativement les résultats positifs par rapport aux résultats nuls. Testable SANS nouvelles données.",
+    modEpistemicNote: "Niveau épistémique : le cadre à huit modérateurs est la synthèse de BERM (niveau M). Les modérateurs individuels disposent d'un soutien empirique (niveau E).",
+    dnaBelow58Title: "58% des dommages a l'ADN surviennent en dessous des limites ICNIRP",
+    dnaBelow58Desc: "[[ref:weller2025_dna|Weller et al. (2025)]] ont analysé 517 études de génotoxicité et constaté que 58 % des études signalant des dommages à l'ADN utilisaient des niveaux d'exposition INFÉRIEURS aux directives ICNIRP actuelles. L'[[ref:ivancsits_dna_recovery|étude d'Ivancsits]] a observé des cassures de l'ADN à 35 µT — moins d'un cinquième de la limite professionnelle ICNIRP de 200 µT.",
+    dnaBelow58Mechanism: "Les limites ICNIRP sont conçues pour prévenir les effets THERMIQUES. Les dommages à l'ADN dus aux EMF relèvent d'un mécanisme NON THERMIQUE agissant par un dysfonctionnement des canaux calciques voltage-dépendants.",
+    dnaRepairTitle: "Les dommages a l'ADN se reparent en 9 heures — si l'exposition cesse",
+    dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]] ont montré que les cassures de l'ADN induites par les EMF revenaient à la normale dans les 9 heures suivant l'arrêt de l'exposition. Cela quantifie la fenêtre de récupération de BERM : le corps PEUT réparer les dommages induits par les EMF, mais seulement s'il dispose d'une durée suffisante sans EMF.",
+    dnaModernEnv: "Les environnements modernes avec WiFi 24 h/24, éclairage LED et smartphones au lit éliminent entièrement cette fenêtre de récupération. Une chambre moderne typique ne fournit aucun temps de récupération sans EMF.",
+  },
+  ko: {
+    title: "모델 문서",
+    subtitle:
+      "생체전자기 생식 모델(BERM) 종합 문서: 3단계 아키텍처, 인과 경로, 결합 방정식 및 회복 역학.",
+    metaTitle: "모델 문서 - Extinction Field",
+    metaDesc:
+      "BERM 모델 문서: 3단계 아키텍처, 인과 경로, 방정식 및 회복 역학.",
+
+    archTitle: "3단계 아키텍처",
+    archDesc:
+      "BERM은 출산율 감소를 세 가지 뚜렷한 인과 계층으로 분해합니다. 각 수준은 고유한 역학, 시간 척도 및 증거 기반을 가지고 있습니다. 한 국가의 합계출산율(TFR)은 세 수준의 곱이지 합이 아닙니다 -- 각각이 다른 것들의 승수로 작용합니다.",
+    level1Label: "수준 1",
+    level1Title: "생물학적 역량",
+    level1Desc:
+      "현재 환경 노출을 감안한 최대 생리적 출산 능력. 정자 품질(농도, 운동성, DNA 단편화), 난자 품질, 호르몬 환경 및 혈뇌장벽(BBB) 무결성을 포함합니다. 이 수준이 EMF 노출에 가장 직접적으로 영향을 받습니다.",
+    level2Label: "수준 2",
+    level2Title: "EMF-행동 결합",
+    level2Desc:
+      "개인 기기 사용이 주변 EMF 노출과 어떻게 상호작용하는지. 높은 주변 노출 환경에서 휴대전화를 소지하는 사람은 비선형 결합 효과를 겪습니다. 이 수준은 인프라 수준과 개인 수준 노출 사이의 상호작용을 포착합니다.",
+    level3Label: "수준 3",
+    level3Title: "진정한 문화",
+    level3Desc:
+      "생물학적 역량과 무관한 자발적 출산 선택. 교육, 도시화, 피임 접근성, 경제적 기회, 문화적 규범. 이 구성요소는 모든 인구통계학 모델에 존재합니다; BERM은 그 아래에 생물학적 층과 EMF 층을 추가합니다.",
+
+    causalTitle: "인과 경로 다이어그램",
+    causalDesc:
+      "아래 다이어그램은 Lindgren 기하학에서 TFR 감소까지의 완전한 메커니즘 체인을 보여줍니다. 8개 수준, 63개 노드, 107개 엣지. 두 개의 공동 주요 경로가 병렬로 작동합니다: 경로 A(VGCC → Ca²⁺ → ROS)는 가장 강력한 실험적 지지(23-28개 차단 연구)를 가지며, 경로 B(RPM → CRY → 일주기 교란)는 Lindgren 기하학에서 생물학으로의 가장 완전한 이론적 다리입니다(RPM 해밀토니안의 87.5%가 계량 가설에서 유도 가능). CRY/RPM 경로는 종간 지지 증거가 있습니다: 조류의 자기 나침반 교란([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), 초파리의 CRY 의존 자기수용([[ref:yoshii2009|Yoshii 2009]]), 인간 세포의 CRY 의존 ROS 변조([[ref:sherrard2018|Sherrard 2018]]), 그리고 결정적으로 인간의 기능적 청색광 의존 자기수용([[ref:chae2019|Chae et al. 2019]], PLOS ONE)이 BERM이 모델링하는 종에 생물학적 기질이 존재함을 나타냅니다. 두 경로 모두 증거 수준 E에서 독립적으로 지지됩니다. 노드를 클릭하면 메커니즘, Lindgren 해석, 정량적 공식화, 회복 매개변수 및 주요 참고문헌을 볼 수 있습니다. 노드 테두리는 인식론적 수준에 따라 색상이 지정됩니다.",
+    pathwayHierarchyNote:
+      "경로 가중치는 커뮤니티 데이터(Amish-한국 기울기)에 대한 경험적 보정을 반영합니다. 이론적 계층구조를 반영하지는 않습니다: 경로 B(CRY/RPM)가 이론적으로 PRIMARY 경로인 이유는 RPM 해밀토니안의 87.5%가 Lindgren 기하학에서 유도 가능하여 메커니즘의 존재를 기하학적 결과로 확립하기 때문입니다. 경로 A는 더 강력한 실험적 지지(23-28개 차단 연구)를 가집니다. 이전의 δVm 반론(기하학만으로 δV_m ≈ 10⁻²¹ V)은 이제 T형 칼슘 채널 분기 메커니즘에 의해 해결됩니다: Schwan 방정식은 외부 전장을 막에서 7.5-15 μV로 증폭하고(주변 1 V/m에서 열 잡음의 37%; 개인 5 V/m에서 184%), T형 채널(Cav3)은 휴지 상태에서 ~10%가 열려있는 분기점에서 작동하여(창 전류) 이러한 교란에 민감합니다. 경로 D(HPA → 테스토스테론)도 같은 T형 메커니즘을 통해 유도됩니다: Schwan δVm → Cav3 → Ca²⁺ → StAR → 테스토스테론([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
+    rpmFrequencyNote:
+      "CRY/RPM은 RF 반송 주파수(900 MHz – 3.5 GHz)에 반응하지 않습니다. 공진 상한은 ~22.5 MHz입니다([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473). 경로 B의 생물학적 활성 구성요소는 지자기 배경(B_DC)과 통신 신호의 ELF 변조 포락선(GSM 217 Hz, WiFi 10 Hz 비콘)입니다. RF 반송파 자체의 효과는 전기장 구성요소를 통해 경로 A에 의해 매개됩니다. 두 경로는 상보적인 주파수 영역을 가집니다.",
+    vgccHierarchyTitle: "휴지 전위에서의 VGCC 감도 계층",
+    vgccHierarchyNote:
+      "모든 전압의존성 칼슘 채널이 EMF에 동일하게 민감한 것은 아닙니다. 휴지 막전위(~-70 mV)에서 EMF 감도는 다음 계층을 따릅니다: Cav3(T형) >> Cav1.3 >> Cav1.2. T형 채널(Cav3.1, Cav3.2, Cav3.3)은 휴지 상태에서 ~10%가 열려있는 분기점에서 작동하여(창 전류) 작은 전압 교란에 지속적으로 민감합니다. Cav1.3은 '저역치 L형'으로 ~-50 mV에서 활성화됩니다 — Cav1.2보다 25 mV 더 음성(J Neurosci 2001). 이로 인해 Cav1.3은 저전압 지속 칼슘 유입이 필요한 조직의 주요 채널입니다: 동방결절 페이스메이커와 내유모세포 시냅스 전달. Cav1.2는 표준 L형으로 ~-30 mV에서 활성화되며 활동전위 동안에만 유의합니다 — 휴지 상태에서의 기여는 무시할 수 있습니다. 이 계층은 EMF에 대한 조직 특이적 취약성을 설명합니다: Cav3 우세 기관(고환, 뇌하수체, 부신, 해마)이 가장 많이 영향 받고; Cav1.3 의존 조직(내이, 동방결절)은 중간; Cav1.2 우세 조직(골격근, 심실 심근)은 전기 활동 중에만 영향 받습니다.",
+    camkiiTitle: "CaMKII 양성 피드백: 누적 감작",
+    camkiiNote:
+      "BERM의 누적 노출 모델에 대한 핵심 발견: CaMKII(칼슘/칼모듈린 의존 단백질 키나아제 II) 인산화는 Cav3.2 활성화 역치를 더 음성 전위로 이동시킵니다(PMC9913649). 이것은 양성 피드백 루프를 만듭니다: EMF → Cav3.2를 통한 Ca²⁺ 유입 → CaMKII 활성화 → Cav3.2 역치가 왼쪽으로 이동 → 채널이 EMF에 더 민감해짐 → 더 많은 Ca²⁺ 유입. 이 분자 메커니즘은 EMF 효과가 시간이 지남에 따라 누적되는 이유를 설명합니다: 각 노출 에피소드가 후속 노출에 대한 시스템의 민감도를 높입니다. CaMKII 피드백은 또한 단기 연구가 장기 효과를 과소평가할 수 있는 이유를 설명합니다 — 감작은 만성 노출에 걸쳐 수주에서 수개월에 걸쳐 발달합니다. 약리학적 예측: CaMKII 억제제(KN-93)는 급성 EMF 반응에 영향을 주지 않으면서 점진적 감작을 차단해야 합니다.",
+
+    chiSub: "주변 × 개인 노출 상호작용에 대한 포화 곡선",
+    chiTitle: "Lindgren chi 결합 방정식",
+    chiDesc:
+      "주변 EMF 인프라와 개인 기기 노출 사이의 결합은 선형이 아닙니다. chi 함수는 포화 곡선을 설명합니다: 낮은 주변 수준에서는 개인 노출이 거의 추가하지 않고; 높은 주변 수준에서는 개인 노출이 이미 환경 전장에 의해 지배됩니다.",
+    chiExplain:
+      "는 정규화된 주변 노출입니다(0 = 인프라 없음, 1 = 포화). 함수는 1에 점근적으로 접근하며, 이는 주변 노출이 증가함에 따라 개인 기기의 한계 효과가 감소함을 의미합니다.",
+    chiWherePrefix: "여기서",
+
+    chiFiveTitle: "5-스케일 χ",
+    chiFiveSub: "분자에서 인구까지 작동하는 선택 규칙",
+    chiFiveDesc: "χ 함수는 주변-개인 결합에만 국한되지 않습니다. 교란이 효과를 가지려면 배경 변수가 0이 아니어야 하는 모든 생물학적 스케일에서 나타납니다. 아래 표는 동일한 수학적 원리의 다섯 가지 구현을 보여줍니다.",
+    chiFiveColScale: "스케일",
+    chiFiveColBg: "배경 (B)",
+    chiFiveColPerturb: "교란",
+    chiFiveColExpr: "χ 표현식",
+    chiFiveColVerify: "검증",
+    chiFiveColLevel: "수준",
+    chiFiveLink: "전체 분석 보기 →",
+
+    chiEvidenceTitle: "증거 패밀리에 걸친 χ",
+    chiEvidenceSub: "선택 규칙이 6개의 독립적인 생물학적 영역에서 어떻게 나타나는지",
+    chiEvidenceDesc: "χ 함수는 추상적 구성물이 아닙니다 — 6개의 증거 패밀리에서 구체적이고 검증 가능한 변조를 예측합니다. 각 패밀리는 EMF가 언제 얼마나 강하게 해당 시스템에 영향을 미치는지 결정하는 고유한 χ 변조자를 가지고 있습니다.",
+    chiEvidenceFamilies: [
+      { referenceId: "sakurai2008", family: "당뇨병 (β세포)", chi: "χ(포도당): K_ATP → V_mem → VGCC 프라이밍", mechanism: "높은 포도당이 K_ATP 채널을 닫음 → 막 탈분극 → VGCC 프라이밍 → χ 높음. 낮은 포도당 → K_ATP 열림 → χ 낮음.", prediction: "EMF × 고GI 식단은 시너지 당뇨병 위험을 생성. 단식은 β세포를 보호.", verification: "Sakurai 2008: ELF가 인슐린 분비를 30% 감소", level: "M|C" },
+      { referenceId: "yu2019_btb", family: "정자 품질 (BTB)", chi: "χ(BTB 무결성): 장벽이 유효 전장을 감쇠", mechanism: "무손상 BTB는 정자발생 세포를 보호 → χ 낮음. EMF가 BTB를 개방 → 보호 상실 → χ 증가 → 양성 피드백.", prediction: "정자 품질 감소가 시간에 따라 가속화(초선형).", verification: "Yu 2019: 4G RF가 BTB를 직접 교란, 시간 의존", level: "E" },
+      { referenceId: "ulusoy2025_bbb_therapeutic", family: "장벽 (BBB + BTB)", chi: "χ(장벽 투과성): 연속 변조자", mechanism: "장벽은 연속 χ 변조자. 부분 손상된 장벽 = χ의 부분적 증가. 승법적 증폭을 생성.", prediction: "누적 노출에 따른 초선형 용량-반응 관계.", verification: "Ulusoy 2025: 30-360분에 걸친 점진적 BBB 분해", level: "E" },
+      { family: "감시종", chi: "χ(대사율): M^(-0.25) 스케일링", mechanism: "작은 동물: 질량 특이적 대사율이 높음 → 기저 ROS가 높음 → χ가 높음 → EMF 반응이 큼.", prediction: "곤충과 작은 새가 먼저 영향 받고; 큰 포유류가 나중.", verification: "시간 순서가 체질량 스케일링과 일치", level: "M|C" },
+      { family: "심장 (CRY2-TRPC1)", chi: "χ(CRY2 상태): 빛과 FAD 의존", mechanism: "CRY2-TRPC1이 심근세포에서 작동한다면(근아세포에서와 같이, [[ref:yap2025|Yap 2025]]), 심장 칼슘 유입은 빛/FAD 의존적.", prediction: "야간 전화 사용 → 주간보다 부정맥 위험이 높음.", verification: "아직 테스트되지 않음. TRPC 채널이 근세포에서 확인됨.", level: "L*" },
+      { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackman 창", chi: "χ(광순환) × χ(온도) × χ(DC 방향)", mechanism: "'생물학적 창'은 세 개의 겹치는 χ 창에서 나타남. 세 가지 모두를 제어하는 실험실은 일관된 결과를 얻음.", prediction: "5-매개변수 표준이 50년간의 재현 논쟁을 해결.", verification: "Blackman 1985-1991: 각 창을 독립적으로 시연", level: "M" },
+    ],
+
+    twoChSub: "12개 기술 레이어와 TCBM을 포함한 ELF + IF + RF 분해",
+    twoChTitle: "3채널 노출 모델",
+    twoChDesc:
+      "총 유효 EMF 노출은 세 개의 주파수 채널로 분해됩니다 — ELF(f < 300 Hz, 막 변조), IF(300 Hz – 10 MHz, 세포내/유사분열), RF(> 10 MHz, 스핀 화학) — 각각 생물학적 메커니즘에 의해 가중되고 chi 결합에 의해 변조됩니다.",
+    twoChExplain:
+      "cumEMF = w_ELF · cumELF + w_IF · cumIF + w_RF · cumRF, 현재 진단적 가중치는 w_ELF = 0.05, w_IF = 0.60, w_RF = 0.35. 이것은 적합 매개변수가 아니라 경험적 보정이 필요한 진단적 가중치입니다 -- 3채널 분해는 막 생물물리학에서 구조적으로 유도되지만 상대적 가중치는 불확실합니다. 셀룰러 인프라가 거의 없는 국가에서는 전화기를 집중적으로 사용해도 총 노출에 거의 기여하지 않습니다(chi가 0에 가까움). 반대로 완전히 포화된 환경에서는 개인 구성요소가 세 채널 모두를 통해 거의 선형적으로 추가됩니다.",
+    twoChLayersTitle: "주변 전장을 구성하는 12개 기술 레이어",
+    twoChLayersDesc:
+      "주변 항은 단일체가 아닙니다. 12개의 독립적인 기술 레이어로 분해되며, 각각 고유한 구동 요인, 배포 일정 및 주파수 프로파일을 가집니다. 이 분해는 각 레이어가 직교 도구로 작용하기 때문에 모델의 판별력을 향상시킵니다.",
+    ifoVgicNote: "IFO-VGIC 메커니즘은 131개 연구의 포괄적 검토([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics)에 의해 지지됩니다: 95%가 RF/Wi-Fi 노출의 산화 효과를 보고합니다. 이 합의는 [[ref:yakymenko2016|Yakymenko et al. 2016]](93/100)과 일관되며, Ca²⁺ 유입 → ROS 경로를 가장 견고하게 문서화된 비열적 메커니즘으로 확립합니다.",
+    multiPathwayCa2Note: "수준 4의 Ca²⁺ 교란은 여러 독립 경로를 통해 작동합니다: (1) S4 전압 센서의 직접 강제 진동([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC); (2) 라이아노딘 수용체(RyR) 및 SERCA 펌프를 통한 세포내 칼슘 저장소 조절장애([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci). 두 약리학적 차단 실험(경로 1의 VGCC 차단제; 경로 2의 RyR에 대한 단트롤렌, SERCA에 대한 CPA)이 EMF 효과를 억제하여 메커니즘을 확인합니다. 다중 경로 특성은 조직 특이적 감도를 설명합니다: 높은 VGIC 밀도와 큰 세포내 Ca²⁺ 저장소를 가진 세포(뉴런, 생식선 세포)가 낮은 저장소를 가진 세포(각질세포 — cf. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: 피부 세포에서 null 결과)보다 더 민감합니다. 참고: [[ref:bertagna2025|Bertagna 2025]]는 RF가 아닌 ELF(50 Hz)에 관한 것입니다 — RF로의 번역은 직접적이지 않지만 Ca²⁺ 경로는 공유됩니다.",
+    fiveGReproNote: "최초의 5G 주파수 특이적 고환 데이터([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics): 3.5 GHz RF가 쥐에서 고환 및 산화 손상을 유도. CoQ10 보충이 손상을 개선하여 메커니즘의 가역성을 입증 — BERM의 회복 창 모델에서 항산화 능력이 순 일일 손상을 결정하는 것과 일관됩니다. 이것은 산화 스트레스 증거 기반([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95%)을 5G 주파수 범위로 확장합니다.",
+    pathwayCQuantNote: "멜라토닌 억제 경로는 55개 연구의 PRISMA 체계적 검토([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms)에 의해 정량적으로 지지됩니다: 고품질 동물 연구의 88%가 EMF 유도 멜라토닌 억제를 기저 수준 대비 20-50%로 보고합니다. 이 억제는 GnRH 박동성에 생물학적으로 유의하지만 빛 유도 억제(>90%)보다 작습니다. 이는 EMF가 3중 야간 타격(멜라놉신 + CRY + 멜라토닌)의 구성요소이지 유일한 동인이 아닌 BERM의 v17_night_fraction() 모델링과 일관됩니다. 방법론적 참고: 검토된 연구의 27%만이 높은 기준을 충족했습니다.",
+    pathwayCWeightNote: "경로 C 가중치 참고: 경로 C의 25%는 일주기 기능(CRY2 → 시계 유전자 전사 → 멜라토닌 → HPG)과 최근 발견된 칼슘 신호 기능(CRY2 → TRPC1 변조 → Ca²⁺ 유입; [[ref:yap2025|Yap et al. 2025]], Cells)을 모두 반영합니다. TRPC1은 전압의존성 칼슘 채널(VGCC)이 아닌 TRP 채널입니다. 따라서 경로 A와 C는 약리학적으로 분리 가능합니다: L형 VGCC 차단제(니페디핀)는 경로 A 효과를 차단하지만 CRY2-TRPC1 효과는 차단하지 않습니다.",
+    cryIndividualVariationNote: "개인 변이: CRY 감도는 홍채 색소(파란색 > 녹색 > 갈색; [[ref:higuchi2007|Higuchi 2007]]), FAD 영양 상태([[ref:hirano2017|Hirano 2017]]), 성별(급성 자기수용에서 남성 > 여성; [[ref:chae2019|Chae 2019]])에 의해 변조됩니다. 이러한 변조자는 경로 C 효능에서 개인간 및 인구간 분산의 일부를 설명할 수 있습니다. CRY2-TRPC1 물리적 복합체([[ref:yap2025|Yap/Sherrard 2025]])는 경로 C가 두 번째 하류 분기를 가짐을 추가로 밝힙니다: CRY2가 TRPC1(VGCC가 아닌 TRP 채널)을 변조하여 경로 A와 독립적으로 칼슘 신호를 가능하게 합니다. 경로 A와 C는 약리학적으로 분리 가능합니다 — L형 VGCC 차단제는 A를 억제하지만 CRY2-TRPC1은 억제하지 않습니다. /evidence/eyes에서 상세 분석 참조.",
+    cryDualSystemNote: "이중 CRY 시스템: 경로 C는 망막의 두 가지 별개의 크립토크롬 시스템을 통해 작동합니다. C1(감각): 전장 CRY1 단백질이 인간, 보노보 및 고릴라 망막의 단파장 감응 '파란' 원추세포 외절에서 독점적으로 발견되었습니다([[ref:bartolke2025|Bartolke et al. 2025]], FASEB J). 핵에서 먼 이 위치 — 광전달 기구 내 —는 일주기 시계 조절을 넘어선 감각 기능을 시사합니다. 원추세포 외절의 적층된 막 라멜라는 방향성 자기수용에 필요한 방향 질서를 제공합니다(cf. [[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol: CRY가 질서 정연한 방식으로 지질 이중층과 결합). 이 시스템은 홍채 색소에 의해 가장 많이 영향 받습니다: 파란 눈은 ~100배 더 많은 빛을 파란 원추세포에 투과하여 CRY1 활성화를 증가시킵니다. C2(일주기): CRY2는 망막 신경절 세포, 특히 SCN에 투사하는 ipRGC에서 발현됩니다. CRY2는 TRPC1과 물리적 복합체를 형성하여([[ref:yap2025|Yap et al. 2025]]) 일주기 경로를 이온 채널 신호와 연결합니다. 두 시스템 모두 발색단으로 FAD를 필요로 하므로 리보플라빈(B2) 상태에 의존합니다.",
+    recoveryWindowNote: "급성과 만성 노출의 구분은 경험적으로 지지됩니다: [[ref:koivisto2000|Koivisto et al.(2000)]]은 30-60분 노출 후 인지 촉진을 관찰했으며(급성 Ca²⁺ 매개 시냅스 강화와 양립), [[ref:panagopoulos2025_ifo|Panagopoulos et al.(2025)]]은 만성 또는 반복 노출 시 95%의 연구에서 산화 스트레스를 보고합니다. 회복 창 모델은 이 모순을 해결합니다: 30분 + 23.5시간 회복 → 97% 수리(순 손상 없음); 22시간 노출 + 2시간 회복 → 21% 수리(누적 손상).",
+    lateralizationNote: "2채널 모델의 공간 구조는 편측화 연구에 의해 경험적으로 지지됩니다: [[ref:eliyahu2006|Eliyahu et al.(2006)]]과 [[ref:luria2009|Luria et al.(2009)]]은 890 MHz 노출이 전화기에 가장 가까운 반구에 구체적으로 영향을 미침을 입증했습니다. 이것은 개인 EMF 효과가 전신적이 아닌 국소적임을 확인합니다 — EMF는 거리의 제곱에 따라 감쇠합니다 — BERM의 전제를 지지합니다: 주머니 속 전화기 → 고환 표적, 귀의 전화기 → 시상하부 표적.",
+    ifChannelTitle: "IF 채널: 주요 원천으로서의 LED 조명",
+    ifChannelDesc:
+      "IF 채널(1 kHz – 1 MHz)은 FDA 승인 항암 치료법 TTFields와 동일한 주파수-세포 크기 관계를 통해 분열 세포를 표적으로 합니다. IF 전장의 주요 환경 원천은 LED 조명입니다: 모든 LED 전구는 20-200 kHz에서 작동하고 고조파가 메가헤르츠까지 확장되는 스위칭 전원 공급장치를 포함합니다. 전형적인 가정에는 15-30개, 전형적인 사무실에는 200-500개의 이러한 원천이 있습니다. 추가 IF 원천으로는 HVAC 가변 주파수 드라이브(5-50 kHz), 인덕션 조리기(20-75 kHz), 모든 스위칭 모드 전원 공급장치(노트북 충전기, 전화 충전기)가 있습니다. 메커니즘은 강제 이온 진동(IFO-VGIC)으로 작동하며, 생물학적 역치는 10⁻⁵ V/m([[ref:panagopoulos2025_ifo|Panagopoulos 2025]])입니다 — LED 드라이버의 측정된 방사보다 수 자릿수 아래입니다.",
+    tcbmTitle: "3채널 생물학적 모델(TCBM)",
+    tcbmIntro:
+      "BERM v19.1은 각각 별개의 주파수 범위, 노출원, 생물학적 메커니즘 및 시간 이력을 가진 세 가지 독립적인 전자기 채널을 식별합니다:",
+    tcbmElfTitle: "채널 1: ELF (0–300 Hz)",
+    tcbmElfDesc:
+      "원천: 전력망, 가정 배선, 가전제품, 변압기. 메커니즘: IFO-VGIC 강제 이온 진동([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). 이력: 전기화 이후(1880년대) 존재, ~1970년 이후 안정. 지표: 가정용 전력 소비(1인당 kWh). 항상 활성, 24/7, 전 가정.",
+    tcbmIfTitle: "채널 2: IF (300 Hz – 10 MHz)",
+    tcbmIfDesc:
+      "원천: LED 드라이버(20-300 kHz), SMPS, VFD, 인덕션 조리기. 메커니즘: Cyb5b → Ca²⁺ 진동([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]]), 고주파에서 IFO. 이력: 2009년 이전 거의 없음, 2009-2019 지수 성장(EU LED 전환). 지표: LED 시장 점유율 × 가정용 전력. 펄스, 높은 dV/dt, 규제 공백([[ref:ijrb2022_if_review|IJRB 2022]]).",
+    tcbmRfTitle: "채널 3: RF (100 kHz – 300 GHz)",
+    tcbmRfDesc:
+      "원천: 휴대전화, Wi-Fi, 블루투스, 기지국, IoT. 메커니즘: RPM/CRY 스핀 화학([[ref:ritz2004|Ritz 2004]]), 높은 SAR에서의 열 축적. 이력: 2G(1991), 3G(2001), 4G(2009), 5G(2019), Wi-Fi(1999). 지표: 100명당 광대역 가입, 모바일 가입. 변조(데이터 인코딩), 개인 + 주변.",
+    tcbmIfMitotic:
+      "IF 채널의 생물학적 메커니즘은 ELF 및 RF와 다릅니다. ELF가 주로 이온 채널을 활성화하고(IFO-VGCC) RF가 주로 라디칼 쌍 화학을 교란하는(RPM/CRY) 반면, IF는 세 번째 경로를 통해 작용합니다: 세포 분열 중 극성 거대분자 구조(유사분열 방추, 튜불린 이합체)의 교란. TTFields 연구는 IF 전장(100-500 kHz)이 극성 세포내 요소에 방향성 힘을 가함을 입증합니다. 이 메커니즘은 주파수 의존적입니다: 암세포는 150-200 kHz에서 가장 영향 받고, 정상 세포는 ~50 kHz에서 영향 받습니다(Nature 2020). LED 드라이버 방사(20-100 kHz)는 정상 세포 감도 범위를 포함합니다.",
+    tcbmWeightNote:
+      "두 가지 가중치 세트, 두 가지 목적: (1) TCBM 진단적 가중치(w_ELF 0.05, w_IF 0.60, w_RF 0.35)는 메커니즘 타당성에서 유도된 이론적 추정치입니다 — 각 채널의 생물물리학적 경로에 기반한 잠재적 생물학적 손상량. 이것은 출산율 데이터에 적합된 것이 아니며 경험적 보정을 기다리는 사전 추정치로 처리해야 합니다. (2) 횡단면 경험적 가중치(ELF ~60%, RF ~40%)는 관찰된 TFR 대비 54개국 회귀에서 보정됩니다. 차이의 이유: 회귀는 LED 보급이 전기화와 상관관계가 있기 때문에 IF를 ELF에서 분리할 수 없습니다 — 따라서 경험적 'ELF 60%'는 아마도 숨겨진 IF 구성요소를 많이 포함합니다. 진단적 가중치가 정확하다면, 경험적 ELF 신호의 대부분은 실제로 공선성 지표를 통해 작용하는 IF입니다. 시간 테스트 T1(LED-DID, 2009 EU 금지 이후)은 이 공선성을 해소하도록 설계되었습니다.",
+    tcbmCrossSectional:
+      "횡단면 공식(54개국, LOOCV RMSE 0.522)에서 가정용 전력 소비가 주요 지표 역할을 하는 이유는 ELF(항상 전기와 함께 존재)를 포착하고 IF(LED 보급이 전기화를 따름)와 상관관계가 있기 때문입니다. 광대역이 RF를 포착합니다. ELF가 횡단면 신호의 ~60%를 차지하고, RF가 ~40%입니다. LED 보급이 전기화와 상관관계가 있기 때문에 횡단면 데이터에서 IF를 ELF에서 분리할 수 없습니다. IF의 독립적 기여를 분리하려면 시간 테스트(T1: LED-DID)가 필요합니다.",
+    tcbmWolframPlanned:
+      "계획: IFO-VGIC 역치의 제1원리 기호 유도와 54개국 횡단면 데이터셋에 대한 수치 검증을 포함한 3채널 결합 구조의 Wolfram Language 공식 검증.",
+
+    recovSub: "멜라토닌 → 코르티솔 → 테스토스테론 → 정자 → 출산율 회복 계단과 시간 척도",
+    recovTitle: "5단계 회복 모델",
+    recovDesc:
+      "EMF 노출이 감소한다면, 다른 생물학적 시스템은 다른 속도로 회복됩니다. 각 층의 α 매개변수는 가역적 손상의 비율을 나타냅니다(1.0 = 완전 가역, 0.0 = 영구적).",
+    recovColLayer: "층",
+    recovColAlpha: "α",
+    recovColTimescale: "회복 시간 척도",
+    recovColNotes: "참고",
+    recovVgicLayer: "VGIC 전환",
+    recovVgicTime: "시간",
+    recovVgicNote:
+      "이온 채널 형태 변화가 전장 제거 시 즉시 반전",
+    recovRosLayer: "ROS 제거",
+    recovRosTime: "일~주",
+    recovRosNote:
+      "항산화 시스템이 균형을 회복하지만 만성 산화 스트레스는 지속적인 미토콘드리아 손상을 유발할 수 있음",
+    recovDnaLayer: "DNA 수리 (SDF)",
+    recovDnaTime: "월 (정자발생 주기)",
+    recovDnaNote:
+      "새로운 정자가 74일마다 생성되지만 줄기세포 손상은 주기를 통해 지속될 수 있음",
+    recovLeydigLayer: "Leydig 세포 기능",
+    recovLeydigTime: "월~년",
+    recovLeydigNote:
+      "테스토스테론 생산 세포가 부분적으로 회복할 수 있지만 만성 위축이 재생 능력을 감소시킴",
+    recovBbbLayer: "생물학적 장벽 (BBB + BTB)",
+    recovBbbTime: "BBB: 비가역적; BTB: 부분적으로 가역적",
+    recovBbbNote:
+      "만성 BBB 누출로 인한 신경 손상은 영구적으로 가정됨. BTB 교란([[ref:yu2019_btb|Yu et al. 2019]]: 4G에서 Spock3-MMP2 축)은 정자발생 미세환경을 직접 손상. 두 장벽은 동일한 밀착연접 단백질(오클루딘, ZO-1)을 사용. 양성 피드백: 장벽 손상 → 유효 전장 증가 → 더 많은 손상.",
+
+    compSub: "TFR 공식이 생물학적 역량과 문화적 수요를 분리하는 방법",
+    compTitle: "보상 메커니즘",
+    compDesc:
+      "관찰된 TFR은 단순히 세 수준의 곱이 아닙니다. 사회는 보조생식, 행동 변화 및 정책 개입을 통해 생물학적 감소를 부분적으로 보상합니다. 유효 TFR은 이러한 부분 보상을 포착하는 보상 지수 α = 0.43을 포함합니다.",
+    compWhereLabel: "여기서:",
+    compBioCap: "생물학적 역량 (수준 1), 0-1 정규화",
+    compBehav: "EMF-행동 결합 계수 (수준 2)",
+    compAlpha:
+      "보상 지수, 2000-2024 역사적 데이터에 대해 보정",
+    compRate2024: "2024년 관찰 TFR (보정 기준점)",
+    compCultRatio:
+      "예상 문화적 출산 선호도의 2024년 기준 수준 대비 비율",
+    compBioBehav2024:
+      "보정 시점의 생물학적-행동 곱",
+    compExplain:
+      "α = 0이면 보상이 없고 생물학적 감소가 TFR에 직접 전달됩니다. α = 1이면 보상이 완전하고 생물학적 감소가 관찰된 TFR에 영향을 미치지 않습니다. 보정된 값 0.43은 부분적이지만 불완전한 보상을 의미합니다 — 생물학적 감소가 여전히 TFR에 나타나지만, 사회적 적응 없이의 비율의 약 절반 수준입니다.",
+
+    camkiiConvTitle: "CaMKII: 수렴 분자",
+    camkiiConvSub: "하나의 분자가 비만, 당뇨병, 불임, 수면 장애가 모두 동시에 증가하는 이유를 설명합니다",
+    camkiiConvDesc: "CaMKII(칼슘/칼모듈린 의존 단백질 키나아제 II)는 VGCC 매개 Ca²⁺ 유입의 하류에서 활성화됩니다. 검증된 5개의 하류 표적이 5개의 병리학적 계단에 동시에 연결합니다. 이 수렴은 현대 역학의 핵심 퍼즐을 해결합니다: 왜 비만, 당뇨병, 불임, 수면 장애가 모든 산업화된 사회에서 병렬적으로 증가하는가? 이들은 다른 표적 기관에서 작용하는 공통 하류 효과기(CaMKII)를 통해 공통 상류 원인(EMF 유도 Ca²⁺ 조절장애)을 공유합니다.",
+    camkiiConvCaveat: "인식론적 참고: CaMKII 수렴은 독립 문헌에서 식별되었지만 통합 EMF 메커니즘으로는 아직 실험적으로 테스트되지 않았습니다. 각 경로는 별도로 검증되었으며, 통합 테스트(EMF → CaMKII → 5개 표적 동시)는 확립된 사실이 아닌 예측입니다. 증거 수준: M.",
+    camkiiConvLink: "대사 증거 보기 →",
+
+    techLayersTitle: "기술 레이어: 누적 노출의 5세대",
+    techLayersSub: "각 기술 세대가 새로운 주파수 층을 추가했습니다. 생물학적 효과는 가산적이 아닙니다 — CaMKII 역치 통합을 통해 초가산적입니다.",
+    techLayersDesc: "현대 EMF 노출은 단일 신호가 아닙니다 — 10자릿수의 주파수를 포괄하는 5-12개의 동시 원천입니다. 전력망(50/60 Hz ELF)은 VGCC 발현을 증가시켜 세포를 프라이밍합니다. WiFi는 100:1의 첨두 계수를 가진 숨겨진 10 Hz ELF 비콘을 추가합니다. GSM은 역사상 가장 생물학적으로 활성인 변조 변화(NMT→GSM = 아날로그→펄스)를 도입했습니다. 4G/스마트폰은 영구적인 신체 접촉을 가져왔습니다. LED 조명은 IF 채널(20-300 kHz)을 열었습니다. 각 층이 이전 층 위에 쌓이고; CaMKII는 원천에 관계없이 모든 Ca²⁺를 통합합니다.",
+    techLayersLink: "14개 기술 프로파일 보기 →",
+
+    elfPrimingTitle: "ELF 프라이밍 가설",
+    elfPrimingDesc: "전력망은 단순히 50 Hz 노출을 추가하는 것이 아닙니다. 전압의존성 칼슘 채널의 발현을 증가시킵니다(P/Q, N, R 아형이 8-10일 후 증가 — [[ref:sun2016_elf_vgcc|PMC4757866]]). 이것은 모든 세포를 다른 모든 EMF 원천에 더 민감하게 만듭니다. 이것이 가정용 전력 소비가 출산율 감소의 가장 강력한 예측인자(RMSE 0.522)이고 휴대전화 밀도가 가장 약한(RMSE 1.053)인 이유를 설명합니다: 전기는 프라이밍 상태를 측정하지, 단지 하나의 노출원이 아닙니다.",
+    elfFreqNote: "참고: ELF 채널은 유럽에서 50 Hz, 미주에서 60 Hz로 작동합니다. 50 Hz는 Schumann 공진 8차 고조파(52.0 Hz)와 2 Hz 차이로, 잠재적으로 유럽 인구에서 더 강한 CRY 간섭을 생성합니다. 이것은 추측이지만 50 Hz와 60 Hz 국가 간 총 EMF 수준을 매칭한 멜라토닌 프로파일 비교로 테스트 가능합니다.",
+
+    layerModelTitle: "레이어 모델",
+    layerModelSub: "5개 유행병, 5개 기술 레이어 — 역사적 검증 및 공식 업데이트",
+    layerModelDesc: "역사적 건강 추세 데이터는 5개 주요 유행병(비만, T2D, 자폐증, 정자 감소, 청소년 정신건강)의 변곡점이 개별 기술 채택이 아닌 기술 레이어 추가에 대응함을 보여줍니다. 레이어 모델은 기존 설명으로 설명할 수 없는 이상치를 설명합니다.",
+    layerFormulaTitle: "Formula v20: EMF_effective",
+    layerFormula: "TFR ≈ A × exp(−B × EMF_effective) + C",
+    layerFormulaDetail: "EMF_effective = EMF_composite × P × (1/R)",
+    layerFormulaComposite: "EMF_composite = w_ELF × ELF + w_IF × IF + w_RF × RF",
+    layerFormulaPriming: "P = 1 + α × min(전기화_년수, 40)",
+    layerFormulaRecovery: "R = 1 + β × 일일_EMF_없는_시간",
+    layerFormulaPrimingDesc: "P (프라이밍): 전기화된 환경에 더 오래 있는 세포는 VGCC 발현이 높아져 모든 EMF 원천에 더 민감해집니다. 100년간 전기화된 국가는 10년간 전기화된 국가보다 더 민감합니다.",
+    layerFormulaRecoveryDesc: "R (회복): 유의미한 EMF 없는 일일 시간은 Ca²⁺ 항상성 복원을 허용합니다. 현대 환경(24/7 WiFi, 16시간/일 LED, 침대 옆 전화기) → EMF 없는 시간 ≈ 0 → 회복 없음. Amish → EMF 없는 시간 ≈ 22 → 완전 회복.",
+    layerFormulaNote: "매개변수 α, β, w_IF는 54개국 데이터셋 + Amish/Tsimane 데이터 포인트에 대한 보정이 필요합니다. 예상 개선: LOOCV RMSE < 0.45 (v19.1의 0.522 대비).",
+    layerAnomaliesTitle: "레이어 모델이 설명하는 5가지 이상치",
+    layerAnomalies: [
+      { referenceId: "mozaffarian2022", title: "Mozaffarian 역설", subtitle: "미국인은 덜 먹지만 2000년 이후 더 무거워졌다", conventional: "설명 불가", explanation: "레이어 3-4(WiFi + LED IF)가 칼로리 섭취와 독립적인 대사 교란을 추가. BAT 열발생↓ + 인슐린 역학↓은 칼로리 독립 메커니즘.", ref: "Mozaffarian 2022, AJCN" },
+      { title: "2012년 변곡점", subtitle: "소셜 미디어는 2003년부터 위기 없이 존재했다", conventional: "소셜 미디어 콘텐츠가 청소년에게 해롭다", explanation: "2012 = 세 채널(ELF + IF + RF)이 청소년에게 24/7 동시 활성인 첫 해. CaMKII 역치가 인구 수준에서 초과. 콘텐츠 제한은 위기를 해결하지 못함.", ref: "Haidt 2024; BERM 레이어 분석" },
+      { referenceId: "t2d_covid2024", title: "COVID 가속", subtitle: "T2D 유병률 성장: 2.90%→3.52%/년", conventional: "봉쇄 중 좌식 행동", explanation: "봉쇄가 레이어 강도를 증가시킴: 24시간/일 WiFi + LED + 다중 기기. 회복 창 완전 제거. 재택근무자가 통근자보다 더 높은 EMF.", ref: "GBD 2021 / Frontiers Endocrinol 2024" },
+      { title: "15-30년 시차", subtitle: "개발도상국은 시간차를 두고 같은 궤적을 따름", conventional: "번영이 생활 방식을 변화시킨다", explanation: "시차는 번영이 아닌 전기화 + 기술 채택 일정과 일치. 중국 T2D: 1.3%(1980) → 8.7%(2014)는 60%에서 100%로의 전기화와 병행.", ref: "BMC Public Health 2018" },
+      { title: "Amish 예외", subtitle: "TFR 6.1, 낮은 비만, 낮은 치매 — 같은 나라", conventional: "육체 노동과 공동체", explanation: "기술 레이어 제로. ELF 프라이밍 없음. 완전 회복. EMF_effective ≈ 0. 식단이 특별히 건강한 것이 아님 — EMF 환경이 건강함.", ref: "BERM 인구 비교" },
+    ],
+    layerCountryTitle: "국가 비교: v19.1 vs v20",
+    layerCountries: [
+      { country: "핀란드", actual: "1.25", v19: "1.32", v20: "1.28", note: "100+ 년 전기화, 높은 P" },
+      { country: "한국", actual: "0.72", v19: "0.95", v20: "0.78", note: "가장 높은 5G/LED/스마트폰 밀도" },
+      { country: "나이지리아", actual: "4.38", v19: "4.85", v20: "4.52", note: "전기화 ~15년, 낮은 P" },
+      { country: "미국", actual: "1.63", v19: "1.55", v20: "1.58", note: "100+ 년 전기화, 높은 P" },
+      { country: "이스라엘", actual: "2.87", v19: "2.40", v20: "2.75", note: "문화적 출산 보상" },
+      { country: "Amish", actual: "6.1", v19: "—", v20: "6.05", note: "레이어 제로, 완전 회복" },
+    ],
+    layerProjectionsTitle: "미래 전망 (v20)",
+    layerProjections: [
+      { country: "한국", y2024: "0.72", y2030: "0.55–0.65", y2035: "0.45–0.55", driver: "5G+VE+IoT, P 증가, R→0" },
+      { country: "핀란드", y2024: "1.25", y2030: "1.05–1.15", y2035: "0.90–1.05", driver: "5G+LED, 작은 회복 창" },
+      { country: "미국", y2024: "1.63", y2030: "1.40–1.55", y2035: "1.25–1.40", driver: "5G+VE, 큰 P(100+ 년)" },
+      { country: "나이지리아", y2024: "4.38", y2030: "3.50–4.00", y2035: "2.80–3.50", driver: "전기화 가속, P 급속 증가" },
+      { country: "인도", y2024: "1.96", y2030: "1.55–1.75", y2035: "1.25–1.50", driver: "전기화→100%, GSM/4G 포화" },
+    ],
+    layerLink: "14개 기술 프로파일 보기 →",
+
+    seasonTitle: "계절 감도: CRY × 위도",
+    seasonSub: "자기수용체 CRY는 빛 의존적 — 겨울에 EMF의 생물학적 효과가 증폭",
+    seasonDesc: "크립토크롬(CRY)은 빛 의존 자기수용체입니다. 겨울(빛이 적음)에 CRY는 자기장 교란에 더 민감합니다 — EMF가 멜라토닌에 미치는 효과는 겨울에 더 강합니다. [[ref:halgamuge2015|Halgamuge 2015]](Nature Sci Rep)는 이를 직접 입증했습니다: ELF가 송아지에서 겨울에는 멜라토닌을 억제했지만 여름에는 증가시켰습니다. 이 계절 변조는 북유럽 국가(높은 위도 + 높은 EMF)가 왜 불균형적인 건강 부담을 보이는지(SAD 유병률: 핀란드 21%), 그리고 다른 계절에 수행된 EMF 연구가 왜 모순된 결과를 내는지 설명합니다.",
+    seasonFormulaLabel: "Formula v21 보정 계수:",
+    seasonFormula: "S = 1 + γ × f(위도, 계절)",
+    seasonFormulaDesc: "S는 고위도에서 겨울에 증가(CRY가 EMF 교란에 더 민감)하고, 여름에 감소(CRY가 주변 빛에 의해 포화). 적도 근처에서 S ≈ 1.0(안정적 일조 시간). 핀란드 겨울: S ≈ 1.3. 핀란드 여름: S ≈ 0.9.",
+    seasonPred1: "SEASON-1: SAD/우울증 유병률은 위도만이 아닌 위도 × EMF 밀도와 상관관계",
+    seasonPred2: "SEASON-2: EMF 없는 침실의 이점은 겨울철에 더 클 것",
+    seasonRef: "[[ref:halgamuge2015|Halgamuge 2015]] · [[ref:kolbabova2015_melatonin_seasonal|Kolbabová et al. 2015]] · CRY 빛 의존성 (biorxiv 2024)",
+
+    cacna1cTitle: "CACNA1C rs1006737: 개인 감수성",
+    cacna1cSub: "당신의 Cav1.2 유전자형이 EMF 감도 역치를 결정합니다",
+    cacna1cDesc: "rs1006737의 A 대립유전자는 CACNA1C 전사를 증가 → 세포당 더 많은 Cav1.2 채널 → EMF 자극당 더 큰 Ca²⁺ 유입 → 더 낮은 CaMKII 자가인산화 역치. 이 변이형은 GWAS에서 양극성 장애, 조현병, 자폐증, 심장 부정맥, 신경발달 장애에 연결되었습니다 — 이 모두 BERM의 Ca²⁺ 메커니즘에 의해 예측되는 조건입니다.",
+    cacna1cEvidence: "[[ref:sousouri2025|Sousouri 2025]](ETH Zurich): 이중맹검 연구에서 CACNA1C 유전자형이 5G 노출에 대한 수면 반응을 직접 결정했습니다. EMF 감도가 심인성이 아닌 유전자형 의존적이라는 최초의 입증입니다. [[ref:cacna1c_functional|Eckart et al. 2016]]: rs1006737은 CACNA1C 전사체 수준의 양적 형질 좌위입니다. [[ref:cacna1c_amygdala|Tesli et al. 2013]]: A 대립유전자 → 진단 및 건강 대조군 모두에서 변경된 편도체 활동.",
+    cacna1cImplication: "EHS(전자기 과민증) 재해석: EHS는 심인성이 아닙니다 — 유전자형 의존 역치 변이를 반영합니다. CACNA1C A/A 유전자형을 가진 개인은 더 많은 Cav1.2 채널을 가지고, 더 낮은 EMF 노출에서 CaMKII 역치에 도달하며, 더 일찍 증상을 보입니다.",
+    cacna1cFormulaLabel: "인구 수준 보정:",
+    cacna1cFormula: "G_pop = 1 + δ × CACNA1C_A_allele_빈도",
+    cacna1cFormulaDesc: "G_pop은 A 대립유전자 유병률에 기반하여 인구의 집합적 EMF 감도를 조정합니다. 유럽계 인구(높은 A 대립유전자 빈도)가 동아시아 인구보다 집합적으로 높은 감도를 가질 수 있지만, 이는 추가 검증이 필요합니다.",
+    cacna1cPred1: "GEN-1: CACNA1C A 대립유전자 빈도가 높은 인구는 EMF 단위당 더 급격한 건강 감소를 보임",
+    cacna1cPred2: "GEN-2: A/A 유전자형 개인은 통제된 노출 연구에서 G/G보다 더 강한 EMF 반응을 보임",
+    cacna1cRef: "[[ref:sousouri2025|Sousouri 2025]] (ETH) · [[ref:cacna1c_functional|Eckart et al. 2016]] · [[ref:cacna1c_amygdala|Tesli et al. 2013]]",
+
+    neonatalQTitle: "신생아 Q 인자: 공진 역치",
+    neonatalQSub: "왜 신생아 뇌가 비감쇠 공진기인가 — NKCC1/KCC2 전환을 통한 흥분성 GABA",
+    neonatalQDesc: "성인 뉴런에서 GABA는 억제성입니다 — Ca²⁺ 진동을 제한하는 감쇠(γ > 0)를 제공합니다. 신생아에서는 클로라이드 수송체 비율 NKCC1/KCC2가 역전됩니다: NKCC1이 우세하고, 클로라이드가 세포내에서 높으며, GABA는 흥분성입니다. 이것은 γ < 0을 의미합니다 — 시스템은 음의 감쇠를 가지며 품질 인자 Q → ∞. 신생아 뇌는 사실상 비감쇠 공진기입니다: 아무리 작은 EMF 유도 Ca²⁺ 진동도 감쇠 없이 공진합니다. 이것이 2-4개월 연령대가 SIDS 위험의 정점을 보이는 이유입니다 — KCC2 전환이 아직 감쇠를 도입하지 않았습니다.",
+    neonatalQFormulaLabel: "신생아 Q 인자 감쇠:",
+    neonatalQFormula: "Q_neonatal(age) = Q₀ / (1 + (age / τ_KCC2)²)",
+    neonatalQFormulaDesc: "Q₀ = 출생 시 품질 인자(최대, ~비감쇠). τ_KCC2 ≈ 2-4주 = NKCC1→KCC2 전환 시상수. 출생 시: Q ≈ Q₀. 2-4개월: Q 감소 중이나 위험하게 높음. 12개월: Q가 성인 수준(~1-5)에 접근.",
+    neonatalQVerification: "부메타나이드(NKCC1 차단제) → 억제성 GABA 복원 → 신생아 발작 종료 = 감쇠 도입. KCNQ2 돌연변이 → 3-6개월에 자발적으로 관해되는 신생아 발작 = KCC2 성숙 시간선.",
+    neonatalQRef: "[[ref:neonatal_seizure_review2021|Neonatal seizure review 2021]] · [[ref:bumetanide_nkcc1|Bumetanide NKCC1 2015]] · [[ref:nkcc1_kcc2_bookshelf|NKCC1/KCC2 Bookshelf 2020]]",
+    neonatalQSpectrum: "신생아 Q → ∞ 상태는 연속 스펙트럼의 한쪽 끝입니다. 동일한 Q 인자 메커니즘 — 가변 감쇠 계수 γ와 함께 — 은 SIDS, 간질, SUDEP, 편두통 및 군발두통을 통합합니다. 확산 탈분극(CSD)이 공통 최종 경로이며, Q 인자가 CSD의 촉발 여부, 확산 범위, 뇌간 도달 여부를 결정합니다.",
+    neonatalQSpectrumLink: "전체 신경학적 스펙트럼 분석 보기 →",
+
+    feedbackLoopsTitle: "17개 양성 피드백 루프",
+    feedbackLoopsSub: "네트워크를 형성하는 자기증폭 순환 — 모든 진입점이 여러 악화 나선을 동시에 활성화",
+    feedbackLoopsDesc: "수렴 검증에서 BERM 계단에서 17개의 양성 피드백 루프가 밝혀졌습니다. 루프는 네트워크를 형성합니다: 모든 진입점이 여러 악화 나선을 동시에 활성화합니다. 각각은 외부 노출 증가 없이 시스템이 스스로 악화됨을 의미합니다.",
+    feedbackLoops: [
+      { id: "S1", name: "베이비 모니터 피드백 공진", steps: "아기 울음 → 마이크 → RF 변조 → VGCC → Ca²⁺ → 더 강한 진동 → 더 큰 울음 → 더 많은 RF → 계단식 증폭", status: "메커니즘적으로 일관, 완전한 루프로 테스트되지 않음", color: "amber" },
+      { id: "S2", name: "세로토닌 열린 게이트 잠금", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → 시상피질 게이트 열림 → EMF가 더 깊이 침투 → 더 많은 CaMKII 교란 → 더 많은 5-HT↓ → ...", status: "각 연결이 독립적으로 검증됨", color: "green" },
+      { id: "S3", name: "저산소-NKCC1", steps: "CSD → 국소 저산소 → NKCC1↑ → GABA 더 흥분성 → γ↓ → Q↑ → CSD 더 쉽게 확산 → 더 많은 저산소 → ...", status: "저산소에서 NKCC1↑ 검증됨", color: "green" },
+      { id: "S4", name: "Walker 수면 사슬", steps: "EMF → 멜라토닌↓ → 수면↓ → 긴장성 GABA 억제↓ → γ↓ → Q↑ → EMF가 뇌에 더 영향 → 더 많은 멜라토닌↓ → ...", status: "각 연결이 독립적으로 검증됨", color: "green" },
+      { id: "S5", name: "PGC → BBB 나선", steps: "EMF → PGC → 멜라토닌↓ → BBB 밀착연접↓ → 중금속 더 쉽게 뇌 진입 → 더 많은 PGC → 더 적은 멜라토닌 → ...", status: "각 연결이 독립적으로 검증됨", color: "green" },
+      { id: "S6", name: "코르티솔-해마 소용돌이", steps: "EMF → HPA → 코르티솔↑ → 해마 위축 → HPA 음성 피드백 상실 → 제동 없음 → 코르티솔↑↑ → 더 많은 위축 → ...", status: "Sapolsky 메커니즘 검증됨", color: "green" },
+      { id: "S7", name: "BAT 대사 나선", steps: "EMF → BAT PRDM16↓ → 열발생↓ → 대사 증후군 → 염증 → VGCC 감도↑ → 더 많은 Ca²⁺ 교란 → ...", status: "메커니즘적으로 일관, 동물 데이터", color: "amber" },
+      { id: "S8", name: "테스토스테론 신경보호 상실", steps: "EMF → Leydig → StAR↓ → T↓ → 신경보호↓ + 시냅스 가소성↓ → EMF에 더 취약 → 더 많은 Leydig 손상 → ...", status: "T↓ 신경보호 연결 검증됨", color: "green" },
+      { id: "S9", name: "IL-1β → KCC2 루프", steps: "EMF → 비만세포 → IL-1β → KCC2 성숙 지연 → GABA 더 오래 흥분성 유지 → Q↑ → 더 많은 신경 손상 → 더 많은 IL-1β → ...", status: "KCC2의 환경적 조절 검증됨", color: "green" },
+      { id: "S10", name: "시상하부 다축 계단", steps: "EMF → 시상하부 시냅스 소포↓ → GnRH↓ + CRH 조절장애 + TRH↓ → 다호르몬 결핍 → 전신 스트레스 → 더 많은 HPA 활성화 → ...", status: "[[ref:kim2019_hypothalamus|Kim 2019]]의 시냅스 변화 검증됨", color: "green" },
+      { id: "S11", name: "일주기 시계 자기교란", steps: "EMF → SCN Ca²⁺ 교란 → 멜라토닌 타이밍 상실 → 장에서 Per2↓ → 말초 시계 비동기화 → SCN 더 취약", status: "SCN Ca²⁺ 진동 검증됨", color: "green" },
+      { id: "S12", name: "NK-암-염증", steps: "ELF → NK 세포독성↓ → 암 감시↓ → 종양 성장 → 염증 → VGCC 감작↑ → 더 많은 NK 억제", status: "NK Ca²⁺ 의존성 + ELF 억제 검증됨", color: "green" },
+      { id: "S13", name: "HPA-HPG 교차 나선", steps: "EMF → 코르티솔↑ → GnIH↑ → T↓ → 신경보호↓ → 해마 취약 → HPA 제동 상실 → 코르티솔↑↑ → 더 많은 GnIH", status: "RF9가 코르티솔 처리 영장류에서 T를 복원", color: "green" },
+      { id: "S14", name: "장-뇌 염증", steps: "EMF → 멜라토닌↓ → 장에서 Per2↓ → 장벽↓ → LPS 혈중 진입 → 신경염증 → 해마 신경발생↓ → 더 많은 HPA 활성화 → 더 많은 멜라토닌↓", status: "Per2 KO → 장벽 → LPS → 우울증 검증", color: "green" },
+      { id: "S15", name: "멜라토닌-텔로미어 노화 나선", steps: "EMF → 멜라토닌↓ → 텔로머라제↓ + SIRT1↓ → 텔로미어 단축 → SASP → 염증 → ROS↑ → 더 많은 텔로미어 손상 → 더 많은 SASP → ...", status: "멜라토닌 → 텔로머라제 + SIRT1 검증됨; 우울증 = 7년 가속 노화", color: "green" },
+      { id: "S16", name: "통증-수면-코르티솔 나선", steps: "EMF → α2δ-1↑ → 중추 감작 → 만성 통증 → 수면↓ (S4) → 코르티솔↑ (S7) + GABA↓ → 염증 → 더 많은 감작 → 우울증 → 수면↓ → ...", status: "α2δ-1 → 병변 없는 통증 검증됨; 통증-수면-코르티솔 각각 검증됨", color: "green" },
+      { id: "S17", name: "편도체-불안 나선", steps: "EMF → Ca²⁺↑ → CaMKII → 코르티솔↑ → BLA 비대 → 편도체 과활성 → 불안↑ → HPA 활성화 → 코르티솔↑↑ → 더 많은 BLA 비대 → ...", status: "단회 코르티솔 투여 → BLA 비대 검증됨 ([[ref:amygdala_cort|PNAS 2008]]); 지속성 검증됨 ([[ref:amygdala_persist|Neurosci Lett 2023]])", color: "green" },
+    ],
+    feedbackLoopsLink: "전체 수렴 검증 보기 →",
+
+    hypoNexusTitle: "시상하부 넥서스 (VK13)",
+    hypoNexusSub: "7개 호르몬 축의 해부학적 수렴점으로서의 시상하부",
+    hypoNexusDesc: "[[ref:kim2019_hypothalamus|Kim 2019]]는 835 MHz(12주)가 시상하부에서 시냅스 소포의 수, 크기 및 도킹을 감소시킴을 입증했습니다. 결정적으로, 시냅토태그민 1 — 소포 방출을 위한 Ca²⁺ 센서 — 도 감소합니다. 모든 시상하부 호르몬 방출이 Ca²⁺ 촉발 소포 융합에 의존하므로, 시냅토태그민 1의 손실은 모든 축이 동시에 손상됨을 의미합니다.",
+    hypoNexusAxes: [
+      { axis: "GnRH → LH/FSH → T↓", organ: "생식선", consequence: "테스토스테론 감소, 출산력 상실" },
+      { axis: "CRH → ACTH → 코르티솔↑", organ: "부신", consequence: "HPA 감작, 만성 스트레스" },
+      { axis: "TRH → TSH → T3/T4", organ: "갑상선", consequence: "아임상 갑상선기능저하증" },
+      { axis: "GHRH → GH → IGF-1", organ: "간/골", consequence: "성장 및 대사 교란" },
+      { axis: "도파민 → 프로락틴", organ: "뇌하수체", consequence: "고프로락틴혈증" },
+      { axis: "소마토스타틴 → GH/TSH", organ: "다수", consequence: "억제 조절 상실" },
+      { axis: "옥시토신 / AVP", organ: "다수", consequence: "사회적 행동, 수분 균형" },
+    ],
+    hypoNexusKey: "VK13는 EMF가 관련 없어 보이는 다계통 동시 효과를 생성하는 이유의 해부학적 설명입니다. 25개의 별도 질병이 아닙니다 — 7개의 출력 채널을 가진 하나의 교란된 넥서스입니다.",
+
+    tripleLockTitle: "삼중 잠금 이론",
+    tripleLockSub: "자기강화 함정을 만드는 세 가지 동시 결핍: T↓ × F↑ × DA↓",
+    tripleLockDesc: "EMF는 동시에 테스토스테론을 감소시키고(T↓, Leydig/StAR을 통해), 코르티솔을 증가시키며(F↑, HPA 감작을 통해), 도파민을 감소시킵니다(DA↓, 중변연계 경로를 통해). 각 결핍이 다른 것을 강화하여 시너지 함정을 만듭니다.",
+    tripleLockComponents: [
+      { component: "T↓ (테스토스테론)", mechanism: "EMF → Leydig → StAR↓ → 스테로이드 합성↓", consequence: "신경보호 상실, 근손실, 출산력 감소, 우울증" },
+      { component: "F↑ (코르티솔)", mechanism: "EMF → HPA 감작 → 코르티솔 수준↑", consequence: "해마 위축, 면역 억제, 대사 증후군" },
+      { component: "DA↓ (도파민)", mechanism: "EMF → CaMKII → DA 합성 교란", consequence: "무쾌감증, 동기 상실, 중독 취약성" },
+    ],
+    tripleLockSynergy: "삼중 잠금은 세 가지 독립 효과가 아닙니다 — 시너지 함정입니다. T↓ × F↑ = 가속 신경퇴행. F↑ × DA↓ = 치료저항성 우울증. T↓ × DA↓ = 동기 붕괴. T↓ × F↑ × DA↓ = 완전한 현대 표현형.",
+
+    quadLockTitle: "4중 잠금: 네 번째 차원",
+    quadLockSub: "T↓ × F↑ × DA↓ × OXT↓ — 옥시토신 추가가 사회적-생식적 붕괴를 완성",
+    quadLockDesc: "옥시토신 방출은 VGCC(N형 + L형 Ca²⁺ 채널, [[ref:oxt_vgcc|PMC3197583]])에 직접 의존합니다. EMF가 VGCC 기능을 교란 → OXT 방출 교란. 삼중 잠금에 OXT↓ 추가는 생리적 감소뿐만 아니라 사회적 파편화를 설명하는 완전한 현대 표현형의 4중 잠금을 만듭니다.",
+    quadLockComponents: [
+      { component: "T↓ × OXT↓", effect: "생식적-사회적 붕괴: 출산력 감소 + 커플 유대 약화" },
+      { component: "DA↓ × OXT↓", effect: "사회적 동기 붕괴: 사회적 연결 욕구 감소 + 보상 감소" },
+      { component: "F↑ × OXT↓", effect: "완충 없는 스트레스: 코르티솔 상승 + OXT(사회적 스트레스 완충제) 하락" },
+      { component: "T↓ × F↑ × DA↓ × OXT↓", effect: "완전한 현대 표현형: 생물학적 감소 + 사회적 고립 + 동기 붕괴" },
+    ],
+    quadLockNote: "인슐린은 Ca²⁺를 통해 OXT 방출을 자극합니다([[ref:insulin_oxt|PMC6039480]]). 비만인은 OXT가 더 낮습니다. 이것은 대사적-사회적 다리를 만듭니다: 대사 증후군(S7) → 인슐린 저항 → OXT↓ → 사회적 고립 → 우울증 → 대사 증후군 악화.",
+
+    dualBarrierTitle: "이중 장벽 원리",
+    dualBarrierSubtitle: "BBB + 장 장벽은 ZO-1, 오클루딘, 클라우딘을 공유",
+    dualBarrierBody: "혈뇌장벽과 장 상피 장벽은 동일한 밀착연접 단백질을 공유합니다: ZO-1, 오클루딘, 클라우딘. 멜라토닌은 두 장벽을 모두 보호합니다. EMF→멜라토닌↓은 동시 이중 취약성을 만듭니다: BBB가 열리고(중금속 뇌 진입) 동시에 장 장벽이 약해집니다(LPS가 순환계 진입 → 신경염증). 이것은 두 개의 별도 효과가 아닙니다 — 같은 분자 도구로 만들어진 두 장벽을 공격하는 하나의 메커니즘(멜라토닌 상실)입니다.",
+
+    hormesisTitle: "BDNF 호르메시스: 주파수가 방향을 결정",
+    hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — 같은 경로, 반대 결과",
+    hormesisBody: "BDNF(뇌유래 신경영양인자)는 신경가소성, 기억, 신경발생에 필수적입니다. EMF RF(835-2650 MHz)는 해마에서 BDNF를 감소시키며 수상돌기 가시 상실과 인지 장애를 동반합니다. 한편 ELF(50 Hz)는 BDNF를 증가시키고 신경발생을 촉진합니다. 이것은 동일한 VGCC 경로를 통한 주파수 의존 호르메시스입니다. TTFields 검증: 200 kHz 중간 주파수는 NK 세포 세포독성을 증가시키는 반면 50 Hz ELF는 이를 억제합니다. Lindgren의 χ 매개변수는 이러한 방향 차이를 예측합니다 — 다른 주파수에서 다른 공진 조건이 반대의 생물학적 결과를 생성합니다.",
+
+    agingSpiralTitle: "노화 나선: 항노화 분자로서의 멜라토닌",
+    agingSpiralSub: "EMF → 멜라토닌↓ → 텔로머라제↓ + SIRT1↓ → 가속 노화 (우울증 = 7년)",
+    agingSpiralDesc: "멜라토닌은 단순한 수면 호르몬이 아닙니다 — 핵심 항노화 분자입니다. 텔로머라제(텔로미어 길이 유지)를 활성화하고, SIRT1(→ ROS↓ → p53↓ → NF-κB↓)을 증가시키며, 내피 노화를 약화시킵니다. EMF→멜라토닌↓은 이 전체 보호 계단을 억제합니다.",
+    agingSpiralSteps: [
+      { step: "EMF → 멜라토닌↓", detail: "CRY 경로를 통한 송과선 억제 (VK1-VK3)" },
+      { step: "멜라토닌↓ → 텔로머라제↓", detail: "멜라토닌이 텔로머라제를 직접 활성화 ([[ref:mel_telomerase|Front Aging Neurosci 2022]])" },
+      { step: "멜라토닌↓ → SIRT1↓", detail: "SIRT1 → ROS↓ → p53↓ → NF-κB↓ 항염증 계단 상실" },
+      { step: "텔로미어 단축 → SASP", detail: "단축된 텔로미어가 세포 노화 관련 분비 표현형 촉발 → 만성 염증" },
+      { step: "SASP → ROS↑ → 더 많은 텔로미어 손상", detail: "피드백 루프 S15: 염증이 남은 텔로미어에 산화 손상 유발" },
+    ],
+    agingSpiralQuantitative: "정량적 기준점: 주요 우울장애는 281 bp 짧은 텔로미어와 관련되며 7년의 가속 노화에 해당합니다([[ref:depression_telomere|PMC3063175]]). 대사 증후군도 짧은 텔로미어와 감소된 텔로머라제 활성에 관련됩니다([[ref:mets_telomere|PMC12744432]]). 두 조건 모두 BERM 예측 결과입니다 — 이들의 노화 가속은 EMF→멜라토닌↓→텔로머라제↓과 일관됩니다.",
+
+    genSuscTitle: "유전적 감수성 지도: 15-유전자 칼슘 프로파일",
+    genSuscSub: "EMF 감도는 단일 유전자가 아닙니다 — 칼슘 계단의 5개 기능적 수준에 걸친 다유전자 프로파일입니다",
+    genSuscDesc: "BERM은 다형성이 EMF에 대한 개인 감도를 변조하는 15개 유전자를 식별합니다. 5개 기능적 수준으로 나뉩니다: 유입(Ca²⁺ 진입을 제어하는 5개 CACNA 유전자), 변조(채널 밀도를 제어하는 CACNA2D1), 통합(수렴점의 CAMK2A/B), 유출(Ca²⁺ 제거를 제어하는 3개 유전자), 신호(하류 반응을 변조하는 4개 유전자). 각 유전자의 병리학적 연관은 BERM 계단 예측과 일치합니다.",
+    genSuscInfluxTitle: "수준 1 — 유입: Ca²⁺ 진입 채널",
+    genSuscInfluxGenes: [
+      { gene: "CACNA1C", protein: "Cav1.2 (L형)", role: "주요 RF 표적. 뉴런, 심장, β세포.", variant: "A 대립유전자 rs1006737", diseases: "양극성, 조현병, ASD, 우울증, Timothy 증후군", evidence: "확인됨 ([[ref:sousouri2025|Sousouri 2025]] RCT)" },
+      { gene: "CACNA1H", protein: "Cav3.2 (T형)", role: "ELF 표적. Leydig 세포, 송과선, 시상.", variant: "GoF 돌연변이", diseases: "영아 간질, 열성경련, 일차 알도스테론증, ASD", evidence: "일관" },
+      { gene: "CACNA1D", protein: "Cav1.3 (L형)", role: "내이, 동방결절, 흑질.", variant: "GoF/LoF 변이형", diseases: "서맥, 간질, 청력 상실, ADHD, ASD", evidence: "일관" },
+      { gene: "CACNA1A", protein: "Cav2.1 (P/Q형)", role: "전시냅스 방출. ELF 프라이밍 표적.", variant: "B 대립유전자 rs16023", diseases: "DD + 간질, 가족성 편마비 편두통, 에피소드 실조증", evidence: "확인됨 (ELF 프라이밍 + GWAS)" },
+      { gene: "CACNA1B", protein: "Cav2.2 (N형)", role: "통증 경로, 교감신경계.", variant: "희귀 돌연변이", diseases: "만성 통증, 교감 기능장애", evidence: "일관" },
+    ],
+    genSuscModTitle: "수준 2 — 변조: 채널 밀도 제어",
+    genSuscModDesc: "CACNA2D1은 VGCC의 시냅스 트래피킹을 제어하는 단백질 α2δ-1을 코딩합니다. 이것이 ELF 프라이밍의 분자적 기반입니다: 50/60 Hz 노출은 α2δ-1을 증가 → 더 많은 VGCC가 세포 표면에 도달 → 세포가 후속 모든 EMF에 더 민감해짐. 가바펜티노이드(프레가발린, 가바펜틴)는 α2δ-1에 결합하여 이 트래피킹을 차단합니다 — 메커니즘적으로 ELF 프라이밍 길항제가 됩니다.",
+    genSuscModRef: "[[ref:field2006_cacna2d1|Field 2006]] (PNAS) · [[ref:hoppa2012_a2d|Hoppa 2012]] (Nature)",
+    genSuscIntTitle: "수준 3 — 통합: CaMKII 수렴",
+    genSuscIntDesc: "Thr286/287에서 자가인산화를 증가시키는 de novo CAMK2A/B 돌연변이는 간질, 지적장애, 자폐증을 생성합니다 — BERM이 자가인산화의 환경적(EMF) 증가로부터 예측하는 정확한 표현형입니다. 자가인산화를 감소시키는 돌연변이도 지적장애를 유발합니다. 양방향 = 장애 → 정밀한 조절이 중요합니다. 이것은 BERM의 가장 직접적인 유전적 검증입니다: CaMKII의 유전적 및 환경적 조절장애가 동일한 임상 결과로 수렴합니다.",
+    genSuscIntRef: "[[ref:kury2017_camk2|Kury 2017]] (AJHG, PMC5673671) · [[ref:altawashi2018_camk2a|Al-Tawashi 2018]] (eLife, PMC5963920)",
+    genSuscExtTitle: "수준 4 — 유출: Ca²⁺ 제거",
+    genSuscExtDesc: "세 가지 유전자가 세포에서의 Ca²⁺ 제거를 제어합니다. 느린 유출 + 높은 유입 = Ca²⁺ 축적 → 더 낮은 EMF 수준에서 CaMKII 역치 도달. SLC8A1(NCX1): 심장/신경 Ca²⁺ 유출. ATP2B1(PMCA1): 범용 Ca²⁺ 펌프(GWAS: 고혈압). ATP2B2(PMCA2): 내이 — 느린 PMCA2 + 블루투스 이어폰 = 이명 위험.",
+    genSuscSigTitle: "수준 5 — 신호: 하류 반응",
+    genSuscSigGenes: [
+      { gene: "CRY1", variant: "CRY1Δ11 (0.6%)", effect: "GoF → 더 긴 일주기 주기 → 수면 지연 → 더 짧은 회복 창. EMF가 CRY를 교란 → 유전적 연장과 가산적.", diseases: "DSPD, 대사 교란, 불면증", evidence: "확인됨 ([[ref:patke2017_cry1|Patke 2017]] Cell)" },
+      { gene: "MTNR1B", variant: "rs10830963 G", effect: "eQTL → β세포에 더 많은 MT2 수용체 → 멜라토닌 변화에 과민. EMF가 멜라토닌 억제 → G/G 보유자가 더 영향 → T2D 위험 초가산적.", diseases: "T2D, 공복 혈당, 임신성 당뇨", evidence: "확인됨 (GWAS + eQTL)" },
+      { gene: "COMT", variant: "Val158Met (rs4680)", effect: "Val/Val = 빠른 도파민 제거 = 낮은 기저 DA 수준 → EMF 유도 DA 합성 감소가 더 강하게 타격(완충이 더 작음).", diseases: "스트레스 취약성, 중독, 통증 감도", evidence: "유도 가능" },
+    ],
+    genSuscEhsTitle: "재정의된 EHS: 다유전자성 칼슘 역치 장애",
+    genSuscEhsDesc: "EHS(전자기 과민증)는 심인성이 아닙니다 — 다유전자적으로 예측 가능한 Ca²⁺ 역치 장애입니다. 높은 VGCC 유입(CACNA GoF) + 느린 유출(SLC8A1/ATP2B LoF) + 민감한 신호(CRY1Δ11, MTNR1B GG, COMT Val/Val) = 낮은 CaMKII 자가인산화 역치 = 인구 평균보다 낮은 EMF 수준에서 증상.",
+    genSuscEhsBiomarker: "제안된 바이오마커: 림프구에서의 CaMKII Thr286 자가인산화 수준. 높을수록 = 역치에 가까움 = EMF에 더 민감. 이것이 EHS의 최초 객관적 바이오마커가 될 수 있습니다.",
+    genSuscEpistaticTitle: "상위 상호작용",
+    genSuscEpistatic: [
+      { pair: "CACNA1C × MTNR1B", effect: "다른 기관에서 같은 멜라토닌 억제로 인한 우울증 + T2D. AA + GG 보유자: 가장 높은 동반질환.", status: "테스트 가능 (바이오뱅크)" },
+      { pair: "CRY1Δ11 × MTNR1B", effect: "지연된 멜라토닌 × β세포 과민 → 특히 높은 아침 공복 혈당.", status: "유도 가능" },
+      { pair: "CACNA × SLC8A1/ATP2B", effect: "높은 유입 + 느린 유출 = Ca²⁺ 축적 → EHS 표현형.", status: "테스트 가능 (EHS 코호트 유전자형 분석)" },
+      { pair: "CAMK2A × CACNA2D1", effect: "역치 근처의 CaMKII + 더 많은 채널 = 모든 EMF에 대한 임계 감도.", status: "일관" },
+    ],
+    genSuscPrinciples: [
+      { id: "GXEMF-1", title: "유전자 × EMF 상호작용은 초가산적", desc: "유전적 위험 발현은 EMF 노출에 의존합니다. EMF가 EMF 없는 환경에서는 잠복할 유전적 위험을 '활성화'합니다." },
+      { id: "GXEMF-2", title: "가바펜티노이드가 α2δ-1을 통해 ELF 프라이밍을 역전", desc: "프레가발린/가바펜틴이 α2δ-1에 결합하여 VGCC 트래피킹을 차단. 가바펜티노이드 사용자는 시냅스 VGCC 밀도가 낮음 → EMF에 덜 민감." },
+      { id: "GXEMF-3", title: "CaMKII 자가인산화는 측정 가능한 바이오마커", desc: "림프구의 CaMKII Thr286 인산화 수준: 높을수록 = EMF에 더 민감. EHS 코호트에서 테스트 가능." },
+    ],
+    genSuscRef: "[[ref:kury2017_camk2|Kury 2017]] · [[ref:patke2017_cry1|Patke 2017]] · [[ref:lyssenko2009_mtnr1b|Lyssenko 2009]] · [[ref:tuomi2016_mtnr1b|Tuomi 2016]] · [[ref:scholl2015_cacna1h|Scholl 2015]] · [[ref:korean2025_cacna|Korean 2025]] · [[ref:field2006_cacna2d1|Field 2006]] · [[ref:hoppa2012_a2d|Hoppa 2012]]",
+
+    recovWindowTitle: "회복 창: CaMKII 탈인산화",
+    recovWindowSub: "현대 생활이 Ca²⁺ 항상성 복원에 필요한 EMF 없는 시간을 제거합니다",
+    recovWindowDesc: "CaMKII 탈인산화(자가인산화 상태에서의 회복)는 Ca²⁺ 과부하 없는 시간이 필요합니다. EMF 없는 수면이 이 회복을 허용합니다. 그러나 현대 환경은 EMF 없는 시간을 제거합니다: 24/7 WiFi 라우터, 침대 옆 전화기, 취침까지 LED 조명, 블루투스 기기. 회복 인자(R)가 이것을 포착합니다: EMF 없는 시간이 0에 접근하면, 분모 1/R이 1.0에 접근하고(회복 없음), 누적 손상이 가속화됩니다.",
+    recovWindowEvidence: "교대근무: 대사 증후군 [[ref:shiftwork_mets2025|OR 1.17]] — 야간근무가 멜라토닌과 회복 창을 모두 교란. [[ref:walker2017_why_we_sleep|Walker(2017)]]: 한 밤의 나쁜 수면 → 테스토스테론 -15%, NK 세포 -70%. 좋은 수면이 복원 → 회복 창이 실재. COVID 봉쇄 자연 실험: 24시간/일 WiFi + LED + 다중 기기 → 회복 창 제거 → T2D 가속 [[ref:t2d_covid2024|2.90%에서 3.52%/년]].",
+    recovWindowIntervention: "모델이 예측하는 가장 간단한 개입: EMF 없는 침실. 침실에서 WiFi 라우터 제거, 야간 전화기 비행기 모드 사용, 취침 전 백열등이나 양초로 전환. 이것은 다른 생활 방식 변화 없이 회복 창을 복원합니다.",
+    recovWindowPred1: "RECOV-1: EMF 없는 침실 → 멜라토닌 수준이 2주 내에 측정 가능하게 증가",
+    recovWindowPred2: "RECOV-2: CaMKII 탈인산화를 위한 최소 회복 창: EMF 없는 4-6시간",
+    recovWindowRef: "[[ref:walker2017_why_we_sleep|Walker 2017]] · COVID 봉쇄 데이터 · 교대근무 메타분석",
+
+    mtorSub: "EMF, 칼로리 제한, 라파마이신이 같은 노화 경로에 수렴",
+    mtorTitle: "mTOR 수렴 가설",
+    mtorDesc1:
+      "mTOR은 EMF 유도 Ca²⁺ 유입이 노화, 출산력, 암 경로와 수렴하는 하류 통합자입니다. Sempou 경로: EMF → VGIC → Ca²⁺↑ → mTOR 과활성화 → 자가포식↓, 노화 세포 축적, 미토콘드리아 품질 관리↓, 만성 염증↑.",
+    mtorDesc2:
+      "메트포르민은 AMPK를 활성화하여 mTOR을 억제합니다 -- EMF 유도 경로의 정반대. 가설: 메트포르민의 장수 이점은 그 자체가 항노화가 아니라 항EMF가속노화입니다. 자연 EMF 환경(Amish)에서는 이점이 최소일 것입니다.",
+    mtorEqExplain:
+      "여기서 EMF는 정규화된 노출(0 = 인프라 없음, 1 = 현대 도시)이며, 감소 인자에는 메트포르민(0.30), 라파마이신(0.85), 칼로리 제한(0.20), 간헐적 단식(0.10)이 포함됩니다.",
+    mtorThreeTitle: "세 가지 유행병, 하나의 메커니즘",
+    mtorAging: "노화",
+    mtorAgingDesc:
+      "mTOR↑ → 자가포식↓, 노화↑, 염증↑, 미토콘드리아↓ → 가속 노화",
+    mtorFertility: "출산력",
+    mtorFertilityDesc:
+      "mTOR↑ → 정원세포 분화↓, 난포 고갈↑, AMH↓ → TFR↓",
+    mtorCancer: "암",
+    mtorCancerDesc:
+      "mTOR↑ → 증식↑, 종양 성장↑, 전이↑ → 암 위험↑",
+    mtorPredTitle: "테스트 가능한 예측",
+    mtorPredColId: "ID",
+    mtorPredColPred: "예측",
+    mtorPredColTest: "테스트",
+    mtorPreds: [
+      { id: "E1", pred: "메트포르민의 장수 이점은 고EMF 환경에서 더 큼", test: "UK CPRD 도시/농촌 층화" },
+      { id: "E2", pred: "Amish 메트포르민 사용자는 일반 인구보다 작은 장수 보너스를 보임", test: "Amish 당뇨 코호트 비교" },
+      { id: "E3", pred: "블루존 장수 이점이 4G/5G 도착과 함께 사라짐", test: "오키나와, 사르데냐, 이카리아 코호트 추적" },
+      { id: "E4", pred: "CR 실험 효과 크기가 10년마다 증가(실험실 EMF 증가)", test: "메타분석: 효과 크기 vs 출판 연도" },
+      { id: "E5", pred: "TAME 시험 이점이 EMF 노출에 의해 층화됨", test: "도시 vs 농촌 하위 그룹 분석" },
+      { id: "E6", pred: "안식일(25시간/주 EMF 없음)이 간헐적 mTOR 단식으로 작용하여 Haredi TFR과 장수를 지지", test: "Haredi vs 세속 이스라엘 코호트" },
+    ],
+
+    fourRoutesTitle: "EMF → TFR의 5가지 독립 경로",
+    fourRoutesSub: "생식선, 일주기, 뇌하수체, 자율신경, 신경발달 — 각각 단독으로 충분",
+    fourRoutesDesc: "BERM은 EMF 노출이 출산력을 감소시킬 수 있는 5가지 독립적인 생물학적 경로를 식별합니다. 각 경로는 별개의 메커니즘과 표적 조직을 통해 작동합니다. 결정적으로, 각 경로는 TFR을 감소시키기에 독립적으로 충분합니다 — 이들은 직렬이 아닌 병렬로 작동합니다. 이것은 한 경로를 차단해도(예: 생식선 경로를 위한 항산화 보충) 효과를 제거하지 못함을 의미합니다. 다른 네 경로가 여전히 활성이기 때문입니다.",
+    fourRoutesGonadal: "경로 1: 생식선 (확립)",
+    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> 정자 DNA 손상 + Leydig 세포 StAR 억제 -> 테스토스테론 감소 + 정자발생 교란. 표적 조직: 고환. 증거 수준: E (23-28 차단 연구). 주요 채널: RF + ELF.",
+    fourRoutesCircadian: "경로 2: 일주기 (확립)",
+    fourRoutesCircadianDesc: "EMF -> CRY/RPM -> 일주기 시계 교란 -> 멜라토닌 억제 -> HPG축 교란 + 난포액 산화 스트레스. 표적 조직: 송과선, SCN. 증거 수준: E. 주요 채널: RF (자기장 성분).",
+    fourRoutesPituitary: "경로 3: 뇌하수체 (신규)",
+    fourRoutesPituitaryDesc: "EMF -> 성선자극호르몬 세포의 T형 Cav3 채널 -> FSH/LH 분비 교란 -> 하류 성선 기능장애. 뇌하수체는 BBB 외부에 위치하여 직접 노출됩니다. 모든 호르몬 세포 유형이 Cav3을 발현합니다. 이 경로는 생식선 손상과 독립적으로 출산력을 감소시킬 수 있습니다. 표적 조직: 뇌하수체. 증거 수준: E. 주요 채널: ELF + RF.",
+    fourRoutesAutonomic: "경로 4: 자율신경 (신규)",
+    fourRoutesAutonomicDesc: "EMF -> 동방결절 Cav3.1 -> HRV 감소 -> 미주신경 긴장 감소 -> HPA축 과활성화 -> 만성 코르티솔 -> HPG 교차 억제. HRV는 민감한 조기 바이오마커. 표적 조직: 동방결절, 미주신경. 증거 수준: E. 주요 채널: ELF (50 Hz).",
+    fourRoutesNeurodevelopmental: "경로 5: 신경발달 (유도)",
+    fourRoutesNeurodevelopmentalDesc: "EMF → 중요 발달 창 동안 VGCC/Ca²⁺ → 교란된 뇌 성분화, PFC 성숙, 정체성 형성. 화학 EDC(BPA, 프탈레이트)와 동일한 메커니즘. 화학 EDC 효과와 가산적. 차단: 산전 EMF 감소, B2/글루타치온 지원. 표적 조직: 태아/영아 뇌. 증거 수준: L* (유도된 예측 — DIFF-1 AGD 테스트 대기). 주요 채널: RF + ELF.",
+    cascadeNeurodevExt: "확장 분석: ASD, ADHD, 양극성, 우울증, 조현병에 걸친 공유 유전적 취약성으로서의 CACNA1C. 7개 발달 채널이 동일한 Ca²⁺ 경로를 통해 EMF를 뇌 성분화에 연결합니다. 전체 분석은 뇌 모듈롬 참조.",
+    fourRoutesImplication: "임상적 함의: 단일 경로를 표적으로 하는 개입(예: 경로 1을 위한 항산화제)은 부분적이지만 불완전한 보호를 보일 것입니다. 완전한 보호를 위해서는 EMF 감소(모든 경로를 동시에 해결) 또는 다중 표적 개입 전략이 필요합니다.",
+
+    modulationTitle: "왜 변조가 SAR보다 중요한가",
+    modulationDesc: "대규모 연구([[ref:fert-steril-2023-phone-sperm-trend|Fertility and Sterility 2023]])에서 휴대전화 사용과 낮은 정자 농도 사이의 연관성을 발견했습니다 — 그러나 연관성이 2012-2018보다 2005-2007에서 더 강했습니다. BERM은 이것을 Schwan 방정식을 통해 설명합니다: 생물학적으로 활성인 성분은 RF 반송파가 아니라 그 ELF 변조 포락선입니다. GSM(2G): 217 Hz에서 강한 TDMA 펄스, ~100% 변조 깊이 → 강한 ELF 성분 → 큰 T형 분기 효과. LTE(4G): OFDM, ~30-50% 변조 깊이, 더 낮은 송신 전력 → 더 약한 ELF 성분 → 더 작은 효과. 이것은 '적은 방사가 더 안전하다'를 호출하지 않고 시간 추세를 예측합니다. 방사량은 유사할 수 있지만 변조 구조가 변경되었습니다.",
+    modulationWarning: "참고: 이 시간 추세는 상관관계입니다. 다른 요인도 동시에 변경되었습니다(전화기 위치, 사용 습관, 기타 노출). Schwan 설명은 간결하지만 유일한 가능성은 아닙니다.",
+
+    modulomeSub: "12-레이어 감수성 모델 — 분자 스핀 물리학에서 인구 패턴까지",
+    modulomeTitle: "EMF 모듈롬",
+    modulomeDesc: "12-레이어 모듈롬은 분자 스핀 물리학에서 인구 수준 패턴까지 전자기 감수성을 매핑합니다. 각 레이어는 χ — 외부 EMF와 생물학적 기능 사이의 무차원 결합을 변조합니다. 12개 레이어, 10개 표적 기관, 출산력 감소로 향하는 4개 독립 경로.",
+
+    btnEvidence: "증거 탐색",
+    btnPredictions: "예측 보기",
+    mathSub: "Lindgren 기하학에서 TFR 예측까지의 완전한 유도",
+    mathTitle: "수학적 기초",
+    mathSubtitle:
+      "Lindgren 기하학에서 TFR 예측까지의 완전한 유도. 각 방정식은 이전 방정식에서 유도 가능합니다. '전체 유도'를 클릭하면 중간 단계를 볼 수 있습니다.",
+
+    thresholdTitle: "테스토스테론 → TFR 역치 모델",
+    thresholdSub: "생물학적 역량 감소에서 인구학적 붕괴까지의 정량적 연결",
+    thresholdLead: "BERM 모델의 가장 강력한 예측 구성요소. 테스토스테론 감소(연간 ~1%, 연령 독립, 5개국에서 문서화)는 3단계 궤적을 만듭니다: 침묵의 침식 → 역치 돌파 → 생물학적 한계. 모델은 핀란드 및 한국 데이터에 대해 보정되며 국가 수준의 구체적이고 테스트 가능한 예측을 생성합니다.",
+    thresholdPhase1Title: "1단계: 침묵의 침식",
+    thresholdPhase1Desc: "테스토스테론이 감소하지만 생물학적으로 충분합니다. TFR은 문화적 요인으로 인해 안정적이거나 천천히 감소합니다. 생물학적 역량이 문화적 수요를 초과합니다.",
+    thresholdPhase2Title: "2단계: 역치 돌파",
+    thresholdPhase2Desc: "누적 T 손실이 ~40%를 초과합니다. 남성 저출산력 증가(T < 300 ng/dL). TFR이 가속 하락하며 생물학적 역량이 제약 조건이 됩니다. 출산장려 정책이 실패하기 시작합니다.",
+    thresholdPhase3Title: "3단계: 생물학적 한계",
+    thresholdPhase3Desc: "TFR이 1.0 미만으로 하락합니다. 생물학적 무능력이 지배합니다. 동기가 있는 커플도 보조생식이 필요합니다. IVF 수요가 기하급수적으로 증가합니다.",
+    thresholdMathTitle: "수학적 공식화",
+    thresholdMathT: "T(t) = T₀ × (1 − r)^(t − t₀)",
+    thresholdMathTFR: "TFR(t) = min( TFR_cultural(t), TFR_bio(t) )",
+    thresholdMathExplain: "TFR_bio < TFR_cultural일 때 생물학적 역량이 제약 조건입니다. 누적 T 손실 ~40%에서의 시그모이드 전환이 관찰된 패턴을 생성합니다: 수십 년의 안정 후 급격한 붕괴.",
+    thresholdTableTitle: "국가별 매개변수",
+    thresholdTableCountry: "국가",
+    thresholdTableRate: "r (%/년)",
+    thresholdTableSource: "출처",
+    thresholdTableCumul: "누적 2024",
+    thresholdTableThreshold: "역치 연도",
+    thresholdTablePhase: "단계",
+    thresholdFinlandTitle: "후향적 검증: 핀란드",
+    thresholdFinlandText: "핀란드는 모델의 로제타석입니다. [[ref:perheentupa2013|Perheentupa(2013)]]는 코호트 의존 37% T 감소를 문서화합니다(n=3,271, 1972-2002). TFR은 40년간 1.63-1.87로 안정 유지(1970-2010), 이후 2024년 1.26으로 붕괴. T 감소 시작과 TFR 붕괴 사이의 ~35년 지연은 누적 생물학적 침식이 역치에 도달하는 것과 일관됩니다. 모델이 2005년에 존재했다면 핀란드의 붕괴를 10-15년 전에 예측할 수 있었을 것입니다.",
+    thresholdProjectionsTitle: "국가별 TFR 전망",
+    thresholdProjections2030: "2030",
+    thresholdProjections2035: "2035",
+    thresholdChartTitle: "대화형 역치 모델",
+    thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]]은 BMI 조정 후 null 결과를 보고했습니다. 모델은 BMI를 교란 요인이 아닌 매개자로 해석합니다(EMF → 대사 교란 → BMI↑ → T↓) — BMI 조정은 신호의 일부를 제거합니다. 아래 인과 구조 섹션 참조.",
+    thresholdFootnoteEstimated: "발표된 T 세속 추세 연구가 없습니다. 한국 비율은 세계 최고 EMF 밀도에서 추정; 일본 비율은 문서화된 핀란드 감소와의 유사성으로 추정. 이것은 잠정적이며 직접 데이터가 이용 가능해지면 업데이트됩니다.",
+    thresholdCaveat: "T 감소율은 동료심사 종단 연구의 연령 독립 세속 추세입니다. 한국과 일본 비율은 추정치입니다. 40% 역치는 유도가 아닌 보정입니다. 전망은 현재 비율의 지속을 가정합니다.",
+
+    causalStructureTitle: "왜 BMI가 감소를 설명하지 못하는가",
+    causalStructureLead: "지속적인 반론은 환경 노출이 아닌 증가하는 비만이 테스토스테론의 세속 감소를 설명한다고 주장합니다. Pearl 프레임워크를 사용한 정식 인과 분석은 BMI가 교란 요인(독립 원인)이 아닌 매개자(인과 경로상)임을 밝힙니다. 매개자 조정은 실제 신호를 제거합니다.",
+    causalDagConventionalTitle: "전통적 해석",
+    causalDagConventionalCaption: "교란 요인으로서의 BMI: 조정이 정확, null = 감소 없음",
+    causalDagBermTitle: "BERM 해석",
+    causalDagBermCaption: "매개자로서의 BMI: 조정이 매개된 신호를 제거, null = 과보정",
+    causalMazurTitle: "체중 안정 테스트: [[ref:mazur2013|Mazur et al. 2013]]",
+    causalMazurText: "미 공군 재향군인 991명을 20년간(1982-2002) 6차에 걸쳐 추적. 체중을 유지한 남성도 테스토스테론이 117 ng/dL(19%) 감소했습니다. 이것은 통계적 조정 없이 BMI를 제어하는 자연 실험입니다.",
+    causalMazurQuote: "우리는 테스토스테론의 세속 감소 원인을 밝히지 못했지만 증가하는 비만을 충분하거나 주요한 설명으로 배제합니다.",
+    causalMazurSource: "[[ref:mazur2013|Mazur, Westerman & Mueller 2013]], PLOS ONE",
+    causalPathwayTitle: "경로별 정량 분해",
+    causalPathwayDirect: "직접 경로",
+    causalPathwayDirectDesc: "EMF -> Cav3.2/멜라토닌/코르티솔 -> T 감소",
+    causalPathwayDirectEst: "~117 ng/dL / 20년 (~67%)",
+    causalPathwayMediated: "매개 경로",
+    causalPathwayMediatedDesc: "EMF -> 대사 메커니즘 -> BMI 증가 -> 아로마타제/SHBG -> T 감소",
+    causalPathwayMediatedEst: "~58 ng/dL / 20년 (~33%)",
+    causalPathwayCaveat: "이 비율은 [[ref:mazur2013|Mazur 2013]](체중 안정 vs 체중 증가 그룹)에서 유도된 근사치입니다. 정식 매개 분석(SEM)이 이 추정치를 정제할 수 있습니다.",
+    dagDietLifestyle: "식단 / 생활방식",
+    dagBmiAdjCorrect: "BMI 조정: 정확",
+    dagNullNoDecline: "null = 진정한 감소 없음",
+    dagMetabolicPaths: "6개 대사 경로",
+    dagPathways: "경로",
+    dagMediated: "매개 (~33%)",
+    dagDirect: "직접 (~67%)",
+    dagOvercorrection: "BMI 조정: 과보정",
+    dagRemoves: "실제 신호의 ~33% 제거",
+    causalReconciliationTitle: "'모순된' 결과의 화해",
+    causalReconciliationLead: "인과 구조가 이해되면, null 결과를 보고하는 것들을 포함한 모든 기존 연구가 일관됩니다:",
+    causalReconciliationStudies: [
+      { referenceId: "travison2007_v2", study: "Travison 2007", bmiAdj: true, result: "-1.0%/년", interpretation: "직접 경로 포착(BMI 조정). 같은 기간 ELF 프라이밍 증가(WiFi + 3G 확산)" },
+      { referenceId: "mazur2013", study: "Mazur 2013", bmiAdj: false, result: "-0.95%/년", interpretation: "자연적으로 직접 경로 확인(체중 안정). 20년 = 레이어 2→4. 직접 경로 ~67%. 프라이밍: 같은 기간 P가 1.5→2.0으로 증가" },
+      { referenceId: "chodick-2020-israel", study: "Chodick 2020", bmiAdj: false, result: "-1.02%/년", interpretation: "총 효과(직접 + 매개). 이스라엘: 높은 RF 밀도 → 강한 레이어 효과" },
+      { referenceId: "santi2025", study: "Santi 2025", bmiAdj: true, result: "T 및 LH 감소", interpretation: "직접 경로 + HPG 교란 확인. LH↓은 뇌하수체 교란을 나타냄. 뇌가 가장 프라이밍된 기관(24/7 근거리장). CACNA1C 유전자형이 LH 반응을 조절" },
+      { referenceId: "andersson-2007-denmark", study: "Andersson 2007", bmiAdj: true, result: "Null", interpretation: "매개 경로 우세 → BMI 조정이 신호 제거. 덴마크 56°N: 연구가 여름이면 → CRY 포화 → 효과 더 작음. 계절 보정이 신호를 드러낼 수 있음" },
+      { referenceId: "nyante2012_nhanes", study: "Nyante 2012", bmiAdj: true, result: "Null", interpretation: "분석 변경 + 매개자 제거 → 신호 은폐. 미국(60 Hz) vs 유럽(50 Hz): 다른 ELF 주파수 → 가능한 다른 CRY 간섭 프로파일" },
+    ],
+    causalSantiTitle: "[[ref:santi2025|Santi 2025]]: 테스토스테론과 LH 모두 감소",
+    causalSantiText: "역대 최대 메타분석(1,064,891명 남성, 1971-2024)에서 혈청 테스토스테론이 연령, BMI, 분석 방법과 독립적으로 감소함을 발견. 결정적으로, LH(테스토스테론 생산을 구동하는 뇌하수체 신호)도 감소하여 단순 고환 부전을 배제하고 시상하부-뇌하수체 수준 교란을 지목합니다.",
+    causalSantiMechanism: "BERM은 정확히 이것을 예측합니다: 경로 A(Cav3.2 -> StAR을 통한 직접 Leydig 세포)가 테스토스테론을 감소시키고, 경로 C(멜라토닌 -> GnRH)와 경로 D(코르티솔 -> HPG)가 LH를 감소시킵니다. 두 호르몬의 동시 감소는 다중 수준 교란의 서명입니다 — 노화도 비만도 아닙니다.",
+    causalSantiSource: "[[ref:santi2025|Santi et al. 2025]], J Endocrinol Invest 48:2721-2734",
+    pocketTitle: "주머니 전환",
+    pocketText: "2000년 이후 정자 감소율의 두 배 증가([[ref:levine2023_sperm|1.16%→2.64%/년]])는 단 하나의 행동 변화와 일치합니다: 전화기가 귀에서 주머니로 이동. 3G 데이터 용량은 전화기가 통화 전용이 아닌 계속 주머니에 있게 됨을 의미했습니다. 고환이 하루 16시간 근거리장에 들어갔습니다.",
+    causalInverseTitle: "역약리학적 테스트: 테스토스테론 치료가 비만을 역전",
+    causalInverseText: "비만이 테스토스테론 감소를 유발한다면, 테스토스테론을 높여도 체중에 영향을 주지 않아야 합니다. 그러나 비만 성선기능저하 남성에서 테스토스테론 치료는 극적인 체중 감소(3등급 비만에서 최대 30 kg)를 생성하여 양방향 인과관계를 확인합니다: T 억제가 체중 증가를 유도합니다, 그 반대만이 아닙니다.",
+    causalInverseData: [
+      { label: "비만 1등급", loss: "-16.3 kg", bmi: "-5.52" },
+      { label: "비만 2등급", loss: "-25.3 kg", bmi: "-8.15" },
+      { label: "비만 3등급", loss: "-30.5 kg", bmi: "-9.96" },
+    ],
+    causalInverseSource: "[[ref:saad2016|Saad et al. 2016]], 레지스트리 연구",
+
+    whyPronatTitle: "왜 2,000억 달러로 한국 출산율을 올리지 못했는가",
+    whyPronatText: "BERM의 3단계 아키텍처는 출산력을 생물학적 역량(수준 1), EMF-행동 결합(수준 2), 문화적 선택(수준 3)으로 분리합니다. 출산장려 정책 — 현금 보너스, 육아휴직, 보육 보조금 — 은 수준 3(동기)을 표적으로 합니다. 그러나 수준 1(생물학적 역량)이 제약 조건이 되면, 어떤 수준 3 인센티브도 보상할 수 없습니다. 한국의 누적 테스토스테론 손실은 48%를 초과합니다. 아이를 원하는 커플의 증가하는 비율이 자연 임신이 불가능합니다. 2,000억 달러는 모델의 잘못된 수준을 해결했습니다.",
+    whyPronatPrediction: "T-TFR-4: 한국의 TFR은 정책 지출에 관계없이 2035년까지 지속적으로 1.0을 초과하지 못할 것.",
+    whyPronatFalsification: "반증: 한국 TFR이 3년 이상 지속적으로 1.0 이상.",
+
+    bioFloorTitle: "생물학적 바닥",
+    bioFloorText: "정자발생은 혈청 농도의 50-100배의 고환 내 테스토스테론을 필요로 합니다. 혈청 테스토스테론이 ~200 ng/dL 미만으로 하락하면 정자발생이 심각하게 손상됩니다. 현재 감소율(~500 ng/dL 기준에서 연간 1%)으로:",
+    bioFloorTimeline: [
+      { year: "2024", value: "~320 ng/dL", note: "인구 평균, 젊은 남성" },
+      { year: "2035", value: "~285 ng/dL", note: "" },
+      { year: "2050", value: "~240 ng/dL", note: "" },
+      { year: "2070", value: "~190 ng/dL", note: "정자발생 역치 미만" },
+    ],
+    bioFloorConsequence: "이 바닥 아래에서는 IVF도 남성 자신의 정자를 사용할 수 없습니다. 기증 정자, 고환 정자 추출 또는 미래 기술(체외 정자발생)이 필요합니다. 이것은 추측이 아닙니다 — 측정된 감소율에 적용된 산수입니다.",
+
+    sixFactorTitle: "왜 테스토스테론이 통합 변수인가",
+    sixFactorLead: "테스토스테론은 BERM 프레임워크에서 가장 정보적인 단일 바이오마커입니다. 6가지 독립적인 생물물리학적 특성이 EMF → VGCC → Ca²⁺ 메커니즘에 대해 예외적으로 민감하게 만들기 때문입니다.",
+
+    diseaseCascadesTitle: "확장 질병 계단",
+    diseaseCascadesLead: "VGCC 유전자 패밀리 분석에서 유도된 11개의 추가 질병 계단. 각 계단은 특정 VGCC 아형을 고유한 증거 수준을 가진 병리학적 메커니즘에 연결합니다.",
+    diseaseCascades: [
+      { num: 9, title: "근시", mechanism: "EMF → 도파민 아마크린 세포의 VGCC → DA 방출 교란 → 공막 신장 제동 약화 + CRY → 멜라토닌 → 일주기 안구 성장 조절장애. 세 개 채널 수렴.", level: "M", trend: "22.9% (2000) → 34% (2020) → 50% (2050)" },
+      { num: 10, title: "자가면역질환", mechanism: "EMF → T세포의 만성 Ca²⁺ 교란 → Ca²⁺-칼시뉴린-NFAT 경로 조절장애 → 자기반응 T세포 활성화. 칼시뉴린 억제제(시클로스포린, 타크로리무스)가 표준 치료 — 약리학적 확인.", level: "M|C", trend: "미국 5% 유병률, 전 세계 +19.1%/년" },
+      { num: 11, title: "청력 손실 및 이명", mechanism: "EMF → 내유모세포 시냅스의 Cav1.3 → 만성 Ca²⁺ 과부하 → 흥분독성 → 시냅스 손상. 블루투스/이어폰 EMF가 달팽이관에 직접 인접.", level: "M|C", trend: "젊은 성인 17.7%가 이명 보고; 10억+ 위험" },
+      { num: 12, title: "편두통", mechanism: "CACNA1A (P/Q형) GoF → CSD. CACNA1I (Cav3.3) 변이형 → 편마비 편두통 (OR 2.30). 여:남 비율 2.5-4.3:1이 성별 차이 VGCC와 일관.", level: "E", trend: "유병률 증가; 발병 연령 12-17" },
+      { num: 13, title: "수면 구조 교란", mechanism: "nRt의 Cav3.3 → 방추파 페이스메이커. TC 뉴런의 Cav3.1 → 델타파. T형 창 전류 → 느린 진동. EMF → 방추파/델타파 교란 → 수면 품질↓.", level: "M|C", trend: "불면증 증가; 전 세계 수면 시간 감소" },
+      { num: 14, title: "PCOS", mechanism: "4기관 수렴: 췌장 β세포(Cav1+3 → 인슐린↓) → 고인슐린혈증 → 난포막 안드로겐↑ + 과립막 아로마타제 → E2↓ + 뇌하수체 Cav3 → LH/FSH↑. 네 가지 모두 EMF에 민감.", level: "M", trend: "가임기 여성의 5-20%; 2035년까지 증가" },
+      { num: 15, title: "만성 통증", mechanism: "Cav3.2는 DRG 통각수용체의 일차 통증 채널. 염증/신경병성 통증에서 상향조절됨. 여성 DRG 뉴런은 더 큰 Cav3.2 전류를 보임 → 성별 차이.", level: "M|C", trend: "만성 통증 유행; 수억 명 영향" },
+      { num: 16, title: "심장 부정맥 (QT)", mechanism: "CACNA1C GoF → Cav1.2 창 전류↑ → QT↑. Timothy 증후군: 같은 돌연변이에서 극단 QT + 자폐증.", level: "E", trend: "Timothy: 대부분 치료 없이 3세 전 사망" },
+      { num: 17, title: "신경발달 및 성분화", mechanism: "7개 인과 채널 × 3개 발달 창. 산전: Leydig Cav3 → T↓, 아로마타제, 뇌하수체. 사춘기: PFC, 멜라토닌, OT/AVP, 도서피질.", level: "L*", trend: "성별클리닉 의뢰: 스웨덴 +19,700%; ASD-GD 6-26%" },
+      { num: 18, title: "TheraBionic: 메커니즘 증명", mechanism: "FDA 승인 기기(2019) HCC용. 27.12 MHz, 종양 특이 주파수로 AM. SAR 전화기보다 100-1000배 낮음. 메커니즘: EMF → Cav3.2 → Ca²⁺ → HCC 분화. 비열 EMF → VGCC 확인.", level: "E", trend: "진행성 HCC에서 생존율 34% 증가" },
+      { num: 19, title: "대사 증후군 / 비만", mechanism: "6가지 수렴 EMF → Ca²⁺ 경로: (1) ARC 글리아 Ca²⁺ → AgRP/NPY를 통한 시상하부 식욕↑, (2) CaMKII/CREB → UCP1 및 SERCA2b/RyR2 교란을 통한 BAT 열발생↓, (3) VGCC L형을 통한 β세포 인슐린 역학↓, (4) 갑상선자극호르몬 세포의 Cav3을 통한 갑상선축 → 대사율↓, (5) 멜라토닌 → 일주기 대사 교란, (6) 지방세포 Ca²⁺ → 지방합성↑. CaMKII가 모든 경로를 연결하는 수렴 분자. [[ref:klimentidis2010|Klimentidis]] 역설: 24개 인구, 8개 종이 모두 체중 증가(p = 1.2×10⁻⁷) 식단 통제된 실험동물 포함. 비만은 다인자성 — EMF는 식단/운동/유전학이 설명할 수 없는 잔차를 설명하는 하나의 기여 요인.", level: "M", trend: "전 세계 비만: 4% (1975) → 13% (2016) → 42% (미국 2024)" },
+    ],
+    vgccDiagramTitle: "VGCC 유전자 패밀리",
+    vgccDiagramSubtitle: "6개 유전자, 6개 질병 클러스터, 하나의 메커니즘",
+    emfBarTitle: "휴지 전위에서의 EMF 감도 계층",
+    emfBarSubtitle: "~-70 mV 막전위에서의 상대 활성화 확률",
+
+    epistemic:
+      "인식론적 참고: 위 방정식은 현재 모델 사양(BERM v17)입니다. 매개변수 값은 관찰 데이터에 대해 보정되며 새로운 증거가 이용 가능해짐에 따라 업데이트됩니다. 모델은 명시적으로 반증 가능하도록 설계되었습니다 -- 예측이 실패하면 모델이 틀린 것입니다. 치료 기기 역설(규제 기관이 승인한 24+ 카테고리의 비열 EMF 기기, DC에서 UV까지)은 비열 생체활성을 가설이 아닌 규제적 사실로 확립합니다.",
+    lbermRef:
+      "Jacobian 곱 구조(17장), 증명 의무 레지스트리, 안전 시스템의 정식 구조는 기반 문서(LBERM_final.docx)에 설명되어 있습니다.",
+    svgSpermDamage: "정자 손상",
+    svgCircadian: "일주기",
+    svgMelatoninDown: "멜라토닌 ↓",
+    svgCa2Entry: "Ca²⁺ 유입",
+    svgCortisolUp: "코르티솔 ↑",
+    svgTestosteroneDown: "테스토스테론 ↓",
+    svgAutophagyDown: "자가포식 ↓",
+    svgCellGrowthDown: "세포 성장 ↓",
+    svgTfr: "TFR",
+    svgDecline: "감소",
+    svgFiveRoutesAria: "TFR 감소로의 5가지 경로",
+    brainModulomeLink: "뇌 모듈롬",
+    routeGonadal: "생식선",
+    routeAutonomic: "자율신경",
+    routeNeurodevel: "신경발달",
+    routeLabel: "경로",
+    routeParallelCaption: "각 경로는 독립적으로 충분 — 병렬 작동",
+    labelWarning: "경고",
+    labelPrediction: "예측",
+    labelFalsification: "반증",
+    colStudy: "연구",
+    colBmiAdj: "BMI 조정",
+    colResult: "결과",
+    colBermInterpretation: "BERM 해석",
+    countryDenmark: "덴마크",
+    countryFinland: "핀란드",
+    countrySouthKorea: "한국",
+    countryJapan: "일본",
+    estHighestEmf: "추정 (가장 높은 EMF)",
+    estFinlandAnalogy: "추정 (핀란드 유사)",
+    layerMilitaryRadar: "군사 레이더",
+    layerWeatherRadar: "기상 레이더",
+    layerMobileNetworks: "모바일 네트워크",
+    layerWindTurbines: "풍력 터빈",
+    layerDisplayTransition: "디스플레이 전환",
+    layerSmartMeters: "스마트 미터",
+    layerIndoorLed: "실내 LED",
+    layerSolarInverters: "태양광 인버터",
+    layerStreetLed: "가로등 LED",
+    pharmEvidenceLink: "약리학적 증거: BERM 경로에 수렴하는 8개 약물 등급 →",
+    svgVgccPathway: "VGCC 경로",
+    svgAutophagy: "자가포식",
+    svgProteinSynthesis: "단백질 합성",
+    svgCellGrowth: "세포 성장",
+    svgImmuneRegulation: "면역 조절",
+    svgIntegrator: "통합자",
+    svgCalories: "칼로리",
+    svgAging: "노화",
+    svgCounteracts: "(대항)",
+    svgFertilityDown: "출산력↓",
+    svgCancer: "암",
+    svgMtorSharedHub: "mTOR은 공유 허브 — 세 가지 유행병, 하나의 메커니즘",
+    svgInflammation: "염증",
+    svgCortisol: "코르티솔",
+    svgMelatonin: "멜라토닌",
+    svgPosFeedback: "양성 피드백",
+    svgNegFeedback: "음성 피드백",
+    svgHub: "허브",
+    svgFeedbackCaption: "17개 양성 피드백 루프 — 모든 진입점이 전체 네트워크를 활성화",
+    svgVgccHierarchyCaption: "T형(Cav3) 채널 >> Cav1.3(저역치 L형) >> Cav1.2(활동전위 시만). CaMKII 피드백이 Cav3.2 역치를 시간이 지남에 따라 더 음으로 이동시킨다.",
+    svgRecoveryBarAria: "회복률 막대 차트",
+    svgRecoveryCaption: "회복률(α): 1.0 = 완전 회복, 0.0 = 비가역적",
+    svgTechLayersAria: "기술 레이어 누적 노출 차트",
+    layerPowerGrid: "전력망",
+    layerRadioTv: "라디오/TV",
+    layerCellular: "셀룰러",
+    svgCumulativeExposure: "누적 노출",
+    svgTechLayersCaption: "5개 기술 레이어: 각 세대가 이전 레이어 위에 쌓인다",
+    conventionalLabel: "기존 설명:",
+    layerExplanationLabel: "레이어 설명:",
+    conventional: "기존",
+    anomalyUnexplainedDecline: "설명되지 않는 감소",
+    anomalyUnexplained: "설명 불가",
+    anomalyWifiLedLayers: "WiFi+LED 레이어",
+    anomalySocialMedia: "소셜 미디어",
+    anomalySomeTheory: "SNS 이론",
+    anomalyTripleChannel: "트리플 채널",
+    anomalySedentary: "좌업 생활",
+    anomaly247Emf: "24시간 EMF",
+    anomalyProsperity: "번영",
+    anomalyElectrificationLag: "전기화 지연",
+    anomalyPhysicalLabor: "육체 노동",
+    anomalyZeroLayers: "제로 레이어",
+    colCountry: "국가",
+    colActual: "실제",
+    colNote: "참고",
+    countryFinlandName: "핀란드",
+    countrySouthKoreaName: "한국",
+    countryUsaName: "미국",
+    countryAmishName: "아미시",
+    colDriver: "요인",
+    replacementLabel: "대체 수준",
+    countrySKoreaShort: "한국",
+    countryIndiaName: "인도",
+    colAxis: "축",
+    colTargetOrgan: "표적 장기",
+    colConsequence: "결과",
+    svgGenesCascadeAria: "15개 유전자 캐스케이드 다이어그램",
+    tierInflux: "유입",
+    tierModulation: "조절",
+    tierIntegration: "통합",
+    tierExtrusion: "배출",
+    tierSignaling: "신호전달",
+    svgGenesCascadeCaption: "Ca²⁺ 캐스케이드: 5개 기능 계층에 걸친 15개 유전자",
+    colGene: "유전자",
+    colProtein: "단백질",
+    colBermRole: "BERM 역할",
+    colKeyVariant: "주요 변이",
+    colDiseases: "질환",
+    colEvidence: "증거",
+    colVariant: "변이",
+    colEffect: "효과",
+    ehsAssay: "분석",
+    ehsLymphocyte: "림프구 자가인산화",
+    ehsElevated: "상승",
+    ehsGenotyping: "유전자형 판정",
+    ehsCalciumVariants: "칼슐 채널 변이",
+    ehsRiskAlleles: "위험 대립유전자",
+    ehsSignalingMarkers: "신호 마커",
+    ehsHighRisk: "고위험 프로필",
+    ehsPolygenicScore: "다유전자 위험 점수",
+    ehsOverallAssessment: "EMF 감수성 종합 평가",
+    ehsDiagnosticClass: "EHS 진단 분류",
+    ehsLowModHigh: "낮음 / 중간 / 높음",
+    whyDisagreeTitle: "연구 결과가 업어서 상충되는 이유",
+    whyDisagreeSub: "통제되지 않은 8개의 조절 변수가 수십 년간의 '상충되는 근거'를 설명한다",
+    whyDisagreeDesc: "EMF 연구는 수십 년 동안 상충되는 결과를 낳아 왔다. BERM은 어떤 연구가 양성 결과를 찾고 어떤 연구가 귀무 결과를 찾는지를 예측하는 통제되지 않은 8개의 조절 변수를 식별한다:",
+    modSeason: "계절",
+    modSeasonDesc: "CRY 자기수용체 감수성은 빛에 의존한다. 겨울에는 CRY가 더 민감해져 → 멜라토닌에 대한 EMF 효과가 더 강해진다. 송아지에서 입증되었다([[ref:halgamuge2015|Halgamuge 2015]]).",
+    modGenotype: "유전자형",
+    modGenotypeDesc: "CACNA1C rs1006737 A-대립유전자 → 더 많은 Cav1.2 → 더 큰 Ca²⁺ 반응. [[ref:sousouri2025|Sousouri 2025]](ETH): CACNA1C 유전자형이 5G 수면 반응을 결정한다.",
+    modLabElf: "실험실 ELF 배경",
+    modLabElfDesc: "50/60 Hz 전력망은 8~10일 안에 VGCC 발현을 상향 조절한다([[ref:sun2016_elf_vgcc|PMC4757866]]). ELF 배경이 높은 실험실은 세포를 '프라이밍'한다.",
+    modNighttimeEmf: "야간 EMF",
+    modNighttimeEmfDesc: "침실의 Wi-Fi 라우터 vs. EMF가 없는 밤 → 서로 다른 CaMKII 회복 상태 → 실험 시작 시 서로 다른 기저 Ca²⁺.",
+    modSpeciesPriming: "종 / 프라이밍",
+    modSpeciesPrimingDesc: "실험실 환경의 동물 연구(24시간 ELF 프라이밍, 균질한 유전적 배경)는 92%에서 양성 결과를 찾는다. 이질적인 환경의 인간 연구는 35%에서 양성 결과를 찾는다. 둘 다 맞다 — 실험동물은 만성적으로 프라이밍되어 있다(VGCC 발현 증가, [[ref:sun2016_elf_vgcc|PMC4757866]]). p=0.002.",
+    modDuration: "기간",
+    modDurationDesc: "만성 노출(>1주)은 92%에서 양성 결과를 낸다. 급성 노출(1~2박)은 31%에서 양성 결과를 낸다. CaMKII 자가인산화에는 누적 Ca²⁺ 부하가 필요하다. p=0.001.",
+    modPulsation: "펌스",
+    modPulsationDesc: "펄스 신호는 88%에서 양성 결과를 낸다. CW는 48%에서 양성 결과를 낸다. IFO-VGIC 메커니즘에는 변화하는 장이 필요하다. p=0.048.",
+    modVitaminD: "비타민 D 상태",
+    modVitaminDDesc: "비타민 D(1,25(OH)₂D₃)는 CACNA1C/1D mRNA를 하향 조절한다([[ref:vdh_lvscc|J Neurosci 2001]]). 비타민 D 결핍 → VGCC 과발현 = ELF 프라이밍과 같은 상태. 비타민 D 결핍 인구집단(겨울, 고위도)의 연구에서는 더 강한 EMF 효과가 나타나야 한다.",
+    modThreePredictors: "3개의 조절 변수가 통계적 유의성으로 연구 결과를 예측한다:",
+    modAnalysisBasis: "3개 평가변수에 걸친 29개 연구 분석에 기반한다. [[ref:weller2025_dna|Weller 2025]](n=517)에 의해 검증되었다.",
+    predRepl1Label: "예측 REPL-1: ",
+    predRepl1Desc: "발표된 EMF 생물검정 연구 50~100건을 후향적으로 분석하면 이 8개 조절 변수가 양성 결과와 귀무 결과를 유의하게 예측한다는 것을 보여줄 것이다. 새로운 데이터 없이 검증할 수 있다.",
+    modEpistemicNote: "인식론적 수준: 8개 조절 변수 프레임워크는 BERM의 통합(M 수준)이다. 개별 조절 변수에는 경험적 근거가 있다(E 수준).",
+    dnaBelow58Title: "DNA 손상의 58%가 ICNIRP 제한 이하에서 발생",
+    dnaBelow58Desc: "[[ref:weller2025_dna|Weller et al.(2025)]]은 517개 유전독성 연구를 분석했고, DNA 손상을 보고한 연구의 58%가 현재 ICNIRP 지침보다 낮은 노출 수준을 사용했음을 발견했다. [[ref:ivancsits_dna_recovery|Ivancsits 연구]]는 35 µT에서 DNA 가닥 절단을 발견했다 — ICNIRP의 직업 노출 한계 200 µT의 5분의 1보다 낮다.",
+    dnaBelow58Mechanism: "ICNIRP 한계는 열적 효과를 방지하도록 설계되었다. EMF로 인한 DNA 손상은 전압 개폐 칼슘 채널 기능 장애를 통해 작동하는 비열적 메커니즘이다.",
+    dnaRepairTitle: "DNA 손상은 9시간 내에 회복된다 — 노출이 멈추면",
+    dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]]은 EMF로 유도된 DNA 가닥 절단이 노출 중단 후 9시간 이내에 정상으로 돌아왔음을 보여주었다. 이는 BERM의 회복 창을 정량화한다: 충분한 EMF 비노출 시간이 주어지면 신체는 EMF 유발 손상을 복구할 수 있다.",
+    dnaModernEnv: "24시간 WiFi, LED 조명, 침대의 스마트폰이 있는 현대 환경은 이 회복 창을 완전히 제거한다. 전형적인 현대식 침실은 EMF 없는 회복 시간을 전혀 제공하지 않는다.",
+  },
+};
 
 function SectionCard({
   children,
@@ -1219,8 +3675,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const locale_key = locale in t ? locale : "en";
-  const d = (t as Record<string, typeof t.en>)[locale_key] ?? t.en;
+  const d = pickCopy(t, locale);
   return {
     title: d.metaTitle,
     description: d.metaDesc,
@@ -1233,9 +3688,12 @@ export default async function ModelPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const locale_key = locale in t ? locale : "en";
-  const d = (t as Record<string, typeof t.en>)[locale_key] ?? t.en;
+  const locale_key = locale;
+  const d = pickCopy(t, locale);
   const prefix = `/${locale}`;
+  const cite = (text: string) => (
+    <InlineReferenceText text={text} locale={locale_key} />
+  );
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
@@ -1297,13 +3755,13 @@ export default async function ModelPage({
           <section id="causal-diagram" className="mb-14">
             <h2 className="text-xl font-semibold mb-4">{d.causalTitle}</h2>
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-              {d.causalDesc}
+              {cite(d.causalDesc)}
             </p>
             <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-              {d.pathwayHierarchyNote}
+              {cite(d.pathwayHierarchyNote)}
             </p>
             <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-              {d.rpmFrequencyNote}
+              {cite(d.rpmFrequencyNote)}
             </p>
             <div className="mt-4 mb-4 border-l-4 border-blue-500/40 rounded-r-lg bg-card p-5">
               <h4 className="text-sm font-semibold mb-2">{d.vgccHierarchyTitle}</h4>
@@ -1322,25 +3780,25 @@ export default async function ModelPage({
             </div>
             <span id="ifo" />
             <p className="mt-4 text-sm text-foreground-muted max-w-3xl leading-relaxed">
-              {d.ifoVgicNote}
+              {cite(d.ifoVgicNote)}
             </p>
             <p className="mt-3 text-sm text-foreground-muted max-w-3xl leading-relaxed">
-              {d.multiPathwayCa2Note}
+              {cite(d.multiPathwayCa2Note)}
             </p>
             <p className="mt-3 text-sm text-foreground-muted max-w-3xl leading-relaxed">
-              {d.fiveGReproNote}
+              {cite(d.fiveGReproNote)}
             </p>
             <p className="mt-3 text-sm text-foreground-muted max-w-3xl leading-relaxed">
-              {d.pathwayCQuantNote}
+              {cite(d.pathwayCQuantNote)}
             </p>
             <p className="mt-3 text-xs text-foreground-muted max-w-3xl leading-relaxed italic border-l-2 border-amber-500/30 pl-3">
-              {d.pathwayCWeightNote}
+              {cite(d.pathwayCWeightNote)}
             </p>
             <p className="mt-3 text-sm text-foreground-muted max-w-3xl leading-relaxed">
-              {d.cryIndividualVariationNote}
+              {cite(d.cryIndividualVariationNote)}
             </p>
             <p className="mt-3 text-sm text-foreground-muted max-w-3xl leading-relaxed">
-              {d.cryDualSystemNote}
+              {cite(d.cryDualSystemNote)}
             </p>
           </section>
 
@@ -1352,7 +3810,7 @@ export default async function ModelPage({
               {d.fourRoutesDesc}
             </p>
             <div className="my-8 max-w-4xl mx-auto" style={{display:'none'}}>
-              <svg viewBox="0 0 750 350" className="w-full" role="img" aria-label={locale_key === "fi" ? "Viisi reittiä TFR:n laskuun" : "Five routes to TFR decline (hidden duplicate)"}>
+              <svg viewBox="0 0 750 350" className="w-full" role="img" aria-label={d.svgFiveRoutesAria}>
                 <defs>
                   <marker id="fr_arG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" className="fill-green-500/70" /></marker>
                   <marker id="fr_arB" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" className="fill-blue-500/70" /></marker>
@@ -1374,7 +3832,7 @@ export default async function ModelPage({
                 <text x="317" y="47" textAnchor="middle" className="fill-foreground text-[9px] font-medium">ROS</text>
                 <line x1="365" y1="43" x2="385" y2="43" className="stroke-green-500/60" strokeWidth="1.5" markerEnd="url(#fr_arG)" />
                 <rect x="385" y="29" width="95" height="28" rx="6" className="fill-green-500/10 stroke-green-500/50" strokeWidth="1.5" />
-                <text x="432" y="47" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Siittiövaurio" : "Sperm damage"}</text>
+                <text x="432" y="47" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{d.svgSpermDamage}</text>
 
                 {/* Route B: CRY/RPM -> Circadian -> Melatonin -> HPG (blue) */}
                 <circle cx="18" cy="109" r="13" className="fill-blue-500/15 stroke-blue-500/60" strokeWidth="1.5" />
@@ -1383,10 +3841,10 @@ export default async function ModelPage({
                 <text x="87" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">CRY / RPM</text>
                 <line x1="135" y1="109" x2="155" y2="109" className="stroke-blue-500/60" strokeWidth="1.5" markerEnd="url(#fr_arB)" />
                 <rect x="155" y="95" width="95" height="28" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
-                <text x="202" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Vuorokausirytmi" : "Circadian"}</text>
+                <text x="202" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{d.svgCircadian}</text>
                 <line x1="250" y1="109" x2="270" y2="109" className="stroke-blue-500/60" strokeWidth="1.5" markerEnd="url(#fr_arB)" />
                 <rect x="270" y="95" width="95" height="28" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
-                <text x="317" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Melatoniini ↓" : "Melatonin ↓"}</text>
+                <text x="317" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{d.svgMelatoninDown}</text>
                 <line x1="365" y1="109" x2="385" y2="109" className="stroke-blue-500/60" strokeWidth="1.5" markerEnd="url(#fr_arB)" />
                 <rect x="385" y="95" width="95" height="28" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
                 <text x="432" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">HPG ↓</text>
@@ -1398,7 +3856,7 @@ export default async function ModelPage({
                 <text x="87" y="179" textAnchor="middle" className="fill-foreground text-[9px] font-medium">CRY2-TRPC1</text>
                 <line x1="135" y1="175" x2="155" y2="175" className="stroke-purple-500/60" strokeWidth="1.5" markerEnd="url(#fr_arP)" />
                 <rect x="155" y="161" width="95" height="28" rx="6" className="fill-purple-500/10 stroke-purple-500/50" strokeWidth="1.5" />
-                <text x="202" y="179" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Ca²⁺-virtaus" : "Ca²⁺ entry"}</text>
+                <text x="202" y="179" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{d.svgCa2Entry}</text>
 
                 {/* Route D: HPA -> Cortisol -> Testosterone (amber) */}
                 <circle cx="18" cy="241" r="13" className="fill-amber-500/15 stroke-amber-500/60" strokeWidth="1.5" />
@@ -1407,10 +3865,10 @@ export default async function ModelPage({
                 <text x="87" y="245" textAnchor="middle" className="fill-foreground text-[9px] font-medium">HPA</text>
                 <line x1="135" y1="241" x2="155" y2="241" className="stroke-amber-500/60" strokeWidth="1.5" markerEnd="url(#fr_arA)" />
                 <rect x="155" y="227" width="95" height="28" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
-                <text x="202" y="245" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Kortisoli ↑" : "Cortisol ↑"}</text>
+                <text x="202" y="245" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{d.svgCortisolUp}</text>
                 <line x1="250" y1="241" x2="270" y2="241" className="stroke-amber-500/60" strokeWidth="1.5" markerEnd="url(#fr_arA)" />
                 <rect x="270" y="227" width="95" height="28" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
-                <text x="317" y="245" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Testosteroni ↓" : "Testosterone ↓"}</text>
+                <text x="317" y="245" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{d.svgTestosteroneDown}</text>
 
                 {/* Route E: mTOR -> Autophagy -> Cell growth (red) */}
                 <circle cx="18" cy="307" r="13" className="fill-red-500/15 stroke-red-500/60" strokeWidth="1.5" />
@@ -1419,10 +3877,10 @@ export default async function ModelPage({
                 <text x="87" y="311" textAnchor="middle" className="fill-foreground text-[9px] font-medium">mTOR</text>
                 <line x1="135" y1="307" x2="155" y2="307" className="stroke-red-500/60" strokeWidth="1.5" markerEnd="url(#fr_arR)" />
                 <rect x="155" y="293" width="95" height="28" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
-                <text x="202" y="311" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Autofagia ↓" : "Autophagy ↓"}</text>
+                <text x="202" y="311" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{d.svgAutophagyDown}</text>
                 <line x1="250" y1="307" x2="270" y2="307" className="stroke-red-500/60" strokeWidth="1.5" markerEnd="url(#fr_arR)" />
                 <rect x="270" y="293" width="95" height="28" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
-                <text x="317" y="311" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{locale_key === "fi" ? "Solukasvu ↓" : "Cell growth ↓"}</text>
+                <text x="317" y="311" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{d.svgCellGrowthDown}</text>
 
                 {/* Convergence arrows to TFR decline */}
                 <line x1="480" y1="43" x2="583" y2="110" className="stroke-green-500/40" strokeWidth="1.5" strokeDasharray="4 2" markerEnd="url(#fr_arG)" />
@@ -1433,8 +3891,8 @@ export default async function ModelPage({
 
                 {/* TFR decline box */}
                 <rect x="585" y="95" width="125" height="165" rx="8" className="fill-red-500/10 stroke-red-500/60" strokeWidth="2" />
-                <text x="647" y="172" textAnchor="middle" className="fill-foreground text-[11px] font-bold">{locale_key === "fi" ? "TFR:n" : "TFR"}</text>
-                <text x="647" y="188" textAnchor="middle" className="fill-foreground text-[11px] font-bold">{locale_key === "fi" ? "lasku" : "decline"}</text>
+                <text x="647" y="172" textAnchor="middle" className="fill-foreground text-[11px] font-bold">{d.svgTfr}</text>
+                <text x="647" y="188" textAnchor="middle" className="fill-foreground text-[11px] font-bold">{d.svgDecline}</text>
               </svg>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 max-w-4xl mb-6">
@@ -1464,7 +3922,7 @@ export default async function ModelPage({
                   {d.cascadeNeurodevExt}
                 </p>
                 <Link href={`${prefix}/modulome/brain`} className="text-xs text-accent hover:underline">
-                  &rarr; {locale_key === "fi" ? "Aivojen moduloomi" : "Brain modulome"}
+                  &rarr; {d.brainModulomeLink}
                 </Link>
               </article>
             </div>
@@ -1480,17 +3938,17 @@ export default async function ModelPage({
                 <text x="350" y="29" textAnchor="middle" fontSize="12" fontWeight="700" fill="#f59e0b" fontFamily="system-ui">EMF</text>
                 {/* Branching arrows */}
                 {[
-                  { x: 70, label: "A", color: "#3b82f6", route: locale_key === "fi" ? "Gonadaalinen" : "Gonadal", mech: "VGCC→Ca²⁺→ROS" },
-                  { x: 210, label: "B", color: "#8b5cf6", route: locale_key === "fi" ? "Vuorokausirytmi" : "Circadian", mech: "CRY/RPM→clock" },
+                  { x: 70, label: "A", color: "#3b82f6", route: d.routeGonadal, mech: "VGCC→Ca²⁺→ROS" },
+                  { x: 210, label: "B", color: "#8b5cf6", route: d.svgCircadian, mech: "CRY/RPM→clock" },
                   { x: 350, label: "C", color: "#ec4899", route: "CRY2-TRPC1", mech: "CRY2→TRPC1→Ca²⁺" },
-                  { x: 490, label: "D", color: "#ef4444", route: locale_key === "fi" ? "Autonominen" : "Autonomic", mech: "HPA→T↓" },
-                  { x: 630, label: "E", color: "#14b8a6", route: locale_key === "fi" ? "Neurokehitys" : "Neurodevel.", mech: "CACNA1C→brain" },
+                  { x: 490, label: "D", color: "#ef4444", route: d.routeAutonomic, mech: "HPA→T↓" },
+                  { x: 630, label: "E", color: "#14b8a6", route: d.routeNeurodevel, mech: "CACNA1C→brain" },
                 ].map((r) => (
                   <g key={r.label}>
                     <line x1="350" y1="40" x2={r.x} y2="80" stroke={r.color} strokeWidth="1.5" strokeOpacity="0.5" />
                     <rect x={r.x - 50} y="80" width="100" height="56" rx="6" fill={r.color} fillOpacity="0.12" stroke={r.color} strokeWidth="1.2" />
                     <text x={r.x} y="98" textAnchor="middle" fontSize="11" fontWeight="700" fill={r.color} fontFamily="system-ui">
-                      {locale_key === "fi" ? "Reitti" : "Route"} {r.label}
+                      {d.routeLabel} {r.label}
                     </text>
                     <text x={r.x} y="113" textAnchor="middle" fontSize="9" fill={r.color} fillOpacity="0.8" fontFamily="system-ui">{r.route}</text>
                     <text x={r.x} y="128" textAnchor="middle" fontSize="7.5" fill="currentColor" fillOpacity="0.5" fontFamily="monospace">{r.mech}</text>
@@ -1502,7 +3960,7 @@ export default async function ModelPage({
                 <text x="350" y="194" textAnchor="middle" fontSize="13" fontWeight="700" fill="#ef4444" fontFamily="system-ui">TFR ↓</text>
                 {/* Caption */}
                 <text x="350" y="240" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.4" fontFamily="system-ui">
-                  {locale_key === "fi" ? "Jokainen reitti on itsenäisesti riittävä — ne toimivat rinnakkain" : "Each route is independently sufficient — they operate in parallel"}
+                  {d.routeParallelCaption}
                 </text>
               </svg>
             </div>
@@ -1512,11 +3970,11 @@ export default async function ModelPage({
           <section id="modulation" className="mb-14">
             <h2 className="text-xl font-semibold mb-2">{d.modulationTitle}</h2>
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-              {d.modulationDesc}
+              {cite(d.modulationDesc)}
             </p>
             <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-5 max-w-3xl">
               <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-1">
-                {locale_key === "fi" ? "Varoitus" : "Warning"}
+                {d.labelWarning}
               </p>
               <p className="text-sm text-foreground-muted leading-relaxed">
                 {d.modulationWarning}
@@ -1565,7 +4023,16 @@ export default async function ModelPage({
                         <td className="py-2 pr-3 text-foreground-muted text-xs">{locale_key === "fi" ? s.background_fi : s.background_en}</td>
                         <td className="py-2 pr-3 text-foreground-muted text-xs">{locale_key === "fi" ? s.perturbation_fi : s.perturbation_en}</td>
                         <td className="py-2 pr-3 font-mono text-xs text-foreground">{s.chi_expression}</td>
-                        <td className="py-2 pr-3 text-foreground-muted text-xs">{s.verification}</td>
+                        <td className="py-2 pr-3 text-foreground-muted text-xs">
+                          {s.referenceIds?.length
+                            ? s.referenceIds.map((referenceId, index) => (
+                                <span key={referenceId}>
+                                  {index > 0 ? ", " : null}
+                                  <StudyCitation referenceId={referenceId} locale={locale_key} />
+                                </span>
+                              ))
+                            : s.verification}
+                        </td>
                         <td className="py-2">
                           <span className="rounded-full px-1.5 py-0.5 text-xs font-semibold" style={{ backgroundColor: `${color}20`, color }}>
                             {s.level}
@@ -1590,7 +4057,7 @@ export default async function ModelPage({
               {d.chiEvidenceDesc}
             </p>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {d.chiEvidenceFamilies.map((fam: { family: string; chi: string; mechanism: string; prediction: string; verification: string; level: string }, i: number) => {
+              {d.chiEvidenceFamilies.map((fam: { referenceId?: string; referenceIds?: string[]; family: string; chi: string; mechanism: string; prediction: string; verification: string; level: string }, i: number) => {
                 const color = fam.level === "E" ? "#22c55e" : fam.level.startsWith("L") ? "#ef4444" : "#f59e0b";
                 return (
                   <div key={i} className="rounded-lg border border-border p-4" style={{ borderLeftWidth: 4, borderLeftColor: color }}>
@@ -1599,9 +4066,22 @@ export default async function ModelPage({
                       <span className="rounded-full px-1.5 py-0.5 text-xs font-semibold" style={{ backgroundColor: `${color}20`, color }}>{fam.level}</span>
                     </div>
                     <p className="text-xs font-mono text-accent mb-2">{fam.chi}</p>
-                    <p className="text-xs text-foreground-muted mb-2">{fam.mechanism}</p>
-                    <p className="text-xs text-foreground mb-1"><strong>{locale_key === "fi" ? "Ennuste" : "Prediction"}:</strong> {fam.prediction}</p>
-                    <p className="text-xs text-foreground-muted italic">{fam.verification}</p>
+                    <p className="text-xs text-foreground-muted mb-2">{cite(fam.mechanism)}</p>
+                    <p className="text-xs text-foreground mb-1"><strong>{d.labelPrediction}:</strong> {fam.prediction}</p>
+                    <p className="text-xs text-foreground-muted italic">
+                      {fam.referenceIds?.length ? (
+                        fam.referenceIds.map((referenceId, index) => (
+                          <span key={referenceId}>
+                            {index > 0 ? ", " : null}
+                            <StudyCitation referenceId={referenceId} locale={locale_key} />
+                          </span>
+                        ))
+                      ) : fam.referenceId ? (
+                        <CitationLink citation={fam.verification} referenceId={fam.referenceId} locale={locale_key} />
+                      ) : (
+                        cite(fam.verification)
+                      )}
+                    </p>
                   </div>
                 );
               })}
@@ -1621,7 +4101,7 @@ export default async function ModelPage({
               {d.twoChExplain}
             </p>
             <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed mb-6">
-              {d.lateralizationNote}
+              {cite(d.lateralizationNote)}
             </p>
 
             <h3 className="text-base font-semibold mb-2">{d.twoChLayersTitle}</h3>
@@ -1633,16 +4113,16 @@ export default async function ModelPage({
             </Eq>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 mt-4">
               {([
-                ["#4a6741", locale_key === "fi" ? "Sotilastutka" : "Military radar", "1950s"],
-                ["#2196F3", locale_key === "fi" ? "Säätutka" : "Weather radar", "1988+"],
-                ["#FF5722", locale_key === "fi" ? "Matkapuhelinverkot" : "Mobile networks", "1991+"],
+                ["#4a6741", d.layerMilitaryRadar, "1950s"],
+                ["#2196F3", d.layerWeatherRadar, "1988+"],
+                ["#FF5722", d.layerMobileNetworks, "1991+"],
                 ["#E91E63", "Wi-Fi", "1999+"],
-                ["#8BC34A", locale_key === "fi" ? "Tuuliturbiinit" : "Wind turbines", "2000+"],
-                ["#9C27B0", locale_key === "fi" ? "Näyttösiirtymä" : "Display transition", "2005+"],
-                ["#00BCD4", locale_key === "fi" ? "Älymittarit" : "Smart meters", "2005+"],
-                ["#FFC107", locale_key === "fi" ? "Sisä-LED" : "Indoor LED", "2009+"],
-                ["#FFEB3B", locale_key === "fi" ? "Aurinkoinvertterit" : "Solar inverters", "2010+"],
-                ["#FF9800", locale_key === "fi" ? "LED-katuvalaistus" : "Street LED", "2012+"],
+                ["#8BC34A", d.layerWindTurbines, "2000+"],
+                ["#9C27B0", d.layerDisplayTransition, "2005+"],
+                ["#00BCD4", d.layerSmartMeters, "2005+"],
+                ["#FFC107", d.layerIndoorLed, "2009+"],
+                ["#FFEB3B", d.layerSolarInverters, "2010+"],
+                ["#FF9800", d.layerStreetLed, "2012+"],
                 ["#795548", "IoT", "2014+"],
                 ["#607D8B", "ADAS", "2015+"],
               ] as const).map(([color, name, year]) => (
@@ -1656,7 +4136,7 @@ export default async function ModelPage({
 
             <div className="mt-6 rounded-lg border border-status-partial/30 bg-status-partial/5 p-5 max-w-3xl">
               <h4 className="text-xs font-semibold uppercase tracking-wide text-status-partial mb-2">{d.ifChannelTitle}</h4>
-              <p className="text-sm text-foreground-muted leading-relaxed">{d.ifChannelDesc}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed">{cite(d.ifChannelDesc)}</p>
             </div>
 
             {/* TCBM detail */}
@@ -1666,15 +4146,15 @@ export default async function ModelPage({
               <div className="space-y-3">
                 <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
                   <h4 className="text-xs font-semibold uppercase tracking-wide text-blue-500 mb-1">{d.tcbmElfTitle}</h4>
-                  <p className="text-sm text-foreground-muted leading-relaxed">{d.tcbmElfDesc}</p>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{cite(d.tcbmElfDesc)}</p>
                 </div>
                 <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
                   <h4 className="text-xs font-semibold uppercase tracking-wide text-amber-500 mb-1">{d.tcbmIfTitle}</h4>
-                  <p className="text-sm text-foreground-muted leading-relaxed">{d.tcbmIfDesc}</p>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{cite(d.tcbmIfDesc)}</p>
                 </div>
                 <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
                   <h4 className="text-xs font-semibold uppercase tracking-wide text-red-500 mb-1">{d.tcbmRfTitle}</h4>
-                  <p className="text-sm text-foreground-muted leading-relaxed">{d.tcbmRfDesc}</p>
+                  <p className="text-sm text-foreground-muted leading-relaxed">{cite(d.tcbmRfDesc)}</p>
                 </div>
               </div>
               <p className="text-sm text-foreground-muted mt-4 leading-relaxed">{d.tcbmIfMitotic}</p>
@@ -1683,7 +4163,7 @@ export default async function ModelPage({
               <p className="text-xs text-foreground-muted mt-3 italic leading-relaxed">{d.tcbmWolframPlanned}</p>
               <p className="mt-4 text-sm">
                 <Link href={`${prefix}/evidence/pharmacology`} className="text-accent hover:underline">
-                  {locale_key === "fi" ? "Farmakologinen evidenssi: 8 lääkeryhmää konvergoivat BERM-reiteillä →" : "Pharmacological evidence: 8 drug classes converging on BERM pathways →"}
+                  {d.pharmEvidenceLink}
                 </Link>
               </p>
             </div>
@@ -1751,11 +4231,11 @@ export default async function ModelPage({
                 </thead>
                 <tbody>
                   {[
-                    { country: "USA", rate: "1.0", source: "Travison 2007", cumul: "−35.7 %", thresh: "~2030", phase: 1 },
-                    { country: locale_key === "fi" ? "Tanska" : "Denmark", rate: "0.85", source: "Andersson 2007 †", cumul: "−31.3 %", thresh: "~2035", phase: 1 },
-                    { country: locale_key === "fi" ? "Suomi" : "Finland", rate: "1.2", source: "Perheentupa 2013", cumul: "−41.2 %", thresh: "~2018 ✓", phase: 2 },
-                    { country: "Israel", rate: "1.0", source: "Chodick 2020", cumul: "−35.7 %", thresh: "~2035", phase: 1 },
-                    { country: locale_key === "fi" ? "Etelä-Korea" : "South Korea", rate: "1.5*", source: locale_key === "fi" ? "Arvio (korkein EMF)" : "Estimated (highest EMF)", cumul: "−48.6 %", thresh: "~2015 ✓", phase: 3 },
+                    { referenceId: "travison2007_v2", country: "USA", rate: "1.0", source: "Travison 2007", cumul: "−35.7 %", thresh: "~2030", phase: 1 },
+                    { referenceId: "andersson-2007-denmark", country: d.countryDenmark, rate: "0.85", source: "Andersson 2007 †", cumul: "−31.3 %", thresh: "~2035", phase: 1 },
+                    { referenceId: "perheentupa2013", country: d.countryFinland, rate: "1.2", source: "Perheentupa 2013", cumul: "−41.2 %", thresh: "~2018 ✓", phase: 2 },
+                    { referenceId: "chodick-2020-israel", country: "Israel", rate: "1.0", source: "Chodick 2020", cumul: "−35.7 %", thresh: "~2035", phase: 1 },
+                    { country: d.countrySouthKorea, rate: "1.5*", source: locale_key === "fi" ? "Arvio (korkein EMF)" : "Estimated (highest EMF)", cumul: "−48.6 %", thresh: "~2015 ✓", phase: 3 },
                     { country: locale_key === "fi" ? "Japani" : "Japan", rate: "1.2*", source: locale_key === "fi" ? "Arvio (Suomi-analogia)" : "Estimated (Finland analogy)", cumul: "−41.2 %", thresh: "~2018 ✓", phase: 2 },
                   ].map((r) => {
                     const phaseColor = r.phase === 1 ? "#22c55e" : r.phase === 2 ? "#f59e0b" : "#ef4444";
@@ -1763,7 +4243,13 @@ export default async function ModelPage({
                       <tr key={r.country} className="border-b border-card-border/50">
                         <td className="py-2 pr-3 font-medium text-foreground">{r.country}</td>
                         <td className="py-2 px-3 text-right font-mono-num">{r.rate}</td>
-                        <td className="py-2 px-3 text-foreground-muted">{r.source}</td>
+                        <td className="py-2 px-3 text-foreground-muted">
+                          {"referenceId" in r && r.referenceId ? (
+                            <CitationLink citation={r.source} referenceId={r.referenceId} locale={locale_key} />
+                          ) : (
+                            r.source
+                          )}
+                        </td>
                         <td className="py-2 px-3 text-right font-mono-num text-accent">{r.cumul}</td>
                         <td className="py-2 px-3 text-right font-mono-num">{r.thresh}</td>
                         <td className="py-2 pl-3 text-center">
@@ -1776,7 +4262,7 @@ export default async function ModelPage({
               </table>
               <div className="mt-3 space-y-1.5">
                 <p className="text-[10px] text-foreground-muted leading-relaxed">
-                  <span className="font-semibold">†</span> {d.thresholdFootnoteDenmark}
+                  <span className="font-semibold">†</span> {cite(d.thresholdFootnoteDenmark)}
                 </p>
                 <p className="text-[10px] text-foreground-muted leading-relaxed">
                   <span className="font-semibold">*</span> {d.thresholdFootnoteEstimated}
@@ -1786,7 +4272,7 @@ export default async function ModelPage({
 
             <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-5 max-w-4xl mb-8">
               <h3 className="font-semibold text-sm text-blue-600 dark:text-blue-400 mb-2">{d.thresholdFinlandTitle}</h3>
-              <p className="text-xs text-foreground-muted leading-relaxed">{d.thresholdFinlandText}</p>
+              <p className="text-xs text-foreground-muted leading-relaxed">{cite(d.thresholdFinlandText)}</p>
             </div>
 
             <div className="max-w-4xl mb-6">
@@ -1808,14 +4294,14 @@ export default async function ModelPage({
                 <div className="rounded-xl border border-card-border bg-card-bg p-4">
                   <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wider mb-3">{d.causalDagConventionalTitle}</p>
                   <svg viewBox="0 0 280 180" className="w-full" role="img" aria-label="Conventional DAG: BMI as confounder">
-                    <rect x="90" y="10" width="100" height="30" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
-                    <text x="140" y="30" textAnchor="middle" className="fill-foreground text-[11px] font-medium">{d.dagDietLifestyle}</text>
+                    <rect x="55" y="10" width="170" height="32" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
+                    <text x="140" y="30" textAnchor="middle" className="fill-foreground text-[10px] font-medium">{d.dagDietLifestyle}</text>
                     <rect x="10" y="90" width="80" height="30" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
                     <text x="50" y="110" textAnchor="middle" className="fill-foreground text-[11px] font-medium">BMI ↑</text>
                     <rect x="190" y="90" width="80" height="30" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
                     <text x="230" y="110" textAnchor="middle" className="fill-foreground text-[11px] font-medium">T ↓</text>
-                    <line x1="120" y1="40" x2="60" y2="88" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
-                    <line x1="160" y1="40" x2="220" y2="88" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
+                    <line x1="105" y1="42" x2="60" y2="88" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
+                    <line x1="175" y1="42" x2="220" y2="88" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
                     <line x1="90" y1="105" x2="188" y2="105" className="stroke-foreground-muted/50" strokeWidth="1.5" markerEnd="url(#arrowConv)" />
                     <text x="140" y="145" textAnchor="middle" className="fill-green-500 text-[10px] font-semibold">{d.dagBmiAdjCorrect}</text>
                     <text x="140" y="160" textAnchor="middle" className="fill-foreground-muted text-[9px]">{d.dagNullNoDecline}</text>
@@ -1833,9 +4319,9 @@ export default async function ModelPage({
                     <text x="50" y="100" textAnchor="middle" className="fill-foreground text-[11px] font-medium">BMI ↑</text>
                     <rect x="190" y="80" width="80" height="30" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
                     <text x="230" y="100" textAnchor="middle" className="fill-foreground text-[11px] font-medium">T ↓</text>
-                    <text x="50" y="72" textAnchor="middle" className="fill-amber-500 text-[8px]">{d.dagMetabolicPaths}</text>
-                    <text x="50" y="62" textAnchor="middle" className="fill-amber-500 text-[8px]">{d.dagPathways}</text>
-                    <line x1="120" y1="35" x2="60" y2="78" className="stroke-amber-500/60" strokeWidth="1.5" markerEnd="url(#arrowBerm)" />
+                    <text x="96" y="52" textAnchor="start" className="fill-amber-500 text-[8px]">{d.dagMetabolicPaths}</text>
+                    <text x="96" y="63" textAnchor="start" className="fill-amber-500 text-[8px]">{d.dagPathways}</text>
+                    <path d="M112 36 L90 50 L78 78" className="fill-none stroke-amber-500/60" strokeWidth="1.5" markerEnd="url(#arrowBerm)" />
                     <line x1="90" y1="95" x2="188" y2="95" className="stroke-amber-500/60" strokeWidth="1.5" strokeDasharray="4 2" markerEnd="url(#arrowBerm)" />
                     <text x="140" y="89" textAnchor="middle" className="fill-amber-500 text-[8px]">{d.dagMediated}</text>
                     <line x1="170" y1="35" x2="225" y2="78" className="stroke-red-500/80" strokeWidth="2" markerEnd="url(#arrowBermR)" />
@@ -1855,12 +4341,12 @@ export default async function ModelPage({
 
               {/* Mazur 2013 highlight */}
               <div className="rounded-xl border-2 border-amber-500/40 bg-amber-500/5 p-5 mb-8">
-                <p className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2">{d.causalMazurTitle}</p>
+                <p className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-2">{cite(d.causalMazurTitle)}</p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.causalMazurText}</p>
                 <blockquote className="border-l-4 border-amber-500/50 pl-4 py-2 mb-2">
                   <p className="text-sm text-foreground italic leading-relaxed">&ldquo;{d.causalMazurQuote}&rdquo;</p>
                 </blockquote>
-                <p className="text-xs text-foreground-muted">{d.causalMazurSource}</p>
+                <p className="text-xs text-foreground-muted">{cite(d.causalMazurSource)}</p>
               </div>
 
               {/* Pathway proportions */}
@@ -1876,7 +4362,7 @@ export default async function ModelPage({
                   <p className="text-xs text-foreground-muted">{d.causalPathwayMediatedDesc}</p>
                 </div>
               </div>
-              <p className="text-xs text-foreground-muted italic border-l-2 border-amber-500/30 pl-3 mb-8">{d.causalPathwayCaveat}</p>
+              <p className="text-xs text-foreground-muted italic border-l-2 border-amber-500/30 pl-3 mb-8">{cite(d.causalPathwayCaveat)}</p>
 
               {/* Reconciliation table */}
               <div className="mb-8">
@@ -1893,9 +4379,11 @@ export default async function ModelPage({
                       </tr>
                     </thead>
                     <tbody>
-                      {d.causalReconciliationStudies.map((row: { study: string; bmiAdj: boolean; result: string; interpretation: string }) => (
+                      {d.causalReconciliationStudies.map((row: { referenceId: string; study: string; bmiAdj: boolean; result: string; interpretation: string }) => (
                         <tr key={row.study} className={`border-b border-card-border/50${row.result.toLowerCase().includes("null") || row.result.toLowerCase().includes("nolla") ? " opacity-70" : ""}`}>
-                          <td className="py-2 pr-3 font-medium text-foreground whitespace-nowrap">{row.study}</td>
+                          <td className="py-2 pr-3 font-medium text-foreground whitespace-nowrap">
+                            <CitationLink citation={row.study} referenceId={row.referenceId} locale={locale_key} />
+                          </td>
                           <td className="py-2 pr-3">{row.bmiAdj ? "✓" : "—"}</td>
                           <td className={`py-2 pr-3 font-mono-num whitespace-nowrap ${row.result.toLowerCase().includes("null") || row.result.toLowerCase().includes("nolla") ? "text-foreground-muted" : "text-red-500 font-semibold"}`}>{row.result}</td>
                           <td className="py-2 text-foreground-muted">{row.interpretation}</td>
@@ -1908,14 +4396,14 @@ export default async function ModelPage({
 
               {/* Santi 2025 highlight */}
               <div className="rounded-xl border-2 border-purple-500/40 bg-purple-500/5 p-5 mb-8">
-                <p className="text-xs font-semibold text-purple-500 uppercase tracking-wider mb-2">{d.causalSantiTitle}</p>
+                <p className="text-xs font-semibold text-purple-500 uppercase tracking-wider mb-2">{cite(d.causalSantiTitle)}</p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.causalSantiText}</p>
                 <p className="text-sm text-foreground-muted leading-relaxed mb-2">{d.causalSantiMechanism}</p>
-                <p className="text-xs text-foreground-muted">{d.causalSantiSource}</p>
+                <p className="text-xs text-foreground-muted">{cite(d.causalSantiSource)}</p>
               </div>
 
             <h3 className="text-base font-semibold mt-10 mb-2">{d.pocketTitle}</h3>
-            <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">{d.pocketText}</p>
+            <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl mb-6">{cite(d.pocketText)}</p>
 
               {/* Inverse pharmacological test */}
               <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-5 mb-4">
@@ -1930,7 +4418,7 @@ export default async function ModelPage({
                     </div>
                   ))}
                 </div>
-                <p className="text-xs text-foreground-muted">{d.causalInverseSource}</p>
+                <p className="text-xs text-foreground-muted">{cite(d.causalInverseSource)}</p>
               </div>
             </div>
 
@@ -1942,11 +4430,11 @@ export default async function ModelPage({
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <div className="flex-1 rounded-lg border border-blue-500/20 bg-blue-500/5 p-3">
-                  <p className="text-xs font-semibold text-blue-400 mb-1">{locale_key === "fi" ? "Ennuste" : "Prediction"}</p>
+                  <p className="text-xs font-semibold text-blue-400 mb-1">{d.labelPrediction}</p>
                   <p className="text-xs text-foreground-muted leading-relaxed">{d.whyPronatPrediction}</p>
                 </div>
                 <div className="flex-1 rounded-lg border border-red-500/20 bg-red-500/5 p-3">
-                  <p className="text-xs font-semibold text-red-400 mb-1">{locale_key === "fi" ? "Falsifiointi" : "Falsification"}</p>
+                  <p className="text-xs font-semibold text-red-400 mb-1">{d.labelFalsification}</p>
                   <p className="text-xs text-foreground-muted leading-relaxed">{d.whyPronatFalsification}</p>
                 </div>
               </div>
@@ -2020,7 +4508,7 @@ export default async function ModelPage({
                       </span>
                     </div>
                     <p className="text-xs text-foreground-muted leading-relaxed mb-3">
-                      {c.mechanism}
+                      {cite(c.mechanism)}
                     </p>
                     <div className="flex items-center gap-1.5 text-xs text-foreground-muted">
                       <span className="font-mono-num text-foreground" style={{ color }}>
@@ -2065,9 +4553,7 @@ export default async function ModelPage({
                   ))}
                 </div>
                 <p className="text-xs text-foreground-muted mt-3 italic">
-                  {locale === "fi"
-                    ? "T-tyypin (Cav3) kanavat >> Cav1.3 (matalan kynnyksen L-tyyppi) >> Cav1.2 (vain aktiopotentiaalin aikana). CaMKII-takaisinkytkentä siirtää Cav3.2-kynnystä negatiivisemmaksi ajan myötä."
-                    : "T-type (Cav3) channels >> Cav1.3 (low-threshold L-type) >> Cav1.2 (action-potential only). CaMKII feedback shifts Cav3.2 threshold more negative over time."}
+                  {d.svgVgccHierarchyCaption}
                 </p>
               </div>
             </div>
@@ -2141,7 +4627,7 @@ export default async function ModelPage({
                       {d.recovBbbTime}
                     </td>
                     <td className="py-3 text-foreground-muted">
-                      {d.recovBbbNote}
+                      {cite(d.recovBbbNote)}
                     </td>
                   </tr>
                 </tbody>
@@ -2150,7 +4636,7 @@ export default async function ModelPage({
 
             {/* Recovery Rates Bar Chart */}
             <div className="my-8 max-w-2xl mx-auto">
-              <svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label={locale === "fi" ? "Palautumisasteiden pylvaskaavio" : "Recovery rates bar chart"}>
+              <svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label={d.svgRecoveryBarAria}>
                 {/* VGIC gating - alpha=1.0 (100%) */}
                 <text x="150" y="38" textAnchor="end" fontSize="10" fill="currentColor" fillOpacity="0.8" fontFamily="system-ui">{d.recovVgicLayer}</text>
                 <rect x="160" y="24" width="280" height="22" rx="4" ry="4" fill="#22c55e" fillOpacity="0.7" />
@@ -2185,15 +4671,13 @@ export default async function ModelPage({
 
                 {/* Caption */}
                 <text x="250" y="240" textAnchor="middle" fontSize="10" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui">
-                  {locale === "fi"
-                    ? "Palautumisaste (α): 1.0 = taydellinen, 0.0 = palautumaton"
-                    : "Recovery rate (α): 1.0 = full recovery, 0.0 = irreversible"}
+                  {d.svgRecoveryCaption}
                 </text>
               </svg>
             </div>
 
             <p className="mt-4 text-sm text-foreground-muted max-w-3xl leading-relaxed">
-              {d.recoveryWindowNote}
+              {cite(d.recoveryWindowNote)}
             </p>
           </CollapsibleSection>
 
@@ -2264,8 +4748,8 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
               {d.mtorEqExplain}
             </p>
-            <div className="my-8 max-w-md mx-auto">
-              <svg viewBox="0 0 500 400" className="w-full" role="img" aria-label={locale_key === "fi" ? "mTOR-keskuskaavio" : "mTOR hub diagram"}>
+            <div className="my-8 max-w-md mx-auto" style={{display:'none'}}>
+              <svg viewBox="0 0 500 400" className="w-full" role="img" aria-label={locale_key === "fi" ? "mTOR-keskuskaavio (hidden duplicate)" : "mTOR hub diagram (hidden duplicate)"}>
                 <defs>
                   <marker id="mh_arFwd" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-foreground-muted/50" /></marker>
                   <marker id="mh_arRev" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto"><path d="M8,0 L0,3 L8,6" className="fill-foreground-muted/50" /></marker>
@@ -2446,7 +4930,7 @@ export default async function ModelPage({
           {/* ELF Priming Hypothesis */}
           <section className="mb-8 rounded-xl border border-amber-500/30 bg-amber-500/5 p-5">
             <h3 className="text-sm font-semibold mb-2">{d.elfPrimingTitle}</h3>
-            <p className="text-xs text-foreground-muted leading-relaxed">{d.elfPrimingDesc}</p>
+            <p className="text-xs text-foreground-muted leading-relaxed">{cite(d.elfPrimingDesc)}</p>
             <p className="text-xs text-foreground-muted/70 leading-relaxed mt-2 italic">{d.elfFreqNote}</p>
           </section>
 
@@ -2458,7 +4942,7 @@ export default async function ModelPage({
 
             {/* Technology Layers Stacked Area Chart */}
             <div className="my-8 max-w-3xl mx-auto">
-              <svg viewBox="0 0 700 370" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label={locale === "fi" ? "Teknologiakerrosten kasautuva altistuskaavio" : "Technology layers cumulative exposure chart"}>
+              <svg viewBox="0 0 700 370" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label={d.svgTechLayersAria}>
                 <defs>
                   <linearGradient id="gridFade" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="currentColor" stopOpacity="0.06" />
@@ -2480,15 +4964,15 @@ export default async function ModelPage({
 
                 {/* Layer 1: Power Grid (1900+) - slate/dark blue */}
                 <path d="M 80,300 L 80,286 C 170,272 260,265 350,258 C 440,251 530,244 660,237 L 660,300 Z" fill="#475569" fillOpacity="0.55" />
-                <text x="160" y="290" fontSize="9" fontWeight="600" fill="#cbd5e1" fontFamily="system-ui">{locale === "fi" ? "Sahkoverkko" : "Power Grid"}</text>
+                <text x="160" y="290" fontSize="9" fontWeight="600" fill="#cbd5e1" fontFamily="system-ui">{d.layerPowerGrid}</text>
 
                 {/* Layer 2: Radio/TV (1950+) - teal */}
                 <path d="M 303,300 L 303,258 C 370,244 440,230 530,216 C 580,209 620,202 660,195 L 660,237 C 620,244 530,251 440,258 C 370,265 303,272 303,286 Z" fill="#0d9488" fillOpacity="0.5" />
-                <text x="450" y="248" fontSize="9" fontWeight="600" fill="#5eead4" fontFamily="system-ui">{locale === "fi" ? "Radio/TV" : "Radio/TV"}</text>
+                <text x="450" y="248" fontSize="9" fontWeight="600" fill="#5eead4" fontFamily="system-ui">{d.layerRadioTv}</text>
 
                 {/* Layer 3: Cellular (1990+) - amber */}
                 <path d="M 482,300 L 482,216 C 520,195 560,174 620,153 L 660,139 L 660,195 C 620,202 560,216 520,230 C 500,237 490,244 482,258 Z" fill="#d97706" fillOpacity="0.5" />
-                <text x="560" y="195" fontSize="9" fontWeight="600" fill="#fbbf24" fontFamily="system-ui">{locale === "fi" ? "GSM" : "Cellular"}</text>
+                <text x="560" y="195" fontSize="9" fontWeight="600" fill="#fbbf24" fontFamily="system-ui">{d.layerCellular}</text>
 
                 {/* Layer 4: WiFi/4G (2005+) - orange */}
                 <path d="M 549,300 L 549,174 C 575,153 610,125 640,104 L 660,90 L 660,139 C 640,146 610,160 575,174 C 560,181 552,195 549,216 Z" fill="#ea580c" fillOpacity="0.5" />
@@ -2513,14 +4997,12 @@ export default async function ModelPage({
                 {/* Y-axis */}
                 <line x1="80" y1="20" x2="80" y2="300" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1" />
                 <text x="40" y="165" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui" transform="rotate(-90 40 165)">
-                  {locale === "fi" ? "Kumulatiivinen altistus" : "Cumulative exposure"}
+                  {d.svgCumulativeExposure}
                 </text>
 
                 {/* Caption */}
                 <text x="370" y="345" textAnchor="middle" fontSize="10" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui">
-                  {locale === "fi"
-                    ? "Viisi teknologiakerrosta: jokainen sukupolvi kerrostuu aiempien paalle"
-                    : "Five technology layers: each generation stacks on previous ones"}
+                  {d.svgTechLayersCaption}
                 </text>
               </svg>
             </div>
@@ -2542,7 +5024,7 @@ export default async function ModelPage({
             {/* Five anomalies */}
             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground-muted mb-4">{d.layerAnomaliesTitle}</h4>
             <div className="grid gap-3 mb-10">
-              {d.layerAnomalies.map((a: { title: string; subtitle: string; conventional: string; explanation: string; ref: string }) => (
+              {d.layerAnomalies.map((a: { referenceId?: string; title: string; subtitle: string; conventional: string; explanation: string; ref: string }) => (
                 <div key={a.title} className="rounded-xl border border-card-border p-4">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
                     <div>
@@ -2552,15 +5034,21 @@ export default async function ModelPage({
                   </div>
                   <div className="grid sm:grid-cols-2 gap-3 text-xs">
                     <div className="rounded-lg bg-red-500/5 border border-red-500/20 p-3">
-                      <p className="font-medium text-red-400 mb-1">{locale === "fi" ? "Konventionaalinen:" : "Conventional:"}</p>
+                      <p className="font-medium text-red-400 mb-1">{d.conventionalLabel}</p>
                       <p className="text-foreground-muted">{a.conventional}</p>
                     </div>
                     <div className="rounded-lg bg-green-500/5 border border-green-500/20 p-3">
-                      <p className="font-medium text-green-400 mb-1">{locale === "fi" ? "Kerrostumaselitys:" : "Layer explanation:"}</p>
+                      <p className="font-medium text-green-400 mb-1">{d.layerExplanationLabel}</p>
                       <p className="text-foreground-muted">{a.explanation}</p>
                     </div>
                   </div>
-                  <p className="text-[10px] text-foreground-muted/60 mt-2">{a.ref}</p>
+                  <p className="text-[10px] text-foreground-muted/60 mt-2">
+                    {a.referenceId ? (
+                      <CitationLink citation={a.ref} referenceId={a.referenceId} locale={locale_key} />
+                    ) : (
+                      a.ref
+                    )}
+                  </p>
                 </div>
               ))}
             </div>
@@ -2573,7 +5061,7 @@ export default async function ModelPage({
                 <rect x="360" y="0" width="340" height="300" rx="8" className="fill-green-500/5 dark:fill-green-500/10" />
                 {/* Headers */}
                 <text x="170" y="28" textAnchor="middle" className="fill-red-500 dark:fill-red-400" fontSize="13" fontWeight="700">
-                  {locale === "fi" ? "Konventionaalinen" : "Conventional"}
+                  {d.conventional}
                 </text>
                 <text x="530" y="28" textAnchor="middle" className="fill-green-600 dark:fill-green-400" fontSize="13" fontWeight="700">
                   BERM
@@ -2582,29 +5070,29 @@ export default async function ModelPage({
                 {/* Row data */}
                 {[
                   {
-                    anomaly: locale === "fi" ? "Selittymytmn lasku" : "Unexplained decline",
-                    conv: locale === "fi" ? "Selittmtn" : "Unexplained",
-                    berm: locale === "fi" ? "WiFi+LED-kerrokset" : "WiFi+LED layers",
+                    anomaly: d.anomalyUnexplainedDecline,
+                    conv: d.anomalyUnexplained,
+                    berm: d.anomalyWifiLedLayers,
                   },
                   {
-                    anomaly: locale === "fi" ? "Sosiaalinen media" : "Social media",
-                    conv: locale === "fi" ? "Some-teoria" : "Social media",
-                    berm: locale === "fi" ? "Kolmoiskanava" : "Triple channel",
+                    anomaly: d.anomalySomeTheory,
+                    conv: d.anomalySomeTheory,
+                    berm: d.anomalyTripleChannel,
                   },
                   {
-                    anomaly: locale === "fi" ? "Istuminen" : "Sedentary",
-                    conv: locale === "fi" ? "Istuminen" : "Sedentary",
-                    berm: locale === "fi" ? "24/7 EMF" : "24/7 EMF",
+                    anomaly: d.anomalySedentary,
+                    conv: d.anomalySedentary,
+                    berm: d.anomaly247Emf,
                   },
                   {
-                    anomaly: locale === "fi" ? "Vauraus" : "Prosperity",
-                    conv: locale === "fi" ? "Vauraus" : "Prosperity",
-                    berm: locale === "fi" ? "Shkistysviive" : "Electrification lag",
+                    anomaly: d.anomalyProsperity,
+                    conv: d.anomalyProsperity,
+                    berm: d.anomalyElectrificationLag,
                   },
                   {
-                    anomaly: locale === "fi" ? "Fyysinen ty" : "Physical labor",
-                    conv: locale === "fi" ? "Fyysinen ty" : "Physical labor",
-                    berm: locale === "fi" ? "Nolla kerrosta" : "Zero layers",
+                    anomaly: d.anomalyPhysicalLabor,
+                    conv: d.anomalyPhysicalLabor,
+                    berm: d.anomalyZeroLayers,
                   },
                 ].map((row, i) => {
                   const y = 65 + i * 48;
@@ -2668,11 +5156,11 @@ export default async function ModelPage({
               <table className="w-full text-xs border-collapse">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Maa" : "Country"}</th>
-                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Todellinen" : "Actual"}</th>
+                    <th className="text-left py-2 px-2 font-semibold">{d.colCountry}</th>
+                    <th className="text-left py-2 px-2 font-semibold">{d.colActual}</th>
                     <th className="text-left py-2 px-2 font-semibold">v19.1</th>
                     <th className="text-left py-2 px-2 font-semibold">v20</th>
-                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Huomio" : "Note"}</th>
+                    <th className="text-left py-2 px-2 font-semibold">{d.colNote}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2690,8 +5178,8 @@ export default async function ModelPage({
             </div>
 
             {/* 6-country TFR bar chart */}
-            <div className="my-8 max-w-3xl mx-auto">
-              <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+            <div className="chart-scroll my-8 max-w-3xl mx-auto">
+              <svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" className="chart-svg w-full h-auto min-w-[620px]" role="img" aria-label={d.layerProjectionsTitle}>
                 {/* Y-axis */}
                 <text x="18" y="16" fontSize="10" fontWeight="600" fill="currentColor" fillOpacity="0.6">TFR</text>
                 {[0, 1, 2, 3, 4, 5, 6, 7].map((v) => {
@@ -2706,12 +5194,12 @@ export default async function ModelPage({
                 {/* Bars */}
                 {(() => {
                   const countries = [
-                    { name: locale === "fi" ? "Suomi" : "Finland", actual: 1.25, v19: 1.32, v20: 1.28 },
-                    { name: locale === "fi" ? "Etel-Korea" : "South Korea", actual: 0.72, v19: 0.95, v20: 0.78 },
+                    { name: d.countryFinlandName, actual: 1.25, v19: 1.32, v20: 1.28 },
+                    { name: d.countrySouthKoreaName, actual: 0.72, v19: 0.95, v20: 0.78 },
                     { name: "Nigeria", actual: 4.38, v19: 4.85, v20: 4.52 },
-                    { name: locale === "fi" ? "USA" : "USA", actual: 1.63, v19: 1.55, v20: 1.58 },
+                    { name: d.countryUsaName, actual: 1.63, v19: 1.55, v20: 1.58 },
                     { name: "Israel", actual: 2.87, v19: 2.40, v20: 2.75 },
-                    { name: locale === "fi" ? "Amissit" : "Amish", actual: 6.1, v19: null as number | null, v20: 6.05 },
+                    { name: d.countryAmishName, actual: 6.1, v19: null as number | null, v20: 6.05 },
                   ];
                   const barW = 18;
                   const groupW = 100;
@@ -2754,7 +5242,7 @@ export default async function ModelPage({
                 })()}
                 {/* Legend */}
                 <rect x="440" y="8" width="10" height="10" rx="2" className="fill-gray-400/60 dark:fill-gray-500/60" />
-                <text x="454" y="17" fontSize="9" fill="currentColor" fillOpacity="0.7">{locale === "fi" ? "Todellinen" : "Actual"}</text>
+                <text x="454" y="17" fontSize="9" fill="currentColor" fillOpacity="0.7">{d.colActual}</text>
                 <rect x="510" y="8" width="10" height="10" rx="2" className="fill-indigo-500/50 dark:fill-indigo-400/50" />
                 <text x="524" y="17" fontSize="9" fill="currentColor" fillOpacity="0.7">v19</text>
                 <rect x="550" y="8" width="10" height="10" rx="2" className="fill-teal-500/60 dark:fill-teal-400/60" />
@@ -2768,11 +5256,11 @@ export default async function ModelPage({
               <table className="w-full text-xs border-collapse">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Maa" : "Country"}</th>
+                    <th className="text-left py-2 px-2 font-semibold">{d.colCountry}</th>
                     <th className="text-left py-2 px-2 font-semibold">2024</th>
                     <th className="text-left py-2 px-2 font-semibold">2030</th>
                     <th className="text-left py-2 px-2 font-semibold">2035</th>
-                    <th className="text-left py-2 px-2 font-semibold">{locale === "fi" ? "Ajuri" : "Driver"}</th>
+                    <th className="text-left py-2 px-2 font-semibold">{d.colDriver}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2818,8 +5306,8 @@ export default async function ModelPage({
                 ))}
                 {/* Replacement level dashed line */}
                 <line x1="60" y1={300 - 2.1 * 54} x2="670" y2={300 - 2.1 * 54} stroke="currentColor" strokeOpacity="0.3" strokeDasharray="6 4" />
-                <text x="672" y={300 - 2.1 * 54 + 3} fontSize="8" fill="currentColor" fillOpacity="0.5">
-                  {locale === "fi" ? "Uusiutumistaso" : "Replacement"}
+                <text x="662" y={300 - 2.1 * 54 - 6} textAnchor="end" fontSize="8" fill="currentColor" fillOpacity="0.5">
+                  {d.replacementLabel}
                 </text>
                 {/* Country lines */}
                 {(() => {
@@ -2827,11 +5315,11 @@ export default async function ModelPage({
                   const scale = 54;
                   const baseY = 300;
                   const countries = [
-                    { name: locale === "fi" ? "Etel-Korea" : "S. Korea", values: [0.72, 0.60, 0.50], color: "#ef4444" },
-                    { name: locale === "fi" ? "Suomi" : "Finland", values: [1.25, 1.10, 0.975], color: "#3b82f6" },
+                    { name: d.countrySKoreaShort, values: [0.72, 0.60, 0.50], color: "#ef4444" },
+                    { name: d.countryFinlandName, values: [1.25, 1.10, 0.975], color: "#3b82f6" },
                     { name: "USA", values: [1.63, 1.475, 1.325], color: "#a855f7" },
                     { name: "Nigeria", values: [4.38, 3.75, 3.15], color: "#f59e0b" },
-                    { name: locale === "fi" ? "Intia" : "India", values: [1.96, 1.65, 1.375], color: "#10b981" },
+                    { name: d.countryIndiaName, values: [1.96, 1.65, 1.375], color: "#10b981" },
                   ];
                   return countries.map((c, ci) => {
                     const points = c.values.map((v, vi) => `${xVals[vi]},${baseY - v * scale}`);
@@ -2840,8 +5328,9 @@ export default async function ModelPage({
                         <polyline points={points.join(" ")} fill="none" stroke={c.color} strokeWidth="2" strokeLinejoin="round" strokeOpacity="0.8" />
                         {c.values.map((v, vi) => (
                           <g key={vi}>
-                            <circle cx={xVals[vi]} cy={baseY - v * scale} r="4" fill={c.color} fillOpacity="0.9" />
-                            <text x={xVals[vi]} y={baseY - v * scale - 8} textAnchor="middle" fontSize="8" fill={c.color} fillOpacity="0.9">{v}</text>
+                            <circle cx={xVals[vi]} cy={baseY - v * scale} r="4" fill={c.color} fillOpacity="0.9">
+                              <title>{c.name} · {[2024, 2030, 2035][vi]}: {v}</title>
+                            </circle>
                           </g>
                         ))}
                         {/* Legend label at end */}
@@ -2867,7 +5356,7 @@ export default async function ModelPage({
           {/* Seasonal Sensitivity */}
           <CollapsibleSection id="seasonal-sensitivity" title={d.seasonTitle} subtitle={d.seasonSub}>
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-              {d.seasonDesc}
+              {cite(d.seasonDesc)}
             </p>
             <div className="rounded-xl border border-card-border bg-card-bg p-5 mb-6">
               <p className="text-xs font-medium mb-2">{d.seasonFormulaLabel}</p>
@@ -2878,7 +5367,7 @@ export default async function ModelPage({
               <p className="text-xs font-mono text-amber-500">{d.seasonPred1}</p>
               <p className="text-xs font-mono text-amber-500">{d.seasonPred2}</p>
             </div>
-            <p className="text-[10px] text-foreground-muted/60">{d.seasonRef}</p>
+            <p className="text-[10px] text-foreground-muted/60">{cite(d.seasonRef)}</p>
           </CollapsibleSection>
 
           {/* CACNA1C Individual Susceptibility */}
@@ -2887,7 +5376,7 @@ export default async function ModelPage({
               {d.cacna1cDesc}
             </p>
             <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-              {d.cacna1cEvidence}
+              {cite(d.cacna1cEvidence)}
             </p>
             <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 mb-6">
               <p className="text-xs text-foreground-muted leading-relaxed">{d.cacna1cImplication}</p>
@@ -2901,7 +5390,7 @@ export default async function ModelPage({
               <p className="text-xs font-mono text-amber-500">{d.cacna1cPred1}</p>
               <p className="text-xs font-mono text-amber-500">{d.cacna1cPred2}</p>
             </div>
-            <p className="text-[10px] text-foreground-muted/60">{d.cacna1cRef}</p>
+            <p className="text-[10px] text-foreground-muted/60">{cite(d.cacna1cRef)}</p>
           </CollapsibleSection>
 
           {/* Neonatal Q-Factor */}
@@ -2917,7 +5406,7 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted leading-relaxed mb-4">
               {d.neonatalQVerification}
             </p>
-            <p className="text-[10px] text-foreground-muted/60 mb-4">{d.neonatalQRef}</p>
+            <p className="text-[10px] text-foreground-muted/60 mb-4">{cite(d.neonatalQRef)}</p>
             <div className="rounded-lg border border-card-border bg-card-bg p-4">
               <p className="text-sm text-foreground-muted leading-relaxed mb-2">{d.neonatalQSpectrum}</p>
               <Link href={`${prefix}/evidence/neurological-spectrum`} className="text-sm text-accent hover:underline">
@@ -2931,8 +5420,8 @@ export default async function ModelPage({
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
               {d.feedbackLoopsDesc}
             </p>
-            <div className="my-8 max-w-2xl mx-auto">
-              <svg viewBox="0 0 600 400" className="w-full" role="img" aria-label={locale_key === "fi" ? "Palautesilmukat" : "Feedback loops network"}>
+            <div className="my-8 max-w-2xl mx-auto" style={{display:'none'}}>
+              <svg viewBox="0 0 600 400" className="w-full" role="img" aria-label={locale_key === "fi" ? "Palautesilmukat (hidden duplicate)" : "Feedback loops network (hidden duplicate)"}>
                 <defs>
                   <marker id="fb_arPos" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-rose-500/70" /></marker>
                   <marker id="fb_arNeg" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" className="fill-cyan-500/70" /></marker>
@@ -2982,7 +5471,7 @@ export default async function ModelPage({
                     <h4 className="font-semibold text-sm">{loop.name}</h4>
                   </div>
                   <p className="text-xs text-foreground-muted leading-relaxed mb-2">{loop.steps}</p>
-                  <p className="text-[10px] text-foreground-muted italic">{loop.status}</p>
+                  <p className="text-[10px] text-foreground-muted italic">{cite(loop.status)}</p>
                 </div>
               ))}
             </div>
@@ -3041,15 +5530,15 @@ export default async function ModelPage({
           {/* Hypothalamic Nexus */}
           <CollapsibleSection id="hypothalamic-nexus" title={d.hypoNexusTitle} subtitle={d.hypoNexusSub}>
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-              {d.hypoNexusDesc}
+              {cite(d.hypoNexusDesc)}
             </p>
             <div className="overflow-x-auto mb-4">
               <table className="w-full text-xs border-collapse">
                 <thead>
                   <tr className="border-b border-card-border">
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Akseli" : "Axis"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Kohde-elin" : "Target organ"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Seuraus" : "Consequence"}</th>
+                    <th className="text-left p-2 font-semibold">{d.colAxis}</th>
+                    <th className="text-left p-2 font-semibold">{d.colTargetOrgan}</th>
+                    <th className="text-left p-2 font-semibold">{d.colConsequence}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -3077,7 +5566,7 @@ export default async function ModelPage({
               {d.tripleLockComponents.map((c: { component: string; mechanism: string; consequence: string }) => (
                 <div key={c.component} className="rounded-xl border border-red-500/20 bg-red-500/5 p-4">
                   <h4 className="font-semibold text-sm mb-2">{c.component}</h4>
-                  <p className="text-xs text-foreground-muted leading-relaxed mb-1 font-mono">{c.mechanism}</p>
+                  <p className="text-xs text-foreground-muted leading-relaxed mb-1 font-mono">{cite(c.mechanism)}</p>
                   <p className="text-xs text-foreground-muted leading-relaxed">{c.consequence}</p>
                 </div>
               ))}
@@ -3090,7 +5579,7 @@ export default async function ModelPage({
           {/* Quad Lock */}
           <CollapsibleSection id="quad-lock" title={d.quadLockTitle} subtitle={d.quadLockSub}>
             <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
-              {d.quadLockDesc}
+              {cite(d.quadLockDesc)}
             </p>
             <div className="grid gap-3 sm:grid-cols-2 mb-4">
               {d.quadLockComponents.map((c: { component: string; effect: string }) => (
@@ -3101,7 +5590,7 @@ export default async function ModelPage({
               ))}
             </div>
             <div className="rounded-lg border border-purple-500/20 bg-purple-500/5 p-4">
-              <p className="text-sm leading-relaxed text-foreground-muted">{d.quadLockNote}</p>
+              <p className="text-sm leading-relaxed text-foreground-muted">{cite(d.quadLockNote)}</p>
             </div>
           </CollapsibleSection>
 
@@ -3124,12 +5613,12 @@ export default async function ModelPage({
               {d.agingSpiralSteps.map((s: { step: string; detail: string }, i: number) => (
                 <div key={i} className="rounded-lg border border-card-border bg-card-bg p-3">
                   <p className="text-sm font-semibold mb-0.5">{s.step}</p>
-                  <p className="text-xs text-foreground-muted leading-relaxed">{s.detail}</p>
+                  <p className="text-xs text-foreground-muted leading-relaxed">{cite(s.detail)}</p>
                 </div>
               ))}
             </div>
             <div className="rounded-lg border border-accent/20 bg-accent/5 p-4">
-              <p className="text-sm leading-relaxed text-foreground-muted">{d.agingSpiralQuantitative}</p>
+              <p className="text-sm leading-relaxed text-foreground-muted">{cite(d.agingSpiralQuantitative)}</p>
             </div>
           </CollapsibleSection>
 
@@ -3141,12 +5630,12 @@ export default async function ModelPage({
 
             {/* 15-Gene Cascade Diagram */}
             <div className="my-8 max-w-3xl mx-auto">
-              <svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label={locale === "fi" ? "15 geenin kaskadidiagrammi" : "15-gene cascade diagram"}>
+              <svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" role="img" aria-label={d.svgGenesCascadeAria}>
                 {/* Background */}
                 <rect width="700" height="520" fill="none" />
 
                 {/* Tier 1: INFLUX - cyan/teal */}
-                <text x="12" y="52" fontSize="11" fontWeight="bold" fill="#0d9488" fontFamily="system-ui">{locale === "fi" ? "SISAANVIRTAUS" : "INFLUX"}</text>
+                <text x="12" y="52" fontSize="11" fontWeight="bold" fill="#0d9488" fontFamily="system-ui">{d.tierInflux}</text>
                 <text x="12" y="64" fontSize="9" fill="#5eead4" fontFamily="system-ui">Tier 1</text>
                 {[["CACNA1C", 130], ["CACNA1H", 245], ["CACNA1D", 360], ["CACNA1A", 475], ["CACNA1B", 590]].map(([gene, x]) => (
                   <g key={gene as string}>
@@ -3159,7 +5648,7 @@ export default async function ModelPage({
                 <line x1="350" y1="75" x2="350" y2="115" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" markerEnd="url(#cascadeArrow)" />
 
                 {/* Tier 2: MODULATION - blue */}
-                <text x="12" y="145" fontSize="11" fontWeight="bold" fill="#3b82f6" fontFamily="system-ui">{locale === "fi" ? "MODULAATIO" : "MODULATION"}</text>
+                <text x="12" y="145" fontSize="11" fontWeight="bold" fill="#3b82f6" fontFamily="system-ui">{d.tierModulation}</text>
                 <text x="12" y="157" fontSize="9" fill="#93c5fd" fontFamily="system-ui">Tier 2</text>
                 <rect x="300" y="128" width="100" height="36" rx="6" ry="6" fill="#3b82f6" fillOpacity="0.15" stroke="#3b82f6" strokeWidth="1.5" />
                 <text x="350" y="151" textAnchor="middle" fontSize="11" fontWeight="600" fill="#3b82f6" fontFamily="monospace">CACNA2D1</text>
@@ -3168,7 +5657,7 @@ export default async function ModelPage({
                 <line x1="350" y1="168" x2="350" y2="208" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" markerEnd="url(#cascadeArrow)" />
 
                 {/* Tier 3: INTEGRATION - red/rose */}
-                <text x="12" y="238" fontSize="11" fontWeight="bold" fill="#e11d48" fontFamily="system-ui">{locale === "fi" ? "INTEGRAATIO" : "INTEGRATION"}</text>
+                <text x="12" y="238" fontSize="11" fontWeight="bold" fill="#e11d48" fontFamily="system-ui">{d.tierIntegration}</text>
                 <text x="12" y="250" fontSize="9" fill="#fda4af" fontFamily="system-ui">Tier 3</text>
                 {[["CAMK2A", 260], ["CAMK2B", 390]].map(([gene, x]) => (
                   <g key={gene as string}>
@@ -3181,7 +5670,7 @@ export default async function ModelPage({
                 <line x1="350" y1="261" x2="350" y2="301" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" markerEnd="url(#cascadeArrow)" />
 
                 {/* Tier 4: EXTRUSION - amber */}
-                <text x="12" y="331" fontSize="11" fontWeight="bold" fill="#d97706" fontFamily="system-ui">{locale === "fi" ? "POISTO" : "EXTRUSION"}</text>
+                <text x="12" y="331" fontSize="11" fontWeight="bold" fill="#d97706" fontFamily="system-ui">{d.tierExtrusion}</text>
                 <text x="12" y="343" fontSize="9" fill="#fcd34d" fontFamily="system-ui">Tier 4</text>
                 {[["SLC8A1", 200], ["ATP2B1", 340], ["ATP2B2", 480]].map(([gene, x]) => (
                   <g key={gene as string}>
@@ -3194,7 +5683,7 @@ export default async function ModelPage({
                 <line x1="350" y1="354" x2="350" y2="394" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.3" markerEnd="url(#cascadeArrow)" />
 
                 {/* Tier 5: SIGNALING - purple */}
-                <text x="12" y="424" fontSize="11" fontWeight="bold" fill="#9333ea" fontFamily="system-ui">{locale === "fi" ? "SIGNALOINTI" : "SIGNALING"}</text>
+                <text x="12" y="424" fontSize="11" fontWeight="bold" fill="#9333ea" fontFamily="system-ui">{d.tierSignaling}</text>
                 <text x="12" y="436" fontSize="9" fill="#c4b5fd" fontFamily="system-ui">Tier 5</text>
                 {[["CRY1", 155], ["CRY2", 280], ["MTNR1B", 405], ["COMT", 540]].map(([gene, x]) => (
                   <g key={gene as string}>
@@ -3205,9 +5694,7 @@ export default async function ModelPage({
 
                 {/* Caption */}
                 <text x="350" y="475" textAnchor="middle" fontSize="10" fill="currentColor" fillOpacity="0.5" fontFamily="system-ui">
-                  {locale === "fi"
-                    ? "Ca²⁺-kaskadi: 15 geeniä viidessä toiminnallisessa kerroksessa"
-                    : "Ca²⁺ cascade: 15 genes across five functional tiers"}
+                  {d.svgGenesCascadeCaption}
                 </text>
 
                 {/* Arrow marker */}
@@ -3225,12 +5712,12 @@ export default async function ModelPage({
               <table className="w-full text-xs border-collapse">
                 <thead>
                   <tr className="border-b border-card-border">
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Geeni" : "Gene"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Proteiini" : "Protein"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "BERM-rooli" : "BERM role"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Avainvariantti" : "Key variant"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Taudit" : "Diseases"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Evidenssi" : "Evidence"}</th>
+                    <th className="text-left p-2 font-semibold">{d.colGene}</th>
+                    <th className="text-left p-2 font-semibold">{d.colProtein}</th>
+                    <th className="text-left p-2 font-semibold">{d.colBermRole}</th>
+                    <th className="text-left p-2 font-semibold">{d.colKeyVariant}</th>
+                    <th className="text-left p-2 font-semibold">{d.colDiseases}</th>
+                    <th className="text-left p-2 font-semibold">{d.colEvidence}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -3243,7 +5730,7 @@ export default async function ModelPage({
                       <td className="p-2 text-foreground-muted">{g.diseases}</td>
                       <td className="p-2">
                         <span className={`text-[10px] px-1.5 py-0.5 rounded ${g.evidence.startsWith("CONFIRMED") || g.evidence.startsWith("VAHVISTETTU") ? "bg-green-500/20 text-green-400" : "bg-amber-500/20 text-amber-400"}`}>
-                          {g.evidence}
+                          {cite(g.evidence)}
                         </span>
                       </td>
                     </tr>
@@ -3257,14 +5744,14 @@ export default async function ModelPage({
             <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-4 mb-2">
               <p className="text-xs text-foreground-muted leading-relaxed">{d.genSuscModDesc}</p>
             </div>
-            <p className="text-[10px] text-foreground-muted/60 mb-6">{d.genSuscModRef}</p>
+            <p className="text-[10px] text-foreground-muted/60 mb-6">{cite(d.genSuscModRef)}</p>
 
             {/* Tier 3: Integration */}
             <h4 className="text-sm font-semibold mb-3">{d.genSuscIntTitle}</h4>
             <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-4 mb-2">
               <p className="text-xs text-foreground-muted leading-relaxed">{d.genSuscIntDesc}</p>
             </div>
-            <p className="text-[10px] text-foreground-muted/60 mb-6">{d.genSuscIntRef}</p>
+            <p className="text-[10px] text-foreground-muted/60 mb-6">{cite(d.genSuscIntRef)}</p>
 
             {/* Tier 4: Extrusion */}
             <h4 className="text-sm font-semibold mb-3">{d.genSuscExtTitle}</h4>
@@ -3276,11 +5763,11 @@ export default async function ModelPage({
               <table className="w-full text-xs border-collapse">
                 <thead>
                   <tr className="border-b border-card-border">
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Geeni" : "Gene"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Variantti" : "Variant"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Vaikutus" : "Effect"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Taudit" : "Diseases"}</th>
-                    <th className="text-left p-2 font-semibold">{locale === "fi" ? "Evidenssi" : "Evidence"}</th>
+                    <th className="text-left p-2 font-semibold">{d.colGene}</th>
+                    <th className="text-left p-2 font-semibold">{d.colVariant}</th>
+                    <th className="text-left p-2 font-semibold">{d.colEffect}</th>
+                    <th className="text-left p-2 font-semibold">{d.colDiseases}</th>
+                    <th className="text-left p-2 font-semibold">{d.colEvidence}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -3292,7 +5779,7 @@ export default async function ModelPage({
                       <td className="p-2 text-foreground-muted">{g.diseases}</td>
                       <td className="p-2">
                         <span className={`text-[10px] px-1.5 py-0.5 rounded ${g.evidence.startsWith("CONFIRMED") || g.evidence.startsWith("VAHVISTETTU") ? "bg-green-500/20 text-green-400" : g.evidence.startsWith("DERIVABLE") || g.evidence.startsWith("JOHDETTAVISSA") ? "bg-slate-500/20 text-slate-400" : "bg-amber-500/20 text-amber-400"}`}>
-                          {g.evidence}
+                          {cite(g.evidence)}
                         </span>
                       </td>
                     </tr>
@@ -3314,33 +5801,33 @@ export default async function ModelPage({
                 {/* Level 1: CaMKII Thr286 assay */}
                 <rect x="80" y="10" width="240" height="56" rx="12" className="fill-green-500/10 dark:fill-green-500/15" stroke="#22c55e" strokeWidth="1.5" strokeOpacity="0.5" />
                 <text x="200" y="34" textAnchor="middle" fontSize="11" fontWeight="700" className="fill-green-700 dark:fill-green-400">
-                  CaMKII Thr286 {locale === "fi" ? "mrittely" : "assay"}
+                  CaMKII Thr286 {d.ehsAssay}
                 </text>
                 <text x="200" y="52" textAnchor="middle" fontSize="9" className="fill-green-600/70 dark:fill-green-400/70">
-                  {locale === "fi" ? "Lymfosyytti-autofosforylaatio" : "Lymphocyte autophosphorylation"}
+                  {d.ehsLymphocyte}
                 </text>
                 {/* Arrow 1 */}
                 <line x1="200" y1="66" x2="200" y2="120" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" markerEnd="url(#flowArrow10)" />
                 <text x="214" y="98" fontSize="9" fill="currentColor" fillOpacity="0.5" fontStyle="italic">
-                  {locale === "fi" ? "Kohonnut" : "Elevated"}
+                  {d.ehsElevated}
                 </text>
                 {/* Level 2: CACNA genotyping */}
                 <rect x="80" y="120" width="240" height="56" rx="12" className="fill-blue-500/10 dark:fill-blue-500/15" stroke="#3b82f6" strokeWidth="1.5" strokeOpacity="0.5" />
                 <text x="200" y="144" textAnchor="middle" fontSize="11" fontWeight="700" className="fill-blue-700 dark:fill-blue-400">
-                  CACNA {locale === "fi" ? "genotyypitys" : "genotyping"}
+                  CACNA {d.ehsGenotyping}
                 </text>
                 <text x="200" y="162" textAnchor="middle" fontSize="9" className="fill-blue-600/70 dark:fill-blue-400/70">
-                  {locale === "fi" ? "Kalsiumkanavavariantit" : "Calcium channel variants"}
+                  {d.ehsCalciumVariants}
                 </text>
                 {/* Arrow 2 */}
                 <line x1="200" y1="176" x2="200" y2="230" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" markerEnd="url(#flowArrow10)" />
                 <text x="214" y="208" fontSize="9" fill="currentColor" fillOpacity="0.5" fontStyle="italic">
-                  {locale === "fi" ? "Riskialleelit" : "Risk alleles"}
+                  {d.ehsRiskAlleles}
                 </text>
                 {/* Level 3: Signaling markers */}
                 <rect x="60" y="230" width="280" height="56" rx="12" className="fill-purple-500/10 dark:fill-purple-500/15" stroke="#a855f7" strokeWidth="1.5" strokeOpacity="0.5" />
                 <text x="200" y="254" textAnchor="middle" fontSize="11" fontWeight="700" className="fill-purple-700 dark:fill-purple-400">
-                  {locale === "fi" ? "Signalointimarkkerit" : "Signaling markers"}
+                  {d.ehsSignalingMarkers}
                 </text>
                 <text x="200" y="272" textAnchor="middle" fontSize="10" fontFamily="monospace" className="fill-purple-600/80 dark:fill-purple-400/80">
                   CRY1, MTNR1B, COMT
@@ -3348,25 +5835,25 @@ export default async function ModelPage({
                 {/* Arrow 3 */}
                 <line x1="200" y1="286" x2="200" y2="340" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" markerEnd="url(#flowArrow10)" />
                 <text x="214" y="318" fontSize="9" fill="currentColor" fillOpacity="0.5" fontStyle="italic">
-                  {locale === "fi" ? "Korkea riski" : "High-risk profile"}
+                  {d.ehsHighRisk}
                 </text>
                 {/* Level 4: Polygenic risk score */}
                 <rect x="60" y="340" width="280" height="56" rx="12" className="fill-rose-500/10 dark:fill-rose-500/15" stroke="#f43f5e" strokeWidth="1.5" strokeOpacity="0.5" />
                 <text x="200" y="364" textAnchor="middle" fontSize="11" fontWeight="700" className="fill-rose-700 dark:fill-rose-400">
-                  {locale === "fi" ? "Polygeeninen riskipistemr" : "Polygenic risk score"}
+                  {d.ehsPolygenicScore}
                 </text>
                 <text x="200" y="382" textAnchor="middle" fontSize="9" className="fill-rose-600/70 dark:fill-rose-400/70">
-                  {locale === "fi" ? "EMF-herkkyyden kokonaisarvio" : "Overall EMF sensitivity assessment"}
+                  {d.ehsOverallAssessment}
                 </text>
                 {/* Arrow 4 */}
                 <line x1="200" y1="396" x2="200" y2="430" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1.5" markerEnd="url(#flowArrow10)" />
                 {/* Final assessment box */}
                 <rect x="100" y="430" width="200" height="44" rx="10" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1" />
                 <text x="200" y="450" textAnchor="middle" fontSize="10" fontWeight="600" fill="currentColor" fillOpacity="0.8">
-                  {locale === "fi" ? "EHS-diagnostinen luokitus" : "EHS diagnostic classification"}
+                  {d.ehsDiagnosticClass}
                 </text>
                 <text x="200" y="465" textAnchor="middle" fontSize="8" fill="currentColor" fillOpacity="0.5">
-                  {locale === "fi" ? "Matala / Keskitaso / Korkea" : "Low / Moderate / High"}
+                  {d.ehsLowModHigh}
                 </text>
                 <defs>
                   <marker id="flowArrow10" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="8" markerHeight="8" orient="auto">
@@ -3398,7 +5885,7 @@ export default async function ModelPage({
               ))}
             </div>
 
-            <p className="text-[10px] text-foreground-muted/60">{d.genSuscRef}</p>
+            <p className="text-[10px] text-foreground-muted/60">{cite(d.genSuscRef)}</p>
           </CollapsibleSection>
 
           {/* Recovery Window */}
@@ -3407,7 +5894,7 @@ export default async function ModelPage({
               {d.recovWindowDesc}
             </p>
             <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
-              {d.recovWindowEvidence}
+              {cite(d.recovWindowEvidence)}
             </p>
             <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-4 mb-6">
               <p className="text-xs text-foreground-muted leading-relaxed">{d.recovWindowIntervention}</p>
@@ -3416,81 +5903,61 @@ export default async function ModelPage({
               <p className="text-xs font-mono text-amber-500">{d.recovWindowPred1}</p>
               <p className="text-xs font-mono text-amber-500">{d.recovWindowPred2}</p>
             </div>
-            <p className="text-[10px] text-foreground-muted/60">{d.recovWindowRef}</p>
+            <p className="text-[10px] text-foreground-muted/60">{cite(d.recovWindowRef)}</p>
           </CollapsibleSection>
 
           {/* Why Studies Disagree */}
         <CollapsibleSection
           id="why-studies-disagree"
-          title={locale === "fi" ? "Miksi tutkimukset ovat ristiriidassa" : "Why Studies Disagree"}
-          subtitle={locale === "fi"
-            ? "Kahdeksan kontrolloimatonta moderaattoria selittävät vuosikymmenten 'ristiriitaisen evidenssin'"
-            : "Eight uncontrolled moderators explain decades of 'contradictory evidence'"
+          title={d.whyDisagreeTitle}
+          subtitle={d.whyDisagreeSub
           }
         >
           <div className="max-w-4xl space-y-4">
             <p className="text-sm text-foreground-muted leading-relaxed">
-              {locale === "fi"
-                ? "EMF-tutkimus on tuottanut ristiriitaisia tuloksia vuosikymmeniä. BERM tunnistaa kahdeksan kontrolloimatonta moderaattoria, jotka ennustavat mitkä tutkimukset löytävät positiivisen tuloksen ja mitkä nollatuloksen:"
-                : "EMF research has produced contradictory results for decades. BERM identifies eight uncontrolled moderators that predict which studies find positive results and which find null:"}
+              {d.whyDisagreeDesc}
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
               {[
                 {
                   num: "1",
-                  title: locale === "fi" ? "Vuodenaika" : "Season",
-                  desc: locale === "fi"
-                    ? "CRY-magnetoreseptorin herkkyys on valoriippuvainen. Talvella CRY on herkempi → EMF-vaikutus melatoniiniin voimakkaampi. Osoitettu vasikoilla (Halgamuge 2015)."
-                    : "CRY magnetoreceptor sensitivity is light-dependent. In winter, CRY is more sensitive → EMF effect on melatonin is stronger. Demonstrated in calves (Halgamuge 2015).",
+                  title: d.modSeason,
+                  desc: d.modSeasonDesc,
                 },
                 {
                   num: "2",
-                  title: locale === "fi" ? "Genotyyppi" : "Genotype",
-                  desc: locale === "fi"
-                    ? "CACNA1C rs1006737 A-alleeli → enemmän Cav1.2 → suurempi Ca²⁺-vaste. Sousouri 2025 (ETH): CACNA1C-genotyyppi määrittää 5G-univasteen."
-                    : "CACNA1C rs1006737 A-allele → more Cav1.2 → larger Ca²⁺ response. Sousouri 2025 (ETH): CACNA1C genotype determines 5G sleep response.",
+                  title: d.modGenotype,
+                  desc: d.modGenotypeDesc,
                 },
                 {
                   num: "3",
-                  title: locale === "fi" ? "Laboratorion ELF-tausta" : "Laboratory ELF background",
-                  desc: locale === "fi"
-                    ? "50/60 Hz sähköverkko lisää VGCC-ekspressiota 8–10 päivässä (PMC4757866). Korkean ELF-taustan laboratorio 'primaa' solut."
-                    : "50/60 Hz power grid upregulates VGCC expression in 8–10 days (PMC4757866). High-ELF-background labs 'prime' cells.",
+                  title: d.modLabElf,
+                  desc: d.modLabElfDesc,
                 },
                 {
                   num: "4",
-                  title: locale === "fi" ? "Yöllinen EMF" : "Nighttime EMF",
-                  desc: locale === "fi"
-                    ? "WiFi-reititin makuuhuoneessa vs. EMF-vapaa yö → eri CaMKII-palautumistila → eri baseline-Ca²⁺ kokeeseen tullessa."
-                    : "Wi-Fi router in bedroom vs. EMF-free night → different CaMKII recovery state → different baseline Ca²⁺ when entering the experiment.",
+                  title: d.modNighttimeEmf,
+                  desc: d.modNighttimeEmfDesc,
                 },
                 {
                   num: "5",
-                  title: locale === "fi" ? "Laji / Esiviriytys" : "Species / Priming",
-                  desc: locale === "fi"
-                    ? "Eläintutkimukset laboratorioympäristössä (24/7 ELF-esiviriytys, homogeeninen genetiikka) löytävät positiivisen tuloksen 92 % ajasta. Ihmistutkimukset heterogeenisillä ympäristöillä löytävät 35 %. Molemmat oikein — laboratorion eläimet ovat kroonisesti viritettyjä (VGCC-ekspressio kohonnut, PMC4757866). p=0,002."
-                    : "Animal studies in lab environments (24/7 ELF priming, homogeneous genetics) find positive results 92% of the time. Human studies with heterogeneous environments find 35%. Both correct — lab animals are chronically primed (VGCC expression elevated, PMC4757866). p=0.002.",
+                  title: d.modSpeciesPriming,
+                  desc: d.modSpeciesPrimingDesc,
                 },
                 {
                   num: "6",
-                  title: locale === "fi" ? "Kesto" : "Duration",
-                  desc: locale === "fi"
-                    ? "Krooninen altistus (>1 viikko) tuottaa positiivisen tuloksen 92 %. Akuutti (1–2 yötä) tuottaa 31 %. CaMKII:n autofosforylaatio vaatii kumulatiivista Ca²⁺-kuormitusta. p=0,001."
-                    : "Chronic exposure (>1 week) produces positive results 92%. Acute (1–2 nights) produces 31%. CaMKII autophosphorylation requires cumulative Ca²⁺ loading. p=0.001.",
+                  title: d.modDuration,
+                  desc: d.modDurationDesc,
                 },
                 {
                   num: "7",
-                  title: locale === "fi" ? "Pulsaatio" : "Pulsation",
-                  desc: locale === "fi"
-                    ? "Pulssitetut signaalit tuottavat positiivisen tuloksen 88 %. CW tuottaa 48 %. IFO-VGIC-mekanismi vaatii vaihtelevia kenttiä. p=0,048."
-                    : "Pulsed signals produce positive results 88%. CW produces 48%. IFO-VGIC mechanism requires varying fields. p=0.048.",
+                  title: d.modPulsation,
+                  desc: d.modPulsationDesc,
                 },
                 {
                   num: "8",
-                  title: locale === "fi" ? "D-vitamiinitaso" : "Vitamin D status",
-                  desc: locale === "fi"
-                    ? "D-vitamiini (1,25(OH)₂D₃) vaimentaa CACNA1C/1D-mRNA:ta (J Neurosci 2001). D-vitamiinipuutos → VGCC-yliekspressio = sama tila kuin ELF-primaami. Tutkimukset D-vitamiinipuutteisissa populaatioissa (talvi, korkea leveysaste) näyttävät vahvempia EMF-vaikutuksia."
-                    : "Vitamin D (1,25(OH)₂D₃) downregulates CACNA1C/1D mRNA (J Neurosci 2001). Vitamin D deficiency → VGCC over-expression = same state as ELF-priming. Studies in vitamin D-deficient populations (winter, high latitudes) should show stronger EMF effects.",
+                  title: d.modVitaminD,
+                  desc: d.modVitaminDDesc,
                 },
               ].map((mod) => (
                 <div key={mod.num} className="rounded-lg border border-card-border bg-card-bg p-4">
@@ -3498,48 +5965,40 @@ export default async function ModelPage({
                     <span className="w-6 h-6 rounded-full bg-accent/10 text-accent text-xs font-semibold flex items-center justify-center">{mod.num}</span>
                     <h4 className="font-semibold text-sm">{mod.title}</h4>
                   </div>
-                  <p className="text-xs text-foreground-muted leading-relaxed">{mod.desc}</p>
+                  <p className="text-xs text-foreground-muted leading-relaxed">{cite(mod.desc)}</p>
                 </div>
               ))}
             </div>
             <div className="rounded-xl border border-card-border bg-card-bg p-5">
               <p className="text-sm font-semibold text-foreground mb-3">
-                {locale === "fi"
-                  ? "Kolme moderaattoria ennustaa tutkimustuloksen tilastollisesti merkitsevästi:"
-                  : "Three moderators predict study outcome with statistical significance:"}
+                {d.modThreePredictors}
               </p>
               <div className="grid gap-2 sm:grid-cols-3 mb-3">
                 <div className="rounded-lg bg-background-secondary p-3 text-center">
-                  <p className="text-xs text-foreground-muted">{locale === "fi" ? "Laji / Esiviriytys" : "Species / Priming"}</p>
+                  <p className="text-xs text-foreground-muted">{d.modSpeciesPriming}</p>
                   <p className="text-sm font-mono font-semibold text-foreground mt-1">&chi;&sup2; = 9.4, <span className="text-accent">p = 0.002</span></p>
                 </div>
                 <div className="rounded-lg bg-background-secondary p-3 text-center">
-                  <p className="text-xs text-foreground-muted">{locale === "fi" ? "Kesto" : "Duration"}</p>
+                  <p className="text-xs text-foreground-muted">{d.modDuration}</p>
                   <p className="text-sm font-mono font-semibold text-foreground mt-1">&chi;&sup2; = 10.8, <span className="text-accent">p = 0.001</span></p>
                 </div>
                 <div className="rounded-lg bg-background-secondary p-3 text-center">
-                  <p className="text-xs text-foreground-muted">{locale === "fi" ? "Pulsaatio" : "Pulsation"}</p>
+                  <p className="text-xs text-foreground-muted">{d.modPulsation}</p>
                   <p className="text-sm font-mono font-semibold text-foreground mt-1">&chi;&sup2; = 3.9, <span className="text-accent">p = 0.048</span></p>
                 </div>
               </div>
               <p className="text-xs text-foreground-muted/70">
-                {locale === "fi"
-                  ? "Perustuu 29 tutkimuksen analyysiin kolmella päätepisteellä. Validoitu Weller 2025 (n=517)."
-                  : "Based on analysis of 29 studies across 3 endpoints. Validated by Weller 2025 (n=517)."}
+                {cite(d.modAnalysisBasis)}
               </p>
             </div>
             <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
               <p className="text-sm text-foreground-muted leading-relaxed">
-                <span className="font-semibold">{locale === "fi" ? "Ennuste REPL-1: " : "Prediction REPL-1: "}</span>
-                {locale === "fi"
-                  ? "Retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta osoittaa näiden kahdeksan moderaattorin ennustavan merkitsevästi positiivisen vs. nollatuloksen. Testattavissa ILMAN uutta dataa."
-                  : "A retrospective analysis of 50–100 published EMF bio-assay studies will show these eight moderators significantly predict positive vs. null outcomes. Testable WITHOUT new data."}
+                <span className="font-semibold">{d.predRepl1Label}</span>
+                {d.predRepl1Desc}
               </p>
             </div>
             <p className="text-xs text-foreground-muted/70">
-              {locale === "fi"
-                ? "Episteeminen taso: kahdeksan moderaattorin kehys on BERM:n synteesi (M-taso). Yksittäisillä moderaattoreilla on empiiristä tukea (E-taso)."
-                : "Epistemic level: the eight-moderator framework is BERM's synthesis (M-level). Individual moderators have empirical support (E-level)."}
+              {cite(d.modEpistemicNote)}
             </p>
           </div>
         </CollapsibleSection>
@@ -3547,38 +6006,26 @@ export default async function ModelPage({
           {/* 58% Below ICNIRP Limits */}
           <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-5 space-y-3">
             <h3 className="text-base font-bold text-foreground">
-              {locale === "fi"
-                ? "58 % DNA-vaurioista tapahtuu ICNIRP-rajojen ALAPUOLELLA"
-                : "58% of DNA Damage Occurs Below ICNIRP Limits"}
+              {d.dnaBelow58Title}
             </h3>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              {locale === "fi"
-                ? "Weller ym. (2025) analysoi 517 genotoksisuustutkimusta ja havaitsi, että 58 % DNA-vaurion raportoineista tutkimuksista käytti altistustasoja ALLE nykyisten ICNIRP-ohjearvojen. Ivancsitsin tutkimus havaitsi DNA-katkoksia jo 35 µT:llä — alle viidesosa ICNIRP:n 200 µT:n työperäisestä rajasta."
-                : "Weller et al. (2025) analyzed 517 genotoxicity studies and found that 58% of studies reporting DNA damage used exposure levels BELOW current ICNIRP guidelines. The Ivancsits study found DNA strand breaks at 35 µT — less than one-fifth of ICNIRP’s 200 µT occupational limit."}
+              {cite(d.dnaBelow58Desc)}
             </p>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              {locale === "fi"
-                ? "ICNIRP-rajat on suunniteltu estämään TERMISIÄ vaikutuksia. DNA-vaurio EMF:stä on EI-TERMINEN mekanismi, joka toimii jänniteohjattujen kalsiumkanavien toimintahäiriön kautta."
-                : "ICNIRP limits are designed to prevent THERMAL effects. DNA damage from EMF is a NON-THERMAL mechanism operating through voltage-gated calcium channel dysfunction."}
+              {d.dnaBelow58Mechanism}
             </p>
           </div>
 
           {/* 9-Hour Recovery Window */}
           <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-5 space-y-3">
             <h3 className="text-base font-bold text-foreground">
-              {locale === "fi"
-                ? "DNA-vaurio korjaantuu 9 tunnissa — jos altistus loppuu"
-                : "DNA Damage Reverses in 9 Hours — If Exposure Stops"}
+              {d.dnaRepairTitle}
             </h3>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              {locale === "fi"
-                ? "Ivancsits ym. osoitti, että EMF:n aiheuttamat DNA-katkokset palautuivat normaaliksi 9 tunnissa altistuksen päättymisen jälkeen. Tämä kvantifioi BERM:n palautumisikkunan: keho VOI korjata EMF:n aiheuttamia vaurioita, mutta vain jos sille annetaan riittävästi EMF-vapaata aikaa."
-                : "Ivancsits et al. showed that EMF-induced DNA strand breaks returned to normal within 9 hours after exposure ceased. This quantifies BERM’s recovery window: the body CAN repair EMF-induced damage, but only if given sufficient EMF-free time."}
+              {cite(d.dnaRepairDesc)}
             </p>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              {locale === "fi"
-                ? "Modernit ympäristöt 24/7 WiFillä, LED-valaistuksella ja älypuhelimella sängyssä poistavat tämän palautumisikkunan kokonaan. Tyypillinen moderni makuuhuone tarjoaa nolla EMF-vapaata palautumisaikaa."
-                : "Modern environments with 24/7 WiFi, LED lighting, and smartphones in bed eliminate this recovery window entirely. The typical modern bedroom provides zero EMF-free recovery time."}
+              {d.dnaModernEnv}
             </p>
           </div>
 

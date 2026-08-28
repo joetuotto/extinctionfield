@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* Decorative silhouettes inherit the exact surface behind them. */
+.species-silhouette {
+  background-color: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .species-silhouette img {
+    filter: brightness(0) invert(0.9);
+  }
+}
+
+:root[data-theme="dark"] .species-silhouette img {
+  filter: brightness(0) invert(0.9);
+}
+
 /* ── Dark palette (default) ── */
 :root {
   /*
@@ -37,6 +52,14 @@
   --rule-strong: #4b5563;
   --figure-bg: #121418;
   --figure-caption-bg: rgba(255, 255, 255, 0.03);
+  --chart-grid: rgba(163, 163, 163, 0.18);
+  --chart-axis: rgba(163, 163, 163, 0.46);
+  --chart-series-1: #60A5FA;
+  --chart-series-2: #F59E0B;
+  --chart-series-3: #22C55E;
+  --chart-series-4: #A78BFA;
+  --chart-series-5: #F472B6;
+  --chart-series-6: #22D3EE;
   --atlas-bg: #0a0a1a;
   --atlas-surface: #12122a;
   --atlas-edge: rgba(255, 255, 255, 0.09);
@@ -75,6 +98,14 @@
     --rule-strong: #87919b;
     --figure-bg: #FFFEFA;
     --figure-caption-bg: #F4F3EE;
+    --chart-grid: rgba(82, 97, 110, 0.18);
+    --chart-axis: rgba(82, 97, 110, 0.5);
+    --chart-series-1: #285EA8;
+    --chart-series-2: #A35F0B;
+    --chart-series-3: #2E7D62;
+    --chart-series-4: #6B5DA8;
+    --chart-series-5: #A13E6D;
+    --chart-series-6: #16758D;
     --atlas-bg: #EEEDEA;
     --atlas-surface: rgba(255, 254, 250, 0.92);
     --atlas-edge: rgba(0, 0, 0, 0.18);
@@ -113,6 +144,14 @@
   --rule-strong: #4b5563;
   --figure-bg: #121418;
   --figure-caption-bg: rgba(255, 255, 255, 0.03);
+  --chart-grid: rgba(163, 163, 163, 0.18);
+  --chart-axis: rgba(163, 163, 163, 0.46);
+  --chart-series-1: #60A5FA;
+  --chart-series-2: #F59E0B;
+  --chart-series-3: #22C55E;
+  --chart-series-4: #A78BFA;
+  --chart-series-5: #F472B6;
+  --chart-series-6: #22D3EE;
   --atlas-bg: #0a0a1a;
   --atlas-surface: #12122a;
   --atlas-edge: rgba(255, 255, 255, 0.09);
@@ -150,6 +189,14 @@
   --rule-strong: #87919b;
   --figure-bg: #FFFEFA;
   --figure-caption-bg: #F4F3EE;
+  --chart-grid: rgba(82, 97, 110, 0.18);
+  --chart-axis: rgba(82, 97, 110, 0.5);
+  --chart-series-1: #285EA8;
+  --chart-series-2: #A35F0B;
+  --chart-series-3: #2E7D62;
+  --chart-series-4: #6B5DA8;
+  --chart-series-5: #A13E6D;
+  --chart-series-6: #16758D;
   --atlas-bg: #EEEDEA;
   --atlas-surface: rgba(255, 254, 250, 0.92);
   --atlas-edge: rgba(0, 0, 0, 0.18);
@@ -292,10 +339,41 @@ a, button {
 }
 
 .data-figure {
-  background: var(--figure-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 0.75rem;
-  padding: 0.75rem;
+  background:
+    radial-gradient(
+      circle at 8% -18%,
+      color-mix(in srgb, var(--accent) 11%, transparent),
+      transparent 44%
+    ),
+    linear-gradient(
+      155deg,
+      color-mix(in srgb, var(--figure-bg) 96%, var(--foreground) 4%),
+      var(--figure-bg) 62%
+    );
+  border: 1px solid color-mix(in srgb, var(--card-border) 84%, var(--foreground) 16%);
+  border-radius: 0.875rem;
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--foreground) 5%, transparent) inset,
+    0 18px 44px -36px color-mix(in srgb, var(--foreground) 42%, transparent);
+  isolation: isolate;
+  overflow: clip;
+  padding: 0.875rem;
+  position: relative;
+}
+
+.data-figure::before {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 78%, transparent),
+    color-mix(in srgb, var(--status-model) 48%, transparent),
+    transparent 78%
+  );
+  content: "";
+  height: 1px;
+  inset: 0 0 auto;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
 }
 
 .data-figure__caption {
@@ -307,8 +385,8 @@ a, button {
   font-weight: 650;
   letter-spacing: 0.01em;
   line-height: 1.45;
-  margin: -0.75rem -0.75rem 0.75rem;
-  padding: 0.7rem 0.75rem;
+  margin: -0.875rem -0.875rem 0.875rem;
+  padding: 0.8rem 0.875rem 0.75rem;
 }
 
 .data-figure__title {
@@ -332,8 +410,135 @@ a, button {
 .data-figure__note,
 .data-figure__source {
   border-top: 1px solid var(--card-border);
-  margin: 0.75rem -0.75rem -0.75rem;
-  padding: 0.625rem 0.75rem;
+  margin: 0.875rem -0.875rem -0.875rem;
+  padding: 0.7rem 0.875rem;
+}
+
+/* Shared data-visualisation primitives. These keep custom SVG charts visually
+ * consistent without changing the scientific encodings inside each figure. */
+.chart-surface {
+  background:
+    radial-gradient(
+      circle at 12% 0%,
+      color-mix(in srgb, var(--accent) 9%, transparent),
+      transparent 38%
+    ),
+    color-mix(in srgb, var(--figure-bg) 97%, var(--foreground) 3%);
+  border: 1px solid color-mix(in srgb, var(--card-border) 84%, var(--foreground) 16%);
+  border-radius: 0.875rem;
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--foreground) 5%, transparent) inset,
+    0 18px 44px -38px color-mix(in srgb, var(--foreground) 46%, transparent);
+  overflow: clip;
+  padding: clamp(0.75rem, 0.55rem + 0.6vw, 1rem);
+}
+
+.chart-surface__header {
+  align-items: flex-start;
+  border-bottom: 1px solid color-mix(in srgb, var(--card-border) 82%, transparent);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: space-between;
+  margin: calc(clamp(0.75rem, 0.55rem + 0.6vw, 1rem) * -1)
+    calc(clamp(0.75rem, 0.55rem + 0.6vw, 1rem) * -1) 0.75rem;
+  padding: 0.8rem clamp(0.75rem, 0.55rem + 0.6vw, 1rem) 0.7rem;
+}
+
+.chart-scroll {
+  -webkit-overflow-scrolling: touch;
+  margin-inline: -0.15rem;
+  overscroll-behavior-inline: contain;
+  overflow-x: auto;
+  padding: 0.25rem 0.15rem 0.55rem;
+  scrollbar-color: color-mix(in srgb, var(--foreground-muted) 42%, transparent) transparent;
+  scrollbar-width: thin;
+}
+
+.chart-scroll::-webkit-scrollbar {
+  height: 7px;
+}
+
+.chart-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--foreground-muted) 36%, transparent);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+.chart-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chart-svg {
+  color: var(--foreground);
+  display: block;
+  shape-rendering: geometricPrecision;
+}
+
+.chart-svg text {
+  font-family: var(--font-interface);
+  font-variant-numeric: tabular-nums;
+  text-rendering: geometricPrecision;
+}
+
+.chart-grid-line {
+  stroke: var(--chart-grid);
+}
+
+.chart-axis-line {
+  stroke: var(--chart-axis);
+}
+
+.chart-legend {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chart-key {
+  align-items: center;
+  background: color-mix(in srgb, var(--card-bg) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--card-border) 88%, transparent);
+  border-radius: 999px;
+  color: var(--foreground-muted);
+  display: inline-flex;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  gap: 0.4rem;
+  line-height: 1.2;
+  max-width: 100%;
+  min-height: 1.75rem;
+  padding: 0.3rem 0.55rem;
+  white-space: normal;
+}
+
+.chart-key__swatch {
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px color-mix(in srgb, currentColor 13%, transparent);
+  flex: 0 0 auto;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .data-figure,
+  .chart-surface {
+    border-radius: 0.75rem;
+  }
+
+  .chart-scroll {
+    margin-inline: -0.35rem;
+    padding-inline: 0.35rem;
+  }
+
+  .chart-key {
+    font-size: 0.65625rem;
+  }
 }
 
 /* Thesis break: dark ink-blue band between homepage chapters */
@@ -391,6 +596,16 @@ a, button {
 /* Chart font: use Inter instead of system-ui for consistency */
 svg text {
   font-family: var(--font-interface);
+}
+
+main svg[role="img"] {
+  display: block;
+  shape-rendering: geometricPrecision;
+}
+
+main svg[role="img"] text {
+  font-variant-numeric: tabular-nums;
+  text-rendering: geometricPrecision;
 }
 
 @keyframes slide-up {

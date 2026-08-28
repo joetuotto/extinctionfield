@@ -4,6 +4,7 @@ import { BrainCircuit } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CautionBox } from "@/components/CautionBox";
 import { DerivedPrediction } from "@/components/DerivedPrediction";
+import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: {
@@ -13,6 +14,7 @@ const COPY = {
     backLink: "← Back to Evidence",
     cautionText:
       "This page presents the Ca²⁺ connection across four neurodegenerative diseases. Each disease's Ca²⁺ mechanism is independently established. The unifying EMF connection remains a BERM hypothesis.",
+    labels: { cellType: "Cell type", caMechanism: "mechanism", bermConnection: "BERM connection", protectiveDrug: "Protective drug", occupationalData: "Occupational data" },
 
     diseasesTitle: "The four diseases",
     diseases: [
@@ -109,6 +111,7 @@ const COPY = {
     backLink: "← Takaisin Evidenssiin",
     cautionText:
       "Tämä sivu esittää Ca²⁺-yhteyden neljän neurodegeneratiivisen sairauden välillä. Kunkin sairauden Ca²⁺-mekanismi on itsenäisesti vahvistettu. Yhdistävä EMF-yhteys on edelleen BERM-hypoteesi.",
+    labels: { cellType: "Solutyyppi", caMechanism: "mekanismi", bermConnection: "BERM-yhteys", protectiveDrug: "Suojaava lääke", occupationalData: "Ammattidata" },
 
     diseasesTitle: "Neljä sairautta",
     diseases: [
@@ -198,18 +201,308 @@ const COPY = {
     predictionLink: "Ks. ennusteet →",
     predictionHref: "/predictions",
   },
+  ja: {
+    title: "四つの神経変性疾患：一つのメカニズム",
+    subtitle:
+      "アルツハイマー病、多発性硬化症、パーキンソン病、ALSはそれぞれ異なる細胞タイプをCa²⁺依存性メカニズムを通じて攻撃する。それぞれがCa²⁺標的薬による薬理学的検証を持つ。同じカスケード、四つの発現形。",
+    backLink: "← エビデンスに戻る",
+    cautionText:
+      "このページは四つの神経変性疾患にわたるCa²⁺の関連性を提示する。各疾患のCa²⁺メカニズムは独立に確立されている。統一的なEMFの関連性はBERM仮説のままである。",
+    labels: { cellType: "細胞タイプ", caMechanism: "メカニズム", bermConnection: "BERM接続", protectiveDrug: "保護薬", occupationalData: "職業データ" },
+
+    diseasesTitle: "四つの疾患",
+    diseases: [
+      {
+        name: "アルツハイマー病",
+        cellType: "海馬 / 大脳皮質",
+        caMechanism:
+          "PGC + コルチゾール↑ + メラトニン↓。細胞内Ca²⁺調節異常はアミロイド蓄積に先行する初期事象である。Ca²⁺はAβを無害なフィブリルではなく毒性オリゴマーへ導く。",
+        bermLayers: "VK14 (コルチゾール→海馬), VK3 (PGC→メラトニン), S6",
+        protectiveDrug:
+          "セマグルチド (GLP-1R→Ca²⁺)、メラトニン",
+      },
+      {
+        name: "多発性硬化症",
+        cellType: "OPC / ミエリン",
+        caMechanism:
+          "Cav1.2 → OPC分化 → ミエリン化。L型VGCC活性はオリゴデンドロサイト前駆細胞の分化とミエリン鞘形成に必要である。Cav1.2タイミングの乱れ → ミエリン化の失敗。",
+        bermLayers: "VK20",
+        protectiveDrug:
+          "— (ただしEMF誘発性Cav1.2調節異常 → ミエリン化タイミング障害)",
+      },
+      {
+        name: "パーキンソン病",
+        cellType: "SNpc DAニューロン",
+        caMechanism:
+          "Cav1.3 → ペースメーカー活動。Cav1.3は黒質緻密部ドパミン作動性ニューロンの自律的ペースメーキングを駆動する。Ca²⁺過負荷 → ミトコンドリアストレス → 選択的神経細胞死。",
+        bermLayers: "Cav1.3はSNpcニューロンの自律的ペースメーキングを駆動；Ca²⁺過負荷 → ミトコンドリアストレス → 細胞死",
+        protectiveDrug:
+          "イスラジピン (Cav1.3遮断薬、動物モデルで神経保護作用)",
+      },
+      {
+        name: "ALS",
+        cellType: "運動ニューロン",
+        caMechanism:
+          "低Ca²⁺緩衝能 + Ca²⁺透過性AMPA受容体。運動ニューロンは異常に低いカルシウム緩衝能力を持ち、Ca²⁺透過性AMPA受容体の活性化に対して選択的に脆弱となる。",
+        bermLayers: "VK45",
+        protectiveDrug:
+          "リルゾール (間接的 — Na⁺遮断 → グルタミン酸↓ → Ca²⁺↓)",
+        occupational: "電気作業者 OR 1.3–1.7",
+      },
+    ],
+
+    commonTitle: "共通のスレッド",
+    commonPoints: [
+      "四つの疾患すべてが特定の細胞タイプにおけるCa²⁺過負荷を含む",
+      "各細胞タイプは固有の脆弱性を持つ：海馬ニューロンはコルチゾール駆動性Ca²⁺に、OPCはCav1.2タイミングに、SNpcニューロンはCav1.3ペースメーカー負荷に、運動ニューロンはAMPA媒介性Ca²⁺に",
+      "薬理学的検証：Ca²⁺メカニズムを標的とする薬剤が各疾患で有効性を示す",
+      "EMFはVGCC経路を通じて共通の環境要因を提供する",
+    ],
+
+    tableTitle: "異なる細胞タイプ、同じメカニズム",
+    tableHeaders: {
+      disease: "疾患",
+      cellType: "細胞タイプ",
+      caMechanism: "Ca²⁺メカニズム",
+      protectiveDrug: "保護薬",
+    },
+    tableRows: [
+      {
+        disease: "アルツハイマー",
+        cellType: "海馬 / 大脳皮質",
+        caMechanism: "PGC + コルチゾール↑ + メラトニン↓",
+        protectiveDrug: "セマグルチド、メラトニン",
+      },
+      {
+        disease: "多発性硬化症",
+        cellType: "OPC / ミエリン",
+        caMechanism: "Cav1.2 → OPC分化",
+        protectiveDrug: "—",
+      },
+      {
+        disease: "パーキンソン",
+        cellType: "SNpc DAニューロン",
+        caMechanism: "Cav1.3ペースメーカー過負荷",
+        protectiveDrug: "イスラジピン",
+      },
+      {
+        disease: "ALS",
+        cellType: "運動ニューロン",
+        caMechanism: "低緩衝能 + Ca²⁺透過性AMPA",
+        protectiveDrug: "リルゾール (間接的)",
+      },
+    ],
+
+    predictionText:
+      "予測 E-NEW-25：ALS罹患率はEMF曝露の高い職業で上昇している。電気作業者は複数の疫学研究においてALSに対してOR 1.3–1.7を示す。",
+    predictionLink: "予測を見る →",
+    predictionHref: "/predictions",
+  },
+  fr: {
+    title: "Quatre neurodégénérescences : un seul mécanisme",
+    subtitle:
+      "La maladie d'Alzheimer, la sclérose en plaques, la maladie de Parkinson et la SLA attaquent chacune un type cellulaire différent par des mécanismes dépendants du Ca²⁺. Chacune bénéficie d'une validation pharmacologique par des médicaments ciblant le Ca²⁺. Même cascade, quatre manifestations.",
+    backLink: "← Retour aux preuves",
+    cautionText:
+      "Cette page présente la connexion Ca²⁺ entre quatre maladies neurodégénératives. Le mécanisme Ca²⁺ de chaque maladie est établi indépendamment. La connexion unificatrice avec les CEM reste une hypothèse BERM.",
+    labels: { cellType: "Type cellulaire", caMechanism: "mécanisme", bermConnection: "Connexion BERM", protectiveDrug: "Médicament protecteur", occupationalData: "Données professionnelles" },
+
+    diseasesTitle: "Les quatre maladies",
+    diseases: [
+      {
+        name: "Maladie d'Alzheimer",
+        cellType: "Hippocampe / cortex",
+        caMechanism:
+          "PGC + cortisol↑ + mélatonine↓. La dysrégulation intracellulaire du Ca²⁺ est un événement PRÉCOCE précédant l'accumulation d'amyloïde. Le Ca²⁺ dirige l'Aβ vers des oligomères toxiques plutôt que des fibrilles inoffensives.",
+        bermLayers: "VK14 (cortisol→hippocampe), VK3 (PGC→mélatonine), S6",
+        protectiveDrug:
+          "Sémaglutide (GLP-1R→Ca²⁺), mélatonine",
+      },
+      {
+        name: "Sclérose en plaques",
+        cellType: "OPC / myéline",
+        caMechanism:
+          "Cav1.2 → différenciation OPC → myélinisation. L'activité VGCC de type L est requise pour la différenciation des cellules précurseurs d'oligodendrocytes et la formation des gaines de myéline. Perturbation du timing Cav1.2 → échec de la myélinisation.",
+        bermLayers: "VK20",
+        protectiveDrug:
+          "— (mais la dysrégulation Cav1.2 induite par CEM → perturbation du timing de myélinisation)",
+      },
+      {
+        name: "Maladie de Parkinson",
+        cellType: "Neurones DA du SNpc",
+        caMechanism:
+          "Cav1.3 → activité pacemaker. Cav1.3 pilote le pacemaking autonome dans les neurones dopaminergiques de la substance noire pars compacta. Surcharge Ca²⁺ → stress mitochondrial → mort neuronale sélective.",
+        bermLayers: "Cav1.3 pilote le pacemaking autonome dans les neurones SNpc ; surcharge Ca²⁺ → stress mitochondrial → mort",
+        protectiveDrug:
+          "Isradipine (bloqueur Cav1.3, neuroprotecteur dans les modèles animaux)",
+      },
+      {
+        name: "SLA",
+        cellType: "Motoneurones",
+        caMechanism:
+          "Faible tampon Ca²⁺ + récepteurs AMPA perméables au Ca²⁺. Les motoneurones ont une capacité de tamponnage calcique inhabituellement faible, les rendant sélectivement vulnérables à l'activation des récepteurs AMPA perméables au Ca²⁺.",
+        bermLayers: "VK45",
+        protectiveDrug:
+          "Riluzole (indirect — blocage Na⁺ → glutamate↓ → Ca²⁺↓)",
+        occupational: "Travailleurs du secteur électrique OR 1,3–1,7",
+      },
+    ],
+
+    commonTitle: "Fil conducteur",
+    commonPoints: [
+      "Les quatre maladies impliquent une surcharge en Ca²⁺ dans des types cellulaires spécifiques",
+      "Chaque type cellulaire a une vulnérabilité unique : les neurones hippocampiques au Ca²⁺ induit par le cortisol, les OPC au timing Cav1.2, les neurones SNpc à la charge pacemaker Cav1.3, les motoneurones au Ca²⁺ médié par AMPA",
+      "Validation pharmacologique : les médicaments ciblant le mécanisme Ca²⁺ montrent un bénéfice dans chaque maladie",
+      "Les CEM fournissent un facteur environnemental commun via la voie VGCC",
+    ],
+
+    tableTitle: "Différents types cellulaires, même mécanisme",
+    tableHeaders: {
+      disease: "Maladie",
+      cellType: "Type cellulaire",
+      caMechanism: "Mécanisme Ca²⁺",
+      protectiveDrug: "Médicament protecteur",
+    },
+    tableRows: [
+      {
+        disease: "Alzheimer",
+        cellType: "Hippocampe / cortex",
+        caMechanism: "PGC + cortisol↑ + mélatonine↓",
+        protectiveDrug: "Sémaglutide, mélatonine",
+      },
+      {
+        disease: "Sclérose en plaques",
+        cellType: "OPC / myéline",
+        caMechanism: "Cav1.2 → différenciation OPC",
+        protectiveDrug: "—",
+      },
+      {
+        disease: "Parkinson",
+        cellType: "Neurones DA du SNpc",
+        caMechanism: "Surcharge pacemaker Cav1.3",
+        protectiveDrug: "Isradipine",
+      },
+      {
+        disease: "SLA",
+        cellType: "Motoneurones",
+        caMechanism: "Faible tampon + AMPA perméable au Ca²⁺",
+        protectiveDrug: "Riluzole (indirect)",
+      },
+    ],
+
+    predictionText:
+      "Prédiction E-NEW-25 : l'incidence de la SLA est élevée dans les professions à forte exposition aux CEM. Les travailleurs du secteur électrique présentent un OR de 1,3–1,7 pour la SLA dans plusieurs études épidémiologiques.",
+    predictionLink: "Voir les prédictions →",
+    predictionHref: "/predictions",
+  },
+  ko: {
+    title: "네 가지 신경퇴행성 질환: 하나의 메커니즘",
+    subtitle:
+      "알츠하이머병, 다발성 경화증, 파킨슨병, ALS는 각각 다른 세포 유형을 Ca²⁺ 의존성 메커니즘을 통해 공격한다. 각각은 Ca²⁺ 표적 약물을 통한 약리학적 검증을 가진다. 같은 캐스케이드, 네 가지 발현.",
+    backLink: "← 증거로 돌아가기",
+    cautionText:
+      "이 페이지는 네 가지 신경퇴행성 질환에 걸친 Ca²⁺ 연관성을 제시한다. 각 질환의 Ca²⁺ 메커니즘은 독립적으로 확립되어 있다. 통합적 EMF 연관성은 BERM 가설로 남아 있다.",
+    labels: { cellType: "세포 유형", caMechanism: "메커니즘", bermConnection: "BERM 연결", protectiveDrug: "보호 약물", occupationalData: "직업 데이터" },
+
+    diseasesTitle: "네 가지 질환",
+    diseases: [
+      {
+        name: "알츠하이머병",
+        cellType: "해마 / 대뇌피질",
+        caMechanism:
+          "PGC + 코르티솔↑ + 멜라토닌↓. 세포 내 Ca²⁺ 조절 이상은 아밀로이드 축적에 선행하는 초기 사건이다. Ca²⁺는 Aβ를 무해한 피브릴이 아닌 독성 올리고머로 유도한다.",
+        bermLayers: "VK14 (코르티솔→해마), VK3 (PGC→멜라토닌), S6",
+        protectiveDrug:
+          "세마글루타이드 (GLP-1R→Ca²⁺), 멜라토닌",
+      },
+      {
+        name: "다발성 경화증",
+        cellType: "OPC / 미엘린",
+        caMechanism:
+          "Cav1.2 → OPC 분화 → 미엘린화. L형 VGCC 활성은 희소돌기아교세포 전구 세포의 분화와 미엘린 수초 형성에 필요하다. Cav1.2 타이밍 교란 → 미엘린화 실패.",
+        bermLayers: "VK20",
+        protectiveDrug:
+          "— (그러나 EMF 유도 Cav1.2 조절 이상 → 미엘린화 타이밍 장애)",
+      },
+      {
+        name: "파킨슨병",
+        cellType: "SNpc DA 뉴런",
+        caMechanism:
+          "Cav1.3 → 페이스메이커 활동. Cav1.3는 흑질 치밀부 도파민성 뉴런의 자율적 페이스메이킹을 구동한다. Ca²⁺ 과부하 → 미토콘드리아 스트레스 → 선택적 신경세포 사멸.",
+        bermLayers: "Cav1.3는 SNpc 뉴런의 자율적 페이스메이킹을 구동; Ca²⁺ 과부하 → 미토콘드리아 스트레스 → 사멸",
+        protectiveDrug:
+          "이스라디핀 (Cav1.3 차단제, 동물 모델에서 신경보호 효과)",
+      },
+      {
+        name: "ALS",
+        cellType: "운동 뉴런",
+        caMechanism:
+          "낮은 Ca²⁺ 완충 능력 + Ca²⁺ 투과성 AMPA 수용체. 운동 뉴런은 비정상적으로 낮은 칼슘 완충 능력을 가져 Ca²⁺ 투과성 AMPA 수용체 활성화에 선택적으로 취약하다.",
+        bermLayers: "VK45",
+        protectiveDrug:
+          "릴루졸 (간접적 — Na⁺ 차단 → 글루타메이트↓ → Ca²⁺↓)",
+        occupational: "전기 작업자 OR 1.3–1.7",
+      },
+    ],
+
+    commonTitle: "공통 맥락",
+    commonPoints: [
+      "네 가지 질환 모두 특정 세포 유형에서 Ca²⁺ 과부하를 포함한다",
+      "각 세포 유형은 고유한 취약성을 가진다: 해마 뉴런은 코르티솔 유도 Ca²⁺에, OPC는 Cav1.2 타이밍에, SNpc 뉴런은 Cav1.3 페이스메이커 부하에, 운동 뉴런은 AMPA 매개 Ca²⁺에",
+      "약리학적 검증: Ca²⁺ 메커니즘을 표적으로 하는 약물이 각 질환에서 효과를 보인다",
+      "EMF는 VGCC 경로를 통해 공통 환경 요인을 제공한다",
+    ],
+
+    tableTitle: "다른 세포 유형, 같은 메커니즘",
+    tableHeaders: {
+      disease: "질환",
+      cellType: "세포 유형",
+      caMechanism: "Ca²⁺ 메커니즘",
+      protectiveDrug: "보호 약물",
+    },
+    tableRows: [
+      {
+        disease: "알츠하이머",
+        cellType: "해마 / 대뇌피질",
+        caMechanism: "PGC + 코르티솔↑ + 멜라토닌↓",
+        protectiveDrug: "세마글루타이드, 멜라토닌",
+      },
+      {
+        disease: "다발성 경화증",
+        cellType: "OPC / 미엘린",
+        caMechanism: "Cav1.2 → OPC 분화",
+        protectiveDrug: "—",
+      },
+      {
+        disease: "파킨슨",
+        cellType: "SNpc DA 뉴런",
+        caMechanism: "Cav1.3 페이스메이커 과부하",
+        protectiveDrug: "이스라디핀",
+      },
+      {
+        disease: "ALS",
+        cellType: "운동 뉴런",
+        caMechanism: "낮은 완충 + Ca²⁺ 투과성 AMPA",
+        protectiveDrug: "릴루졸 (간접적)",
+      },
+    ],
+
+    predictionText:
+      "예측 E-NEW-25: ALS 발병률은 높은 EMF 노출 직업에서 상승한다. 전기 작업자는 여러 역학 연구에서 ALS에 대해 OR 1.3–1.7을 보인다.",
+    predictionLink: "예측 보기 →",
+    predictionHref: "/predictions",
+  },
 } as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const d = locale === "fi" ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
   return { title: `${d.title} – Extinction Field`, description: d.subtitle };
 }
 
 export default async function FourNeurodegenerationsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const activeLocale = locale === "fi" ? "fi" : "en";
-  const d = COPY[activeLocale];
+  const d = pickCopy(COPY, locale);
   const prefix = `/${locale}`;
 
   return (
@@ -218,7 +511,7 @@ export default async function FourNeurodegenerationsPage({ params }: { params: P
         <Link href={`${prefix}/evidence`} className="text-sm text-accent hover:underline">{d.backLink}</Link>
       </p>
       <PageHeader icon={BrainCircuit} title={d.title} subtitle={d.subtitle} />
-      <div className="mt-8"><CautionBox locale={activeLocale}><p>{d.cautionText}</p></CautionBox></div>
+      <div className="mt-8"><CautionBox locale={locale}><p>{d.cautionText}</p></CautionBox></div>
 
       {/* Section 1: The four diseases */}
       <section className="mt-12">
@@ -229,24 +522,24 @@ export default async function FourNeurodegenerationsPage({ params }: { params: P
               <h3 className="text-base font-semibold mb-3">{disease.name}</h3>
               <div className="space-y-2 text-sm text-foreground-muted leading-relaxed">
                 <p>
-                  <span className="font-medium text-foreground">{activeLocale === "fi" ? "Solutyyppi" : "Cell type"}:</span>{" "}
+                  <span className="font-medium text-foreground">{d.labels.cellType}:</span>{" "}
                   {disease.cellType}
                 </p>
                 <p>
-                  <span className="font-medium text-foreground">Ca{"²⁺"} {activeLocale === "fi" ? "mekanismi" : "mechanism"}:</span>{" "}
+                  <span className="font-medium text-foreground">Ca{"²⁺"} {d.labels.caMechanism}:</span>{" "}
                   {disease.caMechanism}
                 </p>
                 <p>
-                  <span className="font-medium text-foreground">{activeLocale === "fi" ? "BERM-yhteys" : "BERM connection"}:</span>{" "}
+                  <span className="font-medium text-foreground">{d.labels.bermConnection}:</span>{" "}
                   {disease.bermLayers}
                 </p>
                 <p>
-                  <span className="font-medium text-foreground">{activeLocale === "fi" ? "Suojaava lääke" : "Protective drug"}:</span>{" "}
+                  <span className="font-medium text-foreground">{d.labels.protectiveDrug}:</span>{" "}
                   {disease.protectiveDrug}
                 </p>
                 {"occupational" in disease && (
                   <p>
-                    <span className="font-medium text-foreground">{activeLocale === "fi" ? "Ammattidata" : "Occupational data"}:</span>{" "}
+                    <span className="font-medium text-foreground">{d.labels.occupationalData}:</span>{" "}
                     {disease.occupational}
                   </p>
                 )}

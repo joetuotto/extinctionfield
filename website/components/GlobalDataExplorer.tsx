@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import {
   membershipsFromPanel,
   parseGlobalPanelCsv,
@@ -10,9 +10,9 @@ import {
   type GlobalTier,
   type GlobalTierMemberships,
 } from "@/lib/globalArtifacts";
+import { pickCopy } from "@/lib/i18n";
 import { GlobalTierMap } from "./GlobalTierMap";
 
-type Locale = "en" | "fi";
 type TierFilter = "all" | GlobalTier;
 
 const copy = {
@@ -49,6 +49,105 @@ const copy = {
       "A tier represents inclusion and data coverage, not model quality, an inferred effect, or a future fertility prediction.",
     noCountries: "No published countries match this tier.",
   },
+  ja: {
+    title: "グローバル国別年次エクスプローラー",
+    description:
+      "公開された国別年次パネルを国と事前指定されたカバレッジ層で閲覧する。報告または推定された人口統計シリーズと技術タイミングプロキシを含み、測定されたFieldStateや予測表示ではない。",
+    loading: "公開グローバルパネルを読み込み中…",
+    error: "グローバル国別年次パネルはまだ利用できません。公開アーティファクトが読み込まれるまで値は表示されません。",
+    tier: "カバレッジ層",
+    country: "国",
+    year: "年",
+    all: "すべての公開国",
+    core: "コア51",
+    extended: "拡張",
+    global: "グローバル",
+    unassigned: "公開層なし",
+    tfr: "公開TFRシリーズ",
+    mobile: "モバイル加入",
+    urban: "都市人口",
+    gdp: "GDP PPP一人当たり",
+    noValue: "未報告",
+    provenance: "フィールド来歴",
+    tfrProvenance: "TFR来歴",
+    tfrSource: "出典",
+    tfrStatus: "シリーズ状態",
+    tfrMeasurementType: "測定タイプ",
+    missingness: "欠測注記",
+    trends: "公開国別年次トレンド",
+    tfrTrend: "年別公開TFRシリーズ",
+    mobileTrend: "年別100人当たりモバイル加入",
+    noTrend: "このシリーズには公開値がありません。",
+    panelNote:
+      "層は包含とデータカバレッジを表し、モデル品質、推定効果、将来の出生率予測ではない。",
+    noCountries: "この層に該当する公開国はありません。",
+  },
+  fr: {
+    title: "Explorateur global pays-année",
+    description:
+      "Parcourez le panel pays-année publié par pays et niveau de couverture pré-spécifié. Il contient des séries démographiques publiées rapportées ou estimées et des proxys temporels technologiques, pas de FieldState mesuré ni d'affichage prédictif.",
+    loading: "Chargement du panel global publié…",
+    error: "Le panel pays-année global n'est pas encore disponible. Aucune valeur n'est affichée tant qu'un artefact publié ne peut être chargé.",
+    tier: "Niveau de couverture",
+    country: "Pays",
+    year: "Année",
+    all: "Tous les pays publiés",
+    core: "Core 51",
+    extended: "Étendu",
+    global: "Global",
+    unassigned: "Aucun niveau publié",
+    tfr: "Série TFR publiée",
+    mobile: "Abonnements mobiles",
+    urban: "Population urbaine",
+    gdp: "PIB PPA par habitant",
+    noValue: "Non rapporté",
+    provenance: "Provenance du champ",
+    tfrProvenance: "Provenance TFR",
+    tfrSource: "Source",
+    tfrStatus: "Statut de la série",
+    tfrMeasurementType: "Type de mesure",
+    missingness: "Note de données manquantes",
+    trends: "Tendances pays-année publiées",
+    tfrTrend: "Série TFR publiée par année",
+    mobileTrend: "Abonnements mobiles pour 100 personnes par année",
+    noTrend: "Aucune valeur publiée n'est disponible pour cette série.",
+    panelNote:
+      "Un niveau représente l'inclusion et la couverture des données, pas la qualité du modèle, un effet inféré ou une prédiction future de fécondité.",
+    noCountries: "Aucun pays publié ne correspond à ce niveau.",
+  },
+  ko: {
+    title: "글로벌 국가-연도 탐색기",
+    description:
+      "공개된 국가-연도 패널을 국가 및 사전 지정된 커버리지 층별로 탐색합니다. 보고 또는 추정된 인구통계 시리즈와 기술 타이밍 프록시를 포함하며, 측정된 FieldState나 예측 표시가 아닙니다.",
+    loading: "공개 글로벌 패널 로딩 중…",
+    error: "글로벌 국가-연도 패널은 아직 사용할 수 없습니다. 공개 아티팩트가 로드될 때까지 값이 표시되지 않습니다.",
+    tier: "커버리지 층",
+    country: "국가",
+    year: "연도",
+    all: "모든 공개 국가",
+    core: "코어 51",
+    extended: "확장",
+    global: "글로벌",
+    unassigned: "공개 층 없음",
+    tfr: "공개 TFR 시리즈",
+    mobile: "모바일 가입",
+    urban: "도시 인구",
+    gdp: "GDP PPP 1인당",
+    noValue: "미보고",
+    provenance: "필드 출처",
+    tfrProvenance: "TFR 출처",
+    tfrSource: "출처",
+    tfrStatus: "시리즈 상태",
+    tfrMeasurementType: "측정 유형",
+    missingness: "결측 주석",
+    trends: "공개 국가-연도 추세",
+    tfrTrend: "연도별 공개 TFR 시리즈",
+    mobileTrend: "연도별 100명당 모바일 가입",
+    noTrend: "이 시리즈에 대한 공개 값이 없습니다.",
+    panelNote:
+      "층은 포함 및 데이터 커버리지를 나타내며, 모델 품질, 추정 효과 또는 미래 출산율 예측이 아닙니다.",
+    noCountries: "이 층에 해당하는 공개 국가가 없습니다.",
+  },
   fi: {
     title: "Globaalin maa–vuosi-aineiston tutkija",
     description:
@@ -84,14 +183,16 @@ const copy = {
   },
 } as const;
 
-function tierLabel(tier: GlobalTier | undefined, locale: Locale) {
-  if (!tier) return copy[locale].unassigned;
-  return copy[locale][tier];
+function tierLabel(tier: GlobalTier | undefined, locale: string) {
+  const d = pickCopy(copy, locale);
+  if (!tier) return d.unassigned;
+  return d[tier];
 }
 
-function membershipLabel(iso3: string, memberships: GlobalTierMemberships | null, locale: Locale) {
+function membershipLabel(iso3: string, memberships: GlobalTierMemberships | null, locale: string) {
+  const d = pickCopy(copy, locale);
   const values = memberships?.membershipsByIso[iso3] ?? [];
-  return values.length > 0 ? values.map((tier) => tierLabel(tier, locale)).join(" · ") : copy[locale].unassigned;
+  return values.length > 0 ? values.map((tier) => tierLabel(tier, locale)).join(" · ") : d.unassigned;
 }
 
 function formatValue(value: number | undefined, digits = 2) {
@@ -111,6 +212,7 @@ function TrendChart({
   color: string;
   fallback: string;
 }) {
+  const gradientId = `trend-area-${useId().replace(/:/g, "")}`;
   const points = rows.flatMap((row) => {
     const value = accessor(row);
     return value === undefined ? [] : [{ year: row.year, value }];
@@ -120,8 +222,8 @@ function TrendChart({
   }
 
   const width = 500;
-  const height = 170;
-  const margin = { top: 12, right: 12, bottom: 26, left: 40 };
+  const height = 184;
+  const margin = { top: 16, right: 18, bottom: 30, left: 44 };
   const minYear = points[0].year;
   const maxYear = points[points.length - 1].year;
   const minValue = Math.min(...points.map((point) => point.value));
@@ -134,15 +236,34 @@ function TrendChart({
   const x = (year: number) => margin.left + ((year - minYear) / Math.max(1, maxYear - minYear)) * plotWidth;
   const y = (value: number) => margin.top + ((high - value) / Math.max(1e-9, high - low)) * plotHeight;
   const line = points.map((point, index) => `${index === 0 ? "M" : "L"}${x(point.year)} ${y(point.value)}`).join(" ");
-  const ticks = Array.from({ length: 3 }, (_, index) => low + ((high - low) * index) / 2);
+  const ticks = Array.from({ length: 4 }, (_, index) => low + ((high - low) * index) / 3);
+  const area = `${line} L${x(points[points.length - 1].year)} ${y(low)} L${x(points[0].year)} ${y(low)} Z`;
+  const markerPoints = points.filter((_, index) => index === 0 || index === points.length - 1 || index % 5 === 0);
+  const latest = points[points.length - 1];
+  const latestLabelY = Math.max(margin.top + 11, Math.min(height - margin.bottom - 7, y(latest.value) - 8));
 
   return (
     <figure className="data-figure">
       <figcaption className="data-figure__caption">
         <span className="data-figure__title">{label}</span>
       </figcaption>
-      <svg role="img" aria-label={label} className="h-auto w-full" viewBox={`0 0 ${width} ${height}`}>
+      <svg role="img" aria-label={label} className="chart-svg h-auto w-full" viewBox={`0 0 ${width} ${height}`}>
         <title>{label}</title>
+        <defs>
+          <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={color} stopOpacity="0.24" />
+            <stop offset="100%" stopColor={color} stopOpacity="0.015" />
+          </linearGradient>
+        </defs>
+        <rect
+          x={margin.left}
+          y={margin.top}
+          width={plotWidth}
+          height={plotHeight}
+          rx="8"
+          fill="var(--background)"
+          opacity="0.32"
+        />
         {ticks.map((tick) => (
           <g key={tick}>
             <line
@@ -150,18 +271,51 @@ function TrendChart({
               x2={width - margin.right}
               y1={y(tick)}
               y2={y(tick)}
-              className="stroke-card-border"
-              strokeDasharray="2 3"
+              className="chart-grid-line"
+              strokeDasharray="3 5"
             />
             <text x={margin.left - 7} y={y(tick) + 4} textAnchor="end" className="fill-foreground-muted text-[10px]">
               {tick.toFixed(1)}
             </text>
           </g>
         ))}
-        <path d={line} fill="none" stroke={color} strokeWidth="2.5" />
-        {points.map((point) => (
-          <circle key={point.year} cx={x(point.year)} cy={y(point.value)} r="2" fill={color} />
+        <path d={area} fill={`url(#${gradientId})`} />
+        <path
+          d={line}
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2.75"
+          vectorEffect="non-scaling-stroke"
+        />
+        {markerPoints.map((point) => (
+          <circle
+            key={point.year}
+            cx={x(point.year)}
+            cy={y(point.value)}
+            r={point.year === latest.year ? 3.75 : 1.8}
+            fill={point.year === latest.year ? "var(--figure-bg)" : color}
+            stroke={color}
+            strokeWidth={point.year === latest.year ? 2.25 : 0}
+            vectorEffect="non-scaling-stroke"
+          >
+            <title>{point.year}: {point.value.toFixed(2)}</title>
+          </circle>
         ))}
+        <text
+          x={width - margin.right - 5}
+          y={latestLabelY}
+          fill={color}
+          fontSize="10"
+          fontWeight="700"
+          textAnchor="end"
+          stroke="var(--figure-bg)"
+          strokeWidth="3"
+          paintOrder="stroke"
+        >
+          {latest.value.toFixed(1)}
+        </text>
         <text x={margin.left} y={height - 7} className="fill-foreground-muted text-[10px]">{minYear}</text>
         <text x={width - margin.right} y={height - 7} textAnchor="end" className="fill-foreground-muted text-[10px]">{maxYear}</text>
       </svg>
@@ -180,8 +334,7 @@ async function loadPanel(signal: AbortSignal): Promise<GlobalPanel> {
 }
 
 export function GlobalDataExplorer({ locale }: { locale: string }) {
-  const language: Locale = locale === "fi" ? "fi" : "en";
-  const d = copy[language];
+  const d = pickCopy(copy, locale);
   const [panel, setPanel] = useState<GlobalPanel | null>(null);
   const [memberships, setMemberships] = useState<GlobalTierMemberships | null>(null);
   const [tier, setTier] = useState<TierFilter>("all");
@@ -216,7 +369,7 @@ export function GlobalDataExplorer({ locale }: { locale: string }) {
 
   const selectedRow = selectedCountry?.years.find((row) => row.year === year)
     ?? selectedCountry?.years[selectedCountry.years.length - 1];
-  const selectedTier = selectedCountry ? membershipLabel(selectedCountry.iso3, memberships, language) : d.unassigned;
+  const selectedTier = selectedCountry ? membershipLabel(selectedCountry.iso3, memberships, locale) : d.unassigned;
 
   return (
     <section className="space-y-6">

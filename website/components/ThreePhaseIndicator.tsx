@@ -1,10 +1,14 @@
 "use client";
 
 import { THRESHOLD_COUNTRIES, PHASE_LABELS } from "@/lib/thresholdModel";
+import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: { section: "THREE-PHASE MODEL" },
   fi: { section: "KOLMIVAIHEINEN MALLI" },
+  ja: { section: "三相モデル" },
+  fr: { section: "MODÈLE EN TROIS PHASES" },
+  ko: { section: "3단계 모델" },
 };
 
 const PHASE_COLORS = {
@@ -14,9 +18,8 @@ const PHASE_COLORS = {
 } as const;
 
 export function ThreePhaseIndicator({ locale }: { locale: string }) {
-  const lang = locale === "fi" ? "fi" : "en";
-  const labels = PHASE_LABELS[lang];
-  const copy = COPY[lang];
+  const labels = PHASE_LABELS[locale] ?? PHASE_LABELS["en"];
+  const copy = pickCopy(COPY, locale);
 
   const phases = ([1, 2, 3] as const).map((phase) => ({
     phase,
@@ -59,7 +62,7 @@ export function ThreePhaseIndicator({ locale }: { locale: string }) {
                       className="w-2 h-2 rounded-full shrink-0"
                       style={{ backgroundColor: country.color }}
                     />
-                    {lang === "fi" ? country.nameFi : country.nameEn}
+                    {country.names[locale] ?? country.names.en}
                   </span>
                 ))}
               </div>

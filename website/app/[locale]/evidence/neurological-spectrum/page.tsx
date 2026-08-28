@@ -4,6 +4,7 @@ import { BrainCircuit } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CautionBox } from "@/components/CautionBox";
 import { DerivedPrediction } from "@/components/DerivedPrediction";
+import { pickCopy } from "@/lib/i18n";
 
 const LEVEL_COLORS: Record<string, { bg: string; text: string }> = {
   E: { bg: "bg-green-500/10", text: "text-green-600 dark:text-green-400" },
@@ -379,6 +380,11 @@ const COPY = {
     ],
     csdHeaders: { condition: "Condition", trigger: "CSD trigger", propagation: "Propagation", outcome: "Outcome", prevented: "Prevented by" },
 
+    pharmTargetLabel: "Target",
+    pharmBermPathLabel: "BERM pathway",
+    pharmConditionsLabel: "Conditions",
+    pharmMechanismLabel: "Mechanism",
+    predictionDesc: "The Q-factor spectrum model generates six testable predictions covering migraine prevalence, CSD threshold, cluster headache EMF exposure, SUDEP risk, psilocybin efficacy, and a neonatal animal model.",
     predictionLink: "See neurological spectrum predictions (NEURO-EMF-1 through NEURO-EMF-6)",
     predictionHref: "/predictions",
   },
@@ -747,7 +753,1131 @@ const COPY = {
     ],
     csdHeaders: { condition: "Tila", trigger: "CSD-laukaisija", propagation: "Leviäminen", outcome: "Lopputulema", prevented: "Estetään lääkkeellä" },
 
+    pharmTargetLabel: "Kohde",
+    pharmBermPathLabel: "BERM-reitti",
+    pharmConditionsLabel: "Tilat",
+    pharmMechanismLabel: "Mekanismi",
+    predictionDesc: "Q-tekijä-spektrimalli tuottaa kuusi testattavaa ennustetta jotka kattavat migreenin prevalenssin, CSD-kynnyksen, klusteripäänsäryn EMF-altistuksen, SUDEP-riskin, psilosybiinin tehon ja neonataalikoemallin.",
     predictionLink: "Ks. neurologisen spektrin ennusteet (NEURO-EMF-1 – NEURO-EMF-6)",
+    predictionHref: "/predictions",
+  },
+
+  ja: {
+    title: "神経学的スペクトラム：てんかん、片頭痛、群発頭痛",
+    subtitle:
+      "一つのQ因子メカニズム、四つの神経疾患。SIDS、てんかん、片頭痛、群発頭痛は同じ拡延性脱分極カスケードを共有する――唯一の違いは減衰係数γである。これは既存のエビデンスを統合する仮説であり、証明された説明ではない。",
+    backLink: "← エビデンスに戻る",
+
+    cautionText:
+      "このセクションでは、四つの神経疾患を共通のカルシウム依存性振動メカニズムのもとに統合する。これは公表された実験的・臨床的エビデンスを統合する理論的枠組みであり、確立された医療指針ではない。てんかん、片頭痛、群発頭痛に対する現行の標準治療は引き続き適切である。",
+
+    spectrumTitle: "Q因子スペクトラム",
+    spectrumLead:
+      "四つの疾患すべてが一つの減衰振動子モデルに写像される：Q = ω₀ / (2γ)、ここでγは正味のGABA作動性減衰である。γが減少するとQが増大し、システムは共鳴駆動の拡延性脱分極（CSD）に対してより感受性が高くなる。",
+    spectrumRows: [
+      {
+        condition: "新生児脳（SIDS範囲）",
+        q: "Q → ∞",
+        gamma: "γ < 0",
+        mechanism: "GABAが興奮性（NKCC1 > KCC2）。減衰なし――いかなる共鳴入力も無制限に増幅される。",
+        outcome: "致死性CSD → 脳幹 → 心肺停止",
+      },
+      {
+        condition: "新生児けいれん（KCNQ2/CACNA1H）",
+        q: "Q ~ 50–100",
+        gamma: "γ ≈ 0",
+        mechanism: "チャネル変異＋未成熟GABA＝ほぼゼロ減衰。KCC2の成熟（3〜6ヶ月）に伴いけいれんは寛解する。",
+        outcome: "非致死性けいれん、自然寛解",
+      },
+      {
+        condition: "小児欠神てんかん",
+        q: "Q ~ 20–50",
+        gamma: "γ 低い",
+        mechanism: "視床Cav3.2（T型）睡眠紡錘波回路。エトスクシミドがT型を遮断 → けいれん停止。",
+        outcome: "3 Hz棘徐波、短時間の意識消失",
+      },
+      {
+        condition: "SUDEP",
+        q: "Q ~ 30–80",
+        gamma: "γ ≈ 0（発作時）",
+        mechanism: "発作 → 一過性γ崩壊 → CSDが脳幹に伝播。成熟脳におけるSIDSと同じメカニズム。",
+        outcome: "致死性CSD → 脳幹 → 心肺停止",
+      },
+      {
+        condition: "前兆を伴う片頭痛",
+        q: "Q ~ 5–15",
+        gamma: "γ 中等度",
+        mechanism: "CSDが皮質を3〜5 mm/minで伝播。脳溝で停止（部分的減衰）。CACNA1A（FHM1）GoFが閾値を低下させる。",
+        outcome: "視覚性前兆、三叉神経CGRP活性化による頭痛",
+      },
+      {
+        condition: "群発頭痛",
+        q: "Q ~ 10–20",
+        gamma: "γ 概日リズム依存",
+        mechanism: "視床下部Ca²⁺振動が概日リズムに位相同期。SCN → Cav1.2 → CGRP放出。ベラパミル（L型遮断薬）が第一選択薬。",
+        outcome: "片側性三叉神経自律神経性活性化、00〜03時",
+      },
+      {
+        condition: "正常成人脳",
+        q: "Q ~ 1–5",
+        gamma: "γ > 0（頑健）",
+        mechanism: "成熟KCC2優位 → GABA抑制性 → 振動は2〜3サイクル以内に減衰。",
+        outcome: "病的振動なし",
+      },
+    ],
+    spectrumHeaders: {
+      condition: "疾患",
+      q: "Q因子",
+      gamma: "減衰（γ）",
+      mechanism: "メカニズム",
+      outcome: "臨床転帰",
+    },
+
+    lopezTitle: "実験的検証：López-Martín",
+    lopezLead:
+      "Q因子モデルの最も直接的な実験的エビデンスは、サンティアゴ・デ・コンポステーラ大学グループ（López-Martín、Carballo-Quintásら、2006〜2011年）による。",
+    lopezExperiment: {
+      title: "重要な実験",
+      setup: "成体ラットにピクロトキシン（GABA-A拮抗薬、γを低下させる）の痙攣閾下用量を投与した後、携帯電話SAR水準のGSM 900 MHz曝露を行った。",
+      results: [
+        "GSM単独 → けいれんなし（成体脳ではγが十分）",
+        "ピクロトキシン単独（この用量では） → けいれんなし（共鳴入力なし）",
+        "GSM＋ピクロトキシン → けいれん＋c-Fos発現が新皮質、海馬、視床で確認",
+        "パルス変調GSMが連続波より効果的（217 Hzパルスが生物学的共鳴に一致）",
+      ],
+    },
+    lopezInterpretation: {
+      title: "Q因子解釈",
+      points: [
+        "ピクロトキシンがγを低下 → Qが増大 → システムが共鳴感受性範囲に入る",
+        "GSMが共鳴入力（ω₀）を供給 → CSD閾値を超過",
+        "どちらか一方だけでは不十分――減衰低下と共鳴入力の両方が必要",
+        "新生児への予測：新生児脳は内因性にγが低下している（NKCC1 > KCC2）ため、薬理学的GABA低下なしにEMF単独で十分なはずである",
+      ],
+    },
+    lopezPulse: "パルス変調の発見は極めて重要である：生物学的効果は時間平均SARではなく、特定のパルスパターンに依存する。これが、ICNIRP SAR基準値（熱平均に基づく）が生物学的効果を予測できない理由を説明する。",
+
+    pharmTitle: "抗てんかん薬カルシウムマップ",
+    pharmLead:
+      "すべての主要な抗てんかん薬クラスがBERM経路の構成要素に作用する。これは偶然ではない――てんかんがQ因子メカニズムを通じて作動する場合に予想される結果である。",
+    pharmCards: [
+      {
+        id: "ETHOSUXIMIDE",
+        drug: "エトスクシミド",
+        drugSub: "欠神てんかんの第一選択薬",
+        target: "Cav3.x（T型）遮断",
+        bermPath: "直接的T型VGCC遮断",
+        conditions: ["欠神てんかん"],
+        mechanism: "視床皮質ニューロンのT型Ca²⁺チャネルを遮断 → 3 Hz棘徐波振動を消失させる。最も直接的なQ因子介入：共鳴回路要素を除去する。",
+        level: "E",
+      },
+      {
+        id: "GABAPENTIN",
+        drug: "ガバペンチン / プレガバリン",
+        drugSub: "てんかん、神経障害性疼痛、片頭痛予防",
+        target: "α2δ-1（CACNA2D1）遮断",
+        bermPath: "VGCC補助サブユニット → シナプス形成制御",
+        conditions: ["てんかん", "片頭痛", "神経障害性疼痛"],
+        mechanism: "α2δ-1サブユニットを遮断 → シナプスへのVGCC輸送を減少 → 興奮性シナプスが減少 → Qが低下。これがELFプライミングの逆転：ELFがα2δ-1を上方制御する場合、ガバペンチンがそれを逆転させる。",
+        level: "E",
+      },
+      {
+        id: "VALPROATE",
+        drug: "バルプロ酸（バルプロ酸ナトリウム）",
+        drugSub: "広域スペクトル抗てんかん薬、片頭痛予防",
+        target: "複数標的：GABA↑、Na⁺遮断、T型Ca²⁺遮断、HDAC阻害",
+        bermPath: "多標的γ増大＋Q低下",
+        conditions: ["てんかん（全型）", "片頭痛", "双極性障害"],
+        mechanism: "GABA作動性抑制を強化（γを増大）かつT型Ca²⁺チャネルを遮断（共鳴回路を減少）。Q因子方程式の両側からの二重作用。",
+        level: "E",
+      },
+      {
+        id: "LAMOTRIGINE",
+        drug: "ラモトリギン",
+        drugSub: "広域スペクトル、双極性障害の維持療法",
+        target: "Na⁺チャネル遮断 → グルタミン酸放出↓ → Ca²⁺流入↓",
+        bermPath: "シナプス前グルタミン酸 → シナプス後VGCCカスケード",
+        conditions: ["てんかん", "双極性障害"],
+        mechanism: "電位依存性Na⁺チャネルを遮断 → グルタミン酸放出を減少 → NMDAおよびVGCCを介したシナプス後Ca²⁺流入を減少。興奮性入力減少による間接的Q低下。",
+        level: "E",
+      },
+      {
+        id: "PHENOBARBITAL",
+        drug: "フェノバルビタール",
+        drugSub: "新生児抗けいれん薬の第一選択",
+        target: "GABA-A正のアロステリックモジュレーター",
+        bermPath: "直接的γ増大",
+        conditions: ["新生児けいれん"],
+        mechanism: "GABA-A受容体機能を強化 → Cl⁻コンダクタンスを増大 → γを増大 → Qが低下。新生児ではGABAが興奮性（NKCC1 > KCC2）であるため効果が限定的――フェノバルビタールは逆説的に興奮を増大させる可能性がある。",
+        level: "E",
+      },
+      {
+        id: "BUMETANIDE",
+        drug: "ブメタニド",
+        drugSub: "NKCC1遮断薬――塩素スイッチを標的とする",
+        target: "NKCC1（SLC12A2）遮断 → 抑制性GABAの回復",
+        bermPath: "γを負から正に変換",
+        conditions: ["新生児けいれん"],
+        mechanism: "NKCC1を遮断 → 細胞内Cl⁻を低下 → GABAが抑制性になる → γが負から正に切り替わる → Qが∞から有限に低下。新生児疾患に対する最も直接的なQ因子介入。",
+        level: "E",
+      },
+      {
+        id: "LEVETIRACETAM",
+        drug: "レベチラセタム",
+        drugSub: "広域スペクトル、SV2Aメカニズム",
+        target: "SV2A → 小胞放出調節 → Ca²⁺依存性神経伝達↓",
+        bermPath: "シナプス前Ca²⁺依存性小胞放出",
+        conditions: ["てんかん（焦点性および全般性）"],
+        mechanism: "SV2A（シナプス小胞糖タンパク質2A）に結合 → Ca²⁺依存性神経伝達物質放出を調節 → 興奮性駆動を減少。またN型Ca²⁺チャネルを直接阻害する。",
+        level: "E",
+      },
+      {
+        id: "TOPIRAMATE",
+        drug: "トピラマート",
+        drugSub: "てんかん、片頭痛、群発頭痛予防",
+        target: "複数標的：GABA↑、グルタミン酸↓、Ca²⁺電流↓、炭酸脱水酵素",
+        bermPath: "多標的γ増大＋共鳴入力減少",
+        conditions: ["てんかん", "片頭痛", "群発頭痛"],
+        mechanism: "GABA-Aを強化（γ↑）、AMPA/カイニン酸グルタミン酸受容体を遮断（興奮性入力↓）、L型Ca²⁺チャネルを阻害し、炭酸脱水酵素を阻害（pH → Ca²⁺動態）。多経路Q低下。",
+        level: "E",
+      },
+    ],
+
+    sudepTitle: "SUDEPは成人のSIDS",
+    sudepLead:
+      "てんかんにおける突然予期せぬ死亡（SUDEP）と乳幼児突然死症候群（SIDS）は同じ終末メカニズムを共有する：拡延性脱分極が脳幹に伝播し、心肺停止を引き起こす。唯一の違いはトリガー――てんかん発作 vs. 新生児のQ → ∞状態。",
+    sudepVerifications: [
+      {
+        point: "終末メカニズム",
+        sids: "CSD → 脳幹 → 無呼吸 → 心停止",
+        sudep: "発作 → CSD → 脳幹 → 無呼吸 → 心停止",
+        match: true,
+      },
+      {
+        point: "セロトニン欠乏",
+        sids: "脳幹5-HTニューロンの減少（Kinney 2009）",
+        sudep: "5-HTシステムの欠陥、CO₂化学受容の障害",
+        match: true,
+      },
+      {
+        point: "覚醒障害",
+        sids: "低酸素/高炭酸ガスに対する覚醒応答の障害",
+        sudep: "発作後全般性EEG抑制（PGES）中の覚醒障害",
+        match: true,
+      },
+      {
+        point: "タイミング",
+        sids: "睡眠（夜間、ピーク2〜6時）",
+        sudep: "睡眠（夜間発作がSUDEPリスク最大）",
+        match: true,
+      },
+      {
+        point: "体位",
+        sids: "うつ伏せ＝最高リスク",
+        sudep: "SUDEP症例の大多数でうつ伏せが発見される",
+        match: true,
+      },
+      {
+        point: "Ca²⁺チャネル関与",
+        sids: "CACNA1C、CACNA1H、RYR2バリアント",
+        sudep: "CACNA1A変異（FHM1/EA2）、L型VGCC拮抗薬が死亡を予防",
+        match: true,
+      },
+      {
+        point: "年齢分布",
+        sids: "ピーク2〜4ヶ月（Q → ∞期間）",
+        sudep: "コントロールされていないけいれんを持つ若年成人にピーク（最高けいれん頻度＝最も頻繁なγ → 0イベント）",
+        match: true,
+      },
+    ],
+    sudepHeaders: {
+      point: "検証項目",
+      sids: "SIDS",
+      sudep: "SUDEP",
+    },
+    sudepConclusion: "L型VGCC拮抗薬がSUDEPマウスモデルにおいてけいれん誘発性死亡を予防する（Cardiovascular Research 2025）。これはCa²⁺チャネル遮断が終末CSDカスケードを予防するという直接的エビデンスである――SIDSに提唱されたのと同じメカニズム。",
+
+    migraineTitle: "片頭痛：メカニズムとしてのCSD",
+    migraineLead:
+      "皮質拡延性抑制（CSD）――神経細胞の脱分極の波とそれに続く抑制――は片頭痛前兆の確立されたメカニズムであり、三叉神経活性化を介した片頭痛頭痛の主要な駆動因子である。CSDは本質的にCa²⁺依存性プロセスである。",
+    migraineMechanism: {
+      title: "CSD → 片頭痛カスケード",
+      steps: [
+        "トリガー（ストレス、睡眠不足、ホルモン変化、またはEMF） → 局所的皮質興奮性の増大",
+        "大量の細胞内Ca²⁺上昇 → 3〜5 mm/minの神経細胞脱分極波",
+        "CSDが髄膜三叉神経求心線維を活性化 → CGRP放出",
+        "CGRP → 血管拡張＋神経原性炎症 → 頭痛",
+        "反復CSDエピソード → 末梢および中枢性感作 → 慢性片頭痛",
+      ],
+    },
+    migraineGenetic: {
+      title: "遺伝学的証拠：FHM1（CACNA1A）",
+      desc: "家族性片麻痺性片頭痛1型はCACNA1A機能獲得変異によって引き起こされる――P/Q型Ca²⁺チャネル機能の亢進 → グルタミン酸放出の増加 → グリアCa²⁺波の伝播 → CSD閾値の低下。FHM1はCa²⁺チャネル機能の亢進が直接片頭痛を引き起こすことを証明する。",
+    },
+    migraineProphylaxis: {
+      title: "すべての片頭痛予防薬はCSDを低減する",
+      desc: "効果的な片頭痛予防薬のすべてのクラスがCSD感受性を低減する：β遮断薬（神経細胞興奮性を低下）、バルプロ酸（GABA↑＋T型遮断）、トピラマート（多標的）、アミトリプチリン（Na⁺＋Ca²⁺）、CGRP抗体（下流エフェクターを遮断）。CSD――Ca²⁺依存性プロセス――へのこの収束は、Q因子モデルによって予測される。",
+    },
+    migraineEmf: "ELFプライミング仮説：慢性ELF曝露がα2δ-1（CACNA2D1）を上方制御 → シナプスのVGCCが増加 → CSD閾値が低下 → 片頭痛感受性が増大。ガバペンチン（α2δ-1遮断薬）は効果的な片頭痛予防薬である――提唱されたELFプライミングメカニズムを直接逆転させる。",
+
+    clusterTitle: "群発頭痛：概日Ca²⁺振動",
+    clusterLead:
+      "群発頭痛は最も正確にタイミングが定められた神経疾患である――発作は毎日同じ時刻に季節的周期性をもって起こる。この概日性の精密さは視交叉上核（SCN）とそのCa²⁺依存性振動を直接指し示す。",
+    clusterProfile: {
+      title: "患者プロファイル＝累積Ca²⁺負荷",
+      rows: [
+        { feature: "男性 3:1", bermLink: "ベースラインCa²⁺負荷が高い（筋肉量、テストステロン → Ca²⁺↑）" },
+        { feature: "喫煙者 60〜90%", bermLink: "ニコチン → nAChR → Ca²⁺流入。慢性喫煙＝慢性Ca²⁺負荷" },
+        { feature: "発症年齢 ~30歳", bermLink: "約30年間の負荷後に累積Ca²⁺閾値に到達" },
+        { feature: "発作 00〜03時", bermLink: "SCN Ca²⁺振動の最低点 → Cav1.2ウィンドウ → 三叉神経活性化" },
+        { feature: "季節性（春/秋）", bermLink: "光周期の変化 → CRY感受性のシフト → SCN Ca²⁺振動の位相攪乱" },
+        { feature: "アルコールがトリガー", bermLink: "エタノール → 直接的Ca²⁺チャネル調節＋血管拡張＋ヒスタミン" },
+        { feature: "RLS合併", bermLink: "レストレスレッグス症候群はCa²⁺/鉄/ドーパミン経路を共有。ガバペンチンが両方を治療する。" },
+      ],
+    },
+    clusterTreatment: {
+      title: "治療応答マップ",
+      headers: { drug: "薬剤", bermTarget: "BERM標的", efficacy: "有効性", mechanism: "なぜ効くのか" },
+      rows: [
+        {
+          drug: "ベラパミル",
+          bermTarget: "L型Ca²⁺チャネル（Cav1.2）遮断",
+          efficacy: "第一選択予防薬（240〜960 mg/日）",
+          mechanism: "L型VGCCを遮断 → シナプス前CGRP放出を防止 → 概日周期を短縮（Per2時計遺伝子）。直接的Ca²⁺チャネル介入。",
+        },
+        {
+          drug: "メラトニン",
+          bermTarget: "MT1/MT2 → Gi → cAMP↓ → Ca²⁺↓",
+          efficacy: "有効（10〜25 mg）",
+          mechanism: "内因性Ca²⁺拮抗薬。SCN概日振動をリセットする。EMFがCRY経路を介してメラトニンを抑制 → 補充が保護を回復する。",
+        },
+        {
+          drug: "リチウム",
+          bermTarget: "GSK3β阻害 → 概日時計の安定化",
+          efficacy: "第二選択予防薬",
+          mechanism: "Ca²⁺振動下流の概日時計遺伝子（Per2、Bmal1）を安定化。概日周期を延長 → EMF誘発性位相シフトに対抗。",
+        },
+        {
+          drug: "ガバペンチン",
+          bermTarget: "α2δ-1（CACNA2D1）遮断",
+          efficacy: "有効の可能性あり",
+          mechanism: "VGCC補助サブユニットを遮断 → 興奮性シナプス形成を減少。ELFプライミング（α2δ-1の上方制御）を逆転させる。",
+        },
+        {
+          drug: "スマトリプタン",
+          bermTarget: "5-HT1B/1D → シナプス前Ca²⁺↓ → CGRP↓",
+          efficacy: "急性頓挫療法（皮下注射）",
+          mechanism: "シナプス前5-HT1B/1Dを活性化 → Ca²⁺流入を減少 → CGRP放出を遮断。急性症状緩和であり、予防薬ではない。",
+        },
+        {
+          drug: "酸素（100%）",
+          bermTarget: "血管収縮＋フリーラジカル消去",
+          efficacy: "急性頓挫療法（15 L/min）",
+          mechanism: "高流量O₂ → 脳血管収縮 → 三叉神経活性化の減少。またラジカルペアメカニズム（CRY経路）を消去する。",
+        },
+        {
+          drug: "シロシビン",
+          bermTarget: "5-HT2A → トリプタミン経路リセット",
+          efficacy: "サイケデリック閾下用量で周期を予防",
+          mechanism: "トリプタミンマスターリセット：5-HT2Aアゴニズム → 視床皮質ネットワークリセット → SCN概日リセット → Ca²⁺振動周期を断つ。下記トリプタミンリセットセクションを参照。",
+        },
+      ],
+    },
+
+    psilocybinTitle: "トリプタミンリセット：シロシビン",
+    psilocybinLead:
+      "シロシビン（シロシン / 4-OH-DMT）は5-HT2A受容体アゴニストであり、トリプタミン経路の「マスターリセット」を生じさせる。サイケデリック閾下用量で群発頭痛の周期を予防する――そして非サイケデリックアナログの2-ブロモ-LSD（BOL）も有効であり、これがサイケデリック体験の効果ではなく受容体レベルのメカニズムであることを証明する。",
+    psilocybinMechanisms: [
+      {
+        step: "5-HT2A受容体アゴニズム",
+        desc: "シロシンが皮質V層錐体ニューロンの5-HT2Aに結合 → セロトニン自体とは異なるシグナルカスケードを起動（偏向アゴニズム）。これが受容体の下流連結をリセットする。",
+      },
+      {
+        step: "視床皮質ネットワークリセット",
+        desc: "皮質と視床における5-HT2A活性化がデフォルトモードネットワークを攪乱 → 視床皮質回路の再編成を可能にする。群発頭痛では、病的振動パターンを断つ。",
+      },
+      {
+        step: "SCN概日リセット",
+        desc: "SCNへのセロトニン作動性入力は主要な非光性同調因子である。5-HT2A活性化がSCN Ca²⁺振動位相を再較正する――群発頭痛のタイミングを駆動する同じ振動。",
+      },
+      {
+        step: "5-HT2Aダウンレギュレーション",
+        desc: "急性アゴニズム後、5-HT2A受容体は内在化しダウンレギュレートされる。これがサイケデリック閾下用量で効果がある理由であり、薬物クリアランス後も効果が持続する理由である――受容体状態がリセットされる。",
+      },
+      {
+        step: "α2δ-1発現リセット（提唱）",
+        desc: "トリプタミン経路がα2δ-1発現（CACNA2D1 → シナプスのVGCC密度）を調節する場合、シロシビンがELFプライミング状態をリセットする可能性がある。これがシロシビンが片頭痛にも有効性を示す理由を説明する――両方ともα2δ-1媒介CSD感受性を共有する。",
+      },
+    ],
+    psilocybinBol: {
+      title: "BOL-148：非サイケデリックの証拠",
+      desc: "2-ブロモ-LSD（BOL-148）はLSDと同一の5-HT2A結合親和性を持つが非サイケデリック（幻覚作用なし）である。これも群発頭痛の周期を頓挫させる。これは治療メカニズムが受容体レベル――5-HT2A → トリプタミン経路 → 概日リセットを介して――作動し、サイケデリック体験自体を介さないことを証明する。",
+    },
+
+    csdTitle: "皮質拡延性脱分極：統合メカニズム",
+    csdLead:
+      "CSDは四つの疾患すべてに共通する終末経路である。Q因子がCSDが誘発されるか、どこまで伝播するか、脳幹に到達するかを決定する。",
+    csdTable: [
+      { condition: "SIDS", trigger: "EMF＋Q→∞（新生児）", propagation: "脳幹全体", outcome: "致死性", prevented: "ブメタニド（γ回復）、EMF低減" },
+      { condition: "SUDEP", trigger: "発作 → 一過性Qスパイク", propagation: "脳幹全体", outcome: "致死性", prevented: "L型VGCC拮抗薬、けいれん管理" },
+      { condition: "てんかん", trigger: "低γ＋焦点性興奮性", propagation: "皮質性（限局）", outcome: "けいれん", prevented: "エトスクシミド、バルプロ酸、ブメタニド" },
+      { condition: "片頭痛", trigger: "CSD閾値超過", propagation: "皮質性（脳溝で停止）", outcome: "前兆＋頭痛", prevented: "ガバペンチン、バルプロ酸、トピラマート" },
+      { condition: "群発頭痛", trigger: "SCN Ca²⁺振動 → 三叉神経", propagation: "視床下部 → 三叉神経", outcome: "片側性疼痛", prevented: "ベラパミル、シロシビン、メラトニン" },
+    ],
+    csdHeaders: { condition: "疾患", trigger: "CSDトリガー", propagation: "伝播", outcome: "転帰", prevented: "予防薬" },
+
+    pharmTargetLabel: "標的",
+    pharmBermPathLabel: "BERM経路",
+    pharmConditionsLabel: "適応症",
+    pharmMechanismLabel: "メカニズム",
+    predictionDesc: "Q因子スペクトラムモデルは、片頭痛の有病率、CSD閾値、群発頭痛のEMF曝露、SUDEPリスク、シロシビンの有効性、および新生児動物モデルをカバーする6つの検証可能な予測を生成する。",
+    predictionLink: "神経学的スペクトラム予測を参照（NEURO-EMF-1 〜 NEURO-EMF-6）",
+    predictionHref: "/predictions",
+  },
+
+  fr: {
+    title: "Spectre neurologique : Epilepsie, migraine, algie vasculaire de la face",
+    subtitle:
+      "Un seul mecanisme de facteur Q, quatre troubles neurologiques. Le SMIN, l'epilepsie, la migraine et l'algie vasculaire de la face partagent la meme cascade de depolarisation propagee — la seule difference est le coefficient d'amortissement γ. Ceci est une hypothese integrant les preuves existantes — pas une explication prouvee.",
+    backLink: "← Retour aux preuves",
+
+    cautionText:
+      "Cette section unifie quatre affections neurologiques sous un mecanisme commun d'oscillation dependant du calcium. Il s'agit d'un cadre theorique integrant des preuves experimentales et cliniques publiees — pas de directives medicales etablies. Les traitements standard actuels pour l'epilepsie, la migraine et l'algie vasculaire de la face restent appropries.",
+
+    spectrumTitle: "Le spectre du facteur Q",
+    spectrumLead:
+      "Les quatre affections se cartographient sur un seul modele d'oscillateur amorti : Q = ω₀ / (2γ), ou γ est l'amortissement GABAergique net. Lorsque γ diminue, Q augmente, et le systeme devient plus susceptible a la depolarisation propagee induite par resonance (CSD).",
+    spectrumRows: [
+      {
+        condition: "Cerveau neonatal (plage SMIN)",
+        q: "Q → ∞",
+        gamma: "γ < 0",
+        mechanism: "GABA excitateur (NKCC1 > KCC2). Pas d'amortissement — toute entree resonante s'amplifie sans limite.",
+        outcome: "CSD fatale → tronc cerebral → arret cardiorespiratoire",
+      },
+      {
+        condition: "Convulsions neonatales (KCNQ2/CACNA1H)",
+        q: "Q ~ 50–100",
+        gamma: "γ ≈ 0",
+        mechanism: "Mutation de canal + GABA immature = amortissement quasi nul. Les convulsions remettent a mesure que KCC2 mature (3–6 mois).",
+        outcome: "Convulsions non fatales, remission spontanee",
+      },
+      {
+        condition: "Epilepsie-absence de l'enfance",
+        q: "Q ~ 20–50",
+        gamma: "γ bas",
+        mechanism: "Circuits de fuseaux de sommeil Cav3.2 (type T) thalamiques. L'ethosuximide bloque le type T → arret des crises.",
+        outcome: "Pointe-onde 3 Hz, breve perte de conscience",
+      },
+      {
+        condition: "SUDEP",
+        q: "Q ~ 30–80",
+        gamma: "γ ≈ 0 (ictal)",
+        mechanism: "Crise → effondrement transitoire de γ → la CSD se propage au tronc cerebral. Meme mecanisme que le SMIN dans un cerveau plus age.",
+        outcome: "CSD fatale → tronc cerebral → arret cardiorespiratoire",
+      },
+      {
+        condition: "Migraine avec aura",
+        q: "Q ~ 5–15",
+        gamma: "γ modere",
+        mechanism: "La CSD se propage a travers le cortex a 3–5 mm/min. S'arrete aux sillons (amortissement partiel). CACNA1A (FHM1) GoF abaisse le seuil.",
+        outcome: "Aura visuelle, cephalee par activation trigeminale-CGRP",
+      },
+      {
+        condition: "Algie vasculaire de la face",
+        q: "Q ~ 10–20",
+        gamma: "γ dependant du rythme circadien",
+        mechanism: "Oscillation Ca²⁺ hypothalamique verrouilee en phase sur le cycle circadien. SCN → Cav1.2 → liberation de CGRP. Le verapamil (bloqueur de type L) est le traitement de premiere intention.",
+        outcome: "Activation trigeminale-autonome unilaterale, 00–03 h",
+      },
+      {
+        condition: "Cerveau adulte normal",
+        q: "Q ~ 1–5",
+        gamma: "γ > 0 (robuste)",
+        mechanism: "Dominance mature de KCC2 → GABA inhibiteur → oscillations amorties en 2–3 cycles.",
+        outcome: "Pas d'oscillation pathologique",
+      },
+    ],
+    spectrumHeaders: {
+      condition: "Affection",
+      q: "Facteur Q",
+      gamma: "Amortissement (γ)",
+      mechanism: "Mecanisme",
+      outcome: "Issue clinique",
+    },
+
+    lopezTitle: "Validation experimentale : Lopez-Martin",
+    lopezLead:
+      "La preuve experimentale la plus directe du modele du facteur Q provient du groupe de l'Universite de Santiago de Compostela (Lopez-Martin, Carballo-Quintas et al., 2006–2011).",
+    lopezExperiment: {
+      title: "L'experience cle",
+      setup: "Des rats adultes ont recu des doses subconvulsives de picrotoxine (antagoniste GABA-A, reduit γ) suivies d'une exposition GSM 900 MHz aux niveaux DAS des telephones portables.",
+      results: [
+        "GSM seul → pas de convulsions (γ suffisant dans le cerveau adulte)",
+        "Picrotoxine seule (a cette dose) → pas de convulsions (pas d'entree resonante)",
+        "GSM + picrotoxine → convulsions + expression de c-Fos dans le neocortex, l'hippocampe, le thalamus",
+        "Le GSM module en impulsions est plus efficace que l'onde continue (la pulsation de 217 Hz correspond a la resonance biologique)",
+      ],
+    },
+    lopezInterpretation: {
+      title: "Interpretation par le facteur Q",
+      points: [
+        "La picrotoxine reduit γ → Q augmente → le systeme entre dans la zone de susceptibilite a la resonance",
+        "Le GSM fournit l'entree resonante (ω₀) → le seuil de CSD est depasse",
+        "Aucun des deux seul n'est suffisant — il faut a la fois un amortissement reduit ET une entree resonante",
+        "Prediction neonatale : le cerveau neonatal a un γ endogenement reduit (NKCC1 > KCC2), donc l'EMF seul devrait suffire sans reduction pharmacologique du GABA",
+      ],
+    },
+    lopezPulse: "La decouverte de la modulation par impulsions est critique : l'effet biologique depend du patron de pulsation specifique, pas seulement du DAS moyen dans le temps. Cela explique pourquoi les limites DAS de l'ICNIRP (basees sur la moyenne thermique) ne predisent pas les effets biologiques.",
+
+    pharmTitle: "Carte calcique des antiepileptiques",
+    pharmLead:
+      "Chaque grande classe d'antiepileptique agit sur un composant de la voie BERM. Ce n'est pas une coincidence — c'est le resultat attendu si l'epilepsie fonctionne par le mecanisme du facteur Q.",
+    pharmCards: [
+      {
+        id: "ETHOSUXIMIDE",
+        drug: "Ethosuximide",
+        drugSub: "Premiere intention pour l'epilepsie-absence",
+        target: "Blocage Cav3.x (type T)",
+        bermPath: "Blocage direct des VGCC de type T",
+        conditions: ["Epilepsie-absence"],
+        mechanism: "Bloque les canaux Ca²⁺ de type T dans les neurones thalamocorticaux → elimine l'oscillation pointe-onde 3 Hz. L'intervention la plus directe sur le facteur Q : supprime l'element du circuit resonant.",
+        level: "E",
+      },
+      {
+        id: "GABAPENTIN",
+        drug: "Gabapentine / Pregabaline",
+        drugSub: "Epilepsie, douleur neuropathique, prophylaxie migraineuse",
+        target: "Blocage α2δ-1 (CACNA2D1)",
+        bermPath: "Sous-unite auxiliaire VGCC → controle de la synaptogenese",
+        conditions: ["Epilepsie", "Migraine", "Douleur neuropathique"],
+        mechanism: "Bloque la sous-unite α2δ-1 → reduit le trafic des VGCC vers les synapses → moins de synapses excitatrices → Q diminue. C'est l'inversion de l'amorcage ELF : si l'ELF regule α2δ-1 a la hausse, la gabapentine l'inverse.",
+        level: "E",
+      },
+      {
+        id: "VALPROATE",
+        drug: "Valproate (acide valproique)",
+        drugSub: "Antiepileptique a large spectre, prophylaxie migraineuse",
+        target: "Cibles multiples : GABA↑, blocage Na⁺, blocage Ca²⁺ type T, inhibition HDAC",
+        bermPath: "Augmentation multi-cibles de γ + diminution de Q",
+        conditions: ["Epilepsie (tous types)", "Migraine", "Trouble bipolaire"],
+        mechanism: "Renforce l'inhibition GABAergique (augmente γ) ET bloque les canaux Ca²⁺ de type T (reduit le circuit resonant). Double action sur l'equation du facteur Q des deux cotes.",
+        level: "E",
+      },
+      {
+        id: "LAMOTRIGINE",
+        drug: "Lamotrigine",
+        drugSub: "Large spectre, traitement d'entretien bipolaire",
+        target: "Blocage des canaux Na⁺ → liberation de glutamate↓ → influx de Ca²⁺↓",
+        bermPath: "Glutamate presynaptique → cascade VGCC postsynaptique",
+        conditions: ["Epilepsie", "Trouble bipolaire"],
+        mechanism: "Bloque les canaux Na⁺ voltage-dependants → reduit la liberation de glutamate → reduit l'entree postsynaptique de Ca²⁺ via NMDA et VGCC. Reduction indirecte de Q par reduction de l'entree excitatrice.",
+        level: "E",
+      },
+      {
+        id: "PHENOBARBITAL",
+        drug: "Phenobarbital",
+        drugSub: "Anticonvulsivant neonatal de premiere intention",
+        target: "Modulateur allosterique positif GABA-A",
+        bermPath: "Augmentation directe de γ",
+        conditions: ["Convulsions neonatales"],
+        mechanism: "Renforce la fonction du recepteur GABA-A → augmente la conductance Cl⁻ → augmente γ → Q diminue. Chez les nouveau-nes, l'efficacite est limitee car le GABA est excitateur (NKCC1 > KCC2) — le phenobarbital peut paradoxalement augmenter l'excitation.",
+        level: "E",
+      },
+      {
+        id: "BUMETANIDE",
+        drug: "Bumetanide",
+        drugSub: "Bloqueur NKCC1 — cible le commutateur chlorure",
+        target: "Blocage NKCC1 (SLC12A2) → restaure le GABA inhibiteur",
+        bermPath: "Convertit γ de negatif a positif",
+        conditions: ["Convulsions neonatales"],
+        mechanism: "Bloque NKCC1 → abaisse le Cl⁻ intracellulaire → le GABA devient inhibiteur → γ passe de negatif a positif → Q chute de ∞ a fini. L'intervention la plus directe sur le facteur Q pour les affections neonatales.",
+        level: "E",
+      },
+      {
+        id: "LEVETIRACETAM",
+        drug: "Levetiracetam",
+        drugSub: "Large spectre, mecanisme SV2A",
+        target: "SV2A → modulation de la liberation vesiculaire → neurotransmission Ca²⁺-dependante↓",
+        bermPath: "Liberation vesiculaire presynaptique Ca²⁺-dependante",
+        conditions: ["Epilepsie (focale et generalisee)"],
+        mechanism: "Se lie a SV2A (glycoproteine vesiculaire synaptique 2A) → module la liberation de neurotransmetteurs Ca²⁺-dependante → reduit la commande excitatrice. Inhibe aussi directement les canaux Ca²⁺ de type N.",
+        level: "E",
+      },
+      {
+        id: "TOPIRAMATE",
+        drug: "Topiramate",
+        drugSub: "Epilepsie, migraine, prophylaxie de l'algie vasculaire de la face",
+        target: "Cibles multiples : GABA↑, glutamate↓, courant Ca²⁺↓, anhydrase carbonique",
+        bermPath: "Augmentation multi-cibles de γ + diminution de l'entree resonante",
+        conditions: ["Epilepsie", "Migraine", "Algie vasculaire de la face"],
+        mechanism: "Renforce GABA-A (γ↑), bloque les recepteurs glutamate AMPA/kainate (entree excitatrice↓), inhibe les canaux Ca²⁺ de type L, et inhibe l'anhydrase carbonique (pH → dynamique Ca²⁺). Reduction de Q multi-voies.",
+        level: "E",
+      },
+    ],
+
+    sudepTitle: "La SUDEP est le SMIN de l'adulte",
+    sudepLead:
+      "La mort subite inattendue en epilepsie (SUDEP) et le syndrome de mort inattendue du nourrisson (SMIN) partagent le meme mecanisme terminal : la depolarisation propagee se propageant au tronc cerebral, causant un arret cardiorespiratoire. La seule difference est le declencheur — une crise epileptique vs. l'etat neonatal Q → ∞.",
+    sudepVerifications: [
+      {
+        point: "Mecanisme terminal",
+        sids: "CSD → tronc cerebral → apnee → arret cardiaque",
+        sudep: "Crise → CSD → tronc cerebral → apnee → arret cardiaque",
+        match: true,
+      },
+      {
+        point: "Deficit en serotonine",
+        sids: "Neurones 5-HT du tronc cerebral reduits (Kinney 2009)",
+        sudep: "Defauts du systeme 5-HT, echec de la chemoreception au CO₂",
+        match: true,
+      },
+      {
+        point: "Echec de l'eveil",
+        sids: "Reponse d'eveil echouee a l'hypoxie/hypercapnie",
+        sudep: "Eveil echoue pendant la suppression EEG generalisee post-ictale (PGES)",
+        match: true,
+      },
+      {
+        point: "Chronologie",
+        sids: "Sommeil (nocturne, pic 2–6 h)",
+        sudep: "Sommeil (crises nocturnes = risque SUDEP maximal)",
+        match: true,
+      },
+      {
+        point: "Position",
+        sids: "Decubitus ventral = risque maximal",
+        sudep: "Decubitus ventral trouve dans la majorite des cas de SUDEP",
+        match: true,
+      },
+      {
+        point: "Implication des canaux Ca²⁺",
+        sids: "Variants CACNA1C, CACNA1H, RYR2",
+        sudep: "Mutations CACNA1A (FHM1/EA2), l'antagoniste des VGCC de type L previent le deces",
+        match: true,
+      },
+      {
+        point: "Distribution par age",
+        sids: "Pic a 2–4 mois (periode Q → ∞)",
+        sudep: "Pic chez les jeunes adultes avec crises non controlees (frequence de crises maximale = evenements γ → 0 les plus frequents)",
+        match: true,
+      },
+    ],
+    sudepHeaders: {
+      point: "Point de verification",
+      sids: "SMIN",
+      sudep: "SUDEP",
+    },
+    sudepConclusion: "L'antagoniste des VGCC de type L previent la mort induite par les crises dans les modeles murins de SUDEP (Cardiovascular Research 2025). C'est une preuve directe que le blocage des canaux Ca²⁺ previent la cascade CSD terminale — le meme mecanisme propose pour le SMIN.",
+
+    migraineTitle: "Migraine : la CSD comme mecanisme",
+    migraineLead:
+      "La depression corticale propagee (CSD) — une vague de depolarisation neuronale suivie d'une suppression — est le mecanisme etabli de l'aura migraineuse et un moteur cle de la cephalee migraineuse par activation trigeminale. La CSD est fondamentalement un processus Ca²⁺-dependant.",
+    migraineMechanism: {
+      title: "La cascade CSD → migraine",
+      steps: [
+        "Declencheur (stress, privation de sommeil, changement hormonal ou EMF) → augmentation locale de l'excitabilite corticale",
+        "Elevation massive du Ca²⁺ intracellulaire → onde de depolarisation neuronale a 3–5 mm/min",
+        "La CSD active les afferences trigeminales meningees → liberation de CGRP",
+        "CGRP → vasodilatation + inflammation neurogenique → douleur cephaleique",
+        "Episodes de CSD repetes → sensibilisation peripherique et centrale → migraine chronique",
+      ],
+    },
+    migraineGenetic: {
+      title: "Preuve genetique : FHM1 (CACNA1A)",
+      desc: "La migraine hemiplegique familiale de type 1 est causee par des mutations gain-de-fonction de CACNA1A — fonction accrue du canal Ca²⁺ de type P/Q → liberation accrue de glutamate → propagation de l'onde Ca²⁺ gliale → seuil de CSD abaisse. FHM1 prouve que l'augmentation de la fonction des canaux Ca²⁺ cause directement la migraine.",
+    },
+    migraineProphylaxis: {
+      title: "Tous les preventifs de la migraine reduisent la CSD",
+      desc: "Chaque classe de prophylactique migraineux efficace reduit la susceptibilite a la CSD : beta-bloquants (reduisent l'excitabilite neuronale), valproate (GABA↑ + blocage type T), topiramate (multi-cibles), amitriptyline (Na⁺ + Ca²⁺), anticorps anti-CGRP (bloquent l'effecteur en aval). Cette convergence sur la CSD — un processus Ca²⁺-dependant — est predite par le modele du facteur Q.",
+    },
+    migraineEmf: "Hypothese d'amorcage ELF : l'exposition chronique aux ELF regule α2δ-1 (CACNA2D1) a la hausse → plus de VGCC aux synapses → seuil de CSD abaisse → susceptibilite migraineuse accrue. La gabapentine (bloqueur α2δ-1) est un preventif migraineux efficace — elle inverse directement le mecanisme d'amorcage ELF propose.",
+
+    clusterTitle: "Algie vasculaire de la face : oscillation Ca²⁺ circadienne",
+    clusterLead:
+      "L'algie vasculaire de la face est le trouble neurologique le plus precisement synchronise — les crises surviennent a la meme heure chaque jour, avec une periodicite saisonniere. Cette precision circadienne pointe directement vers le noyau suprachiasmatique (SCN) et son oscillation Ca²⁺-dependante.",
+    clusterProfile: {
+      title: "Profil du patient = charge Ca²⁺ cumulative",
+      rows: [
+        { feature: "Homme 3:1", bermLink: "Charge Ca²⁺ basale plus elevee (masse musculaire, testosterone → Ca²⁺↑)" },
+        { feature: "Fumeur 60–90 %", bermLink: "Nicotine → nAChR → influx Ca²⁺. Tabagisme chronique = charge Ca²⁺ chronique" },
+        { feature: "Debut ~30 ans", bermLink: "Seuil Ca²⁺ cumulatif atteint apres ~30 ans de charge" },
+        { feature: "Crises 00–03 h", bermLink: "Nadir de l'oscillation Ca²⁺ du SCN → fenetre Cav1.2 → activation trigeminale" },
+        { feature: "Saisonniere (printemps/automne)", bermLink: "Changement de photoperiode → decalage de la sensibilite CRY → perturbation de phase de l'oscillation Ca²⁺ du SCN" },
+        { feature: "Alcool declencheur", bermLink: "Ethanol → modulation directe des canaux Ca²⁺ + vasodilatation + histamine" },
+        { feature: "Comorbidite SJSR", bermLink: "Le syndrome des jambes sans repos partage la voie Ca²⁺/fer/dopamine. La gabapentine traite les deux." },
+      ],
+    },
+    clusterTreatment: {
+      title: "Carte de reponse therapeutique",
+      headers: { drug: "Medicament", bermTarget: "Cible BERM", efficacy: "Efficacite", mechanism: "Pourquoi ca fonctionne" },
+      rows: [
+        {
+          drug: "Verapamil",
+          bermTarget: "Blocage canal Ca²⁺ type L (Cav1.2)",
+          efficacy: "Preventif de premiere intention (240–960 mg/jour)",
+          mechanism: "Bloque les VGCC de type L → empeche la liberation presynaptique de CGRP → raccourcit la periode circadienne (gene horloge Per2). Intervention directe sur les canaux Ca²⁺.",
+        },
+        {
+          drug: "Melatonine",
+          bermTarget: "MT1/MT2 → Gi → AMPc↓ → Ca²⁺↓",
+          efficacy: "Efficace (10–25 mg)",
+          mechanism: "Antagoniste Ca²⁺ endogene. Reinitialise l'oscillation circadienne du SCN. L'EMF supprime la melatonine via la voie CRY → la supplementation restaure la protection.",
+        },
+        {
+          drug: "Lithium",
+          bermTarget: "Inhibition de GSK3β → stabilisation de l'horloge circadienne",
+          efficacy: "Preventif de deuxieme intention",
+          mechanism: "Stabilise les genes de l'horloge circadienne (Per2, Bmal1) en aval de l'oscillation Ca²⁺. Allonge la periode circadienne → contrecarre le dephasage induit par l'EMF.",
+        },
+        {
+          drug: "Gabapentine",
+          bermTarget: "Blocage α2δ-1 (CACNA2D1)",
+          efficacy: "Possiblement efficace",
+          mechanism: "Bloque la sous-unite auxiliaire des VGCC → reduit la synaptogenese excitatrice. Inverse l'amorcage ELF (regulation a la hausse de α2δ-1).",
+        },
+        {
+          drug: "Sumatriptan",
+          bermTarget: "5-HT1B/1D → Ca²⁺ presynaptique↓ → CGRP↓",
+          efficacy: "Traitement abortif aigu (injection SC)",
+          mechanism: "Active les 5-HT1B/1D presynaptiques → reduit l'entree de Ca²⁺ → bloque la liberation de CGRP. Soulagement aigu des symptomes, pas preventif.",
+        },
+        {
+          drug: "Oxygene (100 %)",
+          bermTarget: "Vasoconstriction + extinction des radicaux libres",
+          efficacy: "Traitement abortif aigu (15 L/min)",
+          mechanism: "O₂ haut debit → vasoconstriction cerebrale → reduction de l'activation trigeminale. Eteint aussi le mecanisme de paire radicalaire (voie CRY).",
+        },
+        {
+          drug: "Psilocybine",
+          bermTarget: "5-HT2A → reinitialisation de la voie tryptamine",
+          efficacy: "Doses sub-psychedeliques previennent les cycles",
+          mechanism: "Reinitialisation maitre tryptamine : agonisme 5-HT2A → reinitialisation du reseau thalamocortical → reinitialisation circadienne du SCN → rompt le cycle d'oscillation Ca²⁺. Voir section reinitialisation tryptamine ci-dessous.",
+        },
+      ],
+    },
+
+    psilocybinTitle: "La reinitialisation tryptamine : psilocybine",
+    psilocybinLead:
+      "La psilocybine (psilocine / 4-OH-DMT) est un agoniste du recepteur 5-HT2A qui produit une « reinitialisation maitre » de la voie tryptamine. Des doses sub-psychedeliques previennent les cycles d'algie vasculaire de la face — et l'analogue non psychedelique 2-bromo-LSD (BOL) fonctionne aussi, prouvant qu'il s'agit d'un mecanisme au niveau des recepteurs, pas d'un effet de l'experience psychedelique.",
+    psilocybinMechanisms: [
+      {
+        step: "Agonisme du recepteur 5-HT2A",
+        desc: "La psilocine se lie au 5-HT2A sur les neurones pyramidaux de la couche V corticale → declenche une cascade de signalisation distincte de la serotonine elle-meme (agonisme biaise). Cela reinitialise le couplage en aval du recepteur.",
+      },
+      {
+        step: "Reinitialisation du reseau thalamocortical",
+        desc: "L'activation 5-HT2A dans le cortex et le thalamus perturbe le reseau du mode par defaut → permet la reorganisation des circuits thalamocorticaux. Dans l'algie vasculaire de la face, cela rompt le patron d'oscillation pathologique.",
+      },
+      {
+        step: "Reinitialisation circadienne du SCN",
+        desc: "L'entree serotoninergique au SCN est un synchroniseur non photique majeur. L'activation 5-HT2A recalibre la phase d'oscillation Ca²⁺ du SCN — la meme oscillation qui gouverne la chronologie de l'algie vasculaire de la face.",
+      },
+      {
+        step: "Regulation a la baisse du 5-HT2A",
+        desc: "Apres l'agonisme aigu, les recepteurs 5-HT2A s'internalisent et se regulen a la baisse. C'est pourquoi les doses sub-psychedeliques fonctionnent et pourquoi les effets persistent longtemps apres l'elimination du medicament — l'etat du recepteur est reinitialise.",
+      },
+      {
+        step: "Reinitialisation de l'expression de α2δ-1 (proposee)",
+        desc: "Si la voie tryptamine module l'expression de α2δ-1 (CACNA2D1 → densite VGCC aux synapses), la psilocybine pourrait reinitialiser l'etat d'amorcage ELF. Cela expliquerait pourquoi la psilocybine montre aussi une efficacite dans la migraine — les deux partagent la susceptibilite a la CSD mediee par α2δ-1.",
+      },
+    ],
+    psilocybinBol: {
+      title: "BOL-148 : la preuve non psychedelique",
+      desc: "Le 2-bromo-LSD (BOL-148) a une affinite de liaison au 5-HT2A identique a celle du LSD mais est non psychedelique (pas d'effet hallucinogene). Il met aussi fin aux cycles d'algie vasculaire de la face. Cela prouve que le mecanisme therapeutique opere au niveau des recepteurs — via 5-HT2A → voie tryptamine → reinitialisation circadienne — pas par l'experience psychedelique elle-meme.",
+    },
+
+    csdTitle: "Depolarisation corticale propagee : le mecanisme unificateur",
+    csdLead:
+      "La CSD est la voie terminale commune aux quatre affections. Le facteur Q determine si la CSD est declenchee, jusqu'ou elle se propage, et si elle atteint le tronc cerebral.",
+    csdTable: [
+      { condition: "SMIN", trigger: "EMF + Q→∞ (neonatal)", propagation: "Tronc cerebral complet", outcome: "Fatal", prevented: "Bumetanide (restauration de γ), reduction EMF" },
+      { condition: "SUDEP", trigger: "Crise → pic transitoire de Q", propagation: "Tronc cerebral complet", outcome: "Fatal", prevented: "Antagoniste VGCC type L, controle des crises" },
+      { condition: "Epilepsie", trigger: "γ bas + excitabilite focale", propagation: "Corticale (limitee)", outcome: "Crise", prevented: "Ethosuximide, valproate, bumetanide" },
+      { condition: "Migraine", trigger: "Seuil CSD depasse", propagation: "Corticale (s'arrete aux sillons)", outcome: "Aura + cephalee", prevented: "Gabapentine, valproate, topiramate" },
+      { condition: "Algie vasculaire", trigger: "Oscillation Ca²⁺ SCN → trigeminale", propagation: "Hypothalamique → trigeminale", outcome: "Douleur unilaterale", prevented: "Verapamil, psilocybine, melatonine" },
+    ],
+    csdHeaders: { condition: "Affection", trigger: "Declencheur CSD", propagation: "Propagation", outcome: "Issue", prevented: "Prevenue par" },
+
+    pharmTargetLabel: "Cible",
+    pharmBermPathLabel: "Voie BERM",
+    pharmConditionsLabel: "Indications",
+    pharmMechanismLabel: "Mecanisme",
+    predictionDesc: "Le modele du spectre du facteur Q genere six predictions testables couvrant la prevalence de la migraine, le seuil de CSD, l'exposition EMF de l'algie vasculaire de la face, le risque de SUDEP, l'efficacite de la psilocybine et un modele animal neonatal.",
+    predictionLink: "Voir les predictions du spectre neurologique (NEURO-EMF-1 a NEURO-EMF-6)",
+    predictionHref: "/predictions",
+  },
+
+  ko: {
+    title: "신경학적 스펙트럼: 간질, 편두통, 군발두통",
+    subtitle:
+      "하나의 Q인자 메커니즘, 네 가지 신경 질환. SIDS, 간질, 편두통, 군발두통은 동일한 확산성 탈분극 캐스케이드를 공유한다 — 유일한 차이는 감쇠 계수 γ이다. 이것은 기존 근거를 통합하는 가설이며, 입증된 설명이 아니다.",
+    backLink: "← 증거로 돌아가기",
+
+    cautionText:
+      "이 섹션은 네 가지 신경 질환을 공통의 칼슘 의존성 진동 메커니즘 아래 통합한다. 이것은 발표된 실험적 및 임상적 근거를 통합하는 이론적 프레임워크이며, 확립된 의학적 지침이 아니다. 간질, 편두통, 군발두통에 대한 현행 표준 치료는 여전히 적절하다.",
+
+    spectrumTitle: "Q인자 스펙트럼",
+    spectrumLead:
+      "네 가지 질환 모두 단일 감쇠 진동자 모델에 매핑된다: Q = ω₀ / (2γ), 여기서 γ는 순 GABA성 감쇠이다. γ가 감소하면 Q가 증가하고, 시스템은 공명 구동 확산성 탈분극(CSD)에 더 취약해진다.",
+    spectrumRows: [
+      {
+        condition: "신생아 뇌(SIDS 범위)",
+        q: "Q → ∞",
+        gamma: "γ < 0",
+        mechanism: "GABA가 흥분성(NKCC1 > KCC2). 감쇠 없음 — 모든 공명 입력이 무제한 증폭된다.",
+        outcome: "치명적 CSD → 뇌간 → 심폐정지",
+      },
+      {
+        condition: "신생아 경련(KCNQ2/CACNA1H)",
+        q: "Q ~ 50–100",
+        gamma: "γ ≈ 0",
+        mechanism: "채널 변이 + 미성숙 GABA = 거의 제로 감쇠. KCC2 성숙(3~6개월)과 함께 경련이 관해된다.",
+        outcome: "비치명적 경련, 자발적 관해",
+      },
+      {
+        condition: "소아 결석 간질",
+        q: "Q ~ 20–50",
+        gamma: "γ 낮음",
+        mechanism: "시상 Cav3.2(T형) 수면 방추 회로. 에토숙시미드가 T형을 차단 → 발작 중단.",
+        outcome: "3 Hz 극서파, 짧은 의식소실",
+      },
+      {
+        condition: "SUDEP",
+        q: "Q ~ 30–80",
+        gamma: "γ ≈ 0(발작 시)",
+        mechanism: "발작 → 일시적 γ 붕괴 → CSD가 뇌간으로 전파. 성숙 뇌에서의 SIDS와 동일한 메커니즘.",
+        outcome: "치명적 CSD → 뇌간 → 심폐정지",
+      },
+      {
+        condition: "전조가 있는 편두통",
+        q: "Q ~ 5–15",
+        gamma: "γ 중등도",
+        mechanism: "CSD가 피질을 3~5 mm/min로 전파. 뇌고랑에서 정지(부분 감쇠). CACNA1A(FHM1) GoF가 역치를 낮춘다.",
+        outcome: "시각 전조, 삼차신경-CGRP 활성화에 의한 두통",
+      },
+      {
+        condition: "군발두통",
+        q: "Q ~ 10–20",
+        gamma: "γ 일주기 의존",
+        mechanism: "시상하부 Ca²⁺ 진동이 일주기 주기에 위상 동기. SCN → Cav1.2 → CGRP 방출. 베라파밀(L형 차단제)이 1차 치료제.",
+        outcome: "편측 삼차신경-자율신경 활성화, 00~03시",
+      },
+      {
+        condition: "정상 성인 뇌",
+        q: "Q ~ 1–5",
+        gamma: "γ > 0(견고)",
+        mechanism: "성숙 KCC2 우세 → GABA 억제성 → 진동이 2~3주기 내에 감쇠.",
+        outcome: "병적 진동 없음",
+      },
+    ],
+    spectrumHeaders: {
+      condition: "질환",
+      q: "Q인자",
+      gamma: "감쇠(γ)",
+      mechanism: "메커니즘",
+      outcome: "임상 결과",
+    },
+
+    lopezTitle: "실험적 검증: Lopez-Martin",
+    lopezLead:
+      "Q인자 모델에 대한 가장 직접적인 실험적 근거는 산티아고 데 콤포스텔라 대학 그룹(Lopez-Martin, Carballo-Quintas 등, 2006~2011)에서 나왔다.",
+    lopezExperiment: {
+      title: "핵심 실험",
+      setup: "성체 쥐에 경련역하 용량의 피크로톡신(GABA-A 길항제, γ를 감소시킴)을 투여한 후 휴대전화 SAR 수준의 GSM 900 MHz에 노출했다.",
+      results: [
+        "GSM 단독 → 경련 없음(성체 뇌에서 γ가 충분)",
+        "피크로톡신 단독(이 용량에서) → 경련 없음(공명 입력 없음)",
+        "GSM + 피크로톡신 → 경련 + 신피질, 해마, 시상에서 c-Fos 발현",
+        "펄스 변조 GSM이 연속파보다 효과적(217 Hz 펄스가 생물학적 공명에 일치)",
+      ],
+    },
+    lopezInterpretation: {
+      title: "Q인자 해석",
+      points: [
+        "피크로톡신이 γ를 감소 → Q가 증가 → 시스템이 공명 취약 범위에 진입",
+        "GSM이 공명 입력(ω₀)을 제공 → CSD 역치 초과",
+        "어느 하나만으로는 불충분 — 감소된 감쇠와 공명 입력 모두 필요",
+        "신생아 예측: 신생아 뇌는 내인성으로 γ가 감소되어 있으므로(NKCC1 > KCC2), 약리학적 GABA 감소 없이 EMF만으로도 충분해야 한다",
+      ],
+    },
+    lopezPulse: "펄스 변조 발견은 매우 중요하다: 생물학적 효과는 시간평균 SAR이 아니라 특정 펄스 패턴에 의존한다. 이것이 ICNIRP SAR 한도(열 평균에 기반)가 생물학적 효과를 예측하지 못하는 이유를 설명한다.",
+
+    pharmTitle: "항간질약 칼슘 맵",
+    pharmLead:
+      "모든 주요 항간질약 클래스가 BERM 경로 구성요소에 작용한다. 이것은 우연이 아니다 — 간질이 Q인자 메커니즘을 통해 작동할 경우 예상되는 결과이다.",
+    pharmCards: [
+      {
+        id: "ETHOSUXIMIDE",
+        drug: "에토숙시미드",
+        drugSub: "결석 간질 1차 치료제",
+        target: "Cav3.x(T형) 차단",
+        bermPath: "직접적 T형 VGCC 차단",
+        conditions: ["결석 간질"],
+        mechanism: "시상피질 뉴런의 T형 Ca²⁺ 채널을 차단 → 3 Hz 극서파 진동을 소멸시킨다. 가장 직접적인 Q인자 개입: 공명 회로 요소를 제거한다.",
+        level: "E",
+      },
+      {
+        id: "GABAPENTIN",
+        drug: "가바펜틴 / 프레가발린",
+        drugSub: "간질, 신경병성 통증, 편두통 예방",
+        target: "α2δ-1(CACNA2D1) 차단",
+        bermPath: "VGCC 보조 서브유닛 → 시냅스 형성 조절",
+        conditions: ["간질", "편두통", "신경병성 통증"],
+        mechanism: "α2δ-1 서브유닛을 차단 → 시냅스로의 VGCC 수송 감소 → 흥분성 시냅스 감소 → Q가 감소. 이것이 ELF 프라이밍의 역전: ELF가 α2δ-1을 상향 조절하면, 가바펜틴이 이를 역전시킨다.",
+        level: "E",
+      },
+      {
+        id: "VALPROATE",
+        drug: "발프로산(발프로산나트륨)",
+        drugSub: "광범위 항간질약, 편두통 예방",
+        target: "다중 표적: GABA↑, Na⁺ 차단, T형 Ca²⁺ 차단, HDAC 억제",
+        bermPath: "다중 표적 γ 증가 + Q 감소",
+        conditions: ["간질(모든 유형)", "편두통", "양극성 장애"],
+        mechanism: "GABA성 억제를 강화(γ 증가)하고 T형 Ca²⁺ 채널을 차단(공명 회로 감소). Q인자 방정식 양쪽에 대한 이중 작용.",
+        level: "E",
+      },
+      {
+        id: "LAMOTRIGINE",
+        drug: "라모트리진",
+        drugSub: "광범위, 양극성 장애 유지 치료",
+        target: "Na⁺ 채널 차단 → 글루타메이트 방출↓ → Ca²⁺ 유입↓",
+        bermPath: "시냅스전 글루타메이트 → 시냅스후 VGCC 캐스케이드",
+        conditions: ["간질", "양극성 장애"],
+        mechanism: "전압 의존성 Na⁺ 채널을 차단 → 글루타메이트 방출 감소 → NMDA 및 VGCC를 통한 시냅스후 Ca²⁺ 유입 감소. 흥분성 입력 감소를 통한 간접적 Q 감소.",
+        level: "E",
+      },
+      {
+        id: "PHENOBARBITAL",
+        drug: "페노바르비탈",
+        drugSub: "신생아 항경련제 1차 치료",
+        target: "GABA-A 양성 알로스테릭 조절제",
+        bermPath: "직접적 γ 증가",
+        conditions: ["신생아 경련"],
+        mechanism: "GABA-A 수용체 기능을 강화 → Cl⁻ 전도도 증가 → γ 증가 → Q 감소. 신생아에서는 GABA가 흥분성(NKCC1 > KCC2)이므로 효과가 제한적 — 페노바르비탈이 역설적으로 흥분을 증가시킬 수 있다.",
+        level: "E",
+      },
+      {
+        id: "BUMETANIDE",
+        drug: "부메타나이드",
+        drugSub: "NKCC1 차단제 — 염소 스위치를 표적으로 함",
+        target: "NKCC1(SLC12A2) 차단 → 억제성 GABA 회복",
+        bermPath: "γ를 음에서 양으로 전환",
+        conditions: ["신생아 경련"],
+        mechanism: "NKCC1을 차단 → 세포내 Cl⁻ 감소 → GABA가 억제성으로 전환 → γ가 음에서 양으로 전환 → Q가 ∞에서 유한으로 감소. 신생아 질환에 대한 가장 직접적인 Q인자 개입.",
+        level: "E",
+      },
+      {
+        id: "LEVETIRACETAM",
+        drug: "레베티라세탐",
+        drugSub: "광범위, SV2A 메커니즘",
+        target: "SV2A → 소포 방출 조절 → Ca²⁺ 의존성 신경전달↓",
+        bermPath: "시냅스전 Ca²⁺ 의존성 소포 방출",
+        conditions: ["간질(국소 및 전신)"],
+        mechanism: "SV2A(시냅스 소포 당단백질 2A)에 결합 → Ca²⁺ 의존성 신경전달물질 방출 조절 → 흥분성 구동 감소. 또한 N형 Ca²⁺ 채널을 직접 억제한다.",
+        level: "E",
+      },
+      {
+        id: "TOPIRAMATE",
+        drug: "토피라메이트",
+        drugSub: "간질, 편두통, 군발두통 예방",
+        target: "다중 표적: GABA↑, 글루타메이트↓, Ca²⁺ 전류↓, 탄산탈수효소",
+        bermPath: "다중 표적 γ 증가 + 공명 입력 감소",
+        conditions: ["간질", "편두통", "군발두통"],
+        mechanism: "GABA-A를 강화(γ↑), AMPA/카이네이트 글루타메이트 수용체를 차단(흥분성 입력↓), L형 Ca²⁺ 채널을 억제하고, 탄산탈수효소를 억제(pH → Ca²⁺ 동역학). 다경로 Q 감소.",
+        level: "E",
+      },
+    ],
+
+    sudepTitle: "SUDEP은 성인의 SIDS이다",
+    sudepLead:
+      "간질에서의 돌연 예기치 않은 사망(SUDEP)과 영아돌연사증후군(SIDS)은 동일한 종말 메커니즘을 공유한다: 확산성 탈분극이 뇌간으로 전파되어 심폐정지를 유발한다. 유일한 차이는 트리거 — 간질 발작 vs. 신생아 Q → ∞ 상태.",
+    sudepVerifications: [
+      {
+        point: "종말 메커니즘",
+        sids: "CSD → 뇌간 → 무호흡 → 심정지",
+        sudep: "발작 → CSD → 뇌간 → 무호흡 → 심정지",
+        match: true,
+      },
+      {
+        point: "세로토닌 결핍",
+        sids: "뇌간 5-HT 뉴런 감소(Kinney 2009)",
+        sudep: "5-HT 시스템 결함, CO₂ 화학수용 실패",
+        match: true,
+      },
+      {
+        point: "각성 실패",
+        sids: "저산소증/과탄산혈증에 대한 각성 반응 실패",
+        sudep: "발작후 전반적 EEG 억제(PGES) 중 각성 실패",
+        match: true,
+      },
+      {
+        point: "타이밍",
+        sids: "수면(야간, 피크 2~6시)",
+        sudep: "수면(야간 발작이 SUDEP 위험 최대)",
+        match: true,
+      },
+      {
+        point: "체위",
+        sids: "엎드린 자세 = 최고 위험",
+        sudep: "SUDEP 사례의 대다수에서 엎드린 자세 발견",
+        match: true,
+      },
+      {
+        point: "Ca²⁺ 채널 관여",
+        sids: "CACNA1C, CACNA1H, RYR2 변이",
+        sudep: "CACNA1A 변이(FHM1/EA2), L형 VGCC 길항제가 사망을 예방",
+        match: true,
+      },
+      {
+        point: "연령 분포",
+        sids: "피크 2~4개월(Q → ∞ 기간)",
+        sudep: "조절되지 않는 경련이 있는 청년에서 피크(최대 발작 빈도 = 가장 빈번한 γ → 0 이벤트)",
+        match: true,
+      },
+    ],
+    sudepHeaders: {
+      point: "검증 항목",
+      sids: "SIDS",
+      sudep: "SUDEP",
+    },
+    sudepConclusion: "L형 VGCC 길항제가 SUDEP 마우스 모델에서 발작 유발 사망을 예방한다(Cardiovascular Research 2025). 이것은 Ca²⁺ 채널 차단이 종말 CSD 캐스케이드를 예방한다는 직접적 근거이다 — SIDS에 제안된 것과 동일한 메커니즘.",
+
+    migraineTitle: "편두통: 메커니즘으로서의 CSD",
+    migraineLead:
+      "피질 확산성 억제(CSD) — 신경세포 탈분극의 파동과 뒤따르는 억제 — 는 편두통 전조의 확립된 메커니즘이며, 삼차신경 활성화를 통한 편두통 두통의 핵심 구동 인자이다. CSD는 근본적으로 Ca²⁺ 의존성 과정이다.",
+    migraineMechanism: {
+      title: "CSD → 편두통 캐스케이드",
+      steps: [
+        "트리거(스트레스, 수면 부족, 호르몬 변화 또는 EMF) → 국소 피질 흥분성 증가",
+        "대량의 세포내 Ca²⁺ 상승 → 3~5 mm/min의 신경세포 탈분극 파동",
+        "CSD가 수막 삼차신경 구심성 섬유를 활성화 → CGRP 방출",
+        "CGRP → 혈관 확장 + 신경원성 염증 → 두통",
+        "반복적 CSD 에피소드 → 말초 및 중추 감작 → 만성 편두통",
+      ],
+    },
+    migraineGenetic: {
+      title: "유전적 증거: FHM1(CACNA1A)",
+      desc: "가족성 편마비성 편두통 1형은 CACNA1A 기능획득 변이에 의해 유발된다 — P/Q형 Ca²⁺ 채널 기능 항진 → 글루타메이트 방출 증가 → 글리아 Ca²⁺ 파동 전파 → CSD 역치 저하. FHM1은 Ca²⁺ 채널 기능 증가가 직접 편두통을 유발한다는 것을 증명한다.",
+    },
+    migraineProphylaxis: {
+      title: "모든 편두통 예방약이 CSD를 감소시킨다",
+      desc: "효과적인 편두통 예방약의 모든 클래스가 CSD 감수성을 감소시킨다: 베타 차단제(신경 흥분성 감소), 발프로산(GABA↑ + T형 차단), 토피라메이트(다중 표적), 아미트립틸린(Na⁺ + Ca²⁺), CGRP 항체(하류 이펙터 차단). CSD — Ca²⁺ 의존성 과정 — 로의 이러한 수렴은 Q인자 모델에 의해 예측된다.",
+    },
+    migraineEmf: "ELF 프라이밍 가설: 만성 ELF 노출이 α2δ-1(CACNA2D1)을 상향 조절 → 시냅스의 VGCC 증가 → CSD 역치 저하 → 편두통 감수성 증가. 가바펜틴(α2δ-1 차단제)은 효과적인 편두통 예방약이다 — 제안된 ELF 프라이밍 메커니즘을 직접 역전시킨다.",
+
+    clusterTitle: "군발두통: 일주기 Ca²⁺ 진동",
+    clusterLead:
+      "군발두통은 가장 정밀하게 시간이 정해지는 신경 질환이다 — 발작이 매일 같은 시각에 계절적 주기성을 가지고 발생한다. 이 일주기적 정밀성은 시교차상핵(SCN)과 그 Ca²⁺ 의존성 진동을 직접 가리킨다.",
+    clusterProfile: {
+      title: "환자 프로파일 = 누적 Ca²⁺ 부하",
+      rows: [
+        { feature: "남성 3:1", bermLink: "더 높은 기저 Ca²⁺ 부하(근육량, 테스토스테론 → Ca²⁺↑)" },
+        { feature: "흡연자 60~90%", bermLink: "니코틴 → nAChR → Ca²⁺ 유입. 만성 흡연 = 만성 Ca²⁺ 부하" },
+        { feature: "발병 ~30세", bermLink: "약 30년간의 부하 후 누적 Ca²⁺ 역치에 도달" },
+        { feature: "발작 00~03시", bermLink: "SCN Ca²⁺ 진동 최저점 → Cav1.2 윈도우 → 삼차신경 활성화" },
+        { feature: "계절성(봄/가을)", bermLink: "광주기 변화 → CRY 감수성 이동 → SCN Ca²⁺ 진동 위상 교란" },
+        { feature: "알코올 트리거", bermLink: "에탄올 → 직접적 Ca²⁺ 채널 조절 + 혈관 확장 + 히스타민" },
+        { feature: "RLS 동반질환", bermLink: "하지불안증후군은 Ca²⁺/철/도파민 경로를 공유한다. 가바펜틴이 둘 다 치료한다." },
+      ],
+    },
+    clusterTreatment: {
+      title: "치료 반응 맵",
+      headers: { drug: "약물", bermTarget: "BERM 표적", efficacy: "유효성", mechanism: "작용 이유" },
+      rows: [
+        {
+          drug: "베라파밀",
+          bermTarget: "L형 Ca²⁺ 채널(Cav1.2) 차단",
+          efficacy: "1차 예방약(240~960 mg/일)",
+          mechanism: "L형 VGCC를 차단 → 시냅스전 CGRP 방출 방지 → 일주기 주기 단축(Per2 시계 유전자). 직접적 Ca²⁺ 채널 개입.",
+        },
+        {
+          drug: "멜라토닌",
+          bermTarget: "MT1/MT2 → Gi → cAMP↓ → Ca²⁺↓",
+          efficacy: "유효(10~25 mg)",
+          mechanism: "내인성 Ca²⁺ 길항제. SCN 일주기 진동을 리셋한다. EMF가 CRY 경로를 통해 멜라토닌을 억제 → 보충이 보호를 회복한다.",
+        },
+        {
+          drug: "리튬",
+          bermTarget: "GSK3β 억제 → 일주기 시계 안정화",
+          efficacy: "2차 예방약",
+          mechanism: "Ca²⁺ 진동 하류의 일주기 시계 유전자(Per2, Bmal1)를 안정화. 일주기 주기 연장 → EMF 유발 위상 이동에 대항.",
+        },
+        {
+          drug: "가바펜틴",
+          bermTarget: "α2δ-1(CACNA2D1) 차단",
+          efficacy: "유효 가능성",
+          mechanism: "VGCC 보조 서브유닛 차단 → 흥분성 시냅스 형성 감소. ELF 프라이밍(α2δ-1 상향 조절)을 역전시킨다.",
+        },
+        {
+          drug: "수마트립탄",
+          bermTarget: "5-HT1B/1D → 시냅스전 Ca²⁺↓ → CGRP↓",
+          efficacy: "급성 중단 치료(피하 주사)",
+          mechanism: "시냅스전 5-HT1B/1D를 활성화 → Ca²⁺ 유입 감소 → CGRP 방출 차단. 급성 증상 완화이며 예방약이 아니다.",
+        },
+        {
+          drug: "산소(100%)",
+          bermTarget: "혈관 수축 + 자유 라디칼 소거",
+          efficacy: "급성 중단 치료(15 L/min)",
+          mechanism: "고유량 O₂ → 뇌혈관 수축 → 삼차신경 활성화 감소. 또한 라디칼 쌍 메커니즘(CRY 경로)을 소거한다.",
+        },
+        {
+          drug: "실로시빈",
+          bermTarget: "5-HT2A → 트립타민 경로 리셋",
+          efficacy: "사이키델릭 역치 이하 용량으로 주기 예방",
+          mechanism: "트립타민 마스터 리셋: 5-HT2A 작용 → 시상피질 네트워크 리셋 → SCN 일주기 리셋 → Ca²⁺ 진동 주기를 끊는다. 아래 트립타민 리셋 섹션 참조.",
+        },
+      ],
+    },
+
+    psilocybinTitle: "트립타민 리셋: 실로시빈",
+    psilocybinLead:
+      "실로시빈(실로신 / 4-OH-DMT)은 트립타민 경로의 \"마스터 리셋\"을 생성하는 5-HT2A 수용체 작용제이다. 사이키델릭 역치 이하 용량으로 군발두통 주기를 예방한다 — 그리고 비사이키델릭 유사체 2-브로모-LSD(BOL)도 효과가 있어, 이것이 사이키델릭 체험 효과가 아니라 수용체 수준의 메커니즘임을 증명한다.",
+    psilocybinMechanisms: [
+      {
+        step: "5-HT2A 수용체 작용",
+        desc: "실로신이 피질 V층 추체 뉴런의 5-HT2A에 결합 → 세로토닌 자체와는 다른 신호 캐스케이드를 유발(편향 작용). 이것이 수용체의 하류 연결을 리셋한다.",
+      },
+      {
+        step: "시상피질 네트워크 리셋",
+        desc: "피질과 시상에서의 5-HT2A 활성화가 기본모드 네트워크를 교란 → 시상피질 회로의 재편성을 가능하게 한다. 군발두통에서는 병적 진동 패턴을 끊는다.",
+      },
+      {
+        step: "SCN 일주기 리셋",
+        desc: "SCN으로의 세로토닌성 입력은 주요 비광성 동조 인자이다. 5-HT2A 활성화가 SCN Ca²⁺ 진동 위상을 재보정한다 — 군발두통 타이밍을 구동하는 동일한 진동.",
+      },
+      {
+        step: "5-HT2A 하향 조절",
+        desc: "급성 작용 후 5-HT2A 수용체가 내재화되고 하향 조절된다. 이것이 사이키델릭 역치 이하 용량이 효과적인 이유이며, 약물 제거 후에도 효과가 지속되는 이유이다 — 수용체 상태가 리셋된다.",
+      },
+      {
+        step: "α2δ-1 발현 리셋(제안)",
+        desc: "트립타민 경로가 α2δ-1 발현(CACNA2D1 → 시냅스의 VGCC 밀도)을 조절하는 경우, 실로시빈이 ELF 프라이밍 상태를 리셋할 수 있다. 이것이 실로시빈이 편두통에도 효과를 보이는 이유를 설명한다 — 둘 다 α2δ-1 매개 CSD 감수성을 공유한다.",
+      },
+    ],
+    psilocybinBol: {
+      title: "BOL-148: 비사이키델릭 증거",
+      desc: "2-브로모-LSD(BOL-148)는 LSD와 동일한 5-HT2A 결합 친화성을 가지지만 비사이키델릭(환각 효과 없음)이다. 이것도 군발두통 주기를 중단시킨다. 이는 치료 메커니즘이 수용체 수준에서 — 5-HT2A → 트립타민 경로 → 일주기 리셋을 통해 — 작동하며, 사이키델릭 체험 자체를 통하지 않는다는 것을 증명한다.",
+    },
+
+    csdTitle: "피질 확산성 탈분극: 통합 메커니즘",
+    csdLead:
+      "CSD는 네 가지 질환 모두에 공통된 종말 경로이다. Q인자가 CSD의 유발 여부, 전파 범위, 뇌간 도달 여부를 결정한다.",
+    csdTable: [
+      { condition: "SIDS", trigger: "EMF + Q→∞(신생아)", propagation: "뇌간 전체", outcome: "치명적", prevented: "부메타나이드(γ 회복), EMF 감소" },
+      { condition: "SUDEP", trigger: "발작 → 일시적 Q 스파이크", propagation: "뇌간 전체", outcome: "치명적", prevented: "L형 VGCC 길항제, 발작 관리" },
+      { condition: "간질", trigger: "낮은 γ + 국소 흥분성", propagation: "피질(제한적)", outcome: "발작", prevented: "에토숙시미드, 발프로산, 부메타나이드" },
+      { condition: "편두통", trigger: "CSD 역치 초과", propagation: "피질(뇌고랑에서 정지)", outcome: "전조 + 두통", prevented: "가바펜틴, 발프로산, 토피라메이트" },
+      { condition: "군발두통", trigger: "SCN Ca²⁺ 진동 → 삼차신경", propagation: "시상하부 → 삼차신경", outcome: "편측 통증", prevented: "베라파밀, 실로시빈, 멜라토닌" },
+    ],
+    csdHeaders: { condition: "질환", trigger: "CSD 트리거", propagation: "전파", outcome: "결과", prevented: "예방약" },
+
+    pharmTargetLabel: "표적",
+    pharmBermPathLabel: "BERM 경로",
+    pharmConditionsLabel: "적응증",
+    pharmMechanismLabel: "메커니즘",
+    predictionDesc: "Q인자 스펙트럼 모델은 편두통 유병률, CSD 역치, 군발두통 EMF 노출, SUDEP 위험, 실로시빈 유효성 및 신생아 동물 모델을 포함하는 6가지 검증 가능한 예측을 생성한다.",
+    predictionLink: "신경학적 스펙트럼 예측 참조(NEURO-EMF-1 ~ NEURO-EMF-6)",
     predictionHref: "/predictions",
   },
 } as const;
@@ -758,7 +1888,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const d = locale === "fi" ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
   return {
     title: `${d.title} – Extinction Field`,
     description: d.subtitle,
@@ -771,8 +1901,7 @@ export default async function NeurologicalSpectrumPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const activeLocale = locale === "fi" ? "fi" : "en";
-  const d = COPY[activeLocale];
+  const d = pickCopy(COPY, locale);
   const prefix = `/${locale}`;
 
   return (
@@ -789,7 +1918,7 @@ export default async function NeurologicalSpectrumPage({
       <PageHeader icon={BrainCircuit} title={d.title} subtitle={d.subtitle} />
 
       <div className="mt-8">
-        <CautionBox locale={activeLocale}>
+        <CautionBox locale={locale}>
           <p>{d.cautionText}</p>
         </CautionBox>
       </div>
@@ -901,21 +2030,21 @@ export default async function NeurologicalSpectrumPage({
 
                 <div className="mb-3">
                   <p className="text-xs font-medium text-foreground-muted uppercase tracking-wide mb-1">
-                    {activeLocale === "fi" ? "Kohde" : "Target"}
+                    {d.pharmTargetLabel}
                   </p>
                   <p className="text-sm leading-relaxed font-mono-num">{card.target}</p>
                 </div>
 
                 <div className="mb-3">
                   <p className="text-xs font-medium text-foreground-muted uppercase tracking-wide mb-1">
-                    {activeLocale === "fi" ? "BERM-reitti" : "BERM pathway"}
+                    {d.pharmBermPathLabel}
                   </p>
                   <p className="text-sm leading-relaxed">{card.bermPath}</p>
                 </div>
 
                 <div className="mb-3">
                   <p className="text-xs font-medium text-foreground-muted uppercase tracking-wide mb-1">
-                    {activeLocale === "fi" ? "Tilat" : "Conditions"}
+                    {d.pharmConditionsLabel}
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {card.conditions.map((c) => (
@@ -928,7 +2057,7 @@ export default async function NeurologicalSpectrumPage({
 
                 <div>
                   <p className="text-xs font-medium text-foreground-muted uppercase tracking-wide mb-1">
-                    {activeLocale === "fi" ? "Mekanismi" : "Mechanism"}
+                    {d.pharmMechanismLabel}
                   </p>
                   <p className="text-sm leading-relaxed text-foreground-muted">{card.mechanism}</p>
                 </div>
@@ -1091,7 +2220,7 @@ export default async function NeurologicalSpectrumPage({
             </thead>
             <tbody>
               {d.csdTable.map((row, i) => {
-                const fatal = row.outcome === "Fatal" || row.outcome === "Fataali";
+                const fatal = ["Fatal", "Fataali", "致死性", "치명적"].includes(row.outcome);
                 return (
                   <tr key={i} className={`border-b border-card-border/50 last:border-0 ${fatal ? "bg-red-500/5" : ""}`}>
                     <td className="py-2.5 pr-4 font-medium">{row.condition}</td>
@@ -1111,9 +2240,7 @@ export default async function NeurologicalSpectrumPage({
       <section className="mt-14 border-t editorial-rule pt-6">
         <DerivedPrediction>
           <p className="text-sm leading-relaxed mb-3">
-            {activeLocale === "fi"
-              ? "Q-tekijä-spektrimalli tuottaa kuusi testattavaa ennustetta jotka kattavat migreenin prevalenssin, CSD-kynnyksen, klusteripäänsäryn EMF-altistuksen, SUDEP-riskin, psilosybiinin tehon ja neonataalikoemallin."
-              : "The Q-factor spectrum model generates six testable predictions covering migraine prevalence, CSD threshold, cluster headache EMF exposure, SUDEP risk, psilocybin efficacy, and a neonatal animal model."}
+            {d.predictionDesc}
           </p>
           <Link
             href={`${prefix}${d.predictionHref}`}

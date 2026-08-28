@@ -13,5 +13,15 @@ export function MathBlock({ tex, display = true }: MathBlockProps) {
     displayMode: display,
     throwOnError: false,
   });
-  return <span dangerouslySetInnerHTML={{ __html: html }} />;
+
+  if (!display) {
+    return <span dangerouslySetInnerHTML={{ __html: html }} />;
+  }
+
+  return (
+    <span
+      className="chart-scroll block max-w-full overflow-y-hidden"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
 }

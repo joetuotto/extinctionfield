@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { pickCopy } from "@/lib/i18n";
 
 interface TocSection {
   id: string;
@@ -13,7 +14,7 @@ interface TocGroup {
   sections: TocSection[];
 }
 
-const GROUPS: Record<"en" | "fi", TocGroup[]> = {
+const GROUPS: Record<string, TocGroup[]> = {
   en: [
     {
       title: "BERM v17",
@@ -86,10 +87,118 @@ const GROUPS: Record<"en" | "fi", TocGroup[]> = {
       ],
     },
   ],
+  ja: [
+    {
+      title: "BERM v17",
+      sections: [
+        { id: "architecture", label: "範囲と境界条件" },
+        { id: "fieldstate-input", label: "FieldState入力" },
+        { id: "static-interface", label: "静的インターフェース" },
+        { id: "causal-diagram", label: "登録済み因果経路" },
+        { id: "organ-states", label: "臓器状態" },
+        { id: "asfr-tfr", label: "ASFR → TFR" },
+        { id: "testosterone-threshold", label: "T → TFR閾値" },
+        { id: "causal-structure", label: "因果構造" },
+      ],
+    },
+    {
+      title: "モジュローム",
+      sections: [
+        { id: "modulome", label: "12層モジュローム" },
+      ],
+    },
+    {
+      title: "数学的仕様",
+      sections: [
+        { id: "premise", num: "§1", label: "物理学的前提" },
+        { id: "evo-calibration", num: "§1b", label: "進化的キャリブレーション" },
+        { id: "three-channel-derivation", num: "§2b", label: "三チャネル導出" },
+        { id: "fieldstate", num: "§2", label: "FieldState" },
+        { id: "static-interface-math", num: "§3", label: "静的インターフェース" },
+        { id: "organ-state", num: "§4", label: "臓器状態" },
+        { id: "asfr", num: "§5", label: "ASFR → TFR" },
+        { id: "cohort", num: "§6", label: "コホートシグナル" },
+        { id: "gme", num: "§7", label: "GME / R42" },
+        { id: "validation", num: "§8", label: "検証境界" },
+      ],
+    },
+  ],
+  fr: [
+    {
+      title: "BERM v17",
+      sections: [
+        { id: "architecture", label: "Portée et limites" },
+        { id: "fieldstate-input", label: "Entrée FieldState" },
+        { id: "static-interface", label: "Interface statique" },
+        { id: "causal-diagram", label: "Route causale enregistrée" },
+        { id: "organ-states", label: "États des organes" },
+        { id: "asfr-tfr", label: "ASFR → TFR" },
+        { id: "testosterone-threshold", label: "Seuil T → TFR" },
+        { id: "causal-structure", label: "Structure causale" },
+      ],
+    },
+    {
+      title: "Modulome",
+      sections: [
+        { id: "modulome", label: "Modulome à 12 couches" },
+      ],
+    },
+    {
+      title: "Spécification mathématique",
+      sections: [
+        { id: "premise", num: "§1", label: "Prémisse physique" },
+        { id: "evo-calibration", num: "§1b", label: "Calibration évolutive" },
+        { id: "three-channel-derivation", num: "§2b", label: "Dérivation à trois canaux" },
+        { id: "fieldstate", num: "§2", label: "FieldState" },
+        { id: "static-interface-math", num: "§3", label: "Interface statique" },
+        { id: "organ-state", num: "§4", label: "État d'organe" },
+        { id: "asfr", num: "§5", label: "ASFR → TFR" },
+        { id: "cohort", num: "§6", label: "Signal de cohorte" },
+        { id: "gme", num: "§7", label: "GME / R42" },
+        { id: "validation", num: "§8", label: "Limite de validation" },
+      ],
+    },
+  ],
+  ko: [
+    {
+      title: "BERM v17",
+      sections: [
+        { id: "architecture", label: "범위와 경계 조건" },
+        { id: "fieldstate-input", label: "FieldState 입력" },
+        { id: "static-interface", label: "정적 인터페이스" },
+        { id: "causal-diagram", label: "등록된 인과 경로" },
+        { id: "organ-states", label: "장기 상태" },
+        { id: "asfr-tfr", label: "ASFR → TFR" },
+        { id: "testosterone-threshold", label: "T → TFR 임계값" },
+        { id: "causal-structure", label: "인과 구조" },
+      ],
+    },
+    {
+      title: "모듈로옴",
+      sections: [
+        { id: "modulome", label: "12층 모듈로옴" },
+      ],
+    },
+    {
+      title: "수학적 명세",
+      sections: [
+        { id: "premise", num: "§1", label: "물리학적 전제" },
+        { id: "evo-calibration", num: "§1b", label: "진화적 교정" },
+        { id: "three-channel-derivation", num: "§2b", label: "3채널 도출" },
+        { id: "fieldstate", num: "§2", label: "FieldState" },
+        { id: "static-interface-math", num: "§3", label: "정적 인터페이스" },
+        { id: "organ-state", num: "§4", label: "장기 상태" },
+        { id: "asfr", num: "§5", label: "ASFR → TFR" },
+        { id: "cohort", num: "§6", label: "코호트 신호" },
+        { id: "gme", num: "§7", label: "GME / R42" },
+        { id: "validation", num: "§8", label: "검증 경계" },
+      ],
+    },
+  ],
 };
 
 export function ModelTableOfContents({ locale }: { locale: string }) {
-  const groups = GROUPS[locale === "fi" ? "fi" : "en"];
+  const groups = pickCopy(GROUPS, locale);
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {

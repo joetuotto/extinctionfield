@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { FindingCard } from "@/components/FindingCard";
+import { pickCopy } from "@/lib/i18n";
 import {
   CLASSIFICATION_SUMMARY,
   CLASSIFICATION_VERSION,
@@ -58,11 +59,64 @@ const COPY = {
     detail: (s: typeof CLASSIFICATION_SUMMARY) =>
       `${s.affects_current_berm}/${s.total} affect the current empirical BERM · ${s.discriminating_tests_needed} follow-up discriminating tests identified`,
   },
+  ja: {
+    disclaimer:
+      "以下の分類は、以前否定的と解釈された所見にBERM推論プロトコル（v1.0）を適用したものです。再分類は所見がBERMを支持することを意味しません。元のテストが弁別的でなかったか、対象とされた標的に対処していなかったことを意味します。主要分岐（パスウェイC / RPM / コホート効果）は弁別的テストによる経験的検証が未了です。",
+    groupFilter: "分類",
+    scopeFilter: "範囲",
+    all: "すべて",
+    scopeL: "L-BERMに影響",
+    scopeE: "経験的BERMに影響",
+    scopeO: "旧バージョンに影響",
+    findings: "件の所見",
+    remains: "件は維持",
+    reclassified: "件は再分類",
+    refinement: "内部改良",
+    none: "このフィルタに該当する所見はありません。",
+    shown: (n: number, total: number) => `${n}/${total}件を表示`,
+    detail: (s: typeof CLASSIFICATION_SUMMARY) =>
+      `${s.affects_current_berm}/${s.total}件が現在の経験的BERMに影響 · ${s.discriminating_tests_needed}件の弁別的フォローアップテストを特定`,
+  },
+  fr: {
+    disclaimer:
+      "La classification ci-dessous applique le protocole de raisonnement BERM (v1.0) aux résultats précédemment interprétés comme négatifs. La reclassification ne signifie pas qu'un résultat soutient le BERM : elle signifie que le test original n'était pas discriminant, ou ne portait pas sur la cible visée. La branche principale (voie C / RPM / effet de cohorte) reste empiriquement non testée par des tests discriminants.",
+    groupFilter: "Classe",
+    scopeFilter: "Portée",
+    all: "Tous",
+    scopeL: "Concerne L-BERM",
+    scopeE: "Concerne le BERM empirique",
+    scopeO: "Concerne les versions obsolètes",
+    findings: "résultats",
+    remains: "maintenus",
+    reclassified: "reclassifiés",
+    refinement: "affinement interne",
+    none: "Aucun résultat avec ce filtre.",
+    shown: (n: number, total: number) => `Affichage ${n}/${total}`,
+    detail: (s: typeof CLASSIFICATION_SUMMARY) =>
+      `${s.affects_current_berm}/${s.total} concernent le BERM empirique actuel · ${s.discriminating_tests_needed} tests discriminants de suivi identifiés`,
+  },
+  ko: {
+    disclaimer:
+      "아래 분류는 이전에 부정적으로 해석된 소견에 BERM 추론 프로토콜(v1.0)을 적용한 것입니다. 재분류가 소견이 BERM을 지지함을 의미하지는 않습니다. 원래 테스트가 변별적이지 않았거나 의도된 대상을 다루지 않았음을 의미합니다. 주요 분기(경로 C / RPM / 코호트 효과)는 변별적 테스트로 경험적 검증이 아직 이루어지지 않은 상태입니다.",
+    groupFilter: "분류",
+    scopeFilter: "범위",
+    all: "전체",
+    scopeL: "L-BERM에 영향",
+    scopeE: "경험적 BERM에 영향",
+    scopeO: "구 버전에 영향",
+    findings: "건의 소견",
+    remains: "건 유지",
+    reclassified: "건 재분류",
+    refinement: "내부 개선",
+    none: "이 필터에 해당하는 소견이 없습니다.",
+    shown: (n: number, total: number) => `${n}/${total}건 표시`,
+    detail: (s: typeof CLASSIFICATION_SUMMARY) =>
+      `${s.affects_current_berm}/${s.total}건이 현재 경험적 BERM에 영향 · ${s.discriminating_tests_needed}건의 변별적 후속 테스트 식별`,
+  },
 } as const;
 
 export function EvidenceClassification({ locale }: { locale: string }) {
-  const fi = locale === "fi";
-  const c = fi ? COPY.fi : COPY.en;
+  const c = pickCopy(COPY, locale);
   const [group, setGroup] = useState<GroupFilter>("all");
   const [scope, setScope] = useState<ScopeFilter>("all");
 
@@ -80,9 +134,9 @@ export function EvidenceClassification({ locale }: { locale: string }) {
 
   const groupOptions: readonly { key: GroupFilter; label: string }[] = [
     { key: "all", label: c.all },
-    { key: "remains_negative", label: GROUP_LABELS.remains_negative[fi ? "fi" : "en"] },
-    { key: "reclassified", label: GROUP_LABELS.reclassified[fi ? "fi" : "en"] },
-    { key: "internal_refinement", label: GROUP_LABELS.internal_refinement[fi ? "fi" : "en"] },
+    { key: "remains_negative", label: (GROUP_LABELS.remains_negative as Record<string, string>)[locale] ?? GROUP_LABELS.remains_negative.en },
+    { key: "reclassified", label: (GROUP_LABELS.reclassified as Record<string, string>)[locale] ?? GROUP_LABELS.reclassified.en },
+    { key: "internal_refinement", label: (GROUP_LABELS.internal_refinement as Record<string, string>)[locale] ?? GROUP_LABELS.internal_refinement.en },
   ];
   const scopeOptions: readonly { key: ScopeFilter; label: string }[] = [
     { key: "all", label: c.all },

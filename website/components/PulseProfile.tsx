@@ -260,7 +260,7 @@ function Chart({ compact, fi }: { compact: boolean; fi: boolean }) {
   );
 }
 
-export function PulseProfile({ locale = "en" }: { locale?: "fi" | "en" }) {
+export function PulseProfile({ locale = "en" }: { locale?: string }) {
   const fi = locale === "fi";
 
   return (

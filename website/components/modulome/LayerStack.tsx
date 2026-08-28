@@ -3,15 +3,25 @@
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import type { ModulomeLayer } from "@/lib/modulome/layers";
+import { pickCopy } from "@/lib/i18n";
+
+const COPY = {
+  en: { new: "NEW", chiModulator: "Chi-modulator", keyComponents: "Key components", integration: "Integration" },
+  fi: { new: "UUSI", chiModulator: "Chi-modulaattori", keyComponents: "Avainkomponentit", integration: "Integraatio" },
+  ja: { new: "NEW", chiModulator: "Chiモジュレーター", keyComponents: "主要コンポーネント", integration: "統合" },
+  fr: { new: "NOUVEAU", chiModulator: "Chi-modulateur", keyComponents: "Composants clés", integration: "Intégration" },
+  ko: { new: "NEW", chiModulator: "Chi 조절인자", keyComponents: "주요 구성요소", integration: "통합" },
+} as const;
 
 export function LayerStack({
   layers,
   locale,
 }: {
   layers: ModulomeLayer[];
-  locale: "en" | "fi";
+  locale: string;
 }) {
   const [expanded, setExpanded] = useState<string | null>(null);
+  const c = pickCopy(COPY, locale);
 
   return (
     <div className="space-y-2">
@@ -56,7 +66,7 @@ export function LayerStack({
               </span>
               {layer.newInSession && (
                 <span className="shrink-0 text-[0.6rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-accent/10 text-accent">
-                  {locale === "fi" ? "UUSI" : "NEW"}
+                  {c.new}
                 </span>
               )}
             </button>
@@ -65,7 +75,7 @@ export function LayerStack({
               <div className="px-4 pb-4 pl-[3.25rem] space-y-3">
                 <div>
                   <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wider mb-1">
-                    {locale === "fi" ? "Chi-modulaattori" : "Chi-modulator"}
+                    {c.chiModulator}
                   </p>
                   <p className="text-sm text-foreground-muted leading-relaxed">
                     {chi}
@@ -73,7 +83,7 @@ export function LayerStack({
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wider mb-1">
-                    {locale === "fi" ? "Avainkomponentit" : "Key components"}
+                    {c.keyComponents}
                   </p>
                   <p className="text-sm text-foreground-muted leading-relaxed font-mono">
                     {components}
@@ -81,7 +91,7 @@ export function LayerStack({
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-foreground-muted uppercase tracking-wider mb-1">
-                    {locale === "fi" ? "Integraatio" : "Integration"}
+                    {c.integration}
                   </p>
                   <p className="text-sm text-foreground-muted leading-relaxed">
                     {integration}

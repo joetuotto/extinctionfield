@@ -1,8 +1,52 @@
 import type { LockedPrediction } from "@/lib/types";
 import { countryLabel } from "@/lib/predictions";
+import { pickCopy } from "@/lib/i18n";
 import predictionSeries from "@/lib/predictionSeries.json";
 
 const SERIES = predictionSeries.series as Record<string, { year: number; tfr: number }[]>;
+
+const COPY = {
+  en: {
+    observed: "Observed",
+    insideEnvelope: "inside the envelope",
+    outsideEnvelope: "outside the envelope",
+    notPublished: (year: number) => `The ${year} observation is not published yet.`,
+    ariaLabel: (country: string, xMin: number, lastYear: number, year: number, central: string, sensitivity: string) =>
+      `${country}: observed TFR ${xMin}–${lastYear} and the locked ${year} prediction (${central}, sensitivity ${sensitivity})`,
+  },
+  fi: {
+    observed: "Havaittu",
+    insideEnvelope: "alueen sisällä",
+    outsideEnvelope: "alueen ulkopuolella",
+    notPublished: (year: number) => `Havainto ${year} on julkaisematta.`,
+    ariaLabel: (country: string, xMin: number, lastYear: number, year: number, central: string, sensitivity: string) =>
+      `${country}: havaittu TFR ${xMin}–${lastYear} ja lukittu ennuste ${year} (${central}, herkkyysalue ${sensitivity})`,
+  },
+  ja: {
+    observed: "観測値",
+    insideEnvelope: "範囲内",
+    outsideEnvelope: "範囲外",
+    notPublished: (year: number) => `${year}年の観測値はまだ公開されていません。`,
+    ariaLabel: (country: string, xMin: number, lastYear: number, year: number, central: string, sensitivity: string) =>
+      `${country}: 観測TFR ${xMin}–${lastYear}、ロック済み${year}年予測（${central}、感度${sensitivity}）`,
+  },
+  fr: {
+    observed: "Observé",
+    insideEnvelope: "à l'intérieur de l'enveloppe",
+    outsideEnvelope: "à l'extérieur de l'enveloppe",
+    notPublished: (year: number) => `L'observation de ${year} n'est pas encore publiée.`,
+    ariaLabel: (country: string, xMin: number, lastYear: number, year: number, central: string, sensitivity: string) =>
+      `${country} : TFR observé ${xMin}–${lastYear} et la prédiction verrouillée ${year} (${central}, sensibilité ${sensitivity})`,
+  },
+  ko: {
+    observed: "관측값",
+    insideEnvelope: "범위 내",
+    outsideEnvelope: "범위 밖",
+    notPublished: (year: number) => `${year}년 관측값은 아직 발표되지 않았습니다.`,
+    ariaLabel: (country: string, xMin: number, lastYear: number, year: number, central: string, sensitivity: string) =>
+      `${country}: 관측 TFR ${xMin}–${lastYear} 및 잠긴 ${year}년 예측 (${central}, 민감도 ${sensitivity})`,
+  },
+};
 
 /**
  * One locked TFR forecast against the published series it will be judged by.
@@ -17,13 +61,13 @@ export function PredictionTrack({
   prediction: LockedPrediction;
   locale: string;
 }) {
-  const fi = locale === "fi";
+  const d = pickCopy(COPY, locale);
   const observed = SERIES[prediction.country] ?? [];
   if (observed.length < 2) return null;
 
   const W = 260;
   const H = 150;
-  const pad = { top: 14, right: 14, bottom: 26, left: 30 };
+  const pad = { top: 16, right: 22, bottom: 28, left: 32 };
   const cw = W - pad.left - pad.right;
   const ch = H - pad.top - pad.bottom;
 
@@ -56,26 +100,36 @@ export function PredictionTrack({
     prediction.actual <= prediction.ciHigh;
 
   const xTicks = [xMin, Math.round((xMin + xMax) / 2), xMax];
-  // The forecast line approaches from above when the prediction falls, so the
-  // value sits on whichever side of the point the line does not occupy.
-  const labelBelow = prediction.central < last.tfr;
+  // Keep the value inside the plot even when a low forecast sits close to the
+  // final year tick. This avoids the common 2040 / forecast-value collision.
+  const centralY = sy(prediction.central);
+  const labelY = centralY > pad.top + ch - 20
+    ? centralY - 10
+    : centralY < pad.top + 16
+      ? centralY + 15
+      : centralY + (prediction.central < last.tfr ? 15 : -9);
+
+  const sensitivityStr = `${prediction.ciLow.toFixed(2)}–${prediction.ciHigh.toFixed(2)}`;
 
   return (
-    <figure className="rounded-lg border border-card-border bg-card-bg p-4">
-      <figcaption className="mb-1 flex items-baseline justify-between gap-2">
-        <span className="text-sm font-medium">{countryLabel(prediction, locale)}</span>
+    <figure className="data-figure">
+      <figcaption className="data-figure__caption flex items-baseline justify-between gap-2">
+        <span className="data-figure__title">{countryLabel(prediction, locale)}</span>
         <span className="font-mono-num text-xs text-foreground-muted">{prediction.year}</span>
       </figcaption>
 
       <svg
         viewBox={`0 0 ${W} ${H}`}
-        className="w-full"
+        className="chart-svg w-full"
         role="img"
-        aria-label={
-          fi
-            ? `${countryLabel(prediction, locale)}: havaittu TFR ${xMin}–${last.year} ja lukittu ennuste ${prediction.year} (${prediction.central.toFixed(2)}, herkkyysalue ${prediction.ciLow.toFixed(2)}–${prediction.ciHigh.toFixed(2)})`
-            : `${countryLabel(prediction, locale)}: observed TFR ${xMin}–${last.year} and the locked ${prediction.year} prediction (${prediction.central.toFixed(2)}, sensitivity ${prediction.ciLow.toFixed(2)}–${prediction.ciHigh.toFixed(2)})`
-        }
+        aria-label={d.ariaLabel(
+          countryLabel(prediction, locale),
+          xMin,
+          last.year,
+          prediction.year,
+          prediction.central.toFixed(2),
+          sensitivityStr,
+        )}
       >
         <line
           x1={pad.left}
@@ -128,7 +182,7 @@ export function PredictionTrack({
         <circle cx={sx(prediction.year)} cy={sy(prediction.central)} r={3} fill="var(--accent)" />
         <text
           x={sx(prediction.year) - 6}
-          y={sy(prediction.central) + (labelBelow ? 14 : -8)}
+          y={labelY}
           fill="var(--accent)"
           fontSize={11}
           textAnchor="end"
@@ -158,14 +212,10 @@ export function PredictionTrack({
       </p>
       <p className="mt-0.5 text-xs text-foreground-muted">
         {prediction.actual !== undefined
-          ? `${fi ? "Havaittu" : "Observed"} ${prediction.actual.toFixed(2)} — ${
-              inEnvelope
-                ? fi ? "alueen sisällä" : "inside the envelope"
-                : fi ? "alueen ulkopuolella" : "outside the envelope"
+          ? `${d.observed} ${prediction.actual.toFixed(2)} — ${
+              inEnvelope ? d.insideEnvelope : d.outsideEnvelope
             }`
-          : fi
-            ? `Havainto ${prediction.year} on julkaisematta.`
-            : `The ${prediction.year} observation is not published yet.`}
+          : d.notPublished(prediction.year)}
       </p>
     </figure>
   );

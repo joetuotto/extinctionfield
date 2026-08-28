@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { pickCopy } from "@/lib/i18n";
 
-const TABS = {
+const TABS: Record<string, { href: string; label: string }[]> = {
   en: [
     { href: "/modulome", label: "Overview" },
     { href: "/modulome/eye", label: "Eye" },
@@ -30,11 +31,50 @@ const TABS = {
     { href: "/modulome/ear", label: "Sisäkorva" },
     { href: "/modulome/pain", label: "Kipu (DRG)" },
   ],
-} as const;
+  ja: [
+    { href: "/modulome", label: "概要" },
+    { href: "/modulome/eye", label: "眼" },
+    { href: "/modulome/pituitary", label: "下垂体" },
+    { href: "/modulome/testes", label: "精巣" },
+    { href: "/modulome/pancreas", label: "膵臓" },
+    { href: "/modulome/brain", label: "脳" },
+    { href: "/modulome/heart", label: "心臓" },
+    { href: "/modulome/thyroid", label: "甲状腺" },
+    { href: "/modulome/adrenal", label: "副腎" },
+    { href: "/modulome/ear", label: "内耳" },
+    { href: "/modulome/pain", label: "疼痛 (DRG)" },
+  ],
+  fr: [
+    { href: "/modulome", label: "Vue d'ensemble" },
+    { href: "/modulome/eye", label: "Œil" },
+    { href: "/modulome/pituitary", label: "Hypophyse" },
+    { href: "/modulome/testes", label: "Testicules" },
+    { href: "/modulome/pancreas", label: "Pancréas" },
+    { href: "/modulome/brain", label: "Cerveau" },
+    { href: "/modulome/heart", label: "Cœur" },
+    { href: "/modulome/thyroid", label: "Thyroïde" },
+    { href: "/modulome/adrenal", label: "Surrénale" },
+    { href: "/modulome/ear", label: "Oreille interne" },
+    { href: "/modulome/pain", label: "Douleur (DRG)" },
+  ],
+  ko: [
+    { href: "/modulome", label: "개요" },
+    { href: "/modulome/eye", label: "눈" },
+    { href: "/modulome/pituitary", label: "뇌하수체" },
+    { href: "/modulome/testes", label: "고환" },
+    { href: "/modulome/pancreas", label: "췌장" },
+    { href: "/modulome/brain", label: "뇌" },
+    { href: "/modulome/heart", label: "심장" },
+    { href: "/modulome/thyroid", label: "갑상선" },
+    { href: "/modulome/adrenal", label: "부신" },
+    { href: "/modulome/ear", label: "내이" },
+    { href: "/modulome/pain", label: "통증 (DRG)" },
+  ],
+};
 
 export function ModulomeTabs({ locale }: { locale: string }) {
   const pathname = usePathname();
-  const tabs = locale === "fi" ? TABS.fi : TABS.en;
+  const tabs = pickCopy(TABS, locale);
 
   return (
     <nav className="flex gap-1 border-b border-border mb-8 overflow-x-auto">

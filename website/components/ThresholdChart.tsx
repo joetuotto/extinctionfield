@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { THRESHOLD_COUNTRIES, computeTIndex } from "@/lib/thresholdModel";
+import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: {
@@ -17,6 +18,27 @@ const COPY = {
     yearLabel: "Vuosi",
     thresholdLabel: "40 %:n menetyskynnys",
     projectionLabel: "Ennustealue",
+  },
+  ja: {
+    tIndexLabel: "T-index (基準値 = 100)",
+    tfrLabel: "TFR",
+    yearLabel: "年",
+    thresholdLabel: "40%損失閾値",
+    projectionLabel: "予測範囲",
+  },
+  fr: {
+    tIndexLabel: "T-index (base = 100)",
+    tfrLabel: "TFR",
+    yearLabel: "Année",
+    thresholdLabel: "Seuil de perte de 40 %",
+    projectionLabel: "Plage de projection",
+  },
+  ko: {
+    tIndexLabel: "T-index (기준치 = 100)",
+    tfrLabel: "TFR",
+    yearLabel: "연도",
+    thresholdLabel: "40% 손실 임계값",
+    projectionLabel: "예측 범위",
   },
 };
 
@@ -48,8 +70,7 @@ function yRightScale(tfr: number) {
 
 export function ThresholdChart({ locale }: { locale: string }) {
   const [selectedId, setSelectedId] = useState("finland");
-  const lang = locale === "fi" ? "fi" : "en";
-  const copy = COPY[lang];
+  const copy = pickCopy(COPY, locale);
   const country = THRESHOLD_COUNTRIES.find((c) => c.id === selectedId) ?? THRESHOLD_COUNTRIES[0];
 
   const tCurvePoints: string[] = [];
@@ -100,34 +121,46 @@ export function ThresholdChart({ locale }: { locale: string }) {
   const tfrTicks = [0, 1, 2, 3, 4, 5];
 
   return (
-    <div>
-      <div className="flex flex-wrap gap-2 mb-3">
-        {THRESHOLD_COUNTRIES.map((c) => (
-          <button
-            key={c.id}
-            onClick={() => setSelectedId(c.id)}
-            className="px-3 py-1 rounded-full text-sm font-medium transition-colors"
-            style={{
-              backgroundColor:
-                selectedId === c.id ? c.color : "transparent",
-              color: selectedId === c.id ? "#fff" : c.color,
-              border: `1.5px solid ${c.color}`,
-            }}
-          >
-            {lang === "fi" ? c.nameFi : c.nameEn}
-          </button>
-        ))}
+    <div className="chart-surface">
+      <div className="chart-surface__header">
+        <div className="flex max-w-full flex-wrap gap-2" role="group">
+          {THRESHOLD_COUNTRIES.map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              onClick={() => setSelectedId(c.id)}
+              aria-pressed={selectedId === c.id}
+              className="min-h-9 max-w-full rounded-full px-3 py-1.5 text-sm font-semibold leading-tight transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
+              style={{
+                backgroundColor:
+                  selectedId === c.id ? c.color : "transparent",
+                color: selectedId === c.id ? "#fff" : c.color,
+                border: `1.5px solid ${c.color}`,
+              }}
+            >
+              {c.names[locale] ?? c.names.en}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="overflow-x-auto">
+      <div className="chart-scroll">
         <svg
           viewBox={`0 0 ${W} ${H}`}
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full min-w-[600px]"
-
+          className="chart-svg mx-auto h-auto w-full min-w-[720px] max-w-[800px]"
           role="img"
           aria-label="TFR threshold chart showing fertility rate trends by country"
         >
+          <rect
+            x={PAD.left}
+            y={PAD.top}
+            width={CW}
+            height={CH}
+            fill="var(--foreground)"
+            opacity={0.018}
+            rx={6}
+          />
           {yearTicks.map((yr) => (
             <line
               key={`gx-${yr}`}
@@ -135,9 +168,9 @@ export function ThresholdChart({ locale }: { locale: string }) {
               y1={PAD.top}
               x2={xScale(yr)}
               y2={PAD.top + CH}
-              stroke="var(--foreground-muted)"
+              className="chart-grid-line"
               strokeWidth={0.5}
-              opacity={0.3}
+              opacity={0.85}
             />
           ))}
           {tTicks.map((t) => (
@@ -147,9 +180,9 @@ export function ThresholdChart({ locale }: { locale: string }) {
               y1={yLeftScale(t)}
               x2={PAD.left + CW}
               y2={yLeftScale(t)}
-              stroke="var(--foreground-muted)"
+              className="chart-grid-line"
               strokeWidth={0.5}
-              opacity={0.3}
+              opacity={0.85}
             />
           ))}
 
@@ -183,6 +216,10 @@ export function ThresholdChart({ locale }: { locale: string }) {
             fill="var(--status-refuted)"
             fontSize={13}
             fontWeight={500}
+            paintOrder="stroke"
+            stroke="var(--figure-bg)"
+            strokeWidth={3}
+            strokeLinejoin="round"
           >
             {copy.thresholdLabel}
           </text>
@@ -192,6 +229,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
             fill="none"
             stroke={country.color}
             strokeWidth={2.5}
+            strokeLinecap="round"
             strokeLinejoin="round"
           />
           {tCurveDashed && (
@@ -201,6 +239,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
               stroke={country.color}
               strokeWidth={2}
               strokeDasharray="6 4"
+              strokeLinecap="round"
               strokeLinejoin="round"
               opacity={0.6}
             />
@@ -233,6 +272,8 @@ export function ThresholdChart({ locale }: { locale: string }) {
               stroke={country.color}
               strokeWidth={1.5}
               strokeDasharray="4 3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               opacity={0.5}
             />
           )}
@@ -242,7 +283,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
             y1={PAD.top}
             x2={PAD.left}
             y2={PAD.top + CH}
-            stroke="var(--foreground-muted)"
+            className="chart-axis-line"
             strokeWidth={1}
           />
           <line
@@ -250,7 +291,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
             y1={PAD.top}
             x2={PAD.left + CW}
             y2={PAD.top + CH}
-            stroke="var(--foreground-muted)"
+            className="chart-axis-line"
             strokeWidth={1}
           />
           <line
@@ -258,7 +299,7 @@ export function ThresholdChart({ locale }: { locale: string }) {
             y1={PAD.top + CH}
             x2={PAD.left + CW}
             y2={PAD.top + CH}
-            stroke="var(--foreground-muted)"
+            className="chart-axis-line"
             strokeWidth={1}
           />
 

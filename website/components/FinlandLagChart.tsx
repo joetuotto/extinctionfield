@@ -1,5 +1,7 @@
 "use client";
 
+import { pickCopy } from "@/lib/i18n";
+
 const COPY = {
   en: {
     tIndex: "T-index (baseline = 100)",
@@ -18,6 +20,33 @@ const COPY = {
     crossed: "Kynnys ylitetty",
     forecast: "Ennuste",
     observed: "Havaittu",
+  },
+  ja: {
+    tIndex: "T-index (基準値 = 100)",
+    tfr: "TFR (女性一人あたりの子ども数)",
+    lag: "約35年のラグ",
+    threshold: "40%損失閾値",
+    crossed: "閾値超過",
+    forecast: "予測",
+    observed: "観測値",
+  },
+  fr: {
+    tIndex: "Indice T (référence = 100)",
+    tfr: "TFR (enfants par femme)",
+    lag: "~35 ans de décalage",
+    threshold: "Seuil de perte de 40 %",
+    crossed: "Seuil franchi",
+    forecast: "Prévision",
+    observed: "Observé",
+  },
+  ko: {
+    tIndex: "T-지수 (기준값 = 100)",
+    tfr: "TFR (여성 1인당 자녀 수)",
+    lag: "~35년 지연",
+    threshold: "40% 손실 임계값",
+    crossed: "임계값 초과",
+    forecast: "예측",
+    observed: "관측값",
   },
 };
 
@@ -51,7 +80,7 @@ function svgLine(data: [number, number][], yFn: (v: number) => number): string {
 }
 
 export function FinlandLagChart({ locale }: { locale: string }) {
-  const L = locale === "fi" ? COPY.fi : COPY.en;
+  const L = pickCopy(COPY, locale);
 
   const years = Array.from({ length: 55 }, (_, i) => 1970 + i);
   const tSolid = years.slice(0, 2025 - 1970)
@@ -75,13 +104,26 @@ export function FinlandLagChart({ locale }: { locale: string }) {
   const lagMidY = P1_BOT + PANEL_GAP / 2;
 
   return (
-    <div className="overflow-x-auto">
-      <svg viewBox={`0 0 ${W} ${TOTAL_H}`} className="w-full max-w-[700px]" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Finland T-index vs TFR lag chart, 1970–2035">
+    <div className="chart-surface">
+      <div className="chart-scroll">
+        <svg
+          viewBox={`0 0 ${W} ${TOTAL_H}`}
+          className="chart-svg mx-auto h-auto w-full min-w-[640px] max-w-[700px]"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label={`${L.tIndex}; ${L.tfr}, 1970–2035`}
+        >
         <defs>
           <marker id="lag-arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
             <path d="M0,0.5 L7,3 L0,5.5" fill="none" stroke="var(--foreground-muted)" strokeWidth="1.5" />
           </marker>
         </defs>
+
+        {/* Quiet panel fields make the two scales easier to scan. */}
+        <rect x={ML} y={P1_TOP} width={W - ML - MR} height={P1_H}
+          fill="var(--foreground)" opacity={0.018} rx={6} />
+        <rect x={ML} y={P2_TOP} width={W - ML - MR} height={P2_H}
+          fill="var(--foreground)" opacity={0.018} rx={6} />
 
         {/* Forecast zone across both panels */}
         <rect x={forecastX} y={P1_TOP} width={px(2035) - forecastX} height={P1_H}
@@ -100,19 +142,20 @@ export function FinlandLagChart({ locale }: { locale: string }) {
         {[40, 60, 80, 100].map((v) => (
           <g key={`t-${v}`}>
             <line x1={ML} y1={pyT(v)} x2={W - MR} y2={pyT(v)}
-              stroke="var(--foreground)" opacity={0.06} />
+              className="chart-grid-line" opacity={0.65} />
             <text x={ML - 8} y={pyT(v) + 4} textAnchor="end"
               fill="var(--foreground-muted)" fontSize={11}>{v}</text>
           </g>
         ))}
 
-        <line x1={ML} y1={P1_TOP} x2={ML} y2={P1_BOT} stroke="var(--foreground)" opacity={0.12} />
-        <line x1={ML} y1={P1_BOT} x2={W - MR} y2={P1_BOT} stroke="var(--foreground)" opacity={0.12} />
+        <line x1={ML} y1={P1_TOP} x2={ML} y2={P1_BOT} className="chart-axis-line" opacity={0.48} />
+        <line x1={ML} y1={P1_BOT} x2={W - MR} y2={P1_BOT} className="chart-axis-line" opacity={0.48} />
 
         {/* Threshold line */}
         <line x1={ML} y1={thY} x2={W - MR} y2={thY}
           stroke="var(--status-refuted)" strokeWidth={1} strokeDasharray="6 4" opacity={0.5} />
-        <text x={ML + 4} y={thY - 6} fill="var(--status-refuted)" fontSize={11} opacity={0.7}>
+        <text x={ML + 4} y={thY - 6} fill="var(--status-refuted)" fontSize={11} opacity={0.8}
+          paintOrder="stroke" stroke="var(--figure-bg)" strokeWidth={3} strokeLinejoin="round">
           {L.threshold}
         </text>
 
@@ -126,6 +169,7 @@ export function FinlandLagChart({ locale }: { locale: string }) {
           stroke="var(--status-refuted)" strokeWidth={1} strokeDasharray="3 3" opacity={0.35} />
         <text x={cX + 14} y={(thY + P1_BOT) / 2} fill="var(--status-refuted)" fontSize={11} opacity={0.7}
           textAnchor="middle"
+          paintOrder="stroke" stroke="var(--figure-bg)" strokeWidth={3} strokeLinejoin="round"
           transform={`rotate(-90 ${cX + 14} ${(thY + P1_BOT) / 2})`}>{L.crossed}</text>
 
         {/* ── Panel 2: TFR ── */}
@@ -136,14 +180,14 @@ export function FinlandLagChart({ locale }: { locale: string }) {
         {[0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0].map((v) => (
           <g key={`f-${v}`}>
             <line x1={ML} y1={pyF(v)} x2={W - MR} y2={pyF(v)}
-              stroke="var(--foreground)" opacity={0.06} />
+              className="chart-grid-line" opacity={0.65} />
             <text x={ML - 8} y={pyF(v) + 4} textAnchor="end"
               fill="var(--foreground-muted)" fontSize={11}>{v.toFixed(1)}</text>
           </g>
         ))}
 
-        <line x1={ML} y1={P2_TOP} x2={ML} y2={P2_BOT} stroke="var(--foreground)" opacity={0.12} />
-        <line x1={ML} y1={P2_BOT} x2={W - MR} y2={P2_BOT} stroke="var(--foreground)" opacity={0.12} />
+        <line x1={ML} y1={P2_TOP} x2={ML} y2={P2_BOT} className="chart-axis-line" opacity={0.48} />
+        <line x1={ML} y1={P2_BOT} x2={W - MR} y2={P2_BOT} className="chart-axis-line" opacity={0.48} />
 
         {/* TFR line + dots */}
         <path d={fSolid} fill="none" stroke="var(--status-partial)" strokeWidth={2.5} />
@@ -166,10 +210,12 @@ export function FinlandLagChart({ locale }: { locale: string }) {
         <circle cx={lagStartX} cy={lagStartY} r={4} fill="var(--accent)" />
         <circle cx={lagEndX} cy={lagEndY} r={4} fill="var(--status-partial)" />
         <text x={lagMidX} y={lagMidY + 5} textAnchor="middle"
-          fill="var(--foreground)" fontSize={13} fontWeight={700}>
+          fill="var(--foreground)" fontSize={13} fontWeight={700}
+          paintOrder="stroke" stroke="var(--figure-bg)" strokeWidth={4} strokeLinejoin="round">
           {L.lag}
         </text>
-      </svg>
+        </svg>
+      </div>
     </div>
   );
 }

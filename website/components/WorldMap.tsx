@@ -6,6 +6,7 @@ import { interpolateViridis, interpolateCividis } from "d3-scale-chromatic";
 import { geoNaturalEarth1, geoPath } from "d3-geo";
 import type { FeatureCollection, Feature, Geometry } from "geojson";
 import { CountryDetailPanel } from "@/components/CountryDetailPanel";
+import { pickCopy } from "@/lib/i18n";
 
 type Layer = "tfr" | "mobile";
 
@@ -26,6 +27,32 @@ interface GeoProperties {
   ISO_A2_EH: string;
   NAME: string;
   ADMIN: string;
+}
+
+function positionTooltip(
+  tooltip: HTMLDivElement,
+  svg: SVGSVGElement,
+  clientX: number,
+  clientY: number,
+) {
+  const bounds = svg.getBoundingClientRect();
+  const gap = 12;
+  const edge = 8;
+  const width = Math.min(tooltip.offsetWidth, Math.max(0, bounds.width - edge * 2));
+  const height = tooltip.offsetHeight;
+  const pointerX = clientX - bounds.left;
+  const pointerY = clientY - bounds.top;
+
+  let left = pointerX + gap;
+  if (left + width > bounds.width - edge) left = pointerX - gap - width;
+  left = Math.max(edge, Math.min(left, bounds.width - edge - width));
+
+  let top = pointerY - height / 2;
+  if (top + height > bounds.height - edge) top = bounds.height - edge - height;
+  top = Math.max(edge, top);
+
+  tooltip.style.left = `${left}px`;
+  tooltip.style.top = `${top}px`;
 }
 
 const LAYER_CONFIG: Record<
@@ -93,6 +120,59 @@ const LOW_EMF_MARKERS = [
   { name: "Amish (OH)", lat: 40.5, lon: -81.1, detail: "TFR 6.1 · Cancer 60% of US · Depression <1%" },
   { name: "Mosetén", lat: -15.4, lon: -67.5, detail: "Intermediate — Tsimane-Modern gradient" },
 ];
+
+const copy = {
+  en: {
+    loading: "Loading map...",
+    tfr: "TFR (World Bank series)",
+    mobile: "Mobile subscriptions (technology-timing proxy)",
+    selected: "Selected country",
+    select: "Select a country to inspect data for this layer.",
+    noData: "No data for selected year",
+    tfrSource: "TFR map: World Bank WDI published TFR series. It may incorporate harmonised national sources and UN demographic estimates; it is not the WPP ASFR panel.",
+    mobileNote: "Mobile subscription density is a composite proxy for the electromagnetic environment, not measured RF exposure, a FieldState vector, or a dose metric.",
+  },
+  ja: {
+    loading: "地図を読み込み中...",
+    tfr: "TFR（世界銀行シリーズ）",
+    mobile: "モバイル加入（技術タイミングプロキシ）",
+    selected: "選択された国",
+    select: "この層のデータを確認するには国を選択してください。",
+    noData: "選択された年のデータなし",
+    tfrSource: "TFRマップ：世界銀行WDI公開TFRシリーズ。調和された国家ソースとUN人口推定を含む場合がある。WPP ASFRパネルではない。",
+    mobileNote: "モバイル加入密度は電磁環境の複合プロキシであり、測定されたRF曝露、FieldStateベクトル、線量指標ではない。",
+  },
+  fr: {
+    loading: "Chargement de la carte...",
+    tfr: "TFR (série Banque mondiale)",
+    mobile: "Abonnements mobiles (proxy temporel technologique)",
+    selected: "Pays sélectionné",
+    select: "Sélectionnez un pays pour inspecter les données de cette couche.",
+    noData: "Pas de données pour l'année sélectionnée",
+    tfrSource: "Carte TFR : série TFR publiée par la Banque mondiale WDI. Elle peut incorporer des sources nationales harmonisées et des estimations démographiques de l'ONU ; ce n'est pas le panel ASFR WPP.",
+    mobileNote: "La densité d'abonnements mobiles est un proxy composite pour l'environnement électromagnétique, pas une exposition RF mesurée, un vecteur FieldState ou une métrique de dose.",
+  },
+  ko: {
+    loading: "지도 로딩 중...",
+    tfr: "TFR (세계은행 시리즈)",
+    mobile: "모바일 가입 (기술 타이밍 프록시)",
+    selected: "선택된 국가",
+    select: "이 층의 데이터를 확인하려면 국가를 선택하세요.",
+    noData: "선택된 연도의 데이터 없음",
+    tfrSource: "TFR 지도: 세계은행 WDI 공개 TFR 시리즈. 조화된 국가 소스와 UN 인구 추정을 포함할 수 있으며, WPP ASFR 패널이 아닙니다.",
+    mobileNote: "모바일 가입 밀도는 전자기 환경의 복합 프록시이며, 측정된 RF 노출, FieldState 벡터 또는 선량 지표가 아닙니다.",
+  },
+  fi: {
+    loading: "Ladataan karttaa...",
+    tfr: "TFR (Maailmanpankin sarja)",
+    mobile: "Mobiililiittymät (teknologia-ajoituksen proxy)",
+    selected: "Valittu maa",
+    select: "Valitse maa kartalta nähdäksesi kyseisen tason tiedot.",
+    noData: "Ei tietoa valitulle vuodelle",
+    tfrSource: "TFR-kartta: Maailmanpankin WDI:n julkaistu TFR-sarja. Se voi sisältää kansallisten lähteiden ja YK:n väestöarvioiden harmonisointeja; kartta ei ole WPP:n ASFR-paneeli.",
+    mobileNote: "Mobiililiittymätiheys on yhdistelmäproksi sähkömagneettiselle ympäristölle, ei mitattu RF-altistus, FieldState-vektori tai annosmitta.",
+  },
+} as const;
 
 export function WorldMap({ locale }: { locale: string }) {
   const displayNames = useMemo(() => {
@@ -191,7 +271,7 @@ export function WorldMap({ locale }: { locale: string }) {
       .attr("stroke", "var(--card-border)")
       .attr("stroke-width", 0.5)
       .attr("fill", "var(--card-border)")
-      .on("mouseenter", function (_event, d) {
+      .on("mouseenter", function (event, d) {
         const iso3 = getISO3(d);
         const { mapData: md, layer: ly, year: yr } = stateRef.current;
         select(this).attr("stroke", "var(--accent)").attr("stroke-width", 1.5);
@@ -206,14 +286,13 @@ export function WorldMap({ locale }: { locale: string }) {
             ${val !== null ? `${config.label}: <strong>${config.format(val)}</strong> ${config.unit}` : "No data"}
           `;
           tooltip.style.display = "block";
+          positionTooltip(tooltip, svgRef.current!, event.clientX, event.clientY);
         }
       })
       .on("mousemove", function (event) {
         const tooltip = tooltipRef.current;
         if (tooltip) {
-          const rect = svgRef.current!.getBoundingClientRect();
-          tooltip.style.left = `${event.clientX - rect.left + 12}px`;
-          tooltip.style.top = `${event.clientY - rect.top - 10}px`;
+          positionTooltip(tooltip, svgRef.current!, event.clientX, event.clientY);
         }
       })
       .on("mouseleave", function () {
@@ -249,17 +328,13 @@ export function WorldMap({ locale }: { locale: string }) {
           if (tooltip) {
             tooltip.innerHTML = `<strong>${m.name}</strong><br/>${m.detail}`;
             tooltip.style.display = "block";
-            const rect = svgRef.current!.getBoundingClientRect();
-            tooltip.style.left = `${event.clientX - rect.left + 12}px`;
-            tooltip.style.top = `${event.clientY - rect.top - 10}px`;
+            positionTooltip(tooltip, svgRef.current!, event.clientX, event.clientY);
           }
         })
         .on("mousemove", function (event) {
           const tooltip = tooltipRef.current;
           if (tooltip) {
-            const rect = svgRef.current!.getBoundingClientRect();
-            tooltip.style.left = `${event.clientX - rect.left + 12}px`;
-            tooltip.style.top = `${event.clientY - rect.top - 10}px`;
+            positionTooltip(tooltip, svgRef.current!, event.clientX, event.clientY);
           }
         })
         .on("mouseleave", function () {
@@ -300,10 +375,12 @@ export function WorldMap({ locale }: { locale: string }) {
   const config = LAYER_CONFIG[layer];
   const legendSteps = 12;
 
+  const labels = pickCopy(copy, locale);
+
   if (!mapData || !geoData) {
     return (
       <div className="w-full h-64 flex items-center justify-center text-foreground-muted">
-        {locale === "fi" ? "Ladataan karttaa..." : "Loading map..."}
+        {labels.loading}
       </div>
     );
   }
@@ -317,24 +394,6 @@ export function WorldMap({ locale }: { locale: string }) {
   const selectedValue = selectedISO3
     ? getValueFor(selectedISO3, layer, year, mapData)
     : null;
-  const labels =
-    locale === "fi"
-      ? {
-          tfr: "TFR (Maailmanpankin sarja)",
-          mobile: "Mobiililiittymät (teknologia-ajoituksen proxy)",
-          selected: "Valittu maa",
-          select: "Valitse maa kartalta nähdäksesi kyseisen tason tiedot.",
-          noData: "Ei tietoa valitulle vuodelle",
-          tfrSource: "TFR-kartta: Maailmanpankin WDI:n julkaistu TFR-sarja. Se voi sisältää kansallisten lähteiden ja YK:n väestöarvioiden harmonisointeja; kartta ei ole WPP:n ASFR-paneeli.",
-        }
-      : {
-          tfr: "TFR (World Bank series)",
-          mobile: "Mobile subscriptions (technology-timing proxy)",
-          selected: "Selected country",
-          select: "Select a country to inspect data for this layer.",
-          noData: "No data for selected year",
-          tfrSource: "TFR map: World Bank WDI published TFR series. It may incorporate harmonised national sources and UN demographic estimates; it is not the WPP ASFR panel.",
-        };
 
   return (
     <div className="space-y-4">
@@ -398,9 +457,9 @@ export function WorldMap({ locale }: { locale: string }) {
         </svg>
         <div
           ref={tooltipRef}
-          className="absolute pointer-events-none bg-background/95 border border-card-border
-                     rounded-lg px-3 py-2 text-sm shadow-lg"
-          style={{ display: "none" }}
+          className="absolute z-10 pointer-events-none break-words bg-background/95 border border-card-border
+                     rounded-lg px-3 py-2 text-sm leading-snug shadow-lg"
+          style={{ display: "none", maxWidth: "min(18rem, calc(100% - 1rem))" }}
         />
       </div>
 
@@ -456,9 +515,7 @@ export function WorldMap({ locale }: { locale: string }) {
       </div>
       {layer === "mobile" && (
         <p className="text-xs leading-relaxed text-foreground-muted">
-          {locale === "fi"
-            ? "Mobiililiittymätiheys on yhdistelmäproksi sähkömagneettiselle ympäristölle, ei mitattu RF-altistus, FieldState-vektori tai annosmitta."
-            : "Mobile subscription density is a composite proxy for the electromagnetic environment, not measured RF exposure, a FieldState vector, or a dose metric."}
+          {labels.mobileNote}
         </p>
       )}
       {layer === "tfr" && (

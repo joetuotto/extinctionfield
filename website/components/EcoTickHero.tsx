@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
-
-type Locale = "en" | "fi";
+import { StudyCitation } from "@/components/StudyCitation";
+import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: {
@@ -64,14 +63,113 @@ const COPY = {
       "Kuva: BERM–Eco-havainnollistus; se ei ole kokeellinen valokuva eikä kvantitatiivinen kenttäkartta.",
     link: "Avaa lähde",
   },
+  ja: {
+    figure: "図1 · Ixodes / 宿主界面",
+    title: "宿主遭遇への局所的静電経路",
+    lead:
+      "この図は報告された観察とそのメカニズムの図解を分離しています。宿主–植生界面において、局所的な静電勾配は分極可能なダニに誘引力を生み出すことができます。",
+    observedLabel: "観測結果",
+    resultValue: "15 / 20",
+    resultText: "報告された装置で完全に持ち上がった生きた若虫",
+    studyFrameLabel: "報告された研究フレーム",
+    voltageLabel: "印加電位",
+    voltageValue: "+750 V",
+    gapLabel: "空気間隙",
+    gapValue: "3 mm",
+    contextLabel: "報告された比較",
+    resultContext: "0 V で 0 / 20 · 持ち上がりの中央値 0.79 秒",
+    sequenceLabel: "研究で分離されたメカニズム経路",
+    host: "宿主 + 基準幾何学",
+    interface: "局所 EDC / ∇(E²) 界面",
+    tick: "ダニの遭遇 / 付着",
+    illustrationLabel: "メカニズム図解",
+    captionLabel: "解釈",
+    caption:
+      "局所的な宿主–植生界面の概念的再構成。幾何学と電場線は例示的であり、縮尺通りではなく、電場測定ではありません。",
+    provenanceLabel: "証拠の出所",
+    sourcePrefix: "メカニズムおよび報告された持ち上がり結果:",
+    source: "England, Lihou & Robert (2023)",
+    illustration:
+      "画像: BERM–Eco図解; 実験写真や定量的フィールドマップではありません。",
+    link: "出典を読む",
+  },
+  fr: {
+    figure: "Figure 1 · Interface Ixodes / hote",
+    title: "Une voie electrostatique locale vers la rencontre avec l'hote",
+    lead:
+      "Cette figure separe l'observation rapportee de l'illustration de son mecanisme. A l'interface hote–vegetation, un gradient electrostatique local peut creer une force d'attraction sur une tique polarisable.",
+    observedLabel: "Resultat observe",
+    resultValue: "15 / 20",
+    resultText: "nymphes vivantes entierement soulevees dans le dispositif rapporte",
+    studyFrameLabel: "Cadre d'etude rapporte",
+    voltageLabel: "Potentiel applique",
+    voltageValue: "+750 V",
+    gapLabel: "Entrefer",
+    gapValue: "3 mm",
+    contextLabel: "Comparaison rapportee",
+    resultContext: "0 / 20 a 0 V · temps median de soulevement 0,79 s",
+    sequenceLabel: "Voie mecanistique isolee dans l'etude",
+    host: "Hote + geometrie de reference",
+    interface: "Interface locale EDC / ∇(E²)",
+    tick: "Rencontre / fixation de la tique",
+    illustrationLabel: "Illustration du mecanisme",
+    captionLabel: "Interpretation",
+    caption:
+      "Reconstruction conceptuelle d'une interface locale hote–vegetation. La geometrie et les lignes de champ sont illustratives, pas a l'echelle et ne constituent pas une mesure de champ.",
+    provenanceLabel: "Provenance des preuves",
+    sourcePrefix: "Mecanisme et resultat de soulevement rapporte :",
+    source: "England, Lihou & Robert (2023)",
+    illustration:
+      "Image : illustration BERM–Eco ; ce n'est ni une photographie experimentale ni une carte de champ quantitative.",
+    link: "Lire la source",
+  },
+  ko: {
+    figure: "그림 1 · Ixodes / 숙주 계면",
+    title: "숙주 조우를 위한 국소 정전 경로",
+    lead:
+      "이 그림은 보고된 관찰과 그 메커니즘 설명을 분리합니다. 숙주-식생 계면에서 국소 정전기 기울기는 분극 가능한 진드기에 유인력을 생성할 수 있습니다.",
+    observedLabel: "관측 결과",
+    resultValue: "15 / 20",
+    resultText: "보고된 장치에서 완전히 들어올려진 살아있는 약충",
+    studyFrameLabel: "보고된 연구 프레임",
+    voltageLabel: "인가 전위",
+    voltageValue: "+750 V",
+    gapLabel: "공기 간극",
+    gapValue: "3 mm",
+    contextLabel: "보고된 비교",
+    resultContext: "0 V에서 0 / 20 · 들어올림 중앙값 0.79초",
+    sequenceLabel: "연구에서 분리된 메커니즘 경로",
+    host: "숙주 + 기준 기하학",
+    interface: "국소 EDC / ∇(E²) 계면",
+    tick: "진드기 조우 / 부착",
+    illustrationLabel: "메커니즘 그림",
+    captionLabel: "해석",
+    caption:
+      "국소 숙주-식생 계면의 개념적 재구성. 기하학과 전기장선은 예시적이며, 축척에 맞지 않고, 전기장 측정이 아닙니다.",
+    provenanceLabel: "증거 출처",
+    sourcePrefix: "메커니즘 및 보고된 들어올림 결과:",
+    source: "England, Lihou & Robert (2023)",
+    illustration:
+      "이미지: BERM–Eco 도해; 실험 사진이나 정량적 필드 맵이 아닙니다.",
+    link: "출처 읽기",
+  },
 } as const;
 
 /**
  * Evidence, illustration and provenance intentionally live in separate
  * editorial zones. The image therefore cannot be mistaken for a data panel.
  */
-export function EcoTickHero({ locale }: { locale: Locale }) {
-  const d = COPY[locale];
+const ALT_TEXT: Record<string, string> = {
+  en: "A tick on a blade of grass and mammal fur, with illustrative electrostatic field lines between them.",
+  fi: "Punkki ruohonkorsella ja nisäkkään turkki; niiden välissä havainnollistavat sähköstaattiset kenttäviivat.",
+  ja: "草の葉とほ乳類の毛皮の上のダニ。それらの間に例示的な静電場線がある。",
+  fr: "Une tique sur un brin d'herbe et de la fourrure de mammifere, avec des lignes de champ electrostatique illustratives entre eux.",
+  ko: "풀잎과 포유류 털 위의 진드기, 그 사이에 예시적인 정전기장 선이 있음.",
+};
+
+export function EcoTickHero({ locale }: { locale: string }) {
+  const l: "en" | "fi" | "ja" | "fr" | "ko" = (locale === "fi" || locale === "ja" || locale === "fr" || locale === "ko") ? locale : "en";
+  const d = COPY[l];
 
   return (
     <figure
@@ -122,11 +220,7 @@ export function EcoTickHero({ locale }: { locale: Locale }) {
         <div className="relative order-1 aspect-[16/10] overflow-hidden border-b border-card-border bg-slate-950 lg:order-2 lg:aspect-auto lg:border-b-0 lg:border-l">
           <Image
             src="/images/eco-tick-fieldstate-hero.png"
-            alt={
-              locale === "fi"
-                ? "Punkki ruohonkorsella ja nisäkkään turkki; niiden välissä havainnollistavat sähköstaattiset kenttäviivat."
-                : "A tick on a blade of grass and mammal fur, with illustrative electrostatic field lines between them."
-            }
+            alt={pickCopy(ALT_TEXT, locale)}
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 560px"
@@ -173,16 +267,11 @@ export function EcoTickHero({ locale }: { locale: Locale }) {
           <p className="editorial-kicker">{d.provenanceLabel}</p>
           <p className="mt-2 text-xs leading-5 text-foreground-muted">
             {d.sourcePrefix}{" "}
-            <a
-              href="https://doi.org/10.1016/j.cub.2023.06.021"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1 font-medium text-accent transition-colors hover:text-accent-hover"
-            >
-              <span>{d.source}</span>
-              <ArrowUpRight size={13} aria-hidden="true" />
-              <span className="sr-only">— {d.link}</span>
-            </a>
+            <StudyCitation
+              referenceId="england_2023_ticks"
+              locale={locale}
+              label={d.source}
+            />
           </p>
           <p className="mt-2 text-[11px] leading-4 text-foreground-muted">{d.illustration}</p>
         </div>

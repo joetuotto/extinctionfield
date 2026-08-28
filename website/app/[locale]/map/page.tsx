@@ -1,34 +1,51 @@
 import type { Metadata } from "next";
 import { CausalAtlas } from "@/components/CausalAtlas";
-import { NODES, ALL_STAGES, t, type Locale } from "@/lib/causalAtlasData";
+import { NODES, ALL_STAGES, t } from "@/lib/causalAtlasData";
+import { pickCopy } from "@/lib/i18n";
+import type { Locale } from "@/lib/causalMapData";
 
 const COPY = {
   en: {
     title: "Causal Atlas",
     subtitle: "63 causal nodes across 8 stages — trace the pathways from environmental EMF channels to demographic and ecological outcomes.",
+    readMore: "Read more",
   },
   fi: {
     title: "Kausaaliatlas",
     subtitle: "63 kausaalisolmua 8 vaiheessa — seuraa polkuja ympäristön EMF-kanavista demografisiin ja ekologisiin seurauksiin.",
+    readMore: "Lue lisää",
+  },
+  ja: {
+    title: "因果アトラス",
+    subtitle: "8段階にわたる63の因果ノード — 環境EMFチャネルから人口統計学的・生態学的アウトカムへのパスウェイを追跡。",
+    readMore: "詳しく見る",
+  },
+  fr: {
+    title: "Atlas causal",
+    subtitle: "63 nœuds causaux sur 8 étapes — tracez les voies des canaux EMF environnementaux aux résultats démographiques et écologiques.",
+    readMore: "En savoir plus",
+  },
+  ko: {
+    title: "인과 아틀라스",
+    subtitle: "8단계에 걸친 63개 인과 노드 — 환경 EMF 채널에서 인구통계학적 및 생태학적 결과까지의 경로를 추적합니다.",
+    readMore: "자세히 보기",
   },
 } as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const lang: Locale = locale === "fi" ? "fi" : "en";
-  const alt = lang === "fi" ? "en" : "fi";
-  const d = COPY[lang];
+  const d = pickCopy(COPY, locale);
   return {
     title: `${d.title} – Extinction Field`,
     description: d.subtitle,
     alternates: {
-      canonical: `https://extinctionfield.com/${lang}/map`,
-      languages: { [alt]: `https://extinctionfield.com/${alt}/map` },
+      canonical: `https://extinctionfield.com/${locale}/map`,
     },
   };
 }
 
-function SSRFallback({ lang }: { lang: Locale }) {
+function SSRFallback({ lang, pageLocale }: { lang: Locale; pageLocale: string }) {
+  const d = pickCopy(COPY, pageLocale);
   return (
     <div className="mt-8 space-y-6" id="atlas-fallback">
       {ALL_STAGES.map((stage) => {
@@ -58,8 +75,8 @@ function SSRFallback({ lang }: { lang: Locale }) {
                     <strong>{t(node.label, lang)}</strong>
                     {detail?.mechanism && <span className="text-gray-500"> — {detail.mechanism}</span>}
                     {node.detail?.link && (
-                      <a href={`/${lang}${node.detail.link}`} className="ml-2 text-blue-400 hover:underline">
-                        {lang === "fi" ? "Lue lisää" : "Read more"}
+                      <a href={`/${pageLocale}${node.detail.link}`} className="ml-2 text-blue-400 hover:underline">
+                        {d.readMore}
                       </a>
                     )}
                   </li>
@@ -80,7 +97,7 @@ export default async function MapPage({
 }) {
   const { locale } = await params;
   const lang: Locale = locale === "fi" ? "fi" : "en";
-  const d = COPY[lang];
+  const d = pickCopy(COPY, locale);
 
   return (
     <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-8 sm:py-12" aria-labelledby="atlas-title">
@@ -90,7 +107,7 @@ export default async function MapPage({
       </header>
       <CausalAtlas locale={lang} />
       <noscript>
-        <SSRFallback lang={lang} />
+        <SSRFallback lang={lang} pageLocale={locale} />
       </noscript>
     </section>
   );

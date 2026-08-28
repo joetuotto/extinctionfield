@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { ReferenceData } from "@/lib/references";
 import { categoryName, loadReferences } from "@/lib/references";
+import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: {
@@ -18,10 +19,28 @@ const COPY = {
     verified: "varmennettu",
     browse: "Selaa kaikkia viitteitä",
   },
-} as const;
+  ja: {
+    title: "参考文献データベース",
+    subtitle: (n: number, c: number) => `${c}のテーマ別カテゴリにわたる${n}件の参考文献`,
+    verified: "検証済み",
+    browse: "すべての参考文献を閲覧",
+  },
+  fr: {
+    title: "Base de références",
+    subtitle: (n: number, c: number) => `${n} références dans ${c} catégories thématiques`,
+    verified: "vérifiées",
+    browse: "Parcourir toutes les références",
+  },
+  ko: {
+    title: "참고문헌 데이터베이스",
+    subtitle: (n: number, c: number) => `${c}개 주제 카테고리에 걸친 ${n}건의 참고문헌`,
+    verified: "검증됨",
+    browse: "모든 참고문헌 탐색",
+  },
+};
 
-export function ReferencesSummary({ locale }: { locale: "en" | "fi" }) {
-  const d = COPY[locale];
+export function ReferencesSummary({ locale }: { locale: string }) {
+  const d = pickCopy(COPY, locale);
   const [data, setData] = useState<ReferenceData | null>(null);
 
   useEffect(() => {

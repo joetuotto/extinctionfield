@@ -1,5 +1,6 @@
 export interface EvidenceCard {
   id: string;
+  referenceId?: string;
   title_en: string;
   title_fi: string;
   authors: string;
@@ -36,6 +37,7 @@ export interface NutritionalModulator {
   deficiency_effect_en: string;
   deficiency_effect_fi: string;
   key_source: string;
+  referenceIds?: string[];
   level: string;
 }
 
@@ -51,6 +53,7 @@ export interface Prediction {
 export const EVIDENCE_CARDS: EvidenceCard[] = [
   {
     id: "hirano2017-fad-cry",
+    referenceId: "hirano2017",
     title_en: "FAD stabilizes cryptochrome proteins",
     title_fi: "FAD stabiloi kryptokromiproteiineja",
     authors: "Hirano A, Braas D, Fu Y-H, Ptáček LJ",
@@ -66,6 +69,7 @@ export const EVIDENCE_CARDS: EvidenceCard[] = [
   },
   {
     id: "sherrard2025-cry2-trpc1",
+    referenceId: "yap2025",
     title_en: "CRY2-TRPC1 magnetotransduction requires FAD and light",
     title_fi: "CRY2-TRPC1-magnetotransduktio vaatii FAD:tä ja valoa",
     authors: "Yap JLY, Tai YK, Franco-Obregón A et al.",
@@ -80,6 +84,7 @@ export const EVIDENCE_CARDS: EvidenceCard[] = [
   },
   {
     id: "higuchi2007-eye-melatonin",
+    referenceId: "higuchi2007",
     title_en: "Eye color influences melatonin suppression by light",
     title_fi: "Silmien väri vaikuttaa valon aiheuttamaan melatoniinisuppressioon",
     authors: "Higuchi S, Motohashi Y, Ishibashi K, Maeda T",
@@ -95,6 +100,7 @@ export const EVIDENCE_CARDS: EvidenceCard[] = [
   },
   {
     id: "martinez-cadenas2013-gender-eye",
+    referenceId: "martinez-cadenas2013",
     title_en: "Gender is a major factor in eye colour distribution",
     title_fi: "Sukupuoli on merkittävä tekijä silmien värin jakaumassa",
     authors: "Martinez-Cadenas C et al.",
@@ -108,6 +114,7 @@ export const EVIDENCE_CARDS: EvidenceCard[] = [
   },
   {
     id: "niessner2014-cry-photocycle",
+    referenceId: "niessner2014",
     title_en: "Cryptochrome activation spectrum spans UV to green",
     title_fi: "Kryptokromin aktivaatiospektri kattaa UV:sta vihreään",
     authors: "Nießner C, Denzau S, Peichl L, Wiltschko W, Wiltschko R",
@@ -123,6 +130,7 @@ export const EVIDENCE_CARDS: EvidenceCard[] = [
   },
   {
     id: "white2003-iris-chronotype",
+    referenceId: "white2003",
     title_en: "Iris pigmentation affects chronotype and sleep timing",
     title_fi: "Iiriksen pigmentaatio vaikuttaa kronotyyppiin ja unen ajoitukseen",
     authors: "White TM, Terman M",
@@ -134,6 +142,7 @@ export const EVIDENCE_CARDS: EvidenceCard[] = [
   },
   {
     id: "chae2019-sex-magnetoreception",
+    referenceId: "chae2019",
     title_en: "Human magnetoreception functional in men only",
     title_fi: "Ihmisen magnetoreseptio toiminnallinen vain miehillä",
     authors: "Chae K-S, Oh I-T, Lee S-H, Kim S-C",
@@ -146,6 +155,7 @@ export const EVIDENCE_CARDS: EvidenceCard[] = [
   },
   {
     id: "bartoelke2025",
+    referenceId: "bartolke2025",
     title_en: "Full-length CRY1 in human blue cone outer segments",
     title_fi: "Täyspitkä CRY1 ihmisen sinisten tappisolujen ulkosegmenteissä",
     authors: "Bartölke R, Nießner C, Reinhard K, Wolfrum U, Meimann S, Bolte P, Feederle R, Mouritsen H, Dedek K, Peichl L, Winklhofer M",
@@ -161,6 +171,7 @@ export const EVIDENCE_CARDS: EvidenceCard[] = [
   },
   {
     id: "majewska2025",
+    referenceId: "majewska2025",
     title_en: "CRY associates with lipid bilayers in ordered manner",
     title_fi: "CRY assosioituu lipidikaksoiskerrosten kanssa järjestäytyneesti",
     authors: "Majewska M, Hanić M, Bartölke R, Schmidt J, Bożek J, Gerhards L, Mouritsen H, Koch K-W, Solov'yov IA, Brand I",
@@ -175,6 +186,7 @@ export const EVIDENCE_CARDS: EvidenceCard[] = [
   },
   {
     id: "lamia2009",
+    referenceId: "lamia2009",
     title_en: "AMPK destabilizes CRY1 via phosphorylation",
     title_fi: "AMPK destabiloi CRY1:n fosforylaatiolla",
     authors: "Lamia KA, Sachdeva UM, DiTacchio L, Williams EC, Alvarez JG, Egan DF, Vasquez DS, Juguilon H, Panda S, Shaw RJ, Thompson CB, Evans RM",
@@ -258,6 +270,7 @@ export const NUTRITIONAL_MODULATORS: NutritionalModulator[] = [
     deficiency_effect_en: "CRY protein degrades (ubiquitin-mediated). Magnetic field directional selectivity lost. Circadian gene expression altered.",
     deficiency_effect_fi: "CRY-proteiini hajoaa (ubikitiinivälitteisesti). Magneettikentän suuntaerottelu menetetään. Kellogeenien ekspressio muuttuu.",
     key_source: "Hirano 2017 + Sherrard lab 2025",
+    referenceIds: ["hirano2017", "yap2025"],
     level: "E",
   },
   {
@@ -282,6 +295,7 @@ export const NUTRITIONAL_MODULATORS: NutritionalModulator[] = [
     deficiency_effect_en: "No CRY activation, no radical pairs, no magnetic sensitivity. Dark = magnetically blind.",
     deficiency_effect_fi: "Ei CRY-aktivaatiota, ei radikaalipareja, ei magneettista herkkyyttä. Pimeä = magneettisesti sokea.",
     key_source: "Sherrard lab 2025 (dark = loss of sensitivity) + all RPM literature",
+    referenceIds: ["yap2025"],
     level: "E",
   },
 ];

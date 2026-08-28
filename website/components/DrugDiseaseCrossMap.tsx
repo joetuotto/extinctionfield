@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { pickCopy } from "@/lib/i18n";
 
 interface DrugRow {
   id: string;
@@ -62,14 +63,19 @@ const DISEASES: { id: string; en: string; fi: string }[] = [
   { id: "apnea", en: "Apnea", fi: "Apnea" },
 ];
 
+const UI_COPY = {
+  en: { title: "Drug–disease cross-map", subtitle: "Each drug’s Ca²⁺ target and the conditions it treats. Hover over a drug or disease to highlight connections.", drug: "Drug", target: "Ca²⁺ target", connections: "connections" },
+  fi: { title: "Lääke–sairaus-ristikartta", subtitle: "Jokaisen lääkkeen Ca²⁺-kohde ja sen hoitamat tilat. Osoita lääkettä tai sairautta nähdäksesi yhteydet.", drug: "Lääke", target: "Ca²⁺-kohde", connections: "yhteydet" },
+  ja: { title: "薬物–疾患クロスマップ", subtitle: "各薬物のCa²⁺標的とその治療対象疾患。薬物または疾患にホバーして接続を確認。", drug: "薬物", target: "Ca²⁺標的", connections: "接続" },
+  fr: { title: "Carte croisée médicament–maladie", subtitle: "La cible Ca²⁺ de chaque médicament et les pathologies qu’il traite. Survolez un médicament ou une maladie pour mettre en évidence les connexions.", drug: "Médicament", target: "Cible Ca²⁺", connections: "connexions" },
+  ko: { title: "약물-질환 교차 맵", subtitle: "각 약물의 Ca²⁺ 표적과 치료 대상 질환. 약물 또는 질환 위에 마우스를 올려 연결을 확인하세요.", drug: "약물", target: "Ca²⁺ 표적", connections: "연결" },
+} as const;
+
 export function DrugDiseaseCrossMap({ locale }: { locale: string }) {
   const [hoveredDrug, setHoveredDrug] = useState<string | null>(null);
   const [hoveredDisease, setHoveredDisease] = useState<string | null>(null);
   const lang = locale === "fi" ? "fi" : "en";
 
-  const activeDiseasesFromDrug = hoveredDrug
-    ? DRUGS.find((d) => d.id === hoveredDrug)?.diseases ?? []
-    : [];
   const activeDrugsFromDisease = hoveredDisease
     ? DRUGS.filter((d) => d.diseases.includes(hoveredDisease)).map((d) => d.id)
     : [];
@@ -80,9 +86,7 @@ export function DrugDiseaseCrossMap({ locale }: { locale: string }) {
 
   const usedDiseases = DISEASES.filter((d) => DRUGS.some((dr) => dr.diseases.includes(d.id)));
 
-  const t = lang === "fi"
-    ? { title: "Lääke–sairaus-ristikartta", subtitle: "Jokaisen lääkkeen Ca²⁺-kohde ja sen hoitamat tilat. Osoita lääkettä tai sairautta nähdäksesi yhteydet.", drug: "Lääke", target: "Ca²⁺-kohde", connections: "yhteydet" }
-    : { title: "Drug–disease cross-map", subtitle: "Each drug's Ca²⁺ target and the conditions it treats. Hover over a drug or disease to highlight connections.", drug: "Drug", target: "Ca²⁺ target", connections: "connections" };
+  const t = pickCopy(UI_COPY, locale);
 
   return (
     <div className="mt-10">

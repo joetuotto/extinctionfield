@@ -38,10 +38,12 @@ export interface EvidenceItem {
 }
 
 export interface Reference {
+  /** Stable ID in the canonical reference registry. Omitted when the source is ambiguous or compound. */
+  referenceId?: string;
   authors: string;
   title: string;
   journal: string;
-  keyFinding: string;
+  keyFinding?: string;
   keyFinding_en?: string;
 }
 

@@ -8,6 +8,8 @@ import {
   CASCADE_COMPARISON,
   MYOPIA_GRADIENT,
 } from "@/lib/populationData";
+import { pickCopy } from "@/lib/i18n";
+import { StudyCitation } from "@/components/StudyCitation";
 
 const COPY = {
   en: {
@@ -310,6 +312,456 @@ const COPY = {
     navPredictions: "Ennusteet →",
     navModel: "Mallispesifikaatio →",
   },
+  ja: {
+    title: "自然対照群",
+    subtitle:
+      "9つの低EMF集団と現代集団を7つの健康指標で比較。Tsimane-Mosetén勾配、近視の用量反応、BERMカスケードテスト。",
+    backLink: "← エビデンスに戻る",
+    warningTitle: "大規模な交絡因子",
+    warningText:
+      "以下にリストされたすべての集団は、食事、運動、コミュニティ構造、化学物質曝露、遺伝学において現代社会と異なります。これはEMFが疾病を引き起こす証拠ではありません。これは整合性チェックです：低EMF集団はBERMが予測する健康パターンを示すか？示さなければBERMは反証されます。示すことは必要条件ですが十分条件ではありません。",
+    s1Kicker: "セクション 1",
+    s1Title: "これらの集団が重要な理由",
+    s1Text: [
+      "BERMは、人為的EMF曝露がほぼゼロの集団が以下を示すべきと予測します：高い出生率（TFR > 4）、低い心血管疾患、低い認知症、低い肥満、低いT2D、低いうつ病。これらは恣意的に選ばれた結果ではなく、モデルの7つの疾病カスケードの直接的な予測です。",
+      "現代の都市からEMFを除去する対照実験を行うことはできません。しかし、電気や個人用テクノロジーを一度も採用しなかった集団は自然なベースラインを提供します。モデルが誤りであれば、これらの集団の少なくとも一部は現代の疾病パターンを示すはずです。いずれも示しません。",
+    ],
+    s2Kicker: "セクション 2",
+    s2Title: "集団比較",
+    tableHeaders: {
+      population: "集団",
+      location: "地域",
+      emf: "EMFレベル",
+      tfr: "TFR",
+      cvd: "CVD",
+      dementia: "認知症",
+      obesity: "肥満",
+      t2d: "T2D",
+      cancer: "がん",
+      depression: "うつ病",
+    },
+    s3Kicker: "セクション 3",
+    s3Title: "Tsimane → Mosetén → 現代の勾配",
+    s3Text: [
+      "これはBERMにとって最も強力な集団レベルのエビデンスです。TsimaneとMoseténは遺伝的祖先、地理的地域、基本的な生計パターンを共有しています。主な違いは近代化の程度です：Moseténはより多くのテクノロジー、医療、インフラを持っています。",
+      "測定されたすべての健康変数において、MoseténはTsimaneと西洋集団の間に位置します。これは遺伝学を制御する用量反応勾配であり、最も一般的な交絡因子の反論に対応します。",
+    ],
+    gradientLabels: [
+      {
+        name: "Tsimane",
+        chi: "χ_env = 0",
+        desc: "電気なし、電話なし、現代テクノロジーなし",
+        health: "記録された中で最低のCVD。認知症1.2%。脳萎縮70%遅い。",
+      },
+      {
+        name: "Mosetén",
+        chi: "χ_env > 0",
+        desc: "Tsimaneと祖先を共有するが、より多くのテクノロジーとインフラ",
+        health: "CVD低い。認知症中程度。脳萎縮中程度。",
+      },
+      {
+        name: "現代（米国）",
+        chi: "χ_env = high",
+        desc: "完全電化、スマートフォン、高密度RF環境",
+        health: "CVD高い。認知症8–11%。肥満42%。TFR 1.66。",
+      },
+    ],
+    gradientPunchline:
+      "同じ遺伝子。同じ地域。同じ基本食。異なるテクノロジー。異なる健康。すべての変数において。",
+    tProfileKicker: "テストステロンプロファイル",
+    tProfileTitle: "Tsimane：テストステロンは加齢とともに低下しない",
+    tProfileLead: "テストステロンの低下が生物学的必然であれば、すべての集団に現れるはずです。しかし現れません。Tsimaneの男性は基準レベルが33%低いにもかかわらず、加齢に伴うテストステロン低下を示しません。これは「加齢」説明に対する自然実験です。",
+    tProfileBaseline: "ベースライン",
+    tProfileAgeDecline: "加齢による低下",
+    tProfileReactivity: "反応性",
+    tProfileImplication: "意義",
+    tProfileParadox: "パラドックス：60歳までに、Tsimaneの男性はアメリカ人男性よりもテストステロンが高くなる可能性があります — 開始時点で33%低いにもかかわらず。アメリカ人の軌跡（高いベースラインから年間約1.5%低下）はTsimaneレベル（安定）と約55歳で交差します。",
+    tGradientKicker: "テストステロン勾配",
+    tGradientTitle: "Tsimane → Mosetén → 米国：テストステロン加齢における用量反応",
+    tGradientLead: "アマゾンの祖先を共有するがテクノロジーの採用が異なる3つの集団は、EMF曝露を追跡するテストステロン軌跡勾配を示します — 遺伝学、食事、緯度ではありません。",
+    tGradientRows: [
+      { pop: "Tsimane", emf: "ゼロ", baseline: "~400 pg/mL（唾液）", decline: "なし", trajectory: "年齢にわたり平坦" },
+      { pop: "Mosetén", emf: "低", baseline: "中程度", decline: "穏やか", trajectory: "加齢とともにわずかに低下" },
+      { pop: "現代米国", emf: "高", baseline: "~550 pg/mL → 低下中", decline: "~1.5%/年", trajectory: "急激な低下；約55歳でTsimaneと交差" },
+    ],
+    tGradientNote: "この勾配は最も強い交絡因子を制御します：TsimaneとMoseténは祖先、地理、生計基盤を共有しています。テクノロジーの採用が異なる主要な変数であり、テストステロンの軌跡はそれに従います。BERMの用語では：Tsimane P=1.0, R=2.1 → EMF_eff ≈ 0。Mosetén P=1.2, R=1.5 → EMF_eff = low。USA P=2.2, R=1.0 → EMF_eff = high。同じRF曝露 → 異なるプライミング履歴のため異なる反応。",
+    s4Kicker: "セクション 4",
+    s4Title: "近視の勾配",
+    s4Text: [
+      "近視の有病率は、遺伝学ではなくテクノロジーの採用を追跡する5段階の勾配に従います。これは屈折検査法で測定されます — 自己申告ではなく客観的な物理測定です。",
+      "COVID-19パンデミックは時間的テストを提供しました：ロックダウン中にスクリーンタイムが劇的に増加し、世界的に小児近視の急増が観察されました（メタアナリシスは進行の1.5–3倍の増加を報告）。これはBERMの3チャネルモデルのRF/スクリーン光チャネルと一致しています。",
+    ],
+    myopiaHeaders: { region: "地域", prevalence: "近視有病率", tech: "テクノロジーレベル" },
+    s5Kicker: "セクション 5",
+    s5Title: "BERMカスケードテスト",
+    s5Text:
+      "BERMは、VGCC媒介Ca²⁺調節異常が特定の病理を生じる16の疾病カスケードを予測します。各カスケードについて問います：低EMF集団はより低い有病率を示すか？16カスケード中11が一致を確認（69%）、5はデータなし、0が矛盾。",
+    cascadeHeaders: {
+      cascade: "カスケード",
+      lowEmf: "低EMF",
+      modern: "現代",
+      mechanism: "BERMメカニズム",
+      status: "ステータス",
+    },
+    cascadeSummary: "11/16 確認 · 5/16 データなし · 0/16 矛盾",
+    preElecKicker: "レトロディクション",
+    preElecTitle: "電化以前のベースライン",
+    preElecLead: "BERMは、電化以前の集団がすべてのカスケード結果においてより低い有病率を示すべきと予測します。これはレトロディクションです — モデルは過去を予測します。",
+    preElecRows: [
+      { cascade: "肥満", preElectric: "~5%", modern: "42%（米国）", change: "8×" },
+      { cascade: "2型糖尿病", preElectric: "まれ", modern: "~10%（世界）", change: "10×+" },
+      { cascade: "自閉症", preElectric: "<3/10,000", modern: "320/10,000", change: "100×" },
+      { cascade: "うつ病", preElectric: "低い（推定）", modern: "~10%（世界）", change: "?" },
+      { cascade: "精子数", preElectric: "データなし", modern: "−51.6%（1973→）", change: "—" },
+      { cascade: "TFR", preElectric: "~5–6（西洋）", modern: "1.66（米国）", change: "−3×" },
+    ],
+    preElecAmish: "Amishの健康プロファイル — 低肥満、低糖尿病、低うつ病、高出生率（TFR 6.1） — は1900年代初頭の電化以前の健康データに類似しています。BERMはこれを、前近代と近代の健康プロファイルの差が遺伝学、食事、ライフスタイルだけでなく、電磁環境によって大きく左右されているという証拠として解釈します。",
+    preElecHeaders: { cascade: "カスケード", preElectric: "電化以前（~1900）", modern: "現代（2024）", change: "変化" },
+    occKicker: "職業別勾配",
+    occTitle: "屋内労働者 vs. 屋外労働者",
+    occLead: "EMF曝露は職業によって劇的に異なります。従来の屋内/屋外の比較は座位行動とUV曝露に焦点を当てています。BERMは追加します：屋内労働者の代謝リスクは身体活動を制御した後でも高い。累積EMF負荷がより大きいためです。",
+    occGradient: [
+      { occupation: "データセンター作業員", stars: 5, sources: "ELF+IF+RF, multi-source, 8–12h" },
+      { occupation: "オフィス作業員", stars: 4, sources: "WiFi+LED+screen+phone, 8–10h" },
+      { occupation: "小売店員", stars: 3, sources: "LED+WiFi+POS system" },
+      { occupation: "工場作業員", stars: 3, sources: "ELF+IF, industrial equipment" },
+      { occupation: "建設作業員", stars: 2, sources: "ELF power tools, phone" },
+      { occupation: "農業従事者", stars: 1, sources: "Tractor ELF, phone, otherwise low" },
+      { occupation: "漁師/伐採作業員", stars: 1, sources: "Near EMF-free work environment" },
+    ],
+    occPrediction: "検証可能：身体的に活動的な屋内労働者（ジム通いのオフィスワーカー）vs. 同じ身体活動レベルだが異なるEMF環境の屋外労働者 — 代謝マーカーに差が出るはずです。",
+    s6Kicker: "セクション 6",
+    s6Title: "これが証明しないこと",
+    s6Text: [
+      "上記のすべての集団は、同時に複数の方法で現代社会と異なります。交絡因子には以下が含まれます：",
+    ],
+    confounders: [
+      "食事 — より多くのホールフード、より少ない加工糖、異なるマクロ栄養素比率",
+      "運動 — Hadzaは1日約17,000歩 vs 米国約4,000歩",
+      "コミュニティ構造 — 拡大家族、社会的サポート、少ない孤立",
+      "化学物質曝露 — 農薬なし、マイクロプラスチックなし、産業汚染なし",
+      "遺伝学 — 数千年にわたる集団固有の適応",
+    ],
+    s6Text2: [
+      "このエビデンスはBERMとの整合性であり、その証明ではありません。上記の交絡因子のいずれかが、観察された差異の一部またはすべてを説明できる可能性があります。Tsimane→Mosetén勾配は、遺伝学と地理を制御し、テクノロジーの採用を主要な変数として分離するため、最も強力な議論です。",
+      "整合性からエビデンスに移行するには、EMFが変化する主要な変数である集団における前向き研究が必要です。以下に2つを提案します。",
+    ],
+    proposedStudies: [
+      {
+        id: "DIFF-1",
+        title: "AGD測定：Tsimane vs 都市部トリニダードの新生児",
+        desc: "肛門性器間距離（AGD）は出生前アンドロゲン曝露のマーカーであり、内分泌撹乱物質により減少します。BERMはEMF媒介テストステロン抑制がAGDを減少させると予測します。Tsimaneの新生児（EMFゼロ）と都市部トリニダードの新生児（高EMF、類似の緯度と遺伝的混合）を比較することでこの予測をテストできます。",
+      },
+      {
+        id: "AMISH-1",
+        title: "AmishのTFR vs 最寄り都市地域への距離",
+        desc: "Amishは個人用テクノロジーを拒否しますが、近くの都市からの周囲EMFに囲まれて暮らしています。周囲曝露が重要であれば、都市中心部に近いAmishコミュニティは遠隔地よりも低いTFRを示すはずです。これは既存の人口統計データと地理空間分析で検証可能です。",
+      },
+    ],
+    proposedTitle: "提案研究",
+    navPredictions: "予測 →",
+    navModel: "モデル仕様 →",
+  },
+  fr: {
+    title: "Groupes témoins naturels",
+    subtitle:
+      "Neuf populations à faible EMF comparées aux populations modernes sur sept indicateurs de santé. Le gradient Tsimane–Mosetén, la réponse dose-effet de la myopie et le test de cascade BERM.",
+    backLink: "← Retour aux preuves",
+    warningTitle: "Facteurs de confusion massifs",
+    warningText:
+      "Chaque population listée ci-dessous diffère des sociétés modernes en termes d'alimentation, d'exercice, de structure communautaire, d'exposition chimique et de génétique. Rien de cela ne prouve que les EMF causent des maladies. Il s'agit d'un contrôle de cohérence : les populations à faible EMF présentent-elles les schémas de santé prédits par BERM ? Si ce n'était pas le cas, BERM serait falsifié. Qu'elles le fassent est nécessaire mais pas suffisant.",
+    s1Kicker: "SECTION 1",
+    s1Title: "Pourquoi ces populations sont importantes",
+    s1Text: [
+      "BERM prédit que les populations avec une exposition EMF anthropique quasi nulle devraient présenter : une fertilité élevée (TFR > 4), un faible taux de maladies cardiovasculaires, une faible démence, une faible obésité, un faible T2D et une faible dépression. Ce ne sont pas des résultats sélectionnés — ce sont les prédictions directes des sept cascades de maladies du modèle.",
+      "Nous ne pouvons pas mener une expérience contrôlée en supprimant les EMF d'une ville moderne. Mais les populations qui n'ont jamais adopté l'électricité ni la technologie personnelle fournissent une base de référence naturelle. Si le modèle est faux, au moins certaines de ces populations devraient présenter des schémas de maladies modernes. Aucune ne le fait.",
+    ],
+    s2Kicker: "SECTION 2",
+    s2Title: "Comparaison des populations",
+    tableHeaders: {
+      population: "Population",
+      location: "Localisation",
+      emf: "Niveau EMF",
+      tfr: "TFR",
+      cvd: "CVD",
+      dementia: "Démence",
+      obesity: "Obésité",
+      t2d: "T2D",
+      cancer: "Cancer",
+      depression: "Dépression",
+    },
+    s3Kicker: "SECTION 3",
+    s3Title: "Gradient Tsimane → Mosetén → Moderne",
+    s3Text: [
+      "C'est la preuve la plus solide au niveau populationnel pour BERM. Les Tsimane et Mosetén partagent une ascendance génétique, une région géographique et des schémas de subsistance de base. Ils diffèrent principalement par le degré de modernisation : les Mosetén disposent de plus de technologie, de médecine et d'infrastructure.",
+      "Pour chaque variable de santé mesurée, les Mosetén se situent ENTRE les Tsimane et les populations occidentales. C'est un gradient dose-réponse qui contrôle la génétique — l'objection de facteur de confusion la plus courante.",
+    ],
+    gradientLabels: [
+      {
+        name: "Tsimane",
+        chi: "χ_env = 0",
+        desc: "Pas d'électricité, pas de téléphones, pas de technologie moderne",
+        health: "CVD la plus basse jamais enregistrée. Démence 1,2 %. Atrophie cérébrale 70 % plus lente.",
+      },
+      {
+        name: "Mosetén",
+        chi: "χ_env > 0",
+        desc: "Ascendance partagée avec les Tsimane mais plus de technologie et d'infrastructure",
+        health: "CVD faible. Démence intermédiaire. Atrophie cérébrale intermédiaire.",
+      },
+      {
+        name: "Moderne (USA)",
+        chi: "χ_env = high",
+        desc: "Électrification complète, smartphones, environnement RF dense",
+        health: "CVD élevée. Démence 8–11 %. Obésité 42 %. TFR 1,66.",
+      },
+    ],
+    gradientPunchline:
+      "Mêmes gènes. Même région. Même alimentation de base. Technologie différente. Santé différente. Sur chaque variable.",
+    tProfileKicker: "PROFIL TESTOSTÉRONE",
+    tProfileTitle: "Tsimane : la testostérone ne décline pas avec l'âge",
+    tProfileLead: "Si le déclin de la testostérone était une fatalité biologique, il devrait apparaître dans toutes les populations. Ce n'est pas le cas. Les hommes Tsimane ne montrent aucun déclin de testostérone lié à l'âge malgré des niveaux de base 33 % plus bas — une expérience naturelle contre l'explication du « vieillissement ».",
+    tProfileBaseline: "Niveau de base",
+    tProfileAgeDecline: "Déclin lié à l'âge",
+    tProfileReactivity: "Réactivité",
+    tProfileImplication: "Implication",
+    tProfileParadox: "Paradoxe : à 60 ans, les hommes Tsimane pourraient avoir une testostérone PLUS ÉLEVÉE que les hommes américains — bien qu'ils commencent 33 % plus bas. La trajectoire américaine (déclin d'environ 1,5 %/an à partir d'un niveau de base plus élevé) croise le niveau Tsimane (stable) vers 55 ans.",
+    tGradientKicker: "GRADIENT TESTOSTÉRONE",
+    tGradientTitle: "Tsimane → Mosetén → USA : réponse dose-effet dans le vieillissement de la testostérone",
+    tGradientLead: "Trois populations partageant une ascendance amazonienne mais différant dans l'adoption technologique montrent un gradient de trajectoire de testostérone qui suit l'exposition aux EMF — pas la génétique, l'alimentation ou la latitude.",
+    tGradientRows: [
+      { pop: "Tsimane", emf: "Zéro", baseline: "~400 pg/mL (salivaire)", decline: "Aucun", trajectory: "Plat avec l'âge" },
+      { pop: "Mosetén", emf: "Faible", baseline: "Intermédiaire", decline: "Modeste", trajectory: "Léger déclin avec l'âge" },
+      { pop: "USA moderne", emf: "Élevé", baseline: "~550 pg/mL → en déclin", decline: "~1,5 %/an", trajectory: "Déclin abrupt ; croise Tsimane vers ~55 ans" },
+    ],
+    tGradientNote: "Ce gradient contrôle les facteurs de confusion les plus forts : Tsimane et Mosetén partagent l'ascendance, la géographie et la base de subsistance. L'adoption technologique est la variable principale qui diffère — et la trajectoire de testostérone la suit. En termes BERM : Tsimane P=1,0, R=2,1 → EMF_eff ≈ 0. Mosetén P=1,2, R=1,5 → EMF_eff = low. USA P=2,2, R=1,0 → EMF_eff = high. Même exposition RF → réponse différente en raison d'un historique de priming différent.",
+    s4Kicker: "SECTION 4",
+    s4Title: "Gradient de la myopie",
+    s4Text: [
+      "La prévalence de la myopie suit un gradient à cinq niveaux qui suit l'adoption technologique, pas la génétique. Ceci est mesuré par réfractométrie — une mesure physique objective, pas un auto-rapport.",
+      "La pandémie de COVID-19 a fourni un test temporel : le temps d'écran a augmenté dramatiquement pendant les confinements, et une hausse correspondante de la myopie infantile a été observée mondialement (les méta-analyses rapportent une augmentation de 1,5–3× de la progression). Ceci est cohérent avec le canal RF/lumière d'écran du modèle à trois canaux de BERM.",
+    ],
+    myopiaHeaders: { region: "Région", prevalence: "Prévalence de la myopie", tech: "Niveau technologique" },
+    s5Kicker: "SECTION 5",
+    s5Title: "Test de cascade BERM",
+    s5Text:
+      "BERM prédit 16 cascades de maladies où la dérégulation du Ca²⁺ médiée par VGCC produit des pathologies spécifiques. Pour chaque cascade, nous demandons : les populations à faible EMF montrent-elles une prévalence plus faible ? Sur 16 cascades, 11 sont confirmées cohérentes (69 %), 5 n'ont pas de données et 0 sont contredites.",
+    cascadeHeaders: {
+      cascade: "Cascade",
+      lowEmf: "Faible EMF",
+      modern: "Moderne",
+      mechanism: "Mécanisme BERM",
+      status: "Statut",
+    },
+    cascadeSummary: "11/16 confirmées · 5/16 pas de données · 0/16 contredites",
+    preElecKicker: "RÉTRODICTION",
+    preElecTitle: "Niveaux de référence pré-électriques",
+    preElecLead: "BERM prédit que les populations pré-électriques devraient présenter une prévalence plus faible de TOUS les résultats de cascade. C'est une rétrodiction — le modèle prédit le PASSÉ.",
+    preElecRows: [
+      { cascade: "Obésité", preElectric: "~5 %", modern: "42 % (USA)", change: "8×" },
+      { cascade: "Diabète de type 2", preElectric: "Rare", modern: "~10 % (mondial)", change: "10×+" },
+      { cascade: "Autisme", preElectric: "<3/10 000", modern: "320/10 000", change: "100×" },
+      { cascade: "Dépression", preElectric: "Faible (est.)", modern: "~10 % (mondial)", change: "?" },
+      { cascade: "Nombre de spermatozoïdes", preElectric: "Pas de données", modern: "−51,6 % (1973→)", change: "—" },
+      { cascade: "TFR", preElectric: "~5–6 (Occident)", modern: "1,66 (USA)", change: "−3×" },
+    ],
+    preElecAmish: "Le profil de santé Amish — faible obésité, faible diabète, faible dépression, haute fertilité (TFR 6,1) — ressemble aux données de santé pré-électrification du début des années 1900. BERM interprète ceci comme preuve que la différence entre les profils de santé pré-modernes et modernes est substantiellement due à l'environnement électromagnétique, et non à la génétique, l'alimentation ou le mode de vie seuls.",
+    preElecHeaders: { cascade: "Cascade", preElectric: "Pré-électrique (~1900)", modern: "Moderne (2024)", change: "Changement" },
+    occKicker: "GRADIENT PROFESSIONNEL",
+    occTitle: "Travailleurs en intérieur vs. en extérieur",
+    occLead: "L'exposition aux EMF varie considérablement selon la profession. Les comparaisons conventionnelles intérieur/extérieur se concentrent sur la sédentarité et l'exposition aux UV. BERM ajoute : le risque métabolique des travailleurs en intérieur est plus élevé MÊME après contrôle de l'activité physique, car leur charge EMF cumulative est plus grande.",
+    occGradient: [
+      { occupation: "Opérateur de centre de données", stars: 5, sources: "ELF+IF+RF, multi-source, 8–12h" },
+      { occupation: "Employé de bureau", stars: 4, sources: "WiFi+LED+screen+phone, 8–10h" },
+      { occupation: "Employé de commerce", stars: 3, sources: "LED+WiFi+POS system" },
+      { occupation: "Ouvrier d'usine", stars: 3, sources: "ELF+IF, industrial equipment" },
+      { occupation: "Ouvrier du bâtiment", stars: 2, sources: "ELF power tools, phone" },
+      { occupation: "Agriculteur", stars: 1, sources: "Tractor ELF, phone, otherwise low" },
+      { occupation: "Pêcheur / bûcheron", stars: 1, sources: "Near EMF-free work environment" },
+    ],
+    occPrediction: "Testable : travailleurs d'intérieur physiquement actifs (employés de bureau allant à la salle de sport) vs. travailleurs d'extérieur avec le même niveau d'activité physique mais un environnement EMF différent — les marqueurs métaboliques devraient différer.",
+    s6Kicker: "SECTION 6",
+    s6Title: "Ce que cela NE prouve PAS",
+    s6Text: [
+      "Chaque population ci-dessus diffère des sociétés modernes de multiples façons simultanément. Les facteurs de confusion incluent :",
+    ],
+    confounders: [
+      "Alimentation — plus d'aliments complets, moins de sucre transformé, ratios de macronutriments différents",
+      "Exercice — les Hadza marchent ~17 000 pas/jour vs USA ~4 000",
+      "Structure communautaire — familles élargies, soutien social, moins d'isolement",
+      "Exposition chimique — pas de pesticides, pas de microplastiques, pas de pollution industrielle",
+      "Génétique — adaptations spécifiques aux populations sur des millénaires",
+    ],
+    s6Text2: [
+      "Cette preuve est une COHÉRENCE avec BERM, pas sa preuve. N'importe lequel des facteurs de confusion ci-dessus pourrait expliquer certaines ou toutes les différences observées. Le gradient Tsimane→Mosetén est l'argument le plus fort car il contrôle la génétique et la géographie, isolant l'adoption technologique comme variable principale.",
+      "Pour passer de la cohérence à la preuve, nous avons besoin d'études prospectives dans des populations où les EMF sont la variable principale qui change. Deux sont proposées ci-dessous.",
+    ],
+    proposedStudies: [
+      {
+        id: "DIFF-1",
+        title: "Mesure de l'AGD : Tsimane vs néonats trinidadiens urbains",
+        desc: "La distance anogénitale (AGD) est un marqueur de l'exposition prénatale aux androgènes et est réduite par les perturbateurs endocriniens. BERM prédit que la suppression de la testostérone médiée par les EMF réduirait l'AGD. La comparaison des néonats Tsimane (zéro EMF) avec les néonats trinidadiens urbains (EMF élevé, latitude et mélange génétique similaires) testerait cette prédiction.",
+      },
+      {
+        id: "AMISH-1",
+        title: "TFR Amish vs distance au centre urbain le plus proche",
+        desc: "Les Amish rejettent la technologie personnelle mais vivent entourés d'EMF ambiants provenant des villes voisines. Si l'exposition ambiante compte, les communautés Amish plus proches des centres urbains devraient avoir un TFR plus bas que les communautés éloignées. Ceci est testable avec les données démographiques existantes et l'analyse géospatiale.",
+      },
+    ],
+    proposedTitle: "Études proposées",
+    navPredictions: "Prédictions →",
+    navModel: "Spécification du modèle →",
+  },
+  ko: {
+    title: "자연 대조군",
+    subtitle:
+      "9개 저EMF 인구 집단과 현대 인구 집단을 7가지 건강 지표로 비교. Tsimane–Mosetén 기울기, 근시 용량-반응, BERM 캐스케이드 테스트.",
+    backLink: "← 증거로 돌아가기",
+    warningTitle: "대규모 교란 요인",
+    warningText:
+      "아래에 나열된 모든 인구 집단은 식이, 운동, 공동체 구조, 화학물질 노출, 유전학에서 현대 사회와 다릅니다. 이것은 EMF가 질병을 유발한다는 증거가 아닙니다. 이것은 일관성 확인입니다: 저EMF 인구 집단이 BERM이 예측하는 건강 패턴을 보이는가? 보이지 않는다면 BERM은 반증됩니다. 보인다는 것은 필요조건이지만 충분조건은 아닙니다.",
+    s1Kicker: "섹션 1",
+    s1Title: "이 인구 집단이 중요한 이유",
+    s1Text: [
+      "BERM은 인위적 EMF 노출이 거의 0인 인구 집단이 다음을 나타내야 한다고 예측합니다: 높은 출산율(TFR > 4), 낮은 심혈관 질환, 낮은 치매, 낮은 비만, 낮은 T2D, 낮은 우울증. 이들은 선별된 결과가 아니라 모델의 7가지 질병 캐스케이드의 직접적인 예측입니다.",
+      "현대 도시에서 EMF를 제거하는 통제 실험을 수행할 수 없습니다. 그러나 전기나 개인 기술을 채택한 적 없는 인구 집단은 자연적 기준선을 제공합니다. 모델이 틀렸다면, 이 인구 집단 중 최소한 일부는 현대 질병 패턴을 보여야 합니다. 어느 것도 보이지 않습니다.",
+    ],
+    s2Kicker: "섹션 2",
+    s2Title: "인구 집단 비교",
+    tableHeaders: {
+      population: "인구 집단",
+      location: "위치",
+      emf: "EMF 수준",
+      tfr: "TFR",
+      cvd: "CVD",
+      dementia: "치매",
+      obesity: "비만",
+      t2d: "T2D",
+      cancer: "암",
+      depression: "우울증",
+    },
+    s3Kicker: "섹션 3",
+    s3Title: "Tsimane → Mosetén → 현대 기울기",
+    s3Text: [
+      "이것은 BERM에 대한 가장 강력한 단일 인구 수준 증거입니다. Tsimane과 Mosetén은 유전적 조상, 지리적 지역, 기본 생계 패턴을 공유합니다. 주요 차이는 현대화 정도입니다: Mosetén은 더 많은 기술, 의료, 인프라를 보유하고 있습니다.",
+      "측정된 모든 건강 변수에서 Mosetén은 Tsimane과 서양 인구 집단 사이에 위치합니다. 이것은 유전학을 통제하는 용량-반응 기울기로, 가장 일반적인 교란 요인 반론에 대응합니다.",
+    ],
+    gradientLabels: [
+      {
+        name: "Tsimane",
+        chi: "χ_env = 0",
+        desc: "전기 없음, 전화 없음, 현대 기술 없음",
+        health: "기록된 중 가장 낮은 CVD. 치매 1.2%. 뇌 위축 70% 느림.",
+      },
+      {
+        name: "Mosetén",
+        chi: "χ_env > 0",
+        desc: "Tsimane과 조상을 공유하지만 더 많은 기술과 인프라",
+        health: "CVD 낮음. 치매 중간. 뇌 위축 중간.",
+      },
+      {
+        name: "현대(미국)",
+        chi: "χ_env = high",
+        desc: "완전 전기화, 스마트폰, 고밀도 RF 환경",
+        health: "CVD 높음. 치매 8–11%. 비만 42%. TFR 1.66.",
+      },
+    ],
+    gradientPunchline:
+      "같은 유전자. 같은 지역. 같은 기본 식단. 다른 기술. 다른 건강. 모든 변수에서.",
+    tProfileKicker: "테스토스테론 프로파일",
+    tProfileTitle: "Tsimane: 테스토스테론은 나이에 따라 감소하지 않는다",
+    tProfileLead: "테스토스테론 감소가 생물학적 필연이라면 모든 인구 집단에서 나타나야 합니다. 그렇지 않습니다. Tsimane 남성은 기준 수준이 33% 낮음에도 불구하고 연령 관련 테스토스테론 감소를 보이지 않습니다 — 이는 '노화' 설명에 대한 자연 실험입니다.",
+    tProfileBaseline: "기준선",
+    tProfileAgeDecline: "연령별 감소",
+    tProfileReactivity: "반응성",
+    tProfileImplication: "시사점",
+    tProfileParadox: "역설: 60세까지 Tsimane 남성은 미국 남성보다 테스토스테론이 더 높을 수 있습니다 — 시작점이 33% 낮음에도 불구하고. 미국인의 궤적(높은 기준선에서 연간 약 1.5% 감소)은 Tsimane 수준(안정)과 약 55세에서 교차합니다.",
+    tGradientKicker: "테스토스테론 기울기",
+    tGradientTitle: "Tsimane → Mosetén → 미국: 테스토스테론 노화의 용량-반응",
+    tGradientLead: "아마존 조상을 공유하지만 기술 채택이 다른 세 인구 집단은 EMF 노출을 추적하는 테스토스테론 궤적 기울기를 보여줍니다 — 유전학, 식이, 위도가 아닙니다.",
+    tGradientRows: [
+      { pop: "Tsimane", emf: "제로", baseline: "~400 pg/mL(타액)", decline: "없음", trajectory: "연령에 걸쳐 평탄" },
+      { pop: "Mosetén", emf: "낮음", baseline: "중간", decline: "완만", trajectory: "나이에 따라 약간 감소" },
+      { pop: "현대 미국", emf: "높음", baseline: "~550 pg/mL → 감소 중", decline: "~1.5%/년", trajectory: "급격한 감소; 약 55세에서 Tsimane과 교차" },
+    ],
+    tGradientNote: "이 기울기는 가장 강력한 교란 요인을 통제합니다: Tsimane과 Mosetén은 조상, 지리, 생계 기반을 공유합니다. 기술 채택이 다른 주요 변수이며 테스토스테론 궤적은 이를 따릅니다. BERM 용어로: Tsimane P=1.0, R=2.1 → EMF_eff ≈ 0. Mosetén P=1.2, R=1.5 → EMF_eff = low. USA P=2.2, R=1.0 → EMF_eff = high. 같은 RF 노출 → 다른 프라이밍 이력 때문에 다른 반응.",
+    s4Kicker: "섹션 4",
+    s4Title: "근시 기울기",
+    s4Text: [
+      "근시 유병률은 유전학이 아닌 기술 채택을 추적하는 5단계 기울기를 따릅니다. 이것은 굴절검사로 측정됩니다 — 자기 보고가 아닌 객관적 물리 측정입니다.",
+      "COVID-19 팬데믹은 시간적 테스트를 제공했습니다: 봉쇄 기간 동안 스크린 시간이 극적으로 증가했고, 전 세계적으로 소아 근시의 급증이 관찰되었습니다(메타분석은 진행의 1.5–3배 증가를 보고). 이는 BERM의 3채널 모델에서 RF/스크린 광 채널과 일치합니다.",
+    ],
+    myopiaHeaders: { region: "지역", prevalence: "근시 유병률", tech: "기술 수준" },
+    s5Kicker: "섹션 5",
+    s5Title: "BERM 캐스케이드 테스트",
+    s5Text:
+      "BERM은 VGCC 매개 Ca²⁺ 조절 장애가 특정 병리를 생성하는 16개 질병 캐스케이드를 예측합니다. 각 캐스케이드에 대해 묻습니다: 저EMF 인구 집단이 더 낮은 유병률을 보이는가? 16개 캐스케이드 중 11개가 일치 확인(69%), 5개는 데이터 없음, 0개가 모순.",
+    cascadeHeaders: {
+      cascade: "캐스케이드",
+      lowEmf: "저EMF",
+      modern: "현대",
+      mechanism: "BERM 메커니즘",
+      status: "상태",
+    },
+    cascadeSummary: "11/16 확인 · 5/16 데이터 없음 · 0/16 모순",
+    preElecKicker: "레트로딕션",
+    preElecTitle: "전기 이전 기준선",
+    preElecLead: "BERM은 전기 이전 인구 집단이 모든 캐스케이드 결과에서 더 낮은 유병률을 보여야 한다고 예측합니다. 이것은 레트로딕션입니다 — 모델이 과거를 예측합니다.",
+    preElecRows: [
+      { cascade: "비만", preElectric: "~5%", modern: "42%(미국)", change: "8×" },
+      { cascade: "2형 당뇨병", preElectric: "드문", modern: "~10%(세계)", change: "10×+" },
+      { cascade: "자폐증", preElectric: "<3/10,000", modern: "320/10,000", change: "100×" },
+      { cascade: "우울증", preElectric: "낮음(추정)", modern: "~10%(세계)", change: "?" },
+      { cascade: "정자 수", preElectric: "데이터 없음", modern: "−51.6%(1973→)", change: "—" },
+      { cascade: "TFR", preElectric: "~5–6(서양)", modern: "1.66(미국)", change: "−3×" },
+    ],
+    preElecAmish: "Amish 건강 프로파일 — 낮은 비만, 낮은 당뇨병, 낮은 우울증, 높은 출산율(TFR 6.1) — 은 1900년대 초기 전기화 이전 건강 데이터와 유사합니다. BERM은 이를 전근대와 현대 건강 프로파일 간의 차이가 유전학, 식이, 생활양식만이 아닌 전자기 환경에 의해 상당 부분 좌우된다는 증거로 해석합니다.",
+    preElecHeaders: { cascade: "캐스케이드", preElectric: "전기 이전(~1900)", modern: "현대(2024)", change: "변화" },
+    occKicker: "직업별 기울기",
+    occTitle: "실내 근로자 vs. 실외 근로자",
+    occLead: "EMF 노출은 직업에 따라 극적으로 다릅니다. 기존의 실내/실외 비교는 좌식 행동과 UV 노출에 초점을 맞춥니다. BERM은 추가합니다: 실내 근로자의 대사 위험은 신체 활동을 통제한 후에도 더 높습니다. 누적 EMF 부하가 더 크기 때문입니다.",
+    occGradient: [
+      { occupation: "데이터센터 근로자", stars: 5, sources: "ELF+IF+RF, multi-source, 8–12h" },
+      { occupation: "사무직 근로자", stars: 4, sources: "WiFi+LED+screen+phone, 8–10h" },
+      { occupation: "소매업 근로자", stars: 3, sources: "LED+WiFi+POS system" },
+      { occupation: "공장 근로자", stars: 3, sources: "ELF+IF, industrial equipment" },
+      { occupation: "건설 근로자", stars: 2, sources: "ELF power tools, phone" },
+      { occupation: "농업 종사자", stars: 1, sources: "Tractor ELF, phone, otherwise low" },
+      { occupation: "어부/벌목꾼", stars: 1, sources: "Near EMF-free work environment" },
+    ],
+    occPrediction: "검증 가능: 신체적으로 활동적인 실내 근로자(헬스장에 다니는 사무직)와 같은 신체 활동 수준이지만 다른 EMF 환경의 실외 근로자 — 대사 마커가 달라야 합니다.",
+    s6Kicker: "섹션 6",
+    s6Title: "이것이 증명하지 않는 것",
+    s6Text: [
+      "위의 모든 인구 집단은 동시에 여러 방면에서 현대 사회와 다릅니다. 교란 요인에는 다음이 포함됩니다:",
+    ],
+    confounders: [
+      "식이 — 더 많은 자연식품, 더 적은 가공 설탕, 다른 다량영양소 비율",
+      "운동 — Hadza는 하루 약 17,000보 vs 미국 약 4,000보",
+      "공동체 구조 — 대가족, 사회적 지원, 적은 고립",
+      "화학물질 노출 — 살충제 없음, 미세 플라스틱 없음, 산업 오염 없음",
+      "유전학 — 수천 년에 걸친 인구 집단 고유의 적응",
+    ],
+    s6Text2: [
+      "이 증거는 BERM과의 일관성이지 그 증명이 아닙니다. 위의 교란 요인 중 어느 것이든 관찰된 차이의 일부 또는 전부를 설명할 수 있습니다. Tsimane→Mosetén 기울기는 유전학과 지리를 통제하고 기술 채택을 주요 변수로 분리하기 때문에 가장 강력한 논거입니다.",
+      "일관성에서 증거로 이동하려면 EMF가 변화하는 주요 변수인 인구 집단에서 전향적 연구가 필요합니다. 아래에 두 가지를 제안합니다.",
+    ],
+    proposedStudies: [
+      {
+        id: "DIFF-1",
+        title: "AGD 측정: Tsimane vs 도시 트리니다드 신생아",
+        desc: "항문생식기 거리(AGD)는 태아기 안드로겐 노출의 마커이며 내분비교란물질에 의해 감소합니다. BERM은 EMF 매개 테스토스테론 억제가 AGD를 감소시킬 것으로 예측합니다. Tsimane 신생아(EMF 제로)와 도시 트리니다드 신생아(높은 EMF, 유사한 위도와 유전적 혼합)를 비교하면 이 예측을 테스트할 수 있습니다.",
+      },
+      {
+        id: "AMISH-1",
+        title: "Amish TFR vs 가장 가까운 도시 지역까지의 거리",
+        desc: "Amish는 개인 기술을 거부하지만 인근 도시의 주변 EMF에 둘러싸여 살고 있습니다. 주변 노출이 중요하다면, 도시 중심에 가까운 Amish 공동체는 원격지보다 낮은 TFR을 보여야 합니다. 이것은 기존 인구통계 데이터와 지리공간 분석으로 검증 가능합니다.",
+      },
+    ],
+    proposedTitle: "제안된 연구",
+    navPredictions: "예측 →",
+    navModel: "모델 사양 →",
+  },
 } as const;
 
 /* --- Helpers --- */
@@ -340,7 +792,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const d = locale === "fi" ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
   return {
     title: `${d.title} – Extinction Field`,
     description: d.subtitle,
@@ -356,7 +808,7 @@ export default async function PopulationsPage({
 }) {
   const { locale } = await params;
   const isFi = locale === "fi";
-  const d = isFi ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
 
 
   return (
@@ -551,7 +1003,13 @@ export default async function PopulationsPage({
             <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 max-w-4xl">
               <p className="text-xs text-foreground-muted leading-relaxed italic">{d.tProfileParadox}</p>
             </div>
-            <p className="text-xs text-foreground-muted mt-3">{tp.source}</p>
+            <p className="text-xs text-foreground-muted mt-3">
+              {tp.referenceId ? (
+                <StudyCitation referenceId={tp.referenceId} locale={locale} label={tp.source} />
+              ) : (
+                tp.source
+              )}
+            </p>
           </section>
         );
       })()}

@@ -11,8 +11,7 @@ import {
   type GlobalTier,
   type GlobalTierMemberships,
 } from "@/lib/globalArtifacts";
-
-type Locale = "en" | "fi";
+import { pickCopy } from "@/lib/i18n";
 
 interface GeoProperties {
   ISO_A3?: string;
@@ -43,6 +42,51 @@ const copy = {
     selected: "Selected country",
     overlap: "Memberships can overlap; the map color shows the highest applicable tier.",
     aria: "World map showing published global data tier memberships",
+  },
+  ja: {
+    title: "カバレッジ層（予測ではない）",
+    description:
+      "色は各国の事前指定されたデータ層における最高の適用メンバーシップを示す。出生率予測、効果量、モデルスコアをコード化していない。",
+    loading: "層マップを読み込み中…",
+    error: "公開された層アーティファクトはまだ利用できません。",
+    core: "コア51",
+    extended: "拡張",
+    global: "グローバル",
+    unassigned: "公開層なし",
+    select: "国を選択して公開された層メンバーシップを確認してください。",
+    selected: "選択された国",
+    overlap: "メンバーシップは重複可能。マップの色は最高の適用層を示す。",
+    aria: "公開グローバルデータ層メンバーシップを示す世界地図",
+  },
+  fr: {
+    title: "Niveaux de couverture, pas des prédictions",
+    description:
+      "Les couleurs montrent l'appartenance la plus élevée applicable de chaque pays dans les niveaux de données pré-spécifiés. Elles n'encodent pas une prévision de fécondité, une taille d'effet ou un score de modèle.",
+    loading: "Chargement de la carte des niveaux…",
+    error: "L'artefact de niveau publié n'est pas encore disponible.",
+    core: "Core 51",
+    extended: "Étendu",
+    global: "Global",
+    unassigned: "Aucun niveau publié",
+    select: "Sélectionnez un pays pour inspecter son appartenance au niveau publié.",
+    selected: "Pays sélectionné",
+    overlap: "Les appartenances peuvent se chevaucher ; la couleur de la carte montre le niveau applicable le plus élevé.",
+    aria: "Carte du monde montrant les appartenances aux niveaux de données globales publiées",
+  },
+  ko: {
+    title: "커버리지 층 (예측 아님)",
+    description:
+      "색상은 사전 지정된 데이터 층에서 각 국가의 최고 적용 멤버십을 표시합니다. 출산율 예측, 효과 크기 또는 모델 점수를 나타내지 않습니다.",
+    loading: "층 지도 로딩 중…",
+    error: "공개된 층 아티팩트는 아직 사용할 수 없습니다.",
+    core: "코어 51",
+    extended: "확장",
+    global: "글로벌",
+    unassigned: "공개 층 없음",
+    select: "국가를 선택하여 공개된 층 멤버십을 확인하세요.",
+    selected: "선택된 국가",
+    overlap: "멤버십은 중복될 수 있습니다. 지도 색상은 최고 적용 층을 표시합니다.",
+    aria: "공개 글로벌 데이터 층 멤버십을 보여주는 세계 지도",
   },
   fi: {
     title: "Kattavuustasot, eivät ennusteet",
@@ -75,19 +119,20 @@ function featureName(feature: Feature<Geometry, GeoProperties>): string {
   return getIso3(feature);
 }
 
-function tierLabel(tier: GlobalTier | undefined, locale: Locale) {
-  if (!tier) return copy[locale].unassigned;
-  return copy[locale][tier];
+function tierLabel(tier: GlobalTier | undefined, locale: string) {
+  const d = pickCopy(copy, locale);
+  if (!tier) return d.unassigned;
+  return d[tier];
 }
 
-function membershipLabel(iso3: string, memberships: GlobalTierMemberships, locale: Locale) {
+function membershipLabel(iso3: string, memberships: GlobalTierMemberships, locale: string) {
+  const d = pickCopy(copy, locale);
   const values = memberships.membershipsByIso[iso3] ?? [];
-  return values.length > 0 ? values.map((tier) => tierLabel(tier, locale)).join(" · ") : copy[locale].unassigned;
+  return values.length > 0 ? values.map((tier) => tierLabel(tier, locale)).join(" · ") : d.unassigned;
 }
 
 export function GlobalTierMap({ locale }: { locale: string }) {
-  const language: Locale = locale === "fi" ? "fi" : "en";
-  const d = copy[language];
+  const d = pickCopy(copy, locale);
   const containerRef = useRef<HTMLDivElement>(null);
   const [geoData, setGeoData] = useState<FeatureCollection<Geometry, GeoProperties> | null>(null);
   const [tiers, setTiers] = useState<GlobalTierMemberships | null>(null);
@@ -179,7 +224,7 @@ export function GlobalTierMap({ locale }: { locale: string }) {
                     className={iso3 ? "cursor-pointer transition-opacity hover:opacity-70" : undefined}
                     onClick={() => iso3 && setSelectedIso3(iso3)}
                   >
-                    <title>{`${featureName(feature)} · ${membershipLabel(iso3, tiers, language)}`}</title>
+                    <title>{`${featureName(feature)} · ${membershipLabel(iso3, tiers, locale)}`}</title>
                   </path>
                 );
               })}
@@ -190,7 +235,7 @@ export function GlobalTierMap({ locale }: { locale: string }) {
             {GLOBAL_TIER_ORDER.map((tier) => (
               <span key={tier} className="inline-flex items-center gap-1.5">
                 <span className="h-2.5 w-2.5 rounded-sm" style={{ backgroundColor: TIER_COLORS[tier] }} aria-hidden="true" />
-                {tierLabel(tier, language)} ({tiers.countriesByTier[tier].length})
+                {tierLabel(tier, locale)} ({tiers.countriesByTier[tier].length})
               </span>
             ))}
             <span className="inline-flex items-center gap-1.5">
@@ -205,7 +250,7 @@ export function GlobalTierMap({ locale }: { locale: string }) {
             {selectedFeature && selectedIso3 ? (
               <p className="mt-1">
                 <span className="font-medium">{featureName(selectedFeature)}</span>
-                <span className="text-foreground-muted"> · {membershipLabel(selectedIso3, tiers, language)}</span>
+                <span className="text-foreground-muted"> · {membershipLabel(selectedIso3, tiers, locale)}</span>
               </p>
             ) : (
               <p className="mt-1 text-foreground-muted">{d.select}</p>

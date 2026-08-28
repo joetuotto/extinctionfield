@@ -1,5 +1,9 @@
 "use client";
 
+import { BermIcon } from "@/components/BermIcon";
+import { StudyCitation } from "@/components/StudyCitation";
+import type { BermIconName } from "@/components/BermIcon";
+
 interface SentinelSpecies {
   name: string;
   nameEn: string;
@@ -12,8 +16,10 @@ interface SentinelSpecies {
   direction: number;
   directionTotal: number;
   color: string;
-  icon: string;
+  icon: BermIconName;
   source: string;
+  sourceNote?: string;
+  referenceId?: string;
 }
 
 function speciesLabel(sp: SentinelSpecies, fi: boolean): string {
@@ -37,6 +43,7 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     color: "#22c55e",
     icon: "aphid",
     source: "Rothamsted 1969–2016, first diff",
+    referenceId: "rothamsted_aphid",
   },
   {
     name: "Mehiläinen", nameEn: "Honeybee",
@@ -45,8 +52,9 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     nCountries: 23,
     direction: 20, directionTotal: 23,
     color: "#eab308",
-    icon: "bee",
+    icon: "honeybee",
     source: "COLOSS 23 countries, circular-shift",
+    referenceId: "csli_coloss_23",
   },
   {
     name: "Pesimälintu", nameEn: "Breeding bird",
@@ -57,6 +65,7 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     color: "#3b82f6",
     icon: "bird",
     source: "PECBMS 27 countries, detrended",
+    referenceId: "csli_pecbms_27",
   },
   {
     name: "Koira → sperma", nameEn: "Dog → human sperm",
@@ -65,8 +74,9 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     nCountries: 1,
     direction: 1, directionTotal: 1,
     color: "#f97316",
-    icon: "dog",
+    icon: "reproduction",
     source: "Lea 2016, detrended",
+    referenceId: "lea2016",
   },
   {
     name: "Yöperhonen", nameEn: "Moth",
@@ -96,11 +106,13 @@ const SENTINEL_DATA: SentinelSpecies[] = [
     direction: 1, directionTotal: 1,
     color: "#6366f1",
     icon: "bat",
-    source: "Lindecke 2026 (Science); 4.5× sensitivity; RPM compass disrupted by broadband RF 0.01–300 MHz",
+    source: "Lindecke 2026 (Science)",
+    sourceNote: "4.5× sensitivity; RPM compass disrupted by broadband RF 0.01–300 MHz",
+    referenceId: "lindecke2026",
   },
 ];
 
-export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
+export function SentinelCascade({ locale = "en" }: { locale?: string }) {
   const fi = locale === "fi";
   const maxLag = 16;
   const barHeight = 52;
@@ -180,8 +192,15 @@ export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
             return (
               <g key={sp.nameEn} tabIndex={0} role="listitem" aria-label={label} className="focus:outline-none focus-visible:[&>rect]:stroke-accent">
                 <title>{label}</title>
+                <BermIcon
+                  name={sp.icon}
+                  size={16}
+                  x={5}
+                  y={y - 8}
+                  style={{ color: sp.color }}
+                />
                 <text
-                  x={6} y={y}
+                  x={28} y={y}
                   fill={sp.color} fontSize={12.5}
                   dominantBaseline="middle" fontWeight="600"
                 >
@@ -244,6 +263,29 @@ export function SentinelCascade({ locale = "en" }: { locale?: "fi" | "en" }) {
             ? "Lähdevarmennettu COLOSS-paneeli. Circular-shift p-arvot. Vuosimuutos-robustit."
             : "Source-verified COLOSS panel. Circular-shift p-values. Year-change robust."}
         </p>
+        <div className="pt-3">
+          <p className="mb-2 font-semibold uppercase tracking-wider">
+            {fi ? "Aineistot ja lähteet" : "Datasets and sources"}
+          </p>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {SENTINEL_DATA.map((sp) => (
+              <li key={sp.nameEn} className="min-w-0 break-words leading-relaxed">
+                <span className="font-medium text-foreground">{fi ? sp.name : sp.nameEn}:</span>{" "}
+                {sp.referenceId ? (
+                  <StudyCitation
+                    referenceId={sp.referenceId}
+                    locale={locale}
+                    label={sp.source}
+                    className="font-medium text-accent decoration-dotted underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 rounded-sm"
+                  />
+                ) : (
+                  sp.source
+                )}
+                {sp.sourceNote && <span> · {sp.sourceNote}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -1,8 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import type { Reference, ReferenceCategory, ReferenceData } from "@/lib/references";
 import { categoryName, levelLabel, loadReferences, referenceUrl } from "@/lib/references";
+import { pickCopy } from "@/lib/i18n";
 import { BermIcon } from "@/components/BermIcon";
 import type { BermIconName } from "@/components/BermIcon";
 
@@ -25,25 +27,26 @@ const COPY = {
     allCategories: "All categories",
     allLevels: "All evidence levels",
     allTypes: "All study types",
-    verifiedOnly: "Verified only",
+    verifiedOnly: "Source-verified records only",
     showing: (shown: number, total: number) => `${shown} of ${total} references`,
     noResults: "No references match the current filters.",
     clear: "Clear filters",
     prev: "Previous",
     next: "Next",
     page: (p: number, total: number) => `Page ${p} of ${total}`,
-    verified: "Verified",
-    unverified: "Unverified",
+    verified: "Source verified",
+    unverified: "Source not verified",
     pathway: "Pathway",
     section: "PDF section",
     doi: "DOI / source",
     loading: "Loading references…",
     error: "Failed to load references.",
+    details: "Source details",
     stats: {
       total: "Total references",
-      verified: "Source-verified",
+      verified: "Source-verified records",
       categories: "Thematic categories",
-      withDoi: "With DOI link",
+      withDoi: "With a verified source link",
     },
   },
   fi: {
@@ -51,32 +54,114 @@ const COPY = {
     allCategories: "Kaikki kategoriat",
     allLevels: "Kaikki evidenssitasot",
     allTypes: "Kaikki tutkimustyypit",
-    verifiedOnly: "Vain varmennetut",
+    verifiedOnly: "Vain lähdevarmennetut tietueet",
     showing: (shown: number, total: number) => `${shown} / ${total} viitettä`,
     noResults: "Hakua vastaavia viitteitä ei löydy.",
     clear: "Tyhjennä suodattimet",
     prev: "Edellinen",
     next: "Seuraava",
     page: (p: number, total: number) => `Sivu ${p} / ${total}`,
-    verified: "Varmennettu",
-    unverified: "Varmentamaton",
+    verified: "Lähde varmennettu",
+    unverified: "Lähdettä ei varmennettu",
     pathway: "Reitti",
     section: "PDF-osio",
     doi: "DOI / lähde",
     loading: "Ladataan viitteitä…",
     error: "Viitteiden lataaminen epäonnistui.",
+    details: "Lähdetiedot",
     stats: {
       total: "Viitteitä yhteensä",
-      verified: "Lähdevarmennettu",
+      verified: "Lähdevarmennettuja tietueita",
       categories: "Temaattista kategoriaa",
-      withDoi: "DOI-linkillä",
+      withDoi: "Varmennetulla lähdelinkillä",
+    },
+  },
+  ja: {
+    search: "著者、タイトル、雑誌、DOIまたはキーワードで検索...",
+    allCategories: "全カテゴリー",
+    allLevels: "全エビデンスレベル",
+    allTypes: "全研究タイプ",
+    verifiedOnly: "出典確認済みのみ",
+    showing: (shown: number, total: number) => `${total}件中${shown}件`,
+    noResults: "現在のフィルターに一致する参考文献がありません。",
+    clear: "フィルターをクリア",
+    prev: "前へ",
+    next: "次へ",
+    page: (p: number, total: number) => `${total}ページ中${p}ページ`,
+    verified: "出典確認済み",
+    unverified: "出典未確認",
+    pathway: "経路",
+    section: "PDFセクション",
+    doi: "DOI / 出典",
+    loading: "参考文献を読み込み中...",
+    error: "参考文献の読み込みに失敗しました。",
+    details: "出典情報",
+    stats: {
+      total: "参考文献総数",
+      verified: "出典確認済みレコード",
+      categories: "テーマカテゴリー",
+      withDoi: "検証済み出典リンク付き",
+    },
+  },
+  fr: {
+    search: "Rechercher par auteur, titre, revue, DOI ou mot-cle...",
+    allCategories: "Toutes les categories",
+    allLevels: "Tous les niveaux de preuve",
+    allTypes: "Tous les types d'etude",
+    verifiedOnly: "Sources vérifiées uniquement",
+    showing: (shown: number, total: number) => `${shown} sur ${total} references`,
+    noResults: "Aucune reference ne correspond aux filtres actuels.",
+    clear: "Effacer les filtres",
+    prev: "Precedent",
+    next: "Suivant",
+    page: (p: number, total: number) => `Page ${p} sur ${total}`,
+    verified: "Source vérifiée",
+    unverified: "Source non vérifiée",
+    pathway: "Voie",
+    section: "Section PDF",
+    doi: "DOI / source",
+    loading: "Chargement des references...",
+    error: "Echec du chargement des references.",
+    details: "Détails de la source",
+    stats: {
+      total: "Total des references",
+      verified: "Notices à source vérifiée",
+      categories: "Categories thematiques",
+      withDoi: "Avec un lien source verifie",
+    },
+  },
+  ko: {
+    search: "저자, 제목, 학술지, DOI 또는 키워드로 검색...",
+    allCategories: "전체 카테고리",
+    allLevels: "전체 증거 수준",
+    allTypes: "전체 연구 유형",
+    verifiedOnly: "출처 확인 레코드만",
+    showing: (shown: number, total: number) => `${total}건 중 ${shown}건`,
+    noResults: "현재 필터와 일치하는 참고문헌이 없습니다.",
+    clear: "필터 지우기",
+    prev: "이전",
+    next: "다음",
+    page: (p: number, total: number) => `${total}페이지 중 ${p}페이지`,
+    verified: "출처 확인됨",
+    unverified: "출처 미확인",
+    pathway: "경로",
+    section: "PDF 섹션",
+    doi: "DOI / 출처",
+    loading: "참고문헌 로딩 중...",
+    error: "참고문헌 로딩에 실패했습니다.",
+    details: "출처 정보",
+    stats: {
+      total: "참고문헌 총수",
+      verified: "출처 확인 레코드",
+      categories: "주제 카테고리",
+      withDoi: "검증된 출처 링크 포함",
     },
   },
 } as const;
 
-function ReferenceStats({ data, locale }: { data: ReferenceData; locale: "en" | "fi" }) {
-  const d = COPY[locale].stats;
-  const withDoi = data.references.filter((r) => referenceUrl(r)).length;
+function ReferenceStats({ data, locale }: { data: ReferenceData; locale: string }) {
+  const d = pickCopy(COPY, locale).stats;
+  const withDoi = data.metadata.linked_count ?? data.references.filter((r) => referenceUrl(r)).length;
   const stats = [
     { value: data.metadata.total_references, label: d.total },
     { value: data.metadata.verified_count, label: d.verified },
@@ -105,10 +190,10 @@ function CategoryTabs({
   categories: readonly ReferenceCategory[];
   active: string;
   counts: Record<string, number>;
-  locale: "en" | "fi";
+  locale: string;
   onSelect: (id: string) => void;
 }) {
-  const d = COPY[locale];
+  const d = pickCopy(COPY, locale);
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6">
       <button
@@ -156,11 +241,11 @@ function ReferenceCard({
   onToggle,
 }: {
   record: Reference;
-  locale: "en" | "fi";
+  locale: string;
   expanded: boolean;
   onToggle: () => void;
 }) {
-  const d = COPY[locale];
+  const d = pickCopy(COPY, locale);
   const doiUrl = referenceUrl(r);
 
   return (
@@ -190,7 +275,9 @@ function ReferenceCard({
             </p>
           )}
           {r.finding && (
-            <p className="text-sm leading-relaxed text-foreground-muted">{r.finding}</p>
+            <div>
+              <p className="text-sm leading-relaxed text-foreground-muted">{r.finding}</p>
+            </div>
           )}
           <div className="flex flex-wrap gap-1.5 items-center">
             {r.level && (
@@ -228,6 +315,12 @@ function ReferenceCard({
               {d.doi} ↗
             </a>
           )}
+          <Link
+            href={`/${locale}/references/${r.id}`}
+            className="ml-3 inline-block text-xs text-accent hover:underline"
+          >
+            {d.details} →
+          </Link>
         </div>
       )}
     </article>
@@ -235,8 +328,9 @@ function ReferenceCard({
 }
 
 export function ReferenceDatabase({ locale }: { locale: string }) {
-  const activeLocale = locale === "fi" ? "fi" : "en";
-  const d = COPY[activeLocale];
+  const activeLocale = locale;
+  const libLocale: "en" | "fi" = locale === "fi" ? "fi" : "en";
+  const d = pickCopy(COPY, activeLocale);
 
   const [data, setData] = useState<ReferenceData | null>(null);
   const [error, setError] = useState(false);
@@ -307,19 +401,36 @@ export function ReferenceDatabase({ locale }: { locale: string }) {
   const filtered = useMemo(() => {
     if (!data) return [];
     const term = search.trim().toLowerCase();
-    return data.references.filter((r) => {
+    const matches = data.references.filter((r) => {
       if (category && r.category !== category) return false;
       if (levelFilter && r.level !== levelFilter) return false;
       if (typeFilter && r.type !== typeFilter) return false;
       if (verifiedOnly && !r.verified) return false;
       if (!term) return true;
-      return [r.authors, r.title, r.journal, r.doi, r.finding, ...(r.pathway ?? []), ...(r.tags ?? [])]
+      const haystack = [r.id, ...(r.aliases ?? []), r.authors, r.year, r.title, r.journal, r.doi, r.pmid, r.pmcid, r.url, r.finding, ...(r.pathway ?? []), ...(r.tags ?? [])]
         .filter(Boolean)
         .join(" ")
-        .toLowerCase()
-        .includes(term);
+        .toLowerCase();
+      return term.split(/\s+/).every((token) => haystack.includes(token));
     });
-  }, [data, search, category, levelFilter, typeFilter, verifiedOnly]);
+
+    // Keep useful bibliographic records ahead of incomplete migration stubs.
+    // Stubs remain searchable and visible, but the default first page should
+    // never consist of empty author/title rows.
+    const completeness = (reference: Reference) =>
+      (reference.title ? 8 : 0) +
+      (reference.authors ? 4 : 0) +
+      (reference.year > 0 ? 2 : 0) +
+      (referenceUrl(reference) ? 1 : 0);
+
+    return matches.sort((a, b) => {
+      const score = completeness(b) - completeness(a);
+      if (score) return score;
+      const author = (a.authors || a.title || a.id).localeCompare(b.authors || b.title || b.id, libLocale);
+      if (author) return author;
+      return b.year - a.year;
+    });
+  }, [data, search, category, levelFilter, typeFilter, verifiedOnly, libLocale]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const pageItems = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
@@ -388,7 +499,7 @@ export function ReferenceDatabase({ locale }: { locale: string }) {
           <option value="">{d.allLevels}</option>
           {levels.map((l) => (
             <option key={l} value={l}>
-              {levelLabel(l, activeLocale)}
+              {levelLabel(l, libLocale)}
             </option>
           ))}
         </select>

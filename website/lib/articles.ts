@@ -47,6 +47,9 @@ export const ARTICLES: Article[] = [
     publishedDate: "2026-08-22",
     readingTimeMinutes: 14,
     tags: ["therapeutic", "FDA", "paradox"],
+    heroImage: "/images/articles/spectrum-editorial-hero.webp",
+    ogImage: "/images/articles/spectrum-editorial-og.webp",
+    thumbImage: "/images/articles/spectrum-editorial-thumb.webp",
   },
   {
     id: "implausibility",
@@ -61,6 +64,9 @@ export const ARTICLES: Article[] = [
     publishedDate: "2026-08-22",
     readingTimeMinutes: 16,
     tags: ["mechanism", "history", "lindgren", "VGCC"],
+    heroImage: "/images/articles/implausibility-editorial-hero.webp",
+    ogImage: "/images/articles/implausibility-editorial-og.webp",
+    thumbImage: "/images/articles/implausibility-editorial-thumb.webp",
   },
   {
     id: "dual-lock",
@@ -72,7 +78,9 @@ export const ARTICLES: Article[] = [
     subtitleFi:
       "Miksi testosteronin lasku ja kortisolin nousu tuottavat voimakkaamman käyttäytymisen vaimentumisen kuin kumpikin yksinään",
     icon: "human",
-    heroImage: "/images/testosterone-molecule.png",
+    heroImage: "/images/articles/dual-lock-editorial-hero.webp",
+    ogImage: "/images/articles/dual-lock-editorial-og.webp",
+    thumbImage: "/images/articles/dual-lock-editorial-thumb.webp",
     publishedDate: "2026-08-25",
     readingTimeMinutes: 11,
     tags: ["testosterone", "cortisol", "societal", "dual-hormone"],

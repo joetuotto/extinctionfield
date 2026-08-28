@@ -1,6 +1,7 @@
 "use client";
 
 import { VGCC_GENE_FAMILY } from "@/lib/vgccGeneFamily";
+import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: {
@@ -13,7 +14,22 @@ const COPY = {
     hubSub: "Ca²⁺-kanava",
     diseases: "Sairaudet",
   },
-} as const;
+  ja: {
+    hub: "VGCC遺伝子ファミリー",
+    hubSub: "Ca²⁺チャネル",
+    diseases: "疾患",
+  },
+  fr: {
+    hub: "Famille de gènes VGCC",
+    hubSub: "Canal Ca²⁺",
+    diseases: "Maladies",
+  },
+  ko: {
+    hub: "VGCC 유전자 패밀리",
+    hubSub: "Ca²⁺ 채널",
+    diseases: "질환",
+  },
+};
 
 const GENE_COLORS: Record<string, string> = {
   cacna1c: "#EF4444",
@@ -43,16 +59,17 @@ function polarXY(angleDeg: number, radius: number): [number, number] {
 }
 
 export function VGCCGeneFamilyDiagram({ locale }: { locale: string }) {
-  const d = locale === "fi" ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
   const genes = VGCC_GENE_FAMILY;
 
   return (
     <div className="mt-8">
-      <div className="overflow-x-auto">
+      <div className="chart-surface">
+      <div className="chart-scroll">
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          className="w-full max-w-[900px]"
-          style={{ minWidth: 640 }}
+          className="chart-svg w-full max-w-[900px]"
+          style={{ minWidth: 680 }}
           role="img"
           aria-label={d.hub}
         >
@@ -163,15 +180,10 @@ export function VGCCGeneFamilyDiagram({ locale }: { locale: string }) {
                   const dAngle = diseaseStartAngle + j * diseaseSpread;
                   const [dx, dy] = polarXY(dAngle, ORBIT + diseaseRadius);
                   const label =
-                    locale === "fi" ? dis.fi : dis.en;
-                  /* Truncate long labels */
-                  const shortLabel =
-                    label.length > 40 ? label.slice(0, 37) + "..." : label;
-                  const textAnchor =
-                    dx < CX - 50 ? "end" : dx > CX + 50 ? "start" : "middle";
-
+                    dis[locale] ?? dis.en;
                   return (
                     <g key={j}>
+                      <title>{label}</title>
                       {/* Thin line from node to disease */}
                       <line
                         x1={nx}
@@ -185,17 +197,6 @@ export function VGCCGeneFamilyDiagram({ locale }: { locale: string }) {
                       />
                       {/* Small dot */}
                       <circle cx={dx} cy={dy} r={2.5} fill={color} opacity={0.5} />
-                      {/* Disease label */}
-                      <text
-                        x={dx + (textAnchor === "end" ? -6 : textAnchor === "start" ? 6 : 0)}
-                        y={dy + 4}
-                        textAnchor={textAnchor}
-                        fontSize={8}
-                        fill="currentColor"
-                        opacity={0.7}
-                      >
-                        {shortLabel}
-                      </text>
                     </g>
                   );
                 })}
@@ -203,6 +204,31 @@ export function VGCCGeneFamilyDiagram({ locale }: { locale: string }) {
             );
           })}
         </svg>
+      </div>
+
+      <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3" aria-label={d.diseases}>
+        {genes.map((gene) => {
+          const color = GENE_COLORS[gene.id] ?? "#6B7280";
+          return (
+            <article
+              key={`${gene.id}-diseases`}
+              className="rounded-lg border border-card-border bg-background/55 p-3"
+              style={{ borderInlineStartColor: color, borderInlineStartWidth: 3 }}
+            >
+              <h4 className="font-mono-num text-xs font-bold" style={{ color }}>{gene.gene}</h4>
+              <p className="mt-0.5 text-[10px] text-foreground-muted">{gene.protein} · {gene.type}</p>
+              <ul className="mt-2 space-y-1 text-[11px] leading-snug text-foreground-muted">
+                {gene.diseases.map((disease, index) => (
+                  <li key={index} className="flex gap-1.5">
+                    <span aria-hidden="true" style={{ color }}>•</span>
+                    <span>{disease[locale] ?? disease.en}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          );
+        })}
+      </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
-import type { Locale } from "@/lib/i18n";
+import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { StudyCitation } from "@/components/StudyCitation";
 
 const COPY = {
   en: {
@@ -15,7 +16,7 @@ const COPY = {
       {
         heading: "The dual-hormone hypothesis",
         paragraphs: [
-          "The interaction between testosterone and cortisol in regulating dominant behavior was formalized by Mehta and Josephs in 2010. Their dual-hormone hypothesis proposes that testosterone's effect on status-seeking behavior is not fixed — it depends on cortisol. When cortisol is low, testosterone drives approach behavior, competition, and status pursuit. When cortisol is high, testosterone's effect is attenuated.",
+          "The interaction between testosterone and cortisol in regulating dominant behavior was formalized by [[ref:mehta2010_dual_hormone|Mehta and Josephs in 2010]]. Their dual-hormone hypothesis proposes that testosterone's effect on status-seeking behavior is not fixed — it depends on cortisol. When cortisol is low, testosterone drives approach behavior, competition, and status pursuit. When cortisol is high, testosterone's effect is attenuated.",
           "A meta-analysis of 8,538 participants confirmed this: the relationship is multiplicative, not additive. High testosterone with low cortisol produces strong status-seeking behavior. High testosterone with high cortisol produces moderate behavior. Low testosterone with high cortisol — the pattern BERM predicts EMF produces — results in behavioral suppression greater than either hormone shift alone.",
           "This is the dual lock. One lock removes the drive (testosterone down: less motivation, less risk-taking, less competitive impulse). The other lock adds the brake (cortisol up: more anxiety, more avoidance, more withdrawal). Together, they suppress approach behavior more effectively than either mechanism independently.",
         ],
@@ -38,21 +39,21 @@ const COPY = {
         heading: "1. The sexlessness epidemic",
         paragraphs: [
           "The share of young men (18–30) without a sexual partner has risen steadily across industrialized countries. In Japan, 43% of men aged 18–34 reported being virgins in 2015. In the United States, the share of men under 30 reporting no sexual partners in the past year doubled between 2008 and 2018.",
-          "The dual lock prediction: testosterone decline reduces sexual desire directly (endocrinological consensus), while cortisol elevation increases fear of rejection. The combination suppresses approach behavior — the willingness to initiate contact — more than either alone. Goetz et al. (2024, RCT) demonstrated that exogenous testosterone increases the tendency to interpret ambiguous social signals as sexual interest. Population-wide testosterone decline reverses this: fewer signals are read as interest, fewer approaches are made.",
+          "The dual lock prediction: testosterone decline reduces sexual desire directly (endocrinological consensus), while cortisol elevation increases fear of rejection. The combination suppresses approach behavior — the willingness to initiate contact — more than either alone. [[ref:goetz2024|Goetz et al. (2024, RCT)]] demonstrated that exogenous testosterone increases the tendency to interpret ambiguous social signals as sexual interest. Population-wide testosterone decline reverses this: fewer signals are read as interest, fewer approaches are made.",
         ],
       },
       {
         heading: "2. Male labor force exit",
         paragraphs: [
           "In April 2026, 33% of American men were neither working nor looking for work — the lowest labor force participation rate since record-keeping began in the 1940s. The decline from 87% (post-war peak) to 67% (2026) has accelerated since 2010.",
-          "The dual lock prediction: testosterone decline reduces status motivation (Dreher et al. 2016, PNAS, RCT: exogenous testosterone causally increases status-seeking behavior). Cortisol elevation makes workplace competition aversive rather than stimulating. The combination makes opting out easier than competing.",
+          "The dual lock prediction: testosterone decline reduces status motivation ([[ref:dreher2016|Dreher et al. 2016, PNAS, RCT]]: exogenous testosterone causally increases status-seeking behavior). Cortisol elevation makes workplace competition aversive rather than stimulating. The combination makes opting out easier than competing.",
         ],
       },
       {
         heading: "3. Failure to launch",
         paragraphs: [
           "In 2020, more than 50% of Americans aged 18–29 lived with their parents — the highest rate since the 1930s. This is typically attributed to housing costs and student debt, but the trend predates the worst of both.",
-          "The dual lock prediction: testosterone decline in young men has been steeper than in older men. Lokeshwar et al. (2021) documented a −1.82%/year decline in adolescents and young adults. A 25-year-old in 2024 has the hormonal profile of a 40-year-old from the 1980s. The drive to establish independent status — one of testosterone's core behavioral effects — is biologically diminished.",
+          "The dual lock prediction: testosterone decline in young men has been steeper than in older men. [[ref:lokeshwar2021|Lokeshwar et al. (2021)]] documented a −1.82%/year decline in adolescents and young adults. A 25-year-old in 2024 has the hormonal profile of a 40-year-old from the 1980s. The drive to establish independent status — one of testosterone's core behavioral effects — is biologically diminished.",
         ],
       },
       {
@@ -73,13 +74,13 @@ const COPY = {
         heading: "6. The pairing crisis",
         paragraphs: [
           "Marriage rates have declined across all industrialized countries. Dating app usage has risen while in-person meeting has declined. The average age of first marriage has increased by 5–7 years since 1980.",
-          "The dual lock prediction: testosterone decline reduces sexual overperception bias (Goetz 2024, RCT), meaning fewer social signals are interpreted as romantic interest. Cortisol elevation increases the perceived cost of rejection. Dating apps thrive precisely because they offer a low-risk environment — a setting where the dual lock's inhibition of face-to-face approach behavior matters less.",
+          "The dual lock prediction: testosterone decline reduces sexual overperception bias ([[ref:goetz2024|Goetz 2024, RCT]]), meaning fewer social signals are interpreted as romantic interest. Cortisol elevation increases the perceived cost of rejection. Dating apps thrive precisely because they offer a low-risk environment — a setting where the dual lock's inhibition of face-to-face approach behavior matters less.",
         ],
       },
       {
         heading: "7. Declining empathy",
         paragraphs: [
-          "Konrath et al. (2011) documented a 40% decline in dispositional empathy among college students between 1979 and 2009. The decline accelerated after 2000.",
+          "[[ref:konrath2011|Konrath et al. (2011)]] documented a 40% decline in dispositional empathy among college students between 1979 and 2009. The decline accelerated after 2000.",
           "The dual lock prediction: testosterone and oxytocin together form the biological substrate of social cohesion. EMF-driven testosterone decline reduces competitive social behavior (the status-seeking that creates social hierarchies), while potential oxytocin disruption reduces trust and empathy. The result is withdrawal on both axes — less competitive engagement and less cooperative engagement.",
         ],
       },
@@ -102,15 +103,15 @@ const COPY = {
       },
     ],
     references: [
-      "Mehta PH, Josephs RA (2010). Testosterone and cortisol jointly regulate dominance: Evidence for a dual-hormone hypothesis. Hormones and Behavior, 58(5), 898–906.",
-      "Dual-hormone meta-analysis (2021). Cortisol modulates testosterone's effect on status-relevant behavior. n = 8,538.",
-      "Dreher JC et al. (2016). Testosterone causes both prosocial and antisocial status-enhancing behaviors in human males. PNAS, 113(41), 11633–11638.",
-      "Goetz SMM et al. (2024). Testosterone and sexual overperception bias. RCT: exogenous T increases tendency to interpret signals as sexual interest.",
-      "Lokeshwar SD et al. (2021). Decline in serum testosterone levels among adolescent and young adult men in the USA. European Urology Focus, 7(4), 886–889.",
-      "Konrath SH, O'Brien EH, Hsing C (2011). Changes in dispositional empathy in American college students over time. Personality and Social Psychology Review, 15(2), 180–198.",
-      "Twenge JM et al. (2017). Declines in sexual frequency among American adults, 1989–2014. Archives of Sexual Behavior, 46(8), 2389–2401.",
-      "US Bureau of Labor Statistics (2026). Male labor force participation rate, April 2026: 67%.",
-      "Trumble BC et al. (2012). Age-independent increasing testosterone in Tsimane males. American Journal of Human Biology.",
+      { referenceId: "mehta2010_dual_hormone", label: "Mehta PH, Josephs RA (2010). Testosterone and cortisol jointly regulate dominance: Evidence for a dual-hormone hypothesis. Hormones and Behavior, 58(5), 898–906." },
+      { referenceId: "dekkers2019_dual_hormone", label: "Dekkers TJ et al. (2019). A meta-analytical evaluation of the dual-hormone hypothesis. Neuroscience & Biobehavioral Reviews, 96, 250–271. n = 8,538." },
+      { referenceId: "dreher2016", label: "Dreher JC et al. (2016). Testosterone causes both prosocial and antisocial status-enhancing behaviors in human males. PNAS, 113(41), 11633–11638." },
+      { referenceId: "goetz2024", label: "Goetz SMM, Lucas T, Carré JM (2024). Under the influence: exogenous testosterone influences men's cross-sex perceptions of sexual interest. Frontiers in Psychology, 15, 1425389." },
+      { referenceId: "lokeshwar2021", label: "Lokeshwar SD et al. (2021). Decline in serum testosterone levels among adolescent and young adult men in the USA. European Urology Focus, 7(4), 886–889." },
+      { referenceId: "konrath2011", label: "Konrath SH, O'Brien EH, Hsing C (2011). Changes in dispositional empathy in American college students over time. Personality and Social Psychology Review, 15(2), 180–198." },
+      { referenceId: "twenge2017_sexual_frequency", label: "Twenge JM et al. (2017). Declines in sexual frequency among American adults, 1989–2014. Archives of Sexual Behavior, 46(8), 2389–2401." },
+      { referenceId: "us_lfp_2026", label: "US Bureau of Labor Statistics (2026). Male labor force participation rate, April 2026: 67%." },
+      { referenceId: "trumble2012", label: "Trumble BC et al. (2012). Age-independent increasing testosterone in Tsimane males. American Journal of Human Biology." },
     ],
   },
   fi: {
@@ -127,7 +128,7 @@ const COPY = {
       {
         heading: "Kaksoishormonihypoteesi",
         paragraphs: [
-          "Testosteronin ja kortisolin vuorovaikutuksen dominanttikäyttäytymisen säätelyssä formalisoivat Mehta ja Josephs vuonna 2010. Heidän kaksoishormonihypoteesinsa esittää, että testosteronin vaikutus statushakuiseen käyttäytymiseen ei ole kiinteä — se riippuu kortisolista. Kun kortisoli on matala, testosteroni ajaa lähestymiskäyttäytymistä, kilpailua ja statuksen tavoittelua. Kun kortisoli on korkea, testosteronin vaikutus vaimenee.",
+          "Testosteronin ja kortisolin vuorovaikutuksen dominanttikäyttäytymisen säätelyssä formalisoivat [[ref:mehta2010_dual_hormone|Mehta ja Josephs vuonna 2010]]. Heidän kaksoishormonihypoteesinsa esittää, että testosteronin vaikutus statushakuiseen käyttäytymiseen ei ole kiinteä — se riippuu kortisolista. Kun kortisoli on matala, testosteroni ajaa lähestymiskäyttäytymistä, kilpailua ja statuksen tavoittelua. Kun kortisoli on korkea, testosteronin vaikutus vaimenee.",
           "Meta-analyysi 8 538 osallistujasta vahvisti tämän: suhde on multiplikatiivinen, ei additiivinen. Korkea testosteroni ja matala kortisoli tuottavat voimakasta statushakuista käyttäytymistä. Korkea testosteroni ja korkea kortisoli tuottavat kohtalaista käyttäytymistä. Matala testosteroni ja korkea kortisoli — malli jonka BERM ennustaa EMF:n tuottavan — johtaa käyttäytymisen suppressioon, joka on suurempi kuin kummankaan hormonimuutoksen yksinään.",
           "Tämä on kaksoislukon mekanismi. Ensimmäinen lukko poistaa halun (testosteroni alas: vähemmän motivaatiota, vähemmän riskinottoa, vähemmän kilpailuimpulssia). Toinen lukko lisää jarrun (kortisoli ylös: enemmän ahdistuneisuutta, enemmän välttämistä, enemmän vetäytymistä). Yhdessä ne suppressoivat lähestymiskäyttäytymistä tehokkaammin kuin kumpikaan mekanismi itsenäisesti.",
         ],
@@ -150,21 +151,21 @@ const COPY = {
         heading: "1. Seksittömyyden epidemia",
         paragraphs: [
           "Nuorten miesten (18–30 v) osuus ilman seksipartneria on kasvanut tasaisesti teollistuneissa maissa. Japanissa 43 % 18–34-vuotiaista miehistä ilmoitti olevansa neitsyitä vuonna 2015. Yhdysvalloissa alle 30-vuotiaiden miesten osuus jotka eivät olleet harrastaneet seksiä viimeisen vuoden aikana kaksinkertaistui vuosien 2008 ja 2018 välillä.",
-          "Kaksoislukon ennuste: testosteronin lasku vähentää seksuaalista halua suoraan (endokrinologinen konsensus), kun taas kortisolin nousu lisää hylkäyksen pelkoa. Yhdistelmä suppressoi lähestymiskäyttäytymistä — halukkuutta ottaa kontaktia — enemmän kuin kumpikaan yksin. Goetz ym. (2024, RCT) osoittivat, että eksogeeninen testosteroni lisää taipumusta tulkita moniselitteisiä sosiaalisia signaaleja seksuaalisena kiinnostuksena. Populaatiotason testosteronin lasku kääntää tämän: harvempia signaaleja tulkitaan kiinnostuksena, harvempia lähestymisiä tehdään.",
+          "Kaksoislukon ennuste: testosteronin lasku vähentää seksuaalista halua suoraan (endokrinologinen konsensus), kun taas kortisolin nousu lisää hylkäyksen pelkoa. Yhdistelmä suppressoi lähestymiskäyttäytymistä — halukkuutta ottaa kontaktia — enemmän kuin kumpikaan yksin. [[ref:goetz2024|Goetz ym. (2024, RCT)]] osoittivat, että eksogeeninen testosteroni lisää taipumusta tulkita moniselitteisiä sosiaalisia signaaleja seksuaalisena kiinnostuksena. Populaatiotason testosteronin lasku kääntää tämän: harvempia signaaleja tulkitaan kiinnostuksena, harvempia lähestymisiä tehdään.",
         ],
       },
       {
         heading: "2. Miesten työvoimakatoa",
         paragraphs: [
           "Huhtikuussa 2026 33 % amerikkalaisista miehistä ei ollut työssä eikä hakenut työtä — alin työvoimaosuus sitten 1940-luvun tilastoinnin aloittamisen. Lasku 87 %:sta (sodanjälkeinen huippu) 67 %:iin (2026) on kiihtynyt vuoden 2010 jälkeen.",
-          "Kaksoislukon ennuste: testosteronin lasku vähentää statusmotivaatiota (Dreher ym. 2016, PNAS, RCT: eksogeeninen testosteroni lisää kausaalisesti statushakuista käyttäytymistä). Kortisolin nousu tekee työpaikkakilpailusta ahdistavaa stimuloivan sijaan. Yhdistelmä tekee kilpailusta luopumisesta helpompaa kuin kilpailemisesta.",
+          "Kaksoislukon ennuste: testosteronin lasku vähentää statusmotivaatiota ([[ref:dreher2016|Dreher ym. 2016, PNAS, RCT]]: eksogeeninen testosteroni lisää kausaalisesti statushakuista käyttäytymistä). Kortisolin nousu tekee työpaikkakilpailusta ahdistavaa stimuloivan sijaan. Yhdistelmä tekee kilpailusta luopumisesta helpompaa kuin kilpailemisesta.",
         ],
       },
       {
         heading: "3. Epäonnistunut itsenäistyminen",
         paragraphs: [
           "Vuonna 2020 yli 50 % 18–29-vuotiaista amerikkalaisista asui vanhempiensa luona — korkein osuus sitten 1930-luvun. Tämä selitetään tyypillisesti asumiskustannuksilla ja opintolainoilla, mutta trendi edeltää molempien pahimpia vaiheita.",
-          "Kaksoislukon ennuste: testosteronin lasku nuorilla miehillä on ollut jyrkempi kuin vanhemmilla miehillä. Lokeshwar ym. (2021) dokumentoivat −1,82 %/vuosi laskun nuorilla ja nuorilla aikuisilla. Vuoden 2024 25-vuotiaalla on 1980-luvun 40-vuotiaan hormonaalinen profiili. Halu perustaa itsenäinen asema — yksi testosteronin keskeisistä käyttäytymisvaikutuksista — on biologisesti heikentynyt.",
+          "Kaksoislukon ennuste: testosteronin lasku nuorilla miehillä on ollut jyrkempi kuin vanhemmilla miehillä. [[ref:lokeshwar2021|Lokeshwar ym. (2021)]] dokumentoivat −1,82 %/vuosi laskun nuorilla ja nuorilla aikuisilla. Vuoden 2024 25-vuotiaalla on 1980-luvun 40-vuotiaan hormonaalinen profiili. Halu perustaa itsenäinen asema — yksi testosteronin keskeisistä käyttäytymisvaikutuksista — on biologisesti heikentynyt.",
         ],
       },
       {
@@ -185,13 +186,13 @@ const COPY = {
         heading: "6. Parinmuodostuksen kriisi",
         paragraphs: [
           "Avioliittoluvut ovat laskeneet kaikissa teollistuneissa maissa. Treffisovellusten käyttö on kasvanut samalla kun kasvotusten tapahtuva kohtaaminen on vähentynyt. Ensimmäisen avioliiton keski-ikä on noussut 5–7 vuotta vuodesta 1980.",
-          "Kaksoislukon ennuste: testosteronin lasku vähentää seksuaalisen ylihahmottamisen vinoumaa (Goetz 2024, RCT), mikä tarkoittaa, että harvempia sosiaalisia signaaleja tulkitaan romanttisena kiinnostuksena. Kortisolin nousu kasvattaa hylkäyksen koettua kustannusta. Treffisovellukset kukoistavat juuri siksi, että ne tarjoavat matalan riskin ympäristön — asetelman jossa kaksoislukon lähestymiskäyttäytymisen estovaikutus on vähäisempi.",
+          "Kaksoislukon ennuste: testosteronin lasku vähentää seksuaalisen ylihahmottamisen vinoumaa ([[ref:goetz2024|Goetz 2024, RCT]]), mikä tarkoittaa, että harvempia sosiaalisia signaaleja tulkitaan romanttisena kiinnostuksena. Kortisolin nousu kasvattaa hylkäyksen koettua kustannusta. Treffisovellukset kukoistavat juuri siksi, että ne tarjoavat matalan riskin ympäristön — asetelman jossa kaksoislukon lähestymiskäyttäytymisen estovaikutus on vähäisempi.",
         ],
       },
       {
         heading: "7. Empatian väheneminen",
         paragraphs: [
-          "Konrath ym. (2011) dokumentoivat 40 %:n laskun dispositionaalisessa empatiassa amerikkalaisilla yliopisto-opiskelijoilla vuosien 1979 ja 2009 välillä. Lasku kiihtyi vuoden 2000 jälkeen.",
+          "[[ref:konrath2011|Konrath ym. (2011)]] dokumentoivat 40 %:n laskun dispositionaalisessa empatiassa amerikkalaisilla yliopisto-opiskelijoilla vuosien 1979 ja 2009 välillä. Lasku kiihtyi vuoden 2000 jälkeen.",
           "Kaksoislukon ennuste: testosteroni ja oksitosiini yhdessä muodostavat sosiaalisen koheesion biologisen perustan. EMF-ajoitteinen testosteronin lasku vähentää kilpailullista sosiaalista käyttäytymistä (statushakuisuus joka luo sosiaalisia hierarkioita), kun taas mahdollinen oksitosiinin häiriö vähentää luottamusta ja empatiaa. Tulos on vetäytyminen molemmilla akseleilla — vähemmän kilpailullista osallistumista ja vähemmän yhteistoiminnallista osallistumista.",
         ],
       },
@@ -214,21 +215,21 @@ const COPY = {
       },
     ],
     references: [
-      "Mehta PH, Josephs RA (2010). Testosterone and cortisol jointly regulate dominance: Evidence for a dual-hormone hypothesis. Hormones and Behavior, 58(5), 898–906.",
-      "Kaksoishormonihypoteesin meta-analyysi (2021). Kortisoli moduloi testosteronin vaikutusta statukseen liittyvään käyttäytymiseen. n = 8 538.",
-      "Dreher JC ym. (2016). Testosterone causes both prosocial and antisocial status-enhancing behaviors in human males. PNAS, 113(41), 11633–11638.",
-      "Goetz SMM ym. (2024). Testosterone and sexual overperception bias. RCT: eksogeeninen T lisää taipumusta tulkita signaaleja seksuaalisena kiinnostuksena.",
-      "Lokeshwar SD ym. (2021). Decline in serum testosterone levels among adolescent and young adult men in the USA. European Urology Focus, 7(4), 886–889.",
-      "Konrath SH, O'Brien EH, Hsing C (2011). Changes in dispositional empathy in American college students over time. Personality and Social Psychology Review, 15(2), 180–198.",
-      "Twenge JM ym. (2017). Declines in sexual frequency among American adults, 1989–2014. Archives of Sexual Behavior, 46(8), 2389–2401.",
-      "US Bureau of Labor Statistics (2026). Miesten työvoimaosuus, huhtikuu 2026: 67 %.",
-      "Trumble BC ym. (2012). Age-independent increasing testosterone in Tsimane males. American Journal of Human Biology.",
+      { referenceId: "mehta2010_dual_hormone", label: "Mehta PH, Josephs RA (2010). Testosterone and cortisol jointly regulate dominance: Evidence for a dual-hormone hypothesis. Hormones and Behavior, 58(5), 898–906." },
+      { referenceId: "dekkers2019_dual_hormone", label: "Dekkers TJ ym. (2019). A meta-analytical evaluation of the dual-hormone hypothesis. Neuroscience & Biobehavioral Reviews, 96, 250–271. n = 8 538." },
+      { referenceId: "dreher2016", label: "Dreher JC ym. (2016). Testosterone causes both prosocial and antisocial status-enhancing behaviors in human males. PNAS, 113(41), 11633–11638." },
+      { referenceId: "goetz2024", label: "Goetz SMM, Lucas T, Carré JM (2024). Under the influence: exogenous testosterone influences men's cross-sex perceptions of sexual interest. Frontiers in Psychology, 15, 1425389." },
+      { referenceId: "lokeshwar2021", label: "Lokeshwar SD ym. (2021). Decline in serum testosterone levels among adolescent and young adult men in the USA. European Urology Focus, 7(4), 886–889." },
+      { referenceId: "konrath2011", label: "Konrath SH, O'Brien EH, Hsing C (2011). Changes in dispositional empathy in American college students over time. Personality and Social Psychology Review, 15(2), 180–198." },
+      { referenceId: "twenge2017_sexual_frequency", label: "Twenge JM ym. (2017). Declines in sexual frequency among American adults, 1989–2014. Archives of Sexual Behavior, 46(8), 2389–2401." },
+      { referenceId: "us_lfp_2026", label: "US Bureau of Labor Statistics (2026). Miesten työvoimaosuus, huhtikuu 2026: 67 %." },
+      { referenceId: "trumble2012", label: "Trumble BC ym. (2012). Age-independent increasing testosterone in Tsimane males. American Journal of Human Biology." },
     ],
   },
 } as const;
 
-export function DualLockArticleContent({ locale }: { locale: Locale }) {
-  const c = (COPY as Record<string, typeof COPY.en>)[locale] ?? COPY.en;
+export function DualLockArticleContent({ locale }: { locale: string }) {
+  const c = locale in COPY ? COPY[locale as keyof typeof COPY] : COPY.en;
 
   return (
     <div className="prose-article">
@@ -244,7 +245,7 @@ export function DualLockArticleContent({ locale }: { locale: Locale }) {
               key={pi}
               className="text-base sm:text-[1.0625rem] leading-[1.8] text-foreground-muted mb-5 last:mb-0"
             >
-              {para}
+              <InlineReferenceText text={para} locale={locale} />
             </p>
           ))}
         </section>
@@ -260,7 +261,7 @@ export function DualLockArticleContent({ locale }: { locale: Locale }) {
               key={i}
               className="text-sm text-foreground-muted leading-relaxed"
             >
-              {ref}
+              <StudyCitation referenceId={ref.referenceId} locale={locale} label={ref.label} />
             </li>
           ))}
         </ol>

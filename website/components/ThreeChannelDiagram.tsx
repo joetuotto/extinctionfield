@@ -1,5 +1,7 @@
 "use client";
 
+import { pickCopy } from "@/lib/i18n";
+
 const COPY = {
   en: {
     title: "Three-Channel Model: COVID Lockdown Resolution",
@@ -55,7 +57,88 @@ const COPY = {
     mechanism2: "RF↑ → sirkadiaaninen + neurohäiriö → mielenterveys↓",
     note: "Kaksi eri taajuutta, kaksi eri mekanismia, kaksi eri kudosta, kaksi eri suuntaa — ei paradoksia.",
   },
-} as const;
+  ja: {
+    title: "3チャネルモデル：COVID lockdown の解消",
+    subtitle: "3つの周波数チャネルは lockdown 中に異なる方向に変化した — 見かけのパラドックスを解消",
+    elf: "ELF (<300 Hz)",
+    if_: "IF (300 Hz–10 MHz)",
+    rf: "RF (>10 MHz)",
+    elfSources: "送電線、モーター",
+    ifSources: "LED駆動回路、HVAC VFD、UPS",
+    rfSources: "携帯電話、Wi-Fi、Bluetooth",
+    pre: "COVID前 (2019)",
+    lockdown: "ロックダウン (2020)",
+    post: "COVID後 (2022+)",
+    elfChange: "−5%",
+    ifChange: "−70%",
+    rfChange: "+40%",
+    ifPost: "部分的回復",
+    rfPost: "+25% 恒久的",
+    spermLabel: "精子の質",
+    mentalLabel: "メンタルヘルス",
+    spermUp: "改善",
+    spermDown: "再び低下",
+    mentalDown: "悪化",
+    mentalPartial: "部分的回復",
+    mechanism: "IF↓ → 有糸分裂障害の減少 → 精子↑",
+    mechanism2: "RF↑ → 概日リズム＋神経撹乱 → メンタルヘルス↓",
+    note: "2つの異なる周波数、2つの異なるメカニズム、2つの異なる組織、2つの異なる方向 — パラドックスなし。",
+  },
+  fr: {
+    title: "Modèle à trois canaux : résolution du paradoxe du confinement COVID",
+    subtitle: "Les trois canaux de fréquence ont évolué dans des directions différentes pendant le confinement — résolvant le paradoxe apparent",
+    elf: "ELF (<300 Hz)",
+    if_: "IF (300 Hz–10 MHz)",
+    rf: "RF (>10 MHz)",
+    elfSources: "Lignes électriques, moteurs",
+    ifSources: "Drivers LED, VFD HVAC, ASI",
+    rfSources: "Téléphone, Wi-Fi, Bluetooth",
+    pre: "Pré-COVID (2019)",
+    lockdown: "Confinement (2020)",
+    post: "Post-COVID (2022+)",
+    elfChange: "−5 %",
+    ifChange: "−70 %",
+    rfChange: "+40 %",
+    ifPost: "Retour partiel",
+    rfPost: "+25 % permanent",
+    spermLabel: "Qualité du sperme",
+    mentalLabel: "Santé mentale",
+    spermUp: "Améliorée",
+    spermDown: "A redécliné",
+    mentalDown: "Détériorée",
+    mentalPartial: "Récupération partielle",
+    mechanism: "IF↓ → moins de perturbation mitotique → sperme↑",
+    mechanism2: "RF↑ → perturbation circadienne + neuro → santé mentale↓",
+    note: "Deux fréquences différentes, deux mécanismes différents, deux tissus différents, deux directions différentes — aucun paradoxe.",
+  },
+  ko: {
+    title: "3채널 모델: COVID 봉쇄 해소",
+    subtitle: "3개의 주파수 채널은 봉쇄 기간 동안 서로 다른 방향으로 변화했다 — 겉보기 역설을 해소",
+    elf: "ELF (<300 Hz)",
+    if_: "IF (300 Hz–10 MHz)",
+    rf: "RF (>10 MHz)",
+    elfSources: "송전선, 모터",
+    ifSources: "LED 드라이버, HVAC VFD, UPS",
+    rfSources: "휴대전화, Wi-Fi, Bluetooth",
+    pre: "COVID 이전 (2019)",
+    lockdown: "봉쇄 (2020)",
+    post: "COVID 이후 (2022+)",
+    elfChange: "−5%",
+    ifChange: "−70%",
+    rfChange: "+40%",
+    ifPost: "부분적 복귀",
+    rfPost: "+25% 영구적",
+    spermLabel: "정자 품질",
+    mentalLabel: "정신 건강",
+    spermUp: "개선",
+    spermDown: "재하락",
+    mentalDown: "악화",
+    mentalPartial: "부분적 회복",
+    mechanism: "IF↓ → 유사분열 교란 감소 → 정자↑",
+    mechanism2: "RF↑ → 일주기 리듬 + 신경 교란 → 정신 건강↓",
+    note: "두 가지 다른 주파수, 두 가지 다른 메커니즘, 두 가지 다른 조직, 두 가지 다른 방향 — 역설 없음.",
+  },
+};
 
 const W = 700;
 const H = 340;
@@ -79,7 +162,7 @@ const BARS: BarSpec[] = [
 ];
 
 export function ThreeChannelDiagram({ locale }: { locale: string }) {
-  const d = locale === "fi" ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
 
   const phases = [
     { label: d.pre, key: "pre" as const },
@@ -99,11 +182,20 @@ export function ThreeChannelDiagram({ locale }: { locale: string }) {
       <h4 className="text-base font-semibold mb-2">{d.title}</h4>
       <p className="text-xs text-foreground-muted mb-4">{d.subtitle}</p>
 
-      <div className="overflow-x-auto">
+      <div className="chart-surface">
+        <ul className="chart-legend mb-2" aria-label={d.title}>
+          {BARS.map((bar, index) => (
+            <li key={bar.channel} className="chart-key">
+              <span className="chart-key__swatch" style={{ backgroundColor: bar.color, color: bar.color }} />
+              {channelLabels[index]}
+            </li>
+          ))}
+        </ul>
+        <div className="chart-scroll">
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          className="w-full max-w-[700px]"
-          style={{ minWidth: 500 }}
+          className="chart-svg w-full max-w-[700px]"
+          style={{ minWidth: 620 }}
           role="img"
           aria-label={d.title}
         >
@@ -126,6 +218,7 @@ export function ThreeChannelDiagram({ locale }: { locale: string }) {
                   const barX = colX + 15 + bi * (BAR_W + 10);
                   const barH = bar[phase.key];
                   const barY = BAR_BASE - barH;
+                  const labelLift = phase.key === "post" && bar.channel === "if" ? 14 : 0;
 
                   return (
                     <g key={bar.channel}>
@@ -138,15 +231,9 @@ export function ThreeChannelDiagram({ locale }: { locale: string }) {
                         opacity={0.75}
                         rx={3}
                       />
-                      {/* Channel label at top of first column */}
-                      {pi === 0 && (
-                        <text x={barX + BAR_W / 2} y={BAR_BASE + 14} textAnchor="middle" fontSize={11} fill={bar.color} fontWeight={600}>
-                          {channelLabels[bi]}
-                        </text>
-                      )}
                       {/* Change annotation for lockdown and post */}
                       {pi > 0 && (
-                        <text x={barX + BAR_W / 2} y={barY - 5} textAnchor="middle" fontSize={13} fontWeight={600} fill={bar.color}>
+                        <text x={barX + BAR_W / 2} y={barY - 5 - labelLift} textAnchor="middle" fontSize={13} fontWeight={600} fill={bar.color}>
                           {changeLabels[bi][pi - 1]}
                         </text>
                       )}
@@ -197,6 +284,7 @@ export function ThreeChannelDiagram({ locale }: { locale: string }) {
             </text>
           </g>
         </svg>
+        </div>
       </div>
 
       {/* Mechanism summary */}

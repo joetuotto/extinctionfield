@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { pickCopy } from "@/lib/i18n";
 
 interface Device {
   id: string;
@@ -407,8 +408,24 @@ const BANDS: Band[] = [
 const GAP = { logMin: 8.5, logMax: 11, label: "Telecom RF", labelFi: "Telecom-RF" };
 
 const ENV_BANDS = [
-  { label: "Cellular", labelFi: "Matkapuhelinverkot", min: 700_000_000, max: 3_500_000_000, color: "#F4433625" },
-  { label: "Wi-Fi", labelFi: "Wi-Fi", min: 2_400_000_000, max: 6_000_000_000, color: "#2196F325" },
+  {
+    id: "cellular",
+    label: { en: "Cellular", fi: "Matkapuhelinverkot", ja: "携帯電話網", fr: "Réseaux cellulaires", ko: "이동통신망" },
+    min: 700_000_000,
+    max: 3_500_000_000,
+    freqLabel: "700 MHz–3.5 GHz",
+    color: "#F44336",
+    fill: "#F4433625",
+  },
+  {
+    id: "wifi",
+    label: { en: "Wi-Fi", fi: "Wi-Fi", ja: "Wi-Fi", fr: "Wi-Fi", ko: "Wi-Fi" },
+    min: 2_400_000_000,
+    max: 6_000_000_000,
+    freqLabel: "2.4–6 GHz",
+    color: "#2196F3",
+    fill: "#2196F325",
+  },
 ];
 
 const COPY = {
@@ -458,14 +475,83 @@ const COPY = {
     totalMarket: "globaalit neuromodulaatiomarkkinat",
     totalImplanted: "DBS-laitetta implantoitu maailmanlaajuisesti",
   },
-} as const;
+  ja: {
+    title: "証明のスペクトル",
+    subtitle: "非熱的生物学的効果はEMスペクトル全体で規制承認されている ― テレコムRF周波数を除いて",
+    gapTitle: "ギャップ",
+    gapSub: "0 治療\nカテゴリー",
+    gapNote: "非熱的生物活性が「認められていない」唯一の周波数範囲は、電気通信産業が使用する範囲である",
+    categories: "カテゴリー",
+    clickHint: "バンドまたは行をクリックして詳細を表示",
+    freq: "周波数",
+    device: "デバイス",
+    fda: "FDAステータス",
+    mechanism: "メカニズム",
+    path: "BERM経路",
+    bandDc: "DC / 静的",
+    bandElf: "ELF (< 1 kHz)",
+    bandIf: "IF (1 kHz – 30 MHz)",
+    bandHf: "HF (27 MHz)",
+    bandOptical: "光学 (IR – UV)",
+    totalCategories: "デバイスカテゴリー",
+    totalApprovals: "TENSだけで個別FDA承認",
+    totalMarket: "グローバルニューロモジュレーション市場",
+    totalImplanted: "世界中にDBS装置が埋め込まれた",
+  },
+  fr: {
+    title: "Le spectre de la preuve",
+    subtitle: "Les effets biologiques non thermiques sont approuvés sur tout le spectre EM — sauf aux fréquences RF des télécommunications",
+    gapTitle: "LE VIDE",
+    gapSub: "0 catégorie\nthérapeutique",
+    gapNote: "La seule gamme de fréquences où la bioactivité non thermique n'est « pas reconnue » est celle utilisée par l'industrie des télécommunications",
+    categories: "catégories",
+    clickHint: "Cliquez sur une bande ou une ligne pour les détails",
+    freq: "Fréquence",
+    device: "Dispositif",
+    fda: "Statut FDA",
+    mechanism: "Mécanisme",
+    path: "Voie BERM",
+    bandDc: "DC / Statique",
+    bandElf: "ELF (< 1 kHz)",
+    bandIf: "IF (1 kHz – 30 MHz)",
+    bandHf: "HF (27 MHz)",
+    bandOptical: "Optique (IR – UV)",
+    totalCategories: "catégories de dispositifs",
+    totalApprovals: "approbations FDA individuelles pour TENS uniquement",
+    totalMarket: "marché mondial de la neuromodulation",
+    totalImplanted: "dispositifs DBS implantés dans le monde",
+  },
+  ko: {
+    title: "증거의 스펙트럼",
+    subtitle: "비열적 생물학적 효과는 전체 EM 스펙트럼에서 규제 승인됨 — 텔레콤 RF 주파수만 제외",
+    gapTitle: "공백",
+    gapSub: "0 치료\n카테고리",
+    gapNote: "비열적 생물활성이 '인정되지 않는' 유일한 주파수 범위는 통신 산업이 사용하는 범위이다",
+    categories: "카테고리",
+    clickHint: "밴드 또는 행을 클릭하여 세부 정보 보기",
+    freq: "주파수",
+    device: "장치",
+    fda: "FDA 상태",
+    mechanism: "메커니즘",
+    path: "BERM 경로",
+    bandDc: "DC / 정적",
+    bandElf: "ELF (< 1 kHz)",
+    bandIf: "IF (1 kHz – 30 MHz)",
+    bandHf: "HF (27 MHz)",
+    bandOptical: "광학 (IR – UV)",
+    totalCategories: "장치 카테고리",
+    totalApprovals: "TENS 단독 개별 FDA 승인",
+    totalMarket: "글로벌 신경조절 시장",
+    totalImplanted: "전 세계 DBS 장치 이식",
+  },
+};
 
-const BAND_LABELS: Record<string, { en: string; fi: string }> = {
-  dc: { en: "DC / Static", fi: "DC / Staattinen" },
-  elf: { en: "ELF (< 1 kHz)", fi: "ELF (< 1 kHz)" },
-  if: { en: "IF (1 kHz – 30 MHz)", fi: "IF (1 kHz – 30 MHz)" },
-  hf: { en: "HF (27 MHz)", fi: "HF (27 MHz)" },
-  optical: { en: "Optical (IR – UV)", fi: "Optinen (IR – UV)" },
+const BAND_LABELS: Record<string, Record<string, string>> = {
+  dc: { en: "DC / Static", fi: "DC / Staattinen", ja: "DC / 静的", fr: "DC / Statique", ko: "DC / 정적" },
+  elf: { en: "ELF (< 1 kHz)", fi: "ELF (< 1 kHz)", ja: "ELF (< 1 kHz)", fr: "ELF (< 1 kHz)", ko: "ELF (< 1 kHz)" },
+  if: { en: "IF (1 kHz – 30 MHz)", fi: "IF (1 kHz – 30 MHz)", ja: "IF (1 kHz – 30 MHz)", fr: "IF (1 kHz – 30 MHz)", ko: "IF (1 kHz – 30 MHz)" },
+  hf: { en: "HF (27 MHz)", fi: "HF (27 MHz)", ja: "HF (27 MHz)", fr: "HF (27 MHz)", ko: "HF (27 MHz)" },
+  optical: { en: "Optical (IR – UV)", fi: "Optinen (IR – UV)", ja: "光学 (IR – UV)", fr: "Optique (IR – UV)", ko: "광학 (IR – UV)" },
 };
 
 function logToX(logF: number, chartX: number, chartW: number): number {
@@ -497,7 +583,7 @@ const TICK_FREQS: [number, string][] = [
 export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
   const [selectedBand, setSelectedBand] = useState<string | null>(null);
   const [selectedDevice, setSelectedDevice] = useState<Device | null>(null);
-  const d = COPY[locale === "fi" ? "fi" : "en"];
+  const d = pickCopy(COPY, locale);
   const isFi = locale === "fi";
 
   const chartX = 40;
@@ -515,16 +601,32 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
       <p className="text-xs text-foreground-muted mb-4">{d.subtitle}</p>
 
       {/* Spectrum visualization */}
-      <div className="overflow-x-auto">
-        <svg
-          viewBox={`0 0 ${svgW} ${svgH}`}
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ width: "100%", height: "auto", minWidth: 640 }}
-          role="img"
-          aria-label={d.title}
-        >
+      <div className="chart-surface">
+        <div className="chart-scroll">
+          <svg
+            viewBox={`0 0 ${svgW} ${svgH}`}
+            xmlns="http://www.w3.org/2000/svg"
+            className="chart-svg w-full min-w-[700px]"
+            role="img"
+            aria-label={d.title}
+          >
           {/* Background track */}
-          <rect x={chartX} y={barY} width={chartW} height={barH} rx={4} fill="var(--card-bg)" stroke="var(--card-border)" strokeWidth={1} />
+          <rect x={chartX} y={barY} width={chartW} height={barH} rx={8} fill="var(--card-bg)" stroke="var(--card-border)" strokeWidth={1} />
+
+          {TICK_FREQS.map(([freq]) => {
+            const x = logToX(Math.log10(freq), chartX, chartW);
+            if (x < chartX || x > chartX + chartW) return null;
+            return (
+              <line
+                key={`grid-${freq}`}
+                className="chart-grid-line"
+                x1={x}
+                y1={barY}
+                x2={x}
+                y2={barY + barH}
+              />
+            );
+          })}
 
           {/* Proven bands */}
           {BANDS.map((band) => {
@@ -535,12 +637,12 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
             const isSelected = selectedBand === band.id;
             return (
               <g key={band.id} tabIndex={0} role="button" style={{ cursor: "pointer" }} onClick={() => { setSelectedBand(isSelected ? null : band.id); setSelectedDevice(null); }} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedBand(isSelected ? null : band.id); setSelectedDevice(null); } }}>
-                <rect x={x1} y={y} width={x2 - x1} height={h} rx={3} fill={band.color} opacity={isSelected ? 0.95 : 0.7} stroke={isSelected ? "var(--foreground)" : "none"} strokeWidth={isSelected ? 2 : 0} />
+                <rect x={x1} y={y} width={x2 - x1} height={h} rx={4} fill={band.color} opacity={isSelected ? 0.96 : 0.76} stroke={isSelected ? "var(--foreground)" : "var(--figure-bg)"} strokeWidth={isSelected ? 2 : 1} />
                 <text x={(x1 + x2) / 2} y={y - 4} fill="var(--foreground)" fontSize={10} fontWeight="700" textAnchor="middle" fontFamily="ui-monospace, monospace">
                   {band.count}
                 </text>
                 <text x={(x1 + x2) / 2} y={barY - 6} fill="var(--foreground-muted)" fontSize={8} textAnchor="middle">
-                  {isFi ? band.labelFi : band.label}
+                  {pickCopy(BAND_LABELS[band.id], locale)}
                 </text>
               </g>
             );
@@ -559,24 +661,33 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
                 </defs>
                 <rect x={gx1} y={barY} width={gx2 - gx1} height={barH} fill="url(#gap-hatch)" rx={0} />
                 <rect x={gx1} y={barY} width={gx2 - gx1} height={barH} fill="none" stroke="var(--status-refuted)" strokeWidth={2} strokeDasharray="6 3" rx={0} />
-                <text x={(gx1 + gx2) / 2} y={barY + barH / 2 - 8} fill="var(--status-refuted)" fontSize={12} fontWeight="800" textAnchor="middle" letterSpacing="0.08em">
+                <text x={(gx1 + gx2) / 2} y={barY + 25} fill="var(--status-refuted)" fontSize={12} fontWeight="800" textAnchor="middle" letterSpacing="0.08em">
                   {d.gapTitle}
                 </text>
-                <text x={(gx1 + gx2) / 2} y={barY + barH / 2 + 8} fill="var(--foreground-muted)" fontSize={9} textAnchor="middle">
+                <text x={(gx1 + gx2) / 2} y={barY + 42} fill="var(--foreground-muted)" fontSize={9} textAnchor="middle">
                   {d.gapSub.split("\n").map((line, i) => (
                     <tspan key={i} x={(gx1 + gx2) / 2} dy={i === 0 ? 0 : 12}>{line}</tspan>
                   ))}
                 </text>
-                {/* Telecom bands inside gap */}
-                {ENV_BANDS.map((band) => {
+                {/* Telecom bands use separate lanes; their full labels live in the
+                    responsive legend below so narrow frequency spans stay legible. */}
+                {ENV_BANDS.map((band, index) => {
                   const ex1 = logToX(Math.log10(band.min), chartX, chartW);
                   const ex2 = logToX(Math.log10(band.max), chartX, chartW);
+                  const laneY = barY + barH - 34 + index * 16;
                   return (
-                    <g key={band.label}>
-                      <rect x={ex1} y={barY + barH - 16} width={ex2 - ex1} height={14} rx={2} fill={band.color} />
-                      <text x={(ex1 + ex2) / 2} y={barY + barH - 5} fill="var(--foreground-muted)" fontSize={7} textAnchor="middle" fontFamily="ui-monospace, monospace">
-                        {isFi ? band.labelFi : band.label}
-                      </text>
+                    <g key={band.id}>
+                      <title>{`${pickCopy(band.label, locale)}: ${band.freqLabel}`}</title>
+                      <rect
+                        x={ex1}
+                        y={laneY}
+                        width={ex2 - ex1}
+                        height={10}
+                        rx={5}
+                        fill={band.fill}
+                        stroke={band.color}
+                        strokeWidth={1.5}
+                      />
                     </g>
                   );
                 })}
@@ -585,7 +696,7 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
           })()}
 
           {/* Frequency axis */}
-          <line x1={chartX} y1={barY + barH} x2={chartX + chartW} y2={barY + barH} stroke="var(--foreground-muted)" strokeWidth={1} />
+          <line className="chart-axis-line" x1={chartX} y1={barY + barH} x2={chartX + chartW} y2={barY + barH} strokeWidth={1} />
           {TICK_FREQS.map(([freq, label]) => {
             const logF = Math.log10(freq);
             const x = logToX(logF, chartX, chartW);
@@ -607,7 +718,22 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
           <text x={chartX + 4} y={svgH - 6} fill="var(--foreground-muted)" fontSize={8} fontStyle="italic">
             {d.clickHint}
           </text>
-        </svg>
+          </svg>
+        </div>
+
+        <ul className="chart-legend mt-1 border-t border-card-border/70 pt-3" aria-label={d.gapTitle}>
+          {ENV_BANDS.map((band) => (
+            <li key={band.id} className="chart-key">
+              <span
+                className="chart-key__swatch"
+                style={{ backgroundColor: band.color }}
+                aria-hidden="true"
+              />
+              <span>{pickCopy(band.label, locale)}</span>
+              <span className="font-mono-num opacity-75">{band.freqLabel}</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Gap callout */}
@@ -664,7 +790,7 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
                 onClick={() => { setSelectedBand(selectedBand === bandId ? null : bandId); setSelectedDevice(null); }}
               >
                 <span className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: bandColor }} />
-                {isFi ? bl.fi : bl.en}
+                {pickCopy(bl, locale)}
                 <span className="font-mono-num text-foreground-muted">({bandDevices.length})</span>
               </button>
               {isExpanded && (

@@ -1,3 +1,5 @@
+// @reference-token-renderer components/DetailPanel.tsx
+
 import type { ChainNode, ChainEdge } from "./types";
 export { CHAIN_EPISTEMIC_COLORS as EPISTEMIC_COLORS, CHAIN_EPISTEMIC_LABELS as EPISTEMIC_LABELS, getChainEpistemicLabel } from "./epistemicConstants";
 
@@ -30,8 +32,16 @@ export const LEVEL_TITLES_FI: Record<number, string> = {
 /** @deprecated Use LEVEL_TITLES_FI or _EN */
 export const LEVEL_TITLES = LEVEL_TITLES_FI;
 
+const LEVEL_TITLES_ALL: Record<string, Record<number, string>> = {
+  en: LEVEL_TITLES_EN,
+  fi: LEVEL_TITLES_FI,
+  ja: { 1: "幾何学", 2: "選択規則", 3: "曝露", 4: "4つのチャネル", 5: "膜物理学", 6: "経路", 7: "カスケード", 8: "収束", 9: "人口統計的カスケード", 10: "フィードバック" },
+  fr: { 1: "Géométrie", 2: "Règle de sélection", 3: "Exposition", 4: "Quatre canaux", 5: "Physique membranaire", 6: "Voies", 7: "Cascade", 8: "Convergence", 9: "Cascade démographique", 10: "Rétroaction" },
+  ko: { 1: "기하학", 2: "선택 규칙", 3: "노출", 4: "4개 채널", 5: "막 물리학", 6: "경로", 7: "캐스케이드", 8: "수렴", 9: "인구학적 캐스케이드", 10: "피드백" },
+};
+
 export function getLevelTitle(level: number, locale: string): string {
-  const titles = locale === "fi" ? LEVEL_TITLES_FI : LEVEL_TITLES_EN;
+  const titles = LEVEL_TITLES_ALL[locale] ?? LEVEL_TITLES_ALL.en;
   return titles[level] ?? `Level ${level}`;
 }
 
@@ -47,9 +57,9 @@ export const NODES: ChainNode[] = [
     title: "Sähkömagnetismi aika-avaruuden geometriana",
     title_en: "Electromagnetism as spacetime geometry",
     mechanism:
-      "Lindgrenin, Kovacsin ja Liukkosen (2025) kehyksessä sähkömagneettinen potentiaali Aμ ei ole erillinen kenttä aika-avaruudessa vaan osa aika-avaruuden metrisen tensorin rakennetta. Metriikka gμν = ημν + AμAν tarkoittaa, että sähkömagneettinen kenttä kirjaimellisesti muuttaa geometriaa jossa kaikki partikkelit liikkuvat ja kaikki fysikaaliset prosessit tapahtuvat.",
+      "[[ref:lindgren2025|Lindgrenin, Kovacsin ja Liukkosen (2025)]] kehyksessä sähkömagneettinen potentiaali Aμ ei ole erillinen kenttä aika-avaruudessa vaan osa aika-avaruuden metrisen tensorin rakennetta. Metriikka gμν = ημν + AμAν tarkoittaa, että sähkömagneettinen kenttä kirjaimellisesti muuttaa geometriaa jossa kaikki partikkelit liikkuvat ja kaikki fysikaaliset prosessit tapahtuvat.",
     mechanism_en:
-      "In the framework of Lindgren, Kovacs, and Liukkonen (2025), the electromagnetic potential Aμ is not a separate field in spacetime but part of the structure of the spacetime metric tensor. The metric gμν = ημν + AμAν means that the electromagnetic field literally alters the geometry in which all particles move and all physical processes take place.",
+      "In the framework of [[ref:lindgren2025|Lindgren, Kovacs, and Liukkonen (2025)]], the electromagnetic potential Aμ is not a separate field in spacetime but part of the structure of the spacetime metric tensor. The metric gμν = ημν + AμAν means that the electromagnetic field literally alters the geometry in which all particles move and all physical processes take place.",
     lindgrenInterpretation:
       "Tämä on koko mallin perusta. Jos metriikka on oikea, biologiset järjestelmät — jotka ovat ionien, varausten ja potentiaalien järjestelmiä — elävät geometriassa joka muuttuu ulkoisten sähkömagneettisten kenttien mukana. Vaikutus ei ole valinnainen vaan geometrinen välttämättömyys.",
     lindgrenInterpretation_en:
@@ -60,6 +70,7 @@ export const NODES: ChainNode[] = [
       "gμν = ημν + Aμ Aν\n\nημν = Minkowski metric (flat spacetime)\nAμ = electromagnetic 4-potential\nAμ Aν = quadratic correction term",
     keyReferences: [
       {
+        referenceId: "lindgren2025",
         authors: "Lindgren, Kovacs & Liukkonen 2025",
         title: "Electromagnetism as a purely geometric theory",
         journal: "J. Phys.: Conf. Ser. 2987, 012001",
@@ -69,6 +80,7 @@ export const NODES: ChainNode[] = [
           "Maxwell's equations follow from geometry without a separate EM field",
       },
       {
+        referenceId: "vassallo2025",
         authors: "Vassallo ym. 2025",
         title: "Independent Scientific Validation of Lindgren et al.",
         journal: "Demokritos Scientific Journal",
@@ -106,6 +118,7 @@ export const NODES: ChainNode[] = [
       "χ(Ā) = Ā / √(1 + Ā²)\n\nĀ = 0 → χ = 0 (no linear response)\nĀ = 1 → χ = 0.71\nĀ → ∞ → χ → 1.0 (saturation)\n\nCell membrane: Ā ≈ 7×10⁶ → χ ≈ 1.0",
     keyReferences: [
       {
+        referenceId: "lindgren2025",
         authors: "Lindgren ym. 2025",
         title: "Electromagnetism as a purely geometric theory",
         journal: "J. Phys.: Conf. Ser. 2987",
@@ -157,6 +170,7 @@ export const NODES: ChainNode[] = [
         keyFinding_en: "Median fields of 0.67–1.51 V/m in cities",
       },
       {
+        referenceId: "deprez2025",
         authors: "Deprez ym. 2025",
         title: "5G RF EMF Spectral Exposure Assessment in Four European Countries",
         journal: "Bioelectromagnetics (bem.70019)",
@@ -224,6 +238,7 @@ export const NODES: ChainNode[] = [
       "total(y) = ambient(y) + χ(ambient(y)) × personal(y)\ncumEMF = Σ_y total(y)  [from year EMF_start]",
     keyReferences: [
       {
+        referenceId: "lindgren2025",
         authors: "Lindgren ym. 2025",
         title: "Geometrinen valintasääntö",
         journal: "J. Phys.: Conf. Ser.",
@@ -263,7 +278,8 @@ export const NODES: ChainNode[] = [
       "f_c ≈ 1/(2π R_m C_m) ≈ 1 kHz\nδV_m = 1.5 · E · r_cell · cos(θ)\nH(f) = 1/√(1 + (f/f_c)²)\n\nFDA devices: PEMF (bone fractures), TMS (depression), VNS (epilepsy)",
     keyReferences: [
       {
-        authors: "Panagopoulos ym. 2015",
+        referenceId: "panagopoulos2013",
+        authors: "Panagopoulos ym. 2013",
         title: "Polarization: A Key Difference between Man-made and Natural EMFs",
         journal: "Scientific Reports 5",
         keyFinding: "Polarisoitu ELF moduloi kalvopotentiaalia suoraan",
@@ -321,11 +337,12 @@ export const NODES: ChainNode[] = [
     lindgrenInterpretation_en:
       "The RF channel is the geometrically purest pathway: 87.5% of the elements of the RPM Hamiltonian can be derived from Lindgren's metric ansatz. Spin precession is directly a function of the metric — the covariant spin correction B_local = B_ext × √(det(g_μν)) means that the biological effect of the RF field depends on the local geometry. This bypasses the VGIC pathway's δV_m magnitude problem entirely.",
     quantitative:
-      "f_RPM ≈ 1 MHz (radikaaliparimekanismin koherenssin ylärajaaja)\nB_local = B_ext × √(det(g_μν))\nRitz 2004 kokeellinen häiriökynnys: ~15 nT\n\nFDA-laitteet: PRF (pehmytkudos), diatermia (kipu/tulehdus)",
+      "f_RPM ≈ 1 MHz (radikaaliparimekanismin koherenssin ylärajaaja)\nB_local = B_ext × √(det(g_μν))\n[[ref:ritz2004|Ritz 2004]] kokeellinen häiriökynnys: ~15 nT\n\nFDA-laitteet: PRF (pehmytkudos), diatermia (kipu/tulehdus)",
     quantitative_en:
-      "f_RPM ≈ 1 MHz (upper coherence limit of the radical pair mechanism)\nB_local = B_ext × √(det(g_μν))\nRitz 2004 experimental disruption threshold: ~15 nT\n\nFDA devices: PRF (soft tissue), diathermy (pain/inflammation)",
+      "f_RPM ≈ 1 MHz (upper coherence limit of the radical pair mechanism)\nB_local = B_ext × √(det(g_μν))\n[[ref:ritz2004|Ritz 2004]] experimental disruption threshold: ~15 nT\n\nFDA devices: PRF (soft tissue), diathermy (pain/inflammation)",
     keyReferences: [
       {
+        referenceId: "ritz2004",
         authors: "Ritz ym. 2004",
         title: "Resonance effects indicate a radical-pair mechanism for avian compass",
         journal: "Nature 429",
@@ -334,6 +351,7 @@ export const NODES: ChainNode[] = [
           "RF fields disrupt the radical pair mechanism at a ~15 nT threshold",
       },
       {
+        referenceId: "natcomms2024rpm",
         authors: "Xu ym. 2024",
         title: "FAD-superoxide radical pair identified as magnetosensor",
         journal: "Nature Communications",
@@ -382,9 +400,9 @@ export const NODES: ChainNode[] = [
     lindgrenInterpretation_en:
       "The VGIC's S4 helix is a charged particle in the metric field gμν. When an external EMF changes the local metric, the S4's trajectory changes — this is a change in geodesic. IFO is a geometric consequence: the RF field changes the metric in S4's vicinity → S4's equilibrium position shifts → the channel opens.",
     quantitative:
-      "Tang ym. 2024 (Nature Communications): S4-heliksin protonidynamiikka määrää VGIC:n rakenteen ja toiminnan. Panagopoulos 2025: IFO-mekanismi polarisoituneelle koherentille kentälle. Panagopoulos 2025: 131/131 tutkimuksesta 124 (95 %) raportoi oksidatiivisia vaikutuksia RF/Wi-Fi-altistuksessa. Bertagna 2025: inward currents ↓40%, transient outward ↓50%. Both RyR (dantrolene) and SERCA (CPA) blockade fully abrogated EMF effects.",
+      "[[ref:tang2024|Tang ym. 2024 (Nature Communications)]]: S4-heliksin protonidynamiikka määrää VGIC:n rakenteen ja toiminnan. [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: IFO-mekanismi polarisoituneelle koherentille kentälle. [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 131/131 tutkimuksesta 124 (95 %) raportoi oksidatiivisia vaikutuksia RF/Wi-Fi-altistuksessa. [[ref:bertagna2025|Bertagna 2025]]: inward currents ↓40%, transient outward ↓50%. Both RyR (dantrolene) and SERCA (CPA) blockade fully abrogated EMF effects.",
     quantitative_en:
-      "Tang et al. 2024 (Nature Communications): S4 helix proton dynamics determine VGIC structure and function. Panagopoulos 2025: IFO mechanism for a polarized coherent field. Panagopoulos 2025: 124 of 131 studies (95%) reported oxidative effects under RF/Wi-Fi exposure. Bertagna 2025: inward currents ↓40%, transient outward ↓50%. Both RyR (dantrolene) and SERCA (CPA) blockade fully abrogated EMF effects.",
+      "[[ref:tang2024|Tang et al. 2024 (Nature Communications)]]: S4 helix proton dynamics determine VGIC structure and function. [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: IFO mechanism for a polarized coherent field. [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 124 of 131 studies (95%) reported oxidative effects under RF/Wi-Fi exposure. [[ref:bertagna2025|Bertagna 2025]]: inward currents ↓40%, transient outward ↓50%. Both RyR (dantrolene) and SERCA (CPA) blockade fully abrogated EMF effects.",
     keyReferences: [
       {
         authors: "Panagopoulos ym. 2015, 2021, 2025",
@@ -396,6 +414,7 @@ export const NODES: ChainNode[] = [
           "Polarized, coherent RF-EMF forces the S4 helix into irregular oscillation",
       },
       {
+        referenceId: "panagopoulos2025_ifo",
         authors: "Panagopoulos ym. 2025",
         title: "IFO-VGIC comprehensive review (131 studies)",
         journal: "Bioelectromagnetics",
@@ -405,6 +424,7 @@ export const NODES: ChainNode[] = [
           "95% reported oxidative effects. VGIC blockers prevent the response. Consistent with Yakymenko 2016 (93/100).",
       },
       {
+        referenceId: "tang2024",
         authors: "Tang ym. 2024",
         title: "Proton dynamics determine VGIC structure and function",
         journal: "Nature Communications 15, 704",
@@ -412,6 +432,7 @@ export const NODES: ChainNode[] = [
         keyFinding_en: "S4 proton dynamics underlie VGIC function",
       },
       {
+        referenceId: "pall2013_v2",
         authors: "Pall 2013",
         title: "EMF act via activation of voltage-gated calcium channels",
         journal: "J. Cell. Mol. Med. 17(8)",
@@ -419,6 +440,7 @@ export const NODES: ChainNode[] = [
         keyFinding_en: "23 studies: VGCC blockers prevent the EMF response",
       },
       {
+        referenceId: "bertagna2025",
         authors: "Bertagna ym. 2025",
         title: "EMF modulates ionic currents via Ca²⁺ homeostasis (RyR/SERCA)",
         journal: "Ann NY Acad Sci 1550(1)",
@@ -428,6 +450,7 @@ export const NODES: ChainNode[] = [
           "50 Hz, 1 mT → inward currents ↓40%, transient currents ↓50%. RyR blocker and SERCA inhibitor prevented the effects. Ca²⁺ store dysregulation extends the IFO mechanism.",
       },
       {
+        referenceId: "koivisto2000",
         authors: "Koivisto ym. 2000",
         title: "Effects of 902 MHz EMF on response times in humans",
         journal: "NeuroReport",
@@ -436,6 +459,7 @@ export const NODES: ChainNode[] = [
           "Two double-blind experiments (n=48+48): 902 MHz → cognitive facilitation. Not replicated (Haarala 2003, 2005).",
       },
       {
+        referenceId: "eliyahu2006",
         authors: "Eliyahu ym. 2006",
         title: "Lateralized cognitive effects of cellular phone radiation",
         journal: "Bioelectromagnetics",
@@ -444,6 +468,7 @@ export const NODES: ChainNode[] = [
           "890 MHz → lateralized RT effect. Supports the spatial structure of the two-channel model.",
       },
       {
+        referenceId: "luria2009",
         authors: "Luria ym. 2009",
         title: "Cognitive effects of radiation emitted by cellular phones",
         journal: "Bioelectromagnetics 30(3):198–204",
@@ -483,6 +508,7 @@ export const NODES: ChainNode[] = [
     bermComponent: "biology/sperm_cascade.py → ros_index()",
     keyReferences: [
       {
+        referenceId: "panagopoulos2025_ifo",
         authors: "Panagopoulos ym. 2025",
         title: "IFO-VGIC comprehensive review (131 studies)",
         journal: "Bioelectromagnetics",
@@ -491,6 +517,7 @@ export const NODES: ChainNode[] = [
           "Ca²⁺ → mitochondrial ROS → DNA damage, sperm dysfunction. 95% consensus across 131 studies, consistent with Yakymenko 2016 (93/100).",
       },
       {
+        referenceId: "bektas2026",
         authors: "Bektas ym. 2026",
         title: "CoQ10 ameliorates RF-induced testicular impairments at 3.5 GHz",
         journal: "Bioelectromagnetics (bem.70043)",
@@ -512,19 +539,20 @@ export const NODES: ChainNode[] = [
     title: "Kryptokromi-sirkadiaanihäiriö",
     title_en: "Cryptochrome circadian disruption",
     mechanism:
-      "RF-kentät häiritsevät kryptokromin (CRY) radikaaliparimekanismia (RPM). CRY on sirkadiaanisen kellon ydinkomponentti gonadikudoksessa. RPM-häiriö → kellogeenien ekspression muutos → ovulaation ajoitus häiriintyy (naiset) + spermatogeneesin rytmi häiriintyy (miehet). FAD-superoksidi-radikaalipari tunnistettu sensoriksi (Nature Comms 2024). Ei-monotoniset RPM-ennusteet vahvistettu planaariamatoissa (PNAS Nexus 2026). Engels 2014 (Nature): antropogeeninen EMF-kohina häiritsee magneettikompassia muuttolinnuissa — nykyiset ympäristötasot riittävät. Vuorotyödata validoi: vuorotyöntekijöillä vähemmän lapsia ja enemmän keskenmenoja.",
+      "RF-kentät häiritsevät kryptokromin (CRY) radikaaliparimekanismia (RPM). CRY on sirkadiaanisen kellon ydinkomponentti gonadikudoksessa. RPM-häiriö → kellogeenien ekspression muutos → ovulaation ajoitus häiriintyy (naiset) + spermatogeneesin rytmi häiriintyy (miehet). FAD-superoksidi-radikaalipari tunnistettu sensoriksi ([[ref:natcomms2024rpm|Nature Comms 2024]]). Ei-monotoniset RPM-ennusteet vahvistettu planaariamatoissa ([[ref:rishabh2026|PNAS Nexus 2026]]). [[ref:engels2014|Engels 2014 (Nature)]]: antropogeeninen EMF-kohina häiritsee magneettikompassia muuttolinnuissa — nykyiset ympäristötasot riittävät. Vuorotyödata validoi: vuorotyöntekijöillä vähemmän lapsia ja enemmän keskenmenoja.",
     mechanism_en:
-      "RF fields disrupt cryptochrome's (CRY) radical pair mechanism (RPM). CRY is a core component of the circadian clock in gonadal tissue. RPM disruption → altered clock gene expression → disrupted ovulation timing (women) + disrupted spermatogenesis rhythm (men). The FAD-superoxide radical pair has been identified as the sensor (Nature Comms 2024). Non-monotonic RPM predictions confirmed in planarian flatworms (PNAS Nexus 2026). Engels 2014 (Nature): anthropogenic EMF noise disrupts the magnetic compass in migratory birds — current ambient levels are sufficient. Shift-work data validates this: shift workers have fewer children and more miscarriages.",
+      "RF fields disrupt cryptochrome's (CRY) radical pair mechanism (RPM). CRY is a core component of the circadian clock in gonadal tissue. RPM disruption → altered clock gene expression → disrupted ovulation timing (women) + disrupted spermatogenesis rhythm (men). The FAD-superoxide radical pair has been identified as the sensor ([[ref:natcomms2024rpm|Nature Comms 2024]]). Non-monotonic RPM predictions confirmed in planarian flatworms ([[ref:rishabh2026|PNAS Nexus 2026]]). [[ref:engels2014|Engels 2014 (Nature)]]: anthropogenic EMF noise disrupts the magnetic compass in migratory birds — current ambient levels are sufficient. Shift-work data validates this: shift workers have fewer children and more miscarriages.",
     lindgrenInterpretation:
-      "CRY-kanava on VGIC:stä RIIPPUMATON polku ja teoreettisesti puhtaampi: 87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa Lindgrenin metriikka-ansatzista. Se ei kulje Ca²⁺:n kautta vaan suoraan kvanttibiologisen spin-kemiallisen mekanismin kautta. Lindgrenin kehyksessä RPM:n susceptibiliteetti χ_B on eri funktio kuin geometrinen χ(Ā) — se on ei-monotoninen ja kolmiregiiminen. VGCC-aktivaation suuruusluokan ongelma (δV_m ≈ 10⁻²¹ V ilman biologista vahvistusta) ei koske RPM-reittiä, koska 5 V/m kentässä magneettinen komponentti (~16,7 nT) ylittää Ritzin (2004) kokeellisen häiriökynnyksen (~15 nT).",
+      "CRY-kanava on VGIC:stä RIIPPUMATON polku ja teoreettisesti puhtaampi: 87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa Lindgrenin metriikka-ansatzista. Se ei kulje Ca²⁺:n kautta vaan suoraan kvanttibiologisen spin-kemiallisen mekanismin kautta. Lindgrenin kehyksessä RPM:n susceptibiliteetti χ_B on eri funktio kuin geometrinen χ(Ā) — se on ei-monotoninen ja kolmiregiiminen. VGCC-aktivaation suuruusluokan ongelma (δV_m ≈ 10⁻²¹ V ilman biologista vahvistusta) ei koske RPM-reittiä, koska 5 V/m kentässä magneettinen komponentti (~16,7 nT) ylittää [[ref:ritz2004|Ritzin (2004)]] kokeellisen häiriökynnyksen (~15 nT).",
     lindgrenInterpretation_en:
-      "The CRY channel is a pathway INDEPENDENT of VGIC and theoretically cleaner: 87.5% of the elements of the RPM Hamiltonian can be derived from Lindgren's metric ansatz. It does not proceed via Ca²⁺ but directly through the quantum-biological spin-chemistry mechanism. In Lindgren's framework, the RPM susceptibility χ_B is a different function from the geometric χ(Ā) — it is non-monotonic and has three regimes. The order-of-magnitude problem of VGCC activation (δV_m ≈ 10⁻²¹ V without biological amplification) does not apply to the RPM pathway, because at 5 V/m the magnetic component (~16.7 nT) exceeds Ritz's (2004) experimental disruption threshold (~15 nT).",
+      "The CRY channel is a pathway INDEPENDENT of VGIC and theoretically cleaner: 87.5% of the elements of the RPM Hamiltonian can be derived from Lindgren's metric ansatz. It does not proceed via Ca²⁺ but directly through the quantum-biological spin-chemistry mechanism. In Lindgren's framework, the RPM susceptibility χ_B is a different function from the geometric χ(Ā) — it is non-monotonic and has three regimes. The order-of-magnitude problem of VGCC activation (δV_m ≈ 10⁻²¹ V without biological amplification) does not apply to the RPM pathway, because at 5 V/m the magnetic component (~16.7 nT) exceeds [[ref:ritz2004|Ritz's (2004)]] experimental disruption threshold (~15 nT).",
     recoveryAlpha: 0.7,
     recoveryTimescale: "viikkoja (vuorokausirytmin uudelleenkalibrointi)",
     recoveryTimescale_en: "weeks (recalibration of the circadian rhythm)",
     bermComponent: "biology/cry.py",
     keyReferences: [
       {
+        referenceId: "ritz2004",
         authors: "Ritz ym. 2004",
         title: "Resonance effects indicate a radical-pair mechanism for avian compass",
         journal: "Nature 429",
@@ -533,6 +561,7 @@ export const NODES: ChainNode[] = [
           "RF disrupts the avian compass at a ~15 nT threshold, in an angle-dependent manner",
       },
       {
+        referenceId: "engels2014",
         authors: "Engels ym. 2014",
         title: "Anthropogenic electromagnetic noise disrupts magnetic compass orientation",
         journal: "Nature 509",
@@ -541,6 +570,19 @@ export const NODES: ChainNode[] = [
           "Current anthropogenic EM noise levels are sufficient to disrupt orientation",
       },
       {
+        referenceId: "natcomms2024rpm",
+        authors: "Xu ym. 2024",
+        title: "FAD-superoxide radical pair mechanism in cryptochrome",
+        journal: "Nature Communications",
+      },
+      {
+        referenceId: "rishabh2026",
+        authors: "Rishabh ym. 2026",
+        title: "Verification of quantum biological predictions for weak magnetic field effects on superoxide in planarians",
+        journal: "PNAS Nexus",
+      },
+      {
+        referenceId: "chae2019",
         authors: "Chae ym. 2019",
         title: "Blue light-dependent human magnetoreception in geomagnetic food orientation",
         journal: "PLOS ONE 14(2)",
@@ -550,6 +592,7 @@ export const NODES: ChainNode[] = [
           "Human magnetic orientation requires light below 500 nm and reverses with inversion of the vertical field component — a signature characteristic of RPM. Demonstrates the substrate, not RF disruption; n=41, not replicated. Level M|C.",
       },
       {
+        referenceId: "sherrard2018",
         authors: "Sherrard ym. 2018",
         title: "Low-intensity EMF induce human cryptochrome to modulate intracellular ROS",
         journal: "PLOS Biology 16(10)",
@@ -558,6 +601,7 @@ export const NODES: ChainNode[] = [
           "CRY-dependent ROS response in human HEK293 cells and mouse fibroblasts",
       },
       {
+        referenceId: "yoshii2009",
         authors: "Yoshii ym. 2009",
         title: "Cryptochrome mediates light-dependent magnetosensitivity of Drosophila",
         journal: "Nature",
@@ -577,9 +621,9 @@ export const NODES: ChainNode[] = [
     title: "Pineaalin melatoniinisuppressio",
     title_en: "Pineal melatonin suppression",
     mechanism:
-      "Pineaalirauhanen tuottaa melatoniinia joka säätelee vuorokausirytmiä ja GnRH-pulsaatiota. Pineaali on herkkä geomagneettiselle kentälle (Becker: melatoniinisekretio muuttuu geomagneettisen kentän vahvuisilla kentillä). EMF häiritsee pineaalin kalibraatiota → melatoniini↓ → uni↓ → GnRH-pulsaatio↓ → FSH/LH↓ → gonadifunktio↓. Burch 2002: matkapuhelinkäyttäjien melatoniinimetaboliitit matalammat. Leproult 2011: 1 viikko unirajoitusta → T −15%.",
+      "Pineaalirauhanen tuottaa melatoniinia joka säätelee vuorokausirytmiä ja GnRH-pulsaatiota. Pineaali on herkkä geomagneettiselle kentälle (Becker: melatoniinisekretio muuttuu geomagneettisen kentän vahvuisilla kentillä). EMF häiritsee pineaalin kalibraatiota → melatoniini↓ → uni↓ → GnRH-pulsaatio↓ → FSH/LH↓ → gonadifunktio↓. [[ref:burch2002|Burch 2002]]: matkapuhelinkäyttäjien melatoniinimetaboliitit matalammat. [[ref:leproult2011_testosterone_sleep|Leproult 2011]]: 1 viikko unirajoitusta → T −15%.",
     mechanism_en:
-      "The pineal gland produces melatonin, which regulates the circadian rhythm and GnRH pulsatility. The pineal gland is sensitive to the geomagnetic field (Becker: melatonin secretion changes at field strengths comparable to the geomagnetic field). EMF disrupts pineal calibration → melatonin↓ → sleep↓ → GnRH pulsatility↓ → FSH/LH↓ → gonadal function↓. Burch 2002: mobile phone users have lower melatonin metabolites. Leproult 2011: 1 week of sleep restriction → T −15%.",
+      "The pineal gland produces melatonin, which regulates the circadian rhythm and GnRH pulsatility. The pineal gland is sensitive to the geomagnetic field (Becker: melatonin secretion changes at field strengths comparable to the geomagnetic field). EMF disrupts pineal calibration → melatonin↓ → sleep↓ → GnRH pulsatility↓ → FSH/LH↓ → gonadal function↓. [[ref:burch2002|Burch 2002]]: mobile phone users have lower melatonin metabolites. [[ref:leproult2011_testosterone_sleep|Leproult 2011]]: 1 week of sleep restriction → T −15%.",
     lindgrenInterpretation:
       "Pineaali on biologinen χ(Ā)-detektori. Se mittaa geomagneettisen taustan magnetiittikristallien kautta ja säätää melatoniinia sen mukaan. Ulkoinen EMF häiritsee tätä mittausta — pineaali saa virheellisen Ā-arvon → tuottaa virheellisen melatoniinivasteen. Korkeammilla leveysasteilla (korkeampi geomag-Ā) pineaali on herkempi häiriölle (χ(Ā) suurempi).",
     lindgrenInterpretation_en:
@@ -591,6 +635,7 @@ export const NODES: ChainNode[] = [
       "biology/cry.py (jaettu CRY-kanavan kanssa sirkadiaanikomponentin osalta)",
     keyReferences: [
       {
+        referenceId: "tbahriti2026",
         authors: "Tbahriti ym. 2026",
         title: "EMF and circadian rhythms: PRISMA systematic review",
         journal: "Sleep Biol Rhythms 24(2):195-214",
@@ -598,6 +643,18 @@ export const NODES: ChainNode[] = [
           "55 tutkimuksen PRISMA: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota (20–50 %). Tukee polkua C kvantitatiivisesti. Vain 27 % tutkimuksista täytti korkeat standardit.",
         keyFinding_en:
           "PRISMA review of 55 studies: 88% of high-quality animal studies reported melatonin suppression (20–50%). Quantitatively supports Pathway C. Only 27% of studies met high-quality standards.",
+      },
+      {
+        referenceId: "burch2002",
+        authors: "Burch ym. 2002",
+        title: "Melatonin metabolite excretion among cellular telephone users",
+        journal: "International Journal of Radiation Biology",
+      },
+      {
+        referenceId: "leproult2011_testosterone_sleep",
+        authors: "Leproult & Van Cauter 2011",
+        title: "Effect of 1 Week of Sleep Restriction on Testosterone Levels in Young Healthy Men",
+        journal: "JAMA",
       },
     ],
   },
@@ -612,9 +669,9 @@ export const NODES: ChainNode[] = [
     title: "Stressiakselin ristikkäisinhibitio",
     title_en: "Cross-inhibition of the stress axis",
     mechanism:
-      "EMF aktivoi HPA-akselin (hypotalamus-aivolisäke-lisämunuainen) → kortisoli nousee → HPG-akselin (hypotalamus-aivolisäke-gonadi) suppressio. Krooninen kortisoli laskee testosteronia, oksitosiinia ja dopamiinia. Guyn koe (Cross Currents): 25 kk mikroaaltoaltistus → kortisoli nousi → laski (Selyen uupuminen) → stressivasteen elinten syövät (3.6× kontrolli). Travison 2007: testosteroni −1%/vuosi 1980-luvulta.",
+      "EMF aktivoi HPA-akselin (hypotalamus-aivolisäke-lisämunuainen) → kortisoli nousee → HPG-akselin (hypotalamus-aivolisäke-gonadi) suppressio. Krooninen kortisoli laskee testosteronia, oksitosiinia ja dopamiinia. [[ref:guy1984|Guyn koe (Cross Currents)]]: 25 kk mikroaaltoaltistus → kortisoli nousi → laski (Selyen uupuminen) → stressivasteen elinten syövät (3.6× kontrolli). [[ref:travison2007_v2|Travison 2007]]: testosteroni −1%/vuosi 1980-luvulta.",
     mechanism_en:
-      "EMF activates the HPA axis (hypothalamus-pituitary-adrenal) → cortisol rises → suppression of the HPG axis (hypothalamus-pituitary-gonad). Chronic cortisol lowers testosterone, oxytocin, and dopamine. Guy's experiment (Cross Currents): 25 months of microwave exposure → cortisol rose → then fell (Selye's exhaustion phase) → cancers of stress-response organs (3.6× control). Travison 2007: testosterone −1%/year since the 1980s.",
+      "EMF activates the HPA axis (hypothalamus-pituitary-adrenal) → cortisol rises → suppression of the HPG axis (hypothalamus-pituitary-gonad). Chronic cortisol lowers testosterone, oxytocin, and dopamine. [[ref:guy1984|Guy's experiment (Cross Currents)]]: 25 months of microwave exposure → cortisol rose → then fell (Selye's exhaustion phase) → cancers of stress-response organs (3.6× control). [[ref:travison2007_v2|Travison 2007]]: testosterone −1%/year since the 1980s.",
     lindgrenInterpretation:
       "HPA-aktivaatio on metrisen perturbointian systeeminen vaste. Hypotalamus on neuroendokriininen solmukohta jossa ionikanavadynamiikka ohjaa hormonaalista signalointia. EMF häiritsee GnRH-pulsaatiota (Schlegel: Ca²⁺-oskillaatiot aivolisäkkeessä) → koko HPG-akseli häiriintyy. Selyen kolmivaihedynamiikka on metrisessä kehyksessä: alarm = geometrinen perturbointia, resistance = uusi stationaarinen ratkaisu, exhaustion = stationaarisen ratkaisun romahdus.",
     lindgrenInterpretation_en:
@@ -625,12 +682,25 @@ export const NODES: ChainNode[] = [
     bermComponent: "biology/hpa.py",
     keyReferences: [
       {
+        referenceId: "luria2009",
         authors: "Luria ym. 2009",
         title: "Cognitive effects of cellular phone radiation",
         journal: "Bioelectromagnetics 30(3):198–204",
         keyFinding: "Akuutti alarm→resistance -adaptaatio 1 h sisällä (890 MHz, n=48 miestä). Yhteensopiva GAS-dynamiikan kanssa.",
         keyFinding_en:
           "Acute alarm→resistance adaptation within 1 h (890 MHz, n=48 men). Consistent with GAS dynamics.",
+      },
+      {
+        referenceId: "guy1984",
+        authors: "Guy ym. 1984",
+        title: "Chronic exposure of rats to 2.45 GHz microwaves",
+        journal: "USAF School of Aerospace Medicine",
+      },
+      {
+        referenceId: "travison2007_v2",
+        authors: "Travison ym. 2007",
+        title: "A population-level decline in serum testosterone levels in American men",
+        journal: "JCEM",
       },
     ],
   },
@@ -645,9 +715,9 @@ export const NODES: ChainNode[] = [
     title: "Veri-aivoesteen avautuminen",
     title_en: "Opening of the blood-brain barrier",
     mechanism:
-      "EMF lisää veri-aivoesteen (BBB) permeabiliteettia eNOS-aktivaation ja tight junction -proteiinien (occludin, claudin-5) vähenemisen kautta. Salford: SAR 0.012 W/kg (100× alle FCC-rajan) riitti avaamaan BBB:n rotilla. BBB:n avautuminen päästää endokriinihäiriöaineita, raskasmetalleja ja mikromuoveja aivoihin missä ne häiritsevät hypotalamuksen signalointia.",
+      "EMF lisää veri-aivoesteen (BBB) permeabiliteettia eNOS-aktivaation ja tight junction -proteiinien (occludin, claudin-5) vähenemisen kautta. [[ref:salford2003|Salford]]: SAR 0.012 W/kg (100× alle FCC-rajan) riitti avaamaan BBB:n rotilla. BBB:n avautuminen päästää endokriinihäiriöaineita, raskasmetalleja ja mikromuoveja aivoihin missä ne häiritsevät hypotalamuksen signalointia.",
     mechanism_en:
-      "EMF increases blood-brain barrier (BBB) permeability through eNOS activation and reduction of tight junction proteins (occludin, claudin-5). Salford: SAR of 0.012 W/kg (100× below the FCC limit) was sufficient to open the BBB in rats. Opening of the BBB lets endocrine-disrupting chemicals, heavy metals, and microplastics into the brain, where they disrupt hypothalamic signaling.",
+      "EMF increases blood-brain barrier (BBB) permeability through eNOS activation and reduction of tight junction proteins (occludin, claudin-5). [[ref:salford2003|Salford]]: SAR of 0.012 W/kg (100× below the FCC limit) was sufficient to open the BBB in rats. Opening of the BBB lets endocrine-disrupting chemicals, heavy metals, and microplastics into the brain, where they disrupt hypothalamic signaling.",
     lindgrenInterpretation:
       "BBB on biologinen metrinen rajapinta: verisuonen endoteeli ja aivoparenkyyma ovat eri metrisiä alueita (eri ionikokoonpanot). Tight junction -proteiinit ylläpitävät metrisen diskontinuiteetin. EMF:n metriikkamuutos heikentää tätä rajapintaa → metriset alueet 'vuotavat' toisiinsa. Lindgrenin kehys selittää miksi pienet kentät riittävät: BBB on bifurkaatiokynnyksen lähellä — pieni metrinen perturbointia kääntää tight junction -proteiinien konformaation.",
     lindgrenInterpretation_en:
@@ -667,6 +737,13 @@ export const NODES: ChainNode[] = [
           "Lateralized cognitive effect consistent with local BBB opening (cf. Salford 2003: SAR 0.016 W/kg).",
       },
       {
+        referenceId: "salford2003",
+        authors: "Salford ym. 2003",
+        title: "Nerve cell damage in mammalian brain after exposure to microwaves from GSM mobile phones",
+        journal: "Environmental Health Perspectives",
+      },
+      {
+        referenceId: "gao2024_bbb_conformational",
         authors: "Gao ym. 2024",
         title: "EMP-induced BBB disruption via tight junction degradation",
         journal: "Bioelectromagnetics (bem.22494)",
@@ -732,9 +809,9 @@ export const NODES: ChainNode[] = [
     title: "Siittiön DNA-vaurio",
     title_en: "Sperm DNA damage",
     mechanism:
-      "ROS tuottaa yksi- ja kaksijuosteisia DNA-katkoja siittiöissä. Houston 2019: DNA-vaurio SÄILYY vaikka ROS palautuu 5 viikossa. Czerski 1979: kromosomivaurioita koko turvaraja-alueen läpi. SDF on kumulatiivinen ja osittain palautumaton.",
+      "ROS tuottaa yksi- ja kaksijuosteisia DNA-katkoja siittiöissä. [[ref:sci-rep-2019-sperm-ros|Houston 2019]]: DNA-vaurio SÄILYY vaikka ROS palautuu 5 viikossa. [[ref:czerski1979|Czerski 1979]]: kromosomivaurioita koko turvaraja-alueen läpi. SDF on kumulatiivinen ja osittain palautumaton.",
     mechanism_en:
-      "ROS produces single- and double-strand DNA breaks in sperm. Houston 2019: DNA damage PERSISTS even though ROS recovers within 5 weeks. Czerski 1979: chromosomal damage throughout the entire 'safety limit' range. SDF is cumulative and partially irreversible.",
+      "ROS produces single- and double-strand DNA breaks in sperm. [[ref:sci-rep-2019-sperm-ros|Houston 2019]]: DNA damage PERSISTS even though ROS recovers within 5 weeks. [[ref:czerski1979|Czerski 1979]]: chromosomal damage throughout the entire 'safety limit' range. SDF is cumulative and partially irreversible.",
     recoveryAlpha: 0.2,
     recoveryTimescale:
       "kuukausia (uusi spermatogeneesisykli 74 pv, mutta kantasoluvaurio voi säilyä)",
@@ -742,12 +819,25 @@ export const NODES: ChainNode[] = [
       "months (a new spermatogenesis cycle takes 74 days, but stem cell damage may persist)",
     keyReferences: [
       {
+        referenceId: "panagopoulos2025_ifo",
         authors: "Panagopoulos ym. 2025",
         title: "IFO-VGIC comprehensive review (131 studies)",
         journal: "Bioelectromagnetics",
         keyFinding: "Siittiövauriot (SDF, motiliteetti, viabiliteetti) raportoitu 131 tutkimuksen katsauksessa. IFO → Ca²⁺ → mitokondriaali ROS → siittiövauriot.",
         keyFinding_en:
           "Sperm damage (SDF, motility, viability) reported in a review of 131 studies. IFO → Ca²⁺ → mitochondrial ROS → sperm damage.",
+      },
+      {
+        referenceId: "sci-rep-2019-sperm-ros",
+        authors: "Houston ym. 2019",
+        title: "Whole-body RF-EME exposures cause DNA damage in mouse spermatozoa via oxidative mechanism",
+        journal: "Scientific Reports",
+      },
+      {
+        referenceId: "czerski1979",
+        authors: "Czerski 1979",
+        title: "Microwave effects on the blood-forming system with particular reference to the lymphocyte",
+        journal: "Annals of the New York Academy of Sciences",
       },
     ],
   },
@@ -761,10 +851,17 @@ export const NODES: ChainNode[] = [
     title: "Siittiöiden liikkuvuuden heikkeneminen",
     title_en: "Decline in sperm motility",
     mechanism:
-      "ROS ja SDF heikentävät siittiöiden progressiivista motiliteettia. Yu 2021 (IVF-laboratorio): motiliteetti −8.1% tunnin EMF-altistuksen jälkeen. Adeen kirja: Ca²⁺-kanava on siittiön navigoinnin avain — ilman sitä siittiö 'wriggles ineptly and goes nowhere.'",
+      "ROS ja SDF heikentävät siittiöiden progressiivista motiliteettia. Yu 2021 (IVF-laboratorio): motiliteetti −8.1% tunnin EMF-altistuksen jälkeen. [[ref:adee2023|Adeen kirja]]: Ca²⁺-kanava on siittiön navigoinnin avain — ilman sitä siittiö 'wriggles ineptly and goes nowhere.'",
     mechanism_en:
-      "ROS and SDF impair progressive sperm motility. Yu 2021 (IVF laboratory): motility −8.1% after one hour of EMF exposure. Adee's book: the Ca²⁺ channel is the key to sperm navigation — without it, the sperm 'wriggles ineptly and goes nowhere.'",
-    keyReferences: [],
+      "ROS and SDF impair progressive sperm motility. Yu 2021 (IVF laboratory): motility −8.1% after one hour of EMF exposure. [[ref:adee2023|Adee's book]]: the Ca²⁺ channel is the key to sperm navigation — without it, the sperm 'wriggles ineptly and goes nowhere.'",
+    keyReferences: [
+      {
+        referenceId: "adee2023",
+        authors: "Adee 2023",
+        title: "We Are Electric",
+        journal: "Canongate / Hachette",
+      },
+    ],
   },
   {
     id: "concentration",
@@ -776,21 +873,28 @@ export const NODES: ChainNode[] = [
     title: "Siittiökonsentraation sekulaarilasku",
     title_en: "Secular decline in sperm concentration",
     mechanism:
-      "Levine 2023: siittiökonsentraatio laskenut 51% vuodesta 1973. Lasku kiihtynyt 2000-luvulla. Leydigin solujen kumulatiivinen vaurio (ROS + epigeneettinen) → testosteronituotanto↓ → spermatogeneesi↓ → konsentraatio↓.",
+      "[[ref:levine2023_sperm|Levine 2023]]: siittiökonsentraatio laskenut 51% vuodesta 1973. Lasku kiihtynyt 2000-luvulla. Leydigin solujen kumulatiivinen vaurio (ROS + epigeneettinen) → testosteronituotanto↓ → spermatogeneesi↓ → konsentraatio↓.",
     mechanism_en:
-      "Levine 2023: sperm concentration has declined 51% since 1973. The decline has accelerated since the 2000s. Cumulative damage to Leydig cells (ROS + epigenetic) → testosterone production↓ → spermatogenesis↓ → concentration↓.",
+      "[[ref:levine2023_sperm|Levine 2023]]: sperm concentration has declined 51% since 1973. The decline has accelerated since the 2000s. Cumulative damage to Leydig cells (ROS + epigenetic) → testosterone production↓ → spermatogenesis↓ → concentration↓.",
     recoveryAlpha: 0.3,
     recoveryTimescale:
       "kuukausia–vuosia (Leydigin solujen osittainen palautuminen)",
     recoveryTimescale_en: "months to years (partial recovery of Leydig cells)",
     keyReferences: [
       {
+        referenceId: "panagopoulos2025_ifo",
         authors: "Panagopoulos ym. 2025",
         title: "IFO-VGIC comprehensive review (131 studies)",
         journal: "Bioelectromagnetics",
         keyFinding: "Siittiökonsentraation lasku raportoitu 131 tutkimuksen katsauksessa. IFO → Ca²⁺ → ROS → Leydigin soluvaurio → konsentraatio↓.",
         keyFinding_en:
           "Decline in sperm concentration reported in a review of 131 studies. IFO → Ca²⁺ → ROS → Leydig cell damage → concentration↓.",
+      },
+      {
+        referenceId: "levine2023_sperm",
+        authors: "Levine ym. 2023",
+        title: "Temporal trends in sperm count: a systematic review and meta-regression analysis",
+        journal: "Human Reproduction Update",
       },
     ],
   },
@@ -837,14 +941,21 @@ export const NODES: ChainNode[] = [
     title: "Sukupuolisuhteen siirtymä",
     title_en: "Shift in sex ratio",
     mechanism:
-      "X-kromosomin kantavat siittiöt ovat suurempia ja hitaampia kuin Y-kantavat. Ca²⁺-kanavahäiriö vaikuttaa enemmän isompaan X-siittiöön → Y-siittiöt pääsevät suhteessa useammin perille → poikia enemmän. Quebec Hydro (Becker 1985): 6:1 poika/tyttö-suhde sähkötyöntekijöiden lapsilla. Norjan laivaston data (Magerøy 2006): lineaarinen trendi.",
+      "X-kromosomin kantavat siittiöt ovat suurempia ja hitaampia kuin Y-kantavat. Ca²⁺-kanavahäiriö vaikuttaa enemmän isompaan X-siittiöön → Y-siittiöt pääsevät suhteessa useammin perille → poikia enemmän. [[ref:hydro_quebec_1976|Quebec Hydro (Becker 1985)]]: 6:1 poika/tyttö-suhde sähkötyöntekijöiden lapsilla. Norjan laivaston data (Magerøy 2006): lineaarinen trendi.",
     mechanism_en:
-      "X-chromosome-bearing sperm are larger and slower than Y-bearing sperm. Ca²⁺ channel disruption affects the larger X-sperm more → Y-sperm proportionally reach the egg more often → more boys are born. Quebec Hydro (Becker 1985): a 6:1 boy/girl ratio among electrical workers' children. Norwegian navy data (Magerøy 2006): a linear trend.",
+      "X-chromosome-bearing sperm are larger and slower than Y-bearing sperm. Ca²⁺ channel disruption affects the larger X-sperm more → Y-sperm proportionally reach the egg more often → more boys are born. [[ref:hydro_quebec_1976|Quebec Hydro (Becker 1985)]]: a 6:1 boy/girl ratio among electrical workers' children. Norwegian navy data (Magerøy 2006): a linear trend.",
     lindgrenInterpretation:
       "X- ja Y-siittiöt ovat partikkeleita eri massoilla samassa metrisessä kentässä. Niiden geodeeseejä (liikeatoja) metrinen perturbointia muuttaa eri verran koska vuorovaikutuspoikkipinta on eri. cos(θ)-riippuvuus ennustaa lisäksi, että vaikutus riippuu EMF:n suunnasta suhteessa reproduktiokanavaan.",
     lindgrenInterpretation_en:
       "X- and Y-sperm are particles of different mass in the same metric field. The metric perturbation changes their geodesics (trajectories) to different degrees because their interaction cross-section differs. The cos(θ) dependence further predicts that the effect depends on the direction of the EMF relative to the reproductive tract.",
-    keyReferences: [],
+    keyReferences: [
+      {
+        referenceId: "hydro_quebec_1976",
+        authors: "Hydro-Québec survey (cited by Becker)",
+        title: "Sex ratio shift in children of power station workers",
+        journal: "Cited in Becker, Cross Currents",
+      },
+    ],
   },
   {
     id: "testosterone",
@@ -857,15 +968,16 @@ export const NODES: ChainNode[] = [
     title: "Testosteronin sekulaarilasku",
     title_en: "Secular decline in testosterone",
     mechanism:
-      "Travison 2007: miesten testosteronitasot laskevat −1%/vuosi ikävakioituna. Lasku ei selity painonnousulla, tupakoinnin vähenemisellä tai muilla tunnetuilla tekijöillä. HPA-akselin krooninen aktivaatio (polku D) → kortisoli↑ → HPG-akselin suppressio → testosteronituotanto↓. Leydigin solujen kumulatiivinen ROS-vaurio (polku A) heikentää steroidogeneesiä.",
+      "[[ref:travison2007_v2|Travison 2007]]: miesten testosteronitasot laskevat −1%/vuosi ikävakioituna. Lasku ei selity painonnousulla, tupakoinnin vähenemisellä tai muilla tunnetuilla tekijöillä. HPA-akselin krooninen aktivaatio (polku D) → kortisoli↑ → HPG-akselin suppressio → testosteronituotanto↓. Leydigin solujen kumulatiivinen ROS-vaurio (polku A) heikentää steroidogeneesiä.",
     mechanism_en:
-      "Travison 2007: men's testosterone levels are declining −1%/year, age-adjusted. The decline is not explained by weight gain, reduced smoking, or other known factors. Chronic activation of the HPA axis (Pathway D) → cortisol↑ → suppression of the HPG axis → testosterone production↓. Cumulative ROS damage to Leydig cells (Pathway A) impairs steroidogenesis.",
+      "[[ref:travison2007_v2|Travison 2007]]: men's testosterone levels are declining −1%/year, age-adjusted. The decline is not explained by weight gain, reduced smoking, or other known factors. Chronic activation of the HPA axis (Pathway D) → cortisol↑ → suppression of the HPG axis → testosterone production↓. Cumulative ROS damage to Leydig cells (Pathway A) impairs steroidogenesis.",
     recoveryAlpha: 0.5,
     recoveryTimescale: "kuukausia (HPA-normalisoituminen) – vuosia (Leydig-palautuminen)",
     recoveryTimescale_en:
       "months (HPA normalization) to years (Leydig cell recovery)",
     keyReferences: [
       {
+        referenceId: "travison2007_v2",
         authors: "Travison ym. 2007",
         title: "A population-level decline in serum testosterone levels in American men",
         journal: "J. Clin. Endocrinol. Metab. 92(1)",
@@ -911,9 +1023,9 @@ export const NODES: ChainNode[] = [
     title: "mTOR-reitin ylisäätely EMF-altistuksessa",
     title_en: "mTOR pathway upregulation under EMF exposure",
     mechanism:
-      "VGIC-aktivaation tuottama Ca²⁺-influksi aktivoi mTOR-reitin (mammalian target of rapamycin). mTOR-hyperaktivaatio → autofagian suppressio → seneskenttien solujen kertyminen → krooninen tulehdus. Sempou-reitti: EMF → VGIC → Ca²⁺↑ → mTOR↑ → kolme epidemiaa: kiihtynyt ikääntyminen, hedelmällisyyden lasku, syöpäriskin kasvu.",
+      "VGIC-aktivaation tuottama Ca²⁺-influksi aktivoi mTOR-reitin (mammalian target of rapamycin). mTOR-hyperaktivaatio → autofagian suppressio → seneskenttien solujen kertyminen → krooninen tulehdus. [[ref:sempou2022|Sempou-reitti]]: EMF → VGIC → Ca²⁺↑ → mTOR↑ → kolme epidemiaa: kiihtynyt ikääntyminen, hedelmällisyyden lasku, syöpäriskin kasvu.",
     mechanism_en:
-      "Ca²⁺ influx from VGIC activation engages the mTOR pathway (mammalian target of rapamycin). mTOR hyperactivation → autophagy suppression → senescent cell accumulation → chronic inflammation. Sempou pathway: EMF → VGIC → Ca²⁺↑ → mTOR↑ → three epidemics: accelerated aging, fertility decline, cancer risk increase.",
+      "Ca²⁺ influx from VGIC activation engages the mTOR pathway (mammalian target of rapamycin). mTOR hyperactivation → autophagy suppression → senescent cell accumulation → chronic inflammation. [[ref:sempou2022|Sempou pathway]]: EMF → VGIC → Ca²⁺↑ → mTOR↑ → three epidemics: accelerated aging, fertility decline, cancer risk increase.",
     lindgrenInterpretation:
       "mTOR on solunsisäinen integraattori joka yhdistää useita metrisestä perturbointiasta syntyviä signaaleja yhdeksi soluvasteeksi. Geometrinen perturbointia → Ca²⁺-dynamiikan muutos → mTOR-tasapainon siirtymä. Metformiinin pitkäikäisyyshyöty on geometrisessa kehyksessä anti-perturbointia: AMPK-aktivaatio kumoaa mTOR-hyperaktivaatiota.",
     lindgrenInterpretation_en:
@@ -930,6 +1042,12 @@ export const NODES: ChainNode[] = [
         journal: "Cell 168(6)",
         keyFinding: "mTOR integroi ravinteet, energian ja kasvutekijät solun kasvuun",
         keyFinding_en: "mTOR integrates nutrients, energy, and growth factors into cell growth",
+      },
+      {
+        referenceId: "sempou2022",
+        authors: "Sempou ym. 2022",
+        title: "Membrane potential drives spermatogonial stem cell differentiation via mTOR",
+        journal: "Nature Communications",
       },
     ],
     falsificationCondition:
@@ -948,11 +1066,12 @@ export const NODES: ChainNode[] = [
     title: "Unen laadun heikkeneminen ja hormonaaliset seuraukset",
     title_en: "Sleep quality decline and hormonal consequences",
     mechanism:
-      "Melatoniinisuppressio (polku C) → unisyklin häiriö → syvän unen väheneminen. Syvä uni on kriittinen GnRH-pulsaation ja kasvuhormonin erityksen kannalta. Leproult & Van Cauter 2011: 1 viikko unirajoitusta (5h/yö) → testosteroni −15%. Nuorten aikuisten unen kesto on lyhentynyt ~1h/yö 1970-luvulta. Älypuhelimen sininen valo → melatoniinisuppressio → viivästynyt unilatenssi.",
+      "Melatoniinisuppressio (polku C) → unisyklin häiriö → syvän unen väheneminen. Syvä uni on kriittinen GnRH-pulsaation ja kasvuhormonin erityksen kannalta. [[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]: 1 viikko unirajoitusta (5h/yö) → testosteroni −15%. Nuorten aikuisten unen kesto on lyhentynyt ~1h/yö 1970-luvulta. Älypuhelimen sininen valo → melatoniinisuppressio → viivästynyt unilatenssi.",
     mechanism_en:
-      "Melatonin suppression (pathway C) → sleep cycle disruption → decreased deep sleep. Deep sleep is critical for GnRH pulsation and growth hormone secretion. Leproult & Van Cauter 2011: 1 week of sleep restriction (5h/night) → testosterone −15%. Young adults' sleep duration has shortened ~1h/night since the 1970s. Smartphone blue light → melatonin suppression → delayed sleep latency.",
+      "Melatonin suppression (pathway C) → sleep cycle disruption → decreased deep sleep. Deep sleep is critical for GnRH pulsation and growth hormone secretion. [[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]: 1 week of sleep restriction (5h/night) → testosterone −15%. Young adults' sleep duration has shortened ~1h/night since the 1970s. Smartphone blue light → melatonin suppression → delayed sleep latency.",
     keyReferences: [
       {
+        referenceId: "leproult2011_testosterone_sleep",
         authors: "Leproult & Van Cauter 2011",
         title: "Effect of 1 week of sleep restriction on testosterone levels",
         journal: "JAMA 305(21)",

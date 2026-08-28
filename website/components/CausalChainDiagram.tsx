@@ -9,8 +9,7 @@ import {
   EPISTEMIC_COLORS,
 } from "@/lib/causalChainData";
 import { DetailPanel } from "./DetailPanel";
-
-type Locale = "en" | "fi";
+import { pickCopy } from "@/lib/i18n";
 
 const COPY: Record<string, {
   ariaLabel: string;
@@ -58,12 +57,74 @@ const COPY: Record<string, {
       ["L*", "Teoria- / mittauspremissi"],
     ],
   },
+  ja: {
+    ariaLabel: "BERM v17 因果図",
+    clickHint: "→ クリックで詳細",
+    levelTitles: {
+      1: "場の状態",
+      2: "生物学的中間体",
+      3: "BTBおよび他のバリア状態",
+      4: "生殖状態",
+      5: "カップルおよび人口統計的文脈",
+      6: "年齢別出生率",
+      7: "人口統計的エンドポイント",
+    },
+    legend: [
+      ["E", "観察されたエンドポイント"],
+      ["M|C", "メカニズム + 関連性"],
+      ["M", "メカニズム的中間体"],
+      ["C", "観察された関連性"],
+      ["L*", "理論 / 測定前提"],
+    ],
+  },
+  fr: {
+    ariaLabel: "Diagramme causal BERM v17",
+    clickHint: "→ cliquer pour détails",
+    levelTitles: {
+      1: "État du champ",
+      2: "Intermédiaires biologiques",
+      3: "BTB et autres états de barrière",
+      4: "États reproductifs",
+      5: "Contexte du couple et démographique",
+      6: "Fécondité par âge",
+      7: "Point final démographique",
+    },
+    legend: [
+      ["E", "Point final observé"],
+      ["M|C", "Mécanisme + association"],
+      ["M", "Intermédiaire mécanistique"],
+      ["C", "Association observée"],
+      ["L*", "Prémisse théorique / de mesure"],
+    ],
+  },
+  ko: {
+    ariaLabel: "BERM v17 인과 다이어그램",
+    clickHint: "→ 클릭하여 상세 보기",
+    levelTitles: {
+      1: "장 상태",
+      2: "생물학적 중간체",
+      3: "BTB 및 기타 장벽 상태",
+      4: "생식 상태",
+      5: "커플 및 인구통계적 맥락",
+      6: "연령별 출산율",
+      7: "인구통계적 종점",
+    },
+    legend: [
+      ["E", "관찰된 종점"],
+      ["M|C", "메커니즘 + 연관성"],
+      ["M", "메커니즘적 중간체"],
+      ["C", "관찰된 연관성"],
+      ["L*", "이론 / 측정 전제"],
+    ],
+  },
 };
 
 const NODE_H = 72;
 const NODE_RX = 12;
 const LEVEL_GAP = 52;
-const LEVEL_LABEL_W = 100;
+const MIN_CANVAS_W = 960;
+const LEVEL_LABEL_W = 210;
+const LEVEL_TITLE_X = 52;
 const FEEDBACK_MARGIN = 44;
 const NODE_GAP = 14;
 const MAX_NODE_W = 240;
@@ -72,6 +133,26 @@ const ROW_INNER_GAP = 10;
 const BAND_PAD_Y = 14;
 const BAND_PAD_X = 8;
 const RIGHT_PAD = 16;
+
+function wrapLevelTitle(title: string, maxCharacters = 20): string[] {
+  const words = title.trim().split(/\s+/);
+  const lines: string[] = [];
+  let current = "";
+
+  for (const word of words) {
+    const next = current ? `${current} ${word}` : word;
+    if (next.length <= maxCharacters || !current) {
+      current = next;
+      continue;
+    }
+
+    lines.push(current);
+    current = word;
+  }
+
+  if (current) lines.push(current);
+  return lines;
+}
 
 const EPISTEMIC_LABELS: Record<string, string> = {
   E: "E",
@@ -174,7 +255,7 @@ function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
   if (wrapLeft) {
     const fy = from.y + from.h / 2;
     const ty = to.y + to.h / 2;
-    const x = FEEDBACK_MARGIN / 2 + 10;
+    const x = LEVEL_LABEL_W + FEEDBACK_MARGIN / 2;
     return `M ${from.x} ${fy} L ${x} ${fy} L ${x} ${ty} L ${to.x} ${ty}`;
   }
 
@@ -195,20 +276,21 @@ function edgePath(from: LayoutNode, to: LayoutNode, wrapLeft: boolean): string {
   return `M ${x1} ${y1} C ${x1} ${y1 + dy * 0.35} ${x2} ${y2 - dy * 0.35} ${x2} ${y2}`;
 }
 
-export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale }) {
-  const d = COPY[locale];
-  const { nodes, edges } = useMemo(() => getFieldStateCausalGraph(locale), [locale]);
+export default function CausalChainDiagram({ locale = "en" }: { locale?: string }) {
+  const graphLocale: "en" | "fi" = locale === "fi" ? "fi" : "en";
+  const d = pickCopy(COPY, locale);
+  const { nodes, edges } = useMemo(() => getFieldStateCausalGraph(graphLocale), [graphLocale]);
   const [selectedNode, setSelectedNode] = useState<ChainNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [containerW, setContainerW] = useState(900);
+  const [containerW, setContainerW] = useState(MIN_CANVAS_W);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
     const ro = new ResizeObserver((entries) => {
       const w = entries[0]?.contentRect.width;
-      if (w && w > 0) setContainerW(Math.max(600, Math.min(1600, w)));
+      if (w && w > 0) setContainerW(Math.max(MIN_CANVAS_W, Math.min(1600, w)));
     });
     ro.observe(el);
     return () => ro.disconnect();
@@ -242,13 +324,14 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
 
   return (
     <>
-      <div ref={containerRef} className="w-full">
+      <div ref={containerRef} className="chart-scroll w-full">
         <svg
+          className="chart-svg"
           viewBox={`0 0 ${viewW} ${canvasH}`}
           xmlns="http://www.w3.org/2000/svg"
           role="img"
           aria-label={d.ariaLabel}
-          style={{ width: "100%", height: "auto" }}
+          style={{ width: `${viewW}px`, minWidth: `${MIN_CANVAS_W}px`, height: "auto" }}
         >
           <defs>
             <marker
@@ -289,54 +372,72 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
           />
 
           {/* Level bands */}
-          {bands.map((band) => (
-            <g key={`band-${band.level}`}>
-              {/* Band background */}
-              <rect
-                x={LEVEL_LABEL_W + FEEDBACK_MARGIN - BAND_PAD_X}
-                y={band.top}
-                width={viewW - LEVEL_LABEL_W - FEEDBACK_MARGIN + BAND_PAD_X - 12}
-                height={band.bottom - band.top}
-                rx="8"
-                fill={`${band.color}08`}
-                stroke={`${band.color}18`}
-                strokeWidth="1"
-              />
-              {/* Left accent bar */}
-              <rect
-                x={LEVEL_LABEL_W + FEEDBACK_MARGIN - BAND_PAD_X}
-                y={band.top}
-                width="4"
-                height={band.bottom - band.top}
-                rx="2"
-                fill={`${band.color}30`}
-              />
-              {/* Level number */}
-              <text
-                x={22}
-                y={band.top + (band.bottom - band.top) / 2 - 8}
-                fill={`${band.color}90`}
-                fontSize="22"
-                fontWeight="800"
-                dominantBaseline="middle"
-                fontFamily="ui-monospace, monospace"
-              >
-                {band.level}
-              </text>
-              {/* Level title */}
-              <text
-                x={22}
-                y={band.top + (band.bottom - band.top) / 2 + 12}
-                fill="var(--foreground-muted)"
-                fontSize="13"
-                fontWeight="600"
-                dominantBaseline="middle"
-                fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-              >
-                {band.title}
-              </text>
-            </g>
-          ))}
+          {bands.map((band) => {
+            const titleLines = wrapLevelTitle(band.title);
+            const titleLineHeight = 15;
+            const titleStartY =
+              band.top +
+              (band.bottom - band.top) / 2 -
+              ((titleLines.length - 1) * titleLineHeight) / 2;
+
+            return (
+              <g key={`band-${band.level}`}>
+                {/* Band background */}
+                <rect
+                  x={LEVEL_LABEL_W + FEEDBACK_MARGIN - BAND_PAD_X}
+                  y={band.top}
+                  width={viewW - LEVEL_LABEL_W - FEEDBACK_MARGIN + BAND_PAD_X - 12}
+                  height={band.bottom - band.top}
+                  rx="8"
+                  fill={`${band.color}08`}
+                  stroke={`${band.color}18`}
+                  strokeWidth="1"
+                />
+                {/* Left accent bar */}
+                <rect
+                  x={LEVEL_LABEL_W + FEEDBACK_MARGIN - BAND_PAD_X}
+                  y={band.top}
+                  width="4"
+                  height={band.bottom - band.top}
+                  rx="2"
+                  fill={`${band.color}30`}
+                />
+                {/* Level number */}
+                <text
+                  x={22}
+                  y={band.top + (band.bottom - band.top) / 2}
+                  fill={`${band.color}90`}
+                  fontSize="22"
+                  fontWeight="800"
+                  dominantBaseline="middle"
+                  fontFamily="ui-monospace, monospace"
+                >
+                  {band.level}
+                </text>
+                {/* Level title */}
+                <text
+                  x={LEVEL_TITLE_X}
+                  y={titleStartY}
+                  fill="var(--foreground-muted)"
+                  fontSize="12.5"
+                  fontWeight="600"
+                  dominantBaseline="middle"
+                  fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+                  aria-label={band.title}
+                >
+                  {titleLines.map((line, lineIndex) => (
+                    <tspan
+                      key={`${band.level}-${lineIndex}`}
+                      x={LEVEL_TITLE_X}
+                      dy={lineIndex === 0 ? 0 : titleLineHeight}
+                    >
+                      {line}
+                    </tspan>
+                  ))}
+                </text>
+              </g>
+            );
+          })}
 
           {/* Edges */}
           {edges.map((edge, edgeIdx) => {
@@ -523,29 +624,30 @@ export default function CausalChainDiagram({ locale = "en" }: { locale?: Locale 
             );
           })}
 
-          {/* Legend */}
-          {(() => {
-            const items = d.legend;
-            const legendY = canvasH - 24;
-            const legendX = LEVEL_LABEL_W + FEEDBACK_MARGIN;
-            const spacing = (viewW - legendX - 20) / items.length;
-            return items.map(([lvl, lbl], i) => {
-              const c = EPISTEMIC_COLORS[lvl];
-              return (
-                <g key={lvl} transform={`translate(${legendX + i * spacing}, ${legendY})`}>
-                  <rect x={0} y={-7} width={14} height={14} rx={3} fill={`${c}25`} stroke={c} strokeWidth={1} />
-                  <text x={8} y={0} fill={c} fontSize={11} fontWeight="700" textAnchor="middle" dominantBaseline="middle" fontFamily="ui-monospace, monospace">
-                    {lvl}
-                  </text>
-                  <text x={20} y={1} fill="var(--foreground-muted)" fontSize={11} fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" dominantBaseline="middle" textLength={Math.min(lbl.length * 5, spacing - 26)} lengthAdjust="spacingAndGlyphs">
-                    {lbl}
-                  </text>
-                </g>
-              );
-            });
-          })()}
         </svg>
       </div>
+
+      <ul className="chart-legend mt-3">
+        {d.legend.map(([level, label]) => {
+          const color = EPISTEMIC_COLORS[level];
+          return (
+            <li key={level} className="chart-key">
+              <span
+                aria-hidden="true"
+                className="inline-flex h-4 min-w-7 items-center justify-center rounded px-1 font-mono text-[10px] font-bold"
+                style={{
+                  backgroundColor: `${color}25`,
+                  border: `1px solid ${color}`,
+                  color,
+                }}
+              >
+                {level}
+              </span>
+              <span>{label}</span>
+            </li>
+          );
+        })}
+      </ul>
 
       {selectedNode && (
         <DetailPanel

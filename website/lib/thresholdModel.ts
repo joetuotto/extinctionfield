@@ -2,8 +2,10 @@ export interface CountryThresholdData {
   id: string;
   nameEn: string;
   nameFi: string;
+  names: Record<string, string>;
   tDeclinePct: number;
   tSource: string;
+  tReferenceId?: string;
   tSourceEstimated: boolean;
   cumulativeLoss2024: number;
   thresholdYear: number;
@@ -20,8 +22,10 @@ export const THRESHOLD_COUNTRIES: CountryThresholdData[] = [
     id: "finland",
     nameEn: "Finland",
     nameFi: "Suomi",
+    names: { en: "Finland", fi: "Suomi", ja: "フィンランド", fr: "Finlande", ko: "핀란드" },
     tDeclinePct: 1.2,
     tSource: "Perheentupa 2013",
+    tReferenceId: "perheentupa2013",
     tSourceEstimated: false,
     cumulativeLoss2024: 41.2,
     thresholdYear: 2018,
@@ -51,8 +55,10 @@ export const THRESHOLD_COUNTRIES: CountryThresholdData[] = [
     id: "usa",
     nameEn: "United States",
     nameFi: "Yhdysvallat",
+    names: { en: "United States", fi: "Yhdysvallat", ja: "アメリカ", fr: "États-Unis", ko: "미국" },
     tDeclinePct: 1.0,
     tSource: "Travison 2007 (MMAS)",
+    tReferenceId: "travison2007_v2",
     tSourceEstimated: false,
     cumulativeLoss2024: 35.7,
     thresholdYear: 2030,
@@ -80,8 +86,10 @@ export const THRESHOLD_COUNTRIES: CountryThresholdData[] = [
     id: "denmark",
     nameEn: "Denmark",
     nameFi: "Tanska",
+    names: { en: "Denmark", fi: "Tanska", ja: "デンマーク", fr: "Danemark", ko: "덴마크" },
     tDeclinePct: 0.85,
     tSource: "Andersson 2007",
+    tReferenceId: "andersson-2007-denmark",
     tSourceEstimated: false,
     cumulativeLoss2024: 31.3,
     thresholdYear: 2035,
@@ -108,8 +116,10 @@ export const THRESHOLD_COUNTRIES: CountryThresholdData[] = [
     id: "israel",
     nameEn: "Israel",
     nameFi: "Israel",
+    names: { en: "Israel", fi: "Israel", ja: "イスラエル", fr: "Israël", ko: "이스라엘" },
     tDeclinePct: 1.0,
     tSource: "Chodick 2020 (102k)",
+    tReferenceId: "chodick-2020-israel",
     tSourceEstimated: false,
     cumulativeLoss2024: 35.7,
     thresholdYear: 2035,
@@ -133,6 +143,7 @@ export const THRESHOLD_COUNTRIES: CountryThresholdData[] = [
     id: "south-korea",
     nameEn: "South Korea",
     nameFi: "Etelä-Korea",
+    names: { en: "South Korea", fi: "Etelä-Korea", ja: "韓国", fr: "Corée du Sud", ko: "한국" },
     tDeclinePct: 1.5,
     tSource: "Estimated (highest EMF density)",
     tSourceEstimated: true,
@@ -161,6 +172,7 @@ export const THRESHOLD_COUNTRIES: CountryThresholdData[] = [
     id: "japan",
     nameEn: "Japan",
     nameFi: "Japani",
+    names: { en: "Japan", fi: "Japani", ja: "日本", fr: "Japon", ko: "일본" },
     tDeclinePct: 1.2,
     tSource: "Estimated (Finland analogy)",
     tSourceEstimated: true,
@@ -185,7 +197,7 @@ export const THRESHOLD_COUNTRIES: CountryThresholdData[] = [
   },
 ];
 
-export const PHASE_LABELS = {
+export const PHASE_LABELS: Record<string, Record<1 | 2 | 3, { title: string; desc: string }>> = {
   en: {
     1: { title: "Silent Erosion", desc: "T declining but biologically sufficient" },
     2: { title: "Threshold Crossed", desc: "Subfertility rising, TFR accelerating down" },
@@ -196,7 +208,22 @@ export const PHASE_LABELS = {
     2: { title: "Kynnys ylitetty", desc: "Subfertiliteetti kasvaa, TFR kiihtyy" },
     3: { title: "Biologinen rajoite", desc: "TFR < 1,0, biologia dominoi" },
   },
-} as const;
+  ja: {
+    1: { title: "静かな侵食", desc: "T低下中だが生物学的に十分" },
+    2: { title: "閾値突破", desc: "低受胎率上昇、TFR加速低下" },
+    3: { title: "生物学的限界", desc: "TFR < 1.0、生物学が支配" },
+  },
+  fr: {
+    1: { title: "Érosion silencieuse", desc: "T en déclin mais biologiquement suffisant" },
+    2: { title: "Seuil franchi", desc: "Sous-fertilité en hausse, TFR en baisse accélérée" },
+    3: { title: "Limite biologique", desc: "TFR < 1,0, la biologie domine" },
+  },
+  ko: {
+    1: { title: "조용한 침식", desc: "T 감소 중이나 생물학적으로 충분" },
+    2: { title: "임계값 돌파", desc: "저수정률 상승, TFR 가속 하락" },
+    3: { title: "생물학적 한계", desc: "TFR < 1.0, 생물학이 지배" },
+  },
+};
 
 export function computeTIndex(year: number, t0Year: number, rPct: number): number {
   const elapsed = year - t0Year;

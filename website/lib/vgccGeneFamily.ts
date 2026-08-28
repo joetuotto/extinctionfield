@@ -4,9 +4,9 @@ export interface VGCCGene {
   protein: string;
   type: string;
   primaryTissues: string[];
-  diseases: { en: string; fi: string }[];
+  diseases: Record<string, string>[];
   evidenceLevel: string;
-  emfRelevance: { en: string; fi: string };
+  emfRelevance: Record<string, string>;
   keyRefs: string[];
 }
 
@@ -21,26 +21,41 @@ export const VGCC_GENE_FAMILY: VGCCGene[] = [
       {
         en: "5 psychiatric disorders (ASD, ADHD, bipolar, MDD, schizophrenia)",
         fi: "5 psykiatrista häiriötä (ASD, ADHD, bipolaarihäiriö, MDD, skitsofrenia)",
+        ja: "5つの精神疾患（ASD、ADHD、双極性障害、MDD、統合失調症）",
+        fr: "5 troubles psychiatriques (TSA, TDAH, bipolaire, TDM, schizophrénie)",
+        ko: "5개 정신질환 (ASD, ADHD, 양극성 장애, MDD, 조현병)",
       },
       {
         en: "Timothy syndrome (GoF → 80% autism + long QT)",
         fi: "Timothyn oireyhtymä (GoF → 80 % autismi + pitkä QT)",
+        ja: "ティモシー症候群（GoF → 80%自閉症 + QT延長）",
+        fr: "Syndrome de Timothy (GoF → 80 % autisme + QT long)",
+        ko: "티모시 증후군 (GoF → 80% 자폐증 + 긴 QT)",
       },
       {
         en: "Long QT syndrome type 8",
         fi: "Pitkä QT -oireyhtymä tyyppi 8",
+        ja: "QT延長症候群8型",
+        fr: "Syndrome du QT long type 8",
+        ko: "긴 QT 증후군 8형",
       },
       {
         en: "Hypertrophic cardiomyopathy",
         fi: "Hypertrofinen kardiomyopatia",
+        ja: "肥大型心筋症",
+        fr: "Cardiomyopathie hypertrophique",
+        ko: "비대성 심근병증",
       },
     ],
     evidenceLevel: "E",
     emfRelevance: {
       en: "Genetic χ_channel modulator. Risk variants alter EMF sensitivity.",
       fi: "Geneettinen χ_channel-modulaattori. Riskivariantit muuttavat EMF-herkkyyttä.",
+      ja: "遺伝的χ_channelモジュレーター。リスクバリアントがEMF感受性を変化させる。",
+      fr: "Modulateur génétique χ_channel. Les variantes à risque modifient la sensibilité aux EMF.",
+      ko: "유전적 χ_channel 조절자. 위험 변이체가 EMF 감수성을 변화시킨다.",
     },
-    keyRefs: ["pgc-five-disorders", "timothy-autism-80pct"],
+    keyRefs: ["pgc-cacna1c-five-disorders", "timothy-syndrome-cacna1c-autism"],
   },
   {
     id: "cacna1d",
@@ -52,20 +67,32 @@ export const VGCC_GENE_FAMILY: VGCCGene[] = [
       {
         en: "Age-related hearing loss (IL-6 → Cav1.3 ↑ → excitotoxicity)",
         fi: "Ikäkuulo (IL-6 → Cav1.3 ↑ → eksitotoksisuus)",
+        ja: "加齢性難聴（IL-6 → Cav1.3 ↑ → 興奮毒性）",
+        fr: "Perte auditive liée à l'âge (IL-6 → Cav1.3 ↑ → excitotoxicité)",
+        ko: "노인성 난청 (IL-6 → Cav1.3 ↑ → 흥분독성)",
       },
       {
         en: "Tinnitus (chronic Ca²⁺ overload at IHC synapse)",
         fi: "Tinnitus (krooninen Ca²⁺-ylikuorma IHC-synapsissa)",
+        ja: "耳鳴り（IHCシナプスでの慢性Ca²⁺過負荷）",
+        fr: "Acouphènes (surcharge chronique de Ca²⁺ à la synapse CCI)",
+        ko: "이명 (IHC 시냅스에서 만성 Ca²⁺ 과부하)",
       },
       {
         en: "Sinoatrial node dysfunction",
         fi: "Sinussolmun toimintahäiriö",
+        ja: "洞房結節機能障害",
+        fr: "Dysfonction du noeud sinusal",
+        ko: "동방결절 기능장애",
       },
     ],
     evidenceLevel: "E",
     emfRelevance: {
       en: "Earphone/Bluetooth EMF directly adjacent to cochlea.",
       fi: "Kuuloke/Bluetooth-EMF suoraan sisäkorvan vieressä.",
+      ja: "イヤホン/Bluetooth EMFが蝸牛に直接隣接。",
+      fr: "EMF des écouteurs/Bluetooth directement adjacent à la cochlée.",
+      ko: "이어폰/블루투스 EMF가 달팽이관에 직접 인접.",
     },
     keyRefs: ["aging-cell-2024-cav13-hearing"],
   },
@@ -79,26 +106,41 @@ export const VGCC_GENE_FAMILY: VGCCGene[] = [
       {
         en: "Familial hemiplegic migraine type 1 (GoF → CSD)",
         fi: "Familiaalinen hemipleginen migreeni tyyppi 1 (GoF → CSD)",
+        ja: "家族性片麻痺性片頭痛1型（GoF → CSD）",
+        fr: "Migraine hémiplégique familiale type 1 (GoF → DCP)",
+        ko: "가족성 편마비 편두통 1형 (GoF → CSD)",
       },
       {
         en: "Episodic ataxia type 2 (LoF)",
         fi: "Episodinen ataksia tyyppi 2 (LoF)",
+        ja: "発作性運動失調2型（LoF）",
+        fr: "Ataxie épisodique type 2 (LoF)",
+        ko: "발작성 운동실조 2형 (LoF)",
       },
       {
         en: "Spinocerebellar ataxia type 6",
         fi: "Spinoserebellaarinen ataksia tyyppi 6",
+        ja: "脊髄小脳失調6型",
+        fr: "Ataxie spinocérébelleuse type 6",
+        ko: "척수소뇌 실조 6형",
       },
       {
         en: "Childhood epilepsy",
         fi: "Lapsuusiän epilepsia",
+        ja: "小児てんかん",
+        fr: "Épilepsie infantile",
+        ko: "소아 간질",
       },
     ],
     evidenceLevel: "E",
     emfRelevance: {
       en: "GoF → increased glutamate release → cortical spreading depression.",
       fi: "GoF → lisääntynyt glutamaatin vapautuminen → kortikaalinen leviävä depressio.",
+      ja: "GoF → グルタミン酸放出増加 → 皮質拡延性抑制。",
+      fr: "GoF → libération accrue de glutamate → dépression corticale envahissante.",
+      ko: "GoF → 글루타메이트 방출 증가 → 피질 확산 억제.",
     },
-    keyRefs: ["nejm-fhm-cacna1a", "cacna1a-epilepsy"],
+    keyRefs: ["nejm-fhm-cacna1a", "pmc4643966_cacna1a_asd"],
   },
   {
     id: "cacna1g",
@@ -110,16 +152,25 @@ export const VGCC_GENE_FAMILY: VGCCGene[] = [
       {
         en: "Sleep instability (Cav3.1 KO → delta waves ↓, awakenings ↑)",
         fi: "Unihäiriö (Cav3.1 KO → delta-aallot ↓, heräämiset ↑)",
+        ja: "睡眠不安定（Cav3.1 KO → デルタ波 ↓、覚醒 ↑）",
+        fr: "Instabilité du sommeil (Cav3.1 KO → ondes delta ↓, éveils ↑)",
+        ko: "수면 불안정 (Cav3.1 KO → 델타파 ↓, 각성 ↑)",
       },
       {
         en: "Autism (2 SNPs: rs757415, rs12603112)",
         fi: "Autismi (2 SNP:tä: rs757415, rs12603112)",
+        ja: "自閉症（2 SNP: rs757415, rs12603112）",
+        fr: "Autisme (2 SNP : rs757415, rs12603112)",
+        ko: "자폐증 (2 SNP: rs757415, rs12603112)",
       },
     ],
     evidenceLevel: "E",
     emfRelevance: {
       en: "Delta waves and sleep stability. T-type bifurcation target.",
       fi: "Delta-aallot ja unen vakaus. T-tyypin bifurkaatiokohde.",
+      ja: "デルタ波と睡眠安定性。T型分岐標的。",
+      fr: "Ondes delta et stabilité du sommeil. Cible de bifurcation de type T.",
+      ko: "델타파와 수면 안정성. T형 분기 표적.",
     },
     keyRefs: ["pnas-2005-cav31-sleep", "cacna1g-asd-snps"],
   },
@@ -139,33 +190,51 @@ export const VGCC_GENE_FAMILY: VGCCGene[] = [
       {
         en: "Chronic pain (upregulated in inflammatory/neuropathic models)",
         fi: "Krooninen kipu (ylireguloitu tulehdus-/neuropaattisissa malleissa)",
+        ja: "慢性疼痛（炎症性/神経障害性モデルで上方制御）",
+        fr: "Douleur chronique (surexprimée dans les modèles inflammatoires/neuropathiques)",
+        ko: "만성 통증 (염증성/신경병증 모델에서 상향 조절)",
       },
       {
         en: "Male infertility (StAR → testosterone pathway)",
         fi: "Miehen hedelmättömyys (StAR → testosteronireitti)",
+        ja: "男性不妊（StAR → テストステロン経路）",
+        fr: "Infertilité masculine (StAR → voie de la testostérone)",
+        ko: "남성 불임 (StAR → 테스토스테론 경로)",
       },
       {
         en: "Hypertension (aldosterone pathway)",
         fi: "Hypertensio (aldosteronireitti)",
+        ja: "高血圧（アルドステロン経路）",
+        fr: "Hypertension (voie de l'aldostérone)",
+        ko: "고혈압 (알도스테론 경로)",
       },
       {
         en: "Alzheimer's disease (hippocampal Ca²⁺ → amyloid cascade)",
         fi: "Alzheimerin tauti (hippokampaalinen Ca²⁺ → amyloidikaskadi)",
+        ja: "アルツハイマー病（海馬Ca²⁺ → アミロイドカスケード）",
+        fr: "Maladie d'Alzheimer (Ca²⁺ hippocampique → cascade amyloïde)",
+        ko: "알츠하이머병 (해마 Ca²⁺ → 아밀로이드 연쇄)",
       },
       {
         en: "HCC — TheraBionic TREATMENT target (FDA-approved)",
         fi: "HCC — TheraBionic-HOITOKOHDE (FDA-hyväksytty)",
+        ja: "HCC — TheraBionic治療標的（FDA承認）",
+        fr: "CHC — Cible de TRAITEMENT TheraBionic (approuvé FDA)",
+        ko: "HCC — TheraBionic 치료 표적 (FDA 승인)",
       },
     ],
     evidenceLevel: "E",
     emfRelevance: {
       en: "PRIMARY EMF TRANSDUCER. Bifurcation at resting potential. TheraBionic FDA approval CONFIRMS non-thermal EMF → Cav3.2 → Ca²⁺ at SAR 100–1000× below mobile phone levels.",
       fi: "PRIMAARINEN EMF-TRANSDUKTORI. Bifurkaatio lepopotentiaalissa. TheraBionic FDA-hyväksyntä VAHVISTAA ei-termisen EMF → Cav3.2 → Ca²⁺ SAR-tasoilla 100–1000× alle matkapuhelimen.",
+      ja: "一次EMFトランスデューサー。静止電位での分岐。TheraBionic FDA承認が非熱的EMF → Cav3.2 → Ca²⁺をSAR 100〜1000倍携帯電話レベル以下で確認。",
+      fr: "TRANSDUCTEUR EMF PRIMAIRE. Bifurcation au potentiel de repos. L'approbation FDA de TheraBionic CONFIRME EMF non thermique → Cav3.2 → Ca²⁺ à un DAS 100–1000× inférieur aux niveaux des téléphones portables.",
+      ko: "1차 EMF 변환기. 휴지 전위에서의 분기. TheraBionic FDA 승인이 비열적 EMF → Cav3.2 → Ca²⁺를 SAR 100-1000배 휴대전화 수준 이하에서 확인.",
     },
     keyRefs: [
       "therabionic-ebioMedicine-2019",
       "fda-hde-h220001",
-      "xiang-2025-leydig",
+      "xiang2025_clc2_ttype",
       "cav32-chronic-pain-2021",
     ],
   },
@@ -179,20 +248,32 @@ export const VGCC_GENE_FAMILY: VGCCGene[] = [
       {
         en: "Sleep spindle loss (Cav3.3 KO → no spindles in nRt)",
         fi: "Unisukkuloiden menetys (Cav3.3 KO → ei sukkuloita nRt:ssä)",
+        ja: "睡眠紡錘波消失（Cav3.3 KO → nRtで紡錘波なし）",
+        fr: "Perte de fuseaux du sommeil (Cav3.3 KO → pas de fuseaux dans le nRt)",
+        ko: "수면 방추파 소실 (Cav3.3 KO → nRt에서 방추파 없음)",
       },
       {
         en: "Hemiplegic migraine (OR 2.30, P=0.00005)",
         fi: "Hemipleginen migreeni (OR 2.30, P=0.00005)",
+        ja: "片麻痺性片頭痛（OR 2.30, P=0.00005）",
+        fr: "Migraine hémiplégique (OR 2,30, P=0,00005)",
+        ko: "편마비 편두통 (OR 2.30, P=0.00005)",
       },
       {
         en: "Schizophrenia (spindle density reduced)",
         fi: "Skitsofrenia (sukkulatiheys alentunut)",
+        ja: "統合失調症（紡錘波密度低下）",
+        fr: "Schizophrénie (densité des fuseaux réduite)",
+        ko: "조현병 (방추파 밀도 감소)",
       },
     ],
     evidenceLevel: "E",
     emfRelevance: {
       en: "Sleep spindle pacemaker. EMF perturbation → sleep quality ↓.",
       fi: "Unisukkuloiden tahdistin. EMF-perturbaatio → unenlaatu ↓.",
+      ja: "睡眠紡錘波ペースメーカー。EMF摂動 → 睡眠の質 ↓。",
+      fr: "Pacemaker des fuseaux du sommeil. Perturbation EMF → qualité du sommeil ↓.",
+      ko: "수면 방추파 페이스메이커. EMF 섭동 → 수면의 질 ↓.",
     },
     keyRefs: ["pnas-2011-cav33-spindles", "cacna1i-migraine-2022"],
   },

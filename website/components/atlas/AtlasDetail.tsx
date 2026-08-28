@@ -5,6 +5,9 @@ import { X, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import type { CausalMapNode, EpistemicLevel, Locale } from "@/lib/causalAtlasData";
 import { EVIDENCE_COLORS, EVIDENCE_LABELS, LEVEL_TO_STAGE, STAGE_BANDS, ECOLOGY_BAND, t, localizedDetail } from "@/lib/causalAtlasData";
+import { pickCopy } from "@/lib/i18n";
+import { StudyCitation } from "@/components/StudyCitation";
+import { InlineReferenceText } from "@/components/InlineReferenceText";
 
 interface Props {
   node: CausalMapNode;
@@ -14,12 +17,12 @@ interface Props {
 }
 
 const SECTION_LABELS: Record<string, Record<string, string>> = {
-  mechanism: { en: "Mechanism", fi: "Mekanismi" },
-  fdaDevice: { en: "FDA Device", fi: "FDA-laite" },
-  bermPathway: { en: "BERM Pathway", fi: "BERM-polku" },
-  prediction: { en: "Prediction", fi: "Ennuste" },
-  keyRefs: { en: "Key References", fi: "Avainviitteet" },
-  readMore: { en: "Read more", fi: "Lue lisää" },
+  mechanism: { en: "Mechanism", fi: "Mekanismi", ja: "メカニズム", fr: "Mécanisme", ko: "메커니즘" },
+  fdaDevice: { en: "FDA Device", fi: "FDA-laite", ja: "FDAデバイス", fr: "Dispositif FDA", ko: "FDA 기기" },
+  bermPathway: { en: "BERM Pathway", fi: "BERM-polku", ja: "BERMパスウェイ", fr: "Voie BERM", ko: "BERM 경로" },
+  prediction: { en: "Prediction", fi: "Ennuste", ja: "予測", fr: "Prédiction", ko: "예측" },
+  keyRefs: { en: "Key References", fi: "Avainviitteet", ja: "主要参考文献", fr: "Références clés", ko: "주요 참고문헌" },
+  readMore: { en: "Read more", fi: "Lue lisää", ja: "続きを読む", fr: "Lire la suite", ko: "더 읽기" },
 };
 
 function stageLabel(level: number, lang: Locale): string {
@@ -100,34 +103,42 @@ export function AtlasDetail({ node, locale, onClose, originRef }: Props) {
         </div>
 
         {d?.mechanism && (
-          <Section title={SECTION_LABELS.mechanism[lang]}>
-            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed">{d.mechanism}</p>
+          <Section title={pickCopy(SECTION_LABELS.mechanism, locale)}>
+            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed">
+              <InlineReferenceText text={d.mechanism} locale={lang} />
+            </p>
           </Section>
         )}
 
         {d?.fdaDevice && (
-          <Section title={SECTION_LABELS.fdaDevice[lang]}>
-            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed">{d.fdaDevice}</p>
+          <Section title={pickCopy(SECTION_LABELS.fdaDevice, locale)}>
+            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed">
+              <InlineReferenceText text={d.fdaDevice} locale={lang} />
+            </p>
           </Section>
         )}
 
         {node.detail?.bermPathway && (
-          <Section title={SECTION_LABELS.bermPathway[lang]}>
+          <Section title={pickCopy(SECTION_LABELS.bermPathway, locale)}>
             <p className="text-xs text-[var(--atlas-text-dim)] font-mono">{node.detail.bermPathway}</p>
           </Section>
         )}
 
         {d?.prediction && (
-          <Section title={SECTION_LABELS.prediction[lang]}>
-            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed">{d.prediction}</p>
+          <Section title={pickCopy(SECTION_LABELS.prediction, locale)}>
+            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed">
+              <InlineReferenceText text={d.prediction} locale={lang} />
+            </p>
           </Section>
         )}
 
         {node.detail?.keyRefs && node.detail.keyRefs.length > 0 && (
-          <Section title={SECTION_LABELS.keyRefs[lang]}>
+          <Section title={pickCopy(SECTION_LABELS.keyRefs, locale)}>
             <ul className="space-y-0.5">
               {node.detail.keyRefs.map((ref) => (
-                <li key={ref} className="text-xs text-[var(--atlas-text-dim)] font-mono">{ref}</li>
+                <li key={ref} className="text-xs text-[var(--atlas-text-dim)]">
+                  <StudyCitation referenceId={ref} locale={lang} />
+                </li>
               ))}
             </ul>
           </Section>
@@ -138,7 +149,7 @@ export function AtlasDetail({ node, locale, onClose, originRef }: Props) {
             href={`/${lang}${node.detail.link}`}
             className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors mt-2 min-h-[44px]"
           >
-            {SECTION_LABELS.readMore[lang]}
+            {pickCopy(SECTION_LABELS.readMore, locale)}
             <ExternalLink size={12} />
           </Link>
         )}

@@ -1,5 +1,7 @@
 "use client";
 
+import { pickCopy } from "@/lib/i18n";
+
 const COPY = {
   en: {
     title: "Seven Causal Channels",
@@ -33,7 +35,52 @@ const COPY = {
       { name: "Insulaarinen korteksi", effect: "Kehorepresentaatio" },
     ],
   },
-} as const;
+  ja: {
+    title: "7つの因果チャネル",
+    subtitle: "神経発達に収束する7つのVGCC依存性経路",
+    source: ["EMF → VGCC", "Ca²⁺攪乱"],
+    target: ["神経発達", "アウトカム"],
+    channels: [
+      { name: "胎児 Leydig Cav3 → StAR → T↓", effect: "テストステロン" },
+      { name: "脳アロマターゼ CYP19", effect: "脳 T/E₂比" },
+      { name: "下垂体ゴナドトロフ Cav3", effect: "FSH/LH拍動性" },
+      { name: "OT/AVP系", effect: "社会的認知" },
+      { name: "PFC Cav1.2 + Cav3", effect: "実行機能" },
+      { name: "メラトニン → 思春期", effect: "思春期の時期" },
+      { name: "島皮質", effect: "身体表象" },
+    ],
+  },
+  fr: {
+    title: "Sept canaux causaux",
+    subtitle: "Sept voies dépendantes des VGCC convergeant sur le neurodéveloppement",
+    source: ["EMF → VGCC", "Perturbation Ca²⁺"],
+    target: ["Issues", "neurodéveloppementales"],
+    channels: [
+      { name: "Leydig fœtal Cav3 → StAR → T↓", effect: "Testostérone" },
+      { name: "Aromatase cérébrale CYP19", effect: "Ratio T/E₂ cérébral" },
+      { name: "Gonadotrope hypophysaire Cav3", effect: "Pulsatilité FSH/LH" },
+      { name: "Système OT/AVP", effect: "Cognition sociale" },
+      { name: "PFC Cav1.2 + Cav3", effect: "Fonction exécutive" },
+      { name: "Mélatonine → puberté", effect: "Chronologie pubertaire" },
+      { name: "Cortex insulaire", effect: "Représentation corporelle" },
+    ],
+  },
+  ko: {
+    title: "7개 인과 채널",
+    subtitle: "신경발달에 수렴하는 7개의 VGCC 의존성 경로",
+    source: ["EMF → VGCC", "Ca²⁺ 교란"],
+    target: ["신경발달", "결과"],
+    channels: [
+      { name: "태아 Leydig Cav3 → StAR → T↓", effect: "테스토스테론" },
+      { name: "뇌 아로마타제 CYP19", effect: "뇌 T/E₂ 비율" },
+      { name: "뇌하수체 생식선자극세포 Cav3", effect: "FSH/LH 박동성" },
+      { name: "OT/AVP 시스템", effect: "사회적 인지" },
+      { name: "PFC Cav1.2 + Cav3", effect: "실행 기능" },
+      { name: "멜라토닌 → 사춘기", effect: "사춘기 시기" },
+      { name: "뇌섬엽 피질", effect: "신체 표상" },
+    ],
+  },
+};
 
 const COLORS = [
   "#EF4444", // 1 red
@@ -73,7 +120,7 @@ const FAN_OUT_MID = (SRC_RIGHT + CH_X) / 2;
 const FAN_IN_MID = (CH_RIGHT + TGT_X) / 2;
 
 export function SevenChannelDiagram({ locale }: { locale: string }) {
-  const d = locale === "fi" ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
 
   return (
     <div className="mt-8">

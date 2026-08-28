@@ -7,6 +7,7 @@
 
 import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
+import { pickCopy } from "@/lib/i18n";
 
 type Level = EpistemicLevel;
 
@@ -23,7 +24,7 @@ interface NodeDef {
 
 // Node widths are sized for the 14px label type: 26px left inset for the
 // epistemic dot, ~7px per character, 10px trailing padding.
-const NODES: Record<"en" | "fi", NodeDef[]> = {
+const NODES: Record<string, NodeDef[]> = {
   en: [
     { id: "field", label: "FieldState", x: 20, y: 110, level: "L*", w: 120 },
     { id: "transfer", label: "Local transfer", x: 170, y: 110, level: "L*", w: 140 },
@@ -48,9 +49,45 @@ const NODES: Record<"en" | "fi", NodeDef[]> = {
     { id: "asfr", label: "ASFR", x: 1360, y: 110, level: "E", w: 80 },
     { id: "tfr", label: "TFR", x: 1470, y: 110, level: "E", w: 80 },
   ],
+  ja: [
+    { id: "field", label: "FieldState", x: 20, y: 110, level: "L*", w: 120 },
+    { id: "transfer", label: "局所移行", x: 170, y: 110, level: "L*", w: 120 },
+    { id: "intermediate", label: "CRY · メラトニン · Ca²⁺/ROS · Vmem", x: 320, y: 110, level: "M", w: 285 },
+    { id: "organ", label: "臓器状態 · BTB", x: 635, y: 110, level: "M", w: 155 },
+    { id: "male", label: "BTB + 精子状態", x: 820, y: 20, level: "M", w: 155 },
+    { id: "female", label: "卵巣 + 卵母細胞状態", x: 820, y: 200, level: "M", w: 190 },
+    { id: "couple", label: "カップル能力", x: 1040, y: 110, level: "M", w: 140 },
+    { id: "context", label: "需要 · テンポ · ART", x: 1025, y: 220, level: "E", w: 180 },
+    { id: "asfr", label: "ASFR", x: 1235, y: 110, level: "E", w: 80 },
+    { id: "tfr", label: "TFR", x: 1345, y: 110, level: "E", w: 80 },
+  ],
+  fr: [
+    { id: "field", label: "FieldState", x: 20, y: 110, level: "L*", w: 120 },
+    { id: "transfer", label: "Transfert local", x: 170, y: 110, level: "L*", w: 140 },
+    { id: "intermediate", label: "CRY · mélatonine · Ca²⁺/ROS · Vmem", x: 340, y: 110, level: "M", w: 285 },
+    { id: "organ", label: "États d'organes · BTB", x: 655, y: 110, level: "M", w: 185 },
+    { id: "male", label: "BTB + état spermatique", x: 870, y: 20, level: "M", w: 185 },
+    { id: "female", label: "Ovaire + état ovocytaire", x: 870, y: 200, level: "M", w: 200 },
+    { id: "couple", label: "Capacité du couple", x: 1100, y: 110, level: "M", w: 165 },
+    { id: "context", label: "Demande · tempo · ART", x: 1085, y: 220, level: "E", w: 190 },
+    { id: "asfr", label: "ASFR", x: 1305, y: 110, level: "E", w: 80 },
+    { id: "tfr", label: "TFR", x: 1415, y: 110, level: "E", w: 80 },
+  ],
+  ko: [
+    { id: "field", label: "FieldState", x: 20, y: 110, level: "L*", w: 120 },
+    { id: "transfer", label: "국소 전달", x: 170, y: 110, level: "L*", w: 125 },
+    { id: "intermediate", label: "CRY · 멜라토닌 · Ca²⁺/ROS · Vmem", x: 325, y: 110, level: "M", w: 280 },
+    { id: "organ", label: "장기 상태 · BTB", x: 635, y: 110, level: "M", w: 160 },
+    { id: "male", label: "BTB + 정자 상태", x: 825, y: 20, level: "M", w: 155 },
+    { id: "female", label: "난소 + 난모세포 상태", x: 825, y: 200, level: "M", w: 185 },
+    { id: "couple", label: "커플 능력", x: 1040, y: 110, level: "M", w: 130 },
+    { id: "context", label: "수요 · 템포 · ART", x: 1025, y: 220, level: "E", w: 170 },
+    { id: "asfr", label: "ASFR", x: 1225, y: 110, level: "E", w: 80 },
+    { id: "tfr", label: "TFR", x: 1335, y: 110, level: "E", w: 80 },
+  ],
 };
 
-const VIEWBOX_W: Record<"en" | "fi", number> = { en: 1460, fi: 1580 };
+const VIEWBOX_W: Record<string, number> = { en: 1460, fi: 1580, ja: 1460, fr: 1530, ko: 1450 };
 
 // ── Edge definitions ──
 
@@ -87,18 +124,43 @@ function cy(n: NodeDef) {
   return n.y + NODE_H / 2;
 }
 
-export default function CausalChain({ locale = "en" }: { locale?: "en" | "fi" }) {
-  const nodes = NODES[locale];
-  const legend = locale === "fi"
-    ? [["L*", "Teoria / kenttäallekirjoitus"], ["M", "Mekanistinen välitila"], ["E", "Havaittu päätepiste"]] as [Level, string][]
-    : [["L*", "Theory / field signature"], ["M", "Mechanistic intermediate"], ["E", "Observed endpoint"]] as [Level, string][];
+const CAUSAL_COPY: Record<string, {
+  ariaLabel: string;
+  legend: [Level, string][];
+}> = {
+  en: {
+    ariaLabel: "BERM v17 causal route",
+    legend: [["L*", "Theory / field signature"], ["M", "Mechanistic intermediate"], ["E", "Observed endpoint"]],
+  },
+  fi: {
+    ariaLabel: "BERM v17-kausaalireitti",
+    legend: [["L*", "Teoria / kenttäallekirjoitus"], ["M", "Mekanistinen välitila"], ["E", "Havaittu päätepiste"]],
+  },
+  ja: {
+    ariaLabel: "BERM v17 因果経路",
+    legend: [["L*", "理論 / 場のシグネチャ"], ["M", "メカニズム的中間体"], ["E", "観察されたエンドポイント"]],
+  },
+  fr: {
+    ariaLabel: "Route causale BERM v17",
+    legend: [["L*", "Théorie / signature de champ"], ["M", "Intermédiaire mécanistique"], ["E", "Point final observé"]],
+  },
+  ko: {
+    ariaLabel: "BERM v17 인과 경로",
+    legend: [["L*", "이론 / 장 서명"], ["M", "메커니즘적 중간체"], ["E", "관찰된 종점"]],
+  },
+};
+
+export default function CausalChain({ locale = "en" }: { locale?: string }) {
+  const nodes = pickCopy(NODES, locale);
+  const d = pickCopy(CAUSAL_COPY, locale);
+  const legend = d.legend;
 
   return (
     <svg
-      viewBox={`0 0 ${VIEWBOX_W[locale]} 330`}
+      viewBox={`0 0 ${pickCopy(VIEWBOX_W, locale)} 330`}
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label={locale === "fi" ? "BERM v17-kausaalireitti" : "BERM v17 causal route"}
+      aria-label={d.ariaLabel}
       style={{
         width: "100%",
         // Below this the parent's overflow-x-auto scrolls, rather than

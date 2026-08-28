@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import series from "@/lib/sentinelCascadeSeries.json";
 
@@ -129,7 +130,7 @@ function Figure({ compact, fi, lag, bee, alignedTfr }: FigureProps) {
   return (
       <svg
         viewBox={`0 0 ${W} ${H}`}
-        className="w-full"
+        className="chart-svg w-full"
         role="img"
         aria-label={
           fi
@@ -148,15 +149,11 @@ function Figure({ compact, fi, lag, bee, alignedTfr }: FigureProps) {
             return (
               <g key={layer.id}>
                 <title>{`${fi ? layer.nameFi : layer.nameEn}: ${layer.detail}`}</title>
-                <text
-                  x={pad.left + 2}
-                  y={beeTop - 2}
+                <path
+                  d={`M ${pad.left + 2} ${beeTop + 6} L ${pad.left + 10} ${beeTop + 2} L ${pad.left + 10} ${beeTop + 10} Z`}
                   fill={layer.color}
-                  fontSize={compact ? 7 : 6.5}
-                  opacity={0.55}
-                >
-                  {`← ${fi ? layer.nameFi : layer.nameEn} (${layer.startYear}–${layer.endYear ?? ""})`}
-                </text>
+                  opacity={0.75}
+                />
               </g>
             );
           }
@@ -186,16 +183,6 @@ function Figure({ compact, fi, lag, bee, alignedTfr }: FigureProps) {
                   opacity={0.35}
                 />
               )}
-              <text
-                x={Math.max(x1 + 3, pad.left + 2)}
-                y={tfrTop + bandH + 42}
-                fill={layer.color}
-                fontSize={compact ? 7 : 7}
-                opacity={0.6}
-                dominantBaseline="hanging"
-              >
-                {fi ? layer.nameFi : layer.nameEn}
-              </text>
             </g>
           );
         })}
@@ -304,7 +291,7 @@ function Figure({ compact, fi, lag, bee, alignedTfr }: FigureProps) {
   );
 }
 
-export function SentinelCascadeTimeline({ locale = "en" }: { locale?: "fi" | "en" }) {
+export function SentinelCascadeTimeline({ locale = "en" }: { locale?: string }) {
   const fi = locale === "fi";
   const [lag, setLag] = useState(series.published.optimalLagYears);
   const [country, setCountry] = useState("__pooled");
@@ -343,17 +330,32 @@ export function SentinelCascadeTimeline({ locale = "en" }: { locale?: "fi" | "en
   const publishedLag = lag === series.published.optimalLagYears;
 
   return (
-    <div className="rounded-xl border border-card-border bg-card-bg p-5 sm:p-6">
-      <div className="mb-4 flex flex-wrap items-baseline justify-between gap-3">
-        <div>
-          <h3 className="text-lg font-semibold">
-            {fi ? "Mehiläishäviö edeltää TFR-laskua" : "Bee loss leads TFR decline"}
-          </h3>
-          <p className="mt-1 text-sm text-foreground-muted">
-            {fi
-              ? "Vuosimuutokset 23 maan COLOSS-paneelissa. Siirrä viivettä ja katso milloin sarjat asettuvat kohdakkain."
-              : "Annual changes across the 23-country COLOSS panel. Move the lag and watch the series line up."}
-          </p>
+    <div className="chart-surface">
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+        <div className="flex min-w-0 items-start gap-3">
+          <div
+            aria-hidden="true"
+            className="species-silhouette relative mt-0.5 h-14 w-14 shrink-0 overflow-hidden sm:h-16 sm:w-16"
+          >
+            <Image
+              src="/icons/silhouettes/berm-honeybee-silhouette.png"
+              alt=""
+              width={1254}
+              height={1254}
+              sizes="(max-width: 639px) 56px, 64px"
+              className="h-full w-full object-contain"
+            />
+          </div>
+          <div className="min-w-0">
+            <h3 className="text-lg font-semibold">
+              {fi ? "Mehiläishäviö edeltää TFR-laskua" : "Bee loss leads TFR decline"}
+            </h3>
+            <p className="mt-1 text-sm text-foreground-muted">
+              {fi
+                ? "Vuosimuutokset 23 maan COLOSS-paneelissa. Siirrä viivettä ja katso milloin sarjat asettuvat kohdakkain."
+                : "Annual changes across the 23-country COLOSS panel. Move the lag and watch the series line up."}
+            </p>
+          </div>
         </div>
         <label className="text-xs text-foreground-muted">
           <span className="sr-only">{fi ? "Valitse maa" : "Select country"}</span>
@@ -378,6 +380,17 @@ export function SentinelCascadeTimeline({ locale = "en" }: { locale?: "fi" | "en
       <div className="hidden sm:block">
         <Figure compact={false} fi={fi} lag={lag} bee={bee} alignedTfr={alignedTfr} />
       </div>
+
+      <ul className="chart-legend mt-2" aria-label={fi ? "Teknologiakerrokset" : "Technology layers"}>
+        {TECH_LAYERS.map((layer) => (
+          <li key={layer.id} className="chart-key" title={layer.detail}>
+            <span className="chart-key__swatch" style={{ backgroundColor: layer.color, color: layer.color }} />
+            <span>
+              {fi ? layer.nameFi : layer.nameEn} · {layer.startYear}–{layer.endYear ?? (fi ? "jatkuu" : "ongoing")}
+            </span>
+          </li>
+        ))}
+      </ul>
 
       {/* lag control and the lag profile it moves through */}
       <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Layers } from "lucide-react";
+import { pickCopy } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
 import { LayerStack } from "@/components/modulome/LayerStack";
 import { ModulomeLayers } from "@/components/ModulomeLayers";
@@ -112,6 +113,159 @@ const COPY = {
     modelPage: "BERM-malli",
     evidencePage: "Evidenssirekisteri",
   },
+  ja: {
+    title: "EMFモジュローム",
+    subtitle:
+      "人体全体にわたる電磁感受性の体系的マッピング",
+    /* Section 1: Hero */
+    heroHeading: "電磁システムとしての人体",
+    heroBody:
+      "すべての細胞は電圧を維持し、すべてのミトコンドリアはΔΨmを維持し、すべてのバリアは勾配を守り、すべての腺はCa²⁺依存性エキソサイトーシスを介して分泌し、すべての心拍はVGCCによって調律される。EMFモジュロームはこれをマッピングする：12層、10の標的臓器、4つの独立経路。",
+    /* Section 2: Terminology */
+    termHeading: "EMFモジュロームとは？",
+    termBody:
+      "EMFモジュロームは、ゲノムが遺伝情報をマッピングし、プロテオームがタンパク質発現をマッピングするのと同様に、人体全体にわたる電磁感受性のBERMによる体系的マッピングである。",
+    /* Section 3: Twelve Layers */
+    layersHeading: "12の層",
+    layersSubtitle:
+      "分子スピン物理学から集団レベルのパターンまで — 各層はχを変調する",
+    /* Section 4: Routes */
+    routesHeading: "4つの独立経路",
+    routesMechanism: "メカニズム",
+    routesBlocked: "阻害因子",
+    routesOrgans: "臓器リンク",
+    /* Section 5: Organs */
+    organsHeading: "12の標的臓器",
+    organCav3: "Cav3サブタイプ",
+    organLevel: "レベル",
+    organView: "臓器プロファイルを表示",
+    organComingSoon: "近日公開",
+    /* Section 6: Population */
+    popHeading: "集団χプロファイル",
+    popBody:
+      "各集団は、遺伝的変異（OCA2、LCT、CACNA1C）、食事パターン（乳製品・魚由来のB2、ω-3）、環境曝露（電化の歴史、緯度、都市化）の組み合わせによって決定されるχ空間内の固有の位置を占める。これらのプロファイルはEMF効果に対する差異的感受性を予測し、54カ国の出生率データセットに対して検証可能である。",
+    popLink: "進化と集団データを探る",
+    /* Section 7: Predictions */
+    predHeading: "検証可能な予測",
+    predIntro:
+      "モジュロームは特定の反証可能な予測を生成する。7つの代表的なMODレベル予測：",
+    predictions: [
+      "MOD-001: T型Ca²⁺チャネル遮断薬（エトスクシミド）は、ライディッヒ細胞におけるRF-EMFのテストステロンへの影響を減弱させる。",
+      "MOD-002: 乳製品消費量が多い集団（B2源）は、出生率低下がより緩やかである。",
+      "MOD-003: 慢性EMF曝露において、HRVの低下は測定可能なホルモン変化に先行する。",
+      "MOD-004: 青い目の個人（CRY感受性が高い）は、夕方のスクリーン使用による概日リズム障害がより強い。",
+      "MOD-005: 下垂体ゴナドトロフのLHパルス頻度は、特定のEMF周波数によって直接変調可能である。",
+      "MOD-006: ミトコンドリア年齢（ΔΨmで測定）は、同一細胞型内でEMF感受性と相関する。",
+      "MOD-007: EMF誘発性の精子DNAメチル化変化は、職業的に曝露された男性で検出可能であり、VGCC関連遺伝子座（CACNA1C、CACNA1G）を含む。プレプリントサポート：Research Square 2025（レーダー曝露男性）。",
+    ],
+    predLink: "完全な予測レジスター",
+    /* Navigation */
+    seeAlso: "関連項目",
+    modelPage: "BERMモデル",
+    evidencePage: "エビデンスレジスター",
+  },
+  fr: {
+    title: "Modulome EMF",
+    subtitle:
+      "Cartographie systématique de la susceptibilité électromagnétique dans le corps humain",
+    /* Section 1: Hero */
+    heroHeading: "LE CORPS HUMAIN COMME SYSTÈME ÉLECTROMAGNÉTIQUE",
+    heroBody:
+      "Chaque cellule maintient une tension, chaque mitochondrie soutient ΔΨm, chaque barrière protège un gradient, chaque glande sécrète par exocytose Ca²⁺-dépendante, chaque battement cardiaque est cadencé par les VGCC. Le Modulome EMF cartographie ceci : 12 couches, 10 organes cibles, 4 voies indépendantes.",
+    /* Section 2: Terminology */
+    termHeading: "Qu'est-ce que le Modulome EMF ?",
+    termBody:
+      "Le Modulome EMF est la cartographie systématique par BERM de la susceptibilité électromagnétique dans le corps humain, analogue à la façon dont le génome cartographie l'information génétique et le protéome cartographie l'expression protéique.",
+    /* Section 3: Twelve Layers */
+    layersHeading: "Douze couches",
+    layersSubtitle:
+      "De la physique du spin moléculaire aux tendances au niveau populationnel — chaque couche module χ",
+    /* Section 4: Routes */
+    routesHeading: "Quatre voies indépendantes",
+    routesMechanism: "Mécanisme",
+    routesBlocked: "Bloqué par",
+    routesOrgans: "Liens d'organes",
+    /* Section 5: Organs */
+    organsHeading: "Douze organes cibles",
+    organCav3: "Sous-type Cav3",
+    organLevel: "Niveau",
+    organView: "Voir le profil d'organe",
+    organComingSoon: "Bientôt disponible",
+    /* Section 6: Population */
+    popHeading: "Profils χ de population",
+    popBody:
+      "Chaque population occupe une position unique dans l'espace χ, déterminée par sa combinaison de variantes génétiques (OCA2, LCT, CACNA1C), de schémas alimentaires (B2, ω-3 provenant des produits laitiers/du poisson) et d'exposition environnementale (historique d'électrification, latitude, urbanisation). Ces profils prédisent une susceptibilité différentielle aux effets des EMF et sont testables par rapport au jeu de données de fécondité de 54 pays.",
+    popLink: "Explorer les données d'évolution et de population",
+    /* Section 7: Predictions */
+    predHeading: "Prédictions testables",
+    predIntro:
+      "Le Modulome génère des prédictions spécifiques et falsifiables. Sept prédictions représentatives de niveau MOD :",
+    predictions: [
+      "MOD-001 : Les bloqueurs des canaux Ca²⁺ de type T (éthosuximide) atténueront les effets du RF-EMF sur la testostérone dans les cellules de Leydig.",
+      "MOD-002 : Les populations ayant une consommation laitière plus élevée (source de B2) montreront des taux de déclin de la fécondité plus lents.",
+      "MOD-003 : La réduction de la VFC précédera les changements hormonaux mesurables lors d'une exposition chronique aux EMF.",
+      "MOD-004 : Les individus aux yeux bleus (sensibilité CRY plus élevée) montreront une perturbation circadienne plus forte liée à l'utilisation d'écrans en soirée.",
+      "MOD-005 : La fréquence des impulsions de LH des gonadotrophes hypophysaires sera directement modulable par des fréquences EMF spécifiques.",
+      "MOD-006 : L'âge mitochondrial (mesuré par ΔΨm) corrélera avec la susceptibilité aux EMF au sein du même type cellulaire.",
+      "MOD-007 : Les changements de méthylation de l'ADN spermatique induits par les EMF sont détectables chez les hommes exposés professionnellement et incluent des loci géniques liés aux VGCC (CACNA1C, CACNA1G). Soutien de preprint : Research Square 2025 (hommes exposés au radar).",
+    ],
+    predLink: "Registre complet des prédictions",
+    /* Navigation */
+    seeAlso: "Voir aussi",
+    modelPage: "Modèle BERM",
+    evidencePage: "Registre des preuves",
+  },
+  ko: {
+    title: "EMF 모듈롬",
+    subtitle:
+      "인체 전반에 걸친 전자기 감수성의 체계적 매핑",
+    /* Section 1: Hero */
+    heroHeading: "전자기 시스템으로서의 인체",
+    heroBody:
+      "모든 세포는 전압을 유지하고, 모든 미토콘드리아는 ΔΨm을 유지하며, 모든 장벽은 기울기를 보호하고, 모든 분비선은 Ca²⁺ 의존성 세포외배출을 통해 분비하며, 모든 심박은 VGCC에 의해 조율된다. EMF 모듈롬은 이를 매핑한다: 12개 층, 10개 표적 기관, 4개 독립 경로.",
+    /* Section 2: Terminology */
+    termHeading: "EMF 모듈롬이란?",
+    termBody:
+      "EMF 모듈롬은 게놈이 유전 정보를, 프로테옴이 단백질 발현을 매핑하는 것과 유사하게, 인체 전반에 걸친 전자기 감수성에 대한 BERM의 체계적 매핑이다.",
+    /* Section 3: Twelve Layers */
+    layersHeading: "12개 층",
+    layersSubtitle:
+      "분자 스핀 물리학에서 집단 수준 패턴까지 — 각 층은 χ를 조절한다",
+    /* Section 4: Routes */
+    routesHeading: "4개 독립 경로",
+    routesMechanism: "메커니즘",
+    routesBlocked: "차단 인자",
+    routesOrgans: "기관 연결",
+    /* Section 5: Organs */
+    organsHeading: "12개 표적 기관",
+    organCav3: "Cav3 하위유형",
+    organLevel: "수준",
+    organView: "기관 프로파일 보기",
+    organComingSoon: "준비 중",
+    /* Section 6: Population */
+    popHeading: "집단 χ 프로파일",
+    popBody:
+      "각 집단은 유전적 변이(OCA2, LCT, CACNA1C), 식이 패턴(유제품·어류 유래 B2, ω-3), 환경 노출(전기화 역사, 위도, 도시화)의 조합에 의해 결정되는 χ 공간 내 고유한 위치를 차지한다. 이러한 프로파일은 EMF 효과에 대한 차별적 감수성을 예측하며, 54개국 출산율 데이터셋에 대해 검증 가능하다.",
+    popLink: "진화 및 집단 데이터 탐색",
+    /* Section 7: Predictions */
+    predHeading: "검증 가능한 예측",
+    predIntro:
+      "모듈롬은 구체적이고 반증 가능한 예측을 생성한다. 7개의 대표적인 MOD 수준 예측:",
+    predictions: [
+      "MOD-001: T형 Ca²⁺ 채널 차단제(에토숙시미드)는 라이디히 세포에서 RF-EMF의 테스토스테론에 대한 영향을 감쇠시킨다.",
+      "MOD-002: 유제품 소비가 높은 집단(B2 공급원)은 출산율 감소 속도가 더 느리다.",
+      "MOD-003: 만성 EMF 노출에서 HRV 감소는 측정 가능한 호르몬 변화에 선행한다.",
+      "MOD-004: 파란 눈을 가진 개인(CRY 감수성이 높음)은 저녁 스크린 사용으로 인한 일주기 리듬 장애가 더 강하게 나타난다.",
+      "MOD-005: 뇌하수체 생식선자극세포의 LH 펄스 빈도는 특정 EMF 주파수에 의해 직접 조절 가능하다.",
+      "MOD-006: 미토콘드리아 연령(ΔΨm으로 측정)은 동일 세포 유형 내에서 EMF 감수성과 상관관계가 있다.",
+      "MOD-007: EMF 유발 정자 DNA 메틸화 변화는 직업적으로 노출된 남성에서 검출 가능하며, VGCC 관련 유전자 좌위(CACNA1C, CACNA1G)를 포함한다. 프리프린트 지원: Research Square 2025 (레이더 노출 남성).",
+    ],
+    predLink: "전체 예측 레지스터",
+    /* Navigation */
+    seeAlso: "참고 항목",
+    modelPage: "BERM 모델",
+    evidencePage: "증거 레지스터",
+  },
 };
 
 const LEVEL_BADGE: Record<string, string> = {
@@ -127,15 +281,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return locale === "fi"
-    ? {
-        title: "EMF-modulomi \u2013 Extinction Field",
-        description: COPY.fi.subtitle,
-      }
-    : {
-        title: "EMF Modulome \u2013 Extinction Field",
-        description: COPY.en.subtitle,
-      };
+  const d = pickCopy(COPY, locale);
+  return {
+    title: `${d.title} \u2013 Extinction Field`,
+    description: d.subtitle,
+  };
 }
 
 export default async function ModulomePage({
@@ -144,8 +294,8 @@ export default async function ModulomePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const l = locale === "fi" ? "fi" : "en";
-  const d = COPY[l];
+  const d = pickCopy(COPY, locale);
+  const l: "en" | "fi" = locale === "fi" ? "fi" : "en";
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">

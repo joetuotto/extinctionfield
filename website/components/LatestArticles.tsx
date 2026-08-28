@@ -2,7 +2,16 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getLatestArticles } from "@/lib/articles";
 import { BermIcon } from "@/components/BermIcon";
+import { pickCopy } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+
+const COPY = {
+  en: { readTime: "read", readLink: "Read" },
+  fi: { readTime: "lukuaika", readLink: "Lue" },
+  ja: { readTime: "読了時間", readLink: "読む" },
+  fr: { readTime: "lecture", readLink: "Lire" },
+  ko: { readTime: "읽기", readLink: "읽기" },
+} as const;
 
 export function LatestArticles({ locale }: { locale: Locale }) {
   const articles = getLatestArticles(4);
@@ -10,6 +19,7 @@ export function LatestArticles({ locale }: { locale: Locale }) {
 
   const [hero, ...rest] = articles;
   const prefix = `/${locale}`;
+  const d = pickCopy(COPY, locale);
   const isFi = locale === "fi";
 
   return (
@@ -32,10 +42,10 @@ export function LatestArticles({ locale }: { locale: Locale }) {
             </p>
             <div className="flex items-center justify-between">
               <span className="text-xs text-foreground-muted">
-                {hero.readingTimeMinutes} min {isFi ? "lukuaika" : "read"}
+                {hero.readingTimeMinutes} min {d.readTime}
               </span>
               <span className="inline-flex items-center gap-1.5 text-sm font-medium text-accent">
-                {isFi ? "Lue" : "Read"} <ArrowRight size={14} />
+                {d.readLink} <ArrowRight size={14} />
               </span>
             </div>
           </div>
@@ -58,8 +68,8 @@ export function LatestArticles({ locale }: { locale: Locale }) {
                 {isFi ? a.titleFi : a.title}
               </h4>
               <span className="text-xs text-foreground-muted">
-                {a.readingTimeMinutes} min {isFi ? "lukuaika" : "read"} ·{" "}
-                <span className="text-accent">{isFi ? "Lue" : "Read"} →</span>
+                {a.readingTimeMinutes} min {d.readTime} ·{" "}
+                <span className="text-accent">{d.readLink} →</span>
               </span>
             </Link>
           ))}

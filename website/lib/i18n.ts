@@ -14,8 +14,8 @@ export const LOCALE_NAMES: Record<Locale, string> = {
   ko: "한국어",
 };
 
-export function pickCopy<T>(copy: { en: T } & Record<string, T>, locale: string): T {
-  return copy[locale] ?? copy.en;
+export function pickCopy<T>(copy: Record<string, T>, locale: string): T {
+  return copy[locale] ?? copy["en"];
 }
 
 export const LOCALE_FLAGS: Record<Locale, string> = {

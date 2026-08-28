@@ -24,14 +24,87 @@ const COUNTRY_LABELS_FI: Record<string, string> = {
   "United States 2030": "Yhdysvallat 2030",
 };
 
+const METRIC_LABELS_JA: Record<string, string> = {
+  TFR: "合計特殊出生率",
+  feedback_TFR: "都市化フィードバック付きTFR",
+  SpermConc_pctOf2020: "精子濃度（2020年比%）",
+  sex_ratio_male_frac: "出生時性比（男性割合）",
+  sentinel_cascade_TFR_acceleration: "TFR低下加速（センチネルカスケード）",
+  sleep_quality_faraday: "ファラデーケージ内睡眠品質",
+};
+
+const COUNTRY_LABELS_JA: Record<string, string> = {
+  Finland: "フィンランド",
+  "South Korea": "韓国",
+  "United States": "アメリカ合衆国",
+  Japan: "日本",
+  Brazil: "ブラジル",
+  Global: "グローバル",
+  "United States 2030": "アメリカ合衆国 2030",
+};
+
+const METRIC_LABELS_FR: Record<string, string> = {
+  TFR: "Indice synthétique de fécondité",
+  feedback_TFR: "TFR avec rétroaction d'urbanisation",
+  SpermConc_pctOf2020: "Concentration spermatique (% de 2020)",
+  sex_ratio_male_frac: "Rapport de masculinité à la naissance",
+  sentinel_cascade_TFR_acceleration: "Accélération du déclin du TFR (cascade sentinelle)",
+  sleep_quality_faraday: "Qualité du sommeil en cage de Faraday",
+};
+
+const COUNTRY_LABELS_FR: Record<string, string> = {
+  Finland: "Finlande",
+  "South Korea": "Corée du Sud",
+  "United States": "États-Unis",
+  Japan: "Japon",
+  Brazil: "Brésil",
+  Global: "Mondial",
+  "United States 2030": "États-Unis 2030",
+};
+
+const METRIC_LABELS_KO: Record<string, string> = {
+  TFR: "합계출산율",
+  feedback_TFR: "도시화 피드백 포함 TFR",
+  SpermConc_pctOf2020: "정자 농도 (2020년 대비 %)",
+  sex_ratio_male_frac: "출생 성비 (남성 비율)",
+  sentinel_cascade_TFR_acceleration: "TFR 감소 가속 (센티넬 캐스케이드)",
+  sleep_quality_faraday: "패러데이 케이지 내 수면 품질",
+};
+
+const COUNTRY_LABELS_KO: Record<string, string> = {
+  Finland: "핀란드",
+  "South Korea": "한국",
+  "United States": "미국",
+  Japan: "일본",
+  Brazil: "브라질",
+  Global: "글로벌",
+  "United States 2030": "미국 2030",
+};
+
+const METRIC_LABELS: Record<string, Record<string, string>> = {
+  fi: METRIC_LABELS_FI,
+  ja: METRIC_LABELS_JA,
+  fr: METRIC_LABELS_FR,
+  ko: METRIC_LABELS_KO,
+};
+
+const COUNTRY_LABELS: Record<string, Record<string, string>> = {
+  fi: COUNTRY_LABELS_FI,
+  ja: COUNTRY_LABELS_JA,
+  fr: COUNTRY_LABELS_FR,
+  ko: COUNTRY_LABELS_KO,
+};
+
 export function metricLabel(p: LockedPrediction, locale: string): string {
-  if (locale !== "fi") return p.metricLabel;
-  return METRIC_LABELS_FI[p.metric] ?? p.metricLabel;
+  const labels = METRIC_LABELS[locale];
+  if (!labels) return p.metricLabel;
+  return labels[p.metric] ?? p.metricLabel;
 }
 
 export function countryLabel(p: LockedPrediction, locale: string): string {
-  if (locale !== "fi") return p.countryLabel;
-  return COUNTRY_LABELS_FI[p.countryLabel] ?? p.countryLabel;
+  const labels = COUNTRY_LABELS[locale];
+  if (!labels) return p.countryLabel;
+  return labels[p.countryLabel] ?? p.countryLabel;
 }
 
 const COHORT_CHANGE =

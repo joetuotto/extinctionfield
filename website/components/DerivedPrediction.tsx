@@ -28,12 +28,13 @@ const COPY = {
 interface DerivedPredictionProps {
   locale?: string;
   children: React.ReactNode;
+  className?: string;
 }
 
-export function DerivedPrediction({ locale = "en", children }: DerivedPredictionProps) {
+export function DerivedPrediction({ locale = "en", children, className }: DerivedPredictionProps) {
   const d = pickCopy(COPY, locale);
   return (
-    <div className="border-l-4 border-amber-500/60 rounded-r-lg bg-amber-500/5 p-5 my-6">
+    <div className={`border-l-4 border-amber-500/60 rounded-r-lg bg-amber-500/5 p-5 my-6${className ? ` ${className}` : ""}`}>
       <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-3">
         {d.label}
       </p>

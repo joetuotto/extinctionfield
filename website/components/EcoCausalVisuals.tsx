@@ -1,4 +1,7 @@
-type Locale = "en" | "fi";
+import { pickCopy } from "@/lib/i18n";
+import { StudyCitation } from "@/components/StudyCitation";
+
+type Locale = "en" | "fi" | "ja" | "fr" | "ko";
 
 type VisualStep = {
   eyebrow: string;
@@ -171,10 +174,214 @@ const COPY: Record<
     systemsKicker: "Eliöjärjestelmät",
     systemsLabel: "Pölyttäjä · punkki / loinen · muuttaja · dispersoituja",
   },
+  ja: {
+    modelKicker: "因果的読み方ガイド",
+    modelTitle: "ひとつのFieldState、異なる生物学的伝達関数",
+    modelLead:
+      "モデルを左から右に読みます。物理的構成は共有されていますが、感知・輸送・生理学的伝達は種および発達段階ごとに異なります。実線のステップは測定された前提を要約しています。琥珀色のシーケンスは、明示的に検証可能な生態学的・進化的拡張です。",
+    observed: "測定された前提",
+    hypothesis: "モデルから導出; 検証可能",
+    steps: [
+      {
+        eyebrow: "01 · 物理的入力",
+        title: "FieldState",
+        detail: "一般的な線量ではなく構成: 成分、スペクトル、幾何学、基準、時間。",
+        formula: "E · B · Q · t",
+        tone: "observed",
+      },
+      {
+        eyebrow: "02 · 種固有の伝達",
+        title: "異なる生物は異なる読み取りをする",
+        detail: "形態・感覚器官・サイズ・水分量・発達段階・生息環境が局所応答を形成する。",
+        formula: "Rᵢ = Hᵢ(FieldState)",
+        tone: "observed",
+      },
+      {
+        eyebrow: "03 · 生態学的事象",
+        title: "遭遇・経路・分散",
+        detail: "近位エンドポイントは、訪問・付着・ナビゲーション選択・定着事象でありうる。",
+        formula: "kᵢⱼ",
+        tone: "observed",
+      },
+      {
+        eyebrow: "04 · 相対的結果",
+        title: "生態学的選別",
+        detail: "関連する対比は実現適応度の相対的変化であり、均一な感受性の主張ではない。",
+        formula: "Wᵢ / Wⱼ",
+        tone: "hypothesis",
+      },
+      {
+        eyebrow: "05 · 世代テスト",
+        title: "選択 / 進化",
+        detail: "遺伝的変異に作用する反復的な適応度差のみが形質分布を変えることができる。",
+        formula: "P₍g+1₎(θ)",
+        tone: "hypothesis",
+      },
+    ],
+    keyKicker: "FieldStateシグネチャ台帳",
+    keyTitle: "FieldStateには複数の互換不能なシグネチャがある",
+    keyLead:
+      "台帳はカテゴリーエラーを防ぐ: あるフィールドクラスでの観察を、別のフィールドクラスの証拠として暗黙的に再利用することはない。",
+    fields: [
+      { label: "静電界面", value: "E_DC · Q · ∇|E|²", endpoint: "力 / 付着", scope: "物理的輸送" },
+      { label: "ELF波形", value: "E_AC(f) · B(f) · dE/dt", endpoint: "着地 / 行動", scope: "対応エンドポイント" },
+      { label: "地磁気手がかり", value: "B₀ · 傾斜角 · 光", endpoint: "方位決定", scope: "文脈依存シグナル" },
+      { label: "RFシグネチャ", value: "S(f, 偏波, 時間)", endpoint: "周波数窓", scope: "スペクトル固有の結果" },
+    ],
+    tickKicker: "証拠境界 · Ixodes / 宿主界面",
+    tickTitle: "ダニ実験が確立するもの — そして確立しないもの",
+    tickLead:
+      "直接的結果は局所的な静電的宿主–植生界面に関するものである。そのフィールドクラスとエンドポイントに留まるべきであり、相対的堅牢性と選択には独自の測定が必要である。",
+    direct: "観測された物理的結果",
+    directSource: "England, Lihou & Robert (2023)",
+    open: "導出 / 検証可能な拡張",
+    directText: "校正された静電場は、試験されたダニシステムにおいて短距離の誘引と付着を変化させることができる。",
+    openText: "同一のFieldStateの下で、種および発達段階間の応答曲線・摂食成功・遺伝的形質を比較する。",
+    boundaryLabel: "読み取り規則",
+    boundaryText: "静電輸送の証拠は、RF/ELF応答や個体群変動と互換ではない。",
+    systemsKicker: "生物システム",
+    systemsLabel: "花粉媒介者 · ダニ / 寄生者 · 渡り · 分散者",
+  },
+  fr: {
+    modelKicker: "Guide de lecture causale",
+    modelTitle: "Un seul FieldState ; des fonctions de transfert biologique differentes",
+    modelLead:
+      "Lire le modele de gauche a droite. La configuration physique est partagee ; la detection, le transport et le transfert physiologique sont specifiques a l'espece et au stade. Les etapes en trait plein resument les premisses mesurees. La sequence ambre est l'extension ecologique et evolutive explicitement testable.",
+    observed: "Premisse mesuree",
+    hypothesis: "Derivee du modele ; testable",
+    steps: [
+      {
+        eyebrow: "01 · ENTREE PHYSIQUE",
+        title: "FieldState",
+        detail: "Une configuration, non une dose generique : composants, spectre, geometrie, reference et temps.",
+        formula: "E · B · Q · t",
+        tone: "observed",
+      },
+      {
+        eyebrow: "02 · TRANSFERT ESPECE",
+        title: "Differents organismes le lisent differemment",
+        detail: "La morphologie, les organes sensoriels, la taille, l'hydratation, le stade et l'habitat faconnent la reponse locale.",
+        formula: "Rᵢ = Hᵢ(FieldState)",
+        tone: "observed",
+      },
+      {
+        eyebrow: "03 · EVENEMENT ECOLOGIQUE",
+        title: "Rencontre, route ou dispersion",
+        detail: "Le point final proximal peut etre une visite, une fixation, un choix de navigation ou un evenement de colonisation.",
+        formula: "kᵢⱼ",
+        tone: "observed",
+      },
+      {
+        eyebrow: "04 · RESULTAT RELATIF",
+        title: "Tri ecologique",
+        detail: "Le contraste pertinent est un changement relatif de la fitness realisee, et non une affirmation de sensibilite uniforme.",
+        formula: "Wᵢ / Wⱼ",
+        tone: "hypothesis",
+      },
+      {
+        eyebrow: "05 · TEST GENERATIONNEL",
+        title: "Selection / evolution",
+        detail: "Seules des differences de fitness repetees agissant sur la variation heritee peuvent modifier la distribution d'un trait.",
+        formula: "P₍g+1₎(θ)",
+        tone: "hypothesis",
+      },
+    ],
+    keyKicker: "Registre de signatures FieldState",
+    keyTitle: "Un FieldState possede plusieurs signatures non interchangeables",
+    keyLead:
+      "Le registre previent les erreurs de categorie : une observation dans une classe de champ n'est pas reutilisee silencieusement comme preuve dans une autre.",
+    fields: [
+      { label: "Interface statique", value: "E_DC · Q · ∇|E|²", endpoint: "force / fixation", scope: "transport physique" },
+      { label: "Forme d'onde ELF", value: "E_AC(f) · B(f) · dE/dt", endpoint: "atterrissage / comportement", scope: "point final associe" },
+      { label: "Indice geomagnetique", value: "B₀ · inclinaison · lumiere", endpoint: "orientation", scope: "signal dependant du contexte" },
+      { label: "Signature RF", value: "S(f, polarisation, temps)", endpoint: "fenetre de frequence", scope: "resultat specifique au spectre" },
+    ],
+    tickKicker: "Frontiere de preuve · interface Ixodes / hote",
+    tickTitle: "Ce que l'experience sur les tiques etablit — et ce qu'elle n'etablit pas",
+    tickLead:
+      "Le resultat direct concerne une interface hote–vegetation statique locale. Il doit rester dans cette classe de champ et ce point final ; la robustesse relative et la selection necessitent leurs propres mesures.",
+    direct: "Resultat physique observe",
+    directSource: "England, Lihou & Robert (2023)",
+    open: "Extension derivee / testable",
+    directText: "Des champs statiques calibres peuvent modifier l'attraction a courte portee et la fixation dans le systeme de tiques etudie.",
+    openText: "Comparer les courbes de reponse, le succes alimentaire et les traits herites entre especes et stades sous le meme FieldState.",
+    boundaryLabel: "Regle de lecture",
+    boundaryText: "Les preuves de transport statique ne sont pas interchangeables avec la reponse RF/ELF ou le changement de population.",
+    systemsKicker: "Systemes d'organismes",
+    systemsLabel: "Pollinisateur · tique / parasite · migrateur · disperseur",
+  },
+  ko: {
+    modelKicker: "인과적 읽기 가이드",
+    modelTitle: "하나의 FieldState, 서로 다른 생물학적 전달 함수",
+    modelLead:
+      "모델을 왼쪽에서 오른쪽으로 읽으십시오. 물리적 구성은 공유되지만, 감지, 수송 및 생리학적 전달은 종 및 발달 단계에 따라 다릅니다. 실선 단계는 측정된 전제를 요약합니다. 호박색 시퀀스는 명시적으로 검증 가능한 생태학적 및 진화적 확장입니다.",
+    observed: "측정된 전제",
+    hypothesis: "모델에서 도출; 검증 가능",
+    steps: [
+      {
+        eyebrow: "01 · 물리적 입력",
+        title: "FieldState",
+        detail: "일반적 선량이 아닌 구성: 구성 요소, 스펙트럼, 기하학, 기준 및 시간.",
+        formula: "E · B · Q · t",
+        tone: "observed",
+      },
+      {
+        eyebrow: "02 · 종별 전달",
+        title: "다른 생물은 다르게 읽는다",
+        detail: "형태, 감각 기관, 크기, 수분, 발달 단계 및 서식지가 국소 반응을 형성한다.",
+        formula: "Rᵢ = Hᵢ(FieldState)",
+        tone: "observed",
+      },
+      {
+        eyebrow: "03 · 생태학적 사건",
+        title: "조우, 경로 또는 분산",
+        detail: "근위 종점은 방문, 부착, 탐색 선택 또는 정착 사건일 수 있다.",
+        formula: "kᵢⱼ",
+        tone: "observed",
+      },
+      {
+        eyebrow: "04 · 상대적 결과",
+        title: "생태학적 선별",
+        detail: "관련된 대비는 실현 적합도의 상대적 변화이며, 균일한 감수성 주장이 아니다.",
+        formula: "Wᵢ / Wⱼ",
+        tone: "hypothesis",
+      },
+      {
+        eyebrow: "05 · 세대 테스트",
+        title: "선택 / 진화",
+        detail: "유전적 변이에 작용하는 반복적인 적합도 차이만이 형질 분포를 변화시킬 수 있다.",
+        formula: "P₍g+1₎(θ)",
+        tone: "hypothesis",
+      },
+    ],
+    keyKicker: "FieldState 서명 원장",
+    keyTitle: "FieldState에는 여러 비호환 서명이 있다",
+    keyLead:
+      "원장은 범주 오류를 방지합니다: 한 필드 클래스의 관찰은 다른 필드 클래스의 증거로 암묵적으로 재사용되지 않습니다.",
+    fields: [
+      { label: "정전 계면", value: "E_DC · Q · ∇|E|²", endpoint: "힘 / 부착", scope: "물리적 수송" },
+      { label: "ELF 파형", value: "E_AC(f) · B(f) · dE/dt", endpoint: "착지 / 행동", scope: "대응 종점" },
+      { label: "지자기 단서", value: "B₀ · 경사각 · 광", endpoint: "방위 결정", scope: "맥락 의존 신호" },
+      { label: "RF 서명", value: "S(f, 편파, 시간)", endpoint: "주파수 창", scope: "스펙트럼 특이적 결과" },
+    ],
+    tickKicker: "증거 경계 · Ixodes / 숙주 계면",
+    tickTitle: "진드기 실험이 확립하는 것 — 그리고 확립하지 않는 것",
+    tickLead:
+      "직접적 결과는 국소적 정전적 숙주-식생 계면에 관한 것이다. 해당 필드 클래스와 종점 내에 머물러야 하며, 상대적 견고성과 선택에는 자체 측정이 필요하다.",
+    direct: "관측된 물리적 결과",
+    directSource: "England, Lihou & Robert (2023)",
+    open: "도출 / 검증 가능한 확장",
+    directText: "교정된 정전장은 시험된 진드기 시스템에서 단거리 유인 및 부착을 변화시킬 수 있다.",
+    openText: "동일한 FieldState 하에서 종과 발달 단계 간의 반응 곡선, 섭식 성공 및 유전적 형질을 비교한다.",
+    boundaryLabel: "읽기 규칙",
+    boundaryText: "정전 수송 증거는 RF/ELF 반응이나 개체군 변화와 호환되지 않는다.",
+    systemsKicker: "생물 시스템",
+    systemsLabel: "수분매개자 · 진드기 / 기생자 · 이동자 · 분산자",
+  },
 };
 
-export function EcoCausalVisuals({ locale }: { locale: Locale }) {
-  const d = COPY[locale];
+export function EcoCausalVisuals({ locale }: { locale: string }) {
+  const d = pickCopy(COPY, locale);
 
   return (
     <section aria-labelledby="eco-causal-visual-title" className="mt-10 border-y border-card-border py-8 sm:py-10">
@@ -249,8 +456,8 @@ export function EcoCausalVisuals({ locale }: { locale: Locale }) {
   );
 }
 
-export function TickEvidenceBoundary({ locale }: { locale: Locale }) {
-  const d = COPY[locale];
+export function TickEvidenceBoundary({ locale }: { locale: string }) {
+  const d = pickCopy(COPY, locale);
 
   return (
     <aside aria-labelledby="tick-evidence-boundary-title" className="mt-8 border-y border-card-border py-7 sm:py-8">
@@ -267,7 +474,13 @@ export function TickEvidenceBoundary({ locale }: { locale: Locale }) {
           <div className="border-l-2 border-status-confirmed pl-4">
             <p className="editorial-kicker text-status-confirmed">{d.direct}</p>
             <p className="mt-3 text-sm leading-relaxed text-foreground-muted">{d.directText}</p>
-            <p className="mt-3 text-[11px] font-medium text-foreground-muted">{d.directSource}</p>
+            <p className="mt-3 text-[11px] font-medium text-foreground-muted">
+              <StudyCitation
+                referenceId="england_2023_ticks"
+                locale={locale}
+                label={d.directSource}
+              />
+            </p>
           </div>
         </section>
         <section className="py-5 pl-0 md:pl-7" aria-label={d.open}>
@@ -286,8 +499,8 @@ export function TickEvidenceBoundary({ locale }: { locale: Locale }) {
   );
 }
 
-export function EcoSpeciesCueRow({ locale }: { locale: Locale }) {
-  const d = COPY[locale];
+export function EcoSpeciesCueRow({ locale }: { locale: string }) {
+  const d = pickCopy(COPY, locale);
 
   return (
     <p className="mt-5 text-xs leading-5 text-foreground-muted" aria-label={d.systemsKicker}>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MODULOME_LAYERS } from "@/lib/modulome/layers";
+import { pickCopy } from "@/lib/i18n";
 
 const LAYER_COLORS: Record<string, string> = {
   molecular: "#FFC107",
@@ -39,7 +40,37 @@ const COPY = {
     clickHint: "Klikkaa kerrosta nähdäksesi yksityiskohdat",
     note: "Episteeminen huomautus: Jokaisen kerroksen evidenssi on merkitty itsenäisesti. Modulomi yhtenäisenä viitekehyksenä on BERM-spesifinen synteesi [C] — yksittäiset komponentit kantavat omat evidenssitasonsa.",
   },
-} as const;
+  ja: {
+    title: "EMF Modulome: 生体感受性の12層",
+    lead: "Modulomeは分子スピン物理から集団レベルのパターンまで電磁感受性をマッピングします。各層はχ（外部EMFと生体機能間の無次元結合係数）を変調します。12の層、10の標的臓器、受胎能低下への4つの独立経路。",
+    layer: "層",
+    chiModulator: "χ変調因子",
+    keyComponents: "主要構成要素",
+    integration: "統合",
+    clickHint: "詳細を表示するには層をクリック",
+    note: "認識論的注記：各層のエビデンスは独立して評価されています。統合的枠組みとしてのModulomeはBERM固有の統合 [C] です — 個々の構成要素はそれぞれ独自のエビデンスレベルを持ちます。",
+  },
+  fr: {
+    title: "EMF Modulome : douze couches de susceptibilité biologique",
+    lead: "Le modulome cartographie la susceptibilité électromagnétique de la physique du spin moléculaire aux schémas populationnels. Chaque couche module χ — le coefficient de couplage adimensionnel entre l'EMF externe et la fonction biologique. Douze couches, dix organes cibles, quatre voies indépendantes de déclin de la fertilité.",
+    layer: "Couche",
+    chiModulator: "Modulateur χ",
+    keyComponents: "Composants clés",
+    integration: "Intégration",
+    clickHint: "Cliquez sur une couche pour voir les détails",
+    note: "Note épistémique : l'évidence de chaque couche est marquée indépendamment. Le modulome en tant que cadre unifié est une synthèse spécifique à BERM [C] — les composants individuels portent leurs propres niveaux d'évidence.",
+  },
+  ko: {
+    title: "EMF Modulome: 생물학적 감수성의 12개 층",
+    lead: "Modulome은 분자 스핀 물리학에서 집단 수준 패턴까지 전자기 감수성을 매핑합니다. 각 층은 χ(외부 EMF와 생물학적 기능 사이의 무차원 결합 계수)를 조절합니다. 12개의 층, 10개의 표적 장기, 수태능 감소로 향하는 4개의 독립 경로.",
+    layer: "층",
+    chiModulator: "χ 조절인자",
+    keyComponents: "주요 구성요소",
+    integration: "통합",
+    clickHint: "세부 정보를 보려면 층을 클릭하세요",
+    note: "인식론적 주석: 각 층의 근거는 독립적으로 표시되어 있습니다. 통합 프레임워크로서의 Modulome은 BERM 고유의 종합 [C]입니다 — 개별 구성요소는 각자의 근거 수준을 갖습니다.",
+  },
+};
 
 const SVG_W = 700;
 const LAYER_H = 30;
@@ -53,8 +84,8 @@ const layers = [...MODULOME_LAYERS].reverse();
 
 export function ModulomeLayers({ locale }: { locale: string }) {
   const [expanded, setExpanded] = useState<string | null>(null);
-  const d = locale === "fi" ? COPY.fi : COPY.en;
-  const isFi = locale === "fi";
+  const d = pickCopy(COPY, locale);
+  const useFi = locale === "fi";
 
   const totalH = PAD_T + layers.length * (LAYER_H + GAP) + 20;
 
@@ -77,8 +108,8 @@ export function ModulomeLayers({ locale }: { locale: string }) {
             const y = PAD_T + i * (LAYER_H + GAP);
             const isExpanded = expanded === layer.id;
             const color = LAYER_COLORS[layer.id] ?? "#607D8B";
-            const name = isFi ? layer.nameFi : layer.nameEn;
-            const chiMod = isFi ? layer.chiModulatorFi : layer.chiModulatorEn;
+            const name = useFi ? layer.nameFi : layer.nameEn;
+            const chiMod = useFi ? layer.chiModulatorFi : layer.chiModulatorEn;
 
             return (
               <g
@@ -153,7 +184,7 @@ export function ModulomeLayers({ locale }: { locale: string }) {
                   {layer.number}
                 </span>
                 <span className="text-sm font-semibold">
-                  {d.layer} {layer.number}: {isFi ? layer.nameFi : layer.nameEn}
+                  {d.layer} {layer.number}: {useFi ? layer.nameFi : layer.nameEn}
                 </span>
               </div>
 
@@ -161,13 +192,13 @@ export function ModulomeLayers({ locale }: { locale: string }) {
                 <div className="rounded-lg border border-card-border bg-card-bg p-3">
                   <span className="font-semibold text-foreground">{d.chiModulator}</span>
                   <p className="text-foreground-muted mt-0.5">
-                    {isFi ? layer.chiModulatorFi : layer.chiModulatorEn}
+                    {useFi ? layer.chiModulatorFi : layer.chiModulatorEn}
                   </p>
                 </div>
                 <div className="rounded-lg border border-card-border bg-card-bg p-3">
                   <span className="font-semibold text-foreground">{d.keyComponents}</span>
                   <p className="text-foreground-muted mt-0.5">
-                    {isFi ? layer.keyComponentsFi : layer.keyComponentsEn}
+                    {useFi ? layer.keyComponentsFi : layer.keyComponentsEn}
                   </p>
                 </div>
               </div>
@@ -175,7 +206,7 @@ export function ModulomeLayers({ locale }: { locale: string }) {
               <div className="rounded-lg bg-background-secondary p-3">
                 <span className="text-xs font-semibold text-foreground">{d.integration}</span>
                 <p className="text-xs text-foreground-muted mt-1 leading-relaxed">
-                  {isFi ? layer.integrationFi : layer.integrationEn}
+                  {useFi ? layer.integrationFi : layer.integrationEn}
                 </p>
               </div>
             </div>

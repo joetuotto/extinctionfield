@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run references:index && npm run references:validate",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "references:index": "node scripts/build-reference-index.mjs",
+    "references:validate": "node scripts/validate-references.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },

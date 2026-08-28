@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/i18n";
+import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: {
@@ -23,6 +23,7 @@ const COPY = {
     capacity: "Reproductive\ncapacity",
     tfr: "TFR",
     footer: "Mobile subscription density serves as composite proxy for the entire electromagnetic environment. The model decomposes three independent channels — ELF (power grid, lighting), IF (switching electronics, LED), RF (base stations, Wi-Fi, radar) — cryptochrome-melatonin signalling, calcium-ion influx through membrane voltage, and paired-formation to reproductive capacity.",
+    ariaLabel: "Three-channel mechanism",
   },
   fi: {
     kicker: "KOLMIKANAVAMEKANISMI",
@@ -46,6 +47,79 @@ const COPY = {
     capacity: "Lisääntymis-\nkapasiteetti",
     tfr: "TFR",
     footer: "Matkapuhelinliittymätiheys on yhdistelmäproksi koko sähkömagneettiselle ympäristölle. Malli jäljittää kolme itsenäistä kanavaa — ELF (sähköverkko, valaistus), IF (kytkentäelektroniikka, LED-väkyntä), RF (tukiasemat, Wi-Fi, tutka) — kryptokromi-melatoniinisignaloinnin, kalsiumioni-influksin kalvojännitteen kautta ja pariutumisen lisääntymiskapasiteettiin.",
+    ariaLabel: "Kolmikanavamekanismi",
+  },
+  ja: {
+    kicker: "3チャネルメカニズム",
+    title: "ELF · IF · RF — 3つの周波数チャネル、3つの生物学的経路",
+    emf: "EMF\n環境",
+    elf: "ELF",
+    elfRange: "< 300 Hz",
+    elfSub: "送電網 · 照明",
+    elfMech: "VGCC / Ca²⁺",
+    elfMechSub: "膜\n電位",
+    ifBand: "IF",
+    ifRange: "300 Hz – 10 MHz",
+    ifSub: "LEDドライバー · SMPS",
+    ifMech: "有糸分裂\n障害",
+    ifMechSub: "紡錘体\n力",
+    rf: "RF",
+    rfRange: "> 10 MHz",
+    rfSub: "基地局 · Wi-Fi",
+    rfMech: "CRY / RPM",
+    rfMechSub: "メラトニン\n抑制",
+    capacity: "生殖\n能力",
+    tfr: "TFR",
+    footer: "携帯電話加入密度は、電磁環境全体の複合プロキシとして機能します。モデルは、ELF（電力網・照明）、IF（スイッチング電子機器・LED）、RF（基地局・Wi-Fi・レーダー）の3つの独立チャネルを、生殖能力に至る生物学的経路として分解します。",
+    ariaLabel: "3チャネルメカニズム",
+  },
+  fr: {
+    kicker: "MÉCANISME À TROIS CANAUX",
+    title: "ELF · IF · RF — trois canaux de fréquence, trois voies biologiques",
+    emf: "Environnement\nEMF",
+    elf: "ELF",
+    elfRange: "< 300 Hz",
+    elfSub: "Réseau électrique · Éclairage",
+    elfMech: "VGCC / Ca²⁺",
+    elfMechSub: "Tension\nmembranaire",
+    ifBand: "IF",
+    ifRange: "300 Hz – 10 MHz",
+    ifSub: "Drivers LED · SMPS",
+    ifMech: "Perturbation\nmitotique",
+    ifMechSub: "Forces du\nfuseau",
+    rf: "RF",
+    rfRange: "> 10 MHz",
+    rfSub: "Stations de base · Wi-Fi",
+    rfMech: "CRY / RPM",
+    rfMechSub: "Suppression de\nla mélatonine",
+    capacity: "Capacité\nreproductive",
+    tfr: "TFR",
+    footer: "La densité des abonnements mobiles sert de proxy composite pour l’ensemble de l’environnement électromagnétique. Le modèle décompose trois canaux indépendants — ELF (réseau électrique, éclairage), IF (électronique de commutation, LED), RF (stations de base, Wi-Fi, radar) — en voies biologiques menant à la capacité reproductive.",
+    ariaLabel: "Mécanisme à trois canaux",
+  },
+  ko: {
+    kicker: "3채널 메커니즘",
+    title: "ELF · IF · RF — 3개의 주파수 채널, 3개의 생물학적 경로",
+    emf: "EMF\n환경",
+    elf: "ELF",
+    elfRange: "< 300 Hz",
+    elfSub: "전력망 · 조명",
+    elfMech: "VGCC / Ca²⁺",
+    elfMechSub: "막\n전압",
+    ifBand: "IF",
+    ifRange: "300 Hz – 10 MHz",
+    ifSub: "LED 드라이버 · SMPS",
+    ifMech: "유사분열\n교란",
+    ifMechSub: "방추사\n힘",
+    rf: "RF",
+    rfRange: "> 10 MHz",
+    rfSub: "기지국 · Wi-Fi",
+    rfMech: "CRY / RPM",
+    rfMechSub: "멜라토닌\n억제",
+    capacity: "생식\n능력",
+    tfr: "TFR",
+    footer: "이동통신 가입 밀도는 전체 전자기 환경의 복합 프록시로 사용됩니다. 모델은 ELF(전력망·조명), IF(스위칭 전자장치·LED), RF(기지국·Wi-Fi·레이더)의 세 독립 채널을 생식 능력으로 이어지는 생물학적 경로로 분해합니다.",
+    ariaLabel: "3채널 메커니즘",
   },
 } as const;
 
@@ -110,14 +184,14 @@ function Arrow({ x1, y1, x2, y2, color, width = 1.5 }: { x1: number; y1: number;
   );
 }
 
-export function ThreeChannelSummary({ locale = "en" }: { locale?: Locale }) {
-  const d = COPY[locale];
+export function ThreeChannelSummary({ locale = "en" }: { locale?: string }) {
+  const d = pickCopy(COPY, locale);
   const W = 900;
-  const H = 260;
+  const H = 300;
 
   const col = { emf: 65, band: 230, mech: 460, cap: 650, tfr: 820 };
-  const rows = { top: 52, mid: 130, bot: 208 };
-  const nodeH = 56;
+  const rows = { top: 52, mid: 150, bot: 248 };
+  const nodeH = 72;
   const bandW = 120;
   const mechW = 110;
 
@@ -128,13 +202,13 @@ export function ThreeChannelSummary({ locale = "en" }: { locale?: Locale }) {
   ];
 
   return (
-    <div className="w-full overflow-x-auto">
+    <div className="chart-scroll w-full">
       <svg
         viewBox={`0 0 ${W} ${H}`}
-        className="w-full"
-        style={{ minWidth: 640 }}
+        className="chart-svg w-full"
+        style={{ minWidth: 760 }}
         role="img"
-        aria-label={locale === "fi" ? "Kolmikanavamekanismi" : "Three-channel mechanism"}
+        aria-label={d.ariaLabel}
       >
         {/* EMF source node */}
         <rect x={col.emf - 50} y={rows.mid - nodeH / 2} width={100} height={nodeH} rx={12} fill="var(--card-bg, #fff)" stroke="var(--card-border, #d1d5db)" strokeWidth={1.5} />
@@ -173,8 +247,8 @@ export function ThreeChannelSummary({ locale = "en" }: { locale?: Locale }) {
 
             {/* Mechanism node */}
             <rect x={col.mech - mechW / 2} y={ch.y - nodeH / 2} width={mechW} height={nodeH} rx={10} fill="var(--card-bg, #fff)" stroke={ch.c.main} strokeWidth={1} strokeDasharray="6 3" opacity={0.9} />
-            {multiline(ch.mech, col.mech, ch.y - 8, 13, "var(--foreground, #111)", { weight: 600 })}
-            {multiline(ch.mechSub, col.mech, ch.y + 12, 11, "var(--foreground-muted, #666)")}
+            {multiline(ch.mech, col.mech, ch.y - 14, 12, "var(--foreground, #111)", { weight: 600 })}
+            {multiline(ch.mechSub, col.mech, ch.y + 19, 10, "var(--foreground-muted, #666)")}
 
             {/* Arrow to capacity */}
             <Arrow x1={col.mech + mechW / 2 + 2} y1={ch.y} x2={col.cap - 56} y2={rows.mid} color="var(--foreground-muted, #888)" width={1} />

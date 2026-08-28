@@ -1,0 +1,7429 @@
+{
+  "metadata": {
+    "generated": "2026-08-28",
+    "referencesWithUsages": 568,
+    "usageLocations": 1571
+  },
+  "usage": {
+    "adey1976_calcium_window": [
+      {
+        "path": "/about/history",
+        "source": "app/[locale]/about/history/page.tsx"
+      },
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "lai1995_dna_breaks": [
+      {
+        "path": "/about/history",
+        "source": "app/[locale]/about/history/page.tsx"
+      },
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "memo1994": [
+      {
+        "path": "/about/history",
+        "source": "app/[locale]/about/history/page.tsx"
+      }
+    ],
+    "vaziri2016": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/articles/spectrum",
+        "source": "app/[locale]/articles/[slug]/SpectrumArticleContent.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "ritz2004": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/modulome/eye",
+        "source": "app/[locale]/modulome/eye/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "tdcs_fda_depression_2025": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/articles/spectrum",
+        "source": "app/[locale]/articles/[slug]/SpectrumArticleContent.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "panagopoulos2025_ifo": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "kim2026_cell_gene_switch": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "greggers2013_bee_electric_comm": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "mallinson2025_electric_pollution": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "campisi2010": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/articles/spectrum",
+        "source": "app/[locale]/articles/[slug]/SpectrumArticleContent.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "leproult2011_testosterone_sleep": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "walker2017_why_we_sleep": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "components/RetrodictionCards.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "cordelli2024_who": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "mazur2013": [
+      {
+        "path": "/",
+        "source": "app/[locale]/page.tsx"
+      },
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/amish-control",
+        "source": "app/[locale]/evidence/amish-control/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "santi2025": [
+      {
+        "path": "/",
+        "source": "app/[locale]/page.tsx"
+      },
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/amish-control",
+        "source": "app/[locale]/evidence/amish-control/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "klimentidis2010": [
+      {
+        "path": "/",
+        "source": "app/[locale]/page.tsx"
+      },
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/epistemology",
+        "source": "app/[locale]/epistemology/page.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/amish-control",
+        "source": "app/[locale]/evidence/amish-control/page.tsx"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "components/RetrodictionCards.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "zeghoudi2025_led_driver_emf": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "ijrb2022_if_review": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "sousouri2025": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      },
+      {
+        "path": "/epistemology",
+        "source": "app/[locale]/epistemology/page.tsx"
+      },
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "belpomme2022": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "york2026_kim_commentary": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "duraccio2019_blue_light": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "yap2025": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence/evolution",
+        "source": "lib/evolutionData.ts"
+      },
+      {
+        "path": "/evidence/eyes",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "app/[locale]/evidence/nutrition/page.tsx"
+      },
+      {
+        "path": "/evidence/replication",
+        "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/modulome/eye",
+        "source": "app/[locale]/modulome/eye/page.tsx"
+      },
+      {
+        "path": "/modulome/heart",
+        "source": "app/[locale]/modulome/heart/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "weller2025_dna": [
+      {
+        "path": "/",
+        "source": "components/BradfordHillCard.tsx"
+      },
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/evidence/replication",
+        "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      }
+    ],
+    "sun2016_elf_vgcc": [
+      {
+        "path": "/about/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/epistemology",
+        "source": "app/[locale]/epistemology/page.tsx"
+      },
+      {
+        "path": "/evidence/chronic-pain",
+        "source": "app/[locale]/evidence/chronic-pain/page.tsx"
+      },
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/objections",
+        "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "favre_johansson_2025": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "components/VarroaCascade.tsx"
+      }
+    ],
+    "england_2023_ticks": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "components/DifferentialSusceptibility.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "colin_1992_varroa_charge": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      }
+    ],
+    "shepherd_2023_pollination": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "components/VarroaCascade.tsx"
+      }
+    ],
+    "wyszkowska_bee_collection_2023_2025": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      }
+    ],
+    "panagopoulos2025": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      },
+      {
+        "path": "/articles/spectrum",
+        "source": "app/[locale]/articles/[slug]/SpectrumArticleContent.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "lindecke2026": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "components/DifferentialSusceptibility.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "components/DifferentialSusceptibility.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "us_patent_12239107": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "components/VarroaCascade.tsx"
+      }
+    ],
+    "clarke2013_bee_electroreception": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "plos_one_2023_bee_900mhz": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "components/VarroaCascade.tsx"
+      }
+    ],
+    "wyszkowska_2025_bee_behavior": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "components/VarroaCascade.tsx"
+      }
+    ],
+    "varroa_chitinase_2020": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "components/VarroaCascade.tsx"
+      }
+    ],
+    "engels2014": [
+      {
+        "path": "/articles/bees",
+        "source": "app/[locale]/articles/[slug]/BeeArticleContent.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "mehta2010_dual_hormone": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      }
+    ],
+    "dekkers2019_dual_hormone": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "dreher2016": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "goetz2024": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "lokeshwar2021": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "konrath2011": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
+      }
+    ],
+    "twenge2017_sexual_frequency": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
+      }
+    ],
+    "us_lfp_2026": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
+      }
+    ],
+    "trumble2012": [
+      {
+        "path": "/articles/dual-lock",
+        "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
+      },
+      {
+        "path": "/evidence/populations",
+        "source": "lib/populationData.ts"
+      }
+    ],
+    "lai1996_double_strand": [
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      }
+    ],
+    "pall2013_v2": [
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/evidence/evolution",
+        "source": "lib/evolutionData.ts"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/evolutionData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "lib/evolutionData.ts"
+      }
+    ],
+    "trus2024": [
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      },
+      {
+        "path": "/articles/spectrum",
+        "source": "app/[locale]/articles/[slug]/SpectrumArticleContent.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "zakon2012_ion_channel_evolution": [
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      },
+      {
+        "path": "/articles/spectrum",
+        "source": "app/[locale]/articles/[slug]/SpectrumArticleContent.tsx"
+      }
+    ],
+    "glaser1971_bibliography": [
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      }
+    ],
+    "lindgren2026_susceptibility": [
+      {
+        "path": "/articles/implausibility",
+        "source": "app/[locale]/articles/[slug]/ImplausibilityArticleContent.tsx"
+      }
+    ],
+    "ttfields_novocure_fda": [
+      {
+        "path": "/articles/spectrum",
+        "source": "app/[locale]/articles/[slug]/SpectrumArticleContent.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "pemf_bone_fda_review_2020": [
+      {
+        "path": "/articles/spectrum",
+        "source": "app/[locale]/articles/[slug]/SpectrumArticleContent.tsx"
+      },
+      {
+        "path": "/epistemology",
+        "source": "app/[locale]/epistemology/page.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "icnirp2020": [
+      {
+        "path": "/articles/spectrum",
+        "source": "app/[locale]/articles/[slug]/SpectrumArticleContent.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "levine2023_sperm": [
+      {
+        "path": "/",
+        "source": "app/[locale]/page.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BehavioralSuppression.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "marano2026_female_neuroinflammation": [
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      }
+    ],
+    "turedi2016_ovarian_reserve": [
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      }
+    ],
+    "wood_health2026": [
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      }
+    ],
+    "camkii-cav32-threshold-2023": [
+      {
+        "path": "/",
+        "source": "components/SixFactorSummary.tsx"
+      },
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "blackman1985_calcium_windows": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "usselman2016": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "majewska2025": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/eyes",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "app/[locale]/evidence/nutrition/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "zandieh2025": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "sherrard2018": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "cao2015": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "chae2019": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/eyes",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "app/[locale]/evidence/nutrition/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/modulome/eye",
+        "source": "app/[locale]/modulome/eye/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "iuliis2009": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "yu2019_btb": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "meena2014": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "ahmadi2016": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "lochhead2010": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "chakraborty2020": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "liu2014": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "he2016": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "cordelli2024": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "cordelli2025_corrigendum": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "naderi2026": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "baldini2025": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "calis2021": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "yousefi2025": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      }
+    ],
+    "iolchiev2019": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "nations2024": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainV2Data.ts"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "shafik1992": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "shafik1992_sling": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "dincmen2016": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "colin1992_varroa_electrostatic": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "garcia_robledo2025": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "sofrankova2023": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "morley2018_spider_ballooning": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      }
+    ],
+    "pall2018_v2": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "tang2024": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/epistemology",
+        "source": "app/[locale]/epistemology/page.tsx"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "salford2003": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "yakymenko2016": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "hore2016_v2": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "yoshii2009": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "natcomms2024rpm": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "pnasnexus2026": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "battelle1980": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "reiter2007": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "pawlak2025": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "kacem2024": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "esmailzadeh2019": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "travison2007_v2": [
+      {
+        "path": "/",
+        "source": "app/[locale]/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "who_t_meta": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "puts2008": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "mehta2015": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BehavioralSuppression.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "thornhill1994": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BehavioralSuppression.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "porges2001": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "carter2021": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "components/BehavioralSuppression.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "feldman2012": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "poutahidis2014": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "erdman2016": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "poutahidis2013": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "jin2022": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "sempou2022": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "brown2016": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "zhanglevin2025": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "levine2017_v2": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "houston2016": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "mollerlokken2008": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "catsper2024": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "ccb_fertility": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "rapamycin_fertility": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "moncrieff2022": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "yang2024_metformin": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "diem2005": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "mccarty2011": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "manta2014": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "santini2018": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "cacna1c_emf2024": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "hrv_wifi2023": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "hallmann2017_v2": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "rosenberg2019": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "becker1985_v2": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "frey1961": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "adey1981_v2": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "lindgren2021": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "covid_sperm_2025": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "covid_recovery_2024": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "covid_6mo_recovery_2025": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "zhang_china_covid_2025": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "deloitte_devices_2021": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "uk_screen_time_2023": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "us_child_screen_2024": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "india_screen_sleep_2025": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "india_electricity_2022": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "wfh_permanent_2021": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "irreversible_digital_2023": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "nl_child_mh_2024": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "swiss_screen_mh_2022": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "screen_child_behav_2024": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "post_lockdown_mh_2025": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "italy_sleep_device_2020": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "lea2016": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/sentinel",
+        "source": "components/SentinelCascade.tsx"
+      }
+    ],
+    "hensel2025": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "guy1984": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "hydro_quebec_1976": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "sanchez_bayo2019": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "thielens2018": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "components/CellSizeFrequencyMatrix.tsx"
+      },
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "balmori2015": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "balmori2006": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "stuart2004": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "favre2011": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "sharma_kumar2010": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "shepherd2018": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "vanbergen2013": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "wang2007": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "frick2010": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "czerski1979": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "panagopoulos2004": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "gandhi1996": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "goldstein_kreyenfeld2011": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "belpomme2015": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "huss2007": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "eurobarometer2018": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "vassallo2025": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "ntp2018": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "falcioni2018": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "iarc2011": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "interphone2010": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "agarwal2009": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "adams2014": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "avendao2012": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "kesari2018": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "lavignera2012": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "skakkebaek-2015-physrev": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "carlsen1992": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "swan2000": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "blank_goodman2009": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "friedman2007": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "panagopoulos2013": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "lai_singh2004": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "volkow2011": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "pall2016": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "cucurachi2013": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "balmori2009": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "belyaev2016": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "hardell_carlberg2015": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "miller2019": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "melnick2019": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "selye1950": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "schwan1957": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/modulome/pituitary",
+        "source": "app/[locale]/modulome/pituitary/page.tsx"
+      }
+    ],
+    "csli_31_panel_2026": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "csli_coloss_23": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/sentinel",
+        "source": "components/SentinelCascade.tsx"
+      }
+    ],
+    "csli_pecbms_27": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "components/DifferentialSusceptibility.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/sentinel",
+        "source": "components/SentinelCascade.tsx"
+      }
+    ],
+    "nike_bbs_gradient": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "rothamsted_aphid": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/sentinel",
+        "source": "components/SentinelCascade.tsx"
+      }
+    ],
+    "led_emf_component": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "street_led_insects": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "weather_radar_insect_temporal": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "wind_turbines_bats": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "display_multiplication": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "satellite_predictive_test": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "orthogonal_layer_convergence": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "yap2025_cry2_trpc1": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "ulusoy2025_bbb_enos": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
+    "nature_comms_2026_ttype": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "xiang2025_clc2_ttype": [
+      {
+        "path": "/",
+        "source": "components/SixFactorSummary.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "ma2026_spermatogenesis_cav": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "therabionic-ebioMedicine-2019": [
+      {
+        "path": "/",
+        "source": "components/TheraBionicProof.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/modulome/pain",
+        "source": "app/[locale]/modulome/pain/page.tsx"
+      },
+      {
+        "path": "/modulome/pancreas",
+        "source": "app/[locale]/modulome/pancreas/page.tsx"
+      }
+    ],
+    "pgc-cacna1c-five-disorders": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/timothy-experiment",
+        "source": "app/[locale]/evidence/timothy-experiment/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/modulome/brain",
+        "source": "app/[locale]/modulome/brain/page.tsx"
+      }
+    ],
+    "splawski2004": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/timothy-experiment",
+        "source": "app/[locale]/evidence/timothy-experiment/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/modulome/heart",
+        "source": "app/[locale]/modulome/heart/page.tsx"
+      }
+    ],
+    "pmc6894750_timothy": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/modulome/brain",
+        "source": "app/[locale]/modulome/brain/page.tsx"
+      }
+    ],
+    "cacna1g-asd-snps": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/modulome/brain",
+        "source": "app/[locale]/modulome/brain/page.tsx"
+      }
+    ],
+    "england2022_electric_ecology": [
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      }
+    ],
+    "wan2021_cryptochrome_monarch": [
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      }
+    ],
+    "leberecht2023_rf_compass_upper_bound": [
+      {
+        "path": "/ecology",
+        "source": "components/EcoStaticInterface.tsx"
+      }
+    ],
+    "lopez_martin_2009": [
+      {
+        "path": "/epistemology",
+        "source": "app/[locale]/epistemology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "lopez_martin_2006": [
+      {
+        "path": "/epistemology",
+        "source": "app/[locale]/epistemology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "eroglu_2009_cell": [
+      {
+        "path": "/epistemology",
+        "source": "app/[locale]/epistemology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "iarc_2a_shift": [
+      {
+        "path": "/epistemology",
+        "source": "app/[locale]/epistemology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "kury2017_camk2": [
+      {
+        "path": "/epistemology",
+        "source": "app/[locale]/epistemology/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "env_estrogen_mast": [
+      {
+        "path": "/evidence/allergy-epidemic",
+        "source": "app/[locale]/evidence/allergy-epidemic/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "amish_health_stat": [
+      {
+        "path": "/evidence/amish-control",
+        "source": "app/[locale]/evidence/amish-control/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "amish_review": [
+      {
+        "path": "/evidence/amish-control",
+        "source": "app/[locale]/evidence/amish-control/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "gao2024_bbb_conformational": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "bbb_emf_2026": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/evidence/gut-brain-axis",
+        "source": "app/[locale]/evidence/gut-brain-axis/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "leszczynski2002_hsp27_bbb": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      }
+    ],
+    "dasdag2015_wifi_mirna": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      }
+    ],
+    "iop2026_bbb_scoping_review": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      }
+    ],
+    "arendash2010_temt_alzheimer": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      }
+    ],
+    "aging_bbb_2015": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      }
+    ],
+    "tang2015_900mhz_bbb": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      }
+    ],
+    "pmc4909906_calcium_ad": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc3065491_bhatt_ca_oligomers": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc7179355_oday_calcium": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc8125740_calcium_abeta": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc7037278_presenilin_calcium": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      }
+    ],
+    "pmc8124842_anti_amyloid_failure": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      }
+    ],
+    "krumholz2013_phs": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pubmed10447544_icu_emf": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc12815752_hospital_rf": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      }
+    ],
+    "had2024_meta": [
+      {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      }
+    ],
+    "cipriani2018_antidepressants": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "goodwin2022_psilocybin": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "sousouri2025_cacna1c": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "elmallakh2004_lithium_ion": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "zarate2006_ketamine": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "rosenthal2025_ect_csd": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "lim2024_skin_battery": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "zhao2006_wound_ef": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "fukada1957_piezo": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "mohandas2022_piezo1_keratinocyte": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "skedung2013_nanoscale_touch": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "li2020_jama_adhd": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc6101623_cacna1c_gwas": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc6679227_cacna1c_review": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "wang2007_guanfacine_hcn": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc3306017_aldad_fetal": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "pmc7287020_hong_lifelong": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "pmc4658333_vgcc_brain_dev": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "pubmed32278494_bipolar_ionic": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "elmallakh2004_nakatpase": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "pmc3678088_k_channels_bipolar": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "pmc12533209_leukemia_bioelectric": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "koopman2016_vns_ra": [
+      {
+        "path": "/evidence",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "components/RetrodictionCards.tsx"
+      }
+    ],
+    "pmc5034549_verapamil_cancer": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "pmc4643966_cacna1a_asd": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      }
+    ],
+    "pmc8957782_cacna1h_asd": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "patent_4850959_insulin": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      },
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "jacob2018_piezo_biomaterials": [
+      {
+        "path": "/evidence/cascades",
+        "source": "app/[locale]/evidence/cascades/page.tsx"
+      }
+    ],
+    "twenge2020": [
+      {
+        "path": "/evidence",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      }
+    ],
+    "li2018": [
+      {
+        "path": "/evidence",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      }
+    ],
+    "early_onset_cancer_gbd_2023": [
+      {
+        "path": "/evidence",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      },
+      {
+        "path": "/evidence/cascades",
+        "source": "components/DiseaseCascadeTimeline.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "components/RetrodictionCards.tsx"
+      }
+    ],
+    "a2d1_pain": [
+      {
+        "path": "/evidence/chronic-pain",
+        "source": "app/[locale]/evidence/chronic-pain/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "a2d1_epigen": [
+      {
+        "path": "/evidence/chronic-pain",
+        "source": "app/[locale]/evidence/chronic-pain/page.tsx"
+      }
+    ],
+    "berm_recovery_window_2026": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "bektas2026": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "porges2011": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "microbiome_emf_collection_2019_2024": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "rf49_scientific_reports_2024": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "tbahriti2026": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "bartolke2025": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/evidence/evolution",
+        "source": "lib/evolutionData.ts"
+      },
+      {
+        "path": "/evidence/eyes",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/modulome/eye",
+        "source": "app/[locale]/modulome/eye/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "lib/evolutionData.ts"
+      }
+    ],
+    "wang2019_eneuro": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "battelle1980_emf_melatonin": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "tamura2012_follicular_melatonin": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "tong2017_melatonin_ivf": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "pmc12500685": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "pmc11265587": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "pmc10354453": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "reiter2007_melatonin_male": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "unfer2011_melatonin_ivf": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "nishihara2014_melatonin_sperm": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "rad_prot_dosimetry2013_emf_melatonin": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "irwin2015_sleep_immunity": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "spiegel1999_sleep_metabolic": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "chang2015_ipad_melatonin": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "duraccio2021_blue_light_filter": [
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      }
+    ],
+    "tms_fda_depression_2008": [
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "vns_gammacore_fda": [
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "ttfields_patent_7016725": [
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "bertagna2025": [
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "koivisto2000": [
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "eliyahu2006": [
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "luria2009": [
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "meyer2026": [
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "haidar2025_5g_skin_null": [
+      {
+        "path": "/evidence/devices",
+        "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "sutton2016_bee_hair_mechanism": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "england2024_butterfly_adaptive": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "england2024_caterpillar_predator": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "robert2024_aerial_electroreception_review": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "nicholls2007": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "nicholls2009": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "uk_weather_radar_insects_2025": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "nexrad_insect_density_2025": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "chinese_lockdown_cohort_41036143": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      }
+    ],
+    "zhang2025_post_lockdown_semen": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      }
+    ],
+    "coloss_winter_loss_panel_2020_2022": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      }
+    ],
+    "belmin2022_nature_sustainability": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      }
+    ],
+    "delong2010_plosone": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "world_bank_wdi_2024": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "deprez2025": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "li2002_miscarriage_mf": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "li2017": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "li2012_obesity_mf": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "li2011_asthma_mf": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "li2010_sperm_mf": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "sato2023_ih_preterm": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      }
+    ],
+    "tokinobu2021_ih_kyushu": [
+      {
+        "path": "/evidence/epidemiology",
+        "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      }
+    ],
+    "early_onset_colorectal_lancet_2024": [
+      {
+        "path": "/evidence",
+        "source": "components/RetrodictionCards.tsx"
+      },
+      {
+        "path": "/evidence/epidemiology",
+        "source": "components/RetrodictionCards.tsx"
+      }
+    ],
+    "epigen_endo_2024": [
+      {
+        "path": "/evidence/epigenetic-legacy",
+        "source": "app/[locale]/evidence/epigenetic-legacy/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "gc2_methylation": [
+      {
+        "path": "/evidence/epigenetic-legacy",
+        "source": "app/[locale]/evidence/epigenetic-legacy/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "ddt_transgener": [
+      {
+        "path": "/evidence/epigenetic-legacy",
+        "source": "app/[locale]/evidence/epigenetic-legacy/page.tsx"
+      }
+    ],
+    "hirano2017": [
+      {
+        "path": "/evidence/evolution",
+        "source": "lib/evolutionData.ts"
+      },
+      {
+        "path": "/evidence/eyes",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "app/[locale]/evidence/nutrition/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/modulome/eye",
+        "source": "app/[locale]/modulome/eye/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "higuchi2007": [
+      {
+        "path": "/evidence/evolution",
+        "source": "lib/evolutionData.ts"
+      },
+      {
+        "path": "/evidence/eyes",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/modulome/eye",
+        "source": "app/[locale]/modulome/eye/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "lib/evolutionData.ts"
+      }
+    ],
+    "martinez-cadenas2013": [
+      {
+        "path": "/evidence/eyes",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "lib/eyeColorData.ts"
+      }
+    ],
+    "niessner2014": [
+      {
+        "path": "/evidence/eyes",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/replication",
+        "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/modulome/eye",
+        "source": "app/[locale]/modulome/eye/page.tsx"
+      }
+    ],
+    "white2003": [
+      {
+        "path": "/evidence/eyes",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "lib/eyeColorData.ts"
+      }
+    ],
+    "lamia2009": [
+      {
+        "path": "/evidence/eyes",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/nutrition",
+        "source": "app/[locale]/evidence/nutrition/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "gut_per2_2026": [
+      {
+        "path": "/evidence/gut-brain-axis",
+        "source": "app/[locale]/evidence/gut-brain-axis/page.tsx"
+      },
+      {
+        "path": "/evidence/triple-strikes",
+        "source": "app/[locale]/evidence/triple-strikes/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/evidence/walker-chain",
+        "source": "app/[locale]/evidence/walker-chain/page.tsx"
+      }
+    ],
+    "gut_circadian_2018": [
+      {
+        "path": "/evidence/gut-brain-axis",
+        "source": "app/[locale]/evidence/gut-brain-axis/page.tsx"
+      },
+      {
+        "path": "/evidence/walker-chain",
+        "source": "app/[locale]/evidence/walker-chain/page.tsx"
+      }
+    ],
+    "gut_light_2025": [
+      {
+        "path": "/evidence/gut-brain-axis",
+        "source": "app/[locale]/evidence/gut-brain-axis/page.tsx"
+      }
+    ],
+    "marchetti2013_heavy_metal": [
+      {
+        "path": "/evidence/heavy-metal-synergy",
+        "source": "app/[locale]/evidence/heavy-metal-synergy/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "bhatt2012_cav31_cd": [
+      {
+        "path": "/evidence/heavy-metal-synergy",
+        "source": "app/[locale]/evidence/heavy-metal-synergy/page.tsx"
+      }
+    ],
+    "pgc2025_fluoride": [
+      {
+        "path": "/evidence/heavy-metal-synergy",
+        "source": "app/[locale]/evidence/heavy-metal-synergy/page.tsx"
+      }
+    ],
+    "pgc2026_convergent": [
+      {
+        "path": "/evidence/heavy-metal-synergy",
+        "source": "app/[locale]/evidence/heavy-metal-synergy/page.tsx"
+      }
+    ],
+    "mahlberg2006_pgc_ad": [
+      {
+        "path": "/evidence/heavy-metal-synergy",
+        "source": "app/[locale]/evidence/heavy-metal-synergy/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "kunz2008_pgc_insomnia": [
+      {
+        "path": "/evidence/heavy-metal-synergy",
+        "source": "app/[locale]/evidence/heavy-metal-synergy/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "intechopen2020_melatonin_heart": [
+      {
+        "path": "/evidence/heavy-metal-synergy",
+        "source": "app/[locale]/evidence/heavy-metal-synergy/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "lte_thyroid_2024": [
+      {
+        "path": "/evidence/hidden-thyroid",
+        "source": "app/[locale]/evidence/hidden-thyroid/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "elf_thyroid_2022": [
+      {
+        "path": "/evidence/hidden-thyroid",
+        "source": "app/[locale]/evidence/hidden-thyroid/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "thyroid_shift_2024": [
+      {
+        "path": "/evidence/hidden-thyroid",
+        "source": "app/[locale]/evidence/hidden-thyroid/page.tsx"
+      }
+    ],
+    "filiano1994_triple": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      }
+    ],
+    "cap2006_caffeine": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      }
+    ],
+    "xie2024_adenosine": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      }
+    ],
+    "hausler2024_melatonin": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      }
+    ],
+    "scholl2015_cacna1h": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "bbi2024_monitor": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      }
+    ],
+    "german2023_monitor": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      }
+    ],
+    "bumetanide_nkcc1": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "nkcc1_kcc2_bookshelf": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "kcnq2_sd_threshold": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      }
+    ],
+    "rf_neurodevelopment": [
+      {
+        "path": "/evidence/infant-vulnerability",
+        "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
+      }
+    ],
+    "bat_5g_prdm16": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/klimentidis-explained",
+        "source": "app/[locale]/evidence/klimentidis-explained/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/modulome/bat",
+        "source": "app/[locale]/modulome/bat/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "betacell_efield": [
+      {
+        "path": "/evidence/klimentidis-explained",
+        "source": "app/[locale]/evidence/klimentidis-explained/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "cavg4_camkii_mafa": [
+      {
+        "path": "/evidence/klimentidis-explained",
+        "source": "app/[locale]/evidence/klimentidis-explained/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/CaMKIIConvergenceDiagram.tsx"
+      }
+    ],
+    "boyes2021": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "pawson2014": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "ttfields_mechanism": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      }
+    ],
+    "pmc9920439_led_harmonics": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      }
+    ],
+    "havas2006": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      }
+    ],
+    "if_systematic_review_2019": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      }
+    ],
+    "eu_regulation_244_2009": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "display_market_penetration_2005_2024": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      }
+    ],
+    "streaming_screen_time_2012_2024": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      }
+    ],
+    "heliyon_150khz_fertility_2022": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "milham_stetzer2013_dirty_electricity": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc4896623_cav14": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc7830240_blue_light": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "sundaram2023_150khz_female_organs": [
+      {
+        "path": "/evidence/lighting",
+        "source": "app/[locale]/evidence/lighting/page.tsx"
+      }
+    ],
+    "talbi2025_quantum_magnetoreception": [
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "cacna1c_genotyping_2024": [
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "hrv_wifi_2023": [
+      {
+        "path": "/evidence/magnetoreception",
+        "source": "app/[locale]/evidence/magnetoreception/page.tsx"
+      }
+    ],
+    "wacker2000": [
+      {
+        "path": "/evidence/nutrition",
+        "source": "app/[locale]/evidence/nutrition/page.tsx"
+      }
+    ],
+    "perheentupa2013": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "chodick-2020-israel": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "andersson-2007-denmark": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "nyante2012_nhanes": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "alshammari2022": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/modulome/hypothalamus",
+        "source": "app/[locale]/modulome/hypothalamus/page.tsx"
+      }
+    ],
+    "chen2016_glia": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/modulome/hypothalamus",
+        "source": "app/[locale]/modulome/hypothalamus/page.tsx"
+      }
+    ],
+    "maalouf2023": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/modulome/bat",
+        "source": "app/[locale]/modulome/bat/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "bhatt2012_glp1": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "nifedipine_weight2011": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      }
+    ],
+    "screentime_meta2022": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      }
+    ],
+    "nifed_tocolytic": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "verap_t1d_jama": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "verap_t1d_natmed": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "verap_t2d_dc": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      }
+    ],
+    "lancet-2017-tsimane-heart": [
+      {
+        "path": "/evidence/populations",
+        "source": "lib/populationData.ts"
+      }
+    ],
+    "alz-dem-2022-tsimane-dementia": [
+      {
+        "path": "/evidence/populations",
+        "source": "lib/populationData.ts"
+      }
+    ],
+    "j-gerontol-2021-tsimane-brain": [
+      {
+        "path": "/evidence/populations",
+        "source": "lib/populationData.ts"
+      }
+    ],
+    "obesity-rev-2018-hunter-gatherer": [
+      {
+        "path": "/evidence/populations",
+        "source": "lib/populationData.ts"
+      }
+    ],
+    "kitava-lindeberg-1993": [
+      {
+        "path": "/evidence/populations",
+        "source": "lib/populationData.ts"
+      }
+    ],
+    "pnas-2025-tsimane-moseten-brain": [
+      {
+        "path": "/evidence/populations",
+        "source": "lib/populationData.ts"
+      }
+    ],
+    "amish-fertility-demogr-res-2025": [
+      {
+        "path": "/evidence/populations",
+        "source": "lib/populationData.ts"
+      }
+    ],
+    "amish-cancer-westman-2010": [
+      {
+        "path": "/evidence/populations",
+        "source": "lib/populationData.ts"
+      }
+    ],
+    "amish-depression-cross-2007": [
+      {
+        "path": "/evidence/populations",
+        "source": "lib/populationData.ts"
+      }
+    ],
+    "blackman1991": [
+      {
+        "path": "/evidence/replication",
+        "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "blackman1990": [
+      {
+        "path": "/evidence/replication",
+        "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "blackman1985": [
+      {
+        "path": "/evidence/replication",
+        "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "ivancsits_dna_recovery": [
+      {
+        "path": "/evidence/replication",
+        "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "schmid2012": [
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      }
+    ],
+    "panagopoulos2019_dna": [
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      }
+    ],
+    "neuhaus2019_cav12_ttfields": [
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      }
+    ],
+    "jacc_ev2025": [
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      }
+    ],
+    "ev_patent": [
+      {
+        "path": "/evidence/technology",
+        "source": "app/[locale]/evidence/technology/page.tsx"
+      }
+    ],
+    "splawski2005_cardiac_ltype": [
+      {
+        "path": "/evidence/timothy-experiment",
+        "source": "app/[locale]/evidence/timothy-experiment/page.tsx"
+      }
+    ],
+    "bhat2012_cacna1c_psychiatric": [
+      {
+        "path": "/evidence/timothy-experiment",
+        "source": "app/[locale]/evidence/timothy-experiment/page.tsx"
+      }
+    ],
+    "bader2011_timothy_mouse": [
+      {
+        "path": "/evidence/timothy-experiment",
+        "source": "app/[locale]/evidence/timothy-experiment/page.tsx"
+      }
+    ],
+    "kim2019": [
+      {
+        "path": "/evidence/triple-strikes",
+        "source": "app/[locale]/evidence/triple-strikes/page.tsx"
+      }
+    ],
+    "rf9_cortisol_2021": [
+      {
+        "path": "/evidence/triple-strikes",
+        "source": "app/[locale]/evidence/triple-strikes/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/evidence/walker-chain",
+        "source": "app/[locale]/evidence/walker-chain/page.tsx"
+      }
+    ],
+    "bdnf_rf_2023": [
+      {
+        "path": "/evidence/triple-strikes",
+        "source": "app/[locale]/evidence/triple-strikes/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "bdnf_rf_dev_2021": [
+      {
+        "path": "/evidence/triple-strikes",
+        "source": "app/[locale]/evidence/triple-strikes/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "lindgren2025": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "frontiers2021_neurotransmitters": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "enger2023_csd_initiation": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "bhatt2012_camkii_csd": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "varro2009_seizure": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "neonatal_gaba": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "sudep_critical_2023": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "aiba_noebels_2015": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "dell2022_sleep_seizure": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "chen2024_prenatal": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "melatonin_bbb_protection": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "klimek2023_hpa": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "rf_hpa_stress_2026": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "kim2019_hypothalamus": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "sapolsky2009_cortisol": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "cortisol_ad_2026": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "johansson2000_mast": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "mast_cell_cardiac": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "catsper_2021": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "sperm_meta_2024": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "scn_ca_oscillation": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "berridge_wanting": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "inflam_da_2022": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "opc_cav12_2019": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "smf_opc_2017": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "nk_ca_2024": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "nk_elf_suppress": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "ttfields_nk_2024": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "gnih_stress": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "bdnf_elf_up_2017": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "sleep_t_meta_2021": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/evidence/walker-chain",
+        "source": "app/[locale]/evidence/walker-chain/page.tsx"
+      }
+    ],
+    "telomere_ros": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "mel_telomerase": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "oxt_vgcc": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "oxt_ca_pvn": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "a2d1_injury": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "asd_nkcc1_2025": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "a2d_network": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "adhd_pfc_delay": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "adhd_goldilocks": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "shift_breast": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "mel_antitumor": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "p4_cav12": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "als_ca_vuln": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "gut_5ht_90": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "trp_gut_brain": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "mast_ca_deg": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "preecl_cav12": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "bone_ca_channels": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "pemf_bone": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "vdh_lvscc": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "vdr_cav_silence": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "vd_pfc_schiz": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "catsper_review": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "catSper-temp-2025": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "catsper_human": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "psilo_5ht2a_ca": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "psilo_intra": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "psilo_plast": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "caffeine_pd": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "caffeine_mptp": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "caffeine_a2a_neuro": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "li_dementia": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "li_suicide": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "li_usa_county": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "amygdala_cort": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "amyg_v_hippo_review": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      }
+    ],
+    "amygdala_persist": [
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "crf_gnrh_2013": [
+      {
+        "path": "/evidence/walker-chain",
+        "source": "app/[locale]/evidence/walker-chain/page.tsx"
+      }
+    ],
+    "ttfields_ef14_jama_2017": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "becker1990": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "adee2023": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "lllt_fda_2007_alopecia": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "hamblin2013_photomedicine": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc3885580_retinal_vgcc": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "ijms2026-hpg": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/modulome",
+        "source": "lib/modulome/organDetailData.ts"
+      },
+      {
+        "path": "/modulome/pituitary",
+        "source": "app/[locale]/modulome/pituitary/page.tsx"
+      },
+      {
+        "path": "/modulome/thyroid",
+        "source": "app/[locale]/modulome/thyroid/page.tsx"
+      }
+    ],
+    "mohamed-bp-emf": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/modulome",
+        "source": "lib/modulome/organDetailData.ts"
+      },
+      {
+        "path": "/modulome/adrenal",
+        "source": "app/[locale]/modulome/adrenal/page.tsx"
+      },
+      {
+        "path": "/modulome/heart",
+        "source": "app/[locale]/modulome/heart/page.tsx"
+      }
+    ],
+    "ttfields_cell_size_frequency": [
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "selye1936": [
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "halgamuge2015": [
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "rishabh2026": [
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "burch2002": [
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "sci-rep-2019-sperm-ros": [
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "sakurai2008": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/modulome",
+        "source": "lib/modulome/organDetailData.ts"
+      },
+      {
+        "path": "/modulome/pancreas",
+        "source": "app/[locale]/modulome/pancreas/page.tsx"
+      }
+    ],
+    "mozaffarian2022": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "t2d_covid2024": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "kolbabova2015_melatonin_seasonal": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "cacna1c_functional": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "cacna1c_amygdala": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "neonatal_seizure_review2021": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "insulin_oxt": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "depression_telomere": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "mets_telomere": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "field2006_cacna2d1": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "hoppa2012_a2d": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "altawashi2018_camk2a": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "patke2017_cry1": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "lyssenko2009_mtnr1b": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "tuomi2016_mtnr1b": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "korean2025_cacna": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "shiftwork_mets2025": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "fert-steril-2023-phone-sperm-trend": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "saad2016": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "alpha2d1_glp1_2024": [
+      {
+        "path": "/model",
+        "source": "components/CaMKIIConvergenceDiagram.tsx"
+      }
+    ],
+    "meloni2013_glp1_review": [
+      {
+        "path": "/model",
+        "source": "components/CaMKIIConvergenceDiagram.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "assefa2024_testes_review": [
+      {
+        "path": "/",
+        "source": "components/SixFactorSummary.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/SixFactorSummary.tsx"
+      }
+    ],
+    "wu2008_emas_hpt_axis": [
+      {
+        "path": "/",
+        "source": "components/SixFactorSummary.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "components/SixFactorSummary.tsx"
+      }
+    ],
+    "timothy-syndrome-cacna1c-autism": [
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      }
+    ],
+    "aging-cell-2024-cav13-hearing": [
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/modulome/ear",
+        "source": "app/[locale]/modulome/ear/page.tsx"
+      }
+    ],
+    "nejm-fhm-cacna1a": [
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      }
+    ],
+    "pnas-2005-cav31-sleep": [
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      }
+    ],
+    "fda-hde-h220001": [
+      {
+        "path": "/",
+        "source": "components/TheraBionicProof.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      }
+    ],
+    "cav32-chronic-pain-2021": [
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/modulome/pain",
+        "source": "app/[locale]/modulome/pain/page.tsx"
+      }
+    ],
+    "pnas-2011-cav33-spindles": [
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      }
+    ],
+    "cacna1i-migraine-2022": [
+      {
+        "path": "/model",
+        "source": "lib/vgccGeneFamily.ts"
+      },
+      {
+        "path": "/model/fieldstate/math",
+        "source": "lib/vgccGeneFamily.ts"
+      }
+    ],
+    "glomerulosa_cav32_aldosterone": [
+      {
+        "path": "/modulome/adrenal",
+        "source": "app/[locale]/modulome/adrenal/page.tsx"
+      }
+    ],
+    "pall2022-ad": [
+      {
+        "path": "/modulome",
+        "source": "lib/modulome/organDetailData.ts"
+      },
+      {
+        "path": "/modulome/brain",
+        "source": "app/[locale]/modulome/brain/page.tsx"
+      }
+    ],
+    "denmark-cpp-3x-increase": [
+      {
+        "path": "/modulome/brain",
+        "source": "app/[locale]/modulome/brain/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "kuryshev2014_calcium_channel_selectivity": [
+      {
+        "path": "/modulome/brain",
+        "source": "app/[locale]/modulome/brain/page.tsx"
+      }
+    ],
+    "brain-2026-cav32-human-drg": [
+      {
+        "path": "/modulome/ear",
+        "source": "app/[locale]/modulome/ear/page.tsx"
+      },
+      {
+        "path": "/modulome/pain",
+        "source": "app/[locale]/modulome/pain/page.tsx"
+      }
+    ],
+    "yang2015_astro": [
+      {
+        "path": "/modulome/hypothalamus",
+        "source": "app/[locale]/modulome/hypothalamus/page.tsx"
+      }
+    ],
+    "pituitary_elf_18week_2024": [
+      {
+        "path": "/modulome/pituitary",
+        "source": "app/[locale]/modulome/pituitary/page.tsx"
+      }
+    ],
+    "schlegel1987": [
+      {
+        "path": "/modulome/pituitary",
+        "source": "app/[locale]/modulome/pituitary/page.tsx"
+      }
+    ],
+    "vgcc_blocker_studies_collection": [
+      {
+        "path": "/modulome/testes",
+        "source": "app/[locale]/modulome/testes/page.tsx"
+      }
+    ],
+    "thyroid-sysrev-2024": [
+      {
+        "path": "/modulome",
+        "source": "lib/modulome/organDetailData.ts"
+      },
+      {
+        "path": "/modulome/thyroid",
+        "source": "app/[locale]/modulome/thyroid/page.tsx"
+      }
+    ],
+    "autism_real2014": [
+      {
+        "path": "/",
+        "source": "components/ProxyMaskingInfographic.tsx"
+      }
+    ],
+    "bradford-hill-1965": [
+      {
+        "path": "/",
+        "source": "components/BradfordHillCard.tsx"
+      }
+    ],
+    "res-square-2025-radar-methylation": [
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "lupi2021": [
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "bumble_rf2025": [
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "odemer2019": [
+      {
+        "path": "/sentinel",
+        "source": "components/VarroaCascade.tsx"
+      }
+    ],
+    "lte-thyroid-2024": [
+      {
+        "path": "/modulome",
+        "source": "lib/modulome/organDetailData.ts"
+      }
+    ]
+  }
+}

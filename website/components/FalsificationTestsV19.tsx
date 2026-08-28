@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { pickCopy } from "@/lib/i18n";
 
 interface Premise {
   id: string;
@@ -132,10 +133,145 @@ const COPY = {
       ANFR_2026: "ANFR 2026",
     } as Record<string, string>,
   },
+  ja: {
+    title: "反証テスト v19.1",
+    lead: "時間的識別が空間的に制約されたF1〜F6テストに代わります。各テストは技術導入タイミングの国間差異を利用します — RF測定と生物学的応答の同時観測を必要としない外生的変動です。",
+    summary: "概要",
+    ran: "実行済み",
+    consistent: "整合的",
+    falsified: "反証",
+    pending: "データ待ち",
+    prediction: "予測",
+    result: "結果",
+    falsificationCriterion: "反証基準",
+    premises: "前提",
+    dataStatus: "データ",
+    matrixTitle: "反証マトリクス",
+    matrixTest: "テスト",
+    matrixCriterion: "これが真の場合…",
+    matrixScope: "…これが否定される",
+    loading: "反証テストを読み込み中…",
+    error: "反証テストを読み込めませんでした。",
+    source: "テストマニフェスト",
+    statusRan: "実行済み",
+    statusPending: "保留中",
+    statusConsistent: "整合的",
+    testsRun: "件実行",
+    testsTotal: "合計",
+    noFalsified: "反証なし",
+    version: "バージョン",
+    premiseTypes: {
+      K: "既知",
+      E: "実証的",
+      T: "理論的",
+      C: "因果モデル",
+      "M|C": "モデル/因果",
+      logical: "論理的",
+    } as Record<string, string>,
+    dataStatuses: {
+      AVAILABLE: "利用可能",
+      PARTIAL: "部分的",
+      REQUIRES_COLLECTION: "収集が必要",
+      WPP_2024: "WPP 2024",
+      PUBLISHED_LITERATURE: "公刊文献",
+      LITERATURE_VALUES: "文献値",
+      ANFR_2026: "ANFR 2026",
+    } as Record<string, string>,
+  },
+  fr: {
+    title: "Tests de falsification v19.1",
+    lead: "L'identification temporelle remplace les tests F1–F6 bloqués spatialement. Chaque test exploite la variation du calendrier d'adoption technologique entre les pays — une variation exogène qui ne nécessite pas de mesure RF colocalisée et de réponse biologique.",
+    summary: "Résumé",
+    ran: "Exécuté",
+    consistent: "Cohérent",
+    falsified: "Falsifié",
+    pending: "En attente de données",
+    prediction: "Prédiction",
+    result: "Résultat",
+    falsificationCriterion: "Critère de falsification",
+    premises: "Prémisses",
+    dataStatus: "Données",
+    matrixTitle: "Matrice de falsification",
+    matrixTest: "Test",
+    matrixCriterion: "Si ceci est vrai…",
+    matrixScope: "…ceci est réfuté",
+    loading: "Chargement des tests de falsification…",
+    error: "Les tests de falsification n'ont pas pu être chargés.",
+    source: "Manifeste de test",
+    statusRan: "Exécuté",
+    statusPending: "En attente",
+    statusConsistent: "Cohérent",
+    testsRun: "tests exécutés",
+    testsTotal: "total",
+    noFalsified: "aucun falsifié",
+    version: "Version",
+    premiseTypes: {
+      K: "Connu",
+      E: "Empirique",
+      T: "Théorique",
+      C: "Modèle causal",
+      "M|C": "Modèle/Causal",
+      logical: "Logique",
+    } as Record<string, string>,
+    dataStatuses: {
+      AVAILABLE: "Disponible",
+      PARTIAL: "Partiel",
+      REQUIRES_COLLECTION: "Collecte requise",
+      WPP_2024: "WPP 2024",
+      PUBLISHED_LITERATURE: "Littérature publiée",
+      LITERATURE_VALUES: "Valeurs de la littérature",
+      ANFR_2026: "ANFR 2026",
+    } as Record<string, string>,
+  },
+  ko: {
+    title: "반증 테스트 v19.1",
+    lead: "시간적 식별이 공간적으로 제한된 F1–F6 테스트를 대체합니다. 각 테스트는 국가 간 기술 도입 시기의 변동을 활용합니다 — RF 측정과 생물학적 반응의 동시 관측이 필요 없는 외생적 변동입니다.",
+    summary: "요약",
+    ran: "실행됨",
+    consistent: "일관됨",
+    falsified: "반증됨",
+    pending: "데이터 대기 중",
+    prediction: "예측",
+    result: "결과",
+    falsificationCriterion: "반증 기준",
+    premises: "전제",
+    dataStatus: "데이터",
+    matrixTitle: "반증 매트릭스",
+    matrixTest: "테스트",
+    matrixCriterion: "이것이 참이면…",
+    matrixScope: "…이것이 반박됨",
+    loading: "반증 테스트 로딩 중…",
+    error: "반증 테스트를 불러올 수 없습니다.",
+    source: "테스트 매니페스트",
+    statusRan: "실행됨",
+    statusPending: "대기 중",
+    statusConsistent: "일관됨",
+    testsRun: "건 실행",
+    testsTotal: "합계",
+    noFalsified: "반증 없음",
+    version: "버전",
+    premiseTypes: {
+      K: "알려진",
+      E: "실증적",
+      T: "이론적",
+      C: "인과 모델",
+      "M|C": "모델/인과",
+      logical: "논리적",
+    } as Record<string, string>,
+    dataStatuses: {
+      AVAILABLE: "이용 가능",
+      PARTIAL: "부분적",
+      REQUIRES_COLLECTION: "수집 필요",
+      WPP_2024: "WPP 2024",
+      PUBLISHED_LITERATURE: "출판 문헌",
+      LITERATURE_VALUES: "문헌 값",
+      ANFR_2026: "ANFR 2026",
+    } as Record<string, string>,
+  },
 } as const;
 
 function StatusBadge({ status, falsified, locale }: { status: string; falsified?: boolean; locale: string }) {
-  const d = locale === "fi" ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
 
   if (status === "RAN" && falsified === false) {
     return (
@@ -161,30 +297,49 @@ function StatusBadge({ status, falsified, locale }: { status: string; falsified?
   );
 }
 
+const KEY_RESULT_TEMPLATES = {
+  T1: {
+    en: (did: string, euN: number, ctrlN: number) => `DID = ${did} TFR/yr · ${euN} EU vs ${ctrlN} control countries`,
+    fi: (did: string, euN: number, ctrlN: number) => `DID = ${did} TFR/v · ${euN} EU-maata vs ${ctrlN} kontrollimaata`,
+    ja: (did: string, euN: number, ctrlN: number) => `DID = ${did} TFR/年 · EU ${euN}カ国 vs 対照 ${ctrlN}カ国`,
+    fr: (did: string, euN: number, ctrlN: number) => `DID = ${did} TFR/an · ${euN} pays UE vs ${ctrlN} pays témoins`,
+    ko: (did: string, euN: number, ctrlN: number) => `DID = ${did} TFR/년 · EU ${euN}개국 vs 대조 ${ctrlN}개국`,
+  },
+  T3: {
+    en: "M2 predicts correctly, M1 cannot — discriminating test",
+    fi: "M2 ennustaa oikein, M1 ei voi — erotteleva testi",
+    ja: "M2は正しく予測、M1は不可 — 弁別テスト",
+    fr: "M2 prédit correctement, M1 ne le peut pas — test discriminant",
+    ko: "M2는 올바르게 예측, M1은 불가 — 판별 테스트",
+  },
+  T7: {
+    en: (median: number, exceeds: number, total: number) => `Ambient ${median} V/m exceeds therapeutic in ${exceeds}/${total} (tDCS: 2.2×)`,
+    fi: (median: number, exceeds: number, total: number) => `Ambient ${median} V/m ylittää terapeuttisen ${exceeds}/${total} vertailussa (tDCS: 2,2×)`,
+    ja: (median: number, exceeds: number, total: number) => `環境値 ${median} V/m が治療閾値を超過 ${exceeds}/${total} (tDCS: 2.2倍)`,
+    fr: (median: number, exceeds: number, total: number) => `Ambiant ${median} V/m dépasse le seuil thérapeutique dans ${exceeds}/${total} (tDCS : 2,2×)`,
+    ko: (median: number, exceeds: number, total: number) => `환경값 ${median} V/m이 치료 임계값 초과 ${exceeds}/${total} (tDCS: 2.2배)`,
+  },
+} as const;
+
 function formatKeyResult(test: FalsificationTest, locale: string): string | null {
   const kr = test.key_result;
   if (!kr) return null;
+  const loc = (locale in KEY_RESULT_TEMPLATES.T3 ? locale : "en") as keyof typeof KEY_RESULT_TEMPLATES.T3;
 
   if (test.id === "T1") {
-    const did = kr.did_estimate as number;
+    const did = (kr.did_estimate as number).toFixed(5);
     const euN = kr.eu_n as number;
     const ctrlN = kr.ctrl_n as number;
-    return locale === "fi"
-      ? `DID = ${did.toFixed(5)} TFR/v · ${euN} EU-maata vs ${ctrlN} kontrollimaata`
-      : `DID = ${did.toFixed(5)} TFR/yr · ${euN} EU vs ${ctrlN} control countries`;
+    return KEY_RESULT_TEMPLATES.T1[loc](did, euN, ctrlN);
   }
   if (test.id === "T3") {
-    return locale === "fi"
-      ? "M2 ennustaa oikein, M1 ei voi — erotteleva testi"
-      : "M2 predicts correctly, M1 cannot — discriminating test";
+    return KEY_RESULT_TEMPLATES.T3[loc];
   }
   if (test.id === "T7") {
     const median = kr.ambient_median_v_m as number;
     const exceeds = kr.n_exceeds as number;
     const total = kr.n_total as number;
-    return locale === "fi"
-      ? `Ambient ${median} V/m ylittää terapeuttisen ${exceeds}/${total} vertailussa (tDCS: 2,2×)`
-      : `Ambient ${median} V/m exceeds therapeutic in ${exceeds}/${total} (tDCS: 2.2×)`;
+    return KEY_RESULT_TEMPLATES.T7[loc](median, exceeds, total);
   }
   return null;
 }
@@ -192,7 +347,7 @@ function formatKeyResult(test: FalsificationTest, locale: string): string | null
 export function FalsificationTestsV19({ locale }: { locale: string }) {
   const [data, setData] = useState<FalsificationData | null>(null);
   const [failed, setFailed] = useState(false);
-  const d = locale === "fi" ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
 
   useEffect(() => {
     let cancelled = false;

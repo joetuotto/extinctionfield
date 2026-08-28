@@ -134,7 +134,7 @@ export const NAV_ROUTES: NavRoute[] = [
         },
       },
       {
-        href: "/mathematics",
+        href: "/model/math",
         labels: { en: "Mathematics", fi: "Matematiikka", ja: "数学", fr: "Mathématiques", ko: "수학" },
         icon: Sigma,
         descs: {

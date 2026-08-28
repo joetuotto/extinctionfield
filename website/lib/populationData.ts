@@ -32,6 +32,7 @@ export interface LowEMFPopulation {
     implicationEn: string;
     implicationFi: string;
     source: string;
+    referenceId?: string;
   };
   health: PopulationHealth;
   referenceIds: string[];
@@ -71,6 +72,7 @@ export const LOW_EMF_POPULATIONS: LowEMFPopulation[] = [
       implicationEn: "Age-related testosterone decline is not biological inevitability but environment-dependent. Low baseline reflects immune trade-off (high pathogen load), not dysfunction.",
       implicationFi: "Ikään liittyvä testosteronilasku ei ole biologinen väistämättömyys vaan ympäristöriippuvainen ilmiö. Matala lähtötaso heijastaa immuunijärjestelmän kompromissia (korkea patogeenipaine), ei toimintahäiriötä.",
       source: "Trumble et al. 2012, Proc R Soc B",
+      referenceId: "trumble2012",
     },
     health: {
       tfr: "~9",
@@ -81,7 +83,7 @@ export const LOW_EMF_POPULATIONS: LowEMFPopulation[] = [
       cancer: "?",
       depression: "?",
     },
-    referenceIds: ["lancet-2017-tsimane-heart", "alz-dem-2022-tsimane-dementia", "j-gerontol-2021-tsimane-brain"],
+    referenceIds: ["lancet-2017-tsimane-heart", "alz-dem-2022-tsimane-dementia", "j-gerontol-2021-tsimane-brain", "trumble2012"],
   },
   {
     id: "hadza",

@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n";
+import { referenceRegistry } from "@/lib/referenceRegistry.server";
+import { referenceUrl } from "@/lib/references";
 
 const BASE_URL = "https://extinctionfield.com";
 
@@ -55,6 +57,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: route.changeFrequency,
         priority: route.priority,
+      });
+    }
+
+    for (const reference of referenceRegistry().references) {
+      if (!reference.authors || !reference.title || reference.year <= 0 || !referenceUrl(reference)) continue;
+      entries.push({
+        url: `${BASE_URL}/${locale}/references/${reference.id}`,
+        lastModified: new Date(referenceRegistry().metadata.generated),
+        changeFrequency: "yearly",
+        priority: 0.4,
       });
     }
   }

@@ -49,7 +49,7 @@ function Chart({
     : { top: 18, right: 16, bottom: 42, left: 42 };
   const cw = W - pad.left - pad.right;
   const ch = H - pad.top - pad.bottom;
-  const font = compact ? 11 : 10;
+  const font = 11;
 
   const max = Math.max(...older.map((p) => p.asfr), ...younger.map((p) => p.asfr)) * 1.1;
   const sy = (v: number) => pad.top + ch - (v / max) * ch;
@@ -60,7 +60,11 @@ function Chart({
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
-      className="w-full"
+      className={
+        compact
+          ? "chart-svg h-auto w-full min-w-[360px]"
+          : "chart-svg mx-auto h-auto w-full min-w-[560px] max-w-[560px]"
+      }
       role="img"
       aria-label={
         fi
@@ -73,7 +77,7 @@ function Chart({
         y1={pad.top + ch}
         x2={W - pad.right}
         y2={pad.top + ch}
-        stroke="var(--card-border)"
+        className="chart-axis-line"
         strokeWidth={1}
       />
       <text
@@ -153,6 +157,10 @@ function Chart({
                 fontSize={font - 1}
                 textAnchor="middle"
                 fontFamily="var(--font-mono)"
+                paintOrder="stroke"
+                stroke="var(--figure-bg)"
+                strokeWidth={3}
+                strokeLinejoin="round"
               >
                 {change > 0 ? "+" : ""}
                 {change.toFixed(0)}%
@@ -189,9 +197,9 @@ export function CohortAsfrProfile({ locale = "en" }: { locale?: string }) {
     .sort((a, b) => a.name.localeCompare(b.name, locale));
 
   return (
-    <div className="rounded-xl border border-card-border bg-card-bg p-5 sm:p-6">
-      <div className="mb-4 flex flex-wrap items-baseline justify-between gap-3">
-        <div>
+    <section className="chart-surface">
+      <div className="chart-surface__header">
+        <div className="min-w-0 flex-1">
           <h3 className="text-lg font-semibold">
             {fi
               ? "Sama ikä, eri kohortti"
@@ -203,12 +211,12 @@ export function CohortAsfrProfile({ locale = "en" }: { locale?: string }) {
               : `Age-specific fertility when the ${OLDER} and ${YOUNGER} birth cohorts were in the same age group.`}
           </p>
         </div>
-        <label className="text-xs text-foreground-muted">
+        <label className="min-w-0 max-w-full text-xs text-foreground-muted">
           <span className="sr-only">{fi ? "Valitse maa" : "Select country"}</span>
           <select
             value={iso3}
             onChange={(e) => setIso3(e.target.value)}
-            className="rounded border border-card-border bg-background px-2 py-1 text-xs text-foreground"
+            className="min-h-9 w-full max-w-full rounded-md border border-card-border bg-background px-2.5 py-1.5 text-xs text-foreground sm:w-auto"
           >
             {options.map((o) => (
               <option key={o.code} value={o.code}>
@@ -219,32 +227,32 @@ export function CohortAsfrProfile({ locale = "en" }: { locale?: string }) {
         </label>
       </div>
 
-      <div className="sm:hidden">
+      <div className="chart-scroll sm:hidden">
         <Chart compact fi={fi} older={older} younger={younger} />
       </div>
-      <div className="hidden sm:block">
+      <div className="chart-scroll hidden sm:block">
         <Chart compact={false} fi={fi} older={older} younger={younger} />
       </div>
 
-      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-foreground-muted">
-        <span>
-          <span className="mr-1.5 inline-block h-2.5 w-2.5 align-middle rounded-sm bg-foreground-muted opacity-55" />
+      <ul className="chart-legend mt-3">
+        <li className="chart-key">
+          <span className="chart-key__swatch bg-foreground-muted opacity-55" />
           {fi ? `${OLDER}-syntyneet` : `${OLDER} cohort`}
-        </span>
-        <span>
-          <span className="mr-1.5 inline-block h-2.5 w-2.5 align-middle rounded-sm bg-accent" />
+        </li>
+        <li className="chart-key">
+          <span className="chart-key__swatch bg-accent" />
           {fi ? `${YOUNGER}-syntyneet` : `${YOUNGER} cohort`}
-        </span>
-        <span className="font-mono-num">
+        </li>
+        <li className="chart-key font-mono-num">
           {fi ? "synnytystä / 1000 naista" : "births per 1000 women"}
-        </span>
-      </div>
+        </li>
+      </ul>
 
       <p className="mt-2 text-xs leading-relaxed text-foreground-muted">
         {fi
           ? `${YOUNGER}-syntyneet ovat ehtineet vasta ikäryhmään ${shared ?? "—"}, joten vanhemmat ikäryhmät puuttuvat: kuva ei ole valmis kohorttivertailu vaan sen alkuosa. Kunkin ryhmän arvo on WPP 2024:n havaintovuosien keskiarvo siltä ajalta, jolloin kohortti oli kyseisessä ikäryhmässä; projektiovuosia ei käytetä. Ero on kuvaileva eikä osoita syytä.`
           : `The ${YOUNGER} cohort has only reached the ${shared ?? "—"} group, so the older groups are missing: this is the beginning of a cohort comparison, not a completed one. Each value is the mean of WPP 2024 estimate years while that cohort occupied the age group; projection years are excluded. The difference is descriptive and does not establish a cause.`}
       </p>
-    </div>
+    </section>
   );
 }

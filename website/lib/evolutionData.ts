@@ -14,6 +14,7 @@ export interface ChiScale {
   at_max_en: string;
   at_max_fi: string;
   verification: string;
+  referenceIds?: string[];
   level: EpistemicLevel;
 }
 
@@ -56,10 +57,19 @@ export interface EvolutionPrediction {
   code: string;
   title_en: string;
   title_fi: string;
+  title_ja: string;
+  title_fr: string;
+  title_ko: string;
   test_en: string;
   test_fi: string;
+  test_ja: string;
+  test_fr: string;
+  test_ko: string;
   falsification_en: string;
   falsification_fi: string;
+  falsification_ja: string;
+  falsification_fr: string;
+  falsification_ko: string;
   level: EpistemicLevel;
   timeframe: string;
 }
@@ -79,6 +89,7 @@ export const CHI_SCALES: ChiScale[] = [
     at_max_en: "FAD-replete → full magnetic sensitivity",
     at_max_fi: "FAD kyllästetty → täysi magneettinen herkkyys",
     verification: "Hirano 2017, Yap 2025",
+    referenceIds: ["hirano2017", "yap2025"],
     level: "E",
   },
   {
@@ -95,6 +106,7 @@ export const CHI_SCALES: ChiScale[] = [
     at_max_en: "Blue iris + blue light → CRY1 maximally active",
     at_max_fi: "Sininen iiris + sininen valo → CRY1 maksimaalisesti aktiivinen",
     verification: "Higuchi 2007, Bartölke 2025",
+    referenceIds: ["higuchi2007", "bartolke2025"],
     level: "M|C",
   },
   {
@@ -111,6 +123,7 @@ export const CHI_SCALES: ChiScale[] = [
     at_max_en: "Living cell → χ ≈ 1.0 → maximum sensitivity",
     at_max_fi: "Elävä solu → χ ≈ 1.0 → maksimaalinen herkkyys",
     verification: "Pall 2013 (23 VGCC blocker studies)",
+    referenceIds: ["pall2013_v2"],
     level: "E",
   },
   {
@@ -299,10 +312,19 @@ export const EVOLUTION_PREDICTIONS: EvolutionPrediction[] = [
     code: "HIST-1",
     title_en: "Biomarker ratios predict fertility differentials",
     title_fi: "Biomarkkeritasot ennustavat hedelmällisyyseroja",
+    title_ja: "バイオマーカー比が出生率格差を予測",
+    title_fr: "Les ratios de biomarqueurs prédisent les différentiels de fertilité",
+    title_ko: "바이오마커 비율이 출산율 차이를 예측",
     test_en: "In populations with high lactose tolerance AND blue/green eye prevalence, CRY-associated biomarkers (urinary 6-sulphatoxymelatonin, FAD/FMN ratio) should correlate more strongly with fertility outcomes than in populations lacking these traits.",
     test_fi: "Populaatioissa joissa on korkea laktoosinsietokyky JA sinisten/vihreiden silmien esiintyvyys, CRY-liitteiset biomarkkerit (virtsan 6-sulfatoksimelatoniini, FAD/FMN-suhde) korreloivat voimakkaammin hedelmällisyystulosten kanssa kuin populaatioissa ilman näitä piirteitä.",
+    test_ja: "乳糖耐性が高くかつ青/緑色の目の有病率が高い集団では、CRY関連バイオマーカー（尿中6-スルファトキシメラトニン、FAD/FMN比）が、これらの形質を持たない集団よりも出生率転帰とより強く相関するはずである。",
+    test_fr: "Dans les populations à haute tolérance au lactose ET à prévalence élevée d'yeux bleus/verts, les biomarqueurs associés à CRY (6-sulphatoxymélatonine urinaire, ratio FAD/FMN) devraient corréler plus fortement avec les résultats de fertilité que dans les populations dépourvues de ces traits.",
+    test_ko: "유당 내성이 높고 파란/녹색 눈 유병률이 높은 집단에서 CRY 관련 바이오마커(소변 6-설파톡시멜라토닌, FAD/FMN 비율)는 이러한 형질이 없는 집단보다 출산 결과와 더 강하게 상관해야 한다.",
     falsification_en: "If blue-eyed, lactose-tolerant populations show NO stronger biomarker-fertility correlation than brown-eyed, lactose-intolerant populations, the Northern Package hypothesis is falsified.",
     falsification_fi: "Jos sinisilmäisissä, laktoosinsietokyvyn omaavissa populaatioissa EI ole voimakkaampaa biomarkkeri-hedelmällisyyskorrelaatiota kuin ruskeasilmäisissä, laktoosi-intoleranteissa populaatioissa, Pohjoinen paketti -hypoteesi on falsifioitu.",
+    falsification_ja: "青い目で乳糖耐性のある集団が、茶色い目で乳糖不耐性の集団と比較してバイオマーカー-出生率相関が強くない場合、Northern Package仮説は反証される。",
+    falsification_fr: "Si les populations aux yeux bleus et tolérantes au lactose ne montrent PAS de corrélation biomarqueur-fertilité plus forte que les populations aux yeux bruns et intolérantes au lactose, l'hypothèse du Northern Package est falsifiée.",
+    falsification_ko: "파란 눈의 유당 내성 집단이 갈색 눈의 유당 불내성 집단보다 바이오마커-출산율 상관관계가 강하지 않으면 Northern Package 가설은 반증된다.",
     level: "L*",
     timeframe: "3–5 years",
   },
@@ -311,10 +333,19 @@ export const EVOLUTION_PREDICTIONS: EvolutionPrediction[] = [
     code: "HIST-2",
     title_en: "Amish–Mennonite fertility gradient",
     title_fi: "Amissi–mennoniittigradientti hedelmällisyydessä",
+    title_ja: "Amish-Mennonite出生率勾配",
+    title_fr: "Gradient de fertilité Amish–Mennonite",
+    title_ko: "Amish-Mennonite 출산율 기울기",
     test_en: "The TFR difference between Old Order Amish (~6.5) and Conservative Mennonites (~3.5–4.5) should correlate with measured EMF exposure differences, not with genetic, dietary, or cultural confounds alone.",
     test_fi: "TFR-ero vanhan järjestyksen amissien (~6,5) ja konservatiivisten mennoniittien (~3,5–4,5) välillä tulisi korreloida mitattujen EMF-altistuserojen kanssa, ei pelkästään geneettisten, ravitsemuksellisten tai kulttuuristen sekoittavien tekijöiden kanssa.",
+    test_ja: "Old Order Amish（約6.5）とConservative Mennonite（約3.5〜4.5）のTFR差は、遺伝的・食事的・文化的交絡因子だけでなく、測定されたEMF曝露差と相関するはずである。",
+    test_fr: "La différence de TFR entre les Amish traditionnels (~6,5) et les Mennonites conservateurs (~3,5–4,5) devrait corréler avec les différences d'exposition EMF mesurées, et non uniquement avec les facteurs confondants génétiques, alimentaires ou culturels.",
+    test_ko: "Old Order Amish(약 6.5)와 Conservative Mennonite(약 3.5~4.5) 사이의 TFR 차이는 유전적, 식이적, 문화적 교란 요인만이 아닌 측정된 EMF 노출 차이와 상관해야 한다.",
     falsification_en: "If measured EMF exposure does not differ significantly between these groups, or if TFR differences are fully explained by other factors, the environmental χ coupling hypothesis is weakened.",
     falsification_fi: "Jos mitattu EMF-altistus ei eroa merkitsevästi näiden ryhmien välillä, tai TFR-erot selittyvät täysin muilla tekijöillä, ympäristön χ-kytkentähypoteesi heikentyy.",
+    falsification_ja: "これらのグループ間でEMF曝露が有意に異ならない場合、またはTFR差が他の要因で完全に説明される場合、環境χ結合仮説は弱体化する。",
+    falsification_fr: "Si l'exposition EMF mesurée ne diffère pas significativement entre ces groupes, ou si les différences de TFR sont entièrement expliquées par d'autres facteurs, l'hypothèse de couplage χ environnemental est affaiblie.",
+    falsification_ko: "이 그룹 간 측정된 EMF 노출이 유의하게 다르지 않거나 TFR 차이가 다른 요인으로 완전히 설명되면 환경 χ 결합 가설은 약화된다.",
     level: "C",
     timeframe: "2–3 years",
   },
@@ -323,10 +354,19 @@ export const EVOLUTION_PREDICTIONS: EvolutionPrediction[] = [
     code: "HIST-3",
     title_en: "COVID work-from-home baby bump mechanism",
     title_fi: "COVID-etätyön vauvapiikki-mekanismi",
+    title_ja: "COVID在宅勤務ベビーブームメカニズム",
+    title_fr: "Mécanisme du baby bump du télétravail COVID",
+    title_ko: "COVID 재택근무 베이비붐 메커니즘",
     test_en: "The PNAS 2023 finding (+5.1% TFR for WFH women) should replicate specifically in populations with high χ_optical AND high pre-COVID χ_env. Populations with low optical χ (e.g., East Asia) should show smaller WFH baby bumps.",
     test_fi: "PNAS 2023 -löydös (+5,1 % TFR etätyöntekijänaisille) tulisi replikoitua erityisesti populaatioissa joilla on korkea χ_optinen JA korkea χ_env ennen COVIDia. Matalan optisen χ:n populaatioissa (esim. Itä-Aasia) vauvapiikkien tulisi olla pienempiä.",
+    test_ja: "PNAS 2023の知見（在宅勤務女性でTFR +5.1%）は、高いχ_opticalかつ高いCOVID前χ_envの集団で特に再現されるはずである。光学的χが低い集団（例：東アジア）では在宅勤務ベビーブームはより小さいはずである。",
+    test_fr: "La découverte du PNAS 2023 (+5,1 % de TFR pour les femmes en télétravail) devrait se répliquer spécifiquement dans les populations à χ_optique élevé ET χ_env pré-COVID élevé. Les populations à faible χ optique (ex. Asie de l'Est) devraient montrer des baby bumps de télétravail plus faibles.",
+    test_ko: "PNAS 2023 발견(재택근무 여성의 TFR +5.1%)은 높은 χ_optical 및 높은 COVID 이전 χ_env를 가진 집단에서 특히 재현되어야 한다. 광학 χ가 낮은 집단(예: 동아시아)은 재택근무 베이비붐이 더 작아야 한다.",
     falsification_en: "If WFH baby bump is equal across populations regardless of χ profile, the coupling mechanism is not χ-dependent.",
     falsification_fi: "Jos etätyön vauvapiikki on yhtä suuri kaikissa populaatioissa riippumatta χ-profiilista, kytkentämekanismi ei ole χ-riippuvainen.",
+    falsification_ja: "χプロファイルに関係なく在宅勤務ベビーブームが全集団で同等の場合、結合メカニズムはχ依存ではない。",
+    falsification_fr: "Si le baby bump du télétravail est égal dans toutes les populations indépendamment du profil χ, le mécanisme de couplage n'est pas χ-dépendant.",
+    falsification_ko: "χ 프로필과 관계없이 재택근무 베이비붐이 모든 집단에서 동일하면 결합 메커니즘은 χ 의존적이지 않다.",
     level: "C",
     timeframe: "1–3 years",
   },
@@ -335,10 +375,19 @@ export const EVOLUTION_PREDICTIONS: EvolutionPrediction[] = [
     code: "HIST-4",
     title_en: "African TFR decline lag prediction",
     title_fi: "Afrikan TFR-laskun viive-ennuste",
+    title_ja: "アフリカTFR低下ラグ予測",
+    title_fr: "Prédiction du décalage de déclin du TFR africain",
+    title_ko: "아프리카 TFR 감소 지연 예측",
     test_en: "As Sub-Saharan Africa electrifies, TFR decline should follow but at a SLOWER rate per unit χ_env increase compared to Northern Europe's historical trajectory. The predicted lag factor is 0.3–0.5× (based on the ratio of biological χ values).",
     test_fi: "Saharan eteläpuolisen Afrikan sähköistyessä TFR-laskun tulisi seurata mutta HITAAMMIN χ_env-yksikköä kohden verrattuna Pohjois-Euroopan historialliseen kehityskulkuun. Ennustettu viivekerroin on 0,3–0,5× (biologisten χ-arvojen suhteella).",
+    test_ja: "サハラ以南アフリカの電化に伴いTFR低下は続くが、北欧の歴史的軌跡と比較してχ_env増加単位当たりのペースはより遅いはずである。予測ラグ係数は0.3〜0.5×（生物学的χ値の比に基づく）。",
+    test_fr: "À mesure que l'Afrique subsaharienne s'électrifie, le déclin du TFR devrait suivre mais à un rythme PLUS LENT par unité d'augmentation de χ_env comparé à la trajectoire historique de l'Europe du Nord. Le facteur de décalage prédit est de 0,3–0,5× (basé sur le ratio des valeurs biologiques de χ).",
+    test_ko: "사하라 이남 아프리카가 전화됨에 따라 TFR 감소는 뒤따르되 북유럽의 역사적 궤적에 비해 χ_env 증가 단위당 더 느린 속도여야 한다. 예측 지연 계수는 0.3~0.5×(생물학적 χ 값의 비율 기준)이다.",
     falsification_en: "If Africa's TFR decline rate matches or exceeds Northern Europe's at equivalent electrification levels, the biological χ modulation hypothesis is falsified.",
     falsification_fi: "Jos Afrikan TFR-laskuvauhti vastaa tai ylittää Pohjois-Euroopan vastaavaa samoilla sähköistystasoilla, biologisen χ-modulaation hypoteesi on falsifioitu.",
+    falsification_ja: "アフリカのTFR低下率が同等の電化レベルで北欧と同等以上の場合、生物学的χ調節仮説は反証される。",
+    falsification_fr: "Si le taux de déclin du TFR de l'Afrique égale ou dépasse celui de l'Europe du Nord à des niveaux d'électrification équivalents, l'hypothèse de modulation biologique χ est falsifiée.",
+    falsification_ko: "아프리카의 TFR 감소율이 동등한 전화 수준에서 북유럽과 같거나 초과하면 생물학적 χ 조절 가설은 반증된다.",
     level: "L*",
     timeframe: "10–20 years",
   },
@@ -347,10 +396,19 @@ export const EVOLUTION_PREDICTIONS: EvolutionPrediction[] = [
     code: "HIST-5",
     title_en: "Lactose intolerance as EMF resistance factor",
     title_fi: "Laktoosi-intoleranssi EMF-resistenssitekijänä",
+    title_ja: "乳糖不耐性がEMF抵抗因子として機能",
+    title_fr: "L'intolérance au lactose comme facteur de résistance aux EMF",
+    title_ko: "유당 불내성이 EMF 저항 인자로 작용",
     test_en: "Within the same EMF environment, lactose-intolerant individuals should show lower CRY-mediated biomarker responses (melatonin suppression, circadian disruption) than lactose-tolerant individuals with similar diets supplemented with B2.",
     test_fi: "Samassa EMF-ympäristössä laktoosi-intoleranttien yksilöiden tulisi osoittaa matalampia CRY-välitteisiä biomarkkerivastteita (melatoniinin suppressio, sirkadiaaninen häiriö) kuin laktoosinsietokykyisten yksilöiden vastaavilla B2-täydennetyillä ruokavalioilla.",
+    test_ja: "同一EMF環境内で、乳糖不耐性の個人はB2を補充した類似の食事を持つ乳糖耐性の個人よりも低いCRY媒介バイオマーカー応答（メラトニン抑制、概日リズム障害）を示すはずである。",
+    test_fr: "Dans le même environnement EMF, les individus intolérants au lactose devraient montrer des réponses biomarqueurs médiées par CRY plus faibles (suppression de la mélatonine, perturbation circadienne) que les individus tolérants au lactose avec des régimes similaires supplémentés en B2.",
+    test_ko: "동일한 EMF 환경에서 유당 불내성 개인은 B2가 보충된 유사한 식단을 가진 유당 내성 개인보다 낮은 CRY 매개 바이오마커 반응(멜라토닌 억제, 일주기 리듬 장애)을 보여야 한다.",
     falsification_en: "If lactose tolerance status has no effect on CRY-mediated biomarkers when B2 intake is controlled, the nutritional χ pathway is independent of lactase persistence.",
     falsification_fi: "Jos laktoosinsietokykystatuksella ei ole vaikutusta CRY-välitteisiin biomarkkereihin kun B2-saanti on kontrolloitu, ravitsemuksellinen χ-polku on riippumaton laktaasipersistenssistä.",
+    falsification_ja: "B2摂取量を制御した場合に乳糖耐性ステータスがCRY媒介バイオマーカーに影響しなければ、栄養χ経路はラクターゼ持続性から独立している。",
+    falsification_fr: "Si le statut de tolérance au lactose n'a aucun effet sur les biomarqueurs médiés par CRY lorsque l'apport en B2 est contrôlé, la voie χ nutritionnelle est indépendante de la persistance de la lactase.",
+    falsification_ko: "B2 섭취를 통제했을 때 유당 내성 상태가 CRY 매개 바이오마커에 영향이 없으면 영양 χ 경로는 유당분해효소 지속성과 독립적이다.",
     level: "L*",
     timeframe: "2–4 years",
   },

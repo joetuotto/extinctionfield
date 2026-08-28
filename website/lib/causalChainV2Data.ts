@@ -22,9 +22,23 @@ export const FIELDSTATE_V2_NODES: ChainNode[] = [
       "A_selected,o = T_o A_ambient + χ(|T_o A_background|) T_o A_personal\nX_geom,o = 2(T_o A_background)·(T_o A_personal)",
     keyReferences: [
       {
-        authors: "Blackman et al. 1985; Ritz et al. 2004; Usselman et al. 2016",
-        title: "Tausta-, kulma- ja orientaatioriippuvaiset kenttäallekirjoitukset",
-        journal: "Bioelectromagnetics; Nature; Scientific Reports",
+        authors: "Blackman et al. 1985",
+        title: "Tausta- ja taajuusikkunariippuvainen kalsiumvaste",
+        journal: "Bioelectromagnetics",
+        keyFinding: "Kokeelliset järjestelmät tukevat vektorin, kulman ja taustan säilyttämistä mittausmallissa; ne eivät anna TFR-kerrointa.",
+      },
+      {
+        referenceId: "ritz2004",
+        authors: "Ritz et al. 2004",
+        title: "Resonance effects indicate a radical-pair mechanism for avian magnetic compass",
+        journal: "Nature",
+        keyFinding: "Kokeelliset järjestelmät tukevat vektorin, kulman ja taustan säilyttämistä mittausmallissa; ne eivät anna TFR-kerrointa.",
+      },
+      {
+        referenceId: "usselman2016",
+        authors: "Usselman et al. 2016",
+        title: "Spin biochemistry modulates reactive oxygen species production by radio frequency magnetic fields",
+        journal: "Scientific Reports",
         keyFinding: "Kokeelliset järjestelmät tukevat vektorin, kulman ja taustan säilyttämistä mittausmallissa; ne eivät anna TFR-kerrointa.",
       },
     ],
@@ -42,9 +56,17 @@ export const FIELDSTATE_V2_NODES: ChainNode[] = [
       "FieldState can enter separate, testable intermediates: RPM/CRY–redox, melatonin/redox, Ca²⁺/mitochondrial–ROS, Vmem/mTOR developmental memory, clock/HPA–HPG and the legacy microbiome/oxytocin branch. They are not one additive effect; RF, ELF/PEMF and optical blue light remain separate exposure classes.",
     keyReferences: [
       {
-        authors: "Sherrard et al. 2018; Cao et al. 2015",
-        title: "CRY–ROS- ja RF×circadian-välitilat",
-        journal: "PLOS Biology; IJERPH",
+        referenceId: "sherrard2018",
+        authors: "Sherrard et al. 2018",
+        title: "Low-intensity electromagnetic fields induce human cryptochrome to modulate intracellular reactive oxygen species",
+        journal: "PLOS Biology",
+        keyFinding: "Antavat mekanistista välitilan tukea solu- ja rottajärjestelmissä, eivät suoraa väestövaikutusta.",
+      },
+      {
+        referenceId: "cao2015",
+        authors: "Cao et al. 2015",
+        title: "Circadian and radiofrequency-associated intermediate study",
+        journal: "International Journal of Environmental Research and Public Health",
         keyFinding: "Antavat mekanistista välitilan tukea solu- ja rottajärjestelmissä, eivät suoraa väestövaikutusta.",
       },
     ],
@@ -60,9 +82,17 @@ export const FIELDSTATE_V2_NODES: ChainNode[] = [
       "Local testis exposure, redox state and tight-junction proteins may affect the protective microenvironment of spermatogenesis. The slow BTB state remains distinct from BBB and acute sperm redox.",
     keyReferences: [
       {
-        authors: "Yu et al. 2020; Chakraborty et al. 2020",
-        title: "BTB-lokalisaatio ja redox–tight-junction-väliporras",
-        journal: "Science of the Total Environment; Reproductive Toxicology",
+        referenceId: "yu2019_btb",
+        authors: "Yu et al. 2019",
+        title: "RF-altistus ja veri–kivesesteen tiiviit liitokset",
+        journal: "Science of the Total Environment",
+        keyFinding: "Yu tarjoaa suoran RF-rotta-asetelman; Chakraborty tukee redox–BTB–siittiö-väliporrasta eri oksidatiivisen stressin asetelmassa.",
+      },
+      {
+        referenceId: "chakraborty2020",
+        authors: "Chakraborty et al. 2020",
+        title: "Redox–BTB–siittiö-väliporras",
+        journal: "Reproductive Toxicology",
         keyFinding: "Yu tarjoaa suoran RF-rotta-asetelman; Chakraborty tukee redox–BTB–siittiö-väliporrasta eri oksidatiivisen stressin asetelmassa.",
       },
     ],
@@ -78,6 +108,7 @@ export const FIELDSTATE_V2_NODES: ChainNode[] = [
       "BBB, placenta and retinal barrier may share redox/tight-junction biology, but their local transfer, cells, timescales and endpoints differ. They remain separate candidate states; the active v2 registry does not derive a global barrier or reproductive coefficient from them.",
     keyReferences: [
       {
+        referenceId: "lochhead2010",
         authors: "Lochhead et al. 2010",
         title: "Redox–tight-junction-väliporras BBB:ssä",
         journal: "Journal of Cerebral Blood Flow & Metabolism",
@@ -96,9 +127,31 @@ export const FIELDSTATE_V2_NODES: ChainNode[] = [
       "Male capacity separates germline reserve, BTB, steroidogenesis, sperm output, function and DNA integrity. Acute sperm redox is not conflated with slow spermatogenesis or BTB memory.",
     keyReferences: [
       {
-        authors: "De Iuliis et al. 2009; Yu et al. 2020; Cordelli et al. 2024/2025",
-        title: "Ihmisen siittiö in vitro, paikallinen rotta-BTB ja systemaattinen katsaus",
-        journal: "PLOS ONE; STOTEN; Environment International",
+        referenceId: "iuliis2009",
+        authors: "De Iuliis et al. 2009",
+        title: "Ihmisen siittiöiden RF-altistus in vitro",
+        journal: "PLOS ONE",
+        keyFinding: "Evidenssi koskee erillisiä biologisia päätepisteitä; katsauksen 2025 korjaus on huomioitava.",
+      },
+      {
+        referenceId: "yu2019_btb",
+        authors: "Yu et al. 2019",
+        title: "Paikallinen rotta-BTB-asetelma",
+        journal: "Science of the Total Environment",
+        keyFinding: "Evidenssi koskee erillisiä biologisia päätepisteitä; katsauksen 2025 korjaus on huomioitava.",
+      },
+      {
+        referenceId: "cordelli2024",
+        authors: "Cordelli et al. 2024",
+        title: "RF-EMF:n lisääntymisvaikutusten systemaattinen katsaus",
+        journal: "Environment International",
+        keyFinding: "Evidenssi koskee erillisiä biologisia päätepisteitä; katsauksen 2025 korjaus on huomioitava.",
+      },
+      {
+        referenceId: "cordelli2025_corrigendum",
+        authors: "Cordelli et al. 2025",
+        title: "Systemaattisen katsauksen korjaus",
+        journal: "Environment International",
         keyFinding: "Evidenssi koskee erillisiä biologisia päätepisteitä; katsauksen 2025 korjaus on huomioitava.",
       },
     ],
@@ -114,9 +167,31 @@ export const FIELDSTATE_V2_NODES: ChainNode[] = [
       "The female branch separates ovarian reserve, oocyte redox/mitochondrial state, ovulatory timing and luteal, implantation and placental support. These cannot be represented by a single ovulation multiplier.",
     keyReferences: [
       {
-        authors: "Ahmadi et al. 2016; Liu et al. 2014; He et al. 2016; Yousefi et al. 2025",
-        title: "Reservi-, kello- ja oosyyttivälitilat",
-        journal: "Electron Physician; PNAS; IJMS; Reproductive Sciences",
+        referenceId: "ahmadi2016",
+        authors: "Ahmadi et al. 2016",
+        title: "Munasarjojen reserviä käsittelevä koeasetelma",
+        journal: "Electronic Physician",
+        keyFinding: "Pääosin eläin- tai downstream-mekanismitutkimuksia; ne eivät kalibroi ihmisen TFR-vaikutusta.",
+      },
+      {
+        referenceId: "liu2014",
+        authors: "Liu et al. 2014",
+        title: "Lisääntymiskellon mekanistinen tutkimus",
+        journal: "PNAS",
+        keyFinding: "Pääosin eläin- tai downstream-mekanismitutkimuksia; ne eivät kalibroi ihmisen TFR-vaikutusta.",
+      },
+      {
+        referenceId: "he2016",
+        authors: "He et al. 2016",
+        title: "Oosyytti- ja redox-välitilan tutkimus",
+        journal: "International Journal of Molecular Sciences",
+        keyFinding: "Pääosin eläin- tai downstream-mekanismitutkimuksia; ne eivät kalibroi ihmisen TFR-vaikutusta.",
+      },
+      {
+        referenceId: "yousefi2025",
+        authors: "Yousefi et al. 2025",
+        title: "Naaraan lisääntymiskapasiteettia käsittelevä tutkimus",
+        journal: "Reproductive Sciences",
         keyFinding: "Pääosin eläin- tai downstream-mekanismitutkimuksia; ne eivät kalibroi ihmisen TFR-vaikutusta.",
       },
     ],
@@ -158,6 +233,7 @@ export const FIELDSTATE_V2_NODES: ChainNode[] = [
       "ASFR_target = ASFR_reference × Φ_couple ratio × O ratio × tempo ratio × ART/live-birth ratio",
     keyReferences: [
       {
+        referenceId: "nations2024",
         authors: "UN World Population Prospects 2024",
         title: "Age-specific fertility rates",
         journal: "United Nations",

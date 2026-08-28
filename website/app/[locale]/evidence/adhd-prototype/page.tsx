@@ -4,6 +4,7 @@ import { BrainCircuit } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CautionBox } from "@/components/CautionBox";
 import { DerivedPrediction } from "@/components/DerivedPrediction";
+import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
   en: {
@@ -96,18 +97,152 @@ const COPY = {
     predictionLink: "Ks. ennusteet →",
     predictionHref: "/predictions",
   },
+  ja: {
+    title: "ADHD：第二のプロトタイプ",
+    subtitle: "ADHDは3つのBERMメカニズム — PFCにおけるドーパミン欠乏、Cav1.2を介した髄鞘化遅延、KCC2を介したE/Iシフト — を神経発達表現型に統合する。ASDとADHDの30-50%の併存率は、両者が同じQ因子スペクトル上の異なる位置を表すことで説明される。",
+    backLink: "← エビデンスに戻る",
+    cautionText: "このページはADHDを第二のBERMプロトタイプとして提案する。PFCの成熟遅延、ドーパミン障害、髄鞘化のタイミングはADHDの確立されたメカニズムであるが、これらをEMF曝露と結びつけることは直接的な検証を要するBERM仮説である。",
+
+    mechTitle: "3つの収束メカニズム",
+    mechLead: "ADHDは3つのBERM経路が前頭前皮質機能に収束することで生じる：ドーパミン欠乏、髄鞘化遅延、E/Iシフト。各メカニズムは独立して文書化されており、PFCへの収束が臨床表現型を説明する。",
+    mechanisms: [
+      { id: "M1", name: "PFCにおけるDA↓（VK19：線条体 -25%）", path: "EMF → Ca²⁺↑ → CaMKII障害 → DA合成↓ → PFC DA欠乏 → 注意力↓、抑制↓", detail: "PFCは最適なドーパミンを必要とする（ゴルディロックス原理）：低すぎる → ADHD、高すぎる → 精神病。VK19はEMF曝露下で線条体ドーパミンの25%減少を示す。DA合成にはCaMKIIが必要であり、CaMKIIは正確なCa²⁺シグナリングに依存する — EMFがCaMKIIを障害 → DA↓。PFCにおけるDAの逆U字用量反応は、中程度の減少でも実行機能が崩壊することを意味する。", color: "green" },
+      { id: "M2", name: "髄鞘化遅延（VK20：Cav1.2→OPC）", path: "EMF → Cav1.2障害 → OPC成熟↓ → PFC髄鞘化遅延 → PFCの成熟が5年遅延", detail: "PFCは脳で最後に髄鞘化する領域であり、20代半ばにようやく完了する。Shaw 2007（PNAS）はADHD皮質のピーク厚が対照群より5年遅れることを示した。VK20がそのメカニズムを特定：Cav1.2チャネルがオリゴデンドロサイト前駆細胞（OPC）の成熟を制御する。EMF誘発性のCav1.2障害がOPC分化を遅延 → 髄鞘化遅延 → PFCは最後に髄鞘化するため最も脆弱な領域となる。", color: "green" },
+      { id: "M3", name: "E/Iシフト（VK6：KCC2↓ + VK4：α2δ-1↑）", path: "EMF → KCC2成熟↓ + α2δ-1↑ → E/I↑ → 衝動制御↓", detail: "ASDと同じE/I不均衡メカニズムだが、より低いQ値で：てんかんは少なく（5-10% vs. ASDの38%）、感覚過敏も少ないが、衝動制御と持続的注意が障害される。KCC2遅延により、行動抑制を担うPFC回路でGABAが興奮性のまま維持される。α2δ-1上方制御が興奮性駆動を追加する。", color: "green" },
+    ],
+
+    spectrumTitle: "ASD-ADHDスペクトル",
+    spectrumLead: "ASDとADHDは別々の障害ではなく、Q因子値と領域脆弱性によって調節される同じE/Iスペクトル上の異なる位置である。",
+    spectrumPoints: [
+      "ASD + ADHD併存率：30-50% — 偶然としてはあまりにも高く、両者が同じ機構的根源を共有するならば予測される",
+      "同じメカニズム（E/I↑）、異なるQ値：ASD = 高Q（てんかん38%）、ADHD = 中程度Q（てんかん5-10%）",
+      "CACNA1C変異がスペクトル上の位置を調節：機能獲得型 → ASD特性、部分的障害 → ADHD特性",
+      "両者は同じ経路を標的とする治療に反応：ブメタニド（GABA極性）、アトモキセチン（ノルアドレナリン性PFC救済）、実行機能を標的とする行動療法",
+    ],
+
+    prevTitle: "有病率増加の説明",
+    prevLead: "ADHDの有病率は1990年代以降急激に上昇している。BERMはドーパミン欠乏を増幅するEMF駆動因子とEMF関連因子の収束を特定する。",
+    prevPoints: [
+      { factor: "EMF → DA↓", detail: "CaMKII障害（VK19）によるドーパミン合成の直接的減少。増加する環境EMF曝露が有病率のタイムラインと相関する。" },
+      { factor: "髄鞘化遅延", detail: "EMF → Cav1.2 → OPC成熟↓ → PFC発達遅延。発達期のより早期でより強いEMF曝露が髄鞘化曲線をシフトさせる。" },
+      { factor: "GABAスイッチ遅延", detail: "EMF → KCC2↓ → PFC回路でGABAがより長く興奮性に留まる → 衝動制御が予定通りに発達しない。" },
+      { factor: "LEDスクリーン時間（複合）", detail: "スクリーン時間は単なる行動の問題ではない — LEDスクリーンは中間周波数EMFを放射 + ブルーライトがメラトニンを抑制 + 低DAがスクリーンをより報酬的にする（双曲割引）。EMF駆動のDA欠乏が悪循環を生む：DA↓ → スクリーンがより報酬的 → スクリーン時間増加 → IF曝露増加 → DA↓↓。" },
+    ],
+
+    pharmaTitle: "薬理学的検証",
+    pharmaLead: "ADHD治療薬は、BERMがEMFにより生じると予測するまさにその障害を修正する。これは収束的検証である：メカニズムが間違っていれば、薬剤はこのように作用しないはずである。",
+    pharmaPoints: [
+      "メチルフェニデート/アンフェタミン：PFCのDAを増加 → 症状改善。これらの薬剤はVK19のドーパミン欠乏を直接補償する。",
+      "同じCa²⁺カスケード：DA合成にはCaMKIIが必要、EMFがCaMKIIを障害 → DA↓。刺激薬は再取り込み阻害/放出促進により合成のボトルネックを迂回する。",
+      "アトモキセチン：ノルエピネフリン再取り込み阻害薬 → PFC機能も改善。PFCはDAとNEの両方を使用する。アトモキセチンは並行経路を通じてカテコールアミン欠乏を救済する。",
+      "グアンファシン（α2Aアゴニスト）：PFCネットワーク接続を強化。VK20が特定した同じ髄鞘化遅延によりPFCネットワークが弱体化しているため、ADHDで有効。",
+    ],
+
+    predictionText: "予測 E-NEW-24（PFC臨界発達窓期間中のEMF低減が、遺伝的に感受性の高い小児のADHD症状重症度を軽減する）は、前向きコホートデザインで直接検証可能である。",
+    predictionLink: "予測を見る →",
+    predictionHref: "/predictions",
+  },
+  fr: {
+    title: "TDAH : Le Second Prototype",
+    subtitle: "Le TDAH réunit trois mécanismes BERM — déficit dopaminergique dans le PFC, retard de myélinisation via Cav1.2 et déplacement E/I via KCC2 — en un phénotype neurodéveloppemental. Le TSA et le TDAH partagent 30-50 % de comorbidité car ils représentent différents points sur le même spectre du facteur Q.",
+    backLink: "← Retour aux Preuves",
+    cautionText: "Cette page propose le TDAH comme second prototype BERM. Bien que le retard de maturation du PFC, la perturbation dopaminergique et le timing de myélinisation soient des mécanismes établis du TDAH, les relier à l'exposition aux EMF est une hypothèse BERM nécessitant des tests directs.",
+
+    mechTitle: "Trois mécanismes convergents",
+    mechLead: "Le TDAH émerge lorsque trois voies BERM convergent sur la fonction du cortex préfrontal : déficit dopaminergique, retard de myélinisation et déplacement E/I. Chaque mécanisme est indépendamment documenté ; leur convergence sur le PFC explique le phénotype clinique.",
+    mechanisms: [
+      { id: "M1", name: "DA↓ dans le PFC (VK19 : striatum -25 %)", path: "EMF → Ca²⁺↑ → perturbation CaMKII → synthèse DA↓ → déficit DA du PFC → attention↓, inhibition↓", detail: "Le PFC nécessite un niveau OPTIMAL de dopamine (principe de Boucles d'or) : trop bas → TDAH ; trop élevé → psychose. VK19 démontre une réduction de 25 % de la dopamine striatale sous exposition EMF. La synthèse de DA nécessite CaMKII, qui dépend d'un signal Ca²⁺ précis — l'EMF perturbe CaMKII → DA↓. La courbe dose-réponse en U inversé de la DA dans le PFC signifie qu'une déplétion même modérée effondre la fonction exécutive.", color: "green" },
+      { id: "M2", name: "Retard de myélinisation (VK20 : Cav1.2→OPC)", path: "EMF → perturbation Cav1.2 → maturation OPC↓ → myélinisation PFC retardée → le PFC mature 5 ANS plus tard", detail: "Le PFC est la DERNIÈRE région cérébrale à se myéliniser, ne se terminant qu'au milieu de la vingtaine. Shaw 2007 (PNAS) a montré que le cortex TDAH atteint son épaisseur maximale 5 ans plus tard que les témoins. VK20 identifie le mécanisme : les canaux Cav1.2 régulent la maturation des cellules précurseurs d'oligodendrocytes (OPC). La perturbation de Cav1.2 induite par l'EMF retarde la différenciation des OPC → retard de myélinisation → le PFC est la région la plus vulnérable car il se myélinise en dernier.", color: "green" },
+      { id: "M3", name: "Déplacement E/I (VK6 : KCC2↓ + VK4 : α2δ-1↑)", path: "EMF → maturation KCC2↓ + α2δ-1↑ → E/I↑ → contrôle des impulsions↓", detail: "Le même mécanisme de déséquilibre E/I que dans le TSA mais à une valeur Q PLUS BASSE : moins de crises (épilepsie 5-10 % vs. 38 % dans le TSA), moins d'hypersensibilité sensorielle, mais contrôle des impulsions et attention soutenue altérés. Le retard de KCC2 maintient le GABA excitateur dans les circuits PFC responsables de l'inhibition comportementale. La surexpression d'α2δ-1 ajoute une impulsion excitatrice.", color: "green" },
+    ],
+
+    spectrumTitle: "Spectre TSA-TDAH",
+    spectrumLead: "Le TSA et le TDAH ne sont pas des troubles distincts mais différentes positions sur le même spectre E/I, modulées par la valeur du facteur Q et la vulnérabilité régionale.",
+    spectrumPoints: [
+      "Comorbidité TSA + TDAH : 30-50 % — bien trop élevée pour une coïncidence, attendue si les deux partagent la même racine mécanistique",
+      "Même mécanisme (E/I↑), différentes valeurs de Q : TSA = Q élevé (épilepsie 38 %), TDAH = Q modéré (épilepsie 5-10 %)",
+      "Les variants de CACNA1C modulent la position sur le spectre : gain de fonction → caractéristiques TSA ; perturbation partielle → caractéristiques TDAH",
+      "Les deux répondent aux traitements ciblant les mêmes voies : bumétanide (polarité GABA), atomoxétine (sauvetage noradrénergique du PFC), thérapies comportementales ciblant la fonction exécutive",
+    ],
+
+    prevTitle: "Augmentation de la prévalence expliquée",
+    prevLead: "La prévalence du TDAH a fortement augmenté depuis les années 1990. BERM identifie une convergence de facteurs liés aux EMF et adjacents aux EMF qui amplifient le déficit dopaminergique.",
+    prevPoints: [
+      { factor: "EMF → DA↓", detail: "Réduction directe de la synthèse de dopamine par perturbation de CaMKII (VK19). L'exposition croissante aux EMF ambiants corrèle avec la chronologie de la prévalence." },
+      { factor: "Retard de myélinisation", detail: "EMF → Cav1.2 → maturation OPC↓ → développement PFC retardé. Une exposition EMF plus précoce et plus intense pendant le développement décale la courbe de myélinisation." },
+      { factor: "Retard du switch GABA", detail: "EMF → KCC2↓ → le GABA reste excitateur plus longtemps dans les circuits PFC → le contrôle des impulsions ne se développe pas dans les délais." },
+      { factor: "Temps d'écran LED (composé)", detail: "Le temps d'écran n'est pas seulement comportemental — les écrans LED émettent des EMF de fréquence intermédiaire + la lumière bleue supprime la mélatonine + un DA bas rend les écrans PLUS gratifiants (actualisation hyperbolique). Le déficit DA induit par l'EMF crée un cercle vicieux : DA↓ → écrans plus gratifiants → plus de temps d'écran → plus d'exposition IF → DA↓↓." },
+    ],
+
+    pharmaTitle: "Validation pharmacologique",
+    pharmaLead: "Les médicaments du TDAH corrigent exactement les perturbations que BERM prédit que l'EMF produit. C'est une validation convergente : si le mécanisme est erroné, les médicaments ne devraient pas fonctionner comme ils le font.",
+    pharmaPoints: [
+      "Méthylphénidate/amphétamine : augmentent la DA dans le PFC → les symptômes s'améliorent. Ces médicaments compensent directement le déficit dopaminergique de VK19.",
+      "Même cascade Ca²⁺ : la synthèse de DA nécessite CaMKII ; l'EMF perturbe CaMKII → DA↓. Les stimulants contournent le goulot d'étranglement de la synthèse en bloquant la recapture/favorisant la libération.",
+      "Atomoxétine : inhibiteur de la recapture de la noradrénaline → améliore aussi la fonction PFC. Le PFC utilise à la fois DA et NE ; l'atomoxétine sauve le déficit catécholaminergique par une voie parallèle.",
+      "Guanfacine (agoniste α2A) : renforce la connectivité du réseau PFC. Efficace dans le TDAH car les réseaux PFC sont affaiblis par le même retard de myélinisation identifié par VK20.",
+    ],
+
+    predictionText: "La prédiction E-NEW-24 (la réduction de l'EMF pendant la fenêtre critique de développement du PFC réduit la sévérité des symptômes du TDAH chez les enfants génétiquement prédisposés) est directement testable dans un design de cohorte prospective.",
+    predictionLink: "Voir les prédictions →",
+    predictionHref: "/predictions",
+  },
+  ko: {
+    title: "ADHD: 두 번째 프로토타입",
+    subtitle: "ADHD는 세 가지 BERM 메커니즘 — PFC의 도파민 결핍, Cav1.2를 통한 수초화 지연, KCC2를 통한 E/I 전환 — 을 하나의 신경발달 표현형으로 통합한다. ASD와 ADHD는 30-50%의 공존율을 공유하는데, 이는 둘 다 동일한 Q인자 스펙트럼의 다른 지점을 나타내기 때문이다.",
+    backLink: "← 증거로 돌아가기",
+    cautionText: "이 페이지는 ADHD를 두 번째 BERM 프로토타입으로 제안한다. PFC 성숙 지연, 도파민 교란, 수초화 타이밍은 확립된 ADHD 메커니즘이지만, 이를 EMF 노출과 연결하는 것은 직접적인 검증이 필요한 BERM 가설이다.",
+
+    mechTitle: "세 가지 수렴 메커니즘",
+    mechLead: "ADHD는 세 가지 BERM 경로가 전두전피질 기능에 수렴할 때 발생한다: 도파민 결핍, 수초화 지연, E/I 전환. 각 메커니즘은 독립적으로 문서화되어 있으며, PFC에 대한 수렴이 임상 표현형을 설명한다.",
+    mechanisms: [
+      { id: "M1", name: "PFC의 DA↓ (VK19: 선조체 -25%)", path: "EMF → Ca²⁺↑ → CaMKII 교란 → DA 합성↓ → PFC DA 결핍 → 주의력↓, 억제↓", detail: "PFC는 최적의 도파민을 필요로 한다(골디락스 원리): 너무 낮으면 → ADHD, 너무 높으면 → 정신병. VK19는 EMF 노출 하에서 선조체 도파민이 25% 감소함을 보여준다. DA 합성에는 CaMKII가 필요하며, CaMKII는 정밀한 Ca²⁺ 신호에 의존한다 — EMF가 CaMKII를 교란 → DA↓. PFC에서 DA의 역U자 용량-반응은 중등도의 고갈로도 실행 기능이 붕괴됨을 의미한다.", color: "green" },
+      { id: "M2", name: "수초화 지연 (VK20: Cav1.2→OPC)", path: "EMF → Cav1.2 교란 → OPC 성숙↓ → PFC 수초화 지연 → PFC가 5년 늦게 성숙", detail: "PFC는 뇌에서 가장 마지막으로 수초화되는 영역으로, 20대 중반에야 완성된다. Shaw 2007(PNAS)은 ADHD 피질이 대조군보다 5년 늦게 최대 두께에 도달함을 보여주었다. VK20이 메커니즘을 규명: Cav1.2 채널이 희소돌기아교세포 전구세포(OPC) 성숙을 조절한다. EMF에 의한 Cav1.2 교란이 OPC 분화를 지연 → 수초화 지연 → PFC는 가장 마지막에 수초화되므로 가장 취약한 영역이 된다.", color: "green" },
+      { id: "M3", name: "E/I 전환 (VK6: KCC2↓ + VK4: α2δ-1↑)", path: "EMF → KCC2 성숙↓ + α2δ-1↑ → E/I↑ → 충동 조절↓", detail: "ASD와 동일한 E/I 불균형 메커니즘이지만 더 낮은 Q값에서: 발작이 적고(간질 5-10% vs. ASD 38%), 감각 과민이 적지만, 충동 조절과 지속적 주의력이 손상된다. KCC2 지연으로 행동 억제를 담당하는 PFC 회로에서 GABA가 흥분성으로 유지된다. α2δ-1 상향 조절이 흥분성 추진력을 추가한다.", color: "green" },
+    ],
+
+    spectrumTitle: "ASD-ADHD 스펙트럼",
+    spectrumLead: "ASD와 ADHD는 별개의 장애가 아니라 Q인자 값과 영역 취약성에 의해 조절되는 동일한 E/I 스펙트럼의 다른 위치이다.",
+    spectrumPoints: [
+      "ASD + ADHD 공존율: 30-50% — 우연이라 하기엔 너무 높으며, 둘 다 동일한 기전적 근원을 공유한다면 예상되는 수치",
+      "동일한 메커니즘(E/I↑), 다른 Q값: ASD = 높은 Q(간질 38%), ADHD = 중등도 Q(간질 5-10%)",
+      "CACNA1C 변이가 스펙트럼상 위치를 조절: 기능 획득 → ASD 특성, 부분적 교란 → ADHD 특성",
+      "둘 다 동일한 경로를 표적으로 하는 치료에 반응: 부메타나이드(GABA 극성), 아토목세틴(노르아드레날린성 PFC 구제), 실행 기능을 표적으로 하는 행동 치료",
+    ],
+
+    prevTitle: "유병률 증가 설명",
+    prevLead: "ADHD 유병률은 1990년대 이후 급격히 증가했다. BERM은 도파민 결핍을 증폭시키는 EMF 유발 및 EMF 관련 요인의 수렴을 규명한다.",
+    prevPoints: [
+      { factor: "EMF → DA↓", detail: "CaMKII 교란(VK19)에 의한 직접적인 도파민 합성 감소. 증가하는 환경 EMF 노출이 유병률 타임라인과 상관한다." },
+      { factor: "수초화 지연", detail: "EMF → Cav1.2 → OPC 성숙↓ → PFC 발달 지연. 발달 중 더 이른 시기의 더 강한 EMF 노출이 수초화 곡선을 이동시킨다." },
+      { factor: "GABA 전환 지연", detail: "EMF → KCC2↓ → PFC 회로에서 GABA가 더 오래 흥분성으로 유지 → 충동 조절이 예정대로 발달하지 않는다." },
+      { factor: "LED 스크린 시간(복합)", detail: "스크린 시간은 단순한 행동 문제가 아니다 — LED 스크린은 중간 주파수 EMF를 방출 + 블루라이트가 멜라토닌을 억제 + 낮은 DA가 스크린을 더 보상적으로 만듦(쌍곡선 할인). EMF 유발 DA 결핍이 악순환을 만든다: DA↓ → 스크린이 더 보상적 → 스크린 시간 증가 → IF 노출 증가 → DA↓↓." },
+    ],
+
+    pharmaTitle: "약리학적 검증",
+    pharmaLead: "ADHD 약물은 BERM이 EMF가 생성한다고 예측하는 바로 그 교란을 교정한다. 이것은 수렴적 검증이다: 메커니즘이 틀리다면, 약물은 이런 방식으로 작용해서는 안 된다.",
+    pharmaPoints: [
+      "메틸페니데이트/암페타민: PFC의 DA를 증가 → 증상 개선. 이 약물들은 VK19의 도파민 결핍을 직접 보상한다.",
+      "동일한 Ca²⁺ 캐스케이드: DA 합성에는 CaMKII가 필요, EMF가 CaMKII를 교란 → DA↓. 자극제는 재흡수 차단/방출 촉진으로 합성 병목을 우회한다.",
+      "아토목세틴: 노르에피네프린 재흡수 억제제 → PFC 기능도 개선. PFC는 DA와 NE를 모두 사용하며, 아토목세틴은 병렬 경로를 통해 카테콜아민 결핍을 구제한다.",
+      "구안파신(α2A 작용제): PFC 네트워크 연결성을 강화. VK20이 규명한 동일한 수초화 지연으로 PFC 네트워크가 약화되어 있어 ADHD에서 효과적이다.",
+    ],
+
+    predictionText: "예측 E-NEW-24(PFC 임계 발달 기간 중 EMF 감소가 유전적으로 취약한 아동의 ADHD 증상 심각도를 경감)는 전향적 코호트 설계로 직접 검증 가능하다.",
+    predictionLink: "예측 보기 →",
+    predictionHref: "/predictions",
+  },
 } as const;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const d = locale === "fi" ? COPY.fi : COPY.en;
+  const d = pickCopy(COPY, locale);
   return { title: `${d.title} – Extinction Field`, description: d.subtitle };
 }
 
 export default async function AdhdPrototypePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const activeLocale = locale === "fi" ? "fi" : "en";
-  const d = COPY[activeLocale];
+  const d = pickCopy(COPY, locale);
   const prefix = `/${locale}`;
 
   const mechColors: Record<string, string> = { green: "border-green-500/30 bg-green-500/5" };
@@ -118,7 +253,7 @@ export default async function AdhdPrototypePage({ params }: { params: Promise<{ 
         <Link href={`${prefix}/evidence`} className="text-sm text-accent hover:underline">{d.backLink}</Link>
       </p>
       <PageHeader icon={BrainCircuit} title={d.title} subtitle={d.subtitle} />
-      <div className="mt-8"><CautionBox locale={activeLocale}><p>{d.cautionText}</p></CautionBox></div>
+      <div className="mt-8"><CautionBox locale={locale}><p>{d.cautionText}</p></CautionBox></div>
 
       <section className="mt-12">
         <h2 className="text-lg font-semibold mb-2">{d.mechTitle}</h2>

@@ -7,6 +7,15 @@ import { ChevronDown } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { getNavRoutes, type ResolvedNavRoute } from "@/lib/navigation";
+import { pickCopy } from "@/lib/i18n";
+
+const NAV_COPY = {
+  en: { mainNav: "Main navigation", openMenu: "Open menu", closeMenu: "Close menu" },
+  fi: { mainNav: "Päävalikko", openMenu: "Avaa valikko", closeMenu: "Sulje valikko" },
+  ja: { mainNav: "メインナビゲーション", openMenu: "メニューを開く", closeMenu: "メニューを閉じる" },
+  fr: { mainNav: "Navigation principale", openMenu: "Ouvrir le menu", closeMenu: "Fermer le menu" },
+  ko: { mainNav: "메인 내비게이션", openMenu: "메뉴 열기", closeMenu: "메뉴 닫기" },
+} as const;
 
 function NavDropdown({
   link,
@@ -66,7 +75,7 @@ function NavDropdown({
       <button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className={`inline-flex items-center gap-1.5 text-[0.875rem] tracking-[0.005em] ${
+        className={`inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-[0.8125rem] tracking-[0.005em] 2xl:gap-1.5 2xl:text-[0.875rem] ${
           isGroupActive
             ? "text-accent font-medium nav-active-link"
             : "text-foreground-muted hover:text-foreground"
@@ -219,6 +228,7 @@ export function Navigation({ locale }: { locale: string }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const links = getNavRoutes(locale);
+  const navCopy = pickCopy(NAV_COPY, locale);
 
   const [prevPath, setPrevPath] = useState(pathname);
   if (pathname !== prevPath) {
@@ -228,10 +238,10 @@ export function Navigation({ locale }: { locale: string }) {
 
   return (
     <nav
-      aria-label={locale === "fi" ? "Päävalikko" : "Main navigation"}
+      aria-label={navCopy.mainNav}
       className="sticky top-0 z-50 border-b border-border bg-nav-bg backdrop-blur-md"
     >
-      <div className="max-w-5xl mx-auto flex h-16 items-center justify-between gap-8 px-6">
+      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-3 px-4 sm:gap-8 sm:px-6 xl:max-w-7xl xl:gap-4 xl:px-4 2xl:gap-8 2xl:px-6">
         <Link
           href={`/${locale}`}
           className="shrink-0 text-sm font-semibold uppercase leading-none tracking-[0.1em] text-foreground transition-colors hover:text-accent"
@@ -239,8 +249,8 @@ export function Navigation({ locale }: { locale: string }) {
           Extinction Field
         </Link>
 
-        <div className="hidden xl:flex items-center gap-5">
-          <ul className="flex items-center gap-6">
+        <div className="hidden min-w-0 items-center gap-3 xl:flex 2xl:gap-5">
+          <ul className="flex min-w-0 items-center gap-3 2xl:gap-6">
             {links.map((link) => {
               if (link.children) {
                 return (
@@ -263,7 +273,7 @@ export function Navigation({ locale }: { locale: string }) {
                   <Link
                     href={fullHref}
                     aria-current={isActive ? "page" : undefined}
-                    className={`inline-flex items-center gap-1.5 text-[0.875rem] tracking-[0.005em] ${
+                    className={`inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-[0.8125rem] tracking-[0.005em] 2xl:gap-1.5 2xl:text-[0.875rem] ${
                       isActive
                         ? "text-accent font-medium nav-active-link"
                         : "text-foreground-muted hover:text-foreground"
@@ -276,19 +286,19 @@ export function Navigation({ locale }: { locale: string }) {
               );
             })}
           </ul>
-          <div className="flex items-center gap-2 ml-2 border-l border-border pl-4">
+          <div className="ml-1 flex shrink-0 items-center gap-1.5 border-l border-border pl-3 2xl:ml-2 2xl:gap-2 2xl:pl-4">
             <LanguageSwitcher locale={locale} />
             <ThemeToggle />
           </div>
         </div>
 
-        <div className="flex items-center gap-2 xl:hidden">
+        <div className="flex shrink-0 items-center gap-2 xl:hidden">
           <LanguageSwitcher locale={locale} />
           <ThemeToggle />
           <button
             className="p-2 text-foreground-muted hover:text-foreground"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-label={menuOpen ? navCopy.closeMenu : navCopy.openMenu}
             aria-expanded={menuOpen}
           >
             <svg
@@ -317,7 +327,7 @@ export function Navigation({ locale }: { locale: string }) {
       </div>
 
       {menuOpen && (
-        <div className="xl:hidden border-t border-border bg-background overflow-y-auto max-h-[calc(100dvh-4rem)]">
+        <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-border bg-background xl:hidden">
           <ul className="px-6 py-4 space-y-1">
             {links.map((link) => {
               if (link.children) {

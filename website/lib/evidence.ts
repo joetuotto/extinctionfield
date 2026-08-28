@@ -20,9 +20,9 @@ export type FieldStateCalibrationRole = "STRUCTURAL_ONLY" | "CONTEXT_ONLY";
 
 export interface FieldStateEvidenceRecord {
   readonly id: string;
+  readonly referenceId: string;
   readonly citation: string;
   readonly year: number;
-  readonly url: string;
   readonly studyType: string;
   readonly system: string;
   readonly fieldClass: string;
@@ -37,6 +37,7 @@ export interface FieldStateEvidenceRecord {
 
 export interface LegacyEvidenceRecord {
   readonly id: string;
+  readonly referenceId: string;
   readonly citation: string;
   readonly year: number;
   readonly pathway: string | null;
@@ -47,8 +48,6 @@ export interface LegacyEvidenceRecord {
   readonly status: string;
   readonly translationScope: string;
   readonly n: number | null;
-  /** Resolved source link; filled by berm/resolve_reference_links.py. */
-  readonly url?: string | null;
 }
 
 export const EPISTEMIC_LEVELS = {
@@ -67,7 +66,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "BLACKMAN_1985_BACKGROUND_FREQUENCY",
     citation: "Blackman CF et al. Bioelectromagnetics (1985)",
     year: 1985,
-    url: "https://doi.org/10.1002/bem.2250060402",
+    referenceId: "blackman1985_calcium_windows",
     studyType: "Controlled in-vitro experiment",
     system: "Chick brain tissue",
     fieldClass: "ELF electric field with altered local geomagnetic background",
@@ -83,7 +82,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "RITZ_2004_VECTOR_ANGLE",
     citation: "Ritz T et al. Nature (2004)",
     year: 2004,
-    url: "https://doi.org/10.1038/nature02534",
+    referenceId: "ritz2004",
     studyType: "Controlled animal orientation experiment",
     system: "European robins",
     fieldClass: "Oscillating RF magnetic field at a controlled angle to geomagnetic background",
@@ -99,7 +98,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "USSELMAN_2016_ORIENTATION_ROS",
     citation: "Usselman RJ et al. Scientific Reports (2016)",
     year: 2016,
-    url: "https://doi.org/10.1038/srep38543",
+    referenceId: "usselman2016",
     studyType: "Controlled cell experiment",
     system: "Human endothelial cells and a radical-pair chemistry system",
     fieldClass: "1.4 MHz RF magnetic field with 50 microtesla static field and controlled orientation",
@@ -115,7 +114,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "MAJEWSKA_2025_CRY4A_MEMBRANE",
     citation: "Majewska M et al. ACS Chemical Biology (2025)",
     year: 2025,
-    url: "https://doi.org/10.1021/acschembio.4c00576",
+    referenceId: "majewska2025",
     studyType: "Protein–membrane experiment and molecular simulation",
     system: "European robin Cry4a and model lipid bilayers",
     fieldClass: "Receptor geometry / membrane anchoring study",
@@ -131,7 +130,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "ZANDIEH_2025_MITO_RESONANCE",
     citation: "Zandieh A et al. Scientific Reports (2025)",
     year: 2025,
-    url: "https://doi.org/10.1038/s41598-025-87235-w",
+    referenceId: "zandieh2025",
     studyType: "Cell experiment with dynamical model",
     system: "Cancer cell lines",
     fieldClass: "ELF magnetic fields, 0.01–5 Hz and 0–100 mT",
@@ -147,7 +146,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "SHERRARD_2018_CRY_ROS",
     citation: "Sherrard RM et al. PLOS Biology (2018)",
     year: 2018,
-    url: "https://doi.org/10.1371/journal.pbio.2006229",
+    referenceId: "sherrard2018",
     studyType: "Controlled cell experiment with cryptochrome loss-of-function",
     system: "Human HEK293 cells and mouse embryonic fibroblasts",
     fieldClass: "Weak pulsed electromagnetic fields",
@@ -163,7 +162,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "CAO_2015_RF_CIRCADIAN_REDOX",
     citation: "Cao H et al. International Journal of Environmental Research and Public Health (2015)",
     year: 2015,
-    url: "https://doi.org/10.3390/ijerph120202071",
+    referenceId: "cao2015",
     studyType: "Controlled animal experiment",
     system: "Rats",
     fieldClass: "1.8 GHz RF exposure at six time-of-day conditions",
@@ -179,7 +178,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "CHAE_2019_HUMAN_BLUE_LIGHT_ORIENTATION",
     citation: "Chae K-S et al. PLOS ONE (2019)",
     year: 2019,
-    url: "https://doi.org/10.1371/journal.pone.0211826",
+    referenceId: "chae2019",
     studyType: "Controlled human orientation experiment with wavelength and field-inversion controls",
     system: "Food-deprived human adults (20 men, 21 women)",
     fieldClass: "Coil-modulated geomagnetic-strength static field under controlled illumination",
@@ -195,7 +194,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "DE_IULIIS_2009_HUMAN_SPERM",
     citation: "De Iuliis GN et al. PLOS ONE (2009)",
     year: 2009,
-    url: "https://doi.org/10.1371/journal.pone.0006446",
+    referenceId: "iuliis2009",
     studyType: "Controlled in-vitro human sperm experiment",
     system: "Purified human spermatozoa",
     fieldClass: "1.8 GHz RF-EMR, 0.4–27.5 W/kg SAR",
@@ -211,7 +210,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "YU_2020_LOCAL_4G_BTB",
     citation: "Yu G et al. Science of the Total Environment (2020)",
     year: 2020,
-    url: "https://doi.org/10.1016/j.scitotenv.2019.133860",
+    referenceId: "yu2019_btb",
     studyType: "Controlled adult-rat local-exposure experiment with mechanistic rescue",
     system: "Adult rat testes",
     fieldClass: "Localized 4G smartphone RF exposure to the scrotal region",
@@ -227,7 +226,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "MEENA_2014_MELATONIN_RESCUE",
     citation: "Meena R et al. Electromagnetic Biology and Medicine (2014)",
     year: 2014,
-    url: "https://doi.org/10.3109/15368378.2013.781035",
+    referenceId: "meena2014",
     studyType: "Controlled animal experiment with melatonin intervention",
     system: "Wistar rat testes and semen endpoints",
     fieldClass: "2.45 GHz microwave exposure, reported SAR 0.14 W/kg",
@@ -243,7 +242,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "AHMADI_2016_OVARIAN_FOLLICLES",
     citation: "Ahmadi SS et al. Electronic Physician (2016)",
     year: 2016,
-    url: "https://doi.org/10.19082/2168",
+    referenceId: "ahmadi2016",
     studyType: "Controlled developmental animal experiment",
     system: "Rat ovaries exposed during intrauterine and postnatal development",
     fieldClass: "50 Hz magnetic-field exposure for 8 or 13 weeks",
@@ -259,7 +258,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "LOCHHEAD_2010_ROS_BBB",
     citation: "Lochhead JJ et al. Journal of Cerebral Blood Flow and Metabolism (2010)",
     year: 2010,
-    url: "https://doi.org/10.1038/jcbfm.2010.29",
+    referenceId: "lochhead2010",
     studyType: "Controlled animal barrier experiment",
     system: "Rat blood-brain barrier",
     fieldClass: "Oxidative-stress manipulation, not EMF exposure",
@@ -275,7 +274,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "CHAKRABORTY_2020_OXIDATIVE_BTB",
     citation: "Chakraborty P et al. Reproductive Toxicology (2020)",
     year: 2020,
-    url: "https://doi.org/10.1016/j.reprotox.2020.06.012",
+    referenceId: "chakraborty2020",
     studyType: "Controlled animal mechanism experiment",
     system: "Rat testis and blood-testis barrier",
     fieldClass: "Oxidative-stress manipulation, not EMF exposure",
@@ -291,7 +290,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "LIU_2014_OVARIAN_CLOCK_IMPLANTATION",
     citation: "Liu Y et al. Proceedings of the National Academy of Sciences (2014)",
     year: 2014,
-    url: "https://doi.org/10.1073/pnas.1209249111",
+    referenceId: "liu2014",
     studyType: "Cell-specific genetic animal experiment",
     system: "Mouse ovarian steroidogenic cells",
     fieldClass: "Downstream circadian mechanism, not EMF exposure",
@@ -307,7 +306,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "HE_2016_OOCYTE_MELATONIN",
     citation: "He C et al. International Journal of Molecular Sciences (2016)",
     year: 2016,
-    url: "https://doi.org/10.3390/ijms17060939",
+    referenceId: "he2016",
     studyType: "Mouse oocyte and IVF experiment",
     system: "Murine oocytes and embryo-development endpoints",
     fieldClass: "Downstream redox/melatonin mechanism, not EMF exposure",
@@ -323,7 +322,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "CORDELLI_2024_MALE_FERTILITY_REVIEW",
     citation: "Cordelli E et al. Environment International (2024)",
     year: 2024,
-    url: "https://doi.org/10.1016/j.envint.2024.108509",
+    referenceId: "cordelli2024",
     studyType: "WHO-commissioned systematic review and meta-analysis",
     system: "Non-human mammals and human sperm in vitro",
     fieldClass: "RF-EMF from 100 kHz to 300 GHz",
@@ -339,7 +338,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "CORDELLI_2025_CORRIGENDUM",
     citation: "Cordelli E et al. Corrigendum, Environment International (2025)",
     year: 2025,
-    url: "https://doi.org/10.1016/j.envint.2025.109449",
+    referenceId: "cordelli2025_corrigendum",
     studyType: "Correction to systematic-review meta-analysis",
     system: "Re-analysis of the 2024 review data",
     fieldClass: "RF-EMF evidence synthesis",
@@ -355,7 +354,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "NADERI_2026_RODENT_SYSTEMATIC_REVIEW",
     citation: "Naderi N et al. Reproductive Toxicology (2026)",
     year: 2026,
-    url: "https://doi.org/10.1016/j.reprotox.2026.109300",
+    referenceId: "naderi2026",
     studyType: "Systematic review of rodent experiments",
     system: "Rat and mouse spermatogenesis/sperm studies",
     fieldClass: "800–24,000 MHz RF-EMR; reported SAR 0.014–34 W/kg",
@@ -371,7 +370,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "BALDINI_2025_ART_LAB_SPERM",
     citation: "Baldini GM et al. Toxics (2025)",
     year: 2025,
-    url: "https://doi.org/10.3390/toxics13060510",
+    referenceId: "baldini2025",
     studyType: "Human-sperm in-vitro laboratory comparison",
     system: "Semen samples from 102 healthy males in an IVF laboratory",
     fieldClass: "One-hour close-distance smartphone or 2.4/5 GHz Wi-Fi-repeater exposure versus laboratory comparators",
@@ -387,7 +386,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "CALIS_2021_PRENATAL_OVARIAN_RESERVE",
     citation: "Calis P et al. Fetal and Pediatric Pathology (2021)",
     year: 2021,
-    url: "https://doi.org/10.1080/15513815.2019.1692112",
+    referenceId: "calis2021",
     studyType: "Prenatal controlled rat experiment",
     system: "Female rat offspring ovarian histology at postnatal day 42",
     fieldClass: "Smartphone RF exposure during pregnancy",
@@ -403,7 +402,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "YOUSEFI_2025_NEONATAL_OOGENESIS",
     citation: "Yousefi B et al. Reproductive Sciences (2025)",
     year: 2025,
-    url: "https://doi.org/10.1007/s43032-025-01880-0",
+    referenceId: "yousefi2025",
     studyType: "Maternal-exposure neonatal-rat experiment",
     system: "Neonatal Wistar-rat ovaries after maternal phone exposure",
     fieldClass: "Maternal mobile-phone exposure during gestation",
@@ -419,7 +418,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "IOLCHIEV_2019_GEOMAGNETIC_BULL_SEMEN",
     citation: "Iolchiev BS et al. Agricultural Biology (2019)",
     year: 2019,
-    url: "https://doi.org/10.15389/agrobiology.2019.6.1196eng",
+    referenceId: "iolchiev2019",
     studyType: "Observational time-series study",
     system: "Ten Holstein bulls and repeated semen samples",
     fieldClass: "Natural geomagnetic-activity index",
@@ -435,7 +434,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "WPP_WB_BERM_COHORT_ASFR_2026",
     citation: "BERM reproducibility analysis using UN WPP 2024 ASFR and World Bank/ITU mobile subscriptions (2000–2023)",
     year: 2026,
-    url: "https://population.un.org/wpp/",
+    referenceId: "nations2024",
     studyType: "Versioned reproducible descriptive cohort-proxy analysis",
     system: "Country-level WPP ASFR and World Bank/ITU mobile-subscription series",
     fieldClass: "Technology-adoption timing proxy, not physical FieldState",
@@ -451,7 +450,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "SHAFIK_1992_HUMAN_TEXTILE_SURFACE_READING",
     citation: "Shafik, Ibrahim & El-Sayed. Andrologia (1992)",
     year: 1992,
-    url: "https://doi.org/10.1111/j.1439-0272.1992.tb02628.x",
+    referenceId: "shafik1992",
     studyType: "Human textile-interface measurement study",
     system: "Twenty-one healthy men wearing polyester, blend or cotton underpants",
     fieldClass: "Triboelectric textile–skin interface; historical physically underdetermined V/cm² reading",
@@ -467,7 +466,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "SHAFIK_1992_HUMAN_POLYESTER_SLING",
     citation: "Shafik A. Contraception (1992)",
     year: 1992,
-    url: "https://doi.org/10.1016/0010-7824(92)90157-O",
+    referenceId: "shafik1992_sling",
     studyType: "Human longitudinal textile-sling experiment",
     system: "Fourteen adult men wearing a polyester scrotal sling for 12 months",
     fieldClass: "Triboelectric textile–skin interface with altered scrotal geometry",
@@ -483,7 +482,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "DINCMEN_2016_PET_ANTISTATIC_DECAY",
     citation: "Dincmen, Hauser & Gursoy. AATCC Journal of Research (2016)",
     year: 2016,
-    url: "https://doi.org/10.14504/ajr.3.4.4",
+    referenceId: "dincmen2016",
     studyType: "Controlled textile-material charge generation and dissipation experiment",
     system: "Untreated and antistatic-treated polyester and nylon fabrics",
     fieldClass: "Triboelectric charge generation, surface resistivity and charge-decay measurements",
@@ -499,7 +498,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "ENGLAND_2023_TICK_STATIC_ATTACHMENT",
     citation: "England, Lihou & Robert. Current Biology (2023)",
     year: 2023,
-    url: "https://doi.org/10.1016/j.cub.2023.06.021",
+    referenceId: "england_2023_ticks",
     studyType: "Controlled arthropod electrostatic-attraction experiment with finite-element modelling",
     system: "Ixodes ricinus nymphs and host–vegetation geometries",
     fieldClass: "Static host–vegetation air-gap electric fields and field gradients",
@@ -515,7 +514,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "COLIN_1992_VARROA_ELECTRICAL_CHARGES",
     citation: "Colin et al. Journal of Insect Physiology (1992)",
     year: 1992,
-    url: "https://doi.org/10.1016/0022-1910(92)90039-G",
+    referenceId: "colin1992_varroa_electrostatic",
     studyType: "Controlled ectoparasite behavior experiment",
     system: "Varroa jacobsoni as named in the original study (now generally treated as V. destructor in this Apis mellifera pest context) and honey-bee-range charged lures",
     fieldClass: "Static electrical charges matched to the reported host range",
@@ -531,7 +530,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "MALLINSON_2025_HONEYBEE_EFIELD_FORAGING",
     citation: "Mallinson, Woodburn & O'Reilly. iScience (2025)",
     year: 2025,
-    url: "https://doi.org/10.1016/j.isci.2025.112550",
+    referenceId: "mallinson2025_electric_pollution",
     studyType: "Paired field experiment with anthropogenic AC/DC electric-field treatments",
     system: "Honeybee floral landing behavior in urban meadows",
     fieldClass: "Weak 50 Hz AC and DC aerial electric fields; transmission-line measurements",
@@ -547,7 +546,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "GARCIA_ROBLEDO_2025_FLOWER_MITE_ELECTRORECEPTION",
     citation: "García-Robledo, Dierick & Manser. PNAS (2025)",
     year: 2025,
-    url: "https://doi.org/10.1073/pnas.2419214122",
+    referenceId: "garcia_robledo2025",
     studyType: "Controlled mite behavior, sensory-ablation and electrostatic-transport experiment",
     system: "Tropical hummingbird flower mites and host-like electric-field configurations",
     fieldClass: "Modulated and static electric fields with host-like charge and geometry",
@@ -563,7 +562,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "SOFRANKOVA_2023_TICK_RF_NEUROPEPTIDE",
     citation: "Šofranková et al. Pathogens (2023)",
     year: 2023,
-    url: "https://doi.org/10.3390/pathogens12121398",
+    referenceId: "sofrankova2023",
     studyType: "Controlled radiofrequency exposure and tick synganglion qRT-PCR experiment",
     system: "Adult male and female Ixodes ricinus under stated 900 MHz, 2 or 40 V/m exposure conditions",
     fieldClass: "900 MHz polarized, unmodulated RF electric-field exposure",
@@ -579,7 +578,7 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
     id: "MORLEY_2018_SPIDER_EFIELD_BALLOONING",
     citation: "Morley & Robert. Current Biology (2018)",
     year: 2018,
-    url: "https://doi.org/10.1016/j.cub.2018.05.057",
+    referenceId: "morley2018_spider_ballooning",
     studyType: "Controlled arthropod behavior and mechanosensory-hair experiment",
     system: "Ballooning spiders",
     fieldClass: "Vertical atmospheric-scale static electric fields",
@@ -653,9 +652,7 @@ export const EVIDENCE_LEVEL_LABELS: Record<string, Record<"en" | "fi", string>> 
 
 // ── Causal node labels ─────────────────────────────────────────────
 
-type EvidenceLocale = "en" | "fi";
-
-const CAUSAL_NODE_LABELS: Record<string, Record<EvidenceLocale, string>> = {
+const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
   STATIC_TRIBO_INTERFACE: {
     en: "Static triboelectric material–skin / organism interface",
     fi: "Staattinen triboelektrinen materiaali–iho / eliörajapinta",
@@ -774,8 +771,8 @@ const CAUSAL_NODE_LABELS: Record<string, Record<EvidenceLocale, string>> = {
   },
 };
 
-export function causalNodeLabels(nodeIds: readonly string[], locale: EvidenceLocale): string[] {
-  return nodeIds.map((id) => CAUSAL_NODE_LABELS[id]?.[locale] ?? "Unmapped registered node");
+export function causalNodeLabels(nodeIds: readonly string[], locale: string): string[] {
+  return nodeIds.map((id) => CAUSAL_NODE_LABELS[id]?.[locale] ?? CAUSAL_NODE_LABELS[id]?.en ?? "Unmapped registered node");
 }
 
 if (FIELDSTATE_EVIDENCE_COUNT < 30) {

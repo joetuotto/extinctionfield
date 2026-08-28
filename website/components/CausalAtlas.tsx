@@ -23,6 +23,7 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { ChevronLeft, ChevronRight, Map, Route, Search, RotateCcw } from "lucide-react";
+import { InlineReferenceText } from "@/components/InlineReferenceText";
 import {
   NODES,
   EDGES,
@@ -46,6 +47,7 @@ import {
   type StepperPathKey,
   type Stage,
 } from "@/lib/causalAtlasData";
+import { pickCopy } from "@/lib/i18n";
 import AtlasNode from "./atlas/AtlasNode";
 import { AtlasDetail } from "./atlas/AtlasDetail";
 
@@ -112,6 +114,131 @@ const nodeTypes: NodeTypes = {
 
 const edgeTypes: EdgeTypes = {
   atlas: AtlasEdge,
+};
+
+// ── Localised UI copy ──
+
+const COPY = {
+  en: {
+    explore: "Explore",
+    guided: "Guided",
+    instruction: "Scroll to zoom · Drag to pan · Click a node for details",
+    exitGuided: "Exit tour",
+    searchPlaceholder: "Search nodes...",
+    searchAriaLabel: "Search nodes",
+    stageFiltersAriaLabel: "Stage filters",
+    evidenceFiltersAriaLabel: "Evidence filters",
+    clear: "Clear",
+    atlasAriaLabel: "BERM Causal Atlas",
+    evidenceLevel: "Evidence Level",
+    guidedTourAriaLabel: "Guided tour",
+    sceneOf: (idx: number, total: number) => `Scene ${idx} of ${total}`,
+    prevSceneAriaLabel: "Previous scene",
+    scenesAriaLabel: "Scenes",
+    nextSceneAriaLabel: "Next scene",
+    causalPathwaysAriaLabel: "Causal pathways",
+    stepOf: (step: number, total: number, label: string) => `Step ${step}/${total}: ${label}`,
+    fdaDevice: "FDA Device:",
+    readMore: "Read more →",
+    previous: "Previous",
+    next: "Next",
+  },
+  fi: {
+    explore: "Tutki",
+    guided: "Opastettu",
+    instruction: "Vieritä zoomataksesi · Raahaa panoroidaksesi · Klikkaa solmua yksityiskohtiin",
+    exitGuided: "Poistu kierrokselta",
+    searchPlaceholder: "Etsi solmu...",
+    searchAriaLabel: "Etsi solmuja",
+    stageFiltersAriaLabel: "Vaihesuodattimet",
+    evidenceFiltersAriaLabel: "Evidenssisuodattimet",
+    clear: "Tyhjennä",
+    atlasAriaLabel: "BERM-kausaaliatlas",
+    evidenceLevel: "Evidenssitaso",
+    guidedTourAriaLabel: "Opastettu kierros",
+    sceneOf: (idx: number, total: number) => `Kohtaus ${idx} / ${total}`,
+    prevSceneAriaLabel: "Edellinen kohtaus",
+    scenesAriaLabel: "Kohtaukset",
+    nextSceneAriaLabel: "Seuraava kohtaus",
+    causalPathwaysAriaLabel: "Kausaalipolut",
+    stepOf: (step: number, total: number, label: string) => `Vaihe ${step}/${total}: ${label}`,
+    fdaDevice: "FDA-laite:",
+    readMore: "Lue lisää →",
+    previous: "Edellinen",
+    next: "Seuraava",
+  },
+  ja: {
+    explore: "探索",
+    guided: "ガイド",
+    instruction: "スクロールでズーム · ドラッグで移動 · ノードをクリックして詳細を表示",
+    exitGuided: "ツアーを終了",
+    searchPlaceholder: "ノードを検索...",
+    searchAriaLabel: "ノードを検索",
+    stageFiltersAriaLabel: "ステージフィルター",
+    evidenceFiltersAriaLabel: "エビデンスフィルター",
+    clear: "クリア",
+    atlasAriaLabel: "BERM因果アトラス",
+    evidenceLevel: "エビデンスレベル",
+    guidedTourAriaLabel: "ガイドツアー",
+    sceneOf: (idx: number, total: number) => `シーン ${idx} / ${total}`,
+    prevSceneAriaLabel: "前のシーン",
+    scenesAriaLabel: "シーン一覧",
+    nextSceneAriaLabel: "次のシーン",
+    causalPathwaysAriaLabel: "因果経路",
+    stepOf: (step: number, total: number, label: string) => `ステップ ${step}/${total}: ${label}`,
+    fdaDevice: "FDA機器:",
+    readMore: "続きを読む →",
+    previous: "前へ",
+    next: "次へ",
+  },
+  fr: {
+    explore: "Explorer",
+    guided: "Visite guidée",
+    instruction: "Défilez pour zoomer · Glissez pour déplacer · Cliquez sur un nœud pour les détails",
+    exitGuided: "Quitter la visite",
+    searchPlaceholder: "Rechercher des nœuds...",
+    searchAriaLabel: "Rechercher des nœuds",
+    stageFiltersAriaLabel: "Filtres par étape",
+    evidenceFiltersAriaLabel: "Filtres par niveau de preuve",
+    clear: "Effacer",
+    atlasAriaLabel: "Atlas causal BERM",
+    evidenceLevel: "Niveau de preuve",
+    guidedTourAriaLabel: "Visite guidée",
+    sceneOf: (idx: number, total: number) => `Scène ${idx} sur ${total}`,
+    prevSceneAriaLabel: "Scène précédente",
+    scenesAriaLabel: "Scènes",
+    nextSceneAriaLabel: "Scène suivante",
+    causalPathwaysAriaLabel: "Voies causales",
+    stepOf: (step: number, total: number, label: string) => `Étape ${step}/${total} : ${label}`,
+    fdaDevice: "Appareil FDA :",
+    readMore: "En savoir plus →",
+    previous: "Précédent",
+    next: "Suivant",
+  },
+  ko: {
+    explore: "탐색",
+    guided: "가이드",
+    instruction: "스크롤하여 확대/축소 · 드래그하여 이동 · 노드를 클릭하여 상세 정보 확인",
+    exitGuided: "투어 종료",
+    searchPlaceholder: "노드 검색...",
+    searchAriaLabel: "노드 검색",
+    stageFiltersAriaLabel: "단계 필터",
+    evidenceFiltersAriaLabel: "증거 수준 필터",
+    clear: "초기화",
+    atlasAriaLabel: "BERM 인과 아틀라스",
+    evidenceLevel: "증거 수준",
+    guidedTourAriaLabel: "가이드 투어",
+    sceneOf: (idx: number, total: number) => `장면 ${idx} / ${total}`,
+    prevSceneAriaLabel: "이전 장면",
+    scenesAriaLabel: "장면 목록",
+    nextSceneAriaLabel: "다음 장면",
+    causalPathwaysAriaLabel: "인과 경로",
+    stepOf: (step: number, total: number, label: string) => `단계 ${step}/${total}: ${label}`,
+    fdaDevice: "FDA 기기:",
+    readMore: "자세히 보기 →",
+    previous: "이전",
+    next: "다음",
+  },
 };
 
 // ── Build React Flow elements ──
@@ -217,6 +344,7 @@ function buildElements(
 
 interface ToolbarProps {
   lang: Locale;
+  copy: typeof COPY["en"];
   searchQuery: string;
   onSearchChange: (q: string) => void;
   stageFilter: Set<Stage> | null;
@@ -229,7 +357,7 @@ interface ToolbarProps {
 }
 
 function AtlasToolbar({
-  lang, searchQuery, onSearchChange, stageFilter, onStageToggle,
+  lang, copy, searchQuery, onSearchChange, stageFilter, onStageToggle,
   evidenceFilter, onEvidenceToggle, onClearFilters, visibleCount, hasFilters,
 }: ToolbarProps) {
   const searchRef = useRef<HTMLInputElement>(null);
@@ -245,14 +373,14 @@ function AtlasToolbar({
           type="search"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          placeholder={lang === "fi" ? "Etsi solmu..." : "Search nodes..."}
+          placeholder={copy.searchPlaceholder}
           className="w-36 pl-7 pr-2 py-1.5 bg-[var(--atlas-edge-dim)] border border-[var(--border)] rounded-md text-xs text-[var(--atlas-text)] placeholder:text-[var(--atlas-text-muted)] focus:outline-none focus:ring-1 focus:ring-blue-400/50"
-          aria-label={lang === "fi" ? "Etsi solmuja" : "Search nodes"}
+          aria-label={copy.searchAriaLabel}
         />
       </div>
 
       {/* Stage filters */}
-      <div className="flex flex-wrap gap-1" role="group" aria-label={lang === "fi" ? "Vaihesuodattimet" : "Stage filters"}>
+      <div className="flex flex-wrap gap-1" role="group" aria-label={copy.stageFiltersAriaLabel}>
         {ALL_STAGES.map((s) => {
           const active = !stageFilter || stageFilter.has(s.id);
           return (
@@ -274,7 +402,7 @@ function AtlasToolbar({
       </div>
 
       {/* Evidence filters */}
-      <div className="flex gap-1" role="group" aria-label={lang === "fi" ? "Evidenssisuodattimet" : "Evidence filters"}>
+      <div className="flex gap-1" role="group" aria-label={copy.evidenceFiltersAriaLabel}>
         {(Object.keys(EVIDENCE_COLORS) as EpistemicLevel[]).map((level) => {
           const active = !evidenceFilter || evidenceFilter.has(level);
           return (
@@ -302,7 +430,7 @@ function AtlasToolbar({
           className="inline-flex items-center gap-1 px-2 py-1 rounded text-[10px] text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] hover:bg-[var(--atlas-edge)] transition-colors min-h-[28px]"
         >
           <RotateCcw size={10} />
-          {lang === "fi" ? "Tyhjennä" : "Clear"}
+          {copy.clear}
         </button>
       )}
     </div>
@@ -448,21 +576,7 @@ function AtlasInner({ locale }: { locale: string }) {
     setSearchQuery("");
   }, []);
 
-  const COPY = {
-    en: {
-      explore: "Explore",
-      guided: "Guided",
-      instruction: "Scroll to zoom · Drag to pan · Click a node for details",
-      exitGuided: "Exit tour",
-    },
-    fi: {
-      explore: "Tutki",
-      guided: "Opastettu",
-      instruction: "Vieritä zoomataksesi · Raahaa panoroidaksesi · Klikkaa solmua yksityiskohtiin",
-      exitGuided: "Poistu kierrokselta",
-    },
-  };
-  const copy = COPY[lang];
+  const copy = pickCopy(COPY, locale);
 
   return (
     <div className="relative w-full h-[82vh] min-h-[600px] rounded-xl overflow-hidden bg-[var(--atlas-bg)] border border-[var(--border)]">
@@ -494,7 +608,7 @@ function AtlasInner({ locale }: { locale: string }) {
         panOnDrag
         zoomOnPinch
         proOptions={{ hideAttribution: true }}
-        aria-label={lang === "fi" ? "BERM-kausaaliatlas" : "BERM Causal Atlas"}
+        aria-label={copy.atlasAriaLabel}
       >
         <Background gap={30} size={1} color="var(--atlas-dot)" />
         <Controls
@@ -541,6 +655,7 @@ function AtlasInner({ locale }: { locale: string }) {
           <Panel position="top-left" className="!m-3">
             <AtlasToolbar
               lang={lang}
+              copy={copy}
               searchQuery={searchQuery}
               onSearchChange={setSearchQuery}
               stageFilter={stageFilter}
@@ -559,7 +674,7 @@ function AtlasInner({ locale }: { locale: string }) {
           <Panel position="top-left" className="!m-3">
             <div className="bg-[var(--atlas-surface)] backdrop-blur-sm border border-[var(--border)] rounded-lg px-3 py-2.5">
               <p className="text-[10px] uppercase tracking-wider text-[var(--atlas-text-dim)] mb-1.5">
-                {lang === "fi" ? "Evidenssitaso" : "Evidence Level"}
+                {copy.evidenceLevel}
               </p>
               <div className="flex flex-wrap gap-x-3 gap-y-1">
                 {(Object.keys(EVIDENCE_COLORS) as EpistemicLevel[]).map((key) => (
@@ -585,12 +700,12 @@ function AtlasInner({ locale }: { locale: string }) {
         <div
           className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 pointer-events-auto"
           role="region"
-          aria-label={lang === "fi" ? "Opastettu kierros" : "Guided tour"}
+          aria-label={copy.guidedTourAriaLabel}
         >
           <div className="bg-[var(--atlas-surface)] backdrop-blur-sm border border-[var(--border)] rounded-xl px-5 py-4 max-w-lg text-center">
             <div className="flex items-center justify-between mb-2">
               <span className="text-[10px] text-[var(--atlas-text-muted)] tabular-nums">
-                {lang === "fi" ? `Kohtaus ${sceneIdx + 1} / ${GUIDED_SCENES.length}` : `Scene ${sceneIdx + 1} of ${GUIDED_SCENES.length}`}
+                {copy.sceneOf(sceneIdx + 1, GUIDED_SCENES.length)}
               </span>
               <button
                 onClick={() => { setMode("explore"); closeDetails(); }}
@@ -606,11 +721,11 @@ function AtlasInner({ locale }: { locale: string }) {
                 onClick={prevScene}
                 disabled={sceneIdx === 0}
                 className="p-2.5 rounded-md hover:bg-[var(--atlas-edge)] transition-colors disabled:opacity-30 text-[var(--atlas-text-dim)] min-w-[44px] min-h-[44px] flex items-center justify-center"
-                aria-label={lang === "fi" ? "Edellinen kohtaus" : "Previous scene"}
+                aria-label={copy.prevSceneAriaLabel}
               >
                 <ChevronLeft size={18} />
               </button>
-              <div className="flex gap-2" role="tablist" aria-label={lang === "fi" ? "Kohtaukset" : "Scenes"}>
+              <div className="flex gap-2" role="tablist" aria-label={copy.scenesAriaLabel}>
                 {GUIDED_SCENES.map((s, i) => (
                   <button
                     key={i}
@@ -627,7 +742,7 @@ function AtlasInner({ locale }: { locale: string }) {
                 onClick={nextScene}
                 disabled={sceneIdx === GUIDED_SCENES.length - 1}
                 className="p-2.5 rounded-md hover:bg-[var(--atlas-edge)] transition-colors disabled:opacity-30 text-[var(--atlas-text-dim)] min-w-[44px] min-h-[44px] flex items-center justify-center"
-                aria-label={lang === "fi" ? "Seuraava kohtaus" : "Next scene"}
+                aria-label={copy.nextSceneAriaLabel}
               >
                 <ChevronRight size={18} />
               </button>
@@ -652,6 +767,7 @@ function AtlasInner({ locale }: { locale: string }) {
 
 function MobileStepper({ locale }: { locale: string }) {
   const lang: Locale = locale === "fi" ? "fi" : "en";
+  const copy = pickCopy(COPY, locale);
   const [pathKey, setPathKey] = useState<StepperPathKey>("main");
   const [step, setStep] = useState(0);
   const path = STEPPER_PATHS[pathKey];
@@ -675,7 +791,7 @@ function MobileStepper({ locale }: { locale: string }) {
       {/* Path selector */}
       <div
         role="tablist"
-        aria-label={lang === "fi" ? "Kausaalipolut" : "Causal pathways"}
+        aria-label={copy.causalPathwaysAriaLabel}
         className="flex border-b border-[var(--border)]"
       >
         {(Object.keys(STEPPER_PATHS) as StepperPathKey[]).map((k) => (
@@ -704,7 +820,7 @@ function MobileStepper({ locale }: { locale: string }) {
 
       {/* Live region for step changes */}
       <div ref={liveRef} aria-live="polite" className="sr-only">
-        {lang === "fi" ? `Vaihe ${step + 1}/${ids.length}: ${label}` : `Step ${step + 1}/${ids.length}: ${label}`}
+        {copy.stepOf(step + 1, ids.length, label)}
       </div>
 
       {/* Card */}
@@ -731,18 +847,21 @@ function MobileStepper({ locale }: { locale: string }) {
           {sublabel && <p className="text-xs text-[var(--atlas-text-dim)] mb-3">{sublabel}</p>}
 
           {d?.mechanism && (
-            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed mb-3">{d.mechanism}</p>
+            <p className="text-[13px] text-[var(--atlas-text-dim)] leading-relaxed mb-3">
+              <InlineReferenceText text={d.mechanism} locale={lang} />
+            </p>
           )}
 
           {d?.fdaDevice && (
             <p className="text-xs text-[var(--atlas-text-dim)]">
-              <span className="font-semibold text-[var(--atlas-text-dim)]">{lang === "fi" ? "FDA-laite:" : "FDA Device:"}</span> {d.fdaDevice}
+              <span className="font-semibold text-[var(--atlas-text-dim)]">{copy.fdaDevice}</span>{" "}
+              <InlineReferenceText text={d.fdaDevice} locale={lang} />
             </p>
           )}
 
           {node.detail?.link && (
-            <a href={`/${lang}${node.detail.link}`} className="inline-block text-xs text-blue-400 hover:text-blue-300 mt-2 min-h-[44px] flex items-center">
-              {lang === "fi" ? "Lue lisää →" : "Read more →"}
+            <a href={`/${locale}${node.detail.link}`} className="inline-block text-xs text-blue-400 hover:text-blue-300 mt-2 min-h-[44px] flex items-center">
+              {copy.readMore}
             </a>
           )}
         </div>
@@ -755,7 +874,7 @@ function MobileStepper({ locale }: { locale: string }) {
             className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] hover:bg-[var(--atlas-edge-dim)] transition-colors disabled:opacity-30 min-h-[44px]"
           >
             <ChevronLeft size={14} />
-            {lang === "fi" ? "Edellinen" : "Previous"}
+            {copy.previous}
           </button>
           <span className="text-xs text-[var(--atlas-text-muted)] font-mono tabular-nums">{step + 1} / {ids.length}</span>
           <button
@@ -763,7 +882,7 @@ function MobileStepper({ locale }: { locale: string }) {
             disabled={step === ids.length - 1}
             className="flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium text-[var(--atlas-text-dim)] hover:text-[var(--atlas-text)] hover:bg-[var(--atlas-edge-dim)] transition-colors disabled:opacity-30 min-h-[44px]"
           >
-            {lang === "fi" ? "Seuraava" : "Next"}
+            {copy.next}
             <ChevronRight size={14} />
           </button>
         </div>

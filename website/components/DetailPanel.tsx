@@ -1,5 +1,7 @@
 import type { ChainNode } from "@/lib/types";
 import { EPISTEMIC_COLORS } from "@/lib/causalChainData";
+import { StudyCitation } from "./StudyCitation";
+import { InlineReferenceText } from "./InlineReferenceText";
 import { EpistemicBadge } from "./EpistemicBadge";
 
 export function DetailPanel({
@@ -9,7 +11,7 @@ export function DetailPanel({
 }: {
   node: ChainNode;
   onClose: () => void;
-  locale?: "en" | "fi";
+  locale?: string;
 }) {
   const d = locale === "fi"
     ? {
@@ -79,7 +81,10 @@ export function DetailPanel({
               {d.mechanism}
             </h3>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              {locale === "en" && node.mechanism_en ? node.mechanism_en : node.mechanism}
+              <InlineReferenceText
+                text={locale === "en" && node.mechanism_en ? node.mechanism_en : node.mechanism}
+                locale={locale}
+              />
             </p>
           </section>
 
@@ -93,7 +98,10 @@ export function DetailPanel({
                 {d.lindgren}
               </h3>
               <p className="text-sm text-foreground-muted leading-relaxed">
-                {locale === "en" && node.lindgrenInterpretation_en ? node.lindgrenInterpretation_en : node.lindgrenInterpretation}
+                <InlineReferenceText
+                  text={locale === "en" && node.lindgrenInterpretation_en ? node.lindgrenInterpretation_en : node.lindgrenInterpretation ?? ""}
+                  locale={locale}
+                />
               </p>
             </section>
           )}
@@ -105,7 +113,10 @@ export function DetailPanel({
                 {d.quantitative}
               </h3>
               <pre className="text-xs font-mono text-foreground-muted bg-background-secondary rounded-lg p-4 overflow-x-auto whitespace-pre-wrap">
-                {locale === "en" && node.quantitative_en ? node.quantitative_en : node.quantitative}
+                <InlineReferenceText
+                  text={locale === "en" && node.quantitative_en ? node.quantitative_en : node.quantitative ?? ""}
+                  locale={locale}
+                />
               </pre>
             </section>
           )}
@@ -157,12 +168,23 @@ export function DetailPanel({
               <ul className="space-y-3">
                 {node.keyReferences.map((ref, i) => (
                   <li key={i} className="text-sm">
-                    <p className="text-foreground font-medium">{ref.authors}</p>
+                    {ref.referenceId ? (
+                      <StudyCitation
+                        referenceId={ref.referenceId}
+                        locale={locale}
+                        label={ref.authors}
+                        className="font-medium text-accent decoration-dotted underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 rounded-sm"
+                      />
+                    ) : (
+                      <p className="text-foreground font-medium">{ref.authors}</p>
+                    )}
                     <p className="text-xs text-foreground-muted italic">{ref.title}</p>
                     <p className="text-xs text-foreground-muted opacity-70">{ref.journal}</p>
-                    <p className="text-xs text-foreground-muted mt-1">
-                      → {locale === "en" && ref.keyFinding_en ? ref.keyFinding_en : ref.keyFinding}
-                    </p>
+                    {(locale === "en" && ref.keyFinding_en ? ref.keyFinding_en : ref.keyFinding) && (
+                      <p className="text-xs text-foreground-muted mt-1">
+                        → {locale === "en" && ref.keyFinding_en ? ref.keyFinding_en : ref.keyFinding}
+                      </p>
+                    )}
                   </li>
                 ))}
               </ul>

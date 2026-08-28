@@ -55,7 +55,7 @@ function Chart({
     : { top: 16, right: 44, bottom: 32, left: 40 };
   const cw = W - pad.left - pad.right;
   const ch = H - pad.top - pad.bottom;
-  const font = compact ? 11 : 10;
+  const font = 11;
 
   const lastYear = tfr.length ? tfr[tfr.length - 1].year : 2024;
   const xMin = 1960;
@@ -78,7 +78,11 @@ function Chart({
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
-      className="w-full"
+      className={
+        compact
+          ? "chart-svg h-auto w-full min-w-[360px]"
+          : "chart-svg mx-auto h-auto w-full min-w-[560px] max-w-[560px]"
+      }
       role="img"
       aria-label={
         fi
@@ -92,7 +96,7 @@ function Chart({
         y1={pad.top + ch}
         x2={W - pad.right}
         y2={pad.top + ch}
-        stroke="var(--card-border)"
+        className="chart-axis-line"
         strokeWidth={1}
       />
       {xTicks.map((t) => (
@@ -126,15 +130,21 @@ function Chart({
         fill="var(--foreground-muted)"
         fontSize={font - 1}
         opacity={0.8}
+        paintOrder="stroke"
+        stroke="var(--figure-bg)"
+        strokeWidth={3}
+        strokeLinejoin="round"
       >
         2.1
       </text>
 
       {mobile.length > 1 && (
-        <path d={path(mobile, syMobile)} fill="none" stroke="var(--status-partial)" strokeWidth={1.5} opacity={0.75} />
+        <path d={path(mobile, syMobile)} fill="none" stroke="var(--status-partial)" strokeWidth={1.5}
+          strokeLinecap="round" strokeLinejoin="round" opacity={0.75} />
       )}
       {tfr.length > 1 && (
-        <path d={path(tfr, syTfr)} fill="none" stroke="var(--accent)" strokeWidth={2} />
+        <path d={path(tfr, syTfr)} fill="none" stroke="var(--accent)" strokeWidth={2}
+          strokeLinecap="round" strokeLinejoin="round" />
       )}
 
       {/* locked prediction: sensitivity envelope, then the central value */}
@@ -207,9 +217,9 @@ export function CountryDetailPanel({ iso3, name, tfr, mobile, locale }: Props) {
   }
 
   return (
-    <div className="rounded-lg border border-card-border bg-card-bg p-4 sm:p-5">
-      <div className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-        <h3 className="text-base font-semibold">{name}</h3>
+    <section className="chart-surface">
+      <div className="chart-surface__header">
+        <h3 className="min-w-0 text-base font-semibold">{name}</h3>
         {latest && (
           <span className="font-mono-num text-sm text-accent">
             TFR {latest.value.toFixed(2)}{" "}
@@ -224,33 +234,33 @@ export function CountryDetailPanel({ iso3, name, tfr, mobile, locale }: Props) {
         )}
       </div>
 
-      <div className="sm:hidden">
+      <div className="chart-scroll sm:hidden">
         <Chart compact fi={fi} tfr={tfrSeries} mobile={mobileSeries} prediction={prediction} />
       </div>
-      <div className="hidden sm:block">
+      <div className="chart-scroll hidden sm:block">
         <Chart compact={false} fi={fi} tfr={tfrSeries} mobile={mobileSeries} prediction={prediction} />
       </div>
 
-      <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-foreground-muted">
-        <span>
-          <span className="mr-1.5 inline-block h-0.5 w-3 align-middle bg-accent" />
+      <ul className="chart-legend mt-2">
+        <li className="chart-key">
+          <span className="h-0.5 w-3 shrink-0 bg-accent" />
           {fi ? "TFR (Maailmanpankki)" : "TFR (World Bank)"}
-        </span>
-        <span>
-          <span className="mr-1.5 inline-block h-0.5 w-3 align-middle bg-status-partial" />
+        </li>
+        <li className="chart-key">
+          <span className="h-0.5 w-3 shrink-0 bg-status-partial" />
           {fi ? "Mobiililiittymät / 100" : "Mobile subscriptions / 100"}
-        </span>
+        </li>
         {prediction && (
-          <span>
-            <span className="mr-1.5 inline-block h-2 w-2 rotate-45 align-middle bg-status-confirmed" />
+          <li className="chart-key">
+            <span className="h-2 w-2 shrink-0 rotate-45 bg-status-confirmed" />
             {fi ? "Lukittu ennuste" : "Locked prediction"} {prediction.year}:{" "}
             <span className="font-mono-num">
               {prediction.central.toFixed(2)} [{prediction.ciLow.toFixed(2)}–{prediction.ciHigh.toFixed(2)}]
             </span>{" "}
             <span className="font-mono-num">{prediction.modelVersion}</span>
-          </span>
+          </li>
         )}
-      </div>
+      </ul>
 
       <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs">
         {prediction && (
@@ -273,6 +283,6 @@ export function CountryDetailPanel({ iso3, name, tfr, mobile, locale }: Props) {
           ? "Mobiililiittymätiheys on yhdistelmäproksi sähkömagneettiselle ympäristölle, ei mitattu EMF-altistus. Ennuste on lukittu BERM v17:lla; hakasulkeet ovat parametriherkkyysalue, eivät luottamusväli."
           : "Mobile subscription density is a composite proxy for the electromagnetic environment, not measured EMF exposure. The prediction is locked under BERM v17; brackets are a parameter sensitivity envelope, not a confidence interval."}
       </p>
-    </div>
+    </section>
   );
 }
