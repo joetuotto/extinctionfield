@@ -69,6 +69,20 @@ export const ARTICLES: Article[] = [
     thumbImage: "/images/articles/implausibility-editorial-thumb.webp",
   },
   {
+    id: "thirteen-phenomena",
+    slug: "thirteen-phenomena",
+    title: "Thirteen Phenomena Conventional Models Cannot Adequately Explain",
+    titleFi: "13 ilmiötä joita nykyiset selitysmallit eivät selitä tyydyttävästi",
+    subtitle:
+      "A literature review of simultaneous trends that require separate explanations — unless they share a single biological cause",
+    subtitleFi:
+      "Kirjallisuuskatsaus samanaikaisista trendeistä jotka vaativat erilliset selitykset — ellei niillä ole yhteistä biologista syytä",
+    icon: "history",
+    publishedDate: "2026-08-31",
+    readingTimeMinutes: 25,
+    tags: ["civilization", "literature-review", "parsimony", "cascade"],
+  },
+  {
     id: "dual-lock",
     slug: "dual-lock",
     title: "The Dual Lock",

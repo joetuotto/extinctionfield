@@ -10,6 +10,7 @@ import { BeeArticleContent } from "./BeeArticleContent";
 import { SpectrumArticleContent } from "./SpectrumArticleContent";
 import { ImplausibilityArticleContent } from "./ImplausibilityArticleContent";
 import { DualLockArticleContent } from "./DualLockArticleContent";
+import { ThirteenPhenomenaContent } from "./ThirteenPhenomenaContent";
 
 const COPY = {
   en: {
@@ -167,6 +168,7 @@ export default async function ArticlePage({
       {slug === "spectrum" && <SpectrumArticleContent locale={locale} />}
       {slug === "implausibility" && <ImplausibilityArticleContent locale={locale} />}
       {slug === "dual-lock" && <DualLockArticleContent locale={locale} />}
+      {slug === "thirteen-phenomena" && <ThirteenPhenomenaContent locale={locale} />}
 
       {/* End navigation */}
       <footer className="mt-16 pt-8 border-t border-card-border">
