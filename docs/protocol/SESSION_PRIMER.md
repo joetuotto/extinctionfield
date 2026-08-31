@@ -15,9 +15,9 @@
 
 | Polku | Mekanismi | Status | Skaala |
 |-------|-----------|--------|--------|
-| C (RPM) | CRY → melatoniini → HPG | PRIMÄÄRINEN, 4/5 termiä johdettu | nT |
+| B (RPM) | CRY → melatoniini → HPG | PRIMÄÄRINEN, 4/5 termiä johdettu | nT |
 | A (VGCC) | δV_m → Ca²⁺ → ROS | SEKUNDAARINEN, vaatii vahvistimia | mV |
-| B–E | DC, dopaminerginen, mikrobiomi | EI JOHDETTU geometriasta | vaihtelee |
+| C–D | BBB (HPA), HPA→HPG -ristikkäisinhibitio | EI JOHDETTU geometriasta | vaihtelee |
 
 ## Erottelevat ennusteet (BERM vs. konsensus)
 

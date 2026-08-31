@@ -21,10 +21,10 @@ CLASSIFICATION_TABLE_PATH = (
 
 REASONING_PROTOCOL_VERSION = "1.0"
 
-#: Pathway C (radical-pair / cryptochrome) is primary after the Lindgren
+#: Pathway B (radical-pair / cryptochrome) is primary after the Lindgren
 #: geometry analysis; pathway A (VGCC) needs biological amplifiers the
 #: geometry does not supply.
-PRIMARY_PATHWAY = "C_RPM"
+PRIMARY_PATHWAY = "B_RPM"
 
 #: D1-D3 in docs/audit/DISCRIMINATING_TESTS.md. These test the primary branch
 #: itself, which none of the 13 reviewed findings did.

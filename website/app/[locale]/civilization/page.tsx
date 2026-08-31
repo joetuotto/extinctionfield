@@ -472,6 +472,33 @@ const COPY = {
     s8body:
       "Barzilai’s dopaminergic mind hypothesis proposes that dopamine-driven cognitive traits — curiosity, creativity, exploration, risk-tolerance, future orientation — were central to the emergence of modern human cognition. BERM adds a mechanism: if EMF disrupts VTA Cav1.3 → dopamine release, and testosterone decline further reduces DA receptor expression, then the population-level decline in dopaminergic function represents a partial reversal of the cognitive revolution. This is not a claim about intelligence (IQ may remain stable or even rise through Flynn effects). It is a claim about cognitive style: the shift from exploration to exploitation, from risk-taking to risk-avoidance, from innovation to optimization. A society with declining dopaminergic function does not stop thinking — it stops taking intellectual risks.",
 
+    s8bTitle: "Cybernetic Feedback Loops",
+    s8bLead:
+      "The civilization-level effects are not one-way. Behavioral changes feed back into exposure patterns, creating self-reinforcing loops that accelerate the process.",
+    s8bPositiveTitle: "Positive (amplifying) loops",
+    s8bPositiveLoops: [
+      "Smartphone use ↑ → melatonin ↓ → sleep quality ↓ → daytime fatigue ↑ → more smartphone use (dopaminergic compensation)",
+      "Testosterone ↓ → risk-avoidance ↑ → indoor time ↑ → EMF exposure ↑ → further testosterone ↓",
+      "Social anxiety ↑ → digital communication preference ↑ → screen time ↑ → oxytocin ↓ → more social anxiety",
+    ],
+    s8bNegativeTitle: "Negative (stabilizing) loops",
+    s8bNegativeLoops: [
+      "Fatigue ↑ → physical inactivity ↑ → less outdoor time → less solar UV → less vitamin D → weaker Ca²⁺ buffering → greater EMF sensitivity",
+      "Sleep disruption ↑ → caffeine use ↑ → adenosine receptor adaptation → partial neuroprotection (A₁ → VGCC modulation)",
+    ],
+    s8bImplication:
+      "The positive loops dominate. Each generation begins with a lower hormonal baseline and higher ambient EMF than the previous one. The stabilizing loops (caffeine, exercise) require conscious effort — the amplifying loops operate automatically. This asymmetry is the mechanism by which a small initial perturbation produces large civilizational effects across decades.",
+
+    s8cTitle: "Time Preference and Fertility Decisions",
+    s8cLead:
+      "Hyperbolic discounting — the tendency to strongly prefer immediate rewards over future ones — has a hormonal substrate. When that substrate changes, time preferences shift, and fertility decisions follow.",
+    s8cMechanism:
+      "Testosterone influences temporal discounting through two pathways: (1) directly, via androgen receptor density in the prefrontal cortex, which modulates future-oriented decision-making; and (2) indirectly, via dopamine — testosterone upregulates D2 receptor expression in the striatum, and dopamine mediates the valuation of delayed rewards. When both decline simultaneously, the present becomes heavier and the future becomes lighter.",
+    s8cFertility:
+      "Fertility is the ultimate future-oriented decision: high cost now, uncertain reward years later. A population-level shift toward present-orientation predicts fertility postponement — not because people decide children are undesirable, but because the hormonal threshold for committing to a high-cost, long-horizon project rises. This is distinct from economic explanations: it predicts that fertility will decline even when economic conditions improve, and that the decline will correlate with hormonal markers after controlling for income and education.",
+    s8cTestable:
+      "Testable: individual discount rates (measured by delay discounting tasks) should correlate with testosterone and dopamine markers, and should predict fertility timing after controlling for stated fertility intentions, income, and education.",
+
     s9title: "Testable Predictions",
     s9lead:
       "Each prediction specifies a falsification criterion. A model that cannot be falsified is not science.",
@@ -1127,6 +1154,33 @@ const COPY = {
     s8title: "Dopaminerginen mieli",
     s8body:
       "Barzilain dopaminergisen mielen hypoteesi ehdottaa, että dopamiiniohjatut kognitiiviset piirteet — uteliaisuus, luovuus, tutkiminen, riskinsietokyky, tulevaisuusorientaatio — olivat keskeisiä modernin ihmiskognition synnylle. BERM lisää mekanismin: jos EMF häiritsee VTA Cav1.3 → dopamiinivapautumista ja testosteronilasku edelleen vähentää DA-reseptoriekspressiota, väestötason dopamiinifunktion lasku edustaa kognitiivisen vallankumouksen osittaista kääntämistä. Tämä ei ole väite älykkyydestä (ÄO voi pysyä vakaana tai jopa nousta Flynn-efekteillä). Se on väite kognitiivisesta tyylistä: siirtymä tutkimisesta hyödyntämiseen, riskinotosta riskinkaihtamiseen, innovaatiosta optimointiin. Yhteiskunta, jonka dopamiinifunktio heikkenee, ei lopeta ajattelemista — se lopettaa intellektuaalisten riskien ottamisen.",
+
+    s8bTitle: "Kyberneettiset takaisinkytkentäsilmukat",
+    s8bLead:
+      "Sivilisaatiotason vaikutukset eivät ole yksisuuntaisia. Käyttäytymismuutokset vaikuttavat altistumismalleihin luoden itseään vahvistavia silmukoita, jotka kiihdyttävät prosessia.",
+    s8bPositiveTitle: "Positiiviset (vahvistavat) silmukat",
+    s8bPositiveLoops: [
+      "Älypuhelimen käyttö ↑ → melatoniini ↓ → unenlaatu ↓ → päiväväsymys ↑ → lisää älypuhelimen käyttöä (dopaminerginen kompensointi)",
+      "Testosteroni ↓ → riskinkaihtaminen ↑ → sisätiloissa olo ↑ → EMF-altistus ↑ → edelleen testosteroni ↓",
+      "Sosiaalinen ahdistus ↑ → digitaalisen viestinnän suosiminen ↑ → ruutuaika ↑ → oksitosiini ↓ → lisää sosiaalista ahdistusta",
+    ],
+    s8bNegativeTitle: "Negatiiviset (vakauttavat) silmukat",
+    s8bNegativeLoops: [
+      "Väsymys ↑ → fyysinen passiivisuus ↑ → vähemmän ulkona → vähemmän UV:tä → vähemmän D-vitamiinia → heikompi Ca²⁺-puskurointi → suurempi EMF-herkkyys",
+      "Unihäiriöt ↑ → kofeiinin käyttö ↑ → adenosiinireseptorien adaptaatio → osittainen neuroprotektio (A₁ → VGCC-modulaatio)",
+    ],
+    s8bImplication:
+      "Positiiviset silmukat dominoivat. Jokainen sukupolvi aloittaa matalammalta hormonaaliselta lähtötasolta ja korkeammassa EMF-ympäristössä kuin edellinen. Vakauttavat silmukat (kofeiini, liikunta) vaativat tietoista ponnistusta — vahvistavat silmukat toimivat automaattisesti. Tämä epäsymmetria on mekanismi, jolla pieni alkuperäinen häiriö tuottaa suuria sivilisaatiovaikutuksia vuosikymmenten kuluessa.",
+
+    s8cTitle: "Aikapreferenssi ja hedelmällisyyspäätökset",
+    s8cLead:
+      "Hyperbolinen diskonttaus — taipumus vahvasti suosia välittömiä palkintoja tulevien sijaan — perustuu hormonaaliseen substraattiin. Kun tuo substraatti muuttuu, aikapreferenssit siirtyvät ja hedelmällisyyspäätökset seuraavat.",
+    s8cMechanism:
+      "Testosteroni vaikuttaa aikadiskonttaukseen kahdella reitillä: (1) suoraan androgeenireseptorien tiheyden kautta prefrontaalisessa kuorikerroksessa, joka moduloi tulevaisuusorientoitunutta päätöksentekoa; ja (2) epäsuorasti dopamiinin kautta — testosteroni säätelee D2-reseptoriekspressiota striatumissa, ja dopamiini välittää viivästettyjen palkintojen arvottamista. Kun molemmat laskevat samanaikaisesti, nykyhetki painaa enemmän ja tulevaisuus kevyemmin.",
+    s8cFertility:
+      "Hedelmällisyys on äärimmäinen tulevaisuusorientoitunut päätös: korkea kustannus nyt, epävarma palkinto vuosien päästä. Väestötason siirtymä nykyhetkiorientaatioon ennustaa hedelmällisyyden lykkäämistä — ei siksi että lapsia pidettäisiin ei-toivottavina, vaan koska hormonaalinen kynnys sitoutua korkean kustannuksen, pitkän horisontin projektiin nousee. Tämä eroaa taloudellisista selityksistä: se ennustaa hedelmällisyyden laskevan myös taloudellisten olosuhteiden parantuessa, ja laskun korreloivan hormonaalisten merkkiaineiden kanssa tulojen ja koulutuksen vakioinnin jälkeen.",
+    s8cTestable:
+      "Testattavissa: yksilölliset diskonttausasteet (mitattuna viivästetyn palkinnon testeillä) korreloivat testosteroni- ja dopamiinimerkkiaineiden kanssa ja ennustavat hedelmällisyyden ajoitusta ilmoitetun hedelmällisyysaikomuksen, tulojen ja koulutuksen vakioinnin jälkeen.",
 
     s9title: "Testattavat ennusteet",
     s9lead:
@@ -1784,6 +1838,26 @@ const COPY = {
     s8body:
       "Barzilaiのドーパミン作動性知性仮説は、ドーパミン駆動の認知特性――好奇心、創造性、探索、リスク耐性、未来志向――が現代人の認知の出現に中心的であったと提唱する。BERMはメカニズムを追加する：EMFがVTA Cav1.3 → ドーパミン放出を撹乱し、テストステロンの低下がさらにDA受容体発現を減少させるならば、集団レベルのドーパミン作動性機能の低下は認知革命の部分的逆行を表す。これは知能（IQはFlynn効果により安定または上昇する可能性がある）についての主張ではない。認知スタイルについての主張である：探索から活用へ、リスクテイキングからリスク回避へ、イノベーションから最適化へのシフト。ドーパミン作動性機能が低下する社会は思考をやめるのではなく、知的リスクをとることをやめる。",
 
+    s8bTitle: "サイバネティック・フィードバックループ",
+    s8bLead: "文明レベルの影響は一方向ではない。行動変化は曝露パターンにフィードバックし、プロセスを加速する自己強化ループを生み出す。",
+    s8bPositiveTitle: "正のフィードバック（増幅）ループ",
+    s8bPositiveLoops: [
+      "スマートフォン使用↑ → メラトニン↓ → 睡眠の質↓ → 日中疲労↑ → さらなるスマートフォン使用（ドーパミン的補償）",
+      "テストステロン↓ → リスク回避↑ → 屋内時間↑ → EMF曝露↑ → さらなるテストステロン↓",
+      "社会不安↑ → デジタルコミュニケーション選好↑ → スクリーン時間↑ → オキシトシン↓ → さらなる社会不安",
+    ],
+    s8bNegativeTitle: "負のフィードバック（安定化）ループ",
+    s8bNegativeLoops: [
+      "疲労↑ → 身体的不活動↑ → 屋外時間減少 → UV減少 → ビタミンD減少 → Ca²⁺緩衝能低下 → EMF感受性増大",
+      "睡眠障害↑ → カフェイン使用↑ → アデノシン受容体適応 → 部分的神経保護（A₁ → VGCC調節）",
+    ],
+    s8bImplication: "正のループが支配的である。各世代は前世代より低いホルモンベースラインと高い環境EMFで始まる。安定化ループ（カフェイン、運動）は意識的努力を要する――増幅ループは自動的に作動する。この非対称性が、小さな初期摂動が数十年にわたって大きな文明的影響を生むメカニズムである。",
+    s8cTitle: "時間選好と出産決定",
+    s8cLead: "双曲割引――将来の報酬よりも即時の報酬を強く選好する傾向――にはホルモン基盤がある。その基盤が変化すると、時間選好が移行し、出産決定が続く。",
+    s8cMechanism: "テストステロンは時間割引に二つの経路で影響する：(1) 前頭前野のアンドロゲン受容体密度を通じて直接的に未来志向の意思決定を調節；(2) ドーパミンを通じて間接的に――テストステロンは線条体のD2受容体発現を上方制御し、ドーパミンが遅延報酬の評価を仲介する。両方が同時に低下すると、現在が重くなり未来が軽くなる。",
+    s8cFertility: "出産は究極の未来志向的決定である：現在の高コスト、何年も先の不確実な報酬。集団レベルの現在志向へのシフトは、出産の延期を予測する――子供が望ましくないからではなく、高コスト・長期的プロジェクトへのコミットメントのホルモン閾値が上昇するからである。",
+    s8cTestable: "検証可能：個人の割引率（遅延割引課題で測定）はテストステロンおよびドーパミンマーカーと相関し、申告された出産意図・収入・教育を制御した後も出産タイミングを予測するはずである。",
+
     s9title: "検証可能な予測",
     s9lead:
       "各予測は反証基準を明示する。反証できないモデルは科学ではない。",
@@ -2440,6 +2514,26 @@ const COPY = {
     s8body:
       "L'hypothèse de l'esprit dopaminergique de Barzilai propose que les traits cognitifs animés par la dopamine — curiosité, créativité, exploration, tolérance au risque, orientation vers l'avenir — ont été centraux dans l'émergence de la cognition humaine moderne. BERM ajoute un mécanisme : si les EMF perturbent VTA Cav1.3 → libération de dopamine, et que le déclin de la testostérone réduit encore l'expression des récepteurs DA, alors le déclin populationnel de la fonction dopaminergique représente une inversion partielle de la révolution cognitive. Ce n'est pas une affirmation sur l'intelligence (l'IQ peut rester stable ou même augmenter par les effets Flynn). C'est une affirmation sur le style cognitif : le passage de l'exploration à l'exploitation, de la prise de risque à l'évitement du risque, de l'innovation à l'optimisation. Une société avec une fonction dopaminergique en déclin ne cesse pas de penser — elle cesse de prendre des risques intellectuels.",
 
+    s8bTitle: "Boucles de rétroaction cybernétiques",
+    s8bLead: "Les effets au niveau civilisationnel ne sont pas unidirectionnels. Les changements comportementaux se répercutent sur les schémas d'exposition, créant des boucles auto-renforçantes qui accélèrent le processus.",
+    s8bPositiveTitle: "Boucles positives (amplificatrices)",
+    s8bPositiveLoops: [
+      "Utilisation du smartphone ↑ → mélatonine ↓ → qualité du sommeil ↓ → fatigue diurne ↑ → plus d'utilisation du smartphone (compensation dopaminergique)",
+      "Testostérone ↓ → évitement du risque ↑ → temps en intérieur ↑ → exposition EMF ↑ → testostérone ↓ encore",
+      "Anxiété sociale ↑ → préférence communication digitale ↑ → temps d'écran ↑ → ocytocine ↓ → plus d'anxiété sociale",
+    ],
+    s8bNegativeTitle: "Boucles négatives (stabilisatrices)",
+    s8bNegativeLoops: [
+      "Fatigue ↑ → inactivité physique ↑ → moins de temps dehors → moins d'UV → moins de vitamine D → tampon Ca²⁺ affaibli → sensibilité EMF accrue",
+      "Troubles du sommeil ↑ → consommation de caféine ↑ → adaptation des récepteurs adénosine → neuroprotection partielle (A₁ → modulation VGCC)",
+    ],
+    s8bImplication: "Les boucles positives dominent. Chaque génération commence avec un niveau hormonal de base plus bas et un EMF ambiant plus élevé que la précédente. Les boucles stabilisatrices (caféine, exercice) exigent un effort conscient — les boucles amplificatrices fonctionnent automatiquement. Cette asymétrie est le mécanisme par lequel une petite perturbation initiale produit de grands effets civilisationnels sur des décennies.",
+    s8cTitle: "Préférence temporelle et décisions de fécondité",
+    s8cLead: "L'escompte hyperbolique — la tendance à préférer fortement les récompenses immédiates aux futures — a un substrat hormonal. Quand ce substrat change, les préférences temporelles se déplacent, et les décisions de fécondité suivent.",
+    s8cMechanism: "La testostérone influence l'escompte temporel par deux voies : (1) directement, via la densité des récepteurs androgènes dans le cortex préfrontal ; (2) indirectement, via la dopamine — la testostérone régule l'expression des récepteurs D2 dans le striatum, et la dopamine médie l'évaluation des récompenses différées. Quand les deux déclinent simultanément, le présent pèse plus lourd et l'avenir plus léger.",
+    s8cFertility: "La fécondité est la décision orientée vers l'avenir par excellence : coût élevé maintenant, récompense incertaine des années plus tard. Un déplacement populationnel vers l'orientation présent prédit le report de la fécondité — non parce que les enfants sont jugés indésirables, mais parce que le seuil hormonal pour s'engager dans un projet à coût élevé et horizon long s'élève.",
+    s8cTestable: "Vérifiable : les taux d'escompte individuels (mesurés par des tâches de récompense différée) devraient corréler avec les marqueurs de testostérone et de dopamine, et prédire le calendrier de fécondité après contrôle des intentions déclarées, du revenu et de l'éducation.",
+
     s9title: "Prédictions vérifiables",
     s9lead:
       "Chaque prédiction spécifie un critère de falsification. Un modèle qui ne peut être falsifié n'est pas de la science.",
@@ -3095,6 +3189,26 @@ const COPY = {
     s8title: "도파민적 정신",
     s8body:
       "Barzilai의 도파민적 정신 가설은 도파민 주도 인지 특성 — 호기심, 창의성, 탐색, 위험 감수 허용, 미래 지향 — 이 현대 인간 인지의 출현에 핵심적이었다고 제안합니다. BERM은 메커니즘을 추가합니다: EMF가 VTA Cav1.3 → 도파민 방출을 교란하고, 테스토스테론 감소가 DA 수용체 발현을 추가로 줄인다면, 인구 수준의 도파민 기능 저하는 인지 혁명의 부분적 역전을 나타냅니다. 이것은 지능에 대한 주장이 아닙니다 (IQ는 Flynn 효과를 통해 안정적이거나 상승할 수 있습니다). 인지 스타일에 대한 주장입니다: 탐색에서 활용으로, 위험 감수에서 위험 회피로, 혁신에서 최적화로의 전환. 도파민 기능이 쇠퇴하는 사회는 사고를 멈추지 않습니다 — 지적 위험 감수를 멈춥니다.",
+
+    s8bTitle: "사이버네틱 피드백 루프",
+    s8bLead: "문명 수준의 효과는 단방향이 아닙니다. 행동 변화는 노출 패턴에 피드백하여 과정을 가속하는 자기 강화 루프를 생성합니다.",
+    s8bPositiveTitle: "양성(증폭) 루프",
+    s8bPositiveLoops: [
+      "스마트폰 사용 ↑ → 멜라토닌 ↓ → 수면 질 ↓ → 주간 피로 ↑ → 더 많은 스마트폰 사용 (도파민적 보상)",
+      "테스토스테론 ↓ → 위험 회피 ↑ → 실내 시간 ↑ → EMF 노출 ↑ → 테스토스테론 추가 ↓",
+      "사회적 불안 ↑ → 디지털 소통 선호 ↑ → 화면 시간 ↑ → 옥시토신 ↓ → 더 많은 사회적 불안",
+    ],
+    s8bNegativeTitle: "음성(안정화) 루프",
+    s8bNegativeLoops: [
+      "피로 ↑ → 신체 비활동 ↑ → 야외 시간 감소 → UV 감소 → 비타민 D 감소 → Ca²⁺ 완충 약화 → EMF 민감도 증가",
+      "수면 장애 ↑ → 카페인 소비 ↑ → 아데노신 수용체 적응 → 부분적 신경보호 (A₁ → VGCC 조절)",
+    ],
+    s8bImplication: "양성 루프가 지배적입니다. 각 세대는 이전 세대보다 낮은 호르몬 기준선과 높은 환경 EMF에서 시작합니다. 안정화 루프(카페인, 운동)는 의식적 노력이 필요하지만, 증폭 루프는 자동으로 작동합니다. 이 비대칭성이 작은 초기 교란이 수십 년에 걸쳐 큰 문명적 효과를 생산하는 메커니즘입니다.",
+    s8cTitle: "시간 선호와 출산 결정",
+    s8cLead: "쌍곡 할인 — 미래 보상보다 즉각적 보상을 강하게 선호하는 경향 — 에는 호르몬 기반이 있습니다. 그 기반이 변화하면 시간 선호가 이동하고 출산 결정이 따릅니다.",
+    s8cMechanism: "테스토스테론은 두 경로로 시간 할인에 영향을 미칩니다: (1) 전전두피질의 안드로겐 수용체 밀도를 통해 직접적으로 미래지향적 의사결정을 조절; (2) 도파민을 통해 간접적으로 — 테스토스테론은 선조체의 D2 수용체 발현을 상향 조절하고, 도파민은 지연된 보상의 가치 평가를 매개합니다. 둘 다 동시에 감소하면 현재가 무거워지고 미래가 가벼워집니다.",
+    s8cFertility: "출산은 궁극적인 미래지향적 결정입니다: 현재의 높은 비용, 수년 후의 불확실한 보상. 인구 수준의 현재지향 전환은 출산 연기를 예측합니다 — 아이를 원치 않기 때문이 아니라, 높은 비용·장기 프로젝트에 전념하기 위한 호르몬 임계값이 상승하기 때문입니다.",
+    s8cTestable: "검증 가능: 개인 할인율(지연 할인 과제로 측정)은 테스토스테론 및 도파민 마커와 상관관계가 있어야 하며, 선언된 출산 의도·소득·교육을 통제한 후에도 출산 시기를 예측해야 합니다.",
 
     s9title: "검증 가능한 예측",
     s9lead:
@@ -4050,6 +4164,48 @@ export default async function CivilizationPage({
         <p className="text-sm leading-relaxed text-muted-foreground">
           {d.s8body}
         </p>
+      </section>
+
+      {/* S8b: Cybernetic Feedback Loops */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold mb-4">{d.s8bTitle}</h2>
+        <p className="text-sm leading-relaxed text-muted-foreground mb-6">
+          {d.s8bLead}
+        </p>
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="rounded-xl border border-red-500/20 bg-red-500/5 p-5">
+            <h3 className="text-sm font-semibold text-red-400 mb-3">{d.s8bPositiveTitle}</h3>
+            <ul className="space-y-2">
+              {d.s8bPositiveLoops.map((loop: string, i: number) => (
+                <li key={i} className="text-xs leading-relaxed text-muted-foreground pl-3 border-l-2 border-red-500/30">{loop}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-xl border border-blue-500/20 bg-blue-500/5 p-5">
+            <h3 className="text-sm font-semibold text-blue-400 mb-3">{d.s8bNegativeTitle}</h3>
+            <ul className="space-y-2">
+              {d.s8bNegativeLoops.map((loop: string, i: number) => (
+                <li key={i} className="text-xs leading-relaxed text-muted-foreground pl-3 border-l-2 border-blue-500/30">{loop}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <p className="text-sm leading-relaxed text-muted-foreground border-l-2 border-accent/30 pl-4">
+          {d.s8bImplication}
+        </p>
+      </section>
+
+      {/* S8c: Time Preference */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold mb-4">{d.s8cTitle}</h2>
+        <p className="text-sm leading-relaxed text-muted-foreground mb-4">
+          {d.s8cLead}
+        </p>
+        <div className="space-y-4 rounded-xl border border-card-border bg-card-bg p-5 mb-4">
+          <p className="text-sm leading-relaxed text-muted-foreground">{d.s8cMechanism}</p>
+          <p className="text-sm leading-relaxed text-muted-foreground">{d.s8cFertility}</p>
+        </div>
+        <p className="text-xs text-muted-foreground italic">{d.s8cTestable}</p>
       </section>
 
       {/* S9: Testable Predictions */}

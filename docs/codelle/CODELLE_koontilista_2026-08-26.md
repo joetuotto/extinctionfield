@@ -34,7 +34,7 @@
 | # | Tiedosto | Tyyppi | Tila |
 |---|----------|--------|------|
 | 10 | `docs/codelle/BERM_CODELLE_civilization_DEFINITIVE.md` | Civilization-ohje | ✅ Luotu |
-| 11 | (tulossa: kyberneettinen malli + aikapreferenssi) | Laajennus | ⏳ Odottaa |
+| 11 | `civilization/page.tsx` s8b+s8c osiot | Kyberneettinen malli + aikapreferenssi | ✅ Toteutettu (2026-08-31) |
 
 ## KAIKKI SIVUT
 

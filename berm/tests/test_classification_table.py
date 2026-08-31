@@ -123,7 +123,7 @@ def test_model_metadata_counts_come_from_the_audit_table() -> None:
         "discriminating_tests_needed"
     ]
     assert meta["discriminating_tests_completed"] == 0
-    assert meta["primary_pathway"] == "C_RPM"
+    assert meta["primary_pathway"] == "B_RPM"
 
 
 def test_evidence_records_carry_an_explicit_protocol_assessment_state() -> None:

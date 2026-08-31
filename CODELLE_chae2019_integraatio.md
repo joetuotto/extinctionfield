@@ -22,7 +22,7 @@ Naiset (n=21) eivät osoittaneet merkitsevää orientaatiota missään olosuhtei
 
 ### Merkitys BERM:n premisseille
 
-BERM:n ensisijainen polku on `PRIMARY_PATHWAY = "C_RPM"` (kryptokromin radikaaliparimekanismi). Koko CRY-kanava — `v17_cry_effect()`, `v17_cry_annual_response()`, yöaltistusreitti `v17_night_fraction()` — nojaa oletukseen, että **ihmisillä on toimiva CRY/RPM-pohjainen magnetoreseptio jota RF-kentät voivat häiritä**.
+BERM:n ensisijainen polku on `PRIMARY_PATHWAY = "B_RPM"` (kryptokromin radikaaliparimekanismi). Koko CRY-kanava — `v17_cry_effect()`, `v17_cry_annual_response()`, yöaltistusreitti `v17_night_fraction()` — nojaa oletukseen, että **ihmisillä on toimiva CRY/RPM-pohjainen magnetoreseptio jota RF-kentät voivat häiritä**.
 
 Chae 2019 on ensimmäinen käyttäytymistason näyttö siitä, että ihmisen magnetoreseptio:
 
@@ -113,7 +113,7 @@ vertical field inversion. First behavioral evidence that CRY/RPM
 magnetoreception is functional in humans.
 
 BERM relevance: Establishes that the biological substrate of BERM's
-primary pathway (C_RPM) exists and is functional in humans.
+primary pathway (B_RPM) exists and is functional in humans.
 Prior CRY/RPM evidence was from Drosophila, birds, and planarians.
 
 Caveats: Small sample (n=41). Correction notice Oct 2019 (content to be
@@ -131,7 +131,7 @@ radikaaliparimekanismin diagnostinen sormenjälki. Inklinaatiokompassi
 vahvistettu pystykomponentin kääntämisellä. Ensimmäinen käyttäytymistason
 näyttö siitä, että CRY/RPM-magnetoreseptio on toiminnallinen ihmisessä.
 
-BERM-merkitys: Osoittaa, että BERM:n ensisijaisen polun (C_RPM) biologinen
+BERM-merkitys: Osoittaa, että BERM:n ensisijaisen polun (B_RPM) biologinen
 substraatti on olemassa ja toiminnallinen ihmisessä. Aiempi CRY/RPM-näyttö
 oli Drosophilasta, linnuista ja planarioista.
 ```
