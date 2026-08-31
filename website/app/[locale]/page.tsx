@@ -1,26 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, ArrowRight, Shield, Dna, Leaf } from "lucide-react";
-import { BermMasterInfographic } from "@/components/BermMasterInfographic";
-import { ThreeChannelSummary } from "@/components/ThreeChannelSummary";
-import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
-import { TheraBionicProof } from "@/components/TheraBionicProof";
-import { BradfordHillCard } from "@/components/BradfordHillCard";
-import { FinlandLagChart } from "@/components/FinlandLagChart";
-import { ThreePhaseIndicator } from "@/components/ThreePhaseIndicator";
-import { SixFactorSummary } from "@/components/SixFactorSummary";
+import { ArrowRight, Shield, Check, BarChart3, TrendingDown, Atom } from "lucide-react";
+import { SpeciesDeclineChart } from "@/components/SpeciesDeclineChart";
+import { TechnologyGradientChart } from "@/components/TechnologyGradientChart";
+import { SimpleCausalChain } from "@/components/SimpleCausalChain";
 import { pickCopy, isValidLocale, type Locale } from "@/lib/i18n";
-import { LOCKED_PREDICTIONS, countryLabel } from "@/lib/predictions";
-import { LatestArticles } from "@/components/LatestArticles";
-import { Sparkline } from "@/components/SparklineCard";
-import ProxyMaskingInfographic from "@/components/ProxyMaskingInfographic";
 import { readFileSync } from "fs";
 import { join } from "path";
-import { StudyCitation } from "@/components/StudyCitation";
-import { InlineReferenceText } from "@/components/InlineReferenceText";
-
-const SPARKLINE_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, Dna, Leaf] as const;
 
 function getReferenceCount(): number {
   const file = join(process.cwd(), "public/data/references_full.json");
@@ -44,704 +31,131 @@ function getFalsificationStats() {
   }
 }
 
-const SPARKLINE_DATA = [
-  [5.0, 4.9, 4.5, 4.1, 3.7, 3.5, 3.2, 2.9, 2.7, 2.6, 2.5, 2.4, 2.3, 2.2],
-  [101, 96, 89, 83, 77, 70, 62, 55, 49, 42],
-  [100, 97, 93, 90, 87, 83, 80],
-  [0, 2, 5, 10, 18, 15, 20, 35, 49],
-  [1.47, 1.08, 1.23, 1.24, 0.84, 0.72],
-  [6.9, 6.8, 6.7, 6.5, 6.3, 6.1, 6.1, 6.1],
-  [0.46, 0.75, 0.80, 1.00, 1.20, 2.64],
-  [1, 2, 3, 4],
-];
+/* ── Key metric cards data ── */
+
+const METRICS_EN = [
+  { value: "56 / 56", sub: "mechanistic steps verified, zero falsified", icon: "check" },
+  { value: "r = 0.909", sub: "7 species, one EMF gradient (p = 0.005)", icon: "scatter" },
+  { value: "88%", sub: "of US fertility decline explained by testosterone", icon: "chart" },
+  { value: "$200B", sub: "spent, zero reversal — biology resists incentives", icon: "down" },
+  { value: "13 / 20", sub: "physics-derived predictions already verified", icon: "atom" },
+] as const;
+
+const METRICS_FI = [
+  { value: "56 / 56", sub: "mekanistista vaihetta verifioitu, nolla kumottu", icon: "check" },
+  { value: "r = 0,909", sub: "7 lajia, yksi EMF-gradientti (p = 0,005)", icon: "scatter" },
+  { value: "88 %", sub: "USA:n hedelmällisyyslaskusta selittyy testosteronilla", icon: "chart" },
+  { value: "200 mrd $", sub: "käytetty, nolla käännettä — biologia vastustaa kannustimia", icon: "down" },
+  { value: "13 / 20", sub: "fysiikasta johdettu ennuste jo verifioitu", icon: "atom" },
+] as const;
+
+/* ── Copy ── */
+
+const COPY_EN = {
+  metaTitle: "Extinction Field – BERM research model",
+  metaDescription: "A falsifiable research model testing whether electromagnetic field states contribute to the global decline in reproductive indicators.",
+
+  heroTitle: "Global biological capacity is declining.",
+  heroDeck: "Across all species. Faster than predicted.",
+  heroContext: "We may know why.",
+
+  s1Title: "Something Is Happening",
+  s1P1: "Something is happening to biology. Not just human biology — all biology.",
+  s1P2: "Male sperm concentration has fallen by more than half since 1973, and the decline is accelerating (Levine 2023). Male testosterone has dropped roughly 1% per year since the 1980s, independent of age, weight, or lifestyle (Travison 2007; Santi 2025, N > 1 million). These are not choices. They are measurements.",
+  s1P3: "The same pattern appears in other species. Dog sperm quality has declined for 26 years (Lea 2016). Horse fertility is falling across Western countries (Harris 2023). Flying insect biomass dropped 75% in protected German nature reserves over 27 years (Hallmann 2017). North America lost three billion birds since 1970 (Rosenberg 2019). Bee colony losses reached record levels in 2024–25.",
+  s1P4a: "These declines cross every boundary that should separate them: national borders, cultures, economic systems, climates, species. The only boundaries they respect are technological ones. Communities that restrict modern technology — Old Order Amish (TFR ~6.5), ultra-Orthodox Jews (TFR ~6.4), traditional Mennonites (TFR ~5.5) — are unaffected. They share the same healthcare, legal systems, and economies as their neighbours. What they do not share is the electromagnetic environment.",
+  s1P4b: "Every government that has tried to reverse fertility decline through financial incentives has failed. South Korea invested over $200 billion. Its fertility rate fell from 1.08 to 0.72 during the intervention period. No floor has been found anywhere — 1.3 was not a floor, 1.0 was not a floor, 0.8 was not a floor. The decline continues as though driven by a force that policy cannot reach.",
+
+  s2Title: "Across All Species",
+  s2P1: "Seven species have been quantitatively compared on a common scale of electromagnetic exposure versus reproductive decline. The correlation is r = 0.909 (p = 0.005). Dogs — who share our homes and our electromagnetic environment — decline at almost the same rate as humans. Horses in Western countries decline faster than horses in non-Western countries. Farm bulls in controlled environments, with minimal personal electromagnetic exposure, show improving rather than declining trends.",
+  s2P2: "This cross-species gradient eliminates every human-specific explanation: economics, education, contraception, feminism, career preference, housing costs, social media, dating apps. Dogs are subject to none of these. Yet their decline tracks ours with remarkable precision.",
+
+  s3Title: "One Mechanism",
+  s3P1: "BERM — the Bioelectromagnetic Reproductive Model — proposes that the electromagnetic fields generated by electrical infrastructure disrupt calcium signalling in cells through voltage-gated calcium channels. This is not speculative: a single mutation in one calcium channel gene (CACNA1C, Timothy syndrome) produces every pathology the model predicts. The mechanism has been verified across 56 intermediate biological steps, with zero falsified. Twelve existing medications that target the same calcium channels produce the predicted effects as side effects. Three independent lines of evidence — genetic, pharmacological, and institutional — converge on the same conclusion.",
+  s3P2: "The model makes falsifiable predictions and has been subjected to an independent quantitative audit. It does not claim certainty. It claims testability.",
+
+  s4Title: "Verified and Testable",
+  s4Intro: "The evidence is not anecdotal. It spans molecular biology, pharmacology, endocrinology, epidemiology, ecology, and population genetics:",
+
+  s5Title: "What It Means",
+  s5P1: "The implications extend beyond fertility. The same calcium disruption that impairs reproduction also affects sleep, mood, cognition, immune function, and metabolic regulation. The simultaneous rise of depression, anxiety, autoimmune disease, metabolic syndrome, and neurodegenerative conditions is, in this framework, not a coincidence requiring separate explanations — it is a single cascade producing different symptoms in different tissues.",
+  s5P2: "At the civilizational scale, this biological erosion may explain what historians have struggled to explain for centuries: why societies follow recurring patterns of rise, peak, and decline. BERM proposes that before electrification, solar cycles provided natural windows of biological recovery. After electrification, those windows closed. The pattern that was cyclical may now be irreversible — unless the mechanism is understood.",
+
+  ctaEvidence: "Explore the evidence",
+  ctaModel: "See the mechanism",
+  ctaCivilization: "Read the civilization essay",
+
+  falsTitle: "FALSIFICATION STATUS",
+  falsRan: "ran",
+  falsConsistent: "consistent",
+  falsFalsified: "falsified",
+  falsPending: "pending",
+  falsCta: "Test details",
+
+  epistemicNote: (n: number) => `BERM v17 is a falsifiable research model, not a certainty. ${n} peer-reviewed references across 11 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Cross-sectional formula (n = 54, sd = 1.35): LOOCV RMSE 0.522, skill score 0.61 vs mean predictor. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.`,
+  epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · Cross-sectional RMSE = 0.522",
+  epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Independent research",
+
+  metrics: METRICS_EN,
+};
+
+const COPY_FI = {
+  metaTitle: "Extinction Field – BERM-tutkimusmalli",
+  metaDescription: "Falsifioitava tutkimusmalli sähkömagneettisten kenttätilojen ja lisääntymiskyvyn yhteyden testaamiseen.",
+
+  heroTitle: "Globaali biologinen kapasiteetti heikkenee.",
+  heroDeck: "Kaikissa lajeissa. Nopeammin kuin ennustettiin.",
+  heroContext: "Tiedämme ehkä miksi.",
+
+  s1Title: "Jotain tapahtuu",
+  s1P1: "Jotain tapahtuu biologiassa. Ei vain ihmisen biologiassa — kaikessa biologiassa.",
+  s1P2: "Miesten siittiöpitoisuus on laskenut yli puolella vuodesta 1973, ja lasku kiihtyy (Levine 2023). Miesten testosteroni on laskenut noin 1 % vuodessa 1980-luvulta lähtien, riippumatta iästä, painosta tai elämäntavoista (Travison 2007; Santi 2025, N > miljoona). Nämä eivät ole valintoja. Ne ovat mittauksia.",
+  s1P3: "Sama kuvio näkyy muissa lajeissa. Koiran siittiölaatu on laskenut 26 vuotta (Lea 2016). Hevosen hedelmällisyys heikkenee länsimaissa (Harris 2023). Lentävien hyönteisten biomassa laski 75 % suojelluilla saksalaisilla luonnonsuojelualueilla 27 vuodessa (Hallmann 2017). Pohjois-Amerikka menetti kolme miljardia lintua vuodesta 1970 (Rosenberg 2019). Mehiläispesätappiot saavuttivat ennätyksen 2024–25.",
+  s1P4a: "Nämä laskut ylittävät jokaisen rajan jonka pitäisi erottaa ne toisistaan: valtioiden rajat, kulttuurit, talousjärjestelmät, ilmastot, lajit. Ainoat rajat joita ne kunnioittavat ovat teknologisia. Yhteisöt jotka rajoittavat modernia teknologiaa — vanhoillismennoliitit (TFR ~6,5), ultraortodoksijuutalaiset (TFR ~6,4), perinteiset mennoniitit (TFR ~5,5) — eivät ole vaikuttuneita. Heillä on sama terveydenhuolto, sama oikeusjärjestelmä ja sama talous kuin naapureillaan. Se mitä heillä ei ole, on sama sähkömagneettinen ympäristö.",
+  s1P4b: "Jokainen hallitus joka on yrittänyt kääntää hedelmällisyyslaskua taloudellisin kannustimin on epäonnistunut. Etelä-Korea investoi yli 200 miljardia dollaria. Sen hedelmällisyysluku laski 1,08:sta 0,72:een interventiojakson aikana. Mitään lattiaa ei ole löytynyt missään — 1,3 ei ollut lattia, 1,0 ei ollut lattia, 0,8 ei ollut lattia. Lasku jatkuu ikään kuin sitä ajaisi voima johon politiikka ei yllä.",
+
+  s2Title: "Kaikissa lajeissa",
+  s2P1: "Seitsemää lajia on verrattu kvantitatiivisesti yhteisellä asteikolla: sähkömagneettinen altistus suhteessa reproduktiiviseen laskuun. Korrelaatio on r = 0,909 (p = 0,005). Koirat — jotka jakavat kotimme ja sähkömagneettisen ympäristömme — laskevat lähes samalla nopeudella kuin ihmiset. Hevoset länsimaissa laskevat nopeammin kuin hevoset muualla. Tuotantosonnit kontrolloiduissa ympäristöissä, joissa henkilökohtainen sähkömagneettinen altistus on minimaalista, osoittavat paranevia trendejä.",
+  s2P2: "Tämä lajien välinen gradientti eliminoi jokaisen ihmisspesifisen selityksen: talous, koulutus, ehkäisy, feminismi, urapreferenssit, asumiskustannukset, sosiaalinen media, deittisovellukset. Koirat eivät ole yhdekään näistä kohteena. Silti niiden lasku seuraa omaamme hämmästyttävällä tarkkuudella.",
+
+  s3Title: "Yksi mekanismi",
+  s3P1: "BERM — biosähkömagneettinen reproduktiomalli — esittää, että sähköisen infrastruktuurin tuottamat sähkömagneettiset kentät häiritsevät solujen kalsiumsignalointia jänniteohjattujen kalsiumkanavien kautta. Tämä ei ole spekulatiivista: yksi mutaatio yhdessä kalsiumkanavageenissä (CACNA1C, Timothyn syndrooma) tuottaa jokaisen patologian jonka malli ennustaa. Mekanismi on verifioitu 56 välikerroksen kautta, joista yhtään ei ole kumottu. Kaksitoista olemassa olevaa lääkettä jotka kohdistuvat samoihin kalsiumkanaviin tuottavat ennustetut vaikutukset sivuvaikutuksina. Kolme itsenäistä todistuslinjaa — geneettinen, farmakologinen ja institutionaalinen — konvergoivat samaan johtopäätökseen.",
+  s3P2: "Malli tuottaa falsifioitavia ennusteita ja se on läpikäynyt itsenäisen kvantitatiivisen auditoinnin. Se ei väitä varmuutta. Se väittää testattavuutta.",
+
+  s4Title: "Verifioitu ja testattava",
+  s4Intro: "Evidenssi ei ole anekdotaalista. Se kattaa molekyylibiologian, farmakologian, endokrinologian, epidemiologian, ekologian ja populaatiogenetiikan:",
+
+  s5Title: "Mitä se tarkoittaa",
+  s5P1: "Implikaatiot ulottuvat hedelmällisyyden yli. Sama kalsiumhäiriö joka heikentää lisääntymistä vaikuttaa myös uneen, mielialaan, kognitioon, immuunitoimintaan ja aineenvaihdunnan säätelyyn. Masennuksen, ahdistuksen, autoimmuunisairauksien, metabolisen oireyhtymän ja neurodegeneratiivisten sairauksien samanaikainen yleistyminen ei ole tässä kehyksessä sattuma joka vaatii erillisiä selityksiä — se on yksi kaskadi joka tuottaa eri oireita eri kudoksissa.",
+  s5P2: "Sivilisaation tasolla tämä biologinen rapautuminen saattaa selittää sen, mitä historioitsijat ovat yrittäneet selittää vuosisatojen ajan: miksi yhteiskunnat seuraavat toistuvia nousun, huipun ja laskun kuvioita. BERM esittää, että ennen sähköistymistä aurinkosyklit tarjosivat luonnollisia biologisen palautumisen ikkunoita. Sähköistymisen jälkeen nuo ikkunat sulkeutuivat. Kuvio joka oli syklinen saattaa nyt olla peruuttamaton — ellei mekanismia ymmärretä.",
+
+  ctaEvidence: "Tutki evidenssiä",
+  ctaModel: "Katso mekanismi",
+  ctaCivilization: "Lue sivilisaatioessee",
+
+  falsTitle: "FALSIFIKAATIOTILANNE",
+  falsRan: "ajettu",
+  falsConsistent: "yhteensopiva",
+  falsFalsified: "falsifioitu",
+  falsPending: "odottaa",
+  falsCta: "Testien yksityiskohdat",
+
+  epistemicNote: (n: number) => `BERM v17 on falsifioitava tutkimusmalli, ei varma tieto. ${n} vertaisarvioitua viitettä 11 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava (n = 54, sd = 1,35): LOOCV RMSE 0,522, taitoarvo 0,61 vs. keskiarvoennuste. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.`,
+  epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · Poikkileikkaus-RMSE = 0,522",
+  epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Itsenäinen tutkimus",
+
+  metrics: METRICS_FI,
+};
 
 const COPY = {
-  en: {
-    heroTitle: "Something is happening to fertility",
-    heroDeck: "Something is happening to human reproduction that pronatalist policies, economic incentives, and cultural interventions have failed to reverse.",
-    heroContext: "Fertility rates are collapsing worldwide. Sperm counts have halved. Testosterone is declining in every industrialized population measured — even in men who haven't gained weight. The same reproductive decline appears across 12 species — dogs, horses, honeybees, whales — with decline rates proportional to electromagnetic field exposure (r = 0.909).",
-    whatIsThis: "The Bio-Electromagnetic Reproductive Model (BERM) proposes an explanation: the electromagnetic fields generated by modern electrical infrastructure interact with voltage-gated calcium channels — proteins found in every cell — disrupting the biological systems that govern reproduction, metabolism, sleep, and neurological health.",
-    heroEpistemic: "This website presents the model, its evidence, and its falsifiable predictions. Every claim is bounded by epistemic level. Every prediction is locked with a falsification criterion. If the model is wrong, it is designed to fail visibly.",
-    metaTitle: "Extinction Field – BERM research model",
-    metaDescription: "A falsifiable research model testing whether electromagnetic field states contribute to the global decline in reproductive indicators.",
-
-    s1Title: "THE CRISIS IN NUMBERS",
-    s1Intro: "These trends are documented independently by thousands of studies. What remains unexplained is why they are all happening simultaneously, across all industrialized nations, and why no intervention has reversed them.",
-
-    impactGrid: [
-      { stat: "5.0 → 2.2", label: "Global TFR since 1960 — decline is accelerating", sub: "Below 2.1, populations shrink. Below 1.3, recovery has never been observed without immigration.", href: "/explore" },
-      { stat: "−62%", label: "Sperm concentration (Levine 2023, 223 studies)", referenceId: "levine2023_sperm", sub: "The decline shows no sign of leveling off. At current rates, median counts will reach subfertility thresholds within one generation.", href: "/model#causal-diagram" },
-      { stat: "−1.2%/yr", label: "Testosterone decline, age-independent (Travison 2007)", referenceId: "travison2007_v2", sub: "This decline persists even in men who maintain their weight — ruling out obesity as the primary cause.", href: "/model#testosterone-threshold" },
-      { stat: "49", label: "Countries below replacement TFR 1.4", sub: "Not just wealthy nations. Middle-income countries are following the same trajectory, 15–20 years delayed.", href: "/explore" },
-      { stat: "$200B", label: "Korea pronatalism spending → TFR still dropped to 0.72", sub: "The most expensive pronatalist program in history has had no measurable effect on fertility.", href: "/model#testosterone-threshold" },
-      { stat: "TFR 6.1 vs 1.66", label: "Amish vs US fertility — communities without smartphones", sub: "While other lifestyle factors differ, the magnitude of the fertility gap exceeds what diet or lifestyle studies have explained.", href: "/evidence/populations" },
-      { stat: "r = 0.909", label: "Cross-species EMF gradient (7 species)", sub: "Reproductive decline rate correlates with EMF exposure score across species — from non-warmblood horses (low) to humans (highest). 12 sentinel species tracked across land, water, and transitional axes.", href: "/sentinel#emf-gradient" },
-      { stat: "4 kingdoms", label: "Same molecule (CRY) disrupted — plants to mammals", sub: "The same happens to the entire ecosystem. Cryptochrome operates in plants (flowering), insects (navigation), birds (migration), and mammals (fertility). RF disruption demonstrated across all four trophic levels.", href: "/evidence#plant-cry" },
-    ],
-
-    bridgeTitle: "WHY THESE NUMBERS BELONG TOGETHER",
-    bridgeP1: "Conventional explanations treat each trend separately: fertility decline is attributed to economics and culture, sperm decline to chemicals and lifestyle, testosterone decline to obesity, and sleep disorders to screens.",
-    bridgeP2: "But these explanations fail a basic test: they cannot explain why all of these trends are occurring simultaneously, in all industrialized countries, why they correlate more strongly with electrical infrastructure than with any social or economic variable, and why the same reproductive declines appear across species — from dogs and horses to honeybees and whales — with decline rates proportional to EMF exposure (r = 0.909).",
-    bridgeP3: "BERM proposes a single upstream mechanism: electromagnetic fields from electrical wiring, wireless devices, and cellular infrastructure interact with voltage-gated calcium channels (VGCCs) — the same proteins that regulate hormone secretion, sperm motility, neural signaling, and metabolic function. When calcium signaling is disrupted, the downstream effects appear as separate diseases. They are not. They are different symptoms of the same physiological perturbation.",
-    bridgeCta1: "Explore the mechanism",
-    bridgeCta2: "See the evidence",
-    bridgeCta3: "Read the predictions",
-
-    paradoxIntro: "If declining fertility were driven by information — access to contraception, changing values, economic calculation — then the information device (mobile phones) should be the strongest predictor. It isn't.",
-
-    sentinelCta: "All sentinels",
-
-    paradoxLabel: "CROSS-SECTIONAL DISCOVERY v17.1",
-    paradoxTitle: "The mobile phone paradox",
-    paradoxText: "Across 54 countries (TFR range 0.78–6.25, sd = 1.35), residential electricity is the strongest single predictor of fertility decline (univariate RMSE 0.533 vs mobile 1.053). The full model (electricity 60% + broadband 40%) achieves LOOCV RMSE 0.522. Note: among high-income countries alone, electricity explains near-zero variance (R² ≈ 0) — the cross-section primarily captures the electrification threshold.",
-    paradoxStat1: "LOOCV RMSE",
-    paradoxVal1: "0.522",
-    paradoxStat2: "R²",
-    paradoxVal2: "0.851",
-    paradoxStat3: "Skill score",
-    paradoxVal3: "0.61",
-    paradoxCta: "Cross-sectional formula",
-
-    klimentidisLabel: "THE KLIMENTIDIS PARADOX",
-    klimentidisTitle: "Even lab animals are getting fatter",
-    klimentidisText: "Laboratory rats on controlled diets, wild rats, pet dogs and cats — all gaining weight across decades. 24 populations, 8 species, p = 1.2 × 10⁻⁷. Controlled animal laboratories rule out diet, exercise, stress, and chemicals — leaving the EMF environment. BERM predicts that Faraday-shielded laboratories will produce leaner animals on the same diet.",
-    klimentidisNote: "[[ref:klimentidis2010|Klimentidis et al. (2010)]] did not study EMF. They suggested \"as-of-yet unidentified factors.\" The EMF interpretation is BERM's derivation.",
-    klimentidisPopulations: "populations",
-    klimentidisSpecies: "species",
-    klimentidisLink: "Read the metabolic cascade",
-
-    why2012Label: "THE 2012 INFLECTION",
-    why2012Title: "Why 2012? It was the device, not the content",
-    why2012Text: "Social media existed since 2003 — with no mental health crisis. The crisis began in 2012, when smartphones crossed 50% adoption among teenagers. BERM's explanation: 2012 was not about content — it was about the device. The smartphone brought continuous body-contact EMF exposure (WiFi + 4G + Bluetooth, 24/7, including in bed at night).",
-    why2012Detail: "Combined with existing power grid ELF priming and newly mandated LED lighting (EU incandescent ban 2009–2012), 2012 was the year when cumulative multi-frequency Ca²⁺ load exceeded the CaMKII autophosphorylation threshold at population level.",
-    why2012Prediction: "Prediction: content restrictions (Australia, Norway) will NOT resolve the crisis because the mechanism is the hardware, not the content.",
-    why2012Cta: "Technology exposure analysis",
-
-    fiveAnomaliesLabel: "THE LAYERED MODEL",
-    fiveAnomaliesTitle: "Five anomalies that only stacking explains",
-    fiveAnomaliesText: "Why do Americans eat less but weigh more? Why did the teen mental health crisis start in 2012 when social media existed since 2003? Why did T2D accelerate during COVID lockdowns? Why do developing countries follow the same health trajectory with a 15–30 year delay? Why are the Amish immune?",
-    fiveAnomaliesExplanation: "The layered exposure model answers all five: each technology generation adds EMF on top of existing layers. The power grid primes cells for sensitivity. WiFi adds a hidden 10 Hz ELF pulse. LED lighting opens the intermediate frequency channel. Smartphones bring continuous body-contact RF. When all layers combine, the cumulative Ca²⁺ load exceeds the CaMKII threshold — and biological systems begin failing.",
-    fiveAnomaliesCta: "Explore the layered model",
-
-    pharmaLabel: "THE PHARMACOLOGICAL TEST",
-    pharmaTitle: "Calcium blockers reduce the diseases BERM predicts",
-    pharmaText: "If BERM's calcium mechanism is correct, then drugs that block calcium channels should reduce disease rates across BERM's cascades — even when prescribed for other conditions.",
-    pharmaEvidence: "Three registry studies (Finland, UK) involving 264,625 patients with severe mental illness found exactly this: calcium channel blockers prescribed for cardiovascular conditions reduced psychiatric hospitalizations (HR 0.79–0.83) and self-harm.",
-    pharmaPenetrant: "Brain-penetrant calcium blockers (nifedipine) showed 12% better psychiatric outcomes than non-penetrant ones (amlodipine) — as predicted by the model.",
-    pharmaTrial: "An ongoing clinical trial at ETH Zürich (NCT06998368) is directly testing whether the brain-penetrant calcium blocker nimodipine can block 5G's effects on sleep.",
-    pharmaCta: "See pharmacological evidence",
-
-    reproLabel: "THE SPERM NAVIGATION MAP",
-    reproTitle: "9 EMF-vulnerable steps from sperm to baby — all calcium-dependent",
-    reproText: "From spermatogenesis to oocyte activation, every step of human fertilization depends on CatSper — a sperm-specific calcium channel with no backup. Knockout = sterile. EMF doesn't destroy sperm; it triggers premature CatSper activation, depleting energy reserves before the sperm reaches the egg.",
-    reproCta: "See the vulnerability map",
-
-    weightLabel: "THE WEIGHT-STABLE DECLINE",
-    weightTitle: "Testosterone is declining even in men who haven't gained weight",
-    weightIntro: "A common objection: \"Testosterone is declining because men are getting fatter.\" If true, men who maintain their weight should maintain their testosterone. They don't.",
-    weightSanti: "In 2025, [[ref:santi2025|the largest meta-analysis ever conducted (Santi et al., 1,064,891 men)]] confirmed: testosterone and luteinizing hormone are both declining, independent of BMI. The problem is not just in the testes — it extends to the pituitary and hypothalamus.",
-    weightMechanism: "BERM explains both findings: EMF disrupts testosterone production directly (via calcium channels in Leydig cells) and indirectly through the hypothalamic-pituitary axis (via melatonin and cortisol pathways).",
-
-    mazurQuote: "We have not identified the reason for secular decline in testosterone, but we exclude increasing obesity as a sufficient or primary explanation, and we dispute the assumption that men who avoid excessive weight gain will maintain their youthful testosterone levels.",
-    mazurSource: "[[ref:mazur2013|Mazur et al. 2013, PLOS ONE]]",
-    mazurContext: "991 US Air Force veterans, 20-year follow-up. Even weight-stable men lost 19% of their testosterone.",
-    mazurLink: "Read the causal analysis",
-
-    howTitle: "How the model works",
-    causalLabel: "THREE-CHANNEL MECHANISM",
-    causalTitle: "ELF · IF · RF — three frequency bands, three biological pathways",
-    causalNote: "Mobile subscription density is a composite proxy for the overall electromagnetic environment. The model traces three independent channels — ELF (power grid, lighting), IF (switching electronics, LED flicker), RF (base stations, Wi-Fi, radar) — through cryptochrome disruption, calcium signaling and membrane voltage to paired reproductive capacity.",
-
-    npLabel: "EVOLUTIONARY ORIGINS",
-    npTitle: "The Northern Package",
-    npText: "Why did Northern Europe fall below replacement fertility first? BERM proposes that the same co-selection that optimised cryptochrome sensitivity — blue eyes (OCA2), lactose tolerance (LCT), and cattle husbandry — created the population most coupled to electromagnetic fields. The nested χ model formalises this: each population carries a biological χ profile that modulates the EMF-fertility relationship at five scales, from molecular to demographic.",
-    npCta: "Evidence: evolutionary origins",
-
-    warningLabel: "PREDICTIVE POWER",
-    warningTitle: "The 35-year warning",
-    warningNarrative: "Finland's testosterone levels began declining in the 1970s. For 40 years, fertility remained stable. Then it collapsed: from 1.87 children per woman (2010) to 1.26 (2024) — a 33% drop in fifteen years. The testosterone data could have predicted this 15 years in advance. The same data now points to the United States reaching the same threshold around 2030.",
-    warningCaveat: "Testosterone decline rates are age-independent secular trends documented in peer-reviewed longitudinal studies across five countries. TFR projections assume continuation of current rates. The threshold model is calibrated against Finland and South Korea; other country projections are extrapolations.",
-    warningReadMore: "Read the full threshold model specification",
-
-    teaserLabel: "LOCKED PREDICTIONS · TFR 2030",
-    teaserNote: "Locked under BERM v17 and falsifiable: each will be compared against observed data in the stated year.",
-    allPredictions: "All predictions",
-
-    falsTitle: "FALSIFICATION STATUS",
-    falsRan: "ran",
-    falsConsistent: "consistent",
-    falsFalsified: "falsified",
-    falsPending: "pending",
-    falsCta: "Test details",
-
-    epistemicNote: (n: number) => `BERM v17 is a falsifiable research model, not a certainty. ${n} peer-reviewed references across 11 independent research domains. 24+ regulatory-validated non-thermal mechanisms. Cross-sectional formula (n = 54, sd = 1.35): LOOCV RMSE 0.522, skill score 0.61 vs mean predictor. Note: R² = 0.851 reflects the electrification threshold (Niger → Korea), not EMF-specific effect. Locked predictions with dates and confidence intervals. If the predictions fail, the model is wrong.`,
-    epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · Cross-sectional RMSE = 0.522",
-    epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Independent research",
-
-    ctaStatement: "Five technology layers. Five health epidemics. One integrating mechanism.",
-    ctaExploreModel: "Explore the model",
-    ctaReadEvidence: "Read the evidence",
-
-    ctaModel: "Model specification",
-    ctaEvidence: "Evidence register",
-    ctaData: "Explore data",
-    ctaMath: "Mathematics",
-
-    thesisBreak1Kicker: "FROM SYMPTOMS TO MECHANISM",
-    thesisBreak1: "If all these declining indicators share one upstream cause, there should be a single biological pathway that explains each of them independently. There is.",
-    thesisBreak2Kicker: "FROM EVIDENCE TO PREDICTION",
-    thesisBreak2: "A model that only explains the past is a narrative. A model that predicts the future is falsifiable.",
-  },
-  fi: {
-    heroTitle: "Jotain tapahtuu hedelmällisyydelle",
-    heroDeck: "Ihmisen lisääntymiselle tapahtuu jotain, jota pronatalistiset politiikat, taloudelliset kannustimet ja kulttuuriset interventiot eivät ole onnistuneet kääntämään.",
-    heroContext: "Syntyvyys romahtaa maailmanlaajuisesti. Siittiöiden määrä on puolittunut. Testosteroni laskee jokaisessa teollistuneessa populaatiossa — jopa miehillä, jotka eivät ole lihoneet. Sama lisääntymislasku ilmenee 12 lajissa — koirissa, hevosissa, mehiläisissä, valaissa — laskuvauhdin ollessa suhteessa sähkömagneettiseen kenttäaltistukseen (r = 0,909).",
-    whatIsThis: "Biosähkömagneettinen riskimalli (BERM) tarjoaa selityksen: modernin sähköinfrastruktuurin tuottamat sähkömagneettiset kentät vaikuttavat jänniteherkiin kalsiumkanaviin — proteiineihin, jotka löytyvät jokaisesta solusta — häiriten biologisia järjestelmiä, jotka säätelevät lisääntymistä, aineenvaihduntaa, unta ja neurologista terveyttä.",
-    heroEpistemic: "Tämä sivusto esittää mallin, sen evidenssin ja falsifioitavat ennusteet. Jokainen väite on rajattu episteemisellä tasolla. Jokainen ennuste on lukittu kumoamiskriteerillä. Jos malli on väärässä, se on suunniteltu epäonnistumaan näkyvästi.",
-    metaTitle: "Extinction Field – BERM-tutkimusmalli",
-    metaDescription: "Falsifioitava tutkimusmalli sähkömagneettisten kenttätilojen ja lisääntymiskyvyn yhteyden testaamiseen.",
-
-    s1Title: "KRIISI LUVUISSA",
-    s1Intro: "Nämä trendit on dokumentoitu itsenäisesti tuhansissa tutkimuksissa. Selittämättä jää, miksi ne kaikki tapahtuvat samanaikaisesti, kaikissa teollistuneissa maissa, ja miksi mikään interventio ei ole kääntänyt niitä.",
-
-    impactGrid: [
-      { stat: "5,0 → 2,2", label: "Globaali TFR vuodesta 1960 — lasku kiihtyy", sub: "Alle 2,1:n populaatiot supistuvat. Alle 1,3:n palautumista ei ole koskaan havaittu ilman maahanmuuttoa.", href: "/explore" },
-      { stat: "−62 %", label: "Siittiökonsentraatio (Levine 2023, 223 tutkimusta)", referenceId: "levine2023_sperm", sub: "Lasku ei osoita tasaantumisen merkkejä. Nykyisellä vauhdilla mediaaniluvut saavuttavat subfertiliteettikynnyksen yhden sukupolven sisällä.", href: "/model#causal-diagram" },
-      { stat: "−1,2 %/v", label: "Testosteronilasku, ikäriippumaton (Travison 2007)", referenceId: "travison2007_v2", sub: "Tämä lasku jatkuu jopa miehillä, jotka pitävät painonsa — sulkien pois lihavuuden ensisijaisena syynä.", href: "/model#testosterone-threshold" },
-      { stat: "49", label: "Maata alle korvaavuustason TFR 1,4", sub: "Ei vain vauraita maita. Keskituloiset maat seuraavat samaa kehityskulkua, 15–20 vuotta jäljessä.", href: "/explore" },
-      { stat: "200 mrd $", label: "Korean pronatalismi → TFR silti 0,72", sub: "Historian kallein pronatalistinen ohjelma ei ole vaikuttanut hedelmällisyyteen mitattavasti.", href: "/model#testosterone-threshold" },
-      { stat: "TFR 6,1 vs 1,66", label: "Amissit vs USA — yhteisöt ilman älypuhelimia", sub: "Vaikka muut elämäntapatekijät eroavat, hedelmällisyyseron suuruus ylittää sen, mitä ruokavalio- tai elämäntapatutkimukset ovat selittäneet.", href: "/evidence/populations" },
-      { stat: "r = 0,909", label: "Lajienväl. EMF-gradientti (7 lajia)", sub: "Lisääntymislaskuaste korreloi EMF-altistusarvon kanssa lajeittain — kylmäverisistä hevosista (matala) ihmisiin (korkein). 12 sentinellilajia seurannassa maa-, vesi- ja siirtymäakseleilla.", href: "/sentinel#emf-gradient" },
-      { stat: "4 valtakuntaa", label: "Sama molekyyli (CRY) häiriintyy — kasveista nisäkkäisiin", sub: "Sama tapahtuu koko ekosysteemille. Kryptokromi toimii kasveissa (kukinta), hyönteisissä (navigaatio), linnuissa (muutto) ja nisäkkäissä (hedelmällisyys). RF-häirintä osoitettu kaikilla neljällä troofisella tasolla.", href: "/evidence#plant-cry" },
-    ],
-
-    bridgeTitle: "MIKSI NÄMÄ LUVUT KUULUVAT YHTEEN",
-    bridgeP1: "Tavanomaiset selitykset käsittelevät jokaista trendiä erikseen: hedelmällisyyden lasku selitetään taloudella ja kulttuurilla, siittiölasku kemikaaleilla ja elämäntavoilla, testosteronilasku lihavuudella ja unihäiriöt ruuduilla.",
-    bridgeP2: "Mutta nämä selitykset epäonnistuvat perustestissä: ne eivät pysty selittämään, miksi kaikki nämä trendit tapahtuvat samanaikaisesti, kaikissa teollistuneissa maissa, miksi ne korreloivat vahvemmin sähköinfrastruktuurin kuin minkään sosiaalisen tai taloudellisen muuttujan kanssa, ja miksi samat lisääntymislaskut ilmenevät lajeittain — koirista ja hevosista mehiläisiin ja valaisiin — laskuvauhdin ollessa suhteessa EMF-altistukseen (r = 0,909).",
-    bridgeP3: "BERM ehdottaa yhtä ylävirran mekanismia: sähköjohdoista, langattomista laitteista ja tukiasemainfrastruktuurista tulevat sähkömagneettiset kentät vaikuttavat jänniteherkiin kalsiumkanaviin (VGCC) — samoihin proteiineihin, jotka säätelevät hormonien eritystä, siittiöiden liikkuvuutta, hermosignalointia ja aineenvaihduntatoimintaa. Kun kalsiumsignalointi häiriintyy, jälkivaikutukset ilmenevät erillisinä sairauksina. Ne eivät ole. Ne ovat saman fysiologisen häiriön eri oireita.",
-    bridgeCta1: "Tutki mekanismia",
-    bridgeCta2: "Katso evidenssi",
-    bridgeCta3: "Lue ennusteet",
-
-    paradoxIntro: "Jos hedelmällisyyden lasku johtuisi informaatiosta — pääsy ehkäisyyn, arvojen muutos, taloudellinen harkinta — niin tietolaitteen (matkapuhelin) pitäisi olla vahvin ennustaja. Ei ole.",
-
-    sentinelCta: "Kaikki sentinellit",
-
-    paradoxLabel: "POIKKILEIKKAUSLÖYDÖS v17.1",
-    paradoxTitle: "Matkapuhelinparadoksi",
-    paradoxText: "54 maan aineistossa (TFR-vaihteluväli 0,78–6,25, sd = 1,35) asumisen sähkönkulutus on vahvin yksittäinen hedelmällisyyslaskun ennustaja (univariaatti-RMSE 0,533 vs. matkapuhelin 1,053). Kokonaismalli (sähkö 60 % + laajakaista 40 %) saavuttaa LOOCV RMSE 0,522. Huom.: korkean tulotason maissa sähkö selittää lähes nollaa (R² ≈ 0) — poikkileikkaus kuvaa pääasiassa sähköistyskynnystä.",
-    paradoxStat1: "LOOCV RMSE",
-    paradoxVal1: "0,522",
-    paradoxStat2: "R²",
-    paradoxVal2: "0,851",
-    paradoxStat3: "Taitoarvo",
-    paradoxVal3: "0,61",
-    paradoxCta: "Poikkileikkauskaava",
-
-    klimentidisLabel: "KLIMENTIDISIN PARADOKSI",
-    klimentidisTitle: "Jopa laboratoriorotat lihovat",
-    klimentidisText: "Laboratoriorotat kontrolloidulla ruokavaliolla, villit rotat, lemmikit — koirat ja kissat — kaikki lihovat vuosikymmenestä toiseen. 24 populaatiota, 8 lajia, p = 1,2 × 10⁻⁷. Kontrolloidut eläinlaboratoriot sulkevat pois ruokavalion, liikunnan, stressin ja kemikaalit — jäljelle jää EMF-ympäristö. BERM ennustaa: Faraday-suojattu laboratorio tuottaa laihempia rottia samalla dieetillä.",
-    klimentidisNote: "[[ref:klimentidis2010|Klimentidis ym. (2010)]] eivät tutkineet EMF:ää. He ehdottivat \"toistaiseksi tunnistamattomia tekijöitä.\" EMF-tulkinta on BERM:n johtopäätös.",
-    klimentidisPopulations: "populaatiota",
-    klimentidisSpecies: "lajia",
-    klimentidisLink: "Lue metabolinen kaskadi",
-
-    why2012Label: "2012-INFLEKTIO",
-    why2012Title: "Miksi 2012? Se oli laite, ei sisältö",
-    why2012Text: "Sosiaalinen media on ollut olemassa vuodesta 2003 — ilman mielenterveyskriisiä. Kriisi alkoi 2012, kun älypuhelimet ylittivät 50 % adoption nuorten keskuudessa. BERM:n selitys: 2012 ei ollut sisällöstä — se oli laitteesta. Älypuhelin toi jatkuvan kehokontakti-EMF-altistuksen (WiFi + 4G + Bluetooth, 24/7, myös sängyssä yöllä).",
-    why2012Detail: "Yhdistettynä olemassa olevaan sähköverkon ELF-primingiin ja juuri pakotettuun LED-valaistukseen (EU:n hehkulamppukielto 2009–2012), 2012 oli vuosi jolloin kumulatiivinen monitaajuinen Ca²⁺-kuorma ylitti CaMKII:n autofosforylaatiokynnyksen väestötasolla.",
-    why2012Prediction: "Ennuste: sisältörajoitukset (Australia, Norja) EIVÄT ratkaise kriisiä koska mekanismi on laitteisto, ei sisältö.",
-    why2012Cta: "Teknologia-altistusanalyysi",
-
-    fiveAnomaliesLabel: "KERROSTUMAMALLI",
-    fiveAnomaliesTitle: "Viisi anomaliaa, jotka vain kerrostuminen selittää",
-    fiveAnomaliesText: "Miksi amerikkalaiset syövät vähemmän mutta painavat enemmän? Miksi teini-ikäisten mielenterveyskriisi alkoi 2012, vaikka sosiaalinen media on ollut olemassa vuodesta 2003? Miksi T2D kiihtyi COVID-sulkujen aikana? Miksi kehitysmaat seuraavat samaa terveystrajektoria 15–30 vuoden viiveellä? Miksi amishit ovat immuuneja?",
-    fiveAnomaliesExplanation: "Kerrostumamalli vastaa kaikkiin viiteen: jokainen teknologiasukupolvi lisää EMF:ää olemassa olevien kerrosten päälle. Sähköverkko primaa solut herkkyydelle. WiFi lisää piilotetun 10 Hz ELF-pulssin. LED-valaistus avaa välitaajuuskanavan. Älypuhelimet tuovat jatkuvan kehokontakti-RF:n. Kun kaikki kerrokset yhdistyvät, kumulatiivinen Ca²⁺-kuorma ylittää CaMKII-kynnyksen — ja biologiset järjestelmät alkavat pettää.",
-    fiveAnomaliesCta: "Tutustu kerrostumamalliin",
-
-    pharmaLabel: "FARMAKOLOGINEN TESTI",
-    pharmaTitle: "Kalsiumsalpaajat vähentävät BERM:n ennustamia sairauksia",
-    pharmaText: "Jos BERM:n kalsiummekanismi on oikea, kalsiumkanavia salpaavien lääkkeiden pitäisi vähentää sairauksien esiintyvyyttä BERM:n kaskadeissa — vaikka ne on määrätty muihin tarkoituksiin.",
-    pharmaEvidence: "Kolme rekisteritutkimusta (Suomi, Iso-Britannia), joissa 264 625 vaikeasta mielenterveydenhäiriöstä kärsivää potilasta, löysi juuri tämän: sydänverisuonitautiin määrätyt kalsiumsalpaajat vähensivät psykiatrisia sairaalahoitoja (HR 0,79–0,83) ja itsetuhoisuutta.",
-    pharmaPenetrant: "Aivoja läpäisevät kalsiumsalpaajat (nifedipiini) tuottivat 12 % paremmat psykiatriset tulokset kuin ei-läpäisevät (amlodipiini) — mallin ennusteen mukaisesti.",
-    pharmaTrial: "ETH Zürichin meneillään oleva kliininen koe (NCT06998368) testaa suoraan voiko aivoja läpäisevä kalsiumsalpaaja nimodipiini estää 5G:n vaikutuksia uneen.",
-    pharmaCta: "Katso farmakologinen evidenssi",
-
-    reproLabel: "SIITTIÖN NAVIGAATIOKARTTA",
-    reproTitle: "9 EMF-herkkää vaihetta siittiöstä vauvaan — kaikki kalsiumriippuvaisia",
-    reproText: "Spermatogeneesistä munasolun aktivaatioon jokainen hedelmöityksen vaihe riippuu CatSperistä — siittiöspesifisestä kalsiumkanavasta, jolla ei ole varakanavaa. Poistogeeninen = steriili. EMF ei tuhoa siittiöitä; se laukaisee ennenaikaisen CatSper-aktivaation, mikä kuluttaa energiavarastot ennen kuin siittiö saavuttaa munasolun.",
-    reproCta: "Katso haavoittuvuuskartta",
-
-    weightLabel: "PAINOVAKAA LASKU",
-    weightTitle: "Testosteroni laskee jopa miehillä, jotka eivät ole lihoneet",
-    weightIntro: "Yleinen vastaväite: \"Testosteroni laskee koska miehet lihovat.\" Jos totta, painonsa säilyttävien miesten testosteronin pitäisi pysyä ennallaan. Ei pysy.",
-    weightSanti: "Vuonna 2025 [[ref:santi2025|kaikkien aikojen suurin meta-analyysi (Santi ym., 1 064 891 miestä)]] vahvisti: sekä testosteroni että luteinisoiva hormoni laskevat, riippumatta painoindeksistä. Ongelma ei ole vain kiveksissä — se ulottuu aivolisäkkeeseen ja hypotalamukseen.",
-    weightMechanism: "BERM selittää molemmat löydökset: EMF häiritsee testosteronituotantoa suoraan (kalsiumkanavien kautta Leydigin soluissa) ja epäsuorasti hypotalamus-aivolisäke-akselin kautta (melatoniini- ja kortisoolireittien kautta).",
-
-    mazurQuote: "Emme ole tunnistaneet syytä testosteronin sekulaarilaskuun, mutta suljemme pois kasvavan lihavuuden riittävänä tai ensisijaisena selityksenä, ja kiistämme oletuksen, jonka mukaan miehet, jotka välttävät liiallista painonnousua, säilyttävät nuoruutensa testosteronitasot.",
-    mazurSource: "[[ref:mazur2013|Mazur ym. 2013, PLOS ONE]]",
-    mazurContext: "991 US Air Force -veteraania, 20 vuoden seuranta. Painonsa säilyttäneet miehet menettivät 19 % testosteroninsa.",
-    mazurLink: "Lue kausaalianalyysi",
-
-    howTitle: "Miten malli toimii",
-    causalLabel: "KOLMIKANAVAMEKANISMI",
-    causalTitle: "ELF · IF · RF — kolme taajuuskaistaa, kolme biologista reittiä",
-    causalNote: "Matkapuhelinliittymätiheys on yhdistelmäproksi koko sähkömagneettiselle ympäristölle. Malli jäljittää kolme itsenäistä kanavaa — ELF (sähköverkko, valaistus), IF (kytkentäelektroniikka, LED-välkyntä), RF (tukiasemat, Wi-Fi, tutka) — kryptokromihäiriön, kalsiumsignaloinnin ja kalvojännitteen kautta pariutumisen lisääntymiskapasiteettiin.",
-
-    npLabel: "EVOLUUTION ALKUPERÄT",
-    npTitle: "Pohjoinen paketti",
-    npText: "Miksi Pohjois-Eurooppa laski ensimmäisenä korvaavuustason hedelmällisyyden alle? BERM ehdottaa, että sama koselektio joka optimoi kryptokromiherkkyyden — siniset silmät (OCA2), laktoosinsietokyky (LCT) ja karjankasvatus — loi populaation, joka on voimakkaimmin kytketty sähkömagneettisiin kenttiin. Sisäkkäinen χ-malli formalisoi tämän: jokaisella populaatiolla on biologinen χ-profiili, joka moduloi EMF-hedelmällisyyssuhdetta viidessä skaalassa, molekulaarisesta demografiseen.",
-    npCta: "Evidenssi: evoluution alkuperät",
-
-    warningLabel: "ENNUSTUSVOIMA",
-    warningTitle: "35 vuoden varoitus",
-    warningNarrative: "Suomen testosteronitasot alkoivat laskea 1970-luvulla. 40 vuoden ajan hedelmällisyys pysyi vakaana. Sitten se romahti: 1,87 lasta naista kohden (2010) → 1,26 (2024) — 33 %:n pudotus viidessätoista vuodessa. Testosteronidata olisi ennustanut tämän 15 vuotta etukäteen. Sama data ennustaa nyt Yhdysvalloille samaa noin vuodelle 2030.",
-    warningCaveat: "Testosteronin laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä, jotka on dokumentoitu vertaisarvioiduissa pitkittäistutkimuksissa viidessä maassa. TFR-ennusteet olettavat nykyisten vauhtien jatkumisen. Kynnysmalli on kalibroitu Suomen ja Etelä-Korean datalla; muiden maiden ennusteet ovat ekstrapolointeja.",
-    warningReadMore: "Lue koko kynnysmallin määrittely",
-
-    teaserLabel: "LUKITUT ENNUSTEET · TFR 2030",
-    teaserNote: "Lukittu BERM v17:lla ja falsifioitavissa: jokainen verrataan havaittuun dataan ilmoitettuna vuonna.",
-    allPredictions: "Kaikki ennusteet",
-
-    falsTitle: "FALSIFIKAATIOTILANNE",
-    falsRan: "ajettu",
-    falsConsistent: "yhteensopiva",
-    falsFalsified: "falsifioitu",
-    falsPending: "odottaa",
-    falsCta: "Testien yksityiskohdat",
-
-    epistemicNote: (n: number) => `BERM v17 on falsifioitava tutkimusmalli, ei varma tieto. ${n} vertaisarvioitua viitettä 11 riippumattomalta tutkimusalalta. 24+ regulatiivisesti validoitua ei-termistä mekanismia. Poikkileikkauskaava (n = 54, sd = 1,35): LOOCV RMSE 0,522, taitoarvo 0,61 vs. keskiarvoennuste. Huom.: R² = 0,851 kuvastaa sähköistyskynnystä (Niger → Korea), ei EMF-spesifistä vaikutusta. Lukitut ennusteet päivämäärineen ja luottamusväleineen. Jos ennusteet epäonnistuvat, malli on väärässä.`,
-    epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · Poikkileikkaus-RMSE = 0,522",
-    epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Itsenäinen tutkimus",
-
-    ctaStatement: "Viisi teknologiakerrosta. Viisi terveysepidemaa. Yksi integroiva mekanismi.",
-    ctaExploreModel: "Tutustu malliin",
-    ctaReadEvidence: "Lue todisteet",
-
-    ctaModel: "Mallin määrittely",
-    ctaEvidence: "Evidenssirekisteri",
-    ctaData: "Tutki dataa",
-    ctaMath: "Matematiikka",
-
-    thesisBreak1Kicker: "OIREISTA MEKANISMIIN",
-    thesisBreak1: "Jos kaikki nämä laskevat indikaattorit jakavat yhden yhteisen syyn, sen pitäisi selittyä yhdellä biologisella reitillä. Sellainen on.",
-    thesisBreak2Kicker: "EVIDENSSISTÄ ENNUSTEESEEN",
-    thesisBreak2: "Malli, joka selittää vain menneisyyden, on narratiivi. Malli, joka ennustaa tulevaisuuden, on falsifioitavissa.",
-  },
-  ja: {
-    heroTitle: "生殖能力に何かが起きている",
-    heroDeck: "プロナタリスト政策、経済的インセンティブ、文化的介入がいずれも覆すことができなかった何かが、人間の生殖に起きています。",
-    heroContext: "出生率は世界中で崩壊しています。精子数は半減しました。テストステロンは、体重が増えていない男性でさえ、測定されたすべての先進国集団で低下しています。同じ生殖低下が12種 — 犬、馬、ミツバチ、クジラ — にわたり、電磁場曝露に比例した低下率（r = 0.909）で現れています。",
-    whatIsThis: "生体電磁生殖モデル（BERM）は一つの説明を提案します。現代の電気インフラが生成する電磁場が、すべての細胞に存在するタンパク質である電位依存性カルシウムチャネルと相互作用し、生殖、代謝、睡眠、神経学的健康を制御する生物学的システムを撹乱しているという説明です。",
-    heroEpistemic: "このウェブサイトはモデル、そのエビデンス、および反証可能な予測を提示します。すべての主張は認識論的レベルで限定されています。すべての予測は反証基準とともに固定されています。モデルが間違っていれば、目に見える形で失敗するように設計されています。",
-    metaTitle: "Extinction Field – BERM研究モデル",
-    metaDescription: "電磁場の状態が生殖指標の世界的低下に寄与するかどうかを検証する反証可能な研究モデル。",
-
-    s1Title: "危機を数字で見る",
-    s1Intro: "これらの傾向は数千の研究によって独立に文書化されています。説明されていないのは、なぜこれらすべてが同時に、すべての先進国で起きているのか、そしてなぜいかなる介入もそれらを覆していないのかということです。",
-
-    impactGrid: [
-      { stat: "5.0 → 2.2", label: "1960年以降の世界TFR — 低下は加速中", sub: "2.1を下回ると人口は縮小します。1.3を下回ると、移民なしでの回復は観察されたことがありません。", href: "/explore" },
-      { stat: "−62%", label: "精子濃度（Levine 2023、223研究）", referenceId: "levine2023_sperm", sub: "低下は横ばいの兆候を見せていません。現在の速度では、中央値は一世代以内に亜生殖力閾値に達します。", href: "/model#causal-diagram" },
-      { stat: "−1.2%/年", label: "テストステロン低下、年齢非依存（Travison 2007）", referenceId: "travison2007_v2", sub: "この低下は体重を維持している男性でも持続しており、肥満が主要な原因であることを除外しています。", href: "/model#testosterone-threshold" },
-      { stat: "49", label: "置換水準TFR 1.4を下回る国", sub: "裕福な国だけではありません。中所得国も同じ軌道をたどり、15〜20年遅れています。", href: "/explore" },
-      { stat: "2000億ドル", label: "韓国のプロナタリスト支出 → TFRは0.72に低下", sub: "史上最も高額なプロナタリストプログラムは、出生率に測定可能な効果を持ちませんでした。", href: "/model#testosterone-threshold" },
-      { stat: "TFR 6.1 vs 1.66", label: "アーミッシュ vs アメリカ — スマートフォンのない共同体", sub: "他の生活様式要因は異なりますが、出生率格差の大きさは食事や生活様式の研究が説明してきた範囲を超えています。", href: "/evidence/populations" },
-      { stat: "r = 0.909", label: "種間EMF勾配（7種）", sub: "生殖低下率がEMF曝露スコアと種にわたり相関 — 非温血馬（低）からヒト（最高）まで。陸上・水中・遷移軸にわたる12センチネル種を追跡。", href: "/sentinel#emf-gradient" },
-      { stat: "4界", label: "同じ分子(CRY)が撹乱 — 植物から哺乳類まで", sub: "生態系全体に同じことが起きている。クリプトクロムは植物（開花）、昆虫（ナビゲーション）、鳥類（渡り）、哺乳類（生殖）で機能する。4つの栄養段階すべてでRF撹乱が実証済み。", href: "/evidence#plant-cry" },
-    ],
-
-    bridgeTitle: "なぜこれらの数字は一つにまとまるのか",
-    bridgeP1: "従来の説明は各傾向を別々に扱います。出生率低下は経済と文化に、精子低下は化学物質と生活様式に、テストステロン低下は肥満に、睡眠障害はスクリーンに帰属させます。",
-    bridgeP2: "しかしこれらの説明は基本的な検証に失敗します。すべての先進国でなぜこれらすべての傾向が同時に起きているのか、社会的・経済的変数よりも電気インフラとより強く相関するのはなぜか、そしてなぜ同じ生殖低下が種を越えて — 犬や馬からミツバチやクジラまで — EMF曝露に比例した低下率（r = 0.909）で現れるのかを説明できません。",
-    bridgeP3: "BERMは単一の上流メカニズムを提案します。電気配線、無線機器、携帯電話インフラからの電磁場が電位依存性カルシウムチャネル（VGCC）と相互作用します。これはホルモン分泌、精子運動性、神経シグナル伝達、代謝機能を制御する同じタンパク質です。カルシウムシグナリングが撹乱されると、下流の影響は別々の疾患として現れます。しかしそうではありません。それらは同じ生理学的撹乱の異なる症状です。",
-    bridgeCta1: "メカニズムを探る",
-    bridgeCta2: "エビデンスを見る",
-    bridgeCta3: "予測を読む",
-
-    paradoxIntro: "出生率の低下が情報によって駆動されているなら — 避妊へのアクセス、価値観の変化、経済的計算 — 情報デバイス（携帯電話）が最強の予測因子であるはずです。そうではありません。",
-
-    sentinelCta: "すべてのセンチネル",
-
-    paradoxLabel: "横断的発見 v17.1",
-    paradoxTitle: "携帯電話のパラドックス",
-    paradoxText: "54カ国（TFR範囲 0.78–6.25、sd = 1.35）にわたり、住宅用電力消費量が出生率低下の最も強い単一予測因子です（単変量RMSE 0.533 vs 携帯電話 1.053）。完全モデル（電力60% + ブロードバンド40%）のLOOCV RMSEは0.522。注：高所得国のみでは電力の説明力はほぼゼロ（R² ≈ 0）— 横断分析は主に電化閾値を捉えています。",
-    paradoxStat1: "LOOCV RMSE",
-    paradoxVal1: "0.522",
-    paradoxStat2: "R²",
-    paradoxVal2: "0.851",
-    paradoxStat3: "スキルスコア",
-    paradoxVal3: "0.61",
-    paradoxCta: "横断的公式",
-
-    klimentidisLabel: "クリメンティディスのパラドックス",
-    klimentidisTitle: "実験動物さえも太っている",
-    klimentidisText: "管理食の実験用ラット、野生のラット、ペットの犬や猫 — すべてが数十年にわたって体重が増加しています。24集団、8種、p = 1.2 × 10⁻⁷。管理された動物実験室は食事、運動、ストレス、化学物質を除外し、EMF環境を残します。BERMは、ファラデーシールドされた実験室が同じ食事でより痩せた動物を産み出すと予測します。",
-    klimentidisNote: "[[ref:klimentidis2010|Klimentidis et al.（2010）]]はEMFを研究していません。彼らは「まだ特定されていない要因」を示唆しました。EMF解釈はBERMの導出です。",
-    klimentidisPopulations: "集団",
-    klimentidisSpecies: "種",
-    klimentidisLink: "代謝カスケードを読む",
-
-    why2012Label: "2012年の変曲点",
-    why2012Title: "なぜ2012年？コンテンツではなくデバイスだった",
-    why2012Text: "ソーシャルメディアは2003年から存在していました — メンタルヘルス危機はありませんでした。危機は2012年に始まりました。スマートフォンがティーンエイジャーの間で50%の普及率を超えた時です。BERMの説明：2012年はコンテンツではなくデバイスについてでした。スマートフォンは継続的な身体接触EMF曝露をもたらしました（WiFi + 4G + Bluetooth、24時間365日、夜もベッドの中で）。",
-    why2012Detail: "既存の送電網ELFプライミングと新たに義務化されたLED照明（EU白熱電球禁止2009〜2012年）と組み合わさり、2012年は累積的な多周波Ca²⁺負荷が集団レベルでCaMKII自己リン酸化閾値を超えた年でした。",
-    why2012Prediction: "予測：コンテンツ制限（オーストラリア、ノルウェー）は危機を解決しません。メカニズムはハードウェアであり、コンテンツではないからです。",
-    why2012Cta: "技術曝露分析",
-
-    fiveAnomaliesLabel: "層状モデル",
-    fiveAnomaliesTitle: "層の重なりだけが説明できる5つの異常",
-    fiveAnomaliesText: "なぜアメリカ人は食べる量が減っているのに体重が増えているのか？なぜソーシャルメディアが2003年から存在していたのにティーンのメンタルヘルス危機は2012年に始まったのか？なぜCOVIDロックダウン中にT2Dが加速したのか？なぜ途上国は15〜30年の遅れで同じ健康軌道をたどるのか？なぜアーミッシュは免疫があるのか？",
-    fiveAnomaliesExplanation: "層状曝露モデルは5つすべてに答えます。各技術世代は既存の層の上にEMFを追加します。送電網が細胞を感受性にプライミングします。WiFiが隠れた10 Hz ELFパルスを追加します。LED照明が中間周波チャネルを開きます。スマートフォンが継続的な身体接触RFをもたらします。すべての層が組み合わさると、累積的なCa²⁺負荷がCaMKII閾値を超え、生物学的システムが機能不全を起こし始めます。",
-    fiveAnomaliesCta: "層状モデルを探る",
-
-    pharmaLabel: "薬理学的テスト",
-    pharmaTitle: "カルシウム拮抗薬はBERMが予測する疾患を減少させる",
-    pharmaText: "BERMのカルシウムメカニズムが正しければ、カルシウムチャネルを遮断する薬剤は、他の症状に処方されている場合でも、BERMのカスケード全体で疾患率を低下させるはずです。",
-    pharmaEvidence: "3つのレジストリ研究（フィンランド、英国）で264,625人の重度精神疾患患者を対象に、まさにこれが発見されました。心血管疾患に処方されたカルシウム拮抗薬が精神科入院（HR 0.79〜0.83）と自傷行為を減少させました。",
-    pharmaPenetrant: "脳透過性カルシウム拮抗薬（ニフェジピン）は非透過性のもの（アムロジピン）よりも12%良い精神科転帰を示しました — モデルの予測通りです。",
-    pharmaTrial: "ETHチューリッヒで進行中の臨床試験（NCT06998368）は、脳透過性カルシウム拮抗薬ニモジピンが5Gの睡眠への影響を遮断できるかどうかを直接検証しています。",
-    pharmaCta: "薬理学的エビデンスを見る",
-
-    reproLabel: "精子ナビゲーションマップ",
-    reproTitle: "精子から赤ちゃんまでの9つのEMF脆弱ステップ — すべてカルシウム依存",
-    reproText: "精子形成から卵母細胞活性化まで、ヒト受精のすべてのステップはCatSper（バックアップのない精子特異的カルシウムチャネル）に依存している。ノックアウト＝不妊。EMFは精子を破壊せず、早期CatSper活性化を誘発し、精子が卵子に到達する前にエネルギー貯蔵を枯渇させる。",
-    reproCta: "脆弱性マップを見る",
-
-    weightLabel: "体重安定下の低下",
-    weightTitle: "テストステロンは体重が増えていない男性でも低下している",
-    weightIntro: "よくある反論：「テストステロンが低下しているのは男性が太っているからだ。」もしそうなら、体重を維持している男性はテストステロンを維持しているはずです。維持していません。",
-    weightSanti: "2025年、[[ref:santi2025|史上最大のメタ分析（Santi et al.、1,064,891人の男性）]]が確認しました。テストステロンと黄体形成ホルモンの両方がBMIとは無関係に低下しています。問題は精巣だけでなく、下垂体と視床下部にまで及びます。",
-    weightMechanism: "BERMは両方の知見を説明します。EMFはテストステロン産生を直接的に（ライディッヒ細胞のカルシウムチャネルを通じて）そして間接的に視床下部-下垂体軸を通じて（メラトニンとコルチゾール経路を通じて）撹乱します。",
-
-    mazurQuote: "我々はテストステロンの経年的低下の理由を特定していないが、肥満の増加を十分なまたは主要な説明として除外し、過度な体重増加を避ける男性が若い頃のテストステロン値を維持するという仮定に異議を唱える。",
-    mazurSource: "[[ref:mazur2013|Mazur et al. 2013, PLOS ONE]]",
-    mazurContext: "米空軍退役軍人991名、20年間の追跡調査。体重安定の男性でもテストステロンが19%低下。",
-    mazurLink: "因果分析を読む",
-
-    howTitle: "モデルの仕組み",
-    causalLabel: "3チャネルメカニズム",
-    causalTitle: "ELF · IF · RF — 3つの周波数帯、3つの生物学的経路",
-    causalNote: "携帯電話契約密度は電磁環境全体の複合プロキシです。モデルは、ELF（電力網、照明）、IF（スイッチング電子機器、LEDのちらつき）、RF（基地局、Wi-Fi、レーダー）の3つの独立チャネルを、クリプトクロム撹乱、カルシウムシグナル伝達、膜電位を介して生殖能力まで追跡します。",
-
-    npLabel: "進化的起源",
-    npTitle: "ノーザンパッケージ",
-    npText: "なぜ北欧が最初に置換水準出生率を下回ったのか？BERMは、クリプトクロム感受性を最適化した同じ共選択 — 青い目（OCA2）、乳糖耐性（LCT）、牧畜 — が電磁場に最も強く結合した集団を生み出したと提案します。入れ子型χモデルはこれを形式化します。各集団は、分子レベルから人口統計レベルまでの5つのスケールでEMF-出生率関係を調整する生物学的χプロファイルを持ちます。",
-    npCta: "エビデンス：進化的起源",
-
-    warningLabel: "予測力",
-    warningTitle: "35年間の警告",
-    warningNarrative: "フィンランドのテストステロン値は1970年代に低下し始めました。40年間、出生率は安定していました。その後崩壊しました。女性一人あたり1.87人（2010年）から1.26人（2024年）へ — 15年間で33%の低下です。テストステロンデータは15年前にこれを予測できたはずです。同じデータは現在、米国が2030年頃に同じ閾値に達することを示しています。",
-    warningCaveat: "テストステロン低下率は、5カ国の査読付き縦断研究で文書化された年齢非依存の経年的傾向です。TFR予測は現在の速度の継続を仮定しています。閾値モデルはフィンランドと韓国に対して較正されており、他国の予測は外挿です。",
-    warningReadMore: "完全な閾値モデル仕様を読む",
-
-    teaserLabel: "固定予測 · TFR 2030",
-    teaserNote: "BERM v17で固定され反証可能：各予測は記載された年に観測データと比較されます。",
-    allPredictions: "すべての予測",
-
-    falsTitle: "反証状況",
-    falsRan: "実行済み",
-    falsConsistent: "一致",
-    falsFalsified: "反証済み",
-    falsPending: "保留中",
-    falsCta: "テスト詳細",
-
-    epistemicNote: (n: number) => `BERM v17は反証可能な研究モデルであり、確実性ではありません。複数の研究分野にまたがる${n}件の登録済み資料。24以上の規制当局により検証された非熱メカニズム。横断的公式（n = 54、sd = 1.35）：LOOCV RMSE 0.522、スキルスコア 0.61（平均予測比）。注：R² = 0.851は電化閾値（ニジェール→韓国）を反映しており、EMF固有の効果ではありません。日付と信頼区間を持つ固定予測。予測が失敗すれば、モデルは間違っています。`,
-    epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · 横断的RMSE = 0.522",
-    epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · 独立研究",
-
-    ctaStatement: "5つの技術層。5つの健康疫病。1つの統合メカニズム。",
-    ctaExploreModel: "モデルを探る",
-    ctaReadEvidence: "エビデンスを読む",
-
-    ctaModel: "モデル仕様",
-    ctaEvidence: "エビデンスレジスター",
-    ctaData: "データを探る",
-    ctaMath: "数学",
-
-    thesisBreak1Kicker: "症状からメカニズムへ",
-    thesisBreak1: "これらすべての低下指標が一つの上流原因を共有するなら、それぞれを独立に説明する単一の生物学的経路があるはずです。あります。",
-    thesisBreak2Kicker: "エビデンスから予測へ",
-    thesisBreak2: "過去だけを説明するモデルはナラティブです。未来を予測するモデルは反証可能です。",
-  },
-  fr: {
-    heroTitle: "Quelque chose arrive à la fertilité",
-    heroDeck: "Quelque chose arrive à la reproduction humaine que les politiques natalistes, les incitations économiques et les interventions culturelles n'ont pas réussi à inverser.",
-    heroContext: "Les taux de fécondité s'effondrent dans le monde entier. Le nombre de spermatozoïdes a été divisé par deux. La testostérone décline dans toutes les populations industrialisées mesurées — même chez les hommes qui n'ont pas pris de poids. Le même déclin reproductif apparaît chez 12 espèces — chiens, chevaux, abeilles, baleines — avec des taux de déclin proportionnels à l'exposition électromagnétique (r = 0,909).",
-    whatIsThis: "Le modèle bio-électromagnétique de la reproduction (BERM) propose une explication : les champs électromagnétiques générés par l'infrastructure électrique moderne interagissent avec les canaux calciques voltage-dépendants — des protéines présentes dans chaque cellule — perturbant les systèmes biologiques qui régissent la reproduction, le métabolisme, le sommeil et la santé neurologique.",
-    heroEpistemic: "Ce site web présente le modèle, ses preuves et ses prédictions falsifiables. Chaque affirmation est limitée par un niveau épistémique. Chaque prédiction est verrouillée avec un critère de falsification. Si le modèle est faux, il est conçu pour échouer visiblement.",
-    metaTitle: "Extinction Field – Modèle de recherche BERM",
-    metaDescription: "Un modèle de recherche falsifiable testant si les états de champs électromagnétiques contribuent au déclin mondial des indicateurs de reproduction.",
-
-    s1Title: "LA CRISE EN CHIFFRES",
-    s1Intro: "Ces tendances sont documentées indépendamment par des milliers d'études. Ce qui reste inexpliqué, c'est pourquoi elles se produisent toutes simultanément, dans tous les pays industrialisés, et pourquoi aucune intervention ne les a inversées.",
-
-    impactGrid: [
-      { stat: "5,0 → 2,2", label: "TFR mondial depuis 1960 — le déclin s'accélère", sub: "En dessous de 2,1, les populations diminuent. En dessous de 1,3, aucune reprise n'a jamais été observée sans immigration.", href: "/explore" },
-      { stat: "−62 %", label: "Concentration spermatique (Levine 2023, 223 études)", referenceId: "levine2023_sperm", sub: "Le déclin ne montre aucun signe de stabilisation. Au rythme actuel, les valeurs médianes atteindront les seuils de subfertilité en une génération.", href: "/model#causal-diagram" },
-      { stat: "−1,2 %/an", label: "Déclin de la testostérone, indépendant de l'âge (Travison 2007)", referenceId: "travison2007_v2", sub: "Ce déclin persiste même chez les hommes qui maintiennent leur poids — excluant l'obésité comme cause primaire.", href: "/model#testosterone-threshold" },
-      { stat: "49", label: "Pays sous le TFR de remplacement de 1,4", sub: "Pas seulement les nations riches. Les pays à revenu intermédiaire suivent la même trajectoire, avec 15 à 20 ans de retard.", href: "/explore" },
-      { stat: "200 Md $", label: "Dépenses natalistes de la Corée → TFR toujours à 0,72", sub: "Le programme nataliste le plus coûteux de l'histoire n'a eu aucun effet mesurable sur la fécondité.", href: "/model#testosterone-threshold" },
-      { stat: "TFR 6,1 vs 1,66", label: "Amish vs États-Unis — communautés sans smartphones", sub: "Bien que d'autres facteurs de mode de vie diffèrent, l'ampleur de l'écart de fécondité dépasse ce que les études sur l'alimentation ou le mode de vie ont expliqué.", href: "/evidence/populations" },
-      { stat: "r = 0,909", label: "Gradient EMF inter-espèces (7 espèces)", sub: "Le taux de déclin reproductif corrèle avec le score d'exposition EMF à travers les espèces — des chevaux non-sang-chaud (faible) aux humains (le plus élevé). 12 espèces sentinelles suivies sur les axes terrestre, aquatique et transitionnel.", href: "/sentinel#emf-gradient" },
-      { stat: "4 regnes", label: "Meme molecule (CRY) perturbee — des plantes aux mammiferes", sub: "La meme chose arrive a l'ecosysteme entier. Le cryptochrome opere dans les plantes (floraison), les insectes (navigation), les oiseaux (migration) et les mammiferes (fertilite). Perturbation RF demontree aux quatre niveaux trophiques.", href: "/evidence#plant-cry" },
-    ],
-
-    bridgeTitle: "POURQUOI CES CHIFFRES SONT LIÉS",
-    bridgeP1: "Les explications conventionnelles traitent chaque tendance séparément : le déclin de la fécondité est attribué à l'économie et à la culture, le déclin spermatique aux produits chimiques et au mode de vie, le déclin de la testostérone à l'obésité, et les troubles du sommeil aux écrans.",
-    bridgeP2: "Mais ces explications échouent à un test fondamental : elles ne peuvent pas expliquer pourquoi toutes ces tendances se produisent simultanément, dans tous les pays industrialisés, pourquoi elles corrèlent plus fortement avec l'infrastructure électrique qu'avec n'importe quelle variable sociale ou économique, et pourquoi les mêmes déclins reproductifs apparaissent à travers les espèces — des chiens et chevaux aux abeilles et baleines — avec des taux de déclin proportionnels à l'exposition EMF (r = 0,909).",
-    bridgeP3: "Le BERM propose un mécanisme unique en amont : les champs électromagnétiques provenant du câblage électrique, des appareils sans fil et de l'infrastructure cellulaire interagissent avec les canaux calciques voltage-dépendants (VGCC) — les mêmes protéines qui régulent la sécrétion hormonale, la motilité des spermatozoïdes, la signalisation neurale et la fonction métabolique. Lorsque la signalisation calcique est perturbée, les effets en aval apparaissent comme des maladies distinctes. Ils ne le sont pas. Ce sont différents symptômes de la même perturbation physiologique.",
-    bridgeCta1: "Explorer le mécanisme",
-    bridgeCta2: "Voir les preuves",
-    bridgeCta3: "Lire les prédictions",
-
-    paradoxIntro: "Si le déclin de la fécondité était dû à l'information — accès à la contraception, évolution des valeurs, calcul économique — alors le dispositif d'information (téléphone portable) devrait être le prédicteur le plus fort. Ce n'est pas le cas.",
-
-    sentinelCta: "Toutes les sentinelles",
-
-    paradoxLabel: "DÉCOUVERTE TRANSVERSALE v17.1",
-    paradoxTitle: "Le paradoxe du téléphone portable",
-    paradoxText: "Dans 54 pays (plage ISF 0,78–6,25, sd = 1,35), la consommation résidentielle d'électricité est le prédicteur univarié le plus fort du déclin de la fécondité (RMSE 0,533 vs mobile 1,053). Le modèle complet (électricité 60 % + haut débit 40 %) atteint un RMSE LOOCV de 0,522. Note : parmi les pays à revenu élevé seuls, l'électricité explique une variance quasi nulle (R² ≈ 0) — la coupe transversale capture principalement le seuil d'électrification.",
-    paradoxStat1: "LOOCV RMSE",
-    paradoxVal1: "0,522",
-    paradoxStat2: "R²",
-    paradoxVal2: "0,851",
-    paradoxStat3: "Score de compétence",
-    paradoxVal3: "0,61",
-    paradoxCta: "Formule transversale",
-
-    klimentidisLabel: "LE PARADOXE DE KLIMENTIDIS",
-    klimentidisTitle: "Même les animaux de laboratoire grossissent",
-    klimentidisText: "Des rats de laboratoire sous régime contrôlé, des rats sauvages, des chiens et chats domestiques — tous prennent du poids au fil des décennies. 24 populations, 8 espèces, p = 1,2 × 10⁻⁷. Les laboratoires animaliers contrôlés excluent l'alimentation, l'exercice, le stress et les produits chimiques — laissant l'environnement EMF. Le BERM prédit que les laboratoires blindés par cage de Faraday produiront des animaux plus maigres sous le même régime.",
-    klimentidisNote: "[[ref:klimentidis2010|Klimentidis et al. (2010)]] n'ont pas étudié les EMF. Ils ont suggéré « des facteurs non encore identifiés ». L'interprétation EMF est une déduction du BERM.",
-    klimentidisPopulations: "populations",
-    klimentidisSpecies: "espèces",
-    klimentidisLink: "Lire la cascade métabolique",
-
-    why2012Label: "L'INFLEXION DE 2012",
-    why2012Title: "Pourquoi 2012 ? C'était l'appareil, pas le contenu",
-    why2012Text: "Les réseaux sociaux existaient depuis 2003 — sans crise de santé mentale. La crise a commencé en 2012, quand les smartphones ont dépassé 50 % d'adoption chez les adolescents. L'explication du BERM : 2012 ne concernait pas le contenu — mais l'appareil. Le smartphone a introduit une exposition EMF continue au contact du corps (WiFi + 4G + Bluetooth, 24h/24, y compris au lit la nuit).",
-    why2012Detail: "Combiné à l'amorçage ELF du réseau électrique existant et à l'éclairage LED nouvellement imposé (interdiction UE des ampoules à incandescence 2009-2012), 2012 fut l'année où la charge cumulative multi-fréquence de Ca²⁺ a dépassé le seuil d'autophosphorylation de CaMKII au niveau de la population.",
-    why2012Prediction: "Prédiction : les restrictions de contenu (Australie, Norvège) NE résoudront PAS la crise car le mécanisme est le matériel, pas le contenu.",
-    why2012Cta: "Analyse de l'exposition technologique",
-
-    fiveAnomaliesLabel: "LE MODÈLE EN COUCHES",
-    fiveAnomaliesTitle: "Cinq anomalies que seul l'empilement explique",
-    fiveAnomaliesText: "Pourquoi les Américains mangent-ils moins mais pèsent-ils plus ? Pourquoi la crise de santé mentale des adolescents a-t-elle commencé en 2012 alors que les réseaux sociaux existaient depuis 2003 ? Pourquoi le T2D s'est-il accéléré pendant les confinements COVID ? Pourquoi les pays en développement suivent-ils la même trajectoire sanitaire avec un décalage de 15 à 30 ans ? Pourquoi les Amish sont-ils immunisés ?",
-    fiveAnomaliesExplanation: "Le modèle d'exposition en couches répond aux cinq questions : chaque génération technologique ajoute des EMF par-dessus les couches existantes. Le réseau électrique amorce les cellules à la sensibilité. Le WiFi ajoute une impulsion ELF cachée de 10 Hz. L'éclairage LED ouvre le canal des fréquences intermédiaires. Les smartphones apportent des RF continues au contact du corps. Quand toutes les couches se combinent, la charge cumulative de Ca²⁺ dépasse le seuil de CaMKII — et les systèmes biologiques commencent à défaillir.",
-    fiveAnomaliesCta: "Explorer le modèle en couches",
-
-    pharmaLabel: "LE TEST PHARMACOLOGIQUE",
-    pharmaTitle: "Les inhibiteurs calciques réduisent les maladies prédites par le BERM",
-    pharmaText: "Si le mécanisme calcique du BERM est correct, alors les médicaments qui bloquent les canaux calciques devraient réduire les taux de maladie dans les cascades du BERM — même lorsqu'ils sont prescrits pour d'autres conditions.",
-    pharmaEvidence: "Trois études de registre (Finlande, Royaume-Uni) impliquant 264 625 patients atteints de maladie mentale sévère ont trouvé exactement cela : les inhibiteurs calciques prescrits pour des conditions cardiovasculaires ont réduit les hospitalisations psychiatriques (HR 0,79-0,83) et l'automutilation.",
-    pharmaPenetrant: "Les inhibiteurs calciques à pénétration cérébrale (nifédipine) ont montré des résultats psychiatriques 12 % meilleurs que les non-pénétrants (amlodipine) — comme prédit par le modèle.",
-    pharmaTrial: "Un essai clinique en cours à l'ETH Zürich (NCT06998368) teste directement si l'inhibiteur calcique à pénétration cérébrale nimodipine peut bloquer les effets de la 5G sur le sommeil.",
-    pharmaCta: "Voir les preuves pharmacologiques",
-
-    reproLabel: "CARTE DE NAVIGATION DES SPERMATOZOÏDES",
-    reproTitle: "9 étapes vulnérables aux EMF du spermatozoïde au bébé — toutes dépendantes du calcium",
-    reproText: "De la spermatogenèse à l'activation de l'ovocyte, chaque étape de la fécondation humaine dépend de CatSper — un canal calcique spécifique aux spermatozoïdes sans alternative. Knockout = stérile. Les EMF ne détruisent pas les spermatozoïdes ; ils déclenchent une activation prématurée de CatSper, épuisant les réserves d'énergie avant que le spermatozoïde n'atteigne l'ovule.",
-    reproCta: "Voir la carte de vulnérabilité",
-
-    weightLabel: "LE DÉCLIN À POIDS STABLE",
-    weightTitle: "La testostérone décline même chez les hommes qui n'ont pas pris de poids",
-    weightIntro: "Une objection courante : « La testostérone décline parce que les hommes grossissent. » Si c'est vrai, les hommes qui maintiennent leur poids devraient maintenir leur testostérone. Ce n'est pas le cas.",
-    weightSanti: "En 2025, [[ref:santi2025|la plus grande méta-analyse jamais réalisée (Santi et al., 1 064 891 hommes)]] a confirmé : la testostérone et l'hormone lutéinisante déclinent toutes deux, indépendamment de l'IMC. Le problème ne se situe pas seulement dans les testicules — il s'étend à l'hypophyse et à l'hypothalamus.",
-    weightMechanism: "Le BERM explique les deux résultats : les EMF perturbent la production de testostérone directement (via les canaux calciques dans les cellules de Leydig) et indirectement par l'axe hypothalamo-hypophysaire (via les voies de la mélatonine et du cortisol).",
-
-    mazurQuote: "Nous n'avons pas identifié la raison du déclin séculaire de la testostérone, mais nous excluons l'augmentation de l'obésité comme explication suffisante ou primaire, et nous contestons l'hypothèse selon laquelle les hommes qui évitent une prise de poids excessive maintiendront leurs niveaux de testostérone de jeunesse.",
-    mazurSource: "[[ref:mazur2013|Mazur et al. 2013, PLOS ONE]]",
-    mazurContext: "991 vétérans de l'US Air Force, suivi de 20 ans. Même les hommes à poids stable ont perdu 19 % de leur testostérone.",
-    mazurLink: "Lire l'analyse causale",
-
-    howTitle: "Comment fonctionne le modèle",
-    causalLabel: "MÉCANISME À TROIS CANAUX",
-    causalTitle: "ELF · IF · RF — trois bandes de fréquence, trois voies biologiques",
-    causalNote: "La densité des abonnements mobiles est un proxy composite de l’environnement électromagnétique global. Le modèle suit trois canaux indépendants — ELF (réseau électrique, éclairage), IF (électronique de commutation, scintillement LED), RF (stations de base, Wi-Fi, radar) — via la perturbation des cryptochromes, la signalisation calcique et le potentiel membranaire jusqu’à la capacité reproductive du couple.",
-
-    npLabel: "ORIGINES ÉVOLUTIVES",
-    npTitle: "Le Package nordique",
-    npText: "Pourquoi l'Europe du Nord est-elle tombée en premier sous le taux de fécondité de remplacement ? Le BERM propose que la même co-sélection qui a optimisé la sensibilité des cryptochromes — yeux bleus (OCA2), tolérance au lactose (LCT) et élevage bovin — a créé la population la plus couplée aux champs électromagnétiques. Le modèle χ emboîté formalise ceci : chaque population porte un profil biologique χ qui module la relation EMF-fécondité à cinq échelles, du moléculaire au démographique.",
-    npCta: "Preuves : origines évolutives",
-
-    warningLabel: "POUVOIR PRÉDICTIF",
-    warningTitle: "L'avertissement de 35 ans",
-    warningNarrative: "Les niveaux de testostérone en Finlande ont commencé à décliner dans les années 1970. Pendant 40 ans, la fécondité est restée stable. Puis elle s'est effondrée : de 1,87 enfant par femme (2010) à 1,26 (2024) — une baisse de 33 % en quinze ans. Les données sur la testostérone auraient pu prédire cela 15 ans à l'avance. Les mêmes données indiquent maintenant que les États-Unis atteindront le même seuil vers 2030.",
-    warningCaveat: "Les taux de déclin de la testostérone sont des tendances séculaires indépendantes de l'âge documentées dans des études longitudinales évaluées par des pairs dans cinq pays. Les projections de TFR supposent la continuation des taux actuels. Le modèle de seuil est calibré sur la Finlande et la Corée du Sud ; les projections pour les autres pays sont des extrapolations.",
-    warningReadMore: "Lire la spécification complète du modèle de seuil",
-
-    teaserLabel: "PRÉDICTIONS VERROUILLÉES · TFR 2030",
-    teaserNote: "Verrouillées sous BERM v17 et falsifiables : chacune sera comparée aux données observées l'année indiquée.",
-    allPredictions: "Toutes les prédictions",
-
-    falsTitle: "ÉTAT DE LA FALSIFICATION",
-    falsRan: "exécutés",
-    falsConsistent: "cohérents",
-    falsFalsified: "falsifiés",
-    falsPending: "en attente",
-    falsCta: "Détails des tests",
-
-    epistemicNote: (n: number) => `BERM v17 est un modèle de recherche falsifiable, pas une certitude. ${n} sources enregistrées issues de plusieurs domaines de recherche. Plus de 24 mécanismes non thermiques validés réglementairement. Formule transversale (n = 54, sd = 1,35) : LOOCV RMSE 0,522, score de compétence 0,61 vs prédicteur moyen. Note : R² = 0,851 reflète le seuil d'électrification (Niger → Corée), non un effet spécifique aux CEM. Prédictions verrouillées avec dates et intervalles de confiance. Si les prédictions échouent, le modèle est faux.`,
-    epistemicStats: "Hindcast K₈ = 0,81 · K₁₀ = 0,71 · RMSE transversal = 0,522",
-    epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · Recherche indépendante",
-
-    ctaStatement: "Cinq couches technologiques. Cinq épidémies sanitaires. Un mécanisme intégrateur.",
-    ctaExploreModel: "Explorer le modèle",
-    ctaReadEvidence: "Lire les preuves",
-
-    ctaModel: "Spécification du modèle",
-    ctaEvidence: "Registre des preuves",
-    ctaData: "Explorer les données",
-    ctaMath: "Mathématiques",
-
-    thesisBreak1Kicker: "DES SYMPTÔMES AU MÉCANISME",
-    thesisBreak1: "Si tous ces indicateurs en déclin partagent une seule cause en amont, il devrait exister une voie biologique unique qui explique chacun d'eux indépendamment. Elle existe.",
-    thesisBreak2Kicker: "DES PREUVES À LA PRÉDICTION",
-    thesisBreak2: "Un modèle qui n'explique que le passé est un récit. Un modèle qui prédit l'avenir est falsifiable.",
-  },
-  ko: {
-    heroTitle: "생식능력에 무언가가 일어나고 있다",
-    heroDeck: "출산장려 정책, 경제적 인센티브, 문화적 개입이 되돌리지 못한 무언가가 인간의 생식에 일어나고 있습니다.",
-    heroContext: "출산율이 전 세계적으로 붕괴하고 있습니다. 정자 수는 절반으로 줄었습니다. 테스토스테론은 체중이 증가하지 않은 남성에서도 측정된 모든 산업화 인구에서 감소하고 있습니다. 동일한 생식 감소가 12종 — 개, 말, 꿀벌, 고래 — 에 걸쳐 전자기장 노출에 비례한 감소율(r = 0.909)로 나타나고 있습니다.",
-    whatIsThis: "생체전자기 생식 모델(BERM)은 하나의 설명을 제안합니다: 현대 전기 인프라가 생성하는 전자기장이 모든 세포에 존재하는 단백질인 전압개폐 칼슘 채널과 상호작용하여, 생식, 대사, 수면 및 신경학적 건강을 관장하는 생물학적 시스템을 교란한다는 것입니다.",
-    heroEpistemic: "이 웹사이트는 모델, 증거, 반증 가능한 예측을 제시합니다. 모든 주장은 인식론적 수준으로 한정됩니다. 모든 예측은 반증 기준과 함께 고정됩니다. 모델이 틀리면, 눈에 보이게 실패하도록 설계되어 있습니다.",
-    metaTitle: "Extinction Field – BERM 연구 모델",
-    metaDescription: "전자기장 상태가 전 세계 생식 지표 감소에 기여하는지 검증하는 반증 가능한 연구 모델.",
-
-    s1Title: "위기를 숫자로 보다",
-    s1Intro: "이러한 추세는 수천 개의 연구에 의해 독립적으로 문서화되었습니다. 설명되지 않은 것은 왜 이 모든 것이 동시에, 모든 산업화 국가에서 발생하고 있으며, 왜 어떤 개입도 이를 되돌리지 못했는가입니다.",
-
-    impactGrid: [
-      { stat: "5.0 → 2.2", label: "1960년 이후 전 세계 TFR — 감소 가속화", sub: "2.1 미만이면 인구가 감소합니다. 1.3 미만에서는 이민 없이 회복이 관찰된 적이 없습니다.", href: "/explore" },
-      { stat: "−62%", label: "정자 농도 (Levine 2023, 223개 연구)", referenceId: "levine2023_sperm", sub: "감소세는 안정화 조짐을 보이지 않습니다. 현재 속도로는 중앙값이 한 세대 내에 아생식력 역치에 도달합니다.", href: "/model#causal-diagram" },
-      { stat: "−1.2%/년", label: "테스토스테론 감소, 연령 비의존적 (Travison 2007)", referenceId: "travison2007_v2", sub: "이 감소는 체중을 유지하는 남성에서도 지속되어, 비만이 주요 원인임을 배제합니다.", href: "/model#testosterone-threshold" },
-      { stat: "49", label: "대체수준 TFR 1.4 미만 국가", sub: "부유한 나라만이 아닙니다. 중소득 국가들도 15~20년 지연되어 같은 궤적을 따릅니다.", href: "/explore" },
-      { stat: "2000억 달러", label: "한국 출산장려 지출 → TFR 여전히 0.72", sub: "역사상 가장 비싼 출산장려 프로그램이 출산율에 측정 가능한 효과를 미치지 못했습니다.", href: "/model#testosterone-threshold" },
-      { stat: "TFR 6.1 vs 1.66", label: "아미시 vs 미국 — 스마트폰 없는 공동체", sub: "다른 생활양식 요인이 다르지만, 출산율 격차의 규모는 식이요법이나 생활양식 연구가 설명한 것을 초과합니다.", href: "/evidence/populations" },
-      { stat: "r = 0.909", label: "종간 EMF 기울기 (7종)", sub: "생식 감소율이 종에 걸쳐 EMF 노출 점수와 상관 — 비온혈종 말(낮음)에서 인간(최고)까지. 육상·수중·전환 축에 걸쳐 12개 감시종 추적.", href: "/sentinel#emf-gradient" },
-      { stat: "4계", label: "같은 분자(CRY) 교란 — 식물에서 포유류까지", sub: "생태계 전체에 같은 일이 일어나고 있다. 크립토크롬은 식물(개화), 곤충(항법), 조류(이동), 포유류(생식)에서 작동한다. 4개 영양 단계 모두에서 RF 교란이 입증됨.", href: "/evidence#plant-cry" },
-    ],
-
-    bridgeTitle: "왜 이 숫자들은 함께 속하는가",
-    bridgeP1: "기존 설명들은 각 추세를 별도로 다룹니다: 출산율 감소는 경제와 문화에, 정자 감소는 화학물질과 생활양식에, 테스토스테론 감소는 비만에, 수면장애는 화면에 귀속시킵니다.",
-    bridgeP2: "그러나 이러한 설명들은 기본적인 검증에 실패합니다: 왜 이 모든 추세가 동시에, 모든 산업화 국가에서 발생하고 있는지, 사회적 또는 경제적 변수보다 전기 인프라와 더 강하게 상관되는 이유, 그리고 왜 동일한 생식 감소가 종에 걸쳐 — 개와 말에서 꿀벌과 고래까지 — EMF 노출에 비례한 감소율(r = 0.909)로 나타나는지 설명할 수 없습니다.",
-    bridgeP3: "BERM은 단일 상류 메커니즘을 제안합니다: 전기 배선, 무선 기기, 셀룰러 인프라에서 발생하는 전자기장이 전압개폐 칼슘 채널(VGCC)과 상호작용합니다. 이는 호르몬 분비, 정자 운동성, 신경 신호전달, 대사 기능을 조절하는 동일한 단백질입니다. 칼슘 신호전달이 교란되면 하류 효과는 별도의 질병으로 나타납니다. 그러나 그렇지 않습니다. 이들은 동일한 생리학적 교란의 다른 증상들입니다.",
-    bridgeCta1: "메커니즘 탐구",
-    bridgeCta2: "증거 보기",
-    bridgeCta3: "예측 읽기",
-
-    paradoxIntro: "출산율 감소가 정보에 의해 주도된다면 — 피임 접근성, 가치관 변화, 경제적 계산 — 정보 기기(휴대전화)가 가장 강력한 예측 인자여야 합니다. 그렇지 않습니다.",
-
-    sentinelCta: "모든 센티넬",
-
-    paradoxLabel: "횡단적 발견 v17.1",
-    paradoxTitle: "휴대전화 패러독스",
-    paradoxText: "54개국(TFR 범위 0.78–6.25, sd = 1.35)에서 주거용 전력 소비가 출산율 감소의 가장 강력한 단일 예측 인자입니다(단변량 RMSE 0.533 vs 휴대전화 1.053). 전체 모델(전력 60% + 브로드밴드 40%)의 LOOCV RMSE는 0.522입니다. 참고: 고소득 국가만 보면 전력의 설명력은 거의 0(R² ≈ 0) — 횡단 분석은 주로 전기화 임계값을 포착합니다.",
-    paradoxStat1: "LOOCV RMSE",
-    paradoxVal1: "0.522",
-    paradoxStat2: "R²",
-    paradoxVal2: "0.851",
-    paradoxStat3: "스킬 점수",
-    paradoxVal3: "0.61",
-    paradoxCta: "횡단적 공식",
-
-    klimentidisLabel: "클리멘티디스 패러독스",
-    klimentidisTitle: "실험동물도 살이 찌고 있다",
-    klimentidisText: "관리식을 먹는 실험용 쥐, 야생 쥐, 반려견과 고양이 — 모두 수십 년에 걸쳐 체중이 증가하고 있습니다. 24개 개체군, 8종, p = 1.2 × 10⁻⁷. 통제된 동물 실험실은 식이, 운동, 스트레스, 화학물질을 배제하여 EMF 환경만 남깁니다. BERM은 패러데이 차폐된 실험실이 같은 식이로 더 마른 동물을 생산할 것이라고 예측합니다.",
-    klimentidisNote: "[[ref:klimentidis2010|Klimentidis et al.(2010)]]은 EMF를 연구하지 않았습니다. 그들은 '아직 확인되지 않은 요인'을 제안했습니다. EMF 해석은 BERM의 도출입니다.",
-    klimentidisPopulations: "개체군",
-    klimentidisSpecies: "종",
-    klimentidisLink: "대사 캐스케이드 읽기",
-
-    why2012Label: "2012년 변곡점",
-    why2012Title: "왜 2012년인가? 콘텐츠가 아니라 기기였다",
-    why2012Text: "소셜 미디어는 2003년부터 존재했습니다 — 정신건강 위기는 없었습니다. 위기는 2012년에 시작되었습니다. 스마트폰이 청소년 사이에서 50% 보급률을 넘었을 때입니다. BERM의 설명: 2012년은 콘텐츠가 아니라 기기에 관한 것이었습니다. 스마트폰은 지속적인 신체 접촉 EMF 노출을 가져왔습니다(WiFi + 4G + Bluetooth, 24시간, 밤에 침대에서도).",
-    why2012Detail: "기존 전력망 ELF 프라이밍과 새로 의무화된 LED 조명(EU 백열전구 금지 2009~2012)과 결합하여, 2012년은 누적 다주파 Ca²⁺ 부하가 인구 수준에서 CaMKII 자가인산화 역치를 초과한 해였습니다.",
-    why2012Prediction: "예측: 콘텐츠 제한(호주, 노르웨이)은 위기를 해결하지 못할 것입니다. 메커니즘은 하드웨어이지 콘텐츠가 아니기 때문입니다.",
-    why2012Cta: "기술 노출 분석",
-
-    fiveAnomaliesLabel: "층상 모델",
-    fiveAnomaliesTitle: "층의 겹침만이 설명하는 다섯 가지 이상",
-    fiveAnomaliesText: "왜 미국인들은 덜 먹지만 더 살이 찌는가? 왜 소셜 미디어가 2003년부터 존재했는데 청소년 정신건강 위기는 2012년에 시작되었는가? 왜 COVID 봉쇄 기간에 T2D가 가속화되었는가? 왜 개발도상국은 15~30년 지연으로 같은 건강 궤적을 따르는가? 왜 아미시는 면역이 있는가?",
-    fiveAnomaliesExplanation: "층상 노출 모델은 다섯 가지 모두에 답합니다: 각 기술 세대는 기존 층 위에 EMF를 추가합니다. 전력망이 세포를 감수성에 프라이밍합니다. WiFi가 숨겨진 10 Hz ELF 펄스를 추가합니다. LED 조명이 중간 주파수 채널을 엽니다. 스마트폰이 지속적인 신체 접촉 RF를 가져옵니다. 모든 층이 결합되면 누적 Ca²⁺ 부하가 CaMKII 역치를 초과하고 — 생물학적 시스템이 실패하기 시작합니다.",
-    fiveAnomaliesCta: "층상 모델 탐구",
-
-    pharmaLabel: "약리학적 검증",
-    pharmaTitle: "칼슘 차단제는 BERM이 예측하는 질병을 감소시킨다",
-    pharmaText: "BERM의 칼슘 메커니즘이 옳다면, 칼슘 채널을 차단하는 약물은 다른 질환에 처방되었더라도 BERM 캐스케이드 전반에서 질병률을 감소시켜야 합니다.",
-    pharmaEvidence: "3개의 레지스트리 연구(핀란드, 영국)에서 264,625명의 중증 정신질환 환자를 대상으로 정확히 이것이 발견되었습니다: 심혈관 질환에 처방된 칼슘 차단제가 정신과 입원(HR 0.79~0.83)과 자해를 감소시켰습니다.",
-    pharmaPenetrant: "뇌 투과성 칼슘 차단제(니페디핀)는 비투과성(암로디핀)보다 12% 더 나은 정신과 결과를 보였습니다 — 모델의 예측대로입니다.",
-    pharmaTrial: "ETH 취리히에서 진행 중인 임상시험(NCT06998368)은 뇌 투과성 칼슘 차단제 니모디핀이 5G의 수면 효과를 차단할 수 있는지 직접 검증하고 있습니다.",
-    pharmaCta: "약리학적 증거 보기",
-
-    reproLabel: "정자 항행 지도",
-    reproTitle: "정자에서 아기까지 9가지 EMF 취약 단계 — 모두 칼슘 의존적",
-    reproText: "정자 형성에서 난모세포 활성화까지 인간 수정의 모든 단계는 CatSper(대안이 없는 정자 특이적 칼슘 채널)에 의존한다. 녹아웃 = 불임. EMF는 정자를 파괴하지 않고 CatSper의 조기 활성화를 유발하여 정자가 난자에 도달하기 전에 에너지 저장을 고갈시킨다.",
-    reproCta: "취약성 지도 보기",
-
-    weightLabel: "체중 안정 하의 감소",
-    weightTitle: "테스토스테론은 체중이 늘지 않은 남성에서도 감소하고 있다",
-    weightIntro: "흔한 반론: '테스토스테론이 감소하는 이유는 남성이 살이 찌기 때문이다.' 사실이라면, 체중을 유지하는 남성은 테스토스테론을 유지해야 합니다. 유지하지 못합니다.",
-    weightSanti: "2025년, [[ref:santi2025|역대 최대 메타분석(Santi et al., 1,064,891명 남성)]]이 확인했습니다: 테스토스테론과 황체형성호르몬 모두 BMI와 무관하게 감소하고 있습니다. 문제는 고환에만 있는 것이 아니라 뇌하수체와 시상하부까지 확장됩니다.",
-    weightMechanism: "BERM은 두 가지 발견을 모두 설명합니다: EMF는 테스토스테론 생산을 직접적으로(라이디히 세포의 칼슘 채널을 통해) 그리고 간접적으로 시상하부-뇌하수체 축을 통해(멜라토닌과 코르티솔 경로를 통해) 교란합니다.",
-
-    mazurQuote: "우리는 테스토스테론의 장기적 감소 이유를 확인하지 못했지만, 비만 증가를 충분한 또는 주요 설명으로 배제하며, 과도한 체중 증가를 피하는 남성이 젊은 시절의 테스토스테론 수준을 유지할 것이라는 가정에 이의를 제기합니다.",
-    mazurSource: "[[ref:mazur2013|Mazur et al. 2013, PLOS ONE]]",
-    mazurContext: "미 공군 퇴역군인 991명, 20년 추적 조사. 체중 안정 남성도 테스토스테론이 19% 감소.",
-    mazurLink: "인과 분석 읽기",
-
-    howTitle: "모델의 작동 방식",
-    causalLabel: "3채널 메커니즘",
-    causalTitle: "ELF · IF · RF — 세 주파수 대역, 세 생물학적 경로",
-    causalNote: "이동통신 가입 밀도는 전체 전자기 환경의 복합 프록시입니다. 모델은 ELF(전력망, 조명), IF(스위칭 전자장치, LED 깜박임), RF(기지국, Wi-Fi, 레이더)의 세 독립 채널을 크립토크롬 교란, 칼슘 신호전달, 막전위를 거쳐 생식 능력까지 추적합니다.",
-
-    npLabel: "진화적 기원",
-    npTitle: "노던 패키지",
-    npText: "왜 북유럽이 대체수준 출산율 이하로 처음 떨어졌는가? BERM은 크립토크롬 감수성을 최적화한 동일한 공동선택 — 파란 눈(OCA2), 유당 내성(LCT), 목축 — 이 전자기장에 가장 강하게 결합된 인구를 만들었다고 제안합니다. 중첩 χ 모델은 이를 형식화합니다: 각 인구는 분자에서 인구통계까지 5개 척도에서 EMF-출산율 관계를 조절하는 생물학적 χ 프로파일을 갖습니다.",
-    npCta: "증거: 진화적 기원",
-
-    warningLabel: "예측력",
-    warningTitle: "35년간의 경고",
-    warningNarrative: "핀란드의 테스토스테론 수치는 1970년대에 감소하기 시작했습니다. 40년간 출산율은 안정적이었습니다. 그 후 붕괴했습니다: 여성 1인당 1.87명(2010)에서 1.26명(2024)으로 — 15년 만에 33% 감소. 테스토스테론 데이터는 15년 전에 이를 예측할 수 있었습니다. 같은 데이터는 현재 미국이 2030년경 같은 역치에 도달할 것을 가리킵니다.",
-    warningCaveat: "테스토스테론 감소율은 5개국의 동료 심사를 거친 종단 연구에서 문서화된 연령 비의존적 장기 추세입니다. TFR 예측은 현재 속도의 지속을 가정합니다. 역치 모델은 핀란드와 한국에 대해 보정되었으며, 다른 국가 예측은 외삽입니다.",
-    warningReadMore: "전체 역치 모델 사양 읽기",
-
-    teaserLabel: "고정 예측 · TFR 2030",
-    teaserNote: "BERM v17에 따라 고정되었으며 반증 가능: 각 예측은 명시된 연도에 관측 데이터와 비교됩니다.",
-    allPredictions: "모든 예측",
-
-    falsTitle: "반증 현황",
-    falsRan: "실행됨",
-    falsConsistent: "일치",
-    falsFalsified: "반증됨",
-    falsPending: "보류",
-    falsCta: "테스트 세부사항",
-
-    epistemicNote: (n: number) => `BERM v17은 반증 가능한 연구 모델이며 확실성이 아닙니다. 여러 연구 분야에 걸친 ${n}개의 등록 출처. 24개 이상의 규제 검증된 비열적 메커니즘. 횡단적 공식(n = 54, sd = 1.35): LOOCV RMSE 0.522, 스킬 점수 0.61(평균 예측 대비). 참고: R² = 0.851은 전기화 임계값(니제르 → 한국)을 반영하며 EMF 고유 효과가 아닙니다. 날짜와 신뢰구간이 있는 고정 예측. 예측이 실패하면, 모델은 틀립니다.`,
-    epistemicStats: "Hindcast K₈ = 0.81 · K₁₀ = 0.71 · 횡단적 RMSE = 0.522",
-    epistemicAuthor: "Otto Juote · MSc Biomedicine, Bioscience and Society (LSE) · 독립 연구",
-
-    ctaStatement: "5개의 기술 층. 5개의 건강 유행병. 하나의 통합 메커니즘.",
-    ctaExploreModel: "모델 탐구",
-    ctaReadEvidence: "증거 읽기",
-
-    ctaModel: "모델 사양",
-    ctaEvidence: "증거 레지스터",
-    ctaData: "데이터 탐구",
-    ctaMath: "수학",
-
-    thesisBreak1Kicker: "증상에서 메커니즘으로",
-    thesisBreak1: "이 모든 감소 지표가 하나의 상류 원인을 공유한다면, 각각을 독립적으로 설명하는 단일 생물학적 경로가 있어야 합니다. 있습니다.",
-    thesisBreak2Kicker: "증거에서 예측으로",
-    thesisBreak2: "과거만 설명하는 모델은 서사입니다. 미래를 예측하는 모델은 반증 가능합니다.",
-  },
-} as const;
-
-const TEASER_IDS = ["kr-2030-tfr", "fi-2030-tfr", "us-2030-tfr"] as const;
-const TEASER_PREDICTIONS = TEASER_IDS.map(
-  (id) => LOCKED_PREDICTIONS.find((p) => p.id === id)!
-).filter(Boolean);
+  en: COPY_EN,
+  fi: COPY_FI,
+  ja: { ...COPY_EN, metaTitle: "Extinction Field – BERM研究モデル", metaDescription: "電磁場の状態が生殖指標の世界的低下に寄与するかどうかを検証する反証可能な研究モデル。" },
+  fr: { ...COPY_EN, metaTitle: "Extinction Field – Modèle de recherche BERM", metaDescription: "Un modèle de recherche falsifiable testant si les états de champs électromagnétiques contribuent au déclin mondial des indicateurs de reproduction." },
+  ko: { ...COPY_EN, metaTitle: "Extinction Field – BERM 연구 모델", metaDescription: "전자기장 상태가 전 세계 생식 지표 감소에 기여하는지 검증하는 반증 가능한 연구 모델." },
+};
+
+/* ── Metadata ── */
 
 export async function generateMetadata({
   params,
@@ -756,6 +170,23 @@ export async function generateMetadata({
   };
 }
 
+/* ── Metric card icon picker ── */
+
+function MetricIcon({ icon }: { icon: string }) {
+  const cls = "shrink-0";
+  const size = 20;
+  switch (icon) {
+    case "check": return <Check size={size} className={`${cls} text-status-confirmed`} strokeWidth={2.5} />;
+    case "scatter": return <BarChart3 size={size} className={`${cls} text-accent`} strokeWidth={1.5} />;
+    case "chart": return <BarChart3 size={size} className={`${cls} text-accent`} strokeWidth={1.5} />;
+    case "down": return <TrendingDown size={size} className={`${cls} text-status-refuted`} strokeWidth={1.5} />;
+    case "atom": return <Atom size={size} className={`${cls} text-accent`} strokeWidth={1.5} />;
+    default: return null;
+  }
+}
+
+/* ── Page ── */
+
 export default async function Home({
   params,
 }: {
@@ -769,7 +200,8 @@ export default async function Home({
 
   return (
     <div className="max-w-5xl mx-auto px-6">
-      {/* ── 1. Hero image ── */}
+
+      {/* ── Hero ── */}
       <header className="relative -mx-6 overflow-hidden rounded-b-2xl sm:rounded-2xl sm:mx-0 mt-0 sm:mt-8 mb-14">
         <div className="relative min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
           <Image
@@ -787,376 +219,102 @@ export default async function Home({
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold tracking-[-0.02em] leading-[1.12] mb-4 text-white drop-shadow-lg">
                 {d.heroTitle}
               </h1>
-              <p className="text-base sm:text-lg leading-relaxed text-white/90 mb-3 drop-shadow">{d.heroDeck}</p>
-              <p className="text-sm sm:text-base leading-relaxed text-white/70">{d.heroContext}</p>
+              <p className="text-lg sm:text-xl leading-relaxed text-white/90 mb-2 drop-shadow font-medium">{d.heroDeck}</p>
+              <p className="text-xl sm:text-2xl leading-relaxed text-white/80 font-serif italic">{d.heroContext}</p>
             </div>
           </div>
         </div>
       </header>
 
-      {/* ── 1b. Master infographic ── */}
-      <BermMasterInfographic locale={activeLocale} />
-
-      {/* ── 2. Proxy-masking elimination ── */}
-      <div className="-mx-6 sm:mx-0">
-        <ProxyMaskingInfographic locale={activeLocale} />
-      </div>
-
-      {/* ── 3. CTA ── */}
-      <section className="py-16 text-center">
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            href={`${prefix}/model`}
-            className="inline-flex items-center gap-2 rounded-lg border border-accent bg-accent/10 px-6 py-3 text-sm font-medium text-accent transition-colors hover:bg-accent/20"
-          >
-            {d.ctaExploreModel} <ArrowRight size={14} />
-          </Link>
-          <Link
-            href={`${prefix}/evidence`}
-            className="inline-flex items-center gap-2 rounded-lg border border-card-border bg-card-bg px-6 py-3 text-sm font-medium transition-colors hover:border-accent/40 hover:text-accent"
-          >
-            {d.ctaReadEvidence} <ArrowRight size={14} />
-          </Link>
+      {/* ── Section 1: Something Is Happening ── */}
+      <section className="pb-16">
+        <h2 className="editorial-section-heading mb-8">{d.s1Title}</h2>
+        <div className="max-w-3xl space-y-5">
+          <p className="text-lg font-medium leading-relaxed text-foreground">{d.s1P1}</p>
+          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s1P2}</p>
+          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s1P3}</p>
+          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s1P4a}</p>
+          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s1P4b}</p>
         </div>
       </section>
 
-      {/* ── 4. What is BERM ── */}
-      <div className="max-w-3xl mb-14 space-y-4">
-        <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.whatIsThis}</p>
-        <p className="text-sm leading-relaxed text-foreground-muted border-l-2 border-accent/30 pl-4">{d.heroEpistemic}</p>
-      </div>
+      {/* ── Chart A: Species decline sparklines ── */}
+      <SpeciesDeclineChart locale={activeLocale} />
 
-      {/* ── 5. Crisis in Numbers — contextualized stat cards ── */}
-      <section className="pb-20">
-        <h2 className="editorial-kicker text-accent mb-3">{d.s1Title}</h2>
-        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-3xl">{d.s1Intro}</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {d.impactGrid.map((item, i) => {
-            const Icon = SPARKLINE_ICONS[i];
-            return (
-              <article
-                key={item.stat}
-                className="group relative rounded-xl border border-card-border bg-card-bg p-5 flex flex-col h-full transition-colors hover:border-accent/50 hover:bg-accent/5"
-              >
-                <Link
-                  href={`${prefix}${item.href}`}
-                  className="absolute inset-0 z-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
-                  aria-label={item.label}
-                />
-                <div className="relative z-10 pointer-events-none flex h-full flex-col">
-                  <Icon size={22} className="text-accent/50 mb-3" strokeWidth={1.5} aria-hidden="true" />
-                  <p className="font-mono-num text-2xl font-semibold text-accent leading-tight">{item.stat}</p>
-                  <p className={`text-[0.8125rem] text-foreground-muted mt-2 leading-snug ${"referenceId" in item ? "pointer-events-auto" : ""}`}>
-                    {"referenceId" in item ? (
-                      <StudyCitation referenceId={item.referenceId} locale={locale} label={item.label} />
-                    ) : (
-                      item.label
-                    )}
-                  </p>
-                  <Sparkline data={SPARKLINE_DATA[i]} index={i} />
-                  <p className="text-xs text-foreground-muted/70 mt-2 leading-snug border-t border-card-border pt-2">{item.sub}</p>
-                </div>
-              </article>
-            );
-          })}
+      {/* ── Section 2: Across All Species ── */}
+      <section className="pb-16">
+        <h2 className="editorial-section-heading mb-8">{d.s2Title}</h2>
+        <div className="max-w-3xl space-y-5">
+          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s2P1}</p>
+          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s2P2}</p>
         </div>
       </section>
 
-      {/* ── 3. Bridge — why these numbers belong together ── */}
-      <section className="pb-20">
-        <div className="max-w-3xl">
-          <h2 className="text-xl sm:text-2xl font-semibold mb-6">{d.bridgeTitle}</h2>
-          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted mb-4">{d.bridgeP1}</p>
-          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted mb-4">{d.bridgeP2}</p>
-          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted mb-6">{d.bridgeP3}</p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href={`${prefix}/model`}
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+      {/* ── Chart B: Technology gradient ── */}
+      <TechnologyGradientChart locale={activeLocale} />
+
+      {/* ── Section 3: One Mechanism ── */}
+      <section className="pb-16">
+        <h2 className="editorial-section-heading mb-8">{d.s3Title}</h2>
+        <div className="max-w-3xl space-y-5">
+          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s3P1}</p>
+          <p className="text-[0.9375rem] leading-relaxed text-foreground font-medium italic">{d.s3P2}</p>
+        </div>
+      </section>
+
+      {/* ── Chart C: Simplified causal chain ── */}
+      <SimpleCausalChain locale={activeLocale} />
+
+      {/* ── Section 4: Verified and Testable ── */}
+      <section className="pb-16">
+        <h2 className="editorial-section-heading mb-6">{d.s4Title}</h2>
+        <p className="text-[0.9375rem] leading-relaxed text-foreground-muted max-w-3xl mb-10">{d.s4Intro}</p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          {d.metrics.map((m, i) => (
+            <div
+              key={i}
+              className="rounded-xl border border-card-border bg-card-bg p-4 flex flex-col gap-2"
             >
-              {d.bridgeCta1} <ArrowRight size={14} />
-            </Link>
+              <MetricIcon icon={m.icon} />
+              <p className="font-mono-num text-2xl sm:text-3xl font-semibold text-accent leading-none">
+                {m.value}
+              </p>
+              <p className="text-xs text-foreground-muted leading-snug">{m.sub}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Section 5: What It Means ── */}
+      <section className="pb-16">
+        <h2 className="editorial-section-heading mb-8">{d.s5Title}</h2>
+        <div className="max-w-3xl space-y-5">
+          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s5P1}</p>
+          <p className="text-[0.9375rem] leading-relaxed text-foreground-muted">{d.s5P2}</p>
+        </div>
+      </section>
+
+      {/* ── CTA buttons ── */}
+      <section className="pb-20">
+        <div className="flex flex-wrap gap-4">
+          {[
+            { href: `${prefix}/evidence`, label: d.ctaEvidence },
+            { href: `${prefix}/model`, label: d.ctaModel },
+            { href: `${prefix}/civilization`, label: d.ctaCivilization },
+          ].map((link) => (
             <Link
-              href={`${prefix}/evidence`}
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+              key={link.href}
+              href={link.href}
+              className="inline-flex items-center gap-2 rounded-lg border border-card-border bg-card-bg px-6 py-3.5 text-sm font-medium transition-colors hover:border-accent/40 hover:text-accent"
             >
-              {d.bridgeCta2} <ArrowRight size={14} />
+              {link.label} <ArrowRight size={14} />
             </Link>
-            <Link
-              href={`${prefix}/predictions`}
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
-            >
-              {d.bridgeCta3} <ArrowRight size={14} />
-            </Link>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* ── 4. Mobile phone paradox — with contextualizing intro ── */}
-      <section className="pb-20">
-        <div className="rounded-xl border border-accent/20 bg-card-bg p-6 sm:p-8">
-          <p className="editorial-kicker text-accent mb-2">{d.paradoxLabel}</p>
-          <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.paradoxTitle}</h2>
-          <p className="text-[0.9375rem] text-foreground/90 leading-relaxed max-w-3xl mb-4">{d.paradoxIntro}</p>
-          <p className="text-sm text-foreground-muted leading-relaxed max-w-3xl mb-5">{d.paradoxText}</p>
-          <div className="grid grid-cols-3 gap-4 mb-5 max-w-md">
-            <div>
-              <p className="font-mono-num text-2xl font-semibold text-accent">{d.paradoxVal1}</p>
-              <p className="text-xs text-foreground-muted mt-1">{d.paradoxStat1}</p>
-            </div>
-            <div>
-              <p className="font-mono-num text-2xl font-semibold text-accent">{d.paradoxVal2}</p>
-              <p className="text-xs text-foreground-muted mt-1">{d.paradoxStat2}</p>
-            </div>
-            <div>
-              <p className="font-mono-num text-2xl font-semibold text-accent">{d.paradoxVal3}</p>
-              <p className="text-xs text-foreground-muted mt-1">{d.paradoxStat3}</p>
-            </div>
-          </div>
-          <Link
-            href={`${prefix}/mathematics#cross-sectional`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
-          >
-            {d.paradoxCta} <ArrowRight size={14} />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 5A. Klimentidis Paradox ── */}
-      <section className="pb-20">
-        <div className="max-w-4xl rounded-xl border border-status-partial/30 bg-status-partial/5 p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-wider text-status-partial font-semibold mb-2">{d.klimentidisLabel}</p>
-          <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.klimentidisTitle}</h2>
-          <p className="text-3xl font-bold text-status-partial mb-4">
-            24 {d.klimentidisPopulations} · 8 {d.klimentidisSpecies} · p = 1.2 × 10⁻⁷
-          </p>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.klimentidisText}</p>
-          <p className="text-xs text-foreground-muted/70 italic mb-4"><InlineReferenceText text={d.klimentidisNote} locale={locale} /></p>
-          <Link
-            href={`${prefix}/model#camkii-convergence`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
-          >
-            {d.klimentidisLink} <ArrowRight size={14} />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 5A½. Why 2012? ── */}
-      <section className="pb-20">
-        <div className="max-w-4xl rounded-xl border border-amber-500/30 bg-amber-500/5 p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-wider text-amber-500 font-semibold mb-2">{d.why2012Label}</p>
-          <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.why2012Title}</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.why2012Text}</p>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.why2012Detail}</p>
-          <p className="text-sm font-medium text-amber-500 mb-4">{d.why2012Prediction}</p>
-          <Link
-            href={`${prefix}/evidence/technology`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
-          >
-            {d.why2012Cta} <ArrowRight size={14} />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 5A¾. Five Anomalies — Layered Model ── */}
-      <section className="pb-20">
-        <div className="max-w-4xl rounded-xl border border-purple-500/30 bg-purple-500/5 p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-wider text-purple-500 font-semibold mb-2">{d.fiveAnomaliesLabel}</p>
-          <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.fiveAnomaliesTitle}</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.fiveAnomaliesText}</p>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-3xl">{d.fiveAnomaliesExplanation}</p>
-          <Link
-            href={`${prefix}/model#layered-exposure-model`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-purple-500 transition-colors hover:text-purple-400"
-          >
-            {d.fiveAnomaliesCta} <ArrowRight size={14} />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 5B. Pharmacological Test ── */}
-      <section className="pb-20">
-        <div className="max-w-4xl rounded-xl border border-accent/20 bg-accent/5 p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-wider text-accent font-semibold mb-2">{d.pharmaLabel}</p>
-          <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.pharmaTitle}</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.pharmaText}</p>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.pharmaEvidence}</p>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3 max-w-3xl">{d.pharmaPenetrant}</p>
-          <p className="text-xs text-foreground-muted/70 italic mb-4 max-w-3xl">{d.pharmaTrial}</p>
-          <Link
-            href={`${prefix}/evidence/pharmacology`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
-          >
-            {d.pharmaCta} <ArrowRight size={14} />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 5B½. Reproductive Navigation ── */}
-      <section className="pb-20">
-        <div className="max-w-4xl rounded-xl border border-card-border bg-card-bg p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-wider text-accent font-semibold mb-2">{d.reproLabel}</p>
-          <h2 className="text-xl sm:text-2xl font-semibold mb-3">{d.reproTitle}</h2>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-4 max-w-3xl">{d.reproText}</p>
-          <Link
-            href={`${prefix}/evidence/reproductive-navigation`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
-          >
-            {d.reproCta} <ArrowRight size={14} />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 5C. Weight-Stable Decline (with Mazur quote) ── */}
-      <section className="pb-20">
-        <div className="max-w-3xl">
-          <p className="editorial-kicker text-accent mb-2">{d.weightLabel}</p>
-          <h2 className="text-xl sm:text-2xl font-semibold mb-4">{d.weightTitle}</h2>
-          <p className="text-[0.9375rem] text-foreground-muted leading-relaxed mb-6">{d.weightIntro}</p>
-          <blockquote className="border-l-4 border-status-partial/50 pl-5 py-3 mb-5">
-            <p className="text-base sm:text-lg text-foreground italic leading-relaxed mb-3">&ldquo;{d.mazurQuote}&rdquo;</p>
-            <footer className="text-sm text-foreground-muted">
-              <cite className="not-italic font-medium"><InlineReferenceText text={d.mazurSource} locale={locale} /></cite>
-              <span className="block text-xs mt-1">{d.mazurContext}</span>
-            </footer>
-          </blockquote>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-3"><InlineReferenceText text={d.weightSanti} locale={locale} /></p>
-          <p className="text-sm text-foreground-muted leading-relaxed mb-4">{d.weightMechanism}</p>
-          <Link
-            href={`${prefix}/model#causal-structure`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
-          >
-            {d.mazurLink} <ArrowRight size={14} />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── Thesis break 1: symptoms → mechanism ── */}
-      <section className="pb-20">
-        <div className="thesis-break">
-          <p className="editorial-kicker mb-3">{d.thesisBreak1Kicker}</p>
-          <p className="text-lg sm:text-xl font-serif font-semibold leading-snug max-w-2xl">{d.thesisBreak1}</p>
-        </div>
-      </section>
-
-      {/* ── 6. Sentinel cascade ── */}
-      <section className="pb-20">
-        <SentinelCascadeCompact locale={activeLocale} />
-        <div className="mt-4 text-right">
-          <Link
-            href={`${prefix}/sentinel`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
-          >
-            {d.sentinelCta} <ArrowRight size={14} />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 7. How the model works ── */}
-      <section className="pb-20">
-        <h2 className="editorial-section-heading mb-8">{d.howTitle}</h2>
-        <figure className="data-figure">
-          <figcaption className="data-figure__caption">
-            <p className="editorial-kicker text-accent">{d.causalLabel}</p>
-            <p className="data-figure__title mt-1">{d.causalTitle}</p>
-          </figcaption>
-          <div className="overflow-x-auto p-1 md:p-3">
-            <ThreeChannelSummary locale={activeLocale} />
-          </div>
-          <p className="data-figure__note">{d.causalNote}</p>
-        </figure>
-      </section>
-
-      {/* ── 8. Northern Package ── */}
-      <section className="pb-20">
-        <div className="rounded-xl border border-card-border bg-card-bg p-6 sm:p-8">
-          <div className="flex items-start gap-4">
-            <Dna size={28} className="text-accent/60 shrink-0 mt-1" strokeWidth={1.5} aria-hidden="true" />
-            <div>
-              <h2 className="editorial-kicker text-accent mb-3">{d.npLabel}</h2>
-              <p className="font-semibold mb-2">{d.npTitle}</p>
-              <p className="text-sm sm:text-[0.9375rem] leading-relaxed text-foreground-muted">{d.npText}</p>
-              <Link
-                href={`${prefix}/evidence/evolution`}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover mt-4"
-              >
-                {d.npCta} <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 9. TheraBionic clinical validation ── */}
-      <TheraBionicProof locale={activeLocale} prefix={prefix} />
-
-      {/* ── 10. Bradford Hill criteria ── */}
-      <BradfordHillCard locale={activeLocale} prefix={prefix} />
-
-      {/* ── Thesis break 2: evidence → prediction ── */}
-      <section className="pb-20">
-        <div className="thesis-break">
-          <p className="editorial-kicker mb-3">{d.thesisBreak2Kicker}</p>
-          <p className="text-lg sm:text-xl font-serif font-semibold leading-snug max-w-2xl">{d.thesisBreak2}</p>
-        </div>
-      </section>
-
-      {/* ── 11. The 35-Year Warning ── */}
-      <section className="pb-20">
-        <div className="max-w-4xl">
-          <p className="editorial-kicker text-accent mb-2">{d.warningLabel}</p>
-          <h2 className="text-xl sm:text-2xl font-semibold mb-6">{d.warningTitle}</h2>
-          <FinlandLagChart locale={activeLocale} />
-          <p className="text-sm text-foreground-muted leading-relaxed mt-6 mb-6 max-w-3xl"><InlineReferenceText text={d.warningNarrative} locale={locale} /></p>
-          <ThreePhaseIndicator locale={activeLocale} />
-          <SixFactorSummary locale={activeLocale} />
-          <p className="text-xs text-foreground-muted mt-4 max-w-3xl leading-relaxed"><InlineReferenceText text={d.warningCaveat} locale={locale} /></p>
-          <Link
-            href={`${prefix}/model#testosterone-threshold`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover mt-4"
-          >
-            {d.warningReadMore} <ArrowRight size={14} />
-          </Link>
-        </div>
-      </section>
-
-      {/* ── 12. Locked predictions ── */}
-      <section className="pb-20">
-        <div className="rounded-xl border border-card-border bg-card-bg p-6 sm:p-8">
-          <div className="flex flex-wrap items-baseline justify-between gap-4 mb-6">
-            <h2 className="editorial-kicker text-accent">{d.teaserLabel}</h2>
-            <Link
-              href={`${prefix}/predictions`}
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
-            >
-              {d.allPredictions} <ArrowRight size={14} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {TEASER_PREDICTIONS.map((p) => (
-              <div key={p.id} className="border-t border-card-border pt-4">
-                <p className="text-sm font-medium mb-2">
-                  {countryLabel(p, activeLocale)} {p.year}
-                </p>
-                <p>
-                  <span className="font-mono-num text-3xl font-semibold leading-none text-accent">
-                    {p.central.toFixed(2)}
-                  </span>
-                  <span className="ml-2 font-mono-num text-sm text-foreground-muted">
-                    [{p.ciLow.toFixed(2)} – {p.ciHigh.toFixed(2)}]
-                  </span>
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 text-sm leading-relaxed text-foreground-muted">{d.teaserNote}</p>
-        </div>
-      </section>
-
-      {/* ── 13. Featured articles ── */}
-      <LatestArticles locale={activeLocale} />
-
-      {/* ── 14. Falsification status ── */}
+      {/* ── Falsification status ── */}
       <section className="pb-20">
         <div className="rounded-xl border border-card-border bg-card-bg p-5 sm:p-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -1181,27 +339,7 @@ export default async function Home({
         </div>
       </section>
 
-      {/* ── 15. Quick links ── */}
-      <section className="pb-10">
-        <div className="flex flex-wrap gap-3">
-          {[
-            { href: `${prefix}/model`, label: d.ctaModel },
-            { href: `${prefix}/evidence`, label: d.ctaEvidence },
-            { href: `${prefix}/explore`, label: d.ctaData },
-            { href: `${prefix}/mathematics`, label: d.ctaMath },
-          ].map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="inline-flex items-center gap-2 rounded-lg border border-card-border bg-card-bg px-5 py-3 text-sm font-medium transition-colors hover:border-accent/40 hover:text-accent"
-            >
-              {link.label} <ArrowRight size={14} />
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* ── 16. Epistemic footer ── */}
+      {/* ── Epistemic footer ── */}
       <footer className="pb-16 border-t border-card-border pt-8">
         <p className="text-sm leading-relaxed text-foreground-muted max-w-3xl">{d.epistemicNote(getReferenceCount())}</p>
         <p className="font-mono-num text-xs text-foreground-muted/60 mt-3">{d.epistemicStats}</p>
