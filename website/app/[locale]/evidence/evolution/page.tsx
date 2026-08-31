@@ -11,11 +11,10 @@ import {
 } from "@/lib/evolutionData";
 import {
   CHAIN_EPISTEMIC_COLORS,
-  CHAIN_EPISTEMIC_LABELS_EN,
-  CHAIN_EPISTEMIC_LABELS_FI,
+  getChainEpistemicLabel,
 } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
-import { pickCopy } from "@/lib/i18n";
+import { pickCopy, pickField } from "@/lib/i18n";
 import { StudyCitation } from "@/components/StudyCitation";
 
 const COPY = {
@@ -276,10 +275,9 @@ const COPY = {
   },
 } as const;
 
-function EpistemicBadge({ level, isFi }: { level: string; isFi: boolean }) {
+function EpistemicBadge({ level, locale }: { level: string; locale: string }) {
   const color = CHAIN_EPISTEMIC_COLORS[level as EpistemicLevel] ?? "#6B7280";
-  const labels = isFi ? CHAIN_EPISTEMIC_LABELS_FI : CHAIN_EPISTEMIC_LABELS_EN;
-  const label = labels[level as EpistemicLevel] ?? level;
+  const label = getChainEpistemicLabel(level as EpistemicLevel, locale);
   return (
     <span
       className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold"
@@ -298,7 +296,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function EvolutionPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const isFi = locale === "fi";
   const d = pickCopy(COPY, locale);
 
   return (
@@ -326,9 +323,9 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
                 <div className="mb-3 flex flex-col items-start gap-3 sm:flex-row sm:justify-between sm:gap-4">
                   <h3 className="min-w-0 text-lg font-semibold">
                     <span className="font-mono-num text-xs text-accent mr-2">{i + 1}</span>
-                    {isFi ? scale.label_fi : scale.label_en}
+                    {pickField(scale, "label", locale)}
                   </h3>
-                  <EpistemicBadge level={scale.level} isFi={isFi} />
+                  <EpistemicBadge level={scale.level} locale={locale} />
                 </div>
 
                 <div className="overflow-x-auto">
@@ -336,11 +333,11 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
                     <tbody>
                       <tr className="border-b border-card-border/40">
                         <td className="py-2 pr-3 font-semibold text-foreground-muted w-32">{d.scaleHeaders.background}</td>
-                        <td className="py-2 text-foreground">{isFi ? scale.background_fi : scale.background_en}</td>
+                        <td className="py-2 text-foreground">{pickField(scale, "background", locale)}</td>
                       </tr>
                       <tr className="border-b border-card-border/40">
                         <td className="py-2 pr-3 font-semibold text-foreground-muted">{d.scaleHeaders.perturbation}</td>
-                        <td className="py-2 text-foreground">{isFi ? scale.perturbation_fi : scale.perturbation_en}</td>
+                        <td className="py-2 text-foreground">{pickField(scale, "perturbation", locale)}</td>
                       </tr>
                       <tr className="border-b border-card-border/40">
                         <td className="py-2 pr-3 font-semibold text-foreground-muted">{d.scaleHeaders.expression}</td>
@@ -348,11 +345,11 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
                       </tr>
                       <tr className="border-b border-card-border/40">
                         <td className="py-2 pr-3 font-semibold text-foreground-muted">{d.scaleHeaders.atZero}</td>
-                        <td className="py-2 text-foreground-muted">{isFi ? scale.at_zero_fi : scale.at_zero_en}</td>
+                        <td className="py-2 text-foreground-muted">{pickField(scale, "at_zero", locale)}</td>
                       </tr>
                       <tr className="border-b border-card-border/40">
                         <td className="py-2 pr-3 font-semibold text-foreground-muted">{d.scaleHeaders.atMax}</td>
-                        <td className="py-2 text-foreground">{isFi ? scale.at_max_fi : scale.at_max_en}</td>
+                        <td className="py-2 text-foreground">{pickField(scale, "at_max", locale)}</td>
                       </tr>
                       <tr>
                         <td className="py-2 pr-3 font-semibold text-foreground-muted">{d.scaleHeaders.verification}</td>
@@ -401,10 +398,10 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
                 const traitColor = CHAIN_EPISTEMIC_COLORS[trait.level as EpistemicLevel] ?? "#6B7280";
                 return (
                   <tr key={trait.id} className="border-b border-card-border/40">
-                    <td className="py-3 pr-3 font-medium text-foreground">{isFi ? trait.trait_fi : trait.trait_en}</td>
+                    <td className="py-3 pr-3 font-medium text-foreground">{pickField(trait, "trait", locale)}</td>
                     <td className="py-3 pr-3 text-foreground-muted font-mono text-xs">{trait.gene}</td>
-                    <td className="py-3 pr-3 text-foreground-muted text-xs leading-relaxed">{isFi ? trait.mechanism_fi : trait.mechanism_en}</td>
-                    <td className="py-3 pr-3 text-foreground-muted text-xs leading-relaxed">{isFi ? trait.cry_link_fi : trait.cry_link_en}</td>
+                    <td className="py-3 pr-3 text-foreground-muted text-xs leading-relaxed">{pickField(trait, "mechanism", locale)}</td>
+                    <td className="py-3 pr-3 text-foreground-muted text-xs leading-relaxed">{pickField(trait, "cry_link", locale)}</td>
                     <td className="py-3">
                       <span className="rounded-full px-1.5 py-0.5 text-xs font-semibold" style={{ backgroundColor: `${traitColor}20`, color: traitColor }}>
                         {trait.level}
@@ -436,11 +433,11 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
                   {phase.period}
                 </span>
                 <h3 className="text-base font-semibold text-foreground">
-                  {isFi ? phase.title_fi : phase.title_en}
+                  {pickField(phase, "title", locale)}
                 </h3>
               </div>
               <p className="text-sm text-foreground-muted leading-relaxed">
-                {isFi ? phase.description_fi : phase.description_en}
+                {pickField(phase, "description", locale)}
               </p>
             </article>
           ))}
@@ -470,13 +467,13 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
             <tbody>
               {POPULATION_PROFILES.map((p) => (
                 <tr key={p.id} className="border-b border-card-border/40">
-                  <td className="py-3 pr-3 font-medium text-foreground">{isFi ? p.label_fi : p.label_en}</td>
+                  <td className="py-3 pr-3 font-medium text-foreground">{pickField(p, "label", locale)}</td>
                   <td className="py-3 pr-3 font-mono text-xs text-foreground">{p.chi_env}</td>
                   <td className="py-3 pr-3 font-mono text-xs text-foreground">{p.chi_optical}</td>
                   <td className="py-3 pr-3 font-mono text-xs text-foreground">{p.chi_molecular}</td>
                   <td className="py-3 pr-3 text-foreground-muted text-xs">{p.dominant_pathway}</td>
                   <td className="py-3 pr-3 font-mono text-xs font-semibold text-foreground">{p.observed_tfr}</td>
-                  <td className="py-3 pr-3 text-foreground-muted text-xs leading-relaxed">{isFi ? p.status_fi : p.status_en}</td>
+                  <td className="py-3 pr-3 text-foreground-muted text-xs leading-relaxed">{pickField(p, "status", locale)}</td>
                 </tr>
               ))}
             </tbody>
@@ -500,11 +497,11 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
               <div className="mb-3 flex flex-col items-start gap-3 sm:flex-row sm:justify-between">
                 <h3 className="min-w-0 font-semibold text-sm">
                   <span className="font-mono-num text-xs text-accent mr-2">{pred.code}</span>
-                  {isFi ? pred.title_fi : pred.title_en}
+                  {pickField(pred, "title", locale)}
                 </h3>
                 <div className="flex max-w-full flex-wrap items-center gap-2 sm:shrink-0">
                   <span className="text-xs text-foreground-muted">{pred.timeframe}</span>
-                  <EpistemicBadge level={pred.level} isFi={isFi} />
+                  <EpistemicBadge level={pred.level} locale={locale} />
                 </div>
               </div>
 
@@ -514,7 +511,7 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
                     {d.predictionHeaders.test}
                   </p>
                   <p className="text-sm text-foreground-muted leading-relaxed">
-                    {isFi ? pred.test_fi : pred.test_en}
+                    {pickField(pred, "test", locale)}
                   </p>
                 </div>
 
@@ -523,7 +520,7 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
                     {d.predictionHeaders.falsification}
                   </p>
                   <p className="text-sm text-foreground-muted leading-relaxed">
-                    {isFi ? pred.falsification_fi : pred.falsification_en}
+                    {pickField(pred, "falsification", locale)}
                   </p>
                 </div>
               </div>

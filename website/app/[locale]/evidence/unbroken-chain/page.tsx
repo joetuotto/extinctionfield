@@ -174,7 +174,7 @@ const CHAIN_ROW_CITATIONS: Readonly<Record<number, readonly ChainCitation[]>> = 
   ],
   51: [
     { referenceId: "catsper_review", labels: ["RBMO 2014"] },
-    { referenceId: "catSper-temp-2025", labels: ["Nature Comms 2025"] },
+    { referenceId: "catsper-temp-2025", labels: ["Nature Comms 2025"] },
     { referenceId: "catsper_human", labels: ["JCI 2024"] },
   ],
   52: [

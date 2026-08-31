@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { MODULOME_LAYERS } from "@/lib/modulome/layers";
-import { pickCopy } from "@/lib/i18n";
+import { pickCopy, pickSuffix } from "@/lib/i18n";
 
 const LAYER_COLORS: Record<string, string> = {
   molecular: "#FFC107",
@@ -85,7 +85,6 @@ const layers = [...MODULOME_LAYERS].reverse();
 export function ModulomeLayers({ locale }: { locale: string }) {
   const [expanded, setExpanded] = useState<string | null>(null);
   const d = pickCopy(COPY, locale);
-  const useFi = locale === "fi";
 
   const totalH = PAD_T + layers.length * (LAYER_H + GAP) + 20;
 
@@ -108,8 +107,8 @@ export function ModulomeLayers({ locale }: { locale: string }) {
             const y = PAD_T + i * (LAYER_H + GAP);
             const isExpanded = expanded === layer.id;
             const color = LAYER_COLORS[layer.id] ?? "#607D8B";
-            const name = useFi ? layer.nameFi : layer.nameEn;
-            const chiMod = useFi ? layer.chiModulatorFi : layer.chiModulatorEn;
+            const name = pickSuffix(layer, "name", locale);
+            const chiMod = pickSuffix(layer, "chiModulator", locale);
 
             return (
               <g
@@ -184,7 +183,7 @@ export function ModulomeLayers({ locale }: { locale: string }) {
                   {layer.number}
                 </span>
                 <span className="text-sm font-semibold">
-                  {d.layer} {layer.number}: {useFi ? layer.nameFi : layer.nameEn}
+                  {d.layer} {layer.number}: {pickSuffix(layer, "name", locale)}
                 </span>
               </div>
 
@@ -192,13 +191,13 @@ export function ModulomeLayers({ locale }: { locale: string }) {
                 <div className="rounded-lg border border-card-border bg-card-bg p-3">
                   <span className="font-semibold text-foreground">{d.chiModulator}</span>
                   <p className="text-foreground-muted mt-0.5">
-                    {useFi ? layer.chiModulatorFi : layer.chiModulatorEn}
+                    {pickSuffix(layer, "chiModulator", locale)}
                   </p>
                 </div>
                 <div className="rounded-lg border border-card-border bg-card-bg p-3">
                   <span className="font-semibold text-foreground">{d.keyComponents}</span>
                   <p className="text-foreground-muted mt-0.5">
-                    {useFi ? layer.keyComponentsFi : layer.keyComponentsEn}
+                    {pickSuffix(layer, "keyComponents", locale)}
                   </p>
                 </div>
               </div>
@@ -206,7 +205,7 @@ export function ModulomeLayers({ locale }: { locale: string }) {
               <div className="rounded-lg bg-background-secondary p-3">
                 <span className="text-xs font-semibold text-foreground">{d.integration}</span>
                 <p className="text-xs text-foreground-muted mt-1 leading-relaxed">
-                  {useFi ? layer.integrationFi : layer.integrationEn}
+                  {pickSuffix(layer, "integration", locale)}
                 </p>
               </div>
             </div>

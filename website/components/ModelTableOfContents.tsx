@@ -17,6 +17,13 @@ interface TocGroup {
 const GROUPS: Record<string, TocGroup[]> = {
   en: [
     {
+      title: "Lindgren physics",
+      sections: [
+        { id: "physics-to-biology", label: "From physics to biology" },
+        { id: "solar-biological", label: "Solar-biological connection" },
+      ],
+    },
+    {
       title: "BERM v17",
       sections: [
         { id: "architecture", label: "Scope and boundaries" },
@@ -52,6 +59,13 @@ const GROUPS: Record<string, TocGroup[]> = {
     },
   ],
   fi: [
+    {
+      title: "Lindgrenin fysiikka",
+      sections: [
+        { id: "physics-to-biology", label: "Fysiikasta biologiaan" },
+        { id: "solar-biological", label: "Aurinko-biologinen yhteys" },
+      ],
+    },
     {
       title: "BERM v17",
       sections: [
@@ -89,6 +103,13 @@ const GROUPS: Record<string, TocGroup[]> = {
   ],
   ja: [
     {
+      title: "リンドグレン物理学",
+      sections: [
+        { id: "physics-to-biology", label: "物理学から生物学へ" },
+        { id: "solar-biological", label: "太陽-生物学的接続" },
+      ],
+    },
+    {
       title: "BERM v17",
       sections: [
         { id: "architecture", label: "範囲と境界条件" },
@@ -125,6 +146,13 @@ const GROUPS: Record<string, TocGroup[]> = {
   ],
   fr: [
     {
+      title: "Physique de Lindgren",
+      sections: [
+        { id: "physics-to-biology", label: "De la physique à la biologie" },
+        { id: "solar-biological", label: "Connexion solaire-biologique" },
+      ],
+    },
+    {
       title: "BERM v17",
       sections: [
         { id: "architecture", label: "Portée et limites" },
@@ -160,6 +188,13 @@ const GROUPS: Record<string, TocGroup[]> = {
     },
   ],
   ko: [
+    {
+      title: "린드그렌 물리학",
+      sections: [
+        { id: "physics-to-biology", label: "물리학에서 생물학으로" },
+        { id: "solar-biological", label: "태양-생물학적 연결" },
+      ],
+    },
     {
       title: "BERM v17",
       sections: [

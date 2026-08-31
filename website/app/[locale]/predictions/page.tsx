@@ -1467,6 +1467,42 @@ const COPY = {
     popCritical: "Critical discriminating",
     popLocked: "Locked: 2026-08-24",
     popStatus: "LOCKED — awaiting test",
+    tPredTitle: "Testosterone predictions",
+    tPredLead: "Predictions derived from the two-level model: testosterone secular decline as a temporal predictor of TFR. These test whether the T→TFR lag relationship generalises beyond the USA calibration window.",
+    tPredPredictions: [
+      {
+        id: "T-1",
+        title: "Countries with earlier/steeper electrification show earlier T decline onset",
+        description: "Cross-country comparison of testosterone secular decline onset timing. The two-level model predicts that countries with earlier electrification saturation (Japan, Nordics) will show T decline onset earlier than later-electrifying countries. Requires harmonised longitudinal T data from at least 5 countries. The T→TFR lag of ~8 years should be consistent across populations.",
+        falsification: "No correlation between electrification timing and T decline onset across ≥5 countries with harmonised T data, or the T→TFR lag varies by more than ±3 years across populations",
+      },
+      {
+        id: "T-2",
+        title: "LH+T pattern is hypothalamic (both declining) in all high-EMF populations",
+        description: "The Santi 2025 diagnostic predicts T↓+LH↓ (hypothalamic suppression) rather than T↓+LH↑ (testicular damage) in populations with high cumulative EMF exposure. Test: compare LH and T secular trends in at least 3 independent longitudinal cohorts. If the pattern is testicular (EDC-driven) rather than hypothalamic, the BERM pathway is weakened.",
+        falsification: "LH is stable or rising in ≥2 of 3 tested populations while T declines — indicating testicular (EDC) rather than hypothalamic (EMF) pattern",
+      },
+      {
+        id: "T-3",
+        title: "Dog sperm decline rate matches human T decline rate (both ~1%/yr)",
+        description: "Dogs share domestic EMF exposure with humans. [[ref:lea2016|Lea et al. 2016]] documented −1.0%/yr sperm decline in UK stud dogs over 26 years — the same rate as human testosterone secular decline. This cross-species rate matching is predicted by the EMF gradient (r = 0.909): species sharing the same EMF environment should show the same decline rate. Test: compare dog sperm decline onset timing with local electrification history across 3+ countries.",
+        falsification: "Dog sperm decline rates vary by >0.5%/yr across countries with similar EMF environments, or dog sperm decline predates electrification in any country",
+      },
+      {
+        id: "T-4",
+        title: "CatSper function declines proportionally to cumulative EMF exposure in semen samples",
+        description: "CatSper-dependent capacitation and progesterone-induced hyperactivation should show measurable decline with increasing cumulative EMF exposure (phone-in-pocket hours × years). Testable using existing IVF clinic semen samples with EMF exposure questionnaires. The decline should correlate with intracellular Ca²⁺ dysregulation measured by fluorescent indicators.",
+        falsification: "No correlation between self-reported phone-in-pocket exposure and CatSper-dependent functional parameters in ≥200 semen samples",
+      },
+      {
+        id: "T-5",
+        title: "CatSper blocker NNC55-0396 produces the same sperm phenotype as RF exposure at matched Ca²⁺ shift",
+        description: "If EMF acts on sperm primarily through CatSper, then pharmacological CatSper blockade (NNC55-0396) should reproduce the full phenotype of RF-exposed sperm: reduced motility, impaired capacitation, and abolished progesterone-induced hyperactivation — at the same magnitude when Ca²⁺ shifts are matched. [[ref:pmc6104424_nnc|Rennhack et al. 2018]] already showed partial phenocopying.",
+        falsification: "RF exposure produces sperm defects not reproducible by CatSper blockade — indicating a non-CatSper EMF mechanism dominates in sperm",
+      },
+    ],
+    tPredLocked: "Locked: 2026-08-31",
+    tPredStatus: "LOCKED — awaiting test",
     societalTitle: "Societal predictions",
     societalLead: "Predictions derived from the dual-lock theory: population-wide testosterone decline combined with cortisol rise produces multiplicative behavioral suppression. These test whether societal behavioral trends track the hormonal shifts BERM predicts from EMF exposure.",
     societalPredictions: [
@@ -1514,7 +1550,7 @@ const COPY = {
       {
         id: "PRIME-3",
         title: "Residential electricity consumption predicts EMF biomarkers better than mobile phone use",
-        description: "In a cohort study with personal EMF dosimetry, residential electricity consumption (kWh/month) will predict chronic EMF biomarkers (melatonin suppression, sperm quality, HRV) more strongly than mobile phone usage hours. The mechanism: electricity measures the ELF priming state, which amplifies ALL subsequent exposures. Mobile phone measures only one RF source. This explains the cross-sectional finding (RMSE 0.522 vs 1.053).",
+        description: "In a cohort study with personal EMF dosimetry, residential electricity consumption (kWh/month) will predict chronic EMF biomarkers (melatonin suppression, sperm quality, HRV) more strongly than mobile phone usage hours. The mechanism: electricity measures the ELF priming state, which amplifies ALL subsequent exposures. Mobile phone measures only one RF source. This explains the cross-sectional finding (full-model RMSE 0.522 vs 1.053).",
         timeline: "Testable within 1–2 years (cohort study with dosimetry)",
         falsification: "Mobile phone usage is a stronger predictor of biomarkers than electricity consumption",
       },
@@ -3194,6 +3230,42 @@ const COPY = {
     popCritical: "Kriittinen erotteleva",
     popLocked: "Lukittu: 2026-08-24",
     popStatus: "LUKITTU — odottaa testiä",
+    tPredTitle: "Testosteroniennusteet",
+    tPredLead: "Kaksitasoisesta mallista johdetut ennusteet: testosteronin sekulaarilasku TFR:n ajallisena ennustajana.",
+    tPredPredictions: [
+      {
+        id: "T-1",
+        title: "Aikaisemmin sähköistyneissä maissa T-lasku alkoi aikaisemmin",
+        description: "Maiden välinen vertailu testosteronin sekulaarilaskun alkamisajankohdasta. Vaatii harmonisoitua pitkittäistä T-dataa vähintään 5 maasta. T→TFR-viiveen (~8 vuotta) tulisi olla yhdenmukainen populaatioiden välillä.",
+        falsification: "Ei korrelaatiota sähköistymisajankohdan ja T-laskun alkamisen välillä ≥5 maassa harmonisoidulla T-datalla",
+      },
+      {
+        id: "T-2",
+        title: "LH+T-kaava on hypotalaaminen (molemmat laskevat) kaikissa korkean EMF:n populaatioissa",
+        description: "Santi 2025 -diagnostiikka ennustaa T↓+LH↓ (hypotalaaminen suppressio) korkean EMF-altistuksen populaatioissa. Testi: vertaa LH- ja T-sekulaaritrendejä vähintään 3 riippumattomassa pitkittäiskohortissa.",
+        falsification: "LH on stabiili tai nouseva ≥2/3 testatusta populaatiosta T:n laskiessa — osoittaisi testikulaarista (EDC) eikä hypotalaamista (EMF) kaavaa",
+      },
+      {
+        id: "T-3",
+        title: "Koirien siittiölaskuaste vastaa ihmisen T-laskuastetta (molemmat ~1 %/v)",
+        description: "Koirat jakavat kodin EMF-altistuksen ihmisten kanssa. [[ref:lea2016|Lea ym. 2016]] dokumentoi −1,0 %/v siittiölaskun brittiläisissä siitoskoirissa 26 vuoden aikana — sama aste kuin ihmisen testosteronin sekulaarilasku. Testi: vertaa koirien siittiölaskun alkamisajankohtaa paikalliseen sähköistyshistoriaan ≥3 maassa.",
+        falsification: "Koirien siittiölaskuasteet vaihtelevat >0,5 %/v maissa joissa on samankaltainen EMF-ympäristö",
+      },
+      {
+        id: "T-4",
+        title: "CatSper-toiminta laskee suhteessa kumulatiiviseen EMF-altistukseen siemennäytteissä",
+        description: "CatSper-riippuvaisen kapasitaation ja progesteronin indusoiman hyperaktivaation tulisi osoittaa mitattavaa laskua kasvavan kumulatiivisen EMF-altistuksen myötä (puhelin-taskussa-tunteja × vuosia). Testattavissa olemassa olevin IVF-klinikan siemennäyttein EMF-altistuskyselylomakkeiden kanssa.",
+        falsification: "Ei korrelaatiota itse raportoidun taskualtistuksen ja CatSper-riippuvaisten toiminnallisten parametrien välillä ≥200 siemennäytteessä",
+      },
+      {
+        id: "T-5",
+        title: "CatSper-salpaaja NNC55-0396 tuottaa saman siittiöfenotyypin kuin RF-altistus vastaavalla Ca²⁺-muutoksella",
+        description: "Jos EMF vaikuttaa siittiöihin pääasiassa CatSperin kautta, farmakologisen CatSper-salpauksen (NNC55-0396) tulisi tuottaa RF-altistetun siittiön täysi fenotyyppi: alentunut motiliteetti, heikentynyt kapasitaatio ja kumoutunut progesteroni-indusoitu hyperaktivaatio.",
+        falsification: "RF-altistus tuottaa siittiövaurioita joita ei voi toistaa CatSper-salpauksella — osoittaisi ei-CatSper-mekanismin hallitsevan",
+      },
+    ],
+    tPredLocked: "Lukittu: 2026-08-31",
+    tPredStatus: "LUKITTU — odottaa testiä",
     societalTitle: "Yhteiskunnalliset ennusteet",
     societalLead: "Ennusteet jotka perustuvat kaksoislukkoteoriaan: populaatiotason testosteronin lasku yhdistettynä kortisolin nousuun tuottaa multiplikatiivisen käyttäytymissuppression. Nämä testaavat, seuraavatko yhteiskunnalliset käyttäytymistrendit hormonaalisia muutoksia joita BERM ennustaa EMF-altistuksesta.",
     societalPredictions: [
@@ -3647,6 +3719,17 @@ const COPY = {
     popCritical: "重要判別項目",
     popLocked: "ロック日：2026-08-24",
     popStatus: "ロック済み ― テスト待ち",
+    tPredTitle: "テストステロン予測",
+    tPredLead: "二段階モデルからの予測：テストステロンの長期的低下がTFRの時間的予測因子として。",
+    tPredPredictions: [
+      { id: "T-1", title: "早期/急激な電化の国はT低下の開始が早い", description: "各国のテストステロン長期的低下開始時期の比較。調和された縦断的Tデータが5か国以上必要。", falsification: "5か国以上でT低下開始と電化時期に相関なし" },
+      { id: "T-2", title: "LH+TパターンがすべてのEMF高暴露集団で視床下部性", description: "Santi 2025診断はEMF高暴露集団でT↓+LH↓を予測。3つ以上の独立した縦断コホートで検証。", falsification: "T低下中にLHが安定または上昇している集団が3つ中2つ以上" },
+      { id: "T-3", title: "犬の精子低下率がヒトのT低下率と一致（ともに~1%/年）", description: "犬はヒトと家庭のEMF曝露を共有する。[[ref:lea2016|Lea et al. 2016]]は英国種犬で26年間にわたり−1.0%/年の精子低下を記録 — ヒトのテストステロン長期的低下と同率。テスト：3か国以上で犬の精子低下開始時期と現地の電化歴を比較。", falsification: "類似のEMF環境を持つ国間で犬の精子低下率が>0.5%/年変動" },
+      { id: "T-4", title: "CatSper機能が精液サンプルで累積EMF曝露に比例して低下", description: "CatSper依存性の受精能獲得とプロゲステロン誘導性超活性化は、累積EMF曝露の増加とともに測定可能な低下を示すはず。既存のIVFクリニック精液サンプルとEMF曝露アンケートで検証可能。", falsification: "自己報告のポケット曝露とCatSper依存機能パラメータに200サンプル以上で相関なし" },
+      { id: "T-5", title: "CatSperブロッカーNNC55-0396がCa²⁺シフト一致でRF曝露と同じ精子表現型を生成", description: "EMFが主にCatSperを介して精子に作用するなら、薬理学的CatSper阻害はRF曝露精子の完全な表現型を再現するはず。[[ref:pmc6104424_nnc|Rennhack et al. 2018]]は部分的な表現模写を既に示した。", falsification: "RF曝露がCatSper阻害で再現できない精子欠陥を生じる" },
+    ],
+    tPredLocked: "ロック日：2026-08-31",
+    tPredStatus: "ロック済み ― テスト待ち",
     societalTitle: "社会的予測",
     societalLead: "デュアルロック理論から導出：集団全体のテストステロン低下とコルチゾール上昇の組み合わせが乗法的行動抑制を生じる。社会的行動トレンドがBERMがEMF曝露から予測するホルモン変動を追跡するかをテスト。",
     societalTimeline: "タイムライン",
@@ -5051,7 +5134,7 @@ const COPY = {
       {
         id: "PRIME-3",
         title: "Residential electricity consumption predicts EMF biomarkers better than mobile phone use",
-        description: "In a cohort study with personal EMF dosimetry, residential electricity consumption (kWh/month) will predict chronic EMF biomarkers (melatonin suppression, sperm quality, HRV) more strongly than mobile phone usage hours. The mechanism: electricity measures the ELF priming state, which amplifies ALL subsequent exposures. Mobile phone measures only one RF source. This explains the cross-sectional finding (RMSE 0.522 vs 1.053).",
+        description: "In a cohort study with personal EMF dosimetry, residential electricity consumption (kWh/month) will predict chronic EMF biomarkers (melatonin suppression, sperm quality, HRV) more strongly than mobile phone usage hours. The mechanism: electricity measures the ELF priming state, which amplifies ALL subsequent exposures. Mobile phone measures only one RF source. This explains the cross-sectional finding (full-model RMSE 0.522 vs 1.053).",
         timeline: "Testable within 1–2 years (cohort study with dosimetry)",
         falsification: "Mobile phone usage is a stronger predictor of biomarkers than electricity consumption",
       },
@@ -5368,6 +5451,17 @@ const COPY = {
     popCritical: "Discriminant critique",
     popLocked: "Verrouillé : 2026-08-24",
     popStatus: "VERROUILLÉ — en attente de test",
+    tPredTitle: "Prédictions testostérone",
+    tPredLead: "Prédictions du modèle à deux niveaux : le déclin séculaire de la testostérone comme prédicteur temporel du TFR.",
+    tPredPredictions: [
+      { id: "T-1", title: "Les pays à électrification précoce/rapide montrent un début plus précoce du déclin de T", description: "Comparaison inter-pays de la date de début du déclin séculaire de T. Nécessite des données T longitudinales harmonisées de 5+ pays.", falsification: "Aucune corrélation entre le début du déclin de T et le calendrier d'électrification dans 5+ pays" },
+      { id: "T-2", title: "Le profil LH+T est hypothalamique dans toutes les populations à forte exposition EMF", description: "Le diagnostic Santi 2025 prédit T↓+LH↓ dans les populations à forte exposition EMF. Vérification dans 3+ cohortes longitudinales indépendantes.", falsification: "LH stable ou en hausse pendant le déclin de T dans 2+ cohortes sur 3" },
+      { id: "T-3", title: "Le taux de déclin spermatique canin correspond au taux de déclin de T humain (~1%/an)", description: "Les chiens partagent l'exposition EMF domestique. [[ref:lea2016|Lea et al. 2016]] : −1,0 %/an de déclin spermatique chez les chiens reproducteurs britanniques sur 26 ans — même taux que le déclin séculaire de T humain. Test : comparer le début du déclin spermatique canin avec l'historique d'électrification dans 3+ pays.", falsification: "Les taux de déclin spermatique canin varient de >0,5 %/an entre pays à environnement EMF similaire" },
+      { id: "T-4", title: "La fonction CatSper décline proportionnellement à l'exposition EMF cumulative dans les échantillons de sperme", description: "La capacitation dépendante de CatSper devrait montrer un déclin mesurable avec l'augmentation de l'exposition EMF cumulative. Testable sur les échantillons existants de cliniques FIV avec questionnaires d'exposition.", falsification: "Aucune corrélation entre l'exposition auto-déclarée et les paramètres fonctionnels CatSper dans 200+ échantillons" },
+      { id: "T-5", title: "Le bloqueur CatSper NNC55-0396 produit le même phénotype spermatique que l'exposition RF", description: "Si les EMF agissent sur le sperme principalement via CatSper, le blocage pharmacologique devrait reproduire le phénotype complet du sperme exposé aux RF. [[ref:pmc6104424_nnc|Rennhack et al. 2018]] ont déjà montré une phénocopie partielle.", falsification: "L'exposition RF produit des défauts spermatiques non reproductibles par le blocage CatSper" },
+    ],
+    tPredLocked: "Verrouillé : 2026-08-31",
+    tPredStatus: "VERROUILLÉ — en attente de test",
     societalTitle: "Prédictions sociétales",
     societalLead: "Prédictions dérivées de la théorie du double verrou : le déclin de testostérone à l'échelle de la population combiné à l'élévation du cortisol produit une suppression comportementale multiplicative. Elles testent si les tendances comportementales sociétales suivent les changements hormonaux que BERM prédit à partir de l'exposition EMF.",
     societalTimeline: "Chronologie",
@@ -6772,7 +6866,7 @@ const COPY = {
       {
         id: "PRIME-3",
         title: "Residential electricity consumption predicts EMF biomarkers better than mobile phone use",
-        description: "In a cohort study with personal EMF dosimetry, residential electricity consumption (kWh/month) will predict chronic EMF biomarkers (melatonin suppression, sperm quality, HRV) more strongly than mobile phone usage hours. The mechanism: electricity measures the ELF priming state, which amplifies ALL subsequent exposures. Mobile phone measures only one RF source. This explains the cross-sectional finding (RMSE 0.522 vs 1.053).",
+        description: "In a cohort study with personal EMF dosimetry, residential electricity consumption (kWh/month) will predict chronic EMF biomarkers (melatonin suppression, sperm quality, HRV) more strongly than mobile phone usage hours. The mechanism: electricity measures the ELF priming state, which amplifies ALL subsequent exposures. Mobile phone measures only one RF source. This explains the cross-sectional finding (full-model RMSE 0.522 vs 1.053).",
         timeline: "Testable within 1–2 years (cohort study with dosimetry)",
         falsification: "Mobile phone usage is a stronger predictor of biomarkers than electricity consumption",
       },
@@ -7089,6 +7183,17 @@ const COPY = {
     popCritical: "중요 판별 항목",
     popLocked: "잠금일: 2026-08-24",
     popStatus: "잠금 — 테스트 대기 중",
+    tPredTitle: "테스토스테론 예측",
+    tPredLead: "2단계 모델의 예측: 테스토스테론의 장기 감소가 TFR의 시간적 예측자로서.",
+    tPredPredictions: [
+      { id: "T-1", title: "조기/급속 전기화 국가는 T 감소 시작이 더 빠름", description: "각국 테스토스테론 장기 감소 시작 시기 비교. 5개국 이상의 조화된 종단적 T 데이터 필요.", falsification: "5개국 이상에서 T 감소 시작과 전기화 시기 사이에 상관관계 없음" },
+      { id: "T-2", title: "LH+T 패턴이 모든 EMF 고노출 집단에서 시상하부성", description: "Santi 2025 진단은 EMF 고노출 집단에서 T↓+LH↓을 예측. 3개 이상의 독립 종단 코호트에서 검증.", falsification: "T 감소 중 LH가 안정적이거나 상승하는 집단이 3개 중 2개 이상" },
+      { id: "T-3", title: "개의 정자 감소율이 인간 T 감소율과 일치(양쪽 ~1%/년)", description: "개는 인간과 가정 EMF 노출을 공유한다. [[ref:lea2016|Lea et al. 2016]]: 영국 종견에서 26년간 −1.0%/년 정자 감소 — 인간 테스토스테론 장기 감소와 동일 비율. 테스트: 3개국 이상에서 개 정자 감소 시작 시기와 현지 전기화 이력 비교.", falsification: "유사한 EMF 환경의 국가 간 개 정자 감소율이 >0.5%/년 차이" },
+      { id: "T-4", title: "CatSper 기능이 정액 샘플에서 누적 EMF 노출에 비례하여 감소", description: "CatSper 의존 수정능 획득은 누적 EMF 노출 증가와 함께 측정 가능한 감소를 보여야 한다. 기존 IVF 클리닉 정액 샘플과 EMF 노출 설문으로 검증 가능.", falsification: "자기 보고 포켓 노출과 CatSper 의존 기능 파라미터 사이에 200 샘플 이상에서 상관관계 없음" },
+      { id: "T-5", title: "CatSper 차단제 NNC55-0396가 Ca²⁺ 이동 일치 시 RF 노출과 동일한 정자 표현형 생성", description: "EMF가 주로 CatSper를 통해 정자에 작용한다면, 약리학적 CatSper 차단이 RF 노출 정자의 완전한 표현형을 재현해야 한다. [[ref:pmc6104424_nnc|Rennhack et al. 2018]]이 부분적 표현형 모방을 이미 보여줌.", falsification: "RF 노출이 CatSper 차단으로 재현할 수 없는 정자 결함을 생산" },
+    ],
+    tPredLocked: "잠금일: 2026-08-31",
+    tPredStatus: "잠금 — 테스트 대기 중",
     societalTitle: "사회적 예측",
     societalLead: "이중 잠금 이론에서 도출: 집단 전체 테스토스테론 감소와 코르티솔 상승의 결합이 곱셈적 행동 억제를 생성. 사회적 행동 추세가 BERM이 EMF 노출에서 예측하는 호르몬 변화를 추적하는지 테스트.",
     societalTimeline: "타임라인",
@@ -8493,7 +8598,7 @@ const COPY = {
       {
         id: "PRIME-3",
         title: "Residential electricity consumption predicts EMF biomarkers better than mobile phone use",
-        description: "In a cohort study with personal EMF dosimetry, residential electricity consumption (kWh/month) will predict chronic EMF biomarkers (melatonin suppression, sperm quality, HRV) more strongly than mobile phone usage hours. The mechanism: electricity measures the ELF priming state, which amplifies ALL subsequent exposures. Mobile phone measures only one RF source. This explains the cross-sectional finding (RMSE 0.522 vs 1.053).",
+        description: "In a cohort study with personal EMF dosimetry, residential electricity consumption (kWh/month) will predict chronic EMF biomarkers (melatonin suppression, sperm quality, HRV) more strongly than mobile phone usage hours. The mechanism: electricity measures the ELF priming state, which amplifies ALL subsequent exposures. Mobile phone measures only one RF source. This explains the cross-sectional finding (full-model RMSE 0.522 vs 1.053).",
         timeline: "Testable within 1–2 years (cohort study with dosimetry)",
         falsification: "Mobile phone usage is a stronger predictor of biomarkers than electricity consumption",
       },
@@ -9836,6 +9941,32 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
           ))}
         </div>
       </section>
+
+      {/* Testosterone predictions */}
+      {d.tPredPredictions && (
+        <section className="mb-14 border-t editorial-rule pt-6">
+          <h2 className="editorial-section-heading mb-3">{d.tPredTitle}</h2>
+          <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.tPredLead}</p>
+          <div className="grid gap-4 max-w-4xl">
+            {d.tPredPredictions.map((tp: { id: string; title: string; description: string; falsification: string }) => (
+              <article key={tp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+                <div className="flex flex-wrap items-center gap-2 mb-3">
+                  <span className="font-mono-num text-xs text-red-500">{tp.id}</span>
+                  <h3 className="font-semibold">{tp.title}</h3>
+                  <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                    {d.tPredStatus}
+                  </span>
+                </div>
+                <p className="text-sm text-foreground-muted leading-relaxed mb-3"><InlineReferenceText text={tp.description} locale={locale} /></p>
+                <p className="text-xs text-red-500/80 mb-3"><span className="font-semibold">Falsification:</span> {tp.falsification}</p>
+                <div className="space-y-1 text-xs text-foreground-muted">
+                  <p className="font-mono-num">{d.tPredLocked}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Societal predictions */}
       <section className="mb-14 border-t editorial-rule pt-6">

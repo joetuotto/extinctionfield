@@ -27,6 +27,8 @@ import {
   Thermometer,
   Sun,
   Heart,
+  TrendingDown,
+  Navigation,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CitationLink } from "@/components/CitationLink";
@@ -39,6 +41,7 @@ import { ReferencesSummary } from "@/components/ReferencesSummary";
 import { RetrodictionCards } from "@/components/RetrodictionCards";
 import { DiseaseCascadeTimeline } from "@/components/DiseaseCascadeTimeline";
 import { DifferentialSusceptibility } from "@/components/DifferentialSusceptibility";
+import { InlineReferenceText } from "@/components/InlineReferenceText";
 import {
   causalNodeLabels,
   FIELDSTATE_EVIDENCE,
@@ -93,9 +96,29 @@ const COPY = {
     fields: { nodes: "Causal nodes", field: "Field class", scope: "Translation scope", limitations: "Limitations", role: "Calibration role", source: "DOI / source" },
     structural: "Structural only",
     contextual: "Context only",
+    catsperTitle: "CatSper: The Irreplaceable Channel",
+    catsperLead: "Nine calcium-dependent steps span sperm production to fertilization. CatSper is required at every step — capacitation, rheotaxis, thermotaxis, chemotaxis, and acrosome reaction — and has no biological backup. CatSper knockout in any species tested produces complete male infertility.",
+    catsperP1: "CatSper is the only sperm-specific calcium channel. It is voltage-gated, pH-sensitive, temperature-gated (Q₁₀ = 5.1, threshold 33.5 °C), and responds to picomolar progesterone from cumulus cells. EMF-induced Ca²⁺ dysregulation disrupts the precise timing that CatSper requires — premature activation depletes finite energy stores before sperm reach the egg.",
+    catsperP2: "CATSPER2⁻/⁻ men show abolished progesterone-induced hyperactivation, failing fertilization both in vivo and in vitro ([[ref:catsper_human|JCI 2024]]). The pharmacological signature is consistent: CatSper blockers (NNC55-0396) produce the same motility and acrosome reaction deficits as EMF exposure ([[ref:pmc6104424_nnc|Rennhack et al. 2018]]).",
+    catsperEvolution: "CatSper is conserved from sea urchins to humans — the same channel controls fertilization across 600 million years of evolution. Aquatic species (sea urchins, salmon) use CatSper in external fertilization where EMF from submarine cables provides a natural experiment.",
+    catsperDetailLink: "Full 9-step reproductive navigation chain",
     sentinelTitle: "Sentinel and cross-species evidence",
     sentinel: "The Cross-Species Lag Index is a readiness protocol for joining regional outcomes, measured FieldState and endpoint covariates in a registered cross-species test.",
+    sentinelGradient: "Across 7 species with quantifiable reproductive decline rates, the decline rate correlates with EMF exposure score at r = 0.909. Dogs ([[ref:lea2016|Lea et al. 2016]]): −1.0%/yr sperm decline over 26 years in UK stud dogs sharing domestic EMF exposure. Horses ([[ref:harris2023|Harris et al. 2023]]): −0.75%/yr stallion sperm decline over 35 years. The pattern extends to honeybees, birds, frogs, and aquatic species — each declining on timelines proportional to their electromagnetic environment.",
+    sentinelTLink: "This cross-species gradient connects directly to the testosterone secular decline documented in humans: the same EMF mechanism (VGCC → Ca²⁺ → reproductive disruption) operates in dogs sharing our domestic EMF environment and produces the same ~1%/yr decline rate. The T→TFR lag of 8 years provides temporal calibration — countries with earlier electrification should show earlier T decline onset (prediction T-1).",
+    sentinelGradientStat: "r = 0.909",
+    sentinelGradientLabel: "Cross-species EMF gradient (7 species)",
     sentinelLink: "View sentinel readiness",
+    sentinelTDeclineLink: "Testosterone decline evidence",
+    anchorTitle: "Mechanistic Anchors",
+    anchorP1: "[[ref:kalmijn1971|Kalmijn (J. Exp. Biol. 1971)]] demonstrated that elasmobranchs (sharks and rays) reliably detect electric fields as low as 5 nV/cm (5 × 10⁻⁷ V/m) through their ampullae of Lorenzini. This threshold is well below the IFO-VGIC sensitivity level used by BERM — a vertebrate nervous system processes fields at intensities that current safety standards consider biologically inert.",
+    anchorP2: "The Lorenzini ampullae use ion channel conductance changes — physically analogous to VGCC gate dynamics. This is not a different mechanism in a more sensitive animal; it is the same mechanism (ion channel perturbation by weak electric fields) expressed in a different tissue. The phylogenetic conservation of field sensitivity across 10⁻⁵ to 10⁻⁷ V/m in vertebrates directly counters the 'fields too weak for biology' objection.",
+    anchorNote: "Elasmobranch electroreception is a well-established sensory modality, not disputed. The extrapolation to mammalian VGCC sensitivity is a BERM interpretation — the Lorenzini ampulla is a specialized sense organ with geometry optimized for field detection, which mammalian tissues lack. The analogy is mechanistic (both use ion channel conductance), not anatomical.",
+    animalTitle: "Animal Evidence: Controlled EMF Experiments",
+    animalP1: "[[ref:rodriguez2003|Rodriguez et al. (J. Reprod. Fert. 2003)]] exposed dairy heifers to 60 Hz EMF (10 kV/m, 30 µT) in a controlled experiment at McGill University. Results: melatonin decreased (EMF acts as an artificial 'long day' signal), estrous cycle duration increased (p < 0.01), and luteal phase duration increased (p < 0.01). [[ref:burchard2002|Burchard et al. (J. Dairy Sci. 2002)]] found the same EMF exposure increased IGF-1 and dry matter intake.",
+    animalP2: "This is direct experimental evidence that ELF fields at environmental levels alter reproductive endocrinology in large mammals. However, dairy cattle have been exposed to stable barn ELF since electrification (~1950s onward). Breeding selection pressure is ~3 orders of magnitude larger than any EMF effect. This is why livestock is correctly classified as a negative control in the BERM sentinel registry — the EMF IS biologically active, but selection masks it.",
+    animalP3: "The stray voltage literature (contact currents in milliamps from faulty wiring) is orthogonal. Rodriguez measured chronic field exposure (µT), not acute contact current (mA). Only Rodriguez-type studies test BERM's mechanism — chronic low-level ELF field effects on reproductive endocrinology.",
+    animalNote: "Rodriguez/Burchard experiments are peer-reviewed controlled studies with clear biological endpoints. The negative-control classification for livestock applies to population-level decline detection (selection overwhelms the signal), not to whether ELF is biologically active (it is). An Amish vs conventional dairy comparison — where Amish barns have lower ELF — would be the next informative test.",
     extPathway: "Pathway",
     extLevel: "Evidence level",
     extStatus: "Migration status",
@@ -216,7 +239,7 @@ const COPY = {
     svgNonMonotonic: "Non-monotonic response",
     subPagesTitle: "Thematic evidence pages",
     subPagesLead: "Detailed analyses where individual studies are synthesized into mechanistic arguments. Each narrative synthesizes published findings; none establishes a population-level causal coefficient.",
-    researchDomainsTitle: "10 independent research domains",
+    researchDomainsTitle: "11 independent research domains",
     convergenceDiagram: "Convergence diagram",
     bioActivity: "bio-activity",
     deviceLabel: "Device",
@@ -261,8 +284,44 @@ const COPY = {
     mechanismNowLabel: "Mechanism (now)",
     nextLinkLabel: "Next",
     nextLinkTitle: "Criticism and responses",
-    researchDomainsLead: "BERM's mechanistic pathways draw on 10 mutually independent research domains. No single domain is sufficient, but their convergence on the same prediction — biological activity of electromagnetic fields — is unlikely by chance.",
+    researchDomainsLead: "BERM's mechanistic pathways draw on 11 mutually independent research domains. No single domain is sufficient, but their convergence on the same prediction — biological activity of electromagnetic fields — is unlikely by chance.",
     cry2PathwayNote: "CRY2's downstream effects extend beyond the circadian clock. Yap et al. (2025) showed that CRY2 physically interacts with TRPC1, a TRP-family cation channel, and that this complex co-translocates to the nucleus after PEMF exposure. This calcium entry pathway is CRY2-dependent (blocked by CRY2 silencing), light-dependent (lost in darkness), and FAD-dependent (attenuated by RFK silencing) — all hallmarks of the RPM mechanism. Importantly, TRPC1 is NOT a voltage-gated calcium channel and is NOT blocked by L-type VGCC blockers. This means pathways A and C (site's B) remain pharmacologically separable, but pathway C's biological footprint is larger than previously assumed.",
+    solarTitle: "Solar Cycle & Geomagnetic Biology: The 11th Convergence Line",
+    solarIntro: "BERM defines two independent susceptibilities: χ(Ā) (VGCC, geometric field coupling) and χ_B (CRY/RPM, radical-pair spin dynamics). The solar cycle tests χ_B because it operates WITHOUT an electrification threshold — solar-driven geomagnetic variations have modulated radical-pair chemistry for billions of years, long before anthropogenic EMF. If CRY-mediated pathways are real, their signatures should appear in solar-cycle-length biological rhythms.",
+    solarResearchLabel: "Key research evidence",
+    solarStudies: [
+      { authors: "Randall", year: "1990/1993", finding: "11-year birth rate periodicity detected in 7 countries", mechanism: "Population endpoint" },
+      { authors: "Skjærvø et al.", year: "2015", finding: "Pre-industrial Norway (1676–1878, N=8,662): individuals born at solar maximum lived 5.2 years shorter", mechanism: "Lifespan endpoint" },
+      { authors: "Burch et al.", year: "1999", finding: "Geomagnetic disturbance → reduction in melatonin metabolite (6-OHMS) excretion", mechanism: "Melatonin suppression" },
+      { authors: "Weydahl et al.", year: "2001", finding: "Melatonin suppression effect strongest at 70°N (auroral oval)", mechanism: "Latitude gradient" },
+      { authors: "Ferrari et al.", year: "2015", finding: "Bee homing losses 2.7× on geomagnetic storm days", mechanism: "CRY navigation" },
+      { authors: "Selås", year: "2004", finding: "r² = 0.84 correlation: moth abundance vs. sunspot number", mechanism: "Ecological endpoint" },
+      { authors: "Chizhevsky", year: "1922", finding: "80% of 2,500 historical mass movements cluster around solar maxima", mechanism: "Behavioral endpoint" },
+    ],
+    solarStatTitle: "Statistical results",
+    solarBandpass: "Bandpass 8–14 yr: r = +0.58 (p < 0.0001) USA birth rate; r = +0.81 in 1960–2000 sub-window",
+    solarFirstDiff: "First-difference: Δ-SSN vs Δ-CBR r = +0.20 (p = 0.032) at lag 0",
+    solarMonteCarlo: "Monte Carlo p = 0.997 — prediction-consistent direction confirmed by randomization test",
+    solarReversal: "Direction reversal 1998: r_before = +0.21 (1933–1997), r_after = −0.55 (1998–2022). The sign change coincides with the RF-saturation transition.",
+    solarSamaTitle: "SAMA: The Natural Control Experiment",
+    solarSamaP1: "The South Atlantic Magnetic Anomaly (SAMA) is a region where Earth’s magnetic field is approximately 24 µT — roughly half the normal ~50 µT. This naturally weakened field creates a control experiment in geomagnetic geometry.",
+    solarSamaP2: "ESS 2026 analysis: the solar wind–violence correlation that holds across most latitudes REVERSES in Brazil and Uruguay — exactly the populations under the SAMA. Where geomagnetic geometry changes, biological response inverts.",
+    solarNorthernTitle: "The Northern Package: Three Traits, One Molecular Target",
+    solarNorthernP1: "Three traits co-selected in Northern European populations converge on a single molecular target — cryptochrome (CRY):",
+    solarNorthernTraits: [
+      "Blue eyes → 100× light transmission through iris → χ_optical (more photons reach retinal CRY)",
+      "Lactose tolerance → B2/FAD dietary supply → CRY cofactor stability → χ_molecular",
+      "High geomagnetic latitude → strong ambient field → χ_geomagnetic",
+    ],
+    solarNorthernP2: "The vitamin D hypothesis explains 2 of 3 traits (light-colored eyes and high latitude select for UV absorption). The CRY hypothesis explains all 3 — including the otherwise anomalous linkage of lactose tolerance to eye color.",
+    solarDendroTitle: "Deep-Time Confirmation: Dendrochronology",
+    solarDendroP1: "The solar cycle is not a modern phenomenon. Tree-ring records confirm its continuous operation across geological time:",
+    solarDendroStudies: [
+      "Luthardt & Rößler 2018: 290-million-year-old petrified forest shows 10.62 ± 0.08 yr growth cycles — solar periodicity preserved in Permian wood.",
+      "Brehm et al. 2021: 1,000 years of continuous ¹⁴C tree-ring data independently confirms solar modulation of cosmogenic isotope production.",
+      "Nature Communications 2025: First millennium BCE confirmation extends the continuous record, closing the gap between ancient and modern solar cycles.",
+    ],
+    solarDendroP2: "The biological clock that BERM’s χ_B pathway responds to has been running without interruption for at least 290 million years.",
   },
   fi: {
     title: "Evidenssirekisteri",
@@ -292,9 +351,29 @@ const COPY = {
     fields: { nodes: "Kausaalisolmut", field: "Kenttäluokka", scope: "Tulkintaraja", limitations: "Rajoitukset", role: "Kalibrointirooli", source: "DOI / lähde" },
     structural: "Vain rakenne",
     contextual: "Vain konteksti",
+    anchorTitle: "Mekanistiset ankkurit",
+    anchorP1: "[[ref:kalmijn1971|Kalmijn (J. Exp. Biol. 1971)]] osoitti, että rustokalat (hait ja rauskut) havaitsevat luotettavasti sähkökenttiä jopa 5 nV/cm (5 × 10⁻⁷ V/m) tasolla Lorenzinin ampulliensa kautta. Tämä kynnys on selvästi alle BERM:n käyttämän IFO-VGIC-herkkyyden — selkärankaisen hermosto prosessoi kenttiä intensiteeteillä, joita nykyiset turvallisuusstandardit pitävät biologisesti inertteinä.",
+    anchorP2: "Lorenzinin ampullat käyttävät ionikanavan konduktanssimuutosta — fysikaalisesti analogista VGCC:n porttidynamiikan kanssa. Tämä ei ole eri mekanismi herkemmässä eläimessä; se on sama mekanismi (ionikanavan häiriö heikkojen sähkökenttien vaikutuksesta) ilmaistuna eri kudoksessa. Kenttäherkkyyden fylogeneettinen konservaatio 10⁻⁵–10⁻⁷ V/m alueella selkärankaisissa kumottaa suoraan 'kentät liian heikkoja biologialle' -vastaväitteen.",
+    anchorNote: "Rustokalakalojen sähköreseptio on vakiintunut aistintoiminto, jota ei kiistetä. Ekstrapolaatio nisäkkäiden VGCC-herkkyyteen on BERM-tulkinta — Lorenzinin ampulla on erikoistunut aistielin, jonka geometria on optimoitu kenttien havaitsemiseen, mitä nisäkkäiden kudoksilta puuttuu. Analogia on mekanistinen (molemmat käyttävät ionikanavan konduktanssia), ei anatominen.",
+    animalTitle: "Eläinevidenssi: Kontrolloidut EMF-kokeet",
+    animalP1: "[[ref:rodriguez2003|Rodriguez ym. (J. Reprod. Fert. 2003)]] altistivat lypsyhiehoja 60 Hz EMF:lle (10 kV/m, 30 µT) kontrolloidussa kokeessa McGill-yliopistossa. Tulokset: melatoniini laski (EMF toimii keinotekoisena 'pitkän päivän' signaalina), kiimakierron kesto piteni (p < 0,01) ja luteaalivaihe piteni (p < 0,01). [[ref:burchard2002|Burchard ym. (J. Dairy Sci. 2002)]] havaitsivat saman EMF-altistuksen nostavan IGF-1:tä ja kuiva-ainesyöntiä.",
+    animalP2: "Tämä on suoraa kokeellista näyttöä siitä, että ELF-kentät ympäristötasoilla muuttavat suurten nisäkkäiden lisääntymisendokrinologiaa. Lypsykarja on kuitenkin altistunut vakaalle navetan ELF:lle sähköistämisestä lähtien (~1950-luku). Jalostusvalintapaine on ~3 kertaluokkaa suurempi kuin mikään EMF-vaikutus. Siksi karja luokitellaan oikein negatiiviseksi kontrolliksi BERM:n sentinellirekisterissä — EMF ON biologisesti aktiivinen, mutta valinta peittää sen.",
+    animalP3: "Harajännitekirjallisuus (milliampeerien kontaktivirrat viallisesta johdotuksesta) on ortogonaalinen. Rodriguez mittasi kroonista kenttäaltistusta (µT), ei akuuttia kontaktivirtaa (mA). Vain Rodriguez-tyyppiset tutkimukset testaavat BERM:n mekanismia — kroonisia matalan tason ELF-kenttävaikutuksia lisääntymisendokrinologiaan.",
+    animalNote: "Rodriguez/Burchard-kokeet ovat vertaisarvioituja kontrolloituja tutkimuksia selkeillä biologisilla päätepisteillä. Negatiivinen kontrolli -luokitus karjalle koskee väestötason laskun havaitsemista (valinta peittää signaalin), ei sitä onko ELF biologisesti aktiivinen (on). Amish- vs. tavanomainen lypsykarjavertailu — jossa amish-navetoissa on matalampi ELF — olisi seuraava informatiivinen testi.",
+    catsperTitle: "CatSper: Korvaamaton kanava",
+    catsperLead: "Yhdeksän kalsiumriippuvaista vaihetta kattaa siittiön tuotannosta hedelmöitykseen. CatSper vaaditaan jokaisessa vaiheessa — kapasitaatio, reotaksis, termotaksis, kemotaksis ja akrosomireaktio — eikä sillä ole biologista varakanavaa. CatSper-poistogeeni missä tahansa testatusta lajista tuottaa täydellisen miehen infertiliteetin.",
+    catsperP1: "CatSper on ainoa siittiöspesifinen kalsiumkanava. Se on jänniteohjattu, pH-herkkä, lämpötilaohjattu (Q₁₀ = 5,1, kynnys 33,5 °C) ja reagoi pikomolaariseen progesteroniin cumulus-soluista. EMF:n aiheuttama Ca²⁺-dysregulaatio häiritsee tarkkaa ajoitusta, jota CatSper vaatii — ennenaikainen aktivaatio kuluttaa rajalliset energiavarastot ennen kuin siittiö saavuttaa munasolun.",
+    catsperP2: "CATSPER2⁻/⁻-miehillä progesteronin indusoima hyperaktivaatio on kumoutunut, hedelmöitys epäonnistuu sekä in vivo että in vitro ([[ref:catsper_human|JCI 2024]]). Farmakologinen profiili on yhdenmukainen: CatSper-salpaajat (NNC55-0396) tuottavat samat motiliteetti- ja akrosomireaktiovajavuudet kuin EMF-altistus ([[ref:pmc6104424_nnc|Rennhack ym. 2018]]).",
+    catsperEvolution: "CatSper on konservoitunut merisiilistä ihmiseen — sama kanava ohjaa hedelmöitystä 600 miljoonan vuoden evoluution yli. Vesilajit (merisiili, lohi) käyttävät CatSperia ulkoisessa hedelmöityksessä, jossa merenalaisten kaapeleiden EMF tarjoaa luonnollisen kokeen.",
+    catsperDetailLink: "Täydellinen 9-vaiheinen reproduktiivinen navigointiketju",
     sentinelTitle: "Sentinelli- ja lajienvälinen evidenssi",
     sentinel: "Cross-Species Lag Index on valmiusprotokolla, joka yhdistää alueelliset vasteet, mitatun FieldStaten ja päätepistekovariaatit rekisteröityyn lajienväliseen testiin.",
+    sentinelGradient: "Seitsemässä lajissa, joilla on kvantifioitava lisääntymislaskuaste, laskuaste korreloi EMF-altistusarvon kanssa tasolla r = 0,909. Koirat ([[ref:lea2016|Lea ym. 2016]]): −1,0 %/v siittiölasku 26 vuoden aikana brittiläisissä siitoskoirissa, jotka jakavat kodin EMF-altistuksen. Hevoset ([[ref:harris2023|Harris ym. 2023]]): −0,75 %/v oriiden siittiölasku 35 vuoden aikana. Kuvio ulottuu mehiläisiin, lintuihin, sammakoihin ja vesilajeihin — kukin laskee aikajanalla, joka on suhteessa niiden sähkömagneettiseen ympäristöön.",
+    sentinelTLink: "Tämä lajienvälinen gradientti liittyy suoraan ihmisillä dokumentoituun sekulaariseen testosteronilaskuun: sama EMF-mekanismi (VGCC → Ca²⁺ → lisääntymishäiriö) toimii koirissa, jotka jakavat kotiympäristömme EMF-altistuksen, ja tuottaa saman ~1 %/v laskuasteen. T→TFR-viive 8 vuotta tarjoaa ajallisen kalibroinnin — maat, joissa sähköistys tapahtui aiemmin, voivat osoittaa aikaisemman T-laskun alkamisen (ennuste T-1).",
+    sentinelGradientStat: "r = 0,909",
+    sentinelGradientLabel: "Lajienvälinen EMF-gradientti (7 lajia)",
     sentinelLink: "Katso sentinellin valmiustila",
+    sentinelTDeclineLink: "Testosteronilaskun evidenssi",
     extPathway: "Polku",
     extLevel: "Evidenssitaso",
     extStatus: "Migraatiostatus",
@@ -416,7 +495,7 @@ const COPY = {
     svgNonMonotonic: "Ei-monotoninen vaste",
     subPagesTitle: "Temaattiset evidenssisivut",
     subPagesLead: "Yksityiskohtaiset analyysit joissa yksittäiset tutkimukset yhdistyvät mekanistisiksi argumenteiksi. Kukin narratiivi syntetisoi julkaistuja löydöksiä; mikään ei osoita väestötason kausaalikerrointa.",
-    researchDomainsTitle: "10 riippumatonta tutkimusalaa",
+    researchDomainsTitle: "11 riippumatonta tutkimusalaa",
     convergenceDiagram: "Konvergenssikaavio",
     bioActivity: "bio-aktiivisuus",
     deviceLabel: "Laite",
@@ -461,8 +540,44 @@ const COPY = {
     mechanismNowLabel: "Mekanismi (nyt)",
     nextLinkLabel: "Seuraavaksi",
     nextLinkTitle: "Kritiikki ja vastaukset",
-    researchDomainsLead: "BERM:n mekanistiset polut perustuvat 10 toisistaan riippumattomaan tutkimusalaan. Mikään yksittäinen ala ei riitä, mutta niiden konvergenssi samaan ennusteeseen — sähkömagneettisten kenttien biologinen aktiivisuus — on epätodennäköistä sattumalta.",
+    researchDomainsLead: "BERM:n mekanistiset polut perustuvat 11 toisistaan riippumattomaan tutkimusalaan. Mikään yksittäinen ala ei riitä, mutta niiden konvergenssi samaan ennusteeseen — sähkömagneettisten kenttien biologinen aktiivisuus — on epätodennäköistä sattumalta.",
     cry2PathwayNote: "CRY2:n alaspäin suuntautuvat vaikutukset ulottuvat sirkadiaanisen kellon yli. Yap ym. (2025) osoittivat, että CRY2 on fysikaalisessa vuorovaikutuksessa TRPC1:n kanssa, TRP-perheen kationikanavan kanssa, ja että tämä kompleksi siirtyy yhdessä tumaan PEMF-altistuksen jälkeen. Tämä kalsiumsisäänvirtausreitti on CRY2-riippuvainen (estetään CRY2-hiljentämisellä), valoriippuvainen (häviää pimeässä) ja FAD-riippuvainen (vaimenee RFK-hiljentämisellä) — kaikki RPM-mekanismin tunnusmerkkejä. TRPC1 EI ole jänniteriippuvainen kalsiumkanava eikä L-tyypin VGCC-salpaajat estä sitä. Tämä tarkoittaa, että polut A ja C (sivuston B) pysyvät farmakologisesti erotettavissa, mutta polku C:n biologinen vaikutuskenttä on laajempi kuin aiemmin oletettiin.",
+    solarTitle: "Aurinkosykli ja geomagneettinen biologia: 11. konvergenssilinja",
+    solarIntro: "BERM määrittelee kaksi itsenäistä herkkyyttä: χ(Ā) (VGCC, geometrinen kenttäkytkentä) ja χ_B (CRY/RPM, radikaaliparin spin-dynamiikka). Aurinkosykli testaa χ_B:tä, koska se toimii ILMAN sähköistyskynnystä — auringon aiheuttamat geomagneettiset vaihtelut ovat moduloineet radikaaliparin kemiaa miljardeja vuosia, kauan ennen ihmisen tuottamia sähkömagneettisia kenttiä. Jos CRY-välitteiset polut ovat todellisia, niiden allekirjoitusten tulisi näkyä aurinkosyklin pituisissa biologisissa rytmeissä.",
+    solarResearchLabel: "Keskeiset tutkimustulokset",
+    solarStudies: [
+      { authors: "Randall", year: "1990/1993", finding: "11 vuoden syntyvyysjaksollisuus havaittu 7 maassa", mechanism: "Väestöpäätepiste" },
+      { authors: "Skjærvø ym.", year: "2015", finding: "Esi-teollinen Norja (1676–1878, N=8 662): aurinkosyklin maksimissa syntyneet elivät 5,2 vuotta lyhyempään", mechanism: "Eliniänpäätepiste" },
+      { authors: "Burch ym.", year: "1999", finding: "Geomagneettinen häiriö → melatoniinimetaboliitin (6-OHMS) erityksen väheneminen", mechanism: "Melatoniinisuppressio" },
+      { authors: "Weydahl ym.", year: "2001", finding: "Melatoniinisuppressiovaikutus voimakkain 70°N:ssa (revontulisoikea)", mechanism: "Leveysastegradientti" },
+      { authors: "Ferrari ym.", year: "2015", finding: "Mehiläisten kotiinpaluuhäviöt 2,7× geomagneettisina myrskyinä", mechanism: "CRY-navigaatio" },
+      { authors: "Selås", year: "2004", finding: "r² = 0,84 korrelaatio: yöperhosrunsaus vs. auringonpilkkuluku", mechanism: "Ekologinen päätepiste" },
+      { authors: "Chizhevsky", year: "1922", finding: "80 % 2 500 historiallisesta joukkoliikehdinnästä klusteroituu aurinkosyklin maksimien ympärille", mechanism: "Käyttäytymispäätepiste" },
+    ],
+    solarStatTitle: "Tilastolliset tulokset",
+    solarBandpass: "Kaistanpäästö 8–14 v: r = +0,58 (p < 0,0001) USA:n syntyvyys; r = +0,81 alijakso 1960–2000",
+    solarFirstDiff: "Ensimmäinen differenssi: Δ-SSN vs Δ-CBR r = +0,20 (p = 0,032) viive 0",
+    solarMonteCarlo: "Monte Carlo p = 0,997 — ennusteen mukainen suunta vahvistettu satunnaistamistestillä",
+    solarReversal: "Suunnan kääntyminen 1998: r_ennen = +0,21 (1933–1997), r_jälkeen = −0,55 (1998–2022). Etumerkin muutos osuu samaan RF-saturaatiosiirtymän kanssa.",
+    solarSamaTitle: "SAMA: Luonnollinen kontrollikoe",
+    solarSamaP1: "Etelä-Atlantin magneettinen anomalia (SAMA) on alue, jossa Maan magneettikenttä on noin 24 µT — noin puolet normaalista ~50 µT:sta. Tämä luonnollisesti heikentynyt kenttä luo kontrolliasetelman geomagneettisessa geometriassa.",
+    solarSamaP2: "ESS 2026 -analyysi: aurinkotuuli–väkivaltakorrelaatio, joka pätee useimmilla leveysasteilla, KÄÄNTYY Brasiliassa ja Uruguayssa — juuri niissä väestöissä, jotka ovat SAMA:n alla. Missä geomagneettinen geometria muuttuu, biologinen vaste kääntyy.",
+    solarNorthernTitle: "Pohjoinen paketti: Kolme ominaisuutta, yksi molekulaarinen kohde",
+    solarNorthernP1: "Kolme pohjoiseuroppalaisissa väestöissä yhdessä valikoitunutta ominaisuutta konvergoivat yhteen molekulaariseen kohteeseen — kryptokromiin (CRY):",
+    solarNorthernTraits: [
+      "Siniset silmät → 100× valon läpäisy iiriksessä → χ_optinen (enemmän fotoneja pääsee verkkokalvon CRY:hin)",
+      "Laktoosinsietokyky → B2/FAD-ravintosaanti → CRY-kofaktorin stabiilius → χ_molekulaarinen",
+      "Korkea geomagneettinen leveysaste → vahva ympäristökenttä → χ_geomagneettinen",
+    ],
+    solarNorthernP2: "D-vitamiini-hypoteesi selittää 2/3 ominaisuudesta (vaaleat silmät ja korkea leveysaste valikoituvat UV-absorptiolle). CRY-hypoteesi selittää kaikki 3 — mukaan lukien muuten anomaalisen laktoosinsietokyvyn ja silmien värin yhteyden.",
+    solarDendroTitle: "Syvän ajan vahvistus: Dendrokronologia",
+    solarDendroP1: "Aurinkosykli ei ole moderni ilmiö. Vuosilustotietueet vahvistavat sen jatkuvan toiminnan geologisessa ajassa:",
+    solarDendroStudies: [
+      "Luthardt & Rößler 2018: 290 miljoonaa vuotta vanha kivettynyt metsä osoittaa 10,62 ± 0,08 v kasvusyklejä — aurinkojaksoisuus säilynyt permikauden puussa.",
+      "Brehm ym. 2021: 1 000 vuoden jatkuva ¹⁴C-vuosilustodatasta vahvistaa itsenäisesti auringon modulaation kosmogenisten isotooppien tuotannossa.",
+      "Nature Communications 2025: Ensimmäisen vuosituhannen eaa. vahvistus laajentaa jatkuvaa tietuetta, sulkien aukon muinaisten ja modernien aurinkosyklien välillä.",
+    ],
+    solarDendroP2: "Biologinen kello, johon BERM:n χ_B-polku vastaa, on käynyt keskeytyksettä vähintään 290 miljoonaa vuotta.",
   },
   ja: {
     title: "エビデンス登録簿",
@@ -492,9 +607,29 @@ const COPY = {
     fields: { nodes: "因果ノード", field: "フィールドクラス", scope: "翻訳範囲", limitations: "制限", role: "校正役割", source: "DOI / ソース" },
     structural: "構造のみ",
     contextual: "コンテキストのみ",
+    anchorTitle: "メカニズム的アンカー",
+    anchorP1: "[[ref:kalmijn1971|Kalmijn（J. Exp. Biol. 1971）]]は、板鰓類（サメとエイ）がロレンチニ器官を通じて5 nV/cm（5 × 10⁻⁷ V/m）もの微弱な電場を確実に検出することを実証しました。この閾値はBERMが使用するIFO-VGIC感度レベルをはるかに下回ります — 脊椎動物の神経系は、現行の安全基準が生物学的に不活性と見なす強度でフィールドを処理します。",
+    anchorP2: "ロレンチニ器官はイオンチャネルのコンダクタンス変化を使用します — VGCC ゲートダイナミクスと物理的に類似しています。これはより敏感な動物の異なるメカニズムではありません；異なる組織で発現された同じメカニズム（弱い電場によるイオンチャネル摂動）です。10⁻⁵から10⁻⁷ V/mにおけるフィールド感度の系統発生的保存は「フィールドは生物学には弱すぎる」という異議を直接反論します。",
+    anchorNote: "板鰓類の電気受容は確立された感覚様式であり、議論の余地はありません。哺乳類のVGCC感度への外挿はBERMの解釈です — ロレンチニ器官はフィールド検出に最適化された形状を持つ特殊な感覚器官であり、哺乳類組織にはありません。",
+    animalTitle: "動物エビデンス：制御されたEMF実験",
+    animalP1: "[[ref:rodriguez2003|Rodriguez et al.（J. Reprod. Fert. 2003）]]はマギル大学で制御された実験において乳牛の未経産牛を60 Hz EMF（10 kV/m、30 µT）に曝露しました。結果：メラトニンが低下（EMFが人工的な「長日」シグナルとして作用）、発情周期期間が延長（p < 0.01）、黄体期が延長（p < 0.01）。[[ref:burchard2002|Burchard et al.（J. Dairy Sci. 2002）]]は同じEMF曝露がIGF-1と乾物摂取量を増加させることを発見しました。",
+    animalP2: "これは環境レベルのELF場が大型哺乳類の生殖内分泌学を変化させるという直接的な実験的証拠です。しかし乳牛は電化以来（~1950年代以降）安定した牛舎のELFに曝露されてきました。育種選択圧はEMF効果の~3桁大きいです。これが家畜がBERMセンチネルレジストリで負の対照として正しく分類される理由です — EMFは生物学的に活性ですが、選択がそれを覆い隠します。",
+    animalP3: "漂遊電圧文献（不良配線からのミリアンペアの接触電流）は直交的です。Rodriguezは慢性的な場の曝露（µT）を測定し、急性接触電流（mA）ではありません。Rodriguez型の研究のみがBERMのメカニズム — 生殖内分泌学への慢性低レベルELF場効果 — を検証します。",
+    animalNote: "Rodriguez/Burchard実験は明確な生物学的エンドポイントを持つ査読済み制御研究です。家畜の負の対照分類は集団レベルの減少検出に適用され（選択がシグナルを圧倒）、ELFが生物学的に活性かどうかには適用されません（活性です）。アーミッシュ対従来型酪農比較 — アーミッシュの牛舎はELFが低い — が次の有益なテストとなります。",
+    catsperTitle: "CatSper：代替不可能なチャネル",
+    catsperLead: "9つのカルシウム依存段階が精子産生から受精までを網羅する。CatSperはすべての段階 — 受精能獲得、走流性、走温性、走化性、先体反応 — で必要であり、生物学的バックアップがない。テストされたどの種でもCatSperノックアウトは完全な雄性不妊を生じる。",
+    catsperP1: "CatSperは唯一の精子特異的カルシウムチャネルである。電位依存性、pH感受性、温度依存性（Q₁₀ = 5.1、閾値33.5°C）であり、卵丘細胞からのピコモル濃度のプロゲステロンに応答する。EMF誘導性のCa²⁺調節異常は、CatSperが必要とする精密なタイミングを乱す — 早期の活性化が精子が卵に到達する前に有限のエネルギー貯蔵を枯渇させる。",
+    catsperP2: "CATSPER2⁻/⁻男性はプロゲステロン誘導性の超活性化が消失し、in vivoおよびin vitroの両方で受精に失敗する（[[ref:catsper_human|JCI 2024]]）。薬理学的シグネチャーは一貫している：CatSperブロッカー（NNC55-0396）はEMF曝露と同じ運動性および先体反応の欠陥を生じる（[[ref:pmc6104424_nnc|Rennhack et al. 2018]]）。",
+    catsperEvolution: "CatSperはウニからヒトまで保存されている — 同じチャネルが6億年の進化にわたって受精を制御している。水生種（ウニ、サケ）は外部受精でCatSperを使用し、海底ケーブルのEMFが自然実験を提供する。",
+    catsperDetailLink: "完全な9段階の生殖ナビゲーションチェーン",
     sentinelTitle: "センチネルおよび種間エビデンス",
     sentinel: "Cross-Species Lag Indexは、地域的なアウトカム、測定されたFieldState、およびエンドポイント共変量を登録された種間テストで結合するための準備プロトコルである。",
+    sentinelGradient: "定量可能な生殖低下率を持つ7種にわたり、低下率はEMF曝露スコアとr = 0.909で相関する。犬（[[ref:lea2016|Lea et al. 2016]]）：英国種犬で26年間にわたり精子−1.0%/年の低下、家庭のEMF曝露を共有。馬（[[ref:harris2023|Harris et al. 2023]]）：種馬の精子35年間にわたり−0.75%/年の低下。パターンはミツバチ、鳥類、カエル、水生種に及ぶ — それぞれが電磁環境に比例したタイムラインで低下。",
+    sentinelTLink: "この種間勾配は、ヒトで文書化されたテストステロンの世俗的低下に直接つながる：同じEMFメカニズム（VGCC → Ca²⁺ → 生殖障害）が家庭のEMF環境を共有する犬で作動し、同じ~1%/年の低下率を生み出す。T→TFRの8年のラグが時間的キャリブレーションを提供する — より早く電化した国はより早いT低下の開始を示す可能性がある（予測T-1）。",
+    sentinelGradientStat: "r = 0.909",
+    sentinelGradientLabel: "種間EMF勾配（7種）",
     sentinelLink: "センチネル準備状況を表示",
+    sentinelTDeclineLink: "テストステロン低下エビデンス",
     extPathway: "経路",
     extLevel: "エビデンスレベル",
     extStatus: "移行ステータス",
@@ -615,7 +750,7 @@ const COPY = {
     svgNonMonotonic: "非単調応答",
     subPagesTitle: "テーマ別エビデンスページ",
     subPagesLead: "個別の研究が機構的論拠に統合される詳細な分析。各ナラティブは発表された知見を統合するが、集団レベルの因果係数を確立するものはない。",
-    researchDomainsTitle: "10の独立した研究分野",
+    researchDomainsTitle: "11の独立した研究分野",
     convergenceDiagram: "収束ダイアグラム",
     bioActivity: "生物活性",
     deviceLabel: "装置",
@@ -660,8 +795,44 @@ const COPY = {
     mechanismNowLabel: "メカニズム（現在）",
     nextLinkLabel: "次へ",
     nextLinkTitle: "批判と回答",
-    researchDomainsLead: "BERMの機構的経路は、10の相互に独立した研究分野に基づいている。単一の分野では十分ではないが、同じ予測 — 電磁場の生物学的活性 — への収束は偶然では起こりにくい。",
+    researchDomainsLead: "BERMの機構的経路は、11の相互に独立した研究分野に基づいている。単一の分野では十分ではないが、同じ予測 — 電磁場の生物学的活性 — への収束は偶然では起こりにくい。",
     cry2PathwayNote: "CRY2の下流効果は概日時計を超えて拡がる。Yap et al. (2025) は、CRY2がTRPファミリーのカチオンチャネルであるTRPC1と物理的に相互作用し、PEMF曝露後にこの複合体が共に核へ移行することを示した。このカルシウム流入経路はCRY2依存性（CRY2サイレンシングにより遮断）、光依存性（暗所で消失）、FAD依存性（RFKサイレンシングにより減衰）であり、すべてRPMメカニズムの特徴である。重要なことに、TRPC1は電位依存性カルシウムチャネルではなく、L型VGCC遮断薬では遮断されない。これは経路AとC（サイトのB）が薬理学的に分離可能であり続けることを意味するが、経路Cの生物学的影響範囲は以前想定されていたよりも大きい。",
+    solarTitle: "太陽周期と地磁気生物学：第11の収束線",
+    solarIntro: "BERMは2つの独立した感受性を定義する：χ(Ā)（VGCC、幾何学的場結合）とχ_B（CRY/RPM、ラジカルペアスピン動力学）。太陽周期はχ_Bを検証する。なぜなら電化閾値なしに作動するからである — 太陽駆動の地磁気変動は、人為的EMFのはるか前、数十億年にわたりラジカルペア化学を調節してきた。CRY媒介経路が実在するならば、そのシグネチャーは太陽周期長の生物学的リズムに現れるはずである。",
+    solarResearchLabel: "主要な研究エビデンス",
+    solarStudies: [
+      { authors: "Randall", year: "1990/1993", finding: "7カ国で11年周期の出生率変動を検出", mechanism: "集団エンドポイント" },
+      { authors: "Skjærvø et al.", year: "2015", finding: "前工業化ノルウェー（1676–1878年、N=8,662）：太陽極大期生まれは5.2年短命", mechanism: "寿命エンドポイント" },
+      { authors: "Burch et al.", year: "1999", finding: "地磁気擾乱 → メラトニン代謝物（6-OHMS）排泄の減少", mechanism: "メラトニン抑制" },
+      { authors: "Weydahl et al.", year: "2001", finding: "メラトニン抑制効果は70°N（オーロラオーバル）で最強", mechanism: "緯度勾配" },
+      { authors: "Ferrari et al.", year: "2015", finding: "ミツバチの帰巣損失が地磁気嵐日に2.7倍", mechanism: "CRYナビゲーション" },
+      { authors: "Selås", year: "2004", finding: "r² = 0.84 相関：蛾の個体数 vs. 太陽黒点数", mechanism: "生態学的エンドポイント" },
+      { authors: "Chizhevsky", year: "1922", finding: "2,500件の歴史的大衆運動の80%が太陽極大期周辺に集中", mechanism: "行動エンドポイント" },
+    ],
+    solarStatTitle: "統計的結果",
+    solarBandpass: "バンドパス8–14年：r = +0.58（p < 0.0001）米国出生率、1960–2000サブウィンドウでr = +0.81",
+    solarFirstDiff: "一次差分：Δ-SSN vs Δ-CBR r = +0.20（p = 0.032）ラグ0",
+    solarMonteCarlo: "モンテカルロ p = 0.997 — 予測整合的方向がランダム化検定で確認",
+    solarReversal: "方向反転1998年：r_前 = +0.21（1933–1997）、r_後 = −0.55（1998–2022）。符号変化はRF飽和遷移と一致。",
+    solarSamaTitle: "SAMA：自然の対照実験",
+    solarSamaP1: "南大西洋磁気異常（SAMA）は、地球の磁場が約24 µT — 通常の約50 µTのおよそ半分 — の領域である。この自然に弱化した磁場が地磁気幾何学の対照実験を生み出す。",
+    solarSamaP2: "ESS 2026分析：ほとんどの緯度で成立する太陽風–暴力相関が、ブラジルとウルグアイでは逆転する — まさにSAMA下の集団である。地磁気幾何学が変化するところで、生物学的応答が反転する。",
+    solarNorthernTitle: "北方パッケージ：3つの形質、1つの分子標的",
+    solarNorthernP1: "北欧集団で共選択された3つの形質が単一の分子標的 — クリプトクロム（CRY）に収束する：",
+    solarNorthernTraits: [
+      "青い目 → 虹彩を通る100倍の光透過 → χ_光学（より多くの光子が網膜CRYに到達）",
+      "乳糖耐性 → B2/FAD食事供給 → CRYコファクター安定性 → χ_分子",
+      "高地磁気緯度 → 強い環境磁場 → χ_地磁気",
+    ],
+    solarNorthernP2: "ビタミンD仮説は3形質中2つを説明する（明るい目と高緯度はUV吸収に選択される）。CRY仮説は3つすべてを説明する — 乳糖耐性と目の色の異常な連関を含めて。",
+    solarDendroTitle: "深層時間の確認：年輪年代学",
+    solarDendroP1: "太陽周期は現代の現象ではない。年輪記録が地質時間にわたるその連続的作動を確認する：",
+    solarDendroStudies: [
+      "Luthardt & Rößler 2018：2億9千万年前の石化林が10.62 ± 0.08年の成長周期を示す — ペルム紀の木に太陽周期性が保存。",
+      "Brehm et al. 2021：1,000年間の連続¹⁴C年輪データが宇宙線生成同位体生成の太陽変調を独立に確認。",
+      "Nature Communications 2025：紀元前1千年紀の確認が連続記録を拡張し、古代と現代の太陽周期の間の空白を埋める。",
+    ],
+    solarDendroP2: "BERMのχ_B経路が応答する生物学的時計は、少なくとも2億9千万年間途切れることなく動いてきた。",
   },
   fr: {
     title: "Registre des preuves",
@@ -691,9 +862,29 @@ const COPY = {
     fields: { nodes: "Nœuds causaux", field: "Classe de champ", scope: "Portée de traduction", limitations: "Limites", role: "Rôle de calibration", source: "DOI / source" },
     structural: "Structurel uniquement",
     contextual: "Contexte uniquement",
+    anchorTitle: "Ancres mécanistes",
+    anchorP1: "[[ref:kalmijn1971|Kalmijn (J. Exp. Biol. 1971)]] a démontré que les élasmobranches (requins et raies) détectent de façon fiable des champs électriques aussi faibles que 5 nV/cm (5 × 10⁻⁷ V/m) grâce à leurs ampoules de Lorenzini. Ce seuil est bien en dessous du niveau de sensibilité IFO-VGIC utilisé par BERM — un système nerveux vertébré traite des champs à des intensités que les normes de sécurité actuelles considèrent biologiquement inertes.",
+    anchorP2: "Les ampoules de Lorenzini utilisent des changements de conductance des canaux ioniques — physiquement analogues à la dynamique de porte des VGCC. Ce n'est pas un mécanisme différent chez un animal plus sensible ; c'est le même mécanisme (perturbation des canaux ioniques par des champs électriques faibles) exprimé dans un tissu différent. La conservation phylogénétique de la sensibilité aux champs dans la plage 10⁻⁵ à 10⁻⁷ V/m chez les vertébrés contredit directement l'objection « champs trop faibles pour la biologie ».",
+    anchorNote: "L'électroréception des élasmobranches est une modalité sensorielle bien établie. L'extrapolation à la sensibilité VGCC des mammifères est une interprétation BERM — l'ampoule de Lorenzini est un organe sensoriel spécialisé avec une géométrie optimisée pour la détection de champs, que les tissus mammifères ne possèdent pas.",
+    animalTitle: "Preuves animales : Expériences EMF contrôlées",
+    animalP1: "[[ref:rodriguez2003|Rodriguez et al. (J. Reprod. Fert. 2003)]] ont exposé des génisses laitières à un EMF de 60 Hz (10 kV/m, 30 µT) dans une expérience contrôlée à l'Université McGill. Résultats : le mélatonine a diminué (l'EMF agit comme un signal artificiel de « jour long »), la durée du cycle œstral a augmenté (p < 0,01) et la durée de la phase lutéale a augmenté (p < 0,01). [[ref:burchard2002|Burchard et al. (J. Dairy Sci. 2002)]] ont constaté que la même exposition EMF augmentait l'IGF-1 et l'ingestion de matière sèche.",
+    animalP2: "C'est une preuve expérimentale directe que les champs ELF aux niveaux environnementaux modifient l'endocrinologie reproductive chez les grands mammifères. Cependant, les bovins laitiers ont été exposés à l'ELF stable des étables depuis l'électrification (~années 1950). La pression de sélection d'élevage est ~3 ordres de grandeur supérieure à tout effet EMF. C'est pourquoi le bétail est correctement classé comme contrôle négatif dans le registre sentinelle BERM — l'EMF EST biologiquement actif, mais la sélection le masque.",
+    animalP3: "La littérature sur les tensions parasites (courants de contact en milliampères dus à un câblage défectueux) est orthogonale. Rodriguez a mesuré l'exposition chronique au champ (µT), pas le courant de contact aigu (mA). Seules les études de type Rodriguez testent le mécanisme BERM — les effets chroniques des champs ELF de faible niveau sur l'endocrinologie reproductive.",
+    animalNote: "Les expériences Rodriguez/Burchard sont des études contrôlées évaluées par des pairs avec des critères biologiques clairs. La classification de contrôle négatif pour le bétail s'applique à la détection du déclin au niveau populationnel (la sélection submerge le signal), pas à la question de savoir si l'ELF est biologiquement actif (il l'est). Une comparaison Amish vs laitier conventionnel — où les étables Amish ont un ELF plus faible — serait le prochain test informatif.",
+    catsperTitle: "CatSper : Le canal irremplaçable",
+    catsperLead: "Neuf étapes calcium-dépendantes couvrent de la production de spermatozoïdes à la fécondation. CatSper est requis à chaque étape — capacitation, rhéotaxie, thermotaxie, chimiotaxie et réaction acrosomique — et n'a aucun secours biologique. L'inactivation de CatSper dans toute espèce testée produit une infertilité masculine complète.",
+    catsperP1: "CatSper est le seul canal calcique spécifique au spermatozoïde. Il est voltage-dépendant, sensible au pH, thermo-dépendant (Q₁₀ = 5,1, seuil 33,5 °C) et répond à la progestérone picomolaire des cellules du cumulus. La dysrégulation du Ca²⁺ induite par les EMF perturbe le timing précis que CatSper nécessite — une activation prématurée épuise les réserves d'énergie finies avant que le spermatozoïde n'atteigne l'ovule.",
+    catsperP2: "Les hommes CATSPER2⁻/⁻ montrent une hyperactivation induite par la progestérone abolie, échouant à la fécondation in vivo et in vitro ([[ref:catsper_human|JCI 2024]]). La signature pharmacologique est cohérente : les bloqueurs de CatSper (NNC55-0396) produisent les mêmes déficits de motilité et de réaction acrosomique que l'exposition EMF ([[ref:pmc6104424_nnc|Rennhack et al. 2018]]).",
+    catsperEvolution: "CatSper est conservé de l'oursin à l'humain — le même canal contrôle la fécondation sur 600 millions d'années d'évolution. Les espèces aquatiques (oursins, saumons) utilisent CatSper dans la fécondation externe où les EMF des câbles sous-marins fournissent une expérience naturelle.",
+    catsperDetailLink: "Chaîne complète de navigation reproductive en 9 étapes",
     sentinelTitle: "Preuves sentinelles et inter-espèces",
     sentinel: "Le Cross-Species Lag Index est un protocole de préparation pour joindre les résultats régionaux, le FieldState mesuré et les covariables de points finaux dans un test inter-espèces enregistré.",
+    sentinelGradient: "Sur 7 espèces avec des taux de déclin reproductif quantifiables, le taux de déclin est corrélé au score d'exposition EMF à r = 0,909. Chiens ([[ref:lea2016|Lea et al. 2016]]) : −1,0 %/an de déclin spermatique sur 26 ans chez les chiens reproducteurs britanniques partageant l'exposition EMF domestique. Chevaux ([[ref:harris2023|Harris et al. 2023]]) : −0,75 %/an de déclin spermatique des étalons sur 35 ans. Le schéma s'étend aux abeilles, oiseaux, grenouilles et espèces aquatiques — chacun déclinant sur des chronologies proportionnelles à leur environnement électromagnétique.",
+    sentinelTLink: "Ce gradient inter-espèces se connecte directement au déclin séculaire de la testostérone documenté chez l'humain : le même mécanisme EMF (VGCC → Ca²⁺ → perturbation reproductive) opère chez les chiens partageant notre environnement EMF domestique et produit le même taux de déclin de ~1 %/an. Le décalage T→TFR de 8 ans fournit une calibration temporelle — les pays avec une électrification plus précoce devraient montrer un début de déclin de T plus précoce (prédiction T-1).",
+    sentinelGradientStat: "r = 0,909",
+    sentinelGradientLabel: "Gradient EMF inter-espèces (7 espèces)",
     sentinelLink: "Voir l'état de préparation sentinelle",
+    sentinelTDeclineLink: "Preuves du déclin de la testostérone",
     extPathway: "Voie",
     extLevel: "Niveau de preuve",
     extStatus: "Statut de migration",
@@ -814,7 +1005,7 @@ const COPY = {
     svgNonMonotonic: "Réponse non monotone",
     subPagesTitle: "Pages de preuves thématiques",
     subPagesLead: "Analyses détaillées où les études individuelles sont synthétisées en arguments mécanistiques. Chaque récit synthétise des résultats publiés ; aucun n’établit un coefficient causal au niveau populationnel.",
-    researchDomainsTitle: "10 domaines de recherche indépendants",
+    researchDomainsTitle: "11 domaines de recherche indépendants",
     convergenceDiagram: "Diagramme de convergence",
     bioActivity: "bio-activité",
     deviceLabel: "Dispositif",
@@ -859,8 +1050,44 @@ const COPY = {
     mechanismNowLabel: "Mécanisme (actuel)",
     nextLinkLabel: "Suivant",
     nextLinkTitle: "Critiques et réponses",
-    researchDomainsLead: "Les voies mécanistiques de BERM s'appuient sur 10 domaines de recherche mutuellement indépendants. Aucun domaine seul ne suffit, mais leur convergence vers la même prédiction — l'activité biologique des champs électromagnétiques — est peu probable par hasard.",
+    researchDomainsLead: "Les voies mécanistiques de BERM s'appuient sur 11 domaines de recherche mutuellement indépendants. Aucun domaine seul ne suffit, mais leur convergence vers la même prédiction — l'activité biologique des champs électromagnétiques — est peu probable par hasard.",
     cry2PathwayNote: "Les effets en aval de CRY2 s'étendent au-delà de l'horloge circadienne. Yap et al. (2025) ont montré que CRY2 interagit physiquement avec TRPC1, un canal cationique de la famille TRP, et que ce complexe se transloque ensemble vers le noyau après exposition PEMF. Cette voie d'entrée du calcium est dépendante de CRY2 (bloquée par le silençage de CRY2), dépendante de la lumière (perdue dans l'obscurité) et dépendante du FAD (atténuée par le silençage de RFK) — tous les marqueurs du mécanisme RPM. Fait important, TRPC1 n'est PAS un canal calcique voltage-dépendant et n'est PAS bloqué par les bloqueurs VGCC de type L. Cela signifie que les voies A et C (B du site) restent pharmacologiquement séparables, mais l'empreinte biologique de la voie C est plus large qu'on ne le supposait auparavant.",
+    solarTitle: "Cycle solaire et biologie géomagnétique : La 11e ligne de convergence",
+    solarIntro: "BERM définit deux susceptibilités indépendantes : χ(Ā) (VGCC, couplage géométrique du champ) et χ_B (CRY/RPM, dynamique de spin des paires radicalaires). Le cycle solaire teste χ_B car il opère SANS seuil d'électrification — les variations géomagnétiques d'origine solaire modulent la chimie des paires radicalaires depuis des milliards d'années, bien avant les EMF anthropiques. Si les voies médiées par CRY sont réelles, leurs signatures devraient apparaître dans les rythmes biologiques de longueur du cycle solaire.",
+    solarResearchLabel: "Preuves de recherche clés",
+    solarStudies: [
+      { authors: "Randall", year: "1990/1993", finding: "Périodicité de 11 ans du taux de natalité détectée dans 7 pays", mechanism: "Point final de population" },
+      { authors: "Skjærvø et al.", year: "2015", finding: "Norvège préindustrielle (1676–1878, N=8 662) : les individus nés au maximum solaire vivaient 5,2 ans de moins", mechanism: "Point final de longévité" },
+      { authors: "Burch et al.", year: "1999", finding: "Perturbation géomagnétique → réduction de l'excrétion du métabolite de la mélatonine (6-OHMS)", mechanism: "Suppression de la mélatonine" },
+      { authors: "Weydahl et al.", year: "2001", finding: "Effet de suppression de la mélatonine le plus fort à 70°N (ovale auroral)", mechanism: "Gradient de latitude" },
+      { authors: "Ferrari et al.", year: "2015", finding: "Pertes de retour des abeilles 2,7× lors des jours de tempête géomagnétique", mechanism: "Navigation CRY" },
+      { authors: "Selås", year: "2004", finding: "r² = 0,84 corrélation : abondance de papillons de nuit vs. nombre de taches solaires", mechanism: "Point final écologique" },
+      { authors: "Chizhevsky", year: "1922", finding: "80 % des 2 500 mouvements de masse historiques se regroupent autour des maxima solaires", mechanism: "Point final comportemental" },
+    ],
+    solarStatTitle: "Résultats statistiques",
+    solarBandpass: "Passe-bande 8–14 ans : r = +0,58 (p < 0,0001) taux de natalité USA ; r = +0,81 dans la sous-fenêtre 1960–2000",
+    solarFirstDiff: "Première différence : Δ-SSN vs Δ-CBR r = +0,20 (p = 0,032) retard 0",
+    solarMonteCarlo: "Monte Carlo p = 0,997 — direction cohérente avec la prédiction confirmée par test de randomisation",
+    solarReversal: "Inversion de direction 1998 : r_avant = +0,21 (1933–1997), r_après = −0,55 (1998–2022). Le changement de signe coïncide avec la transition de saturation RF.",
+    solarSamaTitle: "SAMA : L'expérience de contrôle naturelle",
+    solarSamaP1: "L'Anomalie Magnétique de l'Atlantique Sud (SAMA) est une région où le champ magnétique terrestre est d'environ 24 µT — environ la moitié des ~50 µT normaux. Ce champ naturellement affaibli crée une expérience de contrôle en géométrie géomagnétique.",
+    solarSamaP2: "Analyse ESS 2026 : la corrélation vent solaire–violence qui s'applique à la plupart des latitudes S'INVERSE au Brésil et en Uruguay — exactement les populations sous la SAMA. Là où la géométrie géomagnétique change, la réponse biologique s'inverse.",
+    solarNorthernTitle: "Le paquet nordique : Trois traits, une cible moléculaire",
+    solarNorthernP1: "Trois traits co-sélectionnés dans les populations d'Europe du Nord convergent vers une seule cible moléculaire — le cryptochrome (CRY) :",
+    solarNorthernTraits: [
+      "Yeux bleus → transmission lumineuse 100× à travers l'iris → χ_optique (plus de photons atteignent le CRY rétinien)",
+      "Tolérance au lactose → apport alimentaire B2/FAD → stabilité du cofacteur CRY → χ_moléculaire",
+      "Haute latitude géomagnétique → champ ambiant fort → χ_géomagnétique",
+    ],
+    solarNorthernP2: "L'hypothèse de la vitamine D explique 2 des 3 traits (les yeux clairs et la haute latitude sélectionnent pour l'absorption UV). L'hypothèse CRY explique les 3 — y compris le lien autrement anomal entre la tolérance au lactose et la couleur des yeux.",
+    solarDendroTitle: "Confirmation en temps profond : Dendrochronologie",
+    solarDendroP1: "Le cycle solaire n'est pas un phénomène moderne. Les registres de cernes d'arbres confirment son fonctionnement continu à travers le temps géologique :",
+    solarDendroStudies: [
+      "Luthardt & Rößler 2018 : Une forêt pétrifiée de 290 millions d'années montre des cycles de croissance de 10,62 ± 0,08 ans — la périodicité solaire préservée dans le bois du Permien.",
+      "Brehm et al. 2021 : 1 000 ans de données continues de ¹⁴C en cernes d'arbres confirment indépendamment la modulation solaire de la production d'isotopes cosmogéniques.",
+      "Nature Communications 2025 : La confirmation du premier millénaire avant notre ère étend le registre continu, comblant le fossé entre les cycles solaires anciens et modernes.",
+    ],
+    solarDendroP2: "L'horloge biologique à laquelle la voie χ_B de BERM répond fonctionne sans interruption depuis au moins 290 millions d'années.",
   },
   ko: {
     title: "근거 등록부",
@@ -890,9 +1117,29 @@ const COPY = {
     fields: { nodes: "인과 노드", field: "필드 클래스", scope: "번역 범위", limitations: "제한사항", role: "교정 역할", source: "DOI / 출처" },
     structural: "구조적만",
     contextual: "맥락적만",
+    anchorTitle: "메커니즘적 앵커",
+    anchorP1: "[[ref:kalmijn1971|Kalmijn(J. Exp. Biol. 1971)]]은 판새류(상어와 가오리)가 로렌치니 기관을 통해 5 nV/cm(5 × 10⁻⁷ V/m)의 미약한 전기장을 신뢰성 있게 감지한다는 것을 실증했습니다. 이 임계값은 BERM이 사용하는 IFO-VGIC 민감도 수준보다 훨씬 낮습니다 — 척추동물 신경계는 현행 안전 기준이 생물학적으로 불활성으로 간주하는 강도에서 필드를 처리합니다.",
+    anchorP2: "로렌치니 기관은 이온 채널 전도도 변화를 사용합니다 — VGCC 게이트 역학과 물리적으로 유사합니다. 이것은 더 민감한 동물의 다른 메커니즘이 아닙니다; 다른 조직에서 발현된 동일한 메커니즘(약한 전기장에 의한 이온 채널 교란)입니다. 척추동물에서 10⁻⁵에서 10⁻⁷ V/m의 필드 민감성의 계통발생적 보존은 '필드가 생물학에는 너무 약하다'는 반론을 직접 반박합니다.",
+    anchorNote: "판새류 전기수용은 잘 확립된 감각 양식이며 논쟁의 여지가 없습니다. 포유류 VGCC 민감성으로의 외삽은 BERM 해석입니다 — 로렌치니 기관은 필드 감지에 최적화된 기하학적 구조를 가진 특수 감각 기관이며 포유류 조직에는 없습니다.",
+    animalTitle: "동물 근거: 제어된 EMF 실험",
+    animalP1: "[[ref:rodriguez2003|Rodriguez et al. (J. Reprod. Fert. 2003)]]은 맥길 대학교에서 제어된 실험에서 젖소 미경산우를 60 Hz EMF(10 kV/m, 30 µT)에 노출했습니다. 결과: 멜라토닌 감소(EMF가 인공적인 '긴 낮' 신호로 작용), 발정 주기 기간 증가(p < 0.01), 황체기 기간 증가(p < 0.01). [[ref:burchard2002|Burchard et al. (J. Dairy Sci. 2002)]]은 같은 EMF 노출이 IGF-1과 건물 섭취량을 증가시키는 것을 발견했습니다.",
+    animalP2: "이것은 환경 수준의 ELF 장이 대형 포유류의 생식 내분비학을 변경한다는 직접적인 실험적 증거입니다. 그러나 젖소는 전기화 이래(~1950년대 이후) 안정적인 헛간 ELF에 노출되어 왔습니다. 육종 선택 압력은 어떤 EMF 효과보다 ~3 자릿수 더 큽니다. 이것이 가축이 BERM 센티넬 레지스트리에서 음성 대조군으로 올바르게 분류되는 이유입니다 — EMF는 생물학적으로 활성이지만, 선택이 이를 가립니다.",
+    animalP3: "누설 전압 문헌(결함있는 배선으로 인한 밀리암페어의 접촉 전류)은 직교적입니다. Rodriguez는 만성적 장 노출(µT)을 측정했지, 급성 접촉 전류(mA)가 아닙니다. Rodriguez 유형의 연구만이 BERM의 메커니즘 — 생식 내분비학에 대한 만성적 저수준 ELF 장 효과 — 을 검증합니다.",
+    animalNote: "Rodriguez/Burchard 실험은 명확한 생물학적 종점을 가진 동료 심사를 거친 제어된 연구입니다. 가축에 대한 음성 대조군 분류는 인구 수준 감소 감지(선택이 신호를 압도)에 적용되며, ELF가 생물학적으로 활성인지 여부(활성임)에는 적용되지 않습니다. 아미쉬 대 전통적 낙농 비교 — 아미쉬 헛간의 ELF가 더 낮은 — 가 다음의 유익한 테스트가 될 것입니다.",
+    catsperTitle: "CatSper: 대체 불가능한 채널",
+    catsperLead: "9개의 칼슘 의존 단계가 정자 생산에서 수정까지를 아우른다. CatSper는 모든 단계 — 수정능 획득, 주류성, 주온성, 주화성, 첨체 반응 — 에서 필요하며 생물학적 백업이 없다. 테스트된 모든 종에서 CatSper 녹아웃은 완전한 남성 불임을 생산한다.",
+    catsperP1: "CatSper는 유일한 정자 특이적 칼슘 채널이다. 전압 의존적이고, pH 민감하며, 온도 의존적(Q₁₀ = 5.1, 역치 33.5°C)이고, 난구 세포의 피코몰 프로게스테론에 반응한다. EMF 유도 Ca²⁺ 조절 이상은 CatSper가 필요로 하는 정밀한 타이밍을 교란한다 — 조기 활성화가 정자가 난자에 도달하기 전에 유한한 에너지 저장을 고갈시킨다.",
+    catsperP2: "CATSPER2⁻/⁻ 남성은 프로게스테론 유도 초활성화가 폐지되어 in vivo 및 in vitro 모두에서 수정에 실패한다 ([[ref:catsper_human|JCI 2024]]). 약리학적 시그니처는 일관적이다: CatSper 차단제(NNC55-0396)는 EMF 노출과 동일한 운동성 및 첨체 반응 결함을 생산한다 ([[ref:pmc6104424_nnc|Rennhack et al. 2018]]).",
+    catsperEvolution: "CatSper는 성게에서 인간까지 보존되어 있다 — 동일한 채널이 6억 년의 진화에 걸쳐 수정을 제어한다. 수생 종(성게, 연어)은 외부 수정에서 CatSper를 사용하며, 해저 케이블의 EMF가 자연 실험을 제공한다.",
+    catsperDetailLink: "완전한 9단계 생식 내비게이션 체인",
     sentinelTitle: "센티넬 및 종간 근거",
     sentinel: "Cross-Species Lag Index는 지역 결과, 측정된 FieldState 및 종점 공변량을 등록된 종간 테스트에 결합하기 위한 준비 프로토콜이다.",
+    sentinelGradient: "정량 가능한 생식 감소율을 가진 7종에 걸쳐, 감소율은 EMF 노출 점수와 r = 0.909로 상관한다. 개 ([[ref:lea2016|Lea et al. 2016]]): 가정의 EMF 노출을 공유하는 영국 종견에서 26년간 정자 −1.0%/년 감소. 말 ([[ref:harris2023|Harris et al. 2023]]): 종마 정자 35년간 −0.75%/년 감소. 패턴은 꿀벌, 조류, 개구리 및 수생 종으로 확장 — 각각 전자기 환경에 비례하는 타임라인으로 감소.",
+    sentinelTLink: "이 종간 기울기는 인간에서 기록된 테스토스테론의 세속적 감소에 직접 연결된다: 동일한 EMF 메커니즘(VGCC → Ca²⁺ → 생식 교란)이 우리의 가정 EMF 환경을 공유하는 개에서 작동하며 동일한 ~1%/년 감소율을 생산한다. T→TFR의 8년 시차가 시간적 교정을 제공한다 — 더 일찍 전기화된 나라는 더 이른 T 감소 시작을 보여야 한다(예측 T-1).",
+    sentinelGradientStat: "r = 0.909",
+    sentinelGradientLabel: "종간 EMF 기울기 (7종)",
     sentinelLink: "센티넬 준비 상태 보기",
+    sentinelTDeclineLink: "테스토스테론 감소 근거",
     extPathway: "경로",
     extLevel: "근거 수준",
     extStatus: "마이그레이션 상태",
@@ -1013,7 +1260,7 @@ const COPY = {
     svgNonMonotonic: "비단조 반응",
     subPagesTitle: "주제별 근거 페이지",
     subPagesLead: "개별 연구가 기계론적 논거로 합성되는 상세 분석. 각 서사는 발표된 발견을 합성하지만, 집단 수준 인과 계수를 확립하지는 않는다.",
-    researchDomainsTitle: "10개 독립 연구 영역",
+    researchDomainsTitle: "11개 독립 연구 영역",
     convergenceDiagram: "수렴 다이어그램",
     bioActivity: "생물 활성",
     deviceLabel: "장치",
@@ -1058,8 +1305,44 @@ const COPY = {
     mechanismNowLabel: "메커니즘 (현재)",
     nextLinkLabel: "다음",
     nextLinkTitle: "비판과 응답",
-    researchDomainsLead: "BERM의 기계론적 경로는 10개의 상호 독립적인 연구 분야에 기반한다. 어떤 단일 분야도 충분하지 않지만, 동일한 예측 — 전자기장의 생물학적 활성 — 으로의 수렴은 우연으로는 일어나기 어렵다.",
+    researchDomainsLead: "BERM의 기계론적 경로는 11개의 상호 독립적인 연구 분야에 기반한다. 어떤 단일 분야도 충분하지 않지만, 동일한 예측 — 전자기장의 생물학적 활성 — 으로의 수렴은 우연으로는 일어나기 어렵다.",
     cry2PathwayNote: "CRY2의 하류 효과는 일주기 시계를 넘어 확장된다. Yap et al. (2025)은 CRY2가 TRP 계열 양이온 채널인 TRPC1과 물리적으로 상호작용하며, 이 복합체가 PEMF 노출 후 함께 핵으로 이동함을 보여주었다. 이 칼슘 유입 경로는 CRY2 의존적이고 (CRY2 침묵에 의해 차단), 광 의존적이며 (암소에서 소실), FAD 의존적이다 (RFK 침묵에 의해 감쇠) — 모두 RPM 메커니즘의 특징이다. 중요하게도, TRPC1은 전위 의존성 칼슘 채널이 아니며 L형 VGCC 차단제로 차단되지 않는다. 이는 경로 A와 C (사이트의 B)가 약리학적으로 분리 가능하게 유지됨을 의미하지만, 경로 C의 생물학적 범위는 이전에 가정된 것보다 크다.",
+    solarTitle: "태양 주기와 지자기 생물학: 제11 수렴선",
+    solarIntro: "BERM은 두 가지 독립적 감수성을 정의한다: χ(Ā) (VGCC, 기하학적 장 결합)와 χ_B (CRY/RPM, 라디칼쌍 스핀 역학). 태양 주기는 χ_B를 검증한다. 전기화 임계값 없이 작동하기 때문이다 — 태양 구동 지자기 변동은 인위적 EMF 훨씬 이전, 수십억 년 동안 라디칼쌍 화학을 조절해 왔다. CRY 매개 경로가 실재한다면, 그 시그니처가 태양 주기 길이의 생물학적 리듬에 나타나야 한다.",
+    solarResearchLabel: "핵심 연구 근거",
+    solarStudies: [
+      { authors: "Randall", year: "1990/1993", finding: "7개국에서 11년 주기 출생률 변동 감지", mechanism: "집단 종점" },
+      { authors: "Skjærvø et al.", year: "2015", finding: "전산업 노르웨이 (1676–1878, N=8,662): 태양 극대기 출생자가 5.2년 단명", mechanism: "수명 종점" },
+      { authors: "Burch et al.", year: "1999", finding: "지자기 교란 → 멜라토닌 대사물질 (6-OHMS) 배출 감소", mechanism: "멜라토닌 억제" },
+      { authors: "Weydahl et al.", year: "2001", finding: "멜라토닌 억제 효과 70°N(오로라 오발)에서 가장 강함", mechanism: "위도 기울기" },
+      { authors: "Ferrari et al.", year: "2015", finding: "지자기 폭풍일에 꿀벌 귀소 손실 2.7배", mechanism: "CRY 내비게이션" },
+      { authors: "Selås", year: "2004", finding: "r² = 0.84 상관: 나방 풍도 vs. 태양 흑점수", mechanism: "생태학적 종점" },
+      { authors: "Chizhevsky", year: "1922", finding: "2,500건의 역사적 대중 운동의 80%가 태양 극대기 주변에 집중", mechanism: "행동 종점" },
+    ],
+    solarStatTitle: "통계적 결과",
+    solarBandpass: "대역통과 8–14년: r = +0.58 (p < 0.0001) 미국 출생률, 1960–2000 하위 구간 r = +0.81",
+    solarFirstDiff: "1차 차분: Δ-SSN vs Δ-CBR r = +0.20 (p = 0.032) 시차 0",
+    solarMonteCarlo: "몬테카를로 p = 0.997 — 예측 부합 방향이 무작위화 검정으로 확인",
+    solarReversal: "방향 반전 1998: r_이전 = +0.21 (1933–1997), r_이후 = −0.55 (1998–2022). 부호 변화는 RF 포화 전환과 일치.",
+    solarSamaTitle: "SAMA: 자연의 대조 실험",
+    solarSamaP1: "남대서양 자기 이상(SAMA)은 지구 자기장이 약 24 µT — 정상 ~50 µT의 약 절반 — 인 영역이다. 이 자연적으로 약화된 자기장이 지자기 기하학의 대조 실험을 만든다.",
+    solarSamaP2: "ESS 2026 분석: 대부분의 위도에서 성립하는 태양풍-폭력 상관이 브라질과 우루과이에서 역전된다 — 정확히 SAMA 아래의 집단이다. 지자기 기하학이 변하는 곳에서 생물학적 반응이 반전된다.",
+    solarNorthernTitle: "북방 패키지: 세 형질, 하나의 분자 표적",
+    solarNorthernP1: "북유럽 집단에서 공동 선택된 세 형질이 단일 분자 표적 — 크립토크롬(CRY)으로 수렴한다:",
+    solarNorthernTraits: [
+      "파란 눈 → 홍채를 통한 100배 광투과 → χ_광학 (더 많은 광자가 망막 CRY에 도달)",
+      "유당 내성 → B2/FAD 식이 공급 → CRY 보조인자 안정성 → χ_분자",
+      "높은 지자기 위도 → 강한 주변 자기장 → χ_지자기",
+    ],
+    solarNorthernP2: "비타민 D 가설은 3개 형질 중 2개를 설명한다 (밝은 눈과 고위도는 UV 흡수에 선택된다). CRY 가설은 3개 모두를 설명한다 — 유당 내성과 눈 색깔의 이상적 연관을 포함하여.",
+    solarDendroTitle: "심층 시간 확인: 연륜연대학",
+    solarDendroP1: "태양 주기는 현대적 현상이 아니다. 나이테 기록이 지질 시간에 걸친 연속 작동을 확인한다:",
+    solarDendroStudies: [
+      "Luthardt & Rößler 2018: 2억 9천만 년 된 규화림이 10.62 ± 0.08년 성장 주기를 보임 — 페름기 목재에 태양 주기성 보존.",
+      "Brehm et al. 2021: 1,000년의 연속 ¹⁴C 나이테 데이터가 우주선 생성 동위원소 생산의 태양 변조를 독립적으로 확인.",
+      "Nature Communications 2025: 기원전 1천년기 확인이 연속 기록을 확장하여 고대와 현대 태양 주기 간 공백을 메움.",
+    ],
+    solarDendroP2: "BERM의 χ_B 경로가 반응하는 생물학적 시계는 적어도 2억 9천만 년간 중단 없이 작동해 왔다.",
   },
 } as const;
 
@@ -1220,11 +1503,11 @@ const SUB_PAGES = [
   {
     slug: "eyes",
     icon: Eye,
-    en: { title: "Eye Color & Magnetoreception", desc: "How iris pigmentation, nutrition, and sex modulate CRY sensitivity. 11 evidence cards, 5 predictions." },
-    fi: { title: "Silmien väri ja magnetoreseptio", desc: "Miten iiriksen pigmentaatio, ravitsemus ja sukupuoli moduloivat CRY-herkkyyttä. 11 evidenssikorttia, 5 ennustetta." },
-    ja: { title: "眼の色と磁気受容", desc: "虹彩色素沈着、栄養、性別がCRY感受性をどう調節するか。11のエビデンスカード、5つの予測。" },
-    fr: { title: "Couleur des yeux et magnetoreception", desc: "Comment la pigmentation de l'iris, la nutrition et le sexe modulent la sensibilite CRY. 11 cartes de preuves, 5 predictions." },
-    ko: { title: "눈 색깔과 자기수용", desc: "홍채 색소침착, 영양, 성별이 CRY 감수성을 어떻게 조절하는가. 11개 근거 카드, 5개 예측." },
+    en: { title: "The Northern Package", desc: "How three co-selected traits — blue eyes, lactose tolerance, and high geomagnetic latitude — optimized one molecule (CRY). Vitamin D explains 2/3; CRY explains 3/3." },
+    fi: { title: "Pohjoinen paketti", desc: "Miten kolme koselektoitunutta piirrettä — siniset silmät, laktoosinsietokyky ja korkea geomagneettinen leveysaste — optimoivat yhden molekyylin (CRY). D-vitamiini selittää 2/3; CRY selittää 3/3." },
+    ja: { title: "北部パッケージ", desc: "3つの共選択形質 — 青い目、乳糖耐性、高地磁気緯度 — が1つの分子（CRY）を最適化した方法。ビタミンDは2/3を説明、CRYは3/3を説明。" },
+    fr: { title: "Le Package Nordique", desc: "Comment trois traits co-selectionnes — yeux bleus, tolerance au lactose et haute latitude geomagnetique — ont optimise une molecule (CRY). La vitamine D explique 2/3 ; CRY explique 3/3." },
+    ko: { title: "북부 패키지", desc: "세 가지 공동 선택 형질 — 파란 눈, 유당 내성, 높은 지자기 위도 — 이 하나의 분자(CRY)를 최적화한 방법. 비타민 D는 2/3, CRY는 3/3을 설명." },
   },
   {
     slug: "nutrition",
@@ -1390,6 +1673,33 @@ const SUB_PAGES = [
     ja: { title: "反証：正直な評価", desc: "BERMと矛盾するように見える5つのエビデンスカテゴリと、各々に対するモデルの回答 — ゼロ結果からWHOレビューまで。" },
     fr: { title: "Contre-preuves : Une evaluation honnete", desc: "Cinq categories de preuves qui semblent contredire BERM, et la reponse du modele a chacune — des etudes nulles aux revues de l'OMS." },
     ko: { title: "반증: 정직한 평가", desc: "BERM과 모순되는 것으로 보이는 5개 근거 범주와 각각에 대한 모델의 응답 — 제로 결과부터 WHO 리뷰까지." },
+  },
+  {
+    slug: "testosterone",
+    icon: TrendingDown,
+    en: { title: "Testosterone: The Biological Clock", desc: "Population T declining 1.2%/year since 1982. The LH+T pattern points to hypothalamic suppression, and T→TFR temporal lag (R²=0.97) adds a second level to the prediction model." },
+    fi: { title: "Testosteroni: Biologinen kello", desc: "Väestön T laskee 1,2 %/vuosi vuodesta 1982. LH+T-kaava osoittaa hypotalamuksen suppressioon, ja T→TFR-ajallinen viive (R²=0,97) lisää ennustemalliin toisen tason." },
+    ja: { title: "テストステロン：生物学的時計", desc: "人口Tは1982年以降年-1.2%で低下。LH+Tパターンは視床下部抑制を示し、T→TFR時間的ラグ(R²=0.97)が予測モデルに第2レベルを追加。" },
+    fr: { title: "Testostérone : L'horloge biologique", desc: "T de population en déclin de 1,2 %/an depuis 1982. Le schéma LH+T pointe vers une suppression hypothalamique, et le décalage temporel T→TFR (R²=0,97) ajoute un second niveau au modèle." },
+    ko: { title: "테스토스테론: 생물학적 시계", desc: "인구 T는 1982년 이후 연간 -1.2% 감소. LH+T 패턴은 시상하부 억제를 가리키며, T→TFR 시간적 시차(R²=0.97)가 예측 모델에 제2수준을 추가." },
+  },
+  {
+    slug: "superposition",
+    icon: Layers,
+    en: { title: "Superposition Violation", desc: "172 studies show combined EMF exposures produce non-additive biological effects — the defining signature of geometric non-linearity predicted by the Lindgren metric extension." },
+    fi: { title: "Superpositiorikkomus", desc: "172 tutkimusta osoittaa, että yhdistetyt EMF-altistukset tuottavat ei-additiivisia biologisia vaikutuksia — geometrisen epälineaarisuuden tunnusmerkki, jonka Lindgrenin metriikkalaajennus ennustaa." },
+    ja: { title: "重ね合わせの破れ", desc: "172件の研究が、複合EMF曝露が非加算的な生物学的効果を生むことを実証 — リンドグレン計量拡張が予測する幾何学的非線形性の決定的特徴。" },
+    fr: { title: "Violation de la superposition", desc: "172 etudes montrent que les expositions EMF combinees produisent des effets biologiques non additifs — la signature de la non-linearite geometrique predite par l'extension metrique de Lindgren." },
+    ko: { title: "중첩 위반", desc: "172건의 연구가 복합 EMF 노출이 비가산적 생물학적 효과를 생성함을 입증 — 린드그렌 메트릭 확장이 예측하는 기하학적 비선형성의 결정적 특징." },
+  },
+  {
+    slug: "reproductive-navigation",
+    icon: Navigation,
+    en: { title: "Reproductive Navigation", desc: "Nine calcium-dependent steps from sperm production to fertilization — every one EMF-vulnerable, with CatSper as the irreplaceable master channel and no biological backup." },
+    fi: { title: "Reproduktiivinen navigointi", desc: "Yhdeksän kalsiumriippuvaista vaihetta siittiön tuotannosta hedelmöitykseen — jokainen EMF-haavoittuva, CatSper korvaamattomana avainkanavana ilman biologista varakanavaa." },
+    ja: { title: "生殖ナビゲーション", desc: "精子の産生から受精まで9つのカルシウム依存段階 — すべてEMF脆弱で、CatSperが代替不可能なマスターチャネル、生物学的バックアップなし。" },
+    fr: { title: "Navigation reproductive", desc: "Neuf étapes calcium-dépendantes de la production de spermatozoïdes à la fécondation — toutes vulnérables aux EMF, CatSper comme canal maître irremplaçable sans secours biologique." },
+    ko: { title: "생식 내비게이션", desc: "정자 생산에서 수정까지 9개의 칼슘 의존 단계 — 모두 EMF 취약, CatSper가 대체 불가능한 마스터 채널이며 생물학적 백업 없음." },
   },
 ] as const;
 
@@ -1588,7 +1898,109 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* 10 independent research domains */}
+      {/* Solar Cycle & Geomagnetic Biology */}
+      <section id="solar-cycle" className="mb-16 border-t editorial-rule pt-6">
+        <div className="border-l-4 border-yellow-500 pl-5 mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <Sun className="w-5 h-5 text-yellow-500 shrink-0" />
+            <h2 className="editorial-section-heading">{d.solarTitle}</h2>
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">{d.solarIntro}</p>
+        </div>
+
+        {/* Research evidence table */}
+        <div className="mb-8 max-w-4xl">
+          <h3 className="text-sm font-semibold text-foreground mb-3">{d.solarResearchLabel}</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
+                  <th className="py-2 pr-3">{d.authorsLabel}</th>
+                  <th className="py-2 pr-3 w-20">{d.yearLabel}</th>
+                  <th className="py-2 pr-3">{d.findingTableLabel}</th>
+                  <th className="py-2 pr-3 w-36">{d.mechanismLabel}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.solarStudies.map((s: { authors: string; year: string; finding: string; mechanism: string }, i: number) => (
+                  <tr key={i} className="border-b border-card-border/40 hover:bg-card-bg/50 transition-colors">
+                    <td className="py-2.5 pr-3 font-medium text-foreground">{s.authors}</td>
+                    <td className="py-2.5 pr-3 font-mono-num text-foreground-muted">{s.year}</td>
+                    <td className="py-2.5 pr-3 text-foreground-muted">{s.finding}</td>
+                    <td className="py-2.5 pr-3">
+                      <span className="inline-block rounded bg-card-bg px-1.5 py-0.5 text-[0.65rem] font-semibold text-foreground-muted">{s.mechanism}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Statistical results */}
+        <div className="mb-8 max-w-4xl">
+          <h3 className="text-sm font-semibold text-foreground mb-3">{d.solarStatTitle}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="rounded-lg border border-yellow-500/30 bg-card-bg p-3">
+              <p className="text-sm text-foreground-muted leading-relaxed">{d.solarBandpass}</p>
+            </div>
+            <div className="rounded-lg border border-yellow-500/30 bg-card-bg p-3">
+              <p className="text-sm text-foreground-muted leading-relaxed">{d.solarFirstDiff}</p>
+            </div>
+            <div className="rounded-lg border border-yellow-500/30 bg-card-bg p-3">
+              <p className="text-sm text-foreground-muted leading-relaxed">{d.solarMonteCarlo}</p>
+            </div>
+            <div className="rounded-lg border border-yellow-500/30 bg-card-bg p-3">
+              <p className="text-sm text-foreground-muted leading-relaxed">{d.solarReversal}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* SAMA anomaly */}
+        <div className="mb-8 max-w-4xl">
+          <div className="rounded-lg border border-card-border bg-card-bg p-4 mb-3">
+            <h3 className="text-sm font-semibold text-foreground mb-2">{d.solarSamaTitle}</h3>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.solarSamaP1}</p>
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.solarSamaP2}</p>
+          </div>
+        </div>
+
+        {/* Northern Package */}
+        <div className="mb-8 max-w-4xl">
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <h3 className="text-sm font-semibold text-foreground mb-2">{d.solarNorthernTitle}</h3>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.solarNorthernP1}</p>
+            <ol className="space-y-2 mb-3">
+              {d.solarNorthernTraits.map((trait: string, i: number) => (
+                <li key={i} className="text-sm text-foreground-muted leading-relaxed pl-4 border-l-2 border-yellow-500/30">
+                  <span className="font-mono-num text-accent mr-1">{i + 1}.</span> {trait}
+                </li>
+              ))}
+            </ol>
+            <div className="rounded border border-accent/30 bg-accent/5 p-3">
+              <p className="text-sm text-foreground leading-relaxed italic">{d.solarNorthernP2}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Dendrochronology */}
+        <div className="max-w-4xl">
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <h3 className="text-sm font-semibold text-foreground mb-2">{d.solarDendroTitle}</h3>
+            <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.solarDendroP1}</p>
+            <ul className="space-y-2 mb-3">
+              {d.solarDendroStudies.map((study: string, i: number) => (
+                <li key={i} className="text-sm text-foreground-muted leading-relaxed pl-4 border-l-2 border-yellow-500/30">{study}</li>
+              ))}
+            </ul>
+            <div className="rounded border-2 border-yellow-500/40 bg-yellow-500/5 p-3">
+              <p className="text-sm text-foreground leading-relaxed italic">{d.solarDendroP2}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 11 independent research domains */}
       <section className="mb-16 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">
           {d.researchDomainsTitle}
@@ -1616,15 +2028,17 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
                 { en: "Sleep", fi: "Uni", c: "#6366f1" },
                 { en: "Metabolic", fi: "Metabolinen", c: "#84cc16" },
                 { en: "Reproductive", fi: "Reproduktio", c: "#ec4899" },
+                { en: "Solar/Geomagnetic", fi: "Aurinko/Geo", c: "#eab308" },
               ];
               const hubX = 250, hubY = 130, sr = 85, lr = 112;
               return domains.map((domain, i) => {
-                const a = ((i * 36 - 90) * Math.PI) / 180;
+                const a = ((i * (360 / 11) - 90) * Math.PI) / 180;
                 const sx = Math.round(hubX + sr * Math.cos(a));
                 const sy = Math.round(hubY + sr * Math.sin(a));
                 const lx = Math.round(hubX + lr * Math.cos(a));
                 const ly = Math.round(hubY + lr * Math.sin(a));
-                const anchor = i === 0 || i === 5 ? "middle" : i < 5 ? "start" : "end";
+                const deg = i * (360 / 11);
+                const anchor = (deg > 350 || deg < 10 || (deg > 170 && deg < 190)) ? "middle" : deg < 180 ? "start" : "end";
                 return (
                   <g key={i}>
                     <line x1={hubX} y1={hubY} x2={sx} y2={sy} stroke={domain.c} strokeWidth="2" opacity="0.7" />
@@ -1966,6 +2380,28 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </div>
       </section>
 
+      {/* CatSper: Reproductive Navigation */}
+      <section id="catsper" className="mb-16 border-t editorial-rule pt-6">
+        <div className="border-l-4 border-purple-500 pl-5 mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <Navigation className="w-5 h-5 text-purple-500 shrink-0" />
+            <h2 className="editorial-section-heading">{d.catsperTitle}</h2>
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">{d.catsperLead}</p>
+        </div>
+
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl mb-5">
+          <p>{d.catsperP1}</p>
+          <p><InlineReferenceText text={d.catsperP2} locale={locale} /></p>
+        </div>
+
+        <div className="rounded-lg border border-accent/30 bg-accent/5 p-4 max-w-4xl mb-5">
+          <p className="text-sm text-foreground leading-relaxed">{d.catsperEvolution}</p>
+        </div>
+
+        <Link href={`/${locale}/evidence/reproductive-navigation`} className="text-sm text-accent hover:underline">{d.catsperDetailLink} →</Link>
+      </section>
+
       {/* Bounded v2 records */}
       <section className="mb-16 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">{d.boundedTitle}</h2>
@@ -2133,7 +2569,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
       {/* Orphaned findings */}
       <section id="orphaned-findings" className="mb-16 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">
-          {ORPHANED_COMMENTARY[labelLocale].title}
+          {(ORPHANED_COMMENTARY[activeLocale] ?? ORPHANED_COMMENTARY.en).title}
         </h2>
         <div className="max-w-4xl overflow-x-auto mb-6">
           <table className="w-full text-sm border-collapse">
@@ -2148,9 +2584,9 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
             </thead>
             <tbody className="text-foreground-muted">
               {ORPHANED_FINDINGS.map((row) => {
-                const finding = locale === "fi" ? row.findingFi : row.findingEn;
-                const criticism = locale === "fi" ? row.criticismFi : row.criticismEn;
-                const mechanism = locale === "fi" ? row.mechanismFi : row.mechanismEn;
+                const finding = locale === "fi" ? row.findingFi : locale === "ja" ? row.findingJa : locale === "fr" ? row.findingFr : locale === "ko" ? row.findingKo : row.findingEn;
+                const criticism = locale === "fi" ? row.criticismFi : locale === "ja" ? row.criticismJa : locale === "fr" ? row.criticismFr : locale === "ko" ? row.criticismKo : row.criticismEn;
+                const mechanism = locale === "fi" ? row.mechanismFi : locale === "ja" ? row.mechanismJa : locale === "fr" ? row.mechanismFr : locale === "ko" ? row.mechanismKo : row.mechanismEn;
                 return (
                 <tr key={row.year} className="border-b border-card-border/50">
                   <td className="py-2 pr-3 font-mono-num">{row.year}</td>
@@ -2166,7 +2602,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </div>
         <div className="max-w-4xl space-y-4">
           {(() => {
-            const oc = ORPHANED_COMMENTARY[labelLocale];
+            const oc = ORPHANED_COMMENTARY[activeLocale] ?? ORPHANED_COMMENTARY.en;
             return (
               <>
                 <p className="text-sm text-foreground-muted leading-relaxed">{oc.p1}</p>
@@ -2178,10 +2614,55 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      <section className="editorial-rail mb-14 max-w-4xl border-y border-card-border py-5">
-        <h2 className="editorial-section-heading mb-3">{d.sentinelTitle}</h2>
-        <p className="text-sm text-foreground-muted leading-relaxed mb-3">{d.sentinel}</p>
-        <Link href={`/${locale}/sentinel`} className="text-sm text-accent hover:underline">{d.sentinelLink} →</Link>
+      <section id="cross-species" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <div className="border-l-4 border-accent pl-5 mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <TreePine className="w-5 h-5 text-accent shrink-0" />
+            <h2 className="editorial-section-heading">{d.sentinelTitle}</h2>
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed">{d.sentinel}</p>
+        </div>
+
+        <div className="flex items-center gap-4 mb-5 rounded-lg border border-accent/30 bg-accent/5 p-4">
+          <span className="text-2xl font-mono-num font-bold text-accent">{d.sentinelGradientStat}</span>
+          <span className="text-sm text-foreground-muted">{d.sentinelGradientLabel}</span>
+        </div>
+
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed mb-5">
+          <p><InlineReferenceText text={d.sentinelGradient} locale={locale} /></p>
+          <p><InlineReferenceText text={d.sentinelTLink} locale={locale} /></p>
+        </div>
+
+        <div className="flex flex-wrap gap-3">
+          <Link href={`/${locale}/sentinel`} className="text-sm text-accent hover:underline">{d.sentinelLink} →</Link>
+          <span className="text-foreground-muted">·</span>
+          <Link href="#testosterone" className="text-sm text-accent hover:underline">{d.sentinelTDeclineLink} →</Link>
+        </div>
+      </section>
+
+      {/* Mechanistic Anchors */}
+      <section id="mechanistic-anchors" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.anchorTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p><InlineReferenceText text={d.anchorP1} locale={locale} /></p>
+          <p>{d.anchorP2}</p>
+        </div>
+        <div className="mt-4 rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.anchorNote}</p>
+        </div>
+      </section>
+
+      {/* Animal Evidence: Controlled EMF Experiments */}
+      <section id="animal-evidence" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.animalTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p><InlineReferenceText text={d.animalP1} locale={locale} /></p>
+          <p>{d.animalP2}</p>
+          <p>{d.animalP3}</p>
+        </div>
+        <div className="mt-4 rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.animalNote}</p>
+        </div>
       </section>
 
       <RetrodictionCards locale={activeLocale} />

@@ -1757,3 +1757,171 @@ POPULATION_CHI_PROFILES = {
         "note": "Minimal coupling: low bio χ × low-moderate env χ",
     },
 }
+
+
+# === Country geomagnetic data (DIAGNOSTIC_ONLY) ===
+
+COUNTRY_GEOMAG = {
+    # country: (geomag_lat, field_uT, blue_eye_frac, lactose_tol_frac)
+    "Finland":      (64.5, 52.0, 0.89, 0.82),
+    "Sweden":       (62.0, 51.0, 0.78, 0.85),
+    "Norway":       (65.5, 52.5, 0.80, 0.90),
+    "Iceland":      (70.0, 53.0, 0.75, 0.80),
+    "Estonia":      (60.5, 51.0, 0.70, 0.75),
+    "Denmark":      (58.0, 50.5, 0.65, 0.88),
+    "UK":           (55.0, 49.5, 0.48, 0.82),
+    "Germany":      (51.0, 48.5, 0.40, 0.78),
+    "France":       (48.5, 47.0, 0.22, 0.65),
+    "Spain":        (43.0, 44.5, 0.10, 0.40),
+    "Italy":        (42.5, 46.0, 0.12, 0.45),
+    "Greece":       (37.5, 45.0, 0.08, 0.30),
+    "USA":          (50.0, 48.0, 0.27, 0.70),
+    "Japan":        (27.0, 46.0, 0.01, 0.05),
+    "SouthKorea":   (28.0, 46.5, 0.01, 0.10),
+    "China":        (30.0, 47.0, 0.01, 0.10),
+    "India":        (12.0, 38.0, 0.01, 0.35),
+    "Brazil":       (-15.0, 24.0, 0.08, 0.45),
+    "Nigeria":      (3.5, 32.0, 0.01, 0.25),
+    "Iran":         (28.0, 44.0, 0.05, 0.20),
+}
+
+
+def v17_chi_B(geomag_lat_deg: float, field_strength_uT: float = None) -> dict:
+    """CRY/RPM spin-susceptibility — geomagnetic component.
+
+    chi_B is BERM's second independent susceptibility. It operates
+    through CRY's radical pair mechanism and is independent of chi(A-bar)
+    (geometric/VGCC channel). chi_B does NOT require an electrification
+    threshold — it operates in pre-industrial environments too.
+
+    Parameters:
+      geomag_lat_deg: geomagnetic latitude (not geographic)
+      field_strength_uT: local field strength (microtesla)
+
+    Returns:
+      dict: larmor_freq_MHz, dual_peak_factor, effective_cycle_years,
+            chi_B_relative (normalized 0-1 relative to maximum)
+
+    Theoretical basis:
+      - CRY Larmor frequency: f_L = gamma_e x B / (2*pi)
+        gamma_e = 28.025 GHz/T (free electron)
+      - Dual-peak structure: at high latitudes both CME peak (at maximum)
+        and coronal hole peak (2-3yr later) are strong -> effective
+        period shortens
+      - SAMA: weak field -> Larmor shifts -> different sensitivity spectrum
+
+    Verification:
+      - Burch 1999: geomag disturbance -> melatonin down
+      - Weydahl 2001: strongest effect at 70 N (auroral oval)
+      - ESS 2026: SAMA inverts solar-behavior correlation
+      - Selas 2004: r^2=0.84 moth population vs SSN (66 N)
+
+    DIAGNOSTIC_ONLY: Does not affect TFR calculations. Reports latitude-
+    dependent sensitivity profile as diagnostic information.
+    """
+    import math
+
+    GAMMA_E = 28.025e9  # Hz/T, electron gyromagnetic ratio
+
+    if field_strength_uT is None:
+        field_strength_uT = 30 * math.sqrt(1 + 3 * math.sin(math.radians(geomag_lat_deg))**2)
+
+    B_tesla = field_strength_uT * 1e-6
+    larmor_hz = GAMMA_E * B_tesla
+    larmor_mhz = larmor_hz / 1e6
+
+    abs_lat = abs(geomag_lat_deg)
+    if abs_lat < 30:
+        dual_peak_factor = 0.2
+    elif abs_lat < 55:
+        dual_peak_factor = 0.5
+    elif abs_lat < 65:
+        dual_peak_factor = 0.8
+    else:
+        dual_peak_factor = 1.0
+
+    effective_cycle = 11.0 - dual_peak_factor * 2.0
+
+    chi_B = (field_strength_uT / 65.0) * (0.3 + 0.7 * dual_peak_factor)
+    chi_B = min(1.0, max(0.0, chi_B))
+
+    return {
+        "geomag_lat": geomag_lat_deg,
+        "field_strength_uT": round(field_strength_uT, 1),
+        "larmor_freq_MHz": round(larmor_mhz, 3),
+        "dual_peak_factor": dual_peak_factor,
+        "effective_cycle_years": round(effective_cycle, 1),
+        "chi_B_relative": round(chi_B, 3),
+        "interpretation": (
+            "HIGH" if chi_B > 0.7 else
+            "MODERATE" if chi_B > 0.4 else
+            "LOW"
+        ),
+    }
+
+
+def v17_northern_package(eye_color: str = "mixed",
+                          lactose_tolerant_frac: float = 0.5,
+                          geomag_lat: float = 45.0) -> dict:
+    """Northern Package: co-selection of three traits for CRY optimization.
+
+    Three traits co-selected in Northern Europe 10,000-6,000 years ago
+    optimize the SAME molecular system — cryptochrome (CRY):
+
+    1. Blue eyes (OCA2, chr.15): pale iris transmits 100x more blue
+       light -> CRY activates in low light -> chi_optical increases
+
+    2. Lactose tolerance (LCT, chr.2): lifelong dairy consumption
+       -> riboflavin (B2) -> FAD cofactor -> CRY protein STABILIZED
+       (not "more sensitive" but MORE PROTEIN) -> chi_molecular increases
+
+    3. Geomagnetic location: high latitude -> stronger field + auroral
+       modulation -> chi_geomagnetic increases
+
+    Verification:
+      - Higuchi et al.: eye color modulates melatonin suppression
+      - Workman 2018: blue-eyed more resilient to SAD
+      - Hirano 2017 (Cell Reports): FAD stabilizes CRY protein
+      - PMC11817702 2025: RFK silencing blocks magnetic direction selectivity
+      - Population genetics: co-selection in same population
+
+    Evolutionary vulnerability: Northern Package populations have ALL chi
+    values maximized -> post-electrification biological response is
+    STRONGEST -> explains why TFR fell below replacement FIRST in Nordics.
+
+    DIAGNOSTIC_ONLY.
+    """
+    chi_optical = {
+        "blue": 1.0,
+        "green": 0.7,
+        "hazel": 0.5,
+        "brown": 0.3,
+        "dark_brown": 0.2,
+        "mixed": 0.5,
+    }.get(eye_color, 0.5)
+
+    chi_molecular = 0.3 + 0.7 * lactose_tolerant_frac
+
+    chi_geo = v17_chi_B(geomag_lat)["chi_B_relative"]
+
+    composite = chi_optical * chi_molecular * chi_geo
+
+    return {
+        "chi_optical": round(chi_optical, 2),
+        "chi_molecular": round(chi_molecular, 2),
+        "chi_geomagnetic": round(chi_geo, 3),
+        "composite_chi": round(composite, 3),
+        "vulnerability_class": (
+            "VERY_HIGH" if composite > 0.5 else
+            "HIGH" if composite > 0.3 else
+            "MODERATE" if composite > 0.15 else
+            "LOW"
+        ),
+        "population_archetype": (
+            "Northern Package (Fennoskandia)" if composite > 0.5 else
+            "Central European" if composite > 0.3 else
+            "East Asian" if chi_optical < 0.4 and chi_molecular < 0.5 else
+            "Tropical / Sub-Saharan" if chi_geo < 0.3 else
+            "Mixed"
+        ),
+    }

@@ -1,0 +1,62 @@
+{
+  "BeeArticleContent.tsx": {
+    "route": "/articles/bees",
+    "referenceIds": [
+      "favre_johansson_2025",
+      "england_2023_ticks",
+      "colin_1992_varroa_charge",
+      "shepherd_2023_pollination",
+      "wyszkowska_bee_collection_2023_2025",
+      "panagopoulos2025",
+      "mallinson2025_electric_pollution",
+      "lindecke2026",
+      "us_patent_12239107",
+      "vaziri2016"
+    ]
+  },
+  "ImplausibilityArticleContent.tsx": {
+    "route": "/articles/implausibility",
+    "referenceIds": [
+      "adey1976_calcium_window",
+      "lai1995_dna_breaks",
+      "lai1996_double_strand",
+      "pall2013_v2",
+      "sousouri2025",
+      "kim2026_cell_gene_switch",
+      "york2026_kim_commentary",
+      "panagopoulos2025",
+      "trus2024",
+      "zakon2012_ion_channel_evolution",
+      "glaser1971_bibliography",
+      "lindgren2026_susceptibility"
+    ]
+  },
+  "SpectrumArticleContent.tsx": {
+    "route": "/articles/spectrum",
+    "referenceIds": [
+      "tdcs_fda_depression_2025",
+      "ttfields_novocure_fda",
+      "pemf_bone_fda_review_2020",
+      "panagopoulos2025",
+      "trus2024",
+      "vaziri2016",
+      "icnirp2020",
+      "campisi2010",
+      "zakon2012_ion_channel_evolution"
+    ]
+  },
+  "DualLockArticleContent.tsx": {
+    "route": "/articles/dual-lock",
+    "referenceIds": [
+      "mehta2010_dual_hormone",
+      "dual_hormone_meta2021",
+      "dreher2016",
+      "goetz2024",
+      "lokeshwar2021",
+      "konrath2011",
+      "twenge2017_sexual_frequency",
+      "us_lfp_2026",
+      "trumble2012"
+    ]
+  }
+}

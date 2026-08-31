@@ -1,9 +1,11 @@
-"""Check that every source link the site emits actually resolves.
+"""Check that every canonical source link the site emits actually resolves.
 
-Covers all three link surfaces:
-  website/public/data/references_full.json   (reference database)
-  website/lib/legacyEvidence.json            (legacy evidence table)
-  website/lib/citationLinks.ts               (inline citations)
+The canonical reference database is the website's only source-link surface:
+  website/public/data/references_full.json
+
+Canonical reference records in registered, pending, missing or other
+non-emittable link states are deliberately excluded. Only strict metadata
+matches and curated official URLs reach the ``verified`` state.
 
 A DOI is checked against doi.org, which answers 302 for a registered DOI and
 404 for one that does not exist — so a wrong-but-plausible DOI is caught here
@@ -29,11 +31,10 @@ import certifi
 
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCES = ROOT / "website" / "public" / "data" / "references_full.json"
-LEGACY = ROOT / "website" / "lib" / "legacyEvidence.json"
-CITATION_LINKS = ROOT / "website" / "lib" / "citationLinks.ts"
 
 SSL_CTX = ssl.create_default_context(cafile=certifi.where())
 UA = "Mozilla/5.0 (compatible; BERM-link-check/1.0)"
+EMITTABLE_LINK_STATUSES = {"verified"}
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -63,18 +64,30 @@ def check(url: str) -> tuple[str, int | str]:
 
 
 def reference_url(entry: dict) -> str | None:
-    url = (entry.get("url") or "").strip()
-    if url:
-        return url
+    status = str(entry.get("link_status") or "").strip().lower()
+    if status not in EMITTABLE_LINK_STATUSES:
+        return None
+
+    # Keep this order aligned with the website resolver: canonical DOI first,
+    # then open PubMed Central, PubMed, and finally an official source URL.
     doi = (entry.get("doi") or "").strip()
     if doi.startswith("10."):
         return f"https://doi.org/{doi}"
     if doi.startswith("http"):
         return doi
-    if re.fullmatch(r"PMC\d+", doi, re.I):
-        return f"https://pmc.ncbi.nlm.nih.gov/articles/{doi.upper()}/"
+
+    pmcid = str(entry.get("pmcid") or "").strip() or (
+        doi if re.fullmatch(r"PMC\d+", doi, re.I) else ""
+    )
+    if re.fullmatch(r"PMC\d+", pmcid, re.I):
+        return f"https://pmc.ncbi.nlm.nih.gov/articles/{pmcid.upper()}/"
+
     pmid = str(entry.get("pmid") or "").strip() or (doi if re.fullmatch(r"\d{7,9}", doi) else "")
-    return f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else None
+    if re.fullmatch(r"\d{7,9}", pmid):
+        return f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
+
+    url = (entry.get("url") or "").strip()
+    return url or None
 
 
 def collect() -> dict[str, list[str]]:
@@ -87,11 +100,6 @@ def collect() -> dict[str, list[str]]:
 
     for entry in json.loads(REFERENCES.read_text())["references"]:
         add(reference_url(entry), f"references:{entry['id']}")
-    for entry in json.loads(LEGACY.read_text()):
-        add((entry.get("url") or "").strip() or None, f"legacy:{entry['id']}")
-    if CITATION_LINKS.exists():
-        for key, url in re.findall(r'^\s*"([^"]+)":\s*"([^"]+)",\s*$', CITATION_LINKS.read_text(), re.M):
-            add(url, f"citation:{key}")
     return owners
 
 

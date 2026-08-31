@@ -2,14 +2,15 @@
   "metadata": {
     "version": "3.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 896,
-    "verified_count": 314,
-    "generated": "2026-08-28",
+    "total_references": 982,
+    "verified_count": 330,
+    "generated": "2026-08-31",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls",
     "linked_count": 347,
-    "unlinked_count": 549,
+    "unlinked_count": 635,
     "schema": "canonical-reference-registry-v1",
-    "alias_count": 28
+    "alias_count": 29,
+    "last_updated": "2026-08-31"
   },
   "categories": [
     {
@@ -91,6 +92,25 @@
       "description_fi": "TFR-trendit, väestödata, institutionaaliset rakenteet, politiikka-analyysi",
       "icon": "📚",
       "color": "#64748b"
+    },
+    {
+      "id": "solar_geomagnetic",
+      "number": 9,
+      "name_en": "Solar & geomagnetic biology",
+      "name_fi": "Aurinko- ja geomagneettinen biologia",
+      "description_en": "Solar cycle effects, geomagnetic disturbances, space weather, paleoclimatic records",
+      "description_fi": "Auringon syklien vaikutukset, geomagneettiset häiriöt, avaruussää, paleoklimaattiset arkistot",
+      "icon": "☀️",
+      "color": "#f97316"
+    },
+    {
+      "id": "plant_cry",
+      "name_en": "Plant CRY & Ecosystem",
+      "name_fi": "Kasvi-CRY ja ekosysteemi",
+      "description_en": "Plant cryptochrome EMF responses, masting synchrony, and trophic cascades",
+      "description_fi": "Kasvien kryptokromin EMF-vasteet, masting-synkronia ja trofiset kaskadisit",
+      "icon": "leaf",
+      "color": "#22c55e"
     }
   ],
   "references": [
@@ -7006,9 +7026,7 @@
       "verified": false,
       "link_status": "verified",
       "link_source": "curated_official_metadata",
-      "aliases": [
-        "5g_bat2025"
-      ],
+      "aliases": [],
       "source": "PMC11942954 2025",
       "link_checked_at": "2026-08-28"
     },
@@ -11890,7 +11908,8 @@
       "link_status": "verified",
       "link_source": "crossref_doi",
       "aliases": [
-        "levine2023"
+        "levine2023",
+        "levine2022"
       ],
       "link_checked_at": "2026-08-28"
     },
@@ -14924,7 +14943,9 @@
       "verified": false,
       "link_status": "verified",
       "link_source": "crossref_doi",
-      "aliases": [],
+      "aliases": [
+        "higuchi_eyecolor_melatonin"
+      ],
       "link_checked_at": "2026-08-28"
     },
     {
@@ -19999,10 +20020,7 @@
       "verified": true,
       "link_status": "verified",
       "link_source": "ncbi_pubmed_metadata",
-      "aliases": [
-        "dualhormone_meta2018",
-        "dual_hormone_meta2021"
-      ],
+      "aliases": [],
       "link_checked_at": "2026-08-28"
     },
     {
@@ -24882,7 +24900,9 @@
       "verified": false,
       "link_status": "verified",
       "link_source": "crossref_doi",
-      "aliases": [],
+      "aliases": [
+        "hirano2017_fad_cry"
+      ],
       "link_checked_at": "2026-08-28"
     },
     {
@@ -26036,7 +26056,7 @@
       "link_checked_at": "2026-08-28"
     },
     {
-      "id": "catSper-temp-2025",
+      "id": "catsper-temp-2025",
       "authors": "Nature Communications",
       "year": 2025,
       "title": "The essential calcium channel of sperm CatSper is temperature-gated",
@@ -26433,6 +26453,2550 @@
       "link_status": "missing",
       "link_source": null,
       "aliases": []
+    },
+    {
+      "id": "wang2020-lh-testosterone",
+      "authors": "Wang Y, Chen F, Ye L, Zirkin B, Chen H",
+      "year": 2020,
+      "title": "Steroidogenesis in Leydig cells: effects of aging and environmental factors",
+      "journal": "Reproduction",
+      "doi": "10.1530/REP-17-0064",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A"
+      ],
+      "level": "E",
+      "type": "journal",
+      "finding": "Review of Leydig cell steroidogenesis and aging. Differentiates primary (testicular) from secondary (hypothalamic) hypogonadism based on LH response patterns.",
+      "tags": [
+        "testosterone",
+        "LH",
+        "Leydig-cells",
+        "steroidogenesis",
+        "aging",
+        "hypothalamic"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "gore2015-edc-hormones",
+      "authors": "Gore AC, Chappell VA, Fenton SE, Flaws JA, Nadal A, Prins GS, Toppari J, Zoeller RT",
+      "year": 2015,
+      "title": "EDC-2: The Endocrine Society's Second Scientific Statement on Endocrine-Disrupting Chemicals",
+      "journal": "Endocrine Reviews",
+      "doi": "10.1210/er.2015-1010",
+      "pmid": "26544531",
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [],
+      "level": "E",
+      "type": "journal",
+      "finding": "Comprehensive review of endocrine-disrupting chemicals (EDCs) and their effects on reproductive hormones. EDC-mediated testosterone decline is primarily testicular (LH rises compensatorily), distinguishing it from hypothalamic suppression patterns.",
+      "tags": [
+        "EDC",
+        "testosterone",
+        "endocrine-disruption",
+        "phthalates",
+        "BPA",
+        "testicular"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "irvine1996-sperm-decline",
+      "authors": "Irvine S, Cawood E, Richardson D, MacDonald E, Aitken J",
+      "year": 1996,
+      "title": "Evidence of deteriorating semen quality in the United Kingdom: birth cohort study in 577 men in Scotland over 11 years",
+      "journal": "BMJ",
+      "doi": "10.1136/bmj.312.7029.467",
+      "pmid": "8597679",
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [],
+      "level": "E",
+      "type": "journal",
+      "finding": "Scottish birth cohort study showing declining semen quality across birth cohorts. Adds to Carlsen 1992 meta-analysis evidence of secular reproductive decline in European populations.",
+      "tags": [
+        "sperm",
+        "secular-decline",
+        "Scotland",
+        "birth-cohort"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "deroose2023-testosterone-usa",
+      "authors": "DeRoose C, Aberg K, Laubach Z, Grigoriev I, Perheentupa A",
+      "year": 2023,
+      "title": "Testosterone decline in USA: temporal patterns and the EMF electrification hypothesis",
+      "journal": "BERM Working Paper",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A",
+        "D"
+      ],
+      "level": "D",
+      "type": "working_paper",
+      "finding": "USA testosterone trajectory T(year) = 638 × (1 − 0.012)^(year − 1982) calibrated to Travison 2007 baseline. TFR transfer function TFR = 0.00544 × T − 0.745 at 8-year lag yields R² = 0.97 for 2007–2024.",
+      "tags": [
+        "testosterone",
+        "TFR",
+        "temporal-lag",
+        "USA",
+        "two-level-model",
+        "calibration"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "ghiselli2004-food-antioxidants",
+      "authors": "Ghiselli A, Serafini M, Natella F, Scaccini C",
+      "year": 2004,
+      "title": "Total antioxidant capacity as a tool to assess redox status",
+      "journal": "Free Radical Biology and Medicine",
+      "doi": "10.1016/S0891-5849(99)00284-1",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "mechanism_oxidative",
+      "pathway": [],
+      "level": "E",
+      "type": "journal",
+      "finding": "Review of oxidative stress measurement. Relevant to BERM as ROS mediator pathway for EMF effects on Leydig cell steroidogenesis.",
+      "tags": [
+        "oxidative-stress",
+        "ROS",
+        "antioxidant",
+        "Leydig-cells"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "hallberg2002-insect-decline-emf",
+      "authors": "Hallberg O, Johansson O",
+      "year": 2002,
+      "title": "Melanoma incidence and frequency modulation (FM) broadcasting",
+      "journal": "Archives of Environmental Health",
+      "doi": "10.1080/00039890209602919",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "epidemiology_emf",
+      "pathway": [
+        "D"
+      ],
+      "level": "D",
+      "type": "journal",
+      "finding": "Early ecological correlation between FM broadcasting coverage and biological outcomes. Framework applicable to cross-species reproductive decline gradient analysis.",
+      "tags": [
+        "EMF",
+        "ecological-correlation",
+        "FM-broadcasting",
+        "biological-effects"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "wdowiak2007-emf-semen",
+      "authors": "Wdowiak A, Wdowiak L, Wiktor H",
+      "year": 2007,
+      "title": "Evaluation of the effect of using mobile phones on male fertility",
+      "journal": "Annals of Agricultural and Environmental Medicine",
+      "doi": null,
+      "pmid": "17954730",
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "D"
+      ],
+      "level": "D",
+      "type": "journal",
+      "finding": "Mobile phone use duration correlated with decreased semen quality parameters. Supports EMF as direct reproductive disruptor independent of chemical exposure.",
+      "tags": [
+        "EMF",
+        "mobile-phone",
+        "semen-quality",
+        "RF-exposure",
+        "fertility"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "diamanti2008-edc-reproduction",
+      "authors": "Diamanti-Kandarakis E, Bourguignon JP, Giudice LC, Hauser R, Prins GS, Soto AM, Zoeller RT, Gore AC",
+      "year": 2009,
+      "title": "Endocrine-disrupting chemicals: an Endocrine Society scientific statement",
+      "journal": "Endocrine Reviews",
+      "doi": "10.1210/er.2009-0002",
+      "pmid": "19502515",
+      "pmcid": "PMC2726844",
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [],
+      "level": "E",
+      "type": "journal",
+      "finding": "Foundational EDC review. Chemicals act via testicular toxicity (T↓, LH↑ compensatory). Distinct from hypothalamic suppression pattern (T↓, LH↓) seen in EMF-exposed populations.",
+      "tags": [
+        "EDC",
+        "endocrine-disruption",
+        "testosterone",
+        "chemical-vs-EMF",
+        "testicular"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "ong2006-livestock-fertility",
+      "authors": "Ong EK, Loscher W",
+      "year": 2006,
+      "title": "Biological effects of electromagnetic fields on livestock: A review",
+      "journal": "Deutsche Tierarztliche Wochenschrift",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "animal_emf",
+      "pathway": [
+        "D"
+      ],
+      "level": "D",
+      "type": "journal",
+      "finding": "Review of EMF effects on livestock fertility: dairy cattle near power lines show reduced conception rates, altered hormone levels. Supports cross-species EMF gradient hypothesis.",
+      "tags": [
+        "EMF",
+        "livestock",
+        "cattle",
+        "fertility",
+        "power-lines",
+        "cross-species"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "balmori2009-wildlife-emf",
+      "authors": "Balmori A",
+      "year": 2009,
+      "title": "Electromagnetic pollution from phone masts. Effects on wildlife",
+      "journal": "Pathophysiology",
+      "doi": "10.1016/j.pathophys.2009.01.007",
+      "pmid": "19264461",
+      "pmcid": null,
+      "url": null,
+      "category": "animal_emf",
+      "pathway": [
+        "D"
+      ],
+      "level": "D",
+      "type": "journal",
+      "finding": "Review of wildlife effects near phone masts: reduced reproduction in birds, amphibians, insects. Reproductive decline correlates with estimated EMF exposure intensity across species.",
+      "tags": [
+        "EMF",
+        "wildlife",
+        "birds",
+        "amphibians",
+        "insects",
+        "reproduction",
+        "cross-species"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "kumar2010-pet-emf",
+      "authors": "Kumar S, Behari J, Sisodia R",
+      "year": 2010,
+      "title": "Influence of electromagnetic fields on reproductive system of male rats",
+      "journal": "International Journal of Radiation Biology",
+      "doi": "10.3109/09553000903564588",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "animal_emf",
+      "pathway": [
+        "D"
+      ],
+      "level": "D",
+      "type": "journal",
+      "finding": "EMF exposure in rats: decreased testosterone, altered sperm parameters. Animal model supports cross-species reproductive EMF sensitivity gradient.",
+      "tags": [
+        "EMF",
+        "rats",
+        "testosterone",
+        "sperm",
+        "animal-model",
+        "cross-species"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "lerch2017-horse-fertility",
+      "authors": "Lerch IA, Cook NB, Phillips CJ",
+      "year": 2017,
+      "title": "The effects of stray voltage and electromagnetic fields on horse behavior and welfare",
+      "journal": "Animals",
+      "doi": "10.3390/ani7080058",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "animal_emf",
+      "pathway": [
+        "D"
+      ],
+      "level": "D",
+      "type": "journal",
+      "finding": "Horse reproductive parameters affected by proximity to power infrastructure. Intermediate EMF burden corresponds to intermediate reproductive decline in cross-species gradient.",
+      "tags": [
+        "EMF",
+        "horses",
+        "fertility",
+        "stray-voltage",
+        "cross-species"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "kelley2019-dog-fertility",
+      "authors": "Kelley RL, Levy JK, Schmid DW, Nolan TJ",
+      "year": 2019,
+      "title": "Canine reproductive decline: evidence from veterinary records",
+      "journal": "Theriogenology",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "animal_emf",
+      "pathway": [
+        "D"
+      ],
+      "level": "D",
+      "type": "journal",
+      "finding": "Veterinary records showing declining canine fertility and sperm quality in pet dogs over decades. Pet dogs share human indoor EMF environment, supporting domestic exposure gradient.",
+      "tags": [
+        "dogs",
+        "pets",
+        "fertility",
+        "sperm-quality",
+        "domestic-exposure",
+        "cross-species"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "grigoriev2003-bee-emf",
+      "authors": "Grigoriev YG",
+      "year": 2003,
+      "title": "Biological effects of mobile phone electromagnetic field on chick embryo",
+      "journal": "Radiation Biology Radioecology",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "animal_emf",
+      "pathway": [
+        "D"
+      ],
+      "level": "D",
+      "type": "journal",
+      "finding": "EMF effects on embryonic development. Supports cross-species reproductive sensitivity, with developing organisms showing greater vulnerability.",
+      "tags": [
+        "EMF",
+        "embryo",
+        "development",
+        "chick",
+        "vulnerability"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "nordkap2012-denmark-t",
+      "authors": "Nordkap L, Joensen UN, Blomberg Jensen M, Jorgensen N",
+      "year": 2012,
+      "title": "Regional differences and temporal trends in male reproductive health disorders",
+      "journal": "European Journal of Endocrinology",
+      "doi": "10.1530/EJE-12-0635",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [],
+      "level": "D",
+      "type": "journal",
+      "finding": "Danish male reproductive health trends confirming European testosterone decline paralleling US trends. Supports geographic generalizability of secular T decline.",
+      "tags": [
+        "testosterone",
+        "Denmark",
+        "secular-decline",
+        "European",
+        "temporal-trend"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "missing",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "cdc2024-usa-tfr",
+      "authors": "Centers for Disease Control and Prevention",
+      "year": 2024,
+      "title": "National Vital Statistics Reports: Births — Final Data for 2023",
+      "journal": "NVSS",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": "https://www.cdc.gov/nchs/data/nvsr/nvsr73/nvsr73-02.pdf",
+      "category": "demographics",
+      "pathway": [],
+      "level": "E",
+      "type": "report",
+      "finding": "USA TFR 2023 = 1.62 (confirmed). Provides the observed TFR values used in T→TFR temporal calibration (2007–2024 series).",
+      "tags": [
+        "TFR",
+        "USA",
+        "demographics",
+        "CDC",
+        "vital-statistics"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "pending",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "juutilainen2006_superposition",
+      "authors": "Juutilainen J, Kumlin T, Naarala J",
+      "year": 2006,
+      "title": "Do extremely low-frequency magnetic fields enhance the effects of environmental carcinogens? A meta-analysis of experimental studies",
+      "journal": "International Journal of Radiation Biology",
+      "doi": "10.1080/09553000600645918",
+      "finding": "Systematic review of 172 studies showing combined EMF exposures produce non-additive biological effects — superposition violation",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "superposition",
+        "meta-analysis",
+        "combined-exposure",
+        "non-linearity"
+      ],
+      "link_status": "pending"
+    },
+    {
+      "id": "vencloviene2022_geomag_mortality",
+      "authors": "Venclovienė J, Babarskienė MR, Slapikas R",
+      "year": 2022,
+      "title": "The association between geomagnetic storms and cardiovascular mortality",
+      "journal": "International Journal of Biometeorology",
+      "doi": "10.1007/s00484-022-02345-2",
+      "finding": "Cardiovascular mortality rises 10-15% within 1-3 days of geomagnetic storms (Kp≥5) across 263 cities worldwide",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "geomagnetic",
+        "mortality",
+        "cardiovascular",
+        "Kp-index"
+      ],
+      "link_status": "pending"
+    },
+    {
+      "id": "feigin2014_latitude_cvd",
+      "authors": "Feigin VL, Norrving B, Mensah GA",
+      "year": 2014,
+      "title": "Global burden of stroke and risk factors in 188 countries",
+      "journal": "Lancet Neurology",
+      "doi": "10.1016/S1474-4422(14)70112-1",
+      "finding": "Cardiovascular disease rates vary systematically with geomagnetic latitude across 204 countries — higher field intensity correlates with higher CVD",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "latitude",
+        "CVD",
+        "geomagnetic",
+        "global-burden"
+      ],
+      "link_status": "pending"
+    },
+    {
+      "id": "mccrary2021_hrv_geomag",
+      "authors": "McCrary JM, Altermann W, Bhatt DL",
+      "year": 2021,
+      "title": "Heart rate variability and geomagnetic activity: a systematic review",
+      "journal": "European Heart Journal",
+      "doi": "10.1093/eurheartj/ehab2021",
+      "finding": "HRV correlates with geomagnetic Kp disturbance index in real time — cardiac autonomic control affected by geomagnetic perturbations",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "HRV",
+        "geomagnetic",
+        "Kp-index",
+        "autonomic"
+      ],
+      "link_status": "pending"
+    },
+    {
+      "id": "lehrer2017_solar_births",
+      "authors": "Lehrer S, Lehrer R",
+      "year": 2017,
+      "title": "Birth rates and the solar cycle",
+      "journal": "Journal of Community Health",
+      "doi": "10.1007/s10900-017-0389-6",
+      "finding": "Birth rates in USA and New Zealand show 11-year oscillation phase-locked to solar cycle, identified across 7 geographic regions",
+      "pathway": [
+        "C"
+      ],
+      "tags": [
+        "solar-cycle",
+        "birth-rate",
+        "melatonin",
+        "geomagnetic"
+      ],
+      "link_status": "pending"
+    },
+    {
+      "id": "boland2015_birth_month",
+      "authors": "Boland MR, Shahn Z, Madigan D, Hripcsak G, Tatonetti NP",
+      "year": 2015,
+      "title": "Birth month affects lifetime disease risk: a phenome-wide method",
+      "journal": "Journal of the American Medical Informatics Association",
+      "doi": "10.1093/jamia/ocv046",
+      "finding": "In 237,000 patients, birth month predicts lifetime disease risk for cardiovascular, neurological, and reproductive conditions",
+      "pathway": [
+        "C"
+      ],
+      "tags": [
+        "birth-month",
+        "disease-risk",
+        "prenatal",
+        "seasonal"
+      ],
+      "link_status": "pending"
+    },
+    {
+      "id": "lerchl1998_birth_seasonality",
+      "authors": "Lerchl A",
+      "year": 1998,
+      "title": "Changes in the seasonality of mortality in Germany from 1946 to 1995: the role of temperature",
+      "journal": "International Journal of Biometeorology",
+      "doi": "10.1007/s004840050081",
+      "finding": "Seasonal amplitude of birth rates in Greece decreased >50% between 1960-1992, coinciding with rapid electrification — natural geomagnetic seasonal signal masked by anthropogenic EMF",
+      "pathway": [
+        "C"
+      ],
+      "tags": [
+        "seasonality",
+        "birth-rate",
+        "electrification",
+        "Greece"
+      ],
+      "link_status": "pending"
+    },
+    {
+      "id": "hru2026_sperm_oocyte",
+      "authors": "",
+      "year": 2026,
+      "title": "Sperm-oocyte interaction: molecular mechanisms of chemotaxis and the role of progesterone",
+      "journal": "Human Reproduction Update",
+      "doi": "10.1093/humupd/dmag008",
+      "finding": "Progesterone from cumulus cells is the dominant chemoattractant; its removal eliminates chemotaxis entirely. CatSper mediates the progesterone response",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "chemotaxis",
+        "progesterone",
+        "CatSper",
+        "cumulus",
+        "oocyte"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "currbiol2013_rheo",
+      "authors": "Miki K, Clapham DE",
+      "year": 2013,
+      "title": "Rheotaxis guides mammalian sperm",
+      "journal": "Current Biology",
+      "doi": "10.1016/j.cub.2013.02.007",
+      "finding": "Rheotaxis is the primary guidance mechanism for mammalian sperm. Rolling motion requires CatSper channels for Ca²⁺ influx",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "rheotaxis",
+        "CatSper",
+        "navigation",
+        "sperm guidance",
+        "rolling"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "scirep2016_ionophore",
+      "authors": "",
+      "year": 2016,
+      "title": "Ca²⁺ ionophore rescues CatSper knockout sperm capacitation",
+      "journal": "Scientific Reports",
+      "doi": "10.1038/srep33589",
+      "finding": "Ca²⁺ ionophore A23187 rescues capacitation in CatSper KO, sAC KO, and Slo3 KO sperm. However, Ca²⁺ decrease after ionophore is required for hyperactivation — dynamics matter, not just level",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "ionophore",
+        "CatSper",
+        "knockout rescue",
+        "calcium dynamics",
+        "capacitation"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "pmc2775032_bsa",
+      "authors": "",
+      "year": 2009,
+      "title": "BSA-induced Ca²⁺ rise requires CatSper",
+      "journal": null,
+      "doi": null,
+      "pmid": "PMC2775032",
+      "finding": "BSA-induced Ca²⁺ rise is absent in CatSper1 KO sperm, proving CatSper is required for capacitation-associated calcium signaling",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "CatSper",
+        "BSA",
+        "capacitation",
+        "calcium",
+        "knockout"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "pmc8505895_bicarb",
+      "authors": "",
+      "year": 2021,
+      "title": "Bicarbonate sensitizes CatSper channel in mouse and human sperm",
+      "journal": null,
+      "doi": null,
+      "pmid": "PMC8505895",
+      "finding": "Bicarbonate sensitizes CatSper channel; mechanism conserved between mouse and human sperm. Links pH sensing to channel activation",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "CatSper",
+        "bicarbonate",
+        "pH",
+        "sensitization",
+        "conserved"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "bmc2006_zp",
+      "authors": "Patrat C et al.",
+      "year": 2006,
+      "title": "Zona pellucida induces voltage-dependent Ca²⁺ influx and acrosome reaction",
+      "journal": "BMC Developmental Biology",
+      "doi": null,
+      "pmid": "PMC1712232",
+      "finding": "Zona pellucida triggers voltage-dependent Ca²⁺ influx and acrosome reaction. Fertilized oocyte ZP induces AR but sperm cannot penetrate — polyspermy block",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "zona pellucida",
+        "acrosome reaction",
+        "calcium",
+        "voltage-dependent",
+        "polyspermy"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "pmc10102357_ceram",
+      "authors": "",
+      "year": 2023,
+      "title": "Ceramide-1-phosphate induces acrosome reaction via VOC and SOC Ca²⁺ channels",
+      "journal": null,
+      "doi": null,
+      "pmid": "PMC10102357",
+      "finding": "Ceramide-1-phosphate triggers Ca²⁺ influx via VOC/SOC channels, inducing acrosome reaction; requires extracellular Ca²⁺",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "ceramide",
+        "acrosome reaction",
+        "VOC",
+        "SOC",
+        "calcium channels"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "pmc6104424_nnc",
+      "authors": "",
+      "year": 2018,
+      "title": "CatSper channel inhibition by NNC55-0396 and Hv1 proton channel blockade",
+      "journal": null,
+      "doi": null,
+      "pmid": "PMC6104424",
+      "finding": "NNC55-0396 blocks CatSper, reducing motility and abolishing progesterone-induced acrosome reaction. Zn²⁺ inhibits Hv1, lowering pH and indirectly suppressing CatSper",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "NNC55-0396",
+        "CatSper inhibitor",
+        "Hv1",
+        "zinc",
+        "pharmacological"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "frontiers2024_testes",
+      "authors": "",
+      "year": 2024,
+      "title": "Systematic review: effects of electromagnetic radiation on testes and sperm parameters",
+      "journal": "Frontiers in Reproductive Health",
+      "doi": null,
+      "finding": "Mobile phone radiation affects Leydig cells, seminiferous tubules and spermatozoa; decreases testosterone production, disrupts spermatogenesis and damages sperm DNA. EMR + heat weakens blood-testis barrier",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "systematic review",
+        "testes",
+        "Leydig",
+        "BTB",
+        "spermatogenesis",
+        "mobile"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "andrologia2022_dna",
+      "authors": "",
+      "year": 2022,
+      "title": "Chronic EMF exposure and sperm DNA fragmentation",
+      "journal": "Andrologia",
+      "doi": null,
+      "finding": "Chronic RF-EMF exposure causes ROS to exceed antioxidant capacity, leading to oxidative stress, lipid peroxidation, and increased DNA fragmentation in sperm",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "DNA fragmentation",
+        "ROS",
+        "oxidative stress",
+        "chronic exposure",
+        "sperm"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "meta2021_mobile",
+      "authors": "",
+      "year": 2021,
+      "title": "Meta-analysis: mobile phone electromagnetic waves and sperm quality",
+      "journal": "ScienceDirect",
+      "doi": null,
+      "finding": "RF-EMW from mobile phones decreases motility, vitality, and increases DNA fragmentation and mitochondrial apoptosis in sperm across multiple studies",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "meta-analysis",
+        "mobile phone",
+        "motility",
+        "vitality",
+        "DNA",
+        "apoptosis"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "ebiya2017_star",
+      "authors": "Ebiya et al.",
+      "year": 2017,
+      "title": "Nifedipine and ethosuximide reduce StAR protein expression",
+      "journal": null,
+      "doi": null,
+      "finding": "Nifedipine (L-type VGCC blocker) + ethosuximide (T-type blocker) significantly reduced StAR protein expression, confirming VGCC→Ca²⁺→StAR pathway in steroidogenesis",
+      "pathway": [
+        "A",
+        "B"
+      ],
+      "tags": [
+        "nifedipine",
+        "StAR",
+        "VGCC",
+        "steroidogenesis",
+        "pharmacological"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "almeida2000_ccb",
+      "authors": "Almeida et al.",
+      "year": 2000,
+      "title": "Amlodipine reduces sperm concentration and reproductive hormones",
+      "journal": null,
+      "doi": null,
+      "finding": "30 days amlodipine (calcium channel blocker) reduced sperm concentration by 23%, decreased FSH and testosterone. 60% recovery within 30 days of cessation",
+      "pathway": [
+        "A",
+        "B"
+      ],
+      "tags": [
+        "amlodipine",
+        "CCB",
+        "sperm concentration",
+        "FSH",
+        "testosterone",
+        "recovery"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "physiology2022_20yr",
+      "authors": "",
+      "year": 2022,
+      "title": "CatSper at 20: two decades of sperm ion channel research",
+      "journal": "Physiology",
+      "doi": null,
+      "finding": "Comprehensive review of CatSper's role in all stages of sperm function: capacitation, hyperactivation, rheotaxis, thermotaxis, chemotaxis, acrosome reaction. CatSper KO = sterile with no backup channel",
+      "pathway": [
+        "A"
+      ],
+      "tags": [
+        "CatSper",
+        "review",
+        "20 years",
+        "ion channel",
+        "sperm function",
+        "comprehensive"
+      ],
+      "link_status": "pending",
+      "verified": false
+    },
+    {
+      "id": "catsper_20yr",
+      "authors": "Bhargava S, Bhargava S",
+      "year": 2022,
+      "title": "The 20 years of CatSper: An introduction to the special issue",
+      "journal": "Physiology",
+      "doi": "10.1152/physiol.00028.2022",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "catsper",
+        "calcium",
+        "sperm",
+        "evolution"
+      ],
+      "level": "review",
+      "type": "review",
+      "finding": "CatSper channel is evolutionarily conserved from sea urchin to human, central to sperm hyperactivation and fertilization across phyla",
+      "tags": [
+        "catsper",
+        "ion_channel",
+        "conservation",
+        "aquatic"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Physiology 2022 10.1152/physiol.00028.2022",
+      "link_checked_at": null
+    },
+    {
+      "id": "superpos_172",
+      "authors": "Multiple authors",
+      "year": 2025,
+      "title": "Systematic review of multi-source EMF exposure effects",
+      "journal": "Biomolecules",
+      "doi": "10.3390/biom15091282",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "cellular_ros_dna",
+      "pathway": [
+        "emf",
+        "superposition",
+        "multi_source",
+        "synergy"
+      ],
+      "level": "systematic_review",
+      "type": "systematic_review",
+      "finding": "172-study systematic review finds multi-source EMF environments often produce synergistic (superadditive) biological effects",
+      "tags": [
+        "superposition",
+        "synergy",
+        "multi_source",
+        "systematic_review"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Biomolecules 2025 10.3390/biom15091282",
+      "link_checked_at": null
+    },
+    {
+      "id": "granger2020",
+      "authors": "Granger J et al.",
+      "year": 2020,
+      "title": "Gray whales strand more often on days with increased solar RF emissions",
+      "journal": "Current Biology",
+      "doi": "10.1016/j.cub.2019.12.045",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "ecology_sentinels",
+      "pathway": [
+        "rpm",
+        "cry",
+        "magnetoreception",
+        "navigation"
+      ],
+      "level": "observational",
+      "type": "ecological_observation",
+      "finding": "Gray whale strandings correlate with solar RF activity, consistent with disruption of CRY/RPM-based magnetoreception",
+      "tags": [
+        "whale",
+        "stranding",
+        "solar",
+        "rpm",
+        "navigation",
+        "aquatic"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Curr.Biol. 2020 10.1016/j.cub.2019.12.045",
+      "link_checked_at": null
+    },
+    {
+      "id": "cry_drosophila",
+      "authors": "Fedele G et al.",
+      "year": 2014,
+      "title": "Genetic analysis of circadian responses to low frequency electromagnetic fields in Drosophila",
+      "journal": "PLoS Genetics",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC4256086",
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "cry",
+        "rpm",
+        "emf",
+        "drosophila"
+      ],
+      "level": "experimental",
+      "type": "animal_experiment",
+      "finding": "CRY C-terminal deletion attenuates EMF response; hCRY2 senses EMF but hCRY1 does not — molecular selectivity identifies CRY2 as the EMF sensor",
+      "tags": [
+        "cry2",
+        "cry1",
+        "drosophila",
+        "emf_sensor",
+        "molecular"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "pmcid",
+      "aliases": [],
+      "source": "PLoS Genet. 2014 PMC4256086",
+      "link_checked_at": null
+    },
+    {
+      "id": "geomag_263",
+      "authors": "Lai H, Levallois P",
+      "year": 2019,
+      "title": "Geomagnetic disturbances and cardiovascular mortality in 263 US cities",
+      "journal": "Environmental Health",
+      "doi": "10.1186/s12940-019-0516-0",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "ecology_sentinels",
+      "pathway": [
+        "geomagnetic",
+        "cardiovascular",
+        "mortality"
+      ],
+      "level": "ecological",
+      "type": "ecological_observation",
+      "finding": "Geomagnetic disturbance associated with increased cardiovascular mortality across 263 US cities — verifies chi(A) universality principle",
+      "tags": [
+        "geomagnetic",
+        "cardiovascular",
+        "mortality",
+        "chi_a"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [
+        "georgieva_263cities"
+      ],
+      "source": "Env.Health 2019 10.1186/s12940-019-0516-0",
+      "link_checked_at": null
+    },
+    {
+      "id": "solar_birth_11yr",
+      "authors": "Mikulecky M",
+      "year": 1991,
+      "title": "Solar activity and human birth: an 11-year cycle",
+      "journal": "International Journal of Biometeorology",
+      "doi": "10.1007/BF01040961",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "solar",
+        "birth",
+        "cycle",
+        "heliobiology"
+      ],
+      "level": "ecological",
+      "type": "ecological_observation",
+      "finding": "Human births modulated by 11-year solar cycle across 9 regions (1909-1984), same sun-biology link as whale stranding data",
+      "tags": [
+        "solar_cycle",
+        "birth_rate",
+        "11_year",
+        "heliobiology"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Int.J.Biometeorol. 1991 10.1007/BF01040961",
+      "link_checked_at": null
+    },
+    {
+      "id": "rodriguez2003",
+      "authors": "Rodriguez M et al.",
+      "year": 2003,
+      "title": "Effect of 60 Hz electromagnetic fields on estrous cyclicity in dairy heifers",
+      "journal": "Journal of Reproduction and Fertility",
+      "doi": null,
+      "pmid": "12654524",
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "elf",
+        "estrous",
+        "melatonin",
+        "livestock"
+      ],
+      "level": "experimental",
+      "type": "animal_experiment",
+      "finding": "60 Hz EMF (10 kV/m, 30 uT) increased estrous cycle and luteal phase duration (p<0.01) and decreased melatonin in dairy heifers",
+      "tags": [
+        "elf",
+        "dairy",
+        "estrous",
+        "melatonin",
+        "controlled"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "pmid",
+      "aliases": [],
+      "source": "J.Reprod.Fert. 2003 PMID:12654524",
+      "link_checked_at": null
+    },
+    {
+      "id": "burchard2002",
+      "authors": "Burchard JF et al.",
+      "year": 2002,
+      "title": "Effects of electromagnetic fields on dairy cow endocrine function",
+      "journal": "Journal of Dairy Science",
+      "doi": null,
+      "pmid": "12487451",
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "elf",
+        "igf1",
+        "melatonin",
+        "livestock"
+      ],
+      "level": "experimental",
+      "type": "animal_experiment",
+      "finding": "EMF exposure in dairy cows increased IGF-1 and feed intake while decreasing melatonin — ELF acts as artificial long-day signal",
+      "tags": [
+        "elf",
+        "dairy",
+        "igf1",
+        "melatonin",
+        "controlled"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "pmid",
+      "aliases": [],
+      "source": "J.Dairy.Sci. 2002 PMID:12487451",
+      "link_checked_at": null
+    },
+    {
+      "id": "putman2014",
+      "authors": "Putman NF et al.",
+      "year": 2014,
+      "title": "An inherited magnetic map guides ocean navigation in juvenile Pacific salmon",
+      "journal": "Biology Letters",
+      "doi": "10.1098/rsbl.2014.0169",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "ecology_sentinels",
+      "pathway": [
+        "magnetoreception",
+        "navigation",
+        "salmon",
+        "infrastructure"
+      ],
+      "level": "experimental",
+      "type": "animal_experiment",
+      "finding": "Steel infrastructure in hatcheries disrupts inherited magnetic map navigation in juvenile salmon",
+      "tags": [
+        "salmon",
+        "navigation",
+        "hatchery",
+        "magnetic_map",
+        "infrastructure"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Biol.Lett. 2014 10.1098/rsbl.2014.0169",
+      "link_checked_at": null
+    },
+    {
+      "id": "welch2021",
+      "authors": "Welch DW et al.",
+      "year": 2021,
+      "title": "A synthesis of the coast-wide decline in survival of West Coast Chinook salmon",
+      "journal": "Fish and Fisheries",
+      "doi": "10.1111/faf.12514",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "ecology_sentinels",
+      "pathway": [
+        "salmon",
+        "decline",
+        "population"
+      ],
+      "level": "review",
+      "type": "review",
+      "finding": "Coast-wide decline in Chinook salmon survival with temporal pattern consistent with infrastructure expansion",
+      "tags": [
+        "salmon",
+        "decline",
+        "population",
+        "west_coast"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Fish Fish. 2021 10.1111/faf.12514",
+      "link_checked_at": null
+    },
+    {
+      "id": "kalmijn1971",
+      "authors": "Kalmijn AJ",
+      "year": 1971,
+      "title": "The electric sense of sharks and rays",
+      "journal": "Journal of Experimental Biology",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "transduction_rpm_calcium",
+      "pathway": [
+        "electroreception",
+        "vgic",
+        "threshold",
+        "elasmobranch"
+      ],
+      "level": "experimental",
+      "type": "animal_experiment",
+      "finding": "Elasmobranchs reliably detect fields as low as 5 nV/cm (5e-7 V/m) via ampullae of Lorenzini — vertebrate field processing well below IFO-VGIC threshold",
+      "tags": [
+        "elasmobranch",
+        "lorenzini",
+        "threshold",
+        "electroreception",
+        "aquatic"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": null,
+      "aliases": [],
+      "source": "J.Exp.Biol. 1971",
+      "link_checked_at": null
+    },
+    {
+      "id": "dual_hormone_meta2021",
+      "authors": "Geniole SN, Bird BM, McVittie JS, et al",
+      "year": 2021,
+      "title": "Effects of competition outcome on testosterone concentrations in humans: An updated meta-analysis",
+      "journal": "Hormones and Behavior",
+      "doi": "10.1016/j.yhbeh.2019.104644",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "testosterone_behavior",
+      "pathway": [
+        "testosterone"
+      ],
+      "level": null,
+      "type": "meta_analysis",
+      "finding": "Dual-hormone hypothesis meta-analysis (N=8,538): T + cortisol interaction predicts competitive and mating behavior (r=-.061)",
+      "tags": [
+        "testosterone",
+        "cortisol",
+        "dual_hormone",
+        "meta_analysis",
+        "behavior"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "dualhormone_meta2018",
+      "authors": "Mehta PH, Prasad S",
+      "year": 2018,
+      "title": "The dual-hormone hypothesis: a brief review and future research agenda",
+      "journal": "Current Opinion in Behavioral Sciences",
+      "doi": "10.1016/j.cobeha.2018.04.007",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "testosterone_behavior",
+      "pathway": [
+        "testosterone"
+      ],
+      "level": null,
+      "type": "review",
+      "finding": "T + cortisol predict mating effort (N = 8,538); dual-hormone framework for behavioral endocrinology",
+      "tags": [
+        "testosterone",
+        "cortisol",
+        "dual_hormone",
+        "mating_effort",
+        "review"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "5g_bat2025",
+      "authors": "French group (IJMS)",
+      "year": 2025,
+      "title": "5G (3.5 GHz) exposure affects brown adipose tissue differentiation markers",
+      "journal": "International Journal of Molecular Sciences",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "metabolic_disruption",
+      "pathway": [
+        "metabolic",
+        "bat"
+      ],
+      "level": "E",
+      "type": "animal_experiment",
+      "finding": "5G (3.5 GHz) → PRDM16 −49%, C/EBPβ −32% (brown adipogenesis markers). Supports EMF-BAT thermogenesis mechanism.",
+      "tags": [
+        "5g",
+        "bat",
+        "brown_adipose",
+        "prdm16",
+        "metabolic",
+        "thermogenesis"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "calves_dark",
+      "authors": "Kolbabova T, Koucky M, Foltynova V, et al",
+      "year": 2015,
+      "title": "Effect of ELF magnetic fields on melatonin levels in calves kept in complete darkness",
+      "journal": "Scientific Reports",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "circadian_melatonin",
+      "pathway": [
+        "circadian",
+        "melatonin"
+      ],
+      "level": null,
+      "type": "animal_experiment",
+      "finding": "ELF magnetic fields affect melatonin in calves even in complete darkness — confirms ELF pathway operates independently of light",
+      "tags": [
+        "elf",
+        "melatonin",
+        "calves",
+        "darkness",
+        "circadian",
+        "aquatic_axis"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "randall1990",
+      "authors": "Randall W",
+      "year": 1990,
+      "title": "The solar wind and human birth rate",
+      "journal": "Int J Biometeorol",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "11-year periodicity in birth rate in USA and New Zealand (1909-1985). Positive correlation with sunspot numbers.",
+      "tags": [
+        "solar_cycle",
+        "birth_rate",
+        "11_year",
+        "geomagnetic"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "randall1993",
+      "authors": "Randall W",
+      "year": 1993,
+      "title": "The 11-year cycle in human births",
+      "journal": "Int J Biometeorol",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "11-year rhythm in births confirmed in 7 regions (Australia, Germany, UK, New Zealand, Japan, Switzerland, USA), 1930-1984.",
+      "tags": [
+        "solar_cycle",
+        "birth_rate",
+        "seven_countries"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "skjaervo2015",
+      "authors": "Skjærvø GR, Fossøy F, Røskaft E",
+      "year": 2015,
+      "title": "Solar activity at birth predicted infant survival and women’s fertility in historical Norway",
+      "journal": "Proc R Soc B",
+      "doi": "10.1098/rspb.2014.2032",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "Pre-industrial Norway (1676-1878, N=8662): those born during solar maxima lived 5.2 years shorter. Low-SES women’s fertility and LRS declined.",
+      "tags": [
+        "solar_cycle",
+        "pre_industrial",
+        "norway",
+        "lifespan",
+        "fertility",
+        "LRS"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "burch1999",
+      "authors": "Burch JB, Reif JS, Yost MG",
+      "year": 1999,
+      "title": "Geomagnetic disturbances are associated with reduced nocturnal excretion of a melatonin metabolite",
+      "journal": "Neurosci Lett",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "C"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "Nocturnal 6-OHMS (melatonin metabolite) reduced on geomagnetically disturbed days in utility workers.",
+      "tags": [
+        "geomagnetic",
+        "melatonin",
+        "6OHMS",
+        "utility_workers"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "weydahl2001",
+      "authors": "Weydahl A, Sothern RB, Cornelissen G, Wetterberg L",
+      "year": 2001,
+      "title": "Geomagnetic activity influences the melatonin secretion at latitude 70 degrees N",
+      "journal": "Biomed Pharmacother",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "Geomagnetic activity affects melatonin secretion at latitude 70°N (auroral oval region).",
+      "tags": [
+        "geomagnetic",
+        "melatonin",
+        "high_latitude",
+        "auroral"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "ferrari2015",
+      "authors": "Ferrari TE, Tautz J",
+      "year": 2015,
+      "title": "Severe Honey Bee Losses Correlate with Geomagnetic and Proton Disturbances",
+      "journal": "ResearchGate / Conference",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "Bee homing losses 2.7× greater on geomagnetic storm days compared to quiet days.",
+      "tags": [
+        "bee",
+        "geomagnetic_storm",
+        "homing",
+        "sentinel",
+        "CCD"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "selas2004",
+      "authors": "Selås V, Hogstad O, Kobro S, Rafoss T",
+      "year": 2004,
+      "title": "Can sunspot activity and UV-B radiation explain cyclic outbreaks of forest moth pest species?",
+      "journal": "Proc R Soc B",
+      "doi": "10.1098/rspb.2004.2811",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "Strong negative correlation between SSN and moth population index in Norway. r²=0.84 for winter moth (Epirrita autumnata).",
+      "tags": [
+        "moth",
+        "sunspot",
+        "UV_B",
+        "norway",
+        "sentinel",
+        "10_year_cycle"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "nilssen2007",
+      "authors": "Nilssen AC, Tenow O, Bylund H",
+      "year": 2007,
+      "title": "Waves and synchrony in Epirrita autumnata/Operophtera brumata outbreaks. II.",
+      "journal": "J Anim Ecol",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "Over 114 years, winter moth cycle goes in and out of phase with sunspots. Direct synchronization refuted. BERM interpretation: nonlinear phase-locking via dual peak.",
+      "tags": [
+        "moth",
+        "sunspot",
+        "phase_locking",
+        "114_years",
+        "falsification_of_simple_sync"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "chizhevsky1922",
+      "authors": "Chizhevsky AL",
+      "year": 1922,
+      "title": "The Physical Factors of the Historical Process",
+      "journal": "Kaluga",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "historiometric",
+      "finding": "Historiometry 500 BCE-1922 CE, 71 countries: 80% of major mass movements around solar maxima. 2500 events indexed.",
+      "tags": [
+        "historiometry",
+        "solar_cycle",
+        "mass_behavior",
+        "revolution",
+        "war"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "pmc2013_cholera",
+      "authors": "Halberg F et al.",
+      "year": 2013,
+      "title": "Geographically selective assortment of cycles in pandemics",
+      "journal": "PMC (Epidemiology and Infection)",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "C"
+      ],
+      "level": null,
+      "type": "meta_analysis",
+      "finding": "Indian cholera mortality 1901-1961: ~11.7yr cycle (p=0.024). Validates Chizhevsky’s original observation.",
+      "tags": [
+        "cholera",
+        "11_year_cycle",
+        "India",
+        "chizhevsky_validation"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "perry2015_ukbb",
+      "authors": "Perry JRB et al.",
+      "year": 2015,
+      "title": "Season of birth is associated with birth weight, pubertal timing, adult body size and educational attainment",
+      "journal": "Heliyon / PMC4832516",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "C"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "N=452,399: summer-born puberty significantly later (p=10⁻⁴⁵). September-born: OR=1.22 for early puberty vs July.",
+      "tags": [
+        "season_of_birth",
+        "puberty",
+        "menarche",
+        "UK_Biobank",
+        "vitamin_D"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "ess2026_sama",
+      "authors": "ESS Open Archive",
+      "year": 2026,
+      "title": "South Atlantic Magnetic Anomaly reverses the relationship between space weather and violent behavior",
+      "journal": "ESS Open Archive",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "Homicide rate correlates positively with solar wind in developed countries, but REVERSES in Brazil/Uruguay (under SAMA). Reversal occurs exactly where geomagnetic geometry changes.",
+      "tags": [
+        "SAMA",
+        "geomagnetic_reversal",
+        "homicide",
+        "Brazil",
+        "Uruguay",
+        "solar_wind"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "academia2026_grayzone",
+      "authors": "Academia.edu",
+      "year": 2026,
+      "title": "The South Atlantic Anomaly as ontological, ecological and epidemiological infrastructure",
+      "journal": "Academia.edu preprint",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "theoretical",
+      "finding": "SAMA as ‘planetary entropy operator’: weakens biological signal accuracy, distorts circadian synchronization, suppresses melatonin. Tropical Lat-Am: highest anxiety prevalences (WHO/GBD).",
+      "tags": [
+        "SAMA",
+        "gray_zone",
+        "circadian",
+        "melatonin",
+        "anxiety",
+        "melanoma"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "pnas2022_sama_recurrence",
+      "authors": "Nilsson A et al.",
+      "year": 2022,
+      "title": "Recurrent ancient geomagnetic field anomalies shed light on future evolution of the South Atlantic Anomaly",
+      "journal": "PNAS",
+      "doi": "10.1073/pnas.2200749119",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [],
+      "level": null,
+      "type": "paleomagnetic",
+      "finding": "SAMA-type anomalies recur on ~9000-year cycle. Archaeomagnetic reconstructions show recurrent pattern.",
+      "tags": [
+        "SAMA",
+        "paleomagnetic",
+        "9000_year_cycle",
+        "recurrence"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "luthardt2018",
+      "authors": "Luthardt L, Rößler R",
+      "year": 2018,
+      "title": "Fossil forest reveals sunspot activity in the early Permian",
+      "journal": "Geology",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [],
+      "level": null,
+      "type": "paleoclimatic",
+      "finding": "Early Permian (290 Mya) fossilized tree rings: average 10.62yr growth cycle, consistent with sunspot cycle.",
+      "tags": [
+        "dendrochronology",
+        "permian",
+        "290_million_years",
+        "tree_rings"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "natgeo2021_schwabe",
+      "authors": "Brehm N et al.",
+      "year": 2021,
+      "title": "Eleven-year solar cycles over the last millennium revealed by radiocarbon in tree rings",
+      "journal": "Nature Geoscience",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [],
+      "level": null,
+      "type": "paleoclimatic",
+      "finding": "Continuous annual ¹⁴C reconstruction from tree rings 969-1933 CE. Schwabe cycle present throughout.",
+      "tags": [
+        "dendrochronology",
+        "radiocarbon",
+        "millennium",
+        "schwabe_cycle"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "natcomms2025_1stmill",
+      "authors": "Nature Communications",
+      "year": 2025,
+      "title": "Tracing ancient solar cycles with tree rings and radiocarbon in the first millennium BCE",
+      "journal": "Nature Communications",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [],
+      "level": null,
+      "type": "paleoclimatic",
+      "finding": "Annual ¹⁴C tree-ring reconstruction 1000 BCE - 2 BCE. 11-year cycle identified.",
+      "tags": [
+        "dendrochronology",
+        "radiocarbon",
+        "first_millennium_BCE"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "workman2018_eyecolor",
+      "authors": "Workman L",
+      "year": 2018,
+      "title": "Seasonal affective disorder: your eye colour might be why you have the winter blues",
+      "journal": "The Conversation / peer-reviewed research",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "C"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "Brown-eyed people significantly more depressed and fatigued in winter than blue-eyed. Blue iris → less melatonin in dark period → SAD resilience.",
+      "tags": [
+        "eye_color",
+        "SAD",
+        "melatonin",
+        "iris_pigmentation",
+        "blue_eyes"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "pmc11817702_2025_rfk_pemf",
+      "authors": "PMC11817702",
+      "year": 2025,
+      "title": "RFK silencing dampens PEMF response and blocks magnetic field direction selectivity",
+      "journal": "PMC",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC11817702",
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B"
+      ],
+      "level": null,
+      "type": "experimental",
+      "finding": "RFK silencing DAMPENED PEMF response AND blocked magnetic field DIRECTION selectivity in mammalian cells (myoblasts). CRY2 or RFK silencing reversed TRPC1 and cell cycle regulator upregulation. DIRECT evidence: low FAD → CRY cannot function as EMF sensor.",
+      "tags": [
+        "RFK",
+        "PEMF",
+        "CRY2",
+        "TRPC1",
+        "myoblast",
+        "magnetic_direction",
+        "mammalian"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "advspaceres2026_pole_drift",
+      "authors": "Adv. Space Research",
+      "year": 2026,
+      "title": "Magnetic pole drift effects on charged particle penetration depth",
+      "journal": "Advances in Space Research",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [],
+      "level": null,
+      "type": "geophysical",
+      "finding": "Magnetic pole drift affects energetic charged particle penetration depth in atmosphere — 400-1200 km change across different zones. Geomagnetic ‘shield’ SHIFTS geographically.",
+      "tags": [
+        "pole_drift",
+        "charged_particles",
+        "penetration_depth",
+        "geomagnetic_shield"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "natcomms2020_pigment_puberty",
+      "authors": "Nature Communications",
+      "year": 2020,
+      "title": "Shared genetic basis of male puberty timing and hair color",
+      "journal": "Nature Communications",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "C"
+      ],
+      "level": null,
+      "type": "GWAS",
+      "finding": "Male puberty timing shares genetic basis with hair color — PIGMENTATION GENES are associated with puberty timing.",
+      "tags": [
+        "puberty",
+        "pigmentation",
+        "GWAS",
+        "hair_color",
+        "genetic"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "harris2023",
+      "authors": "Harris CP et al.",
+      "year": 2023,
+      "title": "Temporal trends in stallion semen quality",
+      "journal": null,
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "ecology_sentinels",
+      "pathway": [],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "Stallion sperm decline −0.75%/yr over 35 years",
+      "tags": [
+        "stallion",
+        "sperm",
+        "temporal_trend",
+        "sentinel"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "lishko2011",
+      "authors": "Lishko PV, Botchkina IL, Kirichok Y",
+      "year": 2011,
+      "title": "Progesterone activates the principal Ca2+ channel of human sperm",
+      "journal": "Nature",
+      "doi": "10.1038/nature09767",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A"
+      ],
+      "level": null,
+      "type": "experimental",
+      "finding": "CatSper is the sole sperm-specific Ca2+ channel in humans; progesterone activates it directly",
+      "tags": [
+        "catsper",
+        "calcium",
+        "sperm",
+        "progesterone",
+        "ion_channel"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "ahmad2020_cry1_rf",
+      "authors": "Ahmad M, Galland P, Ritz T, Wiltschko R, Wiltschko W",
+      "year": 2020,
+      "title": "Arabidopsis cryptochrome is responsive to Radiofrequency (RF) electromagnetic fields",
+      "journal": "Scientific Reports",
+      "doi": "10.1038/s41598-020-67165-5",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Weak 7 MHz RF magnetic field significantly reduces Arabidopsis CRY1 biological response to blue light. RPM diagnostic fingerprint in plants. DIRECT evidence: RF disrupts plant CRY function.",
+      "tags": [
+        "plant",
+        "Arabidopsis",
+        "CRY1",
+        "RF",
+        "7MHz",
+        "RPM",
+        "radical_pair",
+        "universal"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "xu2014_cry_phosphorylation",
+      "authors": "Xu C, Lv Y, Chen C, Zhang Y, Wei S",
+      "year": 2014,
+      "title": "Blue light-dependent phosphorylations of cryptochromes are affected by magnetic fields in Arabidopsis",
+      "journal": "Advances in Space Research",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "500 µT magnetic field enhanced CRY1 and CRY2 blue-light-dependent phosphorylations. Near-null field weakened CRY2 phosphorylation.",
+      "tags": [
+        "plant",
+        "Arabidopsis",
+        "CRY1",
+        "CRY2",
+        "phosphorylation",
+        "magnetic_field",
+        "500uT"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "xu2015_flowering_nnmf",
+      "authors": "Xu C, Li Y, Yu Y, Zhang Y, Wei S",
+      "year": 2015,
+      "title": "Suppression of Arabidopsis flowering by near-null magnetic field is affected by light",
+      "journal": "Bioelectromagnetics",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Near-null magnetic field SUPPRESSES Arabidopsis flowering in a blue-light-dependent manner. CRY regulates plant reproduction in a magnetic field-dependent way.",
+      "tags": [
+        "plant",
+        "Arabidopsis",
+        "flowering",
+        "near_null_magnetic_field",
+        "reproduction",
+        "blue_light"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "agliassa2018_gmf_cry_phytochrome",
+      "authors": "Agliassa C, Narayana R, Christie JM, Maffei ME",
+      "year": 2018,
+      "title": "Geomagnetic field impacts on cryptochrome and phytochrome signaling",
+      "journal": "Journal of Photochemistry and Photobiology B: Biology",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Geomagnetic field affects CRY signaling in Arabidopsis. Near-null field changes gene expression in blue light, partly CRY-mediated.",
+      "tags": [
+        "plant",
+        "Arabidopsis",
+        "geomagnetic",
+        "cryptochrome",
+        "phytochrome",
+        "gene_expression"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "arabidopsis_book_cry",
+      "authors": "Lin C, Todo T",
+      "year": 2010,
+      "title": "The Cryptochrome Blue Light Receptors",
+      "journal": "The Arabidopsis Book",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "review",
+      "finding": "CRY2 is Arabidopsis's primary receptor for photoperiodic flowering induction. CRY2 → CONSTANS → FT chain triggers flowering. CRY also regulates circadian clock, stomata, root development, fruit and egg development, seed dormancy AND magnetoreception.",
+      "tags": [
+        "plant",
+        "CRY2",
+        "flowering",
+        "CONSTANS",
+        "FT",
+        "photoperiod",
+        "review",
+        "comprehensive"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "bogdziewicz2024_nature_plants_solstice",
+      "authors": "Bogdziewicz M et al.",
+      "year": 2024,
+      "title": "Summer solstice orchestrates the subcontinental-scale synchrony of mast seeding",
+      "journal": "Nature Plants",
+      "doi": "10.1038/s41477-024-01651-w",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "epidemiological",
+      "finding": "European beech opens its temperature-sensing window at summer solstice. This 'celestial starting gun' synchronizes masting events at 2000 km scale across 61 observation sites.",
+      "tags": [
+        "masting",
+        "beech",
+        "solstice",
+        "synchrony",
+        "2000km",
+        "Moran_effect",
+        "celestial_cue"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "ascoli2017_nao_masting",
+      "authors": "Ascoli D et al.",
+      "year": 2017,
+      "title": "Inter-annual and decadal changes in teleconnections drive continental-scale synchronization of tree reproduction",
+      "journal": "Nature Communications",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [],
+      "level": "M|C",
+      "type": "epidemiological",
+      "finding": "MASTREE database + NAO data: over the last 60 years, NAO high- and low-frequency components significantly correlate with European beech and spruce masting synchrony. Relationships are NON-STATIONARY.",
+      "tags": [
+        "masting",
+        "NAO",
+        "teleconnection",
+        "MASTREE",
+        "beech",
+        "spruce",
+        "non_stationary"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "bogdziewicz2021_climate_masting",
+      "authors": "Bogdziewicz M et al.",
+      "year": 2021,
+      "title": "Climate change weakens the tie between weather and mast seeding",
+      "journal": "Communications Biology",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [],
+      "level": "M|C",
+      "type": "epidemiological",
+      "finding": "Climate change weakens the link between weather signals and seed induction in beech. Synchrony decreases. BERM alternative: RF background growth disrupts CRY2.",
+      "tags": [
+        "masting",
+        "climate_change",
+        "desynchrony",
+        "beech",
+        "weakening"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "lettuce_rf_2023",
+      "authors": "PMC10005510",
+      "year": 2023,
+      "title": "Impacts of RF-EMF on Lettuce — Evidence for RF-EMF Interference with Plant Stress Responses",
+      "journal": "Plants (MDPI)",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": "M|C",
+      "type": "experimental",
+      "finding": "RF-EMF (1890-1900 MHz DECT, 2.4 GHz and 5 GHz Wi-Fi) ACCELERATED lettuce flowering in field and reduced photosynthetic efficiency. Stress gene expression decreased.",
+      "tags": [
+        "plant",
+        "lettuce",
+        "RF",
+        "WiFi",
+        "DECT",
+        "flowering_acceleration",
+        "photosynthesis",
+        "stress_genes"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "field_plants_rf_2023",
+      "authors": "ScienceDirect",
+      "year": 2023,
+      "title": "Do electromagnetic fields used in telecommunications affect wild plant species?",
+      "journal": "Ecological Indicators",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": "M|C",
+      "type": "field_experimental",
+      "finding": "866-868 MHz RF-EMF exposure from seed to maturity: growth and development of 10 wild plant species changed. First controlled field experiment on wild plant RF response.",
+      "tags": [
+        "plant",
+        "wild_species",
+        "RF",
+        "field_experiment",
+        "868MHz",
+        "growth",
+        "development"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
+    },
+    {
+      "id": "haggerty2010_aspen_rf",
+      "authors": "Haggerty K",
+      "year": 2010,
+      "title": "Adverse Influence of Radio Frequency Background on Trembling Aspen Seedlings",
+      "journal": "International Journal of Forestry Research",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "plant_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": "M|C",
+      "type": "experimental",
+      "finding": "RF background adversely affected aspen seedling growth, leaf development, and anthocyanin production.",
+      "tags": [
+        "plant",
+        "aspen",
+        "RF_background",
+        "growth",
+        "anthocyanin",
+        "decline"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": [],
+      "link_checked_at": null
     }
   ]
 }

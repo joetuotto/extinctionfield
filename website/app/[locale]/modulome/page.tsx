@@ -295,7 +295,7 @@ export default async function ModulomePage({
 }) {
   const { locale } = await params;
   const d = pickCopy(COPY, locale);
-  const l: "en" | "fi" = locale === "fi" ? "fi" : "en";
+  const l = locale;
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
@@ -347,11 +347,11 @@ export default async function ModulomePage({
 
         <div className="grid gap-5 sm:grid-cols-2">
           {FERTILITY_ROUTES.map((route) => {
-            const name = l === "fi" ? route.nameFi : route.nameEn;
+            const name = l === "fi" ? route.nameFi : l === "ja" ? route.nameJa : l === "fr" ? route.nameFr : l === "ko" ? route.nameKo : route.nameEn;
             const mechanism =
-              l === "fi" ? route.mechanismFi : route.mechanismEn;
+              l === "fi" ? route.mechanismFi : l === "ja" ? route.mechanismJa : l === "fr" ? route.mechanismFr : l === "ko" ? route.mechanismKo : route.mechanismEn;
             const blocked =
-              l === "fi" ? route.blockedByFi : route.blockedByEn;
+              l === "fi" ? route.blockedByFi : l === "ja" ? route.blockedByJa : l === "fr" ? route.blockedByFr : l === "ko" ? route.blockedByKo : route.blockedByEn;
 
             return (
               <div
@@ -365,7 +365,7 @@ export default async function ModulomePage({
                   </h4>
                   {route.isNew && (
                     <span className="shrink-0 text-[0.6rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-accent/10 text-accent">
-                      {l === "fi" ? "UUSI" : "NEW"}
+                      {l === "fi" ? "UUSI" : l === "fr" ? "NOUVEAU" : "NEW"}
                     </span>
                   )}
                 </div>
@@ -411,8 +411,8 @@ export default async function ModulomePage({
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {ORGAN_PROFILES.map((organ) => {
-            const name = l === "fi" ? organ.nameFi : organ.nameEn;
-            const summary = l === "fi" ? organ.summaryFi : organ.summaryEn;
+            const name = l === "fi" ? organ.nameFi : l === "ja" ? organ.nameJa : l === "fr" ? organ.nameFr : l === "ko" ? organ.nameKo : organ.nameEn;
+            const summary = l === "fi" ? organ.summaryFi : l === "ja" ? organ.summaryJa : l === "fr" ? organ.summaryFr : l === "ko" ? organ.summaryKo : organ.summaryEn;
 
             return (
               <div

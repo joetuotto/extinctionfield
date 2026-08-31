@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generated": "2026-08-28",
-    "referencesWithUsages": 568,
-    "usageLocations": 1571
+    "generated": "2026-08-31",
+    "referencesWithUsages": 611,
+    "usageLocations": 1629
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -431,6 +431,10 @@
       {
         "path": "/predictions",
         "source": "app/[locale]/predictions/page.tsx"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
       }
     ],
     "klimentidis2010": [
@@ -683,10 +687,6 @@
       {
         "path": "/evidence/evolution",
         "source": "lib/evolutionData.ts"
-      },
-      {
-        "path": "/evidence/eyes",
-        "source": "lib/eyeColorData.ts"
       },
       {
         "path": "/evidence/magnetoreception",
@@ -1037,38 +1037,6 @@
       {
         "path": "/articles/dual-lock",
         "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
-      },
-      {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
-      },
-      {
-        "path": "/data",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/evidence",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/evidence/circadian",
-        "source": "app/[locale]/evidence/circadian/page.tsx"
-      },
-      {
-        "path": "/explore",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
     "dreher2016": [
@@ -1417,6 +1385,24 @@
         "source": "app/[locale]/civilization/page.tsx"
       }
     ],
+    "dual_hormone_meta2021": [
+      {
+        "path": "/civilization",
+        "source": "app/[locale]/civilization/page.tsx"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
     "wood_health2026": [
       {
         "path": "/civilization",
@@ -1481,10 +1467,6 @@
       {
         "path": "/evidence",
         "source": "lib/evidence.ts"
-      },
-      {
-        "path": "/evidence/eyes",
-        "source": "lib/eyeColorData.ts"
       },
       {
         "path": "/evidence/nutrition",
@@ -1579,10 +1561,6 @@
         "source": "lib/evidence.ts"
       },
       {
-        "path": "/evidence/eyes",
-        "source": "lib/eyeColorData.ts"
-      },
-      {
         "path": "/evidence/magnetoreception",
         "source": "app/[locale]/evidence/magnetoreception/page.tsx"
       },
@@ -1615,6 +1593,32 @@
         "source": "app/[locale]/predictions/page.tsx"
       }
     ],
+    "catsper_2021": [
+      {
+        "path": "/data",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
     "iuliis2009": [
       {
         "path": "/data",
@@ -1623,6 +1627,10 @@
       {
         "path": "/evidence",
         "source": "lib/evidence.ts"
+      },
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
       },
       {
         "path": "/explore",
@@ -2431,6 +2439,24 @@
         "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
+    "dualhormone_meta2018": [
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence/circadian",
+        "source": "app/[locale]/evidence/circadian/page.tsx"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      }
+    ],
     "thornhill1994": [
       {
         "path": "/data",
@@ -3228,11 +3254,23 @@
       },
       {
         "path": "/evidence",
-        "source": "lib/legacyEvidence.json"
+        "source": "app/[locale]/evidence/page.tsx"
       },
       {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
       },
       {
         "path": "/sentinel",
@@ -4203,8 +4241,16 @@
         "source": "lib/legacyEvidence.json"
       },
       {
+        "path": "/evidence/bbb",
+        "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
         "path": "/explore",
         "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
       }
     ],
     "nature_comms_2026_ttype": [
@@ -4533,28 +4579,6 @@
       {
         "path": "/model/fieldstate",
         "source": "lib/causalChainData.ts"
-      }
-    ],
-    "bbb_emf_2026": [
-      {
-        "path": "/evidence/bbb",
-        "source": "app/[locale]/evidence/bbb/page.tsx"
-      },
-      {
-        "path": "/evidence/gut-brain-axis",
-        "source": "app/[locale]/evidence/gut-brain-axis/page.tsx"
-      },
-      {
-        "path": "/evidence/unbroken-chain",
-        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/model/page.tsx"
       }
     ],
     "leszczynski2002_hsp27_bbb": [
@@ -5057,10 +5081,6 @@
         "source": "lib/evolutionData.ts"
       },
       {
-        "path": "/evidence/eyes",
-        "source": "lib/eyeColorData.ts"
-      },
-      {
         "path": "/evidence/nutrition",
         "source": "lib/eyeColorData.ts"
       },
@@ -5547,10 +5567,6 @@
         "source": "lib/evolutionData.ts"
       },
       {
-        "path": "/evidence/eyes",
-        "source": "lib/eyeColorData.ts"
-      },
-      {
         "path": "/evidence/magnetoreception",
         "source": "app/[locale]/evidence/magnetoreception/page.tsx"
       },
@@ -5581,16 +5597,16 @@
         "source": "lib/evolutionData.ts"
       },
       {
-        "path": "/evidence/eyes",
-        "source": "lib/eyeColorData.ts"
-      },
-      {
         "path": "/evidence/magnetoreception",
         "source": "app/[locale]/evidence/magnetoreception/page.tsx"
       },
       {
         "path": "/evidence/nutrition",
         "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
       },
       {
         "path": "/model",
@@ -5605,60 +5621,10 @@
         "source": "lib/evolutionData.ts"
       }
     ],
-    "martinez-cadenas2013": [
+    "pmc11817702_2025_rfk_pemf": [
       {
         "path": "/evidence/eyes",
-        "source": "lib/eyeColorData.ts"
-      },
-      {
-        "path": "/evidence/nutrition",
-        "source": "lib/eyeColorData.ts"
-      }
-    ],
-    "niessner2014": [
-      {
-        "path": "/evidence/eyes",
-        "source": "lib/eyeColorData.ts"
-      },
-      {
-        "path": "/evidence/nutrition",
-        "source": "lib/eyeColorData.ts"
-      },
-      {
-        "path": "/evidence/replication",
-        "source": "app/[locale]/evidence/replication/page.tsx"
-      },
-      {
-        "path": "/modulome/eye",
-        "source": "app/[locale]/modulome/eye/page.tsx"
-      }
-    ],
-    "white2003": [
-      {
-        "path": "/evidence/eyes",
-        "source": "lib/eyeColorData.ts"
-      },
-      {
-        "path": "/evidence/nutrition",
-        "source": "lib/eyeColorData.ts"
-      }
-    ],
-    "lamia2009": [
-      {
-        "path": "/evidence/eyes",
-        "source": "lib/eyeColorData.ts"
-      },
-      {
-        "path": "/evidence/nutrition",
-        "source": "app/[locale]/evidence/nutrition/page.tsx"
-      },
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      },
-      {
-        "path": "/predictions",
-        "source": "app/[locale]/predictions/page.tsx"
+        "source": "app/[locale]/evidence/eyes/page.tsx"
       }
     ],
     "gut_per2_2026": [
@@ -5693,6 +5659,20 @@
       {
         "path": "/evidence/gut-brain-axis",
         "source": "app/[locale]/evidence/gut-brain-axis/page.tsx"
+      }
+    ],
+    "bbb_emf_2026": [
+      {
+        "path": "/evidence/gut-brain-axis",
+        "source": "app/[locale]/evidence/gut-brain-axis/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
       }
     ],
     "marchetti2013_heavy_metal": [
@@ -5859,10 +5839,6 @@
     ],
     "bat_5g_prdm16": [
       {
-        "path": "/evidence",
-        "source": "app/[locale]/evidence/page.tsx"
-      },
-      {
         "path": "/evidence/klimentidis-explained",
         "source": "app/[locale]/evidence/klimentidis-explained/page.tsx"
       },
@@ -5873,10 +5849,6 @@
       {
         "path": "/modulome/bat",
         "source": "app/[locale]/modulome/bat/page.tsx"
-      },
-      {
-        "path": "/predictions",
-        "source": "app/[locale]/predictions/page.tsx"
       }
     ],
     "betacell_efield": [
@@ -6077,10 +6049,50 @@
         "source": "app/[locale]/evidence/magnetoreception/page.tsx"
       }
     ],
+    "lamia2009": [
+      {
+        "path": "/evidence/nutrition",
+        "source": "app/[locale]/evidence/nutrition/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
     "wacker2000": [
       {
         "path": "/evidence/nutrition",
         "source": "app/[locale]/evidence/nutrition/page.tsx"
+      }
+    ],
+    "martinez-cadenas2013": [
+      {
+        "path": "/evidence/nutrition",
+        "source": "lib/eyeColorData.ts"
+      }
+    ],
+    "niessner2014": [
+      {
+        "path": "/evidence/nutrition",
+        "source": "lib/eyeColorData.ts"
+      },
+      {
+        "path": "/evidence/replication",
+        "source": "app/[locale]/evidence/replication/page.tsx"
+      },
+      {
+        "path": "/modulome/eye",
+        "source": "app/[locale]/modulome/eye/page.tsx"
+      }
+    ],
+    "white2003": [
+      {
+        "path": "/evidence/nutrition",
+        "source": "lib/eyeColorData.ts"
       }
     ],
     "perheentupa2013": [
@@ -6157,6 +6169,20 @@
         "source": "app/[locale]/predictions/page.tsx"
       }
     ],
+    "5g_bat2025": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/modulome/bat",
+        "source": "app/[locale]/modulome/bat/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
     "bhatt2012_glp1": [
       {
         "path": "/evidence",
@@ -6178,6 +6204,74 @@
       }
     ],
     "screentime_meta2022": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      }
+    ],
+    "catsper_human": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "pmc6104424_nnc": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      },
+      {
+        "path": "/predictions",
+        "source": "app/[locale]/predictions/page.tsx"
+      }
+    ],
+    "harris2023": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      }
+    ],
+    "kalmijn1971": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "rodriguez2003": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      }
+    ],
+    "burchard2002": [
       {
         "path": "/evidence",
         "source": "app/[locale]/evidence/page.tsx"
@@ -6221,6 +6315,26 @@
       {
         "path": "/evidence/pharmacology",
         "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      }
+    ],
+    "scirep2016_ionophore": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "pmc10102357_ceram": [
+      {
+        "path": "/evidence/pharmacology",
+        "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
       }
     ],
     "lancet-2017-tsimane-heart": [
@@ -6323,6 +6437,90 @@
       {
         "path": "/model/math",
         "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "frontiers2024_testes": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "ebiya2017_star": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "almeida2000_ccb": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "catsper-temp-2025": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      },
+      {
+        "path": "/evidence/unbroken-chain",
+        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "meta2021_mobile": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "pmc2775032_bsa": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "pmc8505895_bicarb": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "currbiol2013_rheo": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "hru2026_sperm_oocyte": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "bmc2006_zp": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "physiology2022_20yr": [
+      {
+        "path": "/evidence/reproductive-navigation",
+        "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "juutilainen2006_superposition": [
+      {
+        "path": "/evidence/superposition",
+        "source": "app/[locale]/evidence/superposition/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
       }
     ],
     "schmid2012": [
@@ -6548,12 +6746,6 @@
       }
     ],
     "mast_cell_cardiac": [
-      {
-        "path": "/evidence/unbroken-chain",
-        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
-      }
-    ],
-    "catsper_2021": [
       {
         "path": "/evidence/unbroken-chain",
         "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
@@ -6793,18 +6985,6 @@
         "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
       }
     ],
-    "catSper-temp-2025": [
-      {
-        "path": "/evidence/unbroken-chain",
-        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
-      }
-    ],
-    "catsper_human": [
-      {
-        "path": "/evidence/unbroken-chain",
-        "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
-      }
-    ],
     "psilo_5ht2a_ca": [
       {
         "path": "/evidence/unbroken-chain",
@@ -6971,6 +7151,36 @@
         "source": "app/[locale]/modulome/heart/page.tsx"
       }
     ],
+    "randall1990": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "skjaervo2015": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "burch1999": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "ess2026_sama": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "workman2018_eyecolor": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
     "ttfields_cell_size_frequency": [
       {
         "path": "/mathematics",
@@ -7043,6 +7253,30 @@
         "source": "lib/causalChainData.ts"
       }
     ],
+    "lishko2011": [
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "granger2020": [
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
     "sakurai2008": [
       {
         "path": "/model",
@@ -7064,6 +7298,42 @@
       }
     ],
     "t2d_covid2024": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "vencloviene2022_geomag_mortality": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "feigin2014_latitude_cvd": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "mccrary2021_hrv_geomag": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "lehrer2017_solar_births": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "boland2015_birth_month": [
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "lerchl1998_birth_seasonality": [
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
@@ -7408,6 +7678,54 @@
         "path": "/predictions",
         "source": "app/[locale]/predictions/page.tsx"
       },
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "superpos_172": [
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "catsper_20yr": [
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "calves_dark": [
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "cry_drosophila": [
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "geomag_263": [
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "solar_birth_11yr": [
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "putman2014": [
+      {
+        "path": "/sentinel",
+        "source": "app/[locale]/sentinel/page.tsx"
+      }
+    ],
+    "welch2021": [
       {
         "path": "/sentinel",
         "source": "app/[locale]/sentinel/page.tsx"

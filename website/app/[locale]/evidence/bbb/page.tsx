@@ -14,15 +14,15 @@ const COPY = {
     title: "Biological Barriers: BBB & BTB",
     subtitle: "Pathway F biological barrier multiplier — BBB and blood-testis barrier share the same tight junction mechanism",
     backLink: "← Back to Evidence",
-    narrativeTitle: "BBB tight junction mechanism ([[ref:gao2024_bbb_conformational|Gao 2024]], [[ref:ulusoy2025_bbb_therapeutic|Ulusoy 2025]])",
+    narrativeTitle: "BBB tight junction mechanism ([[ref:gao2024_bbb_conformational|Gao 2024]], [[ref:ulusoy2025_bbb_enos|Ulusoy 2025]])",
     narrativeParagraphs: [
-      "[[ref:gao2024_bbb_conformational|Gao et al. (2024, Bioelectromagnetics, bem.22494)]] demonstrate that electromagnetic pulse (EMP) caused BBB disruption in rat brains via tight junction protein (occludin, claudin, ZO-1) degradation. [[ref:ulusoy2025_bbb_therapeutic|Ulusoy et al. (2025, Int J Basic Med Sci)]] showed that 27.12 MHz RF-EMF opens the BBB via eNOS activation and occludin downregulation — without oxidative stress at 30 min, progressing to structural damage at 360 min. This confirms a non-thermal, progressive mechanism.",
+      "[[ref:gao2024_bbb_conformational|Gao et al. (2024, Bioelectromagnetics, bem.22494)]] demonstrate that electromagnetic pulse (EMP) caused BBB disruption in rat brains via tight junction protein (occludin, claudin, ZO-1) degradation. [[ref:ulusoy2025_bbb_enos|Ulusoy et al. (2025, Int J Basic Med Sci)]] showed that 27.12 MHz RF-EMF opens the BBB via eNOS activation and occludin downregulation — without oxidative stress at 30 min, progressing to structural damage at 360 min. This confirms a non-thermal, progressive mechanism.",
       "BERM extends pathway F from BBB-only to a Biological Barrier Multiplier covering both BBB and BTB. The blood-testis barrier (BTB) uses the same tight junction proteins (occludin, ZO-1, claudins) as the BBB. [[ref:yu2019_btb|Yu et al. (2019, Sci Total Environ)]] demonstrated that long-term 4G exposure (2605 MHz) directly disrupts BTB integrity via the Spock3-MMP2 axis, producing time-dependent reproductive toxicity. BTB disruption has a MORE DIRECT reproductive effect because it compromises the immune-privileged spermatogenic microenvironment. The barrier multiplier operates as positive feedback: EMF opens barrier → protected tissue exposed → more damage → barrier weakens further.",
     ],
     narrativeStudies: [
       { citation: "Gao et al. (Bioelectromagnetics)", year: 2024, referenceId: "gao2024_bbb_conformational", note: "EMP → tight junction protein degradation → BBB opening. Mechanistic support for pathway F (EMP, not chronic RF)." },
       { citation: "Salford et al.", year: 2003, referenceId: "salford2003", note: "BBB opening at GSM frequencies (SAR 0.016 W/kg) — BERM's direct pathway F reference." },
-      { citation: "Ulusoy et al. (Int J Basic Med Sci)", year: 2025, referenceId: "ulusoy2025_bbb_therapeutic", note: "27.12 MHz RF → eNOS ↑ → occludin ↓ → BBB opening. Non-thermal at 30 min, structural at 360 min." },
+      { citation: "Ulusoy et al. (Int J Basic Med Sci)", year: 2025, referenceId: "ulusoy2025_bbb_enos", note: "27.12 MHz RF → eNOS ↑ → occludin ↓ → BBB opening. Non-thermal at 30 min, structural at 360 min." },
       { citation: "Yu et al. (Sci Total Environ)", year: 2019, referenceId: "yu2019_btb", note: "4G (2605 MHz) → Spock3-MMP2-BTB axis → direct spermatogenic toxicity. Time-dependent, progressive." },
     ],
     btbBoundary: "BTB data is from a single research group ([[ref:yu2019_btb|Yu et al. 2019]]). The finding is mechanistically strong and time-dependent, but independent replication from another group is pending.",
@@ -44,7 +44,7 @@ const COPY = {
     pathwayFIntroPara: "EMF opens the blood-brain barrier (BBB) via three parallel mechanisms. Aging degrades the SAME tight junction proteins — the combined effect is synergistic, not additive. The hospital environment combines the highest EMF exposure, the most elderly patients, and circulating drugs: the result is unplanned brain dose escalation.",
     pathwayFGaoPara: "[[ref:gao2024_bbb_conformational|Gao et al. (2024, Bioelectromagnetics)]] demonstrated a critical finding: electromagnetic pulse opened tight junctions PHYSICALLY (visible gap in TEM images) even though TJ protein LEVELS (ZO-1, claudin-5, occludin) did not change on western blot. The proteins are present but their 3D conformation has changed — they no longer seal the junction. This explains why studies measuring only protein expression (de Gannes, Franke) do not find BBB effects.",
     pathwayFIOPPara: "[[ref:iop2026_bbb_scoping_review|The IOP Science scoping review (2026, Physics in Medicine and Biology)]] confirms: evidence is contradictory but positive results have been replicated in multiple independent laboratories (Salford/Lund, Tang/China, Ulusoy/Iran, Gao/China). Negative results (Finnie, Franke, de Gannes, Kuribayashi) are partly explained by measurement method differences (western blot vs. TEM vs. albumin leakage), anesthesia type, and exposure modulation.",
-    pathwayFUlusoyPara: "[[ref:ulusoy2025_bbb_therapeutic|Ulusoy et al. (2025, Iranian J Basic Medical Sciences)]] propose RF-EMF as a THERAPEUTIC TOOL for opening the BBB to deliver drugs to the brain: 27.12 MHz → eNOS → NO → occludin ↓ → TJ open. This is a new variant of the therapeutic device paradox: researchers exploit EMF's biological activity while ICNIRP denies its existence.",
+    pathwayFUlusoyPara: "[[ref:ulusoy2025_bbb_enos|Ulusoy et al. (2025, Iranian J Basic Medical Sciences)]] propose RF-EMF as a THERAPEUTIC TOOL for opening the BBB to deliver drugs to the brain: 27.12 MHz → eNOS → NO → occludin ↓ → TJ open. This is a new variant of the therapeutic device paradox: researchers exploit EMF's biological activity while ICNIRP denies its existence.",
     miRNACell: "miRNA change → long-term TJ dysregulation",
     arendashPara1: "[[ref:arendash2010_temt_alzheimer|Arendash et al. (2010–2019)]] demonstrated that 918 MHz EMF treatment (2h/day) PROTECTS Alzheimer's mice and even reverses cognitive decline — by disaggregating Aβ oligomers and enhancing mitochondria. A clinical pilot (8 patients, TEMT 2 months) showed cognitive improvement. This does NOT refute BBB-opening findings — it confirms them: BBB opening is a biological process whose net effect depends on context.",
     arendashPara2: "Clean blood + BBB open = Aβ clearance (beneficial). Toxins in blood + BBB open = neurotoxicity (harmful). [[ref:arendash2010_temt_alzheimer|Arendash's]] clean laboratory mice benefited. In the real world, an elderly person's blood contains phthalates, heavy metals, drug residues, and microplastics.",
@@ -85,15 +85,15 @@ const COPY = {
     title: "Biologiset esteet: BBB ja BTB",
     subtitle: "Polku F:n biologinen estemultiplikeri — BBB ja veri-kiveseste jakavat saman tight junction -mekanismin",
     backLink: "← Takaisin evidenssiin",
-    narrativeTitle: "BBB:n tight junction -mekanismi ([[ref:gao2024_bbb_conformational|Gao 2024]], [[ref:ulusoy2025_bbb_therapeutic|Ulusoy 2025]])",
+    narrativeTitle: "BBB:n tight junction -mekanismi ([[ref:gao2024_bbb_conformational|Gao 2024]], [[ref:ulusoy2025_bbb_enos|Ulusoy 2025]])",
     narrativeParagraphs: [
-      "[[ref:gao2024_bbb_conformational|Gao ym. (2024, Bioelectromagnetics, bem.22494)]] osoittavat, että sähkömagneettinen pulssi (EMP) aiheutti veri-aivoesteen häiriön rottien aivoissa tight junction -proteiinien (okkludiini, klaudiini, ZO-1) degradaation kautta. [[ref:ulusoy2025_bbb_therapeutic|Ulusoy ym. (2025, Int J Basic Med Sci)]] osoittivat, että 27,12 MHz RF-EMF avaa BBB:n eNOS-aktivaation ja okkludiinin alaregulaation kautta — ilman oksidatiivista stressiä 30 minuutissa, edeten rakenteelliseen vaurioon 360 minuutissa.",
+      "[[ref:gao2024_bbb_conformational|Gao ym. (2024, Bioelectromagnetics, bem.22494)]] osoittavat, että sähkömagneettinen pulssi (EMP) aiheutti veri-aivoesteen häiriön rottien aivoissa tight junction -proteiinien (okkludiini, klaudiini, ZO-1) degradaation kautta. [[ref:ulusoy2025_bbb_enos|Ulusoy ym. (2025, Int J Basic Med Sci)]] osoittivat, että 27,12 MHz RF-EMF avaa BBB:n eNOS-aktivaation ja okkludiinin alaregulaation kautta — ilman oksidatiivista stressiä 30 minuutissa, edeten rakenteelliseen vaurioon 360 minuutissa.",
       "BERM laajentaa polun F pelkästä BBB:stä biologiseksi estemultiplieriksi, joka kattaa sekä BBB:n että BTB:n. Veri-kiveseste (BTB) käyttää samoja tight junction -proteiineja (okkludiini, ZO-1, klaudiinit) kuin BBB. [[ref:yu2019_btb|Yu ym. (2019, Sci Total Environ)]] osoittivat, että pitkäaikainen 4G-altistus (2605 MHz) häiritsee BTB:n eheyttä suoraan Spock3-MMP2-akselin kautta, tuottaen aikariippuvaisen lisääntymistoksisuuden. BTB:n häiriöllä on SUOREMPI lisääntymisvaikutus, koska se vaarantaa immuuniprivilegoidun spermatogeneettisen mikroympäristön. Estemultiplieri toimii positiivisena takaisinkytkentänä: EMF avaa esteen → suojattu kudos altistuu → enemmän vauriota → este heikkenee edelleen.",
     ],
     narrativeStudies: [
       { citation: "Gao ym. (Bioelectromagnetics)", year: 2024, referenceId: "gao2024_bbb_conformational", note: "EMP → tight junction -proteiinien degradaatio → BBB-avautuminen. Mekanistinen tuki polulle F (EMP, ei krooninen RF)." },
       { citation: "Salford ym.", year: 2003, referenceId: "salford2003", note: "BBB-avautuminen GSM-taajuuksilla (SAR 0,016 W/kg) — BERM:n suora polun F viite." },
-      { citation: "Ulusoy ym. (Int J Basic Med Sci)", year: 2025, referenceId: "ulusoy2025_bbb_therapeutic", note: "27,12 MHz RF → eNOS ↑ → okkludiini ↓ → BBB-avautuminen. Ei-terminen 30 min, rakenteellinen 360 min." },
+      { citation: "Ulusoy ym. (Int J Basic Med Sci)", year: 2025, referenceId: "ulusoy2025_bbb_enos", note: "27,12 MHz RF → eNOS ↑ → okkludiini ↓ → BBB-avautuminen. Ei-terminen 30 min, rakenteellinen 360 min." },
       { citation: "Yu ym. (Sci Total Environ)", year: 2019, referenceId: "yu2019_btb", note: "4G (2605 MHz) → Spock3-MMP2-BTB-akseli → suora spermatogeneettinen toksisuus. Aikariippuvainen, progressiivinen." },
     ],
     btbBoundary: "BTB-data on yhdeltä tutkimusryhmältä ([[ref:yu2019_btb|Yu ym. 2019]]). Löydös on mekanistisesti vahva ja aikariippuvainen, mutta itsenäinen replikaatio toisesta ryhmästä puuttuu.",
@@ -115,7 +115,7 @@ const COPY = {
     pathwayFIntroPara: "EMF avaa veri-aivoesteen (BBB) kolmella rinnakkaisella mekanismilla. Ikääntyminen heikentää SAMOJA tight junction -proteiineja — yhdistelmävaikutus on synergistinen, ei additiivinen. Sairaalaympäristö yhdistää korkeimman EMF-altistuksen, ikääntyneimmät potilaat ja lääkeaineet veressä: tulos on suunnittelematon aivoannoksen kasvu.",
     pathwayFGaoPara: "[[ref:gao2024_bbb_conformational|Gao ym. (2024, Bioelectromagnetics)]] osoittivat kriittisen löydöksen: sähkömagneettinen pulssi avasi tight junctionit FYYSISESTI (TEM-kuvissa näkyvä aukko) vaikka TJ-proteiinien (ZO-1, klaudiini-5, okkludiini) TASOT eivät muuttuneet western blotissa. Proteiinit ovat paikalla, mutta niiden 3D-konformaatio on muuttunut — ne eivät enää tiivistä liitosta. Tämä selittää, miksi tutkimukset, jotka mittaavat vain proteiiniespressiota (de Gannes, Franke) eivät löydä BBB-vaikutuksia.",
     pathwayFIOPPara: "[[ref:iop2026_bbb_scoping_review|IOP Science scoping review (2026, Physics in Medicine and Biology)]] vahvistaa: evidenssi on ristiriitaista mutta positiiviset tulokset on replikoitu useissa itsenäisissä laboratorioissa (Salford/Lund, Tang/Kiina, Ulusoy/Iran, Gao/Kiina). Negatiiviset tulokset (Finnie, Franke, de Gannes, Kuribayashi) selittyvät osittain mittausmenetelmäerolla (western blot vs. TEM vs. albumiinivuoto), anestesiatyypillä ja altistuksen modulaatiolla.",
-    pathwayFUlusoyPara: "[[ref:ulusoy2025_bbb_therapeutic|Ulusoy ym. (2025, Iranian J Basic Medical Sciences)]] ehdottavat RF-EMF:ää TERAPEUTTISEKSI TYÖKALUKSI BBB:n avaamiseen lääkeaineiden toimittamiseksi aivoihin: 27.12 MHz → eNOS → NO → okkludiini ↓ → TJ auki. Tämä on terapeuttisten laitteiden paradoksin uusi variantti: tutkijat hyödyntävät EMF:n biologista aktiivisuutta samalla kun ICNIRP kieltää sen olemassaolon.",
+    pathwayFUlusoyPara: "[[ref:ulusoy2025_bbb_enos|Ulusoy ym. (2025, Iranian J Basic Medical Sciences)]] ehdottavat RF-EMF:ää TERAPEUTTISEKSI TYÖKALUKSI BBB:n avaamiseen lääkeaineiden toimittamiseksi aivoihin: 27.12 MHz → eNOS → NO → okkludiini ↓ → TJ auki. Tämä on terapeuttisten laitteiden paradoksin uusi variantti: tutkijat hyödyntävät EMF:n biologista aktiivisuutta samalla kun ICNIRP kieltää sen olemassaolon.",
     miRNACell: "miRNA-muutos → pitkäaikainen TJ-dysregulaatio",
     arendashPara1: "[[ref:arendash2010_temt_alzheimer|Arendash ym. (2010–2019)]] osoittivat, että 918 MHz EMF-hoito (2h/vrk) SUOJAA Alzheimerin hiiriä ja jopa kääntää kognitiivisen heikkenemisen — hajottamalla Aβ-oligomeerit ja tehostamalla mitokondrioita. Kliininen pilottikoe (8 potilasta, TEMT 2kk) osoitti kognitiivista paranemista. Tämä EI kumoa BBB-avauslöydöksiä — se vahvistaa niitä: BBB:n avautuminen on biologinen prosessi jonka nettovaikutus riippuu kontekstista.",
     arendashPara2: "Puhdas veri + BBB auki = Aβ-puhdistus (hyödyllinen). Toksiineja veressä + BBB auki = neurotoksisuus (haitallinen). [[ref:arendash2010_temt_alzheimer|Arendash-laboratorion]] puhtailla hiirillä vaikutus oli hyödyllinen. Todellisessa maailmassa vanhuksen veressä on ftalaatteja, raskasmetalleja, lääkejäämiä ja mikromuoveja.",
@@ -156,15 +156,15 @@ const COPY = {
     title: "生物学的バリア：BBBとBTB",
     subtitle: "経路F 生物学的バリア乗数 — BBBと血液精巣関門は同じタイトジャンクションメカニズムを共有する",
     backLink: "← エビデンスに戻る",
-    narrativeTitle: "BBBタイトジャンクションメカニズム（[[ref:gao2024_bbb_conformational|Gao 2024]]、[[ref:ulusoy2025_bbb_therapeutic|Ulusoy 2025]]）",
+    narrativeTitle: "BBBタイトジャンクションメカニズム（[[ref:gao2024_bbb_conformational|Gao 2024]]、[[ref:ulusoy2025_bbb_enos|Ulusoy 2025]]）",
     narrativeParagraphs: [
-      "[[ref:gao2024_bbb_conformational|Gaoら（2024、Bioelectromagnetics、bem.22494）]]は、電磁パルス（EMP）がタイトジャンクションタンパク質（オクルディン、クローディン、ZO-1）の分解を介してラット脳のBBBを破綻させることを示した。[[ref:ulusoy2025_bbb_therapeutic|Ulusoyら（2025、Int J Basic Med Sci）]]は、27.12 MHz RF-EMFがeNOS活性化とオクルディン低下を介してBBBを開き、30分では酸化ストレスなし、360分では構造損傷へ進むことを示した。これは非熱的で進行性の機構を確認する。",
+      "[[ref:gao2024_bbb_conformational|Gaoら（2024、Bioelectromagnetics、bem.22494）]]は、電磁パルス（EMP）がタイトジャンクションタンパク質（オクルディン、クローディン、ZO-1）の分解を介してラット脳のBBBを破綻させることを示した。[[ref:ulusoy2025_bbb_enos|Ulusoyら（2025、Int J Basic Med Sci）]]は、27.12 MHz RF-EMFがeNOS活性化とオクルディン低下を介してBBBを開き、30分では酸化ストレスなし、360分では構造損傷へ進むことを示した。これは非熱的で進行性の機構を確認する。",
       "BERMは経路FをBBBだけでなくBTBも含む生物学的バリア乗数へ拡張する。血液精巣関門（BTB）はBBBと同じタイトジャンクションタンパク質（オクルディン、ZO-1、クローディン）を使う。[[ref:yu2019_btb|Yuら（2019、Sci Total Environ）]]は、長期4G曝露（2605 MHz）がSpock3-MMP2軸を介してBTB完全性を直接破壊し、時間依存的な生殖毒性を生むことを示した。BTB破綻は免疫特権的な精子形成微小環境を損なうため、より直接的な生殖影響を持つ。バリア乗数はEMFがバリアを開く → 保護組織が曝露される → 損傷増加 → バリアがさらに弱るという正のフィードバックで働く。",
     ],
     narrativeStudies: [
       { citation: "Gao ら（Bioelectromagnetics）", year: 2024, referenceId: "gao2024_bbb_conformational", note: "EMP → タイトジャンクションタンパク質分解 → BBB開口。経路Fへの機構的支持（EMPであり慢性RFではない）。" },
       { citation: "Salford ら", year: 2003, referenceId: "salford2003", note: "GSM周波数でのBBB開口（SAR 0.016 W/kg） — BERMの直接的な経路F参照。" },
-      { citation: "Ulusoy ら（Int J Basic Med Sci）", year: 2025, referenceId: "ulusoy2025_bbb_therapeutic", note: "27.12 MHz RF → eNOS ↑ → オクルディン ↓ → BBB開口。30分で非熱的、360分で構造的。" },
+      { citation: "Ulusoy ら（Int J Basic Med Sci）", year: 2025, referenceId: "ulusoy2025_bbb_enos", note: "27.12 MHz RF → eNOS ↑ → オクルディン ↓ → BBB開口。30分で非熱的、360分で構造的。" },
       { citation: "Yu ら（Sci Total Environ）", year: 2019, referenceId: "yu2019_btb", note: "4G（2605 MHz）→ Spock3-MMP2-BTB軸 → 直接的な精子形成毒性。時間依存的、進行性。" },
     ],
     btbBoundary: "BTBデータは単一の研究グループ（[[ref:yu2019_btb|Yuら 2019]]）による。所見は機構的に強く時間依存的だが、別グループによる独立再現は未了である。",
@@ -186,7 +186,7 @@ const COPY = {
     pathwayFIntroPara: "EMFは3つの並行するメカニズムを介して血液脳関門（BBB）を開口させる。加齢は同じタイトジャンクションタンパク質を劣化させ、複合効果は相加的ではなく相乗的である。病院環境は最高のEMF曝露、最も高齢の患者、循環する薬剤を組み合わせ、結果として計画外の脳内薬物用量増加をもたらす。",
     pathwayFGaoPara: "[[ref:gao2024_bbb_conformational|Gaoら（2024、Bioelectromagnetics）]]は決定的な所見を示した。電磁パルスは、TJタンパク質（ZO-1、クローディン5、オクルディン）の量がウエスタンブロットで変化しないにもかかわらず、タイトジャンクションを物理的に開いた（TEMで可視的な間隙）。タンパク質は存在するが3Dコンフォメーションが変化し、接合部を密閉できない。これはタンパク質発現だけを測る研究がBBB効果を見いださない理由を説明する。",
     pathwayFIOPPara: "[[ref:iop2026_bbb_scoping_review|IOP Scienceのスコーピングレビュー（2026、Physics in Medicine and Biology）]]は、証拠は矛盾するものの、陽性結果が複数の独立研究室（Salford/Lund、Tang/中国、Ulusoy/イラン、Gao/中国）で再現されたと確認する。陰性結果は測定法（ウエスタンブロット、TEM、アルブミン漏出）、麻酔、曝露変調の差で部分的に説明される。",
-    pathwayFUlusoyPara: "[[ref:ulusoy2025_bbb_therapeutic|Ulusoyら（2025、Iranian J Basic Medical Sciences）]]は、薬物を脳へ送達するためBBBを開く治療ツールとしてRF-EMFを提案する：27.12 MHz → eNOS → NO → オクルディン↓ → TJ開口。これは、研究者がEMFの生物活性を利用する一方でICNIRPがその存在を否定するという治療機器パラドックスの新しい形である。",
+    pathwayFUlusoyPara: "[[ref:ulusoy2025_bbb_enos|Ulusoyら（2025、Iranian J Basic Medical Sciences）]]は、薬物を脳へ送達するためBBBを開く治療ツールとしてRF-EMFを提案する：27.12 MHz → eNOS → NO → オクルディン↓ → TJ開口。これは、研究者がEMFの生物活性を利用する一方でICNIRPがその存在を否定するという治療機器パラドックスの新しい形である。",
     miRNACell: "miRNA変化 → 長期的TJ調節異常",
     arendashPara1: "[[ref:arendash2010_temt_alzheimer|Arendashら（2010–2019）]]は、918 MHz EMF処置（1日2時間）がAβオリゴマーを分解しミトコンドリアを強化することで、アルツハイマーマウスを保護し認知低下まで逆転させることを示した。8名の臨床パイロット（TEMT 2か月）も認知改善を示した。これはBBB開口所見を反証せず、むしろBBB開口が文脈により正味効果の変わる生物学的過程であることを確認する。",
     arendashPara2: "清浄な血液＋BBB開口＝Aβ除去（有益）。血中毒素＋BBB開口＝神経毒性（有害）。[[ref:arendash2010_temt_alzheimer|Arendash]]の清浄な実験用マウスは利益を得た。現実の高齢者の血液にはフタル酸、重金属、薬剤残留物、マイクロプラスチックが含まれる。",
@@ -227,15 +227,15 @@ const COPY = {
     title: "Barrières biologiques : BHE et BTB",
     subtitle: "Voie F multiplicateur de barrières biologiques — la BHE et la barrière hémato-testiculaire partagent le même mécanisme de jonctions serrées",
     backLink: "← Retour aux preuves",
-    narrativeTitle: "Mécanisme des jonctions serrées de la BHE ([[ref:gao2024_bbb_conformational|Gao 2024]], [[ref:ulusoy2025_bbb_therapeutic|Ulusoy 2025]])",
+    narrativeTitle: "Mécanisme des jonctions serrées de la BHE ([[ref:gao2024_bbb_conformational|Gao 2024]], [[ref:ulusoy2025_bbb_enos|Ulusoy 2025]])",
     narrativeParagraphs: [
-      "[[ref:gao2024_bbb_conformational|Gao et al. (2024, Bioelectromagnetics, bem.22494)]] démontrent que l'impulsion électromagnétique (EMP) a provoqué une altération de la BHE dans le cerveau de rats par dégradation des protéines de jonctions serrées (occludine, claudine, ZO-1). [[ref:ulusoy2025_bbb_therapeutic|Ulusoy et al. (2025, Int J Basic Med Sci)]] ont montré que le RF-EMF à 27,12 MHz ouvre la BHE par activation d'eNOS et baisse de l'occludine — sans stress oxydatif à 30 min, puis avec des lésions structurelles à 360 min. Cela confirme un mécanisme non thermique et progressif.",
+      "[[ref:gao2024_bbb_conformational|Gao et al. (2024, Bioelectromagnetics, bem.22494)]] démontrent que l'impulsion électromagnétique (EMP) a provoqué une altération de la BHE dans le cerveau de rats par dégradation des protéines de jonctions serrées (occludine, claudine, ZO-1). [[ref:ulusoy2025_bbb_enos|Ulusoy et al. (2025, Int J Basic Med Sci)]] ont montré que le RF-EMF à 27,12 MHz ouvre la BHE par activation d'eNOS et baisse de l'occludine — sans stress oxydatif à 30 min, puis avec des lésions structurelles à 360 min. Cela confirme un mécanisme non thermique et progressif.",
       "BERM étend la voie F d'une voie limitée à la BHE à un multiplicateur de barrières biologiques couvrant à la fois la BHE et la BTB. La barrière hémato-testiculaire (BTB) utilise les mêmes protéines de jonctions serrées (occludine, ZO-1, claudines) que la BHE. [[ref:yu2019_btb|Yu et al. (2019, Sci Total Environ)]] ont démontré qu'une exposition prolongée à la 4G (2605 MHz) perturbe directement l'intégrité de la BTB par l'axe Spock3-MMP2, produisant une toxicité reproductive dépendante du temps. La perturbation de la BTB a un effet reproductif PLUS DIRECT, car elle compromet le microenvironnement spermatogénique immunoprivilégié. Le multiplicateur de barrière fonctionne comme une rétroaction positive : l'EMF ouvre la barrière → le tissu protégé est exposé → davantage de dommages → la barrière s'affaiblit encore.",
     ],
     narrativeStudies: [
       { citation: "Gao et al. (Bioelectromagnetics)", year: 2024, referenceId: "gao2024_bbb_conformational", note: "EMP → dégradation des protéines de jonctions serrées → ouverture de la BHE. Soutien mécanistique de la voie F (EMP, pas RF chronique)." },
       { citation: "Salford et al.", year: 2003, referenceId: "salford2003", note: "Ouverture de la BHE aux fréquences GSM (SAR 0,016 W/kg) — référence directe de la voie F de BERM." },
-      { citation: "Ulusoy et al. (Int J Basic Med Sci)", year: 2025, referenceId: "ulusoy2025_bbb_therapeutic", note: "27,12 MHz RF → eNOS ↑ → occludine ↓ → ouverture de la BHE. Non thermique à 30 min, structurel à 360 min." },
+      { citation: "Ulusoy et al. (Int J Basic Med Sci)", year: 2025, referenceId: "ulusoy2025_bbb_enos", note: "27,12 MHz RF → eNOS ↑ → occludine ↓ → ouverture de la BHE. Non thermique à 30 min, structurel à 360 min." },
       { citation: "Yu et al. (Sci Total Environ)", year: 2019, referenceId: "yu2019_btb", note: "4G (2605 MHz) → axe Spock3-MMP2-BTB → toxicité spermatogénique directe. Dépendante du temps, progressive." },
     ],
     btbBoundary: "Les données sur la BTB proviennent d'un seul groupe de recherche ([[ref:yu2019_btb|Yu et al. 2019]]). Le résultat est mécanistiquement robuste et dépendant du temps, mais une réplication indépendante par un autre groupe reste attendue.",
@@ -257,7 +257,7 @@ const COPY = {
     pathwayFIntroPara: "L'EMF ouvre la barrière hémato-encéphalique (BHE) par trois mécanismes parallèles. Le vieillissement dégrade les MÊMES protéines de jonctions serrées — l'effet combiné est synergique, non additif. L'environnement hospitalier combine l'exposition EMF la plus élevée, les patients les plus âgés et les médicaments circulants : le résultat est une escalade non planifiée de la dose cérébrale.",
     pathwayFGaoPara: "[[ref:gao2024_bbb_conformational|Gao et al. (2024, Bioelectromagnetics)]] ont démontré un résultat critique : l'impulsion électromagnétique a ouvert PHYSIQUEMENT les jonctions serrées (espace visible en TEM), alors que les NIVEAUX des protéines TJ (ZO-1, claudine-5, occludine) ne changeaient pas au western blot. Les protéines sont présentes, mais leur conformation 3D a changé — elles ne scellent plus la jonction. Cela explique pourquoi les études ne mesurant que l'expression protéique (de Gannes, Franke) ne trouvent pas d'effets sur la BHE.",
     pathwayFIOPPara: "[[ref:iop2026_bbb_scoping_review|La revue de cadrage IOP Science (2026, Physics in Medicine and Biology)]] confirme : les preuves sont contradictoires, mais les résultats positifs ont été reproduits dans plusieurs laboratoires indépendants (Salford/Lund, Tang/Chine, Ulusoy/Iran, Gao/Chine). Les résultats négatifs (Finnie, Franke, de Gannes, Kuribayashi) s'expliquent en partie par les différences de méthode de mesure (western blot, TEM ou fuite d'albumine), le type d'anesthésie et la modulation de l'exposition.",
-    pathwayFUlusoyPara: "[[ref:ulusoy2025_bbb_therapeutic|Ulusoy et al. (2025, Iranian J Basic Medical Sciences)]] proposent le RF-EMF comme OUTIL THÉRAPEUTIQUE pour ouvrir la BHE et administrer des médicaments au cerveau : 27,12 MHz → eNOS → NO → occludine ↓ → jonctions serrées ouvertes. Il s'agit d'une nouvelle variante du paradoxe des dispositifs thérapeutiques : les chercheurs exploitent l'activité biologique de l'EMF tandis que l'ICNIRP en nie l'existence.",
+    pathwayFUlusoyPara: "[[ref:ulusoy2025_bbb_enos|Ulusoy et al. (2025, Iranian J Basic Medical Sciences)]] proposent le RF-EMF comme OUTIL THÉRAPEUTIQUE pour ouvrir la BHE et administrer des médicaments au cerveau : 27,12 MHz → eNOS → NO → occludine ↓ → jonctions serrées ouvertes. Il s'agit d'une nouvelle variante du paradoxe des dispositifs thérapeutiques : les chercheurs exploitent l'activité biologique de l'EMF tandis que l'ICNIRP en nie l'existence.",
     miRNACell: "Modification des miARN → dysrégulation des JS à long terme",
     arendashPara1: "[[ref:arendash2010_temt_alzheimer|Arendash et al. (2010–2019)]] ont démontré qu'un traitement EMF à 918 MHz (2 h/jour) PROTÈGE les souris Alzheimer et inverse même le déclin cognitif — en désagrégeant les oligomères Aβ et en améliorant les mitochondries. Un essai clinique pilote (8 patients, TEMT pendant 2 mois) a montré une amélioration cognitive. Cela NE réfute PAS les résultats d'ouverture de la BHE — cela les confirme : l'ouverture de la BHE est un processus biologique dont l'effet net dépend du contexte.",
     arendashPara2: "Sang propre + BHE ouverte = élimination de l'Aβ (bénéfique). Toxines dans le sang + BHE ouverte = neurotoxicité (nocive). Les souris de laboratoire propres d'[[ref:arendash2010_temt_alzheimer|Arendash]] en ont bénéficié. Dans le monde réel, le sang d'une personne âgée contient des phtalates, des métaux lourds, des résidus de médicaments et des microplastiques.",
@@ -298,15 +298,15 @@ const COPY = {
     title: "생물학적 장벽: BBB와 BTB",
     subtitle: "경로 F 생물학적 장벽 승수 — BBB와 혈액-고환 장벽은 동일한 밀착연접 메커니즘을 공유한다",
     backLink: "← 근거로 돌아가기",
-    narrativeTitle: "BBB 밀착연접 메커니즘 ([[ref:gao2024_bbb_conformational|Gao 2024]], [[ref:ulusoy2025_bbb_therapeutic|Ulusoy 2025]])",
+    narrativeTitle: "BBB 밀착연접 메커니즘 ([[ref:gao2024_bbb_conformational|Gao 2024]], [[ref:ulusoy2025_bbb_enos|Ulusoy 2025]])",
     narrativeParagraphs: [
-      "[[ref:gao2024_bbb_conformational|Gao 등(2024, Bioelectromagnetics, bem.22494)]]은 전자기 펄스(EMP)가 밀착연접 단백질(오클루딘, 클라우딘, ZO-1)의 분해를 통해 쥐의 뇌에서 BBB 손상을 일으킨다는 것을 입증했다. [[ref:ulusoy2025_bbb_therapeutic|Ulusoy 등(2025, Int J Basic Med Sci)]]은 27.12 MHz RF-EMF가 eNOS 활성화와 오클루딘 하향조절을 통해 BBB를 개방하며, 30분에는 산화 스트레스 없이 나타나고 360분에는 구조적 손상으로 진행된다고 밝혔다. 이는 비열적이고 진행성인 메커니즘을 확인한다.",
+      "[[ref:gao2024_bbb_conformational|Gao 등(2024, Bioelectromagnetics, bem.22494)]]은 전자기 펄스(EMP)가 밀착연접 단백질(오클루딘, 클라우딘, ZO-1)의 분해를 통해 쥐의 뇌에서 BBB 손상을 일으킨다는 것을 입증했다. [[ref:ulusoy2025_bbb_enos|Ulusoy 등(2025, Int J Basic Med Sci)]]은 27.12 MHz RF-EMF가 eNOS 활성화와 오클루딘 하향조절을 통해 BBB를 개방하며, 30분에는 산화 스트레스 없이 나타나고 360분에는 구조적 손상으로 진행된다고 밝혔다. 이는 비열적이고 진행성인 메커니즘을 확인한다.",
       "BERM은 경로 F를 BBB만의 경로에서 BBB와 BTB를 모두 포괄하는 생물학적 장벽 승수로 확장한다. 혈액-고환 장벽(BTB)은 BBB와 동일한 밀착연접 단백질(오클루딘, ZO-1, 클라우딘)을 사용한다. [[ref:yu2019_btb|Yu 등(2019, Sci Total Environ)]]은 장기 4G 노출(2605 MHz)이 Spock3-MMP2 축을 통해 BTB 무결성을 직접 손상시키고 시간 의존적 생식독성을 일으킨다는 것을 입증했다. BTB 손상은 면역특권 정자형성 미세환경을 훼손하므로 생식에 더 직접적인 영향을 미친다. 장벽 승수는 양성 피드백으로 작동한다: EMF가 장벽을 개방 → 보호 조직이 노출 → 손상 증가 → 장벽이 더욱 약화.",
     ],
     narrativeStudies: [
       { citation: "Gao 등(Bioelectromagnetics)", year: 2024, referenceId: "gao2024_bbb_conformational", note: "EMP → 밀착연접 단백질 분해 → BBB 개방. 경로 F의 기전적 지지(EMP이며 만성 RF는 아님)." },
       { citation: "Salford 등", year: 2003, referenceId: "salford2003", note: "GSM 주파수에서의 BBB 개방(SAR 0.016 W/kg) — BERM의 직접적 경로 F 참조." },
-      { citation: "Ulusoy 등(Int J Basic Med Sci)", year: 2025, referenceId: "ulusoy2025_bbb_therapeutic", note: "27.12 MHz RF → eNOS ↑ → 오클루딘 ↓ → BBB 개방. 30분에서 비열적, 360분에서 구조적." },
+      { citation: "Ulusoy 등(Int J Basic Med Sci)", year: 2025, referenceId: "ulusoy2025_bbb_enos", note: "27.12 MHz RF → eNOS ↑ → 오클루딘 ↓ → BBB 개방. 30분에서 비열적, 360분에서 구조적." },
       { citation: "Yu 등(Sci Total Environ)", year: 2019, referenceId: "yu2019_btb", note: "4G(2605 MHz) → Spock3-MMP2-BTB 축 → 직접적 정자형성 독성. 시간 의존적, 진행성." },
     ],
     btbBoundary: "BTB 데이터는 단일 연구 그룹([[ref:yu2019_btb|Yu 등 2019]])에서 나왔다. 이 발견은 기전적으로 강하고 시간 의존적이지만 다른 그룹의 독립적 재현은 아직 이루어지지 않았다.",
@@ -328,7 +328,7 @@ const COPY = {
     pathwayFIntroPara: "EMF는 세 가지 병렬 메커니즘을 통해 혈액뇌장벽(BBB)을 개방한다. 노화는 동일한 밀착연접 단백질을 열화시키며, 복합 효과는 가산적이 아니라 상승적이다. 병원 환경은 가장 높은 EMF 노출, 가장 고령의 환자, 순환하는 약물을 결합하여 계획되지 않은 뇌 약물 용량 증가를 초래한다.",
     pathwayFGaoPara: "[[ref:gao2024_bbb_conformational|Gao 등(2024, Bioelectromagnetics)]]은 핵심 발견을 입증했다. 전자기 펄스는 TJ 단백질(ZO-1, 클라우딘-5, 오클루딘)의 수준이 웨스턴 블롯에서 변하지 않았음에도 밀착연접을 물리적으로 개방했다(TEM 영상의 가시적 틈). 단백질은 존재하지만 3차원 구조가 변해 더 이상 접합부를 밀봉하지 못한다. 이는 단백질 발현만 측정한 연구(de Gannes, Franke)가 BBB 효과를 찾지 못한 이유를 설명한다.",
     pathwayFIOPPara: "[[ref:iop2026_bbb_scoping_review|IOP Science 범위 검토(2026, Physics in Medicine and Biology)]]는 다음을 확인한다. 근거는 상충하지만 양성 결과는 여러 독립 연구실(Salford/Lund, Tang/중국, Ulusoy/이란, Gao/중국)에서 재현되었다. 음성 결과(Finnie, Franke, de Gannes, Kuribayashi)는 측정 방법(웨스턴 블롯, TEM, 알부민 누출), 마취 종류, 노출 변조의 차이로 일부 설명된다.",
-    pathwayFUlusoyPara: "[[ref:ulusoy2025_bbb_therapeutic|Ulusoy 등(2025, Iranian J Basic Medical Sciences)]]은 뇌에 약물을 전달하기 위해 BBB를 여는 치료 도구로 RF-EMF를 제안한다: 27.12 MHz → eNOS → NO → 오클루딘 ↓ → TJ 개방. 이는 치료기기 역설의 새로운 형태다. 연구자들은 EMF의 생물학적 활성을 활용하는 반면 ICNIRP는 그 존재를 부정한다.",
+    pathwayFUlusoyPara: "[[ref:ulusoy2025_bbb_enos|Ulusoy 등(2025, Iranian J Basic Medical Sciences)]]은 뇌에 약물을 전달하기 위해 BBB를 여는 치료 도구로 RF-EMF를 제안한다: 27.12 MHz → eNOS → NO → 오클루딘 ↓ → TJ 개방. 이는 치료기기 역설의 새로운 형태다. 연구자들은 EMF의 생물학적 활성을 활용하는 반면 ICNIRP는 그 존재를 부정한다.",
     miRNACell: "miRNA 변화 → 장기적 TJ 조절 이상",
     arendashPara1: "[[ref:arendash2010_temt_alzheimer|Arendash 등(2010–2019)]]은 918 MHz EMF 처치(하루 2시간)가 Aβ 올리고머를 분해하고 미토콘드리아를 향상시켜 알츠하이머 마우스를 보호하고 인지 저하까지 역전시킨다는 것을 입증했다. 임상 파일럿(환자 8명, TEMT 2개월)은 인지 개선을 보였다. 이는 BBB 개방 발견을 반박하지 않고 오히려 확인한다. BBB 개방은 순효과가 맥락에 따라 달라지는 생물학적 과정이다.",
     arendashPara2: "깨끗한 혈액 + 열린 BBB = Aβ 제거(유익). 혈중 독소 + 열린 BBB = 신경독성(유해). [[ref:arendash2010_temt_alzheimer|Arendash]]의 깨끗한 실험실 마우스는 이득을 보았다. 현실에서 노인의 혈액에는 프탈레이트, 중금속, 약물 잔류물, 미세플라스틱이 들어 있다.",
@@ -484,7 +484,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
                   <td className="py-2 pr-3 font-mono-num">1</td>
                   <td className="py-2 pr-3">{"VGCC → Ca²⁺ → eNOS → NO → occludin/claudin ↓"}</td>
                   <td className="py-2 pr-3">
-                    <StudyCitation referenceId="ulusoy2025_bbb_therapeutic" locale={locale} label="Ulusoy 2025" />
+                    <StudyCitation referenceId="ulusoy2025_bbb_enos" locale={locale} label="Ulusoy 2025" />
                     {", "}
                     <StudyCitation referenceId="pall2013_v2" locale={locale} label="Pall 2013" />
                   </td>
@@ -549,7 +549,7 @@ export default async function BBBPage({ params }: { params: Promise<{ locale: st
                 <td className="py-2">{d.findingIOPScoping}</td>
               </tr>
               <tr className="border-b border-card-border/40">
-                <td className="py-2 pr-3 font-medium text-foreground"><StudyCitation referenceId="ulusoy2025_bbb_therapeutic" locale={locale} label="Ulusoy ym. (Iranian J Basic Med Sci)" /></td>
+                <td className="py-2 pr-3 font-medium text-foreground"><StudyCitation referenceId="ulusoy2025_bbb_enos" locale={locale} label="Ulusoy ym. (Iranian J Basic Med Sci)" /></td>
                 <td className="py-2 pr-3 font-mono-num">2025</td>
                 <td className="py-2">{d.findingUlusoyTherapeutic}</td>
               </tr>

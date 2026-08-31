@@ -1,0 +1,174 @@
+{
+  "dated": {
+    "app/[locale]/modulome/pituitary/page.tsx": [
+      "ijms2026-hpg",
+      "pituitary_elf_18week_2024",
+      "schlegel1987",
+      "schwan1957"
+    ],
+    "app/[locale]/modulome/eye/page.tsx": [
+      "bartolke2025",
+      "chae2019",
+      "higuchi2007",
+      "ritz2004",
+      "yap2025",
+      "niessner2014"
+    ],
+    "app/[locale]/modulome/testes/page.tsx": [
+      "xiang2025_clc2_ttype",
+      "ma2026_spermatogenesis_cav",
+      "yu2019_btb",
+      "vgcc_blocker_studies_collection"
+    ],
+    "app/[locale]/evidence/bbb/page.tsx": [
+      "gao2024_bbb_conformational",
+      "salford2003",
+      "ulusoy2025_bbb_therapeutic",
+      "yu2019_btb"
+    ],
+    "app/[locale]/evidence/epidemiology/page.tsx": [
+      "chinese_lockdown_cohort_41036143",
+      "zhang2025_post_lockdown_semen",
+      "coloss_winter_loss_panel_2020_2022",
+      "ttfields_novocure_fda",
+      "panagopoulos2025",
+      "belmin2022_nature_sustainability",
+      "delong2010_plosone",
+      "nations2024",
+      "nations2024",
+      "world_bank_wdi_2024",
+      "bektas2026",
+      "meyer2026",
+      "haidar2025_5g_skin_null",
+      "deprez2025"
+    ],
+    "app/[locale]/evidence/magnetoreception/page.tsx": [
+      "chae2019",
+      "ritz2004",
+      "engels2014",
+      "yoshii2009",
+      "sherrard2018",
+      "sherrard2018",
+      "diem2005",
+      "hore2016_v2",
+      "talbi2025_quantum_magnetoreception",
+      "tbahriti2026",
+      "huss2007",
+      "belpomme2022",
+      "sousouri2025",
+      "cacna1c_genotyping_2024",
+      "hrv_wifi_2023",
+      "higuchi2007",
+      "yap2025"
+    ],
+    "app/[locale]/evidence/lighting/page.tsx": [
+      "boyes2021",
+      "pawson2014",
+      "ttfields_mechanism",
+      "pmc9920439_led_harmonics",
+      "havas2006",
+      "if_systematic_review_2019",
+      "ijrb2022_if_review",
+      "zeghoudi2025_led_driver_emf",
+      "eu_regulation_244_2009",
+      "display_market_penetration_2005_2024",
+      "streaming_screen_time_2012_2024"
+    ],
+    "app/[locale]/evidence/ecology/page.tsx": [
+      "clarke2013_bee_electroreception",
+      "greggers2013_bee_electric_comm",
+      "sutton2016_bee_hair_mechanism",
+      "morley2018_spider_ballooning",
+      "england_2023_ticks",
+      "england2024_butterfly_adaptive",
+      "england2024_butterfly_adaptive",
+      "robert2024_aerial_electroreception_review",
+      "mallinson2025_electric_pollution",
+      "nicholls2007",
+      "nicholls2009",
+      "hallmann2017_v2",
+      "thielens2018",
+      "uk_weather_radar_insects_2025",
+      "nexrad_insect_density_2025"
+    ],
+    "app/[locale]/evidence/devices/page.tsx": [
+      "pemf_bone_fda_review_2020",
+      "tms_fda_depression_2008",
+      "ttfields_novocure_fda",
+      "tdcs_fda_depression_2025",
+      "vns_gammacore_fda",
+      "ttfields_patent_7016725",
+      "kim2026_cell_gene_switch",
+      "patent_4850959_insulin",
+      "panagopoulos2025_ifo",
+      "yakymenko2016",
+      "pall2013_v2",
+      "bertagna2025",
+      "koivisto2000",
+      "eliyahu2006",
+      "luria2009"
+    ],
+    "app/[locale]/evidence/circadian/page.tsx": [
+      "diem2005",
+      "berm_recovery_window_2026",
+      "bektas2026",
+      "puts2008",
+      "goetz2024",
+      "dreher2016",
+      "dualhormone_meta2018",
+      "porges2011",
+      "poutahidis2014",
+      "microbiome_emf_collection_2019_2024",
+      "rf49_scientific_reports_2024",
+      "tbahriti2026",
+      "huss2007",
+      "sousouri2025",
+      "bartolke2025",
+      "wang2019_eneuro",
+      "battelle1980_emf_melatonin",
+      "tamura2012_follicular_melatonin",
+      "tong2017_melatonin_ivf",
+      "pmc12500685",
+      "pmc11265587",
+      "pmc10354453",
+      "reiter2007_melatonin_male",
+      "unfer2011_melatonin_ivf",
+      "nishihara2014_melatonin_sperm",
+      "rad_prot_dosimetry2013_emf_melatonin",
+      "walker2017_why_we_sleep",
+      "leproult2011_testosterone_sleep",
+      "irwin2015_sleep_immunity",
+      "spiegel1999_sleep_metabolic",
+      "chang2015_ipad_melatonin",
+      "duraccio2021_blue_light_filter"
+    ]
+  },
+  "yearless": {
+    "app/[locale]/modulome/heart/page.tsx": {
+      "mohamed-emf-blood-pressure": "mohamed-bp-emf",
+      "yap-2025-cry2-trpc1": "yap2025",
+      "timothy-syndrome-cacna1c": "splawski2004"
+    },
+    "app/[locale]/modulome/hypothalamus/page.tsx": {
+      "chen-2016-elife-ca-appetite": "chen2016_glia",
+      "alshammari-2022-rf-emf-food-intake": "alshammari2022",
+      "yang-2015-astrocyte-ghrelin": "yang2015_astro"
+    },
+    "app/[locale]/modulome/ear/page.tsx": {
+      "aging-cell-2024-cav13-hearing": "aging-cell-2024-cav13-hearing",
+      "brain-2026-cav32-human-drg": "brain-2026-cav32-human-drg"
+    },
+    "app/[locale]/modulome/adrenal/page.tsx": {
+      "glomerulosa-cav32-aldosterone": "glomerulosa_cav32_aldosterone",
+      "mohamed-emf-blood-pressure": "mohamed-bp-emf"
+    },
+    "app/[locale]/modulome/thyroid/page.tsx": {
+      "f1000-emf-thyroid-review": "thyroid-sysrev-2024",
+      "pituitary-cav3-thyrotroph": "ijms2026-hpg"
+    },
+    "app/[locale]/modulome/pancreas/page.tsx": {
+      "sakurai-2008-elf-insulin": "sakurai2008",
+      "therabionic-cav32-parallel": "therabionic-ebioMedicine-2019"
+    }
+  }
+}

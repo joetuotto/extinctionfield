@@ -27,13 +27,13 @@ export function LayerStack({
     <div className="space-y-2">
       {layers.map((layer) => {
         const isOpen = expanded === layer.id;
-        const name = locale === "fi" ? layer.nameFi : layer.nameEn;
+        const name = locale === "fi" ? layer.nameFi : locale === "ja" ? layer.nameJa : locale === "fr" ? layer.nameFr : locale === "ko" ? layer.nameKo : layer.nameEn;
         const chi =
-          locale === "fi" ? layer.chiModulatorFi : layer.chiModulatorEn;
+          locale === "fi" ? layer.chiModulatorFi : locale === "ja" ? layer.chiModulatorJa : locale === "fr" ? layer.chiModulatorFr : locale === "ko" ? layer.chiModulatorKo : layer.chiModulatorEn;
         const integration =
-          locale === "fi" ? layer.integrationFi : layer.integrationEn;
+          locale === "fi" ? layer.integrationFi : locale === "ja" ? layer.integrationJa : locale === "fr" ? layer.integrationFr : locale === "ko" ? layer.integrationKo : layer.integrationEn;
         const components =
-          locale === "fi" ? layer.keyComponentsFi : layer.keyComponentsEn;
+          locale === "fi" ? layer.keyComponentsFi : locale === "ja" ? layer.keyComponentsJa : locale === "fr" ? layer.keyComponentsFr : locale === "ko" ? layer.keyComponentsKo : layer.keyComponentsEn;
 
         return (
           <div

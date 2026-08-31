@@ -3,8 +3,14 @@ export interface ReferenceCategory {
   readonly number: number;
   readonly name_en: string;
   readonly name_fi: string;
+  readonly name_ja: string;
+  readonly name_fr: string;
+  readonly name_ko: string;
   readonly description_en: string;
   readonly description_fi: string;
+  readonly description_ja: string;
+  readonly description_fr: string;
+  readonly description_ko: string;
   readonly icon: string;
   readonly color: string;
 }
@@ -111,5 +117,11 @@ export function levelLabel(level: string | null, locale: string): string {
 }
 
 export function categoryName(cat: ReferenceCategory, locale: string): string {
-  return locale === "fi" ? cat.name_fi : cat.name_en;
+  switch (locale) {
+    case "fi": return cat.name_fi;
+    case "ja": return cat.name_ja;
+    case "fr": return cat.name_fr;
+    case "ko": return cat.name_ko;
+    default: return cat.name_en;
+  }
 }

@@ -7,6 +7,7 @@ export function Sparkline({ data, index }: SparklineProps) {
   const w = 120;
   const h = 36;
   const pad = 2;
+  if (!data) return null;
   const n = data.length;
   if (n < 2) return null;
 

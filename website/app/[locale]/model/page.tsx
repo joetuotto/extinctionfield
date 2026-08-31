@@ -26,6 +26,54 @@ const t = {
     metaDesc:
       "BERM model documentation: three-level architecture, causal pathways, equations, and recovery dynamics.",
 
+    physBioTitle: "From Physics to Biology",
+    physBioSub: "How Lindgren's geometric electromagnetism predicts biological sensitivity to background fields",
+    physBioLead: "BERM's biological predictions are not ad hoc — they derive from a geometric model of electromagnetism (GME) in which the EM field is part of the spacetime metric, not an external perturbation on it. This section traces the chain from the metric ansatz to tissue-level sensitivity.",
+    physBioGMETitle: "Lindgren Geometric Metric Extension",
+    physBioGMEDesc: "In standard physics, the electromagnetic field is a separate entity that propagates through spacetime. In Lindgren's geometric model, the EM field is encoded directly in the metric tensor:",
+    physBioGMEFormula: "g_μν = η_μν + A_μ A_ν",
+    physBioGMEExplain: "where η_μν is the flat Minkowski metric and A_μ is the electromagnetic four-potential. The key consequence: biological systems do not exist IN an electromagnetic field — they exist IN a spacetime whose geometry IS partly electromagnetic. There is no 'field-free' reference state; every organism has evolved within a specific electromagnetic geometry (the geomagnetic background), and perturbations to that geometry are perturbations to the biological operating environment itself.",
+    physBioChiTitle: "The χ(Ā) selection rule",
+    physBioChiDesc: "The metric extension implies a selection rule: biological sensitivity to EM perturbation depends on the background field Ā. When the background is absent, the perturbation has no geometric substrate to act through — χ → 0. When the background is present, the perturbation modifies existing geometric structure — χ → 1. This is not a free parameter; it is a structural consequence of the metric ansatz.",
+    physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
+    physBioChiExplain: "This saturation curve appears at every biological scale: molecular (CRY requires geomagnetic background for radical pair chemistry), cellular (VGCC gating requires membrane potential as background), organ (BBB integrity modulates effective field penetration), population (electrification level modulates technology exposure). The same mathematical form, five instantiations — see χ at five scales below.",
+    physBioSuperTitle: "Superposition violation",
+    physBioSuperDesc: "In standard electromagnetism, fields add linearly: E_total = E₁ + E₂ (superposition principle). In the geometric model, because the EM field is in the metric, the response is fundamentally non-linear. The biological effect of two simultaneous sources is NOT the sum of their individual effects.",
+    physBioSuperFormula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
+    physBioSuperExplain: "This resolves a central puzzle in EMF bioeffects research: why do multi-frequency exposures (real-world conditions) produce effects that single-frequency laboratory studies miss? A systematic review of 172 studies confirms that combined exposures produce effects qualitatively different from the sum of individual exposures ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]). See the full superposition evidence analysis.",
+    physBioSuperLink: "See full superposition analysis →",
+    physBioTissueTitle: "Tissue-specific resonance",
+    physBioTissueDesc: "The geometric model predicts that different tissues have different susceptibilities to EM perturbation, determined by their ion channel composition, membrane properties, and resonant frequencies. This is not an assumption — it follows from the χ(Ā) selection rule applied to tissue-specific backgrounds:",
+    physBioTissues: [
+      { tissue: "Testes (Leydig cells)", channels: "Cav3.2 (T-type), high density", chi: "Very high", reason: "Window current at rest; StAR protein Ca²⁺-dependent" },
+      { tissue: "Hypothalamus", channels: "Cav3.1, Cav3.3", chi: "Very high", reason: "Synaptic vesicle release via synaptotagmin 1" },
+      { tissue: "Hippocampus", channels: "Cav3.2, Cav1.3", chi: "High", reason: "LTP/LTD Ca²⁺-dependent; neurogenesis zone" },
+      { tissue: "Retina (blue cones)", channels: "CRY1/CRY2 + TRPC1", chi: "High (light-dependent)", reason: "Radical pair magnetoreception; FAD-dependent" },
+      { tissue: "SA node (heart)", channels: "Cav1.3, Cav3.1", chi: "Moderate-high", reason: "Pacemaker current; low-threshold activation" },
+      { tissue: "Skeletal muscle", channels: "Cav1.2 (L-type)", chi: "Low at rest", reason: "High activation threshold (−30 mV); significant only during action potentials" },
+    ],
+    physBioVerifyTitle: "Geometric prediction verifications",
+    physBioVerifySub: "Four independent lines of evidence confirm that the geomagnetic background modulates biological sensitivity",
+    physBioVerifications: [
+      { id: "V1", title: "Geomagnetic mortality (263 cities)", desc: "Cardiovascular mortality correlates with geomagnetic storm intensity across 263 cities worldwide. During geomagnetic storms (Kp ≥ 5), the background field Ā is perturbed, increasing χ — and mortality rises 10–15% within 1–3 days ([[ref:vencloviene2022_geomag_mortality|Venclovienė et al. 2022]]).", level: "E" },
+      { id: "V2", title: "Latitude × CVD (204 countries)", desc: "Cardiovascular disease rates vary systematically with geomagnetic latitude across 204 countries. Higher geomagnetic field intensity (near poles) → higher χ → stronger biological coupling to anthropogenic EMF perturbations ([[ref:feigin2014_latitude_cvd|Feigin et al. 2014]]).", level: "M|C" },
+      { id: "V3", title: "HRV × Kp-index", desc: "Heart rate variability — a direct measure of autonomic nervous system function — correlates with the geomagnetic Kp disturbance index in real time. When the geomagnetic background is perturbed, cardiac autonomic control is measurably affected, consistent with χ(Ā)-mediated coupling ([[ref:mccrary2021_hrv_geomag|McCrary et al. 2021]]).", level: "E" },
+      { id: "V4", title: "Superposition violation (172 studies)", desc: "A systematic review of 172 studies demonstrates that combined EMF exposures produce effects not predicted by the sum of individual exposures. This directly confirms R(A₁+A₂) ≠ R(A₁)+R(A₂) — the defining signature of geometric non-linearity ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]).", level: "M" },
+    ],
+
+    solarBioTitle: "The Solar-Biological Connection",
+    solarBioSub: "Solar cycle modulation of birth rates, disease risk, and seasonal fertility — the geomagnetic χ in action",
+    solarBioLead: "If the geomagnetic background field modulates biological sensitivity (χ), then solar activity — which perturbs the geomagnetic field on an 11-year cycle — should produce measurable biological oscillations. Three independent datasets confirm this prediction.",
+    solarBioCycleTitle: "Solar cycle → birth rate cyclicity",
+    solarBioCycleDesc: "Birth rates in the USA and New Zealand show an 11-year oscillation phase-locked to the solar cycle. The pattern has been identified independently in 7 geographic regions across both hemispheres. During solar maxima, geomagnetic perturbation increases, χ rises, and conception rates are measurably affected ([[ref:lehrer2017_solar_births|Lehrer & Lehrer 2017]]).",
+    solarBioCycleNote: "The mechanism is consistent with BERM's melatonin pathway: solar activity → geomagnetic storms → melatonin suppression → GnRH pulsatility disruption → conception rate modulation. The 11-year cycle provides a natural experiment separating geomagnetic effects from anthropogenic EMF.",
+    solarBioBirthTitle: "Birth timing → disease risk",
+    solarBioBirthDesc: "In a cohort of 237,000 patients, birth month predicts lifetime disease risk for multiple conditions. Individuals born during geomagnetically active months show elevated cardiovascular, neurological, and reproductive disease risk ([[ref:boland2015_birth_month|Boland et al. 2015]]). The effect is consistent with prenatal χ modulation: the geomagnetic environment during critical developmental windows imprints lasting physiological susceptibility.",
+    solarBioBirthNote: "This is not astrology — it is developmental biology mediated by a physical field. The geomagnetic background during the first trimester affects organogenesis through the same VGCC/CRY pathways that BERM documents for adult exposure.",
+    solarBioDampenTitle: "Seasonal amplitude dampening",
+    solarBioDampenDesc: "In Greece between 1960 and 1992, the seasonal amplitude of birth rates progressively decreased — the difference between peak and trough months shrank by over 50%. This period coincides with Greece's rapid electrification and urbanization. The natural geomagnetic seasonal signal (which drives the birth seasonality via melatonin and photoperiod) was progressively masked by anthropogenic EMF, which provides a constant, season-independent χ perturbation ([[ref:lerchl1998_birth_seasonality|Lerchl 1998]]).",
+    solarBioDampenNote: "Prediction: countries with later electrification should show later onset of seasonal dampening. Countries with recent rapid electrification (sub-Saharan Africa) should currently be in the dampening phase.",
+
     archTitle: "Three-level architecture",
     archDesc:
       "BERM separates fertility decline into three distinct causal layers. Each level has its own dynamics, timescale, and evidence basis. The total fertility rate (TFR) for a country is the product of all three levels, not the sum -- each acts as a multiplier on the others.",
@@ -44,7 +92,7 @@ const t = {
 
     causalTitle: "Causal pathway diagram",
     causalDesc:
-      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Eight levels, 63 nodes, 107 edges. Two co-primary pathways operate in parallel: Pathway A (VGCC → Ca²⁺ → ROS) has the strongest experimental support (23–28 blocker studies), while Pathway B (RPM → CRY → circadian disruption) is the most complete theoretical bridge from Lindgren geometry to biology (87.5% of the RPM Hamiltonian is derivable from the metric ansatz). The CRY/RPM pathway has supporting evidence across species: disruption of magnetic compass in birds ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), CRY-dependent magnetoreception in Drosophila ([[ref:yoshii2009|Yoshii 2009]]), CRY-dependent ROS modulation in human cells ([[ref:sherrard2018|Sherrard 2018]]), and — critically — functional blue-light-dependent magnetoreception in humans ([[ref:chae2019|Chae et al. 2019]], PLOS ONE), indicating that the biological substrate is present in the species BERM models. Both pathways are independently supported at E-level evidence. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
+      "The diagram below shows the complete mechanistic chain from Lindgren geometry to TFR decline. Eleven levels, 41 nodes, 59 edges. Two co-primary pathways operate in parallel: Pathway A (VGCC → Ca²⁺ → ROS) has the strongest experimental support (23–28 blocker studies), while Pathway B (RPM → CRY → circadian disruption) is the most complete theoretical bridge from Lindgren geometry to biology (87.5% of the RPM Hamiltonian is derivable from the metric ansatz). The CRY/RPM pathway has supporting evidence across species: disruption of magnetic compass in birds ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), CRY-dependent magnetoreception in Drosophila ([[ref:yoshii2009|Yoshii 2009]]), CRY-dependent ROS modulation in human cells ([[ref:sherrard2018|Sherrard 2018]]), and — critically — functional blue-light-dependent magnetoreception in humans ([[ref:chae2019|Chae et al. 2019]], PLOS ONE), indicating that the biological substrate is present in the species BERM models. Both pathways are independently supported at E-level evidence. Click any node to see its mechanism, Lindgren interpretation, quantitative formulation, recovery parameters, and key references. Node borders are colored by epistemic level.",
     pathwayHierarchyNote:
       "Pathway weights reflect empirical calibration to community data (Amish–Korea gradient). They do not reflect theoretical hierarchy: Pathway B (CRY/RPM) is the PRIMARY pathway because 87.5% of the RPM Hamiltonian is derivable from Lindgren geometry, establishing the mechanism’s EXISTENCE as a geometric consequence. Pathway A has stronger experimental support (23–28 blocker studies). The former δVm objection (δV_m ≈ 10⁻²¹ V from geometry alone) is now resolved by the T-type calcium channel bifurcation mechanism: the Schwan equation amplifies external fields to 7.5–15 μV at the membrane (37% of thermal noise at 1 V/m ambient; 184% at 5 V/m personal), and T-type (Cav3) channels operate at a bifurcation point where ~10% are open at rest (window current), making them responsive to these perturbations. Pathway D (HPA → testosterone) is now also derived via the same T-type mechanism: Schwan δVm → Cav3 → Ca²⁺ → StAR → testosterone ([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
     rpmFrequencyNote:
@@ -81,11 +129,36 @@ const t = {
     chiEvidenceFamilies: [
       { referenceId: "sakurai2008", family: "Diabetes (β-cells)", chi: "χ(glucose): K_ATP → V_mem → VGCC priming", mechanism: "High glucose closes K_ATP channels → membrane depolarizes → VGCCs primed → χ HIGH. Low glucose → K_ATP open → χ LOW.", prediction: "EMF × high-GI diet produces synergistic diabetes risk. Fasting protects β-cells.", verification: "Sakurai 2008: ELF reduced insulin secretion 30%", level: "M|C" },
       { referenceId: "yu2019_btb", family: "Sperm quality (BTB)", chi: "χ(BTB integrity): barrier attenuates effective field", mechanism: "Intact BTB shields spermatogenic cells → low χ. EMF opens BTB → shielding lost → χ rises → positive feedback.", prediction: "Sperm quality decline accelerates over time (super-linear).", verification: "Yu 2019: 4G RF directly disrupts BTB, time-dependent", level: "E" },
-      { referenceId: "ulusoy2025_bbb_therapeutic", family: "Barriers (BBB + BTB)", chi: "χ(barrier permeability): continuous modulator", mechanism: "Barriers are continuous χ modulators. Partially damaged barrier = partial χ increase. Produces multiplicative amplification.", prediction: "Super-linear dose-response with cumulative exposure.", verification: "Ulusoy 2025: progressive BBB degradation 30–360 min", level: "E" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "Barriers (BBB + BTB)", chi: "χ(barrier permeability): continuous modulator", mechanism: "Barriers are continuous χ modulators. Partially damaged barrier = partial χ increase. Produces multiplicative amplification.", prediction: "Super-linear dose-response with cumulative exposure.", verification: "Ulusoy 2025: progressive BBB degradation 30–360 min", level: "E" },
       { family: "Sentinel species", chi: "χ(metabolic rate): M^(−0.25) scaling", mechanism: "Small animals: higher mass-specific metabolic rate → higher baseline ROS → higher χ → larger EMF response.", prediction: "Insects and small birds affected first; larger mammals later.", verification: "Temporal order matches body mass scaling", level: "M|C" },
+      { family: "Aquatic axis (CatSper conservation)", chi: "χ(ELF): submarine cable fields × aquatic CatSper", mechanism: "CatSper is conserved from sea urchin to human — the same Ca²⁺ channel that navigates sperm across all species. Aquatic species validate three BERM channels: ELF via elasmobranch electrosensory thresholds (VGIC sensitivity), RPM/CRY via gray whale magnetoreception, and CatSper via the conservation argument. Submarine cable ELF fields reach the activation threshold for aquatic CatSper.", prediction: "Marine reproduction declines near high-power submarine cable corridors. Farmed salmon CatSper weaker than wild.", verification: "CatSper KO = sterile in all tested species. Gray whale migration tracks geomagnetic field. Elasmobranch sensitivity to nV/m-scale fields confirmed.", level: "L*" },
       { family: "Cardiac (CRY2-TRPC1)", chi: "χ(CRY2 state): light- and FAD-dependent", mechanism: "If CRY2-TRPC1 operates in cardiomyocytes (as in myoblasts, [[ref:yap2025|Yap 2025]]), cardiac calcium entry is light/FAD-dependent.", prediction: "Nighttime phone use → higher arrhythmia risk than daytime.", verification: "Not yet tested. TRPC channels confirmed in myocytes.", level: "L*" },
       { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackman window", chi: "χ(photocycle) × χ(temperature) × χ(DC orientation)", mechanism: "The 'biological window' emerges from three superimposed χ windows. Labs controlling all three find consistent results.", prediction: "Five-parameter standard resolves 50-year replication debate.", verification: "Blackman 1985–1991: demonstrated each window independently", level: "M" },
     ],
+
+    dualSuscTitle: "Two Independent Susceptibilities",
+    dualSuscDesc: "BERM identifies two mechanistically independent susceptibility channels. χ(Ā) operates through voltage-gated calcium channels and requires anthropogenic EMF exposure above a threshold. χ_B operates through cryptochrome's radical pair mechanism and responds to the natural geomagnetic environment — it has always been active. The two channels are testable independently: χ(Ā) is isolated in populations with near-zero EMF (Amish), while χ_B is isolated in pre-industrial and solar cycle data.",
+    dualSuscLabelType: "Type",
+    dualSuscLabelChannel: "Channel",
+    dualSuscLabelThreshold: "Threshold",
+    dualSuscLabelTests: "Tests via",
+    dualSuscLabelPathways: "Pathways",
+    dualSuscLeft: {
+      title: "χ(Ā) [VGCC]",
+      type: "Geometric",
+      channel: "Ca²⁺ channel (VGCC)",
+      threshold: "REQUIRES electrification threshold (Ā > 0)",
+      tests: "Amish (Ā≈0), community gradient, country gradient",
+      pathways: "A (ROS), D (HPA), E (BBB)",
+    },
+    dualSuscRight: {
+      title: "χ_B [CRY/RPM]",
+      type: "Spin-chemical",
+      channel: "Radical pair mechanism",
+      threshold: "NO electrification threshold (operates always)",
+      tests: "Solar cycle, pre-industrial data, sentinel species, SAMA anomaly",
+      pathways: "B (CRY), C (melatonin)",
+    },
 
     twoChSub: "ELF + IF + RF decomposition with 12 technology layers and TCBM",
     twoChTitle: "Three-channel exposure model",
@@ -110,7 +183,7 @@ const t = {
       "The IF channel (1 kHz – 1 MHz) targets dividing cells through the same frequency–cell size relationship as FDA-approved TTFields cancer therapy. The primary environmental source of IF fields is LED lighting: every LED bulb contains a switch-mode power supply operating at 20–200 kHz with harmonics extending to megahertz. A typical home contains 15–30 such sources; a typical office contains 200–500. Additional IF sources include HVAC variable frequency drives (5–50 kHz), induction cooktops (20–75 kHz), and all switch-mode power supplies (laptop chargers, phone chargers). The mechanism operates via Ion Forced Oscillation (IFO-VGIC), with a biological threshold of 10⁻⁵ V/m ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) — orders of magnitude below measured LED driver emissions.",
     tcbmTitle: "Three-Channel Biological Model (TCBM)",
     tcbmIntro:
-      "BERM v19.1 identifies three independent electromagnetic channels, each with distinct frequency ranges, exposure sources, biological mechanisms, and temporal histories:",
+      "The BERM cross-sectional diagnostic (v19.1) identifies three independent electromagnetic channels, each with distinct frequency ranges, exposure sources, biological mechanisms, and temporal histories. Note: v19.1 is a diagnostic formula fitted to 54 countries — the prediction model is v17.",
     tcbmElfTitle: "Channel 1: ELF (0–300 Hz)",
     tcbmElfDesc:
       "Source: power grid, household wiring, appliances, transformers. Mechanism: IFO-VGIC forced ion oscillation ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). History: present since electrification (1880s), stable since ~1970. Proxy: residential electricity consumption (kWh per capita). Always on, 24/7, entire home.",
@@ -210,7 +283,7 @@ const t = {
       { title: "The 15–30 Year Lag", subtitle: "Developing countries follow the same trajectory, delayed", conventional: "Prosperity changes lifestyle", explanation: "The delay matches electrification + technology adoption timelines, not prosperity. China T2D: 1.3% (1980) → 8.7% (2014) parallels electrification from 60% to 100%.", ref: "BMC Public Health 2018" },
       { title: "The Amish Exception", subtitle: "TFR 6.1, low obesity, low dementia — same country", conventional: "Physical labor and community", explanation: "Zero technology layers. No ELF priming. Full recovery. EMF_effective ≈ 0. The diet is NOT especially healthy — the EMF environment is.", ref: "BERM population comparison" },
     ],
-    layerCountryTitle: "Country comparison: v19.1 vs v20",
+    layerCountryTitle: "Country comparison: v19.1 (diagnostic) vs v20",
     layerCountries: [
       { country: "Finland", actual: "1.25", v19: "1.32", v20: "1.28", note: "100+ years electrified, high P" },
       { country: "South Korea", actual: "0.72", v19: "0.95", v20: "0.78", note: "Highest 5G/LED/smartphone density" },
@@ -451,7 +524,7 @@ const t = {
     fourRoutesSub: "Gonadal, circadian, pituitary, autonomic, and neurodevelopmental — each sufficient alone",
     fourRoutesDesc: "BERM identifies five independent biological routes through which EMF exposure can reduce fertility. Each route operates through a distinct mechanism and target tissue. Crucially, each route is independently sufficient to reduce TFR — they operate in parallel, not in series. This means that blocking one route (e.g., antioxidant supplementation for the gonadal route) does not eliminate the effect, because four other routes remain active.",
     fourRoutesGonadal: "Route 1: Gonadal (established)",
-    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> sperm DNA damage + Leydig cell StAR suppression -> testosterone decline + spermatogenesis disruption. Target tissue: testes. Evidence level: E (23-28 blocker studies). Primary channel: RF + ELF.",
+    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> sperm DNA damage + Leydig cell StAR suppression -> testosterone decline + spermatogenesis disruption. Additionally: EMF -> CatSper premature activation -> energy depletion -> navigation failure (rheotaxis, chemotaxis, acrosome reaction). Target tissue: testes. Evidence level: E (23-28 blocker studies). Primary channel: RF + ELF.",
     fourRoutesCircadian: "Route 2: Circadian (established)",
     fourRoutesCircadianDesc: "EMF -> CRY/RPM -> circadian clock disruption -> melatonin suppression -> HPG axis disruption + oxidative stress in follicular fluid. Target tissue: pineal gland, SCN. Evidence level: E. Primary channel: RF (magnetic component).",
     fourRoutesPituitary: "Route 3: Pituitary (new)",
@@ -756,6 +829,17 @@ const t = {
     dnaRepairTitle: "DNA Damage Reverses in 9 Hours — If Exposure Stops",
     dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]] showed that EMF-induced DNA strand breaks returned to normal within 9 hours after exposure ceased. This quantifies BERM’s recovery window: the body CAN repair EMF-induced damage, but only if given sufficient EMF-free time.",
     dnaModernEnv: "Modern environments with 24/7 WiFi, LED lighting, and smartphones in bed eliminate this recovery window entirely. The typical modern bedroom provides zero EMF-free recovery time.",
+
+    twoLevelTitle: "Two-Level Prediction Model",
+    twoLevelSub: "Level 1 (cross-sectional) + Level 2 (temporal testosterone dynamics)",
+    twoLevelLead: "The cross-sectional model positions countries on the global TFR curve via electrification threshold. The temporal model adds a second level: testosterone secular decline provides within-country dynamics via the T→TFR lag relationship.",
+    twoLevelL1: "Level 1: Electrification threshold",
+    twoLevelL1Desc: "TFR = 4.11 × exp(−54 × EMF_index) + 1.55. Positions countries from Niger (low EMF, high TFR) to Korea (high EMF, low TFR). R² = 0.851 on 54 countries. This captures infrastructure saturation, not EMF dose.",
+    twoLevelL2: "Level 2: Testosterone trajectory",
+    twoLevelL2Desc: "T(year) = 638 × (1 − 0.012)^(year − 1982). The ~1.2%/year age-independent decline (Travison 2007, Lokeshwar 2021) is lagged 8 years against TFR. Transfer function: TFR = 0.00544 × T − 0.745. On USA 2007–2024, R² = 0.97.",
+    twoLevelCombined: "Combined prediction: Level 1 sets the cross-sectional baseline; Level 2 modulates it over time. Countries with high EMF index AND long T-decline exposure get the lowest predicted TFR.",
+    twoLevelCaveat: "The two levels are independent — neither proves the other. Level 2 is calibrated on USA only. The 0.97 R² is in-sample and likely inflated. Out-of-sample validation requires other countries with harmonised longitudinal T data.",
+    twoLevelDiagnostic: "LH–T diagnostic: Santi et al. 2025 showed simultaneous LH↓ and T↓ in populations — consistent with hypothalamic suppression (EMF pathway) rather than testicular damage (EDC pathway).",
   },
   fi: {
     title: "Mallin dokumentaatio",
@@ -764,6 +848,54 @@ const t = {
     metaTitle: "Mallin dokumentaatio - Extinction Field",
     metaDesc:
       "BERM-mallin dokumentaatio: kolmitasoinen arkkitehtuuri, kausaalireitit, yhtälöt ja palautumisdynamiikka.",
+
+    physBioTitle: "Fysiikasta biologiaan",
+    physBioSub: "Miten Lindgrenin geometrinen sähkömagnetismi ennustaa biologista herkkyyttä taustakenttiin",
+    physBioLead: "BERMin biologiset ennusteet eivät ole ad hoc -oletuksia — ne johtuvat geometrisesta sähkömagnetismin mallista (GME), jossa EM-kenttä on osa aika-avaruuden metriikkaa, ei sen ulkopuolinen häiriö. Tämä osio jäljittää ketjun metrisen ansatzin ja kudostason herkkyyden välillä.",
+    physBioGMETitle: "Lindgrenin geometrinen metriikkalaajennus",
+    physBioGMEDesc: "Standardifysiikassa sähkömagneettinen kenttä on erillinen entiteetti, joka etenee aika-avaruudessa. Lindgrenin geometrisessa mallissa EM-kenttä on koodattu suoraan metriikkatensoriin:",
+    physBioGMEFormula: "g_μν = η_μν + A_μ A_ν",
+    physBioGMEExplain: "missä η_μν on tasainen Minkowskin metriikka ja A_μ sähkömagneettinen nelipotentiaali. Keskeinen seuraus: biologiset järjestelmät eivät ole sähkömagneettisessa kentässä — ne ovat aika-avaruudessa, jonka geometria ON osittain sähkömagneettinen. 'Kenttävapaata' referenssitilaa ei ole; jokainen eliö on kehittynyt tietyssä sähkömagneettisessa geometriassa (geomagneetinen tausta), ja häiriöt tuohon geometriaan ovat häiriöitä biologiseen toimintaympäristöön.",
+    physBioChiTitle: "χ(Ā)-valintasääntö",
+    physBioChiDesc: "Metriikkalaajennus implikoi valintasäännön: biologinen herkkyys EM-häiriölle riippuu taustakentästä Ā. Kun tausta puuttuu, häiriöllä ei ole geometrista substraattia — χ → 0. Kun tausta on läsnä, häiriö muuttaa olemassa olevaa geometriaa — χ → 1. Tämä ei ole vapaa parametri; se on metrisen ansatzin rakenteellinen seuraus.",
+    physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
+    physBioChiExplain: "Tämä saturaatiokäyrä esiintyy jokaisella biologisella skaalalla: molekulaarinen (CRY vaatii geomagneettisen taustan radikaaliparin kemialle), solujen (VGCC-porttaus vaatii kalvopotentiaalin taustaksi), elin (BBB-eheys moduloi efektiivistä kenttäläpäisyä), populaatio (sähköistysaste moduloi teknologia-altistusta). Sama matemaattinen muoto, viisi instanssia — katso χ viidellä skaalalla alla.",
+    physBioSuperTitle: "Superpositiorikkomus",
+    physBioSuperDesc: "Standardisähkömagnetismissa kentät summautuvat lineaarisesti: E_total = E₁ + E₂ (superpositioperiaate). Geometrisessa mallissa, koska EM-kenttä on metriikassa, vaste on perustavanlaatuisesti epälineaarinen. Kahden samanaikaisen lähteen biologinen vaikutus EI OLE niiden yksittäisten vaikutusten summa.",
+    physBioSuperFormula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
+    physBioSuperExplain: "Tämä ratkaisee keskeisen pulman EMF-biovaikutustutkimuksessa: miksi monitaajuiset altistukset (tosielämän olosuhteet) tuottavat vaikutuksia, joita yksitaajuiset laboratoriotutkimukset eivät havaitse? 172 tutkimuksen systemaattinen katsaus vahvistaa, että yhdistetyt altistukset tuottavat vaikutuksia, jotka eroavat laadullisesti yksittäisten altistusten summasta ([[ref:juutilainen2006_superposition|Juutilainen ym. 2006]]). Katso täydellinen superpositioanalyysi.",
+    physBioSuperLink: "Katso täydellinen superpositioanalyysi →",
+    physBioTissueTitle: "Kudosspesifinen resonanssi",
+    physBioTissueDesc: "Geometrinen malli ennustaa, että eri kudoksilla on erilainen herkkyys EM-häiriöille, ionikanavakoostumuksen, kalvo-ominaisuuksien ja resonanssitaajuuksien perusteella. Tämä ei ole oletus — se seuraa χ(Ā)-valintasäännöstä kudosspesifisiin taustoihin sovellettuna:",
+    physBioTissues: [
+      { tissue: "Kivekset (Leydigin solut)", channels: "Cav3.2 (T-tyyppi), korkea tiheys", chi: "Erittäin korkea", reason: "Ikkunavirta levossa; StAR-proteiini Ca²⁺-riippuvainen" },
+      { tissue: "Hypotalamus", channels: "Cav3.1, Cav3.3", chi: "Erittäin korkea", reason: "Synaptisten vesikkelien vapautus synaptotagmiini 1:n kautta" },
+      { tissue: "Hippokampus", channels: "Cav3.2, Cav1.3", chi: "Korkea", reason: "LTP/LTD Ca²⁺-riippuvaisia; neurogeneesivyöhyke" },
+      { tissue: "Verkkokalvo (siniset tappisolut)", channels: "CRY1/CRY2 + TRPC1", chi: "Korkea (valoriippuvainen)", reason: "Radikaaliparin magnetoreseptio; FAD-riippuvainen" },
+      { tissue: "SA-solmuke (sydän)", channels: "Cav1.3, Cav3.1", chi: "Kohtalaisen korkea", reason: "Tahdistinvirta; matalan kynnyksen aktivaatio" },
+      { tissue: "Luurankolihas", channels: "Cav1.2 (L-tyyppi)", chi: "Matala levossa", reason: "Korkea aktivaatiokynnys (−30 mV); merkittävä vain aktiopotentiaalien aikana" },
+    ],
+    physBioVerifyTitle: "Geometrisen ennusteen verifioinnit",
+    physBioVerifySub: "Neljä itsenäistä todistuslinjaa vahvistaa, että geomagneettinen tausta moduloi biologista herkkyyttä",
+    physBioVerifications: [
+      { id: "V1", title: "Geomagneettinen kuolleisuus (263 kaupunkia)", desc: "Sydän- ja verisuonikuolleisuus korreloi geomagneettisten myrskyjen voimakkuuden kanssa 263 kaupungissa maailmanlaajuisesti. Geomagneettisten myrskyjen aikana (Kp ≥ 5) taustakenttä Ā häiriintyy, χ kasvaa — ja kuolleisuus nousee 10–15 % 1–3 päivässä ([[ref:vencloviene2022_geomag_mortality|Venclovienė ym. 2022]]).", level: "E" },
+      { id: "V2", title: "Leveysaste × sydäntaudit (204 maata)", desc: "Sydän- ja verisuonitautien esiintyvyys vaihtelee systemaattisesti geomagneettisen leveysasteen mukaan 204 maassa. Korkeampi geomagneettisen kentän intensiteetti (napojen lähellä) → korkeampi χ → vahvempi biologinen kytkentä ihmisen aiheuttamiin EMF-häiriöihin ([[ref:feigin2014_latitude_cvd|Feigin ym. 2014]]).", level: "M|C" },
+      { id: "V3", title: "HRV × Kp-indeksi", desc: "Sykevälivaihtelu — suora autonomisen hermoston toiminnan mittari — korreloi geomagneettisen Kp-häiriöindeksin kanssa reaaliajassa. Kun geomagneettinen tausta häiriintyy, sydämen autonominen säätely muuttuu mitattavasti, yhteensopivasti χ(Ā)-välitteisen kytkennän kanssa ([[ref:mccrary2021_hrv_geomag|McCrary ym. 2021]]).", level: "E" },
+      { id: "V4", title: "Superpositiorikkomus (172 tutkimusta)", desc: "172 tutkimuksen systemaattinen katsaus osoittaa, että yhdistetyt EMF-altistukset tuottavat vaikutuksia, joita yksittäisten altistusten summa ei ennusta. Tämä vahvistaa suoraan R(A₁+A₂) ≠ R(A₁)+R(A₂) — geometrisen epälineaarisuuden tunnusmerkki ([[ref:juutilainen2006_superposition|Juutilainen ym. 2006]]).", level: "M" },
+    ],
+
+    solarBioTitle: "Aurinko-biologinen yhteys",
+    solarBioSub: "Auringon syklin modulaatio syntyvyyteen, sairausriskiin ja kausihedelmällisyyteen — geomagneettinen χ toiminnassa",
+    solarBioLead: "Jos geomagneettinen taustakenttä moduloi biologista herkkyyttä (χ), aurinkoaktiivisuuden — joka häiritsee geomagneettista kenttää 11 vuoden syklillä — pitäisi tuottaa mitattavia biologisia oskillaatioita. Kolme itsenäistä aineistoa vahvistaa tämän ennusteen.",
+    solarBioCycleTitle: "Auringon sykli → syntyvyyden syklisyys",
+    solarBioCycleDesc: "Syntyvyysluvut Yhdysvalloissa ja Uudessa-Seelannissa osoittavat 11 vuoden oskillaatiota, joka on vaihelukittu auringon sykliin. Kuvio on tunnistettu itsenäisesti 7 maantieteellisessä alueessa molemmilla pallonpuoliskoilla. Auringon maksimien aikana geomagneettinen häiriö kasvaa, χ nousee ja hedelmöittymisluvut muuttuvat mitattavasti ([[ref:lehrer2017_solar_births|Lehrer & Lehrer 2017]]).",
+    solarBioCycleNote: "Mekanismi on yhteensopiva BERMin melatoniinireitin kanssa: aurinkoaktiivisuus → geomagneettiset myrskyt → melatoniinin suppressio → GnRH-pulssihäiriö → hedelmöittymisluvun modulaatio. 11 vuoden sykli tarjoaa luonnollisen kokeen, joka erottaa geomagneettiset vaikutukset ihmisen aiheuttamasta EMF:stä.",
+    solarBioBirthTitle: "Syntymäajankohta → sairausriski",
+    solarBioBirthDesc: "237 000 potilaan kohortissa syntymäkuukausi ennustaa elinikäistä sairausriskiä useille sairauksille. Geomagneettisesti aktiivisina kuukausina syntyneet henkilöt osoittavat kohonnutta sydän-, neurologista ja lisääntymissairausriskiä ([[ref:boland2015_birth_month|Boland ym. 2015]]). Vaikutus on yhteensopiva prenataalisen χ-modulaation kanssa: geomagneettinen ympäristö kriittisten kehitysikkunoiden aikana jättää pysyvän fysiologisen herkkyyden.",
+    solarBioBirthNote: "Kyseessä ei ole astrologia — vaan kehitysbiologia, jota fyysinen kenttä välittää. Geomagneettinen tausta ensimmäisen raskauskolmanneksen aikana vaikuttaa organogeneesiin samojen VGCC/CRY-reittien kautta, jotka BERM dokumentoi aikuisaltistukselle.",
+    solarBioDampenTitle: "Kausiamplitudin vaimeneminen",
+    solarBioDampenDesc: "Kreikassa vuosina 1960–1992 syntyvyyslukujen kausivaihtelu väheni asteittain — huippu- ja pohjakuukausien välinen ero pieneni yli 50 %. Tämä ajanjakso osuu yhteen Kreikan nopean sähköistymisen ja kaupungistumisen kanssa. Luonnollinen geomagneettinen kausisignaali (joka ohjaa syntyvyyden kausivaihtelua melatoniinin ja valojakson kautta) peittyi asteittain ihmisen aiheuttamaan EMF:ään, joka tarjoaa jatkuvan, kaudesta riippumattoman χ-häiriön ([[ref:lerchl1998_birth_seasonality|Lerchl 1998]]).",
+    solarBioDampenNote: "Ennuste: myöhemmin sähköistyneiden maiden pitäisi osoittaa myöhempää kausivaimenemisen alkamista. Äskettäin nopeasti sähköistyneet maat (Saharan eteläpuolinen Afrikka) ovat todennäköisesti parhaillaan vaimenemisen vaiheessa.",
 
     archTitle: "Kolmitasoinen arkkitehtuuri",
     archDesc:
@@ -783,7 +915,7 @@ const t = {
 
     causalTitle: "Kausaalireittikaavio",
     causalDesc:
-      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Kahdeksan tasoa, 63 solmua, 107 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatutkimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). CRY/RPM-polulla on tukea useasta lajista: magneettikompassin häiriintyminen linnuissa ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), CRY-riippuvainen magnetoreseptio Drosophilassa ([[ref:yoshii2009|Yoshii 2009]]), CRY-riippuvainen ROS-modulaatio ihmisen soluissa ([[ref:sherrard2018|Sherrard 2018]]) ja — kriittisesti — toiminnallinen sinivalosta riippuva magnetoreseptio ihmisessä ([[ref:chae2019|Chae ym. 2019]], PLOS ONE), mikä osoittaa biologisen substraatin olemassaolon lajissa jota BERM mallintaa. Molemmat ovat itsenäisesti tuetut E-tason evidenssillä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
+      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Yksitoista tasoa, 41 solmua, 59 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatutkimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). CRY/RPM-polulla on tukea useasta lajista: magneettikompassin häiriintyminen linnuissa ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), CRY-riippuvainen magnetoreseptio Drosophilassa ([[ref:yoshii2009|Yoshii 2009]]), CRY-riippuvainen ROS-modulaatio ihmisen soluissa ([[ref:sherrard2018|Sherrard 2018]]) ja — kriittisesti — toiminnallinen sinivalosta riippuva magnetoreseptio ihmisessä ([[ref:chae2019|Chae ym. 2019]], PLOS ONE), mikä osoittaa biologisen substraatin olemassaolon lajissa jota BERM mallintaa. Molemmat ovat itsenäisesti tuetut E-tason evidenssillä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
     pathwayHierarchyNote:
       "Polkujen painot perustuvat empiiriseen kalibrointiin yhteisödatalla (amissit–Korea-gradientti). Ne eivät heijasta teoreettista hierarkiaa: Polku B (CRY/RPM) on ENSISIJAINEN polku, koska 87,5 % RPM-Hamiltoniaanista on johdettavissa Lindgren-geometriasta — mekanismin OLEMASSAOLO seuraa geometrisena seurauksena. Polulla A on vahvempi kokeellinen tuki (23–28 salpaajatutkimusta). Aiempi δVm-vastalause (δV_m ≈ 10⁻²¹ V pelkästä geometriasta) on nyt ratkaistu T-tyypin kalsiumkanavan bifurkaatiomekanismilla: Schwanin yhtälö vahvistaa ulkoiset kentät 7,5–15 μV:iin kalvolla (37 % lämpökohinasta 1 V/m ympäristössä; 184 % 5 V/m henkilökohtaisessa), ja T-tyypin (Cav3) kanavat toimivat bifurkaatiopisteessä, jossa ~10 % on avoinna levossa (ikkunavirta), mikä tekee niistä herkkiä näille häiriöille. Polku D (HPA → testosteroni) on nyt myös johdettu saman T-tyypin mekanismin kautta: Schwanin δVm → Cav3 → Ca²⁺ → StAR → testosteroni ([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
     rpmFrequencyNote:
@@ -820,11 +952,36 @@ const t = {
     chiEvidenceFamilies: [
       { referenceId: "sakurai2008", family: "Diabetes (β-solut)", chi: "χ(glukoosi): K_ATP → V_mem → VGCC-esiviriytys", mechanism: "Korkea glukoosi sulkee K_ATP-kanavat → kalvo depolarisoituu → VGCC:t virittyvät → χ KORKEA. Matala glukoosi → K_ATP auki → χ MATALA.", prediction: "EMF × korkea-GI-ruokavalio tuottaa synergistisen diabetesriskin. Paasto suojaa β-soluja.", verification: "Sakurai 2008: ELF vähensi insuliinineritystä 30 %", level: "M|C" },
       { referenceId: "yu2019_btb", family: "Siittiölaatu (BTB)", chi: "χ(BTB:n eheys): este vaimentaa efektiivistä kenttää", mechanism: "Ehjä BTB suojaa spermatogeneettisiä soluja → matala χ. EMF avaa BTB:n → suoja menetetään → χ nousee → positiivinen takaisinkytkentä.", prediction: "Siittiölaadun lasku kiihtyy ajan myötä (superlineaarinen).", verification: "Yu 2019: 4G-RF häiritsee BTB:tä suoraan, aikariippuvainen", level: "E" },
-      { referenceId: "ulusoy2025_bbb_therapeutic", family: "Esteet (BBB + BTB)", chi: "χ(esteen läpäisevyys): jatkuva modulaattori", mechanism: "Esteet ovat jatkuvia χ-modulaattoreita. Osittain vaurioitunut este = osittainen χ:n kasvu. Tuottaa multiplikatiivisen vahvistuksen.", prediction: "Superlineaarinen annos-vaste kumulatiivisella altistuksella.", verification: "Ulusoy 2025: progressiivinen BBB-degradaatio 30–360 min", level: "E" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "Esteet (BBB + BTB)", chi: "χ(esteen läpäisevyys): jatkuva modulaattori", mechanism: "Esteet ovat jatkuvia χ-modulaattoreita. Osittain vaurioitunut este = osittainen χ:n kasvu. Tuottaa multiplikatiivisen vahvistuksen.", prediction: "Superlineaarinen annos-vaste kumulatiivisella altistuksella.", verification: "Ulusoy 2025: progressiivinen BBB-degradaatio 30–360 min", level: "E" },
       { family: "Sentinellilajit", chi: "χ(aineenvaihduntanopeus): M^(−0.25) skaalaus", mechanism: "Pienet eläimet: korkeampi massaspesifinen metabolianopeus → korkeampi perus-ROS → korkeampi χ → suurempi EMF-vaste.", prediction: "Hyönteiset ja pienet linnut kärsivät ensin; suuret nisäkkäät myöhemmin.", verification: "Ajallinen järjestys vastaa kehon massan skaalausta", level: "M|C" },
+      { family: "Vesieliöakseli (CatSper-konservaatio)", chi: "χ(ELF): merenalaiskaapelien kentät × vesieliöiden CatSper", mechanism: "CatSper on konservoitu merisiilistä ihmiseen — sama Ca²⁺-kanava navigoi siittiöitä kaikissa lajeissa. Vesieliölajit validoivat kolme BERM-kanavaa: ELF rusto- ja luukalojen sähköaistinherkkyyden kautta (VGIC-sensitiivisyys), RPM/CRY harmaavalaiden magnetoreseption kautta, ja CatSper konservaatioargumentin kautta. Merenalaiskaapeleiden ELF-kentät saavuttavat vesieliöiden CatSper-aktivaatiokynnyksen.", prediction: "Merieliöiden lisääntyminen heikkenee korkeateholisten merenalaiskaapelien lähellä. Viljellyn lohen CatSper heikompi kuin villin.", verification: "CatSper-KO = steriili kaikissa testatuissa lajeissa. Harmaavalaiden muutto seuraa geomagneettista kenttää. Rustokalojen herkkyys nV/m-tason kentille vahvistettu.", level: "L*" },
       { family: "Sydän (CRY2-TRPC1)", chi: "χ(CRY2:n tila): valo- ja FAD-riippuvainen", mechanism: "Jos CRY2-TRPC1 toimii kardiomyosyyteissä (kuten myoblasteissa, [[ref:yap2025|Yap 2025]]), sydämen kalsiumsisäänvirtaus on valo/FAD-riippuvainen.", prediction: "Yöllinen puhelimen käyttö → korkeampi arytmiariski kuin päivällä.", verification: "Ei vielä testattu. TRPC-kanavat vahvistettu myosyyteissä.", level: "L*" },
       { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adeyn–Blackmanin ikkuna", chi: "χ(fotosykli) × χ(lämpötila) × χ(DC-orientaatio)", mechanism: "'Biologinen ikkuna' syntyy kolmesta päällekkäisestä χ-ikkunasta. Kaikkia kolmea kontrolloivat laboratoriot saavat yhdenmukaisia tuloksia.", prediction: "Viiden parametrin standardi ratkaisee 50 vuoden replikaatiodebatin.", verification: "Blackman 1985–1991: osoitti jokaisen ikkunan erikseen", level: "M" },
     ],
+
+    dualSuscTitle: "Kaksi itsenäistä susceptibiliteettia",
+    dualSuscDesc: "BERM tunnistaa kaksi mekanistisesti itsenäistä susceptibiliteettikanavaa. χ(Ā) toimii jänniteriippuvaisten kalsiumkanavien kautta ja vaatii antropogeenisen EMF-altistuksen kynnysarvon ylittämistä. χ_B toimii kryptokromin radikaalipari-mekanismin kautta ja reagoi luonnolliseen geomagneettiseen ympäristöön — se on ollut aina aktiivinen. Kaksi kanavaa on testattavissa itsenäisesti: χ(Ā) eristettävissä populaatioissa, joissa EMF on lähes nolla (amissit), kun taas χ_B eristettävissä esiteollisista ja auringonkierron tiedoista.",
+    dualSuscLabelType: "Tyyppi",
+    dualSuscLabelChannel: "Kanava",
+    dualSuscLabelThreshold: "Kynnys",
+    dualSuscLabelTests: "Testattavissa",
+    dualSuscLabelPathways: "Polut",
+    dualSuscLeft: {
+      title: "χ(Ā) [VGCC]",
+      type: "Geometrinen",
+      channel: "Ca²⁺-kanava (VGCC)",
+      threshold: "VAATII sähköistyskynnyksen (Ā > 0)",
+      tests: "Amissit (Ā≈0), yhteisögradientti, maagradientti",
+      pathways: "A (ROS), D (HPA), E (BBB)",
+    },
+    dualSuscRight: {
+      title: "χ_B [CRY/RPM]",
+      type: "Spin-kemiallinen",
+      channel: "Radikaalipari-mekanismi",
+      threshold: "EI sähköistyskynnystä (toimii aina)",
+      tests: "Auringonkierto, esiteolliset tiedot, sentinel-lajit, SAMA-anomalia",
+      pathways: "B (CRY), C (melatoniini)",
+    },
 
     twoChSub: "ELF + IF + RF -hajotelma 12 teknologiakerroksella ja TCBM",
     twoChTitle: "Kolmikanavainen altistusmalli",
@@ -849,7 +1006,7 @@ const t = {
       "IF-kanava (1 kHz – 1 MHz) kohdistuu jakautuviin soluihin saman taajuus–solukoko-suhteen kautta kuin FDA:n hyväksymä TTFields-syöpähoito. Ympäristön IF-kenttien pääasiallinen lähde on LED-valaistus: jokainen LED-lamppu sisältää hakkuriteholähteen, joka toimii 20–200 kHz:n taajuudella ja tuottaa harmonisia megahertsialueelle asti. Tyypillisessä kodissa on 15–30 tällaista lähdettä; tyypillisessä toimistossa 200–500. Muita IF-lähteitä ovat ilmanvaihdon taajuusmuuttajat (5–50 kHz), induktioliedet (20–75 kHz) ja kaikki hakkuriteholähteet (kannettavan laturit, puhelinlaturit). Mekanismi toimii ionien pakko-oskillaation (IFO-VGIC) kautta, biologisella kynnysarvolla 10⁻⁵ V/m ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) — kertaluokkia mitattujen LED-ajuriemissioiden alapuolella.",
     tcbmTitle: "Kolmikanavainen biologinen malli (TCBM)",
     tcbmIntro:
-      "BERM v19.1 tunnistaa kolme riippumatonta sähkömagneettista kanavaa, joilla kullakin on omat taajuusalueensa, altistuslähteet, biologiset mekanismit ja ajalliset historiat:",
+      "BERM:n poikkileikkausdiagnostiikka (v19.1) tunnistaa kolme riippumatonta sähkömagneettista kanavaa, joilla kullakin on omat taajuusalueensa, altistuslähteet, biologiset mekanismit ja ajalliset historiat. Huom: v19.1 on diagnostinen formula 54 maalle — ennustemalli on v17.",
     tcbmElfTitle: "Kanava 1: ELF (0–300 Hz)",
     tcbmElfDesc:
       "Lähde: sähköverkko, kodin johdotus, kodinkoneet, muuntajat. Mekanismi: IFO-VGIC pakko-oskillaatio ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Historia: läsnä sähköistymisestä (1880-luku), vakaa n. 1970 jälkeen. Sijaismuuttuja: asumisen sähkönkulutus (kWh per capita). Aina päällä, 24/7, koko koti.",
@@ -949,7 +1106,7 @@ const t = {
       { title: "15–30 vuoden viive", subtitle: "Kehitysmaat seuraavat samaa kehityskulkua, viiveellä", conventional: "Vaurastuminen muuttaa elintapoja", explanation: "Viive vastaa sähköistymis- ja teknologia-adoptioaikataulua, ei vaurautta. Kiinan T2D: 1,3 % (1980) → 8,7 % (2014) rinnastuu sähköistymiseen 60 %:sta 100 %:iin.", ref: "BMC Public Health 2018" },
       { title: "Amish-poikkeus", subtitle: "TFR 6,1, matala obesiteetti, matala dementia — sama maa", conventional: "Fyysinen työ ja yhteisöllisyys", explanation: "Nolla teknologiakerrosta. Ei ELF-primingia. Täysi palautuminen. EMF_effective ≈ 0. Ruokavalio EI ole erityisen terveellinen — EMF-ympäristö on.", ref: "BERM-populaatiovertailu" },
     ],
-    layerCountryTitle: "Maavertailu: v19.1 vs v20",
+    layerCountryTitle: "Maavertailu: v19.1 (diagnostinen) vs v20",
     layerCountries: [
       { country: "Suomi", actual: "1,25", v19: "1,32", v20: "1,28", note: "100+ vuotta sähköistetty, korkea P" },
       { country: "Etelä-Korea", actual: "0,72", v19: "0,95", v20: "0,78", note: "Korkein 5G/LED/älypuhelintiheys" },
@@ -1190,7 +1347,7 @@ const t = {
     fourRoutesSub: "Gonadi-, sirkadiaaninen, aivolisäke-, autonominen ja neurokehityksellinen — jokainen riittää yksinään",
     fourRoutesDesc: "BERM tunnistaa viisi itsenäistä biologista reittiä, joiden kautta EMF-altistus voi vähentää hedelmällisyyttä. Jokainen reitti toimii erillisen mekanismin ja kohdekudoksen kautta. Kriittisesti jokainen reitti on itsenäisesti riittävä vähentämään TFR:ää — ne toimivat rinnakkain, eivät sarjassa. Tämä tarkoittaa, että yhden reitin estäminen (esim. antioksidanttilisä gonadireitille) ei poista vaikutusta, koska neljä muuta reittiä pysyvät aktiivisina.",
     fourRoutesGonadal: "Reitti 1: Gonadaalinen (vakiintunut)",
-    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> sperman DNA-vaurio + Leydig-solujen StAR-suppressio -> testosteronin lasku + spermatogeneesin häiriö. Kohdekudos: kivekset. Evidenssitaso: E (23-28 salpaajatutkimusta). Ensisijainen kanava: RF + ELF.",
+    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> sperman DNA-vaurio + Leydig-solujen StAR-suppressio -> testosteronin lasku + spermatogeneesin häiriö. Lisäksi: EMF -> CatSper-ennenaikainen aktivaatio -> energian ehtyminen -> navigointivika (reotaksis, kemotaksis, akrosomireaktio). Kohdekudos: kivekset. Evidenssitaso: E (23-28 salpaajatutkimusta). Ensisijainen kanava: RF + ELF.",
     fourRoutesCircadian: "Reitti 2: Sirkadiaaninen (vakiintunut)",
     fourRoutesCircadianDesc: "EMF -> CRY/RPM -> vuorokausirytmin häiriö -> melatoniinisuppressio -> HPG-akselin häiriö + oksidatiivinen stressi follikkeli­nesteessä. Kohdekudos: pinealirauhanen, SCN. Evidenssitaso: E. Ensisijainen kanava: RF (magneettikomponentti).",
     fourRoutesPituitary: "Reitti 3: Aivolisäke (uusi)",
@@ -1495,6 +1652,17 @@ const t = {
     dnaRepairTitle: "DNA-vaurio korjaantuu 9 tunnissa — jos altistus loppuu",
     dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits ym.]] osoitti, että EMF:n aiheuttamat DNA-katkokset palautuivat normaaliksi 9 tunnissa altistuksen päättymisen jälkeen. Tämä kvantifioi BERM:n palautumisikkunan: keho VOI korjata EMF:n aiheuttamia vaurioita, mutta vain jos sille annetaan riittävästi EMF-vapaata aikaa.",
     dnaModernEnv: "Modernit ympäristöt 24/7 WiFillä, LED-valaistuksella ja älypuhelimella sängyssä poistavat tämän palautumisikkunan kokonaan. Tyypillinen moderni makuuhuone tarjoaa nolla EMF-vapaata palautumisaikaa.",
+
+    twoLevelTitle: "Kaksitasoinen ennustemalli",
+    twoLevelSub: "Taso 1 (poikkileikkaus) + Taso 2 (ajallinen testosteronidynamiikka)",
+    twoLevelLead: "Poikkileikkausmalli sijoittaa maat globaalille TFR-käyrälle sähköistyskynnyksen kautta. Ajallinen malli lisää toisen tason: testosteronin sekulaarilasku tarjoaa maan sisäistä dynamiikkaa T→TFR-viivesuhteen kautta.",
+    twoLevelL1: "Taso 1: Sähköistyskynnys",
+    twoLevelL1Desc: "TFR = 4,11 × exp(−54 × EMF_index) + 1,55. Sijoittaa maat Nigeristä (matala EMF, korkea TFR) Koreaan (korkea EMF, matala TFR). R² = 0,851 54 maalla.",
+    twoLevelL2: "Taso 2: Testosteronitrajectoria",
+    twoLevelL2Desc: "T(vuosi) = 638 × (1 − 0,012)^(vuosi − 1982). ~1,2 %/vuoden iästä riippumaton lasku (Travison 2007, Lokeshwar 2021) viivästetään 8 vuotta TFR:n suhteen. Siirtofunktio: TFR = 0,00544 × T − 0,745. USA 2007–2024, R² = 0,97.",
+    twoLevelCombined: "Yhdistetty ennuste: Taso 1 asettaa poikkileikkauslähtötason; Taso 2 moduloi sitä ajan myötä.",
+    twoLevelCaveat: "Tasot ovat riippumattomia. Taso 2 on kalibroitu vain USA:lla. R² 0,97 on otoksen sisäinen ja todennäköisesti paisunut.",
+    twoLevelDiagnostic: "LH–T-diagnostiikka: Santi ym. 2025 osoittivat samanaikaisen LH↓ ja T↓ väestöissä — yhdenmukaista hypotalamuksen suppression (EMF-polku) kanssa eikä kivevaurion (EDC-polku) kanssa.",
   },
   ja: {
     title: "モデル文書",
@@ -1503,6 +1671,54 @@ const t = {
     metaTitle: "モデル文書 - Extinction Field",
     metaDesc:
       "BERMモデル文書:三層アーキテクチャ、因果経路、方程式、回復動態。",
+
+    physBioTitle: "物理学から生物学へ",
+    physBioSub: "Lindgrenの幾何学的電磁気学が背景場に対する生物学的感受性をいかに予測するか",
+    physBioLead: "BERMの生物学的予測はアドホックなものではない。電磁場が時空計量の一部であり、外的摂動ではないとする幾何学的電磁気モデル（GME）から導出される。本節では計量アンザッツから組織レベルの感受性に至る連鎖を辿る。",
+    physBioGMETitle: "Lindgren幾何学的計量拡張",
+    physBioGMEDesc: "標準物理学では、電磁場は時空を伝播する独立した実体である。Lindgrenの幾何学モデルでは、電磁場は計量テンソルに直接エンコードされる：",
+    physBioGMEFormula: "g_μν = η_μν + A_μ A_ν",
+    physBioGMEExplain: "ここでη_μνは平坦なMinkowski計量、A_μは電磁四元ポテンシャルである。重要な帰結：生体システムは電磁場の「中に」存在するのではなく、その幾何学が部分的に電磁的である時空の「中に」存在する。「場のない」基準状態は存在しない。すべての生物は特定の電磁幾何学（地磁気バックグラウンド）の中で進化してきたのであり、その幾何学への摂動は生物学的動作環境そのものへの摂動である。",
+    physBioChiTitle: "χ(Ā)選択則",
+    physBioChiDesc: "計量拡張は選択則を含意する：電磁摂動に対する生物学的感受性は背景場Āに依存する。背景が不在のとき、摂動は作用する幾何学的基盤を持たず、χ → 0。背景が存在するとき、摂動は既存の幾何学的構造を修正し、χ → 1。これは自由パラメータではなく、計量アンザッツの構造的帰結である。",
+    physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
+    physBioChiExplain: "この飽和曲線はあらゆる生物学的スケールに現れる：分子（CRYはラジカルペア化学のために地磁気バックグラウンドを必要とする）、細胞（VGCCゲーティングはバックグラウンドとして膜電位を必要とする）、臓器（BBBの完全性が有効な場の浸透を調節する）、集団（電化レベルが技術曝露を調節する）。同じ数学的形式、5つの具体例 — 下記の5つのスケールにおけるχを参照。",
+    physBioSuperTitle: "重ね合わせの破れ",
+    physBioSuperDesc: "標準電磁気学では、場は線形に加算される：E_total = E₁ + E₂（重ね合わせの原理）。幾何学モデルでは、電磁場が計量の中にあるため、応答は本質的に非線形である。2つの同時線源の生物学的効果はそれぞれの個別効果の合計ではない。",
+    physBioSuperFormula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
+    physBioSuperExplain: "これはEMF生体影響研究の中心的な謎を解決する：なぜ多周波曝露（実世界の条件）は単一周波数の実験室研究が見逃す効果を生むのか？172件の研究の系統的レビューにより、複合曝露は個別曝露の合計とは質的に異なる効果を生むことが確認されている（[[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]）。完全な重ね合わせエビデンス解析を参照。",
+    physBioSuperLink: "完全な重ね合わせ解析を見る →",
+    physBioTissueTitle: "組織特異的共鳴",
+    physBioTissueDesc: "幾何学モデルは、異なる組織がイオンチャネル組成、膜特性、共鳴周波数によって決定される異なる電磁摂動感受性を持つことを予測する。これは仮定ではなく、組織特異的バックグラウンドに適用されたχ(Ā)選択則から導かれる：",
+    physBioTissues: [
+      { tissue: "精巣（Leydig細胞）", channels: "Cav3.2 (T-type), high density", chi: "非常に高い", reason: "安静時窓電流；StARタンパク質のCa²⁺依存性" },
+      { tissue: "視床下部", channels: "Cav3.1, Cav3.3", chi: "非常に高い", reason: "synaptotagmin 1を介したシナプス小胞放出" },
+      { tissue: "海馬", channels: "Cav3.2, Cav1.3", chi: "高い", reason: "LTP/LTDのCa²⁺依存性；神経新生ゾーン" },
+      { tissue: "網膜（青錐体）", channels: "CRY1/CRY2 + TRPC1", chi: "高い（光依存性）", reason: "ラジカルペア磁気受容；FAD依存性" },
+      { tissue: "洞房結節（心臓）", channels: "Cav1.3, Cav3.1", chi: "中〜高", reason: "ペースメーカー電流；低閾値活性化" },
+      { tissue: "骨格筋", channels: "Cav1.2 (L-type)", chi: "安静時は低い", reason: "高活性化閾値（−30 mV）；活動電位時のみ有意" },
+    ],
+    physBioVerifyTitle: "幾何学的予測の検証",
+    physBioVerifySub: "地磁気バックグラウンドが生物学的感受性を調節することを確認する4つの独立したエビデンス",
+    physBioVerifications: [
+      { id: "V1", title: "地磁気嵐と死亡率（263都市）", desc: "心血管死亡率は世界263都市にわたり地磁気嵐の強度と相関する。地磁気嵐時（Kp ≥ 5）、背景場Āが摂動を受けてχが増大し、死亡率は1〜3日以内に10〜15%上昇する（[[ref:vencloviene2022_geomag_mortality|Venclovienė et al. 2022]]）。", level: "E" },
+      { id: "V2", title: "緯度 × CVD（204カ国）", desc: "心血管疾患率は204カ国にわたり地磁気緯度と系統的に変動する。地磁気場強度が高い（極に近い）→ χが高い → 人為的EMF摂動に対する生物学的結合が強い（[[ref:feigin2014_latitude_cvd|Feigin et al. 2014]]）。", level: "M|C" },
+      { id: "V3", title: "HRV × Kp指数", desc: "心拍変動性 — 自律神経系機能の直接的な指標 — はリアルタイムで地磁気Kp撹乱指数と相関する。地磁気バックグラウンドが摂動を受けると、心臓自律神経制御が測定可能な影響を受け、χ(Ā)媒介結合と一致する（[[ref:mccrary2021_hrv_geomag|McCrary et al. 2021]]）。", level: "E" },
+      { id: "V4", title: "重ね合わせの破れ（172件の研究）", desc: "172件の研究の系統的レビューにより、複合EMF曝露が個別曝露の合計では予測できない効果を生むことが実証されている。これはR(A₁+A₂) ≠ R(A₁)+R(A₂) — 幾何学的非線形性の決定的な特徴 — を直接確認するものである（[[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]）。", level: "M" },
+    ],
+
+    solarBioTitle: "太陽-生物学的関連",
+    solarBioSub: "出生率、疾病リスク、季節的妊孕性の太陽周期変調 — 地磁気χの実際",
+    solarBioLead: "地磁気バックグラウンド場が生物学的感受性（χ）を調節するならば、地磁気場を11年周期で摂動させる太陽活動は、測定可能な生物学的振動を生み出すはずである。3つの独立したデータセットがこの予測を確認する。",
+    solarBioCycleTitle: "太陽周期 → 出生率の周期性",
+    solarBioCycleDesc: "米国とニュージーランドの出生率は太陽周期に位相同期した11年振動を示す。このパターンは両半球の7つの地理的地域で独立に同定されている。太陽極大期には地磁気摂動が増大し、χが上昇し、受胎率が測定可能な影響を受ける（[[ref:lehrer2017_solar_births|Lehrer & Lehrer 2017]]）。",
+    solarBioCycleNote: "このメカニズムはBERMのメラトニン経路と一致する：太陽活動 → 地磁気嵐 → メラトニン抑制 → GnRHパルス撹乱 → 受胎率変調。11年周期は地磁気効果と人為的EMFを分離する自然実験を提供する。",
+    solarBioBirthTitle: "出生時期 → 疾病リスク",
+    solarBioBirthDesc: "237,000人の患者コホートにおいて、出生月は複数の疾患の生涯疾病リスクを予測する。地磁気活動の活発な月に生まれた個人は、心血管、神経、生殖疾患のリスクが上昇する（[[ref:boland2015_birth_month|Boland et al. 2015]]）。この効果は出生前χ変調と一致する：重要な発達ウィンドウ期の地磁気環境が持続的な生理学的感受性を刻印する。",
+    solarBioBirthNote: "これは占星術ではなく、物理的な場によって媒介される発生生物学である。第1トリメスター中の地磁気バックグラウンドは、BERMが成人曝露について文書化しているのと同じVGCC/CRY経路を通じて器官形成に影響する。",
+    solarBioDampenTitle: "季節的振幅の減衰",
+    solarBioDampenDesc: "ギリシャでは1960年から1992年にかけて、出生率の季節的振幅が漸進的に減少し、ピーク月とトラフ月の差は50%以上縮小した。この期間はギリシャの急速な電化と都市化と一致する。出生季節性を駆動する自然な地磁気季節信号（メラトニンと光周期を介して）は、季節に依存しない一定のχ摂動を提供する人為的EMFによって漸進的にマスクされた（[[ref:lerchl1998_birth_seasonality|Lerchl 1998]]）。",
+    solarBioDampenNote: "予測：電化が遅れた国は季節的減衰の開始も遅れるはずである。近年急速に電化された国（サハラ以南のアフリカ）は現在減衰段階にあるはずである。",
 
     archTitle: "三層アーキテクチャ",
     archDesc:
@@ -1522,7 +1738,7 @@ const t = {
 
     causalTitle: "因果経路図",
     causalDesc:
-      "下図はLindgren幾何学からTFR低下までの完全な機構的連鎖を示す。8レベル、63ノード、107エッジ。二つの共同主経路が並行して動作する:経路A(VGCC → Ca²⁺ → ROS)は最も強い実験的支持を持ち(23-28のブロッカー研究)、経路B(RPM → CRY → 概日リズム障害)はLindgren幾何学から生物学への最も完全な理論的橋渡し(RPMハミルトニアンの87.5%がメトリック仮説から導出可能)。CRY/RPM経路は種を超えた支持的証拠を持つ:鳥類の磁気コンパスの撹乱([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]])、ショウジョウバエのCRY依存性磁気受容([[ref:yoshii2009|Yoshii 2009]])、ヒト細胞のCRY依存性ROS調節([[ref:sherrard2018|Sherrard 2018]])、そして決定的に、ヒトにおける機能的な青色光依存性磁気受容([[ref:chae2019|Chae et al. 2019]], PLOS ONE)。これはBERMがモデル化する種に生物学的基盤が存在することを示す。両経路はE-レベルのエビデンスで独立に支持されている。任意のノードをクリックすると、そのメカニズム、Lindgren解釈、定量的定式化、回復パラメータ、主要な参考文献が表示される。ノードの境界線は認識論的レベルに応じて着色されている。",
+      "下図はLindgren幾何学からTFR低下までの完全な機構的連鎖を示す。11レベル、41ノード、59エッジ。二つの共同主経路が並行して動作する:経路A(VGCC → Ca²⁺ → ROS)は最も強い実験的支持を持ち(23-28のブロッカー研究)、経路B(RPM → CRY → 概日リズム障害)はLindgren幾何学から生物学への最も完全な理論的橋渡し(RPMハミルトニアンの87.5%がメトリック仮説から導出可能)。CRY/RPM経路は種を超えた支持的証拠を持つ:鳥類の磁気コンパスの撹乱([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]])、ショウジョウバエのCRY依存性磁気受容([[ref:yoshii2009|Yoshii 2009]])、ヒト細胞のCRY依存性ROS調節([[ref:sherrard2018|Sherrard 2018]])、そして決定的に、ヒトにおける機能的な青色光依存性磁気受容([[ref:chae2019|Chae et al. 2019]], PLOS ONE)。これはBERMがモデル化する種に生物学的基盤が存在することを示す。両経路はE-レベルのエビデンスで独立に支持されている。任意のノードをクリックすると、そのメカニズム、Lindgren解釈、定量的定式化、回復パラメータ、主要な参考文献が表示される。ノードの境界線は認識論的レベルに応じて着色されている。",
     pathwayHierarchyNote:
       "経路の重みはコミュニティデータ(アーミッシュ-韓国勾配)に対する経験的較正を反映する。理論的階層は反映しない:経路B(CRY/RPM)はPRIMARY経路である。RPMハミルトニアンの87.5%がLindgren幾何学から導出可能であり、メカニズムの存在が幾何学的帰結として確立されるためである。経路Aはより強い実験的支持を持つ(23-28のブロッカー研究)。以前のδVm反論(幾何学のみからδV_m ≈ 10⁻²¹ V)は、T型カルシウムチャネル分岐メカニズムにより解決された:Schwan方程式は外部電場を膜で7.5-15 μVに増幅し(1 V/m環境で熱ノイズの37%、5 V/m個人レベルで184%)、T型(Cav3)チャネルは約10%が静止時に開いている(ウィンドウ電流)分岐点で動作し、これらの摂動に応答する。経路D(HPA → テストステロン)も同じT型メカニズムにより導出:Schwan δVm → Cav3 → Ca²⁺ → StAR → テストステロン([[ref:xiang2025_clc2_ttype|Xiang 2025]])。",
     rpmFrequencyNote:
@@ -1559,11 +1775,36 @@ const t = {
     chiEvidenceFamilies: [
       { referenceId: "sakurai2008", family: "糖尿病(β細胞)", chi: "χ(グルコース): K_ATP → V_mem → VGCCプライミング", mechanism: "高グルコースがK_ATPチャネルを閉じる → 膜が脱分極 → VGCCがプライミングされる → χ高。低グルコース → K_ATP開 → χ低。", prediction: "EMF × 高GI食がシナジー的な糖尿病リスクを生む。断食はβ細胞を保護する。", verification: "Sakurai 2008: ELFがインスリン分泌を30%減少", level: "M|C" },
       { referenceId: "yu2019_btb", family: "精子品質(BTB)", chi: "χ(BTBの完全性): バリアが実効場を減衰", mechanism: "無傷のBTBが精子形成細胞を保護 → 低χ。EMFがBTBを開く → 保護喪失 → χ上昇 → 正のフィードバック。", prediction: "精子品質低下は時間とともに加速する(超線形)。", verification: "Yu 2019: 4G RFがBTBを直接破壊、時間依存的", level: "E" },
-      { referenceId: "ulusoy2025_bbb_therapeutic", family: "バリア(BBB + BTB)", chi: "χ(バリア透過性): 連続的変調器", mechanism: "バリアは連続的なχ変調器。部分的に損傷したバリア = 部分的なχ増加。乗法的増幅を生む。", prediction: "累積暴露による超線形の用量反応。", verification: "Ulusoy 2025: 30-360分の進行性BBB劣化", level: "E" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "バリア(BBB + BTB)", chi: "χ(バリア透過性): 連続的変調器", mechanism: "バリアは連続的なχ変調器。部分的に損傷したバリア = 部分的なχ増加。乗法的増幅を生む。", prediction: "累積暴露による超線形の用量反応。", verification: "Ulusoy 2025: 30-360分の進行性BBB劣化", level: "E" },
       { family: "センチネル種", chi: "χ(代謝率): M^(-0.25)スケーリング", mechanism: "小動物:より高い質量特異的代謝率 → より高い基礎ROS → より高いχ → より大きなEMF応答。", prediction: "昆虫と小鳥が最初に影響;大型哺乳類は後に。", verification: "時間的順序が体質量スケーリングと一致", level: "M|C" },
+      { family: "水生軸 (CatSper保存)", chi: "χ(ELF): 海底ケーブル場 × 水生CatSper", mechanism: "CatSperはウニからヒトまで保存されている — すべての種で精子をナビゲートする同じCa²⁺チャネル。水生種は3つのBERMチャネルを検証: 板鰓類の電気感覚閾値によるELF(VGIC感度)、コククジラの磁気受容によるRPM/CRY、保存性論拠によるCatSper。海底ケーブルのELF場は水生CatSperの活性化閾値に達する。", prediction: "高電力海底ケーブル回廊付近で海洋生殖が低下。養殖サーモンのCatSperは天然より弱い。", verification: "CatSper KO = テストされたすべての種で不妊。コククジラの回遊は地磁気場を追跡。板鰓類のnV/mスケール場への感度が確認。", level: "L*" },
       { family: "心臓(CRY2-TRPC1)", chi: "χ(CRY2状態): 光およびFAD依存性", mechanism: "CRY2-TRPC1が心筋細胞で動作する場合(筋芽細胞と同様、[[ref:yap2025|Yap 2025]])、心臓カルシウム流入は光/FAD依存性。", prediction: "夜間の携帯電話使用 → 日中より高い不整脈リスク。", verification: "未検証。TRPCチャネルは心筋細胞で確認済み。", level: "L*" },
       { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackmanウィンドウ", chi: "χ(光周期) × χ(温度) × χ(DC方向)", mechanism: "「生物学的ウィンドウ」は3つの重畳されたχウィンドウから生じる。3つすべてを制御する研究室は一貫した結果を得る。", prediction: "5パラメータ標準が50年の再現性論争を解決する。", verification: "Blackman 1985-1991: 各ウィンドウを独立に実証", level: "M" },
     ],
+
+    dualSuscTitle: "2つの独立した感受性",
+    dualSuscDesc: "BERMは機構的に独立した2つの感受性チャネルを同定する。χ(Ā)は電位依存性カルシウムチャネルを通じて作用し、人為的EMF曝露が閾値を超えることを必要とする。χ_Bはクリプトクロムのラジカルペア機構を通じて作用し、自然の地磁気環境に応答する — 常に活性化している。2つのチャネルは独立にテスト可能：χ(Ā)はEMFがほぼゼロの集団（アーミッシュ）で分離され、χ_Bは産業革命前および太陽周期データで分離される。",
+    dualSuscLabelType: "タイプ",
+    dualSuscLabelChannel: "チャネル",
+    dualSuscLabelThreshold: "閾値",
+    dualSuscLabelTests: "テスト方法",
+    dualSuscLabelPathways: "経路",
+    dualSuscLeft: {
+      title: "χ(Ā) [VGCC]",
+      type: "幾何学的",
+      channel: "Ca²⁺チャネル（VGCC）",
+      threshold: "電化閾値が必要（Ā > 0）",
+      tests: "アーミッシュ（Ā≈0）、コミュニティ勾配、国別勾配",
+      pathways: "A (ROS), D (HPA), E (BBB)",
+    },
+    dualSuscRight: {
+      title: "χ_B [CRY/RPM]",
+      type: "スピン化学的",
+      channel: "ラジカルペア機構",
+      threshold: "電化閾値なし（常に作動）",
+      tests: "太陽周期、産業革命前データ、指標種、SAMAアノマリー",
+      pathways: "B (CRY), C (メラトニン)",
+    },
 
     twoChSub: "ELF + IF + RF分解:12技術層とTCBM",
     twoChTitle: "三チャネル暴露モデル",
@@ -1588,7 +1829,7 @@ const t = {
       "IFチャネル(1 kHz - 1 MHz)は、FDA承認のTTFieldsがん治療と同じ周波数-細胞サイズ関係を通じて分裂細胞を標的とする。IF場の主要な環境発生源はLED照明:すべてのLED電球は20-200 kHzで動作するスイッチモード電源を含み、高調波はメガヘルツ帯まで拡張される。典型的な家庭には15-30のそのような発生源がある;典型的なオフィスには200-500。追加のIF源にはHVAC可変周波数ドライブ(5-50 kHz)、IHクッキングヒーター(20-75 kHz)、すべてのスイッチモード電源(ノートPC充電器、携帯充電器)が含まれる。メカニズムはイオン強制振動(IFO-VGIC)を通じて動作し、生物学的閾値は10⁻⁵ V/m([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) -- 測定されたLEDドライバー放射をはるかに下回る。",
     tcbmTitle: "三チャネル生物学モデル(TCBM)",
     tcbmIntro:
-      "BERM v19.1は3つの独立した電磁チャネルを特定する。各チャネルは異なる周波数範囲、暴露源、生物学的メカニズム、時間的履歴を持つ:",
+      "BERMの横断的診断（v19.1）は3つの独立した電磁チャネルを特定する。各チャネルは異なる周波数範囲、暴露源、生物学的メカニズム、時間的履歴を持つ。注：v19.1は54カ国に適合した診断式であり、予測モデルはv17です:",
     tcbmElfTitle: "チャネル1: ELF(0-300 Hz)",
     tcbmElfDesc:
       "発生源:送電網、家庭配線、家電、変圧器。メカニズム:IFO-VGIC強制イオン振動([[ref:panagopoulos2025_ifo|Panagopoulos 2025]])。歴史:電化以来(1880年代)、約1970年以降安定。代理変数:住宅電力消費量(kWh/人)。常時オン、24時間週7日、家全体。",
@@ -1688,7 +1929,7 @@ const t = {
       { title: "15-30年のラグ", subtitle: "発展途上国は同じ軌道を遅れて辿る", conventional: "繁栄がライフスタイルを変える", explanation: "遅延は繁栄ではなく電化 + 技術採用のタイムラインに一致。中国T2D:1.3%(1980) → 8.7%(2014)は電化率60%から100%に並行。", ref: "BMC Public Health 2018" },
       { title: "アーミッシュの例外", subtitle: "TFR 6.1、低肥満、低認知症 -- 同じ国", conventional: "肉体労働とコミュニティ", explanation: "技術層ゼロ。ELFプライミングなし。完全回復。EMF_effective ≈ 0。食事は特に健康的ではない -- EMF環境が健康的。", ref: "BERM集団比較" },
     ],
-    layerCountryTitle: "国別比較:v19.1 vs v20",
+    layerCountryTitle: "国別比較:v19.1（診断用）vs v20",
     layerCountries: [
       { country: "フィンランド", actual: "1.25", v19: "1.32", v20: "1.28", note: "電化100年超、高P" },
       { country: "韓国", actual: "0.72", v19: "0.95", v20: "0.78", note: "最高の5G/LED/スマートフォン密度" },
@@ -1905,7 +2146,7 @@ const t = {
     fourRoutesSub: "性腺、概日、下垂体、自律神経、神経発達 -- 各々が単独で十分",
     fourRoutesDesc: "BERMはEMF暴露が出生率を低下させる5つの独立した生物学的経路を特定する。各経路は異なるメカニズムと標的組織を通じて動作する。重要なのは、各経路が独立にTFRを低下させるのに十分であること -- 並列に動作し、直列ではない。一つの経路をブロック(例:性腺経路への抗酸化剤補充)しても効果は排除されない。4つの他の経路が活性のままだからである。",
     fourRoutesGonadal: "経路1:性腺(確立)",
-    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> 精子DNA損傷 + ライディッヒ細胞StAR抑制 -> テストステロン低下 + 精子形成障害。標的組織:精巣。エビデンスレベル:E(23-28のブロッカー研究)。主チャネル:RF + ELF。",
+    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> 精子DNA損傷 + ライディッヒ細胞StAR抑制 -> テストステロン低下 + 精子形成障害。さらに：EMF -> CatSper早期活性化 -> エネルギー枯渇 -> ナビゲーション障害（レオタキシス、走化性、先体反応）。標的組織:精巣。エビデンスレベル:E(23-28のブロッカー研究)。主チャネル:RF + ELF。",
     fourRoutesCircadian: "経路2:概日(確立)",
     fourRoutesCircadianDesc: "EMF -> CRY/RPM -> 概日時計撹乱 -> メラトニン抑制 -> HPG軸撹乱 + 卵胞液中の酸化ストレス。標的組織:松果体、SCN。エビデンスレベル:E。主チャネル:RF(磁気成分)。",
     fourRoutesPituitary: "経路3:下垂体(新規)",
@@ -2210,6 +2451,17 @@ const t = {
     dnaRepairTitle: "DNA損傷は9時間で回復する — 暴露が止まれば",
     dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]]は、EMF誘発DNA鎖切断が暴露停止後9時間以内に正常へ戻ることを示した。これはBERMの回復ウィンドウを定量化する：十分なEMFフリー時間が与えられれば、身体はEMF誘発損傷を修復できる。",
     dnaModernEnv: "24時間稼働のWiFi、LED照明、ベッド内のスマートフォンがある現代環境は、この回復ウィンドウを完全に取り除く。典型的な現代の寝室にはEMFフリーの回復時間がまったくない。",
+
+    twoLevelTitle: "二段階予測モデル",
+    twoLevelSub: "レベル1（横断面）+ レベル2（テストステロン時間的動態）",
+    twoLevelLead: "横断面モデルは電化閾値を通じて各国をグローバルTFR曲線に配置します。時間的モデルは第2レベルを追加：テストステロンの長期的低下がT→TFRラグ関係を通じて国内の動態を提供します。",
+    twoLevelL1: "レベル1：電化閾値",
+    twoLevelL1Desc: "TFR = 4.11 × exp(−54 × EMF_index) + 1.55。54か国でR² = 0.851。",
+    twoLevelL2: "レベル2：テストステロン軌跡",
+    twoLevelL2Desc: "T(年) = 638 × (1 − 0.012)^(年 − 1982)。年齢非依存の−1.2%/年の低下を8年ラグ。USA 2007–2024でR² = 0.97。",
+    twoLevelCombined: "統合予測：レベル1が横断面ベースラインを設定、レベル2が時間的に調整。",
+    twoLevelCaveat: "2レベルは独立。レベル2はUSAのみで校正。R² 0.97はサンプル内であり過大評価の可能性。",
+    twoLevelDiagnostic: "LH–T診断：Santiら2025が集団でLH↓とT↓の同時発生を示した—視床下部抑制（EMF経路）と整合、精巣損傷（EDC経路）ではない。",
   },
   fr: {
     title: "Documentation du modele",
@@ -2218,6 +2470,54 @@ const t = {
     metaTitle: "Documentation du modele - Extinction Field",
     metaDesc:
       "Documentation du modele BERM : architecture a trois niveaux, voies causales, equations et dynamiques de recuperation.",
+
+    physBioTitle: "De la physique a la biologie",
+    physBioSub: "Comment l'electromagnetisme geometrique de Lindgren predit la sensibilite biologique aux champs de fond",
+    physBioLead: "Les predictions biologiques du BERM ne sont pas ad hoc — elles derivent d'un modele geometrique de l'electromagnetisme (GME) dans lequel le champ EM fait partie de la metrique de l'espace-temps, et non une perturbation externe. Cette section retrace la chaine de l'ansatz metrique a la sensibilite tissulaire.",
+    physBioGMETitle: "Extension metrique geometrique de Lindgren",
+    physBioGMEDesc: "En physique standard, le champ electromagnetique est une entite separee qui se propage dans l'espace-temps. Dans le modele geometrique de Lindgren, le champ EM est encode directement dans le tenseur metrique :",
+    physBioGMEFormula: "g_μν = η_μν + A_μ A_ν",
+    physBioGMEExplain: "ou η_μν est la metrique plate de Minkowski et A_μ est le quadri-potentiel electromagnetique. La consequence cle : les systemes biologiques n'existent pas DANS un champ electromagnetique — ils existent DANS un espace-temps dont la geometrie EST partiellement electromagnetique. Il n'y a pas d'etat de reference 'sans champ' ; chaque organisme a evolue dans une geometrie electromagnetique specifique (le fond geomagnetique), et les perturbations de cette geometrie sont des perturbations de l'environnement de fonctionnement biologique lui-meme.",
+    physBioChiTitle: "La regle de selection χ(Ā)",
+    physBioChiDesc: "L'extension metrique implique une regle de selection : la sensibilite biologique a la perturbation EM depend du champ de fond Ā. Quand le fond est absent, la perturbation n'a pas de substrat geometrique pour agir — χ → 0. Quand le fond est present, la perturbation modifie la structure geometrique existante — χ → 1. Ce n'est pas un parametre libre ; c'est une consequence structurelle de l'ansatz metrique.",
+    physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
+    physBioChiExplain: "Cette courbe de saturation apparait a chaque echelle biologique : moleculaire (CRY necessite le fond geomagnetique pour la chimie des paires de radicaux), cellulaire (l'ouverture des VGCC necessite le potentiel membranaire comme fond), organique (l'integrite de la BHE module la penetration effective du champ), populationnelle (le niveau d'electrification module l'exposition technologique). La meme forme mathematique, cinq instanciations — voir χ a cinq echelles ci-dessous.",
+    physBioSuperTitle: "Violation de la superposition",
+    physBioSuperDesc: "En electromagnetisme standard, les champs s'additionnent lineairement : E_total = E₁ + E₂ (principe de superposition). Dans le modele geometrique, parce que le champ EM est dans la metrique, la reponse est fondamentalement non lineaire. L'effet biologique de deux sources simultanees N'EST PAS la somme de leurs effets individuels.",
+    physBioSuperFormula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
+    physBioSuperExplain: "Ceci resout une enigme centrale de la recherche sur les bioeffets des CEM : pourquoi les expositions multi-frequences (conditions reelles) produisent-elles des effets que les etudes en laboratoire a frequence unique manquent ? Une revue systematique de 172 etudes confirme que les expositions combinees produisent des effets qualitativement differents de la somme des expositions individuelles ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]). Voir l'analyse complete des preuves de superposition.",
+    physBioSuperLink: "Voir l'analyse complete de la superposition →",
+    physBioTissueTitle: "Resonance specifique aux tissus",
+    physBioTissueDesc: "Le modele geometrique predit que differents tissus ont des susceptibilites differentes a la perturbation EM, determinees par leur composition en canaux ioniques, leurs proprietes membranaires et leurs frequences de resonance. Ce n'est pas une hypothese — cela decoule de la regle de selection χ(Ā) appliquee aux fonds specifiques aux tissus :",
+    physBioTissues: [
+      { tissue: "Testicules (cellules de Leydig)", channels: "Cav3.2 (T-type), high density", chi: "Tres eleve", reason: "Courant de fenetre au repos ; proteine StAR dependante du Ca²⁺" },
+      { tissue: "Hypothalamus", channels: "Cav3.1, Cav3.3", chi: "Tres eleve", reason: "Liberation de vesicules synaptiques via synaptotagmin 1" },
+      { tissue: "Hippocampe", channels: "Cav3.2, Cav1.3", chi: "Eleve", reason: "LTP/LTD dependants du Ca²⁺ ; zone de neurogenese" },
+      { tissue: "Retine (cones bleus)", channels: "CRY1/CRY2 + TRPC1", chi: "Eleve (dependant de la lumiere)", reason: "Magnetoreception par paires de radicaux ; dependant du FAD" },
+      { tissue: "Noeud sinusal (coeur)", channels: "Cav1.3, Cav3.1", chi: "Modere a eleve", reason: "Courant pacemaker ; activation a seuil bas" },
+      { tissue: "Muscle squelettique", channels: "Cav1.2 (L-type)", chi: "Faible au repos", reason: "Seuil d'activation eleve (−30 mV) ; significatif uniquement pendant les potentiels d'action" },
+    ],
+    physBioVerifyTitle: "Verifications des predictions geometriques",
+    physBioVerifySub: "Quatre lignes de preuve independantes confirment que le fond geomagnetique module la sensibilite biologique",
+    physBioVerifications: [
+      { id: "V1", title: "Mortalite geomagnetique (263 villes)", desc: "La mortalite cardiovasculaire est correlee a l'intensite des tempetes geomagnetiques dans 263 villes a travers le monde. Lors des tempetes geomagnetiques (Kp ≥ 5), le champ de fond Ā est perturbe, augmentant χ — et la mortalite augmente de 10 a 15 % en 1 a 3 jours ([[ref:vencloviene2022_geomag_mortality|Venclovienė et al. 2022]]).", level: "E" },
+      { id: "V2", title: "Latitude × MCV (204 pays)", desc: "Les taux de maladies cardiovasculaires varient systematiquement avec la latitude geomagnetique dans 204 pays. Intensite du champ geomagnetique plus elevee (pres des poles) → χ plus eleve → couplage biologique plus fort aux perturbations CEM anthropiques ([[ref:feigin2014_latitude_cvd|Feigin et al. 2014]]).", level: "M|C" },
+      { id: "V3", title: "VFC × indice Kp", desc: "La variabilite de la frequence cardiaque — une mesure directe de la fonction du systeme nerveux autonome — est correlee a l'indice de perturbation geomagnetique Kp en temps reel. Lorsque le fond geomagnetique est perturbe, le controle autonome cardiaque est mesurablament affecte, coherent avec un couplage medie par χ(Ā) ([[ref:mccrary2021_hrv_geomag|McCrary et al. 2021]]).", level: "E" },
+      { id: "V4", title: "Violation de la superposition (172 etudes)", desc: "Une revue systematique de 172 etudes demontre que les expositions combinees aux CEM produisent des effets non predits par la somme des expositions individuelles. Ceci confirme directement R(A₁+A₂) ≠ R(A₁)+R(A₂) — la signature definitive de la non-linearite geometrique ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]).", level: "M" },
+    ],
+
+    solarBioTitle: "La connexion solaire-biologique",
+    solarBioSub: "Modulation par le cycle solaire des taux de natalite, du risque de maladie et de la fertilite saisonniere — le χ geomagnetique en action",
+    solarBioLead: "Si le champ de fond geomagnetique module la sensibilite biologique (χ), alors l'activite solaire — qui perturbe le champ geomagnetique sur un cycle de 11 ans — devrait produire des oscillations biologiques mesurables. Trois jeux de donnees independants confirment cette prediction.",
+    solarBioCycleTitle: "Cycle solaire → cyclicite des taux de natalite",
+    solarBioCycleDesc: "Les taux de natalite aux Etats-Unis et en Nouvelle-Zelande montrent une oscillation de 11 ans verrouillee en phase sur le cycle solaire. Le schema a ete identifie independamment dans 7 regions geographiques des deux hemispheres. Pendant les maxima solaires, la perturbation geomagnetique augmente, χ s'eleve, et les taux de conception sont mesurablament affectes ([[ref:lehrer2017_solar_births|Lehrer & Lehrer 2017]]).",
+    solarBioCycleNote: "Le mecanisme est coherent avec la voie de la melatonine du BERM : activite solaire → tempetes geomagnetiques → suppression de la melatonine → perturbation de la pulsatilite de la GnRH → modulation du taux de conception. Le cycle de 11 ans fournit une experience naturelle separant les effets geomagnetiques des CEM anthropiques.",
+    solarBioBirthTitle: "Moment de naissance → risque de maladie",
+    solarBioBirthDesc: "Dans une cohorte de 237 000 patients, le mois de naissance predit le risque de maladie a vie pour de multiples conditions. Les individus nes pendant les mois geomagnetiquement actifs presentent un risque eleve de maladies cardiovasculaires, neurologiques et reproductives ([[ref:boland2015_birth_month|Boland et al. 2015]]). L'effet est coherent avec la modulation prenatale de χ : l'environnement geomagnetique pendant les fenetres de developpement critiques imprime une susceptibilite physiologique durable.",
+    solarBioBirthNote: "Ce n'est pas de l'astrologie — c'est de la biologie du developpement mediee par un champ physique. Le fond geomagnetique pendant le premier trimestre affecte l'organogenese par les memes voies VGCC/CRY que le BERM documente pour l'exposition adulte.",
+    solarBioDampenTitle: "Amortissement de l'amplitude saisonniere",
+    solarBioDampenDesc: "En Grece entre 1960 et 1992, l'amplitude saisonniere des taux de natalite a progressivement diminue — la difference entre les mois de pointe et de creux s'est reduite de plus de 50 %. Cette periode coincide avec l'electrification et l'urbanisation rapides de la Grece. Le signal saisonnier geomagnetique naturel (qui entraine la saisonnalite des naissances via la melatonine et la photoperiode) a ete progressivement masque par les CEM anthropiques, qui fournissent une perturbation χ constante, independante des saisons ([[ref:lerchl1998_birth_seasonality|Lerchl 1998]]).",
+    solarBioDampenNote: "Prediction : les pays a electrification tardive devraient montrer un debut d'amortissement saisonnier plus tardif. Les pays a electrification rapide recente (Afrique subsaharienne) devraient actuellement etre dans la phase d'amortissement.",
 
     archTitle: "Architecture a trois niveaux",
     archDesc:
@@ -2237,7 +2537,7 @@ const t = {
 
     causalTitle: "Diagramme des voies causales",
     causalDesc:
-      "Le diagramme ci-dessous montre la chaine mecanistique complete de la geometrie de Lindgren au declin du TFR. Huit niveaux, 63 noeuds, 107 aretes. Deux voies co-primaires operent en parallele : la Voie A (VGCC → Ca²⁺ → ROS) a le support experimental le plus fort (23-28 etudes de blocage), tandis que la Voie B (RPM → CRY → perturbation circadienne) est le pont theorique le plus complet de la geometrie de Lindgren a la biologie (87,5 % du Hamiltonien RPM est derivable de l'ansatz metrique). La voie CRY/RPM a des preuves de soutien inter-especes : perturbation du compas magnetique chez les oiseaux ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), magnetoreception CRY-dependante chez la Drosophile ([[ref:yoshii2009|Yoshii 2009]]), modulation ROS CRY-dependante dans les cellules humaines ([[ref:sherrard2018|Sherrard 2018]]), et -- de maniere cruciale -- magnetoreception fonctionnelle dependante de la lumiere bleue chez l'humain ([[ref:chae2019|Chae et al. 2019]], PLOS ONE), indiquant que le substrat biologique est present chez l'espece modelisee par BERM. Les deux voies sont independamment soutenues au niveau de preuve E. Cliquez sur un noeud pour voir son mecanisme, son interpretation de Lindgren, sa formulation quantitative, ses parametres de recuperation et ses references cles. Les bordures des noeuds sont colorees par niveau epistemique.",
+      "Le diagramme ci-dessous montre la chaine mecanistique complete de la geometrie de Lindgren au declin du TFR. Onze niveaux, 41 noeuds, 59 aretes. Deux voies co-primaires operent en parallele : la Voie A (VGCC → Ca²⁺ → ROS) a le support experimental le plus fort (23-28 etudes de blocage), tandis que la Voie B (RPM → CRY → perturbation circadienne) est le pont theorique le plus complet de la geometrie de Lindgren a la biologie (87,5 % du Hamiltonien RPM est derivable de l'ansatz metrique). La voie CRY/RPM a des preuves de soutien inter-especes : perturbation du compas magnetique chez les oiseaux ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), magnetoreception CRY-dependante chez la Drosophile ([[ref:yoshii2009|Yoshii 2009]]), modulation ROS CRY-dependante dans les cellules humaines ([[ref:sherrard2018|Sherrard 2018]]), et -- de maniere cruciale -- magnetoreception fonctionnelle dependante de la lumiere bleue chez l'humain ([[ref:chae2019|Chae et al. 2019]], PLOS ONE), indiquant que le substrat biologique est present chez l'espece modelisee par BERM. Les deux voies sont independamment soutenues au niveau de preuve E. Cliquez sur un noeud pour voir son mecanisme, son interpretation de Lindgren, sa formulation quantitative, ses parametres de recuperation et ses references cles. Les bordures des noeuds sont colorees par niveau epistemique.",
     pathwayHierarchyNote:
       "Les poids des voies refletent la calibration empirique sur les donnees communautaires (gradient Amish-Coree). Ils ne refletent pas la hierarchie theorique : la Voie B (CRY/RPM) est la voie PRIMAIRE car 87,5 % du Hamiltonien RPM est derivable de la geometrie de Lindgren, etablissant l'EXISTENCE du mecanisme comme consequence geometrique. La Voie A a un support experimental plus fort (23-28 etudes de blocage). L'ancienne objection δVm (δV_m ≈ 10⁻²¹ V de la geometrie seule) est maintenant resolue par le mecanisme de bifurcation du canal calcique de type T : l'equation de Schwan amplifie les champs externes a 7,5-15 μV a la membrane (37 % du bruit thermique a 1 V/m ambiant ; 184 % a 5 V/m personnel), et les canaux de type T (Cav3) operent a un point de bifurcation ou ~10 % sont ouverts au repos (courant de fenetre), les rendant sensibles a ces perturbations. La Voie D (HPA → testosterone) est egalement derivee via le meme mecanisme de type T : Schwan δVm → Cav3 → Ca²⁺ → StAR → testosterone ([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
     rpmFrequencyNote:
@@ -2274,11 +2574,36 @@ const t = {
     chiEvidenceFamilies: [
       { referenceId: "sakurai2008", family: "Diabete (cellules β)", chi: "χ(glucose) : K_ATP → V_mem → amorcage VGCC", mechanism: "Un glucose eleve ferme les canaux K_ATP → la membrane se depolarise → les VGCC sont amorces → χ ELEVE. Glucose bas → K_ATP ouvert → χ BAS.", prediction: "EMF × regime a IG eleve produit un risque synergique de diabete. Le jeune protege les cellules β.", verification: "Sakurai 2008 : ELF a reduit la secretion d'insuline de 30 %", level: "M|C" },
       { referenceId: "yu2019_btb", family: "Qualite du sperme (BTB)", chi: "χ(integrite BTB) : la barriere attenue le champ effectif", mechanism: "BTB intacte protege les cellules spermatogeniques → χ bas. EMF ouvre la BTB → protection perdue → χ augmente → retroaction positive.", prediction: "Le declin de la qualite du sperme s'accelere dans le temps (super-lineaire).", verification: "Yu 2019 : RF 4G perturbe directement la BTB, dependant du temps", level: "E" },
-      { referenceId: "ulusoy2025_bbb_therapeutic", family: "Barrieres (BBB + BTB)", chi: "χ(permeabilite de la barriere) : modulateur continu", mechanism: "Les barrieres sont des modulateurs χ continus. Barriere partiellement endommagee = augmentation partielle de χ. Produit une amplification multiplicative.", prediction: "Relation dose-reponse super-lineaire avec l'exposition cumulative.", verification: "Ulusoy 2025 : degradation progressive de la BBB 30–360 min", level: "E" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "Barrieres (BBB + BTB)", chi: "χ(permeabilite de la barriere) : modulateur continu", mechanism: "Les barrieres sont des modulateurs χ continus. Barriere partiellement endommagee = augmentation partielle de χ. Produit une amplification multiplicative.", prediction: "Relation dose-reponse super-lineaire avec l'exposition cumulative.", verification: "Ulusoy 2025 : degradation progressive de la BBB 30–360 min", level: "E" },
       { family: "Especes sentinelles", chi: "χ(taux metabolique) : echelle M^(−0,25)", mechanism: "Petits animaux : taux metabolique specifique a la masse plus eleve → ROS de base plus eleves → χ plus eleve → reponse EMF plus grande.", prediction: "Les insectes et petits oiseaux sont affectes en premier ; les grands mammiferes ensuite.", verification: "L'ordre temporel correspond a l'echelle de masse corporelle", level: "M|C" },
+      { family: "Axe aquatique (conservation CatSper)", chi: "χ(ELF) : champs des cables sous-marins × CatSper aquatique", mechanism: "CatSper est conserve de l'oursin a l'homme — le meme canal Ca²⁺ qui guide les spermatozoides chez toutes les especes. Les especes aquatiques valident trois canaux BERM : ELF via les seuils electrosensoriels des elasmobranchies (sensibilite VGIC), RPM/CRY via la magnetoreception de la baleine grise, et CatSper via l'argument de conservation. Les champs ELF des cables sous-marins atteignent le seuil d'activation du CatSper aquatique.", prediction: "La reproduction marine decline pres des corridors de cables sous-marins a haute puissance. Le CatSper du saumon d'elevage est plus faible que celui du sauvage.", verification: "CatSper KO = sterile chez toutes les especes testees. La migration de la baleine grise suit le champ geomagnetique. Sensibilite des elasmobranchies aux champs nV/m confirmee.", level: "L*" },
       { family: "Cardiaque (CRY2-TRPC1)", chi: "χ(etat CRY2) : dependant de la lumiere et du FAD", mechanism: "Si CRY2-TRPC1 opere dans les cardiomyocytes (comme dans les myoblastes, [[ref:yap2025|Yap 2025]]), l'entree calcique cardiaque est dependante de la lumiere/FAD.", prediction: "Utilisation du telephone la nuit → risque d'arythmie plus eleve que le jour.", verification: "Pas encore teste. Canaux TRPC confirmes dans les myocytes.", level: "L*" },
       { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Fenetre Adey-Blackman", chi: "χ(photocycle) × χ(temperature) × χ(orientation DC)", mechanism: "La « fenetre biologique » emerge de trois fenetres χ superposees. Les laboratoires controlant les trois obtiennent des resultats coherents.", prediction: "Le standard a cinq parametres resout 50 ans de debat sur la replication.", verification: "Blackman 1985–1991 : a demontre chaque fenetre independamment", level: "M" },
     ],
+
+    dualSuscTitle: "Deux susceptibilites independantes",
+    dualSuscDesc: "BERM identifie deux canaux de susceptibilite mecanistiquement independants. χ(Ā) opere par les canaux calciques dependants du voltage et necessite une exposition EMF anthropique au-dessus d'un seuil. χ_B opere par le mecanisme des paires de radicaux de la cryptochrome et repond a l'environnement geomagnetique naturel — il a toujours ete actif. Les deux canaux sont testables independamment : χ(Ā) est isole dans les populations avec un EMF quasi nul (Amish), tandis que χ_B est isole dans les donnees preindustrielles et du cycle solaire.",
+    dualSuscLabelType: "Type",
+    dualSuscLabelChannel: "Canal",
+    dualSuscLabelThreshold: "Seuil",
+    dualSuscLabelTests: "Tests via",
+    dualSuscLabelPathways: "Voies",
+    dualSuscLeft: {
+      title: "χ(Ā) [VGCC]",
+      type: "Geometrique",
+      channel: "Canal Ca²⁺ (VGCC)",
+      threshold: "NECESSITE le seuil d'electrification (Ā > 0)",
+      tests: "Amish (Ā≈0), gradient communautaire, gradient national",
+      pathways: "A (ROS), D (HPA), E (BBB)",
+    },
+    dualSuscRight: {
+      title: "χ_B [CRY/RPM]",
+      type: "Spin-chimique",
+      channel: "Mecanisme des paires de radicaux",
+      threshold: "PAS de seuil d'electrification (opere toujours)",
+      tests: "Cycle solaire, donnees preindustrielles, especes sentinelles, anomalie SAMA",
+      pathways: "B (CRY), C (melatonine)",
+    },
 
     twoChSub: "Decomposition ELF + IF + RF avec 12 couches technologiques et TCBM",
     twoChTitle: "Modele d'exposition a trois canaux",
@@ -2303,7 +2628,7 @@ const t = {
       "Le canal IF (1 kHz – 1 MHz) cible les cellules en division a travers la meme relation frequence-taille cellulaire que la therapie anticancereuse TTFields approuvee par la FDA. La source environnementale principale de champs IF est l'eclairage LED : chaque ampoule LED contient une alimentation a decoupage operant a 20-200 kHz avec des harmoniques s'etendant jusqu'aux megahertz. Un foyer typique contient 15-30 de ces sources ; un bureau typique 200-500. Les sources IF supplementaires comprennent les variateurs de frequence HVAC (5-50 kHz), les plaques a induction (20-75 kHz) et toutes les alimentations a decoupage (chargeurs d'ordinateur portable, chargeurs de telephone). Le mecanisme opere par oscillation ionique forcee (IFO-VGIC), avec un seuil biologique de 10⁻⁵ V/m ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]) — des ordres de grandeur en dessous des emissions mesurees des drivers LED.",
     tcbmTitle: "Modele biologique a trois canaux (TCBM)",
     tcbmIntro:
-      "BERM v19.1 identifie trois canaux electromagnetiques independants, chacun avec des gammes de frequences, sources d'exposition, mecanismes biologiques et histoires temporelles distincts :",
+      "Le diagnostic transversal BERM (v19.1) identifie trois canaux electromagnetiques independants. Note : v19.1 est une formule diagnostique ajustee a 54 pays — le modele de prediction est v17 :",
     tcbmElfTitle: "Canal 1 : ELF (0–300 Hz)",
     tcbmElfDesc:
       "Source : reseau electrique, cablage domestique, appareils menagers, transformateurs. Mecanisme : oscillation ionique forcee IFO-VGIC ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Histoire : present depuis l'electrification (annees 1880), stable depuis ~1970. Indicateur : consommation electrique residentielle (kWh par habitant). Toujours actif, 24/7, tout le foyer.",
@@ -2403,7 +2728,7 @@ const t = {
       { title: "Le decalage de 15-30 ans", subtitle: "Les pays en developpement suivent la meme trajectoire, avec retard", conventional: "La prosperite change le mode de vie", explanation: "Le retard correspond aux chronologies d'electrification + adoption technologique, pas a la prosperite. Chine T2D : 1,3 % (1980) → 8,7 % (2014) parallele l'electrification de 60 % a 100 %.", ref: "BMC Public Health 2018" },
       { title: "L'exception Amish", subtitle: "TFR 6,1, faible obesite, faible demence — meme pays", conventional: "Travail physique et communaute", explanation: "Zero couches technologiques. Pas d'amorcage ELF. Recuperation complete. EMF_effective ≈ 0. Le regime n'est PAS particulierement sain — l'environnement EMF l'est.", ref: "Comparaison des populations BERM" },
     ],
-    layerCountryTitle: "Comparaison par pays : v19.1 vs v20",
+    layerCountryTitle: "Comparaison par pays : v19.1 (diagnostique) vs v20",
     layerCountries: [
       { country: "Finlande", actual: "1,25", v19: "1,32", v20: "1,28", note: "100+ ans d'electrification, P eleve" },
       { country: "Coree du Sud", actual: "0,72", v19: "0,95", v20: "0,78", note: "Densite 5G/LED/smartphone la plus elevee" },
@@ -2620,7 +2945,7 @@ const t = {
     fourRoutesSub: "Gonadique, circadienne, hypophysaire, autonome et neurodeveloppementale — chacune suffisante seule",
     fourRoutesDesc: "BERM identifie cinq voies biologiques independantes par lesquelles l'exposition EMF peut reduire la fertilite. Chaque voie opere par un mecanisme et un tissu cible distincts. De maniere cruciale, chaque voie est independamment suffisante pour reduire le TFR — elles operent en parallele, pas en serie. Ceci signifie que bloquer une voie (ex : supplementation antioxydante pour la voie gonadique) n'elimine pas l'effet, car quatre autres voies restent actives.",
     fourRoutesGonadal: "Voie 1 : Gonadique (etablie)",
-    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> dommage ADN des spermatozoides + suppression StAR des cellules de Leydig -> declin de la testosterone + perturbation de la spermatogenese. Tissu cible : testicules. Niveau de preuve : E (23-28 etudes de blocage). Canal principal : RF + ELF.",
+    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> dommage ADN des spermatozoides + suppression StAR des cellules de Leydig -> declin de la testosterone + perturbation de la spermatogenese. De plus : EMF -> activation prematuree de CatSper -> epuisement energetique -> defaillance de navigation (rheotaxie, chimiotaxie, reaction acrosomique). Tissu cible : testicules. Niveau de preuve : E (23-28 etudes de blocage). Canal principal : RF + ELF.",
     fourRoutesCircadian: "Voie 2 : Circadienne (etablie)",
     fourRoutesCircadianDesc: "EMF -> CRY/RPM -> perturbation de l'horloge circadienne -> suppression de la melatonine -> perturbation de l'axe HPG + stress oxydatif dans le liquide folliculaire. Tissu cible : glande pineale, SCN. Niveau de preuve : E. Canal principal : RF (composante magnetique).",
     fourRoutesPituitary: "Voie 3 : Hypophysaire (nouvelle)",
@@ -2925,6 +3250,17 @@ const t = {
     dnaRepairTitle: "Les dommages a l'ADN se reparent en 9 heures — si l'exposition cesse",
     dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]] ont montré que les cassures de l'ADN induites par les EMF revenaient à la normale dans les 9 heures suivant l'arrêt de l'exposition. Cela quantifie la fenêtre de récupération de BERM : le corps PEUT réparer les dommages induits par les EMF, mais seulement s'il dispose d'une durée suffisante sans EMF.",
     dnaModernEnv: "Les environnements modernes avec WiFi 24 h/24, éclairage LED et smartphones au lit éliminent entièrement cette fenêtre de récupération. Une chambre moderne typique ne fournit aucun temps de récupération sans EMF.",
+
+    twoLevelTitle: "Modèle de prédiction à deux niveaux",
+    twoLevelSub: "Niveau 1 (transversal) + Niveau 2 (dynamique temporelle de la testostérone)",
+    twoLevelLead: "Le modèle transversal positionne les pays sur la courbe TFR mondiale via le seuil d'électrification. Le modèle temporel ajoute un second niveau : le déclin séculaire de la testostérone fournit la dynamique intra-pays via la relation de décalage T→TFR.",
+    twoLevelL1: "Niveau 1 : Seuil d'électrification",
+    twoLevelL1Desc: "TFR = 4,11 × exp(−54 × EMF_index) + 1,55. R² = 0,851 sur 54 pays.",
+    twoLevelL2: "Niveau 2 : Trajectoire de la testostérone",
+    twoLevelL2Desc: "T(année) = 638 × (1 − 0,012)^(année − 1982). Déclin indépendant de l'âge de −1,2 %/an, décalé de 8 ans. USA 2007–2024, R² = 0,97.",
+    twoLevelCombined: "Prédiction combinée : le Niveau 1 fixe la ligne de base transversale ; le Niveau 2 la module dans le temps.",
+    twoLevelCaveat: "Les deux niveaux sont indépendants. Le Niveau 2 est calibré sur les USA uniquement. Le R² de 0,97 est intra-échantillon.",
+    twoLevelDiagnostic: "Diagnostic LH–T : Santi et al. 2025 ont montré LH↓ et T↓ simultanés — cohérent avec la suppression hypothalamique (voie EMF), pas les dommages testiculaires (voie EDC).",
   },
   ko: {
     title: "모델 문서",
@@ -2933,6 +3269,54 @@ const t = {
     metaTitle: "모델 문서 - Extinction Field",
     metaDesc:
       "BERM 모델 문서: 3단계 아키텍처, 인과 경로, 방정식 및 회복 역학.",
+
+    physBioTitle: "물리학에서 생물학으로",
+    physBioSub: "Lindgren의 기하학적 전자기학이 배경장에 대한 생물학적 감수성을 예측하는 방법",
+    physBioLead: "BERM의 생물학적 예측은 임시방편이 아니다 — 전자기장이 외부 교란이 아닌 시공간 메트릭의 일부인 기하학적 전자기 모델(GME)에서 도출된다. 이 섹션은 메트릭 안사츠에서 조직 수준의 감수성에 이르는 연쇄를 추적한다.",
+    physBioGMETitle: "Lindgren 기하학적 메트릭 확장",
+    physBioGMEDesc: "표준 물리학에서 전자기장은 시공간을 통해 전파되는 별개의 존재이다. Lindgren의 기하학적 모델에서 전자기장은 메트릭 텐서에 직접 인코딩된다:",
+    physBioGMEFormula: "g_μν = η_μν + A_μ A_ν",
+    physBioGMEExplain: "여기서 η_μν는 평탄한 Minkowski 메트릭이고 A_μ는 전자기 사원 퍼텐셜이다. 핵심적 귀결: 생체 시스템은 전자기장 '안에' 존재하는 것이 아니라, 그 기하학이 부분적으로 전자기적인 시공간 '안에' 존재한다. '장이 없는' 기준 상태는 없다. 모든 유기체는 특정 전자기 기하학(지자기 배경) 안에서 진화해 왔으며, 그 기하학에 대한 교란은 생물학적 작동 환경 자체에 대한 교란이다.",
+    physBioChiTitle: "χ(Ā) 선택 규칙",
+    physBioChiDesc: "메트릭 확장은 선택 규칙을 함축한다: 전자기 교란에 대한 생물학적 감수성은 배경장 Ā에 의존한다. 배경이 없으면 교란은 작용할 기하학적 기판이 없어 χ → 0이 된다. 배경이 있으면 교란은 기존의 기하학적 구조를 수정하여 χ → 1이 된다. 이것은 자유 매개변수가 아니라 메트릭 안사츠의 구조적 귀결이다.",
+    physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
+    physBioChiExplain: "이 포화 곡선은 모든 생물학적 스케일에서 나타난다: 분자(CRY는 라디칼 쌍 화학을 위해 지자기 배경을 필요로 함), 세포(VGCC 게이팅은 배경으로서 막전위를 필요로 함), 장기(BBB 완전성이 유효 장 침투를 조절), 인구(전기화 수준이 기술 노출을 조절). 동일한 수학적 형태, 다섯 가지 구현 — 아래 다섯 스케일에서의 χ를 참조.",
+    physBioSuperTitle: "중첩 위반",
+    physBioSuperDesc: "표준 전자기학에서 장은 선형으로 합산된다: E_total = E₁ + E₂ (중첩 원리). 기하학적 모델에서는 전자기장이 메트릭 안에 있기 때문에 반응이 근본적으로 비선형이다. 두 동시 소스의 생물학적 효과는 개별 효과의 합이 아니다.",
+    physBioSuperFormula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
+    physBioSuperExplain: "이것은 EMF 생체효과 연구의 핵심 수수께끼를 해결한다: 왜 다주파수 노출(실제 조건)이 단일 주파수 실험실 연구가 놓치는 효과를 만들어내는가? 172건의 연구에 대한 체계적 리뷰는 복합 노출이 개별 노출의 합과 질적으로 다른 효과를 생성함을 확인한다([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]). 전체 중첩 증거 분석을 참조.",
+    physBioSuperLink: "전체 중첩 분석 보기 →",
+    physBioTissueTitle: "조직 특이적 공명",
+    physBioTissueDesc: "기하학적 모델은 서로 다른 조직이 이온 채널 구성, 막 특성 및 공명 주파수에 의해 결정되는 서로 다른 전자기 교란 감수성을 가짐을 예측한다. 이것은 가정이 아니라 조직 특이적 배경에 적용된 χ(Ā) 선택 규칙에서 도출된다:",
+    physBioTissues: [
+      { tissue: "고환 (Leydig 세포)", channels: "Cav3.2 (T-type), high density", chi: "매우 높음", reason: "안정 시 창 전류; StAR 단백질의 Ca²⁺ 의존성" },
+      { tissue: "시상하부", channels: "Cav3.1, Cav3.3", chi: "매우 높음", reason: "synaptotagmin 1을 통한 시냅스 소포 방출" },
+      { tissue: "해마", channels: "Cav3.2, Cav1.3", chi: "높음", reason: "LTP/LTD Ca²⁺ 의존성; 신경발생 구역" },
+      { tissue: "망막 (청색 추체)", channels: "CRY1/CRY2 + TRPC1", chi: "높음 (광 의존적)", reason: "라디칼 쌍 자기수용; FAD 의존성" },
+      { tissue: "동방결절 (심장)", channels: "Cav1.3, Cav3.1", chi: "중간~높음", reason: "페이스메이커 전류; 저역치 활성화" },
+      { tissue: "골격근", channels: "Cav1.2 (L-type)", chi: "안정 시 낮음", reason: "높은 활성화 역치 (−30 mV); 활동전위 시에만 유의" },
+    ],
+    physBioVerifyTitle: "기하학적 예측 검증",
+    physBioVerifySub: "지자기 배경이 생물학적 감수성을 조절함을 확인하는 네 가지 독립적 증거",
+    physBioVerifications: [
+      { id: "V1", title: "지자기 사망률 (263개 도시)", desc: "심혈관 사망률은 전 세계 263개 도시에서 지자기 폭풍 강도와 상관관계를 보인다. 지자기 폭풍 시 (Kp ≥ 5), 배경장 Ā가 교란되어 χ가 증가하고, 사망률은 1~3일 이내에 10~15% 상승한다 ([[ref:vencloviene2022_geomag_mortality|Venclovienė et al. 2022]]).", level: "E" },
+      { id: "V2", title: "위도 × CVD (204개국)", desc: "심혈관 질환 발병률은 204개국에 걸쳐 지자기 위도와 체계적으로 변동한다. 지자기장 강도가 높으면 (극 근처) → χ가 높아지고 → 인위적 EMF 교란에 대한 생물학적 결합이 강해진다 ([[ref:feigin2014_latitude_cvd|Feigin et al. 2014]]).", level: "M|C" },
+      { id: "V3", title: "HRV × Kp 지수", desc: "심박변이도 — 자율신경계 기능의 직접적 척도 — 는 지자기 Kp 교란 지수와 실시간으로 상관관계를 보인다. 지자기 배경이 교란되면 심장 자율신경 제어가 측정 가능하게 영향받으며, 이는 χ(Ā) 매개 결합과 일치한다 ([[ref:mccrary2021_hrv_geomag|McCrary et al. 2021]]).", level: "E" },
+      { id: "V4", title: "중첩 위반 (172건의 연구)", desc: "172건의 연구에 대한 체계적 리뷰는 복합 EMF 노출이 개별 노출의 합으로 예측되지 않는 효과를 생성함을 보여준다. 이것은 R(A₁+A₂) ≠ R(A₁)+R(A₂) — 기하학적 비선형성의 결정적 특징 — 을 직접 확인한다 ([[ref:juutilainen2006_superposition|Juutilainen et al. 2006]]).", level: "M" },
+    ],
+
+    solarBioTitle: "태양-생물학적 연결",
+    solarBioSub: "출생률, 질병 위험, 계절적 생식력의 태양 주기 조절 — 지자기 χ의 실제",
+    solarBioLead: "지자기 배경장이 생물학적 감수성(χ)을 조절한다면, 11년 주기로 지자기장을 교란하는 태양 활동은 측정 가능한 생물학적 진동을 만들어내야 한다. 세 가지 독립적 데이터 세트가 이 예측을 확인한다.",
+    solarBioCycleTitle: "태양 주기 → 출생률 주기성",
+    solarBioCycleDesc: "미국과 뉴질랜드의 출생률은 태양 주기에 위상 고정된 11년 진동을 보인다. 이 패턴은 양반구의 7개 지리적 지역에서 독립적으로 확인되었다. 태양 극대기에는 지자기 교란이 증가하고 χ가 상승하며, 수태율이 측정 가능하게 영향받는다 ([[ref:lehrer2017_solar_births|Lehrer & Lehrer 2017]]).",
+    solarBioCycleNote: "이 메커니즘은 BERM의 멜라토닌 경로와 일치한다: 태양 활동 → 지자기 폭풍 → 멜라토닌 억제 → GnRH 박동성 교란 → 수태율 조절. 11년 주기는 지자기 효과와 인위적 EMF를 분리하는 자연 실험을 제공한다.",
+    solarBioBirthTitle: "출생 시기 → 질병 위험",
+    solarBioBirthDesc: "237,000명의 환자 코호트에서 출생 월은 여러 질환에 대한 평생 질병 위험을 예측한다. 지자기 활동이 활발한 달에 태어난 개인은 심혈관, 신경, 생식 질환 위험이 상승한다 ([[ref:boland2015_birth_month|Boland et al. 2015]]). 이 효과는 출생 전 χ 조절과 일치한다: 중요한 발달 시기의 지자기 환경이 지속적인 생리학적 감수성을 각인한다.",
+    solarBioBirthNote: "이것은 점성술이 아니다 — 물리적 장에 의해 매개되는 발생생물학이다. 임신 첫 삼분기 동안의 지자기 배경은 BERM이 성인 노출에 대해 문서화한 것과 동일한 VGCC/CRY 경로를 통해 기관형성에 영향을 미친다.",
+    solarBioDampenTitle: "계절적 진폭 감쇠",
+    solarBioDampenDesc: "그리스에서 1960년부터 1992년까지 출생률의 계절적 진폭이 점진적으로 감소했다 — 최고 월과 최저 월의 차이가 50% 이상 줄어들었다. 이 기간은 그리스의 급속한 전기화 및 도시화와 일치한다. 출생 계절성을 구동하는 자연적 지자기 계절 신호(멜라토닌과 광주기를 통해)는 계절에 독립적인 일정한 χ 교란을 제공하는 인위적 EMF에 의해 점진적으로 가려졌다 ([[ref:lerchl1998_birth_seasonality|Lerchl 1998]]).",
+    solarBioDampenNote: "예측: 전기화가 늦은 국가는 계절적 감쇠의 시작도 늦어야 한다. 최근 급속히 전기화된 국가(사하라 이남 아프리카)는 현재 감쇠 단계에 있어야 한다.",
 
     archTitle: "3단계 아키텍처",
     archDesc:
@@ -2952,7 +3336,7 @@ const t = {
 
     causalTitle: "인과 경로 다이어그램",
     causalDesc:
-      "아래 다이어그램은 Lindgren 기하학에서 TFR 감소까지의 완전한 메커니즘 체인을 보여줍니다. 8개 수준, 63개 노드, 107개 엣지. 두 개의 공동 주요 경로가 병렬로 작동합니다: 경로 A(VGCC → Ca²⁺ → ROS)는 가장 강력한 실험적 지지(23-28개 차단 연구)를 가지며, 경로 B(RPM → CRY → 일주기 교란)는 Lindgren 기하학에서 생물학으로의 가장 완전한 이론적 다리입니다(RPM 해밀토니안의 87.5%가 계량 가설에서 유도 가능). CRY/RPM 경로는 종간 지지 증거가 있습니다: 조류의 자기 나침반 교란([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), 초파리의 CRY 의존 자기수용([[ref:yoshii2009|Yoshii 2009]]), 인간 세포의 CRY 의존 ROS 변조([[ref:sherrard2018|Sherrard 2018]]), 그리고 결정적으로 인간의 기능적 청색광 의존 자기수용([[ref:chae2019|Chae et al. 2019]], PLOS ONE)이 BERM이 모델링하는 종에 생물학적 기질이 존재함을 나타냅니다. 두 경로 모두 증거 수준 E에서 독립적으로 지지됩니다. 노드를 클릭하면 메커니즘, Lindgren 해석, 정량적 공식화, 회복 매개변수 및 주요 참고문헌을 볼 수 있습니다. 노드 테두리는 인식론적 수준에 따라 색상이 지정됩니다.",
+      "아래 다이어그램은 Lindgren 기하학에서 TFR 감소까지의 완전한 메커니즘 체인을 보여줍니다. 11개 수준, 41개 노드, 59개 엣지. 두 개의 공동 주요 경로가 병렬로 작동합니다: 경로 A(VGCC → Ca²⁺ → ROS)는 가장 강력한 실험적 지지(23-28개 차단 연구)를 가지며, 경로 B(RPM → CRY → 일주기 교란)는 Lindgren 기하학에서 생물학으로의 가장 완전한 이론적 다리입니다(RPM 해밀토니안의 87.5%가 계량 가설에서 유도 가능). CRY/RPM 경로는 종간 지지 증거가 있습니다: 조류의 자기 나침반 교란([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), 초파리의 CRY 의존 자기수용([[ref:yoshii2009|Yoshii 2009]]), 인간 세포의 CRY 의존 ROS 변조([[ref:sherrard2018|Sherrard 2018]]), 그리고 결정적으로 인간의 기능적 청색광 의존 자기수용([[ref:chae2019|Chae et al. 2019]], PLOS ONE)이 BERM이 모델링하는 종에 생물학적 기질이 존재함을 나타냅니다. 두 경로 모두 증거 수준 E에서 독립적으로 지지됩니다. 노드를 클릭하면 메커니즘, Lindgren 해석, 정량적 공식화, 회복 매개변수 및 주요 참고문헌을 볼 수 있습니다. 노드 테두리는 인식론적 수준에 따라 색상이 지정됩니다.",
     pathwayHierarchyNote:
       "경로 가중치는 커뮤니티 데이터(Amish-한국 기울기)에 대한 경험적 보정을 반영합니다. 이론적 계층구조를 반영하지는 않습니다: 경로 B(CRY/RPM)가 이론적으로 PRIMARY 경로인 이유는 RPM 해밀토니안의 87.5%가 Lindgren 기하학에서 유도 가능하여 메커니즘의 존재를 기하학적 결과로 확립하기 때문입니다. 경로 A는 더 강력한 실험적 지지(23-28개 차단 연구)를 가집니다. 이전의 δVm 반론(기하학만으로 δV_m ≈ 10⁻²¹ V)은 이제 T형 칼슘 채널 분기 메커니즘에 의해 해결됩니다: Schwan 방정식은 외부 전장을 막에서 7.5-15 μV로 증폭하고(주변 1 V/m에서 열 잡음의 37%; 개인 5 V/m에서 184%), T형 채널(Cav3)은 휴지 상태에서 ~10%가 열려있는 분기점에서 작동하여(창 전류) 이러한 교란에 민감합니다. 경로 D(HPA → 테스토스테론)도 같은 T형 메커니즘을 통해 유도됩니다: Schwan δVm → Cav3 → Ca²⁺ → StAR → 테스토스테론([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
     rpmFrequencyNote:
@@ -2989,11 +3373,36 @@ const t = {
     chiEvidenceFamilies: [
       { referenceId: "sakurai2008", family: "당뇨병 (β세포)", chi: "χ(포도당): K_ATP → V_mem → VGCC 프라이밍", mechanism: "높은 포도당이 K_ATP 채널을 닫음 → 막 탈분극 → VGCC 프라이밍 → χ 높음. 낮은 포도당 → K_ATP 열림 → χ 낮음.", prediction: "EMF × 고GI 식단은 시너지 당뇨병 위험을 생성. 단식은 β세포를 보호.", verification: "Sakurai 2008: ELF가 인슐린 분비를 30% 감소", level: "M|C" },
       { referenceId: "yu2019_btb", family: "정자 품질 (BTB)", chi: "χ(BTB 무결성): 장벽이 유효 전장을 감쇠", mechanism: "무손상 BTB는 정자발생 세포를 보호 → χ 낮음. EMF가 BTB를 개방 → 보호 상실 → χ 증가 → 양성 피드백.", prediction: "정자 품질 감소가 시간에 따라 가속화(초선형).", verification: "Yu 2019: 4G RF가 BTB를 직접 교란, 시간 의존", level: "E" },
-      { referenceId: "ulusoy2025_bbb_therapeutic", family: "장벽 (BBB + BTB)", chi: "χ(장벽 투과성): 연속 변조자", mechanism: "장벽은 연속 χ 변조자. 부분 손상된 장벽 = χ의 부분적 증가. 승법적 증폭을 생성.", prediction: "누적 노출에 따른 초선형 용량-반응 관계.", verification: "Ulusoy 2025: 30-360분에 걸친 점진적 BBB 분해", level: "E" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "장벽 (BBB + BTB)", chi: "χ(장벽 투과성): 연속 변조자", mechanism: "장벽은 연속 χ 변조자. 부분 손상된 장벽 = χ의 부분적 증가. 승법적 증폭을 생성.", prediction: "누적 노출에 따른 초선형 용량-반응 관계.", verification: "Ulusoy 2025: 30-360분에 걸친 점진적 BBB 분해", level: "E" },
       { family: "감시종", chi: "χ(대사율): M^(-0.25) 스케일링", mechanism: "작은 동물: 질량 특이적 대사율이 높음 → 기저 ROS가 높음 → χ가 높음 → EMF 반응이 큼.", prediction: "곤충과 작은 새가 먼저 영향 받고; 큰 포유류가 나중.", verification: "시간 순서가 체질량 스케일링과 일치", level: "M|C" },
+      { family: "수생 축 (CatSper 보존)", chi: "χ(ELF): 해저 케이블 장 × 수생 CatSper", mechanism: "CatSper는 성게에서 인간까지 보존됨 — 모든 종에서 정자를 안내하는 동일한 Ca²⁺ 채널. 수생 종은 세 가지 BERM 채널을 검증: 판새류의 전기감각 역치를 통한 ELF(VGIC 민감도), 회색고래 자기수용을 통한 RPM/CRY, 보존 논거를 통한 CatSper. 해저 케이블의 ELF 장은 수생 CatSper 활성화 역치에 도달.", prediction: "고전력 해저 케이블 회랑 근처에서 해양 생식이 감소. 양식 연어 CatSper가 야생보다 약함.", verification: "CatSper KO = 테스트된 모든 종에서 불임. 회색고래 이동이 지자기장을 추적. 판새류의 nV/m 스케일 장에 대한 민감도 확인.", level: "L*" },
       { family: "심장 (CRY2-TRPC1)", chi: "χ(CRY2 상태): 빛과 FAD 의존", mechanism: "CRY2-TRPC1이 심근세포에서 작동한다면(근아세포에서와 같이, [[ref:yap2025|Yap 2025]]), 심장 칼슘 유입은 빛/FAD 의존적.", prediction: "야간 전화 사용 → 주간보다 부정맥 위험이 높음.", verification: "아직 테스트되지 않음. TRPC 채널이 근세포에서 확인됨.", level: "L*" },
       { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adey-Blackman 창", chi: "χ(광순환) × χ(온도) × χ(DC 방향)", mechanism: "'생물학적 창'은 세 개의 겹치는 χ 창에서 나타남. 세 가지 모두를 제어하는 실험실은 일관된 결과를 얻음.", prediction: "5-매개변수 표준이 50년간의 재현 논쟁을 해결.", verification: "Blackman 1985-1991: 각 창을 독립적으로 시연", level: "M" },
     ],
+
+    dualSuscTitle: "두 가지 독립적 감수성",
+    dualSuscDesc: "BERM은 기계론적으로 독립적인 두 가지 감수성 채널을 식별합니다. χ(Ā)는 전압 의존성 칼슘 채널을 통해 작동하며 인위적 EMF 노출이 임계값을 초과해야 합니다. χ_B는 크립토크롬의 라디칼 쌍 메커니즘을 통해 작동하며 자연 지자기 환경에 반응합니다 — 항상 활성화되어 있습니다. 두 채널은 독립적으로 테스트 가능합니다: χ(Ā)는 EMF가 거의 0인 집단(아미시)에서 분리되고, χ_B는 산업화 이전 및 태양 주기 데이터에서 분리됩니다.",
+    dualSuscLabelType: "유형",
+    dualSuscLabelChannel: "채널",
+    dualSuscLabelThreshold: "임계값",
+    dualSuscLabelTests: "테스트",
+    dualSuscLabelPathways: "경로",
+    dualSuscLeft: {
+      title: "χ(Ā) [VGCC]",
+      type: "기하학적",
+      channel: "Ca²⁺ 채널 (VGCC)",
+      threshold: "전기화 임계값 필요 (Ā > 0)",
+      tests: "아미시 (Ā≈0), 커뮤니티 기울기, 국가 기울기",
+      pathways: "A (ROS), D (HPA), E (BBB)",
+    },
+    dualSuscRight: {
+      title: "χ_B [CRY/RPM]",
+      type: "스핀화학적",
+      channel: "라디칼 쌍 메커니즘",
+      threshold: "전기화 임계값 없음 (항상 작동)",
+      tests: "태양 주기, 산업화 이전 데이터, 파수종, SAMA 이상",
+      pathways: "B (CRY), C (멜라토닌)",
+    },
 
     twoChSub: "12개 기술 레이어와 TCBM을 포함한 ELF + IF + RF 분해",
     twoChTitle: "3채널 노출 모델",
@@ -3018,7 +3427,7 @@ const t = {
       "IF 채널(1 kHz – 1 MHz)은 FDA 승인 항암 치료법 TTFields와 동일한 주파수-세포 크기 관계를 통해 분열 세포를 표적으로 합니다. IF 전장의 주요 환경 원천은 LED 조명입니다: 모든 LED 전구는 20-200 kHz에서 작동하고 고조파가 메가헤르츠까지 확장되는 스위칭 전원 공급장치를 포함합니다. 전형적인 가정에는 15-30개, 전형적인 사무실에는 200-500개의 이러한 원천이 있습니다. 추가 IF 원천으로는 HVAC 가변 주파수 드라이브(5-50 kHz), 인덕션 조리기(20-75 kHz), 모든 스위칭 모드 전원 공급장치(노트북 충전기, 전화 충전기)가 있습니다. 메커니즘은 강제 이온 진동(IFO-VGIC)으로 작동하며, 생물학적 역치는 10⁻⁵ V/m([[ref:panagopoulos2025_ifo|Panagopoulos 2025]])입니다 — LED 드라이버의 측정된 방사보다 수 자릿수 아래입니다.",
     tcbmTitle: "3채널 생물학적 모델(TCBM)",
     tcbmIntro:
-      "BERM v19.1은 각각 별개의 주파수 범위, 노출원, 생물학적 메커니즘 및 시간 이력을 가진 세 가지 독립적인 전자기 채널을 식별합니다:",
+      "BERM 횡단적 진단(v19.1)은 세 가지 독립적인 전자기 채널을 식별합니다. 참고: v19.1은 54개국에 적합된 진단 공식이며, 예측 모델은 v17입니다:",
     tcbmElfTitle: "채널 1: ELF (0–300 Hz)",
     tcbmElfDesc:
       "원천: 전력망, 가정 배선, 가전제품, 변압기. 메커니즘: IFO-VGIC 강제 이온 진동([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). 이력: 전기화 이후(1880년대) 존재, ~1970년 이후 안정. 지표: 가정용 전력 소비(1인당 kWh). 항상 활성, 24/7, 전 가정.",
@@ -3118,7 +3527,7 @@ const t = {
       { title: "15-30년 시차", subtitle: "개발도상국은 시간차를 두고 같은 궤적을 따름", conventional: "번영이 생활 방식을 변화시킨다", explanation: "시차는 번영이 아닌 전기화 + 기술 채택 일정과 일치. 중국 T2D: 1.3%(1980) → 8.7%(2014)는 60%에서 100%로의 전기화와 병행.", ref: "BMC Public Health 2018" },
       { title: "Amish 예외", subtitle: "TFR 6.1, 낮은 비만, 낮은 치매 — 같은 나라", conventional: "육체 노동과 공동체", explanation: "기술 레이어 제로. ELF 프라이밍 없음. 완전 회복. EMF_effective ≈ 0. 식단이 특별히 건강한 것이 아님 — EMF 환경이 건강함.", ref: "BERM 인구 비교" },
     ],
-    layerCountryTitle: "국가 비교: v19.1 vs v20",
+    layerCountryTitle: "국가 비교: v19.1 (진단용) vs v20",
     layerCountries: [
       { country: "핀란드", actual: "1.25", v19: "1.32", v20: "1.28", note: "100+ 년 전기화, 높은 P" },
       { country: "한국", actual: "0.72", v19: "0.95", v20: "0.78", note: "가장 높은 5G/LED/스마트폰 밀도" },
@@ -3335,7 +3744,7 @@ const t = {
     fourRoutesSub: "생식선, 일주기, 뇌하수체, 자율신경, 신경발달 — 각각 단독으로 충분",
     fourRoutesDesc: "BERM은 EMF 노출이 출산력을 감소시킬 수 있는 5가지 독립적인 생물학적 경로를 식별합니다. 각 경로는 별개의 메커니즘과 표적 조직을 통해 작동합니다. 결정적으로, 각 경로는 TFR을 감소시키기에 독립적으로 충분합니다 — 이들은 직렬이 아닌 병렬로 작동합니다. 이것은 한 경로를 차단해도(예: 생식선 경로를 위한 항산화 보충) 효과를 제거하지 못함을 의미합니다. 다른 네 경로가 여전히 활성이기 때문입니다.",
     fourRoutesGonadal: "경로 1: 생식선 (확립)",
-    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> 정자 DNA 손상 + Leydig 세포 StAR 억제 -> 테스토스테론 감소 + 정자발생 교란. 표적 조직: 고환. 증거 수준: E (23-28 차단 연구). 주요 채널: RF + ELF.",
+    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> 정자 DNA 손상 + Leydig 세포 StAR 억제 -> 테스토스테론 감소 + 정자발생 교란. 추가: EMF -> CatSper 조기 활성화 -> 에너지 고갈 -> 항행 장애 (유변주성, 주화성, 첨체 반응). 표적 조직: 고환. 증거 수준: E (23-28 차단 연구). 주요 채널: RF + ELF.",
     fourRoutesCircadian: "경로 2: 일주기 (확립)",
     fourRoutesCircadianDesc: "EMF -> CRY/RPM -> 일주기 시계 교란 -> 멜라토닌 억제 -> HPG축 교란 + 난포액 산화 스트레스. 표적 조직: 송과선, SCN. 증거 수준: E. 주요 채널: RF (자기장 성분).",
     fourRoutesPituitary: "경로 3: 뇌하수체 (신규)",
@@ -3640,6 +4049,17 @@ const t = {
     dnaRepairTitle: "DNA 손상은 9시간 내에 회복된다 — 노출이 멈추면",
     dnaRepairDesc: "[[ref:ivancsits_dna_recovery|Ivancsits et al.]]은 EMF로 유도된 DNA 가닥 절단이 노출 중단 후 9시간 이내에 정상으로 돌아왔음을 보여주었다. 이는 BERM의 회복 창을 정량화한다: 충분한 EMF 비노출 시간이 주어지면 신체는 EMF 유발 손상을 복구할 수 있다.",
     dnaModernEnv: "24시간 WiFi, LED 조명, 침대의 스마트폰이 있는 현대 환경은 이 회복 창을 완전히 제거한다. 전형적인 현대식 침실은 EMF 없는 회복 시간을 전혀 제공하지 않는다.",
+
+    twoLevelTitle: "2단계 예측 모델",
+    twoLevelSub: "레벨 1(횡단면) + 레벨 2(시간적 테스토스테론 동태)",
+    twoLevelLead: "횡단면 모델은 전기화 임계값을 통해 국가를 글로벌 TFR 곡선에 배치합니다. 시간적 모델은 제2레벨을 추가: 테스토스테론의 장기적 감소가 T→TFR 시차 관계를 통해 국내 동태를 제공합니다.",
+    twoLevelL1: "레벨 1: 전기화 임계값",
+    twoLevelL1Desc: "TFR = 4.11 × exp(−54 × EMF_index) + 1.55. 54개국에서 R² = 0.851.",
+    twoLevelL2: "레벨 2: 테스토스테론 궤적",
+    twoLevelL2Desc: "T(연도) = 638 × (1 − 0.012)^(연도 − 1982). 나이 독립적 −1.2%/년 감소, 8년 시차. USA 2007–2024에서 R² = 0.97.",
+    twoLevelCombined: "통합 예측: 레벨 1이 횡단면 기준선 설정; 레벨 2가 시간적으로 조정.",
+    twoLevelCaveat: "두 레벨은 독립적. 레벨 2는 USA에서만 보정. R² 0.97은 표본 내이며 과대평가 가능성.",
+    twoLevelDiagnostic: "LH–T 진단: Santi 등 2025가 집단에서 LH↓과 T↓의 동시 발생을 보여줌—시상하부 억제(EMF 경로)와 일치, 고환 손상(EDC 경로) 아님.",
   },
 };
 
@@ -3711,6 +4131,142 @@ export default async function ModelPage({
 
         {/* Main content */}
         <div className="flex-1 min-w-0">
+          {/* B1: From Physics to Biology */}
+          <CollapsibleSection id="physics-to-biology" title={d.physBioTitle} subtitle={d.physBioSub} defaultOpen>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.physBioLead}
+            </p>
+
+            {/* GME */}
+            <div className="mb-8">
+              <h3 className="text-base font-semibold mb-3">{d.physBioGMETitle}</h3>
+              <p className="text-sm text-foreground-muted mb-3 max-w-3xl leading-relaxed">
+                {d.physBioGMEDesc}
+              </p>
+              <Eq>{d.physBioGMEFormula}</Eq>
+              <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed">
+                {d.physBioGMEExplain}
+              </p>
+            </div>
+
+            {/* χ(Ā) selection rule */}
+            <div className="mb-8">
+              <h3 className="text-base font-semibold mb-3">{d.physBioChiTitle}</h3>
+              <p className="text-sm text-foreground-muted mb-3 max-w-3xl leading-relaxed">
+                {d.physBioChiDesc}
+              </p>
+              <Eq>{d.physBioChiFormula}</Eq>
+              <p className="text-sm text-foreground-muted max-w-3xl leading-relaxed">
+                {d.physBioChiExplain}
+              </p>
+            </div>
+
+            {/* Superposition violation */}
+            <div className="mb-8">
+              <h3 className="text-base font-semibold mb-3">{d.physBioSuperTitle}</h3>
+              <p className="text-sm text-foreground-muted mb-3 max-w-3xl leading-relaxed">
+                {d.physBioSuperDesc}
+              </p>
+              <Eq>{d.physBioSuperFormula}</Eq>
+              <p className="text-sm text-foreground-muted mb-2 max-w-3xl leading-relaxed">
+                {cite(d.physBioSuperExplain)}
+              </p>
+              <Link href={`/${locale_key}/evidence/superposition`} className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+                {d.physBioSuperLink}
+              </Link>
+            </div>
+
+            {/* Tissue-specific resonance */}
+            <div className="mb-8">
+              <h3 className="text-base font-semibold mb-3">{d.physBioTissueTitle}</h3>
+              <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+                {d.physBioTissueDesc}
+              </p>
+              <div className="overflow-x-auto mb-4">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-card-border">
+                      <th className="text-left py-2 pr-4 font-semibold">Tissue</th>
+                      <th className="text-left py-2 pr-4 font-semibold">Channels</th>
+                      <th className="text-left py-2 pr-4 font-semibold">χ</th>
+                      <th className="text-left py-2 font-semibold">Reason</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {d.physBioTissues.map((row: { tissue: string; channels: string; chi: string; reason: string }) => (
+                      <tr key={row.tissue} className="border-b border-card-border/50">
+                        <td className="py-2 pr-4 font-medium">{row.tissue}</td>
+                        <td className="py-2 pr-4 font-mono-num text-xs text-foreground-muted">{row.channels}</td>
+                        <td className="py-2 pr-4 text-foreground-muted">{row.chi}</td>
+                        <td className="py-2 text-foreground-muted">{row.reason}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Geometric prediction verifications */}
+            <div>
+              <h3 className="text-base font-semibold mb-2">{d.physBioVerifyTitle}</h3>
+              <p className="text-xs text-foreground-muted mb-4">{d.physBioVerifySub}</p>
+              <div className="grid gap-3 max-w-4xl">
+                {d.physBioVerifications.map((v: { id: string; title: string; desc: string; level: string }) => (
+                  <article key={v.id} className="rounded-lg border border-card-border bg-card-bg p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="font-mono-num text-xs text-green-600 dark:text-green-400">{v.id}</span>
+                      <h4 className="text-sm font-semibold">{v.title}</h4>
+                      <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/30">
+                        {v.level}
+                      </span>
+                    </div>
+                    <p className="text-sm text-foreground-muted leading-relaxed">{cite(v.desc)}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </CollapsibleSection>
+
+          {/* B2: Solar-Biological Connection */}
+          <CollapsibleSection id="solar-biological" title={d.solarBioTitle} subtitle={d.solarBioSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.solarBioLead}
+            </p>
+
+            {/* Solar cycle → birth rate cyclicity */}
+            <div className="mb-8">
+              <h3 className="text-base font-semibold mb-3">{d.solarBioCycleTitle}</h3>
+              <p className="text-sm text-foreground-muted mb-2 max-w-3xl leading-relaxed">
+                {cite(d.solarBioCycleDesc)}
+              </p>
+              <div className="border-l-4 border-amber-500/40 rounded-r-lg bg-card p-4 mt-3 mb-3">
+                <p className="text-sm text-foreground-muted leading-relaxed">{d.solarBioCycleNote}</p>
+              </div>
+            </div>
+
+            {/* Birth timing → disease risk */}
+            <div className="mb-8">
+              <h3 className="text-base font-semibold mb-3">{d.solarBioBirthTitle}</h3>
+              <p className="text-sm text-foreground-muted mb-2 max-w-3xl leading-relaxed">
+                {cite(d.solarBioBirthDesc)}
+              </p>
+              <div className="border-l-4 border-blue-500/40 rounded-r-lg bg-card p-4 mt-3 mb-3">
+                <p className="text-sm text-foreground-muted leading-relaxed">{d.solarBioBirthNote}</p>
+              </div>
+            </div>
+
+            {/* Seasonal amplitude dampening */}
+            <div>
+              <h3 className="text-base font-semibold mb-3">{d.solarBioDampenTitle}</h3>
+              <p className="text-sm text-foreground-muted mb-2 max-w-3xl leading-relaxed">
+                {cite(d.solarBioDampenDesc)}
+              </p>
+              <div className="border-l-4 border-purple-500/40 rounded-r-lg bg-card p-4 mt-3">
+                <p className="text-sm text-foreground-muted leading-relaxed">{d.solarBioDampenNote}</p>
+              </div>
+            </div>
+          </CollapsibleSection>
+
           {/* Three-level architecture */}
           <section id="architecture" className="mb-14">
             <h2 className="text-xl font-semibold mb-4">{d.archTitle}</h2>
@@ -4088,6 +4644,34 @@ export default async function ModelPage({
             </div>
           </CollapsibleSection>
 
+          {/* Two Independent Susceptibilities */}
+          <CollapsibleSection id="dual-susceptibility" title={d.dualSuscTitle}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.dualSuscDesc}
+            </p>
+            <div className="grid gap-6 md:grid-cols-2">
+              {[d.dualSuscLeft, d.dualSuscRight].map((col: { title: string; type: string; channel: string; threshold: string; tests: string; pathways: string }, i: number) => (
+                <div key={i} className="rounded-lg border border-border p-5" style={{ borderTopWidth: 4, borderTopColor: i === 0 ? "#3b82f6" : "#8b5cf6" }}>
+                  <h4 className="text-base font-bold mb-4 text-foreground">{col.title}</h4>
+                  <div className="space-y-3">
+                    {([
+                      [d.dualSuscLabelType, col.type],
+                      [d.dualSuscLabelChannel, col.channel],
+                      [d.dualSuscLabelThreshold, col.threshold],
+                      [d.dualSuscLabelTests, col.tests],
+                      [d.dualSuscLabelPathways, col.pathways],
+                    ] as [string, string][]).map(([label, value], j) => (
+                      <div key={j}>
+                        <span className="text-xs font-semibold uppercase tracking-wide text-foreground-muted">{label}</span>
+                        <p className="text-sm text-foreground mt-0.5">{value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CollapsibleSection>
+
           {/* Three-channel model */}
           <CollapsibleSection id="two-channel-model" title={d.twoChTitle} subtitle={d.twoChSub} defaultOpen>
 
@@ -4183,6 +4767,36 @@ export default async function ModelPage({
               </Link>
             </p>
           </CollapsibleSection>
+
+          {/* Two-Level Prediction Model */}
+          <section id="two-level-prediction" className="mb-14">
+            <h2 className="text-xl font-semibold mb-1">{d.twoLevelTitle}</h2>
+            <p className="text-xs text-foreground-muted italic mb-4">{d.twoLevelSub}</p>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.twoLevelLead}
+            </p>
+
+            <div className="grid gap-4 sm:grid-cols-2 max-w-4xl mb-6">
+              <article className="rounded-xl border-2 border-blue-500/30 bg-blue-500/5 p-5">
+                <h3 className="font-semibold text-sm text-blue-600 dark:text-blue-400 mb-2">{d.twoLevelL1}</h3>
+                <p className="text-xs text-foreground-muted leading-relaxed">{d.twoLevelL1Desc}</p>
+              </article>
+              <article className="rounded-xl border-2 border-red-500/30 bg-red-500/5 p-5">
+                <h3 className="font-semibold text-sm text-red-600 dark:text-red-400 mb-2">{d.twoLevelL2}</h3>
+                <p className="text-xs text-foreground-muted leading-relaxed">{d.twoLevelL2Desc}</p>
+              </article>
+            </div>
+
+            <p className="text-sm text-foreground-muted mb-4 max-w-3xl">{d.twoLevelCombined}</p>
+
+            <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 max-w-3xl mb-4">
+              <p className="text-xs text-foreground-muted">{d.twoLevelCaveat}</p>
+            </div>
+
+            <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-4 max-w-3xl">
+              <p className="text-xs text-foreground-muted">{d.twoLevelDiagnostic}</p>
+            </div>
+          </section>
 
           {/* Testosterone → TFR Threshold Model */}
           <section id="testosterone-threshold" className="mb-14">

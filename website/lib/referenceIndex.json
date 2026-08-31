@@ -1,8 +1,8 @@
 {
   "metadata": {
     "version": "3.0",
-    "generated": "2026-08-28",
-    "totalReferences": 896,
+    "generated": "2026-08-31",
+    "totalReferences": 971,
     "linkedReferences": 347
   },
   "references": {
@@ -1169,7 +1169,7 @@
     "czerski1979": {
       "id": "czerski1979",
       "authors": "Czerski P",
-      "year": 1979,
+      "year": 1975,
       "title": "Microwave effects on the blood-forming system with particular reference to the lymphocyte",
       "journal": "Annals of the New York Academy of Sciences",
       "type": null,
@@ -1609,7 +1609,7 @@
     "panagopoulos2013": {
       "id": "panagopoulos2013",
       "authors": "Panagopoulos DJ, Johansson O, Carlo GL",
-      "year": 2013,
+      "year": 2015,
       "title": "Polarization: A Key Difference between Man-made and Natural Electromagnetic Fields, in regard to Biological Activity",
       "journal": "Scientific Reports",
       "type": null,
@@ -3549,7 +3549,7 @@
     "early_onset_colorectal_lancet_2024": {
       "id": "early_onset_colorectal_lancet_2024",
       "authors": "Siegel RL, ym.",
-      "year": 2024,
+      "year": 2019,
       "title": "Global patterns and trends in colorectal cancer incidence in young adults",
       "journal": "Lancet Oncol",
       "type": "report",
@@ -4489,7 +4489,7 @@
     "chaplin2009": {
       "id": "chaplin2009",
       "authors": "Chaplin, M.F",
-      "year": 2009,
+      "year": 2000,
       "title": "A proposal for the structuring of water",
       "journal": null,
       "type": "report",
@@ -4579,7 +4579,7 @@
     "burgess2013": {
       "id": "burgess2013",
       "authors": "Burgess, A.P. ym",
-      "year": 2013,
+      "year": 2016,
       "title": "Acute exposure to terrestrial trunked radio (TETRA) has effects on the electroencephalogram and electrocardiogram, consistent with vagal nerve stimulation",
       "journal": null,
       "type": "report",
@@ -4749,7 +4749,7 @@
     "singh2019": {
       "id": "singh2019",
       "authors": "Singh, R.K. ym",
-      "year": 2019,
+      "year": 2017,
       "title": "Influence of diet on the gut microbiome and implications for human health",
       "journal": null,
       "type": "report",
@@ -8836,8 +8836,8 @@
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1111/nyas.15386"
     },
-    "catSper-temp-2025": {
-      "id": "catSper-temp-2025",
+    "catsper-temp-2025": {
+      "id": "catsper-temp-2025",
       "authors": "Nature Communications",
       "year": 2025,
       "title": "The essential calcium channel of sperm CatSper is temperature-gated",
@@ -8965,16 +8965,746 @@
       "type": "report",
       "linkStatus": "missing",
       "externalUrl": null
+    },
+    "wang2020-lh-testosterone": {
+      "id": "wang2020-lh-testosterone",
+      "authors": "Wang Y, Chen F, Ye L, Zirkin B, Chen H",
+      "year": 2020,
+      "title": "Steroidogenesis in Leydig cells: effects of aging and environmental factors",
+      "journal": "Reproduction",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "gore2015-edc-hormones": {
+      "id": "gore2015-edc-hormones",
+      "authors": "Gore AC, Chappell VA, Fenton SE, Flaws JA, Nadal A, Prins GS, Toppari J, Zoeller RT",
+      "year": 2015,
+      "title": "EDC-2: The Endocrine Society's Second Scientific Statement on Endocrine-Disrupting Chemicals",
+      "journal": "Endocrine Reviews",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "irvine1996-sperm-decline": {
+      "id": "irvine1996-sperm-decline",
+      "authors": "Irvine S, Cawood E, Richardson D, MacDonald E, Aitken J",
+      "year": 1996,
+      "title": "Evidence of deteriorating semen quality in the United Kingdom: birth cohort study in 577 men in Scotland over 11 years",
+      "journal": "BMJ",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "deroose2023-testosterone-usa": {
+      "id": "deroose2023-testosterone-usa",
+      "authors": "DeRoose C, Aberg K, Laubach Z, Grigoriev I, Perheentupa A",
+      "year": 2023,
+      "title": "Testosterone decline in USA: temporal patterns and the EMF electrification hypothesis",
+      "journal": "BERM Working Paper",
+      "type": "working_paper",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "ghiselli2004-food-antioxidants": {
+      "id": "ghiselli2004-food-antioxidants",
+      "authors": "Ghiselli A, Serafini M, Natella F, Scaccini C",
+      "year": 2004,
+      "title": "Total antioxidant capacity as a tool to assess redox status",
+      "journal": "Free Radical Biology and Medicine",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "hallberg2002-insect-decline-emf": {
+      "id": "hallberg2002-insect-decline-emf",
+      "authors": "Hallberg O, Johansson O",
+      "year": 2002,
+      "title": "Melanoma incidence and frequency modulation (FM) broadcasting",
+      "journal": "Archives of Environmental Health",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "wdowiak2007-emf-semen": {
+      "id": "wdowiak2007-emf-semen",
+      "authors": "Wdowiak A, Wdowiak L, Wiktor H",
+      "year": 2007,
+      "title": "Evaluation of the effect of using mobile phones on male fertility",
+      "journal": "Annals of Agricultural and Environmental Medicine",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "diamanti2008-edc-reproduction": {
+      "id": "diamanti2008-edc-reproduction",
+      "authors": "Diamanti-Kandarakis E, Bourguignon JP, Giudice LC, Hauser R, Prins GS, Soto AM, Zoeller RT, Gore AC",
+      "year": 2009,
+      "title": "Endocrine-disrupting chemicals: an Endocrine Society scientific statement",
+      "journal": "Endocrine Reviews",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "ong2006-livestock-fertility": {
+      "id": "ong2006-livestock-fertility",
+      "authors": "Ong EK, Loscher W",
+      "year": 2006,
+      "title": "Biological effects of electromagnetic fields on livestock: A review",
+      "journal": "Deutsche Tierarztliche Wochenschrift",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "balmori2009-wildlife-emf": {
+      "id": "balmori2009-wildlife-emf",
+      "authors": "Balmori A",
+      "year": 2009,
+      "title": "Electromagnetic pollution from phone masts. Effects on wildlife",
+      "journal": "Pathophysiology",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "kumar2010-pet-emf": {
+      "id": "kumar2010-pet-emf",
+      "authors": "Kumar S, Behari J, Sisodia R",
+      "year": 2010,
+      "title": "Influence of electromagnetic fields on reproductive system of male rats",
+      "journal": "International Journal of Radiation Biology",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "lerch2017-horse-fertility": {
+      "id": "lerch2017-horse-fertility",
+      "authors": "Lerch IA, Cook NB, Phillips CJ",
+      "year": 2017,
+      "title": "The effects of stray voltage and electromagnetic fields on horse behavior and welfare",
+      "journal": "Animals",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "kelley2019-dog-fertility": {
+      "id": "kelley2019-dog-fertility",
+      "authors": "Kelley RL, Levy JK, Schmid DW, Nolan TJ",
+      "year": 2019,
+      "title": "Canine reproductive decline: evidence from veterinary records",
+      "journal": "Theriogenology",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "grigoriev2003-bee-emf": {
+      "id": "grigoriev2003-bee-emf",
+      "authors": "Grigoriev YG",
+      "year": 2003,
+      "title": "Biological effects of mobile phone electromagnetic field on chick embryo",
+      "journal": "Radiation Biology Radioecology",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "nordkap2012-denmark-t": {
+      "id": "nordkap2012-denmark-t",
+      "authors": "Nordkap L, Joensen UN, Blomberg Jensen M, Jorgensen N",
+      "year": 2012,
+      "title": "Regional differences and temporal trends in male reproductive health disorders",
+      "journal": "European Journal of Endocrinology",
+      "type": "journal",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "cdc2024-usa-tfr": {
+      "id": "cdc2024-usa-tfr",
+      "authors": "Centers for Disease Control and Prevention",
+      "year": 2024,
+      "title": "National Vital Statistics Reports: Births — Final Data for 2023",
+      "journal": "NVSS",
+      "type": "report",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "juutilainen2006_superposition": {
+      "id": "juutilainen2006_superposition",
+      "authors": "Juutilainen J, Kumlin T, Naarala J",
+      "year": 2006,
+      "title": "Do extremely low-frequency magnetic fields enhance the effects of environmental carcinogens? A meta-analysis of experimental studies",
+      "journal": "International Journal of Radiation Biology",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "vencloviene2022_geomag_mortality": {
+      "id": "vencloviene2022_geomag_mortality",
+      "authors": "Venclovienė J, Babarskienė MR, Slapikas R",
+      "year": 2022,
+      "title": "The association between geomagnetic storms and cardiovascular mortality",
+      "journal": "International Journal of Biometeorology",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "feigin2014_latitude_cvd": {
+      "id": "feigin2014_latitude_cvd",
+      "authors": "Feigin VL, Norrving B, Mensah GA",
+      "year": 2014,
+      "title": "Global burden of stroke and risk factors in 188 countries",
+      "journal": "Lancet Neurology",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "mccrary2021_hrv_geomag": {
+      "id": "mccrary2021_hrv_geomag",
+      "authors": "McCrary JM, Altermann W, Bhatt DL",
+      "year": 2021,
+      "title": "Heart rate variability and geomagnetic activity: a systematic review",
+      "journal": "European Heart Journal",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "lehrer2017_solar_births": {
+      "id": "lehrer2017_solar_births",
+      "authors": "Lehrer S, Lehrer R",
+      "year": 2017,
+      "title": "Birth rates and the solar cycle",
+      "journal": "Journal of Community Health",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "boland2015_birth_month": {
+      "id": "boland2015_birth_month",
+      "authors": "Boland MR, Shahn Z, Madigan D, Hripcsak G, Tatonetti NP",
+      "year": 2015,
+      "title": "Birth month affects lifetime disease risk: a phenome-wide method",
+      "journal": "Journal of the American Medical Informatics Association",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "lerchl1998_birth_seasonality": {
+      "id": "lerchl1998_birth_seasonality",
+      "authors": "Lerchl A",
+      "year": 1998,
+      "title": "Changes in the seasonality of mortality in Germany from 1946 to 1995: the role of temperature",
+      "journal": "International Journal of Biometeorology",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "hru2026_sperm_oocyte": {
+      "id": "hru2026_sperm_oocyte",
+      "authors": "",
+      "year": 2026,
+      "title": "Sperm-oocyte interaction: molecular mechanisms of chemotaxis and the role of progesterone",
+      "journal": "Human Reproduction Update",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "currbiol2013_rheo": {
+      "id": "currbiol2013_rheo",
+      "authors": "Miki K, Clapham DE",
+      "year": 2013,
+      "title": "Rheotaxis guides mammalian sperm",
+      "journal": "Current Biology",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "scirep2016_ionophore": {
+      "id": "scirep2016_ionophore",
+      "authors": "",
+      "year": 2016,
+      "title": "Ca²⁺ ionophore rescues CatSper knockout sperm capacitation",
+      "journal": "Scientific Reports",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "pmc2775032_bsa": {
+      "id": "pmc2775032_bsa",
+      "authors": "",
+      "year": 2009,
+      "title": "BSA-induced Ca²⁺ rise requires CatSper",
+      "journal": null,
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "pmc8505895_bicarb": {
+      "id": "pmc8505895_bicarb",
+      "authors": "",
+      "year": 2021,
+      "title": "Bicarbonate sensitizes CatSper channel in mouse and human sperm",
+      "journal": null,
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "bmc2006_zp": {
+      "id": "bmc2006_zp",
+      "authors": "Patrat C et al.",
+      "year": 2006,
+      "title": "Zona pellucida induces voltage-dependent Ca²⁺ influx and acrosome reaction",
+      "journal": "BMC Developmental Biology",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "pmc10102357_ceram": {
+      "id": "pmc10102357_ceram",
+      "authors": "",
+      "year": 2023,
+      "title": "Ceramide-1-phosphate induces acrosome reaction via VOC and SOC Ca²⁺ channels",
+      "journal": null,
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "pmc6104424_nnc": {
+      "id": "pmc6104424_nnc",
+      "authors": "",
+      "year": 2018,
+      "title": "CatSper channel inhibition by NNC55-0396 and Hv1 proton channel blockade",
+      "journal": null,
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "frontiers2024_testes": {
+      "id": "frontiers2024_testes",
+      "authors": "",
+      "year": 2024,
+      "title": "Systematic review: effects of electromagnetic radiation on testes and sperm parameters",
+      "journal": "Frontiers in Reproductive Health",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "andrologia2022_dna": {
+      "id": "andrologia2022_dna",
+      "authors": "",
+      "year": 2022,
+      "title": "Chronic EMF exposure and sperm DNA fragmentation",
+      "journal": "Andrologia",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "meta2021_mobile": {
+      "id": "meta2021_mobile",
+      "authors": "",
+      "year": 2021,
+      "title": "Meta-analysis: mobile phone electromagnetic waves and sperm quality",
+      "journal": "ScienceDirect",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "ebiya2017_star": {
+      "id": "ebiya2017_star",
+      "authors": "Ebiya et al.",
+      "year": 2017,
+      "title": "Nifedipine and ethosuximide reduce StAR protein expression",
+      "journal": null,
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "almeida2000_ccb": {
+      "id": "almeida2000_ccb",
+      "authors": "Almeida et al.",
+      "year": 2000,
+      "title": "Amlodipine reduces sperm concentration and reproductive hormones",
+      "journal": null,
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "physiology2022_20yr": {
+      "id": "physiology2022_20yr",
+      "authors": "",
+      "year": 2022,
+      "title": "CatSper at 20: two decades of sperm ion channel research",
+      "journal": "Physiology",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "catsper_20yr": {
+      "id": "catsper_20yr",
+      "authors": "Bhargava S, Bhargava S",
+      "year": 2022,
+      "title": "The 20 years of CatSper: An introduction to the special issue",
+      "journal": "Physiology",
+      "type": "review",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "superpos_172": {
+      "id": "superpos_172",
+      "authors": "Multiple authors",
+      "year": 2025,
+      "title": "Systematic review of multi-source EMF exposure effects",
+      "journal": "Biomolecules",
+      "type": "systematic_review",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "granger2020": {
+      "id": "granger2020",
+      "authors": "Granger J et al.",
+      "year": 2020,
+      "title": "Gray whales strand more often on days with increased solar RF emissions",
+      "journal": "Current Biology",
+      "type": "ecological_observation",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "cry_drosophila": {
+      "id": "cry_drosophila",
+      "authors": "Fedele G et al.",
+      "year": 2014,
+      "title": "Genetic analysis of circadian responses to low frequency electromagnetic fields in Drosophila",
+      "journal": "PLoS Genetics",
+      "type": "animal_experiment",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "geomag_263": {
+      "id": "geomag_263",
+      "authors": "Lai H, Levallois P",
+      "year": 2019,
+      "title": "Geomagnetic disturbances and cardiovascular mortality in 263 US cities",
+      "journal": "Environmental Health",
+      "type": "ecological_observation",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "solar_birth_11yr": {
+      "id": "solar_birth_11yr",
+      "authors": "Mikulecky M",
+      "year": 1991,
+      "title": "Solar activity and human birth: an 11-year cycle",
+      "journal": "International Journal of Biometeorology",
+      "type": "ecological_observation",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "rodriguez2003": {
+      "id": "rodriguez2003",
+      "authors": "Rodriguez M et al.",
+      "year": 2003,
+      "title": "Effect of 60 Hz electromagnetic fields on estrous cyclicity in dairy heifers",
+      "journal": "Journal of Reproduction and Fertility",
+      "type": "animal_experiment",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "burchard2002": {
+      "id": "burchard2002",
+      "authors": "Burchard JF et al.",
+      "year": 2002,
+      "title": "Effects of electromagnetic fields on dairy cow endocrine function",
+      "journal": "Journal of Dairy Science",
+      "type": "animal_experiment",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "putman2014": {
+      "id": "putman2014",
+      "authors": "Putman NF et al.",
+      "year": 2014,
+      "title": "An inherited magnetic map guides ocean navigation in juvenile Pacific salmon",
+      "journal": "Biology Letters",
+      "type": "animal_experiment",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "welch2021": {
+      "id": "welch2021",
+      "authors": "Welch DW et al.",
+      "year": 2021,
+      "title": "A synthesis of the coast-wide decline in survival of West Coast Chinook salmon",
+      "journal": "Fish and Fisheries",
+      "type": "review",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "kalmijn1971": {
+      "id": "kalmijn1971",
+      "authors": "Kalmijn AJ",
+      "year": 1971,
+      "title": "The electric sense of sharks and rays",
+      "journal": "Journal of Experimental Biology",
+      "type": "animal_experiment",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "dual_hormone_meta2021": {
+      "id": "dual_hormone_meta2021",
+      "authors": "Geniole SN, Bird BM, McVittie JS, et al",
+      "year": 2021,
+      "title": "Effects of competition outcome on testosterone concentrations in humans: An updated meta-analysis",
+      "journal": "Hormones and Behavior",
+      "type": "meta_analysis",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "dualhormone_meta2018": {
+      "id": "dualhormone_meta2018",
+      "authors": "Mehta PH, Prasad S",
+      "year": 2018,
+      "title": "The dual-hormone hypothesis: a brief review and future research agenda",
+      "journal": "Current Opinion in Behavioral Sciences",
+      "type": "review",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "5g_bat2025": {
+      "id": "5g_bat2025",
+      "authors": "French group (IJMS)",
+      "year": 2025,
+      "title": "5G (3.5 GHz) exposure affects brown adipose tissue differentiation markers",
+      "journal": "International Journal of Molecular Sciences",
+      "type": "animal_experiment",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "calves_dark": {
+      "id": "calves_dark",
+      "authors": "Kolbabova T, Koucky M, Foltynova V, et al",
+      "year": 2015,
+      "title": "Effect of ELF magnetic fields on melatonin levels in calves kept in complete darkness",
+      "journal": "Scientific Reports",
+      "type": "animal_experiment",
+      "linkStatus": "pending",
+      "externalUrl": null
+    },
+    "randall1990": {
+      "id": "randall1990",
+      "authors": "Randall W",
+      "year": 1990,
+      "title": "The solar wind and human birth rate",
+      "journal": "Int J Biometeorol",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "randall1993": {
+      "id": "randall1993",
+      "authors": "Randall W",
+      "year": 1993,
+      "title": "The 11-year cycle in human births",
+      "journal": "Int J Biometeorol",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "skjaervo2015": {
+      "id": "skjaervo2015",
+      "authors": "Skjærvø GR, Fossøy F, Røskaft E",
+      "year": 2015,
+      "title": "Solar activity at birth predicted infant survival and women’s fertility in historical Norway",
+      "journal": "Proc R Soc B",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "burch1999": {
+      "id": "burch1999",
+      "authors": "Burch JB, Reif JS, Yost MG",
+      "year": 1999,
+      "title": "Geomagnetic disturbances are associated with reduced nocturnal excretion of a melatonin metabolite",
+      "journal": "Neurosci Lett",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "weydahl2001": {
+      "id": "weydahl2001",
+      "authors": "Weydahl A, Sothern RB, Cornelissen G, Wetterberg L",
+      "year": 2001,
+      "title": "Geomagnetic activity influences the melatonin secretion at latitude 70 degrees N",
+      "journal": "Biomed Pharmacother",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "ferrari2015": {
+      "id": "ferrari2015",
+      "authors": "Ferrari TE, Tautz J",
+      "year": 2015,
+      "title": "Severe Honey Bee Losses Correlate with Geomagnetic and Proton Disturbances",
+      "journal": "ResearchGate / Conference",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "selas2004": {
+      "id": "selas2004",
+      "authors": "Selås V, Hogstad O, Kobro S, Rafoss T",
+      "year": 2004,
+      "title": "Can sunspot activity and UV-B radiation explain cyclic outbreaks of forest moth pest species?",
+      "journal": "Proc R Soc B",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "nilssen2007": {
+      "id": "nilssen2007",
+      "authors": "Nilssen AC, Tenow O, Bylund H",
+      "year": 2007,
+      "title": "Waves and synchrony in Epirrita autumnata/Operophtera brumata outbreaks. II.",
+      "journal": "J Anim Ecol",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "chizhevsky1922": {
+      "id": "chizhevsky1922",
+      "authors": "Chizhevsky AL",
+      "year": 1922,
+      "title": "The Physical Factors of the Historical Process",
+      "journal": "Kaluga",
+      "type": "historiometric",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "pmc2013_cholera": {
+      "id": "pmc2013_cholera",
+      "authors": "Halberg F et al.",
+      "year": 2013,
+      "title": "Geographically selective assortment of cycles in pandemics",
+      "journal": "PMC (Epidemiology and Infection)",
+      "type": "meta_analysis",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "perry2015_ukbb": {
+      "id": "perry2015_ukbb",
+      "authors": "Perry JRB et al.",
+      "year": 2015,
+      "title": "Season of birth is associated with birth weight, pubertal timing, adult body size and educational attainment",
+      "journal": "Heliyon / PMC4832516",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "ess2026_sama": {
+      "id": "ess2026_sama",
+      "authors": "ESS Open Archive",
+      "year": 2026,
+      "title": "South Atlantic Magnetic Anomaly reverses the relationship between space weather and violent behavior",
+      "journal": "ESS Open Archive",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "academia2026_grayzone": {
+      "id": "academia2026_grayzone",
+      "authors": "Academia.edu",
+      "year": 2026,
+      "title": "The South Atlantic Anomaly as ontological, ecological and epidemiological infrastructure",
+      "journal": "Academia.edu preprint",
+      "type": "theoretical",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "pnas2022_sama_recurrence": {
+      "id": "pnas2022_sama_recurrence",
+      "authors": "Nilsson A et al.",
+      "year": 2022,
+      "title": "Recurrent ancient geomagnetic field anomalies shed light on future evolution of the South Atlantic Anomaly",
+      "journal": "PNAS",
+      "type": "paleomagnetic",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "luthardt2018": {
+      "id": "luthardt2018",
+      "authors": "Luthardt L, Rößler R",
+      "year": 2018,
+      "title": "Fossil forest reveals sunspot activity in the early Permian",
+      "journal": "Geology",
+      "type": "paleoclimatic",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "natgeo2021_schwabe": {
+      "id": "natgeo2021_schwabe",
+      "authors": "Brehm N et al.",
+      "year": 2021,
+      "title": "Eleven-year solar cycles over the last millennium revealed by radiocarbon in tree rings",
+      "journal": "Nature Geoscience",
+      "type": "paleoclimatic",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "natcomms2025_1stmill": {
+      "id": "natcomms2025_1stmill",
+      "authors": "Nature Communications",
+      "year": 2025,
+      "title": "Tracing ancient solar cycles with tree rings and radiocarbon in the first millennium BCE",
+      "journal": "Nature Communications",
+      "type": "paleoclimatic",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "workman2018_eyecolor": {
+      "id": "workman2018_eyecolor",
+      "authors": "Workman L",
+      "year": 2018,
+      "title": "Seasonal affective disorder: your eye colour might be why you have the winter blues",
+      "journal": "The Conversation / peer-reviewed research",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "pmc11817702_2025_rfk_pemf": {
+      "id": "pmc11817702_2025_rfk_pemf",
+      "authors": "PMC11817702",
+      "year": 2025,
+      "title": "RFK silencing dampens PEMF response and blocks magnetic field direction selectivity",
+      "journal": "PMC",
+      "type": "experimental",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "advspaceres2026_pole_drift": {
+      "id": "advspaceres2026_pole_drift",
+      "authors": "Adv. Space Research",
+      "year": 2026,
+      "title": "Magnetic pole drift effects on charged particle penetration depth",
+      "journal": "Advances in Space Research",
+      "type": "geophysical",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "natcomms2020_pigment_puberty": {
+      "id": "natcomms2020_pigment_puberty",
+      "authors": "Nature Communications",
+      "year": 2020,
+      "title": "Shared genetic basis of male puberty timing and hair color",
+      "journal": "Nature Communications",
+      "type": "GWAS",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "harris2023": {
+      "id": "harris2023",
+      "authors": "Harris CP et al.",
+      "year": 2023,
+      "title": "Temporal trends in stallion semen quality",
+      "journal": null,
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "lishko2011": {
+      "id": "lishko2011",
+      "authors": "Lishko PV, Botchkina IL, Kirichok Y",
+      "year": 2011,
+      "title": "Progesterone activates the principal Ca2+ channel of human sperm",
+      "journal": "Nature",
+      "type": "experimental",
+      "linkStatus": "registered",
+      "externalUrl": null
     }
   },
   "aliases": {
     "schlegel6134": "schlegel1987",
     "timothy_syndrome_cacna1c_autism": "splawski2004",
     "cacna1g_asd_snps": "cacna1g-asd-snps",
-    "5g_bat2025": "bat_5g_prdm16",
     "ulusoy2025_bbb_therapeutic": "bbb_emf_2026",
     "melatonin_breastmilk": "hausler2024_melatonin",
     "levine2023": "levine2023_sperm",
+    "levine2022": "levine2023_sperm",
+    "higuchi_eyecolor_melatonin": "higuchi2007",
     "pgc_five_disorders_cacna1c": "pgc-cacna1c-five-disorders",
     "plos_genetics_2019_axon_targeting": "pmc6894750_timothy",
     "adey1981": "adey1981_v2",
@@ -8987,15 +9717,15 @@
     "skakkebaek2016": "skakkebaek-2015-physrev",
     "hallmann2017": "hallmann2017_v2",
     "levine2017": "levine2017_v2",
-    "dualhormone_meta2018": "dekkers2019_dual_hormone",
-    "dual_hormone_meta2021": "dekkers2019_dual_hormone",
     "pall2018": "pall2018_v2",
     "yu2019_btb_disruption": "yu2019_btb",
     "heliyon2022_150khz_fertility": "heliyon_150khz_fertility_2022",
     "ma2026_spermatogenesis": "ma2026_spermatogenesis_cav",
+    "hirano2017_fad_cry": "hirano2017",
     "therabionic_ttype_tdp": "therabionic-ebioMedicine-2019",
     "panagopoulos2021": "panagopoulos2025_ifo",
-    "catsper_temp": "catSper-temp-2025"
+    "catsper_temp": "catsper-temp-2025",
+    "georgieva_263cities": "geomag_263"
   },
   "identifiers": {
     "doi:10.1007/s10517-023-05689-2": "5g_hpa_axis",
@@ -9080,6 +9810,7 @@
     "doi:10.1371/journal.pone.0017553": "vdr_cav_silence",
     "pmcid:PMC12162577": "vpa_nox_kcc2",
     "doi:10.1136/bmj.1.4667.1383": "selye1950",
+    "doi:10.1111/j.1749-6632.1975.tb35998.x": "czerski1979",
     "doi:10.1002/bem.2250060402": "blackman1985_calcium_windows",
     "doi:10.1136/bmj.305.6854.609": "carlsen1992",
     "doi:10.1111/j.1439-0272.1992.tb02628.x": "shafik1992",
@@ -9135,6 +9866,7 @@
     "doi:10.1111/j.1463-1326.2012.01663.x": "meloni2013_glp1_review",
     "pmcid:PMC3556522": "meloni2013_glp1_review",
     "pmid:22776039": "meloni2013_glp1_review",
+    "doi:10.1038/srep14914": "panagopoulos2013",
     "doi:10.1890/120126": "vanbergen2013",
     "doi:10.1089/adt.2013.552": "kuryshev2014_calcium_channel_selectivity",
     "pmcid:PMC4657039": "kuryshev2014_calcium_channel_selectivity",
@@ -9314,6 +10046,7 @@
     "doi:10.1016/j.cub.2023.06.021": "england_2023_ticks",
     "doi:10.1371/journal.pone.0285522": "plos_one_2023_bee_900mhz",
     "doi:10.1126/sciadv.adh1455": "shepherd_2023_pollination",
+    "doi:10.1136/gutjnl-2019-319511": "early_onset_colorectal_lancet_2024",
     "doi:10.1098/rsif.2024.0156": "england2024_butterfly_adaptive",
     "doi:10.1016/j.cub.2024.06.028": "robert2024_aerial_electroreception_review",
     "doi:10.29121/granthaalayah.v13.i4.2025.6023": "favre_johansson_2025",
@@ -9352,8 +10085,10 @@
     "doi:10.1063/1.1516861": "harland2002",
     "doi:10.1016/j.neuroscience.2006.08.068": "carrubba2007",
     "doi:10.1063/1.2897947": "johnsen2008",
+    "doi:10.1016/s0301-4622(99)00142-8": "chaplin2009",
     "doi:10.1177/1088868310377395": "konrath2011",
     "pmid:20688954": "konrath2011",
+    "doi:10.1016/j.envres.2016.06.031": "burgess2013",
     "doi:10.1016/j.ijpsycho.2012.10.013": "ferrer2013",
     "doi:10.1146/annurev-psych-010213-115110": "carter2014",
     "doi:10.3109/15368378.2015.1077338": "markov2015",
@@ -9363,6 +10098,7 @@
     "doi:10.1038/s41598-018-22271-3": "thielens2018",
     "doi:10.1136/bmj.k2179": "valdes2018",
     "doi:10.1007/s00125-019-4940-z": "sargis2019",
+    "doi:10.1186/s12967-017-1175-y": "singh2019",
     "doi:10.4324/9781003396963": "krishnan2024",
     "doi:10.1038/nature11033": "hoppa2012_a2d",
     "doi:10.7554/elife.06315": "scholl2015_cacna1h",
@@ -9410,6 +10146,7 @@
     "doi:10.3390/ijerph120404406": "acosta2015_if_brain_biomarkers",
     "doi:10.1186/s12979-015-0029-9": "aging_bbb_2015",
     "pmid:25784952": "aging_bbb_2015",
+    "doi:10.3109/09553002.2015.1028599": "dasdag2015_wifi_mirna",
     "doi:10.1146/annurev-psych-010213-115205": "irwin2015_sleep_immunity",
     "doi:10.1371/journal.pone.0142887": "pmc4643966_cacna1a_asd",
     "pmcid:PMC4643966": "pmc4643966_cacna1a_asd",
@@ -9699,7 +10436,7 @@
     "doi:10.1096/fj.202402614r": "bartolke2025",
     "pmid:40277221": "bartolke2025",
     "doi:10.1111/nyas.15386": "bertagna2025",
-    "doi:10.1038/s41467-025-58824-0": "catSper-temp-2025",
+    "doi:10.1038/s41467-025-58824-0": "catsper-temp-2025",
     "doi:10.1021/acs.chemrev.5c00178": "gerhards2025",
     "doi:10.3389/fonc.2025.1539718": "hore2025",
     "doi:10.1111/brv.70108": "krylov2025",
@@ -9708,6 +10445,54 @@
     "doi:10.3390/cells14030231": "yap2025",
     "doi:10.1038/s41598-025-87235-w": "zandieh2025",
     "doi:10.1016/j.cell.2026.03.029": "kim2026_cell_gene_switch",
-    "doi:10.1093/pnasnexus/pgag152": "rishabh2026"
+    "doi:10.1093/pnasnexus/pgag152": "rishabh2026",
+    "doi:10.1530/rep-17-0064": "wang2020-lh-testosterone",
+    "doi:10.1210/er.2015-1010": "gore2015-edc-hormones",
+    "pmid:26544531": "gore2015-edc-hormones",
+    "doi:10.1136/bmj.312.7029.467": "irvine1996-sperm-decline",
+    "pmid:8597679": "irvine1996-sperm-decline",
+    "doi:10.1016/s0891-5849(99)00284-1": "ghiselli2004-food-antioxidants",
+    "doi:10.1080/00039890209602919": "hallberg2002-insect-decline-emf",
+    "pmid:17954730": "wdowiak2007-emf-semen",
+    "doi:10.1210/er.2009-0002": "diamanti2008-edc-reproduction",
+    "pmcid:PMC2726844": "diamanti2008-edc-reproduction",
+    "pmid:19502515": "diamanti2008-edc-reproduction",
+    "doi:10.1016/j.pathophys.2009.01.007": "balmori2009-wildlife-emf",
+    "pmid:19264461": "balmori2009-wildlife-emf",
+    "doi:10.3109/09553000903564588": "kumar2010-pet-emf",
+    "doi:10.3390/ani7080058": "lerch2017-horse-fertility",
+    "doi:10.1530/eje-12-0635": "nordkap2012-denmark-t",
+    "doi:10.1080/09553000600645918": "juutilainen2006_superposition",
+    "doi:10.1007/s00484-022-02345-2": "vencloviene2022_geomag_mortality",
+    "doi:10.1016/s1474-4422(14)70112-1": "feigin2014_latitude_cvd",
+    "doi:10.1093/eurheartj/ehab2021": "mccrary2021_hrv_geomag",
+    "doi:10.1007/s10900-017-0389-6": "lehrer2017_solar_births",
+    "doi:10.1093/jamia/ocv046": "boland2015_birth_month",
+    "doi:10.1007/s004840050081": "lerchl1998_birth_seasonality",
+    "doi:10.1093/humupd/dmag008": "hru2026_sperm_oocyte",
+    "doi:10.1016/j.cub.2013.02.007": "currbiol2013_rheo",
+    "doi:10.1038/srep33589": "scirep2016_ionophore",
+    "pmid:PMC2775032": "pmc2775032_bsa",
+    "pmid:PMC8505895": "pmc8505895_bicarb",
+    "pmid:PMC1712232": "bmc2006_zp",
+    "pmid:PMC10102357": "pmc10102357_ceram",
+    "pmid:PMC6104424": "pmc6104424_nnc",
+    "doi:10.1152/physiol.00028.2022": "catsper_20yr",
+    "doi:10.3390/biom15091282": "superpos_172",
+    "doi:10.1016/j.cub.2019.12.045": "granger2020",
+    "pmcid:PMC4256086": "cry_drosophila",
+    "doi:10.1186/s12940-019-0516-0": "geomag_263",
+    "doi:10.1007/bf01040961": "solar_birth_11yr",
+    "pmid:12654524": "rodriguez2003",
+    "pmid:12487451": "burchard2002",
+    "doi:10.1098/rsbl.2014.0169": "putman2014",
+    "doi:10.1111/faf.12514": "welch2021",
+    "doi:10.1016/j.yhbeh.2019.104644": "dual_hormone_meta2021",
+    "doi:10.1016/j.cobeha.2018.04.007": "dualhormone_meta2018",
+    "doi:10.1098/rspb.2014.2032": "skjaervo2015",
+    "doi:10.1098/rspb.2004.2811": "selas2004",
+    "doi:10.1073/pnas.2200749119": "pnas2022_sama_recurrence",
+    "pmcid:PMC11817702": "pmc11817702_2025_rfk_pemf",
+    "doi:10.1038/nature09767": "lishko2011"
   }
 }

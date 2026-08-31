@@ -7,7 +7,7 @@ import { pickCopy } from "@/lib/i18n";
 const TOP_SPECIES: { icon: BermIconName; name: Record<string, string>; lag: number; stat: string; r: number }[] = [
   { icon: "honeybee", name: { en: "Honeybee", fi: "Mehiläinen", ja: "ミツバチ", fr: "Abeille", ko: "꿀벌" }, lag: 2, stat: "20/23", r: 0.27 },
   { icon: "bird", name: { en: "Bird", fi: "Lintu", ja: "鳥類", fr: "Oiseau", ko: "조류" }, lag: 2.5, stat: "21/27", r: 0.18 },
-  { icon: "toad", name: { en: "Toad", fi: "Rupikonna", ja: "ヒキガエル", fr: "Crapaud", ko: "두꺼비" }, lag: 6, stat: "UK", r: 0.36 },
+  { icon: "toad", name: { en: "Frog", fi: "Sammakko", ja: "カエル", fr: "Grenouille", ko: "개구리" }, lag: 6, stat: "UK", r: 0.36 },
 ];
 
 const COPY = {
@@ -15,31 +15,31 @@ const COPY = {
     heading: "Sentinel cascade: species declines precede humans",
     human: "Human",
     yearSuffix: "y",
-    footnote: "23 countries: bee mortality predicts TFR decline with 2yr lag (p = 0.006)",
+    footnote: "12 species tracked across land, water, and transitional axes. EMF gradient: r = 0.909 across 7 species with quantifiable reproductive decline rates vs EMF exposure score.",
   },
   fi: {
     heading: "Sentinellikaskadi: lajien laskut edeltävät ihmistä",
     human: "Ihminen",
     yearSuffix: "v",
-    footnote: "23 maata: mehiläiskuolleisuus ennustaa TFR-laskua 2v viiveellä (p = 0,006)",
+    footnote: "12 lajia seurannassa maa-, vesi- ja siirtymäakseleilla. EMF-gradientti: r = 0,909 seitsemässä lajissa, joilla on kvantifioitava lisääntymislaskuaste vs. EMF-altistusarvo.",
   },
   ja: {
     heading: "センチネルカスケード：種の減少はヒトに先行する",
     human: "ヒト",
     yearSuffix: "年",
-    footnote: "23カ国：ミツバチ死亡率が2年の遅延でTFR低下を予測（p = 0.006）",
+    footnote: "陸上・水中・遷移軸にわたる12種を追跡。EMF勾配：定量可能な生殖低下率 vs EMF曝露スコアで7種にわたりr = 0.909。",
   },
   fr: {
     heading: "Cascade sentinelle : le déclin des espèces précède l'humain",
     human: "Humain",
     yearSuffix: "a",
-    footnote: "23 pays : la mortalité des abeilles prédit le déclin du TFR avec un délai de 2 ans (p = 0,006)",
+    footnote: "12 espèces suivies sur les axes terrestre, aquatique et transitionnel. Gradient EMF : r = 0,909 sur 7 espèces avec taux de déclin reproductif quantifiable vs score d'exposition EMF.",
   },
   ko: {
     heading: "감시종 연쇄: 종의 감소가 인간보다 선행",
     human: "인간",
     yearSuffix: "년",
-    footnote: "23개국: 꿀벌 사망률이 2년 지연으로 TFR 감소를 예측 (p = 0.006)",
+    footnote: "육상·수중·전환 축에 걸쳐 12종 추적. EMF 기울기: 정량 가능한 생식 감소율 vs EMF 노출 점수로 7종에 걸쳐 r = 0.909.",
   },
 } as const;
 

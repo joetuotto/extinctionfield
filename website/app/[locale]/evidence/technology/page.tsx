@@ -209,7 +209,7 @@ const COPY = {
     elfBody:
       "The power grid does not merely add 50/60 Hz exposure. It upregulates voltage-gated calcium channel expression in neurons (P/Q, N, and R subtypes increase after 8–10 days of ELF exposure — [[ref:sun2016_elf_vgcc|PMC4757866]]). This means the power grid makes every cell more sensitive to every other EMF source: WiFi, 4G, 5G, LED, Bluetooth.",
     elfImplication:
-      "This explains why residential electricity consumption is the strongest predictor of fertility decline (RMSE 0.522) while mobile phone density is the weakest (RMSE 1.053): electricity measures the priming state, not just one exposure source.",
+      "This explains why residential electricity consumption is the strongest predictor of fertility decline (full-model RMSE 0.522) while mobile phone density is the weakest (RMSE 1.053): electricity measures the priming state, not just one exposure source.",
     elfWithout: "Without ELF priming (Amish, Tsimane)",
     elfWithoutDetail:
       "VGCC expression = baseline. RF stimulus → Ca²⁺ response = X. CaMKII threshold NOT crossed. Recovery complete.",
@@ -339,7 +339,7 @@ const COPY = {
     elfBody:
       "Sähköverkko ei ainoastaan lisää 50/60 Hz -altistusta. Se ylössäätelee jänniteherkkien kalsiumkanavien ekspressiota hermosoluissa (P/Q-, N- ja R-alatyypit kasvavat 8–10 päivän ELF-altistuksen jälkeen — [[ref:sun2016_elf_vgcc|PMC4757866]]). Tämä tarkoittaa, että sähköverkko tekee jokaisesta solusta herkemmän kaikille muille EMF-lähteille: WiFi, 4G, 5G, LED, Bluetooth.",
     elfImplication:
-      "Tämä selittää miksi asuinalueen sähkönkulutus on hedelmällisyyslaskun vahvin ennustaja (RMSE 0,522) kun taas matkapuhelintiheys on heikoin (RMSE 1,053): sähkönkulutus mittaa priming-tilaa, ei pelkkää yhtä altistuslähdettä.",
+      "Tämä selittää miksi asuinalueen sähkönkulutus on hedelmällisyyslaskun vahvin ennustaja (kokonaismallin RMSE 0,522) kun taas matkapuhelintiheys on heikoin (RMSE 1,053): sähkönkulutus mittaa priming-tilaa, ei pelkkää yhtä altistuslähdettä.",
     elfWithout: "Ilman ELF-primingia (Amish, Tsimane)",
     elfWithoutDetail:
       "VGCC-ekspressio = perusviiva. RF-stimulus → Ca²⁺-vaste = X. CaMKII-kynnys EI ylity. Palautuminen täydellinen.",
@@ -469,7 +469,7 @@ const COPY = {
     elfBody:
       "電力網は単に50/60 Hz曝露を加えるだけではない。神経細胞の電位依存性カルシウムチャネル発現を上方制御する（8～10日間のELF曝露後にP/Q、N、Rサブタイプが増加 — [[ref:sun2016_elf_vgcc|PMC4757866]]）。これは、電力網がすべての細胞を他のあらゆるEMF源（WiFi、4G、5G、LED、Bluetooth）に対してより敏感にすることを意味する。",
     elfImplication:
-      "これは住宅の電力消費が生殖能力低下の最も強い予測因子（RMSE 0.522）である一方、携帯電話密度が最も弱い（RMSE 1.053）理由を説明する：電力消費はプライミング状態を測定しており、単一の曝露源だけではない。",
+      "これは住宅の電力消費が生殖能力低下の最も強い予測因子（全モデルRMSE 0.522）である一方、携帯電話密度が最も弱い（RMSE 1.053）理由を説明する：電力消費はプライミング状態を測定しており、単一の曝露源だけではない。",
     elfWithout: "ELFプライミングなし（Amish、Tsimane）",
     elfWithoutDetail:
       "VGCC発現 = ベースライン。RF刺激 → Ca²⁺応答 = X。CaMKII閾値は超えない。回復は完全。",
@@ -599,7 +599,7 @@ const COPY = {
     elfBody:
       "Le réseau électrique n'ajoute pas seulement une exposition à 50/60 Hz. Il augmente l'expression des canaux calciques voltage-dépendants dans les neurones (les sous-types P/Q, N et R augmentent après 8 à 10 jours d'exposition ELF — [[ref:sun2016_elf_vgcc|PMC4757866]]). Cela signifie que le réseau électrique rend chaque cellule plus sensible à toutes les autres sources d'EMF : WiFi, 4G, 5G, LED, Bluetooth.",
     elfImplication:
-      "Cela explique pourquoi la consommation résidentielle d'électricité est le plus fort prédicteur du déclin de la fertilité (RMSE 0,522) tandis que la densité de téléphones portables est le plus faible (RMSE 1,053) : l'électricité mesure l'état de priming, pas seulement une source d'exposition.",
+      "Cela explique pourquoi la consommation résidentielle d'électricité est le plus fort prédicteur du déclin de la fertilité (RMSE (modèle complet) 0,522) tandis que la densité de téléphones portables est le plus faible (RMSE 1,053) : l'électricité mesure l'état de priming, pas seulement une source d'exposition.",
     elfWithout: "Sans priming ELF (Amish, Tsimane)",
     elfWithoutDetail:
       "Expression VGCC = base. Stimulus RF → réponse Ca²⁺ = X. Seuil CaMKII NON franchi. Récupération complète.",
@@ -729,7 +729,7 @@ const COPY = {
     elfBody:
       "전력망은 단지 50/60 Hz 노출을 추가하는 데 그치지 않는다. 신경세포의 전압개폐 칼슘 채널 발현을 상향 조절한다(8~10일간 ELF 노출 후 P/Q, N 및 R 아형 증가 — [[ref:sun2016_elf_vgcc|PMC4757866]]). 이는 전력망이 모든 세포를 다른 모든 EMF 발생원(WiFi, 4G, 5G, LED, Bluetooth)에 더 민감하게 만든다는 뜻이다.",
     elfImplication:
-      "이것은 주거 전력 소비가 생식력 감소의 가장 강력한 예측 인자(RMSE 0.522)이고 휴대전화 밀도가 가장 약한(RMSE 1.053) 이유를 설명한다: 전력 소비는 단일 노출원이 아닌 프라이밍 상태를 측정한다.",
+      "이것은 주거 전력 소비가 생식력 감소의 가장 강력한 예측 인자(전체 모델 RMSE 0.522)이고 휴대전화 밀도가 가장 약한(RMSE 1.053) 이유를 설명한다: 전력 소비는 단일 노출원이 아닌 프라이밍 상태를 측정한다.",
     elfWithout: "ELF 프라이밍 없이 (Amish, Tsimane)",
     elfWithoutDetail:
       "VGCC 발현 = 기저치. RF 자극 → Ca²⁺ 반응 = X. CaMKII 역치 미초과. 회복 완전.",

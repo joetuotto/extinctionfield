@@ -8,7 +8,7 @@ import {
   EPISTEMIC_LEVELS,
 } from "@/lib/eyeColorData";
 import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
-import { pickCopy } from "@/lib/i18n";
+import { pickCopy, pickField } from "@/lib/i18n";
 import { StudyCitation } from "@/components/StudyCitation";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 
@@ -402,7 +402,6 @@ export default async function NutritionPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const isFi = locale === "fi";
   const d = pickCopy(COPY, locale);
 
   return (
@@ -449,7 +448,7 @@ export default async function NutritionPage({
                   </span>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-foreground">
-                      {isFi ? card.title_fi : card.title_en}
+                      {pickField(card, "title", locale)}
                     </h3>
                     <p
                       className="text-xs font-medium mt-1 px-2 py-0.5 rounded-full inline-block"
@@ -460,7 +459,7 @@ export default async function NutritionPage({
                     >
                       {card.level}
                       {levelInfo &&
-                        ` — ${isFi ? levelInfo.label_fi : levelInfo.label_en}`}
+                        ` — ${pickField(levelInfo, "label", locale)}`}
                     </p>
                     <p className="text-sm text-foreground-muted mt-2">
                       {card.referenceId ? (
@@ -482,7 +481,7 @@ export default async function NutritionPage({
                       </span>
                     </p>
                     <p className="mt-3 text-sm text-foreground leading-relaxed">
-                      {isFi ? card.finding_fi : card.finding_en}
+                      {pickField(card, "finding", locale)}
                     </p>
                     {(card.berm_relevance_en || card.berm_relevance_fi) && (
                       <>
@@ -490,9 +489,7 @@ export default async function NutritionPage({
                           {d.bermRelevance}
                         </p>
                         <p className="text-sm text-foreground-muted leading-relaxed">
-                          {isFi
-                            ? card.berm_relevance_fi
-                            : card.berm_relevance_en}
+                          {pickField(card, "berm_relevance", locale)}
                         </p>
                       </>
                     )}
@@ -537,9 +534,7 @@ export default async function NutritionPage({
                   </td>
                   <td className="p-3 text-foreground-muted">{mod.target}</td>
                   <td className="p-3 text-foreground-muted">
-                    {isFi
-                      ? mod.deficiency_effect_fi
-                      : mod.deficiency_effect_en}
+                    {pickField(mod, "deficiency_effect", locale)}
                   </td>
                   <td className="p-3 text-foreground-muted whitespace-nowrap">
                     {mod.referenceIds?.length

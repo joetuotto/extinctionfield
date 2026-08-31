@@ -204,6 +204,18 @@ const t = {
     s5qsd8:
       "Limitation: the [[ref:dual_hormone_meta2021|dual-hormone meta-analysis]] effect size is small (r=-.061). The proxy chain (EMF → T↓ → approach↓ → TFR↓) has not been tested as a whole. Each link is individually documented but the full chain is inference.",
 
+    // S5 Fertilization five gates
+    s5fertTitle: "Fertilization probability: five gates in series",
+    s5fertLead:
+      "Each gate is Ca²⁺-dependent and individually vulnerable to EMF disruption:",
+    s5fertG1: "Capacitation (CatSper-dependent Ca²⁺ oscillation)",
+    s5fertG2: "Rheotaxis (CatSper-dependent rolling against flow)",
+    s5fertG3: "Chemotaxis (progesterone + temperature gradient via CatSper)",
+    s5fertG4: "Acrosome reaction (dual Ca²⁺: CatSper + IP₃ stores)",
+    s5fertG5: "Oocyte activation (sperm-delivered Ca²⁺ oscillation factor)",
+    s5fertConclusion:
+      "A 10% reduction at each gate compounds: 0.9⁵ = 0.59 → 41% reduction in fertilization probability from individually minor disruptions.",
+
     // S5b Cell Size × Frequency
     s5bTitle: "Cell Size × Frequency Resonance",
     s5bIntro:
@@ -367,16 +379,16 @@ const t = {
     // S12 Cross-Sectional Validation
     s12Title: "Cross-Sectional Validation v19.1",
     s12Intro:
-      "Formula discovery across 54 countries (2022 data) provides an independent validation of the temporal model. The cross-sectional formula uses two EMF proxy variables and one binary threshold to predict national TFR with LOOCV RMSE 0.522.",
+      "Formula discovery across 54 countries (2022 data, TFR range 0.78–6.25, sd = 1.35) provides an independent validation of the temporal model. The cross-sectional formula uses two EMF proxy variables and one binary threshold to predict national TFR with LOOCV RMSE 0.522 (skill score 0.61 vs mean predictor).",
     s12Formula:
       "The two-channel EMF index combines residential electricity consumption (ELF proxy) and fixed broadband subscriptions (RF proxy):",
     s12Access:
       "Electricity access acts as a binary biological exposure boundary. The IFO-VGIC activation threshold (10⁻⁵ V/m) is exceeded at the operating distance of every household electrical device. Populations without electricity are not exposed.",
     s12Stats: "Validation statistics:",
-    s12Stat1: "LOOCV RMSE = 0.522 (leave-one-country-out cross-validation)",
-    s12Stat2: "R² = 0.851",
-    s12Stat3: "74% of countries within 0.5 children of prediction",
-    s12Stat4: "Residential electricity is the BEST single predictor (RMSE 0.533)",
+    s12Stat1: "LOOCV RMSE = 0.522 (full model, leave-one-country-out cross-validation)",
+    s12Stat2: "R² = 0.851 (n = 54; captures electrification threshold, not EMF-specific effect)",
+    s12Stat3: "Skill score = 0.61 (1 − RMSE/sd, improvement over mean predictor)",
+    s12Stat4: "Residential electricity is the BEST single predictor (univariate RMSE 0.533)",
     s12Stat5: "Mobile phone subscriptions are the WEAKEST (RMSE 1.053)",
     s12Mobile:
       "The mobile phone paradox: if the mechanism were 'information access → family planning choices', the information device (mobile phone) should be the strongest predictor. It is the weakest. The infrastructure variable (residential electricity) predicts best — consistent with a physical exposure mechanism, not an information mechanism.",
@@ -384,6 +396,10 @@ const t = {
       "For partially electrified countries, the electrified sub-population TFR can be estimated from the binary mixture model:",
     s12Collinearity:
       "GDP collinearity: EMF proxies and GDP per capita are correlated (r = 0.87). In linear models, neither is significant when the other is controlled. This is a symmetric identification problem — it does not favor GDP over EMF. Three structural differences break the symmetry: (1) binary electrification threshold, (2) mobile phone paradox, (3) sentinel species respond to EMF but not GDP.",
+    s12Limitation:
+      "Honest assessment: R² = 0.851 primarily reflects the demographic transition gradient (Niger → Korea), not EMF-specific variance. Among high-income OECD countries (n ≈ 36), electricity consumption alone explains near-zero variance in TFR (R² ≈ 0.0002). The cross-sectional formula captures the electrification threshold — the binary gateway from pre-industrial to industrial fertility — not a dose-response within electrified populations. This makes the cross-section BERM's weakest independent evidence line. The stronger evidence comes from: (1) mechanistic pathways with regulatory-validated non-thermal effects, (2) pharmacological dose-response (melatonin, testosterone), (3) genetic selection markers (CatSper, VGCC), and (4) sentinel species under controlled conditions. The cross-section's value is structural: the mobile phone paradox and the electricity-over-GDP prediction are discriminating, even though the aggregate fit is confounded.",
+    s12DataNote:
+      "Replication data: 54-country sample roster with observed TFR, electricity consumption, broadband subscriptions, and model predictions available at /data/cross_section_manifest.csv. Source: UN WPP 2024 (TFR), OWID/IEA (electricity), ITU (broadband).",
     s12Caveat:
       "Cross-sectional analysis cannot determine causal direction. Discriminating evidence comes from sentinel species, natural experiments, and populations without electricity.",
     s13Title: "Nested χ (Population Model)",
@@ -629,6 +645,18 @@ const t = {
     s5qsd8:
       "Rajoitus: [[ref:dual_hormone_meta2021|dual-hormone -meta-analyysin]] efektikoko on pieni (r=-0,061). Proxy-ketjua (EMF → T↓ → lähestyminen↓ → TFR↓) ei ole testattu kokonaisuutena. Jokainen lenkki on erikseen dokumentoitu, mutta koko ketju on päättelyä.",
 
+    // S5 Hedelmöityksen viisi porttia
+    s5fertTitle: "Hedelmöitystodennäköisyys: viisi porttia sarjassa",
+    s5fertLead:
+      "Jokainen portti on Ca²⁺-riippuvainen ja yksittäin altis EMF-häiriölle:",
+    s5fertG1: "Kapasitaatio (CatSper-riippuvainen Ca²⁺-oskillaatio)",
+    s5fertG2: "Reotaksis (CatSper-riippuvainen rullaus virtausta vastaan)",
+    s5fertG3: "Kemotaksis (progesteroni + lämpötilagradientti CatSperin kautta)",
+    s5fertG4: "Akrosomireaktio (kaksois-Ca²⁺: CatSper + IP₃-varastot)",
+    s5fertG5: "Munasolun aktivaatio (siittiön tuoma Ca²⁺-oskillaatiotekijä)",
+    s5fertConclusion:
+      "10 %:n lasku kussakin portissa kumuloituu: 0,9⁵ = 0,59 → 41 %:n lasku hedelmöitystodennäköisyydessä yksittäin vähäisistä häiriöistä.",
+
     // S5b Solukoko × Taajuus
     s5bTitle: "Solukoko × taajuusresonanssi",
     s5bIntro:
@@ -799,10 +827,10 @@ const t = {
     s12Access:
       "Sähkön saatavuus toimii binäärisenä biologisen altistumisen rajana. IFO-VGIC-aktivaatiokynnys (10⁻⁵ V/m) ylittyy jokaisen kotitalouden sähkölaitteen käyttöetäisyydellä. Ilman sähköä olevat väestöt eivät altistu.",
     s12Stats: "Validointitilastot:",
-    s12Stat1: "LOOCV RMSE = 0,522 (yksi maa kerrallaan pois -ristiinvalidointi)",
-    s12Stat2: "R² = 0,851",
-    s12Stat3: "74 % maista 0,5 lapsen sisällä ennusteesta",
-    s12Stat4: "Asumisen sähkönkulutus on PARAS yksittäinen ennustaja (RMSE 0,533)",
+    s12Stat1: "LOOCV RMSE = 0,522 (kokonaismalli, yksi maa kerrallaan pois -ristiinvalidointi)",
+    s12Stat2: "R² = 0,851 (n = 54; kuvaa sähköistyskynnystä, ei EMF-spesifistä vaikutusta)",
+    s12Stat3: "Taitoarvo = 0,61 (1 − RMSE/sd, parannus keskiarvoennustajaan nähden)",
+    s12Stat4: "Asumisen sähkönkulutus on PARAS yksittäinen ennustaja (univariaatti-RMSE 0,533)",
     s12Stat5: "Matkapuhelintilaukset ovat HEIKOIN (RMSE 1,053)",
     s12Mobile:
       "Matkapuhelinparadoksi: jos mekanismi olisi 'tiedon saatavuus → perhesuunnitteluvalinnat', tietolaitteen (matkapuhelin) pitäisi olla vahvin ennustaja. Se on heikoin. Infrastruktuurimuuttuja (asumisen sähkönkulutus) ennustaa parhaiten — yhdenmukaista fyysisen altistusmekanismin, ei tietomekanismin kanssa.",
@@ -810,6 +838,10 @@ const t = {
       "Osittain sähköistetyille maille sähköistetyn osaväestön TFR voidaan estimoida binäärisestä sekoitusmallista:",
     s12Collinearity:
       "BKT-kollineaarisuus: EMF-proxy-muuttujat ja BKT/cap korreloivat (r = 0,87). Lineaarisissa malleissa kumpikaan ei ole merkitsevä toisen kontrolloinnin jälkeen. Tämä on symmetrinen identifikaatio-ongelma — se ei suosi BKT:tä EMF:n yli. Kolme rakenteellista eroa murtavat symmetrian: (1) binäärinen sähköistymiskynnys, (2) matkapuhelinparadoksi, (3) sentinelkilajit reagoivat EMF:ään mutta eivät BKT:hen.",
+    s12Limitation:
+      "Rehellinen arvio: R² = 0,851 kuvastaa pääasiassa demografisen transition gradienttia (Niger → Korea), ei EMF-spesifistä varianssia. Korkean tulotason OECD-maissa (n ≈ 36) sähkönkulutus yksinään selittää lähes nollan TFR-varianssista (R² ≈ 0,0002). Poikkileikkauskaava kuvaa sähköistyskynnystä — binääristä porttia esiteollisesta teolliseen hedelmällisyyteen — ei annos-vastetta sähköistettyjen väestöjen sisällä. Tämä tekee poikkileikkauksesta BERM:n heikoimman itsenäisen evidenssilinjan. Vahvempi evidenssi tulee: (1) mekanismipoluilta, joilla on regulatiivisesti validoituja ei-termisiä vaikutuksia, (2) farmakologisesta annos-vasteesta (melatoniini, testosteroni), (3) geneettisistä selektiomarkkereista (CatSper, VGCC) ja (4) sentinelkilajeista kontrolloiduissa olosuhteissa. Poikkileikkauksen arvo on rakenteellinen: matkapuhelinparadoksi ja sähkö > BKT -ennuste ovat erottelevia, vaikka kokonaisistuvuus on sekoitettu.",
+    s12DataNote:
+      "Replikaatiodata: 54 maan otosluettelo (havaittu TFR, sähkönkulutus, laajakaistatilaukset, mallin ennusteet) saatavilla osoitteessa /data/cross_section_manifest.csv. Lähteet: UN WPP 2024 (TFR), OWID/IEA (sähkö), ITU (laajakaista).",
     s12Caveat:
       "Poikkileikkausanalyysi ei voi määrittää kausaalisuuntaa. Erotteleva evidenssi tulee sentinelkilajeista, luonnollisista kokeista ja väestöistä ilman sähköä.",
     s13Title: "Sisäkkäinen χ (populaatiomalli)",
@@ -988,6 +1020,19 @@ const t = {
     s5qsd6: "モデルのbehav ≈ (P₁ × P₂ × P₃ × P₄)^(1/4)は幾何平均近似です。各P_iは同じ指数関数的ホルモン依存性を共有するため、4つの積の幾何平均は個々のホルモン項の幾何平均に帰着します。",
     s5qsd7: "デュアルホルモン補正（[[ref:mehta2015|Mehta & Prasad 2015]]、[[ref:dual_hormone_meta2021|メタN=8538、r=-.061]]）：Tの行動的発現には低コルチゾールが必要。EMFは同時にTを低下させ（[[ref:who_t_meta|WHO meta: SMD 0.87]]）かつコルチゾールを上昇させ（[[ref:pawlak2025|Pawlak 2025: d=1.88]]）、接近行動に二重ロックを生じます。",
     s5qsd8: "制限：[[ref:dual_hormone_meta2021|デュアルホルモンメタ分析]]の効果量は小さい（r=-.061）。プロキシチェーン（EMF → T↓ → 接近↓ → TFR↓）は全体としてテストされていません。各リンクは個別に文書化されていますが、完全なチェーンは推論です。",
+
+    // S5 受精の5つのゲート
+    s5fertTitle: "受精確率：直列の5つのゲート",
+    s5fertLead:
+      "各ゲートはCa²⁺依存性であり、個別にEMF撹乱に脆弱です：",
+    s5fertG1: "受精能獲得（CatSper依存性Ca²⁺振動）",
+    s5fertG2: "走流性（CatSper依存性の流れに逆らう回転）",
+    s5fertG3: "走化性（CatSperを介したプロゲステロン＋温度勾配）",
+    s5fertG4: "先体反応（二重Ca²⁺：CatSper＋IP₃貯蔵）",
+    s5fertG5: "卵子活性化（精子が運ぶCa²⁺振動因子）",
+    s5fertConclusion:
+      "各ゲートで10%の低下が複合：0.9⁵ = 0.59 → 個別には軽微な撹乱から受精確率が41%低下。",
+
     s5bTitle: "細胞サイズ×周波数共鳴",
     s5bIntro: "[[ref:ttfields_cell_size_frequency|TTFieldsの臨床データ]]は細胞サイズと最適撹乱周波数の間の定量的関係を明らかにします。この関係はFDAフェーズIIIデータからキャリブレーションされ、BERMの標的組織に外挿されています。",
     s5bFormula: "ここでK ≈ 3.7 Hz·m、[[ref:ttfields_cell_size_frequency|4つのがん種にわたるTTFields臨床データ]]からキャリブレーション。",
@@ -1077,14 +1122,16 @@ const t = {
     s12Formula: "2チャネルEMFインデックスは住宅電力消費（ELFプロキシ）と固定ブロードバンド加入（RFプロキシ）を組み合わせます：",
     s12Access: "電力アクセスはバイナリ生物学的曝露境界として機能します。IFO-VGIC活性化閾値（10⁻⁵ V/m）はすべての家庭電気機器の動作距離で超過されます。電力のない集団は曝露されません。",
     s12Stats: "検証統計：",
-    s12Stat1: "LOOCV RMSE = 0.522（1カ国除外交差検証）",
-    s12Stat2: "R² = 0.851",
-    s12Stat3: "74%の国が予測から0.5以内",
-    s12Stat4: "住宅電力消費が最良の単一予測因子（RMSE 0.533）",
+    s12Stat1: "LOOCV RMSE = 0.522（完全モデル、1カ国除外交差検証）",
+    s12Stat2: "R² = 0.851（n = 54；電化閾値を捉えており、EMF固有の効果ではない）",
+    s12Stat3: "スキルスコア = 0.61（1 − RMSE/sd、平均予測に対する改善）",
+    s12Stat4: "住宅電力消費が最良の単一予測因子（単変量RMSE 0.533）",
     s12Stat5: "携帯電話加入が最も弱い（RMSE 1.053）",
     s12Mobile: "携帯電話パラドックス：メカニズムが「情報アクセス→家族計画の選択」であれば、情報デバイス（携帯電話）が最強の予測因子であるべきです。最も弱いのです。インフラ変数（住宅電力消費）が最もよく予測します — 情報メカニズムではなく物理的曝露メカニズムと一致します。",
     s12Electrified: "部分的に電化された国では、電化サブ集団のTFRはバイナリ混合モデルから推定できます：",
     s12Collinearity: "GDP共線性：EMFプロキシとGDP/capitaは相関（r = 0.87）。線形モデルでは、一方を制御すると他方は有意でなくなります。これは対称的な識別問題であり、EMFに不利な証拠ではありません。3つの構造的差異が対称性を破ります：(1)バイナリ電化閾値、(2)携帯電話パラドックス、(3)センチネル種はEMFに反応するがGDPには反応しない。",
+    s12Limitation: "正直な評価：R² = 0.851は主に人口転換の勾配（ニジェール→韓国）を反映しており、EMF固有の分散ではありません。高所得OECD諸国（n ≈ 36）では、電力消費量だけではTFRの分散をほぼ説明できません（R² ≈ 0.0002）。横断的公式は電化閾値 — 前工業社会から工業社会への二値的なゲートウェイ — を捉えており、電化された集団内での用量反応ではありません。これにより横断分析はBERMの最も弱い独立した証拠線となります。より強い証拠は：(1)規制当局が検証した非熱効果を持つメカニズム経路、(2)薬理学的用量反応（メラトニン、テストステロン）、(3)遺伝的選択マーカー（CatSper、VGCC）、(4)管理条件下のセンチネル種から来ます。横断分析の価値は構造的です：携帯電話パラドックスと電力＞GDP予測は弁別的であり、集計的な適合が交絡していても意味があります。",
+    s12DataNote: "再現データ：54カ国サンプル名簿（観測TFR、電力消費、ブロードバンド加入、モデル予測）は/data/cross_section_manifest.csvで入手可能。出典：UN WPP 2024（TFR）、OWID/IEA（電力）、ITU（ブロードバンド）。",
     s12Caveat: "横断的分析は因果方向を決定できません。弁別的証拠はセンチネル種、自然実験、電力のない集団から得られます。",
     s13Title: "ネストされたχ（集団モデル）",
     s13Intro: "χ選択則は、生物学的バックグラウンド変数（光学的、分子的）がグループ間で異なる場合に集団に一般化されます。経路AとCからの結合された生殖抑制、集団固有のχプロファイルで変調：",
@@ -1258,6 +1305,19 @@ const t = {
     s5qsd6: "Le behav du modèle ≈ (P₁ × P₂ × P₃ × P₄)^(1/4) est l'approximation de la moyenne géométrique. Chaque P_i partage les mêmes dépendances hormonales exponentielles.",
     s5qsd7: "Correction double hormone ([[ref:mehta2015|Mehta & Prasad 2015]], [[ref:dual_hormone_meta2021|méta N=8538, r=-,061]]) : l'expression comportementale de T nécessite un cortisol bas. L'EMF abaisse simultanément T ([[ref:who_t_meta|OMS méta : SMD 0,87]]) ET élève le cortisol ([[ref:pawlak2025|Pawlak 2025 : d=1,88]]), créant un double verrou sur le comportement d'approche.",
     s5qsd8: "Limitation : la taille d'effet de la [[ref:dual_hormone_meta2021|méta-analyse double hormone]] est petite (r=-,061). La chaîne proxy (EMF → T↓ → approche↓ → TFR↓) n'a pas été testée dans son ensemble.",
+
+    // S5 Cinq portes de fécondation
+    s5fertTitle: "Probabilité de fécondation : cinq portes en série",
+    s5fertLead:
+      "Chaque porte est Ca²⁺-dépendante et individuellement vulnérable à la perturbation EMF :",
+    s5fertG1: "Capacitation (oscillation Ca²⁺ dépendante de CatSper)",
+    s5fertG2: "Rhéotaxie (roulement contre le flux dépendant de CatSper)",
+    s5fertG3: "Chimiotaxie (progestérone + gradient de température via CatSper)",
+    s5fertG4: "Réaction acrosomique (double Ca²⁺ : CatSper + réserves IP₃)",
+    s5fertG5: "Activation de l'ovocyte (facteur d'oscillation Ca²⁺ apporté par le spermatozoïde)",
+    s5fertConclusion:
+      "Une réduction de 10 % à chaque porte se compose : 0,9⁵ = 0,59 → réduction de 41 % de la probabilité de fécondation à partir de perturbations individuellement mineures.",
+
     s5bTitle: "Résonance taille cellulaire × fréquence",
     s5bIntro: "Les [[ref:ttfields_cell_size_frequency|données cliniques TTFields]] révèlent une relation quantitative entre la taille cellulaire et la fréquence de perturbation optimale. Cette relation est calibrée à partir des données de phase III de la FDA et extrapolée aux tissus cibles du BERM.",
     s5bFormula: "où K ≈ 3,7 Hz·m, calibré à partir des [[ref:ttfields_cell_size_frequency|données cliniques TTFields sur quatre types de cancer]].",
@@ -1347,14 +1407,16 @@ const t = {
     s12Formula: "L'indice EMF à deux canaux combine la consommation résidentielle d'électricité (proxy ELF) et les abonnements haut débit fixe (proxy RF) :",
     s12Access: "L'accès à l'électricité agit comme une frontière binaire d'exposition biologique. Le seuil d'activation IFO-VGIC (10⁻⁵ V/m) est dépassé à la distance d'exploitation de chaque appareil électrique ménager. Les populations sans électricité ne sont pas exposées.",
     s12Stats: "Statistiques de validation :",
-    s12Stat1: "RMSE LOOCV = 0,522 (validation croisée en laissant un pays de côté)",
-    s12Stat2: "R² = 0,851",
-    s12Stat3: "74 % des pays à moins de 0,5 enfant de la prédiction",
-    s12Stat4: "La consommation résidentielle d'électricité est le MEILLEUR prédicteur unique (RMSE 0,533)",
+    s12Stat1: "RMSE LOOCV = 0,522 (modèle complet, validation croisée en laissant un pays de côté)",
+    s12Stat2: "R² = 0,851 (n = 54 ; capture le seuil d'électrification, pas l'effet spécifique aux CEM)",
+    s12Stat3: "Score de compétence = 0,61 (1 − RMSE/sd, amélioration par rapport au prédicteur moyen)",
+    s12Stat4: "La consommation résidentielle d'électricité est le MEILLEUR prédicteur unique (RMSE univarié 0,533)",
     s12Stat5: "Les abonnements mobiles sont les PLUS FAIBLES (RMSE 1,053)",
     s12Mobile: "Le paradoxe du téléphone mobile : si le mécanisme était « accès à l'information → choix de planification familiale », l'appareil d'information (téléphone mobile) devrait être le prédicteur le plus fort. C'est le plus faible. La variable d'infrastructure (consommation résidentielle d'électricité) prédit le mieux — cohérent avec un mécanisme d'exposition physique, pas un mécanisme d'information.",
     s12Electrified: "Pour les pays partiellement électrifiés, le TFR de la sous-population électrifiée peut être estimé à partir du modèle de mélange binaire :",
     s12Collinearity: "Colinéarité PIB : les proxies EMF et le PIB par habitant sont corrélés (r = 0,87). Dans les modèles linéaires, ni l'un ni l'autre n'est significatif quand l'autre est contrôlé. C'est un problème d'identification symétrique — il ne favorise pas le PIB par rapport à l'EMF. Trois différences structurelles brisent la symétrie : (1) seuil binaire d'électrification, (2) paradoxe du téléphone mobile, (3) les espèces sentinelles répondent à l'EMF mais pas au PIB.",
+    s12Limitation: "Évaluation honnête : R² = 0,851 reflète principalement le gradient de transition démographique (Niger → Corée), pas la variance spécifique aux CEM. Parmi les pays OCDE à revenu élevé (n ≈ 36), la consommation d'électricité seule n'explique quasiment aucune variance du TFR (R² ≈ 0,0002). La formule transversale capture le seuil d'électrification — la porte binaire de la fécondité pré-industrielle à industrielle — pas une dose-réponse au sein des populations électrifiées. Cela fait de l'analyse transversale la ligne de preuve indépendante la PLUS FAIBLE du BERM. Les preuves plus solides viennent de : (1) les voies mécanistiques avec effets non thermiques validés réglementairement, (2) la dose-réponse pharmacologique (mélatonine, testostérone), (3) les marqueurs de sélection génétique (CatSper, VGCC), (4) les espèces sentinelles en conditions contrôlées. La valeur de l'analyse transversale est structurelle : le paradoxe du téléphone mobile et la prédiction électricité > PIB sont discriminants, même si l'ajustement agrégé est confondu.",
+    s12DataNote: "Données de réplication : liste des 54 pays (TFR observé, consommation d'électricité, abonnements haut débit, prédictions du modèle) disponible à /data/cross_section_manifest.csv. Sources : UN WPP 2024 (TFR), OWID/AIE (électricité), UIT (haut débit).",
     s12Caveat: "L'analyse transversale ne peut pas déterminer la direction causale. Les preuves discriminantes proviennent des espèces sentinelles, des expériences naturelles et des populations sans électricité.",
     s13Title: "χ imbriqué (modèle de population)",
     s13Intro: "La règle de sélection χ se généralise aux populations lorsque les variables de fond biologiques (optique, moléculaire) diffèrent entre les groupes. La suppression reproductive combinée des voies A et C, modulée par les profils χ spécifiques à la population :",
@@ -1528,6 +1590,19 @@ const t = {
     s5qsd6: "모델의 behav ≈ (P₁ × P₂ × P₃ × P₄)^(1/4)은 기하 평균 근사입니다. 각 P_i는 동일한 지수 호르몬 의존성을 공유합니다.",
     s5qsd7: "이중 호르몬 보정 ([[ref:mehta2015|Mehta & Prasad 2015]], [[ref:dual_hormone_meta2021|메타 N=8538, r=-.061]]): T의 행동적 발현은 낮은 코르티솔을 필요로 합니다. EMF는 동시에 T를 낮추고([[ref:who_t_meta|WHO 메타: SMD 0.87]]) 코르티솔을 높여([[ref:pawlak2025|Pawlak 2025: d=1.88]]) 접근 행동에 이중 잠금을 생성합니다.",
     s5qsd8: "제한: [[ref:dual_hormone_meta2021|이중 호르몬 메타분석]] 효과 크기는 작습니다(r=-.061). 프록시 체인(EMF → T↓ → 접근↓ → TFR↓)은 전체적으로 테스트되지 않았습니다.",
+
+    // S5 수정의 다섯 게이트
+    s5fertTitle: "수정 확률: 직렬의 다섯 게이트",
+    s5fertLead:
+      "각 게이트는 Ca²⁺ 의존적이며 개별적으로 EMF 교란에 취약합니다:",
+    s5fertG1: "수정능 획득 (CatSper 의존 Ca²⁺ 진동)",
+    s5fertG2: "유동주성 (CatSper 의존 흐름 역행 구름)",
+    s5fertG3: "화학주성 (CatSper를 통한 프로게스테론 + 온도 구배)",
+    s5fertG4: "첨체 반응 (이중 Ca²⁺: CatSper + IP₃ 저장)",
+    s5fertG5: "난자 활성화 (정자 전달 Ca²⁺ 진동 인자)",
+    s5fertConclusion:
+      "각 게이트에서 10% 감소가 복합됩니다: 0.9⁵ = 0.59 → 개별적으로 경미한 교란에서 수정 확률 41% 감소.",
+
     s5bTitle: "세포 크기 × 주파수 공명",
     s5bIntro: "[[ref:ttfields_cell_size_frequency|TTFields 임상 데이터]]는 세포 크기와 최적 교란 주파수 사이의 정량적 관계를 보여줍니다. 이 관계는 FDA 3상 데이터에서 교정되어 BERM의 표적 조직에 외삽되었습니다.",
     s5bFormula: "여기서 K ≈ 3.7 Hz·m, [[ref:ttfields_cell_size_frequency|4가지 암 유형에 걸친 TTFields 임상 데이터]]에서 교정.",
@@ -1617,14 +1692,16 @@ const t = {
     s12Formula: "2채널 EMF 지수는 주거 전력 소비(ELF 프록시)와 고정 광대역 가입(RF 프록시)을 결합합니다:",
     s12Access: "전력 접근은 이진 생물학적 노출 경계로 작용합니다. IFO-VGIC 활성화 임계값(10⁻⁵ V/m)은 모든 가정용 전기 기기의 작동 거리에서 초과됩니다. 전력이 없는 집단은 노출되지 않습니다.",
     s12Stats: "검증 통계:",
-    s12Stat1: "LOOCV RMSE = 0.522 (1개국 제외 교차 검증)",
-    s12Stat2: "R² = 0.851",
-    s12Stat3: "74%의 국가가 예측으로부터 0.5 이내",
-    s12Stat4: "주거 전력 소비가 최고의 단일 예측인자 (RMSE 0.533)",
+    s12Stat1: "LOOCV RMSE = 0.522 (전체 모델, 1개국 제외 교차 검증)",
+    s12Stat2: "R² = 0.851 (n = 54; 전기화 임계값 포착, EMF 고유 효과 아님)",
+    s12Stat3: "스킬 점수 = 0.61 (1 − RMSE/sd, 평균 예측 대비 개선)",
+    s12Stat4: "주거 전력 소비가 최고의 단일 예측인자 (단변량 RMSE 0.533)",
     s12Stat5: "휴대전화 가입이 가장 약함 (RMSE 1.053)",
     s12Mobile: "휴대전화 역설: 메커니즘이 '정보 접근 → 가족 계획 선택'이라면 정보 장치(휴대전화)가 가장 강한 예측인자여야 합니다. 가장 약합니다. 인프라 변수(주거 전력 소비)가 가장 잘 예측합니다 — 정보 메커니즘이 아닌 물리적 노출 메커니즘과 일치합니다.",
     s12Electrified: "부분 전화 국가의 경우 전화된 하위 집단 TFR은 이진 혼합 모델에서 추정할 수 있습니다:",
     s12Collinearity: "GDP 공선성: EMF 프록시와 GDP/capita는 상관(r = 0.87). 선형 모델에서 한쪽을 통제하면 다른 쪽은 유의하지 않습니다. 이것은 대칭적 식별 문제이며 EMF에 불리한 증거가 아닙니다. 세 가지 구조적 차이가 대칭을 깨뜨립니다: (1) 이진 전화 임계값, (2) 휴대전화 역설, (3) 센티넬 종은 EMF에 반응하지만 GDP에는 반응하지 않음.",
+    s12Limitation: "정직한 평가: R² = 0.851은 주로 인구 전환 기울기(니제르 → 한국)를 반영하며 EMF 고유 분산이 아닙니다. 고소득 OECD 국가(n ≈ 36)에서 전력 소비만으로는 TFR 분산을 거의 설명하지 못합니다(R² ≈ 0.0002). 횡단적 공식은 전기화 임계값 — 전산업사회에서 산업사회로의 이진 관문 — 을 포착하며, 전기화된 집단 내의 용량-반응이 아닙니다. 이로 인해 횡단 분석은 BERM의 가장 약한 독립적 증거선이 됩니다. 더 강한 증거는: (1) 규제 검증된 비열적 효과가 있는 메커니즘 경로, (2) 약리학적 용량-반응(멜라토닌, 테스토스테론), (3) 유전적 선택 마커(CatSper, VGCC), (4) 통제 조건의 센티넬 종에서 옵니다. 횡단 분석의 가치는 구조적입니다: 휴대전화 역설과 전력>GDP 예측은 변별적이며, 집합적 적합이 교란되더라도 의미가 있습니다.",
+    s12DataNote: "재현 데이터: 54개국 표본 명단(관측 TFR, 전력 소비, 브로드밴드 가입, 모델 예측)은 /data/cross_section_manifest.csv에서 이용 가능. 출처: UN WPP 2024(TFR), OWID/IEA(전력), ITU(브로드밴드).",
     s12Caveat: "횡단적 분석은 인과 방향을 결정할 수 없습니다. 변별적 증거는 센티넬 종, 자연 실험, 전력 없는 집단에서 나옵니다.",
     s13Title: "중첩된 χ (집단 모델)",
     s13Intro: "χ 선택 규칙은 생물학적 배경 변수(광학적, 분자적)가 그룹 간에 다를 때 집단으로 일반화됩니다. 경로 A와 C의 결합된 생식 억제, 집단별 χ 프로파일로 변조:",
@@ -1762,44 +1839,34 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <text x="70" y="68" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
                 {pickCopy({ en: "architecture", fi: "arkkitehtuuri", ja: "アーキテクチャ", fr: "scalaire", ko: "아키텍처" }, locale)}
               </text>
-              {/* v18 */}
+              {/* v19.1 diagnostic */}
               <circle cx="210" cy="38" r="5" fill="#8b5cf6" fillOpacity="0.7" stroke="#8b5cf6" strokeWidth="1.5" />
-              <text x="210" y="30" textAnchor="middle" fill="#8b5cf6" fontSize="9" fontWeight="600">v18</text>
+              <text x="210" y="30" textAnchor="middle" fill="#8b5cf6" fontSize="9" fontWeight="600">v19.1</text>
               <text x="210" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
-                {pickCopy({ en: "Three-channel", fi: "Kolmikanava", ja: "三チャネル", fr: "Trois canaux", ko: "3채널" }, locale)}
+                {pickCopy({ en: "Two-channel", fi: "Kaksikanava", ja: "2チャネル", fr: "Deux canaux", ko: "2채널" }, locale)}
               </text>
-              {/* v19 */}
+              <text x="210" y="68" textAnchor="middle" fill="currentColor" fontSize="8" opacity="0.35">
+                {pickCopy({ en: "(diagnostic)", fi: "(diagnostinen)", ja: "(診断用)", fr: "(diagnostique)", ko: "(진단용)" }, locale)}
+              </text>
+              {/* v20 layered */}
               <circle cx="350" cy="38" r="5" fill="#10b981" fillOpacity="0.7" stroke="#10b981" strokeWidth="1.5" />
-              <text x="350" y="30" textAnchor="middle" fill="#10b981" fontSize="9" fontWeight="600">v19</text>
+              <text x="350" y="30" textAnchor="middle" fill="#10b981" fontSize="9" fontWeight="600">v20</text>
               <text x="350" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
-                {pickCopy({ en: "Recovery", fi: "Palautumis-", ja: "回復", fr: "Fonction de", ko: "회복" }, locale)}
-              </text>
-              <text x="350" y="68" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
-                {pickCopy({ en: "function", fi: "funktio", ja: "関数", fr: "récupération", ko: "함수" }, locale)}
-              </text>
-              {/* v20 */}
-              <circle cx="490" cy="38" r="5" fill="#f59e0b" fillOpacity="0.7" stroke="#f59e0b" strokeWidth="1.5" />
-              <text x="490" y="30" textAnchor="middle" fill="#f59e0b" fontSize="9" fontWeight="600">v20</text>
-              <text x="490" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
                 {pickCopy({ en: "Layered", fi: "Kerrostettu", ja: "層状", fr: "Formule", ko: "계층화된" }, locale)}
               </text>
-              <text x="490" y="68" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+              <text x="350" y="68" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
                 {pickCopy({ en: "formula", fi: "formula", ja: "公式", fr: "stratifiée", ko: "공식" }, locale)}
               </text>
-              {/* v21 */}
-              <circle cx="630" cy="38" r="5" fill="#ef4444" fillOpacity="0.7" stroke="#ef4444" strokeWidth="1.5" />
-              <text x="630" y="30" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="600">v21</text>
-              <text x="630" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
-                {pickCopy({ en: "Population", fi: "Populaatio-", ja: "集団", fr: "Modèle de", ko: "집단" }, locale)}
-              </text>
-              <text x="630" y="68" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
-                {pickCopy({ en: "model", fi: "malli", ja: "モデル", fr: "population", ko: "모델" }, locale)}
+              {/* v21 T-calibrated */}
+              <circle cx="490" cy="38" r="5" fill="#f59e0b" fillOpacity="0.7" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="490" y="30" textAnchor="middle" fill="#f59e0b" fontSize="9" fontWeight="600">v21</text>
+              <text x="490" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+                {pickCopy({ en: "T-calibrated", fi: "T-kalibroitu", ja: "T較正", fr: "Calibré-T", ko: "T-교정" }, locale)}
               </text>
               {/* Connecting arrows between dots */}
               <polygon points="138,38 130,34 130,42" fill="currentColor" opacity="0.12" />
               <polygon points="278,38 270,34 270,42" fill="currentColor" opacity="0.12" />
               <polygon points="418,38 410,34 410,42" fill="currentColor" opacity="0.12" />
-              <polygon points="558,38 550,34 550,42" fill="currentColor" opacity="0.12" />
             </svg>
           </div>
 
@@ -2344,6 +2411,21 @@ export function MathematicsSections({ locale }: { locale: string }) {
                 <div className="text-center my-1">
                   <MathBlock tex="P(\text{fert}) \propto e^{-r_{\text{sperm}} \times \text{cumEMF}}" display={false} />
                 </div>
+                <div className="mt-4 pl-4 border-l-2 border-accent/30">
+                  <p className="text-sm font-semibold mb-2">{d.s5fertTitle}</p>
+                  <p className="text-xs text-foreground-muted mb-3">{d.s5fertLead}</p>
+                  <div className="text-center my-2">
+                    <MathBlock tex="P(\text{fert}) = P_1 \times P_2 \times P_3 \times P_4 \times P_5" display={false} />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 text-xs text-foreground-muted">
+                    <span>P₁ = {d.s5fertG1}</span>
+                    <span>P₂ = {d.s5fertG2}</span>
+                    <span>P₃ = {d.s5fertG3}</span>
+                    <span>P₄ = {d.s5fertG4}</span>
+                    <span>P₅ = {d.s5fertG5}</span>
+                  </div>
+                  <p className="text-xs text-foreground-muted mt-3 italic">{d.s5fertConclusion}</p>
+                </div>
               </div>
               <div className="mt-3">
                 <DerivationLine>{d.s5qsd6}</DerivationLine>
@@ -2874,6 +2956,18 @@ export function MathematicsSections({ locale }: { locale: string }) {
             <Derivation label={pickCopy({ en: "GDP collinearity", fi: "BKT-kollineaarisuus", ja: "GDP共線性", fr: "Colinéarité PIB", ko: "GDP 공선성" }, locale)}>
               <DerivationLine>{d.s12Collinearity}</DerivationLine>
             </Derivation>
+
+            <div className="mt-4 p-3 rounded border border-amber-500/40 bg-amber-500/5">
+              <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 mb-1">
+                {pickCopy({ en: "Honest assessment", fi: "Rehellinen arvio", ja: "正直な評価", fr: "Évaluation honnête", ko: "정직한 평가" }, locale)}
+              </p>
+              <p className="text-xs text-foreground-muted leading-relaxed">
+                {d.s12Limitation}
+              </p>
+              <p className="text-xs text-foreground-muted leading-relaxed mt-2 italic">
+                {d.s12DataNote}
+              </p>
+            </div>
 
             <div className="mt-4 p-3 rounded border border-status-partial/40 bg-status-partial/5">
               <p className="text-xs text-foreground-muted leading-relaxed">

@@ -423,11 +423,12 @@ export const NODES: CausalMapNode[] = [
   {
     id: "mech_cry_melatonin", level: 2,
     label: { en: "CRY/RPM → melatonin", fi: "CRY/RPM → melatoniini" },
+    sublabel: { en: "Universal EM sensor (plants → mammals)", fi: "Universaali EM-sensori (kasvit → nisäkkäät)" },
     epistemicLevel: "E",
     detail: {
-      en: { mechanism: "Cryptochrome radical pair spin state is disrupted → circadian clock distorted → melatonin synthesis decreases. Human CRY/RPM magnetoreception is blue-light-dependent ([[ref:chae2019|Chae et al. 2019]], P<0.001); vertical component reversal reversed orientation, consistent with an inclination compass." },
-      fi: { mechanism: "Kryptokromin radikaaliparin spin-tila häiriintyy → sirkadiaaninen kello vääristyy → melatoniinisyntesi alenee. Ihmisen CRY/RPM-magnetoreseptio on sinivaloriippuvainen ([[ref:chae2019|Chae ym. 2019]], P<0,001); pystykomponentin kääntö käänsi orientaation, mikä on yhdenmukainen inklinaatiokompassin kanssa." },
-      bermPathway: "B,C", keyRefs: ["chae2019", "ritz2004", "engels2014", "sherrard2018", "yoshii2009"], link: "/evidence/magnetoreception#human-cry-magnetoreception",
+      en: { mechanism: "Cryptochrome is conserved >1 billion years and present in ALL eukaryotes — the universal electromagnetic sensor. RF disruption of CRY's radical pair mechanism has been demonstrated across kingdoms: PLANTS (Ahmad 2020: CRY1 RF sensitivity in Arabidopsis), INSECTS (Gegear 2008: CRY-dependent magnetoreception in Drosophila), and MAMMALS (PMC11817702 2025: CRY-mediated RF effects in mammalian systems). In humans, CRY/RPM magnetoreception is blue-light-dependent ([[ref:chae2019|Chae et al. 2019]], P<0.001); vertical component reversal reversed orientation, consistent with an inclination compass. The same molecular target is disrupted across all eukaryotic trophic levels simultaneously." },
+      fi: { mechanism: "Kryptokromi on konservoitu >1 miljardia vuotta ja läsnä KAIKISSA eukaryooteissa — universaali sähkömagneettinen sensori. CRY:n radikaaliparin RF-häiriö on osoitettu yli kuntarajojen: KASVIT (Ahmad 2020: CRY1 RF-herkkyys Arabidopsiksessa), HYÖNTEISET (Gegear 2008: CRY-riippuvainen magnetoreseptio Drosophilassa) ja NISÄKKÄÄT (PMC11817702 2025: CRY-välitteiset RF-vaikutukset nisäkäsjärjestelmissä). Ihmisen CRY/RPM-magnetoreseptio on sinivaloriippuvainen ([[ref:chae2019|Chae ym. 2019]], P<0,001); pystykomponentin kääntö käänsi orientaation, mikä on yhdenmukainen inklinaatiokompassin kanssa. Sama molekulaarinen kohde häiriintyy kaikilla eukaryoottien troofisilla tasoilla samanaikaisesti." },
+      bermPathway: "B,C", keyRefs: ["chae2019", "ritz2004", "engels2014", "sherrard2018", "yoshii2009", "ahmad2020_cry1_rf", "gegear2008"], link: "/evidence/magnetoreception#human-cry-magnetoreception",
     },
   },
   {
@@ -642,6 +643,25 @@ export const NODES: CausalMapNode[] = [
     },
   },
   {
+    id: "mech_catsper_nav",
+    level: 2,
+    label: { en: "CatSper navigation disruption", fi: "CatSper-navigaatiohäiriö" },
+    sublabel: { en: "Premature activation → energy depletion", fi: "Ennenaikainen aktivaatio → energian ehtyminen" },
+    color: "#e74c3c",
+    epistemicLevel: "C",
+    detail: {
+      en: {
+        mechanism: "EMF triggers premature CatSper activation in the epididymis. Ca²⁺ influx → hyperactivation before ejaculation → ATP/glycogen stores depleted → sperm becomes immotile in the female tract. Additionally, CatSper-dependent rheotaxis, chemotaxis, and acrosome reaction are compromised.",
+      },
+      fi: {
+        mechanism: "EMF laukaisee ennenaikaisen CatSper-aktivaation lisäkiveksessä. Ca²⁺-sisäänvirtaus → hyperaktivaatio ennen ejakulaatiota → ATP/glykogeenivarastot ehtyvät → siittiö muuttuu immotiiliksi naisen elimistössä. Lisäksi CatSper-riippuvainen reotaksis, kemotaksis ja akrosomireaktio heikkenevät.",
+      },
+      bermPathway: "A",
+      keyRefs: ["catsper_2021", "catsper_human", "catsper-temp-2025"],
+      link: "/evidence/reproductive-navigation",
+    },
+  },
+  {
     id: "epi_kaiser_series", level: 2,
     label: { en: "Kaiser Permanente series", fi: "Kaiser Permanente -sarja" },
     sublabel: { en: "Li 2002–2020, EMDEX", fi: "Li 2002–2020, EMDEX" },
@@ -703,6 +723,26 @@ export const NODES: CausalMapNode[] = [
   { id: "tissue_gut", level: 3, label: { en: "Gut epithelium ↓", fi: "Suoliston epiteeli ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Gut epithelial cells' rapid division cycle (3-5 days) makes them vulnerable to IF field mitotic disruption." }, fi: { mechanism: "Suoliston epiteelisolujen nopea jakautumissykli (3-5 pv) tekee niistä haavoittuvia IF-kentän mitoottiselle häiriölle." }, link: "/evidence/circadian#gut" } },
   { id: "tissue_vagal_tone", level: 3, label: { en: "Vagal tone ↓", fi: "Vagaalinen tonus ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Vagus nerve anti-inflammatory reflex weakening → chronic low-grade inflammation." }, fi: { mechanism: "Vagushermon anti-inflammatorisen refleksin heikkeneminen → krooninen matala-asteinen tulehdus." }, link: "/evidence/circadian#vagal-tone" } },
 
+  // ── LEVEL 3 (continued): Solar-geomagnetic modulation ──
+  {
+    id: "solar_geomag",
+    level: 3,
+    label: { en: "Solar-geomagnetic", fi: "Aurinko-geomagneettinen" },
+    sublabel: { en: "11yr cycle + SAMA", fi: "11v sykli + SAMA" },
+    color: "#f59e0b",
+    epistemicLevel: "M|C",
+    detail: {
+      en: {
+        mechanism: "The Sun's 11-year cycle modulates Earth's geomagnetic environment: solar maximum → CMEs and coronal hole streams → geomagnetic disturbances. These perturb CRY's radical pair mechanism (χ_B channel) and suppress pineal melatonin production. The effect is latitude-dependent: strongest at the auroral oval (geomag lat > 60°), weakest in the tropics, and anomalous in the SAMA region (Southern Brazil). The cycle has operated for 290 million years (dendrochronology) and is documented in human birth rate data from 7 countries (Randall 1990/1993) and pre-industrial Norway (Skjærvø 2015: N=8662, 1676-1878).",
+      },
+      fi: {
+        mechanism: "Auringon 11-vuotinen sykli moduloi maapallon geomagneettista ympäristöä: aurinkomaksimi → CME:t ja koronaaukkovirrat → geomagneettiset häiriöt. Nämä häiritsevät CRY:n radikaaliparin mekanismia (χ_B-kanava) ja suppressoivat pinealirauhasen melatoniinituotantoa. Vaikutus on leveysasteesta riippuvainen: voimakkain revontuliovaalissa (geomag lat > 60°), heikoin tropiikissa ja anomaalinen SAMA-alueella (Etelä-Brasilia). Sykli on toiminut 290 miljoonaa vuotta (dendrokronologia) ja on dokumentoitu ihmisen syntyvyysdatassa 7 maasta (Randall 1990/1993) ja esi-teollisesta Norjasta (Skjærvø 2015: N=8662, 1676-1878).",
+      },
+      bermPathway: "B",
+      keyRefs: ["randall1990", "skjaervo2015", "burch1999", "ess2026_sama"],
+    },
+  },
+
   // ── LEVEL 4: Disease cascade (7) ──
   { id: "disease_sleep", level: 4, label: { en: "1. Sleep disorders", fi: "1. Unihäiriöt" }, sublabel: { en: "Latency: months", fi: "Viive: kuukausia" }, color: "#9B7FD4", cascadeOrder: 1, epistemicLevel: "E", detail: { en: { mechanism: "Melatonin deficiency + circadian disruption → sleep disorders. The first clinical symptom." }, fi: { mechanism: "Melatoniinin puute + sirkadiaaninen häiriö → unihäiriöt. Ensimmäinen kliininen oire." }, link: "/evidence/circadian#sleep" } },
   { id: "disease_depression", level: 4, label: { en: "2. Depression", fi: "2. Masennus" }, sublabel: { en: "Latency: 1–3 years", fi: "Viive: 1-3 vuotta" }, color: "#6B9FD4", cascadeOrder: 2, epistemicLevel: "E", detail: { en: { mechanism: "Chronic sleep disorder + cortisol + testosterone decline → depression." }, fi: { mechanism: "Krooninen unihäiriö + kortisoli + testosteronin lasku → masennus." }, link: "/evidence/cascades#depression" } },
@@ -727,9 +767,45 @@ export const NODES: CausalMapNode[] = [
   { id: "eco_varroa", level: 6, label: { en: "Varroa ← protected", fi: "Varroa ← suojassa" }, sublabel: { en: "Sclerotin, small size", fi: "Sclerotin, pieni koko" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Varroa destructor: 1.1mm, sclerotin armor, no CRY navigation → EMF has no effect." }, fi: { mechanism: "Varroa destructor: 1.1mm, sclerotiinipanssari, ei CRY-navigaatiota → EMF ei vaikuta." }, link: "/articles/bees#varroa" } },
   { id: "eco_tick", level: 6, label: { en: "Ticks ← increasing?", fi: "Punkit ← runsastuvat?" }, sublabel: { en: "Electrostatic contact↑", fi: "Sähköstaattinen kontakti↑" }, epistemicLevel: "C", detail: { en: { mechanism: "Electrostatic charge may increase tick attachment to host. Speculative." }, fi: { mechanism: "Sähköstaattinen varaus voi lisätä punkkien kiinnittymistä isäntään. Spekulatiivinen." }, link: "/evidence/ecology#ticks" } },
   { id: "eco_pollination", level: 6, label: { en: "Pollination ↓", fi: "Pölytys ↓" }, sublabel: { en: "Ecosystem service", fi: "Ekosysteemipalvelu" }, epistemicLevel: "E", detail: { en: { mechanism: "Insect pollinator decline threatens 75% of crops. Electrostatic pollination mechanism disruption." }, fi: { mechanism: "Hyönteispölyttäjien väheneminen uhkaa 75% viljelykasveista. Sähköstaattisen pölytysmekanismin häiriö." }, link: "/sentinel#pollination" } },
+  {
+    id: "ecosystem_cascade",
+    level: 6,
+    label: { en: "Ecosystem Cascade", fi: "Ekosysteemikaskadi" },
+    sublabel: { en: "Plants → Insects → Birds → Mammals", fi: "Kasvit → Hyönteiset → Linnut → Nisäkkäät" },
+    color: "#22c55e",
+    epistemicLevel: "M|C",
+    detail: {
+      en: {
+        mechanism: "CRY/RPM operates across ALL eukaryotic trophic levels simultaneously. PLANTS: CRY2 → flowering/masting disrupted (Xu 2015, Ahmad 2020). INSECTS: CRY → navigation + immunity impaired (Ferrari 2015: 2.7× bee losses). BIRDS: magnetoreception disrupted (Rosenberg 2019: -3 billion birds). MAMMALS: CRY → melatonin → HPG (Skjærvø 2015, Randall 1990). Same mechanism, different trophic level → insect decline, bird decline, sperm decline, and TFR collapse are manifestations of ONE CRY cascade.",
+      },
+      fi: {
+        mechanism: "CRY/RPM operoi KAIKILLA eukaryoottien troofisilla tasoilla samanaikaisesti. KASVIT: CRY2 → kukinta/masting häiriintyy (Xu 2015, Ahmad 2020). HYÖNTEISET: CRY → navigaatio + immuniteetti heikkenee (Ferrari 2015: 2.7× mehiläistappio). LINNUT: magnetoreseptio häiriintyy (Rosenberg 2019: -3 miljardia lintua). NISÄKKÄÄT: CRY → melatoniini → HPG (Skjærvø 2015, Randall 1990). Sama mekanismi, eri troofinen taso → hyönteiskato, lintukato, siittiölasku ja TFR-romahdus ovat SAMAN CRY-kaskadin eri ilmentymiä.",
+      },
+      bermPathway: "B",
+      keyRefs: ["ahmad2020_cry1_rf", "xu2015_flowering_nnmf", "bogdziewicz2024_nature_plants_solstice"],
+    },
+  },
 
-  // ── LEVEL 0: Evolutionary origin ──
-  { id: "northern_package", level: 0, label: { en: "Northern Package (10,000 BP)", fi: "Pohjoinen paketti (10 000 BP)" }, sublabel: { en: "Blue eyes + Lactose tolerance + Cattle", fi: "Siniset silmät + Laktoosinsietokyky + Karjankasvatus" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Co-selection of OCA2 (blue eyes → optical χ), LCT (lactose tolerance → molecular χ via B2/FAD), and cattle husbandry (year-round B2 supply). Creates the population with highest biological CRY sensitivity." }, fi: { mechanism: "OCA2:n (siniset silmät → optinen χ), LCT:n (laktoosinsietokyky → molekulaarinen χ B2/FAD kautta) ja karjankasvatuksen (ympärivuotinen B2-saanti) koselektio. Luo populaation jolla on korkein biologinen CRY-herkkyys." }, link: "/evidence/evolution" } },
+  // ── LEVEL 2 (continued): Evolutionary co-selection ──
+  {
+    id: "northern_package",
+    level: 2,
+    label: { en: "Northern Package", fi: "Pohjoinen paketti" },
+    sublabel: { en: "Eyes × Lactose × GeoMag", fi: "Silmät × Laktoosi × GeoMag" },
+    color: "#3b82f6",
+    epistemicLevel: "M|C",
+    detail: {
+      en: {
+        mechanism: "In Northern Europe, three traits co-selected to optimize the CRY system over 10,000-6,000 years: (1) Blue eyes — pale iris transmits 100× more blue light to the retina → CRY activates in low light → χ_optical increases. (2) Lactose tolerance — lifelong dairy consumption → riboflavin (B2) → FAD cofactor → CRY remains magnetically sensitive → χ_molecular increases. (3) High geomagnetic latitude → strong field + auroral modulation → strongest cyclic modulation → χ_geomagnetic increases. All three optimize the SAME molecular target: CRY. D-vitamin hypothesis explains 2/3 traits; CRY hypothesis explains 3/3.",
+      },
+      fi: {
+        mechanism: "Pohjois-Euroopassa kolme ominaisuutta koselektoitui optimoimaan CRY-järjestelmän 10 000–6 000 vuoden aikana: (1) Siniset silmät — vaalea iiris transmittoi 100× enemmän sinistä valoa verkkokalvolle → CRY aktivoituu hämärässä → χ_optinen kasvaa. (2) Laktoosinsietokyky — elinikäinen maitotuotteiden kulutus → riboflaviini (B2) → FAD-kofaktori → CRY säilyttää magneettisen herkkyyden → χ_molekulaarinen kasvaa. (3) Korkea geomagneettinen leveysaste → vahva kenttä + revontulemodulaatio → voimakkain syklinen modulaatio → χ_geomagneettinen kasvaa. Kaikki kolme optimoivat SAMAN molekulaarisen kohteen: CRY. D-vitamiinihypoteesi selittää 2/3 piirteistä; CRY-hypoteesi selittää 3/3.",
+      },
+      bermPathway: "B",
+      keyRefs: ["higuchi_eyecolor_melatonin", "workman2018_eyecolor", "hirano2017_fad_cry"],
+      link: "/evidence/evolution",
+    },
+  },
 ];
 
 export const EDGES: CausalMapEdge[] = [
@@ -758,6 +834,7 @@ export const EDGES: CausalMapEdge[] = [
   { from: "mod_ion", to: "mech_vgcc_ros" },
   { from: "mod_ion", to: "mech_ifo_linear" },
   { from: "mod_ion", to: "mech_gpcr" },
+  { from: "mod_ion", to: "mech_catsper_nav", label: { en: "CatSper subset", fi: "CatSper-osajoukko" } },
   { from: "mod_dc", to: "mech_nav_plasticity" },
   { from: "mod_bioelectric", to: "mech_vgcc_ros" },
   { from: "mod_vagus", to: "mech_vagal_antiinflam" },
@@ -830,6 +907,8 @@ export const EDGES: CausalMapEdge[] = [
   { from: "mech_melatonin_fertility", to: "tissue_ovarian" },
   { from: "mech_melatonin_fertility", to: "tissue_testosterone" },
   { from: "mech_melatonin_fertility", to: "tissue_sperm" },
+  // CatSper navigation disruption → sperm fertilization failure
+  { from: "mech_catsper_nav", to: "tissue_sperm", label: { en: "Navigation failure → fertilization↓", fi: "Navigointivika → hedelmöitys↓" } },
   // BTB: blood-testis barrier disruption (pathway F extension)
   { from: "mech_vgcc_ros", to: "tissue_btb", label: "RF → MMP2 → BTB" },
   { from: "tissue_btb", to: "tissue_sperm", label: "Microenvironment compromised" },
@@ -895,4 +974,10 @@ export const EDGES: CausalMapEdge[] = [
   // Modulome integration: Pituitary hub
   { from: "mech_ttype_bifurcation", to: "endo_pituitary_hub", label: "Cav3 → hormone secretion" },
   { from: "endo_pituitary_hub", to: "tissue_testosterone", label: "FSH/LH → Leydig" },
+
+  // Solar-geomagnetic → CRY/melatonin pathways (B, C)
+  { from: "solar_geomag", to: "mech_cry_melatonin", label: "geomag → CRY radical pair (χ_B)" },
+  { from: "solar_geomag", to: "tissue_melatonin", label: "geomag → pineal suppression" },
+  // Northern Package → melatonin pathway (C); pathway B edge already exists above
+  { from: "northern_package", to: "tissue_melatonin", label: "CRY optimization → melatonin sensitivity" },
 ];

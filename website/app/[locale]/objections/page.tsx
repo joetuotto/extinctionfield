@@ -240,7 +240,7 @@ const t: Record<string, Copy> = {
         response: [
           "In linear models, EMF and GDP are collinear (r = 0.87) and neither is significant after controlling the other. This is a symmetric identification problem, not evidence against EMF.",
           "Three structural differences distinguish EMF from GDP. First, electricity access is a binary threshold. Adjusting for the fraction of the population with electricity access improves TFR prediction (r: −0.864 → −0.885). GDP has no equivalent threshold — everyone participates in economic activity at some level, but only some people have electricity.",
-          "Second, mobile phones (the information device) are the WEAKEST EMF proxy (RMSE 1.053). Residential electricity (the infrastructure) is the BEST (RMSE 0.533). If 'information → choices' were the mechanism, the information device should predict best. It doesn't.",
+          "Second, mobile phones (the information device) are the WEAKEST EMF proxy (RMSE 1.053). Residential electricity (the infrastructure) is the BEST (univariate RMSE 0.533). If 'information → choices' were the mechanism, the information device should predict best. It doesn't.",
           "Third, sentinel species respond to electric fields ([[ref:mallinson2025_electric_pollution|Mallinson 2025]]: bees −71%) but not to GDP. Dogs, bees, and frogs do not make economic choices.",
         ],
         boundary: "Cross-sectional analysis cannot identify the causal direction between EMF and GDP. Discriminating evidence comes from sentinel species, natural experiments (Faraday hives), and populations without electricity.",
@@ -509,7 +509,7 @@ const t: Record<string, Copy> = {
         response: [
           "Lineaarisissa malleissa EMF ja BKT ovat kollineaarisia (r = 0,87) eikä kumpikaan ole merkitsevä toisen kontrolloinnin jälkeen. Tämä on symmetrinen identifikaatio-ongelma, ei todiste EMF:ää vastaan.",
           "Kolme rakenteellista eroa erottaa EMF:n BKT:stä. Ensinnäkin sähkön saatavuus on binäärinen kynnys. Väestön sähköistetyn osuuden mukaan korjaaminen parantaa TFR-ennustetta (r: −0,864 → −0,885). BKT:llä ei ole vastaavaa kynnystä — kaikki osallistuvat taloudelliseen toimintaan jollakin tasolla, mutta vain osalla on sähkö.",
-          "Toiseksi matkapuhelimet (tietolaite) ovat HEIKOIN EMF-proxy (RMSE 1,053). Asumisen sähkönkulutus (infrastruktuuri) on PARAS (RMSE 0,533). Jos mekanismi olisi 'tieto → valinnat', tietolaitteen pitäisi ennustaa parhaiten. Ei ennusta.",
+          "Toiseksi matkapuhelimet (tietolaite) ovat HEIKOIN EMF-proxy (RMSE 1,053). Asumisen sähkönkulutus (infrastruktuuri) on PARAS (univariaatti-RMSE 0,533). Jos mekanismi olisi 'tieto → valinnat', tietolaitteen pitäisi ennustaa parhaiten. Ei ennusta.",
           "Kolmanneksi sentinelkilajit reagoivat sähkökenttiin ([[ref:mallinson2025_electric_pollution|Mallinson 2025]]: mehiläiset −71 %) mutta eivät BKT:hen. Koirat, mehiläiset ja sammakot eivät tee taloudellisia valintoja.",
         ],
         boundary: "Poikkileikkausanalyysi ei voi tunnistaa kausaalisuuntaa EMF:n ja BKT:n välillä. Erotteleva evidenssi tulee sentinelkilajeista, luonnollisista kokeista (Faraday-pesät) ja väestöistä ilman sähköä.",
@@ -777,7 +777,7 @@ const t: Record<string, Copy> = {
         question: "モデルは単にGDPを適合しているだけ",
         response: [
           "線形モデルではEMFとGDPは共線的（r = 0.87）であり、他方を制御した後はどちらも有意ではない。これは対称的な識別問題であり、EMFに対する証拠ではない。",
-          "3つの構造的差異がEMFをGDPから区別する。電気へのアクセスは二値的閾値である。携帯電話（情報デバイス）は最も弱いEMFプロキシ（RMSE 1.053）。住宅電力が最良（RMSE 0.533）。",
+          "3つの構造的差異がEMFをGDPから区別する。電気へのアクセスは二値的閾値である。携帯電話（情報デバイス）は最も弱いEMFプロキシ（RMSE 1.053）。住宅電力が最良（単変量RMSE 0.533）。",
           "センチネル種は電場に反応する（[[ref:mallinson2025_electric_pollution|Mallinson 2025]]：ミツバチ-71%）がGDPには反応しない。",
         ],
         boundary: "横断分析ではEMFとGDPの間の因果方向を特定できない。識別的証拠はセンチネル種、自然実験、電気のない集団から得られる。",
@@ -1045,7 +1045,7 @@ const t: Record<string, Copy> = {
         question: "Le modèle ne fait qu’ajuster le PIB",
         response: [
           "Dans les modèles linéaires, EMF et PIB sont colinéaires (r = 0,87). C’est un problème d’identification symétrique, pas une preuve contre l’EMF.",
-          "Trois différences structurelles distinguent l’EMF du PIB : le seuil binaire de l’accès à l’électricité, le mobile est le proxy le plus faible (RMSE 1,053), l’électricité résidentielle est le meilleur (RMSE 0,533).",
+          "Trois différences structurelles distinguent l’EMF du PIB : le seuil binaire de l’accès à l’électricité, le mobile est le proxy le plus faible (RMSE 1,053), l’électricité résidentielle est le meilleur (RMSE univarié 0,533).",
           "Les espèces sentinelles répondent aux champs ([[ref:mallinson2025_electric_pollution|Mallinson 2025]] : abeilles −71 %) mais pas au PIB.",
         ],
         boundary: "L’analyse transversale ne peut pas identifier la direction causale.",
@@ -1313,7 +1313,7 @@ const t: Record<string, Copy> = {
         question: "모델은 단지 GDP를 맞추고 있을 뿐이다",
         response: [
           "선형 모델에서 EMF와 GDP는 공선적(r = 0.87)이다. 대칭적 식별 문제이지, EMF에 반하는 증거가 아니다.",
-          "세 가지 구조적 차이가 EMF를 GDP로부터 구별한다. 전기 접근은 이진 임계값이다. 휴대전화는 가장 약한 EMF 프록시(RMSE 1.053). 주거 전력이 가장 좋다(RMSE 0.533).",
+          "세 가지 구조적 차이가 EMF를 GDP로부터 구별한다. 전기 접근은 이진 임계값이다. 휴대전화는 가장 약한 EMF 프록시(RMSE 1.053). 주거 전력이 가장 좋다(단변량 RMSE 0.533).",
           "센티넬 종은 전기장에 반응하지만([[ref:mallinson2025_electric_pollution|Mallinson 2025]]: 꽀벌 -71%) GDP에는 반응하지 않는다.",
         ],
         boundary: "횡단 분석은 EMF와 GDP 사이의 인과 방향을 식별할 수 없다.",

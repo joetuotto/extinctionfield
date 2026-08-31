@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Zap } from "lucide-react";
+import { Zap, TreePine, Navigation, TrendingDown } from "lucide-react";
 import { BermIcon } from "@/components/BermIcon";
 import { NextPageLink } from "@/components/NextPageLink";
 import { FalsificationTestsV19 } from "@/components/FalsificationTestsV19";
@@ -44,6 +44,24 @@ const COPY = {
       "8.7× absorption coefficient NOT confirmed from primary source",
     ],
 
+    aquaticTitle: "Aquatic Axis: The Natural Channel Separator",
+    aquaticP1: "The frog result reveals a deeper principle. Water attenuates RF exponentially — at 1 GHz the skin depth in seawater is less than 1 cm. ELF (50/60 Hz) penetrates tens of metres. An aquatic organism lives in a natural bandpass filter: it receives ELF but is shielded from RF. A terrestrial organism receives both simultaneously, plus their superadditive interactions.",
+    aquaticP2: "A [[ref:superpos_172|172-study systematic review (Biomolecules 2025)]] found that multi-source EMF environments often produce synergistic biological effects. Aquatic organisms are exempt from this superposition — they experience only the ELF channel. This makes the aquatic axis the only way to separate ELF from RF effects without proxy assumptions or controlled laboratory conditions.",
+    aquaticP3: "The CatSper calcium channel — essential for sperm hyperactivation and fertilization — is [[ref:catsper_20yr|evolutionarily conserved from sea urchin to human (Physiology 2022)]]. Aquatic reproduction depends on the same ion channel that BERM identifies as EMF-sensitive. Submarine power cables emit 50 Hz ELF fields detectable at ~35 m — creating a natural gradient experiment for marine organisms with CatSper-dependent fertilization.",
+    aquaticP4: "[[ref:calves_dark|Kolbabova et al. (Sci. Rep. 2015)]] demonstrated that ELF magnetic fields affect melatonin in calves even in complete darkness, confirming the ELF pathway operates independently of light. Aquatic organisms experience precisely this isolated ELF pathway — making them the cleanest natural test of whether ELF alone is biologically active at environmental levels.",
+    aquaticSkinDepth: [
+      { medium: "Seawater", freq: "1 GHz (RF)", depth: "< 1 cm" },
+      { medium: "Seawater", freq: "50 Hz (ELF)", depth: "~250 m" },
+      { medium: "Freshwater", freq: "1 GHz (RF)", depth: "~3 cm" },
+      { medium: "Freshwater", freq: "50 Hz (ELF)", depth: "~700 m" },
+      { medium: "Air", freq: "1 GHz (RF)", depth: "∞ (no attenuation)" },
+      { medium: "Air", freq: "50 Hz (ELF)", depth: "∞ (no attenuation)" },
+    ],
+    aquaticNote: "The aquatic axis is a structural argument, not a confirmed result. No study has yet measured submarine cable ELF effects on marine reproductive success with the controlled design described here. Existing BOEM risk assessments and Scandinavian offshore studies may contain relevant data. CatSper sensitivity to ELF has not been directly tested in any organism.",
+    aquaticMediumHeader: "Medium",
+    aquaticFreqHeader: "Frequency",
+    aquaticDepthHeader: "Skin depth (δ)",
+
     batTitle: "Bats: Mammalian compass disrupted",
     batP1: "In May 2026, a team led by [[ref:lindecke2026|Oliver Lindecke]] published in Science the first experimental demonstration that radiofrequency electromagnetic noise disrupts a mammal's magnetic compass. Migratory soprano pipistrelle bats (Pipistrellus pygmaeus) were exposed to weak broadband RF noise (0.01–300 MHz) — at levels found in normal urban environments — for just 30 minutes during sunset. Control bats oriented normally toward their expected migratory direction. RF-exposed bats departed in random directions.",
     batP2: "The most unexpected finding was the duration of the effect. In previous studies on migratory birds, the magnetic compass recovered immediately after RF exposure ended. In bats, the disorientation persisted for more than two hours. The researchers concluded that electromagnetic pollution may affect animal behavior 'in more complex ways than previously thought,' and that the 'widely anticipated increase of electromagnetic pollution may further add to the effects of anthropogenic climate change.'",
@@ -67,6 +85,35 @@ const COPY = {
     metabolicP2: "This finding is a BERM retrodiction (R1): the model predicts that EMF-induced metabolic disruption should be visible across species that share voltage-gated ion channels, not only in humans where diet and lifestyle confound the signal. Laboratory rodents on fixed diets and feral animals not exposed to processed food marketing provide partial controls for the 'caloric excess' explanation.",
     metabolicP3: "The metabolic cascade connects to BERM through two independent pathways. First, melatonin suppression (CRY/RPM pathway) disrupts circadian glucose regulation — shift workers have 2–3× diabetes risk. Second, VGCC-mediated Ca²⁺ dysregulation alters insulin secretion from pancreatic β-cells, which are among the most electrically active cells in the body. Both pathways predict cross-species metabolic disruption in any electrified environment.",
     metabolicNote: "[[ref:klimentidis2010|Klimentidis 2011]] is an observational study documenting parallel trends. It does not measure EMF exposure or establish causation. The 'common environmental factor' the authors hypothesize could be EMF, endocrine disruptors, epigenetic changes, or microbiome shifts. BERM claims EMF as the most parsimonious explanation because it is the only factor that affects both laboratory and feral animals in different environments.",
+
+    whaleTitle: "Gray Whale Natural Experiment",
+    whaleP1: "[[ref:granger2020|Granger et al. (Current Biology 2020)]] showed that gray whale strandings on the US West Coast correlate with solar RF activity. When the sun emits more RF noise, more whales strand — consistent with disruption of the CRY/RPM magnetoreception compass that cetaceans use for navigation. This is BERM's radical-pair mechanism tested by a natural experiment, with no human infrastructure involved.",
+    whaleP2: "The molecular identity of the sensor is now known. [[ref:cry_drosophila|Fedele et al. (PLoS Genetics 2014, PMC4256086)]] demonstrated in Drosophila that human CRY2 senses EMF while human CRY1 does not — and that deleting CRY's C-terminal domain attenuates the EMF response. The Granger 'broken receptor' mechanism has a specific molecular identity: CRY2.",
+    whaleP3: "Three independent lines converge on the same principle. First, [[ref:geomag_263|geomagnetic disturbance increases cardiovascular mortality across 263 US cities (Env. Health 2019)]] — the same chi(A) universality that explains whale strandings, applied to a different endpoint. Second, [[ref:solar_birth_11yr|human births modulate with the 11-year solar cycle across 9 regions (Int. J. Biometeorol. 1991)]] — the same sun–biology link. The mechanism: solar RF → CRY/melatonin → HPG axis.",
+    whaleM3Title: "Prediction M3: Effect-size temporal attenuation",
+    whaleM3: "As anthropogenic RF background rises decade by decade, the relative contribution of natural solar RF variation shrinks. The Granger whale-stranding effect size should therefore decrease over time: 1985–2000 vs 2000–2015 vs 2015–2025. A parallel prediction: the 11-year birth-rate cyclicity amplitude should also decrease (Greece 1960–1992 shows APC −0.4%/year, already consistent). If both attenuate simultaneously, the same mechanism — chi(A) signal masking by anthropogenic RF — explains both.",
+    whaleNote: "Granger 2020 is an observational correlation [C] between solar activity indices and stranding counts. It does not measure RF exposure at the whale's location or demonstrate a CRY2 mechanism in cetaceans. The CRY2 identification is from Drosophila, not marine mammals. The chi(A) convergence across endpoints (strandings, mortality, births) is a pattern, not a confirmed causal chain. Prediction M3 is untested.",
+    salmonTitle: "Salmon: Navigation and Reproduction",
+    salmonP1: "[[ref:putman2014|Putman et al. (Biol. Lett. 2014)]] showed that salmon raised near steel-and-concrete aquaculture infrastructure exhibit disrupted geomagnetic navigation. Hatchery fish navigate significantly worse than wild fish. The mechanism is CRY/RPM-mediated magnetoreception — the same pathway (B) that BERM identifies for circadian disruption. Steel rebar in hatchery raceways creates local ELF field distortions that interfere with the CRY radical pair compass.",
+    salmonP2: "[[ref:welch2021|Welch et al. (Fish Fish. 2021)]] documented the multi-decadal collapse of Pacific salmon populations, with survival rates declining in multiple species simultaneously. [[ref:santi2025|Santi et al. (2025)]] showed that both testosterone AND luteinizing hormone are declining simultaneously across species — 'ongoing resetting of HPG function.' This is hypothalamic, not gonadal. In salmon, the hypothalamus controls both navigation (CRY-dependent spatial orientation) and reproduction (GnRH → LH). A single hypothalamic perturbation can impair both.",
+    salmonP3: "The CatSper calcium channel is the sperm-specific voltage-gated calcium channel required for hyperactivation (the vigorous motility needed to penetrate the egg). CatSper has 9 identified EMF-sensitive sites. In farmed salmon raised in steel-reinforced raceways with elevated ELF, CatSper function may be chronically impaired — simultaneously explaining reduced fertilization success and the broader reproductive decline.",
+    salmonM5Title: "Prediction M5: Farmed salmon CatSper diagnostics",
+    salmonM5: "Farmed salmon (raised in steel-reinforced concrete raceways) should show weaker CatSper current, reduced progesterone chemotaxis, and higher hyperactivation threshold compared to wild-caught salmon from the same population. Test: patch-clamp CatSper current + progesterone chemotaxis assay + hyperactivation threshold measurement in matched hatchery vs. wild fish.",
+    salmonNote: "Putman's navigation impairment is peer-reviewed [C]. The CatSper prediction (M5) is BERM's derivation — it connects Putman's navigation finding (CRY/RPM in the brain) with reproductive biology (CatSper in sperm) via the common hypothesis that hatchery infrastructure EMF affects both targets simultaneously. This is untested. Salmon decline also has strong alternative explanations (overfishing, habitat loss, ocean warming, sea lice from aquaculture) that are independent of EMF.",
+    gradientTitle: "Cross-Species EMF Gradient",
+    gradientP1: "When decline rates across species are plotted against EMF exposure scores, a clear gradient emerges: r = 0.909 (n = 7). Human sperm decline (2.64%/year) at the highest EMF exposure; non-warmblood horses (0.46%/year) at the lowest. The gradient spans 3 orders of magnitude of selection pressure and 6 species across 4 taxonomic orders.",
+    gradientP2: "This gradient eliminates sociocultural confounders. Dogs don't choose careers over puppies. Horses don't use contraception. Holstein cows don't delay reproduction for education. Yet all show reproductive parameter decline proportional to their EMF exposure — the only variable that scales with the gradient.",
+    gradientP3: "The negative control confirms the mechanism: Holstein dairy cows (EMF score 7) show EMF biological activity (Rodriguez 2003: melatonin decreased, estrous cycle altered) but are classified as negative controls because breeding selection pressure (~3 orders of magnitude larger) masks any population-level decline signal.",
+    gradientM4Title: "Prediction M4: Submarine cable ELF and aquatic reproduction",
+    gradientM4: "Within the ELF field zone of submarine power cables (~35m radius), aquatic organisms' reproductive success should be lower than in cable-distant areas. Test: sea urchin colony size/density near vs. far from cables, controlled for substrate type, depth, and currents. Mechanism: cable 50 Hz ELF → sea urchin CatSper → premature hyperactivation triggering → fertilization failure.",
+    gradientTableHeaders: { species: "Species", emfScore: "EMF score", decline: "Decline (%/yr)", axis: "Axis" },
+    gradientNote: "The r = 0.909 gradient is calculated from 7 data points (6 species, with human counted twice for sperm and testosterone). With n = 7, the p-value is approximately 0.005, but the degrees of freedom are low. Adding more species to the registry is required before claiming statistical robustness. The EMF scores are semi-quantitative estimates, not measured exposures. Prediction M4 is untested.",
+    threeAxisTitle: "Three-Axis Sentinel Architecture",
+    threeAxisP1: "Three independent measurement axes converge on the same conclusion — EMF biological activity is consistent across terrestrial, aquatic, and gradient dimensions:",
+    threeAxisLand: "Land axis: current sentinels (honeybee → dog → horse → human) with CSLI lag analysis",
+    threeAxisWater: "Water axis: new aquatic sentinels (whale, elasmobranch, salmon, sea urchin) where water naturally separates ELF from RF",
+    threeAxisGradient: "Gradient axis: cross-species EMF-decline correlation (r = 0.909, 7 species) eliminating sociocultural confounders",
+    threeAxisP2: "Each axis is independently derived. Each uses different species, different mechanisms, and different measurement methods. The probability that three independent axes converge on the same conclusion by chance is the product of their individual false-positive rates.",
 
     sensitivityTitle: "BERM sensitivity hierarchy",
     sensitivityDesc: "EMF sensitivity across species follows a predictable order based on VGCC physiology, CRY dependence, and environmental coupling. The hierarchy is derived from mechanism and verified against observed population decline timelines.",
@@ -134,6 +181,24 @@ const COPY = {
       "8,7× absorptiokerroin EI vahvistettu primäärilähteestä",
     ],
 
+    aquaticTitle: "Vesiakseli: luonnollinen kanavaerottaja",
+    aquaticP1: "Sammakkotulos paljastaa syvemmän periaatteen. Vesi vaimentaa RF:ää eksponentiaalisesti — 1 GHz:n taajuudella tunkeutumissyvyys merivedessä on alle 1 cm. ELF (50/60 Hz) tunkeutuu kymmenien metrien syvyyteen. Vesieliö elää luonnollisessa kaistanpäästösuodattimessa: se vastaanottaa ELF:n mutta on suojattu RF:ltä. Maaeliö vastaanottaa molemmat samanaikaisesti, lisättynä niiden superadditiivisilla interaktioilla.",
+    aquaticP2: "[[ref:superpos_172|172 tutkimuksen systemaattinen katsaus (Biomolecules 2025)]] havaitsi, että monilähteisten EMF-ympäristöjen vaikutukset ovat usein synergistisiä. Vesieliöt ovat vapautettuja tästä superpositiosta — ne altistuvat vain ELF-kanavalle. Tämä tekee vesiakselista ainoan tavan erottaa ELF- ja RF-vaikutukset ilman proxy-oletuksia tai kontrolloituja laboratorioolosuhteita.",
+    aquaticP3: "CatSper-kalsiumkanava — välttämätön siittiöiden hyperaktivaatiolle ja hedelmöitykselle — on [[ref:catsper_20yr|evolutiivisesti konservoitu merisiilistä ihmiseen (Physiology 2022)]]. Vesieliöiden lisääntyminen riippuu samasta ionikanavasta, jonka BERM tunnistaa EMF-herkäksi. Merenalaiset voimakaapelit tuottavat 50 Hz ELF-kenttiä, jotka ovat havaittavissa ~35 m:n etäisyydellä — luoden luonnollisen gradienttikokeen merieliöille, joiden hedelmöitys on CatSper-riippuvaista.",
+    aquaticP4: "[[ref:calves_dark|Kolbabova ym. (Sci. Rep. 2015)]] osoittivat, että ELF-magneettikentät vaikuttavat vasikoiden melatoniiniin jopa täydessä pimeydessä, vahvistaen ELF-reitin toimivan valosta riippumatta. Vesieliöt altistuvat nimenomaan tälle eristetylle ELF-reitille — tehden niistä puhtaimman luonnollisen testin sille, onko ELF yksinään biologisesti aktiivinen ympäristötasoilla.",
+    aquaticSkinDepth: [
+      { medium: "Merivesi", freq: "1 GHz (RF)", depth: "< 1 cm" },
+      { medium: "Merivesi", freq: "50 Hz (ELF)", depth: "~250 m" },
+      { medium: "Makea vesi", freq: "1 GHz (RF)", depth: "~3 cm" },
+      { medium: "Makea vesi", freq: "50 Hz (ELF)", depth: "~700 m" },
+      { medium: "Ilma", freq: "1 GHz (RF)", depth: "∞ (ei vaimennusta)" },
+      { medium: "Ilma", freq: "50 Hz (ELF)", depth: "∞ (ei vaimennusta)" },
+    ],
+    aquaticNote: "Vesiakseli on rakenteellinen argumentti, ei vahvistettu tulos. Yksikään tutkimus ei ole vielä mitannut merenalaisen kaapelin ELF-vaikutuksia meren lisääntymismenestykseen tässä kuvatulla kontrolloidulla asetelmalla. Olemassa olevat BOEM-riskiarviot ja skandinaaviset offshore-tutkimukset voivat sisältää relevanttia dataa. CatSperin herkkyyttä ELF:lle ei ole testattu suoraan missään organismissa.",
+    aquaticMediumHeader: "Väliaine",
+    aquaticFreqHeader: "Taajuus",
+    aquaticDepthHeader: "Tunkeutumissyvyys (δ)",
+
     batTitle: "Lepakot: Nisäkkäiden kompassi häiriintyy",
     batP1: "Toukokuussa 2026 [[ref:lindecke2026|Oliver Lindecken]] johtama tutkimusryhmä julkaisi Sciencessa ensimmäisen kokeellisen osoituksen siitä, että radiotaajuinen sähkömagneettinen kohina häiritsee nisäkkään magneettikompassia. Muuttavia sopraanoyölepakoita (Pipistrellus pygmaeus) altistettiin heikkoille laajakaistaisille RF-kentille (0,01–300 MHz) — normaaleissa kaupunkiympäristöissä esiintyvillä tasoilla — vain 30 minuutin ajan auringonlaskun aikana. Kontrollilepakoiden suuntautuminen oli normaali. RF-altistetut lepakot lähtivät satunnaisiin suuntiin.",
     batP2: "Odottamattomin löydös oli vaikutuksen kesto. Aiemmissa muuttolintuihin kohdistuneissa tutkimuksissa magneettikompassi palautui välittömästi altistuksen päätyttyä. Lepakoilla desorientaatio kesti yli kaksi tuntia. Tutkijat päättelivät, että sähkömagneettinen saaste voi vaikuttaa eläinten käyttäytymiseen 'monimutkaisemmin kuin aiemmin ajateltiin' ja että 'laajalti ennustettu sähkömagneettisen saasteen kasvu voi edelleen lisätä ihmisen aiheuttaman ilmastonmuutoksen vaikutuksia.'",
@@ -157,6 +222,35 @@ const COPY = {
     metabolicP2: "Tämä löydös on BERM-retrodiktio (R1): malli ennustaa, että EMF:n aiheuttaman metabolisen häiriön pitäisi näkyä lajeissa, jotka jakavat jänniteportteiset ionikanavat, eikä ainoastaan ihmisillä, joilla ruokavalio ja elämäntapa sekoittavat signaalia. Laboratorion jyrsijät kontrolloiduilla ruokavalioilla ja villieläimet, jotka eivät altistu prosessoidun ruoan markkinoinnille, tarjoavat osittaisen kontrollin 'kaloriylijäämä'-selitykselle.",
     metabolicP3: "Metabolinen kaskadi kytkeytyy BERM:iin kahden itsenäisen reitin kautta. Ensinnäkin melatoniinisuppressio (CRY/RPM-reitti) häiritsee sirkadiaanista glukoosinsäätelyä — vuorotyöntekijöillä on 2–3-kertainen diabetesriski. Toiseksi VGCC-välitteinen Ca²⁺-dysregulaatio muuttaa insuliinin eritystä haiman β-soluista, jotka ovat kehon sähköisesti aktiivisimpia soluja. Molemmat reitit ennustavat lajienvälisen metabolisen häiriön missä tahansa sähköistetyssä ympäristössä.",
     metabolicNote: "[[ref:klimentidis2010|Klimentidis 2011]] on havainnointitutkimus, joka dokumentoi rinnakkaisia trendejä. Se ei mittaa EMF-altistusta eikä osoita kausaalisuutta. 'Yhteinen ympäristötekijä', jota tekijät esittävät hypoteesina, voisi olla EMF, endokriiniset häiritsijät, epigeneettiset muutokset tai mikrobiomin muutokset. BERM esittää EMF:n yksinkertaisimpana selityksenä, koska se on ainoa tekijä, joka vaikuttaa sekä laboratorio- että villieläimiin eri ympäristöissä.",
+
+    whaleTitle: "Harmaavalaan luonnollinen koe",
+    whaleP1: "[[ref:granger2020|Granger ym. (Current Biology 2020)]] osoittivat, että harmaavalaan rantautumiset Yhdysvaltain länsirannikolla korreloivat auringon RF-aktiivisuuden kanssa. Kun aurinko tuottaa enemmän RF-kohinaa, enemmän valaita rantautuu — mikä on yhteensopivaa valaiden navigaatioon käyttämän CRY/RPM-magnetoreseptiokompassin häiriintymisen kanssa. Tämä on BERM:n radikaalipari-mekanismi testattuna luonnollisella kokeella, ilman ihmisen infrastruktuuria.",
+    whaleP2: "Sensorin molekulaarinen identiteetti tunnetaan nyt. [[ref:cry_drosophila|Fedele ym. (PLoS Genetics 2014, PMC4256086)]] osoittivat Drosophilassa, että ihmisen CRY2 havaitsee EMF:n mutta ihmisen CRY1 ei — ja että CRY:n C-terminaalisen domeenin deletio vaimentaa EMF-vastetta. Grangerin 'rikkinäinen reseptori' -mekanismi saa spesifisen molekulaarisen identiteetin: CRY2.",
+    whaleP3: "Kolme itsenäistä linjaa konvergoivat samaan periaatteeseen. Ensinnäkin [[ref:geomag_263|geomagneettinen häiriö lisää sydän- ja verisuonitautikuolleisuutta 263 USA:n kaupungissa (Env. Health 2019)]] — sama χ(Ā)-universaalisuus joka selittää valaiden rantautumisen, sovellettuna eri päätepisteeseen. Toiseksi [[ref:solar_birth_11yr|ihmisten syntyvyys moduloituu 11-vuotisen aurinkosyklin mukana 9 alueella (Int. J. Biometeorol. 1991)]] — sama aurinko-biologia-yhteys. Mekanismi: aurinko-RF → CRY/melatoniini → HPG-akseli.",
+    whaleM3Title: "Ennuste M3: efektikoon ajallinen vaimeneminen",
+    whaleM3: "Kun antropogeeninen RF-taustataso nousee vuosikymmenittäin, luonnollisen aurinko-RF-vaihtelun suhteellinen osuus pienenee. Grangerin valas-rantautumis-efektikoon pitäisi siksi pienentyä ajan myötä: 1985–2000 vs. 2000–2015 vs. 2015–2025. Rinnakkaisennuste: syntyvyyden 11v syklisyyden amplitudi pienenee myös (Kreikka 1960–1992 osoittaa APC −0,4 %/v, jo yhteensopiva). Jos molemmat vaimenevat samanaikaisesti, sama mekanismi — χ(Ā)-signaalin peittyminen antropogeeniseen RF:ään — selittää molemmat.",
+    whaleNote: "Granger 2020 on havainnointikorrelaatio [C] auringon aktiivisuusindeksien ja rantautumismäärien välillä. Se ei mittaa RF-altistusta valaan sijainnissa eikä osoita CRY2-mekanismia valaseläimissä. CRY2-tunnistus on Drosophilasta, ei merinisäkkäistä. χ(Ā)-konvergenssi päätepisteiden välillä (rantautumiset, kuolleisuus, syntyvyys) on kuvio, ei vahvistettu kausaaliketju. Ennuste M3 on testaamaton.",
+    salmonTitle: "Lohi: Navigaatio ja lisääntyminen",
+    salmonP1: "[[ref:putman2014|Putman ym. (Biol. Lett. 2014)]] osoittivat, että teräs-betonivesiviljely-infrastruktuurin lähellä kasvatetut lohet näyttävät häiriintynyttä geomagneettista navigaatiota. Kasvattamokalat navigoivat merkittävästi huonommin kuin villit kalat. Mekanismi on CRY/RPM-välitteinen magnetoreseptio — sama polku (B), jonka BERM tunnistaa sirkadiaaniselle häiriölle. Kasvattamon altaiden teräsraudoitus luo paikallisia ELF-kenttähäiriöitä, jotka häiritsevät CRY-radikaaliparikompassia.",
+    salmonP2: "[[ref:welch2021|Welch ym. (Fish Fish. 2021)]] dokumentoivat Tyynenmeren lohipopulaatioiden vuosikymmenten mittaisen romahduksen, jossa selviytymisasteet laskivat useissa lajeissa samanaikaisesti. [[ref:santi2025|Santi ym. (2025)]] osoittivat, että sekä testosteroni ETTÄ luteinisoiva hormoni laskevat samanaikaisesti lajeissa — 'HPG-funktion jatkuva uudelleenasetus.' Tämä on hypotalaamista, ei gonadaalista. Lohessa hypotalamus kontrolloi sekä navigaatiota (CRY-riippuvainen avaruudellinen orientaatio) että lisääntymistä (GnRH → LH). Yksi hypotalaaminen häiriö voi heikentää molempia.",
+    salmonP3: "CatSper-kalsiumkanava on siittiöspesifinen jänniteherkät kalsiumkanava, joka vaaditaan hyperaktivaatioon (voimakkaaseen liikkuvuuteen, joka tarvitaan munasolun läpäisemiseen). CatSperissä on 9 tunnistettua EMF-herkkää kohtaa. Teräsbetonisissa altaissa kohonneen ELF:n alaisena kasvatetuissa kasvattamolohissa CatSper-toiminta voi olla kroonisesti heikentynyt — selittäen samanaikaisesti alentunut hedelmöitysonnistuminen ja laajempi lisääntymisen lasku.",
+    salmonM5Title: "Ennuste M5: Kasvattamolohen CatSper-diagnostiikka",
+    salmonM5: "Kasvattamolohella (kasvatettu teräsbetonisissa altaissa) pitäisi olla heikompi CatSper-virta, vähentynyt progesteronikemotaksis ja korkeampi hyperaktivaation laukeamiskynnys verrattuna saman populaation villilohen. Testi: patch-clamp CatSper-virta + progesteronikemotaksismittaus + hyperaktivaation kynnys hatchery- vs. villikaloissa.",
+    salmonNote: "Putmanin navigaatiohäiriö on vertaisarvioitu [C]. CatSper-ennuste (M5) on BERM:n johdos — se yhdistää Putmanin navigaatiolöydöksen (CRY/RPM aivoissa) lisääntymisbiologiaan (CatSper siittiöissä) yhteisen hypoteesin kautta, jonka mukaan kasvattamon infrastruktuurin EMF vaikuttaa molempiin kohteisiin samanaikaisesti. Tämä on testaamaton. Lohikannalle on myös vahvoja vaihtoehtoselityksiä (ylikalastus, elinympäristön menetys, meren lämpeneminen, meriloiset vesiviljelmistä), jotka ovat EMF:stä riippumattomia.",
+    gradientTitle: "Lajienvälinen EMF-gradientti",
+    gradientP1: "Kun lajien laskuprosentit piirretään EMF-altistuspisteitä vastaan, selkeä gradientti ilmaantuu: r = 0,909 (n = 7). Ihmisen siittiöiden lasku (2,64 %/v) korkeimmalla EMF-altistuksella; kylmäveristen hevosten (0,46 %/v) matalimmalla. Gradientti kattaa 3 kertaluokkaa valintapainetta ja 6 lajia 4 taksonomisesta lahkosta.",
+    gradientP2: "Tämä gradientti eliminoi sosiokulttuuriset sekoittajat. Koirat eivät valitse uraa pentujen sijaan. Hevoset eivät käytä ehkäisyä. Holstein-lehmät eivät lykkää lisääntymistä koulutuksen vuoksi. Silti kaikki osoittavat lisääntymisparametrien laskua suhteessa EMF-altistukseensa — ainoa muuttuja joka skaalautuu gradientin kanssa.",
+    gradientP3: "Negatiivinen kontrolli vahvistaa mekanismin: Holstein-lypsylehmät (EMF-pisteet 7) osoittavat EMF:n biologista aktiivisuutta (Rodriguez 2003: melatoniini laski, kiimakierto muuttui), mutta ne luokitellaan negatiivisiksi kontrolleiksi, koska jalostusvalintapaine (~3 kertaluokkaa suurempi) peittää väestötason laskusignaalin.",
+    gradientM4Title: "Ennuste M4: Merikaapelin ELF ja vesieliöiden lisääntyminen",
+    gradientM4: "Merivoimakaapeleiden ELF-kenttävyöhykkeellä (~35 m säde) vesieliöiden lisääntymismenestyksen pitäisi olla heikompi kuin kaapelista kaukana. Testi: merisiiliyhdyskuntien koko/tiheys lähellä vs. kaukana kaapeleista, kontrolloituna pohjan tyypille, syvyydelle ja virtauksille.",
+    gradientTableHeaders: { species: "Laji", emfScore: "EMF-pisteet", decline: "Lasku (%/v)", axis: "Akseli" },
+    gradientNote: "r = 0,909 gradientti on laskettu 7 datapisteestä (6 lajia, ihminen kahdesti siittiöille ja testosteronille). Kun n = 7, p-arvo on noin 0,005, mutta vapausasteet ovat matalat. Lisää lajeja rekisteriin tarvitaan ennen tilastollisen robustiuden väittämistä. EMF-pisteet ovat puolikvantitatiivisia arvioita, eivät mitattuja altistuksia. Ennuste M4 on testaamaton.",
+    threeAxisTitle: "Kolmen akselin sentinelliarkkitehtuuri",
+    threeAxisP1: "Kolme riippumatonta mittausakselia konvergoivat samaan johtopäätökseen — EMF:n biologinen aktiivisuus on yhdenmukainen maa-, vesi- ja gradienttidimensioissa:",
+    threeAxisLand: "Maa-akseli: nykyiset sentinellit (mehiläinen → koira → hevonen → ihminen) CSLI-lag-analyysillä",
+    threeAxisWater: "Vesi-akseli: uudet vessentinellit (valas, rustokala, lohi, merisiili) joissa vesi erottaa luonnollisesti ELF:n RF:stä",
+    threeAxisGradient: "Gradienttiakseli: lajienvälinen EMF-lasku-korrelaatio (r = 0,909, 7 lajia) eliminoiden sosiokulttuuriset sekoittajat",
+    threeAxisP2: "Kukin akseli on itsenäisesti johdettu. Kukin käyttää eri lajeja, eri mekanismeja ja eri mittausmenetelmiä. Todennäköisyys, että kolme riippumatonta akselia konvergoivat samaan johtopäätökseen sattumalta, on niiden yksittäisten väärien positiivisten todennäköisyyksien tulo.",
 
     sensitivityTitle: "BERM-herkkyyshierarkia",
     sensitivityDesc: "EMF-herkkyys lajien välillä noudattaa ennustettavaa järjestystä VGCC-fysiologian, CRY-riippuvuuden ja ympäristökytkennän perusteella. Hierarkia on johdettu mekanismista ja verifioitu havaittujen populaatiolaskujen aikajanoja vastaan.",
@@ -220,6 +314,25 @@ const COPY = {
       "オーストラリアのタイムラインはJORNと非一貫",
       "8.7×吸収係数は一次資料から確認されていない",
     ],
+
+    aquaticTitle: "水圏軸：自然のチャネル分離器",
+    aquaticP1: "カエルの結果はより深い原理を示しています。水はRFを指数関数的に減衰させます — 1 GHzでの海水中の表皮深さは1 cm未満です。ELF（50/60 Hz）は数十メートル浸透します。水生生物は自然のバンドパスフィルターの中で生きています：ELFを受信しますがRFから遮蔽されています。陸上生物は両方を同時に受信し、さらにその超加法的相互作用も受けます。",
+    aquaticP2: "[[ref:superpos_172|172研究の体系的レビュー（Biomolecules 2025）]]は、多源EMF環境がしばしば相乗的な生物学的効果を生じることを発見しました。水生生物はこの重ね合わせから免除されます — ELFチャネルのみを経験します。これにより水圏軸は、プロキシの仮定や制御された実験室条件なしにELFとRF効果を分離する唯一の方法となります。",
+    aquaticP3: "CatSperカルシウムチャネル — 精子の超活性化と受精に不可欠 — は[[ref:catsper_20yr|ウニからヒトまで進化的に保存されています（Physiology 2022）]]。水生生物の生殖はBERMがEMF感受性と特定するのと同じイオンチャネルに依存しています。海底電力ケーブルは~35 mで検出可能な50 Hz ELFフィールドを放出し、CatSper依存性受精を持つ海洋生物の自然な勾配実験を生み出します。",
+    aquaticP4: "[[ref:calves_dark|Kolbabova et al.（Sci. Rep. 2015）]]は、ELF磁場が完全な暗闇でも子牛のメラトニンに影響することを実証し、ELF経路が光から独立して動作することを確認しました。水生生物はまさにこの孤立したELF経路を経験します — ELF単独が環境レベルで生物学的に活性であるかどうかの最もクリーンな自然テストとなります。",
+    aquaticSkinDepth: [
+      { medium: "海水", freq: "1 GHz (RF)", depth: "< 1 cm" },
+      { medium: "海水", freq: "50 Hz (ELF)", depth: "~250 m" },
+      { medium: "淡水", freq: "1 GHz (RF)", depth: "~3 cm" },
+      { medium: "淡水", freq: "50 Hz (ELF)", depth: "~700 m" },
+      { medium: "空気", freq: "1 GHz (RF)", depth: "∞（減衰なし）" },
+      { medium: "空気", freq: "50 Hz (ELF)", depth: "∞（減衰なし）" },
+    ],
+    aquaticNote: "水圏軸は構造的な議論であり、確認された結果ではありません。ここで述べた制御された設計で海底ケーブルのELF効果を海洋の生殖成功に対して測定した研究はまだありません。CatSperのELF感受性はどの生物でも直接テストされていません。",
+    aquaticMediumHeader: "媒質",
+    aquaticFreqHeader: "周波数",
+    aquaticDepthHeader: "表皮深さ (δ)",
+
     batTitle: "コウモリ：哺乳類のコンパスが攪乱される",
     batP1: "2026年5月、[[ref:lindecke2026|Oliver Lindecke]]率いるチームがScienceで、無線周波電磁ノイズが哺乳類の磁気コンパスを攪乱する最初の実験的実証を発表しました。渡り性のソプラノアブラコウモリ（Pipistrellus pygmaeus）は、通常の都市環境に見られるレベルの弱い広帯域RFノイズ（0.01〜300 MHz）に日没時にわずか30分間曝露されました。対照コウモリは正常に方向づけしました。RF曝露コウモリはランダムな方向に出発しました。",
     batP2: "最も予想外の発見は効果の持続時間でした。渡り鳥に関する以前の研究では、磁気コンパスはRF曝露終了後すぐに回復しました。コウモリでは、見当識障害は2時間以上続きました。研究者らは、電磁汚染が動物の行動に「以前考えられていたよりも複雑な方法で」影響を与える可能性があり、「広く予想される電磁汚染の増加が人為的気候変動の影響をさらに増大させる可能性がある」と結論づけました。",
@@ -240,6 +353,35 @@ const COPY = {
     metabolicP2: "この発見はBERM後ろ向き予測（R1）です：モデルはEMF誘発性代謝攪乱が電圧依存性イオンチャネルを共有する種で可視であるべきことを予測しています。管理された食事の実験げっ歯類と加工食品マーケティングに曝露されていない野生動物は「カロリー過剰」説明の部分的対照を提供します。",
     metabolicP3: "代謝カスケードは2つの独立したパスウェイを通じてBERMに接続します。第一に、メラトニン抑制（CRY/RPMパスウェイ）が概日グルコース調節を攪乱します。第二に、VGCC媒介Ca²⁺調節不全が膵臓β細胞からのインスリン分泌を変化させます。",
     metabolicNote: "[[ref:klimentidis2010|Klimentidis 2011]]は並行トレンドを文書化した観察研究です。EMF曝露を測定せず、因果関係を確立しません。BERMは実験動物と野生動物の両方に影響する唯一の因子であるため、EMFを最も簡潔な説明として主張します。",
+    whaleTitle: "コククジラの自然実験",
+    whaleP1: "[[ref:granger2020|Granger et al.（Current Biology 2020）]]は、米国西海岸でのコククジラの座礁が太陽RF活動と相関することを示しました。太陽がより多くのRFノイズを放出するとより多くのクジラが座礁します — 鯨類がナビゲーションに使用するCRY/RPM磁気受容コンパスの攪乱と一致します。これはBERMのラジカルペアメカニズムが自然実験でテストされたものです。",
+    whaleP2: "センサーの分子的アイデンティティは現在判明しています。[[ref:cry_drosophila|Fedele et al.（PLoS Genetics 2014、PMC4256086）]]はショウジョウバエでヒトCRY2がEMFを感知するがヒトCRY1は感知しないことを実証しました。Grangerの「壊れた受容体」メカニズムには特定の分子的アイデンティティがあります：CRY2。",
+    whaleP3: "3つの独立した線が同じ原理に収束します。第一に[[ref:geomag_263|地磁気攪乱が263の米国都市で心血管死亡率を増加させます（Env. Health 2019）]]。第二に[[ref:solar_birth_11yr|ヒトの出生が9地域で11年太陽周期に変調されます（Int. J. Biometeorol. 1991）]]。メカニズム：太陽RF → CRY/メラトニン → HPG軸。",
+    whaleM3Title: "予測M3：効果量の時間的減衰",
+    whaleM3: "人為的RF背景が10年ごとに上昇するにつれて、自然な太陽RF変動の相対的寄与は縮小します。Grangerのクジラ座礁効果量は時間とともに減少するはずです。並行予測：出生率の11年周期性の振幅も減少します。両方が同時に減衰すれば、同じメカニズムが両方を説明します。",
+    whaleNote: "Granger 2020は太陽活動指数と座礁数の観察的相関[C]です。クジラの位置でのRF曝露を測定せず、鯨類でのCRY2メカニズムを実証していません。予測M3は未テストです。",
+    salmonTitle: "サケ：ナビゲーションと生殖",
+    salmonP1: "[[ref:putman2014|Putman et al.（Biol. Lett. 2014）]]は、鉄筋コンクリート養殖インフラ近くで育てられたサケが地磁気ナビゲーションの障害を示すことを示しました。養殖魚は野生魚より有意にナビゲーション能力が低下します。メカニズムはCRY/RPM媒介磁気受容 — BERMが概日リズム障害に対して特定する同じ経路（B）です。",
+    salmonP2: "[[ref:welch2021|Welch et al.（Fish Fish. 2021）]]は太平洋サケ個体群の数十年にわたる崩壊を記録し、複数種で生存率が同時に低下しました。[[ref:santi2025|Santi et al.（2025）]]はテストステロンとLHの両方が同時に低下していることを示しました — 「HPG機能の進行中のリセット」。これは視床下部性であり、生殖腺性ではありません。サケでは視床下部がナビゲーション（CRY依存的空間定位）と生殖（GnRH → LH）の両方を制御します。",
+    salmonP3: "CatSperカルシウムチャネルは精子特異的電位依存性カルシウムチャネルで、過活性化（卵子浸透に必要な激しい運動性）に必要です。CatSperには9つのEMF感受性部位が特定されています。鉄筋コンクリートの水路でELFが上昇した環境で育った養殖サケでは、CatSper機能が慢性的に障害されている可能性があります。",
+    salmonM5Title: "予測M5：養殖サケCatSper診断",
+    salmonM5: "養殖サケ（鉄筋コンクリート水路で飼育）は、同一個体群の野生サケと比較して、CatSper電流が弱く、プロゲステロン走化性が低下し、過活性化閾値が高いはずです。テスト：養殖 vs. 野生魚でのパッチクランプCatSper電流 + プロゲステロン走化性アッセイ + 過活性化閾値測定。",
+    salmonNote: "Putmanのナビゲーション障害は査読済み[C]です。CatSper予測（M5）はBERMの導出です — Putmanのナビゲーション発見（脳のCRY/RPM）と生殖生物学（精子のCatSper）を、養殖インフラEMFが両方の標的に同時に影響するという共通仮説で結びつけます。これは未テストです。サケ減少にはEMFとは独立した強力な代替説明（乱獲、生息地喪失、海洋温暖化、養殖からのウミジラミ）もあります。",
+    gradientTitle: "種間EMF勾配",
+    gradientP1: "種間の減少率をEMF曝露スコアに対してプロットすると、明確な勾配が現れます：r = 0.909（n = 7）。ヒト精子の減少（2.64%/年）が最高EMF曝露で、非温血種馬（0.46%/年）が最低です。この勾配は3桁の選択圧と4分類目の6種に及びます。",
+    gradientP2: "この勾配は社会文化的交絡因子を排除します。犬は子犬より仕事を選びません。馬は避妊しません。ホルスタイン牛は教育のために繁殖を遅らせません。しかしすべてがEMF曝露に比例した生殖パラメータの低下を示します — 勾配と連動する唯一の変数です。",
+    gradientP3: "負の対照がメカニズムを確認します：ホルスタイン乳牛（EMFスコア7）はEMF生物学的活性を示しますが（Rodriguez 2003：メラトニン低下、発情周期変化）、育種選択圧が集団レベルの減少シグナルを覆い隠すため負の対照として分類されます。",
+    gradientM4Title: "予測M4：海底ケーブルELFと水生生殖",
+    gradientM4: "海底電力ケーブルのELF場ゾーン（~35m半径）内で、水生生物の生殖成功率はケーブル遠方域より低いはずです。テスト：ケーブル付近 vs. 遠方のウニ群体サイズ/密度。",
+    gradientTableHeaders: { species: "種", emfScore: "EMFスコア", decline: "減少（%/年）", axis: "軸" },
+    gradientNote: "r = 0.909勾配は7データポイント（6種、ヒトは精子とテストステロンで2回計上）から算出。n = 7ではp値は約0.005ですが自由度は低い。統計的堅牢性を主張する前にレジストリへの種追加が必要です。EMFスコアは半定量的推定値です。予測M4は未テストです。",
+    threeAxisTitle: "三軸センチネルアーキテクチャ",
+    threeAxisP1: "3つの独立した測定軸が同じ結論に収束します — EMFの生物学的活性は陸上、水中、勾配の各次元で一貫しています：",
+    threeAxisLand: "陸上軸：現行センチネル（ミツバチ→犬→馬→ヒト）CSLI遅延分析",
+    threeAxisWater: "水中軸：新規水生センチネル（クジラ、板鰓類、サケ、ウニ）水がELFとRFを自然に分離",
+    threeAxisGradient: "勾配軸：種間EMF-減少相関（r = 0.909、7種）社会文化的交絡因子を排除",
+    threeAxisP2: "各軸は独立に導出されています。各々が異なる種、異なるメカニズム、異なる測定方法を使用します。3つの独立した軸が偶然に同じ結論に収束する確率は、個々の偽陽性率の積です。",
+
     sensitivityTitle: "BERM感受性階層",
     sensitivityDesc: "種間のEMF感受性は、VGCC生理学、CRY依存性、環境結合に基づく予測可能な順序に従います。階層はメカニズムから導出され、観察された個体群減少のタイムラインに対して検証されています。",
     sensitivityOrder: [
@@ -301,6 +443,25 @@ const COPY = {
       "Chronologie australienne inconsistante pour JORN",
       "Coefficient d'absorption 8,7× NON confirmé par source primaire",
     ],
+
+    aquaticTitle: "Axe aquatique : le séparateur naturel de canaux",
+    aquaticP1: "Le résultat des grenouilles révèle un principe plus profond. L'eau atténue les RF de façon exponentielle — à 1 GHz, la profondeur de pénétration en eau de mer est inférieure à 1 cm. L'ELF (50/60 Hz) pénètre sur des dizaines de mètres. Un organisme aquatique vit dans un filtre passe-bande naturel : il reçoit l'ELF mais est protégé des RF. Un organisme terrestre reçoit les deux simultanément, plus leurs interactions superadditives.",
+    aquaticP2: "Une [[ref:superpos_172|revue systématique de 172 études (Biomolecules 2025)]] a trouvé que les environnements EMF multi-sources produisent souvent des effets biologiques synergiques. Les organismes aquatiques sont exemptés de cette superposition — ils n'expérimentent que le canal ELF. Cela fait de l'axe aquatique le seul moyen de séparer les effets ELF des effets RF sans hypothèses proxy ou conditions de laboratoire contrôlées.",
+    aquaticP3: "Le canal calcique CatSper — essentiel pour l'hyperactivation des spermatozoïdes et la fécondation — est [[ref:catsper_20yr|conservé évolutivement de l'oursin à l'humain (Physiology 2022)]]. La reproduction aquatique dépend du même canal ionique que BERM identifie comme sensible aux EMF. Les câbles électriques sous-marins émettent des champs ELF à 50 Hz détectables à ~35 m — créant une expérience de gradient naturelle pour les organismes marins à fécondation dépendante de CatSper.",
+    aquaticP4: "[[ref:calves_dark|Kolbabova et al. (Sci. Rep. 2015)]] ont démontré que les champs magnétiques ELF affectent la mélatonine des veaux même dans l'obscurité complète, confirmant que la voie ELF fonctionne indépendamment de la lumière. Les organismes aquatiques expérimentent précisément cette voie ELF isolée — ce qui en fait le test naturel le plus propre pour déterminer si l'ELF seul est biologiquement actif aux niveaux environnementaux.",
+    aquaticSkinDepth: [
+      { medium: "Eau de mer", freq: "1 GHz (RF)", depth: "< 1 cm" },
+      { medium: "Eau de mer", freq: "50 Hz (ELF)", depth: "~250 m" },
+      { medium: "Eau douce", freq: "1 GHz (RF)", depth: "~3 cm" },
+      { medium: "Eau douce", freq: "50 Hz (ELF)", depth: "~700 m" },
+      { medium: "Air", freq: "1 GHz (RF)", depth: "∞ (pas d'atténuation)" },
+      { medium: "Air", freq: "50 Hz (ELF)", depth: "∞ (pas d'atténuation)" },
+    ],
+    aquaticNote: "L'axe aquatique est un argument structurel, pas un résultat confirmé. Aucune étude n'a encore mesuré les effets ELF des câbles sous-marins sur le succès reproductif marin avec le design contrôlé décrit ici. La sensibilité de CatSper aux ELF n'a pas été testée directement chez aucun organisme.",
+    aquaticMediumHeader: "Milieu",
+    aquaticFreqHeader: "Fréquence",
+    aquaticDepthHeader: "Profondeur de pénétration (δ)",
+
     batTitle: "Chauves-souris : la boussole des mammifères perturbée",
     batP1: "En mai 2026, une équipe dirigée par [[ref:lindecke2026|Oliver Lindecke]] a publié dans Science la première démonstration expérimentale que le bruit électromagnétique radiofréquence perturbe la boussole magnétique d'un mammifère. Des pipistrelles sopranes migratrices (Pipistrellus pygmaeus) ont été exposées à un bruit RF faible à large bande (0,01-300 MHz) — à des niveaux trouvés dans les environnements urbains normaux — pendant seulement 30 minutes au coucher du soleil. Les chauves-souris témoins s'orientaient normalement. Les chauves-souris exposées aux RF partaient dans des directions aléatoires.",
     batP2: "La découverte la plus inattendue était la durée de l'effet. Dans les études précédentes sur les oiseaux migrateurs, la boussole magnétique récupérait immédiatement après la fin de l'exposition. Chez les chauves-souris, la désorientation persistait pendant plus de deux heures. Les chercheurs ont conclu que la pollution électromagnétique peut affecter le comportement animal « de manières plus complexes qu'on ne le pensait auparavant ».",
@@ -321,6 +482,35 @@ const COPY = {
     metabolicP2: "Cette découverte est une rétrodiction BERM (R1) : le modèle prédit que la perturbation métabolique induite par les EMF devrait être visible dans les espèces partageant les canaux ioniques voltage-dépendants. Les rongeurs de laboratoire avec des régimes contrôlés et les animaux sauvages fournissent des contrôles partiels pour l'explication de « l'excès calorique ».",
     metabolicP3: "La cascade métabolique se connecte à BERM par deux voies indépendantes. Premièrement, la suppression de la mélatonine (voie CRY/RPM) perturbe la régulation circadienne du glucose. Deuxièmement, la dérégulation Ca²⁺ médiée par VGCC altère la sécrétion d'insuline des cellules β pancréatiques.",
     metabolicNote: "[[ref:klimentidis2010|Klimentidis 2011]] est une étude observationnelle documentant des tendances parallèles. Elle ne mesure pas l'exposition EMF et n'établit pas la causalité. BERM propose les EMF comme l'explication la plus parcimonieuse car c'est le seul facteur affectant à la fois les animaux de laboratoire et sauvages.",
+    whaleTitle: "Expérience naturelle de la baleine grise",
+    whaleP1: "[[ref:granger2020|Granger et al. (Current Biology 2020)]] ont montré que les échouages de baleines grises sur la côte ouest des États-Unis corrèlent avec l'activité RF solaire. Quand le soleil émet plus de bruit RF, plus de baleines s'échouent — cohérent avec la perturbation de la boussole CRY/RPM de magnétoréception que les cétacés utilisent pour la navigation. C'est le mécanisme de paire de radicaux de BERM testé par une expérience naturelle.",
+    whaleP2: "L'identité moléculaire du capteur est maintenant connue. [[ref:cry_drosophila|Fedele et al. (PLoS Genetics 2014, PMC4256086)]] ont démontré chez la drosophile que le CRY2 humain détecte les EMF tandis que le CRY1 humain ne le fait pas. Le mécanisme de « récepteur cassé » de Granger a une identité moléculaire spécifique : CRY2.",
+    whaleP3: "Trois lignes indépendantes convergent vers le même principe. Premièrement, [[ref:geomag_263|les perturbations géomagnétiques augmentent la mortalité cardiovasculaire dans 263 villes américaines (Env. Health 2019)]]. Deuxièmement, [[ref:solar_birth_11yr|les naissances humaines se modulent avec le cycle solaire de 11 ans dans 9 régions (Int. J. Biometeorol. 1991)]]. Mécanisme : RF solaire → CRY/mélatonine → axe HPG.",
+    whaleM3Title: "Prédiction M3 : atténuation temporelle de la taille d'effet",
+    whaleM3: "À mesure que le fond RF anthropique augmente décennie après décennie, la contribution relative de la variation RF solaire naturelle diminue. La taille d'effet des échouages de baleines de Granger devrait donc diminuer au fil du temps. Prédiction parallèle : l'amplitude de la cyclicité de 11 ans du taux de natalité devrait également diminuer. Si les deux s'atténuent simultanément, le même mécanisme les explique.",
+    whaleNote: "Granger 2020 est une corrélation observationnelle [C] entre les indices d'activité solaire et les comptages d'échouages. Il ne mesure pas l'exposition RF à l'emplacement de la baleine ni ne démontre un mécanisme CRY2 chez les cétacés. La prédiction M3 n'est pas testée.",
+    salmonTitle: "Saumon : Navigation et reproduction",
+    salmonP1: "[[ref:putman2014|Putman et al. (Biol. Lett. 2014)]] ont montré que les saumons élevés près d'infrastructures d'aquaculture en acier et béton présentent une navigation géomagnétique perturbée. Les poissons d'élevage naviguent significativement moins bien que les poissons sauvages. Le mécanisme est la magnétoréception médiée par CRY/RPM — la même voie (B) que BERM identifie pour la perturbation circadienne.",
+    salmonP2: "[[ref:welch2021|Welch et al. (Fish Fish. 2021)]] ont documenté l'effondrement multi-décennal des populations de saumon du Pacifique. [[ref:santi2025|Santi et al. (2025)]] ont montré que la testostérone ET l'hormone lutéinisante déclinent simultanément — 'réinitialisation continue de la fonction HPG.' C'est hypothalamique, pas gonadique. Chez le saumon, l'hypothalamus contrôle la navigation (orientation spatiale CRY-dépendante) et la reproduction (GnRH → LH). Une seule perturbation hypothalamique peut altérer les deux.",
+    salmonP3: "Le canal calcique CatSper est le canal calcique voltage-dépendant spécifique aux spermatozoïdes requis pour l'hyperactivation. CatSper possède 9 sites sensibles aux EMF identifiés. Chez les saumons d'élevage dans des bassins en béton armé avec un ELF élevé, la fonction CatSper peut être chroniquement altérée.",
+    salmonM5Title: "Prédiction M5 : Diagnostics CatSper du saumon d'élevage",
+    salmonM5: "Le saumon d'élevage (élevé dans des bassins en béton armé) devrait présenter un courant CatSper plus faible, une chimiotaxie à la progestérone réduite et un seuil d'hyperactivation plus élevé par rapport au saumon sauvage de la même population.",
+    salmonNote: "L'altération de la navigation de Putman est évaluée par les pairs [C]. La prédiction CatSper (M5) est une dérivation BERM — elle n'est pas testée. Le déclin du saumon a aussi de fortes explications alternatives (surpêche, perte d'habitat, réchauffement océanique, poux de mer) indépendantes des EMF.",
+    gradientTitle: "Gradient EMF inter-espèces",
+    gradientP1: "Lorsque les taux de déclin entre espèces sont tracés contre les scores d'exposition EMF, un gradient clair émerge : r = 0,909 (n = 7). Le déclin des spermatozoïdes humains (2,64 %/an) à l'exposition EMF la plus élevée ; les chevaux non sang-chaud (0,46 %/an) à la plus basse.",
+    gradientP2: "Ce gradient élimine les facteurs confondants socioculturels. Les chiens ne choisissent pas une carrière plutôt que des chiots. Les chevaux n'utilisent pas de contraception. Les vaches Holstein ne retardent pas la reproduction pour l'éducation. Pourtant tous montrent un déclin des paramètres reproductifs proportionnel à leur exposition EMF.",
+    gradientP3: "Le contrôle négatif confirme le mécanisme : les vaches Holstein (score EMF 7) montrent une activité biologique EMF (Rodriguez 2003) mais sont classées comme contrôles négatifs car la pression de sélection d'élevage masque le signal de déclin au niveau populationnel.",
+    gradientM4Title: "Prédiction M4 : ELF des câbles sous-marins et reproduction aquatique",
+    gradientM4: "Dans la zone de champ ELF des câbles électriques sous-marins (~35m de rayon), le succès reproductif des organismes aquatiques devrait être inférieur à celui des zones éloignées des câbles.",
+    gradientTableHeaders: { species: "Espèce", emfScore: "Score EMF", decline: "Déclin (%/an)", axis: "Axe" },
+    gradientNote: "Le gradient r = 0,909 est calculé à partir de 7 points de données. Avec n = 7, la valeur p est environ 0,005 mais les degrés de liberté sont faibles. Les scores EMF sont des estimations semi-quantitatives. La prédiction M4 n'est pas testée.",
+    threeAxisTitle: "Architecture sentinelle à trois axes",
+    threeAxisP1: "Trois axes de mesure indépendants convergent vers la même conclusion — l'activité biologique des EMF est cohérente dans les dimensions terrestre, aquatique et de gradient :",
+    threeAxisLand: "Axe terrestre : sentinelles actuelles (abeille → chien → cheval → humain) avec analyse de décalage CSLI",
+    threeAxisWater: "Axe aquatique : nouvelles sentinelles aquatiques (baleine, élasmobranche, saumon, oursin) où l'eau sépare naturellement ELF et RF",
+    threeAxisGradient: "Axe gradient : corrélation EMF-déclin inter-espèces (r = 0,909, 7 espèces) éliminant les facteurs confondants socioculturels",
+    threeAxisP2: "Chaque axe est dérivé indépendamment. Chacun utilise des espèces, des mécanismes et des méthodes de mesure différents. La probabilité que trois axes indépendants convergent vers la même conclusion par hasard est le produit de leurs taux de faux positifs individuels.",
+
     sensitivityTitle: "Hiérarchie de sensibilité BERM",
     sensitivityDesc: "La sensibilité aux EMF entre espèces suit un ordre prévisible basé sur la physiologie VGCC, la dépendance CRY et le couplage environnemental. La hiérarchie est dérivée du mécanisme et vérifiée par rapport aux chronologies de déclin de population observées.",
     sensitivityOrder: [
@@ -382,6 +572,25 @@ const COPY = {
       "호주 타임라인 JORN과 비일관",
       "8.7× 흡수 계수 1차 출처에서 확인되지 않음",
     ],
+
+    aquaticTitle: "수생축: 자연의 채널 분리기",
+    aquaticP1: "개구리 결과는 더 깊은 원리를 드러냅니다. 물은 RF를 지수적으로 감쇠시킵니다 — 1 GHz에서 해수의 표피 깊이는 1 cm 미만입니다. ELF(50/60 Hz)는 수십 미터를 관통합니다. 수생 생물은 자연적 대역통과 필터 안에서 살고 있습니다: ELF를 수신하지만 RF로부터 차폐됩니다. 육상 생물은 둘 다 동시에 수신하며, 초가법적 상호작용도 함께 받습니다.",
+    aquaticP2: "[[ref:superpos_172|172개 연구의 체계적 리뷰(Biomolecules 2025)]]는 다중 소스 EMF 환경이 종종 시너지적 생물학적 효과를 생성한다는 것을 발견했습니다. 수생 생물은 이 중첩에서 면제됩니다 — ELF 채널만 경험합니다. 이것은 수생축을 프록시 가정이나 통제된 실험실 조건 없이 ELF와 RF 효과를 분리하는 유일한 방법으로 만듭니다.",
+    aquaticP3: "CatSper 칼슘 채널 — 정자 과활성화와 수정에 필수적 — 은 [[ref:catsper_20yr|성게에서 인간까지 진화적으로 보존되어 있습니다(Physiology 2022)]]. 수생 생식은 BERM이 EMF 민감성으로 식별하는 동일한 이온 채널에 의존합니다. 해저 전력 케이블은 ~35 m에서 감지 가능한 50 Hz ELF 필드를 방출하여 CatSper 의존적 수정을 가진 해양 생물에 대한 자연적 기울기 실험을 만듭니다.",
+    aquaticP4: "[[ref:calves_dark|Kolbabova et al.(Sci. Rep. 2015)]]은 ELF 자기장이 완전한 어둠에서도 송아지의 멜라토닌에 영향을 미친다는 것을 실증하여 ELF 경로가 빛과 독립적으로 작동함을 확인했습니다. 수생 생물은 정확히 이 격리된 ELF 경로를 경험합니다 — ELF 단독이 환경 수준에서 생물학적으로 활성인지의 가장 깨끗한 자연 테스트가 됩니다.",
+    aquaticSkinDepth: [
+      { medium: "해수", freq: "1 GHz (RF)", depth: "< 1 cm" },
+      { medium: "해수", freq: "50 Hz (ELF)", depth: "~250 m" },
+      { medium: "담수", freq: "1 GHz (RF)", depth: "~3 cm" },
+      { medium: "담수", freq: "50 Hz (ELF)", depth: "~700 m" },
+      { medium: "공기", freq: "1 GHz (RF)", depth: "∞ (감쇠 없음)" },
+      { medium: "공기", freq: "50 Hz (ELF)", depth: "∞ (감쇠 없음)" },
+    ],
+    aquaticNote: "수생축은 구조적 논거이지 확인된 결과가 아닙니다. 여기에 설명된 통제된 설계로 해저 케이블 ELF 효과를 해양 생식 성공에 대해 측정한 연구는 아직 없습니다. CatSper의 ELF 민감성은 어떤 생물에서도 직접 테스트되지 않았습니다.",
+    aquaticMediumHeader: "매질",
+    aquaticFreqHeader: "주파수",
+    aquaticDepthHeader: "표피 깊이 (δ)",
+
     batTitle: "박쥐: 포유류 나침반 교란",
     batP1: "2026년 5월, [[ref:lindecke2026|Oliver Lindecke]]가 이끄는 팀이 Science에서 무선주파수 전자기 노이즈가 포유류의 자기 나침반을 교란시키는 최초의 실험적 실증을 발표했습니다. 이주하는 소프라노피피스트렐 박쥐(Pipistrellus pygmaeus)는 일반 도시 환경에서 발견되는 수준의 약한 광대역 RF 노이즈(0.01-300 MHz)에 일몰 시 30분간만 노출되었습니다.",
     batP2: "가장 예상치 못한 발견은 효과의 지속 시간이었습니다. 이전의 철새 연구에서 자기 나침반은 RF 노출 종료 후 즉시 회복되었습니다. 박쥐에서 방향감각 상실은 2시간 이상 지속되었습니다.",
@@ -402,6 +611,35 @@ const COPY = {
     metabolicP2: "이 발견은 BERM 후향적 예측(R1)입니다: 모델은 EMF 유도 대사 교란이 전압 개폐 이온 채널을 공유하는 종에서 가시적이어야 한다고 예측합니다.",
     metabolicP3: "대사 캐스케이드는 두 개의 독립적 경로를 통해 BERM에 연결됩니다. 첫째, 멜라토닌 억제(CRY/RPM 경로)가 일주기 포도당 조절을 교란합니다. 둘째, VGCC 매개 Ca²⁺ 조절 장애가 췌장 β세포로부터의 인슐린 분비를 변경합니다.",
     metabolicNote: "[[ref:klimentidis2010|Klimentidis 2011]]은 병렬 추세를 문서화한 관찰 연구입니다. EMF 노출을 측정하지 않으며 인과관계를 확립하지 않습니다. BERM은 실험실 동물과 야생 동물 모두에 영향을 미치는 유일한 인자이므로 EMF를 가장 간결한 설명으로 제시합니다.",
+    whaleTitle: "회색고래 자연 실험",
+    whaleP1: "[[ref:granger2020|Granger et al.(Current Biology 2020)]]은 미국 서부 해안에서 회색고래 좌초가 태양 RF 활동과 상관관계가 있음을 보여주었습니다. 태양이 더 많은 RF 노이즈를 방출하면 더 많은 고래가 좌초합니다 — 고래류가 내비게이션에 사용하는 CRY/RPM 자기수용 나침반의 교란과 일치합니다.",
+    whaleP2: "센서의 분자적 정체성이 이제 알려져 있습니다. [[ref:cry_drosophila|Fedele et al.(PLoS Genetics 2014, PMC4256086)]]은 초파리에서 인간 CRY2가 EMF를 감지하지만 인간 CRY1은 감지하지 않음을 실증했습니다. Granger의 '고장난 수용체' 메커니즘은 특정 분자적 정체성을 가집니다: CRY2.",
+    whaleP3: "세 개의 독립적 라인이 같은 원리에 수렴합니다. 첫째, [[ref:geomag_263|지자기 교란이 263개 미국 도시에서 심혈관 사망률을 증가시킵니다(Env. Health 2019)]]. 둘째, [[ref:solar_birth_11yr|인간 출생이 9개 지역에서 11년 태양 주기에 변조됩니다(Int. J. Biometeorol. 1991)]]. 메커니즘: 태양 RF → CRY/멜라토닌 → HPG축.",
+    whaleM3Title: "예측 M3: 효과 크기의 시간적 감쇠",
+    whaleM3: "인위적 RF 배경이 10년마다 상승함에 따라 자연적 태양 RF 변동의 상대적 기여는 줄어듭니다. Granger의 고래 좌초 효과 크기는 시간이 지남에 따라 감소해야 합니다. 병렬 예측: 출생률의 11년 주기성 진폭도 감소해야 합니다. 둘 다 동시에 감쇠하면 같은 메커니즘이 둘 다 설명합니다.",
+    whaleNote: "Granger 2020은 태양 활동 지수와 좌초 수 사이의 관찰적 상관관계[C]입니다. 고래 위치에서 RF 노출을 측정하지 않으며 고래류에서 CRY2 메커니즘을 실증하지 않습니다. 예측 M3은 미테스트입니다.",
+    salmonTitle: "연어: 내비게이션과 생식",
+    salmonP1: "[[ref:putman2014|Putman et al. (Biol. Lett. 2014)]]은 철근 콘크리트 양식 인프라 근처에서 자란 연어가 지자기 내비게이션 장애를 보인다는 것을 보여주었습니다. 양식 물고기는 야생 물고기보다 내비게이션 능력이 현저히 떨어집니다. 메커니즘은 CRY/RPM 매개 자기수용 — BERM이 일주기 교란에 대해 식별하는 동일한 경로(B)입니다.",
+    salmonP2: "[[ref:welch2021|Welch et al. (Fish Fish. 2021)]]은 태평양 연어 개체군의 수십 년에 걸친 붕괴를 기록했습니다. [[ref:santi2025|Santi et al. (2025)]]은 테스토스테론과 LH가 동시에 감소하고 있음을 보여주었습니다 — 'HPG 기능의 진행 중인 재설정.' 이것은 시상하부성이며 생식선성이 아닙니다. 연어에서 시상하부는 내비게이션(CRY 의존적 공간 정향)과 생식(GnRH → LH) 모두를 제어합니다.",
+    salmonP3: "CatSper 칼슘 채널은 과활성화(난자 침투에 필요한 격렬한 운동성)에 필요한 정자 특이적 전압 개폐 칼슘 채널입니다. CatSper에는 9개의 EMF 민감 부위가 확인되었습니다. 철근 콘크리트 수로에서 ELF가 상승된 환경에서 자란 양식 연어는 CatSper 기능이 만성적으로 손상될 수 있습니다.",
+    salmonM5Title: "예측 M5: 양식 연어 CatSper 진단",
+    salmonM5: "양식 연어(철근 콘크리트 수로에서 사육)는 동일 개체군의 야생 연어에 비해 CatSper 전류가 약하고, 프로게스테론 주화성이 감소하고, 과활성화 역치가 높아야 합니다.",
+    salmonNote: "Putman의 내비게이션 장애는 동료 심사를 거쳤습니다[C]. CatSper 예측(M5)은 BERM의 도출입니다 — 미테스트입니다. 연어 감소에는 EMF와 독립적인 강력한 대안적 설명(남획, 서식지 손실, 해양 온난화, 양식장의 바다이)도 있습니다.",
+    gradientTitle: "종간 EMF 기울기",
+    gradientP1: "종간 감소율을 EMF 노출 점수에 대해 플롯하면 명확한 기울기가 나타납니다: r = 0.909 (n = 7). 인간 정자 감소(2.64%/년)가 최고 EMF 노출에서, 비온혈종 말(0.46%/년)이 최저에서 나타납니다.",
+    gradientP2: "이 기울기는 사회문화적 교란 요인을 제거합니다. 개는 강아지 대신 직업을 선택하지 않습니다. 말은 피임을 사용하지 않습니다. 홀스타인 젖소는 교육을 위해 번식을 미루지 않습니다. 그러나 모두 EMF 노출에 비례한 생식 매개변수 감소를 보여줍니다.",
+    gradientP3: "음성 대조군이 메커니즘을 확인합니다: 홀스타인 젖소(EMF 점수 7)는 EMF 생물학적 활성을 보이지만(Rodriguez 2003) 육종 선택 압력이 인구 수준 감소 신호를 가리기 때문에 음성 대조군으로 분류됩니다.",
+    gradientM4Title: "예측 M4: 해저 케이블 ELF와 수중 생식",
+    gradientM4: "해저 전력 케이블의 ELF 장 영역(~35m 반경) 내에서 수생 생물의 생식 성공률은 케이블 원거리 지역보다 낮아야 합니다.",
+    gradientTableHeaders: { species: "종", emfScore: "EMF 점수", decline: "감소(%/년)", axis: "축" },
+    gradientNote: "r = 0.909 기울기는 7개 데이터 포인트에서 계산되었습니다. n = 7에서 p값은 약 0.005이지만 자유도가 낮습니다. EMF 점수는 반정량적 추정치입니다. 예측 M4은 미테스트입니다.",
+    threeAxisTitle: "3축 센티넬 아키텍처",
+    threeAxisP1: "3개의 독립적 측정 축이 같은 결론에 수렴합니다 — EMF의 생물학적 활성이 육상, 수중, 기울기 차원에서 일관됩니다:",
+    threeAxisLand: "육상 축: 현재 센티넬(꿀벌 → 개 → 말 → 인간) CSLI 지연 분석",
+    threeAxisWater: "수중 축: 새로운 수생 센티넬(고래, 판새류, 연어, 성게) 물이 자연적으로 ELF와 RF를 분리",
+    threeAxisGradient: "기울기 축: 종간 EMF-감소 상관관계(r = 0.909, 7종) 사회문화적 교란 요인 제거",
+    threeAxisP2: "각 축은 독립적으로 도출되었습니다. 각각 다른 종, 다른 메커니즘, 다른 측정 방법을 사용합니다. 3개의 독립적 축이 우연히 같은 결론에 수렴할 확률은 개별 위양성률의 곱입니다.",
+
     sensitivityTitle: "BERM 감수성 계층",
     sensitivityDesc: "종간 EMF 감수성은 VGCC 생리학, CRY 의존성 및 환경 결합에 기반한 예측 가능한 순서를 따릅니다.",
     sensitivityOrder: [
@@ -545,6 +783,42 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
+      {/* Aquatic Axis: Natural Channel Separator */}
+      <section id="aquatic-axis" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.aquaticTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p>{d.aquaticP1}</p>
+
+          <div className="overflow-x-auto my-4">
+            <table className="w-full text-xs border-collapse">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-left py-2 px-2 font-semibold">{d.aquaticMediumHeader}</th>
+                  <th className="text-left py-2 px-2 font-semibold">{d.aquaticFreqHeader}</th>
+                  <th className="text-left py-2 px-2 font-semibold">{d.aquaticDepthHeader}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.aquaticSkinDepth.map((row: { medium: string; freq: string; depth: string }, i: number) => (
+                  <tr key={i} className="border-b border-border/50">
+                    <td className="py-2 px-2 font-medium">{row.medium}</td>
+                    <td className="py-2 px-2 font-mono-num">{row.freq}</td>
+                    <td className="py-2 px-2 font-mono-num">{row.depth}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p><InlineReferenceText text={d.aquaticP2} locale={locale} /></p>
+          <p><InlineReferenceText text={d.aquaticP3} locale={locale} /></p>
+          <p><InlineReferenceText text={d.aquaticP4} locale={locale} /></p>
+        </div>
+        <div className="mt-4 rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.aquaticNote}</p>
+        </div>
+      </section>
+
       {/* Bats: Lindecke 2026 */}
       <section id="bats" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
         <h2 className="editorial-section-heading mb-4">{d.batTitle}</h2>
@@ -610,6 +884,108 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
         <div className="mt-4 rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
           <p className="text-xs text-foreground-muted leading-relaxed"><InlineReferenceText text={d.metabolicNote} locale={locale} /></p>
         </div>
+      </section>
+
+      {/* Gray Whale Natural Experiment */}
+      <section id="gray-whale" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.whaleTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p><InlineReferenceText text={d.whaleP1} locale={locale} /></p>
+          <p><InlineReferenceText text={d.whaleP2} locale={locale} /></p>
+          <p><InlineReferenceText text={d.whaleP3} locale={locale} /></p>
+        </div>
+        <div className="my-6 rounded-lg border border-accent/30 bg-accent/5 p-5">
+          <p className="text-xs font-semibold text-accent mb-2">{d.whaleM3Title}</p>
+          <p className="text-sm text-foreground-muted leading-relaxed">{d.whaleM3}</p>
+        </div>
+        <div className="rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.whaleNote}</p>
+        </div>
+      </section>
+
+      {/* Salmon: Navigation and Reproduction */}
+      <section id="salmon" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.salmonTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p><InlineReferenceText text={d.salmonP1} locale={locale} /></p>
+          <p><InlineReferenceText text={d.salmonP2} locale={locale} /></p>
+          <p>{d.salmonP3}</p>
+        </div>
+        <div className="my-6 rounded-lg border border-accent/30 bg-accent/5 p-5">
+          <p className="text-xs font-semibold text-accent mb-2">{d.salmonM5Title}</p>
+          <p className="text-sm text-foreground-muted leading-relaxed">{d.salmonM5}</p>
+        </div>
+        <div className="rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.salmonNote}</p>
+        </div>
+      </section>
+
+      {/* Cross-Species EMF Gradient */}
+      <section id="emf-gradient" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.gradientTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
+          <p>{d.gradientP1}</p>
+          <p>{d.gradientP2}</p>
+          <p>{d.gradientP3}</p>
+        </div>
+
+        <div className="my-6 overflow-x-auto">
+          <table className="w-full text-xs border-collapse">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-2 font-semibold">{d.gradientTableHeaders.species}</th>
+                <th className="text-left py-2 px-2 font-semibold">{d.gradientTableHeaders.emfScore}</th>
+                <th className="text-left py-2 px-2 font-semibold">{d.gradientTableHeaders.decline}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { species: locale === "fi" ? "Ihminen (siittiöt)" : "Human (sperm)", emf: 10, decline: "2.64" },
+                { species: locale === "fi" ? "Ihminen (T)" : "Human (T)", emf: 10, decline: "1.20" },
+                { species: locale === "fi" ? "Koira" : locale === "ja" ? "犬" : locale === "fr" ? "Chien" : locale === "ko" ? "개" : "Dog", emf: 9, decline: "1.00" },
+                { species: "Holstein", emf: 7, decline: "0.80", neg: true },
+                { species: locale === "fi" ? "Hevonen (W)" : "Horse (W)", emf: 7, decline: "0.75" },
+                { species: locale === "fi" ? "Hevonen (NW)" : "Horse (NW)", emf: 4, decline: "0.46" },
+              ].map((row) => (
+                <tr key={row.species} className="border-b border-border/50">
+                  <td className="py-2 px-2 font-medium">{row.species}{row.neg ? " *" : ""}</td>
+                  <td className="py-2 px-2 text-accent font-medium">{row.emf}</td>
+                  <td className="py-2 px-2">{row.decline}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-xs text-foreground-muted mt-2">r = 0.909, n = 7, p ≈ 0.005 {locale === "fi" ? "* = negatiivinen kontrolli" : "* = negative control"}</p>
+        </div>
+
+        <div className="my-6 rounded-lg border border-accent/30 bg-accent/5 p-5">
+          <p className="text-xs font-semibold text-accent mb-2">{d.gradientM4Title}</p>
+          <p className="text-sm text-foreground-muted leading-relaxed">{d.gradientM4}</p>
+        </div>
+        <div className="rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.gradientNote}</p>
+        </div>
+      </section>
+
+      {/* Three-Axis Architecture */}
+      <section id="three-axis" className="mb-14 border-t editorial-rule pt-6 max-w-4xl">
+        <h2 className="editorial-section-heading mb-4">{d.threeAxisTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-4">{d.threeAxisP1}</p>
+        <div className="space-y-3 mb-6">
+          <div className="flex items-start gap-3 rounded-lg border border-border/50 p-4">
+            <TreePine className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.threeAxisLand}</p>
+          </div>
+          <div className="flex items-start gap-3 rounded-lg border border-border/50 p-4">
+            <Navigation className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.threeAxisWater}</p>
+          </div>
+          <div className="flex items-start gap-3 rounded-lg border border-border/50 p-4">
+            <TrendingDown className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.threeAxisGradient}</p>
+          </div>
+        </div>
+        <p className="text-sm text-foreground-muted leading-relaxed">{d.threeAxisP2}</p>
       </section>
 
       {/* Sensitivity hierarchy */}

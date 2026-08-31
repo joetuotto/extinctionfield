@@ -1,0 +1,60 @@
+{
+  "manifest_id": "testosterone_tfr_2026-08-31",
+  "description": "Immutable source snapshot for the exploratory country-level testosterone, electricity, development and WPP 2023 TFR horse race.",
+  "retrieved_at": "2026-08-31",
+  "transform_pipeline_version": "berm.stats.testosterone_tfr_horse_race@v1.0.0",
+  "analysis_status": "EXPLORATORY_PROXY_ANALYSIS_NOT_CAUSAL",
+  "files": [
+    {
+      "source_id": "WPR_TESTOSTERONE_COUNTRY_COMPILATION_2026",
+      "path": "raw/testosterone_tfr_2026-08-31/testosterone_by_country.csv",
+      "source_url": "https://worldpopulationreview.com/country-rankings/testosterone-levels-by-country",
+      "bytes": 6954,
+      "sha256": "2b92f99041c83cd7298837e4d8820b9900c3078d739a9c7643f65f5e31704195",
+      "rows_excluding_header": 87,
+      "measurement_class": "PROXY",
+      "note": "Manual transcription of the 2026-08-31 source table with a separate user-supplied-value column. The source explicitly warns that studies span different years and methods and that the compilation should not be considered scientifically sound. Croatia is from 1987 and Armenia from 1980. The current Brazil value (375) conflicts with the user-supplied value (416); both are retained."
+    },
+    {
+      "source_id": "OWID_EMBER_ELECTRICITY_DEMAND_PER_CAPITA",
+      "path": "raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.csv",
+      "source_url": "https://ourworldindata.org/grapher/per-capita-electricity-demand.csv?v=1&csvType=full&useColumnShortNames=false",
+      "bytes": 175313,
+      "sha256": "f7a45dfab8acd9a020cb5fa0d48d460467abde88374a95ecc51dee72595dccdc",
+      "measurement_class": "PROXY",
+      "note": "OWID-processed Ember electricity demand per person, 1990-2025. The analysis uses 2023 kWh/person. This is an infrastructure/energy quantity, not FieldState or biological dose."
+    },
+    {
+      "source_id": "OWID_EMBER_ELECTRICITY_DEMAND_PER_CAPITA_METADATA",
+      "path": "raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.metadata.json",
+      "source_url": "https://ourworldindata.org/grapher/per-capita-electricity-demand.metadata.json?v=1&csvType=full&useColumnShortNames=false",
+      "bytes": 1836,
+      "sha256": "950e4377570b7e75d3525cbaa9aa8e3ab604328735b2ae46f8490d22f8de1bdb",
+      "measurement_class": "METADATA",
+      "note": "Companion OWID metadata retained to identify the variable, source vintage, processing, units and third-party attribution of the electricity CSV."
+    },
+    {
+      "source_id": "WB_SH_STA_BASS_ZS",
+      "path": "raw/testosterone_tfr_2026-08-31/wb_basic_sanitation_2018_2023.json",
+      "source_url": "https://api.worldbank.org/v2/country/all/indicator/SH.STA.BASS.ZS?format=json&per_page=20000&date=2018:2023",
+      "bytes": 411740,
+      "sha256": "f9a25c5b74d4619f3362a4a7f7e1b815543c7e7daa7ffc1c10231592451d8cf1",
+      "measurement_class": "DEVELOPMENT_CONTROL",
+      "note": "World Bank indicator: people using at least basic sanitation services (% of population). Analysis takes the latest non-missing observation from 2018-2023."
+    }
+  ],
+  "preexisting_sources": [
+    {
+      "source_id": "UN_WPP_2024_TFR_AND_DEMOGRAPHIC_INDICATORS",
+      "path": "raw/WPP2024_Demographic_Indicators_Medium.csv.gz",
+      "sha256": "286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc",
+      "note": "Analysis uses the 2023 country rows for TFR, infant mortality and life expectancy. 2023 is the final WPP estimate year; 2024 is a projection."
+    },
+    {
+      "source_id": "WB_COUNTRY_METADATA_2026-08-19",
+      "path": "raw/world_bank/wb_global_2026-08-19/country_metadata.json",
+      "sha256": "29460bd5b53d1ff450fd6a9b65aaaacf9302cffbc849040156d231b8e27bdac5",
+      "note": "Used only for the World Bank high-income sensitivity definition. OECD membership is the primary developed-country definition."
+    }
+  ]
+}

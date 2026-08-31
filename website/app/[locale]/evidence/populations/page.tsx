@@ -8,7 +8,7 @@ import {
   CASCADE_COMPARISON,
   MYOPIA_GRADIENT,
 } from "@/lib/populationData";
-import { pickCopy } from "@/lib/i18n";
+import { pickCopy, pickSuffix } from "@/lib/i18n";
 import { StudyCitation } from "@/components/StudyCitation";
 
 const COPY = {
@@ -161,6 +161,12 @@ const COPY = {
     proposedTitle: "Proposed Studies",
     navPredictions: "Predictions →",
     navModel: "Model Specification →",
+    tablePopulation: "Population",
+    tableBaseline: "Baseline",
+    tableDecline: "Decline",
+    tableTrajectory: "Trajectory",
+    tableOccupation: "Occupation",
+    tableSources: "Sources",
   },
   fi: {
     title: "Luonnolliset kontrolliryhmät",
@@ -311,6 +317,12 @@ const COPY = {
     proposedTitle: "Ehdotetut tutkimukset",
     navPredictions: "Ennusteet →",
     navModel: "Mallispesifikaatio →",
+    tablePopulation: "Populaatio",
+    tableBaseline: "Lähtötaso",
+    tableDecline: "Lasku",
+    tableTrajectory: "Trajektoria",
+    tableOccupation: "Ammatti",
+    tableSources: "Lähteet",
   },
   ja: {
     title: "自然対照群",
@@ -461,6 +473,12 @@ const COPY = {
     proposedTitle: "提案研究",
     navPredictions: "予測 →",
     navModel: "モデル仕様 →",
+    tablePopulation: "集団",
+    tableBaseline: "基準値",
+    tableDecline: "低下",
+    tableTrajectory: "軌跡",
+    tableOccupation: "職業",
+    tableSources: "出典",
   },
   fr: {
     title: "Groupes témoins naturels",
@@ -611,6 +629,12 @@ const COPY = {
     proposedTitle: "Études proposées",
     navPredictions: "Prédictions →",
     navModel: "Spécification du modèle →",
+    tablePopulation: "Population",
+    tableBaseline: "Référence",
+    tableDecline: "Déclin",
+    tableTrajectory: "Trajectoire",
+    tableOccupation: "Profession",
+    tableSources: "Sources",
   },
   ko: {
     title: "자연 대조군",
@@ -761,6 +785,12 @@ const COPY = {
     proposedTitle: "제안된 연구",
     navPredictions: "예측 →",
     navModel: "모델 사양 →",
+    tablePopulation: "집단",
+    tableBaseline: "기준치",
+    tableDecline: "감소",
+    tableTrajectory: "궤적",
+    tableOccupation: "직업",
+    tableSources: "출처",
   },
 } as const;
 
@@ -807,7 +837,6 @@ export default async function PopulationsPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const isFi = locale === "fi";
   const d = pickCopy(COPY, locale);
 
 
@@ -870,12 +899,12 @@ export default async function PopulationsPage({
                 {LOW_EMF_POPULATIONS.map((pop) => (
                   <tr key={pop.id} className="border-b border-card-border/40">
                     <td className="py-2 pr-3 font-semibold text-foreground sticky left-0 bg-card-bg z-10">
-                      {isFi ? pop.nameFi : pop.nameEn}
+                      {pickSuffix(pop, "name", locale)}
                     </td>
                     <td className="py-2 pr-3 text-foreground-muted">{pop.location}</td>
                     <td className="py-2 pr-3">
                       <span className="inline-block rounded-full px-2 py-0.5 text-xs font-semibold bg-green-500/10 text-green-600 dark:text-green-400">
-                        {isFi ? pop.emfLabelFi : pop.emfLabelEn}
+                        {pickSuffix(pop, "emfLabel", locale)}
                       </span>
                     </td>
                     <td className={`py-2 pr-3 font-mono-num ${cellColor(pop.health.tfr ?? "?", false)}`}>
@@ -899,12 +928,12 @@ export default async function PopulationsPage({
                 {MODERN_COMPARISONS.map((pop) => (
                   <tr key={pop.id} className="border-b border-card-border/40 bg-red-500/5">
                     <td className="py-2 pr-3 font-semibold text-foreground sticky left-0 bg-red-500/5 z-10">
-                      {isFi ? pop.nameFi : pop.nameEn}
+                      {pickSuffix(pop, "name", locale)}
                     </td>
                     <td className="py-2 pr-3 text-foreground-muted">—</td>
                     <td className="py-2 pr-3">
                       <span className="inline-block rounded-full px-2 py-0.5 text-xs font-semibold bg-red-500/10 text-red-500 dark:text-red-400">
-                        {isFi ? pop.emfLabelFi : pop.emfLabelEn}
+                        {pickSuffix(pop, "emfLabel", locale)}
                       </span>
                     </td>
                     <td className={`py-2 pr-3 font-mono-num ${cellColor(pop.health.tfr ?? "?", true)}`}>
@@ -985,19 +1014,19 @@ export default async function PopulationsPage({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mb-6">
               <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-4">
                 <p className="text-xs font-semibold text-purple-500 mb-1">{d.tProfileBaseline}</p>
-                <p className="text-sm text-foreground leading-relaxed">{isFi ? tp.baselineFi : tp.baselineEn}</p>
+                <p className="text-sm text-foreground leading-relaxed">{pickSuffix(tp, "baseline", locale)}</p>
               </div>
               <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-4">
                 <p className="text-xs font-semibold text-green-600 mb-1">{d.tProfileAgeDecline}</p>
-                <p className="text-sm text-foreground leading-relaxed font-semibold">{isFi ? tp.ageDeclineFi : tp.ageDeclineEn}</p>
+                <p className="text-sm text-foreground leading-relaxed font-semibold">{pickSuffix(tp, "ageDecline", locale)}</p>
               </div>
               <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-4">
                 <p className="text-xs font-semibold text-blue-500 mb-1">{d.tProfileReactivity}</p>
-                <p className="text-sm text-foreground leading-relaxed">{isFi ? tp.reactivityFi : tp.reactivityEn}</p>
+                <p className="text-sm text-foreground leading-relaxed">{pickSuffix(tp, "reactivity", locale)}</p>
               </div>
               <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4">
                 <p className="text-xs font-semibold text-amber-500 mb-1">{d.tProfileImplication}</p>
-                <p className="text-sm text-foreground-muted leading-relaxed">{isFi ? tp.implicationFi : tp.implicationEn}</p>
+                <p className="text-sm text-foreground-muted leading-relaxed">{pickSuffix(tp, "implication", locale)}</p>
               </div>
             </div>
             <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 max-w-4xl">
@@ -1024,11 +1053,11 @@ export default async function PopulationsPage({
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
-                  <th className="py-2 pr-3">{isFi ? "Populaatio" : "Population"}</th>
+                  <th className="py-2 pr-3">{d.tablePopulation}</th>
                   <th className="py-2 pr-3">EMF</th>
-                  <th className="py-2 pr-3">{isFi ? "Lähtötaso" : "Baseline"}</th>
-                  <th className="py-2 pr-3">{isFi ? "Lasku" : "Decline"}</th>
-                  <th className="py-2">{isFi ? "Trajektoria" : "Trajectory"}</th>
+                  <th className="py-2 pr-3">{d.tableBaseline}</th>
+                  <th className="py-2 pr-3">{d.tableDecline}</th>
+                  <th className="py-2">{d.tableTrajectory}</th>
                 </tr>
               </thead>
               <tbody>
@@ -1080,7 +1109,7 @@ export default async function PopulationsPage({
                 {MYOPIA_GRADIENT.map((row, i) => (
                   <tr key={i} className="border-b border-card-border/40">
                     <td className="py-2 pr-3 font-medium text-foreground">
-                      {isFi ? row.regionFi : row.regionEn}
+                      {pickSuffix(row, "region", locale)}
                     </td>
                     <td className="py-2 pr-3 font-mono-num text-foreground">{row.prevalence}</td>
                     <td className="py-2 font-mono-num text-xs tracking-widest text-accent">
@@ -1104,9 +1133,9 @@ export default async function PopulationsPage({
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="border-b border-card-border text-left text-xs text-foreground-muted uppercase tracking-wider">
-                  <th className="py-2 pr-3">{isFi ? "Ammatti" : "Occupation"}</th>
+                  <th className="py-2 pr-3">{d.tableOccupation}</th>
                   <th className="py-2 pr-3">EMF</th>
-                  <th className="py-2">{isFi ? "Lähteet" : "Sources"}</th>
+                  <th className="py-2">{d.tableSources}</th>
                 </tr>
               </thead>
               <tbody>
@@ -1154,7 +1183,7 @@ export default async function PopulationsPage({
                 {CASCADE_COMPARISON.map((row, i) => (
                   <tr key={i} className="border-b border-card-border/40">
                     <td className="py-2 pr-3 font-medium text-foreground">
-                      {isFi ? row.cascadeFi : row.cascadeEn}
+                      {pickSuffix(row, "cascade", locale)}
                     </td>
                     <td className="py-2 pr-3 text-green-600 dark:text-green-400">{row.lowEmf}</td>
                     <td className="py-2 pr-3 text-red-500 dark:text-red-400">{row.modern}</td>

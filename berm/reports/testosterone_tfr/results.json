@@ -1,0 +1,4244 @@
+{
+  "analysis_id": "testosterone_tfr_horse_race_2023_v1",
+  "analysis_date": "2026-08-31",
+  "analysis_year": 2023,
+  "status": "EXPLORATORY_PROXY_ANALYSIS_NOT_CAUSAL",
+  "primary_developed_definition": "OECD membership on 2026-08-31",
+  "samples": {
+    "global": {
+      "sample": "global",
+      "n": 84,
+      "countries": [
+        "ARM",
+        "AUS",
+        "AUT",
+        "AZE",
+        "BEL",
+        "BGD",
+        "BGR",
+        "BHR",
+        "BLR",
+        "BRA",
+        "CAN",
+        "CHE",
+        "CHL",
+        "CHN",
+        "CMR",
+        "COD",
+        "CUB",
+        "CZE",
+        "DEU",
+        "DNK",
+        "DZA",
+        "EGY",
+        "ESP",
+        "EST",
+        "ETH",
+        "FIN",
+        "FRA",
+        "GBR",
+        "GHA",
+        "GRC",
+        "HND",
+        "HRV",
+        "IDN",
+        "IND",
+        "IRL",
+        "IRN",
+        "IRQ",
+        "ISL",
+        "ISR",
+        "ITA",
+        "JOR",
+        "JPN",
+        "KAZ",
+        "KEN",
+        "KGZ",
+        "KOR",
+        "KWT",
+        "LKA",
+        "LTU",
+        "LVA",
+        "MAR",
+        "MEX",
+        "MMR",
+        "MNG",
+        "MYS",
+        "NCL",
+        "NGA",
+        "NLD",
+        "NOR",
+        "NZL",
+        "PAK",
+        "PER",
+        "PHL",
+        "POL",
+        "PRT",
+        "PSE",
+        "ROU",
+        "RUS",
+        "SAU",
+        "SDN",
+        "SRB",
+        "SVK",
+        "SWE",
+        "THA",
+        "TUN",
+        "TUR",
+        "UGA",
+        "URY",
+        "USA",
+        "UZB",
+        "VEN",
+        "VNM",
+        "YEM",
+        "ZAF"
+      ],
+      "models": {
+        "controls": {
+          "n": 84,
+          "r2": 0.7337001768579825,
+          "adjusted_r2": 0.7237139334901568,
+          "df_resid": 80,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -5.551115123125783e-17,
+              "hc3_se": 0.06031840851246849,
+              "hc3_p": 0.9999999999999992,
+              "hc3_ci_low": -0.12003745840894638,
+              "hc3_ci_high": 0.12003745840894627
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.35595254204984633,
+              "hc3_se": 0.12093957300002244,
+              "hc3_p": 0.0042492718964335,
+              "hc3_ci_low": 0.1152751216403699,
+              "hc3_ci_high": 0.5966299624593228
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.20139184873608681,
+              "hc3_se": 0.13581971429065956,
+              "hc3_p": 0.14205957338394473,
+              "hc3_ci_low": -0.4716816940311581,
+              "hc3_ci_high": 0.06889799655898446
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.37192270548668455,
+              "hc3_se": 0.13579765140381678,
+              "hc3_p": 0.007599193810148993,
+              "hc3_ci_low": -0.6421686442376827,
+              "hc3_ci_high": -0.10167676673568637
+            }
+          ]
+        },
+        "controls_plus_testosterone": {
+          "n": 84,
+          "r2": 0.7434393122302255,
+          "adjusted_r2": 0.730448897659604,
+          "df_resid": 79,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.3877787807814457e-16,
+              "hc3_se": 0.06024612126517883,
+              "hc3_p": 0.9999999999999981,
+              "hc3_ci_low": -0.11991690473782517,
+              "hc3_ci_high": 0.11991690473782489
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.34318467377522394,
+              "hc3_se": 0.12029319596503871,
+              "hc3_p": 0.005528049101370036,
+              "hc3_ci_low": 0.10374705657735858,
+              "hc3_ci_high": 0.5826222909730893
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.20054066098353224,
+              "hc3_se": 0.1375404099232677,
+              "hc3_p": 0.14879118314118736,
+              "hc3_ci_low": -0.4743079988304385,
+              "hc3_ci_high": 0.07322667686337403
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.33058198820168583,
+              "hc3_se": 0.14089103689767346,
+              "hc3_p": 0.021464430226557925,
+              "hc3_ci_low": -0.6110185822142008,
+              "hc3_ci_high": -0.050145394189170855
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.11156026513959205,
+              "hc3_se": 0.08097561687465431,
+              "hc3_p": 0.17218569569177558,
+              "hc3_ci_low": -0.049617668492077965,
+              "hc3_ci_high": 0.27273819877126204
+            }
+          ]
+        },
+        "controls_plus_electricity": {
+          "n": 84,
+          "r2": 0.7396549852922047,
+          "adjusted_r2": 0.7264729592310506,
+          "df_resid": 79,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.3877787807814457e-16,
+              "hc3_se": 0.059718744003391534,
+              "hc3_p": 0.9999999999999981,
+              "hc3_ci_low": -0.11886718655623006,
+              "hc3_ci_high": 0.11886718655622978
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.39516659057834613,
+              "hc3_se": 0.11689231724393884,
+              "hc3_p": 0.0011264681250786745,
+              "hc3_ci_low": 0.16249825314586117,
+              "hc3_ci_high": 0.6278349280108311
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.22206995481528408,
+              "hc3_se": 0.13502136744221482,
+              "hc3_p": 0.10400491674665396,
+              "hc3_ci_low": -0.4908232640262,
+              "hc3_ci_high": 0.04668335439563187
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.3615093488217897,
+              "hc3_se": 0.13426098270183665,
+              "hc3_p": 0.008653607904273932,
+              "hc3_ci_low": -0.6287491500663641,
+              "hc3_ci_high": -0.09426954757721528
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.09249810064320449,
+              "hc3_se": 0.02739341122215125,
+              "hc3_p": 0.0011406732314548564,
+              "hc3_ci_low": 0.03797287951715316,
+              "hc3_ci_high": 0.1470233217692558
+            }
+          ]
+        },
+        "horse_race": {
+          "n": 84,
+          "r2": 0.749242927297037,
+          "adjusted_r2": 0.733168755969924,
+          "df_resid": 78,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.942890293094024e-16,
+              "hc3_se": 0.05969763507713784,
+              "hc3_p": 0.9999999999999974,
+              "hc3_ci_low": -0.11884886180831003,
+              "hc3_ci_high": 0.11884886180830964
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.38199850050334744,
+              "hc3_se": 0.1172877855814827,
+              "hc3_p": 0.0016682830815120677,
+              "hc3_ci_low": 0.1484964563710385,
+              "hc3_ci_high": 0.6155005446356564
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.22096218656976246,
+              "hc3_se": 0.13767709697839262,
+              "hc3_p": 0.11255060751464128,
+              "hc3_ci_low": -0.4950562315316983,
+              "hc3_ci_high": 0.05313185839217338
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.3206212477308698,
+              "hc3_se": 0.13962709736092102,
+              "hc3_p": 0.0243455484617229,
+              "hc3_ci_low": -0.598597445238544,
+              "hc3_ci_high": -0.042645050223195646
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.09132087439885839,
+              "hc3_se": 0.03402766352954231,
+              "hc3_p": 0.008887443621964261,
+              "hc3_ci_low": 0.023577000202558596,
+              "hc3_ci_high": 0.15906474859515818
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.1106964974495426,
+              "hc3_se": 0.08021007028164891,
+              "hc3_p": 0.17150420925133364,
+              "hc3_ci_low": -0.04898948585985782,
+              "hc3_ci_high": 0.270382480758943
+            }
+          ]
+        },
+        "testosterone_unadjusted": {
+          "n": 84,
+          "r2": 0.2238699187151767,
+          "adjusted_r2": 0.21440491772389825,
+          "df_resid": 82,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 1.3877787807814457e-16,
+              "hc3_se": 0.09944682298484997,
+              "hc3_p": 0.9999999999999989,
+              "hc3_ci_low": -0.1978314104120377,
+              "hc3_ci_high": 0.19783141041203797
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.47314893925187756,
+              "hc3_se": 0.13468495885480306,
+              "hc3_p": 0.0007237528406874596,
+              "hc3_ci_low": 0.20521765123484215,
+              "hc3_ci_high": 0.741080227268913
+            }
+          ]
+        },
+        "electricity_unadjusted": {
+          "n": 84,
+          "r2": 0.13315815871844383,
+          "adjusted_r2": 0.12258691675159561,
+          "df_resid": 82,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 1.6653345369377348e-16,
+              "hc3_se": 0.11068996490838158,
+              "hc3_p": 0.9999999999999988,
+              "hc3_ci_low": -0.22019760128103927,
+              "hc3_ci_high": 0.2201976012810396
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": -0.3649084251129917,
+              "hc3_se": 0.30343881352141516,
+              "hc3_p": 0.23260121416409923,
+              "hc3_ci_low": -0.9685448878066467,
+              "hc3_ci_high": 0.2387280375806633
+            }
+          ]
+        }
+      },
+      "partial_r2": {
+        "T_given_development": 0.03657206849532585,
+        "electricity_given_development": 0.02236129323693374,
+        "T_given_development_and_electricity": 0.03682783023747748,
+        "electricity_given_development_and_T": 0.022620827521398667
+      },
+      "partial_r2_bootstrap_ci": {
+        "T_given_development": [
+          0.00018240456159891835,
+          0.18513239737001705
+        ],
+        "electricity_given_development": [
+          0.0006585195822551266,
+          0.07225362225887258
+        ],
+        "T_given_development_and_electricity": [
+          0.000103019261672936,
+          0.18303853388844685
+        ],
+        "electricity_given_development_and_T": [
+          0.0007842500626096749,
+          0.06960601283918207
+        ]
+      },
+      "rank_analysis": {
+        "n": 84,
+        "spearman_rho": 0.38103410851910646,
+        "spearman_p": 0.0003491525890025676,
+        "spearman_bootstrap_ci": [
+          0.18828577266325117,
+          0.5667108894425611
+        ],
+        "rank_T_coefficient_given_development": {
+          "term": "testosterone_ng_dl",
+          "coefficient": 0.09473337125570913,
+          "hc3_se": 0.07005288297059675,
+          "hc3_p": 0.18013393358075108,
+          "hc3_ci_low": -0.04470340438034179,
+          "hc3_ci_high": 0.23417014689176005
+        },
+        "rank_T_coefficient_given_development_and_electricity": {
+          "term": "testosterone_ng_dl",
+          "coefficient": 0.09280091031750509,
+          "hc3_se": 0.07024517388012191,
+          "hc3_p": 0.1903305064198335,
+          "hc3_ci_low": -0.047046488199903175,
+          "hc3_ci_high": 0.23264830883491336
+        }
+      },
+      "mediation_diagnostic": {
+        "n": 84,
+        "a_electricity_to_T": 0.010634719900533314,
+        "b_T_to_TFR_given_electricity": 0.1106964974495426,
+        "c_total_electricity_to_TFR": 0.09249810064320449,
+        "c_prime_direct_electricity_to_TFR": 0.09132087439885839,
+        "absolute_coefficient_attenuation_pct": 1.2727031540756173,
+        "indirect_effect_a_times_b": 0.001177226244345986,
+        "indirect_effect_bootstrap_ci": [
+          -0.02936699158295384,
+          0.027574139386169667
+        ],
+        "attenuation_bootstrap_ci_pct": [
+          -72.47072196748131,
+          32.501673288876674
+        ],
+        "interpretation_limit": "Cross-sectional coefficient attenuation is not causal mediation; temporal ordering, no unmeasured exposure-mediator/outcome confounding, and measurement validity are unverified."
+      },
+      "leave_one_out_partial_r2": {
+        "T_given_development": {
+          "min": 0.008775185119072751,
+          "max": 0.0553455385707972,
+          "median": 0.03635265850094768,
+          "min_country": "UZB",
+          "max_country": "AZE",
+          "rows": [
+            {
+              "iso3_left_out": "ARM",
+              "partial_r2": 0.03996405131085941
+            },
+            {
+              "iso3_left_out": "AUS",
+              "partial_r2": 0.038627009470372516
+            },
+            {
+              "iso3_left_out": "AUT",
+              "partial_r2": 0.03655885477108373
+            },
+            {
+              "iso3_left_out": "AZE",
+              "partial_r2": 0.0553455385707972
+            },
+            {
+              "iso3_left_out": "BEL",
+              "partial_r2": 0.037458357152634736
+            },
+            {
+              "iso3_left_out": "BGD",
+              "partial_r2": 0.028533002956391437
+            },
+            {
+              "iso3_left_out": "BGR",
+              "partial_r2": 0.03800993244698636
+            },
+            {
+              "iso3_left_out": "BHR",
+              "partial_r2": 0.04056285486970956
+            },
+            {
+              "iso3_left_out": "BLR",
+              "partial_r2": 0.03430268755401329
+            },
+            {
+              "iso3_left_out": "BRA",
+              "partial_r2": 0.031364591845497884
+            },
+            {
+              "iso3_left_out": "CAN",
+              "partial_r2": 0.03602938265193926
+            },
+            {
+              "iso3_left_out": "CHE",
+              "partial_r2": 0.036375430000295736
+            },
+            {
+              "iso3_left_out": "CHL",
+              "partial_r2": 0.034052233514846875
+            },
+            {
+              "iso3_left_out": "CHN",
+              "partial_r2": 0.042204388253854565
+            },
+            {
+              "iso3_left_out": "CMR",
+              "partial_r2": 0.032374671284008096
+            },
+            {
+              "iso3_left_out": "COD",
+              "partial_r2": 0.03623025435821364
+            },
+            {
+              "iso3_left_out": "CUB",
+              "partial_r2": 0.03591531221939305
+            },
+            {
+              "iso3_left_out": "CZE",
+              "partial_r2": 0.03906915872538802
+            },
+            {
+              "iso3_left_out": "DEU",
+              "partial_r2": 0.03670269429350729
+            },
+            {
+              "iso3_left_out": "DNK",
+              "partial_r2": 0.03553929848315822
+            },
+            {
+              "iso3_left_out": "DZA",
+              "partial_r2": 0.03475712894543812
+            },
+            {
+              "iso3_left_out": "EGY",
+              "partial_r2": 0.0349603937865144
+            },
+            {
+              "iso3_left_out": "ESP",
+              "partial_r2": 0.03682129128800771
+            },
+            {
+              "iso3_left_out": "EST",
+              "partial_r2": 0.03776407912674282
+            },
+            {
+              "iso3_left_out": "ETH",
+              "partial_r2": 0.038244597517004736
+            },
+            {
+              "iso3_left_out": "FIN",
+              "partial_r2": 0.03718307058480536
+            },
+            {
+              "iso3_left_out": "FRA",
+              "partial_r2": 0.03771687929211273
+            },
+            {
+              "iso3_left_out": "GBR",
+              "partial_r2": 0.0361873311129515
+            },
+            {
+              "iso3_left_out": "GHA",
+              "partial_r2": 0.034481887926021845
+            },
+            {
+              "iso3_left_out": "GRC",
+              "partial_r2": 0.036527464169058076
+            },
+            {
+              "iso3_left_out": "HND",
+              "partial_r2": 0.03858517221453162
+            },
+            {
+              "iso3_left_out": "HRV",
+              "partial_r2": 0.04694476732409323
+            },
+            {
+              "iso3_left_out": "IDN",
+              "partial_r2": 0.037193346277008654
+            },
+            {
+              "iso3_left_out": "IND",
+              "partial_r2": 0.03559044747096055
+            },
+            {
+              "iso3_left_out": "IRL",
+              "partial_r2": 0.03756250995348136
+            },
+            {
+              "iso3_left_out": "IRN",
+              "partial_r2": 0.03711636956497214
+            },
+            {
+              "iso3_left_out": "IRQ",
+              "partial_r2": 0.03579831331404686
+            },
+            {
+              "iso3_left_out": "ISL",
+              "partial_r2": 0.03422896802257878
+            },
+            {
+              "iso3_left_out": "ISR",
+              "partial_r2": 0.051759742347070606
+            },
+            {
+              "iso3_left_out": "ITA",
+              "partial_r2": 0.036699721517762275
+            },
+            {
+              "iso3_left_out": "JOR",
+              "partial_r2": 0.036329887001599635
+            },
+            {
+              "iso3_left_out": "JPN",
+              "partial_r2": 0.036154770983779935
+            },
+            {
+              "iso3_left_out": "KAZ",
+              "partial_r2": 0.05329607708490839
+            },
+            {
+              "iso3_left_out": "KEN",
+              "partial_r2": 0.034523711575077706
+            },
+            {
+              "iso3_left_out": "KGZ",
+              "partial_r2": 0.04144744844768244
+            },
+            {
+              "iso3_left_out": "KOR",
+              "partial_r2": 0.03760795234574171
+            },
+            {
+              "iso3_left_out": "KWT",
+              "partial_r2": 0.03543628494123747
+            },
+            {
+              "iso3_left_out": "LKA",
+              "partial_r2": 0.03546593301420493
+            },
+            {
+              "iso3_left_out": "LTU",
+              "partial_r2": 0.034230050087338905
+            },
+            {
+              "iso3_left_out": "LVA",
+              "partial_r2": 0.03318546904172226
+            },
+            {
+              "iso3_left_out": "MAR",
+              "partial_r2": 0.03664969198038674
+            },
+            {
+              "iso3_left_out": "MEX",
+              "partial_r2": 0.03530946115678002
+            },
+            {
+              "iso3_left_out": "MMR",
+              "partial_r2": 0.03320557575958565
+            },
+            {
+              "iso3_left_out": "MNG",
+              "partial_r2": 0.03739848566413109
+            },
+            {
+              "iso3_left_out": "MYS",
+              "partial_r2": 0.036602955788724044
+            },
+            {
+              "iso3_left_out": "NCL",
+              "partial_r2": 0.03586188123843287
+            },
+            {
+              "iso3_left_out": "NGA",
+              "partial_r2": 0.03628881457320808
+            },
+            {
+              "iso3_left_out": "NLD",
+              "partial_r2": 0.03740369462260608
+            },
+            {
+              "iso3_left_out": "NOR",
+              "partial_r2": 0.03679920811493327
+            },
+            {
+              "iso3_left_out": "NZL",
+              "partial_r2": 0.03724949921683435
+            },
+            {
+              "iso3_left_out": "PAK",
+              "partial_r2": 0.03885998308188201
+            },
+            {
+              "iso3_left_out": "PER",
+              "partial_r2": 0.033473536708328394
+            },
+            {
+              "iso3_left_out": "PHL",
+              "partial_r2": 0.030806407902631762
+            },
+            {
+              "iso3_left_out": "POL",
+              "partial_r2": 0.03526061315414461
+            },
+            {
+              "iso3_left_out": "PRT",
+              "partial_r2": 0.036230861100288975
+            },
+            {
+              "iso3_left_out": "PSE",
+              "partial_r2": 0.045843124644721976
+            },
+            {
+              "iso3_left_out": "ROU",
+              "partial_r2": 0.035533298094758727
+            },
+            {
+              "iso3_left_out": "RUS",
+              "partial_r2": 0.040892144496537185
+            },
+            {
+              "iso3_left_out": "SAU",
+              "partial_r2": 0.029925469865225724
+            },
+            {
+              "iso3_left_out": "SDN",
+              "partial_r2": 0.03460304232531607
+            },
+            {
+              "iso3_left_out": "SRB",
+              "partial_r2": 0.03941062322386603
+            },
+            {
+              "iso3_left_out": "SVK",
+              "partial_r2": 0.03625057625111411
+            },
+            {
+              "iso3_left_out": "SWE",
+              "partial_r2": 0.03581470292480347
+            },
+            {
+              "iso3_left_out": "THA",
+              "partial_r2": 0.03542096215225556
+            },
+            {
+              "iso3_left_out": "TUN",
+              "partial_r2": 0.03761804961659214
+            },
+            {
+              "iso3_left_out": "TUR",
+              "partial_r2": 0.03545045231638701
+            },
+            {
+              "iso3_left_out": "UGA",
+              "partial_r2": 0.03780593436886164
+            },
+            {
+              "iso3_left_out": "URY",
+              "partial_r2": 0.035137292639636074
+            },
+            {
+              "iso3_left_out": "USA",
+              "partial_r2": 0.0365723907425198
+            },
+            {
+              "iso3_left_out": "UZB",
+              "partial_r2": 0.008775185119072751
+            },
+            {
+              "iso3_left_out": "VEN",
+              "partial_r2": 0.035161982899341554
+            },
+            {
+              "iso3_left_out": "VNM",
+              "partial_r2": 0.037656190421573255
+            },
+            {
+              "iso3_left_out": "YEM",
+              "partial_r2": 0.042487772274991266
+            },
+            {
+              "iso3_left_out": "ZAF",
+              "partial_r2": 0.03326325305707395
+            }
+          ]
+        },
+        "electricity_given_development": {
+          "min": 0.011684005006328331,
+          "max": 0.029410301987314855,
+          "median": 0.0223387189768117,
+          "min_country": "ISL",
+          "max_country": "ISR",
+          "rows": [
+            {
+              "iso3_left_out": "ARM",
+              "partial_r2": 0.021561440352107115
+            },
+            {
+              "iso3_left_out": "AUS",
+              "partial_r2": 0.02220841811470383
+            },
+            {
+              "iso3_left_out": "AUT",
+              "partial_r2": 0.022349291175002724
+            },
+            {
+              "iso3_left_out": "AZE",
+              "partial_r2": 0.022533403574158086
+            },
+            {
+              "iso3_left_out": "BEL",
+              "partial_r2": 0.02234984819127977
+            },
+            {
+              "iso3_left_out": "BGD",
+              "partial_r2": 0.020985814947928023
+            },
+            {
+              "iso3_left_out": "BGR",
+              "partial_r2": 0.021992137995435288
+            },
+            {
+              "iso3_left_out": "BHR",
+              "partial_r2": 0.01947470027648541
+            },
+            {
+              "iso3_left_out": "BLR",
+              "partial_r2": 0.021104385172114642
+            },
+            {
+              "iso3_left_out": "BRA",
+              "partial_r2": 0.022285314099969655
+            },
+            {
+              "iso3_left_out": "CAN",
+              "partial_r2": 0.023929352029199265
+            },
+            {
+              "iso3_left_out": "CHE",
+              "partial_r2": 0.02279830583236074
+            },
+            {
+              "iso3_left_out": "CHL",
+              "partial_r2": 0.02112811123467669
+            },
+            {
+              "iso3_left_out": "CHN",
+              "partial_r2": 0.02261596374173261
+            },
+            {
+              "iso3_left_out": "CMR",
+              "partial_r2": 0.021593796765320385
+            },
+            {
+              "iso3_left_out": "COD",
+              "partial_r2": 0.022230017234717195
+            },
+            {
+              "iso3_left_out": "CUB",
+              "partial_r2": 0.020784924082424043
+            },
+            {
+              "iso3_left_out": "CZE",
+              "partial_r2": 0.02284553907558416
+            },
+            {
+              "iso3_left_out": "DEU",
+              "partial_r2": 0.022639604252769303
+            },
+            {
+              "iso3_left_out": "DNK",
+              "partial_r2": 0.023080855395231994
+            },
+            {
+              "iso3_left_out": "DZA",
+              "partial_r2": 0.0229426452305521
+            },
+            {
+              "iso3_left_out": "EGY",
+              "partial_r2": 0.022696345857247783
+            },
+            {
+              "iso3_left_out": "ESP",
+              "partial_r2": 0.02240203050107669
+            },
+            {
+              "iso3_left_out": "EST",
+              "partial_r2": 0.02293897732187042
+            },
+            {
+              "iso3_left_out": "ETH",
+              "partial_r2": 0.021561542489321062
+            },
+            {
+              "iso3_left_out": "FIN",
+              "partial_r2": 0.022328146778620675
+            },
+            {
+              "iso3_left_out": "FRA",
+              "partial_r2": 0.023179368735385477
+            },
+            {
+              "iso3_left_out": "GBR",
+              "partial_r2": 0.02297832372041575
+            },
+            {
+              "iso3_left_out": "GHA",
+              "partial_r2": 0.022730251970283274
+            },
+            {
+              "iso3_left_out": "GRC",
+              "partial_r2": 0.022109106994414138
+            },
+            {
+              "iso3_left_out": "HND",
+              "partial_r2": 0.022626685135966194
+            },
+            {
+              "iso3_left_out": "HRV",
+              "partial_r2": 0.021942309536169012
+            },
+            {
+              "iso3_left_out": "IDN",
+              "partial_r2": 0.022218554101806298
+            },
+            {
+              "iso3_left_out": "IND",
+              "partial_r2": 0.02293155293629874
+            },
+            {
+              "iso3_left_out": "IRL",
+              "partial_r2": 0.02276762062529234
+            },
+            {
+              "iso3_left_out": "IRN",
+              "partial_r2": 0.02203567708985912
+            },
+            {
+              "iso3_left_out": "IRQ",
+              "partial_r2": 0.021017749682879963
+            },
+            {
+              "iso3_left_out": "ISL",
+              "partial_r2": 0.011684005006328331
+            },
+            {
+              "iso3_left_out": "ISR",
+              "partial_r2": 0.029410301987314855
+            },
+            {
+              "iso3_left_out": "ITA",
+              "partial_r2": 0.022443815503821466
+            },
+            {
+              "iso3_left_out": "JOR",
+              "partial_r2": 0.024649202233966827
+            },
+            {
+              "iso3_left_out": "JPN",
+              "partial_r2": 0.02290782646792964
+            },
+            {
+              "iso3_left_out": "KAZ",
+              "partial_r2": 0.022173204461911712
+            },
+            {
+              "iso3_left_out": "KEN",
+              "partial_r2": 0.023117505131523854
+            },
+            {
+              "iso3_left_out": "KGZ",
+              "partial_r2": 0.022509929617676366
+            },
+            {
+              "iso3_left_out": "KOR",
+              "partial_r2": 0.023235125807098328
+            },
+            {
+              "iso3_left_out": "KWT",
+              "partial_r2": 0.026662458678649918
+            },
+            {
+              "iso3_left_out": "LKA",
+              "partial_r2": 0.024351156056323358
+            },
+            {
+              "iso3_left_out": "LTU",
+              "partial_r2": 0.020721815860970758
+            },
+            {
+              "iso3_left_out": "LVA",
+              "partial_r2": 0.020765914974799793
+            },
+            {
+              "iso3_left_out": "MAR",
+              "partial_r2": 0.022063997768589146
+            },
+            {
+              "iso3_left_out": "MEX",
+              "partial_r2": 0.02199722604924239
+            },
+            {
+              "iso3_left_out": "MMR",
+              "partial_r2": 0.025315564665657764
+            },
+            {
+              "iso3_left_out": "MNG",
+              "partial_r2": 0.02244551495271555
+            },
+            {
+              "iso3_left_out": "MYS",
+              "partial_r2": 0.022199493813011523
+            },
+            {
+              "iso3_left_out": "NCL",
+              "partial_r2": 0.0217691140693146
+            },
+            {
+              "iso3_left_out": "NGA",
+              "partial_r2": 0.021961913279118676
+            },
+            {
+              "iso3_left_out": "NLD",
+              "partial_r2": 0.022408696018181493
+            },
+            {
+              "iso3_left_out": "NOR",
+              "partial_r2": 0.02074824401531546
+            },
+            {
+              "iso3_left_out": "NZL",
+              "partial_r2": 0.022416588201994145
+            },
+            {
+              "iso3_left_out": "PAK",
+              "partial_r2": 0.021725405307214875
+            },
+            {
+              "iso3_left_out": "PER",
+              "partial_r2": 0.02099003164632635
+            },
+            {
+              "iso3_left_out": "PHL",
+              "partial_r2": 0.02308540810770887
+            },
+            {
+              "iso3_left_out": "POL",
+              "partial_r2": 0.021521872804746506
+            },
+            {
+              "iso3_left_out": "PRT",
+              "partial_r2": 0.023667010019591036
+            },
+            {
+              "iso3_left_out": "PSE",
+              "partial_r2": 0.02207093059754768
+            },
+            {
+              "iso3_left_out": "ROU",
+              "partial_r2": 0.02166532346171268
+            },
+            {
+              "iso3_left_out": "RUS",
+              "partial_r2": 0.023101839717851905
+            },
+            {
+              "iso3_left_out": "SAU",
+              "partial_r2": 0.018903763398427375
+            },
+            {
+              "iso3_left_out": "SDN",
+              "partial_r2": 0.021916384496063604
+            },
+            {
+              "iso3_left_out": "SRB",
+              "partial_r2": 0.0220525902866016
+            },
+            {
+              "iso3_left_out": "SVK",
+              "partial_r2": 0.0221194174513867
+            },
+            {
+              "iso3_left_out": "SWE",
+              "partial_r2": 0.02184295405622453
+            },
+            {
+              "iso3_left_out": "THA",
+              "partial_r2": 0.020761861146103244
+            },
+            {
+              "iso3_left_out": "TUN",
+              "partial_r2": 0.022026925967668018
+            },
+            {
+              "iso3_left_out": "TUR",
+              "partial_r2": 0.022031621512023532
+            },
+            {
+              "iso3_left_out": "UGA",
+              "partial_r2": 0.023111745630871663
+            },
+            {
+              "iso3_left_out": "URY",
+              "partial_r2": 0.02157766979057446
+            },
+            {
+              "iso3_left_out": "USA",
+              "partial_r2": 0.022689500838327544
+            },
+            {
+              "iso3_left_out": "UZB",
+              "partial_r2": 0.026097085712627307
+            },
+            {
+              "iso3_left_out": "VEN",
+              "partial_r2": 0.022529025019916566
+            },
+            {
+              "iso3_left_out": "VNM",
+              "partial_r2": 0.022453914824064055
+            },
+            {
+              "iso3_left_out": "YEM",
+              "partial_r2": 0.02448565345140581
+            },
+            {
+              "iso3_left_out": "ZAF",
+              "partial_r2": 0.02875450716973967
+            }
+          ]
+        }
+      }
+    },
+    "developed_oecd": {
+      "sample": "developed_oecd",
+      "n": 33,
+      "countries": [
+        "AUS",
+        "AUT",
+        "BEL",
+        "CAN",
+        "CHE",
+        "CHL",
+        "CZE",
+        "DEU",
+        "DNK",
+        "ESP",
+        "EST",
+        "FIN",
+        "FRA",
+        "GBR",
+        "GRC",
+        "IRL",
+        "ISL",
+        "ISR",
+        "ITA",
+        "JPN",
+        "KOR",
+        "LTU",
+        "LVA",
+        "MEX",
+        "NLD",
+        "NOR",
+        "NZL",
+        "POL",
+        "PRT",
+        "SVK",
+        "SWE",
+        "TUR",
+        "USA"
+      ],
+      "models": {
+        "controls": {
+          "n": 33,
+          "r2": 0.09778061485123535,
+          "adjusted_r2": 0.004447575008259652,
+          "df_resid": 29,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.4710455076283324e-15,
+              "hc3_se": 0.17809385943434783,
+              "hc3_p": 0.9999999999999934,
+              "hc3_ci_low": -0.36424284039694477,
+              "hc3_ci_high": 0.36424284039694177
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.32685096512573086,
+              "hc3_se": 0.13208373208776134,
+              "hc3_p": 0.019431541781224408,
+              "hc3_ci_low": 0.05670940101632682,
+              "hc3_ci_high": 0.5969925292351349
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": 0.06689886658680072,
+              "hc3_se": 0.15229476940511688,
+              "hc3_p": 0.6637201546520404,
+              "hc3_ci_low": -0.24457891014230915,
+              "hc3_ci_high": 0.3783766433159106
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.06689109971918618,
+              "hc3_se": 0.13319528422957166,
+              "hc3_p": 0.6193166806765972,
+              "hc3_ci_low": -0.3393060432177968,
+              "hc3_ci_high": 0.20552384377942445
+            }
+          ]
+        },
+        "controls_plus_testosterone": {
+          "n": 33,
+          "r2": 0.10473179524760368,
+          "adjusted_r2": -0.023163662574167132,
+          "df_resid": 28,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.457167719820518e-15,
+              "hc3_se": 0.18365223307854214,
+              "hc3_p": 0.9999999999999937,
+              "hc3_ci_low": -0.3761945458447321,
+              "hc3_ci_high": 0.3761945458447292
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.3440849256345504,
+              "hc3_se": 0.16208377056935158,
+              "hc3_p": 0.04273900674972221,
+              "hc3_ci_low": 0.012071372431188665,
+              "hc3_ci_high": 0.6760984788379121
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": 0.11578575290225852,
+              "hc3_se": 0.20951107400969113,
+              "hc3_p": 0.5848902135616613,
+              "hc3_ci_low": -0.3133782273843849,
+              "hc3_ci_high": 0.5449497331889019
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.05920846679324002,
+              "hc3_se": 0.13450923950437024,
+              "hc3_p": 0.663185109161883,
+              "hc3_ci_low": -0.3347381536314391,
+              "hc3_ci_high": 0.2163212200449591
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": -0.09540467210883546,
+              "hc3_se": 0.21551357402525345,
+              "hc3_p": 0.6613945466512755,
+              "hc3_ci_low": -0.5368642162959829,
+              "hc3_ci_high": 0.3460548720783119
+            }
+          ]
+        },
+        "controls_plus_electricity": {
+          "n": 33,
+          "r2": 0.12004939469937237,
+          "adjusted_r2": -0.005657834629288816,
+          "df_resid": 28,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.4849232954361469e-15,
+              "hc3_se": 0.1794557667242976,
+              "hc3_p": 0.9999999999999934,
+              "hc3_ci_low": -0.3675984741943942,
+              "hc3_ci_high": 0.3675984741943912
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.4013556362167385,
+              "hc3_se": 0.1260766195874647,
+              "hc3_p": 0.0035508475870603363,
+              "hc3_ci_low": 0.14309938824037355,
+              "hc3_ci_high": 0.6596118841931033
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": 0.052344347770880525,
+              "hc3_se": 0.16395807042621335,
+              "hc3_p": 0.7519032577777829,
+              "hc3_ci_low": -0.28350853464514264,
+              "hc3_ci_high": 0.3881972301869037
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.062813256570945,
+              "hc3_se": 0.15922049760145024,
+              "hc3_p": 0.696197291292086,
+              "hc3_ci_low": -0.3889616609779483,
+              "hc3_ci_high": 0.2633351478360583
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.17032633566542468,
+              "hc3_se": 0.191096871761761,
+              "hc3_p": 0.3803590482452829,
+              "hc3_ci_low": -0.22111786122609658,
+              "hc3_ci_high": 0.561770532556946
+            }
+          ]
+        },
+        "horse_race": {
+          "n": 33,
+          "r2": 0.13030420922313568,
+          "adjusted_r2": -0.030750566846654115,
+          "df_resid": 27,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.4710455076283324e-15,
+              "hc3_se": 0.1869042973015064,
+              "hc3_p": 0.9999999999999938,
+              "hc3_ci_low": -0.383495940864536,
+              "hc3_ci_high": 0.3834959408645331
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.42830092015364263,
+              "hc3_se": 0.1474140565351283,
+              "hc3_p": 0.007235308866917653,
+              "hc3_ci_low": 0.12583226039671647,
+              "hc3_ci_high": 0.7307695799105688
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": 0.11097456743374907,
+              "hc3_se": 0.22325831609250474,
+              "hc3_p": 0.6231646419529805,
+              "hc3_ci_low": -0.3471136585828536,
+              "hc3_ci_high": 0.5690627934503517
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.053097776854020104,
+              "hc3_se": 0.15107636117235573,
+              "hc3_p": 0.7279689228866894,
+              "hc3_ci_low": -0.3630808650262568,
+              "hc3_ci_high": 0.25688531131821657
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.18375072981214524,
+              "hc3_se": 0.2522939241085708,
+              "hc3_p": 0.4726876254216848,
+              "hc3_ci_low": -0.33391364279638136,
+              "hc3_ci_high": 0.7014151024206718
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": -0.11665782782649378,
+              "hc3_se": 0.21647212189374268,
+              "hc3_p": 0.5943687223053046,
+              "hc3_ci_low": -0.560821933495315,
+              "hc3_ci_high": 0.32750627784232733
+            }
+          ]
+        },
+        "testosterone_unadjusted": {
+          "n": 33,
+          "r2": 0.009386000711770315,
+          "adjusted_r2": -0.022569289587849983,
+          "df_resid": 31,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -7.355227538141662e-16,
+              "hc3_se": 0.18174758433498958,
+              "hc3_p": 0.9999999999999968,
+              "hc3_ci_low": -0.37067664210127715,
+              "hc3_ci_high": 0.3706766421012757
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": -0.09688137443167638,
+              "hc3_se": 0.13421251447292984,
+              "hc3_p": 0.4757963827267455,
+              "hc3_ci_low": -0.37060960237388935,
+              "hc3_ci_high": 0.17684685351053658
+            }
+          ]
+        },
+        "electricity_unadjusted": {
+          "n": 33,
+          "r2": 0.00015098769550203617,
+          "adjusted_r2": -0.03210220624980442,
+          "df_resid": 31,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -7.632783294297951e-16,
+              "hc3_se": 0.1840177224302357,
+              "hc3_p": 0.9999999999999967,
+              "hc3_ci_low": -0.37530661927170844,
+              "hc3_ci_high": 0.3753066192717069
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": -0.012287705054322286,
+              "hc3_se": 0.1994399807944224,
+              "hc3_p": 0.9512681037006611,
+              "hc3_ci_low": -0.41904822763358823,
+              "hc3_ci_high": 0.3944728175249436
+            }
+          ]
+        }
+      },
+      "partial_r2": {
+        "T_given_development": 0.007704534518754733,
+        "electricity_given_development": 0.024682222766101596,
+        "T_given_development_and_electricity": 0.011653852457161322,
+        "electricity_given_development_and_T": 0.02856396981349801
+      },
+      "partial_r2_bootstrap_ci": {
+        "T_given_development": [
+          6.211784812617843e-05,
+          0.1683906067328384
+        ],
+        "electricity_given_development": [
+          5.3215457134803384e-05,
+          0.3633637580194191
+        ],
+        "T_given_development_and_electricity": [
+          9.467499355729448e-05,
+          0.1884624649899661
+        ],
+        "electricity_given_development_and_T": [
+          9.814190974309642e-05,
+          0.3219138632276475
+        ]
+      },
+      "rank_analysis": {
+        "n": 33,
+        "spearman_rho": 0.003343363470319622,
+        "spearman_p": 0.9852674043334262,
+        "spearman_bootstrap_ci": [
+          -0.3419167537949825,
+          0.32477907878876994
+        ],
+        "rank_T_coefficient_given_development": {
+          "term": "testosterone_ng_dl",
+          "coefficient": 0.013241378618415012,
+          "hc3_se": 0.24167804330072987,
+          "hc3_p": 0.9566953758077886,
+          "hc3_ci_low": -0.4818136512939005,
+          "hc3_ci_high": 0.5082964085307305
+        },
+        "rank_T_coefficient_given_development_and_electricity": {
+          "term": "testosterone_ng_dl",
+          "coefficient": 0.037511983801953,
+          "hc3_se": 0.24936436899318531,
+          "hc3_p": 0.8815432483270518,
+          "hc3_ci_low": -0.47414143822111476,
+          "hc3_ci_high": 0.5491654058250207
+        }
+      },
+      "mediation_diagnostic": {
+        "n": 33,
+        "a_electricity_to_T": 0.11507495379295755,
+        "b_T_to_TFR_given_electricity": -0.11665782782649378,
+        "c_total_electricity_to_TFR": 0.17032633566542468,
+        "c_prime_direct_electricity_to_TFR": 0.18375072981214524,
+        "absolute_coefficient_attenuation_pct": -7.881572802159237,
+        "indirect_effect_a_times_b": -0.01342439414672057,
+        "indirect_effect_bootstrap_ci": [
+          -0.114630903295522,
+          0.11779414468817505
+        ],
+        "attenuation_bootstrap_ci_pct": [
+          -459.28835789887694,
+          60.28561681182202
+        ],
+        "interpretation_limit": "Cross-sectional coefficient attenuation is not causal mediation; temporal ordering, no unmeasured exposure-mediator/outcome confounding, and measurement validity are unverified."
+      },
+      "leave_one_out_partial_r2": {
+        "T_given_development": {
+          "min": 0.004382104356530736,
+          "max": 0.025773682775492697,
+          "median": 0.00780590657171774,
+          "min_country": "AUS",
+          "max_country": "CHL",
+          "rows": [
+            {
+              "iso3_left_out": "AUS",
+              "partial_r2": 0.004382104356530736
+            },
+            {
+              "iso3_left_out": "AUT",
+              "partial_r2": 0.008161398340430176
+            },
+            {
+              "iso3_left_out": "BEL",
+              "partial_r2": 0.005264346256323033
+            },
+            {
+              "iso3_left_out": "CAN",
+              "partial_r2": 0.013561555324469333
+            },
+            {
+              "iso3_left_out": "CHE",
+              "partial_r2": 0.00780590657171774
+            },
+            {
+              "iso3_left_out": "CHL",
+              "partial_r2": 0.025773682775492697
+            },
+            {
+              "iso3_left_out": "CZE",
+              "partial_r2": 0.0059605359566018345
+            },
+            {
+              "iso3_left_out": "DEU",
+              "partial_r2": 0.007723487153254129
+            },
+            {
+              "iso3_left_out": "DNK",
+              "partial_r2": 0.012441298640859924
+            },
+            {
+              "iso3_left_out": "ESP",
+              "partial_r2": 0.006017456854657457
+            },
+            {
+              "iso3_left_out": "EST",
+              "partial_r2": 0.007003176949665478
+            },
+            {
+              "iso3_left_out": "FIN",
+              "partial_r2": 0.010010587859418083
+            },
+            {
+              "iso3_left_out": "FRA",
+              "partial_r2": 0.005775786171819873
+            },
+            {
+              "iso3_left_out": "GBR",
+              "partial_r2": 0.009953558176972882
+            },
+            {
+              "iso3_left_out": "GRC",
+              "partial_r2": 0.007865050187813307
+            },
+            {
+              "iso3_left_out": "IRL",
+              "partial_r2": 0.005838730280949717
+            },
+            {
+              "iso3_left_out": "ISL",
+              "partial_r2": 0.018820126992433153
+            },
+            {
+              "iso3_left_out": "ISR",
+              "partial_r2": 0.016743854254582233
+            },
+            {
+              "iso3_left_out": "ITA",
+              "partial_r2": 0.0069158921459469905
+            },
+            {
+              "iso3_left_out": "JPN",
+              "partial_r2": 0.006427118217510121
+            },
+            {
+              "iso3_left_out": "KOR",
+              "partial_r2": 0.012355040742937645
+            },
+            {
+              "iso3_left_out": "LTU",
+              "partial_r2": 0.005641451917615892
+            },
+            {
+              "iso3_left_out": "LVA",
+              "partial_r2": 0.008857233609541128
+            },
+            {
+              "iso3_left_out": "MEX",
+              "partial_r2": 0.010619843683956076
+            },
+            {
+              "iso3_left_out": "NLD",
+              "partial_r2": 0.006147712606039896
+            },
+            {
+              "iso3_left_out": "NOR",
+              "partial_r2": 0.007620717851349462
+            },
+            {
+              "iso3_left_out": "NZL",
+              "partial_r2": 0.006321338746950339
+            },
+            {
+              "iso3_left_out": "POL",
+              "partial_r2": 0.00976457276978246
+            },
+            {
+              "iso3_left_out": "PRT",
+              "partial_r2": 0.00836019309131702
+            },
+            {
+              "iso3_left_out": "SVK",
+              "partial_r2": 0.007747040830306239
+            },
+            {
+              "iso3_left_out": "SWE",
+              "partial_r2": 0.008564187581195449
+            },
+            {
+              "iso3_left_out": "TUR",
+              "partial_r2": 0.007659241039820348
+            },
+            {
+              "iso3_left_out": "USA",
+              "partial_r2": 0.008429780664756591
+            }
+          ]
+        },
+        "electricity_given_development": {
+          "min": 2.0498587606870186e-06,
+          "max": 0.12820494861038245,
+          "median": 0.024321440466150236,
+          "min_country": "ISL",
+          "max_country": "ISR",
+          "rows": [
+            {
+              "iso3_left_out": "AUS",
+              "partial_r2": 0.02419540850097908
+            },
+            {
+              "iso3_left_out": "AUT",
+              "partial_r2": 0.02380367380370101
+            },
+            {
+              "iso3_left_out": "BEL",
+              "partial_r2": 0.02422230828249871
+            },
+            {
+              "iso3_left_out": "CAN",
+              "partial_r2": 0.03569050383764071
+            },
+            {
+              "iso3_left_out": "CHE",
+              "partial_r2": 0.024321440466150236
+            },
+            {
+              "iso3_left_out": "CHL",
+              "partial_r2": 0.023024131525862475
+            },
+            {
+              "iso3_left_out": "CZE",
+              "partial_r2": 0.026814196923387268
+            },
+            {
+              "iso3_left_out": "DEU",
+              "partial_r2": 0.02474135100579029
+            },
+            {
+              "iso3_left_out": "DNK",
+              "partial_r2": 0.025900890591553552
+            },
+            {
+              "iso3_left_out": "ESP",
+              "partial_r2": 0.020322879629972857
+            },
+            {
+              "iso3_left_out": "EST",
+              "partial_r2": 0.028774865465808982
+            },
+            {
+              "iso3_left_out": "FIN",
+              "partial_r2": 0.025602474727032094
+            },
+            {
+              "iso3_left_out": "FRA",
+              "partial_r2": 0.025753025303319643
+            },
+            {
+              "iso3_left_out": "GBR",
+              "partial_r2": 0.025589610272448507
+            },
+            {
+              "iso3_left_out": "GRC",
+              "partial_r2": 0.022999838312823498
+            },
+            {
+              "iso3_left_out": "IRL",
+              "partial_r2": 0.028620521142781682
+            },
+            {
+              "iso3_left_out": "ISL",
+              "partial_r2": 2.0498587606870186e-06
+            },
+            {
+              "iso3_left_out": "ISR",
+              "partial_r2": 0.12820494861038245
+            },
+            {
+              "iso3_left_out": "ITA",
+              "partial_r2": 0.019729244692968623
+            },
+            {
+              "iso3_left_out": "JPN",
+              "partial_r2": 0.02135348636785106
+            },
+            {
+              "iso3_left_out": "KOR",
+              "partial_r2": 0.026378593051809885
+            },
+            {
+              "iso3_left_out": "LTU",
+              "partial_r2": 0.020805992769029183
+            },
+            {
+              "iso3_left_out": "LVA",
+              "partial_r2": 0.02187214303794544
+            },
+            {
+              "iso3_left_out": "MEX",
+              "partial_r2": 0.019735155046926148
+            },
+            {
+              "iso3_left_out": "NLD",
+              "partial_r2": 0.02413347978748234
+            },
+            {
+              "iso3_left_out": "NOR",
+              "partial_r2": 0.025226995475615587
+            },
+            {
+              "iso3_left_out": "NZL",
+              "partial_r2": 0.02362826575486575
+            },
+            {
+              "iso3_left_out": "POL",
+              "partial_r2": 0.022757136202967057
+            },
+            {
+              "iso3_left_out": "PRT",
+              "partial_r2": 0.027166329683903638
+            },
+            {
+              "iso3_left_out": "SVK",
+              "partial_r2": 0.024712347859162535
+            },
+            {
+              "iso3_left_out": "SWE",
+              "partial_r2": 0.024801732107649046
+            },
+            {
+              "iso3_left_out": "TUR",
+              "partial_r2": 0.027746560469950186
+            },
+            {
+              "iso3_left_out": "USA",
+              "partial_r2": 0.023329467691000087
+            }
+          ]
+        }
+      }
+    }
+  },
+  "sensitivity": {
+    "user_supplied_values_global": {
+      "sample": "user_supplied_values_global",
+      "n": 45,
+      "countries": [
+        "AUT",
+        "AZE",
+        "BEL",
+        "BGR",
+        "BRA",
+        "CAN",
+        "CHE",
+        "CHN",
+        "CMR",
+        "COD",
+        "CZE",
+        "DEU",
+        "DNK",
+        "DZA",
+        "EGY",
+        "ESP",
+        "ETH",
+        "GBR",
+        "GRC",
+        "HRV",
+        "IDN",
+        "IND",
+        "IRN",
+        "IRQ",
+        "ITA",
+        "JPN",
+        "KEN",
+        "KOR",
+        "MNG",
+        "MYS",
+        "NGA",
+        "NLD",
+        "NOR",
+        "NZL",
+        "PAK",
+        "PRT",
+        "RUS",
+        "SAU",
+        "SRB",
+        "SWE",
+        "THA",
+        "USA",
+        "UZB",
+        "VNM",
+        "ZAF"
+      ],
+      "models": {
+        "controls": {
+          "n": 45,
+          "r2": 0.8066783390667452,
+          "adjusted_r2": 0.7925328516813852,
+          "df_resid": 41,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.3461454173580023e-15,
+              "hc3_se": 0.07750694091983384,
+              "hc3_p": 0.9999999999999862,
+              "hc3_ci_low": -0.156528442681185,
+              "hc3_ci_high": 0.15652844268118227
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.3713798276421246,
+              "hc3_se": 0.17079926953701455,
+              "hc3_p": 0.03550281583234325,
+              "hc3_ci_low": 0.026443705090664127,
+              "hc3_ci_high": 0.7163159501935852
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.1610976076040136,
+              "hc3_se": 0.21022868517042848,
+              "hc3_p": 0.44788932746199617,
+              "hc3_ci_low": -0.5856630504677152,
+              "hc3_ci_high": 0.263467835259688
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.42719945425617173,
+              "hc3_se": 0.25529342230203195,
+              "hc3_p": 0.10186938768723824,
+              "hc3_ci_low": -0.9427749800793173,
+              "hc3_ci_high": 0.08837607156697386
+            }
+          ]
+        },
+        "controls_plus_testosterone": {
+          "n": 45,
+          "r2": 0.8268033578744451,
+          "adjusted_r2": 0.8094836936618897,
+          "df_resid": 40,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.1102230246251565e-15,
+              "hc3_se": 0.07765564648421441,
+              "hc3_p": 0.9999999999999887,
+              "hc3_ci_low": -0.1569479160275707,
+              "hc3_ci_high": 0.15694791602756847
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.4097136361041193,
+              "hc3_se": 0.19431237466471415,
+              "hc3_p": 0.04129587552321172,
+              "hc3_ci_low": 0.016993677637293425,
+              "hc3_ci_high": 0.8024335945709452
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.08138395963398751,
+              "hc3_se": 0.21706027037671008,
+              "hc3_p": 0.7096878990978499,
+              "hc3_ci_low": -0.520079130305582,
+              "hc3_ci_high": 0.3573112110376069
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.3865405949082208,
+              "hc3_se": 0.26715360947193756,
+              "hc3_p": 0.15572088188331804,
+              "hc3_ci_low": -0.9264781804434465,
+              "hc3_ci_high": 0.15339699062700496
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.16340015493971022,
+              "hc3_se": 0.1203528721545388,
+              "hc3_p": 0.18217705117120367,
+              "hc3_ci_low": -0.07984207312450523,
+              "hc3_ci_high": 0.40664238300392563
+            }
+          ]
+        },
+        "controls_plus_electricity": {
+          "n": 45,
+          "r2": 0.8081888902472317,
+          "adjusted_r2": 0.7890077792719549,
+          "df_resid": 40,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.3461454173580023e-15,
+              "hc3_se": 0.07766821895907854,
+              "hc3_p": 0.9999999999999862,
+              "hc3_ci_low": -0.15697332594711405,
+              "hc3_ci_high": 0.1569733259471114
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.4030968080223818,
+              "hc3_se": 0.17395970519797943,
+              "hc3_p": 0.02569585254004163,
+              "hc3_ci_low": 0.05151112894181137,
+              "hc3_ci_high": 0.7546824871029523
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.1692061742259948,
+              "hc3_se": 0.21162520163176915,
+              "hc3_p": 0.4286908967928158,
+              "hc3_ci_low": -0.5969166612125663,
+              "hc3_ci_high": 0.2585043127605767
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.42343509696123693,
+              "hc3_se": 0.25336432701275047,
+              "hc3_p": 0.10247927977365688,
+              "hc3_ci_low": -0.9355035030682177,
+              "hc3_ci_high": 0.08863330914574385
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.05334862784815254,
+              "hc3_se": 0.057915240928361235,
+              "hc3_p": 0.36249464914608265,
+              "hc3_ci_low": -0.06370244031581698,
+              "hc3_ci_high": 0.17039969601212204
+            }
+          ]
+        },
+        "horse_race": {
+          "n": 45,
+          "r2": 0.830961998272326,
+          "adjusted_r2": 0.8092904595892909,
+          "df_resid": 39,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.096345236817342e-15,
+              "hc3_se": 0.07719166087930163,
+              "hc3_p": 0.9999999999999888,
+              "hc3_ci_low": -0.15613487156312134,
+              "hc3_ci_high": 0.15613487156311917
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.46622544010832,
+              "hc3_se": 0.2063583238231465,
+              "hc3_p": 0.029529399110019804,
+              "hc3_ci_low": 0.04882633223723598,
+              "hc3_ci_high": 0.883624547979404
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.0886543369592799,
+              "hc3_se": 0.2178999976779356,
+              "hc3_p": 0.6863366944071659,
+              "hc3_ci_low": -0.5293986837384715,
+              "hc3_ci_high": 0.3520900098199117
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.376938264587216,
+              "hc3_se": 0.26357742418463453,
+              "hc3_p": 0.16065558016533563,
+              "hc3_ci_low": -0.9100739272121541,
+              "hc3_ci_high": 0.15619739803772204
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.08988427464940853,
+              "hc3_se": 0.05022761507588201,
+              "hc3_p": 0.08129571687137074,
+              "hc3_ci_low": -0.01171066629967954,
+              "hc3_ci_high": 0.1914792155984966
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.17650132597346194,
+              "hc3_se": 0.12361432947831369,
+              "hc3_p": 0.16129747225242125,
+              "hc3_ci_low": -0.0735322558487557,
+              "hc3_ci_high": 0.4265349077956796
+            }
+          ]
+        },
+        "testosterone_unadjusted": {
+          "n": 45,
+          "r2": 0.29751807384894136,
+          "adjusted_r2": 0.2811812848686842,
+          "df_resid": 43,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 4.0245584642661925e-16,
+              "hc3_se": 0.13323520867111743,
+              "hc3_p": 0.9999999999999976,
+              "hc3_ci_low": -0.2686944059895335,
+              "hc3_ci_high": 0.26869440598953426
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.545452173750313,
+              "hc3_se": 0.18052288075853193,
+              "hc3_p": 0.004224507209953745,
+              "hc3_ci_low": 0.181393088342447,
+              "hc3_ci_high": 0.9095112591581789
+            }
+          ]
+        },
+        "electricity_unadjusted": {
+          "n": 45,
+          "r2": 0.29493786590943216,
+          "adjusted_r2": 0.2785410720933724,
+          "df_resid": 43,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 1.6653345369377348e-16,
+              "hc3_se": 0.13870954175721198,
+              "hc3_p": 0.999999999999999,
+              "hc3_ci_low": -0.27973445082023535,
+              "hc3_ci_high": 0.2797344508202357
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": -0.543081822481136,
+              "hc3_se": 0.27184116349519966,
+              "hc3_p": 0.052090157076481056,
+              "hc3_ci_low": -1.0913017763309205,
+              "hc3_ci_high": 0.005138131368648602
+            }
+          ]
+        }
+      },
+      "partial_r2": {
+        "T_given_development": 0.1041012099241593,
+        "electricity_given_development": 0.00781366750727437,
+        "T_given_development_and_electricity": 0.11872674139911532,
+        "electricity_given_development_and_T": 0.024011091363227016
+      },
+      "partial_r2_bootstrap_ci": {
+        "T_given_development": [
+          0.000619568159986461,
+          0.4258554276545841
+        ],
+        "electricity_given_development": [
+          4.115410512082001e-05,
+          0.09041121476604903
+        ],
+        "T_given_development_and_electricity": [
+          0.0010161388795821742,
+          0.4636029773538284
+        ],
+        "electricity_given_development_and_T": [
+          7.178481401390515e-05,
+          0.12515784039865757
+        ]
+      },
+      "rank_analysis": {
+        "n": 45,
+        "spearman_rho": 0.48841885446081207,
+        "spearman_p": 0.0006642817712706359,
+        "spearman_bootstrap_ci": [
+          0.23273781135082747,
+          0.6862286197022375
+        ],
+        "rank_T_coefficient_given_development": {
+          "term": "testosterone_ng_dl",
+          "coefficient": 0.16885055123168044,
+          "hc3_se": 0.09526703120511658,
+          "hc3_p": 0.08394603316040346,
+          "hc3_ci_low": -0.023691301044520413,
+          "hc3_ci_high": 0.36139240350788127
+        },
+        "rank_T_coefficient_given_development_and_electricity": {
+          "term": "testosterone_ng_dl",
+          "coefficient": 0.17177841280519188,
+          "hc3_se": 0.10705016558156832,
+          "hc3_p": 0.11663866778817028,
+          "hc3_ci_low": -0.04475098510507816,
+          "hc3_ci_high": 0.38830781071546194
+        }
+      },
+      "mediation_diagnostic": {
+        "n": 45,
+        "a_electricity_to_T": -0.20699927663291004,
+        "b_T_to_TFR_given_electricity": 0.17650132597346194,
+        "c_total_electricity_to_TFR": 0.05334862784815254,
+        "c_prime_direct_electricity_to_TFR": 0.08988427464940853,
+        "absolute_coefficient_attenuation_pct": -68.48469824800043,
+        "indirect_effect_a_times_b": -0.03653564680125608,
+        "indirect_effect_bootstrap_ci": [
+          -0.1313027827015318,
+          0.019153878748244767
+        ],
+        "attenuation_bootstrap_ci_pct": [
+          -1669.0616636647935,
+          74.71149574516652
+        ],
+        "interpretation_limit": "Cross-sectional coefficient attenuation is not causal mediation; temporal ordering, no unmeasured exposure-mediator/outcome confounding, and measurement validity are unverified."
+      },
+      "leave_one_out_partial_r2": {
+        "T_given_development": {
+          "min": 0.02505703912511312,
+          "max": 0.1632718191656022,
+          "median": 0.10415008767290983,
+          "min_country": "UZB",
+          "max_country": "AZE",
+          "rows": [
+            {
+              "iso3_left_out": "AUT",
+              "partial_r2": 0.10578413032156116
+            },
+            {
+              "iso3_left_out": "AZE",
+              "partial_r2": 0.1632718191656022
+            },
+            {
+              "iso3_left_out": "BEL",
+              "partial_r2": 0.1052492103501125
+            },
+            {
+              "iso3_left_out": "BGR",
+              "partial_r2": 0.10385196443576457
+            },
+            {
+              "iso3_left_out": "BRA",
+              "partial_r2": 0.09035540607068193
+            },
+            {
+              "iso3_left_out": "CAN",
+              "partial_r2": 0.10335567057390581
+            },
+            {
+              "iso3_left_out": "CHE",
+              "partial_r2": 0.10469485097460438
+            },
+            {
+              "iso3_left_out": "CHN",
+              "partial_r2": 0.11098189002178614
+            },
+            {
+              "iso3_left_out": "CMR",
+              "partial_r2": 0.09568122624211314
+            },
+            {
+              "iso3_left_out": "COD",
+              "partial_r2": 0.13228813705926212
+            },
+            {
+              "iso3_left_out": "CZE",
+              "partial_r2": 0.13440294262379732
+            },
+            {
+              "iso3_left_out": "DEU",
+              "partial_r2": 0.10792118143015518
+            },
+            {
+              "iso3_left_out": "DNK",
+              "partial_r2": 0.10100658787514205
+            },
+            {
+              "iso3_left_out": "DZA",
+              "partial_r2": 0.09920635536012035
+            },
+            {
+              "iso3_left_out": "EGY",
+              "partial_r2": 0.1097796334146865
+            },
+            {
+              "iso3_left_out": "ESP",
+              "partial_r2": 0.10409901730544753
+            },
+            {
+              "iso3_left_out": "ETH",
+              "partial_r2": 0.1228940894242149
+            },
+            {
+              "iso3_left_out": "GBR",
+              "partial_r2": 0.10320270593385861
+            },
+            {
+              "iso3_left_out": "GRC",
+              "partial_r2": 0.1041026819119739
+            },
+            {
+              "iso3_left_out": "HRV",
+              "partial_r2": 0.13495290379551514
+            },
+            {
+              "iso3_left_out": "IDN",
+              "partial_r2": 0.10015262330054288
+            },
+            {
+              "iso3_left_out": "IND",
+              "partial_r2": 0.09608832784908479
+            },
+            {
+              "iso3_left_out": "IRN",
+              "partial_r2": 0.1031360938948372
+            },
+            {
+              "iso3_left_out": "IRQ",
+              "partial_r2": 0.12496505071653126
+            },
+            {
+              "iso3_left_out": "ITA",
+              "partial_r2": 0.10415008767290983
+            },
+            {
+              "iso3_left_out": "JPN",
+              "partial_r2": 0.10348629811756704
+            },
+            {
+              "iso3_left_out": "KEN",
+              "partial_r2": 0.08741056656042837
+            },
+            {
+              "iso3_left_out": "KOR",
+              "partial_r2": 0.10276110738331964
+            },
+            {
+              "iso3_left_out": "MNG",
+              "partial_r2": 0.10654864670720869
+            },
+            {
+              "iso3_left_out": "MYS",
+              "partial_r2": 0.10067492744208419
+            },
+            {
+              "iso3_left_out": "NGA",
+              "partial_r2": 0.1074865198598864
+            },
+            {
+              "iso3_left_out": "NLD",
+              "partial_r2": 0.10543082579957365
+            },
+            {
+              "iso3_left_out": "NOR",
+              "partial_r2": 0.10999688232269893
+            },
+            {
+              "iso3_left_out": "NZL",
+              "partial_r2": 0.11072296498011269
+            },
+            {
+              "iso3_left_out": "PAK",
+              "partial_r2": 0.11750243045996678
+            },
+            {
+              "iso3_left_out": "PRT",
+              "partial_r2": 0.10683263541500759
+            },
+            {
+              "iso3_left_out": "RUS",
+              "partial_r2": 0.10363677637866395
+            },
+            {
+              "iso3_left_out": "SAU",
+              "partial_r2": 0.08963572668920206
+            },
+            {
+              "iso3_left_out": "SRB",
+              "partial_r2": 0.10675397317389108
+            },
+            {
+              "iso3_left_out": "SWE",
+              "partial_r2": 0.10537605845067317
+            },
+            {
+              "iso3_left_out": "THA",
+              "partial_r2": 0.0930535698077818
+            },
+            {
+              "iso3_left_out": "USA",
+              "partial_r2": 0.10519953464159883
+            },
+            {
+              "iso3_left_out": "UZB",
+              "partial_r2": 0.02505703912511312
+            },
+            {
+              "iso3_left_out": "VNM",
+              "partial_r2": 0.10375372729527393
+            },
+            {
+              "iso3_left_out": "ZAF",
+              "partial_r2": 0.08046515443300237
+            }
+          ]
+        },
+        "electricity_given_development": {
+          "min": 0.0011341816282613613,
+          "max": 0.01939940123090119,
+          "median": 0.007856710444280976,
+          "min_country": "SAU",
+          "max_country": "UZB",
+          "rows": [
+            {
+              "iso3_left_out": "AUT",
+              "partial_r2": 0.007870512645540645
+            },
+            {
+              "iso3_left_out": "AZE",
+              "partial_r2": 0.006987489805763835
+            },
+            {
+              "iso3_left_out": "BEL",
+              "partial_r2": 0.007873363033170506
+            },
+            {
+              "iso3_left_out": "BGR",
+              "partial_r2": 0.0072442178751595
+            },
+            {
+              "iso3_left_out": "BRA",
+              "partial_r2": 0.007010930070448631
+            },
+            {
+              "iso3_left_out": "CAN",
+              "partial_r2": 0.01164649558739219
+            },
+            {
+              "iso3_left_out": "CHE",
+              "partial_r2": 0.008298788837347174
+            },
+            {
+              "iso3_left_out": "CHN",
+              "partial_r2": 0.008208041230826447
+            },
+            {
+              "iso3_left_out": "CMR",
+              "partial_r2": 0.00739566778289696
+            },
+            {
+              "iso3_left_out": "COD",
+              "partial_r2": 0.008362827046604399
+            },
+            {
+              "iso3_left_out": "CZE",
+              "partial_r2": 0.009020130938866425
+            },
+            {
+              "iso3_left_out": "DEU",
+              "partial_r2": 0.008428333081885607
+            },
+            {
+              "iso3_left_out": "DNK",
+              "partial_r2": 0.009027657673240564
+            },
+            {
+              "iso3_left_out": "DZA",
+              "partial_r2": 0.009085054829620305
+            },
+            {
+              "iso3_left_out": "EGY",
+              "partial_r2": 0.009863434784000197
+            },
+            {
+              "iso3_left_out": "ESP",
+              "partial_r2": 0.008095521695428848
+            },
+            {
+              "iso3_left_out": "ETH",
+              "partial_r2": 0.004716259735185308
+            },
+            {
+              "iso3_left_out": "GBR",
+              "partial_r2": 0.009113104574346841
+            },
+            {
+              "iso3_left_out": "GRC",
+              "partial_r2": 0.007643477003147962
+            },
+            {
+              "iso3_left_out": "HRV",
+              "partial_r2": 0.007404263436136916
+            },
+            {
+              "iso3_left_out": "IDN",
+              "partial_r2": 0.0064416379861576565
+            },
+            {
+              "iso3_left_out": "IND",
+              "partial_r2": 0.006637077551372929
+            },
+            {
+              "iso3_left_out": "IRN",
+              "partial_r2": 0.007176181410184238
+            },
+            {
+              "iso3_left_out": "IRQ",
+              "partial_r2": 0.006163264047986913
+            },
+            {
+              "iso3_left_out": "ITA",
+              "partial_r2": 0.008196038518448993
+            },
+            {
+              "iso3_left_out": "JPN",
+              "partial_r2": 0.008512681031611537
+            },
+            {
+              "iso3_left_out": "KEN",
+              "partial_r2": 0.00646947470162535
+            },
+            {
+              "iso3_left_out": "KOR",
+              "partial_r2": 0.011353805585160743
+            },
+            {
+              "iso3_left_out": "MNG",
+              "partial_r2": 0.008064435515000993
+            },
+            {
+              "iso3_left_out": "MYS",
+              "partial_r2": 0.007485219117927295
+            },
+            {
+              "iso3_left_out": "NGA",
+              "partial_r2": 0.007078917009358028
+            },
+            {
+              "iso3_left_out": "NLD",
+              "partial_r2": 0.007981483936382669
+            },
+            {
+              "iso3_left_out": "NOR",
+              "partial_r2": 0.0028445520026030503
+            },
+            {
+              "iso3_left_out": "NZL",
+              "partial_r2": 0.007357888416478734
+            },
+            {
+              "iso3_left_out": "PAK",
+              "partial_r2": 0.007176087801667407
+            },
+            {
+              "iso3_left_out": "PRT",
+              "partial_r2": 0.010207573995613162
+            },
+            {
+              "iso3_left_out": "RUS",
+              "partial_r2": 0.008892020949339084
+            },
+            {
+              "iso3_left_out": "SAU",
+              "partial_r2": 0.0011341816282613613
+            },
+            {
+              "iso3_left_out": "SRB",
+              "partial_r2": 0.007454348681203782
+            },
+            {
+              "iso3_left_out": "SWE",
+              "partial_r2": 0.0057256166424008055
+            },
+            {
+              "iso3_left_out": "THA",
+              "partial_r2": 0.0047060474850507015
+            },
+            {
+              "iso3_left_out": "USA",
+              "partial_r2": 0.007856710444280976
+            },
+            {
+              "iso3_left_out": "UZB",
+              "partial_r2": 0.01939940123090119
+            },
+            {
+              "iso3_left_out": "VNM",
+              "partial_r2": 0.007399032030826696
+            },
+            {
+              "iso3_left_out": "ZAF",
+              "partial_r2": 0.016793655217737843
+            }
+          ]
+        }
+      }
+    },
+    "exclude_known_historical_global": {
+      "sample": "exclude_known_historical_global",
+      "n": 79,
+      "countries": [
+        "AUS",
+        "AZE",
+        "BEL",
+        "BGD",
+        "BGR",
+        "BHR",
+        "BLR",
+        "BRA",
+        "CAN",
+        "CHE",
+        "CHL",
+        "CHN",
+        "CMR",
+        "COD",
+        "CUB",
+        "CZE",
+        "DEU",
+        "DNK",
+        "DZA",
+        "EGY",
+        "ESP",
+        "EST",
+        "ETH",
+        "FIN",
+        "FRA",
+        "GBR",
+        "GHA",
+        "GRC",
+        "HND",
+        "IDN",
+        "IND",
+        "IRN",
+        "IRQ",
+        "ISL",
+        "ISR",
+        "ITA",
+        "JOR",
+        "JPN",
+        "KAZ",
+        "KEN",
+        "KGZ",
+        "KOR",
+        "LKA",
+        "LTU",
+        "LVA",
+        "MAR",
+        "MEX",
+        "MMR",
+        "MNG",
+        "MYS",
+        "NCL",
+        "NGA",
+        "NLD",
+        "NOR",
+        "NZL",
+        "PAK",
+        "PER",
+        "PHL",
+        "POL",
+        "PRT",
+        "PSE",
+        "ROU",
+        "RUS",
+        "SAU",
+        "SDN",
+        "SRB",
+        "SVK",
+        "SWE",
+        "THA",
+        "TUN",
+        "TUR",
+        "UGA",
+        "URY",
+        "USA",
+        "UZB",
+        "VEN",
+        "VNM",
+        "YEM",
+        "ZAF"
+      ],
+      "models": {
+        "controls": {
+          "n": 79,
+          "r2": 0.730246139321088,
+          "adjusted_r2": 0.7194559848939315,
+          "df_resid": 75,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.6306400674181987e-16,
+              "hc3_se": 0.06270429871437196,
+              "hc3_p": 0.9999999999999979,
+              "hc3_ci_low": -0.12491336853410054,
+              "hc3_ci_high": 0.1249133685341002
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.3607151516627075,
+              "hc3_se": 0.12440880589999426,
+              "hc3_p": 0.004901073844752891,
+              "hc3_ci_low": 0.11288010145248217,
+              "hc3_ci_high": 0.6085502018729328
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.19746038198472557,
+              "hc3_se": 0.13804911339498696,
+              "hc3_p": 0.1567658779912429,
+              "hc3_ci_low": -0.47246831813697876,
+              "hc3_ci_high": 0.07754755416752765
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.3680691499791544,
+              "hc3_se": 0.13843705918699797,
+              "hc3_p": 0.009582997432003899,
+              "hc3_ci_low": -0.6438499137793089,
+              "hc3_ci_high": -0.09228838617899993
+            }
+          ]
+        },
+        "controls_plus_testosterone": {
+          "n": 79,
+          "r2": 0.7440600680299857,
+          "adjusted_r2": 0.7302254771126877,
+          "df_resid": 74,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -2.42861286636753e-17,
+              "hc3_se": 0.062245146559576796,
+              "hc3_p": 0.9999999999999997,
+              "hc3_ci_low": -0.12402616188386856,
+              "hc3_ci_high": 0.1240261618838685
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.3324447424718301,
+              "hc3_se": 0.12467168431826324,
+              "hc3_p": 0.009406443359726204,
+              "hc3_ci_low": 0.08403098885022403,
+              "hc3_ci_high": 0.5808584960934362
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.20869769088224255,
+              "hc3_se": 0.14024485451992116,
+              "hc3_p": 0.1409750010173949,
+              "hc3_ci_low": -0.4881416634885076,
+              "hc3_ci_high": 0.07074628172402253
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.3127796264063454,
+              "hc3_se": 0.14478219297180628,
+              "hc3_p": 0.03398397834198126,
+              "hc3_ci_low": -0.6012644432303484,
+              "hc3_ci_high": -0.024294809582342314
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.13634466932161662,
+              "hc3_se": 0.08607132029593112,
+              "hc3_p": 0.11743800120628836,
+              "hc3_ci_low": -0.03515618005567547,
+              "hc3_ci_high": 0.30784551869890875
+            }
+          ]
+        },
+        "controls_plus_electricity": {
+          "n": 79,
+          "r2": 0.7371960901865278,
+          "adjusted_r2": 0.7229904734398536,
+          "df_resid": 74,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -1.734723475976807e-16,
+              "hc3_se": 0.06201312534742259,
+              "hc3_p": 0.9999999999999978,
+              "hc3_ci_low": -0.12356384952684685,
+              "hc3_ci_high": 0.12356384952684651
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.41141602194894683,
+              "hc3_se": 0.12000811700382569,
+              "hc3_p": 0.0009958214805792477,
+              "hc3_ci_low": 0.17229462904406173,
+              "hc3_ci_high": 0.6505374148538319
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.21465233219707597,
+              "hc3_se": 0.13642676297168968,
+              "hc3_p": 0.11989490556799193,
+              "hc3_ci_low": -0.4864885913249071,
+              "hc3_ci_high": 0.05718392693075519
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.35438720640160576,
+              "hc3_se": 0.13700384953142591,
+              "hc3_p": 0.011654040014733526,
+              "hc3_ci_low": -0.6273733356001956,
+              "hc3_ci_high": -0.08140107720301587
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.10094935976490621,
+              "hc3_se": 0.034518288492194245,
+              "hc3_p": 0.004576551673998008,
+              "hc3_ci_low": 0.032170168565005736,
+              "hc3_ci_high": 0.16972855096480668
+            }
+          ]
+        },
+        "horse_race": {
+          "n": 79,
+          "r2": 0.7498508403402303,
+          "adjusted_r2": 0.7327173362539448,
+          "df_resid": 73,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": -5.898059818321144e-17,
+              "hc3_se": 0.06178793342100798,
+              "hc3_p": 0.9999999999999992,
+              "hc3_ci_low": -0.12314317372274267,
+              "hc3_ci_high": 0.12314317372274255
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.3799752372461117,
+              "hc3_se": 0.12282689505555242,
+              "hc3_p": 0.002801978821026013,
+              "hc3_ci_low": 0.13518158841842093,
+              "hc3_ci_high": 0.6247688860738025
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": -0.2239616341557188,
+              "hc3_se": 0.1398742438010873,
+              "hc3_p": 0.11365952171385973,
+              "hc3_ci_low": -0.5027306000373026,
+              "hc3_ci_high": 0.05480733172586505
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.30253052162030164,
+              "hc3_se": 0.14393204781198754,
+              "hc3_p": 0.039012719361607856,
+              "hc3_ci_low": -0.589386679233034,
+              "hc3_ci_high": -0.015674364007569275
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.09233117978725794,
+              "hc3_se": 0.04393513938707089,
+              "hc3_p": 0.03904568671801106,
+              "hc3_ci_low": 0.004768573263255499,
+              "hc3_ci_high": 0.17989378631126038
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.13075966038535447,
+              "hc3_se": 0.08682199874409703,
+              "hc3_p": 0.13636535342962672,
+              "hc3_ci_low": -0.042276333575643504,
+              "hc3_ci_high": 0.3037956543463525
+            }
+          ]
+        },
+        "testosterone_unadjusted": {
+          "n": 79,
+          "r2": 0.267501965372953,
+          "adjusted_r2": 0.25798900388429014,
+          "df_resid": 77,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 5.447031714567174e-16,
+              "hc3_se": 0.09945194133675116,
+              "hc3_p": 0.9999999999999957,
+              "hc3_ci_low": -0.19803411531671297,
+              "hc3_ci_high": 0.19803411531671408
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.5172059216336883,
+              "hc3_se": 0.12294292785885665,
+              "hc3_p": 6.933651027481573e-05,
+              "hc3_ci_low": 0.2723952761528229,
+              "hc3_ci_high": 0.7620165671145537
+            }
+          ]
+        },
+        "electricity_unadjusted": {
+          "n": 79,
+          "r2": 0.13189276292220553,
+          "adjusted_r2": 0.12061864296015634,
+          "df_resid": 77,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 3.400058012914542e-16,
+              "hc3_se": 0.1155782983926261,
+              "hc3_p": 0.9999999999999977,
+              "hc3_ci_low": -0.23014579468582663,
+              "hc3_ci_high": 0.2301457946858273
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": -0.36317043233474516,
+              "hc3_se": 0.33094798079868926,
+              "hc3_p": 0.2759021506238559,
+              "hc3_ci_low": -1.0221720537450458,
+              "hc3_ci_high": 0.29583118907555556
+            }
+          ]
+        }
+      },
+      "partial_r2": {
+        "T_given_development": 0.05120938278373879,
+        "electricity_given_development": 0.02576404596378451,
+        "T_given_development_and_electricity": 0.048152823002840336,
+        "electricity_given_development_and_T": 0.022625513204102318
+      },
+      "partial_r2_bootstrap_ci": {
+        "T_given_development": [
+          0.00038118119901815755,
+          0.22343686680789177
+        ],
+        "electricity_given_development": [
+          0.002463683048196156,
+          0.07783816957829331
+        ],
+        "T_given_development_and_electricity": [
+          0.00025424346881506384,
+          0.22343299214074386
+        ],
+        "electricity_given_development_and_T": [
+          0.0017473963399591726,
+          0.06918946269887424
+        ]
+      },
+      "rank_analysis": {
+        "n": 79,
+        "spearman_rho": 0.40408386968026083,
+        "spearman_p": 0.00022150082925249042,
+        "spearman_bootstrap_ci": [
+          0.1698464509078268,
+          0.5837300620042528
+        ],
+        "rank_T_coefficient_given_development": {
+          "term": "testosterone_ng_dl",
+          "coefficient": 0.12272760179725246,
+          "hc3_se": 0.07179312107588023,
+          "hc3_p": 0.09155609198260721,
+          "hc3_ci_low": -0.020323314601229783,
+          "hc3_ci_high": 0.2657785181957347
+        },
+        "rank_T_coefficient_given_development_and_electricity": {
+          "term": "testosterone_ng_dl",
+          "coefficient": 0.11894885900592814,
+          "hc3_se": 0.0722634164011832,
+          "hc3_p": 0.10405347044143164,
+          "hc3_ci_low": -0.02507192218861176,
+          "hc3_ci_high": 0.26296964020046804
+        }
+      },
+      "mediation_diagnostic": {
+        "n": 79,
+        "a_electricity_to_T": 0.06590855277728687,
+        "b_T_to_TFR_given_electricity": 0.13075966038535447,
+        "c_total_electricity_to_TFR": 0.10094935976490621,
+        "c_prime_direct_electricity_to_TFR": 0.09233117978725794,
+        "absolute_coefficient_attenuation_pct": 8.537131882479036,
+        "indirect_effect_a_times_b": 0.008618179977648242,
+        "indirect_effect_bootstrap_ci": [
+          -0.024730076063238106,
+          0.0437343177042986
+        ],
+        "attenuation_bootstrap_ci_pct": [
+          -40.80666776205249,
+          46.22552974023062
+        ],
+        "interpretation_limit": "Cross-sectional coefficient attenuation is not causal mediation; temporal ordering, no unmeasured exposure-mediator/outcome confounding, and measurement validity are unverified."
+      },
+      "leave_one_out_partial_r2": {
+        "T_given_development": {
+          "min": 0.01499549911981261,
+          "max": 0.07774782706464631,
+          "median": 0.050992502437335885,
+          "min_country": "UZB",
+          "max_country": "AZE",
+          "rows": [
+            {
+              "iso3_left_out": "AUS",
+              "partial_r2": 0.05393279862296378
+            },
+            {
+              "iso3_left_out": "AZE",
+              "partial_r2": 0.07774782706464631
+            },
+            {
+              "iso3_left_out": "BEL",
+              "partial_r2": 0.05278574154100737
+            },
+            {
+              "iso3_left_out": "BGD",
+              "partial_r2": 0.04041817282135921
+            },
+            {
+              "iso3_left_out": "BGR",
+              "partial_r2": 0.053472624248237226
+            },
+            {
+              "iso3_left_out": "BHR",
+              "partial_r2": 0.05659925579554709
+            },
+            {
+              "iso3_left_out": "BLR",
+              "partial_r2": 0.04881309737864519
+            },
+            {
+              "iso3_left_out": "BRA",
+              "partial_r2": 0.04452684667807951
+            },
+            {
+              "iso3_left_out": "CAN",
+              "partial_r2": 0.05049732683617848
+            },
+            {
+              "iso3_left_out": "CHE",
+              "partial_r2": 0.050992502437335885
+            },
+            {
+              "iso3_left_out": "CHL",
+              "partial_r2": 0.04806581875790637
+            },
+            {
+              "iso3_left_out": "CHN",
+              "partial_r2": 0.059257838572283145
+            },
+            {
+              "iso3_left_out": "CMR",
+              "partial_r2": 0.046265702307126885
+            },
+            {
+              "iso3_left_out": "COD",
+              "partial_r2": 0.05105026568366151
+            },
+            {
+              "iso3_left_out": "CUB",
+              "partial_r2": 0.05052042296437331
+            },
+            {
+              "iso3_left_out": "CZE",
+              "partial_r2": 0.054512191790316564
+            },
+            {
+              "iso3_left_out": "DEU",
+              "partial_r2": 0.051337541546003645
+            },
+            {
+              "iso3_left_out": "DNK",
+              "partial_r2": 0.05026966709139891
+            },
+            {
+              "iso3_left_out": "DZA",
+              "partial_r2": 0.049212900611919554
+            },
+            {
+              "iso3_left_out": "EGY",
+              "partial_r2": 0.04906075332427338
+            },
+            {
+              "iso3_left_out": "ESP",
+              "partial_r2": 0.05165127016475361
+            },
+            {
+              "iso3_left_out": "EST",
+              "partial_r2": 0.05256880751847525
+            },
+            {
+              "iso3_left_out": "ETH",
+              "partial_r2": 0.053162865080623276
+            },
+            {
+              "iso3_left_out": "FIN",
+              "partial_r2": 0.05197548561916963
+            },
+            {
+              "iso3_left_out": "FRA",
+              "partial_r2": 0.052718999685856
+            },
+            {
+              "iso3_left_out": "GBR",
+              "partial_r2": 0.05087519843417511
+            },
+            {
+              "iso3_left_out": "GHA",
+              "partial_r2": 0.048741690196251616
+            },
+            {
+              "iso3_left_out": "GRC",
+              "partial_r2": 0.05116750481615327
+            },
+            {
+              "iso3_left_out": "HND",
+              "partial_r2": 0.05392612282064457
+            },
+            {
+              "iso3_left_out": "IDN",
+              "partial_r2": 0.052230585272645264
+            },
+            {
+              "iso3_left_out": "IND",
+              "partial_r2": 0.04987446315389894
+            },
+            {
+              "iso3_left_out": "IRN",
+              "partial_r2": 0.05187906582694825
+            },
+            {
+              "iso3_left_out": "IRQ",
+              "partial_r2": 0.050317783713740606
+            },
+            {
+              "iso3_left_out": "ISL",
+              "partial_r2": 0.04784394100619658
+            },
+            {
+              "iso3_left_out": "ISR",
+              "partial_r2": 0.07077962192248359
+            },
+            {
+              "iso3_left_out": "ITA",
+              "partial_r2": 0.05144679066884475
+            },
+            {
+              "iso3_left_out": "JOR",
+              "partial_r2": 0.05120910658125744
+            },
+            {
+              "iso3_left_out": "JPN",
+              "partial_r2": 0.05077365669640515
+            },
+            {
+              "iso3_left_out": "KAZ",
+              "partial_r2": 0.07221645748794177
+            },
+            {
+              "iso3_left_out": "KEN",
+              "partial_r2": 0.04912851626557807
+            },
+            {
+              "iso3_left_out": "KGZ",
+              "partial_r2": 0.05720617594788486
+            },
+            {
+              "iso3_left_out": "KOR",
+              "partial_r2": 0.052740543816445155
+            },
+            {
+              "iso3_left_out": "LKA",
+              "partial_r2": 0.04987200720209952
+            },
+            {
+              "iso3_left_out": "LTU",
+              "partial_r2": 0.04873452810034172
+            },
+            {
+              "iso3_left_out": "LVA",
+              "partial_r2": 0.04734800785053447
+            },
+            {
+              "iso3_left_out": "MAR",
+              "partial_r2": 0.05128931170173042
+            },
+            {
+              "iso3_left_out": "MEX",
+              "partial_r2": 0.04962337687221609
+            },
+            {
+              "iso3_left_out": "MMR",
+              "partial_r2": 0.0473260890865114
+            },
+            {
+              "iso3_left_out": "MNG",
+              "partial_r2": 0.05325630017135577
+            },
+            {
+              "iso3_left_out": "MYS",
+              "partial_r2": 0.05142963624168162
+            },
+            {
+              "iso3_left_out": "NCL",
+              "partial_r2": 0.05066129548323392
+            },
+            {
+              "iso3_left_out": "NGA",
+              "partial_r2": 0.0508418359164549
+            },
+            {
+              "iso3_left_out": "NLD",
+              "partial_r2": 0.052741321853037336
+            },
+            {
+              "iso3_left_out": "NOR",
+              "partial_r2": 0.051410953668164
+            },
+            {
+              "iso3_left_out": "NZL",
+              "partial_r2": 0.052087441395425524
+            },
+            {
+              "iso3_left_out": "PAK",
+              "partial_r2": 0.054359083511784555
+            },
+            {
+              "iso3_left_out": "PER",
+              "partial_r2": 0.04714901799619378
+            },
+            {
+              "iso3_left_out": "PHL",
+              "partial_r2": 0.04407124199539531
+            },
+            {
+              "iso3_left_out": "POL",
+              "partial_r2": 0.04968052180615593
+            },
+            {
+              "iso3_left_out": "PRT",
+              "partial_r2": 0.05073349337990179
+            },
+            {
+              "iso3_left_out": "PSE",
+              "partial_r2": 0.06124616391696223
+            },
+            {
+              "iso3_left_out": "ROU",
+              "partial_r2": 0.05001424657717373
+            },
+            {
+              "iso3_left_out": "RUS",
+              "partial_r2": 0.058131552983693935
+            },
+            {
+              "iso3_left_out": "SAU",
+              "partial_r2": 0.04294018106845
+            },
+            {
+              "iso3_left_out": "SDN",
+              "partial_r2": 0.04875409452070421
+            },
+            {
+              "iso3_left_out": "SRB",
+              "partial_r2": 0.05566195167406459
+            },
+            {
+              "iso3_left_out": "SVK",
+              "partial_r2": 0.05081690287029811
+            },
+            {
+              "iso3_left_out": "SWE",
+              "partial_r2": 0.050207946619895284
+            },
+            {
+              "iso3_left_out": "THA",
+              "partial_r2": 0.050114043158085125
+            },
+            {
+              "iso3_left_out": "TUN",
+              "partial_r2": 0.05280483106156985
+            },
+            {
+              "iso3_left_out": "TUR",
+              "partial_r2": 0.04975451293415012
+            },
+            {
+              "iso3_left_out": "UGA",
+              "partial_r2": 0.053006552986267184
+            },
+            {
+              "iso3_left_out": "URY",
+              "partial_r2": 0.04945653148290103
+            },
+            {
+              "iso3_left_out": "USA",
+              "partial_r2": 0.05121669248873495
+            },
+            {
+              "iso3_left_out": "UZB",
+              "partial_r2": 0.01499549911981261
+            },
+            {
+              "iso3_left_out": "VEN",
+              "partial_r2": 0.04943072739096641
+            },
+            {
+              "iso3_left_out": "VNM",
+              "partial_r2": 0.052660961835329936
+            },
+            {
+              "iso3_left_out": "YEM",
+              "partial_r2": 0.059661578149200395
+            },
+            {
+              "iso3_left_out": "ZAF",
+              "partial_r2": 0.047564247700388806
+            }
+          ]
+        },
+        "electricity_given_development": {
+          "min": 0.01595132586751948,
+          "max": 0.03371417477339368,
+          "median": 0.025783562860245263,
+          "min_country": "ISL",
+          "max_country": "ISR",
+          "rows": [
+            {
+              "iso3_left_out": "AUS",
+              "partial_r2": 0.025536220454303
+            },
+            {
+              "iso3_left_out": "AZE",
+              "partial_r2": 0.02626316745968155
+            },
+            {
+              "iso3_left_out": "BEL",
+              "partial_r2": 0.025733162506704065
+            },
+            {
+              "iso3_left_out": "BGD",
+              "partial_r2": 0.024679764796369262
+            },
+            {
+              "iso3_left_out": "BGR",
+              "partial_r2": 0.025276637250044538
+            },
+            {
+              "iso3_left_out": "BHR",
+              "partial_r2": 0.023041146527410693
+            },
+            {
+              "iso3_left_out": "BLR",
+              "partial_r2": 0.024155216660359326
+            },
+            {
+              "iso3_left_out": "BRA",
+              "partial_r2": 0.025925542043965907
+            },
+            {
+              "iso3_left_out": "CAN",
+              "partial_r2": 0.027737310103207825
+            },
+            {
+              "iso3_left_out": "CHE",
+              "partial_r2": 0.0261945328209812
+            },
+            {
+              "iso3_left_out": "CHL",
+              "partial_r2": 0.024404914559586186
+            },
+            {
+              "iso3_left_out": "CHN",
+              "partial_r2": 0.02607373761807367
+            },
+            {
+              "iso3_left_out": "CMR",
+              "partial_r2": 0.024930853172461225
+            },
+            {
+              "iso3_left_out": "COD",
+              "partial_r2": 0.026578144864998633
+            },
+            {
+              "iso3_left_out": "CUB",
+              "partial_r2": 0.023965894969455632
+            },
+            {
+              "iso3_left_out": "CZE",
+              "partial_r2": 0.026342383034474448
+            },
+            {
+              "iso3_left_out": "DEU",
+              "partial_r2": 0.02605774962923365
+            },
+            {
+              "iso3_left_out": "DNK",
+              "partial_r2": 0.026547659123334205
+            },
+            {
+              "iso3_left_out": "DZA",
+              "partial_r2": 0.026165482033994616
+            },
+            {
+              "iso3_left_out": "EGY",
+              "partial_r2": 0.02603442593158622
+            },
+            {
+              "iso3_left_out": "ESP",
+              "partial_r2": 0.025783562860245263
+            },
+            {
+              "iso3_left_out": "EST",
+              "partial_r2": 0.026515332328934153
+            },
+            {
+              "iso3_left_out": "ETH",
+              "partial_r2": 0.024731531983562732
+            },
+            {
+              "iso3_left_out": "FIN",
+              "partial_r2": 0.02576962385312772
+            },
+            {
+              "iso3_left_out": "FRA",
+              "partial_r2": 0.02659498005008506
+            },
+            {
+              "iso3_left_out": "GBR",
+              "partial_r2": 0.02640944162049505
+            },
+            {
+              "iso3_left_out": "GHA",
+              "partial_r2": 0.025925604233983292
+            },
+            {
+              "iso3_left_out": "GRC",
+              "partial_r2": 0.02545840283974971
+            },
+            {
+              "iso3_left_out": "HND",
+              "partial_r2": 0.026022471470302216
+            },
+            {
+              "iso3_left_out": "IDN",
+              "partial_r2": 0.025708712226787247
+            },
+            {
+              "iso3_left_out": "IND",
+              "partial_r2": 0.026816903302869823
+            },
+            {
+              "iso3_left_out": "IRN",
+              "partial_r2": 0.02554767715320056
+            },
+            {
+              "iso3_left_out": "IRQ",
+              "partial_r2": 0.023885636139270753
+            },
+            {
+              "iso3_left_out": "ISL",
+              "partial_r2": 0.01595132586751948
+            },
+            {
+              "iso3_left_out": "ISR",
+              "partial_r2": 0.03371417477339368
+            },
+            {
+              "iso3_left_out": "ITA",
+              "partial_r2": 0.0258335803624196
+            },
+            {
+              "iso3_left_out": "JOR",
+              "partial_r2": 0.027888682029343144
+            },
+            {
+              "iso3_left_out": "JPN",
+              "partial_r2": 0.026372692410145438
+            },
+            {
+              "iso3_left_out": "KAZ",
+              "partial_r2": 0.025576481500770538
+            },
+            {
+              "iso3_left_out": "KEN",
+              "partial_r2": 0.026276350211278526
+            },
+            {
+              "iso3_left_out": "KGZ",
+              "partial_r2": 0.025815805701130724
+            },
+            {
+              "iso3_left_out": "KOR",
+              "partial_r2": 0.02676355462626777
+            },
+            {
+              "iso3_left_out": "LKA",
+              "partial_r2": 0.02797545403339067
+            },
+            {
+              "iso3_left_out": "LTU",
+              "partial_r2": 0.023737721793074425
+            },
+            {
+              "iso3_left_out": "LVA",
+              "partial_r2": 0.023829854361048352
+            },
+            {
+              "iso3_left_out": "MAR",
+              "partial_r2": 0.025450928180807082
+            },
+            {
+              "iso3_left_out": "MEX",
+              "partial_r2": 0.02539262776618796
+            },
+            {
+              "iso3_left_out": "MMR",
+              "partial_r2": 0.02941854111627201
+            },
+            {
+              "iso3_left_out": "MNG",
+              "partial_r2": 0.025872095351203706
+            },
+            {
+              "iso3_left_out": "MYS",
+              "partial_r2": 0.025593213785467125
+            },
+            {
+              "iso3_left_out": "NCL",
+              "partial_r2": 0.025210697285903885
+            },
+            {
+              "iso3_left_out": "NGA",
+              "partial_r2": 0.025371171323567074
+            },
+            {
+              "iso3_left_out": "NLD",
+              "partial_r2": 0.025792283808252544
+            },
+            {
+              "iso3_left_out": "NOR",
+              "partial_r2": 0.024243668423938863
+            },
+            {
+              "iso3_left_out": "NZL",
+              "partial_r2": 0.025775823920420098
+            },
+            {
+              "iso3_left_out": "PAK",
+              "partial_r2": 0.02499504418249207
+            },
+            {
+              "iso3_left_out": "PER",
+              "partial_r2": 0.02435656030458545
+            },
+            {
+              "iso3_left_out": "PHL",
+              "partial_r2": 0.026821440930783143
+            },
+            {
+              "iso3_left_out": "POL",
+              "partial_r2": 0.02477508478477746
+            },
+            {
+              "iso3_left_out": "PRT",
+              "partial_r2": 0.02721071324532874
+            },
+            {
+              "iso3_left_out": "PSE",
+              "partial_r2": 0.025794685824933168
+            },
+            {
+              "iso3_left_out": "ROU",
+              "partial_r2": 0.024944584546020068
+            },
+            {
+              "iso3_left_out": "RUS",
+              "partial_r2": 0.026277596231892728
+            },
+            {
+              "iso3_left_out": "SAU",
+              "partial_r2": 0.021975602466981842
+            },
+            {
+              "iso3_left_out": "SDN",
+              "partial_r2": 0.025177119062127138
+            },
+            {
+              "iso3_left_out": "SRB",
+              "partial_r2": 0.025373781481515742
+            },
+            {
+              "iso3_left_out": "SVK",
+              "partial_r2": 0.025471363990852345
+            },
+            {
+              "iso3_left_out": "SWE",
+              "partial_r2": 0.025238836308163898
+            },
+            {
+              "iso3_left_out": "THA",
+              "partial_r2": 0.023986042017031757
+            },
+            {
+              "iso3_left_out": "TUN",
+              "partial_r2": 0.025381831420224737
+            },
+            {
+              "iso3_left_out": "TUR",
+              "partial_r2": 0.025491324230087733
+            },
+            {
+              "iso3_left_out": "UGA",
+              "partial_r2": 0.026714003453832846
+            },
+            {
+              "iso3_left_out": "URY",
+              "partial_r2": 0.024896946992306778
+            },
+            {
+              "iso3_left_out": "USA",
+              "partial_r2": 0.026244301425891216
+            },
+            {
+              "iso3_left_out": "UZB",
+              "partial_r2": 0.02985957397088659
+            },
+            {
+              "iso3_left_out": "VEN",
+              "partial_r2": 0.026054354695569746
+            },
+            {
+              "iso3_left_out": "VNM",
+              "partial_r2": 0.026064909312355302
+            },
+            {
+              "iso3_left_out": "YEM",
+              "partial_r2": 0.02777389810669602
+            },
+            {
+              "iso3_left_out": "ZAF",
+              "partial_r2": 0.033103780858716986
+            }
+          ]
+        }
+      }
+    },
+    "high_income": {
+      "sample": "high_income",
+      "n": 40,
+      "countries": [
+        "AUS",
+        "AUT",
+        "BEL",
+        "BGR",
+        "BHR",
+        "CAN",
+        "CHE",
+        "CHL",
+        "CZE",
+        "DEU",
+        "DNK",
+        "ESP",
+        "EST",
+        "FIN",
+        "FRA",
+        "GBR",
+        "GRC",
+        "HRV",
+        "IRL",
+        "ISL",
+        "ISR",
+        "ITA",
+        "JPN",
+        "KOR",
+        "KWT",
+        "LTU",
+        "LVA",
+        "NCL",
+        "NLD",
+        "NOR",
+        "NZL",
+        "POL",
+        "PRT",
+        "ROU",
+        "RUS",
+        "SAU",
+        "SVK",
+        "SWE",
+        "URY",
+        "USA"
+      ],
+      "models": {
+        "controls": {
+          "n": 40,
+          "r2": 0.1489280339293122,
+          "adjusted_r2": 0.07800537009008812,
+          "df_resid": 36,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 0.0,
+              "hc3_se": 0.15544556719011224,
+              "hc3_p": 1.0,
+              "hc3_ci_low": -0.31525822229727013,
+              "hc3_ci_high": 0.31525822229727013
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.39519433500487694,
+              "hc3_se": 0.1350288982915946,
+              "hc3_p": 0.005901795163825379,
+              "hc3_ci_low": 0.1213430364206946,
+              "hc3_ci_high": 0.6690456335890593
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": 0.06670222987065925,
+              "hc3_se": 0.13560269351822396,
+              "hc3_p": 0.6257800598448476,
+              "hc3_ci_low": -0.20831277937044135,
+              "hc3_ci_high": 0.3417172391117599
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.09533795493517837,
+              "hc3_se": 0.09524426142444874,
+              "hc3_p": 0.3235157312753905,
+              "hc3_ci_low": -0.2885022701579166,
+              "hc3_ci_high": 0.09782636028755982
+            }
+          ]
+        },
+        "controls_plus_testosterone": {
+          "n": 40,
+          "r2": 0.15220833725705596,
+          "adjusted_r2": 0.05531786151500517,
+          "df_resid": 35,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 1.3877787807814457e-17,
+              "hc3_se": 0.1584905329226786,
+              "hc3_p": 0.9999999999999999,
+              "hc3_ci_low": -0.32175288743895175,
+              "hc3_ci_high": 0.32175288743895175
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.389414483426431,
+              "hc3_se": 0.1325783367186855,
+              "hc3_p": 0.005822465342649547,
+              "hc3_ci_low": 0.1202661509395841,
+              "hc3_ci_high": 0.6585628159132779
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": 0.05954087424047677,
+              "hc3_se": 0.14577093199064012,
+              "hc3_p": 0.68542794606205,
+              "hc3_ci_low": -0.2363898505021632,
+              "hc3_ci_high": 0.35547159898311675
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.0860926913697384,
+              "hc3_se": 0.0984780788671618,
+              "hc3_p": 0.3879513806466406,
+              "hc3_ci_low": -0.28601382003682607,
+              "hc3_ci_high": 0.11382843729734926
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.057842591429044465,
+              "hc3_se": 0.14675866629451703,
+              "hc3_p": 0.695873285135518,
+              "hc3_ci_low": -0.2400933405549009,
+              "hc3_ci_high": 0.3557785234129898
+            }
+          ]
+        },
+        "controls_plus_electricity": {
+          "n": 40,
+          "r2": 0.18643496659294578,
+          "adjusted_r2": 0.09345610563213957,
+          "df_resid": 35,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 1.3877787807814457e-17,
+              "hc3_se": 0.15308619779807398,
+              "hc3_p": 0.9999999999999999,
+              "hc3_ci_low": -0.3107815038555701,
+              "hc3_ci_high": 0.3107815038555701
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.43260481949977847,
+              "hc3_se": 0.13011014733311332,
+              "hc3_p": 0.0020840386741570426,
+              "hc3_ci_low": 0.16846717785300497,
+              "hc3_ci_high": 0.696742461146552
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": 0.041436220064258136,
+              "hc3_se": 0.1376439366135207,
+              "hc3_p": 0.7651658105004082,
+              "hc3_ci_low": -0.23799582693043786,
+              "hc3_ci_high": 0.3208682670589541
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.11301485585931664,
+              "hc3_se": 0.09877358090205528,
+              "hc3_p": 0.26031359276668353,
+              "hc3_ci_low": -0.3135358855502557,
+              "hc3_ci_high": 0.0875061738316224
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.20337373009669615,
+              "hc3_se": 0.1080450154915077,
+              "hc3_p": 0.06812974241830468,
+              "hc3_ci_low": -0.0159693124605447,
+              "hc3_ci_high": 0.42271677265393703
+            }
+          ]
+        },
+        "horse_race": {
+          "n": 40,
+          "r2": 0.1893003381555587,
+          "adjusted_r2": 0.07007979964902322,
+          "df_resid": 34,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 2.7755575615628914e-17,
+              "hc3_se": 0.1557620986152829,
+              "hc3_p": 0.9999999999999999,
+              "hc3_ci_low": -0.31654666967071365,
+              "hc3_ci_high": 0.31654666967071377
+            },
+            {
+              "term": "log_infant_mortality",
+              "coefficient": 0.4270013452600545,
+              "hc3_se": 0.12728610851631636,
+              "hc3_p": 0.001963936507314888,
+              "hc3_ci_low": 0.1683248501153513,
+              "hc3_ci_high": 0.6856778404047577
+            },
+            {
+              "term": "life_expectancy",
+              "coefficient": 0.03487726160663568,
+              "hc3_se": 0.14988163925073078,
+              "hc3_p": 0.8173905251090156,
+              "hc3_ci_low": -0.269718876808201,
+              "hc3_ci_high": 0.33947340002147236
+            },
+            {
+              "term": "sanitation_pct",
+              "coefficient": -0.10427770985984676,
+              "hc3_se": 0.10267857039095317,
+              "hc3_p": 0.3170050074308031,
+              "hc3_ci_low": -0.3129456707614542,
+              "hc3_ci_high": 0.10439025104176068
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.2022836823446108,
+              "hc3_se": 0.10162361693229541,
+              "hc3_p": 0.05462149118446801,
+              "hc3_ci_low": -0.0042403551830536845,
+              "hc3_ci_high": 0.40880771987227527
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.05407080719399693,
+              "hc3_se": 0.13748412777318791,
+              "hc3_p": 0.6965624236922986,
+              "hc3_ci_low": -0.2253305565913999,
+              "hc3_ci_high": 0.33347217097939374
+            }
+          ]
+        },
+        "testosterone_unadjusted": {
+          "n": 40,
+          "r2": 0.008330430294793745,
+          "adjusted_r2": -0.01776613732902743,
+          "df_resid": 38,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 4.440892098500626e-16,
+              "hc3_se": 0.16542934590576402,
+              "hc3_p": 0.9999999999999979,
+              "hc3_ci_low": -0.3348942023914027,
+              "hc3_ci_high": 0.3348942023914036
+            },
+            {
+              "term": "testosterone_ng_dl",
+              "coefficient": 0.0912711909355505,
+              "hc3_se": 0.16150843866379946,
+              "hc3_p": 0.5753155323268794,
+              "hc3_ci_low": -0.23568554971797942,
+              "hc3_ci_high": 0.41822793158908045
+            }
+          ]
+        },
+        "electricity_unadjusted": {
+          "n": 40,
+          "r2": 0.00747164489020391,
+          "adjusted_r2": -0.01864752234952749,
+          "df_resid": 38,
+          "coefficients": [
+            {
+              "term": "intercept",
+              "coefficient": 4.718447854656915e-16,
+              "hc3_se": 0.16360888321708864,
+              "hc3_p": 0.9999999999999977,
+              "hc3_ci_low": -0.3312088683488287,
+              "hc3_ci_high": 0.3312088683488297
+            },
+            {
+              "term": "electricity_kwh_per_capita",
+              "coefficient": 0.0864386770502876,
+              "hc3_se": 0.12920593161627522,
+              "hc3_p": 0.507540202075342,
+              "hc3_ci_low": -0.17512505685650895,
+              "hc3_ci_high": 0.3480024109570842
+            }
+          ]
+        }
+      },
+      "partial_r2": {
+        "T_given_development": 0.003854319562291055,
+        "electricity_given_development": 0.04407022456255874,
+        "T_given_development_and_electricity": 0.0035219944871687516,
+        "electricity_given_development_and_T": 0.043751315952430245
+      },
+      "partial_r2_bootstrap_ci": {
+        "T_given_development": [
+          3.200651602924553e-05,
+          0.1916032474280689
+        ],
+        "electricity_given_development": [
+          4.3897567211035705e-05,
+          0.34691190353976337
+        ],
+        "T_given_development_and_electricity": [
+          2.0375155230664813e-05,
+          0.21100241020596336
+        ],
+        "electricity_given_development_and_T": [
+          0.00019217575662326344,
+          0.32495747728346824
+        ]
+      },
+      "rank_analysis": {
+        "n": 40,
+        "spearman_rho": 0.14543066305335015,
+        "spearman_p": 0.3705779119098061,
+        "spearman_bootstrap_ci": [
+          -0.19830161607584923,
+          0.4571395684095351
+        ],
+        "rank_T_coefficient_given_development": {
+          "term": "testosterone_ng_dl",
+          "coefficient": 0.09069681838977814,
+          "hc3_se": 0.16324553126138136,
+          "hc3_p": 0.5820286198625784,
+          "hc3_ci_low": -0.24070922887539128,
+          "hc3_ci_high": 0.4221028656549476
+        },
+        "rank_T_coefficient_given_development_and_electricity": {
+          "term": "testosterone_ng_dl",
+          "coefficient": 0.06924820960529735,
+          "hc3_se": 0.16539545977829212,
+          "hc3_p": 0.6780811813018331,
+          "hc3_ci_low": -0.2668758053952164,
+          "hc3_ci_high": 0.4053722246058111
+        }
+      },
+      "mediation_diagnostic": {
+        "n": 40,
+        "a_electricity_to_T": 0.020159635275547774,
+        "b_T_to_TFR_given_electricity": 0.05407080719399693,
+        "c_total_electricity_to_TFR": 0.20337373009669615,
+        "c_prime_direct_electricity_to_TFR": 0.2022836823446108,
+        "absolute_coefficient_attenuation_pct": 0.5359825733476367,
+        "indirect_effect_a_times_b": 0.0010900477520854428,
+        "indirect_effect_bootstrap_ci": [
+          -0.05710577153956031,
+          0.06114721346373652
+        ],
+        "attenuation_bootstrap_ci_pct": [
+          -109.32628682120702,
+          50.51432105530678
+        ],
+        "interpretation_limit": "Cross-sectional coefficient attenuation is not causal mediation; temporal ordering, no unmeasured exposure-mediator/outcome confounding, and measurement validity are unverified."
+      },
+      "leave_one_out_partial_r2": {
+        "T_given_development": {
+          "min": 0.0006199576667925444,
+          "max": 0.043449542338675456,
+          "median": 0.003833275253032671,
+          "min_country": "CHL",
+          "max_country": "ISR",
+          "rows": [
+            {
+              "iso3_left_out": "AUS",
+              "partial_r2": 0.004998301259679182
+            },
+            {
+              "iso3_left_out": "AUT",
+              "partial_r2": 0.0037181383366816467
+            },
+            {
+              "iso3_left_out": "BEL",
+              "partial_r2": 0.005960048939877483
+            },
+            {
+              "iso3_left_out": "BGR",
+              "partial_r2": 0.003434187850179546
+            },
+            {
+              "iso3_left_out": "BHR",
+              "partial_r2": 0.007484884851278626
+            },
+            {
+              "iso3_left_out": "CAN",
+              "partial_r2": 0.00217569372558701
+            },
+            {
+              "iso3_left_out": "CHE",
+              "partial_r2": 0.003976829292813856
+            },
+            {
+              "iso3_left_out": "CHL",
+              "partial_r2": 0.0006199576667925444
+            },
+            {
+              "iso3_left_out": "CZE",
+              "partial_r2": 0.005529889846077251
+            },
+            {
+              "iso3_left_out": "DEU",
+              "partial_r2": 0.003809500200433654
+            },
+            {
+              "iso3_left_out": "DNK",
+              "partial_r2": 0.003286380553578781
+            },
+            {
+              "iso3_left_out": "ESP",
+              "partial_r2": 0.005170004840545135
+            },
+            {
+              "iso3_left_out": "EST",
+              "partial_r2": 0.004914739189211962
+            },
+            {
+              "iso3_left_out": "FIN",
+              "partial_r2": 0.0033382616352584556
+            },
+            {
+              "iso3_left_out": "FRA",
+              "partial_r2": 0.00450462415282444
+            },
+            {
+              "iso3_left_out": "GBR",
+              "partial_r2": 0.0036914532592870215
+            },
+            {
+              "iso3_left_out": "GRC",
+              "partial_r2": 0.0037287258930271384
+            },
+            {
+              "iso3_left_out": "HRV",
+              "partial_r2": 0.009295719759187014
+            },
+            {
+              "iso3_left_out": "IRL",
+              "partial_r2": 0.005068194530300655
+            },
+            {
+              "iso3_left_out": "ISL",
+              "partial_r2": 0.0014326246177804028
+            },
+            {
+              "iso3_left_out": "ISR",
+              "partial_r2": 0.043449542338675456
+            },
+            {
+              "iso3_left_out": "ITA",
+              "partial_r2": 0.004700458564927043
+            },
+            {
+              "iso3_left_out": "JPN",
+              "partial_r2": 0.004802121315766815
+            },
+            {
+              "iso3_left_out": "KOR",
+              "partial_r2": 0.005393131106455901
+            },
+            {
+              "iso3_left_out": "KWT",
+              "partial_r2": 0.0018058359508708339
+            },
+            {
+              "iso3_left_out": "LTU",
+              "partial_r2": 0.0024409779933966982
+            },
+            {
+              "iso3_left_out": "LVA",
+              "partial_r2": 0.001976682678811567
+            },
+            {
+              "iso3_left_out": "NCL",
+              "partial_r2": 0.0017817551328838956
+            },
+            {
+              "iso3_left_out": "NLD",
+              "partial_r2": 0.005544432359106293
+            },
+            {
+              "iso3_left_out": "NOR",
+              "partial_r2": 0.003916811937360223
+            },
+            {
+              "iso3_left_out": "NZL",
+              "partial_r2": 0.004213390337376626
+            },
+            {
+              "iso3_left_out": "POL",
+              "partial_r2": 0.0025383324178301033
+            },
+            {
+              "iso3_left_out": "PRT",
+              "partial_r2": 0.0036467223757241794
+            },
+            {
+              "iso3_left_out": "ROU",
+              "partial_r2": 0.004676319149922134
+            },
+            {
+              "iso3_left_out": "RUS",
+              "partial_r2": 0.005332744376136819
+            },
+            {
+              "iso3_left_out": "SAU",
+              "partial_r2": 0.001420067903309605
+            },
+            {
+              "iso3_left_out": "SVK",
+              "partial_r2": 0.0037369079776115206
+            },
+            {
+              "iso3_left_out": "SWE",
+              "partial_r2": 0.0035215934798731195
+            },
+            {
+              "iso3_left_out": "URY",
+              "partial_r2": 0.0025382234653518387
+            },
+            {
+              "iso3_left_out": "USA",
+              "partial_r2": 0.0038570503056316882
+            }
+          ]
+        },
+        "electricity_given_development": {
+          "min": 0.00816932051818942,
+          "max": 0.1541210908384131,
+          "median": 0.04390949636406108,
+          "min_country": "ISL",
+          "max_country": "ISR",
+          "rows": [
+            {
+              "iso3_left_out": "AUS",
+              "partial_r2": 0.04498702278054171
+            },
+            {
+              "iso3_left_out": "AUT",
+              "partial_r2": 0.042606666744800535
+            },
+            {
+              "iso3_left_out": "BEL",
+              "partial_r2": 0.04265484769334855
+            },
+            {
+              "iso3_left_out": "BGR",
+              "partial_r2": 0.04346782968863935
+            },
+            {
+              "iso3_left_out": "BHR",
+              "partial_r2": 0.03556342632432177
+            },
+            {
+              "iso3_left_out": "CAN",
+              "partial_r2": 0.05319432892442061
+            },
+            {
+              "iso3_left_out": "CHE",
+              "partial_r2": 0.04315932681218866
+            },
+            {
+              "iso3_left_out": "CHL",
+              "partial_r2": 0.037930325826160134
+            },
+            {
+              "iso3_left_out": "CZE",
+              "partial_r2": 0.04624646166536524
+            },
+            {
+              "iso3_left_out": "DEU",
+              "partial_r2": 0.043944699126617304
+            },
+            {
+              "iso3_left_out": "DNK",
+              "partial_r2": 0.04560579945760509
+            },
+            {
+              "iso3_left_out": "ESP",
+              "partial_r2": 0.0392556166999694
+            },
+            {
+              "iso3_left_out": "EST",
+              "partial_r2": 0.04781474527141568
+            },
+            {
+              "iso3_left_out": "FIN",
+              "partial_r2": 0.0451501684562572
+            },
+            {
+              "iso3_left_out": "FRA",
+              "partial_r2": 0.046086811628757905
+            },
+            {
+              "iso3_left_out": "GBR",
+              "partial_r2": 0.04514995186366011
+            },
+            {
+              "iso3_left_out": "GRC",
+              "partial_r2": 0.04109313037835489
+            },
+            {
+              "iso3_left_out": "HRV",
+              "partial_r2": 0.04345753502732633
+            },
+            {
+              "iso3_left_out": "IRL",
+              "partial_r2": 0.044907096820148484
+            },
+            {
+              "iso3_left_out": "ISL",
+              "partial_r2": 0.00816932051818942
+            },
+            {
+              "iso3_left_out": "ISR",
+              "partial_r2": 0.1541210908384131
+            },
+            {
+              "iso3_left_out": "ITA",
+              "partial_r2": 0.03893645178650869
+            },
+            {
+              "iso3_left_out": "JPN",
+              "partial_r2": 0.04164724409681534
+            },
+            {
+              "iso3_left_out": "KOR",
+              "partial_r2": 0.047390661598437966
+            },
+            {
+              "iso3_left_out": "KWT",
+              "partial_r2": 0.06281469104928526
+            },
+            {
+              "iso3_left_out": "LTU",
+              "partial_r2": 0.04069572675494558
+            },
+            {
+              "iso3_left_out": "LVA",
+              "partial_r2": 0.04222699088511884
+            },
+            {
+              "iso3_left_out": "NCL",
+              "partial_r2": 0.04001774476072152
+            },
+            {
+              "iso3_left_out": "NLD",
+              "partial_r2": 0.04284558100045299
+            },
+            {
+              "iso3_left_out": "NOR",
+              "partial_r2": 0.04471398459867151
+            },
+            {
+              "iso3_left_out": "NZL",
+              "partial_r2": 0.04467287460627104
+            },
+            {
+              "iso3_left_out": "POL",
+              "partial_r2": 0.04112443930994185
+            },
+            {
+              "iso3_left_out": "PRT",
+              "partial_r2": 0.047028614741115325
+            },
+            {
+              "iso3_left_out": "ROU",
+              "partial_r2": 0.04468900395946945
+            },
+            {
+              "iso3_left_out": "RUS",
+              "partial_r2": 0.04577444617692511
+            },
+            {
+              "iso3_left_out": "SAU",
+              "partial_r2": 0.03260846118750541
+            },
+            {
+              "iso3_left_out": "SVK",
+              "partial_r2": 0.04387429360150485
+            },
+            {
+              "iso3_left_out": "SWE",
+              "partial_r2": 0.04398557060903326
+            },
+            {
+              "iso3_left_out": "URY",
+              "partial_r2": 0.041964308640289154
+            },
+            {
+              "iso3_left_out": "USA",
+              "partial_r2": 0.044582516101586145
+            }
+          ]
+        }
+      }
+    }
+  },
+  "provenance": {
+    "testosterone": {
+      "path": "data/raw/testosterone_tfr_2026-08-31/testosterone_by_country.csv",
+      "sha256": "2b92f99041c83cd7298837e4d8820b9900c3078d739a9c7643f65f5e31704195",
+      "source_url": "https://worldpopulationreview.com/country-rankings/testosterone-levels-by-country",
+      "classification": "PROXY; heterogeneous secondary compilation"
+    },
+    "wpp": {
+      "path": "data/raw/WPP2024_Demographic_Indicators_Medium.csv.gz",
+      "sha256": "286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc",
+      "source_url": "https://population.un.org/wpp/",
+      "classification": "WPP 2023 estimate; not 2024 projection"
+    },
+    "electricity": {
+      "path": "data/raw/testosterone_tfr_2026-08-31/owid_per_capita_electricity_demand.csv",
+      "sha256": "f7a45dfab8acd9a020cb5fa0d48d460467abde88374a95ecc51dee72595dccdc",
+      "metadata_sha256": "950e4377570b7e75d3525cbaa9aa8e3ab604328735b2ae46f8490d22f8de1bdb",
+      "source_url": "https://ourworldindata.org/grapher/per-capita-electricity-demand",
+      "classification": "infrastructure/energy proxy; not FieldState or dose"
+    },
+    "sanitation": {
+      "path": "data/raw/testosterone_tfr_2026-08-31/wb_basic_sanitation_2018_2023.json",
+      "sha256": "f9a25c5b74d4619f3362a4a7f7e1b815543c7e7daa7ffc1c10231592451d8cf1",
+      "source_url": "https://api.worldbank.org/v2/country/all/indicator/SH.STA.BASS.ZS",
+      "classification": "development control"
+    }
+  },
+  "bootstrap_reps_primary": 2000,
+  "random_seed": 20260831
+}
