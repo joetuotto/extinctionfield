@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 984,
-    "linkedReferences": 349
+    "totalReferences": 999,
+    "linkedReferences": 354
   },
   "references": {
     "5g_hpa_axis": {
@@ -2983,8 +2983,8 @@
       "title": "Electromagnetic pulse opens blood-brain barrier tight junctions via conformational change without altering protein expression",
       "journal": "Bioelectromagnetics",
       "type": "journal",
-      "linkStatus": "pending",
-      "externalUrl": null
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/bem.22494"
     },
     "thyroid_rf2024": {
       "id": "thyroid_rf2024",
@@ -8828,7 +8828,7 @@
     },
     "bertagna2025": {
       "id": "bertagna2025",
-      "authors": "Bertagna F, Lewis R, McArthur S, Bhatt DK",
+      "authors": "Bertagna F, Ahmad S, Lewis R, Silva SRP, McFadden J, Huang CL-H, Matthews HR, Jeevaratnam K",
       "year": 2025,
       "title": "Electromagnetic fields modulate neuronal membrane ionic currents through altered cellular calcium homeostasis",
       "journal": "Annals of the New York Academy of Sciences",
@@ -9824,6 +9824,156 @@
       "type": null,
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1186/s40659-023-00424-5"
+    },
+    "parvini2023": {
+      "id": "parvini2023",
+      "authors": "Parvini N",
+      "year": 2023,
+      "title": "The Prophets of Doom: The Great Thinkers Who Predicted Today's Collapse",
+      "journal": "Imperium Press",
+      "type": "book",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "usoskin2017": {
+      "id": "usoskin2017",
+      "authors": "Usoskin IG",
+      "year": 2017,
+      "title": "A history of solar activity over millennia",
+      "journal": "Living Reviews in Solar Physics",
+      "type": "review",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "solanki2004": {
+      "id": "solanki2004",
+      "authors": "Solanki SK, Usoskin IG, Kromer B, Schüssler M, Beer J",
+      "year": 2004,
+      "title": "Unusual activity of the Sun during recent decades compared to the previous 11,000 years",
+      "journal": "Nature",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "glubb1978": {
+      "id": "glubb1978",
+      "authors": "Glubb JB",
+      "year": 1978,
+      "title": "The Fate of Empires and Search for Survival",
+      "journal": null,
+      "type": "book",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "turchin2003": {
+      "id": "turchin2003",
+      "authors": "Turchin P",
+      "year": 2003,
+      "title": "Historical Dynamics: Why States Rise and Fall",
+      "journal": "Princeton University Press",
+      "type": "book",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "tainter1988": {
+      "id": "tainter1988",
+      "authors": "Tainter JA",
+      "year": 1988,
+      "title": "The Collapse of Complex Societies",
+      "journal": "Cambridge University Press",
+      "type": "book",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "jackson2000": {
+      "id": "jackson2000",
+      "authors": "Jackson A, Jonkers ART, Walker MR",
+      "year": 2000,
+      "title": "Four centuries of geomagnetic secular variation from historical records",
+      "journal": "Philosophical Transactions of the Royal Society",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "zharkova2020": {
+      "id": "zharkova2020",
+      "authors": "Zharkova VV",
+      "year": 2020,
+      "title": "Modern Grand Solar Minimum will lead to terrestrial cooling",
+      "journal": "Temperature",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "pages_solar": {
+      "id": "pages_solar",
+      "authors": "PAGES 2k Consortium",
+      "year": 2019,
+      "title": "Consistent multidecadal variability in global temperature reconstructions and simulations over the Common Era",
+      "journal": "Nature Geoscience",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "silso_ssn_v2": {
+      "id": "silso_ssn_v2",
+      "authors": "SILSO, Royal Observatory of Belgium",
+      "year": 2024,
+      "title": "International Sunspot Number, Version 2.0",
+      "journal": null,
+      "type": "dataset",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.24414/ROB-SILSO-EISN"
+    },
+    "willis2022_mastreeplus": {
+      "id": "willis2022_mastreeplus",
+      "authors": "Willis CG, et al.",
+      "year": 2022,
+      "title": "MASTREE+: Time-series of plant reproductive effort from six continents",
+      "journal": "Global Change Biology",
+      "type": "dataset",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1111/gcb.16130"
+    },
+    "ibge_sidra_births": {
+      "id": "ibge_sidra_births",
+      "authors": "IBGE (Instituto Brasileiro de Geografia e Estatistica)",
+      "year": 2024,
+      "title": "SIDRA: Estatisticas do Registro Civil, Tables 3727/7363/2612",
+      "journal": null,
+      "type": "dataset",
+      "linkStatus": "verified",
+      "externalUrl": "https://sidra.ibge.gov.br/tabela/3727"
+    },
+    "stone2025_amish_demography": {
+      "id": "stone2025_amish_demography",
+      "authors": "Stone LE, Anderson CM, Thiehoff A",
+      "year": 2025,
+      "title": "Amish Demography: Fertility, Mortality, and Population Growth",
+      "journal": "Demographic Research",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "world_bank_mobile_2024": {
+      "id": "world_bank_mobile_2024",
+      "authors": "World Bank",
+      "year": 2024,
+      "title": "Mobile cellular subscriptions (per 100 people)",
+      "journal": null,
+      "type": "dataset",
+      "linkStatus": "verified",
+      "externalUrl": "https://data.worldbank.org/indicator/IT.CEL.SETS.P2"
+    },
+    "pineal_puberty_pmc10601200": {
+      "id": "pineal_puberty_pmc10601200",
+      "authors": "",
+      "year": 2023,
+      "title": "Pinealectomy and pineal tumors associated with precocious puberty — melatonin as causal regulator of GnRH",
+      "journal": null,
+      "type": null,
+      "linkStatus": "pending",
+      "externalUrl": null
     }
   },
   "aliases": {
@@ -9831,6 +9981,7 @@
     "timothy_syndrome_cacna1c_autism": "splawski2004",
     "cacna1g_asd_snps": "cacna1g-asd-snps",
     "ulusoy2025_bbb_therapeutic": "bbb_emf_2026",
+    "gao2024": "gao2024_bbb_conformational",
     "melatonin_breastmilk": "hausler2024_melatonin",
     "levine2023": "levine2023_sperm",
     "levine2022": "levine2023_sperm",
@@ -10126,6 +10277,7 @@
     "pmcid:PMC10342026": "maalouf2023",
     "pmid:37445806": "maalouf2023",
     "doi:10.1002/bem.22494": "gao2024_bbb_conformational",
+    "pmid:38105659": "gao2024_bbb_conformational",
     "doi:10.1002/advs.202508940": "pmc12533209_leukemia_bioelectric",
     "pmcid:PMC12533209": "pmc12533209_leukemia_bioelectric",
     "pmid:40834435": "pmc12533209_leukemia_bioelectric",
@@ -10629,6 +10781,9 @@
     "doi:10.1038/nature07183": "gegear2008",
     "pmid:18830242": "gegear2008",
     "doi:10.1186/s40659-023-00424-5": "wifi_lettuce_2023",
-    "pmcid:PMC10005510": "wifi_lettuce_2023"
+    "pmcid:PMC10005510": "wifi_lettuce_2023",
+    "doi:10.24414/rob-silso-eisn": "silso_ssn_v2",
+    "doi:10.1111/gcb.16130": "willis2022_mastreeplus",
+    "pmcid:PMC10601200": "pineal_puberty_pmc10601200"
   }
 }

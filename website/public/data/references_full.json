@@ -2,14 +2,14 @@
   "metadata": {
     "version": "3.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 984,
-    "verified_count": 343,
+    "total_references": 999,
+    "verified_count": 347,
     "generated": "2026-08-31",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls",
-    "linked_count": 349,
-    "unlinked_count": 635,
+    "linked_count": 354,
+    "unlinked_count": 645,
     "schema": "canonical-reference-registry-v1",
-    "alias_count": 29,
+    "alias_count": 30,
     "last_updated": "2026-08-31"
   },
   "categories": [
@@ -8615,7 +8615,7 @@
       "title": "Electromagnetic pulse opens blood-brain barrier tight junctions via conformational change without altering protein expression",
       "journal": "Bioelectromagnetics",
       "doi": "10.1002/bem.22494",
-      "pmid": null,
+      "pmid": "38105659",
       "pmcid": null,
       "url": null,
       "category": "cellular_ros_dna",
@@ -8639,10 +8639,12 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "pending",
-      "link_source": "doi",
-      "aliases": [],
-      "link_checked_at": "2026-08-28"
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [
+        "gao2024"
+      ],
+      "link_checked_at": "2026-08-31"
     },
     {
       "id": "thyroid_rf2024",
@@ -26021,7 +26023,7 @@
     },
     {
       "id": "bertagna2025",
-      "authors": "Bertagna F, Lewis R, McArthur S, Bhatt DK",
+      "authors": "Bertagna F, Ahmad S, Lewis R, Silva SRP, McFadden J, Huang CL-H, Matthews HR, Jeevaratnam K",
       "year": 2025,
       "title": "Electromagnetic fields modulate neuronal membrane ionic currents through altered cellular calcium homeostasis",
       "journal": "Annals of the New York Academy of Sciences",
@@ -29064,6 +29066,444 @@
       "link_source": "pmcid",
       "aliases": [],
       "source": "Biological Research 2023"
+    },
+    {
+      "id": "parvini2023",
+      "authors": "Parvini N",
+      "year": 2023,
+      "title": "The Prophets of Doom: The Great Thinkers Who Predicted Today's Collapse",
+      "journal": "Imperium Press",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "history_institutional",
+      "pathway": [
+        "E"
+      ],
+      "level": null,
+      "type": "book",
+      "finding": "Synthesizes 11 cyclical thinkers (Vico, Spengler, Toynbee, Sorokin, Glubb, Tainter, Khaldun, Turchin et al.) — convergent observation of civilizational cycles.",
+      "tags": [
+        "civilization",
+        "cycles"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "usoskin2017",
+      "authors": "Usoskin IG",
+      "year": 2017,
+      "title": "A history of solar activity over millennia",
+      "journal": "Living Reviews in Solar Physics",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "review",
+      "finding": "Comprehensive review of solar activity reconstructions from cosmogenic isotopes over 11,400 years.",
+      "tags": [
+        "solar",
+        "cycles"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "solanki2004",
+      "authors": "Solanki SK, Usoskin IG, Kromer B, Schüssler M, Beer J",
+      "year": 2004,
+      "title": "Unusual activity of the Sun during recent decades compared to the previous 11,000 years",
+      "journal": "Nature",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "journal",
+      "finding": "Sun has been unusually active since 1940; current level of activity is unprecedented in 8000 years.",
+      "tags": [
+        "solar"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "glubb1978",
+      "authors": "Glubb JB",
+      "year": 1978,
+      "title": "The Fate of Empires and Search for Survival",
+      "journal": null,
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "history_institutional",
+      "pathway": [
+        "E"
+      ],
+      "level": null,
+      "type": "book",
+      "finding": "Empirical analysis of 13 empires showing consistent ~250 year lifespan through 6 stages: Pioneers, Conquests, Commerce, Affluence, Intellect, Decadence.",
+      "tags": [
+        "civilization",
+        "cycles"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "turchin2003",
+      "authors": "Turchin P",
+      "year": 2003,
+      "title": "Historical Dynamics: Why States Rise and Fall",
+      "journal": "Princeton University Press",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "history_institutional",
+      "pathway": [
+        "E"
+      ],
+      "level": null,
+      "type": "book",
+      "finding": "Mathematical modeling of secular cycles (~80-100 year) in historical dynamics.",
+      "tags": [
+        "civilization",
+        "cycles"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "tainter1988",
+      "authors": "Tainter JA",
+      "year": 1988,
+      "title": "The Collapse of Complex Societies",
+      "journal": "Cambridge University Press",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "history_institutional",
+      "pathway": [
+        "E"
+      ],
+      "level": null,
+      "type": "book",
+      "finding": "Civilizations collapse when marginal returns on complexity become negative.",
+      "tags": [
+        "civilization"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "jackson2000",
+      "authors": "Jackson A, Jonkers ART, Walker MR",
+      "year": 2000,
+      "title": "Four centuries of geomagnetic secular variation from historical records",
+      "journal": "Philosophical Transactions of the Royal Society",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "journal",
+      "finding": "400-year reconstruction of geomagnetic field showing secular variation patterns.",
+      "tags": [
+        "geomagnetic"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "zharkova2020",
+      "authors": "Zharkova VV",
+      "year": 2020,
+      "title": "Modern Grand Solar Minimum will lead to terrestrial cooling",
+      "journal": "Temperature",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "journal",
+      "finding": "Predicts modern grand solar minimum during 2020-2053 based on double dynamo model.",
+      "tags": [
+        "solar"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "pages_solar",
+      "authors": "PAGES 2k Consortium",
+      "year": 2019,
+      "title": "Consistent multidecadal variability in global temperature reconstructions and simulations over the Common Era",
+      "journal": "Nature Geoscience",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": null,
+      "type": "journal",
+      "finding": "1200-year reconstruction of temperature variability linked to solar and volcanic forcing.",
+      "tags": [
+        "solar",
+        "climate"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "silso_ssn_v2",
+      "authors": "SILSO, Royal Observatory of Belgium",
+      "year": 2024,
+      "title": "International Sunspot Number, Version 2.0",
+      "journal": null,
+      "doi": "10.24414/ROB-SILSO-EISN",
+      "pmid": null,
+      "pmcid": null,
+      "url": "https://www.sidc.be/SILSO/datafiles",
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B"
+      ],
+      "level": null,
+      "type": "dataset",
+      "finding": "Monthly and yearly sunspot number time series from 1700 to present. Used for bandpass correlation with TFR.",
+      "tags": [
+        "solar_cycle",
+        "sunspot_number",
+        "dataset",
+        "bandpass"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "SILSO data portal",
+      "aliases": []
+    },
+    {
+      "id": "willis2022_mastreeplus",
+      "authors": "Willis CG, et al.",
+      "year": 2022,
+      "title": "MASTREE+: Time-series of plant reproductive effort from six continents",
+      "journal": "Global Change Biology",
+      "doi": "10.1111/gcb.16130",
+      "pmid": null,
+      "pmcid": null,
+      "url": "https://github.com/JJFoest/MASTREEplus",
+      "category": "plant_cry",
+      "pathway": [
+        "B"
+      ],
+      "level": null,
+      "type": "dataset",
+      "finding": "73,828 georeferenced masting observations, 5,971 time-series, 974 species, 66 countries. Available for Fourier analysis vs SSN.",
+      "tags": [
+        "masting",
+        "plant",
+        "dataset",
+        "reproductive_effort",
+        "time_series"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "GitHub repository",
+      "aliases": []
+    },
+    {
+      "id": "ibge_sidra_births",
+      "authors": "IBGE (Instituto Brasileiro de Geografia e Estatistica)",
+      "year": 2024,
+      "title": "SIDRA: Estatisticas do Registro Civil, Tables 3727/7363/2612",
+      "journal": null,
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": "https://sidra.ibge.gov.br/tabela/3727",
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B"
+      ],
+      "level": null,
+      "type": "dataset",
+      "finding": "Brazilian state-level TFR and live births by state, age, and year. Covers 1994-present. SOLAR-4 data source for latitude-gradient analysis.",
+      "tags": [
+        "brazil",
+        "state_level",
+        "birth_rate",
+        "dataset",
+        "latitude_gradient"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "IBGE SIDRA portal",
+      "aliases": []
+    },
+    {
+      "id": "stone2025_amish_demography",
+      "authors": "Stone LE, Anderson CM, Thiehoff A",
+      "year": 2025,
+      "title": "Amish Demography: Fertility, Mortality, and Population Growth",
+      "journal": "Demographic Research",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "solar_geomagnetic",
+      "pathway": [
+        "B"
+      ],
+      "level": null,
+      "type": "epidemiological",
+      "finding": "Amish TFR ~6.1, marital fertility 7.1-8.4. Non-marital births 0.4% vs US 35.3%. Decade-level resolution only — too coarse for solar cycle correlation.",
+      "tags": [
+        "amish",
+        "fertility",
+        "TFR",
+        "control_population",
+        "low_EMF"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "world_bank_mobile_2024",
+      "authors": "World Bank",
+      "year": 2024,
+      "title": "Mobile cellular subscriptions (per 100 people)",
+      "journal": null,
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": "https://data.worldbank.org/indicator/IT.CEL.SETS.P2",
+      "category": "solar_geomagnetic",
+      "pathway": [],
+      "level": null,
+      "type": "dataset",
+      "finding": "Annual mobile subscription density per 100 people, 200+ economies, 1960-present. Proxy for RF environment exposure timeline.",
+      "tags": [
+        "mobile",
+        "dataset",
+        "EMF_proxy",
+        "rf_exposure"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "World Bank Open Data",
+      "aliases": []
+    },
+    {
+      "id": "pineal_puberty_pmc10601200",
+      "authors": "",
+      "year": 2023,
+      "title": "Pinealectomy and pineal tumors associated with precocious puberty — melatonin as causal regulator of GnRH",
+      "journal": null,
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC10601200",
+      "url": null,
+      "category": null,
+      "pathway": [
+        "melatonin",
+        "gnrh",
+        "puberty"
+      ],
+      "level": null,
+      "type": null,
+      "finding": "Pinealectomy or pineal tumors eliminate melatonin, removing GnRH inhibition and causing precocious puberty — demonstrating melatonin is a causal regulator of pubertal timing",
+      "tags": [
+        "melatonin",
+        "puberty",
+        "gnrh",
+        "pineal",
+        "clinical"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "pending",
+      "link_source": "pmc",
+      "aliases": [],
+      "source": "PMC10601200"
     }
   ]
 }

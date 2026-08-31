@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-08-31",
-    "referencesWithUsages": 624,
-    "usageLocations": 1652
+    "referencesWithUsages": 623,
+    "usageLocations": 1645
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -359,10 +359,6 @@
     ],
     "mazur2013": [
       {
-        "path": "/",
-        "source": "app/[locale]/page.tsx"
-      },
-      {
         "path": "/about/objections",
         "source": "app/[locale]/objections/page.tsx"
       },
@@ -392,10 +388,6 @@
       }
     ],
     "santi2025": [
-      {
-        "path": "/",
-        "source": "app/[locale]/page.tsx"
-      },
       {
         "path": "/about/objections",
         "source": "app/[locale]/objections/page.tsx"
@@ -440,7 +432,7 @@
     "klimentidis2010": [
       {
         "path": "/",
-        "source": "app/[locale]/page.tsx"
+        "source": "components/ProxyMaskingInfographic.tsx"
       },
       {
         "path": "/about/objections",
@@ -726,10 +718,6 @@
       }
     ],
     "weller2025_dna": [
-      {
-        "path": "/",
-        "source": "components/BradfordHillCard.tsx"
-      },
       {
         "path": "/about/objections",
         "source": "app/[locale]/objections/page.tsx"
@@ -1325,10 +1313,6 @@
     ],
     "levine2023_sperm": [
       {
-        "path": "/",
-        "source": "app/[locale]/page.tsx"
-      },
-      {
         "path": "/civilization",
         "source": "app/[locale]/civilization/page.tsx"
       },
@@ -1410,10 +1394,6 @@
       }
     ],
     "camkii-cav32-threshold-2023": [
-      {
-        "path": "/",
-        "source": "components/SixFactorSummary.tsx"
-      },
       {
         "path": "/civilization",
         "source": "app/[locale]/civilization/page.tsx"
@@ -2320,10 +2300,6 @@
       }
     ],
     "travison2007_v2": [
-      {
-        "path": "/",
-        "source": "app/[locale]/page.tsx"
-      },
       {
         "path": "/data",
         "source": "lib/legacyEvidence.json"
@@ -4273,10 +4249,6 @@
     ],
     "xiang2025_clc2_ttype": [
       {
-        "path": "/",
-        "source": "components/SixFactorSummary.tsx"
-      },
-      {
         "path": "/data",
         "source": "lib/legacyEvidence.json"
       },
@@ -4328,10 +4300,6 @@
       }
     ],
     "therabionic-ebioMedicine-2019": [
-      {
-        "path": "/",
-        "source": "components/TheraBionicProof.tsx"
-      },
       {
         "path": "/data",
         "source": "lib/legacyEvidence.json"
@@ -4571,6 +4539,10 @@
       {
         "path": "/evidence/bbb",
         "source": "app/[locale]/evidence/bbb/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
       },
       {
         "path": "/model",
@@ -5019,6 +4991,10 @@
         "source": "app/[locale]/evidence/pharmacology/page.tsx"
       },
       {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
       },
@@ -5061,6 +5037,10 @@
       {
         "path": "/evidence/pharmacology",
         "source": "app/[locale]/evidence/pharmacology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
       },
       {
         "path": "/model",
@@ -5273,6 +5253,10 @@
       {
         "path": "/evidence/devices",
         "source": "app/[locale]/evidence/devices/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
       },
       {
         "path": "/model",
@@ -5553,6 +5537,10 @@
       {
         "path": "/evidence/epidemiology",
         "source": "app/[locale]/evidence/epidemiology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
       },
       {
         "path": "/model",
@@ -7581,19 +7569,11 @@
     ],
     "assefa2024_testes_review": [
       {
-        "path": "/",
-        "source": "components/SixFactorSummary.tsx"
-      },
-      {
         "path": "/model",
         "source": "components/SixFactorSummary.tsx"
       }
     ],
     "wu2008_emas_hpt_axis": [
-      {
-        "path": "/",
-        "source": "components/SixFactorSummary.tsx"
-      },
       {
         "path": "/model",
         "source": "components/SixFactorSummary.tsx"
@@ -7644,10 +7624,6 @@
       }
     ],
     "fda-hde-h220001": [
-      {
-        "path": "/",
-        "source": "components/TheraBionicProof.tsx"
-      },
       {
         "path": "/model",
         "source": "lib/vgccGeneFamily.ts"
@@ -7771,12 +7747,6 @@
       {
         "path": "/",
         "source": "components/ProxyMaskingInfographic.tsx"
-      }
-    ],
-    "bradford-hill-1965": [
-      {
-        "path": "/",
-        "source": "components/BradfordHillCard.tsx"
       }
     ],
     "res-square-2025-radar-methylation": [
