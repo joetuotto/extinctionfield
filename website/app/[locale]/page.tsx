@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Shield, Check, BarChart3, TrendingDown, Atom } from "lucide-react";
+import { BermMasterInfographic } from "@/components/BermMasterInfographic";
+import ProxyMaskingInfographic from "@/components/ProxyMaskingInfographic";
 import { SpeciesDeclineChart } from "@/components/SpeciesDeclineChart";
 import { TechnologyGradientChart } from "@/components/TechnologyGradientChart";
 import { SimpleCausalChain } from "@/components/SimpleCausalChain";
@@ -253,6 +255,9 @@ export default async function Home({
       {/* ── Chart B: Technology gradient ── */}
       <TechnologyGradientChart locale={activeLocale} />
 
+      {/* ── Proxy masking infographic ── */}
+      <ProxyMaskingInfographic locale={activeLocale} />
+
       {/* ── Section 3: One Mechanism ── */}
       <section className="pb-16">
         <h2 className="editorial-section-heading mb-8">{d.s3Title}</h2>
@@ -264,6 +269,9 @@ export default async function Home({
 
       {/* ── Chart C: Simplified causal chain ── */}
       <SimpleCausalChain locale={activeLocale} />
+
+      {/* ── Master infographic ── */}
+      <BermMasterInfographic locale={activeLocale} />
 
       {/* ── Section 4: Verified and Testable ── */}
       <section className="pb-16">
