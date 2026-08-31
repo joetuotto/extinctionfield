@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, ArrowRight, Shield, Dna } from "lucide-react";
+import { TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, ArrowRight, Shield, Dna, Leaf } from "lucide-react";
 import { BermMasterInfographic } from "@/components/BermMasterInfographic";
 import { ThreeChannelSummary } from "@/components/ThreeChannelSummary";
 import { SentinelCascadeCompact } from "@/components/SentinelCascadeCompact";
@@ -20,7 +20,7 @@ import { join } from "path";
 import { StudyCitation } from "@/components/StudyCitation";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 
-const SPARKLINE_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, Dna] as const;
+const SPARKLINE_ICONS = [TrendingDown, Microscope, TestTube, Globe2, Banknote, Moon, Dna, Leaf] as const;
 
 function getReferenceCount(): number {
   const file = join(process.cwd(), "public/data/references_full.json");
@@ -52,6 +52,7 @@ const SPARKLINE_DATA = [
   [1.47, 1.08, 1.23, 1.24, 0.84, 0.72],
   [6.9, 6.8, 6.7, 6.5, 6.3, 6.1, 6.1, 6.1],
   [0.46, 0.75, 0.80, 1.00, 1.20, 2.64],
+  [1, 2, 3, 4],
 ];
 
 const COPY = {
@@ -75,6 +76,7 @@ const COPY = {
       { stat: "$200B", label: "Korea pronatalism spending → TFR still dropped to 0.72", sub: "The most expensive pronatalist program in history has had no measurable effect on fertility.", href: "/model#testosterone-threshold" },
       { stat: "TFR 6.1 vs 1.66", label: "Amish vs US fertility — communities without smartphones", sub: "While other lifestyle factors differ, the magnitude of the fertility gap exceeds what diet or lifestyle studies have explained.", href: "/evidence/populations" },
       { stat: "r = 0.909", label: "Cross-species EMF gradient (7 species)", sub: "Reproductive decline rate correlates with EMF exposure score across species — from non-warmblood horses (low) to humans (highest). 12 sentinel species tracked across land, water, and transitional axes.", href: "/sentinel#emf-gradient" },
+      { stat: "4 kingdoms", label: "Same molecule (CRY) disrupted — plants to mammals", sub: "The same happens to the entire ecosystem. Cryptochrome operates in plants (flowering), insects (navigation), birds (migration), and mammals (fertility). RF disruption demonstrated across all four trophic levels.", href: "/evidence#plant-cry" },
     ],
 
     bridgeTitle: "WHY THESE NUMBERS BELONG TOGETHER",
@@ -210,6 +212,7 @@ const COPY = {
       { stat: "200 mrd $", label: "Korean pronatalismi → TFR silti 0,72", sub: "Historian kallein pronatalistinen ohjelma ei ole vaikuttanut hedelmällisyyteen mitattavasti.", href: "/model#testosterone-threshold" },
       { stat: "TFR 6,1 vs 1,66", label: "Amissit vs USA — yhteisöt ilman älypuhelimia", sub: "Vaikka muut elämäntapatekijät eroavat, hedelmällisyyseron suuruus ylittää sen, mitä ruokavalio- tai elämäntapatutkimukset ovat selittäneet.", href: "/evidence/populations" },
       { stat: "r = 0,909", label: "Lajienväl. EMF-gradientti (7 lajia)", sub: "Lisääntymislaskuaste korreloi EMF-altistusarvon kanssa lajeittain — kylmäverisistä hevosista (matala) ihmisiin (korkein). 12 sentinellilajia seurannassa maa-, vesi- ja siirtymäakseleilla.", href: "/sentinel#emf-gradient" },
+      { stat: "4 valtakuntaa", label: "Sama molekyyli (CRY) häiriintyy — kasveista nisäkkäisiin", sub: "Sama tapahtuu koko ekosysteemille. Kryptokromi toimii kasveissa (kukinta), hyönteisissä (navigaatio), linnuissa (muutto) ja nisäkkäissä (hedelmällisyys). RF-häirintä osoitettu kaikilla neljällä troofisella tasolla.", href: "/evidence#plant-cry" },
     ],
 
     bridgeTitle: "MIKSI NÄMÄ LUVUT KUULUVAT YHTEEN",
@@ -345,6 +348,7 @@ const COPY = {
       { stat: "2000億ドル", label: "韓国のプロナタリスト支出 → TFRは0.72に低下", sub: "史上最も高額なプロナタリストプログラムは、出生率に測定可能な効果を持ちませんでした。", href: "/model#testosterone-threshold" },
       { stat: "TFR 6.1 vs 1.66", label: "アーミッシュ vs アメリカ — スマートフォンのない共同体", sub: "他の生活様式要因は異なりますが、出生率格差の大きさは食事や生活様式の研究が説明してきた範囲を超えています。", href: "/evidence/populations" },
       { stat: "r = 0.909", label: "種間EMF勾配（7種）", sub: "生殖低下率がEMF曝露スコアと種にわたり相関 — 非温血馬（低）からヒト（最高）まで。陸上・水中・遷移軸にわたる12センチネル種を追跡。", href: "/sentinel#emf-gradient" },
+      { stat: "4界", label: "同じ分子(CRY)が撹乱 — 植物から哺乳類まで", sub: "生態系全体に同じことが起きている。クリプトクロムは植物（開花）、昆虫（ナビゲーション）、鳥類（渡り）、哺乳類（生殖）で機能する。4つの栄養段階すべてでRF撹乱が実証済み。", href: "/evidence#plant-cry" },
     ],
 
     bridgeTitle: "なぜこれらの数字は一つにまとまるのか",
@@ -480,6 +484,7 @@ const COPY = {
       { stat: "200 Md $", label: "Dépenses natalistes de la Corée → TFR toujours à 0,72", sub: "Le programme nataliste le plus coûteux de l'histoire n'a eu aucun effet mesurable sur la fécondité.", href: "/model#testosterone-threshold" },
       { stat: "TFR 6,1 vs 1,66", label: "Amish vs États-Unis — communautés sans smartphones", sub: "Bien que d'autres facteurs de mode de vie diffèrent, l'ampleur de l'écart de fécondité dépasse ce que les études sur l'alimentation ou le mode de vie ont expliqué.", href: "/evidence/populations" },
       { stat: "r = 0,909", label: "Gradient EMF inter-espèces (7 espèces)", sub: "Le taux de déclin reproductif corrèle avec le score d'exposition EMF à travers les espèces — des chevaux non-sang-chaud (faible) aux humains (le plus élevé). 12 espèces sentinelles suivies sur les axes terrestre, aquatique et transitionnel.", href: "/sentinel#emf-gradient" },
+      { stat: "4 regnes", label: "Meme molecule (CRY) perturbee — des plantes aux mammiferes", sub: "La meme chose arrive a l'ecosysteme entier. Le cryptochrome opere dans les plantes (floraison), les insectes (navigation), les oiseaux (migration) et les mammiferes (fertilite). Perturbation RF demontree aux quatre niveaux trophiques.", href: "/evidence#plant-cry" },
     ],
 
     bridgeTitle: "POURQUOI CES CHIFFRES SONT LIÉS",
@@ -615,6 +620,7 @@ const COPY = {
       { stat: "2000억 달러", label: "한국 출산장려 지출 → TFR 여전히 0.72", sub: "역사상 가장 비싼 출산장려 프로그램이 출산율에 측정 가능한 효과를 미치지 못했습니다.", href: "/model#testosterone-threshold" },
       { stat: "TFR 6.1 vs 1.66", label: "아미시 vs 미국 — 스마트폰 없는 공동체", sub: "다른 생활양식 요인이 다르지만, 출산율 격차의 규모는 식이요법이나 생활양식 연구가 설명한 것을 초과합니다.", href: "/evidence/populations" },
       { stat: "r = 0.909", label: "종간 EMF 기울기 (7종)", sub: "생식 감소율이 종에 걸쳐 EMF 노출 점수와 상관 — 비온혈종 말(낮음)에서 인간(최고)까지. 육상·수중·전환 축에 걸쳐 12개 감시종 추적.", href: "/sentinel#emf-gradient" },
+      { stat: "4계", label: "같은 분자(CRY) 교란 — 식물에서 포유류까지", sub: "생태계 전체에 같은 일이 일어나고 있다. 크립토크롬은 식물(개화), 곤충(항법), 조류(이동), 포유류(생식)에서 작동한다. 4개 영양 단계 모두에서 RF 교란이 입증됨.", href: "/evidence#plant-cry" },
     ],
 
     bridgeTitle: "왜 이 숫자들은 함께 속하는가",
