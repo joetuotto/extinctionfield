@@ -1,13 +1,31 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 type Theme = "light" | "dark" | "system";
 
 export function ThemeToggle() {
-  const theme = useSyncExternalStore(subscribeToTheme, readTheme, systemTheme);
+  const [theme, setTheme] = useState<Theme>("system");
+  const [mounted, setMounted] = useState(false);
 
-  function cycle() {
+  useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    setTheme(stored === "light" || stored === "dark" ? stored : "system");
+    setMounted(true);
+
+    const onChange = () => {
+      const stored = localStorage.getItem("theme");
+      setTheme(stored === "light" || stored === "dark" ? stored : "system");
+    };
+    window.addEventListener("storage", onChange);
+    window.addEventListener("berm-theme-change", onChange);
+    return () => {
+      window.removeEventListener("storage", onChange);
+      window.removeEventListener("berm-theme-change", onChange);
+    };
+  }, []);
+
+  const cycle = useCallback(() => {
     const next: Theme =
       theme === "dark" ? "light" : theme === "light" ? "system" : "dark";
     if (next === "system") {
@@ -18,20 +36,22 @@ export function ThemeToggle() {
       document.documentElement.setAttribute("data-theme", next);
     }
     window.dispatchEvent(new Event("berm-theme-change"));
-  }
+  }, [theme]);
+
+  const display = mounted ? theme : "system";
 
   return (
     <button
       onClick={cycle}
       className="p-1.5 text-foreground-muted hover:text-foreground transition-colors"
-      aria-label={`Theme: ${theme}`}
-      title={`Theme: ${theme}`}
+      aria-label={`Theme: ${display}`}
+      title={`Theme: ${display}`}
     >
-      {theme === "dark" ? (
+      {display === "dark" ? (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </svg>
-      ) : theme === "light" ? (
+      ) : display === "light" ? (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="12" r="5" />
           <line x1="12" y1="1" x2="12" y2="3" />
@@ -52,23 +72,4 @@ export function ThemeToggle() {
       )}
     </button>
   );
-}
-
-function readTheme(): Theme {
-  const stored = localStorage.getItem("theme");
-  return stored === "light" || stored === "dark" ? stored : "system";
-}
-
-function systemTheme(): Theme {
-  return "system";
-}
-
-function subscribeToTheme(onStoreChange: () => void) {
-  const onStorage = () => onStoreChange();
-  window.addEventListener("storage", onStorage);
-  window.addEventListener("berm-theme-change", onStorage);
-  return () => {
-    window.removeEventListener("storage", onStorage);
-    window.removeEventListener("berm-theme-change", onStorage);
-  };
 }
