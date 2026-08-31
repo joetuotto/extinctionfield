@@ -57,8 +57,10 @@ function computeChiB(field_uT: number): number {
   const A = 1.0;
   const A2 = 0.3;
 
-  const term1 = A * Math.exp(-((f - f0) / (2 * sigma)) ** 2);
-  const term2 = A2 * Math.exp(-((f - f1) / (2 * sigma1)) ** 2);
+  const r1 = (f - f0) / (2 * sigma);
+  const r2 = (f - f1) / (2 * sigma1);
+  const term1 = A * Math.exp(-(r1 * r1));
+  const term2 = A2 * Math.exp(-(r2 * r2));
   return term1 + term2;
 }
 

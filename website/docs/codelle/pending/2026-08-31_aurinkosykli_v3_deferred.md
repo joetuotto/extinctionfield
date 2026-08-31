@@ -20,32 +20,20 @@ Date: 2026-08-31
 - [x] evidence/eyes/page.tsx: Northern Package page (7 sections, EN+FI full, JA/FR/KO titles)
 - [x] evidence/page.tsx: Updated eyes sub-page card to Northern Package
 
-## Remaining items (SESSIO 3)
+### SESSIO 3
+- [x] SolarExplorer.tsx: Solar tab component with country selector, chi_B calculation, Northern Package visualization
+- [x] explorer/page.tsx: SolarExplorer integrated into explorer page
+- [x] SolarStatCharts.tsx: 8 statistical visualization charts (periodogram, bandpass, first-diff, Monte Carlo, reversal, era correlation, TFR rise, superposed epoch)
+- [x] evidence/page.tsx: SolarStatCharts integrated into solar-cycle section
 
-### 1. [KOODI] berm-explorer.jsx: Aurinkosykli tab
-- Country selector dropdown
-- Dual time series charts (CBR/TFR + SSN dual y-axis; bandpass 8-14yr filtered)
-- Country-specific chi_B value and geomagnetic latitude
-- Northern Package diagnostics
-- Uses COUNTRY_GEOMAG data from v16.py
+## Remaining items (deferred — [PROJEKTI] and [DATA])
 
-### 2. [KOODI] Statistical results visualization
-- 8 statistical analysis visualizations on evidence page:
-  - Periodogram (USA 1909-2023, peak 11.4yr)
-  - Bandpass 8-14yr correlation
-  - First-difference analysis
-  - Monte Carlo significance
-  - Direction reversal (1998)
-  - Era correlation
-  - TFR rise test
-  - Superposed epoch
+### [PROJEKTI] Documentation updates
+- BERM_BERM_tilannekatsaus_ja_seuraavat_vaiheet.md — file does not exist yet, needs creation
+- BERM_SESSIO_seuraava_tehtavat.md — file does not exist yet, needs creation
+- BERM_README.md — file does not exist yet, needs creation
 
-### 3. [PROJEKTI] Documentation updates
-- BERM_BERM_tilannekatsaus_ja_seuraavat_vaiheet.md
-- BERM_SESSIO_seuraava_tehtavat.md
-- BERM_README.md
-
-### 4. [DATA] External data needed
+### [DATA] External data needed
 - Amish birth records (Lancaster, Holmes counties) for SOLAR-1 validation
 - Nordic vs Southern Europe bandpass data for SOLAR-2
 - UK Biobank eye color x season-of-birth reanalysis for SOLAR-3

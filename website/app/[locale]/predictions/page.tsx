@@ -1721,6 +1721,40 @@ const COPY = {
     geneticFalsification: "Falsification criterion",
     geneticLocked: "Locked: 2026-08-26",
     geneticStatus: "LOCKED — awaiting test",
+    plantCryTitle: "Ecosystem & plant CRY predictions",
+    plantCryLead: "Predictions derived from the universal CRY/RPM mechanism operating across trophic levels. These test whether masting synchrony, plant reproduction, and ecosystem dynamics respond to electromagnetic field parameters through cryptochrome.",
+    plantCryPredictions: [
+      {
+        id: "MAST-SOLAR-1",
+        metric: "Masting frequency vs solar sunspot number (SSN)",
+        prediction: "Super-mast years (multiple species masting simultaneously) correlate with solar minimum phase when natural RF is lowest. Testable with MASTREE database + SSN records.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "MAST-RF-1",
+        metric: "Masting synchrony vs anthropogenic RF background",
+        prediction: "Masting synchrony is weaker in forests near cell towers / urban areas than in remote forests with low RF. Already partially reported (Bogdziewicz 2021) but attributed to climate change. BERM's alternative: RF disrupts CRY2.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "PLANT-CRY-RF-1",
+        metric: "CRY2-knockout plants vs wild-type under RF exposure",
+        prediction: "CRY2-knockout Arabidopsis shows no flowering time change under RF; wild-type does. Ahmad 2020 showed CRY1 effect; CRY2 flowering effect under RF not yet tested with knockouts. Discriminating test.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "MAST-SOIL-B2-1",
+        metric: "Masting synchrony vs soil microbiome B2 production",
+        prediction: "Higher masting synchrony in B2-rich soils. Soil microbiome produces riboflavin (B2) supplementing plant endogenous FAD. Depleted soils → lower microbial B2 → CRY2 less stable → weaker synchrony. Speculative (L*) — plants also synthesize B2 endogenously.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+    ],
+    plantCryStatus: "LOCKED — awaiting test",
+    plantCryLocked: "Locked: 2026-08-31",
     criticalLabel: "Critical",
     pharmEvidenceLink: "Pharmacological evidence →",
     infantEvidenceLink: "Infant vulnerability evidence →",
@@ -3484,6 +3518,40 @@ const COPY = {
     geneticFalsification: "Kumoamisehto",
     geneticLocked: "Lukittu: 2026-08-26",
     geneticStatus: "LUKITTU — odottaa testiä",
+    plantCryTitle: "Ekosysteemi- ja kasvi-CRY-ennusteet",
+    plantCryLead: "Ennusteet jotka perustuvat universaaliin CRY/RPM-mekanismiin joka operoi troofisten tasojen läpi. Nämä testaavat reagoivatko masting-synkronia, kasvien lisääntyminen ja ekosysteemidynamiikka sähkömagneettisiin kenttäparametreihin kryptokromin kautta.",
+    plantCryPredictions: [
+      {
+        id: "MAST-SOLAR-1",
+        metric: "Masting-frekvenssi vs auringonpilkkuluku (SSN)",
+        prediction: "Super-mast-vuodet (useat lajit mastaten samanaikaisesti) korreloivat aurinkominimivaiheen kanssa jolloin luonnollinen RF on matalimmillaan. Testattavissa MASTREE-tietokannalla + SSN-tiedoilla.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "MAST-RF-1",
+        metric: "Masting-synkronia vs antropogeeninen RF-tausta",
+        prediction: "Masting-synkronia on heikompaa metsissä lähellä tukiasemia / kaupunkialueita kuin syrjäisissä matalan RF:n metsissä. Jo osittain raportoitu (Bogdziewicz 2021) mutta selitetty ilmastonmuutoksella. BERM:n vaihtoehto: RF häiritsee CRY2:ta.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "PLANT-CRY-RF-1",
+        metric: "CRY2-knockout-kasvit vs villityyppi RF-altistuksessa",
+        prediction: "CRY2-knockout Arabidopsis ei näytä kukinta-ajan muutosta RF:ssä; villityyppi näyttää. Ahmad 2020 osoitti CRY1-efektin; CRY2:n kukintavaikutusta RF:ssä ei ole testattu knockouteilla. Diskriminoiva testi.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "MAST-SOIL-B2-1",
+        metric: "Masting-synkronia vs maaperän mikrobiston B2-tuotanto",
+        prediction: "Korkeampi masting-synkronia B2-rikkaassa maaperässä. Maaperän mikrobisto tuottaa riboflaviinia (B2) joka täydentää kasvien endogeenistä FAD:ia. Köyhtynyt maaperä → vähemmän mikrobi-B2:ta → CRY2 epästabiilimpi → heikompi synkronia. Spekulatiivinen (L*) — kasvit syntetisoivat B2:ta myös itse.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+    ],
+    plantCryStatus: "LUKITTU — odottaa testiä",
+    plantCryLocked: "Lukittu: 2026-08-31",
     criticalLabel: "Kriittinen",
     pharmEvidenceLink: "Farmakologinen evidenssi →",
     infantEvidenceLink: "Imeväisen haavoittuvuus -evidenssi →",
@@ -3767,6 +3835,40 @@ const COPY = {
     geneticFalsification: "反証基準",
     geneticLocked: "ロック日：2026-08-26",
     geneticStatus: "ロック済み ― テスト待ち",
+    plantCryTitle: "生態系・植物CRY予測",
+    plantCryLead: "栄養段階を横断する普遍的CRY/RPMメカニズムから導出された予測。マスティング同期性、植物の生殖、生態系動態がクリプトクロムを通じて電磁場パラメータに応答するかを検証する。",
+    plantCryPredictions: [
+      {
+        id: "MAST-SOLAR-1",
+        metric: "マスティング頻度 vs 太陽黒点数（SSN）",
+        prediction: "スーパーマスト年（複数種が同時にマスティング）は自然RFが最低の太陽極小期と相関する。MASTREEデータベース＋SSN記録で検証可能。",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "MAST-RF-1",
+        metric: "マスティング同期性 vs 人為的RFバックグラウンド",
+        prediction: "基地局/都市部付近の森林ではマスティング同期性が弱い。すでに部分的に報告（Bogdziewicz 2021）だが気候変動で説明。BERMの代替：RFがCRY2を妨害。",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "PLANT-CRY-RF-1",
+        metric: "CRY2ノックアウト植物 vs 野生型のRF曝露下",
+        prediction: "CRY2ノックアウトシロイヌナズナはRF下で開花時期の変化なし；野生型は変化あり。Ahmad 2020はCRY1効果を示した；CRY2の開花効果はノックアウトで未検証。識別試験。",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "MAST-SOIL-B2-1",
+        metric: "マスティング同期性 vs 土壌微生物叢B2産生",
+        prediction: "B2豊富な土壌でマスティング同期性が高い。土壌微生物叢はリボフラビン（B2）を産生し植物の内因性FADを補充。枯渇土壌→微生物B2低下→CRY2不安定→同期性弱化。推測的（L*）。",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+    ],
+    plantCryStatus: "ロック済み ― テスト待ち",
+    plantCryLocked: "ロック日：2026-08-31",
     criticalLabel: "重要",
     pharmEvidenceLink: "薬理学的エビデンス →",
     infantEvidenceLink: "乳児脆弱性エビデンス →",
@@ -5499,6 +5601,40 @@ const COPY = {
     geneticFalsification: "Critère de falsification",
     geneticLocked: "Verrouillé : 2026-08-26",
     geneticStatus: "VERROUILLÉ — en attente de test",
+    plantCryTitle: "Predictions ecosysteme & CRY vegetal",
+    plantCryLead: "Predictions derivees du mecanisme universel CRY/RPM operant a travers les niveaux trophiques. Ces predictions testent si la synchronie du masting, la reproduction vegetale et la dynamique des ecosystemes repondent aux parametres du champ electromagnetique via le cryptochrome.",
+    plantCryPredictions: [
+      {
+        id: "MAST-SOLAR-1",
+        metric: "Frequence de masting vs nombre de taches solaires (SSN)",
+        prediction: "Les super-annees de mast (plusieurs especes mastant simultanement) correlent avec le minimum solaire quand le RF naturel est le plus bas. Testable avec la base MASTREE + SSN.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "MAST-RF-1",
+        metric: "Synchronie de masting vs fond RF anthropogenique",
+        prediction: "La synchronie de masting est plus faible dans les forets pres des antennes-relais que dans les forets isolees a faible RF. Deja partiellement rapporte (Bogdziewicz 2021) mais attribue au changement climatique. Alternative BERM : le RF perturbe CRY2.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "PLANT-CRY-RF-1",
+        metric: "Plantes CRY2-knockout vs type sauvage sous RF",
+        prediction: "Arabidopsis CRY2-knockout ne montre aucun changement de floraison sous RF ; le type sauvage si. Ahmad 2020 a montre l'effet CRY1 ; l'effet de floraison CRY2 sous RF non teste avec des knockouts. Test discriminant.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "MAST-SOIL-B2-1",
+        metric: "Synchronie de masting vs production de B2 par le microbiome du sol",
+        prediction: "Synchronie de masting plus elevee dans les sols riches en B2. Le microbiome du sol produit de la riboflavine (B2) supplementant le FAD endogene vegetal. Sols appauvris → moins de B2 microbien → CRY2 moins stable → synchronie affaiblie. Speculatif (L*).",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+    ],
+    plantCryStatus: "VERROUILLÉ — en attente de test",
+    plantCryLocked: "Verrouillé : 2026-08-31",
     criticalLabel: "Critique",
     pharmEvidenceLink: "Évidences pharmacologiques →",
     infantEvidenceLink: "Évidences de vulnérabilité infantile →",
@@ -7231,6 +7367,40 @@ const COPY = {
     geneticFalsification: "반증 기준",
     geneticLocked: "잠금일: 2026-08-26",
     geneticStatus: "잠금 — 테스트 대기 중",
+    plantCryTitle: "생태계 및 식물 CRY 예측",
+    plantCryLead: "영양 단계를 가로지르는 보편적 CRY/RPM 메커니즘에서 도출된 예측. 마스팅 동기화, 식물 생식, 생태계 역학이 크립토크롬을 통해 전자기장 매개변수에 반응하는지 검증한다.",
+    plantCryPredictions: [
+      {
+        id: "MAST-SOLAR-1",
+        metric: "마스팅 빈도 vs 태양흑점수(SSN)",
+        prediction: "슈퍼 마스트 연도(여러 종이 동시에 마스팅)는 자연 RF가 가장 낮은 태양 극소기와 상관. MASTREE 데이터베이스 + SSN 기록으로 검증 가능.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "MAST-RF-1",
+        metric: "마스팅 동기성 vs 인위적 RF 배경",
+        prediction: "기지국/도시 근처 산림에서 마스팅 동기성이 약함. 이미 부분적으로 보고됨(Bogdziewicz 2021) 기후변화로 설명. BERM 대안: RF가 CRY2 교란.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "PLANT-CRY-RF-1",
+        metric: "CRY2 녹아웃 식물 vs 야생형 RF 노출 하",
+        prediction: "CRY2 녹아웃 애기장대는 RF에서 개화 시기 변화 없음; 야생형은 변화 있음. Ahmad 2020은 CRY1 효과를 보여줌; CRY2 개화 효과는 녹아웃으로 미검증. 식별 시험.",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+      {
+        id: "MAST-SOIL-B2-1",
+        metric: "마스팅 동기성 vs 토양 미생물 B2 생산",
+        prediction: "B2가 풍부한 토양에서 마스팅 동기성이 높음. 토양 미생물이 리보플라빈(B2)을 생산하여 식물 내인성 FAD 보충. 고갈된 토양 → 미생물 B2 감소 → CRY2 불안정 → 동기성 약화. 추측적(L*).",
+        status: "pending",
+        locked: "2026-08-31",
+      },
+    ],
+    plantCryStatus: "잠금 — 테스트 대기 중",
+    plantCryLocked: "잠금일: 2026-08-31",
     criticalLabel: "중요",
     pharmEvidenceLink: "약리학적 증거 →",
     infantEvidenceLink: "영아 취약성 증거 →",
@@ -10236,6 +10406,33 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               <div className="space-y-1 text-xs text-foreground-muted">
                 <p><span className="font-semibold">{d.geneticFalsification}:</span> {gp.falsification}</p>
                 <p className="font-mono-num">{d.geneticLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Ecosystem & Plant CRY predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3">{d.plantCryTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.plantCryLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.plantCryPredictions.map((pc) => (
+            <article key={pc.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{pc.id}</span>
+                    <h3 className="font-semibold">{pc.metric}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.plantCryStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{pc.prediction}</p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p className="font-mono-num">{d.plantCryLocked}</p>
               </div>
             </article>
           ))}

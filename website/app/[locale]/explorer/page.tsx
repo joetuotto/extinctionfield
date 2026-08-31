@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ExplorerDashboard } from "@/components/ExplorerDashboard";
 import { WorldMap } from "@/components/WorldMap";
+import { SolarExplorer } from "@/components/SolarExplorer";
 import { pickCopy } from "@/lib/i18n";
 
 const t = {
@@ -86,6 +87,10 @@ export default async function ExplorerPage({
 
       <section className="mt-10 rounded-xl border border-card-border bg-card-bg p-4 sm:p-6">
         <WorldMap locale={locale} />
+      </section>
+
+      <section className="mt-10 rounded-xl border border-card-border bg-card-bg p-4 sm:p-6">
+        <SolarExplorer locale={locale} />
       </section>
 
       <div className="mt-12 rounded-lg border border-card-border bg-card-bg p-4 text-sm text-foreground-muted">

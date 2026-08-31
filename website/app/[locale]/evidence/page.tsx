@@ -59,6 +59,7 @@ import { PATHWAY_ORDER, CHANNEL_GROUPS } from "@/lib/channelGroups";
 import { isValidLocale, pickCopy, type Locale } from "@/lib/i18n";
 import { ORPHANED_FINDINGS, ORPHANED_COMMENTARY } from "@/lib/orphanedFindings";
 import { RESEARCH_DOMAINS } from "@/lib/researchDomains";
+import { SolarStatCharts } from "@/components/SolarStatCharts";
 
 const ORDER: FieldStateDirectness[] = [
   "PHYSICS_SIGNATURE",
@@ -1445,6 +1446,32 @@ const COPY = {
       "Nature Communications 2025: 기원전 1천년기 확인이 연속 기록을 확장하여 고대와 현대 태양 주기 간 공백을 메움.",
     ],
     solarDendroP2: "BERM의 χ_B 경로가 반응하는 생물학적 시계는 적어도 2억 9천만 년간 중단 없이 작동해 왔다.",
+
+    plantCryTitle: "식물은 같은 분자를 통해 EMF에 반응한다",
+    plantCryIntro: "같은 분자(CRY), 같은 보조인자(FAD), 같은 메커니즘(RPM)이 식물(개화)과 동물(멜라토닌 → HPG 축)의 번식을 조절한다. 식물 크립토크롬 연구는 라디칼쌍 메커니즘의 가장 깨끗한 테스트를 제공한다 — 식물은 자체 FAD를 합성하므로 식이 B2를 교란 요인에서 제거한다.",
+    plantCryResearchLabel: "식물 CRY 연구 근거",
+    plantCryStudies: [
+      { authors: "Ahmad et al.", year: "2020", finding: "7 MHz RF 자기장이 애기장대 CRY1의 청색광 반응을 유의하게 감소 — 식물에서의 RPM 진단 지문", mechanism: "RPM 진단" },
+      { authors: "Xu et al.", year: "2014", finding: "500 µT 자기장이 CRY1 및 CRY2의 청색광 의존적 인산화를 강화", mechanism: "자기장 의존성" },
+      { authors: "Xu et al.", year: "2015", finding: "근영 자기장이 청색광 의존적 방식으로 애기장대 개화를 억제", mechanism: "개화 조절" },
+      { authors: "Agliassa et al.", year: "2018", finding: "지자기장이 애기장대 CRY 신호전달에 영향", mechanism: "CRY 신호전달" },
+      { authors: "PMC10005510", year: "2023", finding: "RF-EMF(Wi-Fi)가 상추 개화를 가속화하고 광합성 효율을 감소", mechanism: "RF → 개화" },
+      { authors: "Ecological Indicators", year: "2023", finding: "868 MHz RF-EMF가 10종의 야생 식물 성장과 발달에 영향", mechanism: "야생 식물 RF" },
+      { authors: "Haggerty", year: "2010", finding: "RF 배경이 사시나무 묘목 성장과 안토시아닌 생산에 악영향", mechanism: "RF → 성장" },
+    ],
+    plantCryB2Title: "B2/FAD 비대칭: 왜 식물이 더 깨끗한 테스트인가",
+    plantCryB2Plants: "식물은 자체 B2를 합성 → FAD 공급이 내생적 → CRY 기능이 오직 RF 교란에만 의존 → Ahmad 2020의 '상대적으로 사소한' 효과는 순수한 RPM 테스트",
+    plantCryB2Animals: "동물은 식이 B2가 필요 → CRY 기능이 RF와 B2 상태 모두에 의존 → 이중 취약성 (RF가 라디칼쌍을 교란 + B2 결핍이 보조인자를 고갈)",
+    mastingTitle: "마스팅: 2,000km에 걸친 동기화된 번식",
+    mastingIntro: "마스팅 — 숲 나무의 동기화된 대량 결실 — 은 생태학에서 가장 놀라운 조정 현상 중 하나다. 대륙 거리에 걸친 나무들이 같은 해에 대풍년 종자를 생산하고, 다른 해에는 거의 제로다. 동기화 신호는 2,000km 이상에서 동일하게 감지 가능해야 한다.",
+    mastingBermExplanation: "CRY2는 광주기, 온도, 그리고 지자기장을 동시에 읽는다. 이 세 신호 중 지자기장만이 2,000km 규모에서 사실상 동일하다 — 광주기는 위도에 따라 변하고, 온도는 국지적으로 변한다. BERM은 CRY2 매개 동기화의 지자기 성분이 증가하는 RF 배경에 의해 교란되어 마스팅 일관성이 약화된다고 예측한다.",
+    mastingResearchLabel: "마스팅 연구 근거",
+    mastingStudies: [
+      { authors: "Nature Plants", year: "2024", finding: "하지가 '천체의 출발 신호' 역할 — 유럽 너도밤나무에서 2,000km에 걸친 동기화된 마스팅 촉발", mechanism: "동기화 신호" },
+      { authors: "Bogdziewicz et al.", year: "2021", finding: "유럽 숲에서 마스팅 동기화가 약화 — 기후변화 탓이지만 BERM 대안: RF 배경 증가가 CRY2 지자기 감지를 교란", mechanism: "동기화 상실" },
+      { authors: "Ascoli et al. (Nature Comms)", year: "2017", finding: "NAO 원격연결이 마스팅과 상관 — 그러나 관계가 비정상적(시간에 따라 변화), 추가 변수 시사", mechanism: "비정상 상관" },
+    ],
+    mastingKeyMessage: "CRY2가 마스팅 동기화를 위해 광주기 + 지자기장을 통합한다면, 인위적 RF 증가는 나무를 지자기 신호에서 점진적으로 분리시켜야 한다 — 정확히 Bogdziewicz 2021이 기록하는 약화되는 동기화를 예측한다.",
   },
 } as const;
 
@@ -1596,11 +1623,11 @@ const SUB_PAGES = [
   {
     slug: "ecology",
     icon: TreePine,
-    en: { title: "Ecological & Sentinel Evidence", desc: "Electroecology across taxa and weather radar effects on wildlife — cross-species validation of BERM mechanisms." },
-    fi: { title: "Ekologinen ja sentinellievidenssi", desc: "Elektroekologia yli taksonomisten ryhmien ja tutkasäteilyn vaikutukset — lajienvälinen BERM-mekanismien validointi." },
-    ja: { title: "生態学的・センチネルエビデンス", desc: "分類群を超えた電気生態学と気象レーダーの野生生物への影響 — BERM メカニズムの種間検証。" },
-    fr: { title: "Preuves ecologiques et sentinelles", desc: "Electroecologie a travers les taxons et effets du radar meteorologique sur la faune — validation inter-especes des mecanismes BERM." },
-    ko: { title: "생태학적 및 센티넬 근거", desc: "분류군 전반의 전기생태학과 기상 레이더의 야생동물 영향 — BERM 메커니즘의 종간 검증." },
+    en: { title: "Ecological & Sentinel Evidence", desc: "Electroecology across taxa, weather radar effects on wildlife, and the universal plant CRY mechanism — from masting synchrony to lettuce flowering. Cross-species validation of BERM mechanisms." },
+    fi: { title: "Ekologinen ja sentinellievidenssi", desc: "Sähköekologia yli taksonomisten ryhmien, säätutkavaikutukset ja universaali kasvi-CRY-mekanismi — masting-synkroniasta salaatin kukintaan. Lajienvälinen BERM-mekanismien validointi." },
+    ja: { title: "生態学的・センチネルエビデンス", desc: "分類群を超えた電気生態学、気象レーダーの野生生物への影響、そして普遍的な植物CRYメカニズム——マスティング同期からレタスの開花まで。BERMメカニズムの種間検証。" },
+    fr: { title: "Preuves ecologiques et sentinelles", desc: "Electroecologie a travers les taxons, effets du radar meteorologique et mecanisme universel CRY vegetal — de la synchronie du masting a la floraison de la laitue. Validation inter-especes des mecanismes BERM." },
+    ko: { title: "생태학적 및 센티넬 근거", desc: "분류군 전반의 전기생태학, 기상 레이더 영향, 보편적 식물 CRY 메커니즘 — 마스팅 동기화에서 상추 개화까지. BERM 메커니즘의 종간 검증." },
   },
   {
     slug: "eyes",
@@ -1816,6 +1843,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
   const { locale } = await params;
   const activeLocale: Locale = isValidLocale(locale) ? locale : "en";
   const labelLocale: "en" | "fi" = activeLocale === "fi" ? "fi" : "en";
+  const domainLocale: "en" | "fi" | "ja" | "fr" | "ko" = (["en", "fi", "ja", "fr", "ko"] as const).includes(activeLocale as any) ? activeLocale as "en" | "fi" | "ja" | "fr" | "ko" : "en";
   const d = pickCopy(COPY, locale);
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
@@ -2058,6 +2086,11 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
           </div>
         </div>
 
+        {/* Statistical visualizations */}
+        <div className="mb-8 max-w-4xl">
+          <SolarStatCharts />
+        </div>
+
         {/* SAMA anomaly */}
         <div className="mb-8 max-w-4xl">
           <div className="rounded-lg border border-card-border bg-card-bg p-4 mb-3">
@@ -2099,6 +2132,110 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
               <p className="text-sm text-foreground leading-relaxed italic">{d.solarDendroP2}</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Plants and Universal CRY */}
+      <section id="plant-cry" className="mb-16 border-t editorial-rule pt-6">
+        <div className="border-l-4 border-green-500 pl-5 mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <Sprout className="w-5 h-5 text-green-500 shrink-0" />
+            <h2 className="editorial-section-heading">{d.plantCryTitle}</h2>
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">{d.plantCryIntro}</p>
+        </div>
+
+        <div className="mb-8 max-w-4xl">
+          <h3 className="text-sm font-bold text-foreground mb-3">{d.plantCryResearchLabel}</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b-2 border-green-500/30">
+                  <th className="text-left p-2 text-foreground-muted font-semibold w-1/6">Authors</th>
+                  <th className="text-left p-2 text-foreground-muted font-semibold w-1/12">Year</th>
+                  <th className="text-left p-2 text-foreground-muted font-semibold">Finding</th>
+                  <th className="text-left p-2 text-foreground-muted font-semibold w-1/6">Mechanism</th>
+                </tr>
+              </thead>
+              <tbody>
+                {([...d.plantCryStudies] as { authors: string; year: string; finding: string; mechanism: string }[]).map((s, i: number) => (
+                  <tr key={i} className="border-b border-border/50 hover:bg-green-500/5 transition-colors">
+                    <td className="p-2 text-foreground font-medium">{s.authors}</td>
+                    <td className="p-2 text-foreground-muted">{s.year}</td>
+                    <td className="p-2 text-foreground">{s.finding}</td>
+                    <td className="p-2 text-foreground-muted text-xs">{s.mechanism}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* B2/FAD asymmetry */}
+        <div className="mb-8 max-w-4xl">
+          <h3 className="text-sm font-bold text-foreground mb-3">{d.plantCryB2Title}</h3>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Sprout className="w-4 h-4 text-green-500" />
+                <span className="text-xs font-bold uppercase tracking-wide text-green-600">Plants</span>
+              </div>
+              <p className="text-sm text-foreground leading-relaxed">{d.plantCryB2Plants}</p>
+            </div>
+            <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Activity className="w-4 h-4 text-blue-500" />
+                <span className="text-xs font-bold uppercase tracking-wide text-blue-600">Animals</span>
+              </div>
+              <p className="text-sm text-foreground leading-relaxed">{d.plantCryB2Animals}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Masting and CRY Synchronization */}
+      <section id="masting" className="mb-16 border-t editorial-rule pt-6">
+        <div className="border-l-4 border-emerald-600 pl-5 mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <Trees className="w-5 h-5 text-emerald-600 shrink-0" />
+            <h2 className="editorial-section-heading">{d.mastingTitle}</h2>
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">{d.mastingIntro}</p>
+        </div>
+
+        <div className="mb-6 max-w-4xl rounded-lg border border-emerald-600/30 bg-emerald-600/5 p-4">
+          <h3 className="text-sm font-bold text-emerald-700 mb-2">BERM</h3>
+          <p className="text-sm text-foreground leading-relaxed">{d.mastingBermExplanation}</p>
+        </div>
+
+        <div className="mb-8 max-w-4xl">
+          <h3 className="text-sm font-bold text-foreground mb-3">{d.mastingResearchLabel}</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b-2 border-emerald-600/30">
+                  <th className="text-left p-2 text-foreground-muted font-semibold w-1/6">Authors</th>
+                  <th className="text-left p-2 text-foreground-muted font-semibold w-1/12">Year</th>
+                  <th className="text-left p-2 text-foreground-muted font-semibold">Finding</th>
+                  <th className="text-left p-2 text-foreground-muted font-semibold w-1/6">Mechanism</th>
+                </tr>
+              </thead>
+              <tbody>
+                {([...d.mastingStudies] as { authors: string; year: string; finding: string; mechanism: string }[]).map((s, i: number) => (
+                  <tr key={i} className="border-b border-border/50 hover:bg-emerald-600/5 transition-colors">
+                    <td className="p-2 text-foreground font-medium">{s.authors}</td>
+                    <td className="p-2 text-foreground-muted">{s.year}</td>
+                    <td className="p-2 text-foreground">{s.finding}</td>
+                    <td className="p-2 text-foreground-muted text-xs">{s.mechanism}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div className="max-w-4xl rounded border-l-4 border-amber-500 bg-amber-500/10 p-4">
+          <p className="text-sm text-foreground italic">{d.mastingKeyMessage}</p>
         </div>
       </section>
 
@@ -2154,7 +2291,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 max-w-4xl">
-          {RESEARCH_DOMAINS[labelLocale].map((item) => (
+          {RESEARCH_DOMAINS[domainLocale].map((item) => (
             <div key={item.n} className="flex gap-3 rounded-lg border border-card-border bg-card-bg p-3">
               <span className="font-mono-num text-xs text-accent mt-0.5 shrink-0">{item.n}</span>
               <div className="min-w-0">

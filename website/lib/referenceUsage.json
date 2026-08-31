@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-08-31",
-    "referencesWithUsages": 616,
-    "usageLocations": 1636
+    "referencesWithUsages": 624,
+    "usageLocations": 1652
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -5401,6 +5401,110 @@
         "source": "app/[locale]/evidence/ecology/page.tsx"
       }
     ],
+    "ahmad2020_cry1_rf": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "xu2014_cry_phosphorylation": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "xu2015_flowering_nnmf": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "agliassa2018_gmf_cry_phytochrome": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "arabidopsis_book_cry": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "lettuce_rf_2023": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "field_plants_rf_2023": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "haggerty2010_aspen_rf": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "bogdziewicz2024_nature_plants_solstice": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "bogdziewicz2021_climate_masting": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "ascoli2017_nao_masting": [
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
+    "wifi_lettuce_2023": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      },
+      {
+        "path": "/evidence/ecology",
+        "source": "app/[locale]/evidence/ecology/page.tsx"
+      }
+    ],
     "chinese_lockdown_cohort_41036143": [
       {
         "path": "/evidence/epidemiology",
@@ -6285,12 +6389,6 @@
         "source": "app/[locale]/evidence/page.tsx"
       }
     ],
-    "wifi_lettuce_2023": [
-      {
-        "path": "/evidence",
-        "source": "app/[locale]/evidence/page.tsx"
-      }
-    ],
     "nifed_tocolytic": [
       {
         "path": "/evidence/pharmacology",
@@ -7123,12 +7221,6 @@
         "source": "lib/causalMapData.ts"
       }
     ],
-    "ahmad2020_cry1_rf": [
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      }
-    ],
     "gegear2008": [
       {
         "path": "/map",
@@ -7196,18 +7288,6 @@
       }
     ],
     "ess2026_sama": [
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      }
-    ],
-    "xu2015_flowering_nnmf": [
-      {
-        "path": "/map",
-        "source": "lib/causalMapData.ts"
-      }
-    ],
-    "bogdziewicz2024_nature_plants_solstice": [
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"

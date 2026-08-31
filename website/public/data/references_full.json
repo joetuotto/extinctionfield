@@ -105,11 +105,12 @@
     },
     {
       "id": "plant_cry",
+      "number": 10,
       "name_en": "Plant CRY & Ecosystem",
       "name_fi": "Kasvi-CRY ja ekosysteemi",
       "description_en": "Plant cryptochrome EMF responses, masting synchrony, and trophic cascades",
       "description_fi": "Kasvien kryptokromin EMF-vasteet, masting-synkronia ja trofiset kaskadisit",
-      "icon": "leaf",
+      "icon": "🌿",
       "color": "#22c55e"
     }
   ],

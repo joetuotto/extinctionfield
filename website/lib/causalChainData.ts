@@ -533,13 +533,13 @@ export const NODES: ChainNode[] = [
   {
     id: "pathway_b",
     level: 6,
-    label: "Polku B: CRY",
-    label_en: "Pathway B: CRY",
-    sublabel: "RPM → kellogeenihäiriö",
-    sublabel_en: "RPM → clock gene disruption",
+    label: "Polku B: CRY/RPM",
+    label_en: "Pathway B: CRY/RPM",
+    sublabel: "Universaali EM-sensori (kasvit → nisäkkäät)",
+    sublabel_en: "Universal EM sensor (plants → mammals)",
     epistemicLevel: "E",
-    title: "Kryptokromi-sirkadiaanihäiriö",
-    title_en: "Cryptochrome circadian disruption",
+    title: "Kryptokromin radikaaliparimekanismi — universaali eukaryoottien EMF-responssi",
+    title_en: "Cryptochrome radical pair mechanism — universal eukaryotic EMF response",
     mechanism:
       "RF-kentät häiritsevät kryptokromin (CRY) radikaaliparimekanismia (RPM). CRY on sirkadiaanisen kellon ydinkomponentti gonadikudoksessa. RPM-häiriö → kellogeenien ekspression muutos → ovulaation ajoitus häiriintyy (naiset) + spermatogeneesin rytmi häiriintyy (miehet). FAD-superoksidi-radikaalipari tunnistettu sensoriksi ([[ref:natcomms2024rpm|Nature Comms 2024]]). Ei-monotoniset RPM-ennusteet vahvistettu planaariamatoissa ([[ref:rishabh2026|PNAS Nexus 2026]]). [[ref:engels2014|Engels 2014 (Nature)]]: antropogeeninen EMF-kohina häiritsee magneettikompassia muuttolinnuissa — nykyiset ympäristötasot riittävät. Vuorotyödata validoi: vuorotyöntekijöillä vähemmän lapsia ja enemmän keskenmenoja.",
     mechanism_en:
@@ -1422,6 +1422,46 @@ export const NODES: ChainNode[] = [
       },
     ],
   },
+  {
+    id: "ecosystem_cascade",
+    level: 7,
+    label: "Ekosysteemikaskadi",
+    label_en: "Ecosystem Cascade",
+    sublabel: "Kasvit → hyönteiset → linnut → nisäkkäät",
+    sublabel_en: "Plants → insects → birds → mammals",
+    epistemicLevel: "M|C",
+    title: "Trofinen kaskadi: CRY-moduloitu ekosysteemivaste",
+    title_en: "Trophic cascade: CRY-modulated ecosystem response",
+    mechanism:
+      "CRY/RPM-mekanismi operoi kaikilla eukaryoottien troofisilla tasoilla samanaikaisesti. Kasvit: CRY2 → kukinta/masting häiriintyy (Xu 2015, Ahmad 2020). Hyönteiset: CRY → navigaatio ja immuniteetti heikkenee (Mallinson 2025: mehiläisten sadonkorjuu laskee). Linnut: magnetoreseptio häiriintyy → muuttoreittien muutokset (Rosenberg 2019: −3 mrd lintua). Nisäkkäät: CRY → melatoniini → HPG-akselin suppressio. Sama mekanismi, eri troofinen taso. Antropogeeninen RF on 'ikuinen aurinkomaksimi' joka poistaa syklisen palautumisikkunan kaikilta CRY-kantavilta eliöiltä.",
+    mechanism_en:
+      "The CRY/RPM mechanism operates across all eukaryotic trophic levels simultaneously. Plants: CRY2 → flowering/masting disrupted (Xu 2015, Ahmad 2020). Insects: CRY → navigation and immunity weakened (Mallinson 2025: bee foraging reduced). Birds: magnetoreception disrupted → migration route changes (Rosenberg 2019: −3 billion birds). Mammals: CRY → melatonin → HPG axis suppression. Same mechanism, different trophic level. Anthropogenic RF is a 'permanent solar maximum' that removes the cyclic recovery window from all CRY-bearing organisms.",
+    lindgrenInterpretation:
+      "Antropogeeninen RF on evoluutiivisesti ennennäkemätön: CRY on virittynyt 290 miljoonan vuoden ajan auringon luonnolliseen RF-profiiliin (laajakaistainen, matala, syklinen). Antropogeeninen RF (kapea, voimakas, jatkuva) poistaa syklisen palautumisikkunan kaikilta CRY-kantavilta eliöiltä samanaikaisesti.",
+    lindgrenInterpretation_en:
+      "Anthropogenic RF is evolutionarily unprecedented: CRY has been tuned for 290 million years to the sun's natural RF profile (broadband, low, cyclic). Anthropogenic RF (narrowband, intense, continuous) removes the cyclic recovery window from all CRY-bearing organisms simultaneously.",
+    bermComponent: "ecology/trophic_cascade.py",
+    keyReferences: [
+      {
+        referenceId: "ahmad2020_cry1_rf",
+        authors: "Ahmad ym. 2020",
+        title: "Arabidopsis CRY responsive to RF",
+        journal: "Scientific Reports",
+        keyFinding: "7 MHz RF reduces CRY1 response — RPM fingerprint in plants",
+        keyFinding_en: "7 MHz RF reduces CRY1 response — RPM fingerprint in plants",
+      },
+      {
+        referenceId: "bogdziewicz2024_nature_plants_solstice",
+        authors: "Bogdziewicz ym. 2024",
+        title: "Summer solstice orchestrates masting synchrony",
+        journal: "Nature Plants",
+        keyFinding: "Masting synkronoituu 2000 km skaalalla",
+        keyFinding_en: "Masting synchronizes at 2000 km scale",
+      },
+    ],
+    falsificationCondition: "CRY-knockout organisms (Drosophila, Arabidopsis) show identical population dynamics under RF exposure as wild-type",
+    falsificationCondition_en: "CRY-knockout organisms (Drosophila, Arabidopsis) show identical population dynamics under RF exposure as wild-type",
+  },
 ];
 
 export const EDGES: ChainEdge[] = [
@@ -1571,6 +1611,14 @@ export const EDGES: ChainEdge[] = [
     to: "ovulation",
     label: "kellogeenihäiriö",
     label_en: "clock gene disruption",
+    epistemicLevel: "E",
+  },
+  {
+    from: "pathway_b",
+    to: "ecosystem_cascade",
+    label: "CRY2 → kukinta/masting",
+    label_en: "CRY2 → flowering/masting",
+    derivative: "∂flowering/∂CRY_signal ≠ 0",
     epistemicLevel: "E",
   },
   {

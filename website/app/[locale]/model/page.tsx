@@ -176,6 +176,13 @@ const t = {
     ],
     phyloInsight: "This means the current TFR-focused operational weights understate CRY/RPM's evolutionary significance. When we extend from human TFR to ECOSYSTEM-level EMF effects — pollinator decline, bird population crashes, tree masting disruption — Pathway B becomes the dominant mechanism, because it's the only one present in all affected organisms.",
     phyloWarning: "The phylogenetic hierarchy is a theoretical framework. It does NOT change the operational weights used in BERM's TFR predictions. The weights reflect epidemiological evidence strength for human fertility, where VGCC (A=45%) has more direct human evidence than CRY/RPM (B=15%).",
+    phyloText: [
+      "BERM identifies five biological pathways (A–E) through which EMF affects reproduction. Their operational weights reflect importance for human fertility. But their phylogenetic hierarchy — which is more fundamental and which is derived — is different.",
+      "Pathway B (CRY/RPM) is the ancestral mechanism. Present in all eukaryotes: plants, fungi, insects, birds, mammals. Cryptochrome was first discovered in plants (Arabidopsis, 1993). CRY’s reproductive role is best documented in plants — CRY2 → CONSTANS → FLOWERING LOCUS T → flowering induction. Conserved over 1 billion years as a photolyase homolog. Does not require membrane potential. Operates via spin chemistry (radical pair mechanism). RF disruption demonstrated in plants (Ahmad 2020: 7 MHz), insects (Gegear 2008: Drosophila), and mammals (PMC11817702 2025).",
+      "Pathway A (VGCC/IFO) is the derived mechanism. Animal-specific — excitable cells: neurons, muscle, sperm. Requires membrane potential (−70 mV / 10 nm → χ ≈ 1.0). Evolved approximately 500 million years ago with voltage-gated ion channels. Adds sensitivity in tissues with high membrane potential. Strongest single pathway for human sperm damage. Plants have ion channels (TPC1, CNGC) but not S4-helix-based VGCCs.",
+      "Together: Pathway B is the evolutionary foundation. Pathway A is the animal-specific amplification layer on top of it. Both operate simultaneously in animals. Only Pathway B operates in plants.",
+      "Critical B2/FAD difference — why effect sizes differ between plants and animals: Plants synthesize their own riboflavin (B2), so FAD supply is endogenous and CRY function depends only on RF disruption — Ahmad 2020’s ‘relatively minor’ effect is a pure RPM test. Animals require dietary B2, so FAD supply depends on nutrition and CRY function depends on both RF and B2 status — a double vulnerability: EMF disruption plus nutritional deficiency. This explains why animal effect sizes exceed plant effect sizes: animals have two disruption sources, plants have only one.",
+    ] as const,
 
     twoChSub: "ELF + IF + RF decomposition with 12 technology layers and TCBM",
     twoChTitle: "Three-channel exposure model",
@@ -1000,6 +1007,30 @@ const t = {
       pathways: "B (CRY), C (melatoniini)",
     },
 
+    phyloTitle: "Polkujen fylogeneettinen hierarkia",
+    phyloDesc: "Operatiiviset painot (A=45%, B=15%, C=25%, D=15%) heijastavat nykyistä epidemiologisen näytön vahvuutta. Mutta fylogeneettisestä näkökulmasta hierarkia kääntyy: CRY/RPM (polku B) on esi-isällinen sähkömagneettinen sensori, konservoitunut KAIKISSA eukaryoottien valtakunnissa yli miljardin vuoden ajan. VGCC (polku A), vaikka dominoiva ihmisen epidemiologiassa, on johdettu innovaatio joka ilmestyi vain eläinkuntaan ~500 Mya sitten.",
+    phyloColProperty: "",
+    phyloColPathwayB: "Polku B (CRY/RPM)",
+    phyloColPathwayA: "Polku A (VGCC)",
+    phyloRows: [
+      ["Ikä", ">1 Gv", "~500 Mv"],
+      ["Valtakuntien kattavuus", "Kaikki eukaryootit", "Vain eläinkunta"],
+      ["Kasvinäyttö", "Kyllä (Ahmad 2020, Xu 2015)", "Ei"],
+      ["Hyönteisnäyttö", "Kyllä (Gegear 2008)", "Rajallinen"],
+      ["Nisäkäsnäyttö", "Kyllä (PMC11817702)", "Kyllä (laaja)"],
+      ["Operatiivinen paino", "15% (ihmisen TFR)", "45% (ihmisen TFR)"],
+      ["Fylogeneettinen arvo", "Esi-isällinen", "Johdettu"],
+    ],
+    phyloInsight: "Tämä tarkoittaa, että nykyiset TFR-keskeiset operatiiviset painot aliarvioivat CRY/RPM:n evolutiivista merkitystä. Kun laajennamme ihmisen TFR:stä EKOSYSTEEMITASON EMF-vaikutuksiin — pölyttäjäkato, lintupopulaatioiden romahdus, puiden masting-häiriöt — polku B nousee hallitsevaksi mekanismiksi, koska se on ainoa joka on läsnä kaikissa vaikutuksen alaisissa organismeissa.",
+    phyloWarning: "Fylogeneettinen hierarkia on teoreettinen viitekehys. Se EI muuta BERM:n TFR-ennusteissa käytettäviä operatiivisia painoja. Painot heijastavat epidemiologisen näytön vahvuutta ihmisen lisääntymiselle, jossa VGCC:llä (A=45%) on enemmän suoraa ihmistutkimusnäyttöä kuin CRY/RPM:llä (B=15%).",
+    phyloText: [
+      "BERM tunnistaa viisi biologista polkua (A–E) joiden kautta EMF vaikuttaa lisääntymiseen. Niiden operatiiviset painot heijastavat merkitystä ihmisen hedelmällisyydelle. Mutta niiden fylogeneettinen hierarkia — mikä on perustavanlaatuisempi ja mikä johdettu — on erilainen.",
+      "Polku B (CRY/RPM) on kantamekanismi. Läsnä kaikissa eukaryooteissa: kasvit, sienet, hyönteiset, linnut, nisäkkäät. Kryptokromi löydettiin ensin kasveista (Arabidopsis, 1993). CRY:n reproduktiivinen rooli on parhaiten dokumentoitu kasveissa — CRY2 → CONSTANS → FLOWERING LOCUS T → kukinta-induktio. Konservoitu yli miljardin vuoden ajan fotolyaasin homologina. Ei vaadi kalvopotentiaalia. Operoi spin-kemialla (radikaaliparimekanismi). RF-häiriö osoitettu kasveissa (Ahmad 2020: 7 MHz), hyönteisissä (Gegear 2008: Drosophila) ja nisäkkäissä (PMC11817702 2025).",
+      "Polku A (VGCC/IFO) on johdettu mekanismi. Eläinspesifinen — eksitaabelit solut: neuronit, lihassyyt, siittiöt. Vaatii kalvopotentiaalin (−70 mV / 10 nm → χ ≈ 1.0). Kehittyi noin 500 miljoonaa vuotta sitten jänniteohjattujen ionikanavien myötä. Lisää herkkyyttä kudoksissa joissa kalvopotentiaali on korkea. Vahvin yksittäinen polku ihmisen siittiövauriolle. Kasveilla on ionikanavia (TPC1, CNGC) mutta ne eivät ole S4-heliksipohjaisia VGCC:itä.",
+      "Yhdessä: polku B on evoluutiivinen perusta. Polku A on eläinten lisäkerros sen päälle. Molemmat operoivat samanaikaisesti eläimissä. Vain polku B operoi kasveissa.",
+      "Kriittinen B2/FAD-ero — miksi efektikoot eroavat kasvien ja eläinten välillä: Kasvit syntetisoivat oman riboflaviininsa (B2), joten FAD-saatavuus on endogeeninen ja CRY-toiminta riippuu vain RF-häiriöstä — Ahmad 2020:n 'relatively minor' efekti on puhdas RPM-testi. Eläimet tarvitsevat ravinnon B2:ta, joten FAD-saatavuus riippuu ruokavaliosta ja CRY-toiminta riippuu sekä RF:stä että B2-statuksesta — kaksinkertainen haavoittuvuus: EMF-häiriö + ravitsemuspuutos. Tämä selittää miksi eläinten efektikoot ylittävät kasvien efektikoot: eläimillä on kaksi häiriölähdettä, kasveilla vain yksi.",
+    ] as const,
+
     twoChSub: "ELF + IF + RF -hajotelma 12 teknologiakerroksella ja TCBM",
     twoChTitle: "Kolmikanavainen altistusmalli",
     twoChDesc:
@@ -1823,6 +1854,30 @@ const t = {
       pathways: "B (CRY), C (メラトニン)",
     },
 
+    phyloTitle: "系統発生的経路階層",
+    phyloDesc: "操作的重み（A=45%、B=15%、C=25%、D=15%）は現在の疫学的証拠の強さを反映する。しかし系統発生的観点からは階層が逆転する：CRY/RPM（経路B）は祖先的電磁センサーであり、10億年以上にわたりすべての真核生物界で保存されている。",
+    phyloColProperty: "",
+    phyloColPathwayB: "経路B (CRY/RPM)",
+    phyloColPathwayA: "経路A (VGCC)",
+    phyloRows: [
+      ["年齢", ">10億年", "~5億年"],
+      ["界の範囲", "すべての真核生物", "後生動物のみ"],
+      ["植物の証拠", "あり", "なし"],
+      ["昆虫の証拠", "あり", "限定的"],
+      ["哺乳類の証拠", "あり", "あり（広範）"],
+      ["操作的重み", "15%", "45%"],
+      ["系統発生的順位", "祖先的", "派生的"],
+    ],
+    phyloInsight: "TFR中心の操作的重みはCRY/RPMの進化的意義を過小評価している。",
+    phyloWarning: "系統発生的階層は理論的枠組みである。BERMのTFR予測で使用される操作的重みを変更するものではない。",
+    phyloText: [
+      "BERMはEMFが生殖に影響する5つの生物学的経路（A〜E）を同定する。運用上の重みはヒトの生殖能力への重要性を反映するが、系統発生的階層——どちらがより根本的でどちらが派生的か——は異なる。",
+      "経路B（CRY/RPM）は祖先型メカニズムである。全ての真核生物に存在：植物、菌類、昆虫、鳥類、哺乳類。クリプトクロムは植物で最初に発見された（シロイヌナズナ、1993年）。CRYの生殖的役割は植物で最もよく文書化されている——CRY2→CONSTANS→FT→開花誘導。フォトリアーゼ相同体として10億年以上保存。膜電位を必要としない。スピン化学（ラジカル対メカニズム）で動作。RF妨害は植物（Ahmad 2020：7 MHz）、昆虫（Gegear 2008：ショウジョウバエ）、哺乳類（PMC11817702 2025）で実証。",
+      "経路A（VGCC/IFO）は派生型メカニズムである。動物特異的——興奮性細胞：神経、筋肉、精子。膜電位を必要とする（−70 mV / 10 nm → χ ≈ 1.0）。約5億年前に電位依存性イオンチャネルとともに進化。膜電位の高い組織で感受性を追加。ヒト精子損傷の最強経路。植物にもイオンチャネル（TPC1、CNGC）はあるがS4ヘリックスベースのVGCCではない。",
+      "合わせて：経路Bは進化的基盤。経路Aはその上の動物特異的増幅層。動物では両方が同時に動作。植物では経路Bのみが動作。",
+      "重要なB2/FADの違い——植物と動物でエフェクトサイズが異なる理由：植物は自らリボフラビン（B2）を合成するため、FAD供給は内因性でCRY機能はRF妨害にのみ依存——Ahmad 2020の「比較的軽微」な効果は純粋なRPMテスト。動物は食事性B2を必要とし、FAD供給は栄養に依存、CRY機能はRFとB2状態の両方に依存——二重の脆弱性：EMF妨害＋栄養欠乏。動物のエフェクトサイズが植物を上回る理由：動物には2つの妨害源があり、植物には1つしかない。",
+    ] as const,
+
     twoChSub: "ELF + IF + RF分解:12技術層とTCBM",
     twoChTitle: "三チャネル暴露モデル",
     twoChDesc:
@@ -2622,6 +2677,30 @@ const t = {
       pathways: "B (CRY), C (melatonine)",
     },
 
+    phyloTitle: "Hierarchie phylogenetique des voies",
+    phyloDesc: "Les poids operationnels (A=45%, B=15%, C=25%, D=15%) refletent la force actuelle des preuves epidemiologiques. Mais d'un point de vue phylogenetique, la hierarchie s'inverse.",
+    phyloColProperty: "",
+    phyloColPathwayB: "Voie B (CRY/RPM)",
+    phyloColPathwayA: "Voie A (VGCC)",
+    phyloRows: [
+      ["Age", ">1 Ga", "~500 Ma"],
+      ["Portee des regnes", "Tous les eucaryotes", "Metazoaires uniquement"],
+      ["Preuves vegetales", "Oui", "Non"],
+      ["Preuves insectes", "Oui", "Limitees"],
+      ["Preuves mammiferes", "Oui", "Oui (extensives)"],
+      ["Poids operationnel", "15%", "45%"],
+      ["Rang phylogenetique", "Ancestral", "Derive"],
+    ],
+    phyloInsight: "Les poids operationnels centres sur le TFR sous-estiment la signification evolutive du CRY/RPM.",
+    phyloWarning: "La hierarchie phylogenetique est un cadre theorique. Elle ne modifie PAS les poids operationnels utilises dans les predictions TFR de BERM.",
+    phyloText: [
+      "BERM identifie cinq voies biologiques (A-E) par lesquelles les EMF affectent la reproduction. Leurs poids operationnels refletent l'importance pour la fertilite humaine. Mais leur hierarchie phylogenetique — laquelle est plus fondamentale et laquelle est derivee — est differente.",
+      "La voie B (CRY/RPM) est le mecanisme ancestral. Present chez tous les eucaryotes : plantes, champignons, insectes, oiseaux, mammiferes. Le cryptochrome a ete decouvert d'abord chez les plantes (Arabidopsis, 1993). Le role reproductif de CRY est le mieux documente chez les plantes — CRY2 → CONSTANS → FT → induction de la floraison. Conserve depuis plus d'un milliard d'annees comme homologue de la photolyase. Ne necessite pas de potentiel membranaire. Opere par chimie de spin (mecanisme de paire de radicaux). La perturbation RF est demontree chez les plantes (Ahmad 2020 : 7 MHz), les insectes (Gegear 2008 : Drosophile) et les mammiferes (PMC11817702 2025).",
+      "La voie A (VGCC/IFO) est le mecanisme derive. Specifique aux animaux — cellules excitables : neurones, muscles, spermatozoides. Necessite un potentiel membranaire (−70 mV / 10 nm → χ ≈ 1.0). A evolue il y a environ 500 millions d'annees avec les canaux ioniques voltage-dependants. Ajoute de la sensibilite dans les tissus a potentiel membranaire eleve. Voie la plus forte pour les dommages aux spermatozoides humains. Les plantes ont des canaux ioniques (TPC1, CNGC) mais pas de VGCC a helice S4.",
+      "Ensemble : la voie B est la fondation evolutive. La voie A est la couche d'amplification specifique aux animaux par-dessus. Les deux operent simultanement chez les animaux. Seule la voie B opere chez les plantes.",
+      "Difference critique B2/FAD — pourquoi les tailles d'effet different entre plantes et animaux : Les plantes synthetisent leur propre riboflavine (B2), l'approvisionnement en FAD est donc endogene et la fonction CRY ne depend que de la perturbation RF — l'effet 'relativement mineur' d'Ahmad 2020 est un test RPM pur. Les animaux necessitent du B2 alimentaire, donc l'approvisionnement en FAD depend de la nutrition et la fonction CRY depend a la fois du RF et du statut B2 — une double vulnerabilite : perturbation EMF + carence nutritionnelle.",
+    ] as const,
+
     twoChSub: "Decomposition ELF + IF + RF avec 12 couches technologiques et TCBM",
     twoChTitle: "Modele d'exposition a trois canaux",
     twoChDesc:
@@ -3420,6 +3499,30 @@ const t = {
       tests: "태양 주기, 산업화 이전 데이터, 파수종, SAMA 이상",
       pathways: "B (CRY), C (멜라토닌)",
     },
+
+    phyloTitle: "계통발생적 경로 계층",
+    phyloDesc: "운영 가중치(A=45%, B=15%, C=25%, D=15%)는 현재 역학적 증거 강도를 반영한다. 그러나 계통발생적 관점에서 계층은 역전된다.",
+    phyloColProperty: "",
+    phyloColPathwayB: "경로 B (CRY/RPM)",
+    phyloColPathwayA: "경로 A (VGCC)",
+    phyloRows: [
+      ["연령", ">10억년", "~5억년"],
+      ["계 범위", "모든 진핵생물", "후생동물만"],
+      ["식물 증거", "있음", "없음"],
+      ["곤충 증거", "있음", "제한적"],
+      ["포유류 증거", "있음", "있음(광범위)"],
+      ["운영 가중치", "15%", "45%"],
+      ["계통발생적 순위", "조상적", "파생적"],
+    ],
+    phyloInsight: "TFR 중심 운영 가중치는 CRY/RPM의 진화적 중요성을 과소평가한다.",
+    phyloWarning: "계통발생적 계층은 이론적 틀이다. BERM의 TFR 예측에 사용되는 운영 가중치를 변경하지 않는다.",
+    phyloText: [
+      "BERM은 EMF가 생식에 영향을 미치는 5가지 생물학적 경로(A-E)를 식별한다. 운영상 가중치는 인간 생식력에 대한 중요성을 반영하지만, 계통발생적 위계——어느 것이 더 근본적이고 어느 것이 파생적인가——는 다르다.",
+      "경로 B(CRY/RPM)는 조상형 메커니즘이다. 모든 진핵생물에 존재: 식물, 균류, 곤충, 조류, 포유류. 크립토크롬은 식물에서 처음 발견됨(애기장대, 1993). CRY의 생식 역할은 식물에서 가장 잘 문서화됨——CRY2→CONSTANS→FT→개화 유도. 포토리아제 상동체로 10억 년 이상 보존. 막전위 불필요. 스핀 화학(라디칼 쌍 메커니즘)으로 작동. RF 교란은 식물(Ahmad 2020: 7 MHz), 곤충(Gegear 2008: 초파리), 포유류(PMC11817702 2025)에서 입증.",
+      "경로 A(VGCC/IFO)는 파생 메커니즘이다. 동물 특이적——흥분성 세포: 신경, 근육, 정자. 막전위 필요(−70 mV / 10 nm → χ ≈ 1.0). 약 5억 년 전 전압 개폐 이온 채널과 함께 진화. 막전위가 높은 조직에서 감수성 추가. 인간 정자 손상의 최강 단일 경로. 식물에도 이온 채널(TPC1, CNGC)이 있지만 S4 나선 기반 VGCC는 아님.",
+      "함께: 경로 B는 진화적 기반. 경로 A는 그 위의 동물 특이적 증폭층. 동물에서는 양쪽 모두 동시 작동. 식물에서는 경로 B만 작동.",
+      "중요한 B2/FAD 차이——식물과 동물의 효과 크기가 다른 이유: 식물은 자체적으로 리보플라빈(B2)을 합성하므로 FAD 공급이 내인성이고 CRY 기능은 RF 교란에만 의존——Ahmad 2020의 '비교적 경미한' 효과는 순수한 RPM 테스트. 동물은 식이 B2가 필요하므로 FAD 공급이 영양에 의존하고 CRY 기능은 RF와 B2 상태 모두에 의존——이중 취약성: EMF 교란 + 영양 결핍. 동물의 효과 크기가 식물을 초과하는 이유: 동물에는 교란원이 2개, 식물에는 1개.",
+    ] as const,
 
     twoChSub: "12개 기술 레이어와 TCBM을 포함한 ELF + IF + RF 분해",
     twoChTitle: "3채널 노출 모델",
@@ -4721,6 +4824,14 @@ export default async function ModelPage({
               <p className="text-sm text-foreground">{d.phyloWarning}</p>
             </div>
           </CollapsibleSection>
+
+          {/* Phylogenetic pathway hierarchy — prose */}
+          <section id="phylo-hierarchy-prose" className="mb-14">
+            <h2 className="text-xl font-semibold mb-4">{d.phyloTitle}</h2>
+            {(d.phyloText as readonly string[]).map((p, i) => (
+              <p key={i} className="text-sm leading-relaxed text-foreground-muted mb-4 max-w-3xl">{p}</p>
+            ))}
+          </section>
 
           {/* Three-channel model */}
           <CollapsibleSection id="two-channel-model" title={d.twoChTitle} subtitle={d.twoChSub} defaultOpen>
