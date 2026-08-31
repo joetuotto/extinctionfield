@@ -101,13 +101,15 @@ export interface EvolutionPrediction {
   test_ja: string;
   test_fr: string;
   test_ko: string;
-  falsification_en: string;
-  falsification_fi: string;
-  falsification_ja: string;
-  falsification_fr: string;
-  falsification_ko: string;
+  falsification_en?: string;
+  falsification_fi?: string;
+  falsification_ja?: string;
+  falsification_fr?: string;
+  falsification_ko?: string;
   level: EpistemicLevel;
   timeframe: string;
+  pathway?: string[];
+  tags?: string[];
 }
 
 export const CHI_SCALES: ChiScale[] = [
@@ -840,5 +842,77 @@ export const EVOLUTION_PREDICTIONS: EvolutionPrediction[] = [
     falsification_ko: "SAMA 지역이 유사 위도의 비SAMA 국가와 같은 부호·비슷한 크기의 태양주기-출산율 상관을 보임.",
     level: "L*",
     timeframe: "3-5 years",
+  },
+  {
+    id: "mast-solar-1",
+    code: "MAST-SOLAR-1",
+    title_en: "Masting–Solar Cycle Correlation",
+    title_fi: "Masting–aurinkosyklkorrelaatio",
+    title_ja: "マスティング-太陽周期相関",
+    title_fr: "Corrélation masting-cycle solaire",
+    title_ko: "마스팅-태양주기 상관",
+    test_en: "European beech masting synchrony (Bogdziewicz 2024) should show ~11-year periodicity in Fourier analysis when controlled for temperature and photoperiod. The solar cycle modulates geomagnetic field which modulates CRY2 sensitivity threshold.",
+    test_fi: "Eurooppalaisen pyökin masting-synkronian (Bogdziewicz 2024) tulisi näyttää ~11 vuoden periodisuutta Fourier-analyysissä, kun lämpötila ja valojakso vakioidaan. Aurinkosykli moduloi geomagneettista kenttää, joka moduloi CRY2:n herkkyyskynnystä.",
+    test_ja: "ヨーロッパブナのマスティング同期は太陽周期と相関するはず",
+    test_fr: "La synchronie du masting du hêtre devrait montrer une périodicité ~11 ans",
+    test_ko: "유럽 너도밤나무 마스팅 동기화는 ~11년 주기성을 보여야 함",
+    level: "L*",
+    timeframe: "3–5 years",
+    pathway: ["B"],
+    tags: ["masting", "solar_cycle", "beech", "CRY2", "periodicity"],
+  },
+  {
+    id: "mast-rf-1",
+    code: "MAST-RF-1",
+    title_en: "RF Background Disrupts Masting Synchrony",
+    title_fi: "RF-tausta häiritsee masting-synkroniaa",
+    title_ja: "RF背景がマスティング同期を乱す",
+    title_fr: "Le bruit de fond RF perturbe la synchronie du masting",
+    title_ko: "RF 배경이 마스팅 동기화를 방해",
+    test_en: "Bogdziewicz 2021 found weakening masting synchrony attributed to 'climate change.' BERM predicts: the weakening correlates better with RF background growth (mobile network rollout 1990s→2020s) than with temperature trends alone. CRY2-mediated photoperiod sensing is disrupted by RF, analogous to Ahmad 2020 in Arabidopsis.",
+    test_fi: "Bogdziewicz 2021 havaitsi masting-synkronian heikkenemisen, joka attribuoitiin ilmastonmuutokselle. BERM ennustaa: heikkeneminen korreloi paremmin RF-taustan kasvun (matkapuhelinverkkojen leviäminen 1990-luku→2020-luku) kuin pelkän lämpötilatrendin kanssa. CRY2-välitteinen valojakson aistiminen häiriintyy RF:stä, analogisesti Ahmad 2020 Arabidopsis-tulosten kanssa.",
+    test_ja: "マスティング同期の弱体化はRF背景の成長とよく相関するはず",
+    test_fr: "L'affaiblissement de la synchronie du masting corrèle mieux avec la croissance du bruit RF",
+    test_ko: "마스팅 동기화 약화는 RF 배경 성장과 더 잘 상관해야 함",
+    level: "L*",
+    timeframe: "3–5 years",
+    pathway: ["B"],
+    tags: ["masting", "RF", "synchrony", "weakening", "CRY2", "mobile_network"],
+  },
+  {
+    id: "plant-cry-rf-1",
+    code: "PLANT-CRY-RF-1",
+    title_en: "Plant CRY RF Response Is Universal",
+    title_fi: "Kasvien CRY:n RF-vaste on universaali",
+    title_ja: "植物CRYのRF応答は普遍的",
+    title_fr: "La réponse RF du CRY végétal est universelle",
+    title_ko: "식물 CRY RF 반응은 보편적",
+    test_en: "Ahmad 2020 demonstrated RF effects on Arabidopsis CRY1. BERM predicts this extends to CRY2 and to crop species: wheat, rice, soybean CRY2-mediated flowering should show RF sensitivity in controlled experiments. The effect is 'relatively minor' (Ahmad 2020's own assessment) but DETECTABLE and species-universal because the RPM mechanism is conserved.",
+    test_fi: "Ahmad 2020 osoitti RF-vaikutukset Arabidopsiksen CRY1:een. BERM ennustaa tämän ulottuvan CRY2:een ja viljelykasveihin: vehnän, riisin, soijan CRY2-välitteisen kukinnan tulisi näyttää RF-herkkyyttä kontrolloiduissa kokeissa. Vaikutus on 'suhteellisen pieni' (Ahmad 2020:n oma arvio) mutta HAVAITTAVISSA ja lajiuniversaali, koska RPM-mekanismi on konservoitunut.",
+    test_ja: "植物CRYのRF感受性は作物種にも拡張されるはず",
+    test_fr: "La sensibilité RF du CRY végétal devrait s'étendre aux espèces cultivées",
+    test_ko: "식물 CRY RF 민감성은 작물 종으로도 확장되어야 함",
+    level: "L*",
+    timeframe: "3–5 years",
+    pathway: ["B"],
+    tags: ["plant", "CRY2", "RF", "crop_species", "universal", "RPM"],
+  },
+  {
+    id: "mast-soil-b2-1",
+    code: "MAST-SOIL-B2-1",
+    title_en: "B2/FAD Links Plant Masting to Animal Fertility",
+    title_fi: "B2/FAD yhdistää kasvien mastingin eläinten lisääntymiseen",
+    title_ja: "B2/FADが植物マスティングと動物生殖を結ぶ",
+    title_fr: "Le B2/FAD relie le masting végétal à la fertilité animale",
+    title_ko: "B2/FAD가 식물 마스팅과 동물 생식력을 연결",
+    test_en: "Plants synthesize their own B2 (riboflavin) for CRY function. Animals require dietary B2. In masting years, forest-floor B2 availability changes through seed/fruit abundance. BERM predicts: small mammal fertility in mast years correlates with BOTH food abundance AND B2 availability for CRY function. This is a trophic-CRY coupling prediction.",
+    test_fi: "Kasvit syntetisoivat oman B2:nsa (riboflaviini) CRY-toimintaan. Eläimet tarvitsevat ravinto-B2:n. Masting-vuosina metsänpohjan B2-saatavuus muuttuu siemen/hedelmärunsauden kautta. BERM ennustaa: pienten nisäkkäiden lisääntymismenestys masting-vuosina korreloi SEKÄ ravinnon runsauden ETTÄ B2-saatavuuden kanssa CRY-toimintaa varten. Tämä on troofinen CRY-kytkentäennuste.",
+    test_ja: "マスト年の小型哺乳類の繁殖力はB2利用可能性と相関するはず",
+    test_fr: "La fertilité des petits mammifères en année de faine corrèle avec la disponibilité en B2",
+    test_ko: "마스트 해의 소형 포유류 번식력은 B2 가용성과 상관해야 함",
+    level: "L*",
+    timeframe: "5–10 years",
+    pathway: ["B"],
+    tags: ["masting", "B2", "FAD", "trophic", "CRY", "small_mammals", "diet"],
   },
 ];

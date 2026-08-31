@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-08-31",
-    "referencesWithUsages": 611,
-    "usageLocations": 1629
+    "referencesWithUsages": 616,
+    "usageLocations": 1636
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -5625,6 +5625,14 @@
       {
         "path": "/evidence/eyes",
         "source": "app/[locale]/evidence/eyes/page.tsx"
+      },
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/model/page.tsx"
       }
     ],
     "gut_per2_2026": [
@@ -6272,6 +6280,12 @@
       }
     ],
     "burchard2002": [
+      {
+        "path": "/evidence",
+        "source": "app/[locale]/evidence/page.tsx"
+      }
+    ],
+    "wifi_lettuce_2023": [
       {
         "path": "/evidence",
         "source": "app/[locale]/evidence/page.tsx"
@@ -7109,6 +7123,18 @@
         "source": "lib/causalMapData.ts"
       }
     ],
+    "ahmad2020_cry1_rf": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "gegear2008": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
     "pmc3885580_retinal_vgcc": [
       {
         "path": "/map",
@@ -7170,6 +7196,18 @@
       }
     ],
     "ess2026_sama": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "xu2015_flowering_nnmf": [
+      {
+        "path": "/map",
+        "source": "lib/causalMapData.ts"
+      }
+    ],
+    "bogdziewicz2024_nature_plants_solstice": [
       {
         "path": "/map",
         "source": "lib/causalMapData.ts"

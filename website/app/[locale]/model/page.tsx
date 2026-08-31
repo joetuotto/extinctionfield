@@ -160,6 +160,23 @@ const t = {
       pathways: "B (CRY), C (melatonin)",
     },
 
+    phyloTitle: "Phylogenetic Pathway Hierarchy",
+    phyloDesc: "The operational weights (A=45%, B=15%, C=25%, D=15%) reflect current epidemiological evidence strength. But from a phylogenetic perspective, the hierarchy inverts: CRY/RPM (Pathway B) is the ancestral electromagnetic sensor, conserved across ALL eukaryotic kingdoms for over 1 billion years. VGCC (Pathway A), though dominant in human epidemiology, is a derived innovation appearing only in Metazoa ~500 Myr ago.",
+    phyloColProperty: "",
+    phyloColPathwayB: "Pathway B (CRY/RPM)",
+    phyloColPathwayA: "Pathway A (VGCC)",
+    phyloRows: [
+      ["Age", ">1 Gyr", "~500 Myr"],
+      ["Kingdom scope", "All eukaryotes", "Metazoa only"],
+      ["Plant evidence", "Yes (Ahmad 2020, Xu 2015)", "No"],
+      ["Insect evidence", "Yes (Gegear 2008)", "Limited"],
+      ["Mammal evidence", "Yes (PMC11817702)", "Yes (extensive)"],
+      ["Operational weight", "15% (human TFR)", "45% (human TFR)"],
+      ["Phylogenetic rank", "Ancestral", "Derived"],
+    ],
+    phyloInsight: "This means the current TFR-focused operational weights understate CRY/RPM's evolutionary significance. When we extend from human TFR to ECOSYSTEM-level EMF effects — pollinator decline, bird population crashes, tree masting disruption — Pathway B becomes the dominant mechanism, because it's the only one present in all affected organisms.",
+    phyloWarning: "The phylogenetic hierarchy is a theoretical framework. It does NOT change the operational weights used in BERM's TFR predictions. The weights reflect epidemiological evidence strength for human fertility, where VGCC (A=45%) has more direct human evidence than CRY/RPM (B=15%).",
+
     twoChSub: "ELF + IF + RF decomposition with 12 technology layers and TCBM",
     twoChTitle: "Three-channel exposure model",
     twoChDesc:
@@ -4669,6 +4686,39 @@ export default async function ModelPage({
                   </div>
                 </div>
               ))}
+            </div>
+          </CollapsibleSection>
+
+          {/* Phylogenetic Pathway Hierarchy */}
+          <CollapsibleSection id="phylogenetic-hierarchy" title={d.phyloTitle}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.phyloDesc}
+            </p>
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground-muted font-semibold">{d.phyloColProperty}</th>
+                    <th className="text-left p-2 font-semibold" style={{ color: "#8b5cf6" }}>{d.phyloColPathwayB}</th>
+                    <th className="text-left p-2 font-semibold" style={{ color: "#3b82f6" }}>{d.phyloColPathwayA}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {(d.phyloRows as string[][]).map((row: string[], i: number) => (
+                    <tr key={i} className="border-b border-border/50">
+                      <td className="p-2 text-foreground-muted font-medium">{row[0]}</td>
+                      <td className="p-2 text-foreground">{row[1]}</td>
+                      <td className="p-2 text-foreground">{row[2]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-foreground mb-4 max-w-3xl leading-relaxed">
+              {d.phyloInsight}
+            </p>
+            <div className="rounded-lg border-l-4 border-amber-500 bg-amber-500/10 p-4">
+              <p className="text-sm text-foreground">{d.phyloWarning}</p>
             </div>
           </CollapsibleSection>
 

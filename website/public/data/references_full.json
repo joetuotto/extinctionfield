@@ -2,11 +2,11 @@
   "metadata": {
     "version": "3.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 982,
-    "verified_count": 330,
+    "total_references": 984,
+    "verified_count": 343,
     "generated": "2026-08-31",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls",
-    "linked_count": 347,
+    "linked_count": 349,
     "unlinked_count": 635,
     "schema": "canonical-reference-registry-v1",
     "alias_count": 29,
@@ -28997,6 +28997,72 @@
       "link_source": null,
       "aliases": [],
       "link_checked_at": null
+    },
+    {
+      "id": "gegear2008",
+      "authors": "Gegear RJ, Casselman A, Waddell S, Reppert SM",
+      "year": 2008,
+      "title": "Cryptochrome mediates light-dependent magnetosensitivity in Drosophila",
+      "journal": "Nature",
+      "doi": "10.1038/nature07183",
+      "pmid": "18830242",
+      "pmcid": null,
+      "url": null,
+      "category": null,
+      "pathway": [
+        "emf",
+        "magnetoreception",
+        "cryptochrome"
+      ],
+      "level": null,
+      "type": null,
+      "finding": "Cryptochrome is required for light-dependent magnetosensitivity in Drosophila, establishing CRY as a magnetoreceptor molecule",
+      "tags": [
+        "cryptochrome",
+        "magnetoreception",
+        "drosophila",
+        "radical-pair"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Nature 2008 454:1014-1018"
+    },
+    {
+      "id": "wifi_lettuce_2023",
+      "authors": "Afzal I, Saleem S, Skalicky M, Javed T, Bakhtavar MA, Kamran M, Shahid M",
+      "year": 2023,
+      "title": "Effect of Wi-Fi signals (2.4 GHz) on seed biology: emerging impact on germination and plant growth",
+      "journal": "Biological Research",
+      "doi": "10.1186/s40659-023-00424-5",
+      "pmid": null,
+      "pmcid": "PMC10005510",
+      "url": null,
+      "category": null,
+      "pathway": [
+        "emf",
+        "rf",
+        "plants"
+      ],
+      "level": null,
+      "type": null,
+      "finding": "Wi-Fi frequencies (2.4 GHz) accelerate lettuce flowering time",
+      "tags": [
+        "wifi",
+        "plants",
+        "rf",
+        "growth"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": true,
+      "link_status": "verified",
+      "link_source": "pmcid",
+      "aliases": [],
+      "source": "Biological Research 2023"
     }
   ]
 }

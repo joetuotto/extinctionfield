@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 971,
-    "linkedReferences": 347
+    "totalReferences": 984,
+    "linkedReferences": 349
   },
   "references": {
     "5g_hpa_axis": {
@@ -9694,6 +9694,136 @@
       "type": "experimental",
       "linkStatus": "registered",
       "externalUrl": null
+    },
+    "ahmad2020_cry1_rf": {
+      "id": "ahmad2020_cry1_rf",
+      "authors": "Ahmad M, Galland P, Ritz T, Wiltschko R, Wiltschko W",
+      "year": 2020,
+      "title": "Arabidopsis cryptochrome is responsive to Radiofrequency (RF) electromagnetic fields",
+      "journal": "Scientific Reports",
+      "type": "experimental",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "xu2014_cry_phosphorylation": {
+      "id": "xu2014_cry_phosphorylation",
+      "authors": "Xu C, Lv Y, Chen C, Zhang Y, Wei S",
+      "year": 2014,
+      "title": "Blue light-dependent phosphorylations of cryptochromes are affected by magnetic fields in Arabidopsis",
+      "journal": "Advances in Space Research",
+      "type": "experimental",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "xu2015_flowering_nnmf": {
+      "id": "xu2015_flowering_nnmf",
+      "authors": "Xu C, Li Y, Yu Y, Zhang Y, Wei S",
+      "year": 2015,
+      "title": "Suppression of Arabidopsis flowering by near-null magnetic field is affected by light",
+      "journal": "Bioelectromagnetics",
+      "type": "experimental",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "agliassa2018_gmf_cry_phytochrome": {
+      "id": "agliassa2018_gmf_cry_phytochrome",
+      "authors": "Agliassa C, Narayana R, Christie JM, Maffei ME",
+      "year": 2018,
+      "title": "Geomagnetic field impacts on cryptochrome and phytochrome signaling",
+      "journal": "Journal of Photochemistry and Photobiology B: Biology",
+      "type": "experimental",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "arabidopsis_book_cry": {
+      "id": "arabidopsis_book_cry",
+      "authors": "Lin C, Todo T",
+      "year": 2010,
+      "title": "The Cryptochrome Blue Light Receptors",
+      "journal": "The Arabidopsis Book",
+      "type": "review",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "bogdziewicz2024_nature_plants_solstice": {
+      "id": "bogdziewicz2024_nature_plants_solstice",
+      "authors": "Bogdziewicz M et al.",
+      "year": 2024,
+      "title": "Summer solstice orchestrates the subcontinental-scale synchrony of mast seeding",
+      "journal": "Nature Plants",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "ascoli2017_nao_masting": {
+      "id": "ascoli2017_nao_masting",
+      "authors": "Ascoli D et al.",
+      "year": 2017,
+      "title": "Inter-annual and decadal changes in teleconnections drive continental-scale synchronization of tree reproduction",
+      "journal": "Nature Communications",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "bogdziewicz2021_climate_masting": {
+      "id": "bogdziewicz2021_climate_masting",
+      "authors": "Bogdziewicz M et al.",
+      "year": 2021,
+      "title": "Climate change weakens the tie between weather and mast seeding",
+      "journal": "Communications Biology",
+      "type": "epidemiological",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "lettuce_rf_2023": {
+      "id": "lettuce_rf_2023",
+      "authors": "PMC10005510",
+      "year": 2023,
+      "title": "Impacts of RF-EMF on Lettuce — Evidence for RF-EMF Interference with Plant Stress Responses",
+      "journal": "Plants (MDPI)",
+      "type": "experimental",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "field_plants_rf_2023": {
+      "id": "field_plants_rf_2023",
+      "authors": "ScienceDirect",
+      "year": 2023,
+      "title": "Do electromagnetic fields used in telecommunications affect wild plant species?",
+      "journal": "Ecological Indicators",
+      "type": "field_experimental",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "haggerty2010_aspen_rf": {
+      "id": "haggerty2010_aspen_rf",
+      "authors": "Haggerty K",
+      "year": 2010,
+      "title": "Adverse Influence of Radio Frequency Background on Trembling Aspen Seedlings",
+      "journal": "International Journal of Forestry Research",
+      "type": "experimental",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "gegear2008": {
+      "id": "gegear2008",
+      "authors": "Gegear RJ, Casselman A, Waddell S, Reppert SM",
+      "year": 2008,
+      "title": "Cryptochrome mediates light-dependent magnetosensitivity in Drosophila",
+      "journal": "Nature",
+      "type": null,
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/nature07183"
+    },
+    "wifi_lettuce_2023": {
+      "id": "wifi_lettuce_2023",
+      "authors": "Afzal I, Saleem S, Skalicky M, Javed T, Bakhtavar MA, Kamran M, Shahid M",
+      "year": 2023,
+      "title": "Effect of Wi-Fi signals (2.4 GHz) on seed biology: emerging impact on germination and plant growth",
+      "journal": "Biological Research",
+      "type": null,
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1186/s40659-023-00424-5"
     }
   },
   "aliases": {
@@ -10493,6 +10623,12 @@
     "doi:10.1098/rspb.2004.2811": "selas2004",
     "doi:10.1073/pnas.2200749119": "pnas2022_sama_recurrence",
     "pmcid:PMC11817702": "pmc11817702_2025_rfk_pemf",
-    "doi:10.1038/nature09767": "lishko2011"
+    "doi:10.1038/nature09767": "lishko2011",
+    "doi:10.1038/s41598-020-67165-5": "ahmad2020_cry1_rf",
+    "doi:10.1038/s41477-024-01651-w": "bogdziewicz2024_nature_plants_solstice",
+    "doi:10.1038/nature07183": "gegear2008",
+    "pmid:18830242": "gegear2008",
+    "doi:10.1186/s40659-023-00424-5": "wifi_lettuce_2023",
+    "pmcid:PMC10005510": "wifi_lettuce_2023"
   }
 }

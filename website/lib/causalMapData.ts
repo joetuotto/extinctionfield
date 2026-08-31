@@ -980,4 +980,8 @@ export const EDGES: CausalMapEdge[] = [
   { from: "solar_geomag", to: "tissue_melatonin", label: "geomag → pineal suppression" },
   // Northern Package → melatonin pathway (C); pathway B edge already exists above
   { from: "northern_package", to: "tissue_melatonin", label: "CRY optimization → melatonin sensitivity" },
+
+  // Ecosystem cascade: CRY disruption across all trophic levels
+  { from: "mech_cry_melatonin", to: "ecosystem_cascade", label: "CRY universal → all eukaryotes" },
+  { from: "solar_geomag", to: "ecosystem_cascade", label: "geomag modulation → trophic cascade" },
 ];

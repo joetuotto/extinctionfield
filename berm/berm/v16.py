@@ -1925,3 +1925,160 @@ def v17_northern_package(eye_color: str = "mixed",
             "Mixed"
         ),
     }
+
+
+def v17_ecosystem_cry_cascade(
+    rf_power_density_mW_m2: float = 1.0,
+    geomag_lat_deg: float = 55.0,
+    b2_dietary_mg: float = 1.3,
+    solar_f107: float = 150.0
+) -> dict:
+    """DIAGNOSTIC_ONLY — CRY trophic cascade across kingdoms.
+
+    Models the CRY/RPM disruption cascade across trophic levels:
+    1. PLANTS: CRY2 → flowering/masting disruption (endogenous B2)
+    2. INSECTS: CRY → navigation/immunity (dietary B2 from plants)
+    3. BIRDS: CRY → magnetoreception (dietary B2 from insects)
+    4. MAMMALS: CRY → melatonin/HPG (dietary B2 from diet)
+
+    Each level has:
+    - CRY sensitivity to RF (RPM mechanism, universal)
+    - B2/FAD dependency (plants: none, animals: dietary)
+    - Trophic coupling to level below
+
+    Parameters
+    ----------
+    rf_power_density_mW_m2 : float
+        Ambient RF power density in mW/m².
+        Rural ~0.001, suburban ~0.1, urban ~1.0, near tower ~10.
+    geomag_lat_deg : float
+        Geomagnetic latitude in degrees (affects field strength).
+    b2_dietary_mg : float
+        Dietary riboflavin intake in mg/day (RDA = 1.3 mg).
+    solar_f107 : float
+        Solar radio flux index (quiet ~70, active ~200, max ~300).
+
+    Returns
+    -------
+    dict with keys:
+        trophic_levels : list of dicts per level
+        cascade_disruption : float (0-1, overall ecosystem CRY disruption)
+        rf_vs_solar : float (ratio of anthropogenic to natural RF)
+        b2_bottleneck_level : str (which trophic level is most B2-limited)
+    """
+    import numpy as np
+
+    # Geomagnetic field strength from latitude
+    B_eq = 30.0  # µT at equator
+    B_total = B_eq * np.sqrt(1 + 3 * np.sin(np.radians(geomag_lat_deg))**2)
+
+    # Larmor frequency for FAD radical pair
+    g_factor = 2.0023
+    mu_B = 9.274e-24  # J/T
+    hbar = 1.055e-34  # J·s
+    omega_L = g_factor * mu_B * (B_total * 1e-6) / hbar  # rad/s
+    f_larmor_MHz = omega_L / (2 * np.pi * 1e6)
+
+    # Solar contribution to RF background (natural)
+    # F10.7 in SFU → approximate ground-level contribution
+    solar_rf_natural = solar_f107 * 1e-5  # very rough: mW/m² equivalent
+
+    # Anthropogenic RF relative to natural
+    rf_ratio = rf_power_density_mW_m2 / max(solar_rf_natural, 1e-8)
+
+    # RPM disruption function: sigmoid based on RF power
+    # Ahmad 2020: 7 MHz at ~100 nT caused "relatively minor" effect
+    # Scale: half-max at ~0.1 mW/m²
+    def rpm_disruption(rf_mw_m2, sensitivity=1.0):
+        """Sigmoid CRY disruption from RF. Returns 0-1."""
+        rf_eff = rf_mw_m2 * sensitivity
+        return rf_eff / (rf_eff + 0.1)  # half-max at 0.1 mW/m²
+
+    # B2/FAD sufficiency factor (for animals only)
+    # RDA = 1.3 mg/day, half-max at 0.65
+    def b2_sufficiency(b2_mg):
+        return b2_mg / (b2_mg + 0.65)
+
+    # Trophic levels
+    levels = []
+
+    # Level 1: PLANTS (synthesize own B2)
+    plant_disruption = rpm_disruption(rf_power_density_mW_m2, sensitivity=0.3)
+    levels.append({
+        "level": 1,
+        "kingdom": "Plantae",
+        "organism_example": "Arabidopsis / European beech",
+        "cry_gene": "CRY2",
+        "function": "flowering / masting",
+        "b2_source": "endogenous (synthesized)",
+        "b2_factor": 1.0,
+        "rf_sensitivity": 0.3,
+        "cry_disruption": float(plant_disruption),
+        "note": "Ahmad 2020: 'relatively minor' = pure RPM test"
+    })
+
+    # Level 2: INSECTS (dietary B2 from plants)
+    insect_b2 = b2_sufficiency(b2_dietary_mg * 0.8)
+    insect_disruption = rpm_disruption(rf_power_density_mW_m2, sensitivity=0.7) * insect_b2
+    levels.append({
+        "level": 2,
+        "kingdom": "Insecta",
+        "organism_example": "Apis mellifera / Drosophila",
+        "cry_gene": "CRY1/CRY2",
+        "function": "navigation / immunity / circadian",
+        "b2_source": "dietary (from plants)",
+        "b2_factor": float(insect_b2),
+        "rf_sensitivity": 0.7,
+        "cry_disruption": float(insect_disruption),
+        "note": "Ferrari 2015: 2.7× colony losses near towers"
+    })
+
+    # Level 3: BIRDS (dietary B2 from insects + seeds)
+    bird_b2 = b2_sufficiency(b2_dietary_mg * 0.6)
+    bird_disruption = rpm_disruption(rf_power_density_mW_m2, sensitivity=1.0) * bird_b2
+    levels.append({
+        "level": 3,
+        "kingdom": "Aves",
+        "organism_example": "Erithacus rubecula / Sylvia atricapilla",
+        "cry_gene": "CRY4",
+        "function": "magnetoreception / migration",
+        "b2_source": "dietary (from insects + seeds)",
+        "b2_factor": float(bird_b2),
+        "rf_sensitivity": 1.0,
+        "cry_disruption": float(bird_disruption),
+        "note": "Rosenberg 2019: -3 billion birds in N. America"
+    })
+
+    # Level 4: MAMMALS (dietary B2 from mixed diet)
+    mammal_b2 = b2_sufficiency(b2_dietary_mg)
+    mammal_disruption = rpm_disruption(rf_power_density_mW_m2, sensitivity=0.5) * mammal_b2
+    levels.append({
+        "level": 4,
+        "kingdom": "Mammalia",
+        "organism_example": "Homo sapiens",
+        "cry_gene": "CRY1/CRY2",
+        "function": "melatonin → HPG → fertility",
+        "b2_source": "dietary (from mixed diet)",
+        "b2_factor": float(mammal_b2),
+        "rf_sensitivity": 0.5,
+        "cry_disruption": float(mammal_disruption),
+        "note": "CRY → melatonin → GnRH → sperm/oocyte"
+    })
+
+    # Overall cascade disruption (geometric mean)
+    disruptions = [l["cry_disruption"] for l in levels]
+    cascade = float(np.prod(disruptions) ** (1/len(disruptions)))
+
+    # Find most B2-limited level
+    b2_factors = [(l["kingdom"], l["b2_factor"]) for l in levels]
+    b2_bottleneck = min(b2_factors, key=lambda x: x[1])
+
+    return {
+        "trophic_levels": levels,
+        "cascade_disruption": cascade,
+        "rf_vs_solar_ratio": float(rf_ratio),
+        "f_larmor_MHz": float(f_larmor_MHz),
+        "B_total_uT": float(B_total),
+        "b2_bottleneck_level": b2_bottleneck[0],
+        "warning": "DIAGNOSTIC_ONLY: sensitivity values are illustrative, not calibrated"
+    }

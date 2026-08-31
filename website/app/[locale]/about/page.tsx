@@ -30,6 +30,7 @@ type Copy = {
   authorName: string;
   authorDegrees: readonly string[];
   authorIndependence: string;
+  authorContact: string;
 };
 
 const t: Record<string, Copy> = {
@@ -97,6 +98,7 @@ const t: Record<string, Copy> = {
       "BA Political Science — University of Helsinki",
     ],
     authorIndependence: "Independent researcher. No university affiliation, no industry funding, no grant obligations.",
+    authorContact: "Contact: otto.o.juote@proton.me",
   },
   fi: {
     title: "Tietoa BERM:stä",
@@ -162,6 +164,7 @@ const t: Record<string, Copy> = {
       "VTK Yleinen valtio-oppi — Helsingin yliopisto",
     ],
     authorIndependence: "Itsenäinen tutkija. Ei yliopistosidonnaisuutta, ei teollisuusrahoitusta, ei apurahavelvoitteita.",
+    authorContact: "Yhteydenotto: otto.o.juote@proton.me",
   },
   ja: {
     title: "BERMについて",
@@ -227,6 +230,7 @@ const t: Record<string, Copy> = {
       "BA 政治学 — University of Helsinki",
     ],
     authorIndependence: "独立研究者。大学所属なし、産業資金なし、助成金義務なし。",
+    authorContact: "連絡先: otto.o.juote@proton.me",
   },
   fr: {
     title: "À propos de BERM",
@@ -292,6 +296,7 @@ const t: Record<string, Copy> = {
       "BA Sciences politiques — University of Helsinki",
     ],
     authorIndependence: "Chercheur indépendant. Aucune affiliation universitaire, aucun financement industriel, aucune obligation de subvention.",
+    authorContact: "Contact : otto.o.juote@proton.me",
   },
   ko: {
     title: "BERM에 대하여",
@@ -357,6 +362,7 @@ const t: Record<string, Copy> = {
       "BA 정치학 — University of Helsinki",
     ],
     authorIndependence: "독립 연구자. 대학 소속 없음, 산업 자금 없음, 보조금 의무 없음.",
+    authorContact: "연락처: otto.o.juote@proton.me",
   },
 };
 
@@ -448,6 +454,10 @@ export default async function AboutPage({
                 {d.authorDegrees.map((deg) => <li key={deg}>{deg}</li>)}
               </ul>
               <p className="text-sm text-foreground-muted leading-relaxed">{d.authorIndependence}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed">
+                {d.authorContact.split("otto.o.juote@proton.me")[0]}
+                <a href="mailto:otto.o.juote@proton.me" className="text-accent hover:underline">otto.o.juote@proton.me</a>
+              </p>
             </div>
           </div>
         </section>
