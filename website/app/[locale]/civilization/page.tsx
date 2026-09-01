@@ -789,6 +789,49 @@ const COPY = {
       { year: "~2040", from: "Manistic", to: "Zoistic", trigger: "Melatonin (PGC + LED → permanent capacity loss)", evidence: "PREDICTION — falsifiable: if the West shows recovery in the 2030s → wrong" },
     ],
 
+    sPoliticalTitle: "Political Pathology",
+    sPoliticalDesc: "Political orientation is a phenotypic expression of biomarker state. The distance from pre-industrial endocrine baseline — the pathologization index — quantifies how far an ideology has been displaced by EMF-induced biomarker disruption.",
+    sPoliticalEnvTitle: "EMF Environment → Political Output (2025)",
+    sPoliticalColEnv: "Environment", sPoliticalColEmf: "EMF", sPoliticalColBiocap: "BioCap", sPoliticalColIdeology: "Ideology", sPoliticalColPatholog: "Pathol.",
+    sPoliticalEnvs: [
+      { env: "Amish", emf: "0.05×", biocap: "0.855", ideology: "Pragmatic Localism", patholog: "0.011" },
+      { env: "Rural", emf: "0.40×", biocap: "0.631", ideology: "Pragmatic Localism", patholog: "0.258" },
+      { env: "Suburban", emf: "1.00×", biocap: "0.514", ideology: "Green Abstraction", patholog: "0.369" },
+      { env: "Urban", emf: "1.40×", biocap: "0.436", ideology: "Progressive Egalitarianism", patholog: "0.443" },
+      { env: "Urban Office", emf: "1.80×", biocap: "0.380", ideology: "Progressive Egalitarianism", patholog: "0.495" },
+    ],
+    sPoliticalPolarization: "Polarization index 0.237. The same genome, separated by postal code, produces different political output. This is not a conflict of values — it is a gradient of endocrine disruption.",
+    sPoliticalIdeologyTitle: "Ideology as Biological Strategy",
+    sPoliticalIdeologies: [
+      { name: "Pragmatic Localism", patholog: "0.011", desc: "Natural baseline. Strong local hierarchy, low paranoia, innovation within tradition. Not ideological — functional." },
+      { name: "Green Abstraction", patholog: "0.369", desc: "BDNF-dependent abstract concern for non-immediate threats. Requires high cognitive complexity and long time preference. Fragmenting as substrate declines." },
+      { name: "Progressive Egalitarianism", patholog: "0.443–0.495", desc: "Low-T competitive strategy: delegitimize hierarchy when unable to compete within it. Expanded threat definitions (CORT) reframed as moral sensitivity." },
+      { name: "Authoritarian Conservatism", patholog: "0.460", desc: "Residual hierarchy maintenance under elevated threat. Insufficient T for organic dominance — relies on external enforcement (state, religion, punishment)." },
+      { name: "Populism", patholog: "high", desc: "Cognitive capacity below institutional complexity threshold. Not a movement — the biological default when BDNF + DA drop below multi-causal reasoning floor." },
+      { name: "Libertarianism", patholog: "variable", desc: "Residual high-DA phenotype. Risk-tolerant, low conformity. Shrinking demographic base as population DA drops." },
+    ],
+    sPoliticalTrajectoryTitle: "Suburban Trajectory: 1950–2050",
+    sPoliticalColYear: "Year",
+    sPoliticalTrajectoryDesc: "Ideology shifts not because people change their minds, but because the endocrine substrate that produces their opinions changes.",
+    sPoliticalTrajectory: [
+      { year: "1950", ideology: "Pragmatic Localism", biocap: "0.876", patholog: "0.040" },
+      { year: "1990", ideology: "Pragmatic Localism", biocap: "0.761", patholog: "0.108" },
+      { year: "2010", ideology: "Green Abstraction", biocap: "0.622", patholog: "0.256" },
+      { year: "2025", ideology: "Green Abstraction", biocap: "0.514", patholog: "0.369" },
+      { year: "2050", ideology: "Auth. Conservatism", biocap: "0.425", patholog: "0.460" },
+    ],
+    sPoliticalLitTitle: "Literature",
+    sPoliticalLit: [
+      "Welling 2025 RCT (N=136): exogenous T shifts Democrats conservative. Direct causal evidence.",
+      "Petersen 2013 (N=12k, 17 countries): T → rejection of wealth redistribution.",
+      "Oxley 2008 (N=46): heightened threat sensitivity → conservative attitudes.",
+      "De Dreu 2011 (N=280): OXT increases in-group favoritism AND out-group derogation simultaneously.",
+      "Settle 2010 (N=2,574): DRD4-7R → political liberalism via novelty-seeking.",
+      "Bratsberg 2018 (N=730k): Flynn effect reversal — IQ declining post-1975.",
+      "Mehta & Josephs 2010 (meta N=8,538): dual-hormone hypothesis. Chronic CORT suppresses T-driven dominance.",
+    ],
+    sPoliticalConclusion: "The model predicts urban-rural polarization is a gradient of endocrine disruption, not a conflict of values. No political dialogue resolves this — it requires environmental intervention.",
+
     s10title: "Epistemic Boundaries",
     s10claims: [
       "Seven RCTs establish causal links between testosterone and specific behaviors in men.",
@@ -1622,6 +1665,49 @@ const COPY = {
       { year: "~2015", from: "Deistinen", to: "Manistinen", trigger: "Testosteronin kriittinen kynnys saavutettu", evidence: "Populismi, pronatalismien epäonnistuminen, yksinäisyysepidemia, 'failure to launch', Brexit/Trump" },
       { year: "~2040", from: "Manistinen", to: "Zoistinen", trigger: "Melatoniini (PGC + LED → pysyvä kapasiteettitappio)", evidence: "ENNUSTE — falsifioitavissa: jos länsi osoittaa palautumista 2030-luvulla → väärä" },
     ],
+
+    sPoliticalTitle: "Poliittinen patologia",
+    sPoliticalDesc: "Poliittinen orientaatio on biomarkkeritilan fenotyyppinen ilmentymä. Etäisyys esiteollisesta endokriinisesta peruslinjasta — patologisaatioindeksi — kvantifioi, kuinka kauas ideologia on siirtynyt EMF-indusoidun biomarkkerihäiriön seurauksena.",
+    sPoliticalEnvTitle: "EMF-ympäristö → Poliittinen tuotos (2025)",
+    sPoliticalColEnv: "Ympäristö", sPoliticalColEmf: "EMF", sPoliticalColBiocap: "BioCap", sPoliticalColIdeology: "Ideologia", sPoliticalColPatholog: "Patol.",
+    sPoliticalEnvs: [
+      { env: "Amish", emf: "0,05×", biocap: "0,855", ideology: "Pragmaattinen lokalismi", patholog: "0,011" },
+      { env: "Maaseutu", emf: "0,40×", biocap: "0,631", ideology: "Pragmaattinen lokalismi", patholog: "0,258" },
+      { env: "Esikaupunki", emf: "1,00×", biocap: "0,514", ideology: "Vihreä abstraktio", patholog: "0,369" },
+      { env: "Kaupunki", emf: "1,40×", biocap: "0,436", ideology: "Progressiivinen egalitarismi", patholog: "0,443" },
+      { env: "Kaupunki (toimisto)", emf: "1,80×", biocap: "0,380", ideology: "Progressiivinen egalitarismi", patholog: "0,495" },
+    ],
+    sPoliticalPolarization: "Polarisaatioindeksi 0,237. Sama genomi, erotettuna postinumerolla, tuottaa eri poliittisen tuotoksen. Tämä ei ole arvojen konflikti — se on endokriinisen häiriön gradientti.",
+    sPoliticalIdeologyTitle: "Ideologia biologisena strategiana",
+    sPoliticalIdeologies: [
+      { name: "Pragmaattinen lokalismi", patholog: "0,011", desc: "Luonnollinen peruslinja. Vahva paikallinen hierarkia, matala paranoia, innovaatio tradition sisällä. Ei ideologinen — funktionaalinen." },
+      { name: "Vihreä abstraktio", patholog: "0,369", desc: "BDNF-riippuvainen abstrakti huoli ei-välittömistä uhkista. Vaatii korkean kognitiivisen kompleksisuuden ja pitkän aikapreferenssin. Fragmentoituu substraatin heikentyessä." },
+      { name: "Progressiivinen egalitarismi", patholog: "0,443–0,495", desc: "Matalan T:n kilpailustrategia: delegitimoi hierarkia, kun ei kykene kilpailemaan sen sisällä. Laajennetut uhkamääritelmät uudelleenkehystetty moraalisena herkkyytenä." },
+      { name: "Autoritaarinen konservatismi", patholog: "0,460", desc: "Jäännöshierarkian ylläpito kohonneen uhkavasteen alla. Riittämätön T orgaaniseen dominanssiin — turvautuu ulkoiseen pakotukseen (valtio, uskonto, rangaistus)." },
+      { name: "Populismi", patholog: "korkea", desc: "Kognitiivinen kapasiteetti alle institutionaalisen kompleksisuuden kynnyksen. Ei liike — biologinen oletus, kun BDNF + DA putoavat monisyisen päättelyn lattian alle." },
+      { name: "Libertarismi", patholog: "vaihteleva", desc: "Jäännöksellinen korkean DA:n fenotyyppi. Riskinsietokykyinen, matala konformismi. Kutistuva demografinen pohja DA:n laskiessa." },
+    ],
+    sPoliticalTrajectoryTitle: "Esikaupunkien trajektori: 1950–2050",
+    sPoliticalColYear: "Vuosi",
+    sPoliticalTrajectoryDesc: "Ideologia vaihtuu ei siksi, että ihmiset muuttavat mielensä, vaan siksi, että endokriininen substraatti joka tuottaa heidän mielipiteensä muuttuu.",
+    sPoliticalTrajectory: [
+      { year: "1950", ideology: "Pragmaattinen lokalismi", biocap: "0,876", patholog: "0,040" },
+      { year: "1990", ideology: "Pragmaattinen lokalismi", biocap: "0,761", patholog: "0,108" },
+      { year: "2010", ideology: "Vihreä abstraktio", biocap: "0,622", patholog: "0,256" },
+      { year: "2025", ideology: "Vihreä abstraktio", biocap: "0,514", patholog: "0,369" },
+      { year: "2050", ideology: "Aut. konservatismi", biocap: "0,425", patholog: "0,460" },
+    ],
+    sPoliticalLitTitle: "Kirjallisuus",
+    sPoliticalLit: [
+      "Welling 2025 RCT (N=136): eksogeeninen T siirtää demokraatteja konservatiivisemmaksi. Suora kausaalievidenssi.",
+      "Petersen 2013 (N=12k, 17 maata): T → varallisuuden uudelleenjaon hylkääminen.",
+      "Oxley 2008 (N=46): kohonnut uhkaherkkyys → konservatiiviset asenteet.",
+      "De Dreu 2011 (N=280): OXT lisää sisäryhmäsuosintaa JA ulkoryhmän halveksuntaa samanaikaisesti.",
+      "Settle 2010 (N=2 574): DRD4-7R → poliittinen liberalismi uutuudenhaun kautta.",
+      "Bratsberg 2018 (N=730k): Flynn-efektin kääntyminen — ÄO laskee vuodesta 1975.",
+      "Mehta & Josephs 2010 (meta N=8 538): kaksoishormonihypoteesi. Krooninen CORT tukahduttaa T-käyttöisen dominanssin.",
+    ],
+    sPoliticalConclusion: "Malli ennustaa, että kaupunki–maaseutu-polarisaatio on endokriinisen häiriön gradientti, ei arvojen konflikti. Mikään poliittinen dialogi ei ratkaise tätä — se vaatii ympäristöintervention.",
 
     s10title: "Episteemiset rajat",
     s10claims: [
@@ -5222,6 +5308,106 @@ export default async function CivilizationPage({
           {d.sCulturalSensConclusion && (
             <p className="text-sm text-foreground-muted leading-relaxed">{d.sCulturalSensConclusion}</p>
           )}
+        </div>
+        )}
+      </section>
+      )}
+
+      {/* Political Pathology */}
+      {d.sPoliticalEnvs?.length > 0 && (
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold mb-4">{d.sPoliticalTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-8">{d.sPoliticalDesc}</p>
+
+        <div className="mb-10">
+          <h3 className="text-lg font-semibold mb-4">{d.sPoliticalEnvTitle}</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-card-border">
+                  <th className="text-left py-2 px-3 font-semibold">{d.sPoliticalColEnv}</th>
+                  <th className="text-left py-2 px-3 font-semibold">{d.sPoliticalColEmf}</th>
+                  <th className="text-left py-2 px-3 font-semibold">{d.sPoliticalColBiocap}</th>
+                  <th className="text-left py-2 px-3 font-semibold">{d.sPoliticalColIdeology}</th>
+                  <th className="text-left py-2 px-3 font-semibold">{d.sPoliticalColPatholog}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.sPoliticalEnvs.map((e: any) => (
+                  <tr key={e.env} className="border-b border-card-border/50">
+                    <td className="py-2 px-3 font-mono text-xs">{e.env}</td>
+                    <td className="py-2 px-3 font-mono text-xs">{e.emf}</td>
+                    <td className="py-2 px-3 font-mono text-xs">{e.biocap}</td>
+                    <td className="py-2 px-3 text-xs font-semibold">{e.ideology}</td>
+                    <td className="py-2 px-3 font-mono text-xs">{e.patholog}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-foreground-muted mt-4 italic">{d.sPoliticalPolarization}</p>
+        </div>
+
+        {d.sPoliticalIdeologies?.length > 0 && (
+        <div className="mb-10">
+          <h3 className="text-lg font-semibold mb-4">{d.sPoliticalIdeologyTitle}</h3>
+          <div className="space-y-3">
+            {d.sPoliticalIdeologies.map((ideo: any) => (
+              <div key={ideo.name} className="rounded-lg border border-card-border bg-card-bg p-4">
+                <div className="flex items-baseline gap-3 mb-1">
+                  <span className="font-semibold text-sm">{ideo.name}</span>
+                  <span className="font-mono text-xs text-foreground-muted">pathol. {ideo.patholog}</span>
+                </div>
+                <p className="text-xs text-foreground-muted">{ideo.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        )}
+
+        {d.sPoliticalTrajectory?.length > 0 && (
+        <div className="mb-10">
+          <h3 className="text-lg font-semibold mb-2">{d.sPoliticalTrajectoryTitle}</h3>
+          <p className="text-sm text-foreground-muted mb-4">{d.sPoliticalTrajectoryDesc}</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-card-border">
+                  <th className="text-left py-2 px-3 font-semibold">{d.sPoliticalColYear}</th>
+                  <th className="text-left py-2 px-3 font-semibold">{d.sPoliticalColIdeology}</th>
+                  <th className="text-left py-2 px-3 font-semibold">{d.sPoliticalColBiocap}</th>
+                  <th className="text-left py-2 px-3 font-semibold">{d.sPoliticalColPatholog}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {d.sPoliticalTrajectory.map((t: any) => (
+                  <tr key={t.year} className="border-b border-card-border/50">
+                    <td className="py-2 px-3 font-mono text-xs font-bold">{t.year}</td>
+                    <td className="py-2 px-3 text-xs font-semibold">{t.ideology}</td>
+                    <td className="py-2 px-3 font-mono text-xs">{t.biocap}</td>
+                    <td className="py-2 px-3 font-mono text-xs">{t.patholog}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        )}
+
+        {d.sPoliticalLit?.length > 0 && (
+        <div className="mb-10">
+          <h3 className="text-lg font-semibold mb-3">{d.sPoliticalLitTitle}</h3>
+          <ul className="space-y-1">
+            {d.sPoliticalLit.map((ref: string, i: number) => (
+              <li key={i} className="text-xs text-foreground-muted">{ref}</li>
+            ))}
+          </ul>
+        </div>
+        )}
+
+        {d.sPoliticalConclusion && (
+        <div className="rounded-xl border border-yellow-500/30 bg-yellow-500/5 p-5">
+          <p className="text-sm leading-relaxed">{d.sPoliticalConclusion}</p>
         </div>
         )}
       </section>

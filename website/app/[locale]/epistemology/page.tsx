@@ -171,6 +171,44 @@ const COPY = {
       "PEMF validation: if PEMF works THROUGH Ca²⁺ channels, this CONFIRMS that EMF affects biology through Ca²⁺ channels — which is BERM's core claim",
       "The paradox dissolves: PEMF is not an exception to BERM, it is a confirmation",
     ],
+    zapffeTitle: "Zapffe Recursion: The Model Predicts Its Own Rejection",
+    zapffeLead: "Peter Wessel Zapffe (1933) identified four mechanisms by which consciousness suppresses intolerable knowledge: isolation (compartmentalization), anchoring (value fixation), distraction (attention displacement), sublimation (aesthetic reframing). BERM predicts that its own reception will follow these mechanisms — not because audiences are irrational, but because EMF-degraded cognitive substrates produce these responses automatically.",
+    zapffeItems: [
+      { mechanism: "Isolation", score: "0.544", desc: "Urban cognitive complexity is below the model evaluation threshold (0.70). The model requires multi-causal reasoning across physics, biology, endocrinology, and epidemiology. The urban substrate cannot sustain this integration." },
+      { mechanism: "Anchoring", score: "0.714", desc: "Group conformity increases with EMF exposure. Institutional consensus functions as an anchor — departing from it triggers cortisol-mediated threat response, not rational evaluation." },
+      { mechanism: "Distraction", score: "0.443", desc: "Novelty-seeking declines with DA reduction. The capacity to engage with paradigm-challenging information requires DA-driven exploratory behavior that the urban environment suppresses." },
+      { mechanism: "Sublimation", score: "0.311", desc: "Empathy scope narrows under EMF stress. Abstract concern for species-level consequences requires wide empathy scope that urban biomarker profiles cannot support." },
+    ],
+    zapffeConclusion: "The recursion is complete: the model predicts that urban populations lack the cognitive substrate to evaluate the model. This is not an unfalsifiable escape clause — it generates a testable prediction: Amish and rural populations (cognitive complexity > 0.70) should evaluate the model more accurately than urban populations, independent of education level.",
+
+    paradigmTitle: "Paradigm Blindness: Four Frameworks That Cannot See EMF",
+    paradigmLead: "Each dominant intellectual framework has structural reasons to reject biological determinism of political orientation. These are not arguments — they are consequences of the framework's axioms.",
+    paradigmItems: [
+      { framework: "Social Constructivism", blind: "All categories are socially constructed → biological substrates cannot determine social outcomes. The framework cannot accommodate a mechanism that operates below the level of social construction.", strategy: "Reclassify as 'biological essentialism' — a category that is rejected by axiom, not by evidence." },
+      { framework: "Progressive Liberalism", blind: "Individual autonomy is the foundational premise. If political orientation is a phenotypic expression of biomarker state, autonomy is an illusion produced by the endocrine system, not a property of the agent.", strategy: "Invoke 'determinism' as a reductio ad absurdum. The model is rejected not because it is wrong but because accepting it would collapse the framework." },
+      { framework: "Marxism", blind: "Material conditions determine consciousness — but the material conditions are economic, not biological. EMF as a material determinant would subsume class analysis under biochemistry.", strategy: "Classify as 'biologism' — a capitalist mystification that obscures class relations." },
+      { framework: "Traditionalism", blind: "Values are transcendent or divinely ordained. If they are downstream of testosterone and cortisol, the sacred order is an endocrine artifact.", strategy: "Reject as materialist reductionism. The framework requires that values precede biology, not follow from it." },
+    ],
+    paradigmConclusion: "No dominant framework can assimilate this model without self-destruction. This is not a flaw in the model — it is a prediction. The model predicts that it will be rejected by all established paradigms, each for reasons internal to the paradigm rather than based on the evidence.",
+
+    contingencyTitle: "Political Contingency",
+    contingencyLead: "Democracy presupposes that political orientation is a product of rational deliberation among autonomous agents. The model predicts it is a phenotypic expression of biomarker state modulated by EMF environment.",
+    contingencyItems: [
+      { claim: "Values are chosen", model: "Values are produced by endocrine state. T level predicts redistribution preference (Petersen 2013, N=12k). OXT level predicts in-group/out-group boundary (De Dreu 2011, N=280)." },
+      { claim: "Political debate changes minds", model: "Debate changes cortisol levels. The 'persuaded' voter has not changed values — their threat response has been activated or suppressed." },
+      { claim: "Education produces better citizens", model: "Urban education occurs in high-EMF environments. Cognitive complexity at 0.544 (urban) vs 0.964 (Amish). Education adds information to a degraded substrate." },
+      { claim: "Polarization is a failure of dialogue", model: "Polarization index 0.237 is a direct function of the EMF gradient between urban and rural environments. The same genome produces different politics based on postal code." },
+    ],
+    contingencyConclusion: "If even 20% of political orientation is determined by EMF-modulated biomarker state, then 20% of political conflict is a medical problem, not a political one. This is the fraction that is fixable without political dialogue.",
+
+    predictionsTitle: "Testable Predictions",
+    predictionItems: [
+      "Amish populations evaluate novel scientific frameworks more accurately than urban populations matched for IQ and education — because cognitive complexity (0.964) exceeds the model evaluation threshold (0.70).",
+      "Urban-to-rural migration produces measurable political orientation shift within 12–24 months — tracking biomarker recovery, not social influence.",
+      "Testosterone supplementation in urban males shifts political orientation toward hierarchy acceptance and reduced redistribution preference — replicating Welling 2025 (N=136) in a larger sample.",
+      "Melatonin supplementation improves time preference and reduces threat sensitivity — independent of sleep quality gains.",
+    ],
+
     testLabel: "Test",
     consequenceLabel: "Consequence",
     severityLabel: "Severity",
@@ -344,6 +382,44 @@ const COPY = {
       "PEMF-todentaminen: jos PEMF toimii Ca²⁺-kanavien KAUTTA, tämä VAHVISTAA, että EMF vaikuttaa biologiaan Ca²⁺-kanavien kautta — mikä on BERM:n ydinväite",
       "Paradoksi liukenee: PEMF ei ole poikkeus BERM:stä, se on vahvistus",
     ],
+    zapffeTitle: "Zapffe-rekursio: Malli ennustaa oman hylkäämisensä",
+    zapffeLead: "Peter Wessel Zapffe (1933) tunnisti neljä mekanismia, joilla tietoisuus tukahduttaa sietämätöntä tietoa: eristäminen (kompartmentalisointi), ankkurointi (arvofiksaatio), harhauttaminen (huomion siirtäminen), sublimaatio (esteettinen uudelleenkehystys). BERM ennustaa, että mallin vastaanotto noudattaa näitä mekanismeja — ei siksi, että yleisöt olisivat irrationaalisia, vaan koska EMF-heikentyneet kognitiiviset substraatit tuottavat nämä vasteet automaattisesti.",
+    zapffeItems: [
+      { mechanism: "Eristäminen", score: "0,544", desc: "Kaupunkien kognitiivinen kompleksisuus on alle mallin arviointikynnyksen (0,70). Malli vaatii monisyistä päättelyä fysiikan, biologian, endokrinologian ja epidemiologian yli. Kaupunkisubstraatti ei kykene ylläpitämään tätä integraatiota." },
+      { mechanism: "Ankkurointi", score: "0,714", desc: "Ryhmäkonformismi kasvaa EMF-altistuksen myötä. Institutionaalinen konsensus toimii ankkurina — siitä poikkeaminen laukaisee kortisoli-välitteisen uhkavasteen, ei rationaalista arviointia." },
+      { mechanism: "Harhauttaminen", score: "0,443", desc: "Uutuudenhaku vähenee DA:n pienentyessä. Kyky käsitellä paradigmaa haastavaa informaatiota vaatii DA-käyttöistä eksploratiivista käyttäytymistä, jonka kaupunkiympäristö tukahduttaa." },
+      { mechanism: "Sublimaatio", score: "0,311", desc: "Empatian laajuus kapenee EMF-stressin alla. Abstrakti huoli lajitason seurauksista vaatii laajaa empatian laajuutta, jota kaupunkien biomarkkeriprofiili ei kykene tukemaan." },
+    ],
+    zapffeConclusion: "Rekursio on täydellinen: malli ennustaa, että kaupunkiväestöillä ei ole kognitiivista substraattia mallin arvioimiseen. Tämä ei ole falsifioimaton pakolauseke — se tuottaa testattavan ennusteen: amish- ja maaseutuväestöjen (kognitiivinen kompleksisuus > 0,70) tulisi arvioida mallia tarkemmin kuin kaupunkiväestöjen, koulutustasosta riippumatta.",
+
+    paradigmTitle: "Paradigmasokeus: Neljä viitekehystä jotka eivät voi nähdä EMF:ää",
+    paradigmLead: "Jokaisella hallitsevalla älyllisellä viitekehyksellä on rakenteellisia syitä hylätä poliittisen orientaation biologinen determinismi. Nämä eivät ole argumentteja — ne ovat viitekehyksen aksioomien seurauksia.",
+    paradigmItems: [
+      { framework: "Sosiaalinen konstruktionismi", blind: "Kaikki kategoriat ovat sosiaalisesti rakentuneita → biologiset substraatit eivät voi määrätä sosiaalisia tuloksia. Viitekehys ei voi sisällyttää mekanismia, joka toimii sosiaalisen rakentumisen tason alapuolella.", strategy: "Uudelleenluokittelu 'biologiseksi essentialismiksi' — kategoria, joka hylätään aksiooman, ei evidenssin perusteella." },
+      { framework: "Progressiivinen liberalismi", blind: "Yksilön autonomia on perustavanlaatuinen premissi. Jos poliittinen orientaatio on biomarkkeritilan fenotyyppinen ilmentymä, autonomia on endokriinijärjestelmän tuottama illuusio, ei agentin ominaisuus.", strategy: "Vedotaan 'determinismiin' reductio ad absurdum -argumenttina. Malli hylätään ei siksi, että se on väärässä, vaan koska sen hyväksyminen romahduttaisi viitekehyksen." },
+      { framework: "Marxilaisuus", blind: "Materiaaliset olosuhteet määräävät tietoisuuden — mutta materiaaliset olosuhteet ovat taloudellisia, eivät biologisia. EMF materiaalisena determinanttina alistaisi luokka-analyysin biokemialle.", strategy: "Luokittelu 'biologismiksi' — kapitalistinen mystifikaatio, joka peittää luokkasuhteet." },
+      { framework: "Traditionalismi", blind: "Arvot ovat transsendentteja tai jumalallisesti säädettyjä. Jos ne ovat testosteronin ja kortisolin alavirran tuotteita, pyhä järjestys on endokriininen artefakti.", strategy: "Hylkääminen materialistisena reduktionismina. Viitekehys vaatii, että arvot edeltävät biologiaa, eivät seuraa siitä." },
+    ],
+    paradigmConclusion: "Mikään hallitseva viitekehys ei voi assimiloida tätä mallia ilman itsetuhoa. Tämä ei ole mallin vika — se on ennuste. Malli ennustaa, että kaikki vakiintuneet paradigmat hylkäävät sen, kukin viitekehyksen sisäisistä syistä evidenssin sijaan.",
+
+    contingencyTitle: "Poliittinen kontingenssi",
+    contingencyLead: "Demokratia edellyttää, että poliittinen orientaatio on autonomisten agenttien rationaalisen harkinnan tuote. Malli ennustaa, että se on EMF-ympäristön moduloiman biomarkkeritilan fenotyyppinen ilmentymä.",
+    contingencyItems: [
+      { claim: "Arvot valitaan", model: "Arvot tuottaa endokriininen tila. T-taso ennustaa uudelleenjakopreferenssin (Petersen 2013, N=12k). OXT-taso ennustaa sisä-/ulkoryhmärajan (De Dreu 2011, N=280)." },
+      { claim: "Poliittinen keskustelu muuttaa mieliä", model: "Keskustelu muuttaa kortisolituotantoa. 'Vakuutettu' äänestäjä ei ole muuttanut arvojaan — hänen uhkavaste on aktivoitu tai tukahdutettu." },
+      { claim: "Koulutus tuottaa parempia kansalaisia", model: "Kaupunkikoulutus tapahtuu korkean EMF:n ympäristöissä. Kognitiivinen kompleksisuus 0,544 (kaupunki) vs. 0,964 (amish). Koulutus lisää informaatiota heikentyneeseen substraattiin." },
+      { claim: "Polarisaatio on dialogin epäonnistumista", model: "Polarisaatioindeksi 0,237 on suora funktio kaupunki- ja maaseutuympäristöjen EMF-gradientista. Sama genomi tuottaa eri politiikan postinumeron perusteella." },
+    ],
+    contingencyConclusion: "Jos edes 20 % poliittisesta orientaatiosta määräytyy EMF-moduloidun biomarkkeritilan perusteella, 20 % poliittisesta konfliktista on lääketieteellinen ongelma, ei poliittinen. Tämä on osuus, joka on korjattavissa ilman poliittista dialogia.",
+
+    predictionsTitle: "Testattavat ennusteet",
+    predictionItems: [
+      "Amish-väestöt arvioivat uusia tieteellisiä viitekehyksiä tarkemmin kuin kaupunkiväestöt, jotka on kalibroitu ÄO:lla ja koulutuksella — koska kognitiivinen kompleksisuus (0,964) ylittää mallin arviointikynnyksen (0,70).",
+      "Kaupungista maaseudulle muutto tuottaa mitattavan poliittisen orientaation muutoksen 12–24 kuukaudessa — seuraten biomarkkerien palautumista, ei sosiaalista vaikutusta.",
+      "Testosteronilisä kaupunkimiehillä siirtää poliittista orientaatiota hierarkian hyväksymisen ja vähentyneen uudelleenjakopreferenssin suuntaan — replikoiden Wellingin 2025 (N=136) suuremmassa otoksessa.",
+      "Melatoniinilisä parantaa aikapreferenssiä ja vähentää uhkaherkkyyttä — riippumatta unenlaadun paranemisesta.",
+    ],
+
     testLabel: "Testi",
     consequenceLabel: "Seuraus",
     severityLabel: "Vakavuus",
@@ -1167,6 +1243,86 @@ export default async function EpistemologyPage({
           </div>
         </div>
       </section>
+
+      {/* Zapffe Recursion */}
+      {d.zapffeItems?.length > 0 && (
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-3">{d.zapffeTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6">{d.zapffeLead}</p>
+        <div className="grid sm:grid-cols-2 gap-4 mb-6">
+          {d.zapffeItems.map((z: any) => (
+            <div key={z.mechanism} className="rounded-lg border border-card-border bg-card-bg p-4">
+              <div className="flex items-baseline gap-3 mb-2">
+                <span className="font-semibold text-sm">{z.mechanism}</span>
+                <span className="font-mono text-xs text-foreground-muted">{z.score}</span>
+              </div>
+              <p className="text-xs text-foreground-muted leading-relaxed">{z.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-xl border border-yellow-500/30 bg-yellow-500/5 p-5">
+          <p className="text-sm leading-relaxed">{d.zapffeConclusion}</p>
+        </div>
+      </section>
+      )}
+
+      {/* Paradigm Blindness */}
+      {d.paradigmItems?.length > 0 && (
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-3">{d.paradigmTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6">{d.paradigmLead}</p>
+        <div className="space-y-4 mb-6">
+          {d.paradigmItems.map((p: any) => (
+            <div key={p.framework} className="rounded-lg border border-card-border bg-card-bg p-4">
+              <h3 className="font-semibold text-sm mb-2">{p.framework}</h3>
+              <p className="text-xs text-foreground-muted leading-relaxed mb-2">{p.blind}</p>
+              <p className="text-xs text-foreground-muted leading-relaxed italic">{p.strategy}</p>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-5">
+          <p className="text-sm leading-relaxed">{d.paradigmConclusion}</p>
+        </div>
+      </section>
+      )}
+
+      {/* Political Contingency */}
+      {d.contingencyItems?.length > 0 && (
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-3">{d.contingencyTitle}</h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6">{d.contingencyLead}</p>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-sm border-collapse">
+            <tbody>
+              {d.contingencyItems.map((c: any, i: number) => (
+                <tr key={i} className="border-b border-card-border/50">
+                  <td className="py-3 px-3 text-xs font-semibold align-top w-1/3">{c.claim}</td>
+                  <td className="py-3 px-3 text-xs text-foreground-muted align-top">{c.model}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="rounded-xl border border-yellow-500/30 bg-yellow-500/5 p-5">
+          <p className="text-sm leading-relaxed">{d.contingencyConclusion}</p>
+        </div>
+      </section>
+      )}
+
+      {/* Testable Predictions */}
+      {d.predictionItems?.length > 0 && (
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">{d.predictionsTitle}</h2>
+        <div className="space-y-3">
+          {d.predictionItems.map((pred: string, i: number) => (
+            <div key={i} className="rounded-lg border border-card-border bg-card-bg p-4 flex gap-3">
+              <span className="font-mono text-xs font-bold text-foreground-muted shrink-0">{i + 1}.</span>
+              <p className="text-xs text-foreground-muted leading-relaxed">{pred}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      )}
     </div>
   );
 }
