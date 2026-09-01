@@ -19,6 +19,7 @@ from berm.civilization.political_biology import (
     BINDING_FOUNDATIONS,
     DIMENSION_FUNCTIONS,
     ENVIRONMENTS,
+    FOUNDATION_VULNERABILITY,
     IDEOLOGY_PROFILES,
     INDIVIDUALIZING_FOUNDATIONS,
     MORAL_FOUNDATION_FUNCTIONS,
@@ -32,12 +33,14 @@ from berm.civilization.political_biology import (
     environment_comparison,
     environment_profile,
     fairness_reciprocity,
+    foundation_collapse_order,
     group_conformity,
     hierarchy_acceptance,
     ideology_trajectory,
     liberty_autonomy,
     loyalty_betrayal,
     moral_breadth,
+    moral_distress_index,
     moral_foundations_profile,
     novelty_seeking,
     orientation_profile,
@@ -790,3 +793,137 @@ class TestMoralFoundationsLiterature:
         assert "moral_breadth" in p
         assert len(p["moral_foundations"]) == 6
         assert "active_count" in p["moral_breadth"]
+
+
+# ── Collapse hierarchy tests ──
+
+
+class TestFoundationCollapseOrder:
+    """Verify that foundations collapse in the predicted order."""
+
+    def test_returns_all_six_foundations(self):
+        order = foundation_collapse_order()
+        foundations = [r["foundation"] for r in order]
+        assert len(foundations) == 6
+        assert set(foundations) == set(MORAL_FOUNDATION_FUNCTIONS.keys())
+
+    def test_sanctity_most_vulnerable(self):
+        """Sanctity should be rank 1 (first to collapse)."""
+        order = foundation_collapse_order()
+        assert order[0]["foundation"] == "sanctity"
+        assert order[0]["rank"] == 1
+
+    def test_fairness_most_resilient(self):
+        """Fairness should be rank 6 (last to collapse or never)."""
+        order = foundation_collapse_order()
+        assert order[-1]["foundation"] == "fairness"
+        assert order[-1]["rank"] == 6
+
+    def test_binding_collapse_before_individualizing(self):
+        """All binding foundations should collapse before any individualizing."""
+        order = foundation_collapse_order()
+        binding_ranks = [r["rank"] for r in order if r["binding"]]
+        indiv_ranks = [r["rank"] for r in order if not r["binding"]]
+        assert max(binding_ranks) < min(indiv_ranks), (
+            f"Binding max rank {max(binding_ranks)} >= "
+            f"individualizing min rank {min(indiv_ranks)}"
+        )
+
+    def test_collapse_envs_are_valid(self):
+        """Each collapse environment should be a real environment or None."""
+        valid = set(ENVIRONMENTS.keys()) | {None}
+        for r in foundation_collapse_order():
+            assert r["collapse_environment"] in valid
+
+    def test_sanctity_collapses_at_urban_residential(self):
+        """Sanctity (multiplicative) should collapse by urban_residential."""
+        order = foundation_collapse_order()
+        sanctity = [r for r in order if r["foundation"] == "sanctity"][0]
+        assert sanctity["collapse_environment"] == "urban_residential"
+
+    def test_fairness_survives_urban_office(self):
+        """Fairness (triple-redundant) should survive even urban_office."""
+        order = foundation_collapse_order()
+        fairness = [r for r in order if r["foundation"] == "fairness"][0]
+        assert fairness["collapse_environment"] is None
+
+    def test_scores_decrease_with_emf(self):
+        """Every foundation's score should decrease or stay stable as EMF rises."""
+        order = foundation_collapse_order()
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        for r in order:
+            scores = [r["scores"][e] for e in envs]
+            for i in range(len(scores) - 1):
+                assert scores[i] >= scores[i + 1] - 0.001, (
+                    f"{r['foundation']}: {envs[i]}={scores[i]} > "
+                    f"{envs[i+1]}={scores[i+1]}"
+                )
+
+    def test_vulnerability_metadata_present(self):
+        """Each result should include vulnerability explanation."""
+        for r in foundation_collapse_order():
+            assert r["vulnerability"], f"{r['foundation']} missing vulnerability"
+            assert r["formula_type"] != "unknown"
+
+
+class TestMoralDistressIndex:
+    """Verify the psychological distress prediction."""
+
+    def test_amish_low_distress(self):
+        """Natural baseline should have near-zero distress."""
+        markers = environment_biomarkers("amish")
+        mf = moral_foundations_profile(markers)
+        d = moral_distress_index(mf)
+        assert d["distress_index"] < 0.25
+        assert d["imbalance"] == 0
+
+    def test_urban_high_distress(self):
+        """Urban residential should have elevated distress."""
+        markers = environment_biomarkers("urban_residential")
+        mf = moral_foundations_profile(markers)
+        d = moral_distress_index(mf)
+        assert d["distress_index"] > 0.40
+
+    def test_urban_office_highest_distress(self):
+        """Urban office should have the highest distress."""
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        distress_vals = []
+        for env in envs:
+            markers = environment_biomarkers(env)
+            mf = moral_foundations_profile(markers)
+            d = moral_distress_index(mf)
+            distress_vals.append(d["distress_index"])
+        for i in range(len(distress_vals) - 1):
+            assert distress_vals[i] <= distress_vals[i + 1]
+
+    def test_distress_components_present(self):
+        markers = environment_biomarkers("urban_residential")
+        mf = moral_foundations_profile(markers)
+        d = moral_distress_index(mf)
+        assert "harm_hyperactivation" in d["components"]
+        assert "anomie" in d["components"]
+        assert "meaning_deficit" in d["components"]
+
+    def test_imbalance_positive_in_urban(self):
+        """Urban should have more individualizing than binding active."""
+        markers = environment_biomarkers("urban_residential")
+        mf = moral_foundations_profile(markers)
+        d = moral_distress_index(mf)
+        assert d["imbalance"] > 0
+        assert d["individualizing_active"] > d["binding_active"]
+
+    def test_distress_bounded(self):
+        """Distress index should be in [0, 1]."""
+        for env in ENVIRONMENTS:
+            markers = environment_biomarkers(env)
+            mf = moral_foundations_profile(markers)
+            d = moral_distress_index(mf)
+            assert 0.0 <= d["distress_index"] <= 1.0
+
+    def test_harm_hyperactivation_when_care_exceeds_authority(self):
+        """When care > authority, harm hyperactivation should be positive."""
+        markers = environment_biomarkers("urban_residential")
+        mf = moral_foundations_profile(markers)
+        d = moral_distress_index(mf)
+        if mf["care"] > mf["authority"]:
+            assert d["components"]["harm_hyperactivation"] > 0

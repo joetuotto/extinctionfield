@@ -800,3 +800,207 @@ def urban_rural_gradient(year: float = 2025) -> dict[str, Any]:
         "polarization_index": round(polarization, 4),
         "ideology_divergence": divergence,
     }
+
+
+# ── Foundation collapse hierarchy ──
+#
+# Foundations collapse in a predictable order as EMF increases.
+# The order is determined by the biological vulnerability of each
+# foundation's substrate — not by cultural or ideological factors.
+# Binding foundations (Loyalty, Authority, Sanctity) are more
+# biologically fragile than individualizing foundations (Care,
+# Fairness, Liberty). This asymmetry explains Haidt's empirical
+# finding that conservatives weight all six foundations while
+# liberals weight only two-three.
+
+FOUNDATION_VULNERABILITY: dict[str, dict[str, Any]] = {
+    "sanctity": {
+        "rank": 1,
+        "formula_type": "multiplicative",
+        "formula": "cognitive(BDNF+MEL) × enforcement(T+OXT)",
+        "primary_substrates": ["MEL", "BDNF", "T", "OXT"],
+        "vulnerability": (
+            "Most fragile. Multiplicative formula means degradation in "
+            "EITHER component collapses the product. Melatonin (pinealocytes) "
+            "and BDNF (calcium-dependent synthesis) are first-order VGCC "
+            "targets. T (Leydig cells) degrades via calcium disruption. "
+            "Four vulnerable systems multiplied — catastrophic sensitivity."
+        ),
+    },
+    "authority": {
+        "rank": 2,
+        "formula_type": "single-substrate",
+        "formula": "T × (1 - 0.4×CORT)",
+        "primary_substrates": ["T", "CORT"],
+        "vulnerability": (
+            "Depends primarily on T — the most EMF-sensitive major hormone "
+            "(Welling 2025 RCT, N=136). CORT elevation further suppresses "
+            "T-driven hierarchy via the dual-hormone mechanism (Mehta & "
+            "Josephs 2010). Double hit: T falls AND CORT rises."
+        ),
+    },
+    "loyalty": {
+        "rank": 3,
+        "formula_type": "interaction",
+        "formula": "OXT × (0.50 + 0.50×T) × scaling",
+        "primary_substrates": ["OXT", "T"],
+        "vulnerability": (
+            "Parochial OXT requires T co-activation for group defense. "
+            "As T drops, OXT-driven bonding shifts from loyal to compliant. "
+            "De Dreu 2011: in-group favoritism requires OXT AND competitive "
+            "capacity (T). Without T, OXT produces conformity, not loyalty."
+        ),
+    },
+    "liberty": {
+        "rank": 4,
+        "formula_type": "additive-suppressed",
+        "formula": "(0.50×DA + 0.35×T) × (1 - 0.35×CORT)",
+        "primary_substrates": ["DA", "T", "CORT"],
+        "vulnerability": (
+            "DA provides baseline autonomy drive. More resilient because "
+            "dopaminergic neurons (VTA, substantia nigra) have greater "
+            "redundancy than Leydig or pineal cells. But CORT suppression "
+            "coefficient is high (0.35) — threat state eliminates risk-taking."
+        ),
+    },
+    "care": {
+        "rank": 5,
+        "formula_type": "additive-floor",
+        "formula": "OXT × (0.45 + 0.55×BDNF) × (1 - 0.3×CORT)",
+        "primary_substrates": ["OXT", "BDNF"],
+        "vulnerability": (
+            "OXT provides strong baseline even degraded. The 0.45 floor "
+            "in the formula means BDNF loss narrows scope (from universal "
+            "to parochial) but does not eliminate care. Falls only at "
+            "extreme degradation where OXT itself collapses."
+        ),
+    },
+    "fairness": {
+        "rank": 6,
+        "formula_type": "triple-redundant",
+        "formula": "(0.40×DA + 0.30×T + 0.15×OXT) × (1 - 0.2×CORT)",
+        "primary_substrates": ["DA", "T", "OXT"],
+        "vulnerability": (
+            "Most resilient. Three independent inputs (DA, T, OXT) provide "
+            "redundancy — any single system can partially sustain fairness. "
+            "Low CORT coefficient (0.2) means stress suppression is minimal. "
+            "DA (most buffered neurotransmitter) carries largest weight (0.40)."
+        ),
+    },
+}
+
+
+def foundation_collapse_order(
+    year: float = 2025,
+    threshold: float = 0.35,
+) -> list[dict[str, Any]]:
+    """Order in which moral foundations collapse as EMF increases.
+
+    Computes foundation scores at each EMF environment and identifies
+    the collapse point — the first environment where the score drops
+    below threshold. Foundations are ranked from most to least
+    vulnerable.
+
+    The collapse order reveals that binding foundations (group-preserving)
+    are systematically more biologically fragile than individualizing
+    foundations (individual-protecting). This is not cultural — it is a
+    consequence of which hormonal systems are most sensitive to VGCC
+    disruption.
+    """
+    env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+
+    all_scores: dict[str, dict[str, float]] = {}
+    for env in env_order:
+        markers = environment_biomarkers(env, year)
+        all_scores[env] = moral_foundations_profile(markers)
+
+    results: list[dict[str, Any]] = []
+    for foundation in MORAL_FOUNDATION_FUNCTIONS:
+        scores = {env: all_scores[env][foundation] for env in env_order}
+
+        collapse_env = None
+        for env in env_order:
+            if scores[env] < threshold:
+                collapse_env = env
+                break
+
+        vuln = FOUNDATION_VULNERABILITY.get(foundation, {})
+
+        results.append({
+            "foundation": foundation,
+            "rank": vuln.get("rank", 99),
+            "collapse_environment": collapse_env,
+            "scores": {env: round(s, 4) for env, s in scores.items()},
+            "formula_type": vuln.get("formula_type", "unknown"),
+            "vulnerability": vuln.get("vulnerability", ""),
+            "binding": foundation in BINDING_FOUNDATIONS,
+        })
+
+    results.sort(key=lambda x: x["rank"])
+    return results
+
+
+def moral_distress_index(
+    mf: dict[str, float],
+    threshold: float = 0.35,
+) -> dict[str, Any]:
+    """Psychological distress predicted by moral foundation narrowing.
+
+    When binding foundations (Loyalty, Authority, Sanctity) collapse
+    while individualizing foundations (Care, Fairness) remain, the
+    resulting phenotype is:
+    - Hyperactivated harm detection without stabilizing structure
+    - Unbounded empathy scope without parochial limits (compassion fatigue)
+    - No group belonging (anomie)
+    - No meaning framework (nihilism)
+    - No hierarchy acceptance (constant status anxiety)
+
+    This maps onto the clinical picture observed in liberal populations,
+    especially women (Gimbrone 2022, Gallup 2023): depression, anxiety,
+    low meaning-in-life, identity fragmentation.
+
+    Literature:
+        Gimbrone 2022 (JAAH): liberal adolescent girls show sharply
+            increasing depression from 2012, conservatives stable.
+        Twenge 2019 (J Abnorm Psych): iGen mental health decline.
+        Gallup 2023: 56% of white liberal women 18-29 report diagnosed
+            mental health condition vs 28% conservative women.
+        Lukianoff & Haidt 2018: cognitive distortions (emotional reasoning,
+            catastrophizing) spreading on campuses.
+    """
+    mb = moral_breadth(mf, threshold)
+    binding_active = mb["binding_active"]
+    indiv_active = mb["individualizing_active"]
+
+    care_val = mf.get("care", 0)
+    fairness_val = mf.get("fairness", 0)
+    authority_val = mf.get("authority", 0)
+    loyalty_val = mf.get("loyalty", 0)
+    sanctity_val = mf.get("sanctity", 0)
+
+    imbalance = indiv_active - binding_active
+    narrowing = (mb["total"] - mb["active_count"]) / mb["total"]
+
+    harm_hyperactivation = max(0.0, care_val - authority_val)
+    anomie = max(0.0, 1.0 - loyalty_val)
+    meaning_deficit = max(0.0, 1.0 - sanctity_val)
+
+    distress = (
+        0.25 * harm_hyperactivation
+        + 0.30 * anomie
+        + 0.25 * meaning_deficit
+        + 0.20 * narrowing
+    )
+
+    return {
+        "distress_index": round(min(1.0, distress), 4),
+        "binding_active": binding_active,
+        "individualizing_active": indiv_active,
+        "imbalance": imbalance,
+        "narrowing": round(narrowing, 4),
+        "components": {
+            "harm_hyperactivation": round(harm_hyperactivation, 4),
+            "anomie": round(anomie, 4),
+            "meaning_deficit": round(meaning_deficit, 4),
+        },
+    }

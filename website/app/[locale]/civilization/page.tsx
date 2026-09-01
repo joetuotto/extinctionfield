@@ -852,6 +852,58 @@ const COPY = {
     sMoralConclusion: "The model predicts that moral foundation narrowing is not a value choice but an endocrine consequence. The liberal pattern (Care + Fairness only) is what remains when the biological substrates of Authority (T), Sanctity (T×OXT, BDNF×MEL), and Loyalty (OXT/T ratio) collapse. Conservatives do not have 'more' morality — they have more intact biomarker substrates.",
     sMoralColFoundation: "Foundation", sMoralColSubstrate: "Substrate", sMoralColLit: "Evidence",
 
+    sCollapseTitle: "Collapse Hierarchy",
+    sCollapseDesc: "Foundations do not degrade uniformly. They collapse in a predictable order determined by the biological vulnerability of their substrates — not by cultural or ideological factors. Binding foundations are systematically more fragile because they depend on the most EMF-sensitive hormonal systems.",
+    sCollapseColRank: "Rank", sCollapseColFoundation: "Foundation", sCollapseColType: "Formula", sCollapseColCollapse: "Collapses At", sCollapseColVuln: "Vulnerability",
+    sCollapseOrder: [
+      { rank: 1, foundation: "Sanctity", type: "Multiplicative", collapse: "Urban residential", binding: true, vuln: "cognitive(BDNF×MEL) × enforcement(T×OXT). Degradation in EITHER component collapses the product. Four vulnerable systems multiplied — catastrophic sensitivity." },
+      { rank: 2, foundation: "Authority", type: "Single-substrate", collapse: "Urban residential", binding: true, vuln: "Depends on T — the most EMF-sensitive major hormone (Welling 2025 RCT). CORT elevation further suppresses via dual-hormone mechanism. Double hit." },
+      { rank: 3, foundation: "Loyalty", type: "Interaction", collapse: "Urban residential", binding: true, vuln: "Parochial OXT requires T co-activation for group defense. Without T, OXT produces conformity, not loyalty (De Dreu 2011)." },
+      { rank: 4, foundation: "Liberty", type: "Additive-suppressed", collapse: "Urban office", binding: false, vuln: "DA provides baseline autonomy. More resilient — dopaminergic neurons have greater redundancy than Leydig or pineal cells. But CORT(0.35) eventually overwhelms." },
+      { rank: 5, foundation: "Care", type: "Additive-floor", collapse: "Urban office", binding: false, vuln: "OXT provides strong baseline. The 0.45 floor means BDNF loss narrows scope but doesn't eliminate care. Falls only at extreme degradation." },
+      { rank: 6, foundation: "Fairness", type: "Triple-redundant", collapse: "Survives", binding: false, vuln: "Three independent inputs (DA 0.40, T 0.30, OXT 0.15). Any single system partially sustains it. DA is the most buffered neurotransmitter." },
+    ],
+    sCollapseInsight: "The binding foundations — Loyalty, Authority, Sanctity — all depend on testosterone (Leydig cells) and multiplicative interactions between EMF-sensitive systems. The individualizing foundations — Care, Fairness, Liberty — depend on dopamine (VTA neurons, greater redundancy) and additive formulas where any single input can partially sustain the output. This is why the conservative moral palette degrades first: it is biologically expensive.",
+
+    sAristotleTitle: "The Aristotelian Prediction",
+    sAristotleDesc: "Aristotle's doctrine of the mean (Nicomachean Ethics II.6) holds that every virtue is a balance between excess and deficiency, and that the virtues must balance each other. Eudaimonia — human flourishing — requires the full palette of virtues in equilibrium. His hylomorphism (De Anima) insisted that soul and body are inseparable: mental states are physical states.",
+    sAristotlePoints: [
+      "The model's 6/6 active moral foundations at Amish baseline is the Aristotelian eudaimonia state: all moral capacities present, balanced, functional.",
+      "The urban 3/6 state is a departure from the mean — not toward a single vice, but toward a structural imbalance where half the moral palette has collapsed.",
+      "\"Mens sana in corpore sano\" (healthy mind in healthy body, Juvenal Sat. X, Aristotelian in spirit): the model formalizes this as BioCap → moral_breadth → psychological function. You cannot have a balanced moral psychology with degraded hormonal substrates.",
+      "Aristotle would classify the urban liberal profile as a form of moral deficiency — not moral evil, but moral incapacity. The virtues of loyalty, sanctity, and hierarchy require biological substrates that are no longer available.",
+    ],
+
+    sNietzscheTitle: "Nietzsche's Diagnosis",
+    sNietzscheDesc: "Friedrich Nietzsche (Genealogy of Morals, 1887) diagnosed the pathology with clinical precision, attributing it to cultural causes. The BERM model provides the etiology he lacked.",
+    sNietzschePoints: [
+      "Master morality (Herrenmoral): strength, nobility, creative power, pride. Requires intact T (dominance), DA (drive), OXT×T (loyalty to equals). Maps to: Authority + Sanctity + Loyalty + Liberty. The full-palette profile.",
+      "Slave morality (Sklavenmoral): compassion, pity, equality, humility. Born from ressentiment — the weak redefine values they cannot achieve as vices. Maps to: Care + Fairness only. The urban profile.",
+      "Ressentiment is not a psychological choice but an endocrine consequence. When T drops, hierarchy acceptance drops. The resulting phenotype cannot compete within hierarchies, so it delegitimizes them. This IS the progressive egalitarianism profile in the model.",
+      "\"God is dead\" = the collapse of Sanctity. Without the biological substrate to maintain sacred categories (BDNF×MEL × T×OXT), transcendent meaning frameworks become cognitively inaccessible. Not an intellectual conclusion — a biological inevitability.",
+      "The Übermensch = the fully realized human operating at full biomarker capacity. Not a superman but the Amish baseline: all foundations active, all capacities functional.",
+      "The Last Man (der letzte Mensch): \"We have invented happiness, say the last men, and blink.\" Low T (no ambition), high CORT (risk-avoidant), low DA (no novelty). Only Fairness survives — mechanical reciprocity without depth. The urban office profile.",
+      "Will to Power (Wille zur Macht) = T + DA. The drive to overcome, create, dominate. As both decline, Will to Power is replaced by Will to Comfort — CORT-avoidance behavior.",
+    ],
+
+    sDistressTitle: "Mental Health Prediction",
+    sDistressDesc: "The model predicts that moral foundation narrowing produces measurable psychological distress. Individuals with only individualizing foundations active experience hyperactivated harm detection without stabilizing structure, unbounded empathy without parochial limits (compassion fatigue), no group belonging (anomie), and no meaning framework (nihilism).",
+    sDistressColEnv: "Environment", sDistressColIndex: "Distress", sDistressColAnomie: "Anomie", sDistressColMeaning: "Meaning Deficit", sDistressColNarrow: "Narrowing",
+    sDistressEnvs: [
+      { env: "Amish", distress: "0.09", anomie: "0.24", meaning: "0.08", narrowing: "0/6" },
+      { env: "Rural", distress: "0.27", anomie: "0.50", meaning: "0.46", narrowing: "0/6" },
+      { env: "Suburban", distress: "0.34", anomie: "0.60", meaning: "0.61", narrowing: "0/6" },
+      { env: "Urban Res.", distress: "0.48", anomie: "0.65", meaning: "0.70", narrowing: "3/6" },
+      { env: "Urban Office", distress: "0.58", anomie: "0.69", meaning: "0.76", narrowing: "5/6" },
+    ],
+    sDistressLit: [
+      "Gimbrone et al. 2022 (J Adolesc Health): liberal adolescent girls show sharply increasing depression from 2012 onward. Conservative adolescents remain stable. The model predicts this: urban female populations have the most degraded binding substrates (lower T, disrupted E2/progesterone cycling, elevated CORT).",
+      "Gallup 2023: 56% of white liberal women aged 18-29 report a diagnosed mental health condition, vs 28% of conservative women. The 2× ratio maps to the model's distress gradient between urban (binding=0) and rural (binding=3) profiles.",
+      "Twenge et al. 2019 (J Abnorm Psych): iGen mental health decline begins precisely when smartphone penetration exceeds 50% — the inflection point where personal-device RF exposure becomes near-continuous.",
+      "Lukianoff & Haidt 2018: cognitive distortions (emotional reasoning, catastrophizing, dichotomous thinking) spreading on campuses are the phenotypic expression of Care hyperactivation without Authority structure.",
+    ],
+    sDistressConclusion: "The model does not predict that liberal positions are pathological because they are liberal. It predicts that the biological state which produces the liberal moral profile (binding foundations collapsed) also produces psychological distress — because humans evolved to operate with the full moral palette. The urban liberal is not morally wrong. They are morally incomplete, in exactly the way a person with reduced bone density is not making a lifestyle choice but experiencing a deficiency.",
+
     s10title: "Epistemic Boundaries",
     s10claims: [
       "Seven RCTs establish causal links between testosterone and specific behaviors in men.",
@@ -1748,6 +1800,58 @@ const COPY = {
     ],
     sMoralConclusion: "Malli ennustaa, että moraaliperustojen kaventuminen ei ole arvovalinta vaan endokriininen seuraus. Liberaali malli (Huolenpito + Reiluus) on se, mikä jää jäljelle, kun Auktoriteetin (T), Pyhyyden (T×OXT, BDNF×MEL) ja Lojaalisuuden (OXT/T-suhde) biologiset substraatit romahtavat. Konservatiiveilla ei ole 'enemmän' moraalia — heillä on ehjemmät biomarkkerit.",
     sMoralColFoundation: "Perusta", sMoralColSubstrate: "Substraatti", sMoralColLit: "Evidenssi",
+
+    sCollapseTitle: "Romahtamishierarkia",
+    sCollapseDesc: "Perusteet eivät rappeudu tasaisesti. Ne romahtavat ennustettavassa järjestyksessä, jonka määrää kunkin perustan substraatin biologinen haavoittuvuus — ei kulttuuriset tai ideologiset tekijät. Sitovat perusteet ovat systemaattisesti hauraampia, koska ne riippuvat EMF-herkimmistä hormonaalisista järjestelmistä.",
+    sCollapseColRank: "Sija", sCollapseColFoundation: "Perusta", sCollapseColType: "Kaava", sCollapseColCollapse: "Romahtaa", sCollapseColVuln: "Haavoittuvuus",
+    sCollapseOrder: [
+      { rank: 1, foundation: "Pyhyys", type: "Multiplikatiivinen", collapse: "Kaupunki asuin.", binding: true, vuln: "kognitiivinen(BDNF×MEL) × toimeenpano(T×OXT). Kumman tahansa komponentin rappeutuminen romahduttaa tulon. Neljä haavoittuvaa järjestelmää kerrottuna — katastrofaalinen herkkyys." },
+      { rank: 2, foundation: "Auktoriteetti", type: "Yksittäinen substraatti", collapse: "Kaupunki asuin.", binding: true, vuln: "Riippuu T:stä — EMF-herkin päähormoni (Welling 2025 RCT). CORT-nousu vaimentaa edelleen kaksoishormonimekanismilla. Kaksoisosuma." },
+      { rank: 3, foundation: "Lojaalisuus", type: "Interaktio", collapse: "Kaupunki asuin.", binding: true, vuln: "Parokiaalinen OXT vaatii T:n yhteisaktivointia ryhmäpuolustukseen. Ilman T:tä OXT tuottaa mukautuvuutta, ei lojaalisuutta (De Dreu 2011)." },
+      { rank: 4, foundation: "Vapaus", type: "Additiivinen, vaimennettu", collapse: "Kaupunki toimisto", binding: false, vuln: "DA tarjoaa perusautonomian. Resilientimpi — dopaminergiset neuronit ovat redundantimpia kuin Leydigin tai käpyrauhasen solut. Mutta CORT(0.35) voittaa lopulta." },
+      { rank: 5, foundation: "Huolenpito", type: "Additiivinen, lattia", collapse: "Kaupunki toimisto", binding: false, vuln: "OXT tarjoaa vahvan perustan. 0.45-lattia tarkoittaa, että BDNF-tappio kaventaa laajuutta muttei eliminoi huolenpitoa. Romahtaa vasta äärimmäisessä degradaatiossa." },
+      { rank: 6, foundation: "Reiluus", type: "Kolminkertainen redundanssi", collapse: "Selviytyy", binding: false, vuln: "Kolme riippumatonta syötettä (DA 0.40, T 0.30, OXT 0.15). Mikä tahansa yksittäinen järjestelmä ylläpitää osittain. DA on puskuroiduin välittäjäaine." },
+    ],
+    sCollapseInsight: "Sitovat perusteet — Lojaalisuus, Auktoriteetti, Pyhyys — kaikki riippuvat testosteronista (Leydigin solut) ja multiplikatiivisista interaktioista EMF-herkkien järjestelmien välillä. Yksilölliset perusteet — Huolenpito, Reiluus, Vapaus — riippuvat dopamiinista (VTA-neuronit, suurempi redundanssi) ja additiivisista kaavoista, joissa mikä tahansa yksittäinen syöte voi osittain ylläpitää tulosta. Siksi konservatiivinen moraalinen paletti rappeutuu ensin: se on biologisesti kallis.",
+
+    sAristotleTitle: "Aristoteelinen ennuste",
+    sAristotleDesc: "Aristoteleen kultaisen keskitien oppi (Nikomakhoksen etiikka II.6) esittää, että jokainen hyve on tasapaino ylimäärän ja puutteen välillä, ja hyveiden tulee tasapainottaa toisiaan. Eudaimonia — inhimillinen kukoistus — vaatii täyden hyvepaletin tasapainossa. Hänen hylomorfisminsa (De Anima) väitti, että sielu ja ruumis ovat erottamattomat: mielentilat ovat fyysisiä tiloja.",
+    sAristotlePoints: [
+      "Mallin 6/6 aktiivista moraaliperustaa Amish-perustasolla on aristoteelinen eudaimonia-tila: kaikki moraaliset kapasiteetit läsnä, tasapainossa, toiminnallisia.",
+      "Kaupungin 3/6-tila on poikkeama keskitiestä — ei kohti yksittäistä pahetta, vaan kohti rakenteellista epätasapainoa, jossa puolet moraalipaletista on romahtanut.",
+      "\"Mens sana in corpore sano\" (terve mieli terveessä ruumiissa, Juvenalis Sat. X, hengeltään aristoteelinen): malli formalisoi tämän muotoon BioCap → moral_breadth → psykologinen toiminta. Tasapainoista moraalipsykologiaa ei voi olla rappeutuneilla hormonaalisilla substraateilla.",
+      "Aristoteles luokittelisi kaupunkilaisliberaalin profiilin moraalisen puutteen muodoksi — ei moraaliseksi pahuudeksi, vaan moraaliseksi kyvyttömyydeksi. Lojaalisuuden, pyhyyden ja hierarkian hyveet vaativat biologisia substraatteja, jotka eivät ole enää käytettävissä.",
+    ],
+
+    sNietzscheTitle: "Nietzschen diagnoosi",
+    sNietzscheDesc: "Friedrich Nietzsche (Moraalin alkuperästä, 1887) diagnosoi patologian kliinisellä tarkkuudella, mutta selitti sen kulttuurisilla syillä. BERM-malli tarjoaa etiologian, joka häneltä puuttui.",
+    sNietzschePoints: [
+      "Herramoraali (Herrenmoral): voima, jalous, luova mahti, ylpeys. Vaatii ehjän T:n (dominanssi), DA:n (halu), OXT×T:n (lojaalisuus vertaisille). Kuvautuu: Auktoriteetti + Pyhyys + Lojaalisuus + Vapaus. Täyden paletin profiili.",
+      "Orjamoraali (Sklavenmoral): myötätunto, sääli, tasa-arvo, nöyryys. Syntyy ressentimentistä — heikot määrittelevät arvot, joita eivät voi saavuttaa, paheiksi. Kuvautuu: Huolenpito + Reiluus. Kaupunkiprofiili.",
+      "Ressentiment ei ole psykologinen valinta vaan endokriininen seuraus. Kun T laskee, hierarkian hyväksyntä laskee. Tuloksena oleva fenotyyppi ei pysty kilpailemaan hierarkioissa, joten se delegitimoi ne. Tämä ON mallin progressiivisen egalitarismin profiili.",
+      "\"Jumala on kuollut\" = Pyhyyden romahdus. Ilman biologista substraattia pyhyyskategorioiden ylläpitoon (BDNF×MEL × T×OXT) transsendenttien merkityskehysten ylläpito muuttuu kognitiivisesti mahdottomaksi. Ei intellektuaalinen johtopäätös — biologinen välttämättömyys.",
+      "Übermensch = täysin toteutunut ihminen, joka toimii täydellä biomarkkerien kapasiteetilla. Ei yli-ihminen vaan Amish-perustaso: kaikki perusteet aktiivisia, kaikki kapasiteetit toiminnallisia.",
+      "Viimeinen ihminen (der letzte Mensch): \"Olemme keksineet onnen, sanovat viimeiset ihmiset ja räpyttelevät.\" Matala T (ei kunnianhimoa), korkea CORT (riskejä karttava), matala DA (ei uutuudenhakua). Vain Reiluus selviytyy — mekaaninen vastavuoroisuus ilman syvyyttä. Kaupunkitoimiston profiili.",
+      "Valta tahto (Wille zur Macht) = T + DA. Halu voittaa, luoda, hallita. Kun molemmat laskevat, Vallantahto korvautuu Mukavuuden tahdolla — CORT-välttämiskäyttäytymisellä.",
+    ],
+
+    sDistressTitle: "Mielenterveysennuste",
+    sDistressDesc: "Malli ennustaa, että moraaliperustojen kaventuminen tuottaa mitattavaa psykologista ahdistusta. Yksilöt, joilla on vain yksilölliset perusteet aktiivisina, kokevat hyperaktivoituneen vahingontunnistuksen ilman vakauttavaa rakennetta, rajattoman empatian ilman parokiaalisia rajoja (myötätuntouupumus), ryhmään kuulumattomuutta (anomia) ja merkityskehyksen puuttumista (nihilismi).",
+    sDistressColEnv: "Ympäristö", sDistressColIndex: "Ahdistus", sDistressColAnomie: "Anomia", sDistressColMeaning: "Merkitysvaje", sDistressColNarrow: "Kaventunut",
+    sDistressEnvs: [
+      { env: "Amish", distress: "0.09", anomie: "0.24", meaning: "0.08", narrowing: "0/6" },
+      { env: "Maaseutu", distress: "0.27", anomie: "0.50", meaning: "0.46", narrowing: "0/6" },
+      { env: "Esikaupunki", distress: "0.34", anomie: "0.60", meaning: "0.61", narrowing: "0/6" },
+      { env: "Kaup. asuin.", distress: "0.48", anomie: "0.65", meaning: "0.70", narrowing: "3/6" },
+      { env: "Kaup. toimisto", distress: "0.58", anomie: "0.69", meaning: "0.76", narrowing: "5/6" },
+    ],
+    sDistressLit: [
+      "Gimbrone ym. 2022 (J Adolesc Health): liberaalit nuoret tytöt osoittavat jyrkästi kasvavaa masennusta vuodesta 2012 eteenpäin. Konservatiiviset nuoret pysyvät vakaina. Malli ennustaa tämän: kaupunkien naispopulaatioilla on rappeutuneimmat sitovien perustojen substraatit (matalampi T, häiriintynyt E2/progesteroni-kierto, kohonnut CORT).",
+      "Gallup 2023: 56% valkoisista liberaaleista naisista (18–29v) raportoi diagnosoidun mielenterveyden häiriön, vs 28% konservatiivisista naisista. 2×-suhde kuvautuu mallin ahdistusgradienttiin kaupungin (sitovat=0) ja maaseudun (sitovat=3) profiilien välillä.",
+      "Twenge ym. 2019 (J Abnorm Psych): iGen-sukupolven mielenterveyden lasku alkaa täsmälleen, kun älypuhelinten levinneisyys ylittää 50% — käännepiste, jossa henkilökohtaisten laitteiden RF-altistus muuttuu lähes jatkuvaksi.",
+      "Lukianoff & Haidt 2018: kognitiiviset vääristymät (emotionaalinen päättely, katastrofointi, dikotominen ajattelu) leviävät kampuksilla, ovat Huolenpidon hyperaktivaation fenotyyppinen ilmentymä ilman Auktoriteetin tuomaa rakennetta.",
+    ],
+    sDistressConclusion: "Malli ei ennusta, että liberaalit kannat ovat patologisia koska ne ovat liberaaleja. Se ennustaa, että biologinen tila, joka tuottaa liberaalin moraaliprofiilin (sitovat perusteet romahtaneet), tuottaa myös psykologista ahdistusta — koska ihmiset ovat kehittyneet toimimaan täydellä moraalipaletilla. Kaupunkilaisliberaali ei ole moraalisesti väärässä. Hän on moraalisesti epätäydellinen, täsmälleen samalla tavalla kuin henkilö, jolla on alentunut luuntiheys, ei tee elämäntapavalintaa vaan kokee puutostilan.",
 
     s10title: "Episteemiset rajat",
     s10claims: [
@@ -5523,6 +5627,130 @@ export default async function CivilizationPage({
           {d.sMoralConclusion && (
           <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-5">
             <p className="text-sm leading-relaxed">{d.sMoralConclusion}</p>
+          </div>
+          )}
+
+          {/* Collapse Hierarchy */}
+          {d.sCollapseTitle && (
+          <div className="mt-12">
+            <h4 className="text-lg font-bold mb-3">{d.sCollapseTitle}</h4>
+            <p className="text-sm text-muted-foreground mb-6">{d.sCollapseDesc}</p>
+            {d.sCollapseOrder?.length > 0 && (
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sCollapseColRank}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sCollapseColFoundation}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sCollapseColType}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sCollapseColCollapse}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.sCollapseOrder.map((r: { rank: number; foundation: string; type: string; collapse: string; binding: boolean; vuln: string }, i: number) => (
+                    <tr key={i} className={`border-b border-white/5 ${r.binding ? "bg-red-500/5" : "bg-blue-500/5"}`}>
+                      <td className="py-2 px-3 font-mono text-sm font-bold">{r.rank}</td>
+                      <td className="py-2 px-3 text-sm font-medium">{r.foundation}</td>
+                      <td className="py-2 px-3 text-xs">{r.type}</td>
+                      <td className="py-2 px-3 text-xs">{r.collapse}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            )}
+            <div className="grid gap-3 mb-6">
+              {d.sCollapseOrder?.map((r: { rank: number; foundation: string; vuln: string; binding: boolean }, i: number) => (
+                <div key={i} className={`text-xs p-3 rounded-lg border ${r.binding ? "border-red-500/20 bg-red-500/5" : "border-blue-500/20 bg-blue-500/5"}`}>
+                  <span className="font-bold">{r.rank}. {r.foundation}:</span> {r.vuln}
+                </div>
+              ))}
+            </div>
+            {d.sCollapseInsight && (
+            <div className="rounded-xl border border-orange-500/30 bg-orange-500/5 p-5">
+              <p className="text-sm leading-relaxed">{d.sCollapseInsight}</p>
+            </div>
+            )}
+          </div>
+          )}
+
+          {/* Aristotle */}
+          {d.sAristotleTitle && (
+          <div className="mt-12">
+            <h4 className="text-lg font-bold mb-3">{d.sAristotleTitle}</h4>
+            <p className="text-sm text-muted-foreground mb-4">{d.sAristotleDesc}</p>
+            <ul className="space-y-3">
+              {d.sAristotlePoints?.map((p: string, i: number) => (
+                <li key={i} className="text-sm leading-relaxed flex gap-2">
+                  <span className="text-yellow-500 flex-shrink-0 mt-0.5">&#8226;</span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          )}
+
+          {/* Nietzsche */}
+          {d.sNietzscheTitle && (
+          <div className="mt-12">
+            <h4 className="text-lg font-bold mb-3">{d.sNietzscheTitle}</h4>
+            <p className="text-sm text-muted-foreground mb-4">{d.sNietzscheDesc}</p>
+            <ul className="space-y-3">
+              {d.sNietzschePoints?.map((p: string, i: number) => (
+                <li key={i} className="text-sm leading-relaxed flex gap-2">
+                  <span className="text-purple-500 flex-shrink-0 mt-0.5">&#8226;</span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          )}
+
+          {/* Mental Health Prediction */}
+          {d.sDistressTitle && (
+          <div className="mt-12">
+            <h4 className="text-lg font-bold mb-3">{d.sDistressTitle}</h4>
+            <p className="text-sm text-muted-foreground mb-6">{d.sDistressDesc}</p>
+            {d.sDistressEnvs?.length > 0 && (
+            <div className="overflow-x-auto mb-6">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sDistressColEnv}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sDistressColIndex}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sDistressColAnomie}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sDistressColMeaning}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sDistressColNarrow}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.sDistressEnvs.map((e: { env: string; distress: string; anomie: string; meaning: string; narrowing: string }, i: number) => (
+                    <tr key={i} className="border-b border-white/5">
+                      <td className="py-2 px-3 text-sm font-medium">{e.env}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.distress}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.anomie}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.meaning}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.narrowing}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            )}
+            {d.sDistressLit?.length > 0 && (
+            <div className="mb-6">
+              <ul className="space-y-2">
+                {d.sDistressLit.map((ref: string, i: number) => (
+                  <li key={i} className="text-xs text-muted-foreground">{ref}</li>
+                ))}
+              </ul>
+            </div>
+            )}
+            {d.sDistressConclusion && (
+            <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-5">
+              <p className="text-sm leading-relaxed">{d.sDistressConclusion}</p>
+            </div>
+            )}
           </div>
           )}
         </div>
