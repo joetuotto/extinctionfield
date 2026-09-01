@@ -831,6 +831,26 @@ const COPY = {
       "Mehta & Josephs 2010 (meta N=8,538): dual-hormone hypothesis. Chronic CORT suppresses T-driven dominance.",
     ],
     sPoliticalConclusion: "The model predicts urban-rural polarization is a gradient of endocrine disruption, not a conflict of values. No political dialogue resolves this — it requires environmental intervention.",
+    sMoralTitle: "Moral Foundations (Haidt)",
+    sMoralDesc: "Jonathan Haidt (2012) identified six moral foundations. Graham, Haidt & Nosek (2009) showed liberals weight Care + Fairness while conservatives weight all six equally. The model maps each foundation to its biological substrate and predicts the liberal-conservative asymmetry as a direct consequence of differential biomarker degradation.",
+    sMoralColEnv: "Environment", sMoralColBreadth: "Breadth", sMoralColBinding: "Binding", sMoralColIndiv: "Individualizing", sMoralColActive: "Active",
+    sMoralEnvs: [
+      { env: "Amish", breadth: "6/6", binding: "3/3", indiv: "3/3", active: "All six", pattern: "Full moral palette — balanced binding and individualizing" },
+      { env: "Rural", breadth: "6/6", binding: "3/3", indiv: "3/3", active: "All six", pattern: "Conservative baseline — all foundations, slightly binding-dominant" },
+      { env: "Suburban", breadth: "6/6", binding: "3/3", indiv: "3/3", active: "All six", pattern: "Transitional — binding weakening, individualizing relatively stronger" },
+      { env: "Urban Res.", breadth: "3/6", binding: "0/3", indiv: "3/3", active: "Care, Fairness, Liberty", pattern: "Liberal profile — only individualizing foundations remain" },
+      { env: "Urban Office", breadth: "1/6", binding: "0/3", indiv: "1/3", active: "Fairness only", pattern: "Maximum degradation — even Care drops below capacity threshold" },
+    ],
+    sMoralFoundations: [
+      { name: "Care/Harm", substrate: "OXT, BDNF", lit: "Feldman 2012, Luo 2024 RCT, Crockett 2010" },
+      { name: "Fairness/Cheating", substrate: "DA, T, OXT", lit: "Zhong 2010 DRD4, Burnham 2007, Eisenegger 2010" },
+      { name: "Loyalty/Betrayal", substrate: "OXT (parochial)", lit: "De Dreu 2010 Science, 2011 PNAS, Stallen 2012" },
+      { name: "Authority/Subversion", substrate: "T, CORT", lit: "Mehta & Josephs 2010, Kanai 2011" },
+      { name: "Sanctity/Degradation", substrate: "T×OXT, BDNF×MEL", lit: "Inbar et al. 2009 (N=31k), Oxley 2008" },
+      { name: "Liberty/Oppression", substrate: "DA, T, inv. CORT", lit: "Settle 2010 (DRD4-7R)" },
+    ],
+    sMoralConclusion: "The model predicts that moral foundation narrowing is not a value choice but an endocrine consequence. The liberal pattern (Care + Fairness only) is what remains when the biological substrates of Authority (T), Sanctity (T×OXT, BDNF×MEL), and Loyalty (OXT/T ratio) collapse. Conservatives do not have 'more' morality — they have more intact biomarker substrates.",
+    sMoralColFoundation: "Foundation", sMoralColSubstrate: "Substrate", sMoralColLit: "Evidence",
 
     s10title: "Epistemic Boundaries",
     s10claims: [
@@ -1708,6 +1728,26 @@ const COPY = {
       "Mehta & Josephs 2010 (meta N=8 538): kaksoishormonihypoteesi. Krooninen CORT tukahduttaa T-käyttöisen dominanssin.",
     ],
     sPoliticalConclusion: "Malli ennustaa, että kaupunki–maaseutu-polarisaatio on endokriinisen häiriön gradientti, ei arvojen konflikti. Mikään poliittinen dialogi ei ratkaise tätä — se vaatii ympäristöintervention.",
+    sMoralTitle: "Moraaliperusteet (Haidt)",
+    sMoralDesc: "Jonathan Haidt (2012) tunnisti kuusi moraaliperustaa. Graham, Haidt & Nosek (2009) osoittivat, että liberaalit painottavat Huolenpitoa + Reiluutta, kun taas konservatiivit painottavat kaikkia kuutta tasaisesti. Malli kuvaa kunkin perustan biologiseen substraattiin ja ennustaa liberaali–konservatiivi-asymmetrian suorana seurauksena biomarkkereiden differentiaalisesta degradaatiosta.",
+    sMoralColEnv: "Ympäristö", sMoralColBreadth: "Laajuus", sMoralColBinding: "Sitovat", sMoralColIndiv: "Yksilölliset", sMoralColActive: "Aktiiviset",
+    sMoralEnvs: [
+      { env: "Amish", breadth: "6/6", binding: "3/3", indiv: "3/3", active: "Kaikki kuusi", pattern: "Täysi moraalinen paletti — tasapainoiset sitovat ja yksilölliset" },
+      { env: "Maaseutu", breadth: "6/6", binding: "3/3", indiv: "3/3", active: "Kaikki kuusi", pattern: "Konservatiivinen perustaso — kaikki perusteet, hieman sitova-painotteinen" },
+      { env: "Esikaupunki", breadth: "6/6", binding: "3/3", indiv: "3/3", active: "Kaikki kuusi", pattern: "Siirtymävaihe — sitovat heikkenevät, yksilölliset suhteellisesti vahvempia" },
+      { env: "Kaup. asuin.", breadth: "3/6", binding: "0/3", indiv: "3/3", active: "Huolenpito, Reiluus, Vapaus", pattern: "Liberaali profiili — vain yksilölliset perusteet jäljellä" },
+      { env: "Kaup. toimisto", breadth: "1/6", binding: "0/3", indiv: "1/3", active: "Vain Reiluus", pattern: "Maksimaalinen degradaatio — jopa Huolenpito putoaa kapasiteettirajan alle" },
+    ],
+    sMoralFoundations: [
+      { name: "Huolenpito/Vahinko", substrate: "OXT, BDNF", lit: "Feldman 2012, Luo 2024 RCT, Crockett 2010" },
+      { name: "Reiluus/Huijaus", substrate: "DA, T, OXT", lit: "Zhong 2010 DRD4, Burnham 2007, Eisenegger 2010" },
+      { name: "Lojaalisuus/Petos", substrate: "OXT (parokiaalinen)", lit: "De Dreu 2010 Science, 2011 PNAS, Stallen 2012" },
+      { name: "Auktoriteetti/Kumoaminen", substrate: "T, CORT", lit: "Mehta & Josephs 2010, Kanai 2011" },
+      { name: "Pyhyys/Rappeutuminen", substrate: "T×OXT, BDNF×MEL", lit: "Inbar ym. 2009 (N=31k), Oxley 2008" },
+      { name: "Vapaus/Sorto", substrate: "DA, T, inv. CORT", lit: "Settle 2010 (DRD4-7R)" },
+    ],
+    sMoralConclusion: "Malli ennustaa, että moraaliperustojen kaventuminen ei ole arvovalinta vaan endokriininen seuraus. Liberaali malli (Huolenpito + Reiluus) on se, mikä jää jäljelle, kun Auktoriteetin (T), Pyhyyden (T×OXT, BDNF×MEL) ja Lojaalisuuden (OXT/T-suhde) biologiset substraatit romahtavat. Konservatiiveilla ei ole 'enemmän' moraalia — heillä on ehjemmät biomarkkerit.",
+    sMoralColFoundation: "Perusta", sMoralColSubstrate: "Substraatti", sMoralColLit: "Evidenssi",
 
     s10title: "Episteemiset rajat",
     s10claims: [
@@ -5408,6 +5448,83 @@ export default async function CivilizationPage({
         {d.sPoliticalConclusion && (
         <div className="rounded-xl border border-yellow-500/30 bg-yellow-500/5 p-5">
           <p className="text-sm leading-relaxed">{d.sPoliticalConclusion}</p>
+        </div>
+        )}
+
+        {/* Moral Foundations (Haidt) */}
+        {d.sMoralTitle && (
+        <div className="mt-12">
+          <h3 className="text-xl font-bold mb-3">{d.sMoralTitle}</h3>
+          <p className="text-sm text-muted-foreground mb-6">{d.sMoralDesc}</p>
+
+          {d.sMoralFoundations?.length > 0 && (
+          <div className="mb-8">
+            <h4 className="text-sm font-semibold mb-3">{d.sMoralColFoundation} → {d.sMoralColSubstrate}</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sMoralColFoundation}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sMoralColSubstrate}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sMoralColLit}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.sMoralFoundations.map((f: { name: string; substrate: string; lit: string }, i: number) => (
+                    <tr key={i} className="border-b border-white/5">
+                      <td className="py-2 px-3 text-sm font-medium">{f.name}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{f.substrate}</td>
+                      <td className="py-2 px-3 text-xs text-muted-foreground">{f.lit}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          )}
+
+          {d.sMoralEnvs?.length > 0 && (
+          <div className="mb-8">
+            <h4 className="text-sm font-semibold mb-3">{d.sMoralColBreadth}</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sMoralColEnv}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sMoralColBreadth}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sMoralColBinding}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sMoralColIndiv}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sMoralColActive}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.sMoralEnvs.map((e: { env: string; breadth: string; binding: string; indiv: string; active: string; pattern: string }, i: number) => (
+                    <tr key={i} className="border-b border-white/5">
+                      <td className="py-2 px-3 text-sm font-medium">{e.env}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.breadth}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.binding}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.indiv}</td>
+                      <td className="py-2 px-3 text-xs">{e.active}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-4 grid gap-2">
+              {d.sMoralEnvs.map((e: { env: string; pattern: string }, i: number) => (
+                <div key={i} className="text-xs text-muted-foreground">
+                  <span className="font-medium text-foreground">{e.env}:</span> {e.pattern}
+                </div>
+              ))}
+            </div>
+          </div>
+          )}
+
+          {d.sMoralConclusion && (
+          <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-5">
+            <p className="text-sm leading-relaxed">{d.sMoralConclusion}</p>
+          </div>
+          )}
         </div>
         )}
       </section>

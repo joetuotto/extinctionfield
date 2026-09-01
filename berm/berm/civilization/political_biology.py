@@ -161,6 +161,154 @@ def orientation_profile(markers: dict[str, float]) -> dict[str, float]:
     return {name: fn(markers) for name, fn in DIMENSION_FUNCTIONS.items()}
 
 
+# ── Haidt moral foundations ──
+#
+# Jonathan Haidt's Moral Foundations Theory (2012) identifies six
+# foundations. Each maps to a biological substrate in the BERM
+# biomarker set. Graham, Haidt & Nosek 2009 showed that liberals
+# weight Care + Fairness heavily while conservatives weight all six
+# more equally. The model predicts this asymmetry as a direct
+# consequence of differential biomarker degradation across EMF
+# environments.
+
+
+def care_harm(m: dict[str, float]) -> float:
+    """Care/Harm: sensitivity to suffering, protective nurturance.
+
+    OXT: empathic capacity (Feldman 2012 maternal OXT, Luo 2024 RCT
+    OXT → guilt for intentional harm). BDNF broadens from parochial
+    to universal concern. CORT narrows to self-preservation.
+    Crockett 2010: serotonin (downstream) enhances harm aversion.
+    """
+    raw = m["OXT"] * (0.45 + 0.55 * m["BDNF"]) * (1.0 - 0.3 * m["CORT"])
+    return max(0.0, min(1.0, raw))
+
+
+def fairness_reciprocity(m: dict[str, float]) -> float:
+    """Fairness/Cheating: proportional reciprocity, norm enforcement.
+
+    DA: reward circuit detects inequity (Zhong 2010 DRD4 → fairness
+    in ultimatum game; Tabibnia & Lieberman 2007 ventral striatum).
+    T: enforcement — willingness to punish norm violators (Burnham
+    2007 N=26 high T → reject unfair offers; Eisenegger 2010 N=60
+    T → fairer offers, promoting social norms not aggression).
+    OXT: trust/reciprocity baseline (Zak 2005).
+    CORT dampens confrontation willingness.
+    """
+    raw = (0.40 * m["DA"] + 0.30 * m["T"] + 0.15 * m["OXT"]) * (
+        1.0 - 0.2 * m["CORT"]
+    )
+    return max(0.0, min(1.0, raw))
+
+
+def loyalty_betrayal(m: dict[str, float]) -> float:
+    """Loyalty/Betrayal: in-group allegiance, coalition fidelity.
+
+    OXT drives parochial altruism (De Dreu 2010 Science: OXT →
+    in-group favoritism; De Dreu 2011 PNAS: OXT → ethnocentrism;
+    Stallen 2012: OXT → conformity to in-group only; Shalvi &
+    De Dreu 2014: OXT → group-serving dishonesty).
+    T: enables active group defense vs passive compliance.
+    CORT: threat amplifies in-group cohesion.
+    """
+    raw = m["OXT"] * (0.50 + 0.50 * m["T"]) * (1.0 + 0.1 * m["CORT"])
+    return max(0.0, min(1.0, raw * 0.80))
+
+
+def authority_hierarchy(m: dict[str, float]) -> float:
+    """Authority/Subversion: hierarchy respect, tradition, dominance.
+
+    Identical to hierarchy_acceptance. T-driven, CORT-modulated via
+    dual-hormone hypothesis (Mehta & Josephs 2010, meta N=8538).
+    Kanai 2011: right amygdala volume → conservative orientation.
+    """
+    return hierarchy_acceptance(m)
+
+
+def sanctity_purity(m: dict[str, float]) -> float:
+    """Sanctity/Degradation: disgust sensitivity, contamination avoidance.
+
+    Inbar, Pizarro & Bloom 2009 (N=31,045): disgust → conservatism.
+    Oxley 2008 (N=46): physiological threat reactivity → conservative.
+    Smith 2011: disgust neurophysiology → political orientation.
+
+    Multiplicative: requires BOTH cognitive capacity to maintain complex
+    purity categories (BDNF + MEL) AND social enforcement motivation
+    (T + OXT). If either collapses, sanctity collapses — category
+    maintenance without enforcement is aesthetics, enforcement without
+    categories is authoritarianism.
+    """
+    cognitive = 0.55 * m["BDNF"] + 0.45 * m["MEL"]
+    enforcement = 0.55 * m["T"] + 0.45 * m["OXT"]
+    raw = cognitive * enforcement
+    return max(0.0, min(1.0, raw))
+
+
+def liberty_autonomy(m: dict[str, float]) -> float:
+    """Liberty/Oppression: resistance to domination, autonomy-seeking.
+
+    Settle 2010 (N=2574): DRD4-7R → liberal ideology via novelty.
+    DA: autonomy drive, exploration, resistance to constraint.
+    T: dominance resistance — capacity to resist being dominated.
+    CORT (inverse): threat strongly suppresses challenge to authority.
+    """
+    raw = (0.50 * m["DA"] + 0.35 * m["T"]) * (1.0 - 0.35 * m["CORT"])
+    return max(0.0, min(1.0, raw))
+
+
+MORAL_FOUNDATION_FUNCTIONS: dict[str, Any] = {
+    "care": care_harm,
+    "fairness": fairness_reciprocity,
+    "loyalty": loyalty_betrayal,
+    "authority": authority_hierarchy,
+    "sanctity": sanctity_purity,
+    "liberty": liberty_autonomy,
+}
+
+BINDING_FOUNDATIONS = ("loyalty", "authority", "sanctity")
+INDIVIDUALIZING_FOUNDATIONS = ("care", "fairness", "liberty")
+
+
+def moral_foundations_profile(markers: dict[str, float]) -> dict[str, float]:
+    """Compute Haidt's six moral foundations from biomarker state.
+
+    Returns a dict mapping foundation name to score in [0, 1].
+    """
+    return {name: round(fn(markers), 4) for name, fn in MORAL_FOUNDATION_FUNCTIONS.items()}
+
+
+def moral_breadth(
+    mf: dict[str, float],
+    threshold: float = 0.35,
+) -> dict[str, Any]:
+    """How many moral foundations are active (above threshold).
+
+    Graham, Haidt & Nosek 2009: liberals weight Care + Fairness,
+    conservatives weight all five-six more equally.  The breadth
+    metric captures this asymmetry.
+
+    Default threshold 0.35 calibrated to produce the Haidt gradient:
+    amish/rural 6/6, suburban 5-6/6, urban 2-3/6.
+
+    Binding foundations: Loyalty, Authority, Sanctity (group-preserving).
+    Individualizing: Care, Fairness, Liberty (individual-protecting).
+    """
+    active = {k: v for k, v in mf.items() if v >= threshold}
+
+    return {
+        "active_count": len(active),
+        "total": len(mf),
+        "breadth": round(len(active) / len(mf), 3),
+        "active_foundations": sorted(active.keys()),
+        "binding_active": sum(
+            1 for k in BINDING_FOUNDATIONS if mf.get(k, 0) >= threshold
+        ),
+        "individualizing_active": sum(
+            1 for k in INDIVIDUALIZING_FOUNDATIONS if mf.get(k, 0) >= threshold
+        ),
+    }
+
+
 # ── EMF exposure environments ──
 #
 # Each environment defines a multiplier on the biomarker trajectory.
@@ -359,6 +507,7 @@ def environment_profile(
     markers = environment_biomarkers(env_name, year)
     profile = orientation_profile(markers)
     bc = compute_biocap(markers)
+    mf = moral_foundations_profile(markers)
 
     return {
         "environment": env_name,
@@ -366,6 +515,8 @@ def environment_profile(
         "biomarkers": markers,
         "biocap": round(bc, 4),
         "orientation": {k: round(v, 4) for k, v in profile.items()},
+        "moral_foundations": mf,
+        "moral_breadth": moral_breadth(mf),
         "dominant_ideology": classify_ideology(profile, bc),
     }
 

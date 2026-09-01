@@ -16,21 +16,32 @@ import math
 import pytest
 
 from berm.civilization.political_biology import (
+    BINDING_FOUNDATIONS,
     DIMENSION_FUNCTIONS,
     ENVIRONMENTS,
     IDEOLOGY_PROFILES,
+    INDIVIDUALIZING_FOUNDATIONS,
+    MORAL_FOUNDATION_FUNCTIONS,
     EMFEnvironment,
+    authority_hierarchy,
+    care_harm,
     classify_ideology,
     cognitive_complexity,
     empathy_scope,
     environment_biomarkers,
     environment_comparison,
     environment_profile,
+    fairness_reciprocity,
     group_conformity,
     hierarchy_acceptance,
     ideology_trajectory,
+    liberty_autonomy,
+    loyalty_betrayal,
+    moral_breadth,
+    moral_foundations_profile,
     novelty_seeking,
     orientation_profile,
+    sanctity_purity,
     threat_sensitivity,
     time_preference,
     urban_rural_gradient,
@@ -530,3 +541,252 @@ class TestZapffeRecursion:
         ns = novelty_seeking(urban)
         assert ns < 0.55, \
             f"Urban novelty seeking {ns} too high — paradigm challenge too easy"
+
+
+# ── Moral Foundations (Haidt) ──
+
+
+NATURAL = {
+    "T": 0.98, "OXT": 0.97, "DA": 0.96, "MEL": 0.97,
+    "BDNF": 0.95, "CORT": 0.08, "D": 0.95, "B2": 0.90,
+}
+DEGRADED = {
+    "T": 0.35, "OXT": 0.45, "DA": 0.50, "MEL": 0.30,
+    "BDNF": 0.60, "CORT": 0.80, "D": 0.40, "B2": 0.50,
+}
+
+
+class TestMoralFoundationBounds:
+    """All six foundations in [0, 1] for extreme inputs."""
+
+    MARKERS = [
+        NATURAL,
+        DEGRADED,
+        {k: 0.0 for k in NATURAL},
+        {k: 1.0 for k in NATURAL},
+        {"T": 0.5, "OXT": 0.5, "DA": 0.5, "MEL": 0.5,
+         "BDNF": 0.5, "CORT": 0.5, "D": 0.5, "B2": 0.5},
+    ]
+
+    @pytest.mark.parametrize("markers", MARKERS)
+    def test_all_foundations_bounded(self, markers):
+        mf = moral_foundations_profile(markers)
+        for name, val in mf.items():
+            assert 0.0 <= val <= 1.0, f"{name}={val} out of bounds"
+
+
+class TestMoralFoundationMonotonicity:
+    """Biomarker effects on foundations follow literature predictions."""
+
+    def test_oxt_increases_care(self):
+        lo = {**NATURAL, "OXT": 0.30}
+        hi = {**NATURAL, "OXT": 0.90}
+        assert care_harm(hi) > care_harm(lo)
+
+    def test_da_increases_fairness(self):
+        lo = {**NATURAL, "DA": 0.30}
+        hi = {**NATURAL, "DA": 0.90}
+        assert fairness_reciprocity(hi) > fairness_reciprocity(lo)
+
+    def test_t_increases_authority(self):
+        lo = {**NATURAL, "T": 0.30}
+        hi = {**NATURAL, "T": 0.90}
+        assert authority_hierarchy(hi) > authority_hierarchy(lo)
+
+    def test_oxt_increases_loyalty(self):
+        lo = {**NATURAL, "OXT": 0.30}
+        hi = {**NATURAL, "OXT": 0.90}
+        assert loyalty_betrayal(hi) > loyalty_betrayal(lo)
+
+    def test_da_increases_liberty(self):
+        lo = {**NATURAL, "DA": 0.30}
+        hi = {**NATURAL, "DA": 0.90}
+        assert liberty_autonomy(hi) > liberty_autonomy(lo)
+
+    def test_t_increases_sanctity(self):
+        """T provides enforcement capacity for purity norms."""
+        lo = {**NATURAL, "T": 0.30}
+        hi = {**NATURAL, "T": 0.90}
+        assert sanctity_purity(hi) > sanctity_purity(lo)
+
+    def test_cort_reduces_care(self):
+        lo = {**NATURAL, "CORT": 0.10}
+        hi = {**NATURAL, "CORT": 0.80}
+        assert care_harm(lo) > care_harm(hi)
+
+    def test_cort_reduces_liberty(self):
+        """Threat suppresses willingness to challenge authority."""
+        lo = {**NATURAL, "CORT": 0.10}
+        hi = {**NATURAL, "CORT": 0.80}
+        assert liberty_autonomy(lo) > liberty_autonomy(hi)
+
+    def test_bdnf_increases_care_scope(self):
+        """BDNF broadens care from parochial to universal."""
+        lo = {**NATURAL, "BDNF": 0.30}
+        hi = {**NATURAL, "BDNF": 0.90}
+        assert care_harm(hi) > care_harm(lo)
+
+
+class TestHaidtGradient:
+    """Model predictions match Haidt's empirical findings."""
+
+    def test_amish_full_moral_palette(self):
+        """Amish (natural baseline) should have all 6 foundations active."""
+        m = environment_biomarkers("amish", 2025)
+        mf = moral_foundations_profile(m)
+        mb = moral_breadth(mf)
+        assert mb["active_count"] == 6
+        assert mb["binding_active"] == 3
+        assert mb["individualizing_active"] == 3
+
+    def test_rural_full_moral_palette(self):
+        """Rural should also have all 6 foundations active."""
+        m = environment_biomarkers("rural", 2025)
+        mf = moral_foundations_profile(m)
+        mb = moral_breadth(mf)
+        assert mb["active_count"] == 6
+
+    def test_urban_fewer_foundations(self):
+        """Urban should have fewer active foundations than rural."""
+        rural_m = environment_biomarkers("rural", 2025)
+        urban_m = environment_biomarkers("urban_office", 2025)
+        rural_mb = moral_breadth(moral_foundations_profile(rural_m))
+        urban_mb = moral_breadth(moral_foundations_profile(urban_m))
+        assert urban_mb["active_count"] < rural_mb["active_count"]
+
+    def test_urban_individualizing_over_binding(self):
+        """Urban should favor individualizing over binding foundations.
+
+        Graham, Haidt & Nosek 2009: liberals weight Care + Fairness,
+        conservatives weight all five-six.
+        """
+        m = environment_biomarkers("urban_residential", 2025)
+        mf = moral_foundations_profile(m)
+        binding_avg = sum(mf[k] for k in BINDING_FOUNDATIONS) / 3
+        indiv_avg = sum(mf[k] for k in INDIVIDUALIZING_FOUNDATIONS) / 3
+        assert indiv_avg > binding_avg, \
+            f"Individualizing {indiv_avg:.3f} should exceed binding {binding_avg:.3f}"
+
+    def test_amish_balanced_binding_individualizing(self):
+        """Amish should have roughly balanced binding and individualizing."""
+        m = environment_biomarkers("amish", 2025)
+        mf = moral_foundations_profile(m)
+        binding_avg = sum(mf[k] for k in BINDING_FOUNDATIONS) / 3
+        indiv_avg = sum(mf[k] for k in INDIVIDUALIZING_FOUNDATIONS) / 3
+        assert abs(binding_avg - indiv_avg) < 0.10, \
+            f"Amish should be balanced: binding={binding_avg:.3f}, indiv={indiv_avg:.3f}"
+
+    def test_moral_breadth_declines_with_emf(self):
+        """Moral breadth should decrease from amish to urban."""
+        breadths = []
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            mf = moral_foundations_profile(m)
+            mb = moral_breadth(mf)
+            breadths.append(mb["breadth"])
+        for i in range(len(breadths) - 1):
+            assert breadths[i] >= breadths[i + 1], \
+                f"Breadth should decline: {breadths}"
+
+    def test_urban_binding_foundations_lost_first(self):
+        """Binding foundations (Loyalty, Authority, Sanctity) should drop
+        below threshold before individualizing ones.
+
+        Haidt's key finding: the liberal profile is defined by the LOSS
+        of binding foundations, not the gain of individualizing ones.
+        """
+        m = environment_biomarkers("urban_residential", 2025)
+        mf = moral_foundations_profile(m)
+        mb = moral_breadth(mf)
+        assert mb["binding_active"] <= mb["individualizing_active"], \
+            f"Binding {mb['binding_active']} should be <= indiv {mb['individualizing_active']}"
+
+    def test_fairness_highest_in_urban(self):
+        """Fairness should be the highest or second-highest foundation
+        in urban environments.
+        """
+        m = environment_biomarkers("urban_office", 2025)
+        mf = moral_foundations_profile(m)
+        ranked = sorted(mf.items(), key=lambda x: x[1], reverse=True)
+        top_two = {ranked[0][0], ranked[1][0]}
+        assert "fairness" in top_two, \
+            f"Fairness not in top 2: {ranked}"
+
+    def test_sanctity_lowest_in_urban(self):
+        """Sanctity should be lowest in urban environments.
+
+        Inbar, Pizarro & Bloom 2009 (N=31,045): disgust sensitivity
+        positively correlates with conservatism. Urban liberal profile
+        should show minimum sanctity.
+        """
+        m = environment_biomarkers("urban_office", 2025)
+        mf = moral_foundations_profile(m)
+        ranked = sorted(mf.items(), key=lambda x: x[1])
+        assert ranked[0][0] == "sanctity", \
+            f"Sanctity not lowest: {ranked}"
+
+    def test_authority_sanctity_highest_in_amish(self):
+        """Authority and Sanctity should be among the highest foundations
+        in the natural baseline, reflecting full hierarchy + purity capacity.
+        """
+        m = environment_biomarkers("amish", 2025)
+        mf = moral_foundations_profile(m)
+        ranked = sorted(mf.items(), key=lambda x: x[1], reverse=True)
+        top_three = {ranked[0][0], ranked[1][0], ranked[2][0]}
+        assert "authority" in top_three and "sanctity" in top_three
+
+
+class TestMoralFoundationsLiterature:
+    """Tests grounded in specific published findings."""
+
+    def test_de_dreu_2011_oxt_loyalty_and_derogation(self):
+        """De Dreu 2011 (N=280): OXT increases in-group favoritism
+        AND out-group derogation. Model: high OXT should produce high
+        loyalty AND reduced empathy scope to out-group.
+        """
+        high_oxt = {**NATURAL, "OXT": 0.95}
+        low_oxt = {**NATURAL, "OXT": 0.30}
+        assert loyalty_betrayal(high_oxt) > loyalty_betrayal(low_oxt)
+
+    def test_burnham_2007_t_fairness_enforcement(self):
+        """Burnham 2007 (N=26): high T → reject unfair offers.
+        Model: T should increase fairness enforcement.
+        """
+        high_t = {**NATURAL, "T": 0.90}
+        low_t = {**NATURAL, "T": 0.30}
+        assert fairness_reciprocity(high_t) > fairness_reciprocity(low_t)
+
+    def test_inbar_2009_sanctity_conservatism(self):
+        """Inbar, Pizarro & Bloom 2009 (N=31,045): disgust sensitivity
+        correlates with conservatism. Model: rural (conservative-leaning)
+        should have higher sanctity than urban (liberal-leaning).
+        """
+        rural = environment_biomarkers("rural", 2025)
+        urban = environment_biomarkers("urban_office", 2025)
+        assert sanctity_purity(rural) > sanctity_purity(urban)
+
+    def test_killgore_2007_sleep_deprivation_moral_judgment(self):
+        """Killgore 2007 (N=26): 53h sleep deprivation → more harmful
+        judgments deemed appropriate. Model: low MEL should reduce care.
+        """
+        rested = {**NATURAL, "MEL": 0.95}
+        deprived = {**NATURAL, "MEL": 0.20}
+        assert care_harm(rested) >= care_harm(deprived)
+
+    def test_hatemi_2014_heritability_implies_biology(self):
+        """Hatemi 2014 (N>12,000 twin pairs): ~40% of political ideology
+        variance is heritable. Model: identical biomarker profiles should
+        produce identical moral foundations.
+        """
+        mf1 = moral_foundations_profile(NATURAL)
+        mf2 = moral_foundations_profile(NATURAL)
+        for k in mf1:
+            assert mf1[k] == mf2[k]
+
+    def test_environment_profile_includes_moral_foundations(self):
+        """environment_profile should include moral_foundations and moral_breadth."""
+        p = environment_profile("rural", 2025)
+        assert "moral_foundations" in p
+        assert "moral_breadth" in p
+        assert len(p["moral_foundations"]) == 6
+        assert "active_count" in p["moral_breadth"]

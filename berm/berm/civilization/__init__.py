@@ -80,15 +80,20 @@ from berm.civilization.phase_transitions import (
     predict_next_transition,
 )
 from berm.civilization.political_biology import (
+    BINDING_FOUNDATIONS,
     DIMENSION_FUNCTIONS,
     ENVIRONMENTS,
     IDEOLOGY_PROFILES,
+    INDIVIDUALIZING_FOUNDATIONS,
+    MORAL_FOUNDATION_FUNCTIONS,
     EMFEnvironment,
     classify_ideology,
     environment_biomarkers,
     environment_comparison,
     environment_profile,
     ideology_trajectory,
+    moral_breadth,
+    moral_foundations_profile,
     orientation_profile,
     urban_rural_gradient,
 )
