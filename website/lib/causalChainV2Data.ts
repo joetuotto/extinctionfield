@@ -8,7 +8,7 @@ import type { ChainEdge, ChainNode } from "./types";
  * bioelectric development, ovarian reserve and the demographic endpoint
  * cannot be collapsed into one scalar pathway.
  */
-export const FIELDSTATE_V2_NODES: ChainNode[] = [
+export const BERM_CAUSAL_NODES_V2: ChainNode[] = [
   {
     id: "fieldstate",
     level: 1,
@@ -255,7 +255,7 @@ export const FIELDSTATE_V2_NODES: ChainNode[] = [
   },
 ];
 
-export const FIELDSTATE_V2_EDGES: ChainEdge[] = [
+export const BERM_CAUSAL_EDGES_V2: ChainEdge[] = [
   { from: "fieldstate", to: "mechanisms", label: "measured input", epistemicLevel: "L*", priority: "primary" },
   { from: "mechanisms", to: "btb", label: "redox / tight junction", epistemicLevel: "M" },
   { from: "mechanisms", to: "other-barriers", label: "organ-specific hypothesis", epistemicLevel: "L*" },
@@ -371,12 +371,12 @@ export function getFieldStateCausalGraph(locale: GraphLocale): {
   edges: ChainEdge[];
 } {
   if (locale === "en") {
-    return { nodes: FIELDSTATE_V2_NODES, edges: FIELDSTATE_V2_EDGES };
+    return { nodes: BERM_CAUSAL_NODES_V2, edges: BERM_CAUSAL_EDGES_V2 };
   }
 
   return {
-    nodes: FIELDSTATE_V2_NODES.map((node) => ({ ...node, ...FI_NODE_COPY[node.id] })),
-    edges: FIELDSTATE_V2_EDGES.map((edge) => ({
+    nodes: BERM_CAUSAL_NODES_V2.map((node) => ({ ...node, ...FI_NODE_COPY[node.id] })),
+    edges: BERM_CAUSAL_EDGES_V2.map((edge) => ({
       ...edge,
       label: FI_EDGE_LABELS[`${edge.from}-${edge.to}`] ?? edge.label,
     })),

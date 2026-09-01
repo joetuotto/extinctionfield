@@ -32,3 +32,17 @@ luokittelua, muuta se taulukossa, älä sivun tekstissä.
 - Älä käytä termejä "todistaa" tai "vahvistaa" kumpaankaan suuntaan.
 - Älä poista dokumentoitua negatiivista havaintoa. Uudelleenluokittelu on
   sallittua vain perusteltuna ja taulukkoon kirjattuna.
+
+## Versionumerot
+
+Koodissa on viisi itsenäistä versiointijärjestelmää. Älä sekoita niitä:
+
+| Tunniste | Konteksti | Kuvaus |
+|---|---|---|
+| **v17** / v17.1 | Sivuston julkinen malli | BERM-mallin spesifikaatioversio |
+| **v18.0-asfr** | `export_asfr.py` | ASFR-kohorttien vientiversio |
+| **v19** / 0.19.0 | Python-paketti (`berm/__init__.py`) | Paketin julkaisuversio |
+| **v2** | FieldState measurement spec | Mittausprotokollan versio (bounded records) |
+| **CSLI-1 / SLEEP-1** | `predictions.ts` | Testikohtaiset versiot (sentinel cascade, sleep) |
+
+Nämä eivät ole saman asian eri versioita. Ne seuraavat eri julkaisurytmejä.

@@ -48,14 +48,14 @@ const COPY = {
         id: "LITHIUM",
         drug: "Lithium",
         drugSub: "Mood stabilizer, GSK-3β inhibitor, neuroprotective",
-        mechanism: "Lithium inhibits GSK-3β, which phosphorylates CRY proteins and targets them for degradation. GSK-3β inhibition → CRY accumulates → stronger circadian clock → enhanced melatonin signaling. Lithium also stabilizes circadian period length and increases melatonin secretion — directly opposing BERM pathway C (CRY/RPM → melatonin suppression).",
+        mechanism: "Lithium inhibits GSK-3β, which phosphorylates CRY proteins and targets them for degradation. GSK-3β inhibition → CRY accumulates → stronger circadian clock → enhanced melatonin signaling. Lithium also stabilizes circadian period length and increases melatonin secretion — directly opposing BERM pathway B (RPM/CRY → melatonin suppression).",
         evidence: [
           "Lithium lengthens circadian period in every organism tested from cyanobacteria to humans (McCarthy 2019, Translational Psychiatry). This is mediated by GSK-3β inhibition of CRY degradation.",
           "Lithium increases melatonin secretion in bipolar patients (Hallam 2005, J. Psychopharmacology). This is the opposite direction to EMF-induced melatonin suppression ([[ref:tbahriti2026|Tbahriti 2026 PRISMA]]: 88% of high-quality animal studies report EMF-induced melatonin suppression).",
           "Lithium is neuroprotective via multiple BERM-relevant mechanisms: GSK-3β inhibition reduces tau phosphorylation (Alzheimer's pathway), BDNF upregulation supports neuroplasticity, and anti-inflammatory effects reduce neuroinflammation. All three are downstream of BERM's Ca²⁺ disruption cascade.",
-          "Drinking water lithium epidemiology (VK54): regions with naturally elevated lithium in water show lower suicide rates (Kapusta 2011, Br J Psychiatry), lower dementia incidence (Kessing 2017, JAMA Psychiatry), and lower depression prevalence. The dose is 10–100× below therapeutic — suggesting CRY-pathway modulation at trace concentrations. BERM interpretation: trace lithium provides tonic CRY stabilization, partially protecting pathway C at a population level.",
+          "Drinking water lithium epidemiology (VK54): regions with naturally elevated lithium in water show lower suicide rates (Kapusta 2011, Br J Psychiatry), lower dementia incidence (Kessing 2017, JAMA Psychiatry), and lower depression prevalence. The dose is 10–100× below therapeutic — suggesting CRY-pathway modulation at trace concentrations. BERM interpretation: trace lithium provides tonic CRY stabilization, partially protecting pathway B at a population level.",
         ],
-        interpretation: "Lithium provides pathway C pharmacological counter-evidence. If CRY-mediated melatonin suppression contributes to EMF bioeffects, lithium's CRY stabilization and melatonin enhancement should partially protect against pathway C effects. The drinking water data (VK54) extends this from therapeutic to trace-dose protection — regions with higher water lithium may have partial, population-level EMF resilience via pathway C. Testable: lithium-treated bipolar patients should show less circadian disruption in high-EMF environments compared to bipolar patients on non-lithium mood stabilizers (e.g. valproate).",
+        interpretation: "Lithium provides pathway B pharmacological counter-evidence. If CRY-mediated melatonin suppression contributes to EMF bioeffects, lithium's CRY stabilization and melatonin enhancement should partially protect against pathway B effects. The drinking water data (VK54) extends this from therapeutic to trace-dose protection — regions with higher water lithium may have partial, population-level EMF resilience via pathway B. Testable: lithium-treated bipolar patients should show less circadian disruption in high-EMF environments compared to bipolar patients on non-lithium mood stabilizers (e.g. valproate).",
         level: "M|C",
       },
       {
@@ -100,14 +100,14 @@ const COPY = {
       {
         id: "MELATONIN",
         drug: "Exogenous melatonin",
-        drugSub: "Pathway C endpoint supplementation",
-        mechanism: "Melatonin supplementation directly replaces the hormone that BERM pathway C (CRY/RPM → melatonin suppression) predicts is reduced by EMF exposure. This is endpoint supplementation, not mechanism blockade — it does not prevent EMF-induced CRY disruption but compensates for its downstream hormonal consequence.",
+        drugSub: "Pathway B endpoint supplementation",
+        mechanism: "Melatonin supplementation directly replaces the hormone that BERM pathway B (RPM/CRY → melatonin suppression) predicts is reduced by EMF exposure. This is endpoint supplementation, not mechanism blockade — it does not prevent EMF-induced CRY disruption but compensates for its downstream hormonal consequence.",
         evidence: [
           "[[ref:tbahriti2026|Tbahriti et al. 2026]] (Sleep Biol Rhythms, PRISMA systematic review of 55 studies): 88% of high-quality animal studies report EMF-induced melatonin suppression of 20–50% from baseline. Exogenous melatonin would replace this deficit.",
-          "Melatonin is a potent antioxidant that scavenges ROS — directly counteracting the oxidative stress cascade (BERM Level 5A) independently of its hormonal function. This dual action (antioxidant + hormonal replacement) makes it effective against both pathway A downstream (ROS) and pathway C downstream (melatonin deficit).",
+          "Melatonin is a potent antioxidant that scavenges ROS — directly counteracting the oxidative stress cascade (BERM Level 5A) independently of its hormonal function. This dual action (antioxidant + hormonal replacement) makes it effective against both pathway A downstream (ROS) and pathway B downstream (melatonin deficit).",
           "Reiter et al. 2007, 2014: multiple reviews demonstrating melatonin's protective effects against RF-induced oxidative damage in animal models. Dose-dependent protection consistent with BERM's recovery window model.",
         ],
-        interpretation: "Melatonin is the most accessible pharmacological test of BERM pathway C. If nighttime melatonin supplementation (1–3 mg, timed to natural secretion) attenuates EMF-associated sleep disruption and improves sperm parameters in high-EMF environments, it supports the melatonin bridge hypothesis. Caveat: melatonin does not address pathways A (VGCC) or B (ELF), so protection should be partial.",
+        interpretation: "Melatonin is the most accessible pharmacological test of BERM pathway B. If nighttime melatonin supplementation (1–3 mg, timed to natural secretion) attenuates EMF-associated sleep disruption and improves sperm parameters in high-EMF environments, it supports the melatonin bridge hypothesis. Caveat: melatonin does not address pathways C (BBB) or D (HPA), so protection should be partial.",
         level: "E|M",
       },
       {
@@ -260,7 +260,7 @@ const COPY = {
     convergenceLead: "The strongest evidence for any biological mechanism is pharmacological: if blocking the proposed transduction channel abolishes the effect, the mechanism is confirmed. Fourteen drug classes converge on BERM's predicted pathways:",
     convergencePoints: [
       "Pathway A (VGCC): CCBs (23 blocker studies), verapamil (frequency-dependent blockade), gabapentinoids (α2δ modulation), nimodipine (CNS-selective blockade), riluzole (Ca²⁺-dependent glutamate release inhibition)",
-      "Pathway C (CRY/melatonin): Lithium (CRY stabilization via GSK-3β, trace-dose drinking water data), exogenous melatonin (endpoint replacement)",
+      "Pathway B (CRY/melatonin): Lithium (CRY stabilization via GSK-3β, trace-dose drinking water data), exogenous melatonin (endpoint replacement)",
       "Ca²⁺ hormesis/reset: Psilocybin (5-HT2A → controlled Ca²⁺ burst → plasticity reset), caffeine (adenosine A₁ antagonism → biphasic Ca²⁺ modulation)",
       "ROS cascade: CoQ10 (antioxidant rescue, [[ref:bektas2026|Bektas 2026 5G data]]), melatonin (dual antioxidant + hormonal)",
       "Metabolic branch: Semaglutide/GLP-1 agonists (Ca²⁺-ERK pathway amplification) — speculative but testable",
@@ -576,14 +576,14 @@ const COPY = {
         id: "LITHIUM",
         drug: "Lithium",
         drugSub: "気分安定薬、GSK-3β阻害薬、神経保護",
-        mechanism: "LithiumはGSK-3βを阻害する。GSK-3βはCRYタンパク質をリン酸化し分解標的とする。GSK-3β阻害 → CRY蓄積 → より強い概日時計 → 増強されたmelatoninシグナリング。LithiumはBERM経路C（CRY/RPM → melatonin抑制）に直接対抗する。",
+        mechanism: "LithiumはGSK-3βを阻害する。GSK-3βはCRYタンパク質をリン酸化し分解標的とする。GSK-3β阻害 → CRY蓄積 → より強い概日時計 → 増強されたmelatoninシグナリング。LithiumはBERM経路B（RPM/CRY → melatonin抑制）に直接対抗する。",
         evidence: [
           "Lithiumはシアノバクテリアからヒトまでテストされたすべての生物で概日周期を延長する（McCarthy 2019、Translational Psychiatry）。GSK-3βのCRY分解阻害を介する。",
           "Lithiumは双極性障害患者でmelatonin分泌を増加させる（Hallam 2005、J. Psychopharmacology）。EMF誘発melatonin抑制と逆方向。",
           "Lithiumは複数のBERM関連メカニズムを介して神経保護的：GSK-3β阻害がtauリン酸化を低減、BDNF上方制御が神経可塑性を支持、抗炎症効果が神経炎症を低減。",
-          "飲料水lithium疫学（VK54）：水中lithiumが自然に高い地域は低い自殺率（Kapusta 2011、Br J Psychiatry）、低い認知症発症率（Kessing 2017、JAMA Psychiatry）、低い抑うつ有病率を示す。用量は治療量の10〜100分の1 — 微量濃度でのCRY経路調節を示唆。BERM解釈：微量lithiumは持続的CRY安定化を提供し、集団レベルで経路Cを部分的に保護する。",
+          "飲料水lithium疫学（VK54）：水中lithiumが自然に高い地域は低い自殺率（Kapusta 2011、Br J Psychiatry）、低い認知症発症率（Kessing 2017、JAMA Psychiatry）、低い抑うつ有病率を示す。用量は治療量の10〜100分の1 — 微量濃度でのCRY経路調節を示唆。BERM解釈：微量lithiumは持続的CRY安定化を提供し、集団レベルで経路Bを部分的に保護する。",
         ],
-        interpretation: "Lithiumは経路Cの薬理学的反証を提供する。CRY介在melatonin抑制がEMF生体効果に寄与するなら、LithiumのCRY安定化は経路C効果を部分的に保護するはずである。飲料水データ（VK54）は治療量から微量保護に拡張する。テスト可能：lithium治療を受けた双極性患者は高EMF環境で非lithium気分安定薬（例：valproate）使用患者と比較して概日障害が少ないはずである。",
+        interpretation: "Lithiumは経路Bの薬理学的反証を提供する。CRY介在melatonin抑制がEMF生体効果に寄与するなら、LithiumのCRY安定化は経路B効果を部分的に保護するはずである。飲料水データ（VK54）は治療量から微量保護に拡張する。テスト可能：lithium治療を受けた双極性患者は高EMF環境で非lithium気分安定薬（例：valproate）使用患者と比較して概日障害が少ないはずである。",
         level: "M|C",
       },
       {
@@ -628,14 +628,14 @@ const COPY = {
       {
         id: "MELATONIN",
         drug: "外因性melatonin",
-        drugSub: "経路Cエンドポイント補充",
-        mechanism: "Melatonin補充はBERM経路C（CRY/RPM → melatonin抑制）がEMF曝露により減少すると予測するホルモンを直接補充する。これはエンドポイント補充であり、メカニズム遮断ではない — EMF誘発CRY障害を防止しないが、その下流のホルモン的結果を補償する。",
+        drugSub: "経路Bエンドポイント補充",
+        mechanism: "Melatonin補充はBERM経路B（RPM/CRY → melatonin抑制）がEMF曝露により減少すると予測するホルモンを直接補充する。これはエンドポイント補充であり、メカニズム遮断ではない — EMF誘発CRY障害を防止しないが、その下流のホルモン的結果を補償する。",
         evidence: [
           "[[ref:tbahriti2026|Tbahritiら 2026]]（Sleep Biol Rhythms、55研究のPRISMAシステマティックレビュー）：高品質動物研究の88%がEMF誘発melatonin抑制20–50%を報告。外因性melatoninはこの欠損を補充する。",
-          "Melatoninは強力な抗酸化物質でROSを捕捉する — そのホルモン機能とは独立して酸化ストレスカスケード（BERMレベル5A）に直接対抗する。この二重作用（抗酸化 + ホルモン補充）は経路A下流（ROS）と経路C下流（melatonin欠損）の両方に効果的。",
+          "Melatoninは強力な抗酸化物質でROSを捕捉する — そのホルモン機能とは独立して酸化ストレスカスケード（BERMレベル5A）に直接対抗する。この二重作用（抗酸化 + ホルモン補充）は経路A下流（ROS）と経路B下流（melatonin欠損）の両方に効果的。",
           "Reiterら 2007、2014：動物モデルでのRF誘発酸化損傷に対するmelatoninの保護効果を示す複数のレビュー。用量依存的保護はBERMの回復ウィンドウモデルと一致。",
         ],
-        interpretation: "MelatoninはBERM経路Cの最もアクセスしやすい薬理学的テストである。夜間melatonin補充（1–3 mg）が高EMF環境でEMF関連睡眠障害を減衰し精子パラメータを改善するなら、melatoninブリッジ仮説を支持する。注意：melatoninは経路A（VGCC）やB（ELF）に対処しないため、保護は部分的であるべきである。",
+        interpretation: "MelatoninはBERM経路Bの最もアクセスしやすい薬理学的テストである。夜間melatonin補充（1–3 mg）が高EMF環境でEMF関連睡眠障害を減衰し精子パラメータを改善するなら、melatoninブリッジ仮説を支持する。注意：melatoninは経路C（BBB）やD（HPA）に対処しないため、保護は部分的であるべきである。",
         level: "E|M",
       },
       {
@@ -788,7 +788,7 @@ const COPY = {
     convergenceLead: "いかなる生物学的メカニズムの最も強い証拠は薬理学的である：提唱されたトランスダクションチャネルの遮断が効果を消失させるなら、メカニズムは確認される。14の薬剤クラスがBERMの予測経路に収束する：",
     convergencePoints: [
       "経路A（VGCC）：CCB（23遮断研究）、verapamil（頻度依存性遮断）、gabapentinoid系（α2δ調節）、nimodipine（CNS選択的遮断）、riluzole（Ca²⁺依存性glutamate放出阻害）",
-      "経路C（CRY/melatonin）：Lithium（GSK-3βによるCRY安定化、微量飲料水データ）、外因性melatonin（エンドポイント補充）",
+      "経路B（CRY/melatonin）：Lithium（GSK-3βによるCRY安定化、微量飲料水データ）、外因性melatonin（エンドポイント補充）",
       "Ca²⁺ホルメシス/リセット：Psilocybin（5-HT2A → 制御Ca²⁺バースト → 可塑性リセット）、caffeine（adenosine A₁拮抗 → 二相性Ca²⁺調節）",
       "ROSカスケード：CoQ10（抗酸化レスキュー、[[ref:bektas2026|Bektas 2026 5Gデータ]]）、melatonin（二重抗酸化 + ホルモン）",
       "代謝分岐：Semaglutide/GLP-1アゴニスト（Ca²⁺-ERK経路増幅） — 推測的だがテスト可能",
@@ -841,14 +841,14 @@ const COPY = {
         id: "LITHIUM",
         drug: "Lithium",
         drugSub: "Stabilisateur d'humeur, inhibiteur GSK-3β, neuroprotecteur",
-        mechanism: "Le lithium inhibe GSK-3β, qui phosphoryle les protéines CRY et les cible pour dégradation. Inhibition GSK-3β → accumulation CRY → horloge circadienne plus forte → signalisation mélatonine améliorée. Le lithium s'oppose directement à la voie C de BERM (CRY/RPM → suppression de la mélatonine).",
+        mechanism: "Le lithium inhibe GSK-3β, qui phosphoryle les protéines CRY et les cible pour dégradation. Inhibition GSK-3β → accumulation CRY → horloge circadienne plus forte → signalisation mélatonine améliorée. Le lithium s'oppose directement à la voie B de BERM (RPM/CRY → suppression de la mélatonine).",
         evidence: [
           "Le lithium allonge la période circadienne dans tous les organismes testés, des cyanobactéries aux humains (McCarthy 2019, Translational Psychiatry). Médié par l'inhibition de la dégradation CRY par GSK-3β.",
           "Le lithium augmente la sécrétion de mélatonine chez les patients bipolaires (Hallam 2005, J. Psychopharmacology). Direction opposée à la suppression de mélatonine induite par EMF.",
           "Le lithium est neuroprotecteur via plusieurs mécanismes pertinents pour BERM : inhibition GSK-3β réduit la phosphorylation tau, la régulation positive BDNF soutient la neuroplasticité, et les effets anti-inflammatoires réduisent la neuroinflammation.",
           "Épidémiologie du lithium dans l'eau potable (VK54) : les régions avec du lithium naturellement élevé montrent des taux de suicide plus bas (Kapusta 2011, Br J Psychiatry), moins de démence (Kessing 2017, JAMA Psychiatry) et moins de dépression. La dose est 10–100× inférieure à la dose thérapeutique — suggérant une modulation de la voie CRY à des concentrations traces.",
         ],
-        interpretation: "Le lithium fournit une contre-preuve pharmacologique de la voie C. Si la suppression de la mélatonine médiée par CRY contribue aux bioeffets EMF, la stabilisation CRY par le lithium devrait partiellement protéger. Les données sur l'eau potable (VK54) étendent cela de la protection thérapeutique à la protection à dose trace. Testable : les patients bipolaires sous lithium devraient montrer moins de perturbation circadienne en environnement EMF élevé.",
+        interpretation: "Le lithium fournit une contre-preuve pharmacologique de la voie B. Si la suppression de la mélatonine médiée par CRY contribue aux bioeffets EMF, la stabilisation CRY par le lithium devrait partiellement protéger. Les données sur l'eau potable (VK54) étendent cela de la protection thérapeutique à la protection à dose trace. Testable : les patients bipolaires sous lithium devraient montrer moins de perturbation circadienne en environnement EMF élevé.",
         level: "M|C",
       },
       {
@@ -893,14 +893,14 @@ const COPY = {
       {
         id: "MELATONIN",
         drug: "Mélatonine exogène",
-        drugSub: "Supplémentation du point terminal de la voie C",
-        mechanism: "La supplémentation en mélatonine remplace directement l'hormone que la voie C de BERM (CRY/RPM → suppression de la mélatonine) prédit être réduite par l'exposition EMF. C'est une supplémentation du point terminal, pas un blocage du mécanisme.",
+        drugSub: "Supplémentation du point terminal de la voie B",
+        mechanism: "La supplémentation en mélatonine remplace directement l'hormone que la voie B de BERM (RPM/CRY → suppression de la mélatonine) prédit être réduite par l'exposition EMF. C'est une supplémentation du point terminal, pas un blocage du mécanisme.",
         evidence: [
           "[[ref:tbahriti2026|Tbahriti et al. 2026]] (Sleep Biol Rhythms, revue systématique PRISMA de 55 études) : 88 % des études animales de haute qualité rapportent une suppression de la mélatonine de 20–50 %. La mélatonine exogène remplacerait ce déficit.",
-          "La mélatonine est un puissant antioxydant qui piège les ROS — contrecarrant directement la cascade de stress oxydatif (niveau 5A de BERM) indépendamment de sa fonction hormonale. Cette double action (antioxydant + remplacement hormonal) la rend efficace contre la voie A en aval (ROS) et la voie C en aval (déficit de mélatonine).",
+          "La mélatonine est un puissant antioxydant qui piège les ROS — contrecarrant directement la cascade de stress oxydatif (niveau 5A de BERM) indépendamment de sa fonction hormonale. Cette double action (antioxydant + remplacement hormonal) la rend efficace contre la voie A en aval (ROS) et la voie B en aval (déficit de mélatonine).",
           "Reiter et al. 2007, 2014 : multiples revues démontrant les effets protecteurs de la mélatonine contre les dommages oxydatifs induits par RF dans les modèles animaux.",
         ],
-        interpretation: "La mélatonine est le test pharmacologique le plus accessible de la voie C de BERM. Si la supplémentation nocturne en mélatonine (1–3 mg) atténue les perturbations du sommeil associées aux EMF et améliore les paramètres spermatiques en environnement EMF élevé, elle soutient l'hypothèse du pont mélatonine. Mise en garde : la mélatonine ne traite pas les voies A (VGCC) ou B (ELF), donc la protection devrait être partielle.",
+        interpretation: "La mélatonine est le test pharmacologique le plus accessible de la voie B de BERM. Si la supplémentation nocturne en mélatonine (1–3 mg) atténue les perturbations du sommeil associées aux EMF et améliore les paramètres spermatiques en environnement EMF élevé, elle soutient l'hypothèse du pont mélatonine. Mise en garde : la mélatonine ne traite pas les voies C (BBB) ou D (HPA), donc la protection devrait être partielle.",
         level: "E|M",
       },
       {
@@ -1053,7 +1053,7 @@ const COPY = {
     convergenceLead: "La preuve la plus forte pour tout mécanisme biologique est pharmacologique : si le blocage du canal de transduction proposé abolit l'effet, le mécanisme est confirmé. Quatorze classes de médicaments convergent sur les voies prédites par BERM :",
     convergencePoints: [
       "Voie A (VGCC) : CCB (23 études de blocage), vérapamil (blocage fréquence-dépendant), gabapentinoïdes (modulation α2δ), nimodipine (blocage CNS-sélectif), riluzole (inhibition de la libération de glutamate Ca²⁺-dépendante)",
-      "Voie C (CRY/mélatonine) : Lithium (stabilisation CRY via GSK-3β, données eau potable à dose trace), mélatonine exogène (remplacement du point terminal)",
+      "Voie B (CRY/mélatonine) : Lithium (stabilisation CRY via GSK-3β, données eau potable à dose trace), mélatonine exogène (remplacement du point terminal)",
       "Hormèse/réinitialisation Ca²⁺ : Psilocybine (5-HT2A → burst Ca²⁺ contrôlé → réinitialisation plasticité), caféine (antagonisme adénosine A₁ → modulation Ca²⁺ biphasique)",
       "Cascade ROS : CoQ10 (sauvetage antioxydant, [[ref:bektas2026|données 5G Bektas 2026]]), mélatonine (double antioxydant + hormonal)",
       "Branche métabolique : Sémaglutide/agonistes GLP-1 (amplification voie Ca²⁺-ERK) — spéculatif mais testable",
@@ -1106,14 +1106,14 @@ const COPY = {
         id: "LITHIUM",
         drug: "Lithium",
         drugSub: "기분안정제, GSK-3β 억제제, 신경보호",
-        mechanism: "Lithium은 CRY 단백질을 인산화하여 분해 표적으로 삼는 GSK-3β를 억제한다. GSK-3β 억제 → CRY 축적 → 더 강한 일주기 시계 → 향상된 melatonin 신호. Lithium은 BERM 경로 C(CRY/RPM → melatonin 억제)에 직접 대항한다.",
+        mechanism: "Lithium은 CRY 단백질을 인산화하여 분해 표적으로 삼는 GSK-3β를 억제한다. GSK-3β 억제 → CRY 축적 → 더 강한 일주기 시계 → 향상된 melatonin 신호. Lithium은 BERM 경로 B(RPM/CRY → melatonin 억제)에 직접 대항한다.",
         evidence: [
           "Lithium은 시아노박테리아에서 인간까지 테스트된 모든 유기체에서 일주기 주기를 연장한다(McCarthy 2019, Translational Psychiatry). GSK-3β의 CRY 분해 억제를 통해 매개.",
           "Lithium은 양극성 환자에서 melatonin 분비를 증가시킨다(Hallam 2005, J. Psychopharmacology). EMF 유도 melatonin 억제와 반대 방향.",
           "Lithium은 여러 BERM 관련 메커니즘을 통해 신경보호적: GSK-3β 억제가 tau 인산화 감소, BDNF 상향조절이 신경가소성 지원, 항염증 효과가 신경염증 감소.",
           "음용수 lithium 역학(VK54): 수중 lithium이 자연적으로 높은 지역은 낮은 자살률(Kapusta 2011, Br J Psychiatry), 낮은 치매 발병률(Kessing 2017, JAMA Psychiatry), 낮은 우울증 유병률을 보인다. 용량은 치료량의 10-100분의 1 — 미량 농도에서의 CRY 경로 조절 시사.",
         ],
-        interpretation: "Lithium은 경로 C의 약리학적 반증을 제공한다. CRY 매개 melatonin 억제가 EMF 생체효과에 기여한다면, lithium의 CRY 안정화는 경로 C 효과를 부분적으로 보호해야 한다. 음용수 데이터(VK54)는 치료적에서 미량 보호로 확장한다. 테스트 가능: lithium 치료 양극성 환자는 고EMF 환경에서 비lithium 기분안정제 사용 환자보다 일주기 교란이 적어야 한다.",
+        interpretation: "Lithium은 경로 B의 약리학적 반증을 제공한다. CRY 매개 melatonin 억제가 EMF 생체효과에 기여한다면, lithium의 CRY 안정화는 경로 B 효과를 부분적으로 보호해야 한다. 음용수 데이터(VK54)는 치료적에서 미량 보호로 확장한다. 테스트 가능: lithium 치료 양극성 환자는 고EMF 환경에서 비lithium 기분안정제 사용 환자보다 일주기 교란이 적어야 한다.",
         level: "M|C",
       },
       {
@@ -1158,14 +1158,14 @@ const COPY = {
       {
         id: "MELATONIN",
         drug: "외인성 melatonin",
-        drugSub: "경로 C 종점 보충",
-        mechanism: "Melatonin 보충은 BERM 경로 C(CRY/RPM → melatonin 억제)가 EMF 노출에 의해 감소한다고 예측하는 호르몬을 직접 보충한다. 이는 종점 보충이지 메커니즘 차단이 아니다.",
+        drugSub: "경로 B 종점 보충",
+        mechanism: "Melatonin 보충은 BERM 경로 B(RPM/CRY → melatonin 억제)가 EMF 노출에 의해 감소한다고 예측하는 호르몬을 직접 보충한다. 이는 종점 보충이지 메커니즘 차단이 아니다.",
         evidence: [
           "[[ref:tbahriti2026|Tbahriti 등 2026]](Sleep Biol Rhythms, 55개 연구의 PRISMA 체계적 리뷰): 고품질 동물 연구의 88%가 EMF 유도 melatonin 억제 20-50% 보고. 외인성 melatonin이 이 결손을 보충한다.",
           "Melatonin은 ROS를 포착하는 강력한 항산화제 — 호르몬 기능과 독립적으로 산화 스트레스 연쇄반응(BERM 레벨 5A)에 직접 대항한다.",
           "Reiter 등 2007, 2014: 동물 모델에서 RF 유도 산화 손상에 대한 melatonin의 보호 효과를 보여주는 다수의 리뷰.",
         ],
-        interpretation: "Melatonin은 BERM 경로 C의 가장 접근성 높은 약리학적 테스트이다. 야간 melatonin 보충(1-3 mg)이 고EMF 환경에서 EMF 관련 수면 장애를 감쇠하고 정자 매개변수를 개선한다면 melatonin 다리 가설을 지지한다. 주의: melatonin은 경로 A(VGCC)나 B(ELF)를 다루지 않으므로 보호는 부분적이어야 한다.",
+        interpretation: "Melatonin은 BERM 경로 B의 가장 접근성 높은 약리학적 테스트이다. 야간 melatonin 보충(1-3 mg)이 고EMF 환경에서 EMF 관련 수면 장애를 감쇠하고 정자 매개변수를 개선한다면 melatonin 다리 가설을 지지한다. 주의: melatonin은 경로 C(BBB)나 D(HPA)를 다루지 않으므로 보호는 부분적이어야 한다.",
         level: "E|M",
       },
       {
@@ -1318,7 +1318,7 @@ const COPY = {
     convergenceLead: "모든 생물학적 메커니즘의 가장 강력한 증거는 약리학적이다: 제안된 전달 채널의 차단이 효과를 소멸시킨다면 메커니즘이 확인된다. 14개 약물 클래스가 BERM의 예측 경로에 수렴한다:",
     convergencePoints: [
       "경로 A(VGCC): CCB(23개 차단 연구), verapamil(빈도 의존적 차단), gabapentinoid계(α2δ 조절), nimodipine(CNS 선택적 차단), riluzole(Ca²⁺ 의존적 glutamate 방출 억제)",
-      "경로 C(CRY/melatonin): Lithium(GSK-3β를 통한 CRY 안정화, 미량 음용수 데이터), 외인성 melatonin(종점 보충)",
+      "경로 B(CRY/melatonin): Lithium(GSK-3β를 통한 CRY 안정화, 미량 음용수 데이터), 외인성 melatonin(종점 보충)",
       "Ca²⁺ 호르메시스/리셋: Psilocybin(5-HT2A → 제어된 Ca²⁺ 분출 → 가소성 리셋), caffeine(adenosine A₁ 길항 → 이상성 Ca²⁺ 조절)",
       "ROS 연쇄반응: CoQ10(항산화 구조, [[ref:bektas2026|Bektas 2026 5G 데이터]]), melatonin(이중 항산화 + 호르몬)",
       "대사 분기: Semaglutide/GLP-1 작용제(Ca²⁺-ERK 경로 증폭) — 추측적이나 테스트 가능",

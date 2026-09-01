@@ -27,7 +27,7 @@ def main():
     countries = sorted(WPP_ASFR.keys())
     output = {
         "generated": "2026-08-19",
-        "model_version": "v18.0-asfr",
+        "model_version": "v18.0-asfr",  # ASFR export version; public model is v17
         "age_groups": list(AGE_GROUPS),
         "projection_years": list(PROJECTION_YEARS),
         "countries": {},

@@ -1,4 +1,8 @@
-"""BERM: BioElectromagnetic Resonance Model v19.
+"""BERM: BioElectromagnetic Reproductive Model — Python package v19 (0.19.x).
+
+Package version v19/0.19.x is the Python library release; the public model
+specification on the website is v17. ASFR exports use v18.0-asfr. These
+version numbers track independent release cadences, not different models.
 
 v19 adds the three-channel model (ELF+IF+RF), therapeutic device paradox
 evidence, and COVID paradox resolution. Three-channel model is DIAGNOSTIC

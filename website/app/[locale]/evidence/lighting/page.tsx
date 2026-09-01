@@ -45,7 +45,7 @@ const COPY = {
         paragraphs: [
           "The transition from CRT to flat-panel LCD/LED televisions (2005–2015) was not simply a display technology change — it was a multiplicative EMF transformation. Screen count per household increased from ~1 to ~3–4. Average screen size grew from 27\" to 60\" (~5× surface area). Bedroom TV penetration rose from 15% to 70%. Built-in Wi-Fi added continuous 2.4/5 GHz RF emission. Viewing distance decreased. Viewing hours increased with streaming culture.",
           "CRT televisions were not EMF-silent — their deflection coils produced strong VLF fields (15.6 kHz) and ELF fields (50 Hz). But these were from a single device at 3–4 m distance. The replacement by multiple Wi-Fi-connected LCD screens in every room, including bedrooms at 1.5–2 m from the pineal gland during evening hours, represents a qualitative change in the circadian EMF exposure profile.",
-          "The bedroom television is particularly relevant to BERM’s circadian pathway (Pathway C): a large LED-backlit, Wi-Fi-connected screen at head height, operating from evening through the melatonin production window, producing both blue light and EMF simultaneously. The multiplicative effect (count × size × bedroom × Wi-Fi × hours × proximity) is far larger than any single-factor analysis would suggest.",
+          "The bedroom television is particularly relevant to BERM’s circadian pathway (Pathway B): a large LED-backlit, Wi-Fi-connected screen at head height, operating from evening through the melatonin production window, producing both blue light and EMF simultaneously. The multiplicative effect (count × size × bedroom × Wi-Fi × hours × proximity) is far larger than any single-factor analysis would suggest.",
         ],
         studies: [
           { citation: "Display market penetration data (Statista/GWI)", year: "2005–24", referenceId: "display_market_penetration_2005_2024", note: "Screen count 1 → 3.5, bedroom penetration 15% → 70%" },
@@ -137,7 +137,7 @@ const COPY = {
         paragraphs: [
           "Siirtymä CRT-kuvaputkinäytöistä LCD/LED-litteänäyttöihin (2005–2015) ei ollut pelkkä näyttöteknologian muutos — se oli moninkertaistava EMF-muutos. Näyttöjen lukumäärä kotitaloutta kohti kasvoi ~1:stä ~3–4:ään. Keskimääräinen ruutukoko kasvoi 27\":stä 60\":iin (~5-kertainen pinta-ala). Makuuhuoneen TV-penetraatio nousi 15 %:sta 70 %:iin. Sisäänrakennettu Wi-Fi lisäsi jatkuvan 2,4/5 GHz RF-emission. Katselyetäisyys lyheni. Katseluaika kasvoi suoratoistokulttuurin myötä.",
           "CRT-televisiot eivät olleet EMF-hiljaisia — niiden poikkeutuskäämit tuottivat voimakkaita VLF-kenttiä (15,6 kHz) ja ELF-kenttiä (50 Hz). Mutta nämä olivat yhdestä laitteesta 3–4 m:n etäisyydellä. Korvaaminen useilla Wi-Fi-yhdistetyillä LCD-näytöillä jokaisessa huoneessa, mukaan lukien makuuhuoneessa 1,5–2 m:n päässä pineaalirauhasesta ilta-aikaan, edustaa laadullista muutosta sirkadiaanisessa EMF-altistusprofiilissa.",
-          "Makuuhuoneen televisio on erityisen relevantti BERM:n sirkadiaaniselle reitille (Polku C): suuri LED-taustavalaistu, Wi-Fi-yhdistetty näyttö pään korkeudella, toimii illasta melatoniinin tuotantoikkunan läpi, tuottaen sekä sinistä valoa että EMF:ää samanaikaisesti. Moninkertaisuusvaikutus (lukumäärä × koko × makuuhuone × Wi-Fi × tunnit × läheisyys) on paljon suurempi kuin mikään yksittäisen tekijän analyysi antaisi ymmärtää.",
+          "Makuuhuoneen televisio on erityisen relevantti BERM:n sirkadiaaniselle reitille (Polku B): suuri LED-taustavalaistu, Wi-Fi-yhdistetty näyttö pään korkeudella, toimii illasta melatoniinin tuotantoikkunan läpi, tuottaen sekä sinistä valoa että EMF:ää samanaikaisesti. Moninkertaisuusvaikutus (lukumäärä × koko × makuuhuone × Wi-Fi × tunnit × läheisyys) on paljon suurempi kuin mikään yksittäisen tekijän analyysi antaisi ymmärtää.",
         ],
         studies: [
           { citation: "Näyttömarkkinapenetraatiodata (Statista/GWI)", year: "2005–24", referenceId: "display_market_penetration_2005_2024", note: "Näyttömäärä 1 → 3,5, makuuhuonepenetraatio 15 % → 70 %" },
@@ -230,7 +230,7 @@ const COPY = {
         paragraphs: [
           "CRTからフラットパネルLCD/LEDテレビへの移行（2005-2015年）は単なるディスプレイ技術の変更ではなく、乗法的なEMF変換でした。世帯あたりのスクリーン数は約1から約3-4に増加。平均画面サイズは27インチから60インチへ拡大（約5倍の表面積）。寝室のTV普及率は15%から70%に上昇。内蔵Wi-Fiが2.4/5 GHzの連続RF放射を追加。視聴距離は短縮。ストリーミング文化により視聴時間が増加。",
           "CRTテレビはEMFサイレントではありませんでした――偏向コイルが強いVLF場（15.6 kHz）とELF場（50 Hz）を生成していました。しかしこれは3-4 m離れた1台のデバイスからのものでした。すべての部屋、特に夕方の時間帯に松果体から1.5-2 mの位置にある寝室で、複数のWi-Fi接続LCD画面への置き換えは、概日EMF曝露プロファイルの質的変化を意味します。",
-          "寝室のテレビはBERMの概日経路（経路C）に特に関連します：頭の高さにある大型LED バックライト付きWi-Fi接続画面が、夕方からメラトニン産生ウィンドウを通じて動作し、ブルーライトとEMFの両方を同時に発生させます。乗法効果（台数×サイズ×寝室×Wi-Fi×時間×近接度）は、単一因子分析が示唆するよりもはるかに大きいです。",
+          "寝室のテレビはBERMの概日経路（経路B）に特に関連します：頭の高さにある大型LED バックライト付きWi-Fi接続画面が、夕方からメラトニン産生ウィンドウを通じて動作し、ブルーライトとEMFの両方を同時に発生させます。乗法効果（台数×サイズ×寝室×Wi-Fi×時間×近接度）は、単一因子分析が示唆するよりもはるかに大きいです。",
         ],
         studies: [
           { citation: "ディスプレイ市場普及率データ (Statista/GWI)", year: "2005-24", referenceId: "display_market_penetration_2005_2024", note: "スクリーン数1→3.5、寝室普及率15%→70%" },
@@ -323,7 +323,7 @@ const COPY = {
         paragraphs: [
           "La transition des CRT aux téléviseurs LCD/LED à écran plat (2005-2015) n'était pas simplement un changement de technologie d'affichage — c'était une transformation EMF multiplicative. Le nombre d'écrans par foyer est passé de ~1 à ~3-4. La taille moyenne des écrans est passée de 27\" à 60\" (~5× la surface). La pénétration des TV dans les chambres est passée de 15 % à 70 %. Le Wi-Fi intégré a ajouté une émission RF continue 2,4/5 GHz. La distance de visionnage a diminué. Les heures de visionnage ont augmenté avec la culture du streaming.",
           "Les téléviseurs CRT n'étaient pas silencieux en EMF — leurs bobines de déviation produisaient de forts champs VLF (15,6 kHz) et ELF (50 Hz). Mais ceux-ci provenaient d'un seul appareil à 3-4 m de distance. Le remplacement par plusieurs écrans LCD connectés au Wi-Fi dans chaque pièce, y compris les chambres à 1,5-2 m de la glande pinéale pendant les heures du soir, représente un changement qualitatif du profil d'exposition EMF circadien.",
-          "Le téléviseur de chambre est particulièrement pertinent pour la voie circadienne de BERM (Voie C) : un grand écran rétroéclairé LED, connecté au Wi-Fi, à hauteur de tête, fonctionnant du soir à travers la fenêtre de production de mélatonine, produisant simultanément lumière bleue et EMF. L'effet multiplicatif (nombre × taille × chambre × Wi-Fi × heures × proximité) est bien plus important que toute analyse mono-facteur ne le suggérerait.",
+          "Le téléviseur de chambre est particulièrement pertinent pour la voie circadienne de BERM (Voie B) : un grand écran rétroéclairé LED, connecté au Wi-Fi, à hauteur de tête, fonctionnant du soir à travers la fenêtre de production de mélatonine, produisant simultanément lumière bleue et EMF. L'effet multiplicatif (nombre × taille × chambre × Wi-Fi × heures × proximité) est bien plus important que toute analyse mono-facteur ne le suggérerait.",
         ],
         studies: [
           { citation: "Données pénétration marché écrans (Statista/GWI)", year: "2005-24", referenceId: "display_market_penetration_2005_2024", note: "Nombre d'écrans 1 → 3,5, pénétration chambre 15 % → 70 %" },
@@ -416,7 +416,7 @@ const COPY = {
         paragraphs: [
           "CRT에서 평면 LCD/LED 텔레비전으로의 전환(2005-2015년)은 단순한 디스플레이 기술 변경이 아니었습니다 — 곱셈적 EMF 변환이었습니다. 가구당 화면 수가 약 1에서 약 3-4로 증가했습니다. 평균 화면 크기가 27인치에서 60인치로 성장(약 5배 표면적). 침실 TV 보급률이 15%에서 70%로 상승했습니다. 내장 Wi-Fi가 2.4/5 GHz 연속 RF 방출을 추가했습니다. 시청 거리가 감소했습니다. 스트리밍 문화로 시청 시간이 증가했습니다.",
           "CRT 텔레비전은 EMF 무음이 아니었습니다 — 편향 코일이 강한 VLF 장(15.6 kHz)과 ELF 장(50 Hz)을 생성했습니다. 그러나 이것은 3-4 m 거리의 단일 장치에서 발생한 것이었습니다. 저녁 시간에 송과체에서 1.5-2 m 떨어진 침실을 포함한 모든 방에서 여러 Wi-Fi 연결 LCD 화면으로의 교체는 일주기 EMF 노출 프로필의 질적 변화를 나타냅니다.",
-          "침실 텔레비전은 BERM의 일주기 경로(경로 C)에 특히 관련됩니다: 머리 높이에 있는 대형 LED 백라이트, Wi-Fi 연결 화면이 저녁부터 멜라토닌 생산 윈도우를 통해 작동하며 블루라이트와 EMF를 동시에 생성합니다. 곱셈 효과(대수 × 크기 × 침실 × Wi-Fi × 시간 × 근접성)는 단일 요인 분석이 제안하는 것보다 훨씬 큽니다.",
+          "침실 텔레비전은 BERM의 일주기 경로(경로 B)에 특히 관련됩니다: 머리 높이에 있는 대형 LED 백라이트, Wi-Fi 연결 화면이 저녁부터 멜라토닌 생산 윈도우를 통해 작동하며 블루라이트와 EMF를 동시에 생성합니다. 곱셈 효과(대수 × 크기 × 침실 × Wi-Fi × 시간 × 근접성)는 단일 요인 분석이 제안하는 것보다 훨씬 큽니다.",
         ],
         studies: [
           { citation: "디스플레이 시장 보급률 데이터 (Statista/GWI)", year: "2005-24", referenceId: "display_market_penetration_2005_2024", note: "화면 수 1 → 3.5, 침실 보급률 15% → 70%" },

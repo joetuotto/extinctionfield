@@ -77,7 +77,7 @@ const t: Record<string, Copy> = {
     subtitle:
       "Every identified negative finding, open problem and falsified earlier version — and what each one actually bears on.",
     introduction:
-      "BERM v17 treats openness as an epistemological principle. The classification below applies the BERM reasoning protocol (v1.0) to findings previously read as negative. Reclassification does not mean a finding supports BERM: it means the original test was not discriminating, or did not address the target it was taken to address. The primary branch (pathway C / RPM / cohort effect) remains empirically untested by discriminating tests.",
+      "BERM v17 treats openness as an epistemological principle. The classification below applies the BERM reasoning protocol (v1.0) to findings previously read as negative. Reclassification does not mean a finding supports BERM: it means the original test was not discriminating, or did not address the target it was taken to address. The primary branch (pathway B / RPM / cohort effect) remains empirically untested by discriminating tests.",
     summaryLabel: "REVIEW OF NEGATIVE FINDINGS",
     activeTitle: "Active problems (remain negative)",
     activeLead:
@@ -90,7 +90,7 @@ const t: Record<string, Copy> = {
       "These were genuine failures of a specific formulation, and each produced a structural correction rather than a defence.",
     testsTitle: "Discriminating tests still needed",
     testsLead:
-      "None of the 13 findings tested the primary branch. These three would separate pathway C (RPM) from the consensus model. None has been carried out.",
+      "None of the 13 findings tested the primary branch. These three would separate pathway B (RPM) from the consensus model. None has been carried out.",
     tests: [
       {
         id: "D1",
@@ -286,10 +286,10 @@ const t: Record<string, Copy> = {
         boundary: "The SLEEP-1 prediction is directly falsifiable. If Faraday-shielded LEDs produce the same sleep disruption as unshielded LEDs (identical spectrum), the IF pathway is not the primary mechanism.",
       },
       {
-        question: "Why does pathway C get 25% when it was originally 15%?",
+        question: "Why does pathway B get 25% when it was originally 15%?",
         response: [
-          "Pathway C was originally assigned 15% based on its known role as a circadian clock modulator. In 2025, [[ref:yap2025|Yap and colleagues]] discovered that CRY2 — the main protein of pathway C — also physically interacts with TRPC1, a cation channel, and modulates calcium signaling through a mechanism that requires both light and FAD. This means pathway C encompasses TWO downstream effects: circadian clock disruption AND CRY2-dependent calcium signaling. The increased weight (25%) reflects this expanded biological footprint.",
-          "Importantly, TRPC1 is a TRP channel, not a voltage-gated calcium channel (VGCC). Pathway A operates through VGCCs and is blocked by nifedipine. Pathway C's TRPC1 branch is NOT blocked by nifedipine. The two pathways remain pharmacologically distinct — they share the same upstream stimulus (EMF) while acting through completely different channel families.",
+          "Pathway B was originally assigned 15% based on its known role as a circadian clock modulator. In 2025, [[ref:yap2025|Yap and colleagues]] discovered that CRY2 — the main protein of pathway B — also physically interacts with TRPC1, a cation channel, and modulates calcium signaling through a mechanism that requires both light and FAD. This means pathway B encompasses TWO downstream effects: circadian clock disruption AND CRY2-dependent calcium signaling. The increased weight (25%) reflects this expanded biological footprint.",
+          "Importantly, TRPC1 is a TRP channel, not a voltage-gated calcium channel (VGCC). Pathway A operates through VGCCs and is blocked by nifedipine. Pathway B's TRPC1 branch is NOT blocked by nifedipine. The two pathways remain pharmacologically distinct — they share the same upstream stimulus (EMF) while acting through completely different channel families.",
           "The prediction TRPC1-1 tests this directly: EMF exposure of reproductive cells with nifedipine (blocks A), anti-TRPC1 (blocks C-calcium), or both should reveal the relative contributions of each pathway.",
         ],
         boundary: "The weight adjustment is based on one study ([[ref:yap2025|Yap 2025]]) in myoblasts. Confirmation in gonadal cells (Sertoli, granulosa) is required before the weight can be considered empirically validated.",
@@ -346,7 +346,7 @@ const t: Record<string, Copy> = {
     subtitle:
       "Kaikki tunnistetut negatiiviset havainnot, avoimet ongelmat ja falsifioidut aiemmat versiot — sekä se, mitä kukin niistä todella koskee.",
     introduction:
-      "BERM v17 pitää avoimuutta epistemologisena periaatteena. Alla oleva luokittelu soveltaa BERM-päättelyprotokollaa (v1.0) aiemmin negatiivisiksi tulkittuihin havaintoihin. Uudelleenluokittelu ei tarkoita, että havainto tukisi BERM:ää — se tarkoittaa, ettei alkuperäinen testi ollut erotteleva tai ei kohdistunut siihen, mitä sen katsottiin testaavan. BERM:n primäärihaara (polku C / RPM / kohorttivaikutus) on edelleen empiirisesti testaamaton erottelevilla testeillä.",
+      "BERM v17 pitää avoimuutta epistemologisena periaatteena. Alla oleva luokittelu soveltaa BERM-päättelyprotokollaa (v1.0) aiemmin negatiivisiksi tulkittuihin havaintoihin. Uudelleenluokittelu ei tarkoita, että havainto tukisi BERM:ää — se tarkoittaa, ettei alkuperäinen testi ollut erotteleva tai ei kohdistunut siihen, mitä sen katsottiin testaavan. BERM:n primäärihaara (polku B / RPM / kohorttivaikutus) on edelleen empiirisesti testaamaton erottelevilla testeillä.",
     summaryLabel: "NEGATIIVISTEN HAVAINTOJEN UUDELLEENARVIOINTI",
     activeTitle: "Aktiiviset ongelmat (pysyvät negatiivisina)",
     activeLead:
@@ -555,10 +555,10 @@ const t: Record<string, Copy> = {
         boundary: "SLEEP-1-ennuste on suoraan falsifioitavissa. Jos Faraday-suojatut LED:t tuottavat saman unihäiriön kuin suojaamattomat (identtinen spektri), IF-polku ei ole ensisijainen mekanismi.",
       },
       {
-        question: "Miksi polku C saa 25 % kun se oli alun perin 15 %?",
+        question: "Miksi polku B saa 25 % kun se oli alun perin 15 %?",
         response: [
-          "Polku C sai alun perin 15 % perustuen tunnettuun rooliinsa sirkadiaanisen kellon modulaattorina. Vuonna 2025 [[ref:yap2025|Yap ja kollegat]] löysivät, että CRY2 — polku C:n pääproteiini — on myös fysikaalisessa vuorovaikutuksessa TRPC1:n, kationikanavan, kanssa ja säätelee kalsiumsignalointia mekanismilla, joka vaatii sekä valon että FAD:n. Tämä tarkoittaa, että polku C kattaa KAKSI alaspäin suuntautuvaa vaikutusta: sirkadiaanisen kellon häiriön JA CRY2-riippuvaisen kalsiumsignaloinnin. Korotettu paino (25 %) heijastaa tätä laajennettua biologista vaikutuskenttää.",
-          "TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polku A toimii VGCC:iden kautta ja nifedipiini estää sen. Polku C:n TRPC1-haara EI ole nifedipiinin estämä. Kaksi polkua pysyy farmakologisesti erillisinä — ne jakavat saman ylävirtastimulaation (EMF) mutta toimivat täysin eri kanavaperheiden kautta.",
+          "Polku B sai alun perin 15 % perustuen tunnettuun rooliinsa sirkadiaanisen kellon modulaattorina. Vuonna 2025 [[ref:yap2025|Yap ja kollegat]] löysivät, että CRY2 — polku B:n pääproteiini — on myös fysikaalisessa vuorovaikutuksessa TRPC1:n, kationikanavan, kanssa ja säätelee kalsiumsignalointia mekanismilla, joka vaatii sekä valon että FAD:n. Tämä tarkoittaa, että polku B kattaa KAKSI alaspäin suuntautuvaa vaikutusta: sirkadiaanisen kellon häiriön JA CRY2-riippuvaisen kalsiumsignaloinnin. Korotettu paino (25 %) heijastaa tätä laajennettua biologista vaikutuskenttää.",
+          "TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polku A toimii VGCC:iden kautta ja nifedipiini estää sen. Polku B:n TRPC1-haara EI ole nifedipiinin estämä. Kaksi polkua pysyy farmakologisesti erillisinä — ne jakavat saman ylävirtastimulaation (EMF) mutta toimivat täysin eri kanavaperheiden kautta.",
           "Ennuste TRPC1-1 testaa tämän suoraan: EMF-altistus reproduktiosoluille nifedipiinin (estää A:n), anti-TRPC1:n (estää C-kalsiumin) tai molempien kanssa paljastaa kunkin polun suhteellisen kontribuution.",
         ],
         boundary: "Painon muutos perustuu yhteen tutkimukseen ([[ref:yap2025|Yap 2025]]) myoblasteissa. Vahvistus gonadikudoksessa (Sertoli, granuloosa) vaaditaan ennen kuin painoa voidaan pitää empiirisesti validoituna.",
@@ -615,7 +615,7 @@ const t: Record<string, Copy> = {
     subtitle:
       "すべての特定された否定的知見、未解決の問題、過去に反証されたバージョン — それぞれが実際に何に関するものかを示す。",
     introduction:
-      "BERM v17は開放性を認識論的原則として扱う。以下の分類は、以前否定的と解釈された知見にBERM推論プロトコル（v1.0）を適用する。再分類は知見がBERMを支持することを意味しない — 元のテストが識別的でなかった、または対象とされたターゲットに対応しなかったことを意味する。主要分岐（経路C / RPM / コホート効果）は識別的テストによる経験的検証がまだ行われていない。",
+      "BERM v17は開放性を認識論的原則として扱う。以下の分類は、以前否定的と解釈された知見にBERM推論プロトコル（v1.0）を適用する。再分類は知見がBERMを支持することを意味しない — 元のテストが識別的でなかった、または対象とされたターゲットに対応しなかったことを意味する。主要分岐（経路B / RPM / コホート効果）は識別的テストによる経験的検証がまだ行われていない。",
     summaryLabel: "否定的知見のレビュー",
     activeTitle: "活発な問題（否定的なまま）",
     activeLead:
@@ -628,7 +628,7 @@ const t: Record<string, Copy> = {
       "これらは特定の定式化の真の失敗であり、それぞれが防御ではなく構造的修正を生み出した。",
     testsTitle: "まだ必要な識別的テスト",
     testsLead:
-      "13の知見のいずれも主要分岐をテストしていない。以下の3つは経路C（RPM）をコンセンサスモデルから分離する。いずれも実施されていない。",
+      "13の知見のいずれも主要分岐をテストしていない。以下の3つは経路B（RPM）をコンセンサスモデルから分離する。いずれも実施されていない。",
     tests: [
       {
         id: "D1",
@@ -823,9 +823,9 @@ const t: Record<string, Copy> = {
         boundary: "SLEEP-1予測は直接反証可能。ファラデーシールドLEDがシールドなしLEDと同じ睡眠妨害を産むなら、IF経路は主要メカニズムではない。",
       },
       {
-        question: "なぜ経路Cは元の15%から25%を得るのか？",
+        question: "なぜ経路Bは元の15%から25%を得るのか？",
         response: [
-          "経路Cは元々15%が割り当てられた。2025年、[[ref:yap2025|Yapと同僚]]はCRY2がTRPC1とも相互作用し、カルシウムシグナリングを調節することを発見した。経路Cは2つの下流効果を包含する。",
+          "経路Bは元々15%が割り当てられた。2025年、[[ref:yap2025|Yapと同僚]]はCRY2がTRPC1とも相互作用し、カルシウムシグナリングを調節することを発見した。経路Bは2つの下流効果を包含する。",
           "TRPC1はTRPチャネルであり、VGCCではない。2つの経路は薬理学的に異なったまま。",
           "予測TRPC1-1はこれを直接テストする。",
         ],
@@ -883,7 +883,7 @@ const t: Record<string, Copy> = {
     subtitle:
       "Chaque résultat négatif identifié, problème ouvert et version antérieure falsifiée — et ce que chacun concerne réellement.",
     introduction:
-      "BERM v17 traite l’ouverture comme un principe épistémologique. La classification ci-dessous applique le protocole de raisonnement BERM (v1.0) aux résultats précédemment considérés comme négatifs. La reclassification ne signifie pas qu’un résultat soutient BERM : elle signifie que le test original n’était pas discriminant, ou ne portait pas sur la cible visée. La branche principale (voie C / RPM / effet de cohorte) reste empiriquement non testée par des tests discriminants.",
+      "BERM v17 traite l’ouverture comme un principe épistémologique. La classification ci-dessous applique le protocole de raisonnement BERM (v1.0) aux résultats précédemment considérés comme négatifs. La reclassification ne signifie pas qu’un résultat soutient BERM : elle signifie que le test original n’était pas discriminant, ou ne portait pas sur la cible visée. La branche principale (voie B / RPM / effet de cohorte) reste empiriquement non testée par des tests discriminants.",
     summaryLabel: "REVUE DES RÉSULTATS NÉGATIFS",
     activeTitle: "Problèmes actifs (restent négatifs)",
     activeLead:
@@ -896,7 +896,7 @@ const t: Record<string, Copy> = {
       "Il s’agissait d’échecs véritables d’une formulation spécifique, et chacun a produit une correction structurelle plutôt qu’une défense.",
     testsTitle: "Tests discriminants encore nécessaires",
     testsLead:
-      "Aucun des 13 résultats n’a testé la branche principale. Ces trois sépareraient la voie C (RPM) du modèle de consensus. Aucun n’a été réalisé.",
+      "Aucun des 13 résultats n’a testé la branche principale. Ces trois sépareraient la voie B (RPM) du modèle de consensus. Aucun n’a été réalisé.",
     tests: [
       {
         id: "D1",
@@ -1091,9 +1091,9 @@ const t: Record<string, Copy> = {
         boundary: "La prédiction SLEEP-1 est directement falsifiable.",
       },
       {
-        question: "Pourquoi la voie C obtient-elle 25 % alors qu’elle était initialement à 15 % ?",
+        question: "Pourquoi la voie B obtient-elle 25 % alors qu’elle était initialement à 15 % ?",
         response: [
-          "La voie C était initialement à 15 %. En 2025, [[ref:yap2025|Yap et al.]] ont découvert que CRY2 interagit aussi avec TRPC1, modulant la signalisation calcique.",
+          "La voie B était initialement à 15 %. En 2025, [[ref:yap2025|Yap et al.]] ont découvert que CRY2 interagit aussi avec TRPC1, modulant la signalisation calcique.",
           "TRPC1 est un canal TRP, pas un VGCC. Les deux voies restent pharmacologiquement distinctes.",
           "La prédiction TRPC1-1 teste directement les contributions relatives.",
         ],
@@ -1151,7 +1151,7 @@ const t: Record<string, Copy> = {
     subtitle:
       "모든 식별된 부정적 발견, 미해결 문제 및 이전에 반증된 버전 — 그리고 각각이 실제로 무엇에 관한 것인지.",
     introduction:
-      "BERM v17은 개방성을 인식론적 원칙으로 취급한다. 아래 분류는 이전에 부정적으로 해석된 발견에 BERM 추론 프로토콜(v1.0)을 적용한다. 재분류는 발견이 BERM을 지지한다는 의미가 아니다 — 원래 테스트가 식별적이지 않았거나, 대상으로 여겨진 목표에 해당하지 않았음을 의미한다. 주요 분기(경로 C / RPM / 코호트 효과)는 식별적 테스트에 의한 경험적 검증이 아직 이루어지지 않았다.",
+      "BERM v17은 개방성을 인식론적 원칙으로 취급한다. 아래 분류는 이전에 부정적으로 해석된 발견에 BERM 추론 프로토콜(v1.0)을 적용한다. 재분류는 발견이 BERM을 지지한다는 의미가 아니다 — 원래 테스트가 식별적이지 않았거나, 대상으로 여겨진 목표에 해당하지 않았음을 의미한다. 주요 분기(경로 B / RPM / 코호트 효과)는 식별적 테스트에 의한 경험적 검증이 아직 이루어지지 않았다.",
     summaryLabel: "부정적 발견 검토",
     activeTitle: "활성 문제 (부정적으로 유지)",
     activeLead:
@@ -1164,7 +1164,7 @@ const t: Record<string, Copy> = {
       "이것들은 특정 공식의 진정한 실패였으며, 각각이 방어가 아닌 구조적 수정을 산출했다.",
     testsTitle: "아직 필요한 식별적 테스트",
     testsLead:
-      "13개의 발견 중 어느 것도 주요 분기를 테스트하지 않았다. 이 세 가지가 경로 C(RPM)를 합의 모델로부터 분리할 것이다. 어느 것도 수행되지 않았다.",
+      "13개의 발견 중 어느 것도 주요 분기를 테스트하지 않았다. 이 세 가지가 경로 B(RPM)를 합의 모델로부터 분리할 것이다. 어느 것도 수행되지 않았다.",
     tests: [
       {
         id: "D1",
@@ -1359,9 +1359,9 @@ const t: Record<string, Copy> = {
         boundary: "SLEEP-1 예측은 직접 반증 가능하다.",
       },
       {
-        question: "왜 경로 C는 원래 15%에서 25%를 얻는가?",
+        question: "왜 경로 B는 원래 15%에서 25%를 얻는가?",
         response: [
-          "경로 C는 원래 15%가 할당되었다. 2025년, [[ref:yap2025|Yap과 동료들]]은 CRY2가 TRPC1과도 상호작용하여 칼슘 신호전달을 조절함을 발견했다.",
+          "경로 B는 원래 15%가 할당되었다. 2025년, [[ref:yap2025|Yap과 동료들]]은 CRY2가 TRPC1과도 상호작용하여 칼슘 신호전달을 조절함을 발견했다.",
           "TRPC1은 TRP 채널이지, VGCC가 아니다. 두 경로는 약리학적으로 구별된다.",
           "예측 TRPC1-1이 이것을 직접 테스트한다.",
         ],

@@ -75,7 +75,12 @@ def v16_country_trajectory(
     start_year: int = 2000,
     end_year: int = 2035,
 ) -> dict:
-    """Generate v16 decomposed trajectory with extended diagnostics."""
+    """Generate v16 decomposed trajectory with extended diagnostics.
+
+    cum_emf is a cumulative-exposure proxy derived from device-adoption
+    curves, not a FieldState measurement. It drives the v16/v17 sigmoid
+    but is not comparable to the bounded FieldState measurement spec.
+    """
     from berm.v16 import (
         calibrate_v16,
         v16_adjusted_cumulative_exposure,

@@ -615,7 +615,7 @@ Tämä on vain coefficient-attenuation-diagnoosi. Poikkileikkausdata ei osoita a
 
 ## BERM-tulkinta
 
-**A. BERM-spesifi ennuste.** Tässä aineistossa ei ole FieldStatea, B₀-suuntia, vaihetta, koherenssia, beat-PSD:tä, elinsiirtoa tai RPM-biomarkkereita. Siksi analyysista ei voi johtaa eikä testata BERM-polku C:n erottelevia ennusteita. Mahdollinen T–TFR-assosiaatio on korkeintaan yhteensopiva sen tuodun biologisen oletuksen kanssa, että testosteroni liittyy lisääntymiskapasiteettiin.
+**A. BERM-spesifi ennuste.** Tässä aineistossa ei ole FieldStatea, B₀-suuntia, vaihetta, koherenssia, beat-PSD:tä, elinsiirtoa tai RPM-biomarkkereita. Siksi analyysista ei voi johtaa eikä testata BERM-polku B:n erottelevia ennusteita. Mahdollinen T–TFR-assosiaatio on korkeintaan yhteensopiva sen tuodun biologisen oletuksen kanssa, että testosteroni liittyy lisääntymiskapasiteettiin.
 
 **B. Konsensus-/vaihtoehtomalli.** Kehitysaste, terveys, ravitsemus, lihavuus, ikärakenne, mittauskäytännöt, ehkäisy ja syntyvyystoiveet voivat tuottaa sekä maiden T-eroja että TFR-eroja. Sähkönkulutus toimii tässä kehityksen infrastruktuuriproksina eikä fysikaalisena annoksena.
 

@@ -55,7 +55,7 @@
       "name": "δV_m ≈ 10⁻²¹ V geometric coupling",
       "original_classification": "mechanism_failure",
       "revised_classification": "internal_refinement",
-      "reason": "Applies to pathway A only; pathway C (RPM) operates at correct scale; led to hierarchy inversion",
+      "reason": "Applies to pathway A only; pathway B (RPM) operates at correct scale; led to hierarchy inversion",
       "affects": "pathway_a_geometry",
       "affects_l_berm": true,
       "affects_empirical_berm": false,

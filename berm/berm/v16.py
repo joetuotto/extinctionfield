@@ -431,10 +431,10 @@ GAMMA_CAPACITATION = 0.005
 GAMMA_NAVIGATION = 0.003
 
 # Pathway-level weights (relative causal contribution).
-# Updated 2026-08-24: C=0.25 (was 0.15), B=0.15 (was 0.25).
-# CRY2-TRPC1 (Yap 2025) expands pathway C's biological footprint
-# from clock-only to clock + TRPC1-mediated calcium signaling.
-PATHWAY_WEIGHTS = {"A": 0.45, "B": 0.15, "C": 0.25, "D": 0.15}
+# Canonical source: berm/biology/pathways.py
+# B=0.25: CRY2-TRPC1 (Yap 2025) expanded pathway B (RPM/CRY) from
+# clock-only to clock + TRPC1-mediated calcium signaling.
+PATHWAY_WEIGHTS = {"A": 0.45, "B": 0.25, "C": 0.15, "D": 0.15}
 
 
 def v17_night_fraction(country: str, year: int) -> float:
@@ -512,14 +512,14 @@ def v17_cry_effect(country: str, year: int) -> float:
     Not implemented because population-level B2 status data requires
     integration with nutritional databases.
 
-    NOTE — CRY2-TRPC1 extends pathway C, does NOT couple A and C:
+    NOTE — CRY2-TRPC1 extends pathway B, does NOT couple A and B:
     Yap 2025 showed CRY2 modulates TRPC1 (a TRP channel, NOT a VGCC).
-    This gives pathway C two downstream branches:
-      C-clock: CRY2 → circadian transcription loop → melatonin → HPG
-      C-calcium: CRY2 → TRPC1 modulation → Ca²⁺ entry → nuclear translocation
-    Pathways A (VGCC, blocked by nifedipine) and C (CRY2-TRPC1, not
+    This gives pathway B two downstream branches:
+      B-clock: CRY2 → circadian transcription loop → melatonin → HPG
+      B-calcium: CRY2 → TRPC1 modulation → Ca²⁺ entry → nuclear translocation
+    Pathways A (VGCC, blocked by nifedipine) and B (CRY2-TRPC1, not
     blocked by nifedipine) remain pharmacologically separable.
-    The multiplicative model (1 - γ_A·r_A) × (1 - γ_C·r_C) is correct
+    The multiplicative model (1 - γ_A·r_A) × (1 - γ_B·r_B) is correct
     as-is; no cross-term needed.
     """
     cry_ann = v17_cry_annual_response(country, year)
@@ -531,7 +531,7 @@ def v18_nutritional_cry_modifier(
     eye_color_blue_prevalence: float = 0.0,
     omega_index: float = 1.0,
 ) -> float:
-    """Nutritional and genetic modifier for pathway C effectiveness.
+    """Nutritional and genetic modifier for pathway B effectiveness.
 
     NOT YET INTEGRATED into main model. Placeholder for future extension.
 
@@ -556,7 +556,7 @@ def v18_nutritional_cry_modifier(
     Returns
     -------
     float
-        Multiplicative modifier for pathway C response. Range ~0.1 to ~1.3.
+        Multiplicative modifier for pathway B response. Range ~0.1 to ~1.3.
         1.0 = no modification (reference population).
         <1.0 = impaired CRY function (B2 deficiency, brown eyes, poor omega).
         >1.0 = enhanced CRY function (B2 adequate, blue eyes, good omega).
@@ -2081,4 +2081,103 @@ def v17_ecosystem_cry_cascade(
         "B_total_uT": float(B_total),
         "b2_bottleneck_level": b2_bottleneck[0],
         "warning": "DIAGNOSTIC_ONLY: sensitivity values are illustrative, not calibrated"
+    }
+
+
+def v17_solar_bandpass_analysis(
+    tfr_series: dict[str, list[tuple[int, float]]],
+    ssn_series: list[tuple[int, float]],
+    geomag_lats: dict[str, float],
+    window: int = 11,
+) -> dict:
+    """DIAGNOSTIC_ONLY: Bandpass correlation analysis between detrended TFR and SSN.
+
+    Tests SOLAR-2 prediction: higher geomagnetic latitude → stronger
+    ~11-year solar-cycle signal in fertility.
+
+    Parameters
+    ----------
+    tfr_series : dict mapping country code → [(year, tfr), ...]
+    ssn_series : [(year, ssn), ...]
+    geomag_lats : dict mapping country code → geomagnetic latitude (°)
+    window : moving-average window for detrending (default 11)
+
+    Returns
+    -------
+    dict with per-country |r(ΔTFR, ΔSSN)|, trend slope, and trend r.
+    """
+    half = window // 2
+
+    def _detrend(vals: list[float]) -> list[float]:
+        n = len(vals)
+        out = []
+        for i in range(n):
+            if i < half or i >= n - half:
+                out.append(0.0)
+            else:
+                ma = sum(vals[i - half : i + half + 1]) / window
+                out.append(vals[i] - ma)
+        return out
+
+    def _pearson(a: list[float], b: list[float]) -> float:
+        n = min(len(a), len(b))
+        if n < 3:
+            return 0.0
+        sa = sum(a[:n])
+        sb = sum(b[:n])
+        sab = sum(x * y for x, y in zip(a[:n], b[:n]))
+        sa2 = sum(x * x for x in a[:n])
+        sb2 = sum(y * y for y in b[:n])
+        num = n * sab - sa * sb
+        den_sq = (n * sa2 - sa * sa) * (n * sb2 - sb * sb)
+        if den_sq <= 0:
+            return 0.0
+        return num / math.sqrt(den_sq)
+
+    ssn_lookup = {y: v for y, v in ssn_series}
+    all_years = sorted(ssn_lookup.keys())
+    start_yr = max(all_years[0], min(y for s in tfr_series.values() for y, _ in s))
+    end_yr = min(all_years[-1], max(y for s in tfr_series.values() for y, _ in s))
+    years = list(range(start_yr, end_yr + 1))
+
+    ssn_vals = [ssn_lookup.get(y, 0.0) for y in years]
+    ssn_det = _detrend(ssn_vals)
+    ssn_trim = ssn_det[half : len(ssn_det) - half]
+
+    results = {}
+    for code, series in tfr_series.items():
+        lookup = {y: v for y, v in series}
+        vals = [lookup.get(y, 0.0) for y in years]
+        det = _detrend(vals)
+        trim = det[half : len(det) - half]
+        r = abs(_pearson(trim, ssn_trim))
+        lat = geomag_lats.get(code, 0.0)
+        results[code] = {"abs_r": round(r, 4), "geomag_lat": lat}
+
+    lats = [v["geomag_lat"] for v in results.values()]
+    rs = [v["abs_r"] for v in results.values()]
+
+    if len(lats) >= 2:
+        trend_r = _pearson(lats, rs)
+        mean_lat = sum(lats) / len(lats)
+        mean_r = sum(rs) / len(rs)
+        ss_lat = sum((l - mean_lat) ** 2 for l in lats)
+        slope = (
+            sum((l - mean_lat) * (r - mean_r) for l, r in zip(lats, rs)) / ss_lat
+            if ss_lat > 0
+            else 0.0
+        )
+    else:
+        trend_r = 0.0
+        slope = 0.0
+
+    return {
+        "per_country": results,
+        "trend_r_lat_vs_abs_r": round(trend_r, 4),
+        "trend_slope": round(slope, 6),
+        "solar2_prediction": "SUPPORTED" if trend_r > 0.3 else "INCONCLUSIVE",
+        "n_countries": len(results),
+        "year_range": [start_yr, end_yr],
+        "detrend_window": window,
+        "warning": "DIAGNOSTIC_ONLY: exploratory pattern, not causal — confounders not controlled"
     }

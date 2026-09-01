@@ -145,7 +145,7 @@ export const NODES: CausalMapNode[] = [
         fdaDevice: "PRF (510k, 27 MHz). Epäsuora: [[ref:lindecke2026|Lindecke 2026 Science]]",
         prediction: "Wi-Fi-tiheys korreloi sirkadiaanisten häiriöiden kanssa",
       },
-      bermPathway: "Pathways B, C",
+      bermPathway: "Pathway B",
       keyRefs: ["lindecke2026", "panagopoulos2025", "deprez2025"],
       link: "/evidence#rf-channel",
     },
@@ -260,7 +260,7 @@ export const NODES: CausalMapNode[] = [
         mechanism: "Kryptokromin RPM-mekanismi + pinealirauhasen melatoniinisyntesi. EMF häiritsee molempia: RPM suoraan, melatoniinia SCN:n kautta.",
         fdaDevice: "TMS (FDA 2008) — kortikaalinen sirkadiaaninen modul.",
       },
-      bermPathway: "Pathways B, C",
+      bermPathway: "Pathway B",
       keyRefs: ["lindecke2026", "chang2015_ipad_melatonin"],
       link: "/mathematics#section-2b",
     },
@@ -353,7 +353,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "FAD (flavin adenine dinucleotide) is the essential chromophore for both CRY1 and CRY2. Riboflavin (vitamin B2) deficiency reduces CRY protein stability ([[ref:hirano2017|Hirano 2017]]) and abolishes magnetoreception ([[ref:yap2025|Yap 2025]]). China: >90% B2 inadequacy coincides with lowest TFR." },
       fi: { mechanism: "FAD (flaviiniadeniinidinukleotidi) on välttämätön kromofori sekä CRY1:lle että CRY2:lle. Riboflaviini (B2-vitamiini) -puutos vähentää CRY-proteiinin stabiilisuutta ([[ref:hirano2017|Hirano 2017]]) ja estää magnetoreseption ([[ref:yap2025|Yap 2025]]). Kiina: >90 % B2-puutos yhdistyy maailman alhaisimpaan TFR:ään." },
-      bermPathway: "Pathway C modulator", keyRefs: ["hirano2017", "yap2025"],
+      bermPathway: "Pathway B modulator", keyRefs: ["hirano2017", "yap2025"],
     },
   },
   {
@@ -364,7 +364,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "CRY4a associates with lipid bilayers in an ordered manner — membrane fatty acid composition (omega-3/7 balance) determines the orientational order available for radical pair magnetoreception. Cone outer segment stacked lamellae provide optimal orientation ([[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol)." },
       fi: { mechanism: "CRY4a assosioituu lipidikaksoiskerrosten kanssa järjestäytyneesti — kalvon rasvahappokoostumus (omega-3/7-tasapaino) määrittää radikaaliparin magnetoreseptiolle käytettävissä olevan suuntajärjestyksen. Tappisolujen ulkosegmenttien pinotut lamellit tarjoavat optimaalisen orientaation ([[ref:majewska2025|Majewska ym. 2025]], ACS Chem Biol)." },
-      bermPathway: "Pathway C1 modulator", keyRefs: ["majewska2025"],
+      bermPathway: "Pathway B (CRY1) modulator", keyRefs: ["majewska2025"],
     },
   },
   {
@@ -375,7 +375,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "AMPK phosphorylates CRY1 at Ser71 → FBXL3 ubiquitination → degradation ([[ref:lamia2009|Lamia et al. 2009]], Science). Fasting paradox: AMPK degrades old CRY, but simultaneously increases FAD pool via β-oxidation, so newly synthesized CRY is better FAD-loaded. Net effect depends on CRY turnover rate vs. FAD availability — resolution is L*-level hypothesis." },
       fi: { mechanism: "AMPK fosforyloi CRY1:n Ser71:ssä → FBXL3-ubikitinaatio → hajotus ([[ref:lamia2009|Lamia ym. 2009]], Science). Paastoparadoksi: AMPK hajottaa vanhan CRY:n, mutta lisää samanaikaisesti FAD-poolia β-oksidaation kautta, joten uusi CRY on paremmin FAD-ladattu. Nettovaikutus riippuu CRY:n vaihtuvuusnopeudesta vs. FAD:n saatavuudesta — ratkaisu on L*-tason hypoteesi." },
-      bermPathway: "Pathway C modulator", keyRefs: ["lamia2009"],
+      bermPathway: "Pathway B modulator", keyRefs: ["lamia2009"],
     },
   },
 
@@ -428,7 +428,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "Cryptochrome is conserved >1 billion years and present in ALL eukaryotes — the universal electromagnetic sensor. RF disruption of CRY's radical pair mechanism has been demonstrated across kingdoms: PLANTS (Ahmad 2020: CRY1 RF sensitivity in Arabidopsis), INSECTS (Gegear 2008: CRY-dependent magnetoreception in Drosophila), and MAMMALS (PMC11817702 2025: CRY-mediated RF effects in mammalian systems). In humans, CRY/RPM magnetoreception is blue-light-dependent ([[ref:chae2019|Chae et al. 2019]], P<0.001); vertical component reversal reversed orientation, consistent with an inclination compass. The same molecular target is disrupted across all eukaryotic trophic levels simultaneously. Quantitative support: Tbahriti et al. 2026 (PRISMA, 55 studies): 88% of high-quality animal studies report melatonin suppression (20–50%). Only 27% of studies met high standards." },
       fi: { mechanism: "Kryptokromi on konservoitu >1 miljardia vuotta ja läsnä KAIKISSA eukaryooteissa — universaali sähkömagneettinen sensori. CRY:n radikaaliparin RF-häiriö on osoitettu yli kuntarajojen: KASVIT (Ahmad 2020: CRY1 RF-herkkyys Arabidopsiksessa), HYÖNTEISET (Gegear 2008: CRY-riippuvainen magnetoreseptio Drosophilassa) ja NISÄKKÄÄT (PMC11817702 2025: CRY-välitteiset RF-vaikutukset nisäkäsjärjestelmissä). Ihmisen CRY/RPM-magnetoreseptio on sinivaloriippuvainen ([[ref:chae2019|Chae ym. 2019]], P<0,001); pystykomponentin kääntö käänsi orientaation, mikä on yhdenmukainen inklinaatiokompassin kanssa. Sama molekulaarinen kohde häiriintyy kaikilla eukaryoottien troofisilla tasoilla samanaikaisesti. Kvantitatiivinen tuki: Tbahriti ym. 2026 (PRISMA, 55 tutkimusta): 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinivaimennusta (20–50 %). Vain 27 % tutkimuksista täytti korkeat standardit." },
-      bermPathway: "B,C", keyRefs: ["chae2019", "ritz2004", "engels2014", "sherrard2018", "yoshii2009", "ahmad2020_cry1_rf", "gegear2008", "tbahriti2026"], link: "/evidence/magnetoreception#human-cry-magnetoreception",
+      bermPathway: "B", keyRefs: ["chae2019", "ritz2004", "engels2014", "sherrard2018", "yoshii2009", "ahmad2020_cry1_rf", "gegear2008", "tbahriti2026"], link: "/evidence/magnetoreception#human-cry-magnetoreception",
     },
   },
   {
@@ -438,7 +438,7 @@ export const NODES: CausalMapNode[] = [
     detail: {
       en: { mechanism: "CRY2-dependent, light-dependent, FAD-dependent calcium entry through TRPC1 (a TRP channel, NOT a VGCC). CRY2 physically interacts with TRPC1; the complex co-translocates to the nucleus after EMF/PEMF exposure. Pharmacologically distinct from pathway A: not blocked by nifedipine/verapamil. Demonstrated in myoblasts ([[ref:yap2025|Yap et al. 2025]], Cells)." },
       fi: { mechanism: "CRY2-riippuvainen, valoriippuvainen, FAD-riippuvainen kalsiumsisäänvirtaus TRPC1:n kautta (TRP-kanava, EI VGCC). CRY2 on fysikaalisessa vuorovaikutuksessa TRPC1:n kanssa; kompleksi siirtyy tumaan EMF/PEMF-altistuksen jälkeen. Farmakologisesti erillinen polku A:sta: nifedipiini/verapamiili ei estä. Osoitettu myoblasteissa ([[ref:yap2025|Yap ym. 2025]], Cells)." },
-      bermPathway: "C", keyRefs: ["yap2025"], link: "/evidence/magnetoreception#cry-trpc1",
+      bermPathway: "B", keyRefs: ["yap2025"], link: "/evidence/magnetoreception#cry-trpc1",
     },
   },
   {
@@ -912,7 +912,7 @@ export const EDGES: CausalMapEdge[] = [
   // BTB: blood-testis barrier disruption (pathway F extension)
   { from: "mech_vgcc_ros", to: "tissue_btb", label: "RF → MMP2 → BTB" },
   { from: "tissue_btb", to: "tissue_sperm", label: "Microenvironment compromised" },
-  // CRY2-TRPC1: second downstream branch of pathway C (NOT a coupling to pathway A)
+  // CRY2-TRPC1: second downstream branch of pathway B (NOT a coupling to pathway A)
   { from: "mech_cry_melatonin", to: "mech_trpc1_calcium", label: "CRY2 → TRPC1 modulation (Yap 2025)" },
   { from: "mech_trpc1_calcium", to: "tissue_ovarian", label: "Ca²⁺ via TRPC1 → nuclear translocation" },
   { from: "mech_trpc1_calcium", to: "tissue_sperm", label: "Ca²⁺ via TRPC1" },

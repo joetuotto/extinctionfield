@@ -335,7 +335,7 @@ const COPY = {
     cascadeStatus: "LOCKED — awaiting test",
     cascadeLink: "See the cascade visualization",
     nutritionalTitle: "Nutritional CRY modulation predictions",
-    nutritionalLead: "Predictions derived from the CRY dual-system model and its nutritional modulators (FAD/B2, omega fatty acids, AMPK fasting dynamics). These test whether pathway C effectiveness is modifiable by nutritional intervention.",
+    nutritionalLead: "Predictions derived from the CRY dual-system model and its nutritional modulators (FAD/B2, omega fatty acids, AMPK fasting dynamics). These test whether pathway B effectiveness is modifiable by nutritional intervention.",
     nutritionalPredictions: [
       {
         id: "NUT-1",
@@ -402,12 +402,12 @@ const COPY = {
     metabStatus: "LOCKED — awaiting test",
 
     trpc1Title: "Pharmacological pathway separation predictions",
-    trpc1Lead: "Predictions testing the independence of pathway A (VGCC) and pathway C's TRPC1 calcium branch. The CRY2-TRPC1 complex ([[ref:yap2025|Yap et al. 2025]]) predicts that EMF reproductive effects can be pharmacologically decomposed into VGCC-dependent and TRPC1-dependent components.",
+    trpc1Lead: "Predictions testing the independence of pathway A (VGCC) and pathway B's TRPC1 calcium branch. The CRY2-TRPC1 complex ([[ref:yap2025|Yap et al. 2025]]) predicts that EMF reproductive effects can be pharmacologically decomposed into VGCC-dependent and TRPC1-dependent components.",
     trpc1Predictions: [
       {
         id: "TRPC1-1",
         title: "CRY2-TRPC1 calcium entry contributes to EMF reproductive effects independently of VGCCs",
-        description: "Expose reproductive cells (e.g. granulosa cells, Sertoli cells) to EMF under four conditions: (1) Control (no blockers); (2) + Nifedipine (blocks VGCCs, pathway A) — isolates C's contribution; (3) + Anti-TRPC1 antibody (blocks TRPC1) — isolates A's contribution; (4) + Both blockers — residual effect = non-Ca²⁺ pathways (B, D). Prediction: nifedipine reduces but does NOT eliminate EMF response. The remaining response is CRY2-TRPC1-mediated (pathway C's calcium branch). Anti-TRPC1 also reduces but does not eliminate the response. Both blockers together produce near-complete abolition of the Ca²⁺ response. This experiment directly quantifies the relative contributions of pathways A (VGCC) and C-calcium (TRPC1) to EMF reproductive effects.",
+        description: "Expose reproductive cells (e.g. granulosa cells, Sertoli cells) to EMF under four conditions: (1) Control (no blockers); (2) + Nifedipine (blocks VGCCs, pathway A) — isolates B's contribution; (3) + Anti-TRPC1 antibody (blocks TRPC1) — isolates A's contribution; (4) + Both blockers — residual effect = non-Ca²⁺ pathways (C, D). Prediction: nifedipine reduces but does NOT eliminate EMF response. The remaining response is CRY2-TRPC1-mediated (pathway B's calcium branch). Anti-TRPC1 also reduces but does not eliminate the response. Both blockers together produce near-complete abolition of the Ca²⁺ response. This experiment directly quantifies the relative contributions of pathways A (VGCC) and B-calcium (TRPC1) to EMF reproductive effects.",
         timeline: "Testable within 6-12 months (in vitro, cell lines available)",
         falsification: "Nifedipine alone abolishes all EMF-induced calcium effects (no TRPC1-independent component), or anti-TRPC1 has no effect (TRPC1 not involved in reproductive cells)",
       },
@@ -437,7 +437,7 @@ const COPY = {
       {
         id: "PHARM-3",
         title: "Lithium-treated bipolar patients show less circadian disruption in high-EMF environments",
-        description: "Compare circadian markers (melatonin secretion timing, sleep onset latency, dim-light melatonin onset) between bipolar patients on lithium vs. bipolar patients on valproate or lamotrigine in matched EMF environments. Lithium stabilizes CRY proteins via GSK-3β inhibition, directly opposing BERM pathway C. If CRY-mediated melatonin suppression contributes to EMF-associated circadian disruption, lithium users should be partially protected.",
+        description: "Compare circadian markers (melatonin secretion timing, sleep onset latency, dim-light melatonin onset) between bipolar patients on lithium vs. bipolar patients on valproate or lamotrigine in matched EMF environments. Lithium stabilizes CRY proteins via GSK-3β inhibition, directly opposing BERM pathway B. If CRY-mediated melatonin suppression contributes to EMF-associated circadian disruption, lithium users should be partially protected.",
         timeline: "1-3 years (prospective or retrospective with wearable data)",
         falsification: "Lithium users show equal or greater circadian disruption than valproate users in high-EMF environments",
       },
@@ -1414,7 +1414,7 @@ const COPY = {
       {
         id: "CAUS-3",
         title: "LH decline rate correlates with EMF-proxy across countries",
-        description: "[[ref:santi2025|Santi 2025]] found global LH decline. BERM predicts this is Route C/D mediated. Countries with higher EMF-proxy (residential electricity, broadband penetration) should show steeper LH decline. Testable with country-level LH data + EMF-proxy. Falsification: no correlation between EMF-proxy and LH decline rate.",
+        description: "[[ref:santi2025|Santi 2025]] found global LH decline. BERM predicts this is Route B/D mediated. Countries with higher EMF-proxy (residential electricity, broadband penetration) should show steeper LH decline. Testable with country-level LH data + EMF-proxy. Falsification: no correlation between EMF-proxy and LH decline rate.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -2200,7 +2200,7 @@ const COPY = {
     cascadeStatus: "LUKITTU — odottaa testiä",
     cascadeLink: "Katso kaskadivisualisointi",
     nutritionalTitle: "Ravitsemuksellisen CRY-modulaation ennusteet",
-    nutritionalLead: "Ennusteet jotka perustuvat CRY:n kaksoissysteemimalliin ja sen ravitsemuksellisiin modulaattoreihin (FAD/B2, omega-rasvahapot, AMPK-paastodynamiikka). Nämä testaavat onko polku C:n tehokkuus muokattavissa ravitsemusinterventiolla.",
+    nutritionalLead: "Ennusteet jotka perustuvat CRY:n kaksoissysteemimalliin ja sen ravitsemuksellisiin modulaattoreihin (FAD/B2, omega-rasvahapot, AMPK-paastodynamiikka). Nämä testaavat onko polku B:n tehokkuus muokattavissa ravitsemusinterventiolla.",
     nutritionalPredictions: [
       {
         id: "NUT-1",
@@ -2267,12 +2267,12 @@ const COPY = {
     metabStatus: "LUKITTU — odottaa testiä",
 
     trpc1Title: "Farmakologiset polkujen erotusennusteet",
-    trpc1Lead: "Ennusteet jotka testaavat polku A:n (VGCC) ja polku C:n TRPC1-kalsiumhaaran riippumattomuutta. CRY2-TRPC1-kompleksi ([[ref:yap2025|Yap ym. 2025]]) ennustaa, että EMF:n reproduktiovaikutukset voidaan farmakologisesti jakaa VGCC-riippuvaisiin ja TRPC1-riippuvaisiin komponentteihin.",
+    trpc1Lead: "Ennusteet jotka testaavat polku A:n (VGCC) ja polku B:n TRPC1-kalsiumhaaran riippumattomuutta. CRY2-TRPC1-kompleksi ([[ref:yap2025|Yap ym. 2025]]) ennustaa, että EMF:n reproduktiovaikutukset voidaan farmakologisesti jakaa VGCC-riippuvaisiin ja TRPC1-riippuvaisiin komponentteihin.",
     trpc1Predictions: [
       {
         id: "TRPC1-1",
         title: "CRY2-TRPC1-kalsiumsisäänvirtaus vaikuttaa EMF:n reproduktiovaikutuksiin VGCC:stä riippumatta",
-        description: "Altista reproduktiosoluja (esim. granuloosa-, Sertoli-soluja) EMF:lle neljässä olosuhteessa: (1) Kontrolli (ei salpaajia); (2) + Nifedipiini (estää VGCC:t, polku A) — eristää C:n kontribuution; (3) + Anti-TRPC1-vasta-aine (estää TRPC1:n) — eristää A:n kontribuution; (4) + Molemmat salpaajat — jäännösvaikutus = ei-Ca²⁺-polut (B, D). Ennuste: nifedipiini vähentää mutta EI poista EMF-vastetta. Jäännösvaste on CRY2-TRPC1-välitteinen (polku C:n kalsiumhaara). Anti-TRPC1 myös vähentää mutta ei poista vastetta. Molemmat salpaajat yhdessä tuottavat lähes täydellisen Ca²⁺-vasteen poistumisen. Tämä koe kvantifioi suoraan polkujen A (VGCC) ja C-kalsium (TRPC1) suhteelliset kontribuutiot EMF:n reproduktiovaikutuksiin.",
+        description: "Altista reproduktiosoluja (esim. granuloosa-, Sertoli-soluja) EMF:lle neljässä olosuhteessa: (1) Kontrolli (ei salpaajia); (2) + Nifedipiini (estää VGCC:t, polku A) — eristää B:n kontribuution; (3) + Anti-TRPC1-vasta-aine (estää TRPC1:n) — eristää A:n kontribuution; (4) + Molemmat salpaajat — jäännösvaikutus = ei-Ca²⁺-polut (C, D). Ennuste: nifedipiini vähentää mutta EI poista EMF-vastetta. Jäännösvaste on CRY2-TRPC1-välitteinen (polku B:n kalsiumhaara). Anti-TRPC1 myös vähentää mutta ei poista vastetta. Molemmat salpaajat yhdessä tuottavat lähes täydellisen Ca²⁺-vasteen poistumisen. Tämä koe kvantifioi suoraan polkujen A (VGCC) ja B-kalsium (TRPC1) suhteelliset kontribuutiot EMF:n reproduktiovaikutuksiin.",
         timeline: "Testattavissa 6–12 kuukauden sisällä (in vitro, solulinjat saatavilla)",
         falsification: "Nifedipiini yksin poistaa kaikki EMF-indusoidut kalsiumvaikutukset (ei TRPC1-riippumatonta komponenttia), tai anti-TRPC1:llä ei ole vaikutusta (TRPC1 ei osallistu reproduktiosoluissa)",
       },
@@ -2302,7 +2302,7 @@ const COPY = {
       {
         id: "PHARM-3",
         title: "Litiumilla hoidetut bipolaaripotilaat osoittavat vähemmän sirkadiaanista häiriötä korkean EMF:n ympäristöissä",
-        description: "Vertaa sirkadiaanisia markkereita (melatoniininerityksen ajoitus, nukahtamisviive, hämärämelatoniinialku) litium- vs. valproaatti/lamotrigiinipotilaiden välillä vastaavissa EMF-ympäristöissä. Litium stabiloi CRY-proteiineja GSK-3β-inhibition kautta, vastaten suoraan BERM:n reittiä C.",
+        description: "Vertaa sirkadiaanisia markkereita (melatoniininerityksen ajoitus, nukahtamisviive, hämärämelatoniinialku) litium- vs. valproaatti/lamotrigiinipotilaiden välillä vastaavissa EMF-ympäristöissä. Litium stabiloi CRY-proteiineja GSK-3β-inhibition kautta, vastaten suoraan BERM:n reittiä B.",
         timeline: "1–3 vuotta (prospektiivinen tai retrospektiivinen puettavien laitteiden datalla)",
         falsification: "Litiumkäyttäjillä on yhtä suuri tai suurempi sirkadiaaninen häiriö kuin valproaattikäyttäjillä korkean EMF:n ympäristöissä",
       },
@@ -3279,7 +3279,7 @@ const COPY = {
       {
         id: "CAUS-3",
         title: "LH:n laskutahti korreloi EMF-proxyn kanssa maiden välillä",
-        description: "[[ref:santi2025|Santi 2025]] löysi globaalin LH-laskun. BERM ennustaa tämän olevan reitti C/D -välitteistä. Maissa joissa korkeampi EMF-proxy (asuinrakennusten sähköistys, laajakaistapenetraatio) tulisi olla jyrkempi LH-lasku. Testattavissa maatason LH-datalla + EMF-proxylla. Falsifikaatio: ei korrelaatiota EMF-proxyn ja LH:n laskutahdin välillä.",
+        description: "[[ref:santi2025|Santi 2025]] löysi globaalin LH-laskun. BERM ennustaa tämän olevan reitti B/D -välitteistä. Maissa joissa korkeampi EMF-proxy (asuinrakennusten sähköistys, laajakaistapenetraatio) tulisi olla jyrkempi LH-lasku. Testattavissa maatason LH-datalla + EMF-proxylla. Falsifikaatio: ei korrelaatiota EMF-proxyn ja LH:n laskutahdin välillä.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -3788,7 +3788,7 @@ const COPY = {
     cascadeStatus: "ロック済み ― テスト待ち",
     cascadeLink: "カスケード可視化を見る",
     nutritionalTitle: "栄養CRY調節予測",
-    nutritionalLead: "CRYデュアルシステムモデルとその栄養調節因子（FAD/B2、オメガ脂肪酸、AMPKファスティングダイナミクス）から導出された予測。経路Cの有効性が栄養介入により修正可能かをテスト。",
+    nutritionalLead: "CRYデュアルシステムモデルとその栄養調節因子（FAD/B2、オメガ脂肪酸、AMPKファスティングダイナミクス）から導出された予測。経路Bの有効性が栄養介入により修正可能かをテスト。",
     nutritionalTimeline: "タイムライン",
     nutritionalFalsification: "反証基準",
     nutritionalLocked: "ロック日：2026-08-24",
@@ -3800,7 +3800,7 @@ const COPY = {
     metabLocked: "ロック日：2026-08-25",
     metabStatus: "ロック済み ― テスト待ち",
     trpc1Title: "薬理学的経路分離予測",
-    trpc1Lead: "経路A（VGCC）と経路CのTRPC1カルシウム分岐の独立性をテストする予測。CRY2-TRPC1複合体（[[ref:yap2025|Yap et al. 2025]]）はEMF生殖効果がVGCC依存性およびTRPC1依存性成分に薬理学的に分解可能と予測。",
+    trpc1Lead: "経路A（VGCC）と経路BのTRPC1カルシウム分岐の独立性をテストする予測。CRY2-TRPC1複合体（[[ref:yap2025|Yap et al. 2025]]）はEMF生殖効果がVGCC依存性およびTRPC1依存性成分に薬理学的に分解可能と予測。",
     trpc1Timeline: "タイムライン",
     trpc1Falsification: "反証基準",
     trpc1Locked: "ロック日：2026-08-24",
@@ -4448,7 +4448,7 @@ const COPY = {
       {
         id: "TRPC1-1",
         title: "CRY2-TRPC1 calcium entry contributes to EMF reproductive effects independently of VGCCs",
-        description: "Expose reproductive cells (e.g. granulosa cells, Sertoli cells) to EMF under four conditions: (1) Control (no blockers); (2) + Nifedipine (blocks VGCCs, pathway A) — isolates C's contribution; (3) + Anti-TRPC1 antibody (blocks TRPC1) — isolates A's contribution; (4) + Both blockers — residual effect = non-Ca²⁺ pathways (B, D). Prediction: nifedipine reduces but does NOT eliminate EMF response. The remaining response is CRY2-TRPC1-mediated (pathway C's calcium branch). Anti-TRPC1 also reduces but does not eliminate the response. Both blockers together produce near-complete abolition of the Ca²⁺ response. This experiment directly quantifies the relative contributions of pathways A (VGCC) and C-calcium (TRPC1) to EMF reproductive effects.",
+        description: "Expose reproductive cells (e.g. granulosa cells, Sertoli cells) to EMF under four conditions: (1) Control (no blockers); (2) + Nifedipine (blocks VGCCs, pathway A) — isolates B's contribution; (3) + Anti-TRPC1 antibody (blocks TRPC1) — isolates A's contribution; (4) + Both blockers — residual effect = non-Ca²⁺ pathways (C, D). Prediction: nifedipine reduces but does NOT eliminate EMF response. The remaining response is CRY2-TRPC1-mediated (pathway B's calcium branch). Anti-TRPC1 also reduces but does not eliminate the response. Both blockers together produce near-complete abolition of the Ca²⁺ response. This experiment directly quantifies the relative contributions of pathways A (VGCC) and B-calcium (TRPC1) to EMF reproductive effects.",
         timeline: "Testable within 6-12 months (in vitro, cell lines available)",
         falsification: "Nifedipine alone abolishes all EMF-induced calcium effects (no TRPC1-independent component), or anti-TRPC1 has no effect (TRPC1 not involved in reproductive cells)",
       },
@@ -4472,7 +4472,7 @@ const COPY = {
       {
         id: "PHARM-3",
         title: "Lithium-treated bipolar patients show less circadian disruption in high-EMF environments",
-        description: "Compare circadian markers (melatonin secretion timing, sleep onset latency, dim-light melatonin onset) between bipolar patients on lithium vs. bipolar patients on valproate or lamotrigine in matched EMF environments. Lithium stabilizes CRY proteins via GSK-3β inhibition, directly opposing BERM pathway C. If CRY-mediated melatonin suppression contributes to EMF-associated circadian disruption, lithium users should be partially protected.",
+        description: "Compare circadian markers (melatonin secretion timing, sleep onset latency, dim-light melatonin onset) between bipolar patients on lithium vs. bipolar patients on valproate or lamotrigine in matched EMF environments. Lithium stabilizes CRY proteins via GSK-3β inhibition, directly opposing BERM pathway B. If CRY-mediated melatonin suppression contributes to EMF-associated circadian disruption, lithium users should be partially protected.",
         timeline: "1-3 years (prospective or retrospective with wearable data)",
         falsification: "Lithium users show equal or greater circadian disruption than valproate users in high-EMF environments",
       },
@@ -5339,7 +5339,7 @@ const COPY = {
       {
         id: "CAUS-3",
         title: "LH decline rate correlates with EMF-proxy across countries",
-        description: "[[ref:santi2025|Santi 2025]] found global LH decline. BERM predicts this is Route C/D mediated. Countries with higher EMF-proxy (residential electricity, broadband penetration) should show steeper LH decline. Testable with country-level LH data + EMF-proxy. Falsification: no correlation between EMF-proxy and LH decline rate.",
+        description: "[[ref:santi2025|Santi 2025]] found global LH decline. BERM predicts this is Route B/D mediated. Countries with higher EMF-proxy (residential electricity, broadband penetration) should show steeper LH decline. Testable with country-level LH data + EMF-proxy. Falsification: no correlation between EMF-proxy and LH decline rate.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -5604,7 +5604,7 @@ const COPY = {
     cascadeStatus: "VERROUILLÉ — en attente de test",
     cascadeLink: "Voir la visualisation de la cascade",
     nutritionalTitle: "Prédictions de modulation CRY nutritionnelle",
-    nutritionalLead: "Prédictions dérivées du modèle CRY à double système et de ses modulateurs nutritionnels (FAD/B2, acides gras oméga, dynamiques de jeûne AMPK). Elles testent si l'efficacité de la voie C est modifiable par intervention nutritionnelle.",
+    nutritionalLead: "Prédictions dérivées du modèle CRY à double système et de ses modulateurs nutritionnels (FAD/B2, acides gras oméga, dynamiques de jeûne AMPK). Elles testent si l'efficacité de la voie B est modifiable par intervention nutritionnelle.",
     nutritionalTimeline: "Chronologie",
     nutritionalFalsification: "Critère de falsification",
     nutritionalLocked: "Verrouillé : 2026-08-24",
@@ -5616,7 +5616,7 @@ const COPY = {
     metabLocked: "Verrouillé : 2026-08-25",
     metabStatus: "VERROUILLÉ — en attente de test",
     trpc1Title: "Prédictions de séparation pharmacologique des voies",
-    trpc1Lead: "Prédictions testant l'indépendance de la voie A (VGCC) et de la branche calcique TRPC1 de la voie C. Le complexe CRY2-TRPC1 ([[ref:yap2025|Yap et al. 2025]]) prédit que les effets reproductifs EMF peuvent être pharmacologiquement décomposés en composantes dépendantes du VGCC et du TRPC1.",
+    trpc1Lead: "Prédictions testant l'indépendance de la voie A (VGCC) et de la branche calcique TRPC1 de la voie B. Le complexe CRY2-TRPC1 ([[ref:yap2025|Yap et al. 2025]]) prédit que les effets reproductifs EMF peuvent être pharmacologiquement décomposés en composantes dépendantes du VGCC et du TRPC1.",
     trpc1Timeline: "Chronologie",
     trpc1Falsification: "Critère de falsification",
     trpc1Locked: "Verrouillé : 2026-08-24",
@@ -6264,7 +6264,7 @@ const COPY = {
       {
         id: "TRPC1-1",
         title: "CRY2-TRPC1 calcium entry contributes to EMF reproductive effects independently of VGCCs",
-        description: "Expose reproductive cells (e.g. granulosa cells, Sertoli cells) to EMF under four conditions: (1) Control (no blockers); (2) + Nifedipine (blocks VGCCs, pathway A) — isolates C's contribution; (3) + Anti-TRPC1 antibody (blocks TRPC1) — isolates A's contribution; (4) + Both blockers — residual effect = non-Ca²⁺ pathways (B, D). Prediction: nifedipine reduces but does NOT eliminate EMF response. The remaining response is CRY2-TRPC1-mediated (pathway C's calcium branch). Anti-TRPC1 also reduces but does not eliminate the response. Both blockers together produce near-complete abolition of the Ca²⁺ response. This experiment directly quantifies the relative contributions of pathways A (VGCC) and C-calcium (TRPC1) to EMF reproductive effects.",
+        description: "Expose reproductive cells (e.g. granulosa cells, Sertoli cells) to EMF under four conditions: (1) Control (no blockers); (2) + Nifedipine (blocks VGCCs, pathway A) — isolates B's contribution; (3) + Anti-TRPC1 antibody (blocks TRPC1) — isolates A's contribution; (4) + Both blockers — residual effect = non-Ca²⁺ pathways (C, D). Prediction: nifedipine reduces but does NOT eliminate EMF response. The remaining response is CRY2-TRPC1-mediated (pathway B's calcium branch). Anti-TRPC1 also reduces but does not eliminate the response. Both blockers together produce near-complete abolition of the Ca²⁺ response. This experiment directly quantifies the relative contributions of pathways A (VGCC) and B-calcium (TRPC1) to EMF reproductive effects.",
         timeline: "Testable within 6-12 months (in vitro, cell lines available)",
         falsification: "Nifedipine alone abolishes all EMF-induced calcium effects (no TRPC1-independent component), or anti-TRPC1 has no effect (TRPC1 not involved in reproductive cells)",
       },
@@ -6288,7 +6288,7 @@ const COPY = {
       {
         id: "PHARM-3",
         title: "Lithium-treated bipolar patients show less circadian disruption in high-EMF environments",
-        description: "Compare circadian markers (melatonin secretion timing, sleep onset latency, dim-light melatonin onset) between bipolar patients on lithium vs. bipolar patients on valproate or lamotrigine in matched EMF environments. Lithium stabilizes CRY proteins via GSK-3β inhibition, directly opposing BERM pathway C. If CRY-mediated melatonin suppression contributes to EMF-associated circadian disruption, lithium users should be partially protected.",
+        description: "Compare circadian markers (melatonin secretion timing, sleep onset latency, dim-light melatonin onset) between bipolar patients on lithium vs. bipolar patients on valproate or lamotrigine in matched EMF environments. Lithium stabilizes CRY proteins via GSK-3β inhibition, directly opposing BERM pathway B. If CRY-mediated melatonin suppression contributes to EMF-associated circadian disruption, lithium users should be partially protected.",
         timeline: "1-3 years (prospective or retrospective with wearable data)",
         falsification: "Lithium users show equal or greater circadian disruption than valproate users in high-EMF environments",
       },
@@ -7155,7 +7155,7 @@ const COPY = {
       {
         id: "CAUS-3",
         title: "LH decline rate correlates with EMF-proxy across countries",
-        description: "[[ref:santi2025|Santi 2025]] found global LH decline. BERM predicts this is Route C/D mediated. Countries with higher EMF-proxy (residential electricity, broadband penetration) should show steeper LH decline. Testable with country-level LH data + EMF-proxy. Falsification: no correlation between EMF-proxy and LH decline rate.",
+        description: "[[ref:santi2025|Santi 2025]] found global LH decline. BERM predicts this is Route B/D mediated. Countries with higher EMF-proxy (residential electricity, broadband penetration) should show steeper LH decline. Testable with country-level LH data + EMF-proxy. Falsification: no correlation between EMF-proxy and LH decline rate.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -7420,7 +7420,7 @@ const COPY = {
     cascadeStatus: "잠금 — 테스트 대기 중",
     cascadeLink: "캐스케이드 시각화 보기",
     nutritionalTitle: "영양 CRY 조절 예측",
-    nutritionalLead: "CRY 이중 시스템 모델과 영양 조절인자(FAD/B2, 오메가 지방산, AMPK 단식 역학)에서 도출된 예측. 경로 C의 효과가 영양 중재로 수정 가능한지 테스트.",
+    nutritionalLead: "CRY 이중 시스템 모델과 영양 조절인자(FAD/B2, 오메가 지방산, AMPK 단식 역학)에서 도출된 예측. 경로 B의 효과가 영양 중재로 수정 가능한지 테스트.",
     nutritionalTimeline: "타임라인",
     nutritionalFalsification: "반증 기준",
     nutritionalLocked: "잠금일: 2026-08-24",
@@ -7432,7 +7432,7 @@ const COPY = {
     metabLocked: "잠금일: 2026-08-25",
     metabStatus: "잠금 — 테스트 대기 중",
     trpc1Title: "약리학적 경로 분리 예측",
-    trpc1Lead: "경로 A(VGCC)와 경로 C의 TRPC1 칼슘 분기의 독립성을 테스트. CRY2-TRPC1 복합체([[ref:yap2025|Yap et al. 2025]])는 EMF 생식 효과가 VGCC 의존성 및 TRPC1 의존성 구성 요소로 약리학적으로 분해 가능하다고 예측.",
+    trpc1Lead: "경로 A(VGCC)와 경로 B의 TRPC1 칼슘 분기의 독립성을 테스트. CRY2-TRPC1 복합체([[ref:yap2025|Yap et al. 2025]])는 EMF 생식 효과가 VGCC 의존성 및 TRPC1 의존성 구성 요소로 약리학적으로 분해 가능하다고 예측.",
     trpc1Timeline: "타임라인",
     trpc1Falsification: "반증 기준",
     trpc1Locked: "잠금일: 2026-08-24",
@@ -8080,7 +8080,7 @@ const COPY = {
       {
         id: "TRPC1-1",
         title: "CRY2-TRPC1 calcium entry contributes to EMF reproductive effects independently of VGCCs",
-        description: "Expose reproductive cells (e.g. granulosa cells, Sertoli cells) to EMF under four conditions: (1) Control (no blockers); (2) + Nifedipine (blocks VGCCs, pathway A) — isolates C's contribution; (3) + Anti-TRPC1 antibody (blocks TRPC1) — isolates A's contribution; (4) + Both blockers — residual effect = non-Ca²⁺ pathways (B, D). Prediction: nifedipine reduces but does NOT eliminate EMF response. The remaining response is CRY2-TRPC1-mediated (pathway C's calcium branch). Anti-TRPC1 also reduces but does not eliminate the response. Both blockers together produce near-complete abolition of the Ca²⁺ response. This experiment directly quantifies the relative contributions of pathways A (VGCC) and C-calcium (TRPC1) to EMF reproductive effects.",
+        description: "Expose reproductive cells (e.g. granulosa cells, Sertoli cells) to EMF under four conditions: (1) Control (no blockers); (2) + Nifedipine (blocks VGCCs, pathway A) — isolates B's contribution; (3) + Anti-TRPC1 antibody (blocks TRPC1) — isolates A's contribution; (4) + Both blockers — residual effect = non-Ca²⁺ pathways (C, D). Prediction: nifedipine reduces but does NOT eliminate EMF response. The remaining response is CRY2-TRPC1-mediated (pathway B's calcium branch). Anti-TRPC1 also reduces but does not eliminate the response. Both blockers together produce near-complete abolition of the Ca²⁺ response. This experiment directly quantifies the relative contributions of pathways A (VGCC) and B-calcium (TRPC1) to EMF reproductive effects.",
         timeline: "Testable within 6-12 months (in vitro, cell lines available)",
         falsification: "Nifedipine alone abolishes all EMF-induced calcium effects (no TRPC1-independent component), or anti-TRPC1 has no effect (TRPC1 not involved in reproductive cells)",
       },
@@ -8104,7 +8104,7 @@ const COPY = {
       {
         id: "PHARM-3",
         title: "Lithium-treated bipolar patients show less circadian disruption in high-EMF environments",
-        description: "Compare circadian markers (melatonin secretion timing, sleep onset latency, dim-light melatonin onset) between bipolar patients on lithium vs. bipolar patients on valproate or lamotrigine in matched EMF environments. Lithium stabilizes CRY proteins via GSK-3β inhibition, directly opposing BERM pathway C. If CRY-mediated melatonin suppression contributes to EMF-associated circadian disruption, lithium users should be partially protected.",
+        description: "Compare circadian markers (melatonin secretion timing, sleep onset latency, dim-light melatonin onset) between bipolar patients on lithium vs. bipolar patients on valproate or lamotrigine in matched EMF environments. Lithium stabilizes CRY proteins via GSK-3β inhibition, directly opposing BERM pathway B. If CRY-mediated melatonin suppression contributes to EMF-associated circadian disruption, lithium users should be partially protected.",
         timeline: "1-3 years (prospective or retrospective with wearable data)",
         falsification: "Lithium users show equal or greater circadian disruption than valproate users in high-EMF environments",
       },
@@ -8971,7 +8971,7 @@ const COPY = {
       {
         id: "CAUS-3",
         title: "LH decline rate correlates with EMF-proxy across countries",
-        description: "[[ref:santi2025|Santi 2025]] found global LH decline. BERM predicts this is Route C/D mediated. Countries with higher EMF-proxy (residential electricity, broadband penetration) should show steeper LH decline. Testable with country-level LH data + EMF-proxy. Falsification: no correlation between EMF-proxy and LH decline rate.",
+        description: "[[ref:santi2025|Santi 2025]] found global LH decline. BERM predicts this is Route B/D mediated. Countries with higher EMF-proxy (residential electricity, broadband penetration) should show steeper LH decline. Testable with country-level LH data + EMF-proxy. Falsification: no correlation between EMF-proxy and LH decline rate.",
         discriminating: true,
         critical: false,
         level: "M|C",

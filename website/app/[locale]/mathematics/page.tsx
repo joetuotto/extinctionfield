@@ -31,6 +31,7 @@ const t = {
       { id: "nested-chi", num: "§13", label: "Nested χ (population model)" },
       { id: "layered-formula", num: "§14", label: "Layered formula v20→v21" },
       { id: "recovery-function", num: "§15", label: "Recovery function" },
+      { id: "cultural-energy", num: "§16", label: "Cultural energy formalization" },
     ],
     pageTitle: "Mathematical Foundation",
     pageSubtitle:
@@ -351,9 +352,9 @@ const t = {
     s10d3: "Rapamycin calibration (Sempou pathway):",
     s10d4:
       "Observed mouse lifespan extension of 10–25% is consistent with partial mTOR reduction in a realistic dosing regime (not 85% sustained inhibition).",
-    s10d5: "Melatonin calibration (pathway C):",
+    s10d5: "Melatonin calibration (pathway B):",
     s10d6:
-      "Night EMF exposure disrupts CRY-mediated circadian signaling. Exogenous melatonin (3–5 mg) restores circadian amplitude independently of CRY, providing a pathway C bypass. If melatonin supplementation eliminates EMF-associated circadian disruption, pathway C is validated; if not, the CRY channel requires revision.",
+      "Night EMF exposure disrupts CRY-mediated circadian signaling. Exogenous melatonin (3–5 mg) restores circadian amplitude independently of CRY, providing a pathway B bypass. If melatonin supplementation eliminates EMF-associated circadian disruption, pathway B is validated; if not, the CRY channel requires revision.",
     s10d7Link: "→ Controlled experimental evidence (laboratory mammals)",
 
     // S11 Individual susceptibility
@@ -403,12 +404,12 @@ const t = {
     s12Caveat:
       "Cross-sectional analysis cannot determine causal direction. Discriminating evidence comes from sentinel species, natural experiments, and populations without electricity.",
     s13Title: "Nested χ (Population Model)",
-    s13Intro: "The χ selection rule generalizes to populations when biological background variables (optical, molecular) differ between groups. The combined reproductive suppression from pathways A and C, modulated by population-specific χ profiles:",
+    s13Intro: "The χ selection rule generalizes to populations when biological background variables (optical, molecular) differ between groups. The combined reproductive suppression from pathways A and B, modulated by population-specific χ profiles:",
     s13PathwayA: "Pathway A (VGIC)",
-    s13PathwayC: "Pathway C (CRY/RPM)",
+    s13PathwayB: "Pathway B (CRY/RPM)",
     s13Combined: "Combined suppression",
     s13TFR: "Population TFR",
-    s13Where: "where γ_A, γ_C are pathway weights (0.75, 0.25); χ(Ā_env) is environmental coupling; χ(V_mem) is membrane background (≈ 1.0 for living cells); χ(I_blue) is optical coupling (iris-dependent); χ([FAD]) is molecular coupling (B2-dependent); and EMF_personal is the personal device contribution.",
+    s13Where: "where γ_A, γ_B are pathway weights (0.75, 0.25); χ(Ā_env) is environmental coupling; χ(V_mem) is membrane background (≈ 1.0 for living cells); χ(I_blue) is optical coupling (iris-dependent); χ([FAD]) is molecular coupling (B2-dependent); and EMF_personal is the personal device contribution.",
     s13Implication: "This formulation predicts that populations with higher biological χ values (blue-eyed, lactose-tolerant) experience steeper TFR decline per unit of environmental EMF increase. See the population χ profiles for estimated values.",
     s13Level: "Epistemic level: L* (testable synthesis). Individual χ instantiations are E or M|C level; the population-level integration is the L* component.",
 
@@ -446,6 +447,17 @@ const t = {
     s15TableScenario: "Scenario",
     s15TableFreeTime: "EMF-free time",
     s15TableRemaining: "Remaining damage",
+
+    // S16 Cultural Energy Formalization
+    s16title: "Cultural Energy Formalization",
+    s16body: [
+      "Cultural energy — the aggregate capacity for civilizational achievement — has been described qualitatively by Unwin (1934), Spengler (1918), Glubb (1978), and Turchin (2003). BERM provides the first quantitative decomposition.",
+      "The fundamental definition: CulturalEnergy(t) = N(t) × BioCap(t) × η(t), where N(t) is population size, BioCap(t) is the mean biological capacity of the population, and η(t) is institutional efficiency (a factor between 0 and 1 capturing governance quality, education systems, legal frameworks, etc.).",
+      "BioCap itself decomposes as a weighted sum of eight normalized biomarkers: BioCap(t) = Σᵢ wᵢ · Bᵢ(t), where each Bᵢ(t) ∈ [0,1] represents a biomarker’s current level relative to its pre-industrial baseline, and wᵢ is the biomarker’s weight in the cultural energy budget.",
+      "The biomarker weights (T=0.20, OXT=0.20, DA=0.15, MEL=0.15, BDNF=0.10, CORT=−0.10, D=0.05, B2=0.05) are selected based on theoretical significance and proxy evidence, not empirical regression. The critical triad (T + MEL + OXT) accounts for 55% of total weight.",
+      "Phase transition thresholds: Rationalistic > 0.90, Deistic > 0.75, Manistic > 0.55, Zoistic < 0.55. These thresholds are calibrated against Unwin’s historical classifications and modern biomarker data. The 2025 Western estimate (BioCap ≈ 0.648) places civilization in the Manistic phase.",
+      "The sensitivity analysis reveals that restoring any single biomarker to its 1980 level yields partial BioCap recovery: T → +16.7%, MEL → +12.2%, OXT → +10.8%, DA → +5.6%, BDNF → +3.7%, D → +1.7%. The combined triad recovery (T + MEL + OXT) yields +39.7%. EMF reduction is the only known single intervention that would affect all biomarkers simultaneously, because all are downstream of the EMF-induced biomarker cascade.",
+    ],
   },
   fi: {
     meta: {
@@ -472,6 +484,7 @@ const t = {
       { id: "nested-chi", num: "§13", label: "Sisäkkäinen χ (populaatiomalli)" },
       { id: "layered-formula", num: "§14", label: "Kerrostumakaava v20→v21" },
       { id: "recovery-function", num: "§15", label: "Palautumisfunktio" },
+      { id: "cultural-energy", num: "§16", label: "Kulttuurisen energian formalisointi" },
     ],
     pageTitle: "Matemaattinen perusta",
     pageSubtitle:
@@ -793,9 +806,9 @@ const t = {
     s10d3: "Rapamysiini-kalibrointi (Sempou-reitti):",
     s10d4:
       "Havaittu hiirten 10–25 %:n elinikäpidennys on yhdenmukainen osittaisen mTOR-reduktion kanssa realistisella annostusjärjestelmällä (ei 85 %:n kestävä inhibitio).",
-    s10d5: "Melatoniini-kalibrointi (reitti C):",
+    s10d5: "Melatoniini-kalibrointi (reitti B):",
     s10d6:
-      "Yöllinen EMF-altistus häiritsee CRY-välitteistä sirkadiaanista signalointia. Eksogeeninen melatoniini (3–5 mg) palauttaa sirkadiaanisen amplitudin CRY:stä riippumatta, tarjoten reitin C ohituksen. Jos melatoniinilisä poistaa EMF:ään liittyvän sirkadiaanisen häiriön, reitti C validoidaan; jos ei, CRY-kanava vaatii uudelleentarkastelua.",
+      "Yöllinen EMF-altistus häiritsee CRY-välitteistä sirkadiaanista signalointia. Eksogeeninen melatoniini (3–5 mg) palauttaa sirkadiaanisen amplitudin CRY:stä riippumatta, tarjoten reitin B ohituksen. Jos melatoniinilisä poistaa EMF:ään liittyvän sirkadiaanisen häiriön, reitti B validoidaan; jos ei, CRY-kanava vaatii uudelleentarkastelua.",
     s10d7Link: "→ Kontrolloitu kokeellinen näyttö (laboratorionisäkkäät)",
 
     // S11 Individual susceptibility
@@ -845,12 +858,12 @@ const t = {
     s12Caveat:
       "Poikkileikkausanalyysi ei voi määrittää kausaalisuuntaa. Erotteleva näyttö tulee sentinelkilajeista, luonnollisista kokeista ja väestöistä ilman sähköä.",
     s13Title: "Sisäkkäinen χ (populaatiomalli)",
-    s13Intro: "χ-valintasääntö yleistyy populaatioihin kun biologiset taustamuuttujat (optinen, molekulaarinen) eroavat ryhmien välillä. Polkujen A ja C yhdistetty lisääntymissuppressio, moduloituna populaatiokohtaisilla χ-profiileilla:",
+    s13Intro: "χ-valintasääntö yleistyy populaatioihin kun biologiset taustamuuttujat (optinen, molekulaarinen) eroavat ryhmien välillä. Polkujen A ja B yhdistetty lisääntymissuppressio, moduloituna populaatiokohtaisilla χ-profiileilla:",
     s13PathwayA: "Polku A (VGIC)",
-    s13PathwayC: "Polku C (CRY/RPM)",
+    s13PathwayB: "Polku B (CRY/RPM)",
     s13Combined: "Yhdistetty suppressio",
     s13TFR: "Populaation TFR",
-    s13Where: "missä γ_A, γ_C ovat polkujen painot (0,75; 0,25); χ(Ā_env) on ympäristökytkentä; χ(V_mem) on kalvotausta (≈ 1,0 eläville soluille); χ(I_blue) on optinen kytkentä (iiriksestä riippuvainen); χ([FAD]) on molekulaarinen kytkentä (B2-riippuvainen); ja EMF_personal on henkilökohtaisten laitteiden osuus.",
+    s13Where: "missä γ_A, γ_B ovat polkujen painot (0,75; 0,25); χ(Ā_env) on ympäristökytkentä; χ(V_mem) on kalvotausta (≈ 1,0 eläville soluille); χ(I_blue) on optinen kytkentä (iiriksestä riippuvainen); χ([FAD]) on molekulaarinen kytkentä (B2-riippuvainen); ja EMF_personal on henkilökohtaisten laitteiden osuus.",
     s13Implication: "Tämä muotoilu ennustaa, että populaatiot korkeammilla biologisilla χ-arvoilla (sinisilmäiset, laktoosinsietokykyiset) kokevat jyrkemmän TFR-laskun ympäristön EMF:n yksikköä kohden. Katso populaatioiden χ-profiilit arvioitujen arvojen osalta.",
     s13Level: "Episteeminen taso: L* (testattava synteesi). Yksittäiset χ-instanssit ovat E- tai M|C-tasoa; populaatiotason integraatio on L*-komponentti.",
 
@@ -888,6 +901,17 @@ const t = {
     s15TableScenario: "Skenaario",
     s15TableFreeTime: "EMF-vapaa aika",
     s15TableRemaining: "Jäljellä oleva vaurio",
+
+    // S16 Kulttuurisen energian formalisointi
+    s16title: "Kulttuurisen energian formalisointi",
+    s16body: [
+      "Kulttuurinen energia — sivilisaation saavutusten aggregaattikapasiteetti — on kuvailtu laadullisesti Unwinin (1934), Spenglerin (1918), Glubbin (1978) ja Turchinin (2003) toimesta. BERM tarjoaa ensimmäisen kvantitatiivisen hajotuksen.",
+      "Perusmääritelmä: CulturalEnergy(t) = N(t) × BioCap(t) × η(t), missä N(t) on väestön koko, BioCap(t) on väestön keskimääräinen biologinen kapasiteetti ja η(t) on institutionaalinen tehokkuus (tekijä 0–1, joka kuvaa hallinnon laatua, koulutusjärjestelmiä, oikeusjärjestelmiä jne.).",
+      "BioCap itse hajoaa kahdeksan normalisoidun biomarkkerin painotettuna summana: BioCap(t) = Σᵢ wᵢ · Bᵢ(t), missä kukin Bᵢ(t) ∈ [0,1] edustaa biomarkkerin nykyistä tasoa suhteessa esiteolliseen lähtötasoon ja wᵢ on biomarkkerin paino kulttuurisen energian budjetissa.",
+      "Biomarkkeripainot (T=0,20, OXT=0,20, DA=0,15, MEL=0,15, BDNF=0,10, CORT=−0,10, D=0,05, B2=0,05) on valittu teoreettisen merkityksen ja välillisen näytön perusteella, ei empiirisen regression kautta. Kriittinen triadi (T + MEL + OXT) muodostaa 55 % kokonaispainosta.",
+      "Vaihesiirtymäkynnykset: Rationalistinen > 0,90, Deistinen > 0,75, Manistinen > 0,55, Zoistinen < 0,55. Nämä kynnykset on kalibroitu Unwinin historiallisia luokituksia ja modernia biomarkkeridataa vasten. Vuoden 2025 länsimainen arvio (BioCap ≈ 0,648) sijoittaa sivilisaation manistiseen vaiheeseen.",
+      "Herkkyysanalyysi paljastaa, että minkä tahansa yksittäisen biomarkkerin palauttaminen 1980-tasolleen tuottaa osittaisen BioCap-palautumisen: T → +16,7 %, MEL → +12,2 %, OXT → +10,8 %, DA → +5,6 %, BDNF → +3,7 %, D → +1,7 %. Triadin yhdistetty palautuminen (T + MEL + OXT) tuottaa +39,7 %. EMF-vähennys on ainoa tunnettu yksittäinen interventio, joka vaikuttaisi kaikkiin biomarkkereihin samanaikaisesti, koska kaikki ovat EMF-kaskadin alavirran tuotteita.",
+    ],
   },
   ja: {
     meta: { title: "数学 - Extinction Field", description: "BERMモデルのLindgren幾何学からTFR予測までの完全な数学的導出。すべてのステップは検証可能です。" },
@@ -910,6 +934,7 @@ const t = {
       { id: "nested-chi", num: "§13", label: "ネストされたχ（集団モデル）" },
       { id: "layered-formula", num: "§14", label: "階層式 v20→v21" },
       { id: "recovery-function", num: "§15", label: "回復関数" },
+      { id: "cultural-energy", num: "§16", label: "文化的エネルギーの形式化" },
     ],
     pageTitle: "数学的基盤",
     pageSubtitle: "BERMモデルのLindgren幾何学からTFR予測までの完全な導出。すべての方程式は前の方程式から導出可能です。「完全な導出」をクリックして中間ステップを確認してください。",
@@ -1102,8 +1127,8 @@ const t = {
     s10d2: "この6%の有効VGCC撹乱は、5年間の累積曝露における観察された−1.2%/年の精子減少と一致します。",
     s10d3: "ラパマイシンキャリブレーション（Sempou経路）：",
     s10d4: "観察されたマウスの10–25%寿命延長は、現実的な投与レジメンでの部分的mTOR減少と一致します。",
-    s10d5: "メラトニンキャリブレーション（経路C）：",
-    s10d6: "夜間EMF曝露はCRY媒介概日シグナリングを撹乱します。外因性メラトニン（3–5 mg）はCRYとは独立に概日振幅を回復させ、経路Cのバイパスを提供します。",
+    s10d5: "メラトニンキャリブレーション（経路B）：",
+    s10d6: "夜間EMF曝露はCRY媒介概日シグナリングを撹乱します。外因性メラトニン（3–5 mg）はCRYとは独立に概日振幅を回復させ、経路Bのバイパスを提供します。",
     s10d7Link: "→ 管理された実験的証拠（実験室哺乳類）",
     s11Title: "個人感受性とχ分布",
     s11Intro: "集団レベルの選択則χ(Ā)は平均応答を予測します。個人は3つの測定可能な因子により変動します：VGCCジェノタイプ、解剖学的幾何学、累積アロスタティック負荷。個人感受性修飾因子は：",
@@ -1134,12 +1159,12 @@ const t = {
     s12DataNote: "再現データ：54カ国サンプル名簿（観測TFR、電力消費、ブロードバンド加入、モデル予測）は/data/cross_section_manifest.csvで入手可能。出典：UN WPP 2024（TFR）、OWID/IEA（電力）、ITU（ブロードバンド）。",
     s12Caveat: "横断的分析は因果方向を決定できません。弁別的証拠はセンチネル種、自然実験、電力のない集団から得られます。",
     s13Title: "ネストされたχ（集団モデル）",
-    s13Intro: "χ選択則は、生物学的バックグラウンド変数（光学的、分子的）がグループ間で異なる場合に集団に一般化されます。経路AとCからの結合された生殖抑制、集団固有のχプロファイルで変調：",
+    s13Intro: "χ選択則は、生物学的バックグラウンド変数（光学的、分子的）がグループ間で異なる場合に集団に一般化されます。経路AとBからの結合された生殖抑制、集団固有のχプロファイルで変調：",
     s13PathwayA: "経路A（VGIC）",
-    s13PathwayC: "経路C（CRY/RPM）",
+    s13PathwayB: "経路B（CRY/RPM）",
     s13Combined: "結合された抑制",
     s13TFR: "集団TFR",
-    s13Where: "ここでγ_A、γ_Cは経路重み（0.75、0.25）；χ(Ā_env)は環境結合；χ(V_mem)は膜バックグラウンド（生細胞で≈ 1.0）；χ(I_blue)は光学的結合（虹彩依存）；χ([FAD])は分子結合（B2依存）；EMF_personalは個人デバイスの寄与です。",
+    s13Where: "ここでγ_A、γ_Bは経路重み（0.75、0.25）；χ(Ā_env)は環境結合；χ(V_mem)は膜バックグラウンド（生細胞で≈ 1.0）；χ(I_blue)は光学的結合（虹彩依存）；χ([FAD])は分子結合（B2依存）；EMF_personalは個人デバイスの寄与です。",
     s13Implication: "この定式化は、より高い生物学的χ値を持つ集団（青い目、乳糖耐性）が環境EMFの単位増加あたりより急峻なTFR低下を経験することを予測します。",
     s13Level: "認識論的レベル：L*（検証可能な統合）。個々のχインスタンスはEまたはM|Cレベル；集団レベルの積分はL*コンポーネントです。",
     s14Title: "階層式 v20 → v21",
@@ -1173,6 +1198,10 @@ const t = {
     s15TableScenario: "シナリオ",
     s15TableFreeTime: "EMFフリー時間",
     s15TableRemaining: "残存損傷",
+
+    // S16 文化的エネルギーの形式化
+    s16title: "文化的エネルギーの形式化",
+    s16body: [] as string[],
   },
   fr: {
     meta: { title: "Mathématiques - Extinction Field", description: "Dérivation mathématique complète du modèle BERM, de la géométrie de Lindgren à la prédiction du TFR. Chaque étape est vérifiable." },
@@ -1195,6 +1224,7 @@ const t = {
       { id: "nested-chi", num: "§13", label: "χ imbriqué (modèle de population)" },
       { id: "layered-formula", num: "§14", label: "Formule stratifiée v20→v21" },
       { id: "recovery-function", num: "§15", label: "Fonction de récupération" },
+      { id: "cultural-energy", num: "§16", label: "Formalisation de l'énergie culturelle" },
     ],
     pageTitle: "Fondement mathématique",
     pageSubtitle: "Dérivation complète du modèle BERM de la géométrie de Lindgren à la prédiction du TFR. Chaque équation est dérivable de la précédente. Cliquez sur « Dérivation complète » pour voir les étapes intermédiaires.",
@@ -1387,8 +1417,8 @@ const t = {
     s10d2: "Cette perturbation VGCC effective de 6 % est cohérente avec le déclin observé de −1,2 %/an des spermatozoïdes sur 5 ans d'exposition cumulative.",
     s10d3: "Calibration rapamycine (voie Sempou) :",
     s10d4: "L'extension de durée de vie observée de 10–25 % chez la souris est cohérente avec une réduction partielle de mTOR dans un régime de dosage réaliste.",
-    s10d5: "Calibration mélatonine (voie C) :",
-    s10d6: "L'exposition EMF nocturne perturbe la signalisation circadienne médiée par CRY. La mélatonine exogène (3–5 mg) restaure l'amplitude circadienne indépendamment de CRY, fournissant un contournement de la voie C.",
+    s10d5: "Calibration mélatonine (voie B) :",
+    s10d6: "L'exposition EMF nocturne perturbe la signalisation circadienne médiée par CRY. La mélatonine exogène (3–5 mg) restaure l'amplitude circadienne indépendamment de CRY, fournissant un contournement de la voie B.",
     s10d7Link: "→ Preuves expérimentales contrôlées (mammifères de laboratoire)",
     s11Title: "Susceptibilité individuelle et distribution χ",
     s11Intro: "La règle de sélection χ(Ā) au niveau populationnel prédit une réponse moyenne. Les individus varient autour de cette moyenne en raison de trois facteurs mesurables : génotype VGCC, géométrie anatomique et charge allostatique cumulative. Le modificateur de susceptibilité individuelle est :",
@@ -1419,12 +1449,12 @@ const t = {
     s12DataNote: "Données de réplication : liste des 54 pays (TFR observé, consommation d'électricité, abonnements haut débit, prédictions du modèle) disponible à /data/cross_section_manifest.csv. Sources : UN WPP 2024 (TFR), OWID/AIE (électricité), UIT (haut débit).",
     s12Caveat: "L'analyse transversale ne peut pas déterminer la direction causale. Les preuves discriminantes proviennent des espèces sentinelles, des expériences naturelles et des populations sans électricité.",
     s13Title: "χ imbriqué (modèle de population)",
-    s13Intro: "La règle de sélection χ se généralise aux populations lorsque les variables de fond biologiques (optique, moléculaire) diffèrent entre les groupes. La suppression reproductive combinée des voies A et C, modulée par les profils χ spécifiques à la population :",
+    s13Intro: "La règle de sélection χ se généralise aux populations lorsque les variables de fond biologiques (optique, moléculaire) diffèrent entre les groupes. La suppression reproductive combinée des voies A et B, modulée par les profils χ spécifiques à la population :",
     s13PathwayA: "Voie A (VGIC)",
-    s13PathwayC: "Voie C (CRY/RPM)",
+    s13PathwayB: "Voie B (CRY/RPM)",
     s13Combined: "Suppression combinée",
     s13TFR: "TFR de la population",
-    s13Where: "où γ_A, γ_C sont les poids des voies (0,75 ; 0,25) ; χ(Ā_env) est le couplage environnemental ; χ(V_mem) est le fond membranaire (≈ 1,0 pour les cellules vivantes) ; χ(I_blue) est le couplage optique (dépendant de l'iris) ; χ([FAD]) est le couplage moléculaire (dépendant de B2) ; et EMF_personal est la contribution des appareils personnels.",
+    s13Where: "où γ_A, γ_B sont les poids des voies (0,75 ; 0,25) ; χ(Ā_env) est le couplage environnemental ; χ(V_mem) est le fond membranaire (≈ 1,0 pour les cellules vivantes) ; χ(I_blue) est le couplage optique (dépendant de l'iris) ; χ([FAD]) est le couplage moléculaire (dépendant de B2) ; et EMF_personal est la contribution des appareils personnels.",
     s13Implication: "Cette formulation prédit que les populations avec des valeurs χ biologiques plus élevées (yeux bleus, tolérants au lactose) connaissent un déclin TFR plus prononcé par unité d'augmentation EMF environnementale.",
     s13Level: "Niveau épistémique : L* (synthèse testable). Les instanciations χ individuelles sont de niveau E ou M|C ; l'intégration au niveau populationnel est la composante L*.",
     s14Title: "Formule stratifiée v20 → v21",
@@ -1458,6 +1488,10 @@ const t = {
     s15TableScenario: "Scénario",
     s15TableFreeTime: "Temps sans EMF",
     s15TableRemaining: "Dommage restant",
+
+    // S16 Formalisation de l'énergie culturelle
+    s16title: "Formalisation de l'énergie culturelle",
+    s16body: [] as string[],
   },
   ko: {
     meta: { title: "수학 - Extinction Field", description: "Lindgren 기하학에서 TFR 예측까지 BERM 모델의 완전한 수학적 유도. 모든 단계는 검증 가능합니다." },
@@ -1480,6 +1514,7 @@ const t = {
       { id: "nested-chi", num: "§13", label: "중첩된 χ (집단 모델)" },
       { id: "layered-formula", num: "§14", label: "계층 공식 v20→v21" },
       { id: "recovery-function", num: "§15", label: "회복 함수" },
+      { id: "cultural-energy", num: "§16", label: "문화 에너지 형식화" },
     ],
     pageTitle: "수학적 기반",
     pageSubtitle: "Lindgren 기하학에서 TFR 예측까지 BERM 모델의 완전한 유도. 모든 방정식은 이전 방정식에서 유도 가능합니다. 중간 단계를 보려면 \"전체 유도\"를 클릭하세요.",
@@ -1672,8 +1707,8 @@ const t = {
     s10d2: "이 6% 유효 VGCC 교란은 5년 누적 노출에 걸친 관찰된 −1.2%/년 정자 감소와 일치합니다.",
     s10d3: "라파마이신 교정 (Sempou 경로):",
     s10d4: "관찰된 마우스의 10–25% 수명 연장은 현실적 투여 요법에서의 부분적 mTOR 감소와 일치합니다.",
-    s10d5: "멜라토닌 교정 (경로 C):",
-    s10d6: "야간 EMF 노출은 CRY 매개 일주기 신호전달을 교란합니다. 외인성 멜라토닌(3–5 mg)은 CRY와 독립적으로 일주기 진폭을 회복시켜 경로 C 우회를 제공합니다.",
+    s10d5: "멜라토닌 교정 (경로 B):",
+    s10d6: "야간 EMF 노출은 CRY 매개 일주기 신호전달을 교란합니다. 외인성 멜라토닌(3–5 mg)은 CRY와 독립적으로 일주기 진폭을 회복시켜 경로 B 우회를 제공합니다.",
     s10d7Link: "→ 통제된 실험적 증거 (실험실 포유류)",
     s11Title: "개인 감수성과 χ 분포",
     s11Intro: "집단 수준의 선택 규칙 χ(Ā)는 평균 반응을 예측합니다. 개인은 세 가지 측정 가능한 요인으로 변동합니다: VGCC 유전자형, 해부학적 기하학, 누적 알로스태틱 부하. 개인 감수성 수정인자는:",
@@ -1704,12 +1739,12 @@ const t = {
     s12DataNote: "재현 데이터: 54개국 표본 명단(관측 TFR, 전력 소비, 브로드밴드 가입, 모델 예측)은 /data/cross_section_manifest.csv에서 이용 가능. 출처: UN WPP 2024(TFR), OWID/IEA(전력), ITU(브로드밴드).",
     s12Caveat: "횡단적 분석은 인과 방향을 결정할 수 없습니다. 변별적 증거는 센티넬 종, 자연 실험, 전력 없는 집단에서 나옵니다.",
     s13Title: "중첩된 χ (집단 모델)",
-    s13Intro: "χ 선택 규칙은 생물학적 배경 변수(광학적, 분자적)가 그룹 간에 다를 때 집단으로 일반화됩니다. 경로 A와 C의 결합된 생식 억제, 집단별 χ 프로파일로 변조:",
+    s13Intro: "χ 선택 규칙은 생물학적 배경 변수(광학적, 분자적)가 그룹 간에 다를 때 집단으로 일반화됩니다. 경로 A와 B의 결합된 생식 억제, 집단별 χ 프로파일로 변조:",
     s13PathwayA: "경로 A (VGIC)",
-    s13PathwayC: "경로 C (CRY/RPM)",
+    s13PathwayB: "경로 B (CRY/RPM)",
     s13Combined: "결합된 억제",
     s13TFR: "집단 TFR",
-    s13Where: "여기서 γ_A, γ_C는 경로 가중치(0.75, 0.25); χ(Ā_env)는 환경 결합; χ(V_mem)은 막 배경(생세포에서 ≈ 1.0); χ(I_blue)는 광학적 결합(홍채 의존); χ([FAD])는 분자 결합(B2 의존); EMF_personal은 개인 장치 기여입니다.",
+    s13Where: "여기서 γ_A, γ_B는 경로 가중치(0.75, 0.25); χ(Ā_env)는 환경 결합; χ(V_mem)은 막 배경(생세포에서 ≈ 1.0); χ(I_blue)는 광학적 결합(홍채 의존); χ([FAD])는 분자 결합(B2 의존); EMF_personal은 개인 장치 기여입니다.",
     s13Implication: "이 공식은 더 높은 생물학적 χ 값을 가진 집단(파란 눈, 유당 내성)이 환경 EMF 단위 증가당 더 급격한 TFR 감소를 경험한다고 예측합니다.",
     s13Level: "인식론적 수준: L* (검증 가능한 통합). 개별 χ 인스턴스화는 E 또는 M|C 수준; 집단 수준 적분은 L* 구성요소입니다.",
     s14Title: "계층 공식 v20 → v21",
@@ -1743,6 +1778,10 @@ const t = {
     s15TableScenario: "시나리오",
     s15TableFreeTime: "EMF 무노출 시간",
     s15TableRemaining: "잔여 손상",
+
+    // S16 문화 에너지 형식화
+    s16title: "문화 에너지 형식화",
+    s16body: [] as string[],
   },
 };
 
@@ -3072,15 +3111,15 @@ export function MathematicsSections({ locale }: { locale: string }) {
               </DerivationLine>
             </Derivation>
 
-            <Derivation label={d.s13PathwayC}>
+            <Derivation label={d.s13PathwayB}>
               <DerivationLine>
-                R_C = γ_C × χ(Ā_env) × χ(I_blue) × χ([FAD]) × EMF_personal
+                R_B = γ_B × χ(Ā_env) × χ(I_blue) × χ([FAD]) × EMF_personal
               </DerivationLine>
             </Derivation>
 
             <Derivation label={d.s13Combined}>
               <DerivationLine>
-                R = (1 − R_A) × (1 − R_C)
+                R = (1 − R_A) × (1 − R_B)
               </DerivationLine>
             </Derivation>
 
@@ -3354,6 +3393,21 @@ export function MathematicsSections({ locale }: { locale: string }) {
               <MathBlock tex="R = 1 + \beta \times \text{EMF\_free\_hours}, \quad \beta \approx 0.11 \;\text{(Ivancsits)}" />
             </div>
           </section>
+
+          {/* S16 Cultural Energy Formalization */}
+          {d.s16body?.length > 0 && (
+            <section id="cultural-energy" className="scroll-mt-24">
+              <h2 className="text-lg font-semibold mb-1">
+                <span className="text-foreground-muted text-sm mr-2">{"§16"}</span>
+                {d.s16title}
+              </h2>
+              <div className="space-y-4 mt-4">
+                {d.s16body.map((p: string, i: number) => (
+                  <p key={i} className="text-sm text-foreground-muted leading-relaxed max-w-3xl">{p}</p>
+                ))}
+              </div>
+            </section>
+          )}
     </div>
   );
 }

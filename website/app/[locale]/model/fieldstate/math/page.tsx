@@ -31,7 +31,7 @@ type Copy = {
 const t: Record<string, Copy> = {
   en: {
     metaTitle: "BERM v17 mathematics – Extinction Field",
-    metaDescription: "The measurement-aware BERM v17 specification of BERM.",
+    metaDescription: "BERM v17 mathematical specification: measurement-aware route from Lindgren geometry to TFR.",
     title: "BERM v17 mathematical specification",
     subtitle:
       "A measurement-aware route from Lindgren-derived field hypotheses to organ states, couple capacity, age-specific fertility and TFR.",

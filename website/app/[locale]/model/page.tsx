@@ -27,6 +27,7 @@ const t = {
     metaTitle: "Model Documentation - Extinction Field",
     metaDesc:
       "BERM model documentation: three-level architecture, causal pathways, equations, and recovery dynamics.",
+    specNote: "BERM operates at two levels of specification. The model (this page) is the causal theory — pathways, equations, and predictions derived from cumulative-exposure proxies. The FieldState measurement spec defines how to measure exposure directly, replacing the proxy with a bounded protocol. Current predictions use the proxy; FieldState validation is prospective.",
 
     physBioTitle: "From Physics to Biology",
     physBioSub: "How Lindgren's geometric electromagnetism predicts biological sensitivity to background fields",
@@ -111,6 +112,23 @@ const t = {
       { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
     ],
     bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework’s logic, not a fitted equation with empirical coefficients.",
+
+    biocapDecompTitle: "BioCap Decomposition",
+    biocapDecompDesc: "BioCap decomposes into eight measurable biomarkers. Each biomarker has a weight reflecting its relative contribution to civilizational capacity. The decomposition enables both measurement and prediction.",
+    biocapDecompFormula: "BioCap(t) = Σᵢ wᵢ · Bᵢ(t)",
+    biocapDecompFormulaDesc: "where Bᵢ(t) = normalized level of biomarker i at time t, wᵢ = biomarker weight",
+    biocapDecompCultural: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)",
+    biocapDecompCulturalDesc: "where N(t) = population, η(t) = institutional efficiency",
+    biocapDecompMarkers: [
+      { symbol: "T", name: "Testosterone", weight: "+0.20", unit: "ng/dL", baseline: "600", current: "440", mechanism: "EMF → VGCC → Ca²⁺ → StAR↓ → T↓", evidence: "E (>1M)" },
+      { symbol: "OXT", name: "Oxytocin", weight: "+0.20", unit: "pg/mL", baseline: "—", current: "—", mechanism: "EMF → VGCC → Ca²⁺ → hypothalamic OXT↓", evidence: "M|C (proxy)" },
+      { symbol: "DA", name: "Dopamine sens.", weight: "+0.15", unit: "D2R arb.", baseline: "1.0", current: "—", mechanism: "EMF → VGCC → Ca²⁺ → DA synthesis↓ → D2R↓", evidence: "M|C (proxy)" },
+      { symbol: "MEL", name: "Melatonin", weight: "+0.15", unit: "pg/mL", baseline: "80", current: "35", mechanism: "EMF → CRY/VGCC → SCN → mel↓ + PGC", evidence: "M|C" },
+      { symbol: "BDNF", name: "BDNF", weight: "+0.10", unit: "ng/mL", baseline: "—", current: "—", mechanism: "EMF → VGCC → Ca²⁺ → CREB↓ → BDNF↓", evidence: "M|C (proxy)" },
+      { symbol: "CORT", name: "Cortisol", weight: "−0.10", unit: "μg/dL", baseline: "12", current: "16", mechanism: "EMF → mel↓ → sleep↓ → HPA → CORT↑", evidence: "M|C" },
+      { symbol: "D", name: "Vitamin D", weight: "+0.05", unit: "nmol/L", baseline: "70", current: "50", mechanism: "D↓ → VDR → VGCC↑ → EMF sensitivity↑", evidence: "E (7.9M)" },
+      { symbol: "B2", name: "B2/FAD", weight: "+0.05", unit: "nmol/L", baseline: "—", current: "—", mechanism: "B2 → FAD → CRY stability + mito complex I/II", evidence: "M|C" },
+    ],
 
     hormesisTitle: "Hormetic dose-response extension",
     hormesisDesc: "The recovery term α in the BioCap integral assumes a constant repair rate. The hormetic extension replaces α with a dose-dependent function h(Ā, δA) that captures three distinct biological zones:",
@@ -204,7 +222,7 @@ const t = {
       channel: "Ca²⁺ channel (VGCC)",
       threshold: "REQUIRES electrification threshold (Ā > 0)",
       tests: "Amish (Ā≈0), community gradient, country gradient",
-      pathways: "A (ROS), D (HPA), E (BBB)",
+      pathways: "A (ROS), C (BBB), D (HPA)",
     },
     dualSuscRight: {
       title: "χ_B [CRY/RPM]",
@@ -212,11 +230,11 @@ const t = {
       channel: "Radical pair mechanism",
       threshold: "NO electrification threshold (operates always)",
       tests: "Solar cycle, pre-industrial data, sentinel species, SAMA anomaly",
-      pathways: "B (CRY), C (melatonin)",
+      pathways: "B (CRY/RPM)",
     },
 
     phyloTitle: "Phylogenetic Pathway Hierarchy",
-    phyloDesc: "The operational weights (A=45%, B=15%, C=25%, D=15%) reflect current epidemiological evidence strength. But from a phylogenetic perspective, the hierarchy inverts: CRY/RPM (Pathway B) is the ancestral electromagnetic sensor, conserved across ALL eukaryotic kingdoms for over 1 billion years. VGCC (Pathway A), though dominant in human epidemiology, is a derived innovation appearing only in Metazoa ~500 Myr ago.",
+    phyloDesc: "The operational weights (A=45%, B=25%, C=15%, D=15%) reflect current epidemiological evidence strength. But from a phylogenetic perspective, the hierarchy inverts: CRY/RPM (Pathway B) is the ancestral electromagnetic sensor, conserved across ALL eukaryotic kingdoms for over 1 billion years. VGCC (Pathway A), though dominant in human epidemiology, is a derived innovation appearing only in Metazoa ~500 Myr ago.",
     phyloColProperty: "",
     phyloColPathwayB: "Pathway B (CRY/RPM)",
     phyloColPathwayA: "Pathway A (VGCC)",
@@ -226,11 +244,11 @@ const t = {
       ["Plant evidence", "Yes (Ahmad 2020, Xu 2015)", "No"],
       ["Insect evidence", "Yes (Gegear 2008)", "Limited"],
       ["Mammal evidence", "Yes (PMC11817702)", "Yes (extensive)"],
-      ["Operational weight", "15% (human TFR)", "45% (human TFR)"],
+      ["Operational weight", "25% (human TFR)", "45% (human TFR)"],
       ["Phylogenetic rank", "Ancestral", "Derived"],
     ],
     phyloInsight: "This means the current TFR-focused operational weights understate CRY/RPM's evolutionary significance. When we extend from human TFR to ECOSYSTEM-level EMF effects — pollinator decline, bird population crashes, tree masting disruption — Pathway B becomes the dominant mechanism, because it's the only one present in all affected organisms.",
-    phyloWarning: "The phylogenetic hierarchy is a theoretical framework. It does NOT change the operational weights used in BERM's TFR predictions. The weights reflect epidemiological evidence strength for human fertility, where VGCC (A=45%) has more direct human evidence than CRY/RPM (B=15%).",
+    phyloWarning: "The phylogenetic hierarchy is a theoretical framework. It does NOT change the operational weights used in BERM's TFR predictions. The weights reflect epidemiological evidence strength for human fertility, where VGCC (A=45%) has more direct human evidence than CRY/RPM (B=25%).",
     phyloText: [
       "BERM identifies five biological pathways (A–E) through which EMF affects reproduction. Their operational weights reflect importance for human fertility. But their phylogenetic hierarchy — which is more fundamental and which is derived — is different.",
       "Pathway B (CRY/RPM) is the ancestral mechanism. Present in all eukaryotes: plants, fungi, insects, birds, mammals. Cryptochrome was first discovered in plants (Arabidopsis, 1993). CRY’s reproductive role is best documented in plants — CRY2 → CONSTANS → FLOWERING LOCUS T → flowering induction. Conserved over 1 billion years as a photolyase homolog. Does not require membrane potential. Operates via spin chemistry (radical pair mechanism). RF disruption demonstrated in plants (Ahmad 2020: 7 MHz), insects (Gegear 2008: Drosophila), and mammals (PMC11817702 2025).",
@@ -251,10 +269,10 @@ const t = {
     ifoVgicNote: "The IFO-VGIC mechanism is supported by a comprehensive review of 131 studies ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics): 95% report oxidative effects from RF/Wi-Fi exposure. This consensus, consistent with [[ref:yakymenko2016|Yakymenko et al. 2016]] (93/100), establishes the Ca²⁺ influx → ROS pathway as the most robustly documented non-thermal mechanism.",
     multiPathwayCa2Note: "The Ca²⁺ disruption at Level 4 operates through multiple independent pathways: (1) direct S4 voltage sensor forced oscillation ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC); (2) intracellular calcium store dysregulation via ryanodine receptors (RyR) and SERCA pumps ([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci). Both pharmacological blockade experiments (VGCC blockers for pathway 1; dantrolene for RyR, CPA for SERCA in pathway 2) abrogate EMF effects, confirming mechanism. The multi-pathway nature explains tissue-specific sensitivity: cells with high VGIC density AND large intracellular Ca²⁺ stores (neurons, gonadal cells) are more sensitive than cells with low stores (keratinocytes — cf. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: null results in skin cells). Note: [[ref:bertagna2025|Bertagna 2025]] is ELF (50 Hz), not RF — translation to RF is not direct, but the Ca²⁺ pathway is shared.",
     fiveGReproNote: "The first 5G-frequency-specific testicular data ([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics): 3.5 GHz RF induced testicular and oxidative damage in rats. CoQ10 supplementation ameliorated the damage, demonstrating mechanism reversibility — consistent with BERM's recovery window model where antioxidant capacity determines net daily damage. This extends the oxidative stress evidence base ([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95%) to the 5G frequency range.",
-    pathwayCQuantNote: "The melatonin suppression pathway is quantitatively supported by a PRISMA systematic review of 55 studies ([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms): 88% of high-quality animal studies report EMF-induced melatonin suppression of 20-50% from baseline. This suppression is biologically significant for GnRH pulsatility but smaller than light-induced suppression (>90%), consistent with BERM's v17_night_fraction() modeling EMF as one component of the nocturnal triple hit (melanopsin + CRY + melatonin), not the sole driver. Methodological note: only 27% of reviewed studies met high standards.",
-    pathwayCWeightNote: "Note on pathway C weight: Pathway C's 25% reflects both its circadian function (CRY2 → clock gene transcription → melatonin → HPG) and its recently discovered calcium signaling function (CRY2 → TRPC1 modulation → Ca²⁺ entry; [[ref:yap2025|Yap et al. 2025]], Cells). TRPC1 is a TRP channel, not a voltage-gated calcium channel (VGCC). Pathways A and C are therefore pharmacologically separable: L-type VGCC blockers (nifedipine) block pathway A effects but not CRY2-TRPC1 effects.",
-    cryIndividualVariationNote: "Individual variation: CRY sensitivity is modulated by iris pigmentation (blue > green > brown; [[ref:higuchi2007|Higuchi 2007]]), nutritional FAD status ([[ref:hirano2017|Hirano 2017]]), and sex (males > females in acute magnetoreception; [[ref:chae2019|Chae 2019]]). These modulators may explain part of the inter-individual and inter-population variance in pathway C effectiveness. The CRY2-TRPC1 physical complex ([[ref:yap2025|Yap/Sherrard 2025]]) further reveals that pathway C has a second downstream branch: CRY2 modulates TRPC1 (a TRP channel, NOT a VGCC), enabling calcium signaling independently of pathway A. Pathways A and C remain pharmacologically separable — L-type VGCC blockers inhibit A but not CRY2-TRPC1. See the detailed analysis at /evidence/eyes.",
-    cryDualSystemNote: "Dual CRY system: Pathway C operates through two distinct cryptochrome systems in the retina. C1 (sensory): Full-length CRY1 protein was found exclusively in the outer segments of short-wavelength-sensitive 'blue' cone photoreceptors in human, bonobo, and gorilla retinas ([[ref:bartolke2025|Bartölke et al. 2025]], FASEB J). This location far from nuclei — in the phototransduction machinery — suggests a sensory function beyond circadian clock regulation. The stacked membrane lamellae of cone outer segments provide the orientational order required for directional magnetoreception (cf. [[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol: CRY associates with lipid bilayers in ordered manner). This is the system most directly affected by iris pigmentation: blue eyes transmit ~100× more light to blue cones, increasing CRY1 activation. C2 (circadian): CRY2 is expressed in retinal ganglion cells, particularly ipRGCs that project to the SCN. CRY2 forms a physical complex with TRPC1 ([[ref:yap2025|Yap et al. 2025]]), linking the circadian pathway to ion channel signaling. Both systems require FAD as their chromophore and are therefore both dependent on riboflavin (B2) status.",
+    pathwayBQuantNote: "The melatonin suppression pathway is quantitatively supported by a PRISMA systematic review of 55 studies ([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms): 88% of high-quality animal studies report EMF-induced melatonin suppression of 20-50% from baseline. This suppression is biologically significant for GnRH pulsatility but smaller than light-induced suppression (>90%), consistent with BERM's v17_night_fraction() modeling EMF as one component of the nocturnal triple hit (melanopsin + CRY + melatonin), not the sole driver. Methodological note: only 27% of reviewed studies met high standards.",
+    pathwayBWeightNote: "Note on pathway B weight: Pathway B's 25% reflects both its circadian function (CRY2 → clock gene transcription → melatonin → HPG) and its recently discovered calcium signaling function (CRY2 → TRPC1 modulation → Ca²⁺ entry; [[ref:yap2025|Yap et al. 2025]], Cells). TRPC1 is a TRP channel, not a voltage-gated calcium channel (VGCC). Pathways A and B are therefore pharmacologically separable: L-type VGCC blockers (nifedipine) block pathway A effects but not CRY2-TRPC1 effects.",
+    cryIndividualVariationNote: "Individual variation: CRY sensitivity is modulated by iris pigmentation (blue > green > brown; [[ref:higuchi2007|Higuchi 2007]]), nutritional FAD status ([[ref:hirano2017|Hirano 2017]]), and sex (males > females in acute magnetoreception; [[ref:chae2019|Chae 2019]]). These modulators may explain part of the inter-individual and inter-population variance in pathway B effectiveness. The CRY2-TRPC1 physical complex ([[ref:yap2025|Yap/Sherrard 2025]]) further reveals that pathway B has a second downstream branch: CRY2 modulates TRPC1 (a TRP channel, NOT a VGCC), enabling calcium signaling independently of pathway A. Pathways A and B remain pharmacologically separable — L-type VGCC blockers inhibit A but not CRY2-TRPC1. See the detailed analysis at /evidence/eyes.",
+    cryDualSystemNote: "Dual CRY system: Pathway B operates through two distinct cryptochrome systems in the retina. CRY1 (sensory): Full-length CRY1 protein was found exclusively in the outer segments of short-wavelength-sensitive 'blue' cone photoreceptors in human, bonobo, and gorilla retinas ([[ref:bartolke2025|Bartölke et al. 2025]], FASEB J). This location far from nuclei — in the phototransduction machinery — suggests a sensory function beyond circadian clock regulation. The stacked membrane lamellae of cone outer segments provide the orientational order required for directional magnetoreception (cf. [[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol: CRY associates with lipid bilayers in ordered manner). This is the system most directly affected by iris pigmentation: blue eyes transmit ~100× more light to blue cones, increasing CRY1 activation. CRY2 (circadian): CRY2 is expressed in retinal ganglion cells, particularly ipRGCs that project to the SCN. CRY2 forms a physical complex with TRPC1 ([[ref:yap2025|Yap et al. 2025]]), linking the circadian pathway to ion channel signaling. Both systems require FAD as their chromophore and are therefore both dependent on riboflavin (B2) status.",
     recoveryWindowNote: "The distinction between acute and chronic exposure is empirically supported: [[ref:koivisto2000|Koivisto et al. (2000)]] observed cognitive facilitation after 30–60 min exposure (compatible with acute Ca²⁺-mediated synaptic enhancement), while [[ref:panagopoulos2025_ifo|Panagopoulos et al. (2025)]] report 95% oxidative stress in studies with chronic or repeated exposure. The recovery window model resolves this apparent contradiction: 30 min + 23.5h recovery → 97% repair (no net damage); 22h exposure + 2h recovery → 21% repair (cumulative damage).",
     lateralizationNote: "The two-channel model's spatial structure is empirically supported by lateralization studies: [[ref:eliyahu2006|Eliyahu et al. (2006)]] and [[ref:luria2009|Luria et al. (2009)]] demonstrated that 890 MHz exposure affects specifically the hemisphere nearest the phone. This confirms that personal-EMF effects are local, not systemic — EMF attenuates with the square of distance — supporting BERM's premise that phone-in-pocket targets testes, phone-at-ear targets hypothalamus.",
     ifChannelTitle: "IF channel: LED lighting as primary source",
@@ -699,7 +717,7 @@ const t = {
     ],
     causalSantiTitle: "[[ref:santi2025|Santi 2025]]: both testosterone AND LH are declining",
     causalSantiText: "The largest meta-analysis ever conducted (1,064,891 men, 1971-2024) found that serum testosterone is declining independent of age, BMI, and assay method. Critically, it also found that LH (the pituitary signal that drives testosterone production) is also declining - ruling out simple testicular failure and pointing to disruption at the hypothalamic-pituitary level.",
-    causalSantiMechanism: "BERM predicts exactly this: Route A (direct Leydig cell via Cav3.2 -> StAR) reduces testosterone, while Route C (melatonin -> GnRH) and Route D (cortisol -> HPG) reduce LH. The simultaneous decline of both hormones is the signature of multi-level disruption - not aging, not obesity.",
+    causalSantiMechanism: "BERM predicts exactly this: Route A (direct Leydig cell via Cav3.2 -> StAR) reduces testosterone, while Route B (melatonin -> GnRH) and Route D (cortisol -> HPG) reduce LH. The simultaneous decline of both hormones is the signature of multi-level disruption - not aging, not obesity.",
     causalSantiSource: "[[ref:santi2025|Santi et al. 2025]], J Endocrinol Invest 48:2721-2734",
     pocketTitle: "The Pocket Transition",
     pocketText: "The doubling of sperm decline rate after 2000 ([[ref:levine2023_sperm|1.16%→2.64%/yr]]) coincides with a single behavioral change: the phone moved from ear to pocket. 3G data capability meant the phone stayed in the pocket continuously rather than being used only for calls. Testes entered the near-field for 16 hours per day.",
@@ -927,6 +945,7 @@ const t = {
     metaTitle: "Mallin dokumentaatio - Extinction Field",
     metaDesc:
       "BERM-mallin dokumentaatio: kolmitasoinen arkkitehtuuri, kausaalireitit, yhtälöt ja palautumisdynamiikka.",
+    specNote: "BERM toimii kahdella spesifikaatiotasolla. Malli (tämä sivu) on kausaaliteoria — reitit, yhtälöt ja ennusteet, jotka johdetaan kumulatiivisesta altistusproxystä. FieldState-mittausspesifikaatio määrittelee, miten altistus mitataan suoraan, korvaten proxyn rajatulla protokollalla. Nykyiset ennusteet käyttävät proxya; FieldState-validointi on prospektiivinen.",
 
     physBioTitle: "Fysiikasta biologiaan",
     physBioSub: "Miten Lindgrenin geometrinen sähkömagnetismi ennustaa biologista herkkyyttä taustakenttiin",
@@ -1011,6 +1030,23 @@ const t = {
       { symbol: "σ(τ)", desc: "Ihmisen aiheuttama EM-saturaatio — peittää auringon palautumisikkunan vuoden 1880 jälkeen" },
     ],
     bioCivEpistemic: "Tämä kausaaliketju on käsitteellinen viitekehys, joka yhdistää dokumentoidut mekanismit koherentiksi sekvenssiksi. Yksittäisillä vaiheilla (0–4) on suora kokeellinen tuki; ylempien vaiheiden (5–10) kvantitatiivisia parametreja ei ole vielä kalibroitu. BioCap-integraali on viitekehyksen logiikan muodollinen ilmaus, ei sovitettu yhtälö empiirisin kertoimiin.",
+
+    biocapDecompTitle: "BioCap-hajotus",
+    biocapDecompDesc: "BioCap hajoaa kahdeksaan mitattavaan biomarkkeriin. Jokaisella biomarkkerilla on paino, joka heijastaa sen suhteellista osuutta sivilisaatiokapasiteetista. Hajotus mahdollistaa sekä mittaamisen että ennustamisen.",
+    biocapDecompFormula: "BioCap(t) = Σᵢ wᵢ · Bᵢ(t)",
+    biocapDecompFormulaDesc: "missä Bᵢ(t) = biomarkkeri i:n normalisoitu taso hetkellä t, wᵢ = biomarkkerin paino",
+    biocapDecompCultural: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)",
+    biocapDecompCulturalDesc: "missä N(t) = väestö, η(t) = institutionaalinen tehokkuus",
+    biocapDecompMarkers: [
+      { symbol: "T", name: "Testosterone", weight: "+0.20", unit: "ng/dL", baseline: "600", current: "440", mechanism: "EMF → VGCC → Ca²⁺ → StAR↓ → T↓", evidence: "E (>1M)" },
+      { symbol: "OXT", name: "Oxytocin", weight: "+0.20", unit: "pg/mL", baseline: "—", current: "—", mechanism: "EMF → VGCC → Ca²⁺ → hypothalamic OXT↓", evidence: "M|C (proxy)" },
+      { symbol: "DA", name: "Dopamine sens.", weight: "+0.15", unit: "D2R arb.", baseline: "1.0", current: "—", mechanism: "EMF → VGCC → Ca²⁺ → DA synthesis↓ → D2R↓", evidence: "M|C (proxy)" },
+      { symbol: "MEL", name: "Melatonin", weight: "+0.15", unit: "pg/mL", baseline: "80", current: "35", mechanism: "EMF → CRY/VGCC → SCN → mel↓ + PGC", evidence: "M|C" },
+      { symbol: "BDNF", name: "BDNF", weight: "+0.10", unit: "ng/mL", baseline: "—", current: "—", mechanism: "EMF → VGCC → Ca²⁺ → CREB↓ → BDNF↓", evidence: "M|C (proxy)" },
+      { symbol: "CORT", name: "Cortisol", weight: "−0.10", unit: "μg/dL", baseline: "12", current: "16", mechanism: "EMF → mel↓ → sleep↓ → HPA → CORT↑", evidence: "M|C" },
+      { symbol: "D", name: "Vitamin D", weight: "+0.05", unit: "nmol/L", baseline: "70", current: "50", mechanism: "D↓ → VDR → VGCC↑ → EMF sensitivity↑", evidence: "E (7.9M)" },
+      { symbol: "B2", name: "B2/FAD", weight: "+0.05", unit: "nmol/L", baseline: "—", current: "—", mechanism: "B2 → FAD → CRY stability + mito complex I/II", evidence: "M|C" },
+    ],
 
     hormesisTitle: "Hormeettinen annosvastelaajennus",
     hormesisDesc: "BioCap-integraalin palautumistermi α olettaa vakion korjausnopeuden. Hormeettinen laajennus korvaa α:n annosriippuvaisella funktiolla h(Ā, δA), joka kuvaa kolme erillistä biologista vyöhykettä:",
@@ -1104,7 +1140,7 @@ const t = {
       channel: "Ca²⁺-kanava (VGCC)",
       threshold: "VAATII sähköistyskynnyksen (Ā > 0)",
       tests: "Amissit (Ā≈0), yhteisögradientti, maagradientti",
-      pathways: "A (ROS), D (HPA), E (BBB)",
+      pathways: "A (ROS), C (BBB), D (HPA)",
     },
     dualSuscRight: {
       title: "χ_B [CRY/RPM]",
@@ -1112,11 +1148,11 @@ const t = {
       channel: "Radikaalipari-mekanismi",
       threshold: "EI sähköistyskynnystä (toimii aina)",
       tests: "Auringonkierto, esiteolliset tiedot, sentinel-lajit, SAMA-anomalia",
-      pathways: "B (CRY), C (melatoniini)",
+      pathways: "B (CRY/RPM)",
     },
 
     phyloTitle: "Polkujen fylogeneettinen hierarkia",
-    phyloDesc: "Operatiiviset painot (A=45%, B=15%, C=25%, D=15%) heijastavat nykyistä epidemiologisen näytön vahvuutta. Mutta fylogeneettisestä näkökulmasta hierarkia kääntyy: CRY/RPM (polku B) on esi-isällinen sähkömagneettinen sensori, konservoitunut KAIKISSA eukaryoottien valtakunnissa yli miljardin vuoden ajan. VGCC (polku A), vaikka dominoiva ihmisen epidemiologiassa, on johdettu innovaatio joka ilmestyi vain eläinkuntaan ~500 Mya sitten.",
+    phyloDesc: "Operatiiviset painot (A=45%, B=25%, C=15%, D=15%) heijastavat nykyistä epidemiologisen näytön vahvuutta. Mutta fylogeneettisestä näkökulmasta hierarkia kääntyy: CRY/RPM (polku B) on esi-isällinen sähkömagneettinen sensori, konservoitunut KAIKISSA eukaryoottien valtakunnissa yli miljardin vuoden ajan. VGCC (polku A), vaikka dominoiva ihmisen epidemiologiassa, on johdettu innovaatio joka ilmestyi vain eläinkuntaan ~500 Mya sitten.",
     phyloColProperty: "",
     phyloColPathwayB: "Polku B (CRY/RPM)",
     phyloColPathwayA: "Polku A (VGCC)",
@@ -1126,11 +1162,11 @@ const t = {
       ["Kasvinäyttö", "Kyllä (Ahmad 2020, Xu 2015)", "Ei"],
       ["Hyönteisnäyttö", "Kyllä (Gegear 2008)", "Rajallinen"],
       ["Nisäkäsnäyttö", "Kyllä (PMC11817702)", "Kyllä (laaja)"],
-      ["Operatiivinen paino", "15% (ihmisen TFR)", "45% (ihmisen TFR)"],
+      ["Operatiivinen paino", "25% (ihmisen TFR)", "45% (ihmisen TFR)"],
       ["Fylogeneettinen arvo", "Esi-isällinen", "Johdettu"],
     ],
     phyloInsight: "Tämä tarkoittaa, että nykyiset TFR-keskeiset operatiiviset painot aliarvioivat CRY/RPM:n evolutiivista merkitystä. Kun laajennamme ihmisen TFR:stä EKOSYSTEEMITASON EMF-vaikutuksiin — pölyttäjäkato, lintupopulaatioiden romahdus, puiden masting-häiriöt — polku B nousee hallitsevaksi mekanismiksi, koska se on ainoa joka on läsnä kaikissa vaikutuksen alaisissa organismeissa.",
-    phyloWarning: "Fylogeneettinen hierarkia on teoreettinen viitekehys. Se EI muuta BERM:n TFR-ennusteissa käytettäviä operatiivisia painoja. Painot heijastavat epidemiologisen näytön vahvuutta ihmisen lisääntymiselle, jossa VGCC:llä (A=45%) on enemmän suoraa ihmistutkimusnäyttöä kuin CRY/RPM:llä (B=15%).",
+    phyloWarning: "Fylogeneettinen hierarkia on teoreettinen viitekehys. Se EI muuta BERM:n TFR-ennusteissa käytettäviä operatiivisia painoja. Painot heijastavat epidemiologisen näytön vahvuutta ihmisen lisääntymiselle, jossa VGCC:llä (A=45%) on enemmän suoraa ihmistutkimusnäyttöä kuin CRY/RPM:llä (B=25%).",
     phyloText: [
       "BERM tunnistaa viisi biologista polkua (A–E) joiden kautta EMF vaikuttaa lisääntymiseen. Niiden operatiiviset painot heijastavat merkitystä ihmisen hedelmällisyydelle. Mutta niiden fylogeneettinen hierarkia — mikä on perustavanlaatuisempi ja mikä johdettu — on erilainen.",
       "Polku B (CRY/RPM) on kantamekanismi. Läsnä kaikissa eukaryooteissa: kasvit, sienet, hyönteiset, linnut, nisäkkäät. Kryptokromi löydettiin ensin kasveista (Arabidopsis, 1993). CRY:n lisääntymiskykyyn liittyvä rooli on parhaiten dokumentoitu kasveissa — CRY2 → CONSTANS → FLOWERING LOCUS T → kukinta-induktio. Konservoitu yli miljardin vuoden ajan fotolyaasin homologina. Ei vaadi kalvopotentiaalia. Operoi spin-kemialla (radikaaliparimekanismi). RF-häiriö osoitettu kasveissa (Ahmad 2020: 7 MHz), hyönteisissä (Gegear 2008: Drosophila) ja nisäkkäissä (PMC11817702 2025).",
@@ -1151,10 +1187,10 @@ const t = {
     ifoVgicNote: "IFO-VGIC-mekanismia tukee 131 tutkimuksen kattava katsaus ([[ref:panagopoulos2025_ifo|Panagopoulos ym. 2025]], Bioelectromagnetics): 95 % raportoi oksidatiivisia vaikutuksia RF/Wi-Fi-altistuksessa. Tämä konsensus, joka on yhdenmukainen [[ref:yakymenko2016|Yakymenko ym. 2016]] (93/100) kanssa, vahvistaa Ca²⁺-sisäänvirtaus → ROS -reitin aseman parhaiten dokumentoituna ei-termisenä mekanismina.",
     multiPathwayCa2Note: "Tason 4 Ca²⁺-häiriö toimii useamman itsenäisen reitin kautta: (1) suora S4-jännitesensorin pakotettu oskillaatio ([[ref:panagopoulos2025_ifo|Panagopoulos ym. 2025]], IFO-VGIC); (2) solunsisäisten kalsiumvarastojen dysregulaatio ryanodiinireseptoreiden (RyR) ja SERCA-pumppujen kautta ([[ref:bertagna2025|Bertagna ym. 2025]], Ann NY Acad Sci). Molemmat farmakologiset salpauskokeet (VGCC-salpaajat reitille 1; dantroleeni RyR:lle, CPA SERCA:lle reitille 2) estävät EMF-vaikutukset — tukee mekanismia. Monireittiisyys selittää kudostarkan herkkyyden: solut, joissa on korkea VGIC-tiheys JA suuret solunsisäiset Ca²⁺-varastot (neuronit, gonaadisolut) ovat herkempiä kuin matalan varastotiheyden solut (keratinosyytit — vrt. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: nollatulokset ihosoluissa). Huom: [[ref:bertagna2025|Bertagna 2025]] on ELF (50 Hz), ei RF — mekanismin siirto RF:lle ei suoraviivainen, mutta Ca²⁺-reitti on jaettu.",
     fiveGReproNote: "Ensimmäinen 5G-taajuustarkka testisdata ([[ref:bektas2026|Bektas ym. 2026]], Bioelectromagnetics): 3,5 GHz RF aiheutti testis- ja oksidatiivista vauriota rotilla. CoQ10-lisäravinto lievitti vauriota — osoittaa mekanismin palautuvuuden. Yhdenmukainen BERM:n palautumisikkuna-mallin kanssa, jossa antioksidanttikapasiteetti määrittää nettovaurion. Laajentaa oksidatiivisen stressin näyttöpohjan ([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95 %) 5G-taajuusalueelle.",
-    pathwayCQuantNote: "Melatoniinisuppressiopolkua tukee kvantitatiivisesti 55 tutkimuksen PRISMA-katsaus ([[ref:tbahriti2026|Tbahriti ym. 2026]], Sleep Biol Rhythms): 88 % korkealaatuisista eläintutkimuksista raportoi EMF-aiheutettua melatoniinivaimennusta (20–50 % basaalitasosta). Suppressio on biologisesti merkittävä GnRH-pulsaatiolle mutta pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen BERM:n v17_night_fraction() -mallinnuksen kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniini), ei ainoa ajuri. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat standardit.",
-    pathwayCWeightNote: "Huomautus polku C:n painosta: Polku C:n 25 % heijastaa sekä sen sirkadiaanista funktiota (CRY2 → kellogeenitranskriptio → melatoniini → HPG) että äskettäin löydettyä kalsiumsignalointifunktiota (CRY2 → TRPC1-modulaatio → Ca²⁺-sisäänvirtaus; [[ref:yap2025|Yap ym. 2025]], Cells). TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polut A ja C ovat siten farmakologisesti erotettavissa: L-tyypin VGCC-salpaajat (nifedipiini) estävät polku A:n vaikutuksia mutta eivät CRY2-TRPC1-vaikutuksia.",
-    cryIndividualVariationNote: "Yksilöllinen vaihtelu: CRY-herkkyyttä säätelevät iiriksen pigmentaatio (sininen > vihreä > ruskea; [[ref:higuchi2007|Higuchi 2007]]), ravitsemuksellinen FAD-tila ([[ref:hirano2017|Hirano 2017]]) ja sukupuoli (miehet > naiset akuutissa magnetoreseptiossa; [[ref:chae2019|Chae 2019]]). Nämä modulaattorit voivat selittää osan polku C:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta. CRY2-TRPC1-fyysinen kompleksi ([[ref:yap2025|Yap/Sherrard 2025]]) paljastaa lisäksi, että polku C:llä on toinen alaspäin suuntautuva haara: CRY2 säätelee TRPC1:tä (TRP-kanava, EI VGCC), mahdollistaen kalsiumsignaloinnin polku A:sta riippumatta. Polut A ja C ovat farmakologisesti erotettavissa — L-tyypin VGCC-salpaajat estävät A:n mutta eivät CRY2-TRPC1:tä. Katso yksityiskohtainen analyysi /evidence/eyes.",
-    cryDualSystemNote: "CRY:n kaksoissysteemi: Polku C toimii verkkokalvon kahden erillisen kryptokromisysteemin kautta. C1 (sensorinen): Täyspitkä CRY1-proteiini löydettiin yksinomaan lyhyen aallonpituuden herkkien sinisten tappisolujen ulkosegmenteistä ihmisen, bonobon ja gorillan verkkokalvoissa ([[ref:bartolke2025|Bartölke ym. 2025]], FASEB J). Tämä sijainti kaukana tumista — fototransduktiokoneistossa — viittaa sensoriseen toimintaan sirkadiaanisen kellon säätelyn ohella. Tappisolujen ulkosegmenttien pinotut kalvolamellat tarjoavat magnetoreseptiolle tarvittavan suuntajärjestyksen (vrt. [[ref:majewska2025|Majewska ym. 2025]], ACS Chem Biol: CRY assosioituu lipidikaksoiskerrosten kanssa järjestäytyneesti). Tämä on systeemi, johon iiriksen pigmentaatio vaikuttaa eniten: siniset silmät päästävät ~100× enemmän valoa sinisiin tappisoluihin, mikä lisää CRY1-aktivaatiota. C2 (sirkadiaaninen): CRY2 ekspressoituu verkkokalvon gangliosoluissa, erityisesti SCN:iin projisoivissa ipRGC-soluissa. CRY2 muodostaa fysikaalisen kompleksin TRPC1:n kanssa ([[ref:yap2025|Yap ym. 2025]]), yhdistäen sirkadiaanisen polun ionikanavaviestintään. Molemmat systeemit vaativat FAD:n kromoforinaan ja ovat siten molemmat riippuvaisia riboflaviini (B2) -tilasta.",
+    pathwayBQuantNote: "Melatoniinisuppressiopolkua tukee kvantitatiivisesti 55 tutkimuksen PRISMA-katsaus ([[ref:tbahriti2026|Tbahriti ym. 2026]], Sleep Biol Rhythms): 88 % korkealaatuisista eläintutkimuksista raportoi EMF-aiheutettua melatoniinivaimennusta (20–50 % basaalitasosta). Suppressio on biologisesti merkittävä GnRH-pulsaatiolle mutta pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen BERM:n v17_night_fraction() -mallinnuksen kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniini), ei ainoa ajuri. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat standardit.",
+    pathwayBWeightNote: "Huomautus polku B:n painosta: Polku B:n 25 % heijastaa sekä sen sirkadiaanista funktiota (CRY2 → kellogeenitranskriptio → melatoniini → HPG) että äskettäin löydettyä kalsiumsignalointifunktiota (CRY2 → TRPC1-modulaatio → Ca²⁺-sisäänvirtaus; [[ref:yap2025|Yap ym. 2025]], Cells). TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polut A ja B ovat siten farmakologisesti erotettavissa: L-tyypin VGCC-salpaajat (nifedipiini) estävät polku A:n vaikutuksia mutta eivät CRY2-TRPC1-vaikutuksia.",
+    cryIndividualVariationNote: "Yksilöllinen vaihtelu: CRY-herkkyyttä säätelevät iiriksen pigmentaatio (sininen > vihreä > ruskea; [[ref:higuchi2007|Higuchi 2007]]), ravitsemuksellinen FAD-tila ([[ref:hirano2017|Hirano 2017]]) ja sukupuoli (miehet > naiset akuutissa magnetoreseptiossa; [[ref:chae2019|Chae 2019]]). Nämä modulaattorit voivat selittää osan polku B:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta. CRY2-TRPC1-fyysinen kompleksi ([[ref:yap2025|Yap/Sherrard 2025]]) paljastaa lisäksi, että polku B:llä on toinen alaspäin suuntautuva haara: CRY2 säätelee TRPC1:tä (TRP-kanava, EI VGCC), mahdollistaen kalsiumsignaloinnin polku A:sta riippumatta. Polut A ja B ovat farmakologisesti erotettavissa — L-tyypin VGCC-salpaajat estävät A:n mutta eivät CRY2-TRPC1:tä. Katso yksityiskohtainen analyysi /evidence/eyes.",
+    cryDualSystemNote: "CRY:n kaksoissysteemi: Polku B toimii verkkokalvon kahden erillisen kryptokromisysteemin kautta. CRY1 (sensorinen): Täyspitkä CRY1-proteiini löydettiin yksinomaan lyhyen aallonpituuden herkkien sinisten tappisolujen ulkosegmenteistä ihmisen, bonobon ja gorillan verkkokalvoissa ([[ref:bartolke2025|Bartölke ym. 2025]], FASEB J). Tämä sijainti kaukana tumista — fototransduktiokoneistossa — viittaa sensoriseen toimintaan sirkadiaanisen kellon säätelyn ohella. Tappisolujen ulkosegmenttien pinotut kalvolamellat tarjoavat magnetoreseptiolle tarvittavan suuntajärjestyksen (vrt. [[ref:majewska2025|Majewska ym. 2025]], ACS Chem Biol: CRY assosioituu lipidikaksoiskerrosten kanssa järjestäytyneesti). Tämä on systeemi, johon iiriksen pigmentaatio vaikuttaa eniten: siniset silmät päästävät ~100× enemmän valoa sinisiin tappisoluihin, mikä lisää CRY1-aktivaatiota. CRY2 (sirkadiaaninen): CRY2 ekspressoituu verkkokalvon gangliosoluissa, erityisesti SCN:iin projisoivissa ipRGC-soluissa. CRY2 muodostaa fysikaalisen kompleksin TRPC1:n kanssa ([[ref:yap2025|Yap ym. 2025]]), yhdistäen sirkadiaanisen polun ionikanavaviestintään. Molemmat systeemit vaativat FAD:n kromoforinaan ja ovat siten molemmat riippuvaisia riboflaviini (B2) -tilasta.",
     recoveryWindowNote: "Akuutin ja kroonisen altistuksen ero on empiirisesti tuettu: [[ref:koivisto2000|Koivisto ym. (2000)]] havaitsi kognitiivisen fasilitaation 30–60 min altistuksen jälkeen (yhteensopiva akuutin Ca²⁺-välitteisen synaptisen vahvistuksen kanssa), kun taas [[ref:panagopoulos2025_ifo|Panagopoulos ym. (2025)]] raportoi 95 %:n oksidatiivista stressiä kroonisissa/toistuvissa altistuksissa. Palautumisikkuna-malli ratkaisee tämän: 30 min + 23,5 h palautuminen → 97 % korjaus; 22 h altistus + 2 h palautuminen → 21 % korjaus.",
     lateralizationNote: "Kaksikanavamallin spatiaalista rakennetta tukevat lateralisaatiotutkimukset: [[ref:eliyahu2006|Eliyahu ym. (2006)]] ja [[ref:luria2009|Luria ym. (2009)]] osoittivat, että 890 MHz:n altistus vaikuttaa nimenomaan puhelinta lähimpänä olevaan aivopuoliskoon. Tämä osoittaa, ettei henkilökohtaisen EMF:n vaikutus ole systeeminen vaan paikallinen — EMF vaimenee etäisyyden neliössä — ja tukee BERM:n premissiä: puhelin taskussa → kivekset, puhelin korvalla → hypotalamus.",
     ifChannelTitle: "IF-kanava: LED-valaistus päälähteinä",
@@ -1599,7 +1635,7 @@ const t = {
     ],
     causalSantiTitle: "[[ref:santi2025|Santi 2025]]: sekä testosteroni ETTÄ LH laskevat",
     causalSantiText: "Suurin koskaan tehty meta-analyysi (1 064 891 miestä, 1971-2024) osoitti, että seerumitestosteroni laskee iästä, BMI:stä ja mittausmenetelmästä riippumatta. Kriittisesti myös LH (aivolisäkkeen signaali, joka ohjaa testosteronin tuotantoa) laskee — mikä sulkee pois yksinkertaisen kivestoiminnan heikkenemisen ja viittaa häiriöön hypotalamus-aivolisäketasolla.",
-    causalSantiMechanism: "BERM ennustaa juuri tämän: reitti A (suora Leydigin solun Cav3.2 -> StAR) vähentää testosteronia, kun taas reitti C (melatoniini -> GnRH) ja reitti D (kortisoli -> HPG) vähentävät LH:ta. Molempien hormonien samanaikainen lasku on monitasoisen häiriön tunnusmerkki — ei ikääntyminen, ei lihavuus.",
+    causalSantiMechanism: "BERM ennustaa juuri tämän: reitti A (suora Leydigin solun Cav3.2 -> StAR) vähentää testosteronia, kun taas reitti B (melatoniini -> GnRH) ja reitti D (kortisoli -> HPG) vähentävät LH:ta. Molempien hormonien samanaikainen lasku on monitasoisen häiriön tunnusmerkki — ei ikääntyminen, ei lihavuus.",
     causalSantiSource: "[[ref:santi2025|Santi ym. 2025]], J Endocrinol Invest 48:2721-2734",
     pocketTitle: "Taskusiirtymä",
     pocketText: "Siittiölaskun kiihtyminen vuoden 2000 jälkeen ([[ref:levine2023_sperm|1,16→2,64 %/v]]) osuu yhteen yhden käyttäytymismuutoksen kanssa: puhelin siirtyi korvalta taskuun. 3G-datakyky tarkoitti, että puhelin pysyi taskussa jatkuvasti eikä sitä nostettu vain puhelujen ajaksi. Kivekset joutuivat lähikenttään 16 tunniksi päivässä.",
@@ -1827,6 +1863,7 @@ const t = {
     metaTitle: "モデル文書 - Extinction Field",
     metaDesc:
       "BERMモデル文書:三層アーキテクチャ、因果経路、方程式、回復動態。",
+    specNote: "BERMは二つの仕様レベルで動作する。モデル（本ページ）は因果理論であり、累積曝露プロキシから導出される経路・方程式・予測を含む。FieldState測定仕様は曝露の直接測定方法を定義し、プロキシを限定的プロトコルで置き換える。現在の予測はプロキシを使用し、FieldState検証は前向きである。",
 
     physBioTitle: "物理学から生物学へ",
     physBioSub: "Lindgrenの幾何学的電磁気学が背景場に対する生物学的感受性をいかに予測するか",
@@ -1912,6 +1949,11 @@ const t = {
     ],
     bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework's logic, not a fitted equation with empirical coefficients.",
 
+    biocapDecompTitle: "BioCap分解",
+    biocapDecompDesc: "", biocapDecompFormula: "", biocapDecompFormulaDesc: "",
+    biocapDecompCultural: "", biocapDecompCulturalDesc: "",
+    biocapDecompMarkers: [] as { symbol: string; name: string; weight: string; unit: string; baseline: string; current: string; mechanism: string; evidence: string }[],
+
     hormesisTitle: "ホルメシス用量応答拡張",
     hormesisDesc: "", hormesisFormula: "",
     hormesisTerms: [] as { symbol: string; desc: string }[],
@@ -1992,7 +2034,7 @@ const t = {
       channel: "Ca²⁺チャネル（VGCC）",
       threshold: "電化閾値が必要（Ā > 0）",
       tests: "アーミッシュ（Ā≈0）、コミュニティ勾配、国別勾配",
-      pathways: "A (ROS), D (HPA), E (BBB)",
+      pathways: "A (ROS), C (BBB), D (HPA)",
     },
     dualSuscRight: {
       title: "χ_B [CRY/RPM]",
@@ -2000,11 +2042,11 @@ const t = {
       channel: "ラジカルペア機構",
       threshold: "電化閾値なし（常に作動）",
       tests: "太陽周期、産業革命前データ、指標種、SAMAアノマリー",
-      pathways: "B (CRY), C (メラトニン)",
+      pathways: "B (CRY/RPM)",
     },
 
     phyloTitle: "系統発生的経路階層",
-    phyloDesc: "操作的重み（A=45%、B=15%、C=25%、D=15%）は現在の疫学的証拠の強さを反映する。しかし系統発生的観点からは階層が逆転する：CRY/RPM（経路B）は祖先的電磁センサーであり、10億年以上にわたりすべての真核生物界で保存されている。",
+    phyloDesc: "操作的重み（A=45%、B=25%、C=15%、D=15%）は現在の疫学的証拠の強さを反映する。しかし系統発生的観点からは階層が逆転する：CRY/RPM（経路B）は祖先的電磁センサーであり、10億年以上にわたりすべての真核生物界で保存されている。",
     phyloColProperty: "",
     phyloColPathwayB: "経路B (CRY/RPM)",
     phyloColPathwayA: "経路A (VGCC)",
@@ -2014,7 +2056,7 @@ const t = {
       ["植物の証拠", "あり", "なし"],
       ["昆虫の証拠", "あり", "限定的"],
       ["哺乳類の証拠", "あり", "あり（広範）"],
-      ["操作的重み", "15%", "45%"],
+      ["操作的重み", "25%", "45%"],
       ["系統発生的順位", "祖先的", "派生的"],
     ],
     phyloInsight: "TFR中心の操作的重みはCRY/RPMの進化的意義を過小評価している。",
@@ -2039,10 +2081,10 @@ const t = {
     ifoVgicNote: "IFO-VGICメカニズムは131研究の包括的レビューにより支持される([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics):95%がRF/Wi-Fi暴露からの酸化的効果を報告。[[ref:yakymenko2016|Yakymenko et al. 2016]](93/100)と一致するこのコンセンサスは、Ca²⁺流入 → ROS経路を最も堅牢に文書化された非熱メカニズムとして確立する。",
     multiPathwayCa2Note: "レベル4のCa²⁺撹乱は複数の独立した経路を通じて作用する:(1)直接的S4電圧センサーの強制振動([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC);(2)リアノジン受容体(RyR)およびSERCAポンプを介した細胞内カルシウム貯蔵の調節異常([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci)。両方の薬理学的遮断実験(経路1にVGCCブロッカー;経路2にダントロレン(RyR用)、CPA(SERCA用))がEMF効果を消失させ、メカニズムを確認。多経路の性質は組織特異的感受性を説明する:高いVGIC密度と大きな細胞内Ca²⁺貯蔵を持つ細胞(ニューロン、性腺細胞)は低貯蔵細胞(ケラチノサイト -- [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]:皮膚細胞でのヌル結果参照)よりも感受性が高い。注:[[ref:bertagna2025|Bertagna 2025]]はELF(50 Hz)でありRFではない -- RFへの翻訳は直接的ではないが、Ca²⁺経路は共有されている。",
     fiveGReproNote: "最初の5G周波数特異的精巣データ([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics):3.5 GHz RFがラットに精巣および酸化的損傷を誘発。CoQ10補充が損傷を改善 -- メカニズムの可逆性を実証。抗酸化能力が正味の日次損傷を決定するBERMの回復ウィンドウモデルと一致。酸化ストレスのエビデンス基盤([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95%)を5G周波数帯に拡大。",
-    pathwayCQuantNote: "メラトニン抑制経路は55研究のPRISMA系統的レビューにより定量的に支持される([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms):高品質の動物研究の88%がベースラインからの20-50%のEMF誘発メラトニン抑制を報告。この抑制はGnRHパルス性にとって生物学的に有意であるが、光誘発抑制(>90%)よりは小さい。BERMのv17_night_fraction()モデリングと一致 -- EMFは夜間トリプルヒット(メラノプシン + CRY + メラトニン)の一成分であり、唯一のドライバーではない。方法論的注記:レビューされた研究の27%のみが高い基準を満たした。",
-    pathwayCWeightNote: "経路Cの重みに関する注記:経路Cの25%は概日機能(CRY2 → 時計遺伝子転写 → メラトニン → HPG)と最近発見されたカルシウムシグナリング機能(CRY2 → TRPC1変調 → Ca²⁺流入; [[ref:yap2025|Yap et al. 2025]], Cells)の両方を反映する。TRPC1はTRPチャネルであり、電位依存性カルシウムチャネル(VGCC)ではない。したがって経路AとCは薬理学的に分離可能:L型VGCCブロッカー(ニフェジピン)は経路Aの効果をブロックするがCRY2-TRPC1効果はブロックしない。",
-    cryIndividualVariationNote: "個体差:CRY感受性は虹彩の色素沈着(青 > 緑 > 茶; [[ref:higuchi2007|Higuchi 2007]])、栄養的FAD状態([[ref:hirano2017|Hirano 2017]])、性別(急性磁気受容では男性 > 女性; [[ref:chae2019|Chae 2019]])により変調される。これらの変調因子は経路Cの有効性の個人間および集団間の分散の一部を説明する可能性がある。CRY2-TRPC1物理的複合体([[ref:yap2025|Yap/Sherrard 2025]])はさらに経路Cに第二の下流枝があることを明らかにする:CRY2はTRPC1(TRPチャネル、VGCCではない)を変調し、経路Aとは独立にカルシウムシグナリングを可能にする。経路AとCは薬理学的に分離可能 -- L型VGCCブロッカーはAを阻害するがCRY2-TRPC1は阻害しない。詳細な分析は/evidence/eyesを参照。",
-    cryDualSystemNote: "二重CRYシステム:経路Cは網膜の2つの異なるクリプトクロムシステムを通じて動作する。C1(感覚):全長CRY1タンパク質がヒト、ボノボ、ゴリラの網膜の短波長感受性「青色」錐体光受容体の外節にのみ見出された([[ref:bartolke2025|Bartolke et al. 2025]], FASEB J)。核から離れたこの位置 -- 光変換装置内 -- は概日時計制御を超えた感覚機能を示唆する。錐体外節の積層膜ラメラは方向性磁気受容に必要な配向秩序を提供する([[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol:CRYが脂質二重層と秩序的に会合)参照。これは虹彩色素沈着が最も影響するシステム:青い目は青色錐体に約100倍多くの光を透過し、CRY1活性化を増加させる。C2(概日):CRY2は網膜神経節細胞、特にSCNに投射するipRGCに発現する。CRY2はTRPC1と物理的複合体を形成し([[ref:yap2025|Yap et al. 2025]])、概日経路をイオンチャネルシグナリングに接続する。両システムはFADをクロモフォアとして必要とし、したがって両方がリボフラビン(B2)状態に依存する。",
+    pathwayBQuantNote: "メラトニン抑制経路は55研究のPRISMA系統的レビューにより定量的に支持される([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms):高品質の動物研究の88%がベースラインからの20-50%のEMF誘発メラトニン抑制を報告。この抑制はGnRHパルス性にとって生物学的に有意であるが、光誘発抑制(>90%)よりは小さい。BERMのv17_night_fraction()モデリングと一致 -- EMFは夜間トリプルヒット(メラノプシン + CRY + メラトニン)の一成分であり、唯一のドライバーではない。方法論的注記:レビューされた研究の27%のみが高い基準を満たした。",
+    pathwayBWeightNote: "経路Bの重みに関する注記:経路Bの25%は概日機能(CRY2 → 時計遺伝子転写 → メラトニン → HPG)と最近発見されたカルシウムシグナリング機能(CRY2 → TRPC1変調 → Ca²⁺流入; [[ref:yap2025|Yap et al. 2025]], Cells)の両方を反映する。TRPC1はTRPチャネルであり、電位依存性カルシウムチャネル(VGCC)ではない。したがって経路AとBは薬理学的に分離可能:L型VGCCブロッカー(ニフェジピン)は経路Aの効果をブロックするがCRY2-TRPC1効果はブロックしない。",
+    cryIndividualVariationNote: "個体差:CRY感受性は虹彩の色素沈着(青 > 緑 > 茶; [[ref:higuchi2007|Higuchi 2007]])、栄養的FAD状態([[ref:hirano2017|Hirano 2017]])、性別(急性磁気受容では男性 > 女性; [[ref:chae2019|Chae 2019]])により変調される。これらの変調因子は経路Bの有効性の個人間および集団間の分散の一部を説明する可能性がある。CRY2-TRPC1物理的複合体([[ref:yap2025|Yap/Sherrard 2025]])はさらに経路Bに第二の下流枝があることを明らかにする:CRY2はTRPC1(TRPチャネル、VGCCではない)を変調し、経路Aとは独立にカルシウムシグナリングを可能にする。経路AとBは薬理学的に分離可能 -- L型VGCCブロッカーはAを阻害するがCRY2-TRPC1は阻害しない。詳細な分析は/evidence/eyesを参照。",
+    cryDualSystemNote: "二重CRYシステム:経路Bは網膜の2つの異なるクリプトクロムシステムを通じて動作する。CRY1(感覚):全長CRY1タンパク質がヒト、ボノボ、ゴリラの網膜の短波長感受性「青色」錐体光受容体の外節にのみ見出された([[ref:bartolke2025|Bartolke et al. 2025]], FASEB J)。核から離れたこの位置 -- 光変換装置内 -- は概日時計制御を超えた感覚機能を示唆する。錐体外節の積層膜ラメラは方向性磁気受容に必要な配向秩序を提供する([[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol:CRYが脂質二重層と秩序的に会合)参照。これは虹彩色素沈着が最も影響するシステム:青い目は青色錐体に約100倍多くの光を透過し、CRY1活性化を増加させる。CRY2(概日):CRY2は網膜神経節細胞、特にSCNに投射するipRGCに発現する。CRY2はTRPC1と物理的複合体を形成し([[ref:yap2025|Yap et al. 2025]])、概日経路をイオンチャネルシグナリングに接続する。両システムはFADをクロモフォアとして必要とし、したがって両方がリボフラビン(B2)状態に依存する。",
     recoveryWindowNote: "急性暴露と慢性暴露の区別は経験的に支持される:[[ref:koivisto2000|Koivisto et al.(2000)]]は30-60分の暴露後に認知促進を観察し(急性Ca²⁺媒介シナプス増強と両立)、一方[[ref:panagopoulos2025_ifo|Panagopoulos et al.(2025)]]は慢性/反復暴露の95%で酸化ストレスを報告。回復ウィンドウモデルはこの矛盾を解決する:30分 + 23.5時間の回復 → 97%修復(正味の損傷なし);22時間暴露 + 2時間回復 → 21%修復(累積損傷)。",
     lateralizationNote: "二チャネルモデルの空間構造は側性化研究により経験的に支持される:[[ref:eliyahu2006|Eliyahu et al.(2006)]]および[[ref:luria2009|Luria et al.(2009)]]は890 MHzの暴露が特に携帯電話に最も近い半球に影響することを実証した。これは個人EMFの効果が全身的ではなく局所的であることを確認する -- EMFは距離の二乗で減衰する -- BERMの前提を支持する:ポケット内の携帯電話 → 精巣を標的、耳元の携帯電話 → 視床下部を標的。",
     ifChannelTitle: "IFチャネル:主な発生源としてのLED照明",
@@ -2463,7 +2505,7 @@ const t = {
     ],
     causalSantiTitle: "[[ref:santi2025|Santi 2025]]:テストステロンとLHの両方が低下",
     causalSantiText: "史上最大のメタアナリシス(1,064,891人の男性、1971-2024)は、血清テストステロンが年齢、BMI、アッセイ法に独立して低下していることを発見した。重要なことに、LH(テストステロン産生を駆動する下垂体シグナル)も低下していることが判明 -- 単純な精巣不全を除外し、視床下部-下垂体レベルでの撹乱を示唆する。",
-    causalSantiMechanism: "BERMはこれを正確に予測する:経路A(Cav3.2 -> StARを介した直接的ライディッヒ細胞)がテストステロンを減少させ、経路C(メラトニン -> GnRH)と経路D(コルチゾール -> HPG)がLHを減少させる。両ホルモンの同時低下は多レベル撹乱のシグネチャー -- 老化でも肥満でもない。",
+    causalSantiMechanism: "BERMはこれを正確に予測する:経路A(Cav3.2 -> StARを介した直接的ライディッヒ細胞)がテストステロンを減少させ、経路B(メラトニン -> GnRH)と経路D(コルチゾール -> HPG)がLHを減少させる。両ホルモンの同時低下は多レベル撹乱のシグネチャー -- 老化でも肥満でもない。",
     causalSantiSource: "[[ref:santi2025|Santi et al. 2025]], J Endocrinol Invest 48:2721-2734",
     pocketTitle: "ポケット移行",
     pocketText: "2000年以降の精子低下率の倍増([[ref:levine2023_sperm|1.16%→2.64%/年]])は一つの行動変化と一致する:携帯電話が耳からポケットに移動した。3Gデータ機能により携帯電話は通話のみではなく継続的にポケットに留まるようになった。精巣は1日16時間近接場に入った。",
@@ -2691,6 +2733,7 @@ const t = {
     metaTitle: "Documentation du modele - Extinction Field",
     metaDesc:
       "Documentation du modele BERM : architecture a trois niveaux, voies causales, equations et dynamiques de recuperation.",
+    specNote: "BERM fonctionne a deux niveaux de specification. Le modele (cette page) est la theorie causale — voies, equations et predictions derivees d'un proxy d'exposition cumulative. La specification de mesure FieldState definit comment mesurer l'exposition directement, remplacant le proxy par un protocole borne. Les predictions actuelles utilisent le proxy ; la validation FieldState est prospective.",
 
     physBioTitle: "De la physique a la biologie",
     physBioSub: "Comment l'electromagnetisme geometrique de Lindgren predit la sensibilite biologique aux champs de fond",
@@ -2776,6 +2819,11 @@ const t = {
     ],
     bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework's logic, not a fitted equation with empirical coefficients.",
 
+    biocapDecompTitle: "Décomposition BioCap",
+    biocapDecompDesc: "", biocapDecompFormula: "", biocapDecompFormulaDesc: "",
+    biocapDecompCultural: "", biocapDecompCulturalDesc: "",
+    biocapDecompMarkers: [] as { symbol: string; name: string; weight: string; unit: string; baseline: string; current: string; mechanism: string; evidence: string }[],
+
     hormesisTitle: "Extension de la réponse hormétique à la dose",
     hormesisDesc: "", hormesisFormula: "",
     hormesisTerms: [] as { symbol: string; desc: string }[],
@@ -2856,7 +2904,7 @@ const t = {
       channel: "Canal Ca²⁺ (VGCC)",
       threshold: "NECESSITE le seuil d'electrification (Ā > 0)",
       tests: "Amish (Ā≈0), gradient communautaire, gradient national",
-      pathways: "A (ROS), D (HPA), E (BBB)",
+      pathways: "A (ROS), C (BBB), D (HPA)",
     },
     dualSuscRight: {
       title: "χ_B [CRY/RPM]",
@@ -2864,11 +2912,11 @@ const t = {
       channel: "Mecanisme des paires de radicaux",
       threshold: "PAS de seuil d'electrification (opere toujours)",
       tests: "Cycle solaire, donnees preindustrielles, especes sentinelles, anomalie SAMA",
-      pathways: "B (CRY), C (melatonine)",
+      pathways: "B (CRY/RPM)",
     },
 
     phyloTitle: "Hierarchie phylogenetique des voies",
-    phyloDesc: "Les poids operationnels (A=45%, B=15%, C=25%, D=15%) refletent la force actuelle des preuves epidemiologiques. Mais d'un point de vue phylogenetique, la hierarchie s'inverse.",
+    phyloDesc: "Les poids operationnels (A=45%, B=25%, C=15%, D=15%) refletent la force actuelle des preuves epidemiologiques. Mais d'un point de vue phylogenetique, la hierarchie s'inverse.",
     phyloColProperty: "",
     phyloColPathwayB: "Voie B (CRY/RPM)",
     phyloColPathwayA: "Voie A (VGCC)",
@@ -2878,7 +2926,7 @@ const t = {
       ["Preuves vegetales", "Oui", "Non"],
       ["Preuves insectes", "Oui", "Limitees"],
       ["Preuves mammiferes", "Oui", "Oui (extensives)"],
-      ["Poids operationnel", "15%", "45%"],
+      ["Poids operationnel", "25%", "45%"],
       ["Rang phylogenetique", "Ancestral", "Derive"],
     ],
     phyloInsight: "Les poids operationnels centres sur le TFR sous-estiment la signification evolutive du CRY/RPM.",
@@ -2903,10 +2951,10 @@ const t = {
     ifoVgicNote: "Le mecanisme IFO-VGIC est soutenu par une revue exhaustive de 131 etudes ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics) : 95 % rapportent des effets oxydatifs de l'exposition RF/Wi-Fi. Ce consensus, coherent avec [[ref:yakymenko2016|Yakymenko et al. 2016]] (93/100), etablit la voie afflux Ca²⁺ → ROS comme le mecanisme non thermique le plus robustement documente.",
     multiPathwayCa2Note: "La perturbation du Ca²⁺ au Niveau 4 opere par de multiples voies independantes : (1) oscillation forcee directe du senseur de tension S4 ([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC) ; (2) dysregulation des reserves calciques intracellulaires via les recepteurs ryanodine (RyR) et les pompes SERCA ([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci). Les deux experiences de blocage pharmacologique (bloqueurs VGCC pour la voie 1 ; dantrolene pour RyR, CPA pour SERCA dans la voie 2) suppriment les effets EMF, confirmant le mecanisme. La nature multi-voies explique la sensibilite tissu-specifique : les cellules avec une haute densite VGIC ET de larges reserves intracellulaires de Ca²⁺ (neurones, cellules gonadiques) sont plus sensibles que les cellules a faibles reserves (keratinocytes — cf. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]] : resultats nuls dans les cellules cutanees). Note : [[ref:bertagna2025|Bertagna 2025]] concerne l'ELF (50 Hz), pas le RF — la traduction au RF n'est pas directe, mais la voie Ca²⁺ est partagee.",
     fiveGReproNote: "Les premieres donnees testiculaires specifiques a la frequence 5G ([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics) : 3,5 GHz RF a induit des dommages testiculaires et oxydatifs chez le rat. La supplementation en CoQ10 a ameliore les dommages, demontrant la reversibilite du mecanisme — coherent avec le modele de fenetre de recuperation de BERM ou la capacite antioxydante determine les dommages journaliers nets. Ceci etend la base de preuves du stress oxydatif ([[ref:yakymenko2016|Yakymenko 2016]] : 93/100 ; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]] : 95 %) a la gamme de frequences 5G.",
-    pathwayCQuantNote: "La voie de suppression de la melatonine est quantitativement soutenue par une revue systematique PRISMA de 55 etudes ([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms) : 88 % des etudes animales de haute qualite rapportent une suppression de melatonine induite par l'EMF de 20-50 % par rapport au niveau basal. Cette suppression est biologiquement significative pour la pulsatilite du GnRH mais plus petite que la suppression induite par la lumiere (>90 %), coherent avec la modelisation v17_night_fraction() de BERM ou l'EMF est une composante du triple hit nocturne (melanopsine + CRY + melatonine), pas le seul moteur. Note methodologique : seulement 27 % des etudes revues repondaient aux normes elevees.",
-    pathwayCWeightNote: "Note sur le poids de la voie C : les 25 % de la voie C refletent a la fois sa fonction circadienne (CRY2 → transcription de genes d'horloge → melatonine → HPG) et sa fonction de signalisation calcique recemment decouverte (CRY2 → modulation TRPC1 → entree Ca²⁺ ; [[ref:yap2025|Yap et al. 2025]], Cells). TRPC1 est un canal TRP, pas un canal calcique voltage-dependant (VGCC). Les voies A et C sont donc pharmacologiquement separables : les bloqueurs VGCC de type L (nifedipine) bloquent les effets de la voie A mais pas les effets CRY2-TRPC1.",
-    cryIndividualVariationNote: "Variation individuelle : la sensibilite CRY est modulee par la pigmentation de l'iris (bleu > vert > brun ; [[ref:higuchi2007|Higuchi 2007]]), le statut nutritionnel en FAD ([[ref:hirano2017|Hirano 2017]]) et le sexe (hommes > femmes en magnetoreception aigue ; [[ref:chae2019|Chae 2019]]). Ces modulateurs peuvent expliquer une partie de la variance inter-individuelle et inter-population dans l'efficacite de la voie C. Le complexe physique CRY2-TRPC1 ([[ref:yap2025|Yap/Sherrard 2025]]) revele en outre que la voie C possede une seconde branche en aval : CRY2 module TRPC1 (un canal TRP, PAS un VGCC), permettant la signalisation calcique independamment de la voie A. Les voies A et C restent pharmacologiquement separables — les bloqueurs VGCC de type L inhibent A mais pas CRY2-TRPC1. Voir l'analyse detaillee a /evidence/eyes.",
-    cryDualSystemNote: "Systeme CRY double : la voie C opere a travers deux systemes cryptochrome distincts dans la retine. C1 (sensoriel) : la proteine CRY1 pleine longueur a ete trouvee exclusivement dans les segments externes des photorecepteurs a cones « bleus » sensibles aux courtes longueurs d'onde dans les retines humaines, de bonobos et de gorilles ([[ref:bartolke2025|Bartolke et al. 2025]], FASEB J). Cet emplacement loin des noyaux — dans la machinerie de phototransduction — suggere une fonction sensorielle au-dela de la regulation de l'horloge circadienne. Les lamelles membranaires empilees des segments externes des cones fournissent l'ordre orientationnel requis pour la magnetoreception directionnelle (cf. [[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol : CRY s'associe aux bicouches lipidiques de maniere ordonnee). C'est le systeme le plus affecte par la pigmentation de l'iris : les yeux bleus transmettent ~100× plus de lumiere aux cones bleus, augmentant l'activation de CRY1. C2 (circadien) : CRY2 est exprime dans les cellules ganglionnaires retiniennes, en particulier les ipRGC qui projettent au SCN. CRY2 forme un complexe physique avec TRPC1 ([[ref:yap2025|Yap et al. 2025]]), reliant la voie circadienne a la signalisation par canaux ioniques. Les deux systemes necessitent le FAD comme chromophore et dependent donc tous deux du statut en riboflavine (B2).",
+    pathwayBQuantNote: "La voie de suppression de la melatonine est quantitativement soutenue par une revue systematique PRISMA de 55 etudes ([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms) : 88 % des etudes animales de haute qualite rapportent une suppression de melatonine induite par l'EMF de 20-50 % par rapport au niveau basal. Cette suppression est biologiquement significative pour la pulsatilite du GnRH mais plus petite que la suppression induite par la lumiere (>90 %), coherent avec la modelisation v17_night_fraction() de BERM ou l'EMF est une composante du triple hit nocturne (melanopsine + CRY + melatonine), pas le seul moteur. Note methodologique : seulement 27 % des etudes revues repondaient aux normes elevees.",
+    pathwayBWeightNote: "Note sur le poids de la voie B : les 25 % de la voie B refletent a la fois sa fonction circadienne (CRY2 → transcription de genes d'horloge → melatonine → HPG) et sa fonction de signalisation calcique recemment decouverte (CRY2 → modulation TRPC1 → entree Ca²⁺ ; [[ref:yap2025|Yap et al. 2025]], Cells). TRPC1 est un canal TRP, pas un canal calcique voltage-dependant (VGCC). Les voies A et B sont donc pharmacologiquement separables : les bloqueurs VGCC de type L (nifedipine) bloquent les effets de la voie A mais pas les effets CRY2-TRPC1.",
+    cryIndividualVariationNote: "Variation individuelle : la sensibilite CRY est modulee par la pigmentation de l'iris (bleu > vert > brun ; [[ref:higuchi2007|Higuchi 2007]]), le statut nutritionnel en FAD ([[ref:hirano2017|Hirano 2017]]) et le sexe (hommes > femmes en magnetoreception aigue ; [[ref:chae2019|Chae 2019]]). Ces modulateurs peuvent expliquer une partie de la variance inter-individuelle et inter-population dans l'efficacite de la voie B. Le complexe physique CRY2-TRPC1 ([[ref:yap2025|Yap/Sherrard 2025]]) revele en outre que la voie B possede une seconde branche en aval : CRY2 module TRPC1 (un canal TRP, PAS un VGCC), permettant la signalisation calcique independamment de la voie A. Les voies A et B restent pharmacologiquement separables — les bloqueurs VGCC de type L inhibent A mais pas CRY2-TRPC1. Voir l'analyse detaillee a /evidence/eyes.",
+    cryDualSystemNote: "Systeme CRY double : la voie B opere a travers deux systemes cryptochrome distincts dans la retine. CRY1 (sensoriel) : la proteine CRY1 pleine longueur a ete trouvee exclusivement dans les segments externes des photorecepteurs a cones « bleus » sensibles aux courtes longueurs d'onde dans les retines humaines, de bonobos et de gorilles ([[ref:bartolke2025|Bartolke et al. 2025]], FASEB J). Cet emplacement loin des noyaux — dans la machinerie de phototransduction — suggere une fonction sensorielle au-dela de la regulation de l'horloge circadienne. Les lamelles membranaires empilees des segments externes des cones fournissent l'ordre orientationnel requis pour la magnetoreception directionnelle (cf. [[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol : CRY s'associe aux bicouches lipidiques de maniere ordonnee). C'est le systeme le plus affecte par la pigmentation de l'iris : les yeux bleus transmettent ~100× plus de lumiere aux cones bleus, augmentant l'activation de CRY1. CRY2 (circadien) : CRY2 est exprime dans les cellules ganglionnaires retiniennes, en particulier les ipRGC qui projettent au SCN. CRY2 forme un complexe physique avec TRPC1 ([[ref:yap2025|Yap et al. 2025]]), reliant la voie circadienne a la signalisation par canaux ioniques. Les deux systemes necessitent le FAD comme chromophore et dependent donc tous deux du statut en riboflavine (B2).",
     recoveryWindowNote: "La distinction entre exposition aigue et chronique est empiriquement soutenue : [[ref:koivisto2000|Koivisto et al. (2000)]] ont observe une facilitation cognitive apres 30-60 min d'exposition (compatible avec une potentiation synaptique aigue mediee par le Ca²⁺), tandis que [[ref:panagopoulos2025_ifo|Panagopoulos et al. (2025)]] rapportent un stress oxydatif dans 95 % des etudes avec exposition chronique ou repetee. Le modele de fenetre de recuperation resout cette contradiction : 30 min + 23,5 h de recuperation → 97 % de reparation (pas de dommage net) ; 22 h d'exposition + 2 h de recuperation → 21 % de reparation (dommage cumulatif).",
     lateralizationNote: "La structure spatiale du modele a deux canaux est empiriquement soutenue par les etudes de lateralisation : [[ref:eliyahu2006|Eliyahu et al. (2006)]] et [[ref:luria2009|Luria et al. (2009)]] ont demontre que l'exposition a 890 MHz affecte specifiquement l'hemisphere le plus proche du telephone. Ceci confirme que les effets EMF personnels sont locaux, pas systemiques — l'EMF s'attenue avec le carre de la distance — soutenant la premisse de BERM : telephone dans la poche → cible les testicules, telephone a l'oreille → cible l'hypothalamus.",
     ifChannelTitle: "Canal IF : l'eclairage LED comme source principale",
@@ -3327,7 +3375,7 @@ const t = {
     ],
     causalSantiTitle: "[[ref:santi2025|Santi 2025]] : la testosterone ET la LH declinent",
     causalSantiText: "La plus grande meta-analyse jamais realisee (1 064 891 hommes, 1971-2024) a trouve que la testosterone serique decline independamment de l'age, du BMI et de la methode de dosage. De maniere cruciale, elle a aussi trouve que la LH (le signal hypophysaire qui pilote la production de testosterone) decline egalement — excluant une simple insuffisance testiculaire et pointant vers une perturbation au niveau hypothalamo-hypophysaire.",
-    causalSantiMechanism: "BERM predit exactement ceci : la Voie A (cellule de Leydig directe via Cav3.2 -> StAR) reduit la testosterone, tandis que la Voie C (melatonine -> GnRH) et la Voie D (cortisol -> HPG) reduisent la LH. Le declin simultane des deux hormones est la signature d'une perturbation multi-niveaux — pas le vieillissement, pas l'obesite.",
+    causalSantiMechanism: "BERM predit exactement ceci : la Voie A (cellule de Leydig directe via Cav3.2 -> StAR) reduit la testosterone, tandis que la Voie B (melatonine -> GnRH) et la Voie D (cortisol -> HPG) reduisent la LH. Le declin simultane des deux hormones est la signature d'une perturbation multi-niveaux — pas le vieillissement, pas l'obesite.",
     causalSantiSource: "[[ref:santi2025|Santi et al. 2025]], J Endocrinol Invest 48:2721-2734",
     pocketTitle: "La transition de la poche",
     pocketText: "Le doublement du taux de declin des spermatozoides apres 2000 ([[ref:levine2023_sperm|1,16 %→2,64 %/an]]) coincide avec un seul changement comportemental : le telephone est passe de l'oreille a la poche. La capacite de donnees 3G signifiait que le telephone restait dans la poche continuellement plutot que d'etre utilise uniquement pour les appels. Les testicules sont entres dans le champ proche pendant 16 heures par jour.",
@@ -3555,6 +3603,7 @@ const t = {
     metaTitle: "모델 문서 - Extinction Field",
     metaDesc:
       "BERM 모델 문서: 3단계 아키텍처, 인과 경로, 방정식 및 회복 역학.",
+    specNote: "BERM은 두 가지 사양 수준에서 작동한다. 모델(이 페이지)은 인과 이론으로, 누적 노출 프록시에서 도출된 경로, 방정식 및 예측을 포함한다. FieldState 측정 사양은 노출을 직접 측정하는 방법을 정의하며, 프록시를 한정된 프로토콜로 대체한다. 현재 예측은 프록시를 사용하며, FieldState 검증은 전향적이다.",
 
     physBioTitle: "물리학에서 생물학으로",
     physBioSub: "Lindgren의 기하학적 전자기학이 배경장에 대한 생물학적 감수성을 예측하는 방법",
@@ -3640,6 +3689,11 @@ const t = {
     ],
     bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework's logic, not a fitted equation with empirical coefficients.",
 
+    biocapDecompTitle: "BioCap 분해",
+    biocapDecompDesc: "", biocapDecompFormula: "", biocapDecompFormulaDesc: "",
+    biocapDecompCultural: "", biocapDecompCulturalDesc: "",
+    biocapDecompMarkers: [] as { symbol: string; name: string; weight: string; unit: string; baseline: string; current: string; mechanism: string; evidence: string }[],
+
     hormesisTitle: "호르메시스 용량-반응 확장",
     hormesisDesc: "", hormesisFormula: "",
     hormesisTerms: [] as { symbol: string; desc: string }[],
@@ -3720,7 +3774,7 @@ const t = {
       channel: "Ca²⁺ 채널 (VGCC)",
       threshold: "전기화 임계값 필요 (Ā > 0)",
       tests: "아미시 (Ā≈0), 커뮤니티 기울기, 국가 기울기",
-      pathways: "A (ROS), D (HPA), E (BBB)",
+      pathways: "A (ROS), C (BBB), D (HPA)",
     },
     dualSuscRight: {
       title: "χ_B [CRY/RPM]",
@@ -3728,11 +3782,11 @@ const t = {
       channel: "라디칼 쌍 메커니즘",
       threshold: "전기화 임계값 없음 (항상 작동)",
       tests: "태양 주기, 산업화 이전 데이터, 파수종, SAMA 이상",
-      pathways: "B (CRY), C (멜라토닌)",
+      pathways: "B (CRY/RPM)",
     },
 
     phyloTitle: "계통발생적 경로 계층",
-    phyloDesc: "운영 가중치(A=45%, B=15%, C=25%, D=15%)는 현재 역학적 증거 강도를 반영한다. 그러나 계통발생적 관점에서 계층은 역전된다.",
+    phyloDesc: "운영 가중치(A=45%, B=25%, C=15%, D=15%)는 현재 역학적 증거 강도를 반영한다. 그러나 계통발생적 관점에서 계층은 역전된다.",
     phyloColProperty: "",
     phyloColPathwayB: "경로 B (CRY/RPM)",
     phyloColPathwayA: "경로 A (VGCC)",
@@ -3742,7 +3796,7 @@ const t = {
       ["식물 증거", "있음", "없음"],
       ["곤충 증거", "있음", "제한적"],
       ["포유류 증거", "있음", "있음(광범위)"],
-      ["운영 가중치", "15%", "45%"],
+      ["운영 가중치", "25%", "45%"],
       ["계통발생적 순위", "조상적", "파생적"],
     ],
     phyloInsight: "TFR 중심 운영 가중치는 CRY/RPM의 진화적 중요성을 과소평가한다.",
@@ -3767,10 +3821,10 @@ const t = {
     ifoVgicNote: "IFO-VGIC 메커니즘은 131개 연구의 포괄적 검토([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], Bioelectromagnetics)에 의해 지지됩니다: 95%가 RF/Wi-Fi 노출의 산화 효과를 보고합니다. 이 합의는 [[ref:yakymenko2016|Yakymenko et al. 2016]](93/100)과 일관되며, Ca²⁺ 유입 → ROS 경로를 가장 견고하게 문서화된 비열적 메커니즘으로 확립합니다.",
     multiPathwayCa2Note: "수준 4의 Ca²⁺ 교란은 여러 독립 경로를 통해 작동합니다: (1) S4 전압 센서의 직접 강제 진동([[ref:panagopoulos2025_ifo|Panagopoulos et al. 2025]], IFO-VGIC); (2) 라이아노딘 수용체(RyR) 및 SERCA 펌프를 통한 세포내 칼슘 저장소 조절장애([[ref:bertagna2025|Bertagna et al. 2025]], Ann NY Acad Sci). 두 약리학적 차단 실험(경로 1의 VGCC 차단제; 경로 2의 RyR에 대한 단트롤렌, SERCA에 대한 CPA)이 EMF 효과를 억제하여 메커니즘을 확인합니다. 다중 경로 특성은 조직 특이적 감도를 설명합니다: 높은 VGIC 밀도와 큰 세포내 Ca²⁺ 저장소를 가진 세포(뉴런, 생식선 세포)가 낮은 저장소를 가진 세포(각질세포 — cf. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: 피부 세포에서 null 결과)보다 더 민감합니다. 참고: [[ref:bertagna2025|Bertagna 2025]]는 RF가 아닌 ELF(50 Hz)에 관한 것입니다 — RF로의 번역은 직접적이지 않지만 Ca²⁺ 경로는 공유됩니다.",
     fiveGReproNote: "최초의 5G 주파수 특이적 고환 데이터([[ref:bektas2026|Bektas et al. 2026]], Bioelectromagnetics): 3.5 GHz RF가 쥐에서 고환 및 산화 손상을 유도. CoQ10 보충이 손상을 개선하여 메커니즘의 가역성을 입증 — BERM의 회복 창 모델에서 항산화 능력이 순 일일 손상을 결정하는 것과 일관됩니다. 이것은 산화 스트레스 증거 기반([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95%)을 5G 주파수 범위로 확장합니다.",
-    pathwayCQuantNote: "멜라토닌 억제 경로는 55개 연구의 PRISMA 체계적 검토([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms)에 의해 정량적으로 지지됩니다: 고품질 동물 연구의 88%가 EMF 유도 멜라토닌 억제를 기저 수준 대비 20-50%로 보고합니다. 이 억제는 GnRH 박동성에 생물학적으로 유의하지만 빛 유도 억제(>90%)보다 작습니다. 이는 EMF가 3중 야간 타격(멜라놉신 + CRY + 멜라토닌)의 구성요소이지 유일한 동인이 아닌 BERM의 v17_night_fraction() 모델링과 일관됩니다. 방법론적 참고: 검토된 연구의 27%만이 높은 기준을 충족했습니다.",
-    pathwayCWeightNote: "경로 C 가중치 참고: 경로 C의 25%는 일주기 기능(CRY2 → 시계 유전자 전사 → 멜라토닌 → HPG)과 최근 발견된 칼슘 신호 기능(CRY2 → TRPC1 변조 → Ca²⁺ 유입; [[ref:yap2025|Yap et al. 2025]], Cells)을 모두 반영합니다. TRPC1은 전압의존성 칼슘 채널(VGCC)이 아닌 TRP 채널입니다. 따라서 경로 A와 C는 약리학적으로 분리 가능합니다: L형 VGCC 차단제(니페디핀)는 경로 A 효과를 차단하지만 CRY2-TRPC1 효과는 차단하지 않습니다.",
-    cryIndividualVariationNote: "개인 변이: CRY 감도는 홍채 색소(파란색 > 녹색 > 갈색; [[ref:higuchi2007|Higuchi 2007]]), FAD 영양 상태([[ref:hirano2017|Hirano 2017]]), 성별(급성 자기수용에서 남성 > 여성; [[ref:chae2019|Chae 2019]])에 의해 변조됩니다. 이러한 변조자는 경로 C 효능에서 개인간 및 인구간 분산의 일부를 설명할 수 있습니다. CRY2-TRPC1 물리적 복합체([[ref:yap2025|Yap/Sherrard 2025]])는 경로 C가 두 번째 하류 분기를 가짐을 추가로 밝힙니다: CRY2가 TRPC1(VGCC가 아닌 TRP 채널)을 변조하여 경로 A와 독립적으로 칼슘 신호를 가능하게 합니다. 경로 A와 C는 약리학적으로 분리 가능합니다 — L형 VGCC 차단제는 A를 억제하지만 CRY2-TRPC1은 억제하지 않습니다. /evidence/eyes에서 상세 분석 참조.",
-    cryDualSystemNote: "이중 CRY 시스템: 경로 C는 망막의 두 가지 별개의 크립토크롬 시스템을 통해 작동합니다. C1(감각): 전장 CRY1 단백질이 인간, 보노보 및 고릴라 망막의 단파장 감응 '파란' 원추세포 외절에서 독점적으로 발견되었습니다([[ref:bartolke2025|Bartolke et al. 2025]], FASEB J). 핵에서 먼 이 위치 — 광전달 기구 내 —는 일주기 시계 조절을 넘어선 감각 기능을 시사합니다. 원추세포 외절의 적층된 막 라멜라는 방향성 자기수용에 필요한 방향 질서를 제공합니다(cf. [[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol: CRY가 질서 정연한 방식으로 지질 이중층과 결합). 이 시스템은 홍채 색소에 의해 가장 많이 영향 받습니다: 파란 눈은 ~100배 더 많은 빛을 파란 원추세포에 투과하여 CRY1 활성화를 증가시킵니다. C2(일주기): CRY2는 망막 신경절 세포, 특히 SCN에 투사하는 ipRGC에서 발현됩니다. CRY2는 TRPC1과 물리적 복합체를 형성하여([[ref:yap2025|Yap et al. 2025]]) 일주기 경로를 이온 채널 신호와 연결합니다. 두 시스템 모두 발색단으로 FAD를 필요로 하므로 리보플라빈(B2) 상태에 의존합니다.",
+    pathwayBQuantNote: "멜라토닌 억제 경로는 55개 연구의 PRISMA 체계적 검토([[ref:tbahriti2026|Tbahriti et al. 2026]], Sleep Biol Rhythms)에 의해 정량적으로 지지됩니다: 고품질 동물 연구의 88%가 EMF 유도 멜라토닌 억제를 기저 수준 대비 20-50%로 보고합니다. 이 억제는 GnRH 박동성에 생물학적으로 유의하지만 빛 유도 억제(>90%)보다 작습니다. 이는 EMF가 3중 야간 타격(멜라놉신 + CRY + 멜라토닌)의 구성요소이지 유일한 동인이 아닌 BERM의 v17_night_fraction() 모델링과 일관됩니다. 방법론적 참고: 검토된 연구의 27%만이 높은 기준을 충족했습니다.",
+    pathwayBWeightNote: "경로 B 가중치 참고: 경로 B의 25%는 일주기 기능(CRY2 → 시계 유전자 전사 → 멜라토닌 → HPG)과 최근 발견된 칼슘 신호 기능(CRY2 → TRPC1 변조 → Ca²⁺ 유입; [[ref:yap2025|Yap et al. 2025]], Cells)을 모두 반영합니다. TRPC1은 전압의존성 칼슘 채널(VGCC)이 아닌 TRP 채널입니다. 따라서 경로 A와 B는 약리학적으로 분리 가능합니다: L형 VGCC 차단제(니페디핀)는 경로 A 효과를 차단하지만 CRY2-TRPC1 효과는 차단하지 않습니다.",
+    cryIndividualVariationNote: "개인 변이: CRY 감도는 홍채 색소(파란색 > 녹색 > 갈색; [[ref:higuchi2007|Higuchi 2007]]), FAD 영양 상태([[ref:hirano2017|Hirano 2017]]), 성별(급성 자기수용에서 남성 > 여성; [[ref:chae2019|Chae 2019]])에 의해 변조됩니다. 이러한 변조자는 경로 B 효능에서 개인간 및 인구간 분산의 일부를 설명할 수 있습니다. CRY2-TRPC1 물리적 복합체([[ref:yap2025|Yap/Sherrard 2025]])는 경로 B가 두 번째 하류 분기를 가짐을 추가로 밝힙니다: CRY2가 TRPC1(VGCC가 아닌 TRP 채널)을 변조하여 경로 A와 독립적으로 칼슘 신호를 가능하게 합니다. 경로 A와 B는 약리학적으로 분리 가능합니다 — L형 VGCC 차단제는 A를 억제하지만 CRY2-TRPC1은 억제하지 않습니다. /evidence/eyes에서 상세 분석 참조.",
+    cryDualSystemNote: "이중 CRY 시스템: 경로 B는 망막의 두 가지 별개의 크립토크롬 시스템을 통해 작동합니다. CRY1(감각): 전장 CRY1 단백질이 인간, 보노보 및 고릴라 망막의 단파장 감응 '파란' 원추세포 외절에서 독점적으로 발견되었습니다([[ref:bartolke2025|Bartolke et al. 2025]], FASEB J). 핵에서 먼 이 위치 — 광전달 기구 내 —는 일주기 시계 조절을 넘어선 감각 기능을 시사합니다. 원추세포 외절의 적층된 막 라멜라는 방향성 자기수용에 필요한 방향 질서를 제공합니다(cf. [[ref:majewska2025|Majewska et al. 2025]], ACS Chem Biol: CRY가 질서 정연한 방식으로 지질 이중층과 결합). 이 시스템은 홍채 색소에 의해 가장 많이 영향 받습니다: 파란 눈은 ~100배 더 많은 빛을 파란 원추세포에 투과하여 CRY1 활성화를 증가시킵니다. CRY2(일주기): CRY2는 망막 신경절 세포, 특히 SCN에 투사하는 ipRGC에서 발현됩니다. CRY2는 TRPC1과 물리적 복합체를 형성하여([[ref:yap2025|Yap et al. 2025]]) 일주기 경로를 이온 채널 신호와 연결합니다. 두 시스템 모두 발색단으로 FAD를 필요로 하므로 리보플라빈(B2) 상태에 의존합니다.",
     recoveryWindowNote: "급성과 만성 노출의 구분은 경험적으로 지지됩니다: [[ref:koivisto2000|Koivisto et al.(2000)]]은 30-60분 노출 후 인지 촉진을 관찰했으며(급성 Ca²⁺ 매개 시냅스 강화와 양립), [[ref:panagopoulos2025_ifo|Panagopoulos et al.(2025)]]은 만성 또는 반복 노출 시 95%의 연구에서 산화 스트레스를 보고합니다. 회복 창 모델은 이 모순을 해결합니다: 30분 + 23.5시간 회복 → 97% 수리(순 손상 없음); 22시간 노출 + 2시간 회복 → 21% 수리(누적 손상).",
     lateralizationNote: "2채널 모델의 공간 구조는 편측화 연구에 의해 경험적으로 지지됩니다: [[ref:eliyahu2006|Eliyahu et al.(2006)]]과 [[ref:luria2009|Luria et al.(2009)]]은 890 MHz 노출이 전화기에 가장 가까운 반구에 구체적으로 영향을 미침을 입증했습니다. 이것은 개인 EMF 효과가 전신적이 아닌 국소적임을 확인합니다 — EMF는 거리의 제곱에 따라 감쇠합니다 — BERM의 전제를 지지합니다: 주머니 속 전화기 → 고환 표적, 귀의 전화기 → 시상하부 표적.",
     ifChannelTitle: "IF 채널: 주요 원천으로서의 LED 조명",
@@ -4191,7 +4245,7 @@ const t = {
     ],
     causalSantiTitle: "[[ref:santi2025|Santi 2025]]: 테스토스테론과 LH 모두 감소",
     causalSantiText: "역대 최대 메타분석(1,064,891명 남성, 1971-2024)에서 혈청 테스토스테론이 연령, BMI, 분석 방법과 독립적으로 감소함을 발견. 결정적으로, LH(테스토스테론 생산을 구동하는 뇌하수체 신호)도 감소하여 단순 고환 부전을 배제하고 시상하부-뇌하수체 수준 교란을 지목합니다.",
-    causalSantiMechanism: "BERM은 정확히 이것을 예측합니다: 경로 A(Cav3.2 -> StAR을 통한 직접 Leydig 세포)가 테스토스테론을 감소시키고, 경로 C(멜라토닌 -> GnRH)와 경로 D(코르티솔 -> HPG)가 LH를 감소시킵니다. 두 호르몬의 동시 감소는 다중 수준 교란의 서명입니다 — 노화도 비만도 아닙니다.",
+    causalSantiMechanism: "BERM은 정확히 이것을 예측합니다: 경로 A(Cav3.2 -> StAR을 통한 직접 Leydig 세포)가 테스토스테론을 감소시키고, 경로 B(멜라토닌 -> GnRH)와 경로 D(코르티솔 -> HPG)가 LH를 감소시킵니다. 두 호르몬의 동시 감소는 다중 수준 교란의 서명입니다 — 노화도 비만도 아닙니다.",
     causalSantiSource: "[[ref:santi2025|Santi et al. 2025]], J Endocrinol Invest 48:2721-2734",
     pocketTitle: "주머니 전환",
     pocketText: "2000년 이후 정자 감소율의 두 배 증가([[ref:levine2023_sperm|1.16%→2.64%/년]])는 단 하나의 행동 변화와 일치합니다: 전화기가 귀에서 주머니로 이동. 3G 데이터 용량은 전화기가 통화 전용이 아닌 계속 주머니에 있게 됨을 의미했습니다. 고환이 하루 16시간 근거리장에 들어갔습니다.",
@@ -4476,6 +4530,12 @@ export default async function ModelPage({
         </p>
       </header>
 
+      <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-4 mb-8 max-w-3xl">
+        <p className="text-sm text-amber-900 dark:text-amber-200 leading-relaxed">
+          {d.specNote}
+        </p>
+      </div>
+
       <div className="flex gap-10">
         {/* Sticky sidebar */}
         <ModelTableOfContents locale={locale} />
@@ -4695,6 +4755,53 @@ export default async function ModelPage({
             </div>
           </CollapsibleSection>
 
+          {/* BioCap decomposition */}
+          {d.biocapDecompMarkers?.length > 0 && (
+            <section id="biocap-decomposition" className="mb-14 border-t editorial-rule pt-6">
+              <h2 className="text-xl font-semibold mb-4">{d.biocapDecompTitle}</h2>
+              <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+                {d.biocapDecompDesc}
+              </p>
+
+              <Eq>{d.biocapDecompFormula}</Eq>
+              <p className="text-sm text-foreground-muted mb-2 max-w-3xl">{d.biocapDecompFormulaDesc}</p>
+
+              <Eq>{d.biocapDecompCultural}</Eq>
+              <p className="text-sm text-foreground-muted mb-8 max-w-3xl">{d.biocapDecompCulturalDesc}</p>
+
+              <div className="overflow-x-auto rounded-lg border border-card-border bg-card-bg">
+                <table className="w-full text-xs border-collapse">
+                  <thead>
+                    <tr className="border-b border-card-border text-left">
+                      <th className="py-2 px-3 font-medium text-foreground-muted">{locale_key === "fi" ? "Symboli" : "Symbol"}</th>
+                      <th className="py-2 px-3 font-medium text-foreground-muted">{locale_key === "fi" ? "Nimi" : "Name"}</th>
+                      <th className="py-2 px-3 font-medium text-foreground-muted">{locale_key === "fi" ? "Paino" : "Weight"}</th>
+                      <th className="py-2 px-3 font-medium text-foreground-muted">{locale_key === "fi" ? "Yksikkö" : "Unit"}</th>
+                      <th className="py-2 px-3 font-medium text-foreground-muted">{locale_key === "fi" ? "1980 lähtötaso" : "1980 Baseline"}</th>
+                      <th className="py-2 px-3 font-medium text-foreground-muted">{locale_key === "fi" ? "2025 nykytaso" : "2025 Current"}</th>
+                      <th className="py-2 px-3 font-medium text-foreground-muted">{locale_key === "fi" ? "BERM-mekanismi" : "BERM Mechanism"}</th>
+                      <th className="py-2 px-3 font-medium text-foreground-muted">{locale_key === "fi" ? "Evidenssi" : "Evidence"}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {d.biocapDecompMarkers.map((m: { symbol: string; name: string; weight: string; unit: string; baseline: string; current: string; mechanism: string; evidence: string }, i: number) => (
+                      <tr key={m.symbol} className="border-b border-card-border/50">
+                        <td className="py-2 px-3 font-mono-num font-semibold text-foreground whitespace-nowrap">{m.symbol}</td>
+                        <td className="py-2 px-3 text-foreground whitespace-nowrap">{m.name}</td>
+                        <td className="py-2 px-3 font-mono-num text-foreground">{m.weight}</td>
+                        <td className="py-2 px-3 text-foreground-muted whitespace-nowrap">{m.unit}</td>
+                        <td className="py-2 px-3 font-mono-num text-foreground-muted">{m.baseline}</td>
+                        <td className="py-2 px-3 font-mono-num text-foreground-muted">{m.current}</td>
+                        <td className="py-2 px-3 text-foreground-muted font-mono text-[10px] whitespace-nowrap">{m.mechanism}</td>
+                        <td className="py-2 px-3 text-foreground-muted">{m.evidence}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+
           {/* Hormetic dose-response extension */}
           {d.hormesisDesc && (
             <section id="hormesis-extension" className="mb-14 border-t editorial-rule pt-6">
@@ -4822,10 +4929,10 @@ export default async function ModelPage({
               {cite(d.fiveGReproNote)}
             </p>
             <p className="mt-3 text-sm text-foreground-muted max-w-3xl leading-relaxed">
-              {cite(d.pathwayCQuantNote)}
+              {cite(d.pathwayBQuantNote)}
             </p>
             <p className="mt-3 text-xs text-foreground-muted max-w-3xl leading-relaxed italic border-l-2 border-amber-500/30 pl-3">
-              {cite(d.pathwayCWeightNote)}
+              {cite(d.pathwayBWeightNote)}
             </p>
             <p className="mt-3 text-sm text-foreground-muted max-w-3xl leading-relaxed">
               {cite(d.cryIndividualVariationNote)}

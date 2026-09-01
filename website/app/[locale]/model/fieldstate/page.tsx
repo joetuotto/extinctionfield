@@ -48,7 +48,7 @@ const t: Record<string, Copy> = {
     pulseTitle: "Pulse structure is biologically relevant",
     pulseText: [
       "FieldState measurement must preserve pulse structure: peak field, pulse duration, repetition rate and duty cycle are biologically relevant quantities that are lost in RMS averaging.",
-      "60% of BERM pathways by weight (A + D) respond to peak field. 40% (B + C) respond to RMS: pathway B (melatonin suppression, 15%) is a chronic-exposure mechanism, and pathway C (CRY → circadian disruption + TRPC1 calcium signaling, 25%) operates through the radical-pair mechanism which integrates over time. This distinguishes BERM from thermal models that use SAR (W/kg).",
+      "60% of BERM pathways by weight (A + D) respond to peak field. 40% (B + C) respond to RMS: pathway B (RPM → CRY → circadian disruption + TRPC1 calcium signaling, 25%) operates through the radical-pair mechanism which integrates over time, and pathway C (BBB disruption via chronic HPA, 15%) is a chronic-exposure mechanism. This distinguishes BERM from thermal models that use SAR (W/kg).",
     ],
     staticInterfaceTitle: "Static triboelectric interface: a native local-physics branch",
     staticInterfaceText: [
@@ -91,7 +91,7 @@ const t: Record<string, Copy> = {
     pulseTitle: "Pulssirakenne on biologisesti relevantti",
     pulseText: [
       "FieldState-mittauksen on säilytettävä pulssirakenne: huippukenttä, pulssin kesto, toistotaajuus ja duty cycle ovat biologisesti relevantteja suureita, jotka katoavat RMS-keskiarvostuksessa.",
-      "60 % BERM:n polkupainoista (A + D) vastaa huippukenttään. 40 % (B + C) vastaa RMS:ään: polku B (melatoniinivaimennus, 15 %) on kroonisen altistuksen mekanismi, ja polku C (CRY → sirkadiaaninen häiriö + TRPC1-kalsiumsignalointi, 25 %) toimii radikaalipari-mekanismin kautta, joka integroi ajan yli. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
+      "60 % BERM:n polkupainoista (A + D) vastaa huippukenttään. 40 % (B + C) vastaa RMS:ään: polku B (RPM → CRY → sirkadiaaninen häiriö + TRPC1-kalsiumsignalointi, 25 %) toimii radikaalipari-mekanismin kautta, joka integroi ajan yli, ja polku C (BBB-häiriö kroonisen HPA:n kautta, 15 %) on kroonisen altistuksen mekanismi. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
     ],
     staticInterfaceTitle: "Staattinen triboelektrinen rajapinta: natiivi paikallisfysiikan haara",
     staticInterfaceText: [
@@ -134,7 +134,7 @@ const t: Record<string, Copy> = {
     pulseTitle: "パルス構造は生物学的に重要である",
     pulseText: [
       "FieldState 測定はパルス構造を保持しなければなりません：ピーク電磁界、パルス持続時間、繰返し率およびデューティサイクルは、RMS平均化で失われる生物学的に重要な量です。",
-      "BERM経路の重み付けの60%（A + D）はピーク電磁界に応答します。40%（B + C）はRMSに応答します：経路B（メラトニン抑制、15%）は慢性暴露メカニズムであり、経路C（CRY → 概日リズム障害 + TRPC1カルシウムシグナリング、25%）は時間積分するラジカルペアメカニズムを通じて作動します。これによりBERMはSAR（W/kg）を使用する熱モデルと区別されます。",
+      "BERM経路の重み付けの60%（A + D）はピーク電磁界に応答します。40%（B + C）はRMSに応答します：経路B（RPM → CRY → 概日リズム障害 + TRPC1カルシウムシグナリング、25%）は時間積分するラジカルペアメカニズムを通じて作動し、経路C（慢性HPA経由のBBB障害、15%）は慢性暴露メカニズムです。これによりBERMはSAR（W/kg）を使用する熱モデルと区別されます。",
     ],
     staticInterfaceTitle: "静電摩擦電気界面：ネイティブな局所物理学の分岐",
     staticInterfaceText: [
@@ -177,7 +177,7 @@ const t: Record<string, Copy> = {
     pulseTitle: "La structure d'impulsion est biologiquement pertinente",
     pulseText: [
       "La mesure FieldState doit préserver la structure d'impulsion : champ de crête, durée d'impulsion, taux de répétition et rapport cyclique sont des quantités biologiquement pertinentes perdues lors du calcul de la moyenne RMS.",
-      "60 % des voies BERM en poids (A + D) répondent au champ de crête. 40 % (B + C) répondent au RMS : la voie B (suppression de la mélatonine, 15 %) est un mécanisme d'exposition chronique, et la voie C (CRY → perturbation circadienne + signalisation calcique TRPC1, 25 %) opère via le mécanisme des paires de radicaux qui intègre dans le temps. Cela distingue le BERM des modèles thermiques utilisant le DAS (W/kg).",
+      "60 % des voies BERM en poids (A + D) répondent au champ de crête. 40 % (B + C) répondent au RMS : la voie B (RPM → CRY → perturbation circadienne + signalisation calcique TRPC1, 25 %) opère via le mécanisme des paires de radicaux qui intègre dans le temps, et la voie C (perturbation de la BHE via HPA chronique, 15 %) est un mécanisme d'exposition chronique. Cela distingue le BERM des modèles thermiques utilisant le DAS (W/kg).",
     ],
     staticInterfaceTitle: "Interface triboélectrique statique : une branche native de physique locale",
     staticInterfaceText: [
@@ -220,7 +220,7 @@ const t: Record<string, Copy> = {
     pulseTitle: "펄스 구조는 생물학적으로 중요합니다",
     pulseText: [
       "FieldState 측정은 펄스 구조를 보존해야 합니다: 피크 전자기장, 펄스 지속 시간, 반복률 및 듀티 사이클은 RMS 평균화에서 손실되는 생물학적으로 중요한 양입니다.",
-      "BERM 경로 가중치의 60%(A + D)는 피크 전자기장에 응답합니다. 40%(B + C)는 RMS에 응답합니다: 경로 B(멜라토닌 억제, 15%)는 만성 노출 메커니즘이며, 경로 C(CRY → 일주기 교란 + TRPC1 칼슘 신호 전달, 25%)는 시간에 걸쳐 적분하는 라디칼 쌍 메커니즘을 통해 작동합니다. 이것이 SAR(W/kg)을 사용하는 열 모델과 BERM을 구별합니다.",
+      "BERM 경로 가중치의 60%(A + D)는 피크 전자기장에 응답합니다. 40%(B + C)는 RMS에 응답합니다: 경로 B(RPM → CRY → 일주기 교란 + TRPC1 칼슘 신호 전달, 25%)는 시간에 걸쳐 적분하는 라디칼 쌍 메커니즘을 통해 작동하고, 경로 C(만성 HPA를 통한 BBB 장애, 15%)는 만성 노출 메커니즘입니다. 이것이 SAR(W/kg)을 사용하는 열 모델과 BERM을 구별합니다.",
     ],
     staticInterfaceTitle: "정전 마찰전기 계면: 고유한 국소 물리학 분기",
     staticInterfaceText: [

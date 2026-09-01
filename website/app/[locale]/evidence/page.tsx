@@ -85,7 +85,9 @@ const COPY = {
       "A review locates a body of literature. A population timing result is descriptive unless matched FieldState, endpoint and confounding controls are present.",
       "No record below is a TFR coefficient. A country TFR pathway requires the separate ASFR and demographic terms in the model specification.",
     ],
-    boundedTitle: "Bounded v2 records",
+    tierExplainTitle: "Evidence tiers",
+    tierExplain: "This page presents evidence in two tiers. Bounded records (~34) follow the FieldState measurement spec schema: each states its field class, directness, translation scope and limitation. The extended catalogue (~150 legacy records) retains the broader bibliography for source-level review but uses a different, looser classification. The two tiers are not comparable in structure or stringency.",
+    boundedTitle: "Bounded records (FieldState measurement spec)",
     boundedLead: "Each record states its field class, directness, translation scope and limitation. These are the primary evidence entries for the BERM v17 causal route.",
     classificationTitle: "How previously negative findings classify",
     channelGroupTitle: "Three frequency channels",
@@ -292,7 +294,7 @@ const COPY = {
     nextLinkLabel: "Next",
     nextLinkTitle: "Criticism and responses",
     researchDomainsLead: "BERM's mechanistic pathways draw on 11 mutually independent research domains. No single domain is sufficient, but their convergence on the same prediction — biological activity of electromagnetic fields — is unlikely by chance.",
-    cry2PathwayNote: "CRY2's downstream effects extend beyond the circadian clock. Yap et al. (2025) showed that CRY2 physically interacts with TRPC1, a TRP-family cation channel, and that this complex co-translocates to the nucleus after PEMF exposure. This calcium entry pathway is CRY2-dependent (blocked by CRY2 silencing), light-dependent (lost in darkness), and FAD-dependent (attenuated by RFK silencing) — all hallmarks of the RPM mechanism. Importantly, TRPC1 is NOT a voltage-gated calcium channel and is NOT blocked by L-type VGCC blockers. This means pathways A and C (site's B) remain pharmacologically separable, but pathway C's biological footprint is larger than previously assumed.",
+    cry2PathwayNote: "CRY2's downstream effects extend beyond the circadian clock. Yap et al. (2025) showed that CRY2 physically interacts with TRPC1, a TRP-family cation channel, and that this complex co-translocates to the nucleus after PEMF exposure. This calcium entry pathway is CRY2-dependent (blocked by CRY2 silencing), light-dependent (lost in darkness), and FAD-dependent (attenuated by RFK silencing) — all hallmarks of the RPM mechanism. Importantly, TRPC1 is NOT a voltage-gated calcium channel and is NOT blocked by L-type VGCC blockers. This means pathways A and B remain pharmacologically separable, but pathway B's biological footprint is larger than previously assumed.",
     solarTitle: "Solar Cycle & Geomagnetic Biology: The 11th Convergence Line",
     solarIntro: "BERM defines two independent susceptibilities: χ(Ā) (VGCC, geometric field coupling) and χ_B (CRY/RPM, radical-pair spin dynamics). The solar cycle tests χ_B because it operates WITHOUT an electrification threshold — solar-driven geomagnetic variations have modulated radical-pair chemistry for billions of years, long before anthropogenic EMF. If CRY-mediated pathways are real, their signatures should appear in solar-cycle-length biological rhythms.",
     solarResearchLabel: "Key research evidence",
@@ -385,6 +387,19 @@ const COPY = {
     horm_neuro_text: "Mayagoitia-Novales et al. (2023) compared cortisol and testosterone responses between urban and suburban citizens. Urban citizens showed higher cortisol reactivity and altered testosterone response patterns. The urban environment is associated with heightened stress-axis activation.",
     horm_neuro_note: "",
     horm_epistemic: "",
+
+    sec_trends_title: "Biomarker Secular Trends",
+    sec_trends_intro: "Eight biomarkers that compose BioCap — the biological capacity underlying civilizational energy — each show measurable secular decline. Every decline has an identified BERM mechanism.",
+    sec_trends: [
+      { symbol: "T", name: "Testosterone", trend: "−1.2%/year", evidence: "Travison 2007, Santi 2025 (>1M subjects)", mechanism: "EMF → VGCC → Ca²⁺ → StAR↓ → P450scc↓ → T↓ AND EMF → SCN → GnRH↓ → LH↓ → T↓", cultural: "Expansive energy — risk-taking, competition, assertiveness, spatial cognition" },
+      { symbol: "OXT", name: "Oxytocin", trend: "Declining (proxy)", evidence: "Trust surveys declining, 15% men zero close friends (2021 vs 3% 1990), US Surgeon General loneliness epidemic (2023)", mechanism: "EMF → VGCC → Ca²⁺ → hypothalamic OXT neurons → OXT release↓", cultural: "Cohesive energy — social trust, group cohesion, institutional loyalty" },
+      { symbol: "DA", name: "Dopamine sensitivity", trend: "Declining (proxy)", evidence: "ADHD 3% (1990) → 10%+ (2020), addiction rates rising, anhedonia prevalence rising, 38% young men sexless (2018)", mechanism: "EMF → VGCC → Ca²⁺ → DA synthesis↓ → compensatory seeking → D2R↓", cultural: "Productive energy — motivation, creativity, delayed gratification" },
+      { symbol: "MEL", name: "Melatonin", trend: "Declining sharply", evidence: "Pineal calcification >60% by age 50, sleep duration declining, blue light 100× increase with LED", mechanism: "Blue light → melanopsin → SCN → mel↓ AND EMF → CRY/VGCC → SCN → mel↓ + PGC accumulation", cultural: "Mental energy — sleep quality, cognitive consolidation, circadian coherence" },
+      { symbol: "BDNF", name: "BDNF", trend: "Declining (proxy)", evidence: "Bratsberg 2018 (N=730K): Flynn reversal −5 to −7 IQ points/generation. Dworak 2023 (N=394K): USA confirmation", mechanism: "EMF → VGCC → Ca²⁺ → CREB phosphorylation disrupted → BDNF transcription↓", cultural: "Mental energy (cognitive) — abstract reasoning, learning, scientific thinking" },
+      { symbol: "CORT", name: "Cortisol", trend: "Rising", evidence: "Allostatic load indices rising (NHANES), anxiety +25% globally since 2000 (WHO), burnout prevalence rising", mechanism: "EMF → mel↓ → sleep↓ → HPA activation → cortisol↑ AND EMF → amygdala Ca²⁺ → threat sensitivity↑", cultural: "Energy drain — anxiety, short-term thinking, institutional paralysis" },
+      { symbol: "D", name: "Vitamin D", trend: "47.9% globally deficient", evidence: "Front Nutr 2023 meta-analysis (7.9M, 81 countries): 47.9% <50 nmol/L", mechanism: "D↓ → VDR → VGCC expression↑ → EMF sensitivity amplified. Both consequence and amplifier.", cultural: "Protective factor — Ca²⁺ homeostasis, immune competence" },
+      { symbol: "B2", name: "Riboflavin (B2/FAD)", trend: "Declining", evidence: "Processed food destroys B2. B2 → FAD → CRY stability (Cell Reports 2017). RFK knockdown → PEMF response↓ (2025)", mechanism: "B2↓ → FAD↓ → CRY instability → circadian disruption AND mitochondrial complex I/II↓", cultural: "Protective factor — CRY pathway integrity, mitochondrial energy" },
+    ],
   },
   fi: {
     title: "Näyttörekisteri",
@@ -396,7 +411,9 @@ const COPY = {
       "Katsaus paikantaa tutkimuskokonaisuuden. Väestön ajoitustulos on kuvaileva, ellei kohdistettu FieldState, päätepiste ja sekoittajien hallinta ole mukana.",
       "Mikään alla oleva tietue ei ole TFR-kerroin. Maakohtainen TFR-reitti tarvitsee erilliset ASFR- ja demografiset termit mallin määrittelyn mukaisesti.",
     ],
-    boundedTitle: "Rajatut v2-tietueet",
+    tierExplainTitle: "Näyttötasot",
+    tierExplain: "Tämä sivu esittää näytön kahdessa tasossa. Rajatut tietueet (~34) noudattavat FieldState-mittausspesifikaation skeemaa: kukin ilmoittaa kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Laajennettu luettelo (~150 perinnäistä tietuetta) säilyttää laajemman bibliografian lähdetason tarkistusta varten, mutta käyttää eri, löyhempää luokittelua. Kaksi tasoa eivät ole rakenteeltaan tai tiukkuudeltaan verrannollisia.",
+    boundedTitle: "Rajatut tietueet (FieldState-mittausspesifikaatio)",
     boundedLead: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Nämä ovat BERM v17 -kausaalireitin ensisijaiset näyttötietueet.",
     classificationTitle: "Miten aiemmin negatiiviset havainnot luokittuvat",
     channelGroupTitle: "Kolme taajuuskanavaa",
@@ -604,7 +621,7 @@ const COPY = {
     nextLinkLabel: "Seuraavaksi",
     nextLinkTitle: "Kritiikki ja vastaukset",
     researchDomainsLead: "BERM:n mekanistiset polut perustuvat 11 toisistaan riippumattomaan tutkimusalaan. Mikään yksittäinen ala ei riitä, mutta niiden yhdentyminen samaan ennusteeseen — sähkömagneettisten kenttien biologinen aktiivisuus — on epätodennäköistä sattumalta.",
-    cry2PathwayNote: "CRY2:n alaspäin suuntautuvat vaikutukset ulottuvat sirkadiaanisen kellon yli. Yap ym. (2025) osoittivat, että CRY2 on fysikaalisessa vuorovaikutuksessa TRPC1:n kanssa, TRP-perheen kationikanavan kanssa, ja että tämä kompleksi siirtyy yhdessä tumaan PEMF-altistuksen jälkeen. Tämä kalsiumsisäänvirtausreitti on CRY2-riippuvainen (estetään CRY2-hiljentämisellä), valoriippuvainen (häviää pimeässä) ja FAD-riippuvainen (vaimenee RFK-hiljentämisellä) — kaikki RPM-mekanismin tunnusmerkkejä. TRPC1 EI ole jänniteriippuvainen kalsiumkanava eikä L-tyypin VGCC-salpaajat estä sitä. Tämä tarkoittaa, että polut A ja C (sivuston B) pysyvät farmakologisesti erotettavissa, mutta polku C:n biologinen vaikutuskenttä on laajempi kuin aiemmin oletettiin.",
+    cry2PathwayNote: "CRY2:n alaspäin suuntautuvat vaikutukset ulottuvat sirkadiaanisen kellon yli. Yap ym. (2025) osoittivat, että CRY2 on fysikaalisessa vuorovaikutuksessa TRPC1:n kanssa, TRP-perheen kationikanavan kanssa, ja että tämä kompleksi siirtyy yhdessä tumaan PEMF-altistuksen jälkeen. Tämä kalsiumsisäänvirtausreitti on CRY2-riippuvainen (estetään CRY2-hiljentämisellä), valoriippuvainen (häviää pimeässä) ja FAD-riippuvainen (vaimenee RFK-hiljentämisellä) — kaikki RPM-mekanismin tunnusmerkkejä. TRPC1 EI ole jänniteriippuvainen kalsiumkanava eikä L-tyypin VGCC-salpaajat estä sitä. Tämä tarkoittaa, että polut A ja B pysyvät farmakologisesti erotettavissa, mutta polku B:n biologinen vaikutuskenttä on laajempi kuin aiemmin oletettiin.",
     solarTitle: "Aurinkosykli ja geomagneettinen biologia: 11. yhdentymislinja",
     solarIntro: "BERM määrittelee kaksi itsenäistä herkkyyttä: χ(Ā) (VGCC, geometrinen kenttäkytkentä) ja χ_B (CRY/RPM, radikaaliparin spin-dynamiikka). Aurinkosykli testaa χ_B:tä, koska se toimii ILMAN sähköistyskynnystä — auringon aiheuttamat geomagneettiset vaihtelut ovat moduloineet radikaaliparin kemiaa miljardeja vuosia, kauan ennen ihmisen tuottamia sähkömagneettisia kenttiä. Jos CRY-välitteiset polut ovat todellisia, niiden allekirjoitusten tulisi näkyä aurinkosyklin pituisissa biologisissa rytmeissä.",
     solarResearchLabel: "Keskeiset tutkimustulokset",
@@ -697,6 +714,19 @@ const COPY = {
     horm_neuro_text: "Mayagoitia-Novales ym. (2023) vertasivat kortisoli- ja testosteronivasteita kaupunkilaisten ja esikaupunkilaisten välillä. Kaupunkilaisilla oli korkeampi kortisolireaktiivisuus ja muuttunut testosteronivaste. Kaupunkiympäristö liittyy kohonneeseen stressiakselin aktivaatioon.",
     horm_neuro_note: "",
     horm_epistemic: "",
+
+    sec_trends_title: "Biomarkkerien sekulaaritrendit",
+    sec_trends_intro: "Kahdeksan BioCap-indeksin muodostavaa biomarkkeria — sivilisaatioenergiaa ylläpitävä biologinen kapasiteetti — osoittavat kukin mitattavan sekulaarilaskun. Jokaiselle laskulle on tunnistettu BERM-mekanismi.",
+    sec_trends: [
+      { symbol: "T", name: "Testosteroni", trend: "−1,2 %/v", evidence: "Travison 2007, Santi 2025 (>1M tutkittavaa)", mechanism: "EMF → VGCC → Ca²⁺ → StAR↓ → P450scc↓ → T↓ JA EMF → SCN → GnRH↓ → LH↓ → T↓", cultural: "Ekspansiivinen energia — riskinotto, kilpailu, itsevarmuus" },
+      { symbol: "OXT", name: "Oksitosiini", trend: "Laskeva (välillinen)", evidence: "Luottamuskyselyt laskussa, 15 % miehistä nolla läheistä ystävää (2021 vs 3 % 1990), Yhdysvaltain pääkirurgin yksinäisyysepidemia (2023)", mechanism: "EMF → VGCC → Ca²⁺ → hypotalaamuksen OXT-hermosolut → OXT↓", cultural: "Koheesioenergia — sosiaalinen luottamus, ryhmäkoheesio" },
+      { symbol: "DA", name: "Dopamiiniherkkyys", trend: "Laskeva (välillinen)", evidence: "ADHD 3 % (1990) → 10 %+ (2020), riippuvuusluvut nousevat, anhedonia yleistyy", mechanism: "EMF → VGCC → Ca²⁺ → DA-synteesi↓ → kompensoiva haku → D2R↓", cultural: "Produktiivinen energia — motivaatio, luovuus, viivästetty tyydytys" },
+      { symbol: "MEL", name: "Melatoniini", trend: "Voimakas lasku", evidence: "Käpyrauhasen kalkkeutuminen >60 % 50-vuotiailla, unen kesto laskee, sinivalo 100× LED:ien myötä", mechanism: "Sinivalo → melanopsiini → SCN → mel↓ JA EMF → CRY/VGCC → SCN → mel↓ + PGC", cultural: "Mentaalinen energia — unenlaatu, kognitiivinen konsolidaatio" },
+      { symbol: "BDNF", name: "BDNF", trend: "Laskeva (välillinen)", evidence: "Bratsberg 2018 (N=730K): Flynn-käänne −5–7 ÄO-pistettä/sukupolvi. Dworak 2023 (N=394K): USA-vahvistus", mechanism: "EMF → VGCC → Ca²⁺ → CREB-fosforylaatio häiriintyy → BDNF↓", cultural: "Mentaalinen energia (kogn.) — abstrakti päättely, oppiminen" },
+      { symbol: "CORT", name: "Kortisoli", trend: "Nouseva", evidence: "Allostaattisen kuorman indeksit nousevat (NHANES), ahdistus +25 % maailmanlaajuisesti 2000 jälkeen (WHO)", mechanism: "EMF → mel↓ → uni↓ → HPA-aktivaatio → kortisoli↑", cultural: "Energian kulutus — ahdistus, lyhytjänteisyys, institutionaalinen halvaantuminen" },
+      { symbol: "D", name: "D-vitamiini", trend: "47,9 % maailmanlaajuisesti puutteellinen", evidence: "Front Nutr 2023 meta-analyysi (7,9M, 81 maata): 47,9 % <50 nmol/L", mechanism: "D↓ → VDR → VGCC↑ → EMF-herkkyys vahvistuu", cultural: "Suojaava tekijä — Ca²⁺-homeostaasi, immuunipätevyys" },
+      { symbol: "B2", name: "Riboflaviini (B2/FAD)", trend: "Laskeva", evidence: "Prosessoitu ruoka tuhoaa B2:n. B2 → FAD → CRY-stabiilisuus (Cell Reports 2017). RFK-vaimentaminen → PEMF-vaste↓ (2025)", mechanism: "B2↓ → FAD↓ → CRY-epästabiilisuus → sirkadiaaninen häiriö JA mito-kompleksi I/II↓", cultural: "Suojaava tekijä — CRY-polun eheys, mitokondriaalinen energia" },
+    ],
   },
   ja: {
     title: "エビデンス登録簿",
@@ -708,7 +738,9 @@ const COPY = {
       "レビューは文献群を特定する。集団のタイミング結果は、対応するFieldState、エンドポイント、交絡因子の制御がない限り記述的である。",
       "以下のレコードはいずれもTFR係数ではない。国別TFR経路にはモデル仕様における個別のASFRおよび人口学的項が必要である。",
     ],
-    boundedTitle: "限定v2レコード",
+    tierExplainTitle: "エビデンス階層",
+    tierExplain: "本ページはエビデンスを二つの階層で提示する。限定レコード（約34件）はFieldState測定仕様スキーマに従い、各レコードがフィールドクラス、直接性、翻訳範囲、制限を記載する。拡張カタログ（約150件のレガシーレコード）はソースレベルのレビュー用に広範な参考文献を保持するが、異なる緩い分類を使用する。二つの階層は構造も厳密さも比較できない。",
+    boundedTitle: "限定レコード（FieldState測定仕様）",
     boundedLead: "各レコードはフィールドクラス、直接性、翻訳範囲、制限を記載している。これらはBERM v17因果経路の主要エビデンスエントリである。",
     classificationTitle: "以前の否定的知見の分類方法",
     channelGroupTitle: "3つの周波数チャネル",
@@ -915,7 +947,7 @@ const COPY = {
     nextLinkLabel: "次へ",
     nextLinkTitle: "批判と回答",
     researchDomainsLead: "BERMの機構的経路は、11の相互に独立した研究分野に基づいている。単一の分野では十分ではないが、同じ予測 — 電磁場の生物学的活性 — への収束は偶然では起こりにくい。",
-    cry2PathwayNote: "CRY2の下流効果は概日時計を超えて拡がる。Yap et al. (2025) は、CRY2がTRPファミリーのカチオンチャネルであるTRPC1と物理的に相互作用し、PEMF曝露後にこの複合体が共に核へ移行することを示した。このカルシウム流入経路はCRY2依存性（CRY2サイレンシングにより遮断）、光依存性（暗所で消失）、FAD依存性（RFKサイレンシングにより減衰）であり、すべてRPMメカニズムの特徴である。重要なことに、TRPC1は電位依存性カルシウムチャネルではなく、L型VGCC遮断薬では遮断されない。これは経路AとC（サイトのB）が薬理学的に分離可能であり続けることを意味するが、経路Cの生物学的影響範囲は以前想定されていたよりも大きい。",
+    cry2PathwayNote: "CRY2の下流効果は概日時計を超えて拡がる。Yap et al. (2025) は、CRY2がTRPファミリーのカチオンチャネルであるTRPC1と物理的に相互作用し、PEMF曝露後にこの複合体が共に核へ移行することを示した。このカルシウム流入経路はCRY2依存性（CRY2サイレンシングにより遮断）、光依存性（暗所で消失）、FAD依存性（RFKサイレンシングにより減衰）であり、すべてRPMメカニズムの特徴である。重要なことに、TRPC1は電位依存性カルシウムチャネルではなく、L型VGCC遮断薬では遮断されない。これは経路AとBが薬理学的に分離可能であり続けることを意味するが、経路Bの生物学的影響範囲は以前想定されていたよりも大きい。",
     solarTitle: "太陽周期と地磁気生物学：第11の収束線",
     solarIntro: "BERMは2つの独立した感受性を定義する：χ(Ā)（VGCC、幾何学的場結合）とχ_B（CRY/RPM、ラジカルペアスピン動力学）。太陽周期はχ_Bを検証する。なぜなら電化閾値なしに作動するからである — 太陽駆動の地磁気変動は、人為的EMFのはるか前、数十億年にわたりラジカルペア化学を調節してきた。CRY媒介経路が実在するならば、そのシグネチャーは太陽周期長の生物学的リズムに現れるはずである。",
     solarResearchLabel: "主要な研究エビデンス",
@@ -989,6 +1021,7 @@ const COPY = {
     horm_neuro_title: "神経内分泌：都市-郊外コルチゾール乖離",
     horm_neuro_text: "", horm_neuro_note: "",
     horm_epistemic: "",
+    sec_trends_title: "バイオマーカーの長期トレンド", sec_trends_intro: "", sec_trends: [] as any[],
   },
   fr: {
     title: "Registre des preuves",
@@ -1000,7 +1033,9 @@ const COPY = {
       "Une revue localise un corpus de littérature. Un résultat de temporalité populationnelle est descriptif sauf si un FieldState, un point final et des contrôles de confusion correspondants sont présents.",
       "Aucun enregistrement ci-dessous n'est un coefficient TFR. Une voie TFR nationale nécessite les termes ASFR et démographiques distincts dans la spécification du modèle.",
     ],
-    boundedTitle: "Enregistrements bornés v2",
+    tierExplainTitle: "Niveaux de preuves",
+    tierExplain: "Cette page présente les preuves en deux niveaux. Les enregistrements bornés (~34) suivent le schéma de la spécification de mesure FieldState : chacun indique sa classe de champ, sa directionalité, sa portée de traduction et ses limites. Le catalogue étendu (~150 enregistrements hérités) conserve la bibliographie plus large pour une revue au niveau des sources, mais utilise une classification différente, moins stricte. Les deux niveaux ne sont pas comparables en structure ni en rigueur.",
+    boundedTitle: "Enregistrements bornés (spécification de mesure FieldState)",
     boundedLead: "Chaque enregistrement indique sa classe de champ, sa directionalité, sa portée de traduction et ses limites. Ce sont les entrées de preuves primaires pour la route causale BERM v17.",
     classificationTitle: "Comment les résultats précédemment négatifs se classifient",
     channelGroupTitle: "Trois canaux de fréquence",
@@ -1207,7 +1242,7 @@ const COPY = {
     nextLinkLabel: "Suivant",
     nextLinkTitle: "Critiques et réponses",
     researchDomainsLead: "Les voies mécanistiques de BERM s'appuient sur 11 domaines de recherche mutuellement indépendants. Aucun domaine seul ne suffit, mais leur convergence vers la même prédiction — l'activité biologique des champs électromagnétiques — est peu probable par hasard.",
-    cry2PathwayNote: "Les effets en aval de CRY2 s'étendent au-delà de l'horloge circadienne. Yap et al. (2025) ont montré que CRY2 interagit physiquement avec TRPC1, un canal cationique de la famille TRP, et que ce complexe se transloque ensemble vers le noyau après exposition PEMF. Cette voie d'entrée du calcium est dépendante de CRY2 (bloquée par le silençage de CRY2), dépendante de la lumière (perdue dans l'obscurité) et dépendante du FAD (atténuée par le silençage de RFK) — tous les marqueurs du mécanisme RPM. Fait important, TRPC1 n'est PAS un canal calcique voltage-dépendant et n'est PAS bloqué par les bloqueurs VGCC de type L. Cela signifie que les voies A et C (B du site) restent pharmacologiquement séparables, mais l'empreinte biologique de la voie C est plus large qu'on ne le supposait auparavant.",
+    cry2PathwayNote: "Les effets en aval de CRY2 s'étendent au-delà de l'horloge circadienne. Yap et al. (2025) ont montré que CRY2 interagit physiquement avec TRPC1, un canal cationique de la famille TRP, et que ce complexe se transloque ensemble vers le noyau après exposition PEMF. Cette voie d'entrée du calcium est dépendante de CRY2 (bloquée par le silençage de CRY2), dépendante de la lumière (perdue dans l'obscurité) et dépendante du FAD (atténuée par le silençage de RFK) — tous les marqueurs du mécanisme RPM. Fait important, TRPC1 n'est PAS un canal calcique voltage-dépendant et n'est PAS bloqué par les bloqueurs VGCC de type L. Cela signifie que les voies A et B restent pharmacologiquement séparables, mais l'empreinte biologique de la voie B est plus large qu'on ne le supposait auparavant.",
     solarTitle: "Cycle solaire et biologie géomagnétique : La 11e ligne de convergence",
     solarIntro: "BERM définit deux susceptibilités indépendantes : χ(Ā) (VGCC, couplage géométrique du champ) et χ_B (CRY/RPM, dynamique de spin des paires radicalaires). Le cycle solaire teste χ_B car il opère SANS seuil d'électrification — les variations géomagnétiques d'origine solaire modulent la chimie des paires radicalaires depuis des milliards d'années, bien avant les EMF anthropiques. Si les voies médiées par CRY sont réelles, leurs signatures devraient apparaître dans les rythmes biologiques de longueur du cycle solaire.",
     solarResearchLabel: "Preuves de recherche clés",
@@ -1281,6 +1316,7 @@ const COPY = {
     horm_neuro_title: "Neuroendocrinien : divergence cortisol urbain-suburbain",
     horm_neuro_text: "", horm_neuro_note: "",
     horm_epistemic: "",
+    sec_trends_title: "Tendances séculaires des biomarqueurs", sec_trends_intro: "", sec_trends: [] as any[],
   },
   ko: {
     title: "근거 등록부",
@@ -1292,7 +1328,9 @@ const COPY = {
       "리뷰는 문헌 군을 위치시킨다. 집단 시간 결과는 대응하는 FieldState, 종점 및 교란인자 통제가 존재하지 않는 한 기술적이다.",
       "아래의 어떤 기록도 TFR 계수가 아니다. 국가 TFR 경로는 모델 사양에서 별도의 ASFR 및 인구학적 항을 필요로 한다.",
     ],
-    boundedTitle: "한정 v2 기록",
+    tierExplainTitle: "근거 계층",
+    tierExplain: "이 페이지는 근거를 두 계층으로 제시한다. 한정 기록(~34건)은 FieldState 측정 사양 스키마를 따르며, 각 기록이 필드 클래스, 직접성, 번역 범위 및 제한을 명시한다. 확장 카탈로그(~150건 레거시 기록)는 소스 수준 검토를 위해 더 넓은 참고문헌을 보존하지만, 다른 느슨한 분류를 사용한다. 두 계층은 구조나 엄밀성에서 비교할 수 없다.",
+    boundedTitle: "한정 기록 (FieldState 측정 사양)",
     boundedLead: "각 기록은 필드 클래스, 직접성, 번역 범위 및 제한을 명시한다. 이것은 BERM v17 인과 경로의 주요 근거 항목이다.",
     classificationTitle: "이전 부정적 발견의 분류 방법",
     channelGroupTitle: "세 주파수 채널",
@@ -1499,7 +1537,7 @@ const COPY = {
     nextLinkLabel: "다음",
     nextLinkTitle: "비판과 응답",
     researchDomainsLead: "BERM의 기계론적 경로는 11개의 상호 독립적인 연구 분야에 기반한다. 어떤 단일 분야도 충분하지 않지만, 동일한 예측 — 전자기장의 생물학적 활성 — 으로의 수렴은 우연으로는 일어나기 어렵다.",
-    cry2PathwayNote: "CRY2의 하류 효과는 일주기 시계를 넘어 확장된다. Yap et al. (2025)은 CRY2가 TRP 계열 양이온 채널인 TRPC1과 물리적으로 상호작용하며, 이 복합체가 PEMF 노출 후 함께 핵으로 이동함을 보여주었다. 이 칼슘 유입 경로는 CRY2 의존적이고 (CRY2 침묵에 의해 차단), 광 의존적이며 (암소에서 소실), FAD 의존적이다 (RFK 침묵에 의해 감쇠) — 모두 RPM 메커니즘의 특징이다. 중요하게도, TRPC1은 전위 의존성 칼슘 채널이 아니며 L형 VGCC 차단제로 차단되지 않는다. 이는 경로 A와 C (사이트의 B)가 약리학적으로 분리 가능하게 유지됨을 의미하지만, 경로 C의 생물학적 범위는 이전에 가정된 것보다 크다.",
+    cry2PathwayNote: "CRY2의 하류 효과는 일주기 시계를 넘어 확장된다. Yap et al. (2025)은 CRY2가 TRP 계열 양이온 채널인 TRPC1과 물리적으로 상호작용하며, 이 복합체가 PEMF 노출 후 함께 핵으로 이동함을 보여주었다. 이 칼슘 유입 경로는 CRY2 의존적이고 (CRY2 침묵에 의해 차단), 광 의존적이며 (암소에서 소실), FAD 의존적이다 (RFK 침묵에 의해 감쇠) — 모두 RPM 메커니즘의 특징이다. 중요하게도, TRPC1은 전위 의존성 칼슘 채널이 아니며 L형 VGCC 차단제로 차단되지 않는다. 이는 경로 A와 B가 약리학적으로 분리 가능하게 유지됨을 의미하지만, 경로 B의 생물학적 범위는 이전에 가정된 것보다 크다.",
     solarTitle: "태양 주기와 지자기 생물학: 제11 수렴선",
     solarIntro: "BERM은 두 가지 독립적 감수성을 정의한다: χ(Ā) (VGCC, 기하학적 장 결합)와 χ_B (CRY/RPM, 라디칼쌍 스핀 역학). 태양 주기는 χ_B를 검증한다. 전기화 임계값 없이 작동하기 때문이다 — 태양 구동 지자기 변동은 인위적 EMF 훨씬 이전, 수십억 년 동안 라디칼쌍 화학을 조절해 왔다. CRY 매개 경로가 실재한다면, 그 시그니처가 태양 주기 길이의 생물학적 리듬에 나타나야 한다.",
     solarResearchLabel: "핵심 연구 근거",
@@ -1574,6 +1612,7 @@ const COPY = {
     horm_neuro_title: "신경내분비: 도시-교외 코르티솔 차이",
     horm_neuro_text: "", horm_neuro_note: "",
     horm_epistemic: "",
+    sec_trends_title: "바이오마커 장기 추세", sec_trends_intro: "", sec_trends: [] as any[],
   },
 } as const;
 
@@ -2794,7 +2833,15 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         <Link href={`/${locale}/evidence/reproductive-navigation`} className="text-sm text-accent hover:underline">{d.catsperDetailLink} →</Link>
       </section>
 
-      {/* Bounded v2 records */}
+      {/* Evidence tiers explanation */}
+      <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-8 max-w-4xl">
+        <h3 className="text-sm font-semibold mb-2">{d.tierExplainTitle}</h3>
+        <p className="text-sm text-blue-900 dark:text-blue-200 leading-relaxed">
+          {d.tierExplain}
+        </p>
+      </div>
+
+      {/* Bounded records (FieldState measurement spec) */}
       <section className="mb-16 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-3">{d.boundedTitle}</h2>
         <p className="text-sm text-foreground-muted leading-relaxed mb-8 max-w-4xl">{d.boundedLead}</p>
@@ -3166,6 +3213,31 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
           )}
         </div>
       </section>
+
+      {/* Biomarker Secular Trends */}
+      {d.sec_trends_intro && (
+        <section id="secular-trends" className="mb-16 border-t editorial-rule pt-6">
+          <div className="flex items-center gap-2 mb-4">
+            <Activity className="w-5 h-5 text-accent" />
+            <h2 className="text-xl font-semibold">{d.sec_trends_title}</h2>
+          </div>
+          <p className="text-foreground-muted leading-relaxed mb-6">{d.sec_trends_intro}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {(d.sec_trends as any[]).map((b: any) => (
+              <div key={b.symbol} className="rounded-lg border border-card-border bg-card-bg p-4 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-lg font-bold font-mono">{b.symbol}</span>
+                  <span className="text-xs px-2 py-0.5 rounded bg-red-500/10 text-red-500">{b.trend}</span>
+                </div>
+                <p className="text-sm font-medium">{b.name}</p>
+                <p className="text-xs text-foreground-muted leading-relaxed">{b.mechanism}</p>
+                <p className="text-xs text-foreground-muted leading-relaxed italic">{b.cultural}</p>
+                <p className="text-xs text-accent/80">{b.evidence}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <RetrodictionCards locale={activeLocale} />
 

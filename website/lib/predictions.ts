@@ -127,6 +127,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "df6b410",
     status: "pending",
     unit: "children/woman",
+    proxyBasis: "cumulative-exposure proxy (device-adoption sigmoid)",
     history: [
       {
         version: "v17.0",
@@ -161,6 +162,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "df6b410",
     status: "pending",
     unit: "children/woman",
+    proxyBasis: "cumulative-exposure proxy (device-adoption sigmoid)",
     history: [
       {
         version: "v17.0",
@@ -195,6 +197,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "df6b410",
     status: "pending",
     unit: "children/woman",
+    proxyBasis: "cumulative-exposure proxy (device-adoption sigmoid)",
     history: [
       {
         version: "v17.0",
@@ -229,6 +232,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "df6b410",
     status: "pending",
     unit: "children/woman",
+    proxyBasis: "cumulative-exposure proxy (device-adoption sigmoid)",
     history: [
       {
         version: "v17.0",
@@ -263,6 +267,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "df6b410",
     status: "pending",
     unit: "children/woman",
+    proxyBasis: "cumulative-exposure proxy (device-adoption sigmoid)",
     history: [
       {
         version: "v17.0",
@@ -297,6 +302,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "df6b410",
     status: "pending",
     unit: "children/woman",
+    proxyBasis: "cumulative-exposure proxy (device-adoption sigmoid)",
     history: [
       {
         version: "v17.0",
@@ -331,6 +337,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "0fa9f290",
     status: "pending",
     unit: "children/woman",
+    proxyBasis: "cumulative-exposure proxy (device-adoption sigmoid)",
     history: [
       {
         version: "v17.0",
@@ -357,6 +364,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "0fa9f290",
     status: "pending",
     unit: "%",
+    proxyBasis: "cumulative-exposure proxy (device-adoption sigmoid)",
     history: [
       {
         version: "v17.0",
@@ -383,6 +391,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "df6b410",
     status: "pending",
     unit: "fraction",
+    proxyBasis: "ROS pathway differential (X- vs Y-bearing sperm sensitivity)",
     history: [
       {
         version: "v17.1",
@@ -409,6 +418,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "df6b410",
     status: "pending",
     unit: "children/woman",
+    proxyBasis: "cumulative-exposure proxy + urbanization feedback loop",
     history: [
       {
         version: "v17.1",
@@ -435,6 +445,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "csli_panel",
     status: "pending",
     unit: "Δ children/woman/year",
+    proxyBasis: "cross-species sentinel lag (bee colony losses → TFR, 5±2 yr)",
     history: [
       {
         version: "CSLI-1",
@@ -462,6 +473,7 @@ export const LOCKED_PREDICTIONS: LockedPrediction[] = [
     gitSha: "walker_integration",
     status: "pending" as const,
     unit: "effect ratio (Faraday / blue-filter)",
+    proxyBasis: "Faraday shielding vs blue-light filter (PSG comparison)",
     history: [
       {
         version: "SLEEP-1",

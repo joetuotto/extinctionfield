@@ -36,7 +36,7 @@ PRIMARY_PATHWAY = "B_RPM"
 #: Luria 2009 — three GSM RCTs demonstrating acute neural/EEG effects
 #: compatible with VGIC-mediated transduction. These support the
 #: membrane→VGIC edge but do NOT advance discriminating test count
-#: (they test pathway A, not the primary pathway C/RPM).
+#: (they test pathway A, not the primary pathway B/RPM).
 #:
 #: Level 4 (VGIC mechanism): Panagopoulos 2025 IFO-VGIC review
 #: (131 studies) provides mechanistic consensus for irregular forced

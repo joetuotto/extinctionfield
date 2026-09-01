@@ -1202,9 +1202,9 @@ export const NODES: ChainNode[] = [
     title: "Unen laadun heikkeneminen ja hormonaaliset seuraukset",
     title_en: "Sleep quality decline and hormonal consequences",
     mechanism:
-      "Melatoniinisuppressio (polku C) → unisyklin häiriö → syvän unen väheneminen. Syvä uni on kriittinen GnRH-pulsaation ja kasvuhormonin erityksen kannalta. [[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]: 1 viikko unirajoitusta (5h/yö) → testosteroni −15%. Nuorten aikuisten unen kesto on lyhentynyt ~1h/yö 1970-luvulta. Älypuhelimen sininen valo → melatoniinivaimennus → viivästynyt unilatenssi.",
+      "Melatoniinisuppressio (polku B) → unisyklin häiriö → syvän unen väheneminen. Syvä uni on kriittinen GnRH-pulsaation ja kasvuhormonin erityksen kannalta. [[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]: 1 viikko unirajoitusta (5h/yö) → testosteroni −15%. Nuorten aikuisten unen kesto on lyhentynyt ~1h/yö 1970-luvulta. Älypuhelimen sininen valo → melatoniinivaimennus → viivästynyt unilatenssi.",
     mechanism_en:
-      "Melatonin suppression (pathway C) → sleep cycle disruption → decreased deep sleep. Deep sleep is critical for GnRH pulsation and growth hormone secretion. [[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]: 1 week of sleep restriction (5h/night) → testosterone −15%. Young adults' sleep duration has shortened ~1h/night since the 1970s. Smartphone blue light → melatonin suppression → delayed sleep latency.",
+      "Melatonin suppression (pathway B) → sleep cycle disruption → decreased deep sleep. Deep sleep is critical for GnRH pulsation and growth hormone secretion. [[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]: 1 week of sleep restriction (5h/night) → testosterone −15%. Young adults' sleep duration has shortened ~1h/night since the 1970s. Smartphone blue light → melatonin suppression → delayed sleep latency.",
     keyReferences: [
       {
         referenceId: "leproult2011_testosterone_sleep",

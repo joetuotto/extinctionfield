@@ -25,7 +25,7 @@ const OLD_VERSION_TARGETS = new Set([
 const COPY = {
   fi: {
     disclaimer:
-      "Alla oleva luokittelu soveltaa BERM-päättelyprotokollaa (v1.0) aiemmin negatiivisiksi tulkittuihin havaintoihin. Uudelleenluokittelu ei tarkoita, että havainto tukisi BERM:ää — se tarkoittaa, ettei alkuperäinen testi ollut erotteleva tai kohdistui oikeaan kohteeseen. BERM:n primäärihaara (polku C / RPM / kohorttivaikutus) on edelleen empiirisesti testaamaton erottelevilla testeillä.",
+      "Alla oleva luokittelu soveltaa BERM-päättelyprotokollaa (v1.0) aiemmin negatiivisiksi tulkittuihin havaintoihin. Uudelleenluokittelu ei tarkoita, että havainto tukisi BERM:ää — se tarkoittaa, ettei alkuperäinen testi ollut erotteleva tai kohdistui oikeaan kohteeseen. BERM:n primäärihaara (polku B / RPM / kohorttivaikutus) on edelleen empiirisesti testaamaton erottelevilla testeillä.",
     groupFilter: "Luokka",
     scopeFilter: "Kohde",
     all: "Kaikki",
@@ -43,7 +43,7 @@ const COPY = {
   },
   en: {
     disclaimer:
-      "The classification below applies the BERM reasoning protocol (v1.0) to findings previously read as negative. Reclassification does not mean a finding supports BERM: it means the original test was not discriminating, or did not address the target it was taken to address. The primary branch (pathway C / RPM / cohort effect) remains empirically untested by discriminating tests.",
+      "The classification below applies the BERM reasoning protocol (v1.0) to findings previously read as negative. Reclassification does not mean a finding supports BERM: it means the original test was not discriminating, or did not address the target it was taken to address. The primary branch (pathway B / RPM / cohort effect) remains empirically untested by discriminating tests.",
     groupFilter: "Class",
     scopeFilter: "Scope",
     all: "All",
@@ -61,7 +61,7 @@ const COPY = {
   },
   ja: {
     disclaimer:
-      "以下の分類は、以前否定的と解釈された所見にBERM推論プロトコル（v1.0）を適用したものです。再分類は所見がBERMを支持することを意味しません。元のテストが弁別的でなかったか、対象とされた標的に対処していなかったことを意味します。主要分岐（パスウェイC / RPM / コホート効果）は弁別的テストによる経験的検証が未了です。",
+      "以下の分類は、以前否定的と解釈された所見にBERM推論プロトコル（v1.0）を適用したものです。再分類は所見がBERMを支持することを意味しません。元のテストが弁別的でなかったか、対象とされた標的に対処していなかったことを意味します。主要分岐（パスウェイB / RPM / コホート効果）は弁別的テストによる経験的検証が未了です。",
     groupFilter: "分類",
     scopeFilter: "範囲",
     all: "すべて",
@@ -79,7 +79,7 @@ const COPY = {
   },
   fr: {
     disclaimer:
-      "La classification ci-dessous applique le protocole de raisonnement BERM (v1.0) aux résultats précédemment interprétés comme négatifs. La reclassification ne signifie pas qu'un résultat soutient le BERM : elle signifie que le test original n'était pas discriminant, ou ne portait pas sur la cible visée. La branche principale (voie C / RPM / effet de cohorte) reste empiriquement non testée par des tests discriminants.",
+      "La classification ci-dessous applique le protocole de raisonnement BERM (v1.0) aux résultats précédemment interprétés comme négatifs. La reclassification ne signifie pas qu'un résultat soutient le BERM : elle signifie que le test original n'était pas discriminant, ou ne portait pas sur la cible visée. La branche principale (voie B / RPM / effet de cohorte) reste empiriquement non testée par des tests discriminants.",
     groupFilter: "Classe",
     scopeFilter: "Portée",
     all: "Tous",
@@ -97,7 +97,7 @@ const COPY = {
   },
   ko: {
     disclaimer:
-      "아래 분류는 이전에 부정적으로 해석된 소견에 BERM 추론 프로토콜(v1.0)을 적용한 것입니다. 재분류가 소견이 BERM을 지지함을 의미하지는 않습니다. 원래 테스트가 변별적이지 않았거나 의도된 대상을 다루지 않았음을 의미합니다. 주요 분기(경로 C / RPM / 코호트 효과)는 변별적 테스트로 경험적 검증이 아직 이루어지지 않은 상태입니다.",
+      "아래 분류는 이전에 부정적으로 해석된 소견에 BERM 추론 프로토콜(v1.0)을 적용한 것입니다. 재분류가 소견이 BERM을 지지함을 의미하지는 않습니다. 원래 테스트가 변별적이지 않았거나 의도된 대상을 다루지 않았음을 의미합니다. 주요 분기(경로 B / RPM / 코호트 효과)는 변별적 테스트로 경험적 검증이 아직 이루어지지 않은 상태입니다.",
     groupFilter: "분류",
     scopeFilter: "범위",
     all: "전체",
