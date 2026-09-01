@@ -1475,3 +1475,470 @@ def loyalty_collapse_gradient(
         results.append(analysis)
 
     return results
+
+
+# ── IQ Shredder: biological substrate ──
+#
+# Nick Land (2014) / Spandrell (2013): high-performance cities attract
+# talent via selective immigration, extract maximum economic productivity,
+# and suppress fertility to sub-replacement. "First-order eugenics
+# produces second-order dysgenics."
+#
+# BERM provides the biological mechanism: the same EMF-dense environment
+# that enables economic concentration also suppresses the endocrine
+# substrates of reproduction. Singapore's TFR 0.78 is not a rational
+# economic choice — it is endocrine suppression in the most
+# electromagnetically dense environment on earth.
+#
+# The shredder has five measurable biological components:
+#
+# 1. Reproductive suppression — T↓ (male drive), OXT↓ (pair-bonding),
+#    CORT↑ (fertility window), DA↓ (reward from parenting)
+#
+# 2. Dopaminergic capture — low DA → need more stimulation → work
+#    harder → more screen/urban time → more EMF → lower DA.
+#    The hedonic treadmill is biological, not cultural.
+#
+# 3. Time preference shift — DA↓ + BDNF↓ → future discount steepens →
+#    20-year investments (children) neurologically devalued.
+#
+# 4. Genetic burn rate — sub-replacement fertility × epigenetic damage
+#    to offspring who are born. The TFR alone underestimates the loss.
+#
+# 5. Shredder efficiency — the core irony: environments that maximize
+#    economic extraction also maximize biological destruction.
+#    BioCap and productivity move in opposite directions.
+
+
+IQ_SHREDDER_LABELS: dict[str, dict[str, str]] = {
+    "reproductive_suppression": {
+        "label": "Reproductive suppression",
+        "label_fi": "Lisääntymisen suppressio",
+        "mechanism": "Male drive (T), pair-bonding (OXT), fertility window (CORT), parental reward (DA+BDNF) — all degraded",
+        "mechanism_fi": "Miehen aloitekyky (T), parisitoutuminen (OXT), fertiliteettiikkuna (CORT), vanhemmuuden palkitsevuus (DA+BDNF) — kaikki heikentyneet",
+    },
+    "dopaminergic_capture": {
+        "label": "Dopaminergic capture",
+        "label_fi": "Dopaminerginen kaappaus",
+        "mechanism": "Low DA → need more stimulation → work harder for less reward → hedonic treadmill",
+        "mechanism_fi": "Matala DA → enemmän stimulaatiota tarvitaan → kovempi työ pienemmästä palkinnosta → hedonistinen juoksumatto",
+    },
+    "time_preference_shift": {
+        "label": "Time preference shift",
+        "label_fi": "Aikapreferenssin siirtymä",
+        "mechanism": "DA↓ + BDNF↓ → steeper temporal discounting → 20-year investments (children) neurologically devalued",
+        "mechanism_fi": "DA↓ + BDNF↓ → jyrkempi aikapreferenssi → 20 vuoden investoinnit (lapset) neurologisesti devalvoitu",
+    },
+    "genetic_burn_rate": {
+        "label": "Genetic burn rate",
+        "label_fi": "Geneettinen palamisnopeus",
+        "mechanism": "Sub-replacement fertility × epigenetic damage to offspring. TFR alone underestimates the loss.",
+        "mechanism_fi": "Alle uusiutumistasoinen hedelmällisyys × epigeneettinen vahinko jälkeläisiin. TFR yksinään aliarvioi menetyksen.",
+    },
+    "shredder_efficiency": {
+        "label": "Shredder efficiency",
+        "label_fi": "Shredderin tehokkuus",
+        "mechanism": "Ratio of economic extraction to biological cost. Maximized where BioCap is minimized.",
+        "mechanism_fi": "Ekonomisen louhinnan suhde biologiseen kustannukseen. Maksimoitu siellä missä BioCap on minimoitu.",
+    },
+}
+
+
+def reproductive_suppression_index(markers: dict[str, float]) -> float:
+    """How much reproductive capacity is endocrine-suppressed.
+
+    Four pathways must all function for population-level reproduction:
+    - Male reproductive drive: T provides initiative, CORT suppresses
+    - Female bonding capacity: OXT for attachment, CORT disrupts
+    - Pair-bond stability: OXT×T multiplicative interaction
+    - Parental investment motivation: OXT + T + BDNF, CORT-suppressed
+
+    Returns 0 (no suppression, full capacity) to 1 (total suppression).
+    """
+    t = markers.get("T", 0.5)
+    oxt = markers.get("OXT", 0.5)
+    bdnf = markers.get("BDNF", 0.5)
+    cort = markers.get("CORT", 0.5)
+
+    male_drive = t * max(0.0, 1.0 - 0.5 * cort)
+    female_bond = oxt * max(0.0, 1.0 - 0.4 * cort)
+    pair_bond = oxt * t
+    parental = (oxt + t + bdnf) / 3.0 * max(0.0, 1.0 - 0.3 * cort)
+
+    capacity = (male_drive * female_bond * pair_bond * parental) ** 0.25
+    return round(1.0 - capacity, 4)
+
+
+def dopaminergic_capture_index(markers: dict[str, float]) -> float:
+    """How trapped in the hedonic treadmill.
+
+    Low DA → natural rewards (relationships, parenting, community)
+    feel insufficient → seek artificial stimulation (screens, work,
+    substances) → more EMF exposure → lower DA. The loop is biological.
+
+    High CORT adds anxiety-driven productivity: working not for reward
+    but to avoid the discomfort of not working.
+
+    Returns 0 (free) to 1 (maximally captured).
+    """
+    da = markers.get("DA", 0.5)
+    bdnf = markers.get("BDNF", 0.5)
+    cort = markers.get("CORT", 0.5)
+
+    da_deficit = 1.0 - da
+    bdnf_deficit = 1.0 - bdnf
+    cort_drive = cort
+
+    return round(
+        max(0.0, min(1.0, 0.45 * da_deficit + 0.25 * bdnf_deficit + 0.30 * cort_drive)),
+        4,
+    )
+
+
+def time_preference_biological(markers: dict[str, float]) -> float:
+    """Biological temporal discounting — how devalued are long-term investments.
+
+    DA regulates delayed gratification (McClure 2004). BDNF supports
+    abstract future-modeling. Low DA + low BDNF → present-oriented,
+    short-term maximization. Children are a 20+ year investment that
+    requires neurological capacity to value distant future payoffs.
+
+    Returns 0 (low discounting, values future) to 1 (steep discounting,
+    present-only). This is the INVERSE of time_preference() in the
+    orientation module, which measures planning CAPACITY.
+    """
+    tp = time_preference(markers)
+    return round(1.0 - tp, 4)
+
+
+def genetic_burn_rate(markers: dict[str, float]) -> float:
+    """Rate of genetic capital destruction.
+
+    Combines reproductive suppression (fewer offspring) with the
+    epigenetic damage component (offspring who are born carry
+    CaMKII-mediated methylation changes). The TFR alone underestimates
+    the biological cost because even born children have degraded
+    substrate.
+
+    BDNF decline (28%) reflects neurodevelopmental damage.
+    MEL decline reflects disrupted developmental timing.
+
+    Returns 0 (no burn) to 1 (maximum destruction rate).
+    """
+    suppression = reproductive_suppression_index(markers)
+    mel = markers.get("MEL", 0.5)
+    bdnf = markers.get("BDNF", 0.5)
+
+    epigenetic_damage = 1.0 - (0.5 * bdnf + 0.5 * mel)
+    return round(
+        max(0.0, min(1.0, 0.65 * suppression + 0.35 * epigenetic_damage)),
+        4,
+    )
+
+
+def shredder_efficiency(markers: dict[str, float]) -> float:
+    """The core IQ Shredder metric: economic extraction vs biological cost.
+
+    High shredder efficiency means the environment is effective at
+    converting human capital into economic output while destroying
+    reproductive capacity. This is maximized in the densest urban
+    environments.
+
+    Dopaminergic capture (productivity extraction) × reproductive
+    suppression (biological cost). Geometric mean ensures both
+    must be present — capture without suppression is just productivity,
+    suppression without capture is just poverty.
+
+    Returns 0 (not a shredder) to 1 (maximum shredder).
+    """
+    capture = dopaminergic_capture_index(markers)
+    suppression = reproductive_suppression_index(markers)
+
+    return round((capture * suppression) ** 0.5, 4)
+
+
+def iq_shredder_profile(markers: dict[str, float]) -> dict[str, Any]:
+    """Comprehensive IQ Shredder analysis for a biomarker state."""
+    bc = compute_biocap(markers)
+    rk = rk_strategy_index(markers)
+
+    return {
+        "reproductive_suppression": reproductive_suppression_index(markers),
+        "dopaminergic_capture": dopaminergic_capture_index(markers),
+        "time_preference_shift": time_preference_biological(markers),
+        "genetic_burn_rate": genetic_burn_rate(markers),
+        "shredder_efficiency": shredder_efficiency(markers),
+        "biocap": round(bc, 4),
+        "rk_index": round(rk, 4),
+    }
+
+
+def iq_shredder_gradient(year: float = 2025) -> list[dict[str, Any]]:
+    """IQ Shredder analysis across all EMF environments.
+
+    Shows the shredder effect intensifying from amish (not a shredder)
+    through rural/suburban to urban_office (maximum shredder).
+    Singapore-class environments would register beyond urban_office.
+    """
+    env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+    results: list[dict[str, Any]] = []
+
+    for env_name in env_order:
+        markers = environment_biomarkers(env_name, year)
+        profile = iq_shredder_profile(markers)
+        profile["environment"] = env_name
+        profile["emf_factor"] = ENVIRONMENTS[env_name].emf_factor
+        results.append(profile)
+
+    return results
+
+
+# ── Pathopolitēs: the pathological citizen ──
+#
+# Greek: pathos (suffering/disease) + politēs (citizen).
+# The individual whose identity and citizenship are constructed
+# around trauma, vulnerability, and pathology.
+#
+# The pathopolitēs is not a personality type or a political choice.
+# It is an endocrine phenotype: what a human becomes when the
+# hormonal infrastructure of resilience, competence, meaning, and
+# self-determination degrades below critical thresholds.
+#
+# When T↓ removes the substrate for competence-based identity,
+# CORT↑ installs threat-sensitivity as the default orientation,
+# DA↓ eliminates internal motivation, BDNF↓ reduces cognitive
+# resilience, and OXT↓×T↓ dissolves group belonging — the
+# resulting individual has no choice but to construct identity
+# from what remains: victimhood, vulnerability, safety-seeking,
+# and moral claims derived from suffering rather than achievement.
+#
+# This is the missing link between patopolis (the pathological city)
+# and patokratia (pathological governance): the city produces the
+# citizen, the citizen produces the politics.
+#
+# Six measurable dimensions:
+#
+# 1. Victimhood identity — inability to build identity through
+#    competence (T↓) → identity built around vulnerability
+#
+# 2. Safety-seeking — threat as default orientation (CORT↑ × T↓)
+#    → safetyism (Lukianoff & Haidt 2018)
+#
+# 3. External locus — internal motivation generator broken (DA↓)
+#    → dependence on external validation and structure
+#
+# 4. Cognitive fragility — can't metabolize challenge (BDNF↓)
+#    → micro-aggressions, trigger warnings, safe spaces
+#
+# 5. Anomic distress — no group belonging (OXT↓ × T↓ → loyalty↓)
+#    → identity shopping, tribe-hopping, parasocial attachment
+#
+# 6. Moral compensation — moral grandstanding substitutes for
+#    actual moral capacity (Care without binding foundations)
+
+
+def victimhood_identity_index(markers: dict[str, float]) -> float:
+    """Inability to build identity through competence or achievement.
+
+    T provides the substrate for status-seeking, risk-taking, and
+    competitive identity formation. DA provides the reward signal
+    for achievement. BDNF provides the cognitive framework for
+    building a competence narrative. CORT suppresses all three.
+
+    When these degrade, the individual cannot construct identity
+    from "what I can do" and defaults to "what has been done to me."
+    This is not a choice — it is the only identity-construction
+    pathway that remains functional when the achievement pathway
+    is suppressed.
+
+    Returns 0 (competence-based identity) to 1 (victimhood-based).
+    """
+    t = markers.get("T", 0.5)
+    da = markers.get("DA", 0.5)
+    bdnf = markers.get("BDNF", 0.5)
+    cort = markers.get("CORT", 0.5)
+
+    competence_capacity = (
+        0.40 * t + 0.30 * da + 0.20 * bdnf
+    ) * max(0.0, 1.0 - 0.4 * cort)
+    return round(1.0 - max(0.0, min(1.0, competence_capacity)), 4)
+
+
+def safety_seeking_index(markers: dict[str, float]) -> float:
+    """Threat as default orientation — safetyism.
+
+    High CORT installs chronic threat detection. Low T removes
+    the capacity to confront threats. The result: expanded threat
+    definitions (micro-aggressions), avoidance as primary coping
+    strategy, demand for external protection.
+
+    Lukianoff & Haidt (2018): three "great untruths" — fragility
+    ("what doesn't kill you makes you weaker"), emotional reasoning
+    ("always trust your feelings"), us-vs-them ("life is a battle
+    between good and evil people"). All three are CORT-high, T-low
+    phenotypic expressions.
+
+    Returns 0 (resilient, confronts threats) to 1 (maximally
+    safety-seeking).
+    """
+    cort = markers.get("CORT", 0.5)
+    t = markers.get("T", 0.5)
+    bdnf = markers.get("BDNF", 0.5)
+
+    threat_activation = cort * max(0.0, 1.0 - 0.5 * t)
+    resilience_deficit = 1.0 - (0.5 * t + 0.5 * bdnf)
+    return round(
+        max(0.0, min(1.0, 0.55 * threat_activation + 0.45 * resilience_deficit)),
+        4,
+    )
+
+
+def external_locus_index(markers: dict[str, float]) -> float:
+    """Dependence on external validation and structure.
+
+    DA provides internal motivation — the capacity to generate
+    drive from within. T provides self-determination and autonomy.
+    When both degrade, the individual requires external sources
+    of motivation, validation, meaning, and direction.
+
+    This maps onto: dependence on social media validation, inability
+    to self-regulate without institutional scaffolding, demand for
+    external authority to solve problems that previous generations
+    solved individually.
+
+    Returns 0 (internal locus, self-directed) to 1 (external locus,
+    other-directed).
+    """
+    da = markers.get("DA", 0.5)
+    t = markers.get("T", 0.5)
+    cort = markers.get("CORT", 0.5)
+
+    internal_drive = (0.50 * da + 0.35 * t) * max(0.0, 1.0 - 0.3 * cort)
+    return round(1.0 - max(0.0, min(1.0, internal_drive)), 4)
+
+
+def cognitive_fragility_index(markers: dict[str, float]) -> float:
+    """Inability to metabolize challenge, novelty, or disagreement.
+
+    BDNF supports cognitive flexibility — the capacity to integrate
+    new information, tolerate ambiguity, and update models. T supports
+    confrontation with difficult truths. MEL supports the sleep-
+    dependent consolidation that converts challenge into growth.
+
+    When these degrade, challenge is experienced as damage rather
+    than stimulus. This is the biological substrate of trigger
+    warnings, safe spaces, and the conflation of discomfort with harm.
+
+    Returns 0 (antifragile) to 1 (maximally fragile).
+    """
+    bdnf = markers.get("BDNF", 0.5)
+    t = markers.get("T", 0.5)
+    mel = markers.get("MEL", 0.5)
+
+    antifragility = 0.45 * bdnf + 0.30 * t + 0.25 * mel
+    return round(1.0 - max(0.0, min(1.0, antifragility)), 4)
+
+
+def anomic_distress_index(markers: dict[str, float]) -> float:
+    """Absence of group belonging — identity untethered.
+
+    OXT×T interaction produces group loyalty. When it collapses,
+    the individual has no stable tribe, no inherited identity,
+    no belonging framework. The result: serial identity adoption
+    (identity shopping), parasocial relationships substituting
+    for real community, performative group membership without
+    genuine allegiance.
+
+    Durkheim's anomie quantified: the biological substrate of
+    social disconnection that precedes the psychological experience.
+
+    Returns 0 (embedded in community) to 1 (anomic).
+    """
+    oxt = markers.get("OXT", 0.5)
+    t = markers.get("T", 0.5)
+    cort = markers.get("CORT", 0.5)
+
+    loyalty_capacity = oxt * t
+    belonging = loyalty_capacity * max(0.0, 1.0 - 0.3 * cort)
+    return round(1.0 - max(0.0, min(1.0, belonging)), 4)
+
+
+def moral_compensation_index(markers: dict[str, float]) -> float:
+    """Moral grandstanding as substitute for moral capacity.
+
+    When binding foundations (Loyalty, Authority, Sanctity) collapse
+    but Care remains, the individual has moral energy without moral
+    structure. This energy must go somewhere: it becomes performative
+    morality — public displays of caring that substitute for the
+    capacity to actually maintain social structures.
+
+    High Care + low Loyalty + low Authority = moral compensation.
+    The individual signals virtue because they cannot practice it
+    in the structural sense (maintaining commitments, enforcing
+    standards, preserving institutions).
+
+    Returns 0 (structured morality) to 1 (fully compensatory).
+    """
+    mf = moral_foundations_profile(markers)
+    care = mf.get("care", 0)
+    loyalty = mf.get("loyalty", 0)
+    authority = mf.get("authority", 0)
+    sanctity = mf.get("sanctity", 0)
+
+    binding_mean = (loyalty + authority + sanctity) / 3.0
+    imbalance = max(0.0, care - binding_mean)
+    structure_deficit = 1.0 - binding_mean
+    return round(
+        max(0.0, min(1.0, 0.50 * imbalance + 0.50 * structure_deficit)),
+        4,
+    )
+
+
+def pathopolites_profile(markers: dict[str, float]) -> dict[str, Any]:
+    """Comprehensive Pathopolitēs profile for a biomarker state.
+
+    The six dimensions of the pathological citizen, plus the
+    composite pathopolites index (geometric mean of all six —
+    all dimensions must be elevated for the full phenotype).
+    """
+    vi = victimhood_identity_index(markers)
+    ss = safety_seeking_index(markers)
+    el = external_locus_index(markers)
+    cf = cognitive_fragility_index(markers)
+    ad = anomic_distress_index(markers)
+    mc = moral_compensation_index(markers)
+
+    composite = (vi * ss * el * cf * ad * mc) ** (1.0 / 6.0)
+
+    mf = moral_foundations_profile(markers)
+    mdi = moral_distress_index(mf)
+
+    return {
+        "victimhood_identity": vi,
+        "safety_seeking": ss,
+        "external_locus": el,
+        "cognitive_fragility": cf,
+        "anomic_distress": ad,
+        "moral_compensation": mc,
+        "pathopolites_index": round(composite, 4),
+        "moral_distress": mdi["distress_index"],
+    }
+
+
+def pathopolites_gradient(year: float = 2025) -> list[dict[str, Any]]:
+    """Pathopolitēs analysis across all EMF environments.
+
+    Maps the emergence of the pathological citizen from amish
+    (virtually absent) through suburban (emerging) to urban_office
+    (fully expressed phenotype).
+    """
+    env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+    results: list[dict[str, Any]] = []
+
+    for env_name in env_order:
+        markers = environment_biomarkers(env_name, year)
+        profile = pathopolites_profile(markers)
+        profile["environment"] = env_name
+        results.append(profile)
+
+    return results

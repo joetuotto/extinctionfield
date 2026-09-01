@@ -65,6 +65,22 @@ from berm.civilization.political_biology import (
     threat_sensitivity,
     time_preference,
     urban_rural_gradient,
+    reproductive_suppression_index,
+    dopaminergic_capture_index,
+    time_preference_biological,
+    genetic_burn_rate,
+    shredder_efficiency,
+    iq_shredder_profile,
+    iq_shredder_gradient,
+    IQ_SHREDDER_LABELS,
+    victimhood_identity_index,
+    safety_seeking_index,
+    external_locus_index,
+    cognitive_fragility_index,
+    anomic_distress_index,
+    moral_compensation_index,
+    pathopolites_profile,
+    pathopolites_gradient,
 )
 from berm.civilization.biomarker_trajectories import biomarker_values_at
 from berm.civilization.cultural_energy import compute_biocap
@@ -1290,3 +1306,303 @@ class TestLoyaltyCollapseGradient:
         gradient = loyalty_collapse_gradient()
         ratchets = [g["ratchet_velocity"] for g in gradient]
         assert ratchets[-1] > ratchets[0] * 10
+
+
+# ── IQ Shredder tests ──
+
+
+class TestReproductiveSuppression:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env)
+            val = reproductive_suppression_index(m)
+            assert 0.0 <= val <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish")
+        assert reproductive_suppression_index(m) < 0.15
+
+    def test_urban_high(self):
+        m = environment_biomarkers("urban_office")
+        assert reproductive_suppression_index(m) > 0.60
+
+    def test_monotonic_increase(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [reproductive_suppression_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(vals) - 1):
+            assert vals[i] < vals[i + 1], f"{envs[i]} >= {envs[i+1]}"
+
+    def test_urban_more_than_5x_amish(self):
+        amish = reproductive_suppression_index(environment_biomarkers("amish"))
+        urban = reproductive_suppression_index(environment_biomarkers("urban_office"))
+        assert urban > amish * 5
+
+
+class TestDopaminergicCapture:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env)
+            val = dopaminergic_capture_index(m)
+            assert 0.0 <= val <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish")
+        assert dopaminergic_capture_index(m) < 0.10
+
+    def test_urban_high(self):
+        m = environment_biomarkers("urban_office")
+        assert dopaminergic_capture_index(m) > 0.40
+
+    def test_monotonic_increase(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [dopaminergic_capture_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(vals) - 1):
+            assert vals[i] < vals[i + 1], f"{envs[i]} >= {envs[i+1]}"
+
+
+class TestTimePrefBiological:
+    def test_inverse_of_capacity(self):
+        m = environment_biomarkers("suburban")
+        tp_cap = time_preference(m)
+        tp_bio = time_preference_biological(m)
+        assert abs(tp_cap + tp_bio - 1.0) < 1e-4
+
+    def test_urban_higher_discounting(self):
+        amish = time_preference_biological(environment_biomarkers("amish"))
+        urban = time_preference_biological(environment_biomarkers("urban_office"))
+        assert urban > amish * 5
+
+
+class TestGeneticBurnRate:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env)
+            val = genetic_burn_rate(m)
+            assert 0.0 <= val <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish")
+        assert genetic_burn_rate(m) < 0.10
+
+    def test_urban_high(self):
+        m = environment_biomarkers("urban_office")
+        assert genetic_burn_rate(m) > 0.55
+
+    def test_exceeds_pure_suppression(self):
+        m = environment_biomarkers("urban_office")
+        burn = genetic_burn_rate(m)
+        suppression = reproductive_suppression_index(m)
+        assert burn < suppression, "Burn rate should be weighted average, not exceed suppression"
+
+
+class TestShredderEfficiency:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env)
+            val = shredder_efficiency(m)
+            assert 0.0 <= val <= 1.0
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish")
+        assert shredder_efficiency(m) < 0.10
+
+    def test_urban_high(self):
+        m = environment_biomarkers("urban_office")
+        assert shredder_efficiency(m) > 0.50
+
+    def test_monotonic_increase(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [shredder_efficiency(environment_biomarkers(e)) for e in envs]
+        for i in range(len(vals) - 1):
+            assert vals[i] < vals[i + 1], f"{envs[i]} >= {envs[i+1]}"
+
+    def test_geometric_mean_property(self):
+        m = environment_biomarkers("urban_office")
+        eff = shredder_efficiency(m)
+        cap = dopaminergic_capture_index(m)
+        sup = reproductive_suppression_index(m)
+        assert abs(eff - (cap * sup) ** 0.5) < 1e-4
+
+
+class TestIQShredderProfile:
+    def test_all_keys(self):
+        m = environment_biomarkers("suburban")
+        profile = iq_shredder_profile(m)
+        expected = {"reproductive_suppression", "dopaminergic_capture",
+                    "time_preference_shift", "genetic_burn_rate",
+                    "shredder_efficiency", "biocap", "rk_index"}
+        assert set(profile.keys()) == expected
+
+    def test_biocap_inverse_of_shredder(self):
+        gradient = iq_shredder_gradient()
+        biocaps = [g["biocap"] for g in gradient]
+        shredders = [g["shredder_efficiency"] for g in gradient]
+        for i in range(len(biocaps) - 1):
+            assert biocaps[i] > biocaps[i + 1]
+            assert shredders[i] < shredders[i + 1]
+
+
+class TestIQShredderGradient:
+    def test_all_environments(self):
+        gradient = iq_shredder_gradient()
+        assert len(gradient) == 5
+        envs = [g["environment"] for g in gradient]
+        assert envs == ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+
+    def test_shredder_10x_range(self):
+        gradient = iq_shredder_gradient()
+        assert gradient[-1]["shredder_efficiency"] > gradient[0]["shredder_efficiency"] * 5
+
+    def test_labels_dict_complete(self):
+        expected = {"reproductive_suppression", "dopaminergic_capture",
+                    "time_preference_shift", "genetic_burn_rate", "shredder_efficiency"}
+        assert set(IQ_SHREDDER_LABELS.keys()) == expected
+        for key, labels in IQ_SHREDDER_LABELS.items():
+            assert "label" in labels
+            assert "label_fi" in labels
+            assert "mechanism" in labels
+
+
+# ── Pathopolitēs tests ──
+
+
+class TestVictimhoodIdentity:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env)
+            val = victimhood_identity_index(m)
+            assert 0.0 <= val <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish")
+        assert victimhood_identity_index(m) < 0.25
+
+    def test_urban_high(self):
+        m = environment_biomarkers("urban_office")
+        assert victimhood_identity_index(m) > 0.60
+
+    def test_monotonic(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [victimhood_identity_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(vals) - 1):
+            assert vals[i] < vals[i + 1]
+
+
+class TestSafetySeeking:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env)
+            val = safety_seeking_index(m)
+            assert 0.0 <= val <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish")
+        assert safety_seeking_index(m) < 0.10
+
+    def test_urban_high(self):
+        m = environment_biomarkers("urban_office")
+        assert safety_seeking_index(m) > 0.45
+
+    def test_monotonic(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [safety_seeking_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(vals) - 1):
+            assert vals[i] < vals[i + 1]
+
+
+class TestExternalLocus:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env)
+            val = external_locus_index(m)
+            assert 0.0 <= val <= 1.0
+
+    def test_monotonic(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [external_locus_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(vals) - 1):
+            assert vals[i] < vals[i + 1]
+
+
+class TestCognitiveFragility:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env)
+            val = cognitive_fragility_index(m)
+            assert 0.0 <= val <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish")
+        assert cognitive_fragility_index(m) < 0.10
+
+    def test_urban_high(self):
+        m = environment_biomarkers("urban_office")
+        assert cognitive_fragility_index(m) > 0.40
+
+
+class TestAnomicDistress:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env)
+            val = anomic_distress_index(m)
+            assert 0.0 <= val <= 1.0
+
+    def test_highest_dimension(self):
+        m = environment_biomarkers("urban_office")
+        profile = pathopolites_profile(m)
+        assert profile["anomic_distress"] == max(
+            profile["victimhood_identity"],
+            profile["safety_seeking"],
+            profile["external_locus"],
+            profile["cognitive_fragility"],
+            profile["anomic_distress"],
+            profile["moral_compensation"],
+        )
+
+
+class TestMoralCompensation:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env)
+            val = moral_compensation_index(m)
+            assert 0.0 <= val <= 1.0
+
+    def test_monotonic(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [moral_compensation_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(vals) - 1):
+            assert vals[i] < vals[i + 1]
+
+
+class TestPathopolitesProfile:
+    def test_all_keys(self):
+        m = environment_biomarkers("suburban")
+        profile = pathopolites_profile(m)
+        expected = {"victimhood_identity", "safety_seeking", "external_locus",
+                    "cognitive_fragility", "anomic_distress", "moral_compensation",
+                    "pathopolites_index", "moral_distress"}
+        assert set(profile.keys()) == expected
+
+    def test_composite_between_min_max(self):
+        m = environment_biomarkers("urban_office")
+        profile = pathopolites_profile(m)
+        dims = [profile["victimhood_identity"], profile["safety_seeking"],
+                profile["external_locus"], profile["cognitive_fragility"],
+                profile["anomic_distress"], profile["moral_compensation"]]
+        assert min(dims) <= profile["pathopolites_index"] <= max(dims)
+
+
+class TestPathopolitesGradient:
+    def test_all_environments(self):
+        gradient = pathopolites_gradient()
+        assert len(gradient) == 5
+
+    def test_composite_monotonic(self):
+        gradient = pathopolites_gradient()
+        indices = [g["pathopolites_index"] for g in gradient]
+        for i in range(len(indices) - 1):
+            assert indices[i] < indices[i + 1]
+
+    def test_urban_more_than_5x_amish(self):
+        gradient = pathopolites_gradient()
+        assert gradient[-1]["pathopolites_index"] > gradient[0]["pathopolites_index"] * 5
