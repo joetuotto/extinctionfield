@@ -393,7 +393,7 @@ const COPY = {
     title: "Neurologinen spektri: Epilepsia, migreeni, klusteripäänsärky",
     subtitle:
       "Yksi Q-tekijämekanismi, neljä neurologista sairautta. SIDS, epilepsia, migreeni ja klusteripäänsärky jakavat saman spreading depolarization -kaskadin — ainoa ero on vaimennuskerroin γ. Tämä on olemassa olevaa näyttöä integroiva hypoteesi — ei todistettu selitys.",
-    backLink: "← Takaisin Evidenssiin",
+    backLink: "← Takaisin näyttöön",
 
     cautionText:
       "Tämä osio yhdistää neljä neurologista tilaa yhteiseksi kalsiumriippuvaiseksi oskillaatiomekanismiksi. Tämä on teoreettinen viitekehys joka integroi julkaistua kokeellista ja kliinistä näyttöä — ei vakiintunutta lääketieteellistä ohjausta. Nykyiset standardihoidot epilepsialle, migreenille ja klusteripäänsärylle ovat edelleen asianmukaisia.",
@@ -448,8 +448,8 @@ const COPY = {
         condition: "Normaalit aikuisaivot",
         q: "Q ~ 1–5",
         gamma: "γ > 0 (robusti)",
-        mechanism: "Kypsä KCC2-dominanssi → GABA inhibitorinen → oskillaatiot vaimenevat 2–3 syklin sisällä.",
-        outcome: "Ei patologista oskillaatiota",
+        mechanism: "Kypsä KCC2-dominanssi → GABA inhibitorinen → vaihtelut vaimenevat 2–3 syklin sisällä.",
+        outcome: "Ei patologista vaihtelua",
       },
     ],
     spectrumHeaders: {
@@ -460,7 +460,7 @@ const COPY = {
       outcome: "Kliininen lopputulema",
     },
 
-    lopezTitle: "Kokeellinen validaatio: López-Martín",
+    lopezTitle: "Kokeellinen todentaminen: López-Martín",
     lopezLead:
       "Suorin kokeellinen näyttö Q-tekijämallille tulee Universidad de Santiago de Compostelan ryhmältä (López-Martín, Carballo-Quintás ym., 2006–2011).",
     lopezExperiment: {
@@ -495,7 +495,7 @@ const COPY = {
         target: "Cav3.x (T-tyypin) salpaus",
         bermPath: "Suora T-tyypin VGCC-salpaus",
         conditions: ["Poissaoloepilepsia"],
-        mechanism: "Salpaa T-tyypin Ca²⁺-kanavat talamokortikaalisissa neuroneissa → eliminoi 3 Hz piikki-aalto-oskillaation. Suorin Q-tekijäinterventio: poistaa resonanssipiirin elementin.",
+        mechanism: "Salpaa T-tyypin Ca²⁺-kanavat talamokortikaalisissa neuroneissa → poistaa 3 Hz piikki-aalto-oskillaation. Suorin Q-tekijäinterventio: poistaa resonanssipiirin elementin.",
         level: "E",
       },
       {
@@ -555,7 +555,7 @@ const COPY = {
         target: "SV2A → vesikulivapautuksen modulaatio → Ca²⁺-riippuvainen hermoaineen välitys↓",
         bermPath: "Presynaptinen Ca²⁺-riippuvainen vesikulivapautus",
         conditions: ["Epilepsia (fokaalinen ja yleistynyt)"],
-        mechanism: "Sitoutuu SV2A:han (synaptinen vesikkeliglykoproteiini 2A) → moduloi Ca²⁺-riippuvaista hermoainevälittäjän vapautumista → vähentää eksitatorista ohjaustta. Myös inhiboi N-tyypin Ca²⁺-kanavia suoraan.",
+        mechanism: "Sitoutuu SV2A:han (synaptinen vesikkeliglykoproteiini 2A) → säätelee Ca²⁺-riippuvaista hermoainevälittäjän vapautumista → vähentää eksitatorista ohjaustta. Myös inhiboi N-tyypin Ca²⁺-kanavia suoraan.",
         level: "E",
       },
       {
@@ -581,7 +581,7 @@ const COPY = {
         match: true,
       },
       {
-        point: "Serotoniiinipuutos",
+        point: "Serotoniinipuutos",
         sids: "Aivorungon 5-HT-neuronit vähentyneet (Kinney 2009)",
         sudep: "5-HT-järjestelmän viat, CO₂-kemoreseptiovirhe",
         match: true,
@@ -618,11 +618,11 @@ const COPY = {
       },
     ],
     sudepHeaders: {
-      point: "Verifiointipiste",
+      point: "Todentamispiste",
       sids: "SIDS",
       sudep: "SUDEP",
     },
-    sudepConclusion: "L-tyypin VGCC-antagonisti estää kohtauksen aiheuttaman kuoleman SUDEP-hiirimallissa (Cardiovascular Research 2025). Tämä on suora evidenssi siitä, että Ca²⁺-kanavasalpaus estää terminaalisen CSD-kaskadin — sama mekanismi jota ehdotetaan SIDS:lle.",
+    sudepConclusion: "L-tyypin VGCC-antagonisti estää kohtauksen aiheuttaman kuoleman SUDEP-hiirimallissa (Cardiovascular Research 2025). Tämä on suora näyttö siitä, että Ca²⁺-kanavasalpaus estää terminaalisen CSD-kaskadin — sama mekanismi jota ehdotetaan SIDS:lle.",
 
     migraineTitle: "Migreeni: CSD mekanismina",
     migraineLead:
@@ -643,7 +643,7 @@ const COPY = {
     },
     migraineProphylaxis: {
       title: "Kaikki migreenin estolääkkeet vähentävät CSD:tä",
-      desc: "Jokainen tehokkaan migreenin estolääkkeen luokka vähentää CSD-herkkyyttä: beetasalpaajat (vähentävät neuronaalista eksitabiliteettia), valproaatti (GABA↑ + T-tyypin salpaus), topiramaatti (monikohteinen), amitriptyliini (Na⁺ + Ca²⁺), CGRP-vasta-aineet (salpaavat alavirtaefektorin). Tämä konvergenssi CSD:hen — Ca²⁺-riippuvaiseen prosessiin — on Q-tekijämallin ennustama.",
+      desc: "Jokainen tehokkaan migreenin estolääkkeen luokka vähentää CSD-herkkyyttä: beetasalpaajat (vähentävät neuronaalista eksitabiliteettia), valproaatti (GABA↑ + T-tyypin salpaus), topiramaatti (monikohteinen), amitriptyliini (Na⁺ + Ca²⁺), CGRP-vasta-aineet (salpaavat alavirtaefektorin). Tämä yhdentyminen CSD:hen — Ca²⁺-riippuvaiseen prosessiin — on Q-tekijämallin ennustama.",
     },
     migraineEmf: "ELF-priming-hypoteesi: krooninen ELF-altistus säätelee α2δ-1:tä (CACNA2D1) ylöspäin → enemmän VGCC:itä synapseissa → alempi CSD-kynnys → lisääntynyt migreeniherkkyys. Gabapentiini (α2δ-1-salpaaja) on tehokas migreenin estolääke — se suoraan kumoaa ehdotetun ELF-priming-mekanismin.",
 
@@ -676,7 +676,7 @@ const COPY = {
           drug: "Melatoniini",
           bermTarget: "MT1/MT2 → Gi → cAMP↓ → Ca²⁺↓",
           efficacy: "Tehokas (10–25 mg)",
-          mechanism: "Endogeeninen Ca²⁺-antagonisti. Resetoi SCN:n sirkadiaanioskillaation. EMF suppressoi melatoniinia CRY-reitin kautta → lisäravinteet palauttaa suojan.",
+          mechanism: "Endogeeninen Ca²⁺-antagonisti. Resetoi SCN:n sirkadiaanioskillaation. EMF vaimentaa melatoniinia CRY-reitin kautta → lisäravinteet palauttaa suojan.",
         },
         {
           drug: "Litium",
@@ -733,7 +733,7 @@ const COPY = {
       },
       {
         step: "α2δ-1-ekspression resetti (ehdotettu)",
-        desc: "Jos tryptamiinireitti moduloi α2δ-1-ekspressiota (CACNA2D1 → VGCC-tiheys synapseissa), psilosybiini voi resetoida ELF-priming-tilan. Tämä selittäisi miksi psilosybiini osoittaa tehoa myös migreenissä — molemmat jakavat α2δ-1-välitteisen CSD-herkkyyden.",
+        desc: "Jos tryptamiinireitti säätelee α2δ-1-ekspressiota (CACNA2D1 → VGCC-tiheys synapseissa), psilosybiini voi resetoida ELF-priming-tilan. Tämä selittäisi miksi psilosybiini osoittaa tehoa myös migreenissä — molemmat jakavat α2δ-1-välitteisen CSD-herkkyyden.",
       },
     ],
     psilocybinBol: {
@@ -757,7 +757,7 @@ const COPY = {
     pharmBermPathLabel: "BERM-reitti",
     pharmConditionsLabel: "Tilat",
     pharmMechanismLabel: "Mekanismi",
-    predictionDesc: "Q-tekijä-spektrimalli tuottaa kuusi testattavaa ennustetta jotka kattavat migreenin prevalenssin, CSD-kynnyksen, klusteripäänsäryn EMF-altistuksen, SUDEP-riskin, psilosybiinin tehon ja neonataalikoemallin.",
+    predictionDesc: "Q-tekijä-spektrimalli tuottaa kuusi testattavaa ennustetta jotka kattavat migreenin esiintyvyyden, CSD-kynnyksen, klusteripäänsäryn EMF-altistuksen, SUDEP-riskin, psilosybiinin tehon ja neonataalikoemallin.",
     predictionLink: "Ks. neurologisen spektrin ennusteet (NEURO-EMF-1 – NEURO-EMF-6)",
     predictionHref: "/predictions",
   },

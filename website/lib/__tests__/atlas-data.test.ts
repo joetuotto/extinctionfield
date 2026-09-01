@@ -64,8 +64,8 @@ describe("Bilingual data completeness", () => {
 });
 
 describe("Node structure", () => {
-  it("has 73 nodes", () => {
-    expect(NODES.length).toBe(73);
+  it("has 76 nodes", () => {
+    expect(NODES.length).toBe(76);
   });
 
   it("every node has a unique id", () => {

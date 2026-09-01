@@ -392,10 +392,10 @@ const t: Record<string, Copy> = {
       { version: "BERM 6–9", mechanism: "VGCC-resonanssi 94–183 GHz", status: "Hylätty", why: "Fysikaalisesti mahdoton: viisi kertaluokkaa liian nopea proteiinin konformaatiodynamiikalle" },
       { version: "BERM 6–9", mechanism: "Vesiresonanssi 2,45 GHz", status: "Hylätty", why: "Käänteinen fysiikka: absorptio on rotaatiovaimennusta, ei vahvistavaa resonanssia" },
       { version: "BERM 6–9", mechanism: "Solitonipropagaatio", status: "Hylätty", why: "Ghost-obstruktio: π₂ = 0 aikakaltaiselle A:lle, ghost-energia avaruuskaltaiselle" },
-      { version: "L-BERM", mechanism: "VGCC puhtaan geometrian kautta", status: "Demotoitu", why: "δV_m on 10¹⁷× liian pieni ilman biologisia vahvistimia" },
+      { version: "L-BERM", mechanism: "VGCC puhtaan geometrian kautta", status: "Alennettu", why: "δV_m on 10¹⁷× liian pieni ilman biologisia vahvistimia" },
       { version: "BERM < v6", mechanism: "EMF selittää koko demografisen siirtymän", status: "Hylätty", why: "Pre-EMF-lasku on D-termin (kulttuurinen kysyntä) ajamaa" },
     ],
-    questionsTitle: "Tutkimuskysymykset ja evidenssirajat",
+    questionsTitle: "Tutkimuskysymykset ja näyttörajat",
     objections: [
       {
         question: "Ympäristön EMF-kentät ovat liian heikkoja biologisiin vaikutuksiin",
@@ -403,7 +403,7 @@ const t: Record<string, Copy> = {
           "[[ref:vaziri2016|Ihmisen silmä havaitsee yksittäisiä fotoneja.]] Hait havaitsevat 0,5 µV/m sähkökenttiä. [[ref:ritz2004|Muuttolintujen kompassi häiriintyy 15 nT RF-kohinasta]] — 0,03 % geomagneettisesta taustasta. Biologia toimii sähkömagneettisen herkkyyden kvanttirajoilla, koska evoluutio optimoi havaitsemisen, ei toleranssin.",
           "Kaksikymmentäkuusi regulaattorihyväksyttyä laitekategoriaa hyödyntää ei-termisiä EMF-biologisia vaikutuksia koko EM-spektrillä — DC-luunstimulaattoreista (1986) UV-valohoitoon. Tämä sisältää 12 000+ yksittäistä TENS-hyväksyntää, 8–10 miljardin dollarin neuromodulaatiomarkkinat ja 160 000+ implantoitua DBS-laitetta. [[ref:tdcs_fda_depression_2025|tDCS hoitaa masennusta 0,3–1,0 V/m]] — sama suuruusluokka kuin kaupunkiympäristön mitattu RF (0,67–1,51 V/m). Väite EMF:n 'liiallisesta heikkoudesta' on suorassa ristiriidassa regulaattoreiden hyväksymispäätösten kanssa maailmanlaajuisesti.",
           "Ionien pakotettu oskillaatio -mekanismi ([[ref:panagopoulos2025_ifo|Panagopoulos 2025, Frontiers in Public Health]]) osoittaa biologisen vasteen kynnyksen 10⁻⁵ V/m polarisoituneille, koherenteille kentille — viisi kertaluokkaa alle tyypillisen ympäristötason. Intensiteettikuilua ei ole. Kuilu oli olemassa vain malleissa, jotka olettivat termisten vaikutusten olevan ainoa mekanismi.",
-          "Vuonna 2026 [[ref:kim2026_cell_gene_switch|Kim ym. (Cell, IF ~64)]] tunnistivat Cyb5b:n — mitokondrion ulkokalvoproteiinin — geneettisesti varmennetuksi EMF-sensoriksi genominlaajuisessa CRISPR-seulonnassa. 60 Hz pulssi-EMF aktivoi geenipromoottoreita in vivo Cyb5b:n kautta → Ca²⁺-oskillaatiot. Tämä on ensimmäinen geneettisesti tunnistettu EMF-reseptori. 'Liian heikko' -argumentti on nyt ristiriidassa paitsi FDA-laitteiden hyväksyntöjen ja IFO-biofysiikan, myös Cell-lehdessä julkaistun CRISPR-validoidun molekyylireseptorin kanssa.",
+          "Vuonna 2026 [[ref:kim2026_cell_gene_switch|Kim ym. (Cell, IF ~64)]] tunnistivat Cyb5b:n — mitokondrion ulkokalvoproteiinin — geneettisesti varmennetuksi EMF-sensoriksi genominlaajuisessa CRISPR-seulonnassa. 60 Hz pulssi-EMF aktivoi geenipromoottoreita in vivo Cyb5b:n kautta → Ca²⁺-vaihtelut. Tämä on ensimmäinen geneettisesti tunnistettu EMF-reseptori. 'Liian heikko' -argumentti on nyt ristiriidassa paitsi FDA-laitteiden hyväksyntöjen ja IFO-biofysiikan, myös Cell-lehdessä julkaistun CRISPR-validoidun molekyylireseptorin kanssa.",
           "Vuonna 2013 mehiläistutkija [[ref:greggers2013_bee_electric_comm|Uwe Greggers]] totesi, että ihmisperäiset sähkökentät ovat 'paljon pienempiä energialtaan kuin mehiläisten itsensä tuottamat' ja että mehiläisten 'pitäisi olla luonnollisesti suojattuja.' Vuonna 2025 [[ref:mallinson2025_electric_pollution|Mallinson ym.]] testasivat tämän empiirisesti kenttäkokeessa — ja havaitsivat, että ihmisperäiset AC-sähkökentät vähentävät mehiläisten ravinnonhakua 71 % (iScience / Cell Press). Intuitiivinen arvio 'kenttä on liian heikko' epäonnistui empiirisen testin edessä. Tämä on täsmälleen sama virhe, jonka ICNIRP tekee ihmisten terveyden osalta: oletetaan testaamatta, että ympäristön kenttävoimakkuudet ovat biologisten kynnysarvojen alla.",
         ],
         boundary: "Intensiteettiargumentti on empiirinen väite. FDA-hyväksynnät ja IFO-kynnysmittaukset ovat empiirisiä tosiasioita. Todistustaakka on intensiteettiargumentilla selittää, miksi FDA-hyväksytyt ei-termiset laitteet toimivat.",
@@ -422,8 +422,8 @@ const t: Record<string, Copy> = {
         question: "Voivatko demografiset ja sosiaaliset syyt selittää periodin TFR-muutoksen?",
         response: [
           "Kyllä. Koulutus, ehkäisy, asuminen, työmarkkinat, parinmuodostus, muuttoliike, politiikka, toivottu perhekoko, tempo ja ART vaikuttavat havaittuun hedelmällisyyteen. Periodin TFR on viisivuotisikäryhmien summa, ei suora gametti- tai hedelmöitystesti.",
-          "V2 mallintaa siksi ASFR:n ennen TFR:ää ja pitää kysynnän/mahdollisuuden, tempon sekä ART:n ja elävänä syntymisen eksplisiittisinä. Se ei kohdista niiden residuaalivaihtelua biologiseen kenttäreittiin.",
-          "Kuitenkin: pelkkä unideprivaatio alentaa testosteronia 10–15 % ja siittiömäärää 29 % kontrolloiduissa laboratoriokokeissa terveillä nuorilla miehillä — ilman kulttuurista, käyttäytymisen tai kemiallisen altistuksen muutosta ([[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]; [[ref:walker2017_why_we_sleep|Walker 2017]]). Kysymys ei ole vaikuttaako uni hedelmällisyyteen (vaikuttaa, kiistattomasti) vaan häiritseekö EMF unta (CRY/RPM-mekanismi ja LED-melatoniinisuppressiodata sanovat kyllä).",
+          "V2 mallintaa siksi ASFR:n ennen TFR:ää ja pitää kysynnän/mahdollisuuden, tempon sekä ART:n ja elävänä syntymisen nimenomaisina. Se ei kohdista niiden jäännösvaihtelua biologiseen kenttäreittiin.",
+          "Kuitenkin: pelkkä unideprivaatio alentaa testosteronia 10–15 % ja siittiömäärää 29 % kontrolloiduissa laboratoriokokeissa terveillä nuorilla miehillä — ilman kulttuurista, käyttäytymisen tai kemiallisen altistuksen muutosta ([[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]; [[ref:walker2017_why_we_sleep|Walker 2017]]). Kysymys ei ole vaikuttaako uni hedelmällisyyteen (vaikuttaa, kiistattomasti) vaan häiritseekö EMF unta (CRY/RPM-mekanismi ja LED-melatoniinivaimennusdata sanovat kyllä).",
         ],
         boundary: "Maakohtainen trendi ei yksin tunnista biologista syytä. Väestöpäättely vaatii kohdistetun FieldState-, päätepiste-, pari- ja ASFR-paneelin sekä uskottavat kilpailevat mallit.",
       },
@@ -433,7 +433,7 @@ const t: Record<string, Copy> = {
           "Lindgrenin geometria tarjoaa teoreettisen viitekehyksen, joka tuottaa BERM:n testattavat ennusteet — taustariippuvuuden, vektoriorientaation, spektrirakenteen ja geometriaherkkyyden. Nämä ennusteet erottavat BERM:n malleista, jotka käsittelevät EMF-altistusta skalaariannoksena. 87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa Lindgrenin metriikka-ansatzista, mikä antaa CRY-reitille suoran geometrisen perustan.",
           "Jokainen alajuoksuinen biologinen lenkki — kentän geometriasta kromoforin vasteeseen ja elinkohtaisiin päätepisteisiin — vaatii oman kokeellisen validointinsa. Relevantit testit ovat erottavia fysikaalisia ja biologisia kokeita: ennalta määritelty kulma-, tausta- tai PSD-riippuvuus kalibroiduilla kentillä ja asianmukaisilla sham-/lämpökontrolleilla.",
         ],
-        boundary: "Teoreettinen viitekehys tuottaa ennusteet; ennusteet testataan empiirisesti. Jokainen lenkki tarvitsee oman mitatun evidenssinsä.",
+        boundary: "Teoreettinen viitekehys tuottaa ennusteet; ennusteet testataan empiirisesti. Jokainen lenkki tarvitsee oman mitatun näyttönsä.",
       },
       {
         question: "Mitä lisääntymis- ja estetutkimukset todella osoittavat?",
@@ -454,7 +454,7 @@ const t: Record<string, Copy> = {
       {
         question: "Entä vaihteleva EMF-kirjallisuus ja systemaattiset katsaukset?",
         response: [
-          "Evidenssipohja on heterogeeninen. Tutkimuslaatu, altistuskarakterisointi, lämpökontrolli, päätepistevalinta ja replikaatio vaihtelevat huomattavasti. Katsaukset voivat osoittaa, että eri järjestelmistä on löydöksiä, mutta niiden varmuusarviot ja herkkyysanalyysit on raportoitava yhden otsikkolauseen sijaan.",
+          "Näyttöpohja on heterogeeninen. Tutkimuslaatu, altistusluonnehdinta, lämpökontrolli, päätepistevalinta ja replikaatio vaihtelevat huomattavasti. Katsaukset voivat osoittaa, että eri järjestelmistä on löydöksiä, mutta niiden varmuusarviot ja herkkyysanalyysit on raportoitava yhden otsikkolauseen sijaan.",
           "Esimerkiksi [[ref:cordelli2024_who|WHO:n tilaama lisääntymiskatsaus]] raportoi haitallisia löydöksiä useissa analyyseissä, mutta arvioi suuren osan varmuudesta matalaksi tai hyvin matalaksi ja edellytti herkkyyttä korkean SAR:n tutkimuksille. V2 käsittelee tätä kontekstina, ei vakiintuneena väestövaikutuksena.",
         ],
         boundary: "Oikea vastaus epävarmuuteen on parempi mittaus ja läpinäkyvä tutkimuspainotus, ei vahvempi narratiiviväite.",
@@ -480,7 +480,7 @@ const t: Record<string, Copy> = {
       {
         question: "Mikä siirtäisi mallin rakenteesta tulokseksi?",
         response: [
-          "Mittausvalmis FieldState tarvitsee dokumentoidun kalibroinnin, B₀-vektorin, elinkohtaisen siirtofunktion, PSD:n, vuorokausikontekstin, vaiheen/koherenssin ja provenienssin. Se on sen jälkeen yhdistettävä ennalta määriteltyyn elin- tai paripäätepisteeseen evidenssi- ja parametri-ID:hin kiinnittyvillä vastaavuuksilla.",
+          "Mittausvalmis FieldState tarvitsee dokumentoidun kalibroinnin, B₀-vektorin, elinkohtaisen siirtofunktion, PSD:n, vuorokausikontekstin, vaiheen/koherenssin ja provenienssin. Se on sen jälkeen yhdistettävä ennalta määriteltyyn elin- tai paripäätepisteeseen näyttö- ja parametri-ID:hin kiinnittyvillä vastaavuuksilla.",
           "Kalibrointi tehdään vain opetusjaksolla, jota seuraavat riippumaton laboratorioreplikaatio ja sovituksen ulkopuolelle jätetty ASFR/TFR-jakso. Sekä nolla- että ei-nollatulosten tulee päivittää kausaalirekisteriä.",
         ],
         boundary: "Kunnes nämä kytkennät ovat olemassa, v2 on tutkimusmäärittely ja kausaalikartta, ei kalibroitu maakohtainen ennustemalli.",
@@ -512,7 +512,7 @@ const t: Record<string, Copy> = {
           "Toiseksi matkapuhelimet (tietolaite) ovat HEIKOIN EMF-proxy (RMSE 1,053). Asumisen sähkönkulutus (infrastruktuuri) on PARAS (univariaatti-RMSE 0,533). Jos mekanismi olisi 'tieto → valinnat', tietolaitteen pitäisi ennustaa parhaiten. Ei ennusta.",
           "Kolmanneksi sentinelkilajit reagoivat sähkökenttiin ([[ref:mallinson2025_electric_pollution|Mallinson 2025]]: mehiläiset −71 %) mutta eivät BKT:hen. Koirat, mehiläiset ja sammakot eivät tee taloudellisia valintoja.",
         ],
-        boundary: "Poikkileikkausanalyysi ei voi tunnistaa kausaalisuuntaa EMF:n ja BKT:n välillä. Erotteleva evidenssi tulee sentinelkilajeista, luonnollisista kokeista (Faraday-pesät) ja väestöistä ilman sähköä.",
+        boundary: "Poikkileikkausanalyysi ei voi tunnistaa kausaalisuuntaa EMF:n ja BKT:n välillä. Erotteleva näyttö tulee sentinelkilajeista, luonnollisista kokeista (Faraday-pesät) ja väestöistä ilman sähköä.",
       },
       {
         question: "Sähkön saatavuus on vain kehityksen proxy",
@@ -528,7 +528,7 @@ const t: Record<string, Copy> = {
         response: [
           "[[ref:sousouri2025|Sousouri ym. 2025]] (NeuroImage, ETH Zürich) suoritti kaksoissokkotutkimuksen (RCT) CACNA1C-genotyypityksellä. Rs7304986 T/C -kantajat osoittivat muuttunutta unisukkuladynamiikkaa 3,6 GHz RF-altistuksessa ICNIRP-rajojen alapuolella, kun taas CC-homotsygootit eivät. Koehenkilöt eivät tienneet genotyyppiään, altistustilaa eivätkä hypoteesia. Nosebo ei voi tuottaa genotyypistä riippuvaisia neurofysiologisia muutoksia kaksoissokkoasetelmassa.",
           "Tämä muuttaa EHS-kysymyksen muodosta 'tuntevatko itseraportoijat jotain?' (jossa nosebo on validi huoli) muotoon 'ennustaako ionikanavan genotyyppi mitattavan aivovasteen RF:lle?' (jossa nosebo on mekanistisesti poissuljettu). Relevantti muuttuja ei ole itsediagnoosi vaan VGCC-polymorfismi — biologinen ominaisuus, johon koehenkilö ei voi vaikuttaa uskomuksellaan.",
-          "[[ref:belpomme2022|Belpomme ym. 2022]] karakterisoi ~1 000 EHS-potilasta objektiivisilla biomarkkereilla (histamiini, S100B, nitrotyrosiini). Yhdistettynä [[ref:sousouri2025|Sousorin genotyyppidataan]], evidenssi viittaa EMF-herkkyyden jatkuvaan jakaumaan väestössä, jossa kliininen EHS-fenotyyppi edustaa hännän ääripäätä — ei psykosomaattista kategoriaa.",
+          "[[ref:belpomme2022|Belpomme ym. 2022]] luonnehtii ~1 000 EHS-potilasta objektiivisilla biomarkkereilla (histamiini, S100B, nitrotyrosiini). Yhdistettynä [[ref:sousouri2025|Sousorin genotyyppidataan]], näyttö viittaa EMF-herkkyyden jatkuvaan jakaumaan väestössä, jossa kliininen EHS-fenotyyppi edustaa hännän ääripäätä — ei psykosomaattista kategoriaa.",
         ],
         boundary: "Nosebohypoteesi tekee testattavan ennusteen: genotyypin ei pitäisi ennustaa vastetta kaksoissokkoasetelmassa. [[ref:sousouri2025|Sousouri 2025]] falsifioi tämän ennusteen CACNA1C rs7304986:lle. Replikaatio suuremmalla N:llä ja lisä-VGCC-varianteilla tarvitaan.",
       },
@@ -536,7 +536,7 @@ const t: Record<string, Copy> = {
         question: "Mekanismi on epäuskottava",
         response: [
           "Tätä argumenttia on sovellettu jokaiseen ei-termiseen EMF-havaintoon 50 vuoden ajan — ja se on ollut väärässä joka kerta.",
-          "Vuonna 1976 [[ref:adey1976_calcium_window|Adey]] ja Blackman dokumentoivat kalsiumeffluksin aivokudoksesta tietyillä kenttäintensiteeteillä. Hylättiin 'artefaktiksi' koska epälineaarinen annos-vaste oli 'epäuskottava.' Vuonna 2026 [[ref:kim2026_cell_gene_switch|Kim ym. (Cell)]] osoittivat, että rytmiset kalsiumoskillaatiot — eivät lineaarinen kalsiumpitoisuuden nousu — ohjaavat geeniekspressiota, selittäen ikkunailmiön.",
+          "Vuonna 1976 [[ref:adey1976_calcium_window|Adey]] ja Blackman dokumentoivat kalsiumeffluksin aivokudoksesta tietyillä kenttäintensiteeteillä. Hylättiin 'artefaktiksi' koska epälineaarinen annos-vaste oli 'epäuskottava.' Vuonna 2026 [[ref:kim2026_cell_gene_switch|Kim ym. (Cell)]] osoittivat, että rytmiset kalsiumvaihtelut — eivät lineaarinen kalsiumpitoisuuden nousu — ohjaavat geeniekspressiota, selittäen ikkunailmiön.",
           "Vuonna 1995 [[ref:lai1995_dna_breaks|Lai ja Singh]] havaitsivat DNA-katkoksia 2450 MHz säteilystä. Teollisuus rahoitti vastatutkimuksia ja painosti heidän yliopistoaan. Mekanismi tunnistettiin myöhemmin: oksidatiivinen stressi VGCC-välitteisen kalsiumtulvan kautta, vahvistettu melatoniinin suojavaikutuksella.",
           "Vuonna 2026 [[ref:kim2026_cell_gene_switch|Kim ym:n Cell-artikkelia]] kutsuttiin 'incredibly implausible' fyysikko [[ref:york2026_kim_commentary|Andrew Yorkin]] toimesta. Artikkeli käytti CRISPR-seulontaa Cyb5b:n tunnistamiseksi EMF-sensoriksi ja osoitti palautuvan geeniekspression kontrollin transgeenisissä hiirissä.",
           "Kaava on johdonmukainen: data on vahvaa, mekanismi on tuntematon, kriitikot julistavat mahdottomuuden. Sitten mekanismi löytyy. 'Epäuskottavuusargumentti' ei ole tiedettä — se on argumentti tietämättömyydestä.",
@@ -547,7 +547,7 @@ const t: Record<string, Copy> = {
       {
         question: "Sininen valo selittää kaikki LED:n terveysvaikutukset",
         response: [
-          "Sininen valo suppressoi melatoniinia — tämä on vakiintunutta. Mutta se ei ole koko kuva.",
+          "Sininen valo vaimentaa melatoniinia — tämä on vakiintunutta. Mutta se ei ole koko kuva.",
           "[[ref:duraccio2019_blue_light|Duraccio ym. (2019)]] havaitsi, että sinisen valon suodatuslasit EIVÄT merkitsevästi parantaneet nuorten unenlaatua. Jos sininen valo olisi ainoa mekanismi, sen suodattamisen pitäisi toimia. Ei toimi.",
           "BERM ehdottaa, että LED-lamput tuottavat KAKSI biologisesti relevanttia ulostuloa: sininen valo (optinen, retinaalinen) ja IF-emissiot (sähkömagneettinen, systeeminen). Sinisen valon suodatus kohdistuu ensimmäiseen mutta ei toiseen.",
           "Tämä tuottaa testattavan ennusteen (SLEEP-1): Faraday-suojattu LED-lamppu joka estää IF-emissiot mutta säilyttää identtisen valospektrin tuottaisi vähemmän biologista häiriötä kuin suojaamaton lamppu. Jos suojauksella ei ole vaikutusta, IF-kanavahypoteesi heikkenee.",
@@ -557,7 +557,7 @@ const t: Record<string, Copy> = {
       {
         question: "Miksi polku C saa 25 % kun se oli alun perin 15 %?",
         response: [
-          "Polku C sai alun perin 15 % perustuen tunnettuun rooliinsa sirkadiaanisen kellon modulaattorina. Vuonna 2025 [[ref:yap2025|Yap ja kollegat]] löysivät, että CRY2 — polku C:n pääproteiini — on myös fysikaalisessa vuorovaikutuksessa TRPC1:n, kationikanavan, kanssa ja moduloi kalsiumsignalointia mekanismilla, joka vaatii sekä valon että FAD:n. Tämä tarkoittaa, että polku C kattaa KAKSI alaspäin suuntautuvaa vaikutusta: sirkadiaanisen kellon häiriön JA CRY2-riippuvaisen kalsiumsignaloinnin. Korotettu paino (25 %) heijastaa tätä laajennettua biologista vaikutuskenttää.",
+          "Polku C sai alun perin 15 % perustuen tunnettuun rooliinsa sirkadiaanisen kellon modulaattorina. Vuonna 2025 [[ref:yap2025|Yap ja kollegat]] löysivät, että CRY2 — polku C:n pääproteiini — on myös fysikaalisessa vuorovaikutuksessa TRPC1:n, kationikanavan, kanssa ja säätelee kalsiumsignalointia mekanismilla, joka vaatii sekä valon että FAD:n. Tämä tarkoittaa, että polku C kattaa KAKSI alaspäin suuntautuvaa vaikutusta: sirkadiaanisen kellon häiriön JA CRY2-riippuvaisen kalsiumsignaloinnin. Korotettu paino (25 %) heijastaa tätä laajennettua biologista vaikutuskenttää.",
           "TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polku A toimii VGCC:iden kautta ja nifedipiini estää sen. Polku C:n TRPC1-haara EI ole nifedipiinin estämä. Kaksi polkua pysyy farmakologisesti erillisinä — ne jakavat saman ylävirtastimulaation (EMF) mutta toimivat täysin eri kanavaperheiden kautta.",
           "Ennuste TRPC1-1 testaa tämän suoraan: EMF-altistus reproduktiosoluille nifedipiinin (estää A:n), anti-TRPC1:n (estää C-kalsiumin) tai molempien kanssa paljastaa kunkin polun suhteellisen kontribuution.",
         ],
@@ -573,7 +573,7 @@ const t: Record<string, Copy> = {
           "4. KOEHENKILÖIDEN YÖLLINEN EMF: WiFi-reititin makuuhuoneessa vs. EMF-vapaa yö vaikuttaa CaMKII:n palautumiseen. Koehenkilö joka nukkui EMF-vapaassa ympäristössä tulee kokeeseen eri baseline-tilassa kuin koehenkilö joka nukkui WiFi:n ja puhelimen vieressä.",
           "Kolme näistä moderaattoreista ennustaa tutkimustuloksia tilastollisesti merkitsevästi: laji/primaus (χ²=9,4, p=0,002 — eläintutkimukset löytävät vaikutuksia 92 % ajasta vs. 35 % ihmistutkimuksista), kesto (χ²=10,8, p=0,001 — krooninen altistus positiivinen 92 % vs. akuutti 31 %) ja pulsaatio (χ²=3,9, p=0,048 — pulsatoidut signaalit positiivisia 88 % vs. CW 48 %). [[ref:weller2025_dna|Weller ym. (2025)]] validoi tämän kuvion 517 genotoksisuustutkimuksessa: todelliset laitteet tuottivat enemmän vaikutuksia kuin laboratorion CW-signaalit, kesto oli kriittinen tekijä ja 58 % DNA-vaurioista tapahtui ICNIRP-turvallisuusrajojen alapuolella.",
           "Jokaisessa null-tuloksen tutkimuksessa, jossa alaryhmäanalyysi suoritettiin, löydettiin positiivinen alaryhmä: Graham 1996 tunnisti 'matalan baseline-melatoniinin' alaryhmän, Lustenberger 2015 raportoi 'hämmästyttäviä yksilöiden välisiä eroja' ja [[ref:sousouri2025|Sousouri 2025]] osoitti vasteen vain T/C-kantajilla. Kokonaistason nollatulos peittää todellisia vaikutuksia herkissä alaryhmissä.",
-          "Tutkimus A (talvi, pohjoinen leveysaste, AA-genotyypin koehenkilöt, korkea lab-ELF, WiFi-kodit) löytää positiivisen tuloksen. Tutkimus B (kesä, etelä, GG-genotyypin koehenkilöt, matala lab-ELF, EMF-vapaat kodit) löytää nollatuloksen. Molemmat ovat OIKEITA. Meta-analyysit raportoivat 'ristiriitaista evidenssiä' koska ne eivät kontrolloi näitä neljää muuttujaa.",
+          "Tutkimus A (talvi, pohjoinen leveysaste, AA-genotyypin koehenkilöt, korkea lab-ELF, WiFi-kodit) löytää positiivisen tuloksen. Tutkimus B (kesä, etelä, GG-genotyypin koehenkilöt, matala lab-ELF, EMF-vapaat kodit) löytää nollatuloksen. Molemmat ovat OIKEITA. Meta-analyysit raportoivat 'ristiriitaista näyttöä' koska ne eivät kontrolloi näitä neljää muuttujaa.",
           "Testattavissa ILMAN uutta dataa: retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta, koodaten tutkimuksen kuukausi, laboratorion leveysaste, rakennusmateriaali ja koehenkilöiden tausta — logistinen regressio ennustaa positiivisen vs. nollatuloksen moderaattoreista.",
         ],
         boundary: "Neljän moderaattorin kehys on BERM:n synteesi (M-taso), nyt kvantitatiivisella validoinnilla: kolme moderaattoria saavuttaa tilastollisen merkitsevyyden (p<0,05) ja [[ref:weller2025_dna|Weller 2025]] (n=517 genotoksisuustutkimusta) vahvistaa kuvion itsenäisesti. Yksittäisillä moderaattoreilla on empiiristä tukea: vuodenaika (Halgamuge 2015, E-taso), genotyyppi ([[ref:sousouri2025|Sousouri 2025]], E-taso), ELF-priming (PMC4757866, E-taso). Retrospektiivinen metamoderaattoritesti (REPL-1) nostaisi tämän M-tasolta E-tasolle.",
@@ -604,11 +604,11 @@ const t: Record<string, Copy> = {
     protocolLabel: "Protokolla",
     versionTimeline: "Versioaikajana",
     abandonedLabel: "Hylätty",
-    demotedLabel: "Demotoitu",
+    demotedLabel: "Alennettu",
     activeLabel: "Aktiivinen",
     currentLabel: "Nykyinen",
     nextLabel: "Seuraava",
-    sentinelTitle: "Sentinellilajit",
+    sentinelTitle: "Indikaattorilajit",
   },
   ja: {
     title: "批判と未解決の問題",

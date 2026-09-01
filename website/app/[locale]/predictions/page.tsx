@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Target, BookOpen } from "lucide-react";
+import { Target, BookOpen, Building2, Sun, Zap } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { NextPageLink } from "@/components/NextPageLink";
 import { LOCKED_PREDICTIONS, metricLabel, countryLabel } from "@/lib/predictions";
@@ -1808,6 +1808,74 @@ const COPY = {
     sentinelHierarchyAria: "Sentinel species sensitivity hierarchy",
     sensitivityTop: "Sensitivity (highest at top)",
     emfSensitivity: "EMF sensitivity",
+    civTitle: "Civilization predictions",
+    civLead: "Macro-scale predictions derived from BERM's scalar-exposure model applied to civilizational patterns. Each tests whether EMF infrastructure modulates fertility, cultural output, and cross-species biology at population scale.",
+    civPredictions: [
+      { id: "E-CIV-1", title: "No Renaissance during 2020–2053 grand solar minimum", description: "The current grand solar minimum (2020–2053) will NOT produce a cultural renaissance comparable to previous grand minima (Italian Renaissance/Spörer, Scientific Revolution/Maunder, Romanticism/Dalton) because anthropogenic electromagnetic infrastructure masks the biological recovery that solar minima previously enabled.", falsification: "A marked cultural renaissance occurs in high-latitude nations during 2020–2053.", timeline: "Observable by 2055" },
+      { id: "E-CIV-2", title: "Sub-Saharan African fertility decline acceleration", description: "As Sub-Saharan Africa’s mobile network penetration crosses 80% and grid electrification exceeds 60%, regional TFR will begin declining at a rate comparable to East Asia’s 1990–2010 trajectory (>0.1/year), despite strong pronatalist cultural norms.", falsification: "African TFR remains stable or declines <0.05/year despite reaching those infrastructure thresholds.", timeline: "Testable 2030–2040" },
+      { id: "E-CIV-3", title: "Pronatalist policy ceiling", description: "No national pronatalist policy will achieve sustained (>5 year) return to replacement-level fertility (TFR ≥ 2.1) in any country with mobile penetration >90% and grid coverage >95%, regardless of spending level.", falsification: "Any such country sustains TFR ≥ 2.1 for 5+ years through policy intervention.", timeline: "Continuously testable" },
+      { id: "E-CIV-4", title: "Technology-restricting communities maintain fertility", description: "Communities that restrict electromagnetic technology (Old Order Amish, ultra-Orthodox with kosher phones, technology-free intentional communities) will maintain TFR >4.0 while surrounding populations continue declining, and communities that adopt technology will see TFR converge toward mainstream within one generation (~25 years).", falsification: "Technology-restricting communities show fertility decline parallel to mainstream, or adopting communities maintain high TFR.", timeline: "Continuously testable" },
+      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.909) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
+    ],
+    civTimeline: "Timeline",
+    civFalsification: "Falsification criterion",
+    civLocked: "Locked: 2026-08-31",
+    civStatus: "LOCKED — awaiting test",
+    actTitle: "Hormetic activation predictions",
+    actLead: "Predictions derived from the hormetic dose-response framework: low-EMF populations maintain higher biological capacity, and transition to high-EMF environments produces measurable biomarker convergence.",
+    actPredictions: [
+      {
+        id: "E-ACT-1",
+        title: "Sub-Saharan African males have higher testosterone than matched European males",
+        description: "Low-EMF populations maintain higher biological activation. Sub-Saharan African males (lower cumulative EMF exposure from lower electrification, mobile penetration, and urbanization rates) should show higher mean serum testosterone than age-, BMI-, and activity-matched European males. This is the population-level prediction from the hormetic framework: the recovery term α dominates in low-EM environments.",
+        timeline: "Testable immediately (cross-sectional comparison of existing endocrine cohorts)",
+        falsification: "Age/BMI/activity-matched African and European males show no testosterone difference, or European males show higher values",
+      },
+      {
+        id: "E-ACT-2",
+        title: "Immigrant biomarker convergence within one generation",
+        description: "Immigrants from low-EMF countries (sub-Saharan Africa, rural South Asia) to high-EMF countries (Western Europe, East Asia) should show measurable biomarker convergence toward host-country values within 15–25 years. Specifically: testosterone decline, cortisol increase, melatonin decrease, sperm quality decline — independent of dietary and lifestyle acculturation. The EMF environment is the unexplained residual after controlling for behavioral adaptation.",
+        timeline: "Testable within 5–10 years (longitudinal immigrant cohort with biomarker tracking)",
+        falsification: "Immigrant biomarkers remain at origin-country levels despite decades of residence in high-EMF environment, after controlling for lifestyle factors",
+      },
+      {
+        id: "E-ACT-3",
+        title: "Old Order Amish males maintain higher testosterone than age-matched mainstream Americans",
+        description: "Old Order Amish (no grid electricity, no personal electronics) provide a within-country control for EMF exposure. Prediction: Amish males show higher serum testosterone, lower cortisol, higher melatonin, and better sperm parameters than age- and BMI-matched mainstream American males. This is the most directly testable activation prediction because it controls for nationality, healthcare access, and genetic background.",
+        timeline: "Testable immediately (cross-sectional study with Amish communities)",
+        falsification: "No testosterone or cortisol difference between Amish and mainstream Americans after controlling for BMI and age",
+      },
+    ],
+    actTimeline: "Timeline",
+    actFalsification: "Falsification criterion",
+    actLocked: "Locked: 2026-08-31",
+    actStatus: "LOCKED — awaiting test",
+    spaceWeatherTitle: "Space Weather Biology",
+    spaceWeatherLead: "Predictions linking natural electromagnetic environment (Schumann resonance, Pc1 micropulsations, geomagnetically induced currents) to biological outcomes through the CRY/RPM pathway.",
+    spaceWeatherPredictions: [
+      {
+        id: "GIC-HEALTH-1",
+        label: "GIC–Health Correlation",
+        text: "Regions with high geomagnetic storm exposure AND dense power grid infrastructure will show elevated cardiovascular event rates (MI, stroke) during strong geomagnetic storms (Kp ≥ 7), compared to: (a) same regions during quiet conditions, and (b) high-storm regions with sparse grids. The effect should be strongest at high magnetic latitudes (>55°) where GIC amplitudes are largest. Predicted effect size: 5–15% increase in daily MI rate during severe storms in grid-dense high-latitude regions.",
+        status: "testable",
+      },
+      {
+        id: "SR-MASKING-1",
+        label: "SR Masking → Circadian Disruption",
+        text: "Urban populations where Schumann resonance (7.83 Hz) is measurably masked by anthropogenic ELF noise will show higher rates of circadian disruption markers (delayed sleep phase, melatonin onset delay, cortisol rhythm flattening) compared to rural populations where SR signal is clean, after controlling for light exposure, work schedules, and socioeconomic factors. Measurement: SR signal-to-noise ratio at bedroom level should inversely correlate with circadian rhythm quality (r > 0.3, p < 0.01).",
+        status: "testable",
+      },
+      {
+        id: "ISS-MEL-MAGFIELD-1",
+        label: "ISS Melatonin–Magnetic Field",
+        text: "If ISS astronauts are provided with a local 25–50 μT static magnetic field (simulating Earth-surface geomagnetic conditions) during sleep periods, their melatonin onset will normalize toward ground-based values (currently delayed 2.7–3.0 hours), sleep duration will increase toward 7+ hours (currently 6.4 hours), and circadian phase markers will stabilize. This directly tests whether the hypomagnetic environment — not microgravity alone — drives the CRY-mediated circadian disruption observed in spaceflight.",
+        status: "testable",
+      },
+    ],
+    spaceWeatherTimeline: "GIC-HEALTH-1: testable now with existing health registries + geomagnetic data. SR-MASKING-1: requires concurrent SR measurement + circadian biomarker study (~2 years). ISS-MEL-MAGFIELD-1: requires ISS experiment protocol (~5 years, proposed to ESA/NASA/JAXA).",
+    spaceWeatherFalsification: "GIC-HEALTH-1 fails if no storm–MI correlation exists after controlling for temperature. SR-MASKING-1 fails if circadian quality is identical in SR-masked and SR-clean environments. ISS-MEL-MAGFIELD-1 fails if magnetic field restoration has no effect on astronaut circadian rhythms.",
+    spaceWeatherLocked: "Locked 2026-08-31. Three space weather predictions based on the natural EM environment layer (Level 3) and CRY/RPM susceptibility (Level 2).",
+    spaceWeatherStatus: "Registered. No data collection started.",
     nextLabel: "Next",
     sourcesTitle: "Sources",
   },
@@ -1822,7 +1890,7 @@ const COPY = {
     v2Status: "BERM v17 ei julkaise maakohtaisia FieldState-kalibroituja ennusteita. Nykyinen reitti tarvitsee kohdistetun paikallisen FieldStaten, rekisteröidyt elin- ja paripäätepisteet, ASFR-mallinnuksen ja ulkoisen ajallisen validoinnin ennen ennusteen lukitsemista.",
     v2Note: "Kun FieldState-kalibroidut ennusteet ovat valmiita, ne julkaistaan rinnakkain näiden skalaariproxy-ennusteiden kanssa vertailua varten.",
     histTitle: "Historialliset / evoluutioennusteet",
-    histLead: "Ennusteet jotka on johdettu sisäkkäisestä χ-mallista ja Pohjoinen paketti -hypoteesista. Nämä testaavat, moduloivatko populaatiokohtaiset biologiset χ-profiilit EMF-hedelmällisyyssuhdetta.",
+    histLead: "Ennusteet jotka on johdettu sisäkkäisestä χ-mallista ja Pohjoinen paketti -hypoteesista. Nämä testaavat, säätelevätkö populaatiokohtaiset biologiset χ-profiilit EMF-hedelmällisyyssuhdetta.",
     r43Title: "R43: Protokolla-verhokäyräresonanssi",
     r43Text: "[[ref:zandieh2025|Zandieh ym. (2025)]] raportoi taajuusriippuvaisia mitokondrio-/ROS-havaintoja ELF-syöpäsolukokeissa (0,01–5 Hz; enintään 100 mT). Se tukee alustavaa mitattua PSD-protokollaa sen testaamiseksi, tuottaako verkkokerroksen verhokäyrämodulaatio soluvasteen. Se ei osoita RF-verkon verhokäyrävaikutuksia, eDRX-kausaliteettia eikä lisääntymis-/TFR-parametria.",
     country: "Maa",
@@ -1835,14 +1903,14 @@ const COPY = {
     statusLabel: "Tila",
     history: "Versiohistoria",
     sentinelTitle: "Sentinellikaskadi-ennusteet",
-    sentinelLead: "Lajienväliset viive-ennusteet CSLI:n 31 maan mehiläis–TFR-paneelista. Nämä testaavat, edeltääkö sentinellilajien lasku ihmisen hedelmällisyyden laskua lukitulla viiveellä.",
+    sentinelLead: "Lajienväliset viive-ennusteet CSLI:n 31 maan mehiläis–TFR-paneelista. Nämä testaavat, edeltääkö indikaattorilajien lasku ihmisen hedelmällisyyden laskua lukitulla viiveellä.",
     architectureNote: "Arkkitehtuurihuomautus",
     architectureText: "Nämä ennusteet käyttävät skalaarin kumulatiivisen altistuksen arkkitehtuuria (v17). Mobiilipenetraatio on teknologian käyttöönoton ajoitusproxy. Herkkyysalue varioi yhtä parametria kerrallaan; se ei ole probabilistinen luottamusväli.",
     ciExceededTitle: "Kolmihaarainen falsifikaatioanalyysi",
     finlandFalsification: "Tila: CI YLITTYNYT (havaittu ~1,30, yläraja 1,24). Kolme mahdollista selitystä BERM:n kehyksessä: (a) Malli yliarvioi biologista vaikutusta Suomessa — eksponentiaalinen EMF–TFR-suhde voi saturoitua mallinnettua aiemmin. (b) Eksogeeninen kompensaatio: maahanmuuton TFR-panos suurempi kuin arvioitu — Suomen maahanmuuttajien TFR (~1,8–2,2) voi nostaa kansallista TFR:ää yli syntyperäisväestön ennusteen. (c) CI liian kapea: mallin epävarmuusvyöhykkeet aliarvioivat stokastista vaihtelua pienen väestön TFR:ssä. Erotteleva testi: vertaa syntyperäisten TFR:ää (jos saatavissa Tilastokeskuksesta) ennusteeseen. Jos syntyperäisten TFR ≤ 1,24, selitys (b) vahvistuu eikä malli ole falsifioitu.",
     southKoreaFalsification: "Tila: CI RISKIALUE (havaittu ~0,80, yläraja 0,72). Kolme mahdollista selitystä: (a) Malli yliarvioi EMF-suppressiota Koreassa — kulttuuriset/poliittiset tekijät voivat vaikuttaa TFR:ään itsenäisesti EMF:stä riippumatta. (b) Mittausviive: Korean pronatalistiset politiikat (käteistuet, asumistuet) ovat voineet tilapäisesti nostaa TFR:ää biologisen trajektorin yläpuolelle. (c) Mallin palautumisarvio Korealle voi olla liian optimistinen. Erotteleva testi: seuraa laskeeko Korean TFR kohti ennustettua arvoa vai vakiintuuko se nykyiselle tasolle.",
     modulomeTitle: "Modulooma-ennusteet",
-    modulomeLead: "Mekanistiset ennusteet jotka perustuvat kahdeksankerroksiseen EMF-moduloomiin ja terapeuttisten laitteiden evidenssiin. Nämä ovat kvalitatiivisia, falsifioitavia ennusteita — jokainen määrittää konkreettisen kokeellisen tuloksen.",
+    modulomeLead: "Mekanistiset ennusteet jotka perustuvat kahdeksankerroksiseen EMF-moduloomiin ja terapeuttisten laitteiden näyttöön. Nämä ovat kvalitatiivisia, falsifioitavia ennusteita — jokainen määrittää konkreettisen kokeellisen tuloksen.",
     modulomePredictions: [
       {
         id: "M-1",
@@ -1882,7 +1950,7 @@ const COPY = {
       {
         id: "M-5",
         title: "LLLT parantaa spermatogeneesiä CCO-aktivaation kautta",
-        description: "Matalan tason laserterapia (620–1100 nm) kiveksiin kontrolloidussa eläinkokeessa parantaa spermatogeneesin merkkiaineita (liikkuvuus, konsentraatio, morfologia) mitokondriaalisen sytokromi c -oksidaasiaktivaation kautta — sama kromoforimekanismi kuin FDA-hyväksytyissä fotobiomodulaatiolaitteissa. Jos LLLT (optinen EM) parantaa hedelmällisyyttä CCO:n kautta ja RF (matalampi EM) heikentää hedelmällisyyttä CRY:n kautta, kromoforien yleistys ennustaa, että sekä optiset että RF-taajuudet moduloivat lisääntymisbiologiaa taajuusspesifisten kromofoorikohteiden kautta.",
+        description: "Matalan tason laserterapia (620–1100 nm) kiveksiin kontrolloidussa eläinkokeessa parantaa spermatogeneesin merkkiaineita (liikkuvuus, konsentraatio, morfologia) mitokondriaalisen sytokromi c -oksidaasiaktivaation kautta — sama kromoforimekanismi kuin FDA-hyväksytyissä fotobiomodulaatiolaitteissa. Jos LLLT (optinen EM) parantaa hedelmällisyyttä CCO:n kautta ja RF (matalampi EM) heikentää hedelmällisyyttä CRY:n kautta, kromoforien yleistys ennustaa, että sekä optiset että RF-taajuudet säätelevät lisääntymisbiologiaa taajuusspesifisten kromofoorikohteiden kautta.",
         timeline: "Testattavissa 3–6 kuukaudessa (eläinkoe)",
         falsification: "Ei parannusta missään spermatogeneesin mittarissa, tai parannus on luonteeltaan terminen",
       },
@@ -1895,7 +1963,7 @@ const COPY = {
       },
       {
         id: "NEURO-2",
-        title: "Litium vaimentaa EMF-indusoitua hermosolujen oskillaatiohäiriötä",
+        title: "Litium vaimentaa EMF-aiheutettua hermosolujen oskillaatiohäiriötä",
         description: "Altista hiPSC-johdetut hermosoluviljelmät EMF:lle ja mittaa verkko-oskillaatiomalleja (MEA). Lisää sitten litium. Ennuste: litium palauttaa oskillaatioiden säännöllisyyden koska se vaimentaa Ca²⁺-oskillaatioita IMPA1/inositolireitin kautta — sama mekanismi joka tekee siitä tehokkaan kaksisuuntaisessa mielialahäiriössä.",
         timeline: "Testattavissa 3–6 kuukaudessa (in vitro)",
         falsification: "Litium ei palauta oskillaatioiden säännöllisyyttä EMF-altistuksen jälkeen",
@@ -1927,12 +1995,12 @@ const COPY = {
     modulomeLocked: "Lukittu: 2026-08-21",
     modulomeStatus: "LUKITTU — odottaa testiä",
     cascadeTitle: "Sairauskaskadi-ennusteet",
-    cascadeLead: "Ennusteet jotka perustuvat nelikanavaiseen kroonisten sairauksien kaskadimalliin. Jokainen testaa, noudattaako seitsemän sairauden kaskadi modulooman biologista viivehierarkiaa ja kanavaspesifisiä altistusmalleja.",
+    cascadeLead: "Ennusteet jotka perustuvat nelikanavaiseen kroonisten sairauksien kaskadimalliin. Jokainen testaa, noudattaako seitsemän sairauden kaskadi modulooman biologista viivehierarkiaa ja kanavatarkkoja altistusmalleja.",
     cascadePredictions: [
       {
         id: "P11",
         title: "COVID IF-kanava -retrodiktio",
-        description: "Lockdownin aikana IF-herkät sairaudet (hedelmättömyys → paraneminen) ja RF-herkät sairaudet (masennus → paheneminen) käyttäytyvät erisuuntaisesti. COVID-lockdown toimii luonnollisena kokeena: työpaikkojen IF-altistus laski ~70 % (LED-valaistut toimistot kiinni) samalla kun kotien RF-altistus nousi ~40 % (lisää puhelin-/Wi-Fi-käyttöä). Tämä ennustaa kanavaspesifisiä, vastakkaismerkkisiä terveysvaikutuksia.",
+        description: "Lockdownin aikana IF-herkät sairaudet (hedelmättömyys → paraneminen) ja RF-herkät sairaudet (masennus → paheneminen) käyttäytyvät erisuuntaisesti. COVID-lockdown toimii luonnollisena kokeena: työpaikkojen IF-altistus laski ~70 % (LED-valaistut toimistot kiinni) samalla kun kotien RF-altistus nousi ~40 % (lisää puhelin-/Wi-Fi-käyttöä). Tämä ennustaa kanavatarkkoja, vastakkaismerkkisiä terveysvaikutuksia.",
         validation: "GBD 2024 + kansalliset terveysrekisterit",
         falsification: "Ei erisuuntaista vaikutusta IF-herkkien ja RF-herkkien sairauksien välillä lockdownin aikana",
       },
@@ -1946,7 +2014,7 @@ const COPY = {
       {
         id: "P13",
         title: "Kaskadijärjestyksen testi",
-        description: "Seitsemän kroonisen sairauden kiihtymispisteiden järjestys noudattaa modulooman biologista viivehierarkiaa: uni < masennus < ADHD < diabetes < autoimmuuni < hedelmättömyys < syöpä. Jokaisen kiihtymispisteen pitäisi osua 0–10 vuoden viiveellä spesifisen teknologiasukupolven massakäyttöönoton jälkeen.",
+        description: "Seitsemän kroonisen sairauden kiihtymispisteiden järjestys noudattaa modulooman biologista viivehierarkiaa: uni < masennus < ADHD < diabetes < autoimmuuni < hedelmättömyys < syöpä. Jokaisen kiihtymispisteen pitäisi osua 0–10 vuoden viiveellä tarkan teknologiasukupolven massakäyttöönoton jälkeen.",
         validation: "GBD 2024 kiihtymispisteiden tilastollinen analyysi (rakenteellinen murroskohdan tunnistus)",
         falsification: "Kiihtymispisteiden järjestys ei vastaa modulooman hierarkiaa, tai ne eivät ole ajallisesti kytköksissä teknologian käyttöönottoon",
       },
@@ -1960,7 +2028,7 @@ const COPY = {
       {
         id: "P15",
         title: "CACNA1C-genotyyppi × psykedeelien vaste",
-        description: "Potilaat joilla on CACNA1C-riskivariantteja (assosioitu kaksisuuntaiseen mielialahäiriöön ja skitsofreniaan GWAS:ssa) osoittavat muuttuneen psilosybiinivasteen, koska psykedeelien signaaliketju päättyy Cav1.2:een (CACNA1C). Erityisesti rs1006737 A-alleelin kantajilla pitäisi olla joko tehostunut tai paradoksaalinen vaste, erottuva villin tyypin vastaajista.",
+        description: "Potilaat joilla on CACNA1C-riskivariantteja (yhdistetty kaksisuuntaiseen mielialahäiriöön ja skitsofreniaan GWAS:ssa) osoittavat muuttuneen psilosybiinivasteen, koska psykedeelien signaaliketju päättyy Cav1.2:een (CACNA1C). Erityisesti rs1006737 A-alleelin kantajilla pitäisi olla joko tehostunut tai paradoksaalinen vaste, erottuva villin tyypin vastaajista.",
         validation: "Farmakogenominen analyysi olemassa olevasta psilosybiini-koedatasta CACNA1C-genotyypityksellä",
         falsification: "Ei genotyyppi-vaste-assosiaatiota CACNA1C-lokuksessa",
       },
@@ -2001,7 +2069,7 @@ const COPY = {
       },
       {
         id: "P21",
-        title: "Yötila ei poista IF-EMF-melatoniinisuppressiota",
+        title: "Yötila ei poista IF-EMF-melatoniinivaimennusta",
         description: "Puhelimen/tabletin 'yötila' (lämmin värisuodatin) poistaa sinivalon mutta EI IF-EMF:ää näytön taustavalosta. Melatoniinisuppressio yötilan ollessa PÄÄLLÄ on merkittävästi suurempi kuin ilman näyttöä, koska IF-EMF jatkaa melatoniinin suppressiota CRY-reitin kautta riippumatta valospektristä. Mekanistinen perusta: [[ref:chae2019|Chae ym. (2019)]] osoittivat, että ihmisen magnetoreseptio vaatii sinistä valoa (400–500 nm), mikä tunnistaa kryptokromin transduseriksi. Tämä tarkoittaa kahta riippumatonta interventiopistettä: (1) sinivalosuodatus poistaa CRY-aktivaation kokonaan (ei radikaaliparia häirittäväksi), ja (2) Faraday-suojaus poistaa RF-häiriön säilyttäen luonnollisen CRY-toiminnan. BERM ennustaa Faraday-suojauksen olevan tehokkaampi, koska se korjaa häiriön jättäen luonnollisen järjestelmän ehjäksi, kun taas sinivalosuodatus poistaa häiriön sammuttamalla koko CRY-järjestelmän.",
         validation: "Sylki-melatoniini: yötila-näyttö vs. ei näyttöä vs. hehkulamppu-lukuvalo, ilta-altistusprotokolla",
         falsification: "Yötila palauttaa melatoniinin ilman-näyttöä-lähtötasolle",
@@ -2015,8 +2083,8 @@ const COPY = {
       },
       {
         id: "P23",
-        title: "Sairaaloiden EMF-tasot korreloivat post-hospital-syndroomaan",
-        description: "Sairaalat joissa on korkeammat mitatut EMF-tasot (erityisesti IF LED-valaistuksesta ja RF Wi-Fi-tiheydestä) osoittavat korkeamman post-hospital-syndrooman (PHS) ilmaantuvuuden, kontrolloituna potilaiden sairastavuudella, hoitoajalla ja hoidon laatumittareilla. Korrelaation tulisi olla voimakkain ikääntyneillä potilailla (>75 v.) jotka viettävät eniten aikaa sängyssä.",
+        title: "Sairaaloiden EMF-tasot korreloivat post-hospital-oireyhtymään",
+        description: "Sairaalat joissa on korkeammat mitatut EMF-tasot (erityisesti IF LED-valaistuksesta ja RF Wi-Fi-tiheydestä) osoittavat korkeamman post-hospital-oireyhtymän (PHS) ilmaantuvuuden, kontrolloituna potilaiden sairastavuudella, hoitoajalla ja hoidon laatumittareilla. Korrelaation tulisi olla voimakkain ikääntyneillä potilailla (>75 v.) jotka viettävät eniten aikaa sängyssä.",
         validation: "Monisairaalamittaus EMF × 30 päivän uudelleenotto-/komplikaatioaste, stratifioituna iän ja liikkumiskyvyn mukaan",
         falsification: "Ei korrelaatiota sairaalan EMF-tasojen ja PHS:n ilmaantuvuuden välillä sekoittavien tekijöiden kontrolloinnin jälkeen",
       },
@@ -2043,7 +2111,7 @@ const COPY = {
       },
       {
         id: "P30",
-        title: "CACNA1C rs7304986 moduloi AD-riskiä",
+        title: "CACNA1C rs7304986 säätelee AD-riskiä",
         description: "CACNA1C rs7304986 T/C-kantajilla (jotka osoittavat suurempaa EMF-uniherkkyyttä [[ref:sousouri2025|Sousouri 2025:n]] mukaan) on korkeampi AD-riski kuin T/T-homotsygooteilla korkean EMF:n ympäristöissä, mutta yhtäläinen riski matalan EMF:n ympäristöissä. Sama geeni × ympäristö -interaktio kuin EHS:ssä: geneettisesti kohonnut VGCC-herkkyys vahvistaa ympäristöllistä Ca²⁺-dysregulaatiota.",
         validation: "GWAS × EMF-altistuksen interaktioanalyysi olemassa olevissa AD-biopankkikohorteissa",
         falsification: "Ei CACNA1C × EMF -interaktiota AD-riskissä, tai T/C-kantajilla matalampi AD-riski",
@@ -2078,8 +2146,8 @@ const COPY = {
       },
       {
         id: "P35",
-        title: "ADHD-prevalenssin kiihtyminen seuraa raskausaikaista EMF:ää 3–10v viiveellä",
-        description: "ADHD-prevalenssin kiihtyminen seuraa raskausaikaisen EMF-altistuksen kasvua 3–10 vuoden viiveellä (altistus → diagnoosi-ikä). 2G massoihin 1991–95 → ADHD-kiihtymä ~1995–2005. Älypuhelin massoihin 2007–12 → ADHD-kiihtymä ~2012–2020. 5G massoihin 2019–24 → ADHD-kiihtymä ~2025–2035 (ennuste). VAROITUS: ADHD-diagnostiikkakäytännöt ovat muuttuneet merkittävästi — prevalenssidata vaatii huolellista diagnostisten trendien korjausta.",
+        title: "ADHD-esiintyvyyden kiihtyminen seuraa raskausaikaista EMF:ää 3–10v viiveellä",
+        description: "ADHD-esiintyvyyden kiihtyminen seuraa raskausaikaisen EMF-altistuksen kasvua 3–10 vuoden viiveellä (altistus → diagnoosi-ikä). 2G massoihin 1991–95 → ADHD-kiihtymä ~1995–2005. Älypuhelin massoihin 2007–12 → ADHD-kiihtymä ~2012–2020. 5G massoihin 2019–24 → ADHD-kiihtymä ~2025–2035 (ennuste). VAROITUS: ADHD-diagnostiikkakäytännöt ovat muuttuneet merkittävästi — esiintyvyysdata vaatii huolellista diagnostisten trendien korjausta.",
         validation: "Ikäspesifiset ADHD-ilmaantuvuustrendit vs. raskausaikainen EMF-proksi (matkapuhelinpenetraatio syntymävuonna), kontrolloituna diagnostiikkakäytäntöjen muutoksille",
         falsification: "Ei ajallista korrelaatiota raskausaikaisen EMF-proksin ja ADHD-ilmaantuvuuden välillä diagnostiikkakorjauksen jälkeen",
       },
@@ -2093,14 +2161,14 @@ const COPY = {
       {
         id: "P37",
         title: "Litium + EMF-suojaus -synergia bipolaarihäiriössä",
-        description: "Litiumhoitoa saavat bipolaaripotilaat hyötyvät EMF-suojauksesta (Faraday) koska Li⁺ vaimentaa oskillaatiota JA EMF:n poisto eliminoi perturbation — yhteisvaikutus ylittää kummankin yksinään. Li⁺ kulkee VGSC:n kautta ja kertyy hyperaktiivisiin neuroneihin; EMF-perturbation poisto vähentää oskillaatiota jonka litiumin täytyy vaimentaa.",
+        description: "Litiumhoitoa saavat bipolaaripotilaat hyötyvät EMF-suojauksesta (Faraday) koska Li⁺ vaimentaa vaihtelua JA EMF:n poisto poistaa perturbation — yhteisvaikutus ylittää kummankin yksinään. Li⁺ kulkee VGSC:n kautta ja kertyy hyperaktiivisiin neuroneihin; EMF-perturbation poisto vähentää vaihtelua jonka litiumin täytyy vaimentaa.",
         validation: "Li⁺ + Faraday-suojattu makuuhuone vs. Li⁺ yksin → syklitaajuus ja -amplitudi 6 kuukauden aikana",
         falsification: "Ei lisähyötyä EMF-suojauksesta litiumhoidon lisäksi",
       },
       {
         id: "P38",
         title: "IVF-onnistumisasteet matalampia korkean EMF:n klinikoilla",
-        description: "Korkeamman EMF-tason IVF-laboratorioissa on matalammat fertilisaatio-, blastokystti- ja kliiniset raskausasteet. Melatoniini follikkuli­nesteessä on kriittinen munasolun suojaaja ([[ref:tamura2012_follicular_melatonin|Tamura 2012]]); EMF suppressoi endogeenistä melatoniinia ([[ref:battelle1980_emf_melatonin|Battelle 1980]], sirkadiaaninen polku), vähentäen follikulaarista antioksidanttipuolustusta haavoittuvimmassa vaiheessa. [[ref:tong2017_melatonin_ivf|Tongin 2017]] meta-analyysi osoittaa jo melatoniinilisän parantavan IVF-tuloksia — ennuste on, että EMF-ympäristö on sekoittava tekijä nykyisessä IVF-datassa.",
+        description: "Korkeamman EMF-tason IVF-laboratorioissa on matalammat fertilisaatio-, blastokystti- ja kliiniset raskausasteet. Melatoniini follikkuli­nesteessä on kriittinen munasolun suojaaja ([[ref:tamura2012_follicular_melatonin|Tamura 2012]]); EMF vaimentaa endogeenistä melatoniinia ([[ref:battelle1980_emf_melatonin|Battelle 1980]], sirkadiaaninen polku), vähentäen follikulaarista antioksidanttipuolustusta haavoittuvimmassa vaiheessa. [[ref:tong2017_melatonin_ivf|Tongin 2017]] meta-analyysi osoittaa jo melatoniinilisän parantavan IVF-tuloksia — ennuste on, että EMF-ympäristö on sekoittava tekijä nykyisessä IVF-datassa.",
         validation: "IVF-laboratorioiden EMF-dosimetria (inkubaattori + hoitohuoneet) vs. klinikkatason tulokset, kontrolloituna potilasdemografialle",
         falsification: "Ei korrelaatiota klinikan EMF-tasojen ja IVF-tulosten välillä tavanomaisen sekoittavien tekijöiden korjauksen jälkeen",
       },
@@ -2114,7 +2182,7 @@ const COPY = {
       {
         id: "P40",
         title: "Vuorotyöntekijät: matalampi hedelmällisyys JA suurempi melatoniinilisän hyöty",
-        description: "Vuorotyöntekijöillä on supp­ressoitunut yöllinen melatoniini (sirkadiaaninen häiriö + työpaikan valaistus + ammatillinen EMF), mikä ennustaa matalamman luonnollisen hedelmällisyyden JA suuremman absoluuttisen hyödyn melatoniinilisästä verrattuna päivätyöntekijöihin. Melatoniinisilta yhdistää kaskadin 1 (uni/sirkadiaaninen) kaskadiin 6 (hedelmällisyys) — vuorotyö on vahvin luonnollinen koe tälle yhteydelle, koska se häiritsee melatoniinia usean konvergoivan polun kautta samanaikaisesti.",
+        description: "Vuorotyöntekijöillä on supp­ressoitunut yöllinen melatoniini (sirkadiaaninen häiriö + työpaikan valaistus + ammatillinen EMF), mikä ennustaa matalamman luonnollisen hedelmällisyyden JA suuremman absoluuttisen hyödyn melatoniinilisästä verrattuna päivätyöntekijöihin. Melatoniinisilta yhdistää kaskadin 1 (uni/sirkadiaaninen) kaskadiin 6 (hedelmällisyys) — vuorotyö on vahvin luonnollinen koe tälle yhteydelle, koska se häiritsee melatoniinia usean yhtyvän polun kautta samanaikaisesti.",
         validation: "Hedelmällisyystulokset (raskaaksi tulon aika, IVF-onnistuminen) vuoro- vs. päivätyöntekijöillä, melatoniinilisällä ja ilman",
         falsification: "Vuorotyöntekijät osoittavat yhtäläistä melatoniinilisän hyötyä päivätyöntekijöihin verrattuna, tai vuorotyön hedelmällisyysvaje ei välity melatoniini­tasojen kautta",
       },
@@ -2144,14 +2212,14 @@ const COPY = {
       {
         id: "NUT-2",
         title: "B2-puutos x EMF -interaktio 54 maan regressiossa",
-        description: "Lisää väestötason B2-riittävyys kontrollimuuttujaksi 54 maan EMF-TFR-regressiomalliin. Ennuste: interaktiotermi (EMF x B2_puutos) on merkitsevä ja negatiivinen — maat joissa SEKÄ korkea EMF ETTÄ korkea B2-puutos osoittavat jyrkempää TFR-laskua kuin maat joissa vain korkea EMF. Kiina (>90 % B2-puutos, korkein EMF, alhaisin TFR) vs. Suomi (~15 % B2-puutos, korkea EMF, korkeampi TFR) on avainkontrasti. VAROITUS: Tämä on ekologista evidenssiä — korrelaatio, ei kausaatio.",
+        description: "Lisää väestötason B2-riittävyys kontrollimuuttujaksi 54 maan EMF-TFR-regressiomalliin. Ennuste: interaktiotermi (EMF x B2_puutos) on merkitsevä ja negatiivinen — maat joissa SEKÄ korkea EMF ETTÄ korkea B2-puutos osoittavat jyrkempää TFR-laskua kuin maat joissa vain korkea EMF. Kiina (>90 % B2-puutos, korkein EMF, alhaisin TFR) vs. Suomi (~15 % B2-puutos, korkea EMF, korkeampi TFR) on avainkontrasti. VAROITUS: Tämä on ekologista näyttöä — korrelaatio, ei kausaatio.",
         timeline: "Testattavissa heti (olemassa oleva data + B2-tutkimukset ~30 maasta)",
         falsification: "Ei merkitsevää EMF x B2 -interaktiotermiä, tai interaktio on positiivinen",
       },
       {
         id: "NUT-3",
         title: "Paaston kesto ennustaa magnetoreseptiivistä herkkyyttä (käänteinen U)",
-        description: "Toista [[ref:chae2019|Chae 2019:n]] ruokasuuntautumisparadigma asteitetuilla paaston kestoilla (4h, 8h, 12h, 16h, 24h). Ennuste: käänteinen U-muotoinen annosvaste — herkkyys huipentuu 12-16h kohdalla (optimaalinen CRY-vaihtuvuus riittävällä FAD:lla) ja laskee 24h+ (FAD-poolin ehtyminen alkaa). Lisähaara: B2-lisätty (25 mg ennen paastoa) vs. lisäämätön. B2-lisän tulisi siirtää huippua oikealle (sallien pidemmän paaston ennen laskua). Paastoparadoksin ratkaisu ([[ref:lamia2009|Lamia 2009]] AMPK-CRY + beta-oksidaatio-FAD) ennustaa tämän spesifisen muodon.",
+        description: "Toista [[ref:chae2019|Chae 2019:n]] ruokasuuntautumisparadigma asteitetuilla paaston kestoilla (4h, 8h, 12h, 16h, 24h). Ennuste: käänteinen U-muotoinen annosvaste — herkkyys huipentuu 12-16h kohdalla (optimaalinen CRY-vaihtuvuus riittävällä FAD:lla) ja laskee 24h+ (FAD-poolin ehtyminen alkaa). Lisähaara: B2-lisätty (25 mg ennen paastoa) vs. lisäämätön. B2-lisän tulisi siirtää huippua oikealle (sallien pidemmän paaston ennen laskua). Paastoparadoksin ratkaisu ([[ref:lamia2009|Lamia 2009]] AMPK-CRY + beta-oksidaatio-FAD) ennustaa tämän tarkan muodon.",
         timeline: "Testattavissa 2-4 kuukaudessa (käyttäytymiskoe, N=40 per kesto)",
         falsification: "Monotoninen kasvu (ei laskua 24h), tai ei paastovaikutusta, tai B2 ei siirrä huippua",
       },
@@ -2160,8 +2228,8 @@ const COPY = {
     nutritionalFalsification: "Falsifikaatiokriteeri",
     nutritionalLocked: "Lukittu: 2026-08-24",
     nutritionalStatus: "LUKITTU — odottaa testiä",
-    metabTitle: "Metabolisen syndrooman ennusteet",
-    metabLead: "Kuuden reitin EMF → metabolinen syndrooma -mallista johdetut ennusteet. CaMKII-konvergenssi ennustaa, että lihavuus, diabetes ja energiametabolian häiriö jakavat yhteisen ylävirran syyn, joka on testattavissa suojauksen, farmakologian ja epidemiologian avulla. Lihavuus on multifaktoriaalinen — nämä ennusteet testaavat onko EMF myötävaikuttava tekijä, ei onko se ainoa syy.",
+    metabTitle: "Metabolisen oireyhtymän ennusteet",
+    metabLead: "Kuuden reitin EMF → metabolinen oireyhtymä -mallista johdetut ennusteet. CaMKII-yhdentyminen ennustaa, että lihavuus, diabetes ja energiametabolian häiriö jakavat yhteisen ylävirran syyn, joka on testattavissa suojauksen, farmakologian ja epidemiologian avulla. Lihavuus on multifaktoriaalinen — nämä ennusteet testaavat onko EMF myötävaikuttava tekijä, ei onko se ainoa syy.",
     metabPredictions: [
       {
         id: "METAB-1",
@@ -2173,21 +2241,21 @@ const COPY = {
       },
       {
         id: "METAB-2",
-        title: "CaMKII-inhibitio vaimentaa EMF-indusoitua painonnousua jyrsijöillä",
-        description: "KN-93 tai AIP (CaMKII-inhibiittorit) EMF-altistetuille jyrsijöille tulisi vähentää painonnousua, BAT-dysfunktiota ja insuliiniresistenssiä verrattuna EMF-altistettuihin hoitamattomiin kontrolleihin. CaMKII on konvergenssimolekyyli joka yhdistää EMF-herkkyyden (Cav3.2-kynnyksen siirtymä), BAT-termogeneesin (UCP1-transkriptio), testosteronin (StAR-ekspressio) ja insuliinierityksen (β-solun Ca²⁺-dynamiikka). Jos CaMKII-konvergenssi on todellinen, sen inhibitio vaimentaa useita metabolisia päätetapahtumia samanaikaisesti.",
+        title: "CaMKII-inhibitio vaimentaa EMF-aiheutettua painonnousua jyrsijöillä",
+        description: "KN-93 tai AIP (CaMKII-inhibiittorit) EMF-altistetuille jyrsijöille tulisi vähentää painonnousua, BAT-dysfunktiota ja insuliiniresistenssiä verrattuna EMF-altistettuihin hoitamattomiin kontrolleihin. CaMKII on yhdentymismolekyyli joka yhdistää EMF-herkkyyden (Cav3.2-kynnyksen siirtymä), BAT-termogeneesin (UCP1-transkriptio), testosteronin (StAR-ekspressio) ja insuliinierityksen (β-solun Ca²⁺-dynamiikka). Jos CaMKII-yhdentyminen on todellinen, sen inhibitio vaimentaa useita metabolisia päätetapahtumia samanaikaisesti.",
         timeline: "1-2 vuotta (kokeellinen, jyrsijämalli)",
-        falsification: "CaMKII-inhibitio ei vaikuta EMF-indusoituihin metabolisiin muutoksiin",
+        falsification: "CaMKII-inhibitio ei vaikuta EMF-aiheutettuihin metabolisiin muutoksiin",
       },
       {
         id: "METAB-3",
         title: "Semaglutidin teho korreloi ympäristön EMF-tason kanssa",
-        description: "Jos EMF häiritsee L-tyypin VGCC → Ca²⁺ → ERK -reittiä jota GLP-1/semaglutidi vahvistaa ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), semaglutidin tulisi olla TEHOKKAAMPI korkean EMF:n populaatioissa (enemmän reittihaäiriötä korjattavaksi) mutta näyttää laskevia tuottoja EMF:n ylittäessä kynnyksen. Tämä on SPEKULATIIVINEN ennuste — mekanistisesti johdettu mutta kliinistä dataa ei vielä ole. Evidenssitaso: L*.",
+        description: "Jos EMF häiritsee L-tyypin VGCC → Ca²⁺ → ERK -reittiä jota GLP-1/semaglutidi vahvistaa ([[ref:bhatt2012_glp1|Bhatt 2012, PMC3556522]]), semaglutidin tulisi olla TEHOKKAAMPI korkean EMF:n populaatioissa (enemmän reittihaäiriötä korjattavaksi) mutta näyttää laskevia tuottoja EMF:n ylittäessä kynnyksen. Tämä on SPEKULATIIVINEN ennuste — mekanistisesti johdettu mutta kliinistä dataa ei vielä ole. Näyttötaso: L*.",
         timeline: "3-5 vuotta (olemassa olevien RCT:iden data-analyysi)",
         falsification: "Ei korrelaatiota EMF-ympäristön ja semaglutiditehon välillä",
       },
       {
         id: "METAB-4",
-        title: "Matalan EMF:n yhteisöjen lihavuusprevalenssi pysyy <10 % vuoteen 2035",
+        title: "Matalan EMF:n yhteisöjen lihavuusesiintyvyys pysyy <10 % vuoteen 2035",
         description: "Vanhan järjestyksen amissit, tsimane, hadza ja vastaavat matalan EMF:n yhteisöt ylläpitävät lihavuuslukuja alle 10 % riippumatta ruokavalion modernisoitumisesta, kunhan EMF-altistus pysyy matalana. Tsimaneilla on tällä hetkellä <5 % lihavuus; Kitavalla ~0 %. Jos EMF on myötävaikuttava tekijä, nämä populaatiot pysyvät laihoina prosessoidun ruoan saatavuuden kasvaessakin — edellyttäen ettei EMF-ympäristö muutu.",
         timeline: "9 vuotta (pitkittäisseuranta)",
         falsification: "Matalan EMF:n yhteisön lihavuus nousee yli 15 % ilman merkittävää EMF-adoptiota",
@@ -2214,7 +2282,7 @@ const COPY = {
     trpc1Locked: "Lukittu: 2026-08-24",
     trpc1Status: "LUKITTU — odottaa testiä",
     pharmTitle: "Farmakologiset ennusteet",
-    pharmLead: "Farmakologisesta konvergenssista johdetut ennusteet. Jos VGCC-aktivaatio on EMF:n primaarinen transduutiomekanismi, tiettyjen lääkeryhmien pitäisi tuottaa mitattavia eroja EMF-assosioituihin päätepisteisiin. Nämä ennusteet hyödyntävät olemassa olevia reseptitietokantoja — uutta lääkealtistusta ei tarvita.",
+    pharmLead: "Farmakologisesta yhdentymisestä johdetut ennusteet. Jos VGCC-aktivaatio on EMF:n primaarinen transduutiomekanismi, tiettyjen lääkeryhmien pitäisi tuottaa mitattavia eroja EMF-yhdistettyihin päätepisteisiin. Nämä ennusteet hyödyntävät olemassa olevia reseptitietokantoja — uutta lääkealtistusta ei tarvita.",
     pharmPredictions: [
       {
         id: "PHARM-1",
@@ -2226,8 +2294,8 @@ const COPY = {
       },
       {
         id: "PHARM-2",
-        title: "Verapamiili osoittaa vahvemman EMF-suojavaikutuksen kuin amlodipiini käyttöriippuvaisen salppauksen takia",
-        description: "CCB-käyttäjien joukossa verapamiilin (taajuusriippuvainen VGCC-salpaaja) pitäisi osoittaa suurempaa EMF-biomarkkerien vaimentamista kuin amlodipiinin (jänniteriippuvainen salpaaja). IFO-mekanismi ennustaa korkeataajuista kanavasykilä EMF-altistuksen aikana — verapamiilin käyttöriippuvaisen kinetiikan pitäisi tarjota suhteettoman tehokas salppaus näiden purskahduksien aikana.",
+        title: "Verapamiili osoittaa vahvemman EMF-suojavaikutuksen kuin amlodipiini käyttöriippuvaisen salpauksen takia",
+        description: "CCB-käyttäjien joukossa verapamiilin (taajuusriippuvainen VGCC-salpaaja) pitäisi osoittaa suurempaa EMF-biomarkkerien vaimentamista kuin amlodipiinin (jänniteriippuvainen salpaaja). IFO-mekanismi ennustaa korkeataajuista kanavasykliä EMF-altistuksen aikana — verapamiilin käyttöriippuvaisen kinetiikan pitäisi tarjota suhteettoman tehokas salpaus näiden purskahduksien aikana.",
         timeline: "2–3 vuotta (retrospektiivinen, vaatii riittävän verapamiili-otoskoon)",
         falsification: "Ei eroa verapamiili- ja amlodipiini-käyttäjien välillä missään EMF-relevantissa biomarkkerissa",
       },
@@ -2272,7 +2340,7 @@ const COPY = {
       },
       {
         id: "MOD-2",
-        title: "Mitokondrioiden ikä vahvistaa EMF:n aiheuttamaa ROS:ia reproduktiivisessa kudoksessa",
+        title: "Mitokondrioiden ikä vahvistaa EMF:n aiheuttamaa ROS:ia lisääntymiskykyyn liittyvässä kudoksessa",
         description: "Ikääntyneet mitokondriot tuottavat enemmän ROS:ia per Ca2+-yksikkö kuin nuoret. Testi: altista nuorten (3 kk) ja vanhojen (18 kk) rottien kiveskudos identtiselle EMF:lle. Mittaa mitokondriaalinen ROS-tuotanto. Ennuste: vanha kudos tuottaa suhteettoman paljon enemmän ROS:ia per EMF-yksikkö, v18_mitochondrial_ros_amplifier()-funktion mukaisesti.",
         type: "kokeellinen",
         discriminating: true,
@@ -2308,12 +2376,12 @@ const COPY = {
       },
       {
         id: "MOD-6",
-        title: "Kilpirauhashäiriöiden prevalenssi korreloi matkapuhelimen yleistymisasteen kanssa kansallisesti",
-        description: "Kilpirauhassolut ilmentävät VGCC:itä ja ovat herkkiä EMF:n aiheuttamalle Ca2+-häiriölle. Kansallisen kilpirauhashäiriöprevalenssin (hypotyreoosi, kohonnut TSH) tulisi korreloida matkapuhelimen yleistymisasteen kanssa, kontrolloituna jodistaturksen, ikärakenteen ja diagnostisten käytäntöjen suhteen. Tämä on ekologinen ennuste — korrelaatio, ei kausaatio.",
+        title: "Kilpirauhashäiriöiden esiintyvyys korreloi matkapuhelimen yleistymisasteen kanssa kansallisesti",
+        description: "Kilpirauhassolut ilmentävät VGCC:itä ja ovat herkkiä EMF:n aiheuttamalle Ca2+-häiriölle. Kansallisen kilpirauhashäiriöesiintyvyyden (hypotyreoosi, kohonnut TSH) tulisi korreloida matkapuhelimen yleistymisasteen kanssa, kontrolloituna jodistaturksen, ikärakenteen ja diagnostisten käytäntöjen suhteen. Tämä on ekologinen ennuste — korrelaatio, ei kausaatio.",
         type: "ekologinen",
         discriminating: false,
         timeline: "Testattavissa heti (olemassa olevat terveysrekisterit + ITU-data)",
-        falsification: "Ei korrelaatiota matkapuhelimen yleistymisasteen ja kilpirauhashäiriöprevalenssin välillä jodistaturksen ja demografian kontrolloinnin jälkeen",
+        falsification: "Ei korrelaatiota matkapuhelimen yleistymisasteen ja kilpirauhashäiriöesiintyvyyden välillä jodistaturksen ja demografian kontrolloinnin jälkeen",
       },
     ],
     modIntTimeline: "Aikataulu",
@@ -2336,7 +2404,7 @@ const COPY = {
       {
         id: "SIDS-2",
         title: "CACNA1C rs1006737 AA-genotyyppi on yliedustettu SIDS-uhreissa",
-        description: "SIDS-uhrien post mortem -genotyypitys CACNA1C rs1006737:lle (BERM:n riskialleeli). AA-genotyyppi lisää Cav1.2-ekspressiota ja on assosioitu psykiatriseen ja sydänriskiin aikuisilla. Imeväisillä joiden Ca²⁺-homeostaasi on kypsymätön, tämä gain-of-function-variantti lisännee haavoittuvuutta mille tahansa Ca²⁺-häiriötekijälle. Ennuste: AA-genotyyppifrekvenssi SIDS-uhreissa ylittää väestön perustaajuuden.",
+        description: "SIDS-uhrien post mortem -genotyypitys CACNA1C rs1006737:lle (BERM:n riskialleeli). AA-genotyyppi lisää Cav1.2-ekspressiota ja on yhdistetty psykiatriseen ja sydänriskiin aikuisilla. Imeväisillä joiden Ca²⁺-homeostaasi on kypsymätön, tämä gain-of-function-variantti lisännee haavoittuvuutta mille tahansa Ca²⁺-häiriötekijälle. Ennuste: AA-genotyyppifrekvenssi SIDS-uhreissa ylittää väestön perustaajuuden.",
         timeline: "Testattavissa olemassa olevilla biopankkien SIDS-kudosnäytteillä (retrospektiivinen genotyypitys)",
         falsification: "AA-genotyyppifrekvenssi SIDS-uhreissa on sama tai matalampi kuin väestössä",
       },
@@ -2350,7 +2418,7 @@ const COPY = {
       {
         id: "SIDS-4",
         title: "Yöllä pumpattu äidinmaito yöllä annettuna on matalampi SIDS-riski kuin päivällä pumpattu yöllä",
-        description: "Retrospektiivinen kohortti: äideistä jotka pumppaavat ja pulloruokkivat, vertaa SIDS-ilmaantuvuutta aikavakioidun maidon (yöllä pumpattu yöllä, päivällä pumpattu päivällä) ja ei-aikavakioidun maidon välillä. Yömaito sisältää melatoniinia (Ca²⁺-antagonisti) ja tryptofaania jotka puuttuvat päivämaidosta. Ennuste: kronovakioitu maidonanto on assosioitu matalampaan SIDS-riskiin.",
+        description: "Retrospektiivinen kohortti: äideistä jotka pumppaavat ja pulloruokkivat, vertaa SIDS-ilmaantuvuutta aikavakioidun maidon (yöllä pumpattu yöllä, päivällä pumpattu päivällä) ja ei-aikavakioidun maidon välillä. Yömaito sisältää melatoniinia (Ca²⁺-antagonisti) ja tryptofaania jotka puuttuvat päivämaidosta. Ennuste: kronovakioitu maidonanto on yhdistetty matalampaan SIDS-riskiin.",
         timeline: "Testattavissa retrospektiivisesti (ruokintakäytäntökyselylomake olemassa olevissa kohorteissa)",
         falsification: "Ei eroa SIDS-ilmaantuvuudessa kronovakioidun ja ei-vakioidun pumpatun maidon ruokintakäytäntöjen välillä",
       },
@@ -2364,7 +2432,7 @@ const COPY = {
       {
         id: "SIDS-6",
         title: "ADORA1/ADORA2A-polymorfismit ennustavat sekä SIDS-riskiä että kofeiinivastetta",
-        description: "Farmakogeneettinen analyysi: genotyypitä ADORA1- ja ADORA2A-reseptoripolymorfismit SIDS-uhreista (post mortem) ja kofeiinihoitoa saavista keskosista. Samat adenosiinireseptorivariantit jotka moduloivat kofeiinivastetta keskosen apneassa pitäisi ennustaa SIDS-herkkyyttä, koska molemmat tilat liittyvät adenosiini-Ca²⁺-reitin häiriöön hengityskeskuksessa. Ennuste: ADORA-variantit jotka ennustavat heikkoa kofeiinivastetta ovat yliedustettuja SIDS-uhreissa.",
+        description: "Farmakogeneettinen analyysi: genotyypitä ADORA1- ja ADORA2A-reseptoripolymorfismit SIDS-uhreista (post mortem) ja kofeiinihoitoa saavista keskosista. Samat adenosiinireseptorivariantit jotka säätelevät kofeiinivastetta keskosen apneassa pitäisi ennustaa SIDS-herkkyyttä, koska molemmat tilat liittyvät adenosiini-Ca²⁺-reitin häiriöön hengityskeskuksessa. Ennuste: ADORA-variantit jotka ennustavat heikkoa kofeiinivastetta ovat yliedustettuja SIDS-uhreissa.",
         timeline: "Testattavissa olemassa olevilla SIDS-biopankeilla ja NICU:n farmakogeneettisillä tietokannoilla",
         falsification: "Ei assosiaatiota ADORA-genotyypin ja SIDS-ilmaantuvuuden välillä, tai SIDS:iin assosioituvat ADORA-genotyypit eivät ennusta kofeiinivastetta",
       },
@@ -2387,7 +2455,7 @@ const COPY = {
       {
         id: "SIDS-RESONANCE-2",
         title: "Bumetanidiprofylaksia vähentää apneaa korkean riskin vastasyntyneillä",
-        description: "Bumetanidi salpaaa NKCC1:n, palauttaen inhibitorisen GABAn ja tuoden vaimennuksen (vähentäen Q:ta). Jos SIDS johtuu resonanssihäiriöstä vaimentamattomassa järjestelmässä, bumetanidin tulisi vähentää apnea- ja bradykardiajaksoja korkean riskin vastasyntyneillä (ionikanavavarianttien kantajat tai aiemmat ALTE-tapahtumat). Testi: satunnaistettu tutkimus matalasta bumetanidiannoksesta NICU:n imeväisillä joilla on toistuvia apneajaksoja. Ennuste: bumetanidi vähentää apnea/bradykardiajaksojen tiheyttä.",
+        description: "Bumetanidi salpaa NKCC1:n, palauttaen inhibitorisen GABAn ja tuoden vaimennuksen (vähentäen Q:ta). Jos SIDS johtuu resonanssihäiriöstä vaimentamattomassa järjestelmässä, bumetanidin tulisi vähentää apnea- ja bradykardiajaksoja korkean riskin vastasyntyneillä (ionikanavavarianttien kantajat tai aiemmat ALTE-tapahtumat). Testi: satunnaistettu tutkimus matalasta bumetanidiannoksesta NICU:n imeväisillä joilla on toistuvia apneajaksoja. Ennuste: bumetanidi vähentää apnea/bradykardiajaksojen tiheyttä.",
         timeline: "Testattavissa 12–18 kuukaudessa (NICU-farmakologinen tutkimus)",
         falsification: "Ei vähennystä apnea/bradykardiajaksoissa bumetanidilla korkean riskin vastasyntyneillä",
       },
@@ -2429,10 +2497,10 @@ const COPY = {
     neuroPredictions: [
       {
         id: "NEURO-EMF-1",
-        title: "Kroonisen migreenin prevalenssi korreloi kumulatiivisen EMF-kerrostuma-altistuksen kanssa",
-        description: "Q-tekijämalli ennustaa, että kroonisen migreenin prevalenssin tulisi kasvaa kumulatiivisen EMF-altistuksen myötä (ELF-priming → α2δ-1↑ → CSD-kynnys↓). Testi: korreloi kroonisen migreenin prevalenssitrendit (1990→2025) kumulatiivisen EMF-teknologian käyttöönoton kanssa (mobiili, WiFi, LED) maiden välillä. Ennuste: maat joissa aikaisempi ja tiheämpi EMF-käyttöönotto osoittavat jyrkempää migreenin prevalenssin kasvua.",
-        timeline: "Testattavissa heti (olemassa oleva migreeniprevalenssidata + ITU:n teknologian käyttöönottotiedot)",
-        falsification: "Ei ajallista korrelaatiota EMF-teknologian käyttöönoton ja kroonisen migreenin prevalenssitrendien välillä maiden välillä",
+        title: "Kroonisen migreenin esiintyvyys korreloi kumulatiivisen EMF-kerrostuma-altistuksen kanssa",
+        description: "Q-tekijämalli ennustaa, että kroonisen migreenin esiintyvyyden tulisi kasvaa kumulatiivisen EMF-altistuksen myötä (ELF-priming → α2δ-1↑ → CSD-kynnys↓). Testi: korreloi kroonisen migreenin esiintyvyystrendit (1990→2025) kumulatiivisen EMF-teknologian käyttöönoton kanssa (mobiili, WiFi, LED) maiden välillä. Ennuste: maat joissa aikaisempi ja tiheämpi EMF-käyttöönotto osoittavat jyrkempää migreenin esiintyvyyden kasvua.",
+        timeline: "Testattavissa heti (olemassa oleva migreeniesiintyvyysdata + ITU:n teknologian käyttöönottotiedot)",
+        falsification: "Ei ajallista korrelaatiota EMF-teknologian käyttöönoton ja kroonisen migreenin esiintyvyystrendien välillä maiden välillä",
       },
       {
         id: "NEURO-EMF-2",
@@ -2458,7 +2526,7 @@ const COPY = {
       {
         id: "NEURO-EMF-5",
         title: "Psilosybiinin teho klusteripäänsärkyyn paranee samanaikaisella EMF-vähennyksellä",
-        description: "Psilosybiini resetoi tryptamiinireitin (5-HT2A → talamokortikaalinen resetti → SCN:n sirkadiaaninen resetti). Jos jatkuva EMF-altistus uudelleen-primaa α2δ-1:n ja häiritsee SCN:ää resetin jälkeen, psilosybiinin tehon tulisi olla parempi yhdistettynä EMF-vähennykseen. Testi: RCT psilosybiini + EMF-vähennysprotokolla vs. psilosybiini yksin episodisessa klusteripäänsäryssä. Ennuste: yhdistetty interventio tuottaa pidemmän remission kuin psilosybiini yksin.",
+        description: "Psilosybiini resetoi tryptamiinireitin (5-HT2A → talamokortikaalinen resetti → SCN:n sirkadiaaninen resetti). Jos jatkuva EMF-altistus uudelleen-herkistää α2δ-1:n ja häiritsee SCN:ää resetin jälkeen, psilosybiinin tehon tulisi olla parempi yhdistettynä EMF-vähennykseen. Testi: RCT psilosybiini + EMF-vähennysprotokolla vs. psilosybiini yksin episodisessa klusteripäänsäryssä. Ennuste: yhdistetty interventio tuottaa pidemmän remission kuin psilosybiini yksin.",
         timeline: "Testattavissa 24 kuukaudessa (RCT EMF-vähennysprotokollalla)",
         falsification: "Ei eroa remission kestossa psilosybiini + EMF-vähennyksen ja pelkän psilosybiinin välillä",
       },
@@ -2474,8 +2542,8 @@ const COPY = {
     neuroFalsification: "Falsifikaatiokriteeri",
     neuroLocked: "Lukittu: 2026-08-26",
     neuroStatus: "LUKITTU — odottaa testiä",
-    metalTitle: "Raskasmetallisynergian ja konvergenssin ennusteet",
-    metalLead: "Konvergenssiverifokaatioprosessista johdetut ennusteet, jotka kattavat raskasmetalli × EMF -synergian, pineaalisen kalsifikaation, fotoni→populaatio-ketjun ja interventiotutkimukset.",
+    metalTitle: "Raskasmetallisynergian ja yhdentymisen ennusteet",
+    metalLead: "Yhdentymisen todentamisprosessista johdetut ennusteet, jotka kattavat raskasmetalli × EMF -synergian, pineaalisen kalsifikaation, fotoni→populaatio-ketjun ja interventiotutkimukset.",
     metalPredictions: [
       {
         id: "METAL-EMF-1",
@@ -2494,7 +2562,7 @@ const COPY = {
       {
         id: "METAL-EMF-3",
         title: "Kadmiumin kudostasot ovat korkeammat korkean EMF:n ympäristöissä Cav3.1-ikkunavirran kautta",
-        description: "Cd²⁺ permeoi Cav3.1 T-tyypin kalsiumkanavien läpi (vahvistettu radioleimatulla ¹⁰⁹Cd²⁺:lla). Cav3.1:llä on ikkunavirta lähellä lepokalvopotentiaalia — EMF kasvattaa avautumistodennäköisyyttä → enemmän Cd:n sisäänvirtausta. Testi: vertaa kudosten Cd-tasoja työntekijöillä joilla sama ravinnon/ammatillinen Cd-altistus mutta eri EMF-altistus. Ennuste: korkean EMF:n ryhmällä on korkeampi kudosten Cd-kertymä vastaavilla ulkoisilla Cd-tasoilla.",
+        description: "Cd²⁺ läpäisee Cav3.1 T-tyypin kalsiumkanavien läpi (vahvistettu radioleimatulla ¹⁰⁹Cd²⁺:lla). Cav3.1:llä on ikkunavirta lähellä lepokalvopotentiaalia — EMF kasvattaa avautumistodennäköisyyttä → enemmän Cd:n sisäänvirtausta. Testi: vertaa kudosten Cd-tasoja työntekijöillä joilla sama ravinnon/ammatillinen Cd-altistus mutta eri EMF-altistus. Ennuste: korkean EMF:n ryhmällä on korkeampi kudosten Cd-kertymä vastaavilla ulkoisilla Cd-tasoilla.",
         timeline: "Testattavissa 12 kuukaudessa (ammattikohortti Cd-biomonitoroinnilla + EMF-dosimetrialla)",
         falsification: "Ei eroa kudosten Cd-tasoissa EMF-vakioitujen ryhmien välillä vastaavilla ulkoisilla Cd-altistuksilla",
       },
@@ -2522,14 +2590,14 @@ const COPY = {
       {
         id: "CHAIN-3",
         title: "EMF-vähennysinterventio tuottaa mitattavan terveyshyödyn kontrolloidussa tutkimuksessa",
-        description: "Tämä on BERM:n kriittinen puuttuva pala: interventionaalinen verifiointi. Kaikki nykyinen evidenssi on havainnollista tai mekanistista. Testi: RCT kattavasta EMF-vähennyksestä (suojattu nukkumisympäristö, langalliset laitteet, ei LED:iä yöllä) oireisilla henkilöillä 3 kuukauden ajan. Mittaa: CaMKII Thr286 -fosforylaatio lymfosyyteissä, unenlaatu (aktigrafia), melatoniini (virtsan 6-sulfatoksimelatoniini), verenpaine. Ennuste: EMF-vähennysryhmä osoittaa merkittävää parannusta kaikissa neljässä biomarkkerissa.",
+        description: "Tämä on BERM:n kriittinen puuttuva pala: interventionaalinen todentaminen. Kaikki nykyinen näyttö on havainnollista tai mekanistista. Testi: RCT kattavasta EMF-vähennyksestä (suojattu nukkumisympäristö, langalliset laitteet, ei LED:iä yöllä) oireisilla henkilöillä 3 kuukauden ajan. Mittaa: CaMKII Thr286 -fosforylaatio lymfosyyteissä, unenlaatu (aktigrafia), melatoniini (virtsan 6-sulfatoksimelatoniini), verenpaine. Ennuste: EMF-vähennysryhmä osoittaa merkittävää parannusta kaikissa neljässä biomarkkerissa.",
         timeline: "Testattavissa 12 kuukaudessa (RCT biomarkkeripaneelilla)",
         falsification: "Ei parannusta missään biomarkkerissa kattavan EMF-vähennyksen jälkeen → EMF-altistuksella ei ole mitattavaa terveysvaikutusta → mallilta puuttuu kliininen merkitys",
       },
       {
         id: "CHAIN-4",
         title: "Walkerin uniketju: EMF→melatoniini↓→uni↓→GABA↓→Q↑ mitataan kokonaisena kaskadina",
-        description: "Takaisinkytkentäsilmukka 4 ennustaa kaskadoivan syklin: EMF suppressoi melatoniinia → uni heikkenee → GABA:n tooninen inhibitio vähenee → Q-tekijä kasvaa → aivot tulevat HERKEMMIKSI EMF:lle → lisää melatoniinisuppressiota. Testi: pitkittäistutkimus joka mittaa ilta-EMF-altistuksen, yön melatoniinin (sylki), unenlaadun (PSG), aamu-GABA:n (MRS-spektroskopia) ja EEG-koherenssin (Q-proksi) 4 viikon ajan. Ennuste: alkuperäinen EMF-altistus tuottaa itseään vahvistavan heikkenemisen kaikissa mittareissa.",
+        description: "Takaisinkytkentäsilmukka 4 ennustaa kaskadoivan syklin: EMF vaimentaa melatoniinia → uni heikkenee → GABA:n tooninen inhibitio vähenee → Q-tekijä kasvaa → aivot tulevat HERKEMMIKSI EMF:lle → lisää melatoniinivaimennusta. Testi: pitkittäistutkimus joka mittaa ilta-EMF-altistuksen, yön melatoniinin (sylki), unenlaadun (PSG), aamu-GABA:n (MRS-spektroskopia) ja EEG-koherenssin (Q-proksi) 4 viikon ajan. Ennuste: alkuperäinen EMF-altistus tuottaa itseään vahvistavan heikkenemisen kaikissa mittareissa.",
         timeline: "Testattavissa 6 kuukaudessa (pitkittäinen PSG + MRS + EEG -protokolla)",
         falsification: "Ei itseään vahvistavaa kaskadia — EMF:n vaikutukset uneen/melatoniiniin/GABAan pysyvät vakiona eivätkä pahene asteittain",
       },
@@ -2539,7 +2607,7 @@ const COPY = {
     metalLocked: "Lukittu: 2026-08-26",
     metalStatus: "LUKITTU — odottaa testiä",
     mechTitle: "Mekanistisen ketjun ennusteet",
-    mechLead: "Ennusteet vasta verifioiduista välikerroksista: veri-aivoeste, ruskea rasvakudos, HPA-akseli, β-solun insuliinidynamiikka, hypotalamuksen keskuspiste, kortisoli-hippokampus, Leydig-solu ja syöttösolu-degranulaatio.",
+    mechLead: "Ennusteet vasta todennetuista välikerroksista: veri-aivoeste, ruskea rasvakudos, HPA-akseli, β-solun insuliinidynamiikka, hypotalamuksen keskuspiste, kortisoli-hippokampus, Leydig-solu ja syöttösolu-degranulaatio.",
     mechPredictions: [
       {
         id: "BBB-EMF-1",
@@ -2551,7 +2619,7 @@ const COPY = {
       {
         id: "BBB-EMF-2",
         title: "Raskasmetallien aivokertymä korkeampi korkean EMF:n populaatioissa veri-aivoesteen avautumisen kautta",
-        description: "EMF avaa veri-aivoesteen → raskasmetallit (Pb, Cd, MeHg) pääsevät aivoihin helpommin. EMF myös suppressoi melatoniinia → veri-aivoesteen suojaus↓ → KAKSINKERTAINEN haavoittuvuus. Testi: vertaa aivojen raskasmetallikertymää (post mortem tai likvor) korkean EMF:n ammateissa ja vakioiduissa matalan EMF:n kontrolleissa vastaavilla perifeerisillä raskasmetallitasoilla. Ennuste: korkean EMF:n ryhmällä on korkeammat aivojen metallitasot vastaavilla veritasoilla.",
+        description: "EMF avaa veri-aivoesteen → raskasmetallit (Pb, Cd, MeHg) pääsevät aivoihin helpommin. EMF myös vaimentaa melatoniinia → veri-aivoesteen suojaus↓ → KAKSINKERTAINEN haavoittuvuus. Testi: vertaa aivojen raskasmetallikertymää (post mortem tai likvor) korkean EMF:n ammateissa ja vakioiduissa matalan EMF:n kontrolleissa vastaavilla perifeerisillä raskasmetallitasoilla. Ennuste: korkean EMF:n ryhmällä on korkeammat aivojen metallitasot vastaavilla veritasoilla.",
         timeline: "Testattavissa 18 kuukaudessa (ammattikohortti likvor-/ruumiinavausnäytteillä)",
         falsification: "Ei eroa aivojen raskasmetallikertymässä EMF-altistusryhmien välillä vastaavilla veritasoilla",
       },
@@ -2607,7 +2675,7 @@ const COPY = {
       {
         id: "MAST-EMF-1",
         title: "EMF laukaisee syöttösolu-degranulaation mitattavissa seerumi-tryptaasilla",
-        description: "Ca²⁺ on syöttösolun degranulaation ensisijainen laukaisin. EMF → VGCC → Ca²⁺ → syöttösolu vapauttaa histamiinia + IL-1β + tryptaasia. [[ref:johansson2000_mast|Johansson 2000]] osoitti syöttösolumuutoksia ihobiopsioissa näyttöpäätealtistuksen jälkeen. Testi: mittaa seerumi-tryptaasi (spesifinen syöttösolu-degranulaatiomarkkeri) ennen ja jälkeen standardoidun EMF-altistuksen. Ennuste: akuutti EMF-altistus tuottaa mitattavan tryptaasinousun.",
+        description: "Ca²⁺ on syöttösolun degranulaation ensisijainen laukaisin. EMF → VGCC → Ca²⁺ → syöttösolu vapauttaa histamiinia + IL-1β + tryptaasia. [[ref:johansson2000_mast|Johansson 2000]] osoitti syöttösolumuutoksia ihobiopsioissa näyttöpäätealtistuksen jälkeen. Testi: mittaa seerumi-tryptaasi (tarkka syöttösolu-degranulaatiomarkkeri) ennen ja jälkeen vakioidun EMF-altistuksen. Ennuste: akuutti EMF-altistus tuottaa mitattavan tryptaasinousun.",
         timeline: "Testattavissa 3 kuukaudessa (verinäyte + EMF-altistus, yksinkertainen protokolla)",
         falsification: "Ei tryptaasinousua EMF-altistuksen jälkeen",
       },
@@ -2628,7 +2696,7 @@ const COPY = {
       {
         id: "TRIPLE-1",
         title: "T↓ × kortisoli↑ × DA↓ kolmoisvaje mitattavissa korkean EMF:n populaatioissa",
-        description: "Kolmoislukitusteoria ennustaa, että EMF samanaikaisesti vähentää testosteronia (HPG), kohottaa kortisolia (HPA) ja vähentää dopamiinia (mesolimbinen). Kukin on verifioitu itsenäisesti; ennuste on, että ne esiintyvät yhdessä SAMOILLA yksilöillä suhteessa EMF-altistukseen. Testi: mittaa T, kortisoli ja virtsan HVA (dopamiinimetaboliitti) korkean vs. matalan EMF:n ammateissa. Ennuste: kolmoisvajakuvio (T↓ + kortisoli↑ + HVA↓) korreloi kumulatiivisen EMF-altistuksen kanssa.",
+        description: "Kolmoislukitusteoria ennustaa, että EMF samanaikaisesti vähentää testosteronia (HPG), kohottaa kortisolia (HPA) ja vähentää dopamiinia (mesolimbinen). Kukin on todennettu itsenäisesti; ennuste on, että ne esiintyvät yhdessä SAMOILLA yksilöillä suhteessa EMF-altistukseen. Testi: mittaa T, kortisoli ja virtsan HVA (dopamiinimetaboliitti) korkean vs. matalan EMF:n ammateissa. Ennuste: kolmoisvajakuvio (T↓ + kortisoli↑ + HVA↓) korreloi kumulatiivisen EMF-altistuksen kanssa.",
         timeline: "Testattavissa heti (ammattikohortti hormoni- + välittäjäainepaneelilla)",
         falsification: "Kolme vajetta eivät esiinny yhdessä — ne ovat toisistaan ja EMF-altistuksesta riippumattomia",
       },
@@ -2641,7 +2709,7 @@ const COPY = {
       },
       {
         id: "KLIM-1",
-        title: "EMF-vähennys palauttaa BAT-suppression mitattavissa lämpökuvauksella",
+        title: "EMF-vähennys kumoaa BAT:n vaimentumisen lämpökuvauksella mitattavasti",
         description: "Jos EMF → PRDM16↓ → BAT↓ → termogeneesi↓ → painonnousu, niin EMF-vähennyksen pitäisi palauttaa BAT:n toiminta. Testi: mittaa supraklavikulaarinen BAT-aktiivisuus (infrapunalämpökuvaus kylmäaltistuksen jälkeen) ennen ja jälkeen 3 kuukauden EMF-vähennysprotokolla. Ennuste: EMF-vähennysryhmä osoittaa lisääntynyttä BAT-termogeneesiä ja maltillista painonlaskua ilman ruokavaliomuutosta.",
         timeline: "Testattavissa 6 kuukaudessa (lämpökuvaus + EMF-vähennysprotokolla)",
         falsification: "Ei muutosta BAT:n termogeneesissä EMF-vähennyksen jälkeen",
@@ -2652,7 +2720,7 @@ const COPY = {
     mechLocked: "Lukittu: 2026-08-26",
     mechStatus: "LUKITTU — odottaa testiä",
     suppTitle: "Täydennyskerrosten ennusteet (VK17–25)",
-    suppLead: "Ennusteet vasta verifioiduista kerroksista: siittiöiden Ca²⁺/CatSper, sirkadiaaninen kello, dopamiinin motivaatio, OPC-myelinaatio, NK-solujen immuniteetti, HPA-HPG-ristisuppressio, BDNF-hormeesi, suolisto-aivo-akseli ja Walkerin uni-testosteroniyhteys.",
+    suppLead: "Ennusteet vasta todennetuista kerroksista: siittiöiden Ca²⁺/CatSper, sirkadiaaninen kello, dopamiinin motivaatio, OPC-myelinaatio, NK-solujen immuniteetti, HPA-HPG-ristisuppressio, BDNF-hormeesi, suolisto-aivo-akseli ja Walkerin uni-testosteroniyhteys.",
     suppPredictions: [
       {
         id: "E-NEW-1",
@@ -2664,7 +2732,7 @@ const COPY = {
       {
         id: "E-NEW-2",
         title: "GnIH-antagonisti suojaa testosteronia EMF-altistuksen aikana",
-        description: "Kortisoli↑ → GnIH↑ → GnRH↓ → T↓ on verifioitu ristisuppressioreitti. RF9 (GnIH-antagonisti) palautti T:n kortisolikäsitellyissä kädellisistä. Testi: altista jyrsijät krooniselle EMF:lle RF9-tyyppisellä GnIH-antagonistilla/ilman. Ennuste: GnIH-antagonisti estää EMF:n aiheuttaman T-laskun, vahvistaen HPA-HPG-ristisuppression mekanismina.",
+        description: "Kortisoli↑ → GnIH↑ → GnRH↓ → T↓ on todennettu ristisuppressioreitti. RF9 (GnIH-antagonisti) palautti T:n kortisolikäsitellyissä kädellisistä. Testi: altista jyrsijät krooniselle EMF:lle RF9-tyyppisellä GnIH-antagonistilla/ilman. Ennuste: GnIH-antagonisti estää EMF:n aiheuttaman T-laskun, vahvistaen HPA-HPG-ristivaimennuksen mekanismina.",
         timeline: "Testattavissa 12 kuukaudessa (jyrsijämalli farmakologisella interventiolla)",
         falsification: "GnIH-antagonisti EI estä EMF:n aiheuttamaa testosteronin laskua",
       },
@@ -2678,7 +2746,7 @@ const COPY = {
       {
         id: "E-NEW-4",
         title: "200 kHz välitaajuus LISÄÄ NK-solujen aktiivisuutta",
-        description: "TTFields (200 kHz) lisäävät NK-solujen sytotoksisuutta, kun taas 50 Hz ELF suppressoi sitä — suora validaatio BERM:n taajuusriippuvaiselle reittiherarkkialle. Testi: vertaa NK-solujen sytotoksisuutta ELF (50 Hz), RF (900 MHz, 2,4 GHz) ja IF (200 kHz) altistuksissa. Ennuste: IF-alue osoittaa NK-aktivaatiota kun ELF ja RF osoittavat suppressiota — eri taajuudet, eri biologiset tulokset saman VGCC-mekanismin kautta.",
+        description: "TTFields (200 kHz) lisäävät NK-solujen sytotoksisuutta, kun taas 50 Hz ELF vaimentaa sitä — suora todentaminen BERM:n taajuusriippuvaiselle reittihierarkialle. Testi: vertaa NK-solujen sytotoksisuutta ELF (50 Hz), RF (900 MHz, 2,4 GHz) ja IF (200 kHz) altistuksissa. Ennuste: IF-alue osoittaa NK-aktivaatiota kun ELF ja RF osoittavat suppressiota — eri taajuudet, eri biologiset tulokset saman VGCC-mekanismin kautta.",
         timeline: "Testattavissa 6 kuukaudessa (in vitro NK-solumääritys eri taajuuksilla)",
         falsification: "Kaikki taajuudet tuottavat saman NK-soluvasteen suunnan",
       },
@@ -2716,7 +2784,7 @@ const COPY = {
     suppLocked: "Lukittu: 2026-08-26",
     suppStatus: "LUKITTU — odottaa testiä",
     finalTitle: "Viimeisten kerrosten ennusteet (VK26–31)",
-    finalLead: "Ennusteet viimeisistä konvergenssikerroksista: kilpirauhasen Dio2/Dio3, epigeneettinen transgenerationaalinen periytyminen, telomeeri-ikääntymiskierre, oksitosiinin Ca²⁺-häiriö, ELF-primaami-krooninen kipu ja ASD BERM-prototyyppinä.",
+    finalLead: "Ennusteet viimeisistä yhdentymiskerroksista: kilpirauhasen Dio2/Dio3, epigeneettinen ylisukupolvinen periytyminen, telomeeri-ikääntymiskierre, oksitosiinin Ca²⁺-häiriö, ELF-primaami-krooninen kipu ja ASD BERM-prototyyppinä.",
     finalPredictions: [
       {
         id: "E-NEW-9",
@@ -2727,8 +2795,8 @@ const COPY = {
       },
       {
         id: "E-NEW-10",
-        title: "Transgenerationaalinen siittiöiden metylaatio säilyy F3-sukupolveen",
-        description: "EMF muuttaa siittiöiden epigenomia annosriippuvaisesti (1 mT: metylaatio↓, 3 mT: metylaatio↑). Jos EMF-vaikutukset noudattavat DDT:n transgenerationaalista mallia, metylaatiomuutosten pitäisi säilyä F3:een. Testi: altista F0-jyrsijät krooniselle EMF:lle; analysoi siittiöiden metylaatioprofilit F1:ssä, F2:ssa, F3:ssa. Ennuste: F3-siittiöiden metylaatio säilyttää EMF-sormenjäljen F0-altistuksesta. BERM:n KORKEIN PRIORITEETTI tutkimusehdotuksena.",
+        title: "Ylisukupolvinen siittiöiden metylaatio säilyy F3-sukupolveen",
+        description: "EMF muuttaa siittiöiden epigenomia annosriippuvaisesti (1 mT: metylaatio↓, 3 mT: metylaatio↑). Jos EMF-vaikutukset noudattavat DDT:n ylisukupolvista mallia, metylaatiomuutosten pitäisi säilyä F3:een. Testi: altista F0-jyrsijät krooniselle EMF:lle; analysoi siittiöiden metylaatioprofilit F1:ssä, F2:ssa, F3:ssa. Ennuste: F3-siittiöiden metylaatio säilyttää EMF-sormenjäljen F0-altistuksesta. BERM:n KORKEIN PRIORITEETTI tutkimusehdotuksena.",
         timeline: "Testattavissa 18–24 kuukaudessa (monisukupolvinen jyrsijätutkimus)",
         falsification: "F3-siittiöiden metylaatio on erottamaton kontrolleista",
       },
@@ -2749,7 +2817,7 @@ const COPY = {
       {
         id: "E-NEW-13",
         title: "Oksitosiinitasot korreloivat käänteisesti EMF-altistuksen kanssa",
-        description: "Oksitosiinin vapautuminen on suoraan VGCC-riippuvaista (N-tyypin + L-tyypin Ca²⁺-kanavat). EMF häiritsee VGCC:tä → OXT:n vapautuminen häiriintyy. Testi: mittaa sylki- tai plasman oksitosiini kontrolloidussa EMF-altistustutkimuksessa (ennen/jälkeen akuutin altistuksen). Ennuste: akuutti EMF-altistus vähentää oksitosiiivastetta sosiaalisiin ärsykkeisiin.",
+        description: "Oksitosiinin vapautuminen on suoraan VGCC-riippuvaista (N-tyypin + L-tyypin Ca²⁺-kanavat). EMF häiritsee VGCC:tä → OXT:n vapautuminen häiriintyy. Testi: mittaa sylki- tai plasman oksitosiini kontrolloidussa EMF-altistustutkimuksessa (ennen/jälkeen akuutin altistuksen). Ennuste: akuutti EMF-altistus vähentää oksitosiinivastetta sosiaalisiin ärsykkeisiin.",
         timeline: "Testattavissa 6 kuukaudessa (kontrolloitu laboratoriotutkimus)",
         falsification: "Ei muutosta oksitosiinitasoissa EMF-altistuksen jälkeen",
       },
@@ -2780,7 +2848,7 @@ const COPY = {
     finalLocked: "Lukittu: 2026-08-26",
     finalStatus: "LUKITTU — odottaa testiä",
     extTitle: "Laajennettujen kerrosten ennusteet (VK41–50)",
-    extLead: "Ennusteet laajennetuista konvergenssikerroksista: ADHD toisena prototyyppinä, ALS:n kalsiumhaavoittuvuus, suolisto-aivo-serotoniini, allergiaepidemia, D-vitamiini luonnollisena kanavasalpaajana, PEMF-hormeesiparadoksi ja reproduktiivisen kaaren täydentyminen.",
+    extLead: "Ennusteet laajennetuista yhdentymiskerroksista: ADHD toisena prototyyppinä, ALS:n kalsiumhaavoittuvuus, suolisto-aivo-serotoniini, allergiaepidemia, D-vitamiini luonnollisena kanavasalpaajana, PEMF-hormeesiparadoksi ja lisääntymiskykyyn liittyvän kaaren täydentyminen.",
     extPredictions: [
       {
         id: "E-NEW-24",
@@ -2819,7 +2887,7 @@ const COPY = {
       },
       {
         id: "E-NEW-29",
-        title: "D-vitamiinitaso moduloi yksilöllistä EMF-herkkyyttä",
+        title: "D-vitamiinitaso säätelee yksilöllistä EMF-herkkyyttä",
         description: "Matala D-vitamiini → VGCC yliekspressoitu → enemmän Ca²⁺:ta per EMF-fotoni = korkeampi EMF-herkkyys. Testi: korreloi D-vitamiinitaso EMF:n aiheuttamiin biomarkkerien muutoksiin (CaMKII Thr286, uni-EEG) kontrolloidussa altistustutkimuksessa. Ennuste: D-vitamiinipuutteiset henkilöt osoittavat suurempia EMF:n aiheuttamia biomarkkerien muutoksia.",
         timeline: "Testattavissa 12 kuukaudessa (kontrolloitu EMF-altistus D-vitamiinitason mukaan kerrostettuna)",
         falsification: "Ei korrelaatiota D-vitamiinitason ja EMF-biomarkkerivasteiden suuruuden välillä",
@@ -2844,7 +2912,7 @@ const COPY = {
     extLocked: "Lukittu: 2026-08-26",
     extStatus: "LUKITTU — odottaa testiä",
     ultTitle: "Lopullisen integraation ennusteet (VK51–56)",
-    ultLead: "Ennusteet lopullisesta konvergenssi-integraatiosta: CatSperin lämpötilakynnys, psilosybiinin Ca²⁺-resetti, kofeiini-Parkinson-annosriippuvuus, litiumveden neuroprotektio, amygdalan ahdistussilmukka ja Amish-kontrolliryhmän validaatio.",
+    ultLead: "Ennusteet lopullisesta yhdentymisen integraatiosta: CatSperin lämpötilakynnys, psilosybiinin Ca²⁺-resetti, kofeiini-Parkinson-annosriippuvuus, litiumveden neuroprotektio, amygdalan ahdistussilmukka ja Amish-kontrolliryhmän todentaminen.",
     ultPredictions: [
       {
         id: "E-NEW-32",
@@ -2863,14 +2931,14 @@ const COPY = {
       {
         id: "E-NEW-34",
         title: "Kofeiinin kulutus korreloi käänteisesti EMF-biomarkkerivasteiden kanssa",
-        description: "Kofeiini salpaa A2A-reseptoreita → vähentää neuroinflammaatiota → Ca²⁺-modulaatio. Säännöllisten kofeiininkäyttäjien pitäisi osoittaa vaimentuneita EMF-biomarkkerivastetta. Testi: kontrolloitu EMF-altistus, kerrostettuna kofeiinin kulutuksen mukaan. Ennuste: totuneet kofeiininkäyttäjät osoittavat pienempiä CaMKII Thr286- ja uni-EEG-muutoksia EMF:stä.",
+        description: "Kofeiini salpaa A2A-reseptoreita → vähentää neuroinflammaatiota → Ca²⁺-modulaatio. Säännöllisten kofeiininkäyttäjien pitäisi osoittaa vaimentuneita EMF-biomarkkerivasteita. Testi: kontrolloitu EMF-altistus, kerrostettuna kofeiinin kulutuksen mukaan. Ennuste: totuneet kofeiininkäyttäjät osoittavat pienempiä CaMKII Thr286- ja uni-EEG-muutoksia EMF:stä.",
         timeline: "Testattavissa 6 kuukaudessa (lisää kofeiinikerrostus olemassa oleviin protokolliin)",
         falsification: "Ei eroa EMF-biomarkkereissa kofeiininkäyttäjien ja ei-käyttäjien välillä",
       },
       {
         id: "E-NEW-35",
         title: "Juomaveden litium korreloi käänteisesti EMF:ään liittyvien terveystulosten kanssa",
-        description: "Litium moduloi GSK-3β:ta ja CaMKII:ta — BERM:n Ca²⁺-kaskadin avainsolmuja. Alueiden, joilla on korkeampi luonnollinen litium juomavedessä, pitäisi osoittaa vaimentuneita EMF-terveysvaikutuksia. Testi: korreloi juomaveden litium EMF:ään liittyvään sairastavuuteen (dementia, itsemurha, masennus) piirikuntatason datalla. Ennuste: interaktiotermi (litium × EMF) on merkitsevä ja suojaava.",
+        description: "Litium säätelee GSK-3β:ta ja CaMKII:ta — BERM:n Ca²⁺-kaskadin avainsolmuja. Alueiden, joilla on korkeampi luonnollinen litium juomavedessä, pitäisi osoittaa vaimentuneita EMF-terveysvaikutuksia. Testi: korreloi juomaveden litium EMF:ään liittyvään sairastavuuteen (dementia, itsemurha, masennus) piirikuntatason datalla. Ennuste: interaktiotermi (litium × EMF) on merkitsevä ja suojaava.",
         timeline: "Testattavissa heti (olemassa oleva piirikuntatason data litiumista, EMF-infrastruktuurista, sairastavuudesta)",
         falsification: "Ei interaktiota veden litiumtasojen ja EMF:ään liittyvien terveystulosten välillä",
       },
@@ -2955,7 +3023,7 @@ const COPY = {
       },
       {
         id: "REP-4",
-        title: "Sentinellilajien herkkyys skaalautuu aineenvaihduntanopeuden mukaan",
+        title: "Indikaattorilajien herkkyys skaalautuu aineenvaihduntanopeuden mukaan",
         description: "Meta-analyysi: kokoa EMF-altistuskynnykset lajeittain (hyönteiset, linnut, jyrsijät, kädelliset) ja testaa onko kynnys ∝ ruumiinmassa^(0,25). Jos metabolinen χ-skaalaus on oikein, pienemmät lajit osoittavat vaikutuksia matalammilla altistustasoilla Kleiberin lakia seuraten.",
         timeline: "Testattavissa välittömästi (olemassa olevan kirjallisuuden meta-analyysi)",
         falsification: "Ei korrelaatiota ruumiinmassan ja EMF-vaikutuskynnyksen välillä, tai käänteinen korrelaatio",
@@ -3025,8 +3093,8 @@ const COPY = {
       },
       {
         id: "DIFF-7",
-        title: "BDD-prevalenssi kasvaa ruutuajan myötä",
-        description: "Kehonkuvahäiriön (BDD) prevalenssi kasvaa ruutuajan/laitekäytön myötä. VAHVISTETTU: BDD-prevalenssi nousee, 'Snapchat-dysmorfia' dokumentoitu.",
+        title: "BDD-esiintyvyys kasvaa ruutuajan myötä",
+        description: "Kehonkuvahäiriön (BDD) esiintyvyys kasvaa ruutuajan/laitekäytön myötä. VAHVISTETTU: BDD-esiintyvyys nousee, 'Snapchat-dysmorfia' dokumentoitu.",
         discriminating: false,
         critical: false,
         level: "L*",
@@ -3041,7 +3109,7 @@ const COPY = {
     diffVerifiedStatus: "VAHVISTETTU",
     vgccTitle: "VGCC-geeniperheen ennusteet",
     vgccLead: "VGCC-geeniperheen kuuden geenin analyysistä johdetut ennusteet. Kukin kohdistuu tiettyyn kalsiumkanavan alatyyppiin ja sen sairausmekanismiin.",
-    vgccNote: "Evidenssitasot vaihtelevat ennusteittain: E (kokeellinen tuki), M|C (mekanistinen/korrelaatio), L* (johdettu/teoreettinen).",
+    vgccNote: "Näyttötasot vaihtelevat ennusteittain: E (kokeellinen tuki), M|C (mekanistinen/korrelaatio), L* (johdettu/teoreettinen).",
     vgccPredictions: [
       {
         id: "MYOP-1",
@@ -3085,15 +3153,15 @@ const COPY = {
       },
       {
         id: "PCOS-1",
-        title: "PCOS-prevalenssi korreloi kansallisen EMF-tiheyden kanssa BMI:n ja ruokavalion suhteen kontrolloituna",
-        description: "Kansainvälinen analyysi. Ennuste: positiivinen korrelaatio koska 4 modulomin elintä (haima, theca, granulosa, aivolisäke) konvergoivat PCOS-patofysiologiaan.",
+        title: "PCOS-esiintyvyys korreloi kansallisen EMF-tiheyden kanssa BMI:n ja ruokavalion suhteen kontrolloituna",
+        description: "Kansainvälinen analyysi. Ennuste: positiivinen korrelaatio koska 4 modulomin elintä (haima, theca, granulosa, aivolisäke) yhtyvät PCOS-patofysiologiaan.",
         level: "M",
         discriminating: false,
         verified: false,
       },
       {
         id: "PAIN-1",
-        title: "Cav3.2-salpaaja vaimentaa EMF-indusoitua kipuherkistymistä eläinmallissa",
+        title: "Cav3.2-salpaaja vaimentaa EMF-aiheutettua kipuherkistymistä eläinmallissa",
         description: "Altista rottia krooniselle EMF:lle, mittaa kipukynnykset, anna sitten selektiivinen Cav3.2-salpaaja. Ennuste: salpaaja kumoaa EMF-indusoidun hyperalgesian.",
         level: "M|C",
         discriminating: true,
@@ -3110,7 +3178,7 @@ const COPY = {
       {
         id: "TDP-1",
         title: "TheraBionic-teho kumoutuu T-tyypin Ca²⁺-kanavasalpaajan samanaikaisella annolla",
-        description: "Jo vahvistettu FDA-merkinnällä (kontraindikaatio CCB:ien kanssa). Lisätesti: spesifinen T-tyypin salpaaja (etosuksimidi) kumoaa TheraBionic:n anti-HCC-vaikutuksen, kun taas L-tyypin salpaajalla (nifedipiini) pitäisi olla vähemmän vaikutusta.",
+        description: "Jo vahvistettu FDA-merkinnällä (kontraindikaatio CCB:ien kanssa). Lisätesti: tarkka T-tyypin salpaaja (etosuksimidi) kumoaa TheraBionic:n anti-HCC-vaikutuksen, kun taas L-tyypin salpaajalla (nifedipiini) pitäisi olla vähemmän vaikutusta.",
         level: "E",
         discriminating: true,
         verified: true,
@@ -3176,7 +3244,7 @@ const COPY = {
       {
         id: "T-TFR-5",
         title: "T-laskuvauhti ennustaa TFR-muutosta paremmin kuin BKT tai koulutus",
-        description: "Maiden välinen regressio: T-laskuvauhti (ikäriippumaton sekulaaritrendi) ennustaa TFR-muutosta paremmin kuin BKT, koulutus tai kaupungistuminen yksinään. Testattavissa olemassa olevalla datalla USA:sta, Tanskasta, Suomesta, Israelista ja tulevista aasialaisista tutkimuksista. Kumoaminen: BKT tai koulutus selittävät >80 % TFR-varianssista T-laskun kontrolloinnin jälkeen.",
+        description: "Maiden välinen regressio: T-laskuvauhti (ikäriippumaton pitkäaikaistrendi) ennustaa TFR-muutosta paremmin kuin BKT, koulutus tai kaupungistuminen yksinään. Testattavissa olemassa olevalla datalla USA:sta, Tanskasta, Suomesta, Israelista ja tulevista aasialaisista tutkimuksista. Kumoaminen: BKT tai koulutus selittävät >80 % TFR-varianssista T-laskun kontrolloinnin jälkeen.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -3185,7 +3253,7 @@ const COPY = {
     ],
 
     causalTitle: "Kausaalirakenteen ennusteet",
-    causalLead: "Ennusteet jotka perustuvat BMI-mediaattori-kausaalianalyysiin ja HPG-uudelleenasetuksen evidenssiin. Nämä testaavat BERM:n ehdottamia spesifisiä kausaalireittejä.",
+    causalLead: "Ennusteet jotka perustuvat BMI-mediaattori-kausaalianalyysiin ja HPG-uudelleenasetuksen näyttöön. Nämä testaavat BERM:n ehdottamia tarkkoja kausaalireittejä.",
     causalNote: "Nämä ennusteet testaavat mallin kausaaliRAKENNETTA — eivät sen suuruusluokkaa. Ne ovat falsifioitavissa formaalilla mediaatioanalyysilla ja maiden välisellä endokriinidatalla.",
     causalLocked: "Lukittu: 2026-08-25",
     causalStatus: "LUKITTU — odottaa testiä",
@@ -3265,12 +3333,12 @@ const COPY = {
     popLocked: "Lukittu: 2026-08-24",
     popStatus: "LUKITTU — odottaa testiä",
     tPredTitle: "Testosteroniennusteet",
-    tPredLead: "Kaksitasoisesta mallista johdetut ennusteet: testosteronin sekulaarilasku TFR:n ajallisena ennustajana.",
+    tPredLead: "Kaksitasoisesta mallista johdetut ennusteet: testosteronin pitkäaikaislasku TFR:n ajallisena ennustajana.",
     tPredPredictions: [
       {
         id: "T-1",
         title: "Aikaisemmin sähköistyneissä maissa T-lasku alkoi aikaisemmin",
-        description: "Maiden välinen vertailu testosteronin sekulaarilaskun alkamisajankohdasta. Vaatii harmonisoitua pitkittäistä T-dataa vähintään 5 maasta. T→TFR-viiveen (~8 vuotta) tulisi olla yhdenmukainen populaatioiden välillä.",
+        description: "Maiden välinen vertailu testosteronin pitkäaikaislaskun alkamisajankohdasta. Vaatii harmonisoitua pitkittäistä T-dataa vähintään 5 maasta. T→TFR-viiveen (~8 vuotta) tulisi olla yhdenmukainen populaatioiden välillä.",
         falsification: "Ei korrelaatiota sähköistymisajankohdan ja T-laskun alkamisen välillä ≥5 maassa harmonisoidulla T-datalla",
       },
       {
@@ -3282,7 +3350,7 @@ const COPY = {
       {
         id: "T-3",
         title: "Koirien siittiölaskuaste vastaa ihmisen T-laskuastetta (molemmat ~1 %/v)",
-        description: "Koirat jakavat kodin EMF-altistuksen ihmisten kanssa. [[ref:lea2016|Lea ym. 2016]] dokumentoi −1,0 %/v siittiölaskun brittiläisissä siitoskoirissa 26 vuoden aikana — sama aste kuin ihmisen testosteronin sekulaarilasku. Testi: vertaa koirien siittiölaskun alkamisajankohtaa paikalliseen sähköistyshistoriaan ≥3 maassa.",
+        description: "Koirat jakavat kodin EMF-altistuksen ihmisten kanssa. [[ref:lea2016|Lea ym. 2016]] dokumentoi −1,0 %/v siittiölaskun brittiläisissä siitoskoirissa 26 vuoden aikana — sama aste kuin ihmisen testosteronin pitkäaikaislasku. Testi: vertaa koirien siittiölaskun alkamisajankohtaa paikalliseen sähköistyshistoriaan ≥3 maassa.",
         falsification: "Koirien siittiölaskuasteet vaihtelevat >0,5 %/v maissa joissa on samankaltainen EMF-ympäristö",
       },
       {
@@ -3294,14 +3362,14 @@ const COPY = {
       {
         id: "T-5",
         title: "CatSper-salpaaja NNC55-0396 tuottaa saman siittiöfenotyypin kuin RF-altistus vastaavalla Ca²⁺-muutoksella",
-        description: "Jos EMF vaikuttaa siittiöihin pääasiassa CatSperin kautta, farmakologisen CatSper-salpauksen (NNC55-0396) tulisi tuottaa RF-altistetun siittiön täysi fenotyyppi: alentunut motiliteetti, heikentynyt kapasitaatio ja kumoutunut progesteroni-indusoitu hyperaktivaatio.",
+        description: "Jos EMF vaikuttaa siittiöihin pääasiassa CatSperin kautta, farmakologisen CatSper-salpauksen (NNC55-0396) tulisi tuottaa RF-altistetun siittiön täysi fenotyyppi: alentunut motiliteetti, heikentynyt kapasitaatio ja kumoutunut progesteroni-aiheutettu hyperaktivaatio.",
         falsification: "RF-altistus tuottaa siittiövaurioita joita ei voi toistaa CatSper-salpauksella — osoittaisi ei-CatSper-mekanismin hallitsevan",
       },
     ],
     tPredLocked: "Lukittu: 2026-08-31",
     tPredStatus: "LUKITTU — odottaa testiä",
     societalTitle: "Yhteiskunnalliset ennusteet",
-    societalLead: "Ennusteet jotka perustuvat kaksoislukkoteoriaan: populaatiotason testosteronin lasku yhdistettynä kortisolin nousuun tuottaa multiplikatiivisen käyttäytymissuppression. Nämä testaavat, seuraavatko yhteiskunnalliset käyttäytymistrendit hormonaalisia muutoksia joita BERM ennustaa EMF-altistuksesta.",
+    societalLead: "Ennusteet jotka perustuvat kaksoislukkoteoriaan: populaatiotason testosteronin lasku yhdistettynä kortisolin nousuun tuottaa multiplikatiivisen käyttäytymisen tukahduttamisen. Nämä testaavat, seuraavatko yhteiskunnalliset käyttäytymistrendit hormonaalisia muutoksia joita BERM ennustaa EMF-altistuksesta.",
     societalPredictions: [
       {
         id: "SOC-1",
@@ -3339,15 +3407,15 @@ const COPY = {
       },
       {
         id: "PRIME-2",
-        title: "Amishit (ei verkko-primingia) osoittavat minimaalisen RF-biovasteen",
-        description: "Vertaa RF-indusoituja biomarkkereita (sylkikortisoli, melatoniini, HRV) vanhojen amishien (ei asuinalueen ELF-primingia) ja sovitettujen modernien kontrollien välillä identtisen akuutin RF-altistuksen jälkeen. Ennuste: amishit osoittavat merkittävästi vaimentuneen vasteen koska heidän VGCC-ekspressioonsa on perusviivalla.",
+        title: "Amishit (ei verkko-esialtistusta) osoittavat minimaalisen RF-biovasteen",
+        description: "Vertaa RF-aiheutettuja biomarkkereita (sylkikortisoli, melatoniini, HRV) vanhojen amishien (ei asuinalueen ELF-esialtistusta) ja sovitettujen modernien kontrollien välillä identtisen akuutin RF-altistuksen jälkeen. Ennuste: amishit osoittavat merkittävästi vaimentuneen vasteen koska heidän VGCC-ekspressioonsa on perusviivalla.",
         timeline: "Testattavissa 1–2 vuodessa (vaatii amish-yhteisön yhteistyötä)",
         falsification: "Amishit osoittavat yhtäläisen tai suuremman RF-biovasteen kuin modernit kontrollit",
       },
       {
         id: "PRIME-3",
         title: "Asuinalueen sähkönkulutus ennustaa EMF-biomarkkerit paremmin kuin matkapuhelimen käyttö",
-        description: "Kohorttitutkimuksessa henkilökohtaisella EMF-dosimetrialla asuinalueen sähkönkulutus (kWh/kk) ennustaa kroonisia EMF-biomarkkereita (melatoniinisuppressio, siittiölaatu, HRV) vahvemmin kuin matkapuhelimen käyttötunnit.",
+        description: "Kohorttitutkimuksessa henkilökohtaisella EMF-dosimetrialla asuinalueen sähkönkulutus (kWh/kk) ennustaa kroonisia EMF-biomarkkereita (melatoniinivaimennus, siittiölaatu, HRV) vahvemmin kuin matkapuhelimen käyttötunnit.",
         timeline: "Testattavissa 1–2 vuodessa (kohorttitutkimus dosimetrialla)",
         falsification: "Matkapuhelimen käyttö on vahvempi biomarkkeriennustaja kuin sähkönkulutus",
       },
@@ -3360,7 +3428,7 @@ const COPY = {
       },
       {
         id: "MULTI-2",
-        title: "Palautumisikkunan eliminaatio kiihdyttää kumulatiivista vahinkoa",
+        title: "Palautumisikkunan häviäminen kiihdyttää kumulatiivista vahinkoa",
         description: "Altista sovitetut soluryhmät identtiselle kokonais-EMF-annokselle: (A) jatkuva monikaistainen (simuloiden modernia kotia), (B) sama annos mutta 8 tunnin yötauko (Faraday-suojattu unijakso). Ennuste: ryhmä B osoittaa merkittävästi vähemmän kumulatiivista CaMKII-aktivaatiota 30 päivän jälkeen.",
         timeline: "Testattavissa 2–4 kuukaudessa (in vitro, pitkittäinen)",
         falsification: "Ei eroa jatkuvan ja tauotetun altistuksen välillä samalla kokonaisannoksella",
@@ -3368,7 +3436,7 @@ const COPY = {
       {
         id: "MULTI-5",
         title: "WiFi-beacon 10 Hz -pulssi tuottaa ELF-tyyppisiä biologisia vaikutuksia kantajasta riippumatta",
-        description: "WiFi-reitittimet lähettävät 10 Hz beacon-pulssin myös ilman datasiirtoa (Schmid 2012). Beaconin huippukerroin on 100:1. Ennuste: eristetty 10 Hz pulssoitu signaali WiFi-beacon-intensiteetillä tuottaa ELF-tyyppisiä biologisia vaikutuksia verrattavina jatkuvaan 10 Hz sinisignaaaliin.",
+        description: "WiFi-reitittimet lähettävät 10 Hz beacon-pulssin myös ilman datasiirtoa (Schmid 2012). Beaconin huippukerroin on 100:1. Ennuste: eristetty 10 Hz pulssoitu signaali WiFi-beacon-intensiteetillä tuottaa ELF-tyyppisiä biologisia vaikutuksia verrattavina jatkuvaan 10 Hz sinisignaaliin.",
         timeline: "Testattavissa 3–6 kuukaudessa (EEG/melatoniinitutkimus)",
         falsification: "WiFi-beacon-pulssi ei tuota ELF-tyyppisiä biologisia vaikutuksia",
       },
@@ -3416,21 +3484,21 @@ const COPY = {
       },
       {
         id: "LAYER-4",
-        title: "Ammattikuljettajat sähköautoilla osoittavat IF-spesifisiä terveysvaikutuksia vuoteen 2035 mennessä",
-        description: "Taksi-/jakelukuljettajat jotka käyttävät sähköautoja 8+ tuntia/päivä kumuloivat IF-altistusta (invertteri 5–50 kHz hytissä). Ennustetut vaikutukset: metaboliset, reproduktiiviset, kardiaaliset — korkeammalla asteella kuin polttomoottoriautojen kuljettajat samalla istumatyöajalla.",
+        title: "Ammattikuljettajat sähköautoilla osoittavat IF-tarkkoja terveysvaikutuksia vuoteen 2035 mennessä",
+        description: "Taksi-/jakelukuljettajat jotka käyttävät sähköautoja 8+ tuntia/päivä kumuloivat IF-altistusta (invertteri 5–50 kHz hytissä). Ennustetut vaikutukset: metaboliset, lisääntymiskykyyn liittyvät, kardiaaliset — korkeammalla asteella kuin polttomoottoriautojen kuljettajat samalla istumatyöajalla.",
         falsification: "Ei eroa sähköauto- ja polttomoottoriauton ammattikuljettajien välillä 10 vuoden jälkeen",
       },
       {
         id: "LAYER-5",
-        title: "Starlink-kattavuus eliminoi viimeiset EMF-vapaat kontrollipopulaatiot vuoteen 2035",
+        title: "Starlink-kattavuus poistaa viimeiset EMF-vapaat kontrollipopulaatiot vuoteen 2035",
         description: "Tsimane, hadza ja vertailupopulaatiot alkavat osoittaa RF-tausta-altistusta LEO-satelliittikonstellaatioista. Heidän terveysmetriikkansa alkavat konvergoida teollistuneita kaavoja kohti 10–15 vuodessa altistuksen alusta.",
         falsification: "Starlink-katetuissa alkuperäispopulaatioissa ei terveysmetriikkamuutoksia 15 vuodessa",
       },
       {
         id: "LAYER-6",
-        title: "Seuraava suuri epidemia on IF-spesifinen",
+        title: "Seuraava suuri epidemia on IF-tarkka",
         description: "LED-ajurit + sähköautojen invertterit + induktioliedet + langaton lataus toimivat kaikki 20–300 kHz:llä. Tämä on nopeimmin kasvava ja vähiten säännelty EMF-kaista. IF-spesifiset terveysvaikutukset tunnistetaan omaksi kategoriakseen vuoteen 2035 mennessä.",
-        falsification: "Ei IF-spesifisiä terveysvaikutuksia tunnistettu IF-altistuksen kasvusta huolimatta vuoteen 2035",
+        falsification: "Ei IF-tarkkoja terveysvaikutuksia tunnistettu IF-altistuksen kasvusta huolimatta vuoteen 2035",
       },
       {
         id: "LAYER-7",
@@ -3446,7 +3514,7 @@ const COPY = {
     investigationTitle: "Johdoslinjojen ennusteet",
     investigationLead: "Ennusteet kuudesta uudesta johdoslinjasta: vuodenaikaherkkyys, genotyyppi, vesi, rakennusmateriaalit, palautumisikkuna ja prenataalinen altistus. Jokainen linja avaa uuden moduloivan muuttujan BERM-kehykseen.",
     investigationPredictions: [
-      { id: "SEASON-1", title: "SAD korreloi leveysaste × EMF, ei pelkkä leveysaste", description: "SAD/masennusprevalenssi korreloi leveysaste × EMF-tiheys -interaktion kanssa, ei pelkän leveysasteen kanssa. Korkean leveysasteen, matalan EMF:n yhteisöt (amishit pohjoisessa USA:ssa, maaseutu-Skandinavia ennen sähköistystä) osoittavat matalampaa SAD:ia kuin pelkkä leveysaste ennustaa.", falsification: "Pelkkä leveysaste ennustaa SAD:ia yhtä hyvin kuin leveysaste × EMF -interaktiotermi" },
+      { id: "SEASON-1", title: "SAD korreloi leveysaste × EMF, ei pelkkä leveysaste", description: "SAD/masennusesiintyvyys korreloi leveysaste × EMF-tiheys -interaktion kanssa, ei pelkän leveysasteen kanssa. Korkean leveysasteen, matalan EMF:n yhteisöt (amishit pohjoisessa USA:ssa, maaseutu-Skandinavia ennen sähköistystä) osoittavat matalampaa SAD:ia kuin pelkkä leveysaste ennustaa.", falsification: "Pelkkä leveysaste ennustaa SAD:ia yhtä hyvin kuin leveysaste × EMF -interaktiotermi" },
       { id: "SEASON-2", title: "EMF-vapaan makuuhuoneen hyöty suurempi talvella", description: "EMF-vapaassa ympäristössä nukkumisen terveyshyödyn tulisi olla mitattavasti SUUREMPI talvikuukausina korkeilla leveysasteilla, koska CRY-magnetoreseptorin herkkyys on korkeampi ympäristövalon vähentyessä.", falsification: "Ei vuodenaikavaihtelua EMF-vapaan unen hyödyssä, tai hyöty on suurempi kesällä" },
       { id: "GEN-1", title: "CACNA1C A-alleelitaajuus ennustaa populaation EMF-herkkyyttä", description: "Populaatiot, joilla on korkeampi CACNA1C rs1006737 A-alleelitaajuus, osoittavat jyrkempää terveyslaskua per EMF-altistusyksikkö. Tämä ennustaa populaatiotason vaihtelua EMF-herkkyydessä, joka on geneettistä, ei kulttuurista.", falsification: "Ei korrelaatiota A-alleelitaajuuden ja EMF-liitännäisten terveysmuutosten nopeuden välillä populaatioiden välillä" },
       { id: "GEN-2", title: "A/A-genotyyppi osoittaa voimakkaamman EMF-vasteen kuin G/G", description: "Kontrolloiduissa EMF-altistustutkimuksissa CACNA1C rs1006737 A/A -genotyypin yksilöt osoittavat suurempia fysiologisia vasteita (uni-EEG, HRV, kalsiummerkkiaineet) kuin G/G-genotyypin yksilöt. [[ref:sousouri2025|Sousouri 2025]] (ETH) jo tuki 5G-univasteessa.", falsification: "Ei genotyypistä riippuvaa eroa EMF-vasteessa useissa itsenäisissä kontrolloiduissa tutkimuksissa" },
@@ -3454,7 +3522,7 @@ const COPY = {
       { id: "BUILD-1", title: "Puutalot tuottavat parempia terveystuloksia kuin betoni", description: "Teräsbetoni heijastaa RF:ää sisäisesti, lisäten sisäistä kenttävoimakkuutta. Puu on RF-läpäisevä. Puutalojen asukkaiden tulisi osoittaa parempaa unta, matalampia stressimerkkiaineita ja parempia kardiovaskulaarisia mittareita kuin betonitalon asukkaiden.", falsification: "Ei eroa sosioekonomisten tekijöiden kontrolloinnin jälkeen, tai betoni ylittää puun" },
       { id: "RECOV-1", title: "EMF-vapaa makuuhuone nostaa melatoniinia 2 viikossa", description: "Kaikkien EMF-lähteiden poistaminen makuuhuoneesta (WiFi-reititin, puhelin, LED-valot) ja EMF-vähennetyssä ympäristössä nukkuminen tuottaa mitattavan melatoniininousun 2 viikossa ilman muita elämäntapamuutoksia.", falsification: "Ei melatoniinimuutosta 4 viikon EMF-vapaan uniympäristön jälkeen" },
       { id: "RECOV-2", title: "Minimipalautumisikkuna: 4–6 tuntia EMF-vapaata", description: "CaMKII:n defosforylaatiokinetiikka ennustaa 4–6 tunnin EMF-vapaan minimiajan merkittävälle Ca²⁺-homeostaasiin palautumiselle. Alle 4 tuntia tuottaa merkityksettömän palautumisen; yli 6 tuntia osoittaa vähenevää tuottoa.", falsification: "Ei annos-vastetta EMF-vapaiden tuntien ja palautumismerkkiaineiden välillä" },
-      { id: "PRENATAL-1", title: "Ensimmäisen trimesterin EMF-altistus korreloi ASD-riskin kanssa", description: "CACNA1C on kriittinen synaptogeneesissä. Prenataalinen Ca²⁺-häiriö kehitysikkunoiden aikana → ajoitusvirheet → ASD/ADHD-fenotyyppi. Kaiser Permanente (Li et al. 2017) jo osoitti prenataalinen EMF → ASD-riski. Ensimmäisen trimesterin tulisi osoittaa voimakkain vaikutus.", falsification: "Ei trimesterispesifistä eroa EMF-ASD-assosiaatiossa" },
+      { id: "PRENATAL-1", title: "Ensimmäisen trimesterin EMF-altistus korreloi ASD-riskin kanssa", description: "CACNA1C on kriittinen synaptogeneesissä. Prenataalinen Ca²⁺-häiriö kehitysikkunoiden aikana → ajoitusvirheet → ASD/ADHD-fenotyyppi. Kaiser Permanente (Li et al. 2017) jo osoitti prenataalinen EMF → ASD-riski. Ensimmäisen trimesterin tulisi osoittaa voimakkain vaikutus.", falsification: "Ei trimesteritarkkaa eroa EMF-ASD-assosiaatiossa" },
       { id: "MULTI-SEAS", title: "Talvi × korkea EMF tuottaa pahimmat terveystulokset", description: "Talven (korkea CRY-herkkyys) ja korkean EMF-altistuksen interaktion tulisi tuottaa pahimmat terveystulokset — pahemmat kuin kumpikaan tekijä yksin. Pohjoismaiden tulisi talvella osoittaa huippu-EMF-herkkyyttä.", falsification: "Ei interaktiovaikutusta vuodenajan ja EMF-tason välillä terveysvaikutuksissa" },
     ],
     investigationFalsification: "Kumoamisehto",
@@ -3478,17 +3546,17 @@ const COPY = {
     supplementTitle: "Täydentävät ennusteet",
     supplementLead: "Ennusteet kuudesta täydentävästä analyysialueesta: vuorotyö, sisä-/ulkotyön ammattigradientti, puhelimen taskusiirtymä, verkkotaajuusmaantiede ja replikaatiomoderaattorianalyysi.",
     supplementPredictions: [
-      { id: "SHIFT-1", title: "Faraday-makuuhuone parantaa vuorotyöntekijöiden terveyttä", description: "Vuorotyöntekijät jotka nukkuvat Faraday-suojatussa makuuhuoneessa (EMF-vapaa) osoittavat parempaa melatoniinipalautumista ja vähemmän metabolista syndroomaa kuin tavanomaisessa makuuhuoneessa nukkuvat — samalla kokonaisuniajalla. Ero eristää EMF-komponentin unenpuutekomponentista.", falsification: "Ei eroa metabolisissa tai hormonaalisissa tuloksissa suojatun ja suojaamattoman makuuhuoneen välillä" },
-      { id: "SHIFT-2", title: "Vuorotyön terveysvaikutukset pahempia talvella", description: "Vuorotyön terveysvaikutusten (metabolinen syndrooma, masennus, kardiovaskulaarinen riski) tulisi olla mitattavasti pahempia talvikuukausina korkeilla leveysasteilla, koska CRY-magnetoreseptorin herkkyys on korkeampi vähentyneessä valossa.", falsification: "Ei vuodenaikavaihtelua vuorotyön terveysvaikutuksissa" },
-      { id: "SHIFT-3", title: "Vuorotyön MetS OR ylittää unenpuutteen OR:n", description: "Vuorotyöntekijöiden metabolisen syndrooman vedonlyöntisuhde (OR 2,17) ylittää sen mitä pelkkä unenpuute selittäisi. Ylimääräinen riski johtuu EMF-komponentista: LED IF -altistus melatoniinihuipun aikana ja eliminoitu palautumisikkuna.", falsification: "Unenpuute yksin selittää täysin vuorotyön MetS-riskin" },
-      { id: "INDOOR-1", title: "Sisätyöntekijöillä korkeampi MetS kuin ulkotyöntekijöillä aktiivisuusvakioinnin jälkeen", description: "Sisätyöntekijöillä (toimisto, datakeskus) on korkeampi metabolisen syndrooman esiintyvyys kuin ulkotyöntekijöillä (maanviljelijät, kalastajat) myös fyysisen aktiivisuustason sovittamisen jälkeen.", falsification: "Ei MetS-eroa fyysisesti aktiivisten sisä- ja ulkotyöntekijöiden välillä" },
+      { id: "SHIFT-1", title: "Faraday-makuuhuone parantaa vuorotyöntekijöiden terveyttä", description: "Vuorotyöntekijät jotka nukkuvat Faraday-suojatussa makuuhuoneessa (EMF-vapaa) osoittavat parempaa melatoniinipalautumista ja vähemmän metabolista oireyhtymää kuin tavanomaisessa makuuhuoneessa nukkuvat — samalla kokonaisuniajalla. Ero eristää EMF-komponentin unenpuutekomponentista.", falsification: "Ei eroa metabolisissa tai hormonaalisissa tuloksissa suojatun ja suojaamattoman makuuhuoneen välillä" },
+      { id: "SHIFT-2", title: "Vuorotyön terveysvaikutukset pahempia talvella", description: "Vuorotyön terveysvaikutusten (metabolinen oireyhtymä, masennus, kardiovaskulaarinen riski) tulisi olla mitattavasti pahempia talvikuukausina korkeilla leveysasteilla, koska CRY-magnetoreseptorin herkkyys on korkeampi vähentyneessä valossa.", falsification: "Ei vuodenaikavaihtelua vuorotyön terveysvaikutuksissa" },
+      { id: "SHIFT-3", title: "Vuorotyön MetS OR ylittää unenpuutteen OR:n", description: "Vuorotyöntekijöiden metabolisen oireyhtymän vedonlyöntisuhde (OR 2,17) ylittää sen mitä pelkkä unenpuute selittäisi. Ylimääräinen riski johtuu EMF-komponentista: LED IF -altistus melatoniinihuipun aikana ja poistettu palautumisikkuna.", falsification: "Unenpuute yksin selittää täysin vuorotyön MetS-riskin" },
+      { id: "INDOOR-1", title: "Sisätyöntekijöillä korkeampi MetS kuin ulkotyöntekijöillä aktiivisuusvakioinnin jälkeen", description: "Sisätyöntekijöillä (toimisto, datakeskus) on korkeampi metabolisen oireyhtymän esiintyvyys kuin ulkotyöntekijöillä (maanviljelijät, kalastajat) myös fyysisen aktiivisuustason sovittamisen jälkeen.", falsification: "Ei MetS-eroa fyysisesti aktiivisten sisä- ja ulkotyöntekijöiden välillä" },
       { id: "INDOOR-2", title: "Sisätyöntekijöillä matalampi melatoniini kuin ulkotyöntekijöillä valovakioinnin jälkeen", description: "Sisätyöntekijöillä on matalammat yölliset melatoninitasot kuin ulkotyöntekijöillä myös valoaltistuksen kontrolloinnin jälkeen. Jäännösero heijastaa EMF-altistusta toimiston WiFi:stä, LED-valaistuksen IF:stä ja laitteiden läheisyydestä.", falsification: "Ei melatoniinieroa valoaltistuksen kontrolloinnin jälkeen" },
       { id: "POCKET-1", title: "Rintataskun käyttäjillä parempi siittiölaatu kuin lonkkatasku", description: "Miehillä jotka kantavat puhelintaan rintataskussa on parempi siittiölaatu kuin lonkka-/etutaskuun kantavilla — samasta kokonaiskäyttöajasta huolimatta. Ero selittyy sillä, että kivekset ovat lähikentässä vain lonkkatasku-käyttäjillä.", falsification: "Ei eroa siittiölaadussa taskupaikan mukaan samalla käyttöajalla" },
       { id: "POCKET-2", title: "Siittiölaskun kiihtyminen korreloi datakäytön kanssa, ei puhelujen", description: "Siittiölaskun kaksinkertaistuminen (1,16→2,64 %/v vuoden 2000 jälkeen) korreloi 3G/4G-datakäytön yleistymisen (puhelin pysyy taskussa jatkuvasti) kanssa, ei 2G-puhelujen yleistymisen (puhelin korvalla puhelun ajan) kanssa.", falsification: "Siittiölaskun nopeus korreloi puheluvolyymin eikä datakäytön kanssa" },
       { id: "FREQ-1", title: "50 Hz -maissa hieman vahvempia CRY-riippuvaisia vaikutuksia kuin 60 Hz -maissa", description: "50 Hz (Eurooppa) on 2 Hz:n sisällä Schumann-resonanssin 8. harmonisesta (52,0 Hz), mikä saattaa tuottaa vahvempaa CRY-häiriötä. Eurooppalaiset populaatiot saattavat osoittaa hieman vahvempia CRY-riippuvaisia kaskadivaikutuksia kuin amerikkalaiset sovitetuilla EMF-tasoilla.", falsification: "Ei eroa CRY-riippuvaisissa päätepisteissä 50 Hz:n ja 60 Hz:n maiden välillä sovitetulla EMF:llä" },
       { id: "REPL-1", title: "Retrospektiivinen moderaattorianalyysi ennustaa positiiviset vs. nollatulokset", description: "Retrospektiivinen analyysi 50–100 julkaistusta EMF-biotestitutkimuksesta, koodaten tutkimuksen kuukausi, laboratorion leveysaste, rakennusmateriaali ja koehenkilöiden tausta, osoittaa näiden neljän moderaattorin ennustavan merkitsevästi löytääkö tutkimus positiivisen vai nollatuloksen. Testattavissa ILMAN uutta dataa.", falsification: "Moderaattorimuuttujat eivät ennusta tutkimustuloksia logistisessa regressiossa (p > 0,05)" },
-      { id: "REPL-2", title: "Kaikki 7 moderaattoria kontrolloiva tulevaisuuden tutkimus replikoituu johdonmukaisesti laboratoriosta riippumatta", description: "Talvi + CACNA1C-genotyypitetty + matala laboratorio-ELF + EMF-vapaa uni + krooninen + pulsaatio + todellinen laite = positiivinen tulos JOKAISESSA laboratoriossa.", falsification: "Täysin kontrolloitu tutkimus ei silti replikoidu" },
-      { id: "REPL-3", title: "CACNA1C AA-genotyypin yksilöt osoittavat mitattavaa melatoniinisuppressiota kodin WiFistä talvella 60°N leveysasteella", description: "Spesifein yksittäinen ennuste joka yhdistää 3 moderaattoria: genotyyppi + vuodenaika + altistus.", falsification: "Ei melatoniinieroa AA:n ja GG:n välillä talvisessa WiFi-altistuksessa" },
+      { id: "REPL-2", title: "Kaikki 7 moderaattoria kontrolloiva tulevaisuuden tutkimus toistuu johdonmukaisesti laboratoriosta riippumatta", description: "Talvi + CACNA1C-genotyypitetty + matala laboratorio-ELF + EMF-vapaa uni + krooninen + pulsaatio + todellinen laite = positiivinen tulos JOKAISESSA laboratoriossa.", falsification: "Täysin kontrolloitu tutkimus ei silti replikoidu" },
+      { id: "REPL-3", title: "CACNA1C AA-genotyypin yksilöt osoittavat mitattavaa melatoniinivaimennusta kodin WiFistä talvella 60°N leveysasteella", description: "Spesifein yksittäinen ennuste joka yhdistää 3 moderaattoria: genotyyppi + vuodenaika + altistus.", falsification: "Ei melatoniinieroa AA:n ja GG:n välillä talvisessa WiFi-altistuksessa" },
       { id: "REPL-4", title: "9 tunnin EMF-vapaa uni tuottaa mitattavan DNA-korjauksen vs. 0 tuntia (WiFi päällä, puhelin sängyssä)", description: "Ivancsits osoitti 9h palautumisen. EMF-vapaassa ympäristössä nukkuvilla on matalampi komet-häntätekijä kuin WiFi-altistuneilla.", falsification: "Ei eroa DNA-vauriomarkkereissa EMF-vapaan ja WiFi-altistuneen unen välillä" },
     ],
     supplementFalsification: "Kumoamisehto",
@@ -3498,22 +3566,22 @@ const COPY = {
     geneticTitle: "Geneettiset herkkyysennusteet",
     geneticLead: "Ennusteet 15 geenin kalsiumherkkyysprofiilin perusteella. Nämä testaavat hypoteesia, että EMF-herkkyys on polygeenisesti määräytyvä ja että geeni × EMF -interaktiot ovat superadditiivisia.",
     geneticPredictions: [
-      { id: "GENE-MTNR1B-1", title: "MTNR1B GG -kantajilla suurempi T2D-riskin kasvu per EMF-yksikkö kuin AA:lla", description: "rs10830963 G-alleeli → enemmän MT2-reseptoreita → β-solut yliherkät melatoniinimuutoksille. EMF:n aiheuttama melatoniinisuppressio vaikuttaa eri tavalla GG-kantajiin. Geeni × EMF -interaktio on SUPERADDITIIVINEN.", falsification: "Ei genotyyppi × EMF -interaktiota T2D-ilmaantuvuuteen biopankkianalyysissä" },
+      { id: "GENE-MTNR1B-1", title: "MTNR1B GG -kantajilla suurempi T2D-riskin kasvu per EMF-yksikkö kuin AA:lla", description: "rs10830963 G-alleeli → enemmän MT2-reseptoreita → β-solut yliherkät melatoniinimuutoksille. EMF:n aiheuttama melatoniinivaimennus vaikuttaa eri tavalla GG-kantajiin. Geeni × EMF -interaktio on SUPERADDITIIVINEN.", falsification: "Ei genotyyppi × EMF -interaktiota T2D-ilmaantuvuuteen biopankkianalyysissä" },
       { id: "GENE-CRY1-1", title: "CRY1Δ11-kantajilla huonommat unitulokset kotona EMF:n alla kuin ei-kantajilla", description: "CRY1Δ11 (rs184039278, 0,6 %) pidentää sirkadiaanista jaksoa. EMF häiritsee CRY:tä → vaikutukset ADDITIIVISIA: geneettinen pidennys + EMF-häiriö = pidempi unilatenssi, lyhyempi palautumisikkuna.", falsification: "Ei eroa uni- tai metabolisissa tuloksissa CRY1Δ11-kantajien ja ei-kantajien välillä sovitetulla EMF-altistuksella" },
-      { id: "GENE-COMT-1", title: "COMT Val/Val -yksilöillä suurempi EMF-assosioitu masennusriski kuin Met/Met:llä", description: "Val/Val = nopea dopamiinipuhdistuma = matala DA-perusviiva. EMF:n aiheuttama DA-synteesilasku iskee ankarammin (pienempi puskuri). Met/Met kestää pidempään.", falsification: "Ei COMT-genotyyppi × EMF -interaktiota masennuksen esiintyvyyteen" },
+      { id: "GENE-COMT-1", title: "COMT Val/Val -yksilöillä suurempi EMF-yhdistetty masennusriski kuin Met/Met:llä", description: "Val/Val = nopea dopamiinipuhdistuma = matala DA-perusviiva. EMF:n aiheuttama DA-synteesilasku iskee ankarammin (pienempi puskuri). Met/Met kestää pidempään.", falsification: "Ei COMT-genotyyppi × EMF -interaktiota masennuksen esiintyvyyteen" },
       { id: "GENE-CACNA1D-1", title: "CACNA1D GoF -kantajilla korkeampi tinnitusaste Bluetooth-kuulokkeiden käytössä", description: "Cav1.3 GoF → sisäkorvan yliherkkyys. Bluetooth-kuulokkeet aktivoivat Cav1.3:a karvasoluissa → Ca²⁺-ylikuorma. GoF-kantajat saavuttavat vauriokynnyksen matalammalla altistuksella.", falsification: "Ei yhteyttä CACNA1D-genotyypin ja tinnituksen välillä Bluetooth-käyttäjillä" },
-      { id: "GENE-COMORBID-1", title: "Masennus-T2D-komorbiditeetti korkeampi CACNA1C AA + MTNR1B GG -yhdistelmäkantajilla", description: "Molemmat tilat syntyvät samasta melatoniinisuppressiopolusta eri elimissä (aivot vs. haima). Yhdistelmäkantajilla korkein komorbiditeetti.", falsification: "Masennus-T2D-komorbiditeetti ei stratifioidu CACNA1C × MTNR1B -genotyypin mukaan" },
+      { id: "GENE-COMORBID-1", title: "Masennus-T2D-komorbiditeetti korkeampi CACNA1C AA + MTNR1B GG -yhdistelmäkantajilla", description: "Molemmat tilat syntyvät samasta melatoniinivaimennuspolusta eri elimissä (aivot vs. haima). Yhdistelmäkantajilla korkein komorbiditeetti.", falsification: "Masennus-T2D-komorbiditeetti ei stratifioidu CACNA1C × MTNR1B -genotyypin mukaan" },
       { id: "GENE-INTERACT-1", title: "CRY1Δ11 + MTNR1B GG -yhdistelmäkantajilla erityisesti kohonnut aamupaastoglukoosi", description: "CRY1Δ11 viivästyttää melatoniini-offsetia → aamumelatoniini koholla. MTNR1B GG → β-solut yliherkät tälle kohoamiselle → insuliinisuppressio erityisesti aamuisin.", falsification: "Ei CRY1 × MTNR1B -interaktiota aamupaastoglukoosiin" },
-      { id: "GENE-EHS-1", title: "EHS-potilailla enemmän CACNA GoF + vähemmän SLC8A1/ATP2B-toimintaa kuin kontrolleilla", description: "EHS on polygeeninen kalsiumkynnöshäiriö: korkea influksi + hidas eritys = Ca²⁺ kasaantuu → CaMKII-kynnys ylittyy matalalla EMF:llä. 15 geenin genotyypitys osoittaa rikastumisen.", falsification: "Ei kalsiumkanavageenien rikastumista EHS-kohorteissa kontrolleihin verrattuna" },
+      { id: "GENE-EHS-1", title: "EHS-potilailla enemmän CACNA GoF + vähemmän SLC8A1/ATP2B-toimintaa kuin kontrolleilla", description: "EHS on polygeeninen kalsiumkynnöshäiriö: korkea sisäänvirtaus + hidas eritys = Ca²⁺ kasaantuu → CaMKII-kynnys ylittyy matalalla EMF:llä. 15 geenin genotyypitys osoittaa rikastumisen.", falsification: "Ei kalsiumkanavageenien rikastumista EHS-kohorteissa kontrolleihin verrattuna" },
       { id: "GENE-PRS-1", title: "15 geenin polygeeninen riskipistemäärä ennustaa EMF-herkkyyttä kontrolloiduissa altistustutkimuksissa", description: "Yhdistämällä kaikki 15 Ca²⁺-kaskadin geeniä yhdeksi PRS:ksi voidaan ennustaa biologisen vasteen suuruus standardoidussa EMF-altistuksessa.", falsification: "PRS ei korreloi mitatun EMF-vasteen kanssa kontrolloidussa altistuksessa" },
       { id: "GXEMF-1", title: "Geeni × EMF -interaktiot ovat superadditiivisia populaatioiden välillä", description: "Geneettinen riski (MTNR1B GG T2D-riski ~1,5×) × EMF-riski (~1,3×) tuottaa havaitun riskin ~2,5× (> 1,5 × 1,3 = 1,95×). EMF 'aktivoi' geneettisiä riskejä jotka olisivat piilevät EMF-vapaissa ympäristöissä.", falsification: "Geeni × EMF -interaktio on puhtaasti multiplikatiivinen (ei superadditiivisuutta)" },
       { id: "GXEMF-2", title: "Gabapentinoidien käyttäjillä alentunut EMF-herkkyys α2δ-1-eston kautta", description: "Pregabaliini/gabapentiini sitoutuvat α2δ-1:een → estävät VGCC-kuljetuksen synapseihin → matalampi VGCC-tiheys → alentunut ELF-priming-vaikutus.", falsification: "Ei eroa EMF-vasteessa gabapentinoidien käyttäjien ja ei-käyttäjien välillä" },
       { id: "GXEMF-3", title: "CaMKII Thr286 -autofosforylaatiotaso lymfosyyteissä korreloi subjektiivisen EMF-herkkyyden kanssa", description: "CaMKII-autofosforylaatio Thr286:ssa on mitattavissa perifeerisistä lymfosyyteistä. Korkeampi perusviiva = lähempänä kynnystä = herkempi EMF:lle. EHS:n ensimmäinen mahdollinen OBJEKTIIVINEN biomarkkeri.", falsification: "Ei korrelaatiota lymfosyyttien CaMKII-autofosforylaation ja raportoidun EMF-herkkyyden välillä" },
       { id: "GENE-A2D-1", title: "α2δ-1-ekspressiotaso ennustaa yksilöllisen ELF-primaamin suuruuden", description: "CACNA2D1 koodaa α2δ-1:tä, VGCC-kuljetuksen pullonkaulaa. Korkeampi perus-α2δ-1-ekspressio → nopeampi VGCC-tiheyden kasvu ELF-altistuksessa.", falsification: "Ei korrelaatiota α2δ-1-ekspression ja VGCC-tiheyden muutoksen välillä ELF:ssä" },
       { id: "GENE-A2D-2", title: "Pregabaliini-esikäsittely estää ELF:n aiheuttaman VGCC-ylössäätelyn soluviljelmässä", description: "Jos α2δ-1 välittää ELF-primaamin ([[ref:sun2016_elf_vgcc|PMC4757866]]), pregabaliini (joka sitoutuu α2δ-1:een) estää VGCC-tiheyden kasvun 8–10 päivän 50/60 Hz -altistuksessa.", falsification: "Pregabaliini ei estä ELF:n aiheuttamaa VGCC-ylössäätelyä" },
-      { id: "GENE-CAMK2-1", title: "CAMK2A GoF -mutaation fenotyyppi vastaa BERM:n populaatiotason ennustetta", description: "CAMK2A GoF-mutaatiot jotka lisäävät Thr286-autofosforylaatiota tuottavat epilepsian, kehitysvamman ja autismin ([[ref:kury2017_camk2|Küry 2017]]). BERM ennustaa EMF:n lisäävän populaatiotason autofosforylaatiota → samat fenotyypit. Mekanismin geneettinen validaatio.", falsification: "CAMK2A GoF -fenotyypit eivät vastaa EMF:n ennustamia populaatioterveyden trendejä" },
+      { id: "GENE-CAMK2-1", title: "CAMK2A GoF -mutaation fenotyyppi vastaa BERM:n populaatiotason ennustetta", description: "CAMK2A GoF-mutaatiot jotka lisäävät Thr286-autofosforylaatiota tuottavat epilepsian, kehitysvamman ja autismin ([[ref:kury2017_camk2|Küry 2017]]). BERM ennustaa EMF:n lisäävän populaatiotason autofosforylaatiota → samat fenotyypit. Mekanismin geneettinen todentaminen.", falsification: "CAMK2A GoF -fenotyypit eivät vastaa EMF:n ennustamia populaatioterveyden trendejä" },
       { id: "GENE-CAMK2-2", title: "Lymfosyyttien CaMKII-autofosforylaatio korkeampi korkean EMF:n kaupunkiasukkailla kuin maaseudun kontrolleilla", description: "Kaupunkiasukkailla (korkeampi kumulatiivinen EMF) tulisi olla korkeampi CaMKII Thr286 -autofosforylaation perusviiva perifeerisissa lymfosyyteissä kuin maaseudun kontrolleilla iän, ruokavalion ja aktiivisuuden sovittamisen jälkeen.", falsification: "Ei kaupunki-maaseutu-eroa lymfosyyttien CaMKII-autofosforylaatiossa" },
-      { id: "GENE-NETWORK-1", title: "Usean geenin kalsiumkanavapolymorfismi-interaktio ennustaa kehitysneurologisia tuloksia", description: "[[ref:korean2025_cacna|Korean 2025 -tutkimus]] osoitti CACNA1A + CACNA1C + CACNA1H -polymorfismien interaktion lasten DD/epilepsiassa. BERM ennustaa tämän ulottuvan kaikkiin 5 influksigeeniin: usean CACNA-riskialleelin yhdistelmäkantajilla suhteettomasti korkeampi riski.", falsification: "Ei monigeenistä interaktiovaikutusta yksittäisten geenivaikutusten ylitse" },
+      { id: "GENE-NETWORK-1", title: "Usean geenin kalsiumkanavapolymorfismi-interaktio ennustaa kehitysneurologisia tuloksia", description: "[[ref:korean2025_cacna|Korean 2025 -tutkimus]] osoitti CACNA1A + CACNA1C + CACNA1H -polymorfismien interaktion lasten DD/epilepsiassa. BERM ennustaa tämän ulottuvan kaikkiin 5 sisäänvirtausgeeniin: usean CACNA-riskialleelin yhdistelmäkantajilla suhteettomasti korkeampi riski.", falsification: "Ei monigeenistä interaktiovaikutusta yksittäisten geenivaikutusten ylitse" },
     ],
     geneticFalsification: "Kumoamisehto",
     geneticLocked: "Lukittu: 2026-08-26",
@@ -3553,9 +3621,9 @@ const COPY = {
     plantCryStatus: "LUKITTU — odottaa testiä",
     plantCryLocked: "Lukittu: 2026-08-31",
     criticalLabel: "Kriittinen",
-    pharmEvidenceLink: "Farmakologinen evidenssi →",
-    infantEvidenceLink: "Imeväisen haavoittuvuus -evidenssi →",
-    neuroEvidenceLink: "Neurologisen spektrin evidenssi →",
+    pharmEvidenceLink: "Farmakologinen näyttö →",
+    infantEvidenceLink: "Imeväisen haavoittuvuus -näyttö →",
+    neuroEvidenceLink: "Neurologisen spektrin näyttö →",
     // Inline UI strings (former ternaries)
     dashPredictions: "Ennustetta",
     dashCategories: "Kategoriaa",
@@ -3600,11 +3668,79 @@ const COPY = {
     metabolicFull: "Metabolinen",
     pharmacologicalFull: "Farmakologinen",
     cascadeConfirmation: "Vahvistaminen vasemmalla tukee oikealla olevia ennusteita",
-    sentinelHierarchyTitle: "Sentinellilajien herkkyyshierarkia",
+    sentinelHierarchyTitle: "Indikaattorilajien herkkyyshierarkia",
     sentinelHierarchyDesc: "EMF-herkkyys skaalautuu kehonmassan mukaan: M^(-0.25). Pienet lajit ovat alttiimpia.",
-    sentinelHierarchyAria: "Sentinellilajien herkkyyshierarkia",
+    sentinelHierarchyAria: "Indikaattorilajien herkkyyshierarkia",
     sensitivityTop: "Herkkyys (korkein ylhäällä)",
     emfSensitivity: "EMF-herkkyys",
+    civTitle: "Sivilisaatiotason ennusteet",
+    civLead: "Makrotason ennusteet jotka perustuvat BERM:n skalaarialtistusmalliin sivilisaatioiden rakenteisiin sovellettuna. Jokainen testaa, moduloiko EMF-infrastruktuuri hedelmällisyyttä, kulttuurista tuotantoa ja lajienvälistä biologiaa väestötasolla.",
+    civPredictions: [
+      { id: "E-CIV-1", title: "Ei renessanssia 2020–2053 auringon suurminimin aikana", description: "Nykyinen auringon suurminimi (2020–2053) EI tuota aiempiin suurminimeihin verrattavaa kulttuurista renessanssia (Italian renessanssi/Spörer, tieteellinen vallankumous/Maunder, romantiikka/Dalton), koska ihmisen luoma sähkömagneettinen infrastruktuuri peittää biologisen toipumisen, jonka auringon minimit aiemmin mahdollistivat.", falsification: "Merkittävä kulttuurinen renessanssi tapahtuu korkean leveysasteen maissa vuosina 2020–2053.", timeline: "Havaittavissa vuoteen 2055 mennessä" },
+      { id: "E-CIV-2", title: "Saharan eteläpuolisen Afrikan hedelmällisyyden laskun kiihtyminen", description: "Kun Saharan eteläpuolisen Afrikan mobiiliverkon penetraatio ylittää 80 % ja sähköverkon peitto 60 %, alueellinen TFR alkaa laskea Itä-Aasian vuosien 1990–2010 tahtia (>0,1/vuosi), vahvoista pronalistisista kulttuurinormeista huolimatta.", falsification: "Afrikan TFR pysyy vakaana tai laskee <0,05/vuosi näiden infrastruktuurikynnysten saavuttamisesta huolimatta.", timeline: "Testattavissa 2030–2040" },
+      { id: "E-CIV-3", title: "Pronalistisen politiikan katto", description: "Mikään kansallinen pronalistinen politiikka ei saavuta kestävää (>5 vuotta) paluuta korvaustasolle (TFR ≥ 2,1) missään maassa, jossa mobiilipenetraatio on >90 % ja sähköverkon peitto >95 %, riippumatta rahoitustasosta.", falsification: "Mikä tahansa tällainen maa ylläpitää TFR:ää ≥ 2,1 yli 5 vuotta poliittisella interventiolla.", timeline: "Jatkuvasti testattavissa" },
+      { id: "E-CIV-4", title: "Teknologiaa rajoittavat yhteisöt säilyttävät hedelmällisyyden", description: "Yhteisöt jotka rajoittavat sähkömagneettista teknologiaa (vanhan järjestyksen amissit, ultra-ortodoksit kosher-puhelimilla, teknologiavapaat intentionaaliset yhteisöt) säilyttävät TFR:n >4,0 ympäröivien väestöjen TFR:n jatkaessa laskuaan, ja teknologian omaksuvien yhteisöjen TFR yhtyy valtavirran tasolle yhden sukupolven (~25 vuotta) kuluessa.", falsification: "Teknologiaa rajoittavien yhteisöjen hedelmällisyys laskee valtavirran rinnalla, tai teknologian omaksuvat yhteisöt säilyttävät korkean TFR:n.", timeline: "Jatkuvasti testattavissa" },
+      { id: "E-CIV-5", title: "Lajienväliisen hedelmällisyysgradientin pysyvyys", description: "Sähkömagneettinen lajienvälinen gradientti (r=0,909) säilyy: vähemmän EM-altistusta saavat lajit säilyttävät korkeamman hedelmällisyyden, ja kotieläimet korkean EMF:n ympäristöissä jatkavat laskua ihmisten rinnalla. Erityisesti koirien siemennesteen laatu jatkaa laskuaan rinnakkain ihmisten siemennesteen laadun kanssa kaupungistuneilla alueilla.", falsification: "Lajienväliinen gradientti hajoaa tai luonnonvaraiset/matalan EMF:n populaatiot laskevat samaa tahtia.", timeline: "Jatkuvasti testattavissa" },
+    ],
+    civTimeline: "Aikajana",
+    civFalsification: "Kumoamisehto",
+    civLocked: "Lukittu: 2026-08-31",
+    civStatus: "LUKITTU — odottaa testiä",
+    actTitle: "Hormeettisen aktivaation ennusteet",
+    actLead: "Hormeettiseen annosvasteeseen perustuvat ennusteet: matalan EMF:n populaatiot ylläpitävät korkeampaa biologista kapasiteettia, ja siirtyminen korkean EMF:n ympäristöihin tuottaa mitattavaa biomarkkerien konvergenssia.",
+    actPredictions: [
+      {
+        id: "E-ACT-1",
+        title: "Saharan eteläpuolisten afrikkalaisten miesten testosteroni on korkeampi kuin vastaavilla eurooppalaisilla",
+        description: "Matalan EMF:n populaatiot ylläpitävät korkeampaa biologista aktivaatiota. Saharan eteläpuolisen Afrikan miesten (matalampi kumulatiivinen EMF-altistus matalamman sähköistyksen, mobiilipenetraation ja kaupungistumisasteen vuoksi) pitäisi osoittaa korkeampi keskimääräinen seerumitestosteroni kuin ikä-, painoindeksi- ja aktiivisuusvakioiduilla eurooppalaisilla miehillä.",
+        timeline: "Testattavissa välittömästi (poikkileikkausvertailu olemassa olevista endokriinikohorteista)",
+        falsification: "Ikä/BMI/aktiivisuusvakioiduilla afrikkalaisilla ja eurooppalaisilla miehillä ei ole testosteronieroa, tai eurooppalaisilla on korkeammat arvot",
+      },
+      {
+        id: "E-ACT-2",
+        title: "Maahanmuuttajien biomarkkerien konvergenssi yhden sukupolven kuluessa",
+        description: "Matalan EMF:n maista (Saharan eteläpuolinen Afrikka, maaseutu-Etelä-Aasia) korkean EMF:n maihin (Länsi-Eurooppa, Itä-Aasia) muuttavien pitäisi osoittaa mitattavaa biomarkkerien konvergenssia isäntämaan arvoihin 15–25 vuoden kuluessa: testosteronin lasku, kortisolin nousu, melatoniinin lasku, siittiölaadun heikkeneminen — ruokavalion ja elämäntavan akkulturaatiosta riippumatta.",
+        timeline: "Testattavissa 5–10 vuoden kuluessa (pitkittäinen maahanmuuttajakohortti biomarkkeriseurannalla)",
+        falsification: "Maahanmuuttajien biomarkkerit pysyvät lähtömaan tasolla vuosikymmenten asumisen jälkeen korkean EMF:n ympäristössä elämäntapatekijöiden vakioinnin jälkeen",
+      },
+      {
+        id: "E-ACT-3",
+        title: "Vanhan järjestyksen amish-miesten testosteroni pysyy korkeampana kuin valtavirran amerikkalaisilla",
+        description: "Vanhan järjestyksen amishit (ei sähköverkkoa, ei henkilökohtaista elektroniikkaa) tarjoavat maan sisäisen kontrollin EMF-altistukselle. Ennuste: amish-miehillä on korkeampi seerumitestosteroni, matalampi kortisoli, korkeampi melatoniini ja paremmat siittiöparametrit kuin ikä- ja BMI-vakioiduilla valtavirran amerikkalaisilla miehillä.",
+        timeline: "Testattavissa välittömästi (poikkileikkaustutkimus amish-yhteisöjen kanssa)",
+        falsification: "Ei testosteroni- tai kortisolieroa amishien ja valtavirran amerikkalaisten välillä BMI:n ja iän vakioinnin jälkeen",
+      },
+    ],
+    actTimeline: "Aikajänne",
+    actFalsification: "Falsifiointikriteeri",
+    actLocked: "Lukittu: 2026-08-31",
+    actStatus: "LUKITTU — odottaa testiä",
+    spaceWeatherTitle: "Avaruussääbiologia",
+    spaceWeatherLead: "Ennusteet jotka yhdistävät luonnollisen sähkömagneettisen ympäristön (Schumannin resonanssi, Pc1-mikropulsaatiot, geomagneettisesti indusoidut virrat) biologisiin tuloksiin CRY/RPM-reitin kautta.",
+    spaceWeatherPredictions: [
+      {
+        id: "GIC-HEALTH-1",
+        label: "GIC–terveyskorrelaatio",
+        text: "Alueet joilla on korkea geomagneettinen myrskyaltistus JA tiheä sähköverkkoinfrastruktuuri osoittavat kohonneita kardiovaskulaaristen tapahtumien (sydäninfarkti, aivohalvaus) esiintyvyyttä voimakkaiden geomagneettisten myrskyjen aikana (Kp ≥ 7), verrattuna: (a) samoihin alueisiin rauhallisissa olosuhteissa ja (b) korkean myrskyn alueisiin harvalla verkolla. Vaikutuksen tulisi olla voimakkain korkeilla magneettisilla leveysasteilla (>55°) missä GIC-amplitudit ovat suurimpia. Ennustettu vaikutuskoko: 5–15 % nousu päivittäisessä sydäninfarktimäärässä vakavien myrskyjen aikana tiheän verkon korkeilla leveysasteilla.",
+        status: "testattavissa",
+      },
+      {
+        id: "SR-MASKING-1",
+        label: "SR:n peittyminen → sirkadiaaninen häiriö",
+        text: "Kaupunkiväestöissä joissa Schumannin resonanssi (7,83 Hz) on mitattavasti peittynyt antropogeenisen ELF-kohinan alle, esiintyy korkeampia sirkadiaanisten häiriömarkkerien esiintyvyyksiä (viivästynyt univaihe, melatoniinin alku viivästynyt, kortisolin rytmi litistynyt) verrattuna maaseutuväestöihin joissa SR-signaali on puhdas, kontrolloituna valon altistuksen, työaikojen ja sosioekonomisten tekijöiden suhteen. Mittaus: SR:n signaali-kohinasuhteen makuuhuonetasolla tulisi korreloida käänteisesti sirkadiaanisen rytmin laadun kanssa (r > 0,3, p < 0,01).",
+        status: "testattavissa",
+      },
+      {
+        id: "ISS-MEL-MAGFIELD-1",
+        label: "ISS melatoniini–magneettikenttä",
+        text: "Jos ISS-astronauteille tarjotaan paikallinen 25–50 μT staattinen magneettikenttä (simuloiden maan pinnan geomagneettisia olosuhteita) unijaksojen aikana, heidän melatoniinin alkunsa normalisoituu kohti maanpäällisiä arvoja (tällä hetkellä viivästynyt 2,7–3,0 tuntia), unen kesto kasvaa kohti 7+ tuntia (tällä hetkellä 6,4 tuntia) ja sirkadiaaniset vaihemarkkeerit stabiloituvat. Tämä testaa suoraan onko hypomagneettinen ympäristö — ei pelkkä mikrogravitaatio — CRY-välitteisen sirkadiaanisen häiriön ajuri avaruuslennolla.",
+        status: "testattavissa",
+      },
+    ],
+    spaceWeatherTimeline: "GIC-HEALTH-1: testattavissa nyt olemassaolevilla terveysrekistereillä + geomagneettisella datalla. SR-MASKING-1: vaatii samanaikaisen SR-mittauksen + sirkadiaanisen biomarkkeritutkimuksen (~2 vuotta). ISS-MEL-MAGFIELD-1: vaatii ISS-koeprotokollan (~5 vuotta, ehdotettu ESA/NASA/JAXA:lle).",
+    spaceWeatherFalsification: "GIC-HEALTH-1 epäonnistuu jos myrsky–MI-korrelaatiota ei ole lämpötilan kontrolloinnin jälkeen. SR-MASKING-1 epäonnistuu jos sirkadiaaninen laatu on identtinen SR-peittyneissä ja SR-puhtaissa ympäristöissä. ISS-MEL-MAGFIELD-1 epäonnistuu jos magneettikentän palauttaminen ei vaikuta astronauttien sirkadiaanisiin rytmeihin.",
+    spaceWeatherLocked: "Lukittu 2026-08-31. Kolme avaruussää-ennustetta perustuen luonnolliseen EM-ympäristökerrokseen (taso 3) ja CRY/RPM-herkkyyteen (taso 2).",
+    spaceWeatherStatus: "Rekisteröity. Tiedonkeruuta ei aloitettu.",
     nextLabel: "Seuraavaksi",
     sourcesTitle: "Lähteet",
   },
@@ -3923,6 +4059,56 @@ const COPY = {
     sentinelHierarchyAria: "センチネル種の感受性階層",
     sensitivityTop: "感受性（最上部が最高）",
     emfSensitivity: "EMF感受性",
+    civTitle: "文明予測",
+    civLead: "BERMのスカラー曝露モデルを文明パターンに適用したマクロスケール予測。各予測はEMFインフラが出生率、文化的産出、種間生物学を集団レベルで調節するかをテスト。",
+    civPredictions: [
+      { id: "E-CIV-1", title: "No Renaissance during 2020–2053 grand solar minimum", description: "The current grand solar minimum (2020–2053) will NOT produce a cultural renaissance comparable to previous grand minima (Italian Renaissance/Spörer, Scientific Revolution/Maunder, Romanticism/Dalton) because anthropogenic electromagnetic infrastructure masks the biological recovery that solar minima previously enabled.", falsification: "A marked cultural renaissance occurs in high-latitude nations during 2020–2053.", timeline: "Observable by 2055" },
+      { id: "E-CIV-2", title: "Sub-Saharan African fertility decline acceleration", description: "As Sub-Saharan Africa's mobile network penetration crosses 80% and grid electrification exceeds 60%, regional TFR will begin declining at a rate comparable to East Asia's 1990–2010 trajectory (>0.1/year), despite strong pronatalist cultural norms.", falsification: "African TFR remains stable or declines <0.05/year despite reaching those infrastructure thresholds.", timeline: "Testable 2030–2040" },
+      { id: "E-CIV-3", title: "Pronatalist policy ceiling", description: "No national pronatalist policy will achieve sustained (>5 year) return to replacement-level fertility (TFR ≥ 2.1) in any country with mobile penetration >90% and grid coverage >95%, regardless of spending level.", falsification: "Any such country sustains TFR ≥ 2.1 for 5+ years through policy intervention.", timeline: "Continuously testable" },
+      { id: "E-CIV-4", title: "Technology-restricting communities maintain fertility", description: "Communities that restrict electromagnetic technology (Old Order Amish, ultra-Orthodox with kosher phones, technology-free intentional communities) will maintain TFR >4.0 while surrounding populations continue declining, and communities that adopt technology will see TFR converge toward mainstream within one generation (~25 years).", falsification: "Technology-restricting communities show fertility decline parallel to mainstream, or adopting communities maintain high TFR.", timeline: "Continuously testable" },
+      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.909) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
+    ],
+    civTimeline: "タイムライン",
+    civFalsification: "反証基準",
+    civLocked: "ロック日：2026-08-31",
+    civStatus: "ロック済み ― テスト待ち",
+    actTitle: "ホルメシス活性化予測",
+    actLead: "",
+    actPredictions: [
+      { id: "E-ACT-1", title: "サハラ以南アフリカ男性のテストステロンは同等の欧州男性より高い", description: "", timeline: "", falsification: "" },
+      { id: "E-ACT-2", title: "移民のバイオマーカーが一世代で収束する", description: "", timeline: "", falsification: "" },
+      { id: "E-ACT-3", title: "旧秩序アーミッシュ男性のテストステロンは主流アメリカ人より高い水準を維持", description: "", timeline: "", falsification: "" },
+    ],
+    actTimeline: "タイムライン",
+    actFalsification: "反証基準",
+    actLocked: "ロック日：2026-08-31",
+    actStatus: "ロック済み ― テスト待ち",
+    spaceWeatherTitle: "宇宙天気生物学",
+    spaceWeatherLead: "自然電磁環境（シューマン共鳴、Pc1マイクロパルセーション、地磁気誘導電流）とCRY/RPM経路を介した生物学的結果を結びつける予測。",
+    spaceWeatherPredictions: [
+      {
+        id: "GIC-HEALTH-1",
+        label: "GIC–Health Correlation",
+        text: "Regions with high geomagnetic storm exposure AND dense power grid infrastructure will show elevated cardiovascular event rates (MI, stroke) during strong geomagnetic storms (Kp ≥ 7), compared to: (a) same regions during quiet conditions, and (b) high-storm regions with sparse grids. The effect should be strongest at high magnetic latitudes (>55°) where GIC amplitudes are largest. Predicted effect size: 5–15% increase in daily MI rate during severe storms in grid-dense high-latitude regions.",
+        status: "testable",
+      },
+      {
+        id: "SR-MASKING-1",
+        label: "SR Masking → Circadian Disruption",
+        text: "Urban populations where Schumann resonance (7.83 Hz) is measurably masked by anthropogenic ELF noise will show higher rates of circadian disruption markers (delayed sleep phase, melatonin onset delay, cortisol rhythm flattening) compared to rural populations where SR signal is clean, after controlling for light exposure, work schedules, and socioeconomic factors. Measurement: SR signal-to-noise ratio at bedroom level should inversely correlate with circadian rhythm quality (r > 0.3, p < 0.01).",
+        status: "testable",
+      },
+      {
+        id: "ISS-MEL-MAGFIELD-1",
+        label: "ISS Melatonin–Magnetic Field",
+        text: "If ISS astronauts are provided with a local 25–50 μT static magnetic field (simulating Earth-surface geomagnetic conditions) during sleep periods, their melatonin onset will normalize toward ground-based values (currently delayed 2.7–3.0 hours), sleep duration will increase toward 7+ hours (currently 6.4 hours), and circadian phase markers will stabilize. This directly tests whether the hypomagnetic environment — not microgravity alone — drives the CRY-mediated circadian disruption observed in spaceflight.",
+        status: "testable",
+      },
+    ],
+    spaceWeatherTimeline: "GIC-HEALTH-1: testable now with existing health registries + geomagnetic data. SR-MASKING-1: requires concurrent SR measurement + circadian biomarker study (~2 years). ISS-MEL-MAGFIELD-1: requires ISS experiment protocol (~5 years, proposed to ESA/NASA/JAXA).",
+    spaceWeatherFalsification: "GIC-HEALTH-1 fails if no storm–MI correlation exists after controlling for temperature. SR-MASKING-1 fails if circadian quality is identical in SR-masked and SR-clean environments. ISS-MEL-MAGFIELD-1 fails if magnetic field restoration has no effect on astronaut circadian rhythms.",
+    spaceWeatherLocked: "ロック日：2026-08-31。自然EM環境レイヤー（レベル3）とCRY/RPM感受性（レベル2）に基づく3つの宇宙天気予測。",
+    spaceWeatherStatus: "登録済み。データ収集未開始。",
     nextLabel: "次へ",
     sourcesTitle: "参考文献",
 
@@ -5689,6 +5875,56 @@ const COPY = {
     sentinelHierarchyAria: "Hiérarchie de sensibilité des espèces sentinelles",
     sensitivityTop: "Sensibilité (la plus élevée en haut)",
     emfSensitivity: "Sensibilité EMF",
+    civTitle: "Prédictions civilisationnelles",
+    civLead: "Prédictions à l'échelle macroscopique dérivées du modèle d'exposition scalaire BERM appliqué aux schémas civilisationnels. Chacune teste si l'infrastructure EMF module la fécondité, la production culturelle et la biologie inter-espèces à l'échelle populationnelle.",
+    civPredictions: [
+      { id: "E-CIV-1", title: "No Renaissance during 2020–2053 grand solar minimum", description: "The current grand solar minimum (2020–2053) will NOT produce a cultural renaissance comparable to previous grand minima (Italian Renaissance/Spörer, Scientific Revolution/Maunder, Romanticism/Dalton) because anthropogenic electromagnetic infrastructure masks the biological recovery that solar minima previously enabled.", falsification: "A marked cultural renaissance occurs in high-latitude nations during 2020–2053.", timeline: "Observable by 2055" },
+      { id: "E-CIV-2", title: "Sub-Saharan African fertility decline acceleration", description: "As Sub-Saharan Africa's mobile network penetration crosses 80% and grid electrification exceeds 60%, regional TFR will begin declining at a rate comparable to East Asia's 1990–2010 trajectory (>0.1/year), despite strong pronatalist cultural norms.", falsification: "African TFR remains stable or declines <0.05/year despite reaching those infrastructure thresholds.", timeline: "Testable 2030–2040" },
+      { id: "E-CIV-3", title: "Pronatalist policy ceiling", description: "No national pronatalist policy will achieve sustained (>5 year) return to replacement-level fertility (TFR ≥ 2.1) in any country with mobile penetration >90% and grid coverage >95%, regardless of spending level.", falsification: "Any such country sustains TFR ≥ 2.1 for 5+ years through policy intervention.", timeline: "Continuously testable" },
+      { id: "E-CIV-4", title: "Technology-restricting communities maintain fertility", description: "Communities that restrict electromagnetic technology (Old Order Amish, ultra-Orthodox with kosher phones, technology-free intentional communities) will maintain TFR >4.0 while surrounding populations continue declining, and communities that adopt technology will see TFR converge toward mainstream within one generation (~25 years).", falsification: "Technology-restricting communities show fertility decline parallel to mainstream, or adopting communities maintain high TFR.", timeline: "Continuously testable" },
+      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.909) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
+    ],
+    civTimeline: "Chronologie",
+    civFalsification: "Critère de falsification",
+    civLocked: "Verrouillé : 2026-08-31",
+    civStatus: "VERROUILLÉ — en attente de test",
+    actTitle: "Prédictions d'activation hormétique",
+    actLead: "",
+    actPredictions: [
+      { id: "E-ACT-1", title: "Les hommes sub-sahariens ont une testostérone plus élevée que les hommes européens appariés", description: "", timeline: "", falsification: "" },
+      { id: "E-ACT-2", title: "Convergence des biomarqueurs immigrants en une génération", description: "", timeline: "", falsification: "" },
+      { id: "E-ACT-3", title: "Les hommes Amish maintiennent une testostérone plus élevée que les Américains", description: "", timeline: "", falsification: "" },
+    ],
+    actTimeline: "Chronologie",
+    actFalsification: "Critère de falsification",
+    actLocked: "Verrouillé : 2026-08-31",
+    actStatus: "VERROUILLÉ — en attente de test",
+    spaceWeatherTitle: "Biologie de la météo spatiale",
+    spaceWeatherLead: "Prédictions reliant l'environnement électromagnétique naturel (résonance de Schumann, micropulsations Pc1, courants géomagnétiquement induits) aux résultats biologiques via la voie CRY/RPM.",
+    spaceWeatherPredictions: [
+      {
+        id: "GIC-HEALTH-1",
+        label: "GIC–Health Correlation",
+        text: "Regions with high geomagnetic storm exposure AND dense power grid infrastructure will show elevated cardiovascular event rates (MI, stroke) during strong geomagnetic storms (Kp ≥ 7), compared to: (a) same regions during quiet conditions, and (b) high-storm regions with sparse grids. The effect should be strongest at high magnetic latitudes (>55°) where GIC amplitudes are largest. Predicted effect size: 5–15% increase in daily MI rate during severe storms in grid-dense high-latitude regions.",
+        status: "testable",
+      },
+      {
+        id: "SR-MASKING-1",
+        label: "SR Masking → Circadian Disruption",
+        text: "Urban populations where Schumann resonance (7.83 Hz) is measurably masked by anthropogenic ELF noise will show higher rates of circadian disruption markers (delayed sleep phase, melatonin onset delay, cortisol rhythm flattening) compared to rural populations where SR signal is clean, after controlling for light exposure, work schedules, and socioeconomic factors. Measurement: SR signal-to-noise ratio at bedroom level should inversely correlate with circadian rhythm quality (r > 0.3, p < 0.01).",
+        status: "testable",
+      },
+      {
+        id: "ISS-MEL-MAGFIELD-1",
+        label: "ISS Melatonin–Magnetic Field",
+        text: "If ISS astronauts are provided with a local 25–50 μT static magnetic field (simulating Earth-surface geomagnetic conditions) during sleep periods, their melatonin onset will normalize toward ground-based values (currently delayed 2.7–3.0 hours), sleep duration will increase toward 7+ hours (currently 6.4 hours), and circadian phase markers will stabilize. This directly tests whether the hypomagnetic environment — not microgravity alone — drives the CRY-mediated circadian disruption observed in spaceflight.",
+        status: "testable",
+      },
+    ],
+    spaceWeatherTimeline: "GIC-HEALTH-1: testable now with existing health registries + geomagnetic data. SR-MASKING-1: requires concurrent SR measurement + circadian biomarker study (~2 years). ISS-MEL-MAGFIELD-1: requires ISS experiment protocol (~5 years, proposed to ESA/NASA/JAXA).",
+    spaceWeatherFalsification: "GIC-HEALTH-1 fails if no storm–MI correlation exists after controlling for temperature. SR-MASKING-1 fails if circadian quality is identical in SR-masked and SR-clean environments. ISS-MEL-MAGFIELD-1 fails if magnetic field restoration has no effect on astronaut circadian rhythms.",
+    spaceWeatherLocked: "Verrouillé 2026-08-31. Trois prédictions de météo spatiale basées sur la couche d'environnement EM naturel (niveau 3) et la susceptibilité CRY/RPM (niveau 2).",
+    spaceWeatherStatus: "Enregistré. Aucune collecte de données commencée.",
     nextLabel: "Suivant",
     sourcesTitle: "Sources",
 
@@ -7455,6 +7691,56 @@ const COPY = {
     sentinelHierarchyAria: "센티넬 종의 민감도 계층",
     sensitivityTop: "민감도 (최상단이 가장 높음)",
     emfSensitivity: "EMF 민감도",
+    civTitle: "문명 예측",
+    civLead: "BERM의 스칼라 노출 모델을 문명 패턴에 적용한 거시적 예측. 각 예측은 EMF 인프라가 출산율, 문화적 산출물, 종간 생물학을 인구 수준에서 조절하는지 테스트.",
+    civPredictions: [
+      { id: "E-CIV-1", title: "No Renaissance during 2020–2053 grand solar minimum", description: "The current grand solar minimum (2020–2053) will NOT produce a cultural renaissance comparable to previous grand minima (Italian Renaissance/Spörer, Scientific Revolution/Maunder, Romanticism/Dalton) because anthropogenic electromagnetic infrastructure masks the biological recovery that solar minima previously enabled.", falsification: "A marked cultural renaissance occurs in high-latitude nations during 2020–2053.", timeline: "Observable by 2055" },
+      { id: "E-CIV-2", title: "Sub-Saharan African fertility decline acceleration", description: "As Sub-Saharan Africa's mobile network penetration crosses 80% and grid electrification exceeds 60%, regional TFR will begin declining at a rate comparable to East Asia's 1990–2010 trajectory (>0.1/year), despite strong pronatalist cultural norms.", falsification: "African TFR remains stable or declines <0.05/year despite reaching those infrastructure thresholds.", timeline: "Testable 2030–2040" },
+      { id: "E-CIV-3", title: "Pronatalist policy ceiling", description: "No national pronatalist policy will achieve sustained (>5 year) return to replacement-level fertility (TFR ≥ 2.1) in any country with mobile penetration >90% and grid coverage >95%, regardless of spending level.", falsification: "Any such country sustains TFR ≥ 2.1 for 5+ years through policy intervention.", timeline: "Continuously testable" },
+      { id: "E-CIV-4", title: "Technology-restricting communities maintain fertility", description: "Communities that restrict electromagnetic technology (Old Order Amish, ultra-Orthodox with kosher phones, technology-free intentional communities) will maintain TFR >4.0 while surrounding populations continue declining, and communities that adopt technology will see TFR converge toward mainstream within one generation (~25 years).", falsification: "Technology-restricting communities show fertility decline parallel to mainstream, or adopting communities maintain high TFR.", timeline: "Continuously testable" },
+      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.909) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
+    ],
+    civTimeline: "타임라인",
+    civFalsification: "반증 기준",
+    civLocked: "잠금일: 2026-08-31",
+    civStatus: "잠금 — 테스트 대기 중",
+    actTitle: "호르메시스 활성화 예측",
+    actLead: "",
+    actPredictions: [
+      { id: "E-ACT-1", title: "사하라 이남 아프리카 남성은 동일 조건 유럽 남성보다 높은 테스토스테론을 보인다", description: "", timeline: "", falsification: "" },
+      { id: "E-ACT-2", title: "이민자 바이오마커가 한 세대 내에 수렴한다", description: "", timeline: "", falsification: "" },
+      { id: "E-ACT-3", title: "구질서 아미쉬 남성은 주류 미국인보다 높은 테스토스테론을 유지한다", description: "", timeline: "", falsification: "" },
+    ],
+    actTimeline: "타임라인",
+    actFalsification: "반증 기준",
+    actLocked: "잠금일: 2026-08-31",
+    actStatus: "잠금 — 테스트 대기 중",
+    spaceWeatherTitle: "우주 기상 생물학",
+    spaceWeatherLead: "자연 전자기 환경(슈만 공명, Pc1 마이크로펄세이션, 지자기 유도 전류)과 CRY/RPM 경로를 통한 생물학적 결과를 연결하는 예측.",
+    spaceWeatherPredictions: [
+      {
+        id: "GIC-HEALTH-1",
+        label: "GIC–Health Correlation",
+        text: "Regions with high geomagnetic storm exposure AND dense power grid infrastructure will show elevated cardiovascular event rates (MI, stroke) during strong geomagnetic storms (Kp ≥ 7), compared to: (a) same regions during quiet conditions, and (b) high-storm regions with sparse grids. The effect should be strongest at high magnetic latitudes (>55°) where GIC amplitudes are largest. Predicted effect size: 5–15% increase in daily MI rate during severe storms in grid-dense high-latitude regions.",
+        status: "testable",
+      },
+      {
+        id: "SR-MASKING-1",
+        label: "SR Masking → Circadian Disruption",
+        text: "Urban populations where Schumann resonance (7.83 Hz) is measurably masked by anthropogenic ELF noise will show higher rates of circadian disruption markers (delayed sleep phase, melatonin onset delay, cortisol rhythm flattening) compared to rural populations where SR signal is clean, after controlling for light exposure, work schedules, and socioeconomic factors. Measurement: SR signal-to-noise ratio at bedroom level should inversely correlate with circadian rhythm quality (r > 0.3, p < 0.01).",
+        status: "testable",
+      },
+      {
+        id: "ISS-MEL-MAGFIELD-1",
+        label: "ISS Melatonin–Magnetic Field",
+        text: "If ISS astronauts are provided with a local 25–50 μT static magnetic field (simulating Earth-surface geomagnetic conditions) during sleep periods, their melatonin onset will normalize toward ground-based values (currently delayed 2.7–3.0 hours), sleep duration will increase toward 7+ hours (currently 6.4 hours), and circadian phase markers will stabilize. This directly tests whether the hypomagnetic environment — not microgravity alone — drives the CRY-mediated circadian disruption observed in spaceflight.",
+        status: "testable",
+      },
+    ],
+    spaceWeatherTimeline: "GIC-HEALTH-1: testable now with existing health registries + geomagnetic data. SR-MASKING-1: requires concurrent SR measurement + circadian biomarker study (~2 years). ISS-MEL-MAGFIELD-1: requires ISS experiment protocol (~5 years, proposed to ESA/NASA/JAXA).",
+    spaceWeatherFalsification: "GIC-HEALTH-1 fails if no storm–MI correlation exists after controlling for temperature. SR-MASKING-1 fails if circadian quality is identical in SR-masked and SR-clean environments. ISS-MEL-MAGFIELD-1 fails if magnetic field restoration has no effect on astronaut circadian rhythms.",
+    spaceWeatherLocked: "잠금일: 2026-08-31. 자연 EM 환경 레이어(레벨 3)와 CRY/RPM 감수성(레벨 2)에 기반한 3개의 우주 기상 예측.",
+    spaceWeatherStatus: "등록됨. 데이터 수집 미시작.",
     nextLabel: "다음",
     sourcesTitle: "출처",
 
@@ -9144,7 +9430,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               {/* Sensitivity arrow */}
               <line x1="28" y1="265" x2="28" y2="22" stroke="currentColor" strokeWidth="1.5" opacity="0.2" />
               <polygon points="23 26, 28 14, 33 26" fill="currentColor" opacity="0.2" />
-              <text x="28" y="284" textAnchor="middle" fontSize="9" fill="currentColor" opacity="0.4">{d.sensitivityLabel}</text>
+              <text x="28" y="284" textAnchor="middle" fontSize="9" fill="var(--foreground-muted)">{d.sensitivityLabel}</text>
 
               {/* Insects - most sensitive */}
               <circle cx="72" cy="28" r="5" fill="#ef4444" opacity="0.85" />
@@ -9207,8 +9493,8 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.modulomeLead}</p>
 
         {/* Modulome prediction matrix */}
-        <div className="mb-6 overflow-x-auto">
-          <svg viewBox="0 0 420 165" className="w-full max-w-lg" role="img" aria-label={d.predMatrixAria}>
+        <div className="mb-6 chart-scroll">
+          <svg viewBox="0 0 420 165" className="chart-svg w-full min-w-[420px] max-w-lg" role="img" aria-label={d.predMatrixAria}>
             {/* Column headers */}
             <text x="170" y="20" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.55">In vitro</text>
             <text x="230" y="20" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.55">{d.animalLabel}</text>
@@ -9281,8 +9567,8 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.cascadeLead}</p>
 
         {/* Cascade confirmation path */}
-        <div className="mb-6 overflow-x-auto">
-          <svg viewBox="0 0 520 92" className="w-full max-w-xl" role="img" aria-label={d.cascadePathAria}>
+        <div className="mb-6 chart-scroll">
+          <svg viewBox="0 0 520 92" className="chart-svg w-full min-w-[520px] max-w-xl" role="img" aria-label={d.cascadePathAria}>
             <defs>
               <marker id="cascade-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
                 <polygon points="0 0, 8 3, 0 6" fill="currentColor" opacity="0.35" />
@@ -9291,21 +9577,21 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             {/* NUT box */}
             <rect x="15" y="8" width="130" height="42" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.25" />
             <text x="80" y="24" textAnchor="middle" fontSize="14" fontWeight="600" fill="currentColor">NUT</text>
-            <text x="80" y="40" textAnchor="middle" fontSize="9" fill="currentColor" opacity="0.45">{d.nutritionalShort}</text>
+            <text x="80" y="40" textAnchor="middle" fontSize="9" fill="var(--foreground-muted)">{d.nutritionalShort}</text>
             {/* Arrow 1 */}
             <line x1="150" y1="29" x2="192" y2="29" stroke="currentColor" strokeWidth="1.5" opacity="0.3" markerEnd="url(#cascade-arr)" />
             {/* METAB box */}
             <rect x="195" y="8" width="130" height="42" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.25" />
             <text x="260" y="24" textAnchor="middle" fontSize="14" fontWeight="600" fill="currentColor">METAB</text>
-            <text x="260" y="40" textAnchor="middle" fontSize="9" fill="currentColor" opacity="0.45">{d.metabolicShort}</text>
+            <text x="260" y="40" textAnchor="middle" fontSize="9" fill="var(--foreground-muted)">{d.metabolicShort}</text>
             {/* Arrow 2 */}
             <line x1="330" y1="29" x2="372" y2="29" stroke="currentColor" strokeWidth="1.5" opacity="0.3" markerEnd="url(#cascade-arr)" />
             {/* PHARM box */}
             <rect x="375" y="8" width="130" height="42" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.25" />
             <text x="440" y="24" textAnchor="middle" fontSize="14" fontWeight="600" fill="currentColor">PHARM</text>
-            <text x="440" y="40" textAnchor="middle" fontSize="9" fill="currentColor" opacity="0.45">{d.pharmacologicalShort}</text>
+            <text x="440" y="40" textAnchor="middle" fontSize="9" fill="var(--foreground-muted)">{d.pharmacologicalShort}</text>
             {/* Subtitle */}
-            <text x="260" y="76" textAnchor="middle" fontSize="10" fill="currentColor" opacity="0.4">{d.cascadePathSubtitle}</text>
+            <text x="260" y="76" textAnchor="middle" fontSize="10" fill="var(--foreground-muted)">{d.cascadePathSubtitle}</text>
           </svg>
         </div>
 
@@ -9341,20 +9627,20 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
 
       {/* Cascade Path Diagram: NUT → METAB → PHARM evidence flow */}
       <section className="mb-8 max-w-4xl">
-        <div className="rounded-xl border border-card-border bg-card-bg p-5 overflow-x-auto">
+        <div className="rounded-xl border border-card-border bg-card-bg p-5 chart-scroll">
           <h3 className="text-xs uppercase tracking-[0.16em] text-accent font-semibold mb-3">
             {d.evidenceCascadePath}
           </h3>
           <p className="text-xs text-foreground-muted mb-4">
             {d.evidenceCascadeDesc}
           </p>
-          <svg viewBox="0 0 600 90" className="w-full" role="img" aria-label={d.evidenceCascadeAria}>
+          <svg viewBox="0 0 600 90" className="chart-svg w-full min-w-[600px]" role="img" aria-label={d.evidenceCascadeAria}>
             {/* Box 1: Nutritional */}
             <rect x="10" y="20" width="160" height="50" rx="8" fill="currentColor" opacity="0.08" stroke="currentColor" strokeOpacity="0.25" strokeWidth="1.5" />
             <text x="90" y="40" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
               {d.nutritionalFull}
             </text>
-            <text x="90" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+            <text x="90" y="55" textAnchor="middle" fill="var(--foreground-muted)" fontSize="9">
               NUT-1 .. NUT-3 (CRY/FAD)
             </text>
             {/* Arrow 1 */}
@@ -9365,7 +9651,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <text x="300" y="40" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
               {d.metabolicFull}
             </text>
-            <text x="300" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+            <text x="300" y="55" textAnchor="middle" fill="var(--foreground-muted)" fontSize="9">
               METAB-1 .. METAB-4 (CaMKII)
             </text>
             {/* Arrow 2 */}
@@ -9376,11 +9662,11 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <text x="510" y="40" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600">
               {d.pharmacologicalFull}
             </text>
-            <text x="510" y="55" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.5">
+            <text x="510" y="55" textAnchor="middle" fill="var(--foreground-muted)" fontSize="9">
               PHARM-1 .. PHARM-5 (VGCC)
             </text>
             {/* Bottom annotation */}
-            <text x="300" y="85" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.35" fontStyle="italic">
+            <text x="300" y="85" textAnchor="middle" fill="var(--foreground-muted)" fontSize="9" fontStyle="italic">
               {d.cascadeConfirmation}
             </text>
           </svg>
@@ -10262,20 +10548,20 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
         <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.sentinelPredLead}</p>
 
         {/* Sentinel Species Hierarchy Diagram */}
-        <div className="mb-8 max-w-4xl rounded-xl border border-card-border bg-card-bg p-5 overflow-x-auto">
+        <div className="mb-8 max-w-4xl rounded-xl border border-card-border bg-card-bg p-5 chart-scroll">
           <h3 className="text-xs uppercase tracking-[0.16em] text-accent font-semibold mb-3">
             {d.sentinelHierarchyTitle}
           </h3>
           <p className="text-xs text-foreground-muted mb-4">
             {d.sentinelHierarchyDesc}
           </p>
-          <svg viewBox="0 0 600 260" className="w-full" role="img" aria-label={d.sentinelHierarchyAria}>
+          <svg viewBox="0 0 600 260" className="chart-svg w-full min-w-[600px]" role="img" aria-label={d.sentinelHierarchyAria}>
             {/* Title */}
-            <text x="300" y="18" textAnchor="middle" fill="currentColor" fontSize="11" fontWeight="600" opacity="0.6">
+            <text x="300" y="18" textAnchor="middle" fill="var(--foreground-muted)" fontSize="11" fontWeight="600">
               {d.sensitivityTop}
             </text>
             {/* Scaling rule */}
-            <text x="560" y="18" textAnchor="end" fill="currentColor" fontSize="9" opacity="0.4" fontFamily="monospace">
+            <text x="560" y="18" textAnchor="end" fill="var(--foreground-muted)" fontSize="9" fontFamily="monospace">
               M^(-0.25)
             </text>
             {/* Steps - descending staircase from most to least sensitive */}
@@ -10326,7 +10612,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             </text>
             <rect x="442" y="226" width="12" height="20" rx="2" fill="#22c55e" opacity="0.5" />
             {/* Vertical axis label */}
-            <text x="12" y="140" textAnchor="middle" fill="currentColor" fontSize="9" opacity="0.4" transform="rotate(-90, 12, 140)">
+            <text x="12" y="140" textAnchor="middle" fill="var(--foreground-muted)" fontSize="9" transform="rotate(-90, 12, 140)">
               {d.emfSensitivity}
             </text>
           </svg>
@@ -10466,6 +10752,103 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
               </article>
             );
           })}
+        </div>
+      </section>
+
+      {/* Civilization predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3 flex items-center gap-2">
+          <Building2 className="w-5 h-5 text-accent shrink-0" />
+          {d.civTitle}
+        </h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.civLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.civPredictions.map((cp) => (
+            <article key={cp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{cp.id}</span>
+                    <h3 className="font-semibold">{cp.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.civStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3"><InlineReferenceText text={cp.description} locale={locale} /></p>
+              <div className="space-y-1 text-xs text-foreground-muted">
+                <p><span className="font-semibold">{d.civTimeline}:</span> {cp.timeline}</p>
+                <p><span className="font-semibold">{d.civFalsification}:</span> {cp.falsification}</p>
+                <p className="font-mono-num">{d.civLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Hormetic activation predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3 flex items-center gap-2">
+          <Zap className="w-5 h-5 text-accent shrink-0" />
+          {d.actTitle}
+        </h2>
+        {d.actLead && <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.actLead}</p>}
+        <div className="grid gap-4 max-w-4xl">
+          {d.actPredictions.map((ap) => (
+            <article key={ap.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{ap.id}</span>
+                    <h3 className="font-semibold">{ap.title}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {d.actStatus}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {ap.description && <p className="text-sm text-foreground-muted leading-relaxed mb-3"><InlineReferenceText text={ap.description} locale={locale} /></p>}
+              <div className="space-y-1 text-xs text-foreground-muted">
+                {ap.timeline && <p><span className="font-semibold">{d.actTimeline}:</span> {ap.timeline}</p>}
+                {ap.falsification && <p><span className="font-semibold">{d.actFalsification}:</span> {ap.falsification}</p>}
+                <p className="font-mono-num">{d.actLocked}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Space weather biology predictions */}
+      <section className="mb-14 border-t editorial-rule pt-6">
+        <h2 className="editorial-section-heading mb-3 flex items-center gap-2">
+          <Sun className="w-5 h-5 text-accent shrink-0" />
+          {d.spaceWeatherTitle}
+        </h2>
+        <p className="text-sm text-foreground-muted leading-relaxed mb-6 max-w-4xl">{d.spaceWeatherLead}</p>
+        <div className="grid gap-4 max-w-4xl">
+          {d.spaceWeatherPredictions.map((sp) => (
+            <article key={sp.id} className="rounded-xl border border-card-border bg-card-bg p-5">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between mb-3">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono-num text-xs text-accent">{sp.id}</span>
+                    <h3 className="font-semibold">{sp.label}</h3>
+                    <span className="text-[10px] font-mono-num px-1.5 py-0.5 rounded bg-status-partial/10 text-status-partial border border-status-partial/30">
+                      {sp.status}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-foreground-muted leading-relaxed mb-3">{sp.text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-6 space-y-2 text-sm text-foreground-muted max-w-4xl">
+          <p>{d.spaceWeatherTimeline}</p>
+          <p>{d.spaceWeatherFalsification}</p>
+          <p className="font-mono-num">{d.spaceWeatherLocked}</p>
+          <p className="font-semibold">{d.spaceWeatherStatus}</p>
         </div>
       </section>
 

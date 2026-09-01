@@ -75,7 +75,7 @@ const t: Record<string, Copy> = {
       {
         title: "1. Suunnittele yhteensovitettu vertailu",
         text: [
-          "Käytä vähintään kahta toisistaan riippumattomasti karakterisoitua ympäristöä tai altistuskammiota: referenssi-/sham-ehtoa ja aktiivista ehtoa. Satunnaista näytteet tai eläimet ajoihin ja sokkouta päätepisteen arviointi aina kun käytännöllistä.",
+          "Käytä vähintään kahta toisistaan riippumattomasti luonnehdittua ympäristöä tai altistuskammiota: referenssi-/sham-ehtoa ja aktiivista ehtoa. Satunnaista näytteet tai eläimet ajoihin ja sokkouta päätepisteen arviointi aina kun käytännöllistä.",
           "Älä kuvaa kumpaakaan haaraa “EMF-vapaaksi”. Vertailun on raportoitava kummassakin haarassa mitattu tilanne, mukaan lukien jäännöskentät ja epävarmuus.",
         ],
       },
@@ -83,7 +83,7 @@ const t: Record<string, Copy> = {
         title: "2. Mittaa koko koe-ympäristö",
         text: [
           "Tallenna kalibroidut kenttämittaukset ennen jokaista biologista ajoa, sen aikana ja sen jälkeen: relevantit kaistat, matalataajuiset komponentit, tarvittaessa B₀-vektori, orientaatio, aikasarja/PSD, lähdekonfiguraatio, lämpötila, kosteus, värähtely, valo ja ilmavirta.",
-          "Jos käytetään suojausta, karakterisoi sen sivuvaikutukset. Suojaus voi muuttaa lämpövakautta, ilmanvaihtoa, ääniympäristöä, staattisia kenttiä ja käsittelyä; muutokset tarvitsevat sovitetut kontrollit, eikä niitä oleteta kenttäeron seuraukseksi.",
+          "Jos käytetään suojausta, luonnehtii sen sivuvaikutukset. Suojaus voi muuttaa lämpövakautta, ilmanvaihtoa, ääniympäristöä, staattisia kenttiä ja käsittelyä; muutokset tarvitsevat sovitetut kontrollit, eikä niitä oleteta kenttäeron seuraukseksi.",
         ],
       },
       {
@@ -110,7 +110,7 @@ const t: Record<string, Copy> = {
     ],
     outcomeTitle: "Mitä kumpikin tulos tarkoittaisi",
     outcomeText:
-      "Toistettava nollatulos hyvin karakterisoidussa FieldState-kontrastissa rajoittaisi ehdotettua lenkkiä kyseisessä järjestelmässä ja protokollassa. Toistettava ero motivoisi mekanismi- ja annos/geometriatyötä; se ei yksin osoittaisi ihmisen lisääntymis- tai väestö-TFR-vaikutusta. Molemmat tulokset ovat informatiivisia ja ne tulee julkaista.",
+      "Toistettava nollatulos hyvin luonnehditussa FieldState-kontrastissa rajoittaisi ehdotettua lenkkiä kyseisessä järjestelmässä ja protokollassa. Toistettava ero motivoisi mekanismi- ja annos/geometriatyötä; se ei yksin osoittaisi ihmisen lisääntymis- tai väestö-TFR-vaikutusta. Molemmat tulokset ovat informatiivisia ja ne tulee julkaista.",
   },
   ja: {
     title: "実験室FieldState再現プロトコル",

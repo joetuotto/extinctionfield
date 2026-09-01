@@ -168,11 +168,11 @@ const COPY = {
 
     s1Title: "Useita EMF-herkkiä komponentteja",
     s1p1:
-      "Kivekset sisältävät vähintään nelja erillistaa EMF-herkkaa soluosastoa jotka toimivat rinnakkain. Leydigin solut käyttävät T-tyypin kalsiumkanavia (Cav3) testosteronibiosynteesiin StAR-proteiinin kautta (Xiang 2025). Spermatogoniat vaativat SEKÄ Cav1- (L-tyyppi) että Cav3-kanavia (T-tyyppi) normaaliin spermatogeneesiin (Ma 2026). Sertolin solut ylläpitävät veri-kivesestettä (BTB) käyttäen samoja tight junction -proteiineja (okkludiini, ZO-1) kuin veri-aivoeste. Kypsaat siittiöt käyttävät CatSper-kanavia kapasitaatioon ja akrosomireaktioon.",
+      "Kivekset sisältävät vähintään neljä erillistä EMF-herkkää soluosastoa jotka toimivat rinnakkain. Leydigin solut käyttävät T-tyypin kalsiumkanavia (Cav3) testosteronibiosynteesiin StAR-proteiinin kautta (Xiang 2025). Spermatogoniat vaativat SEKÄ Cav1- (L-tyyppi) että Cav3-kanavia (T-tyyppi) normaaliin spermatogeneesiin (Ma 2026). Sertolin solut ylläpitävät veri-kivesestettä (BTB) käyttäen samoja tight junction -proteiineja (okkludiini, ZO-1) kuin veri-aivoeste. Kypsät siittiöt käyttävät CatSper-kanavia kapasitaatioon ja akrosomireaktioon.",
     s1p2:
-      "Tämä tarkoittaa, että EMF-altistus hyökkää miehen lisääntymistoimintaa useilla riippumattomilla mekanismeilla samanaikaisesti. Vaikka yksittäinen mekanismi olisi marginaalinen, useiden mekanismien konvergenssi samaan päätetapahtumaan (hedelmällisyyden heikkeneminen) luo robustin vaikutuksen jota on vaikea liittaa mihinkaan yksittaiseen polkuun.",
+      "Tämä tarkoittaa, että EMF-altistus hyökkää miehen lisääntymistoimintaa useilla riippumattomilla mekanismeilla samanaikaisesti. Vaikka yksittäinen mekanismi olisi marginaalinen, useiden mekanismien yhdentyminen samaan päätetapahtumaan (hedelmällisyyden heikkeneminen) luo robustin vaikutuksen jota on vaikea liittaa mihinkaan yksittäiseen polkuun.",
     s1p3:
-      "Kivekset ovat ainutlaatuisessa asemassa BERM-kehyksessä: ne ovat ainoa elin jossa sekä VGCC-valitteinen ionikanavahäiriö (polut A/B) että biologisen esteen häiriö (polku F) konvergoivat samaan toiminnalliseen lopputulokseen.",
+      "Kivekset ovat ainutlaatuisessa asemassa BERM-kehyksessä: ne ovat ainoa elin jossa sekä VGCC-valitteinen ionikanavahäiriö (polut A/B) että biologisen esteen häiriö (polku F) yhtyvät samaan toiminnalliseen lopputulokseen.",
 
     s2Title: "Kanavaprofiili",
     s2Channels: [
@@ -185,7 +185,7 @@ const COPY = {
       {
         name: "CatSper kypsissä siittiöissä",
         function: "Kapasitaatio, hyperaktivoitu motiliteetti, akrosomireaktio",
-        mechanism: "pH-saadelty Ca2+-kanava joka on välttämätön hedelmöityskykyisyydelle",
+        mechanism: "pH-säädelty Ca2+-kanava joka on välttämätön hedelmöityskykyisyydelle",
         evidence: "CatSper-knockout = miehen infertiliteetti (useita tutkimuksia)",
       },
       {
@@ -208,13 +208,13 @@ const COPY = {
       "EMF → Schwanin delta-Vm → Cav3-ikkunavirta → Ca2+-dysregulaatio → StAR-fosforylaation häiriö → kolesterolin kuljetus heikkenee → testosteroni ↓",
     s3Attack2Title: "Hyökkäys 2: Este (BTB-häiriö)",
     s3Attack2:
-      "EMF → MMP2-ylisäätely (Spock3-MMP2-akseli) → okkludiini/ZO-1-degradaatio → BTB avautuu → spermatogeneettinen mikroympäristö vaarantuu → kehittyvät siittiöt altistuvat immuunijaarjestelmalle → spermatogeneesi häiriintyy",
+      "EMF → MMP2-ylisäätely (Spock3-MMP2-akseli) → okkludiini/ZO-1-degradaatio → BTB avautuu → spermatogeneettinen mikroympäristö vaarantuu → kehittyvät siittiöt altistuvat immuunijärjestelmälle → spermatogeneesi häiriintyy",
     s3p1:
       "Nämä kaksi hyökkäystä ovat riippumattomia mekanismeja jotka kohdistuvat samaan elimeen. Hyökkäys 1 toimii Cav3-ionikanavien kautta (polku A). Hyökkäys 2 toimii biologisen esteen häiriön kautta (polku F). Ne vahvistavat toisiaan: testosteroni vaaditaan BTB:n ylläpitoon (Sertolin solujen toiminta on testosteroniriippuvaista), joten Hyökkäys 1 heikentää puolustusta Hyökkäystä 2 vastaan.",
     s3p2:
       "Tuloksena on positiivinen takaisinkytkentäsilmukka: EMF → testosteroni ↓ → BTB heikkenee → mikroympäristö altistuu → spermatogeneesi häiriintyy edelleen → kumulatiivinen altistus lisää vahinkoa.",
 
-    s4Title: "Keskeinen evidenssi",
+    s4Title: "Keskeinen näyttö",
     s4Studies: [
       {
         citation: "Xiang ym.",
@@ -225,19 +225,19 @@ const COPY = {
       {
         citation: "Ma ym.",
         year: 2026, referenceId: "ma2026_spermatogenesis_cav",
-        finding: "Seka Cav1- (L-tyyppi) että Cav3-kalsiumkanavat (T-tyyppi) vaaditaan normaaliin spermatogeneesiin. Kumpikaan kanavatyyppi yksin ei riita — kaksoisvaatimus luo kaksoishaavoittuvuuden.",
+        finding: "Sekä Cav1- (L-tyyppi) että Cav3-kalsiumkanavat (T-tyyppi) vaaditaan normaaliin spermatogeneesiin. Kumpikaan kanavatyyppi yksin ei riita — kaksoisvaatimus luo kaksoishaavoittuvuuden.",
         level: "E",
       },
       {
         citation: "Yu ym. (Sci Total Environ)",
         year: 2019, referenceId: "yu2019_btb",
-        finding: "Pitkäaikainen 4G-altistus (2605 MHz) häiritsee suoraan veri-kivesesteen eheyttä Spock3-MMP2-akselin kautta. Aikäriippuvainen, progressiivinen lisääntymistoksisuus.",
+        finding: "Pitkäaikainen 4G-altistus (2605 MHz) häiritsee suoraan veri-kivesesteen eheyttä Spock3-MMP2-akselin kautta. Aikariippuvainen, etenevä lisääntymistoksisuus.",
         level: "E",
       },
       {
         citation: "23-28 VGCC-salpaajatutkimusta",
         year: "2018-2025", referenceId: "vgcc_blocker_studies_collection",
-        finding: "Systemaattinen evidenssi 23-28 tutkimuksesta: VGCC-salpaajan anto estää tai vaimentaa EMF-indusoituja biologisia vaikutuksia. Vahvistaa, että VGCC/Cav-kanavat ovat ensisijainen transduuktiopolku.",
+        finding: "Systemaattinen näyttö 23-28 tutkimuksesta: VGCC-salpaajan anto estää tai vaimentaa EMF-aiheutettuja biologisia vaikutuksia. Vahvistaa, että VGCC/Cav-kanavat ovat ensisijainen transduuktiopolku.",
         level: "M",
       },
     ],
@@ -248,7 +248,7 @@ const COPY = {
     s5Criteria: [
       "chi_barrier (BTB) — käyttää samoja TJ-proteiineja kuin BBB. EMF avaa BTB:n → spermatogeneettinen mikroympäristö altistuu → enemmän vahinkoa",
       "chi_channel — Cav3 Leydigin soluissa bifurkaatiossa. Cav1+Cav3-kaksoisvaatimus spermatogonioissa kaksinkertaistaa haavoittuvuuspinta-alan",
-      "chi_cumulative — BTB-häiriö on progressiivinen (Yu 2019: aikariippuvainen). Testosteronin lasku heikentää BTB:ta edelleen. Positiivinen takaisinkytkentä.",
+      "chi_cumulative — BTB-häiriö on etenevä (Yu 2019: aikariippuvainen). Testosteronin lasku heikentää BTB:ta edelleen. Positiivinen takaisinkytkentä.",
       "chi_barrier vahvistuu kumulatiivisen altistuksen myötä — jokainen BTB:n heikkenemisen + testosteronin laskun kierros tekee seuraavasta kierroksesta pahemman",
     ],
     s5p2:
@@ -258,7 +258,7 @@ const COPY = {
     s6Predictions: [
       {
         id: "TTYPE-1",
-        text: "Selektiivinen T-tyypin kalsiumkanavan salpaaja (TTA-P2) estää EMF-indusoidun testosteronin laskun Leydigin soluviljelma. Jos EMF vaikuttaa Cav3:n kautta, kanavan spesifinen salpaaminen tulisi kumota StAR-valitteisen steroidogeneesin häiriö.",
+        text: "Selektiivinen T-tyypin kalsiumkanavan salpaaja (TTA-P2) estää EMF-indusoidun testosteronin laskun Leydigin soluviljelma. Jos EMF vaikuttaa Cav3:n kautta, kanavan tarkka salpaaminen tulisi kumota StAR-valitteisen steroidogeneesin häiriö.",
         discriminating: true,
       },
       {
@@ -271,11 +271,11 @@ const COPY = {
     /* 07 CatSper-lämpötila */
     s7Title: "CatSper: Lämpötilaohjattu 33,5 °C:ssa",
     s7p1: "Nature Communications 2025 paljasti, että CatSper toimii lämpötilaohjattuna ionikanavana termisella kynnyksellä 33,5 °C ja Q10-arvolla 5,1. Ennenaikainen aktivoituminen heikentää siittiöiden toimintaa.",
-    s7p2: "Yhteys Blackmanin lämpötilaikkunaan (Ca2+-vaikutukset vain 36–37 °C:ssa): molemmat ovat kapeita lämpötilaikkunoita fysiologisen lämpötilan lähellä. Sama chi_temperature moduloi sekä Blackmanin Ca2+-effluksia että CatSper-valitteista kapasitaatiota.",
+    s7p2: "Yhteys Blackmanin lämpötilaikkunaan (Ca2+-vaikutukset vain 36–37 °C:ssa): molemmat ovat kapeita lämpötilaikkunoita fysiologisen lämpötilan lähellä. Sama chi_temperature säätelee sekä Blackmanin Ca2+-effluksia että CatSper-valitteista kapasitaatiota.",
     s7p3: "BERM-ennuste: EMF-häiriö jänniteanturidomeenien kautta voisi \"esiaktivoida\" CatSperin matalammissa lämpötiloissa → ennenaikainen kapasitaatio → siittiöiden uupuminen ennen munasolun saavuttamista. Vahentaa TOIMINNALLISTA hedelmällisyyttä vaikka siittiomäärä ja morfologia näyttäisivät normaaleilta.",
 
-    /* 08 Epigeneettinen transgenerationaalinen vahvistus */
-    s8Title: "Epigeneettinen transgenerationaalinen vahvistus",
+    /* 08 Epigeneettinen ylisukupolvinen vahvistus */
+    s8Title: "Epigeneettinen ylisukupolvinen vahvistus",
     s8Subtitle: "Ca2+:sta seuraavaan sukupolveen",
     s8Chain: [
       { step: 1, text: "EMF → VGCC → Ca2+ (Pall 2013, 23 tutkimusta)", level: "E", preprint: false },
@@ -286,14 +286,14 @@ const COPY = {
       { step: 6, text: "Ei-monotoninen metylaatio: laskenut 1 mT:ssa, NOUSSUT 3 mT:ssa — sama \"ikkunavaikutus\" kuin Blackmanin Ca2+-effluksissa", level: "E", preprint: false },
       { step: 7, text: "Viimeinen linkki TESTAAMATON: säilyvätkö EMF-indusoidut siittiöiden epigeneettiset muutokset F3-sukupolveen?", level: "U", preprint: false },
     ],
-    s8FeedbackTitle: "Jos vahvistetaan: transgenerationaalinen vahvistussilmukka",
+    s8FeedbackTitle: "Jos vahvistetaan: ylisukupolvinen vahvistussilmukka",
     s8FeedbackDesc: "EMF → siittiöiden epigenoomi → jalkela muuttuneella chi_channel → lisääntynyt EMF-herkkyys → enemmän epigeneettisia muutoksia → F3 entista herkempi. Ennustaa KIIHTYVAA laskua, yhdenmukainen Levinen meta-analyysin kanssa: −1,16 %/v (1973–2000) → −2,64 %/v (2000–2018).",
     s8PreprintWarning: "Research Square 2025 on PREPRINTTI, ei vertaisarvioitu. Tuloksia tulee käsitellä alustavina.",
-    s8F3Warning: "Transgenerationaalinen F3-linkki on JOHDETTU ENNUSTE, ei todistettu. Se vaatii F3-elaintutkimuksia vahvistukseksi.",
+    s8F3Warning: "Ylisukupolvinen F3-linkki on JOHDETTU ENNUSTE, ei todistettu. Se vaatii F3-elaintutkimuksia vahvistukseksi.",
 
     seeAlso: "Katso myös",
     modulomeOverview: "Moduloomin yleiskatsaus",
-    evidencePortal: "Evidenssirekisteri",
+    evidencePortal: "Näyttörekisteri",
     bbbPage: "BBB- ja BTB-esteet",
     citationLabel: "Viite",
     yearLabel: "Vuosi",
@@ -302,7 +302,7 @@ const COPY = {
     channelLabel: "Kanava",
     functionLabel: "Toiminto",
     mechanismLabel: "Mekanismi",
-    evidenceLabel: "Evidenssi",
+    evidenceLabel: "Näyttö",
     discriminatingBadge: "Erotteleva",
     allPredictions: "Kaikki ennusteet →",
     notTestedLabel: "EI TESTATTU",

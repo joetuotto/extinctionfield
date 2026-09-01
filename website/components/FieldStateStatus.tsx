@@ -333,11 +333,11 @@ const COPY: Record<string, {
     lead:
       "V2-reitti pitää fysikaalisen kenttätilan, elinkohtaisen siirron, biologisen kapasiteetin ja demografian erillisinä. Se ei muunna teknologian käyttöönottoa tai mobiililiittymiä paikalliseksi annokseksi, biologiseksi päätepisteeksi tai TFR-kertoimeksi.",
     layersTitle: "Neljä havaittavaa kerrosta",
-    statusTitle: "Syötteen täydellisyys ilmoitetaan eksplisiittisesti",
+    statusTitle: "Syötteen täydellisyys ilmoitetaan nimenomaisesti",
     useLabel: "Sallittu käyttö",
     readinessNote:
       "Mittausvalmis tarkoittaa, että kaikki nimetyt fysikaaliset syötteet on dokumentoitu. Se ei tarkoita, että biologinen vaikutus, kausaaliarvio tai tuloskerroin olisi osoitettu.",
-    evidenceNote: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tutkimus–solmu-tietuetta tukee reitin osia. Jokainen on rakenteellista tai kontekstuaalista evidenssiä, ei suora TFR-kulmakerroin.`,
+    evidenceNote: `${FIELDSTATE_EVIDENCE_COUNT} rajattua tutkimus–solmu-tietuetta tukee reitin osia. Jokainen on rakenteellista tai kontekstuaalista näyttöä, ei suora TFR-kulmakerroin.`,
     identityTitle: "ASFR ensin; TFR on johdettu identiteetti",
     identityDescription:
       "Reitti projisoi ensin ikäkohtaiset hedelmällisyysluvut ja summaa ne vasta sitten. Kysyntä/mahdollisuus, tempo ja ART-syntymätoimitus säilyvät erillisinä syötteinä eivätkä piiloudu biologisiksi termeiksi.",
@@ -359,11 +359,11 @@ const COPY: Record<string, {
         index: "02",
         title: "Elinkohtainen siirto ja muisti",
         description:
-          "Eksplisiittinen elinkohtainen siirto Tₒ, reseptoritila ja vuorokausikonteksti syöttävät elinkohtaisia palautuvia (R) ja persistenttejä (P) tiloja. Incrementit vaativat rekisteröidyn evidenssin ja parametri-ID:n.",
+          "Eksplisiittinen elinkohtainen siirto Tₒ, reseptoritila ja vuorokausikonteksti syöttävät elinkohtaisia palautuvia (R) ja persistenttejä (P) tiloja. Lisäykset vaativat rekisteröidyn näytön ja parametri-ID:n.",
       },
       {
         index: "03",
-        title: "Reproduktiivinen kapasiteetti ja pari",
+        title: "Lisääntymiskykyyn liittyvä kapasiteetti ja pari",
         description:
           "Mies-, nais-, este- ja implantaatio-osat pysyvät erillään ennen niiden yhdistämistä parin hedelmöitys-/syntymäkapasiteetiksi. Kansallista keskiarvoa ei käsitellä hiljaisesti paritilana.",
       },
@@ -387,7 +387,7 @@ const COPY: Record<string, {
         id: "PARTIAL_FIELD_STATE",
         title: "Osittainen FieldState",
         description:
-          "Osa fysikaalisista komponenteista on mitattu, mutta yksi tai useampi vaadittu syöte puuttuu: normalisointikalibrointi, B0-vektori, elinkohtainen siirto, verhokäyrä-/beat-PSD, vuorokausikonteksti, vaihe/koherenssi tai provenienssi.",
+          "Osa fysikaalisista komponenteista on mitattu, mutta yksi tai useampi vaadittu syöte puuttuu: normalisointikalibrointi, B0-vektori, elinkohtainen siirto, verhokäyrä-/beat-PSD, vuorokausikonteksti, vaihe/koherenssi tai alkuperätieto.",
         use: "Diagnostiseen data-aukkoraportointiin ja protokollan kehittämiseen; ei päätepistekalibrointiin.",
         tone: "partial",
       },
@@ -395,7 +395,7 @@ const COPY: Record<string, {
         id: "MEASUREMENT_READY_FIELD_STATE",
         title: "Mittausvalmis FieldState",
         description:
-          "Kaikki nimetyt fysikaaliset syötteet on dokumentoitu: kalibrointi, mitattu B0-vektori, ei-identtinen elinkohtainen siirto, PSD, vuorokausikonteksti, vaihe/koherenssi ja mittausprovenienssi.",
+          "Kaikki nimetyt fysikaaliset syötteet on dokumentoitu: kalibrointi, mitattu B0-vektori, ei-identtinen elinkohtainen siirto, PSD, vuorokausikonteksti, vaihe/koherenssi ja mittausalkuperätieto.",
         use: "Sopii elinpäätepisteen kalibrointiin vain, kun mukana ovat myös päätepisteliitos ja ennalta määritelty vastaavuuskuvaus.",
         tone: "confirmed",
       },

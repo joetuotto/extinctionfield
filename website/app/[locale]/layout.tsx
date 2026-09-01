@@ -3,8 +3,12 @@ import path from "node:path";
 import { Navigation } from "./navigation";
 import { SetLang } from "./set-lang";
 import { SiteFooter } from "@/components/SiteFooter";
-import { isValidLocale } from "@/lib/i18n";
+import { locales, isValidLocale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 // Read at build time so the footer count tracks the reference database.
 function referenceCount(): number {

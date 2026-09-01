@@ -56,7 +56,7 @@ const COPY = {
   fi: {
     title: "Allergiaepidemia",
     subtitle: "Syottösolujen degranulaatio on Ca²⁺-riippuvaista: Ca²⁺-ionoforit laukaisevat degranulaation ILMAN IgE:tä. EMF → VGCC → Ca²⁺ luo nelinkertaisen herkistymiskaskadin: (1) suora syottösolujen Ca²⁺-aktivaatio, (2) ympäristöestrogeenit herkistävät syottösoluja, (3) kortisoli → immuunisiirtymä Th1→Th2, (4) suoliston läpäiseväisyys → LPS → systeeminen tulehdus.",
-    backLink: "← Takaisin Evidenssiin",
+    backLink: "← Takaisin näyttöön",
     cautionText: "Tämä sivu tutkii Ca²⁺-riippuvaista syottösolujen degranulaatiota mekanismina allergioiden yleistymiselle. Jokainen yksittäinen mekanismi on hyvin vahvistettu, mutta yhdistetty kaskadi ja sen yhteys EMF-altistukseen on BERM-hypoteesi.",
 
     calciumTitle: "Ca²⁺-riippuvuus",
@@ -64,7 +64,7 @@ const COPY = {
     calciumSteps: [
       { step: "Ca²⁺-ionoforit laukaisevat degranulaation ILMAN IgE-ristisilloitusta", detail: "Kalsiumionoforit kuten A23187 ja ionomysiini aktivoivat suoraan syottösoluja ja laukaisevat täyden degranulaation ja histamiinin vapautumisen — ohittaen täysin klassisen IgE/FcεRI-reitin. Tämä todistaa, että Ca²⁺-sisäänvirtaus yksistään riittää." },
       { step: "Ca²⁺:n poisto estää degranulaation JOPA IgE-ristisilloituksella", detail: "Kun solunulkoinen Ca²⁺ kelatoidaan tai solusisäiset varastot tyhjennetään, syottösolut eivät degranuloidu vaikka IgE/antigeeni-ristisilloitus on täydellinen. Ca²⁺ ei ole pelkkä kofaktori — se on pakollinen signaali." },
-      { step: "Ca²⁺ on välttämätön JA riittävä syottösolujen aktivaatiolle", detail: "Nämä kaksi löydöstä yhdessä osoittavat, että Ca²⁺-signaali sijaitsee kaikkien syottösolujen aktivaatioreittien konvergenssipisteessä. Hallitse Ca²⁺:ta, hallitse degranulaatiota." },
+      { step: "Ca²⁺ on välttämätön JA riittävä syottösolujen aktivaatiolle", detail: "Nämä kaksi löydöstä yhdessä osoittavat, että Ca²⁺-signaali sijaitsee kaikkien syottösolujen aktivaatioreittien yhdentymispisteessä. Hallitse Ca²⁺:ta, hallitse degranulaatiota." },
       { step: "MIKÄ TAHANSA ylimääräisen Ca²⁺:n lähde — mukaan lukien EMF→VGCC — voi laukaista allergisia vasteita", detail: "EMF aktivoi jänniteohjatuet kalsiumkanavat (VGCC), tuottaen pitkäkestoisen solusisäisen Ca²⁺-nousun. Koska Ca²⁺ yksistään riittää syottösolujen degranulaatioon, EMF→VGCC-aktivaatio tarjoaa suoran, ei-immunologisen laukaisijan allergisille vasteille." },
     ],
 
@@ -74,7 +74,7 @@ const COPY = {
       { step: "Q1: Suora VGCC-aktivaatio", detail: "EMF → Ca²⁺↑ syottösoluissa → alentunut degranulaatiokynnys. Jopa kynnyksen alittavat allergeenialtistukset, jotka normaalisti siedettäisiin, voivat nyt laukaista täyden degranulaation kun solusisäinen Ca²⁺ on jo koholla EMF→VGCC:n vuoksi." },
       { step: "Q2: Ympäristöestrogeenit", detail: "Ksenoestrogeenit ja hormonaalisia häiriöitä aiheuttavat aineet lisäävät syottösolujen degranulaatiota ja IgE-välitteistä vapautumista ([[ref:env_estrogen_mast|PMC1797832]]). Syottösolujen estrogeenireseptorit vahvistavat Ca²⁺-riippuvaista signalointia. EMF:n häiritsemä estrogeenimetabolia (VK6) yhdistää vaikutuksen." },
       { step: "Q3: HPA/immuuniakseli — Th1→Th2-siirtymä", detail: "Kortisolin häiriö EMF→HPA-häiriöstä (VK11) tuottaa Th1→Th2-immuunisiirtymän. Th2-dominanssi lisää IgE-tuotantoa ja eosinofiilien aktivaatiota — klassinen allerginen alttius. Krooninen kortisolinousu paradoksaalisesti edistää allergista herkistymistä." },
-      { step: "Q4: Suoliston läpäiseväisyys → LPS → systeeminen tulehdus", detail: "Per2↓ EMF→vuorokausirytmihäiriöstä → suoliston suojaestän eheys↓ → LPS-translokaatio↑ → systeeminen tulehdus primaa syottösolut hyperreaktiivisuuteen (S14). Vuotava suoli toimittaa jatkuvan matala-asteisen immuuniaktivaation, joka alentaa aktivaatiokynnystä kaikissa syottösolupopulaatioissa." },
+      { step: "Q4: Suoliston läpäiseväisyys → LPS → systeeminen tulehdus", detail: "Per2↓ EMF→vuorokausirytmihäiriöstä → suoliston suojaestän eheys↓ → LPS-translokaatio↑ → systeeminen tulehdus herkistää syottösolut hyperreaktiivisuuteen (S14). Vuotava suoli toimittaa jatkuvan matala-asteisen immuuniaktivaation, joka alentaa aktivaatiokynnystä kaikissa syottösolupopulaatioissa." },
     ],
 
     epiTitle: "Epidemiologinen kaava",
@@ -86,8 +86,8 @@ const COPY = {
       "Kausivaihtelu korreloi D-vitamiinitason (immunomodulatorinen) ja kausittaisten EMF-käyttömallien kanssa (sisätilojen altistus kasvaa talvikuukausina).",
     ],
 
-    pharmaTitle: "Farmakologinen validaatio",
-    pharmaLead: "Olemassa olevat allergialääkkeet tahattomasti validoivat Ca²⁺-mekanismin.",
+    pharmaTitle: "Farmakologinen todentaminen",
+    pharmaLead: "Olemassa olevat allergialääkkeet tahattomasti todentavat Ca²⁺-mekanismin.",
     pharmaPoints: [
       { drug: "Antihistamiinit", mechanism: "Estävät histamiinireseptoreita — hoitavat OIREITA degranulaation jälkeen, eivät Ca²⁺-riippuvaista syytä. Potilaat pysyvät herkistyneinä.", note: "Pelkästään oireiden hallintaa; ei puutu taustalla olevaan syottösolujen hyperreaktiivisuuteen." },
       { drug: "Syottösolujen stabiloijat (kromoglikaatti)", mechanism: "Toimivat vähentämällä Ca²⁺-signalointia syottösoluissa, estäen degranulaation ennen sen tapahtumista. Tehokkaita juuri KOSKA Ca²⁺ on pakollinen aktivaatiosignaali.", note: "Vaikutusmekanismi validoi suoraan syottösolujen aktivaation Ca²⁺-riippuvuuden." },

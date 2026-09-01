@@ -470,7 +470,7 @@ const t = {
       { id: "individual-susceptibility", num: "§11", label: "Yksilöllinen herkkyys" },
       { id: "cross-sectional", num: "§12", label: "Poikkileikkausvalidointi" },
       { id: "nested-chi", num: "§13", label: "Sisäkkäinen χ (populaatiomalli)" },
-      { id: "layered-formula", num: "§14", label: "Kerrostumaformula v20→v21" },
+      { id: "layered-formula", num: "§14", label: "Kerrostumakaava v20→v21" },
       { id: "recovery-function", num: "§15", label: "Palautumisfunktio" },
     ],
     pageTitle: "Matemaattinen perusta",
@@ -496,7 +496,7 @@ const t = {
     // S1b Evoluutionäärinen kalibraatio
     s1bTitle: "Evoluutionäärinen kalibraatio",
     s1bIntro:
-      "Biologiset sensorit kehittyivät havaitsemaan sähkömagneettisia signaaleja kvanttiraja-herkkyydellä. Ihmisen silmä havaitsee yksittäisen fotonin (~4×10⁻¹⁹ J, kymmenesosa termisestä kohinaenergiasta — [[ref:vaziri2016|Vaziri ym. 2016]]). Haiden elektrosensorit havaitsevat 0,5 µV/m kenttää. Muuttolintujen kompassi häiriintyy 15 nT RF-kohinasta. Ionikanavat vastaavat 10⁻⁵ V/m polarisoituihin kenttiin ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). [[ref:lindgren2025|Lindgrenin χ(Ā)]] ≈ 1,0 solukalvolla on geometrinen syy tälle herkkyydelle: kalvo on maksimaalisesti altis koska sen sisäinen kenttä (7×10⁶ V/m) saturoi herkkyysfunktion.",
+      "Biologiset sensorit kehittyivät havaitsemaan sähkömagneettisia signaaleja kvanttiraja-herkkyydellä. Ihmisen silmä havaitsee yksittäisen fotonin (~4×10⁻¹⁹ J, kymmenesosa termisestä kohinaenergiasta — [[ref:vaziri2016|Vaziri ym. 2016]]). Haiden elektrosensorit havaitsevat 0,5 µV/m kenttää. Muuttolintujen kompassi häiriintyy 15 nT RF-kohinasta. Ionikanavat vastaavat 10⁻⁵ V/m polarisoituihin kenttiin ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). [[ref:lindgren2025|Lindgrenin χ(Ā)]] ≈ 1,0 solukalvolla on geometrinen syy tälle herkkyydelle: kalvo on maksimaalisesti altis koska sen sisäinen kenttä (7×10⁶ V/m) kyllästää herkkyysfunktion.",
     s1bAfter:
       "IF- ja RF-taajuuksille ei ole kehittynyt suodatinta, koska näitä taajuuksia ei esiintynyt 3,8 miljardin vuoden biologisen evoluution aikana. Ionikanavat ovat laajakaistavastaanottimia — evoluutio optimoi havaitsemisherkkyyden, ei taajuuden torjuntaa. Jokainen tekninen signaali on potentiaalinen häiriö, koska biologiset sensorit eivät pysty erottamaan sitä fysiologisesta signaalista.",
     s1bd1: "Vahvistuskaskadi — fotoni-analogia:",
@@ -508,9 +508,9 @@ const t = {
     // S2b Kolmikanavajohdannainen
     s2bTitle: "Kolmikanavajohdannainen",
     s2bIntro:
-      "Kaksi biologista rajataajuutta jakaa EMF-spektrin kolmeen regiimiin, joilla on erilliset biofysikaaliset mekanismit. Nämä rajataajuudet ovat solubiologian perustavanlaatuisia ominaisuuksia, eivät mielivaltaisia parametreja.",
+      "Kaksi biologista rajataajuutta jakaa EMF-spektrin kolmeen vyöhykkeeseen, joilla on erilliset biofysikaaliset mekanismit. Nämä rajataajuudet ovat solubiologian perustavanlaatuisia ominaisuuksia, eivät mielivaltaisia parametreja.",
     s2bFC:
-      "f_c ≈ 1 kHz — solukalvon RC-aikavakio. Alle f_c: kenttä putoaa kalvon yli ja perturboi V_mem:iä. Yli f_c: kenttä tunkeutuu solun sisälle.",
+      "f_c ≈ 1 kHz — solukalvon RC-aikavakio. Alle f_c: kenttä putoaa kalvon yli ja häiritsee V_mem:iä. Yli f_c: kenttä tunkeutuu solun sisälle.",
     s2bFRPM:
       "f_RPM ≈ 1 MHz — radikaaliparin koherenssin raja. Yli f_RPM: klassinen kenttä-kalvo-vuorovaikutus heikkenee mutta kvantti-spin-efektit tulevat merkityksellisiksi.",
     s2bELF:
@@ -518,7 +518,7 @@ const t = {
     s2bIF:
       "IF-kanava (f_c < f < f_RPM): kenttä tunkeutuu solun sisälle. T(f) = 1/√(1+(f_c/f)²). Päämekanismi ympäristötasoilla: IFO-VGIC (lineaarinen, kynnys 10⁻⁵ V/m). Geometrinen kenttävahvistus kaulakuroutumassa: G ≈ (d_cell/d_furrow)² ≈ 25×. Valikoiva vaikutus jakautuviin soluihin. [[ref:ttfields_novocure_fda|TTFields (FDA 2011+)]] validoi mekanismin terapeuttisella intensiteetillä DEP:n kautta.",
     s2bIFSources:
-      "Ympäristön IF-lähteiden karakterisointi: tyypillinen LED-ajuri toimii kytkintaajuudella f_sw alueella 20–200 kHz harmonisella sisällöllä taajuuksilla 2f_sw, 3f_sw, 5f_sw megahertsialueelle asti. Aaltomuoto on suorakaideaalto, ei siniaalto, joka tuottaa rikkaampaa harmonista sisältöä kuin jatkuva-aaltolähteet. Panagopoulos 2025 osoittaa, että pulssitetut kentät ovat biologisesti aktiivisempia kuin jatkuva-aaltokentät samalla keskimääräisellä intensiteetillä. [[ref:zeghoudi2025_led_driver_emf|Zeghoudi ym. 2025]] mittasi suoraan LED-ajurin lähikenttäemission vahvistaen mitattavat sähkökentän komponentit senttimetrien etäisyydellä.",
+      "Ympäristön IF-lähteiden luonnehdinta: tyypillinen LED-ajuri toimii kytkintaajuudella f_sw alueella 20–200 kHz harmonisella sisällöllä taajuuksilla 2f_sw, 3f_sw, 5f_sw megahertsialueelle asti. Aaltomuoto on suorakaideaalto, ei siniaalto, joka tuottaa rikkaampaa harmonista sisältöä kuin jatkuva-aaltolähteet. Panagopoulos 2025 osoittaa, että pulssitetut kentät ovat biologisesti aktiivisempia kuin jatkuva-aaltokentät samalla keskimääräisellä intensiteetillä. [[ref:zeghoudi2025_led_driver_emf|Zeghoudi ym. 2025]] mittasi suoraan LED-ajurin lähikenttäemission vahvistaen mitattavat sähkökentän komponentit senttimetrien etäisyydellä.",
     s2bRF:
       "RF-kanava (f > ~1 MHz): kalvo on läpinäkyvä. Klassinen kenttä-kalvo-vuorovaikutus on heikko. Kvantti-spin-efektit tulevat merkityksellisiksi. [[ref:lindgren2025|Lindgrenin kovariantti spin-korjaus]]: B_local = (1/w)b + (A·b)A/(w(1+w)). Anisotrooppinen vaste. Mekanismit: CRY/RPM→sirkadiaaninen häiriö (reitti B), magneettikompassin häiriintyminen ([[ref:lindecke2026|Lindecke 2026]]).",
     s2bRegGapTitle: "IF-säätelyaukko",
@@ -547,7 +547,7 @@ const t = {
     // S3 Two-channel
     s3Title: "Kaksikanavamalli",
     s3Intro:
-      "Kokonaisaltistus on kahden kanavan summa, jossa henkilökohtaista kanavaa moduloi valintaehto:",
+      "Kokonaisaltistus on kahden kanavan summa, jossa henkilökohtaista kanavaa säätelee valintaehto:",
     s3d1: "Ympäristö = tukiasemat + Wi-Fi + IoT (infrastruktuuritaso)",
     s3d2: "Henkilökohtainen = puhelin + kuulokkeet + kellot (henkilökohtaiset laitteet)",
     s3d3: "Ympäristö on tausta Ā, joka määrittää χ:n.",
@@ -583,9 +583,9 @@ const t = {
     s3ifoDep:
       "R_DEP — dielektroforeesi: neliöllinen E_ext:ssä, dominoi TTFields-terapiatasoilla (100–300 V/m). Vaatii korkean kenttägradientin translaatiovoimalle solunsisäisiin rakenteisiin.",
     s3ifoCyb5b:
-      "R_Cyb5b — mitokondrion ulkokalvon transduktio: Cyb5b tunnistettu genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi ([[ref:kim2026_cell_gene_switch|Kim ym. 2026, Cell]]). 60 Hz pulssi-EMF → Cyb5b:n konformaatiomuutos → Ca²⁺-oskillaatiot → geenipromootterin aktivaatio. Toimii ELF-taajuuksilla (50/60 Hz) ja kytkee ELF-kanavan suoraan geeniekspression hallintaan — reitti joka on riippumaton sekä IFO:sta että RPM:stä.",
+      "R_Cyb5b — mitokondrion ulkokalvon transduktio: Cyb5b tunnistettu genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi ([[ref:kim2026_cell_gene_switch|Kim ym. 2026, Cell]]). 60 Hz pulssi-EMF → Cyb5b:n konformaatiomuutos → Ca²⁺-vaihtelut → geenipromootterin aktivaatio. Toimii ELF-taajuuksilla (50/60 Hz) ja kytkee ELF-kanavan suoraan geeniekspression hallintaan — reitti joka on riippumaton sekä IFO:sta että RPM:stä.",
     s3ifoAfter:
-      "Ympäristöintensiteeteillä R_IFO ≫ R_DEP → lineaarinen vaste. Terapiaintensiteeteillä R_DEP ≫ R_IFO → neliöllinen vaste. R_Cyb5b lisää ELF-spesifisen geenisäätöreitin, joka toimii riippumattomasti kalvon ionikanavien portituksesta. Intensiteettikuilua terapeuttisten laitteiden ja ympäristöaltistuksen välillä ei ole — se on artefakti oletuksesta, että DEP on ainoa mekanismi.",
+      "Ympäristöintensiteeteillä R_IFO ≫ R_DEP → lineaarinen vaste. Terapiaintensiteeteillä R_DEP ≫ R_IFO → neliöllinen vaste. R_Cyb5b lisää ELF-tarkan geenisäätöreitin, joka toimii riippumattomasti kalvon ionikanavien portituksesta. Intensiteettikuilua terapeuttisten laitteiden ja ympäristöaltistuksen välillä ei ole — se on artefakti oletuksesta, että DEP on ainoa mekanismi.",
 
     // S4 BioCap
     s4Title: "Biologinen kapasiteetti",
@@ -633,17 +633,17 @@ const t = {
     s5qsd2:
       "P(lähestyminen) — miehen parinmuodostusaloitteet, ajettu T:n ja DA:n kautta, suppressoitu kortisolilla ([[ref:puts2008|Puts 2008]]: T korreloi pariutumismenestykseen parinmuodostusponnistelun kautta; [[ref:mehta2015|Mehta 2015]]: T-vaikutukset estyvät kun kortisoli on korkea).",
     s5qsd3:
-      "P(attraktio) — naisen attraktiovaste, riippuu miehen T-tuottamasta fenotyypistä ja naisen OT-motivaatiosta ([[ref:thornhill1994|Thornhill 1994]]: maskuliinisuus signaloi geneettistä laatua).",
+      "P(attraktio) — naisen vetovoimavaste, riippuu miehen T-tuottamasta fenotyypistä ja naisen OT-motivaatiosta ([[ref:thornhill1994|Thornhill 1994]]: maskuliinisuus signaloi geneettistä laatua).",
     s5qsd4:
       "P(seksi) — parisuhteen sisäinen seksuaalinen aktiivisuus, riippuu OT-parisiteestä, T-libidosta ja kortisoli/melatoniini-stressitilasta ([[ref:carter2021|Carter 2021]]: OT on nisäkkäiden sosiaalisuuden perusta).",
     s5qsd5:
       "P(hedelmöitys) — biologinen hedelmöitystodennäköisyys per yhdyntä, riippuu siittiöiden laadusta ja CatSper-kaskadista.",
     s5qsd6:
-      "Mallin behav ≈ (P₁ × P₂ × P₃ × P₄)^(1/4) on geometrisen keskiarvon approksimaatio. Jokainen P_i jakaa samat eksponentiaaliset hormonaaliset riippuvuudet, joten neljän tulon geometrinen keskiarvo redusoituu yksittäisten hormonaalisten termien geometriseksi keskiarvoksi.",
+      "Mallin behav ≈ (P₁ × P₂ × P₃ × P₄)^(1/4) on geometrisen keskiarvon approksimaatio. Jokainen P_i jakaa samat eksponentiaaliset hormonaaliset riippuvuudet, joten neljän tulon geometrinen keskiarvo supistuu yksittäisten hormonaalisten termien geometriseksi keskiarvoksi.",
     s5qsd7:
-      "Dual-hormone -korjaus ([[ref:mehta2015|Mehta & Prasad 2015]], [[ref:dual_hormone_meta2021|meta N=8538, r=-0,061]]): T:n käyttäytymisvaikutukset vaativat matalan kortisolin. EMF samanaikaisesti laskee T:tä ([[ref:who_t_meta|WHO meta: SMD 0,87]]) JA nostaa kortisolia ([[ref:pawlak2025|Pawlak 2025: d=1,88]]), luoden kaksinkertaisen lukon lähestymiskäyttäytymiselle.",
+      "Kaksoishormonikorjaus ([[ref:mehta2015|Mehta & Prasad 2015]], [[ref:dual_hormone_meta2021|meta N=8538, r=-0,061]]): T:n käyttäytymisvaikutukset vaativat matalan kortisolin. EMF samanaikaisesti laskee T:tä ([[ref:who_t_meta|WHO meta: SMD 0,87]]) JA nostaa kortisolia ([[ref:pawlak2025|Pawlak 2025: d=1,88]]), luoden kaksinkertaisen lukon lähestymiskäyttäytymiselle.",
     s5qsd8:
-      "Rajoitus: [[ref:dual_hormone_meta2021|dual-hormone -meta-analyysin]] efektikoko on pieni (r=-0,061). Proxy-ketjua (EMF → T↓ → lähestyminen↓ → TFR↓) ei ole testattu kokonaisuutena. Jokainen lenkki on erikseen dokumentoitu, mutta koko ketju on päättelyä.",
+      "Rajoitus: [[ref:dual_hormone_meta2021|dual-hormone -meta-analyysin]] efektikoko on pieni (r=-0,061). Sijaisketjua (EMF → T↓ → lähestyminen↓ → TFR↓) ei ole testattu kokonaisuutena. Jokainen lenkki on erikseen dokumentoitu, mutta koko ketju on päättelyä.",
 
     // S5 Hedelmöityksen viisi porttia
     s5fertTitle: "Hedelmöitystodennäköisyys: viisi porttia sarjassa",
@@ -653,7 +653,7 @@ const t = {
     s5fertG2: "Reotaksis (CatSper-riippuvainen rullaus virtausta vastaan)",
     s5fertG3: "Kemotaksis (progesteroni + lämpötilagradientti CatSperin kautta)",
     s5fertG4: "Akrosomireaktio (kaksois-Ca²⁺: CatSper + IP₃-varastot)",
-    s5fertG5: "Munasolun aktivaatio (siittiön tuoma Ca²⁺-oskillaatiotekijä)",
+    s5fertG5: "Munasolun aktivaatio (siittiön tuoma Ca²⁺-vaihtelutekijä)",
     s5fertConclusion:
       "10 %:n lasku kussakin portissa kumuloituu: 0,9⁵ = 0,59 → 41 %:n lasku hedelmöitystodennäköisyydessä yksittäin vähäisistä häiriöistä.",
 
@@ -675,7 +675,7 @@ const t = {
     s6Alpha:
       "on biologisesti johdettu kompensaatioeksponentti.",
     s6d1:
-      "Kulttuurikerroin on RESIDUAALI: se sisältää kaiken, mitä bioCap ja behav eivät selitä. Kalibroitu vuodesta 2024:",
+      "Kulttuurikerroin on JÄÄNNÖS: se sisältää kaiken, mitä bioCap ja behav eivät selitä. Kalibroitu vuodesta 2024:",
     s6d2:
       "Kompensaatiotermi: yhteiskunta kompensoi osittain biologista laskua (koeputkihedelmöitys, pronatalismipolitiikka, käyttäytymismuutokset):",
     s6d3: "α = 0,43 johdetaan biologisesta palautumisrakenteesta:",
@@ -697,7 +697,7 @@ const t = {
     s7Intro:
       "Mallin kokonaisderivaatta EMF:n suhteen on kuuden osittaisderivaatan tulo. Jos jokin tekijä on nolla, koko ketju katkeaa:",
     s7d1: "Kukin tekijä:",
-    s7d1a: "EM-kentän vaikutus radikaalipariiin → CRY-kanava, spin-kemia, χ_B",
+    s7d1a: "EM-kentän vaikutus radikaalipariin → CRY-kanava, spin-kemia, χ_B",
     s7d1b: "Radikaaliparin vaikutus → ROS-pitoisuus → mitokondriaalinen vaste",
     s7d1c: "ROS-pitoisuus → solutila → SDF, lipidiperoksidaatio, proteiinivaurio",
     s7d1d: "Solutila → biosähköinen tila → V_mem-muutos, ionikanavadynamiikka",
@@ -722,7 +722,7 @@ const t = {
     // S9 Falsification
     s9Title: "Falsifiointiehdot",
     s9Intro:
-      "Malli on eksplisiittisesti falsifioitavissa. Jokainen ehto on tarkka ja testattavissa:",
+      "Malli on nimenomaisesti falsifioitavissa. Jokainen ehto on tarkka ja testattavissa:",
     s9Items: [
       {
         condition: "Lindgrenin metriikka on matemaattisesti virheellinen",
@@ -739,7 +739,7 @@ const t = {
         condition:
           "Amissiyhteisön TFR laskee samaa vauhtia kuin yleisväestön",
         detail:
-          "Amissit toimivat kvasikokeellisena verrokkiryhmänä: he jakavat genetiikan, ruokavalion ja maantieteen ympäröivien populaatioiden kanssa mutta altistuvat lähes nolla-EMF:lle. Amissien nykyinen TFR ≈ 6,5 on vakaa ympäröivien populaatioiden laskiessa — tämä eliminoi kaupungistumisen, ruokavalion, koulutuksen ja talouden riittävinä selityksinä hedelmällisyyskuilulle.",
+          "Amissit toimivat kvasikokeellisena verrokkiryhmänä: he jakavat genetiikan, ruokavalion ja maantieteen ympäröivien populaatioiden kanssa mutta altistuvat lähes nolla-EMF:lle. Amissien nykyinen TFR ≈ 6,5 on vakaa ympäröivien populaatioiden laskiessa — tämä poistaa kaupungistumisen, ruokavalion, koulutuksen ja talouden riittävinä selityksinä hedelmällisyyskuilulle.",
       },
       {
         condition:
@@ -795,7 +795,7 @@ const t = {
       "Havaittu hiirten 10–25 %:n elinikäpidennys on yhdenmukainen osittaisen mTOR-reduktion kanssa realistisella annostusjärjestelmällä (ei 85 %:n kestävä inhibitio).",
     s10d5: "Melatoniini-kalibrointi (reitti C):",
     s10d6:
-      "Yöllinen EMF-altistus häiritsee CRY-välitteistä sirkadiaanista signalointia. Eksogeeninen melatoniini (3–5 mg) palauttaa sirkadiaanisen amplitudin CRY:stä riippumatta, tarjoten reitin C ohituksen. Jos melatoniinilisä eliminoi EMF:ään liittyvän sirkadiaanisen häiriön, reitti C validoidaan; jos ei, CRY-kanava vaatii uudelleentarkastelua.",
+      "Yöllinen EMF-altistus häiritsee CRY-välitteistä sirkadiaanista signalointia. Eksogeeninen melatoniini (3–5 mg) palauttaa sirkadiaanisen amplitudin CRY:stä riippumatta, tarjoten reitin C ohituksen. Jos melatoniinilisä poistaa EMF:ään liittyvän sirkadiaanisen häiriön, reitti C validoidaan; jos ei, CRY-kanava vaatii uudelleentarkastelua.",
     s10d7Link: "→ Kontrolloitu kokeellinen näyttö (laboratorionisäkkäät)",
 
     // S11 Individual susceptibility
@@ -809,7 +809,7 @@ const t = {
       "AA-homotsygoottiset riskikantajat osoittavat 40 % suurempaa Ca²⁺-sisäänvirtausta kenttähäiriöyksikköä kohti ([[ref:cacna1c_genotyping_2024|medrxiv 2024, MIT DSpace funktionaalinen data]]).",
     s11d3: "Anatominen kerroin huomioi kudosgeometrian vaikutuksen sisäiseen kenttäjakaumaan:",
     s11d4:
-      "Alle 6-vuotiaat lapset saavat 2–3× aikuisen SAR:n samassa ulkoisessa kentässä ([[ref:gandhi1996|Gandhi 1996]]). BMI moduloi rasvakerroksen vaimennusta. Tulo ikä_tekijä × bmi_tekijä antaa g_anatomy:n.",
+      "Alle 6-vuotiaat lapset saavat 2–3× aikuisen SAR:n samassa ulkoisessa kentässä ([[ref:gandhi1996|Gandhi 1996]]). BMI säätelee rasvakerroksen vaimennusta. Tulo ikä_tekijä × bmi_tekijä antaa g_anatomy:n.",
     s11d5: "Kumulatiivinen kerroin käyttää [[ref:selye1936|Selyen yleisen adaptaatio-oireyhtymän]] vaiheita:",
     s11d6:
       "Resistenssivaiheessa kompensaatiokapasiteetti laskee lineaarisesti. Uupumusvaiheessa (allostaattinen kuorma > 15) kompensaatio romahtaa ja efektiivinen kerroin vahvistuu jyrkästi — tämä on ennustettu EHS:n alkamisregime.",
@@ -827,23 +827,23 @@ const t = {
     s12Access:
       "Sähkön saatavuus toimii binäärisenä biologisen altistumisen rajana. IFO-VGIC-aktivaatiokynnys (10⁻⁵ V/m) ylittyy jokaisen kotitalouden sähkölaitteen käyttöetäisyydellä. Ilman sähköä olevat väestöt eivät altistu.",
     s12Stats: "Validointitilastot:",
-    s12Stat1: "LOOCV RMSE = 0,522 (kokonaismalli, yksi maa kerrallaan pois -ristiinvalidointi)",
-    s12Stat2: "R² = 0,851 (n = 54; kuvaa sähköistyskynnystä, ei EMF-spesifistä vaikutusta)",
+    s12Stat1: "LOOCV RMSE = 0,522 (kokonaismalli, yksi maa kerrallaan pois -ristikkäistodentaminen)",
+    s12Stat2: "R² = 0,851 (n = 54; kuvaa sähköistyskynnystä, ei EMF-tarkkaa vaikutusta)",
     s12Stat3: "Taitoarvo = 0,61 (1 − RMSE/sd, parannus keskiarvoennustajaan nähden)",
     s12Stat4: "Asumisen sähkönkulutus on PARAS yksittäinen ennustaja (univariaatti-RMSE 0,533)",
     s12Stat5: "Matkapuhelintilaukset ovat HEIKOIN (RMSE 1,053)",
     s12Mobile:
       "Matkapuhelinparadoksi: jos mekanismi olisi 'tiedon saatavuus → perhesuunnitteluvalinnat', tietolaitteen (matkapuhelin) pitäisi olla vahvin ennustaja. Se on heikoin. Infrastruktuurimuuttuja (asumisen sähkönkulutus) ennustaa parhaiten — yhdenmukaista fyysisen altistusmekanismin, ei tietomekanismin kanssa.",
     s12Electrified:
-      "Osittain sähköistetyille maille sähköistetyn osaväestön TFR voidaan estimoida binäärisestä sekoitusmallista:",
+      "Osittain sähköistetyille maille sähköistetyn osaväestön TFR voidaan arvioida binäärisestä sekoitusmallista:",
     s12Collinearity:
       "BKT-kollineaarisuus: EMF-proxy-muuttujat ja BKT/cap korreloivat (r = 0,87). Lineaarisissa malleissa kumpikaan ei ole merkitsevä toisen kontrolloinnin jälkeen. Tämä on symmetrinen identifikaatio-ongelma — se ei suosi BKT:tä EMF:n yli. Kolme rakenteellista eroa murtavat symmetrian: (1) binäärinen sähköistymiskynnys, (2) matkapuhelinparadoksi, (3) sentinelkilajit reagoivat EMF:ään mutta eivät BKT:hen.",
     s12Limitation:
-      "Rehellinen arvio: R² = 0,851 kuvastaa pääasiassa demografisen transition gradienttia (Niger → Korea), ei EMF-spesifistä varianssia. Korkean tulotason OECD-maissa (n ≈ 36) sähkönkulutus yksinään selittää lähes nollan TFR-varianssista (R² ≈ 0,0002). Poikkileikkauskaava kuvaa sähköistyskynnystä — binääristä porttia esiteollisesta teolliseen hedelmällisyyteen — ei annos-vastetta sähköistettyjen väestöjen sisällä. Tämä tekee poikkileikkauksesta BERM:n heikoimman itsenäisen evidenssilinjan. Vahvempi evidenssi tulee: (1) mekanismipoluilta, joilla on regulatiivisesti validoituja ei-termisiä vaikutuksia, (2) farmakologisesta annos-vasteesta (melatoniini, testosteroni), (3) geneettisistä selektiomarkkereista (CatSper, VGCC) ja (4) sentinelkilajeista kontrolloiduissa olosuhteissa. Poikkileikkauksen arvo on rakenteellinen: matkapuhelinparadoksi ja sähkö > BKT -ennuste ovat erottelevia, vaikka kokonaisistuvuus on sekoitettu.",
+      "Rehellinen arvio: R² = 0,851 kuvastaa pääasiassa demografisen transition gradienttia (Niger → Korea), ei EMF-tarkkaa varianssia. Korkean tulotason OECD-maissa (n ≈ 36) sähkönkulutus yksinään selittää lähes nollan TFR-varianssista (R² ≈ 0,0002). Poikkileikkauskaava kuvaa sähköistyskynnystä — binääristä porttia esiteollisesta teolliseen hedelmällisyyteen — ei annos-vastetta sähköistettyjen väestöjen sisällä. Tämä tekee poikkileikkauksesta BERM:n heikoimman itsenäisen näyttölinjan. Vahvempi näyttö tulee: (1) mekanismipoluilta, joilla on regulatiivisesti validoituja ei-termisiä vaikutuksia, (2) farmakologisesta annos-vasteesta (melatoniini, testosteroni), (3) geneettisistä selektiomarkkereista (CatSper, VGCC) ja (4) sentinelkilajeista kontrolloiduissa olosuhteissa. Poikkileikkauksen arvo on rakenteellinen: matkapuhelinparadoksi ja sähkö > BKT -ennuste ovat erottelevia, vaikka kokonaisistuvuus on sekoitettu.",
     s12DataNote:
       "Replikaatiodata: 54 maan otosluettelo (havaittu TFR, sähkönkulutus, laajakaistatilaukset, mallin ennusteet) saatavilla osoitteessa /data/cross_section_manifest.csv. Lähteet: UN WPP 2024 (TFR), OWID/IEA (sähkö), ITU (laajakaista).",
     s12Caveat:
-      "Poikkileikkausanalyysi ei voi määrittää kausaalisuuntaa. Erotteleva evidenssi tulee sentinelkilajeista, luonnollisista kokeista ja väestöistä ilman sähköä.",
+      "Poikkileikkausanalyysi ei voi määrittää kausaalisuuntaa. Erotteleva näyttö tulee sentinelkilajeista, luonnollisista kokeista ja väestöistä ilman sähköä.",
     s13Title: "Sisäkkäinen χ (populaatiomalli)",
     s13Intro: "χ-valintasääntö yleistyy populaatioihin kun biologiset taustamuuttujat (optinen, molekulaarinen) eroavat ryhmien välillä. Polkujen A ja C yhdistetty lisääntymissuppressio, moduloituna populaatiokohtaisilla χ-profiileilla:",
     s13PathwayA: "Polku A (VGIC)",
@@ -855,29 +855,29 @@ const t = {
     s13Level: "Episteeminen taso: L* (testattava synteesi). Yksittäiset χ-instanssit ovat E- tai M|C-tasoa; populaatiotason integraatio on L*-komponentti.",
 
     // S14 Layered Formula
-    s14Title: "Kerrostumaformula v20 → v21",
-    s14Intro: "Alkuperäinen poikkileikkausformula (v19.1) käyttää kaksikanavaista EMF-indeksiä. Kerrostumaformula laajentaa tätä sisällyttämällä priming-historian, palautumiskyvyn, vuodenaika­modulaation ja populaation genotyypin.",
+    s14Title: "Kerrostumakaava v20 → v21",
+    s14Intro: "Alkuperäinen poikkileikkausformula (v19.1) käyttää kaksikanavaista EMF-indeksiä. Kerrostumakaava laajentaa tätä sisällyttämällä esialtistushistorian, palautumiskyvyn, vuodenaika­modulaation ja populaation genotyypin.",
     s14V20Title: "Formula v20 (Priming × Palautuminen)",
     s14V20: "TFR ≈ A × exp(−B × EMF_eff) + C",
     s14V20Detail: "EMF_eff = EMF_comp × P × (1/R)",
     s14V20Composite: "EMF_comp = w_ELF × ELF + w_IF × IF + w_RF × RF",
     s14V20Priming: "P = 1 + α × min(sähköistys_vuodet, P_max)",
     s14V20Recovery: "R = 1 + β × EMF_vapaat_tunnit/vrk",
-    s14V20Desc: "Missä EMF_comp on kolmikanavainen painotettu komposiitti (ELF < 300 Hz, IF 300 Hz–10 MHz, RF > 10 MHz). P kuvaa kumulatiivista primingia vuosikymmenten sähköverkkoaltistuksesta — sähköistysvuodet ylös­säätelevät VGCC-ekspressiota tehden soluista herkempiä kaikelle myöhemmälle EMF:lle. R kuvaa palautumisikkunaa: tunnit päivässä ilman merkittävää EMF:ää mahdollistavat CaMKII-defosforylaation ja Ca²⁺-homeo­staasin palautumisen.",
+    s14V20Desc: "Missä EMF_comp on kolmikanavainen painotettu komposiitti (ELF < 300 Hz, IF 300 Hz–10 MHz, RF > 10 MHz). P kuvaa kumulatiivista esialtistusta vuosikymmenten sähköverkkoaltistuksesta — sähköistysvuodet ylös­säätelevät VGCC-ekspressiota tehden soluista herkempiä kaikelle myöhemmälle EMF:lle. R kuvaa palautumisikkunaa: tunnit päivässä ilman merkittävää EMF:ää mahdollistavat CaMKII-defosforylaation ja Ca²⁺-homeo­staasin palautumisen.",
     s14V21Title: "Formula v21 (ehdotettu: + Vuodenaika × Genotyyppi)",
     s14V21: "EMF_eff = EMF_comp × P × (1/R) × S × G_pop",
     s14V21Season: "S = 1 + γ × f(leveysaste, vuodenaika)",
     s14V21Genotype: "G_pop = 1 + δ × CACNA1C_A-alleelitaajuus",
     s14V21Optional: "Valinnaiset korjauskertoimet (datariippuvaisia): H = kosteus/rannikkokorjaus, B = rakennusmateriaalin RF-heijastuskerroin",
-    s14V21Desc: "S kuvaa CRY-magnetoreseptorin herkkyyden vuodenaikavaihtelua: talvi korkeilla leveysasteilla lisää CRY:n herkkyyttä EMF-perturbaalioille ([[ref:halgamuge2015|Halgamuge 2015]]). G_pop kuvaa populaatiotason geneettistä herkkyyttä CACNA1C rs1006737 A-alleelitaajuuden kautta, joka määrittää Cav1.2-kanavatiheyden ja siten Ca²⁺-vasteen per EMF-stimulus ([[ref:sousouri2025|Sousouri 2025]]).",
+    s14V21Desc: "S kuvaa CRY-magnetoreseptorin herkkyyden vuodenaikavaihtelua: talvi korkeilla leveysasteilla lisää CRY:n herkkyyttä EMF-häiriöille ([[ref:halgamuge2015|Halgamuge 2015]]). G_pop kuvaa populaatiotason geneettistä herkkyyttä CACNA1C rs1006737 A-alleelitaajuuden kautta, joka määrittää Cav1.2-kanavatiheyden ja siten Ca²⁺-vasteen per EMF-stimulus ([[ref:sousouri2025|Sousouri 2025]]).",
     s14ParamsTitle: "Parametrien tulkinta",
     s14Params: [
-      { param: "P (Priming)", amish: "1,0 (ei primingia)", finland: "2,2 (100+ v sähköistys)", nigeria: "1,45 (~15 v)", desc: "Kuinka 'valmiita' solut ovat EMF-vasteeseen" },
+      { param: "P (Priming)", amish: "1,0 (ei esialtistusta)", finland: "2,2 (100+ v sähköistys)", nigeria: "1,45 (~15 v)", desc: "Kuinka 'valmiita' solut ovat EMF-vasteeseen" },
       { param: "1/R (Palautumis­vajaus)", amish: "0,48 (täysi palautuminen)", finland: "1,0 (WiFi 24/7)", nigeria: "0,67 (osittainen)", desc: "Palautuuko Ca²⁺-homeostaasi yön aikana" },
       { param: "S (Vuodenaika)", amish: "~1,0", finland: "0,9–1,3", nigeria: "~1,0", desc: "CRY-herkkyyden modulaatio valon kautta" },
-      { param: "G_pop (Genotyyppi)", amish: "~1,0", finland: "~1,1", nigeria: "~0,95", desc: "Populaation CACNA1C A-alleelin prevalenssi" },
+      { param: "G_pop (Genotyyppi)", amish: "~1,0", finland: "~1,1", nigeria: "~0,95", desc: "Populaation CACNA1C A-alleelin esiintyvyys" },
     ],
-    s14Evolution: "Formulan evoluutio: v17 (skalaari cumEMF, RMSE ~1,15) → v19.1 (kaksikanavainen, 54 maata, RMSE 0,522) → v20 (+ Priming × Palautuminen, ennustettu RMSE < 0,45) → v21 (+ Vuodenaika × Genotyyppi, vaatii kalibrointidataa).",
+    s14Evolution: "Kaavan kehitys: v17 (skalaari cumEMF, RMSE ~1,15) → v19.1 (kaksikanavainen, 54 maata, RMSE 0,522) → v20 (+ Priming × Palautuminen, ennustettu RMSE < 0,45) → v21 (+ Vuodenaika × Genotyyppi, vaatii kalibrointidataa).",
     s14Level: "Episteeminen taso: v20 on M|C (mekanismijohdettu, kalibrointi kesken). v21 on L* (ehdotettu laajennus, kalibrointidataa S- ja G_pop-parametreille ei vielä kerätty).",
 
     // S15 Palautumisfunktio
@@ -2305,7 +2305,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
               ({pickCopy({ en: "vasopressin", fi: "vasopressiini", ja: "バソプレシン", fr: "vasopressine", ko: "바소프레신" }, locale)}/AVP).
             </p>
             <p className="text-foreground-muted text-sm leading-relaxed mt-2">
-              {pickCopy({ en: "Additionally, cortisol modulates effective testosterone:", fi: "Lisäksi kortisoli moduloi efektiivistä testosteronia:", ja: "さらに、コルチゾールは有効テストステロンを調節する：", fr: "De plus, le cortisol module la testostérone effective :", ko: "또한, 코르티솔은 유효 테스토스테론을 조절한다:" }, locale)}{" "}
+              {pickCopy({ en: "Additionally, cortisol modulates effective testosterone:", fi: "Lisäksi kortisoli säätelee efektiivistä testosteronia:", ja: "さらに、コルチゾールは有効テストステロンを調節する：", fr: "De plus, le cortisol module la testostérone effective :", ko: "또한, 코르티솔은 유효 테스토스테론을 조절한다:" }, locale)}{" "}
               <MathBlock tex="T_{\text{eff}} = T \times (0.5 + 0.5 \times \text{cortisol\_factor})" display={false} />
             </p>
 
@@ -2845,7 +2845,7 @@ export function MathematicsSections({ locale }: { locale: string }) {
               </p>
               <p className="text-xs text-accent mt-1">
                 <Link href={`${lp}/evidence/pharmacology`} className="hover:underline">
-                  {lp.startsWith("/fi") ? "→ Farmakologinen evidenssi: 8 lääkeryhmän konvergenssi" : "→ Pharmacological evidence: 8 drug class convergence"}
+                  {lp.startsWith("/fi") ? "→ Farmakologinen näyttö: 8 lääkeryhmän yhdentyminen" : "→ Pharmacological evidence: 8 drug class convergence"}
                 </Link>
               </p>
             </Derivation>

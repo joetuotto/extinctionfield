@@ -119,7 +119,7 @@ const COPY = {
       ],
       [
         "[[ref:kim2026_cell_gene_switch|Kim 2026]]: ”Incredibly implausible”",
-        "Mitä havaittiin: 60 Hz EMF aktivoi Lgr4-geenipromoottorin in vivo transgeenisissä hiirissä. CRISPR-seulonta tunnisti Cyb5b:n EMF-sensoriksi. Rytmiset Ca²⁺-oskillaatiot ohjaavat geeniekspressiota. Cell (IF ~64).",
+        "Mitä havaittiin: 60 Hz EMF aktivoi Lgr4-geenipromoottorin in vivo transgeenisissä hiirissä. CRISPR-seulonta tunnisti Cyb5b:n EMF-sensoriksi. Rytmiset Ca²⁺-vaihtelut ohjaavat geeniekspressiota. Cell (IF ~64).",
         "Miksi kritisoitiin: Fyysikko Andrew York (New Scientist, huhtikuu 2026): ”incredibly implausible.” Ei kritisoinut dataa vaan mekanismin OLEMASSAOLOA.",
         "Miksi kritiikki on väärässä: York laskee kentän energian makroskooppisella tasolla. Lindgrenin χ(Ā) laskee sen SOLUKALVON IONIKANAVAN tasolla.",
         "Solukalvon kenttä: ~10⁷ V/m (70 mV / 7 nm). Ulkoinen kenttä: ~10⁻¹ V/m (60 Hz, 2 mT). Suhde: 10⁻⁸.",
@@ -144,7 +144,7 @@ const COPY = {
       { referenceId: "lai1995_dna_breaks", label: "Lai H, Singh NP (1995). Acute low-intensity microwave exposure increases DNA single-strand breaks in rat brain cells. Bioelectromagnetics, 16(3), 207–210. doi:10.1002/bem.2250160309" },
       { referenceId: "lai1996_double_strand", label: "Lai H, Singh NP (1996). Single- and double-strand DNA breaks in rat brain cells after acute exposure to radiofrequency electromagnetic radiation. Int J Radiat Biol." },
       { referenceId: "pall2013_v2", label: "Pall ML (2013). Electromagnetic fields act via activation of voltage-gated calcium channels to produce beneficial or adverse effects. J Cell Mol Med. doi:10.1111/jcmm.12088" },
-      { referenceId: "sousouri2025", label: "Sousouri D ym. (2025). CACNA1C-genotyyppi moduloi unisukkulavastetta 5G-radiotaajuusaltistukselle. NeuroImage, ETH Zürich." },
+      { referenceId: "sousouri2025", label: "Sousouri D ym. (2025). CACNA1C-genotyyppi säätelee unisukkulavastetta 5G-radiotaajuusaltistukselle. NeuroImage, ETH Zürich." },
       { referenceId: "kim2026_cell_gene_switch", label: "Kim S ym. (2026). Identification of a molecular sensor for electromagnetic fields via genome-wide CRISPR screen. Cell." },
       { referenceId: "york2026_kim_commentary", label: "York A (2026). Kommentaari Kim ym:n tutkimuksesta. New Scientist, huhtikuu 2026." },
       { referenceId: "panagopoulos2025", label: "Panagopoulos DJ ym. (2025). A comprehensive mechanism of biological and health effects of anthropogenic ELF and WC EMFs. Frontiers in Public Health, 13:1585441." },

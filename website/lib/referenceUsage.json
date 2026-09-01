@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generated": "2026-08-31",
-    "referencesWithUsages": 623,
-    "usageLocations": 1645
+    "generated": "2026-09-01",
+    "referencesWithUsages": 638,
+    "usageLocations": 1672
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -5833,6 +5833,12 @@
         "source": "app/[locale]/evidence/unbroken-chain/page.tsx"
       }
     ],
+    "solarhealth2026_heliobiology": [
+      {
+        "path": "/evidence/heliobiology",
+        "source": "app/[locale]/evidence/heliobiology/page.tsx"
+      }
+    ],
     "lte_thyroid_2024": [
       {
         "path": "/evidence/hidden-thyroid",
@@ -5937,6 +5943,58 @@
         "source": "app/[locale]/evidence/infant-vulnerability/page.tsx"
       }
     ],
+    "hirayama2023_melatonin_space": [
+      {
+        "path": "/evidence/iss-hypomagnetic",
+        "source": "app/[locale]/evidence/iss-hypomagnetic/page.tsx"
+      }
+    ],
+    "nsr2024_hmf_astronaut_cry": [
+      {
+        "path": "/evidence/iss-hypomagnetic",
+        "source": "app/[locale]/evidence/iss-hypomagnetic/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "frontiers2021_hmf_circadian": [
+      {
+        "path": "/evidence/iss-hypomagnetic",
+        "source": "app/[locale]/evidence/iss-hypomagnetic/page.tsx"
+      }
+    ],
+    "pmc11802524_thymus": [
+      {
+        "path": "/evidence/iss-hypomagnetic",
+        "source": "app/[locale]/evidence/iss-hypomagnetic/page.tsx"
+      }
+    ],
+    "pmc8507176_ir_clock_testis": [
+      {
+        "path": "/evidence/iss-hypomagnetic",
+        "source": "app/[locale]/evidence/iss-hypomagnetic/page.tsx"
+      }
+    ],
+    "pmc4501744_planthopper_nzmf": [
+      {
+        "path": "/evidence/iss-hypomagnetic",
+        "source": "app/[locale]/evidence/iss-hypomagnetic/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
     "bat_5g_prdm16": [
       {
         "path": "/evidence/klimentidis-explained",
@@ -5973,6 +6031,12 @@
       {
         "path": "/model",
         "source": "components/CaMKIIConvergenceDiagram.tsx"
+      }
+    ],
+    "cooper2021_laschamp": [
+      {
+        "path": "/evidence/laschamp-reversal",
+        "source": "app/[locale]/evidence/laschamp-reversal/page.tsx"
       }
     ],
     "boyes2021": [
@@ -6611,6 +6675,80 @@
       {
         "path": "/evidence/reproductive-navigation",
         "source": "app/[locale]/evidence/reproductive-navigation/page.tsx"
+      }
+    ],
+    "wever1979_bunker": [
+      {
+        "path": "/evidence/space-weather-biology",
+        "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "wever1970_shielded_vs_unshielded": [
+      {
+        "path": "/evidence/space-weather-biology",
+        "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
+      }
+    ],
+    "frontiers2021_sr_anthropogenic": [
+      {
+        "path": "/evidence/space-weather-biology",
+        "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "kleimenova2007_pc1_mi": [
+      {
+        "path": "/evidence/space-weather-biology",
+        "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "otsuka2001_hrv_subarctic": [
+      {
+        "path": "/evidence/space-weather-biology",
+        "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
+      }
+    ],
+    "zenchenko2024_hr_gmf_sync": [
+      {
+        "path": "/evidence/space-weather-biology",
+        "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "lib/causalChainData.ts"
+      },
+      {
+        "path": "/model/fieldstate",
+        "source": "lib/causalChainData.ts"
+      }
+    ],
+    "mccraty2018_hrv_global": [
+      {
+        "path": "/evidence/space-weather-biology",
+        "source": "app/[locale]/evidence/space-weather-biology/page.tsx"
       }
     ],
     "juutilainen2006_superposition": [

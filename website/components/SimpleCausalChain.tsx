@@ -27,10 +27,10 @@ export function SimpleCausalChain({ locale }: { locale: Locale }) {
 
   return (
     <figure className="data-figure my-12">
-      <div className="overflow-x-auto p-1">
+      <div className="chart-scroll p-1">
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          className="w-full mx-auto"
+          className="w-full min-w-[900px] mx-auto"
           style={{ maxWidth: `${W}px` }}
           role="img"
           aria-label="Simplified causal chain"

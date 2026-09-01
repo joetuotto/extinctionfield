@@ -55,37 +55,37 @@ const COPY = {
   fi: {
     title: "ADHD: Toinen prototyyppi",
     subtitle: "ADHD yhdistää kolme BERM-mekanismia — dopamiinivajeen PFC:ssä, myelinaation viiveen Cav1.2:n kautta ja E/I-siirtymän KCC2:n kautta — neurokehitykselliseksi fenotyypiksi. ASD:n ja ADHD:n 30-50 %:n komorbiditeetti selittyy sillä, että ne edustavat eri pisteitä samalla Q-tekijäspektrillä.",
-    backLink: "← Takaisin Evidenssiin",
+    backLink: "← Takaisin näyttöön",
     cautionText: "Tämä sivu ehdottaa ADHD:tä toisena BERM-prototyyppinä. Vaikka PFC:n kypsymisviive, dopamiinihäiriö ja myelinaation ajoitus ovat vakiintuneita ADHD-mekanismeja, niiden yhdistäminen EMF-altistukseen on BERM-hypoteesi joka vaatii suoraa testausta.",
 
-    mechTitle: "Kolme konvergoivaa mekanismia",
-    mechLead: "ADHD syntyy kun kolme BERM-reittiä konvergoivat prefrontaalisen aivokuoren toimintaan: dopamiinivaje, myelinaation viive ja E/I-siirtymä. Jokainen mekanismi on itsenäisesti dokumentoitu; niiden konvergenssi PFC:hen selittää kliinisen fenotyypin.",
+    mechTitle: "Kolme yhtyvää mekanismia",
+    mechLead: "ADHD syntyy kun kolme BERM-reittiä yhtyvät prefrontaalisen aivokuoren toimintaan: dopamiinivaje, myelinaation viive ja E/I-siirtymä. Jokainen mekanismi on itsenäisesti dokumentoitu; niiden yhdentyminen PFC:hen selittää kliinisen fenotyypin.",
     mechanisms: [
       { id: "M1", name: "DA↓ PFC:ssä (VK19: striatumi -25 %)", path: "EMF → Ca²⁺↑ → CaMKII-häiriö → DA-synteesi↓ → PFC:n DA-vaje → tarkkaavaisuus↓, inhibitio↓", detail: "PFC vaatii OPTIMAALISEN dopamiinin (Kultakutri-periaate): liian vähän → ADHD; liian paljon → psykoosi. VK19 osoittaa striataalisen dopamiinin 25 %:n vähenemisen EMF-altistuksessa. DA-synteesi vaatii CaMKII:n, joka riippuu tarkasta Ca²⁺-signaloinnista — EMF häiritsee CaMKII:ta → DA↓. DA:n käänteis-U-annos-vaste PFC:ssä tarkoittaa, että jo kohtalainen vähennys romahduttaa toiminnanohjauksen.", color: "green" },
-      { id: "M2", name: "Myelinaation viive (VK20: Cav1.2→OPC)", path: "EMF → Cav1.2-häiriö → OPC-kypsyminen↓ → PFC:n myelinaatio viivästyy → PFC kypsyy 5 VUOTTA myöhemmin", detail: "PFC on aivojen VIIMEINEN myelinoituva alue, valmistuen vasta 25-vuotiaana. Shaw 2007 (PNAS) osoitti ADHD-aivokuoren saavuttavan huippupaksuuden 5 vuotta kontrolleja myöhemmin. VK20 tunnistaa mekanismin: Cav1.2-kanavat säätelevät oligodendrosyyttien esiastesolujen (OPC) kypsymistä. EMF-indusoitu Cav1.2-häiriö viivästyttää OPC-erilaistumista → myelinaation viive → PFC on haavoittuvin alue koska se myelinoituu viimeisenä.", color: "green" },
+      { id: "M2", name: "Myelinaation viive (VK20: Cav1.2→OPC)", path: "EMF → Cav1.2-häiriö → OPC-kypsyminen↓ → PFC:n myelinaatio viivästyy → PFC kypsyy 5 VUOTTA myöhemmin", detail: "PFC on aivojen VIIMEINEN myelinoituva alue, valmistuen vasta 25-vuotiaana. Shaw 2007 (PNAS) osoitti ADHD-aivokuoren saavuttavan huippupaksuuden 5 vuotta kontrolleja myöhemmin. VK20 tunnistaa mekanismin: Cav1.2-kanavat säätelevät oligodendrosyyttien esiastesolujen (OPC) kypsymistä. EMF-aiheutettu Cav1.2-häiriö viivästyttää OPC-erilaistumista → myelinaation viive → PFC on haavoittuvin alue koska se myelinoituu viimeisenä.", color: "green" },
       { id: "M3", name: "E/I-siirtymä (VK6: KCC2↓ + VK4: α2δ-1↑)", path: "EMF → KCC2-kypsyminen↓ + α2δ-1↑ → E/I↑ → impulssikontrolli↓", detail: "Sama E/I-epätasapainomekanismi kuin ASD:ssä mutta MATALAMMALLA Q-arvolla: vähemmän kohtauksia (epilepsia 5-10 % vs. 38 % ASD:ssä), vähemmän sensorista yliherkkyyttä, mutta heikentynyt impulssikontrolli ja jatkuva tarkkaavaisuus. KCC2-viive pitää GABAn eksitatorisena PFC-piireissä jotka vastaavat käyttäytymisen inhibitiosta. α2δ-1-ylössäätely lisää eksitatorista ajuria.", color: "green" },
     ],
 
     spectrumTitle: "ASD-ADHD-spektri",
-    spectrumLead: "ASD ja ADHD eivät ole erillisiä häiriöitä vaan eri sijainteja samalla E/I-spektrillä, joita Q-tekijän arvo ja alueellinen haavoittuvuus moduloivat.",
+    spectrumLead: "ASD ja ADHD eivät ole erillisiä häiriöitä vaan eri sijainteja samalla E/I-spektrillä, joita Q-tekijän arvo ja alueellinen haavoittuvuus säätelevät.",
     spectrumPoints: [
       "ASD + ADHD komorbiditeetti: 30-50 % — aivan liian korkea sattumaksi, odotettavissa jos molemmat jakavat saman mekanistisen juurisyyn",
       "Sama mekanismi (E/I↑), eri Q-arvot: ASD = korkea Q (epilepsia 38 %), ADHD = kohtalainen Q (epilepsia 5-10 %)",
-      "CACNA1C-variantit moduloivat sijaintia spektrillä: gain-of-function → ASD-piirteet; osittainen häiriö → ADHD-piirteet",
+      "CACNA1C-variantit säätelevät sijaintia spektrillä: gain-of-function → ASD-piirteet; osittainen häiriö → ADHD-piirteet",
       "Molemmat vastaavat hoitoihin jotka kohdistuvat samoihin reitteihin: bumetanidi (GABA-polariteetti), atomoksetiini (noradrenerginen PFC-pelastus), käyttäytymisterapiat jotka kohdistuvat toiminnanohjaukseen",
     ],
 
-    prevTitle: "Prevalenssin kasvu selitettynä",
-    prevLead: "ADHD:n esiintyvyys on noussut jyrkästi 1990-luvulta lähtien. BERM tunnistaa EMF-peräisten ja EMF-liitännäisten tekijöiden konvergenssin joka voimistaa dopamiinivajetta.",
+    prevTitle: "Esiintyvyyden kasvu selitettynä",
+    prevLead: "ADHD:n esiintyvyys on noussut jyrkästi 1990-luvulta lähtien. BERM tunnistaa EMF-peräisten ja EMF-liitännäisten tekijöiden yhdentymisen joka voimistaa dopamiinivajetta.",
     prevPoints: [
-      { factor: "EMF → DA↓", detail: "Suora dopamiinisynteesin väheneminen CaMKII-häiriön kautta (VK19). Kasvava ympäristön EMF-altistus korreloi prevalenssin aikajanan kanssa." },
+      { factor: "EMF → DA↓", detail: "Suora dopamiinisynteesin väheneminen CaMKII-häiriön kautta (VK19). Kasvava ympäristön EMF-altistus korreloi esiintyvyyden aikajanan kanssa." },
       { factor: "Myelinaation viive", detail: "EMF → Cav1.2 → OPC-kypsyminen↓ → PFC:n kehitys viivästyy. Aikaisempi ja intensiivisempi EMF-altistus kehityksen aikana siirtää myelinaatiokäyrää." },
       { factor: "GABA-vaihdon viive", detail: "EMF → KCC2↓ → GABA pysyy eksitatorisena pidempään PFC-piireissä → impulssikontrolli ei kehity aikataulussa." },
       { factor: "LED-ruutuaika (yhdiste)", detail: "Ruutuaika ei ole vain käyttäytymiskysymys — LED-näytöt emittoivat keskitaajuista EMF:ää + sininen valo tukahduttaa melatoniinia + matala DA tekee näytöistä PALKITSEVAMPIA (hyperbolinen diskonttaus). EMF-peräinen DA-vaje luo noidankehän: DA↓ → näytöt palkitsevampia → enemmän ruutuaikaa → enemmän IF-altistusta → DA↓↓." },
     ],
 
-    pharmaTitle: "Farmakologinen validaatio",
-    pharmaLead: "ADHD-lääkkeet korjaavat täsmälleen ne häiriöt joita BERM ennustaa EMF:n tuottavan. Tämä on konvergentti validaatio: jos mekanismi on väärä, lääkkeiden ei pitäisi toimia niin kuin ne toimivat.",
+    pharmaTitle: "Farmakologinen todentaminen",
+    pharmaLead: "ADHD-lääkkeet korjaavat täsmälleen ne häiriöt joita BERM ennustaa EMF:n tuottavan. Tämä on yhtenevä todentaminen: jos mekanismi on väärä, lääkkeiden ei pitäisi toimia niin kuin ne toimivat.",
     pharmaPoints: [
       "Metyylifenidaatti/amfetamiini: lisäävät DA:ta PFC:ssä → oireet paranevat. Nämä lääkkeet kompensoivat suoraan VK19:n dopamiinivajetta.",
       "Sama Ca²⁺-kaskadi: DA-synteesi vaatii CaMKII:n; EMF häiritsee CaMKII:ta → DA↓. Stimulantit ohittavat synteesipullonkaulan estämällä takaisinoton/edistämällä vapautumista.",

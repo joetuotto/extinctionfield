@@ -8,3 +8,11 @@ export function twoChannelExposure(
 ): number {
   return ambient + chi(ambient) * personal;
 }
+
+export function threeChannelExposure(
+  natural: number,
+  ambient: number,
+  personal: number,
+): number {
+  return natural + ambient + chi(ambient) * personal;
+}

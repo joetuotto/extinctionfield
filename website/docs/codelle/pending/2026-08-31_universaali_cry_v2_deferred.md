@@ -19,9 +19,14 @@ Date: 2026-08-31
 ### Section 1.3
 - [x] Home page: "4 kingdoms" / "4계" ecosystem stat card added (all 5 locales, links to /evidence#plant-cry)
 
+### [DATA] Datasets (2026-08-31)
+- [x] references_full.json: willis2022_mastreeplus (MASTREE+ database, GitHub, 73,828 observations)
+- [x] references_full.json: world_bank_mobile_2024 (mobile subscriptions per 100 people)
+- [x] public/data/solar_bandpass.json: includes mobile subscription data for masting correlation context
+
 ## Remaining items (deferred)
 
-### [DATA] External data needed
-- Controlled field experiment: crop CRY2 RF sensitivity across species
-- MASTREE database Fourier analysis vs SSN time series
-- Bogdziewicz 2021 raw synchrony data vs mobile network rollout timeline
+### [DATA] Not obtainable
+- CRY2 RF sensitivity across species: No compiled dataset exists — Ahmad 2020 tested CRY1 only, Arabidopsis only
+- MASTREE+ Fourier analysis vs SSN: MASTREE+ CSV available on GitHub but requires local download + processing (73K rows). Reference registered.
+- Bogdziewicz 2021 synchrony vs mobile rollout: Single-species (beech), supplementary data behind journal paywall. World Bank mobile data obtained as country-level proxy.

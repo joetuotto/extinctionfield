@@ -30,7 +30,7 @@ const CRITERIA: Criterion[] = [
   },
   {
     id: "specificity",
-    name: { en: "Specificity", fi: "Spesifisyys", ja: "特異性", fr: "Spécificité", ko: "특이성" },
+    name: { en: "Specificity", fi: "Kohdentuvuus", ja: "特異性", fr: "Spécificité", ko: "특이성" },
     berm: 2, tobacco: 2, bpa: 2,
     strongest: { en: "Technology-specific: different frequency → different organ → different health outcome", fi: "Teknologiakohtainen: eri taajuus → eri elin → eri terveysvaikutus", ja: "技術特異的：異なる周波数 → 異なる臓器 → 異なる健康影響", fr: "Spécifique à la technologie : fréquence différente → organe différent → effet sanitaire différent", ko: "기술 특이적: 다른 주파수 → 다른 장기 → 다른 건강 결과" },
   },
@@ -99,7 +99,7 @@ const COPY = {
     total: "Yhteensä",
     strongestEvidence: "Vahvin todiste",
     explanation:
-      "BERM saa korkeamman kokonaispistemäärän kuin tupakka (Surgeon Generalin raportin aikaan) ja bisfenoli A (regulatorisen toiminnan alkaessa). Sen vahvimmat alueet ovat biologinen uskottavuus (mekanismi tunnetaan atomitasolla ja on FDA-validoitu) ja analogia (neljä itsenäistä rinnakkaista todistelinjaa). Sen heikoin alue on spesifisyys — mutta tämä on kalsiumbiologian ennustettu ominaisuus, ei mallin epäonnistuminen.",
+      "BERM saa korkeamman kokonaispistemäärän kuin tupakka (Surgeon Generalin raportin aikaan) ja bisfenoli A (regulatorisen toiminnan alkaessa). Sen vahvimmat alueet ovat biologinen uskottavuus (mekanismi tunnetaan atomitasolla ja on FDA-validoitu) ja analogia (neljä itsenäistä rinnakkaista todistelinjaa). Sen heikoin alue on kohdentuvuus — mutta tämä on kalsiumbiologian ennustettu ominaisuus, ei mallin epäonnistuminen.",
     disclaimer:
       "Nämä pisteet ovat meidän arviomme. Lukijoita kannustetaan arvioimaan jokainen kriteeri itsenäisesti.",
     cta: "Lue koko Bradford Hill -analyysi",

@@ -19,6 +19,7 @@ import {
   Users,
   Scale,
   FlaskConical,
+  Microscope,
   Baby,
   BrainCircuit,
   Link2,
@@ -26,11 +27,13 @@ import {
   Target,
   Thermometer,
   Sun,
+  Rocket,
   Heart,
   TrendingDown,
   Navigation,
   Sprout,
   Trees,
+  GitMerge,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CitationLink } from "@/components/CitationLink";
@@ -60,6 +63,7 @@ import { isValidLocale, pickCopy, type Locale } from "@/lib/i18n";
 import { ORPHANED_FINDINGS, ORPHANED_COMMENTARY } from "@/lib/orphanedFindings";
 import { RESEARCH_DOMAINS } from "@/lib/researchDomains";
 import { SolarStatCharts } from "@/components/SolarStatCharts";
+import { EmpiricalSolarCharts } from "@/components/EmpiricalSolarCharts";
 
 const ORDER: FieldStateDirectness[] = [
   "PHYSICS_SIGNATURE",
@@ -350,24 +354,55 @@ const COPY = {
       { authors: "Ascoli et al. (Nature Comms)", year: "2017", finding: "NAO teleconnections correlate with masting — but relationships are non-stationary (change over time), suggesting an additional variable", mechanism: "Non-stationary correlation" },
     ],
     mastingKeyMessage: "If CRY2 integrates photoperiod + geomagnetic field for masting synchrony, then growing anthropogenic RF should progressively decouple trees from the geomagnetic signal — predicting exactly the weakening synchrony that Bogdziewicz 2021 documents.",
+    // Bioelectromagnetics 2025-2026 literature integration
+    bioem_bertagna_title: "Intracellular Ca²⁺ Store Mechanism (Bertagna 2025)",
+    bioem_bertagna_text: "Bertagna et al. 2025 (Ann NY Acad Sci 1550(1)) — Mouse hippocampal CA1 pyramidal neurons exposed to 50 Hz, 1 mT ELF-EMF for 60 min. Inward currents ↓40%, transient outward ↓50%. Two independent Ca²⁺ pathways identified: (1) RyR — dantrolene blocked EMF effects; (2) SERCA — CPA blocked EMF effects. Extends the IFO-VGIC mechanism (Level 4) to include intracellular calcium store dysregulation. Note: ELF (50 Hz), not RF — translation not direct, but Ca²⁺ pathway is shared.",
+    bioem_bertagna_level: "E",
+    bioem_bektas_title: "5G Testicular ROS & CoQ10 Rescue (Bektas 2026)",
+    bioem_bektas_text: "Bektas et al. 2026 (Bioelectromagnetics) — Rats exposed to 3.5 GHz (5G core frequency). Testicular and oxidative damage observed. CoQ10 supplementation ameliorated damage — demonstrates mechanism reversibility, consistent with recovery window concept. First 5G-frequency-specific testicular data. Tissue-specific: same frequency shows no ROS in skin cells (cf. Meyer 2026, Haidar 2025).",
+    bioem_bektas_level: "C",
+    bioem_tbahriti_title: "Melatonin Suppression: PRISMA Systematic Review (Tbahriti 2026)",
+    bioem_tbahriti_text: "Tbahriti et al. 2026 (Sleep Biol Rhythms 24(2):195-214) — PRISMA 2020: 55 studies from 892 screened. 88% of high-quality animal studies report EMF-induced melatonin suppression (20–50% from baseline). Suppression smaller than light-induced (>90%), consistent with EMF as one component of nocturnal disruption. Limitation: only 27% of studies met high methodological standards.",
+    bioem_tbahriti_level: "M|C",
+    bioem_tissue_title: "Tissue-Specific Null Results",
+    bioem_tissue_text: "Meyer et al. 2026 (ELF 50 Hz, 200 µT, HaCaT keratinocytes — no DNA damage, p=0.644/0.987) and Haidar et al. 2025 (5G-modulated 3.5 GHz, SAR 0.08–4 W/kg, fibroblasts/keratinocytes — no ROS, no DNA damage). These null results do NOT contradict Level 5A — they demonstrate tissue-specificity consistent with χ(Ā) selection rule: gonadal cells are primary targets, not skin cells.",
+    bioem_gao_title: "BBB Disruption via Tight Junction Degradation (Gao 2024)",
+    bioem_gao_text: "Gao et al. 2024 (Bioelectromagnetics) — Electromagnetic pulse caused BBB breakdown through tight junction protein (occludin, claudin, ZO-1) degradation. Important: EMP (high-amplitude, short-duration) differs from chronic low-intensity RF. Mechanistic relevance: same molecular target as Salford 2003. Supports pathway E.",
+    bioem_gao_level: "C",
+    bioem_section_title: "Bioelectromagnetics Literature 2024–2026",
+    bioem_section_intro: "Recent bioelectromagnetics studies (2024–2026) provide mechanistic refinement across BERM causal chain levels 3–6. Three priority sources strengthen the multi-pathway Ca²⁺ disruption model, add 5G-frequency-specific reproductive data, and quantify melatonin suppression. Two high-quality null results in skin cells support tissue-specificity rather than contradicting EMF effects.",
+    horm_section_title: "Hormesis and Biological Activation",
+    horm_section_intro: "Four independent research lines converge on a hormetic dose-response pattern: low electromagnetic exposure correlates with biological activation, while chronic high exposure correlates with suppression. The evidence spans experimental, genetic, epidemiological, and neuroendocrine domains.",
+    horm_exp_title: "Experimental: Low-dose radiation hormesis",
+    horm_exp_text: "Low-dose ionizing radiation produces adaptive responses including enhanced DNA repair, mitochondrial activation, and immune stimulation. Liu (1989) documented testosterone increase and cortisol decrease in animal models. Kostyuk et al. (2021) demonstrated mitochondrial gene activation in human stem cells. Yang et al. (2016) showed ATM-mediated DNA repair activation in normal (not cancer) cells. Zhou et al. (2018) confirmed immune activation via NK cell expansion. These findings establish a hormetic framework: low-dose stress activates repair systems, while high-dose stress overwhelms them.",
+    horm_exp_note: "",
+    horm_gen_title: "Genetic: DRD4/7R context-dependent fitness",
+    horm_gen_text: "Eisenberg et al. (2008) studied DRD4/7R polymorphism in Ariaal pastoralists of northern Kenya (n=152). The same allele was associated with higher BMI (better nutritional status) in nomadic Ariaal but lower BMI in settled Ariaal. This gene-environment interaction is consistent with biological activation under low-infrastructure conditions and mismatch under settled conditions.",
+    horm_gen_note: "",
+    horm_epi_title: "Epidemiological: Pastoralist settlement health gradient",
+    horm_epi_text: "Swanson et al. (2023) measured cardiometabolic indicators in semi-nomadic pastoralists in Kenya. Settlement was associated with worse blood pressure and BMI compared to more nomadic individuals within the same population. The settlement gradient isolates lifestyle change from genetic confounders.",
+    horm_neuro_title: "Neuroendocrine: Urban-suburban cortisol divergence",
+    horm_neuro_text: "Mayagoitia-Novales et al. (2023) compared cortisol and testosterone responses between urban and suburban citizens. Urban citizens showed higher cortisol reactivity and altered testosterone response patterns. The urban environment is associated with heightened stress-axis activation.",
+    horm_neuro_note: "",
+    horm_epistemic: "",
   },
   fi: {
-    title: "Evidenssirekisteri",
+    title: "Näyttörekisteri",
     subtitle: `${FIELDSTATE_EVIDENCE_COUNT} rajattua BERM v17 -tietuetta ja ${LEGACY_EVIDENCE_COUNT} laajennetun katalogin tietuetta 13+ polulla ja 490+ vertaisarvioidussa tutkimuksessa.`,
     interpretationTitle: "Kuinka rekisteriä luetaan",
     interpretation: [
       "Kenttäallekirjoitus voi tukea mittausmuuttujaa, kuten taustavektoria, kulmaa, spektriä tai verhokäyrää; se ei osoita ihmisen hedelmällisyysvaikutusta.",
-      "Solu- tai eläinkoe voi tukea mekanistista väliporrasta tai elinpäätepistettä omissa oloissaan; se ei automaattisesti ole ihmisväestön estimaatti.",
+      "Solu- tai eläinkoe voi tukea mekanistista väliporrasta tai elinpäätepistettä omissa oloissaan; se ei automaattisesti ole ihmisväestön arvio.",
       "Katsaus paikantaa tutkimuskokonaisuuden. Väestön ajoitustulos on kuvaileva, ellei kohdistettu FieldState, päätepiste ja sekoittajien hallinta ole mukana.",
       "Mikään alla oleva tietue ei ole TFR-kerroin. Maakohtainen TFR-reitti tarvitsee erilliset ASFR- ja demografiset termit mallin määrittelyn mukaisesti.",
     ],
     boundedTitle: "Rajatut v2-tietueet",
-    boundedLead: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Nämä ovat BERM v17 -kausaalireitin ensisijaiset evidenssitietueet.",
+    boundedLead: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Nämä ovat BERM v17 -kausaalireitin ensisijaiset näyttötietueet.",
     classificationTitle: "Miten aiemmin negatiiviset havainnot luokittuvat",
     channelGroupTitle: "Kolme taajuuskanavaa",
     channelGroupLead: "Jokainen biologinen polku kuuluu yhteen kolmesta taajuuskanavasta, jotka määrittyvät kahdella biologisella rajataajuudella: f_c ~ 1 kHz (kalvon RC) ja f_RPM ~ 1 MHz (radikaaliparimekanismin koherenssi).",
-    extendedTitle: "Laajennettu evidenssikatalogi",
-    extendedLead: `${LEGACY_EVIDENCE_COUNT} lisätietuetta BERM v17 -bibliografiasta, säilytetty lähdetason tarkistusta varten. Jokainen on luokiteltu legacy-polun, evidenssitason ja migraatiostatuksen mukaan.`,
+    extendedTitle: "Laajennettu näyttökatalogi",
+    extendedLead: `${LEGACY_EVIDENCE_COUNT} lisätietuetta BERM v17 -bibliografiasta, säilytetty lähdetason tarkistusta varten. Jokainen on luokiteltu legacy-polun, näyttötason ja migraatiostatuksen mukaan.`,
     groups: {
       PHYSICS_SIGNATURE: "Fysiikan allekirjoitukset",
       MECHANISTIC_INTERMEDIATE: "Mekanistiset välivaiheet",
@@ -383,33 +418,33 @@ const COPY = {
     anchorP1: "[[ref:kalmijn1971|Kalmijn (J. Exp. Biol. 1971)]] osoitti, että rustokalat (hait ja rauskut) havaitsevat luotettavasti sähkökenttiä jopa 5 nV/cm (5 × 10⁻⁷ V/m) tasolla Lorenzinin ampulliensa kautta. Tämä kynnys on selvästi alle BERM:n käyttämän IFO-VGIC-herkkyyden — selkärankaisen hermosto prosessoi kenttiä intensiteeteillä, joita nykyiset turvallisuusstandardit pitävät biologisesti inertteinä.",
     anchorP2: "Lorenzinin ampullat käyttävät ionikanavan konduktanssimuutosta — fysikaalisesti analogista VGCC:n porttidynamiikan kanssa. Tämä ei ole eri mekanismi herkemmässä eläimessä; se on sama mekanismi (ionikanavan häiriö heikkojen sähkökenttien vaikutuksesta) ilmaistuna eri kudoksessa. Kenttäherkkyyden fylogeneettinen konservaatio 10⁻⁵–10⁻⁷ V/m alueella selkärankaisissa kumottaa suoraan 'kentät liian heikkoja biologialle' -vastaväitteen.",
     anchorNote: "Rustokalakalojen sähköreseptio on vakiintunut aistintoiminto, jota ei kiistetä. Ekstrapolaatio nisäkkäiden VGCC-herkkyyteen on BERM-tulkinta — Lorenzinin ampulla on erikoistunut aistielin, jonka geometria on optimoitu kenttien havaitsemiseen, mitä nisäkkäiden kudoksilta puuttuu. Analogia on mekanistinen (molemmat käyttävät ionikanavan konduktanssia), ei anatominen.",
-    animalTitle: "Eläinevidenssi: Kontrolloidut EMF-kokeet",
+    animalTitle: "Eläinnäyttö: Kontrolloidut EMF-kokeet",
     animalP1: "[[ref:rodriguez2003|Rodriguez ym. (J. Reprod. Fert. 2003)]] altistivat lypsyhiehoja 60 Hz EMF:lle (10 kV/m, 30 µT) kontrolloidussa kokeessa McGill-yliopistossa. Tulokset: melatoniini laski (EMF toimii keinotekoisena 'pitkän päivän' signaalina), kiimakierron kesto piteni (p < 0,01) ja luteaalivaihe piteni (p < 0,01). [[ref:burchard2002|Burchard ym. (J. Dairy Sci. 2002)]] havaitsivat saman EMF-altistuksen nostavan IGF-1:tä ja kuiva-ainesyöntiä.",
     animalP2: "Tämä on suoraa kokeellista näyttöä siitä, että ELF-kentät ympäristötasoilla muuttavat suurten nisäkkäiden lisääntymisendokrinologiaa. Lypsykarja on kuitenkin altistunut vakaalle navetan ELF:lle sähköistämisestä lähtien (~1950-luku). Jalostusvalintapaine on ~3 kertaluokkaa suurempi kuin mikään EMF-vaikutus. Siksi karja luokitellaan oikein negatiiviseksi kontrolliksi BERM:n sentinellirekisterissä — EMF ON biologisesti aktiivinen, mutta valinta peittää sen.",
     animalP3: "Harajännitekirjallisuus (milliampeerien kontaktivirrat viallisesta johdotuksesta) on ortogonaalinen. Rodriguez mittasi kroonista kenttäaltistusta (µT), ei akuuttia kontaktivirtaa (mA). Vain Rodriguez-tyyppiset tutkimukset testaavat BERM:n mekanismia — kroonisia matalan tason ELF-kenttävaikutuksia lisääntymisendokrinologiaan.",
     animalNote: "Rodriguez/Burchard-kokeet ovat vertaisarvioituja kontrolloituja tutkimuksia selkeillä biologisilla päätepisteillä. Negatiivinen kontrolli -luokitus karjalle koskee väestötason laskun havaitsemista (valinta peittää signaalin), ei sitä onko ELF biologisesti aktiivinen (on). Amish- vs. tavanomainen lypsykarjavertailu — jossa amish-navetoissa on matalampi ELF — olisi seuraava informatiivinen testi.",
     catsperTitle: "CatSper: Korvaamaton kanava",
     catsperLead: "Yhdeksän kalsiumriippuvaista vaihetta kattaa siittiön tuotannosta hedelmöitykseen. CatSper vaaditaan jokaisessa vaiheessa — kapasitaatio, reotaksis, termotaksis, kemotaksis ja akrosomireaktio — eikä sillä ole biologista varakanavaa. CatSper-poistogeeni missä tahansa testatusta lajista tuottaa täydellisen miehen infertiliteetin.",
-    catsperP1: "CatSper on ainoa siittiöspesifinen kalsiumkanava. Se on jänniteohjattu, pH-herkkä, lämpötilaohjattu (Q₁₀ = 5,1, kynnys 33,5 °C) ja reagoi pikomolaariseen progesteroniin cumulus-soluista. EMF:n aiheuttama Ca²⁺-dysregulaatio häiritsee tarkkaa ajoitusta, jota CatSper vaatii — ennenaikainen aktivaatio kuluttaa rajalliset energiavarastot ennen kuin siittiö saavuttaa munasolun.",
+    catsperP1: "CatSper on ainoa siittiötarkka kalsiumkanava. Se on jänniteohjattu, pH-herkkä, lämpötilaohjattu (Q₁₀ = 5,1, kynnys 33,5 °C) ja reagoi pikomolaariseen progesteroniin cumulus-soluista. EMF:n aiheuttama Ca²⁺-dysregulaatio häiritsee tarkkaa ajoitusta, jota CatSper vaatii — ennenaikainen aktivaatio kuluttaa rajalliset energiavarastot ennen kuin siittiö saavuttaa munasolun.",
     catsperP2: "CATSPER2⁻/⁻-miehillä progesteronin indusoima hyperaktivaatio on kumoutunut, hedelmöitys epäonnistuu sekä in vivo että in vitro ([[ref:catsper_human|JCI 2024]]). Farmakologinen profiili on yhdenmukainen: CatSper-salpaajat (NNC55-0396) tuottavat samat motiliteetti- ja akrosomireaktiovajavuudet kuin EMF-altistus ([[ref:pmc6104424_nnc|Rennhack ym. 2018]]).",
     catsperEvolution: "CatSper on konservoitunut merisiilistä ihmiseen — sama kanava ohjaa hedelmöitystä 600 miljoonan vuoden evoluution yli. Vesilajit (merisiili, lohi) käyttävät CatSperia ulkoisessa hedelmöityksessä, jossa merenalaisten kaapeleiden EMF tarjoaa luonnollisen kokeen.",
-    catsperDetailLink: "Täydellinen 9-vaiheinen reproduktiivinen navigointiketju",
-    sentinelTitle: "Sentinelli- ja lajienvälinen evidenssi",
+    catsperDetailLink: "Täydellinen 9-vaiheinen lisääntymiskykyyn liittyvä navigointiketju",
+    sentinelTitle: "Sentinelli- ja lajienvälinen näyttö",
     sentinel: "Cross-Species Lag Index on valmiusprotokolla, joka yhdistää alueelliset vasteet, mitatun FieldStaten ja päätepistekovariaatit rekisteröityyn lajienväliseen testiin.",
     sentinelGradient: "Seitsemässä lajissa, joilla on kvantifioitava lisääntymislaskuaste, laskuaste korreloi EMF-altistusarvon kanssa tasolla r = 0,909. Koirat ([[ref:lea2016|Lea ym. 2016]]): −1,0 %/v siittiölasku 26 vuoden aikana brittiläisissä siitoskoirissa, jotka jakavat kodin EMF-altistuksen. Hevoset ([[ref:harris2023|Harris ym. 2023]]): −0,75 %/v oriiden siittiölasku 35 vuoden aikana. Kuvio ulottuu mehiläisiin, lintuihin, sammakoihin ja vesilajeihin — kukin laskee aikajanalla, joka on suhteessa niiden sähkömagneettiseen ympäristöön.",
-    sentinelTLink: "Tämä lajienvälinen gradientti liittyy suoraan ihmisillä dokumentoituun sekulaariseen testosteronilaskuun: sama EMF-mekanismi (VGCC → Ca²⁺ → lisääntymishäiriö) toimii koirissa, jotka jakavat kotiympäristömme EMF-altistuksen, ja tuottaa saman ~1 %/v laskuasteen. T→TFR-viive 8 vuotta tarjoaa ajallisen kalibroinnin — maat, joissa sähköistys tapahtui aiemmin, voivat osoittaa aikaisemman T-laskun alkamisen (ennuste T-1).",
+    sentinelTLink: "Tämä lajienvälinen gradientti liittyy suoraan ihmisillä dokumentoituun pitkäaikaiseen testosteronilaskuun: sama EMF-mekanismi (VGCC → Ca²⁺ → lisääntymishäiriö) toimii koirissa, jotka jakavat kotiympäristömme EMF-altistuksen, ja tuottaa saman ~1 %/v laskuasteen. T→TFR-viive 8 vuotta tarjoaa ajallisen kalibroinnin — maat, joissa sähköistys tapahtui aiemmin, voivat osoittaa aikaisemman T-laskun alkamisen (ennuste T-1).",
     sentinelGradientStat: "r = 0,909",
     sentinelGradientLabel: "Lajienvälinen EMF-gradientti (7 lajia)",
     sentinelLink: "Katso sentinellin valmiustila",
-    sentinelTDeclineLink: "Testosteronilaskun evidenssi",
+    sentinelTDeclineLink: "Testosteronilaskun näyttö",
     extPathway: "Polku",
-    extLevel: "Evidenssitaso",
+    extLevel: "Näyttötaso",
     extStatus: "Migraatiostatus",
     extScope: "Tulkintaraja",
     extN: "N",
-    dualInterpretationTitle: "Evidenssin tulkinta: Standardi- vs. BERM-kehys",
-    dualInterpretationLead: "Sama tutkimus voi tukea vastakkaisia johtopäätöksiä riippuen siitä, mitkä vinoumat oletetaan. Tämä taulukko näyttää miten standardi- ja BERM-korjattu kehys lukevat samoja evidenssityyppejä.",
-    dualInterpretationHeaders: { evidence: "Evidenssityyppi", standard: "Standarditulkinta", berm: "BERM-tulkinta" },
+    dualInterpretationTitle: "Näytön tulkinta: Standardi- vs. BERM-kehys",
+    dualInterpretationLead: "Sama tutkimus voi tukea vastakkaisia johtopäätöksiä riippuen siitä, mitkä vinoumat oletetaan. Tämä taulukko näyttää miten standardi- ja BERM-korjattu kehys lukevat samoja näyttötyyppejä.",
+    dualInterpretationHeaders: { evidence: "Näyttötyyppi", standard: "Standarditulkinta", berm: "BERM-tulkinta" },
     dualInterpretationRows: [
       {
         evidence: "Tutkimus ei löydä merkitsevää EMF-vaikutusta",
@@ -423,7 +458,7 @@ const COPY = {
       },
       {
         evidence: "WHO:n systemaattinen katsaus arvioi varmuuden 'kohtalaiseksi'",
-        standard: "Evidenssi on kohtalaista. Lisää RCT:itä tarvitaan.",
+        standard: "Näyttö on kohtalaista. Lisää RCT:itä tarvitaan.",
         berm: "WHO:n metodologia on alttiina 15+ tunnistetulle vinoumalle, jotka kaikki vaimentavat näennäistä vaikutusta. 'Kohtalainen' vinoumille alttiissa kehyksessä voi vastata 'korkeaa' vinoumakorjatussa kehyksessä.",
       },
       {
@@ -459,8 +494,8 @@ const COPY = {
     theraBionicDevice: "27,12 MHz AM-RF, kasvainspesifiset taajuudet",
     theraBionicChannel: "Cav3.2 (CACNA1H) T-tyypin VGCC",
     theraBionicLevel: "E — FDA-hyväksytty, vertaisarvioitu (Lancet/eBioMedicine)",
-    tDeclineTitle: "Testosteronin lasku: Maiden välinen evidenssi",
-    tDeclineLead: "Ikäriippumaton sekulaarinen testosteronin lasku on dokumentoitu viidessä maassa neljällä mantereella. Kuvio on yhdenmukainen: ~1 %/vuosi lasku riippumatta ikääntymisestä, BMI-trendeistä tai elämäntapasekoittajista. Tutkimukset, jotka löysivät 'ei laskua' BMI-korjauksen jälkeen, ovat yhdenmukaisia mediaattorimallin kanssa: BMI on kausaalireitillä, ei itsenäinen sekoittaja, joten sen korjaaminen poistaa todellista signaalia.",
+    tDeclineTitle: "Testosteronin lasku: Maiden välinen näyttö",
+    tDeclineLead: "Ikäriippumaton pitkäaikainen testosteronin lasku on dokumentoitu viidessä maassa neljällä mantereella. Kuvio on yhdenmukainen: ~1 %/vuosi lasku riippumatta ikääntymisestä, BMI-trendeistä tai elämäntapasekoittajista. Tutkimukset, jotka löysivät 'ei laskua' BMI-korjauksen jälkeen, ovat yhdenmukaisia mediaattorimallin kanssa: BMI on kausaalireitillä, ei itsenäinen sekoittaja, joten sen korjaaminen poistaa todellista signaalia.",
     tDeclineStudies: [
       { referenceId: "travison2007_v2", country: "USA", study: "Travison ym. 2007 (MMAS)", n: "1 532", rate: "−1,0 %/v", finding: "Väestötason T-lasku 1987–2004. Ikäriippumaton: 65-vuotiaan T oli 2002 matalampi kuin 65-vuotiaan T 1987. BMI-korjattu — kuvaa vain suoraa reittiä.", tier: "strong" as const, bmiIndependent: true },
       { referenceId: "mazur2013", country: "USA", study: "Mazur ym. 2013 (PLOS ONE)", n: "991", rate: "−0,95 %/v", finding: "Painonsa säilyttäneet US Air Force -veteraanit menettivät 117 ng/dL (19 %) 20 vuodessa. Poissulkee lihavuuden riittävänä selityksenä — ratkaiseva todiste mediaattoritulkinnalle.", tier: "strong" as const, bmiIndependent: true, highlight: true },
@@ -475,8 +510,8 @@ const COPY = {
     tDeclineLink: "Kynnysmallin koko määrittely",
     tDeclinePredLink: "T→TFR-ennusteet",
 
-    metabTitle: "Metabolinen syndrooma: kuusi konvergoivaa reittiä",
-    metabLead: "Kuusi itsenäistä EMF → Ca²⁺ -reittiä lisää samanaikaisesti energian saantia, vähentää energiankulutusta ja lisää energian varastointia. CaMKII on konvergenssimolekyyli, joka yhdistää kaikki reitit. Lihavuus on monitekijäinen — EMF on YKSI myötävaikuttava tekijä, joka selittää residuaalin, johon ruokavalio, liikunta ja genetiikka eivät yksin riitä.",
+    metabTitle: "Metabolinen oireyhtymä: kuusi yhtyvää reittiä",
+    metabLead: "Kuusi itsenäistä EMF → Ca²⁺ -reittiä lisää samanaikaisesti energian saantia, vähentää energiankulutusta ja lisää energian varastointia. CaMKII on yhdentymismolekyyli, joka yhdistää kaikki reitit. Lihavuus on monitekijäinen — EMF on YKSI myötävaikuttava tekijä, joka selittää jäännöksen, johon ruokavalio, liikunta ja genetiikka eivät yksin riitä.",
     metabStudies: [
       { referenceId: "alshammari2022", authors: "Alshammari ym.", year: 2022, journal: "Nutrients", finding: "RF-EMF → hypotalaaminen häiriö → ravinnonsaanti ↑ ihmisillä ja rotilla", mechanism: "1: Ruokahalu", level: "E" },
       { referenceId: "chen2016_glia", authors: "Chen ym.", year: 2016, journal: "eLife", finding: "ARC-glian Ca²⁺-aktivaatio → AgRP/NPY ↑ → ravinnonsaanti ↑ (suora Ca²⁺→ruokahaluyhteys)", mechanism: "1: Ruokahalu", level: "E" },
@@ -491,7 +526,7 @@ const COPY = {
     metabKlimentidisP1: "Laboratoriorotat kontrolloidulla dieetillä ovat lihoneet vuosikymmeniä. Villit rotat kaupungeissa lihovat. Kotieläimet — koirat ja kissat — näyttävät saman trendin. Todennäköisyys sille, että tämä tapahtuu sattumalta 24 populaatiossa ja 8 lajissa on p = 1,2 × 10⁻⁷.",
     metabKlimentidisP2: "Dieetti on kontrolloitu pois (laboratoriorotat). Liikunta on kontrolloitu pois (laboratoriorotat). Genetiikka on kontrolloitu pois (inbredut kannat). Hormonihäiritsijät (BPA, ftalaatit) ovat mahdollisia mutta eivät selitä VILLEJÄ rottia JA laboratoriorottia JA kotieläimiä samanaikaisesti. Ainoa ympäristötekijä joka on lisääntynyt KAIKISSA näissä ympäristöissä on sähkömagneettinen kenttäaltistus.",
     metabKlimentidisNote: "Klimentidis ym. eivät tutkineet EMF:ää. Tutkijat ehdottivat \"toistaiseksi tunnistamattomia tekijöitä.\" EMF-tulkinta on BERM:n johdos, ei heidän.",
-    metabModelLink: "CaMKII-konvergenssimalli",
+    metabModelLink: "CaMKII-yhdentymismalli",
     metabPredLink: "Metaboliset ennusteet",
     svgStandardVsBerm: "Standardi vs BERM",
     svgStandard: "STANDARDI",
@@ -521,10 +556,10 @@ const COPY = {
     svgWindowAdey: "Ikkunavaikutus (Adey)",
     svgGdpBadControl: "BKT = huono kontrolli (Pearl)",
     svgNonMonotonic: "Ei-monotoninen vaste",
-    subPagesTitle: "Temaattiset evidenssisivut",
+    subPagesTitle: "Temaattiset näyttösivut",
     subPagesLead: "Yksityiskohtaiset analyysit joissa yksittäiset tutkimukset yhdistyvät mekanistisiksi argumenteiksi. Kukin narratiivi syntetisoi julkaistuja löydöksiä; mikään ei osoita väestötason kausaalikerrointa.",
     researchDomainsTitle: "11 riippumatonta tutkimusalaa",
-    convergenceDiagram: "Konvergenssikaavio",
+    convergenceDiagram: "Yhdentyminenkaavio",
     bioActivity: "bio-aktiivisuus",
     deviceLabel: "Laite",
     channelLabel: "Kanava",
@@ -548,7 +583,7 @@ const COPY = {
     tDeclineFinland: "Suomi (Perheentupa)",
     tDeclineGlobal: "Globaali (Santi)",
     tDeclineRateUnit: "%/v",
-    metabMatrixLabel: "Metabolinen evidenssimatriisi",
+    metabMatrixLabel: "Metabolinen näyttömatriisi",
     weightLabel: "Paino",
     insulinLabel: "Insuliini",
     directLabel: "Suora",
@@ -560,7 +595,7 @@ const COPY = {
     sleepDownLabel: "Uni↓",
     microbiomeLabel: "Mikrobioomi",
     cortisolLabel: "Kortisoli",
-    metabolicSyndromeLabel: "Metabolinen syndrooma",
+    metabolicSyndromeLabel: "Metabolinen oireyhtymä",
     klimentidisAllGaining: "24 populaatiota, 8 lajia — kaikki lihovat (p = 1.2×10⁻⁷)",
     citationLabel: "Viite",
     researcherLabel: "Tutkija",
@@ -568,9 +603,9 @@ const COPY = {
     mechanismNowLabel: "Mekanismi (nyt)",
     nextLinkLabel: "Seuraavaksi",
     nextLinkTitle: "Kritiikki ja vastaukset",
-    researchDomainsLead: "BERM:n mekanistiset polut perustuvat 11 toisistaan riippumattomaan tutkimusalaan. Mikään yksittäinen ala ei riitä, mutta niiden konvergenssi samaan ennusteeseen — sähkömagneettisten kenttien biologinen aktiivisuus — on epätodennäköistä sattumalta.",
+    researchDomainsLead: "BERM:n mekanistiset polut perustuvat 11 toisistaan riippumattomaan tutkimusalaan. Mikään yksittäinen ala ei riitä, mutta niiden yhdentyminen samaan ennusteeseen — sähkömagneettisten kenttien biologinen aktiivisuus — on epätodennäköistä sattumalta.",
     cry2PathwayNote: "CRY2:n alaspäin suuntautuvat vaikutukset ulottuvat sirkadiaanisen kellon yli. Yap ym. (2025) osoittivat, että CRY2 on fysikaalisessa vuorovaikutuksessa TRPC1:n kanssa, TRP-perheen kationikanavan kanssa, ja että tämä kompleksi siirtyy yhdessä tumaan PEMF-altistuksen jälkeen. Tämä kalsiumsisäänvirtausreitti on CRY2-riippuvainen (estetään CRY2-hiljentämisellä), valoriippuvainen (häviää pimeässä) ja FAD-riippuvainen (vaimenee RFK-hiljentämisellä) — kaikki RPM-mekanismin tunnusmerkkejä. TRPC1 EI ole jänniteriippuvainen kalsiumkanava eikä L-tyypin VGCC-salpaajat estä sitä. Tämä tarkoittaa, että polut A ja C (sivuston B) pysyvät farmakologisesti erotettavissa, mutta polku C:n biologinen vaikutuskenttä on laajempi kuin aiemmin oletettiin.",
-    solarTitle: "Aurinkosykli ja geomagneettinen biologia: 11. konvergenssilinja",
+    solarTitle: "Aurinkosykli ja geomagneettinen biologia: 11. yhdentymislinja",
     solarIntro: "BERM määrittelee kaksi itsenäistä herkkyyttä: χ(Ā) (VGCC, geometrinen kenttäkytkentä) ja χ_B (CRY/RPM, radikaaliparin spin-dynamiikka). Aurinkosykli testaa χ_B:tä, koska se toimii ILMAN sähköistyskynnystä — auringon aiheuttamat geomagneettiset vaihtelut ovat moduloineet radikaaliparin kemiaa miljardeja vuosia, kauan ennen ihmisen tuottamia sähkömagneettisia kenttiä. Jos CRY-välitteiset polut ovat todellisia, niiden allekirjoitusten tulisi näkyä aurinkosyklin pituisissa biologisissa rytmeissä.",
     solarResearchLabel: "Keskeiset tutkimustulokset",
     solarStudies: [
@@ -591,7 +626,7 @@ const COPY = {
     solarSamaP1: "Etelä-Atlantin magneettinen anomalia (SAMA) on alue, jossa Maan magneettikenttä on noin 24 µT — noin puolet normaalista ~50 µT:sta. Tämä luonnollisesti heikentynyt kenttä luo kontrolliasetelman geomagneettisessa geometriassa.",
     solarSamaP2: "ESS 2026 -analyysi: aurinkotuuli–väkivaltakorrelaatio, joka pätee useimmilla leveysasteilla, KÄÄNTYY Brasiliassa ja Uruguayssa — juuri niissä väestöissä, jotka ovat SAMA:n alla. Missä geomagneettinen geometria muuttuu, biologinen vaste kääntyy.",
     solarNorthernTitle: "Pohjoinen paketti: Kolme ominaisuutta, yksi molekulaarinen kohde",
-    solarNorthernP1: "Kolme pohjoiseuroppalaisissa väestöissä yhdessä valikoitunutta ominaisuutta konvergoivat yhteen molekulaariseen kohteeseen — kryptokromiin (CRY):",
+    solarNorthernP1: "Kolme pohjoiseuroppalaisissa väestöissä yhdessä valikoitunutta ominaisuutta yhtyvät yhteen molekulaariseen kohteeseen — kryptokromiin (CRY):",
     solarNorthernTraits: [
       "Siniset silmät → 100× valon läpäisy iiriksessä → χ_optinen (enemmän fotoneja pääsee verkkokalvon CRY:hin)",
       "Laktoosinsietokyky → B2/FAD-ravintosaanti → CRY-kofaktorin stabiilius → χ_molekulaarinen",
@@ -613,7 +648,7 @@ const COPY = {
       { authors: "Ahmad ym.", year: "2020", finding: "7 MHz RF vähentää CRY1-vastetta Arabidopsiksessa — RPM-sormenjälki kasvi-kryptokromissa", mechanism: "RPM-suora testi" },
       { authors: "Xu ym.", year: "2014", finding: "500 µT staattinen kenttä tehostaa CRY-fosforylaatiota Arabidopsiksessa", mechanism: "CRY-aktivaatio" },
       { authors: "Xu ym.", year: "2015", finding: "Lähes nollakenttä tukahduttaa kukinnan CRY-reitin kautta", mechanism: "CRY-riippuvainen kukinta" },
-      { authors: "Agliassa ym.", year: "2018", finding: "Geomagneettinen kenttä moduloi CRY-riippuvaista signalointia Arabidopsiksessa", mechanism: "CRY-signalointi" },
+      { authors: "Agliassa ym.", year: "2018", finding: "Geomagneettinen kenttä säätelee CRY-riippuvaista signalointia Arabidopsiksessa", mechanism: "CRY-signalointi" },
       { authors: "PMC10005510", year: "2023", finding: "Wi-Fi-taajuudet (2,4 GHz) nopeuttavat salaatin kukintaa", mechanism: "RF → kukinta" },
       { authors: "Ecological Indicators", year: "2023", finding: "868 MHz RF-altistus vaikuttaa 10 luonnonvaraisen kasvilajin kasvuun ja lisääntymiseen", mechanism: "RF → lisääntyminen" },
       { authors: "Haggerty", year: "2010", finding: "Tukiasemien RF-tausta yhteydessä lähellä kasvavien haapantaimien heikkenemiseen", mechanism: "RF → kasvu" },
@@ -631,6 +666,37 @@ const COPY = {
       { authors: "Ascoli ym. (Nature Comms)", year: "2017", finding: "NAO-telekonnektiot korreloivat mastingin kanssa — mutta suhteet ovat ei-stationaarisia (muuttuvat ajan myötä), mikä viittaa lisämuuttujaan", mechanism: "Ei-stationaarinen korrelaatio" },
     ],
     mastingKeyMessage: "Jos CRY2 integroi valopituuden + geomagneettisen kentän masting-synkroniaan, niin kasvava ihmisperäinen RF:n tulisi asteittain irrottaa puut geomagneettisesta signaalista — ennustaen täsmälleen sen heikkenevän synkronian, jonka Bogdziewicz 2021 dokumentoi.",
+    // Bioelectromagnetics 2025-2026 kirjallisuusintegraatio
+    bioem_bertagna_title: "Solunsisäinen Ca²⁺-varastomekanismi (Bertagna 2025)",
+    bioem_bertagna_text: "Bertagna ym. 2025 (Ann NY Acad Sci 1550(1)) — Hiiren hippokampuksen CA1-pyramidaalineuronit altistettiin 50 Hz, 1 mT ELF-EMF:lle 60 min. Sisäänpäinvirrat ↓40 %, transientit ulospäinvirrat ↓50 %. Kaksi Ca²⁺-reittiä: (1) RyR — dantroleeni esti vaikutukset; (2) SERCA — CPA esti vaikutukset. Laajentaa IFO-VGIC-mekanismia (taso 4) solunsisäiseen kalsiumdynamiikkaan. Huom: ELF (50 Hz), ei RF.",
+    bioem_bertagna_level: "E",
+    bioem_bektas_title: "5G-testis-ROS ja CoQ10-interventio (Bektas 2026)",
+    bioem_bektas_text: "Bektas ym. 2026 (Bioelectromagnetics) — Rotat altistettiin 3,5 GHz:lle (5G:n ydintaajuus). Testis- ja oksidatiivinen vaurio. CoQ10 lievitti vauriota — mekanismi reversiibeli, yhdenmukainen recovery window -konseptin kanssa. Ensimmäinen 5G-taajuustarkka testisdata. Kudostarkka: samoilla taajuuksilla ei ROS:ia ihosoluissa (vrt. Meyer 2026, Haidar 2025).",
+    bioem_bektas_level: "C",
+    bioem_tbahriti_title: "Melatoniinisuppressio: PRISMA-katsaus (Tbahriti 2026)",
+    bioem_tbahriti_text: "Tbahriti ym. 2026 (Sleep Biol Rhythms 24(2):195-214) — PRISMA 2020: 55 tutkimusta 892 seulotusta. 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinivaimennusta (20–50 % basaalitasosta). Pienempi kuin valon aiheuttama (>90 %). Rajoitus: vain 27 % tutkimuksista täytti korkeat standardit.",
+    bioem_tbahriti_level: "M|C",
+    bioem_tissue_title: "Kudosspesifiset nollatulokset",
+    bioem_tissue_text: "Meyer ym. 2026 (ELF 50 Hz, 200 µT, HaCaT-keratinosyytit — ei DNA-vauriota, p=0,644/0,987) ja Haidar ym. 2025 (5G-moduloitu 3,5 GHz, SAR 0,08–4 W/kg — ei ROS:ia, ei DNA-vauriota). Nollatulokset EIVÄT kumoa tasoa 5A — ne osoittavat kudosspesifisyyden, yhdenmukaisen χ(Ā)-valintasäännön kanssa.",
+    bioem_gao_title: "BBB-häiriö tight junction -degradaation kautta (Gao 2024)",
+    bioem_gao_text: "Gao ym. 2024 (Bioelectromagnetics) — Sähkömagneettinen pulssi aiheutti BBB-häiriön tight junction -proteiinien (okkludiini, klaudiini, ZO-1) degradaation kautta. Erottelu: EMP (korkea-amplitudi, lyhytkestoinen) eroaa kroonisesta RF:stä. Mekanistinen tuki polulle E (vrt. Salford 2003).",
+    bioem_gao_level: "C",
+    bioem_section_title: "Bioelectromagnetics-kirjallisuus 2024–2026",
+    bioem_section_intro: "Tuoreet bioelektromagneettisten kenttien tutkimukset (2024–2026) tarkentavat BERM:n kausaaliketjun tasoja 3–6. Kolme prioriteettilähdettä vahvistavat monireittiistä Ca²⁺-häiriömallia, lisäävät 5G-taajuustarkkaa reproduktiodataa ja kvantifioivat melatoniinin vaimentumisen. Kaksi laadukasta nollatulosta ihosoluissa tukee kudosspesifisyyttä.",
+    horm_section_title: "Hormeesi ja biologinen aktivaatio",
+    horm_section_intro: "Neljä itsenäistä tutkimuslinjaa osoittaa hormeettisen annosvasteen: matala sähkömagneettinen altistus korreloi biologisen aktivaation kanssa, kun taas krooninen korkea altistus korreloi suppressioon. Todistusaineisto kattaa kokeelliset, geneettiset, epidemiologiset ja neuroendokrinologiset alueet.",
+    horm_exp_title: "Kokeellinen: pienten annosten säteilyhormeesi",
+    horm_exp_text: "Pieniannoksinen ionisoiva säteily tuottaa adaptiivisia vasteita: tehostuneen DNA-korjauksen, mitokondrioiden aktivaation ja immuunistimulaation. Liu (1989) dokumentoi testosteronin nousun ja kortisolin laskun eläinmalleissa. Kostyuk ym. (2021) osoittivat mitokondriogeenien aktivaation ihmisen kantasoluissa. Yang ym. (2016) osoittivat ATM-välitteisen DNA-korjauksen aktivaation normaaleissa (ei syöpä-) soluissa. Zhou ym. (2018) vahvistivat immuuniaktivaation NK-solujen laajenemisen kautta. Nämä havainnot vahvistavat hormeettisen viitekehyksen: pieniannoksinen stressi aktivoi korjausjärjestelmiä, kun taas suuriannoksinen stressi kuormittaa ne.",
+    horm_exp_note: "",
+    horm_gen_title: "Geneettinen: DRD4/7R kontekstiriippuvainen sopivuus",
+    horm_gen_text: "Eisenberg ym. (2008) tutkivat DRD4/7R-polymorfismia ariaal-paimentolaisilla Pohjois-Keniassa (n=152). Sama alleeli liittyi korkeampaan painoindeksiin (parempaan ravitsemustilaan) nomadisilla ariaaleilla, mutta matalampaan painoindeksiin asettuneilla ariaaleilla. Tämä geeni-ympäristö-vuorovaikutus on yhdenmukainen biologisen aktivaation kanssa matalan infrastruktuurin olosuhteissa ja yhteensopimattomuuden kanssa asettuneissa olosuhteissa.",
+    horm_gen_note: "",
+    horm_epi_title: "Epidemiologinen: paimentolaisten asettumisen terveysgradientti",
+    horm_epi_text: "Swanson ym. (2023) mittasivat sydän- ja aineenvaihduntaindikaattoreita puolinomadisilla paimentolaisilla Keniassa. Asettuminen liittyi huonompaan verenpaineeseen ja painoindeksiin verrattuna liikkuvampiin yksilöihin saman väestön sisällä. Asettumisgradientti eristää elämäntapamuutoksen geneettisistä sekoittajista.",
+    horm_neuro_title: "Neuroendokrinologinen: kaupunki–esikaupunki-kortisolieroavuus",
+    horm_neuro_text: "Mayagoitia-Novales ym. (2023) vertasivat kortisoli- ja testosteronivasteita kaupunkilaisten ja esikaupunkilaisten välillä. Kaupunkilaisilla oli korkeampi kortisolireaktiivisuus ja muuttunut testosteronivaste. Kaupunkiympäristö liittyy kohonneeseen stressiakselin aktivaatioon.",
+    horm_neuro_note: "",
+    horm_epistemic: "",
   },
   ja: {
     title: "エビデンス登録簿",
@@ -911,6 +977,18 @@ const COPY = {
       { authors: "Ascoli et al. (Nature Comms)", year: "2017", finding: "NAOテレコネクションがマスティングと相関 — しかし関係は非定常的（時間とともに変化）、追加変数を示唆", mechanism: "非定常相関" },
     ],
     mastingKeyMessage: "CRY2がマスティング同期のために光周期 + 地磁気を統合するなら、人為的RFの増大は樹木を地磁気信号から徐々に切り離すはずである — まさにBogdziewicz 2021が記録する弱まる同期を予測する。",
+    bioem_section_title: "バイオ電磁気学文献 2024–2026",
+    horm_section_title: "ホルメシスと生物学的活性化",
+    horm_section_intro: "",
+    horm_exp_title: "実験的：低線量放射線ホルメシス",
+    horm_exp_text: "", horm_exp_note: "",
+    horm_gen_title: "遺伝的：DRD4/7R文脈依存的適応度",
+    horm_gen_text: "", horm_gen_note: "",
+    horm_epi_title: "疫学的：牧畜民の定住健康勾配",
+    horm_epi_text: "",
+    horm_neuro_title: "神経内分泌：都市-郊外コルチゾール乖離",
+    horm_neuro_text: "", horm_neuro_note: "",
+    horm_epistemic: "",
   },
   fr: {
     title: "Registre des preuves",
@@ -1191,6 +1269,18 @@ const COPY = {
       { authors: "Ascoli et al. (Nature Comms)", year: "2017", finding: "Les téléconnexions NAO corrèlent avec le masting — mais les relations sont non stationnaires (changent au fil du temps), suggérant une variable supplémentaire", mechanism: "Corrélation non stationnaire" },
     ],
     mastingKeyMessage: "Si CRY2 intègre la photopériode + le champ géomagnétique pour la synchronie du masting, alors les RF anthropiques croissantes devraient progressivement découpler les arbres du signal géomagnétique — prédisant exactement l'affaiblissement de la synchronie que Bogdziewicz 2021 documente.",
+    bioem_section_title: "Littérature bioélectromagnétique 2024–2026",
+    horm_section_title: "Hormèse et activation biologique",
+    horm_section_intro: "",
+    horm_exp_title: "Expérimental : hormèse par faible dose de radiation",
+    horm_exp_text: "", horm_exp_note: "",
+    horm_gen_title: "Génétique : aptitude contextuelle DRD4/7R",
+    horm_gen_text: "", horm_gen_note: "",
+    horm_epi_title: "Épidémiologique : gradient de santé à la sédentarisation",
+    horm_epi_text: "",
+    horm_neuro_title: "Neuroendocrinien : divergence cortisol urbain-suburbain",
+    horm_neuro_text: "", horm_neuro_note: "",
+    horm_epistemic: "",
   },
   ko: {
     title: "근거 등록부",
@@ -1472,6 +1562,18 @@ const COPY = {
       { authors: "Ascoli et al. (Nature Comms)", year: "2017", finding: "NAO 원격연결이 마스팅과 상관 — 그러나 관계가 비정상적(시간에 따라 변화), 추가 변수 시사", mechanism: "비정상 상관" },
     ],
     mastingKeyMessage: "CRY2가 마스팅 동기화를 위해 광주기 + 지자기장을 통합한다면, 인위적 RF 증가는 나무를 지자기 신호에서 점진적으로 분리시켜야 한다 — 정확히 Bogdziewicz 2021이 기록하는 약화되는 동기화를 예측한다.",
+    bioem_section_title: "생체전자기학 문헌 2024–2026",
+    horm_section_title: "호르메시스와 생물학적 활성화",
+    horm_section_intro: "",
+    horm_exp_title: "실험적: 저선량 방사선 호르메시스",
+    horm_exp_text: "", horm_exp_note: "",
+    horm_gen_title: "유전적: DRD4/7R 맥락 의존적 적합도",
+    horm_gen_text: "", horm_gen_note: "",
+    horm_epi_title: "역학적: 목축민 정착 건강 기울기",
+    horm_epi_text: "",
+    horm_neuro_title: "신경내분비: 도시-교외 코르티솔 차이",
+    horm_neuro_text: "", horm_neuro_note: "",
+    horm_epistemic: "",
   },
 } as const;
 
@@ -1489,7 +1591,7 @@ const SUB_PAGES = [
     slug: "pharmacology",
     icon: Pill,
     en: { title: "Pharmacological Evidence", desc: "8 drug classes converging on BERM pathways: CCBs (264k studies), verapamil, lithium, semaglutide, gabapentinoids, nimodipine, melatonin, CoQ10. The model's clinically strongest argument." },
-    fi: { title: "Farmakologinen evidenssi", desc: "8 lääkeryhmää konvergoivat BERM-reiteillä: CCB:t (264k tutkimusta), verapamiili, litium, semaglutidi, gabapentinoidit, nimodipiini, melatoniini, CoQ10. Mallin kliinisesti vahvin argumentti." },
+    fi: { title: "Farmakologinen näyttö", desc: "8 lääkeryhmää yhtyvät BERM-reiteillä: CCB:t (264k tutkimusta), verapamiili, litium, semaglutidi, gabapentinoidit, nimodipiini, melatoniini, CoQ10. Mallin kliinisesti vahvin argumentti." },
     ja: { title: "薬理学的エビデンス", desc: "BERM経路に収束する8つの薬物クラス：CCB（264k研究）、ベラパミル、リチウム、セマグルチド、ガバペンチノイド、ニモジピン、メラトニン、CoQ10。モデルの臨床的に最も強力な論拠。" },
     fr: { title: "Preuves pharmacologiques", desc: "8 classes de medicaments convergent sur les voies BERM : CCB (264k etudes), verapamil, lithium, semaglutide, gabapentinoides, nimodipine, melatonine, CoQ10. L'argument cliniquement le plus fort du modele." },
     ko: { title: "약리학적 근거", desc: "BERM 경로에 수렴하는 8개 약물 클래스: CCB(264k 연구), 베라파밀, 리튬, 세마글루타이드, 가바펜티노이드, 니모디핀, 멜라토닌, CoQ10. 모델의 임상적으로 가장 강력한 논거." },
@@ -1507,7 +1609,7 @@ const SUB_PAGES = [
     slug: "neurological-spectrum",
     icon: BrainCircuit,
     en: { title: "Neurological Spectrum: Epilepsy, Migraine, Cluster Headache", desc: "One Q-factor mechanism, four neurological disorders: SIDS, epilepsy/SUDEP, migraine (CSD), cluster headache. López-Martín validation, pharmacological cross-map, psilocybin tryptamine reset." },
-    fi: { title: "Neurologinen spektri: Epilepsia, migreeni, klusteripäänsärky", desc: "Yksi Q-tekijämekanismi, neljä neurologista sairautta: SIDS, epilepsia/SUDEP, migreeni (CSD), klusteripäänsärky. López-Martín-validaatio, farmakologinen ristikartta, psilosybiini-tryptamiiniresetti." },
+    fi: { title: "Neurologinen spektri: Epilepsia, migreeni, klusteripäänsärky", desc: "Yksi Q-tekijämekanismi, neljä neurologista sairautta: SIDS, epilepsia/SUDEP, migreeni (CSD), klusteripäänsärky. López-Martín-todentaminen, farmakologinen ristikartta, psilosybiini-tryptamiiniresetti." },
     ja: { title: "神経学的スペクトル：てんかん、片頭痛、群発頭痛", desc: "1つのQ因子メカニズム、4つの神経学的疾患：SIDS、てんかん/SUDEP、片頭痛（CSD）、群発頭痛。Lopez-Martin検証、薬理学的クロスマップ、サイロシビン・トリプタミンリセット。" },
     fr: { title: "Spectre neurologique : epilepsie, migraine, cephalee en grappe", desc: "Un mecanisme de facteur Q, quatre troubles neurologiques : SMIN, epilepsie/SUDEP, migraine (CSD), cephalee en grappe. Validation Lopez-Martin, carte pharmacologique croisee, reinitialisation tryptamine psilocybine." },
     ko: { title: "신경학적 스펙트럼: 간질, 편두통, 군발두통", desc: "하나의 Q인자 메커니즘, 네 가지 신경학적 질환: SIDS, 간질/SUDEP, 편두통(CSD), 군발두통. Lopez-Martin 검증, 약리학적 교차 맵, 실로시빈 트립타민 리셋." },
@@ -1516,7 +1618,7 @@ const SUB_PAGES = [
     slug: "unbroken-chain",
     icon: Link2,
     en: { title: "The Unbroken Chain: Photon → Population", desc: "Convergence verification across 35 scales — 25 verified layers (VK1–VK25), 14 positive feedback loops forming a self-amplifying network from photon physics to population epidemiology." },
-    fi: { title: "Katkeamaton ketju: Fotoni → Populaatio", desc: "Konvergenssiverifiointi 35 skaalan yli — 25 verifioitua kerrosta (VK1–VK25), 14 positiivista takaisinkytkentäsilmukkaa muodostavat itseään vahvistavan verkoston fotonifysiikasta väestöepidemiologiaan." },
+    fi: { title: "Katkeamaton ketju: Fotoni → Populaatio", desc: "Yhdentymisen todentaminen 35 skaalan yli — 25 todennettua kerrosta (VK1–VK25), 14 positiivista takaisinkytkentäsilmukkaa muodostavat itseään vahvistavan verkoston fotonifysiikasta väestöepidemiologiaan." },
     ja: { title: "途切れない連鎖：光子→集団", desc: "35のスケールにわたる収束検証 — 25の検証済み層（VK1-VK25）、14の正のフィードバックループが光子物理学から集団疫学まで自己増幅ネットワークを形成。" },
     fr: { title: "La chaine ininterrompue : Photon → Population", desc: "Verification de convergence sur 35 echelles — 25 couches verifiees (VK1-VK25), 14 boucles de retro-action positive formant un reseau auto-amplificateur de la physique des photons a l'epidemiologie populationnelle." },
     ko: { title: "끊어지지 않는 사슬: 광자→집단", desc: "35개 스케일에 걸친 수렴 검증 — 25개 검증 층(VK1-VK25), 광자 물리학에서 집단 역학까지 자기 증폭 네트워크를 형성하는 14개 양의 피드백 루프." },
@@ -1525,7 +1627,7 @@ const SUB_PAGES = [
     slug: "heavy-metal-synergy",
     icon: FlaskRound,
     en: { title: "Heavy Metal × EMF Synergy", desc: "Cd²⁺ permeates Cav3.1, Pb²⁺ mimics Ca²⁺ at CaM, MeHg increases T-type currents. Pineal gland calcification (PGC) as convergent mechanism. Five metals, one VGCC entry pathway." },
-    fi: { title: "Raskasmetalli × EMF -synergismi", desc: "Cd²⁺ permeoi Cav3.1:n, Pb²⁺ matkii Ca²⁺:ia CaM:ssa, MeHg kasvattaa T-tyypin virtoja. Pineaalirauhasen kalsifikaatio (PGC) konvergenttina mekanismina. Viisi metallia, yksi VGCC-sisäänreitti." },
+    fi: { title: "Raskasmetalli × EMF -synergismi", desc: "Cd²⁺ läpäisee Cav3.1:n, Pb²⁺ matkii Ca²⁺:ia CaM:ssa, MeHg kasvattaa T-tyypin virtoja. Pineaalirauhasen kalsifikaatio (PGC) yhdensuuntaisena mekanismina. Viisi metallia, yksi VGCC-sisäänreitti." },
     ja: { title: "重金属 × EMFシナジー", desc: "Cd²⁺はCav3.1を透過、Pb²⁺はCaMでCa²⁺を模倣、MeHgはT型電流を増加。松果体石灰化（PGC）が収束メカニズム。5つの金属、1つのVGCC進入経路。" },
     fr: { title: "Synergie metaux lourds × EMF", desc: "Cd²⁺ permee Cav3.1, Pb²⁺ imite Ca²⁺ au niveau de CaM, MeHg augmente les courants de type T. Calcification pineale (PGC) comme mecanisme convergent. Cinq metaux, une voie d'entree VGCC." },
     ko: { title: "중금속 × EMF 시너지", desc: "Cd²⁺는 Cav3.1을 투과, Pb²⁺는 CaM에서 Ca²⁺를 모방, MeHg는 T형 전류 증가. 송과체 석회화(PGC)가 수렴 메커니즘. 5개 금속, 하나의 VGCC 진입 경로." },
@@ -1543,7 +1645,7 @@ const SUB_PAGES = [
     slug: "triple-strikes",
     icon: Target,
     en: { title: "Triple Strikes: Convergent Destruction", desc: "Three triple blows — testosterone, fertility, and cognition each attacked via three independent routes simultaneously. Convergent destruction through one upstream mechanism." },
-    fi: { title: "Kolmoisisku: Konvergentti tuho", desc: "Kolme kolmoisiskua — testosteroni, hedelmällisyys ja kognitio kukin hyökkäyksen kohteena kolmea itsenäistä reittiä pitkin samanaikaisesti. Konvergentti tuho yhden ylävirran mekanismin kautta." },
+    fi: { title: "Kolmoisisku: Yhdensuuntainen tuho", desc: "Kolme kolmoisiskua — testosteroni, hedelmällisyys ja kognitio kukin hyökkäyksen kohteena kolmea itsenäistä reittiä pitkin samanaikaisesti. Yhdensuuntainen tuho yhden ylävirran mekanismin kautta." },
     ja: { title: "トリプルストライク：収束的破壊", desc: "3つの三重打撃 — テストステロン、生殖能力、認知がそれぞれ3つの独立した経路で同時に攻撃される。1つの上流メカニズムによる収束的破壊。" },
     fr: { title: "Triple frappe : Destruction convergente", desc: "Trois triples coups — testosterone, fertilite et cognition chacun attaque via trois voies independantes simultanement. Destruction convergente par un mecanisme en amont unique." },
     ko: { title: "트리플 스트라이크: 수렴적 파괴", desc: "세 가지 삼중 타격 — 테스토스테론, 생식력, 인지가 각각 세 독립 경로를 통해 동시 공격. 하나의 상류 메커니즘에 의한 수렴적 파괴." },
@@ -1552,7 +1654,7 @@ const SUB_PAGES = [
     slug: "walker-chain",
     icon: Link2,
     en: { title: "Walker Chain: Sleep → T → Collapse", desc: "The complete causal chain from EMF to testosterone decline via sleep is now closed. Seven verified branches form a self-amplifying loop." },
-    fi: { title: "Walkerin ketju: Uni → T → Romahdus", desc: "Täydellinen kausaaliketju EMF:stä testosteronin laskuun unen kautta on nyt suljettu. Seitsemän verifioitua haaraa muodostavat itseään vahvistavan silmukan." },
+    fi: { title: "Walkerin ketju: Uni → T → Romahdus", desc: "Täydellinen kausaaliketju EMF:stä testosteronin laskuun unen kautta on nyt suljettu. Seitsemän todennettua haaraa muodostavat itseään vahvistavan silmukan." },
     ja: { title: "Walkerチェーン：睡眠→T→崩壊", desc: "EMFから睡眠を介したテストステロン低下への完全な因果連鎖が閉じた。7つの検証済み分岐が自己増幅ループを形成。" },
     fr: { title: "Chaine de Walker : Sommeil → T → Effondrement", desc: "La chaine causale complete de l'EMF au declin de la testosterone via le sommeil est maintenant fermee. Sept branches verifiees forment une boucle auto-amplificatrice." },
     ko: { title: "Walker 사슬: 수면→T→붕괴", desc: "EMF에서 수면을 통한 테스토스테론 감소까지의 완전한 인과 사슬이 닫혔다. 7개 검증 분기가 자기 증폭 루프 형성." },
@@ -1579,7 +1681,7 @@ const SUB_PAGES = [
     slug: "cascades",
     icon: Activity,
     en: { title: "Disease Cascade: Ion Channel Convergence", desc: "Ionic hierarchy, skin battery, ADHD calibration, and 8 diseases traced to one ion channel model." },
-    fi: { title: "Sairauskaskadi: Ionikanavakonvergenssi", desc: "Ioninen hierarkia, ihon akku, ADHD-kalibraatio ja 8 sairautta jäljitettynä yhteen ionikanavamalliin." },
+    fi: { title: "Sairauskaskadi: Ionikanavayhdentyminen", desc: "Ioninen hierarkia, ihon akku, ADHD-kalibraatio ja 8 sairautta jäljitettynä yhteen ionikanavamalliin." },
     ja: { title: "疾病カスケード：イオンチャネル収束", desc: "イオン階層、皮膚電池、ADHD校正、1つのイオンチャネルモデルに追跡された8つの疾患。" },
     fr: { title: "Cascade de maladies : Convergence des canaux ioniques", desc: "Hierarchie ionique, batterie cutanee, calibration ADHD, et 8 maladies tracees a un modele de canal ionique unique." },
     ko: { title: "질병 캐스케이드: 이온 채널 수렴", desc: "이온 계층구조, 피부 배터리, ADHD 교정, 하나의 이온 채널 모델로 추적된 8가지 질병." },
@@ -1597,7 +1699,7 @@ const SUB_PAGES = [
     slug: "circadian",
     icon: Moon,
     en: { title: "Circadian Disruption, Sleep & Recovery", desc: "Melatonin bridge, sleep deprivation as mediator, recovery window elimination, and behavioral suppression." },
-    fi: { title: "Sirkadiaaninen häiriö, uni ja palautuminen", desc: "Melatoniinisilta, univaje välittäjänä, palautumisikkunan eliminaatio ja käyttäytymisen suppressio." },
+    fi: { title: "Sirkadiaaninen häiriö, uni ja palautuminen", desc: "Melatoniinisilta, univaje välittäjänä, palautumisikkunan häviäminen ja käyttäytymisen suppressio." },
     ja: { title: "概日リズム障害、睡眠、回復", desc: "メラトニンブリッジ、媒介因子としての睡眠不足、回復ウィンドウの消失、行動抑制。" },
     fr: { title: "Perturbation circadienne, sommeil et recuperation", desc: "Pont de melatonine, privation de sommeil comme mediateur, elimination de la fenetre de recuperation, et suppression comportementale." },
     ko: { title: "일주기 교란, 수면, 회복", desc: "멜라토닌 브릿지, 매개자로서의 수면 부족, 회복 창 제거, 행동 억제." },
@@ -1606,7 +1708,7 @@ const SUB_PAGES = [
     slug: "epidemiology",
     icon: BarChart3,
     en: { title: "Population & Epidemiological Evidence", desc: "COVID lockdown natural experiment, electrification boundary, Kaiser Permanente series, and mobile phone paradox." },
-    fi: { title: "Väestö- ja epidemiologinen evidenssi", desc: "COVID-luonnollinen koe, sähköistysraja, Kaiser Permanente -sarja ja matkapuhelinparadoksi." },
+    fi: { title: "Väestö- ja epidemiologinen näyttö", desc: "COVID-luonnollinen koe, sähköistysraja, Kaiser Permanente -sarja ja matkapuhelinparadoksi." },
     ja: { title: "集団・疫学的エビデンス", desc: "COVID封鎖の自然実験、電化境界、Kaiser Permanenteシリーズ、携帯電話パラドックス。" },
     fr: { title: "Preuves populationnelles et epidemiologiques", desc: "Experience naturelle du confinement COVID, frontiere d'electrification, serie Kaiser Permanente, et paradoxe du telephone mobile." },
     ko: { title: "집단 및 역학적 근거", desc: "COVID 봉쇄 자연실험, 전기화 경계, Kaiser Permanente 시리즈, 휴대전화 역설." },
@@ -1624,7 +1726,7 @@ const SUB_PAGES = [
     slug: "ecology",
     icon: TreePine,
     en: { title: "Ecological & Sentinel Evidence", desc: "Electroecology across taxa, weather radar effects on wildlife, and the universal plant CRY mechanism — from masting synchrony to lettuce flowering. Cross-species validation of BERM mechanisms." },
-    fi: { title: "Ekologinen ja sentinellievidenssi", desc: "Sähköekologia yli taksonomisten ryhmien, säätutkavaikutukset ja universaali kasvi-CRY-mekanismi — masting-synkroniasta salaatin kukintaan. Lajienvälinen BERM-mekanismien validointi." },
+    fi: { title: "Ekologinen ja indikaattorilajinäyttö", desc: "Sähköekologia yli taksonomisten ryhmien, säätutkavaikutukset ja universaali kasvi-CRY-mekanismi — masting-synkroniasta salaatin kukintaan. Lajienvälinen BERM-mekanismien validointi." },
     ja: { title: "生態学的・センチネルエビデンス", desc: "分類群を超えた電気生態学、気象レーダーの野生生物への影響、そして普遍的な植物CRYメカニズム——マスティング同期からレタスの開花まで。BERMメカニズムの種間検証。" },
     fr: { title: "Preuves ecologiques et sentinelles", desc: "Electroecologie a travers les taxons, effets du radar meteorologique et mecanisme universel CRY vegetal — de la synchronie du masting a la floraison de la laitue. Validation inter-especes des mecanismes BERM." },
     ko: { title: "생태학적 및 센티넬 근거", desc: "분류군 전반의 전기생태학, 기상 레이더 영향, 보편적 식물 CRY 메커니즘 — 마스팅 동기화에서 상추 개화까지. BERM 메커니즘의 종간 검증." },
@@ -1642,7 +1744,7 @@ const SUB_PAGES = [
     slug: "nutrition",
     icon: Leaf,
     en: { title: "Nutritional CRY Modulation", desc: "How B2, omega fatty acids, and fasting dynamics control cryptochrome function. 6 evidence cards, 3 predictions." },
-    fi: { title: "Ravitsemuksellinen CRY-modulaatio", desc: "Miten B2, omega-rasvahapot ja paastodynamiikka kontrolloivat kryptokromin toimintaa. 6 evidenssikorttia, 3 ennustetta." },
+    fi: { title: "Ravitsemuksellinen CRY-modulaatio", desc: "Miten B2, omega-rasvahapot ja paastodynamiikka kontrolloivat kryptokromin toimintaa. 6 näyttökorttia, 3 ennustetta." },
     ja: { title: "栄養によるCRY調節", desc: "B2、オメガ脂肪酸、断食ダイナミクスがクリプトクロム機能をどう制御するか。6つのエビデンスカード、3つの予測。" },
     fr: { title: "Modulation nutritionnelle du CRY", desc: "Comment B2, les acides gras omega et la dynamique du jeune controlent la fonction du cryptochrome. 6 cartes de preuves, 3 predictions." },
     ko: { title: "영양에 의한 CRY 조절", desc: "B2, 오메가 지방산, 단식 역학이 크립토크롬 기능을 어떻게 제어하는가. 6개 근거 카드, 3개 예측." },
@@ -1664,6 +1766,15 @@ const SUB_PAGES = [
     ja: { title: "自然対照群：9つの低EMFコミュニティ", desc: "前工業化および技術拒否集団の体系的比較。Tsimane→Moseten用量反応勾配、近視5段階勾配、11/16疾病カスケード確認。" },
     fr: { title: "Groupes temoins naturels : 9 communautes a faible EMF", desc: "Comparaison systematique des populations pre-industrielles et refusant la technologie. Gradient dose-reponse Tsimane→Moseten, gradient a cinq niveaux de myopie, 11/16 cascades de maladies confirmees." },
     ko: { title: "자연 대조군: 9개 저EMF 공동체", desc: "전산업화 및 기술 거부 집단의 체계적 비교. Tsimane→Moseten 용량-반응 기울기, 근시 5단계 기울기, 11/16 질병 캐스케이드 확인." },
+  },
+  {
+    slug: "historical-convergence",
+    icon: GitMerge,
+    en: { title: "Historical Convergence", desc: "11 independent observers across 647 years converged on the same civilizational decline patterns. From Ibn Khaldun (1377) to Shanna Swan (2021), BERM provides a biological mechanism for what they observed." },
+    fi: { title: "Historiallinen yhdentyminen", desc: "11 itsenäistä havainnoijaa 647 vuoden ajalta yhtyvät samoihin sivilisaation taantumakuvioihin. Ibn Khaldunista (1377) Shanna Swaniin (2021), BERM tarjoaa biologisen mekanismin heidän havainnoilleen." },
+    ja: { title: "歴史的収束", desc: "647年にわたる11人の独立した観察者が同じ文明衰退パターンに収束。イブン・ハルドゥーン(1377)からシャナ・スワン(2021)まで、BERMは彼らの観察に生物学的メカニズムを提供。" },
+    fr: { title: "Convergence historique", desc: "11 observateurs independants sur 647 ans ont converge vers les memes schemas de declin civilisationnel. D'Ibn Khaldoun (1377) a Shanna Swan (2021), BERM fournit un mecanisme biologique a leurs observations." },
+    ko: { title: "역사적 수렴", desc: "647년에 걸친 11명의 독립적 관찰자가 동일한 문명 쇠퇴 패턴에 수렴. 이븐 할둔(1377)에서 샤나 스완(2021)까지, BERM은 그들의 관찰에 생물학적 메커니즘을 제공." },
   },
   {
     slug: "replication",
@@ -1688,7 +1799,7 @@ const SUB_PAGES = [
     icon: BrainCircuit,
     level: "confirmed",
     en: { title: "Autism as BERM Prototype", desc: "ASD unites three independently verified BERM mechanisms — GABA switch delay, synaptogenesis, and KCC2 suppression — into a single neurodevelopmental outcome." },
-    fi: { title: "Autismi BERM-prototyyppinä", desc: "ASD yhdistää kolme itsenäisesti verifioitua BERM-mekanismia — GABA-vaihdon viiveen, synaptogeneesin ja KCC2-suppression — yhdeksi neurokehitykselliseksi lopputulokseksi." },
+    fi: { title: "Autismi BERM-prototyyppinä", desc: "ASD yhdistää kolme itsenäisesti todennettua BERM-mekanismia — GABA-vaihdon viiveen, synaptogeneesin ja KCC2-vaimennuksen — yhdeksi neurokehitykselliseksi lopputulokseksi." },
     ja: { title: "BERMプロトタイプとしての自閉症", desc: "ASDは3つの独立検証済みBERMメカニズム — GABAスイッチ遅延、シナプス形成、KCC2抑制 — を単一の神経発達アウトカムに統合。" },
     fr: { title: "L'autisme comme prototype BERM", desc: "Le TSA unit trois mecanismes BERM independamment verifies — retard du commutateur GABA, synaptogenese et suppression de KCC2 — en un seul resultat neurodeveloppemental." },
     ko: { title: "BERM 프로토타입으로서의 자폐증", desc: "ASD는 세 가지 독립 검증된 BERM 메커니즘 — GABA 스위치 지연, 시냅스 형성, KCC2 억제 — 을 하나의 신경발달 결과로 통합." },
@@ -1768,7 +1879,7 @@ const SUB_PAGES = [
     icon: Heart,
     level: "confirmed",
     en: { title: "The Reproductive Arc", desc: "From fertilization to first year of life, every critical reproductive stage depends on Ca²⁺ channels. Nifedipine — a Ca²⁺ blocker — is first-line treatment at multiple stages." },
-    fi: { title: "Reproduktiivinen kaari", desc: "Hedelmöityksestä ensimmäiseen elinvuoteen jokainen kriittinen reproduktiivinen vaihe riippuu Ca²⁺-kanavista. Nifedipiini — Ca²⁺-salpaaja — on ensilinjan hoito useissa vaiheissa." },
+    fi: { title: "Lisääntymiskykyyn liittyvä kaari", desc: "Hedelmöityksestä ensimmäiseen elinvuoteen jokainen kriittinen lisääntymiskykyyn liittyvä vaihe riippuu Ca²⁺-kanavista. Nifedipiini — Ca²⁺-salpaaja — on ensilinjan hoito useissa vaiheissa." },
     ja: { title: "生殖のアーク", desc: "受精から生後1年まで、すべての重要な生殖段階がCa²⁺チャネルに依存。ニフェジピン — Ca²⁺遮断薬 — が複数の段階で第一選択治療。" },
     fr: { title: "L'arc reproductif", desc: "De la fecondation a la premiere annee de vie, chaque etape reproductive critique depend des canaux Ca²⁺. La nifedipine — un bloqueur Ca²⁺ — est le traitement de premiere ligne a plusieurs etapes." },
     ko: { title: "생식의 호", desc: "수정에서 생후 1년까지, 모든 중요한 생식 단계가 Ca²⁺ 채널에 의존. 니페디핀 — Ca²⁺ 차단제 — 이 여러 단계에서 1차 치료." },
@@ -1778,7 +1889,7 @@ const SUB_PAGES = [
     icon: Leaf,
     level: "confirmed",
     en: { title: "Five Natural Ca²⁺ Modulators", desc: "Vitamin D, melatonin, magnesium, lithium, and caffeine — five endogenous or dietary substances that modulate the same VGCC channels EMF activates." },
-    fi: { title: "Viisi luonnollista Ca²⁺-modulaattoria", desc: "D-vitamiini, melatoniini, magnesium, litium ja kofeiini — viisi endogeenistä tai ravinnosta saatavaa ainetta jotka moduloivat samoja VGCC-kanavia joita EMF aktivoi." },
+    fi: { title: "Viisi luonnollista Ca²⁺-modulaattoria", desc: "D-vitamiini, melatoniini, magnesium, litium ja kofeiini — viisi endogeenistä tai ravinnosta saatavaa ainetta jotka säätelevät samoja VGCC-kanavia joita EMF aktivoi." },
     ja: { title: "5つの天然Ca²⁺モジュレーター", desc: "ビタミンD、メラトニン、マグネシウム、リチウム、カフェイン — EMFが活性化するのと同じVGCCチャネルを調節する5つの内因性または食事由来物質。" },
     fr: { title: "Cinq modulateurs naturels de Ca²⁺", desc: "Vitamine D, melatonine, magnesium, lithium et cafeine — cinq substances endogenes ou alimentaires qui modulent les memes canaux VGCC que l'EMF active." },
     ko: { title: "5가지 천연 Ca²⁺ 조절제", desc: "비타민 D, 멜라토닌, 마그네슘, 리튬, 카페인 — EMF가 활성화하는 동일 VGCC 채널을 조절하는 5가지 내인성 또는 식이 물질." },
@@ -1798,7 +1909,7 @@ const SUB_PAGES = [
     icon: Scale,
     level: "partial",
     en: { title: "Counter-Evidence: An Honest Assessment", desc: "Five categories of evidence that appear to contradict BERM, and the model's response to each — from null studies to WHO reviews." },
-    fi: { title: "Vastaevidenssi: Rehellinen arviointi", desc: "Viisi evidenssikategoriaa jotka näyttävät olevan ristiriidassa BERM:n kanssa, ja mallin vastaus kuhunkin — nollatuloksista WHO:n katsauksiin." },
+    fi: { title: "Vastanäyttö: Rehellinen arviointi", desc: "Viisi näyttökategoriaa jotka näyttävät olevan ristiriidassa BERM:n kanssa, ja mallin vastaus kuhunkin — nollatuloksista WHO:n katsauksiin." },
     ja: { title: "反証：正直な評価", desc: "BERMと矛盾するように見える5つのエビデンスカテゴリと、各々に対するモデルの回答 — ゼロ結果からWHOレビューまで。" },
     fr: { title: "Contre-preuves : Une evaluation honnete", desc: "Cinq categories de preuves qui semblent contredire BERM, et la reponse du modele a chacune — des etudes nulles aux revues de l'OMS." },
     ko: { title: "반증: 정직한 평가", desc: "BERM과 모순되는 것으로 보이는 5개 근거 범주와 각각에 대한 모델의 응답 — 제로 결과부터 WHO 리뷰까지." },
@@ -1807,7 +1918,7 @@ const SUB_PAGES = [
     slug: "testosterone",
     icon: TrendingDown,
     en: { title: "Testosterone: The Biological Clock", desc: "Population T declining 1.2%/year since 1982. The LH+T pattern points to hypothalamic suppression, and T→TFR temporal lag (R²=0.97) adds a second level to the prediction model." },
-    fi: { title: "Testosteroni: Biologinen kello", desc: "Väestön T laskee 1,2 %/vuosi vuodesta 1982. LH+T-kaava osoittaa hypotalamuksen suppressioon, ja T→TFR-ajallinen viive (R²=0,97) lisää ennustemalliin toisen tason." },
+    fi: { title: "Testosteroni: Biologinen kello", desc: "Väestön T laskee 1,2 %/vuosi vuodesta 1982. LH+T-kaava osoittaa hypotalamuksen vaimentumiseen, ja T→TFR-ajallinen viive (R²=0,97) lisää ennustemalliin toisen tason." },
     ja: { title: "テストステロン：生物学的時計", desc: "人口Tは1982年以降年-1.2%で低下。LH+Tパターンは視床下部抑制を示し、T→TFR時間的ラグ(R²=0.97)が予測モデルに第2レベルを追加。" },
     fr: { title: "Testostérone : L'horloge biologique", desc: "T de population en déclin de 1,2 %/an depuis 1982. Le schéma LH+T pointe vers une suppression hypothalamique, et le décalage temporel T→TFR (R²=0,97) ajoute un second niveau au modèle." },
     ko: { title: "테스토스테론: 생물학적 시계", desc: "인구 T는 1982년 이후 연간 -1.2% 감소. LH+T 패턴은 시상하부 억제를 가리키며, T→TFR 시간적 시차(R²=0.97)가 예측 모델에 제2수준을 추가." },
@@ -1825,10 +1936,46 @@ const SUB_PAGES = [
     slug: "reproductive-navigation",
     icon: Navigation,
     en: { title: "Reproductive Navigation", desc: "Nine calcium-dependent steps from sperm production to fertilization — every one EMF-vulnerable, with CatSper as the irreplaceable master channel and no biological backup." },
-    fi: { title: "Reproduktiivinen navigointi", desc: "Yhdeksän kalsiumriippuvaista vaihetta siittiön tuotannosta hedelmöitykseen — jokainen EMF-haavoittuva, CatSper korvaamattomana avainkanavana ilman biologista varakanavaa." },
+    fi: { title: "Lisääntymiskykyyn liittyvä navigointi", desc: "Yhdeksän kalsiumriippuvaista vaihetta siittiön tuotannosta hedelmöitykseen — jokainen EMF-haavoittuva, CatSper korvaamattomana avainkanavana ilman biologista varakanavaa." },
     ja: { title: "生殖ナビゲーション", desc: "精子の産生から受精まで9つのカルシウム依存段階 — すべてEMF脆弱で、CatSperが代替不可能なマスターチャネル、生物学的バックアップなし。" },
     fr: { title: "Navigation reproductive", desc: "Neuf étapes calcium-dépendantes de la production de spermatozoïdes à la fécondation — toutes vulnérables aux EMF, CatSper comme canal maître irremplaçable sans secours biologique." },
     ko: { title: "생식 내비게이션", desc: "정자 생산에서 수정까지 9개의 칼슘 의존 단계 — 모두 EMF 취약, CatSper가 대체 불가능한 마스터 채널이며 생물학적 백업 없음." },
+  },
+  {
+    slug: "heliobiology",
+    icon: Sun,
+    en: { title: "Heliobiology", desc: "A century of evidence linking solar activity to biological outcomes — and the CRY/RPM mechanism that explains it." },
+    fi: { title: "Heliobiologia", desc: "Vuosisata todisteita auringon aktiivisuuden ja biologisten vaikutusten yhteydesta — ja CRY/RPM-mekanismi, joka selittaa sen." },
+    ja: { title: "太陽生物学", desc: "太陽活動と生物学的影響を結ぶ1世紀の証拠 — そしてそれを説明するCRY/RPMメカニズム。" },
+    fr: { title: "Heliobiologie", desc: "Un siecle de preuves liant l'activite solaire aux resultats biologiques — et le mecanisme CRY/RPM qui l'explique." },
+    ko: { title: "태양생물학", desc: "태양 활동과 생물학적 결과를 연결하는 한 세기의 증거 — 그리고 이를 설명하는 CRY/RPM 메커니즘." },
+  },
+  {
+    slug: "iss-hypomagnetic",
+    icon: Rocket,
+    en: { title: "ISS as Hypomagnetic Experiment", desc: "The International Space Station as an unintentional validation of BERM's cryptochrome spin susceptibility (chi_B) prediction. Circadian delay, melatonin decline, immune suppression — all converging on CRY/RPM." },
+    fi: { title: "ISS hypomagneettisena kokeena", desc: "Kansainvalinen avaruusasema tahattomana validointina BERM:n kryptokromin spin-suskeptibiliteetti (chi_B) -ennusteelle. Sirkadiaaninen viive, melatoniinin lasku, immuunisuppressio — kaikki yhtyvat CRY/RPM-reitille." },
+    ja: { title: "ISSの低磁場実験", desc: "BERMのクリプトクロムスピン感受性（χ_B）予測を意図せず検証する国際宇宙ステーション。概日リズム遅延、メラトニン低下、免疫抑制 — すべてCRY/RPMに収束。" },
+    fr: { title: "L'ISS comme experience hypomagnetique", desc: "La Station spatiale internationale comme validation involontaire de la prediction de susceptibilite de spin du cryptochrome (chi_B) de BERM. Retard circadien, declin de la melatonine, immunosuppression — convergence sur CRY/RPM." },
+    ko: { title: "ISS 저자기장 실험", desc: "BERM의 크립토크롬 스핀 감수성(χ_B) 예측에 대한 의도치 않은 검증으로서의 국제우주정거장. 일주기 지연, 멜라토닌 감소, 면역 억제 — 모두 CRY/RPM에 수렴." },
+  },
+  {
+    slug: "space-weather-biology",
+    icon: Sun,
+    en: { title: "Space Weather and Biology", desc: "Three space weather phenomena — Schumann resonance, Pc1 micropulsations, and geomagnetically induced currents — connect heliobiology to the CRY/RPM mechanism." },
+    fi: { title: "Avaruussaa ja biologia", desc: "Kolme avaruussaan ilmiota — Schumannin resonanssi, Pc1-mikropulsaatiot ja geomagneettisesti indusoidut virrat — yhdistävat heliobiologian CRY/RPM-mekanismiin." },
+    ja: { title: "宇宙天気と生物学", desc: "3つの宇宙天気現象 — シューマン共鳴、Pc1微小脈動、地磁気誘導電流 — がヘリオバイオロジーをCRY/RPMメカニズムに接続。" },
+    fr: { title: "Meteorologie spatiale et biologie", desc: "Trois phenomenes de meteorologie spatiale — resonance de Schumann, micropulsations Pc1 et courants geomagnetiquement induits — relient l'heliobiologie au mecanisme CRY/RPM." },
+    ko: { title: "우주 날씨와 생물학", desc: "세 가지 우주 날씨 현상 — 슈만 공명, Pc1 미세맥동, 지자기 유도 전류 — 이 태양생물학을 CRY/RPM 메커니즘에 연결." },
+  },
+  {
+    slug: "laschamp-reversal",
+    icon: Compass,
+    en: { title: "The Laschamp Excursion", desc: "When Earth's magnetic field collapsed to 6% of normal 42,000 years ago — the ecological consequences validate BERM's magnetic susceptibility prediction." },
+    fi: { title: "Laschamp-eksursio", desc: "Kun Maan magneettikenttä romahti 6 prosenttiin normaalista 42 000 vuotta sitten — ekologiset seuraukset validoivat BERM:n magneettisen suskeptibiliteetin ennusteen." },
+    ja: { title: "ラシャンプ磁場逆転", desc: "42,000年前に地球の磁場が通常の6%に崩壊 — その生態学的影響がBERMの磁気感受性予測を検証。" },
+    fr: { title: "L'excursion de Laschamp", desc: "Quand le champ magnétique terrestre s'est effondré à 6% de la normale il y a 42 000 ans — les conséquences écologiques valident la prédiction de susceptibilité magnétique de BERM." },
+    ko: { title: "라샹프 지자기 역전", desc: "42,000년 전 지구 자기장이 정상의 6%로 붕괴했을 때 — 생태학적 결과가 BERM의 자기 감수성 예측을 검증." },
   },
 ] as const;
 
@@ -1843,8 +1990,9 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
   const { locale } = await params;
   const activeLocale: Locale = isValidLocale(locale) ? locale : "en";
   const labelLocale: "en" | "fi" = activeLocale === "fi" ? "fi" : "en";
-  const domainLocale: "en" | "fi" | "ja" | "fr" | "ko" = (["en", "fi", "ja", "fr", "ko"] as const).includes(activeLocale as any) ? activeLocale as "en" | "fi" | "ja" | "fr" | "ko" : "en";
+  const domainLocale = activeLocale;
   const d = pickCopy(COPY, locale);
+  const bioem = { ...COPY.en, ...d };
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Layers} title={d.title} subtitle={d.subtitle} />
@@ -2089,6 +2237,11 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         {/* Statistical visualizations */}
         <div className="mb-8 max-w-4xl">
           <SolarStatCharts />
+        </div>
+
+        {/* Empirical data: latitude-dependent solar-cycle signal */}
+        <div className="mb-8 max-w-4xl">
+          <EmpiricalSolarCharts />
         </div>
 
         {/* SAMA anomaly */}
@@ -2901,6 +3054,116 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
         </div>
         <div className="mt-4 rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
           <p className="text-xs text-foreground-muted leading-relaxed">{d.animalNote}</p>
+        </div>
+      </section>
+
+      {/* Bioelectromagnetics 2024-2026 Literature */}
+      <section id="bioelectromagnetics-2026" className="mb-16 border-t editorial-rule pt-6">
+        <div className="border-l-4 border-blue-500 pl-5 mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <Microscope className="w-5 h-5 text-blue-500 shrink-0" />
+            <h2 className="editorial-section-heading">{bioem.bioem_section_title}</h2>
+          </div>
+          <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">{bioem.bioem_section_intro}</p>
+        </div>
+
+        <div className="space-y-4 max-w-4xl">
+          {/* Bertagna 2025 */}
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="text-sm font-semibold text-foreground">{bioem.bioem_bertagna_title}</h3>
+              <span className="text-[0.6rem] font-mono bg-green-500/20 text-green-700 dark:text-green-300 px-1.5 py-0.5 rounded">{bioem.bioem_bertagna_level}</span>
+            </div>
+            <p className="text-sm text-foreground-muted leading-relaxed">{bioem.bioem_bertagna_text}</p>
+          </div>
+
+          {/* Bektas 2026 */}
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="text-sm font-semibold text-foreground">{bioem.bioem_bektas_title}</h3>
+              <span className="text-[0.6rem] font-mono bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 px-1.5 py-0.5 rounded">{bioem.bioem_bektas_level}</span>
+            </div>
+            <p className="text-sm text-foreground-muted leading-relaxed">{bioem.bioem_bektas_text}</p>
+          </div>
+
+          {/* Tbahriti 2026 */}
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="text-sm font-semibold text-foreground">{bioem.bioem_tbahriti_title}</h3>
+              <span className="text-[0.6rem] font-mono bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 px-1.5 py-0.5 rounded">{bioem.bioem_tbahriti_level}</span>
+            </div>
+            <p className="text-sm text-foreground-muted leading-relaxed">{bioem.bioem_tbahriti_text}</p>
+          </div>
+
+          {/* Tissue-specific null results */}
+          <div className="rounded-lg border border-status-partial/30 bg-status-partial/5 p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="text-sm font-semibold text-foreground">{bioem.bioem_tissue_title}</h3>
+            </div>
+            <p className="text-sm text-foreground-muted leading-relaxed">{bioem.bioem_tissue_text}</p>
+          </div>
+
+          {/* Gao 2024 BBB */}
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <h3 className="text-sm font-semibold text-foreground">{bioem.bioem_gao_title}</h3>
+              <span className="text-[0.6rem] font-mono bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 px-1.5 py-0.5 rounded">{bioem.bioem_gao_level}</span>
+            </div>
+            <p className="text-sm text-foreground-muted leading-relaxed">{bioem.bioem_gao_text}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Hormesis and Biological Activation */}
+      <section id="hormesis-activation" className="mb-16 border-t editorial-rule pt-6">
+        <div className="border-l-4 border-amber-500 pl-5 mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <Sun className="w-5 h-5 text-amber-500 shrink-0" />
+            <h2 className="editorial-section-heading">{d.horm_section_title}</h2>
+          </div>
+          {d.horm_section_intro && (
+            <p className="text-sm text-foreground-muted leading-relaxed max-w-4xl">{d.horm_section_intro}</p>
+          )}
+        </div>
+
+        <div className="space-y-4 max-w-4xl">
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <h3 className="text-sm font-semibold text-foreground mb-2">{d.horm_exp_title}</h3>
+            {d.horm_exp_text && <p className="text-sm text-foreground-muted leading-relaxed">{d.horm_exp_text}</p>}
+            {d.horm_exp_note && (
+              <p className="mt-2 text-xs text-amber-700 dark:text-amber-300 italic">{d.horm_exp_note}</p>
+            )}
+          </div>
+
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <h3 className="text-sm font-semibold text-foreground mb-2">{d.horm_gen_title}</h3>
+            {d.horm_gen_text && <p className="text-sm text-foreground-muted leading-relaxed">{d.horm_gen_text}</p>}
+            {d.horm_gen_note && (
+              <p className="mt-2 text-xs text-amber-700 dark:text-amber-300 italic">{d.horm_gen_note}</p>
+            )}
+          </div>
+
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <h3 className="text-sm font-semibold text-foreground mb-2">{d.horm_epi_title}</h3>
+            {d.horm_epi_text && <p className="text-sm text-foreground-muted leading-relaxed">{d.horm_epi_text}</p>}
+          </div>
+
+          <div className="rounded-lg border border-card-border bg-card-bg p-4">
+            <h3 className="text-sm font-semibold text-foreground mb-2">{d.horm_neuro_title}</h3>
+            {d.horm_neuro_text && <p className="text-sm text-foreground-muted leading-relaxed">{d.horm_neuro_text}</p>}
+            {d.horm_neuro_note && (
+              <p className="mt-2 text-xs text-amber-700 dark:text-amber-300 italic">{d.horm_neuro_note}</p>
+            )}
+          </div>
+
+          {d.horm_epistemic && (
+            <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+              <div className="flex items-start gap-2">
+                <ShieldQuestion className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <p className="text-xs text-foreground-muted leading-relaxed">{d.horm_epistemic}</p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

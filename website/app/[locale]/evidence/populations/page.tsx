@@ -172,7 +172,7 @@ const COPY = {
     title: "Luonnolliset kontrolliryhmät",
     subtitle:
       "Yhdeksän matalan EMF:n populaatiota verrattuna moderneihin väestöihin seitsemässä terveysmittarissa. Tsimane–Mosetén-gradientti, likitaitteisuuden annos-vaste ja BERM-kaskaditesti.",
-    backLink: "← Takaisin evidenssiin",
+    backLink: "← Takaisin näyttöön",
     warningTitle: "Massiiviset sekoittavat tekijät",
     warningText:
       "Jokainen alla listattu populaatio eroaa moderneista yhteiskunnista ruokavalion, liikunnan, yhteisörakenteen, kemikaalialtistuksen ja genetiikan osalta. Mikään tästä ei todista, että EMF aiheuttaa sairauksia. Kyseessä on yhteensopivuustarkistus: osoittavatko matalan EMF:n populaatiot BERM:n ennustamat terveyskuviot? Jos eivät osoittaisi, BERM olisi falsifioitu. Se, että osoittavat, on välttämätöntä mutta ei riittävää.",
@@ -199,7 +199,7 @@ const COPY = {
     s3Kicker: "OSIO 3",
     s3Title: "Tsimane → Mosetén → Moderni -gradientti",
     s3Text: [
-      "Tämä on vahvin yksittäinen populaatiotason evidenssi BERM:lle. Tsimane ja Mosetén jakavat geneettisen taustan, maantieteellisen alueen ja peruselinkeinon. He eroavat ensisijaisesti modernisaation asteessa: Moseténilla on enemmän teknologiaa, enemmän lääketiedettä, enemmän infrastruktuuria.",
+      "Tämä on vahvin yksittäinen populaatiotason näyttö BERM:lle. Tsimane ja Mosetén jakavat geneettisen taustan, maantieteellisen alueen ja peruselinkeinon. He eroavat ensisijaisesti modernisaation asteessa: Moseténilla on enemmän teknologiaa, enemmän lääketiedettä, enemmän infrastruktuuria.",
       "Jokaisessa mitatussa terveysmuuttujassa Mosetén sijoittuu Tsimanen ja länsimaisten populaatioiden VÄLIIN. Tämä on annos-vastegradientti, joka kontrolloi genetiikkaa — yleisin sekoittava tekijä -vastaväitteen.",
     ],
     gradientLabels: [
@@ -251,7 +251,7 @@ const COPY = {
     s5Kicker: "OSIO 5",
     s5Title: "BERM-kaskaditesti",
     s5Text:
-      "BERM ennustaa 16 tautikaskadia, joissa VGCC-välitteinen Ca²⁺-dysregulaatio tuottaa spesifisiä patologioita. Jokaiselle kaskadille kysymme: osoittavatko matalan EMF:n populaatiot matalampaa esiintyvyyttä? 16 kaskadista 11 on vahvistettu yhteensopivaksi (69 %), 5:stä ei ole dataa ja 0 on ristiriidassa.",
+      "BERM ennustaa 16 tautikaskadia, joissa VGCC-välitteinen Ca²⁺-dysregulaatio tuottaa tarkkoja patologioita. Jokaiselle kaskadille kysymme: osoittavatko matalan EMF:n populaatiot matalampaa esiintyvyyttä? 16 kaskadista 11 on vahvistettu yhteensopivaksi (69 %), 5:stä ei ole dataa ja 0 on ristiriidassa.",
     cascadeHeaders: {
       cascade: "Kaskadi",
       lowEmf: "Matala EMF",
@@ -271,7 +271,7 @@ const COPY = {
       { cascade: "Siittiölasku", preElectric: "Ei dataa", modern: "−51,6 % (1973→)", change: "—" },
       { cascade: "TFR", preElectric: "~5–6 (länsimaat)", modern: "1,66 (USA)", change: "−3×" },
     ],
-    preElecAmish: "Amish-yhteisöjen terveysprofiiili — matala obesiteetti, matala diabetes, matala masennus, korkea hedelmällisyys (TFR 6,1) — muistuttaa 1900-luvun alun pre-sähköistysajan terveystilastoja. BERM tulkitsee tämän evidenssiksi siitä, että ero pre-modernien ja modernien terveysprofiilien välillä johtuu merkittävästi sähkömagneettisesta ympäristöstä, ei pelkästään genetiikasta, ruokavaliosta tai elämäntavasta.",
+    preElecAmish: "Amish-yhteisöjen terveysprofiili — matala obesiteetti, matala diabetes, matala masennus, korkea hedelmällisyys (TFR 6,1) — muistuttaa 1900-luvun alun pre-sähköistysajan terveystilastoja. BERM tulkitsee tämän näytöksi siitä, että ero pre-modernien ja modernien terveysprofiilien välillä johtuu merkittävästi sähkömagneettisesta ympäristöstä, ei pelkästään genetiikasta, ruokavaliosta tai elämäntavasta.",
     preElecHeaders: { cascade: "Kaskadi", preElectric: "Pre-elektrinen (~1900)", modern: "Moderni (2024)", change: "Muutos" },
     occKicker: "AMMATILLINEN GRADIENTTI",
     occTitle: "Sisä- vs. ulkotyöntekijät",
@@ -296,11 +296,11 @@ const COPY = {
       "Liikunta — Hadza kävelee ~17 000 askelta/vrk vs USA ~4 000",
       "Yhteisörakenne — suurperheitä, sosiaalinen tuki, vähemmän eristäytymistä",
       "Kemikaalialtistus — ei torjunta-aineita, ei mikromuoveja, ei teollisuussaasteita",
-      "Genetiikka — populaatiospesifisiä adaptaatioita vuosituhansien ajalta",
+      "Genetiikka — populaatiotarkkoja adaptaatioita vuosituhansien ajalta",
     ],
     s6Text2: [
-      "Tämä evidenssi on YHTEENSOPIVUUTTA BERM:n kanssa, ei sen todistusta. Mikä tahansa yllä olevista sekoittavista tekijöistä voisi selittää osan tai kaikki havaitut erot. Tsimane→Mosetén-gradientti on vahvin argumentti, koska se kontrolloi genetiikkaa ja maantiedettä, eristäen teknologian omaksumisen ensisijaiseksi muuttujaksi.",
-      "Siirtyäksemme yhteensopivuudesta evidenssiin tarvitsemme prospektiivisia tutkimuksia populaatioissa, joissa EMF on ensisijainen muuttuva tekijä. Kaksi ehdotetaan alla.",
+      "Tämä näyttö on YHTEENSOPIVUUTTA BERM:n kanssa, ei sen todistusta. Mikä tahansa yllä olevista sekoittavista tekijöistä voisi selittää osan tai kaikki havaitut erot. Tsimane→Mosetén-gradientti on vahvin argumentti, koska se kontrolloi genetiikkaa ja maantiedettä, eristäen teknologian omaksumisen ensisijaiseksi muuttujaksi.",
+      "Siirtyäksemme yhteensopivuudesta näyttöön tarvitsemme prospektiivisia tutkimuksia populaatioissa, joissa EMF on ensisijainen muuttuva tekijä. Kaksi ehdotetaan alla.",
     ],
     proposedStudies: [
       {

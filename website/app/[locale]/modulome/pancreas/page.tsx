@@ -136,7 +136,7 @@ const COPY = {
     gene: "Geeni",
     cellType: "Solutyyppi",
     function: "Toiminto",
-    level: "Evidenssitaso",
+    level: "Näyttötaso",
     channelVal: "Cav1 (L-tyyppi) + Cav3 (T-tyyppi)",
     geneVal: "CACNA1C / CACNA1D + CACNA1H",
     cellTypeVal: "Haiman β-solut",
@@ -154,7 +154,7 @@ const COPY = {
     s3Title: "Aterioista riippuva haavoittuvuusikkuna",
     s3Chain:
       "Korkea glukoosi → K_ATP sulkeutuu → kalvo depolarisoituu → VGCC:t viritetty → χ KORKEA ↔ Paasto → K_ATP auki → kalvo hyperpolarisoitu → VGCC:t inaktiivisia → χ MATALA",
-    s3p1: "β-solu esittää ainutlaatuisen piirteen BERM-kehyksessä: sen EMF-herkkyys (χ) moduloituu dynaamisesti veren glukoosikonsentraation mukaan. K_ATP-kanava toimii molekulaarisena jänniteporttina — kun verensokeri on matala, K_ATP-kanavat pysyvät auki, lukiten kalvon noin −70mV:iin. Tässä potentiaalissa VGCC:t ovat lujasti inaktiivisia eikä ulkoinen sähkömagneettinen kenttä voi häiritä niitä. Solu on käytännössä suojattu.",
+    s3p1: "β-solu esittää ainutlaatuisen piirteen BERM-kehyksessä: sen EMF-herkkyys (χ) säätely muuttuu dynaamisesti veren glukoosikonsentraation mukaan. K_ATP-kanava toimii molekulaarisena jänniteporttina — kun verensokeri on matala, K_ATP-kanavat pysyvät auki, lukiten kalvon noin −70mV:iin. Tässä potentiaalissa VGCC:t ovat lujasti inaktiivisia eikä ulkoinen sähkömagneettinen kenttä voi häiritä niitä. Solu on käytännössä suojattu.",
     s3p2: "Kun verensokeri nousee postprandiaalisesti, K_ATP-kanavat sulkeutuvat, kalvo depolarisoituu kohti VGCC-aktivaatioikkunaa (−50...−30mV) ja kanavat virittyvät — valmiina kynnyksellä, jossa pienet jännitehäiriöt voivat laukaista ennenaikaisen tai liiallisen Ca²⁺-sisäänvirtauksen. Tämä luo aterioista riippuvan haavoittuvuusikkunan: syömisen jälkeen (erityisesti korkean glykeemisen indeksin aterioiden) β-solun χ on maksimoitu. Paasto puolestaan hyperpolarisoi kalvon ja minimoi χ:n. Tämä mekanismi selittää, miksi paasto voi suojata EMF-indusoidulta metaboliselta häiriöltä ja miksi korkean glykeemisen indeksin ruokavaliot synergioivat EMF-altistuksen kanssa.",
 
     s3SectionTitle: "T2D- ja PCOS-mekanismi",
@@ -162,40 +162,40 @@ const COPY = {
     s4Title: "T2D-mekanismiketju",
     s4Chain:
       "EMF → Cav1/Cav3-häiriö → Ca²⁺-dysregulaatio → insuliinisekretio heikkenee → kompensatorinen β-solun hyperfunktio → β-solun uupuminen → T2D",
-    s4p1: "EMF:n akuutti vaikutus β-soluihin on insuliinieksosytoosia ohjaavan tarkasti kalibroidun Ca²⁺-signaalin häiriö. EMF-indusoitu Cav1- ja Cav3-kanavien häiriö muuttaa Ca²⁺-transienttien ajoitusta, amplitudia ja kestoa. Sakurai 2008 osoitti, että ELF-sähkömagneettiset kentät vähensivät insuliinisekreetiötä noin 30 % altistetuissa saarekesoluissa — suora vahvistus sille, että EMF voi heikentää GSIS-reittiä.",
+    s4p1: "EMF:n akuutti vaikutus β-soluihin on insuliinieksosytoosia ohjaavan tarkasti kalibroidun Ca²⁺-signaalin häiriö. EMF-aiheutettu Cav1- ja Cav3-kanavien häiriö muuttaa Ca²⁺-transienttien ajoitusta, amplitudia ja kestoa. Sakurai 2008 osoitti, että ELF-sähkömagneettiset kentät vähensivät insuliinisekreetiötä noin 30 % altistetuissa saarekesoluissa — suora vahvistus sille, että EMF voi heikentää GSIS-reittiä.",
     s4p2: "Krooninen reitti tyypin 2 diabetekseen etenee: jatkuva insuliinisekretion heikkeneminen laukaisee kompensatorisen β-solun hyperfunktion — jäljelle jäävät solut työskentelevät kovemmin ylläpitääkseen glykemista kontrollia. Tämä kompensatorinen ylityö kiihdyttää β-solun uupumista ja apoptoosia, vähentäen asteittain insuliinia erittävää kapasiteettia. Tuloksena on klassinen T2D-kehityskulku: heikentynyt glukoositoleranssi → insuliiniresistenssi → manifesti diabetes.",
 
-    s5Title: "Populaatioevidenssi",
+    s5Title: "Populaationäyttö",
     s5Stats: [
-      "Tsimane (Bolivia): T2D-prevalenssi noin 0 % — maapallon matalin mitattu EMF-ympäristö",
+      "Tsimane (Bolivia): T2D-esiintyvyys noin 0 % — maapallon matalin mitattu EMF-ympäristö",
       "Kitava (Papua-Uusi-Guinea): T2D käytännössä puuttuu korkeahiilihydraattisesta ruokavaliosta huolimatta — lähes nolla-EMF-altistus",
-      "Vanhan linjan amissit: T2D-prevalenssi merkittävästi alle USA:n keskiarvon — rajoitettu teknologian käyttöönotto, matalampi EMF",
-      "Yhdysvallat: T2D-prevalenssi 11,6 % (CDC 2023) — korkein väestötason EMF-tiheys",
+      "Vanhan linjan amissit: T2D-esiintyvyys merkittävästi alle USA:n keskiarvon — rajoitettu teknologian käyttöönotto, matalampi EMF",
+      "Yhdysvallat: T2D-esiintyvyys 11,6 % (CDC 2023) — korkein väestötason EMF-tiheys",
     ],
 
-    s6Title: "PCOS — neljän elimen konvergenssi",
-    s6p1: "BERM-kehys tulkitsee polykystisen munasarjaoireyhtymän (PCOS) neljän elimen konvergenssisairautena — tilana, jossa EMF vaikuttaa samanaikaisesti neljään elimeen, joista kukin on itsenäisesti riippuvainen jänniteohjattuista kalsiumkanavista. Tämä monieliminen konvergenssi tuottaa PCOS:lle tyypillisen fenotyypin:",
+    s6Title: "PCOS — neljän elimen yhdentyminen",
+    s6p1: "BERM-kehys tulkitsee polykystisen munasarjaoireyhtymän (PCOS) neljän elimen yhdentymissairautena — tilana, jossa EMF vaikuttaa samanaikaisesti neljään elimeen, joista kukin on itsenäisesti riippuvainen jänniteohjattuista kalsiumkanavista. Tämä monieliminen yhdentyminen tuottaa PCOS:lle tyypillisen fenotyypin:",
     s6Organs: [
-      "Haiman β-solut (Cav1 + Cav3): EMF-indusoitu insuliinisekretion heikkeneminen laukaisee kompensatorisen hyperinsulinemian",
+      "Haiman β-solut (Cav1 + Cav3): EMF-aiheutettu insuliinisekretion heikkeneminen laukaisee kompensatorisen hyperinsulinemian",
       "Munasarjan theca-solut: hyperinsulinemia ajaa liiallista androgeeni(testosteroni)tuotantoa",
       "Munasarjan granuloosasolut: aromataasiaktiivisuus häiriintyy, vähentäen estradiolikonversiota",
       "Aivolisakkeen gonadotrofit (Cav3): LH/FSH-suhde nousee, häiriten ovulatorista sykliä",
     ],
-    s6p2: "Jokainen näistä neljästä elimestä käyttää itsenäisesti VGCC:itä endokriiniseen päätoimintoonsa. EMF:n ei tarvitse kohdistua PCOS:iin erityisesti — se häiritsee samanaikaisesti kaikkia neljää VGCC-riippuvaista järjestelmää, ja näiden neljän häiriön konvergenssi tuottaa PCOS-fenotyypin. PCOS koskee 5–20 % lisääntymisikäisistä naisista maailmanlaajuisesti, ja prevalenssi nousee rinnakkain EMF-ympäristön tiivistymisen kanssa.",
+    s6p2: "Jokainen näistä neljästä elimestä käyttää itsenäisesti VGCC:itä endokriiniseen päätoimintoonsa. EMF:n ei tarvitse kohdistua PCOS:iin erityisesti — se häiritsee samanaikaisesti kaikkia neljää VGCC-riippuvaista järjestelmää, ja näiden neljän häiriön yhdentyminen tuottaa PCOS-fenotyypin. PCOS koskee 5–20 % lisääntymisikäisistä naisista maailmanlaajuisesti, ja esiintyvyys nousee rinnakkain EMF-ympäristön tiivistymisen kanssa.",
 
-    s4SectionTitle: "Evidenssi ja ennusteet",
+    s4SectionTitle: "Näyttö ja ennusteet",
 
-    s7Title: "EMF-evidenssin yhteenveto",
+    s7Title: "EMF-näytön yhteenveto",
     s7Stats: [
       "Sakurai 2008: ELF-sähkömagneettiset kentät vähensivät insuliinisekreetiötä ~30 % hamsterin haiman saarekesoluissa",
       "β-solun VGCC-tiheys on yksi korkeimmista kaikista endokriinisistä solutyypeistä, mikä tekee niistä luonnostaan EMF-herkiä",
-      "Kaikki tutkitut matalan EMF:n populaatiot (Tsimane, Kitava, amissit) osoittavat lähes nolla-T2D-prevalenssin ruokavalion koostumuksesta riippumatta",
+      "Kaikki tutkitut matalan EMF:n populaatiot (Tsimane, Kitava, amissit) osoittavat lähes nolla-T2D-esiintyvyyden ruokavalion koostumuksesta riippumatta",
       "TheraBionic-rinnakkaisuus: FDA-hyväksytty laite käyttää amplitudimoduloitua EMF:ää → Cav3.2-aktivaatio maksasolusyopäsoluissa SAR-tasoilla 100–1000× alle tyypillisen puhelimen altistuksen",
     ],
 
     s8Title: "BERM-ennusteet",
     s8Text:
-      "BERM-kehys tuottaa kolme spesifistä, testattavaa ennustetta glukoosiriippuvaisesta χ-mekanismista:",
+      "BERM-kehys tuottaa kolme tarkkaa, testattavaa ennustetta glukoosiriippuvaisesta χ-mekanismista:",
     s8Predictions: [
       {
         id: "PANC-1",
@@ -209,7 +209,7 @@ const COPY = {
       },
       {
         id: "PANC-3",
-        text: "Kansallinen T2D-ilmaantuvuus korreloi väestötason EMF-tiheyden kanssa ruokavalion koostumuksen, lihavuuden prevalenssin, geneettisen alttiuden ja fyysisen aktiivisuuden vakioinnin jälkeen. Jäännöskorrelaatio heijastaa T2D-etiologian VGCC-välitteistä komponenttia.",
+        text: "Kansallinen T2D-ilmaantuvuus korreloi väestötason EMF-tiheyden kanssa ruokavalion koostumuksen, lihavuuden esiintyvyyden, geneettisen alttiuden ja fyysisen aktiivisuuden vakioinnin jälkeen. Jäännöskorrelaatio heijastaa T2D-etiologian VGCC-välitteistä komponenttia.",
         discriminating: true,
       },
     ],
@@ -236,7 +236,7 @@ const COPY = {
     pituitaryModulome: "Aivolisakkeen moduloomi",
     brainModulome: "Aivojen moduloomi",
     predictionsPage: "Ennusteet — PANC-sarja",
-    evidencePage: "Evidenssirekisteri",
+    evidencePage: "Näyttörekisteri",
     discriminatingLabel: "Erotteleva",
     allPredictionsLabel: "Kaikki ennusteet →",
   },

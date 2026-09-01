@@ -79,24 +79,24 @@ const COPY = {
     ],
   },
   fi: {
-    title: "Timothyn syndrooma: Luonnon CACNA1C-kokeilu",
+    title: "Timothyn oireyhtymä: Luonnon CACNA1C-kokeilu",
     subtitle:
-      "Timothyn syndrooma aiheutuu yhdestä gain-of-function-mutaatiosta CACNA1C:ssä (Cav1.2) — samassa L-tyypin kalsiumkanavassa, jonka BERM tunnistaa EMF:n primaariseksi transduuktiopisteeksi. Timothy-potilaille kehittyy lähes jokainen BERM:n ennustama patologia. Jos yksi mutatoitunut kanava tuottaa täyden sairasspektrin, saman kanavan kroonisen ympäristöaktivaation pitäisi tuottaa lievempi, väestötason versio.",
-    backLink: "← Takaisin evidenssiin",
+      "Timothyn oireyhtymä aiheutuu yhdestä gain-of-function-mutaatiosta CACNA1C:ssä (Cav1.2) — samassa L-tyypin kalsiumkanavassa, jonka BERM tunnistaa EMF:n primaariseksi transduuktiopisteeksi. Timothy-potilaille kehittyy lähes jokainen BERM:n ennustama taudinkuva. Jos yksi mutatoitunut kanava tuottaa täyden sairausspektrin, saman kanavan kroonisen ympäristöaktivaation pitäisi tuottaa lievempi, väestötason versio.",
+    backLink: "← Takaisin näyttöön",
     cautionText:
-      "Tämä sivu esittää Timothyn syndrooman luonnollisena kokeena, joka testaa BERM:n keskeistä mekanismia. Timothyn syndrooma on harvinainen, vakava geneettinen häiriö (prevalenssi <1:500 000). Vertailu krooniseen EMF-altistukseen on mekanistinen — ei väite samasta vakavuudesta.",
+      "Tämä sivu esittää Timothyn oireyhtymän luonnollisena kokeena, joka testaa BERM:n keskeistä mekanismia. Timothyn oireyhtymä on harvinainen, vakava geneettinen häiriö (esiintyvyys <1:500 000). Vertailu krooniseen EMF-altistukseen on mekanistinen — ei väite samasta vakavuudesta.",
 
     crossMapTitle: "Timothy–BERM-ristikartta",
     crossMapLead:
-      "Jokainen merkittävä Timothyn syndrooman fenotyyppi kartoittuu tiettyyn BERM-välikerrokseen (VK). Tämä on vahvin mahdollinen farmakogenominen validaatio: yksi geeni (CACNA1C) tuottaa täydellisen BERM-sairausspektrin.",
+      "Jokainen merkittävä Timothyn oireyhtymän fenotyyppi kartoittuu tiettyyn BERM-välikerrokseen (VK). Tämä on vahvin mahdollinen farmakogenominen todentaminen: yksi geeni (CACNA1C) tuottaa täydellisen BERM-sairausspektrin.",
     crossMapHeaders: { timothy: "Timothy-fenotyyppi", bermVK: "BERM-kerros", mechanism: "Jaettu Ca²⁺-mekanismi" },
     crossMapRows: [
-      { timothy: "Pitkä QT / rytmihäiriö", bermVK: "VK — Sydän", mechanism: "Cav1.2-kanavan pitkittynyt avautuminen → viivästynyt repolarisaatio → kammioperäinen rytmihäiriö. Sama kanava, sama mekanismi kuin EMF-indusoitu QT-pidennys.", match: true },
+      { timothy: "Pitkä QT / rytmihäiriö", bermVK: "VK — Sydän", mechanism: "Cav1.2-kanavan pitkittynyt avautuminen → viivästynyt repolarisaatio → kammioperäinen rytmihäiriö. Sama kanava, sama mekanismi kuin EMF-aiheutettu QT-pidennys.", match: true },
       { timothy: "Syndaktylia (yhteenkasvaneet sormet/varpaat)", bermVK: "VK — Kehitys", mechanism: "Ca²⁺-riippuvainen apoptoosin epäonnistuminen raajan kehityksen aikana. Ca²⁺-ylikuormitus estää ohjelmoidun solukuoleman sormien rajoilla.", match: true },
       { timothy: "Autismikirjon häiriö", bermVK: "VK31 (ASD-prototyyppi)", mechanism: "CACNA1C GoF → kortikaalinen E/I-epätasapaino → sosiaaliset/kommunikaatiovaikeudet.", match: true },
       { timothy: "Älyllinen kehitysvamma", bermVK: "VK — BDNF/kognitio", mechanism: "Krooninen Ca²⁺-ylikuormitus → CaMKII-säätelyn häiriö → heikentynyt synaptinen plastisuus ja BDNF-signalointi.", match: true },
       { timothy: "Kohtaukset / epilepsia", bermVK: "VK — Q-tekijäspektri", mechanism: "Cav1.2 GoF alentaa kohtauskynnystä vähentämällä γ:tä (GABAergista vaimennusta). Sama Q-tekijämekanismi.", match: true },
-      { timothy: "Immuunipuutos", bermVK: "VK — NK-solut", mechanism: "T-solu- ja NK-soluaktivaatio vaatii tarkan Ca²⁺-signaloinnin (CRAC/Orai1 + Cav1.2). Konstitutiiviinen aktivaatio desensitisoi immuunivastetta.", match: true },
+      { timothy: "Immuunipuutos", bermVK: "VK — NK-solut", mechanism: "T-solu- ja NK-soluaktivaatio vaatii tarkan Ca²⁺-signaloinnin (CRAC/Orai1 + Cav1.2). Konstitutiivinen aktivaatio heikentää herkkyyttä immuunivastetta.", match: true },
       { timothy: "Hypoglykemia", bermVK: "VK12 (β-solu)", mechanism: "Cav1.2 GoF → liiallinen insuliinieritys β-soluista → hypoglykemia. Peilikuva EMF→Ca²⁺→β-solujen uupumisesta vuosikymmenien kuluessa.", match: true },
       { timothy: "Kasvonmuotoanomalia", bermVK: "VK — Kraniofasiaalinen", mechanism: "Hermoharjasolujen migraatio ja erilaistuminen ovat Ca²⁺-riippuvaisia. Muuttunut Ca²⁺-dynamiikka embryogeneesin aikana → rakenteellisia anomalioita.", match: true },
       { timothy: "Lämpötilan säätelyhäiriö", bermVK: "VK — Hypotalamus", mechanism: "Hypotalamuksen lämpötilansäätely riippuu Ca²⁺-herkistä neuroneista (TRPV + Cav1.2). GoF → asetuspisteen epävakaus.", match: true },
@@ -105,13 +105,13 @@ const COPY = {
 
     subTimothyTitle: "'Alatason-Timothy'-hypoteesi",
     subTimothyLead:
-      "Timothyn syndrooma edustaa spektrin ääripäätä. BERM ehdottaa, että krooninen ympäristön EMF tuottaa väestötason 'alatason-Timothy'-tilan — sama Cav1.2-kanava, aktivoitu paljon matalammalla intensiteetillä mutta vuosikymmeniä konstitutiivisen sijasta.",
+      "Timothyn oireyhtymä edustaa spektrin ääripäätä. BERM ehdottaa, että krooninen ympäristön EMF tuottaa väestötason 'alatason-Timothy'-tilan — sama Cav1.2-kanava, aktivoitu paljon matalammalla intensiteetillä mutta vuosikymmeniä konstitutiivisen sijasta.",
     subTimothyComparison: [
-      { dimension: "CACNA1C-aktivaatio", timothy: "Konstitutiivinen (mutaatio)", berm: "Ajoittainen (EMF-indusoitu)" },
+      { dimension: "CACNA1C-aktivaatio", timothy: "Konstitutiivinen (mutaatio)", berm: "Ajoittainen (EMF-aiheutettu)" },
       { dimension: "Vakavuus", timothy: "Vakava (mediaanieloonjääminen ~2,5 vuotta)", berm: "Subkliininen–lievä (väestötason siirtymä)" },
       { dimension: "Alkamisajankohta", timothy: "Prenataalinen / neonataali", berm: "Kumulatiivinen vuosien–vuosikymmenten kuluessa" },
       { dimension: "Sydän", timothy: "Pitkä QT, rytmihäiriö, äkkikuolema", berm: "QT-pidennystrendi, AF-insidenssi nousee" },
-      { dimension: "Neurologinen", timothy: "ASD, kohtaukset, kehitysvamma (100 %)", berm: "ASD-prevalenssi 1→36 (1975→2020)" },
+      { dimension: "Neurologinen", timothy: "ASD, kohtaukset, kehitysvamma (100 %)", berm: "ASD-esiintyvyys 1→36 (1975→2020)" },
       { dimension: "Metabolinen", timothy: "Hypoglykemia (β-solujen hyperaktivaatio)", berm: "T2D-epidemia (β-solujen uupuminen vuosikymmenien jälkeen)" },
       { dimension: "Immuuni", timothy: "Toistuvat infektiot (immuunidesensitisaatio)", berm: "Allergisten sairauksien epidemia (immuunisäätelyn häiriö)" },
     ],
@@ -119,7 +119,7 @@ const COPY = {
 
     gwasTitle: "CACNA1C GWAS: psykiatrian pleiotropisin geeni",
     gwasLead:
-      "Genominlaajuiset assosiaatiotutkimukset ovat itsenäisesti tunnistaneet CACNA1C:n riskigeeniksi kaksisuuntaiselle mielialahäiriölle, skitsofrenialle, vakavalle masennukselle, ASD:lle ja ADHD:lle. Se on yksittäinen eniten replikoitu psykiatrinen riskigeeni — juuri kuten BERM ennustaa primaariselle EMF-transduuktiokanavalle.",
+      "Genominlaajuiset assosiaatiotutkimukset ovat itsenäisesti tunnistaneet CACNA1C:n riskigeeniksi kaksisuuntaiselle mielialahäiriölle, skitsofrenialle, vakavalle masennukselle, ASD:lle ja ADHD:lle. Se on yksittäinen eniten toistettu psykiatrinen riskigeeni — juuri kuten BERM ennustaa primaariselle EMF-transduuktiokanavalle.",
     gwasPoints: [
       "Ferreira ym. 2008 (Nature Genetics): CACNA1C rs1006737 assosioitunut kaksisuuntaiseen mielialahäiriöön (p = 7,0×10⁻⁸)",
       "Green ym. 2010 (Am J Psychiatry): sama SNP assosioitunut skitsofreniaan ja muuttuneeseen amygdalan toimintaan",
@@ -131,15 +131,15 @@ const COPY = {
     predictions: [
       "CACNA1C:n yleisten varianttien kantajien (rs1006737-riskialleeli) pitäisi osoittaa tehostettu herkkyys ympäristön EMF:lle — he alkavat lähempänä Timothy-kynnystä",
       "Timothy-spektrin oireiden (sydän, neurologinen, metabolinen) pitäisi olla yleisempiä korkean EMF:n ympäristöissä, annosriippuvaisesti",
-      "Cav1.2-selektiivisten CCB:ien pitäisi tarjota osittainen suoja EMF-assosioitua patologiaa vastaan CACNA1C-riskialleelin kantajilla",
-      "iPSC-neuroneissa CACNA1C-riskialleelin kantajilta pitäisi näkyä suurempi Ca²⁺-influksivaste EMF-altistukselle kuin ei-kantajilla",
+      "Cav1.2-selektiivisten CCB:ien pitäisi tarjota osittainen suoja EMF-assosioitua taudinkuvaa vastaan CACNA1C-riskialleelin kantajilla",
+      "iPSC-neuroneissa CACNA1C-riskialleelin kantajilta pitäisi näkyä suurempi Ca²⁺-sisäänvirtausvaste EMF-altistukselle kuin ei-kantajilla",
     ],
     refsTitle: "Keskeiset viitteet",
     refs: [
-      "[[ref:splawski2004|Splawski ym. 2004]] (Cell): Alkuperäinen Timothyn syndrooman kuvaus — CACNA1C G406R -mutaatio",
-      "[[ref:splawski2005_cardiac_ltype|Splawski ym. 2005]] (PNAS, PMC1149428): Timothyn syndrooma tyyppi 2 — vaihtoehtoinen CACNA1C-mutaatio, laajempi fenotyyppi",
+      "[[ref:splawski2004|Splawski ym. 2004]] (Cell): Alkuperäinen Timothyn oireyhtymän kuvaus — CACNA1C G406R -mutaatio",
+      "[[ref:splawski2005_cardiac_ltype|Splawski ym. 2005]] (PNAS, PMC1149428): Timothyn oireyhtymä tyyppi 2 — vaihtoehtoinen CACNA1C-mutaatio, laajempi fenotyyppi",
       "[[ref:bhat2012_cacna1c_psychiatric|Bhat ym. 2012]]: Kattava katsaus CACNA1C:n merkitykseen psykiatrisissa sairauksissa",
-      "[[ref:bader2011_timothy_mouse|Bader ym. 2011]] (PNAS): Timothyn syndrooman hiirimalli toistaa autismikirjon oireiden kolmikon",
+      "[[ref:bader2011_timothy_mouse|Bader ym. 2011]] (PNAS): Timothyn oireyhtymän hiirimalli toistaa autismikirjon oireiden kolmikon",
       "[[ref:pgc-cacna1c-five-disorders|Cross-Disorder Group 2013]] (Lancet): CACNA1C transdiagnostisena psykiatrisena riskigeeninä",
     ],
   },

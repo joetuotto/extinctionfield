@@ -186,16 +186,24 @@ const BAR_COLORS = {
   product: "#10B981",
 };
 
+const BAR_LABEL_COLORS = {
+  optical: "var(--chart-series-1)",
+  molecular: "var(--chart-series-2)",
+  geomagnetic: "var(--chart-series-4)",
+  product: "var(--chart-series-3)",
+};
+
 interface BarData {
   label: string;
   value: number;
   color: string;
+  labelColor: string;
 }
 
 function NorthernPackageChart({ bars, title }: { bars: BarData[]; title: string }) {
   const W = 520;
-  const H = 220;
-  const PAD = { top: 24, right: 20, bottom: 36, left: 16 };
+  const H = 232;
+  const PAD = { top: 24, right: 20, bottom: 48, left: 40 };
   const barAreaW = W - PAD.left - PAD.right;
   const barAreaH = H - PAD.top - PAD.bottom;
   const barCount = bars.length;
@@ -211,10 +219,10 @@ function NorthernPackageChart({ bars, title }: { bars: BarData[]; title: string 
       <figcaption className="data-figure__caption">
         <span className="data-figure__title">{title}</span>
       </figcaption>
-      <div className="overflow-x-auto">
+      <div className="chart-scroll">
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          className="block w-full min-w-[400px]"
+          className="chart-svg block w-full min-w-[400px]"
           role="img"
           aria-label={title}
         >
@@ -267,7 +275,7 @@ function NorthernPackageChart({ bars, title }: { bars: BarData[]; title: string 
                   y={y}
                   width={barW}
                   height={barH}
-                  fill={bar.color}
+                  fill={bar.labelColor}
                   rx={4}
                   opacity={0.85}
                 >
@@ -289,12 +297,17 @@ function NorthernPackageChart({ bars, title }: { bars: BarData[]; title: string 
                 {/* Label below */}
                 <text
                   x={x + barW / 2}
-                  y={PAD.top + barAreaH + 16}
+                  y={PAD.top + barAreaH + 15}
                   textAnchor="middle"
                   fill="var(--foreground-muted)"
                   fontSize={9}
                 >
-                  {bar.label}
+                  {bar.label.includes("_") ? (
+                    <>
+                      <tspan x={x + barW / 2}>{bar.label.split("_")[0]}_</tspan>
+                      <tspan x={x + barW / 2} dy={11}>{bar.label.split("_").slice(1).join("_")}</tspan>
+                    </>
+                  ) : bar.label}
                 </text>
               </g>
             );
@@ -342,10 +355,10 @@ export function SolarExplorer({ locale }: { locale: string }) {
   }, [country]);
 
   const bars: BarData[] = [
-    { label: d.chiOptical.split(" (")[0], value: computed.chiOpt, color: BAR_COLORS.optical },
-    { label: d.chiMolecular.split(" (")[0], value: computed.chiMol, color: BAR_COLORS.molecular },
-    { label: d.chiGeomagnetic.split(" (")[0], value: computed.chiGeo, color: BAR_COLORS.geomagnetic },
-    { label: d.product.split(" (")[0], value: computed.product, color: BAR_COLORS.product },
+    { label: d.chiOptical.split(" (")[0], value: computed.chiOpt, color: BAR_COLORS.optical, labelColor: BAR_LABEL_COLORS.optical },
+    { label: d.chiMolecular.split(" (")[0], value: computed.chiMol, color: BAR_COLORS.molecular, labelColor: BAR_LABEL_COLORS.molecular },
+    { label: d.chiGeomagnetic.split(" (")[0], value: computed.chiGeo, color: BAR_COLORS.geomagnetic, labelColor: BAR_LABEL_COLORS.geomagnetic },
+    { label: d.product.split(" (")[0], value: computed.product, color: BAR_COLORS.product, labelColor: BAR_LABEL_COLORS.product },
   ];
 
   return (
@@ -449,7 +462,7 @@ export function SolarExplorer({ locale }: { locale: string }) {
             <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
               {d.chiOptical}
             </p>
-            <p className="mt-1 font-mono text-sm font-semibold" style={{ color: BAR_COLORS.optical }}>
+            <p className="mt-1 font-mono text-sm font-semibold" style={{ color: BAR_LABEL_COLORS.optical }}>
               {computed.chiOpt.toFixed(3)}
             </p>
           </div>
@@ -457,7 +470,7 @@ export function SolarExplorer({ locale }: { locale: string }) {
             <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
               {d.chiMolecular}
             </p>
-            <p className="mt-1 font-mono text-sm font-semibold" style={{ color: BAR_COLORS.molecular }}>
+            <p className="mt-1 font-mono text-sm font-semibold" style={{ color: BAR_LABEL_COLORS.molecular }}>
               {computed.chiMol.toFixed(3)}
             </p>
           </div>
@@ -465,7 +478,7 @@ export function SolarExplorer({ locale }: { locale: string }) {
             <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
               {d.chiGeomagnetic}
             </p>
-            <p className="mt-1 font-mono text-sm font-semibold" style={{ color: BAR_COLORS.geomagnetic }}>
+            <p className="mt-1 font-mono text-sm font-semibold" style={{ color: BAR_LABEL_COLORS.geomagnetic }}>
               {computed.chiGeo.toFixed(3)}
             </p>
           </div>
@@ -473,7 +486,7 @@ export function SolarExplorer({ locale }: { locale: string }) {
             <p className="text-xs" style={{ color: "var(--foreground-muted)" }}>
               {d.product}
             </p>
-            <p className="mt-1 font-mono text-sm font-semibold" style={{ color: BAR_COLORS.product }}>
+            <p className="mt-1 font-mono text-sm font-semibold" style={{ color: BAR_LABEL_COLORS.product }}>
               {computed.product.toFixed(4)}
             </p>
           </div>

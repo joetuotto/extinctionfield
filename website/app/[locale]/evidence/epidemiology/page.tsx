@@ -79,7 +79,7 @@ const COPY = {
         id: "5g-ambient-spectral",
         title: "5G ambient exposure assessment ([[ref:deprez2025|Deprez]] 2025)",
         paragraphs: [
-          "[[ref:deprez2025|Deprez]] et al. (2025, Bioelectromagnetics, bem.70019) present spectral measurements of 5G RF-EMF exposure levels in four European countries — the first quantitative ambient data relevant to BERM's Level 3 calibration at 5G frequencies. 5G beam-formed signals produce different spatial exposure patterns than 2G/3G/4G: directed beams may create higher instantaneous personal exposures but lower background ambient. This changes the ambient/personal ratio in BERM's two-channel model (total = ambient + χ(Ā) × personal): ambient decreases relative to 4G while personal increases transiently, producing different χ(Ā) dynamics.",
+          "[[ref:deprez2025|Deprez]] et al. (2025, Bioelectromagnetics, bem.70019) present spectral measurements of 5G RF-EMF exposure levels in four European countries — the first quantitative ambient data relevant to BERM's Level 3 calibration at 5G frequencies. 5G beam-formed signals produce different spatial exposure patterns than 2G/3G/4G: directed beams may create higher instantaneous personal exposures but lower background ambient. This changes the ambient/personal ratio in BERM's three-channel model (total = natural + ambient + χ(Ā) × personal): ambient decreases relative to 4G while personal increases transiently, producing different χ(Ā) dynamics.",
         ],
         studies: [
           { citation: "Deprez et al. (Bioelectromagnetics)", year: 2025, referenceId: "deprez2025", note: "5G spectral exposure assessment, 4 European countries. Beamforming changes ambient/personal ratio." },
@@ -88,11 +88,11 @@ const COPY = {
     ],
   },
   fi: {
-    title: "Väestö- ja epidemiologinen evidenssi",
-    subtitle: "COVID-lockdownin luonnollinen koe, sähköistymisraja, matkapuhelinparadoksi, 5G-testisevidenssi, ambient-arviointi ja Kaiser Permanente -sarja.",
-    backLink: "← Takaisin evidenssiin",
+    title: "Väestö- ja epidemiologinen näyttö",
+    subtitle: "COVID-lockdownin luonnollinen koe, sähköistymisraja, matkapuhelinparadoksi, 5G-testisnäyttö, ambient-arviointi ja Kaiser Permanente -sarja.",
+    backLink: "← Takaisin näyttöön",
     seeAlso: "Katso myös",
-    evidenceLink: "Evidenssirekisteri →",
+    evidenceLink: "Näyttörekisteri →",
     cascadesLink: "Tautikaskadien aikajanat →",
     narratives: [
       {
@@ -101,7 +101,7 @@ const COPY = {
         paragraphs: [
           "Useat tutkimukset raportoivat parantuneen siemennesteen laadun tiukkojen lockdown-jaksojen aikana. Kiinalainen kohortti ([[ref:chinese_lockdown_cohort_41036143|PubMed 41036143]]) havaitsi siittiökonsentraation ja liikkuvuuden kasvaneen kotieristyksen aikana. [[ref:zhang2025_post_lockdown_semen|Zhang]] ym. 2025 havaitsivat, että siemennesteen laatu laski jälleen rajoitusten purkamisen jälkeen, mikä on yhteensopivaa palautuvan ympäristötekijän kanssa.",
           "Kolmikanavamalli ennusti tämän tuloksen: siittiölaatu parani mutta mielenterveys heikkeni, koska kukin taajuuskanava vaikuttaa eri kudoksiin. Välitaajuuskanava (IF, 300 Hz – 1 MHz), joka vaikuttaa solunjakautumiseen saman taajuus-solukoko-suhteen kautta kuin FDA:n hyväksymä TTFields-syöpähoito, laski dramaattisesti lockdownin aikana, koska toimistoympäristöt satojen LED-valaisimien, HVAC-taajuusmuuttajien ja tehoelektroniikan kanssa poistuivat. Ympäristöintensiteeteillä (0,01–3 V/m) IF-mekanismi toimii ionien pakotetun oskillaation kautta (IFO-VGIC, kynnys 10⁻⁵ V/m — [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]), ei dielektroforeesin kautta, joka vaatii TTFields-tason intensiteetin (100–300 V/m). Tyypillisessä toimistokerroksessa on 200–500 LED-valaisinta verrattuna kodin 15–20:een — 10–25-kertainen ero IF-lähteissä. RF-kanava (> 1 MHz), joka vaikuttaa sirkadiaanisiin ja neuropsykologisiin reitteihin, kasvoi 30–50 % ruutuajan ja laitekäytön lisääntyessä. Kaksi eri taajuutta, kaksi eri mekanismia, kaksi eri kudosta, kaksi eri suuntaa — juuri mitä kolmikanavamalli ennustaa.",
-          "Sentinellilajien tulos vahvistaa ulkokomponentin: COLOSS-data osoittaa mehiläispesien talvihäviön kasvaneen 2,27 prosenttiyksikköä COVIDin aikana (24/35 maata heikkeni, p = 0,043). BBS-linnut laskivat myös 2,8–3,0 % vuosina 2020–22. Mehiläiset ja linnut pysyivät ulkoympäristöissä, joissa tukiasemien ambient-RF jatkui keskeytyksettä, kun taas ihmisten siittiölaatu hyötyi vähentyneestä sisätilojen IF-altistuksesta.",
+          "Indikaattorilajien tulos vahvistaa ulkokomponentin: COLOSS-data osoittaa mehiläispesien talvihäviön kasvaneen 2,27 prosenttiyksikköä COVIDin aikana (24/35 maata heikkeni, p = 0,043). BBS-linnut laskivat myös 2,8–3,0 % vuosina 2020–22. Mehiläiset ja linnut pysyivät ulkoympäristöissä, joissa tukiasemien ambient-RF jatkui keskeytyksettä, kun taas ihmisten siittiölaatu hyötyi vähentyneestä sisätilojen IF-altistuksesta.",
         ],
         studies: [
           { citation: "Kiinalainen lockdown-kohortti (PubMed 41036143)", year: 2024, referenceId: "chinese_lockdown_cohort_41036143", note: "Siittiölaadun paraneminen eristyksen aikana" },
@@ -140,14 +140,14 @@ const COPY = {
       },
       {
         id: "5g-testis-ros",
-        title: "5G-taajuusspesifinen testisevidenssi ([[ref:bektas2026|Bektas]] 2026)",
+        title: "5G-taajuustarkka testisnäyttö ([[ref:bektas2026|Bektas]] 2026)",
         paragraphs: [
-          "[[ref:bektas2026|Bektas]] ym. (2026, Bioelectromagnetics, bem.70043) tarjoavat ensimmäisen 5G-taajuusspesifisen testisdatan: rotat altistettiin 3,5 GHz RF-säteilylle (5G:n ydintaajuus), jolloin havaittiin testis- ja oksidatiivinen vaurio sekä heikentynyt testiksen antioksidanttikapasiteetti. CoQ10-lisäravinto lievitti vauriota, osoittaen mekanismin palautuvuuden. Tämä toimii suoraan tason 5A→6 nuolella (ROS → siittiökaskadi) ja laajentaa oksidatiivisen stressin evidenssipohjan ([[ref:yakymenko2016|Yakymenko]] 2016: 93/100; [[ref:panagopoulos2025|Panagopoulos 2025]]: 95 %) 5G-taajuusalueelle.",
-          "Vaurion kudosspesifisyyttä korostavat samanaikaiset laadukkaat nollatulokset ihosoluissa: [[ref:meyer2026|Meyer]] ym. (2026, Bioelectromagnetics, bem.70046) eivät löytäneet solujen elinvoimaisuusmuutosta, DNA-vauriota eikä mikronukleusmuodostusta HaCaT-keratinosyyteissä 50 Hz, 200 µT:ssa (sokkoutettu, sham-kontrolloitu, WST-1, komet, mikronukleus/CREST); [[ref:haidar2025_5g_skin_null|Haidar]] ym. (2025, Scientific Reports) eivät löytäneet vaikutusta basaaliin ROS-tasoon eikä DNA-vauriota fibroblasteissa ja keratinosyyteissä 5G-moduloidulla 3,5 GHz:llä (SAR 0,08 ja 4 W/kg, 20–48 h). Samat tai vastaavat taajuudet, eri kudokset, eri tulokset — yhdenmukainen BERM:n χ(Ā)-valintasäännön kanssa, jossa vaste riippuu kudosspesifisestä VGIC-tiheydestä, mitokondrioiden ROS-kapasiteetista ja Ca²⁺-varastojen arkkitehtuurista. Molemmat mahdollisuudet (kudosspesifisyys tai riittämätön vaikutus) on pidettävä avoimina.",
+          "[[ref:bektas2026|Bektas]] ym. (2026, Bioelectromagnetics, bem.70043) tarjoavat ensimmäisen 5G-taajuustarkan testisdatan: rotat altistettiin 3,5 GHz RF-säteilylle (5G:n ydintaajuus), jolloin havaittiin testis- ja oksidatiivinen vaurio sekä heikentynyt testiksen antioksidanttikapasiteetti. CoQ10-lisäravinto lievitti vauriota, osoittaen mekanismin palautuvuuden. Tämä toimii suoraan tason 5A→6 nuolella (ROS → siittiökaskadi) ja laajentaa oksidatiivisen stressin näyttöpohjan ([[ref:yakymenko2016|Yakymenko]] 2016: 93/100; [[ref:panagopoulos2025|Panagopoulos 2025]]: 95 %) 5G-taajuusalueelle.",
+          "Vaurion kudosspesifisyyttä korostavat samanaikaiset laadukkaat nollatulokset ihosoluissa: [[ref:meyer2026|Meyer]] ym. (2026, Bioelectromagnetics, bem.70046) eivät löytäneet solujen elinvoimaisuusmuutosta, DNA-vauriota eikä mikronukleusmuodostusta HaCaT-keratinosyyteissä 50 Hz, 200 µT:ssa (sokkoutettu, sham-kontrolloitu, WST-1, komet, mikronukleus/CREST); [[ref:haidar2025_5g_skin_null|Haidar]] ym. (2025, Scientific Reports) eivät löytäneet vaikutusta basaaliin ROS-tasoon eikä DNA-vauriota fibroblasteissa ja keratinosyyteissä 5G-moduloidulla 3,5 GHz:llä (SAR 0,08 ja 4 W/kg, 20–48 h). Samat tai vastaavat taajuudet, eri kudokset, eri tulokset — yhdenmukainen BERM:n χ(Ā)-valintasäännön kanssa, jossa vaste riippuu kudosspesifisestä VGIC-tiheydestä, mitokondrioiden ROS-kapasiteetista ja Ca²⁺-varastojen arkkitehtuurista. Molemmat mahdollisuudet (kudoskohdentuvuus tai riittämätön vaikutus) on pidettävä avoimina.",
           "Tärkeää: Laboratorion lähtötasovinouma on symmetrinen. Se ei selitä ainoastaan negatiivisia tuloksia — se tarkoittaa myös, että positiiviset tulokset aliarvioivat todellista vaikutuskokoa. Kun tutkimus havaitsee RF-altistuksen nostavan ROS:ia 30 % sham-kontrolleihin verrattuna, todellinen nousu altistamattomaan lähtötasoon nähden voi olla suurempi, koska sham-kontrollit ovat itsekin osittain altistuneet. Tämä systemaattinen aliarviointi koskee kaikkea in vitro EMF-tutkimusta, ei valikoivasti.",
         ],
         studies: [
-          { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3,5 GHz → testis-ROS-vaurio; CoQ10 lievittää. Ensimmäinen 5G-taajuusspesifinen testisdata." },
+          { citation: "Bektas ym. (Bioelectromagnetics)", year: 2026, referenceId: "bektas2026", note: "3,5 GHz → testis-ROS-vaurio; CoQ10 lievittää. Ensimmäinen 5G-taajuustarkka testisdata." },
           { citation: "Meyer ym. (Bioelectromagnetics)", year: 2026, referenceId: "meyer2026", note: "50 Hz, 200 µT, HaCaT-keratinosyytit: ei elinvoimaisuusmuutosta, ei DNA-vauriota. Sokkoutettu sham-kontrolloitu." },
           { citation: "Haidar ym. (Scientific Reports)", year: 2025, referenceId: "haidar2025_5g_skin_null", note: "5G-moduloitu 3,5 GHz, fibroblastit + keratinosyytit: ei ROS:ia, ei DNA-vauriota (CPD). Laadukas nollatulos." },
         ],
@@ -156,7 +156,7 @@ const COPY = {
         id: "5g-ambient-spectral",
         title: "5G:n ambient-altistusarviointi ([[ref:deprez2025|Deprez]] 2025)",
         paragraphs: [
-          "[[ref:deprez2025|Deprez]] ym. (2025, Bioelectromagnetics, bem.70019) esittävät 5G RF-EMF -altistustasojen spektraalimittaukset neljässä Euroopan maassa — ensimmäistä kvantitatiivista ambient-dataa BERM:n tason 3 kalibrointiin 5G-taajuuksilla. 5G:n suunnatut keilat tuottavat erilaisia spatiaalisia altistuskuvioita kuin 2G/3G/4G: suunnatut keilat voivat luoda korkeampia hetkellisiä henkilökohtaisia altistuksia mutta matalamman taustakomponentin. Tämä muuttaa ambient/personal-suhdetta BERM:n kaksikanavamallissa (total = ambient + χ(Ā) × personal): ambient laskee suhteessa 4G:hen, personal nousee hetkittäin → eri χ(Ā)-dynamiikka.",
+          "[[ref:deprez2025|Deprez]] ym. (2025, Bioelectromagnetics, bem.70019) esittävät 5G RF-EMF -altistustasojen spektraalimittaukset neljässä Euroopan maassa — ensimmäistä kvantitatiivista ambient-dataa BERM:n tason 3 kalibrointiin 5G-taajuuksilla. 5G:n suunnatut keilat tuottavat erilaisia spatiaalisia altistuskuvioita kuin 2G/3G/4G: suunnatut keilat voivat luoda korkeampia hetkellisiä henkilökohtaisia altistuksia mutta matalamman taustakomponentin. Tämä muuttaa ambient/personal-suhdetta BERM:n kolmikanavamallissa (total = natural + ambient + χ(Ā) × personal): ambient laskee suhteessa 4G:hen, personal nousee hetkittäin → eri χ(Ā)-dynamiikka.",
         ],
         studies: [
           { citation: "Deprez ym. (Bioelectromagnetics)", year: 2025, referenceId: "deprez2025", note: "5G:n spektraalinen altistusarviointi, 4 Euroopan maata. Suunnattu keila muuttaa ambient/personal-suhdetta." },

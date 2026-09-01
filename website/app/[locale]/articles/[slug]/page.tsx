@@ -27,8 +27,8 @@ const COPY = {
   fi: {
     partOf: "Tämä artikkeli on osa",
     framework: "Extinction Field -tutkimuskehystä",
-    sentinel: "Sentinellidata",
-    evidence: "Evidenssi",
+    sentinel: "Indikaattorilajiaineisto",
+    evidence: "Näyttö",
     predictions: "Kaikki ennusteet",
     minRead: "min lukuaika",
     more: "Lisää Extinction Fieldistä",

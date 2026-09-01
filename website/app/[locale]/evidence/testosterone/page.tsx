@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { TrendingDown } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CautionBox } from "@/components/CautionBox";
@@ -69,16 +68,16 @@ const COPY = {
   },
   fi: {
     title: "Testosteroni: Biologinen kello",
-    subtitle: "Väestön testosteronitaso on laskenut ~1,2 %/vuosi 1980-luvulta lähtien. Tämä sekulaaritrendi on iästä riippumaton, maantieteellisesti laaja-alainen ja ajallisesti korreloitu TFR:n laskun kanssa 8 vuoden viiveellä. LH+T-kaava osoittaa hypotalamuksen suppressioon, ei kivesten vaurioon.",
-    backLink: "← Takaisin Evidenssiin",
-    cautionText: "Testosteronin sekulaarilasku on vakiintunut, mutta sen syystä käydään keskustelua (lihavuus, EDC:t, elämäntavat, EMF tai yhdistelmä). Tämä sivu esittää T→TFR-ajallisen korrelaation ja LH-diagnostiikan BERM:n kanssa yhteensopivina todistelinjoina. Kumpikaan ei todista EMF-kausaalisuutta.",
+    subtitle: "Väestön testosteronitaso on laskenut ~1,2 %/vuosi 1980-luvulta lähtien. Tämä pitkäaikaistrendi on iästä riippumaton, maantieteellisesti laaja-alainen ja ajallisesti korreloitu TFR:n laskun kanssa 8 vuoden viiveellä. LH+T-kaava osoittaa hypotalamuksen vaimentumiseen, ei kivesten vaurioon.",
+    backLink: "← Takaisin näyttöön",
+    cautionText: "Testosteronin pitkäaikaislasku on vakiintunut, mutta sen syystä käydään keskustelua (lihavuus, EDC:t, elämäntavat, EMF tai yhdistelmä). Tämä sivu esittää T→TFR-ajallisen korrelaation ja LH-diagnostiikan BERM:n kanssa yhteensopivina todistelinjoina. Kumpikaan ei todista EMF-kausaalisuutta.",
 
-    s1Title: "Sekulaarilasku",
+    s1Title: "Pitkäaikaislasku",
     s1Lead: "Kolme riippumatonta aineistoa dokumentoivat saman kaavan yhdysvaltalaismiehillä:",
     s1Points: [
       { label: "AFHS-kohortti (Travison 2007)", detail: "638 ng/dL lähtötaso vuonna 1982. Iästä riippumaton lasku ~1,2 %/vuosi kolmessa tutkimusaallossa. Ei selity BMI:n, tupakoinnin tai oheissairauksien muutoksilla." },
       { label: "NHANES-poikkileikkaukset (Lokeshwar 2021)", detail: "Jatkunut lasku vuoteen 2016 kaikissa ikäryhmissä 15–39. Nuorilla miehillä (15–19) jyrkin suhteellinen pudotus." },
-      { label: "Eurooppalainen vahvistus", detail: "Suomalaiset, tanskalaiset ja ranskalaiset varusmiestutkmukset osoittavat rinnakkaisia laskuja 1990-luvulta eteenpäin." },
+      { label: "Eurooppalainen vahvistus", detail: "Suomalaiset, tanskalaiset ja ranskalaiset varusmiestutkimukset osoittavat rinnakkaisia laskuja 1990-luvulta eteenpäin." },
     ],
     s1Stat: "USA:n kehityskulku: 638 → ~380 ng/dL (1982–2024), −1,2 %/vuosi iästä riippumaton",
 
@@ -95,7 +94,7 @@ const COPY = {
       { pattern: "T↓ + LH↑ = Testikulaarinen", detail: "T laskee mutta LH nousee, mikä tarkoittaa aivolisakkeen kompensoivan kivevauriota. Yhdenmukainen suoran gonadaalisen toksisuuden kanssa EDC:istä (ftalaatit, BPA).", color: "amber" },
     ],
     s3Observed: "Havaittu väestökaava: T↓ + LH↓ (hypotalaaminen)",
-    s3Implication: "Havaittu kaava on epäyhdenmukainen EDC-välitteisen kivevaurion kanssa ensisijaisena mekanismina ja osoittaa sen sijaan hypotalamustason suppressioon — tasolle, jossa EMF vaikuttaa melatoniinin ja kryptokromin kautta.",
+    s3Implication: "Havaittu kaava on epäyhdenmukainen EDC-välitteisen kivevaurion kanssa ensisijaisena mekanismina ja osoittaa sen sijaan hypotalamustason vaimentumiseen — tasolle, jossa EMF vaikuttaa melatoniinin ja kryptokromin kautta.",
 
     s3bTitle: "Kemikaali vs EMF: erotusdiagnostiikka",
     s3bLead: "EDC:t ja EMF molemmat laskevat testosteronia, mutta ne jättävät erilaiset hormonaaliset sormenjäljet:",
@@ -385,13 +384,13 @@ export default async function TestosteronePage({ params }: { params: Promise<{ l
         <section className="mt-14 border-t editorial-rule pt-6">
           <h2 className="text-2xl font-semibold mb-4">{d.s3bTitle}</h2>
           <p className="text-foreground-muted mb-4">{d.s3bLead}</p>
-          <div className="overflow-x-auto mb-4">
+          <div className="chart-scroll mb-4">
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="border-b border-card-border">
                   <th className="text-left py-2 pr-4 font-semibold"></th>
-                  <th className="text-left py-2 pr-4 font-semibold text-amber-600 dark:text-amber-400">EDC</th>
-                  <th className="text-left py-2 font-semibold text-blue-600 dark:text-blue-400">EMF</th>
+                  <th className="text-left py-2 pr-4 font-semibold text-status-partial">EDC</th>
+                  <th className="text-left py-2 font-semibold text-accent">EMF</th>
                 </tr>
               </thead>
               <tbody>

@@ -28,7 +28,7 @@ const DRUGS: DrugRow[] = [
 ];
 
 const DISEASES: { id: string; en: string; fi: string }[] = [
-  { id: "hypertension", en: "Hypertension", fi: "Hypertensio" },
+  { id: "hypertension", en: "Hypertension", fi: "Verenpainetauti" },
   { id: "t1d", en: "Type 1 diabetes", fi: "Tyypin 1 diabetes" },
   { id: "t2d", en: "Type 2 diabetes", fi: "Tyypin 2 diabetes" },
   { id: "obesity", en: "Obesity", fi: "Lihavuus" },
@@ -38,7 +38,7 @@ const DISEASES: { id: string; en: string; fi: string }[] = [
   { id: "migraine", en: "Migraine", fi: "Migreeni" },
   { id: "epilepsy", en: "Epilepsy", fi: "Epilepsia" },
   { id: "absence_epilepsy", en: "Absence epilepsy", fi: "Poissaoloepilepsia" },
-  { id: "neonatal_seizures", en: "Neonatal seizures", fi: "Neonataalit kohtaukset" },
+  { id: "neonatal_seizures", en: "Neonatal seizures", fi: "Vastasyntyneen kohtaukset" },
   { id: "chronic_pain", en: "Chronic pain", fi: "Krooninen kipu" },
   { id: "tinnitus", en: "Tinnitus", fi: "Tinnitus" },
   { id: "alzheimers", en: "Alzheimer's", fi: "Alzheimer" },

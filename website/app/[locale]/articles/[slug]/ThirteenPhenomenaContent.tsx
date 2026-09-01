@@ -268,7 +268,7 @@ const PHENOMENA_FI: Phenomenon[] = [
     title: "Klimentidisin paradoksi: 8 lajia lihoo",
     observation: [
       "Klimentidis ym. 2011 (Proc. R. Soc. B): 24 populaatiota 8 lajista — primaatit, jyrsijät, koirat, kissat — joiden painon aikakehitys tutkittiin vuosikymmenten yli. JOKAISEN populaation painotrendi oli positiivinen (p = 1,2 × 10⁻⁷).",
-      "Replikaatiostatus: Tutkimusta EI ole replikoitu (179 sitaatiota, 0 replikaatiota, LessWrong 2023). NTP-kontrollirottien painonnousu selittyy OSITTAIN kontrollidieetin koostumuksen muutoksilla ajan myötä. Tuotantoeläinten ja lemmikkien lihominen selittyy osittain ruokinnan muutoksilla. MUTTA: tutkimuskolonioiden primaattien (makakot, simpanssit, marmosetit) data kontrolloiduissa olosuhteissa ja villirottien data pysyvät selittämättöminä.",
+      "Replikaatiostatus: Tutkimusta EI ole toistettu (179 sitaatiota, 0 replikaatiota, LessWrong 2023). NTP-kontrollirottien painonnousu selittyy OSITTAIN kontrollidieetin koostumuksen muutoksilla ajan myötä. Tuotantoeläinten ja lemmikkien lihominen selittyy osittain ruokinnan muutoksilla. MUTTA: tutkimuskolonioiden primaattien (makakot, simpanssit, marmosetit) data kontrolloiduissa olosuhteissa ja villirottien data pysyvät selittämättöminä.",
     ],
     conventionalLabel: "Konventionaalinen selitys",
     conventional: [
@@ -331,7 +331,7 @@ const PHENOMENA_FI: Phenomenon[] = [
     ],
     bermLabel: "BERM:n selitys",
     berm: [
-      "Naisten hormonaalinen järjestelmä on EMF:lle herkempi useissa kohdissa: estrogeeni moduloi VGCC-ekspressiota (estrogeeni → Cav1.2↑); kiimankierto vaatii tarkkaa Ca²⁺-oskillaatiota; OXT-järjestelmä on naisilla KESKEISEMPI sosiaaliselle hyvinvoinnille; naiset ovat herkempiä sirkadiaaniselle häiriölle (kausiluonteinen masennustaipumus 2–3× yleisempää naisilla).",
+      "Naisten hormonaalinen järjestelmä on EMF:lle herkempi useissa kohdissa: estrogeeni säätelee VGCC-ekspressiota (estrogeeni → Cav1.2↑); kiimankierto vaatii tarkkaa Ca²⁺-vaihtelua; OXT-järjestelmä on naisilla KESKEISEMPI sosiaaliselle hyvinvoinnille; naiset ovat herkempiä sirkadiaaniselle häiriölle (kausiluonteinen masennustaipumus 2–3× yleisempää naisilla).",
     ],
     epistemic: "M|C",
     sources: "Stevenson & Wolfers 2009 AEJ:EP 1:190–225; Blanchflower & Bryson 2024 J Pop Econ 37:16; Science Advances 2026",
@@ -340,7 +340,7 @@ const PHENOMENA_FI: Phenomenon[] = [
     num: 5,
     title: "Autoimmuunisairauksien epidemia",
     observation: [
-      "Globaali ikävakioitu prevalenssi lähes KAKSINKERTAISTUI 1990–2021 (GBD 2021). Keliakia: 5-kertainen nousu 30 vuodessa USA:ssa. MS: +30 % globaalisti 2013–2022. IBD: +46 % 2006–2021. T1D lähes kaksinkertaistui 40 vuodessa. Erityisesti LASTEN T1D ja IBD nousevat nopeimmin.",
+      "Globaali ikävakioitu esiintyvyys lähes KAKSINKERTAISTUI 1990–2021 (GBD 2021). Keliakia: 5-kertainen nousu 30 vuodessa USA:ssa. MS: +30 % globaalisti 2013–2022. IBD: +46 % 2006–2021. T1D lähes kaksinkertaistui 40 vuodessa. Erityisesti LASTEN T1D ja IBD nousevat nopeimmin.",
     ],
     conventionalLabel: "Konventionaalinen selitys",
     conventional: [
@@ -357,7 +357,7 @@ const PHENOMENA_FI: Phenomenon[] = [
     num: 6,
     title: "Myopiapandemia",
     observation: [
-      "Myopian prevalenssi nousi 10–20 %:sta yli 90 %:iin Itä-Aasian kaupungeissa 50 vuodessa. Globaalisti: 24,3 % (1990) → 35,8 % (2023), ennuste 39 %+ (2050) eli 5 miljardia. COVID-19 PAHENSI myopiaa lapsilla (JAMA Ophthalmol 2021).",
+      "Myopian esiintyvyys nousi 10–20 %:sta yli 90 %:iin Itä-Aasian kaupungeissa 50 vuodessa. Globaalisti: 24,3 % (1990) → 35,8 % (2023), ennuste 39 %+ (2050) eli 5 miljardia. COVID-19 PAHENSI myopiaa lapsilla (JAMA Ophthalmol 2021).",
       "NEI 2025 (Chiang): \"Despite major research investments, the interplay between genetic and environmental influences remains unclear.\" Riskitekijäksi tunnistettu: \"use of LED lamps for homework\" (BMC Ophthalmol 2020).",
     ],
     conventionalLabel: "Konventionaalinen selitys",
@@ -366,7 +366,7 @@ const PHENOMENA_FI: Phenomenon[] = [
     ],
     bermLabel: "BERM:n selitys",
     berm: [
-      "Retinaalinen dopamiini säätelee aksiaalikasvu. DA↓ → aksiaali-elongaatio↑ → myopia. EMF → DA↓ (VK53, polku D). LED-valaistus: sinivalo-dominantti → mel↓ → DA-sirkadiaaninen säätely häiriintyy. Punainen valo TOIMII koska se (a) stimuloi mitokondrioita, (b) EI suppressoi melatoniinia → dopaminerginen palautuminen.",
+      "Retinaalinen dopamiini säätelee aksiaalikasvu. DA↓ → aksiaali-elongaatio↑ → myopia. EMF → DA↓ (VK53, polku D). LED-valaistus: sinivalo-dominantti → mel↓ → DA-sirkadiaaninen säätely häiriintyy. Punainen valo TOIMII koska se (a) stimuloi mitokondrioita, (b) EI vaimentaa melatoniinia → dopaminerginen palautuminen.",
     ],
     epistemic: "M|C",
     sources: "Holden ym. 2016 Ophthalmology 123:1036–1042; NEI 2025 Chiang; Wang ym. 2021 JAMA Ophthalmol 139:293–300",
@@ -409,7 +409,7 @@ const PHENOMENA_FI: Phenomenon[] = [
     num: 9,
     title: "Unettomuusepidemia",
     observation: [
-      "Unettomuus ja unenlaadun heikkeneminen ovat globaali trendi. Lyhyen unen (<6h) prevalenssi nousee erityisesti nuorilla. Ilmiö esiintyy MYÖS ihmisillä jotka eivät käytä näyttölaitteita illalla.",
+      "Unettomuus ja unenlaadun heikkeneminen ovat globaali trendi. Lyhyen unen (<6h) esiintyvyys nousee erityisesti nuorilla. Ilmiö esiintyy MYÖS ihmisillä jotka eivät käytä näyttölaitteita illalla.",
     ],
     conventionalLabel: "Konventionaalinen selitys",
     conventional: [
@@ -417,7 +417,7 @@ const PHENOMENA_FI: Phenomenon[] = [
     ],
     bermLabel: "BERM:n selitys",
     berm: [
-      "Kaksi itsenäistä melatoniinisuppressioreittiä: Reitti 1 (sininen valo → melanopsiini → SCN → mel↓) on tunnettu. Reitti 2 (EMF → CRY/VGCC → SCN-oskillaatio → mel↓) toimii PIMEÄSSÄ (vasikat pimeässä, Sci.Rep. 2015). Wi-Fi ja sähköverkko ovat aktiivisia läpi yön.",
+      "Kaksi itsenäistä melatoniinivaimennusreittiä: Reitti 1 (sininen valo → melanopsiini → SCN → mel↓) on tunnettu. Reitti 2 (EMF → CRY/VGCC → SCN-oskillaatio → mel↓) toimii PIMEÄSSÄ (vasikat pimeässä, Sci.Rep. 2015). Wi-Fi ja sähköverkko ovat aktiivisia läpi yön.",
       "JA: PGC (pinealiskalsifikaatio) on KUMULATIIVINEN ja IRREVERSIIBELI → melatoniinituotantokapasiteetti LASKEE iän myötä nopeammin kuin luonnollinen ikääntyminen selittää. \"Oranssit lasit eivät riitä\" koska EMF-reitti ohittaa ne.",
     ],
     epistemic: "M|C",
@@ -437,7 +437,7 @@ const PHENOMENA_FI: Phenomenon[] = [
     berm: [
       "Melatoniini on puberteetin KAUSAALINEN säätelijä: mel inhiboi GnRH-pulsaattoria. Mel↓ → GnRH-esto poistuu → puberteetti aikaistuu. KAUSAALINEN todiste: pinealektomia/pineaalituumori → mel=0 → ennenaikainen puberteetti (PMC10601200, kliininen). EMF → mel↓ (kaksi reittiä) + PGC kumuloituu → jatkuva aikaistuminen.",
     ],
-    epistemic: "E (kausaalinen linkki kliinisesti verifioitu)",
+    epistemic: "E (kausaalinen linkki kliinisesti todennettu)",
     sources: "PMC10601200; Castellano ym. 2011 Mol Cell Endocrinol",
   },
   {

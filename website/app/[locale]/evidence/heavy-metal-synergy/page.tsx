@@ -156,26 +156,26 @@ const COPY = {
   fi: {
     title: "Raskasmetalli × EMF -synergismi",
     subtitle:
-      "Cd²⁺ permeoi Cav3.1:n, Pb²⁺ matkii Ca²⁺:ia kalmoduliinissa, MeHg kasvattaa T-tyypin virtoja, Al³⁺ ja F⁻ kiihdyttävät pineaalisen kalsifikaation. EMF avaa portin; raskasmetallit kulkevat sen läpi. Konvergenssi ei ole sattumaa — se on mekanistisesti väistämätöntä.",
-    backLink: "← Takaisin Evidenssiin",
+      "Cd²⁺ läpäisee Cav3.1:n, Pb²⁺ matkii Ca²⁺:ia kalmoduliinissa, MeHg kasvattaa T-tyypin virtoja, Al³⁺ ja F⁻ kiihdyttävät pineaalisen kalsifikaation. EMF avaa portin; raskasmetallit kulkevat sen läpi. Yhdentyminen ei ole sattumaa — se on mekanistisesti väistämätöntä.",
+    backLink: "← Takaisin näyttöön",
 
     cautionText:
-      "Tämä sivu esittää raskasmetalli × EMF -synergismin mekanistisen perustan. Jokaisen metallin vuorovaikutus jänniteohjattujen kalsiumkanavien kanssa on verifioitu itsenäisesti. Synergiahypoteesi — että EMF-altistus kasvattaa raskasmetallien myrkyllisyyttä avaamalla sisääntuloreitit — generoi spesifisiä testattavia ennusteita.",
+      "Tämä sivu esittää raskasmetalli × EMF -synergismin mekanistisen perustan. Jokaisen metallin vuorovaikutus jänniteohjattujen kalsiumkanavien kanssa on todennettu itsenäisesti. Synergiahypoteesi — että EMF-altistus kasvattaa raskasmetallien myrkyllisyyttä avaamalla sisääntuloreitit — tuottaa tarkkoja testattavia ennusteita.",
 
     gatewayTitle: "VGCC-portti",
     gatewayLead:
-      "Jänniteohjatut kalsiumkanavat (VGCC:t) eivät ole täydellisen selektiivisiä Ca²⁺:lle. Useat myrkylliset metallit voivat permeata avoimien VGCC-kanavien läpi tai matkia Ca²⁺:ia signaalireitin kohteissa. EMF avaa VGCC:t → myrkylliset metallit pääsevät sisään.",
+      "Jänniteohjatut kalsiumkanavat (VGCC:t) eivät ole täydellisen selektiivisiä Ca²⁺:lle. Useat myrkylliset metallit voivat läpäistä avoimien VGCC-kanavien läpi tai matkia Ca²⁺:ia signaalireitin kohteissa. EMF avaa VGCC:t → myrkylliset metallit pääsevät sisään.",
 
     metalsTitle: "Metalli × VGCC -vuorovaikutukset",
-    metalsLead: "Jokainen raskasmetalli vuorovaikuttaa kalsiumsignaalikaskadin kanssa tietyssä pisteessä. Konvergenssi VGCC:ihin tarkoittaa, että EMF-altistus potentioi KAIKKIA näitä vuorovaikutuksia samanaikaisesti.",
+    metalsLead: "Jokainen raskasmetalli vuorovaikuttaa kalsiumsignaalikaskadin kanssa tietyssä pisteessä. Yhdentyminen VGCC:ihin tarkoittaa, että EMF-altistus tehostaa KAIKKIA näitä vuorovaikutuksia samanaikaisesti.",
     metals: [
       {
         symbol: "Cd²⁺",
         name: "Kadmium",
         mechanism: "Permeoi Cav3.1 T-tyypin kanavien läpi",
-        evidence: "Vahvistettu radioleimatulla ¹⁰⁹Cd²⁺:lla — suora permeaatio kanavan huokosen läpi",
+        evidence: "Vahvistettu radioleimatulla ¹⁰⁹Cd²⁺:lla — suora läpäisy kanavan huokosen läpi",
         level: "confirmed",
-        detail: "Cd²⁺:n ionisäde (0,95 Å) on riittävän lähellä Ca²⁺:ia (1,00 Å) kulkemaan Cav3.1:n selektiivisuussuodattimen läpi. T-tyypin kanavan ikkunavirta lähellä lepokalvopotentiaalia tarkoittaa, että Cd²⁺ voi kulkeutua sisään jopa ilman depolarisaatiota — EMF kasvattaa avautumistodennäköisyyttä → enemmän Cd²⁺-permeaatiota.",
+        detail: "Cd²⁺:n ionisäde (0,95 Å) on riittävän lähellä Ca²⁺:ia (1,00 Å) kulkemaan Cav3.1:n selektiivisuussuodattimen läpi. T-tyypin kanavan ikkunavirta lähellä lepokalvopotentiaalia tarkoittaa, että Cd²⁺ voi kulkeutua sisään jopa ilman depolarisaatiota — EMF kasvattaa avautumistodennäköisyyttä → enemmän Cd²⁺-läpäisyä.",
         synergy: "EMF avaa Cav3.1:n → Cd²⁺:n sisäänvirtaus kasvaa vakiolla ulkoisella Cd²⁺-pitoisuudella",
         ref: "[[ref:marchetti2013_heavy_metal|Marchetti 2013]]",
       },
@@ -195,7 +195,7 @@ const COPY = {
         mechanism: "Kasvattaa T-tyypin Ca²⁺-virtoja",
         evidence: "MeHg tehostaa T-tyypin kanavan johtavuutta → enemmän Ca²⁺:ia per avautumistapahtuma",
         level: "experimental",
-        detail: "Metyylielohopea ei permeoi kanavaa — se muokkaa kanavan käyttäytymistä. MeHg kasvattaa T-tyypin kanavien johtavuutta, mikä tarkoittaa enemmän Ca²⁺:ia (ja Cd²⁺:ia) per kanavan avautuminen. Yhdistettynä EMF:n aiheuttamaan kasvaneeseen avautumistodennäköisyyteen tulos on multiplikatiivinen Ca²⁺-kuormitus.",
+        detail: "Metyylielohopea ei läpäisee kanavaa — se muokkaa kanavan käyttäytymistä. MeHg kasvattaa T-tyypin kanavien johtavuutta, mikä tarkoittaa enemmän Ca²⁺:ia (ja Cd²⁺:ia) per kanavan avautuminen. Yhdistettynä EMF:n aiheuttamaan kasvaneeseen avautumistodennäköisyyteen tulos on multiplikatiivinen Ca²⁺-kuormitus.",
         synergy: "EMF kasvattaa avautumistodennäköisyyttä × MeHg kasvattaa johtavuutta = multiplikatiivinen Ca²⁺-ylikuorma",
         ref: "Bhatt 2012",
       },
@@ -207,7 +207,7 @@ const COPY = {
         level: "mechanistic",
         detail: "Al³⁺ toimii hydroksiapatiittikiteiden ydintymisagenttina. Pineaalirauhasessa tämä kiihdyttää kalsifikaatiota → vähentää melatoniinin tuotantoa → häiritsee vuorokausirytmiä → heikentää uniriippuvaista GABA:n palautumista. Tämä kytkeytyy Walkerin uniketjun takaisinkytkentäsilmukkaan.",
         synergy: "EMF → oksidatiivinen stressi → Ca²⁺-kertymä + Al³⁺-ydintyminen → kiihtynyt PGC → melatoniini↓",
-        ref: "[[ref:pgc2025_fluoride|PGC 2025 fluoridi]], [[ref:pgc2026_convergent|PGC 2026 konvergentti]]",
+        ref: "[[ref:pgc2025_fluoride|PGC 2025 fluoridi]], [[ref:pgc2026_convergent|PGC 2026 yhdensuuntainen]]",
       },
       {
         symbol: "F⁻",
@@ -215,15 +215,15 @@ const COPY = {
         mechanism: "Edistää pineaalisen kalsifikaation ja häiritsee Ca²⁺-homeostaasia",
         evidence: "Pineaalirauhanen kerää enemmän F⁻:ia kuin mikään muu pehmytkudos; F⁻-pitoisuus korreloi PGC-asteen kanssa",
         level: "confirmed",
-        detail: "Pineaalirauhanen kerää fluoridia pitoisuuksiin jotka ylittävät luukudoksen. Fluoridi korvaa hydroksiryhmät hydroksiapatiitissa muodostaen fluorapatiittia — termodynaamisesti stabiilimpi, vaikeampi resorboida. Tämä tekee pineaalisesta kalsifikaatiosta progressiivisen ja olennaisesti palautumattoman. Melatoniinia suppressoiva vaikutus kumuloituu vuosikymmenten kuluessa.",
-        synergy: "F⁻ tekee PGC:stä palautumattoman + EMF suppressoi jäljellä olevaa melatoniinin tuotantoa → pysyvä vuorokausirytmin häiriö",
+        detail: "Pineaalirauhanen kerää fluoridia pitoisuuksiin jotka ylittävät luukudoksen. Fluoridi korvaa hydroksiryhmät hydroksiapatiitissa muodostaen fluorapatiittia — termodynaamisesti stabiilimpi, vaikeampi resorboida. Tämä tekee pineaalisesta kalsifikaatiosta etenevän ja olennaisesti palautumattoman. Melatoniinia suppressoiva vaikutus kumuloituu vuosikymmenten kuluessa.",
+        synergy: "F⁻ tekee PGC:stä palautumattoman + EMF vaimentaa jäljellä olevaa melatoniinin tuotantoa → pysyvä vuorokausirytmin häiriö",
         ref: "[[ref:pgc2025_fluoride|PGC 2025 fluoridi]]",
       },
     ],
 
     pgcTitle: "Pineaalisen kalsifikaation spiraali",
     pgcLead:
-      "Pineaalirauhasen kalsifikaatio (PGC) on kohta jossa raskasmetallit, fluoridi ja EMF konvergoivat yhteen anatomiseen rakenteeseen. Tuloksena on itseään vahvistava melatoniinin menetyksen spiraali.",
+      "Pineaalirauhasen kalsifikaatio (PGC) on kohta jossa raskasmetallit, fluoridi ja EMF yhtyvät yhteen anatomiseen rakenteeseen. Tuloksena on itseään vahvistava melatoniinin menetyksen spiraali.",
     pgcSteps: [
       { step: "EMF → oksidatiivinen stressi pineaalirauhasessa", detail: "Pinealosyytit ovat metabolisesti aktiivisia ja EMF-herkkiä. Oksidatiivinen stressi vahingoittaa solukalvoja ja edistää Ca²⁺/PO₄-kertymistä." },
       { step: "Ca²⁺ + PO₄ → hydroksiapatiittikiteet muodostuvat", detail: "Alkuvaiheen kalsifikaatio luo ydintymiskohtia lisäkiteiden kasvulle." },
@@ -233,11 +233,11 @@ const COPY = {
       { step: "Melatoniini↓ → antioksidanttipuolustus↓ → LISÄÄ oksidatiivista stressiä", detail: "Melatoniini on voimakas antioksidantti. Sen menetys poistaa suojan kalsifikaation aiheuttanutta oksidatiivista stressiä vastaan → positiivinen takaisinkytkentä." },
       { step: "Melatoniini↓ → uni↓ → GABA↓ → Q↑", detail: "Tämä kytkeytyy Walkerin uniketjuun (takaisinkytkentäsilmukka 4). Spiraali syöttää resonanssimalliin." },
     ],
-    pgcCorrelation: "Kliininen evidenssi: Alzheimerin taudin potilailla on 76 % PGC-esiintyvyys vs. 64 % ikävakioiduilla kontrolleilla. Unettomuuspotilailla on korkeampi PGC-aste suoralla korrelaatiolla melatoniinin vähenemiseen.",
+    pgcCorrelation: "Kliininen näyttö: Alzheimerin taudin potilailla on 76 % PGC-esiintyvyys vs. 64 % ikävakioiduilla kontrolleilla. Unettomuuspotilailla on korkeampi PGC-aste suoralla korrelaatiolla melatoniinin vähenemiseen.",
     pgcRefs: "[[ref:mahlberg2006_pgc_ad|Mahlberg 2006 (AD)]], [[ref:kunz2008_pgc_insomnia|Kunz 2008 (unettomuus)]], [[ref:intechopen2020_melatonin_heart|Intechopen 2020 (melatoniini-sydän)]]",
 
-    convergenceTitle: "Kolminkertainen konvergenssi",
-    convergenceLead: "Kolme itsenäistä altistusreittiä konvergoivat samoihin molekyylitason kohteisiin:",
+    convergenceTitle: "Kolminkertainen yhdentyminen",
+    convergenceLead: "Kolme itsenäistä altistusreittiä yhtyvät samoihin molekyylitason kohteisiin:",
     convergenceRows: [
       {
         exposure: "EMF (RF/ELF)",
@@ -258,16 +258,16 @@ const COPY = {
         population: "Vesi + ruoka + rokotteet",
       },
     ],
-    convergenceConclusion: "MIKÄ TAHANSA yksittäinen altistus tuottaa mitattavia vaikutuksia. Synergia on siinä, että jokainen POTENTIOI toisia: EMF avaa kanavia raskasmetalleille, raskasmetallit korruptoivat signaloinnin joka kompensoisi EMF:ää, ja kalsifikaatioagentit tuhoavat melatoniinijärjestelmän joka tarjoaa yöllisen palautumisen. Kysymys ei ole siitä, ovatko yksittäiset mekanismit olemassa — jokainen on verifioitu itsenäisesti — vaan tuottaako niiden konvergenssi nykyisissä populaatioissa emergenttejä haittoja jotka ylittävät osien summan.",
+    convergenceConclusion: "MIKÄ TAHANSA yksittäinen altistus tuottaa mitattavia vaikutuksia. Synergia on siinä, että jokainen POTENTIOI toisia: EMF avaa kanavia raskasmetalleille, raskasmetallit korruptoivat signaloinnin joka kompensoisi EMF:ää, ja kalsifikaatioagentit tuhoavat melatoniinijärjestelmän joka tarjoaa yöllisen palautumisen. Kysymys ei ole siitä, ovatko yksittäiset mekanismit olemassa — jokainen on todennettu itsenäisesti — vaan tuottaako niiden yhdentyminen nykyisissä populaatioissa emergenttejä haittoja jotka ylittävät osien summan.",
 
     shiftworkTitle: "Vuorotyö luonnollisena koeasetelmana",
     shiftworkLead: "Vuorotyöntekijät tarjoavat luonnollisen koeasetelman PGC → melatoniini → terveys -reitille.",
     shiftworkPoints: [
-      "Krooninen valo yöllä suppressoi melatoniinia retinohypotalaamisen reitin kautta",
+      "Krooninen valo yöllä vaimentaa melatoniinia retinohypotalaamisen reitin kautta",
       "Vuorotyöntekijöillä korkeampi syöpäriski (IARC ryhmä 2A karsinogeeni), sydän- ja verisuonitauti, metabolinen oireyhtymä ja kognitiivinen heikkeneminen",
-      "Nämä ovat SAMAT tilat jotka BERM ennustaa EMF → melatoniinisuppressiosta",
+      "Nämä ovat SAMAT tilat jotka BERM ennustaa EMF → melatoniinivaimennuksesta",
       "Reitti on sama (melatoniini↓); vain syöte eroaa (valo vs. EMF + PGC)",
-      "Booker 2024: vuorotyöepidemiologia vahvistaa kroonisen melatoniinisuppression terveysvaikutukset",
+      "Booker 2024: vuorotyöepidemiologia vahvistaa kroonisen melatoniinivaimennuksen terveysvaikutukset",
     ],
 
     breastmilkTitle: "Melatoniini rintamaidossa",

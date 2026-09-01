@@ -46,7 +46,7 @@ const COPY = {
     rfMechSub: "Melatoniini-\nsuppressio",
     capacity: "Lisääntymis-\nkapasiteetti",
     tfr: "TFR",
-    footer: "Matkapuhelinliittymätiheys on yhdistelmäproksi koko sähkömagneettiselle ympäristölle. Malli jäljittää kolme itsenäistä kanavaa — ELF (sähköverkko, valaistus), IF (kytkentäelektroniikka, LED-väkyntä), RF (tukiasemat, Wi-Fi, tutka) — kryptokromi-melatoniinisignaloinnin, kalsiumioni-influksin kalvojännitteen kautta ja pariutumisen lisääntymiskapasiteettiin.",
+    footer: "Matkapuhelinliittymätiheys on yhdistelmäproksi koko sähkömagneettiselle ympäristölle. Malli jäljittää kolme itsenäistä kanavaa — ELF (sähköverkko, valaistus), IF (kytkentäelektroniikka, LED-väkyntä), RF (tukiasemat, Wi-Fi, tutka) — kryptokromi-melatoniinisignaloinnin, kalsiumioni-sisäänvirtauksen kalvojännitteen kautta ja pariutumisen lisääntymiskapasiteettiin.",
     ariaLabel: "Kolmikanavamekanismi",
   },
   ja: {

@@ -416,10 +416,10 @@ function TfrRiseTest() {
       <rect x={xPos(2020, 2014, 2024)} y={PAD.top} width={xPos(2023, 2014, 2024) - xPos(2020, 2014, 2024)} height={CH} fill={`${C.solar}11`} rx={3} />
       <text x={xPos(2021.5, 2014, 2024)} y={PAD.top + 14} textAnchor="middle" fontSize={8} fill={C.solar}>SC25 ramp</text>
       {/* Legend */}
-      <line x1={PAD.left + CW - 100} x2={PAD.left + CW - 80} y1={PAD.top + 8} y2={PAD.top + 8} stroke={C.cbr} strokeWidth={2} />
-      <text x={PAD.left + CW - 76} y={PAD.top + 12} fontSize={8} fill={C.text}>TFR</text>
-      <line x1={PAD.left + CW - 100} x2={PAD.left + CW - 80} y1={PAD.top + 22} y2={PAD.top + 22} stroke={C.solar} strokeWidth={2} strokeDasharray="5,3" />
-      <text x={PAD.left + CW - 76} y={PAD.top + 26} fontSize={8} fill={C.text}>SSN</text>
+      <line x1={PAD.left + 8} x2={PAD.left + 28} y1={PAD.top + 8} y2={PAD.top + 8} stroke={C.cbr} strokeWidth={2} />
+      <text x={PAD.left + 32} y={PAD.top + 12} fontSize={8} fill={C.text}>TFR</text>
+      <line x1={PAD.left + 8} x2={PAD.left + 28} y1={PAD.top + 22} y2={PAD.top + 22} stroke={C.solar} strokeWidth={2} strokeDasharray="5,3" />
+      <text x={PAD.left + 32} y={PAD.top + 26} fontSize={8} fill={C.text}>SSN</text>
       {/* Axes */}
       <XLabels ticks={[2015, 2017, 2019, 2021, 2023]} lo={2014} hi={2024} />
       <YLabels ticks={[1.6, 1.7, 1.8, 1.9]} lo={tfrLo} hi={tfrHi} fmt={(v) => v.toFixed(1)} />
@@ -492,9 +492,9 @@ function SuperposedEpoch() {
    ═══════════════════════════════════════════════════════════════════════ */
 export function SolarStatCharts() {
   return (
-    <div className="mt-8 max-w-4xl">
+    <div className="mt-8 max-w-6xl">
       <h3 className="text-sm font-semibold text-foreground mb-4">Statistical visualizations</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {[
           { id: "periodogram", el: <Periodogram /> },
           { id: "bandpass", el: <BandpassCorrelation /> },
@@ -505,8 +505,10 @@ export function SolarStatCharts() {
           { id: "tfr-rise", el: <TfrRiseTest /> },
           { id: "superposed", el: <SuperposedEpoch /> },
         ].map((chart) => (
-          <div key={chart.id} className="rounded-lg border border-card-border bg-card-bg p-3 overflow-hidden">
-            {chart.el}
+          <div key={chart.id} className="rounded-lg border border-card-border bg-card-bg p-3">
+            <div className="chart-scroll [&>svg]:min-w-[400px]">
+              {chart.el}
+            </div>
           </div>
         ))}
       </div>

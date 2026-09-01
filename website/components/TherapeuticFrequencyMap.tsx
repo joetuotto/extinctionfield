@@ -60,7 +60,7 @@ const DEVICES: Device[] = [
     freqMax: 0.1,
     freqLabel: "DC",
     mechanismEn: "0.3–1.0 V/m modulates cortical excitability",
-    mechanismFi: "0,3–1,0 V/m moduloi kortikaalista eksitabiliteettia",
+    mechanismFi: "0,3–1,0 V/m säätelee kortikaalista eksitabiliteettia",
     mechanismJa: "0.3-1.0 V/mが皮質興奮性を調節",
     mechanismFr: "0,3–1,0 V/m module l'excitabilité corticale",
     mechanismKo: "0.3-1.0 V/m이 피질 흥분성을 조절",
@@ -187,7 +187,7 @@ const DEVICES: Device[] = [
     freqMax: 185,
     freqLabel: "130–185 Hz",
     mechanismEn: "Electrical pulses modulate basal ganglia circuits",
-    mechanismFi: "Sähköpulssit moduloivat tyvitumakkeiden piirejä",
+    mechanismFi: "Sähköpulssit säätelevät tyvitumakkeiden piirejä",
     mechanismJa: "電気パルスが基底核回路を調節",
     mechanismFr: "Les impulsions électriques modulent les circuits des ganglions de la base",
     mechanismKo: "전기 펄스가 기저핵 회로를 조절",
@@ -229,7 +229,7 @@ const DEVICES: Device[] = [
     freqMax: 1200,
     freqLabel: "2–1200 Hz",
     mechanismEn: "Dorsal column stimulation modulates pain signaling",
-    mechanismFi: "Dorsaalikolumnan stimulaatio moduloi kipusignalointia",
+    mechanismFi: "Dorsaalikolumnan stimulaatio säätelee kipusignalointia",
     mechanismJa: "後索刺激が疼痛シグナリングを調節",
     mechanismFr: "La stimulation de la colonne dorsale module la signalisation de la douleur",
     mechanismKo: "후주 자극이 통증 신호를 조절",
@@ -250,7 +250,7 @@ const DEVICES: Device[] = [
     freqMax: 1,
     freqLabel: "0.5 Hz",
     mechanismEn: "Microcurrent pulses modulate brainstem neurotransmitters",
-    mechanismFi: "Mikrovirtapulssit moduloivat aivorungon välittäjäaineita",
+    mechanismFi: "Mikrovirtapulssit säätelevät aivorungon välittäjäaineita",
     mechanismJa: "微小電流パルスが脳幹の神経伝達物質を調節",
     mechanismFr: "Les micropulsions modulent les neurotransmetteurs du tronc cérébral",
     mechanismKo: "미세전류 펄스가 뇌간 신경전달물질을 조절",
@@ -785,7 +785,7 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
             const y = barY + barH - h;
             const isSelected = selectedBand === band.id;
             return (
-              <g key={band.id} tabIndex={0} role="button" style={{ cursor: "pointer" }} onClick={() => { setSelectedBand(isSelected ? null : band.id); setSelectedDevice(null); }} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedBand(isSelected ? null : band.id); setSelectedDevice(null); } }}>
+              <g key={band.id} tabIndex={0} role="button" className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" style={{ cursor: "pointer" }} onClick={() => { setSelectedBand(isSelected ? null : band.id); setSelectedDevice(null); }} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedBand(isSelected ? null : band.id); setSelectedDevice(null); } }}>
                 <rect x={x1} y={y} width={x2 - x1} height={h} rx={4} fill={band.color} opacity={isSelected ? 0.96 : 0.76} stroke={isSelected ? "var(--foreground)" : "var(--figure-bg)"} strokeWidth={isSelected ? 2 : 1} />
                 <text x={(x1 + x2) / 2} y={y - 4} fill="var(--foreground)" fontSize={10} fontWeight="700" textAnchor="middle" fontFamily="ui-monospace, monospace">
                   {band.count}
@@ -926,7 +926,7 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
       )}
 
       {/* Grouped table */}
-      <div className="mt-6 overflow-x-auto">
+      <div className="mt-6 chart-scroll">
         {(["dc", "elf", "if", "hf", "optical"] as const).map((bandId) => {
           const bandDevices = DEVICES.filter((dev) => dev.band === bandId);
           const bl = BAND_LABELS[bandId];
@@ -935,7 +935,7 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
           return (
             <div key={bandId} className={`mb-4 ${isExpanded ? "" : "opacity-40"}`}>
               <button
-                className="flex items-center gap-2 mb-1 text-xs font-semibold uppercase tracking-wider cursor-pointer hover:opacity-80"
+                className="flex items-center gap-2 mb-1 rounded-sm text-xs font-semibold uppercase tracking-wider cursor-pointer hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 onClick={() => { setSelectedBand(selectedBand === bandId ? null : bandId); setSelectedDevice(null); }}
               >
                 <span className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: bandColor }} />
@@ -943,7 +943,7 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
                 <span className="font-mono-num text-foreground-muted">({bandDevices.length})</span>
               </button>
               {isExpanded && (
-                <table className="w-full text-xs border-collapse">
+                <table className="w-full min-w-[720px] text-xs border-collapse">
                   <thead>
                     <tr className="border-b border-card-border">
                       <th className="text-left py-1 pr-3 font-semibold text-foreground-muted">{d.freq}</th>
@@ -958,7 +958,7 @@ export function TherapeuticFrequencyMap({ locale }: { locale: string }) {
                       <tr
                         key={dev.id}
                         tabIndex={0}
-                        className={`border-b border-card-border/50 cursor-pointer ${selectedDevice?.id === dev.id ? "bg-accent/10" : "hover:bg-card-bg"}`}
+                        className={`border-b border-card-border/50 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-accent ${selectedDevice?.id === dev.id ? "bg-accent/10" : "hover:bg-card-bg"}`}
                         onClick={() => setSelectedDevice(selectedDevice?.id === dev.id ? null : dev)}
                         onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedDevice(selectedDevice?.id === dev.id ? null : dev); } }}
                       >

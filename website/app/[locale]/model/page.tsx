@@ -11,6 +11,8 @@ import { CHAIN_EPISTEMIC_COLORS } from "@/lib/epistemicConstants";
 import type { EpistemicLevel } from "@/lib/types";
 import { VGCCGeneFamilyDiagram } from "@/components/VGCCGeneFamilyDiagram";
 import { ThresholdChart } from "@/components/ThresholdChart";
+import { ThreeBiologicalBands } from "@/components/ThreeBiologicalBands";
+import { TwoSusceptibilities } from "@/components/TwoSusceptibilities";
 import { SixFactorSummary } from "@/components/SixFactorSummary";
 import { CaMKIIConvergenceDiagram } from "@/components/CaMKIIConvergenceDiagram";
 import { CitationLink } from "@/components/CitationLink";
@@ -73,6 +75,59 @@ const t = {
     solarBioDampenTitle: "Seasonal amplitude dampening",
     solarBioDampenDesc: "In Greece between 1960 and 1992, the seasonal amplitude of birth rates progressively decreased — the difference between peak and trough months shrank by over 50%. This period coincides with Greece's rapid electrification and urbanization. The natural geomagnetic seasonal signal (which drives the birth seasonality via melatonin and photoperiod) was progressively masked by anthropogenic EMF, which provides a constant, season-independent χ perturbation ([[ref:lerchl1998_birth_seasonality|Lerchl 1998]]).",
     solarBioDampenNote: "Prediction: countries with later electrification should show later onset of seasonal dampening. Countries with recent rapid electrification (sub-Saharan Africa) should currently be in the dampening phase.",
+
+    threeBandsTitle: "Three Biological Frequency Bands",
+    threeBandsSub: "ULF · ELF · RF — natural and anthropogenic sources mapped to BERM pathways",
+    threeBandsLead: "Biological systems interact with electromagnetic fields across three distinct frequency bands, each with different physical mechanisms and biological targets.",
+    twoSuscTitle: "Two Susceptibility Functions",
+    twoSuscSub: "χ(Ā) geometric + χ_B spin-chemical",
+    twoSuscLead: "BERM identifies two independent susceptibility functions that together determine biological sensitivity to electromagnetic perturbation.",
+
+    bioCivTitle: "From Biology to Civilization",
+    bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
+    bioCivLead: "BERM's causal logic does not stop at hormone levels or sperm counts. The same perturbation that opens a calcium channel in a Leydig cell propagates upward through behavior, family formation, institutional capacity, and civilizational dynamics. The chain below traces this propagation from step 0 (geometric background) to step 10 (civilizational outcome). Each step is independently documented elsewhere in the model; this section shows how they connect into a single unbroken sequence.",
+    bioCivChain: [
+      { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
+      { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
+      { step: 2, title: "VGCC activation", desc: "Voltage-gated calcium channels — especially T-type (Cav3) at bifurcation point — respond to field perturbation via Schwan amplification" },
+      { step: 3, title: "Ca²⁺ cascade", desc: "Intracellular calcium signaling disrupted: CaMKII activation, mitochondrial ROS, NF-κB inflammatory pathway" },
+      { step: 4, title: "Hormone disruption", desc: "Testosterone, estrogen, melatonin, oxytocin, cortisol, and BDNF affected through Ca²⁺-dependent steroidogenic and neuroendocrine pathways" },
+      { step: 5, title: "Individual behavior", desc: "Risk tolerance, social bonding, sleep architecture, cognition, and motivation shift as neuroendocrine substrates change" },
+      { step: 6, title: "Family formation", desc: "Both fertility desire (behavioral) and biological capacity (physiological) decline — the two-level collapse" },
+      { step: 7, title: "Institutional capacity", desc: "Collective action, strategic planning, and institutional assertiveness weaken as the population’s hormonal and cognitive substrate degrades" },
+      { step: 8, title: "Civilizational dynamics", desc: "The behavioral aggregate produces the patterns historians observe: stagnation, risk-aversion, institutional sclerosis" },
+      { step: 9, title: "Migration gradient", desc: "Biological contrast between EM-depleted and EM-intact populations creates demographic pressure gradients" },
+      { step: 10, title: "Cycle or convergence", desc: "Recovery if EM burden lifts (the α term), or permanent convergence as anthropogenic saturation (σ) masks the solar recovery window" },
+    ],
+    bioCivFormulaTitle: "BioCap integral",
+    bioCivFormulaDesc: "The cumulative biological capacity of a population is formalized as the BioCap integral — a running balance between depletion (first integral) and recovery (second integral):",
+    bioCivFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ)+U(τ)+E(τ)]dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)]dτ",
+    bioCivFormulaTerms: [
+      { symbol: "S(τ)", desc: "Normalized solar activity (drives natural geomagnetic perturbation)" },
+      { symbol: "U(τ)", desc: "Urbanization-weighted EMF exposure (population density × infrastructure)" },
+      { symbol: "E(τ)", desc: "Electrification-weighted exposure (grid density × per-capita consumption)" },
+      { symbol: "χ(λ)", desc: "Latitude-dependent susceptibility (geomagnetic field strength varies with latitude)" },
+      { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
+      { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
+    ],
+    bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework’s logic, not a fitted equation with empirical coefficients.",
+
+    hormesisTitle: "Hormetic dose-response extension",
+    hormesisDesc: "The recovery term α in the BioCap integral assumes a constant repair rate. The hormetic extension replaces α with a dose-dependent function h(Ā, δA) that captures three distinct biological zones:",
+    hormesisFormula: "h(Ā, δA) = { +α·δA  if Ā < Ā_crit (Zone 1: stimulation); α·δA·e^(−β·(Ā−Ā_crit))  if Ā_crit ≤ Ā ≤ Ā_sat (Zone 2: transition); −γ·Ā  if Ā > Ā_sat (Zone 3: damage only) }",
+    hormesisTerms: [
+      { symbol: "Ā", desc: "Mean cumulative EM exposure (integrated over population lifetime)" },
+      { symbol: "δA", desc: "Exposure variability (amplitude of fluctuation around mean)" },
+      { symbol: "Ā_crit", desc: "Critical threshold — below this, low-dose stress activates repair systems" },
+      { symbol: "Ā_sat", desc: "Saturation threshold — above this, repair systems are overwhelmed" },
+      { symbol: "α", desc: "Hormetic stimulation coefficient (biological repair activation rate)" },
+      { symbol: "β", desc: "Transition decay rate (how rapidly stimulation fades above Ā_crit)" },
+      { symbol: "γ", desc: "Damage coefficient (net biological depletion rate at high exposure)" },
+    ],
+    hormesisZone1: "Zone 1 (Stimulation): Low EM exposure activates DNA repair, mitochondrial biogenesis, immune enhancement, and hormonal optimization. Populations in this zone maintain high biological capacity.",
+    hormesisZone2: "Zone 2 (Transition): Repair systems still function but with exponentially declining efficiency. The population shows mixed biomarkers — some activation, some suppression.",
+    hormesisZone3: "Zone 3 (Damage): Repair systems are overwhelmed. Net biological depletion dominates. This is the zone most industrialized populations occupy post-electrification.",
+    hormesisEpistemic: "",
 
     archTitle: "Three-level architecture",
     archDesc:
@@ -422,9 +477,9 @@ const t = {
     dualBarrierSubtitle: "BBB + gut barrier share ZO-1, occludin, claudins",
     dualBarrierBody: "The blood-brain barrier and intestinal epithelial barrier share the same tight junction proteins: ZO-1, occludin, and claudins. Melatonin protects both barriers. EMF→melatonin↓ creates simultaneous dual vulnerability: BBB opens (heavy metals enter brain) AND gut barrier weakens (LPS enters bloodstream → neuroinflammation). This is not two separate effects — it is one mechanism (melatonin loss) attacking two barriers built from the same molecular toolkit.",
 
-    hormesisTitle: "BDNF hormesis: frequency determines direction",
-    hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — same pathway, opposite outcomes",
-    hormesisBody: "BDNF (brain-derived neurotrophic factor) is essential for neuroplasticity, memory, and neurogenesis. RF-EMF (835–2650 MHz) reduces BDNF in hippocampus with dendritic spine loss and cognitive impairment. Meanwhile, ELF (50 Hz) INCREASES BDNF and promotes neurogenesis. This is frequency-dependent hormesis via the same VGCC pathway. TTFields validation: 200 kHz intermediate frequency increases NK cell cytotoxicity while 50 Hz ELF suppresses it. The Lindgren χ-parameter predicts these directional differences — different resonance conditions at different frequencies produce opposite biological outcomes.",
+    bdnfHormesisTitle: "BDNF hormesis: frequency determines direction",
+    bdnfHormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — same pathway, opposite outcomes",
+    bdnfHormesisBody: "BDNF (brain-derived neurotrophic factor) is essential for neuroplasticity, memory, and neurogenesis. RF-EMF (835–2650 MHz) reduces BDNF in hippocampus with dendritic spine loss and cognitive impairment. Meanwhile, ELF (50 Hz) INCREASES BDNF and promotes neurogenesis. This is frequency-dependent hormesis via the same VGCC pathway. TTFields validation: 200 kHz intermediate frequency increases NK cell cytotoxicity while 50 Hz ELF suppresses it. The Lindgren χ-parameter predicts these directional differences — different resonance conditions at different frequencies produce opposite biological outcomes.",
 
     agingSpiralTitle: "Aging Spiral: Melatonin as Anti-Aging Molecule",
     agingSpiralSub: "EMF → melatonin↓ → telomerase↓ + SIRT1↓ → accelerated aging (depression = 7 years)",
@@ -883,13 +938,13 @@ const t = {
     physBioChiTitle: "χ(Ā)-valintasääntö",
     physBioChiDesc: "Metriikkalaajennus implikoi valintasäännön: biologinen herkkyys EM-häiriölle riippuu taustakentästä Ā. Kun tausta puuttuu, häiriöllä ei ole geometrista substraattia — χ → 0. Kun tausta on läsnä, häiriö muuttaa olemassa olevaa geometriaa — χ → 1. Tämä ei ole vapaa parametri; se on metrisen ansatzin rakenteellinen seuraus.",
     physBioChiFormula: "χ(Ā) = Ā / (Ā + K)",
-    physBioChiExplain: "Tämä saturaatiokäyrä esiintyy jokaisella biologisella skaalalla: molekulaarinen (CRY vaatii geomagneettisen taustan radikaaliparin kemialle), solujen (VGCC-porttaus vaatii kalvopotentiaalin taustaksi), elin (BBB-eheys moduloi efektiivistä kenttäläpäisyä), populaatio (sähköistysaste moduloi teknologia-altistusta). Sama matemaattinen muoto, viisi instanssia — katso χ viidellä skaalalla alla.",
+    physBioChiExplain: "Tämä saturaatiokäyrä esiintyy jokaisella biologisella skaalalla: molekulaarinen (CRY vaatii geomagneettisen taustan radikaaliparin kemialle), solujen (VGCC-porttaus vaatii kalvopotentiaalin taustaksi), elin (BBB-eheys säätelee efektiivistä kenttäläpäisyä), populaatio (sähköistysaste säätelee teknologia-altistusta). Sama matemaattinen muoto, viisi instanssia — katso χ viidellä skaalalla alla.",
     physBioSuperTitle: "Superpositiorikkomus",
     physBioSuperDesc: "Standardisähkömagnetismissa kentät summautuvat lineaarisesti: E_total = E₁ + E₂ (superpositioperiaate). Geometrisessa mallissa, koska EM-kenttä on metriikassa, vaste on perustavanlaatuisesti epälineaarinen. Kahden samanaikaisen lähteen biologinen vaikutus EI OLE niiden yksittäisten vaikutusten summa.",
     physBioSuperFormula: "R(A₁ + A₂) ≠ R(A₁) + R(A₂)",
     physBioSuperExplain: "Tämä ratkaisee keskeisen pulman EMF-biovaikutustutkimuksessa: miksi monitaajuiset altistukset (tosielämän olosuhteet) tuottavat vaikutuksia, joita yksitaajuiset laboratoriotutkimukset eivät havaitse? 172 tutkimuksen systemaattinen katsaus vahvistaa, että yhdistetyt altistukset tuottavat vaikutuksia, jotka eroavat laadullisesti yksittäisten altistusten summasta ([[ref:juutilainen2006_superposition|Juutilainen ym. 2006]]). Katso täydellinen superpositioanalyysi.",
     physBioSuperLink: "Katso täydellinen superpositioanalyysi →",
-    physBioTissueTitle: "Kudosspesifinen resonanssi",
+    physBioTissueTitle: "Kudostarkka resonanssi",
     physBioTissueDesc: "Geometrinen malli ennustaa, että eri kudoksilla on erilainen herkkyys EM-häiriöille, ionikanavakoostumuksen, kalvo-ominaisuuksien ja resonanssitaajuuksien perusteella. Tämä ei ole oletus — se seuraa χ(Ā)-valintasäännöstä kudosspesifisiin taustoihin sovellettuna:",
     physBioTissues: [
       { tissue: "Kivekset (Leydigin solut)", channels: "Cav3.2 (T-tyyppi), korkea tiheys", chi: "Erittäin korkea", reason: "Ikkunavirta levossa; StAR-proteiini Ca²⁺-riippuvainen" },
@@ -899,8 +954,8 @@ const t = {
       { tissue: "SA-solmuke (sydän)", channels: "Cav1.3, Cav3.1", chi: "Kohtalaisen korkea", reason: "Tahdistinvirta; matalan kynnyksen aktivaatio" },
       { tissue: "Luurankolihas", channels: "Cav1.2 (L-tyyppi)", chi: "Matala levossa", reason: "Korkea aktivaatiokynnys (−30 mV); merkittävä vain aktiopotentiaalien aikana" },
     ],
-    physBioVerifyTitle: "Geometrisen ennusteen verifioinnit",
-    physBioVerifySub: "Neljä itsenäistä todistuslinjaa vahvistaa, että geomagneettinen tausta moduloi biologista herkkyyttä",
+    physBioVerifyTitle: "Geometrisen ennusteen todentamiset",
+    physBioVerifySub: "Neljä itsenäistä todistuslinjaa vahvistaa, että geomagneettinen tausta säätelee biologista herkkyyttä",
     physBioVerifications: [
       { id: "V1", title: "Geomagneettinen kuolleisuus (263 kaupunkia)", desc: "Sydän- ja verisuonikuolleisuus korreloi geomagneettisten myrskyjen voimakkuuden kanssa 263 kaupungissa maailmanlaajuisesti. Geomagneettisten myrskyjen aikana (Kp ≥ 5) taustakenttä Ā häiriintyy, χ kasvaa — ja kuolleisuus nousee 10–15 % 1–3 päivässä ([[ref:vencloviene2022_geomag_mortality|Venclovienė ym. 2022]]).", level: "E" },
       { id: "V2", title: "Leveysaste × sydäntaudit (204 maata)", desc: "Sydän- ja verisuonitautien esiintyvyys vaihtelee systemaattisesti geomagneettisen leveysasteen mukaan 204 maassa. Korkeampi geomagneettisen kentän intensiteetti (napojen lähellä) → korkeampi χ → vahvempi biologinen kytkentä ihmisen aiheuttamiin EMF-häiriöihin ([[ref:feigin2014_latitude_cvd|Feigin ym. 2014]]).", level: "M|C" },
@@ -910,9 +965,9 @@ const t = {
 
     solarBioTitle: "Aurinko-biologinen yhteys",
     solarBioSub: "Auringon syklin modulaatio syntyvyyteen, sairausriskiin ja kausihedelmällisyyteen — geomagneettinen χ toiminnassa",
-    solarBioLead: "Jos geomagneettinen taustakenttä moduloi biologista herkkyyttä (χ), aurinkoaktiivisuuden — joka häiritsee geomagneettista kenttää 11 vuoden syklillä — pitäisi tuottaa mitattavia biologisia oskillaatioita. Kolme itsenäistä aineistoa vahvistaa tämän ennusteen.",
+    solarBioLead: "Jos geomagneettinen taustakenttä säätelee biologista herkkyyttä (χ), aurinkoaktiivisuuden — joka häiritsee geomagneettista kenttää 11 vuoden syklillä — pitäisi tuottaa mitattavia biologisia oskillaatioita. Kolme itsenäistä aineistoa vahvistaa tämän ennusteen.",
     solarBioCycleTitle: "Auringon sykli → syntyvyyden syklisyys",
-    solarBioCycleDesc: "Syntyvyysluvut Yhdysvalloissa ja Uudessa-Seelannissa osoittavat 11 vuoden oskillaatiota, joka on vaihelukittu auringon sykliin. Kuvio on tunnistettu itsenäisesti 7 maantieteellisessä alueessa molemmilla pallonpuoliskoilla. Auringon maksimien aikana geomagneettinen häiriö kasvaa, χ nousee ja hedelmöittymisluvut muuttuvat mitattavasti ([[ref:lehrer2017_solar_births|Lehrer & Lehrer 2017]]).",
+    solarBioCycleDesc: "Syntyvyysluvut Yhdysvalloissa ja Uudessa-Seelannissa osoittavat 11 vuoden vaihtelua, joka on vaihelukittu auringon sykliin. Kuvio on tunnistettu itsenäisesti 7 maantieteellisessä alueessa molemmilla pallonpuoliskoilla. Auringon maksimien aikana geomagneettinen häiriö kasvaa, χ nousee ja hedelmöittymisluvut muuttuvat mitattavasti ([[ref:lehrer2017_solar_births|Lehrer & Lehrer 2017]]).",
     solarBioCycleNote: "Mekanismi on yhteensopiva BERMin melatoniinireitin kanssa: aurinkoaktiivisuus → geomagneettiset myrskyt → melatoniinin suppressio → GnRH-pulssihäiriö → hedelmöittymisluvun modulaatio. 11 vuoden sykli tarjoaa luonnollisen kokeen, joka erottaa geomagneettiset vaikutukset ihmisen aiheuttamasta EMF:stä.",
     solarBioBirthTitle: "Syntymäajankohta → sairausriski",
     solarBioBirthDesc: "237 000 potilaan kohortissa syntymäkuukausi ennustaa elinikäistä sairausriskiä useille sairauksille. Geomagneettisesti aktiivisina kuukausina syntyneet henkilöt osoittavat kohonnutta sydän-, neurologista ja lisääntymissairausriskiä ([[ref:boland2015_birth_month|Boland ym. 2015]]). Vaikutus on yhteensopiva prenataalisen χ-modulaation kanssa: geomagneettinen ympäristö kriittisten kehitysikkunoiden aikana jättää pysyvän fysiologisen herkkyyden.",
@@ -920,6 +975,59 @@ const t = {
     solarBioDampenTitle: "Kausiamplitudin vaimeneminen",
     solarBioDampenDesc: "Kreikassa vuosina 1960–1992 syntyvyyslukujen kausivaihtelu väheni asteittain — huippu- ja pohjakuukausien välinen ero pieneni yli 50 %. Tämä ajanjakso osuu yhteen Kreikan nopean sähköistymisen ja kaupungistumisen kanssa. Luonnollinen geomagneettinen kausisignaali (joka ohjaa syntyvyyden kausivaihtelua melatoniinin ja valojakson kautta) peittyi asteittain ihmisen aiheuttamaan EMF:ään, joka tarjoaa jatkuvan, kaudesta riippumattoman χ-häiriön ([[ref:lerchl1998_birth_seasonality|Lerchl 1998]]).",
     solarBioDampenNote: "Ennuste: myöhemmin sähköistyneiden maiden pitäisi osoittaa myöhempää kausivaimenemisen alkamista. Äskettäin nopeasti sähköistyneet maat (Saharan eteläpuolinen Afrikka) ovat todennäköisesti parhaillaan vaimenemisen vaiheessa.",
+
+    threeBandsTitle: "Kolme biologista taajuuskaistaa",
+    threeBandsSub: "ULF · ELF · RF — luonnolliset ja antropogeeniset lähteet kartoitettu BERM-poluille",
+    threeBandsLead: "Biologiset järjestelmät vuorovaikuttavat sähkömagneettisten kenttien kanssa kolmella erillisellä taajuuskaistalla, joista kullakin on eri fysikaaliset mekanismit ja biologiset kohteet.",
+    twoSuscTitle: "Kaksi herkkyysfunktiota",
+    twoSuscSub: "χ(Ā) geometrinen + χ_B spin-kemiallinen",
+    twoSuscLead: "BERM tunnistaa kaksi itsenäistä herkkyysfunktiota jotka yhdessä määrittävät biologisen herkkyyden sähkömagneettiselle perturbaatiolle.",
+
+    bioCivTitle: "Biologiasta sivilisaatioon",
+    bioCivSub: "10-vaiheinen kausaaliketju molekyylitason EMF-vaikutuksista sivilisaation seurauksiin",
+    bioCivLead: "BERMin kausaalilogiikka ei pysähdy hormonitasoihin tai siittiöiden lukumääriin. Sama häiriö, joka avaa kalsiumkanavan Leydigin solussa, etenee ylöspäin käyttäytymisen, perheen muodostuksen, institutionaalisen kapasiteetin ja sivilisaation dynamiikan kautta. Alla oleva ketju jäljittää tämän etenemisen vaiheesta 0 (geometrinen tausta) vaiheeseen 10 (sivilisaation tulos). Kukin vaihe on dokumentoitu erikseen muualla mallissa; tämä osio näyttää, miten ne yhdistyvät yhdeksi katkeamattomaksi sekvenssiksi.",
+    bioCivChain: [
+      { step: 0, title: "Taustageometria", desc: "Geomagneettinen kenttä luo χ(Ā)-substraatin — sähkömagneettisen perusgeometrian, jossa kaikki biologia on kehittynyt" },
+      { step: 1, title: "EMF-häiriö", desc: "Ihmisen aiheuttamat kentät (ELF, IF, RF) häiritsevät geometrista taustaa muuttaen aika-avaruuden metriikkaa" },
+      { step: 2, title: "VGCC-aktivaatio", desc: "Jänniteportilliset kalsiumkanavat — erityisesti T-tyyppi (Cav3) bifurkaatiopisteessä — reagoivat kenttähäiriöön Schwanin vahvistuksen kautta" },
+      { step: 3, title: "Ca²⁺-kaskadi", desc: "Solunsisäinen kalsiumsignalointi häiriintyy: CaMKII-aktivaatio, mitokondriaalinen ROS, NF-κB-tulehdusreitti" },
+      { step: 4, title: "Hormonihäiriö", desc: "Testosteroni, estrogeeni, melatoniini, oksitosiini, kortisoli ja BDNF vaikuttuvat Ca²⁺-riippuvaisten steroidogeenisten ja neuroendokriinisten reittien kautta" },
+      { step: 5, title: "Yksilön käyttäytyminen", desc: "Riskinottokyky, sosiaalinen sitoutuminen, uniarkkitehtuuri, kognitio ja motivaatio muuttuvat neuroendokriinisten substraattien muuttuessa" },
+      { step: 6, title: "Perheen muodostus", desc: "Sekä hedelmällisyyshalu (käyttäytyminen) että biologinen kapasiteetti (fysiologia) laskevat — kaksitasoinen romahdus" },
+      { step: 7, title: "Institutionaalinen kapasiteetti", desc: "Kollektiivinen toiminta, strateginen suunnittelu ja institutionaalinen määrätietoisuus heikkenevät väestön hormonaalisen ja kognitiivisen substraatin heikentyessä" },
+      { step: 8, title: "Sivilisaation dynamiikka", desc: "Käyttäytymisen aggregaatti tuottaa historioitsijoiden havaitsemat kaavat: pysähtyneisyys, riskien välttäminen, institutionaalinen jähmettyminen" },
+      { step: 9, title: "Muuttogradientti", desc: "Biologinen kontrasti EM-ehtyneiden ja EM-eheiden populaatioiden välillä luo demografisia painegradientteja" },
+      { step: 10, title: "Sykli tai yhdentyminen", desc: "Palautuminen jos EM-kuorma kevenee (α-termi), tai pysyvä yhdentyminen kun ihmisen aiheuttama saturaatio (σ) peittää auringon palautumisikkunan" },
+    ],
+    bioCivFormulaTitle: "BioCap-integraali",
+    bioCivFormulaDesc: "Populaation kumulatiivinen biologinen kapasiteetti formalisoidaan BioCap-integraalina — juokseva saldo ehtymisen (ensimmäinen integraali) ja palautumisen (toinen integraali) välillä:",
+    bioCivFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ)+U(τ)+E(τ)]dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)]dτ",
+    bioCivFormulaTerms: [
+      { symbol: "S(τ)", desc: "Normalisoitu aurinkoaktiivisuus (ohjaa luonnollista geomagneettista häiriötä)" },
+      { symbol: "U(τ)", desc: "Kaupungistumispainotettu EMF-altistus (väestötiheys × infrastruktuuri)" },
+      { symbol: "E(τ)", desc: "Sähköistyspainotettu altistus (verkkotiheys × henkilökohtainen kulutus)" },
+      { symbol: "χ(λ)", desc: "Leveysasteesta riippuva herkkyys (geomagneettinen kenttävoimakkuus vaihtelee leveysasteen mukaan)" },
+      { symbol: "α", desc: "Palautumiskerroin (biologinen korjausnopeus EM-kuorman pienentyessä)" },
+      { symbol: "σ(τ)", desc: "Ihmisen aiheuttama EM-saturaatio — peittää auringon palautumisikkunan vuoden 1880 jälkeen" },
+    ],
+    bioCivEpistemic: "Tämä kausaaliketju on käsitteellinen viitekehys, joka yhdistää dokumentoidut mekanismit koherentiksi sekvenssiksi. Yksittäisillä vaiheilla (0–4) on suora kokeellinen tuki; ylempien vaiheiden (5–10) kvantitatiivisia parametreja ei ole vielä kalibroitu. BioCap-integraali on viitekehyksen logiikan muodollinen ilmaus, ei sovitettu yhtälö empiirisin kertoimiin.",
+
+    hormesisTitle: "Hormeettinen annosvastelaajennus",
+    hormesisDesc: "BioCap-integraalin palautumistermi α olettaa vakion korjausnopeuden. Hormeettinen laajennus korvaa α:n annosriippuvaisella funktiolla h(Ā, δA), joka kuvaa kolme erillistä biologista vyöhykettä:",
+    hormesisFormula: "h(Ā, δA) = { +α·δA  jos Ā < Ā_crit (vyöhyke 1: stimulaatio); α·δA·e^(−β·(Ā−Ā_crit))  jos Ā_crit ≤ Ā ≤ Ā_sat (vyöhyke 2: siirtymä); −γ·Ā  jos Ā > Ā_sat (vyöhyke 3: vain vahinko) }",
+    hormesisTerms: [
+      { symbol: "Ā", desc: "Keskimääräinen kumulatiivinen EM-altistus (integroitu populaation elinaikana)" },
+      { symbol: "δA", desc: "Altistuksen vaihtelu (vaihtelun amplitudi keskiarvon ympärillä)" },
+      { symbol: "Ā_crit", desc: "Kriittinen kynnys — tämän alla pieniannoksinen stressi aktivoi korjausjärjestelmiä" },
+      { symbol: "Ā_sat", desc: "Saturaatiokynnys — tämän yllä korjausjärjestelmät ylikuormittuvat" },
+      { symbol: "α", desc: "Hormeettinen stimulaatiokerroin (biologisen korjauksen aktivointinopeus)" },
+      { symbol: "β", desc: "Siirtymän vaimenemiskerroin (kuinka nopeasti stimulaatio heikkenee Ā_crit:n yläpuolella)" },
+      { symbol: "γ", desc: "Vahinkokerroin (nettobiologinen ehtymismäärä korkealla altistuksella)" },
+    ],
+    hormesisZone1: "Vyöhyke 1 (stimulaatio): Matala EM-altistus aktivoi DNA-korjauksen, mitokondriaalisen biogeneesin, immuunivasteen tehostumisen ja hormonaalisen optimoinnin. Tällä vyöhykkeellä olevat populaatiot ylläpitävät korkeaa biologista kapasiteettia.",
+    hormesisZone2: "Vyöhyke 2 (siirtymä): Korjausjärjestelmät toimivat yhä, mutta eksponentiaalisesti heikkenevällä tehokkuudella. Populaatio osoittaa ristiriitaisia biomarkkereita — osa aktivaatiota, osa suppressiota.",
+    hormesisZone3: "Vyöhyke 3 (vahinko): Korjausjärjestelmät ovat ylikuormittuneet. Nettobiologinen ehtyminen hallitsee. Tällä vyöhykkeellä useimmat teollistuneet populaatiot ovat sähköistyksen jälkeen.",
+    hormesisEpistemic: "",
 
     archTitle: "Kolmitasoinen arkkitehtuuri",
     archDesc:
@@ -939,17 +1047,17 @@ const t = {
 
     causalTitle: "Kausaalireittikaavio",
     causalDesc:
-      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Yksitoista tasoa, 41 solmua, 59 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatutkimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). CRY/RPM-polulla on tukea useasta lajista: magneettikompassin häiriintyminen linnuissa ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), CRY-riippuvainen magnetoreseptio Drosophilassa ([[ref:yoshii2009|Yoshii 2009]]), CRY-riippuvainen ROS-modulaatio ihmisen soluissa ([[ref:sherrard2018|Sherrard 2018]]) ja — kriittisesti — toiminnallinen sinivalosta riippuva magnetoreseptio ihmisessä ([[ref:chae2019|Chae ym. 2019]], PLOS ONE), mikä osoittaa biologisen substraatin olemassaolon lajissa jota BERM mallintaa. Molemmat ovat itsenäisesti tuetut E-tason evidenssillä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
+      "Alla oleva kaavio näyttää täydellisen mekanistisen ketjun Lindgren-geometriasta TFR-laskuun. Yksitoista tasoa, 41 solmua, 59 reunaa. Kaksi rinnakkaista pääpolkua toimii samanaikaisesti: Polku A (VGCC → Ca²⁺ → ROS) on kokeellisesti vahvin (23–28 salpaajatutkimusta), kun taas Polku B (RPM → CRY → vuorokausirytmin häiriö) on teoreettisesti täydellisin silta Lindgrenin geometriasta biologiaan (87,5 % RPM-Hamiltoniaanin elementeistä on johdettavissa metriikka-ansatzista). CRY/RPM-polulla on tukea useasta lajista: magneettikompassin häiriintyminen linnuissa ([[ref:ritz2004|Ritz 2004]], [[ref:engels2014|Engels 2014]]), CRY-riippuvainen magnetoreseptio Drosophilassa ([[ref:yoshii2009|Yoshii 2009]]), CRY-riippuvainen ROS-modulaatio ihmisen soluissa ([[ref:sherrard2018|Sherrard 2018]]) ja — kriittisesti — toiminnallinen sinivalosta riippuva magnetoreseptio ihmisessä ([[ref:chae2019|Chae ym. 2019]], PLOS ONE), mikä osoittaa biologisen substraatin olemassaolon lajissa jota BERM mallintaa. Molemmat ovat itsenäisesti tuetut E-tason näytöllä. Klikkaa mitä tahansa solmua nähdäksesi sen mekanismin, Lindgren-tulkinnan, kvantitatiivisen muotoilun, palautumisparametrit ja keskeiset viitteet. Solmujen reunat on väritetty episteemisen tason mukaan.",
     pathwayHierarchyNote:
       "Polkujen painot perustuvat empiiriseen kalibrointiin yhteisödatalla (amissit–Korea-gradientti). Ne eivät heijasta teoreettista hierarkiaa: Polku B (CRY/RPM) on ENSISIJAINEN polku, koska 87,5 % RPM-Hamiltoniaanista on johdettavissa Lindgren-geometriasta — mekanismin OLEMASSAOLO seuraa geometrisena seurauksena. Polulla A on vahvempi kokeellinen tuki (23–28 salpaajatutkimusta). Aiempi δVm-vastalause (δV_m ≈ 10⁻²¹ V pelkästä geometriasta) on nyt ratkaistu T-tyypin kalsiumkanavan bifurkaatiomekanismilla: Schwanin yhtälö vahvistaa ulkoiset kentät 7,5–15 μV:iin kalvolla (37 % lämpökohinasta 1 V/m ympäristössä; 184 % 5 V/m henkilökohtaisessa), ja T-tyypin (Cav3) kanavat toimivat bifurkaatiopisteessä, jossa ~10 % on avoinna levossa (ikkunavirta), mikä tekee niistä herkkiä näille häiriöille. Polku D (HPA → testosteroni) on nyt myös johdettu saman T-tyypin mekanismin kautta: Schwanin δVm → Cav3 → Ca²⁺ → StAR → testosteroni ([[ref:xiang2025_clc2_ttype|Xiang 2025]]).",
     rpmFrequencyNote:
       "CRY/RPM ei vastaa RF-kantoaaltotaajuuteen (900 MHz – 3,5 GHz). Sen resonanssimaksimi on ~22,5 MHz ([[ref:talbi2025_quantum_magnetoreception|Talbi, Zadeh-Haghighi & Simon 2025]], Front. Quantum Sci. Technol. 4:1544473). Polun B biologisesti aktiiviset komponentit ovat geomagneettinen tausta (B_DC) ja telecom-signaalien ELF-modulaatioverhoilukäyrät (GSM 217 Hz, WiFi 10 Hz beacon). RF-kantoaallon vaikutukset välittyvät polku A:n kautta sähkökentän komponenttina. Kahdella polulla on toisiaan täydentävät taajuusalueet.",
     vgccHierarchyTitle: "VGCC-herkkyyshierarkia lepopotentiaalissa",
     vgccHierarchyNote:
-      "Kaikki jänniteohjatut kalsiumkanavat eivät ole yhtä EMF-herkkiä. Lepopotentiaalissa (~−70 mV) EMF-herkkyys noudattaa hierarkiaa: Cav3 (T-tyyppi) >> Cav1.3 >> Cav1.2. T-tyypin kanavat (Cav3.1, Cav3.2, Cav3.3) toimivat bifurkaatiopisteessä, jossa ~10 % on avoinna levossa (ikkunavirta), mikä tekee niistä jatkuvasti herkkiä pienille jännitemuutoksille. Cav1.3 on 'matalan kynnyksen L-tyyppi', joka aktivoituu ~−50 mV:ssa — 25 mV negatiivisemmin kuin Cav1.2 (J Neurosci 2001). Tämä tekee Cav1.3:sta pääkanavan kudoksissa, jotka vaativat jatkuvaa matalan jännitteen kalsiumvirtaa: SA-solmun tahdistus ja sisäkorvan karvasolun synaptinen transduktio. Cav1.2, kanoninen L-tyyppi, aktivoituu ~−30 mV:ssa ja on merkittävä VAIN aktiopotentiaalin aikana — levossa sen osuus on mitätön. Tämä hierarkia selittää kudosspesifisen EMF-haavoittuvuuden: Cav3-valtaiset elimet (kivekset, aivolisäke, lisämunuainen, hippokampus) ovat herkimpiä; Cav1.3-riippuvaiset kudokset (sisäkorva, SA-solmu) ovat välitasoa; Cav1.2-valtaiset kudokset (luurankolihas, kammiosydän) vaikuttuvat vain sähköisen aktiivisuuden aikana.",
+      "Kaikki jänniteohjatut kalsiumkanavat eivät ole yhtä EMF-herkkiä. Lepopotentiaalissa (~−70 mV) EMF-herkkyys noudattaa hierarkiaa: Cav3 (T-tyyppi) >> Cav1.3 >> Cav1.2. T-tyypin kanavat (Cav3.1, Cav3.2, Cav3.3) toimivat bifurkaatiopisteessä, jossa ~10 % on avoinna levossa (ikkunavirta), mikä tekee niistä jatkuvasti herkkiä pienille jännitemuutoksille. Cav1.3 on 'matalan kynnyksen L-tyyppi', joka aktivoituu ~−50 mV:ssa — 25 mV negatiivisemmin kuin Cav1.2 (J Neurosci 2001). Tämä tekee Cav1.3:sta pääkanavan kudoksissa, jotka vaativat jatkuvaa matalan jännitteen kalsiumvirtaa: SA-solmun tahdistus ja sisäkorvan karvasolun synaptinen transduktio. Cav1.2, kanoninen L-tyyppi, aktivoituu ~−30 mV:ssa ja on merkittävä VAIN aktiopotentiaalin aikana — levossa sen osuus on mitätön. Tämä hierarkia selittää kudostarkan EMF-haavoittuvuuden: Cav3-valtaiset elimet (kivekset, aivolisäke, lisämunuainen, hippokampus) ovat herkimpiä; Cav1.3-riippuvaiset kudokset (sisäkorva, SA-solmu) ovat välitasoa; Cav1.2-valtaiset kudokset (luurankolihas, kammiosydän) vaikuttuvat vain sähköisen aktiivisuuden aikana.",
     camkiiTitle: "CaMKII-positiivinen takaisinkytkentä: kumulatiivinen herkistyminen",
     camkiiNote:
-      "Kriittinen löydös BERM:n kumulatiivisen altistusmallin kannalta: CaMKII:n (kalsium/kalmoduliini-riippuvainen proteiinikinaasi II) fosforylaatio siirtää Cav3.2:n aktivaatiokynnystä NEGATIIVISEMPAAN suuntaan (PMC9913649). Tämä luo positiivisen takaisinkytkentäsilmukan: EMF → Cav3.2 Ca²⁺ -sisäänvirtaus → CaMKII:n aktivaatio → Cav3.2:n kynnys siirtyy vasemmalle → kanava tulee HERKEMMÄKSI EMF:lle → lisää Ca²⁺ -sisäänvirtausta. Tämä molekulaarinen mekanismi selittää, miksi EMF-vaikutukset ovat kumulatiivisia ajan myötä: jokainen altistusjakso tekee järjestelmästä herkemmän seuraaville altistuksille. CaMKII-takaisinkytkentä selittää myös, miksi lyhytaikaiset tutkimukset voivat aliarvioida pitkäaikaisvaikutuksia — herkistyminen kehittyy viikkojen tai kuukausien kuluessa. Farmakologinen ennuste: CaMKII-inhibiittorit (KN-93) estävät progressiivisen herkistymisen vaikuttamatta akuutteihin EMF-vasteisiin.",
+      "Kriittinen löydös BERM:n kumulatiivisen altistusmallin kannalta: CaMKII:n (kalsium/kalmoduliini-riippuvainen proteiinikinaasi II) fosforylaatio siirtää Cav3.2:n aktivaatiokynnystä NEGATIIVISEMPAAN suuntaan (PMC9913649). Tämä luo positiivisen takaisinkytkentäsilmukan: EMF → Cav3.2 Ca²⁺ -sisäänvirtaus → CaMKII:n aktivaatio → Cav3.2:n kynnys siirtyy vasemmalle → kanava tulee HERKEMMÄKSI EMF:lle → lisää Ca²⁺ -sisäänvirtausta. Tämä molekulaarinen mekanismi selittää, miksi EMF-vaikutukset ovat kumulatiivisia ajan myötä: jokainen altistusjakso tekee järjestelmästä herkemmän seuraaville altistuksille. CaMKII-takaisinkytkentä selittää myös, miksi lyhytaikaiset tutkimukset voivat aliarvioida pitkäaikaisvaikutuksia — herkistyminen kehittyy viikkojen tai kuukausien kuluessa. Farmakologinen ennuste: CaMKII-inhibiittorit (KN-93) estävät etenevän herkistymisen vaikuttamatta akuutteihin EMF-vasteisiin.",
 
     chiSub: "Saturaatiokäyrä ympäristö- × henkilökohtaisen altistuksen vuorovaikutukselle",
     chiTitle: "Lindgrenin chi-kytkentäyhtälö",
@@ -966,19 +1074,19 @@ const t = {
     chiFiveColBg: "Tausta (B)",
     chiFiveColPerturb: "Häiriö",
     chiFiveColExpr: "χ-lauseke",
-    chiFiveColVerify: "Verifiointi",
+    chiFiveColVerify: "Todentaminen",
     chiFiveColLevel: "Taso",
     chiFiveLink: "Katso koko analyysi →",
 
-    chiEvidenceTitle: "χ evidenssiperheissä",
+    chiEvidenceTitle: "χ näyttöperheissä",
     chiEvidenceSub: "Miten valintasääntö ilmenee kuudessa itsenäisessä biologisessa alueella",
-    chiEvidenceDesc: "χ-funktio ei ole abstrakti rakenne — se ennustaa tarkkoja, testattavia modulaatioita kuudessa evidenssiperheessä. Jokaisella perheellä on oma χ-modulaattorinsa, joka määrää milloin ja kuinka voimakkaasti EMF vaikuttaa kyseiseen järjestelmään.",
+    chiEvidenceDesc: "χ-funktio ei ole abstrakti rakenne — se ennustaa tarkkoja, testattavia modulaatioita kuudessa näyttöperheessä. Jokaisella perheellä on oma χ-modulaattorinsa, joka määrää milloin ja kuinka voimakkaasti EMF vaikuttaa kyseiseen järjestelmään.",
     chiEvidenceFamilies: [
       { referenceId: "sakurai2008", family: "Diabetes (β-solut)", chi: "χ(glukoosi): K_ATP → V_mem → VGCC-esiviriytys", mechanism: "Korkea glukoosi sulkee K_ATP-kanavat → kalvo depolarisoituu → VGCC:t virittyvät → χ KORKEA. Matala glukoosi → K_ATP auki → χ MATALA.", prediction: "EMF × korkea-GI-ruokavalio tuottaa synergistisen diabetesriskin. Paasto suojaa β-soluja.", verification: "Sakurai 2008: ELF vähensi insuliinineritystä 30 %", level: "M|C" },
       { referenceId: "yu2019_btb", family: "Siittiölaatu (BTB)", chi: "χ(BTB:n eheys): este vaimentaa efektiivistä kenttää", mechanism: "Ehjä BTB suojaa spermatogeneettisiä soluja → matala χ. EMF avaa BTB:n → suoja menetetään → χ nousee → positiivinen takaisinkytkentä.", prediction: "Siittiölaadun lasku kiihtyy ajan myötä (superlineaarinen).", verification: "Yu 2019: 4G-RF häiritsee BTB:tä suoraan, aikariippuvainen", level: "E" },
-      { referenceId: "ulusoy2025_bbb_enos", family: "Esteet (BBB + BTB)", chi: "χ(esteen läpäisevyys): jatkuva modulaattori", mechanism: "Esteet ovat jatkuvia χ-modulaattoreita. Osittain vaurioitunut este = osittainen χ:n kasvu. Tuottaa multiplikatiivisen vahvistuksen.", prediction: "Superlineaarinen annos-vaste kumulatiivisella altistuksella.", verification: "Ulusoy 2025: progressiivinen BBB-degradaatio 30–360 min", level: "E" },
-      { family: "Sentinellilajit", chi: "χ(aineenvaihduntanopeus): M^(−0.25) skaalaus", mechanism: "Pienet eläimet: korkeampi massaspesifinen metabolianopeus → korkeampi perus-ROS → korkeampi χ → suurempi EMF-vaste.", prediction: "Hyönteiset ja pienet linnut kärsivät ensin; suuret nisäkkäät myöhemmin.", verification: "Ajallinen järjestys vastaa kehon massan skaalausta", level: "M|C" },
-      { family: "Vesieliöakseli (CatSper-konservaatio)", chi: "χ(ELF): merenalaiskaapelien kentät × vesieliöiden CatSper", mechanism: "CatSper on konservoitu merisiilistä ihmiseen — sama Ca²⁺-kanava navigoi siittiöitä kaikissa lajeissa. Vesieliölajit validoivat kolme BERM-kanavaa: ELF rusto- ja luukalojen sähköaistinherkkyyden kautta (VGIC-sensitiivisyys), RPM/CRY harmaavalaiden magnetoreseption kautta, ja CatSper konservaatioargumentin kautta. Merenalaiskaapeleiden ELF-kentät saavuttavat vesieliöiden CatSper-aktivaatiokynnyksen.", prediction: "Merieliöiden lisääntyminen heikkenee korkeateholisten merenalaiskaapelien lähellä. Viljellyn lohen CatSper heikompi kuin villin.", verification: "CatSper-KO = steriili kaikissa testatuissa lajeissa. Harmaavalaiden muutto seuraa geomagneettista kenttää. Rustokalojen herkkyys nV/m-tason kentille vahvistettu.", level: "L*" },
+      { referenceId: "ulusoy2025_bbb_enos", family: "Esteet (BBB + BTB)", chi: "χ(esteen läpäisevyys): jatkuva modulaattori", mechanism: "Esteet ovat jatkuvia χ-modulaattoreita. Osittain vaurioitunut este = osittainen χ:n kasvu. Tuottaa multiplikatiivisen vahvistuksen.", prediction: "Superlineaarinen annos-vaste kumulatiivisella altistuksella.", verification: "Ulusoy 2025: etenevä BBB-degradaatio 30–360 min", level: "E" },
+      { family: "Indikaattorilajit", chi: "χ(aineenvaihduntanopeus): M^(−0.25) skaalaus", mechanism: "Pienet eläimet: korkeampi massatarkka metabolianopeus → korkeampi perus-ROS → korkeampi χ → suurempi EMF-vaste.", prediction: "Hyönteiset ja pienet linnut kärsivät ensin; suuret nisäkkäät myöhemmin.", verification: "Ajallinen järjestys vastaa kehon massan skaalausta", level: "M|C" },
+      { family: "Vesieliöakseli (CatSper-konservaatio)", chi: "χ(ELF): merenalaiskaapelien kentät × vesieliöiden CatSper", mechanism: "CatSper on konservoitu merisiilistä ihmiseen — sama Ca²⁺-kanava navigoi siittiöitä kaikissa lajeissa. Vesieliölajit todentavat kolme BERM-kanavaa: ELF rusto- ja luukalojen sähköaistinherkkyyden kautta (VGIC-sensitiivisyys), RPM/CRY harmaavalaiden magnetoreseption kautta, ja CatSper konservaatioargumentin kautta. Merenalaiskaapeleiden ELF-kentät saavuttavat vesieliöiden CatSper-aktivaatiokynnyksen.", prediction: "Merieliöiden lisääntyminen heikkenee korkeateholisten merenalaiskaapelien lähellä. Viljellyn lohen CatSper heikompi kuin villin.", verification: "CatSper-KO = steriili kaikissa testatuissa lajeissa. Harmaavalaiden muutto seuraa geomagneettista kenttää. Rustokalojen herkkyys nV/m-tason kentille vahvistettu.", level: "L*" },
       { family: "Sydän (CRY2-TRPC1)", chi: "χ(CRY2:n tila): valo- ja FAD-riippuvainen", mechanism: "Jos CRY2-TRPC1 toimii kardiomyosyyteissä (kuten myoblasteissa, [[ref:yap2025|Yap 2025]]), sydämen kalsiumsisäänvirtaus on valo/FAD-riippuvainen.", prediction: "Yöllinen puhelimen käyttö → korkeampi arytmiariski kuin päivällä.", verification: "Ei vielä testattu. TRPC-kanavat vahvistettu myosyyteissä.", level: "L*" },
       { referenceIds: ["blackman1985", "blackman1990", "blackman1991"], family: "Adeyn–Blackmanin ikkuna", chi: "χ(fotosykli) × χ(lämpötila) × χ(DC-orientaatio)", mechanism: "'Biologinen ikkuna' syntyy kolmesta päällekkäisestä χ-ikkunasta. Kaikkia kolmea kontrolloivat laboratoriot saavat yhdenmukaisia tuloksia.", prediction: "Viiden parametrin standardi ratkaisee 50 vuoden replikaatiodebatin.", verification: "Blackman 1985–1991: osoitti jokaisen ikkunan erikseen", level: "M" },
     ],
@@ -1025,8 +1133,8 @@ const t = {
     phyloWarning: "Fylogeneettinen hierarkia on teoreettinen viitekehys. Se EI muuta BERM:n TFR-ennusteissa käytettäviä operatiivisia painoja. Painot heijastavat epidemiologisen näytön vahvuutta ihmisen lisääntymiselle, jossa VGCC:llä (A=45%) on enemmän suoraa ihmistutkimusnäyttöä kuin CRY/RPM:llä (B=15%).",
     phyloText: [
       "BERM tunnistaa viisi biologista polkua (A–E) joiden kautta EMF vaikuttaa lisääntymiseen. Niiden operatiiviset painot heijastavat merkitystä ihmisen hedelmällisyydelle. Mutta niiden fylogeneettinen hierarkia — mikä on perustavanlaatuisempi ja mikä johdettu — on erilainen.",
-      "Polku B (CRY/RPM) on kantamekanismi. Läsnä kaikissa eukaryooteissa: kasvit, sienet, hyönteiset, linnut, nisäkkäät. Kryptokromi löydettiin ensin kasveista (Arabidopsis, 1993). CRY:n reproduktiivinen rooli on parhaiten dokumentoitu kasveissa — CRY2 → CONSTANS → FLOWERING LOCUS T → kukinta-induktio. Konservoitu yli miljardin vuoden ajan fotolyaasin homologina. Ei vaadi kalvopotentiaalia. Operoi spin-kemialla (radikaaliparimekanismi). RF-häiriö osoitettu kasveissa (Ahmad 2020: 7 MHz), hyönteisissä (Gegear 2008: Drosophila) ja nisäkkäissä (PMC11817702 2025).",
-      "Polku A (VGCC/IFO) on johdettu mekanismi. Eläinspesifinen — eksitaabelit solut: neuronit, lihassyyt, siittiöt. Vaatii kalvopotentiaalin (−70 mV / 10 nm → χ ≈ 1.0). Kehittyi noin 500 miljoonaa vuotta sitten jänniteohjattujen ionikanavien myötä. Lisää herkkyyttä kudoksissa joissa kalvopotentiaali on korkea. Vahvin yksittäinen polku ihmisen siittiövauriolle. Kasveilla on ionikanavia (TPC1, CNGC) mutta ne eivät ole S4-heliksipohjaisia VGCC:itä.",
+      "Polku B (CRY/RPM) on kantamekanismi. Läsnä kaikissa eukaryooteissa: kasvit, sienet, hyönteiset, linnut, nisäkkäät. Kryptokromi löydettiin ensin kasveista (Arabidopsis, 1993). CRY:n lisääntymiskykyyn liittyvä rooli on parhaiten dokumentoitu kasveissa — CRY2 → CONSTANS → FLOWERING LOCUS T → kukinta-induktio. Konservoitu yli miljardin vuoden ajan fotolyaasin homologina. Ei vaadi kalvopotentiaalia. Operoi spin-kemialla (radikaaliparimekanismi). RF-häiriö osoitettu kasveissa (Ahmad 2020: 7 MHz), hyönteisissä (Gegear 2008: Drosophila) ja nisäkkäissä (PMC11817702 2025).",
+      "Polku A (VGCC/IFO) on johdettu mekanismi. Eläintarkka — eksitaabelit solut: neuronit, lihassyyt, siittiöt. Vaatii kalvopotentiaalin (−70 mV / 10 nm → χ ≈ 1.0). Kehittyi noin 500 miljoonaa vuotta sitten jänniteohjattujen ionikanavien myötä. Lisää herkkyyttä kudoksissa joissa kalvopotentiaali on korkea. Vahvin yksittäinen polku ihmisen siittiövauriolle. Kasveilla on ionikanavia (TPC1, CNGC) mutta ne eivät ole S4-heliksipohjaisia VGCC:itä.",
       "Yhdessä: polku B on evoluutiivinen perusta. Polku A on eläinten lisäkerros sen päälle. Molemmat operoivat samanaikaisesti eläimissä. Vain polku B operoi kasveissa.",
       "Kriittinen B2/FAD-ero — miksi efektikoot eroavat kasvien ja eläinten välillä: Kasvit syntetisoivat oman riboflaviininsa (B2), joten FAD-saatavuus on endogeeninen ja CRY-toiminta riippuu vain RF-häiriöstä — Ahmad 2020:n 'relatively minor' efekti on puhdas RPM-testi. Eläimet tarvitsevat ravinnon B2:ta, joten FAD-saatavuus riippuu ruokavaliosta ja CRY-toiminta riippuu sekä RF:stä että B2-statuksesta — kaksinkertainen haavoittuvuus: EMF-häiriö + ravitsemuspuutos. Tämä selittää miksi eläinten efektikoot ylittävät kasvien efektikoot: eläimillä on kaksi häiriölähdettä, kasveilla vain yksi.",
     ] as const,
@@ -1041,11 +1149,11 @@ const t = {
     twoChLayersDesc:
       "Ambient-termi ei ole monoliittinen. Se hajoaa 12 itsenäiseen teknologiakerrokseen, joista jokaisella on oma ajurinsa, käyttöönottoaikataulunsa ja taajuusprofiilinsa. Tämä hajotus parantaa mallin erottelukykyä, koska jokainen kerros toimii ortogonaalisena instrumenttina.",
     ifoVgicNote: "IFO-VGIC-mekanismia tukee 131 tutkimuksen kattava katsaus ([[ref:panagopoulos2025_ifo|Panagopoulos ym. 2025]], Bioelectromagnetics): 95 % raportoi oksidatiivisia vaikutuksia RF/Wi-Fi-altistuksessa. Tämä konsensus, joka on yhdenmukainen [[ref:yakymenko2016|Yakymenko ym. 2016]] (93/100) kanssa, vahvistaa Ca²⁺-sisäänvirtaus → ROS -reitin aseman parhaiten dokumentoituna ei-termisenä mekanismina.",
-    multiPathwayCa2Note: "Tason 4 Ca²⁺-häiriö toimii useamman itsenäisen reitin kautta: (1) suora S4-jännitesensorin pakotettu oskillaatio ([[ref:panagopoulos2025_ifo|Panagopoulos ym. 2025]], IFO-VGIC); (2) solunsisäisten kalsiumvarastojen dysregulaatio ryanodiinireseptoreiden (RyR) ja SERCA-pumppujen kautta ([[ref:bertagna2025|Bertagna ym. 2025]], Ann NY Acad Sci). Molemmat farmakologiset salpauskokeet (VGCC-salpaajat reitille 1; dantroleeni RyR:lle, CPA SERCA:lle reitille 2) estävät EMF-vaikutukset — tukee mekanismia. Monireittiisyys selittää kudosspesifisen herkkyyden: solut, joissa on korkea VGIC-tiheys JA suuret solunsisäiset Ca²⁺-varastot (neuronit, gonaadisolut) ovat herkempiä kuin matalan varastotiheyden solut (keratinosyytit — vrt. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: nollatulokset ihosoluissa). Huom: [[ref:bertagna2025|Bertagna 2025]] on ELF (50 Hz), ei RF — mekanismin siirto RF:lle ei suoraviivainen, mutta Ca²⁺-reitti on jaettu.",
-    fiveGReproNote: "Ensimmäinen 5G-taajuusspesifinen testisdata ([[ref:bektas2026|Bektas ym. 2026]], Bioelectromagnetics): 3,5 GHz RF aiheutti testis- ja oksidatiivista vauriota rotilla. CoQ10-lisäravinto lievitti vauriota — osoittaa mekanismin palautuvuuden. Yhdenmukainen BERM:n palautumisikkuna-mallin kanssa, jossa antioksidanttikapasiteetti määrittää nettovaurion. Laajentaa oksidatiivisen stressin evidenssipohjan ([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95 %) 5G-taajuusalueelle.",
-    pathwayCQuantNote: "Melatoniinisuppressiopolkua tukee kvantitatiivisesti 55 tutkimuksen PRISMA-katsaus ([[ref:tbahriti2026|Tbahriti ym. 2026]], Sleep Biol Rhythms): 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 % basaalitasosta). Suppressio on biologisesti merkittävä GnRH-pulsaatiolle mutta pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen BERM:n v17_night_fraction() -mallinnuksen kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniini), ei ainoa ajuri. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat standardit.",
+    multiPathwayCa2Note: "Tason 4 Ca²⁺-häiriö toimii useamman itsenäisen reitin kautta: (1) suora S4-jännitesensorin pakotettu oskillaatio ([[ref:panagopoulos2025_ifo|Panagopoulos ym. 2025]], IFO-VGIC); (2) solunsisäisten kalsiumvarastojen dysregulaatio ryanodiinireseptoreiden (RyR) ja SERCA-pumppujen kautta ([[ref:bertagna2025|Bertagna ym. 2025]], Ann NY Acad Sci). Molemmat farmakologiset salpauskokeet (VGCC-salpaajat reitille 1; dantroleeni RyR:lle, CPA SERCA:lle reitille 2) estävät EMF-vaikutukset — tukee mekanismia. Monireittiisyys selittää kudostarkan herkkyyden: solut, joissa on korkea VGIC-tiheys JA suuret solunsisäiset Ca²⁺-varastot (neuronit, gonaadisolut) ovat herkempiä kuin matalan varastotiheyden solut (keratinosyytit — vrt. [[ref:meyer2026|Meyer 2026]], [[ref:haidar2025_5g_skin_null|Haidar 2025]]: nollatulokset ihosoluissa). Huom: [[ref:bertagna2025|Bertagna 2025]] on ELF (50 Hz), ei RF — mekanismin siirto RF:lle ei suoraviivainen, mutta Ca²⁺-reitti on jaettu.",
+    fiveGReproNote: "Ensimmäinen 5G-taajuustarkka testisdata ([[ref:bektas2026|Bektas ym. 2026]], Bioelectromagnetics): 3,5 GHz RF aiheutti testis- ja oksidatiivista vauriota rotilla. CoQ10-lisäravinto lievitti vauriota — osoittaa mekanismin palautuvuuden. Yhdenmukainen BERM:n palautumisikkuna-mallin kanssa, jossa antioksidanttikapasiteetti määrittää nettovaurion. Laajentaa oksidatiivisen stressin näyttöpohjan ([[ref:yakymenko2016|Yakymenko 2016]]: 93/100; [[ref:panagopoulos2025_ifo|Panagopoulos 2025]]: 95 %) 5G-taajuusalueelle.",
+    pathwayCQuantNote: "Melatoniinisuppressiopolkua tukee kvantitatiivisesti 55 tutkimuksen PRISMA-katsaus ([[ref:tbahriti2026|Tbahriti ym. 2026]], Sleep Biol Rhythms): 88 % korkealaatuisista eläintutkimuksista raportoi EMF-aiheutettua melatoniinivaimennusta (20–50 % basaalitasosta). Suppressio on biologisesti merkittävä GnRH-pulsaatiolle mutta pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen BERM:n v17_night_fraction() -mallinnuksen kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniini), ei ainoa ajuri. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat standardit.",
     pathwayCWeightNote: "Huomautus polku C:n painosta: Polku C:n 25 % heijastaa sekä sen sirkadiaanista funktiota (CRY2 → kellogeenitranskriptio → melatoniini → HPG) että äskettäin löydettyä kalsiumsignalointifunktiota (CRY2 → TRPC1-modulaatio → Ca²⁺-sisäänvirtaus; [[ref:yap2025|Yap ym. 2025]], Cells). TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polut A ja C ovat siten farmakologisesti erotettavissa: L-tyypin VGCC-salpaajat (nifedipiini) estävät polku A:n vaikutuksia mutta eivät CRY2-TRPC1-vaikutuksia.",
-    cryIndividualVariationNote: "Yksilöllinen vaihtelu: CRY-herkkyyttä moduloivat iiriksen pigmentaatio (sininen > vihreä > ruskea; [[ref:higuchi2007|Higuchi 2007]]), ravitsemuksellinen FAD-tila ([[ref:hirano2017|Hirano 2017]]) ja sukupuoli (miehet > naiset akuutissa magnetoreseptiossa; [[ref:chae2019|Chae 2019]]). Nämä modulaattorit voivat selittää osan polku C:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta. CRY2-TRPC1-fyysinen kompleksi ([[ref:yap2025|Yap/Sherrard 2025]]) paljastaa lisäksi, että polku C:llä on toinen alaspäin suuntautuva haara: CRY2 moduloi TRPC1:tä (TRP-kanava, EI VGCC), mahdollistaen kalsiumsignaloinnin polku A:sta riippumatta. Polut A ja C ovat farmakologisesti erotettavissa — L-tyypin VGCC-salpaajat estävät A:n mutta eivät CRY2-TRPC1:tä. Katso yksityiskohtainen analyysi /evidence/eyes.",
+    cryIndividualVariationNote: "Yksilöllinen vaihtelu: CRY-herkkyyttä säätelevät iiriksen pigmentaatio (sininen > vihreä > ruskea; [[ref:higuchi2007|Higuchi 2007]]), ravitsemuksellinen FAD-tila ([[ref:hirano2017|Hirano 2017]]) ja sukupuoli (miehet > naiset akuutissa magnetoreseptiossa; [[ref:chae2019|Chae 2019]]). Nämä modulaattorit voivat selittää osan polku C:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta. CRY2-TRPC1-fyysinen kompleksi ([[ref:yap2025|Yap/Sherrard 2025]]) paljastaa lisäksi, että polku C:llä on toinen alaspäin suuntautuva haara: CRY2 säätelee TRPC1:tä (TRP-kanava, EI VGCC), mahdollistaen kalsiumsignaloinnin polku A:sta riippumatta. Polut A ja C ovat farmakologisesti erotettavissa — L-tyypin VGCC-salpaajat estävät A:n mutta eivät CRY2-TRPC1:tä. Katso yksityiskohtainen analyysi /evidence/eyes.",
     cryDualSystemNote: "CRY:n kaksoissysteemi: Polku C toimii verkkokalvon kahden erillisen kryptokromisysteemin kautta. C1 (sensorinen): Täyspitkä CRY1-proteiini löydettiin yksinomaan lyhyen aallonpituuden herkkien sinisten tappisolujen ulkosegmenteistä ihmisen, bonobon ja gorillan verkkokalvoissa ([[ref:bartolke2025|Bartölke ym. 2025]], FASEB J). Tämä sijainti kaukana tumista — fototransduktiokoneistossa — viittaa sensoriseen toimintaan sirkadiaanisen kellon säätelyn ohella. Tappisolujen ulkosegmenttien pinotut kalvolamellat tarjoavat magnetoreseptiolle tarvittavan suuntajärjestyksen (vrt. [[ref:majewska2025|Majewska ym. 2025]], ACS Chem Biol: CRY assosioituu lipidikaksoiskerrosten kanssa järjestäytyneesti). Tämä on systeemi, johon iiriksen pigmentaatio vaikuttaa eniten: siniset silmät päästävät ~100× enemmän valoa sinisiin tappisoluihin, mikä lisää CRY1-aktivaatiota. C2 (sirkadiaaninen): CRY2 ekspressoituu verkkokalvon gangliosoluissa, erityisesti SCN:iin projisoivissa ipRGC-soluissa. CRY2 muodostaa fysikaalisen kompleksin TRPC1:n kanssa ([[ref:yap2025|Yap ym. 2025]]), yhdistäen sirkadiaanisen polun ionikanavaviestintään. Molemmat systeemit vaativat FAD:n kromoforinaan ja ovat siten molemmat riippuvaisia riboflaviini (B2) -tilasta.",
     recoveryWindowNote: "Akuutin ja kroonisen altistuksen ero on empiirisesti tuettu: [[ref:koivisto2000|Koivisto ym. (2000)]] havaitsi kognitiivisen fasilitaation 30–60 min altistuksen jälkeen (yhteensopiva akuutin Ca²⁺-välitteisen synaptisen vahvistuksen kanssa), kun taas [[ref:panagopoulos2025_ifo|Panagopoulos ym. (2025)]] raportoi 95 %:n oksidatiivista stressiä kroonisissa/toistuvissa altistuksissa. Palautumisikkuna-malli ratkaisee tämän: 30 min + 23,5 h palautuminen → 97 % korjaus; 22 h altistus + 2 h palautuminen → 21 % korjaus.",
     lateralizationNote: "Kaksikanavamallin spatiaalista rakennetta tukevat lateralisaatiotutkimukset: [[ref:eliyahu2006|Eliyahu ym. (2006)]] ja [[ref:luria2009|Luria ym. (2009)]] osoittivat, että 890 MHz:n altistus vaikuttaa nimenomaan puhelinta lähimpänä olevaan aivopuoliskoon. Tämä osoittaa, ettei henkilökohtaisen EMF:n vaikutus ole systeeminen vaan paikallinen — EMF vaimenee etäisyyden neliössä — ja tukee BERM:n premissiä: puhelin taskussa → kivekset, puhelin korvalla → hypotalamus.",
@@ -1060,7 +1168,7 @@ const t = {
       "Lähde: sähköverkko, kodin johdotus, kodinkoneet, muuntajat. Mekanismi: IFO-VGIC pakko-oskillaatio ([[ref:panagopoulos2025_ifo|Panagopoulos 2025]]). Historia: läsnä sähköistymisestä (1880-luku), vakaa n. 1970 jälkeen. Sijaismuuttuja: asumisen sähkönkulutus (kWh per capita). Aina päällä, 24/7, koko koti.",
     tcbmIfTitle: "Kanava 2: IF (300 Hz – 10 MHz)",
     tcbmIfDesc:
-      "Lähde: LED-ajurit (20–300 kHz), SMPS, VFD, induktioliedet. Mekanismi: Cyb5b → Ca²⁺-oskillaatiot ([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]]), IFO korkeammilla taajuuksilla. Historia: lähes nolla ennen 2009, eksponentiaalinen kasvu 2009–2019 (EU LED-siirtymä). Sijaismuuttuja: LED-markkinaosuus × asumisen sähkönkulutus. Pulssitettu, korkea dV/dt, säätelyaukko ([[ref:ijrb2022_if_review|IJRB 2022]]).",
+      "Lähde: LED-ajurit (20–300 kHz), SMPS, VFD, induktioliedet. Mekanismi: Cyb5b → Ca²⁺-vaihtelut ([[ref:kim2026_cell_gene_switch|Kim 2026 Cell]]), IFO korkeammilla taajuuksilla. Historia: lähes nolla ennen 2009, eksponentiaalinen kasvu 2009–2019 (EU LED-siirtymä). Sijaismuuttuja: LED-markkinaosuus × asumisen sähkönkulutus. Pulssitettu, korkea dV/dt, säätelyaukko ([[ref:ijrb2022_if_review|IJRB 2022]]).",
     tcbmRfTitle: "Kanava 3: RF (100 kHz – 300 GHz)",
     tcbmRfDesc:
       "Lähde: matkapuhelimet, Wi-Fi, Bluetooth, tukiasemat, IoT. Mekanismi: RPM/CRY spin-kemia ([[ref:ritz2004|Ritz 2004]]), terminen absorptio korkealla SAR:lla. Historia: 2G (1991), 3G (2001), 4G (2009), 5G (2019), Wi-Fi (1999). Sijaismuuttuja: laajakaistaliittymät per 100, matkapuhelinliittymät. Moduloitu (datakoodaus), henkilökohtainen + ympäristö.",
@@ -1071,7 +1179,7 @@ const t = {
     tcbmCrossSectional:
       "Poikkileikkauskaavassa (54 maata, LOOCV RMSE 0.522) asumisen sähkönkulutus on pääsijaismuuttuja, koska se kattaa ELF:n (aina läsnä sähkön kanssa) ja korreloi IF:n kanssa (LED-penetraatio seuraa sähköistymistä). Laajakaista kattaa RF:n. ELF kantaa ~60 % poikkileikkaussignaalista, RF ~40 %. IF:ää ei voi erottaa ELF:stä poikkileikkauksessa, koska LED-penetraatio korreloi sähköistymisen kanssa. Temporaalinen testi (T1: LED-DID) tarvitaan IF:n itsenäisen panoksen erottamiseksi.",
     tcbmWolframPlanned:
-      "Suunniteltu: Wolfram Language -formalisointi kolmikanavaisen kytkentärakenteen muodolliseksi verifioinniksi, mukaan lukien IFO-VGIC-kynnyksen symbolinen derivointi ja numeerinen validointi 54 maan poikkileikkausaineistolla.",
+      "Suunniteltu: Wolfram Language -formalisointi kolmikanavaisen kytkentärakenteen muodolliseksi todentamiseksi, mukaan lukien IFO-VGIC-kynnyksen symbolinen derivointi ja numeerinen validointi 54 maan poikkileikkausaineistolla.",
 
     recovSub: "Melatoniini → kortisoli → testosteroni → siittiöt → hedelmällisyys -palautumiskaskadi ja aikaskaalat",
     recovTitle: "Viisikerroksinen palautumismalli",
@@ -1119,15 +1227,15 @@ const t = {
     compExplain:
       "Kun α = 0, kompensaatiota ei ole ja biologinen lasku siirtyy suoraan TFR:ään. Kun α = 1, kompensaatio on täydellinen eikä biologinen lasku vaikuta havaittuun TFR:ään. Kalibroitu arvo 0,43 tarkoittaa osittaista mutta epätäydellistä kompensaatiota -- biologinen lasku näkyy edelleen TFR:ssä, mutta noin puolella nopeudella verrattuna tilanteeseen ilman yhteiskunnallista sopeutumista.",
 
-    camkiiConvTitle: "CaMKII: konvergenssimolekyyli",
+    camkiiConvTitle: "CaMKII: yhdentymismolekyyli",
     camkiiConvSub: "Yksi molekyyli selittää, miksi lihavuus, diabetes, hedelmättömyys ja unihäiriöt lisääntyvät samanaikaisesti",
-    camkiiConvDesc: "CaMKII (kalsium/kalmoduliini-riippuvainen proteiinikinaasi II) aktivoituu VGCC-välitteisen Ca²⁺-sisäänvirtauksen jälkeen. Viisi verifioitua kohdetta yhdistää sen viiteen sairauskaskadiin samanaikaisesti. Tämä konvergenssi ratkaisee modernin epidemiologian keskeisen arvoituksen: miksi lihavuus, diabetes, hedelmättömyys ja unihäiriöt lisääntyvät rinnakkain kaikissa teollistuneissa yhteiskunnissa? Niillä on yhteinen edeltävä syy (EMF-indusoitu Ca²⁺-dysregulaatio), joka vaikuttaa yhteisen jatkovaiheen effektorin (CaMKII) kautta eri kohde-elimissä.",
-    camkiiConvCaveat: "Episteeminen huomio: CaMKII-konvergenssi on TUNNISTETTU itsenäisestä kirjallisuudesta mutta ei vielä kokeellisesti testattu integroituna EMF-mekanismina. Jokainen reitti on verifioitu erikseen; integroitu koe (EMF → CaMKII → kaikki viisi kohdetta samanaikaisesti) on ennuste, ei vahvistettu fakta. Evidenssitaso: M.",
-    camkiiConvLink: "Katso metabolinen evidenssi →",
+    camkiiConvDesc: "CaMKII (kalsium/kalmoduliini-riippuvainen proteiinikinaasi II) aktivoituu VGCC-välitteisen Ca²⁺-sisäänvirtauksen jälkeen. Viisi todennettua kohdetta yhdistää sen viiteen sairauskaskadiin samanaikaisesti. Tämä yhdentyminen ratkaisee modernin epidemiologian keskeisen arvoituksen: miksi lihavuus, diabetes, hedelmättömyys ja unihäiriöt lisääntyvät rinnakkain kaikissa teollistuneissa yhteiskunnissa? Niillä on yhteinen edeltävä syy (EMF-aiheutettu Ca²⁺-dysregulaatio), joka vaikuttaa yhteisen jatkovaiheen effektorin (CaMKII) kautta eri kohde-elimissä.",
+    camkiiConvCaveat: "Episteeminen huomio: CaMKII-yhdentyminen on TUNNISTETTU itsenäisestä kirjallisuudesta mutta ei vielä kokeellisesti testattu integroituna EMF-mekanismina. Jokainen reitti on todennettu erikseen; integroitu koe (EMF → CaMKII → kaikki viisi kohdetta samanaikaisesti) on ennuste, ei vahvistettu fakta. Näyttötaso: M.",
+    camkiiConvLink: "Katso metabolinen näyttö →",
 
     techLayersTitle: "Teknologiakerrokset: viisi sukupolvea kerrostuvia altistuksia",
     techLayersSub: "Jokainen teknologiasukupolvi lisäsi uuden taajuuskerroksen. Biologinen vaikutus ei ole summautuva — se on superadditiivinen CaMKII-kynnysintegraation kautta.",
-    techLayersDesc: "Moderni EMF-altistus ei ole yksi signaali — se on 5–12 samanaikaista lähdettä, jotka kattavat 10 kertaluokkaa taajuudessa. Sähköverkko (50/60 Hz ELF) primaa soluja ylössäätelemällä VGCC-ekspressiota. WiFi lisää piilotetun 10 Hz ELF-beacon-pulssin 100:1 huippukertoimella. GSM toi historian bioaktiivisimman modulaatiomuutoksen (NMT→GSM = analoginen→pulssi). 4G/älypuhelimet toivat jatkuvan kehokontaktin. LED-valaistus avasi IF-kanavan (20–300 kHz). Jokainen kerros kerrostuu aiempien päälle; CaMKII integroi kaiken Ca²⁺:n lähteestä riippumatta.",
+    techLayersDesc: "Moderni EMF-altistus ei ole yksi signaali — se on 5–12 samanaikaista lähdettä, jotka kattavat 10 kertaluokkaa taajuudessa. Sähköverkko (50/60 Hz ELF) herkistää soluja ylössäätelemällä VGCC-ekspressiota. WiFi lisää piilotetun 10 Hz ELF-beacon-pulssin 100:1 huippukertoimella. GSM toi historian bioaktiivisimman modulaatiomuutoksen (NMT→GSM = analoginen→pulssi). 4G/älypuhelimet toivat jatkuvan kehokontaktin. LED-valaistus avasi IF-kanavan (20–300 kHz). Jokainen kerros kerrostuu aiempien päälle; CaMKII integroi kaiken Ca²⁺:n lähteestä riippumatta.",
     techLayersLink: "Katso kaikki 14 teknologiaprofiilia →",
 
     elfPrimingTitle: "ELF-priming-hypoteesi",
@@ -1150,9 +1258,9 @@ const t = {
     layerAnomalies: [
       { referenceId: "mozaffarian2022", title: "Mozaffarian-paradoksi", subtitle: "Amerikkalaiset syövät vähemmän mutta painavat enemmän 2000 jälkeen", conventional: "Selittämätöntä", explanation: "Kerrostumat 3–4 (WiFi + LED IF) lisäsivät metabolisen häiriön kalorinsaannista riippumatta. BAT-termogeneesi↓ + insuliinidynamiikka↓ ovat kaloririippumattomia mekanismeja.", ref: "Mozaffarian 2022, AJCN" },
       { title: "2012-inflektio", subtitle: "Some oli olemassa 2003 ilman kriisiä", conventional: "Somen sisältö vahingoittaa nuoria", explanation: "2012 = ensimmäinen vuosi jolloin KAIKKI KOLME KANAVAA (ELF + IF + RF) samanaikaisesti aktiivisia 24/7 nuorten kehossa. CaMKII-kynnys ylittyi väestötasolla. Sisältörajoitukset EIVÄT ratkaise kriisiä.", ref: "Haidt 2024; BERM-kerrostumaanalyysi" },
-      { referenceId: "t2d_covid2024", title: "COVID-kiihdytys", subtitle: "T2D-prevalenssin kasvu: 2,90%→3,52%/v", conventional: "Liikkumattomuus lockdownin aikana", explanation: "Lockdown LISÄSI kerrostumaintensiteettiä: 24h/pv kotona WiFi + LED + useat laitteet. Palautumisikkuna poistui kokonaan. Etätyöntekijöillä suurempi EMF kuin työmatkantekijöillä.", ref: "GBD 2021 / Front Endocrinol 2024" },
+      { referenceId: "t2d_covid2024", title: "COVID-kiihdytys", subtitle: "T2D-esiintyvyyden kasvu: 2,90%→3,52%/v", conventional: "Liikkumattomuus lockdownin aikana", explanation: "Lockdown LISÄSI kerrostumaintensiteettiä: 24h/pv kotona WiFi + LED + useat laitteet. Palautumisikkuna poistui kokonaan. Etätyöntekijöillä suurempi EMF kuin työmatkantekijöillä.", ref: "GBD 2021 / Front Endocrinol 2024" },
       { title: "15–30 vuoden viive", subtitle: "Kehitysmaat seuraavat samaa kehityskulkua, viiveellä", conventional: "Vaurastuminen muuttaa elintapoja", explanation: "Viive vastaa sähköistymis- ja teknologia-adoptioaikataulua, ei vaurautta. Kiinan T2D: 1,3 % (1980) → 8,7 % (2014) rinnastuu sähköistymiseen 60 %:sta 100 %:iin.", ref: "BMC Public Health 2018" },
-      { title: "Amish-poikkeus", subtitle: "TFR 6,1, matala obesiteetti, matala dementia — sama maa", conventional: "Fyysinen työ ja yhteisöllisyys", explanation: "Nolla teknologiakerrosta. Ei ELF-primingia. Täysi palautuminen. EMF_effective ≈ 0. Ruokavalio EI ole erityisen terveellinen — EMF-ympäristö on.", ref: "BERM-populaatiovertailu" },
+      { title: "Amish-poikkeus", subtitle: "TFR 6,1, matala obesiteetti, matala dementia — sama maa", conventional: "Fyysinen työ ja yhteisöllisyys", explanation: "Nolla teknologiakerrosta. Ei ELF-esialtistusta. Täysi palautuminen. EMF_effective ≈ 0. Ruokavalio EI ole erityisen terveellinen — EMF-ympäristö on.", ref: "BERM-populaatiovertailu" },
     ],
     layerCountryTitle: "Maavertailu: v19.1 (diagnostinen) vs v20",
     layerCountries: [
@@ -1175,11 +1283,11 @@ const t = {
 
     seasonTitle: "Vuodenaikaherkkyys: CRY × leveysaste",
     seasonSub: "CRY-magnetoreseptori on valoriippuvainen — talvi vahvistaa EMF:n biologisia vaikutuksia",
-    seasonDesc: "Kryptokromi (CRY) on valoriippuvainen magnetoreseptori. Talvella (vähemmän valoa) CRY on herkempi magneettikentän häiriöille — EMF:n vaikutukset melatoniiniin ovat VOIMAKKAAMPIA talvella. [[ref:halgamuge2015|Halgamuge 2015]] (Nature Sci Rep) osoitti tämän suoraan: ELF suppressoi melatoniinia talvella mutta LISÄSI sitä kesällä vasikoilla. Tämä vuodenaikamodulaatio selittää miksi Pohjoismaat (korkea leveysaste + korkea EMF) kantavat suhteettoman terveystaakan (SAD-prevalenssi: Suomi 21 %), ja miksi eri vuodenaikoina tehdyt EMF-tutkimukset tuottavat ristiriitaisia tuloksia.",
+    seasonDesc: "Kryptokromi (CRY) on valoriippuvainen magnetoreseptori. Talvella (vähemmän valoa) CRY on herkempi magneettikentän häiriöille — EMF:n vaikutukset melatoniiniin ovat VOIMAKKAAMPIA talvella. [[ref:halgamuge2015|Halgamuge 2015]] (Nature Sci Rep) osoitti tämän suoraan: ELF vaimentaa melatoniinia talvella mutta LISÄSI sitä kesällä vasikoilla. Tämä vuodenaikamodulaatio selittää miksi Pohjoismaat (korkea leveysaste + korkea EMF) kantavat suhteettoman terveystaakan (SAD-esiintyvyys: Suomi 21 %), ja miksi eri vuodenaikoina tehdyt EMF-tutkimukset tuottavat ristiriitaisia tuloksia.",
     seasonFormulaLabel: "Formula v21 -korjauskerroin:",
     seasonFormula: "S = 1 + γ × f(leveysaste, vuodenaika)",
-    seasonFormulaDesc: "S kasvaa talvella korkeilla leveysasteilla (CRY herkempi EMF-perturbaalioille), laskee kesällä (CRY saturoitunut ympäröivästä valosta). Päiväntasaajan lähellä S ≈ 1,0 (tasainen päivänpituus). Suomi talvella: S ≈ 1,3. Suomi kesällä: S ≈ 0,9.",
-    seasonPred1: "SEASON-1: SAD/masennusprevalenssi korreloi leveysaste × EMF-tiheys, ei pelkkä leveysaste",
+    seasonFormulaDesc: "S kasvaa talvella korkeilla leveysasteilla (CRY herkempi EMF-häiriöille), laskee kesällä (CRY saturoitunut ympäröivästä valosta). Päiväntasaajan lähellä S ≈ 1,0 (tasainen päivänpituus). Suomi talvella: S ≈ 1,3. Suomi kesällä: S ≈ 0,9.",
+    seasonPred1: "SEASON-1: SAD/masennusesiintyvyys korreloi leveysaste × EMF-tiheys, ei pelkkä leveysaste",
     seasonPred2: "SEASON-2: EMF-vapaan makuuhuoneen hyöty on SUUREMPI talvikuukausina",
     seasonRef: "[[ref:halgamuge2015|Halgamuge 2015]] · [[ref:kolbabova2015_melatonin_seasonal|Kolbabová et al. 2015]] · CRY-valoriippuvuus (biorxiv 2024)",
 
@@ -1190,14 +1298,14 @@ const t = {
     cacna1cImplication: "EHS-uudelleentulkinta: sähköherkkyysoireyhtymä ei ole psykosomaattinen — se heijastaa genotyypistä riippuvaa kynnysvaihtelua. CACNA1C A/A -genotyypin yksilöillä on enemmän Cav1.2-kanavia, he saavuttavat CaMKII-kynnyksen matalammalla EMF-altistuksella ja kokevat oireita aikaisemmin.",
     cacna1cFormulaLabel: "Populaatiotason korjaus:",
     cacna1cFormula: "G_pop = 1 + δ × CACNA1C_A-alleelitaajuus",
-    cacna1cFormulaDesc: "G_pop säätää populaation kokonais-EMF-herkkyyttä A-alleelin prevalenssin perusteella. Eurooppalaista alkuperää olevilla populaatioilla (korkeampi A-alleelitaajuus) voi olla korkeampi kokonaisherkkyys kuin itäaasialaisilla populaatioilla, vaikka tämä vaatii lisäverifiointia.",
+    cacna1cFormulaDesc: "G_pop säätää populaation kokonais-EMF-herkkyyttä A-alleelin esiintyvyyden perusteella. Eurooppalaista alkuperää olevilla populaatioilla (korkeampi A-alleelitaajuus) voi olla korkeampi kokonaisherkkyys kuin itäaasialaisilla populaatioilla, vaikka tämä vaatii lisätodentamista.",
     cacna1cPred1: "GEN-1: Populaatiot, joilla korkeampi CACNA1C A-alleelitaajuus, osoittavat jyrkempää terveyslaskua per EMF-yksikkö",
     cacna1cPred2: "GEN-2: A/A-genotyypin yksilöt osoittavat voimakkaampia EMF-vasteita kuin G/G kontrolloiduissa altistustutkimuksissa",
     cacna1cRef: "[[ref:sousouri2025|Sousouri 2025]] (ETH) · [[ref:cacna1c_functional|Eckart et al. 2016]] · [[ref:cacna1c_amygdala|Tesli et al. 2013]]",
 
     neonatalQTitle: "Neonataalinen Q-tekijä: resonanssikynnys",
     neonatalQSub: "Miksi vastasyntyneen aivot ovat vaimentamaton resonaattori — GABA eksitatorinen NKCC1/KCC2-kytkimen kautta",
-    neonatalQDesc: "Aikuisen neuroneissa GABA on inhibitorinen — se tarjoaa vaimennuksen (γ > 0) joka pitää Ca²⁺-oskillaatiot rajattuina. Vastasyntyneillä NKCC1/KCC2-kloridikuljettajasuhde on kääntynyt: NKCC1 dominoi, kloridi on korkea solunsisäisesti ja GABA on eksitatorinen. Tämä tarkoittaa γ < 0 — järjestelmällä on negatiivinen vaimennus ja laatutekijä Q → ∞. Vastasyntyneen aivot ovat käytännössä vaimentamaton resonaattori: mikä tahansa EMF:n aiheuttama Ca²⁺-oskillaatio, kuinka pieni tahansa, soi ilman vaimenemista. Tästä syystä 2–4 kuukauden ikäikkuna on SIDS:n huippuriskikausi — KCC2-kytkin ei ole vielä tuonut vaimennusta.",
+    neonatalQDesc: "Aikuisen neuroneissa GABA on inhibitorinen — se tarjoaa vaimennuksen (γ > 0) joka pitää Ca²⁺-vaihtelut rajattuina. Vastasyntyneillä NKCC1/KCC2-kloridikuljettajasuhde on kääntynyt: NKCC1 dominoi, kloridi on korkea solunsisäisesti ja GABA on eksitatorinen. Tämä tarkoittaa γ < 0 — järjestelmällä on negatiivinen vaimennus ja laatutekijä Q → ∞. Vastasyntyneen aivot ovat käytännössä vaimentamaton resonaattori: mikä tahansa EMF:n aiheuttama Ca²⁺-oskillaatio, kuinka pieni tahansa, soi ilman vaimenemista. Tästä syystä 2–4 kuukauden ikäikkuna on SIDS:n huippuriskikausi — KCC2-kytkin ei ole vielä tuonut vaimennusta.",
     neonatalQFormulaLabel: "Neonataalinen Q-tekijän vaimeneminen:",
     neonatalQFormula: "Q_neonatal(ikä) = Q₀ / (1 + (ikä / τ_KCC2)²)",
     neonatalQFormulaDesc: "Q₀ = laatutekijä syntyessä (maksimaalinen, ~vaimentamaton). τ_KCC2 ≈ 2–4 viikkoa = NKCC1→KCC2-kytkimen aikavakio. Syntyessä: Q ≈ Q₀. 2–4 kuukauden iässä: Q laskeva mutta vaarallisen korkea. 12 kuukauden iässä: Q lähestyy aikuistasoja (~1–5).",
@@ -1208,30 +1316,30 @@ const t = {
 
     feedbackLoopsTitle: "Seitsemäntoista positiivista takaisinkytkentäsilmukkaa",
     feedbackLoopsSub: "Itseään vahvistavat syklit muodostavat verkoston — mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti",
-    feedbackLoopsDesc: "Konvergenssiverifiointi paljasti seitsemäntoista positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti.",
+    feedbackLoopsDesc: "Yhdentymisen todentaminen paljasti seitsemäntoista positiivista takaisinkytkentäsilmukkaa BERM-kaskadissa. Silmukat muodostavat verkoston: mikä tahansa sisääntulopiste aktivoi useita rappeutumisspiraleja samanaikaisesti.",
     feedbackLoops: [
       { id: "S1", name: "Monitorin palauteresonanssi", steps: "Vauvan ääni → mikrofoni → RF-modulaatio → VGCC → Ca²⁺ → voimakkaampi oskillaatio → kovempi ääni → lisää RF:ää → kaskadivahvistus", status: "Mekanistisesti koherentti, testaamaton kokonaisuutena", color: "amber" },
-      { id: "S2", name: "Serotoniin-lukitusavaus", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → talamokortikaalinen portti AUKI → EMF tunkeutuu syvemmälle → lisää CaMKII-häiriötä → lisää 5-HT↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
-      { id: "S3", name: "Hypoksia-NKCC1", steps: "CSD → paikallinen hypoksia → NKCC1↑ → GABA eksitatorisempi → γ↓ → Q↑ → CSD leviää helpommin → lisää hypoksiaa → ...", status: "NKCC1↑ hypoksiassa verifioitu", color: "green" },
-      { id: "S4", name: "Walkerin uniketju", steps: "EMF → melatoniini↓ → uni↓ → GABA-tooninen inhibitio↓ → γ↓ → Q↑ → EMF vaikuttaa aivoihin enemmän → lisää melatoniini↓ → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
-      { id: "S5", name: "PGC → BBB -spiraali", steps: "EMF → PGC → melatoniini↓ → BBB tiiviin liitoksen proteiinit↓ → raskasmetallit pääsevät aivoihin helpommin → lisää PGC:tä → ...", status: "Jokainen linkki verifioitu itsenäisesti", color: "green" },
-      { id: "S6", name: "Kortisoli-hippokampus-pyörre", steps: "EMF → HPA → kortisoli↑ → hippokampuksen atrofia → HPA:n negatiivinen palaute MENETETTY → ei jarrua → kortisoli↑↑ → ...", status: "Sapolskyn mekanismi verifioitu", color: "green" },
+      { id: "S2", name: "Serotoniin-lukitusavaus", steps: "EMF → Ca²⁺ → CaMKII → TPH-2 → 5-HT↓ → talamokortikaalinen portti AUKI → EMF tunkeutuu syvemmälle → lisää CaMKII-häiriötä → lisää 5-HT↓ → ...", status: "Jokainen linkki todennettu itsenäisesti", color: "green" },
+      { id: "S3", name: "Hypoksia-NKCC1", steps: "CSD → paikallinen hypoksia → NKCC1↑ → GABA eksitatorisempi → γ↓ → Q↑ → CSD leviää helpommin → lisää hypoksiaa → ...", status: "NKCC1↑ hypoksiassa todennettu", color: "green" },
+      { id: "S4", name: "Walkerin uniketju", steps: "EMF → melatoniini↓ → uni↓ → GABA-tooninen inhibitio↓ → γ↓ → Q↑ → EMF vaikuttaa aivoihin enemmän → lisää melatoniini↓ → ...", status: "Jokainen linkki todennettu itsenäisesti", color: "green" },
+      { id: "S5", name: "PGC → BBB -spiraali", steps: "EMF → PGC → melatoniini↓ → BBB tiiviin liitoksen proteiinit↓ → raskasmetallit pääsevät aivoihin helpommin → lisää PGC:tä → ...", status: "Jokainen linkki todennettu itsenäisesti", color: "green" },
+      { id: "S6", name: "Kortisoli-hippokampus-pyörre", steps: "EMF → HPA → kortisoli↑ → hippokampuksen atrofia → HPA:n negatiivinen palaute MENETETTY → ei jarrua → kortisoli↑↑ → ...", status: "Sapolskyn mekanismi todennettu", color: "green" },
       { id: "S7", name: "BAT metabolinen spiraali", steps: "EMF → BAT PRDM16↓ → termogeneesi↓ → metabolinen oireyhtymä → tulehdus → VGCC-herkkyys↑ → lisää Ca²⁺-häiriötä → ...", status: "Mekanistisesti koherentti, eläindata", color: "amber" },
-      { id: "S8", name: "Testosteronin neuroprotektio-menetys", steps: "EMF → Leydig → StAR↓ → T↓ → neuroprotektio↓ + synaptinen plastisuus↓ → haavoittuvampi EMF:lle → lisää Leydig-vauriota → ...", status: "T↓ neuroprotektiolinkki verifioitu", color: "green" },
-      { id: "S9", name: "IL-1β → KCC2 -silmukka", steps: "EMF → syöttösolu → IL-1β → KCC2-kypsyminen viivästyy → GABA eksitatorinen pidempään → Q↑ → lisää neuronivaurioita → lisää IL-1β:tä → ...", status: "KCC2:n ympäristösäätely verifioitu", color: "green" },
-      { id: "S10", name: "Hypotalamuksen moniakselikaskadi", steps: "EMF → hypotalamuksen synapttiset vesikkelit↓ → GnRH↓ + CRH-häiriö + TRH↓ → monihormonipuutos → systeeminen stressi → lisää HPA-aktivaatiota → ...", status: "[[ref:kim2019_hypothalamus|Kimin 2019]] synapttiset muutokset verifioitu", color: "green" },
-      { id: "S11", name: "Sirkadiaanisen kellon itsehäiriö", steps: "EMF → SCN Ca²⁺ häiriintyy → melatoniinin ajoitus katoaa → Per2↓ suolistossa → perifeeriset kellot desynkronoituvat → SCN haavoittuvampi", status: "SCN Ca²⁺ -oskillaatio verifioitu", color: "green" },
-      { id: "S12", name: "NK-syöpä-tulehdus", steps: "ELF → NK-sytotoksisuus↓ → syöpävalvonta↓ → kasvainkasvu → tulehdus → VGCC-sensitisaatio↑ → lisää NK-suppressiota", status: "NK:n Ca²⁺-riippuvuus + ELF-suppressio verifioitu", color: "green" },
-      { id: "S13", name: "HPA-HPG-ristispiraali", steps: "EMF → kortisoli↑ → GnIH↑ → T↓ → neuroprotektio↓ → hippokampus haavoittuva → HPA-jarru menetetty → kortisoli↑↑ → lisää GnIH:ta", status: "RF9 palautti T:n kortisolikäsitellyissä kädellisisssä", color: "green" },
-      { id: "S14", name: "Suolisto-aivo-tulehdus", steps: "EMF → melatoniini↓ → Per2↓ suolistossa → suoliston este↓ → LPS verenkiertoon → neurotulehdus → hippokampaalinen neurogeneesi↓ → lisää HPA-aktivaatiota → lisää melatoniini↓", status: "Per2 KO → suoliston este → LPS → masennus verifioitu", color: "green" },
-      { id: "S15", name: "Melatoniini-telomeeri-ikääntymiskierre", steps: "EMF → melatoniini↓ → telomeraasi↓ + SIRT1↓ → telomeerien lyheneminen → SASP → tulehdus → ROS↑ → lisää telomeerivaurioita → lisää SASP:ia → ...", status: "Melatoniini → telomeraasi + SIRT1 verifioitu; masennus = 7v kiihtynyt ikääntyminen", color: "green" },
-      { id: "S16", name: "Kipu-uni-kortisoli-kierre", steps: "EMF → α2δ-1↑ → sentraalinen sensitisaatio → krooninen kipu → uni↓ (S4) → kortisoli↑ (S7) + GABA↓ → tulehdus → lisää sensitisaatiota → masennus → uni↓ → ...", status: "α2δ-1 → kipu ilman vauriota verifioitu; kipu-uni-kortisoli jokainen verifioitu", color: "green" },
-      { id: "S17", name: "Amygdala-ahdistuskierre", steps: "EMF → Ca²⁺↑ → CaMKII → kortisoli↑ → BLA-hypertrofia → amygdala yliaktiivinen → ahdistus↑ → HPA-aktivaatio → kortisoli↑↑ → lisää BLA-hypertrofiaa → ...", status: "Yksittäinen kortisoliannos → BLA-hypertrofia verifioitu ([[ref:amygdala_cort|PNAS 2008]]); pysyvyys verifioitu ([[ref:amygdala_persist|Neurosci Lett 2023]])", color: "green" },
+      { id: "S8", name: "Testosteronin neuroprotektio-menetys", steps: "EMF → Leydig → StAR↓ → T↓ → neuroprotektio↓ + synaptinen plastisuus↓ → haavoittuvampi EMF:lle → lisää Leydig-vauriota → ...", status: "T↓ neuroprotektiolinkki todennettu", color: "green" },
+      { id: "S9", name: "IL-1β → KCC2 -silmukka", steps: "EMF → syöttösolu → IL-1β → KCC2-kypsyminen viivästyy → GABA eksitatorinen pidempään → Q↑ → lisää neuronivaurioita → lisää IL-1β:tä → ...", status: "KCC2:n ympäristösäätely todennettu", color: "green" },
+      { id: "S10", name: "Hypotalamuksen moniakselikaskadi", steps: "EMF → hypotalamuksen synaptiset vesikkelit↓ → GnRH↓ + CRH-häiriö + TRH↓ → monihormonipuutos → systeeminen stressi → lisää HPA-aktivaatiota → ...", status: "[[ref:kim2019_hypothalamus|Kimin 2019]] synaptiset muutokset todennettu", color: "green" },
+      { id: "S11", name: "Sirkadiaanisen kellon itsehäiriö", steps: "EMF → SCN Ca²⁺ häiriintyy → melatoniinin ajoitus katoaa → Per2↓ suolistossa → perifeeriset kellot desynkronoituvat → SCN haavoittuvampi", status: "SCN Ca²⁺ -oskillaatio todennettu", color: "green" },
+      { id: "S12", name: "NK-syöpä-tulehdus", steps: "ELF → NK-sytotoksisuus↓ → syöpävalvonta↓ → kasvainkasvu → tulehdus → VGCC-sensitisaatio↑ → lisää NK-suppressiota", status: "NK:n Ca²⁺-riippuvuus + ELF-suppressio todennettu", color: "green" },
+      { id: "S13", name: "HPA-HPG-ristispiraali", steps: "EMF → kortisoli↑ → GnIH↑ → T↓ → neuroprotektio↓ → hippokampus haavoittuva → HPA-jarru menetetty → kortisoli↑↑ → lisää GnIH:ta", status: "RF9 palautti T:n kortisolikäsitellyissä kädellisissä", color: "green" },
+      { id: "S14", name: "Suolisto-aivo-tulehdus", steps: "EMF → melatoniini↓ → Per2↓ suolistossa → suoliston este↓ → LPS verenkiertoon → neurotulehdus → hippokampaalinen neurogeneesi↓ → lisää HPA-aktivaatiota → lisää melatoniini↓", status: "Per2 KO → suoliston este → LPS → masennus todennettu", color: "green" },
+      { id: "S15", name: "Melatoniini-telomeeri-ikääntymiskierre", steps: "EMF → melatoniini↓ → telomeraasi↓ + SIRT1↓ → telomeerien lyheneminen → SASP → tulehdus → ROS↑ → lisää telomeerivaurioita → lisää SASP:ia → ...", status: "Melatoniini → telomeraasi + SIRT1 todennettu; masennus = 7v kiihtynyt ikääntyminen", color: "green" },
+      { id: "S16", name: "Kipu-uni-kortisoli-kierre", steps: "EMF → α2δ-1↑ → sentraalinen sensitisaatio → krooninen kipu → uni↓ (S4) → kortisoli↑ (S7) + GABA↓ → tulehdus → lisää sensitisaatiota → masennus → uni↓ → ...", status: "α2δ-1 → kipu ilman vauriota todennettu; kipu-uni-kortisoli jokainen todennettu", color: "green" },
+      { id: "S17", name: "Amygdala-ahdistuskierre", steps: "EMF → Ca²⁺↑ → CaMKII → kortisoli↑ → BLA-hypertrofia → amygdala yliaktiivinen → ahdistus↑ → HPA-aktivaatio → kortisoli↑↑ → lisää BLA-hypertrofiaa → ...", status: "Yksittäinen kortisoliannos → BLA-hypertrofia todennettu ([[ref:amygdala_cort|PNAS 2008]]); pysyvyys todennettu ([[ref:amygdala_persist|Neurosci Lett 2023]])", color: "green" },
     ],
-    feedbackLoopsLink: "Ks. koko konvergenssiverifiointi →",
+    feedbackLoopsLink: "Ks. koko yhdentymisen todentaminen →",
 
     hypoNexusTitle: "Hypotalamuksen keskuspiste (VK13)",
-    hypoNexusSub: "Hypotalamus seitsemän hormoniakselin anatomisena konvergenssipisteenä",
+    hypoNexusSub: "Hypotalamus seitsemän hormoniakselin anatomisena yhdentymispisteenä",
     hypoNexusDesc: "[[ref:kim2019_hypothalamus|Kim 2019]] osoitti, että 835 MHz (12 viikkoa) vähentää synaptisten vesikkelien lukumäärää, kokoa ja telakoitumista hypotalamuksessa. Kriittisesti myös synaptotagmiini 1 — Ca²⁺-sensori vesikkelien vapautumiselle — vähenee. Koska KAIKKIEN hypotalamuksen hormonien vapautuminen riippuu Ca²⁺-laukaisemasta vesikkelien fuusiosta, synaptotagmiini 1:n menetys tarkoittaa KAIKKIEN akselien samanaikaista heikentymistä.",
     hypoNexusAxes: [
       { axis: "GnRH → LH/FSH → T↓", organ: "Sukurauhaset", consequence: "Testosteronin lasku, hedelmällisyyden menetys" },
@@ -1255,7 +1363,7 @@ const t = {
     tripleLockSynergy: "Kolmoislukkoteoria ei ole kolme itsenäistä vaikutusta — vaan synergistinen ansa. T↓ × F↑ = kiihtynyt neurodegeneraatio. F↑ × DA↓ = hoitoresistentti masennus. T↓ × DA↓ = motivaation romahdus. T↓ × F↑ × DA↓ = täydellinen moderni fenotyyppi.",
 
     quadLockTitle: "Nelilukko: Neljäs ulottuvuus",
-    quadLockSub: "T↓ × F↑ × DA↓ × OXT↓ — oksitosiinin lisääminen täydentää sosiaalisen-reproduktiivisen romahduksen",
+    quadLockSub: "T↓ × F↑ × DA↓ × OXT↓ — oksitosiinin lisääminen täydentää sosiaalis-reproduktiivisen romahduksen",
     quadLockDesc: "Oksitosiinin vapautuminen on suoraan VGCC-riippuvaista (N-tyypin + L-tyypin Ca²⁺-kanavat, [[ref:oxt_vgcc|PMC3197583]]). EMF häiritsee VGCC-toimintaa → OXT-vapautus häiriintyy. OXT↓:n lisääminen kolmoislukkoon luo nelilukon joka selittää täydellisen modernin fenotyypin: ei vain fysiologista rappeutumista vaan sosiaalista pirstoutumista.",
     quadLockComponents: [
       { component: "T↓ × OXT↓", effect: "Reproduktiivis-sosiaalinen romahdus: hedelmällisyyden lasku + parisideoksen heikkeneminen" },
@@ -1267,11 +1375,11 @@ const t = {
 
     dualBarrierTitle: "Kaksoisestemekanismi",
     dualBarrierSubtitle: "BBB + suoliston este jakavat ZO-1:n, okludiinin, klaudiinit",
-    dualBarrierBody: "Veri-aivoeste ja suoliston epitheelinen este jakavat samat tiiviin liitoksen proteiinit: ZO-1, okludiini ja klaudiinit. Melatoniini suojaa molempia esteitä. EMF→melatoniini↓ luo samanaikaisen kaksoishaavottuvuuden: BBB avautuu (raskasmetallit pääsevät aivoihin) JA suoliston este heikkenee (LPS pääsee verenkiertoon → neurotulehdus). Tämä ei ole kaksi erillistä vaikutusta — se on yksi mekanismi (melatoniinin menetys) joka hyökkää kahta samasta molekulaarisesta työkalupakista rakennettua estettä vastaan.",
+    dualBarrierBody: "Veri-aivoeste ja suoliston epitheelinen este jakavat samat tiiviin liitoksen proteiinit: ZO-1, okludiini ja klaudiinit. Melatoniini suojaa molempia esteitä. EMF→melatoniini↓ luo samanaikaisen kaksoishaavoittuvuuden: BBB avautuu (raskasmetallit pääsevät aivoihin) JA suoliston este heikkenee (LPS pääsee verenkiertoon → neurotulehdus). Tämä ei ole kaksi erillistä vaikutusta — se on yksi mekanismi (melatoniinin menetys) joka hyökkää kahta samasta molekulaarisesta työkalupakista rakennettua estettä vastaan.",
 
-    hormesisTitle: "BDNF-hormeesi: taajuus määrää suunnan",
-    hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — sama reitti, vastakkaiset lopputulokset",
-    hormesisBody: "BDNF (aivoista peräisin oleva neurotrofinen tekijä) on välttämätön neuroplastisuudelle, muistille ja neurogeneeisille. RF-EMF (835–2650 MHz) vähentää BDNF:ää hippokampuksessa dendriittien piikkien menetyksen ja kognitiivisen heikentymisen kera. Samalla ELF (50 Hz) KASVATTAA BDNF:ää ja edistää neurogeneesiä. Tämä on taajuusriippuvaista hormeesia saman VGCC-reitin kautta. TTFields-validaatio: 200 kHz välitaajuus kasvattaa NK-solujen sytotoksisuutta kun 50 Hz ELF suppressoi sitä. Lindgrenin χ-parametri ennustaa nämä suuntaerot — erilaiset resonanssiolosuhteet eri taajuuksilla tuottavat vastakkaisia biologisia lopputuloksia.",
+    bdnfHormesisTitle: "BDNF-hormeesi: taajuus määrää suunnan",
+    bdnfHormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — sama reitti, vastakkaiset lopputulokset",
+    bdnfHormesisBody: "BDNF (aivoista peräisin oleva neurotrofinen tekijä) on välttämätön neuroplastisuudelle, muistille ja neurogeneeisille. RF-EMF (835–2650 MHz) vähentää BDNF:ää hippokampuksessa dendriittien piikkien menetyksen ja kognitiivisen heikentymisen kera. Samalla ELF (50 Hz) KASVATTAA BDNF:ää ja edistää neurogeneesiä. Tämä on taajuusriippuvaista hormeesia saman VGCC-reitin kautta. TTFields-todentaminen: 200 kHz välitaajuus kasvattaa NK-solujen sytotoksisuutta kun 50 Hz ELF vaimentaa sitä. Lindgrenin χ-parametri ennustaa nämä suuntaerot — erilaiset resonanssiolosuhteet eri taajuuksilla tuottavat vastakkaisia biologisia lopputuloksia.",
 
     agingSpiralTitle: "Ikääntymiskierre: Melatoniini anti-aging-molekyylinä",
     agingSpiralSub: "EMF → melatoniini↓ → telomeraasi↓ + SIRT1↓ → kiihtynyt ikääntyminen (masennus = 7 vuotta)",
@@ -1287,7 +1395,7 @@ const t = {
 
     genSuscTitle: "Geneettinen herkkyyskartta: 15 geenin kalsiumprofiili",
     genSuscSub: "EMF-herkkyys ei ole yksi geeni — se on polygeeninen profiili kalsiumkaskadin viidellä funktionaalisella tasolla",
-    genSuscDesc: "BERM tunnistaa 15 geeniä, joiden polymorfismit moduloivat yksilön EMF-herkkyyttä. Ne jakautuvat viiteen funktionaaliseen tasoon: INFLUKSI (5 CACNA-geeniä Ca²⁺-sisäänvirtaukselle), MODULAATIO (CACNA2D1 kanavatiheydelle), INTEGRAATIO (CAMK2A/B konvergenssipisteessä), ERITYS (3 geeniä Ca²⁺-poistolle) ja SIGNALOINTI (4 geeniä vastemuokkaukselle). Jokaisen geenin tautiassosiaatiot vastaavat BERM-kaskadien ennusteita.",
+    genSuscDesc: "BERM tunnistaa 15 geeniä, joiden polymorfismit säätelevät yksilön EMF-herkkyyttä. Ne jakautuvat viiteen funktionaaliseen tasoon: INFLUKSI (5 CACNA-geeniä Ca²⁺-sisäänvirtaukselle), MODULAATIO (CACNA2D1 kanavatiheydelle), INTEGRAATIO (CAMK2A/B yhdentymispisteessä), ERITYS (3 geeniä Ca²⁺-poistolle) ja SIGNALOINTI (4 geeniä vastemuokkaukselle). Jokaisen geenin tautiassosiaatiot vastaavat BERM-kaskadien ennusteita.",
     genSuscInfluxTitle: "Taso 1 — Influksi: Ca²⁺-sisäänvirtauskanavat",
     genSuscInfluxGenes: [
       { gene: "CACNA1C", protein: "Cav1.2 (L-tyyppi)", role: "Pää-RF-kohde. Neuronit, sydän, β-solut.", variant: "rs1006737 A-alleeli", diseases: "Bipolaari, skitsofrenia, ASD, masennus, Timothy", evidence: "VAHVISTETTU ([[ref:sousouri2025|Sousouri 2025]] RCT)" },
@@ -1299,25 +1407,25 @@ const t = {
     genSuscModTitle: "Taso 2 — Modulaatio: Kanavien tiheyden säätely",
     genSuscModDesc: "CACNA2D1 koodaa α2δ-1:tä, proteiinia joka säätelee VGCC:iden kuljetusta synapseihin. Tämä on ELF-primaamin molekulaarinen perusta: 50/60 Hz -altistus lisää α2δ-1:tä → enemmän VGCC:itä solupinnalle → solut herkistyvät KAIKELLE myöhemmälle EMF:lle. Gabapentinoidit (pregabaliini, gabapentiini) sitoutuvat α2δ-1:een ja ESTÄVÄT tämän kuljetuksen — mikä tekee niistä mekanistisesti ELF-primaamin ANTAGONISTEJA.",
     genSuscModRef: "[[ref:field2006_cacna2d1|Field 2006]] (PNAS) · [[ref:hoppa2012_a2d|Hoppa 2012]] (Nature)",
-    genSuscIntTitle: "Taso 3 — Integraatio: CaMKII-konvergenssi",
-    genSuscIntDesc: "CAMK2A/B de novo -mutaatiot, jotka LISÄÄVÄT autofosforylaatiota Thr286/287:ssä, tuottavat epilepsian, kehitysvamman ja autismin — TÄSMÄLLEEN ne fenotyypit, joita BERM ennustaa ympäristöllisestä (EMF) autofosforylaation lisäyksestä. Mutaatiot jotka VÄHENTÄVÄT autofosforylaatiota aiheuttavat myös kehitysvamman. Molemmat suunnat = häiriö → tarkka säätely on kriittistä. Tämä on BERM:n SUORIN geneettinen validaatio: geneettinen ja ympäristöllinen CaMKII-häiriö konvergoivat identtisiin kliinisiin lopputuloksiin.",
+    genSuscIntTitle: "Taso 3 — Integraatio: CaMKII-yhdentyminen",
+    genSuscIntDesc: "CAMK2A/B de novo -mutaatiot, jotka LISÄÄVÄT autofosforylaatiota Thr286/287:ssä, tuottavat epilepsian, kehitysvamman ja autismin — TÄSMÄLLEEN ne fenotyypit, joita BERM ennustaa ympäristöllisestä (EMF) autofosforylaation lisäyksestä. Mutaatiot jotka VÄHENTÄVÄT autofosforylaatiota aiheuttavat myös kehitysvamman. Molemmat suunnat = häiriö → tarkka säätely on kriittistä. Tämä on BERM:n SUORIN geneettinen todentaminen: geneettinen ja ympäristöllinen CaMKII-häiriö yhtyvät identtisiin kliinisiin lopputuloksiin.",
     genSuscIntRef: "[[ref:kury2017_camk2|Küry 2017]] (AJHG, PMC5673671) · [[ref:altawashi2018_camk2a|Al-Tawashi 2018]] (eLife, PMC5963920)",
     genSuscExtTitle: "Taso 4 — Eritys: Ca²⁺-poisto",
-    genSuscExtDesc: "Kolme geeniä säätelee Ca²⁺:n poistoa soluista. Hidas eritys + korkea influksi = Ca²⁺ kasaantuu → CaMKII-kynnys ylittyy matalammilla EMF-tasoilla. SLC8A1 (NCX1): sydämen/neuronien Ca²⁺-vienti. ATP2B1 (PMCA1): yleinen Ca²⁺-pumppu (GWAS: hypertensio). ATP2B2 (PMCA2): sisäkorva — hidas PMCA2 + Bluetooth-kuulokkeet = tinnitusriski.",
+    genSuscExtDesc: "Kolme geeniä säätelee Ca²⁺:n poistoa soluista. Hidas eritys + korkea sisäänvirtaus = Ca²⁺ kasaantuu → CaMKII-kynnys ylittyy matalammilla EMF-tasoilla. SLC8A1 (NCX1): sydämen/neuronien Ca²⁺-vienti. ATP2B1 (PMCA1): yleinen Ca²⁺-pumppu (GWAS: hypertensio). ATP2B2 (PMCA2): sisäkorva — hidas PMCA2 + Bluetooth-kuulokkeet = tinnitusriski.",
     genSuscSigTitle: "Taso 5 — Signalointi: Jatkovaste",
     genSuscSigGenes: [
       { gene: "CRY1", variant: "CRY1Δ11 (0,6 %)", effect: "GoF → pidempi sirkadiaaninen jakso → viivästynyt uni → lyhyempi palautumisikkuna. EMF häiritsee CRY:tä → ADDITIIVINEN geneettisen pidennyksen kanssa.", diseases: "DSPD, metabolinen häiriö, unettomuus", evidence: "VAHVISTETTU ([[ref:patke2017_cry1|Patke 2017]] Cell)" },
-      { gene: "MTNR1B", variant: "rs10830963 G", effect: "eQTL → enemmän MT2-reseptoreita β-soluissa → YLIHERKÄT melatoniinimuutoksille. EMF suppressoi melatoniinia → G/G-kantajat kärsivät ENEMMÄN → T2D-riski SUPERADDITIIVINEN.", diseases: "T2D, paastoglukoosi, raskausdiabetes", evidence: "VAHVISTETTU (GWAS + eQTL)" },
+      { gene: "MTNR1B", variant: "rs10830963 G", effect: "eQTL → enemmän MT2-reseptoreita β-soluissa → YLIHERKÄT melatoniinimuutoksille. EMF vaimentaa melatoniinia → G/G-kantajat kärsivät ENEMMÄN → T2D-riski SUPERADDITIIVINEN.", diseases: "T2D, paastoglukoosi, raskausdiabetes", evidence: "VAHVISTETTU (GWAS + eQTL)" },
       { gene: "COMT", variant: "Val158Met (rs4680)", effect: "Val/Val = nopea dopamiinipuhdistuma = matala DA-perusviiva → EMF:n aiheuttama DA-synteesilasku iskee ANKARAMMIN (pienempi puskuri).", diseases: "Stressihaavoittuvuus, addiktio, kipuherkkyys", evidence: "JOHDETTAVISSA" },
     ],
     genSuscEhsTitle: "EHS uudelleenmääriteltynä: polygeeninen kalsiumkynnöshäiriö",
-    genSuscEhsDesc: "EHS (sähköherkkyysoireyhtymä) ei ole psykosomaattinen — se on polygeenisesti ennustettavissa oleva Ca²⁺-kynnöshäiriö. Korkea VGCC-influksi (CACNA GoF) + hidas eritys (SLC8A1/ATP2B LoF) + herkkä signalointi (CRY1Δ11, MTNR1B GG, COMT Val/Val) = matala CaMKII-autofosforylaatiokynnys = oireet EMF-tasoilla, jotka ovat väestön keskiarvon alapuolella.",
+    genSuscEhsDesc: "EHS (sähköherkkyysoireyhtymä) ei ole psykosomaattinen — se on polygeenisesti ennustettavissa oleva Ca²⁺-kynnöshäiriö. Korkea VGCC-sisäänvirtaus (CACNA GoF) + hidas eritys (SLC8A1/ATP2B LoF) + herkkä signalointi (CRY1Δ11, MTNR1B GG, COMT Val/Val) = matala CaMKII-autofosforylaatiokynnys = oireet EMF-tasoilla, jotka ovat väestön keskiarvon alapuolella.",
     genSuscEhsBiomarker: "Ehdotettu biomarkkeri: CaMKII Thr286 -autofosforylaatiotaso lymfosyyteissä. Korkeampi taso = lähempänä kynnystä = EMF-herkempi. Tämä voisi olla EHS:n ensimmäinen OBJEKTIIVINEN biomarkkeri.",
     genSuscEpistaticTitle: "Epistattiset interaktiot",
     genSuscEpistatic: [
-      { pair: "CACNA1C × MTNR1B", effect: "Masennus + T2D samasta melatoniinisuppressiosta eri elimissä. AA + GG -kantajilla: korkein komorbiditeetti.", status: "TESTATTAVISSA (biopankki)" },
+      { pair: "CACNA1C × MTNR1B", effect: "Masennus + T2D samasta melatoniinivaimennuksesta eri elimissä. AA + GG -kantajilla: korkein komorbiditeetti.", status: "TESTATTAVISSA (biopankki)" },
       { pair: "CRY1Δ11 × MTNR1B", effect: "Viivästynyt melatoniini × β-solu-yliherkkyys → aamupaastoglukoosi erityisesti koholla.", status: "JOHDETTAVISSA" },
-      { pair: "CACNA × SLC8A1/ATP2B", effect: "Korkea influksi + hidas eritys = Ca²⁺ kasaantuu → EHS-fenotyyppi.", status: "TESTATTAVISSA (EHS-kohortin genotyypitys)" },
+      { pair: "CACNA × SLC8A1/ATP2B", effect: "Korkea sisäänvirtaus + hidas eritys = Ca²⁺ kasaantuu → EHS-fenotyyppi.", status: "TESTATTAVISSA (EHS-kohortin genotyypitys)" },
       { pair: "CAMK2A × CACNA2D1", effect: "CaMKII lähellä kynnystä + enemmän kanavia = kriittisesti herkkä kaikelle EMF:lle.", status: "KONSISTENTTI" },
     ],
     genSuscPrinciples: [
@@ -1328,20 +1436,20 @@ const t = {
     genSuscRef: "[[ref:kury2017_camk2|Küry 2017]] · [[ref:patke2017_cry1|Patke 2017]] · [[ref:lyssenko2009_mtnr1b|Lyssenko 2009]] · [[ref:tuomi2016_mtnr1b|Tuomi 2016]] · [[ref:scholl2015_cacna1h|Scholl 2015]] · [[ref:korean2025_cacna|Korean 2025]] · [[ref:field2006_cacna2d1|Field 2006]] · [[ref:hoppa2012_a2d|Hoppa 2012]]",
 
     recovWindowTitle: "Palautumisikkuna: CaMKII-defosforylaatio",
-    recovWindowSub: "Moderni elämä eliminoi EMF-vapaat tunnit, joita Ca²⁺-homeostaasin palautuminen vaatii",
-    recovWindowDesc: "CaMKII:n defosforylaatio (palautuminen autofosforyloidusta tilasta) vaatii aikaa ilman Ca²⁺-ylikuormaa. EMF-vapaa uni mahdollistaa tämän palautumisen. Mutta modernit ympäristöt eliminoivat EMF-vapaat tunnit: WiFi-reititin 24/7, puhelin yöpöydällä, LED-valaistus uneen asti, Bluetooth-laitteet. Palautumiskerroin (R) kuvaa tämän: kun EMF-vapaat tunnit lähestyvät nollaa, nimittäjä 1/R lähestyy arvoa 1,0 (ei palautumista), ja kumulatiivinen vaurio kiihtyy.",
-    recovWindowEvidence: "Vuorotyö: [[ref:shiftwork_mets2025|OR 1,17]] metaboliselle oireyhtymälle — yövuoro häiritsee sekä melatoniinia että palautumisikkunaa. [[ref:walker2017_why_we_sleep|Walker (2017)]]: yksi yö huonoa unta → testosteroni −15 %, NK-solut −70 %. Hyvä uni PALAUTTAA → palautumisikkuna ON todellinen. COVID-sulkujen luonnollinen koe: 24 h/vrk kotona WiFin + LEDien + useiden laitteiden kanssa → palautumisikkuna eliminoitu → T2D-kiihdytys [[ref:t2d_covid2024|2,90 %:sta 3,52 %/v]].",
+    recovWindowSub: "Moderni elämä poistaa EMF-vapaat tunnit, joita Ca²⁺-homeostaasin palautuminen vaatii",
+    recovWindowDesc: "CaMKII:n defosforylaatio (palautuminen autofosforyloidusta tilasta) vaatii aikaa ilman Ca²⁺-ylikuormaa. EMF-vapaa uni mahdollistaa tämän palautumisen. Mutta modernit ympäristöt poistavat EMF-vapaat tunnit: WiFi-reititin 24/7, puhelin yöpöydällä, LED-valaistus uneen asti, Bluetooth-laitteet. Palautumiskerroin (R) kuvaa tämän: kun EMF-vapaat tunnit lähestyvät nollaa, nimittäjä 1/R lähestyy arvoa 1,0 (ei palautumista), ja kumulatiivinen vaurio kiihtyy.",
+    recovWindowEvidence: "Vuorotyö: [[ref:shiftwork_mets2025|OR 1,17]] metaboliselle oireyhtymälle — yövuoro häiritsee sekä melatoniinia että palautumisikkunaa. [[ref:walker2017_why_we_sleep|Walker (2017)]]: yksi yö huonoa unta → testosteroni −15 %, NK-solut −70 %. Hyvä uni PALAUTTAA → palautumisikkuna ON todellinen. COVID-sulkujen luonnollinen koe: 24 h/vrk kotona WiFin + LEDien + useiden laitteiden kanssa → palautumisikkuna poistettu → T2D-kiihdytys [[ref:t2d_covid2024|2,90 %:sta 3,52 %/v]].",
     recovWindowIntervention: "Yksinkertaisin interventio, jonka malli ennustaa: EMF-vapaa makuuhuone. Poista WiFi-reititin makuuhuoneesta, käytä lentokonetilaa yöllä, vaihda hehkulamppuun tai kynttilänvaloon ennen unta. Tämä palauttaa palautumisikkunan ilman muita elämäntapamuutoksia.",
     recovWindowPred1: "RECOV-1: EMF-vapaa makuuhuone → melatoniini nousee mitattavasti 2 viikossa",
     recovWindowPred2: "RECOV-2: Minimipalautumisaika CaMKII-defosforylaatiolle: 4–6 tuntia EMF-vapaata",
     recovWindowRef: "[[ref:walker2017_why_we_sleep|Walker 2017]] · COVID-sulkudata · Vuorotyön meta-analyysit",
 
-    mtorSub: "EMF, kalorirajoitus ja rapamysiini konvergoivat samaan ikääntymispolkuun",
-    mtorTitle: "mTOR-konvergenssihypoteesi",
+    mtorSub: "EMF, kalorirajoitus ja rapamysiini yhtyvät samaan ikääntymispolkuun",
+    mtorTitle: "mTOR-yhdentymishypoteesi",
     mtorDesc1:
       "mTOR on jatkovaiheen integraattori, jossa EMF:n aiheuttama Ca²⁺-sisäänvirtaus konvergoi ikääntymis-, hedelmällisyys- ja syöpäreittien kanssa. Sempou-reitti: EMF → VGIC → Ca²⁺↑ → mTOR-hyperaktivaatio → autofagia↓, vanhenevien solujen kertyminen, mitokondriaalinen laadunvalvonta↓, krooninen tulehdus↑.",
     mtorDesc2:
-      "Metformiini aktivoi AMPK:n, joka suppressoi mTOR:ia -- täsmälleen EMF:n aiheuttaman reitin vastakohta. Hypoteesi: metformiinin pitkäikäisyyshyöty ei ole ikääntymisen vastainen sinänsä, vaan EMF-kiihdytetyn ikääntymisen vastainen. Luonnollisessa EMF-ympäristössä (amissit) hyödyn tulisi olla minimaalinen.",
+      "Metformiini aktivoi AMPK:n, joka vaimentaa mTOR:ia -- täsmälleen EMF:n aiheuttaman reitin vastakohta. Hypoteesi: metformiinin pitkäikäisyyshyöty ei ole ikääntymisen vastainen sinänsä, vaan EMF-kiihdytetyn ikääntymisen vastainen. Luonnollisessa EMF-ympäristössä (amissit) hyödyn tulisi olla minimaalinen.",
     mtorEqExplain:
       "Missä EMF on normalisoitu altistus (0 = ei infrastruktuuria, 1 = moderni kaupunki) ja reduktiotekijöihin kuuluvat metformiini (0,30), rapamysiini (0,85), kalorinrajoitus (0,20), ajoittainen paasto (0,10).",
     mtorThreeTitle: "Kolme epidemiaa, yksi mekanismi",
@@ -1395,17 +1503,17 @@ const t = {
     fourRoutesSub: "Gonadi-, sirkadiaaninen, aivolisäke-, autonominen ja neurokehityksellinen — jokainen riittää yksinään",
     fourRoutesDesc: "BERM tunnistaa viisi itsenäistä biologista reittiä, joiden kautta EMF-altistus voi vähentää hedelmällisyyttä. Jokainen reitti toimii erillisen mekanismin ja kohdekudoksen kautta. Kriittisesti jokainen reitti on itsenäisesti riittävä vähentämään TFR:ää — ne toimivat rinnakkain, eivät sarjassa. Tämä tarkoittaa, että yhden reitin estäminen (esim. antioksidanttilisä gonadireitille) ei poista vaikutusta, koska neljä muuta reittiä pysyvät aktiivisina.",
     fourRoutesGonadal: "Reitti 1: Gonadaalinen (vakiintunut)",
-    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> sperman DNA-vaurio + Leydig-solujen StAR-suppressio -> testosteronin lasku + spermatogeneesin häiriö. Lisäksi: EMF -> CatSper-ennenaikainen aktivaatio -> energian ehtyminen -> navigointivika (reotaksis, kemotaksis, akrosomireaktio). Kohdekudos: kivekset. Evidenssitaso: E (23-28 salpaajatutkimusta). Ensisijainen kanava: RF + ELF.",
+    fourRoutesGonadalDesc: "EMF -> VGCC/Cav3 -> Ca2+ -> ROS -> sperman DNA-vaurio + Leydig-solujen StAR-suppressio -> testosteronin lasku + spermatogeneesin häiriö. Lisäksi: EMF -> CatSper-ennenaikainen aktivaatio -> energian ehtyminen -> navigointivika (reotaksis, kemotaksis, akrosomireaktio). Kohdekudos: kivekset. Näyttötaso: E (23-28 salpaajatutkimusta). Ensisijainen kanava: RF + ELF.",
     fourRoutesCircadian: "Reitti 2: Sirkadiaaninen (vakiintunut)",
-    fourRoutesCircadianDesc: "EMF -> CRY/RPM -> vuorokausirytmin häiriö -> melatoniinisuppressio -> HPG-akselin häiriö + oksidatiivinen stressi follikkeli­nesteessä. Kohdekudos: pinealirauhanen, SCN. Evidenssitaso: E. Ensisijainen kanava: RF (magneettikomponentti).",
+    fourRoutesCircadianDesc: "EMF -> CRY/RPM -> vuorokausirytmin häiriö -> melatoniinivaimennus -> HPG-akselin häiriö + oksidatiivinen stressi follikkeli­nesteessä. Kohdekudos: pinealirauhanen, SCN. Näyttötaso: E. Ensisijainen kanava: RF (magneettikomponentti).",
     fourRoutesPituitary: "Reitti 3: Aivolisäke (uusi)",
-    fourRoutesPituitaryDesc: "EMF -> Cav3 T-tyypin kanavat gonadotrofeissa -> FSH/LH-erityksen häiriö -> jatkovaiheen gonadaalinen toimintahäiriö. Aivolisäke sijaitsee BBB:n ulkopuolella ja on suoraan altistunut. Kaikki hormonisolut ilmentävät Cav3:a. Tämä reitti voi vähentää hedelmällisyyttä gonadaalivauriosta riippumatta. Kohdekudos: aivolisäke. Evidenssitaso: E. Ensisijainen kanava: ELF + RF.",
+    fourRoutesPituitaryDesc: "EMF -> Cav3 T-tyypin kanavat gonadotrofeissa -> FSH/LH-erityksen häiriö -> jatkovaiheen gonadaalinen toimintahäiriö. Aivolisäke sijaitsee BBB:n ulkopuolella ja on suoraan altistunut. Kaikki hormonisolut ilmentävät Cav3:a. Tämä reitti voi vähentää hedelmällisyyttä gonadaalivauriosta riippumatta. Kohdekudos: aivolisäke. Näyttötaso: E. Ensisijainen kanava: ELF + RF.",
     fourRoutesAutonomic: "Reitti 4: Autonominen (uusi)",
-    fourRoutesAutonomicDesc: "EMF -> SA-solmukkeen Cav3.1 -> HRV:n lasku -> vagaalisen tonuksen lasku -> HPA-akselin yliaktivaatio -> krooninen kortisoli -> HPG-ristiinhibitio. HRV on herkkä varhainen biomarkkeri. Kohdekudos: SA-solmuke, vagushermo. Evidenssitaso: E. Ensisijainen kanava: ELF (50 Hz).",
+    fourRoutesAutonomicDesc: "EMF -> SA-solmukkeen Cav3.1 -> HRV:n lasku -> vagaalisen tonuksen lasku -> HPA-akselin yliaktivaatio -> krooninen kortisoli -> HPG-ristiinhibitio. HRV on herkkä varhainen biomarkkeri. Kohdekudos: SA-solmuke, vagushermo. Näyttötaso: E. Ensisijainen kanava: ELF (50 Hz).",
     fourRoutesNeurodevelopmental: "Reitti 5: Neurokehityksellinen (johdettu)",
-    fourRoutesNeurodevelopmentalDesc: "EMF → VGCC/Ca²⁺ kriittisten kehitysikkunoiden aikana → häiriintynyt aivojen seksuaalinen differentiaatio, PFC:n kypsyminen, identiteetin muodostus. Sama mekanismi kuin kemialliset EDC:t (BPA, ftalaatit). Additiivinen kemiallisten EDC-vaikutusten kanssa. Estetään: prenataalin EMF-altistuksen vähentäminen, B2/glutationituki. Kohdekudos: sikiön/vauvan aivot. Evidenssitaso: L* (johdettu ennuste — odottaa DIFF-1 AGD -testiä). Ensisijainen kanava: RF + ELF.",
+    fourRoutesNeurodevelopmentalDesc: "EMF → VGCC/Ca²⁺ kriittisten kehitysikkunoiden aikana → häiriintynyt aivojen seksuaalinen differentiaatio, PFC:n kypsyminen, identiteetin muodostus. Sama mekanismi kuin kemialliset EDC:t (BPA, ftalaatit). Additiivinen kemiallisten EDC-vaikutusten kanssa. Estetään: prenataalin EMF-altistuksen vähentäminen, B2/glutationituki. Kohdekudos: sikiön/vauvan aivot. Näyttötaso: L* (johdettu ennuste — odottaa DIFF-1 AGD -testiä). Ensisijainen kanava: RF + ELF.",
     cascadeNeurodevExt: "Laajennettu analyysi: CACNA1C jaettuna geneettisenä haavoittuvuutena ASD:n, ADHD:n, kaksisuuntaisen mielialahäiriön, masennuksen ja skitsofrenian välillä. Seitsemän kehityskanavaa yhdistää EMF:n aivojen seksuaaliseen differentiointiin samojen Ca²⁺-reittien kautta. Katso aivojen moduloomi täyteen analyysiin.",
-    fourRoutesImplication: "Kliininen implikaatio: interventiot, jotka kohdistuvat vain yhteen reittiin (esim. antioksidantit reitille 1) osoittavat osittaista mutta epätäydellistä suojaa. Täysi suoja vaatii joko EMF-vähennyksen (käsittelee kaikkia reittejä samanaikaisesti) tai useaan kohteeseen suunnatun interventiostrategian.",
+    fourRoutesImplication: "Kliininen seuraus: interventiot, jotka kohdistuvat vain yhteen reittiin (esim. antioksidantit reitille 1) osoittavat osittaista mutta epätäydellistä suojaa. Täysi suoja vaatii joko EMF-vähennyksen (käsittelee kaikkia reittejä samanaikaisesti) tai useaan kohteeseen suunnatun interventiostrategian.",
 
     modulationTitle: "Miksi modulaatio merkitsee enemmän kuin SAR",
     modulationDesc: "Laaja tutkimus ([[ref:fert-steril-2023-phone-sperm-trend|Fertility and Sterility 2023]]) havaitsi matkapuhelimen käytön yhteyden matalampaan siittiöpitoisuuteen — mutta yhteys oli VAHVEMPI vuosina 2005–2007 kuin 2012–2018. BERM selittää tämän Schwanin yhtälön kautta: biologisesti aktiivinen komponentti ei ole RF-kantoaalto vaan sen ELF-MODULAATIOVERHOKÄYRÄ. GSM (2G): kova TDMA-pulssi 217 Hz, ~100 % modulaatiosyvyys → vahva ELF-komponentti → suuri T-tyypin bifurkaatiovaikutus. LTE (4G): OFDM, ~30–50 % modulaatiosyvyys, matalampi lähetysteho → heikompi ELF-komponentti → pienempi vaikutus. Tämä ennustaa aikatrendin ILMAN 'vähemmän säteilyä on turvallisempaa' -selitystä. Säteilyn MÄÄRÄ voi olla samankaltainen, mutta MODULAATIORAKENNE muuttui.",
@@ -1413,7 +1521,7 @@ const t = {
 
     modulomeSub: "Kaksitoistakerroksinen alttiusmalli — molekulaarisesta spinfysiikasta populaatiotason malleihin",
     modulomeTitle: "EMF-moduloomi",
-    modulomeDesc: "Kaksitoistatasoinen moduloomi kartoittaa sähkömagneettista herkkyyttä molekulaarisesta spinfysiikasta populaatiotason malleihin. Kukin kerros moduloi χ:ä — dimensiotonta kytkentäkerrointa ulkoisen EMF:n ja biologisen toiminnan välillä. Kaksitoista kerrosta, kymmenen kohde-elintä, neljä itsenäistä reittiä fertiliteetin laskuun.",
+    modulomeDesc: "Kaksitoistatasoinen moduloomi kartoittaa sähkömagneettista herkkyyttä molekulaarisesta spinfysiikasta populaatiotason malleihin. Kukin kerros säätelee χ:ä — dimensiotonta kytkentäkerrointa ulkoisen EMF:n ja biologisen toiminnan välillä. Kaksitoista kerrosta, kymmenen kohde-elintä, neljä itsenäistä reittiä fertiliteetin laskuun.",
 
     btnEvidence: "Selaa näyttöä",
     btnPredictions: "Näytä ennusteet",
@@ -1449,18 +1557,18 @@ const t = {
     thresholdProjections2035: "2035",
     thresholdChartTitle: "Interaktiivinen kynnysmalli",
     thresholdFootnoteDenmark: "[[ref:andersson-2007-denmark|Andersson 2007]] raportoi nollatuloksen BMI-vakioinnin jälkeen. Malli tulkitsee BMI:n välittäjäksi (EMF → metabolinen häiriö → BMI ↑ → T ↓), ei sekoittavaksi tekijäksi — BMI-vakiointi poistaa osan signaalista. Ks. kausaalirakenne-osio alla.",
-    thresholdFootnoteEstimated: "Vertaisarvioitua sekulaaria T-trenditutkimusta ei ole saatavilla. Korean vauhti arvioitu korkeimmasta globaalista EMF-tiheydestä; Japanin vauhti arvioitu analogialla Suomen dokumentoituun laskuun. Nämä ovat alustavia ja päivitetään, kun suoria tutkimustuloksia on saatavilla.",
+    thresholdFootnoteEstimated: "Vertaisarvioitua pitkäaikaista T-trenditutkimusta ei ole saatavilla. Korean vauhti arvioitu korkeimmasta globaalista EMF-tiheydestä; Japanin vauhti arvioitu analogialla Suomen dokumentoituun laskuun. Nämä ovat alustavia ja päivitetään, kun suoria tutkimustuloksia on saatavilla.",
     thresholdCaveat: "T-laskuvauhdit ovat ikäriippumattomia sekulaaritrendejä vertaisarvioiduista pitkittäistutkimuksista. Korean ja Japanin vauhdit ovat arvioita. 40 %:n kynnys on kalibroitu, ei derivoitu. Ennusteet olettavat nykyisten vauhtien jatkumisen.",
 
     causalStructureTitle: "Miksi BMI ei selitä laskua",
-    causalStructureLead: "Sitkeä vastaväite esittää, että kasvava lihavuus, ei ympäristöaltistus, selittää testosteronin sekulaarilaskun. Pearlin kausaalikehyksellä tehty formaali analyysi paljastaa, että BMI on mediaattori (kausaalireitillä), ei sekoittaja (itsenäinen syy). Mediaattorin korjaaminen poistaa todellista signaalia.",
+    causalStructureLead: "Sitkeä vastaväite esittää, että kasvava lihavuus, ei ympäristöaltistus, selittää testosteronin pitkäaikaislaskun. Pearlin kausaalikehyksellä tehty formaali analyysi paljastaa, että BMI on mediaattori (kausaalireitillä), ei sekoittaja (itsenäinen syy). Mediaattorin korjaaminen poistaa todellista signaalia.",
     causalDagConventionalTitle: "Konventionaalinen tulkinta",
     causalDagConventionalCaption: "BMI sekoittajana: korjaus on oikein, nollatulos = ei laskua",
     causalDagBermTitle: "BERM-tulkinta",
     causalDagBermCaption: "BMI mediaattorina: korjaus poistaa medioidun signaalin, nolla = ylikorjaus",
     causalMazurTitle: "Vakiopainotesti: [[ref:mazur2013|Mazur ym. 2013]]",
     causalMazurText: "991 US Air Force -veteraania seurattiin 6 mittausaallon yli 20 vuoden ajan (1982-2002). Painonsa vakiona pitäneet miehet menettivät silti 117 ng/dL (19 %) testosteroninsa. Tämä on luonnollinen koe, joka kontrolloi BMI:n ilman tilastollista korjausta.",
-    causalMazurQuote: "Emme ole tunnistaneet syytä sekulaarilaskuun, mutta suljemme pois kasvavan lihavuuden riittävänä tai ensisijaisena selityksenä.",
+    causalMazurQuote: "Emme ole tunnistaneet syytä pitkäaikaislaskuun, mutta suljemme pois kasvavan lihavuuden riittävänä tai ensisijaisena selityksenä.",
     causalMazurSource: "[[ref:mazur2013|Mazur, Westerman & Mueller 2013]], PLOS ONE",
     causalPathwayTitle: "Kvantitatiivinen reittihajotelma",
     causalPathwayDirect: "Suora reitti",
@@ -1523,19 +1631,19 @@ const t = {
     sixFactorLead: "Testosteroni on BERM-viitekehyksen informatiivisin yksittäinen biomarkkeri, koska kuusi itsenäistä biofysikaalista ominaisuutta tekevät siitä poikkeuksellisen herkän EMF → VGCC → Ca²⁺ -mekanismille.",
 
     diseaseCascadesTitle: "Laajennetut sairauskaskadit",
-    diseaseCascadesLead: "Yksitoista lisäsairauskaskadia VGCC-geeniperheen analyysistä. Kukin kaskadi yhdistää tietyn VGCC-alatyypin sairausmekanismiin omalla evidenssitasollaan.",
+    diseaseCascadesLead: "Yksitoista lisäsairauskaskadia VGCC-geeniperheen analyysistä. Kukin kaskadi yhdistää tietyn VGCC-alatyypin sairausmekanismiin omalla näyttötasollaan.",
     diseaseCascades: [
-      { num: 9, title: "Myopia (likinäköisyys)", mechanism: "EMF → VGCC dopamiiniergisissä amakriinisoluissa → DA-vapautuminen häiriintyy → skleraalinen pidentymisjarru heikkenee + CRY → melatoniini → sirkadiaaninen silmän kasvu dysreguloituu. KOLME konvergoivaa kanavaa.", level: "M", trend: "22,9 % (2000) → 34 % (2020) → 50 % (2050)" },
-      { num: 10, title: "Autoimmuunisairaudet", mechanism: "EMF → krooninen Ca²⁺-perturbaatio T-soluissa → Ca²⁺-kalsineruiini-NFAT-reitti dysreguloituu → autoreaktiivisten T-solujen aktivaatio. Kalsineruiini-inhibiittorit (siklosporiini, takrolimuusi) ovat vakiohoito — farmakologinen vahvistus.", level: "M|C", trend: "5 % USA:n prevalenssi, +19,1 %/vuosi globaalisti" },
+      { num: 9, title: "Myopia (likinäköisyys)", mechanism: "EMF → VGCC dopamiiniergisissä amakriinisoluissa → DA-vapautuminen häiriintyy → skleraalinen pidentymisjarru heikkenee + CRY → melatoniini → sirkadiaaninen silmän kasvu dysreguloituu. KOLME yhtyvää kanavaa.", level: "M", trend: "22,9 % (2000) → 34 % (2020) → 50 % (2050)" },
+      { num: 10, title: "Autoimmuunisairaudet", mechanism: "EMF → krooninen Ca²⁺-perturbaatio T-soluissa → Ca²⁺-kalsineruiini-NFAT-reitti dysreguloituu → autoreaktiivisten T-solujen aktivaatio. Kalsineruiini-inhibiittorit (siklosporiini, takrolimuusi) ovat vakiohoito — farmakologinen vahvistus.", level: "M|C", trend: "5 % USA:n esiintyvyys, +19,1 %/vuosi globaalisti" },
       { num: 11, title: "Kuulonmenetys ja tinnitus", mechanism: "EMF → Cav1.3 sisäkarvasolujen synapsissa → krooninen Ca²⁺-ylikuorma → eksitotoksisuus → synapsivaurio. Bluetooth/kuuloke-EMF suoraan simpukan vieressä.", level: "M|C", trend: "17,7 % nuorista aikuisista raportoi tinnitusta; 1 mrd+ riskissä" },
-      { num: 12, title: "Migreeni", mechanism: "CACNA1A (P/Q-tyyppi) GoF → CSD. CACNA1I (Cav3.3) variantit → hemipleginen migreeni (OR 2,30). Nainen:mies 2,5-4,3:1 yhdenmukainen sukupuolieriyisen VGCC:n kanssa.", level: "E", trend: "Prevalenssi kasvaa; alkuikä 12-17" },
+      { num: 12, title: "Migreeni", mechanism: "CACNA1A (P/Q-tyyppi) GoF → CSD. CACNA1I (Cav3.3) variantit → hemipleginen migreeni (OR 2,30). Nainen:mies 2,5-4,3:1 yhdenmukainen sukupuolieriyisen VGCC:n kanssa.", level: "E", trend: "Esiintyvyys kasvaa; alkuikä 12-17" },
       { num: 13, title: "Uniarkkitehtuurin häiriö", mechanism: "Cav3.3 nRt:ssä → unisukkuloiden tahdistus. Cav3.1 TC-neuroneissa → delta-aallot. T-tyypin ikkunavirta → hidas oskillaatio. EMF → sukkula/delta-häiriö → unenlaatu ↓.", level: "M|C", trend: "Unettomuus kasvussa; unenkesto laskussa globaalisti" },
-      { num: 14, title: "PCOS", mechanism: "4 elimen konvergenssi: haiman β-solu (Cav1+3 → insuliini ↓) → hyperinsulinemia → teeka-androgeeni ↑ + granulosa-aromataasi → E2 ↓ + aivolisäkkeen Cav3 → LH/FSH ↑. Kaikki neljä EMF-herkkiä.", level: "M", trend: "5-20 % lisääntymisikäisistä naisista; kasvussa 2035 asti" },
+      { num: 14, title: "PCOS", mechanism: "4 elimen yhdentyminen: haiman β-solu (Cav1+3 → insuliini ↓) → hyperinsulinemia → teeka-androgeeni ↑ + granulosa-aromataasi → E2 ↓ + aivolisäkkeen Cav3 → LH/FSH ↑. Kaikki neljä EMF-herkkiä.", level: "M", trend: "5-20 % lisääntymisikäisistä naisista; kasvussa 2035 asti" },
       { num: 15, title: "Krooninen kipu", mechanism: "Cav3.2 on PRIMAARINEN kipukanava DRG-nosiseptoreissa. Ylireguloitu tulehdus-/neuropaattisessa kivussa. Naisten DRG-neuronit osoittavat voimakkaammat Cav3.2-virrat → sukupuoliero.", level: "M|C", trend: "Kroonisen kivun epidemia; sadat miljoonat kärsivät" },
       { num: 16, title: "Sydämen rytmihäiriö (QT)", mechanism: "CACNA1C GoF → Cav1.2 ikkunavirta ↑ → QT ↑. Timothyn oireyhtymä: äärimmäinen QT + autismi SAMASTA mutaatiosta.", level: "E", trend: "Timothy: useimmat kuolevat ennen 3v ilman hoitoa" },
       { num: 17, title: "Neurokehitys ja sukupuolen erilaistuminen", mechanism: "7 kausaalikanavaa × 3 kehitysikkunaa. Prenataalinen: Leydig Cav3 → T↓, aromataasi, aivolisäke. Pubertaalinen: PFC, melatoniini, OT/AVP, insulaarinen korteksi.", level: "L*", trend: "Sukupuoliklinikkälähetteet: Ruotsi +19 700 %; ASD-GD 6-26 %" },
-      { num: 18, title: "TheraBionic: mekanismin todistus", mechanism: "FDA-hyväksytty (2019) laite HCC:lle. 27,12 MHz, AM tumorispesifisillä taajuuksilla. SAR 100-1000× alle puhelimen. Mekanismi: EMF → Cav3.2 → Ca²⁺ → HCC-differentaatio. VAHVISTAA ei-termisen EMF → VGCC.", level: "E", trend: "34 % selviytymislisäys pitkälle edenneessä HCC:ssä" },
-      { num: 19, title: "Metabolinen syndrooma / Lihavuus", mechanism: "KUUSI konvergoivaa EMF → Ca²⁺ -reittiä: (1) hypotalaaminen ruokahalun nousu ARC-glian Ca²⁺ → AgRP/NPY, (2) BAT-termogeneesi ↓ CaMKII/CREB → UCP1 ja SERCA2b/RyR2 häiriön kautta, (3) β-solun insuliinidynamiikka ↓ L-tyypin VGCC:n kautta, (4) kilpirauhasakseli → perusaineenvaihdunta ↓ Cav3:n kautta tyrotrofeissa, (5) melatoniini → metabolinen sirkadiaanihäiriö, (6) adiposyytin Ca²⁺ → lipogeneesi ↑. CaMKII on KONVERGENSSIMOLEKYYLI, joka yhdistää kaikki reitit. [[ref:klimentidis2010|Klimentidisin]] paradoksi: 24 populaatiota, 8 lajia KAIKKI lihovat (p = 1,2×10⁻⁷) — myös laboratoriorotat kontrolloidulla dieetillä. Lihavuus on multifaktoriaalinen — EMF on YKSI myötävaikuttava tekijä, joka selittää residuaalin, johon dieetti/liikunta/genetiikka eivät riitä.", level: "M", trend: "Globaali lihavuus: 4 % (1975) → 13 % (2016) → 42 % (USA 2024)" },
+      { num: 18, title: "TheraBionic: mekanismin todistus", mechanism: "FDA-hyväksytty (2019) laite HCC:lle. 27,12 MHz, AM tumoritarkoilla taajuuksilla. SAR 100-1000× alle puhelimen. Mekanismi: EMF → Cav3.2 → Ca²⁺ → HCC-differentaatio. VAHVISTAA ei-termisen EMF → VGCC.", level: "E", trend: "34 % selviytymislisäys pitkälle edenneessä HCC:ssä" },
+      { num: 19, title: "Metabolinen oireyhtymä / Lihavuus", mechanism: "KUUSI yhtyvää EMF → Ca²⁺ -reittiä: (1) hypotalaaminen ruokahalun nousu ARC-glian Ca²⁺ → AgRP/NPY, (2) BAT-termogeneesi ↓ CaMKII/CREB → UCP1 ja SERCA2b/RyR2 häiriön kautta, (3) β-solun insuliinidynamiikka ↓ L-tyypin VGCC:n kautta, (4) kilpirauhasakseli → perusaineenvaihdunta ↓ Cav3:n kautta tyrotrofeissa, (5) melatoniini → metabolinen sirkadiaanihäiriö, (6) adiposyytin Ca²⁺ → lipogeneesi ↑. CaMKII on KONVERGENSSIMOLEKYYLI, joka yhdistää kaikki reitit. [[ref:klimentidis2010|Klimentidisin]] paradoksi: 24 populaatiota, 8 lajia KAIKKI lihovat (p = 1,2×10⁻⁷) — myös laboratoriorotat kontrolloidulla dieetillä. Lihavuus on multifaktoriaalinen — EMF on YKSI myötävaikuttava tekijä, joka selittää jäännöksen, johon dieetti/liikunta/genetiikka eivät riitä.", level: "M", trend: "Globaali lihavuus: 4 % (1975) → 13 % (2016) → 42 % (USA 2024)" },
     ],
     vgccDiagramTitle: "VGCC-geeniperhe",
     vgccDiagramSubtitle: "Kuusi geeniä, kuusi sairausklusteria, yksi mekanismi",
@@ -1585,7 +1693,7 @@ const t = {
     layerIndoorLed: "Sisä-LED",
     layerSolarInverters: "Aurinkoinvertterit",
     layerStreetLed: "LED-katuvalaistus",
-    pharmEvidenceLink: "Farmakologinen evidenssi: 8 lääkeryhmää konvergoivat BERM-reiteillä →",
+    pharmEvidenceLink: "Farmakologinen näyttö: 8 lääkeryhmää yhtyvät BERM-reiteillä →",
     svgVgccPathway: "VGCC-reitti",
     svgAutophagy: "Autofagia",
     svgProteinSynthesis: "Proteiinisynteesi",
@@ -1626,19 +1734,19 @@ const t = {
     anomalySedentary: "Istuminen",
     anomaly247Emf: "24/7 EMF",
     anomalyProsperity: "Vauraus",
-    anomalyElectrificationLag: "Sahkoistysviive",
+    anomalyElectrificationLag: "Sähköistysviive",
     anomalyPhysicalLabor: "Fyysinen tyo",
     anomalyZeroLayers: "Nolla kerrosta",
     colCountry: "Maa",
     colActual: "Todellinen",
     colNote: "Huomio",
     countryFinlandName: "Suomi",
-    countrySouthKoreaName: "Etela-Korea",
+    countrySouthKoreaName: "Etelä-Korea",
     countryUsaName: "USA",
     countryAmishName: "Amissit",
     colDriver: "Ajuri",
     replacementLabel: "Uusiutumistaso",
-    countrySKoreaShort: "Etela-Korea",
+    countrySKoreaShort: "Etelä-Korea",
     countryIndiaName: "Intia",
     colAxis: "Akseli",
     colTargetOrgan: "Kohde-elin",
@@ -1655,7 +1763,7 @@ const t = {
     colBermRole: "BERM-rooli",
     colKeyVariant: "Avainvariantti",
     colDiseases: "Taudit",
-    colEvidence: "Evidenssi",
+    colEvidence: "Näyttö",
     colVariant: "Variantti",
     colEffect: "Vaikutus",
     ehsAssay: "maarittely",
@@ -1666,12 +1774,12 @@ const t = {
     ehsRiskAlleles: "Riskialleelit",
     ehsSignalingMarkers: "Signalointimarkkerit",
     ehsHighRisk: "Korkea riski",
-    ehsPolygenicScore: "Polygeeninen riskipistemr",
+    ehsPolygenicScore: "Polygeeninen riskipistemäärä",
     ehsOverallAssessment: "EMF-herkkyyden kokonaisarvio",
     ehsDiagnosticClass: "EHS-diagnostinen luokitus",
     ehsLowModHigh: "Matala / Keskitaso / Korkea",
     whyDisagreeTitle: "Miksi tutkimukset ovat ristiriidassa",
-    whyDisagreeSub: "Kahdeksan kontrolloimatonta moderaattoria selittävät vuosikymmenten 'ristiriitaisen evidenssin'",
+    whyDisagreeSub: "Kahdeksan kontrolloimatonta moderaattoria selittävät vuosikymmenten 'ristiriitaisen näytön'",
     whyDisagreeDesc: "EMF-tutkimus on tuottanut ristiriitaisia tuloksia vuosikymmeniä. BERM tunnistaa kahdeksan kontrolloimatonta moderaattoria, jotka ennustavat mitkä tutkimukset löytävät positiivisen tuloksen ja mitkä nollatuloksen:",
     modSeason: "Vuodenaika",
     modSeasonDesc: "CRY-magnetoreseptorin herkkyys on valoriippuvainen. Talvella CRY on herkempi → EMF-vaikutus melatoniiniin voimakkaampi. Osoitettu vasikoilla ([[ref:halgamuge2015|Halgamuge 2015]]).",
@@ -1703,14 +1811,14 @@ const t = {
 
     twoLevelTitle: "Kaksitasoinen ennustemalli",
     twoLevelSub: "Taso 1 (poikkileikkaus) + Taso 2 (ajallinen testosteronidynamiikka)",
-    twoLevelLead: "Poikkileikkausmalli sijoittaa maat globaalille TFR-käyrälle sähköistyskynnyksen kautta. Ajallinen malli lisää toisen tason: testosteronin sekulaarilasku tarjoaa maan sisäistä dynamiikkaa T→TFR-viivesuhteen kautta.",
+    twoLevelLead: "Poikkileikkausmalli sijoittaa maat globaalille TFR-käyrälle sähköistyskynnyksen kautta. Ajallinen malli lisää toisen tason: testosteronin pitkäaikaislasku tarjoaa maan sisäistä dynamiikkaa T→TFR-viivesuhteen kautta.",
     twoLevelL1: "Taso 1: Sähköistyskynnys",
     twoLevelL1Desc: "TFR = 4,11 × exp(−54 × EMF_index) + 1,55. Sijoittaa maat Nigeristä (matala EMF, korkea TFR) Koreaan (korkea EMF, matala TFR). R² = 0,851 54 maalla.",
     twoLevelL2: "Taso 2: Testosteronitrajectoria",
     twoLevelL2Desc: "T(vuosi) = 638 × (1 − 0,012)^(vuosi − 1982). ~1,2 %/vuoden iästä riippumaton lasku (Travison 2007, Lokeshwar 2021) viivästetään 8 vuotta TFR:n suhteen. Siirtofunktio: TFR = 0,00544 × T − 0,745. USA 2007–2024, R² = 0,97.",
-    twoLevelCombined: "Yhdistetty ennuste: Taso 1 asettaa poikkileikkauslähtötason; Taso 2 moduloi sitä ajan myötä.",
+    twoLevelCombined: "Yhdistetty ennuste: Taso 1 asettaa poikkileikkauslähtötason; Taso 2 säätelee sitä ajan myötä.",
     twoLevelCaveat: "Tasot ovat riippumattomia. Taso 2 on kalibroitu vain USA:lla. R² 0,97 on otoksen sisäinen ja todennäköisesti paisunut.",
-    twoLevelDiagnostic: "LH–T-diagnostiikka: Santi ym. 2025 osoittivat samanaikaisen LH↓ ja T↓ väestöissä — yhdenmukaista hypotalamuksen suppression (EMF-polku) kanssa eikä kivevaurion (EDC-polku) kanssa.",
+    twoLevelDiagnostic: "LH–T-diagnostiikka: Santi ym. 2025 osoittivat samanaikaisen LH↓ ja T↓ väestöissä — yhdenmukaista hypotalamuksen vaimentumisen (EMF-polku) kanssa eikä kivevaurion (EDC-polku) kanssa.",
   },
   ja: {
     title: "モデル文書",
@@ -1767,6 +1875,47 @@ const t = {
     solarBioDampenTitle: "季節的振幅の減衰",
     solarBioDampenDesc: "ギリシャでは1960年から1992年にかけて、出生率の季節的振幅が漸進的に減少し、ピーク月とトラフ月の差は50%以上縮小した。この期間はギリシャの急速な電化と都市化と一致する。出生季節性を駆動する自然な地磁気季節信号（メラトニンと光周期を介して）は、季節に依存しない一定のχ摂動を提供する人為的EMFによって漸進的にマスクされた（[[ref:lerchl1998_birth_seasonality|Lerchl 1998]]）。",
     solarBioDampenNote: "予測：電化が遅れた国は季節的減衰の開始も遅れるはずである。近年急速に電化された国（サハラ以南のアフリカ）は現在減衰段階にあるはずである。",
+
+    threeBandsTitle: "Three Biological Frequency Bands",
+    threeBandsSub: "ULF · ELF · RF — natural and anthropogenic sources mapped to BERM pathways",
+    threeBandsLead: "Biological systems interact with electromagnetic fields across three distinct frequency bands, each with different physical mechanisms and biological targets.",
+    twoSuscTitle: "Two Susceptibility Functions",
+    twoSuscSub: "χ(Ā) geometric + χ_B spin-chemical",
+    twoSuscLead: "BERM identifies two independent susceptibility functions that together determine biological sensitivity to electromagnetic perturbation.",
+
+    bioCivTitle: "From Biology to Civilization",
+    bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
+    bioCivLead: "BERM's causal logic does not stop at hormone levels or sperm counts. The same perturbation that opens a calcium channel in a Leydig cell propagates upward through behavior, family formation, institutional capacity, and civilizational dynamics. The chain below traces this propagation from step 0 (geometric background) to step 10 (civilizational outcome). Each step is independently documented elsewhere in the model; this section shows how they connect into a single unbroken sequence.",
+    bioCivChain: [
+      { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
+      { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
+      { step: 2, title: "VGCC activation", desc: "Voltage-gated calcium channels — especially T-type (Cav3) at bifurcation point — respond to field perturbation via Schwan amplification" },
+      { step: 3, title: "Ca²⁺ cascade", desc: "Intracellular calcium signaling disrupted: CaMKII activation, mitochondrial ROS, NF-κB inflammatory pathway" },
+      { step: 4, title: "Hormone disruption", desc: "Testosterone, estrogen, melatonin, oxytocin, cortisol, and BDNF affected through Ca²⁺-dependent steroidogenic and neuroendocrine pathways" },
+      { step: 5, title: "Individual behavior", desc: "Risk tolerance, social bonding, sleep architecture, cognition, and motivation shift as neuroendocrine substrates change" },
+      { step: 6, title: "Family formation", desc: "Both fertility desire (behavioral) and biological capacity (physiological) decline — the two-level collapse" },
+      { step: 7, title: "Institutional capacity", desc: "Collective action, strategic planning, and institutional assertiveness weaken as the population's hormonal and cognitive substrate degrades" },
+      { step: 8, title: "Civilizational dynamics", desc: "The behavioral aggregate produces the patterns historians observe: stagnation, risk-aversion, institutional sclerosis" },
+      { step: 9, title: "Migration gradient", desc: "Biological contrast between EM-depleted and EM-intact populations creates demographic pressure gradients" },
+      { step: 10, title: "Cycle or convergence", desc: "Recovery if EM burden lifts (the α term), or permanent convergence as anthropogenic saturation (σ) masks the solar recovery window" },
+    ],
+    bioCivFormulaTitle: "BioCap integral",
+    bioCivFormulaDesc: "The cumulative biological capacity of a population is formalized as the BioCap integral — a running balance between depletion (first integral) and recovery (second integral):",
+    bioCivFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ)+U(τ)+E(τ)]dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)]dτ",
+    bioCivFormulaTerms: [
+      { symbol: "S(τ)", desc: "Normalized solar activity (drives natural geomagnetic perturbation)" },
+      { symbol: "U(τ)", desc: "Urbanization-weighted EMF exposure (population density × infrastructure)" },
+      { symbol: "E(τ)", desc: "Electrification-weighted exposure (grid density × per-capita consumption)" },
+      { symbol: "χ(λ)", desc: "Latitude-dependent susceptibility (geomagnetic field strength varies with latitude)" },
+      { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
+      { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
+    ],
+    bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework's logic, not a fitted equation with empirical coefficients.",
+
+    hormesisTitle: "ホルメシス用量応答拡張",
+    hormesisDesc: "", hormesisFormula: "",
+    hormesisTerms: [] as { symbol: string; desc: string }[],
+    hormesisZone1: "", hormesisZone2: "", hormesisZone3: "", hormesisEpistemic: "",
 
     archTitle: "三層アーキテクチャ",
     archDesc:
@@ -2116,9 +2265,9 @@ const t = {
     dualBarrierSubtitle: "BBB + 腸バリアはZO-1、オクルディン、クローディンを共有",
     dualBarrierBody: "血液脳関門と腸上皮バリアは同じタイトジャンクションタンパク質を共有:ZO-1、オクルディン、クローディン。メラトニンは両バリアを保護する。EMF→メラトニン↓は同時二重脆弱性を生む:BBBが開く(重金属が脳に入る)かつ腸バリアが弱まる(LPSが血流に入る → 神経炎症)。これは2つの別個の効果ではない -- 同じ分子ツールキットから構築された2つのバリアを攻撃する一つのメカニズム(メラトニン喪失)である。",
 
-    hormesisTitle: "BDNFホルメシス:周波数が方向を決定する",
-    hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ -- 同じ経路、反対の結果",
-    hormesisBody: "BDNF(脳由来神経栄養因子)は神経可塑性、記憶、神経新生に不可欠。RF-EMF(835-2650 MHz)は海馬のBDNFを減少させ、樹状突起スパインの喪失と認知障害を伴う。一方、ELF(50 Hz)はBDNFを増加させ神経新生を促進する。これは同じVGCC経路を通じた周波数依存性ホルメシス。TTFields検証:200 kHz中間周波数はNK細胞傷害性を増加させるが50 Hz ELFは抑制する。Lindgrenのχパラメータはこれらの方向差を予測する -- 異なる周波数での異なる共鳴条件が反対の生物学的結果を生む。",
+    bdnfHormesisTitle: "BDNFホルメシス:周波数が方向を決定する",
+    bdnfHormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ -- 同じ経路、反対の結果",
+    bdnfHormesisBody: "BDNF(脳由来神経栄養因子)は神経可塑性、記憶、神経新生に不可欠。RF-EMF(835-2650 MHz)は海馬のBDNFを減少させ、樹状突起スパインの喪失と認知障害を伴う。一方、ELF(50 Hz)はBDNFを増加させ神経新生を促進する。これは同じVGCC経路を通じた周波数依存性ホルメシス。TTFields検証:200 kHz中間周波数はNK細胞傷害性を増加させるが50 Hz ELFは抑制する。Lindgrenのχパラメータはこれらの方向差を予測する -- 異なる周波数での異なる共鳴条件が反対の生物学的結果を生む。",
 
     agingSpiralTitle: "老化スパイラル:抗老化分子としてのメラトニン",
     agingSpiralSub: "EMF → メラトニン↓ → テロメラーゼ↓ + SIRT1↓ → 加速老化(うつ病 = 7年)",
@@ -2591,6 +2740,47 @@ const t = {
     solarBioDampenDesc: "En Grece entre 1960 et 1992, l'amplitude saisonniere des taux de natalite a progressivement diminue — la difference entre les mois de pointe et de creux s'est reduite de plus de 50 %. Cette periode coincide avec l'electrification et l'urbanisation rapides de la Grece. Le signal saisonnier geomagnetique naturel (qui entraine la saisonnalite des naissances via la melatonine et la photoperiode) a ete progressivement masque par les CEM anthropiques, qui fournissent une perturbation χ constante, independante des saisons ([[ref:lerchl1998_birth_seasonality|Lerchl 1998]]).",
     solarBioDampenNote: "Prediction : les pays a electrification tardive devraient montrer un debut d'amortissement saisonnier plus tardif. Les pays a electrification rapide recente (Afrique subsaharienne) devraient actuellement etre dans la phase d'amortissement.",
 
+    threeBandsTitle: "Three Biological Frequency Bands",
+    threeBandsSub: "ULF · ELF · RF — natural and anthropogenic sources mapped to BERM pathways",
+    threeBandsLead: "Biological systems interact with electromagnetic fields across three distinct frequency bands, each with different physical mechanisms and biological targets.",
+    twoSuscTitle: "Two Susceptibility Functions",
+    twoSuscSub: "χ(Ā) geometric + χ_B spin-chemical",
+    twoSuscLead: "BERM identifies two independent susceptibility functions that together determine biological sensitivity to electromagnetic perturbation.",
+
+    bioCivTitle: "From Biology to Civilization",
+    bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
+    bioCivLead: "BERM's causal logic does not stop at hormone levels or sperm counts. The same perturbation that opens a calcium channel in a Leydig cell propagates upward through behavior, family formation, institutional capacity, and civilizational dynamics. The chain below traces this propagation from step 0 (geometric background) to step 10 (civilizational outcome). Each step is independently documented elsewhere in the model; this section shows how they connect into a single unbroken sequence.",
+    bioCivChain: [
+      { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
+      { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
+      { step: 2, title: "VGCC activation", desc: "Voltage-gated calcium channels — especially T-type (Cav3) at bifurcation point — respond to field perturbation via Schwan amplification" },
+      { step: 3, title: "Ca²⁺ cascade", desc: "Intracellular calcium signaling disrupted: CaMKII activation, mitochondrial ROS, NF-κB inflammatory pathway" },
+      { step: 4, title: "Hormone disruption", desc: "Testosterone, estrogen, melatonin, oxytocin, cortisol, and BDNF affected through Ca²⁺-dependent steroidogenic and neuroendocrine pathways" },
+      { step: 5, title: "Individual behavior", desc: "Risk tolerance, social bonding, sleep architecture, cognition, and motivation shift as neuroendocrine substrates change" },
+      { step: 6, title: "Family formation", desc: "Both fertility desire (behavioral) and biological capacity (physiological) decline — the two-level collapse" },
+      { step: 7, title: "Institutional capacity", desc: "Collective action, strategic planning, and institutional assertiveness weaken as the population's hormonal and cognitive substrate degrades" },
+      { step: 8, title: "Civilizational dynamics", desc: "The behavioral aggregate produces the patterns historians observe: stagnation, risk-aversion, institutional sclerosis" },
+      { step: 9, title: "Migration gradient", desc: "Biological contrast between EM-depleted and EM-intact populations creates demographic pressure gradients" },
+      { step: 10, title: "Cycle or convergence", desc: "Recovery if EM burden lifts (the α term), or permanent convergence as anthropogenic saturation (σ) masks the solar recovery window" },
+    ],
+    bioCivFormulaTitle: "BioCap integral",
+    bioCivFormulaDesc: "The cumulative biological capacity of a population is formalized as the BioCap integral — a running balance between depletion (first integral) and recovery (second integral):",
+    bioCivFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ)+U(τ)+E(τ)]dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)]dτ",
+    bioCivFormulaTerms: [
+      { symbol: "S(τ)", desc: "Normalized solar activity (drives natural geomagnetic perturbation)" },
+      { symbol: "U(τ)", desc: "Urbanization-weighted EMF exposure (population density × infrastructure)" },
+      { symbol: "E(τ)", desc: "Electrification-weighted exposure (grid density × per-capita consumption)" },
+      { symbol: "χ(λ)", desc: "Latitude-dependent susceptibility (geomagnetic field strength varies with latitude)" },
+      { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
+      { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
+    ],
+    bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework's logic, not a fitted equation with empirical coefficients.",
+
+    hormesisTitle: "Extension de la réponse hormétique à la dose",
+    hormesisDesc: "", hormesisFormula: "",
+    hormesisTerms: [] as { symbol: string; desc: string }[],
+    hormesisZone1: "", hormesisZone2: "", hormesisZone3: "", hormesisEpistemic: "",
+
     archTitle: "Architecture a trois niveaux",
     archDesc:
       "BERM decompose le declin de la fecondite en trois couches causales distinctes. Chaque niveau possede sa propre dynamique, echelle temporelle et base de preuves. L'indice synthetique de fecondite (TFR) d'un pays est le produit des trois niveaux, pas leur somme -- chacun agit comme multiplicateur des autres.",
@@ -2939,9 +3129,9 @@ const t = {
     dualBarrierSubtitle: "BBB + barriere intestinale partagent ZO-1, occludine, claudines",
     dualBarrierBody: "La barriere hemato-encephalique et la barriere epitheliale intestinale partagent les memes proteines de jonction serree : ZO-1, occludine et claudines. La melatonine protege les deux barrieres. EMF→melatonine↓ cree une double vulnerabilite simultanee : la BBB s'ouvre (les metaux lourds entrent dans le cerveau) ET la barriere intestinale s'affaiblit (le LPS entre dans la circulation → neuroinflammation). Ce ne sont pas deux effets separes — c'est un seul mecanisme (perte de melatonine) attaquant deux barrieres construites a partir du meme outillage moleculaire.",
 
-    hormesisTitle: "Hormesis BDNF : la frequence determine la direction",
-    hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — meme voie, resultats opposes",
-    hormesisBody: "Le BDNF (facteur neurotrophique derive du cerveau) est essentiel pour la neuroplasticite, la memoire et la neurogenese. L'EMF RF (835-2650 MHz) reduit le BDNF dans l'hippocampe avec perte de spines dendritiques et deficience cognitive. Pendant ce temps, l'ELF (50 Hz) AUGMENTE le BDNF et favorise la neurogenese. C'est une hormesis dependante de la frequence via la meme voie VGCC. Validation TTFields : 200 kHz frequence intermediaire augmente la cytotoxicite des cellules NK tandis que 50 Hz ELF la supprime. Le parametre χ de Lindgren predit ces differences directionnelles — differentes conditions de resonance a differentes frequences produisent des resultats biologiques opposes.",
+    bdnfHormesisTitle: "Hormesis BDNF : la frequence determine la direction",
+    bdnfHormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — meme voie, resultats opposes",
+    bdnfHormesisBody: "Le BDNF (facteur neurotrophique derive du cerveau) est essentiel pour la neuroplasticite, la memoire et la neurogenese. L'EMF RF (835-2650 MHz) reduit le BDNF dans l'hippocampe avec perte de spines dendritiques et deficience cognitive. Pendant ce temps, l'ELF (50 Hz) AUGMENTE le BDNF et favorise la neurogenese. C'est une hormesis dependante de la frequence via la meme voie VGCC. Validation TTFields : 200 kHz frequence intermediaire augmente la cytotoxicite des cellules NK tandis que 50 Hz ELF la supprime. Le parametre χ de Lindgren predit ces differences directionnelles — differentes conditions de resonance a differentes frequences produisent des resultats biologiques opposes.",
 
     agingSpiralTitle: "Spirale du vieillissement : la melatonine comme molecule anti-vieillissement",
     agingSpiralSub: "EMF → melatonine↓ → telomerase↓ + SIRT1↓ → vieillissement accelere (depression = 7 ans)",
@@ -3414,6 +3604,47 @@ const t = {
     solarBioDampenDesc: "그리스에서 1960년부터 1992년까지 출생률의 계절적 진폭이 점진적으로 감소했다 — 최고 월과 최저 월의 차이가 50% 이상 줄어들었다. 이 기간은 그리스의 급속한 전기화 및 도시화와 일치한다. 출생 계절성을 구동하는 자연적 지자기 계절 신호(멜라토닌과 광주기를 통해)는 계절에 독립적인 일정한 χ 교란을 제공하는 인위적 EMF에 의해 점진적으로 가려졌다 ([[ref:lerchl1998_birth_seasonality|Lerchl 1998]]).",
     solarBioDampenNote: "예측: 전기화가 늦은 국가는 계절적 감쇠의 시작도 늦어야 한다. 최근 급속히 전기화된 국가(사하라 이남 아프리카)는 현재 감쇠 단계에 있어야 한다.",
 
+    threeBandsTitle: "Three Biological Frequency Bands",
+    threeBandsSub: "ULF · ELF · RF — natural and anthropogenic sources mapped to BERM pathways",
+    threeBandsLead: "Biological systems interact with electromagnetic fields across three distinct frequency bands, each with different physical mechanisms and biological targets.",
+    twoSuscTitle: "Two Susceptibility Functions",
+    twoSuscSub: "χ(Ā) geometric + χ_B spin-chemical",
+    twoSuscLead: "BERM identifies two independent susceptibility functions that together determine biological sensitivity to electromagnetic perturbation.",
+
+    bioCivTitle: "From Biology to Civilization",
+    bioCivSub: "A 10-step causal chain from molecular EMF effects to civilizational consequences",
+    bioCivLead: "BERM's causal logic does not stop at hormone levels or sperm counts. The same perturbation that opens a calcium channel in a Leydig cell propagates upward through behavior, family formation, institutional capacity, and civilizational dynamics. The chain below traces this propagation from step 0 (geometric background) to step 10 (civilizational outcome). Each step is independently documented elsewhere in the model; this section shows how they connect into a single unbroken sequence.",
+    bioCivChain: [
+      { step: 0, title: "Background geometry", desc: "Geomagnetic field creates the χ(Ā) substrate — the baseline electromagnetic geometry in which all biology evolved" },
+      { step: 1, title: "EMF perturbation", desc: "Anthropogenic fields (ELF, IF, RF) perturb the geometric background, altering the spacetime metric biology operates within" },
+      { step: 2, title: "VGCC activation", desc: "Voltage-gated calcium channels — especially T-type (Cav3) at bifurcation point — respond to field perturbation via Schwan amplification" },
+      { step: 3, title: "Ca²⁺ cascade", desc: "Intracellular calcium signaling disrupted: CaMKII activation, mitochondrial ROS, NF-κB inflammatory pathway" },
+      { step: 4, title: "Hormone disruption", desc: "Testosterone, estrogen, melatonin, oxytocin, cortisol, and BDNF affected through Ca²⁺-dependent steroidogenic and neuroendocrine pathways" },
+      { step: 5, title: "Individual behavior", desc: "Risk tolerance, social bonding, sleep architecture, cognition, and motivation shift as neuroendocrine substrates change" },
+      { step: 6, title: "Family formation", desc: "Both fertility desire (behavioral) and biological capacity (physiological) decline — the two-level collapse" },
+      { step: 7, title: "Institutional capacity", desc: "Collective action, strategic planning, and institutional assertiveness weaken as the population's hormonal and cognitive substrate degrades" },
+      { step: 8, title: "Civilizational dynamics", desc: "The behavioral aggregate produces the patterns historians observe: stagnation, risk-aversion, institutional sclerosis" },
+      { step: 9, title: "Migration gradient", desc: "Biological contrast between EM-depleted and EM-intact populations creates demographic pressure gradients" },
+      { step: 10, title: "Cycle or convergence", desc: "Recovery if EM burden lifts (the α term), or permanent convergence as anthropogenic saturation (σ) masks the solar recovery window" },
+    ],
+    bioCivFormulaTitle: "BioCap integral",
+    bioCivFormulaDesc: "The cumulative biological capacity of a population is formalized as the BioCap integral — a running balance between depletion (first integral) and recovery (second integral):",
+    bioCivFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ)+U(τ)+E(τ)]dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)]dτ",
+    bioCivFormulaTerms: [
+      { symbol: "S(τ)", desc: "Normalized solar activity (drives natural geomagnetic perturbation)" },
+      { symbol: "U(τ)", desc: "Urbanization-weighted EMF exposure (population density × infrastructure)" },
+      { symbol: "E(τ)", desc: "Electrification-weighted exposure (grid density × per-capita consumption)" },
+      { symbol: "χ(λ)", desc: "Latitude-dependent susceptibility (geomagnetic field strength varies with latitude)" },
+      { symbol: "α", desc: "Recovery coefficient (biological repair rate when EM burden decreases)" },
+      { symbol: "σ(τ)", desc: "Anthropogenic EM saturation — masks the solar recovery window post-1880" },
+    ],
+    bioCivEpistemic: "This causal chain is a conceptual framework linking documented mechanisms into a coherent sequence. Individual steps (0–4) have direct experimental support; upper steps (5–10) are logical consequences whose quantitative parameters are not yet calibrated. The BioCap integral is a formal expression of the framework's logic, not a fitted equation with empirical coefficients.",
+
+    hormesisTitle: "호르메시스 용량-반응 확장",
+    hormesisDesc: "", hormesisFormula: "",
+    hormesisTerms: [] as { symbol: string; desc: string }[],
+    hormesisZone1: "", hormesisZone2: "", hormesisZone3: "", hormesisEpistemic: "",
+
     archTitle: "3단계 아키텍처",
     archDesc:
       "BERM은 출산율 감소를 세 가지 뚜렷한 인과 계층으로 분해합니다. 각 수준은 고유한 역학, 시간 척도 및 증거 기반을 가지고 있습니다. 한 국가의 합계출산율(TFR)은 세 수준의 곱이지 합이 아닙니다 -- 각각이 다른 것들의 승수로 작용합니다.",
@@ -3762,9 +3993,9 @@ const t = {
     dualBarrierSubtitle: "BBB + 장 장벽은 ZO-1, 오클루딘, 클라우딘을 공유",
     dualBarrierBody: "혈뇌장벽과 장 상피 장벽은 동일한 밀착연접 단백질을 공유합니다: ZO-1, 오클루딘, 클라우딘. 멜라토닌은 두 장벽을 모두 보호합니다. EMF→멜라토닌↓은 동시 이중 취약성을 만듭니다: BBB가 열리고(중금속 뇌 진입) 동시에 장 장벽이 약해집니다(LPS가 순환계 진입 → 신경염증). 이것은 두 개의 별도 효과가 아닙니다 — 같은 분자 도구로 만들어진 두 장벽을 공격하는 하나의 메커니즘(멜라토닌 상실)입니다.",
 
-    hormesisTitle: "BDNF 호르메시스: 주파수가 방향을 결정",
-    hormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — 같은 경로, 반대 결과",
-    hormesisBody: "BDNF(뇌유래 신경영양인자)는 신경가소성, 기억, 신경발생에 필수적입니다. EMF RF(835-2650 MHz)는 해마에서 BDNF를 감소시키며 수상돌기 가시 상실과 인지 장애를 동반합니다. 한편 ELF(50 Hz)는 BDNF를 증가시키고 신경발생을 촉진합니다. 이것은 동일한 VGCC 경로를 통한 주파수 의존 호르메시스입니다. TTFields 검증: 200 kHz 중간 주파수는 NK 세포 세포독성을 증가시키는 반면 50 Hz ELF는 이를 억제합니다. Lindgren의 χ 매개변수는 이러한 방향 차이를 예측합니다 — 다른 주파수에서 다른 공진 조건이 반대의 생물학적 결과를 생성합니다.",
+    bdnfHormesisTitle: "BDNF 호르메시스: 주파수가 방향을 결정",
+    bdnfHormesisSubtitle: "RF→BDNF↓ vs ELF→BDNF↑ — 같은 경로, 반대 결과",
+    bdnfHormesisBody: "BDNF(뇌유래 신경영양인자)는 신경가소성, 기억, 신경발생에 필수적입니다. EMF RF(835-2650 MHz)는 해마에서 BDNF를 감소시키며 수상돌기 가시 상실과 인지 장애를 동반합니다. 한편 ELF(50 Hz)는 BDNF를 증가시키고 신경발생을 촉진합니다. 이것은 동일한 VGCC 경로를 통한 주파수 의존 호르메시스입니다. TTFields 검증: 200 kHz 중간 주파수는 NK 세포 세포독성을 증가시키는 반면 50 Hz ELF는 이를 억제합니다. Lindgren의 χ 매개변수는 이러한 방향 차이를 예측합니다 — 다른 주파수에서 다른 공진 조건이 반대의 생물학적 결과를 생성합니다.",
 
     agingSpiralTitle: "노화 나선: 항노화 분자로서의 멜라토닌",
     agingSpiralSub: "EMF → 멜라토닌↓ → 텔로머라제↓ + SIRT1↓ → 가속 노화 (우울증 = 7년)",
@@ -4386,6 +4617,132 @@ export default async function ModelPage({
               </div>
             </div>
           </CollapsibleSection>
+
+          {/* B2b: Three Biological Frequency Bands */}
+          <CollapsibleSection id="three-biological-bands" title={d.threeBandsTitle} subtitle={d.threeBandsSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.threeBandsLead}
+            </p>
+            <ThreeBiologicalBands locale={locale} />
+          </CollapsibleSection>
+
+          {/* B2c: Two Susceptibility Functions */}
+          <CollapsibleSection id="two-susceptibility-functions" title={d.twoSuscTitle} subtitle={d.twoSuscSub}>
+            <p className="text-sm text-foreground-muted mb-6 max-w-3xl leading-relaxed">
+              {d.twoSuscLead}
+            </p>
+            <TwoSusceptibilities locale={locale} />
+          </CollapsibleSection>
+
+          {/* B3: From Biology to Civilization */}
+          <CollapsibleSection id="biology-to-civilization" title={d.bioCivTitle} subtitle={d.bioCivSub}>
+            <p className="text-sm text-foreground-muted mb-8 max-w-3xl leading-relaxed">
+              {d.bioCivLead}
+            </p>
+
+            {/* 10-step causal chain */}
+            <div className="relative max-w-2xl">
+              {d.bioCivChain.map((item: { step: number; title: string; desc: string }, i: number) => {
+                const colors = [
+                  "bg-blue-600", "bg-blue-500", "bg-cyan-500", "bg-teal-500",
+                  "bg-purple-500", "bg-amber-500", "bg-amber-600", "bg-orange-500",
+                  "bg-orange-600", "bg-red-500", "bg-red-600",
+                ];
+                return (
+                  <div key={i} className="relative flex gap-4 pb-6 last:pb-0">
+                    {/* Vertical connecting line */}
+                    {i < d.bioCivChain.length - 1 && (
+                      <div className="absolute left-[15px] top-8 bottom-0 w-0.5 bg-border" />
+                    )}
+                    {/* Step number circle */}
+                    <div
+                      className={`relative z-10 flex-shrink-0 w-8 h-8 rounded-full ${colors[item.step]} text-white flex items-center justify-center text-xs font-bold shadow-sm`}
+                    >
+                      {item.step}
+                    </div>
+                    {/* Step content */}
+                    <div className="pt-1 min-w-0">
+                      <h4 className="text-sm font-semibold mb-1">{item.title}</h4>
+                      <p className="text-sm text-foreground-muted leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* BioCap integral */}
+            <div className="mt-10">
+              <h3 className="text-base font-semibold mb-3">{d.bioCivFormulaTitle}</h3>
+              <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">
+                {d.bioCivFormulaDesc}
+              </p>
+              <Eq>{d.bioCivFormula}</Eq>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+                {d.bioCivFormulaTerms.map((term: { symbol: string; desc: string }, i: number) => (
+                  <div key={i} className="flex gap-2 text-sm">
+                    <code className="font-mono-num text-foreground whitespace-nowrap">{term.symbol}</code>
+                    <span className="text-foreground-muted">{term.desc}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Epistemic note */}
+            <div className="border-l-4 border-amber-500/40 rounded-r-lg bg-card p-4 mt-8">
+              <p className="text-sm text-foreground-muted leading-relaxed italic">
+                {d.bioCivEpistemic}
+              </p>
+            </div>
+          </CollapsibleSection>
+
+          {/* Hormetic dose-response extension */}
+          {d.hormesisDesc && (
+            <section id="hormesis-extension" className="mb-14 border-t editorial-rule pt-6">
+              <h2 className="text-xl font-semibold mb-4">{d.hormesisTitle}</h2>
+              <p className="text-sm text-foreground-muted mb-4 max-w-3xl leading-relaxed">{d.hormesisDesc}</p>
+
+              {d.hormesisFormula && (
+                <div className="rounded-xl border border-card-border bg-card-bg p-5 mb-6 max-w-3xl overflow-x-auto">
+                  <pre className="text-sm font-mono text-foreground whitespace-pre-wrap leading-relaxed">{d.hormesisFormula}</pre>
+                </div>
+              )}
+
+              {d.hormesisTerms.length > 0 && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6 max-w-3xl">
+                  {d.hormesisTerms.map((term: { symbol: string; desc: string }, i: number) => (
+                    <div key={i} className="flex items-start gap-2 text-sm">
+                      <span className="font-mono text-accent shrink-0">{term.symbol}</span>
+                      <span className="text-foreground-muted">{term.desc}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6 max-w-4xl">
+                {d.hormesisZone1 && (
+                  <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
+                    <p className="text-sm text-foreground-muted leading-relaxed">{d.hormesisZone1}</p>
+                  </div>
+                )}
+                {d.hormesisZone2 && (
+                  <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                    <p className="text-sm text-foreground-muted leading-relaxed">{d.hormesisZone2}</p>
+                  </div>
+                )}
+                {d.hormesisZone3 && (
+                  <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
+                    <p className="text-sm text-foreground-muted leading-relaxed">{d.hormesisZone3}</p>
+                  </div>
+                )}
+              </div>
+
+              {d.hormesisEpistemic && (
+                <div className="border-l-4 border-amber-500/40 rounded-r-lg bg-card p-4">
+                  <p className="text-sm text-foreground-muted leading-relaxed italic">{d.hormesisEpistemic}</p>
+                </div>
+              )}
+            </section>
+          )}
 
           {/* Three-level architecture */}
           <section id="architecture" className="mb-14">
@@ -6375,8 +6732,8 @@ export default async function ModelPage({
           </CollapsibleSection>
 
           {/* Hormesis */}
-          <CollapsibleSection id="hormesis" title={d.hormesisTitle} subtitle={d.hormesisSubtitle}>
-            <p className="text-sm text-foreground-muted leading-relaxed">{d.hormesisBody}</p>
+          <CollapsibleSection id="hormesis" title={d.bdnfHormesisTitle} subtitle={d.bdnfHormesisSubtitle}>
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.bdnfHormesisBody}</p>
           </CollapsibleSection>
 
           {/* Aging Spiral */}

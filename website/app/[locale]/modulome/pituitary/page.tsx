@@ -137,7 +137,7 @@ const COPY = {
     s1p1:
       "Aivolisäke on ihmiskehon EMF-herkin endokriininen elin. Toisin kuin aivot, se on sirkumventrikulaarinen elin — se sijaitsee veri-aivoesteen ULKOPUOLELLA. Jokaisella veressa kiertävällä molekyylillä on suora pääsy aivolisäkkeen soluihin. Ei ole suojaavaa estettä vaimentamaan sähkömagneettisen kentän vaikutuksia. Esteen vaimennuskerroin chi_barrier = 1,0 (ei vaimennusta).",
     s1p2:
-      "Tämä yksittäinen rauhanen säätelee samanaikaisesti lisääntymistä (FSH, LH), kasvua (GH), stressia (ACTH), kilpirauhasen toimintaa (TSH), laktaatiota (prolaktiini) ja vesitasapainoa (ADH). Aivolisakkeen toiminnan häiriö ei vaikuta yhteen järjestelmään — se vaikuttaa kaikkiin samanaikaisesti. Aivolisäke on konvergenssipiste, jossa EMF-altistus muuttuu monisysteemiseksi endokriiniseksi häiriöksi.",
+      "Tämä yksittäinen rauhanen säätelee samanaikaisesti lisääntymistä (FSH, LH), kasvua (GH), stressia (ACTH), kilpirauhasen toimintaa (TSH), laktaatiota (prolaktiini) ja vesitasapainoa (ADH). Aivolisakkeen toiminnan häiriö ei vaikuta yhteen järjestelmään — se vaikuttaa kaikkiin samanaikaisesti. Aivolisäke on yhdentymispiste, jossa EMF-altistus muuttuu monisysteemiseksi endokriiniseksi häiriöksi.",
     s1p3:
       "Jokainen hormoneja erittävä solutyyppi aivolisäkkeessä käyttää T-tyypin (Cav3) jänniteherkkiä kalsiumkanavia stimulus-sekreetio-kytkentään. Nämä matalan jännitekynnyksen kanavat toimivat lähellä lepopotentiaalia — juuri siellä missä Schwanin ennustamat EMF-indusoidut jännitehäiriöt ovat suurimpia.",
 
@@ -175,11 +175,11 @@ const COPY = {
     s3Chain:
       "EMF → Schwanin delta-Vm → Cav3-ikkunavirran siirtymää → Ca2+ ↑ → GnRH-pulssin dekoodauksen häiriö → FSH/LH-suhteen vääristyminen → follikkelikypsymisen / spermatogeneesin häiriö",
     s3p1:
-      "Kriittinen mekanismi on GnRH-pulssitaajuuden dekoodaus. Hypotalamus lähettää GnRH:ta erillisinä pulsseina: nopeat pulssit (30 min välein) vapauttavat ensisijaisesti LH:ta, hitaat pulssit (2–4 h välein) ensisijaisesti FSH:ta. Gonadotrofisolu erottelee nämä taajuudet T-tyypin kanavien välittämän Ca2+-dynamiikan avulla. EMF-indusoitu Cav3-ikkunavirran häiriö ei yksinkertaisesti lisää tai vähennä hormonivolyymia — se vääristää taajuusdekooderin, aiheuttaen väärän FSH/LH-suhteen.",
+      "Kriittinen mekanismi on GnRH-pulssitaajuuden dekoodaus. Hypotalamus lähettää GnRH:ta erillisinä pulsseina: nopeat pulssit (30 min välein) vapauttavat ensisijaisesti LH:ta, hitaat pulssit (2–4 h välein) ensisijaisesti FSH:ta. Gonadotrofisolu erottelee nämä taajuudet T-tyypin kanavien välittämän Ca2+-dynamiikan avulla. EMF-aiheutettu Cav3-ikkunavirran häiriö ei yksinkertaisesti lisää tai vähennä hormonivolyymia — se vääristää taajuusdekooderin, aiheuttaen väärän FSH/LH-suhteen.",
     s3p2:
-      "Alavirran seuraukset eroavat sukupuolittain. Naisilla FSH/LH-suhteen vääristyminen häiritsee follikulaari-luteaali-siirtymää, heikentäen ovulaatiota. Miehillä se häiritsee Sertoli-solujen tukea spermatogeneesille. Molemmat vaikutukset konvergoivat hedelmällisyyden heikkenemiseen ilman että gonadotropiinitasot välttämättä muuttuvat — mikä on miksi standardit endokriiniset paneelit voivat ohittaa vaikutuksen.",
+      "Alavirran seuraukset eroavat sukupuolittain. Naisilla FSH/LH-suhteen vääristyminen häiritsee follikulaari-luteaali-siirtymää, heikentäen ovulaatiota. Miehillä se häiritsee Sertoli-solujen tukea spermatogeneesille. Molemmat vaikutukset yhtyvät hedelmällisyyden heikkenemiseen ilman että gonadotropiinitasot välttämättä muuttuvat — mikä on miksi standardit endokriiniset paneelit voivat ohittaa vaikutuksen.",
 
-    s4Title: "Keskeinen evidenssi",
+    s4Title: "Keskeinen näyttö",
     s4Studies: [
       {
         citation: "IJMS 2026",
@@ -190,7 +190,7 @@ const COPY = {
       {
         citation: "ELF 18 viikon tutkimus",
         year: 2024, referenceId: "pituitary_elf_18week_2024",
-        finding: "FSH laski naarasrotilla 18 viikon ELF-EMF-altistuksen jälkeen. Vaikutus oli aikariippuvainen ja progressiivinen, yhdenmukainen kumulatiivisen Cav3-häiriön kanssa.",
+        finding: "FSH laski naarasrotilla 18 viikon ELF-EMF-altistuksen jälkeen. Vaikutus oli aikariippuvainen ja etenevä, yhdenmukainen kumulatiivisen Cav3-häiriön kanssa.",
         level: "E",
       },
       {
@@ -214,7 +214,7 @@ const COPY = {
       "chi_barrier = 1,0 — BBB:n ulkopuolella, ei vaimennusta. Suora veripääsy.",
       "chi_channel = maksimi — Cav3 jännite-bifurkaatiopisteessa. Matalan jännitekynnyksen kanavat lepo-Vm:ssa.",
       "chi_convergence = maksimi — yksittäinen elin säätelee KAIKKIA endokriinisiä akseleita samanaikaisesti.",
-      "chi_cumulative — progressiivinen häiriö osoitettu 18 viikon ELF-tutkimuksessa. Ei toipumistasannetta.",
+      "chi_cumulative — etenevä häiriö osoitettu 18 viikon ELF-tutkimuksessa. Ei toipumistasannetta.",
     ],
     s5p2:
       "Aivolisäke on EMF-herkin endokriininen elin koska se yhdistää: ei estesuojausta (sirkumventrikulaarinen), maksimaalisen kanavaherkkyyden (Cav3 bifurkaatiossa) ja maksimaalisen alavirran vaikutuksen (säätelee kaikkia akseleita). Mikä tahansa vaikutus tähän yhteen elimeen leviaa lisääntymiseen, aineenvaihduntaan, stressivasteeseen, kasvuun ja laktaatioon samanaikaisesti.",
@@ -223,14 +223,14 @@ const COPY = {
     s6Predictions: [
       {
         id: "MOD-1",
-        text: "Selektiivinen T-tyypin kalsiumkanavan salpaaja (esim. TTA-P2 tai mibefradiili) estää EMF-indusoidun FSH/LH-suhteen vääristymisen aivolisäkkeen gonadotrofisoluissa in vitro. Jos EMF-vaikutus toimii Cav3-ikkunavirran häiriön kautta, T-tyypin kanavien spesifinen salpaaminen tulisi kumota FSH/LH-dekoodausvirhe vaikuttamatta L-tyypin tai muiden kanavien riippuvaisiin toimintoihin.",
+        text: "Selektiivinen T-tyypin kalsiumkanavan salpaaja (esim. TTA-P2 tai mibefradiili) estää EMF-indusoidun FSH/LH-suhteen vääristymisen aivolisäkkeen gonadotrofisoluissa in vitro. Jos EMF-vaikutus toimii Cav3-ikkunavirran häiriön kautta, T-tyypin kanavien tarkka salpaaminen tulisi kumota FSH/LH-dekoodausvirhe vaikuttamatta L-tyypin tai muiden kanavien riippuvaisiin toimintoihin.",
         discriminating: true,
       },
     ],
 
     seeAlso: "Katso myös",
     modulomeOverview: "Moduloomin yleiskatsaus",
-    evidencePortal: "Evidenssirekisteri",
+    evidencePortal: "Näyttörekisteri",
     citationLabel: "Viite",
     yearLabel: "Vuosi",
     findingLabel: "Löydös",

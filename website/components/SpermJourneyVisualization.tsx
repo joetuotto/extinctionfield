@@ -45,7 +45,7 @@ export function SpermJourneyVisualization({ onStepClick }: { onStepClick?: (id: 
 
       <div className="relative">
         {/* Desktop: horizontal flow */}
-        <div className="hidden lg:block overflow-x-auto pb-2">
+        <div className="hidden lg:block chart-scroll pb-2">
           <div className="flex items-start gap-0 min-w-[900px]">
             {STEPS.map((step, i) => {
               const c = SEV_COLOR[step.severity];
@@ -54,12 +54,12 @@ export function SpermJourneyVisualization({ onStepClick }: { onStepClick?: (id: 
                 <div key={step.id} className="flex items-start">
                   <button
                     type="button"
-                    className="flex flex-col items-center text-center transition-transform duration-150 group"
+                    className="flex flex-col items-center rounded-md text-center transition-transform duration-150 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                     style={{ width: 100, transform: isActive ? "scale(1.08)" : undefined }}
                     onMouseEnter={() => setActive(step.id)}
                     onMouseLeave={() => setActive(null)}
                     onClick={() => {
-                      const el = document.getElementById(`vuln-${step.id}`);
+                      const el = document.getElementById(`vuln-${step.id}`) as HTMLDetailsElement | null;
                       if (el) {
                         el.open = true;
                         el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -72,13 +72,13 @@ export function SpermJourneyVisualization({ onStepClick }: { onStepClick?: (id: 
                       style={{
                         background: c.bg,
                         borderColor: c.border,
-                        color: c.text,
+                        color: "var(--foreground)",
                         boxShadow: isActive ? `0 0 12px ${c.dot}40` : undefined,
                       }}
                     >
                       {i + 1}
                     </div>
-                    <p className="mt-1.5 text-[11px] font-medium leading-tight" style={{ color: isActive ? c.text : undefined }}>
+                    <p className="mt-1.5 text-[11px] font-medium leading-tight" style={{ color: isActive ? "var(--foreground)" : undefined }}>
                       {step.label}
                     </p>
                     <p className="text-[9px] text-foreground-muted/60 mt-0.5">{step.location}</p>
@@ -106,12 +106,12 @@ export function SpermJourneyVisualization({ onStepClick }: { onStepClick?: (id: 
               <div key={step.id}>
                 <button
                   type="button"
-                  className="flex items-center gap-3 w-full text-left py-1.5 rounded-lg transition-colors px-2"
+                  className="flex items-center gap-3 w-full text-left py-1.5 rounded-lg transition-colors px-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                   style={{ background: isActive ? c.bg : undefined }}
                   onMouseEnter={() => setActive(step.id)}
                   onMouseLeave={() => setActive(null)}
                   onClick={() => {
-                    const el = document.getElementById(`vuln-${step.id}`);
+                    const el = document.getElementById(`vuln-${step.id}`) as HTMLDetailsElement | null;
                     if (el) {
                       el.open = true;
                       el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -121,7 +121,7 @@ export function SpermJourneyVisualization({ onStepClick }: { onStepClick?: (id: 
                 >
                   <div
                     className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border-2 shrink-0"
-                    style={{ background: c.bg, borderColor: c.border, color: c.text }}
+                    style={{ background: c.bg, borderColor: c.border, color: "var(--foreground)" }}
                   >
                     {i + 1}
                   </div>

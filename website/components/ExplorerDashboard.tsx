@@ -10,9 +10,9 @@ export function ExplorerDashboard({ locale = "en" }: { locale?: string }) {
           ["Demografinen sarja", "TFR on periodinen väestömittari. Ikäryhmäkohtainen ASFR on v2:n ensisijainen demografinen päätepiste."],
           ["Teknologian ajoitus", "Mobiililiittymät kuvaavat käyttöönoton ajoitusta. Ne eivät ole paikallinen RF-mittaus, elinkohtainen siirto tai annos."],
           ["V2-maa-arvio", "Se edellyttää dokumentoitua FieldStatea, elin- ja paritason päätepisteitä sekä ASFR-kalibrointia samalla aika–paikka-akselilla."],
-          ["Poikkileikkausennuste v17.1", "TFR ≈ 4,11 × exp(−54,0 × EMF_eff) + 1,55. EMF_eff yhdistää asumisen sähkönkulutuksen (ELF) ja laajakaistan (RF) sähkön saatavuudella korjattuna. LOOCV RMSE 0,522 (n = 54, sd = 1,35). Taitoarvo 0,61 (= 1 − RMSE/sd; 61 % parannus keskiarvoennustajaan). R² = 0,851 kuvastaa sähköistyskynnystä, ei EMF-spesifistä vaikutusta."],
+          ["Poikkileikkausennuste v17.1", "TFR ≈ 4,11 × exp(−54,0 × EMF_eff) + 1,55. EMF_eff yhdistää asumisen sähkönkulutuksen (ELF) ja laajakaistan (RF) sähkön saatavuudella korjattuna. LOOCV RMSE 0,522 (n = 54, sd = 1,35). Taitoarvo 0,61 (= 1 − RMSE/sd; 61 % parannus keskiarvoennustajaan). R² = 0,851 kuvastaa sähköistyskynnystä, ei EMF-tarkkaa vaikutusta."],
           ["χ-profiilit", "Populaation χ-profiili yhdistää ympäristön (χ_env), optisen (χ_optical) ja molekulaarisen (χ_molecular) kytkennän. Korkeat biologiset χ-arvot (sinisilmäiset, laktoosinsietokykyiset populaatiot) vahvistavat EMF-vastetta, matalat (ruskeasilmäiset, laktoosi-intolerantit) vaimentavat."],
-          ["T-sekulaaritrendi", "Testosteronin −1,2 %/vuoden lasku 1982 lähtien on kalibroitu TFR-viiveellä (8v). Maat, joissa sähköistys tapahtui aiemmin, voivat osoittaa aikaisemman T-laskun alkamisen (ennuste T-1)."],
+          ["T-pitkäaikaistrendi", "Testosteronin −1,2 %/vuoden lasku 1982 lähtien on kalibroitu TFR-viiveellä (8v). Maat, joissa sähköistys tapahtui aiemmin, voivat osoittaa aikaisemman T-laskun alkamisen (ennuste T-1)."],
         ],
       }
     : {

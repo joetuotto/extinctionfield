@@ -60,16 +60,16 @@ const COPY = {
   },
   fi: {
     title: "Autismi BERM-prototyyppinä",
-    subtitle: "ASD yhdistää kolme itsenäisesti verifioitua BERM-mekanismia — GABA-vaihdon viiveen, ELF-primaami-synaptogeneesin ja tulehduksen aiheuttaman KCC2-suppression — yhdeksi neurokehitykselliseksi lopputulokseksi. Geneettinen modulaatio (CACNA2D3), sukupuolidimorfismi (KCC2) ja farmakologinen validaatio (bumetanidi) kaikki konvergoivat.",
-    backLink: "← Takaisin Evidenssiin",
-    cautionText: "Tämä sivu ehdottaa ASD:tä BERM-mekanismien prototyyppi-ilmentymänä. Vaikka jokainen yksittäinen mekanismi on verifioitu itsenäisesti, niiden yhdistetty rooli ASD:n etiologiassa on testattava hypoteesi. BERM EI väitä EMF:n olevan ASD:n ainoa syy — geneettinen alttius, ympäristön yhteisvaikuttajat ja kehityksen ajoitus kaikki moduloivat lopputulosta.",
+    subtitle: "ASD yhdistää kolme itsenäisesti todennettua BERM-mekanismia — GABA-vaihdon viiveen, ELF-primaami-synaptogeneesin ja tulehduksen aiheuttaman KCC2-vaimennuksen — yhdeksi neurokehitykselliseksi lopputulokseksi. Geneettinen modulaatio (CACNA2D3), sukupuolidimorfismi (KCC2) ja farmakologinen todentaminen (bumetanidi) kaikki yhtyvät.",
+    backLink: "← Takaisin näyttöön",
+    cautionText: "Tämä sivu ehdottaa ASD:tä BERM-mekanismien prototyyppi-ilmentymänä. Vaikka jokainen yksittäinen mekanismi on todennettu itsenäisesti, niiden yhdistetty rooli ASD:n etiologiassa on testattava hypoteesi. BERM EI väitä EMF:n olevan ASD:n ainoa syy — geneettinen alttius, ympäristön yhteisvaikuttajat ja kehityksen ajoitus kaikki säätelevät lopputulosta.",
 
-    mechTitle: "Kolme konvergoivaa mekanismia",
-    mechLead: "ASD on ainutlaatuisessa asemassa BERM:ssä koska kolme itsenäisesti verifioitua reittiä konvergoivat samaan neurokehitykselliseen lopputulokseen: eksitaation/inhibition (E/I) epätasapainoon.",
+    mechTitle: "Kolme yhtyvää mekanismia",
+    mechLead: "ASD on ainutlaatuisessa asemassa BERM:ssä koska kolme itsenäisesti todennettua reittiä yhtyvät samaan neurokehitykselliseen lopputulokseen: eksitaation/inhibition (E/I) epätasapainoon.",
     mechanisms: [
       { id: "M1", name: "GABA-vaihdon viive (VK6)", path: "EMF → ROS → KCC2-kypsyminen↓ → GABA pysyy eksitatorisena → E/I↑", detail: "Normaalissa kehityksessä KCC2:n ylössäätely vaihtaa GABAn eksitatorisesta inhibitoriseksi ensimmäisten postnatalisten kuukausien aikana. Ympäristöhäiriö (ROS, tulehdus) viivästyttää tätä vaihtoa → pitkittynyt eksitatorinen GABA → piirit kehittyvät poikkeavasti. ASD-potilailla on kohonnut NKCC1/KCC2-suhde = GABA yhä eksitatorinen.", color: "green" },
       { id: "M2", name: "ELF-primaami-synaptogeneesi (VK4 + VK30)", path: "ELF → α2δ-1-ekspressio↑ → LIIALLINEN eksitatorinen synaptogeneesi → E/I↑", detail: "ELF-primaami (50/60 Hz, 8-10 päivää) säätelee VGCC α2δ -alayksikön ekspressiota ylös. α2δ-1-yliekspressio ajaa liiallista eksitatorista synapsinmuodostusta. CACNA2D3 (α2δ-3) on autismin alttiusgeeni — geneettiset variantit kasvattavat herkkyyttä tälle ELF-ajatulle mekanismille.", color: "green" },
-      { id: "M3", name: "Tulehdus → KCC2↓ (S9 + S10)", path: "EMF → syöttösolut → IL-1β → KCC2-kypsyminen viivästyy lisää → E/I↑↑", detail: "EMF-indusoitu syöttösolujen degranulaatio vapauttaa IL-1β:n joka suoraan viivästyttää KCC2-kypsymistä. Tämä luo takaisinkytkentäsilmukan S9: lisää tulehdusta → lisää KCC2-viivettä → GABA pysyy eksitatorisena pidempään → lisää neuronivaurioita → lisää tulehdusta. Kehittyvät aivot ovat loukussa eksitatorisessa tilassa.", color: "green" },
+      { id: "M3", name: "Tulehdus → KCC2↓ (S9 + S10)", path: "EMF → syöttösolut → IL-1β → KCC2-kypsyminen viivästyy lisää → E/I↑↑", detail: "EMF-aiheutettu syöttösolujen degranulaatio vapauttaa IL-1β:n joka suoraan viivästyttää KCC2-kypsymistä. Tämä luo takaisinkytkentäsilmukan S9: lisää tulehdusta → lisää KCC2-viivettä → GABA pysyy eksitatorisena pidempään → lisää neuronivaurioita → lisää tulehdusta. Kehittyvät aivot ovat loukussa eksitatorisessa tilassa.", color: "green" },
     ],
 
     spectrumTitle: "Q-tekijä-spektri",
@@ -77,7 +77,7 @@ const COPY = {
     spectrumPoints: [
       "ASD + epilepsia yhdessä: 38 % ASD-henkilöistä saa epilepsian",
       "Sama mekanismi (E/I↑) tuottaa eri lopputuloksia eri Q-arvoilla: kohtalainen Q → ASD-piirteet; korkea Q → kohtaukset; molemmat → ASD + epilepsia",
-      "CACNA2D3-variantit moduloivat missä kohtaa spektriä yksilö on",
+      "CACNA2D3-variantit säätelevät missä kohtaa spektriä yksilö on",
       "KCC2-sukupuolidimorfismi: KCC2-ekspressio eroaa sukupuolten välillä → selittää poikien 4:1 yliedustuksen ASD:ssä",
     ],
 
@@ -85,11 +85,11 @@ const COPY = {
     geneticsLead: "BERM ei ennusta ASD:tä kaikille — geneettinen alttius määrää kuka on haavoittuva.",
     geneticsPoints: [
       { gene: "CACNA2D3 (α2δ-3)", role: "Autismin alttiusgeeni — koodaa VGCC α2δ -alayksikön johon ELF-primaami kohdistuu. Variantit kasvattavat herkkyyttä ELF-ajamalle synaptogeneesille." },
-      { gene: "CACNA1C (Cav1.2)", role: "Sousouri 2025 (ETH Zürich): CACNA1C-genotyyppi moduloi EMF-vastetta uni-EEG:ssä. Timothyn oireyhtymä (CACNA1C-gain-of-function) tuottaa ASD-piirteitä." },
+      { gene: "CACNA1C (Cav1.2)", role: "Sousouri 2025 (ETH Zürich): CACNA1C-genotyyppi säätelee EMF-vastetta uni-EEG:ssä. Timothyn oireyhtymä (CACNA1C-gain-of-function) tuottaa ASD-piirteitä." },
       { gene: "KCC2 (SLC12A5)", role: "Sukupuolidimorfineen ekspressio. Matalampi KCC2-lähtötaso pojilla → pojat tarvitsevat vähemmän lisä-KCC2-suppressiota eksitatorisen GABA-kynnyksen saavuttamiseksi → 4:1 poikien yliedustus." },
     ],
 
-    pharmaTitle: "Farmakologinen validaatio",
+    pharmaTitle: "Farmakologinen todentaminen",
     pharmaLead: "Bumetanidi — lääke joka palauttaa inhibitorisen GABAn — parantaa ASD-oireita useissa RCT:issä. Tämä on täsmälleen se mitä BERM ennustaa.",
     pharmaPoints: [
       "Bumetanidi estää NKCC1:n → vähentää solunsisäistä kloridia → GABA muuttuu inhibitoriseksi → E/I-suhde normalisoituu",

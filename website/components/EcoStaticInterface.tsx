@@ -417,7 +417,7 @@ const COPY: Record<string, Copy> = {
       {
         symbol: "E_AC(f) · B(f) · dE/dt",
         title: "ELF-sähkö- ja magneettikentät",
-        text: "Ajassa vaihtelevat sähkö- ja magneettikomponentit on mitattava erikseen, mukaan lukien aaltomuoto, napaisuus, geometria ja indusoitu paikallinen siirto. Staattisen kiinnittymisen tulosta ei voi siirtää ELF-vasteväitteeksi.",
+        text: "Ajassa vaihtelevat sähkö- ja magneettikomponentit on mitattava erikseen, mukaan lukien aaltomuoto, napaisuus, geometria ja aiheutettu paikallinen siirto. Staattisen kiinnittymisen tulosta ei voi siirtää ELF-vasteväitteeksi.",
         source: { label: "Mallinson, Woodburn & O’Reilly 2025", referenceId: "mallinson2025_electric_pollution" },
       },
       {
@@ -483,7 +483,7 @@ const COPY: Record<string, Copy> = {
       {
         id: "NAVIGOINTI",
         title: "Muuttoliike ja orientaatio",
-        text: "Kryptokromi- ja lintukompassijärjestelmät osoittavat, miksi taustavektori, valo ja kapeat taajuusikkunat tarvitsevat eksplisiittisen mittauksen. Päätepiste voi olla reittivalinta tai paluu, ei välttämättä kuolleisuus.",
+        text: "Kryptokromi- ja lintukompassijärjestelmät osoittavat, miksi taustavektori, valo ja kapeat taajuusikkunat tarvitsevat nimenomaisen mittauksen. Päätepiste voi olla reittivalinta tai paluu, ei välttämättä kuolleisuus.",
         source: { label: "Engels ym. 2014", referenceId: "engels2014" },
       },
       {
@@ -536,7 +536,7 @@ const COPY: Record<string, Copy> = {
       {
         symbol: "ε′ · ε″ · σ(f) · τ",
         title: "Morfologia on mitattava siirtofunktio, ei suojakilpi-leima",
-        text: "Vahamainen kutikula voi muuttaa varauksen vuotoa ja säilymistä, kun taas dielektrinen polarisoituvuus määrää indusoitua vetoa; niiden suunnat eivät välttämättä ole samat. Erottavat laji- ja elinvaihemittaukset ovat permittiivisyys ja häviö, johtavuus, Q-purkautuminen, kutikulan paksuus/muoto, massa, tarsaaliadheesio sekä karva-/tarsimekaniikka.",
+        text: "Vahamainen kutikula voi muuttaa varauksen vuotoa ja säilymistä, kun taas dielektrinen polarisoituvuus määrää aiheutettua vetoa; niiden suunnat eivät välttämättä ole samat. Erottavat laji- ja elinvaihemittaukset ovat permittiivisyys ja häviö, johtavuus, Q-purkautuminen, kutikulan paksuus/muoto, massa, tarsaaliadheesio sekä karva-/tarsimekaniikka.",
       },
     ],
     couplingTitle: "Missä rajapinta liittyy BERM:n olemassa olevaan biologiaan",
@@ -551,7 +551,7 @@ const COPY: Record<string, Copy> = {
       {
         id: "02",
         title: "Pinta-aistinen siirto → HPA–HPG → steroidogeneesi",
-        text: "Malli pitää iho-/karva-/rajapinta-aistimisen ja autonomisen kontekstin eksplisiittisenä reittinä HPA_HPG:hen. Alavirtaan miessteroidogeneesi, ovulaation kello ja implantaatio säilyvät erillisinä eivätkä romahda yhdeksi endokriiniseksi kertoimeksi.",
+        text: "Malli pitää iho-/karva-/rajapinta-aistimisen ja autonomisen kontekstin nimenomaisena reittinä HPA_HPG:hen. Alavirtaan miessteroidogeneesi, ovulaation kello ja implantaatio säilyvät erillisinä eivätkä romahda yhdeksi endokriiniseksi kertoimeksi.",
       },
       {
         id: "03",
@@ -564,14 +564,14 @@ const COPY: Record<string, Copy> = {
       {
         tag: "SUORA FYSIKAALINEN NÄYTTÖ",
         title: "Staattinen kenttä voi vetää punkin lyhyen ilmarakon yli",
-        text: "Ixodes ricinus -nymfeillä tehdyissä kontrolloiduissa kokeissa havaittiin passiivista vetoa sähköstaattisesti varattuihin isäntämateriaaleihin lyhyen ilmarakon yli. Raportoitu riippumattomuus kentän napaisuudesta sopii punkissa indusoituvaan polarisaatioon, ei vaadittuun pysyvään punkkivaraukseen.",
+        text: "Ixodes ricinus -nymfeillä tehdyissä kontrolloiduissa kokeissa havaittiin passiivista vetoa sähköstaattisesti varattuihin isäntämateriaaleihin lyhyen ilmarakon yli. Raportoitu riippumattomuus kentän napaisuudesta sopii punkissa aiheutuvaan polarisaatioon, ei vaadittuun pysyvään punkkivaraukseen.",
         source: { label: "England, Lihou & Robert 2023", referenceId: "england_2023_ticks" },
         tone: "direct",
       },
       {
         tag: "SUORA FYSIKAALINEN KONTEKSTI",
         title: "Isäntä–kasvillisuus-geometria merkitsee",
-        text: "Samassa työssä mallinnettiin varattua isäntää kasvillisuuden lähellä ja testattiin isäntää muistuttavaa sähköstaattista asetelmaa. Se tukee paikallista isäntä–kasvillisuusgradienttia mitattavana fysikaalisena rajapintana; se ei ole populaatioekologinen estimaatti.",
+        text: "Samassa työssä mallinnettiin varattua isäntää kasvillisuuden lähellä ja testattiin isäntää muistuttavaa sähköstaattista asetelmaa. Se tukee paikallista isäntä–kasvillisuusgradienttia mitattavana fysikaalisena rajapintana; se ei ole populaatioekologinen arvio.",
         source: { label: "England, Lihou & Robert 2023", referenceId: "england_2023_ticks" },
         tone: "direct",
       },
@@ -669,12 +669,12 @@ const COPY: Record<string, Copy> = {
       {
         label: "Colin ym. (1992), Journal of Insect Physiology",
         referenceId: "colin1992_varroa_electrostatic",
-        text: "Varroa jacobsoni -nimellä julkaistu varausherkän käyttäytymisen tutkimus — Apis mellifera -tuholaiskontekstissa nykyisin yleensä V. destructor; ektoparasiitin kontaktisolmu, ei pesäromahdusestimaatti.",
+        text: "Varroa jacobsoni -nimellä julkaistu varausherkän käyttäytymisen tutkimus — Apis mellifera -tuholaiskontekstissa nykyisin yleensä V. destructor; ektoparasiitin kontaktisolmu, ei pesäromahdusarvio.",
       },
       {
         label: "Mallinson, Woodburn & O’Reilly (2025), iScience",
         referenceId: "mallinson2025_electric_pollution",
-        text: "Komponentti- ja polariteettispesifi ihmisen synnyttämän sähkökentän vaikutus mehiläisen kukalle laskeutumiseen pareittaisessa kenttäkokeessa.",
+        text: "Komponentti- ja polariteettitarkka ihmisen synnyttämän sähkökentän vaikutus mehiläisen kukalle laskeutumiseen pareittaisessa kenttäkokeessa.",
       },
       {
         label: "García-Robledo, Dierick & Manser (2025), PNAS",

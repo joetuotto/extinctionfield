@@ -2,15 +2,15 @@
   "metadata": {
     "version": "3.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 999,
-    "verified_count": 347,
+    "total_references": 1022,
+    "verified_count": 373,
     "generated": "2026-08-31",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls",
-    "linked_count": 354,
-    "unlinked_count": 645,
+    "linked_count": 378,
+    "unlinked_count": 644,
     "schema": "canonical-reference-registry-v1",
-    "alias_count": 30,
-    "last_updated": "2026-08-31"
+    "alias_count": 38,
+    "last_updated": "2026-09-01"
   },
   "categories": [
     {
@@ -10404,12 +10404,12 @@
     },
     {
       "id": "early_onset_colorectal_lancet_2024",
-      "authors": "Siegel RL, ym.",
+      "authors": "Siegel RL et al.",
       "year": 2019,
       "title": "Global patterns and trends in colorectal cancer incidence in young adults",
-      "journal": "Lancet Oncol",
+      "journal": "Gut",
       "doi": "10.1136/gutjnl-2019-319511",
-      "pmid": null,
+      "pmid": "31488504",
       "pmcid": null,
       "url": "https://doi.org/10.1136/gutjnl-2019-319511",
       "category": "ecology_sentinels",
@@ -10429,9 +10429,10 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "england2024_butterfly_adaptive",
@@ -14871,7 +14872,7 @@
       ],
       "level": "C",
       "type": "journal",
-      "finding": "n=36, 890.2 MHz, 2h bilateral exposure (Nokia 5110, 2W peak). Left-sided exposure slowed left-hand RT in spatial recognition task. Lateralization supports BERM two-channel spatial structure: EMF effect localizes to the exposed hemisphere. Compatible with local VGCC activation (pathway A) and local BBB opening (pathway E, cf. Salford 2003).",
+      "finding": "n=36, 890.2 MHz, 2h bilateral exposure (Nokia 5110, 2W peak). Left-sided exposure slowed left-hand RT in spatial recognition task. Lateralization supports BERM three-channel spatial structure: EMF effect localizes to the exposed hemisphere. Compatible with local VGCC activation (pathway A) and local BBB opening (pathway E, cf. Salford 2003).",
       "tags": [
         "cognitive",
         "lateralization",
@@ -26460,12 +26461,12 @@
     {
       "id": "wang2020-lh-testosterone",
       "authors": "Wang Y, Chen F, Ye L, Zirkin B, Chen H",
-      "year": 2020,
+      "year": 2017,
       "title": "Steroidogenesis in Leydig cells: effects of aging and environmental factors",
       "journal": "Reproduction",
       "doi": "10.1530/REP-17-0064",
-      "pmid": null,
-      "pmcid": null,
+      "pmid": "28747539",
+      "pmcid": "PMC5731485",
       "url": null,
       "category": "reproduction_hormones",
       "pathway": [
@@ -26485,9 +26486,10 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "gore2015-edc-hormones",
@@ -26497,7 +26499,7 @@
       "journal": "Endocrine Reviews",
       "doi": "10.1210/er.2015-1010",
       "pmid": "26544531",
-      "pmcid": null,
+      "pmcid": "PMC4702494",
       "url": null,
       "category": "reproduction_hormones",
       "pathway": [],
@@ -26515,9 +26517,10 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "irvine1996-sperm-decline",
@@ -26526,8 +26529,8 @@
       "title": "Evidence of deteriorating semen quality in the United Kingdom: birth cohort study in 577 men in Scotland over 11 years",
       "journal": "BMJ",
       "doi": "10.1136/bmj.312.7029.467",
-      "pmid": "8597679",
-      "pmcid": null,
+      "pmid": "8597676",
+      "pmcid": "PMC2349950",
       "url": null,
       "category": "reproduction_hormones",
       "pathway": [],
@@ -26543,9 +26546,10 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "deroose2023-testosterone-usa",
@@ -26583,11 +26587,11 @@
     {
       "id": "ghiselli2004-food-antioxidants",
       "authors": "Ghiselli A, Serafini M, Natella F, Scaccini C",
-      "year": 2004,
-      "title": "Total antioxidant capacity as a tool to assess redox status",
+      "year": 2000,
+      "title": "Total antioxidant capacity as a tool to assess redox status: critical view and experimental data",
       "journal": "Free Radical Biology and Medicine",
-      "doi": "10.1016/S0891-5849(99)00284-1",
-      "pmid": null,
+      "doi": "10.1016/S0891-5849(00)00394-4",
+      "pmid": "11121717",
       "pmcid": null,
       "url": null,
       "category": "mechanism_oxidative",
@@ -26604,9 +26608,10 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "hallberg2002-insect-decline-emf",
@@ -26614,8 +26619,8 @@
       "year": 2002,
       "title": "Melanoma incidence and frequency modulation (FM) broadcasting",
       "journal": "Archives of Environmental Health",
-      "doi": "10.1080/00039890209602919",
-      "pmid": null,
+      "doi": "10.1080/00039890209602914",
+      "pmid": "12071358",
       "pmcid": null,
       "url": null,
       "category": "epidemiology_emf",
@@ -26634,9 +26639,10 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "wdowiak2007-emf-semen",
@@ -26645,7 +26651,7 @@
       "title": "Evaluation of the effect of using mobile phones on male fertility",
       "journal": "Annals of Agricultural and Environmental Medicine",
       "doi": null,
-      "pmid": "17954730",
+      "pmid": "17655195",
       "pmcid": null,
       "url": null,
       "category": "reproduction_hormones",
@@ -26665,9 +26671,10 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "diamanti2008-edc-reproduction",
@@ -26694,9 +26701,10 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "ong2006-livestock-fertility",
@@ -26737,7 +26745,7 @@
       "title": "Electromagnetic pollution from phone masts. Effects on wildlife",
       "journal": "Pathophysiology",
       "doi": "10.1016/j.pathophys.2009.01.007",
-      "pmid": "19264461",
+      "pmid": "19264463",
       "pmcid": null,
       "url": null,
       "category": "animal_emf",
@@ -26759,18 +26767,19 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "kumar2010-pet-emf",
       "authors": "Kumar S, Behari J, Sisodia R",
-      "year": 2010,
+      "year": 2013,
       "title": "Influence of electromagnetic fields on reproductive system of male rats",
       "journal": "International Journal of Radiation Biology",
-      "doi": "10.3109/09553000903564588",
-      "pmid": null,
+      "doi": "10.3109/09553002.2013.741282",
+      "pmid": "23078358",
       "pmcid": null,
       "url": null,
       "category": "animal_emf",
@@ -26791,9 +26800,10 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "lerch2017-horse-fertility",
@@ -26801,7 +26811,7 @@
       "year": 2017,
       "title": "The effects of stray voltage and electromagnetic fields on horse behavior and welfare",
       "journal": "Animals",
-      "doi": "10.3390/ani7080058",
+      "doi": null,
       "pmid": null,
       "pmcid": null,
       "url": null,
@@ -26821,10 +26831,11 @@
       ],
       "pdf_section": null,
       "pdf_number": null,
-      "verified": true,
+      "verified": false,
       "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_source": "curated_identifier_mismatch",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "kelley2019-dog-fertility",
@@ -26893,10 +26904,10 @@
       "id": "nordkap2012-denmark-t",
       "authors": "Nordkap L, Joensen UN, Blomberg Jensen M, Jorgensen N",
       "year": 2012,
-      "title": "Regional differences and temporal trends in male reproductive health disorders",
-      "journal": "European Journal of Endocrinology",
-      "doi": "10.1530/EJE-12-0635",
-      "pmid": null,
+      "title": "Regional differences and temporal trends in male reproductive health disorders: semen quality may be a sensitive marker of environmental exposures",
+      "journal": "Molecular and Cellular Endocrinology",
+      "doi": "10.1016/j.mce.2011.05.048",
+      "pmid": "22138051",
       "pmcid": null,
       "url": null,
       "category": "reproduction_hormones",
@@ -26914,9 +26925,10 @@
       "pdf_section": null,
       "pdf_number": null,
       "verified": true,
-      "link_status": "missing",
-      "link_source": null,
-      "aliases": []
+      "link_status": "verified",
+      "link_source": "ncbi_pubmed",
+      "aliases": [],
+      "link_checked_at": "2026-09-01"
     },
     {
       "id": "cdc2024-usa-tfr",
@@ -27145,12 +27157,14 @@
     },
     {
       "id": "pmc2775032_bsa",
-      "authors": "",
+      "authors": "Xia J, Ren D",
       "year": 2009,
-      "title": "BSA-induced Ca²⁺ rise requires CatSper",
-      "journal": null,
-      "doi": null,
-      "pmid": "PMC2775032",
+      "title": "The BSA-induced Ca²⁺ influx during sperm capacitation is CATSPER channel-dependent",
+      "journal": "Reproductive Biology and Endocrinology",
+      "type": "journal",
+      "doi": "10.1186/1477-7827-7-119",
+      "pmid": "19860887",
+      "pmcid": "PMC2775032",
       "finding": "BSA-induced Ca²⁺ rise is absent in CatSper1 KO sperm, proving CatSper is required for capacitation-associated calcium signaling",
       "pathway": [
         "A"
@@ -27162,17 +27176,21 @@
         "calcium",
         "knockout"
       ],
-      "link_status": "pending",
-      "verified": false
+      "link_status": "verified",
+      "verified": true,
+      "link_source": "ncbi_pubmed",
+      "link_checked_at": "2026-08-31"
     },
     {
       "id": "pmc8505895_bicarb",
-      "authors": "",
+      "authors": "Ferreira JJ, Lybaert P, Puga-Molina LC, Santi CM",
       "year": 2021,
-      "title": "Bicarbonate sensitizes CatSper channel in mouse and human sperm",
-      "journal": null,
-      "doi": null,
-      "pmid": "PMC8505895",
+      "title": "Conserved Mechanism of Bicarbonate-Induced Sensitization of CatSper Channels in Human and Mouse Sperm",
+      "journal": "Frontiers in Cell and Developmental Biology",
+      "type": "journal",
+      "doi": "10.3389/fcell.2021.733653",
+      "pmid": "34650979",
+      "pmcid": "PMC8505895",
       "finding": "Bicarbonate sensitizes CatSper channel; mechanism conserved between mouse and human sperm. Links pH sensing to channel activation",
       "pathway": [
         "A"
@@ -27184,17 +27202,21 @@
         "sensitization",
         "conserved"
       ],
-      "link_status": "pending",
-      "verified": false
+      "link_status": "verified",
+      "verified": true,
+      "link_source": "ncbi_pubmed",
+      "link_checked_at": "2026-08-31"
     },
     {
       "id": "bmc2006_zp",
       "authors": "Patrat C et al.",
       "year": 2006,
-      "title": "Zona pellucida induces voltage-dependent Ca²⁺ influx and acrosome reaction",
+      "title": "Zona pellucida from fertilised human oocytes induces a voltage-dependent calcium influx and the acrosome reaction in spermatozoa, but cannot be penetrated by sperm",
       "journal": "BMC Developmental Biology",
-      "doi": null,
-      "pmid": "PMC1712232",
+      "type": "journal",
+      "doi": "10.1186/1471-213X-6-59",
+      "pmid": "17147816",
+      "pmcid": "PMC1712232",
       "finding": "Zona pellucida triggers voltage-dependent Ca²⁺ influx and acrosome reaction. Fertilized oocyte ZP induces AR but sperm cannot penetrate — polyspermy block",
       "pathway": [
         "A"
@@ -27206,17 +27228,21 @@
         "voltage-dependent",
         "polyspermy"
       ],
-      "link_status": "pending",
-      "verified": false
+      "link_status": "verified",
+      "verified": true,
+      "link_source": "ncbi_pubmed",
+      "link_checked_at": "2026-08-31"
     },
     {
       "id": "pmc10102357_ceram",
-      "authors": "",
+      "authors": "Vaquer CC et al.",
       "year": 2023,
-      "title": "Ceramide-1-phosphate induces acrosome reaction via VOC and SOC Ca²⁺ channels",
-      "journal": null,
-      "doi": null,
-      "pmid": "PMC10102357",
+      "title": "The pair ceramide 1-phosphate/ceramide kinase regulates intracellular calcium and progesterone-induced human sperm acrosomal exocytosis",
+      "journal": "Frontiers in Cell and Developmental Biology",
+      "type": "journal",
+      "doi": "10.3389/fcell.2023.1148831",
+      "pmid": "37065849",
+      "pmcid": "PMC10102357",
       "finding": "Ceramide-1-phosphate triggers Ca²⁺ influx via VOC/SOC channels, inducing acrosome reaction; requires extracellular Ca²⁺",
       "pathway": [
         "A"
@@ -27228,17 +27254,21 @@
         "SOC",
         "calcium channels"
       ],
-      "link_status": "pending",
-      "verified": false
+      "link_status": "verified",
+      "verified": true,
+      "link_source": "ncbi_pubmed",
+      "link_checked_at": "2026-08-31"
     },
     {
       "id": "pmc6104424_nnc",
-      "authors": "",
+      "authors": "Keshtgar S, Ghanbari H, Ghani E, Shid Moosavi SM",
       "year": 2018,
-      "title": "CatSper channel inhibition by NNC55-0396 and Hv1 proton channel blockade",
-      "journal": null,
+      "title": "Effect of CatSper and Hv1 Channel Inhibition on Progesterone Stimulated Human Sperm",
+      "journal": "Journal of Reproduction & Infertility",
+      "type": "journal",
       "doi": null,
-      "pmid": "PMC6104424",
+      "pmid": "30167393",
+      "pmcid": "PMC6104424",
       "finding": "NNC55-0396 blocks CatSper, reducing motility and abolishing progesterone-induced acrosome reaction. Zn²⁺ inhibits Hv1, lowering pH and indirectly suppressing CatSper",
       "pathway": [
         "A"
@@ -27250,8 +27280,10 @@
         "zinc",
         "pharmacological"
       ],
-      "link_status": "pending",
-      "verified": false
+      "link_status": "verified",
+      "verified": true,
+      "link_source": "ncbi_pubmed",
+      "link_checked_at": "2026-08-31"
     },
     {
       "id": "frontiers2024_testes",
@@ -29504,6 +29536,716 @@
       "link_source": "pmc",
       "aliases": [],
       "source": "PMC10601200"
+    },
+    {
+      "id": "wever1979_bunker",
+      "authors": "Wever RA",
+      "year": 1979,
+      "title": "The Circadian System of Man: Results of Experiments Under Temporal Isolation",
+      "journal": "Springer-Verlag",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "C"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "N=447 subjects, 418 studies in Andechs bunker. EM-shielded room: circadian period fragmented (12-56h range). Adding 7.83 Hz device alleviated symptoms.",
+      "tags": [
+        "Schumann",
+        "bunker",
+        "circadian",
+        "7.83Hz"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1000,
+      "link_status": "pending",
+      "link_source": "manual",
+      "aliases": [],
+      "source": "Springer 1979",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "wever1970_shielded_vs_unshielded",
+      "authors": "Wever RA",
+      "year": 1970,
+      "title": "The effects of electric fields on circadian rhythmicity in men",
+      "journal": "Life Sciences and Space Research",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "C"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Shielded vs unshielded bunkers: circadian period LONGER in shielded (p<0.01).",
+      "tags": [
+        "Schumann",
+        "shielded",
+        "free_running_period"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1001,
+      "link_status": "pending",
+      "link_source": "manual",
+      "aliases": [],
+      "source": "LSSR 1970",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "frontiers2021_sr_anthropogenic",
+      "authors": "Tatsis G et al.",
+      "year": 2021,
+      "title": "Anthropogenic Noise and Its Footprint on ELF Schumann Resonance Recordings",
+      "journal": "Frontiers in Earth Science",
+      "doi": "10.3389/feart.2021.646277",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [],
+      "level": "E",
+      "type": "measurement",
+      "finding": "In cities SR signal is buried in anthropogenic noise. Clean SR requires >5 km from sources.",
+      "tags": [
+        "Schumann",
+        "anthropogenic_noise",
+        "masking"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1002,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Frontiers 2021",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "zenchenko2024_hr_gmf_sync",
+      "authors": "Zenchenko TA, Breus TK",
+      "year": 2024,
+      "title": "Synchronization between geomagnetic field variations and human heart rate parameters",
+      "journal": "Human Ecology",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "C"
+      ],
+      "level": "M|C",
+      "type": "experimental",
+      "finding": "Heart rate and EEG synchronize with geomagnetic variations in SR and Pc1 ranges. Effect in 69% of cases.",
+      "tags": [
+        "heart_rate",
+        "Schumann",
+        "Pc1",
+        "EEG"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1003,
+      "link_status": "pending",
+      "link_source": "manual",
+      "aliases": [],
+      "source": "Human Ecology 2024",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "kleimenova2007_pc1_mi",
+      "authors": "Kleimenova NG et al.",
+      "year": 2007,
+      "title": "Pc1 geomagnetic pulsations as a potential hazard of the myocardial infarction",
+      "journal": "J. Atmospheric and Solar-Terrestrial Physics",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "C"
+      ],
+      "level": "M|C",
+      "type": "epidemiological",
+      "finding": "Pc1 micropulsations modulate MI and sudden death rates, especially in winter.",
+      "tags": [
+        "Pc1",
+        "myocardial_infarction",
+        "sudden_death"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1004,
+      "link_status": "pending",
+      "link_source": "manual",
+      "aliases": [],
+      "source": "JASTP 2007",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "otsuka2001_hrv_subarctic",
+      "authors": "Otsuka K et al.",
+      "year": 2001,
+      "title": "HRV and geomagnetic activity in subarctic males",
+      "journal": "Biomedicine and Pharmacotherapy",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "C"
+      ],
+      "level": "M|C",
+      "type": "epidemiological",
+      "finding": "HRV decreased as geomagnetic activity increased. Latitude-dependent, strongest near auroral oval.",
+      "tags": [
+        "HRV",
+        "subarctic",
+        "latitude_dependent"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1005,
+      "link_status": "pending",
+      "link_source": "manual",
+      "aliases": [],
+      "source": "Biomed Pharmacother 2001",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "mccraty2018_hrv_global",
+      "authors": "McCraty R et al.",
+      "year": 2018,
+      "title": "Long-Term Study of Heart Rate Variability Responses to Changes in the Solar and Geomagnetic Environment",
+      "journal": "Nature Scientific Reports",
+      "doi": "10.1038/s41598-018-20932-x",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "C"
+      ],
+      "level": "M|C",
+      "type": "epidemiological",
+      "finding": "Field-line resonances are the strongest source of ULF waves at ground level.",
+      "tags": [
+        "HRV",
+        "solar",
+        "geomagnetic"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1006,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Sci Rep 2018",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "nsr2024_hmf_astronaut_cry",
+      "authors": "National Science Review",
+      "year": 2024,
+      "title": "Potential health risks of hypomagnetic field for manned deep-space explorations",
+      "journal": "National Science Review",
+      "doi": "10.1093/nsr/nwae395",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": "M|C",
+      "type": "review",
+      "finding": "HMF affects CRY1 and CRY2 gene expression. CRY is a magnetoreceptor and circadian regulator.",
+      "tags": [
+        "astronaut",
+        "HMF",
+        "CRY1",
+        "CRY2"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1007,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "NSR 2024",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "frontiers2021_hmf_circadian",
+      "authors": "Frontiers in Physiology",
+      "year": 2021,
+      "title": "Biological Effects of Space Hypomagnetic Environment on Circadian Rhythm",
+      "journal": "Frontiers in Physiology",
+      "doi": "10.3389/fphys.2021.643943",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": "M|C",
+      "type": "review",
+      "finding": "HMF disrupts circadian rhythm, sleep, metabolic and neurological functions. CRY identified as mechanism.",
+      "tags": [
+        "HMF",
+        "circadian",
+        "CRY_mechanism"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1008,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Front Physiol 2021",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "hirayama2023_melatonin_space",
+      "authors": "Hirayama J et al.",
+      "year": 2023,
+      "title": "Physiological consequences of space flight: melatonin as countermeasure",
+      "journal": "Journal of Pineal Research",
+      "doi": "10.1111/jpi.12834",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "C"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "ISS circadian clock delays 2.7-3.0h. Sleep 6.4h vs 7-8h on Earth. Melatonin declined in vitro.",
+      "tags": [
+        "astronaut",
+        "melatonin",
+        "ISS",
+        "sleep"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1009,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "J Pineal Res 2023",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "pmc8507176_ir_clock_testis",
+      "authors": "PMC8507176",
+      "year": 2021,
+      "title": "Circadian effects of ionizing radiation on reproductive function and clock genes in male mouse",
+      "journal": "Environmental Health and Preventive Medicine",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC8507176",
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Ionizing radiation disrupts clock genes in testis. Sperm motility circadian rhythm disrupted.",
+      "tags": [
+        "ionizing_radiation",
+        "clock_genes",
+        "testis"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1010,
+      "link_status": "pending",
+      "link_source": "pmcid",
+      "aliases": [],
+      "source": "EHPM 2021",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "pmc11802524_thymus",
+      "authors": "PMC11802524",
+      "year": 2025,
+      "title": "Thymus ad astra: spaceflight-induced thymic involution",
+      "journal": "Frontiers in Immunology",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC11802524",
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "C"
+      ],
+      "level": "M|C",
+      "type": "review",
+      "finding": "Spaceflight causes thymic involution. Circadian disruption impairs thymus → T-cell production down.",
+      "tags": [
+        "thymus",
+        "spaceflight",
+        "immune"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1011,
+      "link_status": "pending",
+      "link_source": "pmcid",
+      "aliases": [],
+      "source": "Front Immunol 2025",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "pmc4501744_planthopper_nzmf",
+      "authors": "Wan G et al.",
+      "year": 2015,
+      "title": "Cryptochromes and Hormone Signal Transduction under Near-Zero Magnetic Fields",
+      "journal": "Scientific Reports",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC4501744",
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "B"
+      ],
+      "level": "E",
+      "type": "experimental",
+      "finding": "Near-zero magnetic field: CRY1/CRY2 expression changed, development delayed, vitellogenin altered.",
+      "tags": [
+        "planthopper",
+        "NZMF",
+        "CRY1",
+        "CRY2"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1012,
+      "link_status": "pending",
+      "link_source": "pmcid",
+      "aliases": [],
+      "source": "Sci Rep 2015",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "solarhealth2026_heliobiology",
+      "authors": "SolarHealth.org",
+      "year": 2026,
+      "title": "Heliobiology: Resonance Between Solar Activity and Health",
+      "journal": "SolarHealth.org (review)",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [
+        "B",
+        "C"
+      ],
+      "level": "C",
+      "type": "review",
+      "finding": "Comprehensive review: ULF/Pc1 cardiac, ELF/SR autonomic, magnetosensitive pineal melatonin.",
+      "tags": [
+        "heliobiology",
+        "review"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1013,
+      "link_status": "pending",
+      "link_source": "manual",
+      "aliases": [],
+      "source": "SolarHealth.org 2026",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "cooper2021_laschamp",
+      "authors": "Cooper A et al.",
+      "year": 2021,
+      "title": "A global environmental crisis 42,000 years ago",
+      "journal": "Science",
+      "doi": "10.1126/science.abb8677",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "space_weather_biology",
+      "pathway": [],
+      "level": "E",
+      "type": "paleoclimatic",
+      "finding": "Laschamp excursion (~42 ka): geomagnetic collapse → cosmic radiation increase → ecological changes. Correlation with Neanderthal extinction.",
+      "tags": [
+        "Laschamp",
+        "geomagnetic_reversal",
+        "Neanderthal",
+        "Science"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": 1014,
+      "link_status": "pending",
+      "link_source": "doi",
+      "aliases": [],
+      "source": "Science 2021",
+      "link_checked_at": "2026-08-31"
+    },
+    {
+      "id": "liu1989_radiation_hormesis",
+      "category": "hormesis",
+      "authors": "Liu SZ",
+      "title": "Radiation hormesis. A new concept in radiological science",
+      "year": 1989,
+      "journal": "Chinese Medical Journal",
+      "doi": null,
+      "pmid": "2517054",
+      "level": "M|C",
+      "type": "review",
+      "finding": "Review of radiation hormesis: low-dose ionizing radiation produces adaptive responses including testosterone increase, cortisol decrease, and immune enhancement in animal models. Establishes the hormetic dose-response framework.",
+      "tags": [
+        "hormesis",
+        "testosterone",
+        "cortisol",
+        "low_dose",
+        "adaptive_response"
+      ],
+      "verified": false,
+      "pdf_section": null,
+      "pdf_number": null,
+      "link_status": "verified",
+      "link_source": "pubmed",
+      "aliases": [
+        "pubmed2517054"
+      ],
+      "source": "Chinese Medical Journal 1989",
+      "pathway": []
+    },
+    {
+      "id": "eisenberg2008_drd4_ariaal",
+      "category": "population_genetics",
+      "authors": "Eisenberg DTA, Campbell B, Gray PB, Sorenson MD",
+      "title": "Dopamine receptor genetic polymorphisms and body composition in undernourished pastoralists: an exploration of nutrition indices among nomadic and recently settled Ariaal men of northern Kenya",
+      "year": 2008,
+      "journal": "BMC Evolutionary Biology",
+      "doi": "10.1186/1471-2148-8-173",
+      "pmid": "18544160",
+      "level": "E",
+      "type": "observational",
+      "finding": "DRD4/7R allele associated with higher BMI (better nutritional status) in nomadic Ariaal but lower BMI in settled Ariaal. Same genotype, opposite phenotypic effect depending on lifestyle — consistent with gene-environment mismatch in settled populations.",
+      "tags": [
+        "DRD4",
+        "nomad",
+        "Ariaal",
+        "gene_environment",
+        "Kenya"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [
+        "pmc2440754"
+      ],
+      "source": "BMC Evolutionary Biology 2008",
+      "pathway": []
+    },
+    {
+      "id": "swanson2023_pastoralist_health",
+      "category": "population_health",
+      "authors": "Swanson ZS, Bethancourt H, Nzunza R, Ndiema E, Braun DR, Rosinger AY, Pontzer H",
+      "title": "The effects of lifestyle change on indicators of cardiometabolic health in semi-nomadic pastoralists",
+      "year": 2023,
+      "journal": "Evolution, Medicine, and Public Health",
+      "doi": "10.1093/emph/eoad030",
+      "pmid": "37841024",
+      "level": "E",
+      "type": "observational",
+      "finding": "Semi-nomadic pastoralists in Kenya: settlement associated with worse cardiometabolic health indicators (blood pressure, BMI) compared to more nomadic individuals. Settlement itself is biologically detrimental.",
+      "tags": [
+        "pastoralist",
+        "settlement",
+        "metabolic_syndrome",
+        "Kenya",
+        "lifestyle"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [
+        "pmc10576223"
+      ],
+      "source": "Evol Med Public Health 2023",
+      "pathway": []
+    },
+    {
+      "id": "mayagoitia2023_urban_cortisol",
+      "category": "neuroendocrinology",
+      "authors": "Mayagoitia-Novales L, Cerda-Molina AL, Mendoza-Mojica SA, Borraz-Leon JI, Hernandez-Melesio MA, Saldivar-Hernandez GJ",
+      "title": "Psychopathology, cortisol and testosterone responses to traumatic images: differences between urban and suburban citizens in a middle-income country",
+      "year": 2023,
+      "journal": "Frontiers in Psychology",
+      "doi": "10.3389/fpsyg.2023.1187248",
+      "pmid": "37484079",
+      "level": "E",
+      "type": "observational",
+      "finding": "Urban citizens show higher cortisol and altered testosterone responses to social stress compared to suburban citizens. Urban environment is associated with heightened stress-axis reactivity.",
+      "tags": [
+        "urban",
+        "cortisol",
+        "testosterone",
+        "stress",
+        "amygdala"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [
+        "pmc10360937"
+      ],
+      "source": "Frontiers in Psychology 2023",
+      "pathway": []
+    },
+    {
+      "id": "kostyuk2021_ldr_mitochondria",
+      "category": "hormesis",
+      "authors": "Kostyuk SV, Proskurnina EV, Konkova MS, Abramova MS, Kalianov AA, Ershova ES, Izhevskaya VL, Kutsev SI, Veiko NN",
+      "title": "Effect of Low-Dose Ionizing Radiation on the Expression of Mitochondria-Related Genes in Human Mesenchymal Stem Cells",
+      "year": 2021,
+      "journal": "International Journal of Molecular Sciences",
+      "doi": "10.3390/ijms23010261",
+      "pmid": "35008689",
+      "level": "E",
+      "type": "experimental",
+      "finding": "Low-dose ionizing radiation activates mitochondrial gene expression and DNA repair pathways in normal human stem cells. Supports hormetic adaptive response mechanism at cellular level.",
+      "tags": [
+        "hormesis",
+        "low_dose",
+        "mitochondria",
+        "DNA_repair",
+        "stem_cells"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [
+        "pmc8745621"
+      ],
+      "source": "Int J Mol Sci 2021",
+      "pathway": []
+    },
+    {
+      "id": "yang2016_atm_hormesis",
+      "category": "hormesis",
+      "authors": "Yang G, Yu D, Li W, Cui J et al.",
+      "title": "Distinct biological effects of low-dose radiation on normal and cancerous human lung cells are mediated by ATM signaling",
+      "year": 2016,
+      "journal": "Oncotarget",
+      "doi": "10.18632/oncotarget.12379",
+      "pmid": "27708248",
+      "level": "E",
+      "type": "experimental",
+      "finding": "Low-dose radiation activates ATM-mediated DNA repair and antioxidant pathways in normal cells but not in cancer cells. Differential response demonstrates hormesis is an adaptive mechanism of healthy tissue.",
+      "tags": [
+        "hormesis",
+        "ATM",
+        "DNA_repair",
+        "normal_vs_cancer",
+        "low_dose"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [
+        "pmc5342128"
+      ],
+      "source": "Oncotarget 2016",
+      "pathway": []
+    },
+    {
+      "id": "zhou2018_ldr_tumor_inhibition",
+      "category": "hormesis",
+      "authors": "Zhou L, Zhang X, Li H, Niu C, Yu D, Yang G, Liang X, Wen X, Li M, Cui J",
+      "title": "Validating the pivotal role of the immune system in low-dose radiation-induced tumor inhibition in Lewis lung cancer-bearing mice",
+      "year": 2018,
+      "journal": "Cancer Medicine",
+      "doi": "10.1002/cam4.1344",
+      "pmid": "29479834",
+      "level": "E",
+      "type": "experimental",
+      "finding": "Low-dose radiation induces tumor inhibition through immune activation: NK cell expansion, cytotoxicity increase, IFN-γ and TNF-α upregulation, dendritic cell activation. Demonstrates hormetic immune stimulation mechanism.",
+      "tags": [
+        "hormesis",
+        "immune",
+        "NK_cells",
+        "low_dose",
+        "tumor_inhibition"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [
+        "pmc5911597"
+      ],
+      "source": "Cancer Medicine 2018",
+      "pathway": []
+    },
+    {
+      "id": "vaiserman2021_ldr_hormetin",
+      "category": "hormesis",
+      "authors": "Vaiserman A, Cuttler JM, Socol Y",
+      "title": "Low-dose ionizing radiation as a hormetin: experimental observations and therapeutic perspective for age-related disorders",
+      "year": 2021,
+      "journal": "Biogerontology",
+      "doi": "10.1007/s10522-020-09908-5",
+      "pmid": "33420860",
+      "level": "M|C",
+      "type": "review",
+      "finding": "Comprehensive review of low-dose radiation as hormetic agent: evidence for lifespan extension, reduced age-related disease, enhanced DNA repair, and immune activation. Proposes LDR as therapeutic hormetin for aging.",
+      "tags": [
+        "hormesis",
+        "aging",
+        "hormetin",
+        "lifespan",
+        "low_dose"
+      ],
+      "verified": true,
+      "pdf_section": null,
+      "pdf_number": null,
+      "link_status": "verified",
+      "link_source": "crossref_doi",
+      "aliases": [
+        "pmc7794644"
+      ],
+      "source": "Biogerontology 2021",
+      "pathway": []
     }
   ]
 }

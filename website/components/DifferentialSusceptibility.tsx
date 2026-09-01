@@ -55,7 +55,7 @@ const COPY = {
     ] as ProfileRow[],
     sentinelLink: "Katso Varroa-kaskadianalyysi",
     ecologyLink: "Valintamaisema",
-    epistemicNote: "Herkkyysluokitukset ovat BERM-Eco-arvioita [H] perustuen tunnettuihin mekanismeihin ja ruumiinrakenteen fysiikkaan — eivät mitattuja differentiaaliarvoja. Yksittäisten mekanismien viittaukset kantavat omat evidenssitasonsa (ks. lähdeluettelo).",
+    epistemicNote: "Herkkyysluokitukset ovat BERM-Eco-arvioita [H] perustuen tunnettuihin mekanismeihin ja ruumiinrakenteen fysiikkaan — eivät mitattuja differentiaaliarvoja. Yksittäisten mekanismien viittaukset kantavat omat näyttötasonsa (ks. lähdeluettelo).",
   },
   ja: {
     title: "BERM-Eco: 新たな淘汰圧としての差異的電磁感受性",

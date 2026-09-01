@@ -91,7 +91,7 @@ const t: Record<string, Copy> = {
     pulseTitle: "Pulssirakenne on biologisesti relevantti",
     pulseText: [
       "FieldState-mittauksen on säilytettävä pulssirakenne: huippukenttä, pulssin kesto, toistotaajuus ja duty cycle ovat biologisesti relevantteja suureita, jotka katoavat RMS-keskiarvostuksessa.",
-      "60 % BERM:n polkupainoista (A + D) vastaa huippukenttään. 40 % (B + C) vastaa RMS:ään: polku B (melatoniinisuppressio, 15 %) on kroonisen altistuksen mekanismi, ja polku C (CRY → sirkadiaaninen häiriö + TRPC1-kalsiumsignalointi, 25 %) toimii radikaalipari-mekanismin kautta, joka integroi ajan yli. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
+      "60 % BERM:n polkupainoista (A + D) vastaa huippukenttään. 40 % (B + C) vastaa RMS:ään: polku B (melatoniinivaimennus, 15 %) on kroonisen altistuksen mekanismi, ja polku C (CRY → sirkadiaaninen häiriö + TRPC1-kalsiumsignalointi, 25 %) toimii radikaalipari-mekanismin kautta, joka integroi ajan yli. Tämä erottaa BERM:n termisistä malleista, jotka käyttävät SAR:ia (W/kg).",
     ],
     staticInterfaceTitle: "Staattinen triboelektrinen rajapinta: natiivi paikallisfysiikan haara",
     staticInterfaceText: [
@@ -101,19 +101,19 @@ const t: Record<string, Copy> = {
     ecologyLink: "Avaa staattisen rajapinnan ekologinen haara",
     diagramTitle: "Rekisteröity kausaalireitti",
     diagramText:
-      "Kaavio tekee tarvittavat välitilat näkyviksi. Sen merkinnät kuvaavat kunkin lenkin tilaa; ne eivät muuta tutkimuskokoelmaa maakohtaiseksi kertoimeksi. Solmua klikkaamalla näet sille kiinnitetyn rajatun roolin ja evidenssin.",
+      "Kaavio tekee tarvittavat välitilat näkyviksi. Sen merkinnät kuvaavat kunkin lenkin tilaa; ne eivät muuta tutkimuskokoelmaa maakohtaiseksi kertoimeksi. Solmua klikkaamalla näet sille kiinnitetyn rajatun roolin ja näytön.",
     diagramLabel: "KUVIO 01 · REKISTERÖITY MALLIARKKITEHTUURI",
     organTitle: "Elinkohtainen lisääntymistila ennen väestötason yhdistämistä",
     organText: [
       "Mieshaara pitää veri–kivesesteen, ituradan varannon, steroidogeneesin, siittiötuoton/toiminnan ja DNA-eheyden erillisinä. Naishaara pitää munasarjavarannon, oosyyttiredoxin, ovulaation kellotuksen, luteaali-/implantaatio-tuen ja istukkaesteen erillisinä.",
-      "Jokaisella tilalla on palautuva (R) ja persistentti (P) osa vain silloin, kun eksplisiittinen inkrementtikartoitus, parametri-ID ja sitä tukeva evidenssitietue on määritelty. BTB:llä on oma rekisteröity lisääntymishaara. BBB, istukka ja retina ovat erillisiä kandidaattitiloja, eivät näyttöä globaalista estekertoimesta tai naiskapasiteetin kertoimesta.",
+      "Jokaisella tilalla on palautuva (R) ja pysyvä (P) osa vain silloin, kun nimenomainen inkrementtikartoitus, parametri-ID ja sitä tukeva näyttötietue on määritelty. BTB:llä on oma rekisteröity lisääntymishaara. BBB, istukka ja retina ovat erillisiä kandidaattitiloja, eivät näyttöä globaalista estekertoimesta tai naiskapasiteetin kertoimesta.",
     ],
     asfrTitle: "ASFR ensin; TFR on johdettu periodi-identiteetti",
     asfrText: [
       "Väestökerros yhdistää paritetun miehen ja naisen hedelmöitys-/syntymäkapasiteetin säilyttäen yhteisen kotiympäristön ja partnerikovarianssin. Sen jälkeen se raportoi biologisen kapasiteetin erillään kysynnästä/mahdollisuudesta, temposta ja ART-syntymätoimituksesta jokaiselle ikäryhmälle.",
-      "Maakohtaista BERM v17-kerrointa ei vielä estimoida: kalibroinnin vaatimia kohdistettuja FieldState-, biologisten päätepisteiden ja paripaneeleja ei ole koottu. Siksi v2 ei julkaise maakohtaisia TFR-ennusteita.",
+      "Maakohtaista BERM v17-kerrointa ei vielä arvioida: kalibroinnin vaatimia kohdistettuja FieldState-, biologisten päätepisteiden ja paripaneeleja ei ole koottu. Siksi v2 ei julkaise maakohtaisia TFR-ennusteita.",
     ],
-    evidenceLink: "Selaa rajattua evidenssirekisteriä",
+    evidenceLink: "Selaa rajattua näyttörekisteriä",
     mathLink: "FieldState-matematiikka (§1–§8)",
     modelLink: "← Takaisin mallin yleiskatsaukseen",
     nextLabel: "Seuraavaksi",

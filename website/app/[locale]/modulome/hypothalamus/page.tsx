@@ -126,7 +126,7 @@ const COPY = {
     gene: "Geeni",
     cellType: "Solutyyppi",
     function: "Toiminto",
-    level: "Evidenssitaso",
+    level: "Näyttötaso",
     channelVal: "VGCC (glia + hermosolut)",
     geneVal: "CACNA1C / CACNA1H (useita alatyyppejä)",
     cellTypeVal: "ARC:n astrosyytit (glia), AgRP/NPY-neuronit, POMC-neuronit",
@@ -139,26 +139,26 @@ const COPY = {
     s2Chain:
       "EMF → VGCC-aktivaatio → Ca²⁺ ↑ ARC:n gliassa → AgRP/NPY-neuronien eksitaatio → nälänsignaali ↑",
     s2p1:
-      "Hypotalamuksen nucleus arcuatus (ARC) on aivojen ensisijainen ruokahalun säätelykeskus. Se sisältää kaksi vastakkaista neuronipopulaatiota: AgRP/NPY-neuronit (oreksigeeniset — lisäävät nälkää) ja POMC-neuronit (anoreksigeeniset — edistävät kylläisyyttä). Molempia populaatioita moduloivat ympäröivät astrosyytit (glia) Ca²⁺-riippuvaisen signaloinnin kautta.",
+      "Hypotalamuksen nucleus arcuatus (ARC) on aivojen ensisijainen ruokahalun säätelykeskus. Se sisältää kaksi vastakkaista neuronipopulaatiota: AgRP/NPY-neuronit (oreksigeeniset — lisäävät nälkää) ja POMC-neuronit (anoreksigeeniset — edistävät kylläisyyttä). Molempia populaatioita säätelevät ympäröivät astrosyytit (glia) Ca²⁺-riippuvaisen signaloinnin kautta.",
     s2p2:
       "ARC:n glian Ca²⁺-aktivaatio eksitoi selektiivisesti AgRP/NPY-neuroneja, lisäten ruokahalun ajuria. POMC-neuronit saavat tasapainotetun eksitatorisen ja inhibitorisen syötteen samasta gliaalisesta Ca²⁺-signaalista, mikä ei tuota nettovaikutusta kylläisyyssignalointiin. Tuloksena on nälänsignaloinnin selektiivinen vahvistuminen ilman vastaavaa kylläisyyden lisäystä — nettosiirtymä kohti lisääntynyttä ravinnonsaantia.",
     s2p3:
-      "Tämä asymmetria on kriittinen: EMF-indusoitu VGCC-aktivaatio ARC:n gliassa ei yksinkertaisesti lisää kaikkea hypotalamuksen aktiivisuutta. Se kallistaa nälän/kylläisyyden tasapainon erityisesti nälän suuntaan eksitoimalla preferentiaalisesti oreksigeenistä reittiä. Hypotalamus integroi energiahomeostaasia tämän glia-neuroni Ca²⁺-signalointiverkoston kautta, mikä tekee siitä spesifisen kohteen EMF-indusoidulle metaboliselle häiriölle.",
+      "Tämä asymmetria on kriittinen: EMF-aiheutettu VGCC-aktivaatio ARC:n gliassa ei yksinkertaisesti lisää kaikkea hypotalamuksen aktiivisuutta. Se kallistaa nälän/kylläisyyden tasapainon erityisesti nälän suuntaan eksitoimalla preferentiaalisesti oreksigeenistä reittiä. Hypotalamus integroi energiahomeostaasia tämän glia-neuroni Ca²⁺-signalointiverkoston kautta, mikä tekee siitä tarkan kohteen EMF-indusoidulle metaboliselle häiriölle.",
 
-    /* --- OSIO 2: Evidenssi --- */
-    s2SectionTitle: "Keskeinen evidenssi",
+    /* --- OSIO 2: Näyttö --- */
+    s2SectionTitle: "Keskeinen näyttö",
 
     /* 03 Chen 2016 */
     s3Title: "Chen ym. 2016 (eLife)",
     s3p1:
-      "Chen ym. (2016) osoittivat suoran Ca²⁺ → ruokahalu -yhteyden in vivo. Käyttäen optogeneettisiä ja kemogeneettisiä työkaluja hiirissä he näyttivät, että astrosyyttien aktivaatio mediaalisessa basaalihypotalamuksessa (joka sisältää ARC:n) moduloi suoraan syömiskäyttäytymistä Ca²⁺-riippuvaisten mekanismien kautta. Tämä tutkimus tarjoaa mekanistisen perustan: gliaalinen Ca²⁺-signalointi hypotalamuksessa riittää muuttamaan ruokahalua.",
+      "Chen ym. (2016) osoittivat suoran Ca²⁺ → ruokahalu -yhteyden in vivo. Käyttäen optogeneettisiä ja kemogeneettisiä työkaluja hiirissä he näyttivät, että astrosyyttien aktivaatio mediaalisessa basaalihypotalamuksessa (joka sisältää ARC:n) säätelee suoraan syömiskäyttäytymistä Ca²⁺-riippuvaisten mekanismien kautta. Tämä tutkimus tarjoaa mekanistisen perustan: gliaalinen Ca²⁺-signalointi hypotalamuksessa riittää muuttamaan ruokahalua.",
     s3p2:
-      "Yang ym. (2015) osoittivat lisäksi, että astrosyyttistimulaatio mediaalisessa basaalihypotalamuksessa vähensi greliinin laukaisemaa ravinnonsaantia adenosiini A1 -reseptorien (A1R) kautta. Tämä osoittaa glian kaksisuuntaisen ruokahalun säätelyn — suunta riippuu siitä, mitkä signalointireitit aktivoituvat. BERM-mekanismi ennustaa, että EMF-indusoitu Ca²⁺-nousu aktivoi preferentiaalisesti eksitatorisen (nälkää edistävän) reitin AgRP/NPY-neuronien kautta.",
+      "Yang ym. (2015) osoittivat lisäksi, että astrosyyttistimulaatio mediaalisessa basaalihypotalamuksessa vähensi greliinin laukaisemaa ravinnonsaantia adenosiini A1 -reseptorien (A1R) kautta. Tämä osoittaa glian kaksisuuntaisen ruokahalun säätelyn — suunta riippuu siitä, mitkä signalointireitit aktivoituvat. BERM-mekanismi ennustaa, että EMF-aiheutettu Ca²⁺-nousu aktivoi preferentiaalisesti eksitatorisen (nälkää edistävän) reitin AgRP/NPY-neuronien kautta.",
 
     /* 04 Alshammari 2022 */
     s4Title: "Alshammari 2022 (PMC8777647)",
     s4p1:
-      "Alshammari (2022) dokumentoi RF-EMF:n vaikutukset ravinnonsaantiin ihmisillä, tarjoten epidemiologisen evidenssin EMF → ruokahalu -yhteydelle. Tämä tutkimus yhdistää mekanistisen reitin (VGCC → Ca²⁺ → ARC:n glia → ruokahalu) havaittaviin ihmisvasteisiin.",
+      "Alshammari (2022) dokumentoi RF-EMF:n vaikutukset ravinnonsaantiin ihmisillä, tarjoten epidemiologisen näytön EMF → ruokahalu -yhteydelle. Tämä tutkimus yhdistää mekanistisen reitin (VGCC → Ca²⁺ → ARC:n glia → ruokahalu) havaittaviin ihmisvasteisiin.",
 
     /* --- OSIO 3: Kliininen rinnakkaisuus & konteksti --- */
     s3SectionTitle: "Kliininen rinnakkaisuus ja konteksti",
@@ -166,18 +166,18 @@ const COPY = {
     /* 05 GLP-1 / Ozempic */
     s5Title: "GLP-1-agonistit (semaglutiidi / Ozempic)",
     s5p1:
-      "GLP-1-reseptoriagonistit kuten semaglutiidi (Ozempic/Wegovy) hillitsevät ruokahalua vaikuttamalla samaan nucleus arcuatus -kohteeseen. GLP-1-agonistit vähentävät AgRP/NPY-neuronien aktiivisuutta ja tehostavat POMC-neuronien signalointia — täsmälleen päinvastainen suunta kuin yllä kuvattu EMF-indusoitu Ca²⁺-vaikutus.",
+      "GLP-1-reseptoriagonistit kuten semaglutiidi (Ozempic/Wegovy) hillitsevät ruokahalua vaikuttamalla samaan nucleus arcuatus -kohteeseen. GLP-1-agonistit vähentävät AgRP/NPY-neuronien aktiivisuutta ja tehostavat POMC-neuronien signalointia — täsmälleen päinvastainen suunta kuin yllä kuvattu EMF-aiheutettu Ca²⁺-vaikutus.",
     s5p2:
-      "Tämä farmakologinen rinnakkaisuus on merkittävä: sama hermopiiri, jota GLP-1-agonistit terapeuttisesti vaimentavat, on piiri jonka EMF-indusoitu Ca²⁺-nousu voi kroonisesti aktivoida. Sama kohde, vastakkainen suunta. GLP-1-agonistien kliininen menestys ruokahalun ja painon vähentämisessä validoi ARC:n kriittiisenä solmuna ruokahalun säätelyssä ja vahvistaa, että tämän piirin modulointi tuottaa merkittäviä metabolisia vaikutuksia.",
+      "Tämä farmakologinen rinnakkaisuus on merkittävä: sama hermopiiri, jota GLP-1-agonistit terapeuttisesti vaimentavat, on piiri jonka EMF-aiheutettu Ca²⁺-nousu voi kroonisesti aktivoida. Sama kohde, vastakkainen suunta. GLP-1-agonistien kliininen menestys ruokahalun ja painon vähentämisessä validoi ARC:n kriittiisenä solmuna ruokahalun säätelyssä ja vahvistaa, että tämän piirin modulointi tuottaa merkittäviä metabolisia vaikutuksia.",
 
     /* 06 Monitekijäinen konteksti */
     s6Title: "Monitekijäinen konteksti",
     s6p1:
       "Lihavuus on monitekijäinen tila, jota ohjaavat genetiikka, ruokavalion koostumus, fyysinen aktiivisuus, suolistomikrobiomi, sosioekonomiset tekijät, unitottumukset, stressi ja endokriiniset häiriötekijät. BERM-kehys tunnistaa EMF-indusoidun hypotalamuksen Ca²⁺-dysregulaation YHTENÄ myötävaikuttavana tekijänä — ei ainoana syynä.",
     s6Points: [
-      "Hypotalamus on EMF-indusoitujen Ca²⁺-muutosten KOHDE, joka myötävaikuttaa ruokahalun dysregulaatioon yhtenä tekijänä monien joukossa",
+      "Hypotalamus on EMF-aiheutettujen Ca²⁺-muutosten KOHDE, joka myötävaikuttaa ruokahalun dysregulaatioon yhtenä tekijänä monien joukossa",
       "Väestötason lihavuustrendeillä on useita ajureita; EMF-altistus voi toimia aiemmin tunnistamattomana nälänsignaloinnin vahvistajana",
-      "Mekanismi on spesifinen ja testattava: VGCC → Ca²⁺ → ARC:n glia → AgRP/NPY → ruokahalu, evidenssitasolla E (suora Ca²⁺ → ruokahalu vahvistettu in vivo)",
+      "Mekanismi on tarkka ja testattava: VGCC → Ca²⁺ → ARC:n glia → AgRP/NPY → ruokahalu, näyttötasolla E (suora Ca²⁺ → ruokahalu vahvistettu in vivo)",
       "Tämä ei korvaa vakiintuneita lihavuuden riskitekijöitä — se lisää mekanistisesti perustellun, VGCC-välitteisen reitin olemassa olevaan monitekijäiseen malliin",
     ],
 
@@ -189,7 +189,7 @@ const COPY = {
         citation: "Chen ym. 2016 (eLife)",
         referenceId: "chen2016_glia",
         finding:
-          "Osoitti suoran Ca²⁺ → ruokahalu -yhteyden in vivo. Astrosyyttien aktivaatio mediaalisessa basaalihypotalamuksessa moduloi syömiskäyttäytymistä Ca²⁺-riippuvaisten mekanismien kautta hiirissä.",
+          "Osoitti suoran Ca²⁺ → ruokahalu -yhteyden in vivo. Astrosyyttien aktivaatio mediaalisessa basaalihypotalamuksessa säätelee syömiskäyttäytymistä Ca²⁺-riippuvaisten mekanismien kautta hiirissä.",
       },
       {
         id: "alshammari-2022-rf-emf-food-intake",
@@ -214,7 +214,7 @@ const COPY = {
     modulomeOverview: "Moduloomin yleiskatsaus",
     brainModulome: "Aivojen moduloomi",
     pancreasModulome: "Haiman moduloomi",
-    modelPage: "Malli — CaMKII-konvergenssi",
+    modelPage: "Malli — CaMKII-yhdentyminen",
   },
   ja: {
     title: "視床下部（弓状核）",

@@ -188,21 +188,21 @@ const COPY = {
     channel: "Kanava",
     cellType: "Solutyyppi",
     function: "Toiminto",
-    level: "Evidenssitaso",
+    level: "Näyttötaso",
     cav3Subtype: "Cav3.2 (aivojen korkein T-tyypin tiheys)",
     cellTypeVal: "Granuulisolut, hermoston kantasolut",
     functionVal: "Neurogeneesi, muistin konsolidaatio, oppiminen",
     levelVal: "M|C",
 
-    /* 02 EMF-evidenssi */
-    emfEvidence: "EMF-evidenssin yhteenveto",
+    /* 02 EMF-näyttö */
+    emfEvidence: "EMF-näytön yhteenveto",
     emfEvidenceText:
-      "[[ref:pall2022-ad|Pall 2022]]: 18 tyyppistä evidenssiä EMF → VGCC → Ca²⁺ → Alzheimer -ketjulle. 34 % aivosolujen kuolema 4 viikossa EMF-altistusta rotilla — osittain estetty L-tyypin salpaajalla amlodipiinilla (DHP, Cav1.2-selektiivinen; matala T-tyypin affiniteetti — PMC4657039). Huom: amlodipiini EI salpaa T-tyypin kanavia — sen teho tässä osoittaa L-tyypin (Cav1.2) osallisuuden dominoivan T-tyypin reitin rinnalla. BBB:n avautuminen → amyloidin pääsy.",
+      "[[ref:pall2022-ad|Pall 2022]]: 18 tyyppistä näyttöä EMF → VGCC → Ca²⁺ → Alzheimer -ketjulle. 34 % aivosolujen kuolema 4 viikossa EMF-altistusta rotilla — osittain estetty L-tyypin salpaajalla amlodipiinilla (DHP, Cav1.2-selektiivinen; matala T-tyypin affiniteetti — PMC4657039). Huom: amlodipiini EI salpaa T-tyypin kanavia — sen teho tässä osoittaa L-tyypin (Cav1.2) osallisuuden dominoivan T-tyypin reitin rinnalla. BBB:n avautuminen → amyloidin pääsy.",
 
     /* 03 Chi-analyysi */
     chiAnalysis: "Lindgren χ -analyysi",
     chiAnalysisText:
-      "Kaksoisosuma: (1) Cav3.2-bifurkaatio DG:ssä → krooninen Ca²⁺ → amyloidikaskadi. (2) BBB:n avautuminen → veren Aβ pääsee aivoihin. Molemmat konvergoivat hippokampukseen. Ikä vahvistaa mitokondriaalisella χ:llä.",
+      "Kaksoisosuma: (1) Cav3.2-bifurkaatio DG:ssä → krooninen Ca²⁺ → amyloidikaskadi. (2) BBB:n avautuminen → veren Aβ pääsee aivoihin. Molemmat yhtyvät hippokampukseen. Ikä vahvistaa mitokondriaalisella χ:llä.",
 
     /* 04 Ennuste */
     prediction: "Keskeinen ennuste",
@@ -241,7 +241,7 @@ const COPY = {
     /* 07 Prenataalinen ohjelmointi */
     s7Title: "Prenataalinen ohjelmointi (EDC-kehys)",
     s7Intro:
-      "Maskulinisaatio-ohjelmointiikkuna (raskausviikot 8–14) on ajanjakso jolloin sikiön androgeenit organisoivat pysyvästi lisääntymisanatomian ja aivojen seksuaalisen differentiaation. Seitsemän VGCC-riippuvaista kausaalikanavaa konvergoivat tähän kriittiseen ikkunaan:",
+      "Maskulinisaatio-ohjelmointiikkuna (raskausviikot 8–14) on ajanjakso jolloin sikiön androgeenit organisoivat pysyvästi lisääntymisanatomian ja aivojen seksuaalisen differentiaation. Seitsemän VGCC-riippuvaista kausaalikanavaa yhtyvät tähän kriittiseen ikkunaan:",
     s7Channels: [
       {
         name: "Sikiön Leydig Cav3 → StAR → testosteroni",
@@ -295,9 +295,9 @@ const COPY = {
     /* 08 Puberteetin kypsyminen */
     s8Title: "Puberteetin kypsyminen",
     s8p1:
-      "Prefrontaalinen aivokuori käy läpi laajan VGCC-riippuvaisen synaptisen karsinnan ja myelinaation puberteetin aikana (ikä 10–25). Tämä kypsymisprosessi vaatii tarkasti ajoitettua Cav1.2- ja Cav3-aktiivisuutta ylimääräisten synapsien eliminoimiseksi samalla kun toiminnalliset piirit vahvistuvat. EMF-indusoitu Ca²⁺-dysregulaatio tämän ikkunan aikana voi muuttaa karsintasuhdetta, vaikuttaen eksekutiivisiin toimintoihin, impulssikontrolliin ja riskinarviokykyyn.",
+      "Prefrontaalinen aivokuori käy läpi laajan VGCC-riippuvaisen synaptisen karsinnan ja myelinaation puberteetin aikana (ikä 10–25). Tämä kypsymisprosessi vaatii tarkasti ajoitettua Cav1.2- ja Cav3-aktiivisuutta ylimääräisten synapsien poissulkemiseksi samalla kun toiminnalliset piirit vahvistuvat. EMF-aiheutettu Ca²⁺-dysregulaatio tämän ikkunan aikana voi muuttaa karsintasuhdetta, vaikuttaen eksekutiivisiin toimintoihin, impulssikontrolliin ja riskinarviokykyyn.",
     s8p2:
-      "[[ref:denmark-cpp-3x-increase|Sentraalinen ennenaikainen puberteetti (CPP) on lisääntynyt noin 3× tyttöillä ja 2× pojilla viimeisten kahden vuosikymmenen aikana]]. BERM-mekanismi tarjoaa spesifisen reitin: EMF → pinealinen VGCC → melatoniinihäiriö → ennenaikainen GnRH-aktivaatio. Tämä ennuste (DIFF-3) katsotaan nyt TODENNETUKSI epidemiologisen trenditiedon perusteella, vaikka suora kausaalinen vahvistus vaatii interventiotutkimuksia.",
+      "[[ref:denmark-cpp-3x-increase|Sentraalinen ennenaikainen puberteetti (CPP) on lisääntynyt noin 3× tyttöillä ja 2× pojilla viimeisten kahden vuosikymmenen aikana]]. BERM-mekanismi tarjoaa tarkan reitin: EMF → pinealinen VGCC → melatoniinihäiriö → ennenaikainen GnRH-aktivaatio. Tämä ennuste (DIFF-3) katsotaan nyt TODENNETUKSI epidemiologisen trenditiedon perusteella, vaikka suora kausaalinen vahvistus vaatii interventiotutkimuksia.",
     s8p3:
       "Oksitosiini/vasopressiini (OT/AVP) -järjestelmä käy läpi toisen kehitysaallon puberteetin aikana, jossa VGCC-riippuvainen reseptoriuudelleenjakautuminen muokkaa aikuisiän sosiaalista sitoutumista, parisidettä ja stressivastekuvioita. Häiriö tämän ikkunan aikana voi myötävaikuttaa havaittuun sosiaalisen ahdistuksen lisääntymiseen ja muuttuneisiin kiintymyssuhdemalleihin.",
     s8Badge: "M|C",
@@ -314,7 +314,7 @@ const COPY = {
     s9GirlsTitle: "Tytöt: eri reitit, aikaisempi ajoitus",
     s9GirlsPoints: [
       "Aromataasi/AFP-ohitus: aivojen feminisoituminen sisältää erillisiä Ca²⁺-riippuvaisia reittejä jotka ovat vähemmän tutkittuja kuin maskulinisaatio",
-      "Aikaisempi puberteetin alkaminen (CPP 3× lisäys) → lyhentynytt lapsuuden kehitysikkuna",
+      "Aikaisempi puberteetin alkaminen (CPP 3× lisäys) → lyhentynyt lapsuuden kehitysikkuna",
       "Interoseptiivisen piirin häiriö (insulaarinen aivokuori) → muuttunut kehon itserepresentaatio ja kehollinen kognitio",
       "OT-järjestelmän häiriö voi vaikuttaa eri tavoin naispuolisiin sosiaalisiin kognitiomalleihin",
     ],
@@ -322,7 +322,7 @@ const COPY = {
     s9VarianceText:
       "Malli ennustaa lisääntynyttä VARIANSSIA sukupuolityypillisessä kehityksessä, ei suuntautunutta populaatiosiirtymaa. EMF-altistus laajentaa seksuaalisesti dimorfisten ominaisuuksien (AGD, sormisuhde, puberteetin ajoitus, aivojen lateralisaatio) populaatiojakaumaa siirtämättä keskiarvoa yhteen suuntaan. Jakauman ääripäissä olevat yksilöt ovat eniten alttiita.",
     s9CriticalTest:
-      "DIFF-1 (AGD + prenataalinen EMF) on kriittinen erotteleva testi. Se on mekanistisesti spesifinen (Leydig Cav3 → StAR → testosteroni → AGD), käyttää vakiintunutta biomarkkeria jolla on tunnettu EDC-herkkyys, ja erottaa puhtaasti BERM-ennusteen vaihtoehtoisista hypoteeseista.",
+      "DIFF-1 (AGD + prenataalinen EMF) on kriittinen erotteleva testi. Se on mekanistisesti tarkka (Leydig Cav3 → StAR → testosteroni → AGD), käyttää vakiintunutta biomarkkeria jolla on tunnettu EDC-herkkyys, ja erottaa puhtaasti BERM-ennusteen vaihtoehtoisista hypoteeseista.",
 
     /* Merkit */
     discriminatingBadge: "Erotteleva",
@@ -333,7 +333,7 @@ const COPY = {
     /* Katso myös */
     seeAlso: "Katso myös",
     modulomeOverview: "Moduloomin yleiskatsaus",
-    evidenceBBB: "Evidenssi: BBB",
+    evidenceBBB: "Näyttö: BBB",
     predictionsPage: "Ennusterekisteri",
     earPage: "Sisäkorva (Cav1.3)",
     painPage: "Kipureitit (Cav3.2)",

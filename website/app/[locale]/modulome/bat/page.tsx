@@ -116,7 +116,7 @@ const COPY = {
     gene: "Geeni",
     cellType: "Solutyyppi",
     function: "Toiminto",
-    level: "Evidenssitaso",
+    level: "Näyttötaso",
     channelVal: "VGCC (jänniteohjatut kalsiumkanavat)",
     geneVal: "CACNA1H (Cav3.2) — CaMKII alajuoksulla",
     cellTypeVal: "Ruskeat adiposyytit",
@@ -131,8 +131,8 @@ const COPY = {
     s2Title: "Reitti 1: CaMKII → UCP1-transkriptio",
     s2Chain:
       "VGCC → Ca²⁺ → CaMKII → CREB-fosforylaatio → UCP1-transkriptio ↓ → protonivuoto ↓ → termogeneesi ↓",
-    s2p1: "UCP1 (irtikytkentäproteiini 1) on ruskean rasvakudoksen tunnusproteiini. Se sijaitsee mitokondrion sisäkalvolla ja haihduttaa protonierot lämpönä ATP:n sijaan — paleleemattoman termogeneesin molekulaarinen perusta. UCP1-ekspressiota säätelee CaMKII/CREB-signalointiakseli: Ca²⁺-sisäänvirtaus VGCC:iden kautta aktivoi CaMKII:n, joka fosforyloi CREB:n, joka ajaa UCP1-geenin transkriptiota.",
-    s2p2: "EMF-indusoitu VGCC-avautumisen häiriö muuttaa Ca²⁺-dynamiikkaa ruskeissa adiposyyteissä. Alavirran vaikutus on CaMKII-aktivaation väheneminen, CREB-fosforylaation heikentyminen ja UCP1-transkription lasku. Vähemmällä UCP1:llä mitokondriaalinen protonivuoto pienenee, ja solu polttaa vähemmän kaloreita lämpönä. BAT:n termogeneettinen kapasiteetti heikkenee, vaikka kudos itsessään pysyisi anatomisesti ehjänä.",
+    s2p1: "UCP1 (irtikytkentäproteiini 1) on ruskean rasvakudoksen tunnusproteiini. Se sijaitsee mitokondrion sisäkalvolla ja purkaa protonigradientin lämpönä ATP:n sijaan — paleleemattoman termogeneesin molekulaarinen perusta. UCP1-ekspressiota säätelee CaMKII/CREB-signalointiakseli: Ca²⁺-sisäänvirtaus VGCC:iden kautta aktivoi CaMKII:n, joka fosforyloi CREB:n, joka ajaa UCP1-geenin transkriptiota.",
+    s2p2: "EMF-aiheutettu VGCC-avautumisen häiriö muuttaa Ca²⁺-dynamiikkaa ruskeissa adiposyyteissä. Alavirran vaikutus on CaMKII-aktivaation väheneminen, CREB-fosforylaation heikentyminen ja UCP1-transkription lasku. Vähemmällä UCP1:llä mitokondriaalinen protonivuoto pienenee, ja solu polttaa vähemmän kaloreita lämpönä. BAT:n termogeneettinen kapasiteetti heikkenee, vaikka kudos itsessään pysyisi anatomisesti ehjänä.",
     s2p3: "Tämä reitti on annos- ja aikariippuvainen. [[ref:maalouf2023|Maalouf ym. (2023)]] osoittivat, että 900 MHz:n altistus SAR-tasoilla 0,1–0,4 W/kg vähensi BAT-termogeneesiä ja mitokondriaalista aktiivisuutta annosvasteisesti — täsmälleen VGCC-välitteisen mekanismin ennustama kuvio.",
 
     /* 03 Ca²⁺ -kiertoreitti */
@@ -142,12 +142,12 @@ const COPY = {
     s3p1: "UCP1:stä riippumatta ruskeat adiposyytit omaavat toisen termogeneettisen mekanismin: SERCA2b/RyR2-kalsiumin turhan kierron. SERCA2b (sarko/endoplasmakalvoston Ca²⁺-ATPaasi 2b) pumppaa sytoplasman Ca²⁺:n endoplasmakalvostoon kuluttaen ATP:tä. Ryanodiinireseptori RyR2 vapauttaa Ca²⁺:n takaisin sytoplasmaan. Kierto toistuu jatkuvasti, muuntaen ATP-energian lämmöksi ilman tuottavaa työtä — termogeneettinen \"turha kierto\".",
     s3p2: "Tämä mekanismi on täysin Ca²⁺-riippuvainen ja siten suoraan altis VGCC-häiriölle. EMF-indusoidut muutokset solunsisäisessä Ca²⁺-homeostaasissa häiritsevät sekä SERCA2b-pumpun nopeutta että RyR2:n vapautumisdynamiikkaa, heikentäen turhan kierron termogeneettistä tuottoa. Koska tämä reitti toimii UCP1:stä riippumatta, EMF-altistus heikentää samanaikaisesti MOLEMPIA termogeneesimekanismeja — kaksoisosuma solun kalorinpolttamiskapasiteettiin.",
 
-    /* --- OSIO 3: Evidenssi --- */
-    s3SectionTitle: "Keskeinen evidenssi",
+    /* --- OSIO 3: Näyttö --- */
+    s3SectionTitle: "Keskeinen näyttö",
 
     /* 04 Maalouf 2023 */
     s4Title: "Maalouf ym. 2023 (PMC10342026)",
-    s4p1: "900 MHz:n RF-EMF-altistus SAR-tasoilla 0,1–0,4 W/kg vähensi BAT-termogeneesiä ja mitokondriaalista aktiivisuutta. Vaikutus oli annos- ja aikariippuvainen — korkeampi SAR ja pidempi altistus tuottivat suuremman suppression. Tutkimus tarjoaa suoran mittauksen EMF-indusoidusta termogeneettisestä heikentymisestä altistustasoilla, jotka ovat matkapuhelinkäytön alueella.",
+    s4p1: "900 MHz:n RF-EMF-altistus SAR-tasoilla 0,1–0,4 W/kg vähensi BAT-termogeneesiä ja mitokondriaalista aktiivisuutta. Vaikutus oli annos- ja aikariippuvainen — korkeampi SAR ja pidempi altistus tuottivat suuremman vaimenemisen. Tutkimus tarjoaa suoran mittauksen EMF:n aiheuttamasta termogeneettisestä heikentymisestä altistustasoilla, jotka ovat matkapuhelinkäytön alueella.",
     s4Badge: "E — suora mittaus, annosvaste",
 
     /* 05 Ranskalainen 5G-tutkimus 2025 */
@@ -159,8 +159,8 @@ const COPY = {
     ],
     s5p2: "PRDM16 on se transkriptiotekijä, joka määrää kehittyykö esiastesolu ruskeaksi vai valkeaksi adiposyytiksi. 49 %:n lasku tarkoittaa, että lähes puolet potentiaalisesta ruskean rasvasolun differentiaatiosta estyy. C/EBPβ toimii yhteistyössä PRDM16:n kanssa ruskean rasvan geeniohjelmassa. Yhdessä nämä vähennykset osoittavat, että 5G-altistus heikentää merkittävästi kehon kykyä tuottaa uusia ruskeita adiposyyttejä — vähentäen paitsi olemassa olevan BAT:n aktiivisuutta, myös kudoksen uusiutumiskapasiteettia.",
 
-    /* --- OSIO 4: CaMKII-konvergenssi --- */
-    s4SectionTitle: "CaMKII-konvergenssi",
+    /* --- OSIO 4: CaMKII-yhdentyminen --- */
+    s4SectionTitle: "CaMKII-yhdentyminen",
 
     /* 06 CaMKII-yhteys */
     s6Title: "CaMKII-solmukohta: sama molekyyli, useita elimiä",
@@ -171,8 +171,8 @@ const COPY = {
       "Aivoissa: CaMKII → synaptinen plastisuus, muistin konsolidaatio",
       "Sydämessä: CaMKII → arytmogeneesi Ca²⁺-ylikuormituksessa",
     ],
-    s6p2: "Tämä konvergenssi ei ole sattumaa. CaMKII on VGCC-välitteisen Ca²⁺-sisäänvirtauksen suora alajuoksun efektori. Mikä tahansa VGCC-häiriö — olipa se EMF:n, farmakologisen salpauksen tai geneettisen mutaation aiheuttama — etenee CaMKII:n kautta kaikkiin sen alajuoksun kohteisiin samanaikaisesti. BAT-termogeneesireitti on yksi haara monielimisessä kaskadissa, joka ajaa myös hedelmättömyyttä, neurodegeneraatiota ja sydämen toimintahäiriöitä saman ylävirtamekanismin kautta.",
-    s6LinkText: "Täydellinen CaMKII-konvergenssimalli",
+    s6p2: "Tämä yhdentyminen ei ole sattumaa. CaMKII on VGCC-välitteisen Ca²⁺-sisäänvirtauksen suora alajuoksun efektori. Mikä tahansa VGCC-häiriö — olipa se EMF:n, farmakologisen salpauksen tai geneettisen mutaation aiheuttama — etenee CaMKII:n kautta kaikkiin sen alajuoksun kohteisiin samanaikaisesti. BAT-termogeneesireitti on yksi haara monielimisessä kaskadissa, joka ajaa myös hedelmättömyyttä, neurodegeneraatiota ja sydämen toimintahäiriöitä saman ylävirtamekanismin kautta.",
+    s6LinkText: "Täydellinen CaMKII-yhdentymismalli",
 
     /* --- OSIO 5: Kliininen konteksti --- */
     s5SectionTitle: "Kliininen konteksti",
@@ -184,8 +184,8 @@ const COPY = {
 
     /* 08 Episteeminen huomautus */
     s8Title: "Episteeminen huomautus",
-    s8p1: "Lihavuus on monitekijäinen tila. Ruokavalio, liikunta, genetiikka, suolistomikrobiomi, uni, stressi ja endokriiniset häiritsijät kaikki vaikuttavat energiatasapainoon. EMF-indusoitu BAT-heikentyminen on YKSI vaikuttava tekijä tässä monimutkaisessa maisemassa — ei ainoa syy.",
-    s8p2: "BERM-kehys ei väitä, että EMF aiheuttaa lihavuuden. Se tunnistaa spesifisen, mitattavan mekanismin (VGCC → Ca²⁺ → CaMKII → UCP1/SERCA2b), jolla EMF vähentää termogeneettistä kalorinpolttoa. Suuruusluokka (PRDM16 −49 %, C/EBPβ −32 %) osoittaa, ettei kyseessä ole merkityksetön vaikutus energiatasapainoon, mutta sen suhteellinen paino ruokavalion, liikunnan ja muiden tekijöiden rinnalla on vielä kvantifioitava populaatiotutkimuksissa.",
+    s8p1: "Lihavuus on monitekijäinen tila. Ruokavalio, liikunta, genetiikka, suolistomikrobiomi, uni, stressi ja endokriiniset häiritsijät kaikki vaikuttavat energiatasapainoon. EMF-aiheutettu BAT-heikentyminen on YKSI vaikuttava tekijä tässä monimutkaisessa maisemassa — ei ainoa syy.",
+    s8p2: "BERM-kehys ei väitä, että EMF aiheuttaa lihavuuden. Se tunnistaa tarkan, mitattavan mekanismin (VGCC → Ca²⁺ → CaMKII → UCP1/SERCA2b), jolla EMF vähentää termogeneettistä kalorinpolttoa. Suuruusluokka (PRDM16 −49 %, C/EBPβ −32 %) osoittaa, ettei kyseessä ole merkityksetön vaikutus energiatasapainoon, mutta sen suhteellinen paino ruokavalion, liikunnan ja muiden tekijöiden rinnalla on vielä kvantifioitava populaatiotutkimuksissa.",
 
     /* Katso myös */
     seeAlso: "Katso myös",

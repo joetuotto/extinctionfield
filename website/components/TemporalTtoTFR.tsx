@@ -50,10 +50,10 @@ export function TemporalTtoTFR({ locale }: { locale?: string }) {
   const isFi = locale === "fi";
 
   return (
-    <div className="overflow-x-auto">
+    <div className="chart-scroll">
       <svg
         viewBox={`0 0 ${W} ${H}`}
-        className="w-full max-w-[640px] mx-auto"
+        className="chart-svg w-full min-w-[600px] max-w-[640px] mx-auto"
         role="img"
         aria-label="USA TFR and lagged testosterone temporal comparison"
       >
@@ -82,26 +82,26 @@ export function TemporalTtoTFR({ locale }: { locale?: string }) {
         ))}
 
         {/* TFR line (blue) */}
-        <path d={tfrPath} fill="none" stroke="#3b82f6" strokeWidth={2.5} />
+        <path d={tfrPath} fill="none" stroke="var(--chart-series-1)" strokeWidth={2.5} />
         {USA_DATA.map((d) => (
           <circle
             key={`tfr-${d.year}`}
             cx={xScale(d.year)}
             cy={yLeftScale(d.tfr)}
             r={3}
-            fill="#3b82f6"
+            fill="var(--chart-series-1)"
           />
         ))}
 
         {/* T line (red/orange, dashed) */}
-        <path d={tPath} fill="none" stroke="#ef4444" strokeWidth={2} strokeDasharray="6 3" />
+        <path d={tPath} fill="none" stroke="var(--status-refuted)" strokeWidth={2} strokeDasharray="6 3" />
         {USA_DATA.map((d) => (
           <circle
             key={`t-${d.year}`}
             cx={xScale(d.year)}
             cy={yRightScale(d.tLevel)}
             r={3}
-            fill="#ef4444"
+            fill="var(--status-refuted)"
           />
         ))}
 
@@ -142,7 +142,7 @@ export function TemporalTtoTFR({ locale }: { locale?: string }) {
           y1={PAD.top}
           x2={PAD.left}
           y2={PAD.top + plotH}
-          stroke="#3b82f6"
+          stroke="var(--chart-series-1)"
           strokeOpacity={0.4}
         />
         {[1.6, 1.7, 1.8, 1.9, 2.0, 2.1].map((v) => (
@@ -152,7 +152,7 @@ export function TemporalTtoTFR({ locale }: { locale?: string }) {
             y={yLeftScale(v) + 4}
             textAnchor="end"
             className="text-[11px]"
-            fill="#3b82f6"
+            fill="var(--chart-series-1)"
           >
             {v.toFixed(1)}
           </text>
@@ -161,7 +161,7 @@ export function TemporalTtoTFR({ locale }: { locale?: string }) {
           x={12}
           y={PAD.top + plotH / 2}
           textAnchor="middle"
-          fill="#3b82f6"
+          fill="var(--chart-series-1)"
           className="text-[12px]"
           transform={`rotate(-90, 12, ${PAD.top + plotH / 2})`}
         >
@@ -174,7 +174,7 @@ export function TemporalTtoTFR({ locale }: { locale?: string }) {
           y1={PAD.top}
           x2={W - PAD.right}
           y2={PAD.top + plotH}
-          stroke="#ef4444"
+          stroke="var(--status-refuted)"
           strokeOpacity={0.4}
         />
         {[420, 440, 460, 480, 500, 520].map((v) => (
@@ -184,7 +184,7 @@ export function TemporalTtoTFR({ locale }: { locale?: string }) {
             y={yRightScale(v) + 4}
             textAnchor="start"
             className="text-[11px]"
-            fill="#ef4444"
+            fill="var(--status-refuted)"
           >
             {v}
           </text>
@@ -193,7 +193,7 @@ export function TemporalTtoTFR({ locale }: { locale?: string }) {
           x={W - 10}
           y={PAD.top + plotH / 2}
           textAnchor="middle"
-          fill="#ef4444"
+          fill="var(--status-refuted)"
           className="text-[12px]"
           transform={`rotate(90, ${W - 10}, ${PAD.top + plotH / 2})`}
         >
@@ -201,11 +201,11 @@ export function TemporalTtoTFR({ locale }: { locale?: string }) {
         </text>
 
         {/* Legend */}
-        <line x1={PAD.left + 10} y1={PAD.top + 8} x2={PAD.left + 30} y2={PAD.top + 8} stroke="#3b82f6" strokeWidth={2.5} />
+        <line x1={PAD.left + 10} y1={PAD.top + 8} x2={PAD.left + 30} y2={PAD.top + 8} stroke="var(--chart-series-1)" strokeWidth={2.5} />
         <text x={PAD.left + 35} y={PAD.top + 12} className="text-[11px] fill-foreground-muted">
           TFR ({isFi ? "havaittu" : "observed"})
         </text>
-        <line x1={PAD.left + 10} y1={PAD.top + 24} x2={PAD.left + 30} y2={PAD.top + 24} stroke="#ef4444" strokeWidth={2} strokeDasharray="6 3" />
+        <line x1={PAD.left + 10} y1={PAD.top + 24} x2={PAD.left + 30} y2={PAD.top + 24} stroke="var(--status-refuted)" strokeWidth={2} strokeDasharray="6 3" />
         <text x={PAD.left + 35} y={PAD.top + 28} className="text-[11px] fill-foreground-muted">
           T (ng/dL, {isFi ? "viive −8v" : "lagged −8yr"})
         </text>

@@ -115,22 +115,22 @@ const COPY = {
       "Pohjoinen paketti: Miten kolme piirrettä optimoi yhtä molekyyliä",
     subtitle:
       "Kolme piirrettä valittiin yhdessä Pohjois-Euroopassa 10 000–6 000 vuotta sitten, ja ne kaikki optimoivat samaa molekulaarista järjestelmää — kryptokromia (CRY).",
-    backLink: "← Takaisin evidenssiin",
+    backLink: "← Takaisin näyttöön",
     cautionText:
       "Northern Package on BERM:n evoluutiosynteesi (M-taso). Yksittäiset komponentit — iiriksen valoläpäisevyys, FAD–CRY-proteiinin stabiilisuus, geomagneettisen kentän vaikutukset biologiaan — ovat vahvistettu vertaisarvioidussa kirjallisuudessa. Yhteisvalintahypoteesi, joka yhdistää kaikki kolme CRY-optimointiin, on testaamatta.",
 
     s1Title: "Kolme piirrettä, yksi molekyyli",
     s1Text: [
-      "Pohjois-Euroopassa kolme piirrettä valittiin yhdessä 10 000–6 000 vuotta sitten: sininen/vaalea silmien väri, laktoositoleranssi ja asutus korkeilla geomagneettisilla leveysasteilla.",
+      "Pohjois-Euroopassa kolme piirrettä valittiin yhdessä 10 000–6 000 vuotta sitten: sininen/vaalea silmien väri, laktoosinsietokyky ja asutus korkeilla geomagneettisilla leveysasteilla.",
       "Perinteinen selitys tälle klusterille on D-vitamiinioptimointi. Matalassa UV-ympäristössä vaaleampi iho ja silmät päästävät enemmän UVB-säteilyä ihon D-vitamiinisynteesiin, ja maitotuotteet tarjoavat ravinnon D-vitamiinia.",
       "BERM ehdottaa lisäselitystä, joka on täydellisempi: kaikki kolme piirrettä optimoivat kryptokromi (CRY) -järjestelmän — sinivaloherkän proteiinin, joka vastaa magnetoreseptiosta ja sirkadiaanisesta säätelystä.",
-      "D-vitamiini selitää 2 piirrettä kolmesta (silmien väri ja laktoositoleranssi). CRY selitää kaikki 3.",
+      "D-vitamiini selitää 2 piirrettä kolmesta (silmien väri ja laktoosinsietokyky). CRY selitää kaikki 3.",
     ],
 
     s2Title: "Silmien väri ja CRY (χ_optical)",
     s2Points: [
       "Sininen iiris päästää ~100× enemmän sinistä valoa verkkokalvolle kuin ruskea (van den Berg 1991)",
-      "Silmien väri vaikuttaa valon aiheuttamaan melatoniinin suppressioon (Higuchi ym. 2007)",
+      "Silmien väri vaikuttaa valon aiheuttamaan melatoniinin vaimentumiseen (Higuchi ym. 2007)",
       "Ruskeasilmäiset ovat merkitsevästi masentuneempia ja väsyneempiä talvella kuin sinisilmäiset (Workman 2018)",
       "CRY-magnetoreseptio vaatii sinistä valoa (<500 nm) — aallonpituusalue, jossa iiriksen transmissioero on suurin",
     ],
@@ -147,7 +147,7 @@ const COPY = {
       "KRIITTISTÄ: Matala B2 tekee CRY:stä EPÄVAKAAN (proteiini hajoaa nopeammin), EI pelkästään ‘vähemmän herkän.’ CRY-proteiinitaso LASKEE → magneettinen signaali HEIKKENEE",
     ],
     s3Conclusion:
-      "χ_molecular: laktoositoleranssi ylläpitää CRY-proteiinin VAKAUTTA ja siten magneettista herkkyytä. B2/FAD on BERM:n 6. luonnollinen Ca²⁺-modulaattori/kofaktori (D-vitamiinin, melatoniinin, magnesiumin, litiumin ja kofeiinin rinnalla)",
+      "χ_molecular: laktoosinsietokyky ylläpitää CRY-proteiinin VAKAUTTA ja siten magneettista herkkyytä. B2/FAD on BERM:n 6. luonnollinen Ca²⁺-modulaattori/kofaktori (D-vitamiinin, melatoniinin, magnesiumin, litiumin ja kofeiinin rinnalla)",
 
     s4Title: "Geomagneettinen sijainti (χ_geomagnetic)",
     s4Points: [
@@ -162,20 +162,20 @@ const COPY = {
     s5Lead:
       "Kaksi mutaatiota, eri kromosomit, sama populaatio, sama aikakehys:",
     s5Points: [
-      "OCA2 (kromosomi 15) kontrolloi iiriksen pigmentaatiota; LCT (kromosomi 2) kontrolloi laktaasipersistenssiä — geneettisesti itsenäiset lokukset rinnakkaisessa valintapaineessa",
-      "Molemmat ovat nuoria mutaatioita epätavallisen pitkillä haplotyyppibiokkeilla, mikä osoittaa vahvaa viimeaikaista positiivista valintaa",
+      "OCA2 (kromosomi 15) kontrolloi iiriksen pigmentaatiota; LCT (kromosomi 2) kontrolloi laktaasin pysyvyyttä — geneettisesti itsenäiset lokukset rinnakkaisessa valintapaineessa",
+      "Molemmat ovat nuoria mutaatioita epätavallisen pitkillä haplotyyppiblokkeilla, mikä osoittaa vahvaa viimeaikaista positiivista valintaa",
     ],
     s5CompareTitle: "D-vitamiini vs. CRY: selitysvoima",
     s5VitDLabel: "D-vitamiinihypoteesi",
     s5VitD: [
       "Selitää siniset silmät: enemmän UVB-läpäisyä → ihon D-vitamiinisynteesi",
-      "Selitää laktoositoleranssin: maitotuotteet tarjoavat ravinnon D-vitamiinia",
+      "Selitää laktoosinsietokyvyn: maitotuotteet tarjoavat ravinnon D-vitamiinia",
       "EI selitä geomagneettisen leveysasteen preferenssiä — D-vitamiinisynteesi riippuu auringon UV:stä, ei geomagneettisen kentän voimakkuudesta",
     ],
     s5CRYLabel: "CRY-hypoteesi",
     s5CRY: [
       "Selitää siniset silmät: χ_optical — enemmän sinistä valoa saavuttaa verkkokalvon CRY:n",
-      "Selitää laktoositoleranssin: χ_molecular — maidon B2 stabiloi CRY-proteiinia",
+      "Selitää laktoosinsietokyvyn: χ_molecular — maidon B2 stabiloi CRY-proteiinia",
       "Selitää korkean leveysasteen asutuksen: χ_geomagnetic — voimakkain aurinkosyklin CRY-modulaatio",
     ],
     s5Conclusion:
@@ -202,7 +202,7 @@ const COPY = {
       "Kun geomagneettinen geometria muuttuu, biologinen vaste kääntyy. SAMA on Northern Packagen peilikuva — molemmat osoittavat, että CRY-riippuvainen biologia seuraa geomagneettisen kentän rakennetta.",
 
     predictionText:
-      "Ennuste NORTH-PKG-1: Sinisilmäiset, laktoositolerantit yksilöt geomagneettisilla leveysasteilla >55°N osoittavat suurimman melatoniinisuppressioamplitudin geomagneettisten myrskyjen aikana (Kp ≥ 5) ja voimakkaimman kausimielialavaihtelun, verrattuna ruskeasilmäisiin, laktoosi-intolerantteihin yksilöihin samalla maantieteellisellä leveysasteella — koska kaikki kolme χ-komponenttia (optinen, molekulaarinen, geomagneettinen) ovat maksimoituja.",
+      "Ennuste NORTH-PKG-1: Sinisilmäiset, laktoositolerantit yksilöt geomagneettisilla leveysasteilla >55°N osoittavat suurimman melatoniinivaimennuksen amplitudin geomagneettisten myrskyjen aikana (Kp ≥ 5) ja voimakkaimman kausimielialavaihtelun, verrattuna ruskeasilmäisiin, laktoosi-intolerantteihin yksilöihin samalla maantieteellisellä leveysasteella — koska kaikki kolme χ-komponenttia (optinen, molekulaarinen, geomagneettinen) ovat maksimoituja.",
     predictionLink: "Katso ennusteet →",
     predictionHref: "/predictions",
   },

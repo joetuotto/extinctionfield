@@ -151,7 +151,7 @@ const copy = {
   fi: {
     title: "Globaalin maa–vuosi-aineiston tutkija",
     description:
-      "Selaa julkaistua maa–vuosi-paneelia maan ja ennalta määritellyn kattavuustason mukaan. Paneeli sisältää julkaistuja raportoituja tai estimoituja demografisia sarjoja ja teknologian ajoitusprokseja, ei mitattua FieldStatea eikä ennustenäkymää.",
+      "Selaa julkaistua maa–vuosi-paneelia maan ja ennalta määritellyn kattavuustason mukaan. Paneeli sisältää julkaistuja raportoituja tai arvioituja demografisia sarjoja ja teknologian ajoitusprokseja, ei mitattua FieldStatea eikä ennustenäkymää.",
     loading: "Ladataan julkaistua globaalia paneelia…",
     error: "Globaalia maa–vuosi-paneelia ei ole vielä saatavilla. Arvoja ei näytetä ennen julkaistun artefaktin lataamista.",
     tier: "Kattavuustaso",

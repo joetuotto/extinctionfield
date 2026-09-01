@@ -57,14 +57,14 @@ const COPY = {
   fi: {
     title: "Suolisto-aivo-akseli: Toinen este murtuu",
     subtitle: "Sirkadiaaninen häiriö hyökkää suoliston estettä vastaan Per2 → tiiviin liitoksen hajoaminen → LPS pääsee verenkiertoon → neurotulehdus. Suoliston este käyttää samaa molekulaarista työkalupakkia kuin veri-aivoeste — melatoniinin menetys avaa molemmat samanaikaisesti.",
-    backLink: "← Takaisin Evidenssiin",
-    cautionText: "Tämä sivu dokumentoi suolisto-aivo-akselin vastikään verifioituna BERM-reittinä (VK24). Yksittäiset linkit on verifioitu itsenäisesti; täydellinen EMF → suolisto → aivot -ketju yhtenä integroituna mekanismina vaatii lisätestausta.",
+    backLink: "← Takaisin näyttöön",
+    cautionText: "Tämä sivu dokumentoi suolisto-aivo-akselin vastikään todennettuna BERM-reittinä (VK24). Yksittäiset linkit on todennettu itsenäisesti; täydellinen EMF → suolisto → aivot -ketju yhtenä integroituna mekanismina vaatii lisätestausta.",
 
     pathTitle: "Reitti",
     pathLead: "Suolisto-aivo-akseli yhdistää sirkadiaanisen kellon toiminnan suoliston esterakenteen ylläpitoon ja aivojen tulehdukseen jatkuvan molekulaarisen ketjun kautta.",
     pathSteps: [
-      { step: "1. EMF → melatoniini↓", detail: "EMF suppressoi melatoniinia pineaalivaikutusten ja CRY-magnetoreseption kautta. Melatoniini normaalisti suojaa tiiviin liitoksen proteiineja sekä BBB:ssä että suoliston epitheelissä." },
-      { step: "2. Melatoniini↓ → Per2↓ suolistossa", detail: "Melatoniini synkronoi perifeerisiä sirkadiaanisia kelloja mukaan lukien suoliston Per2:n. Per2 kontrolloi ZO-1:n, okludiinin ja klaudiinien ekspressiota suoliston epitheelisoluissa." },
+      { step: "1. EMF → melatoniini↓", detail: "EMF vaimentaa melatoniinia pineaalivaikutusten ja CRY-magnetoreseption kautta. Melatoniini normaalisti suojaa tiiviin liitoksen proteiineja sekä BBB:ssä että suoliston epitheelissä." },
+      { step: "2. Melatoniini↓ → Per2↓ suolistossa", detail: "Melatoniini tahdistaa perifeerisiä sirkadiaanisia kelloja mukaan lukien suoliston Per2:n. Per2 kontrolloi ZO-1:n, okludiinin ja klaudiinien ekspressiota suoliston epitheelisoluissa." },
       { step: "3. Per2↓ → suoliston este↓", detail: "Per2-poistogeeni suoliston epitheelissä aiheuttaa tiiviin liitoksen hajoamisen. Samat tiiviin liitoksen proteiinit (ZO-1, okludiini, klaudiinit) jotka ylläpitävät veri-aivoestettä ylläpitävät myös suoliston estettä." },
       { step: "4. Suoliston este↓ → LPS verenkiertoon", detail: "Heikentynyt suoliston este sallii lipopolysakkaridien (LPS) pääsyn gramnegatiivisista bakteereista verenkiertoon. Sirkadiaanihäiriö myös muuttaa mikrobiomin koostumusta: Ruminococcus torques↑, Lactobacillus↓, LPS-synteesigeenit↑." },
       { step: "5. LPS → neurotulehdus", detail: "Seerumin LPS laukaisee systeemisen tulehduksen → ylittää heikentyneen BBB:n → aktivoi mikroglian → neurotulehdus. Tämä vähentää hippokampaalista neurogeneesiä ja myötävaikuttaa masennukseen." },
@@ -78,19 +78,19 @@ const COPY = {
       { protein: "Okludiini", role: "Transmembraaninen tiiviin liitoksen proteiini; melatoniini↓ vähentää ekspressiota molemmissa esteissä; EMF vähentää suoraan okludiinia BBB:ssä ([[ref:bbb_emf_2026|PMC12829706]])" },
       { protein: "Klaudiinit (perhe)", role: "Parasellulaarisen läpäisevyyden säätelijät; kudosspesifiset isoformit mutta jaetut säätelymekanismit; Per2-riippuvainen ekspressio suolistossa" },
     ],
-    dualConclusion: "Melatoniini on molempien esteiden jaettu suojaaja. EMF→melatoniini↓ luo samanaikaisen kaksoishaavottuvuuden: raskasmetallit pääsevät aivoihin (BBB↓) samalla kun bakteeriendotoksiini pääsee verenkiertoon (suoliston este↓). Tämä ei ole kaksi vaikutusta — se on yksi mekanismi joka hyökkää kahta estettä vastaan.",
+    dualConclusion: "Melatoniini on molempien esteiden jaettu suojaaja. EMF→melatoniini↓ luo samanaikaisen kaksoishaavoittuvuuden: raskasmetallit pääsevät aivoihin (BBB↓) samalla kun bakteeriendotoksiini pääsee verenkiertoon (suoliston este↓). Tämä ei ole kaksi vaikutusta — se on yksi mekanismi joka hyökkää kahta estettä vastaan.",
 
     microbiomeTitle: "Mikrobiomin häiriö",
     microbiomeLead: "Sirkadiaanihäiriö ei pelkästään heikennä fyysistä estettä — se myös muuttaa mitä sen takana on.",
     microbiomeChanges: [
       { change: "Ruminococcus torques↑", impact: "Musiinia hajottava bakteeri joka edelleen heikentää suoliston estettä luminaaliselta puolelta" },
-      { change: "Lactobacillus↓", impact: "Suojaava kommensiaalikakteeri joka ylläpitää esterakennetta ja tuottaa lyhytketjuisia rasvahappoja" },
+      { change: "Lactobacillus↓", impact: "Suojaava kommensaalibakteeri joka ylläpitää esterakennetta ja tuottaa lyhytketjuisia rasvahappoja" },
       { change: "LPS-synteesigeenit↑", impact: "Mikrobiomi siirtyy kohti gramnegatiivisia bakteereja lisääntyneellä endotoksiinituotannolla" },
     ],
 
     evidenceTitle: "Keskeiset todisteet",
     evidenceRefs: [
-      { ref: "PMC12631932 (2026)", referenceId: "gut_per2_2026", finding: "Per2 KO suoliston epitheelissä → esterakennteen häiriö → LPS → hippokampaalinen neurogeneesi↓ → masennuskäyttäytyminen" },
+      { ref: "PMC12631932 (2026)", referenceId: "gut_per2_2026", finding: "Per2 KO suoliston epitheelissä → esterakenteen häiriö → LPS → hippokampaalinen neurogeneesi↓ → masennuskäyttäytyminen" },
       { ref: "PMC5909328 (2018)", referenceId: "gut_circadian_2018", finding: "Sirkadiaanihäiriö muuttaa suolistomikrobiomin koostumusta lisääntyneellä LPS-synteesikapasiteetilla" },
       { ref: "biorxiv 2025", referenceId: "gut_light_2025", finding: "Jatkuva valoaltistus häiritsee suoliston epitheelisen esteen urospuolisissa hiirissä apoptoosin-tulehduksen-oksidatiivisen stressin kaskadin kautta" },
     ],

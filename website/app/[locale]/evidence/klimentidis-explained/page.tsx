@@ -85,14 +85,14 @@ const COPY = {
     title: "Klimentidiksen paradoksi selitettynä",
     subtitle:
       "Kahdeksan lajia lihoo samanaikaisesti, mukaan lukien laboratorio-eläimet kontrolloiduilla dieeteillä. BERM tunnistaa kolme EMF-välitteistä Ca²⁺-mekanismia jotka selittävät lajienvälisen lihavuustrendin.",
-    backLink: "← Takaisin Evidenssiin",
+    backLink: "← Takaisin näyttöön",
 
     cautionText:
-      "Tämä sivu esittää mekanistisen selityksen Klimentidiksen lajienväliselle lihavuusparadoksille. Jokainen mekanismi on verifioitu itsenäisesti vertaisarvioidussa kirjallisuudessa. Konvergenssihypoteesi — että kaikki kolme mekanismia ovat Ca²⁺-välitteisiä ja VGCC-riippuvaisia — generoi spesifisiä testattavia ennusteita.",
+      "Tämä sivu esittää mekanistisen selityksen Klimentidiksen lajienväliselle lihavuusparadoksille. Jokainen mekanismi on todennettu itsenäisesti vertaisarvioidussa kirjallisuudessa. Yhdentymishypoteesi — että kaikki kolme mekanismia ovat Ca²⁺-välitteisiä ja VGCC-riippuvaisia — tuottaa tarkkoja testattavia ennusteita.",
 
     paradoxTitle: "Paradoksi",
     paradoxLead:
-      "Vuonna 2011 Klimentidis ym. dokumentoivat, että 8 lajia — mukaan lukien laboratorio-eläimet tiukasti kontrolloiduilla dieeteillä — lihovat kaikki ajan myötä (p=10⁻⁷). Tämä eliminoi dieetin ja liikunnan ainoina selityksiinä. Jokin ympäristötekijä ajaa painonnousua KAIKISSA lajeissa joilla on yhteistä biologiaa.",
+      "Vuonna 2011 Klimentidis ym. dokumentoivat, että 8 lajia — mukaan lukien laboratorio-eläimet tiukasti kontrolloiduilla dieeteillä — lihovat kaikki ajan myötä (p=10⁻⁷). Tämä poistaa dieetin ja liikunnan ainoina selityksiinä. Jokin ympäristötekijä ajaa painonnousua KAIKISSA lajeissa joilla on yhteistä biologiaa.",
     paradoxPoints: [
       "Laboratorioapinat (kontrolloitu dieetti, kontrolloitu liikunta)",
       "Villit rotat (eri ympäristö, ei ihmisruokaa)",

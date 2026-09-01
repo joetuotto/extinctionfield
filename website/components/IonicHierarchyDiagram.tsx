@@ -38,7 +38,7 @@ const TREATMENTS: TreatmentNode[] = [
     levelLabel: { en: "Electromagnetic", fi: "Sähkömagneettinen", ja: "電磁的", fr: "Électromagnétique", ko: "전자기적" },
     mechanism: {
       en: "Pulsed EM → induced current → ion channel activation",
-      fi: "Pulssi-EM → indusoitu virta → ionikanava-aktivaatio",
+      fi: "Pulssi-EM → aiheutettu virta → ionikanava-aktivaatio",
       ja: "パルスEM → 誘導電流 → イオンチャネル活性化",
       fr: "EM pulsé → courant induit → activation des canaux ioniques",
       ko: "펄스 EM → 유도 전류 → 이온 채널 활성화",
@@ -110,13 +110,13 @@ const COPY = {
   },
   fi: {
     title: "Ioninen hoitohierarkia",
-    subtitle: "Kaikki mielialahoitot konvergoivat Ca²⁺-homeostaasiin — tehokkuus seuraa ionista kohdistusta",
+    subtitle: "Kaikki mielialahoitot yhtyvät Ca²⁺-homeostaasiin — tehokkuus seuraa ionista kohdistusta",
     levelLabel: "Ioninen kohdistus",
     mechanism: "Mekanismi",
     target: "Ionikohde",
     onset: "Vaikutus alkaa",
-    convergence: "Ca²⁺-konvergenssi",
-    convergenceNote: "Jokainen hoito moduloi lopulta kalsiumsignalointia. Mitä suoremmin se kohdistuu ionikanaviin, sitä nopeampi ja tehokkaampi se yleensä on.",
+    convergence: "Ca²⁺-yhdentyminen",
+    convergenceNote: "Jokainen hoito säätelee lopulta kalsiumsignalointia. Mitä suoremmin se kohdistuu ionikanaviin, sitä nopeampi ja tehokkaampi se yleensä on.",
   },
   ja: {
     title: "イオン治療階層",

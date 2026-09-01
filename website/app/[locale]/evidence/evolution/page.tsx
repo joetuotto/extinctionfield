@@ -72,7 +72,7 @@ const COPY = {
   fi: {
     title: "Evoluution alkuperät: Pohjoinen paketti",
     subtitle: "Miten sinisilmäisyyden, laktoosinsietokyvyn ja karjankasvatuksen koselektio loi EMF:lle herkimmän populaation — ja miksi sen hedelmällisyys laski ensimmäisenä",
-    backLink: "← Takaisin evidenssiin",
+    backLink: "← Takaisin näyttöön",
     section1Title: "Yksi funktio, viisi skaalaa",
     section1Intro: "χ (khi) -funktio esiintyy jokaisella biologisella skaalalla molekyylistä populaatioon. Jokaisella skaalalla se koodaa saman logiikan: taustamuuttujan on oltava nollasta poikkeava, jotta häiriö voi vaikuttaa. Funktio χ(B) = 0 kun B = 0, ja lähestyy 1:tä B:n kasvaessa. Tämä on valintasääntö jonka BERM ehdottaa yhdistäväksi mekanismiksi kaikilla viidellä skaalalla.",
     section2Title: "Pohjoinen paketti",
@@ -114,11 +114,11 @@ const COPY = {
       expression: "χ-lauseke",
       atZero: "Kun B = 0",
       atMax: "Kun B = maks",
-      verification: "Verifiointi",
+      verification: "Todentaminen",
     },
     epistemicTitle: "Episteeminen tila",
     epistemicText: "Tämä sivu esittää L*-tason synteesin. Yksittäiset havainnot ovat vakiintuneita: OCA2/LCT-koselektio-ajoitus (E), CRY:n fotosyklivaatimukset (E), iiriksen transmissioerot (M|C), B2-FAD-CRY-stabiiliusketju (E), populaatioiden TFR-erot (C). Synteesi — että nämä piirteet muodostavat yhtenäisen EMF-herkkyyden vahvistimen — on L*-tason testattava hypoteesi. Populaatioiden χ-arvot ovat karkeita arvioita. Historiallinen narratiivi on selittävä, ei ennustava. CRY-välitteinen koselektiotulkinta tulisi esittää D-vitamiinihypoteesin laajennuksena, ei vaihtoehtona.",
-    levelLabel: "Evidenssitaso",
+    levelLabel: "Näyttötaso",
   },
   ja: {
     title: "進化の起源：ノーザンパッケージ",

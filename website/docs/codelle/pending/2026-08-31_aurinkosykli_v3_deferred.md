@@ -26,6 +26,14 @@ Date: 2026-08-31
 - [x] SolarStatCharts.tsx: 8 statistical visualization charts (periodogram, bandpass, first-diff, Monte Carlo, reversal, era correlation, TFR rise, superposed epoch)
 - [x] evidence/page.tsx: SolarStatCharts integrated into solar-cycle section
 
+### [DATA] Empirical datasets (2026-08-31)
+- [x] public/data/solar_bandpass.json: World Bank TFR (9 countries, 1960-2023) + SILSO SSN V2.0
+- [x] EmpiricalSolarCharts.tsx: 4 real-data charts (raw TFR comparison, detrended overlay, r vs geomag lat, country bar chart)
+- [x] evidence/page.tsx: EmpiricalSolarCharts integrated after SolarStatCharts
+- [x] v16.py: v17_solar_bandpass_analysis() DIAGNOSTIC_ONLY function
+- [x] references_full.json: silso_ssn_v2, ibge_sidra_births, stone2025_amish_demography, world_bank_mobile_2024 added
+- [x] SOLAR-2 data: Nordic vs Southern Europe TFR + SSN bandpass correlation (World Bank + SILSO)
+
 ## Remaining items (deferred — [PROJEKTI] and [DATA])
 
 ### [PROJEKTI] Documentation updates
@@ -33,8 +41,7 @@ Date: 2026-08-31
 - BERM_SESSIO_seuraava_tehtavat.md — file does not exist yet, needs creation
 - BERM_README.md — file does not exist yet, needs creation
 
-### [DATA] External data needed
-- Amish birth records (Lancaster, Holmes counties) for SOLAR-1 validation
-- Nordic vs Southern Europe bandpass data for SOLAR-2
-- UK Biobank eye color x season-of-birth reanalysis for SOLAR-3
-- Brazilian state-level birth rate + SSN data for SOLAR-4
+### [DATA] Not obtainable
+- SOLAR-1 (Amish birth records): Only decade-level data from church directories — too coarse for 11-year solar cycle analysis
+- SOLAR-3 (UK Biobank eye color × season-of-birth): Requires institutional access application — cannot download publicly
+- SOLAR-4 (Brazil state-level): National-level TFR added; IBGE SIDRA ref registered. State-level download requires SIDRA API calls (documented, not automated)

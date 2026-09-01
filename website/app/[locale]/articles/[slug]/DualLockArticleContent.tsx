@@ -129,8 +129,8 @@ const COPY = {
         heading: "Kaksoishormonihypoteesi",
         paragraphs: [
           "Testosteronin ja kortisolin vuorovaikutuksen dominanttikäyttäytymisen säätelyssä formalisoivat [[ref:mehta2010_dual_hormone|Mehta ja Josephs vuonna 2010]]. Heidän kaksoishormonihypoteesinsa esittää, että testosteronin vaikutus statushakuiseen käyttäytymiseen ei ole kiinteä — se riippuu kortisolista. Kun kortisoli on matala, testosteroni ajaa lähestymiskäyttäytymistä, kilpailua ja statuksen tavoittelua. Kun kortisoli on korkea, testosteronin vaikutus vaimenee.",
-          "Meta-analyysi 8 538 osallistujasta vahvisti tämän: suhde on multiplikatiivinen, ei additiivinen. Korkea testosteroni ja matala kortisoli tuottavat voimakasta statushakuista käyttäytymistä. Korkea testosteroni ja korkea kortisoli tuottavat kohtalaista käyttäytymistä. Matala testosteroni ja korkea kortisoli — malli jonka BERM ennustaa EMF:n tuottavan — johtaa käyttäytymisen suppressioon, joka on suurempi kuin kummankaan hormonimuutoksen yksinään.",
-          "Tämä on kaksoislukon mekanismi. Ensimmäinen lukko poistaa halun (testosteroni alas: vähemmän motivaatiota, vähemmän riskinottoa, vähemmän kilpailuimpulssia). Toinen lukko lisää jarrun (kortisoli ylös: enemmän ahdistuneisuutta, enemmän välttämistä, enemmän vetäytymistä). Yhdessä ne suppressoivat lähestymiskäyttäytymistä tehokkaammin kuin kumpikaan mekanismi itsenäisesti.",
+          "Meta-analyysi 8 538 osallistujasta vahvisti tämän: suhde on multiplikatiivinen, ei additiivinen. Korkea testosteroni ja matala kortisoli tuottavat voimakasta statushakuista käyttäytymistä. Korkea testosteroni ja korkea kortisoli tuottavat kohtalaista käyttäytymistä. Matala testosteroni ja korkea kortisoli — malli jonka BERM ennustaa EMF:n tuottavan — johtaa käyttäytymisen vaimentumiseen, joka on suurempi kuin kummankaan hormonimuutoksen yksinään.",
+          "Tämä on kaksoislukon mekanismi. Ensimmäinen lukko poistaa halun (testosteroni alas: vähemmän motivaatiota, vähemmän riskinottoa, vähemmän kilpailuimpulssia). Toinen lukko lisää jarrun (kortisoli ylös: enemmän ahdistuneisuutta, enemmän välttämistä, enemmän vetäytymistä). Yhdessä ne tukahduttavat lähestymiskäyttäytymistä tehokkaammin kuin kumpikaan mekanismi itsenäisesti.",
         ],
       },
       {
@@ -138,7 +138,7 @@ const COPY = {
         paragraphs: [
           "Tarkastellaan yksinkertaistettua mallia. Vuonna 1980 keskimääräinen testosteroni oli noin 500 ng/dL ja kortisoli perustasolla. Jos indeksoimme statushakuisen käyttäytymisen näillä arvoilla arvoksi 1,0, niin vuoden 2024 populaatio — testosteroni noin 320 ng/dL (−36 %) ja kortisoli noin +20 % — tuottaa multiplikatiivisen vaikutuksen: 0,64 × 0,83 ≈ 0,53.",
           "Tämä viittaa noin 47 %:n laskuun hormonaalisesti ohjautuneessa statushakuisessa käyttäytymisessä. Testosteroni yksin selittää −36 %. Kortisoli yksin selittää −17 %. Yhdistelmä, koska se on multiplikatiivinen, selittää −47 %. Kaksoislukon vaikutus on olennaisesti suurempi kuin osiensa summa.",
-          "Tämä arvio on havainnollistava, ei tarkka. Todelliset annos-vastekäyrät ovat epälineaarisia ja huonosti karakterisoituja. Mutta suunta ja multiplikatiivinen vuorovaikutus ovat vahvistettuja.",
+          "Tämä arvio on havainnollistava, ei tarkka. Todelliset annos-vastekäyrät ovat epälineaarisia ja huonosti luonnehdittuja. Mutta suunta ja multiplikatiivinen vuorovaikutus ovat vahvistettuja.",
         ],
       },
       {
@@ -151,7 +151,7 @@ const COPY = {
         heading: "1. Seksittömyyden epidemia",
         paragraphs: [
           "Nuorten miesten (18–30 v) osuus ilman seksipartneria on kasvanut tasaisesti teollistuneissa maissa. Japanissa 43 % 18–34-vuotiaista miehistä ilmoitti olevansa neitsyitä vuonna 2015. Yhdysvalloissa alle 30-vuotiaiden miesten osuus jotka eivät olleet harrastaneet seksiä viimeisen vuoden aikana kaksinkertaistui vuosien 2008 ja 2018 välillä.",
-          "Kaksoislukon ennuste: testosteronin lasku vähentää seksuaalista halua suoraan (endokrinologinen konsensus), kun taas kortisolin nousu lisää hylkäyksen pelkoa. Yhdistelmä suppressoi lähestymiskäyttäytymistä — halukkuutta ottaa kontaktia — enemmän kuin kumpikaan yksin. [[ref:goetz2024|Goetz ym. (2024, RCT)]] osoittivat, että eksogeeninen testosteroni lisää taipumusta tulkita moniselitteisiä sosiaalisia signaaleja seksuaalisena kiinnostuksena. Populaatiotason testosteronin lasku kääntää tämän: harvempia signaaleja tulkitaan kiinnostuksena, harvempia lähestymisiä tehdään.",
+          "Kaksoislukon ennuste: testosteronin lasku vähentää seksuaalista halua suoraan (endokrinologinen konsensus), kun taas kortisolin nousu lisää hylkäyksen pelkoa. Yhdistelmä vaimentaa lähestymiskäyttäytymistä — halukkuutta ottaa kontaktia — enemmän kuin kumpikaan yksin. [[ref:goetz2024|Goetz ym. (2024, RCT)]] osoittivat, että eksogeeninen testosteroni lisää taipumusta tulkita moniselitteisiä sosiaalisia signaaleja seksuaalisena kiinnostuksena. Populaatiotason testosteronin lasku kääntää tämän: harvempia signaaleja tulkitaan kiinnostuksena, harvempia lähestymisiä tehdään.",
         ],
       },
       {
@@ -200,16 +200,16 @@ const COPY = {
         heading: "8. Kehonkoostumuksen muutos",
         paragraphs: [
           "Puristusvoima nuorilla miehillä on laskenut noin 20 % vuosien 1985 ja 2016 välillä (JAMA). Lasku ei selity täysin vähentyneellä liikunnalla — se säilyy liikuntatapojen kontrolloinnin jälkeen.",
-          "Kaksoislukon ennuste: testosteronin lasku vähentää suoraan lihasmassaa ja lisää viskeraalisen rasvan varastoitumista. CaMKII-konvergenssimolekyyli — jonka BERM tunnistaa neljän kaskadin (EMF-herkkyys, BAT-termogeneesi, testosteroni, insuliinisignalointi) risteyspisteeksi — tarjoaa mekanistisen yhteyden EMF-altistuksen ja elämäntavasta riippumattomien kehonkoostumusmuutosten välillä.",
+          "Kaksoislukon ennuste: testosteronin lasku vähentää suoraan lihasmassaa ja lisää viskeraalisen rasvan varastoitumista. CaMKII-yhdentymismolekyyli — jonka BERM tunnistaa neljän kaskadin (EMF-herkkyys, BAT-termogeneesi, testosteroni, insuliinisignalointi) risteyspisteeksi — tarjoaa mekanistisen yhteyden EMF-altistuksen ja elämäntavasta riippumattomien kehonkoostumusmuutosten välillä.",
         ],
       },
       {
         heading: "Mitä tämä ei ole",
         paragraphs: [
           "Näillä trendeillä on monia syitä. Taloudelliset tekijät, sosiaalinen media, kulttuuriset muutokset ja poliittiset päätökset kaikki myötävaikuttavat. BERM ei väitä, että EMF olisi yhdenkään niistä ainoa ajuri.",
-          "BERM:n väite on, että biologinen perusta — hormonaalinen muutos, jota kaksoislukkoteoria kuvaa — tekee populaatioista alttiimpia näille sosiaalisille ja taloudellisille tekijöille. Populaatio jolla on terve testosteroni- ja kortisolitaso voi absorboida taloudellisen stressin ilman massiivista työvoimasta vetäytymistä. Populaatio, joka on jo hormonaalisen suppression alaisena, murtuu helpommin.",
+          "BERM:n väite on, että biologinen perusta — hormonaalinen muutos, jota kaksoislukkoteoria kuvaa — tekee populaatioista alttiimpia näille sosiaalisille ja taloudellisille tekijöille. Populaatio jolla on terve testosteroni- ja kortisolitaso voi absorboida taloudellisen stressin ilman massiivista työvoimasta vetäytymistä. Populaatio, joka on jo hormonaalisen vaimentumisen alaisena, murtuu helpommin.",
           "Kaksoislukkoteoria on haavoittuvuusvahvistin, ei monokausaalinen selitys. Se ei korvaa sosiologiaa — se lisää biologisen kerroksen sen alle.",
-          "Kvantitatiivinen arvio (47 %:n lasku hormonaalisesti ohjautuneessa statushakuisuudessa) on havainnollistava. Todellinen luku riippuu epälineaarisista annos-vastekäyristä, joita ei ole karakterisoitu. Korrelaatioevidenssi jokaiselle kahdeksasta trendistä on vahva; kausaalinen attribuutio EMF:lle on BERM-spesifinen hypoteesi, jota on vielä testattava suoraan.",
+          "Kvantitatiivinen arvio (47 %:n lasku hormonaalisesti ohjautuneessa statushakuisuudessa) on havainnollistava. Todellinen luku riippuu epälineaarisista annos-vastekäyristä, joita ei ole luonnehdittu. Korrelaationäyttö jokaiselle kahdeksasta trendistä on vahva; kausaalinen attribuutio EMF:lle on BERM-tarkka hypoteesi, jota on vielä testattava suoraan.",
           "Tämän sivuston ennustesivulla olevat ennusteet (SOC-1, SOC-2, SOC-3) on suunniteltu testaamaan kaksoislukkoteorian yhteiskunnallisia seurauksia falsifioitavalla tavalla.",
         ],
       },

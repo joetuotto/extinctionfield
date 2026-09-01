@@ -52,7 +52,7 @@ const COPY = {
   fi: {
     search: "Hae tekijällä, otsikolla, lehdellä, DOI:lla tai avainsanalla…",
     allCategories: "Kaikki kategoriat",
-    allLevels: "Kaikki evidenssitasot",
+    allLevels: "Kaikki näyttötasot",
     allTypes: "Kaikki tutkimustyypit",
     verifiedOnly: "Vain lähdevarmennetut tietueet",
     showing: (shown: number, total: number) => `${shown} / ${total} viitettä`,

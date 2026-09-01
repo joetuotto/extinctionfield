@@ -29,7 +29,7 @@ const FACTORS = [
   {
     label: {
       en: { title: "Three pathways converge", detail: "Direct Cav3.2 + sleep/melatonin + stress/cortisol all suppress testosterone simultaneously", source: "Asian J Androl 2014" },
-      fi: { title: "Kolme polkua konvergoivat", detail: "Suora Cav3.2 + uni/melatoniini + stressi/kortisoli suppressoivat testosteronia samanaikaisesti", source: "Asian J Androl 2014" },
+      fi: { title: "Kolme polkua yhtyvät", detail: "Suora Cav3.2 + uni/melatoniini + stressi/kortisoli tukahduttavat testosteronia samanaikaisesti", source: "Asian J Androl 2014" },
       ja: { title: "3つの経路が収束", detail: "直接的なCav3.2＋睡眠/メラトニン＋ストレス/コルチゾールがすべて同時にテストステロンを抑制する", source: "Asian J Androl 2014" },
       fr: { title: "Trois voies convergent", detail: "Cav3.2 direct + sommeil/mélatonine + stress/cortisol suppriment tous simultanément la testostérone", source: "Asian J Androl 2014" },
       ko: { title: "세 경로의 수렴", detail: "직접 Cav3.2 + 수면/멜라토닌 + 스트레스/코르티솔이 모두 동시에 테스토스테론을 억제한다", source: "Asian J Androl 2014" },

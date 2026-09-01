@@ -194,7 +194,7 @@ const t: Record<string, Copy> = {
       { id: "asfr", label: "ASFR \u2192 TFR" },
       { id: "cohort", label: "Kohorttisignaali" },
       { id: "gme", label: "GME / R42" },
-      { id: "validation", label: "Validaatioraja" },
+      { id: "validation", label: "Todentamisraja" },
       { id: "s16", label: "T-tyypin bifurkaatio" },
     ],
     sections: [
@@ -213,7 +213,7 @@ const t: Record<string, Copy> = {
         id: "fieldstate",
         title: "2. FieldState s\u00e4ilytt\u00e4\u00e4 tarvittavat fysikaaliset suureet",
         body: [
-          "Elimelle o tausta-, ambient- ja henkil\u00f6kohtaiset komponentit siirtyv\u00e4t elin-, asento- ja geometriakohtaisen siirtofunktion T\u2092 kautta. Vektorin suunta, vaihe/koherenssi, envelope/beat-PSD, vuorokausikonteksti ja l\u00e4hdeprovenienssi s\u00e4ilyv\u00e4t eksplisiittisin\u00e4 kenttinä.",
+          "Elimelle o tausta-, ambient- ja henkil\u00f6kohtaiset komponentit siirtyv\u00e4t elin-, asento- ja geometriakohtaisen siirtofunktion T\u2092 kautta. Vektorin suunta, vaihe/koherenssi, envelope/beat-PSD, vuorokausikonteksti ja l\u00e4hdeprovenienssi s\u00e4ilyv\u00e4t nimenomaisina kenttinä.",
           "Mobiililiittymät voivat kuvata digitaalisen ymp\u00e4rist\u00f6n leviämist\u00e4. FieldState-tietue dokumentoi sen sijaan paikalliset fysikaaliset olosuhteet ja elinkohtaisen siirron ennen p\u00e4\u00e4tepisteanalyysiä.",
         ],
         equations: [
@@ -241,9 +241,9 @@ const t: Record<string, Copy> = {
       },
       {
         id: "organ-state",
-        title: "4. Biologinen kapasiteetti on elinkohtainen palautuva/persistentti tila",
+        title: "4. Biologinen kapasiteetti on elinkohtainen palautuva/pysyvä tila",
         body: [
-          "Kenttäpiirre vaikuttaa rekister\u00f6ityyn elinp\u00e4\u00e4tepisteeseen vain eksplisiittisen, evidenssiin kiinnitetyn incrementtimallin kautta. Jokaisella elimellä on palautuva R-tila ja persistentti P-tila. Niiden retentio ja p\u00e4\u00e4tepistekuvaus parametroituu vasta, kun mukana ovat parametri-ID ja evidenssi-ID.",
+          "Kenttäpiirre vaikuttaa rekister\u00f6ityyn elinp\u00e4\u00e4tepisteeseen vain nimenomaisen, näyttöön kiinnitetyn incrementtimallin kautta. Jokaisella elimellä on palautuva R-tila ja pysyvä P-tila. Niiden retentio ja p\u00e4\u00e4tepistekuvaus parametroituu vasta, kun mukana ovat parametri-ID ja näyttö-ID.",
           "Mieshaara erottaa veri\u2013kivesesteen, ituradan varannon, steroidogeneesin, siitti\u00f6tuoton/toiminnan ja DNA-eheyden. Naishaara erottaa munasarjavarannon, oosyyttiredoxin, ovulaation kellotuksen sek\u00e4 luteaali-/implantaatiotuen. BTB:ll\u00e4 on rekister\u00f6ity suora lisääntymishaara; BBB, istukka ja retina ovat erillisi\u00e4 kandidaatti-estetiloja, eiv\u00e4t yhteinen kerroin.",
         ],
         equations: [
@@ -253,7 +253,7 @@ const t: Record<string, Copy> = {
           "\\Phi_f=F_{\\mathrm{ovarian\\,reserve}}F_{\\mathrm{oocyte\\,redox}}F_{\\mathrm{ovulatory\\,clock}}F_{\\mathrm{luteal/implantation}}",
         ],
         note:
-          "N\u00e4m\u00e4 ovat rakenteita, eiv\u00e4t viel\u00e4 julkaistuja maakohtaisia kertoimia. Istukan, BBB:n ja retinan kandidaattitilat saavat lis\u00e4\u00e4ntymisincrementin vasta, kun parametri- ja evidenssikiinnitteinen mapping on rekister\u00f6ity. Polkujen riippumattomuus: multiplikatiivinen malli R = (1 \u2212 \u03b3_A \u00b7 r_A) \u00d7 (1 \u2212 \u03b3_C \u00b7 r_C) s\u00e4ilytet\u00e4\u00e4n ilman ristitermi\u00e4, koska polut A (VGCC) ja C (CRY2) ovat farmakologisesti erotettavissa. \u03b3_C heijastaa molempia CRY2:n alasp\u00e4in suuntautuvia haaroja: \u03b3_C = \u03b3_C_kello + \u03b3_C_TRPC1. N\u00e4it\u00e4 ei erotella mallissa, koska molemmat jakavat saman yl\u00e4virta-sensorin (CRY2), valoriippuvuuden ja FAD-riippuvuuden.",
+          "N\u00e4m\u00e4 ovat rakenteita, eiv\u00e4t viel\u00e4 julkaistuja maakohtaisia kertoimia. Istukan, BBB:n ja retinan kandidaattitilat saavat lis\u00e4\u00e4ntymisincrementin vasta, kun parametri- ja näyttökiinnitteinen mapping on rekister\u00f6ity. Polkujen riippumattomuus: multiplikatiivinen malli R = (1 \u2212 \u03b3_A \u00b7 r_A) \u00d7 (1 \u2212 \u03b3_C \u00b7 r_C) s\u00e4ilytet\u00e4\u00e4n ilman ristitermi\u00e4, koska polut A (VGCC) ja C (CRY2) ovat farmakologisesti erotettavissa. \u03b3_C heijastaa molempia CRY2:n alasp\u00e4in suuntautuvia haaroja: \u03b3_C = \u03b3_C_kello + \u03b3_C_TRPC1. N\u00e4it\u00e4 ei erotella mallissa, koska molemmat jakavat saman yl\u00e4virta-sensorin (CRY2), valoriippuvuuden ja FAD-riippuvuuden.",
       },
       {
         id: "asfr",
@@ -268,7 +268,7 @@ const t: Record<string, Copy> = {
           "TFR_{c,t}=\\frac{5}{1000}\\sum_{g=15\\text{\u2013}19}^{45\\text{\u2013}49}ASFR_{c,g,t}",
         ],
         note:
-          "WPP-ASFR on demografinen referenssi. Kysynt\u00e4/mahdollisuus (O), tempo (\u03c4) ja ART ovat n\u00e4kyvi\u00e4 ulkoisia sy\u00f6tteit\u00e4, eiv\u00e4t biologian residuaalimerkint\u00f6j\u00e4.",
+          "WPP-ASFR on demografinen referenssi. Kysynt\u00e4/mahdollisuus (O), tempo (\u03c4) ja ART ovat n\u00e4kyvi\u00e4 ulkoisia sy\u00f6tteit\u00e4, eiv\u00e4t biologian jäännösmerkint\u00f6j\u00e4.",
       },
       {
         id: "cohort",
@@ -282,7 +282,7 @@ const t: Record<string, Copy> = {
           "Y_{gap}=\\overline{\\log(ASFR_{2023,g}/ASFR_{2000,g})}_{15\\text{\u2013}29}-\\overline{\\log(ASFR_{2023,g}/ASFR_{2000,g})}_{30\\text{\u2013}49}",
         ],
         note:
-          "Analyysi on versionoitu ja toistettava kuvaileva teknologia-ajoitusanalyysi. Sen kehityspainot ovat skenaariopainoja, eiv\u00e4t kalibroituja herkkyysestimaatteja. V2:n v\u00e4est\u00f6arvio odottaa kohdistettua FieldState-, biomarkkeri-, pari- ja ASFR-paneelia.",
+          "Analyysi on versionoitu ja toistettava kuvaileva teknologia-ajoitusanalyysi. Sen kehityspainot ovat skenaariopainoja, eiv\u00e4t kalibroituja herkkyysarvioita. V2:n v\u00e4est\u00f6arvio odottaa kohdistettua FieldState-, biomarkkeri-, pari- ja ASFR-paneelia.",
       },
       {
         id: "gme",
@@ -299,7 +299,7 @@ const t: Record<string, Copy> = {
         id: "validation",
         title: "8. Mik\u00e4 muodostaa v2-tuloksen",
         body: [
-          "P\u00e4tev\u00e4 v2-kalibrointi edellytt\u00e4\u00e4 kohdistettua FieldState-paneelia, mitattua elin- tai parip\u00e4\u00e4tepistett\u00e4, eksplisiittisi\u00e4 parameter/evidence-ID:t\u00e4 ja vain opetusjaksolta teht\u00e4v\u00e4\u00e4 estimointia. My\u00f6hempi ASFR/TFR-jakso j\u00e4\u00e4 sovituksen ulkopuolelle ajalliseen arviointiin.",
+          "P\u00e4tev\u00e4 v2-kalibrointi edellytt\u00e4\u00e4 kohdistettua FieldState-paneelia, mitattua elin- tai parip\u00e4\u00e4tepistett\u00e4, nimenomaisia parameter/evidence-ID:t\u00e4 ja vain opetusjaksolta teht\u00e4v\u00e4\u00e4 estimointia. My\u00f6hempi ASFR/TFR-jakso j\u00e4\u00e4 sovituksen ulkopuolelle ajalliseen arviointiin.",
           "V\u00e4est\u00f6arvio julkaistaan, kun vastaavat FieldState- ja endpoint-paneelit on koottu, mappingit rekister\u00f6ity ja ajallinen arviointi valmis.",
         ],
         note:
@@ -323,13 +323,13 @@ const t: Record<string, Copy> = {
           "\\text{At } 1\\,\\text{V/m}: \\frac{\\delta V_m}{\\delta V_{\\mathrm{thermal}}} = 0.37\\;\\text{(37\\%)},\\qquad \\text{At } 5\\,\\text{V/m}: \\frac{\\delta V_m}{\\delta V_{\\mathrm{thermal}}} = 1.84\\;\\text{(184\\%)}",
         ],
         note:
-          "Keskeinen oivallus on, ett\u00e4 EMF:n biologiset vaikutukset v\u00e4littyv\u00e4t RF-signaalien ELF-MODULAATIOKOMPONENTIN kautta, eiv\u00e4t kantoaallon taajuuden. RF-taajuuksilla (GHz) kalvon kapasitanssi oikosulkee j\u00e4nnitteen (vaimennus ~10\u207b\u00b3). Mutta ELF-verhok\u00e4yr\u00e4 (50\u2013217 Hz GSM/LTE:lle) l\u00e4p\u00e4isee t\u00e4ydell\u00e4 amplitudilla. T-tyypin kanavat reagoivat t\u00e4h\u00e4n ELF-komponenttiin. VAROITUS: Ca\u00b2\u207a-kertym\u00e4laskenta ei huomioi solupumppuja (PMCA, NCX, SERCA) eik\u00e4 puskureita (kalmoduliini, kalbindiini). Vakaan tilan [Ca\u00b2\u207a]\u1d62-kasvu arvioidaan 5\u201350 %:ksi, ei brutto-influksiluvuiksi.",
+          "Keskeinen oivallus on, ett\u00e4 EMF:n biologiset vaikutukset v\u00e4littyv\u00e4t RF-signaalien ELF-MODULAATIOKOMPONENTIN kautta, eiv\u00e4t kantoaallon taajuuden. RF-taajuuksilla (GHz) kalvon kapasitanssi oikosulkee j\u00e4nnitteen (vaimennus ~10\u207b\u00b3). Mutta ELF-verhok\u00e4yr\u00e4 (50\u2013217 Hz GSM/LTE:lle) l\u00e4p\u00e4isee t\u00e4ydell\u00e4 amplitudilla. T-tyypin kanavat reagoivat t\u00e4h\u00e4n ELF-komponenttiin. VAROITUS: Ca\u00b2\u207a-kertym\u00e4laskenta ei huomioi solupumppuja (PMCA, NCX, SERCA) eik\u00e4 puskureita (kalmoduliini, kalbindiini). Vakaan tilan [Ca\u00b2\u207a]\u1d62-kasvu arvioidaan 5\u201350 %:ksi, ei brutto-sisäänvirtausluvuiksi.",
       },
     ],
     modelLink: "\u2190 Takaisin mallin yleiskatsaukseen",
     fieldstateLink: "FieldState-mittausm\u00e4\u00e4rittely",
     nextLabel: "Seuraavaksi",
-    nextTitle: "Evidenssirekisteri",
+    nextTitle: "Näyttörekisteri",
   },
   ja: {
     metaTitle: "BERM v17 数学 – Extinction Field",

@@ -48,15 +48,15 @@ const COPY = {
     equationTitle: "Hallitseva yhtälö",
     equationDesc: "Kaikki seitsemän hermorataa kartoittuvat yhdelle vaimennetulle harmoniselle oskillaattorille. Q määrittää laukaistaanko häiriö (mukaan lukien EMF biologisilla resonanssitaajuuksilla) patologiseksi oskillaatioksi:",
     equationSteps: [
-      "Q = ω₀ / (2γ), missä ω₀ = luonnollinen oskillaatiotaajuus, γ = netto-GABAerginen vaimennus",
+      "Q = ω₀ / (2γ), missä ω₀ = luonnollinen vaihtelutaajuus, γ = netto-GABAerginen vaimennus",
       "Q → ∞: ei vaimennusta (neonataaliaivot, GABA eksitatorinen) — mikä tahansa resonanssisyöte vahvistuu fataalisti",
       "Q ~ 20–50: matala vaimennus — kynnys ylittyy helposti → kohtaukset",
       "Q ~ 5–15: kohtalainen vaimennus — CSD leviää mutta pysähtyy uurteisiin → migreeninaura",
-      "Q ~ 1–5: robusti vaimennus (normaali aikuinen) — oskillaatiot sammuvat itsestään 2–3 syklin sisällä",
+      "Q ~ 1–5: robusti vaimennus (normaali aikuinen) — vaihtelut sammuvat itsestään 2–3 syklin sisällä",
     ],
 
-    clinicalTitle: "Kliininen validaatio",
-    clinicalDesc: "Q-tekijämalli esittää spesifisen, testattavan väitteen: jokaisen tehokkaan neurologisen lääkkeen näille seitsemälle tilalle pitäisi muokata joko γ:tä (vaimennusta) tai resonanssisyötettä. Tämä on vahvistettu kaikkien lääkeluokkien osalta — ks. neurologisen spektrin evidenssisivu täydelliselle epilepsialääkkeiden kalsiumkartalle.",
+    clinicalTitle: "Kliininen todentaminen",
+    clinicalDesc: "Q-tekijämalli esittää tarkan, testattavan väitteen: jokaisen tehokkaan neurologisen lääkkeen näille seitsemälle tilalle pitäisi muokata joko γ:tä (vaimennusta) tai resonanssisyötettä. Tämä on vahvistettu kaikkien lääkeluokkien osalta — ks. neurologisen spektrin näyttösivu täydelliselle epilepsialääkkeiden kalsiumkartalle.",
 
     emfTitle: "EMF resonanssisyötteenä",
     emfDesc: "Q-tekijämalli selittää miksi EMF-bioeffektit ovat taajuusriippuvaisia ja miksi ICNIRP:n SAR-rajat eivät ennusta biologisia vaikutuksia:",
@@ -67,8 +67,8 @@ const COPY = {
       "Neonataalijohtopäätös: neonataaliaivoissa on endogeenisesti alentunut γ (NKCC1 > KCC2). EMF:n yksin — ilman farmakologista GABA-vähennystä — pitäisi riittää CSD:n laukaisemiseen vastasyntyneillä. Tämä on SIDS-mekanismi.",
     ],
 
-    linkNeuro: "Täysi kliininen evidenssi: Neurologinen spektri",
-    linkPharm: "Lääke-ristikartta: Farmakologinen evidenssi",
+    linkNeuro: "Täysi kliininen näyttö: Neurologinen spektri",
+    linkPharm: "Lääke-ristikartta: Farmakologinen näyttö",
     linkPredictions: "Testattavat ennusteet",
   },
   ja: {

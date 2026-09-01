@@ -32,7 +32,7 @@ const COPY = {
   fi: {
     title: "Lähdetietokanta",
     subtitle: (s: ReturnType<typeof referenceStats>) =>
-      `${s.total} viitettä jaettuna ${s.categories} temaattiseen kategoriaan: kenttäteoria, signaalitransduktio, solutason vaikutukset, lisääntyminen, neurobiologia, ekologia, RF-sääntely ja institutionaalinen analyysi. ${s.verified} lähdevarmennettua tietuetta sisältää kuratoidut löydökset ja reittiannotoinnit.`,
+      `${s.total} viitettä jaettuna ${s.categories} temaattiseen kategoriaan: kenttäteoria, signaalitransduktio, solutason vaikutukset, lisääntyminen, neurobiologia, ekologia, RF-sääntely ja institutionaalinen analyysi. ${s.verified} lähdevarmennettua tietuetta sisältää valikoidut löydökset ja reittimerkinnät.`,
     nextLabel: "Seuraavaksi",
     nextTitle: "Tietoa",
   },

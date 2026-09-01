@@ -24,15 +24,15 @@ export function CrossSpeciesGradient() {
   const yScale = (v: number) => PAD.top + plotH - (v / 60) * plotH;
 
   const lineX0 = 0;
-  const lineX1 = 1.1;
+  const lineX1 = 1.0;
   const lineY0 = (INTERCEPT + SLOPE * lineX0) * 100;
   const lineY1 = (INTERCEPT + SLOPE * lineX1) * 100;
 
   return (
-    <div className="overflow-x-auto">
+    <div className="chart-scroll">
       <svg
         viewBox={`0 0 ${W} ${H}`}
-        className="w-full max-w-[600px] mx-auto"
+        className="chart-svg w-full min-w-[560px] max-w-[600px] mx-auto"
         role="img"
         aria-label="Cross-species EMF gradient scatter plot"
       >

@@ -53,7 +53,7 @@ const COPY = {
   fi: {
     title: "Kroonisen kivun epidemia: ELF-primaami-hypoteesi",
     subtitle: "ELF-primaami (50/60 Hz sähköverkko, jatkuva) säätelee α2δ-1-ekspressiota ylös — sama alayksikkö joka yliekspressoituu neuropaattisessa kivussa. Tämä luo 'neuropaattisen tilan ILMAN neuropatiaa': sentraalinen sensitisaatio, allodynia ja yleistynyt kipu pelkästä sähköverkkoaltistuksesta.",
-    backLink: "← Takaisin Evidenssiin",
+    backLink: "← Takaisin näyttöön",
     cautionText: "Tämä sivu ehdottaa ELF-primaemia kroonisen kivun epidemian mekanismiksi. α2δ-1-yliekspressio → kipureitti on vakiintunut neuropaattisen kivun tutkimuksessa. Uusi väite — että ELF saavuttaa saman α2δ-1-ylössäätelyn ilman hermovauriota — vaatii suoraa kokeellista testausta (ennuste E-NEW-14).",
 
     mechTitle: "Mekanismi",
@@ -65,7 +65,7 @@ const COPY = {
       { step: "4. Krooninen yleistynyt kipu ILMAN tunnistettavaa syytä", detail: "Lopputulos: fibromyalgia, krooninen yleistynyt kipu, krooninen selkäkipu — tiloja joissa potilailla on todellista kipua mutta ei tunnistettavaa hermovauriota. Vaurio on funktionaalista (α2δ-1↑ → sentraalinen sensitisaatio), ei rakenteellista." },
     ],
 
-    pharmaTitle: "Farmakologinen validaatio",
+    pharmaTitle: "Farmakologinen todentaminen",
     pharmaLead: "Lääkkeet jotka hoitavat tätä kipua kohdistuvat TÄSMÄLLEEN siihen mekanismiin jonka ELF-primaami tuottaa.",
     pharmaPoints: [
       { drug: "Gabapentiini (Neurontin)", mechanism: "Sitoutuu α2δ-1:een → estää α2δ-1:n kuljetuksen DRG:stä selkäytimen presynaptisiin terminaaleihin → kääntää sentraalisen sensitisaation", note: "Ensisijainen hoito neuropaattiseen kipuun ja fibromyalgiaan" },
@@ -86,7 +86,7 @@ const COPY = {
       "Krooninen kipu → masennus (DA↓, VK19)",
       "Masennus → uni↓ → kivun vahvistuminen → ...",
     ],
-    loopConclusion: "Kipu-uni-kortisoli-kierre tarkoittaa, että alkuperäinen ELF-indusoitu α2δ-1-ylössäätely luo itseään ylläpitävän kiputilan. Väliaikainenkin EMF-altistus voi käynnistää kroonisen tilan joka jatkuu takaisinkytkentäsilmukan kautta.",
+    loopConclusion: "Kipu-uni-kortisoli-kierre tarkoittaa, että alkuperäinen ELF-aiheutettu α2δ-1-ylössäätely luo itseään ylläpitävän kiputilan. Väliaikainenkin EMF-altistus voi käynnistää kroonisen tilan joka jatkuu takaisinkytkentäsilmukan kautta.",
 
     predictionText: "Ennuste E-NEW-14: ELF-altistetuilla eläimillä on α2δ-1-ylössäätely DRG:ssä ja selkäytimen dorsaalisarvessa ILMAN hermovauriota, sekä kipukäyttäytymistä.",
     predictionLink: "Ks. viimeisten kerrosten ennusteet →",

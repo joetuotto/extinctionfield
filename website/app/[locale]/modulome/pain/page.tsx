@@ -114,7 +114,7 @@ const COPY = {
     channel: "Kanava",
     cellType: "Solutyyppi",
     function: "Toiminto",
-    level: "Evidenssitaso",
+    level: "Näyttötaso",
     cav3Subtype: "Cav3.2 (CACNA1H) — hallitseva T-tyyppi DRG:ssä",
     cellTypeVal: "Nosiseptorit (selkäytimen takajuuren gangliot)",
     functionVal: "Perifeerinen kipuaistimus, hermosolun ärtyvyys",
@@ -157,13 +157,13 @@ const COPY = {
     s3PredTitle: "Keskeinen ennuste",
     s3Pred: {
       id: "PAIN-1",
-      text: "Cav3.2-salpaaja vaimentaa EMF-indusoitua kipuherkistymistä eläinmallissa. Tämä on testattavissa olemassa olevissa neuropaattisissa kipumalleissa lisäämällä EMF-altistusryhmä ja vertaamalla Cav3.2-salpaajan tehoa EMF-altistuksen kanssa ja ilman.",
+      text: "Cav3.2-salpaaja vaimentaa EMF-aiheutettua kipuherkistymistä eläinmallissa. Tämä on testattavissa olemassa olevissa neuropaattisissa kipumalleissa lisäämällä EMF-altistusryhmä ja vertaamalla Cav3.2-salpaajan tehoa EMF-altistuksen kanssa ja ilman.",
       discriminating: true,
     },
 
     s3TheraBionic: "TheraBionic-yhteys",
     s3TheraBionicText:
-      "TheraBionic-laite — FDA-hyväksytty hepatosellulaariseen karsinoomaan — kohdistuu Cav3.2-kanaviin ei-termisellä EMF:llä. Tämä vahvistaa, että Cav3.2 reagoi ei-termiseen EMF:ään terapeuttisilla tasoilla, tarjoten riippumattoman validaation kanavan roolista EMF-transduserina.",
+      "TheraBionic-laite — FDA-hyväksytty hepatosellulaariseen karsinoomaan — kohdistuu Cav3.2-kanaviin ei-termisellä EMF:llä. Tämä vahvistaa, että Cav3.2 reagoi ei-termiseen EMF:ään terapeuttisilla tasoilla, tarjoten riippumattoman todentamisen kanavan roolista EMF-transduserina.",
 
     /* Viitteet */
     refsTitle: "Keskeiset viitteet",
@@ -186,9 +186,9 @@ const COPY = {
     seeAlso: "Katso myös",
     brainModulome: "Aivojen moduloomi",
     predictionsPage: "Ennusteet — PAIN-1",
-    evidencePage: "Evidenssirekisteri",
+    evidencePage: "Näyttörekisteri",
 
-    keyEvidenceLabel: "Keskeinen evidenssi",
+    keyEvidenceLabel: "Keskeinen näyttö",
     sexDiffLabel: "Sukupuolisidonnainen ekspressio",
     discriminatingLabel: "Erotteleva",
     allPredictionsLabel: "Kaikki ennusteet →",

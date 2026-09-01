@@ -85,9 +85,9 @@ const COPY = {
     thNote: "Note",
   },
   fi: {
-    title: "Ekologinen ja sentinellievidenssi",
+    title: "Ekologinen ja indikaattorilajinäyttö",
     subtitle: "Sähköekologia ja säätutkavaikutukset indikaattorilajeihin",
-    backLink: "← Takaisin evidenssiin",
+    backLink: "← Takaisin näyttöön",
     narratives: [
       {
         id: "electroecology",
@@ -132,17 +132,17 @@ const COPY = {
         id: "plant-cry",
         title: "Kasvit reagoivat EMF:ään saman molekyylin kautta",
         paragraphs: [
-          "Kryptokromi (CRY) karakterisoitiin ensin kasveissa — Arabidopsis thaliana, 1993 — ennen kuin sen rooli eläinten magnetoreseptiossa tunnistettiin. CRY2 on Arabidopsiksen ensisijainen fotoperiodinen kukintareseptori: CRY2 → CONSTANS → FLOWERING LOCUS T (FT) -ketju laukaisee kukinta-induktion ([[ref:arabidopsis_book_cry|Arabidopsis Book 2010]]). Sama molekyyli, jonka BERM tunnistaa eläinten EMF-avainsensiriksi (polku B), on parhaiten dokumentoitu kasvien reproduktiivinen funktio.",
-          "Kasvi-CRY reagoi magneettikenttiin. [[ref:xu2014_cry_phosphorylation|Xu ym. (2014)]] osoittivat, että 500 µT magneettikenttä vahvisti CRY1:n ja CRY2:n sinivaloriippuvaisia fosforylaatioita Arabidopsiksessa, kun taas lähes-nollakenttä heikensi CRY2:n fosforylaatiota. [[ref:xu2015_flowering_nnmf|Xu ym. (2015)]] osoittivat, että lähes-nollakenttä suppressoi Arabidopsiksen kukintaa sinivaloriippuvaisesti — suora todiste siitä, että geomagneettinen kenttä säätelee kasvien lisääntymistä CRY:n kautta. [[ref:agliassa2018_gmf_cry_phytochrome|Agliassa ym. (2018)]] vahvistivat geomagneettisen kentän vaikutukset CRY-signalointiin ja geeniekspressioon.",
+          "Kryptokromi (CRY) luonnehdittiin ensin kasveissa — Arabidopsis thaliana, 1993 — ennen kuin sen rooli eläinten magnetoreseptiossa tunnistettiin. CRY2 on Arabidopsiksen ensisijainen fotoperiodinen kukintareseptori: CRY2 → CONSTANS → FLOWERING LOCUS T (FT) -ketju laukaisee kukinta-induktion ([[ref:arabidopsis_book_cry|Arabidopsis Book 2010]]). Sama molekyyli, jonka BERM tunnistaa eläinten EMF-avainsensiriksi (polku B), on parhaiten dokumentoitu kasvien lisääntymiskykyyn liittyvä funktio.",
+          "Kasvi-CRY reagoi magneettikenttiin. [[ref:xu2014_cry_phosphorylation|Xu ym. (2014)]] osoittivat, että 500 µT magneettikenttä vahvisti CRY1:n ja CRY2:n sinivaloriippuvaisia fosforylaatioita Arabidopsiksessa, kun taas lähes-nollakenttä heikensi CRY2:n fosforylaatiota. [[ref:xu2015_flowering_nnmf|Xu ym. (2015)]] osoittivat, että lähes-nollakenttä vaimentaa Arabidopsiksen kukintaa sinivaloriippuvaisesti — suora todiste siitä, että geomagneettinen kenttä säätelee kasvien lisääntymistä CRY:n kautta. [[ref:agliassa2018_gmf_cry_phytochrome|Agliassa ym. (2018)]] vahvistivat geomagneettisen kentän vaikutukset CRY-signalointiin ja geeniekspressioon.",
           "Kriittisin löydös: [[ref:ahmad2020_cry1_rf|Ahmad ym. (2020, Scientific Reports)]] osoittivat, että heikko 7 MHz radiotaajuinen magneettikenttä vähentää merkitsevästi Arabidopsiksen CRY1:n biologista responssia siniseen valoon. Tämä on sama RPM-diagnostinen sormenjälki kuin Ritzin (2004) tulos muuttolinnuissa: Larmor-taajuuden RF häiritsee kryptokromin toimintaa. Tekijät toteavat efektin olevan 'relatively minor' — yhdenmukainen BERM:n ennusteen kanssa, koska kasvit syntetisoivat oman riboflaviininsa (B2) ja ylläpitävät endogeenistä FAD-saatavuutta, tehden niistä vähemmän haavoittuvia kuin eläimistä jotka riippuvat ravinnon B2:sta.",
           "RF vaikuttaa kasvien lisääntymiseen kentällä. [[ref:lettuce_rf_2023|PMC10005510 (2023)]]: Wi-Fi-taajuudet (2,4 GHz ja 5 GHz) kiihdyttivät salaatin kukintaa kenttäolosuhteissa ja laskivat fotosynteesitehokkuutta. [[ref:field_plants_rf_2023|Ecological Indicators (2023)]]: 866–868 MHz RF-altistus siemenestä kypsymiseen muutti 10 villin kasvilajin kasvua ja kehitystä — ensimmäinen kontrolloitu kenttäkoe villien kasvien RF-vasteesta. [[ref:haggerty2010_aspen_rf|Haggerty (2010)]]: RF-tausta vaikutti haitallisesti haavan taimien kasvuun, lehtikehitykseen ja antosyaanituotantoon.",
-          "Implikaatio on perustavanlaatuinen: sama molekyyli (CRY), sama kofaktori (FAD) ja sama mekanismi (RPM) säätelevät lisääntymistä sekä kasveissa (kukinta) että eläimissä (melatoniini → HPG-akseli). Antropogeeninen RF häiritsee molempia samanaikaisesti. 'Hyönteiskato', 'lintukato' ja 'hedelmällisyyskriisi' eivät ole kolme erillistä kriisiä — ne ovat yksi kriisi yhden molekyylin välittämänä.",
-          "Masting — puiden synkronoitu massasiementuotanto 2–8 vuoden välein — tarjoaa lisätestin. [[ref:bogdziewicz2024_nature_plants_solstice|Bogdziewicz ym. (2024, Nature Plants)]] osoittivat, että eurooppalainen pyökki synkronoi mastingin 2 000 km:n etäisyydelle käyttäen kesäpäivänseisausta 'aloituspistoolin' tavoin. Geomagneettinen kenttä on ainoa ympäristösignaali joka on homogeeninen tällä spatiaalisella skaalalla. BERM ehdottaa CRY2:ta synkronoijaksi: se lukee samanaikaisesti fotoperiodiin, lämpötilaan JA geomagneettiseen kenttään. [[ref:bogdziewicz2021_climate_masting|Bogdziewicz ym. (2021)]] raportoivat masting-synkronian heikkenemisestä — selitetty ilmastonmuutoksella, mutta BERM:n vaihtoehtoinen selitys on CRY2:n RF-häiriö. [[ref:ascoli2017_nao_masting|Ascoli ym. (2017, Nature Communications)]]: NAO-telekytkennät korreloivat masting-synkronian kanssa vuosikymmenien yli, mutta nämä suhteet ovat epästationaarisia — yhdenmukainen muuttuvan sähkömagneettisen ympäristön kanssa.",
+          "Seuraus on perustavanlaatuinen: sama molekyyli (CRY), sama kofaktori (FAD) ja sama mekanismi (RPM) säätelevät lisääntymistä sekä kasveissa (kukinta) että eläimissä (melatoniini → HPG-akseli). Antropogeeninen RF häiritsee molempia samanaikaisesti. 'Hyönteiskato', 'lintukato' ja 'hedelmällisyyskriisi' eivät ole kolme erillistä kriisiä — ne ovat yksi kriisi yhden molekyylin välittämänä.",
+          "Masting — puiden synkronoitu massasiementuotanto 2–8 vuoden välein — tarjoaa lisätestin. [[ref:bogdziewicz2024_nature_plants_solstice|Bogdziewicz ym. (2024, Nature Plants)]] osoittivat, että eurooppalainen pyökki tahdistaa mastingin 2 000 km:n etäisyydelle käyttäen kesäpäivänseisausta 'aloituspistoolin' tavoin. Geomagneettinen kenttä on ainoa ympäristösignaali joka on homogeeninen tällä spatiaalisella skaalalla. BERM ehdottaa CRY2:ta synkronoijaksi: se lukee samanaikaisesti fotoperiodiin, lämpötilaan JA geomagneettiseen kenttään. [[ref:bogdziewicz2021_climate_masting|Bogdziewicz ym. (2021)]] raportoivat masting-synkronian heikkenemisestä — selitetty ilmastonmuutoksella, mutta BERM:n vaihtoehtoinen selitys on CRY2:n RF-häiriö. [[ref:ascoli2017_nao_masting|Ascoli ym. (2017, Nature Communications)]]: NAO-telekytkennät korreloivat masting-synkronian kanssa vuosikymmenien yli, mutta nämä suhteet ovat epästationaarisia — yhdenmukainen muuttuvan sähkömagneettisen ympäristön kanssa.",
         ],
         studies: [
           { citation: "Ahmad ym. (Scientific Reports)", year: 2020, referenceId: "ahmad2020_cry1_rf", note: "7 MHz RF vähentää CRY1:n responssia Arabidopsiksessa — RPM-sormenjälki kasveissa" },
           { citation: "Xu ym. (Adv. Space Res.)", year: 2014, referenceId: "xu2014_cry_phosphorylation", note: "500 µT vahvistaa CRY-fosforylaatiota; lähes-nolla heikentää" },
-          { citation: "Xu ym. (Bioelectromagnetics)", year: 2015, referenceId: "xu2015_flowering_nnmf", note: "Lähes-nollakenttä suppressoi kukintaa — geomagneettinen kenttä → CRY → lisääntyminen" },
+          { citation: "Xu ym. (Bioelectromagnetics)", year: 2015, referenceId: "xu2015_flowering_nnmf", note: "Lähes-nollakenttä vaimentaa kukintaa — geomagneettinen kenttä → CRY → lisääntyminen" },
           { citation: "Agliassa ym. (J Photochem Photobiol B)", year: 2018, referenceId: "agliassa2018_gmf_cry_phytochrome", note: "Geomagneettinen kenttä vaikuttaa CRY-signalointiin ja geeniekspressioon" },
           { citation: "Arabidopsis Book (katsaus)", year: 2010, referenceId: "arabidopsis_book_cry", note: "CRY2 → CONSTANS → FT: ensisijainen fotoperiodinen kukintareitti" },
           { citation: "PMC10005510 (Plants MDPI)", year: 2023, referenceId: "lettuce_rf_2023", note: "Wi-Fi kiihdytti salaatin kukintaa kenttäolosuhteissa" },
@@ -155,7 +155,7 @@ const COPY = {
       },
     ],
     seeAlso: "Katso myös",
-    evidencePortal: "Evidenssirekisteri →",
+    evidencePortal: "Näyttörekisteri →",
     thCitation: "Viite",
     thYear: "Vuosi",
     thNote: "Huomio",

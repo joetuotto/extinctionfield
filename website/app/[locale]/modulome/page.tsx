@@ -77,7 +77,7 @@ const COPY = {
     /* Section 3: Twelve Layers */
     layersHeading: "Kaksitoista kerrosta",
     layersSubtitle:
-      "Molekulaarisesta spinfysiikasta populaatiotason malleihin \u2014 kukin kerros moduloi \u03C7:\u00E4",
+      "Molekulaarisesta spinfysiikasta populaatiotason malleihin \u2014 kukin kerros säätelee \u03C7:\u00E4",
     /* Section 4: Routes */
     routesHeading: "Nelj\u00E4 itsen\u00E4ist\u00E4 reitti\u00E4",
     routesMechanism: "Mekanismi",
@@ -111,7 +111,7 @@ const COPY = {
     /* Navigation */
     seeAlso: "Katso my\u00F6s",
     modelPage: "BERM-malli",
-    evidencePage: "Evidenssirekisteri",
+    evidencePage: "Näyttörekisteri",
   },
   ja: {
     title: "EMFモジュローム",

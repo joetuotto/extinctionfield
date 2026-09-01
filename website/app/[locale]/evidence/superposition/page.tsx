@@ -56,7 +56,7 @@ const COPY = {
   fi: {
     title: "Superpositiorikkomus",
     subtitle: "172 tutkimusta osoittaa, että yhdistetyt EMF-altistukset tuottavat vaikutuksia, joita yksittäisten altistusten summa ei ennusta — geometrisen epälineaarisuuden tunnusmerkki Lindgrenin mallissa.",
-    backLink: "← Takaisin Evidenssiin",
+    backLink: "← Takaisin näyttöön",
     cautionText: "Superpositiorikkomuksen näyttö tulee pääasiassa ELF-yhdistelmätutkimuksista. Laajennus RF-yhdistelmiin ja geometriseen tulkintaan on BERMin synteesi (M-taso), ei vakiintunut konsensus.",
 
     s1Title: "Periaate",

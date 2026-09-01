@@ -61,8 +61,8 @@ const COPY = {
   },
   fi: {
     title: "Piilevä kilpirauhanen: Dio2/Dio3-häiriö",
-    subtitle: "EMF vähentää hypotalamuksen Dio2- ja Dio3-dejodinaasientsyymejä jotka muuntavat T4:n aktiiviseksi T3:ksi. Normaalit kilpirauhaustestit (TSH, T4) näyttävät normaaleilta, peittäen kudostason T3-puutteen. FT3/FT4-suhde on diagnostinen avain.",
-    backLink: "← Takaisin Evidenssiin",
+    subtitle: "EMF vähentää hypotalamuksen Dio2- ja Dio3-dejodinaasientsyymejä jotka muuntavat T4:n aktiiviseksi T3:ksi. Normaalit kilpirauhastestit (TSH, T4) näyttävät normaaleilta, peittäen kudostason T3-puutteen. FT3/FT4-suhde on diagnostinen avain.",
+    backLink: "← Takaisin näyttöön",
     cautionText: "Tämä sivu yhdistää EMF:n kilpirauhashormonin konversiohäiriöön. Dio2/Dio3-väheneminen EMF:stä on kokeellisesti osoitettu eläinmalleissa ([[ref:lte_thyroid_2024|PMC11507962]]). Ihmisten työperäinen data ([[ref:elf_thyroid_2022|PMID:35963949]]) osoittaa FT3↓ ja FT4↑ konsistentisti. Kliininen ennuste (FT3/FT4-suhde diagnostiikkana) vaatii suoraa testausta.",
 
     mechTitle: "Mekanismi",
@@ -74,7 +74,7 @@ const COPY = {
       { step: "4. FT3/FT4-suhde paljastaa piilevän puutteen", detail: "Vapaan T3:n suhde vapaaseen T4:ään (FT3/FT4) laskee. Normaali FT3/FT4 on noin 0,25-0,35. Piilevässä hypotyreoosissa: FT3 on matalalla normaalilla kun FT4 on keskeltä ylänormaalille → suhde laskee alle 0,20. Tämä suhde EI OLE tällä hetkellä osa normaalia kilpirauhasseulontaa." },
     ],
 
-    occTitle: "Työperäinen evidenssi",
+    occTitle: "Työperäinen näyttö",
     occLead: "Ihmisten työperäinen data tukee mekanismia.",
     occPoints: [
       "Pitkäaikainen ELF-EMF-altistus ihmisillä: FT3 vähenee hitaasti kun FT4 kasvaa hitaasti ajan myötä ([[ref:elf_thyroid_2022|PMID:35963949]] 2022)",
@@ -99,10 +99,10 @@ const COPY = {
 
     networkTitle: "Verkostoasema",
     networkPoints: [
-      { bridge: "VK26 → VK13", detail: "Hypotalamuksen dejodanaasihäiriö → neuroendokriininen akseli (HPT on HPA:n ja HPG:n rinnalla hypotalamuksessa)" },
+      { bridge: "VK26 → VK13", detail: "Hypotalamuksen dejodinaasihäiriö → neuroendokriininen akseli (HPT on HPA:n ja HPG:n rinnalla hypotalamuksessa)" },
       { bridge: "VK26 → VK27", detail: "Kilpirauhashormoni on epigeneettinen säätelijä → Dio2/Dio3↓ muuttaa kehityksellistä epigeneettistä ohjelmointia" },
       { bridge: "VK26 → VK15", detail: "T3 ajaa BAT-lämmöntuotantoa → piilevä T3↓ vahvistaa Klimentidis-lihavuusmekanismia" },
-      { bridge: "VK26 → VK19", detail: "T3 moduloi dopamiiniaineenvaihduntaa → piilevä T3↓ vahvistaa DA↓ → masennus/anhedonia" },
+      { bridge: "VK26 → VK19", detail: "T3 säätelee dopamiiniaineenvaihduntaa → piilevä T3↓ vahvistaa DA↓ → masennus/anhedonia" },
     ],
 
     predictionText: "Ennuste E-NEW-9: FT3/FT4-suhde on matalampi korkean EMF:n työntekijöillä (telecom, sähköasentajat) verrattuna vastaaviin matalan EMF:n kontrolleihin, normaaleista TSH:sta ja T4:stä huolimatta. Testattavissa heti työperäisellä kohorttitutkimuksella.",

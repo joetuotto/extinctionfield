@@ -12,7 +12,7 @@ export {
   earpodPenetration,
   phoneBodyContactHours,
 } from "./personal";
-export { chi, twoChannelExposure } from "./lindgren";
+export { chi, twoChannelExposure, threeChannelExposure } from "./lindgren";
 export {
   computeSpermState,
   rosIndex,

@@ -76,7 +76,7 @@ const COPY = {
     colSource: "Source",
   },
   fi: {
-    title: "CaMKII: konvergenssimolekyyli",
+    title: "CaMKII: yhdentymismolekyyli",
     subtitle:
       "Yksi molekyyli selittää miksi lihavuus, diabetes, hedelmättömyys ja unihäiriöt lisääntyvät samanaikaisesti",
     center: "CaMKII",
@@ -111,7 +111,7 @@ const COPY = {
     ],
     outcome: "METABOLINEN SYNDROOMA\n+ PROGRESSIIVINEN HERKISTYMINEN",
     caveat:
-      "Episteeminen huomio: CaMKII-konvergenssi on TUNNISTETTU itsenäisestä kirjallisuudesta mutta ei vielä kokeellisesti testattu integroituna EMF-mekanismina. Jokainen reitti on verifioitu erikseen; integroitu koe (EMF → CaMKII → kaikki viisi kohdetta samanaikaisesti) on ennuste, ei vahvistettu fakta. Evidenssitaso: M.",
+      "Episteeminen huomio: CaMKII-yhdentyminen on TUNNISTETTU itsenäisestä kirjallisuudesta mutta ei vielä kokeellisesti testattu integroituna EMF-mekanismina. Jokainen reitti on todennettu erikseen; integroitu koe (EMF → CaMKII → kaikki viisi kohdetta samanaikaisesti) on ennuste, ei vahvistettu fakta. Näyttötaso: M.",
     targetRows: [
       {
         pathway: "EMF-herkkyys",

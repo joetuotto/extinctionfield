@@ -31,7 +31,7 @@ for (const reference of registry.references) {
     year: reference.year,
     title: reference.title,
     journal: reference.journal,
-    type: reference.type,
+    type: reference.type ?? null,
     linkStatus: reference.link_status,
     externalUrl: externalUrl(reference),
   };

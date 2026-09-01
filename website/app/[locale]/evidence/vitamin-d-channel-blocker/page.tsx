@@ -54,24 +54,24 @@ const COPY = {
   fi: {
     title: "D-vitamiini: Luonnon kanavasalpaaja",
     subtitle: "D-vitamiini (1,25(OH)₂D₃) vaimentaa CACNA1C- ja CACNA1D-mRNA:ta — samoja L-tyypin VGCC-kanavia, joita EMF aktivoi. D-vitamiinin puutos jättää VGCC:t yliekspressoituneiksi, luoden saman haavoittuvan tilan kuin krooninen EMF-altistus. Tämä tekee D-vitamiinista BERM:n 10. moderaattorin.",
-    backLink: "← Takaisin Evidenssiin",
+    backLink: "← Takaisin näyttöön",
     cautionText: "Tämä sivu käsittelee D-vitamiinin roolia VGCC-säätelyssä. D-vitamiinin transkriptionaaliset vaikutukset CACNA1C/1D:hen ovat vakiintuneita kirjallisuudessa. Vaikutukset EMF-herkkyyteen ovat BERM-hypoteesi.",
 
     tripleTitle: "Kolmoisiskuhypoteesi",
-    tripleLead: "Kolme itsenäistä reittiä konvergoituu samaan päätepisteeseen: liiallinen Ca²⁺-sisäänvirtaus L-tyypin VGCC:iden kautta.",
+    tripleLead: "Kolme itsenäistä reittiä yhtyy samaan päätepisteeseen: liiallinen Ca²⁺-sisäänvirtaus L-tyypin VGCC:iden kautta.",
     tripleStrikes: [
       { strike: "Isku 1: GENEETTINEN", detail: "CACNA1C-riskivariantit (GWAS: skitsofrenia, kaksisuuntainen mielialahäiriö, ASD) → Cav1.2-toiminta↑" },
       { strike: "Isku 2: YMPÄRISTÖLLINEN", detail: "EMF → VGCC-aktivaatio → Ca²⁺↑ (BERM:n ydinmekanismi)" },
       { strike: "Isku 3: RAVITSEMUKSELLINEN", detail: "D-vitamiinin puutos → CACNA1C/1D-mRNA yliekspressoitunut → enemmän VGCC:itä kalvolla → enemmän Ca²⁺:ta per fotoni" },
     ],
 
-    transTitle: "Transkriptionaalinen evidenssi",
+    transTitle: "Transkriptionaalinen näyttö",
     transLead: "D-vitamiinireseptori (VDR) kontrolloi suoraan L-tyypin VGCC-geenien ilmentymistä.",
     transPoints: [
       { finding: "VDR vaimentaa CACNA1C:n ja CACNA1D:n transkription", detail: "VDR (D-vitamiinireseptori) vaimentaa suoraan CACNA1C:n ja CACNA1D:n transkription, vähentäen L-tyypin VGCC-tiheyttyä solukalvolla (J Neurosci 2001)." },
       { finding: "VDR:n vaimentaminen → Cav1.2/Cav1.3-ylössäätely", detail: "VDR:n vaimentaminen estää Cav1.2/Cav1.3-alassäätelyn → NGF↓. D-vitamiinisignaloinnin menetys poistaa jarrun VGCC-ekspressiolta (PLoS ONE 2011)." },
       { finding: "Neonataali D-vitamiinipuutos + CACNA1C-variantit", detail: "Neonataali D-vitamiinipuutos ja CACNA1C-variantit konvergoituvat skitsofreniariskiin — geeni-ympäristö-vuorovaikutus samassa kanavassa (Transl Psychiatry 2019)." },
-      { finding: "Genomiset ja ei-genomiset reitit", detail: "1,25D moduloi L-tyypin VDCC:itä kortikaalisissa neuroneissa sekä genomisten (transkriptionaalisten) että ei-genomisten (nopea kalvosignalointi) reittien kautta, tarjoten kaksoishallinnan kalsiumsisäänvirtaukselle." },
+      { finding: "Genomiset ja ei-genomiset reitit", detail: "1,25D säätelee L-tyypin VDCC:itä kortikaalisissa neuroneissa sekä genomisten (transkriptionaalisten) että ei-genomisten (nopea kalvosignalointi) reittien kautta, tarjoten kaksoishallinnan kalsiumsisäänvirtaukselle." },
     ],
 
     modTitle: "10. moderaattori",
@@ -83,15 +83,15 @@ const COPY = {
       { point: "Väestötason haavoittuvuus", detail: "Väestötason D-vitamiinipuutos (~40 % maailmanlaajuisesti) = väestötason VGCC-yliekspressio. Tämä on muokattavissa oleva riskitekijä laajassa mittakaavassa." },
     ],
 
-    clinTitle: "Kliiniset implikaatiot",
+    clinTitle: "Kliiniset seuraukset",
     clinLead: "D-vitamiinin täydennys suojaavana interventiona EMF-haavoittuvuutta vastaan.",
     clinPoints: [
       { implication: "Testattava interventio", detail: "D-vitamiinin täydennys voisi vähentää EMF-haavoittuvuutta VGCC-ekspression alassäätelyn kautta — suoraan testattava ennuste (E-NEW-28)." },
-      { implication: "Kolmoisiskumalli", detail: "Matala D-vitamiini + CACNA1C-variantti + korkea EMF = kolmoisosu. Tämä kolmen tekijän konvergenssimalli ennustaa suurimman riskin tiloille kuten skitsofrenia (E-NEW-31)." },
+      { implication: "Kolmoisiskumalli", detail: "Matala D-vitamiini + CACNA1C-variantti + korkea EMF = kolmoisosu. Tämä kolmen tekijän yhdentymismalli ennustaa suurimman riskin tiloille kuten skitsofrenia (E-NEW-31)." },
       { implication: "Realistinen suojaus", detail: "D-vitamiini on halpaa, turvallista ja laajalti saatavilla — realistinen suojaava interventio. Toisin kuin EMF-altistuksen vähentäminen (infrastruktuuririippuvaista), D-vitamiinilisä on yksilöllisesti toteutettavissa." },
     ],
 
-    predictionText: "Ennuste E-NEW-28: D-vitamiinin täydennys puutostilaisilla yksilöillä vähentää VGCC-ekspressiota ja vaimentaa EMF-indusoitua Ca²⁺-sisäänvirtausta. Ennuste E-NEW-29: Väestöillä joilla on korkeampi D-vitamiinitaso, on matalampi EMF-liitteisten oireklustereiden esiintyvyys.",
+    predictionText: "Ennuste E-NEW-28: D-vitamiinin täydennys puutostilaisilla yksilöillä vähentää VGCC-ekspressiota ja vaimentaa EMF-aiheutettua Ca²⁺-sisäänvirtausta. Ennuste E-NEW-29: Väestöillä joilla on korkeampi D-vitamiinitaso, on matalampi EMF-liitteisten oireklustereiden esiintyvyys.",
     predictionLink: "Ks. viimeisten kerrosten ennusteet →",
     predictionHref: "/predictions",
   },

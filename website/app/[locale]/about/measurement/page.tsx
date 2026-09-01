@@ -97,7 +97,7 @@ const t: Record<string, Copy> = {
         ],
         steps: [
           { title: "Kenttäkomponentit", text: "Tallenna relevantit sähkö-/magneettikomponentit ja lähdekaistat; säilytä kalibrointi ja epävarmuus, ei vain yhtä yhteenvetotasoa." },
-          { title: "Aikarakenne", text: "Muodosta aikaleimattu kaistateho- tai kenttäamplitudisarja ja estimoi sitten verhokäyrä-/beat-PSD vasta sen jälkeen, kun kantoaalto tai kaista on kerätty pätevästi." },
+          { title: "Aikarakenne", text: "Muodosta aikaleimattu kaistateho- tai kenttäamplitudisarja ja arvioi sitten verhokäyrä-/beat-PSD vasta sen jälkeen, kun kantoaalto tai kaista on kerätty pätevästi." },
           { title: "Konteksti", text: "Kirjaa vektorin orientaatio, mitattavissa oleva vaihe/koherenssi, vuorokaudenaika, lähdekonfiguraatio ja ympäristöolosuhteet, jotka voivat muuttaa laitteistoa." },
         ],
       },

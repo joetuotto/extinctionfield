@@ -9,9 +9,11 @@ import { SentinelExplorer } from "./SentinelExplorer";
 import { GlobalDataExplorer } from "./GlobalDataExplorer";
 import { LayersExplorer } from "./LayersExplorer";
 import { ThresholdExplorer } from "./ThresholdExplorer";
+import { CivilizationTimeline } from "./CivilizationTimeline";
+import { NaturalEMVisualization } from "./NaturalEMVisualization";
 import { getExploreTabs } from "@/lib/navigation";
 
-type Tab = "map" | "country" | "global" | "data" | "sentinel" | "layers" | "threshold";
+type Tab = "map" | "country" | "global" | "data" | "sentinel" | "layers" | "threshold" | "civilizations" | "naturalEM";
 
 function ExploreTabsInner({ locale }: { locale: string }) {
   const searchParams = useSearchParams();
@@ -67,6 +69,10 @@ function ExploreTabsInner({ locale }: { locale: string }) {
       {activeTab === "data" && <DataSourcesContent locale={locale} />}
 
       {activeTab === "layers" && <LayersExplorer locale={locale} />}
+
+      {activeTab === "civilizations" && <CivilizationTimeline locale={locale} />}
+
+      {activeTab === "naturalEM" && <NaturalEMVisualization locale={locale} />}
     </div>
   );
 }

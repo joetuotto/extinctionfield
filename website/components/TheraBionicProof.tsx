@@ -28,11 +28,11 @@ const COPY = {
     sarLabel: "matkapuhelimen SAR:n alla — ei-terminen määritelmällisesti",
     survivalLabel: "elinaikaetu pitkälle edenneessä maksasyövässä",
     explanation:
-      "TheraBionic P1 -laite hoitaa pitkälle edennyttä maksasyöpää käyttäen amplitudimoduloituja radiotaajuisia sähkömagneettisia kenttiä altistustasoilla jotka ovat 100–1 000 kertaa matkapuhelimen alapuolella. Julkaistu mekanismi: EMF aktivoi Cav3.2 T-tyypin jänniteriippuvaiset kalsiumkanavat aiheuttaen kalsium-influksin joka käynnistää syöpäsolujen erilaistumisen. Tämä on täsmälleen se mekanismi jonka BERM kuvaa lisääntymis- ja terveysvaikutuksille — ei-terminen EMF joka toimii jänniteriippuvaisten kalsiumkanavien kautta. Kysymys ei ole siitä onko mekanismi olemassa. Se on FDA:n validoima. Kysymys on siitä mitä se tarkoittaa krooniselle, kontrolloimattomalle ympäristöaltistukselle.",
+      "TheraBionic P1 -laite hoitaa pitkälle edennyttä maksasyöpää käyttäen amplitudimoduloituja radiotaajuisia sähkömagneettisia kenttiä altistustasoilla jotka ovat 100–1 000 kertaa matkapuhelimen alapuolella. Julkaistu mekanismi: EMF aktivoi Cav3.2 T-tyypin jänniteriippuvaiset kalsiumkanavat aiheuttaen kalsium-sisäänvirtauksen joka käynnistää syöpäsolujen erilaistumisen. Tämä on täsmälleen se mekanismi jonka BERM kuvaa lisääntymis- ja terveysvaikutuksille — ei-terminen EMF joka toimii jänniteriippuvaisten kalsiumkanavien kautta. Kysymys ei ole siitä onko mekanismi olemassa. Se on FDA:n validoima. Kysymys on siitä mitä se tarkoittaa krooniselle, kontrolloimattomalle ympäristöaltistukselle.",
     fdaLabelTitle: "FDA:n laitemerkintä",
     fdaLabelText:
       "Laitetta ei saa käyttää henkilöillä jotka saavat kalsiumkanavansalpaajia tai L- tai T-tyypin jänniteriippuvaisia kalsiumkanavia salpaavia aineita ellei hoitoa muokata. Tämä vasta-aihe vahvistaa, että kalsiumkanavamekanismi on olennainen laitteen toiminnalle.",
-    cta: "Lue koko TheraBionic-evidenssianalyysi",
+    cta: "Lue koko TheraBionic-näyttöanalyysi",
   },
   ja: {
     kicker: "臨床的検証",

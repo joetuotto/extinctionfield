@@ -13,7 +13,7 @@ const COPY = {
     score: "Score",
   },
   fi: {
-    kicker: "ELIMINAATIOPROSESSI",
+    kicker: "POISSULKUPROSESSI",
     title: "Kahdeksan selitystä testattu. Yksi toimii.",
     healthLabel: "Terveyskuorma",
     score: "Pisteet",

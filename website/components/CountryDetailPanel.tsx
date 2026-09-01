@@ -274,7 +274,7 @@ export function CountryDetailPanel({ iso3, name, tfr, mobile, locale }: Props) {
           </Link>
         )}
         <Link href={`/${locale}/evidence`} className="text-foreground-muted hover:text-foreground">
-          {fi ? "Evidenssirekisteri →" : "Evidence register →"}
+          {fi ? "Näyttörekisteri →" : "Evidence register →"}
         </Link>
       </div>
 

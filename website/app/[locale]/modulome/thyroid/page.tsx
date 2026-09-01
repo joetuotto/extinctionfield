@@ -118,7 +118,7 @@ const COPY = {
     gene: "Geeni",
     cellType: "Solutyyppi",
     function: "Toiminto",
-    level: "Evidenssitaso",
+    level: "Näyttötaso",
     channelVal: "Cav3 (T-tyyppi)",
     geneVal: "CACNA1G/H/I",
     cellTypeVal: "Aivolisäkkeen tyreotrooppi → TSH → Tyreosyytti",
@@ -153,19 +153,19 @@ const COPY = {
       "Autoimmuuni kilpirauhassairaus käyttää Ca²⁺-kalsineuriini-NFAT-reittiä T-soluissa — sama reitti kuin BERM-kaskadissa #10",
     ],
 
-    s3SectionTitle: "Evidenssi ja ennusteet",
+    s3SectionTitle: "Näyttö ja ennusteet",
 
-    s6Title: "EMF–kilpirauhanen-evidenssiketju",
+    s6Title: "EMF–kilpirauhanen-näyttöketju",
     s6Chain:
       "EMF → Cav3-häiriö (tyreotrooppi) → TSH:n säätelyn häiriö → T3/T4-epätasapaino → kilpirauhasen toimintahäiriö",
     s6p1:
-      "Aivolisäkkeen Cav3-tyypin T-kanavat ovat vakiintuneet endokriinisessa fysiologiassa. Sama mekanismi joka ohjaa gonadotrooppien LH-pulsseja (BERM aivolisäke-moduloomi) toimii tyreotrooppissa TSH-erityksessä. Systemaattisen katsauksen evidenssi (F1000Research) tunnisti viisi havainnointitutkimusta jotka yhdistävät EMF-altistuksen kilpirauhasen vajaatoimintaan. Työntekijöillä joiden puhelinkäyttö ylitti 33 tuntia kuukaudessa havaittiin matalammat TSH-tasot.",
+      "Aivolisäkkeen Cav3-tyypin T-kanavat ovat vakiintuneet endokriinisessa fysiologiassa. Sama mekanismi joka ohjaa gonadotrooppien LH-pulsseja (BERM aivolisäke-moduloomi) toimii tyreotrooppissa TSH-erityksessä. Systemaattisen katsauksen näyttö (F1000Research) tunnisti viisi havainnointitutkimusta jotka yhdistävät EMF-altistuksen kilpirauhasen vajaatoimintaan. Työntekijöillä joiden puhelinkäyttö ylitti 33 tuntia kuukaudessa havaittiin matalammat TSH-tasot.",
     s6p2:
       "Sekä kilpirauhasen vajaatoiminta että liikatoiminta heikentävät hedelmällisyyttä — luoden suoran yhteyden kilpirauhasen häiriöiden ja kokonaishedelmällisyysluvun laskun välille. Kilpirauhanen kytkeytyy BERM:n lisääntymisreittiin aivolisäkehubin kautta: sama Cav3-häiriö joka häiritsee LH/FSH:ta häiritsee samanaikaisesti TSH:ta, mikä tekee kilpirauhasen toimintahäiriöstä rinnakkaisen seurauksen keskeisestä BERM-mekanismista.",
 
     s7Title: "BERM-ennusteet",
     s7Text:
-      "BERM-kehys tuottaa kaksi spesifistä, testattavaa ennustetta kilpirauhasen moduloomille:",
+      "BERM-kehys tuottaa kaksi tarkkaa, testattavaa ennustetta kilpirauhasen moduloomille:",
     s7Predictions: [
       {
         id: "THYROID-1",
@@ -174,7 +174,7 @@ const COPY = {
       },
       {
         id: "THYROID-2",
-        text: "Kilpirauhassyövän ilmaantuvuus korreloi kumulatiivisen matkapuhelinkäytön kanssa (käyttövuodet × päivittäinen puheluaika) toteamisharhan kontrolloinnin jälkeen. Korrelaatio on spesifinen papillaariselle kilpirauhassyövälle, alatyypille joka liittyy eniten kaulan etuosan altistusvyöhykkeeseen.",
+        text: "Kilpirauhassyövän ilmaantuvuus korreloi kumulatiivisen matkapuhelinkäytön kanssa (käyttövuodet × päivittäinen puheluaika) toteamisharhan kontrolloinnin jälkeen. Korrelaatio on tarkka papillaariselle kilpirauhassyövälle, alatyypille joka liittyy eniten kaulan etuosan altistusvyöhykkeeseen.",
         discriminating: true,
       },
     ],
@@ -200,7 +200,7 @@ const COPY = {
     seeAlso: "Katso myös",
     pituitaryModulome: "Aivolisäkkeen moduloomi",
     predictionsPage: "Ennusteet — THYROID-1/2",
-    evidencePage: "Evidenssirekisteri",
+    evidencePage: "Näyttörekisteri",
     discriminatingBadge: "Erotteleva",
     allPredictions: "Kaikki ennusteet →",
   },

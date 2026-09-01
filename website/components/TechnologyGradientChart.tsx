@@ -72,6 +72,11 @@ export function TechnologyGradientChart({ locale }: { locale: Locale }) {
     korea: d.korea,
   };
 
+  const labelOffsets: Record<string, number> = {
+    amish: -20,
+    haredi: 20,
+  };
+
   const sorted = [...COMMUNITIES].sort((a, b) => a.tech - b.tech);
   const curvePath = sorted
     .map((c, i) => `${i === 0 ? "M" : "L"}${xScale(c.tech).toFixed(1)},${yScale(c.tfr).toFixed(1)}`)
@@ -79,10 +84,10 @@ export function TechnologyGradientChart({ locale }: { locale: Locale }) {
 
   return (
     <figure className="data-figure my-12">
-      <div className="overflow-x-auto p-1">
+      <div className="chart-scroll p-1">
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          className="w-full max-w-[600px] mx-auto"
+          className="w-full min-w-[560px] max-w-[600px] mx-auto"
           role="img"
           aria-label="Technology adoption vs fertility rate"
         >
@@ -122,6 +127,7 @@ export function TechnologyGradientChart({ locale }: { locale: Locale }) {
             const cx = xScale(c.tech);
             const cy = yScale(c.tfr);
             const above = c.tfr > 3;
+            const labelOffset = labelOffsets[c.id] ?? 0;
             return (
               <g key={c.id}>
                 <circle
@@ -131,8 +137,19 @@ export function TechnologyGradientChart({ locale }: { locale: Locale }) {
                   fill="var(--color-accent, #3b82f6)"
                   fillOpacity={0.85}
                 />
+                {labelOffset !== 0 && (
+                  <line
+                    x1={cx}
+                    y1={cy - 6}
+                    x2={cx + labelOffset}
+                    y2={cy - 10}
+                    stroke="var(--color-accent, #3b82f6)"
+                    strokeWidth={0.8}
+                    strokeOpacity={0.4}
+                  />
+                )}
                 <text
-                  x={cx}
+                  x={cx + labelOffset}
                   y={above ? cy - 10 : cy + 16}
                   textAnchor="middle"
                   fontSize={10}
@@ -142,7 +159,7 @@ export function TechnologyGradientChart({ locale }: { locale: Locale }) {
                   {labels[c.id]}
                 </text>
                 <text
-                  x={cx}
+                  x={cx + labelOffset}
                   y={above ? cy - 22 : cy + 27}
                   textAnchor="middle"
                   fontSize={9}

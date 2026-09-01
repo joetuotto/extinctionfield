@@ -63,10 +63,10 @@ const COPY = {
     gapBody: "INTERVENTIONAL data is almost completely missing. No large randomized controlled trial of EMF reduction has been conducted. Observational data, mechanistic studies, and animal experiments are consistent with BERM — but the gold standard of medical evidence (RCT) has not been applied. This is BERM’s largest weakness — acknowledged, not hidden.",
   },
   fi: {
-    title: "Vastaevidenssi: Rehellinen arviointi",
+    title: "Vastanäyttö: Rehellinen arviointi",
     subtitle: "BERM väittää 56 vahvistettua kerrosta ja 0 kumottua. Tämä on tilastollisesti epäilyttävää. Mikään malli, jota ei voida haastaa, ei ole tiedettä. Tämä sivu esittää vahvimmat vasta-argumentit ja BERM:n vastaukset — rehellisesti, ei puolustavasti.",
-    backLink: "← Takaisin Evidenssiin",
-    cautionText: "Tämä sivu ei ole puolustuspuhe. Se on rehellinen arvio BERM:iä vastaan esitetystä evidenssistä. Lukijoiden tulisi arvioida sekä kritiikki että vastaukset itsenäisesti.",
+    backLink: "← Takaisin näyttöön",
+    cautionText: "Tämä sivu ei ole puolustuspuhe. Se on rehellinen arvio BERM:iä vastaan esitetystä näytöstä. Lukijoiden tulisi arvioida sekä kritiikki että vastaukset itsenäisesti.",
 
     counterTitle: "Viisi väitettyä vasta-argumenttia",
     counterCards: [
@@ -78,7 +78,7 @@ const COPY = {
       {
         id: "C2",
         claim: "WHO/ICNIRP sanoo ei riskiä (tai pieni)",
-        response: "WHO arvioi SYÖPÄÄ, ei metabolisia/reproduktiivisia/neurologisia päätepisteitä, joita BERM ennustaa. Eri kysymys, eri vastaus.",
+        response: "WHO arvioi SYÖPÄÄ, ei metabolisia/lisääntymiskykyyn liittyviä/neurologisia päätepisteitä, joita BERM ennustaa. Eri kysymys, eri vastaus.",
       },
       {
         id: "C3",
@@ -87,13 +87,13 @@ const COPY = {
       },
       {
         id: "C4",
-        claim: "Riittämätön evidenssi ei-termisille vaikutuksille",
+        claim: "Riittämätön näyttö ei-termisille vaikutuksille",
         response: "Tämä ON BERM:n oma arvio L*-tasolla. BERM merkitsee ennusteet nimenomaisesti testaamattomiksi. Johdonmukaisuutta, ei ristiriitaa.",
       },
       {
         id: "C5",
         claim: "Kontrolliryhmät osoittavat myös vaikutuksia",
-        response: "Moderneissa laboratorioissa ”kontrolli” ≠ EMF-vapaa. Laboratorioissa on 50 Hz tausta, joka primaa solut (VK4). Kontrollit ovat esialtistuneita. BERM ENNUSTAA tämän.",
+        response: "Moderneissa laboratorioissa ”kontrolli” ≠ EMF-vapaa. Laboratorioissa on 50 Hz tausta, joka herkistää solut (VK4). Kontrollit ovat esialtistuneita. BERM ENNUSTAA tämän.",
       },
     ],
 
@@ -103,20 +103,20 @@ const COPY = {
       "Ca²⁺-pohjainen teoria voi ”selittää” lähes minkä tahansa löydöksen → matala erottelukyky",
       "56 kerrosta ja 0 kumottua on TILASTOLLISESTI EPÄILYTTÄVÄÄ",
     ],
-    caUnivResponse: "BERM:n rehellinen vastaus: spesifisyys tulee VGCC-alatyypeistä (Cav1.2, Cav1.3, Cav3.2) ja kudosspesifisistä jakaumista, EI Ca²⁺:sta yleisesti.",
+    caUnivResponse: "BERM:n rehellinen vastaus: kohdentuvuus tulee VGCC-alatyypeistä (Cav1.2, Cav1.3, Cav3.2) ja kudosspesifisistä jakaumista, EI Ca²⁺:sta yleisesti.",
     caUnivProof: "Timothy-oireyhtymä todistaa spesifisyyden: YKSI geeni (CACNA1C) → SPESIFINEN kaava, ei kaikkea. Yksittäinen kalsiumkanaavamutaatio tuottaa erillisen, tunnistettavan oireyhtymän — ei universaalia toimintahäiriötä.",
 
     refuteTitle: "Mikä KUMOAISI BERM:n",
     refuteCards: [
       { test: "Ca²⁺-kanavan salpaaja EI estä EMF:n biologista vaikutusta", status: "23 tutkimusta osoittaa päinvastoin", statusType: "tested" as const },
-      { test: "CACNA-genotyyppi EI moduloi EMF-vastetta", status: "Sousouri 2025 osoittaa päinvastoin", statusType: "tested" as const },
+      { test: "CACNA-genotyyppi EI säätelee EMF-vastetta", status: "Sousouri 2025 osoittaa päinvastoin", statusType: "tested" as const },
       { test: "Amish–mennoniittigradientti EI seuraa EMF:ää", status: "TESTAAMATON", statusType: "untested" as const },
       { test: "EMF-vähennysinterventio ei osoita terveyshyötyä", status: "TESTAAMATON", statusType: "untested" as const },
       { test: "ETH Zürichin nimodopiini-5G-testi on NEGATIIVINEN", status: "EI VIELÄ TEHTY (2026)", statusType: "untested" as const },
     ],
 
     gapTitle: "Kriittinen aukko",
-    gapBody: "INTERVENTIONAALINEN data puuttuu lähes täysin. Mitään suurta satunnaistettua kontrolloitua tutkimusta EMF-vähennyksestä ei ole tehty. Havaintodata, mekanistiset tutkimukset ja eläinkokeet ovat BERM:n kanssa johdonmukaisia — mutta lääketieteellisen evidenssin kultastandardi (RCT) ei ole sovellettu. Tämä on BERM:n suurin heikkous — tunnustettu, ei piilotettu.",
+    gapBody: "INTERVENTIONAALINEN data puuttuu lähes täysin. Mitään suurta satunnaistettua kontrolloitua tutkimusta EMF-vähennyksestä ei ole tehty. Havaintodata, mekanistiset tutkimukset ja eläinkokeet ovat BERM:n kanssa johdonmukaisia — mutta lääketieteellisen näytön kultastandardi (RCT) ei ole sovellettu. Tämä on BERM:n suurin heikkous — tunnustettu, ei piilotettu.",
   },
   ja: {
     title: "反証：誠実な評価",

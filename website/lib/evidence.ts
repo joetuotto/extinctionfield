@@ -637,7 +637,7 @@ export const PATHWAY_LABELS: Record<string, Record<"en" | "fi", string>> = {
   T: { en: "Bioelectric signaling / developmental", fi: "Biosähköinen signaali / kehityksellinen" },
   RW: { en: "Recovery window", fi: "Palautumisikkuna" },
   BS: { en: "Behavioral suppression", fi: "Käyttäytymisen suppressio" },
-  PV: { en: "Pharmacological validation", fi: "Farmakologinen validaatio" },
+  PV: { en: "Pharmacological validation", fi: "Farmakologinen todentaminen" },
   S: { en: "Sentinel / cross-species", fi: "Sentinelli / lajienvälinen" },
   SE: { en: "Sex-ratio endpoint", fi: "Sukupuolisuhteen päätepiste" },
   EHS: { en: "Individual susceptibility", fi: "Yksilöllinen herkkyys" },

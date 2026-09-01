@@ -52,28 +52,28 @@ const COPY = {
     predictionHref: "/predictions",
   },
   fi: {
-    title: "Epigeneettinen perintö: transgenerationaalinen periytyminen",
-    subtitle: "EMF muuttaa kolmea epigeneettistä mekanismia — DNA-metylaatio, histonimodifikaatio ja mikroRNA — jotka voivat välittää biologisia vaikutuksia altistumattomille jälkeläisille. DDT:n transgenerationaalinen malli tarjoaa mallin; siittiöiden metylaation annosriippuvuus (VK27) tarjoaa mekanismin.",
-    backLink: "← Takaisin Evidenssiin",
-    cautionText: "Tämä sivu esittää BERM:n spekulatiivisimman ennusteen. Vaikka EMF-indusoidut epigeneettiset muutokset on osoitettu kokeellisesti ja transgenerationaalinen periytyminen siittiöiden epigenomin kautta on todistettu muille ympäristöaltistuksille (DDT, stressi), spesifinen väite että EMF-vaikutukset säilyvät F3-sukupolveen EI OLE testattu. Tämä ennuste (E-NEW-10) on nimetty BERM:n korkeimman prioriteetin tutkimusehdotukseksi juuri sen syvällisten implikaatioiden vuoksi.",
+    title: "Epigeneettinen perintö: ylisukupolvinen periytyminen",
+    subtitle: "EMF muuttaa kolmea epigeneettistä mekanismia — DNA-metylaatio, histonimodifikaatio ja mikroRNA — jotka voivat välittää biologisia vaikutuksia altistumattomille jälkeläisille. DDT:n ylisukupolvinen malli tarjoaa mallin; siittiöiden metylaation annosriippuvuus (VK27) tarjoaa mekanismin.",
+    backLink: "← Takaisin näyttöön",
+    cautionText: "Tämä sivu esittää BERM:n spekulatiivisimman ennusteen. Vaikka EMF-indusoidut epigeneettiset muutokset on osoitettu kokeellisesti ja ylisukupolvinen periytyminen siittiöiden epigenomin kautta on todistettu muille ympäristöaltistuksille (DDT, stressi), tarkka väite että EMF-vaikutukset säilyvät F3-sukupolveen EI OLE testattu. Tämä ennuste (E-NEW-10) on nimetty BERM:n korkeimman prioriteetin tutkimusehdotukseksi juuri sen syvällisten seurausten vuoksi.",
 
     mechTitle: "Kolme epigeneettistä mekanismia",
     mechLead: "EMF häiritsee kaikkia kolmea tunnettua epigeneettisen säätelyn kanavaa. Jokainen muuttaa itsenäisesti geeniekspressiota; yhdessä ne luovat kattavan epigeneettisen allekirjoituksen.",
     mechanisms: [
       { id: "E1", name: "DNA-metylaatio (DNMT1)", detail: "ELF-EMF muuttaa DNMT1-ekspressiota kohdun limakalvossa ([[ref:epigen_endo_2024|ScienceDirect 2024]]). Siittiösoluissa: 50 Hz ELF tuottaa ANNOSRIIPPUVAISIA kaksisuuntaisia metylaatiomuutoksia — globaali metylaatio vähenee 1 mT:ssä mutta KASVAA 3 mT:ssä ([[ref:gc2_methylation|PMC4538330]]). Tämä annosriippuvuus tekee vaikutuksesta erityisen vaikean havaita väestötutkimuksissa joissa altistus vaihtelee.", color: "amber" },
-      { id: "E2", name: "Histonimodifikaatio (HDAC)", detail: "ELF-EMF muuttaa HDAC-aktiivisuutta (VK27, [[ref:epigen_endo_2024|ScienceDirect 2024]]). Histonimodifikaatiot säätelevät kromatiinin saavutettavuutta ja geeniekspressiota. HDAC-muutokset vaikuttavat α2δ-1-ekspressioon (VK30-silta) ja kehityksellisten geenien säätelyyn. Histonien retentio siittiöissä on tunnettu transgenerationaalinen välittäjä.", color: "amber" },
+      { id: "E2", name: "Histonimodifikaatio (HDAC)", detail: "ELF-EMF muuttaa HDAC-aktiivisuutta (VK27, [[ref:epigen_endo_2024|ScienceDirect 2024]]). Histonimodifikaatiot säätelevät kromatiinin saavutettavuutta ja geeniekspressiota. HDAC-muutokset vaikuttavat α2δ-1-ekspressioon (VK30-silta) ja kehityksellisten geenien säätelyyn. Histonien retentio siittiöissä on tunnettu ylisukupolvinen välittäjä.", color: "amber" },
       { id: "E3", name: "MikroRNA-biogeneesi (DICER1, DGCR8)", detail: "ELF-EMF muuttaa DICER1- ja DGCR8-ekspressiota — avainentsyymejä mikroRNA:n prosessoinnissa ([[ref:epigen_endo_2024|ScienceDirect 2024]]). MikroRNA:t säätelevät post-transkriptionaalista geeniekspressiota. Siittiöiden kantamat mikroRNA:t välittyvät alkioon ja vaikuttavat varhaiseen kehitykseen.", color: "amber" },
     ],
 
     ddtTitle: "DDT-analogia",
     ddtLead: "DDT tarjoaa vakiintuneen mallin transgenerationaaliselle ympäristöperiytymiselle.",
     ddtPoints: [
-      "DDT-altistus F0-sukupolvessa → siittiöiden DNA-metylaatiomuutokset → lihavuus, kivespatologia, munuaissairaus F3-sukupolvessa (altistumaton)",
+      "DDT-altistus F0-sukupolvessa → siittiöiden DNA-metylaatiomuutokset → lihavuus, kivestaudinkuva, munuaissairaus F3-sukupolvessa (altistumaton)",
       "Välityskanava: DNA-metylaatio, piRNA ja histonien retentio siittiöissä ([[ref:ddt_transgener|PMC5827984]])",
       "F3-vaikutukset säilyvät ILMAN jatkuvaa altistusta — epigenomi kantaa muistin",
-      "Muita verifioituja transgenerationaalisia altistuksia: stressi (kortisoli → siittiöiden metylaatio), hormonihäiritsijät (BPA, ftalaatit), nälänhätä (Alankomaiden nälkätalvi)",
+      "Muita todennettuja ylisukupolvisia altistuksia: stressi (kortisoli → siittiöiden metylaatio), hormonihäiritsijät (BPA, ftalaatit), nälänhätä (Alankomaiden nälkätalvi)",
     ],
-    ddtConclusion: "EMF vaikuttaa SAMOIHIN kolmeen epigeneettiseen mekanismiin joiden kautta DDT saavuttaa transgenerationaalisen periytymisen. Kysymys ei ole VOIKO EMF muuttaa siittiöiden epigenomia (voi — VK27), vaan säilyvätkö nuo muutokset F3:een asti.",
+    ddtConclusion: "EMF vaikuttaa SAMOIHIN kolmeen epigeneettiseen mekanismiin joiden kautta DDT saavuttaa ylisukupolvisen periytymisen. Kysymys ei ole VOIKO EMF muuttaa siittiöiden epigenomia (voi — VK27), vaan säilyvätkö nuo muutokset F3:een asti.",
 
     doseTitle: "Annosriippuvuusongelma",
     doseLead: "EMF:n epigeneettiset vaikutukset ovat kaksisuuntaisia ja annosriippuvaisia — kriittinen komplikaatio.",
@@ -87,10 +87,10 @@ const COPY = {
       { bridge: "VK27 → VK26", detail: "Epigeneettiset muutokset → Dio2/Dio3-ekspressio → kilpirauhashormonin muuntaminen (piilevä hypotyreoosi)" },
     ],
 
-    implTitle: "Implikaatiot",
-    implBody: "Jos EMF-vaikutukset ovat transgenerationaalisia, nykyisen sukupolven EMF-altistus voi vaikuttaa lastenlapsiin jotka eivät itse koskaan altistu. Tämä muuttaa EMF:n henkilökohtaisesta terveysriskistä sukupolvien väliseksi ympäristöperinnöksi — samankaltaiseksi kuin DDT, lyijy ja muut pysyvät ympäristöaltistukset jotka tunnistettiin transgenerationaalisiksi vasta vuosikymmenten kertyneen evidenssin jälkeen.",
+    implTitle: "Seuraukset",
+    implBody: "Jos EMF-vaikutukset ovat ylisukupolvisia, nykyisen sukupolven EMF-altistus voi vaikuttaa lastenlapsiin jotka eivät itse koskaan altistu. Tämä muuttaa EMF:n henkilökohtaisesta terveysriskistä sukupolvien väliseksi ympäristöperinnöksi — samankaltaiseksi kuin DDT, lyijy ja muut pysyvät ympäristöaltistukset jotka tunnistettiin transgenerationaalisiksi vasta vuosikymmenten kertyneen näytön jälkeen.",
 
-    predictionText: "Ennuste E-NEW-10 (transgenerationaalinen siittiöiden metylaatio säilyy F3:een) on BERM:n korkeimman prioriteetin tutkimusehdotus. Monisukupolvinen jyrsijätutkimus (18-24 kuukautta) voisi ratkaista tämän kysymyksen lopullisesti.",
+    predictionText: "Ennuste E-NEW-10 (ylisukupolvinen siittiöiden metylaatio säilyy F3:een) on BERM:n korkeimman prioriteetin tutkimusehdotus. Monisukupolvinen jyrsijätutkimus (18-24 kuukautta) voisi ratkaista tämän kysymyksen lopullisesti.",
     predictionLink: "Ks. viimeisten kerrosten ennusteet →",
     predictionHref: "/predictions",
   },

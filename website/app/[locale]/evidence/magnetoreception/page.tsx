@@ -88,8 +88,8 @@ const COPY = {
   },
   fi: {
     title: "Ihmisen magnetoreseptio ja CRY-reitit",
-    subtitle: "Ihmisen kryptokromin magnetoreseptio, CRY-pulssiresonanssi, melatoniinisuppressio ja differentiaalinen herkkyys",
-    backLink: "← Takaisin evidenssiin",
+    subtitle: "Ihmisen kryptokromin magnetoreseptio, CRY-pulssiresonanssi, melatoniinivaimennus ja differentiaalinen herkkyys",
+    backLink: "← Takaisin näyttöön",
     narratives: [
       {
         id: "human-cry-magnetoreception",
@@ -105,7 +105,7 @@ const COPY = {
           { citation: "Ritz ym. (Nature)", year: 2004, referenceId: "ritz2004", note: "RF Larmor-taajuudella häiritsee lintujen kompassia" },
           { citation: "Engels ym. (Nature)", year: 2014, referenceId: "engels2014", note: "Ihmisen tuottama EM-kohina häiritsee lintujen orientaatiota" },
           { citation: "Yoshii ym. (Nature)", year: 2009, referenceId: "yoshii2009", note: "CRY-mutantit menettävät magnetoreseption Drosophilassa" },
-          { citation: "Sherrard ym. (PLOS Biology)", year: 2018, referenceId: "sherrard2018", note: "EMF moduloi CRY-riippuvaista ROS:ia ihmisen solujärjestelmissä" },
+          { citation: "Sherrard ym. (PLOS Biology)", year: 2018, referenceId: "sherrard2018", note: "EMF säätelee CRY-riippuvaista ROS:ia ihmisen solujärjestelmissä" },
         ],
       },
       {
@@ -127,12 +127,12 @@ const COPY = {
         id: "melatonin-systematic",
         title: "Melatoniinisuppressio: PRISMA-katsaus (Tbahriti 2026)",
         paragraphs: [
-          "[[ref:tbahriti2026|Tbahriti ym. (2026, Sleep Biol Rhythms 24(2):195–214)]] esittävät PRISMA 2020 -systemaattisen katsauksen: 55 tutkimusta 892 seulotusta, tarkastellen EMF:n vaikutuksia sirkadiaanirytmeihin. 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 % basaalitasosta). Kellogenien ekspressio muuttuu. Uniarkkitehtuurin muutokset dokumentoitu. EMF:n melatoniinisuppressio on pienempi kuin valon aiheuttama (>90 %).",
-          "Tukee suoraan BERM:n polkua C (EMF → pineaalinen melatoniinisuppressio → GnRH-pulsaatiohäiriö → HPG → gonadifunktio). 20–50 %:n suppressio on biologisesti merkittävä ja yhdenmukainen BERM:n v17_night_fraction()-funktion kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniinisuppressio). Suppression suuruus on pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen sen kanssa, että BERM mallintaa EMF:n yhtenä useista yöllisistä häiriöreiteistä, ei ainoana ajurina. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat metodologiset standardit; 48 % eläintutkimuksista ilman riittävää sham-kontrollia. Siirtymä soluvaikutuksista systeemiseen sirkadiaaniseen häiriöön ei ole täysin osoitettu kliinisesti.",
-          "BERM-tulkinta: WHO:n ja ICNIRP:n evidenssiluokitukset ovat alttiina samoille systemaattisille vinoumille jotka BERM tunnistaa: proxy-altistusmittauksen vaimennusvinouma, kontrolliryhmän kontaminaatio (laboratorion lähtötasovinouma) ja rahoittajan vinouma ([[ref:huss2007|Huss 2007]]: teollisuusrahoitteiset tutkimukset löytävät harvemmin haittoja). Jos nämä vinoumat ovat todellisia, 'kohtalainen varmuus' standardikehyksessä voi vastata korkeampaa varmuutta vinoumakorjatussa kehyksessä. BERM käsittelee institutionaalisia evidenssihierarkioita CONTEXT_ONLY-roolissa koska ne ovat BERM:n epistemologian ulkopuolisia, ei siksi että alla oleva evidenssi olisi heikkoa.",
+          "[[ref:tbahriti2026|Tbahriti ym. (2026, Sleep Biol Rhythms 24(2):195–214)]] esittävät PRISMA 2020 -systemaattisen katsauksen: 55 tutkimusta 892 seulotusta, tarkastellen EMF:n vaikutuksia sirkadiaanirytmeihin. 88 % korkealaatuisista eläintutkimuksista raportoi EMF-aiheutettua melatoniinivaimennusta (20–50 % basaalitasosta). Kellogenien ekspressio muuttuu. Uniarkkitehtuurin muutokset dokumentoitu. EMF:n melatoniinivaimennus on pienempi kuin valon aiheuttama (>90 %).",
+          "Tukee suoraan BERM:n polkua C (EMF → pineaalinen melatoniinivaimennus → GnRH-pulsaatiohäiriö → HPG → gonadifunktio). 20–50 %:n suppressio on biologisesti merkittävä ja yhdenmukainen BERM:n v17_night_fraction()-funktion kanssa, jossa EMF on yksi komponentti yöllisessä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniinivaimennus). Suppression suuruus on pienempi kuin valon aiheuttama (>90 %) — yhdenmukainen sen kanssa, että BERM mallintaa EMF:n yhtenä useista yöllisistä häiriöreiteistä, ei ainoana ajurina. Metodologinen huomio: vain 27 % tutkimuksista täytti korkeat metodologiset standardit; 48 % eläintutkimuksista ilman riittävää sham-kontrollia. Siirtymä soluvaikutuksista systeemiseen sirkadiaaniseen häiriöön ei ole täysin osoitettu kliinisesti.",
+          "BERM-tulkinta: WHO:n ja ICNIRP:n näyttöluokitukset ovat alttiina samoille systemaattisille vinoumille jotka BERM tunnistaa: proxy-altistusmittauksen vaimennusvinouma, kontrolliryhmän kontaminaatio (laboratorion lähtötasovinouma) ja rahoittajan vinouma ([[ref:huss2007|Huss 2007]]: teollisuusrahoitteiset tutkimukset löytävät harvemmin haittoja). Jos nämä vinoumat ovat todellisia, 'kohtalainen varmuus' standardikehyksessä voi vastata korkeampaa varmuutta vinoumakorjatussa kehyksessä. BERM käsittelee institutionaalisia näyttöhierarkioita CONTEXT_ONLY-roolissa koska ne ovat BERM:n epistemologian ulkopuolisia, ei siksi että alla oleva näyttö olisi heikkoa.",
         ],
         studies: [
-          { citation: "Tbahriti ym. (Sleep Biol Rhythms)", year: 2026, referenceId: "tbahriti2026", note: "PRISMA, 55 tutkimusta: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota 20–50 %. Vain 27 % täytti korkeat standardit." },
+          { citation: "Tbahriti ym. (Sleep Biol Rhythms)", year: 2026, referenceId: "tbahriti2026", note: "PRISMA, 55 tutkimusta: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinivaimennusta 20–50 %. Vain 27 % täytti korkeat standardit." },
           { citation: "Huss ym. (Environ Health Perspect)", year: 2007, referenceId: "huss2007", note: "Teollisuusrahoitteiset EMF-tutkimukset raportoivat harvemmin haittoja. Systemaattinen rahoittajan vinouma." },
         ],
       },
@@ -140,16 +140,16 @@ const COPY = {
         id: "susceptibility",
         title: "Yksilöllinen herkkyysvariaatio",
         paragraphs: [
-          "Sähkömagneettinen yliherkkyyys (EHS) -kliininen data viittaa jatkuvaan yksilöllisen herkkyyden jakaumaan. [[ref:belpomme2022|Belpomme ym. 2022]] karakterisoivat noin 1 000 EHS-potilasta objektiivisilla biomarkkereilla, mukaan lukien histamiini, S100B-proteiini ja nitrotyrosiini. Vaikka EHS kliinisenä entiteettina on kiistanalainen, biomarkkerit viittaavat mitattaviin fysiologisiin vasteisiin herkässä alapopulaatiossa.",
+          "Sähkömagneettinen yliherkkyys (EHS) -kliininen data viittaa jatkuvaan yksilöllisen herkkyyden jakaumaan. [[ref:belpomme2022|Belpomme ym. 2022]] luonnehtivat noin 1 000 EHS-potilasta objektiivisilla biomarkkereilla, mukaan lukien histamiini, S100B-proteiini ja nitrotyrosiini. Vaikka EHS kliinisenä entiteettina on kiistanalainen, biomarkkerit viittaavat mitattaviin fysiologisiin vasteisiin herkässä alapopulaatiossa.",
           "[[ref:sousouri2025|Sousouri ym. 2025 (NeuroImage, ETH Zürich)]] tarjosi ensimmäisen kaksoissokko-ihmiskokeellisen osoituksen VGCC-genotyyppiriippuvaisesta EMF-herkkyydestä. Satunnaistetussa kontrolloidussa kokeessa CACNA1C rs7304986 T/C -kantajat osoittivat muuttunutta unisukkuladynamiikkaa 3,6 GHz RF-altistuksessa ICNIRP-rajojen alapuolella, kun taas CC-homotsygootit eivät. Tämä on ensimmäinen kokeellinen vahvistus sille, että ionikanavan genotyyppi ennustaa yksilöllistä EMF-vastetta, ja se muuttaa herkkyysjakauman aiemmin ehdotetusta (CACNA1C-assosiaatiotutkimukset 2024) kokeellisesti todistetuksi. Jos herkkyys noudattaa normaalijakaumaa, väestötason lisääntymisvaikutus on integraali koko jakauman yli, ei mediaani-yksilön vaste.",
-          "Katso myös: Silmien väri ja magnetoreseptio — miten iiriksen pigmentaatio, ravitsemus ja sukupuoli moduloivat CRY-herkkyyttä. Siniset silmät päästävät ~100× enemmän valoa verkkokalvon kryptokromille kuin ruskeat silmät ([[ref:higuchi2007|Higuchi 2007]]: 89 % vs. 73 % melatoniinisuppressio). FAD-saatavuus B2-vitamiinista kontrolloi suoraan CRY-stabiilisuutta ja magneettikentän suuntaerottelukykyä ([[ref:hirano2017|Hirano 2017]], [[ref:yap2025|Yap/Sherrard 2025]]). Nämä modulaattorit voivat selittää osan polku C:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta.",
+          "Katso myös: Silmien väri ja magnetoreseptio — miten iiriksen pigmentaatio, ravitsemus ja sukupuoli säätelevät CRY-herkkyyttä. Siniset silmät päästävät ~100× enemmän valoa verkkokalvon kryptokromille kuin ruskeat silmät ([[ref:higuchi2007|Higuchi 2007]]: 89 % vs. 73 % melatoniinivaimennus). FAD-saatavuus B2-vitamiinista kontrolloi suoraan CRY-stabiilisuutta ja magneettikentän suuntaerottelukykyä ([[ref:hirano2017|Hirano 2017]], [[ref:yap2025|Yap/Sherrard 2025]]). Nämä modulaattorit voivat selittää osan polku C:n tehokkuuden yksilöiden ja populaatioiden välisestä vaihtelusta.",
         ],
         studies: [
           { citation: "Belpomme ym.", year: 2022, referenceId: "belpomme2022", note: "EHS-biomarkkerit (~1 000 potilasta)" },
           { citation: "Sousouri ym. (NeuroImage, ETH Zürich)", year: 2025, referenceId: "sousouri2025", note: "Kaksoissokko-RCT: CACNA1C rs7304986 T/C → muuttunut unisukkuladynamiikka 3,6 GHz:ssä ICNIRP-rajan alla" },
           { citation: "CACNA1C-genotyypitys", year: 2024, referenceId: "cacna1c_genotyping_2024", note: "VGCC-polymorfismi → EMF-herkkyys" },
           { citation: "HRV Wi-Fi -altistus", year: 2023, referenceId: "hrv_wifi_2023", note: "Autonomiset muutokset herkässä osajoukossa" },
-          { citation: "Higuchi ym.", year: 2007, referenceId: "higuchi2007", note: "Silmien väri → melatoniinisuppressio (89 % vs. 73 %)" },
+          { citation: "Higuchi ym.", year: 2007, referenceId: "higuchi2007", note: "Silmien väri → melatoniinivaimennus (89 % vs. 73 %)" },
           { citation: "Yap/Sherrard-lab (Cells)", year: 2025, referenceId: "yap2025", note: "FAD-puutos → magneettisen suuntaerottelun menetys" },
         ],
       },
@@ -160,7 +160,7 @@ const COPY = {
     eyeColorLink: "→ Silmien väri ja magnetoreseptio",
     nutritionLink: "→ Ravitsemuksellinen CRY-modulaatio",
     seeAlso: "Katso myös",
-    evidenceRegisterLink: "← Evidenssirekisteri",
+    evidenceRegisterLink: "← Näyttörekisteri",
     eyeColorSeeAlsoLink: "Silmien väri ja magnetoreseptio →",
   },
   ja: {

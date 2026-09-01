@@ -118,18 +118,18 @@ const t: Record<string, Copy> = {
       },
       {
         num: "02",
-        bold: "Evidenssi kiinnitetään sitä tukevaan lenkkiin.",
+        bold: "Näyttö kiinnitetään sitä tukevaan lenkkiin.",
         text: "Solu-, eläin-, in-vitro- tai systemaattisen katsauksen löydös voi tukea rajattua reittisegmenttiä. Sitä ei hiljaisesti ylennetä ihmisen TFR-kertoimeksi.",
       },
       {
         num: "03",
         bold: "ASFR ennen TFR:ää.",
-        text: "TFR on ikäkohtaisten hedelmällisyyslukujen periodisumma. Kysyntä/mahdollisuus, tempo ja ART-syntymätoimitus säilyvät eksplisiittisinä demografisina syötteinä, eivät biologian residuaaleina.",
+        text: "TFR on ikäkohtaisten hedelmällisyyslukujen periodisumma. Kysyntä/mahdollisuus, tempo ja ART-syntymätoimitus säilyvät nimenomaisina demografisina syötteinä, eivät biologian residuaaleina.",
       },
       {
         num: "04",
         bold: "Tulokset ovat versioituja ja toistettavia.",
-        text: "Aktiivinen reitti, evidenssirekisteri ja datatilan säännöt kertovat kuhunkin tulokseen liitetyt mittaus- ja tulkintaehdot.",
+        text: "Aktiivinen reitti, näyttörekisteri ja datatilan säännöt kertovat kuhunkin tulokseen liitetyt mittaus- ja tulkintaehdot.",
       },
       {
         num: "05",

@@ -46,7 +46,7 @@ const COPY: Record<string, Copy> = {
     baseDocText:
       "Formaali Jacobiaani-tulorakenne (luku 17), proof-obligation-rekisteri ja turvajärjestelmien määrittely kuvataan LBERM-perusdokumentissa. Niitä ei toisteta tässä; tämä sivu kantaa ne yhtälöt, joihin BERM:n ennusteet nojaavat.",
     nextLabel: "Seuraavaksi",
-    nextTitle: "Evidenssirekisteri",
+    nextTitle: "Näyttörekisteri",
   },
   ja: {
     title: "BERM 数学的仕様",

@@ -235,7 +235,7 @@ export const LOW_EMF_POPULATIONS: LowEMFPopulation[] = [
     descriptionFr: "Chasseurs-cueilleurs autochtones de l'est du Paraguay. Étudiés de manière approfondie pour l'histoire de vie et l'écologie reproductive.",
     descriptionKo: "동부 파라과이의 원주민 수렵채집민. 생활사와 생식 생태학에 대해 광범위하게 연구됨.",
     keyFindingEn: "TFR approximately 8. Low obesity prevalence.",
-    keyFindingFi: "TFR noin 8. Matala obesiteettiprevalenssi.",
+    keyFindingFi: "TFR noin 8. Matala obesiteettiesiintyvyys.",
     keyFindingJa: "TFR約8。低い肥満有病率。",
     keyFindingFr: "TFR d'environ 8. Faible prévalence de l'obésité.",
     keyFindingKo: "TFR 약 8. 낮은 비만 유병률.",

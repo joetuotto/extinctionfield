@@ -32,13 +32,13 @@ const COPY = {
   },
   fi: {
     title: "EMF-modulomi: kaksitoista biologisen herkkyyden tasoa",
-    lead: "Modulomi kartoittaa sähkömagneettista herkkyyttä molekulaarisesta spinfysiikasta populaatiotason malleihin. Kukin kerros moduloi χ:ä — dimensiotonta kytkentäkerrointa ulkoisen EMF:n ja biologisen toiminnan välillä. Kaksitoista kerrosta, kymmenen kohde-elintä, neljä itsenäistä reittiä fertiliteetin laskuun.",
+    lead: "Modulomi kartoittaa sähkömagneettista herkkyyttä molekulaarisesta spinfysiikasta populaatiotason malleihin. Kukin kerros säätelee χ:ä — dimensiotonta kytkentäkerrointa ulkoisen EMF:n ja biologisen toiminnan välillä. Kaksitoista kerrosta, kymmenen kohde-elintä, neljä itsenäistä reittiä fertiliteetin laskuun.",
     layer: "Kerros",
     chiModulator: "χ-modulaattori",
     keyComponents: "Avainkomponentit",
     integration: "Integraatio",
     clickHint: "Klikkaa kerrosta nähdäksesi yksityiskohdat",
-    note: "Episteeminen huomautus: Jokaisen kerroksen evidenssi on merkitty itsenäisesti. Modulomi yhtenäisenä viitekehyksenä on BERM-spesifinen synteesi [C] — yksittäiset komponentit kantavat omat evidenssitasonsa.",
+    note: "Episteeminen huomautus: Jokaisen kerroksen näyttö on merkitty itsenäisesti. Modulomi yhtenäisenä viitekehyksenä on BERM-tarkka synteesi [C] — yksittäiset komponentit kantavat omat näyttötasonsa.",
   },
   ja: {
     title: "EMF Modulome: 生体感受性の12層",

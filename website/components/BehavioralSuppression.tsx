@@ -26,7 +26,7 @@ const t = {
     policyDesc: "This explains why pronatalist economic policies consistently fail — they target conscious choice (\"can we afford a child?\"), but the suppression operates on unconscious hormonal motivation. South Korea spent $200B on pronatalist incentives (2006–2024); TFR fell from 1.13 to 0.72.",
   },
   fi: {
-    title: "Nelinkertainen käyttäytymissuppressio",
+    title: "Nelinkertainen käyttäytymisen tukahduttaminen",
     desc: "Hedelmällisyyden lasku toimii neljän multiplikatiivisen hormonaalisen kanavan kautta. Kukin kanava vähentää itsenäisesti lisääntymistodennäköisyyttä ~20 %. Koska kanavat ovat multiplikatiivisia (eivät additiivisia), yhdistetty vaikutus on paljon suurempi kuin mikään yksittäinen kanava: 0,8⁴ = 0,41 — 59 % vähennys lisääntymiskäyttäytymisessä.",
     channel: "Kanava",
     mechanism: "Mekanismi",
@@ -42,8 +42,8 @@ const t = {
     c4Name: "Siittiöiden laatu → hedelmöitys",
     c4Mech: "Siittiöiden laadun heikkeneminen vähentää kertakohtaista hedelmöitystodennäköisyyttä ([[ref:levine2023_sperm|Levine 2023]])",
     dualHormone: "Kaksoishormonaalinen yhdistelmä",
-    dualHormoneDesc: "Testosteronin käyttäytymisvaikutukset vaativat matalan kortisolin ([[ref:mehta2015|Mehta 2015]]). EMF nostaa kroonisesti kortisolia JA laskee testosteronia, luoden kaksinkertaisen suppression kunkin kanavan sisällä.",
-    policy: "Poliittinen implikaatio",
+    dualHormoneDesc: "Testosteronin käyttäytymisvaikutukset vaativat matalan kortisolin ([[ref:mehta2015|Mehta 2015]]). EMF nostaa kroonisesti kortisolia JA laskee testosteronia, luoden kaksinkertaisen vaimennuksen kunkin kanavan sisällä.",
+    policy: "Poliittinen seuraus",
     policyDesc: "Tämä selittää miksi pronatalistiset talouspolitiikat epäonnistuvat johdonmukaisesti — ne kohdistuvat tietoiseen valintaan (\"onko meillä varaa lapseen?\"), mutta suppressio toimii tiedostamattomalla hormonaalisella tasolla. Etelä-Korea käytti 200 miljardia dollaria syntyvyyskannusteisiin (2006–2024); TFR laski 1,13:sta 0,72:een.",
   },
   ja: {

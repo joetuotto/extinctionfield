@@ -130,16 +130,16 @@ const COPY = {
     gene: "Geeni",
     cellType: "Solutyyppi",
     function: "Toiminto",
-    level: "Evidenssitaso",
+    level: "Näyttötaso",
     channelVal: "Cav3.1 (T-tyyppi, SA-tahdistus) + Cav1.2 (L-tyyppi, supistus)",
     geneVal: "CACNA1G / CACNA1C",
     cellTypeVal: "SA-solmun tahdistinsolut, kammioiden kardiomyosyytit",
-    functionVal: "Syketaajuuden generointi, rytminhallinta, supistusvoima",
+    functionVal: "Syketaajuuden tuottaminen, rytminhallinta, supistusvoima",
     levelVal: "M",
 
     s2Title: "SA-solmun tahdistusmekanismi",
     s2p1: "Sinussolmu (SA-solmu) on sydämen ensisijainen tahdistin. SA-solmun solut käyttävät Cav3.1 (CACNA1G) T-tyypin jänniteohjattuja kalsiumkanavia tuottaakseen rytmiset depolarisaatiot, jotka käynnistävät jokaisen sydämenlyönnin. T-tyypin kanavilla on erottuva biofysikaalinen ominaisuus: ne aktivoituvat hyvin negatiivisissa kalvopotentiaaleissa (~−60mV) ja tuottavat ikkunavirran — pienen mutta jatkuvan kalsiumsisäänvirtauksen lepopotentiaalissa, jossa noin 10 % kanavista pysyy auki.",
-    s2p2: "Tämä ikkunavirta ei ole vika vaan ominaisuus: se tuottaa hitaan diastolisen depolarisaation, joka ajaa SA-solmun kohti kynnystä ja generoi seuraavan sydämenlyönnin. Ikkunavirta syntyy koska T-tyypin kanavien aktivaatio- ja inaktivaatiojännitekäyrät menevät päällekkäin — lepopotentiaalissa osa kanavista on aktivoitunut mutta ei vielä inaktivoitunut, mikä sallii tasapainotilan kalsiumsisäänvirtauksen.",
+    s2p2: "Tämä ikkunavirta ei ole vika vaan ominaisuus: se tuottaa hitaan diastolisen depolarisaation, joka ajaa SA-solmun kohti kynnystä ja tuottaa seuraavan sydämenlyönnin. Ikkunavirta syntyy koska T-tyypin kanavien aktivaatio- ja inaktivaatiojännitekäyrät menevät päällekkäin — lepopotentiaalissa osa kanavista on aktivoitunut mutta ei vielä inaktivoitunut, mikä sallii tasapainotilan kalsiumsisäänvirtauksen.",
     s2p3: "Koska T-tyypin kanavat toimivat lepopotentiaalissa — toisin kuin L-tyypin kanavat, jotka vaativat aktiopotentiaalidepolarisaation — ne ovat jatkuvasti alttiita sähkömagneettisten kenttien häiriöille. Pienetkin EMF:n aiheuttamat muutokset kalvojännitteessä voivat muuttaa ikkunavirran osuutta, modifioiden diastolisen depolarisaation nopeutta ja siten sykevälivaihtelua.",
 
     s3Title: "HRV — varhaisin EMF-biomarkeri",
@@ -164,9 +164,9 @@ const COPY = {
     s7Title: "Vuorokausirytmiin sidottu arytmiahypoteesi",
     s7Text: "Jos CRY2-TRPC1-signalointi on aktiivista kardiomyosyyteissä, vaikutukset yölliselle sähkömagneettiselle altistukselle ovat merkittäviä. Puhelinten näyttöjen sininen valo aktivoi CRY2:n, joka säätelee TRPC1-välitteistä kalsiumin sisäänvirtausta. Yöllä, kun vuorokausirytmi odottaa pimeyttä, sinisen valon altistus yhdistettynä laitteen RF-EMF:ään luo kaksoisperturbaation: CRY2:n aktivaatio avaa kalsiumin sisäänvirtausreitin (TRPC1) samalla kun EMF häiritsee jänniteohjattuja kalsiumkanavia. Tämä yhteenliittymä ennustaa, että yöllinen puhelinkäyttö kantaa suurempaa arytmiariskiä kuin vastaava päiväkäyttö — testattava kronobiologinen ennuste.",
 
-    sec4Title: "EMF-evidenssi ja ennusteet",
+    sec4Title: "EMF-näyttö ja ennusteet",
 
-    s8Title: "Evidenssiyhteenveto",
+    s8Title: "Näyttöyhteenveto",
     s8Stats: [
       "Verenpaineen nousu EMF-altistetuilla rotilla (Mohamed) — yhdenmukainen kroonisen autonomisen häiriön kanssa SA-solmun kalsiumkanavien kautta",
       "Vasemman kammion hypertrofia kehittyy kroonisesta hypertensiosta — pitkäkestoisen hemodynamiikan stressin aiheuttama rakenteellinen seuraus",
@@ -175,7 +175,7 @@ const COPY = {
     ],
 
     s9Title: "BERM-ennusteet",
-    s9Text: "BERM-kehys tuottaa kolme spesifistä, testattavaa ennustetta sähkömagneettisten kenttien sydänvaikutuksista:",
+    s9Text: "BERM-kehys tuottaa kolme tarkkaa, testattavaa ennustetta sähkömagneettisten kenttien sydänvaikutuksista:",
     predictions: [
       {
         id: "HEART-1",
@@ -225,7 +225,7 @@ const COPY = {
     seeAlso: "Katso myös",
     brainModulome: "Aivojen moduloomi",
     predictionsPage: "Ennusteet — HEART-sarja",
-    evidencePage: "Evidenssirekisteri",
+    evidencePage: "Näyttörekisteri",
     modulomeOverview: "Moduloomin yleiskatsaus",
   },
   ja: {

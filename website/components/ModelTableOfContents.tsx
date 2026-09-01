@@ -21,6 +21,9 @@ const GROUPS: Record<string, TocGroup[]> = {
       sections: [
         { id: "physics-to-biology", label: "From physics to biology" },
         { id: "solar-biological", label: "Solar-biological connection" },
+        { id: "three-biological-bands", label: "Three frequency bands" },
+        { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
+        { id: "biology-to-civilization", label: "Biology to civilization" },
       ],
     },
     {
@@ -64,6 +67,9 @@ const GROUPS: Record<string, TocGroup[]> = {
       sections: [
         { id: "physics-to-biology", label: "Fysiikasta biologiaan" },
         { id: "solar-biological", label: "Aurinko-biologinen yhteys" },
+        { id: "three-biological-bands", label: "Kolme taajuuskaistaa" },
+        { id: "two-susceptibility-functions", label: "Kaksi herkkyysfunktiota" },
+        { id: "biology-to-civilization", label: "Biologiasta sivilisaatioon" },
       ],
     },
     {
@@ -97,7 +103,7 @@ const GROUPS: Record<string, TocGroup[]> = {
         { id: "asfr", num: "§5", label: "ASFR → TFR" },
         { id: "cohort", num: "§6", label: "Kohorttisignaali" },
         { id: "gme", num: "§7", label: "GME / R42" },
-        { id: "validation", num: "§8", label: "Validaatioraja" },
+        { id: "validation", num: "§8", label: "Todentamisraja" },
       ],
     },
   ],
@@ -107,6 +113,9 @@ const GROUPS: Record<string, TocGroup[]> = {
       sections: [
         { id: "physics-to-biology", label: "物理学から生物学へ" },
         { id: "solar-biological", label: "太陽-生物学的接続" },
+        { id: "three-biological-bands", label: "Three frequency bands" },
+        { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
+        { id: "biology-to-civilization", label: "Biology to civilization" },
       ],
     },
     {
@@ -150,6 +159,9 @@ const GROUPS: Record<string, TocGroup[]> = {
       sections: [
         { id: "physics-to-biology", label: "De la physique à la biologie" },
         { id: "solar-biological", label: "Connexion solaire-biologique" },
+        { id: "three-biological-bands", label: "Three frequency bands" },
+        { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
+        { id: "biology-to-civilization", label: "Biology to civilization" },
       ],
     },
     {
@@ -193,6 +205,9 @@ const GROUPS: Record<string, TocGroup[]> = {
       sections: [
         { id: "physics-to-biology", label: "물리학에서 생물학으로" },
         { id: "solar-biological", label: "태양-생물학적 연결" },
+        { id: "three-biological-bands", label: "Three frequency bands" },
+        { id: "two-susceptibility-functions", label: "Two susceptibility functions" },
+        { id: "biology-to-civilization", label: "Biology to civilization" },
       ],
     },
     {

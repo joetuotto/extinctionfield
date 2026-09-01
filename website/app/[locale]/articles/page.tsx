@@ -16,7 +16,7 @@ const COPY = {
   fi: {
     title: "Artikkelit",
     subtitle:
-      "Pitkämuotoiset esseet BERM-viitekehyksen tieteestä, historiasta ja vaikutuksista.",
+      "Laajat esseet BERM-viitekehyksen tieteestä, historiasta ja vaikutuksista.",
     minRead: "min lukuaika",
     readMore: "Lue artikkeli",
   },

@@ -104,7 +104,7 @@ export const ORPHANED_FINDINGS: readonly OrphanedFinding[] = [
     findingFr: "Activation de l'interrupteur génétique",
     findingKo: "유전자 스위치 활성화",
     criticismEn: "\"Incredibly implausible\"",
-    criticismFi: "\"Incredibly implausible\"",
+    criticismFi: "\"Äärimmäisen epäuskottavaa\"",
     criticismJa: "「信じられないほど非現実的」",
     criticismFr: "\"Incroyablement improbable\"",
     criticismKo: "\"믿을 수 없을 만큼 비현실적\"",

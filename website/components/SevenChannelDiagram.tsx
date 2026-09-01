@@ -22,7 +22,7 @@ const COPY = {
   fi: {
     title: "Seitsemän kausaalikanavaa",
     subtitle:
-      "Seitsemän VGCC-riippuvaista reittiä jotka konvergoivat neurokehitykseen",
+      "Seitsemän VGCC-riippuvaista reittiä jotka yhtyvät neurokehitykseen",
     source: ["EMF → VGCC", "Ca²⁺-häiriö"],
     target: ["Neurokehitykselliset", "seuraukset"],
     channels: [

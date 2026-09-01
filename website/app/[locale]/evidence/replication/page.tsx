@@ -389,16 +389,16 @@ const COPY = {
     title: "Replikaatiokriisin ratkaisu",
     subtitle:
       "Miksi EMF-biologia vaikuttaa ristiriitaiselta, Blackmanin viisi sekoittavaa tekijää ja viiden parametrin standardi",
-    backLink: "← Takaisin evidenssiin",
+    backLink: "← Takaisin näyttöön",
     seeAlso: "Katso myös",
-    evidencePortal: "Evidenssirekisteri",
+    evidencePortal: "Näyttörekisteri",
     modelPage: "BERM-malli",
     /* Section 1 */
     s1Title:
       "Miksi EMF-biologia vaikuttaa ristiriitaiselta — ja miksi se ei ole",
     s1p1: "Viisikymmentä vuotta keskeisin vastaargumentti ei-termisille sähkömagneettisille biovaikutuksille on ollut epäjohdonmukaisuus: ’Jos vaikutus on todellinen, miksi laboratoriot eivät pysty toistamaan sitä luotettavasti?’",
     s1p2: "Vastaus julkaistiin vuosina 1985–1991 Carl Blackmanin toimesta Yhdysvaltain ympäristönsuojeluvirastossa (EPA) — mutta sitä ei koskaan syntetisoitu yhtenäiseksi kehykseksi. Blackmanin omat kokeet tunnistivat viisi muuttujaa, jotka kontrolloimattomina tuottavat näennäisesti ristiriitaisia tuloksia SAMASTA taustailmiöstä. Kun kaikki viisi kontrolloidaan, tulokset ovat johdonmukaisia.",
-    s1p3: "BERM:n panos on tunnistaa, että nämä viisi muuttujaa ovat kaikki saman matemaattisen rakenteen ilmentymyä: Lindgrenin valintaehto χ(Ā), sovellettuna eri skaaloissa. Kukin muuttuja moduloi ’taustaa’, jota vasten biologinen järjestelmä reagoi EMF-häiriöön. Muuta taustaa, muuta vastetta — ei siksi että vaikutus olisi epäluotettava, vaan koska se on moniulotteisesti herkkä.",
+    s1p3: "BERM:n panos on tunnistaa, että nämä viisi muuttujaa ovat kaikki saman matemaattisen rakenteen ilmentymyä: Lindgrenin valintaehto χ(Ā), sovellettuna eri skaaloissa. Kukin muuttuja säätelee ’taustaa’, jota vasten biologinen järjestelmä reagoi EMF-häiriöön. Muuta taustaa, muuta vastetta — ei siksi että vaikutus olisi epäluotettava, vaan koska se on moniulotteisesti herkkä.",
     /* Section 2 */
     s2Title: "Viisi sekoittavaa tekijää",
     s2BlackmanLabel: "Blackmanin löydös",
@@ -413,10 +413,10 @@ const COPY = {
     s4Title: "Miten tämä ratkaisee näennäisen ristiriidan",
     s4p1: "Laboratorio A ja laboratorio B ovat eri pisteissä viisiulotteisessa parametriavaruudessa. Kun kontrolloimattomat parametrit eroavat, erilaiset tulokset ovat ODOTETTUJA, eivät poikkeavia. Blackman osoitti tämän suoraan: sama tutkija, samat laitteet, sai vahvistuksen, vähenemisen tai nollatuloksen pelkästään lämpötilasta riippuen.",
     s4p2: "EMF-biologian replikaatiokriisi ei ole ilmiön kriisi — se on kokeellisen kontrollin kriisi. Kun viisi sekoittavaa tekijää tunnistetaan ja dokumentoidaan, näennäiset ristiriidat ratkeavat johdonmukaiseksi, moniulotteiseksi annos-vastepinnaksi.",
-    s4p3: "Lindgrenin χ(Ā) tarjoaa tuon kehyksen: jokainen sekoittava tekijä on taustakenttä (terminen, optinen, magneettinen, kehityksellinen), joka moduloi herkkyyttä saman matemaattisen funktion kautta.",
+    s4p3: "Lindgrenin χ(Ā) tarjoaa tuon kehyksen: jokainen sekoittava tekijä on taustakenttä (terminen, optinen, magneettinen, kehityksellinen), joka säätelee herkkyyttä saman matemaattisen funktion kautta.",
     /* Section 5 */
     s5Title: "Seitsemän moderaattoria jotka ennustavat tutkimustuloksia",
-    s5Lead: "Analyysi yli 600 julkaistusta EMF-bioefektitutkimuksesta viidellä endpointilla (melatoniini, siittiöt, uni-EEG, DNA-vaurio, oksidatiivinen stressi) paljastaa, että 'ristiriitainen evidenssi' on seitsemän kontrolloimattoman moderaattorin artefakti. Kolme on tilastollisesti merkitseviä, kaksi on suoraan todistettu RCT-tasolla ja kaksi on kvantifioitu spesifisillä tutkimuksilla.",
+    s5Lead: "Analyysi yli 600 julkaistusta EMF-bioefektitutkimuksesta viidellä endpointilla (melatoniini, siittiöt, uni-EEG, DNA-vaurio, oksidatiivinen stressi) paljastaa, että 'ristiriitainen näyttö' on seitsemän kontrolloimattoman moderaattorin artefakti. Kolme on tilastollisesti merkitseviä, kaksi on suoraan todistettu RCT-tasolla ja kaksi on kvantifioitu tarkoilla tutkimuksilla.",
     s5StatsCaption: "Tilastolliset tulokset — khiin neliö -testit moderaattori x tulosyhteys",
     s5ModeratorCol: "Moderaattori",
     s5PosYesCol: "Pos%/Kyllä",

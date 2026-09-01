@@ -70,8 +70,8 @@ const COPY = {
   },
   fi: {
     title: "Viisi luonnollista Ca²⁺-modulaattoria",
-    subtitle: "Viisi luonnollista ainetta moduloi samaa Ca²⁺-kaskadia, jonka BERM tunnistaa EMF:n ensisijaiseksi biologiseksi reitiksi. Kaikki viisi ovat vähenemässä modernissa ympäristössä — samanaikaisesti — samalla kun EMF-altistus kasvaa. Tämä konvergentti menetys luo sivilisaatiotason haavoittuvuuden.",
-    backLink: "← Takaisin Evidenssiin",
+    subtitle: "Viisi luonnollista ainetta säätelee samaa Ca²⁺-kaskadia, jonka BERM tunnistaa EMF:n ensisijaiseksi biologiseksi reitiksi. Kaikki viisi ovat vähenemässä modernissa ympäristössä — samanaikaisesti — samalla kun EMF-altistus kasvaa. Tämä yhdensuuntainen menetys luo sivilisaatiotason haavoittuvuuden.",
+    backLink: "← Takaisin näyttöön",
     cautionText: "Tämä sivu käsittelee viittä luonnollista ainetta, joilla on Ca²⁺-moduloivia ominaisuuksia. Kunkin aineen yksittäinen mekanismi on vakiintunut. Yhdistetty viitekehys, joka linkittää niiden samanaikaisen vähenemisen EMF-haavoittuvuuteen, on BERM-synteesi.",
 
     modulatorsTitle: "Viisi modulaattoria",
@@ -108,7 +108,7 @@ const COPY = {
       },
     ],
 
-    convergentTitle: "Konvergentti menetys",
+    convergentTitle: "Yhdensuuntainen menetys",
     convergentPoints: [
       "Neljä viidestä luonnollisesta Ca²⁺-modulaattorista VÄHENEE samanaikaisesti.",
       "Samalla kun Ca²⁺-häiritsevä tekijä (EMF) LISÄÄNTYY.",
@@ -125,7 +125,7 @@ const COPY = {
       "Väestötason modulaattorien väheneminen + EMF:n kasvu pitäisi ennustaa sairaus­trendejä.",
     ],
 
-    predictionText: "Ennuste E-NEW-28: D-vitamiinin täydennys puutostilaisilla yksilöillä vähentää VGCC-ekspressiota ja vaimentaa EMF-indusoitua Ca²⁺-sisäänvirtausta. Ennuste E-NEW-35: Väestöillä, joilla on enemmän hivelitiumia vedessä, on matalampi EMF-liitteisten neurodegeneratiivisten tilojen esiintyvyys.",
+    predictionText: "Ennuste E-NEW-28: D-vitamiinin täydennys puutostilaisilla yksilöillä vähentää VGCC-ekspressiota ja vaimentaa EMF-aiheutettua Ca²⁺-sisäänvirtausta. Ennuste E-NEW-35: Väestöillä, joilla on enemmän hivelitiumia vedessä, on matalampi EMF-liitteisten neurodegeneratiivisten tilojen esiintyvyys.",
     predictionLink: "Ks. viimeisten kerrosten ennusteet →",
     predictionHref: "/predictions",
   },

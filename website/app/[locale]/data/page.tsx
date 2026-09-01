@@ -200,7 +200,7 @@ const t = {
   fi: {
     title: "Datalähteet",
     subtitle:
-      "BERM v17:n dataluettelo. Lähteet erotellaan sen mukaan, mitä ne todella mittaavat; saatavuutta ei käsitellä biologisen tai demografisen vaikutuksen evidenssinä.",
+      "BERM v17:n dataluettelo. Lähteet erotellaan sen mukaan, mitä ne todella mittaavat; saatavuutta ei käsitellä biologisen tai demografisen vaikutuksen näyttönä.",
     readinessTitle: "Mittausvalmius maatasoittain",
     readinessLead: "BERM v17 luokittelee jokaisen maan sen mukaan, mitä syötedataa on todella saatavilla. Tämä tekee eron ajoitusproxyn ja mittausvalmiin FieldStaten välillä näkyväksi piilossa pitämisen sijaan.",
     readinessNote: "Mittausvalmis tarkoittaa, että kaikki nimetyt fysikaaliset syötteet on dokumentoitu. Se ei tarkoita, että biologinen vaikutus, kausaaliarvio tai tuloskerroin olisi osoitettu.",
@@ -220,7 +220,7 @@ const t = {
     biomarkerDesc:
       "Referenssistandardit ja tutkimussynteesit rekisteröidyille elinpäätepisteille. Ne ohjaavat päätepistevalintaa ja protokollaa, eivät anna kansallista bioCap- tai TFR-kerrointa.",
     pipelineTitle: "Dataputki",
-    pipelineFlow: "Raakadatasetit kulkevat standardoidun putken läpi ennen malliin syöttämistä:",
+    pipelineFlow: "Raakadatasetit kulkevat vakioidun putken läpi ennen malliin syöttämistä:",
     pipelineNote:
       "Repo dokumentoi lähdeprovenienssin ja normalisoinnin erikseen. Maa–vuosi-teknologiasarja tukee kuvailevaa ajoitusta, kunnes se yhdistetään dokumentoituun paikalliseen FieldStateen ja rekisteröityyn päätepisteeseen; implisiittistä muunnosta annokseksi tai TFR-vaikutukseksi ei tehdä.",
     licensingTitle: "Lisensointi",

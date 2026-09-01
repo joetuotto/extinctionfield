@@ -48,17 +48,17 @@ const COPY = {
     predictionHref: "/predictions",
   },
   fi: {
-    title: "Kolmoisisku: Konvergentti tuho",
-    subtitle: "Kolme erillistä kolmoisiskua — testosteroni, hedelmällisyys ja kognitio ovat kukin hyökkäyksen kohteena kolmea itsenäistä reittiä pitkin samanaikaisesti. Tämä ei ole redundanssia; se on konvergenttia tuhoa saman ylävirran mekanismin kautta.",
-    backLink: "← Takaisin Evidenssiin",
-    cautionText: "Tämä sivu dokumentoi kolme itsenäistä konvergenssipistettä, joissa BERM-mekanismi hyökkää samanaikaisesti samaa kohdetta vastaan kolmea erillistä reittiä pitkin. Jokainen reitti on verifioitu itsenäisesti, mutta yhdistettyä vaikutusta ei ole testattu.",
+    title: "Kolmoisisku: Yhdensuuntainen tuho",
+    subtitle: "Kolme erillistä kolmoisiskua — testosteroni, hedelmällisyys ja kognitio ovat kukin hyökkäyksen kohteena kolmea itsenäistä reittiä pitkin samanaikaisesti. Tämä ei ole redundanssia; se on yhdensuuntaista tuhoa saman ylävirran mekanismin kautta.",
+    backLink: "← Takaisin näyttöön",
+    cautionText: "Tämä sivu dokumentoi kolme itsenäistä yhdentymispistettä, joissa BERM-mekanismi hyökkää samanaikaisesti samaa kohdetta vastaan kolmea erillistä reittiä pitkin. Jokainen reitti on todennettu itsenäisesti, mutta yhdistettyä vaikutusta ei ole testattu.",
 
     tTitle: "Testosteronin kolmoisisku",
     tLead: "Kolme itsenäistä reittiä testosteronin laskuun — sentraalinen, gonadaalinen ja ristiakseli — kaikki lähtöisin samasta EMF → Ca²⁺ ylävirran mekanismista.",
     tRoutes: [
       { route: "Sentraalinen (VK13)", path: "EMF → hypotalamuksen vesikkelit↓ → GnRH-pulssitaajuus↓ → LH↓ → T↓", evidence: "[[ref:kim2019|Kim 2019]]: 835 MHz, 12 vk → synapsiini I/II↓, synaptotagmiini 1↓ hypotalamuksessa", status: "confirmed" },
       { route: "Gonadaalinen (VK15)", path: "EMF → Leydig-solu → StAR-proteiini↓ → kolesterolin kuljetus estetty → T↓", evidence: "Useita tutkimuksia: RF → Leydig-morfologiamuutokset, StAR↓, annosriippuvainen T↓", status: "confirmed" },
-      { route: "Ristiakseli (VK22)", path: "EMF → HPA → kortisoli↑ → GnIH↑ → GnRH↓ → LH↓ → T↓", evidence: "RF9 palautti T:n kortisolikäsitellyissä kädellisisssä ([[ref:rf9_cortisol_2021|PMC7946976]]); GnIH-hiljennys palautti hedelmällisyyden", status: "confirmed" },
+      { route: "Ristiakseli (VK22)", path: "EMF → HPA → kortisoli↑ → GnIH↑ → GnRH↓ → LH↓ → T↓", evidence: "RF9 palautti T:n kortisolikäsitellyissä kädellisissä ([[ref:rf9_cortisol_2021|PMC7946976]]); GnIH-hiljennys palautti hedelmällisyyden", status: "confirmed" },
     ],
     tConclusion: "Jokainen reitti yksin tuottaa maltillisen T-laskun. Yhdessä ne luovat väestötason testosteronikriisin, jonka Mazur havaitsi (T↓ painonmuutoksista riippumatta) ja selittävät miksi yksikään yksittäinen elämäntapatekijä ei selitä laskua.",
 
@@ -72,13 +72,13 @@ const COPY = {
     fConclusion: "Hedelmällisyyden kolmoisisku selittää laskevat siittiömäärät (-50 % vuodesta 1973), laskevat IVF-onnistumisprosentit korkean EMF:n laboratorioissa ja väestötason TFR-laskun joka korreloi EMF-infrastruktuurin kanssa (R²=0,851 54 maassa).",
 
     cTitle: "Kognition kolmoisisku",
-    cLead: "Kolme itsenäistä reittiä kognitiiviseen heikkenemiseen — stressivälitteinen, neurotrofinen ja inflammatorinen — konvergoivat hippokampuksen toimintaan.",
+    cLead: "Kolme itsenäistä reittiä kognitiiviseen heikkenemiseen — stressivälitteinen, neurotrofinen ja inflammatorinen — yhtyvät hippokampuksen toimintaan.",
     cRoutes: [
       { route: "Stressi (VK14)", path: "EMF → HPA → kortisoli↑ → hippokampuksen dendriittien vetäytyminen + neurogeneesin loppuminen", evidence: "Sapolsky 2009: krooninen kortisoli → hippokampuksen volyymin menetys; kortisoli→AD (Frontiers 2026)", status: "confirmed" },
       { route: "Neurotrofinen (VK23)", path: "RF → BDNF↓ hippokampuksessa → dendriittien piikkien menetys + muistihäiriö", evidence: "RF 2650 MHz → BDNF↓ + GABA↓ ([[ref:bdnf_rf_2023|PMC10275548]]); 835 MHz postnataalinen → dendriittien piikkien menetys ([[ref:bdnf_rf_dev_2021|PMC8159076]])", status: "confirmed" },
       { route: "Inflammatorinen (VK24)", path: "EMF → melatoniini↓ → Per2↓ → suoliston este↓ → LPS → neurotulehdus → hippokampaalinen neurogeneesi↓", evidence: "Per2 KO → suoliston este↓ → LPS → hippokampaalinen neurogeneesi↓ → masennus ([[ref:gut_per2_2026|PMC12631932]])", status: "confirmed" },
     ],
-    cConclusion: "Kognition kolmoisisku selittää kasvavat kognitiivisen heikkenemisen, masennuksen ja neurodegeneratiivisten sairauksien luvut, joita ei voi selittää pelkällä ikääntymisellä. Kaikki kolme reittiä konvergoivat hippokampukseen — aivojen muistikeskukseen ja HPA:n negatiiviseen palautekeskukseen.",
+    cConclusion: "Kognition kolmoisisku selittää kasvavat kognitiivisen heikkenemisen, masennuksen ja neurodegeneratiivisten sairauksien luvut, joita ei voi selittää pelkällä ikääntymisellä. Kaikki kolme reittiä yhtyvät hippokampukseen — aivojen muistikeskukseen ja HPA:n negatiiviseen palautekeskukseen.",
 
     metaTitle: "Rakenteen tunnistaminen",
     metaLead: "Kolmoisiskumalli ei ole sattumaa — se on rakenteellista. VGCC → Ca²⁺ -mekanismi on KAIKKIEN kolmen kohdejärjestelmän ylävirrassa. Koska Ca²⁺-signalointi kontrolloi hormoniseritystä, siittiötoimintaa JA hermosolujen plastisuutta, yksi ylävirran häiriö hyökkää väistämättä kaikkia kolmea vastaan samanaikaisesti. Tämä on yhtenäisen mekanismin selitysvoima.",

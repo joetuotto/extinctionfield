@@ -133,7 +133,7 @@ const COPY = {
     gene: "Geeni",
     cellType: "Solutyyppi",
     function: "Toiminto",
-    level: "Evidenssitaso",
+    level: "Näyttötaso",
     channelVal: "Cav1.3 (L-tyyppi)",
     geneVal: "CACNA1D",
     cellTypeVal: "Sisäiset karvasolut (IHC)",
@@ -156,7 +156,7 @@ const COPY = {
     /* 03 Inflammaging-mekanismi */
     s3Title: "Inflammaging-mekanismi",
     s3p1:
-      "Aging Cell 2024 -tutkimus: IL-6-riippuvainen inflammaging ylössäätelee Cav1.3-ekspressiota sisäisissä karvasoluissa. Krooninen matala-asteinen tulehdus, ikääntymisen tunnusmerkki (inflammaging), nostaa kiertotien ja paikallisia IL-6-tasoja. IL-6-signalointi JAK/STAT-reittien kautta lisää CACNA1D-transkriptiota, mikä johtaa korkeampaan Cav1.3-kanavatiheyteen IHC-kalvolla.",
+      "Aging Cell 2024 -tutkimus: IL-6-riippuvainen inflammaging ylössäätelee Cav1.3-ekspressiota sisäisissä karvasoluissa. Krooninen matala-asteinen tulehdus, ikääntymisen tunnusmerkki (inflammaging), nostaa kiertävien ja paikallisia IL-6-tasoja. IL-6-signalointi JAK/STAT-reittien kautta lisää CACNA1D-transkriptiota, mikä johtaa korkeampaan Cav1.3-kanavatiheyteen IHC-kalvolla.",
     s3p2:
       "Krooninen Cav1.3-ylössäätely johtaa liialliseen Ca²⁺-sisäänvirtaukseen IHC:n nauhasynapsissa. Tuloksena syntynyt kalsiumin ylikuormitus ajaa eksitotoksista vauriota spiraaliganglioneuroneille — sama glutamaattieksitotoksisuusmekanismi kuin neurodegeneratiivisissa sairauksissa. Tämä mekanismi selittää, miksi ikääntymiseen liittyvä kuulonmenetys (presbyakusis) kiihtyy henkilöillä, joilla on korkeampi systeeminen tulehdus.",
 
@@ -170,7 +170,7 @@ const COPY = {
     s5Chain:
       "Krooninen EMF-altistus → matala-asteinen tulehdus → IL-6 ↑ → Cav1.3 ↑ → Ca²⁺-ylikuormitus → kiihtynyt kuulovaurio",
     s5Text:
-      "BERM-kehys yhdistää EMF-altistuksen kuulonmenetykseen tulehdusreitin kautta. Krooninen EMF-altistus indusoi matala-asteisen systeemisen tulehduksen (dokumentoitu useissa tutkimuksissa). Kohonnut IL-6 ylössäätelee Cav1.3:a IHC:issä (Aging Cell 2024). Tuloksena syntynyt Ca²⁺-dysregulaatio kiihdyttää sekä kuulonmenetystä että tinnituksen alkamista. Tämä reitti on synergistinen akustisen vaurion kanssa: EMF-indusoitu Cav1.3-ylössäätely laskee meluvauriokynnystä.",
+      "BERM-kehys yhdistää EMF-altistuksen kuulonmenetykseen tulehdusreitin kautta. Krooninen EMF-altistus aiheuttaa matala-asteisen systeemisen tulehduksen (dokumentoitu useissa tutkimuksissa). Kohonnut IL-6 ylössäätelee Cav1.3:a IHC:issä (Aging Cell 2024). Tuloksena syntynyt Ca²⁺-dysregulaatio kiihdyttää sekä kuulonmenetystä että tinnituksen alkamista. Tämä reitti on synergistinen akustisen vaurion kanssa: EMF-aiheutettu Cav1.3-ylössäätely laskee meluvauriokynnystä.",
 
     /* --- OSIO 3: Bluetooth/kuulokkeiden EMF-läheisyys --- */
     s3SectionTitle: "Bluetooth/kuulokkeiden EMF-läheisyys",
@@ -194,7 +194,7 @@ const COPY = {
     /* 08 BERM-ennuste */
     s8Title: "BERM-ennuste",
     s8Text:
-      "BERM-kehys ennustaa, että Bluetooth-kuulokkeiden EMF häiritsee IHC:iden Cav1.3-kanavia, aiheuttaen Ca²⁺-dysregulaatiota joka on synergistinen akustisen vaurion kanssa. Tämä tuottaa spesifisen, testattavan ennusteen:",
+      "BERM-kehys ennustaa, että Bluetooth-kuulokkeiden EMF häiritsee IHC:iden Cav1.3-kanavia, aiheuttaen Ca²⁺-dysregulaatiota joka on synergistinen akustisen vaurion kanssa. Tämä tuottaa tarkan, testattavan ennusteen:",
     s8Prediction: {
       id: "HEAR-1",
       text: "Bluetooth-kuulokkeiden käyttöaika korreloi subkliinisen kuulonmenetyksen kanssa (mitattuna laajennetulla korkeataajuusaudiometrialla tai otoakustisilla emissioilla) kun äänenvoimakkuustaso ja melualtistushistoria kontrolloidaan. Vaikutus on annosriippuvainen päivittäisistä käyttötunneista ja säilyy akustisen altistuksen vakioinnin jälkeen.",
@@ -216,7 +216,7 @@ const COPY = {
         citation: "Brain 2026",
         referenceId: "brain-2026-cav32-human-drg",
         finding:
-          "Cav3.2-kanavan karakterisointi ihmisen DRG-neuroneissa — vahvistaa jänniteohjattujen kalsiumkanavien mekanismit perifeerisissä sensorisissa neuroneissa, jotka ovat relevantteja simpukan reitille.",
+          "Cav3.2-kanavan luonnehdinta ihmisen DRG-neuroneissa — vahvistaa jänniteohjattujen kalsiumkanavien mekanismit perifeerisissä sensorisissa neuroneissa, jotka ovat relevantteja simpukan reitille.",
       },
     ],
 
@@ -228,7 +228,7 @@ const COPY = {
     seeAlso: "Katso myös",
     brainModulome: "Aivojen moduloomi",
     predictionsPage: "Ennusteet — HEAR-1",
-    evidencePage: "Evidenssirekisteri",
+    evidencePage: "Näyttörekisteri",
   },
   ja: {
     title: "内耳",

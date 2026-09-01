@@ -334,13 +334,13 @@ const COPY = {
     title: "Teknologiakohtainen altistus",
     subtitle:
       "Moderni EMF-altistus ei ole yksi signaali — se on 5–12 samanaikaista lähdettä, jotka kattavat 10 kertaluokkaa taajuudessa. Jokainen teknologiasukupolvi lisäsi uuden kerroksen; CaMKII integroi ne kaikki.",
-    backLink: "← Takaisin evidenssiin",
+    backLink: "← Takaisin näyttöön",
     elfTitle: "ELF-priming-hypoteesi",
     elfBody:
       "Sähköverkko ei ainoastaan lisää 50/60 Hz -altistusta. Se ylössäätelee jänniteherkkien kalsiumkanavien ekspressiota hermosoluissa (P/Q-, N- ja R-alatyypit kasvavat 8–10 päivän ELF-altistuksen jälkeen — [[ref:sun2016_elf_vgcc|PMC4757866]]). Tämä tarkoittaa, että sähköverkko tekee jokaisesta solusta herkemmän kaikille muille EMF-lähteille: WiFi, 4G, 5G, LED, Bluetooth.",
     elfImplication:
       "Tämä selittää miksi asuinalueen sähkönkulutus on hedelmällisyyslaskun vahvin ennustaja (kokonaismallin RMSE 0,522) kun taas matkapuhelintiheys on heikoin (RMSE 1,053): sähkönkulutus mittaa priming-tilaa, ei pelkkää yhtä altistuslähdettä.",
-    elfWithout: "Ilman ELF-primingia (Amish, Tsimane)",
+    elfWithout: "Ilman ELF-esialtistusta (Amish, Tsimane)",
     elfWithoutDetail:
       "VGCC-ekspressio = perusviiva. RF-stimulus → Ca²⁺-vaste = X. CaMKII-kynnys EI ylity. Palautuminen täydellinen.",
     elfWith: "ELF-priming (sähköistetty koti)",
@@ -353,7 +353,7 @@ const COPY = {
     superMech1Title: "CaMKII-kynnysintegraatio",
     superMech1:
       "50 Hz → Cav3 (T-tyyppi) → Ca²⁺ +60 % kynnyksestä. 10 Hz WiFi → CRY → melatoniini↓ → +40 %. 217 Hz GSM → IFO → +60 %. 2,4 GHz WiFi → Cav1.2 → +30 %. 20–100 kHz LED → Cav1.2 → +20 %. Yksin: mikään ei ylitä 100 %. Yhdessä: 60+40+60+30+20 = 210 % → CaMKII autofosforyloituu → PYSYVÄ.",
-    superMech2Title: "ELF-indusoitu kanavien ylössäätely",
+    superMech2Title: "ELF-aiheutettu kanavien ylössäätely",
     superMech2:
       "50 Hz jatkuva → VGCC-ekspressio ↑ ([[ref:sun2016_elf_vgcc|PMC4757866]]) → sama RF/IF-stimulus → suurempi Ca²⁺-vaste → ELF-priming × RF-triggeri = multiplikatiivinen.",
     superMech3Title: "Palautumisen estyminen",
@@ -375,7 +375,7 @@ const COPY = {
         healthSignal:
           "Unihäiriöt syntyvät modernina ilmiönä. Varhaiset syöpäklusterit voimalinjojen lähellä (Wertheimer 1979).",
         keyInsight:
-          "Tämä kerros ei vain lisää ELF-altistusta — se PRIMAA kaikki solut tehostetulle herkkyydelle jokaiselle myöhemmälle teknologiakerrokselle.",
+          "Tämä kerros ei vain lisää ELF-altistusta — se HERKISTÄÄ kaikki solut tehostetulle herkkyydelle jokaiselle myöhemmälle teknologiakerrokselle.",
       },
       {
         id: "layer2",
@@ -448,7 +448,7 @@ const COPY = {
 
     profilesTitle: "14 teknologiaprofiilia",
     profilesLead:
-      "Jokainen teknologia tuottaa spesifin EMF-allekirjoituksen erillisin biologisin implikaatioin. Kanava, modulaatio, läheisyys ja käyttösuhde ratkaisevat — eivät pelkkä taajuus.",
+      "Jokainen teknologia tuottaa spesifin EMF-allekirjoituksen erillisin biologisin seurauksin. Kanava, modulaatio, läheisyys ja käyttösuhde ratkaisevat — eivät pelkkä taajuus.",
 
     why2012Title: "Miksi 2012?",
     why2012Body:
@@ -458,7 +458,7 @@ const COPY = {
 
     modelLink: "Kolmikanavamekanismi",
     predictionsLink: "Kaikki ennusteet",
-    pharmLink: "Farmakologinen evidenssi",
+    pharmLink: "Farmakologinen näyttö",
   },
   ja: {
     title: "技術別の曝露",

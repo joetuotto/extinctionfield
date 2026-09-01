@@ -46,9 +46,9 @@ const COPY = {
     predictionHref: "/predictions",
   },
   fi: {
-    title: "Reproduktiivinen kaari",
+    title: "Lisääntymiskykyyn liittyvä kaari",
     subtitle: "Hedelmöityksestä ensimmäiseen elinvuoteen jokainen kriittinen lisääntymisen vaihe on riippuvainen Ca²⁺-kanavista. CatSper-kanavat ohjaavat siittiöitä (VK17), Cav1.2 kontrolloi kohdun supistuksia (VK44), nifedipiini estää ennenaikaista synnytystä, pre-eklampsia sisältää Cav1.2+ROS-dysregulaation (VK48), ja kätkytkuolema seuraa melatoniinin ehtymistä vastasyntyneellä.",
-    backLink: "← Takaisin Evidenssiin",
+    backLink: "← Takaisin näyttöön",
     cautionText: "Tämä sivu esittää Ca²⁺-kanavien osallisuuden lisääntymisen eri vaiheissa. Jokainen mekanismi on yksilöllisesti vakiintunut. Yhtenäinen kaari joka yhdistää EMF:n lisääntymistuloksiin kaikkien vaiheiden läpi on BERM-hypoteesi.",
 
     arcTitle: "Kaari",
@@ -56,7 +56,7 @@ const COPY = {
     arcSteps: [
       { step: "Vaihe 1: Hedelmöitys", detail: "CatSper (Ca²⁺-kanava) ohjaa siittiön munasoluun. EMF→CatSper-aktivaatio→ennenaikainen hyperaktivaatio (VK17). Jo vahvistettu: siittiöiden liikkuvuus↓ RF-altistuksella." },
       { step: "Vaihe 2: Raskaushormonit", detail: "P4:E2-suhde säätelee Cav1.2:ta kohdussa. P4↓ → Cav1.2↑ → kohdun ärtyvyys↑. EMF voisi laskea P4-kynnystä ennenaikaisen supistuksen alkamiselle." },
-      { step: "Vaihe 3: Ennenaikainen synnytys", detail: "Nifedipiini (Ca²⁺-kanavasalpaaja) on ENSILINJAN tokolyyttinen lääke. Jos Ca²⁺-salpaaja estää ennenaikaista synnytystä, Ca²⁺-ylikuormitus on syy. Cochrane-evidenssi: nifedipiini parempi kuin beta-agonistit." },
+      { step: "Vaihe 3: Ennenaikainen synnytys", detail: "Nifedipiini (Ca²⁺-kanavasalpaaja) on ENSILINJAN tokolyyttinen lääke. Jos Ca²⁺-salpaaja estää ennenaikaista synnytystä, Ca²⁺-ylikuormitus on syy. Cochrane-näyttö: nifedipiini parempi kuin beta-agonistit." },
       { step: "Vaihe 4: Pre-eklampsia", detail: "ET-1→Cav1.2-aktivaatio istukassa. ROS + Ca²⁺-dysregulaatio → endoteelin toimintahäiriö → hypertensio. Nifedipiiniä käytetään myös pre-eklampsian verenpaineen hallintaan." },
       { step: "Vaihe 5: Neonataalikausi", detail: "Rintamaidon melatoniini → vauvan vuorokausirytmin ohjelmointi. EMF→melatoniini↓ äidissä → vähemmän melatoniinin siirtoa → kätkytkuoleman haavoittuvuus (VK18)." },
     ],
@@ -64,13 +64,13 @@ const COPY = {
     proofTitle: "Nifedipiini: Todiste",
     proofLead: "Sama lääke — nifedipiini — hoitaa kolmea erillistä lisääntymistilaa. Kaikki kolme toimivat Ca²⁺-kanavasalpauksen kautta.",
     proofPoints: [
-      { use: "Tokolyysi (ennenaikainen synnytys)", mechanism: "Salpaaa Cav1.2:n kohdun sileässä lihaksessa → vähentää supistuksia → viivästyttää ennenaikaista synnytystä", note: "Ensilinjan tokolyyttinen lääke monissa maissa; Cochrane-vahvistettu paremmuus beta-agonisteihin nähden" },
-      { use: "Pre-eklampsian hypertensio", mechanism: "Salpaaa Cav1.2:n verisuonten sileässä lihaksessa → vasodilataatio → verenpaineen lasku", note: "Käytetään magnesiumsulfaatin (myös Ca²⁺-kanavamodulaattori) kanssa vaikeassa pre-eklampsiassa" },
-      { use: "Raynaud'n nännin vasospasmi", mechanism: "Salpaaa Cav1.2:n nännin verisuonissa → estää vasospasmin → mahdollistaa imetyksen jatkumisen", note: "Määrätään imetyksen aikana — Ca²⁺-kanavasalpaus jälleen toisessa lisääntymiskudoksessa" },
+      { use: "Tokolyysi (ennenaikainen synnytys)", mechanism: "Salppaa Cav1.2:n kohdun sileässä lihaksessa → vähentää supistuksia → viivästyttää ennenaikaista synnytystä", note: "Ensilinjan tokolyyttinen lääke monissa maissa; Cochrane-vahvistettu paremmuus beta-agonisteihin nähden" },
+      { use: "Pre-eklampsian hypertensio", mechanism: "Salppaa Cav1.2:n verisuonten sileässä lihaksessa → vasodilataatio → verenpaineen lasku", note: "Käytetään magnesiumsulfaatin (myös Ca²⁺-kanavamodulaattori) kanssa vaikeassa pre-eklampsiassa" },
+      { use: "Raynaud'n nännin vasospasmi", mechanism: "Salppaa Cav1.2:n nännin verisuonissa → estää vasospasmin → mahdollistaa imetyksen jatkumisen", note: "Määrätään imetyksen aikana — Ca²⁺-kanavasalpaus jälleen toisessa lisääntymiskudoksessa" },
     ],
-    proofConclusion: "Jos lääke toimii salpaaamalla Ca²⁺-kanavia, niin Ca²⁺-kanavien yliaktivaatio on ongelma. EMF tarjoaa mekanismin tuolle yliaktivaatiolle.",
+    proofConclusion: "Jos lääke toimii salpaamalla Ca²⁺-kanavia, niin Ca²⁺-kanavien yliaktivaatio on ongelma. EMF tarjoaa mekanismin tuolle yliaktivaatiolle.",
 
-    epidTitle: "Epidemiologinen konvergenssi",
+    epidTitle: "Epidemiologinen yhdentyminen",
     epidLead: "Useat lisääntymistulokset huononevat samanaikaisesti — johdonmukaista yhteisen ympäristösyyn kanssa joka vaikuttaa Ca²⁺-kanaviin.",
     epidPoints: [
       "Ennenaikaisen synnytyksen osuudet kasvaneet ~36 % (1990–2006) monissa maissa",

@@ -107,8 +107,8 @@ const COPY = {
   fi: {
     title: "Neljä neurodegeneraatiota: Yksi mekanismi",
     subtitle:
-      "Alzheimerin tauti, MS-tauti, Parkinsonin tauti ja ALS hyökkäävät kukin eri solutyyppiin Ca²⁺-riippuvaisten mekanismien kautta. Jokaisella on farmakologinen validaatio Ca²⁺-kohdentavien lääkkeiden kautta. Sama kaskadi, neljä ilmenemismuotoa.",
-    backLink: "← Takaisin Evidenssiin",
+      "Alzheimerin tauti, MS-tauti, Parkinsonin tauti ja ALS hyökkäävät kukin eri solutyyppiin Ca²⁺-riippuvaisten mekanismien kautta. Jokaisella on farmakologinen todentaminen Ca²⁺-kohdentavien lääkkeiden kautta. Sama kaskadi, neljä ilmenemismuotoa.",
+    backLink: "← Takaisin näyttöön",
     cautionText:
       "Tämä sivu esittää Ca²⁺-yhteyden neljän neurodegeneratiivisen sairauden välillä. Kunkin sairauden Ca²⁺-mekanismi on itsenäisesti vahvistettu. Yhdistävä EMF-yhteys on edelleen BERM-hypoteesi.",
     labels: { cellType: "Solutyyppi", caMechanism: "mekanismi", bermConnection: "BERM-yhteys", protectiveDrug: "Suojaava lääke", occupationalData: "Ammattidata" },
@@ -119,7 +119,7 @@ const COPY = {
         name: "Alzheimerin tauti",
         cellType: "Hippokampus / aivokuori",
         caMechanism:
-          "PGC + kortisoli↑ + melatoniini↓. Solunsälöinen Ca²⁺-dysregulaatio on VARHAINEN tapahtuma joka edeltää amyloidin kertymistä. Ca²⁺ ohjaa Aβ:n toksisiksi oligomeereiksi harmittomien fibrillien sijaan.",
+          "PGC + kortisoli↑ + melatoniini↓. Solunsisäinen Ca²⁺-dysregulaatio on VARHAINEN tapahtuma joka edeltää amyloidin kertymistä. Ca²⁺ ohjaa Aβ:n toksisiksi oligomeereiksi harmittomien fibrillien sijaan.",
         bermLayers: "VK14 (kortisoli→hippokampus), VK3 (PGC→melatoniini), S6",
         protectiveDrug:
           "Semaglutiidi (GLP-1R→Ca²⁺), melatoniini",
@@ -128,10 +128,10 @@ const COPY = {
         name: "MS-tauti",
         cellType: "OPC / myeliini",
         caMechanism:
-          "Cav1.2 → OPC-erilaistuminen → myelinaatio. L-tyypin VGCC-aktiivisuus vaaditaan oligodendrosyyttien esiaste solujen erilaistumiseen ja myeliinituppien muodostamiseen. Häiriintynyt Cav1.2-ajoitus → myelinaation epäonnistuminen.",
+          "Cav1.2 → OPC-erilaistuminen → myelinaatio. L-tyypin VGCC-aktiivisuus vaaditaan oligodendrosyyttien esiastesolujen erilaistumiseen ja myeliinituppien muodostamiseen. Häiriintynyt Cav1.2-ajoitus → myelinaation epäonnistuminen.",
         bermLayers: "VK20",
         protectiveDrug:
-          "— (mutta EMF-indusoitu Cav1.2-dysregulaatio → myelinaation ajoitushäiriö)",
+          "— (mutta EMF-aiheutettu Cav1.2-dysregulaatio → myelinaation ajoitushäiriö)",
       },
       {
         name: "Parkinsonin tauti",
@@ -158,7 +158,7 @@ const COPY = {
     commonPoints: [
       "Kaikki neljä sairautta sisältävät Ca²⁺-ylikuorman spesifisissä solutyypeissä",
       "Jokaisella solutyypillä on ainutlaatuinen haavoittuvuus: hippokampuksen neuronit kortisolivälitteiselle Ca²⁺:lle, OPC:t Cav1.2-ajoitukselle, SNpc-neuronit Cav1.3-tahdistinkuormalle, motoneuronit AMPA-välitteiselle Ca²⁺:lle",
-      "Farmakologinen validaatio: Ca²⁺-mekanismiin kohdistuvat lääkkeet osoittavat hyötyä kussakin sairaudessa",
+      "Farmakologinen todentaminen: Ca²⁺-mekanismiin kohdistuvat lääkkeet osoittavat hyötyä kussakin sairaudessa",
       "EMF tarjoaa yhteisen ympäristötekijän VGCC-reitin kautta",
     ],
 

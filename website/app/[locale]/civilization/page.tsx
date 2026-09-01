@@ -5,6 +5,9 @@ import { ArrowRight, AlertTriangle, Baby, Building2, Users, Brain, Heart, Shield
 import { pickCopy } from "@/lib/i18n";
 import { CitationLink } from "@/components/CitationLink";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { BiocapCivilizationChart, BiocapTimelineChart } from "@/components/BiocapCivilizationChart";
+import { CivilizationEssay } from "@/components/CivilizationEssay";
+import { MigrationGradientMap } from "@/components/MigrationGradientMap";
 
 const COPY = {
   en: {
@@ -633,6 +636,104 @@ const COPY = {
     animalsFellDesc: "If EMF is affecting biology at fundamental Ca²⁺ and CRY levels, then species with higher sensitivity should have declined first — and they did. Frogs (moist skin, direct Ca²⁺ coupling) began declining around 1987 as GSM rolled out. Bees (CRY-dependent navigation) collapsed in 2006 as cell towers reached rural areas. Insect biomass dropped 75% over 27 years. Bird populations followed. Mammals — including humans — are the least sensitive due to dry skin and large body mass, but the effects are cumulative over long lifespans.",
     animalsFellAnalogy: "The canary-in-the-coal-mine analogy is not metaphorical — it is mechanistic. The same ion channels, the same magnetoreceptors, the same Ca²⁺ signaling. The animals did not decline for separate reasons that happen to correlate. They declined through the same mechanism at different sensitivity thresholds.",
 
+    sHistLawTitle: "The Biological Law of Civilizations",
+    sHistLawLead: "Throughout recorded history, civilizations have followed a remarkably consistent pattern: rise, flourish, decline. Eleven independent thinkers — from Vico (1725) to Turchin (2023) — converged on the same observation without knowing each other's work. BERM proposes the missing mechanism: the electromagnetic environment modulates biological capacity, which in turn drives civilizational dynamics.",
+
+    sProphetsTitle: "The Prophets Were Right — And Wrong",
+    sProphetsLead: "Eleven serious thinkers across three centuries independently documented the same civilizational pattern. They disagreed about method, ideology, and scope. Yet they converged on one observation: civilizations do not progress linearly. They rise and fall in cycles, and the late stages are marked by declining birth rates, increasing hedonism, loss of collective will, and pessimism.",
+    sProphetsTable: [
+      { thinker: "Giambattista Vico", year: "1725", observation: "Recurring cycle of three ages (gods, heroes, men)", bermExplanation: "BioCap oscillation produces qualitatively different social phases" },
+      { thinker: "Oswald Spengler", year: "1918", observation: "Civilizations as organisms with lifespans", bermExplanation: "Biological substrate has a lifecycle driven by cumulative EMF exposure" },
+      { thinker: "Arnold Toynbee", year: "1934", observation: "Challenge-and-response across 21 civilizations", bermExplanation: "Biological capacity determines response quality; depleted populations fail challenges" },
+      { thinker: "Pitirim Sorokin", year: "1937", observation: "Sensate-Ideational cultural oscillation", bermExplanation: "Dopamine/serotonin balance shifts → sensate phase = low-DA, high-stimulation seeking" },
+      { thinker: "John Bagot Glubb", year: "1978", observation: "250-year empire lifespan, 6 stages", bermExplanation: "~250 years ≈ Suess cycle (200 yr) + biological inertia (~50 yr)" },
+      { thinker: "Joseph Tainter", year: "1988", observation: "Diminishing returns on complexity", bermExplanation: "Cognitive capacity decline (BDNF↓, cortisol↑) reduces ability to manage complexity" },
+      { thinker: "Ibn Khaldun", year: "1377", observation: "Asabiya (group solidarity) declines over 3-4 generations", bermExplanation: "Oxytocin↓ + testosterone↓ = reduced in-group cohesion — precisely asabiya loss" },
+      { thinker: "Peter Turchin", year: "2003", observation: "Secular cycles (~80-100 yr) within longer waves", bermExplanation: "Gleissberg cycle (88 yr) modulates BioCap within Suess cycle envelope" },
+      { thinker: "Neema Parvini", year: "2023", observation: "Synthesized all 11 thinkers; pattern is robust across frameworks", bermExplanation: "Convergence of independent observers = strong evidence for real phenomenon requiring explanation" },
+    ],
+
+    sSolarTitle: "Before and After Electrification",
+    sSolarLead: "Before electrification, the only significant electromagnetic influence on biology came from the sun. Solar activity oscillates in nested cycles: the 11-year Schwabe cycle, the 88-year Gleissberg cycle, and the ~200-year Suess/de Vries cycle. During grand solar minima, the electromagnetic burden on biology decreases and biological recovery occurs.",
+    sSolarFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ) + U(τ) + E(τ)] dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)] dτ",
+    sSolarFormulaTerms: [
+      "S(τ) = solar cycle superposition [0,1]",
+      "U(τ) = urbanization EMF component (slow, pre-electric)",
+      "E(τ) = electrification EMF component (rapid, post-1880)",
+      "σ(τ) = recovery suppression coefficient = min(E(τ)/E_max, 0.95)",
+      "χ(λ) = geomagnetic susceptibility coefficient (latitude-dependent)",
+      "α = biological recovery coefficient",
+    ],
+    sSolarPrePost: "Pre-electric (E=0): BioCap oscillates → cyclical civilizational dynamics. Post-electric (E≫S): BioCap declines monotonically → no recovery window.",
+    sSolarRenaissance: "Eight of ten major European renaissances occurred during or immediately following grand solar minima: the Italian Renaissance during the Spörer Minimum, the Scientific Revolution during the Maunder Minimum, German Romanticism during the Dalton Minimum.",
+
+    sMigrationTitle: "The Migration Gradient",
+    sMigrationLead: "The same biological gradient that drove the Germanic tribes into Rome, the Arabs into Byzantium, and the Mongols into Song China operates today. Sub-Saharan Africa — with the shortest cumulative electromagnetic exposure of any major population — has the highest biological capacity. The migration flows from Africa and the Middle East into Europe follow the gradient of biological contrast.",
+    sMigrationNote: "This is a biological gradient (environment, not genetics). Immigrant fertility converges to host-country levels within 1-2 generations — proving the mechanism is environmental, not genetic.",
+
+    sLastBarbarianTitle: "The 'Last Barbarian' Window",
+    sLastBarbarianText: "BERM predicts Africa's BioCap will begin declining with mobile penetration (~2010) and converge toward European levels by ~2070-2080. The window 2020-2060 may be the last period in which a population with substantially higher biological capacity exists anywhere on Earth. After that: global downward convergence with no biological reserve.",
+
+    sActivationTitle: "The Activation Cycle: Why New Powers Rise as Old Ones Decline",
+    sActivationLead: "Previous sections explained why civilizations decline. But decline alone does not explain history's recurring pattern of replacement. For every Rome that falls, there is a Germanic people that rises. For every Byzantium, an Arab expansion. For every Song Dynasty, a Mongol conquest.",
+    sActivationBody1: "The conventional narrative treats the newcomer as simply 'more aggressive' or 'more vigorous' — a cultural characterization that explains nothing. BERM's hormesis framework provides a biological mechanism.",
+    sActivationBody2: "The same solar activity that damages a high-EMF urban population stimulates a low-EMF nomadic population. This is not speculation — it is documented experimental physiology. Low-dose electromagnetic exposure produces measurable increases in testosterone, decreases in cortisol, and enhancement of immune function in laboratory animals. The mechanism is hormesis: a stress response that, at low doses, strengthens biological systems rather than damaging them.",
+    sActivationBody3: "A nomadic population living in the hormetic zone of the dose-response curve experiences the rising phase of the solar cycle as biological activation: testosterone rises, cortisol falls, fertility increases, immune function improves. Over two to three generations, this produces a demographic pulse — a surplus of young men with high biological capacity and no land or mates. This surplus is the 'barbarian at the gates.'",
+    sActivationBody4: "Simultaneously, the urban population in the damage zone experiences the same solar phase as additional biological erosion. The gradient between the two populations — one being activated, the other being depleted — grows from both sides simultaneously. When it exceeds a threshold, expansion follows. Not because of ideology or culture, but because of biology and demography.",
+    sActivationChartTitle: "Hormetic Dose–Response",
+    sActivationChartZone1: "Zone 1: Hormetic stimulation (nomad)",
+    sActivationChartZone2: "Zone 2: Transition (agrarian)",
+    sActivationChartZone3: "Zone 3: Damage (urban/electrified)",
+    sActivationChartX: "Total EMF load (Ā_geo + Ā_infra + Ā_EMF)",
+    sActivationChartY: "BioCap",
+    sActivationChartSun: "Same sun, opposite effects",
+    sActivationEpistemic: "",
+
+    sExpansionTitle: "Three Types of Expansion",
+    sExpansionCards: [
+      {
+        id: "α",
+        title: "Hormetic Activation",
+        examples: "Mongols 1206, Arabs 632, Vikings 793",
+        icon: "sun",
+        desc: "Solar maximum + nomadic population in the hormetic zone → testosterone rises, cortisol falls, fertility increases. Over 2–3 generations, a demographic pulse produces expansion. Low-dose exposure has been shown to increase testosterone and decrease cortisol in animal models.",
+        trigger: "Solar maximum + nomad = biological activation",
+      },
+      {
+        id: "β",
+        title: "Recovery Energy",
+        examples: "Age of Exploration 1492, Scientific Revolution 1687, Napoleonic era 1803",
+        icon: "moon",
+        desc: "Grand solar minimum → reduced electromagnetic burden → biological recovery over 50–80 years → accumulated biological capital → expansion or renaissance. Eight of ten major European renaissances occurred during or immediately after grand solar minima.",
+        trigger: "Grand minimum + recovery = creative surge",
+      },
+      {
+        id: "γ",
+        title: "Erosion Gradient",
+        examples: "Germanic migrations 375–476, Manchu → Ming China 1644, Africa → Europe 2000–",
+        icon: "gradient",
+        desc: "Sustained biological erosion in urban populations + intact nomadic/agrarian population at the frontier → cumulative BioCap difference. When the gradient exceeds a threshold, expansion follows. This type is not dependent on solar cycles — it is a continuous process requiring centuries of divergence.",
+        trigger: "Centuries of urban erosion + intact frontier = replacement",
+      },
+    ],
+
+    sThreeLawsTitle: "Three Historical Laws",
+    sThreeLaws: [
+      { id: "L1", title: "Civilizational birth requires a low-χ zone (25-35°N)", desc: "Biological stability → long-term development. Confirmed: p = 0.01 (birth regions vs expansions)." },
+      { id: "L2", title: "Creative renaissances cluster during grand solar minima at high-χ latitudes (45-60°N)", desc: "Maximum recovery modulation → maximum creative capital. Confirmed: 8/10 European renaissances." },
+      { id: "L3", title: "Empire rises begin during low solar activity", desc: "Biological recovery → capacity for expansion. Confirmed: rise events solar = 0.41 vs peak events = 0.73." },
+    ],
+
+    thThinker: "Thinker",
+    thYear: "Year",
+    thObservation: "Observation",
+    thBerm: "BERM Explanation",
+    biocapNormTitle: "BioCap Decay — Normalized Lifespan",
+    biocapTimeTitle: "BioCap Trajectories — Historical Timeline",
+    biocapXNorm: "Civilizational lifespan (%)",
+    biocapXTime: "Year",
+    biocapY: "BioCap",
+
     s10title: "Epistemic Boundaries",
     s10claims: [
       "Seven RCTs establish causal links between testosterone and specific behaviors in men.",
@@ -699,11 +800,11 @@ const COPY = {
     heroTrail:
       "Tämä sivu jäljittää tuon etenemisen — seitsemästä satunnaistetusta kontrolloidusta tutkimuksesta väestötason käyttäytymisdataan ja sivilisaation muutoksen dynamiikkaan.",
     levelNote:
-      "Tämä on mallin kolmas taso: Taso 1 on mekanismi (Malli), Taso 2 on evidenssi (Näyttö), Taso 3 on seuraukset (tämä sivu).",
+      "Tämä on mallin kolmas taso: Taso 1 on mekanismi (Malli), Taso 2 on näyttö (Näyttö), Taso 3 on seuraukset (tämä sivu).",
 
     s2title: "Kaksi rinnakkaista häiriötä",
     s2lead:
-      "EMF → VGCC → Ca²⁺ on sama mekanismi molemmilla sukupuolilla. Mutta koska hormonijärjestelmät eroavat, seuraukset ovat sukupuolispesifejä — ja komplementaarisia.",
+      "EMF → VGCC → Ca²⁺ on sama mekanismi molemmilla sukupuolilla. Mutta koska hormonijärjestelmät eroavat, seuraukset ovat sukupuolitarkkoja — ja komplementaarisia.",
     maleTitle: "Miesten häiriöprofiili",
     malePrimary: "Testosteroni ↓ (Cav3.2 → StAR)",
     maleSecondary: "Dopamiini ↓ (VTA Cav1.3)",
@@ -743,7 +844,7 @@ const COPY = {
         hormone: "Kortisoli",
         mechanism: "HPA-akselin hyperaktivaatio → krooninen kortisolielevatio",
         behavioral:
-          "Ahdistus ↑, sosiaalinen välttely ↑, testosteronivaikutuksen suppressio (kaksoishormonihypoteesi)",
+          "Ahdistus ↑, sosiaalinen välttely ↑, testosteronivaikutuksen vaimentuminen (kaksoishormonihypoteesi)",
         evidence: "[[ref:mehta2010_dual_hormone|Mehta & Josephs 2010]], meta n=8 538",
         magnitude:
           "Kortisolitrendit vähemmän tutkittuja kuin T — päätelty stressimarkkereiden kasvusta",
@@ -770,7 +871,7 @@ const COPY = {
         evidence:
           "Lukuisia systemaattisia katsauksia: naiset 2× ahdistus, 2× masennus. Sukuhormonivaihtelu → HPA-sensitisaatio (Li & Graham 2017, Lancet Psychiatry). Neuroinflammaatio sukupuolierot ([[ref:marano2026_female_neuroinflammation|PMC12843241, 2025]]).",
         magnitude:
-          "Naisten masennusprevalenssi kasvaa nopeammin kuin miesten vuodesta 2010 useimmissa maissa.",
+          "Naisten masennusesiintyvyys kasvaa nopeammin kuin miesten vuodesta 2010 useimmissa maissa.",
       },
       {
         hormone: "Oksitosiini",
@@ -786,9 +887,9 @@ const COPY = {
     ],
 
     s3title: "Kolmoislukko",
-    s3subtitle: "Miesten käyttäytymissuppressio",
+    s3subtitle: "Miesten käyttäytymisen tukahduttaminen",
     s3lead:
-      "Seitsemän satunnaistettua kontrolloitua tutkimusta osoittaa, että testosteroni säätelee kausaalisesti käyttäytymisiä, jotka ovat välttämättömiä sosiaalisille rakenteille. Kun testosteroni laskee väestötasolla, nämä käyttäytymiset suppressoituvat samanaikaisesti — luoden kolmoislukon miesten sosiaaliselle aloitteellisuudelle.",
+      "Seitsemän satunnaistettua kontrolloitua tutkimusta osoittaa, että testosteroni säätelee kausaalisesti käyttäytymisiä, jotka ovat välttämättömiä sosiaalisille rakenteille. Kun testosteroni laskee väestötasolla, nämä käyttäytymiset vaimenevat samanaikaisesti — luoden kolmoislukon miesten sosiaaliselle aloitteellisuudelle.",
     s3note:
       "Tämä osio dokumentoi miesten käyttäytymisprofiilin. Naisten profiili on erilainen — katso alla. Yhdessä ne tuottavat yhdistelmävaikutuksia, joita kumpikaan ei tuota yksin.",
     rcts: [
@@ -845,16 +946,16 @@ const COPY = {
       },
     ],
     tripleLockExplain:
-      "Kun testosteroni laskee ~40 % väestötasolla ([[ref:santi2025|Santi 2025]], n=1 064 891), kaikki seitsemän käyttäytymistä suppressoituvat samanaikaisesti. Kun siihen lisätään kortisolielevatio (joka edelleen suppressoi T-vaikutuksia kaksoishormonihypoteesin kautta) ja dopamiinilasku (joka vähentää palkkioherkkyttä), syntyy kolmoislukko: miesten sosiaalisen aloitteellisuuden biologinen infrastruktuuri on suppressoitu kolmessa riippumattomassa solmussa.",
+      "Kun testosteroni laskee ~40 % väestötasolla ([[ref:santi2025|Santi 2025]], n=1 064 891), kaikki seitsemän käyttäytymistä vaimenevat samanaikaisesti. Kun siihen lisätään kortisolielevatio (joka edelleen vaimentaa T-vaikutuksia kaksoishormonihypoteesin kautta) ja dopamiinilasku (joka vähentää palkkioherkkyttä), syntyy kolmoislukko: miesten sosiaalisen aloitteellisuuden biologinen infrastruktuuri on vaimennettu kolmessa riippumattomassa solmussa.",
 
     s4title: "Naisten rinnakkaishäiriö",
     s4lead:
-      "Siinä missä miehet kokevat käyttäytymissuppression kolmoislukon kautta (T↓ × kortisoli↑ × dopamiini↓), naiset kokevat rinnakkaisen mutta erillisen häiriön: emotionaalisen dysäätelyn kortisoliamplifikaation kautta, kiintymyshäiriön oksitosiinilaskun kautta ja lisääntymishäiriön munasarjojen Ca²⁺-häiriön kautta.",
+      "Siinä missä miehet kokevat käyttäytymisen tukahduttamisen kolmoislukon kautta (T↓ × kortisoli↑ × dopamiini↓), naiset kokevat rinnakkaisen mutta erillisen häiriön: emotionaalisen dysäätelyn kortisoliamplifikaation kautta, kiintymyshäiriön oksitosiinilaskun kautta ja lisääntymishäiriön munasarjojen Ca²⁺-häiriön kautta.",
     s4note:
       "Naiset eivät ole “vähemmän alttiita” EMF:lle kuin miehet. He ovat eri tavalla alttiita — ja naisspesifiset vaikutukset osuvat mekanismeihin, jotka pitävät sosiaalisia rakenteita koossa.",
     s4aTitle: "Kortisoliamplifikaatio",
     s4aBody:
-      "Naiset kokevat ahdistusta kaksi kertaa miesten tahtiin ja masennusta kaksi kertaa miesten tahtiin. Tämä ei ole puhtaasti sosiaalista. Estrogeenisykli vahvistaa HPA-akselin reaktiivisuutta: jokaisen kuukautiskierron, raskauden ja perimenopaussin aikana kortisolivaste on biologisesti korostunut. EMF:n aiheuttama HPA-hyperaktivaatio (BERM-reitti D) osuu siksi naisiin kovemmin kuin miehiin — ei siksi että EMF-annos olisi eri, vaan koska biologinen vahvistin (estrogeeni–HPA-kytkentä) on naisspesifinen.",
+      "Naiset kokevat ahdistusta kaksi kertaa miesten tahtiin ja masennusta kaksi kertaa miesten tahtiin. Tämä ei ole puhtaasti sosiaalista. Estrogeenisykli vahvistaa HPA-akselin reaktiivisuutta: jokaisen kuukautiskierron, raskauden ja perimenopaussin aikana kortisolivaste on biologisesti korostunut. EMF:n aiheuttama HPA-hyperaktivaatio (BERM-reitti D) osuu siksi naisiin kovemmin kuin miehiin — ei siksi että EMF-annos olisi eri, vaan koska biologinen vahvistin (estrogeeni–HPA-kytkentä) on naistarkka.",
     s4aPrediction:
       "EMF:n kasvaessa naisten ahdistuksen/masennuksen sukupuolikuilun pitäisi leventyä — ja niin on tapahtunut.",
     s4bTitle: "Oksitosiini ja sosiaalinen koheesio",
@@ -969,9 +1070,9 @@ const COPY = {
       {
         label: "Sukupolvi 4 (syntyneet ~2010–2035)",
         emf: "Erittäin korkea (5G, IoT, prenataali altistus)",
-        tLevel: "−40–55 % (projisoitu + epigeneettinen kuorma)",
+        tLevel: "−40–55 % (ennakoitu + epigeneettinen kuorma)",
         otLevel: "Tuntematon — ensimmäinen sukupolvi täydellä prenataalilla altistuksella",
-        tfr: "0,7–1,3 (projisoitu)",
+        tfr: "0,7–1,3 (ennakoitu)",
         institutional:
           "Kriisivaihe: instituutiot eivät voi rekrytoida tai pitää pätevää henkilöstöä, IVF muuttuu demografiseksi infrastruktuuriksi",
       },
@@ -981,7 +1082,7 @@ const COPY = {
 
     s6title: "Kaksitoista ennustetta, kaksitoista havaintoa",
     s6lead:
-      "BERM ennustaa spesifejä käyttäytymis- ja yhteiskuntamuutoksia hormonaalimallinsa pohjalta. Jokainen ennuste perustuu RCT-evidenssiin hormonilinkistä; jokainen havainto viittaa väestötason dataan, joka on yhdenmukainen ennusteen kanssa.",
+      "BERM ennustaa tarkkoja käyttäytymis- ja yhteiskuntamuutoksia hormonaalimallinsa pohjalta. Jokainen ennuste perustuu RCT-näyttöön hormonilinkistä; jokainen havainto viittaa väestötason dataan, joka on yhdenmukainen ennusteen kanssa.",
     predictions: [
       {
         prediction: "Miesten statushakuisuus vähenee",
@@ -1058,9 +1159,9 @@ const COPY = {
       {
         prediction: "PCOS-esiintyvyys kasvaa EMF-adoption myötä",
         basis:
-          "PCOS = 4 elimen VGCC-konvergenssi (haima + munasarja + aivolisake + lisämunuainen).",
+          "PCOS = 4 elimen VGCC-yhdentyminen (haima + munasarja + aivolisake + lisämunuainen).",
         observed:
-          "PCOS 5–20 % ja kasvussa. Naisten hedelmättömyyden yleisin syy. Korreloi metabolisen syndrooman kanssa.",
+          "PCOS 5–20 % ja kasvussa. Naisten hedelmättömyyden yleisin syy. Korreloi metabolisen oireyhtymän kanssa.",
         consistent: true,
       },
       {
@@ -1068,7 +1169,7 @@ const COPY = {
         basis:
           "CaMKII → Cav3.2-kynnys ↓ (PMC9913649). Epigeneettinen transmissio (siittiömetyloomi).",
         observed:
-          "Mielenterveyskriisi alkaa aiemmin jokaisessa kohortissa. ASD/ADHD-prevalenssi kasvaa sukupolvittain. Puberteetti alkaa aiemmin tytöillä.",
+          "Mielenterveyskriisi alkaa aiemmin jokaisessa kohortissa. ASD/ADHD-esiintyvyys kasvaa sukupolvittain. Puberteetti alkaa aiemmin tytöillä.",
         consistent: true,
       },
     ],
@@ -1089,7 +1190,7 @@ const COPY = {
     spolarPrediction:
       "BERM-ennuste: väestöissä, joilla on korkeampi keskimääräinen T (esim. matala-EMF-yhteisöt), verkko- ja kasvokkais-käyttäytymisen välinen ero pitäisi olla pienempi.",
     spolarPhysical: "Fyysinen ympäristö",
-    spolarPhysicalThreshold: "Korkea (kasvokkais sosiaalinen kustannus)",
+    spolarPhysicalThreshold: "Korkea (kasvokkain sosiaalinen kustannus)",
     spolarPhysicalBehavior: "Konformismi, itsesensuri, myöntyminen",
     spolarPhysicalRct: "Audience 2020: matala T → strateginen prososiaalisuus",
     spolarDigital: "Digitaalinen ympäristö",
@@ -1123,9 +1224,9 @@ const COPY = {
       "Fyysinen kontakti ja yhteisö (oksitosiinin palautus)",
     ],
     sfixableConclusion:
-      "Mikään näistä ei vaadi kenenkään muuttavan uskomuksiaan. Ne vaativat sähkömagneettisen ympäristön muuttamista ja hormoneja säätelevien biologisten järjestelmien tukemista. Jos edes 20–30 % nykyisestä motivaation, luottamuksen ja sosiaalisen koheesion kriisistä on biologista eikä ideologista, se on 20–30 %, joka voidaan osoittaa ilman poliittista konfliktia. Tämä on BERM-mallin käytännöllisesti tärkein implikaatio: ei se, että sivilisaatio on tuomittu, vaan se, että osa sen rapautumisesta johtuu spesifistä, tunnistettavasta ja mahdollisesti palautettavissa olevasta syystä.",
+      "Mikään näistä ei vaadi kenenkään muuttavan uskomuksiaan. Ne vaativat sähkömagneettisen ympäristön muuttamista ja hormoneja säätelevien biologisten järjestelmien tukemista. Jos edes 20–30 % nykyisestä motivaation, luottamuksen ja sosiaalisen koheesion kriisistä on biologista eikä ideologista, se on 20–30 %, joka voidaan osoittaa ilman poliittista konfliktia. Tämä on BERM-mallin käytännöllisesti tärkein seuraus: ei se, että sivilisaatio on tuomittu, vaan se, että osa sen rapautumisesta johtuu nimenomaisesta, tunnistettavasta ja mahdollisesti palautettavissa olevasta syystä.",
 
-    shistoryTitle: "Historianluenta hormonaalisen linssin läpi",
+    shistoryTitle: "Historian tulkinta hormonaalisen linssin läpi",
     shistoryBody:
       "Jokainen sukupolvi kokee saman objektiivisen maailman eri hormonaalisen substraatin läpi. Mies vuonna 1960 testosteronilla 600 ng/dL, normaalilla kortisolilla ja ehjällä dopaminergisellä signaloinnilla kokee uravastoinkäymisen haasteena, joka voitetaan. Mies vuonna 2024 testosteronilla 350 ng/dL, kohonneella kortisolilla ja vähentyneellä dopaminergisellä tonuksella kokee saman vastoinkäymisen uhkana, jota vältetään. Heidän arvonsa voivat olla identtiset. Heidän biologinen kykynsä toimia noiden arvojen mukaisesti ei ole.",
     shistoryOlder:
@@ -1143,13 +1244,13 @@ const COPY = {
     sideologyLow:
       "T=320 ng/dL, kortisoli=koholla: \"Turvallisuus on tärkeää\" → poista kaikki riski, laajenna haitan määritelmää, vältä konfrontaatiota poistamalla konfrontaation aiheuttava ärsyke.",
     sideologyExplain:
-      "Idea ei ole muuttunut. Biologinen kyky toteuttaa sitä on. Tämä ei ole vasemmisto vs oikeisto. Se ei ole progressiivinen vs konservatiivinen. Se on biologinen muutos toteutuskynnyksessä samoille arvoille, jotka molemmat puolet suurelta osin jakavat. Molemmat puolet haluavat turvallisuutta. Molemmat puolet haluavat oikeudenmukaisuutta. Molemmat puolet haluavat mahdollisuuksia. Erimielisyys koskee sitä miten — ja \"miten\" on moderoitu hormonaalisilla kynnyksillä.",
+      "Idea ei ole muuttunut. Biologinen kyky toteuttaa sitä on. Tämä ei ole vasemmisto vs oikeisto. Se ei ole etenevä vs konservatiivinen. Se on biologinen muutos toteutuskynnyksessä samoille arvoille, jotka molemmat puolet suurelta osin jakavat. Molemmat puolet haluavat turvallisuutta. Molemmat puolet haluavat oikeudenmukaisuutta. Molemmat puolet haluavat mahdollisuuksia. Erimielisyys koskee sitä miten — ja \"miten\" on moderoitu hormonaalisilla kynnyksillä.",
     sideologyTestable:
       "Tämä on testattavissa. Jos poliittiset asenteet turvallisuuteen, riskiin ja auktoriteettiin korreloivat yksilön hormoniprofiilien (T, kortisoli, OT) kanssa demografisten tekijöiden ja ilmoitetun ideologian vakioinnin jälkeen, biologisen moderoinnin hypoteesi saa tukea. Useat tutkimukset ovat löytäneet juuri tämän: testosteroni korreloi poliittisten asenteiden kanssa auktoriteettiin, kilpailuun ja tulonjakoon eri kulttuureissa.",
 
     s7title: "Rekursiivinen ennuste",
     s7body:
-      "BERM tekee epätavallisen ennusteen: sen oma vastaanotto on todistetta sen teesistä. Jos testosteronilasku vähentää riskinottoa, kilpailuviettiä ja autenttista itseilmaisua väestötasolla, tiedeyhteisön — joka koostuu samojen hormonaalisten olosuhteiden alaisista ihmisistä — pitäisi osoittaa vähentynyt halukkuus haastaa konsensusta, tutkia kiistanalaisia suuntia ja puolustaa epäsuosittuja tuloksia. Malli ennustaa, että EMF-biovaikutustutkimus on alirahoitettua, stigmatisoitua ja institutionaalisesti torpattua — ei siksi että evidenssi olisi heikkoa, vaan koska intellektuaalista riskinottoa ajava hormonaalinen substraatti vähenee. Tämä on testattavissa: EMF-biovaikutustutkimuksen rahoitusosuuden NIH/ERC-kokonaisrahoituksesta pitäisi laskea, ja alan tutkijoiden pitäisi raportoida kasvavia uraseuraamuksia positiivisten tulosten julkaisemisesta.",
+      "BERM tekee epätavallisen ennusteen: sen oma vastaanotto on todistetta sen teesistä. Jos testosteronilasku vähentää riskinottoa, kilpailuviettiä ja autenttista itseilmaisua väestötasolla, tiedeyhteisön — joka koostuu samojen hormonaalisten olosuhteiden alaisista ihmisistä — pitäisi osoittaa vähentynyt halukkuus haastaa konsensusta, tutkia kiistanalaisia suuntia ja puolustaa epäsuosittuja tuloksia. Malli ennustaa, että EMF-biovaikutustutkimus on alirahoitettua, stigmatisoitua ja institutionaalisesti torpattua — ei siksi että näyttö olisi heikkoa, vaan koska intellektuaalista riskinottoa ajava hormonaalinen substraatti vähenee. Tämä on testattavissa: EMF-biovaikutustutkimuksen rahoitusosuuden NIH/ERC-kokonaisrahoituksesta pitäisi laskea, ja alan tutkijoiden pitäisi raportoida kasvavia uraseuraamuksia positiivisten tulosten julkaisemisesta.",
 
     s8title: "Dopaminerginen mieli",
     s8body:
@@ -1176,7 +1277,7 @@ const COPY = {
     s8cLead:
       "Hyperbolinen diskonttaus — taipumus vahvasti suosia välittömiä palkintoja tulevien sijaan — perustuu hormonaaliseen substraattiin. Kun tuo substraatti muuttuu, aikapreferenssit siirtyvät ja hedelmällisyyspäätökset seuraavat.",
     s8cMechanism:
-      "Testosteroni vaikuttaa aikadiskonttaukseen kahdella reitillä: (1) suoraan androgeenireseptorien tiheyden kautta prefrontaalisessa kuorikerroksessa, joka moduloi tulevaisuusorientoitunutta päätöksentekoa; ja (2) epäsuorasti dopamiinin kautta — testosteroni säätelee D2-reseptoriekspressiota striatumissa, ja dopamiini välittää viivästettyjen palkintojen arvottamista. Kun molemmat laskevat samanaikaisesti, nykyhetki painaa enemmän ja tulevaisuus kevyemmin.",
+      "Testosteroni vaikuttaa aikadiskonttaukseen kahdella reitillä: (1) suoraan androgeenireseptorien tiheyden kautta prefrontaalisessa kuorikerroksessa, joka säätelee tulevaisuusorientoitunutta päätöksentekoa; ja (2) epäsuorasti dopamiinin kautta — testosteroni säätelee D2-reseptoriekspressiota striatumissa, ja dopamiini välittää viivästettyjen palkintojen arvottamista. Kun molemmat laskevat samanaikaisesti, nykyhetki painaa enemmän ja tulevaisuus kevyemmin.",
     s8cFertility:
       "Hedelmällisyys on äärimmäinen tulevaisuusorientoitunut päätös: korkea kustannus nyt, epävarma palkinto vuosien päästä. Väestötason siirtymä nykyhetkiorientaatioon ennustaa hedelmällisyyden lykkäämistä — ei siksi että lapsia pidettäisiin ei-toivottavina, vaan koska hormonaalinen kynnys sitoutua korkean kustannuksen, pitkän horisontin projektiin nousee. Tämä eroaa taloudellisista selityksistä: se ennustaa hedelmällisyyden laskevan myös taloudellisten olosuhteiden parantuessa, ja laskun korreloivan hormonaalisten merkkiaineiden kanssa tulojen ja koulutuksen vakioinnin jälkeen.",
     s8cTestable:
@@ -1216,11 +1317,11 @@ const COPY = {
         detail:
           "BKT:n, koulutuksen ja kaupungistumisen vakioinnin jälkeen EMF-infrastruktuuritiheyden pitäisi itsenäisesti ennustaa TFR-laskua maiden välillä.",
         falsification:
-          "Ei residuaalikorrelaatiota EMF-tiheyden ja TFR:n välillä sosioekonomisen vakioinnin jälkeen",
+          "Ei jäännöskorrelaatiota EMF-tiheyden ja TFR:n välillä sosioekonomisen vakioinnin jälkeen",
       },
       {
         id: "CIV-5",
-        title: "Käyttäytymissuppressio kääntyy EMF-vähennyksellä",
+        title: "Käyttäytymisen vaimeneminen kääntyy EMF-vähennyksellä",
         detail:
           "Henkilöiden, jotka vähentävät merkittävästi EMF-altistusta (esim. muutto matala-EMF-ympäristöön), pitäisi osoittaa mitattavaa palautumista T-riippuvaisissa käyttäytymisissä 6–12 kuukauden sisällä.",
         falsification:
@@ -1299,13 +1400,13 @@ const COPY = {
         detail:
           "Väestön sisällä: korkeamman T:n yksilöt suosivat konfrontaatioperustaisia ratkaisuja; matalamman T:n yksilöt välttämisperustaisia — riippumatta ilmoitetusta ideologiasta.",
         falsification:
-          "Ei residuaali-T-korrelaatiota politiikkapreferenssien kanssa demografisen vakioinnin jälkeen",
+          "Ei jäännös-T-korrelaatiota politiikkapreferenssien kanssa demografisen vakioinnin jälkeen",
       },
     ],
 
     lostRecoveryTitle: "Menetetty palautumisikkuna",
     lostRecoveryDesc: "Ensimmäistä kertaa ihmiskunnan historiassa ei ole ajanjaksoa päivässä ilman merkittävää EMF-altistusta. Sähköverkko toimii 24/7. WiFi-reitittimiä ei koskaan sammuteta. LED-valot toimivat uneen asti. Puhelin makaa yöpöydällä koko yön. Bluetooth-laitteet ylläpitävät yhteyksiä jatkuvasti.",
-    lostRecoveryMechanism: "CaMKII-defosforylaatio — molekulaarinen palautumisprosessi — vaatii aikaa ilman Ca²⁺-ylikuormaa. Ennen sähköistystä ihmisillä oli 22+ tuntia päivässä ilman keinotekoista EMF:ää. Modernit kaupunkilaiset: noin nolla. COVID-sulut osoittivat tämän kokeellisesti: 24 tuntia/vrk kotona WiFin + LEDien + useiden laitteiden kanssa eliminoivat viimeisen palautumisikkunan — ja T2D-kiihdytys hyppäsi 2,90 %:sta 3,52 %/v.",
+    lostRecoveryMechanism: "CaMKII-defosforylaatio — molekulaarinen palautumisprosessi — vaatii aikaa ilman Ca²⁺-ylikuormaa. Ennen sähköistystä ihmisillä oli 22+ tuntia päivässä ilman keinotekoista EMF:ää. Modernit kaupunkilaiset: noin nolla. COVID-sulut osoittivat tämän kokeellisesti: 24 tuntia/vrk kotona WiFin + LEDien + useiden laitteiden kanssa poistavat viimeisen palautumisikkunan — ja T2D-kiihdytys hyppäsi 2,90 %:sta 3,52 %/v.",
     lostRecoveryIntervention: "Tämä on myös mallin toiminnallisin oivallus: EMF-vapaa makuuhuone on yksinkertaisin interventio. Ei ruokavaliomuutosta, ei lääkitystä, ei elämäntaparemonttia — vain poista reititin, käytä lentokonetilaa yöllä ja vaihda hehkulamppuun ennen unta.",
 
     buildingTitle: "Betonikaupungit: sisäänrakennettu EMF-vahvistus",
@@ -1316,11 +1417,109 @@ const COPY = {
     animalsFellDesc: "Jos EMF vaikuttaa biologiaan perustavanlaatuisilla Ca²⁺- ja CRY-tasoilla, herkempien lajien olisi pitänyt laskea ensin — ja niin tapahtui. Sammakot (kostea iho, suora Ca²⁺-kytkentä) alkoivat laskea noin 1987 GSM:n käyttöönoton myötä. Mehiläiset (CRY-riippuvainen navigaatio) romahtivat 2006 tukiasemien saavuttaessa maaseudun. Hyönteisbiomassa laski 75 % 27 vuodessa. Lintupopulaatiot seurasivat. Nisäkkäät — mukaan lukien ihmiset — ovat vähiten herkkiä kuivan ihon ja suuren kehon massan vuoksi, mutta vaikutukset ovat kumulatiivisia pitkien elinikien aikana.",
     animalsFellAnalogy: "Kanarialintu kaivoksessa -analogia ei ole vertauskuvallinen — se on mekanistinen. Samat ionikanavat, samat magnetoreseptorit, sama Ca²⁺-signalointi. Eläimet eivät laskeneet erillisistä syistä jotka sattuvat korreloimaan. Ne laskivat saman mekanismin kautta eri herkkyyskynnyksissä.",
 
+    sHistLawTitle: "Sivilisaatioiden biologinen laki",
+    sHistLawLead: "Kautta historian sivilisaatiot ovat seuranneet hämmästyttävän johdonmukaista kaavaa: nousu, kukoistus, rappio. Yksitoista itsenäistä ajattelijaa — Vicosta (1725) Turchiniin (2023) — päätyi samaan havaintoon toisistaan tietämättä. BERM ehdottaa puuttuvaa mekanismia: sähkömagneettinen ympäristö säätelee biologista kapasiteettia, joka puolestaan ohjaa sivilisaation dynamiikkaa.",
+
+    sProphetsTitle: "Profeetat olivat oikeassa — ja väärässä",
+    sProphetsLead: "Yksitoista vakavaa ajattelijaa kolmen vuosisadan aikana dokumentoivat itsenäisesti saman sivilisaatiokuvion. He olivat eri mieltä metodista, ideologiasta ja laajuudesta. Silti he yhtyvät yhteen havaintoon: sivilisaatiot eivät edisty lineaarisesti. Ne nousevat ja laskevat sykleissä, ja myöhäisvaiheita leimaavat laskeva syntyvyys, lisääntyvä hedonismi, kollektiivisen tahdon menetys ja pessimismi.",
+    sProphetsTable: [
+      { thinker: "Giambattista Vico", year: "1725", observation: "Kolmen aikakauden toistuva sykli (jumalat, sankarit, ihmiset)", bermExplanation: "BioCap-oskillaatio tuottaa kvalitatiivisesti erilaisia sosiaalisia vaiheita" },
+      { thinker: "Oswald Spengler", year: "1918", observation: "Sivilisaatiot elävien organismien kaltaisina", bermExplanation: "Biologisella substraatilla on elinkaari kumulatiivisen EMF-altistuksen ohjaamana" },
+      { thinker: "Arnold Toynbee", year: "1934", observation: "Haaste-ja-vastaus 21 sivilisaatiossa", bermExplanation: "Biologinen kapasiteetti määrää vastauksen laadun; ehtyneet populaatiot epäonnistuvat haasteissa" },
+      { thinker: "Pitirim Sorokin", year: "1937", observation: "Sensaatti-ideaalinen kulttuurinen oskillaatio", bermExplanation: "Dopamiini/serotoniini-tasapaino muuttuu → sensaattivaihe = matala-DA, korkea stimulaatiohaku" },
+      { thinker: "John Bagot Glubb", year: "1978", observation: "250 vuoden imperiumin elinkaari, 6 vaihetta", bermExplanation: "~250 vuotta ≈ Suess-sykli (200 v) + biologinen inertia (~50 v)" },
+      { thinker: "Joseph Tainter", year: "1988", observation: "Monimutkaisuuden laskevat rajatuotot", bermExplanation: "Kognitiivisen kapasiteetin lasku (BDNF↓, kortisoli↑) vähentää kykyä hallita monimutkaisuutta" },
+      { thinker: "Ibn Khaldun", year: "1377", observation: "Asabiya (ryhmäsolidaarisuus) heikkenee 3-4 sukupolvessa", bermExplanation: "Oksitosiini↓ + testosteroni↓ = vähentynyt ryhmäkoheesio — juuri asabiyan menetys" },
+      { thinker: "Peter Turchin", year: "2003", observation: "Sekulaarisyklit (~80-100 v) pidempien aaltojen sisällä", bermExplanation: "Gleissberg-sykli (88 v) säätelee BioCap:ia Suess-syklin kuoren sisällä" },
+      { thinker: "Neema Parvini", year: "2023", observation: "Syntetisoi kaikki 11 ajattelijaa; kuvio on robusti kehysten yli", bermExplanation: "Itsenäisten havainnoitsijoiden yhdentyminen = vahva näyttö todellisesta ilmiöstä joka vaatii selityksen" },
+    ],
+
+    sSolarTitle: "Ennen ja jälkeen sähköistymisen",
+    sSolarLead: "Ennen sähköistymistä ainoa merkittävä sähkömagneettinen vaikutus biologiaan tuli auringosta. Aurinkoaktiivisuus oskiloi sisäkkäisinä sykleinä: 11 vuoden Schwabe-sykli, 88 vuoden Gleissberg-sykli ja ~200 vuoden Suess/de Vries -sykli. Auringon suurminimien aikana sähkömagneettinen kuormitus biologiaan vähenee ja biologinen palautuminen tapahtuu.",
+    sSolarFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ) + U(τ) + E(τ)] dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)] dτ",
+    sSolarFormulaTerms: [
+      "S(τ) = aurinkosyklien superpositio [0,1]",
+      "U(τ) = urbanisaation EMF-komponentti (hidas, pre-sähköinen)",
+      "E(τ) = sähköistymisen EMF-komponentti (nopea, post-1880)",
+      "σ(τ) = palautumisen vaimennuskerroin = min(E(τ)/E_max, 0.95)",
+      "χ(λ) = geomagneettinen herkkyyskerroin (leveysasteriippuvainen)",
+      "α = biologinen palautumiskerroin",
+    ],
+    sSolarPrePost: "Pre-sähköinen (E=0): BioCap oskiloi → syklinen sivilisaatiodynamiikka. Post-sähköinen (E≫S): BioCap laskee monotonisesti → ei palautumisikkunaa.",
+    sSolarRenaissance: "Kahdeksan kymmenestä merkittävästä eurooppalaisesta renessanssista tapahtui auringon suurminimien aikana tai heti niiden jälkeen: Italian renessanssi Spörer-minimin aikana, tieteellinen vallankumous Maunder-minimin aikana, saksalainen romantiikka Dalton-minimin aikana.",
+
+    sMigrationTitle: "Muuttogradientti",
+    sMigrationLead: "Sama biologinen gradientti, joka ajoi germaaniheimoilaisia Roomaan, arabit Bysanttiin ja mongolit Song-Kiinaan, toimii tänään. Saharan eteläpuolisella Afrikalla — jolla on lyhin kumulatiivinen sähkömagneettinen altistus kaikista suurista populaatioista — on korkein biologinen kapasiteetti. Muuttovirrat Afrikasta ja Lähi-idästä Eurooppaan seuraavat biologisen kontrastin gradienttia.",
+    sMigrationNote: "Tämä on biologinen gradientti (ympäristö, ei genetiikka). Maahanmuuttajien hedelmällisyys yhtyy isäntämaan tasolle 1-2 sukupolvessa — todistaen mekanismin olevan ympäristöllinen, ei geneettinen.",
+
+    sLastBarbarianTitle: "'Viimeisen barbaarin' ikkuna",
+    sLastBarbarianText: "BERM ennustaa Afrikan BioCap-arvon alkavan laskea mobiiliverkkojen leviämisen myötä (~2010) ja lähestyvän eurooppalaista tasoa vuosiin 2070–2080 mennessä. Ajanjakso 2020–2060 saattaa olla viimeinen, jolloin maapallon väestöistä löytyy merkittävästi korkeamman biologisen kapasiteetin omaava ryhmä. Sen jälkeen edessä on maailmanlaajuinen samanaikainen heikkeneminen ilman biologista reserviä.",
+
+    sActivationTitle: "Aktivaatiosykli: miksi uudet voimat nousevat vanhojen heikentyessä",
+    sActivationLead: "Edeltävät osiot selittivät, miksi sivilisaatiot heikkenevät. Pelkkä heikkeneminen ei kuitenkaan selitä historian toistuvaa korvautumisen kaavaa. Jokaisen Rooman rinnalla on germaaniheimojen nousu. Jokaisen Bysantin rinnalla arabiexpansio. Jokaisen Song-dynastian rinnalla mongolivalloitus.",
+    sActivationBody1: "Tavanomainen selitys pitää tulijaa yksinkertaisesti 'aggressiivisempana' tai 'elinvoimaisempana' — kulttuurinen luonnehdinta, joka ei selitä mitään. BERM:n hormeesin viitekehys tarjoaa biologisen mekanismin.",
+    sActivationBody2: "Sama aurinkoaktiivisuus, joka vahingoittaa korkean sähkömagneettisen kuorman alaista kaupunkiväestöä, stimuloi matalan kuorman alaista paimentolaisväestöä. Tämä ei ole spekulaatiota — se on dokumentoitua kokeellista fysiologiaa. Matala-annoksinen sähkömagneettinen altistus nostaa mitattavasti testosteronitasoa, laskee kortisolitasoa ja tehostaa immuunivastetta koe-eläimillä. Mekanismi on hormesis: stressivaste, joka pieninä annoksina vahvistaa biologisia järjestelmiä vahingoittamisen sijaan.",
+    sActivationBody3: "Paimentolaisväestö, joka elää annos-vastekäyrän hormeettisella alueella, kokee auringon aktiivivaiheen biologisena aktivaationa: testosteroni nousee, kortisoli laskee, hedelmällisyys paranee ja immuunitoiminta tehostuu. Kahdessa tai kolmessa sukupolvessa tämä tuottaa väestöpulssin — nuorten miesten ylijäämän, joilla on korkea biologinen kapasiteetti mutta ei maata eikä puolisoa. Tämä ylijäämä on 'barbaari portilla'.",
+    sActivationBody4: "Samanaikaisesti kaupunkiväestö vahinkovyöhykkeellä kokee saman auringon vaiheen lisäbiologisena kulumisena. Kahden väestön välinen gradientti — toinen aktivoituu, toinen heikentyy — kasvaa molemmilta puolilta yhtä aikaa. Kun se ylittää kynnysarvon, seuraa ekspansio. Ei ideologian tai kulttuurin vaan biologian ja demografian vuoksi.",
+    sActivationChartTitle: "Hormeettinen annos-vastekäyrä",
+    sActivationChartZone1: "Vyöhyke 1: Hormeettinen stimulaatio (paimentolainen)",
+    sActivationChartZone2: "Vyöhyke 2: Siirtymäalue (agraarinen)",
+    sActivationChartZone3: "Vyöhyke 3: Vahinko (urbaani/sähköistetty)",
+    sActivationChartX: "Kokonais-EMF-kuorma (Ā_geo + Ā_infra + Ā_EMF)",
+    sActivationChartY: "BioCap",
+    sActivationChartSun: "Sama aurinko, vastakkaiset vaikutukset",
+    sActivationEpistemic: "",
+
+    sExpansionTitle: "Kolme ekspansiotyyppiä",
+    sExpansionCards: [
+      {
+        id: "α",
+        title: "Hormeettinen aktivaatio",
+        examples: "Mongolit 1206, arabit 632, viikingit 793",
+        icon: "sun",
+        desc: "Auringon aktiivivaihe yhdistettynä paimentolaisväestöön hormeettisella vyöhykkeellä → testosteroni nousee, kortisoli laskee, hedelmällisyys kasvaa. Kahdessa tai kolmessa sukupolvessa väestöpulssi tuottaa ekspansion. Matala-annoksinen altistus nostaa testosteronitasoa ja laskee kortisolitasoa eläinmalleissa.",
+        trigger: "Auringon aktiivivaihe + paimentolainen = biologinen aktivaatio",
+      },
+      {
+        id: "β",
+        title: "Palautumisenergia",
+        examples: "Löytöretket 1492, tieteellinen vallankumous 1687, Napoleonin kausi 1803",
+        icon: "moon",
+        desc: "Auringon suurminimi → sähkömagneettinen kuormitus vähenee → biologinen palautuminen 50–80 vuoden kuluessa → kertynyt biologinen pääoma → ekspansio tai renessanssi. Kahdeksan kymmenestä merkittävästä eurooppalaisesta renessanssista tapahtui suurminimin aikana tai pian sen jälkeen.",
+        trigger: "Suurminimi + palautuminen = luova kukoistus",
+      },
+      {
+        id: "γ",
+        title: "Eroosion gradientti",
+        examples: "Kansainvaellus 375–476, mantšut → Ming-Kiina 1644, Afrikka → Eurooppa 2000–",
+        icon: "gradient",
+        desc: "Pitkäaikainen biologinen kuluminen kaupunkiväestössä yhdistettynä vahingoittumattomaan paimentolais- tai maatalousväestöön rajoilla → kumulatiivinen BioCap-ero. Kun gradientti ylittää kynnyksen, ekspansio seuraa. Tämä tyyppi ei riipu aurinkosykleistä — se on jatkuva prosessi, joka vaatii vuosisatojen eriytymisen.",
+        trigger: "Vuosisatojen urbaani kuluminen + koskematon raja = korvautuminen",
+      },
+    ],
+
+    sThreeLawsTitle: "Kolme historiallista lakia",
+    sThreeLaws: [
+      { id: "L1", title: "Sivilisaation synty vaatii matalan χ:n vyöhykettä (25-35°N)", desc: "Biologinen stabiilisuus → pitkäjänteinen kehitys. Vahvistettu: p = 0.01 (syntyalueet vs ekspansiot)." },
+      { id: "L2", title: "Luovat renessanssit klusteroituvat suurminimien aikaan korkean χ:n leveysasteilla (45-60°N)", desc: "Suurin palautumismodulaatio → suurin luova pääoma. Vahvistettu: 8/10 eurooppalaisesta renessanssista." },
+      { id: "L3", title: "Imperiumien nousut alkavat matalan aurinkoaktiivisuuden aikana", desc: "Biologinen palautuminen → kapasiteetti ekspansioon. Vahvistettu: rise-tapahtumien solar = 0.41 vs peak = 0.73." },
+    ],
+
+    thThinker: "Ajattelija",
+    thYear: "Vuosi",
+    thObservation: "Havainto",
+    thBerm: "BERM-selitys",
+    biocapNormTitle: "BioCap-rappio — normalisoitu elinikä",
+    biocapTimeTitle: "BioCap-liikeradat — historiallinen aikajana",
+    biocapXNorm: "Sivilisaation elinikä (%)",
+    biocapXTime: "Vuosi",
+    biocapY: "BioCap",
+
     s10title: "Episteemiset rajat",
     s10claims: [
       "Seitsemän RCT:tä osoittaa kausaalilinkit testosteronin ja spesifien käyttäytymisten välillä miehillä.",
       "Rinnakkaiset hormonaaliset häiriöt naisilla on dokumentoitu, mutta vähemmillä kausaalisilla (RCT) tutkimuksilla.",
-      "Yhdistelmävaikutus (molemmat sukupuolet samanaikaisesti) on loogisesti johdettu yksilötason evidenssistä, ei suoraan mitattu väestötasolla.",
+      "Yhdistelmävaikutus (molemmat sukupuolet samanaikaisesti) on loogisesti johdettu yksilötason näytöstä, ei suoraan mitattu väestötasolla.",
       "Sukupolvien välinen kiihtyminen on ennustettu CaMKII-mekaniikalla ja epigeneettisellä transmissiolla, ei vielä vahvistettu longitudinaalisesti.",
     ],
     s10notClaims: [
@@ -1336,7 +1535,7 @@ const COPY = {
     s10fixable:
       "Jos se osuus on edes 20–30 %, se on osuus, joka on korjattavissa ilman poliittista konfliktia.",
     modelLink: "Lue mekanismi",
-    evidenceLink: "Tutki evidenssiä",
+    evidenceLink: "Tutki näyttöä",
     predictionsLink: "Katso kaikki ennusteet",
 
     levelLabel: "Taso III — Seuraukset",
@@ -1991,6 +2190,72 @@ const COPY = {
     animalsFellTitle: "動物が先に倒れた",
     animalsFellDesc: "EMFが基本的なCa²⁺およびCRYレベルで生物学に影響しているなら、より感受性の高い種が先に減少しているはずである――そして実際にそうだった。カエル（湿った皮膚、直接的Ca²⁺結合）はGSM展開に伴い1987年頃に減少を開始した。ハチ（CRY依存のナビゲーション）は携帯電話基地局が農村部に到達した2006年に崩壊した。昆虫バイオマスは27年間で75%減少した。鳥類個体数も続いた。哺乳類――ヒトを含む――は乾燥した皮膚と大きな体質量のため最も感受性が低いが、長い寿命にわたり影響は蓄積的である。",
     animalsFellAnalogy: "炭鉱のカナリアの例えは比喩的ではなく、メカニズム的である。同じイオンチャネル、同じ磁気受容器、同じCa²⁺シグナル伝達。動物たちは偶然相関する別々の理由で減少したのではない。異なる感受性閾値で同じメカニズムによって減少した。",
+
+    sHistLawTitle: "文明の生物学的法則",
+    sHistLawLead: "記録された歴史を通じて、文明は驚くほど一貫したパターンを辿ってきた：興隆、繁栄、衰退。11人の独立した思想家——ヴィーコ（1725年）からターチン（2023年）まで——が互いの研究を知らずに同じ観察に到達した。BERMは欠けていたメカニズムを提案する：電磁環境が生物学的能力を調節し、それが文明のダイナミクスを駆動する。",
+
+    sProphetsTitle: "預言者たちは正しかった——そして間違っていた",
+    sProphetsLead: "3世紀にわたる11人の真摯な思想家が独立して同じ文明パターンを記録した。彼らは方法論、イデオロギー、対象範囲について意見が分かれた。しかし一つの観察に収束した：文明は直線的に進歩しない。それらはサイクルで興亡し、後期段階は出生率の低下、快楽主義の増大、集団意志の喪失、悲観主義に特徴づけられる。",
+    sProphetsTable: [
+      { thinker: "ジャンバッティスタ・ヴィーコ", year: "1725", observation: "3つの時代の反復サイクル（神々、英雄、人間）", bermExplanation: "BioCap振動が質的に異なる社会的段階を生み出す" },
+      { thinker: "オスヴァルト・シュペングラー", year: "1918", observation: "寿命を持つ有機体としての文明", bermExplanation: "生物学的基盤は累積的EMF曝露によるライフサイクルを持つ" },
+      { thinker: "アーノルド・トインビー", year: "1934", observation: "21文明における挑戦と応戦", bermExplanation: "生物学的能力が応答の質を決定する；消耗した集団は挑戦に失敗する" },
+      { thinker: "ピティリム・ソローキン", year: "1937", observation: "感覚的-観念的文化振動", bermExplanation: "ドーパミン/セロトニンバランスの変化→感覚的段階＝低DA、高刺激追求" },
+      { thinker: "ジョン・バゴット・グラブ", year: "1978", observation: "250年の帝国寿命、6段階", bermExplanation: "約250年≈スース周期（200年）＋生物学的慣性（約50年）" },
+      { thinker: "ジョセフ・テインター", year: "1988", observation: "複雑性の収穫逓減", bermExplanation: "認知能力の低下（BDNF↓、コルチゾール↑）が複雑性管理能力を減少させる" },
+      { thinker: "イブン・ハルドゥーン", year: "1377", observation: "アサビーヤ（集団連帯）が3-4世代で衰退", bermExplanation: "オキシトシン↓＋テストステロン↓＝内集団結束の低下——まさにアサビーヤの喪失" },
+      { thinker: "ピーター・ターチン", year: "2003", observation: "長期波動内の世俗的サイクル（約80-100年）", bermExplanation: "グライスベルグ周期（88年）がスース周期のエンベロープ内でBioCapを変調" },
+      { thinker: "ネーマ・パルヴィーニ", year: "2023", observation: "11人の思想家全員を統合；パターンは枠組みを超えて堅牢", bermExplanation: "独立した観察者の収束＝説明を必要とする実在現象の強力な証拠" },
+    ],
+
+    sSolarTitle: "電化の前と後",
+    sSolarLead: "電化以前、生物学への唯一の重要な電磁的影響は太陽からのものだった。太陽活動は入れ子のサイクルで振動する：11年のシュワーベ周期、88年のグライスベルグ周期、約200年のスース/ド・フリース周期。大極小期には、生物学への電磁的負荷が減少し、生物学的回復が起こる。",
+    sSolarFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ) + U(τ) + E(τ)] dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)] dτ",
+    sSolarFormulaTerms: [
+      "S(τ) = 太陽周期の重ね合わせ [0,1]",
+      "U(τ) = 都市化のEMF成分（緩慢、電気以前）",
+      "E(τ) = 電化のEMF成分（急速、1880年以降）",
+      "σ(τ) = 回復抑制係数 = min(E(τ)/E_max, 0.95)",
+      "χ(λ) = 地磁気感受性係数（緯度依存）",
+      "α = 生物学的回復係数",
+    ],
+    sSolarPrePost: "電気以前（E=0）：BioCapが振動→周期的な文明ダイナミクス。電気以後（E≫S）：BioCapが単調減少→回復の窓なし。",
+    sSolarRenaissance: "ヨーロッパの主要なルネサンスの10件中8件が大極小期中またはその直後に発生した：イタリア・ルネサンスはシュペーラー極小期に、科学革命はマウンダー極小期に、ドイツ・ロマン主義はダルトン極小期に。",
+
+    sMigrationTitle: "移住勾配",
+    sMigrationLead: "ゲルマン民族をローマに、アラブ人をビザンツに、モンゴル騎兵を宋代中国に駆り立てた同じ生物学的勾配が今日も働いている。サハラ以南のアフリカ——主要な人口の中で最も短い累積電磁曝露を持つ——が最も高い生物学的能力を持つ。",
+    sMigrationNote: "これは生物学的勾配（環境であり、遺伝ではない）。移民の出生率は1〜2世代でホスト国のレベルに収束する——メカニズムが環境的であり遺伝的でないことを証明している。",
+
+    sLastBarbarianTitle: "「最後の蛮族」の窓",
+    sLastBarbarianText: "BERMはアフリカのBioCapがモバイル普及（〜2010年）とともに低下し始め、〜2070〜2080年にヨーロッパのレベルに収束すると予測する。2020〜2060年の窓は、地球上のどこかに実質的に高い生物学的能力を持つ人口が存在する最後の期間かもしれない。その後：生物学的予備なしのグローバルな下方収束。",
+
+    sActivationTitle: "活性化サイクル：なぜ新しい勢力は古い勢力の衰退とともに台頭するのか",
+    sActivationLead: "", sActivationBody1: "", sActivationBody2: "", sActivationBody3: "", sActivationBody4: "",
+    sActivationChartTitle: "ホルメシス用量反応", sActivationChartZone1: "ゾーン1：ホルメシス刺激（遊牧民）", sActivationChartZone2: "ゾーン2：移行（農耕）", sActivationChartZone3: "ゾーン3：損傷（都市/電化）",
+    sActivationChartX: "総EMF負荷", sActivationChartY: "BioCap", sActivationChartSun: "同じ太陽、反対の効果", sActivationEpistemic: "",
+    sExpansionTitle: "三つの拡大類型",
+    sExpansionCards: [
+      { id: "α", title: "ホルメシス活性化", examples: "モンゴル1206、アラブ632、ヴァイキング793", icon: "sun", desc: "", trigger: "太陽極大＋遊牧民＝生物学的活性化" },
+      { id: "β", title: "回復エネルギー", examples: "大航海時代1492、科学革命1687、ナポレオン時代1803", icon: "moon", desc: "", trigger: "大極小期＋回復＝創造的高揚" },
+      { id: "γ", title: "浸食勾配", examples: "ゲルマン民族移動375–476、満州→明1644、アフリカ→ヨーロッパ2000–", icon: "gradient", desc: "", trigger: "数世紀の都市浸食＋無傷の辺境＝交替" },
+    ],
+
+    sThreeLawsTitle: "三つの歴史的法則",
+    sThreeLaws: [
+      { id: "L1", title: "文明の誕生には低χ帯（25-35°N）が必要", desc: "生物学的安定性→長期的発展。確認済み：p = 0.01（誕生地域対拡大）。" },
+      { id: "L2", title: "創造的ルネサンスは高χ緯度（45-60°N）の大極小期に集中する", desc: "最大回復変調→最大創造資本。確認済み：ヨーロッパの10件中8件のルネサンス。" },
+      { id: "L3", title: "帝国の興隆は太陽活動が低い時期に始まる", desc: "生物学的回復→拡張のための能力。確認済み：興隆イベントのsolar = 0.41 対 ピークイベント = 0.73。" },
+    ],
+
+    thThinker: "思想家",
+    thYear: "年",
+    thObservation: "観察",
+    thBerm: "BERM説明",
+    biocapNormTitle: "BioCap減衰 — 正規化寿命",
+    biocapTimeTitle: "BioCap軌跡 — 歴史的タイムライン",
+    biocapXNorm: "文明の寿命（%）",
+    biocapXTime: "年",
+    biocapY: "BioCap",
 
     s10title: "認識論的境界",
     s10claims: [
@@ -2668,6 +2933,72 @@ const COPY = {
     animalsFellDesc: "Si les EMF affectent la biologie au niveau fondamental du Ca²⁺ et du CRY, alors les espèces avec une sensibilité plus élevée auraient dû décliner en premier — et c'est ce qui s'est passé. Les grenouilles (peau humide, couplage direct au Ca²⁺) ont commencé à décliner vers 1987 lors du déploiement du GSM. Les abeilles (navigation dépendante du CRY) se sont effondrées en 2006 lorsque les antennes-relais ont atteint les zones rurales. La biomasse d'insectes a chuté de 75 % sur 27 ans. Les populations d'oiseaux ont suivi. Les mammifères — y compris les humains — sont les moins sensibles en raison de leur peau sèche et de leur masse corporelle importante, mais les effets sont cumulatifs sur de longues durées de vie.",
     animalsFellAnalogy: "L'analogie du canari dans la mine n'est pas métaphorique — elle est mécanistique. Les mêmes canaux ioniques, les mêmes magnétorécepteurs, la même signalisation Ca²⁺. Les animaux n'ont pas décliné pour des raisons distinctes qui se trouvent être corrélées. Ils ont décliné par le même mécanisme à des seuils de sensibilité différents.",
 
+    sHistLawTitle: "La loi biologique des civilisations",
+    sHistLawLead: "Tout au long de l'histoire, les civilisations ont suivi un schema remarquablement coherent : ascension, epanouissement, declin. Onze penseurs independants — de Vico (1725) a Turchin (2023) — sont arrives a la meme observation sans connaitre les travaux des autres. BERM propose le mecanisme manquant : l'environnement electromagnetique module la capacite biologique, qui a son tour pilote la dynamique civilisationnelle.",
+
+    sProphetsTitle: "Les prophetes avaient raison — et tort",
+    sProphetsLead: "Onze penseurs serieux sur trois siecles ont independamment documente le meme schema civilisationnel. Ils divergeaient sur la methode, l'ideologie et la portee. Pourtant ils ont converge vers une observation : les civilisations ne progressent pas lineairement. Elles montent et descendent en cycles, et les phases tardives sont marquees par la baisse de la natalite, l'hedonisme croissant, la perte de volonte collective et le pessimisme.",
+    sProphetsTable: [
+      { thinker: "Giambattista Vico", year: "1725", observation: "Cycle recurrent de trois ages (dieux, heros, hommes)", bermExplanation: "L'oscillation de BioCap produit des phases sociales qualitativement differentes" },
+      { thinker: "Oswald Spengler", year: "1918", observation: "Les civilisations comme organismes avec des durees de vie", bermExplanation: "Le substrat biologique a un cycle de vie determine par l'exposition cumulative aux EMF" },
+      { thinker: "Arnold Toynbee", year: "1934", observation: "Defi-et-reponse a travers 21 civilisations", bermExplanation: "La capacite biologique determine la qualite de la reponse ; les populations epuisees echouent face aux defis" },
+      { thinker: "Pitirim Sorokin", year: "1937", observation: "Oscillation culturelle sensate-ideationnelle", bermExplanation: "Le changement d'equilibre dopamine/serotonine → phase sensate = faible DA, recherche de stimulation elevee" },
+      { thinker: "John Bagot Glubb", year: "1978", observation: "Duree de vie imperiale de 250 ans, 6 etapes", bermExplanation: "~250 ans ≈ cycle de Suess (200 ans) + inertie biologique (~50 ans)" },
+      { thinker: "Joseph Tainter", year: "1988", observation: "Rendements decroissants de la complexite", bermExplanation: "Le declin de la capacite cognitive (BDNF↓, cortisol↑) reduit la capacite a gerer la complexite" },
+      { thinker: "Ibn Khaldun", year: "1377", observation: "L'asabiya (solidarite de groupe) decline sur 3-4 generations", bermExplanation: "Ocytocine↓ + testosterone↓ = cohesion intra-groupe reduite — precisement la perte d'asabiya" },
+      { thinker: "Peter Turchin", year: "2003", observation: "Cycles seculaires (~80-100 ans) au sein de vagues plus longues", bermExplanation: "Le cycle de Gleissberg (88 ans) module le BioCap dans l'enveloppe du cycle de Suess" },
+      { thinker: "Neema Parvini", year: "2023", observation: "A synthetise les 11 penseurs ; le schema est robuste a travers les cadres", bermExplanation: "La convergence d'observateurs independants = preuve forte d'un phenomene reel necessitant une explication" },
+    ],
+
+    sSolarTitle: "Avant et apres l'electrification",
+    sSolarLead: "Avant l'electrification, la seule influence electromagnetique significative sur la biologie venait du soleil. L'activite solaire oscille en cycles imbriques : le cycle de Schwabe de 11 ans, le cycle de Gleissberg de 88 ans et le cycle de Suess/de Vries d'environ 200 ans. Pendant les grands minima solaires, la charge electromagnetique sur la biologie diminue et la recuperation biologique se produit.",
+    sSolarFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ) + U(τ) + E(τ)] dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)] dτ",
+    sSolarFormulaTerms: [
+      "S(τ) = superposition des cycles solaires [0,1]",
+      "U(τ) = composante EMF de l'urbanisation (lente, pre-electrique)",
+      "E(τ) = composante EMF de l'electrification (rapide, post-1880)",
+      "σ(τ) = coefficient de suppression de la recuperation = min(E(τ)/E_max, 0.95)",
+      "χ(λ) = coefficient de susceptibilite geomagnetique (dependant de la latitude)",
+      "α = coefficient de recuperation biologique",
+    ],
+    sSolarPrePost: "Pre-electrique (E=0) : BioCap oscille → dynamique civilisationnelle cyclique. Post-electrique (E≫S) : BioCap decline de maniere monotone → pas de fenetre de recuperation.",
+    sSolarRenaissance: "Huit des dix principales renaissances europeennes se sont produites pendant ou immediatement apres les grands minima solaires : la Renaissance italienne pendant le minimum de Sporer, la Revolution scientifique pendant le minimum de Maunder, le Romantisme allemand pendant le minimum de Dalton.",
+
+    sMigrationTitle: "Le gradient migratoire",
+    sMigrationLead: "Le meme gradient biologique qui a pousse les tribus germaniques vers Rome, les Arabes vers Byzance et la cavalerie mongole vers la Chine Song opere aujourd'hui. L'Afrique subsaharienne — avec l'exposition electromagnetique cumulative la plus courte de toute population majeure — a la capacite biologique la plus elevee.",
+    sMigrationNote: "C'est un gradient biologique (environnement, pas genetique). La fecondite des immigrants converge vers les niveaux du pays d'accueil en 1 a 2 generations — prouvant que le mecanisme est environnemental, pas genetique.",
+
+    sLastBarbarianTitle: "La fenetre du 'dernier barbare'",
+    sLastBarbarianText: "BERM predit que le BioCap de l'Afrique commencera a decliner avec la penetration mobile (~2010) et convergera vers les niveaux europeens vers ~2070-2080. La fenetre 2020-2060 pourrait etre la derniere periode ou une population avec une capacite biologique substantiellement superieure existe quelque part sur Terre.",
+
+    sActivationTitle: "Le cycle d'activation : pourquoi de nouvelles puissances emergent quand les anciennes declinent",
+    sActivationLead: "", sActivationBody1: "", sActivationBody2: "", sActivationBody3: "", sActivationBody4: "",
+    sActivationChartTitle: "Reponse dose-effet hormetique", sActivationChartZone1: "Zone 1 : Stimulation hormetique (nomade)", sActivationChartZone2: "Zone 2 : Transition (agraire)", sActivationChartZone3: "Zone 3 : Dommage (urbain/electrifie)",
+    sActivationChartX: "Charge EMF totale", sActivationChartY: "BioCap", sActivationChartSun: "Meme soleil, effets opposes", sActivationEpistemic: "",
+    sExpansionTitle: "Trois types d'expansion",
+    sExpansionCards: [
+      { id: "α", title: "Activation hormetique", examples: "Mongols 1206, Arabes 632, Vikings 793", icon: "sun", desc: "", trigger: "Maximum solaire + nomade = activation biologique" },
+      { id: "β", title: "Energie de recuperation", examples: "Explorations 1492, Revolution scientifique 1687, ere napoleonienne 1803", icon: "moon", desc: "", trigger: "Grand minimum + recuperation = essor creatif" },
+      { id: "γ", title: "Gradient d'erosion", examples: "Migrations germaniques 375–476, Mandchous → Ming 1644, Afrique → Europe 2000–", icon: "gradient", desc: "", trigger: "Siecles d'erosion urbaine + frontiere intacte = remplacement" },
+    ],
+
+    sThreeLawsTitle: "Trois lois historiques",
+    sThreeLaws: [
+      { id: "L1", title: "La naissance civilisationnelle requiert une zone a faible χ (25-35°N)", desc: "Stabilite biologique → developpement a long terme. Confirme : p = 0.01 (regions de naissance vs expansions)." },
+      { id: "L2", title: "Les renaissances creatives se regroupent pendant les grands minima solaires aux latitudes a χ eleve (45-60°N)", desc: "Modulation de recuperation maximale → capital creatif maximal. Confirme : 8/10 renaissances europeennes." },
+      { id: "L3", title: "Les ascensions imperiales commencent pendant les periodes de faible activite solaire", desc: "Recuperation biologique → capacite d'expansion. Confirme : evenements d'ascension solar = 0.41 vs evenements de pic = 0.73." },
+    ],
+
+    thThinker: "Penseur",
+    thYear: "Annee",
+    thObservation: "Observation",
+    thBerm: "Explication BERM",
+    biocapNormTitle: "Declin BioCap — duree de vie normalisee",
+    biocapTimeTitle: "Trajectoires BioCap — chronologie historique",
+    biocapXNorm: "Duree de vie civilisationnelle (%)",
+    biocapXTime: "Annee",
+    biocapY: "BioCap",
+
     s10title: "Limites épistémiques",
     s10claims: [
       "Sept RCT établissent des liens de causalité entre la testostérone et des comportements spécifiques chez les hommes.",
@@ -3344,6 +3675,72 @@ const COPY = {
     animalsFellDesc: "EMF가 기본적인 Ca²⁺ 및 CRY 수준에서 생물학에 영향을 미친다면, 민감도가 높은 종이 먼저 감소했어야 합니다 — 실제로 그랬습니다. 개구리 (습윤 피부, 직접 Ca²⁺ 결합)는 GSM이 보급되기 시작한 1987년경 감소하기 시작했습니다. 벌 (CRY 의존 항법)은 기지국이 농촌 지역에 도달한 2006년에 붕괴했습니다. 곤충 생물량이 27년간 75% 감소했습니다. 조류 개체수가 뒤따랐습니다. 포유류 — 인간 포함 — 는 건조한 피부와 큰 체질량으로 인해 민감도가 가장 낮지만, 긴 수명에 걸쳐 효과가 누적됩니다.",
     animalsFellAnalogy: "탄광 속 카나리아 비유는 은유적이 아닙니다 — 메커니즘적입니다. 같은 이온 채널, 같은 자기수용체, 같은 Ca²⁺ 신호 전달. 동물들은 우연히 상관하는 별개의 이유로 감소한 것이 아닙니다. 같은 메커니즘을 통해 서로 다른 민감도 역치에서 감소했습니다.",
 
+    sHistLawTitle: "문명의 생물학적 법칙",
+    sHistLawLead: "기록된 역사를 통틀어 문명은 놀라울 정도로 일관된 패턴을 따라왔다: 흥기, 번영, 쇠퇴. 11명의 독립적 사상가들 — 비코(1725)에서 터친(2023)까지 — 이 서로의 연구를 모른 채 같은 관찰에 도달했다. BERM은 빠진 메커니즘을 제안한다: 전자기 환경이 생물학적 능력을 조절하고, 이것이 문명의 역학을 구동한다.",
+
+    sProphetsTitle: "예언자들은 옳았다 — 그리고 틀렸다",
+    sProphetsLead: "3세기에 걸친 11명의 진지한 사상가들이 독립적으로 같은 문명 패턴을 기록했다. 그들은 방법론, 이념, 범위에 대해 의견이 달랐다. 그러나 하나의 관찰에 수렴했다: 문명은 선형적으로 진보하지 않는다. 사이클로 흥망하며, 후기 단계는 출산율 감소, 쾌락주의 증가, 집단 의지의 상실, 비관주의로 특징지어진다.",
+    sProphetsTable: [
+      { thinker: "잠바티스타 비코", year: "1725", observation: "세 시대의 반복 주기 (신들, 영웅들, 인간들)", bermExplanation: "BioCap 진동이 질적으로 다른 사회적 단계를 생성한다" },
+      { thinker: "오스발트 슈펭글러", year: "1918", observation: "수명을 가진 유기체로서의 문명", bermExplanation: "생물학적 기반은 누적 EMF 노출에 의한 생애주기를 가진다" },
+      { thinker: "아놀드 토인비", year: "1934", observation: "21개 문명에 걸친 도전과 응전", bermExplanation: "생물학적 능력이 응답의 질을 결정한다; 소진된 인구는 도전에 실패한다" },
+      { thinker: "피티림 소로킨", year: "1937", observation: "감각적-관념적 문화 진동", bermExplanation: "도파민/세로토닌 균형 변화 → 감각적 단계 = 낮은 DA, 높은 자극 추구" },
+      { thinker: "존 바곳 글럽", year: "1978", observation: "250년 제국 수명, 6단계", bermExplanation: "~250년 ≈ 쉬스 주기(200년) + 생물학적 관성(~50년)" },
+      { thinker: "조셉 테인터", year: "1988", observation: "복잡성의 수확체감", bermExplanation: "인지 능력 저하(BDNF↓, 코르티솔↑)가 복잡성 관리 능력을 감소시킨다" },
+      { thinker: "이븐 할둔", year: "1377", observation: "아사비야(집단 연대)가 3-4세대에 걸쳐 쇠퇴", bermExplanation: "옥시토신↓ + 테스토스테론↓ = 내집단 결속 감소 — 정확히 아사비야의 상실" },
+      { thinker: "피터 터친", year: "2003", observation: "더 긴 파동 내의 세속적 주기(~80-100년)", bermExplanation: "글라이스베르크 주기(88년)가 쉬스 주기 엔벨로프 내에서 BioCap을 변조" },
+      { thinker: "니마 파르비니", year: "2023", observation: "11명의 사상가 모두를 종합; 패턴은 프레임워크를 초월하여 견고", bermExplanation: "독립적 관찰자들의 수렴 = 설명이 필요한 실재 현상의 강력한 증거" },
+    ],
+
+    sSolarTitle: "전기화 이전과 이후",
+    sSolarLead: "전기화 이전, 생물학에 대한 유일한 중요한 전자기적 영향은 태양에서 왔다. 태양 활동은 중첩된 주기로 진동한다: 11년 슈바베 주기, 88년 글라이스베르크 주기, 약 200년 쉬스/드 브리스 주기. 대극소기 동안 생물학에 대한 전자기적 부담이 감소하고 생물학적 회복이 일어난다.",
+    sSolarFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ) + U(τ) + E(τ)] dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)] dτ",
+    sSolarFormulaTerms: [
+      "S(τ) = 태양 주기 중첩 [0,1]",
+      "U(τ) = 도시화의 EMF 성분 (느림, 전기 이전)",
+      "E(τ) = 전기화의 EMF 성분 (빠름, 1880년 이후)",
+      "σ(τ) = 회복 억제 계수 = min(E(τ)/E_max, 0.95)",
+      "χ(λ) = 지자기 감수성 계수 (위도 의존)",
+      "α = 생물학적 회복 계수",
+    ],
+    sSolarPrePost: "전기 이전(E=0): BioCap이 진동 → 주기적 문명 역학. 전기 이후(E≫S): BioCap이 단조 감소 → 회복 기간 없음.",
+    sSolarRenaissance: "유럽 주요 르네상스 10건 중 8건이 대극소기 동안 또는 직후에 발생했다: 이탈리아 르네상스는 슈페러 극소기에, 과학 혁명은 마운더 극소기에, 독일 낭만주의는 달턴 극소기에.",
+
+    sMigrationTitle: "이주 기울기",
+    sMigrationLead: "게르만 부족을 로마로, 아랍인을 비잔틴으로, 몽골 기병을 송나라 중국으로 몰아낸 동일한 생물학적 기울기가 오늘날에도 작동한다. 사하라 이남 아프리카 — 주요 인구 중 가장 짧은 누적 전자기 노출 — 가 가장 높은 생물학적 능력을 가진다.",
+    sMigrationNote: "이것은 생물학적 기울기(환경, 유전이 아님)이다. 이민자의 출산율은 1-2세대 내에 수용국 수준으로 수렴한다 — 메커니즘이 유전적이 아니라 환경적임을 입증한다.",
+
+    sLastBarbarianTitle: "'마지막 야만인'의 창",
+    sLastBarbarianText: "BERM은 아프리카의 BioCap이 모바일 보급(~2010)과 함께 하락하기 시작하여 ~2070-2080년에 유럽 수준으로 수렴할 것으로 예측한다. 2020-2060년의 창은 실질적으로 더 높은 생물학적 능력을 가진 인구가 지구 어딘가에 존재하는 마지막 기간일 수 있다.",
+
+    sActivationTitle: "활성화 주기: 왜 새로운 세력은 구세력이 쇠퇴할 때 부상하는가",
+    sActivationLead: "", sActivationBody1: "", sActivationBody2: "", sActivationBody3: "", sActivationBody4: "",
+    sActivationChartTitle: "호르메시스 용량-반응", sActivationChartZone1: "구역 1: 호르메시스 자극 (유목민)", sActivationChartZone2: "구역 2: 전환 (농경)", sActivationChartZone3: "구역 3: 손상 (도시/전기화)",
+    sActivationChartX: "총 EMF 부하", sActivationChartY: "BioCap", sActivationChartSun: "같은 태양, 반대 효과", sActivationEpistemic: "",
+    sExpansionTitle: "세 가지 확장 유형",
+    sExpansionCards: [
+      { id: "α", title: "호르메시스 활성화", examples: "몽골 1206, 아랍 632, 바이킹 793", icon: "sun", desc: "", trigger: "태양 극대기 + 유목민 = 생물학적 활성화" },
+      { id: "β", title: "회복 에너지", examples: "대항해시대 1492, 과학혁명 1687, 나폴레옹 시대 1803", icon: "moon", desc: "", trigger: "대극소기 + 회복 = 창조적 고양" },
+      { id: "γ", title: "침식 기울기", examples: "게르만 민족 이동 375–476, 만주→명 1644, 아프리카→유럽 2000–", icon: "gradient", desc: "", trigger: "수세기의 도시 침식 + 온전한 변경 = 교체" },
+    ],
+
+    sThreeLawsTitle: "세 가지 역사적 법칙",
+    sThreeLaws: [
+      { id: "L1", title: "문명의 탄생은 낮은 χ 지대(25-35°N)를 필요로 한다", desc: "생물학적 안정성 → 장기적 발전. 확인됨: p = 0.01 (탄생 지역 대 확장)." },
+      { id: "L2", title: "창조적 르네상스는 높은 χ 위도(45-60°N)의 대극소기에 집중된다", desc: "최대 회복 변조 → 최대 창조적 자본. 확인됨: 유럽 르네상스 10건 중 8건." },
+      { id: "L3", title: "제국의 흥기는 낮은 태양 활동 기간에 시작된다", desc: "생물학적 회복 → 확장 능력. 확인됨: 흥기 이벤트 solar = 0.41 대 피크 이벤트 = 0.73." },
+    ],
+
+    thThinker: "사상가",
+    thYear: "연도",
+    thObservation: "관찰",
+    thBerm: "BERM 설명",
+    biocapNormTitle: "BioCap 감쇠 — 정규화 수명",
+    biocapTimeTitle: "BioCap 궤적 — 역사적 타임라인",
+    biocapXNorm: "문명 수명 (%)",
+    biocapXTime: "연도",
+    biocapY: "BioCap",
+
     s10title: "인식론적 경계",
     s10claims: [
       "7건의 RCT가 남성에서 테스토스테론과 특정 행동 간의 인과적 연결을 확립.",
@@ -3403,16 +3800,38 @@ const COPY = {
   },
 };
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const d = pickCopy(COPY, locale);
+  const meta: Record<string, { title: string; description: string }> = {
+    en: {
+      title: "Why Civilizations Rise and Fall | BERM",
+      description: "A biological hypothesis for civilizational cycles: how electromagnetic infrastructure may drive the pattern of rise and decline observed across five millennia.",
+    },
+    fi: {
+      title: "Miksi sivilisaatiot nousevat ja kaatuvat | BERM",
+      description: "Biologinen hypoteesi sivilisaatioiden sykleille: miten sähkömagneettinen infrastruktuuri voi ohjata viiden vuosituhannen aikana havaittua nousun ja rappion kaavaa.",
+    },
+    ja: {
+      title: "文明はなぜ興亡するのか | BERM",
+      description: "文明のサイクルに関する生物学的仮説：電磁インフラが5千年にわたる興亡パターンをどのように駆動しうるか。",
+    },
+    fr: {
+      title: "Pourquoi les civilisations montent et tombent | BERM",
+      description: "Une hypothese biologique pour les cycles civilisationnels : comment l'infrastructure electromagnetique pourrait piloter le schema d'ascension et de declin observe sur cinq millenaires.",
+    },
+    ko: {
+      title: "문명은 왜 흥망하는가 | BERM",
+      description: "문명 주기에 대한 생물학적 가설: 전자기 인프라가 5천 년에 걸친 흥망 패턴을 어떻게 구동할 수 있는지.",
+    },
+  };
+  const m = meta[locale] || meta.en;
   return {
-    title: `${d.title} – Extinction Field`,
-    description: d.subtitle,
+    title: m.title,
+    description: m.description,
+    openGraph: {
+      title: m.title,
+      description: m.description,
+    },
   };
 }
 
@@ -3465,6 +3884,11 @@ export default async function CivilizationPage({
             {d.levelNote}
           </p>
         </section>
+
+      {/* Essay — main narrative */}
+      <section className="mb-20">
+        <CivilizationEssay locale={locale} />
+      </section>
 
       {/* S2: Two Parallel Disruptions */}
       <section className="mb-16">
@@ -4290,6 +4714,212 @@ export default async function CivilizationPage({
         </div>
         <div className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 max-w-4xl">
           <p className="text-xs text-foreground-muted leading-relaxed">{d.animalsFellAnalogy}</p>
+        </div>
+      </section>
+
+      {/* The Biological Law of Civilizations */}
+      <section className="mb-16 border-t editorial-rule pt-8">
+        <h2 className="text-2xl font-bold mb-2">{d.sHistLawTitle}</h2>
+        <p className="text-sm leading-relaxed text-muted-foreground mb-6 max-w-4xl">
+          {d.sHistLawLead}
+        </p>
+
+        {/* BioCap Formula */}
+        <div className="bg-card-bg border border-card-border rounded-lg p-4 font-mono text-sm overflow-x-auto max-w-4xl mb-6">
+          {d.sSolarFormula}
+        </div>
+
+        {/* BioCap Visualizations */}
+        <div className="grid grid-cols-1 gap-6 mb-8 max-w-4xl">
+          <div className="rounded-xl border border-card-border p-4 bg-card-bg">
+            <div className="chart-scroll">
+              <BiocapCivilizationChart chartTitle={d.biocapNormTitle} xLabel={d.biocapXNorm} yLabel={d.biocapY} />
+            </div>
+          </div>
+          <div className="rounded-xl border border-card-border p-4 bg-card-bg">
+            <div className="chart-scroll">
+              <BiocapTimelineChart chartTitle={d.biocapTimeTitle} xLabel={d.biocapXTime} yLabel={d.biocapY} />
+            </div>
+          </div>
+        </div>
+
+        {/* Prophets Were Right */}
+        <h3 className="text-xl font-bold mb-2">{d.sProphetsTitle}</h3>
+        <p className="text-sm leading-relaxed text-muted-foreground mb-6 max-w-4xl">
+          {d.sProphetsLead}
+        </p>
+
+        {/* Prophets Table */}
+        <div className="overflow-x-auto mb-8">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 px-3 font-semibold">{d.thThinker}</th>
+                <th className="text-left py-2 px-3 font-semibold">{d.thYear}</th>
+                <th className="text-left py-2 px-3 font-semibold">{d.thObservation}</th>
+                <th className="text-left py-2 px-3 font-semibold">{d.thBerm}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {d.sProphetsTable.map((row: { thinker: string; year: string; observation: string; bermExplanation: string }, i: number) => (
+                <tr key={i} className="border-b border-border/50">
+                  <td className="py-2 px-3 text-xs font-medium whitespace-nowrap">{row.thinker}</td>
+                  <td className="py-2 px-3 text-xs font-mono whitespace-nowrap">{row.year}</td>
+                  <td className="py-2 px-3 text-xs text-muted-foreground">{row.observation}</td>
+                  <td className="py-2 px-3 text-xs text-muted-foreground">{row.bermExplanation}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Solar Cycles */}
+        <h3 className="text-xl font-bold mb-2">{d.sSolarTitle}</h3>
+        <p className="text-sm leading-relaxed text-muted-foreground mb-4 max-w-4xl">
+          {d.sSolarLead}
+        </p>
+
+        {/* Formula Terms */}
+        <div className="bg-card-bg border border-card-border rounded-lg p-4 mb-4 max-w-4xl">
+          <p className="font-mono text-sm mb-3 overflow-x-auto">{d.sSolarFormula}</p>
+          <ul className="space-y-1">
+            {d.sSolarFormulaTerms.map((term: string, i: number) => (
+              <li key={i} className="text-xs text-muted-foreground font-mono">{term}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Pre/Post Electrification */}
+        <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 mb-4 max-w-4xl">
+          <p className="text-sm font-medium">{d.sSolarPrePost}</p>
+        </div>
+
+        {/* Renaissance Observation */}
+        <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-4 mb-8 max-w-4xl">
+          <p className="text-sm text-muted-foreground leading-relaxed">{d.sSolarRenaissance}</p>
+        </div>
+
+        {/* Three Historical Laws */}
+        <h3 className="text-xl font-bold mb-4">{d.sThreeLawsTitle}</h3>
+        <div className="grid md:grid-cols-3 gap-4 mb-8">
+          {d.sThreeLaws.map((law: { id: string; title: string; desc: string }) => (
+            <div key={law.id} className="rounded-xl border border-card-border p-5">
+              <span className="flex-shrink-0 rounded bg-emerald-500/20 text-emerald-400 text-xs font-mono px-2 py-0.5 inline-block mb-2">
+                {law.id}
+              </span>
+              <p className="font-semibold text-sm mb-2">{law.title}</p>
+              <p className="text-xs text-muted-foreground">{law.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Migration Gradient */}
+        <h3 className="text-xl font-bold mb-2">{d.sMigrationTitle}</h3>
+        <p className="text-sm leading-relaxed text-muted-foreground mb-4 max-w-4xl">
+          {d.sMigrationLead}
+        </p>
+
+        {/* Environmental not genetic warning */}
+        <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 mb-8 max-w-4xl flex gap-3 items-start">
+          <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.sMigrationNote}</p>
+        </div>
+
+        {/* Interactive migration gradient map */}
+        <div className="rounded-xl border border-card-border bg-card-bg p-4 mb-8">
+          <MigrationGradientMap title={d.sMigrationTitle} />
+        </div>
+
+        {/* Last Barbarian Window */}
+        <h3 className="text-xl font-bold mb-2">{d.sLastBarbarianTitle}</h3>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p>{d.sLastBarbarianText}</p>
+        </div>
+      </section>
+
+      {/* Activation Cycle */}
+      <section id="activation-cycle" className="mb-16 border-t editorial-rule pt-8">
+        <h2 className="text-2xl font-bold mb-4">{d.sActivationTitle}</h2>
+        <div className="space-y-4 text-sm text-foreground-muted leading-relaxed max-w-4xl">
+          <p>{d.sActivationLead}</p>
+          <p>{d.sActivationBody1}</p>
+          <p>{d.sActivationBody2}</p>
+          <p>{d.sActivationBody3}</p>
+          <p>{d.sActivationBody4}</p>
+        </div>
+
+        {/* Hormetic Dose-Response Chart */}
+        <div className="rounded-xl border border-card-border bg-card-bg p-6 my-8 max-w-4xl">
+          <h3 className="text-sm font-semibold mb-4">{d.sActivationChartTitle}</h3>
+          <svg viewBox="0 0 600 300" className="w-full max-w-2xl mx-auto" aria-label={d.sActivationChartTitle}>
+            <defs>
+              <linearGradient id="hormZone1" x1="0" y1="0" x2="0.35" y2="0">
+                <stop offset="0%" stopColor="rgb(34,197,94)" stopOpacity="0.15" />
+                <stop offset="100%" stopColor="rgb(34,197,94)" stopOpacity="0.05" />
+              </linearGradient>
+              <linearGradient id="hormZone3" x1="0.55" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="rgb(239,68,68)" stopOpacity="0.05" />
+                <stop offset="100%" stopColor="rgb(239,68,68)" stopOpacity="0.2" />
+              </linearGradient>
+            </defs>
+            {/* Zones */}
+            <rect x="60" y="30" width="180" height="230" fill="url(#hormZone1)" />
+            <rect x="340" y="30" width="230" height="230" fill="url(#hormZone3)" />
+            {/* Axes */}
+            <line x1="60" y1="260" x2="570" y2="260" stroke="currentColor" strokeOpacity="0.3" />
+            <line x1="60" y1="30" x2="60" y2="260" stroke="currentColor" strokeOpacity="0.3" />
+            {/* Hormetic curve */}
+            <path d="M 60,220 Q 120,180 180,100 Q 210,60 240,80 Q 300,130 380,180 Q 460,230 570,250" fill="none" stroke="rgb(34,197,94)" strokeWidth="2.5" />
+            {/* Optimal point */}
+            <circle cx="210" cy="65" r="4" fill="rgb(34,197,94)" />
+            {/* Zone labels */}
+            <text x="140" y="280" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.5">{d.sActivationChartZone1}</text>
+            <text x="290" y="280" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.5">{d.sActivationChartZone2}</text>
+            <text x="460" y="280" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.5">{d.sActivationChartZone3}</text>
+            {/* Axis labels */}
+            <text x="315" y="298" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.6">{d.sActivationChartX}</text>
+            <text x="15" y="150" textAnchor="middle" fontSize="9" fill="currentColor" fillOpacity="0.6" transform="rotate(-90, 15, 150)">{d.sActivationChartY}</text>
+            {/* Sun annotation */}
+            <text x="315" y="50" textAnchor="middle" fontSize="10" fontWeight="600" fill="rgb(234,179,8)" fillOpacity="0.8">☀ {d.sActivationChartSun}</text>
+            {/* Gradient arrows */}
+            <line x1="140" y1="130" x2="140" y2="90" stroke="rgb(34,197,94)" strokeWidth="1.5" markerEnd="url(#arrowGreen)" />
+            <line x1="460" y1="200" x2="460" y2="240" stroke="rgb(239,68,68)" strokeWidth="1.5" markerEnd="url(#arrowRed)" />
+            <defs>
+              <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="rgb(34,197,94)" /></marker>
+              <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="rgb(239,68,68)" /></marker>
+            </defs>
+          </svg>
+        </div>
+
+        {/* Epistemic warning */}
+        <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 max-w-4xl flex gap-3 items-start">
+          <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+          <p className="text-xs text-foreground-muted leading-relaxed">{d.sActivationEpistemic}</p>
+        </div>
+      </section>
+
+      {/* Three Types of Expansion */}
+      <section id="expansion-types" className="mb-16 border-t editorial-rule pt-8">
+        <h2 className="text-2xl font-bold mb-6">{d.sExpansionTitle}</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          {d.sExpansionCards.map((card: { id: string; title: string; examples: string; icon: string; desc: string; trigger: string }) => (
+            <div key={card.id} className="rounded-xl border border-card-border p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xl">
+                  {card.icon === "sun" ? "☀️" : card.icon === "moon" ? "🌙" : "📐"}
+                </span>
+                <span className="rounded bg-emerald-500/20 text-emerald-400 text-xs font-mono px-2 py-0.5">
+                  {card.id}
+                </span>
+              </div>
+              <h3 className="font-semibold text-sm mb-2">{card.title}</h3>
+              <p className="text-xs text-muted-foreground mb-3">{card.desc}</p>
+              <p className="text-xs text-muted-foreground italic mb-2">{card.examples}</p>
+              <div className="rounded bg-card-bg border border-card-border px-3 py-2">
+                <p className="text-xs font-medium">{card.trigger}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

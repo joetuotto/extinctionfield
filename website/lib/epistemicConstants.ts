@@ -53,7 +53,7 @@ export const MAP_EPISTEMIC_COLORS: Record<MapEpistemicLevel, string> = {
 
 export const MAP_EPISTEMIC_LABELS: Record<string, Record<MapEpistemicLevel, string>> = {
   en: { E: "Empirical", "M|C": "Mechanism + association", C: "Conjectural", L: "Lindgren geometry" },
-  fi: { E: "Empiirinen", "M|C": "Mekanismi + assosiaatio", C: "Konjekturaalinen", L: "Lindgren-geometria" },
+  fi: { E: "Empiirinen", "M|C": "Mekanismi + assosiaatio", C: "Arvailullinen", L: "Lindgren-geometria" },
   ja: { E: "実証的", "M|C": "メカニズム＋関連", C: "推測的", L: "リンドグレン幾何学" },
   fr: { E: "Empirique", "M|C": "Mécanisme + association", C: "Conjectural", L: "Géométrie de Lindgren" },
   ko: { E: "경험적", "M|C": "기전 + 연관", C: "추측적", L: "린드그렌 기하학" },

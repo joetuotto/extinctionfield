@@ -84,12 +84,17 @@ export function SpeciesDeclineChart({ locale }: { locale: Locale }) {
     bird: "var(--color-foreground-muted, #94a3b8)",
   };
 
+  const labelOffsets: Record<string, number> = {
+    dog: 9,
+    bird: -9,
+  };
+
   return (
     <figure className="data-figure my-12">
-      <div className="overflow-x-auto p-1">
+      <div className="chart-scroll p-1">
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          className="w-full max-w-[600px] mx-auto"
+          className="w-full min-w-[560px] max-w-[600px] mx-auto"
           role="img"
           aria-label="Species reproductive decline chart"
         >
@@ -122,6 +127,7 @@ export function SpeciesDeclineChart({ locale }: { locale: Locale }) {
           {SPECIES.map((s) => {
             const lastVal = s.data[s.data.length - 1];
             const lastY = PAD.top + plotH - (lastVal / 100) * plotH;
+            const labelOffset = labelOffsets[s.id] ?? 0;
             return (
               <g key={s.id}>
                 <path
@@ -133,9 +139,20 @@ export function SpeciesDeclineChart({ locale }: { locale: Locale }) {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
+                {labelOffset !== 0 && (
+                  <line
+                    x1={PAD.left + plotW}
+                    y1={lastY}
+                    x2={PAD.left + plotW + 8}
+                    y2={lastY + labelOffset}
+                    stroke={colors[s.id]}
+                    strokeWidth={1}
+                    strokeOpacity={0.45}
+                  />
+                )}
                 <text
-                  x={PAD.left + plotW + 8}
-                  y={lastY + 4}
+                  x={PAD.left + plotW + 12}
+                  y={lastY + labelOffset + 4}
                   fontSize={11}
                   fill={colors[s.id]}
                   fontWeight={s.highlight ? 600 : 400}

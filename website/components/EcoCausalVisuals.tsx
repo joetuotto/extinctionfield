@@ -110,7 +110,7 @@ const COPY: Record<
     modelKicker: "Kausaalinen lukutapa",
     modelTitle: "Yksi FieldState; erilaiset biologiset siirtofunktiot",
     modelLead:
-      "Lue malli vasemmalta oikealle. Fysikaalinen konfiguraatio on yhteinen, mutta aistiminen, kuljetus ja fysiologinen siirto ovat laji- ja elinvaihekohtaisia. Yhtenäiset vaiheet tiivistävät mitatut premissit. Meripihkanvärinen jatko on eksplisiittisesti testattava ekologinen ja evolutiivinen laajennus.",
+      "Lue malli vasemmalta oikealle. Fysikaalinen konfiguraatio on yhteinen, mutta aistiminen, kuljetus ja fysiologinen siirto ovat laji- ja elinvaihekohtaisia. Yhtenäiset vaiheet tiivistävät mitatut premissit. Meripihkanvärinen jatko on nimenomaisesti testattava ekologinen ja evolutiivinen laajennus.",
     observed: "Mitattu premissi",
     hypothesis: "Mallista johdettu; testattava",
     steps: [
@@ -158,7 +158,7 @@ const COPY: Record<
       { label: "Staattinen rajapinta", value: "E_DC · Q · ∇|E|²", endpoint: "voima / kiinnittyminen", scope: "fysikaalinen kuljetus" },
       { label: "ELF-aaltomuoto", value: "E_AC(f) · B(f) · dE/dt", endpoint: "laskeutuminen / käyttäytyminen", scope: "vastaava päätepiste" },
       { label: "Geomagneettinen vihje", value: "B₀ · inklinaatio · valo", endpoint: "orientaatio", scope: "kontekstiriippuvainen signaali" },
-      { label: "RF-allekirjoitus", value: "S(f, polarisaatio, aika)", endpoint: "taajuusikkuna", scope: "spektrispesifi tulos" },
+      { label: "RF-allekirjoitus", value: "S(f, polarisaatio, aika)", endpoint: "taajuusikkuna", scope: "spektritarkka tulos" },
     ],
     tickKicker: "Näyttörajaus · Ixodes / isäntärajapinta",
     tickTitle: "Mitä punkkikoe osoittaa — ja mitä se ei osoita",

@@ -58,7 +58,7 @@ const COPY = {
   fi: {
     title: "Amish: Puuttuva kontrolliryhmä",
     subtitle: "Vanhan järjestyksen amishilla on minimaalinen sähkönkäyttö, ei henkilökohtaista elektroniikkaa, ja dramaattisesti alhaisemmat esiintyvyydet jokaisessa BERM:n ennustamassa tilassa: lihavuus -89 %, T2D -75 %, verenpainetauti -66 %, syöpä -40 %. Massiiviset elämäntapamuuttujat (ruokavalio, liikunta, tupakointi, yhteisö) tekevät suoran attribuution mahdottomaksi. Kriittinen testi on amish–mennoniittigradientti.",
-    backLink: "← Takaisin Evidenssiin",
+    backLink: "← Takaisin näyttöön",
     cautionText: "Tämä sivu esittää amish-terveysdata luonnollisena kokeena. Terveyserot ovat todellisia ja hyvin dokumentoituja, mutta elämäntapamuuttujat ovat massiivisia. Tämä analyysi tunnustaa nimenomaisesti, että amish-data yksinään EI VOI todistaa EMF-kausaatiota. Gradienttitesti tarvitaan.",
 
     dataTitle: "Data",
@@ -78,7 +78,7 @@ const COPY = {
       { factor: "Yhteisö", detail: "Vahvat sosiaaliset siteet, vähäinen sosiaalinen eristäytyminen, monisukupolviset kotitaloudet, jaettu tarkoitus. Sosiaalinen yhteys on itsenäisesti yhdistetty alhaisempaan kuolleisuuteen, parempaan mielenterveyteen ja vähentyneisiin kroonisiin sairauksiin." },
     ],
 
-    crossTitle: "Ristiinvalidointi: Miksi elämäntapa yksin ei ehkä riitä",
+    crossTitle: "Ristikkäistodentaminen: Miksi elämäntapa yksin ei ehkä riitä",
     crossLead: "Riippumattomat todistuslinjat vähentävät — mutta eivät poista — pelkän elämäntavan selitystä.",
     crossCards: [
       { source: "Klimentidis ym.", referenceId: "klimentidis2010", detail: "8 lajia lihoo kontrolloiduissa ympäristöissä (p=10⁻⁷). Laboratorioeläimet kiinteällä ruokavaliolla ja liikunnalla lihovat myös. Ruokavalio ja liikunta yksin eivät voi selittää tätä lajienvälistä trendiä." },

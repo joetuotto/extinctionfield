@@ -120,7 +120,7 @@ const COPY = {
     gene: "Geeni",
     cellType: "Solutyyppi",
     function: "Toiminto",
-    level: "Evidenssitaso",
+    level: "Näyttötaso",
     channelVal: "Cav3.2 (T-tyyppi)",
     geneVal: "CACNA1H",
     cellTypeVal: "Glomerulosasolu → Aldosteroni",
@@ -147,7 +147,7 @@ const COPY = {
     s4p1:
       "BERM-kehys tunnistaa kaksi rinnakkaista, toisistaan riippumatonta EMF → verenpainetautireittia. Sydänreitti toimii SA-solmukkeen Cav3.1-tyypin T-kanavien kautta, joissa EMF-häiriö muuttaa sykettä ja sydämen minuuttitilavuutta. Lisämunuaisreitti toimii zona glomerulosan Cav3.2:n kautta, jossa EMF-häiriö nostaa aldosteronia ja veritilavuutta.",
     s4p2:
-      "Nämä ovat mekanistisesti riippumattomia: toinen kontrolloi sydämen sykettä (minuuttitilavuus), toinen verisuoniston tilavuutta (esikuorma). Molemmat konvergoituvat kohonneeseen verenpaineeseen. Tämä kaksoisreittiarkkitehtuuri tarkoittaa että EMF-indusoitu verenpainetauti on vahvempi ja vaikeammin hoidettava kuin yhden mekanismin verenpainetauti — yhden reitin estäminen jättää toisen ennalleen.",
+      "Nämä ovat mekanistisesti riippumattomia: toinen kontrolloi sydämen sykettä (minuuttitilavuus), toinen verisuoniston tilavuutta (esikuorma). Molemmat konvergoituvat kohonneeseen verenpaineeseen. Tämä kaksoisreittiarkkitehtuuri tarkoittaa että EMF-aiheutettu verenpainetauti on vahvempi ja vaikeammin hoidettava kuin yhden mekanismin verenpainetauti — yhden reitin estäminen jättää toisen ennalleen.",
 
     s3SectionTitle: "Kortisoli ja HPA-akseli",
 
@@ -155,9 +155,9 @@ const COPY = {
     s5p1:
       "Zona fasciculata, lisämunuaiskuoren keskikerros, tuottaa kortisolia — ensisijaista glukokortikoidia ja stressihormonia. Kortisolin eritystä stimuloi aivolisäkkeen ACTH, ja jänniteohjatut kalsiumkanavat osallistuvat ACTH-stimuloituun kortisolivapautukseen. Krooninen EMF-altistus voi häiritä tätä prosessia, edistäen kroonista stressifysiologiaa.",
     s5p2:
-      "Kortisoli suoraan vaimentaa GnRH-pulsatiliteettia hypotalamuksessa, vähentäen LH:n ja FSH:n eritystä aivolisäkkeestä. Tämä yhdistää lisämunuaisen kortisolin säätelyn häiriön BERM:n lisääntymisreittiin: krooninen EMF → kortisolin kohoaminen → GnRH:n vaimentuminen → gonadotropiinierityksen väheneminen → hedelmällisyyden heikkeneminen. Stressiin liittyvä hedelmättömyys on hyvin dokumentoitu kliininen ilmiö — BERM-kehys tarjoaa spesifisen EMF-välitteisen mekanismin.",
+      "Kortisoli suoraan vaimentaa GnRH-pulsatiliteettia hypotalamuksessa, vähentäen LH:n ja FSH:n eritystä aivolisäkkeestä. Tämä yhdistää lisämunuaisen kortisolin säätelyn häiriön BERM:n lisääntymisreittiin: krooninen EMF → kortisolin kohoaminen → GnRH:n vaimentuminen → gonadotropiinierityksen väheneminen → hedelmällisyyden heikkeneminen. Stressiin liittyvä hedelmättömyys on hyvin dokumentoitu kliininen ilmiö — BERM-kehys tarjoaa tarkan EMF-välitteisen mekanismin.",
 
-    s4SectionTitle: "Evidenssi ja ennusteet",
+    s4SectionTitle: "Näyttö ja ennusteet",
 
     s6Title: "Epidemiologinen konteksti",
     s6Stats: [
@@ -169,7 +169,7 @@ const COPY = {
 
     s7Title: "BERM-ennusteet",
     s7Text:
-      "BERM-kehys tuottaa kaksi spesifistä, testattavaa ennustetta lisämunuaisen moduloomille:",
+      "BERM-kehys tuottaa kaksi tarkkaa, testattavaa ennustetta lisämunuaisen moduloomille:",
     s7Predictions: [
       {
         id: "ADRENAL-1",
@@ -178,7 +178,7 @@ const COPY = {
       },
       {
         id: "ADRENAL-2",
-        text: "Verenpainetaudin esiintyvyys nuorilla aikuisilla (18–35) korreloi kansallisen EMF-tiheyden kanssa (tukiasematiheys × keskimääräinen matkapuhelinkäyttö) suolan, lihavuuden, fyysisen aktiivisuuden ja geneettisen alttiuden kontrolloinnin jälkeen. Korrelaatio on spesifinen tilavuusvälitteiselle (aldosteroniajateiselle) verenpainetaudille eikä vaskulaarisen resistenssin verenpainetaudille.",
+        text: "Verenpainetaudin esiintyvyys nuorilla aikuisilla (18–35) korreloi kansallisen EMF-tiheyden kanssa (tukiasematiheys × keskimääräinen matkapuhelinkäyttö) suolan, lihavuuden, fyysisen aktiivisuuden ja geneettisen alttiuden kontrolloinnin jälkeen. Korrelaatio on tarkka tilavuusvälitteiselle (aldosteronivälitteiselle) verenpainetaudille eikä vaskulaarisen resistenssin verenpainetaudille.",
         discriminating: true,
       },
     ],
@@ -190,7 +190,7 @@ const COPY = {
         citation: "Journal of Molecular Endocrinology — Cav3.2 ja aldosteroni",
         referenceId: "glomerulosa_cav32_aldosterone",
         finding:
-          "T-tyypin Cav3.2-kalsiumkanavat zona glomerulosan soluissa tarjoavat ikkunavirran lepopotentiaalissa, ajaen tonista aldosteronisynteesiä. Kanavan esto tai poistogeenisuus eliminoi aldosteronituotannon.",
+          "T-tyypin Cav3.2-kalsiumkanavat zona glomerulosan soluissa tarjoavat ikkunavirran lepopotentiaalissa, ajaen tonista aldosteronisynteesiä. Kanavan esto tai poistogeenisuus poistaa aldosteronituotannon.",
       },
       {
         id: "mohamed-emf-blood-pressure",
@@ -204,7 +204,7 @@ const COPY = {
     seeAlso: "Katso myös",
     heartModulome: "Sydämen moduloomi",
     predictionsPage: "Ennusteet — ADRENAL-1/2",
-    evidencePage: "Evidenssirekisteri",
+    evidencePage: "Näyttörekisteri",
     discriminatingLabel: "Erotteleva",
     allPredictionsLink: "Kaikki ennusteet →",
   },

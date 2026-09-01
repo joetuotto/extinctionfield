@@ -78,7 +78,7 @@ export const NAV_ROUTES: NavRoute[] = [
         icon: Network,
         descs: {
           en: "Interactive causal chain from physics to TFR",
-          fi: "Interaktiivinen kausaaliketju fysiikasta TFR:ään",
+          fi: "Vuorovaikutteinen kausaaliketju fysiikasta TFR:ään",
           ja: "物理学からTFRへのインタラクティブな因果連鎖",
           fr: "Chaîne causale interactive de la physique au TFR",
           ko: "물리학에서 TFR까지의 인터랙티브 인과 사슬",
@@ -123,7 +123,7 @@ export const NAV_ROUTES: NavRoute[] = [
       },
       {
         href: "/model#camkii-convergence",
-        labels: { en: "CaMKII Convergence", fi: "CaMKII-konvergenssi", ja: "CaMKII収束", fr: "Convergence CaMKII", ko: "CaMKII 수렴" },
+        labels: { en: "CaMKII Convergence", fi: "CaMKII-yhdentyminen", ja: "CaMKII収束", fr: "Convergence CaMKII", ko: "CaMKII 수렴" },
         icon: Activity,
         descs: {
           en: "One molecule, five disease cascades",
@@ -148,6 +148,11 @@ export const NAV_ROUTES: NavRoute[] = [
     ],
   },
   {
+    href: "/civilization",
+    labels: { en: "Civilization", fi: "Sivilisaatio", ja: "文明", fr: "Civilisation", ko: "문명" },
+    icon: Landmark,
+  },
+  {
     href: "/evidence",
     labels: { en: "Evidence", fi: "Näyttö", ja: "エビデンス", fr: "Preuves", ko: "증거" },
     icon: Layers,
@@ -158,7 +163,7 @@ export const NAV_ROUTES: NavRoute[] = [
         icon: Layers,
         descs: {
           en: "Study-by-study evidence register",
-          fi: "Tutkimuskohtainen evidenssirekisteri",
+          fi: "Tutkimuskohtainen näyttörekisteri",
           ja: "研究別エビデンスレジスター",
           fr: "Registre de preuves étude par étude",
           ko: "연구별 증거 레지스터",
@@ -178,11 +183,11 @@ export const NAV_ROUTES: NavRoute[] = [
       },
       {
         href: "/evidence/pharmacology",
-        labels: { en: "Pharmacological Evidence", fi: "Farmakologinen evidenssi", ja: "薬理学的エビデンス", fr: "Preuves pharmacologiques", ko: "약리학적 증거" },
+        labels: { en: "Pharmacological Evidence", fi: "Farmakologinen näyttö", ja: "薬理学的エビデンス", fr: "Preuves pharmacologiques", ko: "약리학적 증거" },
         icon: Pill,
         descs: {
           en: "14 drug classes converging on BERM pathways",
-          fi: "14 lääkeryhmää konvergoivat BERM-reiteillä",
+          fi: "14 lääkeryhmää yhtyvät BERM-reiteillä",
           ja: "BERM経路に収束する14の薬物クラス",
           fr: "14 classes de médicaments convergent sur les voies BERM",
           ko: "BERM 경로에 수렴하는 14가지 약물 클래스",
@@ -190,7 +195,7 @@ export const NAV_ROUTES: NavRoute[] = [
       },
       {
         href: "/evidence/timothy-experiment",
-        labels: { en: "Timothy Syndrome", fi: "Timothyn syndrooma", ja: "ティモシー症候群", fr: "Syndrome de Timothy", ko: "티모시 증후군" },
+        labels: { en: "Timothy Syndrome", fi: "Timothyn oireyhtymä", ja: "ティモシー症候群", fr: "Syndrome de Timothy", ko: "티모시 증후군" },
         icon: Dna,
         descs: {
           en: "CACNA1C gain-of-function — nature's experiment",
@@ -203,7 +208,7 @@ export const NAV_ROUTES: NavRoute[] = [
       },
       {
         href: "/evidence/populations",
-        labels: { en: "Populations", fi: "Populaatiot", ja: "集団", fr: "Populations", ko: "인구 집단" },
+        labels: { en: "Populations", fi: "Väestöryhmät", ja: "集団", fr: "Populations", ko: "인구 집단" },
         icon: Globe2,
         descs: {
           en: "Nine low-EMF communities vs modern",
@@ -227,7 +232,7 @@ export const NAV_ROUTES: NavRoute[] = [
       },
       {
         href: "/evidence/replication",
-        labels: { en: "Replication Crisis", fi: "Replikaatiokriisi", ja: "再現性の危機", fr: "Crise de la réplication", ko: "재현성 위기" },
+        labels: { en: "Replication Crisis", fi: "Toistettavuuskriisi", ja: "再現性の危機", fr: "Crise de la réplication", ko: "재현성 위기" },
         icon: FlaskConical,
         descs: {
           en: "Blackman's five confounds and the five-parameter standard",
@@ -251,7 +256,7 @@ export const NAV_ROUTES: NavRoute[] = [
       },
       {
         href: "/sentinel",
-        labels: { en: "Sentinel Species", fi: "Sentinel-lajit", ja: "指標種", fr: "Espèces sentinelles", ko: "감시 종" },
+        labels: { en: "Sentinel Species", fi: "Indikaattorilajit", ja: "指標種", fr: "Espèces sentinelles", ko: "감시 종" },
         icon: Bug,
         descs: {
           en: "Bee, bird, and amphibian decline patterns",
@@ -291,11 +296,6 @@ export const NAV_ROUTES: NavRoute[] = [
     href: "/epistemology",
     labels: { en: "Epistemology", fi: "Epistemologia", ja: "認識論", fr: "Épistémologie", ko: "인식론" },
     icon: Scale,
-  },
-  {
-    href: "/civilization",
-    labels: { en: "Civilization", fi: "Sivilisaatio", ja: "文明", fr: "Civilisation", ko: "문명" },
-    icon: Landmark,
   },
   {
     href: "/predictions",
@@ -340,7 +340,7 @@ export function getNavRoutes(locale: string): ResolvedNavRoute[] {
 }
 
 export interface ExploreTab {
-  key: "map" | "country" | "global" | "sentinel" | "data" | "layers" | "threshold";
+  key: "map" | "country" | "global" | "sentinel" | "data" | "layers" | "threshold" | "civilizations" | "naturalEM";
   labels: Labels;
   icon: LucideIcon;
 }
@@ -351,8 +351,10 @@ export const EXPLORE_TABS: ExploreTab[] = [
   { key: "global", labels: { en: "Global", fi: "Globaali", ja: "グローバル", fr: "Mondial", ko: "글로벌" }, icon: Globe2 },
   { key: "threshold", labels: { en: "T→TFR", fi: "T→TFR", ja: "T→TFR", fr: "T→TFR", ko: "T→TFR" }, icon: Activity },
   { key: "sentinel", labels: { en: "Sentinel", fi: "Indikaattorit", ja: "指標種", fr: "Sentinelles", ko: "감시종" }, icon: Leaf },
-  { key: "data", labels: { en: "Data", fi: "Data", ja: "データ", fr: "Données", ko: "데이터" }, icon: Database },
+  { key: "data", labels: { en: "Aineisto", fi: "Aineisto", ja: "データ", fr: "Données", ko: "데이터" }, icon: Database },
   { key: "layers", labels: { en: "Layers", fi: "Kerrokset", ja: "レイヤー", fr: "Couches", ko: "레이어" }, icon: Layers },
+  { key: "civilizations", labels: { en: "Civilizations", fi: "Sivilisaatiot", ja: "文明", fr: "Civilisations", ko: "문명" }, icon: Landmark },
+  { key: "naturalEM", labels: { en: "Natural EM", fi: "Luonnollinen EM", ja: "自然EM", fr: "EM naturel", ko: "자연 EM" }, icon: Radio },
 ];
 
 export function getExploreTabs(locale: string) {

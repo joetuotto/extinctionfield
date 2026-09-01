@@ -25,7 +25,7 @@ export const LEVEL_TITLES_FI: Record<number, string> = {
   5: "Kalvofysiikka",
   6: "Polut",
   7: "Kaskadi",
-  8: "Konvergenssi",
+  8: "Yhdentyminen",
   9: "Demografinen kaskadi",
   10: "Takaisinkytkentä",
   11: "Lajienväliset validointi",
@@ -86,7 +86,7 @@ export const NODES: ChainNode[] = [
         authors: "Vassallo ym. 2025",
         title: "Independent Scientific Validation of Lindgren et al.",
         journal: "Demokritos Scientific Journal",
-        keyFinding: "Riippumaton validaatio Lindgrenin johdolle",
+        keyFinding: "Riippumaton todentaminen Lindgrenin johdolle",
         keyFinding_en: "Independent validation of Lindgren's derivation",
       },
     ],
@@ -134,8 +134,105 @@ export const NODES: ChainNode[] = [
     falsificationCondition_en:
       "If a linear biological response is observed without a background field (Ā = 0)",
   },
+  {
+    id: "chi_spin",
+    level: 2,
+    label: "Spin-herkkyysfunktio χ_B",
+    label_en: "Spin susceptibility χ_B",
+    sublabel: "CRY/RPM · B_ext/B_geo",
+    epistemicLevel: "M|C",
+    title: "Spin-kemiallinen herkkyysfunktio",
+    title_en: "Spin-chemical susceptibility function",
+    mechanism:
+      "Kryptokromin radikaalipari (RPM) on herkkä ulkoiselle magneettikentälle. Herkkyys riippuu ulkoisen kentän suhteesta geomagneettiseen taustaan: χ_B = f(B_ext/B_geo). Toisin kuin χ(Ā), joka on puhtaasti geometrinen, χ_B perustuu kvanttispin-dynamiikkaan. Molemmat herkkyysfunktiot tarvitaan: χ(Ā) kattaa VGCC-reitin (polut A/D/E), χ_B kattaa CRY/RPM-reitin (polut B/C).",
+    mechanism_en:
+      "Cryptochrome's radical pair mechanism (RPM) is sensitive to external magnetic fields. Sensitivity depends on the ratio of external field to geomagnetic background: χ_B = f(B_ext/B_geo). Unlike χ(Ā), which is purely geometric, χ_B is based on quantum spin dynamics. Both susceptibility functions are needed: χ(Ā) covers the VGCC pathway (pathways A/D/E), χ_B covers the CRY/RPM pathway (pathways B/C).",
+    lindgrenInterpretation:
+      "Lindgrenin geometriassa χ(Ā) on ainoa valintasääntö. CRY/RPM-mekanismi on riippumaton lisäkanava joka EI seuraa suoraan geometriasta vaan kvanttikemiasta. BERM yhdistää molemmat: geometrinen kanava (χ) + spin-kemiallinen kanava (χ_B) = kaksi itsenäistä herkkyysfunktiota.",
+    lindgrenInterpretation_en:
+      "In Lindgren's geometry, χ(Ā) is the only selection rule. The CRY/RPM mechanism is an independent additional channel that does NOT follow directly from geometry but from quantum chemistry. BERM combines both: geometric channel (χ) + spin-chemical channel (χ_B) = two independent susceptibility functions.",
+    quantitative:
+      "χ_B = f(B_ext / B_geo)\n\nB_geo ≈ 25–65 μT (geomagneettinen kenttä)\nB_ext = ulkoinen häiriö (antropogeeninen tai luonnollinen)\n\nISS: B ≈ 0 → χ_B = anomaalinen (ei referenssitaustaa)\nMaanpinta: B_geo = normaali → χ_B = kalibroidussa tilassa",
+    quantitative_en:
+      "χ_B = f(B_ext / B_geo)\n\nB_geo ≈ 25–65 μT (geomagnetic field)\nB_ext = external perturbation (anthropogenic or natural)\n\nISS: B ≈ 0 → χ_B = anomalous (no reference background)\nGround: B_geo = normal → χ_B = calibrated state",
+    keyReferences: [
+      {
+        referenceId: "nsr2024_hmf_astronaut_cry",
+        authors: "National Science Review 2024",
+        title: "Potential health risks of hypomagnetic field",
+        journal: "National Science Review",
+        keyFinding: "HMF vaikuttaa CRY1/CRY2-ekspressioon, CRY on magnetoreseptori",
+        keyFinding_en: "HMF affects CRY1/CRY2 expression, CRY is a magnetoreceptor",
+      },
+      {
+        referenceId: "pmc4501744_planthopper_nzmf",
+        authors: "Wan G et al. 2015",
+        title: "Cryptochromes under Near-Zero Magnetic Fields",
+        journal: "Scientific Reports",
+        keyFinding: "Lähes-nolla-magneettikentässä CRY-ekspressio ja lisääntyminen häiriintyvät",
+        keyFinding_en: "Near-zero magnetic field disrupts CRY expression and reproduction",
+      },
+    ],
+    falsificationCondition:
+      "Jos CRY/RPM-mekanismi osoitetaan magneettikentästä riippumattomaksi tai CRY:n rooli sirkadiaanisessa säätelyssä kumotaan",
+    falsificationCondition_en:
+      "If the CRY/RPM mechanism is shown to be independent of magnetic fields or CRY's role in circadian regulation is disproven",
+  },
 
   // TASO 3
+  {
+    id: "natural_em",
+    level: 3,
+    label: "Luonnollinen EM-ympäristö",
+    label_en: "Natural EM environment",
+    sublabel: "SR + Pc1 + geoB + aurinko + GIC",
+    sublabel_en: "SR + Pc1 + geoB + solar + GIC",
+    epistemicLevel: "M|C",
+    title: "Viisi luonnollisen sähkömagneettisen ympäristön kerrosta",
+    title_en: "Five layers of the natural electromagnetic environment",
+    mechanism:
+      "Biologiset järjestelmät kehittyivät viidessä luonnollisessa EM-kerroksessa: (1) Schumannin resonanssi (SR, 7.83 Hz perustaajuus) — maapallon sähkömagneettinen 'sydämen syke', (2) Pc1-mikropulsaatiot (0.2–5 Hz) — magnetosfäärin ionisyklotroniaallot, taajuus osuu sydämen leposykkeen alueelle, (3) Geomagneettinen kenttä (B_geo ≈ 25–65 μT) — CRY/RPM-navigaation ja sirkadiaanisen säätelyn referenssi, (4) Aurinkojakson vaihtelu (11v sykli) — moduloi kaikkia edellisiä, (5) GIC (Geomagnetically Induced Currents) — geomagneettisten myrskyjen induktiovirrat sähköverkoissa tuottavat harmonisia → ELF-bioaltistus.",
+    mechanism_en:
+      "Biological systems evolved within five natural EM layers: (1) Schumann resonance (SR, 7.83 Hz fundamental) — Earth's electromagnetic 'heartbeat', (2) Pc1 micropulsations (0.2–5 Hz) — magnetospheric ion cyclotron waves, frequency overlaps resting heart rate range, (3) Geomagnetic field (B_geo ≈ 25–65 μT) — reference for CRY/RPM navigation and circadian regulation, (4) Solar cycle variation (11-year cycle) — modulates all the above, (5) GIC (Geomagnetically Induced Currents) — geomagnetic storm induction currents in power grids produce harmonics → ELF bioexposure.",
+    lindgrenInterpretation:
+      "Lindgrenin geometriassa luonnollinen EM-ympäristö on Ā_natural — taustapotentiaali jossa biologia kehittyi. Antropogeeninen EMF ei lisännyt uutta kenttää tyhjään tilaan vaan MUUTTI olemassaolevaa geometriaa. SR:n peittyminen (Tatsis 2021: kaupungeissa SR peittyy antropogeeniseen kohinaan) tarkoittaa geometrisen referenssin katoamista.",
+    lindgrenInterpretation_en:
+      "In Lindgren's geometry, the natural EM environment is Ā_natural — the background potential in which biology evolved. Anthropogenic EMF did not add a new field to empty space but CHANGED existing geometry. SR masking (Tatsis 2021: in cities SR is buried under anthropogenic noise) means the loss of a geometric reference.",
+    quantitative:
+      "SR: f₁ = 7.83 Hz, f₂ = 14.3 Hz, f₃ = 20.8 Hz (Q ≈ 5–10)\nPc1: 0.2–5 Hz (sydämen leposyke: 0.8–1.3 Hz)\nB_geo: 25–65 μT (leveysasteesta riippuen)\nAurinkojakso: ~11 vuotta (Schwabe), grand minima/maxima\nGIC: geomagneettinen myrsky → verkon harmoninen → ELF-altistus",
+    quantitative_en:
+      "SR: f₁ = 7.83 Hz, f₂ = 14.3 Hz, f₃ = 20.8 Hz (Q ≈ 5–10)\nPc1: 0.2–5 Hz (resting heart rate: 0.8–1.3 Hz)\nB_geo: 25–65 μT (latitude-dependent)\nSolar cycle: ~11 years (Schwabe), grand minima/maxima\nGIC: geomagnetic storm → grid harmonic → ELF bioexposure",
+    keyReferences: [
+      {
+        referenceId: "wever1979_bunker",
+        authors: "Wever RA 1979",
+        title: "The Circadian System of Man",
+        journal: "Springer-Verlag",
+        keyFinding: "N=447 koehenkilöä: EM-suojatussa huoneessa sirkadiaaninen jakso hajoaa; 7.83 Hz palauttaa",
+        keyFinding_en: "N=447 subjects: in EM-shielded room circadian period fragments; 7.83 Hz restores",
+      },
+      {
+        referenceId: "frontiers2021_sr_anthropogenic",
+        authors: "Tatsis G et al. 2021",
+        title: "Anthropogenic Noise and Its Footprint on ELF SR Recordings",
+        journal: "Frontiers in Earth Science",
+        keyFinding: "Kaupungeissa SR-signaali peittyy antropogeeniseen kohinaan",
+        keyFinding_en: "In cities SR signal is buried under anthropogenic noise",
+      },
+      {
+        referenceId: "kleimenova2007_pc1_mi",
+        authors: "Kleimenova NG et al. 2007",
+        title: "Pc1 pulsations as potential MI hazard",
+        journal: "J. Atmospheric and Solar-Terrestrial Physics",
+        keyFinding: "Pc1-mikropulsaatiot säätelevät sydäninfarkti- ja äkkikuolemariskiä",
+        keyFinding_en: "Pc1 micropulsations modulate myocardial infarction and sudden death risk",
+      },
+    ],
+    falsificationCondition:
+      "Jos biologiset järjestelmät osoitetaan riippumattomiksi kaikista viidestä luonnollisesta EM-kerroksesta",
+    falsificationCondition_en:
+      "If biological systems are shown to be independent of all five natural EM layers",
+  },
   {
     id: "ambient",
     level: 3,
@@ -177,9 +274,9 @@ export const NODES: ChainNode[] = [
         title: "5G RF EMF Spectral Exposure Assessment in Four European Countries",
         journal: "Bioelectromagnetics (bem.70019)",
         keyFinding:
-          "5G:n spektraalimittaus 4 Euroopan maassa. Suunnattu keila muuttaa ambient/personal-suhdetta BERM:n kaksikanavamallissa: ambient↓ (vs 4G), personal↑ hetkittäin.",
+          "5G:n spektraalimittaus 4 Euroopan maassa. Suunnattu keila muuttaa ambient/personal-suhdetta BERM:n kolmikanavamallissa: ambient↓ (vs 4G), personal↑ hetkittäin.",
         keyFinding_en:
-          "Spectral measurement of 5G in 4 European countries. Beamforming changes the ambient/personal ratio in BERM's two-channel model: ambient↓ (vs. 4G), personal↑ momentarily.",
+          "Spectral measurement of 5G in 4 European countries. Beamforming changes the ambient/personal ratio in BERM's three-channel model: ambient↓ (vs. 4G), personal↑ momentarily.",
       },
     ],
   },
@@ -211,33 +308,33 @@ export const NODES: ChainNode[] = [
         title: "Systematic review: RF-EMF and male fertility",
         journal: "Environment International",
         keyFinding:
-          "Altistuksen karakterisointi merkittävin heikkous tutkimuksissa",
+          "Altistuksen luonnehdinta merkittävin heikkous tutkimuksissa",
         keyFinding_en:
           "Exposure characterization is the most significant weakness in the studies",
       },
     ],
   },
   {
-    id: "two_channel",
+    id: "three_channel",
     level: 3,
-    label: "Kaksikanavamalli",
-    label_en: "Two-channel model",
-    sublabel: "total = ambient + χ(Ā)×personal",
+    label: "Kolmikanavamalli",
+    label_en: "Three-channel model",
+    sublabel: "total = natural + ambient + χ(Ā)×personal",
     epistemicLevel: "M|C",
-    title: "Kaksikanavainen altistusyhdistelmä",
-    title_en: "Two-channel exposure combination",
+    title: "Kolmikanavainen altistusyhdistelmä",
+    title_en: "Three-channel exposure combination",
     mechanism:
-      "Kokonaisaltistus ei ole ambient + personal (lineaarinen summa) vaan ambient + χ(ambient) × personal. Tämä tarkoittaa: kun ambient on matala (esim. maaseutu), personal-laitteiden biologinen vaikutus on pieni vaikka käyttö on samaa. Kun ambient on korkea (kaupunki), personal lisää altistusta lähes lineaarisesti.",
+      "Kokonaisaltistus koostuu kolmesta kanavasta: (1) natural — evoluutioympäristö (SR, Pc1, geoB, aurinko, GIC), joka on nyt osittain peittynyt, (2) ambient — infrastruktuurin tuottama tausta (tukiasemat, Wi-Fi, voimalinjat), ja (3) personal — laitteiden lähikenttä (puhelin, kuulokkeet). Aiempi kaksikanavamalli (ambient + χ×personal) ei huomioinut luonnollisen EM:n peittymistä. Kolmikanavamallissa natural toimii evoluution kalibroimana referenssinä jonka katoaminen (SR-masking, HMF avaruudessa) on itsenäinen biologinen stressori.",
     mechanism_en:
-      "Total exposure is not ambient + personal (a linear sum) but ambient + χ(ambient) × personal. This means: when ambient is low (e.g., rural areas), the biological effect of personal devices is small even if usage is the same. When ambient is high (cities), personal use adds to exposure almost linearly.",
+      "Total exposure consists of three channels: (1) natural — the evolutionary environment (SR, Pc1, geoB, solar, GIC), now partially masked, (2) ambient — infrastructure background (base stations, Wi-Fi, power lines), and (3) personal — device near-field (phone, earbuds). The earlier two-channel model (ambient + χ×personal) did not account for masking of natural EM. In the three-channel model, natural serves as the evolutionary calibration reference whose disappearance (SR masking, HMF in space) is an independent biological stressor.",
     lindgrenInterpretation:
-      "Kaksikanavamalli on geometrisen valintasäännön suora sovellus. Se selittää miksi amish-yhteisö (Ā ≈ 0) ei koe biologista vaikutusta vaikka joku vierailisi matkapuhelimen kanssa — χ(0) × personal = 0. Ja miksi Soul (Ā korkea) kokee dramaattisen vaikutuksen — χ(Ā) ≈ 1, personal lisäytyy täysimääräisesti.",
+      "Kolmikanavamalli laajentaa geometrista kehystä: natural_em tarjoaa referenssimetriikan (Ā_natural) jossa biologia kehittyi, ambient muuttaa tätä geometriaa (Ā_ambient), ja personal perturboi sitä paikallisesti (a). Amish-yhteisö (Ā_ambient ≈ 0) säilyttää natural-referenssin → χ(0) × personal = 0. Soul (Ā_ambient korkea) sekä peittää natural-referenssin että vahvistaa personal-vastetta.",
     lindgrenInterpretation_en:
-      "The two-channel model is a direct application of the geometric selection rule. It explains why an Amish community (Ā ≈ 0) experiences no biological effect even if someone visits with a mobile phone — χ(0) × personal = 0. And why Seoul (Ā high) experiences a dramatic effect — χ(Ā) ≈ 1, personal exposure adds in full.",
+      "The three-channel model extends the geometric framework: natural_em provides the reference metric (Ā_natural) in which biology evolved, ambient modifies this geometry (Ā_ambient), and personal perturbs it locally (a). An Amish community (Ā_ambient ≈ 0) preserves the natural reference → χ(0) × personal = 0. Seoul (Ā_ambient high) both masks the natural reference and amplifies the personal response.",
     quantitative:
-      "total(y) = ambient(y) + χ(ambient(y)) × personal(y)\ncumEMF = Σ_y total(y)  [vuodesta EMF_start]",
+      "total(y) = natural(y) + ambient(y) + χ(ambient(y)) × personal(y)\ncumEMF = Σ_y total(y)",
     quantitative_en:
-      "total(y) = ambient(y) + χ(ambient(y)) × personal(y)\ncumEMF = Σ_y total(y)  [from year EMF_start]",
+      "total(y) = natural(y) + ambient(y) + χ(ambient(y)) × personal(y)\ncumEMF = Σ_y total(y)",
     keyReferences: [
       {
         referenceId: "lindgren2025",
@@ -251,9 +348,46 @@ export const NODES: ChainNode[] = [
       },
     ],
     falsificationCondition:
-      "Jos personal-EMF tuottaa saman biologisen vasteen ambient-taustasta riippumatta",
+      "Jos personal-EMF tuottaa saman biologisen vasteen ambient-taustasta riippumatta tai jos luonnollisen EM:n peittymisellä ei ole biologista vaikutusta",
     falsificationCondition_en:
-      "If personal EMF produces the same biological response regardless of the ambient background",
+      "If personal EMF produces the same biological response regardless of the ambient background or if masking of natural EM has no biological effect",
+  },
+  {
+    id: "gic_crossterm",
+    level: 3,
+    label: "GIC-ristitermi",
+    label_en: "GIC cross-term",
+    sublabel: "myrsky → verkko → harmoninen → ELF",
+    sublabel_en: "storm → grid → harmonic → ELF",
+    epistemicLevel: "M|C",
+    title: "Geomagneettisesti indusoidut virrat sähköverkossa",
+    title_en: "Geomagnetically induced currents in power grid",
+    mechanism:
+      "Geomagneettinen myrsky (CME/CIR) → maavirta → muuntajan saturaatio → verkon harmoniset (3., 5., 7.) → ELF-altistus rakennusten sisällä. GIC on ristitermi: luonnollinen avaruussää-ilmiö kanavoituu antropogeenisen infrastruktuurin kautta biologiseksi altistukseksi. Ilman sähköverkkoa GIC ei tuottaisi ELF-bioaltistusta.",
+    mechanism_en:
+      "Geomagnetic storm (CME/CIR) → ground current → transformer saturation → grid harmonics (3rd, 5th, 7th) → ELF exposure indoors. GIC is a cross-term: a natural space weather phenomenon channeled through anthropogenic infrastructure into biological exposure. Without the power grid, GIC would not produce ELF bioexposure.",
+    lindgrenInterpretation:
+      "GIC-ristitermi on geometrisesti mielenkiintoinen: luonnollinen Ā-perturbaatio (myrsky) kanavoituu antropogeenisen verkon kautta uudeksi ELF-taustaksi joka muuttaa paikallista metriikkaa. Verkko toimii geometrisena vahvistimena.",
+    lindgrenInterpretation_en:
+      "The GIC cross-term is geometrically interesting: a natural Ā perturbation (storm) is channeled through the anthropogenic grid into a new ELF background that changes the local metric. The grid acts as a geometric amplifier.",
+    quantitative:
+      "GIC_bio(t) = η × dB/dt × Z_grid × H_harmonic\n\nη = maaperän johtavuus\ndB/dt = geomagneettisen kentän muutosnopeus\nZ_grid = verkon impedanssi\nH_harmonic = harmonisten kerroin (3., 5., 7.)",
+    quantitative_en:
+      "GIC_bio(t) = η × dB/dt × Z_grid × H_harmonic\n\nη = ground conductivity\ndB/dt = geomagnetic field rate of change\nZ_grid = grid impedance\nH_harmonic = harmonic coefficient (3rd, 5th, 7th)",
+    keyReferences: [
+      {
+        referenceId: "zenchenko2024_hr_gmf_sync",
+        authors: "Zenchenko & Breus 2024",
+        title: "Synchronization between GMF and heart rate",
+        journal: "Human Ecology",
+        keyFinding: "Sydämen syke ja EEG synkronoituvat geomagneettisten vaihtelujen kanssa SR- ja Pc1-alueilla",
+        keyFinding_en: "Heart rate and EEG synchronize with geomagnetic variations in SR and Pc1 ranges",
+      },
+    ],
+    falsificationCondition:
+      "Jos geomagneettisten myrskyjen aikana ei havaita ELF-harmonisten nousua sähköverkossa tai jos harmonisilla ei ole biologista vaikutusta",
+    falsificationCondition_en:
+      "If no increase in ELF harmonics is observed in the power grid during geomagnetic storms or if the harmonics have no biological effect",
   },
 
   // TASO 4 — Kolme kanavaa
@@ -267,7 +401,7 @@ export const NODES: ChainNode[] = [
     title: "ELF-kanava: kalvomodulaatio",
     title_en: "ELF channel: membrane modulation",
     mechanism:
-      "Taajuudet alle solun kalvon RC-rajataajuuden f_c ≈ 1 kHz pääsevät solun sisään ja moduloivat suoraan kalvopotentiaalia. Ulkoinen kenttä indusoituu kalvon yli koko solun antennipinta-alan kautta — δV_m = 1.5 × E × r_cell × cos(θ). FDA-hyväksytyt PEMF-laitteet (luumurtumat), TMS (depressio) ja VNS (epilepsia) toimivat tällä kanavalla.",
+      "Taajuudet alle solun kalvon RC-rajataajuuden f_c ≈ 1 kHz pääsevät solun sisään ja säätelevät suoraan kalvopotentiaalia. Ulkoinen kenttä aiheutuu kalvon yli koko solun antennipinta-alan kautta — δV_m = 1.5 × E × r_cell × cos(θ). FDA-hyväksytyt PEMF-laitteet (luumurtumat), TMS (depressio) ja VNS (epilepsia) toimivat tällä kanavalla.",
     mechanism_en:
       "Frequencies below the cell membrane's RC cutoff frequency f_c ≈ 1 kHz pass into the cell and directly modulate the membrane potential. The external field is induced across the membrane through the cell's entire antenna surface area — δV_m = 1.5 × E × r_cell × cos(θ). FDA-approved PEMF devices (bone fractures), TMS (depression), and VNS (epilepsy) operate through this channel.",
     lindgrenInterpretation:
@@ -284,7 +418,7 @@ export const NODES: ChainNode[] = [
         authors: "Panagopoulos ym. 2013",
         title: "Polarization: A Key Difference between Man-made and Natural EMFs",
         journal: "Scientific Reports 5",
-        keyFinding: "Polarisoitu ELF moduloi kalvopotentiaalia suoraan",
+        keyFinding: "Polarisoitu ELF säätelee kalvopotentiaalia suoraan",
         keyFinding_en: "Polarized ELF directly modulates the membrane potential",
       },
     ],
@@ -394,7 +528,7 @@ export const NODES: ChainNode[] = [
     title: "Jänniteohjattujen ionikanavien pakko-oskillaatio",
     title_en: "Forced oscillation of voltage-gated ion channels",
     mechanism:
-      "Jänniteohjatut ionikanavat (VGIC) avaavat ja sulkevat sähkökentän mukaan. S4-jännitesensori on varattu heliksi joka liikkuu kentän muuttuessa. Panagopouloksen IFO-mekanismi (Irregular Forced Opening): polarisoitu, koherentti RF-EMF pakottaa S4:n oskilloiman taajuudella johon se ei ole sopeutunut → kanava avautuu ja sulkeutuu epäsäännöllisesti → hallitsematon Ca²⁺-influksi.",
+      "Jänniteohjatut ionikanavat (VGIC) avaavat ja sulkevat sähkökentän mukaan. S4-jännitesensori on varattu heliksi joka liikkuu kentän muuttuessa. Panagopouloksen IFO-mekanismi (Irregular Forced Opening): polarisoitu, koherentti RF-EMF pakottaa S4:n oskilloiman taajuudella johon se ei ole sopeutunut → kanava avautuu ja sulkeutuu epäsäännöllisesti → hallitsematon Ca²⁺-sisäänvirtaus.",
     mechanism_en:
       "Voltage-gated ion channels (VGICs) open and close in response to the electric field. The S4 voltage sensor is a charged helix that moves as the field changes. Panagopoulos's IFO mechanism (Irregular Forced Opening): a polarized, coherent RF-EMF forces S4 to oscillate at a frequency it is not adapted to → the channel opens and closes irregularly → uncontrolled Ca²⁺ influx.",
     lindgrenInterpretation:
@@ -456,7 +590,7 @@ export const NODES: ChainNode[] = [
         authors: "Koivisto ym. 2000",
         title: "Effects of 902 MHz EMF on response times in humans",
         journal: "NeuroReport",
-        keyFinding: "Kaksi kaksoissokkokokeetta (n=48+48): 902 MHz → kognitiivinen fasilitaatio. Ei replikoitu (Haarala 2003, 2005).",
+        keyFinding: "Kaksi kaksoissokkokokeetta (n=48+48): 902 MHz → kognitiivinen fasilitaatio. Ei toistettu (Haarala 2003, 2005).",
         keyFinding_en:
           "Two double-blind experiments (n=48+48): 902 MHz → cognitive facilitation. Not replicated (Haarala 2003, 2005).",
       },
@@ -465,9 +599,9 @@ export const NODES: ChainNode[] = [
         authors: "Eliyahu ym. 2006",
         title: "Lateralized cognitive effects of cellular phone radiation",
         journal: "Bioelectromagnetics",
-        keyFinding: "890 MHz → lateralisoitunut RT-vaikutus. Tukee kaksikanavamallin spatiaalirakennetta.",
+        keyFinding: "890 MHz → lateralisoitunut RT-vaikutus. Tukee kolmikanavamallin spatiaalirakennetta.",
         keyFinding_en:
-          "890 MHz → lateralized RT effect. Supports the spatial structure of the two-channel model.",
+          "890 MHz → lateralized RT effect. Supports the spatial structure of the three-channel model.",
       },
       {
         referenceId: "luria2009",
@@ -497,7 +631,7 @@ export const NODES: ChainNode[] = [
     title: "Oksidatiivinen stressi",
     title_en: "Oxidative stress",
     mechanism:
-      "VGIC-aktivaation tuottama Ca²⁺-influksi aktivoi mitokondriaalisen elektroninsiirtoketjun ylikuormituksen → reaktiivisten happilajien (ROS) tuotanto kasvaa. ROS vaurioittaa DNA:ta, lipidejä ja proteiineja. Umbrella review 2025 (9 katsausta, 215 tutkimusta): RF-EMR laski siittiöiden motiliteettia merkitsevästi (MD: −3.90) ja vitaliteettia (MD: −2.85). Testosteroni laski merkitsevästi (MD: −1.5 ng/dL).",
+      "VGIC-aktivaation tuottama Ca²⁺-sisäänvirtaus aktivoi mitokondriaalisen elektroninsiirtoketjun ylikuormituksen → reaktiivisten happilajien (ROS) tuotanto kasvaa. ROS vaurioittaa DNA:ta, lipidejä ja proteiineja. Umbrella review 2025 (9 katsausta, 215 tutkimusta): RF-EMR laski siittiöiden motiliteettia merkitsevästi (MD: −3.90) ja vitaliteettia (MD: −2.85). Testosteroni laski merkitsevästi (MD: −1.5 ng/dL).",
     mechanism_en:
       "The Ca²⁺ influx produced by VGIC activation triggers overload of the mitochondrial electron transport chain → production of reactive oxygen species (ROS) increases. ROS damages DNA, lipids, and proteins. A 2025 umbrella review (9 reviews, 215 studies): RF-EMR significantly decreased sperm motility (MD: −3.90) and vitality (MD: −2.85). Testosterone decreased significantly (MD: −1.5 ng/dL).",
     lindgrenInterpretation:
@@ -524,7 +658,7 @@ export const NODES: ChainNode[] = [
         title: "CoQ10 ameliorates RF-induced testicular impairments at 3.5 GHz",
         journal: "Bioelectromagnetics (bem.70043)",
         keyFinding:
-          "3,5 GHz (5G) → testis-ROS + vaurio. CoQ10 amelioroi — mekanismi reversiibeli. Ensimmäinen 5G-taajuusspesifinen testisdata. Yhdenmukainen recovery window -konseptin kanssa.",
+          "3,5 GHz (5G) → testis-ROS + vaurio. CoQ10 amelioroi — mekanismi reversiibeli. Ensimmäinen 5G-taajuustarkka testisdata. Yhdenmukainen recovery window -konseptin kanssa.",
         keyFinding_en:
           "3.5 GHz (5G) → testicular ROS + damage. CoQ10 ameliorates it — the mechanism is reversible. First 5G-frequency-specific testicular data. Consistent with the recovery-window concept.",
       },
@@ -620,7 +754,7 @@ export const NODES: ChainNode[] = [
     sublabel: "Pineaali → vuorokausirytmi",
     sublabel_en: "Pineal gland → circadian rhythm",
     epistemicLevel: "E",
-    title: "Pineaalin melatoniinisuppressio",
+    title: "Pineaalin melatoniinivaimennus",
     title_en: "Pineal melatonin suppression",
     mechanism:
       "Pineaalirauhanen tuottaa melatoniinia joka säätelee vuorokausirytmiä ja GnRH-pulsaatiota. Pineaali on herkkä geomagneettiselle kentälle (Becker: melatoniinisekretio muuttuu geomagneettisen kentän vahvuisilla kentillä). EMF häiritsee pineaalin kalibraatiota → melatoniini↓ → uni↓ → GnRH-pulsaatio↓ → FSH/LH↓ → gonadifunktio↓. [[ref:burch2002|Burch 2002]]: matkapuhelinkäyttäjien melatoniinimetaboliitit matalammat. [[ref:leproult2011_testosterone_sleep|Leproult 2011]]: 1 viikko unirajoitusta → T −15%.",
@@ -642,7 +776,7 @@ export const NODES: ChainNode[] = [
         title: "EMF and circadian rhythms: PRISMA systematic review",
         journal: "Sleep Biol Rhythms 24(2):195-214",
         keyFinding:
-          "55 tutkimuksen PRISMA: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota (20–50 %). Tukee polkua C kvantitatiivisesti. Vain 27 % tutkimuksista täytti korkeat standardit.",
+          "55 tutkimuksen PRISMA: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinivaimennusta (20–50 %). Tukee polkua C kvantitatiivisesti. Vain 27 % tutkimuksista täytti korkeat standardit.",
         keyFinding_en:
           "PRISMA review of 55 studies: 88% of high-quality animal studies reported melatonin suppression (20–50%). Quantitatively supports Pathway C. Only 27% of studies met high-quality standards.",
       },
@@ -675,7 +809,7 @@ export const NODES: ChainNode[] = [
     mechanism_en:
       "EMF activates the HPA axis (hypothalamus-pituitary-adrenal) → cortisol rises → suppression of the HPG axis (hypothalamus-pituitary-gonad). Chronic cortisol lowers testosterone, oxytocin, and dopamine. [[ref:guy1984|Guy's experiment (Cross Currents)]]: 25 months of microwave exposure → cortisol rose → then fell (Selye's exhaustion phase) → cancers of stress-response organs (3.6× control). [[ref:travison2007_v2|Travison 2007]]: testosterone −1%/year since the 1980s.",
     lindgrenInterpretation:
-      "HPA-aktivaatio on metrisen perturbointian systeeminen vaste. Hypotalamus on neuroendokriininen solmukohta jossa ionikanavadynamiikka ohjaa hormonaalista signalointia. EMF häiritsee GnRH-pulsaatiota (Schlegel: Ca²⁺-oskillaatiot aivolisäkkeessä) → koko HPG-akseli häiriintyy. Selyen kolmivaihedynamiikka on metrisessä kehyksessä: alarm = geometrinen perturbointia, resistance = uusi stationaarinen ratkaisu, exhaustion = stationaarisen ratkaisun romahdus.",
+      "HPA-aktivaatio on metrisen perturbointian systeeminen vaste. Hypotalamus on neuroendokriininen solmukohta jossa ionikanavadynamiikka ohjaa hormonaalista signalointia. EMF häiritsee GnRH-pulsaatiota (Schlegel: Ca²⁺-vaihtelut aivolisäkkeessä) → koko HPG-akseli häiriintyy. Selyen kolmivaihedynamiikka on metrisessä kehyksessä: alarm = geometrinen perturbointia, resistance = uusi stationaarinen ratkaisu, exhaustion = stationaarisen ratkaisun romahdus.",
     lindgrenInterpretation_en:
       "HPA activation is the systemic response to metric perturbation. The hypothalamus is a neuroendocrine node where ion channel dynamics govern hormonal signaling. EMF disrupts GnRH pulsatility (Schlegel: Ca²⁺ oscillations in the pituitary) → the entire HPG axis is disrupted. Selye's three-phase dynamics in the metric framework: alarm = geometric perturbation, resistance = a new stationary solution, exhaustion = collapse of the stationary solution.",
     recoveryAlpha: 0.5,
@@ -853,7 +987,7 @@ export const NODES: ChainNode[] = [
     title: "Siittiöiden liikkuvuuden heikkeneminen",
     title_en: "Decline in sperm motility",
     mechanism:
-      "ROS ja SDF heikentävät siittiöiden progressiivista motiliteettia. Yu 2021 (IVF-laboratorio): motiliteetti −8.1% tunnin EMF-altistuksen jälkeen. [[ref:adee2023|Adeen kirja]]: Ca²⁺-kanava on siittiön navigoinnin avain — ilman sitä siittiö 'wriggles ineptly and goes nowhere.'",
+      "ROS ja SDF heikentävät siittiöiden etenevää motiliteettia. Yu 2021 (IVF-laboratorio): motiliteetti −8.1% tunnin EMF-altistuksen jälkeen. [[ref:adee2023|Adeen kirja]]: Ca²⁺-kanava on siittiön navigoinnin avain — ilman sitä siittiö 'wriggles ineptly and goes nowhere.'",
     mechanism_en:
       "ROS and SDF impair progressive sperm motility. Yu 2021 (IVF laboratory): motility −8.1% after one hour of EMF exposure. [[ref:adee2023|Adee's book]]: the Ca²⁺ channel is the key to sperm navigation — without it, the sperm 'wriggles ineptly and goes nowhere.'",
     keyReferences: [
@@ -872,7 +1006,7 @@ export const NODES: ChainNode[] = [
     label_en: "Concentration ↓",
     sublabel: "−51% (1973–2018)",
     epistemicLevel: "E",
-    title: "Siittiökonsentraation sekulaarilasku",
+    title: "Siittiökonsentraation pitkäaikaislasku",
     title_en: "Secular decline in sperm concentration",
     mechanism:
       "[[ref:levine2023_sperm|Levine 2023]]: siittiökonsentraatio laskenut 51% vuodesta 1973. Lasku kiihtynyt 2000-luvulla. Leydigin solujen kumulatiivinen vaurio (ROS + epigeneettinen) → testosteronituotanto↓ → spermatogeneesi↓ → konsentraatio↓.",
@@ -967,7 +1101,7 @@ export const NODES: ChainNode[] = [
     sublabel: "−1%/vuosi (Travison 2007)",
     sublabel_en: "−1%/year (Travison 2007)",
     epistemicLevel: "E",
-    title: "Testosteronin sekulaarilasku",
+    title: "Testosteronin pitkäaikaislasku",
     title_en: "Secular decline in testosterone",
     mechanism:
       "[[ref:travison2007_v2|Travison 2007]]: miesten testosteronitasot laskevat −1%/vuosi ikävakioituna. Lasku ei selity painonnousulla, tupakoinnin vähenemisellä tai muilla tunnetuilla tekijöillä. HPA-akselin krooninen aktivaatio (polku D) → kortisoli↑ → HPG-akselin suppressio → testosteronituotanto↓. Leydigin solujen kumulatiivinen ROS-vaurio (polku A) heikentää steroidogeneesiä.",
@@ -994,13 +1128,13 @@ export const NODES: ChainNode[] = [
     level: 7,
     label: "AMH / munasolureservi ↓",
     label_en: "AMH / ovarian reserve ↓",
-    sublabel: "AFC↓, reservi ehtyyy aikaisemmin",
+    sublabel: "AFC↓, reservi ehtyy aikaisemmin",
     sublabel_en: "AFC↓, reserve depletes earlier",
     epistemicLevel: "C",
     title: "Munasolureservin ennenaikainen ehtyminen",
     title_en: "Premature depletion of ovarian reserve",
     mechanism:
-      "Anti-Müllerian hormoni (AMH) on primaaristen follikkelien markkeri. AMH-tasot ovat laskeneet sekulaarisesti: nykynaisten AMH vastaa edellisten sukupolvien 5–10 vuotta vanhempien naisten tasoa. ROS-vaurio (polku A) vaurioittaa primordiaalisia follikkeleita. CRY-häiriö (polku B) kiihdyttää follikulaarista rekrytointia → reservi ehtyyy nopeammin. mTOR-hyperaktivaatio kiihdyttää follikulaarista loppuunpalamista.",
+      "Anti-Müllerian hormoni (AMH) on primaaristen follikkelien markkeri. AMH-tasot ovat laskeneet sekulaarisesti: nykynaisten AMH vastaa edellisten sukupolvien 5–10 vuotta vanhempien naisten tasoa. ROS-vaurio (polku A) vaurioittaa primordiaalisia follikkeleita. CRY-häiriö (polku B) kiihdyttää follikulaarista rekrytointia → reservi ehtyy nopeammin. mTOR-hyperaktivaatio kiihdyttää follikulaarista loppuunpalamista.",
     mechanism_en:
       "Anti-Müllerian hormone (AMH) is a marker of primary follicles. AMH levels have declined secularly: today's women have AMH levels matching women 5–10 years older in previous generations. ROS damage (Pathway A) harms primordial follicles. CRY disruption (Pathway B) accelerates follicular recruitment → the reserve depletes faster. mTOR hyperactivation accelerates follicular burnout.",
     keyReferences: [
@@ -1025,7 +1159,7 @@ export const NODES: ChainNode[] = [
     title: "mTOR-reitin ylisäätely EMF-altistuksessa",
     title_en: "mTOR pathway upregulation under EMF exposure",
     mechanism:
-      "VGIC-aktivaation tuottama Ca²⁺-influksi aktivoi mTOR-reitin (mammalian target of rapamycin). mTOR-hyperaktivaatio → autofagian suppressio → seneskenttien solujen kertyminen → krooninen tulehdus. [[ref:sempou2022|Sempou-reitti]]: EMF → VGIC → Ca²⁺↑ → mTOR↑ → kolme epidemiaa: kiihtynyt ikääntyminen, hedelmällisyyden lasku, syöpäriskin kasvu.",
+      "VGIC-aktivaation tuottama Ca²⁺-sisäänvirtaus aktivoi mTOR-reitin (mammalian target of rapamycin). mTOR-hyperaktivaatio → autofagian suppressio → seneskenttien solujen kertyminen → krooninen tulehdus. [[ref:sempou2022|Sempou-reitti]]: EMF → VGIC → Ca²⁺↑ → mTOR↑ → kolme epidemiaa: kiihtynyt ikääntyminen, hedelmällisyyden lasku, syöpäriskin kasvu.",
     mechanism_en:
       "Ca²⁺ influx from VGIC activation engages the mTOR pathway (mammalian target of rapamycin). mTOR hyperactivation → autophagy suppression → senescent cell accumulation → chronic inflammation. [[ref:sempou2022|Sempou pathway]]: EMF → VGIC → Ca²⁺↑ → mTOR↑ → three epidemics: accelerated aging, fertility decline, cancer risk increase.",
     lindgrenInterpretation:
@@ -1068,7 +1202,7 @@ export const NODES: ChainNode[] = [
     title: "Unen laadun heikkeneminen ja hormonaaliset seuraukset",
     title_en: "Sleep quality decline and hormonal consequences",
     mechanism:
-      "Melatoniinisuppressio (polku C) → unisyklin häiriö → syvän unen väheneminen. Syvä uni on kriittinen GnRH-pulsaation ja kasvuhormonin erityksen kannalta. [[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]: 1 viikko unirajoitusta (5h/yö) → testosteroni −15%. Nuorten aikuisten unen kesto on lyhentynyt ~1h/yö 1970-luvulta. Älypuhelimen sininen valo → melatoniinisuppressio → viivästynyt unilatenssi.",
+      "Melatoniinisuppressio (polku C) → unisyklin häiriö → syvän unen väheneminen. Syvä uni on kriittinen GnRH-pulsaation ja kasvuhormonin erityksen kannalta. [[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]: 1 viikko unirajoitusta (5h/yö) → testosteroni −15%. Nuorten aikuisten unen kesto on lyhentynyt ~1h/yö 1970-luvulta. Älypuhelimen sininen valo → melatoniinivaimennus → viivästynyt unilatenssi.",
     mechanism_en:
       "Melatonin suppression (pathway C) → sleep cycle disruption → decreased deep sleep. Deep sleep is critical for GnRH pulsation and growth hormone secretion. [[ref:leproult2011_testosterone_sleep|Leproult & Van Cauter 2011]]: 1 week of sleep restriction (5h/night) → testosterone −15%. Young adults' sleep duration has shortened ~1h/night since the 1970s. Smartphone blue light → melatonin suppression → delayed sleep latency.",
     keyReferences: [
@@ -1140,7 +1274,7 @@ export const NODES: ChainNode[] = [
     title: "Biologinen hedelmöityskyky",
     title_en: "Biological fecundability",
     mechanism:
-      "Kaikkien biologisten polkujen konvergenssi: siittiölaatu (motiliteetti, konsentraatio, SDF) × munasolun laatu (AMH, AFC, ovulaation ajoitus) × reproduktiokanavan eheys (mikrobiomi, implantaatioikkuna). TTP (time-to-pregnancy) on suorin mittari.",
+      "Kaikkien biologisten polkujen yhdentyminen: siittiölaatu (motiliteetti, konsentraatio, SDF) × munasolun laatu (AMH, AFC, ovulaation ajoitus) × reproduktiokanavan eheys (mikrobiomi, implantaatioikkuna). TTP (time-to-pregnancy) on suorin mittari.",
     mechanism_en:
       "Convergence of all biological pathways: sperm quality (motility, concentration, SDF) × oocyte quality (AMH, AFC, ovulation timing) × reproductive tract integrity (microbiome, implantation window). TTP (time-to-pregnancy) is the most direct measure.",
     keyReferences: [],
@@ -1342,7 +1476,7 @@ export const NODES: ChainNode[] = [
     title: "Lajienväliset EMF–lisääntymislasku -gradientti",
     title_en: "Cross-species EMF–reproductive decline gradient",
     mechanism:
-      "Seitsemän lajin (ihminen, koira, hevonen/lämminverinen, hevonen/kylmäverinen, holstein, ihminen-T) lisääntymislasku korreloi EMF-altistuspistemäärän kanssa: Pearsonin r = 0.909, R² = 0.826. Ihmisen siittiölasku (−2.64 %/v) ja koiran siittiölasku (−1.0 %/v) sijoittuvat regressiosuoralle EMF-altistuksen mukaan. Tämä on mallin vahvin empiirinen validaatio: sama mekanismi, eri annokset, ennustettu gradientti.",
+      "Seitsemän lajin (ihminen, koira, hevonen/lämminverinen, hevonen/kylmäverinen, holstein, ihminen-T) lisääntymislasku korreloi EMF-altistuspistemäärän kanssa: Pearsonin r = 0.909, R² = 0.826. Ihmisen siittiölasku (−2.64 %/v) ja koiran siittiölasku (−1.0 %/v) sijoittuvat regressiosuoralle EMF-altistuksen mukaan. Tämä on mallin vahvin empiirinen todentaminen: sama mekanismi, eri annokset, ennustettu gradientti.",
     mechanism_en:
       "Reproductive decline in seven species (human sperm, human testosterone, dog, horse/warmblood, horse/non-warmblood, Holstein) correlates with EMF exposure score: Pearson r = 0.909, R² = 0.826. Human sperm decline (−2.64%/yr) and dog sperm decline (−1.0%/yr) fall on the regression line according to EMF exposure. This is the model's strongest empirical validation: same mechanism, different doses, predicted gradient.",
     keyReferences: [
@@ -1384,7 +1518,7 @@ export const NODES: ChainNode[] = [
         authors: "Lishko et al. 2011",
         title: "CatSper in human sperm",
         journal: "Nature",
-        keyFinding: "CatSper on ainoa siittiöspesifinen Ca²⁺-kanava ihmisellä",
+        keyFinding: "CatSper on ainoa siittiötarkka Ca²⁺-kanava ihmisellä",
         keyFinding_en: "CatSper is the sole sperm-specific Ca²⁺ channel in humans",
       },
     ],
@@ -1400,7 +1534,7 @@ export const NODES: ChainNode[] = [
     title: "Akvaattisen akselin sentinel-lajit",
     title_en: "Aquatic axis sentinel species",
     mechanism:
-      "Maa-akselin lisäksi malli ennustaa vaikutuksia vesieliöihin: harmaavalas (CRY2-magnetoreseptio → navigaatiohäiriöt, Granger 2020), rustokala (Lorenzinin ampullat, 5 nV/cm herkkyys → sähkökentän havaitseminen), lohi (CRY-navigaatio + CatSper-lisääntyminen, hautomon ELF-altistus). Akvaattinen akseli laajentaa mallin validaation maaeliöistä vesieliöihin.",
+      "Maa-akselin lisäksi malli ennustaa vaikutuksia vesieliöihin: harmaavalas (CRY2-magnetoreseptio → navigaatiohäiriöt, Granger 2020), rustokala (Lorenzinin ampullat, 5 nV/cm herkkyys → sähkökentän havaitseminen), lohi (CRY-navigaatio + CatSper-lisääntyminen, hautomon ELF-altistus). Akvaattinen akseli laajentaa mallin todentamisen maaeliöistä vesieliöihin.",
     mechanism_en:
       "Beyond the land axis, the model predicts effects on aquatic species: gray whale (CRY2 magnetoreception → navigation disruption, Granger 2020), elasmobranch (Lorenzini ampullae, 5 nV/cm sensitivity → electric field detection), salmon (CRY navigation + CatSper reproduction, hatchery ELF exposure). The aquatic axis extends model validation from land to water.",
     keyReferences: [
@@ -1474,18 +1608,39 @@ export const EDGES: ChainEdge[] = [
     epistemicLevel: "M",
     priority: "primary",
   },
+  {
+    from: "geometry",
+    to: "chi_spin",
+    label: "spin-valintasääntö",
+    label_en: "spin selection rule",
+    epistemicLevel: "L",
+    priority: "primary",
+  },
   // Taso 2→3
   {
     from: "chi",
-    to: "two_channel",
+    to: "three_channel",
     label: "kytkentäfunktio",
     label_en: "coupling function",
     epistemicLevel: "M",
     priority: "primary",
   },
   {
+    from: "chi_spin",
+    to: "three_channel",
+    label: "χ_B → CRY/RPM",
+    epistemicLevel: "M|C",
+  },
+  {
+    from: "natural_em",
+    to: "three_channel",
+    label: "SR + Pc1 + geoB",
+    epistemicLevel: "M|C",
+    priority: "primary",
+  },
+  {
     from: "ambient",
-    to: "two_channel",
+    to: "three_channel",
     label: "Ā (tausta)",
     label_en: "Ā (background)",
     epistemicLevel: "E",
@@ -1493,7 +1648,7 @@ export const EDGES: ChainEdge[] = [
   },
   {
     from: "personal",
-    to: "two_channel",
+    to: "three_channel",
     label: "a (perturbointia)",
     label_en: "a (perturbation)",
     epistemicLevel: "E",
@@ -1501,25 +1656,39 @@ export const EDGES: ChainEdge[] = [
   },
   // Taso 3→4 (neljä kanavaa)
   {
-    from: "two_channel",
+    from: "three_channel",
     to: "channel_elf",
     label: "f < 300 Hz",
     epistemicLevel: "E",
     priority: "primary",
   },
   {
-    from: "two_channel",
+    from: "three_channel",
     to: "channel_if",
     label: "300 Hz – 10 MHz",
     epistemicLevel: "E",
     priority: "primary",
   },
   {
-    from: "two_channel",
+    from: "three_channel",
     to: "channel_rf",
     label: "> 10 MHz",
     epistemicLevel: "E",
     priority: "primary",
+  },
+  {
+    from: "gic_crossterm",
+    to: "channel_elf",
+    label: "harmoninen → ELF",
+    label_en: "harmonic → ELF",
+    epistemicLevel: "M|C",
+  },
+  {
+    from: "natural_em",
+    to: "gic_crossterm",
+    label: "myrsky → verkko",
+    label_en: "storm → grid",
+    epistemicLevel: "M|C",
   },
   // Taso 4→5 (kanavat → kalvofysiikka)
   {
@@ -1782,7 +1951,7 @@ export const EDGES: ChainEdge[] = [
   {
     from: "epigenetic",
     to: "fecundability_bio",
-    label: "transgenerationaalinen",
+    label: "ylisukupolvinen",
     label_en: "transgenerational",
     epistemicLevel: "C",
   },

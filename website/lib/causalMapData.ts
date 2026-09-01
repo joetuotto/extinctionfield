@@ -136,17 +136,17 @@ export const NODES: CausalMapNode[] = [
     color: "#EF4444", epistemicLevel: "E",
     detail: {
       en: {
-        mechanism: "The RF field's magnetic component affects the spin state of cryptochrome's radical pair (RPM). Covariant Lindgren correction δH_L.",
+        mechanism: "The RF field's magnetic component affects the spin state of cryptochrome's radical pair (RPM). Covariant Lindgren correction δH_L. Deprez et al. 2025: 5G spectral exposure in 4 European countries — beam-formed signals alter ambient/personal ratio in BERM's three-channel model.",
         fdaDevice: "PRF (510k, 27 MHz). Indirect: [[ref:lindecke2026|Lindecke 2026 Science]]",
         prediction: "Wi-Fi density correlates with circadian disruption",
       },
       fi: {
-        mechanism: "RF-kentän magneettikomponentti vaikuttaa kryptokromin radikaaliparin spin-tilaan (RPM). Kovariantti Lindgren-korjaus δH_L.",
+        mechanism: "RF-kentän magneettikomponentti vaikuttaa kryptokromin radikaaliparin spin-tilaan (RPM). Kovariantti Lindgren-korjaus δH_L. Deprez ym. 2025: 5G-spektraalialtistus 4 Euroopan maassa — suunnattu keila muuttaa ambient/personal-suhdetta BERM:n kolmikanavamallissa.",
         fdaDevice: "PRF (510k, 27 MHz). Epäsuora: [[ref:lindecke2026|Lindecke 2026 Science]]",
         prediction: "Wi-Fi-tiheys korreloi sirkadiaanisten häiriöiden kanssa",
       },
       bermPathway: "Pathways B, C",
-      keyRefs: ["lindecke2026", "panagopoulos2025"],
+      keyRefs: ["lindecke2026", "panagopoulos2025", "deprez2025"],
       link: "/evidence#rf-channel",
     },
   },
@@ -334,7 +334,7 @@ export const NODES: CausalMapNode[] = [
         prediction: "Environmental ELF (50/60 Hz) uncontrollably activates the same gene promoters",
       },
       fi: {
-        mechanism: "Sytokromi b5 tyyppi B (mitokondrion ulkokalvoproteiini) tunnistettu genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi. 60 Hz pulssi-EMF → Cyb5b → rytmiset Ca²⁺-oskillaatiot → geenipromoottorin aktivaatio. Reversiibeli 24h.",
+        mechanism: "Sytokromi b5 tyyppi B (mitokondrion ulkokalvoproteiini) tunnistettu genominlaajuisessa CRISPR-seulonnassa EMF-sensoriksi. 60 Hz pulssi-EMF → Cyb5b → rytmiset Ca²⁺-vaihtelut → geenipromoottorin aktivaatio. Reversiibeli 24h.",
         fdaDevice: "EMF-geenikytkin (Cell 2026, [[ref:kim2026_cell_gene_switch|Kim ym.]]) — 25. laiteluokka",
         prediction: "Ympäristö-ELF (50/60 Hz) aktivoi hallitsemattomasti samoja geenipromoottoreita",
       },
@@ -385,9 +385,9 @@ export const NODES: CausalMapNode[] = [
     label: { en: "VGCC → Ca²⁺ → ROS", fi: "VGCC → Ca²⁺ → ROS" },
     epistemicLevel: "E",
     detail: {
-      en: { mechanism: "Voltage-gated calcium channels open → Ca²⁺ influx → mitochondrial ROS → DNA damage. EMF sensitivity hierarchy at resting potential: Cav3 (T-type, ~10% open at rest) >> Cav1.3 (low-threshold L-type, activates at −50 mV) >> Cav1.2 (canonical L-type, activates at −30 mV, significant only during action potentials). CaMKII positive feedback: Ca²⁺ influx activates CaMKII, which shifts Cav3.2 activation threshold to more negative potentials — making the channel progressively MORE sensitive to EMF (PMC9913649). This explains cumulative sensitization over chronic exposure." },
-      fi: { mechanism: "Jänniteohjatut kalsiumkanavat avautuvat → Ca²⁺-influksi → mitokondriaaliset ROS → DNA-vaurio. EMF-herkkyyhierarkia lepopotentiaalissa: Cav3 (T-tyyppi, ~10 % auki levossa) >> Cav1.3 (matalan kynnyksen L-tyyppi, aktivoituu −50 mV:ssa) >> Cav1.2 (kanoninen L-tyyppi, aktivoituu −30 mV:ssa, merkitsevä vain aktiopotentiaalin aikana). CaMKII-positiivinen takaisinkytkentä: Ca²⁺-influksi aktivoi CaMKII:n, joka siirtää Cav3.2:n aktivaatiokynnystä negatiivisempaan — tehden kanavan progressiivisesti HERKEMMÄKSI EMF:lle (PMC9913649). Tämä selittää kumulatiivisen herkistymisen kroonisessa altistuksessa." },
-      bermPathway: "A", link: "/evidence/devices#pathway-A",
+      en: { mechanism: "Voltage-gated calcium channels open → Ca²⁺ influx → mitochondrial ROS → DNA damage. EMF sensitivity hierarchy at resting potential: Cav3 (T-type, ~10% open at rest) >> Cav1.3 (low-threshold L-type, activates at −50 mV) >> Cav1.2 (canonical L-type, activates at −30 mV, significant only during action potentials). CaMKII positive feedback: Ca²⁺ influx activates CaMKII, which shifts Cav3.2 activation threshold to more negative potentials — making the channel progressively MORE sensitive to EMF (PMC9913649). This explains cumulative sensitization over chronic exposure. Additionally, Bertagna et al. 2025 (Ann NY Acad Sci) showed that intracellular Ca²⁺ stores (RyR/SERCA) participate in EMF transduction — two independent pathways, both pharmacologically confirmed (dantrolene for RyR, CPA for SERCA). Note: ELF (50 Hz) study, shared Ca²⁺ pathway with RF." },
+      fi: { mechanism: "Jänniteohjatut kalsiumkanavat avautuvat → Ca²⁺-sisäänvirtaus → mitokondriaaliset ROS → DNA-vaurio. EMF-herkkyyhierarkia lepopotentiaalissa: Cav3 (T-tyyppi, ~10 % auki levossa) >> Cav1.3 (matalan kynnyksen L-tyyppi, aktivoituu −50 mV:ssa) >> Cav1.2 (kanoninen L-tyyppi, aktivoituu −30 mV:ssa, merkitsevä vain aktiopotentiaalin aikana). CaMKII-positiivinen takaisinkytkentä: Ca²⁺-sisäänvirtaus aktivoi CaMKII:n, joka siirtää Cav3.2:n aktivaatiokynnystä negatiivisempaan — tehden kanavan progressiivisesti HERKEMMÄKSI EMF:lle (PMC9913649). Tämä selittää kumulatiivisen herkistymisen kroonisessa altistuksessa. Lisäksi Bertagna ym. 2025 (Ann NY Acad Sci) osoitti, että solunsisäiset Ca²⁺-varastot (RyR/SERCA) osallistuvat EMF-transduktioon — kaksi itsenäistä reittiä, molemmat farmakologisesti vahvistettu (dantroleeni RyR:lle, CPA SERCA:lle). Huom: ELF (50 Hz) -tutkimus, jaettu Ca²⁺-reitti RF:n kanssa." },
+      bermPathway: "A", keyRefs: ["bertagna2025"], link: "/evidence/devices#pathway-A",
     },
   },
   {
@@ -426,9 +426,9 @@ export const NODES: CausalMapNode[] = [
     sublabel: { en: "Universal EM sensor (plants → mammals)", fi: "Universaali EM-sensori (kasvit → nisäkkäät)" },
     epistemicLevel: "E",
     detail: {
-      en: { mechanism: "Cryptochrome is conserved >1 billion years and present in ALL eukaryotes — the universal electromagnetic sensor. RF disruption of CRY's radical pair mechanism has been demonstrated across kingdoms: PLANTS (Ahmad 2020: CRY1 RF sensitivity in Arabidopsis), INSECTS (Gegear 2008: CRY-dependent magnetoreception in Drosophila), and MAMMALS (PMC11817702 2025: CRY-mediated RF effects in mammalian systems). In humans, CRY/RPM magnetoreception is blue-light-dependent ([[ref:chae2019|Chae et al. 2019]], P<0.001); vertical component reversal reversed orientation, consistent with an inclination compass. The same molecular target is disrupted across all eukaryotic trophic levels simultaneously." },
-      fi: { mechanism: "Kryptokromi on konservoitu >1 miljardia vuotta ja läsnä KAIKISSA eukaryooteissa — universaali sähkömagneettinen sensori. CRY:n radikaaliparin RF-häiriö on osoitettu yli kuntarajojen: KASVIT (Ahmad 2020: CRY1 RF-herkkyys Arabidopsiksessa), HYÖNTEISET (Gegear 2008: CRY-riippuvainen magnetoreseptio Drosophilassa) ja NISÄKKÄÄT (PMC11817702 2025: CRY-välitteiset RF-vaikutukset nisäkäsjärjestelmissä). Ihmisen CRY/RPM-magnetoreseptio on sinivaloriippuvainen ([[ref:chae2019|Chae ym. 2019]], P<0,001); pystykomponentin kääntö käänsi orientaation, mikä on yhdenmukainen inklinaatiokompassin kanssa. Sama molekulaarinen kohde häiriintyy kaikilla eukaryoottien troofisilla tasoilla samanaikaisesti." },
-      bermPathway: "B,C", keyRefs: ["chae2019", "ritz2004", "engels2014", "sherrard2018", "yoshii2009", "ahmad2020_cry1_rf", "gegear2008"], link: "/evidence/magnetoreception#human-cry-magnetoreception",
+      en: { mechanism: "Cryptochrome is conserved >1 billion years and present in ALL eukaryotes — the universal electromagnetic sensor. RF disruption of CRY's radical pair mechanism has been demonstrated across kingdoms: PLANTS (Ahmad 2020: CRY1 RF sensitivity in Arabidopsis), INSECTS (Gegear 2008: CRY-dependent magnetoreception in Drosophila), and MAMMALS (PMC11817702 2025: CRY-mediated RF effects in mammalian systems). In humans, CRY/RPM magnetoreception is blue-light-dependent ([[ref:chae2019|Chae et al. 2019]], P<0.001); vertical component reversal reversed orientation, consistent with an inclination compass. The same molecular target is disrupted across all eukaryotic trophic levels simultaneously. Quantitative support: Tbahriti et al. 2026 (PRISMA, 55 studies): 88% of high-quality animal studies report melatonin suppression (20–50%). Only 27% of studies met high standards." },
+      fi: { mechanism: "Kryptokromi on konservoitu >1 miljardia vuotta ja läsnä KAIKISSA eukaryooteissa — universaali sähkömagneettinen sensori. CRY:n radikaaliparin RF-häiriö on osoitettu yli kuntarajojen: KASVIT (Ahmad 2020: CRY1 RF-herkkyys Arabidopsiksessa), HYÖNTEISET (Gegear 2008: CRY-riippuvainen magnetoreseptio Drosophilassa) ja NISÄKKÄÄT (PMC11817702 2025: CRY-välitteiset RF-vaikutukset nisäkäsjärjestelmissä). Ihmisen CRY/RPM-magnetoreseptio on sinivaloriippuvainen ([[ref:chae2019|Chae ym. 2019]], P<0,001); pystykomponentin kääntö käänsi orientaation, mikä on yhdenmukainen inklinaatiokompassin kanssa. Sama molekulaarinen kohde häiriintyy kaikilla eukaryoottien troofisilla tasoilla samanaikaisesti. Kvantitatiivinen tuki: Tbahriti ym. 2026 (PRISMA, 55 tutkimusta): 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinivaimennusta (20–50 %). Vain 27 % tutkimuksista täytti korkeat standardit." },
+      bermPathway: "B,C", keyRefs: ["chae2019", "ritz2004", "engels2014", "sherrard2018", "yoshii2009", "ahmad2020_cry1_rf", "gegear2008", "tbahriti2026"], link: "/evidence/magnetoreception#human-cry-magnetoreception",
     },
   },
   {
@@ -483,12 +483,12 @@ export const NODES: CausalMapNode[] = [
   },
   {
     id: "mech_cyb5b_ca", level: 2,
-    label: { en: "Cyb5b → Ca²⁺ oscillations", fi: "Cyb5b → Ca²⁺ oskillaatiot" },
+    label: { en: "Cyb5b → Ca²⁺ oscillations", fi: "Cyb5b → Ca²⁺ vaihtelut" },
     sublabel: { en: "Kim 2026 Cell", fi: "Kim 2026 Cell" },
     epistemicLevel: "E",
     detail: {
       en: { mechanism: "CRISPR-screen-identified Cyb5b functions as an EMF sensor on the outer mitochondrial membrane. Produces rhythmic Ca²⁺ oscillations that activate gene promoters. Third transduction pathway alongside IFO and RPM. 4 kHz (IF range) was used in the gene switch demonstration — links the IF channel directly to gene expression control cascade." },
-      fi: { mechanism: "CRISPR-seulonnalla tunnistettu Cyb5b toimii EMF-sensorina mitokondrion ulkokalvolla. Tuottaa rytmiset Ca²⁺-oskillaatiot jotka aktivoivat geenipromoottoreita. Kolmas transduktioreitti IFO:n ja RPM:n rinnalla. 4 kHz (IF-alue) käytettiin geenikytkin-demonstraatiossa — yhdistää IF-kanavan suoraan geeniekspression kontrollikaskadiin." },
+      fi: { mechanism: "CRISPR-seulonnalla tunnistettu Cyb5b toimii EMF-sensorina mitokondrion ulkokalvolla. Tuottaa rytmiset Ca²⁺-vaihtelut jotka aktivoivat geenipromoottoreita. Kolmas transduktioreitti IFO:n ja RPM:n rinnalla. 4 kHz (IF-alue) käytettiin geenikytkin-demonstraatiossa — yhdistää IF-kanavan suoraan geeniekspression kontrollikaskadiin." },
       bermPathway: "Cyb5b", keyRefs: ["kim2026_cell_gene_switch"], link: "/evidence/lighting#lighting-transition",
     },
   },
@@ -508,7 +508,7 @@ export const NODES: CausalMapNode[] = [
     epistemicLevel: "E",
     detail: {
       en: { mechanism: "[[ref:patent_4850959_insulin|US Patent 4,850,959 (1989)]]: resonance-frequency EMF controls pancreatic β-cell insulin secretion via Ca²⁺ channels. Resonance → Ca²⁺ influx → insulin↑. Non-resonance → Ca²⁺ efflux → insulin↓." },
-      fi: { mechanism: "[[ref:patent_4850959_insulin|US Patent 4,850,959 (1989)]]: resonanssitaajuinen EMF kontrolloi haiman β-solujen insuliinieritystä Ca²⁺-kanavien kautta. Resonanssi → Ca²⁺-influksi → insuliini↑. Ei-resonanssi → Ca²⁺-effluksi → insuliini↓." },
+      fi: { mechanism: "[[ref:patent_4850959_insulin|US Patent 4,850,959 (1989)]]: resonanssitaajuinen EMF kontrolloi haiman β-solujen insuliinieritystä Ca²⁺-kanavien kautta. Resonanssi → Ca²⁺-sisäänvirtaus → insuliini↑. Ei-resonanssi → Ca²⁺-effluksi → insuliini↓." },
       bermPathway: "metabolic", keyRefs: ["patent_4850959_insulin"], link: "/evidence/cascades#metabolic",
     },
   },
@@ -526,7 +526,7 @@ export const NODES: CausalMapNode[] = [
   {
     id: "mech_ionic_hierarchy", level: 2,
     label: { en: "Ionic treatment hierarchy", fi: "Ioninen hoitohierarkia" },
-    sublabel: { en: "Ca²⁺ convergence", fi: "Ca²⁺-konvergenssi" },
+    sublabel: { en: "Ca²⁺ convergence", fi: "Ca²⁺-yhdentyminen" },
     epistemicLevel: "E",
     detail: {
       en: {
@@ -534,7 +534,7 @@ export const NODES: CausalMapNode[] = [
         prediction: "P14: EMF exposure × psychedelic response; P15: CACNA1C genotype × response; P16: lithium protects against EMF mood effects",
       },
       fi: {
-        mechanism: "Kaikki mielialahäiriöiden hoidot konvergoivat Ca²⁺-homeostaasiin: SSRI (epäsuora, NNT 7) < TMS/tDCS (sähkömagneettinen, NNT 5) < litium (ioninen, Li⁺→VGSC) < psykedeelit (ioninen reset, 5-HT2A→Cav1.2/CACNA1C, NNT 3). Tehokkuus seuraa ionisen kohdistuksen astetta.",
+        mechanism: "Kaikki mielialahäiriöiden hoidot yhtyvät Ca²⁺-homeostaasiin: SSRI (epäsuora, NNT 7) < TMS/tDCS (sähkömagneettinen, NNT 5) < litium (ioninen, Li⁺→VGSC) < psykedeelit (ioninen reset, 5-HT2A→Cav1.2/CACNA1C, NNT 3). Tehokkuus seuraa ionisen kohdistuksen astetta.",
         prediction: "P14: EMF-altistus × psykedeelien vaste; P15: CACNA1C-genotyyppi × vaste; P16: litium suojaa EMF-mielialavaikutuksilta",
       },
       bermPathway: "Ionic treatment", keyRefs: ["cipriani2018_antidepressants", "goodwin2022_psilocybin", "sousouri2025_cacna1c", "elmallakh2004_lithium_ion", "zarate2006_ketamine"], link: "/evidence/cascades#ionic-hierarchy",
@@ -551,7 +551,7 @@ export const NODES: CausalMapNode[] = [
         prediction: "P17: EMF reduces TEP; P18: EMF slows wound healing",
       },
       fi: {
-        mechanism: "Epidermis ylläpitää transepiteliaalista potentiaalia (TEP, 10–60 mV) Na⁺/K⁺-ATPaasin avulla. Dermiksen kollageeni on pietsosähköinen (7–8 pC/N) ja muuntaa mekaanisen voiman jännitteeksi joka avaa VGCC-kanavat. PIEZO1/TRPV4/VGCC konvergoivat Ca²⁺-vasteeseen. EMF häiritsee kaikkia kolmea järjestelmää samanaikaisesti.",
+        mechanism: "Epidermis ylläpitää transepiteliaalista potentiaalia (TEP, 10–60 mV) Na⁺/K⁺-ATPaasin avulla. Dermiksen kollageeni on pietsosähköinen (7–8 pC/N) ja muuntaa mekaanisen voiman jännitteeksi joka avaa VGCC-kanavat. PIEZO1/TRPV4/VGCC yhtyvät Ca²⁺-vasteeseen. EMF häiritsee kaikkia kolmea järjestelmää samanaikaisesti.",
         prediction: "P17: EMF vähentää TEP:ia; P18: EMF hidastaa haavan paranemista",
       },
       bermPathway: "Dermal bioelectric", keyRefs: ["lim2024_skin_battery", "zhao2006_wound_ef", "fukada1957_piezo", "skedung2013_nanoscale_touch"], link: "/evidence/cascades#skin-battery",
@@ -602,7 +602,7 @@ export const NODES: CausalMapNode[] = [
         prediction: "P29–P32: AD correlates with EMF, CACNA1C modulates, low-EMF slows progression",
       },
       fi: {
-        mechanism: "EMF → VGCC → Ca²⁺ ↑ → BACE1 → Aβ-oligomeerit. Ca²⁺:n läsnäollessa Aβ muodostaa toksisia oligomeereja (Bhatt PMC3065491). Oligomeerit muodostavat kalvon Ca²⁺-huokosia → positiivinen palautesilmukka. Preseniini-konvergenssi: PSEN1/2-mutaatiot (geneettinen) ja EMF-VGCC (ympäristöllinen) konvergoivat samaan Ca²⁺-polkuun. Arendash-paradoksi: kontrolloitu EMF suojaa (918 MHz, MemorEM/TEMT) — annos/taajuus/konteksti ratkaisevat.",
+        mechanism: "EMF → VGCC → Ca²⁺ ↑ → BACE1 → Aβ-oligomeerit. Ca²⁺:n läsnäollessa Aβ muodostaa toksisia oligomeereja (Bhatt PMC3065491). Oligomeerit muodostavat kalvon Ca²⁺-huokosia → positiivinen palautesilmukka. Preseniini-yhdentyminen: PSEN1/2-mutaatiot (geneettinen) ja EMF-VGCC (ympäristöllinen) yhtyvät samaan Ca²⁺-polkuun. Arendash-paradoksi: kontrolloitu EMF suojaa (918 MHz, MemorEM/TEMT) — annos/taajuus/konteksti ratkaisevat.",
         prediction: "P29–P32: AD korreloi EMF:n kanssa, CACNA1C moduloi, matala-EMF hidastaa",
       },
       bermPathway: "Alzheimer calcium", keyRefs: ["pmc4909906_calcium_ad", "pmc3065491_bhatt_ca_oligomers", "pmc7179355_oday_calcium", "pmc8125740_calcium_abeta"], link: "/evidence/bbb#alzheimer-calcium",
@@ -619,8 +619,8 @@ export const NODES: CausalMapNode[] = [
         prediction: "P33–P35: CACNA1C × EMF → ADHD, guanfacine protects, prevalence follows EMF",
       },
       fi: {
-        mechanism: "Raskausaikainen EMF → sikiön VGCC-aktivaatio → Ca²⁺-häiriö kriittisessä kehitysikkunassa → ionikanavien (HCN, VGCC, KCNQ) kalibraatiovirhe PFC:n pyramidaalineuroneissa → signaali-kohinasuhteen vaje → ADHD-fenotyyppi. CACNA1C-variantit assosioituvat ADHD:hen, ASD:hen, bipolaarihäiriöön GWAS:ssa. Timothy-syndrooma (CACNA1C GoF) → autismi = geneettinen ääriesimerkki. Guanfasiini (FDA/EMA ADHD) toimii SUORAAN ionikanaviin: α2A → cAMP↓ → HCN sulkeutuu → Vm stabiloituu. [[ref:li2020_jama_adhd|Li 2020 (JAMA, 1482 paria)]]: objektiivisesti mitattu raskausaikainen EMF → ADHD-riski.",
-        prediction: "P33–P35: CACNA1C × EMF → ADHD, guanfasiini suojaa, prevalenssi seuraa EMF:ää",
+        mechanism: "Raskausaikainen EMF → sikiön VGCC-aktivaatio → Ca²⁺-häiriö kriittisessä kehitysikkunassa → ionikanavien (HCN, VGCC, KCNQ) kalibraatiovirhe PFC:n pyramidaalineuroneissa → signaali-kohinasuhteen vaje → ADHD-fenotyyppi. CACNA1C-variantit assosioituvat ADHD:hen, ASD:hen, bipolaarihäiriöön GWAS:ssa. Timothy-oireyhtymä (CACNA1C GoF) → autismi = geneettinen ääriesimerkki. Guanfasiini (FDA/EMA ADHD) toimii SUORAAN ionikanaviin: α2A → cAMP↓ → HCN sulkeutuu → Vm stabiloituu. [[ref:li2020_jama_adhd|Li 2020 (JAMA, 1482 paria)]]: objektiivisesti mitattu raskausaikainen EMF → ADHD-riski.",
+        prediction: "P33–P35: CACNA1C × EMF → ADHD, guanfasiini suojaa, esiintyvyys seuraa EMF:ää",
       },
       bermPathway: "ADHD calibration", keyRefs: ["li2020_jama_adhd", "pmc6101623_cacna1c_gwas", "pmc6894750_timothy", "wang2007_guanfacine_hcn"], link: "/evidence/cascades#adhd-calibration",
     },
@@ -639,7 +639,7 @@ export const NODES: CausalMapNode[] = [
         mechanism: "EMF → pinealirauhanen → melatoniini ↓ kytkee unikaskadin (1) hedelmällisyyskaskadiin (6): kaskadit ovat SARJASSA, eivät rinnakkain. Viisi polkua: (1) HPG-akseli: melatoniini → hypotalamus → GnRH → LH/FSH → gonadit; (2) antioksidantti: follikkelinesteen melatoniini → ROS-neutralointi → munasolun suoja ([[ref:tamura2012_follicular_melatonin|Tamura 2012]]); (3) anti-inflammatorinen: NF-κB ↓; (4) mitokondriaalinen: AMPK/SIRT1 ↑; (5) epigeneettinen: Gdf9/Bmp15-säätely. VAROITUS: melatoniinin HPG-vaikutus on KAKSISUUNTAINEN — korkeina pitoisuuksina se voi suppressoida GnRH:ta.",
         prediction: "P38–P40: IVF × EMF, melatoniinilisä × EMF -interaktio, vuorotyö",
       },
-      bermPathway: "Melatonin bridge", keyRefs: ["tamura2012_follicular_melatonin", "tong2017_melatonin_ivf", "battelle1980_emf_melatonin", "reiter2007_melatonin_male"], link: "/evidence/circadian#melatonin-bridge",
+      bermPathway: "Melatonin bridge", keyRefs: ["tamura2012_follicular_melatonin", "tong2017_melatonin_ivf", "battelle1980_emf_melatonin", "reiter2007_melatonin_male", "tbahriti2026"], link: "/evidence/circadian#melatonin-bridge",
     },
   },
   {
@@ -711,14 +711,14 @@ export const NODES: CausalMapNode[] = [
   },
 
   // ── LEVEL 3: Tissue effects (10) ──
-  { id: "tissue_sperm", level: 3, label: { en: "Spermatogenesis ↓", fi: "Spermatogeneesi ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "ROS damage, mitotic spindle disruption, and Leydig cell dysfunction reduce sperm production." }, fi: { mechanism: "ROS-vaurio, mitoottisen karan häiriö ja Leydig-solujen toimintahäiriö vähentävät siittiötuotantoa." }, link: "/evidence/lighting#sperm" } },
+  { id: "tissue_sperm", level: 3, label: { en: "Spermatogenesis ↓", fi: "Spermatogeneesi ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "ROS damage, mitotic spindle disruption, and Leydig cell dysfunction reduce sperm production. Bektas et al. 2026: 3.5 GHz (5G) → testicular ROS + oxidative damage; CoQ10 rescue demonstrates reversibility." }, fi: { mechanism: "ROS-vaurio, mitoottisen karan häiriö ja Leydig-solujen toimintahäiriö vähentävät siittiötuotantoa. Bektas ym. 2026: 3,5 GHz (5G) → testis-ROS + oksidatiivinen vaurio; CoQ10-interventio osoittaa reversiibeliuden." }, keyRefs: ["bektas2026"], link: "/evidence/lighting#sperm" } },
   { id: "tissue_ovarian", level: 3, label: { en: "Ovulation / oocyte quality ↓", fi: "Ovulaatio/munasolun laatu ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Oocyte meiotic spindle is disrupted, granulosa cell apoptosis increases." }, fi: { mechanism: "Munasolun meioottinen kara häiriintyy, granuloosasolujen apoptoosi lisääntyy." }, link: "/evidence/circadian#ovarian" } },
   { id: "tissue_testosterone", level: 3, label: { en: "Testosterone ↓", fi: "Testosteroni ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Leydig cell steroidogenesis disruption: StAR protein expression decreases → testosterone synthesis declines." }, fi: { mechanism: "Leydig-solujen steroidogeneesin häiriö: StAR-proteiinin ilmentyminen alenee → testosteronisyntesi vähenee." }, link: "/evidence/circadian#testosterone" } },
   { id: "tissue_melatonin", level: 3, label: { en: "Melatonin ↓", fi: "Melatoniini ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Pineal gland melatonin synthesis decreases via CRY/RPM disruption and display device blue light." }, fi: { mechanism: "Pinealirauhasen melatoniinisyntesi alenee CRY/RPM-häiriön ja näyttölaitteiden sinisen valon kautta." }, link: "/evidence/circadian#melatonin" } },
   { id: "tissue_nk_cells", level: 3, label: { en: "NK cells ↓ (−70%)", fi: "NK-solut ↓ (−70%)" }, epistemicLevel: "E", detail: { en: { mechanism: "Natural killer cells decline. Melatonin normally stimulates NK cell activity." }, fi: { mechanism: "Luonnolliset tappajasolut vähenevät. Melatoniini normaalisti stimuloi NK-aktiivisuutta." }, link: "/evidence/circadian#nk-cells" } },
   { id: "tissue_insulin", level: 3, label: { en: "Insulin sensitivity ↓", fi: "Insuliiniherkkyys ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Melatonin deficiency disrupts pancreatic β-cell rhythm → insulin resistance." }, fi: { mechanism: "Melatoniinin puute häiritsee haiman β-solujen rytmiä → insuliiniresistenssi." }, link: "/evidence/cascades#insulin" } },
   { id: "tissue_cortisol", level: 3, label: { en: "Cortisol ↑ (chronic)", fi: "Kortisoli ↑ (krooninen)" }, epistemicLevel: "E", detail: { en: { mechanism: "HPA axis hyperactivation: circadian disruption + vagal tone decrease → chronic cortisol." }, fi: { mechanism: "HPA-akselin yliaktivaatio: sirkadiaaninen häiriö + vagaalisen tonuksen lasku → krooninen kortisoli." }, link: "/evidence/circadian#cortisol" } },
-  { id: "tissue_bbb", level: 3, label: { en: "BBB permeability ↑", fi: "BBB-permeabiliteetti ↑" }, epistemicLevel: "E", detail: { en: { mechanism: "Blood-brain barrier permeability increases via eNOS activation → occludin downregulation → TJ protein degradation ([[ref:salford2003|Salford 2003]]; [[ref:ulusoy2025_bbb_therapeutic|Ulusoy et al. 2025]]). The same tight junction proteins (occludin, ZO-1, claudins) are shared with the BTB. Progressive: 30 min non-damaging → 360 min structural damage." }, fi: { mechanism: "Veri-aivoesteen läpäisevyys kasvaa eNOS-aktivaation → okkludiinin alaregulaation → TJ-proteiinien degradaation kautta ([[ref:salford2003|Salford 2003]]; [[ref:ulusoy2025_bbb_therapeutic|Ulusoy ym. 2025]]). Samat tight junction -proteiinit (okkludiini, ZO-1, klaudiinit) ovat yhteisiä BTB:n kanssa. Progressiivinen: 30 min ei-vaurioittava → 360 min rakenteellinen vaurio." }, bermPathway: "F", keyRefs: ["salford2003", "ulusoy2025_bbb_therapeutic"], link: "/evidence/bbb" } },
+  { id: "tissue_bbb", level: 3, label: { en: "BBB permeability ↑", fi: "BBB-permeabiliteetti ↑" }, epistemicLevel: "E", detail: { en: { mechanism: "Blood-brain barrier permeability increases via eNOS activation → occludin downregulation → TJ protein degradation ([[ref:salford2003|Salford 2003]]; [[ref:ulusoy2025_bbb_therapeutic|Ulusoy et al. 2025]]). The same tight junction proteins (occludin, ZO-1, claudins) are shared with the BTB. Progressive: 30 min non-damaging → 360 min structural damage. Gao et al. 2024: EMP-induced BBB disruption via tight junction protein degradation (occludin, claudin, ZO-1) — mechanistic support, though EMP differs parametrically from chronic RF." }, fi: { mechanism: "Veri-aivoesteen läpäisevyys kasvaa eNOS-aktivaation → okkludiinin alaregulaation → TJ-proteiinien degradaation kautta ([[ref:salford2003|Salford 2003]]; [[ref:ulusoy2025_bbb_therapeutic|Ulusoy ym. 2025]]). Samat tight junction -proteiinit (okkludiini, ZO-1, klaudiinit) ovat yhteisiä BTB:n kanssa. Progressiivinen: 30 min ei-vaurioittava → 360 min rakenteellinen vaurio. Gao ym. 2024: EMP-aiheutettu BBB-häiriö tight junction -proteiinien (okkludiini, klaudiini, ZO-1) degradaation kautta — mekanistinen tuki, vaikka EMP eroaa parametrisesti kroonisesta RF:stä." }, bermPathway: "F", keyRefs: ["salford2003", "ulusoy2025_bbb_therapeutic", "gao2024"], link: "/evidence/bbb" } },
   { id: "tissue_btb", level: 3, label: { en: "BTB disruption ↑", fi: "BTB:n häiriö ↑" }, epistemicLevel: "E", detail: { en: { mechanism: "Blood-testis barrier disruption via Spock3-MMP2 axis at 2605 MHz (4G). Same TJ proteins as BBB. Progressive time-dependent toxicity with positive feedback: barrier damage → higher effective field → more damage. Direct spermatogenic microenvironment compromise ([[ref:yu2019_btb|Yu et al. 2019]])." }, fi: { mechanism: "Veri-kivesesteen häiriö Spock3-MMP2-akselin kautta 2605 MHz:llä (4G). Samat TJ-proteiinit kuin BBB:ssä. Progressiivinen aikariippuvainen toksisuus positiivisella takaisinkytkennällä: estevaurio → korkeampi efektiivinen kenttä → enemmän vauriota. Suora spermatogeneettisen mikroympäristön vaarantuminen ([[ref:yu2019_btb|Yu ym. 2019]])." }, bermPathway: "F", keyRefs: ["yu2019_btb"], link: "/evidence/bbb" } },
   { id: "tissue_gut", level: 3, label: { en: "Gut epithelium ↓", fi: "Suoliston epiteeli ↓" }, epistemicLevel: "M|C", detail: { en: { mechanism: "Gut epithelial cells' rapid division cycle (3-5 days) makes them vulnerable to IF field mitotic disruption." }, fi: { mechanism: "Suoliston epiteelisolujen nopea jakautumissykli (3-5 pv) tekee niistä haavoittuvia IF-kentän mitoottiselle häiriölle." }, link: "/evidence/circadian#gut" } },
   { id: "tissue_vagal_tone", level: 3, label: { en: "Vagal tone ↓", fi: "Vagaalinen tonus ↓" }, epistemicLevel: "E", detail: { en: { mechanism: "Vagus nerve anti-inflammatory reflex weakening → chronic low-grade inflammation." }, fi: { mechanism: "Vagushermon anti-inflammatorisen refleksin heikkeneminen → krooninen matala-asteinen tulehdus." }, link: "/evidence/circadian#vagal-tone" } },
@@ -736,7 +736,7 @@ export const NODES: CausalMapNode[] = [
         mechanism: "The Sun's 11-year cycle modulates Earth's geomagnetic environment: solar maximum → CMEs and coronal hole streams → geomagnetic disturbances. These perturb CRY's radical pair mechanism (χ_B channel) and suppress pineal melatonin production. The effect is latitude-dependent: strongest at the auroral oval (geomag lat > 60°), weakest in the tropics, and anomalous in the SAMA region (Southern Brazil). The cycle has operated for 290 million years (dendrochronology) and is documented in human birth rate data from 7 countries (Randall 1990/1993) and pre-industrial Norway (Skjærvø 2015: N=8662, 1676-1878).",
       },
       fi: {
-        mechanism: "Auringon 11-vuotinen sykli moduloi maapallon geomagneettista ympäristöä: aurinkomaksimi → CME:t ja koronaaukkovirrat → geomagneettiset häiriöt. Nämä häiritsevät CRY:n radikaaliparin mekanismia (χ_B-kanava) ja suppressoivat pinealirauhasen melatoniinituotantoa. Vaikutus on leveysasteesta riippuvainen: voimakkain revontuliovaalissa (geomag lat > 60°), heikoin tropiikissa ja anomaalinen SAMA-alueella (Etelä-Brasilia). Sykli on toiminut 290 miljoonaa vuotta (dendrokronologia) ja on dokumentoitu ihmisen syntyvyysdatassa 7 maasta (Randall 1990/1993) ja esi-teollisesta Norjasta (Skjærvø 2015: N=8662, 1676-1878).",
+        mechanism: "Auringon 11-vuotinen sykli säätelee maapallon geomagneettista ympäristöä: aurinkomaksimi → CME:t ja koronaaukkovirrat → geomagneettiset häiriöt. Nämä häiritsevät CRY:n radikaaliparin mekanismia (χ_B-kanava) ja tukahduttavat pinealirauhasen melatoniinituotantoa. Vaikutus on leveysasteesta riippuvainen: voimakkain revontuliovaalissa (geomag lat > 60°), heikoin tropiikissa ja anomaalinen SAMA-alueella (Etelä-Brasilia). Sykli on toiminut 290 miljoonaa vuotta (dendrokronologia) ja on dokumentoitu ihmisen syntyvyysdatassa 7 maasta (Randall 1990/1993) ja esi-teollisesta Norjasta (Skjærvø 2015: N=8662, 1676-1878).",
       },
       bermPathway: "B",
       keyRefs: ["randall1990", "skjaervo2015", "burch1999", "ess2026_sama"],
@@ -834,7 +834,7 @@ export const EDGES: CausalMapEdge[] = [
   { from: "mod_ion", to: "mech_vgcc_ros" },
   { from: "mod_ion", to: "mech_ifo_linear" },
   { from: "mod_ion", to: "mech_gpcr" },
-  { from: "mod_ion", to: "mech_catsper_nav", label: { en: "CatSper subset", fi: "CatSper-osajoukko" } },
+  { from: "mod_ion", to: "mech_catsper_nav", label: "CatSper subset" },
   { from: "mod_dc", to: "mech_nav_plasticity" },
   { from: "mod_bioelectric", to: "mech_vgcc_ros" },
   { from: "mod_vagus", to: "mech_vagal_antiinflam" },
@@ -908,7 +908,7 @@ export const EDGES: CausalMapEdge[] = [
   { from: "mech_melatonin_fertility", to: "tissue_testosterone" },
   { from: "mech_melatonin_fertility", to: "tissue_sperm" },
   // CatSper navigation disruption → sperm fertilization failure
-  { from: "mech_catsper_nav", to: "tissue_sperm", label: { en: "Navigation failure → fertilization↓", fi: "Navigointivika → hedelmöitys↓" } },
+  { from: "mech_catsper_nav", to: "tissue_sperm", label: "Navigation failure → fertilization↓" },
   // BTB: blood-testis barrier disruption (pathway F extension)
   { from: "mech_vgcc_ros", to: "tissue_btb", label: "RF → MMP2 → BTB" },
   { from: "tissue_btb", to: "tissue_sperm", label: "Microenvironment compromised" },

@@ -183,21 +183,21 @@ const COPY = {
   fi: {
     title: "Epistemologia",
     subtitle:
-      "Millainen tieteellinen väite BERM on? Ei todistettu fakta, ei tyhjää spekulaatiota — progressiivinen tutkimusohjelma Lakatoksen mielessä: se generoi ennusteita, ennusteet verifioituvat, verifiointi tuottaa enemmän sisältöä kuin malli spesifioi. Tämä sivu arvioi BERM:n episteemisen statuksen tieteenfilosofian työkaluilla.",
+      "Millainen tieteellinen väite BERM on? Ei todistettu fakta, ei tyhjää spekulaatiota — etenevä tutkimusohjelma Lakatoksen mielessä: se tuottaa ennusteita, ennusteet todentuvat, todentaminen tuottaa enemmän sisältöä kuin malli määrittelee. Tämä sivu arvioi BERM:n episteemisen statuksen tieteenfilosofian työkaluilla.",
     cautionText:
-      "Tämä sivu ei väitä BERM:n olevan todistettu. Se soveltaa vakioepistemologisia kriteereitä — konsiliensssia, falsifioitavuutta, progressiivisia vs. degeneratiivisia tutkimusohjelmia — arvioidakseen missä malli on ja mitä evidenssiä tarvittaisiin sen edistämiseksi tai tuhoamiseksi.",
+      "Tämä sivu ei väitä BERM:n olevan todistettu. Se soveltaa vakioepistemologisia kriteereitä — konsilienssia, falsifioitavuutta, progressiivisia vs. degeneratiivisia tutkimusohjelmia — arvioidakseen missä malli on ja mitä näyttöä tarvittaisiin sen edistämiseksi tai tuhoamiseksi.",
 
     lakatosTitle: "Mikä tekee teoriasta tieteellisen?",
-    lakatosLead: "Karl Popper argumentoi, että teoria on tieteellinen jos ja vain jos se on falsifioitavissa. Imre Lakatos tarkensi: yksittäiset kokeet eivät voi tappaa tutkimusohjelmaa — tärkeää on, onko ohjelma PROGRESSIIVINEN (tuottaa verifioituja ennusteita) vai DEGENERATIIVINEN (vain sovittaa tunnettuja faktoja jälkikäteen).",
+    lakatosLead: "Karl Popper argumentoi, että teoria on tieteellinen jos ja vain jos se on falsifioitavissa. Imre Lakatos tarkensi: yksittäiset kokeet eivät voi tappaa tutkimusohjelmaa — tärkeää on, onko ohjelma PROGRESSIIVINEN (tuottaa todennettuja ennusteita) vai DEGENERATIIVINEN (vain sovittaa tunnettuja faktoja jälkikäteen).",
     lakatosPoints: [
-      { criterion: "Falsifioitavuus (Popper)", description: "Teorian on spesifioitava olosuhteet joissa se tuhoutuisi", bermStatus: "BERM spesifioi neljä falsifikaatiotasoa, mallin romahduksesta (ETH nimodipiini-5G) kliiniseen merkityksettömyyteen (EMF-vähennys ei hyödytä)" },
+      { criterion: "Falsifioitavuus (Popper)", description: "Teorian on määriteltävä olosuhteet joissa se tuhoutuisi", bermStatus: "BERM määrittelee neljä falsifikaatiotasoa, mallin romahduksesta (ETH nimodipiini-5G) kliiniseen merkityksettömyyteen (EMF-vähennys ei hyödytä)" },
       { criterion: "Uudet ennusteet (Lakatos)", description: "Teorian on ennustettava faktoja ENNEN niiden havainnointia — ei vain selitettävä tunnettuja", bermStatus: "BERM ennusti CACNA1C-genotyypin modulaation ([[ref:sousouri2025|Sousouri 2025]] vahvisti), ELF-priming VGCC-ekspression ([[ref:sun2016_elf_vgcc|Sun 2016]] vahvisti), pulssimodulaatio tärkeämpi kuin SAR ([[ref:lopez_martin_2009|López-Martín 2009]] vahvisti)" },
-      { criterion: "Ylijäämäinen empiirinen sisältö", description: "Verifioitujen ennusteiden on paljastettava ENEMMÄN kuin teoria spesifioi", bermStatus: "Jokainen verifiointi tuotti ennustamatonta sisältöä: [[ref:sousouri2025|Sousouri]] löysi sekä uni- että valvevaikutukset; [[ref:lopez_martin_2009|López-Martín]] löysi pulssimodulaatiospesifisyyden; [[ref:sun2016_elf_vgcc|Sun]] löysi dramaattisen Ca²⁺-kasvun 8-10 päivässä" },
-      { criterion: "Progressiivinen ongelmansiirto", description: "Tutkimusohjelma generoi johdonmukaisesti uusia testattavia ennusteita jokaisesta löydöstä", bermStatus: "Nykyinen lukumäärä: 30+ lukittua ennustetta TFR-, modulomi-, SIDS-, neuro-, metalli-, ketju- ja T-tyypin kategorioissa" },
+      { criterion: "Ylijäämäinen empiirinen sisältö", description: "Todennettujen ennusteiden on paljastettava ENEMMÄN kuin teoria määrittelee", bermStatus: "Jokainen todentaminen tuotti ennustamatonta sisältöä: [[ref:sousouri2025|Sousouri]] löysi sekä uni- että valvevaikutukset; [[ref:lopez_martin_2009|López-Martín]] löysi pulssimodulaatiospesifisyyden; [[ref:sun2016_elf_vgcc|Sun]] löysi dramaattisen Ca²⁺-kasvun 8-10 päivässä" },
+      { criterion: "Progressiivinen ongelmansiirto", description: "Tutkimusohjelma tuottaa johdonmukaisesti uusia testattavia ennusteita jokaisesta löydöstä", bermStatus: "Nykyinen lukumäärä: 30+ lukittua ennustetta TFR-, modulomi-, SIDS-, neuro-, metalli-, ketju- ja T-tyypin kategorioissa" },
     ],
 
-    consilienceTitle: "Konsilienss: itsenäisen evidenssin konvergointi",
-    consilienceLead: "William Whewell loi termin 'konsilienss' kuvaamaan vahvinta vahvistuksen muotoa: kun evidenssi ITSENÄISILTÄ aloilta, eri tutkijoiden keräämänä eri menetelmin, kaikki konvergoivat samaan johtopäätökseen. Tämä erottaa evoluution astrologiasta — molemmat 'selittävät' havaintoja, mutta vain evoluutio osoittaa konsiliensia.",
+    consilienceTitle: "Konsilienss: itsenäisen näytön konvergointi",
+    consilienceLead: "William Whewell loi termin 'konsilienss' kuvaamaan vahvinta vahvistuksen muotoa: kun näyttö ITSENÄISILTÄ aloilta, eri tutkijoiden keräämänä eri menetelmin, kaikki yhtyvät samaan johtopäätökseen. Tämä erottaa evoluution astrologiasta — molemmat 'selittävät' havaintoja, mutta vain evoluutio osoittaa konsiliensia.",
     consilienceLevels: [
       {
         level: "Vahva konsilienss",
@@ -205,7 +205,7 @@ const COPY = {
         examples: [
           "Fysiikka (Lindgren χ-parametri) ↔ Farmakologia (kaikki tehokkaat lääkkeet kohdistuvat Ca²⁺-kaskadiin)",
           "Genetiikka ([[ref:sousouri2025|CACNA1C, Sousouri 2025, ETH Zürich kaksoissokko]]) ↔ Kokeellinen ([[ref:lopez_martin_2006|López-Martín]] kohtaukset)",
-          "Epidemiologia ([[ref:klimentidis2010|Klimentidis]] 8 lajin liikalihavuus, p=10⁻⁷) ↔ Patologia (SIDS aivorungon 5-HT-puutos)",
+          "Epidemiologia ([[ref:klimentidis2010|Klimentidis]] 8 lajin liikalihavuus, p=10⁻⁷) ↔ Taudinkuva (SIDS aivorungon 5-HT-puutos)",
           "Vertaileva biologia (sentinel-lajien väheneminen) ↔ Kliininen (neonataalinen Q → ∞ -ennuste)",
         ],
       },
@@ -223,7 +223,7 @@ const COPY = {
         color: "amber",
         examples: [
           "Ca²⁺ on kaikkialla läsnä — se esiintyy käytännössä jokaisessa fysiologisessa prosessissa",
-          "'25 epidemiaa yhdellä nimittäjällä' voi osittain heijastaa Ca²⁺:n universaalia roolia pikemmin kuin spesifistä EMF-kausaalisuutta",
+          "'25 epidemiaa yhdellä nimittäjällä' voi osittain heijastaa Ca²⁺:n universaalia roolia pikemmin kuin tarkkaa EMF-kausaalisuutta",
           "Osa konvergensseista voi olla triviaalisesti tosia pikemmin kuin merkityksellisesti konfirmatorisia",
           "Tämä on mallin ENSISIJAINEN episteeminen riski — se on erotettava kohinasta",
         ],
@@ -231,7 +231,7 @@ const COPY = {
     ],
 
     falsificationTitle: "Neljä falsifikaatiotasoa",
-    falsificationLead: "Progressiivinen tutkimusohjelma spesifioi mikä tuhoaisi sen — ei muodollisuutena, vaan aitona sitoutumisena empiiriseen ratkaisuun. BERM tunnistaa neljä tasoa, täydellisestä mallin romahduksesta kliiniseen merkityksettömyyteen.",
+    falsificationLead: "Progressiivinen tutkimusohjelma määrittelee mikä tuhoaisi sen — ei muodollisuutena, vaan aitona sitoutumisena empiiriseen ratkaisuun. BERM tunnistaa neljä tasoa, täydellisestä mallin romahduksesta kliiniseen merkityksettömyyteen.",
     falsificationTiers: [
       {
         level: "TASO 1 — Mallin romahdus",
@@ -240,7 +240,7 @@ const COPY = {
         severity: "Terminaalinen — palautuminen mahdotonta",
       },
       {
-        level: "TASO 2 — Ympäristötekijä eliminoitu",
+        level: "TASO 2 — Ympäristötekijä poistettu",
         test: "Amish-yhteisöt osoittavat identtiset kroonisten sairauksien trendit kuin USA:n valtaväestö",
         consequence: "Jos matalan EMF:n populaatiot eivät ole terveempiä, EMF ei ole merkittävä ajuri → BERM tunnistaa oikeat mekanismit mutta väärän ympäristölaukaisijan",
         severity: "Vakava — mekanismi säilyy mutta kliininen teesi kuolee",
@@ -249,7 +249,7 @@ const COPY = {
         level: "TASO 3 — Avainkokeen epäonnistuminen",
         test: "[[ref:lopez_martin_2006|López-Martín]]-replikaatio: pikrotoksiini + GSM 900 MHz EI tuota kohtauksia",
         consequence: "Ainoa suora kokeellinen todiste EMF:n subkynnys × GABAergiselle vuorovaikutukselle katoaa → avainnuste vahvistamatta",
-        severity: "Merkittävä — heikentää kokeellista perustaa mutta ei eliminoi mekanistista tai geneettistä evidenssiä",
+        severity: "Merkittävä — heikentää kokeellista perustaa mutta ei poistaa mekanistista tai geneettistä näyttöä",
       },
       {
         level: "TASO 4 — Kliininen merkityksettömyys",
@@ -265,50 +265,50 @@ const COPY = {
       { feature: "Generatiivinen mekanismi", berm: "EMF → VGCC → Ca²⁺ → kaskadit", evolution: "Muuntelu → valinta → sopeutuminen" },
       { feature: "Ennustaa ennen havainnointia", berm: "Ennusti CACNA1C-modulaation ennen tutkimusta [[ref:sousouri2025|Sousouri 2025]]", evolution: "Ennusti välifossiileja ennen Tiktalikia" },
       { feature: "Rajaa etsintäalueen", berm: "Jokaisen tehokkaan hoidon on kohdistuttava Ca²⁺-kaskadiin", evolution: "Jokaisen homologisen rakenteen on jaettava kehitysgeenit" },
-      { feature: "Monitasoinen konvergenssi", berm: "Fysiikka → molekyyli → solu → elin → organismi → populaatio", evolution: "Molekyyli → solu → organismi → laji → ekosysteemi" },
+      { feature: "Monitasoinen yhdentyminen", berm: "Fysiikka → molekyyli → solu → elin → organismi → populaatio", evolution: "Molekyyli → solu → organismi → laji → ekosysteemi" },
       { feature: "Falsifioitavat ennusteet", berm: "30+ lukittua, testattavaa ennustetta", evolution: "'Kani kambrikaudelta' ja tuhansia muita" },
-      { feature: "Ylijäämäinen empiirinen sisältö", berm: "Jokainen verifiointi paljastaa ENEMMÄN kuin ennustettiin", evolution: "Jokainen fossiili/geenilöytö paljastaa ennustamattomia yhteyksiä" },
+      { feature: "Ylijäämäinen empiirinen sisältö", berm: "Jokainen todentaminen paljastaa ENEMMÄN kuin ennustettiin", evolution: "Jokainen fossiili/geenilöytö paljastaa ennustamattomia yhteyksiä" },
     ],
-    analogyCritical: "KRIITTINEN ERO: Evoluutiolla on ITSENÄINEN verifiointi DNA-sekvensoinnin kautta — täysin erilainen menetelmä joka vahvistaa samat fylogeniat kuin morfologia, paleontologia ja biogeografia ennustavat. BERM:ltä puuttuu tämä toinen, itsenäinen verifiointimenetelmä. Yksittäinen tärkein puuttuva pala on INTERVENTIONAALINEN evidenssi: osoita, että EMF-altistuksen vähentäminen tuottaa mitattavaa terveyshyötyä ihmisillä. Ilman tätä BERM jää vyöhykkeeseen 'mekanistisesti vakuuttavan' ja 'kliinisesti todistetun' väliin.",
+    analogyCritical: "KRIITTINEN ERO: Evoluutiolla on ITSENÄINEN todentaminen DNA-sekvensoinnin kautta — täysin erilainen menetelmä joka vahvistaa samat fylogeniat kuin morfologia, paleontologia ja biogeografia ennustavat. BERM:ltä puuttuu tämä toinen, itsenäinen todentamismenetelmä. Yksittäinen tärkein puuttuva pala on INTERVENTIONAALINEN näyttö: osoita, että EMF-altistuksen vähentäminen tuottaa mitattavaa terveyshyötyä ihmisillä. Ilman tätä BERM jää vyöhykkeeseen 'mekanistisesti vakuuttavan' ja 'kliinisesti todistetun' väliin.",
 
     strengthsTitle: "Missä BERM onnistuu",
     strengths: [
-      "Generoi verifioituja ennusteita ennen evidenssin keräämistä (progressiivinen, ei sovittava)",
-      "Jokainen tehokas hoito BERM:n ennustamiin tiloihin kohdistuu Ca²⁺-kaskadiin (farmakologinen konvergenssi)",
-      "Geneettinen evidenssi (CACNA1C → EMF-vaste) vahvistaa itsenäisesti ydinmekanismin",
+      "Generoi todennettuja ennusteita ennen näytön keräämistä (etenevä, ei sovittava)",
+      "Jokainen tehokas hoito BERM:n ennustamiin tiloihin kohdistuu Ca²⁺-kaskadiin (farmakologinen yhdentyminen)",
+      "Geneettinen näyttö (CACNA1C → EMF-vaste) vahvistaa itsenäisesti ydinmekanismin",
       "Monitasoinen konsilienss kvanttifysiikasta väestöepidemiologiaan",
       "Spesifioi selkeät falsifikaatio-olosuhteet neljällä vakavuustasolla",
-      "Tuottaa ylijäämäistä empiiristä sisältöä — jokainen verifiointi paljastaa enemmän kuin ennustettiin",
+      "Tuottaa ylijäämäistä empiiristä sisältöä — jokainen todentaminen paljastaa enemmän kuin ennustettiin",
     ],
 
     weaknessesTitle: "Mitä BERM:ltä vielä puuttuu",
     weaknesses: [
-      "Ei INTERVENTIONAALISTA evidenssiä — ei RCT:tä joka osoittaa EMF-vähennys → terveyshyöty",
+      "Ei INTERVENTIONAALISTA näyttöä — ei RCT:tä joka osoittaa EMF-vähennys → terveyshyöty",
       "Ca²⁺:n universaalisuus luo väärän positiivisen riskin — osa 'konvergensseista' voi olla triviaaleja",
       "Katkeamattomassa ketjussa on 2 osittaista linkkiä (prenataalivaikutukset, epidemiologia)",
       "Väestötason epidemiologia on korrelatiivista, ei kausaalista",
-      "Ei itsenäistä verifiointimenetelmää (vastaava kuin DNA-sekvensointi evoluutiolle)",
-      "Teollisuuden rahoittamat tutkimukset eivät johdonmukaisesti löydä vaikutusta, luoden kiistanalaisen evidenssimaiseman",
+      "Ei itsenäistä todentamismenetelmää (vastaava kuin DNA-sekvensointi evoluutiolle)",
+      "Teollisuuden rahoittamat tutkimukset eivät johdonmukaisesti löydä vaikutusta, luoden kiistanalaisen näyttömaiseman",
     ],
 
     verdictTitle: "Episteeminen arvio",
-    verdictText: "BERM on PROGRESSIIVINEN tutkimusohjelma Lakatoksen mielessä. Se ei ole todistettu teoria — se on generatiivinen mekanismi joka johdonmukaisesti tuottaa verifioituja ennusteita ylijäämäisellä empiirisellä sisällöllä. Mallin ensisijainen heikkous on interventionaalisen evidenssin puuttuminen. Sen ensisijainen vahvuus on monitasoinen konsilienss itsenäisten alojen yli. Seuraava ratkaiseva kokeilu on ETH:n nimodipiini-5G-tutkimus: jos Ca²⁺-salpaus estää EMF-vaikutukset, VGCC-mekanismi vahvistetaan interventionaalisella tasolla. Jos ei, malli romahtaa.",
-    verdictCTA: "Ks. täydellinen verifiointiketju →",
+    verdictText: "BERM on PROGRESSIIVINEN tutkimusohjelma Lakatoksen mielessä. Se ei ole todistettu teoria — se on generatiivinen mekanismi joka johdonmukaisesti tuottaa todennettuja ennusteita ylijäämäisellä empiirisellä sisällöllä. Mallin ensisijainen heikkous on interventionaalisen näytön puuttuminen. Sen ensisijainen vahvuus on monitasoinen konsilienss itsenäisten alojen yli. Seuraava ratkaiseva kokeilu on ETH:n nimodipiini-5G-tutkimus: jos Ca²⁺-salpaus estää EMF-vaikutukset, VGCC-mekanismi vahvistetaan interventionaalisella tasolla. Jos ei, malli romahtaa.",
+    verdictCTA: "Ks. täydellinen todentamisketju →",
     verdictHref: "/evidence/unbroken-chain",
 
     burdenTitle: "Todistustaakan muutos",
-    burdenLead: "Kun 16 verifioitua välikerrosta muodostavat katkeamattoman ketjun fotonin absorptiosta väestötason terveysvaikutuksiin, todistustaakka muuttuu perustavanlaatuisesti.",
+    burdenLead: "Kun 16 todennettua välikerrosta muodostavat katkeamattoman ketjun fotonin absorptiosta väestötason terveysvaikutuksiin, todistustaakka muuttuu perustavanlaatuisesti.",
     burdenBefore: "Perinteinen kehystys: 'Todista, että EMF aiheuttaa sairautta.' Tämä vaatii yhtä lopullista tutkimusta — mahdottoman korkea rima 18 kertaluokkaa kattavalle monivaiheiselle kausaaliketjulle.",
-    burdenAfter: "Uusi kehystys: 'Osoita missä ketju katkeaa.' Jokainen linkki on verifioitu itsenäisesti. Mallin kumoamiseksi on tunnistettava mikä spesifinen verifioitu linkki on väärässä — ja selitettävä miksi sitä tukeva evidenssi on virheellistä.",
+    burdenAfter: "Uusi kehystys: 'Osoita missä ketju katkeaa.' Jokainen linkki on todennettu itsenäisesti. Mallin kumoamiseksi on tunnistettava mikä tarkka todennettu linkki on väärässä — ja selitettävä miksi sitä tukeva näyttö on virheellistä.",
     burdenSteps: [
-      { step: "1. Fysiikka verifioitu", detail: "Lindgrenin χ-parametri, [[ref:tang2024|Tang 2024]] S4-konformaatiomuutos — fotoni-proteiini-mekanismi vahvistettu" },
-      { step: "2. Biokemia verifioitu", detail: "VGCC → Ca²⁺ → CaM → CaMKII → useita kaskadeja — perusbiokemiaa, oppikirjataso" },
+      { step: "1. Fysiikka todennettu", detail: "Lindgrenin χ-parametri, [[ref:tang2024|Tang 2024]] S4-konformaatiomuutos — fotoni-proteiini-mekanismi vahvistettu" },
+      { step: "2. Biokemia todennettu", detail: "VGCC → Ca²⁺ → CaM → CaMKII → useita kaskadeja — perusbiokemiaa, oppikirjataso" },
       { step: "3. Farmakologia konvergoi", detail: "Jokainen tehokas hoito kohdistuu Ca²⁺-kaskadin komponenttiin — etosuksimidi, gabapentiini, verapamiili, melatoniini, litium, bumetanidi" },
-      { step: "4. Genetiikka vahvistaa", detail: "CACNA1C-genotyyppi moduloi EMF-vastetta ([[ref:sousouri2025|Sousouri 2025]] RCT). CaMKII-mutaatiot tuottavat BERM:n ennustamat fenotyypit ([[ref:kury2017_camk2|Küry 2017]])" },
-      { step: "5. Välikerrokset verifioitu", detail: "BBB, BAT, HPA-akseli, β-solu, hypotalamus, kortisoli-hippokampus, Leydig-solu, syöttösolu — jokainen itsenäisesti vahvistettu" },
+      { step: "4. Genetiikka vahvistaa", detail: "CACNA1C-genotyyppi säätelee EMF-vastetta ([[ref:sousouri2025|Sousouri 2025]] RCT). CaMKII-mutaatiot tuottavat BERM:n ennustamat fenotyypit ([[ref:kury2017_camk2|Küry 2017]])" },
+      { step: "5. Välikerrokset todennettu", detail: "BBB, BAT, HPA-akseli, β-solu, hypotalamus, kortisoli-hippokampus, Leydig-solu, syöttösolu — jokainen itsenäisesti vahvistettu" },
       { step: "6. Epidemiologia konsistentti", detail: "54 maan R²=0,851, [[ref:klimentidis2010|Klimentidis 8 lajia]] (p=10⁻⁷), Amish/mennoniittidata — konsistentti eri tutkimusasetelmissa" },
     ],
-    burdenConclusion: "Ketju ei ole hypoteesi — se on verifioitu sekvenssi. Sen kumoaminen edellyttää spesifisen rikkoutuneen linkin tunnistamista, ei yhtä tutkimusta joka kattaa koko ketjun. Tämä on sama episteeminen standardi jonka sovellamme evoluutioteoriaan, laattatektoniikkaan ja bakteeriteoriaan.",
+    burdenConclusion: "Ketju ei ole hypoteesi — se on todennettu sekvenssi. Sen kumoaminen edellyttää tarkan rikkoutuneen linkin tunnistamista, ei yhtä tutkimusta joka kattaa koko ketjun. Tämä on sama episteeminen standardi jonka sovellamme evoluutioteoriaan, laattatektoniikkaan ja bakteeriteoriaan.",
 
     iarcTitle: "IARC 2A -ennakkotapaus",
     iarcLead: "[[ref:iarc_2a_shift|IARC luokittelee vuorotyön, johon liittyy vuorokausirytmin häiriintyminen, ryhmään 2A]] — 'todennäköisesti karsinogeeninen ihmisille.' Ehdotettu mekanismi on melatoniinin suppressio. BERM tunnistaa saman mekanismin eri altistumisreitin kautta.",
@@ -316,7 +316,7 @@ const COPY = {
       "IARC luokittelee vuorotyön, johon liittyy vuorokausirytmin häiriintyminen, ryhmään 2A (todennäköisesti karsinogeeninen)",
       "Ehdotettu mekanismi: vuorotyö → melatoniinin suppressio → hormoniriippuvaisen syövän riski↑",
       "BERM-yhteys: EMF → melatoniinin suppressio on SAMA mekanismi (VK3: PGC → melatoniini↓)",
-      "Jos IARC hyväksyy melatoniinin suppression vuorokausirytmin häiriön kautta 2A-tason evidenssiksi syövälle, niin EMF → melatoniinin suppression tulisi kantaa sama painoarvo",
+      "Jos IARC hyväksyy melatoniinin vaimentumisen vuorokausirytmin häiriön kautta 2A-tason näytöksi syövälle, EMF:n aiheuttamalla melatoniinin vaimentumisella tulisi olla sama painoarvo",
       "Tämä ei ole BERM-spekulaatiota — se soveltaa IARC:n omaa logiikkaa johdonmukaisesti",
     ],
     iarcStats: [
@@ -341,7 +341,7 @@ const COPY = {
     pemfConclusion: [
       "BERM EI ennusta 'kaikki EMF on haitallista'",
       "BERM ennustaa: lopputulos riippuu Ca²⁺-dynamiikasta (annos, ajoitus, solutyyppi)",
-      "PEMF-validaatio: jos PEMF toimii Ca²⁺-kanavien KAUTTA, tämä VAHVISTAA, että EMF vaikuttaa biologiaan Ca²⁺-kanavien kautta — mikä on BERM:n ydinväite",
+      "PEMF-todentaminen: jos PEMF toimii Ca²⁺-kanavien KAUTTA, tämä VAHVISTAA, että EMF vaikuttaa biologiaan Ca²⁺-kanavien kautta — mikä on BERM:n ydinväite",
       "Paradoksi liukenee: PEMF ei ole poikkeus BERM:stä, se on vahvistus",
     ],
     testLabel: "Testi",
