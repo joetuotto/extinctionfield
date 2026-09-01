@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run references:index && npm run references:validate",
-    "build": "next build",
+    "prebuild": "npm run references:index && npm run references:validate && npm run registry:validate",
+    "registry:validate": "node scripts/validate-registry.mjs",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "references:index": "node scripts/build-reference-index.mjs",

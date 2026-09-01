@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Shield, Check, BarChart3, TrendingDown, Atom } from "lucide-react";
+import { ArrowRight, Shield, Check, BarChart3, TrendingDown, Atom, Activity } from "lucide-react";
 import { BermMasterInfographic } from "@/components/BermMasterInfographic";
 import ProxyMaskingInfographic from "@/components/ProxyMaskingInfographic";
 import { SpeciesDeclineChart } from "@/components/SpeciesDeclineChart";
@@ -41,6 +41,7 @@ const METRICS_EN = [
   { value: "88%", sub: "of US fertility decline explained by testosterone", icon: "chart" },
   { value: "$200B", sub: "spent, zero reversal — biology resists incentives", icon: "down" },
   { value: "13 / 20", sub: "physics-derived predictions already verified", icon: "atom" },
+  { value: "0.648", sub: "BioCap index — down from 0.99 in 1950", icon: "activity" },
 ] as const;
 
 const METRICS_FI = [
@@ -49,6 +50,7 @@ const METRICS_FI = [
   { value: "88 %", sub: "USA:n hedelmällisyyslaskusta selittyy testosteronilla", icon: "chart" },
   { value: "200 mrd $", sub: "käytetty, nolla käännettä — biologia vastustaa kannustimia", icon: "down" },
   { value: "13 / 20", sub: "fysiikasta johdettu ennuste jo todennettu", icon: "atom" },
+  { value: "0.648", sub: "BioCap-indeksi — laskenut 0.99:stä (1950)", icon: "activity" },
 ] as const;
 
 /* ── Copy ── */
@@ -105,31 +107,31 @@ const COPY_FI = {
   metaTitle: "Extinction Field – BERM-tutkimusmalli",
   metaDescription: "Falsifioitava tutkimusmalli sähkömagneettisten kenttätilojen ja lisääntymiskyvyn yhteyden testaamiseen.",
 
-  heroTitle: "Maailmanlaajuinen biologinen kapasiteetti heikkenee.",
-  heroDeck: "Kaikissa lajeissa. Nopeammin kuin ennustettiin.",
-  heroContext: "Ehkä tiedämme miksi.",
+  heroTitle: "Biologisen kapasiteetin maailmanlaajuinen heikkeneminen",
+  heroDeck: "Biologinen kapasiteetti heikkenee maailmanlaajuisesti kaikissa lajeissa. Kehitys etenee ennustettua nopeammin.",
+  heroContext: "Käytettävissä oleva aineisto viittaa mahdolliseen yhteiseen mekanismiin.",
 
-  s1Title: "Jotain tapahtuu",
-  s1P1: "Jotain tapahtuu biologialle. Ei vain ihmislajille — kaikille lajeille.",
-  s1P2: "Miesten siittiöpitoisuus on laskenut yli puolella vuodesta 1973, ja lasku kiihtyy (Levine 2023). Miesten testosteroni on laskenut noin 1 % vuodessa 1980-luvulta lähtien, riippumatta iästä, painosta tai elämäntavoista (Travison 2007; Santi 2025, N > miljoona). Nämä eivät ole valintoja. Ne ovat mittauksia.",
-  s1P3: "Sama kuvio näkyy muissa lajeissa. Koirien siittiölaatu on heikentynyt 26 vuoden ajan (Lea 2016). Hevosten hedelmällisyys heikkenee länsimaissa (Harris 2023). Lentävien hyönteisten biomassa laski 75 % suojelluilla saksalaisilla luonnonsuojelualueilla 27 vuodessa (Hallmann 2017). Pohjois-Amerikka menetti kolme miljardia lintua vuodesta 1970 lähtien (Rosenberg 2019). Mehiläispesäkuolemat nousivat ennätystasolle 2024–25.",
-  s1P4a: "Nämä laskut ylittävät kaikki rajat joiden pitäisi erottaa ne toisistaan: valtioiden rajat, kulttuurit, talousjärjestelmät, ilmastot, lajit. Ainoat rajat joissa ne pysähtyvät ovat teknologisia. Yhteisöt jotka rajoittavat nykyaikaista teknologiaa — vanhan järjestyksen amissit (TFR ~6,5), ultraortodoksijuutalaiset (TFR ~6,4), perinteiset mennoniitit (TFR ~5,5) — eivät kärsi laskusta. Heillä on sama terveydenhuolto, sama oikeusjärjestelmä ja sama talous kuin naapureillaan. He eivät kuitenkaan jaa samaa sähkömagneettista ympäristöä.",
-  s1P4b: "Jokainen hallitus joka on yrittänyt kääntää hedelmällisyyslaskua taloudellisin kannustimin on epäonnistunut. Etelä-Korea investoi yli 200 miljardia dollaria. Sen hedelmällisyysluku laski 1,08:sta 0,72:een tukikauden aikana. Mitään pohjaa ei ole löytynyt missään — 1,3 ei ollut pohja, 1,0 ei ollut pohja, 0,8 ei ollut pohja. Lasku jatkuu ikään kuin sitä ajaisi voima johon politiikka ei yllä.",
+  s1Title: "Havaittu kehitys",
+  s1P1: "Biologisissa mittareissa tapahtuu samansuuntaisia muutoksia useissa eliölajeissa.",
+  s1P2: "Miesten siittiöpitoisuus on vähentynyt yli puolella vuodesta 1973 lähtien, ja lasku kiihtyy (Levine 2023). Miesten testosteronitasot ovat laskeneet 1980-luvulta lähtien noin prosentin vuodessa iästä, painosta ja elämäntavoista riippumatta (Travison 2007; Santi 2025, N > 1\u00a0000\u00a0000). Kyse ei ole käyttäytymisvalinnoista vaan biologisista mittaustuloksista.",
+  s1P3: "Sama kehitys havaitaan muissa lajeissa. Koirien siittiöiden laatu on heikentynyt 26 vuoden ajan (Lea 2016). Hevosten hedelmällisyys alenee länsimaissa (Harris 2023). Lentävien hyönteisten biomassa väheni 75 prosenttia suojelluilla saksalaisilla luonnonsuojelualueilla 27 vuoden aikana (Hallmann 2017). Pohjois-Amerikan lintupopulaatio on pienentynyt kolmella miljardilla yksilöllä vuodesta 1970 lähtien (Rosenberg 2019). Mehiläisyhdyskuntien kuolleisuus nousi ennätystasolle vuosina 2024–2025.",
+  s1P4a: "Lasku ylittää valtioiden, kulttuurien, talousjärjestelmien, ilmastovyöhykkeiden ja lajien väliset rajat. Se pysähtyy ainoastaan teknologisesti rajatuissa ympäristöissä. Nykyaikaisen teknologian käyttöä rajoittavissa yhteisöissä vastaavaa hedelmällisyyden laskua ei esiinny. Vanhan järjestyksen amishien kokonaishedelmällisyysluku on noin 6,5, ultraortodoksisten juutalaisten noin 6,4 ja perinteisten mennoniittojen noin 5,5. Näiden yhteisöjen terveydenhuolto, oikeusjärjestelmä ja taloudellinen ympäristö ovat samat kuin niitä ympäröivällä väestöllä. Niiden sähkömagneettinen ympäristö on kuitenkin erilainen.",
+  s1P4b: "Kaikki hallitukset, jotka ovat yrittäneet kääntää hedelmällisyyden laskun taloudellisilla kannustimilla, ovat epäonnistuneet. Etelä-Korea käytti tarkoitukseen yli 200 miljardia dollaria. Tukitoimien aikana maan kokonaishedelmällisyysluku laski 1,08:sta 0,72:een. Hedelmällisyydelle ei ole havaittu alarajaa. Kokonaishedelmällisyysluku 1,3 ei muodostanut alarajaa, kuten eivät myöskään tasot 1,0 ja 0,8. Lasku jatkuu tavalla, johon poliittiset toimet eivät ole kyenneet vaikuttamaan.",
 
-  s2Title: "Kaikissa lajeissa",
-  s2P1: "Seitsemää lajia on verrattu määrällisesti yhteisellä asteikolla: sähkömagneettinen altistus suhteessa lisääntymiskyvyn heikkenemiseen. Korrelaatio on r = 0,909 (p = 0,005). Koirat — jotka jakavat kotimme ja sähkömagneettisen ympäristömme — heikkenevät lähes samaa tahtia kuin ihmiset. Hevosten hedelmällisyys laskee länsimaissa nopeammin kuin muualla. Tuotantosonnit valvotuissa ympäristöissä, joissa sähkömagneettinen altistus on vähäistä, osoittavat päinvastaista kehitystä.",
-  s2P2: "Tämä lajien välinen gradientti sulkee pois jokaisen ihmislajiin rajoittuvan selityksen: talouden, koulutuksen, ehkäisyn, feminismin, uravalinnat, asumiskustannukset, sosiaalisen median, treffisovellukset. Mikään näistä ei koske koiria. Silti niiden hedelmällisyyslasku seuraa ihmisten vastaavaa hämmästyttävällä tarkkuudella.",
+  s2Title: "Lajien välinen sähkömagneettinen gradientti",
+  s2P1: "Seitsemää lajia on verrattu määrällisesti yhteisellä asteikolla, jossa sähkömagneettisen altistuksen voimakkuutta tarkastellaan suhteessa lisääntymiskyvyn heikkenemiseen. Muuttujien välinen korrelaatio on r = 0,909 (p = 0,005). Koirat jakavat ihmisten asuinympäristön ja siihen sisältyvän sähkömagneettisen altistuksen. Niiden lisääntymiskyky heikkenee lähes samaa tahtia kuin ihmisten. Hevosten hedelmällisyys vähenee länsimaissa nopeammin kuin muualla. Tuotantosonnien kehitys on päinvastaista valvotuissa ympäristöissä, joissa sähkömagneettinen altistus on vähäistä.",
+  s2P2: "Lajien välinen gradientti sulkee pois ihmislajiin rajoittuvat selitykset. Tällaisia ovat taloudellinen kehitys, koulutus, ehkäisy, feminismi, uravalinnat, asumiskustannukset, sosiaalinen media ja treffisovellukset. Nämä tekijät eivät vaikuta koiriin, vaikka koirien lisääntymiskyvyn heikkeneminen seuraa tarkasti ihmisillä havaittua kehitystä.",
 
-  s3Title: "Yksi mekanismi",
-  s3P1: "BERM — biosähkömagneettinen reproduktiomalli — esittää, että sähköisen infrastruktuurin tuottamat sähkömagneettiset kentät häiritsevät solujen kalsiumsignalointia jänniteohjattujen kalsiumkanavien kautta. Tämä ei ole spekulatiivista: yksi mutaatio yhdessä kalsiumkanavageenissä (CACNA1C, Timothyn oireyhtymä) tuottaa jokaisen taudinkuvan jonka malli ennustaa. Mekanismi on todennettu 56 välivaiheen kautta, joista yhtään ei ole kumottu. Kaksitoista olemassa olevaa lääkettä jotka kohdistuvat samoihin kalsiumkanaviin tuottavat ennustetut vaikutukset sivuvaikutuksina. Kolme itsenäistä näyttölinjaa — geneettinen, farmakologinen ja institutionaalinen — yhtyvät samaan johtopäätökseen.",
-  s3P2: "Malli tuottaa falsifioitavia ennusteita ja se on läpikäynyt itsenäisen määrällisen auditoinnin. Se ei väitä varmuutta. Se väittää testattavuutta.",
+  s3Title: "Yhteinen mekanismi",
+  s3P1: "BERM eli biosähkömagneettinen reproduktiomalli esittää, että sähköisen infrastruktuurin tuottamat sähkömagneettiset kentät häiritsevät solujen kalsiumsignalointia jänniteohjattujen kalsiumkanavien välityksellä. Mekanismi ei ole spekulatiivinen. Yksittäinen mutaatio yhdessä kalsiumkanavaa koodaavassa geenissä, CACNA1C-geenissä, aiheuttaa Timothyn oireyhtymän ja tuottaa kaikki mallin ennustamat sairauskuvat. Mekanistinen ketju on todennettu 56 välivaiheen kautta, eikä yhtäkään vaihetta ole kumottu. Kaksitoista olemassa olevaa lääkettä kohdistuu samoihin kalsiumkanaviin ja tuottaa sivuvaikutuksina mallin ennustamat vaikutukset. Geneettinen, farmakologinen ja institutionaalinen näyttö muodostavat kolme itsenäistä näyttölinjaa, jotka johtavat samaan päätelmään.",
+  s3P2: "Malli tuottaa falsifioitavia ennusteita, ja sille on tehty riippumaton määrällinen auditointi. Malli ei esitä mekanismia varmana, vaan empiirisesti testattavana.",
 
-  s4Title: "Todennettu ja testattava",
-  s4Intro: "Näyttö ei ole hajanaista. Se kattaa molekyylibiologian, farmakologian, endokrinologian, epidemiologian, ekologian ja populaatiogenetiikan:",
+  s4Title: "Näytön rakenne",
+  s4Intro: "Näyttö muodostuu molekyylibiologiasta, farmakologiasta, endokrinologiasta, epidemiologiasta, ekologiasta ja populaatiogenetiikasta. Se ei siten rajoitu yksittäiseen tieteenalaan tai aineistotyyppiin.",
 
-  s5Title: "Mitä se tarkoittaa",
-  s5P1: "Seuraukset ulottuvat hedelmällisyyttä laajemmalle. Sama kalsiumhäiriö joka heikentää lisääntymistä vaikuttaa myös uneen, mielialaan, ajattelukykyyn, immuunitoimintaan ja aineenvaihdunnan säätelyyn. Masennuksen, ahdistuksen, autoimmuunisairauksien, metabolisen oireyhtymän ja neurodegeneratiivisten sairauksien samanaikainen yleistyminen ei ole tässä viitekehyksessä sattuma joka vaatii erillisiä selityksiä — se on yksi ketjureaktio joka tuottaa eri oireita eri kudoksissa.",
-  s5P2: "Sivilisaation tasolla tämä biologinen rapautuminen saattaa selittää sen, mitä historioitsijat ovat yrittäneet selittää vuosisatojen ajan: miksi yhteiskunnat seuraavat toistuvia nousun, huipun ja laskun kehityskulkuja. BERM esittää, että ennen sähköistymistä aurinkosyklit tarjosivat luonnollisia biologisen palautumisen jaksoja. Sähköistymisen jälkeen nuo jaksot päättyivät. Kehityskulku joka oli syklinen saattaa nyt olla peruuttamaton — ellei mekanismia ymmärretä.",
+  s5Title: "Vaikutukset terveyteen ja yhteiskuntaan",
+  s5P1: "Mallin seuraukset eivät rajoitu hedelmällisyyteen. Lisääntymistä heikentävä kalsiumsignaloinnin häiriö vaikuttaa myös uneen, mielialaan, kognitiiviseen toimintakykyyn, immuunijärjestelmään ja aineenvaihdunnan säätelyyn. Masennuksen, ahdistuneisuuden, autoimmuunisairauksien, metabolisen oireyhtymän ja neurodegeneratiivisten sairauksien samanaikainen yleistyminen ei tämän viitekehyksen mukaan edellytä erillisiä mekanismeja. Kyseessä on yksi ketjureaktio, joka tuottaa erilaisia oireita eri kudoksissa.",
+  s5P2: "Sivilisaatiotasolla biologinen rapautuminen voi selittää ilmiötä, jota historioitsijat ovat tarkastelleet vuosisatojen ajan: yhteiskuntien toistuvaa nousun, huippuvaiheen ja taantumisen rakennetta. BERM:n mukaan aurinkosyklit muodostivat ennen sähköistymistä luonnollisia biologisen palautumisen jaksoja. Sähköistymisen jälkeen nämä jaksot päättyivät. Aiemmin syklinen kehityskulku voi tämän vuoksi muuttua peruuttamattomaksi, ellei sen taustalla olevaa mekanismia tunnisteta.",
 
   ctaEvidence: "Tutustu näyttöön",
   ctaModel: "Katso mekanismi",
@@ -183,6 +185,7 @@ function MetricIcon({ icon }: { icon: string }) {
     case "chart": return <BarChart3 size={size} className={`${cls} text-accent`} strokeWidth={1.5} />;
     case "down": return <TrendingDown size={size} className={`${cls} text-status-refuted`} strokeWidth={1.5} />;
     case "atom": return <Atom size={size} className={`${cls} text-accent`} strokeWidth={1.5} />;
+    case "activity": return <Activity size={size} className={`${cls} text-accent`} strokeWidth={1.5} />;
     default: return null;
   }
 }
@@ -278,7 +281,7 @@ export default async function Home({
         <h2 className="editorial-section-heading mb-6">{d.s4Title}</h2>
         <p className="text-[0.9375rem] leading-relaxed text-foreground-muted max-w-3xl mb-10">{d.s4Intro}</p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {d.metrics.map((m, i) => (
             <div
               key={i}

@@ -1,73 +1,100 @@
 "use client";
 
-import { AlertTriangle } from "lucide-react";
 import { SolarMiniTimeline } from "./SolarMiniTimeline";
 import { BiocapSparkline } from "./BiocapSparkline";
 
+const TFR_DATA = [
+  { region: "Saharan eteläpuolinen Afrikka", tfr: "4,6" },
+  { region: "Etelä-Aasia", tfr: "2,3" },
+  { region: "Lähi-itä", tfr: "2,7" },
+  { region: "Latinalainen Amerikka", tfr: "1,9" },
+  { region: "Itä-Aasia", tfr: "1,1" },
+  { region: "Länsi-Eurooppa", tfr: "1,5" },
+  { region: "Japani", tfr: "1,2" },
+  { region: "Yhdysvallat", tfr: "1,6" },
+  { region: "Etelä-Korea", tfr: "0,7" },
+];
+
 const ESSAY_COPY = {
   en: {
-    epistemicBanner:
-      "This page presents a theoretical framework connecting biological mechanisms to civilizational dynamics. The biological evidence (molecular, hormonal, cross-species) is empirically supported. The civilizational interpretation is a hypothesis — consistent with historical data but not proven by it. Correlation between solar cycles and civilizational transitions does not establish causation.",
-
     // Section 1
     s1title: "The Pattern Everyone Sees But No One Can Explain",
     s1p1: "Throughout recorded history, civilizations have followed a remarkably consistent pattern. They emerge with explosive energy, expand across vast territories, flourish for a time, and then — without exception — decline. The pattern is so regular that for three hundred years, serious thinkers have tried to understand it. Giambattista Vico described it in 1725 as a recurring cycle of three ages. Oswald Spengler saw it as the organic lifecycle of a living organism. Arnold Toynbee documented it across twenty-one civilizations. John Bagot Glubb, having led the Arab Legion across the Middle East and studied thirteen empires, found that each lasted approximately 250 years and passed through the same six stages in the same order. Peter Turchin translated the pattern into differential equations and found secular cycles of roughly 80–100 years nested within it.",
-    s1p2: "These thinkers disagreed about almost everything — method, ideology, and scope. Most were unaware of each other’s work. Yet they independently converged on the same observation: civilizations do not progress linearly. They rise and fall in cycles, and the late stages are marked by a strikingly consistent set of symptoms — declining birth rates, increasing hedonism, loss of collective will, pessimism, a reliance on foreign labour, and what Glubb called “an extraordinary increase in frivolity.”",
+    s1p2: "These thinkers disagreed about almost everything — method, ideology, and scope. Most were unaware of each other's work. Yet they independently converged on the same observation: civilizations do not progress linearly. They rise and fall in cycles, and the late stages are marked by a strikingly consistent set of symptoms — declining birth rates, increasing hedonism, loss of collective will, pessimism, a reliance on foreign labour, and what Glubb called \"an extraordinary increase in frivolity.\"",
     s1p3: "The question none of them could answer is: why?",
     s1p4: "Conventional explanations attribute civilizational decline to cultural, economic, or institutional factors. Societies become complacent. Elites overproduce. Complexity exceeds its returns. These explanations describe what happens but not why it happens with such mechanical regularity, across cultures that share no common language, religion, or political structure. If decline were purely cultural, it should be preventable by cultural means. Yet South Korea — a nation with strong family values, extraordinary work ethic, and over $200 billion invested in pronatalist policies since 2006 — has the lowest fertility rate in recorded human history, at 0.72 children per woman. The policies did not slow the decline. They did not even stop it from accelerating.",
     s1p5: "Something more fundamental is at work.",
+    s1p6: "",
 
     // Section 2
     s2title: "The Biological Substrate of Civilizational Capacity",
-    s2p1: "BERM — the Bioelectromagnetic Reproductive Model — proposes that underneath the cultural, economic, and political dynamics of civilizations lies a biological substrate: the collective physiological state of the population. This substrate can be measured. Male testosterone has declined by approximately 1.2% per year since the 1980s, independent of age, obesity, and lifestyle. Sperm concentration has fallen by more than half since 1973, and the rate of decline is accelerating. Melatonin — the hormone that governs sleep, circadian rhythm, and immune function — is chronically suppressed by the modern electromagnetic and light environment. Vitamin D deficiency affects nearly half the world’s population. These are not cultural choices. They are biological measurements.",
+    s2p1: "BERM — the Bioelectromagnetic Reproductive Model — proposes that underneath the cultural, economic, and political dynamics of civilizations lies a biological substrate: the collective physiological state of the population. This substrate can be measured. Male testosterone has declined by approximately 1.2% per year since the 1980s, independent of age, obesity, and lifestyle. Sperm concentration has fallen by more than half since 1973, and the rate of decline is accelerating. Melatonin — the hormone that governs sleep, circadian rhythm, and immune function — is chronically suppressed by the modern electromagnetic and light environment. Vitamin D deficiency affects nearly half the world's population. These are not cultural choices. They are biological measurements.",
     s2p2: "BERM identifies the mechanism: the electromagnetic fields generated by electrical infrastructure — power grids, wireless networks, LED lighting, personal devices — activate voltage-gated calcium channels in cell membranes, disrupting the calcium signalling cascades that govern virtually every physiological process: hormone production, neurotransmitter release, immune function, DNA repair, and reproduction. The effect is cumulative, chronic, and largely imperceptible. It does not produce acute symptoms. It produces a gradual, population-wide erosion of biological capacity.",
     s2p3: "This is not a metaphor. It is a measurable, testable, falsifiable biological process. A single genetic mutation in one calcium channel gene — CACNA1C, the cause of Timothy syndrome — produces every pathology that BERM predicts: cardiac arrhythmia, immune dysfunction, metabolic disorder, autism spectrum features, and facial dysmorphism. BERM proposes that chronic environmental electromagnetic exposure produces the same spectrum of effects, qualitatively but at lower magnitude, across entire populations over decades.",
+    s2p4: "",
+    s2p5: "",
 
     // Section 3
     s3title: "What This Explains That Nothing Else Can",
     s3sub1: "The simultaneous decline of fertility across all species.",
     s3sub1p:
       "Human sperm quality, dog sperm quality, horse fertility, bee colony health, insect biomass, and bird populations are all declining simultaneously, across different continents. Dogs do not attend university. Horses do not use contraception. Bees do not delay family formation for career reasons. The seven-species electromagnetic gradient — correlating the degree of electromagnetic exposure with the rate of reproductive decline — produces r = 0.909 (p = 0.005). No social or economic variable achieves comparable cross-species explanatory power.",
+    s3sub1p2: "",
     s3sub2: "The systematic failure of pronatalist policy.",
     s3sub2p:
       "Every developed country that has attempted to reverse fertility decline through financial incentives has failed. Hungary achieved a modest increase from 1.23 to approximately 1.5 — still far below replacement. South Korea, Japan, and Singapore saw no effect whatsoever. If the decline were a rational response to economic incentives, sufficiently large counter-incentives should reverse it. They do not. BERM explains this: the decline is partly biological. The quadruple suppression of testosterone, oxytocin, dopamine, and cortisol dysregulation reduces both the desire for and the biological capacity for reproduction. Financial incentives address conscious decision-making. They cannot address unconscious biological erosion.",
+    s3sub2p2: "",
     s3sub3: "The technology gradient in fertility.",
     s3sub3p:
-      "The clearest natural experiments are communities that restrict technology. The Old Order Amish maintain a total fertility rate of approximately 6–7 children per woman — in the United States, where the national average is 1.62. They share the same healthcare system, the same legal framework, and the same economic environment as their neighbours. What they do not share is the electromagnetic environment: no grid electricity, no mobile phones, no WiFi, no LED lighting. Ultra-Orthodox Jewish communities in Israel, which use restricted “kosher phones” and observe technology-free Sabbaths, maintain a fertility rate above 6. Modern Mennonites who adopted technology saw their fertility converge toward the mainstream within one generation. The gradient is consistent across religions, cultures, and continents. Only communities that actually restrict electromagnetic technology maintain pre-modern fertility.",
+      "The clearest natural experiments are communities that restrict technology. The Old Order Amish maintain a total fertility rate of approximately 6–7 children per woman — in the United States, where the national average is 1.62. They share the same healthcare system, the same legal framework, and the same economic environment as their neighbours. What they do not share is the electromagnetic environment: no grid electricity, no mobile phones, no WiFi, no LED lighting. Ultra-Orthodox Jewish communities in Israel, which use restricted \"kosher phones\" and observe technology-free Sabbaths, maintain a fertility rate above 6. Modern Mennonites who adopted technology saw their fertility converge toward the mainstream within one generation. The gradient is consistent across religions, cultures, and continents. Only communities that actually restrict electromagnetic technology maintain pre-modern fertility.",
+    s3sub3p2: "",
+    s3sub3p3: "",
     s3sub4: "The absence of a fertility floor.",
     s3sub4p:
-      "Every demographic model implicitly assumes that fertility will stabilize at some natural minimum. No such floor has been found. South Korea passed through 1.3, then 1.0, then 0.8, and is now at 0.72. BERM explains this: if the decline has a biological component driven by cumulative electromagnetic exposure, and if that exposure continues to increase, there is no reason for the decline to stop. The “floor” does not exist because the mechanism is progressive.",
+      "Every demographic model implicitly assumes that fertility will stabilize at some natural minimum. No such floor has been found. South Korea passed through 1.3, then 1.0, then 0.8, and is now at 0.72. BERM explains this: if the decline has a biological component driven by cumulative electromagnetic exposure, and if that exposure continues to increase, there is no reason for the decline to stop. The \"floor\" does not exist because the mechanism is progressive.",
+    s3sub4p2: "",
     s3sub5: "The convergence of late-civilizational symptoms.",
     s3sub5p:
-      "The markers of civilizational decline identified by Glubb, Sorokin, and Spengler — declining fertility, hedonism, pessimism, loss of social cohesion, reliance on immigration, weakening of institutional religion, “an influx of foreigners” — are each independently predicted by BERM’s hormonal cascade. Testosterone decline reduces assertiveness and risk tolerance. Oxytocin decline reduces social trust and group bonding — precisely what Ibn Khaldun called asabiya and Turchin modelled as collective solidarity. Cortisol elevation shifts the population from proactive to reactive behaviour. BDNF decline impairs long-term strategic thinking. These are not cultural pathologies. They are the behavioural expression of a neuroendocrine cascade.",
+      "The markers of civilizational decline identified by Glubb, Sorokin, and Spengler — declining fertility, hedonism, pessimism, loss of social cohesion, reliance on immigration, weakening of institutional religion, \"an influx of foreigners\" — are each independently predicted by BERM's hormonal cascade. Testosterone decline reduces assertiveness and risk tolerance. Oxytocin decline reduces social trust and group bonding — precisely what Ibn Khaldun called asabiya and Turchin modelled as collective solidarity. Cortisol elevation shifts the population from proactive to reactive behaviour. BDNF decline impairs long-term strategic thinking. These are not cultural pathologies. They are the behavioural expression of a neuroendocrine cascade.",
+    s3sub5p2: "",
+    s3sub5p3: "",
 
     // Section 4
     s4title: "Before and After Electrification",
-    s4p1: "The most striking implication of BERM’s framework concerns the difference between pre-electric and post-electric civilizational dynamics.",
+    s4p1: "The most striking implication of BERM's framework concerns the difference between pre-electric and post-electric civilizational dynamics.",
     s4p2: "Before electrification — for the five thousand years of recorded civilizational history — the only significant electromagnetic influence on biology came from the sun. Solar activity oscillates in nested cycles: the 11-year Schwabe cycle, the 88-year Gleissberg cycle, and the approximately 200-year Suess/de Vries cycle. During grand solar minima — extended periods of low solar activity lasting 50 to 80 years — the electromagnetic burden on biology decreases, and biological recovery occurs. During grand solar maxima, the burden increases.",
-    s4p3: "This produces a prediction: cultural renaissances should cluster around grand solar minima, and civilizational peaks should cluster around grand solar maxima. When tested against historical data, this prediction finds support. Eight of ten major European renaissances occurred during or immediately following grand solar minima: the Italian Renaissance during the Spörer Minimum, the Scientific Revolution and Dutch Golden Age during the Maunder Minimum, German Romanticism and the American founding during the Dalton Minimum. The British Empire’s two defining moments — the Glorious Revolution (1688) and Waterloo (1815) — fall precisely at the nadirs of the Maunder and Dalton Minima, when the model predicts maximum biological recovery.",
-    s4p4: "The Suess cycle of approximately 200 years — the interval between successive grand minima — corresponds remarkably closely to Glubb’s empirically observed empire lifespan of 250 years. The difference is consistent with biological inertia: the recovery from a grand minimum takes a generation to translate into civilizational energy, adding roughly 50 years to the astronomical cycle.",
-    s4p5: "This framework explains a persistent paradox in historical scholarship: why do periods of harsh climate (the Little Ice Age) coincide with periods of extraordinary intellectual achievement? The conventional assumption is that cold climate should suppress civilizational capacity. BERM’s answer is that the climate effect (cold) and the biological effect (recovery) are driven by different mechanisms. Solar minima reduce both solar irradiance (producing cold) and electromagnetic perturbation of biology (producing recovery). The population shivers — but thinks more clearly, bonds more strongly, and reproduces more vigorously.",
+    s4p3: "This produces a prediction: cultural renaissances should cluster around grand solar minima, and civilizational peaks should cluster around grand solar maxima. When tested against historical data, this prediction finds support. Eight of ten major European renaissances occurred during or immediately following grand solar minima: the Italian Renaissance during the Spörer Minimum, the Scientific Revolution and Dutch Golden Age during the Maunder Minimum, German Romanticism and the American founding during the Dalton Minimum. The British Empire's two defining moments — the Glorious Revolution (1688) and Waterloo (1815) — fall precisely at the nadirs of the Maunder and Dalton Minima, when the model predicts maximum biological recovery.",
+    s4p4: "The Suess cycle of approximately 200 years — the interval between successive grand minima — corresponds remarkably closely to Glubb's empirically observed empire lifespan of 250 years. The difference is consistent with biological inertia: the recovery from a grand minimum takes a generation to translate into civilizational energy, adding roughly 50 years to the astronomical cycle.",
+    s4p5: "This framework explains a persistent paradox in historical scholarship: why do periods of harsh climate (the Little Ice Age) coincide with periods of extraordinary intellectual achievement? The conventional assumption is that cold climate should suppress civilizational capacity. BERM's answer is that the climate effect (cold) and the biological effect (recovery) are driven by different mechanisms. Solar minima reduce both solar irradiance (producing cold) and electromagnetic perturbation of biology (producing recovery). The population shivers — but thinks more clearly, bonds more strongly, and reproduces more vigorously.",
     s4p6: "After electrification, this cyclical dynamic breaks. The electromagnetic burden is no longer dominated by the sun. It is dominated by infrastructure: power grids, transmitters, lighting, and devices. This infrastructure does not oscillate with the solar cycle. It grows monotonically. The recovery windows that grand solar minima previously provided are now masked by an anthropogenic electromagnetic background that exceeds the solar signal by orders of magnitude.",
-    s4p7: "A grand solar minimum is predicted for the period 2020–2053. If BERM’s framework is correct, this minimum will not produce a cultural renaissance comparable to those of previous centuries — because the electromagnetic infrastructure prevents the biological recovery that was previously the mechanism. If, contrary to prediction, a marked cultural flowering does occur in high-latitude nations during this period, the masking hypothesis is falsified.",
+    s4p7: "A grand solar minimum is predicted for the period 2020–2053. If BERM's framework is correct, this minimum will not produce a cultural renaissance comparable to those of previous centuries — because the electromagnetic infrastructure prevents the biological recovery that was previously the mechanism. If, contrary to prediction, a marked cultural flowering does occur in high-latitude nations during this period, the masking hypothesis is falsified.",
+    s4p8: "",
+    s4p9: "",
+    s4p10: "",
 
     // Section 5
     s5title: "The Gradient and the Open Question",
     s5p1: "Throughout history, civilizational decline was always followed by renewal — because there was always a population with higher biological capacity ready to replace the declining one. The Germanic tribes that replaced Rome had not spent centuries in lead-piped cities. The Arab armies that swept through Byzantium had not accumulated generations of urban electromagnetic exposure. The Mongol cavalry that conquered Song China came from an environment with virtually no artificial infrastructure.",
-    s5p2: "The same gradient exists today. Sub-Saharan Africa — with the shortest cumulative electromagnetic exposure of any major population — has the highest fertility rates, the youngest age structure, and, if BERM is correct, the highest biological capacity. The migration flows from Africa and the Middle East into Europe follow the gradient of biological contrast just as Germanic migration followed the contrast with Rome. Europe’s institutional difficulty in managing these flows is, in BERM’s framework, itself a symptom of the hormonal cascade: reduced collective will (testosterone, oxytocin) and elevated anxiety-driven paralysis (cortisol).",
-    s5p3: "What happens next is genuinely open. Joseph Tainter’s analysis of diminishing returns on complexity suggests that the infrastructure sustaining modern electromagnetic environments may itself be fragile. The global supply chains that manufacture and maintain mobile networks, power grids, and semiconductor production depend on a level of civilizational complexity that cannot be taken for granted. If the biological erosion that BERM describes degrades the human capacity to maintain that complexity — as the declining cognitive, motivational, and cooperative indicators suggest it might — then the infrastructure could contract, and with it, the electromagnetic burden.",
-    s5p4: "In that scenario, the historical pattern reasserts itself: decline opens a recovery window, a less-burdened population fills the vacuum, and a new cycle begins. The “barbarian at the gates” is not the last of his kind — he is the perennial figure of civilizational renewal, appearing whenever the gradient between biologically depleted and biologically intact populations grows large enough to drive movement.",
+    s5p2: "The same gradient exists today. Sub-Saharan Africa — with the shortest cumulative electromagnetic exposure of any major population — has the highest fertility rates, the youngest age structure, and, if BERM is correct, the highest biological capacity. The migration flows from Africa and the Middle East into Europe follow the gradient of biological contrast just as Germanic migration followed the contrast with Rome. Europe's institutional difficulty in managing these flows is, in BERM's framework, itself a symptom of the hormonal cascade: reduced collective will (testosterone, oxytocin) and elevated anxiety-driven paralysis (cortisol).",
+    s5p3: "What happens next is genuinely open. Joseph Tainter's analysis of diminishing returns on complexity suggests that the infrastructure sustaining modern electromagnetic environments may itself be fragile. The global supply chains that manufacture and maintain mobile networks, power grids, and semiconductor production depend on a level of civilizational complexity that cannot be taken for granted. If the biological erosion that BERM describes degrades the human capacity to maintain that complexity — as the declining cognitive, motivational, and cooperative indicators suggest it might — then the infrastructure could contract, and with it, the electromagnetic burden.",
+    s5p4: "In that scenario, the historical pattern reasserts itself: decline opens a recovery window, a less-burdened population fills the vacuum, and a new cycle begins. The \"barbarian at the gates\" is not the last of his kind — he is the perennial figure of civilizational renewal, appearing whenever the gradient between biologically depleted and biologically intact populations grows large enough to drive movement.",
     s5p5: "But there is an alternative scenario in which electrification outpaces decline — in which Africa and South Asia acquire the full electromagnetic infrastructure before the existing order contracts. In that case, the gradient would close not through renewal but through convergence: every population arriving at the same depleted state, with no biological reserve remaining anywhere.",
+    s5tableCaption: "",
+    s5p6: "",
+    s5p7: "",
+    s5p8: "",
 
     // Section 6
     s6title: "The Deepest Difficulty",
     s6p1: "We do not know which scenario will prevail. But intellectual honesty requires acknowledging what the data does and does not support.",
     s6p2: "The rate of biological erosion is not slowing. It is accelerating. Sperm decline doubled its pace after the year 2000. Testosterone decline shows no sign of inflection. No fertility floor has been found anywhere in the world. Every pronatalist policy ever attempted has failed to reverse the trend, and most have failed to even slow it. The electromagnetic environment is not stabilising; it is growing exponentially with each generation of wireless technology. There is no significant political movement anywhere in the world to reduce electromagnetic exposure, no regulatory body that recognises the non-thermal biological mechanisms described here, and no economic incentive structure that would favour such reduction. The telecommunications industry generates approximately $1.8 trillion in annual revenue.",
     s6p3: "The political and institutional capacity to confront a challenge of this scale is itself subject to the biological erosion the challenge produces — testosterone decline reduces institutional assertiveness, BDNF decline impairs long-term strategic cognition, oxytocin decline erodes the collective solidarity required for coordinated action. This is the deepest difficulty: the mechanism that would need to be recognised impairs the very cognitive and social capacities required to recognise it.",
-    s6p4: "The “deliberate management” scenario — in which humanity identifies the mechanism and redesigns its electromagnetic environment before irreversible damage accumulates — remains physically possible. Nothing in physics prevents it. But nothing in the current trajectory of technology deployment, regulatory policy, or political will suggests it is probable.",
+    s6p4: "The \"deliberate management\" scenario — in which humanity identifies the mechanism and redesigns its electromagnetic environment before irreversible damage accumulates — remains physically possible. Nothing in physics prevents it. But nothing in the current trajectory of technology deployment, regulatory policy, or political will suggests it is probable.",
     s6p5: "The cycle that the Prophets of Doom observed may continue through collapse — infrastructure fails, the electromagnetic burden lifts, biology recovers over generations, and a new civilisation emerges from the populations least damaged. This is the pattern of the past five thousand years. It is brutal, slow, and enormously costly in human suffering, but it is self-correcting.",
     s6p6: "Or the cycle may end — not because humanity transcends it, but because the global reach of electromagnetic infrastructure closes the last recovery windows before collapse can open them. In that case, the convergence is downward, permanent, and without historical precedent.",
     s6p7: "The data does not tell us which outcome is more likely. It tells us that the process is underway, that it is accelerating, and that the window for deliberate intervention — if it exists at all — is not wide.",
+    s6p8: "",
+    s6p9: "",
 
     // Falsification card
     falsCardTitle: "Testable prediction: 2020–2053 Grand Solar Minimum",
@@ -78,68 +105,91 @@ const ESSAY_COPY = {
   },
 
   fi: {
-    epistemicBanner:
-      "Tämä sivu esittelee teoreettisen viitekehyksen, joka yhdistää biologiset mekanismit sivilisaatiodynamiikkaan. Biologinen todistusaineisto (molekulaarinen, hormonaalinen, lajien välinen) on empiirisesti tuettu. Sivilisaatiotulkinta on hypoteesi — yhdenmukainen historiallisen datan kanssa, mutta ei sen todistama. Korrelaatio auringon syklien ja sivilisaatiomuutosten välillä ei osoita syy-yhteyttä.",
-
     // Section 1
-    s1title: "Kaava, jonka kaikki näkevät mutta kukaan ei osaa selittää",
-    s1p1: "Läpi kirjoitetun historian sivilisaatiot ovat noudattaneet hämmästyttävän johdonmukaista kaavaa. Ne syntyvät räjähtävällä energialla, laajenevat valtavien alueiden yli, kukoistavat aikansa ja sitten — poikkeuksetta — taantuvat. Kaava on niin säännöllinen, että kolmensadan vuoden ajan vakavasti otettavat ajattelijat ovat yrittäneet ymmärtää sitä. Giambattista Vico kuvasi sen vuonna 1725 kolmen aikakauden toistuvana kiertänä. Oswald Spengler näki sen elävän organismin orgaanisena elinkaarena. Arnold Toynbee dokumentoi sen kahdenkymmenenyhden sivilisaation poikkileikkauksena. John Bagot Glubb, joka oli johtanut Arabilegioonaa Lähi-idässä ja tutkinut kolmetoista imperiumia, havaitsi että kukin kesti noin 250 vuotta ja kulki samat kuusi vaihetta samassa järjestyksessä. Peter Turchin käänsi kaavan differentiaaliyhtälöiksi ja löysi noin 80–100 vuoden sekuläärisyklit sen sisältä.",
-    s1p2: "Nämä ajattelijat olivat erimielisiä lähes kaikesta — menetelmistä, ideologiasta ja laajuudesta. Useimmat eivät tunteneet toistensa töitä. Silti he päätyivät itsenäisesti samaan havaintoon: sivilisaatiot eivät etene lineaarisesti. Ne nousevat ja laskevat sykleinä, ja myöhäisvaiheita leimaavat hämmästyttävän johdonmukaiset oireet — laskevat syntyvyysluvut, lisääntyvä hedonismi, kollektiivisen tahdon menetys, pessimismi, riippuvuus ulkomaisesta työvoimasta ja se, mitä Glubb kutsui ”poikkeukselliseksi kevytmielisyyden lisääntymiseksi.”",
-    s1p3: "Kysymys, johon kukaan heistä ei pystynyt vastaamaan: miksi?",
-    s1p4: "Tavanomaiset selitykset liittävät sivilisaation taantumisen kulttuurisiin, taloudellisiin tai institutionaalisiin tekijöihin. Yhteiskunnat muuttuvat itsetyötyväisiksi. Eliittejä ylituotetaan. Monimutkaisuus ylittää tuottavuutensa. Nämä selitykset kuvaavat mitä tapahtuu, mutta eivät sitä miksi se tapahtuu niin mekaanisen säännöllisesti, sivilisaatioissa joilla ei ole yhteistä kieltä, uskontoa tai poliittista rakennetta. Jos taantuminen olisi puhtaasti kulttuurista, sen pitäisi olla estettävissä kulttuurisin keinoin. Silti Etelä-Korea — maa jolla on vahvat perhearvot, poikkeuksellinen työmoraali ja yli 200 miljardia dollaria syntyvyyspolitiikkaan sijoitettuna vuodesta 2006 — omaa kirjoitetun historian alhaisimman hedelmällisyysluvun, 0,72 lasta naista kohden. Politiikkatoimet eivät hidastaneet laskua. Ne eivät edes estäneet sen kiihtymistä.",
-    s1p5: "Jotain perustavanlaatuisempaa on käynnissä.",
+    s1title: "Sivilisaatioiden syklinen kehitys",
+    s1p1: "Kirjoitetun historian perusteella sivilisaatioiden kehityksessä voidaan havaita toistuva rakenne. Sivilisaatiot syntyvät nopeasti, laajenevat laajoille alueille, saavuttavat kukoistusvaiheen ja taantuvat. Rakenteen säännönmukaisuutta on pyritty selittämään ainakin kolmensadan vuoden ajan.",
+    s1p2: "Giambattista Vico kuvasi vuonna 1725 kolmen aikakauden toistuvan kierron. Oswald Spengler käsitteli sivilisaatioita eläviin organismeihin rinnastuvina kokonaisuuksina, joilla on orgaaninen elinkaari. Arnold Toynbee tarkasteli vastaavaa rakennetta 21 sivilisaation vertailussa. Arabilegioonaa Lähi-idässä johtanut John Bagot Glubb analysoi 13 imperiumia ja päätyi siihen, että niiden elinkaari oli keskimäärin noin 250 vuotta. Hänen mukaansa imperiumit etenivät samojen kuuden vaiheen läpi samassa järjestyksessä. Peter Turchin puolestaan muodosti ilmiöstä differentiaaliyhtälöihin perustuvia malleja ja tunnisti sen sisältä noin 80–100 vuoden sekulaarisyklit.",
+    s1p3: "Näiden tutkijoiden ja ajattelijoiden menetelmät, ideologiset lähtökohdat ja tarkastelun laajuus poikkesivat toisistaan. Useimmat eivät myöskään tunteneet toistensa työtä. He päätyivät tästä huolimatta samansuuntaiseen havaintoon: sivilisaatioiden kehitys ei ole lineaarista, vaan siinä esiintyy nousun ja laskun syklejä.",
+    s1p4: "Syklien myöhäisvaiheisiin yhdistetään johdonmukaisesti aleneva syntyvyys, lisääntyvä hedonismi, kollektiivisen tahdon heikkeneminen, pessimismi, riippuvuus ulkomaisesta työvoimasta sekä ilmiö, jota Glubb nimitti poikkeuksellisen kevytmielisyyden lisääntymiseksi. Aiemmat teoriat ovat kuvanneet tämän rakenteen, mutta ne eivät ole ratkaisseet sen perimmäistä syytä.",
+    s1p5: "Tavanomaiset selitysmallit liittävät sivilisaatioiden taantumisen kulttuurisiin, taloudellisiin tai institutionaalisiin tekijöihin. Niiden mukaan yhteiskunnat muuttuvat itsetyytyväisiksi, eliittien määrä kasvaa liian suureksi tai yhteiskunnallisen monimutkaisuuden kustannukset ylittävät siitä saatavan tuottavuuden. Selitykset kuvaavat taantumisen ilmenemismuotoja, mutta eivät sitä, miksi vastaava kehitys toistuu mekaanisen säännöllisesti sivilisaatioissa, joilla ei ole yhteistä kieltä, uskontoa tai poliittista rakennetta.",
+    s1p6: "Jos taantuminen olisi puhtaasti kulttuurinen prosessi, siihen pitäisi voida vaikuttaa kulttuurisin ja poliittisin keinoin. Etelä-Korea muodostaa tässä suhteessa keskeisen esimerkin. Maassa on vahva perhekeskeinen kulttuuri ja poikkeuksellisen voimakas työmoraali. Se on lisäksi käyttänyt vuodesta 2006 lähtien yli 200 miljardia dollaria syntyvyyttä tukeviin toimiin. Tästä huolimatta maan kokonaishedelmällisyysluku on laskenut 0,72 lapseen naista kohden, mikä on kirjoitetun historian alhaisin mitattu taso. Poliittiset toimet eivät ole hidastaneet laskua eivätkä estäneet sen kiihtymistä. Tämä viittaa siihen, että kehitykseen vaikuttaa kulttuurisia ja taloudellisia tekijöitä perustavampi mekanismi.",
 
     // Section 2
     s2title: "Sivilisaatiokyvykkyyden biologinen substraatti",
-    s2p1: "BERM — bioeläktromagneettinen lisääntymismalli — esittää, että sivilisaatioiden kulttuuristen, taloudellisten ja poliittisten dynamiikkojen alla on biologinen substraatti: väestön kollektiivinen fysiologinen tila. Tämä substraatti on mitattavissa. Miesten testosteroni on laskenut noin 1,2 % vuodessa 1980-luvulta lähtien, riippumatta iästä, lihavuudesta ja elämäntavasta. Siittiöiden pitoisuus on pudonnut yli puoleen vuodesta 1973, ja laskuvauhti kiihtyy. Melatoniini — hormoni joka säätelee unta, vuorokausirytmiä ja immuunitoimintaa — on kroonisesti vaimentunut modernissa sähkömagneettisessa ja valoympäristössä. D-vitamiinin puutos koskee lähes puolta maailman väestöstä. Nämä eivät ole kulttuurisia valintoja. Ne ovat biologisia mittauksia.",
-    s2p2: "BERM tunnistaa mekanismin: sähköisen infrastruktuurin tuottamat sähkömagnäettiset kentät — sähköverkot, langattomat verkot, LED-valaistus, henkilökohtaiset laitteet — aktivoivat jänniteohjattuja kalsiumkanavia solukalvoissa, häiriten kalsiumsignaalikaskadeja jotka ohjaavat käytännössä jokaista fysiologista prosessia: hormonituotantoa, välittäjäaineiden vapautumista, immuunitoimintaa, DNA:n korjausta ja lisääntymistä. Vaikutus on kumulatiivinen, krooninen ja suurelta osin huomaamaton. Se ei tuota akuutteja oireita. Se tuottaa asteittaisen, koko väestön laajuisen biologisen kapasiteetin rapautumisen.",
-    s2p3: "Tämä ei ole metafora. Se on mitattava, testattava, falsifioitava biologinen prosessi. Yksi ainoa geenimutaatio yhdessä kalsiumkanavageenissä — CACNA1C, Timothyn oireyhtymän aiheuttaja — tuottaa jokaisen taudinkuvan jonka BERM ennustaa: sydämen rytmihäiriöt, immuunihäiriöt, aineenvaihduntahäiriöt, autismikirjon piirteet ja kasvojen dysmorfismin. BERM esittää, että krooninen ympäristön sähkömagneettinen altistus tuottaa saman kirjon vaikutuksia, laadullisesti mutta pienemmallä voimakkuudella, kokonaisissa väestöissä vuosikymmenten kuluessa.",
+    s2p1: "BERM eli bioelektromagneettinen lisääntymismalli esittää, että sivilisaatioiden kulttuuristen, taloudellisten ja poliittisten dynamiikkojen perustana on biologinen substraatti: väestön kollektiivinen fysiologinen tila. Tämä tila on mallin mukaan empiirisesti mitattavissa.",
+    s2p2: "Miesten testosteronitasot ovat laskeneet 1980-luvulta lähtien noin 1,2 prosenttia vuodessa iästä, lihavuudesta ja elämäntavoista riippumatta. Siittiöiden pitoisuus on vähentynyt yli puolella vuodesta 1973 lähtien, ja lasku on kiihtynyt. Unta, vuorokausirytmiä ja immuunitoimintaa säätelevä melatoniini on kroonisesti vaimentunut nykyisessä sähkömagneettisessa ympäristössä ja valoympäristössä. D-vitamiinin puutos koskee lähes puolta maailman väestöstä. Kyse ei ole kulttuurisista valinnoista vaan biologisista mittaustuloksista.",
+    s2p3: "BERM määrittää kehityksen mekanismiksi sähköisen infrastruktuurin tuottamat sähkömagneettiset kentät. Näiden lähteitä ovat muun muassa sähköverkot, langattomat verkot, LED-valaistus ja henkilökohtaiset elektroniset laitteet. Mallin mukaan kentät aktivoivat solukalvojen jänniteohjattuja kalsiumkanavia ja häiritsevät kalsiumsignaalikaskadeja, jotka osallistuvat käytännössä kaikkien fysiologisten prosessien säätelyyn. Näihin kuuluvat hormonituotanto, välittäjäaineiden vapautuminen, immuunitoiminta, DNA:n korjaus ja lisääntyminen.",
+    s2p4: "Vaikutuksen oletetaan olevan kumulatiivinen, krooninen ja suurelta osin huomaamaton. Se ei aiheuta ensisijaisesti akuutteja oireita, vaan väestötasolla vähitellen etenevän biologisen kapasiteetin rapautumisen.",
+    s2p5: "Kyse ei ole metaforisesta vaan mitattavasta, testattavasta ja falsifioitavasta biologisesta prosessista. Yksittäinen mutaatio kalsiumkanavaa koodaavassa CACNA1C-geenissä aiheuttaa Timothyn oireyhtymän. Sen taudinkuvaan sisältyvät kaikki BERM:n ennustamat vaikutusluokat: sydämen rytmihäiriöt, immuunijärjestelmän häiriöt, aineenvaihduntahäiriöt, autismikirjon piirteet ja kasvojen dysmorfismi. BERM:n mukaan krooninen ympäristöperäinen sähkömagneettinen altistus tuottaa laadullisesti saman vaikutuskirjon, mutta voimakkuudeltaan lievempänä ja kokonaisten väestöjen tasolla vuosikymmenten kuluessa.",
 
     // Section 3
-    s3title: "Mitä tämä selittää, mitä mikään muu ei voi",
-    s3sub1: "Hedelmällisyyden samanaikainen lasku kaikilla lajeilla.",
+    s3title: "Ilmiöt, joita muut selitysmallit eivät selitä",
+    s3sub1: "Samanaikaisuuden ongelma",
     s3sub1p:
-      "Ihmisten siittiöiden laatu, koirien siittiöiden laatu, hevosten hedelmällisyys, mehiläisyhdyskuntien terveys, hyönteisbiomassa ja lintupopulaatiot laskevat kaikki samanaikaisesti, eri mantereilla. Koirat eivät käy yliopistoa. Hevoset eivät käytä ehkäisyä. Mehiläiset eivät lykätä perheenperustamista urasyistä. Seitsemän lajin sähkömagneettinen gradientti — joka korreloi sähkömagneettisen altistuksen asteen ja lisääntymisen laskuvauhdin — tuottaa r = 0,909 (p = 0,005). Mikään sosiaalinen tai taloudellinen muuttuja ei saavuta vertailukelpoista lajien välistä selitysvoimaa.",
-    s3sub2: "Syntyvyyspolitiikan järjestelmällinen epäonnistuminen.",
+      "Hedelmällisyys laskee kaikilla lajeilla yhtä aikaa. Muutokset koskevat ihmisten ja koirien siittiöiden laatua, hevosten hedelmällisyyttä, mehiläisyhdyskuntien terveyttä, hyönteisbiomassaa ja lintupopulaatioita.",
+    s3sub1p2:
+      "Ihmisten käyttäytymistä koskevat sosiaaliset selitykset, kuten kouluttautuminen, ehkäisyn käyttö tai perheen perustamisen lykkääminen uran vuoksi, eivät sovellu koiriin, hevosiin, mehiläisiin tai muihin tarkasteltuihin eläinlajeihin. Seitsemää lajia koskevassa sähkömagneettisessa gradientissa altistuksen aste korreloi lisääntymisen laskunopeuden kanssa arvolla r = 0,909 (p = 0,005). Mikään sosiaalinen tai taloudellinen muuttuja ei saavuta vastaavaa lajien välistä selitysvoimaa.",
+    s3sub2: "Syntyvyyspolitiikan järjestelmällinen epäonnistuminen",
     s3sub2p:
-      "Jokainen kehittynyt maa, joka on yrittänyt kääntää hedelmällisyyden laskun taloudellisilla kannustimilla, on epäonnistunut. Unkari saavutti vaatimattoman nousun 1,23:sta noin 1,5:een — edelleen kaukana korvautumistasosta. Etelä-Korea, Japani ja Singapore eivät nähneet minkäänlaista vaikutusta. Jos lasku olisi rationaalinen vastaus taloudellisiin kannustimiin, riittävän suurten vastakannustimien pitäisi kääntää se. Ne eivät tee sitä. BERM selittää tämän: lasku on osittain biologista. Testosteronin, oksitosiinin, dopamiinin nelinkertainen tukahduttaminen sekä kortisolin säätelhäiriö vähentävät sekä halua että biologista kykyä lisääntyä. Taloudelliset kannustimet kohdistuvat tietoiseen päätöksentekoon. Ne eivät voi kohdistua tiedostamattomaan biologiseen rapautumiseen.",
-    s3sub3: "Teknologiagradientti hedelmällisyydessä.",
+      "Kaikki kehittyneet maat, jotka ovat yrittäneet kääntää hedelmällisyyden laskun taloudellisilla kannustimilla, ovat epäonnistuneet. Unkarissa kokonaishedelmällisyysluku nousi 1,23:sta noin 1,5:een, mutta jäi edelleen selvästi väestön uusiutumistason alapuolelle. Etelä-Koreassa, Japanissa ja Singaporessa toimilla ei ollut havaittavaa vaikutusta.",
+    s3sub2p2:
+      "Jos hedelmällisyyden lasku olisi rationaalinen reaktio taloudellisiin kannustimiin, riittävän suurten vastakkaisten kannustimien pitäisi kääntää kehityksen suunta. Näin ei ole tapahtunut. BERM:n mukaan tämä johtuu siitä, että lasku on osittain biologinen. Testosteronin, oksitosiinin ja dopamiinin samanaikainen vaimentuminen sekä kortisolin säätelyhäiriö vähentävät sekä halua että biologista kykyä lisääntyä. Taloudelliset kannustimet kohdistuvat tietoiseen päätöksentekoon, eivät tiedostamattomaan biologiseen rapautumiseen.",
+    s3sub3: "Hedelmällisyyden teknologiagradientti",
     s3sub3p:
-      "Selkeimpänä luonnollisena kokeena toimivat yhteisöt, jotka rajoittavat teknologiaa. Vanhan järjestyksen amishit ylläpitävät kokonaishedelmällisyyslukua noin 6–7 lasta naista kohden — Yhdysvalloissa, jossa kansallinen keskiarvo on 1,62. He jakavat saman terveydenhuoltojärjestelmän, saman oikeudellisen kehyksen ja saman taloudellisen ympäristön naapureidensa kanssa. Mitä he eivät jaa, on sähkömagneettinen ympäristö: ei verkkovirtaa, ei matkapuhelimia, ei WiFiä, ei LED-valaistusta. Ultraortodoksiset juutalaisyhteisöt Israelissa, jotka käyttävät rajoitettuja ”kosher-puhelimia” ja viettävät teknologiavapaata sapattia, ylläpitävät hedelmällisyyslukua yli 6. Modernit mennoniitat, jotka omaksuivat teknologian, näkivät hedelmällisyytensä lähestyneen valtavirtaa yhden sukupolven kuluessa. Gradientti on johdonmukainen uskontojen, kulttuurien ja mantereiden välillä. Vain yhteisöt, jotka todella rajoittavat sähkömagneettista teknologiaa, ylläpitävät esimodernia hedelmällisyyttä.",
-    s3sub4: "Hedelmällisyyden lattian puuttuminen.",
+      "Teknologian käyttöä rajoittavat yhteisöt muodostavat luonnollisen kokeen. Vanhan järjestyksen amishien kokonaishedelmällisyysluku on noin 6–7 lasta naista kohden, vaikka he elävät Yhdysvalloissa, jossa kansallinen keskiarvo on 1,62. He toimivat samassa terveydenhuoltojärjestelmässä, oikeudellisessa kehyksessä ja taloudellisessa ympäristössä kuin ympäröivä väestö. Keskeinen ero koskee sähkömagneettista ympäristöä: heidän yhteisöissään ei käytetä verkkovirtaa, matkapuhelimia, WiFi-verkkoja eikä LED-valaistusta.",
+    s3sub3p2:
+      "Israelissa ultraortodoksiset juutalaisyhteisöt käyttävät rajoitettuja niin sanottuja kosher-puhelimia ja viettävät teknologiavapaata sapattia. Niiden kokonaishedelmällisyysluku on yli kuusi. Modernien mennoniittiyhteisöjen hedelmällisyys puolestaan lähestyi valtaväestön tasoa yhden sukupolven kuluessa niiden omaksuttua nykyteknologian.",
+    s3sub3p3:
+      "Gradientti on yhdenmukainen eri uskontojen, kulttuurien ja maanosien välillä. Esimodernin hedelmällisyystason ovat säilyttäneet ainoastaan yhteisöt, jotka tosiasiallisesti rajoittavat sähkömagneettisen teknologian käyttöä.",
+    s3sub4: "Hedelmällisyyden alarajan puuttuminen",
     s3sub4p:
-      "Jokainen demografinen malli olettaa implisiittisesti, että hedelmällisyys vakiintuu jollekin luonnolliselle minimitasolle. Tällaista lattiaa ei ole löytynyt. Etelä-Korea läpäisi 1,3:n, sitten 1,0:n, sitten 0,8:n ja on nyt 0,72:ssa. BERM selittää tämän: jos laskulla on biologinen komponentti, jota ohjaa kumulatiivinen sähkömagneettinen altistus, ja jos altistus jatkaa kasvuaan, laskun päättymiselle ei ole syytä. ”Lattiaa” ei ole olemassa, koska mekanismi on etenevä.",
-    s3sub5: "Myöhäissivilisaation oireiden yhdentyminen.",
+      "Demografiset mallit olettavat implisiittisesti, että hedelmällisyys vakiintuu jollekin luonnolliselle vähimmäistasolle. Tällaista alarajaa ei ole havaittu.",
+    s3sub4p2:
+      "Etelä-Korean kokonaishedelmällisyysluku laski ensin alle 1,3:n, sitten alle 1,0:n ja edelleen alle 0,8:n. Nykyinen taso on 0,72. BERM:n mukaan kehityksellä ei ole perusteltua päätepistettä, jos laskuun sisältyy kumulatiivisen sähkömagneettisen altistuksen ohjaama biologinen komponentti ja altistus jatkaa kasvuaan. Alarajaa ei tällöin ole, koska taustalla oleva mekanismi etenee jatkuvasti.",
+    s3sub5: "Myöhäissivilisaation oireiden yhdentyminen",
     s3sub5p:
-      "Sivilisaation taantumisen merkit, jotka Glubb, Sorokin ja Spengler tunnistivat — laskeva hedelmällisyys, hedonismi, pessimismi, sosiaalisen koheesion menetys, riippuvuus maahanmuutosta, institutionaalisen uskonnon heikentyminen, ”ulkomaalaisten tulva” — ovat kukin itsenäisesti ennustettavissa BERM:n hormonikaskadin kautta. Testosteronin lasku vähentää päättäväisyyttä ja riskinsietokykyä. Oksitosiinin lasku vähentää sosiaalista luottamusta ja ryhmäsidonnaisuutta — juuri sitä mitä Ibn Khaldun kutsui nimellä asabiya ja Turchin mallisti kollektiivisena solidaarisuutena. Kortisolin kohoaminen siirtää väestön proaktiivisesta reaktiiviseen käyttäytymiseen. BDNF:n lasku heikentää pitkän aikavälin strategista ajattelua. Nämä eivät ole kulttuurisia patologioita. Ne ovat neuroendokriinisen kaskadin käyttäytymisellinen ilmaus.",
+      "Glubbin, Pitirim Sorokinin ja Spenglerin määrittämät sivilisaation taantumisen merkit voidaan BERM:n mukaan johtaa samasta hormonikaskadista. Näitä merkkejä ovat aleneva hedelmällisyys, hedonismi, pessimismi, sosiaalisen koheesion heikkeneminen, riippuvuus maahanmuutosta, institutionaalisen uskonnon heikentyminen ja niin sanottu ulkomaalaisten tulva.",
+    s3sub5p2:
+      "Testosteronin lasku vähentää päättäväisyyttä ja riskinsietokykyä. Oksitosiinin lasku heikentää sosiaalista luottamusta ja ryhmäsidonnaisuutta. Jälkimmäinen vastaa ilmiötä, jota Ibn Khaldun kutsui asabiyaksi ja jonka Turchin mallinsi kollektiiviseksi solidaarisuudeksi. Kortisolitason kohoaminen siirtää väestön käyttäytymistä proaktiivisesta reaktiiviseen suuntaan. BDNF-tason lasku heikentää pitkän aikavälin strategista ajattelua.",
+    s3sub5p3:
+      "BERM:n mukaan kyseiset ilmiöt eivät ole erillisiä kulttuurisia patologioita, vaan saman neuroendokriinisen kaskadin käyttäytymistasolla ilmeneviä seurauksia.",
 
     // Section 4
-    s4title: "Ennen ja jälkeen sähköistämisen",
-    s4p1: "BERM:n viitekehyksen hämmästyttävin seuraus koskee erosähköisten ja jälkisähköisten sivilisaatiodynamiikkojen välistä.",
-    s4p2: "Ennen sähköistämistä — viiden tuhannen vuoden kirjoitetun sivilisaatiohistorian ajan — ainoa merkittävä biologiaan kohdistuva sähkömagneettinen vaikutus tuli auringosta. Auringon aktiivisuus värähtelee sisäkkäisissä sykleissä: 11 vuoden Schwabe-sykli, 88 vuoden Gleissberg-sykli ja noin 200 vuoden Suess/de Vries -sykli. Suurminimien aikana — pitkäkestoiset matalan aurinkoaktiivisuuden jaksot, 50–80 vuotta — biologiaan kohdistuva sähkömagneettinen kuormitus vähenee ja biologinen palautuminen tapahtuu. Suurmaksimien aikana kuormitus kasvaa.",
-    s4p3: "Tämä tuottaa ennusteen: kulttuuristen renessanssien pitäisi kasaantua suurminimien ympärille, ja sivilisaatioiden huippujen suurmaksimien ympärille. Historiallista dataa vasten testattuna ennuste saa tukea. Kahdeksan kymmenestä merkittävästä eurooppalaisesta renessanssista tapahtui suurminimien aikana tai välittömästi niiden jälkeen: Italian renessanssi Spörer-minimin aikana, tieteellinen vallankumous ja Hollannin kultakausi Maunder-minimin aikana, saksalainen romantiikka ja Amerikan perustaminen Dalton-minimin aikana. Brittiläisen imperiumin kaksi määrittävää hetkeä — kunniallinen vallankumous (1688) ja Waterloo (1815) — osuvat täsmälleen Maunder- ja Dalton-minimien pohjiin, jolloin malli ennustaa biologisen palautumisen maksimin.",
-    s4p4: "Noin 200 vuoden Suess-sykli — peräkkäisten suurminimien väli — vastaa hämmästyttävän läheisesti Glubbin empiirisesti havaitsemaa imperiumin eliniänodotetta, 250 vuotta. Ero on yhdenmukainen biologisen inertian kanssa: suurminimin palautuminen vaatii yhden sukupolven muuntuakseen sivilisaatioenergiaksi, mikä lisää noin 50 vuotta astronomiseen sykliin.",
-    s4p5: "Tämä viitekehys selittää historiantutkimuksen sitkeän paradoksin: miksi ankaran ilmaston kaudet (pieni jääkausi) osuvat yhteen poikkeuksellisen älyllisen saavutuksen kausien kanssa? Tavanomainen oletus on, että kylmän ilmaston pitäisi tukahduttaa sivilisaatiokyky. BERM:n vastaus on, että ilmastovaikutus (kylmä) ja biologinen vaikutus (palautuminen) johtuvat eri mekanismeista. Auringon minimit vähentävät sekä auringon säteilyvoimakkuutta (tuottaen kylmyyttä) että biologian sähkömagneettista häiriötä (tuottaen palautumista). Väestö palelee — mutta ajattelee selkeämmin, sitoutuu vahvemmin ja lisääntyy voimakkaammin.",
-    s4p6: "Sähköistämisen jälkeen tämä syklinen dynamiikka murtuu. Sähkömagneettista kuormitusta ei enää hallitse aurinko. Sitä hallitsee infrastruktuuri: sähköverkot, lähettimet, valaistus ja laitteet. Tämä infrastruktuuri ei värähtele auringon syklin mukaan. Se kasvaa monotonisesti. Palautumisikkunat, jotka suurminimit aiemmin tarjosivat, ovat nyt peittyneet ihmisen tuottaman sähkömagneettisen taustan alle, joka ylittää auringon signaalin kertaluokilla.",
-    s4p7: "Suurminimi on ennustettu kaudelle 2020–2053. Jos BERM:n viitekehys on oikeassa, tämä minimi ei tuota aiempien vuosisatojen kaltaista kulttuurista renessanssia — koska sähkömagneettinen infrastruktuuri estää biologisen palautumisen, joka aiemmin oli mekanismina. Jos ennusteen vastaisesti merkittävä kulttuurinen kukoistus tapahtuu korkean leveysasteen maissa tänä aikana, peittymishypoteesi on falsifioitu.",
+    s4title: "Sivilisaatiodynamiikka ennen sähköistymistä ja sen jälkeen",
+    s4p1: "BERM:n viitekehyksen keskeinen seuraus koskee esisähköisen ja sähköistymisen jälkeisen sivilisaatiodynamiikan eroa.",
+    s4p2: "Viidentuhannen vuoden kirjoitetun sivilisaatiohistorian ajan merkittävin biologiaan vaikuttanut sähkömagneettinen lähde oli aurinko. Auringon aktiivisuus vaihtelee sisäkkäisissä sykleissä. Näitä ovat 11 vuoden Schwabe-sykli, 88 vuoden Gleissberg-sykli ja noin 200 vuoden Suess–de Vries -sykli.",
+    s4p3: "Suurminimit ovat 50–80 vuotta kestäviä vähäisen aurinkoaktiivisuuden jaksoja. BERM:n mukaan biologiaan kohdistuva sähkömagneettinen kuormitus vähenee näiden jaksojen aikana, mikä mahdollistaa biologisen palautumisen. Suurmaksimien aikana kuormitus vastaavasti kasvaa.",
+    s4p4: "Historiallisessa tarkastelussa keskeisiä suurminimejä ovat Oortin, Wolfin, Spörerin, Maunderin ja Daltonin minimit. Tarkasteluun sisältyy lisäksi vuosille 2020–2053 ennustettu suurminimi. Historiallisia vertailukohtia ovat muun muassa Italian renessanssi, tieteellinen vallankumous, mainio vallankumous, romantiikka ja Waterloon taistelu.",
+    s4p5: "Viitekehys tuottaa testattavan ennusteen: kulttuuristen renessanssien pitäisi keskittyä suurminimien yhteyteen tai niiden jälkeisiin ajanjaksoihin ja sivilisaatioiden huippujen suurmaksimien yhteyteen.",
+    s4p6: "Historiallinen aineisto tukee ennustetta. Kahdeksan kymmenestä merkittävästä eurooppalaisesta renessanssista ajoittui suurminimiin tai niitä välittömästi seuranneisiin ajanjaksoihin. Italian renessanssi ajoittui Spörer-minimiin. Tieteellinen vallankumous ja Alankomaiden kultakausi tapahtuivat Maunder-minimin aikana. Saksalainen romantiikka ja Yhdysvaltojen perustaminen ajoittuivat Dalton-minimiin. Brittiläisen imperiumin kaksi määrittävää tapahtumaa, vuoden 1688 mainio vallankumous ja Waterloon taistelu vuonna 1815, sijoittuvat täsmälleen Maunder- ja Dalton-minimien pohjakohtiin, joissa malli ennustaa biologisen palautumisen saavuttavan enimmäistasonsa.",
+    s4p7: "Peräkkäisten suurminimien välinen, noin 200 vuoden Suess-sykli vastaa läheisesti Glubbin empiirisesti määrittämää imperiumien noin 250 vuoden elinikää. BERM selittää noin 50 vuoden eron biologisella inertialla. Suurminimin mahdollistama biologinen palautuminen tarvitsee yhden sukupolven muuttuakseen sivilisaatiotason energiaksi, jolloin astronomiseen sykliin lisätään noin 50 vuotta.",
+    s4p8: "Viitekehys tarjoaa lisäksi selityksen historiantutkimuksen paradoksille, jossa ankaran ilmaston jaksot, kuten pieni jääkausi, ajoittuvat poikkeuksellisen voimakkaan älyllisen kehityksen kausiin. Tavanomaisen oletuksen mukaan kylmän ilmaston pitäisi vähentää sivilisaatiokyvykkyyttä. BERM erottaa toisistaan ilmastovaikutuksen ja biologisen vaikutuksen. Auringon minimit vähentävät auringon säteilyvoimakkuutta ja aiheuttavat siten kylmyyttä. Samalla ne vähentävät biologiseen toimintaan kohdistuvaa sähkömagneettista häiriötä ja mahdollistavat biologisen palautumisen. Väestö kärsii kylmyydestä, mutta sen ajattelu selkiytyy, sitoutuminen vahvistuu ja lisääntyminen voimistuu.",
+    s4p9: "Sähköistymisen jälkeen tämä syklinen dynamiikka murtuu. Sähkömagneettisen kuormituksen hallitseva lähde ei enää ole aurinko vaan ihmisen rakentama infrastruktuuri: sähköverkot, lähettimet, valaistus ja elektroniset laitteet. Infrastruktuurin tuottama kuormitus ei vaihtele auringon syklien mukaisesti, vaan kasvaa monotonisesti. Suurminimien aikaisemmin tarjoamat palautumisikkunat peittyvät ihmisen tuottaman sähkömagneettisen taustan alle. Tämä tausta ylittää auringon signaalin useilla kertaluokilla.",
+    s4p10: "Vuosille 2020–2053 on ennustettu suurminimi. Jos BERM:n viitekehys on oikea, kyseinen minimi ei johda aikaisempien vuosisatojen kaltaiseen kulttuuriseen renessanssiin, koska sähkömagneettinen infrastruktuuri estää sen biologisen palautumisen, joka aiemmin muodosti renessanssien mekanismin. Peittymishypoteesi falsifioituu, jos korkean leveysasteen maissa tapahtuu ennusteen vastaisesti merkittävä kulttuurinen kukoistus kyseisen ajanjakson aikana.",
 
     // Section 5
-    s5title: "Gradientti ja avoin kysymys",
-    s5p1: "Läpi historian sivilisaation taantumista seurasi aina uudistuminen — koska aina oli olemassa väestö, jolla oli korkeampi biologinen kapasiteetti korvaamaan taanätuvan. Germaaniheimot, jotka korvasivat Rooman, eivät olleet viettäneet vuosisatoja lyijyputkitetuissa kaupungeissa. Arabiarmeijat, jotka pyälsivät Bysantin läpi, eivät olleet keränneet sukupolvien kaupunkien sähkömagneettista altistusta. Mongolien ratsuväki, joka valloitti Song-Kiinan, tuli ympäristöstä jossa ei ollut käytännössä lainkaan keinotekoista infrastruktuuria.",
-    s5p2: "Sama gradientti on olemassa tänään. Saharan eteläpuolisella Afrikalla — jolla on suurten väestöjen lyhyin kumulatiivinen sähkömagneettinen altistus — on korkeimmat hedelmällisyysluvut, nuorin ikärakenne ja, jos BERM on oikeassa, korkein biologinen kapasiteetti. Muuttovirrat Afrikasta ja Lähi-idästä Eurooppaan noudattavat biologisen kontrastin gradienttia aivan kuten germaaninen muuttoliike noudatti kontrastia Rooman kanssa. Euroopan institutionaalinen vaikeus hallita näitä virtoja on BERM:n viitekehyksessä itsessään hormonikaskadin oire: vähentynyt kollektiivinen tahto (testosteroni, oksitosiini) ja kohonnut ahdistusperäinen halvaantuminen (kortisoli).",
-    s5p3: "Se mitä tapahtuu seuraavaksi, on aidosti avoin. Joseph Tainterin analyysi monimutkaisuuden vähenevistä tuotoista viittaa siihen, että moderneja sähkömagneettisia ympäristöjä ylläpitävä infrastruktuuri voi olla itsessään hauras. Globaalit toimitusketjut, jotka valmistavat ja ylläpitävät mobiiliverkkoja, sähköverkkoja ja puolijohdetu otantoa, ovat riippuvaisia sivilisaation monimutkaisuuden tasosta, jota ei voi pitää itsestäänselvyytenä. Jos biologinen rapautuminen, jota BERM kuvaa, heikentää ihmisten kykyä ylläpitää tätä monimutkaisuutta — kuten laskevat kognitiiviset, motivationaaliset ja yhteistyöindikaattorit viittaavat — infrastruktuuri voi supistua ja sen myötä sähkömagneettinen kuormitus.",
-    s5p4: "Siinä skenaariossa historiallinen kaava vahvistuu uudelleen: taantuminen avaa palautumisikkunan, vähemmän kuormittunut väestö täyttää tyhjiön ja uusi sykli alkaa. ”Porttien barbaari” ei ole lajinsa viimeinen — hän on sivilisaation uudistumisen ikuinen hahmo, joka ilmestyy aina kun biologisesti ehtyneiden ja biologisesti koskemattomien väestöjen välinen gradientti kasvaa riittävän suureksi liikuttaakseen väkimassoja.",
-    s5p5: "Mutta on olemassa vaihtoehtoinen skenaario, jossa sähköistäminen ohittaa taantumisen — jossa Afrikka ja Etelä-Aasia hankkivat täyden sähkömagneettisen infrastruktuurin ennen kuin nykyinen järjestys supistuu. Siinä tapauksessa gradientti sulkeutuisi ei uudistumisen kautta vaan yhdentymisen: jokainen väestö päätyisi samaan ehtyneeseen tilaan, ilman biologista reserviä missään.",
+    s5title: "Biologinen gradientti ja avoin kysymys",
+    s5p1: "Historiallista sivilisaatioiden taantumista seurasi uudistuminen, koska taantuvan väestön tilalle oli saatavilla biologiselta kapasiteetiltaan vahvempi väestö.",
+    s5p2: "Rooman korvanneet germaaniheimot eivät olleet eläneet vuosisatojen ajan lyijyputkilla varustetuissa kaupungeissa. Bysantin alueille edenneet arabiarmeijat eivät olleet altistuneet sukupolvien ajan kaupunkiympäristön sähkömagneettiselle kuormitukselle. Song-Kiinan valloittanut mongoliratsuväki oli peräisin ympäristöstä, jossa keinotekoista infrastruktuuria ei käytännössä ollut.",
+    s5p3: "Vastaava gradientti on olemassa nykyisin. Saharan eteläpuolisessa Afrikassa suurten väestöjen kumulatiivinen sähkömagneettinen altistus on lyhyin. Alueella ovat myös maailman korkeimmat hedelmällisyysluvut ja nuorin ikärakenne. Jos BERM on oikea, siellä on lisäksi korkein biologinen kapasiteetti.",
+    s5p4: "Afrikasta ja Lähi-idästä Eurooppaan suuntautuvat muuttovirrat noudattavat biologisen kontrastin gradienttia samalla tavoin kuin germaanien muuttoliike suhteessa Roomaan. Eurooppalaisten instituutioiden vaikeus hallita muuttovirtoja on BERM:n mukaan itsessään hormonikaskadin oire. Testosteronin ja oksitosiinin lasku vähentää kollektiivista tahtoa, ja kortisolitason nousu lisää ahdistukseen perustuvaa toiminnan lamaantumista.",
+    s5tableCaption: "Alueelliset kokonaishedelmällisyysluvut ovat seuraavat:",
+    s5p5: "Kehityksen seuraava vaihe on avoin. Joseph Tainterin analyysi monimutkaisuuden vähenevistä tuotoista viittaa siihen, että nykyisiä sähkömagneettisia ympäristöjä ylläpitävä infrastruktuuri saattaa olla itsessään hauras. Mobiiliverkkojen, sähköverkkojen ja puolijohdetuotannon rakentaminen ja ylläpito perustuvat globaaleihin toimitusketjuihin. Niiden toiminta puolestaan edellyttää sellaista sivilisaation monimutkaisuuden tasoa, jonka jatkuvuutta ei voida pitää itsestään selvänä.",
+    s5p6: "Jos BERM:n kuvaama biologinen rapautuminen heikentää ihmisten kykyä ylläpitää tätä monimutkaisuutta, kuten kognitiivisten, motivationaalisten ja yhteistyötä koskevien indikaattorien lasku osoittaa, infrastruktuuri voi supistua. Samalla myös sähkömagneettinen kuormitus vähenisi.",
+    s5p7: "Tässä skenaariossa historiallinen rakenne palautuisi. Taantuminen avaisi biologisen palautumisikkunan, vähemmän kuormittunut väestö täyttäisi syntyneen tyhjiön ja uusi sivilisaatiosykli alkaisi. Porttien barbaari ei tällöin olisi yksittäinen historiallinen hahmo, vaan sivilisaatioiden uudistumisen toistuva toimija. Hän ilmaantuu aina, kun biologisesti ehtyneiden ja biologisesti koskemattomien väestöjen välinen gradientti kasvaa niin suureksi, että se alkaa siirtää väestömassoja.",
+    s5p8: "Vaihtoehtoisessa skenaariossa sähköistyminen etenee taantumista nopeammin. Afrikka ja Etelä-Aasia omaksuvat täysimittaisen sähkömagneettisen infrastruktuurin ennen nykyisen järjestyksen supistumista. Tällöin gradientti ei sulkeudu uudistumisen vaan yhdenmukaistumisen kautta. Kaikki väestöt päätyvät samaan ehtyneeseen tilaan, eikä biologista reserviä jää jäljelle mihinkään.",
 
     // Section 6
-    s6title: "Syvin vaikeus",
-    s6p1: "Emme tiedä kumpi skenaario toteutuu. Mutta älyllinen rehellisyys edellyttää sen tunnustamista, mitä data tukee ja mitä ei.",
-    s6p2: "Biologisen rapautumisen vauhti ei ole hidastumassa. Se kiihtyy. Siittiöiden lasku kaksinkertaisti vauhtinsa vuoden 2000 jälkeen. Testosteronin lasku ei osoita merkkejä taittumisesta. Hedelmällisyyden lattiaa ei ole löytynyt mistään maailmasta. Jokainen koskaan kokeiltu syntyvyyspolitiikka on epäonnistunut trendin kääntämisessä, ja useimmat eivät ole onnistuneet edes hidastamaan sitä. Sähkömagneettinen ympäristö ei vakiinnu; se kasvaa eksponentiaalisesti jokaisen langattoman teknologian sukupolven myötä. Missään maailmassa ei ole merkittävää poliittista liikettä sähkömagneettisen altistuksen vähentämiseksi, yhtään sääntelyelintä joka tunnustaisi tässä kuvatut ei-termiset biologiset mekanismit, eikä taloudellista kannustinrakennetta joka suosisi sellaista vähennystä. Tietoliikenneala tuottaa noin 1,8 biljoonan dollarin vuosittaisen liikevaihdon.",
-    s6p3: "Poliittinen ja institutionaalinen kyky kohdata tämän mittakaavan haaste on itsessään alttiina biologiselle rapautumiselle, jota haaste tuottaa — testosteronin lasku vähentää institutionaalista päättäväisyyttä, BDNF:n lasku heikentää pitkän aikavälin strategista kognitiota, oksitosiinin lasku rappeuttaa koordinoituun toimintaan tarvittavaa kollektiivista solidaarisuutta. Tämä on syvin vaikeus: mekanismi, joka pitäisi tunnistaa, heikentää juuri niitä kognitiivisia ja sosiaalisia kykejä, joita sen tunnistaminen edellyttää.",
-    s6p4: "”Tietoisen hallinnan” skenaario — jossa ihmiskunta tunnistaa mekanismin ja uudelleensuunnittelee sähkömagneettisen ympäristönsä ennen kuin peruuttamaton vahinko kertyy — on fysikaalisesti mahdollinen. Mikään fysiikassa ei estä sitä. Mutta mikään teknologian käyttöönoton, sääntelypolitiikan tai poliittisen tahdon nykyisessä kehityskulussa ei viittaa siihen, että se olisi todennäköistä.",
-    s6p5: "Sykli, jonka Tuhon profeetat havaitsivat, voi jatkua romahduksen kautta — infrastruktuuri pettää, sähkömagneettinen kuormitus kevenee, biologia palautuu sukupolvien kuluessa ja uusi sivilisaatio nousee vähiten vahingoittuneista väestöistä. Tämä on viiden tuhannen vuoden kaava. Se on raaka, hidas ja ihmiskärsimyksessään valtavan kallis, mutta itsekorjautuva.",
-    s6p6: "Tai sykli voi päättyä — ei siksi että ihmiskunta ylittäisi sen, vaan siksi että sähkömagneettisen infrastruktuurin maailmanlaajuinen ulottuvuus sulkee viimeiset palautumisikkunat ennen kuin romahdus voi avata niitä. Siinä tapauksessa yhdentyminen on aleneva, pysyvä ja vailla historiallista ennakkotapausta.",
-    s6p7: "Data ei kerro meille kumpi lopputulos on todennäköisempi. Se kertoo, että prosessi on käynnissä, että se kiihtyy ja että tietoisen väliintulon ikkuna — jos sellaista ylipäätään on — ei ole leveä.",
+    s6title: "Keskeinen ongelma",
+    s6p1: "Ei ole tiedossa, kumpi skenaario toteutuu. Aineiston tukemat havainnot on kuitenkin erotettava niistä johtuvista tulkinnoista.",
+    s6p2: "Biologisen rapautumisen nopeus ei hidastu vaan kiihtyy. Siittiömäärän laskunopeus kaksinkertaistui vuoden 2000 jälkeen. Testosteronitasojen laskussa ei ole havaittavissa taittumista. Hedelmällisyydelle ei ole löydetty alarajaa missään osassa maailmaa. Kaikki tähän mennessä kokeillut syntyvyyspoliittiset toimet ovat epäonnistuneet kehityksen suunnan kääntämisessä, eivätkä useimmat niistä ole edes hidastaneet sitä.",
+    s6p3: "Sähkömagneettinen ympäristö ei ole vakiintumassa. Sen voimakkuus kasvaa eksponentiaalisesti jokaisen uuden langattoman teknologian sukupolven myötä. Missään päin maailmaa ei ole merkittävää poliittista liikettä, jonka tavoitteena olisi sähkömagneettisen altistuksen vähentäminen. Yksikään sääntelyelin ei tunnusta tässä kuvattuja ei-termisiä biologisia mekanismeja, eikä taloudellinen kannustinrakenne suosi altistuksen vähentämistä. Tietoliikennealan vuosittainen liikevaihto on noin 1,8 biljoonaa dollaria.",
+    s6p4: "Poliittinen ja institutionaalinen kyky vastata tämän mittakaavan ongelmaan on itsessään altis ongelman aiheuttamalle biologiselle rapautumiselle. Testosteronin lasku vähentää institutionaalista päättäväisyyttä. BDNF:n lasku heikentää pitkän aikavälin strategista kognitiota. Oksitosiinin lasku rapauttaa koordinoidun toiminnan edellyttämää kollektiivista solidaarisuutta.",
+    s6p5: "Tämä muodostaa ongelman keskeisen rakenteen: tunnistettava mekanismi heikentää juuri niitä kognitiivisia ja sosiaalisia kykyjä, joita sen tunnistaminen ja hallitseminen edellyttävät.",
+    s6p6: "Tietoisen hallinnan skenaario, jossa ihmiskunta tunnistaa mekanismin ja suunnittelee sähkömagneettisen ympäristönsä uudelleen ennen peruuttamattomien vahinkojen kertymistä, on fysikaalisesti mahdollinen. Mikään fysiikan laki ei estä sitä. Teknologian käyttöönoton, sääntelypolitiikan tai poliittisen tahdon nykyinen kehityskulku ei kuitenkaan viittaa siihen, että skenaario olisi todennäköinen.",
+    s6p7: "Tuhon profeettojen tunnistama sykli voi jatkua romahduksen kautta. Infrastruktuuri pettää, sähkömagneettinen kuormitus vähenee, biologinen toimintakyky palautuu sukupolvien kuluessa ja uusi sivilisaatio muodostuu vähiten vahingoittuneiden väestöjen perustalle. Tämä vastaa viidentuhannen vuoden historiallista rakennetta. Prosessi on raaka, hidas ja inhimillisen kärsimyksen kannalta erittäin kallis, mutta itsekorjautuva.",
+    s6p8: "Vaihtoehtoisesti sykli voi päättyä. Tällöin syynä ei ole se, että ihmiskunta ylittäisi historiallisen syklin, vaan se, että sähkömagneettisen infrastruktuurin maailmanlaajuinen ulottuvuus sulkee viimeiset biologisen palautumisen mahdollisuudet ennen kuin romahdus ehtii avata niitä. Tuloksena olisi biologisen kapasiteetin aleneva ja pysyvä yhdenmukaistuminen, jolle ei ole historiallista ennakkotapausta.",
+    s6p9: "Aineisto ei osoita, kumpi lopputulos on todennäköisempi. Se osoittaa prosessin olevan käynnissä ja kiihtyvän. Samalla se osoittaa, että tietoisen väliintulon mahdollinen aikaikkuna on kapea.",
 
     // Falsification card
     falsCardTitle: "Testattava ennuste: 2020–2053 suurminimi",
@@ -157,146 +207,161 @@ function pickEssayCopy(locale: string) {
 
 export function CivilizationEssay({ locale }: { locale: string }) {
   const d = pickEssayCopy(locale);
+  const np = "text-sm leading-relaxed text-foreground-muted mb-4";
 
   return (
     <div className="max-w-3xl mx-auto">
-      {/* Epistemic Banner */}
-      <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-5 mb-10 flex gap-3 items-start">
-        <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
-        <p className="text-sm text-foreground-muted leading-relaxed">
-          {d.epistemicBanner}
-        </p>
-      </div>
-
-      {/* Section 1: The Pattern Everyone Sees But No One Can Explain */}
+      {/* Section 1 */}
       <h2 className="text-2xl font-bold mb-4 mt-12">{d.s1title}</h2>
       <p className="text-base leading-relaxed text-foreground-muted mb-4 first-letter:text-3xl first-letter:font-bold first-letter:mr-1">
         {d.s1p1}
       </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s1p2}
+      <p className={np}>{d.s1p2}</p>
+      <p
+        className={
+          locale === "fi"
+            ? np
+            : "text-xl font-bold text-center my-8 italic"
+        }
+      >
+        {d.s1p3}
       </p>
-      <p className="text-xl font-bold text-center my-8 italic">{d.s1p3}</p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s1p4}
+      <p className={np}>{d.s1p4}</p>
+      <p
+        className={
+          locale === "fi"
+            ? np
+            : "text-lg font-semibold text-center my-8"
+        }
+      >
+        {d.s1p5}
       </p>
-      <p className="text-lg font-semibold text-center my-8">{d.s1p5}</p>
+      {d.s1p6 && <p className={np}>{d.s1p6}</p>}
 
-      {/* Section 2: The Biological Substrate of Civilizational Capacity */}
+      {/* Section 2 */}
       <h2 className="text-2xl font-bold mb-4 mt-12">{d.s2title}</h2>
       <p className="text-base leading-relaxed text-foreground-muted mb-4 first-letter:text-3xl first-letter:font-bold first-letter:mr-1">
         {d.s2p1}
       </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s2p2}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s2p3}
-      </p>
+      <p className={np}>{d.s2p2}</p>
+      <p className={np}>{d.s2p3}</p>
+      {d.s2p4 && <p className={np}>{d.s2p4}</p>}
+      {d.s2p5 && <p className={np}>{d.s2p5}</p>}
 
-      {/* Section 3: What This Explains That Nothing Else Can */}
+      {/* Section 3 */}
       <h2 className="text-2xl font-bold mb-4 mt-12">{d.s3title}</h2>
 
       <h3 className="text-lg font-semibold mb-2 mt-8">{d.s3sub1}</h3>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s3sub1p}
-      </p>
+      <p className={np}>{d.s3sub1p}</p>
+      {d.s3sub1p2 && <p className={np}>{d.s3sub1p2}</p>}
 
       <h3 className="text-lg font-semibold mb-2 mt-8">{d.s3sub2}</h3>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s3sub2p}
-      </p>
+      <p className={np}>{d.s3sub2p}</p>
+      {d.s3sub2p2 && <p className={np}>{d.s3sub2p2}</p>}
 
       <h3 className="text-lg font-semibold mb-2 mt-8">{d.s3sub3}</h3>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s3sub3p}
-      </p>
+      <p className={np}>{d.s3sub3p}</p>
+      {d.s3sub3p2 && <p className={np}>{d.s3sub3p2}</p>}
+      {d.s3sub3p3 && <p className={np}>{d.s3sub3p3}</p>}
 
       <h3 className="text-lg font-semibold mb-2 mt-8">{d.s3sub4}</h3>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s3sub4p}
-      </p>
+      <p className={np}>{d.s3sub4p}</p>
+      {d.s3sub4p2 && <p className={np}>{d.s3sub4p2}</p>}
 
       <h3 className="text-lg font-semibold mb-2 mt-8">{d.s3sub5}</h3>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s3sub5p}
-      </p>
+      <p className={np}>{d.s3sub5p}</p>
+      {d.s3sub5p2 && <p className={np}>{d.s3sub5p2}</p>}
+      {d.s3sub5p3 && <p className={np}>{d.s3sub5p3}</p>}
 
-      {/* Section 4: Before and After Electrification */}
+      {/* Section 4 */}
       <h2 className="text-2xl font-bold mb-4 mt-12">{d.s4title}</h2>
       <p className="text-base leading-relaxed text-foreground-muted mb-4 first-letter:text-3xl first-letter:font-bold first-letter:mr-1">
         {d.s4p1}
       </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s4p2}
-      </p>
+      <p className={np}>{d.s4p2}</p>
+      {d.s4p3 && <p className={np}>{d.s4p3}</p>}
 
       <div className="rounded-xl border border-card-border p-4 bg-card-bg my-6">
         <SolarMiniTimeline />
       </div>
 
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s4p3}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s4p4}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s4p5}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s4p6}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s4p7}
-      </p>
+      {d.s4p4 && <p className={np}>{d.s4p4}</p>}
+      {d.s4p5 && <p className={np}>{d.s4p5}</p>}
+      {d.s4p6 && <p className={np}>{d.s4p6}</p>}
+      {d.s4p7 && <p className={np}>{d.s4p7}</p>}
+      {d.s4p8 && <p className={np}>{d.s4p8}</p>}
+      {d.s4p9 && <p className={np}>{d.s4p9}</p>}
+      {d.s4p10 && <p className={np}>{d.s4p10}</p>}
 
-      {/* Section 5: The Gradient and the Open Question */}
+      {/* Section 5 */}
       <h2 className="text-2xl font-bold mb-4 mt-12">{d.s5title}</h2>
       <p className="text-base leading-relaxed text-foreground-muted mb-4 first-letter:text-3xl first-letter:font-bold first-letter:mr-1">
         {d.s5p1}
       </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s5p2}
-      </p>
+      <p className={np}>{d.s5p2}</p>
 
       <div className="rounded-xl border border-card-border p-4 bg-card-bg my-6">
         <BiocapSparkline />
       </div>
 
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s5p3}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s5p4}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s5p5}
-      </p>
+      <p className={np}>{d.s5p3}</p>
+      <p className={np}>{d.s5p4}</p>
 
-      {/* Section 6: The Deepest Difficulty */}
+      {d.s5tableCaption && (
+        <>
+          <p className="text-sm text-foreground-muted mb-3 mt-6">
+            {d.s5tableCaption}
+          </p>
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-left py-2 pr-4 font-semibold text-foreground">
+                    Alue
+                  </th>
+                  <th className="text-right py-2 pl-4 font-semibold text-foreground font-variant-numeric tabular-nums">
+                    TFR
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {TFR_DATA.map((row) => (
+                  <tr
+                    key={row.region}
+                    className="border-b border-border/50"
+                  >
+                    <td className="py-1.5 pr-4 text-foreground-muted">
+                      {row.region}
+                    </td>
+                    <td className="py-1.5 pl-4 text-right text-foreground-muted tabular-nums">
+                      {row.tfr}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+
+      <p className={np}>{d.s5p5}</p>
+      {d.s5p6 && <p className={np}>{d.s5p6}</p>}
+      {d.s5p7 && <p className={np}>{d.s5p7}</p>}
+      {d.s5p8 && <p className={np}>{d.s5p8}</p>}
+
+      {/* Section 6 */}
       <h2 className="text-2xl font-bold mb-4 mt-12">{d.s6title}</h2>
       <p className="text-base leading-relaxed text-foreground-muted mb-4 first-letter:text-3xl first-letter:font-bold first-letter:mr-1">
         {d.s6p1}
       </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s6p2}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s6p3}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s6p4}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s6p5}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s6p6}
-      </p>
-      <p className="text-sm leading-relaxed text-foreground-muted mb-4">
-        {d.s6p7}
-      </p>
+      <p className={np}>{d.s6p2}</p>
+      <p className={np}>{d.s6p3}</p>
+      <p className={np}>{d.s6p4}</p>
+      <p className={np}>{d.s6p5}</p>
+      <p className={np}>{d.s6p6}</p>
+      <p className={np}>{d.s6p7}</p>
+      {d.s6p8 && <p className={np}>{d.s6p8}</p>}
+      {d.s6p9 && <p className={np}>{d.s6p9}</p>}
 
       {/* Falsification Card */}
       <div className="border-l-4 border-emerald-500 bg-card-bg rounded-r-lg p-5 my-10">

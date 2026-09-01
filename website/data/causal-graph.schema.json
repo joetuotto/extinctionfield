@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "causal-graph.schema.json",
+  "title": "BERM Causal Graph",
+  "type": "object",
+  "required": ["version", "nodes", "edges", "ui_groups"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "nodes": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/CausalNode" },
+      "minProperties": 1
+    },
+    "edges": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/CausalEdge" }
+    },
+    "ui_groups": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/UIGroup" }
+    }
+  },
+  "$defs": {
+    "CausalNode": {
+      "type": "object",
+      "required": ["id", "label", "layer", "parents", "children", "calibration_status", "prediction_role", "legacy_aliases"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+        "label": {
+          "type": "object",
+          "required": ["en"],
+          "properties": {
+            "en": { "type": "string" },
+            "fi": { "type": "string" },
+            "ja": { "type": "string" },
+            "fr": { "type": "string" },
+            "ko": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "layer": {
+          "type": "string",
+          "enum": ["physics", "mechanism", "barrier", "reproductive", "couple", "ecology", "demography"]
+        },
+        "parents": { "type": "array", "items": { "type": "string" } },
+        "children": { "type": "array", "items": { "type": "string" } },
+        "calibration_status": {
+          "type": "string",
+          "enum": ["calibrated", "structural", "uncalibrated"]
+        },
+        "prediction_role": {
+          "type": "string",
+          "enum": ["input", "intermediate", "output", "terminal"]
+        },
+        "legacy_aliases": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "CausalEdge": {
+      "type": "object",
+      "required": ["id", "from", "to"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "label": { "type": "string" }
+      }
+    },
+    "UIGroup": {
+      "type": "object",
+      "required": ["id", "contains", "ui_level"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "contains": { "type": "array", "items": { "type": "string" } },
+        "ui_level": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

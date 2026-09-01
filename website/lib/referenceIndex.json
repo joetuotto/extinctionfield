@@ -2,7 +2,7 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1022,
+    "totalReferences": 1028,
     "linkedReferences": 378
   },
   "references": {
@@ -10225,6 +10225,66 @@
       "type": "review",
       "linkStatus": "verified",
       "externalUrl": "https://doi.org/10.1007/s10522-020-09908-5"
+    },
+    "unwin1934": {
+      "id": "unwin1934",
+      "authors": "Unwin JD",
+      "year": 1934,
+      "title": "Sex and Culture",
+      "journal": "Oxford University Press",
+      "type": "book",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "unwin1940": {
+      "id": "unwin1940",
+      "authors": "Unwin JD",
+      "year": 1940,
+      "title": "Hopousia, or The Sexual and Economic Foundations of a New Society",
+      "journal": null,
+      "type": "book",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "bratsberg2018": {
+      "id": "bratsberg2018",
+      "authors": "Bratsberg B & Rogeberg O",
+      "year": 2018,
+      "title": "Flynn effect and its reversal are both environmentally caused",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "dworak2023": {
+      "id": "dworak2023",
+      "authors": "Dworak EM et al.",
+      "year": 2023,
+      "title": "The Decline of Fluid Intelligence: A Detailed Examination",
+      "journal": "Intelligence",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "holt_lunstad2015": {
+      "id": "holt_lunstad2015",
+      "authors": "Holt-Lunstad J et al.",
+      "year": 2015,
+      "title": "Loneliness and Social Isolation as Risk Factors for Mortality: A Meta-Analytic Review",
+      "journal": "Perspectives on Psychological Science",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "jiang2003": {
+      "id": "jiang2003",
+      "authors": "Jiang M et al.",
+      "year": 2003,
+      "title": "A research on the relationship between ejaculation and serum testosterone level in men",
+      "journal": "Journal of Zhejiang University Science",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
     }
   },
   "aliases": {
@@ -11084,6 +11144,10 @@
     "doi:10.1002/cam4.1344": "zhou2018_ldr_tumor_inhibition",
     "pmid:29479834": "zhou2018_ldr_tumor_inhibition",
     "doi:10.1007/s10522-020-09908-5": "vaiserman2021_ldr_hormetin",
-    "pmid:33420860": "vaiserman2021_ldr_hormetin"
+    "pmid:33420860": "vaiserman2021_ldr_hormetin",
+    "doi:10.1073/pnas.1718793115": "bratsberg2018",
+    "doi:10.1016/j.intell.2023.101786": "dworak2023",
+    "doi:10.1177/1745691614568352": "holt_lunstad2015",
+    "doi:10.1631/jzus.2003.0236": "jiang2003"
   }
 }

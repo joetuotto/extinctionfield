@@ -1,0 +1,297 @@
+{
+  "$schema": "./claims.schema.json",
+  "version": "1.0.0",
+  "claims": [
+    {
+      "id": "claim.vgcc.ros-ca2-coupling",
+      "statement": {
+        "en": {
+          "text": "Voltage-gated calcium channels (VGCCs) open in response to FieldState-modulated membrane depolarization, increasing intracellular Ca²⁺ which activates mitochondrial ROS production via the electron transport chain.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Jänniteherkät kalsiumkanavat (VGCC) avautuvat FieldState-moduloidun kalvon depolarisaation seurauksena, nostaen solunsisäistä Ca²⁺-pitoisuutta, joka aktivoi mitokondriaaalisen ROS-tuotannon elektroninsiirtoketjun kautta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "A_VGCC_ROS" },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": ["VGCC activation is a primary transduction mechanism for RF and ELF fields"],
+        "does_not_support": ["VGCC activation is the only transduction mechanism"]
+      },
+      "falsification_condition": "Selective VGCC blockade eliminates ROS increase in field-exposed cells across three independent labs"
+    },
+    {
+      "id": "claim.rpm.cry-magnetic-sensitivity",
+      "statement": {
+        "en": {
+          "text": "Cryptochrome proteins form radical pairs whose spin dynamics are modulated by the ambient magnetic field vector, altering downstream clock gene expression and redox state.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kryptokromiproteiinit muodostavat radikaalipareja, joiden spin-dynamiikkaa moduloi ympäröivän magneettikentän vektori, muuttaen alajuoksun kellogeenien ilmentymistä ja redox-tilaa.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "B_RPM_CRY" },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": ["Radical-pair mechanism provides a quantum-coherent transduction pathway"],
+        "does_not_support": ["RPM is sufficient to explain all observed biological effects of magnetic fields"]
+      },
+      "falsification_condition": "CRY-knockout organisms show identical circadian and redox responses to magnetic field changes as wild-type"
+    },
+    {
+      "id": "claim.melatonin.circadian-redox-mediator",
+      "statement": {
+        "en": {
+          "text": "Field-induced suppression of pineal melatonin synthesis disrupts circadian redox cycling, reducing antioxidant capacity in reproductive tissues and altering HPG axis timing.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Kentän aiheuttama käpylisäkkeen melatoniinisynteesin suppressio häiritsee sirkadiaanista redox-syklitystä, vähentäen antioksidanttikapasiteettia lisääntymiskudoksissa ja muuttaen HPG-akselin ajoitusta.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "mechanistic_step",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "MELATONIN_REDOX" },
+      "depends_on": ["claim.rpm.cry-magnetic-sensitivity"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["Melatonin pathway mediates circadian disruption effects on reproduction"],
+        "does_not_support": ["Melatonin is the sole mediator of field effects on fertility"]
+      },
+      "falsification_condition": "Exogenous melatonin replacement fully restores reproductive function in field-exposed animals"
+    },
+    {
+      "id": "claim.sperm.multi-parameter-decline",
+      "statement": {
+        "en": {
+          "text": "FieldState exposure reduces sperm count, motility, and DNA integrity through converging pathways: direct ROS damage to membranes and DNA, BTB disruption reducing Sertoli cell support, and impaired steroidogenesis from HPG axis interference.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "FieldState-altistus heikentää siittiöiden määrää, liikkuvuutta ja DNA-eheyttä konvergoivien reittien kautta: suora ROS-vaurio kalvoille ja DNA:lle, BTB-häiriö vähentäen Sertolin solujen tukea, ja heikentynyt steroidogeneesi HPG-akselin häiriöstä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "measurement",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "MALE_SPERM" },
+      "depends_on": ["claim.vgcc.ros-ca2-coupling"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["Multiple converging mechanisms reduce male fertility parameters"],
+        "does_not_support": ["Sperm decline alone explains the full fertility drop"]
+      },
+      "falsification_condition": "Meta-analysis of semen parameter studies shows no dose-response relationship with any FieldState metric"
+    },
+    {
+      "id": "claim.couple.fecundability-convergence",
+      "statement": {
+        "en": {
+          "text": "Couple-level fecundability declines as a multiplicative product of independently impaired male output (sperm parameters), female ovulatory timing (clock disruption), and implantation support (luteal/placental integrity).",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Paritason hedelmällisyys heikkenee itsenäisesti heikentyneen miestuotannon (siittiöparametrit), naisen ovulaation ajoituksen (kellohäiriö) ja implantaatiotuen (luteaalisen/istukkaan eheyden) multiplikatiivisena tulona.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "COUPLE_FECUNDABILITY" },
+      "depends_on": ["claim.sperm.multi-parameter-decline"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["The couple-level model integrates male and female components"],
+        "does_not_support": ["All fertility decline is biologically mediated — demand, tempo, and ART are separate inputs"]
+      },
+      "falsification_condition": "Prospective cohort with FieldState measurement shows no association between couple-level FieldState exposure and time-to-pregnancy after controlling for behavioral factors"
+    },
+    {
+      "id": "claim.proxy.lindgren-selection",
+      "statement": {
+        "en": {
+          "text": "The Lindgren two-channel timing proxy selects the field components most predictive of biological response by optimizing the coupling function χ between ambient background and personal exposure channels.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "Lindgrenin kahden kanavan ajoitusproxy valitsee biologiselle vasteelle eniten ennustavat kenttäkomponentit optimoimalla kytkentäfunktion χ taustakentän ja henkilökohtaisen altistuksen kanavien välillä.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "proxy_interpretation",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "FIELDSTATE_SELECTED_PROXY" },
+      "depends_on": [],
+      "supersedes": [],
+      "scope": {
+        "supports": ["The proxy captures the dominant coupling mode between FieldState and biological systems"],
+        "does_not_support": ["The proxy captures all biologically relevant field characteristics"]
+      },
+      "falsification_condition": "An alternative proxy formulation consistently outperforms the Lindgren selection in predicting reproductive endpoints across ≥3 independent datasets"
+    },
+    {
+      "id": "claim.tfr.multi-input-decomposition",
+      "statement": {
+        "en": {
+          "text": "TFR is a derived sum of age-specific fertility rates (ASFR), each of which receives inputs from biological fecundability, demand/opportunity, tempo effects, and ART delivery — TFR decline cannot be attributed to any single input without decomposition.",
+          "sourceRevision": 1
+        },
+        "fi": {
+          "text": "TFR on johdettu summa ikäkohtaisista hedelmällisyysluvuista (ASFR), joista kukin saa panoksia biologisesta hedelmällisyydestä, kysynnästä/mahdollisuudesta, tempoefekteistä ja avusteisesta lisääntymisestä — TFR:n laskua ei voi attribuoida yksittäiseen panokseen ilman dekompositiota.",
+          "sourceRevision": 1
+        }
+      },
+      "kind": "model_derived",
+      "lifecycle": "draft",
+      "target": { "type": "node", "nodeId": "TFR" },
+      "depends_on": ["claim.couple.fecundability-convergence"],
+      "supersedes": [],
+      "scope": {
+        "supports": ["Proper attribution requires separating biological from behavioral and medical inputs"],
+        "does_not_support": ["All TFR decline is FieldState-driven"]
+      },
+      "falsification_condition": null
+    }
+  ],
+  "evidence_relations": [
+    {
+      "id": "er.vgcc.pall2013",
+      "referenceId": "pall2013_v2",
+      "claimId": "claim.vgcc.ros-ca2-coupling",
+      "relation": "supports",
+      "directness": "direct_mechanism",
+      "studyDesign": "review_mechanistic",
+      "applicability": "in_vitro_and_animal",
+      "calibrationRole": "structural_only",
+      "limitations": ["Review, not primary data; aggregates heterogeneous exposure protocols"],
+      "curatorId": "otto",
+      "curatedAt": "2026-09-01",
+      "curatorNote": null
+    },
+    {
+      "id": "er.sperm.adams2014",
+      "referenceId": "adams2014",
+      "claimId": "claim.sperm.multi-parameter-decline",
+      "relation": "supports",
+      "directness": "endpoint_measurement",
+      "studyDesign": "meta_analysis",
+      "applicability": "human",
+      "calibrationRole": "calibration",
+      "limitations": ["Heterogeneous exposure assessment across studies"],
+      "curatorId": "otto",
+      "curatedAt": "2026-09-01",
+      "curatorNote": null
+    },
+    {
+      "id": "er.cry.ritz2004",
+      "referenceId": "ritz2004",
+      "claimId": "claim.rpm.cry-magnetic-sensitivity",
+      "relation": "supports",
+      "directness": "direct_mechanism",
+      "studyDesign": "experimental_animal",
+      "applicability": "animal_model",
+      "calibrationRole": "structural_only",
+      "limitations": ["Avian model; extrapolation to mammalian CRY requires caution"],
+      "curatorId": "otto",
+      "curatedAt": "2026-09-01",
+      "curatorNote": null
+    }
+  ],
+  "epistemic_assessments": [
+    {
+      "id": "ea.vgcc.v1",
+      "claimId": "claim.vgcc.ros-ca2-coupling",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": ["er.vgcc.pall2013"],
+      "assessorId": "otto",
+      "assessedAt": "2026-09-01",
+      "note": "Multiple in vitro confirmations; human in vivo dose-response not yet demonstrated"
+    },
+    {
+      "id": "ea.rpm.v1",
+      "claimId": "claim.rpm.cry-magnetic-sensitivity",
+      "revision": 1,
+      "level": "M",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": ["er.cry.ritz2004"],
+      "assessorId": "otto",
+      "assessedAt": "2026-09-01",
+      "note": "Strong mechanistic basis in avian systems; mammalian CRY1/2 radical-pair evidence growing"
+    },
+    {
+      "id": "ea.melatonin.v1",
+      "claimId": "claim.melatonin.circadian-redox-mediator",
+      "revision": 1,
+      "level": "M|C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [],
+      "assessorId": "otto",
+      "assessedAt": "2026-09-01",
+      "note": "Both mechanism (CRY→pineal) and association (shift work fertility) documented independently"
+    },
+    {
+      "id": "ea.sperm.v1",
+      "claimId": "claim.sperm.multi-parameter-decline",
+      "revision": 1,
+      "level": "E",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": ["er.sperm.adams2014"],
+      "assessorId": "otto",
+      "assessedAt": "2026-09-01",
+      "note": "Repeated finding across meta-analyses; dose-response in animal models"
+    },
+    {
+      "id": "ea.couple.v1",
+      "claimId": "claim.couple.fecundability-convergence",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [],
+      "assessorId": "otto",
+      "assessedAt": "2026-09-01",
+      "note": "Model-derived convergence; direct couple-level prospective data not yet available"
+    },
+    {
+      "id": "ea.proxy.v1",
+      "claimId": "claim.proxy.lindgren-selection",
+      "revision": 1,
+      "level": "L*",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [],
+      "assessorId": "otto",
+      "assessedAt": "2026-09-01",
+      "note": "Proxy formulation is model-internal; external validation requires independent replication"
+    },
+    {
+      "id": "ea.tfr.v1",
+      "claimId": "claim.tfr.multi-input-decomposition",
+      "revision": 1,
+      "level": "C",
+      "compatibility": "current",
+      "origin": "derived",
+      "basis": [],
+      "assessorId": "otto",
+      "assessedAt": "2026-09-01",
+      "note": "Demographic decomposition is methodological; the biological contribution share is the open question"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-09-01T08:04:57.602Z",
+  "anchors": [
+    {
+      "claimId": "claim.vgcc.geometric-coupling-role",
+      "file": "lib/claims/types.ts",
+      "line": 107
+    }
+  ]
+}

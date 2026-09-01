@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, AlertTriangle, Baby, Building2, Users, Brain, Heart, Shield, TrendingDown, Zap, Target } from "lucide-react";
+import { ArrowRight, AlertTriangle, Baby, Building2, Users, Brain, Heart, Shield, TrendingDown, Zap, Target, Activity } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
 import { CitationLink } from "@/components/CitationLink";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { BiocapCivilizationChart, BiocapTimelineChart } from "@/components/BiocapCivilizationChart";
 import { CivilizationEssay } from "@/components/CivilizationEssay";
 import { MigrationGradientMap } from "@/components/MigrationGradientMap";
+import { BiomarkerRadar } from "@/components/BiomarkerRadar";
+import { BiocapTrajectory, BiomarkerTrajectoryLines } from "@/components/BiocapTrajectory";
 
 const COPY = {
   en: {
@@ -734,6 +736,59 @@ const COPY = {
     biocapXTime: "Year",
     biocapY: "BioCap",
 
+    sCulturalTitle: "What Is Cultural Energy?",
+    sCulturalLead: "For ninety years, historians have described civilizational energy without being able to define it materially. Unwin called it 'social energy.' Spengler called it 'the soul of a culture.' Glubb measured its phases empirically but could not identify its substance. Turchin modeled it mathematically but could not ground it biologically.",
+    sCulturalBody: "BERM proposes the first materialist definition: cultural energy is the collective free biological energy of a population — what remains after homeostatic maintenance and environmental damage repair are subtracted from total metabolic capacity. It is measurable, decomposable into eight biomarkers, and its trajectory is predictable.",
+    sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)",
+    sCulturalFormulaDesc: "where N(t) = population size, BioCap(t) = mean biological capacity, η(t) = institutional efficiency",
+    sCulturalBioTitle: "Eight Biomarkers of Civilizational Capacity",
+    sCulturalBiomarkers: [
+      { symbol: "T", name: "Testosterone", weight: 0.20, trend: "↓ 1.2%/yr", function: "Risk-taking, competition, assertiveness, spatial cognition", unwin: "Expansive energy" },
+      { symbol: "OXT", name: "Oxytocin", weight: 0.20, trend: "↓ (proxy)", function: "Social trust, group cohesion, cooperation, pair bonding", unwin: "Cohesive energy (asabiya)" },
+      { symbol: "DA", name: "Dopamine sensitivity", weight: 0.15, trend: "↓ (proxy)", function: "Motivation, goal pursuit, delayed gratification, creativity", unwin: "Productive energy" },
+      { symbol: "MEL", name: "Melatonin", weight: 0.15, trend: "↓↓ (LED+EMF)", function: "Sleep quality, cognitive consolidation, circadian coherence", unwin: "Mental energy" },
+      { symbol: "BDNF", name: "BDNF", weight: 0.10, trend: "↓ (Flynn⁻)", function: "Abstract reasoning, learning, cognitive flexibility", unwin: "Mental energy (cognitive)" },
+      { symbol: "CORT", name: "Cortisol", weight: -0.10, trend: "↑ (HPA)", function: "Anxiety, short-term thinking, threat focus (INVERTED)", unwin: "Energy drain" },
+      { symbol: "D", name: "Vitamin D", weight: 0.05, trend: "↓ (47.9% deficient)", function: "Immune competence, Ca²⁺ homeostasis moderation", unwin: "Protective factor" },
+      { symbol: "B2", name: "Riboflavin (B2/FAD)", weight: 0.05, trend: "↓ (processed food)", function: "CRY protein stability, mitochondrial energy", unwin: "Protective factor" },
+    ],
+    sCulturalRadarTitle: "Biomarker Profile — Western Population 2025",
+    sCulturalTimeTitle: "BioCap Trajectory: 1900–2060",
+    sCulturalTimeX: "Year",
+    sCulturalTimeY: "BioCap",
+    sCulturalAmish: "Amish (≈ 0.98)",
+    sCulturalNow: "2025:",
+    sCulturalForecast: "forecast",
+    sCulturalLinesTitle: "Individual Biomarker Trajectories",
+    sCulturalUnwinTitle: "Unwin's Evidence",
+    sCulturalUnwinBody1: "In 1934, Oxford anthropologist J.D. Unwin published a study of 86 societies spanning 5,000 years. His finding was absolute: in every society without exception, the level of cultural achievement correlated directly with the degree of sexual restraint the society imposed. Societies with strict regulation displayed what Unwin called 'expansive energy.' Societies with permissive norms displayed what he called 'zoistic' energy — subsistence without expansion.",
+    sCulturalUnwinBody2: "Unwin attributed this to Freudian sublimation: sexual energy not discharged sexually was redirected into cultural production. This explanation has not aged well. But his data has. No one has replicated the study, but no one has falsified it either. 86 societies, zero exceptions.",
+    sCulturalUnwinBody3: "BERM proposes a different mechanism for the same observation. Sexual restraint does not produce cultural energy. Rather, both high sexual drive (requiring restraint) and high cultural energy are symptoms of the same biological state: high testosterone, high oxytocin, high dopamine sensitivity, normal melatonin, low cortisol. A population in this state has both strong libido (necessitating social regulation) and strong civilizational capacity. When biological capacity declines — through cumulative electromagnetic exposure, through urbanization — both sexual drive and cultural energy decline together. The correlation Unwin observed was real. The causation was a common upstream factor he could not have identified in 1934.",
+    sCulturalPhasesTitle: "Unwin's Four Phases",
+    sCulturalPhases: [
+      { name: "Zoistic", biocap: "< 0.55", desc: "Subsistence without expansion. No large-scale construction, no abstract thought tradition, no territorial ambition.", color: "red" },
+      { name: "Manistic", biocap: "0.55–0.75", desc: "Declining energy. Populism, institutional decay, polarization, pronatalist policy failure. Western civilization 2015–present.", color: "amber" },
+      { name: "Deistic", biocap: "0.75–0.90", desc: "Transition phase. Cultural production continues but with declining novelty. Institutional trust eroding. Western civilization 2000–2015.", color: "blue" },
+      { name: "Rationalistic", biocap: "> 0.90", desc: "Full expansive energy. Conquest, construction, intellectual achievement, scientific revolution. Western civilization pre-2000.", color: "green" },
+    ],
+    sCulturalSensTitle: "Sensitivity Analysis",
+    sCulturalSensDesc: "If a single biomarker were restored to its 1980 level:",
+    sCulturalSensItems: [
+      { marker: "T → 1.0", recovery: "+16.7%", desc: "Largest single intervention" },
+      { marker: "MEL → 1.0", recovery: "+12.2%", desc: "Circadian restoration" },
+      { marker: "OXT → 1.0", recovery: "+10.8%", desc: "Social cohesion" },
+      { marker: "DA → 1.0", recovery: "+5.6%", desc: "Motivational drive" },
+      { marker: "BDNF → 1.0", recovery: "+3.7%", desc: "Cognitive capacity" },
+      { marker: "D → 1.0", recovery: "+1.7%", desc: "Protective factor" },
+    ],
+    sCulturalSensConclusion: "The critical triad (T + MEL + OXT) accounts for 55% of BioCap weight and 39.7% of potential recovery. EMF reduction is the only intervention that would raise all biomarkers simultaneously, because all are downstream of the EMF-induced biomarker cascade.",
+    sCulturalTransTitle: "Phase Transitions",
+    sCulturalTransitions: [
+      { year: "~2000", from: "Rationalistic", to: "Deistic", trigger: "Melatonin collapse (LED + mobile networks)", evidence: "'Something changed' consensus — 9/11, internet bubble, polarization onset, IQ reversal" },
+      { year: "~2015", from: "Deistic", to: "Manistic", trigger: "Testosterone critical threshold reached", evidence: "Populism, pronatalist failure, loneliness epidemic, 'failure to launch', Brexit/Trump" },
+      { year: "~2040", from: "Manistic", to: "Zoistic", trigger: "Melatonin (PGC + LED → permanent capacity loss)", evidence: "PREDICTION — falsifiable: if the West shows recovery in the 2030s → wrong" },
+    ],
+
     s10title: "Epistemic Boundaries",
     s10claims: [
       "Seven RCTs establish causal links between testosterone and specific behaviors in men.",
@@ -794,13 +849,13 @@ const COPY = {
   fi: {
     title: "Sivilisaatio",
     subtitle:
-      "Mitä tapahtuu yhteiskunnalle, kun molempien sukupuolten hormonaalinen perusta muuttuu samanaikaisesti?",
+      "Tarkastelun kohteena ovat yhteiskunnalliset seuraukset tilanteessa, jossa molempien sukupuolten hormonaalinen perusta muuttuu samanaikaisesti.",
     heroLead:
-      "Testosteroni, estrogeeni, dopamiini, kortisoli, oksitosiini ja melatoniini eivät ole pelkkiä lääketieteellisiä termejä. Ne ovat motivaation, luottamuksen, kiintymyksen, unen, lisääntymisen ja kognition biologinen infrastruktuuri. Kun sähkömagneettiset kentät häiritsevät näitä hormoneja sääteleviä kalsiumkanavia, vaikutukset etenevät molekyyleistä soluihin, elimiin, yksilöihin, perheisiin ja instituutioihin.",
+      "Testosteroni, estrogeeni, dopamiini, kortisoli, oksitosiini ja melatoniini muodostavat motivaation, luottamuksen, kiintymyksen, unen, lisääntymisen ja kognition biologisen perustan. Mikäli sähkömagneettiset kentät häiritsevät näitä hormoneja säätelevien kalsiumkanavien toimintaa, vaikutukset voivat edetä molekyylitasolta soluihin, elimiin, yksilöihin, perheisiin ja yhteiskunnallisiin instituutioihin.",
     heroTrail:
-      "Tämä sivu jäljittää tuon etenemisen — seitsemästä satunnaistetusta kontrolloidusta tutkimuksesta väestötason käyttäytymisdataan ja sivilisaation muutoksen dynamiikkaan.",
+      "Tässä tarkastelussa kyseinen etenemisketju yhdistetään seitsemästä satunnaistetusta kontrolloidusta tutkimuksesta saatuun näyttöön, väestötason käyttäytymisaineistoihin ja sivilisaatioiden muutosta koskeviin teorioihin.",
     levelNote:
-      "Tämä on mallin kolmas taso: Taso 1 on mekanismi (Malli), Taso 2 on näyttö (Näyttö), Taso 3 on seuraukset (tämä sivu).",
+      "Kyseessä on mallin kolmas taso. Ensimmäinen taso käsittelee mekanismia, toinen empiiristä näyttöä ja kolmas seurauksia.",
 
     s2title: "Kaksi rinnakkaista häiriötä",
     s2lead:
@@ -1514,6 +1569,59 @@ const COPY = {
     biocapXNorm: "Sivilisaation elinikä (%)",
     biocapXTime: "Vuosi",
     biocapY: "BioCap",
+
+    sCulturalTitle: "Mitä on kulttuurinen energia?",
+    sCulturalLead: "Yhdeksänkymmentä vuotta historioitsijat ovat kuvailleet sivilisaatioiden energiaa kykenemättä määrittelemään sitä materiaalisesti. Unwin kutsui sitä 'sosiaaliseksi energiaksi'. Spengler kutsui sitä 'kulttuurin sieluksi'. Glubb mittasi sen vaiheet empiirisesti mutta ei kyennyt tunnistamaan sen substanssia. Turchin mallinti sen matemaattisesti mutta ei voinut perustaa sitä biologisesti.",
+    sCulturalBody: "BERM esittää ensimmäisen materialistisen määritelmän: kulttuurinen energia on väestön kollektiivinen vapaa biologinen energia — se mikä jää jäljelle kun homeostaattinen ylläpito ja ympäristövaurioiden korjaus vähennetään kokonaisaineenvaihduntakapasiteetista. Se on mitattavissa, hajotettavissa kahdeksaan biomarkkeriin, ja sen liikerata on ennustettavissa.",
+    sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)",
+    sCulturalFormulaDesc: "missä N(t) = väestön koko, BioCap(t) = keskimääräinen biologinen kapasiteetti, η(t) = institutionaalinen tehokkuus",
+    sCulturalBioTitle: "Kahdeksan sivilisaatiokapasiteetin biomarkkeria",
+    sCulturalBiomarkers: [
+      { symbol: "T", name: "Testosteroni", weight: 0.20, trend: "↓ 1,2 %/v", function: "Riskinotto, kilpailu, itsevarmuus, avaruudellinen kognitio", unwin: "Ekspansiivinen energia" },
+      { symbol: "OXT", name: "Oksitosiini", weight: 0.20, trend: "↓ (välillinen)", function: "Sosiaalinen luottamus, ryhmäkoheesio, yhteistyö, parisidonta", unwin: "Koheesioenergia (asabiya)" },
+      { symbol: "DA", name: "Dopamiiniherkkyys", weight: 0.15, trend: "↓ (välillinen)", function: "Motivaatio, tavoitteen tavoittelu, viivästetty tyydytys, luovuus", unwin: "Produktiivinen energia" },
+      { symbol: "MEL", name: "Melatoniini", weight: 0.15, trend: "↓↓ (LED+EMF)", function: "Unenlaatu, kognitiivinen konsolidaatio, sirkadiaaninen koherenssi", unwin: "Mentaalinen energia" },
+      { symbol: "BDNF", name: "BDNF", weight: 0.10, trend: "↓ (Flynn⁻)", function: "Abstrakti päättely, oppiminen, kognitiivinen joustavuus", unwin: "Mentaalinen energia (kogn.)" },
+      { symbol: "CORT", name: "Kortisoli", weight: -0.10, trend: "↑ (HPA)", function: "Ahdistus, lyhytjänteinen ajattelu, uhkakeskeisyys (KÄÄNTEINEN)", unwin: "Energian kulutus" },
+      { symbol: "D", name: "D-vitamiini", weight: 0.05, trend: "↓ (47,9 % puutteellinen)", function: "Immuunipätevyys, Ca²⁺-homeostaasin moderaatio", unwin: "Suojaava tekijä" },
+      { symbol: "B2", name: "Riboflaviini (B2/FAD)", weight: 0.05, trend: "↓ (prosessoitu ruoka)", function: "CRY-proteiinin stabiilisuus, mitokondriaalinen energia", unwin: "Suojaava tekijä" },
+    ],
+    sCulturalRadarTitle: "Biomarkkeriprofiiili — länsimainen väestö 2025",
+    sCulturalTimeTitle: "BioCap-liikerata: 1900–2060",
+    sCulturalTimeX: "Vuosi",
+    sCulturalTimeY: "BioCap",
+    sCulturalAmish: "Amish (≈ 0,98)",
+    sCulturalNow: "2025:",
+    sCulturalForecast: "ennuste",
+    sCulturalLinesTitle: "Yksittäisten biomarkkerien liikeradat",
+    sCulturalUnwinTitle: "Unwinin todistusaineisto",
+    sCulturalUnwinBody1: "Vuonna 1934 Oxfordin antropologi J.D. Unwin julkaisi tutkimuksen 86 yhteiskunnasta 5 000 vuoden ajalta. Hänen havaintonsa oli ehdoton: jokaisessa yhteiskunnassa poikkeuksetta kulttuurisen saavutuksen taso korreloi suoraan yhteiskunnan asettaman seksuaalisen pidättyväisyyden kanssa. Tiukan sääntelyn yhteiskunnat osoittivat mitä Unwin kutsui 'ekspansiiviseksi energiaksi'. Sallivien normien yhteiskunnat osoittivat 'zoistista' energiaa — toimeentuloa ilman ekspansiota.",
+    sCulturalUnwinBody2: "Unwin katsoi tämän johtuvan freudilaisesta sublimaatiosta: seksuaalienergia, jota ei purettu seksuaalisesti, ohjautui kulttuuriseen tuotantoon. Tämä selitys ei ole vanhentunut hyvin. Mutta hänen datansa on. Kukaan ei ole replikoinut tutkimusta, mutta kukaan ei ole falsifioinut sitäkään. 86 yhteiskuntaa, nolla poikkeusta.",
+    sCulturalUnwinBody3: "BERM esittää eri mekanismin samalle havainnolle. Seksuaalinen pidättyväisyys ei tuota kulttuurista energiaa. Sen sijaan sekä korkea seksuaalinen halu (joka vaatii säätelyä) että korkea kulttuurinen energia ovat saman biologisen tilan oireita: korkea testosteroni, korkea oksitosiini, korkea dopamiiniherkkyys, normaali melatoniini, matala kortisoli. Tässä tilassa väestöllä on sekä vahva libido (joka edellyttää sosiaalista säätelyä) että vahva sivilisaatiokapasiteetti. Kun biologinen kapasiteetti laskee — kumulatiivisen sähkömagneettisen altistuksen, kaupungistumisen kautta — sekä seksuaalinen halu että kulttuurinen energia laskevat yhdessä. Unwinin havaitsema korrelaatio oli todellinen. Kausaatio oli yhteinen ylävirran tekijä, jota hän ei olisi voinut tunnistaa vuonna 1934.",
+    sCulturalPhasesTitle: "Unwinin neljä vaihetta",
+    sCulturalPhases: [
+      { name: "Zoistinen", biocap: "< 0,55", desc: "Toimeentulo ilman ekspansiota. Ei suurimuotoista rakentamista, abstraktia ajatteluperinnettä tai alueellista kunnianhimoa.", color: "red" },
+      { name: "Manistinen", biocap: "0,55–0,75", desc: "Laskeva energia. Populismi, institutionaalinen rappio, polarisaatio, pronatalismipolitiikan epäonnistuminen. Länsimainen sivilisaatio 2015–nykyhetki.", color: "amber" },
+      { name: "Deistinen", biocap: "0,75–0,90", desc: "Siirtymävaihe. Kulttuurinen tuotanto jatkuu mutta laskevin uutuuksin. Institutionaalinen luottamus murenee. Länsimainen sivilisaatio 2000–2015.", color: "blue" },
+      { name: "Rationalistinen", biocap: "> 0,90", desc: "Täysi ekspansiivinen energia. Valloitus, rakentaminen, älyllinen saavutus, tieteellinen vallankumous. Länsimainen sivilisaatio ennen vuotta 2000.", color: "green" },
+    ],
+    sCulturalSensTitle: "Herkkyysanalyysi",
+    sCulturalSensDesc: "Jos yksi biomarkkeri palautettaisiin 1980-tasolleen:",
+    sCulturalSensItems: [
+      { marker: "T → 1,0", recovery: "+16,7 %", desc: "Suurin yksittäinen interventio" },
+      { marker: "MEL → 1,0", recovery: "+12,2 %", desc: "Sirkadiaaninen palautuminen" },
+      { marker: "OXT → 1,0", recovery: "+10,8 %", desc: "Sosiaalinen koheesio" },
+      { marker: "DA → 1,0", recovery: "+5,6 %", desc: "Motivaatiokäyttövoima" },
+      { marker: "BDNF → 1,0", recovery: "+3,7 %", desc: "Kognitiivinen kapasiteetti" },
+      { marker: "D → 1,0", recovery: "+1,7 %", desc: "Suojaava tekijä" },
+    ],
+    sCulturalSensConclusion: "Kriittinen triadi (T + MEL + OXT) muodostaa 55 % BioCap-painosta ja 39,7 % mahdollisesta palautumisesta. EMF-vähennys on ainoa interventio, joka nostaisi kaikkia biomarkkereita samanaikaisesti, koska ne kaikki ovat EMF-kaskadin alavirran tuotteita.",
+    sCulturalTransTitle: "Vaihesiirtymät",
+    sCulturalTransitions: [
+      { year: "~2000", from: "Rationalistinen", to: "Deistinen", trigger: "Melatoniiniromahdus (LED + mobiiliverkot)", evidence: "'Jokin muuttui' -konsensus — 9/11, internet-kupla, polarisaation alku, ÄO:n kääntyminen" },
+      { year: "~2015", from: "Deistinen", to: "Manistinen", trigger: "Testosteronin kriittinen kynnys saavutettu", evidence: "Populismi, pronatalismien epäonnistuminen, yksinäisyysepidemia, 'failure to launch', Brexit/Trump" },
+      { year: "~2040", from: "Manistinen", to: "Zoistinen", trigger: "Melatoniini (PGC + LED → pysyvä kapasiteettitappio)", evidence: "ENNUSTE — falsifioitavissa: jos länsi osoittaa palautumista 2030-luvulla → väärä" },
+    ],
 
     s10title: "Episteemiset rajat",
     s10claims: [
@@ -2257,6 +2365,16 @@ const COPY = {
     biocapXTime: "年",
     biocapY: "BioCap",
 
+    sCulturalTitle: "文化エネルギーとは何か？",
+    sCulturalLead: "", sCulturalBody: "", sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)", sCulturalFormulaDesc: "",
+    sCulturalBioTitle: "文明能力の8つのバイオマーカー", sCulturalBiomarkers: [] as any[], sCulturalRadarTitle: "バイオマーカープロファイル — 西洋人口2025",
+    sCulturalTimeTitle: "BioCap軌道: 1900–2060", sCulturalTimeX: "年", sCulturalTimeY: "BioCap", sCulturalAmish: "アーミッシュ (≈ 0.98)", sCulturalNow: "2025:", sCulturalForecast: "予測",
+    sCulturalLinesTitle: "個別バイオマーカー軌道",
+    sCulturalUnwinTitle: "アンウィンの証拠", sCulturalUnwinBody1: "", sCulturalUnwinBody2: "", sCulturalUnwinBody3: "",
+    sCulturalPhasesTitle: "アンウィンの4つの段階", sCulturalPhases: [] as any[],
+    sCulturalSensTitle: "感度分析", sCulturalSensDesc: "", sCulturalSensItems: [] as any[], sCulturalSensConclusion: "",
+    sCulturalTransTitle: "相転移", sCulturalTransitions: [] as any[],
+
     s10title: "認識論的境界",
     s10claims: [
       "7件のRCTがテストステロンと男性の特定の行動の因果関係を確立。",
@@ -2999,6 +3117,16 @@ const COPY = {
     biocapXTime: "Annee",
     biocapY: "BioCap",
 
+    sCulturalTitle: "Qu'est-ce que l'énergie culturelle ?",
+    sCulturalLead: "", sCulturalBody: "", sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)", sCulturalFormulaDesc: "",
+    sCulturalBioTitle: "Huit biomarqueurs de capacité civilisationnelle", sCulturalBiomarkers: [] as any[], sCulturalRadarTitle: "Profil biomarqueur — Population occidentale 2025",
+    sCulturalTimeTitle: "Trajectoire BioCap : 1900–2060", sCulturalTimeX: "Année", sCulturalTimeY: "BioCap", sCulturalAmish: "Amish (≈ 0,98)", sCulturalNow: "2025 :", sCulturalForecast: "prévision",
+    sCulturalLinesTitle: "Trajectoires individuelles des biomarqueurs",
+    sCulturalUnwinTitle: "Les preuves d'Unwin", sCulturalUnwinBody1: "", sCulturalUnwinBody2: "", sCulturalUnwinBody3: "",
+    sCulturalPhasesTitle: "Les quatre phases d'Unwin", sCulturalPhases: [] as any[],
+    sCulturalSensTitle: "Analyse de sensibilité", sCulturalSensDesc: "", sCulturalSensItems: [] as any[], sCulturalSensConclusion: "",
+    sCulturalTransTitle: "Transitions de phase", sCulturalTransitions: [] as any[],
+
     s10title: "Limites épistémiques",
     s10claims: [
       "Sept RCT établissent des liens de causalité entre la testostérone et des comportements spécifiques chez les hommes.",
@@ -3740,6 +3868,16 @@ const COPY = {
     biocapXNorm: "문명 수명 (%)",
     biocapXTime: "연도",
     biocapY: "BioCap",
+
+    sCulturalTitle: "문화적 에너지란 무엇인가?",
+    sCulturalLead: "", sCulturalBody: "", sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)", sCulturalFormulaDesc: "",
+    sCulturalBioTitle: "문명 역량의 8가지 바이오마커", sCulturalBiomarkers: [] as any[], sCulturalRadarTitle: "바이오마커 프로필 — 서구 인구 2025",
+    sCulturalTimeTitle: "BioCap 궤적: 1900–2060", sCulturalTimeX: "연도", sCulturalTimeY: "BioCap", sCulturalAmish: "아미시 (≈ 0.98)", sCulturalNow: "2025:", sCulturalForecast: "예측",
+    sCulturalLinesTitle: "개별 바이오마커 궤적",
+    sCulturalUnwinTitle: "언윈의 증거", sCulturalUnwinBody1: "", sCulturalUnwinBody2: "", sCulturalUnwinBody3: "",
+    sCulturalPhasesTitle: "언윈의 4단계", sCulturalPhases: [] as any[],
+    sCulturalSensTitle: "민감도 분석", sCulturalSensDesc: "", sCulturalSensItems: [] as any[], sCulturalSensConclusion: "",
+    sCulturalTransTitle: "상전이", sCulturalTransitions: [] as any[],
 
     s10title: "인식론적 경계",
     s10claims: [
@@ -4922,6 +5060,172 @@ export default async function CivilizationPage({
           ))}
         </div>
       </section>
+
+      {/* Cultural Energy */}
+      {d.sCulturalLead && (
+      <section id="cultural-energy" className="mb-16 border-t editorial-rule pt-8">
+        <div className="flex items-center gap-3 mb-6">
+          <Activity className="w-6 h-6 text-blue-500" />
+          <h2 className="text-2xl font-bold">{d.sCulturalTitle}</h2>
+        </div>
+
+        <div className="prose prose-sm max-w-none mb-8">
+          <p className="text-foreground-muted leading-relaxed mb-4">{d.sCulturalLead}</p>
+          <p className="text-foreground-muted leading-relaxed mb-4">{d.sCulturalBody}</p>
+          <div className="rounded-lg border border-card-border bg-card-bg p-4 font-mono text-center">
+            <p className="text-sm font-semibold mb-1">{d.sCulturalFormula}</p>
+            <p className="text-xs text-foreground-muted">{d.sCulturalFormulaDesc}</p>
+          </div>
+        </div>
+
+        {/* Unwin's Evidence */}
+        {d.sCulturalUnwinBody1 && (
+        <div className="mb-10">
+          <h3 className="text-lg font-semibold mb-4">{d.sCulturalUnwinTitle}</h3>
+          <div className="space-y-3 text-sm text-foreground-muted leading-relaxed">
+            <p>{d.sCulturalUnwinBody1}</p>
+            <p>{d.sCulturalUnwinBody2}</p>
+            <p>{d.sCulturalUnwinBody3}</p>
+          </div>
+        </div>
+        )}
+
+        {/* Biomarker Table + Radar */}
+        {d.sCulturalBiomarkers?.length > 0 && (
+        <div className="mb-10">
+          <h3 className="text-lg font-semibold mb-4">{d.sCulturalBioTitle}</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-card-border">
+                    <th className="text-left py-2 px-2 font-semibold">Symbol</th>
+                    <th className="text-left py-2 px-2 font-semibold">Biomarker</th>
+                    <th className="text-right py-2 px-2 font-semibold">Weight</th>
+                    <th className="text-left py-2 px-2 font-semibold">Trend</th>
+                    <th className="text-left py-2 px-2 font-semibold hidden lg:table-cell">Unwin</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.sCulturalBiomarkers.map((b: any) => (
+                    <tr key={b.symbol} className="border-b border-card-border/50">
+                      <td className="py-1.5 px-2 font-mono font-semibold">{b.symbol}</td>
+                      <td className="py-1.5 px-2">{b.name}</td>
+                      <td className="py-1.5 px-2 text-right font-mono">{b.weight > 0 ? "+" : ""}{b.weight.toFixed(2)}</td>
+                      <td className="py-1.5 px-2">{b.trend}</td>
+                      <td className="py-1.5 px-2 text-foreground-muted hidden lg:table-cell">{b.unwin}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <BiomarkerRadar
+              title={d.sCulturalRadarTitle}
+              biomarkers={[
+                { symbol: "T", label: "Testosterone", value: 0.46, weight: 0.20, trend: "↓" },
+                { symbol: "OXT", label: "Oxytocin", value: 0.65, weight: 0.20, trend: "↓" },
+                { symbol: "DA", label: "Dopamine", value: 0.76, weight: 0.15, trend: "↓" },
+                { symbol: "MEL", label: "Melatonin", value: 0.475, weight: 0.15, trend: "↓↓" },
+                { symbol: "BDNF", label: "BDNF", value: 0.76, weight: 0.10, trend: "↓" },
+                { symbol: "CORT", label: "Cortisol", value: 0.80, weight: 0.10, trend: "↑" },
+                { symbol: "D", label: "Vitamin D", value: 0.78, weight: 0.05, trend: "↓" },
+                { symbol: "B2", label: "B2/FAD", value: 0.70, weight: 0.05, trend: "↓" },
+              ]}
+            />
+          </div>
+        </div>
+        )}
+
+        {/* BioCap Trajectory */}
+        <div className="mb-10">
+          <h3 className="text-lg font-semibold mb-4">{d.sCulturalTimeTitle}</h3>
+          <BiocapTrajectory
+            chartTitle={d.sCulturalTimeTitle}
+            xLabel={d.sCulturalTimeX}
+            yLabel={d.sCulturalTimeY}
+            amishLabel={d.sCulturalAmish}
+            nowLabel={d.sCulturalNow}
+            forecastLabel={d.sCulturalForecast}
+          />
+        </div>
+
+        {/* Individual Biomarker Lines */}
+        <div className="mb-10">
+          <BiomarkerTrajectoryLines
+            chartTitle={d.sCulturalLinesTitle}
+            xLabel={d.sCulturalTimeX}
+            yLabel={d.sCulturalTimeY}
+            markers={[
+              { symbol: "T", label: "T" },
+              { symbol: "OXT", label: "OXT" },
+              { symbol: "DA", label: "DA" },
+              { symbol: "MEL", label: "MEL" },
+              { symbol: "BDNF", label: "BDNF" },
+              { symbol: "CORT", label: "CORT" },
+              { symbol: "D", label: "D" },
+            ]}
+          />
+        </div>
+
+        {/* Unwin's Four Phases */}
+        {d.sCulturalPhases?.length > 0 && (
+        <div className="mb-10">
+          <h3 className="text-lg font-semibold mb-4">{d.sCulturalPhasesTitle}</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {d.sCulturalPhases.map((p: any) => {
+              const borderColor = p.color === "green" ? "border-green-500/40" : p.color === "blue" ? "border-blue-500/40" : p.color === "amber" ? "border-amber-500/40" : "border-red-500/40";
+              return (
+                <div key={p.name} className={`rounded-lg border ${borderColor} bg-card-bg p-4`}>
+                  <h4 className="text-sm font-bold mb-1">{p.name}</h4>
+                  <p className="text-xs font-mono text-foreground-muted mb-2">BioCap {p.biocap}</p>
+                  <p className="text-xs text-foreground-muted leading-relaxed">{p.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        )}
+
+        {/* Phase Transitions */}
+        {d.sCulturalTransitions?.length > 0 && (
+        <div className="mb-10">
+          <h3 className="text-lg font-semibold mb-4">{d.sCulturalTransTitle}</h3>
+          <div className="space-y-3">
+            {d.sCulturalTransitions.map((t: any) => (
+              <div key={t.year} className="rounded-lg border border-card-border bg-card-bg p-4 flex flex-col sm:flex-row gap-3">
+                <div className="shrink-0 font-mono font-bold text-sm w-16">{t.year}</div>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold">{t.from} → {t.to}</p>
+                  <p className="text-xs text-foreground-muted mt-1">{t.trigger}</p>
+                  <p className="text-xs text-foreground-muted italic mt-1">{t.evidence}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        )}
+
+        {/* Sensitivity Analysis */}
+        {d.sCulturalSensItems?.length > 0 && (
+        <div className="mb-6">
+          <h3 className="text-lg font-semibold mb-2">{d.sCulturalSensTitle}</h3>
+          <p className="text-sm text-foreground-muted mb-4">{d.sCulturalSensDesc}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+            {d.sCulturalSensItems.map((s: any) => (
+              <div key={s.marker} className="rounded-lg border border-card-border bg-card-bg p-3">
+                <p className="text-sm font-mono font-bold">{s.marker}</p>
+                <p className="text-lg font-bold text-blue-500">{s.recovery}</p>
+                <p className="text-xs text-foreground-muted">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          {d.sCulturalSensConclusion && (
+            <p className="text-sm text-foreground-muted leading-relaxed">{d.sCulturalSensConclusion}</p>
+          )}
+        </div>
+        )}
+      </section>
+      )}
 
       {/* S10: Epistemic Boundaries */}
       <section className="mb-16">

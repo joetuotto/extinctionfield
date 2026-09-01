@@ -2,12 +2,12 @@
   "metadata": {
     "version": "3.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 1022,
+    "total_references": 1028,
     "verified_count": 373,
     "generated": "2026-08-31",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls",
     "linked_count": 378,
-    "unlinked_count": 644,
+    "unlinked_count": 650,
     "schema": "canonical-reference-registry-v1",
     "alias_count": 38,
     "last_updated": "2026-09-01"
@@ -30246,6 +30246,187 @@
       ],
       "source": "Biogerontology 2021",
       "pathway": []
+    },
+    {
+      "id": "unwin1934",
+      "authors": "Unwin JD",
+      "year": 1934,
+      "title": "Sex and Culture",
+      "journal": "Oxford University Press",
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "history_institutional",
+      "pathway": [
+        "E"
+      ],
+      "level": null,
+      "type": "book",
+      "finding": "Study of 86 societies showing strict correlation between sexual restraint and cultural achievement; societies enforcing prenuptial chastity reached highest cultural energy within three generations.",
+      "tags": [
+        "civilization",
+        "cultural_energy",
+        "sexual_restraint",
+        "anthropology"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "unwin1940",
+      "authors": "Unwin JD",
+      "year": 1940,
+      "title": "Hopousia, or The Sexual and Economic Foundations of a New Society",
+      "journal": null,
+      "doi": null,
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "history_institutional",
+      "pathway": [
+        "E"
+      ],
+      "level": null,
+      "type": "book",
+      "finding": "Posthumous work extending Sex and Culture thesis; introduces 'hopousia' concept linking sexual regulation to social energy. Introduction by Aldous Huxley.",
+      "tags": [
+        "civilization",
+        "cultural_energy",
+        "sexual_restraint",
+        "hopousia"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "bratsberg2018",
+      "authors": "Bratsberg B & Rogeberg O",
+      "year": 2018,
+      "title": "Flynn effect and its reversal are both environmentally caused",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "doi": "10.1073/pnas.1718793115",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "neurobiology_circadian",
+      "pathway": [
+        "E"
+      ],
+      "level": null,
+      "type": "journal",
+      "finding": "IQ gains reversed in Norway post-1975; within-family analysis rules out genetic composition, pointing to environmental factors driving cognitive decline.",
+      "tags": [
+        "IQ",
+        "Flynn_effect",
+        "cognitive_decline",
+        "environment"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "dworak2023",
+      "authors": "Dworak EM et al.",
+      "year": 2023,
+      "title": "The Decline of Fluid Intelligence: A Detailed Examination",
+      "journal": "Intelligence",
+      "doi": "10.1016/j.intell.2023.101786",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "neurobiology_circadian",
+      "pathway": [
+        "E"
+      ],
+      "level": null,
+      "type": "journal",
+      "finding": "Large-scale analysis confirming decline in fluid intelligence scores across recent cohorts, extending reverse-Flynn observations beyond Scandinavian samples.",
+      "tags": [
+        "IQ",
+        "fluid_intelligence",
+        "cognitive_decline",
+        "reverse_Flynn"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "holt_lunstad2015",
+      "authors": "Holt-Lunstad J et al.",
+      "year": 2015,
+      "title": "Loneliness and Social Isolation as Risk Factors for Mortality: A Meta-Analytic Review",
+      "journal": "Perspectives on Psychological Science",
+      "doi": "10.1177/1745691614568352",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "neurobiology_circadian",
+      "pathway": [
+        "E"
+      ],
+      "level": "M",
+      "type": "journal",
+      "finding": "Meta-analysis: loneliness and social isolation increase mortality risk by 26-32%, comparable to established risk factors. Social connection as biological imperative.",
+      "tags": [
+        "loneliness",
+        "social_isolation",
+        "mortality",
+        "meta-analysis"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "jiang2003",
+      "authors": "Jiang M et al.",
+      "year": 2003,
+      "title": "A research on the relationship between ejaculation and serum testosterone level in men",
+      "journal": "Journal of Zhejiang University Science",
+      "doi": "10.1631/jzus.2003.0236",
+      "pmid": null,
+      "pmcid": null,
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "D",
+        "E"
+      ],
+      "level": null,
+      "type": "journal",
+      "finding": "Serum testosterone peaks at 145.7% of baseline on day 7 of abstinence, then returns to normal. Demonstrates acute hormonal response to ejaculatory abstinence.",
+      "tags": [
+        "testosterone",
+        "abstinence",
+        "ejaculation",
+        "hormonal_response"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
     }
   ]
 }
