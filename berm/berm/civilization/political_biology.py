@@ -1204,3 +1204,274 @@ def moral_distress_index(
             "meaning_deficit": round(meaning_deficit, 4),
         },
     }
+
+
+# ── In-group loyalty collapse ──
+#
+# Loyalty/Betrayal (OXT × T) is the most fragile moral foundation because:
+#
+# 1. MULTIPLICATIVE FORMULA. loyalty = OXT × (0.5 + 0.5T) × scaling.
+#    When both inputs drop by X%, output drops ~2X% (vs ~X% for additive
+#    formulas like Care). This is not a design choice — it reflects the
+#    biology: in-group allegiance requires BOTH empathic bonding (OXT)
+#    AND active defense motivation (T) simultaneously.
+#
+# 2. SUBSTRATE SENSITIVITY ORDERING. Testosterone degrades fastest under
+#    EMF (Leydig cells: direct VGCC, minimal redundancy, steep dose-
+#    response). OXT degrades next (hypothalamic neurons). BDNF degrades
+#    slowest (cortical neurons, greater redundancy). Since Loyalty depends
+#    on the two MOST sensitive substrates (OXT × T) while Care depends on
+#    the most and LEAST sensitive (OXT + BDNF), Loyalty collapses first.
+#
+#    Measured across the BERM gradient:
+#      T:    0.955 (amish) → 0.393 (urban_office) = 59% decline
+#      OXT:  0.962 → 0.520 = 46% decline
+#      BDNF: 0.961 → 0.690 = 28% decline
+#
+# 3. CONSEQUENCES OF COLLAPSE.
+#    a. Boundary dissolution — in-group/out-group distinction has no
+#       biological substrate. The concept of "us" becomes cognitively
+#       available but motivationally empty.
+#    b. Collective action failure — Olson (1965): collective action
+#       requires trust (OXT), punishment willingness (T), and shared
+#       identity (OXT×T). All three depend on loyalty substrates.
+#    c. Pathological universalism — when binding foundations collapse
+#       but individualizing remain, Care fills the moral vacuum.
+#       Care without Loyalty is: universal (no boundary), immediate
+#       (no temporal discounting), individual (no group-level cost
+#       accounting), and non-reciprocal (no mutual obligation).
+#    d. Policy vulnerability — specific policy domains become
+#       systematically pathological because the moral foundations
+#       that would constrain them are absent.
+#    e. Feedback ratchet — loyalty collapse produces policies that
+#       further erode social cohesion, which further degrades OXT
+#       through reduced bonding, which further collapses loyalty.
+#       Putnam 2007 ("E Pluribus Unum"): ethnic diversity reduces
+#       social trust even within in-groups. The collapse catalyzes
+#       the conditions that deepen it.
+#
+# 4. THE IMMIGRATION CASE (flagship prediction).
+#    Support for net-negative immigration in collapsed-loyalty populations
+#    is not irrationality — it is the rational output of Care-only moral
+#    reasoning. Care sees individual migrant suffering (proximate, visible,
+#    emotionally salient). The foundations that would check Care are absent:
+#    Loyalty (in-group cost accounting), Authority (standards enforcement),
+#    Sanctity (cultural boundary maintenance), Fairness-as-reciprocity
+#    (mutual obligation). The result: admission without integration
+#    requirement, without economic viability assessment, without cultural
+#    compatibility consideration. The policy is pathological from a whole-
+#    palette perspective but perfectly rational from the remaining palette.
+#
+# Literature:
+#     De Dreu 2010 (Science, N=280): OXT increases in-group favoritism.
+#     De Dreu 2011 (PNAS): OXT drives ethnocentrism — in-group love
+#         and out-group derogation are the same mechanism.
+#     Putnam 2007 (Scandinavian Pol Studies): diversity → reduced trust,
+#         reduced social capital, "hunkering down" — even within own group.
+#     Olson 1965 (Logic of Collective Action): collective goods require
+#         selective incentives, group identity, or coercion.
+#     Shalvi & De Dreu 2014: OXT promotes group-serving dishonesty —
+#         loyalty enables deception on behalf of the in-group.
+#     Stallen 2012: OXT increases conformity to in-group norms only.
+#     Henrich 2020 (WEIRDest People): Western individualism as
+#         dissolution of kin-based cooperative structures.
+
+
+POLICY_DOMAINS: dict[str, dict[str, Any]] = {
+    "immigration": {
+        "label": "Immigration openness",
+        "label_fi": "Maahanmuuttoavoimuus",
+        "driver": "care",
+        "constraint_weights": {"loyalty": 0.45, "authority": 0.35, "sanctity": 0.20},
+        "mechanism": "Care responds to visible migrant suffering. Loyalty (in-group cost accounting), Authority (standards enforcement), and Sanctity (cultural boundary maintenance) are absent.",
+        "mechanism_fi": "Huolenpito reagoi näkyvään siirtolaiskärsimykseen. Lojaalius (sisäryhmän kustannuslaskenta), Auktoriteetti (standardien täytäntöönpano) ja Pyhyys (kulttuuristen rajojen ylläpito) puuttuvat.",
+    },
+    "criminal_leniency": {
+        "label": "Criminal leniency",
+        "label_fi": "Rikosoikeudellinen lievyys",
+        "driver": "care",
+        "constraint_weights": {"authority": 0.40, "loyalty": 0.35, "sanctity": 0.25},
+        "mechanism": "Care responds to offender suffering under punishment. Authority (rule enforcement), Loyalty (community protection), and Sanctity (moral boundaries) are absent.",
+        "mechanism_fi": "Huolenpito reagoi rikoksentekijän kärsimykseen rangaistuksen alla. Auktoriteetti (sääntöjen täytäntöönpano), Lojaalius (yhteisön suojelu) ja Pyhyys (moraaliset rajat) puuttuvat.",
+    },
+    "welfare_nonreciprocity": {
+        "label": "Welfare without reciprocity",
+        "label_fi": "Hyvinvointi ilman vastavuoroisuutta",
+        "driver": "care",
+        "constraint_weights": {"loyalty": 0.55, "authority": 0.45},
+        "mechanism": "Care responds to material need. Loyalty (mutual obligation) and Authority (behavioral standards) would demand contribution in return.",
+        "mechanism_fi": "Huolenpito reagoi materiaaliseen tarpeeseen. Lojaalius (keskinäinen velvoite) ja Auktoriteetti (käyttäytymisstandardit) vaatisivat vastasuoritusta.",
+    },
+    "foreign_policy_naivety": {
+        "label": "Foreign policy naivety",
+        "label_fi": "Ulkopolitiikan naiivius",
+        "driver": "care",
+        "constraint_weights": {"loyalty": 0.50, "authority": 0.30, "liberty": 0.20},
+        "mechanism": "Care responds to global suffering. Loyalty (national interest), Authority (power dynamics comprehension), and Liberty (sovereignty protection) are absent.",
+        "mechanism_fi": "Huolenpito reagoi globaaliin kärsimykseen. Lojaalius (kansallinen intressi), Auktoriteetti (valtadynamiikan ymmärtäminen) ja Vapaus (suvereniteetin suojelu) puuttuvat.",
+    },
+    "demographic_indifference": {
+        "label": "Demographic indifference",
+        "label_fi": "Demografinen välinpitämättömyys",
+        "driver": "care",
+        "constraint_weights": {"loyalty": 0.60, "sanctity": 0.40},
+        "mechanism": "Without Loyalty, group composition is morally irrelevant. Without Sanctity, cultural continuity has no sacred dimension. Only individual-level wellbeing registers.",
+        "mechanism_fi": "Ilman Lojaalisuutta ryhmän koostumus on moraalisesti merkityksetön. Ilman Pyhyyttä kulttuurisella jatkuvuudella ei ole pyhää ulottuvuutta. Vain yksilötason hyvinvointi rekisteröityy.",
+    },
+}
+
+
+def collective_action_capacity(markers: dict[str, float]) -> float:
+    """Geometric mean of the three Olson prerequisites for collective action.
+
+    Olson (1965): collective goods require trust, enforcement capacity,
+    and shared identity. All three must be present — weakness in any one
+    makes collective action impossible regardless of the others. The
+    geometric mean captures this: if any input approaches zero, the
+    product approaches zero.
+
+    Inputs:
+        trust = OXT (oxytocin → social bonding, reciprocity baseline)
+        enforcement = T (testosterone → punishment of free-riders)
+        identification = loyalty_betrayal(markers) (OXT×T → group identity)
+    """
+    trust = markers["OXT"]
+    enforcement = markers["T"]
+    identification = loyalty_betrayal(markers)
+    return round((trust * enforcement * identification) ** (1.0 / 3.0), 4)
+
+
+def pathological_universalism_index(
+    markers: dict[str, float],
+    threshold: float = 0.35,
+) -> float:
+    """Measures Care-driven moral reasoning without binding constraints.
+
+    Pathological universalism is the state where individualizing foundations
+    (Care, Fairness, Liberty) remain functional while binding foundations
+    (Loyalty, Authority, Sanctity) have collapsed below threshold. Care
+    fills the moral vacuum, producing policy preferences that are rational
+    from the remaining palette but pathological from the full palette.
+
+    The index peaks in the suburban-to-urban transition zone where binding
+    has collapsed but individualizing remains. At very high EMF (deep
+    urban), even Care degrades, and universalism gives way to nihilism.
+    """
+    mf = moral_foundations_profile(markers)
+    mb = moral_breadth(mf, threshold)
+
+    binding_mean = (mf["loyalty"] + mf["authority"] + mf["sanctity"]) / 3.0
+    indiv_mean = (mf["care"] + mf["fairness"] + mf["liberty"]) / 3.0
+
+    imbalance_continuous = max(0.0, indiv_mean - binding_mean) / max(0.01, indiv_mean)
+
+    threshold_gap = max(0, mb["individualizing_active"] - mb["binding_active"]) / 3.0
+
+    pu = 0.5 * imbalance_continuous + 0.5 * threshold_gap
+    return round(max(0.0, min(1.0, pu)), 4)
+
+
+def policy_vulnerability_profile(
+    markers: dict[str, float],
+    threshold: float = 0.35,
+) -> dict[str, Any]:
+    """Per-domain policy vulnerability from loyalty/binding collapse.
+
+    For each policy domain, computes vulnerability as:
+      (1 - weighted_constraint) × min(1, care_driver / threshold)
+
+    The first term measures how degraded the constraining foundations are.
+    The second term measures whether Care still provides moral motivation
+    (if Care itself has collapsed, the population shifts from pathological
+    universalism to apathy/nihilism — a different failure mode).
+    """
+    mf = moral_foundations_profile(markers)
+    results: dict[str, Any] = {}
+
+    for domain, spec in POLICY_DOMAINS.items():
+        driver_score = mf[spec["driver"]]
+        constraint = sum(
+            w * mf[f] for f, w in spec["constraint_weights"].items()
+        )
+        care_factor = min(1.0, driver_score / threshold)
+        vuln = (1.0 - constraint) * care_factor
+        results[domain] = {
+            "vulnerability": round(max(0.0, min(1.0, vuln)), 4),
+            "driver": round(driver_score, 4),
+            "constraint": round(constraint, 4),
+            "label": spec["label"],
+        }
+
+    return results
+
+
+def loyalty_collapse_analysis(
+    markers: dict[str, float],
+    threshold: float = 0.35,
+) -> dict[str, Any]:
+    """Comprehensive analysis of in-group loyalty collapse and its consequences.
+
+    Returns substrate fragility metrics, collective action capacity,
+    pathological universalism index, per-domain policy vulnerability,
+    and feedback ratchet velocity.
+    """
+    mf = moral_foundations_profile(markers)
+    mb = moral_breadth(mf, threshold)
+
+    loyalty_score = mf["loyalty"]
+    care_score = mf["care"]
+    authority_score = mf["authority"]
+    sanctity_score = mf["sanctity"]
+
+    boundary_dissolution = round(max(0.0, 1.0 - loyalty_score), 4)
+
+    binding_mean = (loyalty_score + authority_score + sanctity_score) / 3.0
+    indiv_mean = (care_score + mf["fairness"] + mf["liberty"]) / 3.0
+    care_dominance = round(
+        care_score / max(0.01, care_score + loyalty_score + authority_score + sanctity_score),
+        4,
+    )
+
+    cap = collective_action_capacity(markers)
+    pu = pathological_universalism_index(markers, threshold)
+    pvp = policy_vulnerability_profile(markers, threshold)
+
+    ratchet = round(
+        (1.0 - loyalty_score) * (1.0 - cap),
+        4,
+    )
+
+    return {
+        "loyalty": round(loyalty_score, 4),
+        "care": round(care_score, 4),
+        "boundary_dissolution": boundary_dissolution,
+        "care_dominance": care_dominance,
+        "collective_action_capacity": cap,
+        "pathological_universalism": pu,
+        "ratchet_velocity": ratchet,
+        "binding_active": mb["binding_active"],
+        "individualizing_active": mb["individualizing_active"],
+        "policy_vulnerability": pvp,
+    }
+
+
+def loyalty_collapse_gradient(
+    year: float = 2025,
+) -> list[dict[str, Any]]:
+    """Loyalty collapse analysis across EMF environments.
+
+    Shows the full degradation gradient from K-selected Amish
+    (intact loyalty, high collective action) to r-selected urban
+    (dissolved boundaries, pathological universalism, policy
+    vulnerability, self-reinforcing feedback ratchet).
+    """
+    env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+    results: list[dict[str, Any]] = []
+
+    for env_name in env_order:
+        markers = environment_biomarkers(env_name, year)
+        analysis = loyalty_collapse_analysis(markers)
+        analysis["environment"] = env_name
+        results.append(analysis)
+
+    return results

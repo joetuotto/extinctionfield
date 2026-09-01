@@ -23,11 +23,17 @@ from berm.civilization.political_biology import (
     IDEOLOGY_PROFILES,
     INDIVIDUALIZING_FOUNDATIONS,
     MORAL_FOUNDATION_FUNCTIONS,
+    POLICY_DOMAINS,
     RK_TRAIT_FUNCTIONS,
     RK_TRAIT_LABELS,
     RK_TRAIT_SUBSTRATES,
     EMFEnvironment,
     authority_hierarchy,
+    collective_action_capacity,
+    loyalty_collapse_analysis,
+    loyalty_collapse_gradient,
+    pathological_universalism_index,
+    policy_vulnerability_profile,
     care_harm,
     classify_ideology,
     cognitive_complexity,
@@ -1081,3 +1087,206 @@ class TestRKStrategyGradient:
             haidt_loyalty = loyalty_betrayal(markers)
             assert abs(rk_loyalty - haidt_loyalty) < 0.15, \
                 f"{env}: r/K loyalty {rk_loyalty:.3f} vs Haidt {haidt_loyalty:.3f}"
+
+
+# ──────────────────────────────────────────────────────────────────────
+# Loyalty collapse analysis
+# ──────────────────────────────────────────────────────────────────────
+
+
+class TestCollectiveActionCapacity:
+    """Olson's collective action prerequisites across EMF gradient."""
+
+    ENVS = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+
+    def test_bounds(self):
+        for env in self.ENVS:
+            m = environment_biomarkers(env, 2025)
+            cap = collective_action_capacity(m)
+            assert 0.0 <= cap <= 1.0, f"{env}: {cap}"
+
+    def test_monotonic_decrease(self):
+        caps = [collective_action_capacity(environment_biomarkers(e, 2025)) for e in self.ENVS]
+        for i in range(len(caps) - 1):
+            assert caps[i] > caps[i + 1], \
+                f"{self.ENVS[i]} ({caps[i]:.3f}) should > {self.ENVS[i+1]} ({caps[i+1]:.3f})"
+
+    def test_amish_highest(self):
+        caps = {e: collective_action_capacity(environment_biomarkers(e, 2025)) for e in self.ENVS}
+        assert caps["amish"] == max(caps.values())
+        assert caps["amish"] > 0.80
+
+    def test_urban_office_lowest(self):
+        caps = {e: collective_action_capacity(environment_biomarkers(e, 2025)) for e in self.ENVS}
+        assert caps["urban_office"] == min(caps.values())
+        assert caps["urban_office"] < 0.50
+
+    def test_urban_less_than_half_amish(self):
+        amish = collective_action_capacity(environment_biomarkers("amish", 2025))
+        urban = collective_action_capacity(environment_biomarkers("urban_office", 2025))
+        assert urban < amish * 0.50
+
+
+class TestPathologicalUniversalism:
+    """PU peaks where binding collapses but individualizing remains."""
+
+    ENVS = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+
+    def test_bounds(self):
+        for env in self.ENVS:
+            m = environment_biomarkers(env, 2025)
+            pu = pathological_universalism_index(m)
+            assert 0.0 <= pu <= 1.0, f"{env}: {pu}"
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert pathological_universalism_index(m) < 0.05
+
+    def test_urban_residential_peak(self):
+        """PU should peak at urban_residential — the transition zone."""
+        pus = {e: pathological_universalism_index(environment_biomarkers(e, 2025)) for e in self.ENVS}
+        assert pus["urban_residential"] > pus["suburban"]
+        assert pus["urban_residential"] > pus["urban_office"]
+        assert pus["urban_residential"] == max(pus.values())
+
+    def test_threshold_transition(self):
+        """The jump from suburban to urban_residential should be large."""
+        sub = pathological_universalism_index(environment_biomarkers("suburban", 2025))
+        urb = pathological_universalism_index(environment_biomarkers("urban_residential", 2025))
+        assert urb > sub * 5, f"suburban={sub:.3f} urban_res={urb:.3f}, should be >5× jump"
+
+    def test_urban_office_drops(self):
+        """At very high EMF even Care fails — PU drops from peak."""
+        urb_res = pathological_universalism_index(environment_biomarkers("urban_residential", 2025))
+        urb_off = pathological_universalism_index(environment_biomarkers("urban_office", 2025))
+        assert urb_off < urb_res
+
+
+class TestPolicyVulnerability:
+    """Per-domain policy vulnerability from binding collapse."""
+
+    ENVS = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+
+    def test_all_domains_present(self):
+        m = environment_biomarkers("suburban", 2025)
+        pvp = policy_vulnerability_profile(m)
+        for domain in POLICY_DOMAINS:
+            assert domain in pvp
+            assert "vulnerability" in pvp[domain]
+            assert "driver" in pvp[domain]
+            assert "constraint" in pvp[domain]
+
+    def test_bounds(self):
+        for env in self.ENVS:
+            m = environment_biomarkers(env, 2025)
+            pvp = policy_vulnerability_profile(m)
+            for domain, data in pvp.items():
+                assert 0.0 <= data["vulnerability"] <= 1.0, f"{env}/{domain}: {data['vulnerability']}"
+
+    def test_immigration_monotonic_increase(self):
+        vulns = [
+            policy_vulnerability_profile(environment_biomarkers(e, 2025))["immigration"]["vulnerability"]
+            for e in self.ENVS
+        ]
+        for i in range(len(vulns) - 1):
+            assert vulns[i] < vulns[i + 1], \
+                f"{self.ENVS[i]} ({vulns[i]:.3f}) should < {self.ENVS[i+1]} ({vulns[i+1]:.3f})"
+
+    def test_all_domains_monotonic(self):
+        for domain in POLICY_DOMAINS:
+            vulns = [
+                policy_vulnerability_profile(environment_biomarkers(e, 2025))[domain]["vulnerability"]
+                for e in self.ENVS
+            ]
+            for i in range(len(vulns) - 1):
+                assert vulns[i] < vulns[i + 1], \
+                    f"{domain}: {self.ENVS[i]} ({vulns[i]:.3f}) should < {self.ENVS[i+1]} ({vulns[i+1]:.3f})"
+
+    def test_amish_low_vulnerability(self):
+        pvp = policy_vulnerability_profile(environment_biomarkers("amish", 2025))
+        for domain, data in pvp.items():
+            assert data["vulnerability"] < 0.25, f"amish/{domain}: {data['vulnerability']}"
+
+    def test_urban_office_high_vulnerability(self):
+        pvp = policy_vulnerability_profile(environment_biomarkers("urban_office", 2025))
+        for domain, data in pvp.items():
+            assert data["vulnerability"] > 0.50, f"urban_office/{domain}: {data['vulnerability']}"
+
+
+class TestLoyaltyCollapseAnalysis:
+    """Comprehensive loyalty collapse analysis integration."""
+
+    ENVS = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+
+    def test_all_keys_present(self):
+        m = environment_biomarkers("suburban", 2025)
+        a = loyalty_collapse_analysis(m)
+        expected_keys = {
+            "loyalty", "care", "boundary_dissolution", "care_dominance",
+            "collective_action_capacity", "pathological_universalism",
+            "ratchet_velocity", "binding_active", "individualizing_active",
+            "policy_vulnerability",
+        }
+        assert expected_keys == set(a.keys())
+
+    def test_boundary_dissolution_monotonic(self):
+        vals = [
+            loyalty_collapse_analysis(environment_biomarkers(e, 2025))["boundary_dissolution"]
+            for e in self.ENVS
+        ]
+        for i in range(len(vals) - 1):
+            assert vals[i] < vals[i + 1]
+
+    def test_ratchet_velocity_monotonic(self):
+        vals = [
+            loyalty_collapse_analysis(environment_biomarkers(e, 2025))["ratchet_velocity"]
+            for e in self.ENVS
+        ]
+        for i in range(len(vals) - 1):
+            assert vals[i] < vals[i + 1]
+
+    def test_binding_threshold_transition(self):
+        """Suburban has all binding active; urban_residential has none."""
+        sub = loyalty_collapse_analysis(environment_biomarkers("suburban", 2025))
+        urb = loyalty_collapse_analysis(environment_biomarkers("urban_residential", 2025))
+        assert sub["binding_active"] == 3
+        assert urb["binding_active"] == 0
+
+    def test_care_dominance_increases(self):
+        """Care's share of total moral weight increases with EMF."""
+        vals = [
+            loyalty_collapse_analysis(environment_biomarkers(e, 2025))["care_dominance"]
+            for e in self.ENVS
+        ]
+        assert vals[-1] > vals[0]
+
+
+class TestLoyaltyCollapseGradient:
+    """Full gradient across environments."""
+
+    def test_returns_all_environments(self):
+        gradient = loyalty_collapse_gradient()
+        envs = [g["environment"] for g in gradient]
+        assert envs == ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+
+    def test_gradient_contains_analysis_keys(self):
+        gradient = loyalty_collapse_gradient()
+        for g in gradient:
+            assert "loyalty" in g
+            assert "collective_action_capacity" in g
+            assert "pathological_universalism" in g
+            assert "policy_vulnerability" in g
+            assert "environment" in g
+
+    def test_immigration_vulnerability_gradient(self):
+        gradient = loyalty_collapse_gradient()
+        vulns = [g["policy_vulnerability"]["immigration"]["vulnerability"] for g in gradient]
+        assert vulns[0] < 0.20
+        assert vulns[-1] > 0.60
+        for i in range(len(vulns) - 1):
+            assert vulns[i] < vulns[i + 1]
+
+    def test_ratchet_gradient(self):
+        gradient = loyalty_collapse_gradient()
+        ratchets = [g["ratchet_velocity"] for g in gradient]
+        assert ratchets[-1] > ratchets[0] * 10

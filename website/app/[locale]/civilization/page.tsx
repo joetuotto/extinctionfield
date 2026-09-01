@@ -935,6 +935,52 @@ const COPY = {
     ],
     sRKConclusion: "The r/K framework explains why the political shift is not ideological drift but reproductive strategy mimicry. A population exposed to chronic EMF does not choose r-strategy. It is pushed into r-phenotypic expression because the endocrine substrates of K-strategy — monogamy, high parental investment, delayed gratification, group loyalty, competitive drive — are systematically degraded. The political is biological. The biological is electromagnetic.",
 
+    sLCTitle: "In-Group Loyalty Collapse",
+    sLCDesc: "Loyalty/Betrayal (OXT × T) is the most fragile moral foundation because it depends on a multiplicative interaction between the two most EMF-sensitive biomarkers. When both inputs drop by X%, a multiplicative output drops ~2X% — while additive functions (Care, Fairness) drop only ~X%. Testosterone degrades fastest (Leydig cells: direct VGCC, 59% decline across the gradient), followed by oxytocin (hypothalamic neurons, 46%), then BDNF (cortical, 28%). Loyalty depends on the two most sensitive; Care depends on the most and least sensitive. Loyalty collapses first. The consequences cascade through collective action, policy formation, and social cohesion — creating a self-reinforcing feedback loop.",
+    sLCColEnv: "Environment", sLCColLoyalty: "Loyalty", sLCColCare: "Care", sLCColBoundary: "Boundary Dissolution", sLCColCAC: "Collective Action", sLCColPU: "Pathol. Universalism", sLCColRatchet: "Ratchet",
+    sLCEnvs: [
+      { env: "Amish", loyalty: "0.76", care: "0.92", boundary: "0.24", cac: "0.89", pu: "0.00", ratchet: "0.03" },
+      { env: "Rural", loyalty: "0.50", care: "0.56", boundary: "0.50", cac: "0.62", pu: "0.01", ratchet: "0.19" },
+      { env: "Suburban", loyalty: "0.40", care: "0.44", boundary: "0.60", cac: "0.51", pu: "0.04", ratchet: "0.29" },
+      { env: "Urban Res.", loyalty: "0.35", care: "0.38", boundary: "0.65", cac: "0.45", pu: "0.57", ratchet: "0.36" },
+      { env: "Urban Office", loyalty: "0.31", care: "0.33", boundary: "0.69", cac: "0.40", pu: "0.25", ratchet: "0.41" },
+    ],
+    sLCMechTitle: "The Mechanism Chain",
+    sLCMechSteps: [
+      "EMF → VGCC activation → Ca²⁺ influx → testosterone decline (Leydig cells, most vulnerable) + oxytocin decline (hypothalamic neurons)",
+      "OXT × T product collapses (multiplicative = fragile) → Loyalty substrate destroyed",
+      "In-group boundary dissolves — the concept of 'us' becomes cognitively available but motivationally empty",
+      "Collective action capacity lost — Olson's three prerequisites (trust, enforcement, identification) all depend on loyalty substrates",
+      "Care fills the moral vacuum — universal, immediate, individual, non-reciprocal. No competing foundation remains to constrain it.",
+      "Policies evaluated only by Care: net-negative immigration admitted, criminals pitied, welfare disbursed — all without reciprocity, standards, or cost accounting",
+      "Policy outputs further erode social cohesion (Putnam 2007: diversity → reduced trust even within in-groups) → further OXT decline → loyalty degrades further",
+    ],
+    sLCCollectiveTitle: "Collective Action Failure",
+    sLCCollectiveDesc: "Mancur Olson (1965) showed that collective goods require three prerequisites: trust (will partners cooperate?), enforcement (will defectors be punished?), and shared identity (who is 'us'?). All three map to loyalty substrates: trust = OXT, enforcement = T, identification = OXT×T. The geometric mean captures the constraint that all three must be present — weakness in any one makes collective action impossible. Urban populations have less than half the collective action capacity of low-EMF populations. This is not a cultural difference. It is an endocrine one.",
+    sLCPolicyTitle: "Policy Vulnerability",
+    sLCPolicyDesc: "When binding foundations collapse, specific policy domains become systematically vulnerable. Vulnerability = (1 − constraint strength) × whether Care still provides motivation. Each domain has a different constellation of constraining foundations — but Loyalty appears in all of them.",
+    sLCColPolicy: "Policy Domain", sLCColDriver: "Driver", sLCColConstraint: "Missing Constraints", sLCColVulnAmish: "Amish", sLCColVulnUrban: "Urban",
+    sLCPolicies: [
+      { policy: "Immigration openness", driver: "Care (migrant suffering)", constraint: "Loyalty + Authority + Sanctity", vAmish: "0.15", vUrban: "0.68" },
+      { policy: "Criminal leniency", driver: "Care (offender suffering)", constraint: "Authority + Loyalty + Sanctity", vAmish: "0.13", vUrban: "0.69" },
+      { policy: "Welfare without reciprocity", driver: "Care (material need)", constraint: "Loyalty + Authority", vAmish: "0.17", vUrban: "0.67" },
+      { policy: "Foreign policy naivety", driver: "Care (global suffering)", constraint: "Loyalty + Authority + Liberty", vAmish: "0.18", vUrban: "0.67" },
+      { policy: "Demographic indifference", driver: "Care + Fairness (equality)", constraint: "Loyalty + Sanctity", vAmish: "0.18", vUrban: "0.68" },
+    ],
+    sLCImmigrationTitle: "The Immigration Case",
+    sLCImmigrationDesc: "Support for net-negative immigration in loyalty-collapsed populations is not irrationality — it is the rational output of Care-only moral reasoning. Care sees individual migrant suffering: proximate, visible, emotionally salient. The foundations that would constrain Care are absent: Loyalty (in-group cost accounting: 'what does this cost us?'), Authority (standards enforcement: 'do they meet the criteria?'), Sanctity (cultural boundary maintenance: 'does this preserve what we are?'), Fairness-as-reciprocity (mutual obligation: 'what do they contribute?'). The result: admission without integration requirement, without economic viability assessment, without cultural compatibility consideration. Every step is morally justified by the remaining foundation. Every step is pathological from the full palette.",
+    sLCRatchetTitle: "The Feedback Ratchet",
+    sLCRatchetDesc: "The collapse is self-reinforcing. Loyalty collapse produces policies that further erode social cohesion (immigration without integration, welfare without reciprocity, crime without punishment). Reduced cohesion reduces social bonding frequency, which reduces OXT (Feldman 2012: social interaction → OXT release). Reduced OXT further degrades loyalty substrate. Meanwhile, the weakened collective action capacity means the population cannot organize to resist the policies — the very mechanism that would allow course correction is the one that has failed. Putnam (2007, 'E Pluribus Unum') documented that ethnic diversity reduces social trust, altruism, and community cooperation even within one's own ethnic group — the opposite of the contact hypothesis. The ratchet velocity increases monotonically with EMF: 0.03 (amish) → 0.41 (urban office). Each turn of the ratchet makes the next turn more likely and reversal less likely.",
+    sLCLit: [
+      "De Dreu 2010 (Science, N=280): oxytocin increases in-group favoritism. De Dreu 2011 (PNAS): OXT drives ethnocentrism — in-group love and out-group derogation are the same mechanism, not opposites.",
+      "Putnam 2007 (Scandinavian Political Studies): diversity reduces social trust, altruism, community cooperation, and friend networks — even within own ethnic group. 'Hunkering down' in diverse communities.",
+      "Olson 1965 (Logic of Collective Action): collective goods require selective incentives, shared identity, or coercion. Without loyalty substrate, only coercion remains — but the state itself is captured by Care-only agents who will not apply it.",
+      "Shalvi & De Dreu 2014: oxytocin promotes group-serving dishonesty — loyalty enables deception on behalf of the in-group. Without it, the group cannot even coordinate self-interested defense.",
+      "Henrich 2020 (The WEIRDest People in the World): Western individualism as the historical dissolution of kin-based cooperative structures — the same process BERM identifies as endocrine, now shown to have institutional consequences spanning centuries.",
+      "Feldman 2012: social interaction drives OXT release (positive feedback). Reduced social cohesion → reduced interaction → reduced OXT → reduced cohesion. The loop is biological, not merely sociological.",
+    ],
+    sLCConclusion: "The model predicts that pathological universalism — unlimited immigration, unconditional welfare, criminal leniency, demographic indifference — is not a value choice but an endocrine consequence. It is what remains when the moral foundations that would constrain Care (Loyalty, Authority, Sanctity) have lost their biological substrate. The population does not choose these policies because they believe in open borders. They believe in open borders because the biological machinery for believing in borders has been degraded. And each policy choice accelerates the degradation. The ratchet turns. The correction requires restoring the substrate, not winning the argument.",
+
     s10title: "Epistemic Boundaries",
     s10claims: [
       "Seven RCTs establish causal links between testosterone and specific behaviors in men.",
@@ -1914,6 +1960,52 @@ const COPY = {
       "Parent ym. 2003 (Endocr Rev): sekulaarinen trendi kohti aikaisempaa puberteettia 150 vuoden ajalta — ennustettu tulos laskevan melatoniinin (HPG-akselin estoinhibitio) seurauksena yhä sähköistyvämmissä ympäristöissä.",
     ],
     sRKConclusion: "r/K-viitekehys selittää, miksi poliittinen siirtymä ei ole ideologista ajautumista vaan lisääntymisstrategian mimikryä. Krooniselle EMF:lle altistunut väestö ei valitse r-strategiaa. Se työnnetään r-fenotyyppiseen ilmentymään, koska K-strategian endokriiniset substraatit — monogamia, korkea vanhemmuusinvestointi, viivästetty tyydytys, ryhmälojaalius, kilpailuvietti — ovat systemaattisesti heikentyneet. Poliittinen on biologista. Biologinen on sähkömagneettista.",
+
+    sLCTitle: "Sisäryhmälojaalisuuden romahdus",
+    sLCDesc: "Lojaalius/pettäminen (OXT × T) on haurein moraaliperusta, koska se riippuu multiplikatiivisesta interaktiosta kahden EMF-herkimmän biomarkkerin välillä. Kun molemmat syötteet laskevat X%, multiplikatiivinen tuloste laskee ~2X% — kun taas additiiviset funktiot (Huolenpito, Reiluus) laskevat vain ~X%. Testosteroni rappeutuu nopeimmin (Leydigin solut: suora VGCC, 59% lasku gradientin yli), sitten oksitosiini (hypotalamuksen neuronit, 46%), sitten BDNF (kortikaalinen, 28%). Lojaalius riippuu kahdesta herkimmästä; Huolenpito riippuu herkimmästä ja vähiten herkästä. Lojaalius romahtaa ensin. Seuraukset kasautuvat kollektiivisen toiminnan, politiikanmuodostuksen ja sosiaalisen koheesion kautta — luoden itsevahvistuvan takaisinkytkentäsilmukan.",
+    sLCColEnv: "Ympäristö", sLCColLoyalty: "Lojaalius", sLCColCare: "Huolenpito", sLCColBoundary: "Rajan liukeneminen", sLCColCAC: "Kollekt. toiminta", sLCColPU: "Pat. universalismi", sLCColRatchet: "Räikkä",
+    sLCEnvs: [
+      { env: "Amish", loyalty: "0.76", care: "0.92", boundary: "0.24", cac: "0.89", pu: "0.00", ratchet: "0.03" },
+      { env: "Maaseutu", loyalty: "0.50", care: "0.56", boundary: "0.50", cac: "0.62", pu: "0.01", ratchet: "0.19" },
+      { env: "Esikaupunki", loyalty: "0.40", care: "0.44", boundary: "0.60", cac: "0.51", pu: "0.04", ratchet: "0.29" },
+      { env: "Kaup. asuin.", loyalty: "0.35", care: "0.38", boundary: "0.65", cac: "0.45", pu: "0.57", ratchet: "0.36" },
+      { env: "Kaup. toimisto", loyalty: "0.31", care: "0.33", boundary: "0.69", cac: "0.40", pu: "0.25", ratchet: "0.41" },
+    ],
+    sLCMechTitle: "Mekanismiketju",
+    sLCMechSteps: [
+      "EMF → VGCC-aktivaatio → Ca²⁺-virtaus → testosteronin lasku (Leydigin solut, haavoittuvimmat) + oksitosiinin lasku (hypotalamuksen neuronit)",
+      "OXT × T -tulo romahtaa (multiplikatiivinen = hauras) → Lojaalisuuden substraatti tuhoutunut",
+      "Sisäryhmän raja liukenee — käsite 'me' on kognitiivisesti saatavilla mutta motivationaalisesti tyhjä",
+      "Kollektiivisen toiminnan kapasiteetti menetetty — Olsonin kolme edellytystä (luottamus, täytäntöönpano, identifiointi) kaikki riippuvat lojaalisuussubstraateista",
+      "Huolenpito täyttää moraalisen tyhjiön — universaali, välitön, yksilöllinen, ei-vastavuoroinen. Mikään kilpaileva perusta ei jää rajoittamaan sitä.",
+      "Politiikat arvioidaan vain Huolenpidolla: nettonegatiiviinen maahanmuutto hyväksytään, rikollisia säälistään, hyvinvointia jaetaan — kaikki ilman vastavuoroisuutta, standardeja tai kustannuslaskentaa",
+      "Politiikkatuotokset heikentävät edelleen sosiaalista koheesiota (Putnam 2007: monimuotoisuus → vähentynyt luottamus jopa sisäryhmien sisällä) → lisää OXT-laskua → lojaalius rapautuu edelleen",
+    ],
+    sLCCollectiveTitle: "Kollektiivisen toiminnan epäonnistuminen",
+    sLCCollectiveDesc: "Mancur Olson (1965) osoitti, että kollektiiviset hyödykkeet vaativat kolme edellytystä: luottamus (toimivatko kumppanit yhteistyössä?), täytäntöönpano (rangaistaanko vapaamatkustajia?) ja jaettu identiteetti (keitä 'me' olemme?). Kaikki kolme karttuvat lojaalisuussubstraatteihin: luottamus = OXT, täytäntöönpano = T, identifiointi = OXT×T. Geometrinen keskiarvo kaappaa rajoitteen, että kaikkien kolmen on oltava läsnä — heikkous yhdessäkin tekee kollektiivisesta toiminnasta mahdotonta. Kaupunkiväestöillä on alle puolet matalan EMF:n väestöjen kollektiivisen toiminnan kapasiteetista. Tämä ei ole kulttuuriero. Se on endokriininen ero.",
+    sLCPolicyTitle: "Politiikkahaavoittuvuus",
+    sLCPolicyDesc: "Kun sitovat perusteet romahtavat, tietyt politiikka-alueet muuttuvat systemaattisesti haavoittuviksi. Haavoittuvuus = (1 − rajoitteen vahvuus) × onko Huolenpito yhä toiminnallinen. Kullakin alueella on erilainen rajoittavien perustojen yhdistelmä — mutta Lojaalius esiintyy niissä kaikissa.",
+    sLCColPolicy: "Politiikka-alue", sLCColDriver: "Ajuri", sLCColConstraint: "Puuttuvat rajoitteet", sLCColVulnAmish: "Amish", sLCColVulnUrban: "Kaupunki",
+    sLCPolicies: [
+      { policy: "Maahanmuuttoavoimuus", driver: "Huolenpito (siirtolais­kärsimys)", constraint: "Lojaalius + Auktoriteetti + Pyhyys", vAmish: "0.15", vUrban: "0.68" },
+      { policy: "Rikosoikeudellinen lievyys", driver: "Huolenpito (tekijän kärsimys)", constraint: "Auktoriteetti + Lojaalius + Pyhyys", vAmish: "0.13", vUrban: "0.69" },
+      { policy: "Hyvinvointi ilman vastavuoroisuutta", driver: "Huolenpito (materiaalinen tarve)", constraint: "Lojaalius + Auktoriteetti", vAmish: "0.17", vUrban: "0.67" },
+      { policy: "Ulkopolitiikan naiivius", driver: "Huolenpito (globaali kärsimys)", constraint: "Lojaalius + Auktoriteetti + Vapaus", vAmish: "0.18", vUrban: "0.67" },
+      { policy: "Demografinen välinpitämättömyys", driver: "Huolenpito + Reiluus (tasa-arvo)", constraint: "Lojaalius + Pyhyys", vAmish: "0.18", vUrban: "0.68" },
+    ],
+    sLCImmigrationTitle: "Maahanmuuttotapaus",
+    sLCImmigrationDesc: "Nettonegatiiviisen maahanmuuton kannatus lojaalisuusromahtaneissa väestöissä ei ole irrationaalisuutta — se on Huolenpito-ainokaisen moraalisen päättelyn rationaalinen tuotos. Huolenpito näkee yksittäisen siirtolaiskärsimyksen: läheisen, näkyvän, emotionaalisesti korostuvan. Perusteet, jotka rajoittaisivat Huolenpitoa, puuttuvat: Lojaalius (sisäryhmän kustannuslaskenta: 'mitä tämä maksaa meille?'), Auktoriteetti (standardien täytäntöönpano: 'täyttävätkö he kriteerit?'), Pyhyys (kulttuuristen rajojen ylläpito: 'säilyttääkö tämä sen, mitä olemme?'), Reiluus-vastavuoroisuutena (keskinäinen velvoite: 'mitä he kontribuoivat?'). Tulos: maahantulo ilman integrointivaatimusta, ilman taloudellisen elinkelpoisuuden arviointia, ilman kulttuurisen yhteensopivuuden harkintaa. Jokainen askel on moraalisesti perusteltu jäljellä olevalla perustalla. Jokainen askel on patologinen täydeltä paletilta.",
+    sLCRatchetTitle: "Takaisinkytkentäräikkä",
+    sLCRatchetDesc: "Romahdus on itsevahvistuva. Lojaalisuuden romahdus tuottaa politiikat, jotka edelleen heikentävät sosiaalista koheesiota (maahanmuutto ilman integrointia, hyvinvointi ilman vastavuoroisuutta, rikollisuus ilman rangaistusta). Heikentynyt koheesio vähentää sosiaalisen sitoutumisen tiheyttä, mikä vähentää OXT:a (Feldman 2012: sosiaalinen interaktio → OXT-vapautus). Vähentynyt OXT heikentää edelleen lojaalisuussubstraattia. Samalla heikentynyt kollektiivisen toiminnan kapasiteetti tarkoittaa, ettei väestö voi organisoitua vastustamaan politiikkoja — juuri se mekanismi, joka mahdollistaisi kurssinkorjauksen, on se joka on epäonnistunut. Putnam (2007, 'E Pluribus Unum') dokumentoi, että etninen monimuotoisuus vähentää sosiaalista luottamusta, altruismia ja yhteisöllistä yhteistyötä jopa oman etnisen ryhmän sisällä — kontaktihypoteesin vastakohta. Räikän nopeus kasvaa monotonisesti EMF:n mukana: 0.03 (amish) → 0.41 (kaupunkitoimisto). Jokainen räikän kierros tekee seuraavasta todennäköisemmän ja kääntymisestä epätodennäköisemmän.",
+    sLCLit: [
+      "De Dreu 2010 (Science, N=280): oksitosiini lisää sisäryhmäsuosimista. De Dreu 2011 (PNAS): OXT ajaa etnosentrismiä — sisäryhmärakkaus ja ulkoryhmän halventaminen ovat sama mekanismi, eivät vastakohdat.",
+      "Putnam 2007 (Scandinavian Political Studies): monimuotoisuus vähentää sosiaalista luottamusta, altruismia, yhteisöllistä yhteistyötä ja ystäväverkostoja — jopa oman etnisen ryhmän sisällä. 'Kyykistyminen' monimuotoisissa yhteisöissä.",
+      "Olson 1965 (Logic of Collective Action): kollektiiviset hyödykkeet vaativat valikoivia kannustimia, jaettua identiteettiä tai pakottamista. Ilman lojaalisuussubstraattia vain pakottaminen jää — mutta valtio itsessään on Huolenpito-ainokaisten toimijoiden hallussa, jotka eivät sovella sitä.",
+      "Shalvi & De Dreu 2014: oksitosiini edistää ryhmää palvelevaa epärehellisyyttä — lojaalius mahdollistaa petoksen sisäryhmän puolesta. Ilman sitä ryhmä ei voi edes koordinoida itseintressin puolustamista.",
+      "Henrich 2020 (The WEIRDest People in the World): länsimainen individualismi sukulaisuuspohjaisten yhteistyörakenteiden historiallisena liukenemisena — sama prosessi, jonka BERM tunnistaa endokriinisenä, nyt osoitettu institutionaalisia seurauksia vuosisatojen ajalta.",
+      "Feldman 2012: sosiaalinen interaktio ajaa OXT-vapautusta (positiivinen takaisinkytkentä). Vähentynyt sosiaalinen koheesio → vähentynyt interaktio → vähentynyt OXT → vähentynyt koheesio. Silmukka on biologinen, ei pelkästään sosiologinen.",
+    ],
+    sLCConclusion: "Malli ennustaa, että patologinen universalismi — rajoittamaton maahanmuutto, ehdoton hyvinvointi, rikosoikeudellinen lievyys, demografinen välinpitämättömyys — ei ole arvovalinta vaan endokriininen seuraus. Se on se, mikä jää jäljelle, kun Huolenpitoa rajoittavat moraaliperusteet (Lojaalius, Auktoriteetti, Pyhyys) ovat menettäneet biologisen substraattinsa. Väestö ei valitse näitä politiikkoja, koska se uskoo avoimiin rajoihin. Se uskoo avoimiin rajoihin, koska biologinen koneisto rajoihin uskomiselle on rappeutunut. Ja jokainen politiikkavalinta kiihdyttää rappeutumista. Räikkä pyörii. Korjaus vaatii substraatin palauttamista, ei väittelyn voittamista.",
 
     s10title: "Episteemiset rajat",
     s10claims: [
@@ -5917,6 +6009,134 @@ export default async function CivilizationPage({
             {d.sRKConclusion && (
             <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-5">
               <p className="text-sm leading-relaxed">{d.sRKConclusion}</p>
+            </div>
+            )}
+          </div>
+          )}
+
+          {/* In-Group Loyalty Collapse */}
+          {d.sLCTitle && (
+          <div className="mt-12">
+            <h4 className="text-lg font-bold mb-3">{d.sLCTitle}</h4>
+            <p className="text-sm text-muted-foreground mb-6">{d.sLCDesc}</p>
+
+            {d.sLCEnvs?.length > 0 && (
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sLCColEnv}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sLCColLoyalty}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sLCColCare}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sLCColBoundary}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sLCColCAC}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sLCColPU}</th>
+                    <th className="py-2 px-3 text-xs font-semibold">{d.sLCColRatchet}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.sLCEnvs.map((e: { env: string; loyalty: string; care: string; boundary: string; cac: string; pu: string; ratchet: string }, i: number) => (
+                    <tr key={i} className={`border-b border-white/5 ${parseFloat(e.pu) > 0.40 ? "bg-red-500/10" : parseFloat(e.pu) > 0.03 ? "bg-yellow-500/5" : ""}`}>
+                      <td className="py-2 px-3 text-sm font-medium">{e.env}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.loyalty}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.care}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.boundary}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.cac}</td>
+                      <td className="py-2 px-3 font-mono text-sm font-bold">{e.pu}</td>
+                      <td className="py-2 px-3 font-mono text-xs">{e.ratchet}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            )}
+
+            {/* Mechanism Chain */}
+            {d.sLCMechTitle && (
+            <div className="mb-8">
+              <h5 className="text-sm font-semibold mb-3">{d.sLCMechTitle}</h5>
+              <div className="space-y-2">
+                {d.sLCMechSteps?.map((step: string, i: number) => (
+                  <div key={i} className="flex gap-3 items-start">
+                    <span className="font-mono text-xs text-red-400 flex-shrink-0 mt-0.5">{i + 1}.</span>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{step}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            )}
+
+            {/* Collective Action */}
+            {d.sLCCollectiveTitle && (
+            <div className="rounded-xl border border-orange-500/30 bg-orange-500/5 p-5 mb-6">
+              <h5 className="text-sm font-bold mb-2">{d.sLCCollectiveTitle}</h5>
+              <p className="text-sm leading-relaxed">{d.sLCCollectiveDesc}</p>
+            </div>
+            )}
+
+            {/* Policy Vulnerability Table */}
+            {d.sLCPolicyTitle && (
+            <div className="mb-8">
+              <h5 className="text-sm font-semibold mb-2">{d.sLCPolicyTitle}</h5>
+              <p className="text-xs text-muted-foreground mb-4">{d.sLCPolicyDesc}</p>
+              {d.sLCPolicies?.length > 0 && (
+              <div className="overflow-x-auto mb-4">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sLCColPolicy}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sLCColDriver}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sLCColConstraint}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sLCColVulnAmish}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sLCColVulnUrban}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {d.sLCPolicies.map((p: { policy: string; driver: string; constraint: string; vAmish: string; vUrban: string }, i: number) => (
+                      <tr key={i} className="border-b border-white/5">
+                        <td className="py-2 px-3 text-sm font-medium">{p.policy}</td>
+                        <td className="py-2 px-3 text-xs text-green-400">{p.driver}</td>
+                        <td className="py-2 px-3 text-xs text-red-400">{p.constraint}</td>
+                        <td className="py-2 px-3 font-mono text-xs">{p.vAmish}</td>
+                        <td className="py-2 px-3 font-mono text-sm font-bold text-red-400">{p.vUrban}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              )}
+            </div>
+            )}
+
+            {/* Immigration Case */}
+            {d.sLCImmigrationTitle && (
+            <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-5 mb-6">
+              <h5 className="text-sm font-bold mb-2">{d.sLCImmigrationTitle}</h5>
+              <p className="text-sm leading-relaxed">{d.sLCImmigrationDesc}</p>
+            </div>
+            )}
+
+            {/* Feedback Ratchet */}
+            {d.sLCRatchetTitle && (
+            <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-5 mb-6">
+              <h5 className="text-sm font-bold mb-2">{d.sLCRatchetTitle}</h5>
+              <p className="text-sm leading-relaxed">{d.sLCRatchetDesc}</p>
+            </div>
+            )}
+
+            {d.sLCLit?.length > 0 && (
+            <div className="mb-6">
+              <ul className="space-y-2">
+                {d.sLCLit.map((ref: string, i: number) => (
+                  <li key={i} className="text-xs text-muted-foreground">{ref}</li>
+                ))}
+              </ul>
+            </div>
+            )}
+
+            {d.sLCConclusion && (
+            <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-5">
+              <p className="text-sm leading-relaxed">{d.sLCConclusion}</p>
             </div>
             )}
           </div>
