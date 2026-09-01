@@ -23,6 +23,9 @@ from berm.civilization.political_biology import (
     IDEOLOGY_PROFILES,
     INDIVIDUALIZING_FOUNDATIONS,
     MORAL_FOUNDATION_FUNCTIONS,
+    RK_TRAIT_FUNCTIONS,
+    RK_TRAIT_LABELS,
+    RK_TRAIT_SUBSTRATES,
     EMFEnvironment,
     authority_hierarchy,
     care_harm,
@@ -44,6 +47,14 @@ from berm.civilization.political_biology import (
     moral_foundations_profile,
     novelty_seeking,
     orientation_profile,
+    rk_competition,
+    rk_environment_gradient,
+    rk_group_loyalty,
+    rk_mating_strategy,
+    rk_parental_investment,
+    rk_sexual_timing,
+    rk_strategy_index,
+    rk_strategy_profile,
     sanctity_purity,
     threat_sensitivity,
     time_preference,
@@ -927,3 +938,146 @@ class TestMoralDistressIndex:
         d = moral_distress_index(mf)
         if mf["care"] > mf["authority"]:
             assert d["components"]["harm_hyperactivation"] > 0
+
+
+# ── r/K reproductive strategy ──
+
+
+class TestRKTraitBounds:
+    """All r/K trait functions must return values in [0, 1]."""
+
+    MARKER_SETS = [
+        NATURAL,
+        DEGRADED,
+        {k: 0.0 for k in NATURAL},
+        {k: 1.0 for k in NATURAL},
+        {k: 0.5 for k in NATURAL},
+    ]
+
+    @pytest.mark.parametrize("markers", MARKER_SETS)
+    def test_all_traits_bounded(self, markers):
+        profile = rk_strategy_profile(markers)
+        for trait, val in profile["traits"].items():
+            assert 0.0 <= val <= 1.0, f"{trait} = {val} out of bounds"
+        assert 0.0 <= profile["index"] <= 1.0
+
+
+class TestRKTraitMonotonicity:
+
+    def test_competition_increases_with_T(self):
+        lo = {**NATURAL, "T": 0.25}
+        hi = {**NATURAL, "T": 0.90}
+        assert rk_competition(hi) > rk_competition(lo)
+
+    def test_competition_increases_with_DA(self):
+        lo = {**NATURAL, "DA": 0.25}
+        hi = {**NATURAL, "DA": 0.90}
+        assert rk_competition(hi) > rk_competition(lo)
+
+    def test_competition_decreases_with_CORT(self):
+        lo = {**NATURAL, "CORT": 0.10}
+        hi = {**NATURAL, "CORT": 0.80}
+        assert rk_competition(lo) > rk_competition(hi)
+
+    def test_mating_increases_with_OXT(self):
+        lo = {**NATURAL, "OXT": 0.25}
+        hi = {**NATURAL, "OXT": 0.90}
+        assert rk_mating_strategy(hi) > rk_mating_strategy(lo)
+
+    def test_mating_increases_with_T(self):
+        lo = {**NATURAL, "T": 0.25}
+        hi = {**NATURAL, "T": 0.90}
+        assert rk_mating_strategy(hi) > rk_mating_strategy(lo)
+
+    def test_parenting_increases_with_OXT(self):
+        lo = {**NATURAL, "OXT": 0.25}
+        hi = {**NATURAL, "OXT": 0.90}
+        assert rk_parental_investment(hi) > rk_parental_investment(lo)
+
+    def test_sexual_timing_increases_with_MEL(self):
+        lo = {**NATURAL, "MEL": 0.25}
+        hi = {**NATURAL, "MEL": 0.90}
+        assert rk_sexual_timing(hi) > rk_sexual_timing(lo)
+
+    def test_group_loyalty_increases_with_OXT(self):
+        lo = {**NATURAL, "OXT": 0.25}
+        hi = {**NATURAL, "OXT": 0.90}
+        assert rk_group_loyalty(hi) > rk_group_loyalty(lo)
+
+    def test_group_loyalty_increases_with_T(self):
+        lo = {**NATURAL, "T": 0.25}
+        hi = {**NATURAL, "T": 0.90}
+        assert rk_group_loyalty(hi) > rk_group_loyalty(lo)
+
+
+class TestRKStrategyGradient:
+    """r/K strategy should shift from K to r as EMF increases."""
+
+    def test_amish_K_selected(self):
+        markers = environment_biomarkers("amish", 2025)
+        profile = rk_strategy_profile(markers)
+        assert profile["classification"] == "K-selected"
+        assert profile["index"] >= 0.70
+
+    def test_urban_office_r_selected(self):
+        markers = environment_biomarkers("urban_office", 2025)
+        profile = rk_strategy_profile(markers)
+        assert profile["classification"] == "r-selected"
+        assert profile["index"] < 0.45
+
+    def test_rk_index_decreases_with_emf(self):
+        """r/K index should decrease monotonically from amish to urban."""
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        indices = []
+        for env in envs:
+            markers = environment_biomarkers(env, 2025)
+            indices.append(rk_strategy_index(markers))
+        for i in range(len(indices) - 1):
+            assert indices[i] >= indices[i + 1], \
+                f"r/K index should decrease: {envs[i]}={indices[i]} vs {envs[i+1]}={indices[i+1]}"
+
+    def test_environment_gradient_returns_all_five(self):
+        gradient = rk_environment_gradient(2025)
+        assert len(gradient) == 5
+        envs = [g["environment"] for g in gradient]
+        assert envs == ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+
+    def test_all_five_traits_present(self):
+        markers = environment_biomarkers("suburban", 2025)
+        profile = rk_strategy_profile(markers)
+        assert set(profile["traits"].keys()) == {
+            "competition", "mating_strategy", "parental_investment",
+            "sexual_timing", "group_loyalty",
+        }
+
+    def test_substrates_documented(self):
+        assert len(RK_TRAIT_SUBSTRATES) == 5
+        for trait, subs in RK_TRAIT_SUBSTRATES.items():
+            assert len(subs) >= 2
+
+    def test_labels_documented(self):
+        assert len(RK_TRAIT_LABELS) == 5
+        for trait, labels in RK_TRAIT_LABELS.items():
+            assert "r" in labels and "K" in labels
+
+    def test_environment_profile_includes_rk(self):
+        """environment_profile should include rk_strategy."""
+        p = environment_profile("rural", 2025)
+        assert "rk_strategy" in p
+        assert "index" in p["rk_strategy"]
+        assert "traits" in p["rk_strategy"]
+
+    def test_sexual_timing_matches_melatonin_gradient(self):
+        """Sexual timing should track melatonin: amish delayed, urban early."""
+        amish = environment_biomarkers("amish", 2025)
+        urban = environment_biomarkers("urban_office", 2025)
+        assert rk_sexual_timing(amish) > rk_sexual_timing(urban)
+
+    def test_group_loyalty_matches_loyalty_foundation(self):
+        """r/K group loyalty and Haidt loyalty should correlate."""
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            markers = environment_biomarkers(env, 2025)
+            rk_loyalty = rk_group_loyalty(markers)
+            haidt_loyalty = loyalty_betrayal(markers)
+            assert abs(rk_loyalty - haidt_loyalty) < 0.15, \
+                f"{env}: r/K loyalty {rk_loyalty:.3f} vs Haidt {haidt_loyalty:.3f}"

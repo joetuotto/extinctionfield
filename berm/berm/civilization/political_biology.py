@@ -517,6 +517,7 @@ def environment_profile(
         "orientation": {k: round(v, 4) for k, v in profile.items()},
         "moral_foundations": mf,
         "moral_breadth": moral_breadth(mf),
+        "rk_strategy": rk_strategy_profile(markers),
         "dominant_ideology": classify_ideology(profile, bc),
     }
 
@@ -937,6 +938,205 @@ def foundation_collapse_order(
         })
 
     results.sort(key=lambda x: x["rank"])
+    return results
+
+
+# ── r/K reproductive strategy ──
+#
+# Anonymous Conservative (2014) mapped r/K selection theory to political
+# ideology: liberal = r-selected psychology, conservative = K-selected.
+# Five paired traits define the continuum.
+#
+# BERM contribution: the author attributes r/K shifts to resource
+# availability cycles. BERM identifies the MECHANISM — the urban EMF
+# environment produces r-selected endocrine profiles through VGCC-mediated
+# biomarker degradation. This is not evolution. It is environmental
+# phenotypic mimicry: r-type behavioral outputs in a genetically
+# K-selected species, produced by electromagnetic disruption of the
+# hormonal systems that underpin K-strategy traits.
+#
+# The dopamine/amygdala nexus (Ch 17): DRD4-7r polymorphism is associated
+# with liberal ideology, depression, promiscuity, and r-type behavior.
+# EMF-driven DA dysregulation produces the same phenotype without the
+# polymorphism. T. gondii alters dopamine signaling and produces r-type
+# traits; EMF does the same through a different pathway.
+#
+# Cities (Ch 28): the author notes cities are r-selecting environments
+# due to anonymity + resource abundance. BERM adds: cities are also the
+# HIGHEST EMF environments. The urban-liberal correlation has a direct
+# endocrine mechanism, not just a social-structural one.
+#
+# Key literature:
+#   Anonymous Conservative 2014 (r/K political psychology)
+#   Pianka 1970 (original r/K selection theory)
+#   Wilson 1975 (Sociobiology: K-strategy and parental investment)
+#   Rushton 1985 (differential K theory in humans)
+#   Settle 2010 (DRD4-7r → liberal ideology, N=2574)
+#   Welling 2025 (T RCT → conservative shift, N=136)
+
+
+RK_TRAIT_FUNCTIONS: dict[str, Any] = {}
+
+
+def rk_competition(m: dict[str, float]) -> float:
+    """Competition orientation. 0 = r (aversion), 1 = K (embrace).
+
+    T: competitive drive, dominance motivation, risk tolerance.
+    DA: incentive salience — reward from engaging in competition.
+    CORT: chronic stress suppresses willingness to compete.
+
+    K-selected organisms are programmed to compete aggressively.
+    r-selected organisms avoid direct competition, seeking advantage
+    through quantity over quality (Anonymous Conservative Ch 3).
+    Welling 2025 RCT: exogenous T shifts ideology conservative.
+    """
+    raw = (0.50 * m["T"] + 0.35 * m["DA"]) * (1.0 - 0.30 * m["CORT"])
+    return max(0.0, min(1.0, raw))
+
+
+def rk_mating_strategy(m: dict[str, float]) -> float:
+    """Mating strategy. 0 = r (promiscuous), 1 = K (monogamous).
+
+    OXT: pair-bonding, attachment (Feldman 2012, Walum 2012 AVPR1A).
+    T: mate-guarding, investment in single partnership over multiple.
+    The OXT×T interaction produces monogamous pair-bonding; when either
+    drops, the phenotype shifts toward serial mating.
+
+    K-organisms monopolize fit mates through monogamy. r-organisms
+    mate as widely as possible to maximize offspring count.
+    DRD4-7r associated with sexual promiscuity (Garcia 2010).
+    """
+    raw = m["OXT"] * (0.50 + 0.50 * m["T"])
+    return max(0.0, min(1.0, raw))
+
+
+def rk_parental_investment(m: dict[str, float]) -> float:
+    """Parental investment. 0 = r (low/single), 1 = K (high/two-parent).
+
+    OXT: nurturing drive, parent-offspring bonding (Feldman 2007).
+    T: protective provisioning — in K species, both parents invest.
+    BDNF: cognitive capacity for long-term investment planning.
+
+    K-organisms invest heavily in few offspring to maximize
+    competitive fitness. r-organisms produce many offspring with
+    minimal per-child investment.
+    """
+    raw = 0.40 * m["OXT"] + 0.30 * m["T"] + 0.20 * m["BDNF"]
+    return max(0.0, min(1.0, raw * (1.0 - 0.15 * m["CORT"])))
+
+
+def rk_sexual_timing(m: dict[str, float]) -> float:
+    """Sexual development timing. 0 = r (early onset), 1 = K (delayed).
+
+    MEL: melatonin controls puberty onset via hypothalamic-pituitary-
+    gonadal (HPG) axis. EMF-driven melatonin suppression directly
+    accelerates pubertal onset (Waldhauser 1991, Commentz 1997).
+
+    K-organisms delay sexual maturity to maximize mate value
+    and competitive fitness before entering the mating market.
+    r-organisms reproduce as early as possible. The secular trend
+    toward earlier puberty maps directly onto melatonin decline.
+    """
+    raw = 0.60 * m["MEL"] + 0.25 * m["BDNF"] + 0.15 * m["T"]
+    return max(0.0, min(1.0, raw))
+
+
+def rk_group_loyalty(m: dict[str, float]) -> float:
+    """In-group loyalty. 0 = r (none), 1 = K (fierce).
+
+    OXT: in-group bonding (De Dreu 2011 ethnocentrism).
+    T: out-group vigilance, group defense capacity.
+    The OXT×T interaction is identical to the Loyalty moral foundation.
+
+    K-organisms exhibit fierce in-group loyalty and out-group hostility.
+    r-organisms show no in-group preference — the concept of in-group
+    vs out-group is foreign to the r-psychology (Anonymous Conservative
+    Ch 3, 5). Cities undermine the 3 R's (reputation, reciprocity,
+    retribution) that maintain group cohesion (Ch 28).
+    """
+    raw = m["OXT"] * (0.50 + 0.50 * m["T"]) * (1.0 + 0.1 * m["CORT"])
+    return max(0.0, min(1.0, raw * 0.80))
+
+
+RK_TRAIT_FUNCTIONS = {
+    "competition": rk_competition,
+    "mating_strategy": rk_mating_strategy,
+    "parental_investment": rk_parental_investment,
+    "sexual_timing": rk_sexual_timing,
+    "group_loyalty": rk_group_loyalty,
+}
+
+RK_TRAIT_LABELS: dict[str, dict[str, str]] = {
+    "competition": {"r": "Aversion", "K": "Embrace"},
+    "mating_strategy": {"r": "Promiscuity", "K": "Monogamy"},
+    "parental_investment": {"r": "Low / single-parent", "K": "High / two-parent"},
+    "sexual_timing": {"r": "Early onset", "K": "Delayed maturity"},
+    "group_loyalty": {"r": "No in-group preference", "K": "Fierce in-group loyalty"},
+}
+
+RK_TRAIT_SUBSTRATES: dict[str, list[str]] = {
+    "competition": ["T", "DA", "CORT"],
+    "mating_strategy": ["OXT", "T"],
+    "parental_investment": ["OXT", "T", "BDNF"],
+    "sexual_timing": ["MEL", "BDNF", "T"],
+    "group_loyalty": ["OXT", "T"],
+}
+
+
+def rk_strategy_index(markers: dict[str, float]) -> float:
+    """Composite r/K strategy index. 0 = pure r, 1 = pure K.
+
+    Equal-weighted average of all five trait dimensions.
+    """
+    scores = [fn(markers) for fn in RK_TRAIT_FUNCTIONS.values()]
+    return round(sum(scores) / len(scores), 4)
+
+
+def rk_strategy_profile(markers: dict[str, float]) -> dict[str, Any]:
+    """Full r/K strategy profile from biomarker state.
+
+    Returns individual trait scores, composite index, and classification.
+    """
+    traits = {name: round(fn(markers), 4) for name, fn in RK_TRAIT_FUNCTIONS.items()}
+    index = round(sum(traits.values()) / len(traits), 4)
+
+    if index >= 0.70:
+        classification = "K-selected"
+    elif index >= 0.45:
+        classification = "mixed"
+    else:
+        classification = "r-selected"
+
+    return {
+        "traits": traits,
+        "index": index,
+        "classification": classification,
+        "substrates": RK_TRAIT_SUBSTRATES,
+        "labels": RK_TRAIT_LABELS,
+    }
+
+
+def rk_environment_gradient(
+    year: float = 2025,
+) -> list[dict[str, Any]]:
+    """r/K strategy across EMF environments.
+
+    Shows how the same genetically K-selected species expresses
+    increasingly r-selected phenotypes as EMF increases.
+    """
+    env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+    results: list[dict[str, Any]] = []
+
+    for env_name in env_order:
+        markers = environment_biomarkers(env_name, year)
+        profile = rk_strategy_profile(markers)
+        results.append({
+            "environment": env_name,
+            "rk_index": profile["index"],
+            "classification": profile["classification"],
+            "traits": profile["traits"],
+        })
+
     return results
 
 

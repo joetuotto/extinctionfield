@@ -904,6 +904,37 @@ const COPY = {
     ],
     sDistressConclusion: "The model does not predict that liberal positions are pathological because they are liberal. It predicts that the biological state which produces the liberal moral profile (binding foundations collapsed) also produces psychological distress — because humans evolved to operate with the full moral palette. The urban liberal is not morally wrong. They are morally incomplete, in exactly the way a person with reduced bone density is not making a lifestyle choice but experiencing a deficiency.",
 
+    sRKTitle: "r/K Reproductive Strategy",
+    sRKDesc: "Anonymous Conservative (The Evolutionary Psychology Behind Politics, 2014) mapped five psychological traits to the r/K selection continuum: r-strategists (liberal psychology) display competition aversion, promiscuity, low parental investment, early sexuality, and no in-group loyalty. K-strategists (conservative psychology) display the opposite. The original theory attributes this to resource abundance cycles. The BERM model identifies the mechanism: urban EMF environments produce r-selected endocrine profiles through VGCC-mediated biomarker degradation. This is environmental phenotypic mimicry of r-selection — not evolution. A genetically K-selected species expresses r-type behavioral outputs because its endocrine substrates are being suppressed.",
+    sRKColEnv: "Environment", sRKColIndex: "r/K Index", sRKColClass: "Classification",
+    sRKColComp: "Competition", sRKColMating: "Mating", sRKColParent: "Parenting", sRKColSexual: "Sexual Timing", sRKColLoyalty: "Group Loyalty",
+    sRKEnvs: [
+      { env: "Amish", index: "0.86", cls: "K-selected", comp: "0.80", mating: "0.94", parent: "0.85", sexual: "0.96", loyalty: "0.76" },
+      { env: "Rural", index: "0.60", cls: "Mixed", comp: "0.54", mating: "0.60", parent: "0.61", sexual: "0.76", loyalty: "0.50" },
+      { env: "Suburban", index: "0.49", cls: "Mixed", comp: "0.43", mating: "0.48", parent: "0.51", sexual: "0.61", loyalty: "0.40" },
+      { env: "Urban Res.", index: "0.42", cls: "r-selected", comp: "0.36", mating: "0.41", parent: "0.45", sexual: "0.52", loyalty: "0.35" },
+      { env: "Urban Office", index: "0.37", cls: "r-selected", comp: "0.31", mating: "0.36", parent: "0.41", sexual: "0.45", loyalty: "0.31" },
+    ],
+    sRKTraits: [
+      { trait: "Competition", rPole: "Aversion", kPole: "Embrace", substrate: "T + DA (suppressed by CORT)" },
+      { trait: "Mating Strategy", rPole: "Promiscuity", kPole: "Monogamy", substrate: "OXT × (0.5 + 0.5 × T)" },
+      { trait: "Parental Investment", rPole: "Low / single-parent", kPole: "High / two-parent", substrate: "OXT + T + BDNF (suppressed by CORT)" },
+      { trait: "Sexual Timing", rPole: "Early onset", kPole: "Delayed maturity", substrate: "MEL + BDNF + T" },
+      { trait: "Group Loyalty", rPole: "No in-group preference", kPole: "Fierce loyalty", substrate: "OXT × T (= Haidt Loyalty)" },
+    ],
+    sRKColTrait: "Trait", sRKColRPole: "r-pole (Liberal)", sRKColKPole: "K-pole (Conservative)", sRKColSubstrate: "BERM Substrate",
+    sRKMimicry: "This is not evolution. The human species did not change its reproductive strategy. EMF-driven biomarker degradation produces the endocrine state that phenotypically mimics r-selection — competition aversion (suppressed T+DA), promiscuity (reduced OXT pair-bonding), low parental investment (depleted OXT+T+BDNF), earlier puberty (collapsed MEL shutting down HPG axis inhibition), and weakened group loyalty (the same OXT×T interaction that Haidt's Loyalty foundation depends on). The r/K gradient across environments is identical to the moral foundations gradient because they share the same substrates.",
+    sRKDopamine: "The dopamine-amygdala nexus confirms the mechanism from two independent directions. DRD4-7r polymorphism correlates with liberal ideology, novelty seeking, and depression (Settle et al. 2010, Ebstein et al. 1996). Toxoplasma gondii alters dopamine and amygdala reactivity to produce r-type behavioral shifts (Flegr 2013). EMF degrades dopaminergic signaling through the same VTA pathway — producing the same phenotypic output without the polymorphism or the parasite. Three independent causes, one shared mechanism, one predicted outcome.",
+    sRKCities: "Anonymous Conservative identified cities as r-selecting environments because anonymity defeats the three R's — Reputation, Reciprocity, and Retribution — that enforce K-selected cooperative strategies. BERM adds the missing variable: cities are also the highest EMF environments. The urban-liberal correlation has a direct endocrine mechanism. Anonymity removes the social enforcement of K-strategy; EMF degrades the biological capacity for it. Double selection pressure, converging on the same phenotype.",
+    sRKLit: [
+      "Anonymous Conservative 2014 (The Evolutionary Psychology Behind Politics): five r/K traits mapped to liberal-conservative psychology. Resource abundance produces r-selection; scarcity produces K-selection.",
+      "Settle et al. 2010 (J Politics): DRD4-7r + social environment interaction predicts liberal ideology. The dopamine receptor variant is the genetic substrate; EMF-driven dopaminergic degradation is the environmental mimic.",
+      "Flegr 2013 (J Exp Biol): T. gondii manipulates host dopamine + amygdala reactivity → behavioral shifts matching r-type traits. An independent validation that dopaminergic disruption produces r-phenotypic mimicry.",
+      "Belsky et al. 2012 (JAMA Pediatrics): differential susceptibility — DRD4-7r carriers show greatest response to environmental quality. The same allele that predicts ideology also predicts environmental sensitivity.",
+      "Parent et al. 2003 (Endocr Rev): secular trend toward earlier puberty onset over 150 years — the predicted outcome of declining melatonin (HPG axis disinhibition) in increasingly electrified environments.",
+    ],
+    sRKConclusion: "The r/K framework explains why the political shift is not ideological drift but reproductive strategy mimicry. A population exposed to chronic EMF does not choose r-strategy. It is pushed into r-phenotypic expression because the endocrine substrates of K-strategy — monogamy, high parental investment, delayed gratification, group loyalty, competitive drive — are systematically degraded. The political is biological. The biological is electromagnetic.",
+
     s10title: "Epistemic Boundaries",
     s10claims: [
       "Seven RCTs establish causal links between testosterone and specific behaviors in men.",
@@ -1852,6 +1883,37 @@ const COPY = {
       "Lukianoff & Haidt 2018: kognitiiviset vääristymät (emotionaalinen päättely, katastrofointi, dikotominen ajattelu) leviävät kampuksilla, ovat Huolenpidon hyperaktivaation fenotyyppinen ilmentymä ilman Auktoriteetin tuomaa rakennetta.",
     ],
     sDistressConclusion: "Malli ei ennusta, että liberaalit kannat ovat patologisia koska ne ovat liberaaleja. Se ennustaa, että biologinen tila, joka tuottaa liberaalin moraaliprofiilin (sitovat perusteet romahtaneet), tuottaa myös psykologista ahdistusta — koska ihmiset ovat kehittyneet toimimaan täydellä moraalipaletilla. Kaupunkilaisliberaali ei ole moraalisesti väärässä. Hän on moraalisesti epätäydellinen, täsmälleen samalla tavalla kuin henkilö, jolla on alentunut luuntiheys, ei tee elämäntapavalintaa vaan kokee puutostilan.",
+
+    sRKTitle: "r/K-lisääntymisstrategia",
+    sRKDesc: "Anonymous Conservative (The Evolutionary Psychology Behind Politics, 2014) kartoitti viisi psykologista piirrettä r/K-valinnan jatkumolle: r-strategistit (liberaali psykologia) osoittavat kilpailun välttelyä, promiskuiteettia, matalaa vanhemmuusinvestointia, varhaista seksuaalisuutta ja ryhmälojaalisuuden puutetta. K-strategistit (konservatiivinen psykologia) osoittavat päinvastaista. Alkuperäinen teoria selittää tämän resurssien runsaussykleillä. BERM-malli tunnistaa mekanismin: kaupunkien EMF-ympäristöt tuottavat r-valittuja endokriinisiä profiileja VGCC-välitteisen biomarkkeridegradaation kautta. Tämä on r-valinnan ympäristöllistä fenotyyppistä mimikryä — ei evoluutiota. Geneettisesti K-valittu laji ilmentää r-tyyppisiä käyttäytymistuotoksia, koska sen endokriiniset substraatit ovat vaimentuneet.",
+    sRKColEnv: "Ympäristö", sRKColIndex: "r/K-indeksi", sRKColClass: "Luokitus",
+    sRKColComp: "Kilpailu", sRKColMating: "Parinmuod.", sRKColParent: "Vanhemmuus", sRKColSexual: "Sek. ajoitus", sRKColLoyalty: "Ryhmälojaalius",
+    sRKEnvs: [
+      { env: "Amish", index: "0.86", cls: "K-valittu", comp: "0.80", mating: "0.94", parent: "0.85", sexual: "0.96", loyalty: "0.76" },
+      { env: "Maaseutu", index: "0.60", cls: "Sekoitus", comp: "0.54", mating: "0.60", parent: "0.61", sexual: "0.76", loyalty: "0.50" },
+      { env: "Esikaupunki", index: "0.49", cls: "Sekoitus", comp: "0.43", mating: "0.48", parent: "0.51", sexual: "0.61", loyalty: "0.40" },
+      { env: "Kaup. asuin.", index: "0.42", cls: "r-valittu", comp: "0.36", mating: "0.41", parent: "0.45", sexual: "0.52", loyalty: "0.35" },
+      { env: "Kaup. toimisto", index: "0.37", cls: "r-valittu", comp: "0.31", mating: "0.36", parent: "0.41", sexual: "0.45", loyalty: "0.31" },
+    ],
+    sRKTraits: [
+      { trait: "Kilpailu", rPole: "Välttely", kPole: "Omaksuminen", substrate: "T + DA (CORT vaimentaa)" },
+      { trait: "Paritusstrategia", rPole: "Promiskuiteetti", kPole: "Monogamia", substrate: "OXT × (0.5 + 0.5 × T)" },
+      { trait: "Vanhemmuusinvestointi", rPole: "Matala / yksinhuoltaja", kPole: "Korkea / kahden vanhemman", substrate: "OXT + T + BDNF (CORT vaimentaa)" },
+      { trait: "Seksuaalinen ajoitus", rPole: "Varhainen alkaminen", kPole: "Viivästynyt kypsyminen", substrate: "MEL + BDNF + T" },
+      { trait: "Ryhmälojaalius", rPole: "Ei sisäryhmäpreferenssiä", kPole: "Voimakas lojaalius", substrate: "OXT × T (= Haidtin Lojaalius)" },
+    ],
+    sRKColTrait: "Piirre", sRKColRPole: "r-napa (Liberaali)", sRKColKPole: "K-napa (Konservatiivi)", sRKColSubstrate: "BERM-substraatti",
+    sRKMimicry: "Tämä ei ole evoluutiota. Ihmislaji ei muuttanut lisääntymisstrategiaansa. EMF-aiheuttama biomarkkeridegradaatio tuottaa endokriinisen tilan, joka fenotyyppisesti jäljittelee r-valintaa — kilpailun välttely (vaimentunut T+DA), promiskuiteetti (vähentynyt OXT-pariside), matala vanhemmuusinvestointi (ehtynyt OXT+T+BDNF), aikaistunut puberteetti (romahtanut MEL vapauttaa HPG-akselin inhibition) ja heikentynyt ryhmälojaalius (sama OXT×T-interaktio, josta Haidtin Lojaalisuusperusta riippuu). r/K-gradientti ympäristöjen välillä on identtinen moraaliperustojen gradientin kanssa, koska ne jakavat samat substraatit.",
+    sRKDopamine: "Dopamiini-amygdala-yhteys vahvistaa mekanismin kahdesta riippumattomasta suunnasta. DRD4-7r-polymorfismi korreloi liberaalin ideologian, uutuudenhakuisuuden ja masennuksen kanssa (Settle ym. 2010, Ebstein ym. 1996). Toxoplasma gondii muuttaa dopamiinia ja amygdalan reaktiivisuutta tuottaen r-tyyppisiä käyttäytymismuutoksia (Flegr 2013). EMF heikentää dopaminergista signalointia saman VTA-reitin kautta — tuottaen saman fenotyyppisen tuloksen ilman polymorfismia tai loista. Kolme riippumatonta syytä, yksi jaettu mekanismi, yksi ennustettu lopputulos.",
+    sRKCities: "Anonymous Conservative tunnisti kaupungit r-valitseviksi ympäristöiksi, koska anonymiteetti kumoaa kolme R:ää — Maine (Reputation), Vastavuoroisuus (Reciprocity) ja Rangaistus (Retribution) — jotka pakottavat K-valitut yhteistyöstrategiat. BERM lisää puuttuvan muuttujan: kaupungit ovat myös korkeimman EMF:n ympäristöjä. Kaupunki–liberaali-korrelaatiolla on suora endokriininen mekanismi. Anonymiteetti poistaa K-strategian sosiaalisen täytäntöönpanon; EMF heikentää biologista kapasiteettia siihen. Kaksinkertainen valintapaine, konvergoitumassa samaan fenotyyppiin.",
+    sRKLit: [
+      "Anonymous Conservative 2014 (The Evolutionary Psychology Behind Politics): viisi r/K-piirrettä kartoitettu liberaali–konservatiivi-psykologiaan. Resurssien runsaus tuottaa r-valintaa; niukkuus tuottaa K-valintaa.",
+      "Settle ym. 2010 (J Politics): DRD4-7r + sosiaalisen ympäristön interaktio ennustaa liberaalia ideologiaa. Dopamiinireseptorivariantti on geneettinen substraatti; EMF-aiheuttama dopaminerginen degradaatio on ympäristöllinen jäljittelijä.",
+      "Flegr 2013 (J Exp Biol): T. gondii manipuloi isännän dopamiinia + amygdalan reaktiivisuutta → käyttäytymismuutokset vastaavat r-tyypin piirteitä. Riippumaton validaatio siitä, että dopaminerginen häiriö tuottaa r-fenotyyppistä mimikryä.",
+      "Belsky ym. 2012 (JAMA Pediatrics): differentiaalinen herkkyys — DRD4-7r-kantajat osoittavat suurinta vastetta ympäristön laatuun. Sama alleeli, joka ennustaa ideologiaa, ennustaa myös ympäristöherkkyyttä.",
+      "Parent ym. 2003 (Endocr Rev): sekulaarinen trendi kohti aikaisempaa puberteettia 150 vuoden ajalta — ennustettu tulos laskevan melatoniinin (HPG-akselin estoinhibitio) seurauksena yhä sähköistyvämmissä ympäristöissä.",
+    ],
+    sRKConclusion: "r/K-viitekehys selittää, miksi poliittinen siirtymä ei ole ideologista ajautumista vaan lisääntymisstrategian mimikryä. Krooniselle EMF:lle altistunut väestö ei valitse r-strategiaa. Se työnnetään r-fenotyyppiseen ilmentymään, koska K-strategian endokriiniset substraatit — monogamia, korkea vanhemmuusinvestointi, viivästetty tyydytys, ryhmälojaalius, kilpailuvietti — ovat systemaattisesti heikentyneet. Poliittinen on biologista. Biologinen on sähkömagneettista.",
 
     s10title: "Episteemiset rajat",
     s10claims: [
@@ -5753,6 +5815,113 @@ export default async function CivilizationPage({
             )}
           </div>
           )}
+
+          {/* r/K Reproductive Strategy */}
+          {d.sRKTitle && (
+          <div className="mt-12">
+            <h4 className="text-lg font-bold mb-3">{d.sRKTitle}</h4>
+            <p className="text-sm text-muted-foreground mb-6">{d.sRKDesc}</p>
+
+            {d.sRKTraits?.length > 0 && (
+            <div className="mb-8">
+              <h5 className="text-sm font-semibold mb-3">{d.sRKColTrait} → {d.sRKColSubstrate}</h5>
+              <div className="overflow-x-auto mb-4">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColTrait}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColRPole}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColKPole}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColSubstrate}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {d.sRKTraits.map((t: { trait: string; rPole: string; kPole: string; substrate: string }, i: number) => (
+                      <tr key={i} className="border-b border-white/5">
+                        <td className="py-2 px-3 text-sm font-medium">{t.trait}</td>
+                        <td className="py-2 px-3 text-xs text-red-400">{t.rPole}</td>
+                        <td className="py-2 px-3 text-xs text-blue-400">{t.kPole}</td>
+                        <td className="py-2 px-3 text-xs font-mono">{t.substrate}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            )}
+
+            {d.sRKEnvs?.length > 0 && (
+            <div className="mb-8">
+              <h5 className="text-sm font-semibold mb-3">{d.sRKColIndex}</h5>
+              <div className="overflow-x-auto mb-4">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColEnv}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColIndex}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColClass}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColComp}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColMating}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColParent}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColSexual}</th>
+                      <th className="py-2 px-3 text-xs font-semibold">{d.sRKColLoyalty}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {d.sRKEnvs.map((e: { env: string; index: string; cls: string; comp: string; mating: string; parent: string; sexual: string; loyalty: string }, i: number) => (
+                      <tr key={i} className={`border-b border-white/5 ${e.cls.includes("K") ? "bg-blue-500/5" : e.cls.includes("r") ? "bg-red-500/5" : ""}`}>
+                        <td className="py-2 px-3 text-sm font-medium">{e.env}</td>
+                        <td className="py-2 px-3 font-mono text-sm font-bold">{e.index}</td>
+                        <td className="py-2 px-3 text-xs">{e.cls}</td>
+                        <td className="py-2 px-3 font-mono text-xs">{e.comp}</td>
+                        <td className="py-2 px-3 font-mono text-xs">{e.mating}</td>
+                        <td className="py-2 px-3 font-mono text-xs">{e.parent}</td>
+                        <td className="py-2 px-3 font-mono text-xs">{e.sexual}</td>
+                        <td className="py-2 px-3 font-mono text-xs">{e.loyalty}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            )}
+
+            {d.sRKMimicry && (
+            <div className="rounded-xl border border-orange-500/30 bg-orange-500/5 p-5 mb-6">
+              <p className="text-sm leading-relaxed">{d.sRKMimicry}</p>
+            </div>
+            )}
+
+            {d.sRKDopamine && (
+            <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-5 mb-6">
+              <p className="text-sm leading-relaxed">{d.sRKDopamine}</p>
+            </div>
+            )}
+
+            {d.sRKCities && (
+            <div className="rounded-xl border border-yellow-500/30 bg-yellow-500/5 p-5 mb-6">
+              <p className="text-sm leading-relaxed">{d.sRKCities}</p>
+            </div>
+            )}
+
+            {d.sRKLit?.length > 0 && (
+            <div className="mb-6">
+              <ul className="space-y-2">
+                {d.sRKLit.map((ref: string, i: number) => (
+                  <li key={i} className="text-xs text-muted-foreground">{ref}</li>
+                ))}
+              </ul>
+            </div>
+            )}
+
+            {d.sRKConclusion && (
+            <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-5">
+              <p className="text-sm leading-relaxed">{d.sRKConclusion}</p>
+            </div>
+            )}
+          </div>
+          )}
+
         </div>
         )}
       </section>
