@@ -24,7 +24,7 @@ const COPY = {
     sixDimLead:
       "The pathopolites is not a stereotype — it is a measurable phenotype. Each dimension maps to specific hormonal substrates, follows the EMF exposure gradient monotonically, and can be independently verified from biomarker data. The composite index is the geometric mean of all six dimensions: it reaches 0.089 in the Amish baseline and 0.581 in the urban office environment — a 6.5× increase that tracks electromagnetic infrastructure density.",
     sixDimScale:
-      "Each dimension is normalized to [0, 1] where 0 represents no deviation from the pre-industrial endocrine baseline (estimated from Amish biomarker data and historical reference populations) and 1 represents maximum measurable degradation in any observed environment. The dimension score is computed from its listed substrate biomarkers using the formula specified in political_biology.py: multiplicative substrates (e.g. OXT × T for anomic distress) produce sharper gradients than additive substrates because degradation in either component collapses the product. The composite index uses the geometric mean rather than arithmetic mean because it penalizes imbalance — a population scoring 0.9 on one dimension and 0.1 on another is not equivalent to 0.5 on both.",
+      "Each dimension is normalized to [0, 1] where 0 represents no deviation from the pre-industrial endocrine baseline (estimated from Amish biomarker data and historical reference populations) and 1 represents total loss of the substrate capacity (all inputs at zero). The dimension score is computed from its listed substrate biomarkers using the formula specified in political_biology.py: multiplicative substrates (e.g. OXT × T for anomic distress) produce sharper gradients than additive substrates because degradation in either component collapses the product. The composite index uses the geometric mean rather than arithmetic mean because it penalizes imbalance — a population scoring 0.9 on one dimension and 0.1 on another is not equivalent to 0.5 on both.",
 
     dim1Title: "Victimhood identity",
     dim1Substrate: "T↓, DA↓, BDNF↓, CORT↑",
@@ -91,8 +91,8 @@ const COPY = {
     emergenceLead:
       "The pathopolites is not a character flaw or a cultural product. It is the predictable phenotypic output of an endocrine environment. The sequence is:",
     emergenceSteps: [
-      "EMF environment degrades VGCC-dependent hormones (T, OXT, DA, BDNF, MEL) while elevating cortisol through chronic HPA activation.",
-      "Competence substrates collapse first (T + DA are the most EMF-sensitive), removing the biological basis for achievement-based identity.",
+      "EMF environment degrades melatonin (pathway B) and the calcium-dependent hormones T, OXT, DA and BDNF (pathway A) while elevating cortisol through chronic HPA activation.",
+      "Competence substrates collapse first (T and MEL are the most EMF-sensitive; DA follows OXT), removing the biological basis for achievement-based identity.",
       "Threat perception intensifies (CORT↑) while confrontation capacity declines (T↓), producing chronic vulnerability without the tools to resolve it.",
       "Social bonding substrate collapses (OXT×T interaction), producing anomie — the inability to convert social contact into felt belonging.",
       "Binding moral foundations collapse (Loyalty, Authority, Sanctity depend on the most fragile substrates), leaving only Care as an operational moral channel.",
@@ -236,8 +236,8 @@ const COPY = {
     emergenceLead:
       "Pathopolites ei ole luonteenvika tai kulttuurituote. Se on ennustettava fenotyyppinen tuotos endokriinisestä ympäristöstä. Vaiheittain:",
     emergenceSteps: [
-      "EMF-ympäristö rappeuttaa VGCC-riippuvaiset hormonit (T, OXT, DA, BDNF, MEL) samalla nostaen kortisolia kroonisen HPA-aktivaation kautta.",
-      "Kompetenssisubstraatit romahtavat ensin (T + DA ovat EMF-herkimpiä), poistaen biologisen perustan saavutuspohjaiselle identiteetille.",
+      "EMF-ympäristö rappeuttaa melatoniinin (polku B) ja kalsiumriippuvaiset hormonit T, OXT, DA ja BDNF (polku A) samalla nostaen kortisolia kroonisen HPA-aktivaation kautta.",
+      "Kompetenssisubstraatit romahtavat ensin (T ja MEL ovat EMF-herkimpiä; DA seuraa OXT:tä), poistaen biologisen perustan saavutuspohjaiselle identiteetille.",
       "Uhkahavainto voimistuu (CORT↑) samalla kun kohtaamiskyky laskee (T↓), tuottaen kroonisen haavoittuvuuden ilman työkaluja sen ratkaisemiseen.",
       "Sosiaalisen kiintymyksen substraatti romahtaa (OXT×T-vuorovaikutus), tuottaen anomian — kyvyttömyyden muuntaa sosiaalista kontaktia koetuksi kuulumiseksi.",
       "Sitovat moraaliperusteet romahtavat (Lojaalisuus, Auktoriteetti, Pyhyys riippuvat hauraimmista substraateista), jättäen vain Hoivan toimivaksi moraaliseksi kanavaksi.",

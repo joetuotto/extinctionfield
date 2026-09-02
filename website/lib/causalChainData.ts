@@ -749,8 +749,8 @@ export const NODES: ChainNode[] = [
   {
     id: "pathway_c",
     level: 6,
-    label: "Polku C: Melatoniini",
-    label_en: "Pathway C: Melatonin",
+    label: "Polku B (melatoniinihaara): Melatoniini",
+    label_en: "Pathway B (melatonin arm): Melatonin",
     sublabel: "Pineaali → vuorokausirytmi",
     sublabel_en: "Pineal gland → circadian rhythm",
     epistemicLevel: "E",
@@ -778,7 +778,7 @@ export const NODES: ChainNode[] = [
         keyFinding:
           "55 tutkimuksen PRISMA: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinivaimennusta (20–50 %). Tukee polkua C kvantitatiivisesti. Vain 27 % tutkimuksista täytti korkeat standardit.",
         keyFinding_en:
-          "PRISMA review of 55 studies: 88% of high-quality animal studies reported melatonin suppression (20–50%). Quantitatively supports Pathway C. Only 27% of studies met high-quality standards.",
+          "PRISMA review of 55 studies: 88% of high-quality animal studies reported melatonin suppression (20–50%). Quantitatively supports pathway B (melatonin arm). Only 27% of studies met high-quality standards.",
       },
       {
         referenceId: "burch2002",
@@ -843,8 +843,8 @@ export const NODES: ChainNode[] = [
   {
     id: "pathway_e",
     level: 6,
-    label: "Polku E: BBB",
-    label_en: "Pathway E: BBB",
+    label: "Polku C: BBB",
+    label_en: "Pathway C: BBB",
     sublabel: "eNOS↑ → permeabiliteetti↑",
     sublabel_en: "eNOS↑ → permeability↑",
     epistemicLevel: "E",
@@ -884,17 +884,17 @@ export const NODES: ChainNode[] = [
         title: "EMP-induced BBB disruption via tight junction degradation",
         journal: "Bioelectromagnetics (bem.22494)",
         keyFinding:
-          "EMP → tight junction -proteiinien (okkludiini, klaudiini, ZO-1) degradaatio → BBB-avautuminen rotilla. Mekanistinen tuki polulle E (huom: EMP, ei krooninen RF).",
+          "EMP → tight junction -proteiinien (okkludiini, klaudiini, ZO-1) degradaatio → BBB-avautuminen rotilla. Mekanistinen tuki polulle C (BBB) (huom: EMP, ei krooninen RF).",
         keyFinding_en:
-          "EMP → degradation of tight junction proteins (occludin, claudin, ZO-1) → BBB opening in rats. Mechanistic support for Pathway E (note: EMP, not chronic RF).",
+          "EMP → degradation of tight junction proteins (occludin, claudin, ZO-1) → BBB opening in rats. Mechanistic support for pathway C (BBB) (note: EMP, not chronic RF).",
       },
     ],
   },
   {
     id: "pathway_f",
     level: 6,
-    label: "Polku F: Vmem-koodi",
-    label_en: "Pathway F: Vmem code",
+    label: "Vmem-koodi (bioelektrinen; ei polkukirjainta)",
+    label_en: "Vmem code (bioelectric; no pathway letter)",
     sublabel: "Vmem-depolarisaatio → morfogeneesi",
     sublabel_en: "Vmem depolarization → morphogenesis",
     epistemicLevel: "L*",

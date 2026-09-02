@@ -10,7 +10,7 @@ const COPY = {
     subtitle:
       "What happens to a society when the hormonal substrate of both sexes changes simultaneously?",
     heroLead:
-      "Testosterone, estrogen, dopamine, cortisol, oxytocin, and melatonin are not just medical terms. They are the biological infrastructure of motivation, trust, bonding, sleep, reproduction, and cognition. When electromagnetic fields disrupt the calcium channels that regulate these hormones, the effects propagate from molecules to cells to organs to individuals to families to institutions.",
+      "Testosterone, estrogen, dopamine, cortisol, oxytocin, and melatonin are not just medical terms. They are the biological infrastructure of motivation, trust, bonding, sleep, reproduction, and cognition. When electromagnetic fields disrupt the cryptochrome–melatonin clock that gates these hormones (pathway B) and, secondarily, their calcium-channel signalling (pathway A), the effects propagate from molecules to cells to organs to individuals to families to institutions.",
     heroTrail:
       "This section traces that propagation — from seven randomized controlled trials to population-level behavioral data to the dynamics of civilizational change.",
     readingGuide: "Reading path",
@@ -20,12 +20,12 @@ const COPY = {
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — source of the disease",
     pathopegeDesc:
-      "The root mechanism: EMF disrupts voltage-gated calcium channels, triggering sex-specific hormonal cascades. The Triple Lock in men. The cortisol-oxytocin-ovarian triad in women. The shared pathway, the diverging consequences.",
+      "The root mechanism: EMF disrupts cryptochrome/melatonin signalling and voltage-gated calcium channels, triggering sex-specific hormonal cascades. The Triple Lock in men. The cortisol-oxytocin-ovarian triad in women. The shared pathway, the diverging consequences.",
 
     patopolis: "Patopolis",
     patopolisGreek: "pathos + polis — the pathological city",
     patopolisDesc:
-      "What the mechanism produces at scale: pair-bonding collapse, fertility decline, institutional decay, dopaminergic capture, time-preference shifts. Twelve testable predictions and fourteen civilization-level projections. The compound effects that transform individual hormonal disruption into societal transformation.",
+      "What the mechanism produces at scale: pair-bonding collapse, fertility decline, institutional decay, dopaminergic capture, time-preference shifts. Twelve predictions with matching observations and fourteen falsifiable civilization-level predictions. The compound effects that transform individual hormonal disruption into societal transformation.",
 
     patokratia: "Patokratia",
     patokratiaGreek: "pathos + kratos — pathological governance",
@@ -35,7 +35,7 @@ const COPY = {
     patopoliteia: "Patopoliteia",
     patopoliteiaGreek: "pathos + politeia — pathological civilization",
     patopoliteiaDesc:
-      "The longest lens: biological carrying capacity across five millennia. Solar cycles and empire lifespans. Cultural energy as hormonal surplus. The pattern that connects ancient collapses to the modern decline — and what the 210-year Suess cycle predicts for the next phase.",
+      "The longest lens: biological carrying capacity across five millennia. Solar cycles and empire lifespans. Cultural energy as hormonal surplus. The pattern that connects ancient collapses to the modern decline — and what the 208-year Suess cycle predicts for the next phase.",
 
     pathopolites: "Pathopolites",
     pathopolitesGreek: "pathos + polites — the pathological citizen",
@@ -61,7 +61,7 @@ const COPY = {
     subtitle:
       "Mitä tapahtuu yhteiskunnalle, kun molempien sukupuolten hormonaalinen substraatti muuttuu samanaikaisesti?",
     heroLead:
-      "Testosteroni, estrogeeni, dopamiini, kortisoli, oksitosiini ja melatoniini eivät ole pelkkiä lääketieteellisiä termejä. Ne ovat motivaation, luottamuksen, kiintymyksen, unen, lisääntymisen ja kognition biologinen infrastruktuuri. Kun sähkömagneettiset kentät häiritsevät näitä hormoneja säätelevien kalsiumkanavien toimintaa, vaikutukset etenevät molekyyleistä soluihin, elimiin, yksilöihin, perheisiin ja instituutioihin.",
+      "Testosteroni, estrogeeni, dopamiini, kortisoli, oksitosiini ja melatoniini eivät ole pelkkiä lääketieteellisiä termejä. Ne ovat motivaation, luottamuksen, kiintymyksen, unen, lisääntymisen ja kognition biologinen infrastruktuuri. Kun sähkömagneettiset kentät häiritsevät näitä hormoneja portittavaa kryptokromi–melatoniinikelloa (polku B) ja toissijaisesti niiden kalsiumkanavasignalointia (polku A), vaikutukset etenevät molekyyleistä soluihin, elimiin, yksilöihin, perheisiin ja instituutioihin.",
     heroTrail:
       "Tämä osio jäljittää tuon etenemisen — seitsemästä satunnaistetusta kontrolloidusta tutkimuksesta väestötason käyttäytymisdataan ja sivilisaatiomuutoksen dynamiikkaan.",
     readingGuide: "Lukupolku",
@@ -71,7 +71,7 @@ const COPY = {
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — sairauden lähde",
     pathopegeDesc:
-      "Juurimekanismi: EMF häiritsee jänniteohjattuja kalsiumkanavia ja käynnistää sukupuolispesifiset hormonaaliset kaskaadit. Kolmoislukon mekanismi miehillä. Kortisoli-oksitosiini-ovariaalitriade naisilla. Yhteinen reitti, eriävät seuraukset.",
+      "Juurimekanismi: EMF häiritsee kryptokromi/melatoniinisignalointia ja jänniteohjattuja kalsiumkanavia ja käynnistää sukupuolispesifiset hormonaaliset kaskaadit. Kolmoislukon mekanismi miehillä. Kortisoli-oksitosiini-ovariaalitriade naisilla. Yhteinen reitti, eriävät seuraukset.",
 
     patopolis: "Patopolis",
     patopolisGreek: "pathos + polis — patologinen kaupunki",

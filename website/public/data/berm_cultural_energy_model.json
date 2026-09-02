@@ -796,7 +796,7 @@
       "annual_decline_pct": 1.2,
       "evidence_n": ">1M",
       "evidence_level": "E",
-      "berm_mechanism": "EMF → VGCC → Ca²⁺ → StAR↓ → P450scc↓ → T↓ AND EMF → SCN → GnRH↓ → LH↓ → T↓ (hypothalamic)",
+      "berm_mechanism": "CRY → melatonin → HPG (pathway B, primary); secondary: EMF → VGCC → Ca²⁺ → StAR↓ → P450scc↓ → T↓ AND EMF → SCN → GnRH↓ → LH↓ → T↓ (hypothalamic)",
       "cultural_function": "Risk-taking, competition, assertiveness, physical vigor, spatial cognition, libido",
       "unwin_mapping": "Expansive energy (primary driver)",
       "weight_in_model": 0.2
@@ -817,7 +817,7 @@
         "Marriage rates declining globally",
         "Volunteer participation declining"
       ],
-      "berm_mechanism": "EMF → VGCC → Ca²⁺ → hypothalamic OXT neurons → OXT release↓ AND gut-brain axis disruption → vagal OXT pathway↓",
+      "berm_mechanism": "CRY → melatonin → HPG (pathway B, primary); secondary: EMF → VGCC → Ca²⁺ → hypothalamic OXT neurons → OXT release↓ AND gut-brain axis disruption → vagal OXT pathway↓",
       "cultural_function": "Social trust, group cohesion, cooperation, pair bonding, institutional loyalty, altruism",
       "unwin_mapping": "Cohesive energy (Turchin's asabiya)",
       "weight_in_model": 0.2
@@ -838,7 +838,7 @@
         "Deaths of despair: drug overdose +387% in some cohorts",
         "Failure to launch: 38% young men sexless (2018 vs 28% 2008)"
       ],
-      "berm_mechanism": "EMF → VGCC → Ca²⁺ → DA synthesis pathway → chronic low DA → compensatory high-stimulus seeking → D2R downregulation → anhedonia cycle",
+      "berm_mechanism": "CRY → melatonin → HPG (pathway B, primary); secondary: EMF → VGCC → Ca²⁺ → DA synthesis pathway → chronic low DA → compensatory high-stimulus seeking → D2R downregulation → anhedonia cycle",
       "cultural_function": "Motivation, goal pursuit, delayed gratification, creativity, sustained effort, reward from achievement",
       "unwin_mapping": "Productive energy (creative drive)",
       "weight_in_model": 0.15
@@ -859,7 +859,7 @@
         "Calves in dark: EMF affects melatonin INDEPENDENTLY of light",
         "Shift workers: melatonin↓ → cancer risk (IARC 2A)"
       ],
-      "berm_mechanism": "TWO independent pathways: (1) Blue light → melanopsin → SCN → mel↓ (fast, reversible) (2) EMF → CRY/VGCC → SCN oscillation → mel↓ (slow, partly irreversible) PLUS: PGC accumulation → permanent capacity loss",
+      "berm_mechanism": "TWO independent pathways: (1) Blue light → melanopsin → SCN → mel↓ (fast, reversible) (2) EMF → CRY radical pair (pathway B) → SCN oscillation → mel↓ (slow, partly irreversible) PLUS: PGC accumulation → permanent capacity loss",
       "cultural_function": "Sleep quality → cognitive consolidation → creativity; immune regulation; antioxidant protection; circadian coherence",
       "unwin_mapping": "Mental energy (regenerative substrate)",
       "weight_in_model": 0.15
@@ -879,7 +879,7 @@
         "Exercise (BDNF↑) correlates with cognitive performance",
         "Depression (BDNF↓) prevalence rising globally"
       ],
-      "berm_mechanism": "EMF → VGCC → Ca²⁺ → CREB phosphorylation disrupted → BDNF transcription↓ → neuroplasticity↓ → abstract reasoning↓, learning rate↓",
+      "berm_mechanism": "CRY → melatonin → HPG (pathway B, primary); secondary: EMF → VGCC → Ca²⁺ → CREB phosphorylation disrupted → BDNF transcription↓ → neuroplasticity↓ → abstract reasoning↓, learning rate↓",
       "cultural_function": "Abstract reasoning, learning, cognitive flexibility, creative synthesis, long-term planning, scientific thinking",
       "unwin_mapping": "Mental energy (cognitive substrate)",
       "weight_in_model": 0.1

@@ -72,11 +72,11 @@ const COPY = {
     s2key: "If ANY factor approaches zero, pairing collapses regardless of the others. A man with high T but degraded signals still fails. A woman with intact signals but signal-blind partners still fails. This is why dating apps (addressing approach only) and fertility subsidies (addressing motivation only) fail — they target one factor in a five-factor equation.",
 
     s2factors: [
-      { name: "Male approach", substrate: "T × DA × (1 - CORT)", desc: "Drive to initiate contact" },
-      { name: "Female receptivity", substrate: "OXT × (1 - CORT) × T", desc: "Openness to pair-bond formation" },
+      { name: "Male approach", substrate: "T × DA × (1 − 0.4·CORT)", desc: "Drive to initiate contact" },
+      { name: "Female receptivity", substrate: "OXT × (1 − 0.3·CORT) × (0.5 + 0.5·T)", desc: "Openness to pair-bond formation" },
       { name: "Male signal quality", substrate: "Morphological signals", desc: "Physical cues of mate value" },
       { name: "Female signal quality", substrate: "Cryptic + morphological signals", desc: "Hormonal cycling + body composition" },
-      { name: "Signal perception", substrate: "DA × T × BDNF × MEL", desc: "Capacity to detect and value mate signals in person" },
+      { name: "Signal perception", substrate: "0.45·DA·(0.6 + 0.4·T) + 0.35·BDNF·(0.7 + 0.3·MEL) + 0.20·T", desc: "Capacity to detect and value mate signals in person; the five factors combine as the fifth root of their product (pair_signal_compound)" },
     ],
 
     // Section 3: Obesity amplifier
@@ -84,7 +84,7 @@ const COPY = {
     s3lead:
       "Obesity is not just a consequence of hormonal disruption — it is a self-reinforcing amplifier that FURTHER degrades the hormonal system:",
     s3steps: [
-      "EMF → VGCC → DA↓, MEL↓, CORT↑ → metabolic disruption → increased adiposity",
+      "EMF → CRY → MEL↓ (pathway B) and VGCC → DA↓ (pathway A) → CORT↑ → metabolic disruption → increased adiposity",
       "Fat tissue contains aromatase (CYP19A1) which converts T → E2",
       "More fat → more aromatase → less T → more fat → more aromatase",
       "In men: gynecomastia prevalence 32-65% (Braunstein 2007). Direct evidence of T→E2 conversion.",
@@ -93,7 +93,7 @@ const COPY = {
     ],
     s3japan: "The Japan paradox",
     s3japanText:
-      "Japan has ~4% obesity (lowest OECD) but TFR 1.15 and 70-75% 'herbivore men'. This proves obesity is a SECONDARY amplifier — the PRIMARY mechanism (direct VGCC hormone disruption) operates independently. Cultural food norms and body standards prevent the obesity loop, but cannot prevent the direct hormonal degradation. Japan shows the primary effect clean; the USA shows both layers at once.",
+      "Japan has ~4% obesity (lowest OECD) but TFR 1.15 and 70-75% 'herbivore men'. This proves obesity is a SECONDARY amplifier — the PRIMARY mechanism (direct melatonin–HPG disruption, pathway B, amplified by VGCC/Ca²⁺) operates independently. Cultural food norms and body standards prevent the obesity loop, but cannot prevent the direct hormonal degradation. Japan shows the primary effect clean; the USA shows both layers at once.",
 
     // Section 4: Behavioral sink
     s4title: "The Behavioral Sink",
@@ -207,7 +207,7 @@ const COPY = {
       "Once institutional capture exceeds the threshold, stigma does not merely disappear — it INVERTS. Association stigma now punishes those who MAINTAIN the BIS. 'Bigot', 'phobic', '-ist' are stigma labels applied to the immune system's own defenders. FIRE 2026 data: 93% of students self-censor, 36% support shouting down speakers (record high), 15% accept violence to stop speech. The inversion is empirically measurable.",
     s10gelfandTitle: "The Gelfand inverted-U",
     s10gelfandLead:
-      "Gelfand's tightness-looseness dimension (2011, 33 nations, N=6,823) measured norm enforcement strength from Pakistan (12.3) to Ukraine (1.6). Harrington & Gelfand (2015) then tested the curvilinear model: both extremes produce worst outcomes. Life expectancy R²=.44, composite well-being R²=.47, suicide R²=.25 — all significant quadratic terms. Japan (8.6) and South Korea (10.0) fall on the tight extreme where the curve bends down. Japan's 1.15M hikikomori and TFR 1.20 demonstrate what happens when cultural BIS enforcement persists WITHOUT biological substrate support: the pathology goes underground rather than being expressed. Norms show remarkable inertia — the 2024 COVID study (N=30,431, 43 countries) found most norms barely shifted even under pandemic conditions. The BIS becomes autoimmune when socially enforced beyond what the substrate can sustain.",
+      "Gelfand's tightness-looseness dimension (2011, 33 nations, N=6,823) measured norm enforcement strength from Pakistan (12.3) to Ukraine (1.6). Harrington & Gelfand (2015) then tested the curvilinear model: both extremes produce worst outcomes. Life expectancy R²=.44, composite well-being R²=.47, suicide R²=.25 — all significant quadratic terms. Japan (8.6) and South Korea (10.0) fall on the tight extreme where the curve bends down. Japan's 1.15M hikikomori and TFR 1.15 demonstrate what happens when cultural BIS enforcement persists WITHOUT biological substrate support: the pathology goes underground rather than being expressed. Norms show remarkable inertia — the 2024 COVID study (N=30,431, 43 countries) found most norms barely shifted even under pandemic conditions. The BIS becomes autoimmune when socially enforced beyond what the substrate can sustain.",
     s10gradientTitle: "BIS gradient",
     s10gradientData: [
       { env: "Amish", bis: "0.934", destig: "0.021", inv: "0.000", net: "+0.913" },
@@ -240,7 +240,7 @@ const COPY = {
         color: "red",
         desc: "Making others sick or helpless to maintain control and prevent their independence. Munchausen by proxy: making a child sick for attention and status. Intergenerational helplessness: the narcissistic parent teaching learned helplessness to prevent the child's autonomy. Both serve the same function: the transmitter needs the target to remain dependent.",
         empirical: "ACE study (Felitti 1998, N=17,337): ACE 4+ → depression OR 4.6, suicide OR 12.2, alcoholism OR 7.4. Attachment concordance: 75% parent→infant (van IJzendoorn 1995, d=1.06). Learned helplessness: 75% after single session (Seligman 1967). FDIA: 6–10% victim mortality.",
-        formula: "safety_seeking × external_locus × moral_cover × CORT × (1.5 − T)",
+        formula: "safety_seeking × external_locus × (0.3 + 0.7·moral_compensation) × (0.3 + 0.7·CORT) × (1.5 − T)",
       },
       {
         title: "Social contagion",
@@ -249,7 +249,7 @@ const COPY = {
         color: "red",
         desc: "Social media creates diagnostic epidemics: TikTok tics, DID, eating disorders spreading through identification and imitation. Diagnosis becomes social capital — it provides identity, community, protection from performance demands, and immunity from criticism. The contagion requires both the channel (social media) and the substrate (cognitively fragile, identity-seeking, with no purity filter).",
         empirical: "Christakis & Fowler (2007, N=12,067): friend obesity +57%, mutual friend +171%. TikTok tics: tenfold increase, 95% female, 95% TikTok-exposed (Pringsheim 2021). DID: <100 cases pre-1980 → thousands/year. Haidt (2024): post-2012 teen suicide +167%, self-harm +188%. Obesity visual normalization: 82.5% of obese underestimate their weight (Robinson 2017).",
-        formula: "dopaminergic_capture × victimhood_identity × cognitive_fragility × (1.5 − sanctity)",
+        formula: "dopaminergic_capture × victimhood_identity × (0.3 + 0.7·cognitive_fragility) × (1.5 − sanctity)",
       },
       {
         title: "Empathy weaponization",
@@ -258,7 +258,7 @@ const COPY = {
         color: "red",
         desc: "Compassion exploited as a transmission vector. Two mechanisms: (1) the degraded demonstrate suffering to extract resources, protection, and status — empathy without the disgust filter provides no immune response to exploitation. (2) Institutions redefine pathology as virtue and health as oppression — 'health is privilege', competence is 'toxic', fragility is 'authenticity'.",
         empirical: "Pathological altruism (Oakley et al. 2012, OUP, 31 papers): hyperempathy/codependency affects ~40M Americans. Concept creep (Haslam 2016): harm, trauma, prejudice definitions systematically expanded. Tomiyama COBWEBS (2014): weight stigma → cortisol → overeating, but removal of all stigma removes self-classification that motivates change.",
-        formula: "disgust_deficit × moral_compensation × (external_locus + institutional_capture)",
+        formula: "0.6·[disgust_deficit × moral_compensation × (0.3 + 0.7·external_locus)] + 0.4·[institutional_capture × disgust_deficit × moral_compensation]",
       },
       {
         title: "Active infection seeking",
@@ -267,7 +267,7 @@ const COPY = {
         color: "red",
         desc: "The most extreme transmission: the uninfected actively seek infection. Biological: HIV bugchasing. Social: seeking diagnosis, 'neurodivergent pride', celebrating shared pathology as identity. The psychological function: anomic isolation is worse than shared sickness. Shared infection removes the stigma ('I am no longer alone in being broken') and creates a tight in-group.",
         empirical: "Bugchasing documented in subculture literature (Dean 2009). Gen Z self-identification with mental health diagnoses as identity markers. DID and autism self-diagnosis communities with millions of members on social media platforms.",
-        formula: "anomic_distress × external_locus × victimhood_identity × (1 − T)",
+        formula: "anomic_distress × external_locus × (0.3 + 0.7·victimhood_identity) × (1 − T)",
       },
     ],
     s11gradientTitle: "Transmission gradient",
@@ -289,7 +289,7 @@ const COPY = {
       {
         name: "South Korea",
         emf: "5G first in world (2019), 97% smartphone",
-        observed: "TFR 0.72 (world's lowest). 30-point gender gap in young voters. 4B movement. Conscript obesity 23→31%.",
+        observed: "TFR 0.75 (2024, world's lowest). 30-point gender gap in young voters. 4B movement. Conscript obesity 23→31%.",
         fit: "Strongest BERM fit",
       },
       {
@@ -319,7 +319,7 @@ const COPY = {
       {
         name: "Hungary",
         emf: "Later 4G, lower density, later 5G (2023)",
-        observed: "TFR rose 1.23→1.61 under Orbán's policies → now reversing to 1.41. AEI: 'tempo effects only, not cohort fertility.'",
+        observed: "TFR rose 1.25→1.61 under Orbán's policies → now reversing to 1.41. AEI: 'tempo effects only, not cohort fertility.'",
         fit: "Authoritarian buffer: delays but does not prevent",
       },
     ],
@@ -462,17 +462,17 @@ const COPY = {
     s2key: "Jos MIKÄ TAHANSA tekijä lähestyy nollaa, pariutuminen romahtaa muista riippumatta. Mies korkealla T:llä mutta rappeutuneilla signaaleilla epäonnistuu silti. Nainen ehjillä signaaleilla mutta signaalien havaitsemiskyvytön partneri epäonnistuu silti. Siksi deittiapplikaatiot (lähestyminen) ja hedelmällisyystuet (motivaatio) epäonnistuvat — ne kohdistavat yhteen tekijään viiden tekijän yhtälössä.",
 
     s2factors: [
-      { name: "Miehen lähestyminen", substrate: "T × DA × (1 - CORT)", desc: "Aloitteellisuus kontaktin luomisessa" },
-      { name: "Naisen vastaanottavuus", substrate: "OXT × (1 - CORT) × T", desc: "Avoimuus pariutumiselinkaareen" },
+      { name: "Miehen lähestyminen", substrate: "T × DA × (1 − 0.4·CORT)", desc: "Aloitteellisuus kontaktin luomisessa" },
+      { name: "Naisen vastaanottavuus", substrate: "OXT × (1 − 0.3·CORT) × (0.5 + 0.5·T)", desc: "Avoimuus pariutumiselinkaareen" },
       { name: "Miehen signaalinlaatu", substrate: "Morfologiset signaalit", desc: "Fyysiset vihjeet parinvalinta-arvosta" },
       { name: "Naisen signaalinlaatu", substrate: "Kryptiset + morfologiset", desc: "Hormonaalinen sykli + kehonkoostumus" },
-      { name: "Signaalien havaitseminen", substrate: "DA × T × BDNF × MEL", desc: "Kyky havaita ja arvostaa parinvalintasignaaleja kasvokkain" },
+      { name: "Signaalien havaitseminen", substrate: "0,45·DA·(0,6 + 0,4·T) + 0,35·BDNF·(0,7 + 0,3·MEL) + 0,20·T", desc: "Kyky havaita ja arvostaa parinvalintasignaaleja kasvokkain; viisi tekijää yhdistyvät tulonsa viidentenä juurena (pair_signal_compound)" },
     ],
 
     s3title: "Aromataasisilmukka",
     s3lead: "Lihavuus ei ole vain hormonihäiriön seuraus — se on itseään vahvistava vahvistin joka EDELLEEN rappeuttaa hormonijärjestelmää:",
     s3steps: [
-      "EMF → VGCC → DA↓, MEL↓, CORT↑ → metabolinen häiriö → rasvoittuminen",
+      "EMF → CRY → MEL↓ (polku B) ja VGCC → DA↓ (polku A) → CORT↑ → metabolinen häiriö → rasvoittuminen",
       "Rasvakudos sisältää aromataasia (CYP19A1) joka muuntaa T → E2",
       "Enemmän rasvaa → enemmän aromataasia → vähemmän T → enemmän rasvaa",
       "Miehillä: gynekomastian esiintyvyys 32-65% (Braunstein 2007). Suora todiste T→E2-konversiosta.",
@@ -481,7 +481,7 @@ const COPY = {
     ],
     s3japan: "Japani-paradoksi",
     s3japanText:
-      "Japanissa lihavuus ~4% (OECD:n matalin) mutta TFR 1.15 ja 70-75% 'herbivore-miehistä'. Tämä todistaa: lihavuus on SEKUNDAARINEN vahvistin. PRIMAARINEN mekanismi (suora VGCC-hormonihäiriö) toimii itsenäisesti. Kulttuuriset ruokanormit estävät lihavuussilmukan mutta EIVÄT estä suoraa hormonaalista degradaatiota.",
+      "Japanissa lihavuus ~4% (OECD:n matalin) mutta TFR 1.15 ja 70-75% 'herbivore-miehistä'. Tämä todistaa: lihavuus on SEKUNDAARINEN vahvistin. PRIMAARINEN mekanismi (suora melatoniini–HPG-häiriö, polku B, VGCC/Ca²⁺:n vahvistamana) toimii itsenäisesti. Kulttuuriset ruokanormit estävät lihavuussilmukan mutta EIVÄT estä suoraa hormonaalista degradaatiota.",
 
     s4title: "Käyttäytymisvalu",
     s4lead:
@@ -588,7 +588,7 @@ const COPY = {
       "Kun institutionaalinen kaappaus ylittää kynnyksen, stigma ei vain katoa — se KÄÄNTYY. Assosiaatiostigma rankaisee nyt niitä jotka YLLÄPITÄVÄT BIS:iä. 'Bigotti', '-fobinen', '-isti' ovat stigmaleimoja joita sovelletaan immuunijärjestelmän omiin puolustajiin. FIRE 2026 -data: 93% opiskelijoista itsesensuroi, 36% tukee puhujien huutamista hiljaiseksi (ennätyskorkea), 15% hyväksyy väkivallan puheen estämiseksi. Inversio on empiirisesti mitattavissa.",
     s10gelfandTitle: "Gelfandin käänteinen U",
     s10gelfandLead:
-      "Gelfandin tiukkuus-löysyys-ulottuvuus (2011, 33 maata, N=6 823) mittasi normien toimeenpanon voimakkuutta Pakistanista (12.3) Ukrainaan (1.6). Harrington & Gelfand (2015) testasivat sitten kurvilineaarisen mallin: molemmat ääripäät tuottavat huonoimmat tulokset. Elinajanodote R²=.44, kokonaishyvinvointi R²=.47, itsemurha R²=.25 — kaikki merkitsevät kvadraattiset termit. Japani (8.6) ja Etelä-Korea (10.0) sijoittuvat tiukkaan ääripäähän jossa käyrä kääntyy alaspäin. Japanin 1.15M hikikomoria ja TFR 1.20 osoittavat mitä tapahtuu kun kulttuurinen BIS-toimeenpano jatkuu ILMAN biologista substraattitukea: patologia menee maan alle sen sijaan että se ilmenisi. Normit osoittavat huomattavaa inertiaa — vuoden 2024 COVID-tutkimus (N=30 431, 43 maata) havaitsi useimpien normien tuskin muuttuneen edes pandemian aikana. BIS muuttuu autoimmuuniksi kun sitä toimeenpannaan sosiaalisesti yli substraatin kantokyvyn.",
+      "Gelfandin tiukkuus-löysyys-ulottuvuus (2011, 33 maata, N=6 823) mittasi normien toimeenpanon voimakkuutta Pakistanista (12.3) Ukrainaan (1.6). Harrington & Gelfand (2015) testasivat sitten kurvilineaarisen mallin: molemmat ääripäät tuottavat huonoimmat tulokset. Elinajanodote R²=.44, kokonaishyvinvointi R²=.47, itsemurha R²=.25 — kaikki merkitsevät kvadraattiset termit. Japani (8.6) ja Etelä-Korea (10.0) sijoittuvat tiukkaan ääripäähän jossa käyrä kääntyy alaspäin. Japanin 1.15M hikikomoria ja TFR 1.15 osoittavat mitä tapahtuu kun kulttuurinen BIS-toimeenpano jatkuu ILMAN biologista substraattitukea: patologia menee maan alle sen sijaan että se ilmenisi. Normit osoittavat huomattavaa inertiaa — vuoden 2024 COVID-tutkimus (N=30 431, 43 maata) havaitsi useimpien normien tuskin muuttuneen edes pandemian aikana. BIS muuttuu autoimmuuniksi kun sitä toimeenpannaan sosiaalisesti yli substraatin kantokyvyn.",
     s10gradientTitle: "BIS-gradientti",
     s10gradientData: [
       { env: "Amish", bis: "0.934", destig: "0.021", inv: "0.000", net: "+0.913" },
@@ -621,7 +621,7 @@ const COPY = {
         color: "red",
         desc: "Toisten sairastuttaminen tai avuttomaksi tekeminen kontrollin ylläpitämiseksi ja heidän itsenäisyytensä estämiseksi. Münchhausen by proxy: lapsen sairastuttaminen huomion ja statuksen vuoksi. Ylisukupolvinen avuttomuus: narsistinen vanhempi opettaa opitun avuttomuuden estääkseen lapsen autonomian. Molemmat palvelevat samaa funktiota: lähettäjä tarvitsee kohteen pysyvän riippuvaisena.",
         empirical: "ACE-tutkimus (Felitti 1998, N=17 337): ACE 4+ → masennus OR 4.6, itsemurha OR 12.2, alkoholismi OR 7.4. Kiintymyssuhteen vastaavuus: 75% vanhempi→lapsi (van IJzendoorn 1995, d=1.06). Opittu avuttomuus: 75% yhdellä sessiolla (Seligman 1967). FDIA: 6–10% uhrikuolleisuus.",
-        formula: "turvallisuudenhaku × ulkoinen_locus × moraalinen_suoja × CORT × (1.5 − T)",
+        formula: "turvallisuudenhaku × ulkoinen_locus × (0,3 + 0,7·moraalinen_kompensaatio) × (0,3 + 0,7·CORT) × (1,5 − T)",
       },
       {
         title: "Sosiaalinen tartunta",
@@ -630,7 +630,7 @@ const COPY = {
         color: "red",
         desc: "Sosiaalinen media luo diagnostisia epidemioita: TikTok-ticit, DID, syömishäiriöt leviävät identifikaation ja imitaation kautta. Diagnoosista tulee sosiaalista pääomaa — se tarjoaa identiteetin, yhteisön, suojan suoritusvaatimuksilta ja immuniteetin kritiikiltä. Tartunta vaatii sekä kanavan (sosiaalinen media) että substraatin (kognitiivisesti hauras, identiteettiä etsivä, ilman puhtaussuodatinta).",
         empirical: "Christakis & Fowler (2007, N=12 067): ystävän lihavuus +57%, molemminpuolinen ystävä +171%. TikTok-ticit: kymmenkertainen kasvu, 95% naisia, 95% TikTok-altistuneita (Pringsheim 2021). DID: <100 tapausta ennen 1980 → tuhansia/vuosi. Haidt (2024): 2012 jälkeen teinien itsemurha +167%, itsevahingoittaminen +188%. Lihavuuden visuaalinen normalisaatio: 82.5% lihavista aliarvioi painonsa (Robinson 2017).",
-        formula: "dopamiinikaappaus × uhri-identiteetti × kognitiivinen_hauraus × (1.5 − pyhyys)",
+        formula: "dopamiinikaappaus × uhri-identiteetti × (0,3 + 0,7·kognitiivinen_hauraus) × (1,5 − pyhyys)",
       },
       {
         title: "Empatian aseellistaminen",
@@ -639,7 +639,7 @@ const COPY = {
         color: "red",
         desc: "Myötätunto hyväksikäytettynä transmissiovektorina. Kaksi mekanismia: (1) rappeutuneet osoittavat kärsimystä resurssien, suojelun ja statuksen saamiseksi — empatia ilman inhosuodatinta ei tarjoa immuunivastetta hyväksikäytölle. (2) Instituutiot määrittelevät patologian hyveeksi ja terveyden sorrolla — 'terveys on etuoikeus', kompetenssi on 'toksista', hauraus on 'autenttisuutta'.",
         empirical: "Patologinen altruismi (Oakley et al. 2012, OUP, 31 artikkelia): hyperempatia/kanssariippuvuus koskettaa ~40M amerikkalaista. Käsitteen laajeneminen (Haslam 2016): haitta-, trauma-, ennakkoluulomääritelmät systemaattisesti laajentuneet. Tomiyama COBWEBS (2014): painostigma → kortisoli → ylensyöminen, mutta kaiken stigman poisto poistaa itseluokittelun joka motivoi muutosta.",
-        formula: "inhopuute × moraalinen_kompensointi × (ulkoinen_locus + institutionaalinen_kaappaus)",
+        formula: "0,6·[inhopuute × moraalinen_kompensointi × (0,3 + 0,7·ulkoinen_locus)] + 0,4·[institutionaalinen_kaappaus × inhopuute × moraalinen_kompensointi]",
       },
       {
         title: "Aktiivinen infektiohakuisuus",
@@ -648,7 +648,7 @@ const COPY = {
         color: "red",
         desc: "Äärimmäisin transmissio: tartuttamaton etsii aktiivisesti tartuntaa. Biologinen: HIV-bugchasing. Sosiaalinen: diagnoosin etsiminen, 'neurodivergenssiylpeys', jaetun patologian juhlistaminen identiteettinä. Psykologinen funktio: anominen eristys on pahempaa kuin jaettu sairaus. Jaettu infektio poistaa stigman ('en ole enää yksin rikkinäisyydessäni') ja luo tiiviin sisäryhmän.",
         empirical: "Bugchasing dokumentoitu alakulttuurikirjallisuudessa (Dean 2009). Gen Z:n itseidentifikaatio mielenterveydiagnoosien kanssa identiteettimerkkeinä. DID- ja autismidiagnoosin itsediagnoostiyhteisöt miljoonia jäseniä sosiaalisen median alustoilla.",
-        formula: "anominen_ahdistus × ulkoinen_locus × uhri-identiteetti × (1 − T)",
+        formula: "anominen_ahdistus × ulkoinen_locus × (0,3 + 0,7·uhri-identiteetti) × (1 − T)",
       },
     ],
     s11gradientTitle: "Transmissiogradientti",
@@ -668,7 +668,7 @@ const COPY = {
       {
         name: "Etelä-Korea",
         emf: "5G ensimmäisenä maailmassa (2019), 97% älypuhelin",
-        observed: "TFR 0.72 (maailman matalin). 30 pisteen sukupuolten kuilu nuorilla äänestäjillä. 4B-liike. Varusmiesten lihavuus 23→31%.",
+        observed: "TFR 0.75 (2024, maailman matalin). 30 pisteen sukupuolten kuilu nuorilla äänestäjillä. 4B-liike. Varusmiesten lihavuus 23→31%.",
         fit: "Vahvin BERM-osuma",
       },
       {
@@ -698,7 +698,7 @@ const COPY = {
       {
         name: "Unkari",
         emf: "Myöhäisempi 4G, matalampi tiheys, 5G vasta 2023",
-        observed: "TFR nousi 1.23→1.61 Orbánin politiikoilla → nyt kääntymässä 1.41:een. AEI: 'tempo-efektejä, ei kohorttifertiliteettiä.'",
+        observed: "TFR nousi 1.25→1.61 Orbánin politiikoilla → nyt kääntymässä 1.41:een. AEI: 'tempo-efektejä, ei kohorttifertiliteettiä.'",
         fit: "Autoritaarinen puskuri: hidastaa mutta ei estä",
       },
     ],
@@ -859,7 +859,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     ko: { title: "신호 열화와 행동 싱크 | BERM", description: "호르몬 교란이 배우자 신호를 어떻게 열화시키는가." },
   };
   const m = meta[locale] ?? meta.en;
-  return { title: m.title, description: m.description };
+  return { title: m.title, description: m.description, openGraph: { title: m.title, description: m.description } };
 }
 
 const SIGNAL_ICONS: Record<string, typeof Eye> = {

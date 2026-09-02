@@ -14,7 +14,7 @@ const COPY = {
     civilizationLink: "Back to Civilization",
     patokratiaLink: "Patokratia",
     patokinesisLink: "Patokinesis",
-    mechanismNote: "The root mechanism — how EMF disrupts calcium channels to produce sex-specific hormonal cascades — is described in Pathopege.",
+    mechanismNote: "The root mechanism — how EMF disrupts cryptochrome/melatonin signalling and calcium channels to produce sex-specific hormonal cascades — is described in Pathopege.",
     s5title: "Compound Effects",
     s5lead:
       "Individual-level hormonal changes become civilizational when they affect both sides of every human dyad simultaneously. Pair-bonding requires a man who approaches and a woman who trusts. Reproduction requires functional sperm and functional oocytes. Child-rearing requires paternal investment and maternal bonding. When EMF disrupts both sides at once, the result is not additive — it is multiplicative.",
@@ -36,7 +36,7 @@ const COPY = {
       "Average age of first marriage increasing",
       "Percentage ‘never married’ by age 40 increasing",
       "Japan: 43% of 18–34 men virginal (2015)",
-      "South Korea: birth rate 0.72 (2024)",
+      "South Korea: TFR 0.75 (2024)",
     ],
 
     s5bTitle: "Multiplicative fertility collapse",
@@ -126,7 +126,7 @@ const COPY = {
 
     s6title: "Twelve Predictions, Twelve Observations",
     s6lead:
-      "BERM predicts specific behavioral and social changes from its hormonal model. Each prediction is grounded in RCT evidence for the hormonal link; each observation cites population-level data consistent with the prediction.",
+      "BERM predicts specific behavioral and social changes from its hormonal model. Predictions 1–8 are grounded in RCT evidence for the hormonal link and 9–12 in mechanistic and observational studies; each observation cites population-level data consistent with the prediction.",
     predictions: [
       {
         prediction: "Male status-seeking declines",
@@ -244,7 +244,7 @@ const COPY = {
 
     ssafetyTitle: "Safety-seeking: hormonal threshold, not value choice",
     ssafetyBody:
-      "Risk-taking declines with testosterone (Competition RCT 2024, n=333). Anxiety increases with cortisol ([[ref:dual_hormone_meta2021|dual hormone meta, n=8,538]]). Threat sensitivity increases when both shift simultaneously. At the population level, this produces a society that experiences more situations as threatening — not because the environment is more dangerous (violent crime is at historic lows) but because the biological threshold for threat perception has lowered.",
+      "Risk-taking declines with testosterone (Competition RCT 2024, n=220). Anxiety increases with cortisol ([[ref:dual_hormone_meta2021|dual hormone meta, n=8,538]]). Threat sensitivity increases when both shift simultaneously. At the population level, this produces a society that experiences more situations as threatening — not because the environment is more dangerous (violent crime is at historic lows) but because the biological threshold for threat perception has lowered.",
     ssafetyParadox:
       "This explains an otherwise paradoxical pattern: the safest societies in human history report the highest anxiety. Objective danger is down. Subjective threat is up. The gap between the two is the hormonal shift.",
     ssafetyCreep:
@@ -298,7 +298,7 @@ const COPY = {
 
     s8title: "The Dopaminergic Mind",
     s8body:
-      "Barzilai’s dopaminergic mind hypothesis proposes that dopamine-driven cognitive traits — curiosity, creativity, exploration, risk-tolerance, future orientation — were central to the emergence of modern human cognition. BERM adds a mechanism: if EMF disrupts VTA Cav1.3 → dopamine release, and testosterone decline further reduces DA receptor expression, then the population-level decline in dopaminergic function represents a partial reversal of the cognitive revolution. This is not a claim about intelligence (IQ may remain stable or even rise through Flynn effects). It is a claim about cognitive style: the shift from exploration to exploitation, from risk-taking to risk-avoidance, from innovation to optimization. A society with declining dopaminergic function does not stop thinking — it stops taking intellectual risks.",
+      "Barzilai’s dopaminergic mind hypothesis proposes that dopamine-driven cognitive traits — curiosity, creativity, exploration, risk-tolerance, future orientation — were central to the emergence of modern human cognition. BERM adds a mechanism: if EMF disrupts melatonin-gated and VTA Cav1.3-gated dopamine release, and testosterone decline further reduces DA receptor expression, then the population-level decline in dopaminergic function represents a partial reversal of the cognitive revolution. This is not a claim about intelligence (IQ may remain stable or even rise through Flynn effects). It is a claim about cognitive style: the shift from exploration to exploitation, from risk-taking to risk-avoidance, from innovation to optimization. A society with declining dopaminergic function does not stop thinking — it stops taking intellectual risks.",
 
     s8bTitle: "Cybernetic Feedback Loops",
     s8bLead:
@@ -334,7 +334,7 @@ const COPY = {
     sIQSBiological:
       "Land and Spandrell describe the mechanism culturally: the rat race, the career treadmill, the economic incentive to postpone or forgo children. BERM provides the biological substrate they were missing. The fertility collapse in high-performance cities is not primarily an economic rational choice — it is endocrine suppression in the most electromagnetically dense environments on earth. The same infrastructure that enables economic concentration (dense office buildings, ubiquitous WiFi, constant device use) also maximizes exposure to the EMF that degrades reproductive biology.",
     sIQSNotChoice:
-      "Singapore's TFR of 0.78 is not Singaporeans choosing to not have children. It is the endocrine output of an environment where testosterone has declined ~40%, oxytocin ~46%, and dopamine function is chronically impaired. The people who move to Singapore for economic opportunity are not making a trade-off they understand — they are entering an electromagnetic environment that will systematically suppress their reproductive capacity through mechanisms they cannot perceive.",
+      "Singapore's TFR of 0.87 (2024) is not Singaporeans choosing to not have children. It is the endocrine output of an environment where testosterone has declined ~59% and oxytocin ~46% across the Amish → urban-office gradient, and dopamine function is chronically impaired. The people who move to Singapore for economic opportunity are not making a trade-off they understand — they are entering an electromagnetic environment that will systematically suppress their reproductive capacity through mechanisms they cannot perceive.",
     sIQSComponents: "Five measurable biological components",
     sIQSComponentsDesc:
       "The IQ Shredder is not a single process but five interlocking biological mechanisms. Each is independently measurable from biomarker data, and together they form a self-reinforcing system that converts human genetic capital into economic output while destroying reproductive capacity.",
@@ -378,7 +378,7 @@ const COPY = {
       "Land (2014): first-order eugenics produces second-order dysgenics. The most economically optimized environments are the most biologically destructive.",
       "[[ref:mcclure2004_delayed_reward|McClure et al. (2004, Science)]]: separate neural systems for immediate vs delayed rewards. Dopaminergic midbrain mediates delayed reward valuation.",
       "[[ref:levine2023_v2|Levine et al. (2023)]]: sperm concentration declined 62% globally 1973-2018. Decline is steeper in urbanized regions.",
-      "Singapore Department of Statistics (2023): TFR 0.97 (2023), down from 1.82 (1980). Pro-natalist spending exceeds $2B/year with minimal effect.",
+      "Singapore Department of Statistics (2023): TFR 0.97 (2023) and 0.87 (2024), down from 1.82 (1980). Pro-natalist spending exceeds $2B/year with minimal effect.",
     ],
 
     s9title: "Testable Predictions",
@@ -543,7 +543,7 @@ const COPY = {
     scoreExplain: "\"Consistent\" means the observation matches the prediction's direction. It does not mean the prediction has been formally tested. See the 14 testable predictions below — none has been empirically tested yet.",
     sPronatalistTitle: "Pronatalist Policy Failure",
     sPronatalistBody1: "No advanced economy has raised fertility to replacement level in modern history and sustained it there (AEI 2026).",
-    sPronatalistBody2: "South Korea: $270 billion since 2005. TFR fell from 1.19 to 0.72 (-40% in 10 years). Singapore: S$2.5 billion/year. TFR fell from 1.82 (1980) to 0.87 (2025). Hungary: 5% of GDP on family subsidies. TFR fell to 1.39 (2024), lowest in a decade.",
+    sPronatalistBody2: "South Korea: $270 billion since 2005. TFR fell from 1.23 (2010) to 0.75 (2024). Singapore: S$2.5 billion/year. TFR fell from 1.82 (1980) to 0.87 (2024). Hungary: 5% of GDP on family subsidies. TFR fell to 1.41 (2024), lowest in a decade.",
     sPronatalistBody3: "Policy addresses j(motivation). It cannot address f(sperm), g(oocyte), or h(timing) — which are biological. When each factor has declined 30%, total fecundability is 0.7⁴ = 0.24. Restoring motivation to 100% yields 0.7³ = 0.34 — not 1.0. The biological components are inaccessible to monetary incentives.",
     sCcbTitle: "Calcium Channel Blocker Evidence",
     sCcbBody: "Brain-penetrant CCBs are associated with ~12% lower risk of psychiatric and neurodegenerative outcomes (Molecular Psychiatry 2022, propensity-matched cohorts up to 322,814). A Finnish nationwide cohort of 60,000+ schizophrenia patients found dihydropyridine use associated with reduced psychiatric rehospitalization (Cells 2025). CCBs showed lower incidence of psychotic, affective, and anxiety disorders than beta-blockers (risk ratios 0.69–0.99; Journal of Hypertension, June 2025 meta-analysis of RCTs). These are cardiovascular patients receiving Ca²⁺ channel blockade for blood pressure — and getting neuropsychiatric protection as a side effect. This is the inverse of the BERM prediction: if Ca²⁺ overload produces psychiatric symptoms, Ca²⁺ blockade should alleviate them. It does.",
@@ -565,7 +565,7 @@ const COPY = {
     civilizationLink: "Takaisin Sivilisaatioon",
     patokratiaLink: "Patokratia",
     patokinesisLink: "Patokinesis",
-    mechanismNote: "Juurimekanismi — miten EMF häiritsee kalsiumkanavia ja tuottaa sukupuolispesifiset hormonaaliset kaskaadit — kuvataan Pathopege-sivulla.",
+    mechanismNote: "Juurimekanismi — miten EMF häiritsee kryptokromi/melatoniinisignalointia ja kalsiumkanavia ja tuottaa sukupuolispesifiset hormonaaliset kaskaadit — kuvataan Pathopege-sivulla.",
     s5title: "Yhdistelmävaikutukset",
     s5lead:
       "Yksilötason hormonaaliset muutokset muuttuvat sivilisatorisiksi, kun ne vaikuttavat jokaisen inhimillisen dyadin molempiin osapuoliin samanaikaisesti. Paristeen muodostuminen vaatii miehen, joka lähestyy, ja naisen, joka luottaa. Lisääntyminen vaatii toimivat siittiöt ja toimivat munasolut. Lasten kasvattaminen vaatii isän panostuksen ja äidin kiintymyksen. Kun EMF häiritsee molempia puolia samanaikaisesti, tulos ei ole summautuva — se on kertautuva.",
@@ -795,7 +795,7 @@ const COPY = {
 
     ssafetyTitle: "Turvallisuushakuisuus: hormonaalinen kynnys, ei arvovalinta",
     ssafetyBody:
-      "Riskinotto vähenee testosteronin myötä (Competition RCT 2024, n=333). Ahdistus kasvaa kortisolin myötä ([[ref:dual_hormone_meta2021|kaksoishormonimeta, n=8 538]]). Uhkaherkkyys kasvaa, kun molemmat muuttuvat samanaikaisesti. Väestötasolla tämä tuottaa yhteiskunnan, joka kokee enemmän tilanteita uhkaavina — ei siksi että ympäristö olisi vaarallisempi (väkivaltarikollisuus on historiallisen matalalla) vaan koska biologinen kynnys uhkan havaitsemiselle on laskenut.",
+      "Riskinotto vähenee testosteronin myötä (Competition RCT 2024, n=220). Ahdistus kasvaa kortisolin myötä ([[ref:dual_hormone_meta2021|kaksoishormonimeta, n=8 538]]). Uhkaherkkyys kasvaa, kun molemmat muuttuvat samanaikaisesti. Väestötasolla tämä tuottaa yhteiskunnan, joka kokee enemmän tilanteita uhkaavina — ei siksi että ympäristö olisi vaarallisempi (väkivaltarikollisuus on historiallisen matalalla) vaan koska biologinen kynnys uhkan havaitsemiselle on laskenut.",
     ssafetyParadox:
       "Tämä selittää muuten paradoksaalisen kuvion: ihmiskunnan historian turvallisimmat yhteiskunnat raportoivat korkeinta ahdistusta. Objektiivinen vaara on laskenut. Subjektiivinen uhka on noussut. Näiden välinen ero on hormonaalinen muutos.",
     ssafetyCreep:
@@ -1346,7 +1346,7 @@ const COPY = {
 
     ssafetyTitle: "安全志向：価値選択ではなくホルモン閾値",
     ssafetyBody:
-      "リスクテイキングはテストステロンとともに低下する（Competition RCT 2024, n=333）。不安はコルチゾールとともに増加する（[[ref:dual_hormone_meta2021|dual hormone meta, n=8,538]]）。両方が同時にシフトすると脅威感受性が増加する。集団レベルでは、これがより多くの状況を脅威として経験する社会を生む――環境がより危険だからではなく（暴力犯罪は歴史的最低水準にある）、脅威認知の生物学的閾値が低下したからである。",
+      "リスクテイキングはテストステロンとともに低下する（Competition RCT 2024, n=220）。不安はコルチゾールとともに増加する（[[ref:dual_hormone_meta2021|dual hormone meta, n=8,538]]）。両方が同時にシフトすると脅威感受性が増加する。集団レベルでは、これがより多くの状況を脅威として経験する社会を生む――環境がより危険だからではなく（暴力犯罪は歴史的最低水準にある）、脅威認知の生物学的閾値が低下したからである。",
     ssafetyParadox:
       "これは一見矛盾するパターンを説明する：人類史上最も安全な社会が最も高い不安を報告している。客観的危険は低下している。主観的脅威は上昇している。両者の間の差がホルモンシフトである。",
     ssafetyCreep:
@@ -2316,7 +2316,7 @@ const COPY = {
 
     ssafetyTitle: "안전 추구: 호르몬 역치이지 가치 선택이 아님",
     ssafetyBody:
-      "위험 감수는 테스토스테론과 함께 감소합니다 (Competition RCT 2024, n=333). 불안은 코르티솔과 함께 증가합니다 ([[ref:dual_hormone_meta2021|이중 호르몬 메타, n=8,538]]). 위협 민감도는 양쪽이 동시에 변할 때 증가합니다. 인구 수준에서 이것은 더 많은 상황을 위협으로 경험하는 사회를 만들어냅니다 — 환경이 더 위험해져서가 아니라 (폭력 범죄는 역대 최저입니다) 위협 인식의 생물학적 역치가 낮아졌기 때문입니다.",
+      "위험 감수는 테스토스테론과 함께 감소합니다 (Competition RCT 2024, n=220). 불안은 코르티솔과 함께 증가합니다 ([[ref:dual_hormone_meta2021|이중 호르몬 메타, n=8,538]]). 위협 민감도는 양쪽이 동시에 변할 때 증가합니다. 인구 수준에서 이것은 더 많은 상황을 위협으로 경험하는 사회를 만들어냅니다 — 환경이 더 위험해져서가 아니라 (폭력 범죄는 역대 최저입니다) 위협 인식의 생물학적 역치가 낮아졌기 때문입니다.",
     ssafetyParadox:
       "이것은 달리 역설적인 패턴을 설명합니다: 인류 역사상 가장 안전한 사회가 가장 높은 불안을 보고합니다. 객관적 위험은 줄었습니다. 주관적 위협은 늘었습니다. 둘 사이의 간극이 호르몬 변화입니다.",
     ssafetyCreep:

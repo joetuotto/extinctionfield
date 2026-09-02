@@ -822,9 +822,10 @@ FOUNDATION_VULNERABILITY: dict[str, dict[str, Any]] = {
         "primary_substrates": ["MEL", "BDNF", "T", "OXT"],
         "vulnerability": (
             "Most fragile. Multiplicative formula means degradation in "
-            "EITHER component collapses the product. Melatonin (pinealocytes) "
-            "and BDNF (calcium-dependent synthesis) are first-order VGCC "
-            "targets. T (Leydig cells) degrades via calcium disruption. "
+            "EITHER component collapses the product. Melatonin is the first "
+            "casualty of the primary pathway (CRY radical pair -> melatonin, "
+            "pathway B); BDNF (calcium-dependent synthesis) and T (Leydig "
+            "cells) degrade via the secondary calcium-channel pathway (A). "
             "Four vulnerable systems multiplied — catastrophic sensitivity."
         ),
     },
@@ -905,8 +906,9 @@ def foundation_collapse_order(
     The collapse order reveals that binding foundations (group-preserving)
     are systematically more biologically fragile than individualizing
     foundations (individual-protecting). This is not cultural — it is a
-    consequence of which hormonal systems are most sensitive to VGCC
-    disruption.
+    consequence of which hormonal systems are most sensitive to EMF
+    disruption (primary: CRY -> melatonin -> HPG, pathway B; secondary:
+    VGCC/Ca2+, pathway A).
     """
     env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
 
@@ -949,8 +951,8 @@ def foundation_collapse_order(
 #
 # BERM contribution: the author attributes r/K shifts to resource
 # availability cycles. BERM identifies the MECHANISM — the urban EMF
-# environment produces r-selected endocrine profiles through VGCC-mediated
-# biomarker degradation. This is not evolution. It is environmental
+# environment produces r-selected endocrine profiles through melatonin
+# (pathway B, primary) and calcium-channel (pathway A) biomarker degradation. This is not evolution. It is environmental
 # phenotypic mimicry: r-type behavioral outputs in a genetically
 # K-selected species, produced by electromagnetic disruption of the
 # hormonal systems that underpin K-strategy traits.
@@ -1215,16 +1217,19 @@ def moral_distress_index(
 #    biology: in-group allegiance requires BOTH empathic bonding (OXT)
 #    AND active defense motivation (T) simultaneously.
 #
-# 2. SUBSTRATE SENSITIVITY ORDERING. Testosterone degrades fastest under
-#    EMF (Leydig cells: direct VGCC, minimal redundancy, steep dose-
-#    response). OXT degrades next (hypothalamic neurons). BDNF degrades
-#    slowest (cortical neurons, greater redundancy). Since Loyalty depends
-#    on the two MOST sensitive substrates (OXT × T) while Care depends on
-#    the most and LEAST sensitive (OXT + BDNF), Loyalty collapses first.
+# 2. SUBSTRATE SENSITIVITY ORDERING. Melatonin degrades fastest under
+#    EMF (pineal/CRY, pathway B), then testosterone (Leydig cells: minimal
+#    redundancy, steep dose-response), then OXT (hypothalamic neurons),
+#    then DA, and BDNF slowest (cortical neurons, greater redundancy).
+#    Since Loyalty depends on two of the three MOST sensitive substrates
+#    (OXT × T) while Care depends on OXT and the LEAST sensitive (BDNF),
+#    Loyalty collapses first.
 #
-#    Measured across the BERM gradient:
-#      T:    0.955 (amish) → 0.393 (urban_office) = 59% decline
+#    Measured across the BERM gradient (environment_biomarkers, 2025):
+#      MEL:  0.966 (amish) → 0.366 (urban_office) = 62% decline
+#      T:    0.955 → 0.393 = 59% decline
 #      OXT:  0.962 → 0.520 = 46% decline
+#      DA:   0.967 → 0.572 = 41% decline
 #      BDNF: 0.961 → 0.690 = 28% decline
 #
 # 3. CONSEQUENCES OF COLLAPSE.
@@ -2507,7 +2512,8 @@ def behavioral_sink_gradient(year: float = 2025) -> list[dict[str, Any]]:
 # The Japan paradox: low obesity (4%) but low TFR (1.15) and
 # massive herbivore phenomenon (70-75% young men). This proves
 # obesity is a SECONDARY amplifier. The PRIMARY mechanism
-# (direct VGCC-mediated hormone disruption) operates independently.
+# (direct melatonin-HPG disruption, pathway B, amplified by VGCC/Ca2+)
+# operates independently.
 # Japan shows the primary effect without the secondary amplifier.
 # USA/UK show both layers simultaneously.
 

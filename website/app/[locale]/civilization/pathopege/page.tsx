@@ -13,11 +13,11 @@ const COPY = {
     heroLead:
       "Every consequence — the broken families, the political pathology, the falling empires — traces back to a single mechanism. This page describes it.",
     heroTrail:
-      "EMF activates voltage-gated calcium channels. Calcium floods the cell. Downstream cascades alter hormones, neurotransmitters, and reproductive biology in both sexes simultaneously. What follows is the root cause of everything described on the civilization pages.",
+      "EMF perturbs the cryptochrome radical pair, suppressing melatonin and disinhibiting the HPG axis (pathway B); calcium-channel activation (pathway A) amplifies the cascade. Downstream cascades alter hormones, neurotransmitters, and reproductive biology in both sexes simultaneously. What follows is the root cause of everything described on the civilization pages.",
 
     s2title: "Two Parallel Disruptions",
     s2lead:
-      "EMF → VGCC → Ca²⁺ is the same mechanism in both sexes. But because the endocrine systems differ, the downstream consequences are sex-specific — and complementary.",
+      "EMF → CRY → melatonin → HPG (pathway B) with VGCC → Ca²⁺ amplification (pathway A) is the same mechanism in both sexes. But because the endocrine systems differ, the downstream consequences are sex-specific — and complementary.",
     s2glossary: "VGCC: voltage-gated calcium channels — ion channels in cell membranes that open in response to voltage changes, allowing Ca²⁺ influx. Cav3.2: the T-type calcium channel subunit expressed in Leydig cells (testicular testosterone-producing cells) and neurons; gates calcium entry required for steroidogenesis. StAR (Steroidogenic Acute Regulatory protein): transports cholesterol into the mitochondrial inner membrane — the rate-limiting step of all steroid hormone synthesis. VTA (ventral tegmental area): midbrain nucleus containing dopamine-producing neurons that project to the nucleus accumbens and prefrontal cortex. Cav1.3: the L-type calcium channel subunit in VTA neurons; Ca²⁺ entry through Cav1.3 triggers dopamine vesicle release. HPA axis (hypothalamic-pituitary-adrenal): the neuroendocrine stress-response system; chronic activation sustains cortisol elevation even after the stressor resolves.",
     maleTitle: "Male disruption profile",
     malePrimary: "Testosterone ↓ (Cav3.2 → StAR)",
@@ -35,7 +35,7 @@ const COPY = {
     maleConsequences: [
       {
         hormone: "Testosterone",
-        mechanism: "Leydig cell Cav3.2 → StAR protein ↓",
+        mechanism: "Melatonin/LH ↓ (B) + Leydig cell Cav3.2 → StAR protein ↓ (A)",
         behavioral:
           "Status-seeking ↓, risk-taking ↓, sexual approach ↓, authenticity ↓, group loyalty ↓, provocation response ↓",
         evidence:
@@ -175,7 +175,7 @@ const COPY = {
       "As EMF increases, the female anxiety/depression gender gap should widen — and it has.",
     s4bTitle: "Oxytocin and social cohesion",
     s4bBody:
-      "Oxytocin regulates trust, empathy, maternal bonding, pair-bond formation, and social cooperation. It is released through vagal nerve stimulation, physical touch, eye contact, and breastfeeding. BERM Route D (the EMF → VGCC → Ca²⁺ → HPA hyperactivation → vagal suppression pathway) disrupts vagal tone → oxytocin release ↓. At the individual level, this reduces bonding capacity. At the population level, it erodes the infrastructure of trust that institutions require.",
+      "Oxytocin regulates trust, empathy, maternal bonding, pair-bond formation, and social cooperation. It is released through vagal nerve stimulation, physical touch, eye contact, and breastfeeding. BERM Route D (the melatonin loss → HPA hyperactivation → vagal suppression pathway) disrupts vagal tone → oxytocin release ↓. At the individual level, this reduces bonding capacity. At the population level, it erodes the infrastructure of trust that institutions require.",
     s4bData:
       'Edelman Trust Barometer 2025: trust in government, media, NGOs, and employers has reached historic lows across nearly every demographic. Former US Surgeon General Vivek Murthy declared loneliness a "public health crisis" in 2023.',
     s4bCaveat:
@@ -205,7 +205,7 @@ const COPY = {
     navPatokratiaDesc: "Political consequences",
     navPatopoliteiaDesc: "Civilizational consequences",
 
-    sSantiContext: "A 2024 meta-regression of 50+ global studies, harmonized for modern LC-MS assay methods, confirmed a true secular decline of 0.8–1.3% annually since the 1980s. Even men who maintained stable weight showed a 19% decline over 20 years ([[ref:mazur2013|Mazur 2013]], n=991, US Air Force veterans). The decline is not explained by obesity, smoking, alcohol, or sleep.",
+    sSantiContext: "A 2025 meta-regression of 50+ global studies, harmonized for modern LC-MS assay methods, confirmed a true secular decline of 0.8–1.3% annually since the 1980s. Even men who maintained stable weight showed a 19% decline over 20 years ([[ref:mazur2013|Mazur 2013]], n=991, US Air Force veterans). The decline is not explained by obesity, smoking, alcohol, or sleep.",
 
     sRecoveryTitle: "Recovery Evidence",
     sRecoveryBody1: "A 2022 intervention study (PMC9306162) measured hormone levels in men and women before and after 2 months of sleeping in a bed with an EMF-avoidance system. Results: significant increases in plasma DHEA, norepinephrine, serotonin, oxytocin, melatonin, AND testosterone simultaneously. Cortisol/DHEA ratio decreased.",
@@ -223,11 +223,11 @@ const COPY = {
     heroLead:
       "Jokainen seuraus — hajonneet perheet, poliittinen patologia, kaatuvat imperiumit — johtaa yhteen mekanismiin. Tämä sivu kuvaa sen.",
     heroTrail:
-      "EMF aktivoi jänniteohjautuvat kalsiumkanavat. Kalsium tulvii soluun. Alavirtaan suuntautuvat kaskadireaktiot muuttavat hormoneja, välittäjäaineita ja lisääntymisbiologiaa molemmilla sukupuolilla samanaikaisesti. Seuraavassa kuvataan sivilisaatiosivuilla esitettyjen ilmiöiden juurisyy.",
+      "EMF häiritsee kryptokromin radikaaliparia, vaimentaa melatoniinia ja vapauttaa HPG-akselin estosta (polku B); kalsiumkanavien aktivaatio (polku A) vahvistaa kaskadin. Alavirtaan suuntautuvat kaskadireaktiot muuttavat hormoneja, välittäjäaineita ja lisääntymisbiologiaa molemmilla sukupuolilla samanaikaisesti. Seuraavassa kuvataan sivilisaatiosivuilla esitettyjen ilmiöiden juurisyy.",
 
     s2title: "Kaksi rinnakkaista häiriötä",
     s2lead:
-      "EMF → VGCC → Ca²⁺ on sama mekanismi molemmilla sukupuolilla. Mutta koska hormonijärjestelmät eroavat, seuraukset ovat sukupuolitarkkoja — ja komplementaarisia.",
+      "EMF → CRY → melatoniini → HPG (polku B) VGCC → Ca²⁺ -vahvistuksella (polku A) on sama mekanismi molemmilla sukupuolilla. Mutta koska hormonijärjestelmät eroavat, seuraukset ovat sukupuolitarkkoja — ja komplementaarisia.",
     s2glossary: "VGCC: jänniteohjautuvat kalsiumkanavat — solukalvon ionikanavia jotka avautuvat jännitemuutoksesta päästäen Ca²⁺:n sisään. Cav3.2: T-tyypin kalsiumkanavan alayksikkö Leydigin soluissa (kivesten testosteronituottajasolut) ja neuroneissa; säätelee steroidogeneesin vaatimaa kalsiumin sisäänvirtausta. StAR (Steroidogenic Acute Regulatory -proteiini): kuljettaa kolesterolia mitokondrion sisäkalvolle — kaikkien steroidien synteesin nopeusrajoittava vaihe. VTA (ventraalinen tegmentaalialue): keskiaivojen tumake jossa dopamiinituottajat neuronit projisoimat nucleus accumbensiin ja prefrontaalikorteksiin. Cav1.3: L-tyypin kalsiumkanavan alayksikkö VTA-neuroneissa; Ca²⁺-sisäänvirtaus Cav1.3:n kautta laukaisee dopamiinivesikuloiden vapautumisen. HPA-akseli (hypotalamus-aivolisäke-lisämunuainen): neuroendokriininen stressivastejärjestelmä; krooninen aktivaatio ylläpitää kortisolieleviaatiota stressorin poistumisen jälkeenkin.",
     maleTitle: "Miesten häiriöprofiili",
     malePrimary: "Testosteroni ↓ (Cav3.2 → StAR)",
@@ -455,7 +455,7 @@ const COPY = {
     maleConsequences: [
       {
         hormone: "Testosterone",
-        mechanism: "Leydig cell Cav3.2 → StAR protein ↓",
+        mechanism: "Melatonin/LH ↓ (B) + Leydig cell Cav3.2 → StAR protein ↓ (A)",
         behavioral:
           "地位追求↓、リスクテイキング↓、性的アプローチ↓、真正性↓、集団忠誠心↓、挑発反応↓",
         evidence:
@@ -1052,7 +1052,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const meta: Record<string, { title: string; description: string }> = {
     en: {
       title: "Pathopege — The Source | BERM",
-      description: "The biological root cause of civilizational decline: how EMF degrades reproductive biology through VGCC-mediated calcium influx in both sexes simultaneously.",
+      description: "The biological root cause of civilizational decline: how EMF degrades reproductive biology through cryptochrome–melatonin disruption and calcium influx in both sexes simultaneously.",
     },
     fi: {
       title: "Pathopege — Lähde | BERM",
@@ -1230,7 +1230,7 @@ export default async function PathopegePage({
           <svg viewBox="0 0 680 240" className="w-full max-w-2xl mx-auto" role="img" aria-label="Butterfly chart showing sex-specific disruptions from shared EMF mechanism">
             {/* Center mechanism box */}
             <rect x="220" y="6" width="240" height="52" rx="8" fill="currentColor" fillOpacity="0.06" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1.5" />
-            <text x="340" y="27" textAnchor="middle" fill="currentColor" fontSize="14" fontWeight="700">EMF → VGCC → Ca²⁺</text>
+            <text x="340" y="27" textAnchor="middle" fill="currentColor" fontSize="14" fontWeight="700">EMF → CRY/MEL → HPG · VGCC → Ca²⁺</text>
             <text x="340" y="46" textAnchor="middle" fill="currentColor" fillOpacity="0.45" fontSize="10">{d.svgSharedMechanism}</text>
 
             {/* Branch curves from center to sides */}

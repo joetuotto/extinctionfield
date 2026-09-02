@@ -491,10 +491,11 @@ def page_checks() -> list[TableCheck | ProseCheck]:
         return str(round((1.0 - markers["urban_office"][marker] / markers["amish"][marker]) * 100.0))
 
     checks.append(ProseCheck(
-        "patokratia sLCDesc T/OXT/BDNF decline across gradient (EN)", PATOKRATIA,
-        r"direct VGCC, (\d+)% decline across the gradient\), followed by oxytocin "
-        r"\(hypothalamic neurons, (\d+)%\), then BDNF \(cortical, (\d+)%\)",
-        (decline_pct("T"), decline_pct("OXT"), decline_pct("BDNF")),
+        "patokratia sLCDesc MEL/T/OXT/DA/BDNF decline across gradient (EN)", PATOKRATIA,
+        r"Melatonin degrades fastest across the Amish \\u2192 urban-office gradient \((\d+)%\), "
+        r"then testosterone \(Leydig cells, (\d+)%\), oxytocin \(hypothalamic neurons, (\d+)%\), "
+        r"dopamine \((\d+)%\) and BDNF \(cortical, (\d+)%\)",
+        (decline_pct("MEL"), decline_pct("T"), decline_pct("OXT"), decline_pct("DA"), decline_pct("BDNF")),
     ))
 
     # ---- patopolis/page.tsx ----
