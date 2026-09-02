@@ -15,31 +15,31 @@ const COPY = {
     heading: "Sentinel cascade: species declines precede humans",
     human: "Human",
     yearSuffix: "y",
-    footnote: "12 species tracked across land, water, and transitional axes. EMF gradient: r = 0.909 across 7 species with quantifiable reproductive decline rates vs EMF exposure score.",
+    footnote: "12 species tracked across land, water, and transitional axes. EMF gradient: r = 0.84 across 7 species with quantifiable reproductive decline rates vs EMF exposure score.",
   },
   fi: {
     heading: "Sentinellikaskadi: lajien laskut edeltävät ihmistä",
     human: "Ihminen",
     yearSuffix: "v",
-    footnote: "12 lajia seurannassa maa-, vesi- ja siirtymäakseleilla. EMF-gradientti: r = 0,909 seitsemässä lajissa, joilla on kvantifioitava lisääntymislaskuaste vs. EMF-altistusarvo.",
+    footnote: "12 lajia seurannassa maa-, vesi- ja siirtymäakseleilla. EMF-gradientti: r = 0,84 seitsemässä lajissa, joilla on kvantifioitava lisääntymislaskuaste vs. EMF-altistusarvo.",
   },
   ja: {
     heading: "センチネルカスケード：種の減少はヒトに先行する",
     human: "ヒト",
     yearSuffix: "年",
-    footnote: "陸上・水中・遷移軸にわたる12種を追跡。EMF勾配：定量可能な生殖低下率 vs EMF曝露スコアで7種にわたりr = 0.909。",
+    footnote: "陸上・水中・遷移軸にわたる12種を追跡。EMF勾配：定量可能な生殖低下率 vs EMF曝露スコアで7種にわたりr = 0.84。",
   },
   fr: {
     heading: "Cascade sentinelle : le déclin des espèces précède l'humain",
     human: "Humain",
     yearSuffix: "a",
-    footnote: "12 espèces suivies sur les axes terrestre, aquatique et transitionnel. Gradient EMF : r = 0,909 sur 7 espèces avec taux de déclin reproductif quantifiable vs score d'exposition EMF.",
+    footnote: "12 espèces suivies sur les axes terrestre, aquatique et transitionnel. Gradient EMF : r = 0,84 sur 7 espèces avec taux de déclin reproductif quantifiable vs score d'exposition EMF.",
   },
   ko: {
     heading: "감시종 연쇄: 종의 감소가 인간보다 선행",
     human: "인간",
     yearSuffix: "년",
-    footnote: "육상·수중·전환 축에 걸쳐 12종 추적. EMF 기울기: 정량 가능한 생식 감소율 vs EMF 노출 점수로 7종에 걸쳐 r = 0.909.",
+    footnote: "육상·수중·전환 축에 걸쳐 12종 추적. EMF 기울기: 정량 가능한 생식 감소율 vs EMF 노출 점수로 7종에 걸쳐 r = 0.84.",
   },
 } as const;
 

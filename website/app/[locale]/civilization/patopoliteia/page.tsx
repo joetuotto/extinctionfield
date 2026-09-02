@@ -544,7 +544,7 @@ const COPY = {
     sActivationChartX: "Charge EMF totale", sActivationChartXNote: "", sActivationChartY: "BioCap", sActivationChartSun: "Meme soleil, effets opposes", sActivationEpistemic: "",
     sExpansionTitle: "Trois types d'expansion",
     sExpansionCards: [
-      { id: "α", title: "Activation hormetique", examples: "Mongols 1206, Arabes 632, Vikings 793", icon: "sun", desc: "", trigger: "Maximum solaire + nomade = activation biologique" },
+      { id: "α", title: "Activation hormetique", examples: "Arabes 632 (indice solaire 0,73), Vikings 793 (0,55)", icon: "sun", desc: "", trigger: "Maximum solaire + nomade = activation biologique" },
       { id: "β", title: "Energie de recuperation", examples: "Explorations 1492, Revolution scientifique 1687, ere napoleonienne 1803", icon: "moon", desc: "", trigger: "Grand minimum + recuperation = essor creatif" },
       { id: "γ", title: "Gradient d'erosion", examples: "Migrations germaniques 375–476, Mandchous → Ming 1644, Afrique → Europe 2000–", icon: "gradient", desc: "", trigger: "Siecles d'erosion urbaine + frontiere intacte = remplacement" },
     ],

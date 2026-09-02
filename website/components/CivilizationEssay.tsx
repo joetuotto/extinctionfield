@@ -38,7 +38,7 @@ const ESSAY_COPY = {
     s3title: "What This Explains That Nothing Else Can",
     s3sub1: "The simultaneous decline of fertility across all species.",
     s3sub1p:
-      "Human sperm quality, dog sperm quality, horse fertility, bee colony health, insect biomass, and bird populations are all declining simultaneously, across different continents. Dogs do not attend university. Horses do not use contraception. Bees do not delay family formation for career reasons. The seven-species electromagnetic gradient — correlating the degree of electromagnetic exposure with the rate of reproductive decline — produces r = 0.909 (p = 0.005). No social or economic variable achieves comparable cross-species explanatory power.",
+      "Human sperm quality, dog sperm quality, horse fertility, bee colony health, insect biomass, and bird populations are all declining simultaneously, across different continents. Dogs do not attend university. Horses do not use contraception. Bees do not delay family formation for career reasons. The seven-species electromagnetic gradient — correlating the degree of electromagnetic exposure with the rate of reproductive decline — produces r = 0.84 (p = 0.017). No social or economic variable achieves comparable cross-species explanatory power.",
     s3sub1p2: "",
     s3sub2: "The systematic failure of pronatalist policy.",
     s3sub2p:
@@ -128,7 +128,7 @@ const ESSAY_COPY = {
     s3sub1p:
       "Hedelmällisyys laskee kaikilla lajeilla yhtä aikaa. Muutokset koskevat ihmisten ja koirien siittiöiden laatua, hevosten hedelmällisyyttä, mehiläisyhdyskuntien terveyttä, hyönteisbiomassaa ja lintupopulaatioita.",
     s3sub1p2:
-      "Ihmisten käyttäytymistä koskevat sosiaaliset selitykset, kuten kouluttautuminen, ehkäisyn käyttö tai perheen perustamisen lykkääminen uran vuoksi, eivät sovellu koiriin, hevosiin, mehiläisiin tai muihin tarkasteltuihin eläinlajeihin. Seitsemää lajia koskevassa sähkömagneettisessa gradientissa altistuksen aste korreloi lisääntymisen laskunopeuden kanssa arvolla r = 0,909 (p = 0,005). Mikään sosiaalinen tai taloudellinen muuttuja ei saavuta vastaavaa lajien välistä selitysvoimaa.",
+      "Ihmisten käyttäytymistä koskevat sosiaaliset selitykset, kuten kouluttautuminen, ehkäisyn käyttö tai perheen perustamisen lykkääminen uran vuoksi, eivät sovellu koiriin, hevosiin, mehiläisiin tai muihin tarkasteltuihin eläinlajeihin. Seitsemää lajia koskevassa sähkömagneettisessa gradientissa altistuksen aste korreloi lisääntymisen laskunopeuden kanssa arvolla r = 0,84 (p = 0,017). Mikään sosiaalinen tai taloudellinen muuttuja ei saavuta vastaavaa lajien välistä selitysvoimaa.",
     s3sub2: "Syntyvyyspolitiikan järjestelmällinen epäonnistuminen",
     s3sub2p:
       "Kaikki kehittyneet maat, jotka ovat yrittäneet kääntää hedelmällisyyden laskun taloudellisilla kannustimilla, ovat epäonnistuneet. Unkarissa kokonaishedelmällisyysluku nousi 1,23:sta noin 1,5:een, mutta jäi edelleen selvästi väestön uusiutumistason alapuolelle. Etelä-Koreassa, Japanissa ja Singaporessa toimilla ei ollut havaittavaa vaikutusta.",
