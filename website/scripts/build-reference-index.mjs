@@ -193,7 +193,9 @@ fs.writeFileSync(
   JSON.stringify(
     {
       metadata: {
-        generated: new Date().toISOString().slice(0, 10),
+        // Tied to the registry's own timestamp so a rebuild on a new day does
+        // not dirty this file when nothing changed.
+        generated: registry.metadata.last_updated ?? registry.metadata.generated,
         referencesWithUsages: Object.keys(usage).length,
         usageLocations: Object.values(usage).reduce((sum, items) => sum + items.length, 0),
       },
