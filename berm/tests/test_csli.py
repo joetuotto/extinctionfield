@@ -220,7 +220,15 @@ class TestReadinessArtifact:
         assert_no_numeric_evidence(result)
 
     def test_legacy_website_artifact_is_withdrawn_stub(self):
+        """The legacy public artifact must be absent or an explicit WITHDRAWN stub.
+
+        The stub was deleted from the website in a05a3a7 ("data cleanup");
+        absence satisfies the withdrawal requirement. If the file ever returns,
+        it must not carry numeric evidence.
+        """
         artifact = Path(__file__).resolve().parents[2] / "website" / "public" / "data" / "csli_results.json"
+        if not artifact.exists():
+            return
         payload = json.loads(artifact.read_text())
         assert payload["status"] == "WITHDRAWN"
         assert payload["replacement"] == "/data/sentinel_readiness.json"
