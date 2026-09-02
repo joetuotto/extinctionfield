@@ -42,8 +42,8 @@ const COPY = {
     architectureNote: "Architecture note",
     architectureText: "These predictions use the scalar cumulative-exposure architecture (v17). Mobile penetration enters as a technology-adoption timing proxy. The sensitivity envelope varies one parameter at a time; it is not a probabilistic confidence interval.",
     ciExceededTitle: "Three-branch falsification analysis",
-    finlandFalsification: "Status: CI EXCEEDED (observed ~1.30, upper bound 1.24). Three possible explanations within BERM’s framework: (a) Model overestimates biological effect in Finland — the exponential EMF-TFR relationship may saturate earlier than modeled. (b) Exogenous compensation: immigration TFR contribution larger than estimated — Finland’s immigrant TFR (~1.8–2.2) may lift national TFR above the native-population prediction. (c) CI too narrow: the model’s uncertainty bands underestimate stochastic variation in small-population TFR. Discriminating test: compare native-born TFR (if available from Statistics Finland) against the prediction. If native TFR ≤ 1.24, explanation (b) is confirmed and the model is not falsified.",
-    southKoreaFalsification: "Status: CI RISK ZONE (observed ~0.80, upper bound 0.72). Three possible explanations: (a) Model overestimates EMF suppression in Korea — cultural/policy factors may have independent negative effects on TFR that partially offset EMF. (b) Measurement lag: Korea’s pronatalist policies (cash transfers, housing subsidies) may have temporarily elevated TFR above the biological trajectory. (c) The model’s recovery estimate for Korea may be too optimistic. Discriminating test: track whether Korea’s TFR continues declining toward the predicted value or stabilizes at current levels.",
+    finlandFalsification: "Status: INTERIM (observed 1.25 in 2024; the 2030 envelope is 1.02–1.24 and the 2030 observation is not yet available). Three possible explanations within BERM’s framework: (a) Model overestimates biological effect in Finland — the exponential EMF-TFR relationship may saturate earlier than modeled. (b) Exogenous compensation: immigration TFR contribution larger than estimated — Finland’s immigrant TFR (~1.8–2.2) may lift national TFR above the native-population prediction. (c) CI too narrow: the model’s uncertainty bands underestimate stochastic variation in small-population TFR. Discriminating test: compare native-born TFR (if available from Statistics Finland) against the prediction. If native TFR ≤ 1.24, explanation (b) is confirmed and the model is not falsified.",
+    southKoreaFalsification: "Status: INTERIM (observed 0.75 in 2024; the 2030 envelope is 0.48–0.72 and the 2030 observation is not yet available). Three possible explanations: (a) Model overestimates EMF suppression in Korea — cultural/policy factors may have independent negative effects on TFR that partially offset EMF. (b) Measurement lag: Korea’s pronatalist policies (cash transfers, housing subsidies) may have temporarily elevated TFR above the biological trajectory. (c) The model’s recovery estimate for Korea may be too optimistic. Discriminating test: track whether Korea’s TFR continues declining toward the predicted value or stabilizes at current levels.",
     modulomeTitle: "Modulome predictions",
     modulomeLead: "Mechanistic predictions derived from the eight-layer EMF modulome and therapeutic device evidence. These are qualitative, falsifiable predictions — each specifies a concrete experimental outcome.",
     modulomePredictions: [
@@ -1352,7 +1352,7 @@ const COPY = {
       {
         id: "T-TFR-2",
         title: "Finland TFR will drop below 1.00 by 2032",
-        description: "Finland is already past the biological threshold. Current trajectory: 1.87 (2010) → 1.26 (2024), −4.5%/year. Projection: 1.26 × 0.955^8 ≈ 0.87 by 2032. Falsification: Finland TFR stabilizes above 1.10.",
+        description: "Finland is already past the biological threshold. Current trajectory: 1.87 (2010) → 1.25 (2024), −2.8%/year (compound). Projection: 1.25 × 0.972^8 ≈ 1.00 by 2032. Falsification: Finland TFR stabilizes above 1.10.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -1485,7 +1485,7 @@ const COPY = {
       {
         id: "T-3",
         title: "Dog sperm decline rate matches human T decline rate (both ~1%/yr)",
-        description: "Dogs share domestic EMF exposure with humans. [[ref:lea2016|Lea et al. 2016]] documented −1.0%/yr sperm decline in UK stud dogs over 26 years — the same rate as human testosterone secular decline. This cross-species rate matching is predicted by the EMF gradient (r = 0.909): species sharing the same EMF environment should show the same decline rate. Test: compare dog sperm decline onset timing with local electrification history across 3+ countries.",
+        description: "Dogs share domestic EMF exposure with humans. [[ref:lea2016|Lea et al. 2016]] documented −1.0%/yr sperm decline in UK stud dogs over 26 years — the same rate as human testosterone secular decline. This cross-species rate matching is predicted by the EMF gradient (r = 0.84): species sharing the same EMF environment should show the same decline rate. Test: compare dog sperm decline onset timing with local electrification history across 3+ countries.",
         falsification: "Dog sperm decline rates vary by >0.5%/yr across countries with similar EMF environments, or dog sperm decline predates electrification in any country",
       },
       {
@@ -1765,7 +1765,7 @@ const COPY = {
     dashVerified: "Verified",
     dashAwaiting: "Awaiting test",
     dashPredictionStatus: "Prediction status",
-    statusBarAria: "Status bar: 4 verified, 254 pending, 2 CI exceeded",
+    statusBarAria: "Status bar: 4 verified, 276 pending, 0 CI exceeded",
     statusVerified: "Verified",
     statusAwaiting: "Awaiting test",
     statusCiExceeded: "CI exceeded",
@@ -1815,7 +1815,7 @@ const COPY = {
       { id: "E-CIV-2", title: "Sub-Saharan African fertility decline acceleration", description: "As Sub-Saharan Africa’s mobile network penetration crosses 80% and grid electrification exceeds 60%, regional TFR will begin declining at a rate comparable to East Asia’s 1990–2010 trajectory (>0.1/year), despite strong pronatalist cultural norms.", falsification: "African TFR remains stable or declines <0.05/year despite reaching those infrastructure thresholds.", timeline: "Testable 2030–2040" },
       { id: "E-CIV-3", title: "Pronatalist policy ceiling", description: "No national pronatalist policy will achieve sustained (>5 year) return to replacement-level fertility (TFR ≥ 2.1) in any country with mobile penetration >90% and grid coverage >95%, regardless of spending level.", falsification: "Any such country sustains TFR ≥ 2.1 for 5+ years through policy intervention.", timeline: "Continuously testable" },
       { id: "E-CIV-4", title: "Technology-restricting communities maintain fertility", description: "Communities that restrict electromagnetic technology (Old Order Amish, ultra-Orthodox with kosher phones, technology-free intentional communities) will maintain TFR >4.0 while surrounding populations continue declining, and communities that adopt technology will see TFR converge toward mainstream within one generation (~25 years).", falsification: "Technology-restricting communities show fertility decline parallel to mainstream, or adopting communities maintain high TFR.", timeline: "Continuously testable" },
-      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.909) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
+      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.84) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
     ],
     civTimeline: "Timeline",
     civFalsification: "Falsification criterion",
@@ -1907,8 +1907,8 @@ const COPY = {
     architectureNote: "Arkkitehtuurihuomautus",
     architectureText: "Nämä ennusteet käyttävät skalaarin kumulatiivisen altistuksen arkkitehtuuria (v17). Mobiilipenetraatio on teknologian käyttöönoton ajoitusproxy. Herkkyysalue varioi yhtä parametria kerrallaan; se ei ole probabilistinen luottamusväli.",
     ciExceededTitle: "Kolmihaarainen falsifikaatioanalyysi",
-    finlandFalsification: "Tila: CI YLITTYNYT (havaittu ~1,30, yläraja 1,24). Kolme mahdollista selitystä BERM:n kehyksessä: (a) Malli yliarvioi biologista vaikutusta Suomessa — eksponentiaalinen EMF–TFR-suhde voi saturoitua mallinnettua aiemmin. (b) Eksogeeninen kompensaatio: maahanmuuton TFR-panos suurempi kuin arvioitu — Suomen maahanmuuttajien TFR (~1,8–2,2) voi nostaa kansallista TFR:ää yli syntyperäisväestön ennusteen. (c) CI liian kapea: mallin epävarmuusvyöhykkeet aliarvioivat stokastista vaihtelua pienen väestön TFR:ssä. Erotteleva testi: vertaa syntyperäisten TFR:ää (jos saatavissa Tilastokeskuksesta) ennusteeseen. Jos syntyperäisten TFR ≤ 1,24, selitys (b) vahvistuu eikä malli ole falsifioitu.",
-    southKoreaFalsification: "Tila: CI RISKIALUE (havaittu ~0,80, yläraja 0,72). Kolme mahdollista selitystä: (a) Malli yliarvioi EMF-suppressiota Koreassa — kulttuuriset/poliittiset tekijät voivat vaikuttaa TFR:ään itsenäisesti EMF:stä riippumatta. (b) Mittausviive: Korean pronatalistiset politiikat (käteistuet, asumistuet) ovat voineet tilapäisesti nostaa TFR:ää biologisen trajektorin yläpuolelle. (c) Mallin palautumisarvio Korealle voi olla liian optimistinen. Erotteleva testi: seuraa laskeeko Korean TFR kohti ennustettua arvoa vai vakiintuuko se nykyiselle tasolle.",
+    finlandFalsification: "Tila: VÄLITILA (havaittu 1,25 vuonna 2024; vuoden 2030 vaihteluväli on 1,02–1,24, eikä vuoden 2030 havaintoa ole vielä saatavilla). Kolme mahdollista selitystä BERM:n kehyksessä: (a) Malli yliarvioi biologista vaikutusta Suomessa — eksponentiaalinen EMF–TFR-suhde voi saturoitua mallinnettua aiemmin. (b) Eksogeeninen kompensaatio: maahanmuuton TFR-panos suurempi kuin arvioitu — Suomen maahanmuuttajien TFR (~1,8–2,2) voi nostaa kansallista TFR:ää yli syntyperäisväestön ennusteen. (c) CI liian kapea: mallin epävarmuusvyöhykkeet aliarvioivat stokastista vaihtelua pienen väestön TFR:ssä. Erotteleva testi: vertaa syntyperäisten TFR:ää (jos saatavissa Tilastokeskuksesta) ennusteeseen. Jos syntyperäisten TFR ≤ 1,24, selitys (b) vahvistuu eikä malli ole falsifioitu.",
+    southKoreaFalsification: "Tila: VÄLITILA (havaittu 0,75 vuonna 2024; vuoden 2030 vaihteluväli on 0,48–0,72, eikä vuoden 2030 havaintoa ole vielä saatavilla). Kolme mahdollista selitystä: (a) Malli yliarvioi EMF-suppressiota Koreassa — kulttuuriset/poliittiset tekijät voivat vaikuttaa TFR:ään itsenäisesti EMF:stä riippumatta. (b) Mittausviive: Korean pronatalistiset politiikat (käteistuet, asumistuet) ovat voineet tilapäisesti nostaa TFR:ää biologisen trajektorin yläpuolelle. (c) Mallin palautumisarvio Korealle voi olla liian optimistinen. Erotteleva testi: seuraa laskeeko Korean TFR kohti ennustettua arvoa vai vakiintuuko se nykyiselle tasolle.",
     modulomeTitle: "Modulooma-ennusteet",
     modulomeLead: "Mekanistiset ennusteet jotka perustuvat kahdeksankerroksiseen EMF-moduloomiin ja terapeuttisten laitteiden näyttöön. Nämä ovat kvalitatiivisia, falsifioitavia ennusteita — jokainen määrittää konkreettisen kokeellisen tuloksen.",
     modulomePredictions: [
@@ -3217,7 +3217,7 @@ const COPY = {
       {
         id: "T-TFR-2",
         title: "Suomen TFR laskee alle 1,00:n vuoteen 2032 mennessä",
-        description: "Suomi on jo ylittänyt biologisen kynnyksen. Nykyinen kehityskulku: 1,87 (2010) → 1,26 (2024), −4,5 %/vuosi. Projisointi: 1,26 × 0,955^8 ≈ 0,87 vuoteen 2032. Kumoaminen: Suomen TFR vakautuu yli 1,10:n.",
+        description: "Suomi on jo ylittänyt biologisen kynnyksen. Nykyinen kehityskulku: 1,87 (2010) → 1,25 (2024), −2,8 %/vuosi (yhdistetty). Projisointi: 1,25 × 0,972^8 ≈ 1,00 vuoteen 2032. Kumoaminen: Suomen TFR vakautuu yli 1,10:n.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -3630,7 +3630,7 @@ const COPY = {
     dashVerified: "Vahvistettua",
     dashAwaiting: "Odottaa testiä",
     dashPredictionStatus: "Ennusteiden tila",
-    statusBarAria: "Tilapalkki: 4 vahvistettua, 254 odottaa, 2 CI ylitetty",
+    statusBarAria: "Tilapalkki: 4 vahvistettua, 276 odottaa, 0 CI ylitetty",
     statusVerified: "Vahvistettu",
     statusAwaiting: "Odottaa testiä",
     statusCiExceeded: "CI ylitetty",
@@ -3680,7 +3680,7 @@ const COPY = {
       { id: "E-CIV-2", title: "Saharan eteläpuolisen Afrikan hedelmällisyyden laskun kiihtyminen", description: "Kun Saharan eteläpuolisen Afrikan mobiiliverkon penetraatio ylittää 80 % ja sähköverkon peitto 60 %, alueellinen TFR alkaa laskea Itä-Aasian vuosien 1990–2010 tahtia (>0,1/vuosi), vahvoista pronalistisista kulttuurinormeista huolimatta.", falsification: "Afrikan TFR pysyy vakaana tai laskee <0,05/vuosi näiden infrastruktuurikynnysten saavuttamisesta huolimatta.", timeline: "Testattavissa 2030–2040" },
       { id: "E-CIV-3", title: "Pronalistisen politiikan katto", description: "Mikään kansallinen pronalistinen politiikka ei saavuta kestävää (>5 vuotta) paluuta korvaustasolle (TFR ≥ 2,1) missään maassa, jossa mobiilipenetraatio on >90 % ja sähköverkon peitto >95 %, riippumatta rahoitustasosta.", falsification: "Mikä tahansa tällainen maa ylläpitää TFR:ää ≥ 2,1 yli 5 vuotta poliittisella interventiolla.", timeline: "Jatkuvasti testattavissa" },
       { id: "E-CIV-4", title: "Teknologiaa rajoittavat yhteisöt säilyttävät hedelmällisyyden", description: "Yhteisöt jotka rajoittavat sähkömagneettista teknologiaa (vanhan järjestyksen amissit, ultra-ortodoksit kosher-puhelimilla, teknologiavapaat intentionaaliset yhteisöt) säilyttävät TFR:n >4,0 ympäröivien väestöjen TFR:n jatkaessa laskuaan, ja teknologian omaksuvien yhteisöjen TFR yhtyy valtavirran tasolle yhden sukupolven (~25 vuotta) kuluessa.", falsification: "Teknologiaa rajoittavien yhteisöjen hedelmällisyys laskee valtavirran rinnalla, tai teknologian omaksuvat yhteisöt säilyttävät korkean TFR:n.", timeline: "Jatkuvasti testattavissa" },
-      { id: "E-CIV-5", title: "Lajienväliisen hedelmällisyysgradientin pysyvyys", description: "Sähkömagneettinen lajienvälinen gradientti (r=0,909) säilyy: vähemmän EM-altistusta saavat lajit säilyttävät korkeamman hedelmällisyyden, ja kotieläimet korkean EMF:n ympäristöissä jatkavat laskua ihmisten rinnalla. Erityisesti koirien siemennesteen laatu jatkaa laskuaan rinnakkain ihmisten siemennesteen laadun kanssa kaupungistuneilla alueilla.", falsification: "Lajienväliinen gradientti hajoaa tai luonnonvaraiset/matalan EMF:n populaatiot laskevat samaa tahtia.", timeline: "Jatkuvasti testattavissa" },
+      { id: "E-CIV-5", title: "Lajienväliisen hedelmällisyysgradientin pysyvyys", description: "Sähkömagneettinen lajienvälinen gradientti (r=0,84) säilyy: vähemmän EM-altistusta saavat lajit säilyttävät korkeamman hedelmällisyyden, ja kotieläimet korkean EMF:n ympäristöissä jatkavat laskua ihmisten rinnalla. Erityisesti koirien siemennesteen laatu jatkaa laskuaan rinnakkain ihmisten siemennesteen laadun kanssa kaupungistuneilla alueilla.", falsification: "Lajienväliinen gradientti hajoaa tai luonnonvaraiset/matalan EMF:n populaatiot laskevat samaa tahtia.", timeline: "Jatkuvasti testattavissa" },
     ],
     civTimeline: "Aikajana",
     civFalsification: "Kumoamisehto",
@@ -4016,7 +4016,7 @@ const COPY = {
     dashVerified: "検証済み",
     dashAwaiting: "テスト待ち",
     dashPredictionStatus: "予測ステータス",
-    statusBarAria: "ステータスバー：検証済み4件、保留254件、CI超過2件",
+    statusBarAria: "ステータスバー：検証済み4件、保留276件、CI超過0件",
     statusVerified: "検証済み",
     statusAwaiting: "テスト待ち",
     statusCiExceeded: "CI超過",
@@ -4066,7 +4066,7 @@ const COPY = {
       { id: "E-CIV-2", title: "Sub-Saharan African fertility decline acceleration", description: "As Sub-Saharan Africa's mobile network penetration crosses 80% and grid electrification exceeds 60%, regional TFR will begin declining at a rate comparable to East Asia's 1990–2010 trajectory (>0.1/year), despite strong pronatalist cultural norms.", falsification: "African TFR remains stable or declines <0.05/year despite reaching those infrastructure thresholds.", timeline: "Testable 2030–2040" },
       { id: "E-CIV-3", title: "Pronatalist policy ceiling", description: "No national pronatalist policy will achieve sustained (>5 year) return to replacement-level fertility (TFR ≥ 2.1) in any country with mobile penetration >90% and grid coverage >95%, regardless of spending level.", falsification: "Any such country sustains TFR ≥ 2.1 for 5+ years through policy intervention.", timeline: "Continuously testable" },
       { id: "E-CIV-4", title: "Technology-restricting communities maintain fertility", description: "Communities that restrict electromagnetic technology (Old Order Amish, ultra-Orthodox with kosher phones, technology-free intentional communities) will maintain TFR >4.0 while surrounding populations continue declining, and communities that adopt technology will see TFR converge toward mainstream within one generation (~25 years).", falsification: "Technology-restricting communities show fertility decline parallel to mainstream, or adopting communities maintain high TFR.", timeline: "Continuously testable" },
-      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.909) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
+      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.84) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
     ],
     civTimeline: "タイムライン",
     civFalsification: "反証基準",
@@ -5283,7 +5283,7 @@ const COPY = {
       {
         id: "T-TFR-2",
         title: "Finland TFR will drop below 1.00 by 2032",
-        description: "Finland is already past the biological threshold. Current trajectory: 1.87 (2010) → 1.26 (2024), −4.5%/year. Projection: 1.26 × 0.955^8 ≈ 0.87 by 2032. Falsification: Finland TFR stabilizes above 1.10.",
+        description: "Finland is already past the biological threshold. Current trajectory: 1.87 (2010) → 1.25 (2024), −2.8%/year (compound). Projection: 1.25 × 0.972^8 ≈ 1.00 by 2032. Falsification: Finland TFR stabilizes above 1.10.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -5588,8 +5588,8 @@ const COPY = {
     architectureNote: "Note d'architecture",
     architectureText: "Ces prédictions utilisent l'architecture d'exposition cumulative scalaire (v17). La pénétration mobile entre comme proxy de chronologie d'adoption technologique. L'enveloppe de sensibilité fait varier un paramètre à la fois ; ce n'est pas un intervalle de confiance probabiliste.",
     ciExceededTitle: "Analyse de falsification à trois branches",
-    finlandFalsification: "Statut : IC DÉPASSÉ (observé ~1,30, borne supérieure 1,24). Trois explications possibles dans le cadre BERM : (a) Le modèle surestime l'effet biologique en Finlande — la relation exponentielle EMF-TFR peut saturer plus tôt que modélisé. (b) Compensation exogène : la contribution TFR de l'immigration est plus importante qu'estimée — le TFR des immigrants finlandais (~1,8-2,2) peut élever le TFR national. (c) IC trop étroit : les bandes d'incertitude du modèle sous-estiment la variation stochastique du TFR en petite population. Test discriminant : comparer le TFR des natifs (si disponible) à la prédiction. Si le TFR natif ≤ 1,24, l'explication (b) est confirmée.",
-    southKoreaFalsification: "Statut : ZONE DE RISQUE IC (observé ~0,80, borne supérieure 0,72). Trois explications possibles : (a) Le modèle surestime la suppression EMF en Corée — des facteurs culturels/politiques ont des effets négatifs indépendants sur le TFR. (b) Décalage de mesure : les politiques natalistes (transferts, subventions logement) ont temporairement élevé le TFR. (c) L'estimation de récupération du modèle pour la Corée est trop optimiste. Test discriminant : suivre si le TFR coréen continue de baisser vers la valeur prédite.",
+    finlandFalsification: "Statut : INTERMÉDIAIRE (observé 1,25 en 2024 ; l’enveloppe 2030 est 1,02–1,24 et l’observation 2030 n’est pas encore disponible). Trois explications possibles dans le cadre BERM : (a) Le modèle surestime l'effet biologique en Finlande — la relation exponentielle EMF-TFR peut saturer plus tôt que modélisé. (b) Compensation exogène : la contribution TFR de l'immigration est plus importante qu'estimée — le TFR des immigrants finlandais (~1,8-2,2) peut élever le TFR national. (c) IC trop étroit : les bandes d'incertitude du modèle sous-estiment la variation stochastique du TFR en petite population. Test discriminant : comparer le TFR des natifs (si disponible) à la prédiction. Si le TFR natif ≤ 1,24, l'explication (b) est confirmée.",
+    southKoreaFalsification: "Statut : INTERMÉDIAIRE (observé 0,75 en 2024 ; l’enveloppe 2030 est 0,48–0,72 et l’observation 2030 n’est pas encore disponible). Trois explications possibles : (a) Le modèle surestime la suppression EMF en Corée — des facteurs culturels/politiques ont des effets négatifs indépendants sur le TFR. (b) Décalage de mesure : les politiques natalistes (transferts, subventions logement) ont temporairement élevé le TFR. (c) L'estimation de récupération du modèle pour la Corée est trop optimiste. Test discriminant : suivre si le TFR coréen continue de baisser vers la valeur prédite.",
     modulomeTitle: "Prédictions du modulome",
     modulomeLead: "Prédictions mécanistiques dérivées du modulome EMF à huit couches et des preuves de dispositifs thérapeutiques. Ce sont des prédictions qualitatives et falsifiables — chacune spécifie un résultat expérimental concret.",
     modulomeTimeline: "Chronologie",
@@ -5832,7 +5832,7 @@ const COPY = {
     dashVerified: "Vérifiées",
     dashAwaiting: "En attente de test",
     dashPredictionStatus: "État des prédictions",
-    statusBarAria: "Barre d'état : 4 vérifiées, 254 en attente, 2 IC dépassé",
+    statusBarAria: "Barre d'état : 4 vérifiées, 276 en attente, 0 IC dépassé",
     statusVerified: "Vérifié",
     statusAwaiting: "En attente de test",
     statusCiExceeded: "IC dépassé",
@@ -5882,7 +5882,7 @@ const COPY = {
       { id: "E-CIV-2", title: "Sub-Saharan African fertility decline acceleration", description: "As Sub-Saharan Africa's mobile network penetration crosses 80% and grid electrification exceeds 60%, regional TFR will begin declining at a rate comparable to East Asia's 1990–2010 trajectory (>0.1/year), despite strong pronatalist cultural norms.", falsification: "African TFR remains stable or declines <0.05/year despite reaching those infrastructure thresholds.", timeline: "Testable 2030–2040" },
       { id: "E-CIV-3", title: "Pronatalist policy ceiling", description: "No national pronatalist policy will achieve sustained (>5 year) return to replacement-level fertility (TFR ≥ 2.1) in any country with mobile penetration >90% and grid coverage >95%, regardless of spending level.", falsification: "Any such country sustains TFR ≥ 2.1 for 5+ years through policy intervention.", timeline: "Continuously testable" },
       { id: "E-CIV-4", title: "Technology-restricting communities maintain fertility", description: "Communities that restrict electromagnetic technology (Old Order Amish, ultra-Orthodox with kosher phones, technology-free intentional communities) will maintain TFR >4.0 while surrounding populations continue declining, and communities that adopt technology will see TFR converge toward mainstream within one generation (~25 years).", falsification: "Technology-restricting communities show fertility decline parallel to mainstream, or adopting communities maintain high TFR.", timeline: "Continuously testable" },
-      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.909) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
+      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.84) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
     ],
     civTimeline: "Chronologie",
     civFalsification: "Critère de falsification",
@@ -7099,7 +7099,7 @@ const COPY = {
       {
         id: "T-TFR-2",
         title: "Finland TFR will drop below 1.00 by 2032",
-        description: "Finland is already past the biological threshold. Current trajectory: 1.87 (2010) → 1.26 (2024), −4.5%/year. Projection: 1.26 × 0.955^8 ≈ 0.87 by 2032. Falsification: Finland TFR stabilizes above 1.10.",
+        description: "Finland is already past the biological threshold. Current trajectory: 1.87 (2010) → 1.25 (2024), −2.8%/year (compound). Projection: 1.25 × 0.972^8 ≈ 1.00 by 2032. Falsification: Finland TFR stabilizes above 1.10.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -7404,8 +7404,8 @@ const COPY = {
     architectureNote: "아키텍처 참고",
     architectureText: "이 예측들은 스칼라 누적 노출 아키텍처(v17)를 사용합니다. 모바일 보급률은 기술 도입 시기 프록시로 사용됩니다. 민감도 엔벨로프는 한 번에 하나의 파라미터를 변동시킨 것으로, 확률적 신뢰 구간이 아닙니다.",
     ciExceededTitle: "3분기 반증 분석",
-    finlandFalsification: "상태: CI 초과 (관측값 ~1.30, 상한 1.24). BERM 프레임워크 내 세 가지 가능한 설명: (a) 모델이 핀란드의 생물학적 효과를 과대 추정 — 지수적 EMF-TFR 관계가 모델링보다 일찍 포화. (b) 외인성 보상: 이민 TFR 기여가 추정보다 큼 — 핀란드의 이민 TFR(~1.8-2.2)이 국가 TFR을 상승. (c) CI가 너무 좁음: 모델의 불확실성 범위가 소규모 인구 TFR의 확률적 변동을 과소 추정. 판별 테스트: 핀란드 통계청에서 출생지 TFR(가용 시)을 예측과 비교. 출생지 TFR ≤ 1.24이면 설명(b)이 확인.",
-    southKoreaFalsification: "상태: CI 위험 구역 (관측값 ~0.80, 상한 0.72). 세 가지 가능한 설명: (a) 모델이 한국의 EMF 억제를 과대 추정 — 문화적/정책적 요인이 TFR에 독립적 부정적 영향. (b) 측정 지연: 한국의 출산 장려 정책(현금 지원, 주거 보조)이 TFR을 일시적으로 상승. (c) 모델의 한국 회복 추정이 지나치게 낙관적. 판별 테스트: 한국 TFR이 예측 값으로 계속 하락하는지 현재 수준에서 안정되는지 추적.",
+    finlandFalsification: "상태: 중간 (2024년 관측값 1.25; 2030년 구간은 1.02–1.24이며 2030년 관측값은 아직 없음). BERM 프레임워크 내 세 가지 가능한 설명: (a) 모델이 핀란드의 생물학적 효과를 과대 추정 — 지수적 EMF-TFR 관계가 모델링보다 일찍 포화. (b) 외인성 보상: 이민 TFR 기여가 추정보다 큼 — 핀란드의 이민 TFR(~1.8-2.2)이 국가 TFR을 상승. (c) CI가 너무 좁음: 모델의 불확실성 범위가 소규모 인구 TFR의 확률적 변동을 과소 추정. 판별 테스트: 핀란드 통계청에서 출생지 TFR(가용 시)을 예측과 비교. 출생지 TFR ≤ 1.24이면 설명(b)이 확인.",
+    southKoreaFalsification: "상태: 중간 (2024년 관측값 0.75; 2030년 구간은 0.48–0.72이며 2030년 관측값은 아직 없음). 세 가지 가능한 설명: (a) 모델이 한국의 EMF 억제를 과대 추정 — 문화적/정책적 요인이 TFR에 독립적 부정적 영향. (b) 측정 지연: 한국의 출산 장려 정책(현금 지원, 주거 보조)이 TFR을 일시적으로 상승. (c) 모델의 한국 회복 추정이 지나치게 낙관적. 판별 테스트: 한국 TFR이 예측 값으로 계속 하락하는지 현재 수준에서 안정되는지 추적.",
     modulomeTitle: "모듈롬 예측",
     modulomeLead: "8층 EMF 모듈롬과 치료 장치 증거에서 도출된 기전적 예측. 정성적이고 반증 가능 — 각 예측은 구체적인 실험 결과를 지정.",
     modulomeTimeline: "타임라인",
@@ -7648,7 +7648,7 @@ const COPY = {
     dashVerified: "검증됨",
     dashAwaiting: "테스트 대기 중",
     dashPredictionStatus: "예측 상태",
-    statusBarAria: "상태 바: 검증됨 4건, 대기 중 254건, CI 초과 2건",
+    statusBarAria: "상태 바: 검증됨 4건, 대기 중 276건, CI 초과 0건",
     statusVerified: "검증됨",
     statusAwaiting: "테스트 대기 중",
     statusCiExceeded: "CI 초과",
@@ -7698,7 +7698,7 @@ const COPY = {
       { id: "E-CIV-2", title: "Sub-Saharan African fertility decline acceleration", description: "As Sub-Saharan Africa's mobile network penetration crosses 80% and grid electrification exceeds 60%, regional TFR will begin declining at a rate comparable to East Asia's 1990–2010 trajectory (>0.1/year), despite strong pronatalist cultural norms.", falsification: "African TFR remains stable or declines <0.05/year despite reaching those infrastructure thresholds.", timeline: "Testable 2030–2040" },
       { id: "E-CIV-3", title: "Pronatalist policy ceiling", description: "No national pronatalist policy will achieve sustained (>5 year) return to replacement-level fertility (TFR ≥ 2.1) in any country with mobile penetration >90% and grid coverage >95%, regardless of spending level.", falsification: "Any such country sustains TFR ≥ 2.1 for 5+ years through policy intervention.", timeline: "Continuously testable" },
       { id: "E-CIV-4", title: "Technology-restricting communities maintain fertility", description: "Communities that restrict electromagnetic technology (Old Order Amish, ultra-Orthodox with kosher phones, technology-free intentional communities) will maintain TFR >4.0 while surrounding populations continue declining, and communities that adopt technology will see TFR converge toward mainstream within one generation (~25 years).", falsification: "Technology-restricting communities show fertility decline parallel to mainstream, or adopting communities maintain high TFR.", timeline: "Continuously testable" },
-      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.909) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
+      { id: "E-CIV-5", title: "Cross-species fertility gradient persistence", description: "The electromagnetic species gradient (r=0.84) will persist: species with less EM exposure maintain higher fertility, and domesticated animals in high-EMF environments continue declining alongside humans. Specifically, dog sperm quality will continue declining in parallel with human sperm quality in urbanized regions.", falsification: "Cross-species gradient breaks down, or wild/low-EMF populations decline at equal rates.", timeline: "Continuously testable" },
     ],
     civTimeline: "타임라인",
     civFalsification: "반증 기준",
@@ -8915,7 +8915,7 @@ const COPY = {
       {
         id: "T-TFR-2",
         title: "Finland TFR will drop below 1.00 by 2032",
-        description: "Finland is already past the biological threshold. Current trajectory: 1.87 (2010) → 1.26 (2024), −4.5%/year. Projection: 1.26 × 0.955^8 ≈ 0.87 by 2032. Falsification: Finland TFR stabilizes above 1.10.",
+        description: "Finland is already past the biological threshold. Current trajectory: 1.87 (2010) → 1.25 (2024), −2.8%/year (compound). Projection: 1.25 × 0.972^8 ≈ 1.00 by 2032. Falsification: Finland TFR stabilizes above 1.10.",
         discriminating: true,
         critical: false,
         level: "M|C",
@@ -9225,7 +9225,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
             </svg>
-            <p className="text-3xl font-bold text-accent">260</p>
+            <p className="text-3xl font-bold text-accent">280</p>
             <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
               {d.dashPredictions}
             </p>
@@ -9235,7 +9235,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6 text-accent" fill="none" stroke="currentColor" strokeWidth="2">
               <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
             </svg>
-            <p className="text-3xl font-bold text-accent">33</p>
+            <p className="text-3xl font-bold text-accent">39</p>
             <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
               {d.dashCategories}
             </p>
@@ -9255,7 +9255,7 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             <svg viewBox="0 0 24 24" className="mx-auto mb-2 h-6 w-6" style={{ color: "#f59e0b" }} fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
             </svg>
-            <p className="text-3xl font-bold" style={{ color: "#f59e0b" }}>256</p>
+            <p className="text-3xl font-bold" style={{ color: "#f59e0b" }}>276</p>
             <p className="text-xs text-foreground-muted uppercase tracking-wider mt-1">
               {d.dashAwaiting}
             </p>
@@ -9267,12 +9267,11 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             {d.dashPredictionStatus}
           </p>
           <svg viewBox="0 0 600 28" className="w-full" role="img" aria-label={d.statusBarAria}>
-            {/* Green: verified — 4/260 = 1.54% ≈ 9.2px of 600 */}
-            <rect x="0" y="0" width="9.2" height="20" rx="4" fill="#22c55e" />
-            {/* Amber: pending — 254/260 = 97.7% ≈ 586.2px */}
-            <rect x="11.2" y="0" width="580.2" height="20" rx="4" fill="#f59e0b" opacity="0.7" />
-            {/* Red: CI exceeded — 2/260 = 0.77% ≈ 4.6px */}
-            <rect x="593.4" y="0" width="6.6" height="20" rx="4" fill="#ef4444" />
+            {/* Green: verified — 4/280 = 1.43% ≈ 8.6px of 600 */}
+            <rect x="0" y="0" width="8.6" height="20" rx="4" fill="#22c55e" />
+            {/* Amber: pending — 276/280 = 98.6% ≈ 591.4px */}
+            <rect x="10.6" y="0" width="589.4" height="20" rx="4" fill="#f59e0b" opacity="0.7" />
+            {/* Red: CI exceeded — 0/280 (Finland and South Korea 2030 predictions are interim, not exceeded) */}
           </svg>
           <div className="flex flex-wrap gap-4 mt-2 text-xs text-foreground-muted">
             <span className="flex items-center gap-1.5">
@@ -9281,11 +9280,11 @@ export default async function PredictionsPage({ params }: { params: Promise<{ lo
             </span>
             <span className="flex items-center gap-1.5">
               <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#f59e0b", opacity: 0.7 }} />
-              {d.statusAwaiting} (254)
+              {d.statusAwaiting} (276)
             </span>
             <span className="flex items-center gap-1.5">
               <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: "#ef4444" }} />
-              {d.statusCiExceeded} (2)
+              {d.statusCiExceeded} (0)
             </span>
           </div>
         </div>

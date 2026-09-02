@@ -4,485 +4,1244 @@
   "nodes": {
     "FIELDSTATE_SELECTED_PROXY": {
       "id": "FIELDSTATE_SELECTED_PROXY",
-      "label": { "en": "Lindgren-selected two-channel timing proxy", "fi": "Lindgren-valittu kahden kanavan ajoitusproxy" },
+      "label": {
+        "en": "Lindgren-selected two-channel timing proxy",
+        "fi": "Lindgren-valittu kahden kanavan ajoitusproxy"
+      },
       "layer": "physics",
       "parents": [],
-      "children": ["FIELDSTATE_VECTOR", "FIELDSTATE_ENVELOPE", "A_VGCC_ROS", "MICROBIOME_OT", "IF_MITOTIC_DISRUPTION", "GPCR_ADENOSINE", "VAGUS_ANTIINFLAMMATORY"],
-      "calibration_status": "calibrated",
+      "children": [
+        "FIELDSTATE_VECTOR",
+        "FIELDSTATE_ENVELOPE",
+        "A_VGCC_ROS",
+        "MICROBIOME_OT",
+        "IF_MITOTIC_DISRUPTION",
+        "GPCR_ADENOSINE",
+        "VAGUS_ANTIINFLAMMATORY"
+      ],
+      "calibration_status": "proxy_only",
       "prediction_role": "input",
-      "legacy_aliases": ["legacy chi", "ambient + chi(ambient) * personal"]
+      "legacy_aliases": [
+        "legacy chi",
+        "ambient + chi(ambient) * personal"
+      ]
     },
     "FIELDSTATE_VECTOR": {
       "id": "FIELDSTATE_VECTOR",
-      "label": { "en": "Background/personal vector, phase and organ-transfer state", "fi": "Tausta/henkilökohtainen vektori, vaihe ja elinsiirtotila" },
+      "label": {
+        "en": "Background/personal vector, phase and organ-transfer state",
+        "fi": "Tausta/henkilökohtainen vektori, vaihe ja elinsiirtotila"
+      },
       "layer": "physics",
-      "parents": ["FIELDSTATE_SELECTED_PROXY"],
-      "children": ["B_RPM_CRY", "A_VGCC_ROS"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "FIELDSTATE_SELECTED_PROXY"
+      ],
+      "children": [
+        "B_RPM_CRY",
+        "A_VGCC_ROS"
+      ],
+      "calibration_status": "requires_matched_measurement",
       "prediction_role": "input",
-      "legacy_aliases": ["Lindgren vector state"]
+      "legacy_aliases": [
+        "Lindgren vector state"
+      ]
     },
     "FIELDSTATE_ENVELOPE": {
       "id": "FIELDSTATE_ENVELOPE",
-      "label": { "en": "Measured envelope/beat spectral overlap", "fi": "Mitattu verhokäyrä/lyöntispektrin päällekkäisyys" },
+      "label": {
+        "en": "Measured envelope/beat spectral overlap",
+        "fi": "Mitattu verhokäyrä/lyöntispektrin päällekkäisyys"
+      },
       "layer": "physics",
-      "parents": ["FIELDSTATE_SELECTED_PROXY"],
-      "children": ["A_VGCC_ROS", "VMEM_MTOR"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "FIELDSTATE_SELECTED_PROXY"
+      ],
+      "children": [
+        "A_VGCC_ROS",
+        "VMEM_MTOR"
+      ],
+      "calibration_status": "requires_psd_measurement",
       "prediction_role": "input",
-      "legacy_aliases": ["GME", "R42"]
+      "legacy_aliases": [
+        "GME",
+        "R42"
+      ]
     },
     "STATIC_TRIBO_INTERFACE": {
       "id": "STATIC_TRIBO_INTERFACE",
-      "label": { "en": "Static triboelectric material-skin / organism-interface state", "fi": "Staattinen triboelektrinen materiaali-iho / organismirajapinnan tila" },
+      "label": {
+        "en": "Static triboelectric material-skin / organism-interface state",
+        "fi": "Staattinen triboelektrinen materiaali-iho / organismirajapinnan tila"
+      },
       "layer": "physics",
       "parents": [],
-      "children": ["A_VGCC_ROS", "VMEM_MTOR", "HPA_HPG", "ECOLOGICAL_ENCOUNTER"],
-      "calibration_status": "structural",
+      "children": [
+        "A_VGCC_ROS",
+        "VMEM_MTOR",
+        "HPA_HPG",
+        "ECOLOGICAL_ENCOUNTER"
+      ],
+      "calibration_status": "requires_matched_measurement",
       "prediction_role": "input",
-      "legacy_aliases": ["static textile interface", "triboelectric interface", "0 Hz interface state"]
+      "legacy_aliases": [
+        "static textile interface",
+        "triboelectric interface",
+        "0 Hz interface state"
+      ]
     },
     "FIELDSTATE_LOW_FREQUENCY_ELECTRIC": {
       "id": "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
-      "label": { "en": "Measured low-frequency electric-field waveform and polarity state", "fi": "Mitattu matalataajuisen sähkökentän aaltomuoto ja polariteettitila" },
+      "label": {
+        "en": "Measured low-frequency electric-field waveform and polarity state",
+        "fi": "Mitattu matalataajuisen sähkökentän aaltomuoto ja polariteettitila"
+      },
       "layer": "physics",
       "parents": [],
-      "children": ["A_VGCC_ROS", "VMEM_MTOR", "HPA_HPG", "ECOLOGICAL_ENCOUNTER"],
-      "calibration_status": "structural",
+      "children": [
+        "A_VGCC_ROS",
+        "VMEM_MTOR",
+        "HPA_HPG",
+        "ECOLOGICAL_ENCOUNTER"
+      ],
+      "calibration_status": "requires_matched_measurement",
       "prediction_role": "input",
-      "legacy_aliases": ["ELF electric field", "AC/DC electric field", "electric-field waveform"]
+      "legacy_aliases": [
+        "ELF electric field",
+        "AC/DC electric field",
+        "electric-field waveform"
+      ]
     },
     "A_VGCC_ROS": {
       "id": "A_VGCC_ROS",
-      "label": { "en": "Vmem/VGCC → Ca²⁺ → mitochondrial ROS", "fi": "Vmem/VGCC → Ca²⁺ → mitokondriaalinen ROS" },
+      "label": {
+        "en": "Vmem/VGCC → Ca²⁺ → mitochondrial ROS",
+        "fi": "Vmem/VGCC → Ca²⁺ → mitokondriaalinen ROS"
+      },
       "layer": "mechanism",
-      "parents": ["FIELDSTATE_SELECTED_PROXY", "FIELDSTATE_VECTOR", "FIELDSTATE_ENVELOPE", "STATIC_TRIBO_INTERFACE", "FIELDSTATE_LOW_FREQUENCY_ELECTRIC"],
-      "children": ["VMEM_MTOR", "BARRIER_BBB", "BARRIER_BTB", "BARRIER_PLACENTA", "BARRIER_RETINA", "HPA_HPG", "MALE_SPERM", "OOCYTE_REDOX"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "FIELDSTATE_SELECTED_PROXY",
+        "FIELDSTATE_VECTOR",
+        "FIELDSTATE_ENVELOPE",
+        "STATIC_TRIBO_INTERFACE",
+        "FIELDSTATE_LOW_FREQUENCY_ELECTRIC"
+      ],
+      "children": [
+        "VMEM_MTOR",
+        "BARRIER_BBB",
+        "BARRIER_BTB",
+        "BARRIER_PLACENTA",
+        "BARRIER_RETINA",
+        "HPA_HPG",
+        "MALE_SPERM",
+        "OOCYTE_REDOX"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["VGIC", "Ca2+/ROS"]
+      "legacy_aliases": [
+        "VGIC",
+        "Ca2+/ROS"
+      ]
     },
     "B_RPM_CRY": {
       "id": "B_RPM_CRY",
-      "label": { "en": "Radical-pair/cryptochrome → clock/redox state", "fi": "Radikaalipari/kryptokromi → kello/redox-tila" },
+      "label": {
+        "en": "Radical-pair/cryptochrome → clock/redox state",
+        "fi": "Radikaalipari/kryptokromi → kello/redox-tila"
+      },
       "layer": "mechanism",
-      "parents": ["FIELDSTATE_VECTOR"],
-      "children": ["MELATONIN_REDOX", "HPA_HPG", "OVULATION_CLOCK", "OOCYTE_REDOX"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "FIELDSTATE_VECTOR"
+      ],
+      "children": [
+        "MELATONIN_REDOX",
+        "HPA_HPG",
+        "OVULATION_CLOCK",
+        "OOCYTE_REDOX"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["RPM", "CRY"]
+      "legacy_aliases": [
+        "RPM",
+        "CRY"
+      ]
     },
     "MELATONIN_REDOX": {
       "id": "MELATONIN_REDOX",
-      "label": { "en": "Melatonin/redox circadian mediator state", "fi": "Melatoniini/redox sirkadiaaninen välittäjätila" },
+      "label": {
+        "en": "Melatonin/redox circadian mediator state",
+        "fi": "Melatoniini/redox sirkadiaaninen välittäjätila"
+      },
       "layer": "mechanism",
-      "parents": ["B_RPM_CRY"],
-      "children": ["HPA_HPG", "MALE_STEROIDOGENESIS", "MALE_SPERM", "OOCYTE_REDOX", "OVULATION_CLOCK", "IMPLANTATION"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "B_RPM_CRY"
+      ],
+      "children": [
+        "HPA_HPG",
+        "MALE_STEROIDOGENESIS",
+        "MALE_SPERM",
+        "OOCYTE_REDOX",
+        "OVULATION_CLOCK",
+        "IMPLANTATION"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["pineal/melatonin", "melatonin suppression"]
+      "legacy_aliases": [
+        "pineal/melatonin",
+        "melatonin suppression"
+      ]
     },
     "VMEM_MTOR": {
       "id": "VMEM_MTOR",
-      "label": { "en": "Bioelectric membrane potential → Ca²⁺/AMPK/mTOR state", "fi": "Biosähköinen kalvopotentiaali → Ca²⁺/AMPK/mTOR-tila" },
+      "label": {
+        "en": "Bioelectric membrane potential → Ca²⁺/AMPK/mTOR state",
+        "fi": "Biosähköinen kalvopotentiaali → Ca²⁺/AMPK/mTOR-tila"
+      },
       "layer": "mechanism",
-      "parents": ["FIELDSTATE_ENVELOPE", "STATIC_TRIBO_INTERFACE", "FIELDSTATE_LOW_FREQUENCY_ELECTRIC", "A_VGCC_ROS"],
-      "children": ["BIOELECTRIC_DEVELOPMENT", "OVARIAN_RESERVE", "MALE_GERMLINE_RESERVE"],
-      "calibration_status": "structural",
+      "parents": [
+        "FIELDSTATE_ENVELOPE",
+        "STATIC_TRIBO_INTERFACE",
+        "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+        "A_VGCC_ROS"
+      ],
+      "children": [
+        "BIOELECTRIC_DEVELOPMENT",
+        "OVARIAN_RESERVE",
+        "MALE_GERMLINE_RESERVE"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["Vmem", "mTOR", "T_BE"]
+      "legacy_aliases": [
+        "Vmem",
+        "mTOR",
+        "T_BE"
+      ]
     },
     "BIOELECTRIC_DEVELOPMENT": {
       "id": "BIOELECTRIC_DEVELOPMENT",
-      "label": { "en": "Developmental bioelectric/epigenetic reproductive-memory state", "fi": "Kehityksellinen biosähköinen/epigeneettinen lisääntymismuistitila" },
+      "label": {
+        "en": "Developmental bioelectric/epigenetic reproductive-memory state",
+        "fi": "Kehityksellinen biosähköinen/epigeneettinen lisääntymismuistitila"
+      },
       "layer": "mechanism",
-      "parents": ["VMEM_MTOR"],
-      "children": ["OVARIAN_RESERVE", "MALE_GERMLINE_RESERVE"],
-      "calibration_status": "structural",
+      "parents": [
+        "VMEM_MTOR"
+      ],
+      "children": [
+        "OVARIAN_RESERVE",
+        "MALE_GERMLINE_RESERVE"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["epigenetic factor", "developmental exposure"]
+      "legacy_aliases": [
+        "epigenetic factor",
+        "developmental exposure"
+      ]
     },
     "HPA_HPG": {
       "id": "HPA_HPG",
-      "label": { "en": "Circadian/HPA → HPG and steroidogenic gate", "fi": "Sirkadiaaninen/HPA → HPG ja steroidogeeninen portti" },
+      "label": {
+        "en": "Circadian/HPA → HPG and steroidogenic gate",
+        "fi": "Sirkadiaaninen/HPA → HPG ja steroidogeeninen portti"
+      },
       "layer": "mechanism",
-      "parents": ["STATIC_TRIBO_INTERFACE", "FIELDSTATE_LOW_FREQUENCY_ELECTRIC", "A_VGCC_ROS", "B_RPM_CRY", "MELATONIN_REDOX", "MICROBIOME_OT", "BARRIER_BBB", "GPCR_ADENOSINE", "VAGUS_ANTIINFLAMMATORY"],
-      "children": ["MALE_STEROIDOGENESIS", "OVULATION_CLOCK", "IMPLANTATION"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "STATIC_TRIBO_INTERFACE",
+        "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+        "A_VGCC_ROS",
+        "B_RPM_CRY",
+        "MELATONIN_REDOX",
+        "MICROBIOME_OT",
+        "BARRIER_BBB",
+        "GPCR_ADENOSINE",
+        "VAGUS_ANTIINFLAMMATORY"
+      ],
+      "children": [
+        "MALE_STEROIDOGENESIS",
+        "OVULATION_CLOCK",
+        "IMPLANTATION"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["HPA/HPG"]
+      "legacy_aliases": [
+        "HPA/HPG"
+      ]
     },
     "MICROBIOME_OT": {
       "id": "MICROBIOME_OT",
-      "label": { "en": "Microbiome/L. reuteri-oxytocin mediator state", "fi": "Mikrobiomi/L. reuteri-oksitosiinivälittäjätila" },
+      "label": {
+        "en": "Microbiome/L. reuteri-oxytocin mediator state",
+        "fi": "Mikrobiomi/L. reuteri-oksitosiinivälittäjätila"
+      },
       "layer": "mechanism",
-      "parents": ["FIELDSTATE_SELECTED_PROXY", "GPCR_ADENOSINE", "VAGUS_ANTIINFLAMMATORY"],
-      "children": ["HPA_HPG", "MALE_STEROIDOGENESIS"],
-      "calibration_status": "structural",
+      "parents": [
+        "FIELDSTATE_SELECTED_PROXY",
+        "GPCR_ADENOSINE",
+        "VAGUS_ANTIINFLAMMATORY"
+      ],
+      "children": [
+        "HPA_HPG",
+        "MALE_STEROIDOGENESIS"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["microbiome dysbiosis", "L. reuteri", "microbiome oxytocin"]
+      "legacy_aliases": [
+        "microbiome dysbiosis",
+        "L. reuteri",
+        "microbiome oxytocin"
+      ]
     },
     "IF_MITOTIC_DISRUPTION": {
       "id": "IF_MITOTIC_DISRUPTION",
-      "label": { "en": "Intermediate-frequency field disruption of cell division", "fi": "Keskitaajuuskentän aiheuttama solujakautumisen häiriö" },
+      "label": {
+        "en": "Intermediate-frequency field disruption of cell division",
+        "fi": "Keskitaajuuskentän aiheuttama solujakautumisen häiriö"
+      },
       "layer": "mechanism",
-      "parents": ["FIELDSTATE_SELECTED_PROXY"],
-      "children": ["MALE_SPERM", "MALE_GERMLINE_RESERVE", "OOCYTE_REDOX"],
-      "calibration_status": "structural",
+      "parents": [
+        "FIELDSTATE_SELECTED_PROXY"
+      ],
+      "children": [
+        "MALE_SPERM",
+        "MALE_GERMLINE_RESERVE",
+        "OOCYTE_REDOX"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["TTFields mechanism", "mitotic spindle disruption", "IF channel"]
+      "legacy_aliases": [
+        "TTFields mechanism",
+        "mitotic spindle disruption",
+        "IF channel"
+      ]
     },
     "GPCR_ADENOSINE": {
       "id": "GPCR_ADENOSINE",
-      "label": { "en": "PEMF-validated adenosine A2A/A3 receptor modulation", "fi": "PEMF-validoitu adenosiini A2A/A3 -reseptorimodulaatio" },
+      "label": {
+        "en": "PEMF-validated adenosine A2A/A3 receptor modulation",
+        "fi": "PEMF-validoitu adenosiini A2A/A3 -reseptorimodulaatio"
+      },
       "layer": "mechanism",
-      "parents": ["FIELDSTATE_SELECTED_PROXY"],
-      "children": ["HPA_HPG", "MICROBIOME_OT"],
-      "calibration_status": "structural",
+      "parents": [
+        "FIELDSTATE_SELECTED_PROXY"
+      ],
+      "children": [
+        "HPA_HPG",
+        "MICROBIOME_OT"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["adenosine receptor", "GPCR modulation", "PEMF mechanism"]
+      "legacy_aliases": [
+        "adenosine receptor",
+        "GPCR modulation",
+        "PEMF mechanism"
+      ]
     },
     "VAGUS_ANTIINFLAMMATORY": {
       "id": "VAGUS_ANTIINFLAMMATORY",
-      "label": { "en": "Vagus nerve cholinergic anti-inflammatory pathway state", "fi": "Vagushermon kolinerginen anti-inflammatorinen reitin tila" },
+      "label": {
+        "en": "Vagus nerve cholinergic anti-inflammatory pathway state",
+        "fi": "Vagushermon kolinerginen anti-inflammatorinen reitin tila"
+      },
       "layer": "mechanism",
-      "parents": ["FIELDSTATE_SELECTED_PROXY"],
-      "children": ["HPA_HPG", "MICROBIOME_OT"],
-      "calibration_status": "structural",
+      "parents": [
+        "FIELDSTATE_SELECTED_PROXY"
+      ],
+      "children": [
+        "HPA_HPG",
+        "MICROBIOME_OT"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["vagus nerve", "cholinergic anti-inflammatory", "VNS mechanism"]
+      "legacy_aliases": [
+        "vagus nerve",
+        "cholinergic anti-inflammatory",
+        "VNS mechanism"
+      ]
     },
     "BARRIER_BBB": {
       "id": "BARRIER_BBB",
-      "label": { "en": "Blood-brain barrier tight-junction and efflux state", "fi": "Veri-aivoesteen tiivisliitosten ja effluksin tila" },
+      "label": {
+        "en": "Blood-brain barrier tight-junction and efflux state",
+        "fi": "Veri-aivoesteen tiivisliitosten ja effluksin tila"
+      },
       "layer": "barrier",
-      "parents": ["A_VGCC_ROS"],
-      "children": ["HPA_HPG"],
-      "calibration_status": "structural",
+      "parents": [
+        "A_VGCC_ROS"
+      ],
+      "children": [
+        "HPA_HPG"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["BBB", "legacy pathway F BBB"]
+      "legacy_aliases": [
+        "BBB",
+        "legacy pathway F BBB"
+      ]
     },
     "BARRIER_BTB": {
       "id": "BARRIER_BTB",
-      "label": { "en": "Blood-testis barrier/Sertoli tight-junction state", "fi": "Veri-kivesesteen/Sertolin solujen tiivisliitosten tila" },
+      "label": {
+        "en": "Blood-testis barrier/Sertoli tight-junction state",
+        "fi": "Veri-kivesesteen/Sertolin solujen tiivisliitosten tila"
+      },
       "layer": "barrier",
-      "parents": ["A_VGCC_ROS"],
-      "children": ["MALE_SPERM", "MALE_GERMLINE_RESERVE"],
-      "calibration_status": "structural",
+      "parents": [
+        "A_VGCC_ROS"
+      ],
+      "children": [
+        "MALE_SPERM",
+        "MALE_GERMLINE_RESERVE"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["T_BTB", "BTB"]
+      "legacy_aliases": [
+        "T_BTB",
+        "BTB"
+      ]
     },
     "BARRIER_PLACENTA": {
       "id": "BARRIER_PLACENTA",
-      "label": { "en": "Blood-placenta barrier state", "fi": "Veri-istukkaesteen tila" },
+      "label": {
+        "en": "Blood-placenta barrier state",
+        "fi": "Veri-istukkaesteen tila"
+      },
       "layer": "barrier",
-      "parents": ["A_VGCC_ROS"],
-      "children": ["IMPLANTATION"],
-      "calibration_status": "structural",
+      "parents": [
+        "A_VGCC_ROS"
+      ],
+      "children": [
+        "IMPLANTATION"
+      ],
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["placental barrier"]
+      "legacy_aliases": [
+        "placental barrier"
+      ]
     },
     "BARRIER_RETINA": {
       "id": "BARRIER_RETINA",
-      "label": { "en": "Blood-retinal barrier state", "fi": "Veri-verkkokalvoesteen tila" },
+      "label": {
+        "en": "Blood-retinal barrier state",
+        "fi": "Veri-verkkokalvoesteen tila"
+      },
       "layer": "barrier",
-      "parents": ["A_VGCC_ROS"],
+      "parents": [
+        "A_VGCC_ROS"
+      ],
       "children": [],
-      "calibration_status": "structural",
+      "calibration_status": "structural_only",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["BRB"]
+      "legacy_aliases": [
+        "BRB"
+      ]
     },
     "MALE_SPERM": {
       "id": "MALE_SPERM",
-      "label": { "en": "Sperm output, DNA integrity, motility and capacitation", "fi": "Siittiötuotanto, DNA-eheys, liikkuvuus ja kapasitaatio" },
+      "label": {
+        "en": "Sperm output, DNA integrity, motility and capacitation",
+        "fi": "Siittiötuotanto, DNA-eheys, liikkuvuus ja kapasitaatio"
+      },
       "layer": "reproductive",
-      "parents": ["A_VGCC_ROS", "MELATONIN_REDOX", "BARRIER_BTB", "IF_MITOTIC_DISRUPTION", "MALE_GERMLINE_RESERVE", "MALE_STEROIDOGENESIS"],
-      "children": ["COUPLE_FECUNDABILITY"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "A_VGCC_ROS",
+        "MELATONIN_REDOX",
+        "BARRIER_BTB",
+        "IF_MITOTIC_DISRUPTION",
+        "MALE_GERMLINE_RESERVE",
+        "MALE_STEROIDOGENESIS"
+      ],
+      "children": [
+        "COUPLE_FECUNDABILITY"
+      ],
+      "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "output",
-      "legacy_aliases": ["sperm cascade", "CatSper"]
+      "legacy_aliases": [
+        "sperm cascade",
+        "CatSper"
+      ]
     },
     "MALE_GERMLINE_RESERVE": {
       "id": "MALE_GERMLINE_RESERVE",
-      "label": { "en": "Sertoli/germline persistent reserve", "fi": "Sertoli/itulinja pysyvä reservi" },
+      "label": {
+        "en": "Sertoli/germline persistent reserve",
+        "fi": "Sertoli/itulinja pysyvä reservi"
+      },
       "layer": "reproductive",
-      "parents": ["VMEM_MTOR", "BIOELECTRIC_DEVELOPMENT", "BARRIER_BTB", "IF_MITOTIC_DISRUPTION"],
-      "children": ["MALE_SPERM"],
-      "calibration_status": "structural",
+      "parents": [
+        "VMEM_MTOR",
+        "BIOELECTRIC_DEVELOPMENT",
+        "BARRIER_BTB",
+        "IF_MITOTIC_DISRUPTION"
+      ],
+      "children": [
+        "MALE_SPERM"
+      ],
+      "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["male reserve"]
+      "legacy_aliases": [
+        "male reserve"
+      ]
     },
     "MALE_STEROIDOGENESIS": {
       "id": "MALE_STEROIDOGENESIS",
-      "label": { "en": "Leydig/HPG steroidogenic support", "fi": "Leydigin solujen/HPG steroidogeeninen tuki" },
+      "label": {
+        "en": "Leydig/HPG steroidogenic support",
+        "fi": "Leydigin solujen/HPG steroidogeeninen tuki"
+      },
       "layer": "reproductive",
-      "parents": ["MELATONIN_REDOX", "HPA_HPG", "MICROBIOME_OT"],
-      "children": ["MALE_SPERM"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "MELATONIN_REDOX",
+        "HPA_HPG",
+        "MICROBIOME_OT"
+      ],
+      "children": [
+        "MALE_SPERM"
+      ],
+      "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["Leydig"]
+      "legacy_aliases": [
+        "Leydig"
+      ]
     },
     "OVARIAN_RESERVE": {
       "id": "OVARIAN_RESERVE",
-      "label": { "en": "Primordial follicle and ovarian reserve", "fi": "Primordiaalifollikkelien ja munasarjareservin tila" },
+      "label": {
+        "en": "Primordial follicle and ovarian reserve",
+        "fi": "Primordiaalifollikkelien ja munasarjareservin tila"
+      },
       "layer": "reproductive",
-      "parents": ["VMEM_MTOR", "BIOELECTRIC_DEVELOPMENT"],
-      "children": ["OOCYTE_REDOX", "OVULATION_CLOCK"],
-      "calibration_status": "structural",
+      "parents": [
+        "VMEM_MTOR",
+        "BIOELECTRIC_DEVELOPMENT"
+      ],
+      "children": [
+        "OOCYTE_REDOX",
+        "OVULATION_CLOCK"
+      ],
+      "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["O_RESERVE", "AMH/AFC"]
+      "legacy_aliases": [
+        "O_RESERVE",
+        "AMH/AFC"
+      ]
     },
     "OOCYTE_REDOX": {
       "id": "OOCYTE_REDOX",
-      "label": { "en": "Oocyte mitochondrial/redox quality", "fi": "Munasolun mitokondriaalinen/redox-laatu" },
+      "label": {
+        "en": "Oocyte mitochondrial/redox quality",
+        "fi": "Munasolun mitokondriaalinen/redox-laatu"
+      },
       "layer": "reproductive",
-      "parents": ["A_VGCC_ROS", "B_RPM_CRY", "MELATONIN_REDOX", "IF_MITOTIC_DISRUPTION", "OVARIAN_RESERVE"],
-      "children": ["OVULATION_CLOCK", "IMPLANTATION"],
-      "calibration_status": "structural",
+      "parents": [
+        "A_VGCC_ROS",
+        "B_RPM_CRY",
+        "MELATONIN_REDOX",
+        "IF_MITOTIC_DISRUPTION",
+        "OVARIAN_RESERVE"
+      ],
+      "children": [
+        "OVULATION_CLOCK",
+        "IMPLANTATION"
+      ],
+      "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["oocyte quality"]
+      "legacy_aliases": [
+        "oocyte quality"
+      ]
     },
     "OVULATION_CLOCK": {
       "id": "OVULATION_CLOCK",
-      "label": { "en": "Ovulation and steroidogenic timing gate", "fi": "Ovulaation ja steroidogeneesin ajoitusportti" },
+      "label": {
+        "en": "Ovulation and steroidogenic timing gate",
+        "fi": "Ovulaation ja steroidogeneesin ajoitusportti"
+      },
       "layer": "reproductive",
-      "parents": ["B_RPM_CRY", "MELATONIN_REDOX", "HPA_HPG", "OVARIAN_RESERVE", "OOCYTE_REDOX"],
-      "children": ["COUPLE_FECUNDABILITY"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "B_RPM_CRY",
+        "MELATONIN_REDOX",
+        "HPA_HPG",
+        "OVARIAN_RESERVE",
+        "OOCYTE_REDOX"
+      ],
+      "children": [
+        "COUPLE_FECUNDABILITY"
+      ],
+      "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "output",
-      "legacy_aliases": ["female clock"]
+      "legacy_aliases": [
+        "female clock"
+      ]
     },
     "IMPLANTATION": {
       "id": "IMPLANTATION",
-      "label": { "en": "Luteal, implantation and conception-to-live-birth support", "fi": "Luteaali-, implantaatio- ja hedelmöittymisestä elävänä syntymiseen tuki" },
+      "label": {
+        "en": "Luteal, implantation and conception-to-live-birth support",
+        "fi": "Luteaali-, implantaatio- ja hedelmöittymisestä elävänä syntymiseen tuki"
+      },
       "layer": "reproductive",
-      "parents": ["MELATONIN_REDOX", "HPA_HPG", "BARRIER_PLACENTA", "OOCYTE_REDOX"],
-      "children": ["COUPLE_FECUNDABILITY"],
-      "calibration_status": "structural",
+      "parents": [
+        "MELATONIN_REDOX",
+        "HPA_HPG",
+        "BARRIER_PLACENTA",
+        "OOCYTE_REDOX"
+      ],
+      "children": [
+        "COUPLE_FECUNDABILITY"
+      ],
+      "calibration_status": "requires_endpoint_calibration",
       "prediction_role": "output",
-      "legacy_aliases": ["pregnancy support"]
+      "legacy_aliases": [
+        "pregnancy support"
+      ]
     },
     "COUPLE_FECUNDABILITY": {
       "id": "COUPLE_FECUNDABILITY",
-      "label": { "en": "Male × female × conception/live-birth capacity", "fi": "Miehen × naisen × hedelmöittymis/elävänä syntymisen kapasiteetti" },
+      "label": {
+        "en": "Male × female × conception/live-birth capacity",
+        "fi": "Miehen × naisen × hedelmöittymis/elävänä syntymisen kapasiteetti"
+      },
       "layer": "couple",
-      "parents": ["MALE_SPERM", "OVULATION_CLOCK", "IMPLANTATION"],
-      "children": ["ASFR"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "MALE_SPERM",
+        "OVULATION_CLOCK",
+        "IMPLANTATION"
+      ],
+      "children": [
+        "ASFR"
+      ],
+      "calibration_status": "requires_partner_distribution",
       "prediction_role": "output",
-      "legacy_aliases": ["Phi_couple"]
+      "legacy_aliases": [
+        "Phi_couple"
+      ]
     },
     "ECOLOGICAL_ENCOUNTER": {
       "id": "ECOLOGICAL_ENCOUNTER",
-      "label": { "en": "Species-specific field encounter, sensing, physiology and dispersal state", "fi": "Lajikohtainen kentän kohtaaminen, aistiminen, fysiologia ja leviämistila" },
+      "label": {
+        "en": "Species-specific field encounter, sensing, physiology and dispersal state",
+        "fi": "Lajikohtainen kentän kohtaaminen, aistiminen, fysiologia ja leviämistila"
+      },
       "layer": "ecology",
-      "parents": ["STATIC_TRIBO_INTERFACE", "FIELDSTATE_LOW_FREQUENCY_ELECTRIC"],
-      "children": ["ECOLOGICAL_SELECTION"],
-      "calibration_status": "structural",
+      "parents": [
+        "STATIC_TRIBO_INTERFACE",
+        "FIELDSTATE_LOW_FREQUENCY_ELECTRIC"
+      ],
+      "children": [
+        "ECOLOGICAL_SELECTION"
+      ],
+      "calibration_status": "requires_matched_ecological_measurement",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["electroecology", "host-vegetation encounter", "electrostatic attachment", "field physiology"]
+      "legacy_aliases": [
+        "electroecology",
+        "host-vegetation encounter",
+        "electrostatic attachment",
+        "field physiology"
+      ]
     },
     "ECOLOGICAL_SELECTION": {
       "id": "ECOLOGICAL_SELECTION",
-      "label": { "en": "Species-specific relative fitness and ecological-sorting state", "fi": "Lajikohtainen suhteellinen kelpoisuus ja ekologinen lajittelutila" },
+      "label": {
+        "en": "Species-specific relative fitness and ecological-sorting state",
+        "fi": "Lajikohtainen suhteellinen kelpoisuus ja ekologinen lajittelutila"
+      },
       "layer": "ecology",
-      "parents": ["ECOLOGICAL_ENCOUNTER"],
-      "children": ["ECOLOGICAL_TRAIT_STATE"],
-      "calibration_status": "structural",
+      "parents": [
+        "ECOLOGICAL_ENCOUNTER"
+      ],
+      "children": [
+        "ECOLOGICAL_TRAIT_STATE"
+      ],
+      "calibration_status": "requires_multigeneration_ecological_panel",
       "prediction_role": "intermediate",
-      "legacy_aliases": ["natural selection", "FieldState selection", "relative abundance"]
+      "legacy_aliases": [
+        "natural selection",
+        "FieldState selection",
+        "relative abundance"
+      ]
     },
     "ECOLOGICAL_TRAIT_STATE": {
       "id": "ECOLOGICAL_TRAIT_STATE",
-      "label": { "en": "Time-indexed heritable trait distribution under FieldState-dependent selection", "fi": "Aikaindeksoitu periytyvä piirrejakauma FieldState-riippuvaisen valinnan alla" },
+      "label": {
+        "en": "Time-indexed heritable trait distribution under FieldState-dependent selection",
+        "fi": "Aikaindeksoitu periytyvä piirrejakauma FieldState-riippuvaisen valinnan alla"
+      },
       "layer": "ecology",
-      "parents": ["ECOLOGICAL_SELECTION"],
+      "parents": [
+        "ECOLOGICAL_SELECTION"
+      ],
       "children": [],
-      "calibration_status": "structural",
+      "calibration_status": "requires_multigeneration_genetic_or_common_garden_panel",
       "prediction_role": "output",
-      "legacy_aliases": ["evolutionary trait distribution", "heritable FieldState response"]
+      "legacy_aliases": [
+        "evolutionary trait distribution",
+        "heritable FieldState response"
+      ]
     },
     "DEMAND_OPPORTUNITY": {
       "id": "DEMAND_OPPORTUNITY",
-      "label": { "en": "Family-formation demand and opportunity state", "fi": "Perheenmuodostuksen kysynnän ja mahdollisuuden tila" },
+      "label": {
+        "en": "Family-formation demand and opportunity state",
+        "fi": "Perheenmuodostuksen kysynnän ja mahdollisuuden tila"
+      },
       "layer": "demography",
       "parents": [],
-      "children": ["ASFR"],
-      "calibration_status": "structural",
+      "children": [
+        "ASFR"
+      ],
+      "calibration_status": "requires_external_measurement",
       "prediction_role": "input",
-      "legacy_aliases": ["demand/opportunity", "partnering and opportunity"]
+      "legacy_aliases": [
+        "demand/opportunity",
+        "partnering and opportunity"
+      ]
     },
     "TEMPO": {
       "id": "TEMPO",
-      "label": { "en": "Childbearing timing / tempo state", "fi": "Lasten saannin ajoitus / tempotila" },
+      "label": {
+        "en": "Childbearing timing / tempo state",
+        "fi": "Lasten saannin ajoitus / tempotila"
+      },
       "layer": "demography",
       "parents": [],
-      "children": ["ASFR"],
-      "calibration_status": "structural",
+      "children": [
+        "ASFR"
+      ],
+      "calibration_status": "requires_external_measurement",
       "prediction_role": "input",
-      "legacy_aliases": ["tempo", "birth timing"]
+      "legacy_aliases": [
+        "tempo",
+        "birth timing"
+      ]
     },
     "ART_LIVE_BIRTH_DELIVERY": {
       "id": "ART_LIVE_BIRTH_DELIVERY",
-      "label": { "en": "ART and conception-to-live-birth delivery state", "fi": "Avusteisen lisääntymisen ja hedelmöittymisestä elävänä syntymiseen tila" },
+      "label": {
+        "en": "ART and conception-to-live-birth delivery state",
+        "fi": "Avusteisen lisääntymisen ja hedelmöittymisestä elävänä syntymiseen tila"
+      },
       "layer": "demography",
       "parents": [],
-      "children": ["ASFR"],
-      "calibration_status": "structural",
+      "children": [
+        "ASFR"
+      ],
+      "calibration_status": "requires_external_measurement",
       "prediction_role": "input",
-      "legacy_aliases": ["ART/live-birth delivery", "fertility treatment delivery"]
+      "legacy_aliases": [
+        "ART/live-birth delivery",
+        "fertility treatment delivery"
+      ]
     },
     "ASFR": {
       "id": "ASFR",
-      "label": { "en": "Age-specific fertility rate", "fi": "Ikäkohtainen hedelmällisyysluku" },
+      "label": {
+        "en": "Age-specific fertility rate",
+        "fi": "Ikäkohtainen hedelmällisyysluku"
+      },
       "layer": "demography",
-      "parents": ["COUPLE_FECUNDABILITY", "DEMAND_OPPORTUNITY", "TEMPO", "ART_LIVE_BIRTH_DELIVERY"],
-      "children": ["TFR"],
-      "calibration_status": "calibrated",
+      "parents": [
+        "COUPLE_FECUNDABILITY",
+        "DEMAND_OPPORTUNITY",
+        "TEMPO",
+        "ART_LIVE_BIRTH_DELIVERY"
+      ],
+      "children": [
+        "TFR"
+      ],
+      "calibration_status": "observed_wpp_anchor",
       "prediction_role": "output",
-      "legacy_aliases": ["age-specific fertility"]
+      "legacy_aliases": [
+        "age-specific fertility"
+      ]
     },
     "TFR": {
       "id": "TFR",
-      "label": { "en": "Total fertility rate = 5 × sum(ASFR) / 1000", "fi": "Kokonaishedelmällisyysluku = 5 × summa(ASFR) / 1000" },
+      "label": {
+        "en": "Total fertility rate = 5 × sum(ASFR) / 1000",
+        "fi": "Kokonaishedelmällisyysluku = 5 × summa(ASFR) / 1000"
+      },
       "layer": "demography",
-      "parents": ["ASFR"],
+      "parents": [
+        "ASFR"
+      ],
       "children": [],
-      "calibration_status": "calibrated",
+      "calibration_status": "observed_wpp_anchor",
       "prediction_role": "terminal",
-      "legacy_aliases": ["total fertility"]
+      "legacy_aliases": [
+        "total fertility"
+      ]
     }
   },
   "edges": [
-    { "id": "e01", "from": "FIELDSTATE_SELECTED_PROXY", "to": "FIELDSTATE_VECTOR" },
-    { "id": "e02", "from": "FIELDSTATE_SELECTED_PROXY", "to": "FIELDSTATE_ENVELOPE" },
-    { "id": "e03", "from": "FIELDSTATE_SELECTED_PROXY", "to": "A_VGCC_ROS" },
-    { "id": "e04", "from": "FIELDSTATE_SELECTED_PROXY", "to": "MICROBIOME_OT" },
-    { "id": "e05", "from": "FIELDSTATE_SELECTED_PROXY", "to": "IF_MITOTIC_DISRUPTION" },
-    { "id": "e06", "from": "FIELDSTATE_SELECTED_PROXY", "to": "GPCR_ADENOSINE" },
-    { "id": "e07", "from": "FIELDSTATE_SELECTED_PROXY", "to": "VAGUS_ANTIINFLAMMATORY" },
-    { "id": "e08", "from": "FIELDSTATE_VECTOR", "to": "B_RPM_CRY" },
-    { "id": "e09", "from": "FIELDSTATE_VECTOR", "to": "A_VGCC_ROS" },
-    { "id": "e10", "from": "FIELDSTATE_ENVELOPE", "to": "A_VGCC_ROS" },
-    { "id": "e11", "from": "FIELDSTATE_ENVELOPE", "to": "VMEM_MTOR" },
-    { "id": "e12", "from": "STATIC_TRIBO_INTERFACE", "to": "A_VGCC_ROS" },
-    { "id": "e13", "from": "STATIC_TRIBO_INTERFACE", "to": "VMEM_MTOR" },
-    { "id": "e14", "from": "STATIC_TRIBO_INTERFACE", "to": "HPA_HPG" },
-    { "id": "e15", "from": "STATIC_TRIBO_INTERFACE", "to": "ECOLOGICAL_ENCOUNTER" },
-    { "id": "e16", "from": "FIELDSTATE_LOW_FREQUENCY_ELECTRIC", "to": "A_VGCC_ROS" },
-    { "id": "e17", "from": "FIELDSTATE_LOW_FREQUENCY_ELECTRIC", "to": "VMEM_MTOR" },
-    { "id": "e18", "from": "FIELDSTATE_LOW_FREQUENCY_ELECTRIC", "to": "HPA_HPG" },
-    { "id": "e19", "from": "FIELDSTATE_LOW_FREQUENCY_ELECTRIC", "to": "ECOLOGICAL_ENCOUNTER" },
-    { "id": "e20", "from": "A_VGCC_ROS", "to": "VMEM_MTOR" },
-    { "id": "e21", "from": "A_VGCC_ROS", "to": "BARRIER_BBB" },
-    { "id": "e22", "from": "A_VGCC_ROS", "to": "BARRIER_BTB" },
-    { "id": "e23", "from": "A_VGCC_ROS", "to": "BARRIER_PLACENTA" },
-    { "id": "e24", "from": "A_VGCC_ROS", "to": "BARRIER_RETINA" },
-    { "id": "e25", "from": "A_VGCC_ROS", "to": "HPA_HPG" },
-    { "id": "e26", "from": "A_VGCC_ROS", "to": "MALE_SPERM" },
-    { "id": "e27", "from": "A_VGCC_ROS", "to": "OOCYTE_REDOX" },
-    { "id": "e28", "from": "B_RPM_CRY", "to": "MELATONIN_REDOX" },
-    { "id": "e29", "from": "B_RPM_CRY", "to": "HPA_HPG" },
-    { "id": "e30", "from": "B_RPM_CRY", "to": "OVULATION_CLOCK" },
-    { "id": "e31", "from": "B_RPM_CRY", "to": "OOCYTE_REDOX" },
-    { "id": "e32", "from": "MELATONIN_REDOX", "to": "HPA_HPG" },
-    { "id": "e33", "from": "MELATONIN_REDOX", "to": "MALE_STEROIDOGENESIS" },
-    { "id": "e34", "from": "MELATONIN_REDOX", "to": "MALE_SPERM" },
-    { "id": "e35", "from": "MELATONIN_REDOX", "to": "OOCYTE_REDOX" },
-    { "id": "e36", "from": "MELATONIN_REDOX", "to": "OVULATION_CLOCK" },
-    { "id": "e37", "from": "MELATONIN_REDOX", "to": "IMPLANTATION" },
-    { "id": "e38", "from": "VMEM_MTOR", "to": "BIOELECTRIC_DEVELOPMENT" },
-    { "id": "e39", "from": "VMEM_MTOR", "to": "OVARIAN_RESERVE" },
-    { "id": "e40", "from": "VMEM_MTOR", "to": "MALE_GERMLINE_RESERVE" },
-    { "id": "e41", "from": "BIOELECTRIC_DEVELOPMENT", "to": "OVARIAN_RESERVE" },
-    { "id": "e42", "from": "BIOELECTRIC_DEVELOPMENT", "to": "MALE_GERMLINE_RESERVE" },
-    { "id": "e43", "from": "HPA_HPG", "to": "MALE_STEROIDOGENESIS" },
-    { "id": "e44", "from": "HPA_HPG", "to": "OVULATION_CLOCK" },
-    { "id": "e45", "from": "HPA_HPG", "to": "IMPLANTATION" },
-    { "id": "e46", "from": "MICROBIOME_OT", "to": "HPA_HPG" },
-    { "id": "e47", "from": "MICROBIOME_OT", "to": "MALE_STEROIDOGENESIS" },
-    { "id": "e48", "from": "BARRIER_BBB", "to": "HPA_HPG" },
-    { "id": "e49", "from": "BARRIER_BTB", "to": "MALE_SPERM" },
-    { "id": "e50", "from": "BARRIER_BTB", "to": "MALE_GERMLINE_RESERVE" },
-    { "id": "e51", "from": "BARRIER_PLACENTA", "to": "IMPLANTATION" },
-    { "id": "e52", "from": "IF_MITOTIC_DISRUPTION", "to": "MALE_SPERM" },
-    { "id": "e53", "from": "IF_MITOTIC_DISRUPTION", "to": "MALE_GERMLINE_RESERVE" },
-    { "id": "e54", "from": "IF_MITOTIC_DISRUPTION", "to": "OOCYTE_REDOX" },
-    { "id": "e55", "from": "GPCR_ADENOSINE", "to": "HPA_HPG" },
-    { "id": "e56", "from": "GPCR_ADENOSINE", "to": "MICROBIOME_OT" },
-    { "id": "e57", "from": "VAGUS_ANTIINFLAMMATORY", "to": "HPA_HPG" },
-    { "id": "e58", "from": "VAGUS_ANTIINFLAMMATORY", "to": "MICROBIOME_OT" },
-    { "id": "e59", "from": "ECOLOGICAL_ENCOUNTER", "to": "ECOLOGICAL_SELECTION" },
-    { "id": "e60", "from": "ECOLOGICAL_SELECTION", "to": "ECOLOGICAL_TRAIT_STATE" },
-    { "id": "e61", "from": "MALE_SPERM", "to": "COUPLE_FECUNDABILITY" },
-    { "id": "e62", "from": "MALE_GERMLINE_RESERVE", "to": "MALE_SPERM" },
-    { "id": "e63", "from": "MALE_STEROIDOGENESIS", "to": "MALE_SPERM" },
-    { "id": "e64", "from": "OVARIAN_RESERVE", "to": "OOCYTE_REDOX" },
-    { "id": "e65", "from": "OVARIAN_RESERVE", "to": "OVULATION_CLOCK" },
-    { "id": "e66", "from": "OOCYTE_REDOX", "to": "OVULATION_CLOCK" },
-    { "id": "e67", "from": "OOCYTE_REDOX", "to": "IMPLANTATION" },
-    { "id": "e68", "from": "OVULATION_CLOCK", "to": "COUPLE_FECUNDABILITY" },
-    { "id": "e69", "from": "IMPLANTATION", "to": "COUPLE_FECUNDABILITY" },
-    { "id": "e70", "from": "COUPLE_FECUNDABILITY", "to": "ASFR" },
-    { "id": "e71", "from": "DEMAND_OPPORTUNITY", "to": "ASFR" },
-    { "id": "e72", "from": "TEMPO", "to": "ASFR" },
-    { "id": "e73", "from": "ART_LIVE_BIRTH_DELIVERY", "to": "ASFR" },
-    { "id": "e74", "from": "ASFR", "to": "TFR" }
+    {
+      "id": "e01",
+      "from": "FIELDSTATE_SELECTED_PROXY",
+      "to": "FIELDSTATE_VECTOR"
+    },
+    {
+      "id": "e02",
+      "from": "FIELDSTATE_SELECTED_PROXY",
+      "to": "FIELDSTATE_ENVELOPE"
+    },
+    {
+      "id": "e03",
+      "from": "FIELDSTATE_SELECTED_PROXY",
+      "to": "A_VGCC_ROS"
+    },
+    {
+      "id": "e04",
+      "from": "FIELDSTATE_SELECTED_PROXY",
+      "to": "MICROBIOME_OT"
+    },
+    {
+      "id": "e05",
+      "from": "FIELDSTATE_SELECTED_PROXY",
+      "to": "IF_MITOTIC_DISRUPTION"
+    },
+    {
+      "id": "e06",
+      "from": "FIELDSTATE_SELECTED_PROXY",
+      "to": "GPCR_ADENOSINE"
+    },
+    {
+      "id": "e07",
+      "from": "FIELDSTATE_SELECTED_PROXY",
+      "to": "VAGUS_ANTIINFLAMMATORY"
+    },
+    {
+      "id": "e08",
+      "from": "FIELDSTATE_VECTOR",
+      "to": "B_RPM_CRY"
+    },
+    {
+      "id": "e09",
+      "from": "FIELDSTATE_VECTOR",
+      "to": "A_VGCC_ROS"
+    },
+    {
+      "id": "e10",
+      "from": "FIELDSTATE_ENVELOPE",
+      "to": "A_VGCC_ROS"
+    },
+    {
+      "id": "e11",
+      "from": "FIELDSTATE_ENVELOPE",
+      "to": "VMEM_MTOR"
+    },
+    {
+      "id": "e12",
+      "from": "STATIC_TRIBO_INTERFACE",
+      "to": "A_VGCC_ROS"
+    },
+    {
+      "id": "e13",
+      "from": "STATIC_TRIBO_INTERFACE",
+      "to": "VMEM_MTOR"
+    },
+    {
+      "id": "e14",
+      "from": "STATIC_TRIBO_INTERFACE",
+      "to": "HPA_HPG"
+    },
+    {
+      "id": "e15",
+      "from": "STATIC_TRIBO_INTERFACE",
+      "to": "ECOLOGICAL_ENCOUNTER"
+    },
+    {
+      "id": "e16",
+      "from": "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+      "to": "A_VGCC_ROS"
+    },
+    {
+      "id": "e17",
+      "from": "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+      "to": "VMEM_MTOR"
+    },
+    {
+      "id": "e18",
+      "from": "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+      "to": "HPA_HPG"
+    },
+    {
+      "id": "e19",
+      "from": "FIELDSTATE_LOW_FREQUENCY_ELECTRIC",
+      "to": "ECOLOGICAL_ENCOUNTER"
+    },
+    {
+      "id": "e20",
+      "from": "A_VGCC_ROS",
+      "to": "VMEM_MTOR"
+    },
+    {
+      "id": "e21",
+      "from": "A_VGCC_ROS",
+      "to": "BARRIER_BBB"
+    },
+    {
+      "id": "e22",
+      "from": "A_VGCC_ROS",
+      "to": "BARRIER_BTB"
+    },
+    {
+      "id": "e23",
+      "from": "A_VGCC_ROS",
+      "to": "BARRIER_PLACENTA"
+    },
+    {
+      "id": "e24",
+      "from": "A_VGCC_ROS",
+      "to": "BARRIER_RETINA"
+    },
+    {
+      "id": "e25",
+      "from": "A_VGCC_ROS",
+      "to": "HPA_HPG"
+    },
+    {
+      "id": "e26",
+      "from": "A_VGCC_ROS",
+      "to": "MALE_SPERM"
+    },
+    {
+      "id": "e27",
+      "from": "A_VGCC_ROS",
+      "to": "OOCYTE_REDOX"
+    },
+    {
+      "id": "e28",
+      "from": "B_RPM_CRY",
+      "to": "MELATONIN_REDOX"
+    },
+    {
+      "id": "e29",
+      "from": "B_RPM_CRY",
+      "to": "HPA_HPG"
+    },
+    {
+      "id": "e30",
+      "from": "B_RPM_CRY",
+      "to": "OVULATION_CLOCK"
+    },
+    {
+      "id": "e31",
+      "from": "B_RPM_CRY",
+      "to": "OOCYTE_REDOX"
+    },
+    {
+      "id": "e32",
+      "from": "MELATONIN_REDOX",
+      "to": "HPA_HPG"
+    },
+    {
+      "id": "e33",
+      "from": "MELATONIN_REDOX",
+      "to": "MALE_STEROIDOGENESIS"
+    },
+    {
+      "id": "e34",
+      "from": "MELATONIN_REDOX",
+      "to": "MALE_SPERM"
+    },
+    {
+      "id": "e35",
+      "from": "MELATONIN_REDOX",
+      "to": "OOCYTE_REDOX"
+    },
+    {
+      "id": "e36",
+      "from": "MELATONIN_REDOX",
+      "to": "OVULATION_CLOCK"
+    },
+    {
+      "id": "e37",
+      "from": "MELATONIN_REDOX",
+      "to": "IMPLANTATION"
+    },
+    {
+      "id": "e38",
+      "from": "VMEM_MTOR",
+      "to": "BIOELECTRIC_DEVELOPMENT"
+    },
+    {
+      "id": "e39",
+      "from": "VMEM_MTOR",
+      "to": "OVARIAN_RESERVE"
+    },
+    {
+      "id": "e40",
+      "from": "VMEM_MTOR",
+      "to": "MALE_GERMLINE_RESERVE"
+    },
+    {
+      "id": "e41",
+      "from": "BIOELECTRIC_DEVELOPMENT",
+      "to": "OVARIAN_RESERVE"
+    },
+    {
+      "id": "e42",
+      "from": "BIOELECTRIC_DEVELOPMENT",
+      "to": "MALE_GERMLINE_RESERVE"
+    },
+    {
+      "id": "e43",
+      "from": "HPA_HPG",
+      "to": "MALE_STEROIDOGENESIS"
+    },
+    {
+      "id": "e44",
+      "from": "HPA_HPG",
+      "to": "OVULATION_CLOCK"
+    },
+    {
+      "id": "e45",
+      "from": "HPA_HPG",
+      "to": "IMPLANTATION"
+    },
+    {
+      "id": "e46",
+      "from": "MICROBIOME_OT",
+      "to": "HPA_HPG"
+    },
+    {
+      "id": "e47",
+      "from": "MICROBIOME_OT",
+      "to": "MALE_STEROIDOGENESIS"
+    },
+    {
+      "id": "e48",
+      "from": "BARRIER_BBB",
+      "to": "HPA_HPG"
+    },
+    {
+      "id": "e49",
+      "from": "BARRIER_BTB",
+      "to": "MALE_SPERM"
+    },
+    {
+      "id": "e50",
+      "from": "BARRIER_BTB",
+      "to": "MALE_GERMLINE_RESERVE"
+    },
+    {
+      "id": "e51",
+      "from": "BARRIER_PLACENTA",
+      "to": "IMPLANTATION"
+    },
+    {
+      "id": "e52",
+      "from": "IF_MITOTIC_DISRUPTION",
+      "to": "MALE_SPERM"
+    },
+    {
+      "id": "e53",
+      "from": "IF_MITOTIC_DISRUPTION",
+      "to": "MALE_GERMLINE_RESERVE"
+    },
+    {
+      "id": "e54",
+      "from": "IF_MITOTIC_DISRUPTION",
+      "to": "OOCYTE_REDOX"
+    },
+    {
+      "id": "e55",
+      "from": "GPCR_ADENOSINE",
+      "to": "HPA_HPG"
+    },
+    {
+      "id": "e56",
+      "from": "GPCR_ADENOSINE",
+      "to": "MICROBIOME_OT"
+    },
+    {
+      "id": "e57",
+      "from": "VAGUS_ANTIINFLAMMATORY",
+      "to": "HPA_HPG"
+    },
+    {
+      "id": "e58",
+      "from": "VAGUS_ANTIINFLAMMATORY",
+      "to": "MICROBIOME_OT"
+    },
+    {
+      "id": "e59",
+      "from": "ECOLOGICAL_ENCOUNTER",
+      "to": "ECOLOGICAL_SELECTION"
+    },
+    {
+      "id": "e60",
+      "from": "ECOLOGICAL_SELECTION",
+      "to": "ECOLOGICAL_TRAIT_STATE"
+    },
+    {
+      "id": "e61",
+      "from": "MALE_SPERM",
+      "to": "COUPLE_FECUNDABILITY"
+    },
+    {
+      "id": "e62",
+      "from": "MALE_GERMLINE_RESERVE",
+      "to": "MALE_SPERM"
+    },
+    {
+      "id": "e63",
+      "from": "MALE_STEROIDOGENESIS",
+      "to": "MALE_SPERM"
+    },
+    {
+      "id": "e64",
+      "from": "OVARIAN_RESERVE",
+      "to": "OOCYTE_REDOX"
+    },
+    {
+      "id": "e65",
+      "from": "OVARIAN_RESERVE",
+      "to": "OVULATION_CLOCK"
+    },
+    {
+      "id": "e66",
+      "from": "OOCYTE_REDOX",
+      "to": "OVULATION_CLOCK"
+    },
+    {
+      "id": "e67",
+      "from": "OOCYTE_REDOX",
+      "to": "IMPLANTATION"
+    },
+    {
+      "id": "e68",
+      "from": "OVULATION_CLOCK",
+      "to": "COUPLE_FECUNDABILITY"
+    },
+    {
+      "id": "e69",
+      "from": "IMPLANTATION",
+      "to": "COUPLE_FECUNDABILITY"
+    },
+    {
+      "id": "e70",
+      "from": "COUPLE_FECUNDABILITY",
+      "to": "ASFR"
+    },
+    {
+      "id": "e71",
+      "from": "DEMAND_OPPORTUNITY",
+      "to": "ASFR"
+    },
+    {
+      "id": "e72",
+      "from": "TEMPO",
+      "to": "ASFR"
+    },
+    {
+      "id": "e73",
+      "from": "ART_LIVE_BIRTH_DELIVERY",
+      "to": "ASFR"
+    },
+    {
+      "id": "e74",
+      "from": "ASFR",
+      "to": "TFR"
+    }
   ],
   "ui_groups": {
     "fieldstate": {
       "id": "fieldstate",
-      "contains": ["FIELDSTATE_SELECTED_PROXY", "FIELDSTATE_VECTOR", "FIELDSTATE_ENVELOPE", "STATIC_TRIBO_INTERFACE", "FIELDSTATE_LOW_FREQUENCY_ELECTRIC"],
+      "contains": [
+        "FIELDSTATE_SELECTED_PROXY",
+        "FIELDSTATE_VECTOR",
+        "FIELDSTATE_ENVELOPE",
+        "STATIC_TRIBO_INTERFACE",
+        "FIELDSTATE_LOW_FREQUENCY_ELECTRIC"
+      ],
       "ui_level": 1
     },
     "mechanisms": {
       "id": "mechanisms",
-      "contains": ["A_VGCC_ROS", "B_RPM_CRY", "MELATONIN_REDOX", "VMEM_MTOR", "BIOELECTRIC_DEVELOPMENT", "HPA_HPG", "MICROBIOME_OT", "IF_MITOTIC_DISRUPTION", "GPCR_ADENOSINE", "VAGUS_ANTIINFLAMMATORY"],
+      "contains": [
+        "A_VGCC_ROS",
+        "B_RPM_CRY",
+        "MELATONIN_REDOX",
+        "VMEM_MTOR",
+        "BIOELECTRIC_DEVELOPMENT",
+        "HPA_HPG",
+        "MICROBIOME_OT",
+        "IF_MITOTIC_DISRUPTION",
+        "GPCR_ADENOSINE",
+        "VAGUS_ANTIINFLAMMATORY"
+      ],
       "ui_level": 2
     },
     "btb": {
       "id": "btb",
-      "contains": ["BARRIER_BTB"],
+      "contains": [
+        "BARRIER_BTB"
+      ],
       "ui_level": 3
     },
     "other-barriers": {
       "id": "other-barriers",
-      "contains": ["BARRIER_BBB", "BARRIER_PLACENTA", "BARRIER_RETINA"],
+      "contains": [
+        "BARRIER_BBB",
+        "BARRIER_PLACENTA",
+        "BARRIER_RETINA"
+      ],
       "ui_level": 3
     },
     "male": {
       "id": "male",
-      "contains": ["MALE_SPERM", "MALE_GERMLINE_RESERVE", "MALE_STEROIDOGENESIS"],
+      "contains": [
+        "MALE_SPERM",
+        "MALE_GERMLINE_RESERVE",
+        "MALE_STEROIDOGENESIS"
+      ],
       "ui_level": 4
     },
     "female": {
       "id": "female",
-      "contains": ["OVARIAN_RESERVE", "OOCYTE_REDOX", "OVULATION_CLOCK", "IMPLANTATION"],
+      "contains": [
+        "OVARIAN_RESERVE",
+        "OOCYTE_REDOX",
+        "OVULATION_CLOCK",
+        "IMPLANTATION"
+      ],
       "ui_level": 4
     },
     "couple": {
       "id": "couple",
-      "contains": ["COUPLE_FECUNDABILITY"],
+      "contains": [
+        "COUPLE_FECUNDABILITY"
+      ],
       "ui_level": 5
     },
     "demographic-inputs": {
       "id": "demographic-inputs",
-      "contains": ["DEMAND_OPPORTUNITY", "TEMPO", "ART_LIVE_BIRTH_DELIVERY"],
+      "contains": [
+        "DEMAND_OPPORTUNITY",
+        "TEMPO",
+        "ART_LIVE_BIRTH_DELIVERY"
+      ],
       "ui_level": 5
     },
     "ecology": {
       "id": "ecology",
-      "contains": ["ECOLOGICAL_ENCOUNTER", "ECOLOGICAL_SELECTION", "ECOLOGICAL_TRAIT_STATE"],
+      "contains": [
+        "ECOLOGICAL_ENCOUNTER",
+        "ECOLOGICAL_SELECTION",
+        "ECOLOGICAL_TRAIT_STATE"
+      ],
       "ui_level": 5
     },
     "asfr": {
       "id": "asfr",
-      "contains": ["ASFR"],
+      "contains": [
+        "ASFR"
+      ],
       "ui_level": 6
     },
     "tfr": {
       "id": "tfr",
-      "contains": ["TFR"],
+      "contains": [
+        "TFR"
+      ],
       "ui_level": 7
     }
   }

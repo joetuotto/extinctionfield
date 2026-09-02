@@ -52,7 +52,7 @@
         "children": { "type": "array", "items": { "type": "string" } },
         "calibration_status": {
           "type": "string",
-          "enum": ["calibrated", "structural", "uncalibrated"]
+          "enum": ["observed_wpp_anchor", "proxy_only", "requires_endpoint_calibration", "requires_external_measurement", "requires_matched_ecological_measurement", "requires_matched_measurement", "requires_multigeneration_ecological_panel", "requires_multigeneration_genetic_or_common_garden_panel", "requires_partner_distribution", "requires_psd_measurement", "structural_only"]
         },
         "prediction_role": {
           "type": "string",

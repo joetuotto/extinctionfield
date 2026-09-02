@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Locale } from "./i18n";
+import { REFERENCE_TOTAL } from "./referenceIndex";
 
 type Labels = Record<Locale, string>;
 
@@ -374,11 +375,11 @@ export const NAV_ROUTES: NavRoute[] = [
         labels: { en: "All References", fi: "Kaikki lähteet", ja: "全参考文献", fr: "Toutes les références", ko: "모든 참고문헌" },
         icon: BookOpen,
         descs: {
-          en: "531 peer-reviewed sources",
-          fi: "531 vertaisarvioitua lähdettä",
-          ja: "531件の査読済み文献",
-          fr: "531 sources évaluées par des pairs",
-          ko: "531개의 동료심사 출처",
+          en: `${REFERENCE_TOTAL} registered sources`,
+          fi: `${REFERENCE_TOTAL} rekisteröityä lähdettä`,
+          ja: `${REFERENCE_TOTAL}件の登録済み文献`,
+          fr: `${REFERENCE_TOTAL} sources enregistrées`,
+          ko: `${REFERENCE_TOTAL}개의 등록된 출처`,
         },
       },
     ],

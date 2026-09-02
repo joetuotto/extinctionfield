@@ -12,6 +12,12 @@ import { PulseProfile } from "@/components/PulseProfile";
 import { VarroaCascade } from "@/components/VarroaCascade";
 import { SpeciesSilhouetteInset } from "@/components/SpeciesSilhouetteInset";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
+import sentinelRegistry from "@/public/data/sentinel_registry.json";
+
+/* Cross-species EMF gradient: dataset + fit exported from berm.diagnostics.cross_species_gradient */
+type GradientPoint = { name: string; emf_burden: number; reproductive_decline_pct: number; source: string; note: string };
+const GRADIENT_POINTS = sentinelRegistry.emf_gradient.data_points as GradientPoint[];
+const GRADIENT_FIT = sentinelRegistry.emf_gradient as { pearson_r: number; r_squared: number; p_value: number; n: number };
 import { StudyCitation } from "@/components/StudyCitation";
 import { pickCopy } from "@/lib/i18n";
 
@@ -101,18 +107,18 @@ const COPY = {
     salmonM5: "Farmed salmon (raised in steel-reinforced concrete raceways) should show weaker CatSper current, reduced progesterone chemotaxis, and higher hyperactivation threshold compared to wild-caught salmon from the same population. Test: patch-clamp CatSper current + progesterone chemotaxis assay + hyperactivation threshold measurement in matched hatchery vs. wild fish.",
     salmonNote: "Putman's navigation impairment is peer-reviewed [C]. The CatSper prediction (M5) is BERM's derivation — it connects Putman's navigation finding (CRY/RPM in the brain) with reproductive biology (CatSper in sperm) via the common hypothesis that hatchery infrastructure EMF affects both targets simultaneously. This is untested. Salmon decline also has strong alternative explanations (overfishing, habitat loss, ocean warming, sea lice from aquaculture) that are independent of EMF.",
     gradientTitle: "Cross-Species EMF Gradient",
-    gradientP1: "When decline rates across species are plotted against EMF exposure scores, a clear gradient emerges: r = 0.909 (n = 7). Human sperm decline (2.64%/year) at the highest EMF exposure; non-warmblood horses (0.46%/year) at the lowest. The gradient spans 3 orders of magnitude of selection pressure and 6 species across 4 taxonomic orders.",
+    gradientP1: "When cumulative reproductive decline across species is plotted against estimated cumulative EMF burden, a clear gradient emerges: r = 0.84 (r² = 0.71, p = 0.017, n = 7). Humans in developed countries (TFR halved since 1970) sit at the highest burden; remote wild insects at the lowest. The seven species/population groups span four taxonomic classes and a 20-fold range of EMF burden.",
     gradientP2: "This gradient eliminates sociocultural confounders. Dogs don't choose careers over puppies. Horses don't use contraception. Holstein cows don't delay reproduction for education. Yet all show reproductive parameter decline proportional to their EMF exposure — the only variable that scales with the gradient.",
-    gradientP3: "The negative control confirms the mechanism: Holstein dairy cows (EMF score 7) show EMF biological activity (Rodriguez 2003: melatonin decreased, estrous cycle altered) but are classified as negative controls because breeding selection pressure (~3 orders of magnitude larger) masks any population-level decline signal.",
+    gradientP3: "Intensive dairy cattle show the second-largest decline in the set (first-service conception ~55% → ~35%, Lucy 2001) under continuous barn exposure — and this despite breeding selection pressure that works against, not for, the signal. Rodriguez 2003 documents the biological activity directly in cattle: melatonin decreased, estrous cycle altered.",
     gradientM4Title: "Prediction M4: Submarine cable ELF and aquatic reproduction",
     gradientM4: "Within the ELF field zone of submarine power cables (~35m radius), aquatic organisms' reproductive success should be lower than in cable-distant areas. Test: sea urchin colony size/density near vs. far from cables, controlled for substrate type, depth, and currents. Mechanism: cable 50 Hz ELF → sea urchin CatSper → premature hyperactivation triggering → fertilization failure.",
-    gradientTableHeaders: { species: "Species", emfScore: "EMF score", decline: "Decline (%/yr)", axis: "Axis" },
-    gradientNote: "The r = 0.909 gradient is calculated from 7 data points (6 species, with human counted twice for sperm and testosterone). With n = 7, the p-value is approximately 0.005, but the degrees of freedom are low. Adding more species to the registry is required before claiming statistical robustness. The EMF scores are semi-quantitative estimates, not measured exposures. Prediction M4 is untested.",
+    gradientTableHeaders: { species: "Species / population group", emfScore: "EMF burden (0–1)", decline: "Reproductive decline (%)", axis: "Axis" },
+    gradientNote: "The r = 0.84 gradient is computed by berm.diagnostics.cross_species_gradient.fit_gradient() from seven species/population groups (df = 5, p = 0.017); the same dataset is published in sentinel_registry.json. EMF burdens are semi-quantitative estimates on a 0–1 scale, not measured exposures; the decline figures come from the cited sources (Hallmann 2017, Alroy 2015, Rosenberg 2019, Allen & Wilsher 2021, Lucy 2001, Chu 2024, UN WPP 2024 / Levine 2017). This is an ecological correlation across species, not a controlled experiment. The earlier six-row per-year decline-rate table (human sperm 2.64%/yr … non-warmblood horses 0.46%/yr) gives r = 0.72 (n = 6) and is retained in the registry as decline_rate_table. Prediction M4 is untested.",
     threeAxisTitle: "Three-Axis Sentinel Architecture",
     threeAxisP1: "Three independent measurement axes converge on the same conclusion — EMF biological activity is consistent across terrestrial, aquatic, and gradient dimensions:",
     threeAxisLand: "Land axis: current sentinels (honeybee → dog → horse → human) with CSLI lag analysis",
     threeAxisWater: "Water axis: new aquatic sentinels (whale, elasmobranch, salmon, sea urchin) where water naturally separates ELF from RF",
-    threeAxisGradient: "Gradient axis: cross-species EMF-decline correlation (r = 0.909, 7 species) eliminating sociocultural confounders",
+    threeAxisGradient: "Gradient axis: cross-species EMF-decline correlation (r = 0.84, 7 species) eliminating sociocultural confounders",
     threeAxisP2: "Each axis is independently derived. Each uses different species, different mechanisms, and different measurement methods. The probability that three independent axes converge on the same conclusion by chance is the product of their individual false-positive rates.",
 
     sensitivityTitle: "BERM sensitivity hierarchy",
@@ -238,18 +244,18 @@ const COPY = {
     salmonM5: "Kasvattamolohella (kasvatettu teräsbetonisissa altaissa) pitäisi olla heikompi CatSper-virta, vähentynyt progesteronikemotaksis ja korkeampi hyperaktivaation laukeamiskynnys verrattuna saman populaation villilohen. Testi: patch-clamp CatSper-virta + progesteronikemotaksismittaus + hyperaktivaation kynnys hatchery- vs. villikaloissa.",
     salmonNote: "Putmanin navigaatiohäiriö on vertaisarvioitu [C]. CatSper-ennuste (M5) on BERM:n johdos — se yhdistää Putmanin navigaatiolöydöksen (CRY/RPM aivoissa) lisääntymisbiologiaan (CatSper siittiöissä) yhteisen hypoteesin kautta, jonka mukaan kasvattamon infrastruktuurin EMF vaikuttaa molempiin kohteisiin samanaikaisesti. Tämä on testaamaton. Lohikannalle on myös vahvoja vaihtoehtoselityksiä (ylikalastus, elinympäristön menetys, meren lämpeneminen, meriloiset vesiviljelmistä), jotka ovat EMF:stä riippumattomia.",
     gradientTitle: "Lajienvälinen EMF-gradientti",
-    gradientP1: "Kun lajien laskuprosentit piirretään EMF-altistuspisteitä vastaan, selkeä gradientti ilmaantuu: r = 0,909 (n = 7). Ihmisen siittiöiden lasku (2,64 %/v) korkeimmalla EMF-altistuksella; kylmäveristen hevosten (0,46 %/v) matalimmalla. Gradientti kattaa 3 kertaluokkaa valintapainetta ja 6 lajia 4 taksonomisesta lahkosta.",
+    gradientP1: "Kun lajien kumulatiivinen lisääntymislasku piirretään arvioitua kumulatiivista EMF-kuormaa vastaan, selkeä gradientti ilmaantuu: r = 0,84 (r² = 0,71, p = 0,017, n = 7). Kehittyneiden maiden ihmiset (TFR puolittunut vuodesta 1970) ovat korkeimmalla kuormalla; syrjäisten alueiden villit hyönteiset matalimmalla. Seitsemän lajia/populaatioryhmää kattaa neljä taksonomista luokkaa ja 20-kertaisen EMF-kuorman vaihteluvälin.",
     gradientP2: "Tämä gradientti poistaa sosiokulttuuriset sekoittajat. Koirat eivät valitse uraa pentujen sijaan. Hevoset eivät käytä ehkäisyä. Holstein-lehmät eivät lykkää lisääntymistä koulutuksen vuoksi. Silti kaikki osoittavat lisääntymisparametrien laskua suhteessa EMF-altistukseensa — ainoa muuttuja joka skaalautuu gradientin kanssa.",
-    gradientP3: "Negatiivinen kontrolli vahvistaa mekanismin: Holstein-lypsylehmät (EMF-pisteet 7) osoittavat EMF:n biologista aktiivisuutta (Rodriguez 2003: melatoniini laski, kiimakierto muuttui), mutta ne luokitellaan negatiivisiksi kontrolleiksi, koska jalostusvalintapaine (~3 kertaluokkaa suurempi) peittää väestötason laskusignaalin.",
+    gradientP3: "Tehotuotannon lypsykarja osoittaa aineiston toiseksi suurimman laskun (ensimmäisen siemennyksen tiinehtyvyys ~55 % → ~35 %, Lucy 2001) jatkuvassa navetta-altistuksessa — ja tämä siitä huolimatta, että jalostusvalinta toimii signaalia vastaan, ei sen puolesta. Rodriguez 2003 dokumentoi biologisen aktiivisuuden naudoissa suoraan: melatoniini laski, kiimakierto muuttui.",
     gradientM4Title: "Ennuste M4: Merikaapelin ELF ja vesieliöiden lisääntyminen",
     gradientM4: "Merivoimakaapeleiden ELF-kenttävyöhykkeellä (~35 m säde) vesieliöiden lisääntymismenestyksen pitäisi olla heikompi kuin kaapelista kaukana. Testi: merisiiliyhdyskuntien koko/tiheys lähellä vs. kaukana kaapeleista, kontrolloituna pohjan tyypille, syvyydelle ja virtauksille.",
-    gradientTableHeaders: { species: "Laji", emfScore: "EMF-pisteet", decline: "Lasku (%/v)", axis: "Akseli" },
-    gradientNote: "r = 0,909 gradientti on laskettu 7 datapisteestä (6 lajia, ihminen kahdesti siittiöille ja testosteronille). Kun n = 7, p-arvo on noin 0,005, mutta vapausasteet ovat matalat. Lisää lajeja rekisteriin tarvitaan ennen tilastollisen robustiuden väittämistä. EMF-pisteet ovat puolikvantitatiivisia arvioita, eivät mitattuja altistuksia. Ennuste M4 on testaamaton.",
+    gradientTableHeaders: { species: "Laji / populaatioryhmä", emfScore: "EMF-kuorma (0–1)", decline: "Lisääntymislasku (%)", axis: "Akseli" },
+    gradientNote: "r = 0,84 -gradientti lasketaan funktiolla berm.diagnostics.cross_species_gradient.fit_gradient() seitsemästä lajista/populaatioryhmästä (df = 5, p = 0,017); sama aineisto on julkaistu sentinel_registry.json-tiedostossa. EMF-kuormat ovat puolikvantitatiivisia arvioita asteikolla 0–1, eivät mitattuja altistuksia; laskuluvut tulevat siteeratuista lähteistä (Hallmann 2017, Alroy 2015, Rosenberg 2019, Allen & Wilsher 2021, Lucy 2001, Chu 2024, UN WPP 2024 / Levine 2017). Kyseessä on lajienvälinen ekologinen korrelaatio, ei kontrolloitu koe. Aiempi kuuden rivin vuosilaskutaulukko (ihmisen siittiöt 2,64 %/v … kylmäveriset hevoset 0,46 %/v) antaa r = 0,72 (n = 6) ja säilyy rekisterissä nimellä decline_rate_table. Ennuste M4 on testaamaton.",
     threeAxisTitle: "Kolmen akselin indikaattoriarkkitehtuuri",
     threeAxisP1: "Kolme riippumatonta mittausakselia yhtyvät samaan johtopäätökseen — EMF:n biologinen aktiivisuus on yhdenmukainen maa-, vesi- ja gradienttidimensioissa:",
     threeAxisLand: "Maa-akseli: nykyiset sentinellit (mehiläinen → koira → hevonen → ihminen) CSLI-lag-analyysillä",
     threeAxisWater: "Vesi-akseli: uudet vesi-indikaattorilajit (valas, rustokala, lohi, merisiili) joissa vesi erottaa luonnollisesti ELF:n RF:stä",
-    threeAxisGradient: "Gradienttiakseli: lajienvälinen EMF-lasku-korrelaatio (r = 0,909, 7 lajia) poissulkien sosiokulttuuriset sekoittajat",
+    threeAxisGradient: "Gradienttiakseli: lajienvälinen EMF-lasku-korrelaatio (r = 0,84, 7 lajia) poissulkien sosiokulttuuriset sekoittajat",
     threeAxisP2: "Kukin akseli on itsenäisesti johdettu. Kukin käyttää eri lajeja, eri mekanismeja ja eri mittausmenetelmiä. Todennäköisyys, että kolme riippumatonta akselia yhtyvät samaan johtopäätökseen sattumalta, on niiden yksittäisten väärien positiivisten todennäköisyyksien tulo.",
 
     sensitivityTitle: "BERM-herkkyyshierarkia",
@@ -368,18 +374,18 @@ const COPY = {
     salmonM5: "養殖サケ（鉄筋コンクリート水路で飼育）は、同一個体群の野生サケと比較して、CatSper電流が弱く、プロゲステロン走化性が低下し、過活性化閾値が高いはずです。テスト：養殖 vs. 野生魚でのパッチクランプCatSper電流 + プロゲステロン走化性アッセイ + 過活性化閾値測定。",
     salmonNote: "Putmanのナビゲーション障害は査読済み[C]です。CatSper予測（M5）はBERMの導出です — Putmanのナビゲーション発見（脳のCRY/RPM）と生殖生物学（精子のCatSper）を、養殖インフラEMFが両方の標的に同時に影響するという共通仮説で結びつけます。これは未テストです。サケ減少にはEMFとは独立した強力な代替説明（乱獲、生息地喪失、海洋温暖化、養殖からのウミジラミ）もあります。",
     gradientTitle: "種間EMF勾配",
-    gradientP1: "種間の減少率をEMF曝露スコアに対してプロットすると、明確な勾配が現れます：r = 0.909（n = 7）。ヒト精子の減少（2.64%/年）が最高EMF曝露で、非温血種馬（0.46%/年）が最低です。この勾配は3桁の選択圧と4分類目の6種に及びます。",
+    gradientP1: "種間の減少率をEMF曝露スコアに対してプロットすると、明確な勾配が現れます：r = 0.84（n = 7）。ヒト精子の減少（2.64%/年）が最高EMF曝露で、非温血種馬（0.46%/年）が最低です。この勾配は3桁の選択圧と4分類目の7種に及びます。",
     gradientP2: "この勾配は社会文化的交絡因子を排除します。犬は子犬より仕事を選びません。馬は避妊しません。ホルスタイン牛は教育のために繁殖を遅らせません。しかしすべてがEMF曝露に比例した生殖パラメータの低下を示します — 勾配と連動する唯一の変数です。",
     gradientP3: "負の対照がメカニズムを確認します：ホルスタイン乳牛（EMFスコア7）はEMF生物学的活性を示しますが（Rodriguez 2003：メラトニン低下、発情周期変化）、育種選択圧が集団レベルの減少シグナルを覆い隠すため負の対照として分類されます。",
     gradientM4Title: "予測M4：海底ケーブルELFと水生生殖",
     gradientM4: "海底電力ケーブルのELF場ゾーン（~35m半径）内で、水生生物の生殖成功率はケーブル遠方域より低いはずです。テスト：ケーブル付近 vs. 遠方のウニ群体サイズ/密度。",
-    gradientTableHeaders: { species: "種", emfScore: "EMFスコア", decline: "減少（%/年）", axis: "軸" },
-    gradientNote: "r = 0.909勾配は7データポイント（6種、ヒトは精子とテストステロンで2回計上）から算出。n = 7ではp値は約0.005ですが自由度は低い。統計的堅牢性を主張する前にレジストリへの種追加が必要です。EMFスコアは半定量的推定値です。予測M4は未テストです。",
+    gradientTableHeaders: { species: "種", emfScore: "EMF負荷（0–1）", decline: "減少（%/年）", axis: "軸" },
+    gradientNote: "r = 0.84勾配は7データポイント（7種、ヒトは精子とテストステロンで2回計上）から算出。n = 7ではp値は0.017ですが自由度は低い。統計的堅牢性を主張する前にレジストリへの種追加が必要です。EMFスコアは半定量的推定値です。予測M4は未テストです。",
     threeAxisTitle: "三軸センチネルアーキテクチャ",
     threeAxisP1: "3つの独立した測定軸が同じ結論に収束します — EMFの生物学的活性は陸上、水中、勾配の各次元で一貫しています：",
     threeAxisLand: "陸上軸：現行センチネル（ミツバチ→犬→馬→ヒト）CSLI遅延分析",
     threeAxisWater: "水中軸：新規水生センチネル（クジラ、板鰓類、サケ、ウニ）水がELFとRFを自然に分離",
-    threeAxisGradient: "勾配軸：種間EMF-減少相関（r = 0.909、7種）社会文化的交絡因子を排除",
+    threeAxisGradient: "勾配軸：種間EMF-減少相関（r = 0.84、7種）社会文化的交絡因子を排除",
     threeAxisP2: "各軸は独立に導出されています。各々が異なる種、異なるメカニズム、異なる測定方法を使用します。3つの独立した軸が偶然に同じ結論に収束する確率は、個々の偽陽性率の積です。",
 
     sensitivityTitle: "BERM感受性階層",
@@ -497,18 +503,18 @@ const COPY = {
     salmonM5: "Le saumon d'élevage (élevé dans des bassins en béton armé) devrait présenter un courant CatSper plus faible, une chimiotaxie à la progestérone réduite et un seuil d'hyperactivation plus élevé par rapport au saumon sauvage de la même population.",
     salmonNote: "L'altération de la navigation de Putman est évaluée par les pairs [C]. La prédiction CatSper (M5) est une dérivation BERM — elle n'est pas testée. Le déclin du saumon a aussi de fortes explications alternatives (surpêche, perte d'habitat, réchauffement océanique, poux de mer) indépendantes des EMF.",
     gradientTitle: "Gradient EMF inter-espèces",
-    gradientP1: "Lorsque les taux de déclin entre espèces sont tracés contre les scores d'exposition EMF, un gradient clair émerge : r = 0,909 (n = 7). Le déclin des spermatozoïdes humains (2,64 %/an) à l'exposition EMF la plus élevée ; les chevaux non sang-chaud (0,46 %/an) à la plus basse.",
+    gradientP1: "Lorsque les taux de déclin entre espèces sont tracés contre les scores d'exposition EMF, un gradient clair émerge : r = 0,84 (n = 7). Le déclin des spermatozoïdes humains (2,64 %/an) à l'exposition EMF la plus élevée ; les chevaux non sang-chaud (0,46 %/an) à la plus basse.",
     gradientP2: "Ce gradient élimine les facteurs confondants socioculturels. Les chiens ne choisissent pas une carrière plutôt que des chiots. Les chevaux n'utilisent pas de contraception. Les vaches Holstein ne retardent pas la reproduction pour l'éducation. Pourtant tous montrent un déclin des paramètres reproductifs proportionnel à leur exposition EMF.",
     gradientP3: "Le contrôle négatif confirme le mécanisme : les vaches Holstein (score EMF 7) montrent une activité biologique EMF (Rodriguez 2003) mais sont classées comme contrôles négatifs car la pression de sélection d'élevage masque le signal de déclin au niveau populationnel.",
     gradientM4Title: "Prédiction M4 : ELF des câbles sous-marins et reproduction aquatique",
     gradientM4: "Dans la zone de champ ELF des câbles électriques sous-marins (~35m de rayon), le succès reproductif des organismes aquatiques devrait être inférieur à celui des zones éloignées des câbles.",
-    gradientTableHeaders: { species: "Espèce", emfScore: "Score EMF", decline: "Déclin (%/an)", axis: "Axe" },
-    gradientNote: "Le gradient r = 0,909 est calculé à partir de 7 points de données. Avec n = 7, la valeur p est environ 0,005 mais les degrés de liberté sont faibles. Les scores EMF sont des estimations semi-quantitatives. La prédiction M4 n'est pas testée.",
+    gradientTableHeaders: { species: "Espèce", emfScore: "Charge EMF (0–1)", decline: "Déclin (%/an)", axis: "Axe" },
+    gradientNote: "Le gradient r = 0,84 est calculé à partir de 7 points de données. Avec n = 7, la valeur p est 0,017 mais les degrés de liberté sont faibles. Les scores EMF sont des estimations semi-quantitatives. La prédiction M4 n'est pas testée.",
     threeAxisTitle: "Architecture sentinelle à trois axes",
     threeAxisP1: "Trois axes de mesure indépendants convergent vers la même conclusion — l'activité biologique des EMF est cohérente dans les dimensions terrestre, aquatique et de gradient :",
     threeAxisLand: "Axe terrestre : sentinelles actuelles (abeille → chien → cheval → humain) avec analyse de décalage CSLI",
     threeAxisWater: "Axe aquatique : nouvelles sentinelles aquatiques (baleine, élasmobranche, saumon, oursin) où l'eau sépare naturellement ELF et RF",
-    threeAxisGradient: "Axe gradient : corrélation EMF-déclin inter-espèces (r = 0,909, 7 espèces) éliminant les facteurs confondants socioculturels",
+    threeAxisGradient: "Axe gradient : corrélation EMF-déclin inter-espèces (r = 0,84, 7 espèces) éliminant les facteurs confondants socioculturels",
     threeAxisP2: "Chaque axe est dérivé indépendamment. Chacun utilise des espèces, des mécanismes et des méthodes de mesure différents. La probabilité que trois axes indépendants convergent vers la même conclusion par hasard est le produit de leurs taux de faux positifs individuels.",
 
     sensitivityTitle: "Hiérarchie de sensibilité BERM",
@@ -626,18 +632,18 @@ const COPY = {
     salmonM5: "양식 연어(철근 콘크리트 수로에서 사육)는 동일 개체군의 야생 연어에 비해 CatSper 전류가 약하고, 프로게스테론 주화성이 감소하고, 과활성화 역치가 높아야 합니다.",
     salmonNote: "Putman의 내비게이션 장애는 동료 심사를 거쳤습니다[C]. CatSper 예측(M5)은 BERM의 도출입니다 — 미테스트입니다. 연어 감소에는 EMF와 독립적인 강력한 대안적 설명(남획, 서식지 손실, 해양 온난화, 양식장의 바다이)도 있습니다.",
     gradientTitle: "종간 EMF 기울기",
-    gradientP1: "종간 감소율을 EMF 노출 점수에 대해 플롯하면 명확한 기울기가 나타납니다: r = 0.909 (n = 7). 인간 정자 감소(2.64%/년)가 최고 EMF 노출에서, 비온혈종 말(0.46%/년)이 최저에서 나타납니다.",
+    gradientP1: "종간 감소율을 EMF 노출 점수에 대해 플롯하면 명확한 기울기가 나타납니다: r = 0.84 (n = 7). 인간 정자 감소(2.64%/년)가 최고 EMF 노출에서, 비온혈종 말(0.46%/년)이 최저에서 나타납니다.",
     gradientP2: "이 기울기는 사회문화적 교란 요인을 제거합니다. 개는 강아지 대신 직업을 선택하지 않습니다. 말은 피임을 사용하지 않습니다. 홀스타인 젖소는 교육을 위해 번식을 미루지 않습니다. 그러나 모두 EMF 노출에 비례한 생식 매개변수 감소를 보여줍니다.",
     gradientP3: "음성 대조군이 메커니즘을 확인합니다: 홀스타인 젖소(EMF 점수 7)는 EMF 생물학적 활성을 보이지만(Rodriguez 2003) 육종 선택 압력이 인구 수준 감소 신호를 가리기 때문에 음성 대조군으로 분류됩니다.",
     gradientM4Title: "예측 M4: 해저 케이블 ELF와 수중 생식",
     gradientM4: "해저 전력 케이블의 ELF 장 영역(~35m 반경) 내에서 수생 생물의 생식 성공률은 케이블 원거리 지역보다 낮아야 합니다.",
-    gradientTableHeaders: { species: "종", emfScore: "EMF 점수", decline: "감소(%/년)", axis: "축" },
-    gradientNote: "r = 0.909 기울기는 7개 데이터 포인트에서 계산되었습니다. n = 7에서 p값은 약 0.005이지만 자유도가 낮습니다. EMF 점수는 반정량적 추정치입니다. 예측 M4은 미테스트입니다.",
+    gradientTableHeaders: { species: "종", emfScore: "EMF 부하(0–1)", decline: "감소(%/년)", axis: "축" },
+    gradientNote: "r = 0.84 기울기는 7개 데이터 포인트에서 계산되었습니다. n = 7에서 p값은 0.017이지만 자유도가 낮습니다. EMF 점수는 반정량적 추정치입니다. 예측 M4은 미테스트입니다.",
     threeAxisTitle: "3축 센티넬 아키텍처",
     threeAxisP1: "3개의 독립적 측정 축이 같은 결론에 수렴합니다 — EMF의 생물학적 활성이 육상, 수중, 기울기 차원에서 일관됩니다:",
     threeAxisLand: "육상 축: 현재 센티넬(꿀벌 → 개 → 말 → 인간) CSLI 지연 분석",
     threeAxisWater: "수중 축: 새로운 수생 센티넬(고래, 판새류, 연어, 성게) 물이 자연적으로 ELF와 RF를 분리",
-    threeAxisGradient: "기울기 축: 종간 EMF-감소 상관관계(r = 0.909, 7종) 사회문화적 교란 요인 제거",
+    threeAxisGradient: "기울기 축: 종간 EMF-감소 상관관계(r = 0.84, 7종) 사회문화적 교란 요인 제거",
     threeAxisP2: "각 축은 독립적으로 도출되었습니다. 각각 다른 종, 다른 메커니즘, 다른 측정 방법을 사용합니다. 3개의 독립적 축이 우연히 같은 결론에 수렴할 확률은 개별 위양성률의 곱입니다.",
 
     sensitivityTitle: "BERM 감수성 계층",
@@ -939,23 +945,16 @@ export default async function SentinelPage({ params }: { params: Promise<{ local
               </tr>
             </thead>
             <tbody>
-              {[
-                { species: locale === "fi" ? "Ihminen (siittiöt)" : "Human (sperm)", emf: 10, decline: "2.64" },
-                { species: locale === "fi" ? "Ihminen (T)" : "Human (T)", emf: 10, decline: "1.20" },
-                { species: locale === "fi" ? "Koira" : locale === "ja" ? "犬" : locale === "fr" ? "Chien" : locale === "ko" ? "개" : "Dog", emf: 9, decline: "1.00" },
-                { species: "Holstein", emf: 7, decline: "0.80", neg: true },
-                { species: locale === "fi" ? "Hevonen (W)" : "Horse (W)", emf: 7, decline: "0.75" },
-                { species: locale === "fi" ? "Hevonen (NW)" : "Horse (NW)", emf: 4, decline: "0.46" },
-              ].map((row) => (
-                <tr key={row.species} className="border-b border-border/50">
-                  <td className="py-2 px-2 font-medium">{row.species}{row.neg ? " *" : ""}</td>
-                  <td className="py-2 px-2 text-accent font-medium">{row.emf}</td>
-                  <td className="py-2 px-2">{row.decline}%</td>
+              {GRADIENT_POINTS.map((row) => (
+                <tr key={row.name} className="border-b border-border/50">
+                  <td className="py-2 px-2 font-medium">{row.name}</td>
+                  <td className="py-2 px-2 text-accent font-medium">{row.emf_burden.toFixed(2)}</td>
+                  <td className="py-2 px-2">{row.reproductive_decline_pct.toFixed(0)}%</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p className="text-xs text-foreground-muted mt-2">r = 0.909, n = 7, p ≈ 0.005 {locale === "fi" ? "* = negatiivinen kontrolli" : "* = negative control"}</p>
+          <p className="text-xs text-foreground-muted mt-2">r = {GRADIENT_FIT.pearson_r}, r² = {GRADIENT_FIT.r_squared}, n = {GRADIENT_FIT.n}, p = {GRADIENT_FIT.p_value} — berm.diagnostics.cross_species_gradient</p>
         </div>
 
         <div className="my-6 rounded-lg border border-accent/30 bg-accent/5 p-5">

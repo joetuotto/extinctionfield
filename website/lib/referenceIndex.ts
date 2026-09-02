@@ -60,3 +60,8 @@ export function citationLabel(reference: IndexedReference, locale: string): stri
   }[locale] ?? "et al.";
   return `${author} ${collective} (${year})`;
 }
+
+/** Total number of registry entries, read from the generated index metadata (falls back to the entry count). */
+export const REFERENCE_TOTAL: number =
+  (indexData as { metadata?: { totalReferences?: number } }).metadata?.totalReferences ??
+  Object.keys(INDEX.references).length;

@@ -290,7 +290,7 @@ const t: Record<string, Copy> = {
         response: [
           "Pathway B was originally assigned 15% based on its known role as a circadian clock modulator. In 2025, [[ref:yap2025|Yap and colleagues]] discovered that CRY2 — the main protein of pathway B — also physically interacts with TRPC1, a cation channel, and modulates calcium signaling through a mechanism that requires both light and FAD. This means pathway B encompasses TWO downstream effects: circadian clock disruption AND CRY2-dependent calcium signaling. The increased weight (25%) reflects this expanded biological footprint.",
           "Importantly, TRPC1 is a TRP channel, not a voltage-gated calcium channel (VGCC). Pathway A operates through VGCCs and is blocked by nifedipine. Pathway B's TRPC1 branch is NOT blocked by nifedipine. The two pathways remain pharmacologically distinct — they share the same upstream stimulus (EMF) while acting through completely different channel families.",
-          "The prediction TRPC1-1 tests this directly: EMF exposure of reproductive cells with nifedipine (blocks A), anti-TRPC1 (blocks C-calcium), or both should reveal the relative contributions of each pathway.",
+          "The prediction TRPC1-1 tests this directly: EMF exposure of reproductive cells with nifedipine (blocks A), anti-TRPC1 (blocks B-calcium), or both should reveal the relative contributions of each pathway.",
         ],
         boundary: "The weight adjustment is based on one study ([[ref:yap2025|Yap 2025]]) in myoblasts. Confirmation in gonadal cells (Sertoli, granulosa) is required before the weight can be considered empirically validated.",
       },
@@ -559,7 +559,7 @@ const t: Record<string, Copy> = {
         response: [
           "Polku B sai alun perin 15 % perustuen tunnettuun rooliinsa sirkadiaanisen kellon modulaattorina. Vuonna 2025 [[ref:yap2025|Yap ja kollegat]] löysivät, että CRY2 — polku B:n pääproteiini — on myös fysikaalisessa vuorovaikutuksessa TRPC1:n, kationikanavan, kanssa ja säätelee kalsiumsignalointia mekanismilla, joka vaatii sekä valon että FAD:n. Tämä tarkoittaa, että polku B kattaa KAKSI alaspäin suuntautuvaa vaikutusta: sirkadiaanisen kellon häiriön JA CRY2-riippuvaisen kalsiumsignaloinnin. Korotettu paino (25 %) heijastaa tätä laajennettua biologista vaikutuskenttää.",
           "TRPC1 on TRP-kanava, ei jänniteriippuvainen kalsiumkanava (VGCC). Polku A toimii VGCC:iden kautta ja nifedipiini estää sen. Polku B:n TRPC1-haara EI ole nifedipiinin estämä. Kaksi polkua pysyy farmakologisesti erillisinä — ne jakavat saman ylävirtastimulaation (EMF) mutta toimivat täysin eri kanavaperheiden kautta.",
-          "Ennuste TRPC1-1 testaa tämän suoraan: EMF-altistus reproduktiosoluille nifedipiinin (estää A:n), anti-TRPC1:n (estää C-kalsiumin) tai molempien kanssa paljastaa kunkin polun suhteellisen kontribuution.",
+          "Ennuste TRPC1-1 testaa tämän suoraan: EMF-altistus reproduktiosoluille nifedipiinin (estää A:n), anti-TRPC1:n (estää B-kalsiumin) tai molempien kanssa paljastaa kunkin polun suhteellisen kontribuution.",
         ],
         boundary: "Painon muutos perustuu yhteen tutkimukseen ([[ref:yap2025|Yap 2025]]) myoblasteissa. Vahvistus gonadikudoksessa (Sertoli, granuloosa) vaaditaan ennen kuin painoa voidaan pitää empiirisesti validoituna.",
       },

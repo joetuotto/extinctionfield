@@ -10,7 +10,7 @@ const COPY = {
         paragraphs: [
           "In 2024, the average testosterone level in a 25-year-old American man was approximately what a 40-year-old had in 1985. This is not aging. It is a population-wide biological shift, documented across every industrialized country that has measured it.",
           "The standard response treats low testosterone as a medical curiosity — something for endocrinologists to manage in individual patients. But testosterone is not only a reproductive hormone. It is one of the brain's primary regulators of motivation, risk-taking, status-seeking, and approach behavior. When it declines across an entire population, the effects extend far beyond the clinic.",
-          "At the same time, cortisol — the stress hormone — has been rising. These two shifts are not independent. BERM predicts that EMF exposure drives both: testosterone down through the HPG axis (pathways A, C, D) and cortisol up through HPA activation (pathway D). The result is what we call the dual lock.",
+          "At the same time, cortisol — the stress hormone — has been rising. These two shifts are not independent. BERM predicts that EMF exposure drives both: testosterone down through the HPG axis (pathways A, B, D) and cortisol up through HPA activation (pathway D). The result is what we call the dual lock.",
         ],
       },
       {
@@ -122,7 +122,7 @@ const COPY = {
         paragraphs: [
           "Vuonna 2024 keskimääräisen 25-vuotiaan amerikkalaisen miehen testosteronitaso vastasi suunnilleen sitä, mikä 40-vuotiaalla oli vuonna 1985. Tämä ei ole ikääntymistä. Se on väestötason biologinen muutos, joka on dokumentoitu jokaisessa teollistuneessa maassa joka on sitä mitannut.",
           "Tyypillinen vastaus käsittelee matalaa testosteronia lääketieteellisenä kuriositeettina — asiana, jota endokrinologit hoitavat yksittäisillä potilailla. Mutta testosteroni ei ole pelkkä lisääntymishormoni. Se on yksi aivojen ensisijaisista motivaation, riskinoton, statushakuisuuden ja lähestymiskäyttäytymisen säätelymekanismeista. Kun se laskee koko populaation tasolla, vaikutukset ulottuvat kauas klinikan ulkopuolelle.",
-          "Samanaikaisesti kortisoli — stressihormoni — on noussut. Nämä kaksi muutosta eivät ole toisistaan riippumattomia. BERM ennustaa, että EMF-altistus ajaa molempia: testosteronia alas HPG-akselin kautta (polut A, C, D) ja kortisolia ylös HPA-aktivaation kautta (polku D). Tulosta kutsumme kaksoisluoksi.",
+          "Samanaikaisesti kortisoli — stressihormoni — on noussut. Nämä kaksi muutosta eivät ole toisistaan riippumattomia. BERM ennustaa, että EMF-altistus ajaa molempia: testosteronia alas HPG-akselin kautta (polut A, B, D) ja kortisolia ylös HPA-aktivaation kautta (polku D). Tulosta kutsumme kaksoisluoksi.",
         ],
       },
       {
