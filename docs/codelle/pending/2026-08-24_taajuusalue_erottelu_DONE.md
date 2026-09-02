@@ -7,15 +7,15 @@
 
 | Polku | Komponentti E*:stä | Taajuusalue | Resonanssimaksimi | Lähde |
 |-------|-------------------|-------------|-------------------|-------|
-| C (CRY/RPM) | B_DC, m(t) | DC – ~22,5 MHz | 22,5 MHz | Talbi ym. 2025 |
+| B (CRY/RPM) | B_DC, m(t) | DC – ~22,5 MHz | 22,5 MHz | Talbi ym. 2025 |
 | A (VGIC) | E_AC, P_pk | ELF – GHz | IFO: 100 Hz–300 GHz | Panagopoulos 2025 |
-| B (BBB) | B_DC | DC – ELF | Ei resonanssia | Salford 2003 |
+| C (BBB) | B_DC | DC – ELF | Ei resonanssia | Salford 2003 |
 | D (HPA) | E_AC | ELF – RF | Ei resonanssia | HPA-akselitutkimus |
 
 ## Telecom-signaali sisältää molempia:
 - **RF-kantoaalto** (900 MHz – 3,5 GHz) → polku A
-- **ELF-modulaatio** (GSM 217 Hz, WiFi 10 Hz beacon) → polku C
-- **Staattinen kenttä** (laitteen magneetti) → polku B
+- **ELF-modulaatio** (GSM 217 Hz, WiFi 10 Hz beacon) → polku B
+- **Staattinen kenttä** (laitteen magneetti) → polku C
 
 ## Implikaatio
 

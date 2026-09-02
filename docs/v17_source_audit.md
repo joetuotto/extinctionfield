@@ -38,7 +38,7 @@ oivalluksia, ~15 sisältää negatiivisia tuloksia jotka rajoittavat mallia.
 
 ### Burch 2002 (#107) — Melatoniinimetaboliitit
 - Matkapuhelinkäyttäjien 6-sulfatoksimelatoniini matalampi
-- Polku C:n suora ihmisdata
+- Polku B:n suora ihmisdata
 - **Malliin:** Melatoniinisuppressio = personal-EMF:n funktio
   (puhelin pään vieressä yöllä → pineaalin altistus).
 
@@ -101,7 +101,7 @@ oivalluksia, ~15 sisältää negatiivisia tuloksia jotka rajoittavat mallia.
 - 1 viikko unirajoitusta → T laski 15%
 - Unirajoitus = melatoniinisuppressio = pineaalin χ(Ā)-häiriö
 - **Kalibraatioehto:** EMF → pineaali → melatoniini↓ → uni↓ → T↓ 15%.
-  Polku C (melatoniini) ja polku B (testosteroni) kvantitatiivinen yhdistäminen.
+  Polku B (melatoniini) ja testosteronivaste — kvantitatiivinen yhdistäminen.
 
 ---
 
@@ -171,7 +171,7 @@ Gradientti on monotoninen ja kattaa koko EMF-alueen.
 
 ### Prioriteetti 1: Kalibraatioehdot (muuttavat numeerisia tuloksia)
 - Travison 1%/v T-lasku → behavioralFactor T-komponentti
-- Leproult 15% T-lasku viikossa → polku C×B kalibraatio
+- Leproult 15% T-lasku viikossa → polku B (melatoniini) × testosteroni -kalibraatio
 - Volkow 7% glukoosi → polku D ankkuri
 - PM2.5-attenuaatio 84% → konventionaalinen vertailumalli
 

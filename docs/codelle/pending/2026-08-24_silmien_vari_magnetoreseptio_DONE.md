@@ -35,8 +35,8 @@ että ravitsemuksen (ympäristö) kautta.
 
 ### BERM-implikaatiot
 
-- **Polku C modulaattori:** eyeColorModifier voisi selittää osan populaatioiden välisestä
-  vaihtelusta polku C:n tehokkuudessa (Pohjois-Eurooppa vs. ekvaattori)
+- **Polku B modulaattori:** eyeColorModifier voisi selittää osan populaatioiden välisestä
+  vaihtelusta polku B:n tehokkuudessa (Pohjois-Eurooppa vs. ekvaattori)
 - **FAD-ravitsemusmodulaattori:** B2-vitamiinin saatavuus kontrolloi suoraan CRY-stabiilisuutta
 - **Polkujen A-C kytkentä:** CRY2-TRPC1-kompleksi (Yap 2025) tarkoittaa multiplikatiivinen
   malli tarvitsee mahdollisesti ristitermin gamma_AC
@@ -48,7 +48,7 @@ että ravitsemuksen (ympäristö) kautta.
 - EYE-2: Vihreäsilmäiset naiset = vakaampi melatoniiniprofiili kuin sinisilmäiset (D)
 - EYE-3: B2-lisä parantaa sirkadiaanista resilienssiä yölliselle EMF:lle (D)
 - EYE-4: Sinisilmäiset = suurempi melatoniinihäiriö yöllisestä puhelinkäytöstä (O)
-- EYE-5: Silmien väri moduloi polku C:n tehokkuutta 54 maan datasetissä (D)
+- EYE-5: Silmien väri moduloi polku B:n tehokkuutta 54 maan datasetissä (D)
 
 ## Toteutetut [KOODI]-muutokset
 
@@ -57,7 +57,7 @@ että ravitsemuksen (ympäristö) kautta.
 2. `lib/eyeColorData.ts`: Datatiedosto (evidenssikortit, profiilit, modulaattorit, ennusteet)
 3. `app/[locale]/evidence/eyes/page.tsx`: Uusi bilinguaalinen alisivu (4 osiota + episteeminen huomautus)
 4. `evidence/page.tsx`: Linkki susceptibility-narratiivin yhteydessä (EN+FI) + 2 uutta study-merkintää
-5. `model/page.tsx`: cryIndividualVariationNote-lisäys polku C:n kuvaukseen (EN+FI)
+5. `model/page.tsx`: cryIndividualVariationNote-lisäys polku B:n kuvaukseen (EN+FI)
 6. `causalMapData.ts`: CRY2-TRPC1-reuna (mech_cry_melatonin → mech_vgcc_ros)
 7. `v16.py`: v17_cry_effect() docstring laajennettu (3 future extension -osiota)
 
@@ -70,7 +70,7 @@ Tiedostoa ei löydy tiedostojärjestelmästä. Lisättävä sisältö:
 ```
 ### K7. Silmien väri ja ravitsemus CRY-polun modulaattoreina
 
-Polku C:n tehokkuus on moduloitavissa kahdella tasolla:
+Polku B:n tehokkuus on moduloitavissa kahdella tasolla:
 1. Geneettinen: iiriksen pigmentaatio (OCA2/HERC2) → valon transmissio → CRY-aktivaatio
 2. Ravitsemuksellinen: B2/FAD → CRY-proteiinin stabiilisuus → magneettinen herkkyys
 

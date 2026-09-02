@@ -60,7 +60,7 @@ Episteeminen arvio: spekulatiivinen (ei EMF-kausaalinen myopialle). Kalsiumsigna
 
 Tämä on analyysin tärkein risteämiskohta. Myopian suojamekanismi: kirkas ulkovalo → melanopsiini/ipRGC → retinaalinen dopamiini (D2-reseptori → cAMP) → inhiboi skleeraalista remodellaatiota. Melatoniini suppressoi retinaalista dopamiinia yöllä.
 
-BERM:n polku C (tason 5 solmu pathway_c): EMF → pineaalinen melatoniinisuppressio → GnRH-pulsaatiohäiriö → HPG-akseli → gonadifunktio. Tason 7 motivaatiokerroin M_repro = f(T, OT, DA, kortisoli, AVP), jossa dopamiini (DA) on yksi viidestä komponentista: `DA = clamp(1 - 0.08 × adjCum, 0.7, 1.0)`.
+BERM:n polku B (tason 5 solmu `pathway_c`; solmutunnus on historiallinen): EMF → pineaalinen melatoniinisuppressio → GnRH-pulsaatiohäiriö → HPG-akseli → gonadifunktio. Tason 7 motivaatiokerroin M_repro = f(T, OT, DA, kortisoli, AVP), jossa dopamiini (DA) on yksi viidestä komponentista: `DA = clamp(1 - 0.08 × adjCum, 0.7, 1.0)`.
 
 Kriittinen havainto: melatoniini-dopamiinisuhde on molempien ilmiöiden ytimessä, mutta BERM:n ennustama suunta on myopian kannalta monimutkainen. Jos EMF suppressoi melatoniinia (Wood 2006, Battelle 1980), se nostaisi retinaalista dopamiinia → myopialta suojaava. Mutta BERM ennustaa nimenomaan melatoniini-dopamiiniOSKILLAATION häiriintymistä — vuorokausirytmin tasoittumista — ei yksisuuntaista muutosta. Myopian katsaus dokumentoi saman: melatoniini-dopamiinisuhteen vuorokautinen dynamiikka (ei absoluuttinen taso) ohjaa skleeraalista remodellaatiota.
 

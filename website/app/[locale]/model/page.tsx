@@ -4784,7 +4784,7 @@ export default async function ModelPage({
                     </tr>
                   </thead>
                   <tbody>
-                    {d.biocapDecompMarkers.map((m: { symbol: string; name: string; weight: string; unit: string; baseline: string; current: string; mechanism: string; evidence: string }, i: number) => (
+                    {d.biocapDecompMarkers.map((m: { symbol: string; name: string; weight: string; unit: string; baseline: string; current: string; mechanism: string; evidence: string }) => (
                       <tr key={m.symbol} className="border-b border-card-border/50">
                         <td className="py-2 px-3 font-mono-num font-semibold text-foreground whitespace-nowrap">{m.symbol}</td>
                         <td className="py-2 px-3 text-foreground whitespace-nowrap">{m.name}</td>
@@ -4989,9 +4989,9 @@ export default async function ModelPage({
                 <rect x="385" y="95" width="95" height="28" rx="6" className="fill-blue-500/10 stroke-blue-500/50" strokeWidth="1.5" />
                 <text x="432" y="113" textAnchor="middle" className="fill-foreground text-[9px] font-medium">HPG ↓</text>
 
-                {/* Route C: CRY2-TRPC1 -> Ca2+ entry (purple) */}
+                {/* Route B' (sub-branch of pathway B): CRY2-TRPC1 -> Ca2+ entry (purple) */}
                 <circle cx="18" cy="175" r="13" className="fill-purple-500/15 stroke-purple-500/60" strokeWidth="1.5" />
-                <text x="18" y="179" textAnchor="middle" className="fill-purple-500 text-[10px] font-bold">C</text>
+                <text x="18" y="179" textAnchor="middle" className="fill-purple-500 text-[10px] font-bold">B′</text>
                 <rect x="40" y="161" width="95" height="28" rx="6" className="fill-purple-500/10 stroke-purple-500/50" strokeWidth="1.5" />
                 <text x="87" y="179" textAnchor="middle" className="fill-foreground text-[9px] font-medium">CRY2-TRPC1</text>
                 <line x1="135" y1="175" x2="155" y2="175" className="stroke-purple-500/60" strokeWidth="1.5" markerEnd="url(#fr_arP)" />
@@ -5010,9 +5010,9 @@ export default async function ModelPage({
                 <rect x="270" y="227" width="95" height="28" rx="6" className="fill-amber-500/10 stroke-amber-500/50" strokeWidth="1.5" />
                 <text x="317" y="245" textAnchor="middle" className="fill-foreground text-[9px] font-medium">{d.svgTestosteroneDown}</text>
 
-                {/* Route E: mTOR -> Autophagy -> Cell growth (red) */}
+                {/* Route A' (sub-branch of pathway A, downstream of VGIC -> Ca2+): mTOR -> Autophagy -> Cell growth (red) */}
                 <circle cx="18" cy="307" r="13" className="fill-red-500/15 stroke-red-500/60" strokeWidth="1.5" />
-                <text x="18" y="311" textAnchor="middle" className="fill-red-500 text-[10px] font-bold">E</text>
+                <text x="18" y="311" textAnchor="middle" className="fill-red-500 text-[10px] font-bold">A′</text>
                 <rect x="40" y="293" width="95" height="28" rx="6" className="fill-red-500/10 stroke-red-500/50" strokeWidth="1.5" />
                 <text x="87" y="311" textAnchor="middle" className="fill-foreground text-[9px] font-medium">mTOR</text>
                 <line x1="135" y1="307" x2="155" y2="307" className="stroke-red-500/60" strokeWidth="1.5" markerEnd="url(#fr_arR)" />
@@ -5080,9 +5080,9 @@ export default async function ModelPage({
                 {[
                   { x: 70, label: "A", color: "#3b82f6", route: d.routeGonadal, mech: "VGCC→Ca²⁺→ROS" },
                   { x: 210, label: "B", color: "#8b5cf6", route: d.svgCircadian, mech: "CRY/RPM→clock" },
-                  { x: 350, label: "C", color: "#ec4899", route: "CRY2-TRPC1", mech: "CRY2→TRPC1→Ca²⁺" },
+                  { x: 350, label: "B′", color: "#ec4899", route: "CRY2-TRPC1", mech: "CRY2→TRPC1→Ca²⁺" },
                   { x: 490, label: "D", color: "#ef4444", route: d.routeAutonomic, mech: "HPA→T↓" },
-                  { x: 630, label: "E", color: "#14b8a6", route: d.routeNeurodevel, mech: "CACNA1C→brain" },
+                  { x: 630, label: "A′", color: "#14b8a6", route: d.routeNeurodevel, mech: "CACNA1C→brain" },
                 ].map((r) => (
                   <g key={r.label}>
                     <line x1="350" y1="40" x2={r.x} y2="80" stroke={r.color} strokeWidth="1.5" strokeOpacity="0.5" />

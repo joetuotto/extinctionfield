@@ -310,14 +310,14 @@ const COPY = {
         id: "LITHIUM",
         drug: "Litium",
         drugSub: "Mielialantasaaja, GSK-3β-inhibiittori, neuroprotektiivinen",
-        mechanism: "Litium inhiboi GSK-3β:tä, joka fosforyloi CRY-proteiineja ja kohdistaa ne hajoamiseen. GSK-3β-inhibitio → CRY akkumuloituu → vahvempi sirkadiaaninen kello → parantunut melatoniinisignalointi. Litium vastustaa suoraan BERM:n reittiä C (CRY/RPM → melatoniinivaimennus).",
+        mechanism: "Litium inhiboi GSK-3β:tä, joka fosforyloi CRY-proteiineja ja kohdistaa ne hajoamiseen. GSK-3β-inhibitio → CRY akkumuloituu → vahvempi sirkadiaaninen kello → parantunut melatoniinisignalointi. Litium vastustaa suoraan BERM:n reittiä B (CRY/RPM → melatoniinivaimennus).",
         evidence: [
           "Litium pidentää sirkadiaanista periodia kaikissa testatuissa organismeissa syanobakteereista ihmisiin (McCarthy 2019, Translational Psychiatry). Tämä välittyy GSK-3β:n CRY-degradaation inhibition kautta.",
           "Litium lisää melatoniinineritystä bipolaaripotilailla (Hallam 2005, J. Psychopharmacology). Tämä on vastakkainen suunta kuin EMF:n aiheuttama melatoniinivaimennus.",
           "Litium on neuroprotektiivinen useiden BERM-relevanttien mekanismien kautta: GSK-3β-inhibitio vähentää tau-fosforylaatiota, BDNF-upregulation tukee neuroplastisuutta ja anti-inflammatoriset vaikutukset vähentävät neuroinflammatiota.",
-          "Juomaveden litium-epidemiologia (VK54): alueet joilla on luonnollisesti kohonnut litium vedessä, näyttävät matalampia itsemurhalukuja (Kapusta 2011, Br J Psychiatry), vähemmän dementiaa (Kessing 2017, JAMA Psychiatry) ja vähemmän masennusta. Annos on 10–100× alle terapeuttisen — viitaten CRY-reitin modulaatioon hivenpitoisuuksilla. BERM-tulkinta: hivenlitium tarjoaa toonisen CRY-stabiloinnin, osittain suojaten reittiä C väestötasolla.",
+          "Juomaveden litium-epidemiologia (VK54): alueet joilla on luonnollisesti kohonnut litium vedessä, näyttävät matalampia itsemurhalukuja (Kapusta 2011, Br J Psychiatry), vähemmän dementiaa (Kessing 2017, JAMA Psychiatry) ja vähemmän masennusta. Annos on 10–100× alle terapeuttisen — viitaten CRY-reitin modulaatioon hivenpitoisuuksilla. BERM-tulkinta: hivenlitium tarjoaa toonisen CRY-stabiloinnin, osittain suojaten reittiä B väestötasolla.",
         ],
-        interpretation: "Litium tarjoaa reitin C farmakologisen vasta-näytön. Jos CRY-välitteinen melatoniinivaimennus osallistuu EMF-bioeffekteihin, litiumin CRY-stabiloinnin pitäisi osittain suojata reitin C vaikutuksilta. Juomavesidata (VK54) laajentaa tämän terapeuttisesta hivenpitoisuussuojaukseen — alueet joilla on korkeampi vesilitium voivat saada osittaista, väestötason EMF-resilienttiyttä reitin C kautta.",
+        interpretation: "Litium tarjoaa reitin B farmakologisen vasta-näytön. Jos CRY-välitteinen melatoniinivaimennus osallistuu EMF-bioeffekteihin, litiumin CRY-stabiloinnin pitäisi osittain suojata reitin B vaikutuksilta. Juomavesidata (VK54) laajentaa tämän terapeuttisesta hivenpitoisuussuojaukseen — alueet joilla on korkeampi vesilitium voivat saada osittaista, väestötason EMF-resilienttiyttä reitin B kautta.",
         level: "M|C",
       },
       {
@@ -362,14 +362,14 @@ const COPY = {
       {
         id: "MELATONIN",
         drug: "Eksogeeninen melatoniini",
-        drugSub: "Reitin C päätepisteen täydennys",
-        mechanism: "Melatoniinilisä korvaa suoraan hormonin, jonka BERM:n reitti C (CRY/RPM → melatoniinivaimennus) ennustaa vähenevän EMF-altistuksesta. Tämä on päätepisteen supplementointi, ei mekanismin salpaus.",
+        drugSub: "Reitin B päätepisteen täydennys",
+        mechanism: "Melatoniinilisä korvaa suoraan hormonin, jonka BERM:n reitti B (CRY/RPM → melatoniinivaimennus) ennustaa vähenevän EMF-altistuksesta. Tämä on päätepisteen supplementointi, ei mekanismin salpaus.",
         evidence: [
           "[[ref:tbahriti2026|Tbahriti ym. 2026]] (Sleep Biol Rhythms, PRISMA-katsaus 55 tutkimuksesta): 88 % korkealaatuisista eläintutkimuksista raportoi EMF:n aiheuttaman melatoniinin vaimentumista 20–50 % lähtötasosta.",
           "Melatoniini on voimakas antioksidantti joka neutraloi ROS:ia — vastatoimena oksidatiivisen stressin kaskadille (BERM-taso 5A) riippumatta sen hormonaalisesta funktiosta.",
           "Reiter ym. 2007, 2014: melatoniinin suojaavat vaikutukset RF-indusoidulta oksidatiiviselta vauriolta eläinmalleissa.",
         ],
-        interpretation: "Melatoniini on helpoiten saatavilla oleva farmakologinen testi BERM:n reitille C. Jos yöllinen melatoniinilisä (1–3 mg) vaimentaa EMF-assosioitua unihäiriötä ja parantaa siittiöparametreja korkean EMF:n ympäristöissä, se tukee melatoniinisilta-hypoteesia.",
+        interpretation: "Melatoniini on helpoiten saatavilla oleva farmakologinen testi BERM:n reitille B. Jos yöllinen melatoniinilisä (1–3 mg) vaimentaa EMF-assosioitua unihäiriötä ja parantaa siittiöparametreja korkean EMF:n ympäristöissä, se tukee melatoniinisilta-hypoteesia.",
         level: "E|M",
       },
       {
@@ -520,7 +520,7 @@ const COPY = {
     convergenceLead: "Vahvin näyttö mille tahansa biologiselle mekanismille on farmakologinen: jos ehdotetun transduuktiokanavan salpaus kumoaa vaikutuksen, mekanismi on vahvistettu. Neljätoista lääkeryhmää yhtyvät BERM:n ennustamille reiteille:",
     convergencePoints: [
       "Reitti A (VGCC): CCB:t (23 salpaajatutkimusta), verapamiili (taajuusriippuvainen salpaus), gabapentinoidit (α2δ-modulaatio), nimodipiini (CNS-selektiivinen salpaus), rilutsoli (Ca²⁺-riippuvaisen glutamaatin vapautumisen esto)",
-      "Reitti C (CRY/melatoniini): Litium (CRY-stabilointi GSK-3β:n kautta, hivenpitoisuus juomavedessä), eksogeeninen melatoniini (päätepisteen korvaus)",
+      "Reitti B (CRY/melatoniini): Litium (CRY-stabilointi GSK-3β:n kautta, hivenpitoisuus juomavedessä), eksogeeninen melatoniini (päätepisteen korvaus)",
       "Ca²⁺-hormeesi/resetointi: Psilosybiini (5-HT2A → kontrolloitu Ca²⁺-pursuke → plastisuusresetti), kofeiini (adenosiini A₁ -antagonismi → kaksivaiheinen Ca²⁺-modulaatio)",
       "ROS-kaskadi: CoQ10 (antioksidanttipelastus, [[ref:bektas2026|Bektas 2026 5G-data]]), melatoniini (kaksois-antioksidantti + hormonaalinen)",
       "Metabolinen haara: Semaglutidi/GLP-1-agonistit (Ca²⁺-ERK-reitin vahvistus) — spekulatiivinen mutta testattava",

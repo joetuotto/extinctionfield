@@ -74,7 +74,7 @@ These require Claude project document access (not available in code sessions):
 
 #### 10c. LBERM_v16_mekanismien_mallinnus.md
 - VGIC/Ca2+ section: add Bertagna multi-pathway mechanism
-- Pathway C section: add Tbahriti 2026 quantitative data (88%, 20-50%)
+- Pathway B section: add Tbahriti 2026 quantitative data (88%, 20-50%)
 
 ### Previously deferred [PROJEKTI] items (from earlier Codelles)
 - BERM_BERM_tilannekatsaus_ja_seuraavat_vaiheet.md — not created

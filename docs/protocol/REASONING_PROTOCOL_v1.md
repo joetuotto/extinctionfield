@@ -39,17 +39,23 @@ Seuraukset, joita kielimallin on pidettävä mielessä:
 
 ### 2.2 Polkuhierarkia
 
-BERM:llä on viisi polkua (A–E). Lindgrenin geometriasta seuraa hierarkia:
+BERM:llä on kuusi polkua (A–F). Polkukirjaimet noudattavat kanonista skeemaa
+(`website/lib/evidence.ts` → `PATHWAY_LABELS`; `berm/berm/biology/pathways.py`).
+Lindgrenin geometriasta seuraa hierarkia:
 
 | Polku | Mekanismi | Geometrinen status | Skaala |
 |-------|-----------|-------------------|--------|
-| **C (RPM/kronobio)** | Kryptokromi → melatoniini → HPG | JOHDETTU: 4/5 RPM-Hamiltonin termiä seuraa geometriasta. g=2 johdettu. | nT (saavutettavissa) |
+| **B (RPM/kronobio)** | Kryptokromi → melatoniini → HPG | JOHDETTU: 4/5 RPM-Hamiltonin termiä seuraa geometriasta. g=2 johdettu. | nT (saavutettavissa) |
 | A (VGCC/Ca²⁺) | Kalvokytkentä → Ca²⁺ → ROS | RIITTÄMÄTÖN: δV_m ≈ 10⁻²¹ V, eli 10¹⁷× liian pieni ilman biologisia vahvistimia | mV (ei saavutettavissa geometriasta) |
-| B (DC-kasvukontrolli) | Beckerin DC-kenttä | AVOIN: vaatii longitudinaalimoodin | µV–mV |
-| D (dopaminerginen) | Motivaatio, addiktio | EI JOHDETTU geometriasta | Epäsuora |
+| C (veri-aivoeste) | BBB/BTB-läpäisevyys → HPA | EI JOHDETTU geometriasta | vaihtelee |
+| D (HPA→HPG) | Kortisoli → HPG-ristikkäisinhibitio | EI JOHDETTU geometriasta | Epäsuora |
 | E (mikrobiomi) | Suolisto → metaboliitit | EI JOHDETTU geometriasta | Epäsuora |
+| F (bioelektrinen koodi) | Beckerin DC-kenttä, Vmem-koodi | AVOIN: vaatii longitudinaalimoodin | µV–mV |
 
-**Kriittinen seuraus**: Jos analyysissa tarvitaan "BERM:n ennuste", johda se ensisijaisesti polusta C (RPM), ei polusta A (VGCC) — ellei kysymys koske nimenomaan VGCC:tä.
+Dopaminerginen haara (motivaatio, addiktio) ei ole oma polkunsa kanonisessa
+skeemassa: se on tason 7 motivaatiokerroin M_repro, EI JOHDETTU geometriasta.
+
+**Kriittinen seuraus**: Jos analyysissa tarvitaan "BERM:n ennuste", johda se ensisijaisesti polusta B (RPM), ei polusta A (VGCC) — ellei kysymys koske nimenomaan VGCC:tä.
 
 ### 2.3 FieldState vs. annosskaalaari
 
@@ -73,7 +79,7 @@ BERM:n FieldState-tietue sisältää:
 Ennen kuin arvioit tulosta "BERM-ennusteena" tai "BERM:n vastaisena", johda eksplisiittisesti mitä BERM ennustaa kyseisessä kontekstissa. Kirjoita johdon askeleet auki:
 
 ```
-1. Mikä BERM-polku on relevantti? (A, B, C, D, E?)
+1. Mikä BERM-polku on relevantti? (A, B, C, D, E, F?)
 2. Mikä on fysikaalisesti relevantti suure? (FieldState? Skaalaari? Vektori?)
 3. Tuottaako BERM:n mekanismi eri ennusteen kuin konsensusmalli?
 4. Jos kyllä: mikä tarkalleen on erotus?
@@ -82,7 +88,7 @@ Ennen kuin arvioit tulosta "BERM-ennusteena" tai "BERM:n vastaisena", johda eksp
 
 **Kielletty**: "BERM ennustaa, että EMF heikentää X:ää" — tämä on konsensusmalli BERM-etiketillä.
 
-**Vaadittu**: "BERM polku C ennustaa, että RPM-kryptokromin singlet-saanto muuttuu funktiona Φ_S(B_ext, B₀, ω_envelope), josta seuraa melatoniinin vuorokausidynamiikan häiriö, jonka suuruus riippuu B₀:n ja B_ext:n välisestä kulmasta — ei pelkästä kentän voimakkuudesta."
+**Vaadittu**: "BERM polku B ennustaa, että RPM-kryptokromin singlet-saanto muuttuu funktiona Φ_S(B_ext, B₀, ω_envelope), josta seuraa melatoniinin vuorokausidynamiikan häiriö, jonka suuruus riippuu B₀:n ja B_ext:n välisestä kulmasta — ei pelkästä kentän voimakkuudesta."
 
 ### Sääntö 2: TUNNISTA EROTTELEVAT vs. YHTEISET ENNUSTEET
 
@@ -121,7 +127,7 @@ Tarkistuslista jokaiselle kilpailevalle selitykselle:
 | 1 | **Terminen kynnys -oletus** | "Kenttä on liian heikko vaikuttaakseen" | BERM:n RPM-polku operoi nT-skaalalla, ei kT-skaalalla. Tarkista onko kynnys relevantti tälle polulle. |
 | 2 | **Skalaariksi redusointi** | "Altistus on X V/m" | FieldState on vektori + vaihe + PSD + vuorokausikonteksti. Skalaarireduktio hävittää informaatiota. |
 | 3 | **Konsensusmalli BERM-etiketillä** | "BERM ennustaa, että läheisyys → vaikutus" | Tämä on konsensusennuste. BERM:n erotteleva ennuste on muoto, ei suunta. |
-| 4 | **VGCC-oletuspolku** | "BERM perustuu kalvokytkentään" | Lindgrenin jälkeen polku C (RPM) on primäärinen. Polku A vaatii vahvistimia. |
+| 4 | **VGCC-oletuspolku** | "BERM perustuu kalvokytkentään" | Lindgrenin jälkeen polku B (RPM) on primäärinen. Polku A vaatii vahvistimia. |
 | 5 | **Proxy = annos** | "Mobiilipenetraatio mittaa EMF-altistusta" | Se mittaa teknologian ajoitusta. FieldState vaatii fysikaaliset mittaukset. |
 | 6 | **Yksipuolinen falsifikaatio** | "Tämä data ei tue BERM:ää" → stop | Kysy myös: tukeeko data kilpailijoita paremmin? Erotteleeko testi malleja? |
 | 7 | **Biasien symmetrisointi** | "Bias voi olla kumpaankin suuntaan" | Attenuation, kontrollikontaminaatio, lyhyt kesto → suunta on kohti nollaa (tilastollinen teoreema). |

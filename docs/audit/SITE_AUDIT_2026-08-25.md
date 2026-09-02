@@ -1,5 +1,7 @@
 # BERM / extinctionfield.com — Kokonaisauditointi
 
+> **Historiallinen tallenne — polkukirjainskeema on sittemmin yhtenaistetty: B = RPM/CRY, C = veri-aivoeste (ks. `docs/protocol/CHANGELOG.md`, 2026-09-02). Havainto 6 on korjattu.**
+
 **Paiva:** 2026-08-25
 **Tyyppi:** DESKRIPTIIVINEN (ei muutoksia, vain raportointi)
 **Metodi:** 9 rinnakkaista auditointiagenttia, staattinen koodianalyysi + ajonaikainen testaus

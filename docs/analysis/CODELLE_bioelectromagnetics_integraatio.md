@@ -42,7 +42,7 @@ Bioelectromagnetics-lehden (2024–2026) ja lähijulkaisujen systemaattisessa ka
 
 **2. 5G-taajuusspesifinen reproduktioevidenssi (Bektas 2026):** Ensimmäinen 3.5 GHz -spesifinen testis-ROS-data. CoQ10-interventio osoittaa mekanismin reversiibeilyden — yhdenmukainen BERM:n recovery window -konseptin kanssa. Operoi suoraan nuolella taso 5A → taso 6 (ROS → siittiökaskadi).
 
-**3. Melatoniinisuppression systemaattinen evidenssi (Tbahriti 2026):** 55 tutkimuksen PRISMA-katsaus: 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 %). Tukee BERM:n polkua C (melatoniini → GnRH → HPG) ja antaa kvantitatiivisen kehyksen suppression suuruudelle.
+**3. Melatoniinisuppression systemaattinen evidenssi (Tbahriti 2026):** 55 tutkimuksen PRISMA-katsaus: 88 % korkealaatuisista eläintutkimuksista raportoi EMF-indusoitua melatoniinisuppressiota (20–50 %). Tukee BERM:n polkua B (melatoniini → GnRH → HPG) ja antaa kvantitatiivisen kehyksen suppression suuruudelle.
 
 **4. Kudosspesifisyyden dokumentointi (Meyer 2026, Haidar 2025):** Kaksi laadukasta negatiivista tulosta ihosoluissa (ELF + RF) — samaan aikaan kun Bektas raportoi testis-vauriota samalla taajuudella. Ero on kudosspesifinen — yhdenmukainen BERM:n χ(Ā)-valintasäännön kanssa.
 
@@ -165,7 +165,7 @@ Bioelectromagnetics-lehden (2024–2026) ja lähijulkaisujen systemaattisessa ka
 }
 ```
 
-**Sijainti:** Polku C -tutkimusten joukkoon.
+**Sijainti:** Polku B -tutkimusten joukkoon.
 
 #### 1d. Gao ym. 2024 (sekundaarinen)
 
@@ -391,7 +391,7 @@ Limitations: Only 27% of studies met high methodological standards.
 48% of animal studies lacked adequate sham controls. 33% reported
 insufficient exposure parameters.
 
-BERM relevance: Directly supports pathway C (EMF → pineal melatonin
+BERM relevance: Directly supports pathway B (EMF → pineal melatonin
 suppression → GnRH pulsatility disruption → HPG → gonadal function).
 The 20-50% suppression magnitude is biologically significant and
 consistent with BERM's v17_night_fraction() function, where EMF is one
@@ -423,7 +423,7 @@ Keskeiset löydökset:
 Rajoitukset: Vain 27 % tutkimuksista täytti korkeat metodologiset
 standardit. 48 % eläintutkimuksista ilman riittävää sham-kontrollia.
 
-BERM-merkitys: Tukee suoraan polkua C (EMF → pineaalinen melatoniini-
+BERM-merkitys: Tukee suoraan polkua B (EMF → pineaalinen melatoniini-
 suppressio → GnRH-pulsaatiohäiriö → HPG → gonadifunktio). 20–50 %:n
 suppressio on biologisesti merkittävä ja yhdenmukainen BERM:n
 v17_night_fraction()-funktion kanssa, jossa EMF on yksi osa kolminkertaisesta
@@ -575,7 +575,7 @@ Lisää evidenssipopupiin:
 → UUSI: Bektas ym. 2026 (Bioelectromagnetics): 3.5 GHz (5G) → testis-ROS + vaurio. CoQ10 amelioroi — mekanismi reversiibeli. Ensimmäinen 5G-taajuusspesifinen testisdata. [C]
 ```
 
-#### 5d. Solmu: `pathway_c` (Polku C: melatoniini → GnRH)
+#### 5d. Solmu: `pathway_c` (kanoninen polku B: melatoniini → GnRH; solmutunnus on historiallinen)
 
 Lisää keyReferences-listaan:
 
@@ -584,7 +584,7 @@ Lisää keyReferences-listaan:
   authors: "Tbahriti ym. 2026",
   title: "EMF and circadian rhythms: PRISMA systematic review",
   journal: "Sleep Biol Rhythms 24(2):195-214",
-  keyFinding: "55 tutkimuksen PRISMA: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota (20–50 %). Tukee polkua C kvantitatiivisesti."
+  keyFinding: "55 tutkimuksen PRISMA: 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota (20–50 %). Tukee polkua B kvantitatiivisesti."
 }
 ```
 
@@ -681,9 +681,9 @@ nettovaurion. Laajentaa oksidatiivisen stressin evidenssipohjan
 (Yakymenko 2016: 93/100; Panagopoulos 2025: 95 %) 5G-taajuusalueelle.
 ```
 
-**6c. Polun C kvantitatiivinen tarkennus (EN + FI):**
+**6c. Polun B kvantitatiivinen tarkennus (EN + FI):**
 
-Lisää polun C (melatoniini → GnRH → HPG) kuvaukseen:
+Lisää polun B (melatoniini → GnRH → HPG) kuvaukseen:
 
 EN:
 ```
@@ -883,7 +883,7 @@ Päivitä seuraavat Claude-projektin dokumentit:
 
 #### 10c. BERM/LBERM_v16_mekanismien_mallinnus.md
 
-**Muutos:** Lisää VGIC/Ca²⁺-osioon Bertagnan monireittiinen mekanismi ja polun C osioon Tbahriti 2026:n kvantitatiivinen data.
+**Muutos:** Lisää VGIC/Ca²⁺-osioon Bertagnan monireittiinen mekanismi ja polun B osioon Tbahriti 2026:n kvantitatiivinen data.
 
 ---
 
@@ -899,10 +899,10 @@ Päivitä seuraavat Claude-projektin dokumentit:
 **Nykyinen taso:** E  
 **Arvio:** Bertagna 2025 laajentaa mekanistista kuvaa. Ei muutosta.
 
-#### 11c. Solmu: `pathway_c` (Polku C: melatoniini)
+#### 11c. Solmu: `pathway_c` (kanoninen polku B: melatoniini; solmutunnus on historiallinen)
 
 **Nykyinen taso:** Tarkistettava (aiemmin vaihtelevasti arvioitu)  
-**Arvio:** Tbahriti 2026 PRISMA (55 tutkimusta, 88 % suppressiota) tukee nousua M|C-tasolle polun C eläinkoe-evidenssissä. Kliininen siirtymä (eläin → ihminen, soluvasteen → systeeminen sirkadiaaninen häiriö) on edelleen dokumentoimatta. **Suositus:** Polun C episteeminen taso pidetään nykyisellä tasolla, mutta eläinkoe-evidenssin vahvuus dokumentoidaan. Suorittava agentti tarkistaa polun C nykytason kausaaliketjuohjeista ja päättää tarkennustarpeesta.
+**Arvio:** Tbahriti 2026 PRISMA (55 tutkimusta, 88 % suppressiota) tukee nousua M|C-tasolle polun B eläinkoe-evidenssissä. Kliininen siirtymä (eläin → ihminen, soluvasteen → systeeminen sirkadiaaninen häiriö) on edelleen dokumentoimatta. **Suositus:** Polun B episteeminen taso pidetään nykyisellä tasolla, mutta eläinkoe-evidenssin vahvuus dokumentoidaan. Suorittava agentti tarkistaa polun B nykytason kausaaliketjuohjeista ja päättää tarkennustarpeesta.
 
 #### 11d. Nuoli: `pathway_a` → `sdf` / `concentration` (ROS → siittiökaskadi)
 
@@ -914,7 +914,7 @@ Päivitä seuraavat Claude-projektin dokumentit:
 **Nykyinen taso:** C  
 **Arvio:** Gao 2024 tukee mekanistisesti (tight junction -kohdereitti) mutta EMP ≠ RF, joten ei paranna episteemistä tasoa. Ei muutosta.
 
-**Yhteenveto:** Yksikään episteeminen taso ei muutu näiden lähteiden perusteella. Ne tukevat olemassa olevia tasoja ja tarkentavat mekanistista kuvaa. Polun C eläinkoe-evidenssin vahvuutta tarkennetaan dokumentoinnissa.
+**Yhteenveto:** Yksikään episteeminen taso ei muutu näiden lähteiden perusteella. Ne tukevat olemassa olevia tasoja ja tarkentavat mekanistista kuvaa. Polun B eläinkoe-evidenssin vahvuutta tarkennetaan dokumentoinnissa.
 
 ---
 
@@ -958,7 +958,7 @@ Seuraavat lähteet on dokumentoitu kirjallisuuskatsauksessa mutta eivät vaadi e
                pathway_c, pathway_e, taso 3 konteksti)
 
 6.  [PROJEKTI→KOODI] model/page.tsx — 3 tekstitäydennystä (monireittiinen Ca²⁺,
-              5G reproduktiodata, polun C kvantitatiivinen tarkennus)
+              5G reproduktiodata, polun B kvantitatiivinen tarkennus)
               (EN + FI) — konteksti upotettu ohjeeseen
 
 7.  [KOODI]  v16.py — docstring-päivitykset (3 funktiota, ei numerisia muutoksia)
@@ -975,7 +975,7 @@ Seuraavat lähteet on dokumentoitu kirjallisuuskatsauksessa mutta eivät vaadi e
               → Jos ei projektipääsyä: kirjoita docs/codelle/pending/
 
 11. [PROJEKTI] Episteemisten tasojen arviointi → ei muutoksia (dokumentoi tuki,
-              polun C eläinkoe-evidenssin vahvuus tarkennetaan)
+              polun B eläinkoe-evidenssin vahvuus tarkennetaan)
 ```
 
 ---
@@ -998,7 +998,7 @@ Seuraavat lähteet on dokumentoitu kirjallisuuskatsauksessa mutta eivät vaadi e
 
 8. **Evidence-sivun rakenne.** Sivu on 219 KB monolitti. Lisäykset tehdään nykyiseen rakenteeseen. Sivun refaktorointia erillisiksi komponenteiksi ei aloiteta tämän ohjeen puitteissa.
 
-9. **Polun C episteeminen taso vaatii erillisen arvion.** Tbahriti 2026:n PRISMA-katsaus on vahvin systemaattinen evidenssi polun C eläinkoe-evidenssille, mutta kliininen translaatio (eläin → ihminen) on edelleen dokumentoimatta. Suorittava agentti tarkistaa polun C nykytason kausaaliketjuohjeista ja tekee lopullisen arvion.
+9. **Polun B episteeminen taso vaatii erillisen arvion.** Tbahriti 2026:n PRISMA-katsaus on vahvin systemaattinen evidenssi polun B eläinkoe-evidenssille, mutta kliininen translaatio (eläin → ihminen) on edelleen dokumentoimatta. Suorittava agentti tarkistaa polun B nykytason kausaaliketjuohjeista ja tekee lopullisen arvion.
 
 ---
 

@@ -29,7 +29,7 @@ Tämä dokumentti kokoaa teknologiaan liittyvät terävöitykset, jotka koskevat
 | RPM | Radical Pair Mechanism | Kvanttimekanismi |
 | CaMKII | Ca²⁺/Calmodulin-dependent Kinase II | Autofosforylaatiokynnys |
 | TCBM | Three-Channel Biological Model | ELF/IF/RF-malli |
-| TRPC1 | Transient Receptor Potential Canonical 1 | Polku C (Yap 2025) |
+| TRPC1 | Transient Receptor Potential Canonical 1 | Polku B′ = B:n alahaara (Yap 2025) |
 | PWM | Pulse Width Modulation | LED-ohjaus (IF-kanava) |
 | SDF | Sperm DNA Fragmentation | Lisääntymisen päätepiste |
 | TFR | Total Fertility Rate | Demografinen mittari |
@@ -60,7 +60,7 @@ Tämä dokumentti kokoaa teknologiaan liittyvät terävöitykset, jotka koskevat
 
 ### Mathematics-sivu (mathematics/page.tsx)
 - [ ] Poikkileikkauskaava: parametrit vastaavat v17.1:tä?
-- [ ] γ_C-dekomposiittinote: polku C paino 25%?
+- [ ] γ_B-dekomposiittinote: polku B paino 25%?
 - [ ] IF-kanavan formalisaatio?
 - [ ] Falsifikaatiotestit: falsification_v19_1.json?
 

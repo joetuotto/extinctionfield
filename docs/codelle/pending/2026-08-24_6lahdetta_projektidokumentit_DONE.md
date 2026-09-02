@@ -52,7 +52,7 @@ Lisattava episteeminen yhteenveto:
 > -mekanistisen tuen Panagopoulos 2025 IFO-katsauksesta. Kolme RCT:ta
 > tarjoavat kontrolloitua (C) evidenssia akuuteista vasteista.
 > Discriminating tests -laskuri sailyy 0/3: nama testaavat polkua A,
-> eivat primaaripolkua C/RPM.
+> eivat primaaripolkua B/RPM.
 >
 > Parssinen & Wedenoja 2021 myopiakatsaus dokumentoitu "adjacent context"
 > -merkinnalla v17_night_fraction-docstringissa. Myopia EI ole BERM-

@@ -1,6 +1,6 @@
 # Erottelevat testit — BERM vs. konsensus
 
-Nämä kolme testiä erottelisivat BERM:n primäärihaaran (polku C / RPM)
+Nämä kolme testiä erottelisivat BERM:n primäärihaaran (polku B / RPM)
 konsensusmallista. Yksikään 13 aiemmasta havainnosta ei testannut näitä.
 
 ## Testi D1: Suuntariippuvuus (solutaso)
@@ -47,7 +47,7 @@ ratkaisisivat, mitä kyseinen aineisto olisi voinut kertoa, jos se olisi
 kerätty erottelevasti.
 
 Yllä olevat D1–D3 ovat eri asia. Ne eivät korjaa aiempaa aineistoa vaan
-testaavat BERM:n primäärihaaran (polku C / RPM) ennusteita, joita yksikään
+testaavat BERM:n primäärihaaran (polku B / RPM) ennusteita, joita yksikään
 13 havainnosta ei koskettanut. Tästä syystä mallin metadatassa
 `discriminating_tests_needed = 3` (D1–D3), kun taas luokittelutaulukon
 `summary.discriminating_tests_needed = 5` (havaintokohtaiset jatkotestit).

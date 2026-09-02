@@ -30,7 +30,7 @@ Lisää:
 ### Muutos 1: VGIC/Ca²⁺-osio
 Lisää Bertagnan monireittiinen mekanismi: IFO-VGIC (suora S4) + solunsisäiset Ca²⁺-varastot (RyR/SERCA). Farmakologinen vahvistus: dantroleeni + CPA estävät EMF-vaikutukset.
 
-### Muutos 2: Polun C osio
+### Muutos 2: Polun B osio
 Lisää Tbahriti 2026:n kvantitatiivinen data: PRISMA 55 tutkimusta, 88 % korkealaatuisista eläintutkimuksista raportoi melatoniinisuppressiota 20–50 %. Metodologinen varoitus: vain 27 % tutkimuksista täytti korkeat standardit.
 
 ## 4. Episteemisten tasojen arviointi

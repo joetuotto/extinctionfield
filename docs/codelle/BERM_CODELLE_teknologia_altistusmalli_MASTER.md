@@ -28,7 +28,7 @@ Teknologia-altistusmalli on BERM:n ydin: se formalisoi miten eri teknologiasukup
 - 8 tasoa, 63 solmua, 107 reunaa
 - **Polku A:** VGCC → Ca²⁺ → ROS → mitokondrioiden häiriö
 - **Polku B:** RPM/CRY → sirkadiaaninen häiriö → melatoniini
-- **Polku C:** CRY2 → TRPC1 → kalvojännitehäiriö (paino 25%)
+- **Polku B′ (B:n alahaara):** CRY2 → TRPC1 → kalvojännitehäiriö (polun B paino 25%)
 
 ### VGCC-herkkyys lepojännitteessä
 - **Komponentti:** `VGCCGeneFamilyDiagram`

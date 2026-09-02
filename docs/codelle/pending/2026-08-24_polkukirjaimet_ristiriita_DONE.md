@@ -1,5 +1,7 @@
 # Odottava projektipäivitys
 
+> **Historiallinen tallenne — skeema on sittemmin yhtenäistetty: B = RPM/CRY, C = veri-aivoeste (ks. `docs/protocol/CHANGELOG.md`, 2026-09-02).**
+
 - **Lähdeohje:** ei mistään CODELLE-ohjeesta — löydös Chae 2019 -integraation yhteydessä
 - **Askel:** — (uusi havainto)
 - **Päivämäärä:** 2026-08-24

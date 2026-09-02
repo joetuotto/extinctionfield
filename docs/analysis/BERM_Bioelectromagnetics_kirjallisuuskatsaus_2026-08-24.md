@@ -335,7 +335,7 @@ BERM:n kannalta katsaus muistuttaa, että polku B:n episteeminen taso on matalam
 
 **BERM-relevanssi — tukeva mutta kvantitoinnissa varovainen:**
 
-BERM:n polku C: EMF → pineaalinen melatoniinisuppressio → GnRH-pulsaatiohäiriö → HPG → gonadifunktio. Tbahriti ym. systemaattinen evidenssi (55 tutkimusta, PRISMA) osoittaa, että:
+BERM:n polku B: EMF → pineaalinen melatoniinisuppressio → GnRH-pulsaatiohäiriö → HPG → gonadifunktio. Tbahriti ym. systemaattinen evidenssi (55 tutkimusta, PRISMA) osoittaa, että:
 
 (a) Melatoniinisuppressio EMF-altistuksesta on toistuva löydös (88 % korkealaatuisista eläintutkimuksista)
 (b) Suppression suuruus (20–50 %) on biologisesti merkittävä mutta ei yhtä suuri kuin valon aiheuttama — tämä on yhdenmukainen BERM:n v17_night_fraction()-funktion kanssa, jossa EMF on yksi osatekijä kolminkertaisessa osumassa (melanopsiini + CRY + melatoniini)
@@ -521,7 +521,7 @@ TASO 7–9: ei kattavuutta — ei lehden aihealuetta
 
 **Taso 5A → 6 (ROS → reproduktio):** Bektas ym. 2026 on ensimmäinen 5G-taajuuteen (3.5 GHz) spesifinen tutkimus, joka osoittaa testis- ja oksidatiivista vauriota ja jonka CoQ10-interventio osoittaa mekanismin reversiibeliuden. Tämä on suoraan BERM:n kaskadin (ROS → SDF↑, motiliteetti↓) mukaista.
 
-**Taso 5C (melatoniini):** Tbahriti ym. 2026 systemaattinen katsaus (55 tutkimusta) osoittaa, että melatoniinisuppressio on toistuva löydös (88 % korkealaatuisista eläintutkimuksista). Suppression suuruus (20–50 %) on biologisesti merkittävä ja yhdenmukainen BERM:n polun C ennusteiden kanssa.
+**Taso 5C (melatoniini):** Tbahriti ym. 2026 systemaattinen katsaus (55 tutkimusta) osoittaa, että melatoniinisuppressio on toistuva löydös (88 % korkealaatuisista eläintutkimuksista). Suppression suuruus (20–50 %) on biologisesti merkittävä ja yhdenmukainen BERM:n polun B ennusteiden kanssa.
 
 ### 2. Rajoittava evidenssi
 
@@ -562,7 +562,7 @@ Tässä katsauksessa tunnistettiin kolme artikkelia, jotka voivat motivoida BERM
 
 **Miksi:** 55 tutkimuksen PRISMA-katsaus melatoniinisuppressiosta. 88 % korkealaatuisista eläintutkimuksista tukee tason 5C polkua. Kvantitativisesti tarkentaa suppressioefektin suuruuden (20–50 %).
 
-**Mahdollinen toimenpide:** Polun C episteemisen tason päivitys (jos katsotaan M|C → M); evidenssisivun sirkadiaaninen osio.
+**Mahdollinen toimenpide:** Polun B episteemisen tason päivitys (jos katsotaan M|C → M); evidenssisivun sirkadiaaninen osio.
 
 ---
 

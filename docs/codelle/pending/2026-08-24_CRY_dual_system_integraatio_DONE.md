@@ -12,9 +12,9 @@ Verkkokalvolla on KAKSI erillistä CRY-järjestelmää:
 - **CRY2:** Gangliosolut (sirkadiaaninen kello)
   - Olemassa oleva malli, Yap ym. 2025 (CRY2-TRPC1)
 
-## Polku C jaetaan:
-- **C1 (CRY1-sensorinen):** E-taso proteiinilokalisaatiolle, L*-taso magnetoreseptiotulkinnalle
-- **C2 (CRY2-sirkadiaaninen):** E-taso (vahvistettu monella menetelmällä)
+## Polku B jaetaan:
+- **B1 (CRY1-sensorinen):** E-taso proteiinilokalisaatiolle, L*-taso magnetoreseptiotulkinnalle
+- **B2 (CRY2-sirkadiaaninen):** E-taso (vahvistettu monella menetelmällä)
 
 ## Ravitsemukselliset modulaattorit (koskevat molempia):
 - **B2/FAD** → CRY-stabiilisuus (Hirano 2017) + magneettinen herkkyys (Yap 2025)
@@ -30,7 +30,7 @@ Verkkokalvolla on KAKSI erillistä CRY-järjestelmää:
 ## Toteutetut muutokset
 
 ### Koodimuutokset:
-1. `model/page.tsx`: cryDualSystemNote (EN+FI) — C1/C2-kuvaus
+1. `model/page.tsx`: cryDualSystemNote (EN+FI) — B1/B2-kuvaus
 2. `lib/causalMapData.ts`: 3 uutta solmua (mod_fad_riboflavin, mod_membrane_omega, mod_ampk_fasting) + 5 uutta reunaa
 3. `v16.py`: v18_nutritional_cry_modifier() placeholder-funktio
 4. `lib/eyeColorData.ts`: 4 uutta evidenssikorttia (Bartölke, Majewska, Lamia, B2-konsolidoitu)

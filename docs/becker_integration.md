@@ -55,7 +55,7 @@ Kriittinen oivallus: Beckerin löydös, että dedifferentiaatio vaatii häviäv�
 
 **Lähde:** Cross Currents, s. 76–78. "The pineal is also sensitive to the daily cyclic pattern in the Earth's magnetic field. Melatonin secretion in human subjects may be changed at will by exposure to steady magnetic fields of the same strength as the geomagnetic field." Pineaali tuottaa melatoniinia, serotoniinia, dopamiinia. "The primary effect of a chronically abnormal biocycle is the production of chronic stress syndrome, a condition that produces a marked decline in competency of the immune system."
 
-**BERM-integraatio:** Tämä kytkee BERM:n melatoniini-polun (polku C) suoraan geomagneettiseen herkkyyteen. Becker dokumentoi mekanismin: pineaali → melatoniini → vuorokausirytmi → stressisyndroomi → immuunijärjestelmä. EMF-häiriö pineaalissa häiritsee melatoniinia joka häiritsee vuorokausirytmiä joka tuottaa kroonisen stressin. Tämä on HPA-akselin (polku D) ja melatoniinin (polku C) yhdistyminen yhdeksi ketjuksi jossa pineaali on solmukohta.
+**BERM-integraatio:** Tämä kytkee BERM:n melatoniini-polun (polku B) suoraan geomagneettiseen herkkyyteen. Becker dokumentoi mekanismin: pineaali → melatoniini → vuorokausirytmi → stressisyndroomi → immuunijärjestelmä. EMF-häiriö pineaalissa häiritsee melatoniinia joka häiritsee vuorokausirytmiä joka tuottaa kroonisen stressin. Tämä on HPA-akselin (polku D) ja melatoniinin (polku B) yhdistyminen yhdeksi ketjuksi jossa pineaali on solmukohta.
 
 Lindgrenin kehyksessä: pineaali on magnetiittikristalleja sisältävä elin joka toimii geomagneettisena sensorina. Se on biologinen chi(A_bar)-detektori — se mittaa taustakentän A_bar ja säätää melatoniinia sen mukaan. Ulkoinen EMF häiritsee tätä mittausta → melatoniinin erityksen häiriö → vuorokausirytmin häiriö → HPG-akselin häiriö → hedelmällisyyden lasku.
 
@@ -87,6 +87,6 @@ Erityisen arvokas on havainto, että koe suunniteltiin tuottamaan negatiivinen t
 | 2 | Ruotsin 8% anomaliat | SDI:n kalibraatio isän altistukseen | SDF → bioelektrisen koodin virhe |
 | 3 | Fort Rucker clubfoot | Kohorttihaavoittuvuus (sikiö 5x) | Protonipumppuasymmetrian häiriö |
 | 4 | DC-kontrollisysteemi | T_BE-kanavan kokeellinen perusta | Metrinen tila = DC-virran geometria |
-| 5 | Pineaalin magneettiherkkys | Polku C (melatoniini) + D (HPA) yhdistäminen | Pineaali = biologinen chi(A_bar)-detektori |
+| 5 | Pineaalin magneettiherkkys | Polku B (melatoniini) + D (HPA) yhdistäminen | Pineaali = biologinen chi(A_bar)-detektori |
 | 6 | Guyn koe: stressivasteen uupuminen | Polku D:n kokeellinen ankkuri | HPA-akselin Selye-dynamiikka |
 | 7 | Hedelmättömyyden nousu 1960–1985 | BERM:n ajallinen ulottuvuus ennen mobiilia | Kumulatiivinen ELF+MW ennen RF |

@@ -64,7 +64,7 @@ Erottelevat testit: `DISCRIMINATING_TESTS.md`
 ### F05: δV_m ≈ 10⁻²¹ V geometric coupling
 - **Alkuperäinen**: mekanismin epäonnistuminen
 - **Uusi**: sisäinen tarkennus (internal_refinement)
-- **Perustelu**: koskee vain polkua A; polku C (RPM) toimii oikealla skaalalla; johti hierarkiainversioon
+- **Perustelu**: koskee vain polkua A; polku B (RPM) toimii oikealla skaalalla; johti hierarkiainversioon
 - **Koskee**: polun A geometriaa (L-BERM)
 
 ### F11: Finland density model failure
@@ -108,7 +108,7 @@ Erottelevat testit: `DISCRIMINATING_TESTS.md`
 
 ## Havaintojen kohdentuminen
 
-Yksikään 13 havainnosta ei kohdistui BERM:n primäärihaaraan (polku C / RPM / kohorttivaikutus).
+Yksikään 13 havainnosta ei kohdistui BERM:n primäärihaaraan (polku B / RPM / kohorttivaikutus).
 Tämä haara on edelleen empiirisesti testaamaton erottelevilla testeillä D1–D3
 (ks. `DISCRIMINATING_TESTS.md`).
 
