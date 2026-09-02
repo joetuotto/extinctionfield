@@ -293,5 +293,64 @@
       "assessedAt": "2026-09-01",
       "note": "Demographic decomposition is methodological; the biological contribution share is the open question"
     }
+  ],
+  "routes": [
+    {
+      "id": "route.vgcc-sperm-fecundability",
+      "name": { "en": "VGCC → Sperm → Fecundability", "fi": "VGCC → Siittiöt → Hedelmällisyys" },
+      "description": {
+        "en": "Direct ROS-mediated damage pathway: FieldState activates VGCCs, elevating intracellular Ca²⁺, driving mitochondrial ROS production that directly damages sperm membranes, DNA integrity, and motility.",
+        "fi": "Suora ROS-välitteinen vaurioreitti: FieldState aktivoi VGCC:t, nostaen solunsisäistä Ca²⁺:a, tuottaen mitokondriaaalista ROS:ia joka suoraan vaurioittaa siittiöiden kalvoja, DNA-eheyttä ja liikkuvuutta."
+      },
+      "targetClaim": "claim.couple.fecundability-convergence",
+      "routeClaims": ["claim.proxy.lindgren-selection", "claim.vgcc.ros-ca2-coupling", "claim.sperm.multi-parameter-decline"],
+      "routeEvidence": ["er.vgcc.pall2013", "er.sperm.adams2014"],
+      "sharedAssumptions": ["VGCC activation is a primary EMF transduction mechanism"],
+      "sharedDatasets": [],
+      "independenceGroup": "direct-ros",
+      "independenceVerified": true,
+      "independenceNote": "Uses Ca²⁺/ROS mechanism exclusively; does not share clockgene or circadian data with RPM route",
+      "direction": "supports",
+      "alternativeCompatibility": "Compatible with thermal mechanism at high SAR; dominant at low SAR",
+      "discriminatingPower": "VGCC-specific blocker experiments can isolate this route from RPM"
+    },
+    {
+      "id": "route.rpm-melatonin-clock",
+      "name": { "en": "RPM → Melatonin → Clock Disruption", "fi": "RPM → Melatoniini → Kellohäiriö" },
+      "description": {
+        "en": "Circadian disruption pathway: magnetic field vector modulates cryptochrome radical pairs, altering clock gene expression, suppressing pineal melatonin, disrupting HPG axis timing, and impairing ovulatory synchronization.",
+        "fi": "Sirkadiaaninen häiriöreitti: magneettikentän vektori moduloi kryptokromin radikaalipareja, muuttaen kellogeenien ilmentymistä, supressoiden käpylisäkkeen melatoniinia, häiriten HPG-akselin ajoitusta ja heikentäen ovulaation synkronointia."
+      },
+      "targetClaim": "claim.couple.fecundability-convergence",
+      "routeClaims": ["claim.rpm.cry-magnetic-sensitivity", "claim.melatonin.circadian-redox-mediator"],
+      "routeEvidence": ["er.cry.ritz2004"],
+      "sharedAssumptions": ["Cryptochrome radical-pair mechanism is operative in mammals"],
+      "sharedDatasets": [],
+      "independenceGroup": "circadian",
+      "independenceVerified": true,
+      "independenceNote": "Uses magnetic vector/CRY pathway exclusively; does not share VGCC/ROS data with direct-ros route",
+      "direction": "supports",
+      "alternativeCompatibility": "Compatible with light-mediated melatonin suppression; distinguishable by magnetic field specificity",
+      "discriminatingPower": "CRY-knockout experiments can isolate this route from VGCC"
+    },
+    {
+      "id": "route.tfr-decomposition",
+      "name": { "en": "Biological → Demographic Decomposition", "fi": "Biologinen → Demografinen dekompositio" },
+      "description": {
+        "en": "Top-down route: TFR decline is decomposed into biological (fecundability) and behavioral (demand/tempo/ART) components. The biological share is estimated by holding behavioral factors constant.",
+        "fi": "Ylhäältä alas -reitti: TFR:n lasku puretaan biologisiin (hedelmällisyys) ja käyttäytymis- (kysyntä/tempo/ART) komponentteihin. Biologinen osuus arvioidaan pitämällä käyttäytymistekijät vakioina."
+      },
+      "targetClaim": "claim.tfr.multi-input-decomposition",
+      "routeClaims": ["claim.couple.fecundability-convergence", "claim.tfr.multi-input-decomposition"],
+      "routeEvidence": [],
+      "sharedAssumptions": ["ASFR decomposition is valid", "Behavioral factors can be held approximately constant across comparison cohorts"],
+      "sharedDatasets": ["Nordic register data"],
+      "independenceGroup": "demographic",
+      "independenceVerified": false,
+      "independenceNote": null,
+      "direction": "supports",
+      "alternativeCompatibility": "Does not distinguish between EMF and other biological causes of fecundability decline",
+      "discriminatingPower": "Requires FieldState-stratified cohort comparison to isolate EMF contribution"
+    }
   ]
 }

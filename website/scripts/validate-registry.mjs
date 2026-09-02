@@ -312,6 +312,60 @@ if (!/^\d+\.\d+\.\d+$/.test(claims.version)) {
   error(`Claims version "${claims.version}" does not match semver pattern`);
 }
 
+// ── 17. Route definitions ────────────────────────────
+const routeArray = claims.routes || [];
+const routeIds = new Set();
+if (routeArray.length > 0) {
+  console.log("17. Checking route definitions...");
+  for (const route of routeArray) {
+    if (!/^route\.[a-z][a-z0-9-]*$/.test(route.id)) {
+      error(`Route ID "${route.id}" does not match pattern "route.<slug>"`);
+    }
+    if (routeIds.has(route.id)) {
+      error(`Duplicate route ID: ${route.id}`);
+    }
+    routeIds.add(route.id);
+    if (route.targetClaim && !claimIds.has(route.targetClaim)) {
+      error(`Route ${route.id}: targetClaim "${route.targetClaim}" does not exist`);
+    }
+    for (const rc of route.routeClaims || []) {
+      if (!claimIds.has(rc)) {
+        error(`Route ${route.id}: routeClaim "${rc}" does not exist`);
+      }
+    }
+    for (const re of route.routeEvidence || []) {
+      if (!erIds.has(re)) {
+        warn(`Route ${route.id}: routeEvidence "${re}" is not a known evidence relation`);
+      }
+    }
+    if (!route.name?.en) {
+      error(`Route ${route.id}: missing required English name`);
+    }
+  }
+} else {
+  console.log("17. No routes defined (skipping).");
+}
+
+// ── 18. Independence group consistency ───────────────
+if (routeArray.length > 0) {
+  console.log("18. Checking independence groups...");
+  const groups = new Map();
+  for (const route of routeArray) {
+    const g = route.independenceGroup;
+    if (!groups.has(g)) groups.set(g, []);
+    groups.get(g).push(route);
+  }
+  for (const [gid, gRoutes] of groups) {
+    const unverified = gRoutes.filter((r) => !r.independenceVerified);
+    if (unverified.length > 0 && unverified.length < gRoutes.length) {
+      warn(`Independence group "${gid}": ${unverified.length}/${gRoutes.length} routes not verified`);
+    }
+  }
+  console.log(`   ${groups.size} independence group(s): ${[...groups.keys()].join(", ")}`);
+} else {
+  console.log("18. No routes defined (skipping).");
+}
+
 // ── Summary ───────────────────────────────────────────
 
 console.log(`\n${"─".repeat(50)}`);
@@ -324,6 +378,11 @@ console.log(
 console.log(
   `  Claims: ${claims.claims.length} claims, ${claims.evidence_relations.length} evidence relations, ${claims.epistemic_assessments.length} assessments`
 );
+if (routeArray.length > 0) {
+  console.log(
+    `  Routes: ${routeArray.length} routes, ${routeIds.size} unique IDs`
+  );
+}
 console.log(`${"─".repeat(50)}\n`);
 
 if (errors > 0) {
