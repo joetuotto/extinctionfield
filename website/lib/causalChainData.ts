@@ -1470,15 +1470,15 @@ export const NODES: ChainNode[] = [
     level: 11,
     label: "EMF-gradientti",
     label_en: "EMF gradient",
-    sublabel: "r = 0.909, n = 7 lajia",
-    sublabel_en: "r = 0.909, n = 7 species",
+    sublabel: "r = 0,84, n = 7 lajia/populaatioryhmää",
+    sublabel_en: "r = 0.84, n = 7 species/population groups",
     epistemicLevel: "E",
     title: "Lajienväliset EMF–lisääntymislasku -gradientti",
     title_en: "Cross-species EMF–reproductive decline gradient",
     mechanism:
-      "Seitsemän lajin (ihminen, koira, hevonen/lämminverinen, hevonen/kylmäverinen, holstein, ihminen-T) lisääntymislasku korreloi EMF-altistuspistemäärän kanssa: Pearsonin r = 0.909, R² = 0.826. Ihmisen siittiölasku (−2.64 %/v) ja koiran siittiölasku (−1.0 %/v) sijoittuvat regressiosuoralle EMF-altistuksen mukaan. Tämä on mallin vahvin empiirinen todentaminen: sama mekanismi, eri annokset, ennustettu gradientti.",
+      "Seitsemän lajin/populaatioryhmän (syrjäiset villit hyönteiset, sammakkoeläimet, maaseudun villilinnut, täysiveriset hevoset, tehotuotannon lypsykarja, kaupunkien lemmikit, kehittyneiden maiden ihmiset) kumulatiivinen lisääntymislasku korreloi arvioidun kumulatiivisen EMF-kuorman (0–1) kanssa: Pearson r = 0,84, r² = 0,71, p = 0,017 (berm.diagnostics.cross_species_gradient.fit_gradient; sama aineisto sentinel_registry.json:ssa). Aiempi kuuden rivin vuosilaskutaulukko (ihmisen siittiöt, ihmisen T, koira, hevonen W/NW, holstein) antaa r = 0,72 (n = 6). Kyseessä on lajienvälinen ekologinen korrelaatio, ei kontrolloitu koe.",
     mechanism_en:
-      "Reproductive decline in seven species (human sperm, human testosterone, dog, horse/warmblood, horse/non-warmblood, Holstein) correlates with EMF exposure score: Pearson r = 0.909, R² = 0.826. Human sperm decline (−2.64%/yr) and dog sperm decline (−1.0%/yr) fall on the regression line according to EMF exposure. This is the model's strongest empirical validation: same mechanism, different doses, predicted gradient.",
+      "Cumulative reproductive decline in seven species/population groups (remote wild insects, amphibians, rural wild birds, thoroughbred horses, intensive dairy cattle, urban pets, humans in developed countries) correlates with estimated cumulative EMF burden (0–1): Pearson r = 0.84, r² = 0.71, p = 0.017 (berm.diagnostics.cross_species_gradient.fit_gradient; the same dataset is published in sentinel_registry.json). The earlier six-row per-year decline-rate table (human sperm, human T, dog, horse W/NW, Holstein) gives r = 0.72 (n = 6). This is an ecological correlation across species, not a controlled experiment.",
     keyReferences: [
       {
         referenceId: "levine2022",
