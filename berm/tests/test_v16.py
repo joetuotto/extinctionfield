@@ -69,6 +69,7 @@ from berm.v16 import (
     SOCIAL_SCIENCE_PROXY_MAP,
 )
 from berm.biology.pathways import l_reuteri_oxytocin_pathway
+from berm.config import BIO_CAPACITY_SLOPE
 
 
 @pytest.fixture(autouse=True)
@@ -1068,3 +1069,85 @@ def test_ivf_all_countries_bio_below_observed():
         ivf = ivf_share_projected(c, 2024)
         obs = observed_from_biological(bio, ivf)
         assert bio <= obs + 1e-10, f"{c}: bio {bio:.4f} > obs {obs:.4f}"
+
+
+# === Exposure-response slope lives in berm.config (audit P2-19) ===
+
+def test_bio_capacity_slope_equals_historical_literal():
+    """v11_biological_capacity carried `b = 0.010` as a function-local literal."""
+    assert BIO_CAPACITY_SLOPE == 0.010
+
+
+def test_v11_bio_cap_uses_config_slope():
+    cum = 25.0
+    assert v11_biological_capacity(cum) == 6.5 * math.exp(-BIO_CAPACITY_SLOPE * (cum - 5.0))
+    assert v11_biological_capacity(cum) == 6.5 * math.exp(-0.010 * (cum - 5.0))
+
+
+def test_bio_capacity_slope_is_patchable(monkeypatch):
+    """The point of the move: the slope can now be varied without editing source."""
+    import berm.v16 as v16_module
+    monkeypatch.setattr(v16_module, "BIO_CAPACITY_SLOPE", 0.020)
+    assert v11_biological_capacity(25.0) == 6.5 * math.exp(-0.020 * 20.0)
+
+
+@pytest.mark.parametrize("country,year,expected", [
+    # Reference values: Wolfram-verified BIO_PREDICTIONS above.
+    ("SouthKorea", 2024, 0.6549275392671918),
+    ("Finland", 2030, 0.9957901347994496),
+])
+def test_config_slope_leaves_wolfram_predictions_unchanged(country, year, expected):
+    assert abs(v16_predicted_tfr(country, year) - expected) < 1e-6
+
+
+# === Diagnostics off the report path (v16_country_tfr(diagnostics=False)) ===
+
+REPORT_DIAGNOSTIC_KEYS = (
+    "feedback_amplification",
+    "ot_dual_pathway",
+    "vagal_pathway",
+    "quadruple_suppression",
+)
+
+
+def test_report_diagnostics_default_on():
+    r = v16_country_tfr("SouthKorea", 2030)
+    for key in REPORT_DIAGNOSTIC_KEYS:
+        assert isinstance(r[key], dict), key
+
+
+def test_report_diagnostics_off_sets_keys_to_none():
+    r = v16_country_tfr("SouthKorea", 2030, diagnostics=False)
+    for key in REPORT_DIAGNOSTIC_KEYS:
+        assert key in r and r[key] is None, key
+    # Non-diagnostic content is untouched.
+    assert isinstance(r["l_reuteri_pathway"], dict)
+    assert r["social_science_proxy_map"] is SOCIAL_SCIENCE_PROXY_MAP
+
+
+@pytest.mark.parametrize("country,year", [
+    ("SouthKorea", 2024), ("Finland", 2030), ("Denmark", 2024), ("Niger", 2035),
+])
+def test_report_diagnostics_flag_does_not_change_predictions(country, year):
+    full = v16_country_tfr(country, year)
+    lean = v16_country_tfr(country, year, diagnostics=False)
+    assert set(full) == set(lean)
+    for key in full:
+        if key in REPORT_DIAGNOSTIC_KEYS:
+            continue
+        assert full[key] == lean[key], key
+
+
+def test_report_flag_does_not_reclassify_report_functions():
+    """model_data_driven scans berm.v16 docstrings for DIAGNOSTIC_ONLY."""
+    from berm.model_data_driven import diagnostic_mechanisms
+    names = diagnostic_mechanisms()
+    for fn in (
+        "feedback_amplification",
+        "oxytocin_dual_pathway_diagnostic",
+        "vagal_oxytocin_pathway",
+        "behavioral_quadruple_suppression",
+    ):
+        assert fn in names, fn
+    assert "v16_country_tfr" not in names
+    assert "v11_biological_capacity" not in names

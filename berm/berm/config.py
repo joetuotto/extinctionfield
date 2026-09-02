@@ -98,5 +98,16 @@ RECOVERY_LAYERS = {
 
 ALPHA_EFF = 0.43  # calibrated; raw layer sum = 0.425, rounded per v17 model
 
+# Exposure-response slope of the base biological-capacity curve
+# (parameter registry name: bio_capacity.b). Used by
+# berm.v16.v11_biological_capacity():
+#     bioCap = 6.5 * exp(-BIO_CAPACITY_SLOPE * (cum_exposure - 5.0))   above threshold 5.0
+# Historical value 0.010 (v11, unchanged through the v17 calibration); the
+# Wolfram-verified v17 predictions in tests/test_v16.py depend on it to
+# machine precision. Module-level (not a function-local literal) so the
+# sensitivity envelope in berm.model_data_driven can vary it without editing
+# source (audit P2-19).
+BIO_CAPACITY_SLOPE = 0.010
+
 PERSONAL_SAR_WEIGHT = 1.5
 TBE_FRACTION = 0.30

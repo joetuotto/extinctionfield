@@ -22,19 +22,13 @@ from berm.v16 import (
     v16_country_tfr,
     v16_ambient_annual,
     v16_personal_annual,
-    v16_two_channel_cum_exposure,
     v16_adjusted_cumulative_exposure,
     v16_biological_capacity,
-    v16_predicted_tfr,
     chi,
     emf_behavioral_factor_v3,
     _exposure_start_year,
 )
-from berm.data.countries import (
-    TECH_DIFFUSION,
-    V12_ACTUAL_TFR_2024,
-    HISTORICAL_TFR,
-)
+from berm.data.countries import V12_ACTUAL_TFR_2024
 from berm.data.loader import load_historical_tfr
 
 OBSERVED_TFR: dict[str, dict[int, float]] = {
@@ -217,7 +211,10 @@ def generate_country_data(country: str) -> dict:
         row["behavioralFactor"] = round(behav, 4)
 
         try:
-            report = v16_country_tfr(country, year)
+            # Only the prediction keys are read; skip the diagnostic sub-reports
+            # (feedback_amplification alone re-runs v16_predicted_tfr twice
+            # for forecast years).
+            report = v16_country_tfr(country, year, diagnostics=False)
             predicted_tfr = report["predicted_tfr"]
             native_tfr = report.get("native_tfr")
             ivf_share = report.get("ivf_share", 0.0)

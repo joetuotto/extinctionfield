@@ -14,9 +14,8 @@ from __future__ import annotations
 
 import math
 
-from berm.config import RECOVERY_LAYERS, ALPHA_EFF
+from berm.config import RECOVERY_LAYERS, ALPHA_EFF, BIO_CAPACITY_SLOPE
 from berm.data.countries import (
-    COUNTRY_PARAMS,
     NETWORK_QUALITY,
     TECH_DIFFUSION,
     SMARTPHONE_PEN_2024,
@@ -308,7 +307,6 @@ def v17_cohort_adjustment(country: str, year: int) -> float:
     developmental year by age-specific EMF vulnerability:
     fetal 5x, 0-2 4x, 2-6 3x, 6-12 2.5x, 12-18 2x, adult 1x.
     """
-    td = _get_td(country)
     peak_birth_year = year - 28
     emf_start = _exposure_start_year(country)
 
@@ -327,7 +325,6 @@ def cohort_weighted_exposure(country: str, eval_year: int) -> float:
     Weights each year's exposure by the age-specific vulnerability
     that the peak birth cohort (age 28 at eval_year) experienced.
     """
-    td = _get_td(country)
     birth_year = eval_year - 28
     weighted_cum = 0.0
     start = _exposure_start_year(country)
@@ -652,11 +649,15 @@ def v17_sperm_ca2_fecundity(country: str, year: int) -> float:
 # === v11 Base biological capacity ===
 
 def v11_biological_capacity(cum_exposure: float) -> float:
-    """Base biological capacity: exponential decay above threshold."""
-    a, b, threshold = 6.5, 0.010, 5.0
+    """Base biological capacity: exponential decay above threshold.
+
+    The slope (registry ``bio_capacity.b``) is ``berm.config.BIO_CAPACITY_SLOPE``,
+    looked up at call time so it can be varied without editing this function.
+    """
+    a, threshold = 6.5, 5.0
     if cum_exposure <= threshold:
         return a
-    return a * math.exp(-b * (cum_exposure - threshold))
+    return a * math.exp(-BIO_CAPACITY_SLOPE * (cum_exposure - threshold))
 
 
 # === v12 Nutrition modifier ===
@@ -1260,8 +1261,16 @@ def v17_predicted_sex_ratio(country: str, year: int) -> float:
 
 # === v16 Full country report ===
 
-def v16_country_tfr(country: str, year: int) -> dict:
-    """Full v16 country report with all intermediate values."""
+def v16_country_tfr(country: str, year: int, *, diagnostics: bool = True) -> dict:
+    """Full v16 country report with all intermediate values.
+
+    ``diagnostics=False`` skips the four diagnostic sub-reports
+    (``feedback_amplification``, ``ot_dual_pathway``, ``vagal_pathway``,
+    ``quadruple_suppression``) and sets those keys to ``None``; every
+    prediction key is unchanged. ``feedback_amplification`` alone re-runs
+    ``v16_predicted_tfr`` twice for forecast years, so bulk exporters that only
+    read the prediction keys should pass ``diagnostics=False``.
+    """
     if not _v16_true_cultural_rates:
         calibrate_v16()
 
@@ -1321,6 +1330,7 @@ def v16_country_tfr(country: str, year: int) -> dict:
         male_bio_cap, bio_cap, oxy_ret, test_ret, dopa_ret, cort_ret, avp_ret,
         cort_supp, eff_t, behav, true_cult, predicted, observed_predicted,
         ivf, ivf_contribution, imm_share, imm_tfr, native_tfr_val,
+        diagnostics=diagnostics,
     )
 
 
@@ -1331,10 +1341,22 @@ def _build_country_report(
     male_bio_cap, bio_cap, oxy_ret, test_ret, dopa_ret, cort_ret, avp_ret,
     cort_supp, eff_t, behav, true_cult, predicted, observed_predicted,
     ivf_share_val, ivf_contribution, imm_share, imm_tfr, native_tfr_val,
+    *, diagnostics: bool = True,
 ):
     retentions = [oxy_ret, eff_t, dopa_ret, cort_ret, avp_ret]
     labels = ["Oxytocin", "Testosterone(HPA-suppressed)", "Dopamine", "Cortisol", "Vasopressin"]
     dominant = labels[retentions.index(min(retentions))]
+
+    # Diagnostic sub-reports: not on the prediction path, and
+    # feedback_amplification re-runs v16_predicted_tfr twice for years > 2024.
+    if diagnostics:
+        instant_emf = amb_ann + pers_ann
+        feedback = feedback_amplification(country, year)
+        ot_dual = oxytocin_dual_pathway_diagnostic(country, year, adj_cum, instant_emf)
+        vagal = vagal_oxytocin_pathway(adj_cum, instant_emf)
+        quadruple = behavioral_quadruple_suppression(country, year, adj_cum, instant_emf)
+    else:
+        feedback = ot_dual = vagal = quadruple = None
 
     return {
         "country": country,
@@ -1395,13 +1417,11 @@ def _build_country_report(
         "immigration_share": imm_share,
         "immigrant_tfr": imm_tfr,
         "native_tfr": native_tfr_val,
-        "feedback_amplification": feedback_amplification(country, year),
-        "ot_dual_pathway": oxytocin_dual_pathway_diagnostic(
-            country, year, adj_cum, amb_ann + pers_ann),
+        "feedback_amplification": feedback,
+        "ot_dual_pathway": ot_dual,
         "l_reuteri_pathway": l_reuteri_oxytocin_pathway(emf_norm),
-        "vagal_pathway": vagal_oxytocin_pathway(adj_cum, amb_ann + pers_ann),
-        "quadruple_suppression": behavioral_quadruple_suppression(
-            country, year, adj_cum, amb_ann + pers_ann),
+        "vagal_pathway": vagal,
+        "quadruple_suppression": quadruple,
         "social_science_proxy_map": SOCIAL_SCIENCE_PROXY_MAP,
     }
 
@@ -1662,7 +1682,6 @@ def feedback_loop_simulate(
 
     cp = get_country_params(country)
     base_urban = cp.urban_frac
-    base_density = cp.pop_density
 
     results = []
     current_urban = base_urban
