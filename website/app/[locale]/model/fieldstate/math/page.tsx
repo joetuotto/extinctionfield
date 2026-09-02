@@ -20,6 +20,7 @@ type Copy = {
   metaDescription: string;
   title: string;
   subtitle: string;
+  versionNote: string;
   nav: readonly { id: string; label: string }[];
   sections: readonly SectionData[];
   modelLink: string;
@@ -175,6 +176,8 @@ const t: Record<string, Copy> = {
           "The key insight is that EMF biological effects operate through the ELF MODULATION component of RF signals, not the carrier frequency. At RF (GHz), the membrane capacitance shorts the voltage (attenuation ~10\u207b\u00b3). But the ELF envelope (50\u2013217 Hz for GSM/LTE) passes through at full amplitude. T-type channels respond to this ELF component. CAVEAT: The Ca\u00b2\u207a accumulation calculation does not account for cellular pumps (PMCA, NCX, SERCA) and buffers (calmodulin, calbindin). The steady-state [Ca\u00b2\u207a]\u1d62 increase is estimated at 5\u201350%, not the gross influx numbers.",
       },
     ],
+    versionNote:
+      "Scope of these equations: \u00a71\u2013\u00a78 specify the v2 FieldState route as separate measurement, organ-state, couple, ASFR and TFR layers. The specification produces no country forecasts; the locked country predictions on this site come from the BERM v17 scalar model. The one population number on this page (\u00a76) is a descriptive cohort-timing correlation, not a forecast.",
     modelLink: "\u2190 Back to model overview",
     fieldstateLink: "FieldState measurement specification",
     nextLabel: "Next",
@@ -326,6 +329,8 @@ const t: Record<string, Copy> = {
           "Keskeinen oivallus on, ett\u00e4 EMF:n biologiset vaikutukset v\u00e4littyv\u00e4t RF-signaalien ELF-MODULAATIOKOMPONENTIN kautta, eiv\u00e4t kantoaallon taajuuden. RF-taajuuksilla (GHz) kalvon kapasitanssi oikosulkee j\u00e4nnitteen (vaimennus ~10\u207b\u00b3). Mutta ELF-verhok\u00e4yr\u00e4 (50\u2013217 Hz GSM/LTE:lle) l\u00e4p\u00e4isee t\u00e4ydell\u00e4 amplitudilla. T-tyypin kanavat reagoivat t\u00e4h\u00e4n ELF-komponenttiin. VAROITUS: Ca\u00b2\u207a-kertym\u00e4laskenta ei huomioi solupumppuja (PMCA, NCX, SERCA) eik\u00e4 puskureita (kalmoduliini, kalbindiini). Vakaan tilan [Ca\u00b2\u207a]\u1d62-kasvu arvioidaan 5\u201350 %:ksi, ei brutto-sisäänvirtausluvuiksi.",
       },
     ],
+    versionNote:
+      "Yht\u00e4l\u00f6iden kattavuus: \u00a71\u2013\u00a78 m\u00e4\u00e4rittelev\u00e4t v2-FieldState-reitin erillisin\u00e4 mittaus-, elintila-, pari-, ASFR- ja TFR-kerroksina. M\u00e4\u00e4rittely ei tuota maakohtaisia ennusteita; sivuston lukitut maakohtaiset ennusteet tulevat BERM v17 -skalaarimallista. Sivun ainoa v\u00e4est\u00f6luku (\u00a76) on kuvaileva kohortti-ajoituskorrelaatio, ei ennuste.",
     modelLink: "\u2190 Takaisin mallin yleiskatsaukseen",
     fieldstateLink: "FieldState-mittausm\u00e4\u00e4rittely",
     nextLabel: "Seuraavaksi",
@@ -479,6 +484,7 @@ const t: Record<string, Copy> = {
     ],
     modelLink: "\u2190 モデル概要に戻る",
     fieldstateLink: "FieldState 測定仕様",
+    versionNote: "",
     nextLabel: "次へ",
     nextTitle: "エビデンスレジストリ",
   },
@@ -628,6 +634,7 @@ const t: Record<string, Copy> = {
           "L\u2019id\u00e9e cl\u00e9 est que les effets biologiques des EMF op\u00e8rent via la composante de MODULATION ELF des signaux RF, pas la fr\u00e9quence porteuse. En RF (GHz), la capacitance membranaire court-circuite la tension (att\u00e9nuation ~10\u207b\u00b3). Mais l\u2019enveloppe ELF (50\u2013217 Hz pour GSM/LTE) passe \u00e0 pleine amplitude. Les canaux de type T r\u00e9pondent \u00e0 cette composante ELF. MISE EN GARDE : Le calcul d\u2019accumulation de Ca\u00b2\u207a ne tient pas compte des pompes cellulaires (PMCA, NCX, SERCA) ni des tampons (calmoduline, calbindine). L\u2019augmentation \u00e0 l\u2019\u00e9tat stationnaire du [Ca\u00b2\u207a]\u1d62 est estim\u00e9e \u00e0 5\u201350 %, pas aux chiffres d\u2019influx brut.",
       },
     ],
+    versionNote: "",
     modelLink: "\u2190 Retour \u00e0 l\u2019aper\u00e7u du mod\u00e8le",
     fieldstateLink: "Sp\u00e9cification de mesure FieldState",
     nextLabel: "Suivant",
@@ -781,6 +788,7 @@ const t: Record<string, Copy> = {
     ],
     modelLink: "\u2190 모델 개요로 돌아가기",
     fieldstateLink: "FieldState 측정 사양",
+    versionNote: "",
     nextLabel: "다음",
     nextTitle: "에비던스 레지스트리",
   },
@@ -829,6 +837,10 @@ export default async function FieldStateMathPage({
         <span className="text-foreground-muted">&middot;</span>
         <Link href={`/${locale}/model/fieldstate`} className="text-accent hover:underline">{d.fieldstateLink}</Link>
       </nav>
+
+      <p className="mb-12 max-w-4xl rounded-lg border border-accent/20 bg-accent/5 p-4 text-sm leading-relaxed text-foreground">
+        {d.versionNote}
+      </p>
 
       <div className="flex gap-12 items-start">
         <SectionNavigation sections={d.nav} />

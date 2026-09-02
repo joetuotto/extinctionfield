@@ -1,8 +1,12 @@
 /**
  * Unified BERM v17 evidence registry.
  *
- * Contains the bounded FieldState study-to-node records (v17 causal graph)
- * and the extended legacy catalogue in a single module.
+ * Contains the bounded FieldState study-to-node records (v2 measurement
+ * specification, attached to the v17 causal graph) and the extended legacy
+ * A–F catalogue in a single module. The third registry, curated
+ * `evidence_relations`, lives in `data/claims.json`. How the three relate
+ * and how legacy records migrate is documented in
+ * `../../docs/evidence-registries.md`.
  */
 import legacyData from "./legacyEvidence.json";
 
@@ -48,6 +52,8 @@ export interface LegacyEvidenceRecord {
   readonly status: string;
   readonly translationScope: string;
   readonly n: number | null;
+  /** Curation provenance, e.g. a legacy level letter or node id that was remapped. */
+  readonly note?: string;
 }
 
 export const EPISTEMIC_LEVELS = {
@@ -610,15 +616,6 @@ export const FIELDSTATE_EVIDENCE: readonly FieldStateEvidenceRecord[] = [
 
 export const FIELDSTATE_EVIDENCE_COUNT = FIELDSTATE_EVIDENCE.length;
 
-export const LEGACY_EVIDENCE_MIGRATION = {
-  version: "legacy-reference-migration-v1",
-  recordCount: 129,
-  activeAliases: 3,
-  migrationCandidates: 35,
-  contextOrHistoricalRecords: 91,
-  sourcePath: "berm/data/evidence/legacy_reference_migration_v1.json",
-} as const;
-
 // ── Legacy catalogue ───────────────────────────────────────────────
 
 export const LEGACY_EVIDENCE_CATALOGUE: readonly LegacyEvidenceRecord[] =
@@ -651,6 +648,12 @@ export const STATUS_LABELS: Record<string, Record<"en" | "fi", string>> = {
   OUTSIDE_ACTIVE_GRAPH: { en: "Outside active graph", fi: "Aktiivisen graafin ulkopuolella" },
   UNVERIFIED_CITATION: { en: "Unverified citation", fi: "Todentamaton viite" },
   HISTORICAL_CONTEXT: { en: "Historical context", fi: "Historiallinen konteksti" },
+  VERIFIED: { en: "Verified source", fi: "Todennettu lähde" },
+  PREDICTION: { en: "Prediction", fi: "Ennuste" },
+  SUPERSEDED_BY_ACTIVE_RECORD: {
+    en: "Superseded by a curated evidence relation",
+    fi: "Korvattu kuratoidulla näyttörelaatiolla",
+  },
   RETRACTED_2024: {
     en: "Retracted (2024) — provenance only",
     fi: "Peruttu (2024) — vain provenienssi",
@@ -676,6 +679,10 @@ const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
   FIELDSTATE_LOW_FREQUENCY_ELECTRIC: {
     en: "Low-frequency electric-field waveform / polarity state",
     fi: "Matalataajuisen sähkökentän aaltomuoto- / polariteettitila",
+  },
+  FIELDSTATE_SELECTED_PROXY: {
+    en: "Lindgren-selected two-channel timing proxy",
+    fi: "Lindgren-valittu kaksikanavainen ajoitusproxy",
   },
   FIELDSTATE_VECTOR: {
     en: "FieldState vector / background geometry",
@@ -709,6 +716,18 @@ const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
     en: "Microbiome / oxytocin mediator",
     fi: "Mikrobiomi- / oksitosiinivälittäjä",
   },
+  IF_MITOTIC_DISRUPTION: {
+    en: "Intermediate-frequency disruption of cell division",
+    fi: "Välitaajuuskentän aiheuttama solunjakautumisen häiriö",
+  },
+  GPCR_ADENOSINE: {
+    en: "PEMF-validated adenosine A2A/A3 receptor modulation",
+    fi: "PEMF-validoitu adenosiini-A2A/A3-reseptorimodulaatio",
+  },
+  VAGUS_ANTIINFLAMMATORY: {
+    en: "Vagus nerve cholinergic anti-inflammatory pathway",
+    fi: "Vagushermon kolinerginen anti-inflammatorinen reitti",
+  },
   BARRIER_BBB: {
     en: "Blood–brain barrier",
     fi: "Aivoverieste",
@@ -716,6 +735,14 @@ const CAUSAL_NODE_LABELS: Record<string, Record<string, string>> = {
   BARRIER_BTB: {
     en: "Blood–testis barrier",
     fi: "Veri–kiveseste",
+  },
+  BARRIER_PLACENTA: {
+    en: "Blood–placenta barrier",
+    fi: "Veri–istukkaeste",
+  },
+  BARRIER_RETINA: {
+    en: "Blood–retinal barrier",
+    fi: "Veri–verkkokalvoeste",
   },
   HPA_HPG: {
     en: "HPA–HPG endocrine intermediate",
@@ -793,4 +820,16 @@ export function causalNodeLabels(nodeIds: readonly string[], locale: string): st
 
 if (FIELDSTATE_EVIDENCE_COUNT < 30) {
   throw new Error(`Expected at least 30 FieldState evidence records, found ${FIELDSTATE_EVIDENCE_COUNT}.`);
+}
+
+// Legacy `level` and `status` must stay inside the vocabularies the /evidence
+// page renders; an unknown value would otherwise show as a bare token.
+const LEGACY_LEVEL_VOCABULARY = new Set<string>(Object.keys(EPISTEMIC_LEVELS));
+for (const record of LEGACY_EVIDENCE_CATALOGUE) {
+  if (!LEGACY_LEVEL_VOCABULARY.has(record.level)) {
+    throw new Error(`Legacy evidence record ${record.id} uses level "${record.level}" outside EPISTEMIC_LEVELS.`);
+  }
+  if (STATUS_LABELS[record.status] === undefined) {
+    throw new Error(`Legacy evidence record ${record.id} uses status "${record.status}" without a STATUS_LABELS entry.`);
+  }
 }

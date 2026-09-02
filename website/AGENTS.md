@@ -14,6 +14,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - `data/causal-graph.json` — 35 semantic nodes, 74 edges, 11 UI groups. Source of truth for graph topology.
 - `data/claims.json` — Claims, evidence relations, and epistemic assessments.
 - `public/data/references_full.json` — Bibliography (1000+ entries). Pure reference, no interpretation.
+- `lib/evidence.ts` (`FIELDSTATE_EVIDENCE`, bounded v2 records) and `lib/legacyEvidence.json` (legacy A–F catalogue) — the two other evidence registries; how they relate to `evidence_relations` and migrate into it: [`docs/evidence-registries.md`](../docs/evidence-registries.md).
 
 ## Adding a claim
 1. Add to `data/claims.json` under `claims[]` with lifecycle `"draft"`.

@@ -9,6 +9,7 @@ import CausalChainDiagram from "@/components/CausalChainDiagram";
 type Copy = {
   title: string;
   subtitle: string;
+  versionNote: string;
   metaTitle: string;
   metaDescription: string;
   fieldStateTitle: string;
@@ -37,9 +38,11 @@ const t: Record<string, Copy> = {
     title: "FieldState measurement specification",
     subtitle:
       "What a v2 record must contain: background, ambient and personal field components with organ-specific transfer, vector direction, pulse structure, circadian context and provenance.",
+    versionNote:
+      "The locked country predictions published on this site are outputs of the BERM v17 scalar model, which drives a national exposure scalar through the pathway weights to TFR. The FieldState v2 specification described here is a measurement protocol: it defines what a field record must contain and how the record attaches to the causal graph. v2 produces no country forecasts at present; every published country figure is a v17 result.",
     metaTitle: "FieldState specification – Extinction Field",
     metaDescription:
-      "The BERM v17 measurement specification: what a record must contain and how it differs from a national exposure scalar.",
+      "The FieldState v2 measurement specification: what a record must contain and how it differs from the national exposure scalar of the BERM v17 model.",
     fieldStateTitle: "FieldState replaces a national exposure scalar",
     fieldStateText: [
       "For each organ, v2 keeps background, ambient and personal field components distinct after an organ-, posture- and geometry-specific transfer. It retains vector information, phase/coherence, envelope or beat PSD, circadian context, calibration and provenance.",
@@ -68,7 +71,7 @@ const t: Record<string, Copy> = {
     asfrTitle: "ASFR first; TFR is a derived period identity",
     asfrText: [
       "The population layer combines paired male and female conception/live-birth capacity while preserving shared-household and partner covariance. It then reports biological capacity separately from demand/opportunity, tempo and ART/live-birth delivery for each age group.",
-      "A national BERM v17 coefficient is not yet estimated: the matched FieldState, biological-endpoint and couple panels required for calibration have not been assembled. Accordingly, v2 publishes no country TFR forecast.",
+      "A national FieldState v2 calibration coefficient is not yet estimated: the matched FieldState, biological-endpoint and couple panels required for calibration have not been assembled. Accordingly, v2 publishes no country TFR forecast; the published country predictions are v17 scalar-model outputs.",
     ],
     evidenceLink: "Browse the bounded evidence registry",
     mathLink: "FieldState mathematics (§1–§8)",
@@ -80,9 +83,11 @@ const t: Record<string, Copy> = {
     title: "FieldState-mittausmäärittely",
     subtitle:
       "Mitä v2-tietueen on sisällettävä: tausta-, ambient- ja henkilökohtaiset kenttäkomponentit elinkohtaisella siirrolla, vektorin suunta, pulssirakenne, vuorokausikonteksti ja provenienssi.",
+    versionNote:
+      "Tällä sivustolla julkaistut lukitut maakohtaiset ennusteet ovat BERM v17 -skalaarimallin tuloksia; malli vie kansallisen altistusskalaarin polkupainojen kautta TFR:ään. Tässä kuvattu FieldState v2 -määrittely on mittausprotokolla: se määrittelee, mitä kenttätietueen on sisällettävä ja miten tietue kiinnittyy kausaaligraafiin. v2 ei tällä hetkellä tuota maakohtaisia ennusteita; jokainen julkaistu maakohtainen luku on v17-tulos.",
     metaTitle: "FieldState-määrittely – Extinction Field",
     metaDescription:
-      "BERM v17:n mittausmäärittely: mitä tietue vaatii ja miten se eroaa kansallisesta altistusskaalasta.",
+      "FieldState v2 -mittausmäärittely: mitä tietueen on sisällettävä ja miten se eroaa BERM v17 -mallin kansallisesta altistusskalaarista.",
     fieldStateTitle: "FieldState korvaa kansallisen altistusskalaarin",
     fieldStateText: [
       "V2 säilyttää kullekin elimelle tausta-, ambient- ja henkilökohtaiset kenttäkomponentit erillään elin-, asento- ja geometriakohtaisen siirron jälkeen. Se säilyttää vektoritiedon, vaiheen/koherenssin, verhokäyrä- tai beat-PSD:n, vuorokausikontekstin, kalibroinnin ja provenienssin.",
@@ -111,7 +116,7 @@ const t: Record<string, Copy> = {
     asfrTitle: "ASFR ensin; TFR on johdettu periodi-identiteetti",
     asfrText: [
       "Väestökerros yhdistää paritetun miehen ja naisen hedelmöitys-/syntymäkapasiteetin säilyttäen yhteisen kotiympäristön ja partnerikovarianssin. Sen jälkeen se raportoi biologisen kapasiteetin erillään kysynnästä/mahdollisuudesta, temposta ja ART-syntymätoimituksesta jokaiselle ikäryhmälle.",
-      "Maakohtaista BERM v17-kerrointa ei vielä arvioida: kalibroinnin vaatimia kohdistettuja FieldState-, biologisten päätepisteiden ja paripaneeleja ei ole koottu. Siksi v2 ei julkaise maakohtaisia TFR-ennusteita.",
+      "Maakohtaista FieldState v2 -kalibrointikerrointa ei vielä arvioida: kalibroinnin vaatimia kohdistettuja FieldState-, biologisten päätepisteiden ja paripaneeleja ei ole koottu. Siksi v2 ei julkaise maakohtaisia TFR-ennusteita; julkaistut maakohtaiset ennusteet ovat v17-skalaarimallin tuloksia.",
     ],
     evidenceLink: "Selaa rajattua näyttörekisteriä",
     mathLink: "FieldState-matematiikka (§1–§8)",
@@ -123,6 +128,7 @@ const t: Record<string, Copy> = {
     title: "FieldState 測定仕様",
     subtitle:
       "v2レコードに含まれるべき内容：臓器固有の伝達を伴うバックグラウンド、環境および個人電磁界成分、ベクトル方向、パルス構造、概日リズム文脈および来歴。",
+    versionNote: "",
     metaTitle: "FieldState 仕様 – Extinction Field",
     metaDescription:
       "BERM v17 測定仕様：レコードが含むべき内容と国家暴露スカラーとの相違点。",
@@ -166,6 +172,7 @@ const t: Record<string, Copy> = {
     title: "Spécification de mesure FieldState",
     subtitle:
       "Ce qu'un enregistrement v2 doit contenir : composantes de champ de fond, ambiant et personnel avec transfert spécifique aux organes, direction vectorielle, structure d'impulsion, contexte circadien et provenance.",
+    versionNote: "",
     metaTitle: "Spécification FieldState – Extinction Field",
     metaDescription:
       "La spécification de mesure BERM v17 : contenu requis d'un enregistrement et différences avec un scalaire d'exposition national.",
@@ -209,6 +216,7 @@ const t: Record<string, Copy> = {
     title: "FieldState 측정 사양",
     subtitle:
       "v2 레코드가 포함해야 할 내용: 장기별 전달을 포함한 배경, 환경 및 개인 전자기장 성분, 벡터 방향, 펄스 구조, 일주기 맥락 및 출처.",
+    versionNote: "",
     metaTitle: "FieldState 사양 – Extinction Field",
     metaDescription:
       "BERM v17 측정 사양: 레코드가 포함해야 할 내용과 국가 노출 스칼라와의 차이점.",
@@ -277,6 +285,10 @@ export default async function FieldStatePage({
         <span className="text-foreground-muted">&middot;</span>
         <Link href={`/${locale}/model/fieldstate/math`} className="text-accent hover:underline">{d.mathLink}</Link>
       </nav>
+
+      <p className="mb-12 max-w-4xl rounded-lg border border-accent/20 bg-accent/5 p-4 text-sm leading-relaxed text-foreground">
+        {d.versionNote}
+      </p>
 
       <article className="space-y-14">
         <section id="fieldstate-input">

@@ -78,6 +78,7 @@ const COPY = {
   en: {
     title: "Evidence register",
     subtitle: `${FIELDSTATE_EVIDENCE_COUNT} bounded BERM v17 records and ${LEGACY_EVIDENCE_COUNT} extended catalogue entries across 13+ pathways and 490+ peer-reviewed studies.`,
+    registryNote: `Two registries, two version numbers. The ${FIELDSTATE_EVIDENCE_COUNT} bounded records follow the FieldState v2 measurement specification and attach to named nodes of the BERM v17 causal graph; each states its field class, directness, translation scope and calibration role. The ${LEGACY_EVIDENCE_COUNT} extended catalogue entries are the earlier A–F pathway bibliography, kept for source-level review and carried over to the same graph nodes where the source permits. "v2" is the version of the measurement specification; "v17" is the version of the model whose country predictions are published.`,
     interpretationTitle: "How to read this register",
     interpretation: [
       "A field signature can support a measurement variable such as background vector, angle, spectrum or envelope; it does not establish human fertility effects.",
@@ -86,7 +87,7 @@ const COPY = {
       "No record below is a TFR coefficient. A country TFR pathway requires the separate ASFR and demographic terms in the model specification.",
     ],
     tierExplainTitle: "Evidence tiers",
-    tierExplain: "This page presents evidence in two tiers. Bounded records (~34) follow the FieldState measurement spec schema: each states its field class, directness, translation scope and limitation. The extended catalogue (~150 legacy records) retains the broader bibliography for source-level review but uses a different, looser classification. The two tiers are not comparable in structure or stringency.",
+    tierExplain: `This page presents evidence in two tiers. Bounded records (${FIELDSTATE_EVIDENCE_COUNT}) follow the FieldState measurement spec schema: each states its field class, directness, translation scope and limitation. The extended catalogue (${LEGACY_EVIDENCE_COUNT} legacy records) retains the broader bibliography for source-level review but uses a different, looser classification. The two tiers are not comparable in structure or stringency.`,
     boundedTitle: "Bounded records (FieldState measurement spec)",
     boundedLead: "Each record states its field class, directness, translation scope and limitation. These are the primary evidence entries for the BERM v17 causal route.",
     classificationTitle: "How previously negative findings classify",
@@ -404,6 +405,7 @@ const COPY = {
   fi: {
     title: "Näyttörekisteri",
     subtitle: `${FIELDSTATE_EVIDENCE_COUNT} rajattua BERM v17 -tietuetta ja ${LEGACY_EVIDENCE_COUNT} laajennetun katalogin tietuetta 13+ polulla ja 490+ vertaisarvioidussa tutkimuksessa.`,
+    registryNote: `Kaksi rekisteriä, kaksi versionumeroa. ${FIELDSTATE_EVIDENCE_COUNT} rajattua tietuetta noudattavat FieldState v2 -mittausmäärittelyä ja kiinnittyvät BERM v17 -kausaaligraafin nimettyihin solmuihin; jokainen ilmoittaa kenttäluokan, suoruuden, tulkintarajan ja kalibrointiroolin. ${LEGACY_EVIDENCE_COUNT} laajennetun katalogin tietuetta ovat aiempi A–F-polkubibliografia, joka säilytetään lähdetason tarkistusta varten ja siirretään samoihin graafin solmuihin, kun lähde sen sallii. ”v2” on mittausmäärittelyn versio; ”v17” on sen mallin versio, jonka maakohtaiset ennusteet julkaistaan.`,
     interpretationTitle: "Kuinka rekisteriä luetaan",
     interpretation: [
       "Kenttäallekirjoitus voi tukea mittausmuuttujaa, kuten taustavektoria, kulmaa, spektriä tai verhokäyrää; se ei osoita ihmisen hedelmällisyysvaikutusta.",
@@ -412,7 +414,7 @@ const COPY = {
       "Mikään alla oleva tietue ei ole TFR-kerroin. Maakohtainen TFR-reitti tarvitsee erilliset ASFR- ja demografiset termit mallin määrittelyn mukaisesti.",
     ],
     tierExplainTitle: "Näyttötasot",
-    tierExplain: "Tämä sivu esittää näytön kahdessa tasossa. Rajatut tietueet (~34) noudattavat FieldState-mittausspesifikaation skeemaa: kukin ilmoittaa kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Laajennettu luettelo (~150 perinnäistä tietuetta) säilyttää laajemman bibliografian lähdetason tarkistusta varten, mutta käyttää eri, löyhempää luokittelua. Kaksi tasoa eivät ole rakenteeltaan tai tiukkuudeltaan verrannollisia.",
+    tierExplain: `Tämä sivu esittää näytön kahdessa tasossa. Rajatut tietueet (${FIELDSTATE_EVIDENCE_COUNT}) noudattavat FieldState-mittausspesifikaation skeemaa: kukin ilmoittaa kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Laajennettu luettelo (${LEGACY_EVIDENCE_COUNT} perinnäistä tietuetta) säilyttää laajemman bibliografian lähdetason tarkistusta varten, mutta käyttää eri, löyhempää luokittelua. Kaksi tasoa eivät ole rakenteeltaan tai tiukkuudeltaan verrannollisia.`,
     boundedTitle: "Rajatut tietueet (FieldState-mittausspesifikaatio)",
     boundedLead: "Jokainen tietue kertoo kenttäluokan, suoruuden, tulkintarajan ja rajoituksen. Nämä ovat BERM v17 -kausaalireitin ensisijaiset näyttötietueet.",
     classificationTitle: "Miten aiemmin negatiiviset havainnot luokittuvat",
@@ -731,6 +733,7 @@ const COPY = {
   ja: {
     title: "エビデンス登録簿",
     subtitle: `${FIELDSTATE_EVIDENCE_COUNT}件の限定BERM v17レコードと${LEGACY_EVIDENCE_COUNT}件の拡張カタログエントリ、13以上の経路と490以上の査読済み研究にわたる。`,
+    registryNote: "",
     interpretationTitle: "この登録簿の読み方",
     interpretation: [
       "フィールドシグネチャは背景ベクトル、角度、スペクトル、エンベロープなどの測定変数を支持できるが、ヒトの生殖能力への影響を立証するものではない。",
@@ -739,7 +742,7 @@ const COPY = {
       "以下のレコードはいずれもTFR係数ではない。国別TFR経路にはモデル仕様における個別のASFRおよび人口学的項が必要である。",
     ],
     tierExplainTitle: "エビデンス階層",
-    tierExplain: "本ページはエビデンスを二つの階層で提示する。限定レコード（約34件）はFieldState測定仕様スキーマに従い、各レコードがフィールドクラス、直接性、翻訳範囲、制限を記載する。拡張カタログ（約150件のレガシーレコード）はソースレベルのレビュー用に広範な参考文献を保持するが、異なる緩い分類を使用する。二つの階層は構造も厳密さも比較できない。",
+    tierExplain: `本ページはエビデンスを二つの階層で提示する。限定レコード（${FIELDSTATE_EVIDENCE_COUNT}件）はFieldState測定仕様スキーマに従い、各レコードがフィールドクラス、直接性、翻訳範囲、制限を記載する。拡張カタログ（${LEGACY_EVIDENCE_COUNT}件のレガシーレコード）はソースレベルのレビュー用に広範な参考文献を保持するが、異なる緩い分類を使用する。二つの階層は構造も厳密さも比較できない。`,
     boundedTitle: "限定レコード（FieldState測定仕様）",
     boundedLead: "各レコードはフィールドクラス、直接性、翻訳範囲、制限を記載している。これらはBERM v17因果経路の主要エビデンスエントリである。",
     classificationTitle: "以前の否定的知見の分類方法",
@@ -1026,6 +1029,7 @@ const COPY = {
   fr: {
     title: "Registre des preuves",
     subtitle: `${FIELDSTATE_EVIDENCE_COUNT} enregistrements BERM v17 bornés et ${LEGACY_EVIDENCE_COUNT} entrées du catalogue étendu, couvrant 13+ voies et 490+ études évaluées par les pairs.`,
+    registryNote: "",
     interpretationTitle: "Comment lire ce registre",
     interpretation: [
       "Une signature de champ peut soutenir une variable de mesure telle que le vecteur de fond, l'angle, le spectre ou l'enveloppe ; elle n'établit pas d'effets sur la fertilité humaine.",
@@ -1034,7 +1038,7 @@ const COPY = {
       "Aucun enregistrement ci-dessous n'est un coefficient TFR. Une voie TFR nationale nécessite les termes ASFR et démographiques distincts dans la spécification du modèle.",
     ],
     tierExplainTitle: "Niveaux de preuves",
-    tierExplain: "Cette page présente les preuves en deux niveaux. Les enregistrements bornés (~34) suivent le schéma de la spécification de mesure FieldState : chacun indique sa classe de champ, sa directionalité, sa portée de traduction et ses limites. Le catalogue étendu (~150 enregistrements hérités) conserve la bibliographie plus large pour une revue au niveau des sources, mais utilise une classification différente, moins stricte. Les deux niveaux ne sont pas comparables en structure ni en rigueur.",
+    tierExplain: `Cette page présente les preuves en deux niveaux. Les enregistrements bornés (${FIELDSTATE_EVIDENCE_COUNT}) suivent le schéma de la spécification de mesure FieldState : chacun indique sa classe de champ, sa directionalité, sa portée de traduction et ses limites. Le catalogue étendu (${LEGACY_EVIDENCE_COUNT} enregistrements hérités) conserve la bibliographie plus large pour une revue au niveau des sources, mais utilise une classification différente, moins stricte. Les deux niveaux ne sont pas comparables en structure ni en rigueur.`,
     boundedTitle: "Enregistrements bornés (spécification de mesure FieldState)",
     boundedLead: "Chaque enregistrement indique sa classe de champ, sa directionalité, sa portée de traduction et ses limites. Ce sont les entrées de preuves primaires pour la route causale BERM v17.",
     classificationTitle: "Comment les résultats précédemment négatifs se classifient",
@@ -1321,6 +1325,7 @@ const COPY = {
   ko: {
     title: "근거 등록부",
     subtitle: `${FIELDSTATE_EVIDENCE_COUNT}건의 한정 BERM v17 기록과 ${LEGACY_EVIDENCE_COUNT}건의 확장 카탈로그 항목, 13개 이상의 경로와 490편 이상의 동료 심사 연구에 걸쳐.`,
+    registryNote: "",
     interpretationTitle: "이 등록부 읽는 법",
     interpretation: [
       "필드 시그니처는 배경 벡터, 각도, 스펙트럼 또는 엔벨로프와 같은 측정 변수를 지원할 수 있지만, 인간 생식력 효과를 입증하지는 않는다.",
@@ -1329,7 +1334,7 @@ const COPY = {
       "아래의 어떤 기록도 TFR 계수가 아니다. 국가 TFR 경로는 모델 사양에서 별도의 ASFR 및 인구학적 항을 필요로 한다.",
     ],
     tierExplainTitle: "근거 계층",
-    tierExplain: "이 페이지는 근거를 두 계층으로 제시한다. 한정 기록(~34건)은 FieldState 측정 사양 스키마를 따르며, 각 기록이 필드 클래스, 직접성, 번역 범위 및 제한을 명시한다. 확장 카탈로그(~150건 레거시 기록)는 소스 수준 검토를 위해 더 넓은 참고문헌을 보존하지만, 다른 느슨한 분류를 사용한다. 두 계층은 구조나 엄밀성에서 비교할 수 없다.",
+    tierExplain: `이 페이지는 근거를 두 계층으로 제시한다. 한정 기록(${FIELDSTATE_EVIDENCE_COUNT}건)은 FieldState 측정 사양 스키마를 따르며, 각 기록이 필드 클래스, 직접성, 번역 범위 및 제한을 명시한다. 확장 카탈로그(${LEGACY_EVIDENCE_COUNT}건 레거시 기록)는 소스 수준 검토를 위해 더 넓은 참고문헌을 보존하지만, 다른 느슨한 분류를 사용한다. 두 계층은 구조나 엄밀성에서 비교할 수 없다.`,
     boundedTitle: "한정 기록 (FieldState 측정 사양)",
     boundedLead: "각 기록은 필드 클래스, 직접성, 번역 범위 및 제한을 명시한다. 이것은 BERM v17 인과 경로의 주요 근거 항목이다.",
     classificationTitle: "이전 부정적 발견의 분류 방법",
@@ -2035,6 +2040,8 @@ export default async function EvidencePage({ params }: { params: Promise<{ local
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <PageHeader icon={Layers} title={d.title} subtitle={d.subtitle} />
+
+      <p className="mb-12 max-w-4xl text-sm leading-relaxed text-foreground-muted">{d.registryNote}</p>
 
       <section className="mb-14 border-t editorial-rule pt-6">
         <h2 className="editorial-section-heading mb-6">{d.interpretationTitle}</h2>

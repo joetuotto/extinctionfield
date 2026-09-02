@@ -1145,7 +1145,8 @@
     "citation": "Becker RO (1985). The Body Electric: Electromagnetism and the Foundation of Life. Book (Morrow)",
     "year": 1985,
     "pathway": "H",
-    "level": "H",
+    "level": "L*",
+    "note": "Legacy level letter 'H' (historical/precursor) is outside the EPISTEMIC_LEVELS vocabulary; remapped to L* on 2026-09-02.",
     "tags": [
       "history",
       "bioelectric",
@@ -2753,12 +2754,13 @@
       "confound"
     ],
     "causalNodes": [
-      "CIRCADIAN_DISRUPTION"
+      "MELATONIN_REDOX"
     ],
     "evidenceRole": "CONFOUNDING_HYPOTHESIS",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "LED bulbs produce both blue light and kHz-range EMF; incandescent bulbs produce neither. Any study comparing LED to incandescent cannot separate spectral from electromagnetic effects. TTFields (FDA-approved, 100–300 kHz) confirms biological activity of these frequencies. BERM-identified research gap.",
-    "n": null
+    "n": null,
+    "note": "causalNodes remapped from 'CIRCADIAN_DISRUPTION' (not a causal-graph node) to MELATONIN_REDOX on 2026-09-02."
   },
   {
     "id": "street_led_insects",
@@ -2847,12 +2849,13 @@
       "personal"
     ],
     "causalNodes": [
-      "CIRCADIAN_DISRUPTION"
+      "MELATONIN_REDOX"
     ],
     "evidenceRole": "CONFOUNDING_HYPOTHESIS",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "Display transition was a multiplicative EMF change: count × size × bedroom penetration × Wi-Fi × hours × proximity. Bedroom TV at 1.5–2m from pineal gland during melatonin window produces simultaneous blue light + EMF. BERM circadian weighting (2.5×) amplifies this. No single-factor analysis captures the multiplicative effect.",
-    "n": null
+    "n": null,
+    "note": "causalNodes remapped from 'CIRCADIAN_DISRUPTION' (not a causal-graph node) to MELATONIN_REDOX on 2026-09-02."
   },
   {
     "id": "satellite_predictive_test",
@@ -2860,7 +2863,8 @@
     "citation": "BERM argument #205: Satellite constellations (Starlink 6000+, OneWeb, Kuiper) as predictive test. BERM predicts measurable effects on migratory species by 2030.",
     "year": 2026,
     "pathway": "S",
-    "level": "P",
+    "level": "L*",
+    "note": "Legacy level letter 'P' (prediction) is outside the EPISTEMIC_LEVELS vocabulary; remapped to L* on 2026-09-02.",
     "tags": [
       "satellite",
       "starlink",
@@ -2893,12 +2897,13 @@
       "discrimination"
     ],
     "causalNodes": [
-      "FIELDSTATE"
+      "FIELDSTATE_SELECTED_PROXY"
     ],
     "evidenceRole": "METHODOLOGICAL",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "When all EMF layers correlate with GDP, a two-layer model cannot separate causation from confounding. Twelve layers with orthogonal drivers (energy policy, vehicle safety, Cold War, municipal decisions) create natural experiments. If insect decline tracks weather radar (energy-independent, 1988) but not smart meters (energy-dependent, 2005), discrimination improves.",
-    "n": null
+    "n": null,
+    "note": "causalNodes remapped from 'FIELDSTATE' (not a causal-graph node) to FIELDSTATE_SELECTED_PROXY on 2026-09-02."
   },
   {
     "id": "yap2025_cry2_trpc1",
@@ -2916,12 +2921,13 @@
       "myoblast"
     ],
     "causalNodes": [
-      "B_CRY_MELATONIN"
+      "B_RPM_CRY"
     ],
     "evidenceRole": "MECHANISM_EXTENSION",
     "status": "MIGRATION_CANDIDATE",
     "translationScope": "CRY2 physically interacts with TRPC1 (a TRP channel, NOT a VGCC) and the complex co-translocates to the nucleus after PEMF exposure. This gives pathway B (CRY/RPM) a second downstream branch: calcium signaling via TRPC1, independent of pathway A (VGCC). Blocked by CRY2 silencing, darkness, and RFK silencing — all RPM hallmarks. NOT blocked by L-type VGCC blockers (nifedipine), confirming pharmacological separability from pathway A. Demonstrated in myoblasts; gonadal cell confirmation pending (prediction TRPC1-1).",
-    "n": null
+    "n": null,
+    "note": "causalNodes remapped from 'B_CRY_MELATONIN' (not a causal-graph node) to B_RPM_CRY on 2026-09-02."
   },
   {
     "id": "yu2019_btb_disruption",
