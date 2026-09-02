@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, UserX, Shield, Brain, Heart, Users, Scale } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
 import { TranslationNotice } from "@/components/TranslationNotice";
+import { InlineReferenceText } from "@/components/InlineReferenceText";
 
 const COPY = {
   en: {
@@ -26,7 +27,6 @@ const COPY = {
       "Each dimension is normalized to [0, 1] where 0 represents no deviation from the pre-industrial endocrine baseline (estimated from Amish biomarker data and historical reference populations) and 1 represents maximum measurable degradation in any observed environment. The dimension score is computed from its listed substrate biomarkers using the formula specified in political_biology.py: multiplicative substrates (e.g. OXT × T for anomic distress) produce sharper gradients than additive substrates because degradation in either component collapses the product. The composite index uses the geometric mean rather than arithmetic mean because it penalizes imbalance — a population scoring 0.9 on one dimension and 0.1 on another is not equivalent to 0.5 on both.",
 
     dim1Title: "Victimhood identity",
-    dim1Icon: "UserX",
     dim1Substrate: "T↓, DA↓, BDNF↓, CORT↑",
     dim1Desc:
       "Competence-based identity requires the biological capacity for competence: testosterone provides competitive drive and status-seeking, dopamine provides initiative and goal pursuit, BDNF provides cognitive flexibility and learning capacity. When all three decline simultaneously while cortisol rises, the individual loses the neurological machinery for building identity through achievement. Victimhood identity is not chosen — it is the default that remains when competence-based identity becomes biologically unavailable. The index measures the gap between the endocrine capacity for competence and the pre-industrial baseline.",
@@ -35,7 +35,6 @@ const COPY = {
     dim1Ratio: "4.1×",
 
     dim2Title: "Safety-seeking",
-    dim2Icon: "Shield",
     dim2Substrate: "CORT↑ × T↓",
     dim2Desc:
       "The demand for safety is proportional to the biological experience of threat — not the actual level of external danger. Cortisol elevation produces chronic threat activation: the amygdala interprets ambiguous stimuli as dangerous, the HPA axis sustains vigilance even in objectively safe environments. Simultaneously, testosterone decline removes the capacity for threat confrontation. The result is a population that perceives more danger, feels it more acutely, and has less biological capacity to respond directly. The political expression is demand for external threat management — expanded safety regulations, speech codes, trigger warnings, institutional protection from discomfort. These are not cultural preferences. They are the political outputs of a population whose threat-response system is chronically activated while its confrontation system is chronically suppressed.",
@@ -44,7 +43,6 @@ const COPY = {
     dim2Ratio: "12.8×",
 
     dim3Title: "External locus of control",
-    dim3Icon: "Scale",
     dim3Substrate: "DA↓, T↓, CORT↑",
     dim3Desc:
       "Internal locus — the sense that one can affect outcomes through one's own actions — requires dopaminergic drive (the expectation that effort produces reward) and testosterone (the impulse to act on that expectation). When dopamine declines, effort feels less connected to outcome. When testosterone declines, the impulse to initiate action weakens. When cortisol rises, the perceived cost of action increases. The shift toward external locus is not a philosophical conclusion about determinism — it is the subjective experience of having reduced neurological capacity for agency. A population with degraded dopaminergic and androgenic function will attribute outcomes to systems, structures, and external forces — because the biological substrate for experiencing personal agency has been suppressed.",
@@ -53,7 +51,6 @@ const COPY = {
     dim3Ratio: "3.3×",
 
     dim4Title: "Cognitive fragility",
-    dim4Icon: "Brain",
     dim4Substrate: "BDNF↓, T↓, MEL↓",
     dim4Desc:
       "Antifragility — the capacity to strengthen under stress — requires BDNF (synaptic plasticity and stress-adaptive neurogenesis), testosterone (challenge-seeking behavior), and melatonin (restorative sleep that consolidates stress adaptation). When all three decline, cognitive systems become fragile rather than antifragile: stress degrades function instead of building capacity. The experience is genuine — challenging ideas, uncomfortable information, and social friction are genuinely more aversive when the neurological machinery for processing them has been degraded. This is not weakness of character. It is reduced synaptic plasticity. The demand for intellectual protection (content warnings, safe spaces, reduced academic rigor) follows directly from reduced biological capacity to benefit from intellectual challenge.",
@@ -62,7 +59,6 @@ const COPY = {
     dim4Ratio: "12.3×",
 
     dim5Title: "Anomic distress",
-    dim5Icon: "Users",
     dim5Substrate: "OXT↓ × T↓, CORT↑",
     dim5Desc:
       "Belonging requires oxytocin (trust and social bonding) potentiated by testosterone (the capacity for reciprocal commitment and group defense). When the OXT×T interaction collapses, the individual experiences chronic exclusion regardless of actual social inclusion. This is not loneliness in the ordinary sense — it is the biological incapacity to convert social contact into felt belonging. Cortisol elevation adds threat-valence to social interaction itself. The result is anomie in Durkheim's precise sense: the disintegration of social norms and bonds at the individual level. Anomic distress is the highest-scoring dimension across the gradient (0.842 at urban office) because it depends on a multiplicative interaction — both components must be present for belonging, and degradation in either one destroys the product.",
@@ -71,7 +67,6 @@ const COPY = {
     dim5Ratio: "8.1×",
 
     dim6Title: "Moral compensation",
-    dim6Icon: "Heart",
     dim6Substrate: "Care without binding foundations",
     dim6Desc:
       "When the binding moral foundations (Loyalty, Authority, Sanctity) collapse — because their testosterone and multiplicative substrates are the most EMF-sensitive — Care remains as the last functional moral foundation. The pathopolites then expresses all moral energy through the one channel that remains operational. This produces the characteristic pattern: intense moral concern expressed exclusively as care for identified victims, without the structural foundations (loyalty to specific groups, respect for authority, sense of the sacred) that channel moral energy into institution-building. The moral impulse is genuine — it is the moral architecture that has been amputated. The index measures the imbalance between care and binding foundations and the overall structural deficit in moral foundations.",
@@ -145,12 +140,12 @@ const COPY = {
 
     litTitle: "Literature",
     lit: [
-      "Campbell & Manning (2018): The Rise of Victimhood Culture. Documents the shift from dignity culture to victimhood culture — BERM provides the biological mechanism.",
-      "Lukianoff & Haidt (2018): The Coddling of the American Mind. Describes cognitive fragility and safety-seeking in university populations. The endocrine substrate for antifragility is absent.",
-      "Durkheim (1897): Suicide. Anomie as the breakdown of social norms. The OXT×T interaction provides the biological substrate for belonging that Durkheim described sociologically.",
-      "Baumeister (2012): Need-to-belong theory. Social belonging requires neurological capacity — not just social opportunity. OXT×T interaction is that capacity.",
-      "Twenge (2017): iGen. Generational shift toward safety-seeking, fragility, external locus. BERM identifies the EMF substrate beneath the smartphone-correlation.",
-      "Haidt (2012): The Righteous Mind. Moral foundation asymmetry between liberals and conservatives maps to differential biomarker degradation of binding vs individualizing substrates.",
+      "[[ref:campbell_manning2018_victimhood|Campbell & Manning (2018)]]: The Rise of Victimhood Culture. Documents the shift from dignity culture to victimhood culture — BERM provides the biological mechanism.",
+      "[[ref:lukianoff_haidt2018_coddling|Lukianoff & Haidt (2018)]]: The Coddling of the American Mind. Describes cognitive fragility and safety-seeking in university populations. The endocrine substrate for antifragility is absent.",
+      "[[ref:durkheim1897_suicide|Durkheim (1897)]]: Suicide. Anomie as the breakdown of social norms. The OXT×T interaction provides the biological substrate for belonging that Durkheim described sociologically.",
+      "[[ref:baumeister2012_need_to_belong|Baumeister (2012)]]: Need-to-belong theory. Social belonging requires neurological capacity — not just social opportunity. OXT×T interaction is that capacity.",
+      "[[ref:twenge2017_igen|Twenge (2017)]]: iGen. Generational shift toward safety-seeking, fragility, external locus. BERM identifies the EMF substrate beneath the smartphone-correlation.",
+      "[[ref:haidt2012_righteous_mind|Haidt (2012)]]: The Righteous Mind. Moral foundation asymmetry between liberals and conservatives maps to differential biomarker degradation of binding vs individualizing substrates.",
     ],
 
     modelDerived: "Model-derived values from BioCap integral, not directly measured.",
@@ -290,12 +285,12 @@ const COPY = {
 
     litTitle: "Kirjallisuus",
     lit: [
-      "Campbell & Manning (2018): The Rise of Victimhood Culture. Dokumentoi siirtymän arvokkuuskulttuurista uhrikulttuuriin — BERM tarjoaa biologisen mekanismin.",
-      "Lukianoff & Haidt (2018): The Coddling of the American Mind. Kuvaa kognitiivista haurautta ja turvallisuushakuisuutta yliopistoväestöissä. Antifragiiliuden endokriininen substraatti puuttuu.",
-      "Durkheim (1897): Suicide. Anomia sosiaalisten normien ja siteiden hajoamisena. OXT×T-vuorovaikutus tarjoaa biologisen substraatin kuulumiselle, jonka Durkheim kuvasi sosiologisesti.",
-      "Baumeister (2012): Kuulumistarve-teoria. Sosiaalinen kuuluminen vaatii neurologista kykyä — ei pelkkää sosiaalista mahdollisuutta.",
-      "Twenge (2017): iGen. Sukupolvisiirtymä turvallisuushakuisuuteen, haurauteen, ulkoiseen hallintakäsitykseen. BERM tunnistaa EMF-substraatin älypuhelinkorrelaation takana.",
-      "Haidt (2012): The Righteous Mind. Moraaliperusteiden epäsymmetria liberaalien ja konservatiivien välillä kartoittuu sitovien vs. yksilöllistävien substraattien eriytyneeseen rappeutumiseen.",
+      "[[ref:campbell_manning2018_victimhood|Campbell & Manning (2018)]]: The Rise of Victimhood Culture. Dokumentoi siirtymän arvokkuuskulttuurista uhrikulttuuriin — BERM tarjoaa biologisen mekanismin.",
+      "[[ref:lukianoff_haidt2018_coddling|Lukianoff & Haidt (2018)]]: The Coddling of the American Mind. Kuvaa kognitiivista haurautta ja turvallisuushakuisuutta yliopistoväestöissä. Antifragiiliuden endokriininen substraatti puuttuu.",
+      "[[ref:durkheim1897_suicide|Durkheim (1897)]]: Suicide. Anomia sosiaalisten normien ja siteiden hajoamisena. OXT×T-vuorovaikutus tarjoaa biologisen substraatin kuulumiselle, jonka Durkheim kuvasi sosiologisesti.",
+      "[[ref:baumeister2012_need_to_belong|Baumeister (2012)]]: Kuulumistarve-teoria. Sosiaalinen kuuluminen vaatii neurologista kykyä — ei pelkkää sosiaalista mahdollisuutta.",
+      "[[ref:twenge2017_igen|Twenge (2017)]]: iGen. Sukupolvisiirtymä turvallisuushakuisuuteen, haurauteen, ulkoiseen hallintakäsitykseen. BERM tunnistaa EMF-substraatin älypuhelinkorrelaation takana.",
+      "[[ref:haidt2012_righteous_mind|Haidt (2012)]]: The Righteous Mind. Moraaliperusteiden epäsymmetria liberaalien ja konservatiivien välillä kartoittuu sitovien vs. yksilöllistävien substraattien eriytyneeseen rappeutumiseen.",
     ],
 
     modelDerived: "Mallin tuottamia arvoja BioCap-integraalista, ei suoraan mitattuja.",
@@ -680,7 +675,9 @@ export default async function PathopolitesPage({
         <h3 className="text-lg font-semibold mb-4">{d.litTitle}</h3>
         <ul className="space-y-2">
           {d.lit.map((ref, i) => (
-            <li key={i} className="text-xs text-muted-foreground leading-relaxed">{ref}</li>
+            <li key={i} className="text-xs text-muted-foreground leading-relaxed">
+              <InlineReferenceText text={ref} locale={locale} />
+            </li>
           ))}
         </ul>
       </section>

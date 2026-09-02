@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
 """Export the civilization index tables shown on the website.
 
-The civilization pages (patokratia, pathopolites, patopolis) render tables of
-indices computed by ``berm.civilization.political_biology`` as hand-copied
-literals.  This script recomputes every one of those tables at the reference
-year and writes them to ``website/public/data/civilization_indices.json`` so
-the page literals have a machine-readable source of truth.
+The civilization pages (patokratia, pathopolites, patopolis, patokinesis)
+render tables of indices computed by ``berm.civilization.political_biology``
+as hand-copied literals.  This script recomputes every one of those tables at
+the reference year and writes them to
+``website/public/data/civilization_indices.json`` so the page literals have a
+machine-readable source of truth.
 ``tests/test_civilization_site_sync.py`` checks that the JSON is current and
 that the page literals match the same computation.
 
 Rounding follows what each page displays:
   3 decimals — pathopolites, EMF->political, IQ-shredder tables, foundation
-               scores and biomarker values
+               scores and biomarker values; patokinesis signal-degradation,
+               behavioral-sink, BIS and transmission gradients
   2 decimals — r/K, loyalty-collapse, policy-vulnerability and moral-distress
                tables
 Amish->urban-office ratios (the "6.5x" style figures) are computed from the
@@ -42,6 +44,8 @@ from berm.civilization.political_biology import (  # noqa: E402
     INDIVIDUALIZING_FOUNDATIONS,
     MORAL_FOUNDATION_FUNCTIONS,
     POLICY_DOMAINS,
+    behavioral_sink_gradient,
+    civilizational_transmission_gradient,
     environment_biomarkers,
     environment_profile,
     foundation_collapse_order,
@@ -53,6 +57,7 @@ from berm.civilization.political_biology import (  # noqa: E402
     pathopolites_gradient,
     policy_vulnerability_profile,
     rk_environment_gradient,
+    signal_degradation_gradient,
     urban_rural_gradient,
 )
 
@@ -102,6 +107,42 @@ LOYALTY_COLLAPSE_METRICS = (
 )
 BIOMARKERS = ("T", "OXT", "DA", "MEL", "BDNF", "CORT", "D", "B2")
 IDEOLOGY_LABELS = {p.name: p.label for p in IDEOLOGY_PROFILES}
+
+# patokinesis/page.tsx — S6 renders total_signal_strength, pair_signal_compound,
+# obesity_amplification (signal side) and normative_predation,
+# institutional_capture, behavioral_sink (sink side); the JSON carries the
+# full profiles.
+SIGNAL_DEGRADATION_COLUMNS = (
+    "morphological_signal",
+    "dynamic_signal",
+    "cryptic_signal",
+    "total_signal_strength",
+    "signal_degradation",
+    "obesity_amplification",
+    "signal_perception",
+    "pair_signal_compound",
+)
+BEHAVIORAL_SINK_COLUMNS = (
+    "normative_predation",
+    "institutional_capture",
+    "sterilization_contagion",
+    "behavioral_sink",
+)
+# patokinesis/page.tsx — S10 BIS gradient (first four) and S11 transmission
+# gradient (last six); transmission_resistance is not displayed.
+TRANSMISSION_COLUMNS = (
+    "behavioral_immune",
+    "destigmatization",
+    "stigma_inversion",
+    "net_immunity",
+    "transmission_resistance",
+    "recovery_sabotage",
+    "dependency_transmission",
+    "social_contagion",
+    "empathy_weaponization",
+    "active_infection_seeking",
+    "transmission_composite",
+)
 
 
 def displayed_ratio(high: float, low: float, dp: int = RATIO_DP) -> float:
@@ -331,6 +372,34 @@ def biomarker_section(year: float) -> dict[str, Any]:
     }
 
 
+def _gradient_section(
+    entries: list[dict[str, Any]], columns: tuple[str, ...]
+) -> dict[str, Any]:
+    """Environment-keyed rows of ``columns`` at INDEX_DP, in ENV_ORDER."""
+    by_env = {entry["environment"]: entry for entry in entries}
+    rows = [
+        {
+            "environment": env,
+            "emf_factor": ENVIRONMENTS[env].emf_factor,
+            **{column: round(by_env[env][column], INDEX_DP) for column in columns},
+        }
+        for env in ENV_ORDER
+    ]
+    return {"precision": INDEX_DP, "rows": rows}
+
+
+def signal_degradation_section(year: float) -> dict[str, Any]:
+    return _gradient_section(signal_degradation_gradient(year), SIGNAL_DEGRADATION_COLUMNS)
+
+
+def behavioral_sink_section(year: float) -> dict[str, Any]:
+    return _gradient_section(behavioral_sink_gradient(year), BEHAVIORAL_SINK_COLUMNS)
+
+
+def transmission_section(year: float) -> dict[str, Any]:
+    return _gradient_section(civilizational_transmission_gradient(year), TRANSMISSION_COLUMNS)
+
+
 def build(year: float = YEAR) -> dict[str, Any]:
     """Compute every civilization table the site shows, at ``year``."""
     breadth, distress, collapse_order = moral_sections(year)
@@ -368,6 +437,9 @@ def build(year: float = YEAR) -> dict[str, Any]:
         "policy_vulnerability": policy_vulnerability_section(year),
         "iq_shredder": iq_shredder_section(year),
         "biomarkers": biomarker_section(year),
+        "signal_degradation": signal_degradation_section(year),
+        "behavioral_sink": behavioral_sink_section(year),
+        "transmission": transmission_section(year),
     }
 
 
@@ -404,6 +476,16 @@ def main(argv: list[str]) -> int:
     print(
         f"  shredder efficiency: amish={sh[0]['shredder_efficiency']}"
         f" urban_office={sh[-1]['shredder_efficiency']}"
+    )
+    sig = payload["signal_degradation"]["rows"]
+    sink = payload["behavioral_sink"]["rows"]
+    print(
+        f"  signal strength: amish={sig[0]['total_signal_strength']}"
+        f" urban_office={sig[-1]['total_signal_strength']}"
+    )
+    print(
+        f"  behavioral sink: amish={sink[0]['behavioral_sink']}"
+        f" urban_office={sink[-1]['behavioral_sink']}"
     )
     return 0
 

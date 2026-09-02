@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generated": "2026-09-01",
-    "referencesWithUsages": 644,
-    "usageLocations": 1682
+    "generated": "2026-09-02",
+    "referencesWithUsages": 674,
+    "usageLocations": 1722
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -361,6 +361,10 @@
       {
         "path": "/about/objections",
         "source": "app/[locale]/objections/page.tsx"
+      },
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
       },
       {
         "path": "/evidence",
@@ -1023,6 +1027,10 @@
       {
         "path": "/civilization/pathopege",
         "source": "app/[locale]/civilization/pathopege/page.tsx"
+      },
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
       }
     ],
     "dekkers2019_dual_hormone": [
@@ -1323,6 +1331,16 @@
         "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
+    "carre2017_exogenous_t_aggression": [
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      },
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
+      }
+    ],
     "levine2023_sperm": [
       {
         "path": "/civilization/pathopege",
@@ -1373,7 +1391,17 @@
         "source": "app/[locale]/predictions/page.tsx"
       }
     ],
-    "marano2026_female_neuroinflammation": [
+    "soares_cunha2016_d2_motivation": [
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      },
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
+      }
+    ],
+    "yuksel2016_emf_female_rats": [
       {
         "path": "/civilization/pathopege",
         "source": "app/[locale]/civilization/pathopege/page.tsx"
@@ -1385,10 +1413,200 @@
         "source": "app/[locale]/civilization/pathopege/page.tsx"
       }
     ],
+    "li_graham2017_sex_hormones": [
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      }
+    ],
+    "marano2026_female_neuroinflammation": [
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      }
+    ],
+    "bosch_neumann2012_oxytocin_maternal": [
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      }
+    ],
+    "numan_young2016_bonding": [
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      }
+    ],
+    "kosfeld2005": [
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      },
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
+      }
+    ],
+    "murthy2023_loneliness_advisory": [
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      }
+    ],
     "shielded_bed_2022": [
       {
         "path": "/civilization/pathopege",
         "source": "app/[locale]/civilization/pathopege/page.tsx"
+      }
+    ],
+    "campbell_manning2018_victimhood": [
+      {
+        "path": "/civilization/pathopolites",
+        "source": "app/[locale]/civilization/pathopolites/page.tsx"
+      }
+    ],
+    "lukianoff_haidt2018_coddling": [
+      {
+        "path": "/civilization/pathopolites",
+        "source": "app/[locale]/civilization/pathopolites/page.tsx"
+      },
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "durkheim1897_suicide": [
+      {
+        "path": "/civilization/pathopolites",
+        "source": "app/[locale]/civilization/pathopolites/page.tsx"
+      }
+    ],
+    "baumeister2012_need_to_belong": [
+      {
+        "path": "/civilization/pathopolites",
+        "source": "app/[locale]/civilization/pathopolites/page.tsx"
+      }
+    ],
+    "twenge2017_igen": [
+      {
+        "path": "/civilization/pathopolites",
+        "source": "app/[locale]/civilization/pathopolites/page.tsx"
+      }
+    ],
+    "haidt2012_righteous_mind": [
+      {
+        "path": "/civilization/pathopolites",
+        "source": "app/[locale]/civilization/pathopolites/page.tsx"
+      },
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "alogaily2025_testosterone_politics": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "oxley2008_physiological_traits": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "dedreu2011_ethnocentrism": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "settle2010_drd4_ideology": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "bratsberg2018": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      },
+      {
+        "path": "/civilization/patopoliteia",
+        "source": "app/[locale]/civilization/patopoliteia/page.tsx"
+      }
+    ],
+    "graham2009_moral_foundations": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "feldman2012": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/mathematics",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model",
+        "source": "app/[locale]/mathematics/page.tsx"
+      },
+      {
+        "path": "/model/math",
+        "source": "app/[locale]/mathematics/page.tsx"
+      }
+    ],
+    "dedreu2010_parochial_altruism": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "ebstein1996_drd4_novelty": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "flegr2013_toxoplasma": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "putnam2007_e_pluribus_unum": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "olson1965_collective_action": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
+      }
+    ],
+    "henrich2020_weirdest": [
+      {
+        "path": "/civilization/patokratia",
+        "source": "app/[locale]/civilization/patokratia/page.tsx"
       }
     ],
     "dual_hormone_meta2021": [
@@ -1409,10 +1627,46 @@
         "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
+    "mcclure2004_delayed_reward": [
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
+      }
+    ],
+    "levine2023_v2": [
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
+      }
+    ],
     "wood_health2026": [
       {
         "path": "/civilization/patopolis",
         "source": "app/[locale]/civilization/patopolis/page.tsx"
+      }
+    ],
+    "magnesium_ca2_antagonist_2025": [
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
+      }
+    ],
+    "rosenberg2019": [
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
+      },
+      {
+        "path": "/data",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/evidence",
+        "source": "lib/legacyEvidence.json"
+      },
+      {
+        "path": "/explore",
+        "source": "lib/legacyEvidence.json"
       }
     ],
     "camkii-cav32-threshold-2023": [
@@ -1429,16 +1683,22 @@
         "source": "app/[locale]/model/page.tsx"
       }
     ],
-    "magnesium_ca2_antagonist_2025": [
+    "magnesium_testosterone_2025": [
       {
         "path": "/civilization/patopolis",
         "source": "app/[locale]/civilization/patopolis/page.tsx"
       }
     ],
-    "magnesium_testosterone_2025": [
+    "turchin2023_end_times": [
       {
-        "path": "/civilization/patopolis",
-        "source": "app/[locale]/civilization/patopolis/page.tsx"
+        "path": "/civilization/patopoliteia",
+        "source": "app/[locale]/civilization/patopoliteia/page.tsx"
+      }
+    ],
+    "mcconnell2025_roman_lead": [
+      {
+        "path": "/civilization/patopoliteia",
+        "source": "app/[locale]/civilization/patopoliteia/page.tsx"
       }
     ],
     "camkii_pancreas_diabetes": [
@@ -2571,32 +2831,6 @@
         "source": "app/[locale]/mathematics/page.tsx"
       }
     ],
-    "feldman2012": [
-      {
-        "path": "/data",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/evidence",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/explore",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/mathematics",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model",
-        "source": "app/[locale]/mathematics/page.tsx"
-      },
-      {
-        "path": "/model/math",
-        "source": "app/[locale]/mathematics/page.tsx"
-      }
-    ],
     "poutahidis2014": [
       {
         "path": "/data",
@@ -2971,20 +3205,6 @@
       {
         "path": "/sentinel",
         "source": "app/[locale]/sentinel/page.tsx"
-      }
-    ],
-    "rosenberg2019": [
-      {
-        "path": "/data",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/evidence",
-        "source": "lib/legacyEvidence.json"
-      },
-      {
-        "path": "/explore",
-        "source": "lib/legacyEvidence.json"
       }
     ],
     "becker1985_v2": [

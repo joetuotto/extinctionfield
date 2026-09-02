@@ -39,7 +39,7 @@ const COPY = {
         behavioral:
           "Status-seeking ↓, risk-taking ↓, sexual approach ↓, authenticity ↓, group loyalty ↓, provocation response ↓",
         evidence:
-          "7 RCTs ([[ref:dreher2016|Dreher 2016]], Nave 2018, [[ref:goetz2024|Goetz 2024]], Audience 2020, Carré 2017, Parochial 2015, Competition 2024)",
+          "7 RCTs ([[ref:dreher2016|Dreher 2016]], Nave 2018, [[ref:goetz2024|Goetz 2024]], Audience 2020, [[ref:carre2017_exogenous_t_aggression|Carré 2017]], Parochial 2015, Competition 2024)",
         magnitude:
           "~40% decline since 1970s ([[ref:santi2025|Santi 2025]], n=1,064,891)",
       },
@@ -50,7 +50,7 @@ const COPY = {
         behavioral:
           "Motivation ↓, reward sensitivity ↓, innovation ↓, exploration ↓, anhedonia ↑",
         evidence:
-          "NAc D2 optogenetics (Soares-Cunha 2016, 2018), T→DA receptor expression",
+          "NAc D2 optogenetics ([[ref:soares_cunha2016_d2_motivation|Soares-Cunha 2016]], 2018), T→DA receptor expression",
         magnitude:
           "Not directly measured at population level — inferred from behavioral correlates",
       },
@@ -72,7 +72,7 @@ const COPY = {
         behavioral:
           "Libido fluctuation ↑, emotional dysregulation ↑, fertility window narrowing",
         evidence:
-          "Yüksel 2016: EMF → progesterone↓, estrogen↓ in rats. Türedi 2016: 900 MHz → ovarian follicle reservoir depleted. PCOS: 5–20% prevalence, rising.",
+          "[[ref:yuksel2016_emf_female_rats|Yüksel 2016]]: EMF → progesterone↓, estrogen↓ in rats. [[ref:turedi2016_ovarian_reserve|Türedi 2016]]: 900 MHz → ovarian follicle reservoir depleted. PCOS: 5–20% prevalence, rising.",
         magnitude:
           "AMH declining in younger women (earlier ovarian aging). PCOS prevalence increasing globally.",
       },
@@ -83,7 +83,7 @@ const COPY = {
         behavioral:
           "Anxiety 2× male prevalence. Depression 2× male prevalence. Both increasing faster in women.",
         evidence:
-          "Multiple systematic reviews: women 2× anxiety, 2× depression. Sex hormone fluctuation → HPA sensitization (Li & Graham 2017, Lancet Psychiatry). Neuroinflammation sex differences ([[ref:marano2026_female_neuroinflammation|PMC12843241, 2025]]).",
+          "Multiple systematic reviews: women 2× anxiety, 2× depression. Sex hormone fluctuation → HPA sensitization ([[ref:li_graham2017_sex_hormones|Li & Graham 2017, Lancet Psychiatry]]). Neuroinflammation sex differences ([[ref:marano2026_female_neuroinflammation|PMC12843241, 2025]]).",
         magnitude:
           "Female depression prevalence increasing faster than male since 2010 in most countries.",
       },
@@ -94,9 +94,9 @@ const COPY = {
         behavioral:
           "Trust ↓, social bonding ↓, maternal-infant attachment ↓, pair-bond formation ↓, empathy ↓",
         evidence:
-          "Oxytocin→bonding: Bosch & Neumann 2012, Numan & Young 2016. OT→trust: Kosfeld 2005 (Nature). Edelman Trust Barometer 2025: institutional trust at historic lows.",
+          "Oxytocin→bonding: [[ref:bosch_neumann2012_oxytocin_maternal|Bosch & Neumann 2012]], [[ref:numan_young2016_bonding|Numan & Young 2016]]. OT→trust: [[ref:kosfeld2005|Kosfeld 2005 (Nature)]]. Edelman Trust Barometer 2025: institutional trust at historic lows.",
         magnitude:
-          "Population-level OT not routinely measured. Inferred from trust metrics, loneliness epidemic (Murthy 2023), bonding difficulties.",
+          "Population-level OT not routinely measured. Inferred from trust metrics, loneliness epidemic ([[ref:murthy2023_loneliness_advisory|Murthy 2023]]), bonding difficulties.",
       },
     ],
 
@@ -138,6 +138,7 @@ const COPY = {
         behavioral: "Authenticity",
       },
       {
+        referenceId: "carre2017_exogenous_t_aggression",
         authors: "Carré 2017",
         n: 308,
         design: "T gel vs placebo, aggression paradigm",
@@ -181,7 +182,7 @@ const COPY = {
       "BERM does not claim EMF is the sole cause. It proposes that oxytocin decline provides a biological substrate that makes societies more susceptible to trust erosion from social, economic, and technological causes.",
     s4cTitle: "Ovarian reserve",
     s4cBody:
-      "Prenatal exposure to 900 MHz EMF depleted ovarian follicle reservoir in rat pups — decreased primordial and tertiary follicles, increased atretic follicles, severe follicle degeneration ([[ref:turedi2016_ovarian_reserve|Türedi 2016, PMID 27007703]]). Prolonged mobile phone and WiFi exposure reduced plasma progesterone and estrogen in female rats (Yüksel 2016). PCOS — the most common cause of female infertility — involves VGCC-mediated disruption in four organs simultaneously (pancreas, ovary, pituitary, adrenal). Prevalence is rising globally.",
+      "Prenatal exposure to 900 MHz EMF depleted ovarian follicle reservoir in rat pups — decreased primordial and tertiary follicles, increased atretic follicles, severe follicle degeneration ([[ref:turedi2016_ovarian_reserve|Türedi 2016, PMID 27007703]]). Prolonged mobile phone and WiFi exposure reduced plasma progesterone and estrogen in female rats ([[ref:yuksel2016_emf_female_rats|Yüksel 2016]]). PCOS — the most common cause of female infertility — involves VGCC-mediated disruption in four organs simultaneously (pancreas, ovary, pituitary, adrenal). Prevalence is rising globally.",
     s4cNote:
       "Women's fertility window is biologically fixed and non-renewable. Unlike sperm (which regenerate in 74 days), oocytes are established before birth and deplete irreversibly. EMF-induced ovarian damage is therefore cumulative and permanent in a way that male damage is not.",
 
@@ -204,7 +205,7 @@ const COPY = {
     navPatokratiaDesc: "Political consequences",
     navPatopoliteiaDesc: "Civilizational consequences",
 
-    sSantiContext: "A 2024 meta-regression of 50+ global studies, harmonized for modern LC-MS assay methods, confirmed a true secular decline of 0.8–1.3% annually since the 1980s. Even men who maintained stable weight showed a 19% decline over 20 years (Mazur 2013, n=991, US Air Force veterans). The decline is not explained by obesity, smoking, alcohol, or sleep.",
+    sSantiContext: "A 2024 meta-regression of 50+ global studies, harmonized for modern LC-MS assay methods, confirmed a true secular decline of 0.8–1.3% annually since the 1980s. Even men who maintained stable weight showed a 19% decline over 20 years ([[ref:mazur2013|Mazur 2013]], n=991, US Air Force veterans). The decline is not explained by obesity, smoking, alcohol, or sleep.",
 
     sRecoveryTitle: "Recovery Evidence",
     sRecoveryBody1: "A 2022 intervention study (PMC9306162) measured hormone levels in men and women before and after 2 months of sleeping in a bed with an EMF-avoidance system. Results: significant increases in plasma DHEA, norepinephrine, serotonin, oxytocin, melatonin, AND testosterone simultaneously. Cortisol/DHEA ratio decreased.",
@@ -248,7 +249,7 @@ const COPY = {
         behavioral:
           "Statushakuisuus ↓, riskinotto ↓, seksuaalinen lähestyminen ↓, autenttisuus ↓, ryhmäuskollisuus ↓, provokaatiovaste ↓",
         evidence:
-          "7 RCT:tä ([[ref:dreher2016|Dreher 2016]], Nave 2018, [[ref:goetz2024|Goetz 2024]], Audience 2020, Carré 2017, Parochial 2015, Competition 2024)",
+          "7 RCT:tä ([[ref:dreher2016|Dreher 2016]], Nave 2018, [[ref:goetz2024|Goetz 2024]], Audience 2020, [[ref:carre2017_exogenous_t_aggression|Carré 2017]], Parochial 2015, Competition 2024)",
         magnitude:
           "~40 % lasku 1970-luvulta ([[ref:santi2025|Santi 2025]], n=1 064 891)",
       },
@@ -259,7 +260,7 @@ const COPY = {
         behavioral:
           "Motivaatio ↓, palkkioherkkyys ↓, innovaatio ↓, tutkiminen ↓, anhedonia ↑",
         evidence:
-          "NAc D2 -optogenetiikka (Soares-Cunha 2016, 2018), T→DA-reseptoriekspressio",
+          "NAc D2 -optogenetiikka ([[ref:soares_cunha2016_d2_motivation|Soares-Cunha 2016]], 2018), T→DA-reseptoriekspressio",
         magnitude:
           "Ei suoraan mitattu väestötasolla — päätelty käyttäytymiskorrelaateista",
       },
@@ -281,7 +282,7 @@ const COPY = {
         behavioral:
           "Libidovaihtelu ↑, emotionaalinen dysäätely ↑, hedelmällisyysikkuna kapenee",
         evidence:
-          "Yüksel 2016: EMF → progesteroni↓, estrogeeni↓ rotilla. Türedi 2016: 900 MHz → munasarjan follikkelireservi ehtynyt. PCOS: 5–20 % esiintyvyys, kasvussa.",
+          "[[ref:yuksel2016_emf_female_rats|Yüksel 2016]]: EMF → progesteroni↓, estrogeeni↓ rotilla. [[ref:turedi2016_ovarian_reserve|Türedi 2016]]: 900 MHz → munasarjan follikkelireservi ehtynyt. PCOS: 5–20 % esiintyvyys, kasvussa.",
         magnitude:
           "AMH laskee nuoremmilla naisilla. PCOS-esiintyvyys kasvaa maailmanlaajuisesti.",
       },
@@ -292,7 +293,7 @@ const COPY = {
         behavioral:
           "Ahdistus 2× miesten esiintyvyys. Masennus 2× miesten esiintyvyys. Molemmat kasvavat naisilla nopeammin.",
         evidence:
-          "Lukuisia systemaattisia katsauksia: naiset 2× ahdistus, 2× masennus. Sukuhormonivaihtelu → HPA-sensitisaatio (Li & Graham 2017, Lancet Psychiatry). Neuroinflammaatio sukupuolierot ([[ref:marano2026_female_neuroinflammation|PMC12843241, 2025]]).",
+          "Lukuisia systemaattisia katsauksia: naiset 2× ahdistus, 2× masennus. Sukuhormonivaihtelu → HPA-sensitisaatio ([[ref:li_graham2017_sex_hormones|Li & Graham 2017, Lancet Psychiatry]]). Neuroinflammaatio sukupuolierot ([[ref:marano2026_female_neuroinflammation|PMC12843241, 2025]]).",
         magnitude:
           "Naisten masennusesiintyvyys kasvaa nopeammin kuin miesten vuodesta 2010 useimmissa maissa.",
       },
@@ -303,9 +304,9 @@ const COPY = {
         behavioral:
           "Luottamus ↓, sosiaalinen kiintymys ↓, äiti-lapsi-kiintymys ↓, parisuhteen muodostuminen ↓, empatia ↓",
         evidence:
-          "Oksitosiini→kiintymys: Bosch & Neumann 2012, Numan & Young 2016. OT→luottamus: Kosfeld 2005 (Nature). Edelman Trust Barometer 2025: institutionaalinen luottamus historiallisen matalalla.",
+          "Oksitosiini→kiintymys: [[ref:bosch_neumann2012_oxytocin_maternal|Bosch & Neumann 2012]], [[ref:numan_young2016_bonding|Numan & Young 2016]]. OT→luottamus: [[ref:kosfeld2005|Kosfeld 2005 (Nature)]]. Edelman Trust Barometer 2025: institutionaalinen luottamus historiallisen matalalla.",
         magnitude:
-          "Väestötason OT ei rutiinimittauksissa. Päätelty luottamusmittareista, yksinäisyysepidemiasta (Murthy 2023), kiintymysongelmista.",
+          "Väestötason OT ei rutiinimittauksissa. Päätelty luottamusmittareista, yksinäisyysepidemiasta ([[ref:murthy2023_loneliness_advisory|Murthy 2023]]), kiintymysongelmista.",
       },
     ],
 
@@ -347,6 +348,7 @@ const COPY = {
         behavioral: "Autenttisuus",
       },
       {
+        referenceId: "carre2017_exogenous_t_aggression",
         authors: "Carré 2017",
         n: 308,
         design: "T-geeli vs lumevalmiste, aggressioparadigma",
@@ -390,7 +392,7 @@ const COPY = {
       "BERM ei väitä EMF:n olevan ainoa syy. Se ehdottaa, että oksitosiinilasku tarjoaa biologisen substraatin, joka tekee yhteiskunnista alttiimpia luottamuksen rapautumiselle sosiaalisista, taloudellisista ja teknologisista syistä.",
     s4cTitle: "Munasarjareservi",
     s4cBody:
-      "Prenataali 900 MHz EMF -altistus ehdytti munasarjan follikkelireserviä rottapoikasissa — vähentäen primordiaalisia ja tertiäärisiä follikkeleita, lisäten atreettisia follikkeleita, vakavaa degeneraatiota ([[ref:turedi2016_ovarian_reserve|Türedi 2016, PMID 27007703]]). Pitkäaikainen matkapuhelin- ja WiFi-altistus vähensi plasman progesteronia ja estrogeenia naarasrotilla (Yüksel 2016). PCOS — naisten hedelmättömyyden yleisin syy — sisältää VGCC-välitteisen häiriön neljässä elimessä samanaikaisesti (haima, munasarja, aivolisake, lisämunuainen). Esiintyvyys kasvaa maailmanlaajuisesti.",
+      "Prenataali 900 MHz EMF -altistus ehdytti munasarjan follikkelireserviä rottapoikasissa — vähentäen primordiaalisia ja tertiäärisiä follikkeleita, lisäten atreettisia follikkeleita, vakavaa degeneraatiota ([[ref:turedi2016_ovarian_reserve|Türedi 2016, PMID 27007703]]). Pitkäaikainen matkapuhelin- ja WiFi-altistus vähensi plasman progesteronia ja estrogeenia naarasrotilla ([[ref:yuksel2016_emf_female_rats|Yüksel 2016]]). PCOS — naisten hedelmättömyyden yleisin syy — sisältää VGCC-välitteisen häiriön neljässä elimessä samanaikaisesti (haima, munasarja, aivolisake, lisämunuainen). Esiintyvyys kasvaa maailmanlaajuisesti.",
     s4cNote:
       "Naisten hedelmällisyysikkuna on biologisesti kiinteä ja uusiutumaton. Toisin kuin siittiöt (jotka uusiutuvat 74 päivässä), munasolut muodostuvat ennen syntymää ja ehtyvät peruuttamattomasti. EMF:n aiheuttama munasarjavaurio on siksi kumulatiivista ja pysyvää tavalla, joka ei koske miesten vaurioita.",
 
@@ -413,7 +415,7 @@ const COPY = {
     navPatokratiaDesc: "Poliittiset seuraukset",
     navPatopoliteiaDesc: "Sivilisatoriset seuraukset",
 
-    sSantiContext: "Vuoden 2024 meta-regressio 50+ globaalista tutkimuksesta, yhtenäistetty modernein LC-MS-mittausmenetelmin, vahvisti todellisen sekulaarilaskun 0,8–1,3 % vuodessa 1980-luvulta lähtien. Jopa painonsa vakiona pitäneet miehet osoittivat 19 %:n laskun 20 vuodessa (Mazur 2013, n=991). Lasku ei selity lihavuudella, tupakoinnilla, alkoholilla tai unella.",
+    sSantiContext: "Vuoden 2024 meta-regressio 50+ globaalista tutkimuksesta, yhtenäistetty modernein LC-MS-mittausmenetelmin, vahvisti todellisen sekulaarilaskun 0,8–1,3 % vuodessa 1980-luvulta lähtien. Jopa painonsa vakiona pitäneet miehet osoittivat 19 %:n laskun 20 vuodessa ([[ref:mazur2013|Mazur 2013]], n=991). Lasku ei selity lihavuudella, tupakoinnilla, alkoholilla tai unella.",
 
     sRecoveryTitle: "Palautumisnäyttö",
     sRecoveryBody1: "Vuoden 2022 interventiotutkimus (PMC9306162) mittasi hormonitasoja miehillä ja naisilla ennen ja jälkeen 2 kuukauden nukkumisen sängyssä, jossa oli EMF-suojausjärjestelmä. Tulokset: merkitsevät nousut plasman DHEA:ssa, noradrenaliinissa, serotoniinissa, oksitosiinissa, melatoniinissa JA testosteronissa samanaikaisesti. Kortisoli/DHEA-suhde laski.",
@@ -1162,7 +1164,9 @@ export default async function PathopegePage({
             ))}
             {d.sSantiContext && (
             <div className="rounded-lg border border-card-border bg-card-bg p-3 my-4 max-w-4xl">
-              <p className="text-xs text-muted-foreground leading-relaxed">{d.sSantiContext}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                <InlineReferenceText text={d.sSantiContext} locale={locale} />
+              </p>
             </div>
             )}
             <div className="mt-4 rounded-lg bg-blue-500/10 p-3">
@@ -1389,7 +1393,9 @@ export default async function PathopegePage({
       <section className="mb-16 border-t editorial-rule pt-8">
         <h2 className="text-2xl font-bold mb-4">{d.sRecoveryTitle}</h2>
         <div className="space-y-4 text-sm text-muted-foreground leading-relaxed max-w-4xl">
-          <p>{d.sRecoveryBody1}</p>
+          <p>
+            <InlineReferenceText text={d.sRecoveryBody1} locale={locale} />
+          </p>
           <p className="font-medium">{d.sRecoveryBody2}</p>
         </div>
       </section>

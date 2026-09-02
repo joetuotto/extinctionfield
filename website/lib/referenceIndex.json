@@ -2,8 +2,8 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1034,
-    "linkedReferences": 378
+    "totalReferences": 1062,
+    "linkedReferences": 396
   },
   "references": {
     "5g_hpa_axis": {
@@ -10345,6 +10345,286 @@
       "type": "journal",
       "linkStatus": "registered",
       "externalUrl": null
+    },
+    "kosfeld2005": {
+      "id": "kosfeld2005",
+      "authors": "Kosfeld M, Heinrichs M, Zak PJ, Fischbacher U, Fehr E",
+      "year": 2005,
+      "title": "Oxytocin increases trust in humans",
+      "journal": "Nature",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/nature03701"
+    },
+    "graham2009_moral_foundations": {
+      "id": "graham2009_moral_foundations",
+      "authors": "Graham J, Haidt J, Nosek BA",
+      "year": 2009,
+      "title": "Liberals and conservatives rely on different sets of moral foundations",
+      "journal": "Journal of Personality and Social Psychology",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1037/a0015141"
+    },
+    "dedreu2011_ethnocentrism": {
+      "id": "dedreu2011_ethnocentrism",
+      "authors": "De Dreu CKW, Greer LL, Van Kleef GA, Shalvi S, Handgraaf MJJ",
+      "year": 2011,
+      "title": "Oxytocin promotes human ethnocentrism",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1073/pnas.1015316108"
+    },
+    "dedreu2010_parochial_altruism": {
+      "id": "dedreu2010_parochial_altruism",
+      "authors": "De Dreu CKW, Greer LL, Handgraaf MJJ, Shalvi S, Van Kleef GA, et al.",
+      "year": 2010,
+      "title": "The neuropeptide oxytocin regulates parochial altruism in intergroup conflict among humans",
+      "journal": "Science",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1126/science.1189047"
+    },
+    "putnam2007_e_pluribus_unum": {
+      "id": "putnam2007_e_pluribus_unum",
+      "authors": "Putnam RD",
+      "year": 2007,
+      "title": "E Pluribus Unum: Diversity and Community in the Twenty-first Century",
+      "journal": "Scandinavian Political Studies",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1111/j.1467-9477.2007.00176.x"
+    },
+    "flegr2013_toxoplasma": {
+      "id": "flegr2013_toxoplasma",
+      "authors": "Flegr J",
+      "year": 2013,
+      "title": "Influence of latent Toxoplasma infection on human personality, physiology and morphology: pros and cons of the Toxoplasma-human model in studying the manipulation hypothesis",
+      "journal": "Journal of Experimental Biology",
+      "type": "review",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1242/jeb.073635"
+    },
+    "settle2010_drd4_ideology": {
+      "id": "settle2010_drd4_ideology",
+      "authors": "Settle JE, Dawes CT, Christakis NA, Fowler JH",
+      "year": 2010,
+      "title": "Friendships moderate an association between a dopamine gene variant and political ideology",
+      "journal": "The Journal of Politics",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1017/S0022381610000617"
+    },
+    "ebstein1996_drd4_novelty": {
+      "id": "ebstein1996_drd4_novelty",
+      "authors": "Ebstein RP, Novick O, Umansky R, Priel B, Osher Y, et al.",
+      "year": 1996,
+      "title": "Dopamine D4 receptor (D4DR) exon III polymorphism associated with the human personality trait of Novelty Seeking",
+      "journal": "Nature Genetics",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/ng0196-78"
+    },
+    "oxley2008_physiological_traits": {
+      "id": "oxley2008_physiological_traits",
+      "authors": "Oxley DR, Smith KB, Alford JR, Hibbing MV, Miller JL, et al.",
+      "year": 2008,
+      "title": "Political attitudes vary with physiological traits",
+      "journal": "Science",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1126/science.1157627"
+    },
+    "soares_cunha2016_d2_motivation": {
+      "id": "soares_cunha2016_d2_motivation",
+      "authors": "Soares-Cunha C, Coimbra B, David-Pereira A, Borges S, Pinto L, et al.",
+      "year": 2016,
+      "title": "Activation of D2 dopamine receptor-expressing neurons in the nucleus accumbens increases motivation",
+      "journal": "Nature Communications",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1038/ncomms11829"
+    },
+    "mcclure2004_delayed_reward": {
+      "id": "mcclure2004_delayed_reward",
+      "authors": "McClure SM, Laibson DI, Loewenstein G, Cohen JD",
+      "year": 2004,
+      "title": "Separate neural systems value immediate and delayed monetary rewards",
+      "journal": "Science",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1126/science.1100907"
+    },
+    "li_graham2017_sex_hormones": {
+      "id": "li_graham2017_sex_hormones",
+      "authors": "Li SH, Graham BM",
+      "year": 2017,
+      "title": "Why are women so vulnerable to anxiety, trauma-related and stress-related disorders? The potential role of sex hormones",
+      "journal": "The Lancet Psychiatry",
+      "type": "review",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/S2215-0366(16)30358-3"
+    },
+    "yuksel2016_emf_female_rats": {
+      "id": "yuksel2016_emf_female_rats",
+      "authors": "Yüksel M, Nazıroğlu M, Özkaya MO",
+      "year": 2016,
+      "title": "Long-term exposure to electromagnetic radiation from mobile phones and Wi-Fi devices decreases plasma prolactin, progesterone, and estrogen levels but increases uterine oxidative stress in pregnant rats and their offspring",
+      "journal": "Endocrine",
+      "type": "experimental",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1007/s12020-015-0795-3"
+    },
+    "carre2017_exogenous_t_aggression": {
+      "id": "carre2017_exogenous_t_aggression",
+      "authors": "Carré JM, Geniole SN, Ortiz TL, Bird BM, Videto A, Bonin PL",
+      "year": 2017,
+      "title": "Exogenous testosterone rapidly increases aggressive behavior in dominant and impulsive men",
+      "journal": "Biological Psychiatry",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.biopsych.2016.06.009"
+    },
+    "mcconnell2025_roman_lead": {
+      "id": "mcconnell2025_roman_lead",
+      "authors": "McConnell JR, Chellman NJ, Plach A, Wensman SM, Plunkett G, et al.",
+      "year": 2025,
+      "title": "Pan-European atmospheric lead pollution, enhanced blood lead levels, and cognitive decline from Roman-era mining and smelting",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1073/pnas.2419630121"
+    },
+    "alogaily2025_testosterone_politics": {
+      "id": "alogaily2025_testosterone_politics",
+      "authors": "Alogaily R, Zahedzadeh G, Pyle KV, Johnson CJ, Zak PJ",
+      "year": 2025,
+      "title": "Testosterone administration induces a red shift in Democrats",
+      "journal": "Brain and Behavior",
+      "type": "journal",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1002/brb3.70651"
+    },
+    "bosch_neumann2012_oxytocin_maternal": {
+      "id": "bosch_neumann2012_oxytocin_maternal",
+      "authors": "Bosch OJ, Neumann ID",
+      "year": 2012,
+      "title": "Both oxytocin and vasopressin are mediators of maternal care and aggression in rodents: from central release to sites of action",
+      "journal": "Hormones and Behavior",
+      "type": "review",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.yhbeh.2011.11.002"
+    },
+    "numan_young2016_bonding": {
+      "id": "numan_young2016_bonding",
+      "authors": "Numan M, Young LJ",
+      "year": 2016,
+      "title": "Neural mechanisms of mother-infant bonding and pair bonding: similarities, differences, and broader implications",
+      "journal": "Hormones and Behavior",
+      "type": "review",
+      "linkStatus": "verified",
+      "externalUrl": "https://doi.org/10.1016/j.yhbeh.2015.05.015"
+    },
+    "haidt2012_righteous_mind": {
+      "id": "haidt2012_righteous_mind",
+      "authors": "Haidt J",
+      "year": 2012,
+      "title": "The Righteous Mind: Why Good People Are Divided by Politics and Religion",
+      "journal": "Pantheon Books",
+      "type": "book",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "lukianoff_haidt2018_coddling": {
+      "id": "lukianoff_haidt2018_coddling",
+      "authors": "Lukianoff G, Haidt J",
+      "year": 2018,
+      "title": "The Coddling of the American Mind: How Good Intentions and Bad Ideas Are Setting Up a Generation for Failure",
+      "journal": "Penguin Press",
+      "type": "book",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "campbell_manning2018_victimhood": {
+      "id": "campbell_manning2018_victimhood",
+      "authors": "Campbell B, Manning J",
+      "year": 2018,
+      "title": "The Rise of Victimhood Culture: Microaggressions, Safe Spaces, and the New Culture Wars",
+      "journal": "Palgrave Macmillan",
+      "type": "book",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "baumeister2012_need_to_belong": {
+      "id": "baumeister2012_need_to_belong",
+      "authors": "Baumeister RF",
+      "year": 2012,
+      "title": "Need-to-belong theory",
+      "journal": "Handbook of Theories of Social Psychology (Sage)",
+      "type": "book-chapter",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "twenge2017_igen": {
+      "id": "twenge2017_igen",
+      "authors": "Twenge JM",
+      "year": 2017,
+      "title": "iGen: Why Today's Super-Connected Kids Are Growing Up Less Rebellious, More Tolerant, Less Happy — and Completely Unprepared for Adulthood",
+      "journal": "Atria Books",
+      "type": "book",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "olson1965_collective_action": {
+      "id": "olson1965_collective_action",
+      "authors": "Olson M",
+      "year": 1965,
+      "title": "The Logic of Collective Action: Public Goods and the Theory of Groups",
+      "journal": "Harvard University Press",
+      "type": "book",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "henrich2020_weirdest": {
+      "id": "henrich2020_weirdest",
+      "authors": "Henrich J",
+      "year": 2020,
+      "title": "The WEIRDest People in the World: How the West Became Psychologically Peculiar and Particularly Prosperous",
+      "journal": "Farrar, Straus and Giroux",
+      "type": "book",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "turchin2023_end_times": {
+      "id": "turchin2023_end_times",
+      "authors": "Turchin P",
+      "year": 2023,
+      "title": "End Times: Elites, Counter-Elites, and the Path of Political Disintegration",
+      "journal": "Penguin Press",
+      "type": "book",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "durkheim1897_suicide": {
+      "id": "durkheim1897_suicide",
+      "authors": "Durkheim É",
+      "year": 1897,
+      "title": "Le Suicide: Étude de sociologie",
+      "journal": "Félix Alcan",
+      "type": "book",
+      "linkStatus": "missing",
+      "externalUrl": null
+    },
+    "murthy2023_loneliness_advisory": {
+      "id": "murthy2023_loneliness_advisory",
+      "authors": "Murthy VH (Office of the U.S. Surgeon General)",
+      "year": 2023,
+      "title": "Our Epidemic of Loneliness and Isolation: The U.S. Surgeon General's Advisory on the Healing Effects of Social Connection and Community",
+      "journal": "U.S. Department of Health and Human Services",
+      "type": "report",
+      "linkStatus": "missing",
+      "externalUrl": null
     }
   },
   "aliases": {
@@ -11214,6 +11494,24 @@
     "pmcid:PMC12251677": "magnesium_testosterone_2025",
     "pmcid:PMC3596297": "camkii_pancreas_diabetes",
     "pmcid:PMC11508854": "hormesis_mitochondrial_2024",
-    "pmcid:PMC4839720": "elf_steroidogenesis_2016"
+    "pmcid:PMC4839720": "elf_steroidogenesis_2016",
+    "doi:10.1038/nature03701": "kosfeld2005",
+    "doi:10.1037/a0015141": "graham2009_moral_foundations",
+    "doi:10.1073/pnas.1015316108": "dedreu2011_ethnocentrism",
+    "doi:10.1126/science.1189047": "dedreu2010_parochial_altruism",
+    "doi:10.1111/j.1467-9477.2007.00176.x": "putnam2007_e_pluribus_unum",
+    "doi:10.1242/jeb.073635": "flegr2013_toxoplasma",
+    "doi:10.1017/s0022381610000617": "settle2010_drd4_ideology",
+    "doi:10.1038/ng0196-78": "ebstein1996_drd4_novelty",
+    "doi:10.1126/science.1157627": "oxley2008_physiological_traits",
+    "doi:10.1038/ncomms11829": "soares_cunha2016_d2_motivation",
+    "doi:10.1126/science.1100907": "mcclure2004_delayed_reward",
+    "doi:10.1016/s2215-0366(16)30358-3": "li_graham2017_sex_hormones",
+    "doi:10.1007/s12020-015-0795-3": "yuksel2016_emf_female_rats",
+    "doi:10.1016/j.biopsych.2016.06.009": "carre2017_exogenous_t_aggression",
+    "doi:10.1073/pnas.2419630121": "mcconnell2025_roman_lead",
+    "doi:10.1002/brb3.70651": "alogaily2025_testosterone_politics",
+    "doi:10.1016/j.yhbeh.2011.11.002": "bosch_neumann2012_oxytocin_maternal",
+    "doi:10.1016/j.yhbeh.2015.05.015": "numan_young2016_bonding"
   }
 }

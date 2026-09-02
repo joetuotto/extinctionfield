@@ -40,6 +40,8 @@ from berm.civilization.political_biology import (
     ENVIRONMENTS,
     INDIVIDUALIZING_FOUNDATIONS,
     POLICY_DOMAINS,
+    behavioral_sink_gradient,
+    civilizational_transmission_gradient,
     environment_biomarkers,
     environment_profile,
     foundation_collapse_order,
@@ -51,6 +53,7 @@ from berm.civilization.political_biology import (
     pathopolites_gradient,
     policy_vulnerability_profile,
     rk_environment_gradient,
+    signal_degradation_gradient,
     urban_rural_gradient,
 )
 
@@ -63,7 +66,8 @@ EXPORT_SCRIPT = BERM_DIR / "export_civilization.py"
 PATHOPOLITES = "pathopolites/page.tsx"
 PATOKRATIA = "patokratia/page.tsx"
 PATOPOLIS = "patopolis/page.tsx"
-PAGES = (PATHOPOLITES, PATOKRATIA, PATOPOLIS)
+PATOKINESIS = "patokinesis/page.tsx"
+PAGES = (PATHOPOLITES, PATOKRATIA, PATOPOLIS, PATOKINESIS)
 
 YEAR = 2025
 ENV_ORDER = ("amish", "rural", "suburban", "urban_residential", "urban_office")
@@ -117,6 +121,11 @@ def f3(value: float) -> str:
 
 def f2(value: float) -> str:
     return fmt(value, 2)
+
+
+def signed3(value: float) -> str:
+    """3 decimals with an explicit sign, as the BIS net-immunity column prints it."""
+    return f"{round(value, 3):+.3f}"
 
 
 def ratio_num(high: float, low: float, dp: int) -> str:
@@ -518,6 +527,63 @@ def page_checks() -> list[TableCheck | ProseCheck]:
         "patopolis sIQSBurnDesc BDNF decline across gradient (EN)", PATOPOLIS,
         r"BDNF decline \((\d+)% across the gradient\)", (decline_pct("BDNF"),),
     ))
+
+    # ---- patokinesis/page.tsx ----
+    signal = {entry["environment"]: entry for entry in signal_degradation_gradient(YEAR)}
+    sink = {entry["environment"]: entry for entry in behavioral_sink_gradient(YEAR)}
+    checks.append(TableCheck(
+        "patokinesis signal & sink gradient table (s6gradientData)", PATOKINESIS,
+        r'^\s*\{ signal: "[^"]+", pair: "', 5,
+        columns={
+            "signal": [f3(signal[env]["total_signal_strength"]) for env in ENV_ORDER],
+            "pair": [f3(signal[env]["pair_signal_compound"]) for env in ENV_ORDER],
+            "obesity": [f3(signal[env]["obesity_amplification"]) for env in ENV_ORDER],
+            "predation": [f3(sink[env]["normative_predation"]) for env in ENV_ORDER],
+            "capture": [f3(sink[env]["institutional_capture"]) for env in ENV_ORDER],
+            "sink": [f3(sink[env]["behavioral_sink"]) for env in ENV_ORDER],
+        },
+    ))
+    transmission = {
+        entry["environment"]: entry for entry in civilizational_transmission_gradient(YEAR)
+    }
+    checks.append(TableCheck(
+        "patokinesis BIS gradient table (s10gradientData)", PATOKINESIS,
+        r'^\s*\{ env: "[^"]+", bis: "', 5,
+        columns={
+            "bis": [f3(transmission[env]["behavioral_immune"]) for env in ENV_ORDER],
+            "destig": [f3(transmission[env]["destigmatization"]) for env in ENV_ORDER],
+            "inv": [f3(transmission[env]["stigma_inversion"]) for env in ENV_ORDER],
+            "net": [signed3(transmission[env]["net_immunity"]) for env in ENV_ORDER],
+        },
+    ))
+    checks.append(TableCheck(
+        "patokinesis transmission gradient table (s11gradientData)", PATOKINESIS,
+        r'^\s*\{ env: "[^"]+", sabotage: "', 5,
+        columns={
+            "sabotage": [f3(transmission[env]["recovery_sabotage"]) for env in ENV_ORDER],
+            "dependency": [f3(transmission[env]["dependency_transmission"]) for env in ENV_ORDER],
+            "contagion": [f3(transmission[env]["social_contagion"]) for env in ENV_ORDER],
+            "empathy": [f3(transmission[env]["empathy_weaponization"]) for env in ENV_ORDER],
+            "infection": [f3(transmission[env]["active_infection_seeking"]) for env in ENV_ORDER],
+            "composite": [f3(transmission[env]["transmission_composite"]) for env in ENV_ORDER],
+        },
+    ))
+    composite_span = (
+        f3(transmission["amish"]["transmission_composite"]),
+        f3(transmission["urban_office"]["transmission_composite"]),
+    )
+    checks.append(ProseCheck(
+        "patokinesis s11gradientKey composite span (EN)", PATOKINESIS,
+        r"composite transmission index goes from (\S+) \(amish — near-complete resistance\) "
+        r"to (\S+) \(urban office",
+        composite_span,
+    ))
+    checks.append(ProseCheck(
+        "patokinesis s11gradientKey composite span (FI)", PATOKINESIS,
+        r"Komposiittitransmissioindeksi nousee (\S+):sta \(amish — lähes täydellinen resistenssi\) "
+        r"(\S+):ään \(kaupunkitoimisto",
+        composite_span,
+    ))
     return checks
 
 
@@ -599,6 +665,7 @@ def test_export_json_metadata() -> None:
         "environments", "pathopolites", "political", "rk_strategy",
         "moral_breadth", "moral_distress", "foundation_collapse_order",
         "loyalty_collapse", "policy_vulnerability", "iq_shredder", "biomarkers",
+        "signal_degradation", "behavioral_sink", "transmission",
     }
     assert required <= set(payload), f"missing sections: {sorted(required - set(payload))}"
 
@@ -664,3 +731,20 @@ def test_export_json_matches_direct_model_calls() -> None:
         assert row["shredder_efficiency"] == round(entry["shredder_efficiency"], 3)
         assert row["reproductive_suppression"] == round(entry["reproductive_suppression"], 3)
         assert row["biocap"] == round(entry["biocap"], 3)
+
+    # patokinesis gradients: every exported column, not just the displayed ones.
+    for section, gradient in (
+        ("signal_degradation", signal_degradation_gradient(YEAR)),
+        ("behavioral_sink", behavioral_sink_gradient(YEAR)),
+        ("transmission", civilizational_transmission_gradient(YEAR)),
+    ):
+        rows = payload[section]["rows"]
+        assert [row["environment"] for row in rows] == list(ENV_ORDER), section
+        assert payload[section]["precision"] == 3, section
+        for entry, row in zip(gradient, rows):
+            assert row["environment"] == entry["environment"], section
+            assert row["emf_factor"] == ENVIRONMENTS[row["environment"]].emf_factor
+            for column, value in row.items():
+                if column in ("environment", "emf_factor"):
+                    continue
+                assert value == round(entry[column], 3), (section, row["environment"], column)

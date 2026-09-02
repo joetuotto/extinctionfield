@@ -147,6 +147,19 @@ const COPY = {
     s6title: "Signal & Sink Gradient",
     s6lead: "Model output across EMF environments (2025):",
     s6envLabels: ["Amish", "Rural", "Suburban", "Urban res.", "Urban office"],
+    // Rows follow s6envLabels. signal = total signal strength (S1), pair = five-way
+    // pairing compound (S2), obesity = aromatase amplification (S3), predation /
+    // capture = channels 1-2 (S5), sink = Calhoun behavioral sink composite (S4).
+    s6gradientData: [
+      { signal: "0.943", pair: "0.930", obesity: "0.002", predation: "0.011", capture: "0.026", sink: "0.013" },
+      { signal: "0.673", pair: "0.602", obesity: "0.091", predation: "0.113", capture: "0.098", sink: "0.085" },
+      { signal: "0.539", pair: "0.468", obesity: "0.195", predation: "0.197", capture: "0.161", sink: "0.152" },
+      { signal: "0.454", pair: "0.386", obesity: "0.288", predation: "0.264", capture: "0.232", sink: "0.217" },
+      { signal: "0.397", pair: "0.331", obesity: "0.366", predation: "0.318", capture: "0.291", sink: "0.271" },
+    ],
+    // Model-derived marker under the S6, S10 and S11 tables
+    modelDerived: "Model-derived values from the BERM environment biomarker profiles (2025), not directly measured.",
+    modelDerivedLink: "mathematical specification",
 
     // Section 10: Behavioral Immune System
     s10title: "The Behavioral Immune System",
@@ -519,6 +532,15 @@ const COPY = {
     s6title: "Signaali- ja nielugradientti",
     s6lead: "Mallitulokset EMF-ympäristöittäin (2025):",
     s6envLabels: ["Amish", "Maaseutu", "Lähiö", "Kaup. asuin.", "Kaup. toimisto"],
+    s6gradientData: [
+      { signal: "0.943", pair: "0.930", obesity: "0.002", predation: "0.011", capture: "0.026", sink: "0.013" },
+      { signal: "0.673", pair: "0.602", obesity: "0.091", predation: "0.113", capture: "0.098", sink: "0.085" },
+      { signal: "0.539", pair: "0.468", obesity: "0.195", predation: "0.197", capture: "0.161", sink: "0.152" },
+      { signal: "0.454", pair: "0.386", obesity: "0.288", predation: "0.264", capture: "0.232", sink: "0.217" },
+      { signal: "0.397", pair: "0.331", obesity: "0.366", predation: "0.318", capture: "0.291", sink: "0.271" },
+    ],
+    modelDerived: "Mallin tuottamia arvoja BERM:n ympäristökohtaisista biomarkkeriprofiileista (2025), ei suoraan mitattuja.",
+    modelDerivedLink: "matemaattinen spesifikaatio",
 
     // Section 10: Käyttäytymisimmuunijärjestelmä
     s10title: "Käyttäytymisimmuunijärjestelmä",
@@ -764,7 +786,7 @@ const COPY = {
     s3title: "アロマターゼループ", s3lead: "", s3steps: [], s3japan: "", s3japanText: "",
     s4title: "行動シンク", s4lead: "", s4calhounPhases: [], s4key: "",
     s5title: "捕食の5チャネル", s5lead: "", s5channels: [],
-    s6title: "信号・シンク勾配", s6lead: "", s6envLabels: [],
+    s6title: "信号・シンク勾配", s6lead: "", s6envLabels: [], s6gradientData: [] as never[], modelDerived: "", modelDerivedLink: "",
     s10title: "行動免疫システム", s10lead: "", s10bisExplain: "", s10destigTitle: "", s10destigLead: "", s10destigCategories: [], s10inversionTitle: "", s10inversionLead: "", s10gelfandTitle: "", s10gelfandLead: "", s10gradientTitle: "", s10gradientData: [], s10gradientKey: "",
     s11title: "社会的伝達チャネル", s11lead: "", s11channels: [], s11gradientTitle: "", s11gradientData: [], s11gradientKey: "",
     s7title: "国別検証", s7lead: "", s7countries: [], s7keyInsight: "",
@@ -786,7 +808,7 @@ const COPY = {
     s3title: "La boucle aromatase", s3lead: "", s3steps: [], s3japan: "", s3japanText: "",
     s4title: "Le puits comportemental", s4lead: "", s4calhounPhases: [], s4key: "",
     s5title: "Cinq canaux de predation", s5lead: "", s5channels: [],
-    s6title: "Gradient signal et puits", s6lead: "", s6envLabels: [],
+    s6title: "Gradient signal et puits", s6lead: "", s6envLabels: [], s6gradientData: [] as never[], modelDerived: "", modelDerivedLink: "",
     s10title: "Systeme immunitaire comportemental", s10lead: "", s10bisExplain: "", s10destigTitle: "", s10destigLead: "", s10destigCategories: [], s10inversionTitle: "", s10inversionLead: "", s10gelfandTitle: "", s10gelfandLead: "", s10gradientTitle: "", s10gradientData: [], s10gradientKey: "",
     s11title: "Canaux de transmission sociale", s11lead: "", s11channels: [], s11gradientTitle: "", s11gradientData: [], s11gradientKey: "",
     s7title: "Validation par pays", s7lead: "", s7countries: [], s7keyInsight: "",
@@ -808,7 +830,7 @@ const COPY = {
     s3title: "아로마타제 루프", s3lead: "", s3steps: [], s3japan: "", s3japanText: "",
     s4title: "행동 싱크", s4lead: "", s4calhounPhases: [], s4key: "",
     s5title: "포식의 5채널", s5lead: "", s5channels: [],
-    s6title: "신호 및 싱크 기울기", s6lead: "", s6envLabels: [],
+    s6title: "신호 및 싱크 기울기", s6lead: "", s6envLabels: [], s6gradientData: [] as never[], modelDerived: "", modelDerivedLink: "",
     s10title: "행동 면역 시스템", s10lead: "", s10bisExplain: "", s10destigTitle: "", s10destigLead: "", s10destigCategories: [], s10inversionTitle: "", s10inversionLead: "", s10gelfandTitle: "", s10gelfandLead: "", s10gradientTitle: "", s10gradientData: [], s10gradientKey: "",
     s11title: "사회적 전달 채널", s11lead: "", s11channels: [], s11gradientTitle: "", s11gradientData: [], s11gradientKey: "",
     s7title: "국가별 검증", s7lead: "", s7countries: [], s7keyInsight: "",
@@ -1057,6 +1079,48 @@ export default async function PatokinesiPage({
           </div>
         </section>
 
+        {/* S6: Signal & sink gradient */}
+        {d.s6gradientData.length > 0 && (
+          <section className="mb-20">
+            <h2 className="text-2xl font-bold mb-4">{d.s6title}</h2>
+            <p className="text-base leading-relaxed text-foreground/80 mb-6 max-w-3xl">
+              {d.s6lead}
+            </p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="border-b border-foreground/10">
+                    <th className="text-left py-2 pr-4 text-xs uppercase tracking-wider text-muted-foreground">Env</th>
+                    <th className="text-right py-2 px-2 text-xs uppercase tracking-wider text-muted-foreground">Signal</th>
+                    <th className="text-right py-2 px-2 text-xs uppercase tracking-wider text-muted-foreground">Pair</th>
+                    <th className="text-right py-2 px-2 text-xs uppercase tracking-wider text-muted-foreground">Obesity</th>
+                    <th className="text-right py-2 px-2 text-xs uppercase tracking-wider text-muted-foreground">Predation</th>
+                    <th className="text-right py-2 px-2 text-xs uppercase tracking-wider text-muted-foreground">Capture</th>
+                    <th className="text-right py-2 pl-2 text-xs uppercase tracking-wider text-red-500 font-bold">Sink</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {d.s6gradientData.map((row, i) => (
+                    <tr key={i} className="border-b border-foreground/5">
+                      <td className="py-2 pr-4 font-medium">{d.s6envLabels[i]}</td>
+                      <td className="py-2 px-2 text-right font-mono text-teal-600">{row.signal}</td>
+                      <td className="py-2 px-2 text-right font-mono text-teal-600">{row.pair}</td>
+                      <td className="py-2 px-2 text-right font-mono text-amber-600">{row.obesity}</td>
+                      <td className="py-2 px-2 text-right font-mono text-foreground/60">{row.predation}</td>
+                      <td className="py-2 px-2 text-right font-mono text-foreground/60">{row.capture}</td>
+                      <td className="py-2 pl-2 text-right font-mono font-bold text-red-600">{row.sink}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mb-6 italic max-w-3xl">
+              {d.modelDerived}{" "}
+              <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+            </p>
+          </section>
+        )}
+
         {/* S10: Behavioral Immune System */}
         {d.s10destigCategories.length > 0 && (
           <section className="mb-20">
@@ -1133,6 +1197,10 @@ export default async function PatokinesiPage({
                     </tbody>
                   </table>
                 </div>
+                <p className="text-xs text-muted-foreground mb-6 italic max-w-3xl">
+                  {d.modelDerived}{" "}
+                  <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+                </p>
                 <p className="text-sm text-foreground/60 leading-relaxed mb-8 max-w-3xl">
                   {d.s10gradientKey}
                 </p>
@@ -1211,6 +1279,10 @@ export default async function PatokinesiPage({
                     </tbody>
                   </table>
                 </div>
+                <p className="text-xs text-muted-foreground mb-6 italic max-w-3xl">
+                  {d.modelDerived}{" "}
+                  <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+                </p>
                 <p className="text-sm text-foreground/60 leading-relaxed mb-8 max-w-3xl">
                   {d.s11gradientKey}
                 </p>

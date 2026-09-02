@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, AlertTriangle, Baby, Building2, Users, Brain, TrendingDown, Target } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
 import { TranslationNotice } from "@/components/TranslationNotice";
+import { ClaimRef } from "@/components/ClaimRef";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 
 const COPY = {
@@ -164,7 +165,7 @@ const COPY = {
       },
       {
         prediction: "Male provocation response declines",
-        basis: "T → reactive aggression (Carré 2017, n=308)",
+        basis: "T → reactive aggression ([[ref:carre2017_exogenous_t_aggression|Carré 2017]], n=308)",
         observed:
           "Declining violent crime rates, reduced confrontation willingness, conflict avoidance",
         consistent: true,
@@ -178,7 +179,7 @@ const COPY = {
       },
       {
         prediction: "Male motivation/reward sensitivity declines",
-        basis: "T↓ → DA↓ → anhedonia (Soares-Cunha 2016)",
+        basis: "T↓ → DA↓ → anhedonia ([[ref:soares_cunha2016_d2_motivation|Soares-Cunha 2016]])",
         observed:
           "Rising depression, 'failure to launch', NEET rates increasing, gaming/streaming as reward substitution",
         consistent: true,
@@ -194,7 +195,7 @@ const COPY = {
       {
         prediction: "Institutional trust declines globally",
         basis:
-          "OT → trust (Kosfeld 2005, Nature). EMF → vagal tone ↓ → OT ↓.",
+          "OT → trust ([[ref:kosfeld2005|Kosfeld 2005, Nature]]). EMF → vagal tone ↓ → OT ↓.",
         observed:
           "Edelman 2025: trust in all institutions at historic lows. Loneliness epidemic declared. Social capital declining.",
         consistent: true,
@@ -225,7 +226,7 @@ const COPY = {
 
     spolarTitle: "Polarization: digital courage, physical conformity",
     spolarBody:
-      "The audience effect RCT (2020) showed that low testosterone increases strategic prosociality — saying what the audience expects rather than what you believe. The provocation RCT (Carré 2017) showed that low testosterone reduces reactive response to injustice. Together, these predict a specific pattern: people will be conformist in physical presence but confrontational from behind screens.",
+      "The audience effect RCT (2020) showed that low testosterone increases strategic prosociality — saying what the audience expects rather than what you believe. The provocation RCT ([[ref:carre2017_exogenous_t_aggression|Carré 2017]]) showed that low testosterone reduces reactive response to injustice. Together, these predict a specific pattern: people will be conformist in physical presence but confrontational from behind screens.",
     spolarObserved:
       "This is precisely what is observed. Online polarization is at historic highs. Physical confrontation is at historic lows. People express views anonymously that they would never state in person. Comment sections are battlefields; meeting rooms are echo chambers.",
     spolarExplain:
@@ -239,7 +240,7 @@ const COPY = {
     spolarDigital: "Digital environment",
     spolarDigitalThreshold: "Near zero (anonymity, distance)",
     spolarDigitalBehavior: "Outrage, polarization, confrontation",
-    spolarDigitalRct: "Carré 2017: provocation response persists when cost is low",
+    spolarDigitalRct: "[[ref:carre2017_exogenous_t_aggression|Carré 2017]]: provocation response persists when cost is low",
 
     ssafetyTitle: "Safety-seeking: hormonal threshold, not value choice",
     ssafetyBody:
@@ -345,7 +346,7 @@ const COPY = {
       'Low dopamine means natural rewards — relationships, parenting, community participation, quiet evenings — feel insufficient. The brain seeks stronger stimulation: screens, work, novelty, consumption. Each of these increases EMF exposure, which further suppresses dopamine, which drives more seeking. This is the biological mechanism behind the "rat race" that Land describes economically. The career treadmill is not a cultural choice — it is a dopaminergic trap. People work harder for diminishing subjective reward, not because they rationally prefer career over family, but because the neurological machinery that makes family feel rewarding has been degraded. High cortisol adds anxiety-driven productivity: working not for reward but to avoid the discomfort of not working.',
     sIQSTime: "Time preference shift",
     sIQSTimeDesc:
-      "Children are a 20+ year investment with uncertain future payoff. Making this investment requires neurological capacity to value distant future rewards over immediate costs. Dopamine regulates delayed gratification (McClure 2004); BDNF supports abstract future-modeling. When both decline, temporal discounting steepens — the present becomes heavier, the future lighter. This is not a philosophical shift toward individualism. It is a neurological devaluation of long-horizon investments. A population whose time preference has shifted biologically will postpone or forgo reproduction even when economic conditions are favorable, because the hormonal threshold for committing to a decades-long project has risen above the reward signal the brain can generate.",
+      "Children are a 20+ year investment with uncertain future payoff. Making this investment requires neurological capacity to value distant future rewards over immediate costs. Dopamine regulates delayed gratification ([[ref:mcclure2004_delayed_reward|McClure 2004]]); BDNF supports abstract future-modeling. When both decline, temporal discounting steepens — the present becomes heavier, the future lighter. This is not a philosophical shift toward individualism. It is a neurological devaluation of long-horizon investments. A population whose time preference has shifted biologically will postpone or forgo reproduction even when economic conditions are favorable, because the hormonal threshold for committing to a decades-long project has risen above the reward signal the brain can generate.",
     sIQSBurn: "Genetic burn rate",
     sIQSBurnDesc:
       "The TFR alone underestimates the biological cost. Even the children who are born carry epigenetic damage — CaMKII-mediated methylation changes that alter gene expression in the next generation. BDNF decline (28% across the gradient) reflects neurodevelopmental impact; melatonin decline reflects disrupted developmental timing. The shredder does not merely prevent births — it degrades the biological quality of the births that occur. This means the commonly cited sub-replacement fertility figures are optimistic: the actual genetic capital destruction exceeds what the fertility rate suggests.",
@@ -375,8 +376,8 @@ const COPY = {
     sIQSLit: [
       "Spandrell (2013): Singapore as IQ shredder — selective immigration concentrates talent, urban environment suppresses their fertility to 0.78.",
       "Land (2014): first-order eugenics produces second-order dysgenics. The most economically optimized environments are the most biologically destructive.",
-      "McClure et al. (2004, Science): separate neural systems for immediate vs delayed rewards. Dopaminergic midbrain mediates delayed reward valuation.",
-      "Levine et al. (2023): sperm concentration declined 62% globally 1973-2018. Decline is steeper in urbanized regions.",
+      "[[ref:mcclure2004_delayed_reward|McClure et al. (2004, Science)]]: separate neural systems for immediate vs delayed rewards. Dopaminergic midbrain mediates delayed reward valuation.",
+      "[[ref:levine2023_v2|Levine et al. (2023)]]: sperm concentration declined 62% globally 1973-2018. Decline is steeper in urbanized regions.",
       "Singapore Department of Statistics (2023): TFR 0.97 (2023), down from 1.82 (1980). Pro-natalist spending exceeds $2B/year with minimal effect.",
     ],
 
@@ -547,12 +548,12 @@ const COPY = {
     sCcbTitle: "Calcium Channel Blocker Evidence",
     sCcbBody: "Brain-penetrant CCBs are associated with ~12% lower risk of psychiatric and neurodegenerative outcomes (Molecular Psychiatry 2022, propensity-matched cohorts up to 322,814). A Finnish nationwide cohort of 60,000+ schizophrenia patients found dihydropyridine use associated with reduced psychiatric rehospitalization (Cells 2025). CCBs showed lower incidence of psychotic, affective, and anxiety disorders than beta-blockers (risk ratios 0.69–0.99; Journal of Hypertension, June 2025 meta-analysis of RCTs). These are cardiovascular patients receiving Ca²⁺ channel blockade for blood pressure — and getting neuropsychiatric protection as a side effect. This is the inverse of the BERM prediction: if Ca²⁺ overload produces psychiatric symptoms, Ca²⁺ blockade should alleviate them. It does.",
     sMagnesiumTitle: "Magnesium: The Missing Buffer",
-    sMagnesiumBody: "2.4 billion people (~31% of global population) fail to meet recommended magnesium intake (IJVNR 2025 systematic review). Magnesium functions as an endogenous calcium channel antagonist; deficiency results in elevated intracellular Ca²⁺ concentrations (PMC12616636). Magnesium has a regulatory role in testosterone biosynthesis (PMC12251677). The modern diet (processed food, depleted soil) has reduced magnesium intake at the same time that EMF exposure has increased Ca²⁺ load. These compound: less buffer + more disruptor = faster Ca²⁺ homeostasis degradation.",
+    sMagnesiumBody: "2.4 billion people (~31% of global population) fail to meet recommended magnesium intake ([[ref:magnesium_ca2_antagonist_2025|IJVNR 2025 systematic review]]). Magnesium functions as an endogenous calcium channel antagonist; deficiency results in elevated intracellular Ca²⁺ concentrations (PMC12616636). Magnesium has a regulatory role in testosterone biosynthesis (PMC12251677). The modern diet (processed food, depleted soil) has reduced magnesium intake at the same time that EMF exposure has increased Ca²⁺ load. These compound: less buffer + more disruptor = faster Ca²⁺ homeostasis degradation.",
     animalsFellHierarchy: "The sensitivity hierarchy follows from the mechanism:",
     animalsFellItems: [
       { species: "Amphibians", detail: "Moist skin = direct ionic coupling, thin eggs, aquatic larvae", evidence: "Global decline began ~1987 (GSM rollout)" },
       { species: "Insects", detail: "CRY-dependent navigation, small body mass, short generations", evidence: "Biomass −75% over 27 years (Krefeld)" },
-      { species: "Birds", detail: "CRY compass, migratory species most affected", evidence: "−29% in North America since 1970 (Rosenberg 2019)" },
+      { species: "Birds", detail: "CRY compass, migratory species most affected", evidence: "−29% in North America since 1970 ([[ref:rosenberg2019|Rosenberg 2019]])" },
       { species: "Mammals", detail: "Dry skin, large mass, long lifespan — cumulative", evidence: "Human biomarker decline 1990s+" },
     ],
     animalsFellConclusion: "This is not a list of separate crises. It is one mechanism (Ca²⁺/CRY disruption) propagating through species at rates determined by biological sensitivity. The canary is not a metaphor. It is a measurement.",
@@ -715,7 +716,7 @@ const COPY = {
       },
       {
         prediction: "Miesten provokaatiovaste vähenee",
-        basis: "T → reaktiivinen aggressio (Carré 2017, n=308)",
+        basis: "T → reaktiivinen aggressio ([[ref:carre2017_exogenous_t_aggression|Carré 2017]], n=308)",
         observed:
           "Väkivaltarikollisuus laskee, konfrontaatiovalmius vähenee, konfliktien välttely",
         consistent: true,
@@ -729,7 +730,7 @@ const COPY = {
       },
       {
         prediction: "Miesten motivaatio/palkkioherkkyys vähenee",
-        basis: "T↓ → DA↓ → anhedonia (Soares-Cunha 2016)",
+        basis: "T↓ → DA↓ → anhedonia ([[ref:soares_cunha2016_d2_motivation|Soares-Cunha 2016]])",
         observed:
           "Masennus kasvaa, ‘failure to launch’, NEET-osuus kasvaa, pelaaminen/suoratoisto palkkiosubstituuttina",
         consistent: true,
@@ -745,7 +746,7 @@ const COPY = {
       {
         prediction: "Institutionaalinen luottamus laskee maailmanlaajuisesti",
         basis:
-          "OT → luottamus (Kosfeld 2005, Nature). EMF → vagaalitonus ↓ → OT ↓.",
+          "OT → luottamus ([[ref:kosfeld2005|Kosfeld 2005, Nature]]). EMF → vagaalitonus ↓ → OT ↓.",
         observed:
           "Edelman 2025: luottamus kaikissa instituutioissa historiallisen matalalla. Yksinäisyysepidemia julistettu.",
         consistent: true,
@@ -776,7 +777,7 @@ const COPY = {
 
     spolarTitle: "Polarisaatio: digitaalinen rohkeus, fyysinen konformismi",
     spolarBody:
-      "Yleisövaikutus-RCT (2020) osoitti, että matala testosteroni lisää strategista prososiaalisuutta — sen sanomista mitä yleisö odottaa, ei sitä mitä uskoo. Provokaatio-RCT (Carré 2017) osoitti, että matala testosteroni vähentää reaktiivista vastetta epäoikeudenmukaisuuteen. Yhdessä nämä ennustavat spesifin kuvion: ihmiset ovat konformistisia fyysisessä läsnäolossa mutta konfrontatiivisia ruutujen takaa.",
+      "Yleisövaikutus-RCT (2020) osoitti, että matala testosteroni lisää strategista prososiaalisuutta — sen sanomista mitä yleisö odottaa, ei sitä mitä uskoo. Provokaatio-RCT ([[ref:carre2017_exogenous_t_aggression|Carré 2017]]) osoitti, että matala testosteroni vähentää reaktiivista vastetta epäoikeudenmukaisuuteen. Yhdessä nämä ennustavat spesifin kuvion: ihmiset ovat konformistisia fyysisessä läsnäolossa mutta konfrontatiivisia ruutujen takaa.",
     spolarObserved:
       "Juuri tätä havaitaan. Verkossa polarisaatio on historiallisen korkealla. Fyysinen konfrontaatio on historiallisen matalalla. Ihmiset ilmaisevat anonyymisti näkemyksiä, joita he eivät koskaan sanoisi kasvotusten.",
     spolarExplain:
@@ -790,7 +791,7 @@ const COPY = {
     spolarDigital: "Digitaalinen ympäristö",
     spolarDigitalThreshold: "Lähellä nollaa (anonymiteetti, etäisyys)",
     spolarDigitalBehavior: "Raivo, polarisaatio, konfrontaatio",
-    spolarDigitalRct: "Carré 2017: provokaatiovaste säilyy, kun kustannus on matala",
+    spolarDigitalRct: "[[ref:carre2017_exogenous_t_aggression|Carré 2017]]: provokaatiovaste säilyy, kun kustannus on matala",
 
     ssafetyTitle: "Turvallisuushakuisuus: hormonaalinen kynnys, ei arvovalinta",
     ssafetyBody:
@@ -896,7 +897,7 @@ const COPY = {
       'Matala dopamiini tarkoittaa, että luonnolliset palkinnot — ihmissuhteet, vanhemmuus, yhteisöosallistuminen, hiljaiset illat — tuntuvat riittämättömiltä. Aivot etsivät voimakkaampaa stimulaatiota: ruudut, työ, uutuudenviehätys, kuluttaminen. Jokainen näistä lisää EMF-altistusta, joka edelleen suppressoi dopamiinia, joka ajaa lisää etsimistä. Tämä on biologinen mekanismi Landin taloudellisesti kuvaaman "rottakilpailun" taustalla. Uraputki ei ole kulttuurinen valinta — se on dopaminerginen loukku. Ihmiset tekevät kovemmin töitä pienevästä subjektiivisesta palkinnosta, eivät siksi että he rationaalisesti preferoisivat uraa perheen sijaan, vaan koska neurologinen koneisto, joka tekee perheestä palkitsevan, on rapaututunut.',
     sIQSTime: "Aikapreferenssin siirtymä",
     sIQSTimeDesc:
-      "Lapset ovat yli 20 vuoden investointi epävarmalla tulevaisuuden tuotolla. Tämän investoinnin tekeminen vaatii neurologista kapasiteettia arvostaa kaukaisia tulevaisuuden palkintoja välittömien kustannusten edellä. Dopamiini säätelee viivästetyn palkinnon arvotusta (McClure 2004); BDNF tukee abstraktia tulevaisuusmallintamista. Kun molemmat laskevat, temporaalinen diskonttaus jyrkkenee — nykyhetki painaa enemmän, tulevaisuus kevyemmin. Tämä ei ole filosofinen siirtymä individualismiin. Se on neurologinen pitkän horisontin investointien devalvaatio.",
+      "Lapset ovat yli 20 vuoden investointi epävarmalla tulevaisuuden tuotolla. Tämän investoinnin tekeminen vaatii neurologista kapasiteettia arvostaa kaukaisia tulevaisuuden palkintoja välittömien kustannusten edellä. Dopamiini säätelee viivästetyn palkinnon arvotusta ([[ref:mcclure2004_delayed_reward|McClure 2004]]); BDNF tukee abstraktia tulevaisuusmallintamista. Kun molemmat laskevat, temporaalinen diskonttaus jyrkkenee — nykyhetki painaa enemmän, tulevaisuus kevyemmin. Tämä ei ole filosofinen siirtymä individualismiin. Se on neurologinen pitkän horisontin investointien devalvaatio.",
     sIQSBurn: "Geneettinen palamisnopeus",
     sIQSBurnDesc:
       "Pelkkä hedelmällisyysluku aliarvioi biologisen kustannuksen. Myös syntyvät lapset kantavat epigeneettistä vahinkoa — CaMKII-välitteisiä metylaatiomuutoksia, jotka muuttavat geeniekspressiota seuraavassa sukupolvessa. BDNF:n lasku (28% gradientin yli) heijastaa neurokehityksellistä vaikutusta; melatoniinin lasku heijastaa häiriintynyttä kehityksellistä ajoitusta. Silppuri ei pelkästään estä syntymisiä — se heikentää syntymien biologista laatua.",
@@ -926,8 +927,8 @@ const COPY = {
     sIQSLit: [
       "Spandrell (2013): Singapore IQ-silppurina — valikoiva maahanmuutto keskittää lahjakkuuden, kaupunkiympäristö suppressoi hedelmällisyyden 0,78:aan.",
       "Land (2014): ensimmäisen asteen eugeniikka tuottaa toisen asteen dysgeniikkaa. Taloudellisesti optimoiduimmat ympäristöt ovat biologisesti tuhoisimmat.",
-      "McClure ym. (2004, Science): erilliset hermojärjestelmät välittömille vs. viivästyneille palkinnoille. Dopaminerginen keskiaivo välittää viivästetyn palkinnon arvotusta.",
-      "Levine ym. (2023): siittiökonsentraatio laski 62% globaalisti 1973-2018. Lasku on jyrkempi kaupungistuneilla alueilla.",
+      "[[ref:mcclure2004_delayed_reward|McClure ym. (2004, Science)]]: erilliset hermojärjestelmät välittömille vs. viivästyneille palkinnoille. Dopaminerginen keskiaivo välittää viivästetyn palkinnon arvotusta.",
+      "[[ref:levine2023_v2|Levine ym. (2023)]]: siittiökonsentraatio laski 62% globaalisti 1973-2018. Lasku on jyrkempi kaupungistuneilla alueilla.",
       "Singapore Department of Statistics (2023): TFR 0,97 (2023), laskien 1,82:sta (1980). Pronatalistinen rahoitus ylittää 2 miljardia dollaria vuodessa minimaalisella vaikutuksella.",
     ],
 
@@ -1098,12 +1099,12 @@ const COPY = {
     sCcbTitle: "Kalsiumkanavasalpaajaevidenssi",
     sCcbBody: "Aivoihin pääsevät CCB:t ovat yhteydessä ~12 % matalampaan psykiatristen ja neurodegeneratiivisten lopputulosten riskiin (Molecular Psychiatry 2022, taipumuspistemäärällä sovitetut kohortit jopa 322 814). Suomalainen valtakunnallinen yli 60 000 skitsofreniapotilaan kohortti havaitsi dihydropyridiinin käytön yhteyden vähentyneisiin psykiatrisiin uudelleenhoitojaksoihin (Cells 2025). CCB:t osoittivat matalamman psykoottisten, affektiivisten ja ahdistushäiriöiden ilmaantuvuuden kuin beetasalpaajat (riskisuhteet 0,69–0,99; Journal of Hypertension, kesäkuu 2025, RCT-meta-analyysi). Nämä ovat sydän- ja verisuonipotilaita, jotka saavat Ca²⁺-kanavasalpausta verenpaineeseen — ja saavat neuropsykiatrista suojaa sivuvaikutuksena.",
     sMagnesiumTitle: "Magnesium: puuttuva puskuri",
-    sMagnesiumBody: "2,4 miljardia ihmistä (~31 % maailman väestöstä) ei täytä suositeltua magnesiumin saantia (IJVNR 2025 systemaattinen katsaus). Magnesium toimii endogeenisenä kalsiumkanava-antagonistina; puutos johtaa kohonneisiin solunsisäisiin Ca²⁺-pitoisuuksiin (PMC12616636). Magnesiumilla on säätelevä rooli testosteronin biosynteesissä (PMC12251677). Moderni ruokavalio (prosessoitu ruoka, köyhtyneet maaperät) on vähentänyt magnesiumin saantia samaan aikaan kun EMF-altistus on lisännyt Ca²⁺-kuormaa. Nämä yhdistyvät: vähemmän puskuria + enemmän häiritsijää = nopeampi Ca²⁺-homeostaasin heikkeneminen.",
+    sMagnesiumBody: "2,4 miljardia ihmistä (~31 % maailman väestöstä) ei täytä suositeltua magnesiumin saantia ([[ref:magnesium_ca2_antagonist_2025|IJVNR 2025 systemaattinen katsaus]]). Magnesium toimii endogeenisenä kalsiumkanava-antagonistina; puutos johtaa kohonneisiin solunsisäisiin Ca²⁺-pitoisuuksiin (PMC12616636). Magnesiumilla on säätelevä rooli testosteronin biosynteesissä (PMC12251677). Moderni ruokavalio (prosessoitu ruoka, köyhtyneet maaperät) on vähentänyt magnesiumin saantia samaan aikaan kun EMF-altistus on lisännyt Ca²⁺-kuormaa. Nämä yhdistyvät: vähemmän puskuria + enemmän häiritsijää = nopeampi Ca²⁺-homeostaasin heikkeneminen.",
     animalsFellHierarchy: "Herkkyyshierarkia seuraa mekanismista:",
     animalsFellItems: [
       { species: "Sammakkoeläimet", detail: "Kostea iho = suora ioninen kytkentä, ohuet munat, vesitoukat", evidence: "Maailmanlaajuinen lasku alkoi ~1987 (GSM-käyttöönotto)" },
       { species: "Hyönteiset", detail: "CRY-riippuvainen navigointi, pieni ruumiinmassa, lyhyet sukupolvet", evidence: "Biomassa −75 % 27 vuodessa (Krefeld)" },
-      { species: "Linnut", detail: "CRY-kompassi, muuttolinnut eniten kärsineet", evidence: "−29 % Pohjois-Amerikassa vuodesta 1970 (Rosenberg 2019)" },
+      { species: "Linnut", detail: "CRY-kompassi, muuttolinnut eniten kärsineet", evidence: "−29 % Pohjois-Amerikassa vuodesta 1970 ([[ref:rosenberg2019|Rosenberg 2019]])" },
       { species: "Nisäkkäät", detail: "Kuiva iho, suuri massa, pitkä elinikä — kumulatiivinen", evidence: "Ihmisten biomarkkereiden lasku 1990-luvulta+" },
     ],
     animalsFellConclusion: "Tämä ei ole lista erillisistä kriiseistä. Se on yksi mekanismi (Ca²⁺/CRY-häiriö), joka etenee lajien läpi nopeudella, jonka biologinen herkkyys määrää. Kaivoskanarialintu ei ole metafora. Se on mittaus.",
@@ -2660,7 +2661,7 @@ export default async function PatopolisPage({
             </div>
           </div>
           <div className="rounded-lg bg-amber-500/10 p-4 mb-4">
-            <p className="text-sm font-medium">{d.s5aCompound}</p>
+            <p className="text-sm font-medium"><ClaimRef claimId="claim.civilization.pairing-multiplicative-decline">{d.s5aCompound}</ClaimRef></p>
             {/* Multiplication diagram */}
             <div className="mt-3">
               <svg viewBox="0 0 420 60" className="w-full max-w-md mx-auto" role="img" aria-label="Multiplication diagram: 0.6 x 0.6 = 0.36">
@@ -2701,7 +2702,7 @@ export default async function PatopolisPage({
         {/* 5B: Fertility */}
         <div className="mb-8 rounded-xl border border-red-500/30 p-6">
           <h3 className="text-lg font-semibold mb-3">{d.s5bTitle}</h3>
-          <p className="font-mono text-sm mb-3 text-center">{d.s5bFormula}</p>
+          <p className="font-mono text-sm mb-3 text-center"><ClaimRef claimId="claim.civilization.tfr-multiplicative-decomposition">{d.s5bFormula}</ClaimRef></p>
           <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground mb-4">
             {d.s5bFactors.map((f, i) => (
               <li key={i}>
@@ -2775,7 +2776,7 @@ export default async function PatopolisPage({
         <div className="mb-8">
           <h3 className="text-lg font-semibold mb-3">{d.sPronatalistTitle}</h3>
           <div className="space-y-3 text-sm text-muted-foreground leading-relaxed max-w-4xl">
-            <p>{d.sPronatalistBody1}</p>
+            <p><ClaimRef claimId="claim.civilization.demand-capacity-separation">{d.sPronatalistBody1}</ClaimRef></p>
             <p>{d.sPronatalistBody2}</p>
             <p className="font-medium">{d.sPronatalistBody3}</p>
           </div>
@@ -3006,7 +3007,7 @@ export default async function PatopolisPage({
           ].map((item, i) => (
             <div key={i} className={`rounded-lg border border-${item.color}-500/30 bg-${item.color}-500/5 p-5`}>
               <h4 className="font-semibold mb-2">{i + 1}. {item.title}</h4>
-              <p className="text-sm leading-relaxed text-foreground/80">{item.desc}</p>
+              <p className="text-sm leading-relaxed text-foreground/80"><InlineReferenceText text={item.desc} locale={locale} /></p>
             </div>
           ))}
         </div>
@@ -3029,11 +3030,11 @@ export default async function PatopolisPage({
             </thead>
             <tbody>
               {[
-                { env: "Amish", rs: "0.075", da: "0.049", tp: "0.035", gb: "0.061", se: "0.060", bc: "0.855" },
-                { env: "Rural", rs: "0.424", da: "0.278", tp: "0.243", gb: "0.355", se: "0.344", bc: "0.631" },
-                { env: "Suburban", rs: "0.567", da: "0.374", tp: "0.297", gb: "0.488", se: "0.461", bc: "0.514" },
-                { env: "Urban res.", rs: "0.651", da: "0.443", tp: "0.336", gb: "0.569", se: "0.537", bc: "0.436" },
-                { env: "Urban office", rs: "0.706", da: "0.496", tp: "0.375", gb: "0.624", se: "0.592", bc: "0.380" },
+                { env: "Amish", rs: "0.075", da: "0.049", tp: "0.035", gb: "0.061", se: "0.060", bc: "0.955" },
+                { env: "Rural", rs: "0.424", da: "0.278", tp: "0.243", gb: "0.355", se: "0.344", bc: "0.731" },
+                { env: "Suburban", rs: "0.567", da: "0.374", tp: "0.297", gb: "0.488", se: "0.461", bc: "0.614" },
+                { env: "Urban res.", rs: "0.651", da: "0.443", tp: "0.336", gb: "0.569", se: "0.537", bc: "0.536" },
+                { env: "Urban office", rs: "0.706", da: "0.496", tp: "0.375", gb: "0.624", se: "0.592", bc: "0.480" },
               ].map((row, i) => (
                 <tr key={i} className={`border-b border-foreground/10 ${i === 4 ? "bg-red-500/5" : ""}`}>
                   <td className="py-2 px-2 font-medium">{row.env}</td>
@@ -3078,7 +3079,9 @@ export default async function PatopolisPage({
           <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">Literature</p>
           <ul className="space-y-1">
             {d.sIQSLit.map((ref: string, i: number) => (
-              <li key={i} className="text-xs text-muted-foreground leading-relaxed">{ref}</li>
+              <li key={i} className="text-xs text-muted-foreground leading-relaxed">
+                <InlineReferenceText text={ref} locale={locale} />
+              </li>
             ))}
           </ul>
         </div>
@@ -3146,19 +3149,25 @@ export default async function PatopolisPage({
         {/* Polarization */}
         <div className="mb-8 rounded-xl border p-6">
           <h3 className="text-lg font-semibold mb-3">{d.spolarTitle}</h3>
-          <p className="text-sm text-muted-foreground mb-3">{d.spolarBody}</p>
+          <p className="text-sm text-muted-foreground mb-3">
+            <InlineReferenceText text={d.spolarBody} locale={locale} />
+          </p>
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             <div className="rounded-lg bg-blue-500/10 p-4">
               <p className="text-sm font-semibold text-blue-400 mb-2">{d.spolarPhysical}</p>
               <p className="text-xs text-muted-foreground"><span className="font-medium">T threshold:</span> {d.spolarPhysicalThreshold}</p>
               <p className="text-xs text-muted-foreground mt-1"><span className="font-medium">Behavior:</span> {d.spolarPhysicalBehavior}</p>
-              <p className="text-xs text-muted-foreground/70 mt-1">{d.spolarPhysicalRct}</p>
+              <p className="text-xs text-muted-foreground/70 mt-1">
+                <InlineReferenceText text={d.spolarPhysicalRct} locale={locale} />
+              </p>
             </div>
             <div className="rounded-lg bg-amber-500/10 p-4">
               <p className="text-sm font-semibold text-amber-400 mb-2">{d.spolarDigital}</p>
               <p className="text-xs text-muted-foreground"><span className="font-medium">T threshold:</span> {d.spolarDigitalThreshold}</p>
               <p className="text-xs text-muted-foreground mt-1"><span className="font-medium">Behavior:</span> {d.spolarDigitalBehavior}</p>
-              <p className="text-xs text-muted-foreground/70 mt-1">{d.spolarDigitalRct}</p>
+              <p className="text-xs text-muted-foreground/70 mt-1">
+                <InlineReferenceText text={d.spolarDigitalRct} locale={locale} />
+              </p>
             </div>
           </div>
 
@@ -3226,14 +3235,18 @@ export default async function PatopolisPage({
           {d.sCcbBody && (
           <div className="rounded-lg border border-card-border bg-card-bg p-4 mb-4">
             <h4 className="text-sm font-semibold mb-2">{d.sCcbTitle}</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">{d.sCcbBody}</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              <InlineReferenceText text={d.sCcbBody} locale={locale} />
+            </p>
           </div>
           )}
           {/* Magnesium */}
           {d.sMagnesiumBody && (
           <div className="rounded-lg border border-card-border bg-card-bg p-4 mb-4">
             <h4 className="text-sm font-semibold mb-2">{d.sMagnesiumTitle}</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">{d.sMagnesiumBody}</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              <InlineReferenceText text={d.sMagnesiumBody} locale={locale} />
+            </p>
           </div>
           )}
           <p className="text-sm font-medium">{d.sfixableConclusion}</p>
@@ -3325,7 +3338,9 @@ export default async function PatopolisPage({
               <div>
                 <p className="text-sm font-semibold">{item.species}</p>
                 <p className="text-xs text-muted-foreground">{item.detail}</p>
-                <p className="text-xs text-muted-foreground italic mt-1">{item.evidence}</p>
+                <p className="text-xs text-muted-foreground italic mt-1">
+                  <InlineReferenceText text={item.evidence} locale={locale} />
+                </p>
               </div>
             </div>
           ))}

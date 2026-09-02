@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, AlertTriangle, Activity } from "lucide-react";
 import { pickCopy, locales } from "@/lib/i18n";
 import { TranslationNotice } from "@/components/TranslationNotice";
+import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { BiocapCivilizationChart, BiocapTimelineChart } from "@/components/BiocapCivilizationChart";
 import { MigrationGradientMap } from "@/components/MigrationGradientMap";
 import { BiomarkerRadar } from "@/components/BiomarkerRadar";
@@ -18,7 +19,7 @@ const COPY = {
       "This page traces the civilizational dimension of the BERM model: from the biological law that governs rise and fall, through the quantitative framework of BioCap, to the predictions and projections that follow.",
 
     sHistLawTitle: "The Biological Law of Civilizations",
-    sHistLawLead: "Throughout recorded history, civilizations have followed a remarkably consistent pattern: rise, flourish, decline. Eleven independent thinkers — from Vico (1725) to Turchin (2023) — converged on the same observation without knowing each other's work. BERM proposes the missing mechanism: the electromagnetic environment modulates biological capacity, which in turn drives civilizational dynamics.",
+    sHistLawLead: "Throughout recorded history, civilizations have followed a remarkably consistent pattern: rise, flourish, decline. Eleven independent thinkers — from Vico (1725) to [[ref:turchin2023_end_times|Turchin (2023)]] — converged on the same observation without knowing each other's work. BERM proposes the missing mechanism: the electromagnetic environment modulates biological capacity, which in turn drives civilizational dynamics.",
 
     sProphetsTitle: "The Prophets Were Right — And Wrong",
     sProphetsLead: "Eleven serious thinkers across three centuries independently documented the same civilizational pattern. They disagreed about method, ideology, and scope. Yet they converged on one observation: civilizations do not progress linearly. They rise and fall in cycles, and the late stages are marked by declining birth rates, increasing hedonism, loss of collective will, and pessimism.",
@@ -180,12 +181,12 @@ const COPY = {
     modelDerivedLink: "mathematical specification",
 
     sMcConnellTitle: "Lead as Historical Ca²⁺ Disruptor",
-    sMcConnellBody: "McConnell et al. (PNAS 2025) quantified this for Rome. Using three Arctic ice core records, atmospheric transport modeling, and modern epidemiology-based dose-response functions, they estimated that air lead concentrations exceeded 150 ng/m³ near metallurgical sources, with average enhancements of >1.0 ng/m³ across Europe during the Pax Romana. This translates to a 2.5–3 IQ point decline across the entire Empire's population. The mechanism: Pb²⁺ is a potent blocker of all VGCC types, disrupting the same Ca²⁺ homeostasis that EMF disrupts through a different upstream pathway.",
+    sMcConnellBody: "[[ref:mcconnell2025_roman_lead|McConnell et al. (PNAS 2025)]] quantified this for Rome. Using three Arctic ice core records, atmospheric transport modeling, and modern epidemiology-based dose-response functions, they estimated that air lead concentrations exceeded 150 ng/m³ near metallurgical sources, with average enhancements of >1.0 ng/m³ across Europe during the Pax Romana. This translates to a 2.5–3 IQ point decline across the entire Empire's population. The mechanism: Pb²⁺ is a potent blocker of all VGCC types, disrupting the same Ca²⁺ homeostasis that EMF disrupts through a different upstream pathway.",
 
     sCaEffectTitle: "The Ca²⁺ Effect",
     sCaEffectLead: "There is no Flynn effect. There is a Ca²⁺ homeostasis effect whose dominant disruptor shifts over time.",
     sCaEffectRising: "Rising phase (1930–1975): Lead removal restored Ca²⁺ homeostasis. US children's blood lead levels fell from 15 μg/dL to 2 μg/dL after the Clean Air Act (1970). IQ rose. Violent crime fell 56% (NBER: lead removal accounts for this). The 'Flynn effect' was partially recovery from lead-induced Ca²⁺ disruption.",
-    sCaEffectTurning: "Turning point (~1975): Bratsberg & Rogeberg (PNAS 2018, n=730,000+ Norwegian conscripts) showed IQ peaked for the 1975 birth cohort and declined ~0.2 points/year thereafter. The decline was WITHIN FAMILIES — later-born brothers scored lower than earlier-born brothers. Same parents, same genes. Environmental cause confirmed, genetic cause ruled out.",
+    sCaEffectTurning: "Turning point (~1975): [[ref:bratsberg2018|Bratsberg & Rogeberg (PNAS 2018, n=730,000+ Norwegian conscripts)]] showed IQ peaked for the 1975 birth cohort and declined ~0.2 points/year thereafter. The decline was WITHIN FAMILIES — later-born brothers scored lower than earlier-born brothers. Same parents, same genes. Environmental cause confirmed, genetic cause ruled out.",
     sCaEffectFalling: "Falling phase (1975–present): EMF replaces lead as the dominant Ca²⁺ disruptor. The inflection point (~1975) coincides with mass electrification densification, microprocessor proliferation, and precedes mobile network construction (1990s) and smartphone adoption (2007+). The anti-Flynn effect is now documented in Norway, Denmark, Finland, France, and the United Kingdom.",
     sCaEffectPrediction: "Prediction: Anti-Flynn should appear FIRST in countries where (a) lead exposure has already declined AND (b) EMF infrastructure is densest. It should appear LAST where lead exposure is still high AND EMF is sparse. This matches observation: Scandinavia first, Sub-Saharan Africa not yet.",
 
@@ -218,7 +219,7 @@ const COPY = {
       "Tama sivu kasittelee BERM-mallin sivilisaatioulottuvuutta: biologisesta laista, joka saatelee nousua ja rappiota, BioCap-viitekehyksen kautta ennusteisiin ja projektioihin.",
 
     sHistLawTitle: "Sivilisaatioiden biologinen laki",
-    sHistLawLead: "Kautta historian sivilisaatiot ovat seuranneet hämmästyttävän johdonmukaista kaavaa: nousu, kukoistus, rappio. Yksitoista itsenäistä ajattelijaa — Vicosta (1725) Turchiniin (2023) — päätyi samaan havaintoon toisistaan tietämättä. BERM ehdottaa puuttuvaa mekanismia: sähkömagneettinen ympäristö säätelee biologista kapasiteettia, joka puolestaan ohjaa sivilisaation dynamiikkaa.",
+    sHistLawLead: "Kautta historian sivilisaatiot ovat seuranneet hämmästyttävän johdonmukaista kaavaa: nousu, kukoistus, rappio. Yksitoista itsenäistä ajattelijaa — Vicosta (1725) [[ref:turchin2023_end_times|Turchiniin (2023)]] — päätyi samaan havaintoon toisistaan tietämättä. BERM ehdottaa puuttuvaa mekanismia: sähkömagneettinen ympäristö säätelee biologista kapasiteettia, joka puolestaan ohjaa sivilisaation dynamiikkaa.",
 
     sProphetsTitle: "Profeetat olivat oikeassa — ja väärässä",
     sProphetsLead: "Yksitoista vakavaa ajattelijaa kolmen vuosisadan aikana dokumentoivat itsenäisesti saman sivilisaatiokuvion. He olivat eri mieltä metodista, ideologiasta ja laajuudesta. Silti he yhtyvät yhteen havaintoon: sivilisaatiot eivät edisty lineaarisesti. Ne nousevat ja laskevat sykleissä, ja myöhäisvaiheita leimaavat laskeva syntyvyys, lisääntyvä hedonismi, kollektiivisen tahdon menetys ja pessimismi.",
@@ -245,7 +246,7 @@ const COPY = {
       "χ(λ) = geomagneettinen herkkyyskerroin (leveysasteriippuvainen)",
       "α = biologinen palautumiskerroin",
     ],
-    sSolarFormulaNote: "",
+    sSolarFormulaNote: "BioCap₀ on alkuperäinen biologinen kapasiteetti, joka on asetettu arvoon 1,0 altistumattomalle väestölle. Kaavassa on kaksi integraalia: ensimmäinen (vaurio) kerää altistusta aurinko-, kaupungistumis- ja sähköistymiskomponenteista leveysasteherkkyydellä χ(λ) painotettuna. Toinen (palautuminen) edustaa biologista korjautumista matalan altistuksen ikkunoissa, ja sitä ohjaa palautumiskerroin α (kalibroitu historiallisten renessanssien ajoitukseen). Palautumisen vaimennuskerroin σ(τ) kuvaa keskeisen sähköistymisen jälkeisen muutoksen: kun keinotekoinen EMF (E) hallitsee, aiemmin auringon minimien kanssa yhteen osuneet palautumisikkunat estyvät. Arvolla σ = 0,95 (moderni kaupunki) 95 % mahdollisesta palautumisesta on vaimennettu.",
     sSolarPrePost: "Pre-sähköinen (E=0): BioCap oskiloi → syklinen sivilisaatiodynamiikka. Post-sähköinen (E≫S): BioCap laskee monotonisesti → ei palautumisikkunaa.",
     sSolarRenaissance: "Kahdeksan kymmenestä merkittävästä eurooppalaisesta renessanssista tapahtui auringon suurminimien aikana tai heti niiden jälkeen: Italian renessanssi Spörer-minimin aikana, tieteellinen vallankumous Maunder-minimin aikana, saksalainen romantiikka Dalton-minimin aikana.",
 
@@ -279,7 +280,7 @@ const COPY = {
     sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)",
     sCulturalFormulaDesc: "missä N(t) = väestön koko, BioCap(t) = keskimääräinen biologinen kapasiteetti, η(t) = institutionaalinen tehokkuus",
     sCulturalBioTitle: "Kahdeksan sivilisaatiokapasiteetin biomarkkeria",
-    sCulturalBioWeightNote: "",
+    sCulturalBioWeightNote: "Painot kuvaavat kunkin biomarkkerin suhteellista osuutta kokonaisbiologisesta kapasiteetista, ja ne on asetettu empiirisen kirjallisuuden efektikokojen suuruuden perusteella: T ja OXT saavat suurimmat painot (0,20 kumpikin), koska ne ovat sekä yksilön lisääntymiskäyttäytymisen että kollektiivisen sosiaalisen koheesion ensisijaiset substraatit — kaksi akselia, jotka määräävät sivilisaation tuotoksen. DA ja MEL saavat 0,15 kumpikin motivaation ja kognitiivisen palautumisen ensisijaisina substraatteina. BDNF saa 0,10 kognitiivisen joustavuuden substraattina. CORT saa −0,10 (negatiivinen, koska se vaimentaa muita kaksoishormonihypoteesin ja HPA-välitteisen immunosuppression kautta). D ja B2 saavat 0,05 kumpikin suojaavina kofaktoreina. Painojen summa on 1,0. Herkkyysanalyysi (alla) osoittaa mallin olevan robusti ±20 %:n häiriölle missä tahansa yksittäisessä painossa.",
     sCulturalBiomarkers: [
       { symbol: "T", name: "Testosteroni", weight: 0.20, trend: "↓ 1,2 %/v", function: "Riskinotto, kilpailu, itsevarmuus, avaruudellinen kognitio", unwin: "Ekspansiivinen energia" },
       { symbol: "OXT", name: "Oksitosiini", weight: 0.20, trend: "↓ (välillinen)", function: "Sosiaalinen luottamus, ryhmäkoheesio, yhteistyö, parisidonta", unwin: "Koheesioenergia (asabiya)" },
@@ -303,7 +304,7 @@ const COPY = {
     sCulturalUnwinBody2: "Unwin katsoi tämän johtuvan freudilaisesta sublimaatiosta: seksuaalienergia, jota ei purettu seksuaalisesti, ohjautui kulttuuriseen tuotantoon. Tämä selitys ei ole vanhentunut hyvin. Mutta hänen datansa on. Kukaan ei ole replikoinut tutkimusta, mutta kukaan ei ole falsifioinut sitäkään. 86 yhteiskuntaa, nolla poikkeusta.",
     sCulturalUnwinBody3: "BERM esittää eri mekanismin samalle havainnolle. Seksuaalinen pidättyväisyys ei tuota kulttuurista energiaa. Sen sijaan sekä korkea seksuaalinen halu (joka vaatii säätelyä) että korkea kulttuurinen energia ovat saman biologisen tilan oireita: korkea testosteroni, korkea oksitosiini, korkea dopamiiniherkkyys, normaali melatoniini, matala kortisoli. Tässä tilassa väestöllä on sekä vahva libido (joka edellyttää sosiaalista säätelyä) että vahva sivilisaatiokapasiteetti. Kun biologinen kapasiteetti laskee — kumulatiivisen sähkömagneettisen altistuksen, kaupungistumisen kautta — sekä seksuaalinen halu että kulttuurinen energia laskevat yhdessä. Unwinin havaitsema korrelaatio oli todellinen. Kausaatio oli yhteinen ylävirran tekijä, jota hän ei olisi voinut tunnistaa vuonna 1934.",
     sCulturalPhasesTitle: "Unwinin neljä vaihetta",
-    sCulturalPhasesNote: "",
+    sCulturalPhasesNote: "Vaiherajat on kalibroitu Unwinin 86 yhteiskunnan aineistoon: zoistinen kynnys (0,55) on BioCap-taso, jonka alapuolella yksikään Unwinin otoksen yhteiskunta ei ylläpitänyt suurimuotoista rakentamista tai abstraktia ajatusperinnettä. Deistis-rationalistinen raja (0,90) on taso, jonka yläpuolelle kaikki 'ekspansiivista energiaa' osoittaneet Unwinin yhteiskunnat klusteroituivat. Manistinen väli (0,55–0,75) vastaa Unwinin yhteiskuntia, joiden koheesio laski mutta jotka eivät vielä olleet toimeentulotasolla. Nämä ovat empiirisesti ankkuroituja kynnysarvoja, eivät mielivaltaisia jakoja — niiden siirtäminen ±0,05 ei muuta yhdenkään mallin testijoukon merkittävän historiallisen sivilisaation vaiheluokitusta.",
     sCulturalPhases: [
       { name: "Zoistinen", biocap: "< 0,55", desc: "Toimeentulo ilman ekspansiota. Ei suurimuotoista rakentamista, abstraktia ajatteluperinnettä tai alueellista kunnianhimoa.", color: "red" },
       { name: "Manistinen", biocap: "0,55–0,75", desc: "Laskeva energia. Populismi, institutionaalinen rappio, polarisaatio, pronatalismipolitiikan epäonnistuminen. Länsimainen sivilisaatio 2015–nykyhetki.", color: "amber" },
@@ -339,7 +340,7 @@ const COPY = {
     sActivationChartZone2: "Vyöhyke 2: Siirtymäalue (agraarinen)",
     sActivationChartZone3: "Vyöhyke 3: Vahinko (urbaani/sähköistetty)",
     sActivationChartX: "Kokonais-EMF-kuorma (Ā_geo + Ā_infra + Ā_EMF)",
-    sActivationChartXNote: "",
+    sActivationChartXNote: "Ā_geo = aikakeskiarvoistettu geomagneettisen kentän voimakkuus (leveysasteriippuvainen, ~25–65 μT). Ā_infra = kumulatiivinen infrastruktuurin EMF (voimalinjat, kaupunkitiheys). Ā_EMF = keinotekoinen sähkömagneettinen säteily (langattomat verkot, laitteet, valaistus). Summa määrittää sijainnin hormeettisella käyrällä.",
     sActivationChartY: "BioCap",
     sActivationChartSun: "Sama aurinko, vastakkaiset vaikutukset",
     sActivationEpistemic: "",
@@ -359,12 +360,12 @@ const COPY = {
     modelDerivedLink: "matemaattinen spesifikaatio",
 
     sMcConnellTitle: "Lyijy historiallisena Ca²⁺-häiritsijänä",
-    sMcConnellBody: "McConnell ym. (PNAS 2025) kvantifioivat tämän Rooman osalta. Käyttäen kolmea arktista jääkairausnäytettä, ilmakehän kulkeutumismallinnusta ja moderniin epidemiologiaan perustuvia annos-vastekertoimia he arvioivat, että ilman lyijypitoisuudet ylittivät 150 ng/m³ metallurgisten lähteiden lähellä, ja eurooppalaiset keskimääräiset kohonneet tasot olivat >1,0 ng/m³ Pax Romanan aikana. Tämä vastaa 2,5–3 älykkyysosamaarapisteen laskua koko valtakunnan väestössä. Mekanismi: Pb²⁺ on voimakas kaikkien VGCC-tyyppien salpaaja, joka häiritsee samaa Ca²⁺-homeostaasia, jonka EMF häiritsee eri ylävirran reitin kautta.",
+    sMcConnellBody: "[[ref:mcconnell2025_roman_lead|McConnell ym. (PNAS 2025)]] kvantifioivat tämän Rooman osalta. Käyttäen kolmea arktista jääkairausnäytettä, ilmakehän kulkeutumismallinnusta ja moderniin epidemiologiaan perustuvia annos-vastekertoimia he arvioivat, että ilman lyijypitoisuudet ylittivät 150 ng/m³ metallurgisten lähteiden lähellä, ja eurooppalaiset keskimääräiset kohonneet tasot olivat >1,0 ng/m³ Pax Romanan aikana. Tämä vastaa 2,5–3 älykkyysosamaarapisteen laskua koko valtakunnan väestössä. Mekanismi: Pb²⁺ on voimakas kaikkien VGCC-tyyppien salpaaja, joka häiritsee samaa Ca²⁺-homeostaasia, jonka EMF häiritsee eri ylävirran reitin kautta.",
 
     sCaEffectTitle: "Ca²⁺-efekti",
     sCaEffectLead: "Flynn-efektiä ei ole. On Ca²⁺-homeostaasivaikutus, jonka hallitseva häiritsijä vaihtuu ajan myötä.",
     sCaEffectRising: "Nousuvaihe (1930–1975): Lyijyn poisto palautti Ca²⁺-homeostaasin. Yhdysvaltojen lasten veren lyijytasot laskivat 15 μg/dL:sta 2 μg/dL:iin Clean Air Actin (1970) jälkeen. Älykkyysosamaaara nousi. Väkivaltarikollisuus laski 56 %. 'Flynn-efekti' oli osittain palautumista lyijyn aiheuttamasta Ca²⁺-häiriöstä.",
-    sCaEffectTurning: "Käännepiste (~1975): Bratsberg ja Rogeberg (PNAS 2018, n=730 000+ norjalaista asevelvollista) osoittivat, että älykkyysosamaaara saavutti huippunsa vuoden 1975 syntymaakohortissa ja laski ~0,2 pistettä/vuosi sen jälkeen. Lasku tapahtui PERHEIDEN SISÄLLÄ — myöhemmin syntyneet veljet saivat matalampia tuloksia. Samat vanhemmat, samat geenit. Ympäristösyy vahvistettu, geneettinen syy suljettu pois.",
+    sCaEffectTurning: "Käännepiste (~1975): [[ref:bratsberg2018|Bratsberg ja Rogeberg (PNAS 2018, n=730 000+ norjalaista asevelvollista)]] osoittivat, että älykkyysosamaaara saavutti huippunsa vuoden 1975 syntymaakohortissa ja laski ~0,2 pistettä/vuosi sen jälkeen. Lasku tapahtui PERHEIDEN SISÄLLÄ — myöhemmin syntyneet veljet saivat matalampia tuloksia. Samat vanhemmat, samat geenit. Ympäristösyy vahvistettu, geneettinen syy suljettu pois.",
     sCaEffectFalling: "Laskuvaihe (1975–nykyhetki): EMF korvaa lyijyn hallitsevana Ca²⁺-häiritsijänä. Käännepiste (~1975) osuu yhteen sähköistyksen tihentymisen, mikroprosessorien leviämisen kanssa ja edeltää mobiiliverkkojen rakentamista (1990-luku) ja älypuhelinten käyttöönottoa (2007+). Anti-Flynn-efekti on nyt dokumentoitu Norjassa, Tanskassa, Suomessa, Ranskassa ja Yhdistyneessä kuningaskunnassa.",
     sCaEffectPrediction: "Ennuste: Anti-Flynnin pitäisi ilmaantua ENSIN maissa, joissa (a) lyijyaltistus on jo laskenut JA (b) EMF-infrastruktuuri on tiheintä. VIIMEISENÄ siellä missä lyijyaltistus on vielä korkea JA EMF on harvaa. Tämä vastaa havaintoa: Skandinavia ensin, Saharan eteläinen Afrikka ei vielä.",
 
@@ -704,7 +705,7 @@ export default async function PatopoliteiaPage({
       <section className="mb-16 border-t editorial-rule pt-8">
         <h2 className="text-2xl font-bold mb-2">{d.sHistLawTitle}</h2>
         <p className="text-sm leading-relaxed text-muted-foreground mb-6 max-w-4xl">
-          {d.sHistLawLead}
+          <InlineReferenceText text={d.sHistLawLead} locale={locale} />
         </p>
 
         {/* BioCap Formula */}
@@ -731,7 +732,9 @@ export default async function PatopoliteiaPage({
         {d.sMcConnellBody && (
         <div className="rounded-xl border border-card-border bg-card-bg p-4 mb-8 max-w-4xl">
           <h4 className="text-sm font-semibold mb-2">{d.sMcConnellTitle}</h4>
-          <p className="text-sm text-muted-foreground leading-relaxed">{d.sMcConnellBody}</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            <InlineReferenceText text={d.sMcConnellBody} locale={locale} />
+          </p>
         </div>
         )}
 
@@ -804,7 +807,9 @@ export default async function PatopoliteiaPage({
               <p className="text-sm text-muted-foreground leading-relaxed">{d.sCaEffectRising}</p>
             </div>
             <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-              <p className="text-sm text-muted-foreground leading-relaxed">{d.sCaEffectTurning}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <InlineReferenceText text={d.sCaEffectTurning} locale={locale} />
+              </p>
             </div>
             <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
               <p className="text-sm text-muted-foreground leading-relaxed">{d.sCaEffectFalling}</p>
@@ -951,7 +956,9 @@ export default async function PatopoliteiaPage({
           <h3 className="text-lg font-semibold mb-3">{d.sCamkiiTitle}</h3>
           <div className="space-y-3 text-sm text-muted-foreground leading-relaxed max-w-4xl">
             <p>{d.sCamkiiBody1}</p>
-            <p>{d.sCamkiiBody2}</p>
+            <p>
+              <InlineReferenceText text={d.sCamkiiBody2} locale={locale} />
+            </p>
             <p className="font-medium">{d.sCamkiiBody3}</p>
           </div>
         </div>
@@ -1091,7 +1098,9 @@ export default async function PatopoliteiaPage({
 
         {d.sHormesisEvidence && (
         <div className="rounded-xl border border-card-border bg-card-bg p-4 my-6 max-w-4xl">
-          <p className="text-sm text-muted-foreground leading-relaxed">{d.sHormesisEvidence}</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            <InlineReferenceText text={d.sHormesisEvidence} locale={locale} />
+          </p>
         </div>
         )}
         {d.sActivationChartXNote && (
