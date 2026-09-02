@@ -515,14 +515,16 @@ export default async function EvolutionPage({ params }: { params: Promise<{ loca
                   </p>
                 </div>
 
-                <div className="rounded border border-status-partial/30 bg-status-partial/5 p-3">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-status-partial mb-1">
-                    {d.predictionHeaders.falsification}
-                  </p>
-                  <p className="text-sm text-foreground-muted leading-relaxed">
-                    {pickField(pred, "falsification", locale)}
-                  </p>
-                </div>
+                {pickField(pred, "falsification", locale) && (
+                  <div className="rounded border border-status-partial/30 bg-status-partial/5 p-3">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-status-partial mb-1">
+                      {d.predictionHeaders.falsification}
+                    </p>
+                    <p className="text-sm text-foreground-muted leading-relaxed">
+                      {pickField(pred, "falsification", locale)}
+                    </p>
+                  </div>
+                )}
               </div>
             </article>
           ))}

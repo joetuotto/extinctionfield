@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CausalAtlas } from "@/components/CausalAtlas";
+import { InlineReferenceText } from "@/components/InlineReferenceText";
 import { NODES, ALL_STAGES, t } from "@/lib/causalAtlasData";
 import { pickCopy } from "@/lib/i18n";
 import type { Locale } from "@/lib/causalMapData";
@@ -73,7 +74,12 @@ function SSRFallback({ lang, pageLocale }: { lang: Locale; pageLocale: string })
                 return (
                   <li key={node.id} className="text-xs text-gray-300">
                     <strong>{t(node.label, lang)}</strong>
-                    {detail?.mechanism && <span className="text-gray-500"> — {detail.mechanism}</span>}
+                    {detail?.mechanism && (
+                      <span className="text-gray-500">
+                        {" — "}
+                        <InlineReferenceText text={detail.mechanism} locale={pageLocale} />
+                      </span>
+                    )}
                     {node.detail?.link && (
                       <a href={`/${pageLocale}${node.detail.link}`} className="ml-2 text-blue-400 hover:underline">
                         {d.readMore}

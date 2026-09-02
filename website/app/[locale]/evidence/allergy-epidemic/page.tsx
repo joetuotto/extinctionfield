@@ -276,7 +276,7 @@ export default async function AllergyEpidemicPage({ params }: { params: Promise<
           {d.cascadeSteps.map((s, i) => (
             <div key={i} className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4">
               <p className="text-sm font-semibold mb-1">{s.step}</p>
-              <p className="text-sm text-foreground-muted leading-relaxed">{s.detail}</p>
+              <p className="text-sm text-foreground-muted leading-relaxed"><InlineReferenceText text={s.detail} locale={locale} /></p>
             </div>
           ))}
         </div>

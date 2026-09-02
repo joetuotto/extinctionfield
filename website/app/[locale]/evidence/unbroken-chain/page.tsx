@@ -1673,7 +1673,9 @@ export default async function UnbrokenChainPage({
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-foreground-muted italic">{loop.status}</p>
+              <p className="text-xs text-foreground-muted italic">
+                <InlineReferenceText text={loop.status} locale={locale} />
+              </p>
             </div>
           ))}
         </div>
@@ -1692,7 +1694,9 @@ export default async function UnbrokenChainPage({
                 <p className="text-xs text-foreground-muted mb-2">{cl.desc}</p>
                 <ul className="space-y-1">
                   {cl.examples.map((ex, j) => (
-                    <li key={j} className="text-sm text-foreground-muted leading-relaxed pl-3 border-l-2 border-card-border">{ex}</li>
+                    <li key={j} className="text-sm text-foreground-muted leading-relaxed pl-3 border-l-2 border-card-border">
+                      <InlineReferenceText text={ex} locale={locale} />
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -1716,7 +1720,9 @@ export default async function UnbrokenChainPage({
                     <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted mb-1">
                       {d.falsificationTestLabel}
                     </p>
-                    <p className="text-sm text-foreground-muted leading-relaxed">{tier.test}</p>
+                    <p className="text-sm text-foreground-muted leading-relaxed">
+                      <InlineReferenceText text={tier.test} locale={locale} />
+                    </p>
                   </div>
                   <div className="rounded border border-card-border/60 bg-background p-3">
                     <p className="text-xs font-semibold uppercase tracking-wider text-foreground-muted mb-1">
@@ -1739,7 +1745,9 @@ export default async function UnbrokenChainPage({
           {d.progressivePoints.map((point, i) => (
             <div key={i} className="flex gap-2 text-sm text-foreground-muted leading-relaxed">
               <span className="text-green-500 shrink-0 mt-0.5">✓</span>
-              <p>{point}</p>
+              <p>
+                <InlineReferenceText text={point} locale={locale} />
+              </p>
             </div>
           ))}
         </div>
