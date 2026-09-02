@@ -29,7 +29,7 @@ EMF gradient:
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any
 
 from berm.civilization.biomarker_trajectories import biomarker_values_at
@@ -1173,7 +1173,6 @@ def moral_distress_index(
     indiv_active = mb["individualizing_active"]
 
     care_val = mf.get("care", 0)
-    fairness_val = mf.get("fairness", 0)
     authority_val = mf.get("authority", 0)
     loyalty_val = mf.get("loyalty", 0)
     sanctity_val = mf.get("sanctity", 0)
@@ -1425,8 +1424,6 @@ def loyalty_collapse_analysis(
 
     boundary_dissolution = round(max(0.0, 1.0 - loyalty_score), 4)
 
-    binding_mean = (loyalty_score + authority_score + sanctity_score) / 3.0
-    indiv_mean = (care_score + mf["fairness"] + mf["liberty"]) / 3.0
     care_dominance = round(
         care_score / max(0.01, care_score + loyalty_score + authority_score + sanctity_score),
         4,
@@ -1942,3 +1939,1995 @@ def pathopolites_gradient(year: float = 2025) -> list[dict[str, Any]]:
         results.append(profile)
 
     return results
+
+
+# ── Signal degradation — the third layer of pair-bonding collapse ──
+#
+# The BERM pair-bonding model captured motivational (T↓, DA↓) and
+# attachment (OXT↓) collapse. The signal degradation layer adds the
+# missing third mechanism: physical attractiveness signals are ALL
+# hormonally dependent, and degrade proportionally with biomarker state.
+#
+# Three signal categories:
+#
+# 1. Morphological signals — static body composition cues driven by
+#    sex hormones: waist-to-hip ratio (Lassek & Gaulin 2008), muscle
+#    mass (T → androgenic muscle), facial dimorphism (Penton-Voak 2001),
+#    breast/hip fat distribution (E-dependent).
+#
+# 2. Dynamic signals — behavioral/physiological cues that change in
+#    real-time: voice pitch (Pipitone 2008: fundamental frequency
+#    shifts across ovulatory cycle), facial expressiveness (DA →
+#    reward-driven social engagement), postural confidence (T → erect
+#    posture, CORT → slumped/defensive).
+#
+# 3. Cryptic signals — subtle cues below conscious awareness that
+#    drive mate preference: lip color shifts during ovulation (Burriss
+#    2015), body odor / MHC signaling (Wedekind 1995 sweaty T-shirt),
+#    limbal ring contrast (Peshek 2011), skin luminance and
+#    homogeneity (Jones 2004), pupil dilation during attraction.
+#
+# The pairing equation is multiplicative, not additive:
+#
+#   Pairing = male_approach × female_receptivity × male_signal ×
+#             female_signal × signal_perception_capacity
+#
+# If ANY factor approaches zero, pairing collapses regardless of the
+# others. This explains why interventions targeting single factors
+# (dating apps, fertility subsidies) fail — the compound probability
+# is already near zero.
+#
+# Key literature:
+#   Singh 1993 (WHR universal preference, cross-cultural N>1000)
+#   Jasienka 2004 (WHR → estradiol/progesterone, N=119)
+#   Lassek & Gaulin 2008 (WHR → DHA reserves → offspring cognition)
+#   Penton-Voak 2001 (facial masculinity preference cycles, N=39)
+#   Pipitone & Gallup 2008 (voice attractiveness cycles, N=10+N=38)
+#   Burriss 2015 (lip color redness across cycle, N=13)
+#   Wedekind 1995 (MHC-dependent odor preference, N=49m+49f)
+#   Peshek 2011 (limbal ring → health/age/attractiveness, N=4 studies)
+#   Kavanagh 2010 (mating sociometer: mate value tracks feedback)
+#   Berggren 2017 (conservative-attractiveness, N=2513, 4 countries)
+#   Kosinski 2021 (facial politics classification, 72% accuracy)
+#   Alogaily 2025 (T RCT → conservative shift, N=136)
+
+
+def morphological_signal_index(markers: dict[str, float]) -> float:
+    """Static body composition signals of mate quality.
+
+    WHR: estrogen-dependent fat distribution. Optimal female WHR
+    (0.67-0.70) requires functional HPG axis producing adequate E2
+    with low cortisol (which promotes visceral fat, raising WHR).
+    Singh 1993: cross-culturally preferred. Lassek & Gaulin 2008:
+    WHR predicts DHA reserves → offspring cognitive development.
+
+    Muscle mass: T-dependent. Men at baseline T of ~500ng/dL
+    maintain lean mass naturally; at ~300ng/dL (modern average),
+    muscle requires deliberate resistance training to maintain.
+
+    Facial dimorphism: T sculpts male jaw/brow, E2 sculpts female
+    cheekbones/lip fullness. Both require pubertal hormone exposure
+    and ongoing maintenance.
+
+    Returns 0 (fully degraded) to 1 (full signal strength).
+    """
+    t = markers.get("T", 0.5)
+    cort = markers.get("CORT", 0.5)
+    mel = markers.get("MEL", 0.5)
+
+    sex_hormone_signal = t * (1.0 - 0.35 * cort)
+    whr_signal = max(0.0, 1.0 - 0.6 * cort) * (0.6 + 0.4 * t)
+    sleep_recovery = 0.7 + 0.3 * mel
+    raw = (0.40 * sex_hormone_signal + 0.35 * whr_signal + 0.25 * sleep_recovery)
+    return round(max(0.0, min(1.0, raw)), 4)
+
+
+def dynamic_signal_index(markers: dict[str, float]) -> float:
+    """Real-time behavioral signals of mate quality.
+
+    Voice: fundamental frequency varies with T (men) and across
+    ovulatory cycle (women). Pipitone 2008: voice samples recorded
+    at high fertility rated more attractive. Low T → higher male
+    F0, lower vocal attractiveness.
+
+    Expressiveness: DA-driven reward circuit → social engagement,
+    smiling, animated facial expression, humor production.
+    Low DA → flat affect, reduced social signaling.
+
+    Postural confidence: T → upright, expansive posture (Carney
+    2010 power poses, though the self-report effects are debated,
+    the postural association with T is established). High CORT →
+    defensive, contracted posture.
+
+    Returns 0 (minimal signaling) to 1 (full dynamic signal).
+    """
+    t = markers.get("T", 0.5)
+    da = markers.get("DA", 0.5)
+    cort = markers.get("CORT", 0.5)
+    bdnf = markers.get("BDNF", 0.5)
+
+    voice_signal = t * (1.0 - 0.25 * cort)
+    expressiveness = da * (0.6 + 0.4 * bdnf)
+    postural = t * max(0.0, 1.0 - 0.4 * cort)
+    raw = 0.35 * voice_signal + 0.35 * expressiveness + 0.30 * postural
+    return round(max(0.0, min(1.0, raw)), 4)
+
+
+def cryptic_signal_index(markers: dict[str, float]) -> float:
+    """Subliminal signals below conscious detection threshold.
+
+    Lip color: Burriss 2015 measured lip redness across menstrual
+    cycle — peak redness at ovulation correlates with E2 surge.
+    Disrupted HPG axis → attenuated or absent lip color shift.
+
+    Body odor / MHC: Wedekind 1995 sweaty T-shirt experiment.
+    MHC-dissimilar odor preferred. Alvergne 2009: hormonal
+    contraception REVERSES MHC preference (women on pill prefer
+    MHC-similar men → suboptimal immune complement in offspring).
+    EMF-disrupted endocrine system plausibly produces analogous
+    signal distortion.
+
+    Limbal ring: Peshek 2011 — dark ring around iris correlates
+    with youth, health, and perceived attractiveness. Fades with
+    age and poor health. Melatonin-dependent melanocyte function.
+
+    Skin quality: Jones 2004 — homogeneity, luminance, and color
+    predict health and attractiveness. CORT → cortisol face (puffy,
+    uneven tone). MEL → melanocyte irregularity.
+
+    Returns 0 (signal abolished) to 1 (full cryptic signaling).
+    """
+    t = markers.get("T", 0.5)
+    mel = markers.get("MEL", 0.5)
+    cort = markers.get("CORT", 0.5)
+    oxt = markers.get("OXT", 0.5)
+
+    hormonal_cycling = t * max(0.0, 1.0 - 0.3 * cort)
+    melanocyte_function = mel * (0.7 + 0.3 * t)
+    odor_signaling = (0.5 * t + 0.5 * oxt) * max(0.0, 1.0 - 0.2 * cort)
+    skin_quality = max(0.0, 1.0 - 0.5 * cort) * (0.6 + 0.4 * mel)
+    raw = (
+        0.25 * hormonal_cycling
+        + 0.25 * melanocyte_function
+        + 0.25 * odor_signaling
+        + 0.25 * skin_quality
+    )
+    return round(max(0.0, min(1.0, raw)), 4)
+
+
+def obesity_amplification_index(markers: dict[str, float]) -> float:
+    """Obesity-aromatase positive feedback loop.
+
+    Fat tissue contains aromatase (CYP19A1) which converts T → E2.
+    More fat → more aromatase → less T → more fat → more aromatase.
+    Cohen 1999: aromatase activity proportional to adipose mass.
+
+    This is the secondary amplifier. Primary EMF damage lowers T
+    and DA directly. The metabolic consequence (increased adiposity
+    from DA↓ → reward-seeking eating, CORT↑ → visceral fat,
+    MEL↓ → circadian disruption → metabolic syndrome) then
+    FURTHER suppresses T via aromatase conversion.
+
+    Men: gynecomastia prevalence 32-65% (Braunstein 2007) — direct
+    evidence of T→E2 conversion in male adipose tissue.
+
+    Women: excess adiposity disrupts ovulatory cycling, raises
+    androgens (PCOS), and abolishes the subtle hormonal fluctuations
+    that drive cryptic mate signals.
+
+    Wang 2001: obese individuals show reduced D2 receptor availability
+    (dopamine). Meo 2013: EMF exposure → metabolic markers.
+
+    Returns 0 (no amplification) to 1 (maximal aromatase loop).
+    """
+    t = markers.get("T", 0.5)
+    da = markers.get("DA", 0.5)
+    cort = markers.get("CORT", 0.5)
+    mel = markers.get("MEL", 0.5)
+
+    adiposity_drivers = (
+        0.30 * (1.0 - da)
+        + 0.30 * cort
+        + 0.25 * (1.0 - mel)
+        + 0.15 * (1.0 - t)
+    )
+    aromatase_conversion = adiposity_drivers * (1.0 - t)
+    return round(max(0.0, min(1.0, aromatase_conversion)), 4)
+
+
+def signal_perception_capacity(markers: dict[str, float]) -> float:
+    """Capacity to perceive and respond to mate signals.
+
+    Even if signals are sent, they must be received. Perception
+    requires:
+    - DA: reward salience — noticing and valuing attractive signals
+    - T: sexual motivation — caring about mate quality
+    - BDNF: cognitive processing of complex social information
+    - MEL: circadian regulation of social timing (evening/night
+      social interaction is when most mate assessment occurs)
+
+    Digital displacement (Rodgers 2020): screen time replaces
+    face-to-face interaction → fewer opportunities for cryptic
+    signal assessment (odor, subtle color, voice in person).
+
+    Li 2018 evolutionary mismatch: the detection systems evolved
+    for close-range, in-person assessment are bypassed by digital
+    mediation.
+
+    Returns 0 (signal-blind) to 1 (full perception).
+    """
+    da = markers.get("DA", 0.5)
+    t = markers.get("T", 0.5)
+    bdnf = markers.get("BDNF", 0.5)
+    mel = markers.get("MEL", 0.5)
+
+    reward_salience = da * (0.6 + 0.4 * t)
+    cognitive_processing = bdnf * (0.7 + 0.3 * mel)
+    raw = 0.45 * reward_salience + 0.35 * cognitive_processing + 0.20 * t
+    return round(max(0.0, min(1.0, raw)), 4)
+
+
+def pair_signal_compound(markers: dict[str, float]) -> float:
+    """Five-way multiplicative pairing probability.
+
+    Pairing = male_approach × female_receptivity × male_signal ×
+              female_signal × signal_perception
+
+    This replaces the 2-way model (drive × bonding). The critical
+    insight: multiplication means ANY factor near zero collapses
+    the entire probability. A man with high T but degraded signals
+    still fails. A woman with intact signals but no perception of
+    male signals still fails.
+
+    For environment-level analysis, we use the sex-averaged
+    biomarker state and compute each factor from the same markers.
+    The real population has variance — some individuals will be
+    above/below average on each factor. The compound probability
+    represents the POPULATION-LEVEL pairing rate, not individual.
+
+    Returns 0 (pairing impossible) to 1 (full pairing capacity).
+    """
+    t = markers.get("T", 0.5)
+    oxt = markers.get("OXT", 0.5)
+    da = markers.get("DA", 0.5)
+    cort = markers.get("CORT", 0.5)
+
+    male_approach = t * da * max(0.0, 1.0 - 0.4 * cort)
+    female_receptivity = oxt * max(0.0, 1.0 - 0.3 * cort) * (0.5 + 0.5 * t)
+    male_signal = morphological_signal_index(markers)
+    female_signal = (
+        0.50 * cryptic_signal_index(markers)
+        + 0.50 * morphological_signal_index(markers)
+    )
+    perception = signal_perception_capacity(markers)
+
+    compound = (
+        male_approach * female_receptivity * male_signal
+        * female_signal * perception
+    ) ** 0.2
+    return round(max(0.0, min(1.0, compound)), 4)
+
+
+SIGNAL_DEGRADATION_FUNCTIONS: dict[str, Any] = {
+    "morphological_signal": morphological_signal_index,
+    "dynamic_signal": dynamic_signal_index,
+    "cryptic_signal": cryptic_signal_index,
+    "obesity_amplification": obesity_amplification_index,
+    "signal_perception": signal_perception_capacity,
+    "pair_signal_compound": pair_signal_compound,
+}
+
+
+def signal_degradation_profile(markers: dict[str, float]) -> dict[str, Any]:
+    """Full signal degradation analysis for a biomarker state.
+
+    Returns all three signal categories, the obesity amplifier,
+    perception capacity, the compound pairing probability, and
+    a composite degradation index.
+    """
+    morph = morphological_signal_index(markers)
+    dyn = dynamic_signal_index(markers)
+    crypt = cryptic_signal_index(markers)
+    obesity = obesity_amplification_index(markers)
+    percep = signal_perception_capacity(markers)
+    compound = pair_signal_compound(markers)
+
+    total_signal = (morph * dyn * crypt) ** (1.0 / 3.0)
+    degradation = 1.0 - total_signal
+
+    return {
+        "morphological_signal": morph,
+        "dynamic_signal": dyn,
+        "cryptic_signal": crypt,
+        "total_signal_strength": round(total_signal, 4),
+        "signal_degradation": round(degradation, 4),
+        "obesity_amplification": obesity,
+        "signal_perception": percep,
+        "pair_signal_compound": compound,
+    }
+
+
+def signal_degradation_gradient(year: float = 2025) -> list[dict[str, Any]]:
+    """Signal degradation across all EMF environments."""
+    env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+    results: list[dict[str, Any]] = []
+
+    for env_name in env_order:
+        markers = environment_biomarkers(env_name, year)
+        profile = signal_degradation_profile(markers)
+        profile["environment"] = env_name
+        results.append(profile)
+
+    return results
+
+
+# ── Behavioral sink — predatory normalization ──
+#
+# Calhoun's Universe 25 (1968-1973) demonstrated that population
+# collapse is not caused by resource scarcity but by behavioral
+# pathology. With unlimited food, water, and space, the mouse
+# population peaked at 2200 and went extinct.
+#
+# The critical phase C→D mechanism: dysfunctional individuals
+# began ACTIVELY DESTROYING the reproductive capacity of the
+# remaining functional individuals. Males attacked pups of
+# still-reproducing pairs. "Beautiful ones" withdrew entirely.
+# The functional minority was besieged from within.
+#
+# The BERM equivalent operates through five channels:
+#
+# 1. Normative predation — the degraded majority socially punishes
+#    the healthy minority for maintaining healthy phenotypes.
+#    Body positivity movement attacks healthy weight maintenance.
+#    "Toxic masculinity" discourse pathologizes healthy T expression.
+#    Competence displays trigger "microaggression" complaints.
+#
+# 2. Institutional capture — Pathopolites-majority institutions
+#    create regulations that force high-EMF lifestyles on everyone.
+#    Mandatory digital services. Smart city infrastructure.
+#    Remote work normalization (screen time → EMF exposure).
+#
+# 3. Educational contagion — high-pathopolites educators shape
+#    children's cognitive frameworks. Safety-seeking teachers
+#    create safety-seeking students. External locus institutions
+#    create external locus graduates.
+#
+# 4. Policy imposition — the degraded phenotype's policy preferences
+#    (safety regulations, harm-avoidance frameworks, expanded
+#    definitions of violence) restrict the behavioral options
+#    available to the healthy minority.
+#
+# 5. Social contagion — Christakis & Fowler 2007 (Framingham
+#    Heart Study): obesity spreads through social networks.
+#    A person's chance of becoming obese increases 57% if a friend
+#    becomes obese. The mechanism is normative, not caloric.
+#
+# Key literature:
+#   Calhoun 1973 (Universe 25, behavioral sink)
+#   Christakis & Fowler 2007 (social contagion of obesity, N=12,067)
+#   Campbell & Manning 2018 (victimhood culture as social strategy)
+#   Lukianoff & Haidt 2018 (institutional safetyism)
+
+
+def normative_predation_index(markers: dict[str, float]) -> float:
+    """Pressure to impose pathological norms on healthy individuals.
+
+    The degraded phenotype does not merely exist passively — it
+    actively seeks to normalize its own state and penalize
+    deviation from it. This is not conspiracy but evolutionary
+    psychology: organisms that cannot compete on quality compete
+    by degrading the competition (handicapping strategy).
+
+    High Pathopolites composite + high external locus (needs
+    others to conform to feel validated) + high moral compensation
+    (moral framework available to justify the predation) =
+    normative predation capacity.
+
+    Returns 0 (no predatory pressure) to 1 (maximal normalization).
+    """
+    pp = pathopolites_profile(markers)
+    pathopolites_idx = pp["pathopolites_index"]
+    ext_locus = pp["external_locus"]
+    moral_comp = pp["moral_compensation"]
+    safety = pp["safety_seeking"]
+
+    predation_drive = pathopolites_idx * (0.4 * ext_locus + 0.3 * moral_comp + 0.3 * safety)
+    return round(max(0.0, min(1.0, predation_drive)), 4)
+
+
+def institutional_capture_index(markers: dict[str, float]) -> float:
+    """Degree to which institutions enforce pathological norms.
+
+    When the Pathopolites phenotype becomes the institutional
+    majority, its policy preferences become mandatory:
+    - Safety-seeking → precautionary regulation
+    - External locus → institutional dependency requirements
+    - Cognitive fragility → speech codes, content warnings
+    - Moral compensation → DEI mandates, ESG frameworks
+
+    Each of these INCREASES the EMF environment for everyone
+    (more screen-mediated work, more digital compliance, more
+    time in institutional settings) and RESTRICTS exit options
+    (homeschooling barriers, rural infrastructure neglect,
+    occupational licensing requirements for traditional trades).
+
+    Returns 0 (institutions serve healthy function) to
+    1 (institutions enforce pathological norms).
+    """
+    pp = pathopolites_profile(markers)
+    idx = pp["pathopolites_index"]
+
+    threshold = 0.35
+    if idx < threshold:
+        return round(0.1 * (idx / threshold), 4)
+
+    capture = 0.1 + 0.9 * ((idx - threshold) / (1.0 - threshold)) ** 1.5
+    return round(max(0.0, min(1.0, capture)), 4)
+
+
+def behavioral_sink_index(markers: dict[str, float]) -> float:
+    """Calhoun behavioral sink composite.
+
+    The compound rate at which the degraded population actively
+    destroys the reproductive capacity of the healthy remainder.
+
+    Three components:
+    - Normative predation: social pressure to conform to
+      pathological norms
+    - Institutional capture: regulatory enforcement of
+      pathological environment
+    - Signal destruction: the physical attractiveness signals
+      of the healthy minority are socially devalued
+      ("beauty standards are oppressive")
+
+    Returns 0 (no behavioral sink) to 1 (terminal phase D).
+    """
+    norm_pred = normative_predation_index(markers)
+    inst_capture = institutional_capture_index(markers)
+
+    sig = signal_degradation_profile(markers)
+    signal_strength = sig["total_signal_strength"]
+    signal_attack = max(0.0, 1.0 - signal_strength) * norm_pred
+
+    raw = 0.35 * norm_pred + 0.35 * inst_capture + 0.30 * signal_attack
+    return round(max(0.0, min(1.0, raw)), 4)
+
+
+def sterilization_contagion_index(markers: dict[str, float]) -> float:
+    """Rate at which the degraded phenotype produces sterility-inducing ideology.
+
+    The Pathopolites phenotype does not merely fail to reproduce —
+    it generates ideological frameworks that, when adopted by others,
+    produce sterility in the adopters. These are memetic parasites
+    that destroy the host's reproductive fitness:
+
+    - Anti-natalism as moral position (high moral_compensation +
+      high external_locus → "not having children is ethical")
+    - Gender ideology targeting children (high safety_seeking +
+      institutional_capture → puberty blockers, GnRH agonists
+      that directly suppress T/E2, the substrate of all mate
+      signaling and reproductive capacity)
+    - Relationship anarchy (high anomic_distress → inability to
+      maintain pair bonds reframed as liberation from "oppressive
+      norms")
+    - Body dysmorphia normalization (degraded morphological signals
+      reframed as "diversity" rather than pathology)
+    - Career-first delayed reproduction past biological window
+      (high external_locus → institutional achievement substitutes
+      for biological achievement)
+
+    Calhoun parallel: the male mice that killed pups were not
+    competing for resources (unlimited food). They were behavioral
+    outputs of a degraded phenotype that actively destroyed
+    reproductive success of the functional remainder. The human
+    equivalent operates through ideology rather than direct
+    violence, but the reproductive outcome is identical.
+
+    Critical mechanism: puberty blockers administered to children
+    represent the most direct form of sterilization contagion —
+    the degraded adult generation intervening in the DEVELOPMENTAL
+    BIOLOGY of the next generation before their own EMF exposure
+    would naturally produce the pathological phenotype.
+
+    Returns 0 (no sterilizing ideology output) to 1 (maximal).
+    """
+    pp = pathopolites_profile(markers)
+    idx = pp["pathopolites_index"]
+    moral_comp = pp["moral_compensation"]
+    anomic = pp["anomic_distress"]
+    ext_locus = pp["external_locus"]
+
+    ideology_production = idx * (
+        0.30 * moral_comp
+        + 0.25 * anomic
+        + 0.25 * ext_locus
+        + 0.20 * pp["cognitive_fragility"]
+    )
+
+    inst = institutional_capture_index(markers)
+    contagion_reach = ideology_production * (0.5 + 0.5 * inst)
+    return round(max(0.0, min(1.0, contagion_reach)), 4)
+
+
+BEHAVIORAL_SINK_FUNCTIONS: dict[str, Any] = {
+    "normative_predation": normative_predation_index,
+    "institutional_capture": institutional_capture_index,
+    "sterilization_contagion": sterilization_contagion_index,
+    "behavioral_sink": behavioral_sink_index,
+}
+
+
+def behavioral_sink_profile(markers: dict[str, float]) -> dict[str, Any]:
+    """Full Calhoun behavioral sink analysis."""
+    return {
+        "normative_predation": normative_predation_index(markers),
+        "institutional_capture": institutional_capture_index(markers),
+        "sterilization_contagion": sterilization_contagion_index(markers),
+        "behavioral_sink": behavioral_sink_index(markers),
+    }
+
+
+def behavioral_sink_gradient(year: float = 2025) -> list[dict[str, Any]]:
+    """Behavioral sink analysis across all EMF environments."""
+    env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+    results: list[dict[str, Any]] = []
+
+    for env_name in env_order:
+        markers = environment_biomarkers(env_name, year)
+        profile = behavioral_sink_profile(markers)
+        profile["environment"] = env_name
+        results.append(profile)
+
+    return results
+
+
+# ── Cross-country BERM predictions ──
+#
+# EMF infrastructure density + timeline should predict:
+# 1. TFR decline speed and trajectory
+# 2. Obesity epidemic onset and severity
+# 3. Political polarization pattern (urban-rural gradient)
+# 4. Value shift speed (survival → self-expression)
+# 5. Fitness decline in conscript populations
+# 6. Conservative-attractiveness correlation strength
+#
+# Country-level EMF exposure index based on:
+# - Mobile infrastructure timeline (NMT 1982 = earliest)
+# - 5G deployment status and density
+# - Smartphone penetration rate
+# - Population density (affects ambient field)
+# - Urbanization rate
+#
+# Key observation: pronatalist policy spending has ZERO long-term
+# effect when the biological substrate is degraded. Singapore
+# (~$55k/child), Hungary (family tax benefits + housing), Poland
+# (500+ zloty/month), Japan (multiple programs) — all show
+# temporary tempo effects that reverse within 5-10 years.
+#
+# The Japan paradox: low obesity (4%) but low TFR (1.15) and
+# massive herbivore phenomenon (70-75% young men). This proves
+# obesity is a SECONDARY amplifier. The PRIMARY mechanism
+# (direct VGCC-mediated hormone disruption) operates independently.
+# Japan shows the primary effect without the secondary amplifier.
+# USA/UK show both layers simultaneously.
+
+
+@dataclass
+class CountryEMFProfile:
+    """EMF exposure profile for a country."""
+    name: str
+    mobile_infrastructure_year: int
+    five_g_year: int | None
+    smartphone_penetration: float
+    urbanization_rate: float
+    population_density_factor: float
+    obesity_rate: float
+    tfr_2010: float
+    tfr_latest: float
+    tfr_latest_year: int = 2024
+    cultural_buffer: float = 0.0
+
+
+COUNTRY_PROFILES: dict[str, CountryEMFProfile] = {
+    "south_korea": CountryEMFProfile(
+        name="South Korea",
+        mobile_infrastructure_year=1996,
+        five_g_year=2019,
+        smartphone_penetration=0.97,
+        urbanization_rate=0.81,
+        population_density_factor=0.85,
+        obesity_rate=0.052,
+        tfr_2010=1.23,
+        tfr_latest=0.75,
+        cultural_buffer=0.05,
+    ),
+    "japan": CountryEMFProfile(
+        name="Japan",
+        mobile_infrastructure_year=1999,
+        five_g_year=2020,
+        smartphone_penetration=0.96,
+        urbanization_rate=0.92,
+        population_density_factor=0.70,
+        obesity_rate=0.046,
+        tfr_2010=1.39,
+        tfr_latest=1.15,
+        cultural_buffer=0.25,
+    ),
+    "singapore": CountryEMFProfile(
+        name="Singapore",
+        mobile_infrastructure_year=1997,
+        five_g_year=2020,
+        smartphone_penetration=0.95,
+        urbanization_rate=1.0,
+        population_density_factor=0.95,
+        obesity_rate=0.16,
+        tfr_2010=1.15,
+        tfr_latest=0.87,
+        cultural_buffer=0.10,
+    ),
+    "finland": CountryEMFProfile(
+        name="Finland",
+        mobile_infrastructure_year=1982,
+        five_g_year=2020,
+        smartphone_penetration=0.97,
+        urbanization_rate=0.85,
+        population_density_factor=0.15,
+        obesity_rate=0.20,
+        tfr_2010=1.87,
+        tfr_latest=1.25,
+        cultural_buffer=0.05,
+    ),
+    "usa": CountryEMFProfile(
+        name="United States",
+        mobile_infrastructure_year=1983,
+        five_g_year=2019,
+        smartphone_penetration=0.82,
+        urbanization_rate=0.83,
+        population_density_factor=0.30,
+        obesity_rate=0.424,
+        tfr_2010=1.93,
+        tfr_latest=1.62,
+        cultural_buffer=0.10,
+    ),
+    "uk": CountryEMFProfile(
+        name="United Kingdom",
+        mobile_infrastructure_year=1985,
+        five_g_year=2019,
+        smartphone_penetration=0.82,
+        urbanization_rate=0.84,
+        population_density_factor=0.55,
+        obesity_rate=0.30,
+        tfr_2010=1.92,
+        tfr_latest=1.44,
+        cultural_buffer=0.05,
+    ),
+    "france": CountryEMFProfile(
+        name="France",
+        mobile_infrastructure_year=1992,
+        five_g_year=2020,
+        smartphone_penetration=0.84,
+        urbanization_rate=0.81,
+        population_density_factor=0.25,
+        obesity_rate=0.24,
+        tfr_2010=2.03,
+        tfr_latest=1.61,
+        cultural_buffer=0.15,
+    ),
+    "sweden": CountryEMFProfile(
+        name="Sweden",
+        mobile_infrastructure_year=1981,
+        five_g_year=2020,
+        smartphone_penetration=0.79,
+        urbanization_rate=0.88,
+        population_density_factor=0.10,
+        obesity_rate=0.25,
+        tfr_2010=1.98,
+        tfr_latest=1.45,
+        cultural_buffer=0.05,
+    ),
+    "hungary": CountryEMFProfile(
+        name="Hungary",
+        mobile_infrastructure_year=1999,
+        five_g_year=2023,
+        smartphone_penetration=0.80,
+        urbanization_rate=0.72,
+        population_density_factor=0.25,
+        obesity_rate=0.364,
+        tfr_2010=1.25,
+        tfr_latest=1.41,
+        tfr_latest_year=2024,
+        cultural_buffer=0.20,
+    ),
+    "poland": CountryEMFProfile(
+        name="Poland",
+        mobile_infrastructure_year=1996,
+        five_g_year=2022,
+        smartphone_penetration=0.89,
+        urbanization_rate=0.60,
+        population_density_factor=0.25,
+        obesity_rate=0.314,
+        tfr_2010=1.38,
+        tfr_latest=1.14,
+        cultural_buffer=0.15,
+    ),
+}
+
+
+def country_emf_index(profile: CountryEMFProfile, year: float = 2025) -> float:
+    """Composite EMF exposure index for a country.
+
+    Combines infrastructure timeline (earlier = more cumulative
+    exposure), 5G deployment, smartphone penetration, urbanization,
+    and population density into a single 0-1 index.
+
+    Cultural buffer reduces effective exposure — represents
+    institutional or cultural resistance to EMF-intensifying
+    behaviors (Japan's food culture limiting obesity, Hungary's
+    authoritarian policy restricting digital dependency, etc.).
+    Buffer delays but does not prevent degradation.
+
+    Returns 0 (minimal exposure) to 1 (maximal exposure).
+    """
+    infra_years = max(0, year - profile.mobile_infrastructure_year)
+    infra_score = min(1.0, infra_years / 45.0)
+
+    five_g_score = 0.0
+    if profile.five_g_year is not None:
+        five_g_years = max(0, year - profile.five_g_year)
+        five_g_score = min(1.0, five_g_years / 10.0)
+
+    raw = (
+        0.25 * infra_score
+        + 0.20 * five_g_score
+        + 0.20 * profile.smartphone_penetration
+        + 0.20 * profile.urbanization_rate
+        + 0.15 * profile.population_density_factor
+    )
+    buffered = raw * (1.0 - 0.3 * profile.cultural_buffer)
+    return round(max(0.0, min(1.0, buffered)), 4)
+
+
+def country_predicted_tfr(profile: CountryEMFProfile, year: float = 2025) -> float:
+    """BERM-predicted TFR for a country based on EMF exposure.
+
+    The prediction model: EMF index maps to an environment on the
+    amish-urban_office spectrum, which determines biomarker state,
+    which determines pair_signal_compound, which predicts
+    population-level pairing rate, which maps to TFR.
+
+    Historical TFR (2010) is used as baseline to calibrate the
+    country-specific starting point (genetic, cultural, economic
+    factors that set the pre-EMF-saturation fertility level).
+    """
+    emf_idx = country_emf_index(profile, year)
+
+    # Markers are derived from the suburban baseline scaled by emf_idx; the
+    # earlier env_map interpolation to an EMF multiplier was superseded and
+    # its result was never used.
+    markers = environment_biomarkers("suburban", year)
+    markers["T"] = max(0.1, markers["T"] * (1.0 - 0.3 * emf_idx))
+    markers["DA"] = max(0.1, markers["DA"] * (1.0 - 0.2 * emf_idx))
+    markers["OXT"] = max(0.1, markers["OXT"] * (1.0 - 0.25 * emf_idx))
+    markers["CORT"] = min(0.95, markers["CORT"] * (1.0 + 0.2 * emf_idx))
+
+    pair_compound = pair_signal_compound(markers)
+    baseline_tfr = profile.tfr_2010
+
+    degradation = 1.0 - pair_compound
+    cultural_inertia = max(0.0, 0.5 - 0.3 * emf_idx + 0.4 * profile.cultural_buffer)
+    effective_decline = degradation * (1.0 - cultural_inertia)
+    predicted = baseline_tfr * (1.0 - effective_decline)
+    return round(max(0.4, predicted), 2)
+
+
+def country_berm_analysis(country_key: str, year: float = 2025) -> dict[str, Any]:
+    """Full BERM analysis for a country."""
+    if country_key not in COUNTRY_PROFILES:
+        raise ValueError(f"Unknown country: {country_key}. Available: {list(COUNTRY_PROFILES.keys())}")
+
+    profile = COUNTRY_PROFILES[country_key]
+    emf_idx = country_emf_index(profile, year)
+    predicted_tfr = country_predicted_tfr(profile, year)
+    actual_tfr = profile.tfr_latest
+
+    tfr_decline_rate = (
+        (profile.tfr_2010 - profile.tfr_latest)
+        / max(1, profile.tfr_latest_year - 2010)
+    )
+
+    return {
+        "country": profile.name,
+        "emf_index": emf_idx,
+        "predicted_tfr": predicted_tfr,
+        "actual_tfr": actual_tfr,
+        "tfr_2010": profile.tfr_2010,
+        "tfr_decline_annual": round(tfr_decline_rate, 3),
+        "obesity_rate": profile.obesity_rate,
+        "smartphone_penetration": profile.smartphone_penetration,
+        "urbanization_rate": profile.urbanization_rate,
+        "cultural_buffer": profile.cultural_buffer,
+        "mobile_since": profile.mobile_infrastructure_year,
+        "five_g_since": profile.five_g_year,
+        "prediction_error": round(abs(predicted_tfr - actual_tfr), 2),
+    }
+
+
+def cross_country_comparison(year: float = 2025) -> list[dict[str, Any]]:
+    """BERM analysis across all profiled countries.
+
+    Returns countries sorted by EMF index (highest exposure first).
+    """
+    results = []
+    for key in COUNTRY_PROFILES:
+        results.append(country_berm_analysis(key, year))
+    results.sort(key=lambda x: x["emf_index"], reverse=True)
+    return results
+
+
+# ── Calhoun Phase Dynamics ──
+#
+# Universe 25 phase progression mapped to civilizational indicators.
+# Phase A: colonization. Phase B: exponential growth, 14 groups of ~12.
+# Phase C: growth collapses, Beautiful Ones emerge, societal death.
+# Phase D: no surviving pups, population physically alive but socially dead.
+# "First Death" (spirit) precedes "Second Death" (body).
+
+
+def calhoun_phase_indicators(markers: dict[str, float]) -> dict[str, float]:
+    """Quantitative indicators for Calhoun's A-D phase progression."""
+    t = markers.get("T", 0.5)
+    da = markers.get("DA", 0.5)
+    oxt = markers.get("OXT", 0.5)
+    cort = markers.get("CORT", 0.3)
+
+    position_saturation = max(0.0, min(1.0,
+        0.3 + 0.7 * (1.0 - t) * (1.0 + cort)))
+
+    maternal_collapse = max(0.0, min(1.0,
+        1.0 - oxt * (1.0 - 0.5 * cort) * (0.5 + 0.5 * t)))
+
+    complexity_loss = max(0.0, min(1.0,
+        1.0 - da * t * (1.0 - 0.4 * cort)))
+
+    drive_compound = t * da
+    beautiful_ones = max(0.0, min(1.0,
+        0.01 + 0.60 * max(0.0, 0.55 - drive_compound) ** 1.2))
+
+    societal_death = (
+        0.20 * position_saturation
+        + 0.25 * maternal_collapse
+        + 0.25 * complexity_loss
+        + 0.30 * beautiful_ones
+    )
+
+    return {
+        "position_saturation": round(position_saturation, 4),
+        "maternal_collapse": round(maternal_collapse, 4),
+        "complexity_loss": round(complexity_loss, 4),
+        "beautiful_ones_fraction": round(beautiful_ones, 4),
+        "societal_death": round(max(0.0, min(1.0, societal_death)), 4),
+    }
+
+
+def calhoun_phase(markers: dict[str, float]) -> str:
+    """Determine civilization's Calhoun phase (B/C/D).
+
+    B: societal_death < 0.15 (functional growth)
+    C: 0.15-0.50 (dysfunction emerging, Beautiful Ones appearing)
+    D: > 0.50 (irreversible decline, "First Death" in progress)
+    """
+    sd = calhoun_phase_indicators(markers)["societal_death"]
+    if sd < 0.15:
+        return "B"
+    elif sd < 0.50:
+        return "C"
+    return "D"
+
+
+def calhoun_recovery_potential(markers: dict[str, float]) -> float:
+    """Recovery potential based on Calhoun's empirical results.
+
+    Universe 25 (no intervention): NO recovery even in optimal conditions.
+    Universe 33 (periodic culling): recovery in small groups WORKED.
+    Universe 34B (enforced cooperation): PREVENTION worked.
+    Kessler (Rockefeller): mice recovered when removed from sink.
+
+    Key: whether normal social behaviors developed before exposure.
+    Beautiful Ones never developed them → permanent.
+    """
+    indicators = calhoun_phase_indicators(markers)
+    sd = indicators["societal_death"]
+    bo = indicators["beautiful_ones_fraction"]
+
+    base_recovery = max(0.0, 1.0 - sd * 1.3)
+    bo_penalty = bo * 0.5
+    return round(max(0.0, min(1.0, base_recovery - bo_penalty)), 4)
+
+
+CALHOUN_PHASE_FUNCTIONS: dict[str, Any] = {
+    "phase_indicators": calhoun_phase_indicators,
+    "phase": calhoun_phase,
+    "recovery_potential": calhoun_recovery_potential,
+}
+
+
+# ── Bioleninist Selection Dynamics ──
+#
+# Spandrell: power structures optimize for loyalty over competence
+# by recruiting from groups whose status depends entirely on the
+# regime. The lower the natural status → the stronger the loyalty
+# bond → the more valuable as a recruit.
+#
+# BERM connection: hormonal degradation produces individuals who
+# cannot compete in natural hierarchy → structurally dependent on
+# institutional status → maximally loyal → selected by the system.
+
+
+def bioleninist_loyalty_value(markers: dict[str, float]) -> float:
+    """Loyalty value: inversely proportional to natural competitive status.
+
+    Low T + Low DA + Low BDNF = maximal regime dependency = maximal loyalty.
+    """
+    t = markers.get("T", 0.5)
+    da = markers.get("DA", 0.5)
+    bdnf = markers.get("BDNF", 0.5)
+
+    natural_status = t * 0.45 + da * 0.30 + bdnf * 0.25
+    return round(max(0.0, min(1.0, 1.0 - natural_status)), 4)
+
+
+def institutional_competence_decay(markers: dict[str, float]) -> float:
+    """Cumulative competence loss from bioleninist selection rounds.
+
+    Each round: loyalty-selected → lower competence floor →
+    select even more dependent subordinates → further decay.
+    Spandrell: produces "literal kakistocracy."
+    """
+    loyalty = bioleninist_loyalty_value(markers)
+    capture = institutional_capture_index(markers)
+
+    base_decay = loyalty * capture
+    threshold = 0.3
+    if base_decay > threshold:
+        acceleration = 1.0 + 2.0 * ((base_decay - threshold) / (1.0 - threshold))
+    else:
+        acceleration = 1.0
+
+    return round(max(0.0, min(1.0, base_decay * acceleration)), 4)
+
+
+def bioleninist_ratchet_index(markers: dict[str, float]) -> float:
+    """Combined strength of the three Bioleninist ratchets.
+
+    1. Leftward ratchet: status redistribution mobilizes more
+       effectively than status defense.
+    2. Gramscian institutional ratchet: captured education →
+       all future personnel share ideological formation.
+    3. Competence-loyalty ratchet: each selection round lowers
+       the competence floor.
+
+    Key Spandrell insight: no Stalin to stop the ratchet.
+    Classical Leninism stabilized once power was total.
+    Bioleninism has no stabilization mechanism.
+    """
+    loyalty = bioleninist_loyalty_value(markers)
+    comp_decay = institutional_competence_decay(markers)
+    capture = institutional_capture_index(markers)
+
+    if loyalty > 0 and capture > 0 and comp_decay > 0:
+        ratchet = (loyalty * capture * comp_decay) ** (1.0 / 3.0)
+    else:
+        ratchet = 0.0
+
+    reinforcement = 1.0 + 0.5 * (
+        loyalty * capture + capture * comp_decay + comp_decay * loyalty)
+    ratchet *= reinforcement
+
+    return round(max(0.0, min(1.0, ratchet)), 4)
+
+
+BIOLENINIST_FUNCTIONS: dict[str, Any] = {
+    "loyalty_value": bioleninist_loyalty_value,
+    "competence_decay": institutional_competence_decay,
+    "ratchet": bioleninist_ratchet_index,
+}
+
+
+# ── Reproductive Behavior Spectrum ──
+#
+# Calhoun's precise taxonomy mapped to hormonal profiles:
+#
+# 1. Normal reproductive — courtship → selective mating → pair bond.
+#    T normal, DA normal, OXT normal, CORT low.
+#
+# 2. Reduced libido — motivated but reduced frequency/success.
+#    T moderately reduced, DA moderately reduced.
+#
+# 3. Pansexual/undifferentiated — sexual motivation present but
+#    selectivity collapsed. Mounts anything. OXT disrupted, CORT high.
+#    Calhoun: "pansexuality as creativity — avoiding sanctions."
+#    NOT orientation but discrimination-circuit failure.
+#
+# 4. Non-reproductive preferential — consistent non-reproductive
+#    sexual orientation. Calhoun's "imcasts": all-male groups with
+#    exclusively homosexual behavior, daytime feeding, loss of
+#    construction ability.
+#
+#    Endocrine disruption evidence:
+#    - Atrazine: 10% of male frogs fully feminized, 75% chemically
+#      castrated at drinking water concentrations (Hayes 2010, PNAS)
+#    - Phthalates: shortened AGD, cryptorchidism (Swan 2008)
+#    - Vinclozolin: transgenerational mate preference changes
+#      persisting 3+ generations (Crews 2007, PNAS)
+#    - Fraternal birth order: +33% per older brother via maternal
+#      anti-NLGN4Y antibodies (Blanchard 2018)
+#    - BPA: altered sexual differentiation in rodents (Rubin 2011)
+#
+#    Gallup: US LGBT 3.5% (2012) → 8.6% (2024).
+#    Gen Z: 22.3% vs Boomers 4.4%.
+#    Destigmatization alone cannot explain a 5x generational
+#    difference — it predicts convergence toward a stable rate,
+#    not monotonic increase across cohorts. Animal endocrine
+#    disruption data shows actual behavioral shifts.
+#
+# 5. Asexual/withdrawn — Beautiful Ones. No sexual motivation.
+#    T severely depleted, DA severely depleted.
+#    "Motion without meaning." Low adrenaline (Axelrod).
+#
+# Population effect: every category except normal reduces
+# effective fertility. The combined shift drives TFR collapse
+# independently of contraception, economics, or culture.
+
+
+def reproductive_behavior_spectrum(markers: dict[str, float]) -> dict[str, float]:
+    """Population distribution across Calhoun's sexual behavior categories.
+
+    Returns estimated fraction of reproductive-age population in each
+    category. These are population-level distributions driven by the
+    hormonal environment, not individual predictions.
+    """
+    t = markers.get("T", 0.5)
+    da = markers.get("DA", 0.5)
+    oxt = markers.get("OXT", 0.5)
+    cort = markers.get("CORT", 0.3)
+
+    prenatal_disruption = max(0.0, 1.0 - t)
+
+    drive_compound = t * da
+    asexual = max(0.0, min(0.50,
+        0.01 + 0.60 * max(0.0, 0.55 - drive_compound) ** 1.2))
+
+    non_reproductive = min(0.20,
+        0.025
+        + 0.10 * prenatal_disruption ** 1.3
+        + 0.02 * cort)
+
+    oxt_cort_product = max(0.0, (1.0 - oxt) * cort)
+    pansexual = min(0.08, oxt_cort_product ** 1.3 * 0.6)
+
+    hormonal_adequacy = t * 0.55 + da * 0.45
+    reduced_raw = max(0.0, 0.80 - hormonal_adequacy) ** 1.5 * 2.0
+    reduced_libido = max(0.01, min(0.30, reduced_raw))
+
+    non_normal = asexual + non_reproductive + pansexual + reduced_libido
+    normal = max(0.05, 1.0 - non_normal)
+
+    total = normal + reduced_libido + pansexual + non_reproductive + asexual
+    if total > 0:
+        normal /= total
+        reduced_libido /= total
+        pansexual /= total
+        non_reproductive /= total
+        asexual /= total
+
+    return {
+        "normal_reproductive": round(normal, 4),
+        "reduced_libido": round(reduced_libido, 4),
+        "pansexual_undifferentiated": round(pansexual, 4),
+        "non_reproductive_preferential": round(non_reproductive, 4),
+        "asexual_withdrawn": round(asexual, 4),
+    }
+
+
+def effective_fertility_index(markers: dict[str, float]) -> float:
+    """Effective fertility as fraction of biological maximum.
+
+    Fertility weights per category:
+    - normal_reproductive: 1.0
+    - reduced_libido: 0.5
+    - pansexual: 0.15 (some reproductive encounters despite selectivity collapse)
+    - non_reproductive: 0.02 (rare compulsory/social reproduction)
+    - asexual: 0.0
+
+    This is the sexual-behavior component of TFR. It multiplies
+    with signal quality, pair-bonding, and environmental factors.
+    """
+    spectrum = reproductive_behavior_spectrum(markers)
+
+    fertility = (
+        spectrum["normal_reproductive"] * 1.00
+        + spectrum["reduced_libido"] * 0.50
+        + spectrum["pansexual_undifferentiated"] * 0.15
+        + spectrum["non_reproductive_preferential"] * 0.02
+        + spectrum["asexual_withdrawn"] * 0.00
+    )
+    return round(max(0.0, min(1.0, fertility)), 4)
+
+
+def prenatal_disruption_index(markers: dict[str, float]) -> float:
+    """Estimated prenatal endocrine disruption for population born
+    into this hormonal environment.
+
+    Uses population T as proxy: T decline reflects cumulative
+    endocrine disruptor burden (BPA, phthalates, atrazine, PFAS).
+    Lower population T implies more prenatal exposure in the
+    generation born into this environment.
+    """
+    t = markers.get("T", 0.5)
+    cort = markers.get("CORT", 0.3)
+
+    t_disruption = 1.0 - t
+    cort_disruption = cort * 0.3
+    disruption = t_disruption * 0.7 + cort_disruption
+    return round(max(0.0, min(1.0, disruption)), 4)
+
+
+def endocrine_sexual_disruption_index(markers: dict[str, float]) -> float:
+    """Combined endocrine disruption effect on sexual development.
+
+    Integrates prenatal disruption, postnatal T decline,
+    OXT pair-bonding failure, and DA reward dysfunction.
+    """
+    prenatal = prenatal_disruption_index(markers)
+    t = markers.get("T", 0.5)
+    da = markers.get("DA", 0.5)
+    oxt = markers.get("OXT", 0.5)
+
+    disruption = (
+        0.35 * prenatal
+        + 0.25 * (1.0 - t)
+        + 0.20 * (1.0 - oxt)
+        + 0.20 * (1.0 - da)
+    )
+    return round(max(0.0, min(1.0, disruption)), 4)
+
+
+REPRODUCTIVE_SPECTRUM_FUNCTIONS: dict[str, Any] = {
+    "behavior_spectrum": reproductive_behavior_spectrum,
+    "effective_fertility": effective_fertility_index,
+    "prenatal_disruption": prenatal_disruption_index,
+    "endocrine_sexual_disruption": endocrine_sexual_disruption_index,
+}
+
+
+# ── Parasitic Transmission Dynamics ──
+#
+# Biological template: parasite-induced behavioral manipulation.
+# The pathological phenotype actively modifies its environment
+# to produce more pathology.
+#
+# Four models from nature:
+# 1. Wolbachia (cytoplasmic incompatibility): infected sterilize
+#    uninfected. 40-60% infection rate sufficient for population effect.
+# 2. Sacculina (host feminization + reproductive hijacking):
+#    parasite feminizes male host, redirects reproductive energy.
+# 3. Baculovirus (liquefaction from above): infected climb highest
+#    point, dissolve, rain pathogen onto those below.
+# 4. STAW disoperator (Calhoun Universe 34B): one defector
+#    destroyed an entire cooperative group. Half died.
+
+
+def wolbachia_sterilization_index(markers: dict[str, float]) -> float:
+    """Wolbachia-model: sterilization of non-adopters through incompatibility.
+
+    The ideology doesn't need to infect everyone. It needs enough
+    hosts to make non-infected reproduction nonviable:
+    - Dating market incompatibility (political filtering)
+    - Legal incompatibility (family law asymmetries)
+    - Economic incompatibility (dual-income necessity)
+    - Social incompatibility (stigmatization of traditional reproduction)
+    """
+    capture = institutional_capture_index(markers)
+    contagion = sterilization_contagion_index(markers)
+
+    combined = contagion * (0.4 + 0.6 * capture)
+    threshold = 0.35
+    if combined > threshold:
+        sterilization = 0.2 + 0.8 * (
+            (combined - threshold) / (1.0 - threshold)) ** 1.3
+    else:
+        sterilization = 0.2 * (combined / threshold)
+
+    return round(max(0.0, min(1.0, sterilization)), 4)
+
+
+def sacculina_hijacking_index(markers: dict[str, float]) -> float:
+    """Sacculina-model: reproductive energy redirected to ideology spread.
+
+    Sacculina feminizes the male crab and makes it care for parasite
+    eggs as its own. Human analogue: biological reproduction
+    substituted by ideological reproduction ("raising awareness"
+    replaces raising children), parental instinct redirected to
+    fur babies / plant parenthood / allyship / social causes.
+    """
+    pp = pathopolites_profile(markers)
+    moral_comp = pp["moral_compensation"]
+    ext_locus = pp["external_locus"]
+
+    t = markers.get("T", 0.5)
+    oxt = markers.get("OXT", 0.5)
+
+    moral_capture = moral_comp * ext_locus
+    biological_weakness = (1.0 - t) * (1.0 - oxt)
+
+    hijacking = moral_capture * (0.3 + 0.7 * biological_weakness)
+    return round(max(0.0, min(1.0, hijacking)), 4)
+
+
+def baculovirus_institutional_index(markers: dict[str, float]) -> float:
+    """Baculovirus-model: pathology rains down from captured institutions.
+
+    Captured institutions = the "high point":
+    Education (earliest intervention), media (broadest reach),
+    law (mandatory compliance), medicine (deepest trust).
+    Each rains pathological norms downward onto the general population.
+    """
+    capture = institutional_capture_index(markers)
+    contagion = sterilization_contagion_index(markers)
+
+    rain = capture * (0.5 + 0.5 * contagion)
+    if capture > 0.3:
+        compound = 1.0 + 0.8 * (capture - 0.3)
+    else:
+        compound = 1.0
+
+    return round(max(0.0, min(1.0, rain * compound)), 4)
+
+
+def disoperator_destruction_index(markers: dict[str, float]) -> float:
+    """STAW model: single disoperator destroys cooperative group.
+
+    From Universe 34B: one disoperation rat jumped the fence into
+    a cooperation group and attacked every member who approached
+    the water source. Half the group died. The experiment ended.
+
+    Cooperative systems have no defense against a defector because
+    the system assumes all participants follow the cooperation norm.
+    One HR complaint, lawsuit, or social media campaign by a
+    defector can restructure an entire institution.
+    """
+    pp = pathopolites_profile(markers)
+    pp_idx = pp["pathopolites_index"]
+    safety = pp["safety_seeking"]
+
+    disoperator_fraction = pp_idx
+    cooperative_vulnerability = safety
+
+    if disoperator_fraction > 0.05:
+        destruction = (
+            disoperator_fraction * cooperative_vulnerability * 3.0) ** 0.8
+    else:
+        destruction = disoperator_fraction * cooperative_vulnerability
+
+    return round(max(0.0, min(1.0, destruction)), 4)
+
+
+def cooperative_group_integrity(markers: dict[str, float]) -> float:
+    """Remaining integrity of cooperative social structures.
+
+    Modulated by T (enforcement capacity) and OXT (bonding).
+    Reduced by disoperator penetration.
+    """
+    destruction = disoperator_destruction_index(markers)
+    t = markers.get("T", 0.5)
+    oxt = markers.get("OXT", 0.5)
+
+    base_integrity = t * 0.6 + oxt * 0.4
+    integrity = base_integrity * (1.0 - destruction * 0.7)
+    return round(max(0.0, min(1.0, integrity)), 4)
+
+
+PARASITIC_TRANSMISSION_FUNCTIONS: dict[str, Any] = {
+    "wolbachia_sterilization": wolbachia_sterilization_index,
+    "sacculina_hijacking": sacculina_hijacking_index,
+    "baculovirus_institutional": baculovirus_institutional_index,
+    "disoperator_destruction": disoperator_destruction_index,
+    "cooperative_integrity": cooperative_group_integrity,
+}
+
+
+# ── Integrated Civilizational Sink Model ──
+#
+# Complete feedback loop:
+# Environmental degradation (VGCC, BPA, PFAS, EMF)
+#   → Hormonal degradation (T↓, DA↓, OXT↓, CORT↑)
+#   → Degraded phenotype (Beautiful Ones / herbivore / Pathopolite)
+#   → Bioleninist selection (loyalty > competence)
+#   → Institutional capture
+#   → Parasitic transmission (Wolbachia / Sacculina / Baculovirus)
+#     → More environmental degradation
+#     → Reproductive behavior spectrum shift
+#   → TFR collapse → Phase D → extinction
+
+
+def civilizational_sink_index(markers: dict[str, float]) -> float:
+    """Master index: depth of the civilizational behavioral sink.
+
+    Combines hormonal degradation, signal degradation, reproductive
+    behavior shift, behavioral sink predation, bioleninist ratchet,
+    parasitic transmission, and Calhoun phase trajectory.
+
+    Returns 0 (Phase B peak) to 1 (Phase D extinction).
+    """
+    t = markers.get("T", 0.5)
+    da = markers.get("DA", 0.5)
+    oxt = markers.get("OXT", 0.5)
+    cort = markers.get("CORT", 0.3)
+    hormonal_degradation = 1.0 - (t * da * oxt * (1.0 - cort)) ** 0.25
+
+    signal_deg = 1.0 - pair_signal_compound(markers)
+    reproductive_shift = 1.0 - effective_fertility_index(markers)
+    sink = behavioral_sink_index(markers)
+    ratchet = bioleninist_ratchet_index(markers)
+
+    wolbachia = wolbachia_sterilization_index(markers)
+    sacculina = sacculina_hijacking_index(markers)
+    baculovirus = baculovirus_institutional_index(markers)
+    disoperator = disoperator_destruction_index(markers)
+    parasitic = (wolbachia + sacculina + baculovirus + disoperator) / 4.0
+
+    societal_death = calhoun_phase_indicators(markers)["societal_death"]
+
+    civ_sink = (
+        0.20 * hormonal_degradation
+        + 0.15 * signal_deg
+        + 0.15 * reproductive_shift
+        + 0.15 * sink
+        + 0.10 * ratchet
+        + 0.10 * parasitic
+        + 0.15 * societal_death
+    )
+    return round(max(0.0, min(1.0, civ_sink)), 4)
+
+
+def civilizational_sink_profile(markers: dict[str, float]) -> dict[str, Any]:
+    """Full civilizational sink diagnostic."""
+    phase_ind = calhoun_phase_indicators(markers)
+    spectrum = reproductive_behavior_spectrum(markers)
+
+    return {
+        "civilizational_sink": civilizational_sink_index(markers),
+        "calhoun_phase": calhoun_phase(markers),
+        "calhoun_indicators": phase_ind,
+        "recovery_potential": calhoun_recovery_potential(markers),
+        "bioleninist_loyalty": bioleninist_loyalty_value(markers),
+        "competence_decay": institutional_competence_decay(markers),
+        "ratchet_strength": bioleninist_ratchet_index(markers),
+        "reproductive_spectrum": spectrum,
+        "effective_fertility": effective_fertility_index(markers),
+        "prenatal_disruption": prenatal_disruption_index(markers),
+        "sexual_disruption": endocrine_sexual_disruption_index(markers),
+        "wolbachia_sterilization": wolbachia_sterilization_index(markers),
+        "sacculina_hijacking": sacculina_hijacking_index(markers),
+        "baculovirus_institutional": baculovirus_institutional_index(markers),
+        "disoperator_destruction": disoperator_destruction_index(markers),
+        "cooperative_integrity": cooperative_group_integrity(markers),
+        "behavioral_immune": behavioral_immune_index(markers),
+        "destigmatization": destigmatization_index(markers),
+        "stigma_inversion": stigma_inversion_index(markers),
+        "net_immunity": net_behavioral_immunity(markers),
+        "transmission_resistance": transmission_resistance(markers),
+        "transmission_composite": civilizational_transmission_composite(markers),
+    }
+
+
+def civilizational_sink_gradient(year: float = 2025) -> list[dict[str, Any]]:
+    """Civilizational sink analysis across all EMF environments."""
+    env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+    results: list[dict[str, Any]] = []
+
+    for env_name in env_order:
+        markers = environment_biomarkers(env_name, year)
+        profile = civilizational_sink_profile(markers)
+        profile["environment"] = env_name
+        results.append(profile)
+
+    return results
+
+
+CIVILIZATIONAL_SINK_FUNCTIONS: dict[str, Any] = {
+    "civilizational_sink": civilizational_sink_index,
+    "calhoun_phase_indicators": calhoun_phase_indicators,
+    "calhoun_phase": calhoun_phase,
+    "calhoun_recovery_potential": calhoun_recovery_potential,
+    "bioleninist_loyalty": bioleninist_loyalty_value,
+    "competence_decay": institutional_competence_decay,
+    "ratchet": bioleninist_ratchet_index,
+    "reproductive_spectrum": reproductive_behavior_spectrum,
+    "effective_fertility": effective_fertility_index,
+    "prenatal_disruption": prenatal_disruption_index,
+    "sexual_disruption": endocrine_sexual_disruption_index,
+    "wolbachia_sterilization": wolbachia_sterilization_index,
+    "sacculina_hijacking": sacculina_hijacking_index,
+    "baculovirus_institutional": baculovirus_institutional_index,
+    "disoperator_destruction": disoperator_destruction_index,
+    "cooperative_integrity": cooperative_group_integrity,
+}
+
+
+# ── Behavioral Immune System (BIS) ──
+#
+# Stigma is not random cruelty. It is the behavioral immune system.
+#
+# Empirical foundation:
+# - Fincher, Thornhill, Murray & Schaller (2008, Proc R Soc B,
+#   N=98 regions): pathogen prevalence → collectivism r=-0.69
+#   to -0.71, in-group collectivism r=0.73. At world-region
+#   level r=0.93. Survives controlling for GDP and Gini.
+# - Murray & Schaller (2013, PLoS ONE, N=31 countries): pathogen
+#   prevalence → authoritarianism r=0.65, beta=0.73.
+#   Individual authoritarianism mediates 77% of pathogen→governance.
+# - Terrizzi, Shook & McDaniel (2013, 24-study meta-analysis):
+#   BIS strength → social conservatism, reliable small-medium effect.
+# - Curtis, Aunger & Rabie (2004, Proc R Soc B, N≈40,000):
+#   disgust elicitors universally map to disease vectors.
+# - Faulkner et al. (2004): disease salience → xenophobia toward
+#   immunologically UNFAMILIAR out-groups specifically.
+# - Navarrete & Fessler (2006): first trimester pregnancy →
+#   elevated ethnocentrism (BIS compensates for immunosuppression).
+#
+# Game theory (Nowak & Sigmund 2005, indirect reciprocity;
+# Fehr & Gächter 2002, altruistic punishment):
+# 1. Stigma collapses image score to zero → all rational agents
+#    defect on interaction with stigmatized individual
+# 2. Costs nothing to the enforcer (unlike altruistic punishment,
+#    which Fehr & Gächter showed humans pay for voluntarily)
+# 3. Permanent consequence → expected value of defection deeply negative
+# 4. Association stigma solves the meta-norm problem: you cannot
+#    be "too merciful" without risking your own status
+#
+# Biological substrate: sanctity/purity moral foundation (Haidt) IS
+# the psychological immune system. Inbar, Pizarro & Bloom 2009
+# (N=31,045): disgust sensitivity → conservatism. Tybur et al.
+# (2013): three distinct disgust domains (pathogen, sexual, moral)
+# each solve different adaptive problems.
+#
+# The "smoke detector principle" (Nesse 2005): better to stigmatize
+# a few healthy individuals (false positives) than to miss a
+# pathological one that spreads (false negative = epidemic).
+# Kurzban & Leary (2001): stigma = output of multiple adaptive
+# cognitive systems: parasite avoidance, coalitional exploitation,
+# and dyadic cooperation enforcement.
+#
+# Gelfand inverted-U (2011, 33 nations): both extremely tight
+# (Japan: hikikomori, 1.15M social recluses, TFR 1.20) and
+# extremely loose cultures produce worst well-being, highest
+# depression/suicide. Moderate tightness = optimum. The BIS can
+# become autoimmune when culturally enforced beyond biological
+# substrate capacity.
+#
+# Destigmatization = immunosuppression. The degraded phenotype's
+# demand for destigmatization is structurally identical to HIV
+# targeting CD4+ T cells: the pathogen attacks the immune system
+# itself because the immune system is what prevents its spread.
+#
+# Empirical destigmatization effects (natural experiments):
+# - LGBT identification: 3.5% (2012) → 9.3% (2024), Gen Z 23.1%
+#   vs Boomers 3.0% (Gallup). No plateau — still rising.
+# - Single motherhood: 5% (1960) → 40% (2020s US), 9% → 51% (UK).
+# - OnlyFans creators: 348K → 4.63M in 5 years (13x).
+# - Counter-case: divorce rates spiked then normalized after
+#   no-fault laws (Wolfers 2006); female suicide -20% (Stevenson
+#   & Wolfers 2006) — some stigma traps people in lethal situations.
+#
+# The critical inversion: once institutional capture passes a
+# threshold, stigma doesn't merely disappear — it INVERTS.
+# Association stigma now punishes those who MAINTAIN the BIS
+# ("bigot", "phobic", "-ist"). The immune system attacks its
+# own defenders. Autoimmune civilizational collapse.
+# FIRE 2026 data: 93% of students self-censor, 36% support
+# shouting down speakers (record), 15% accept violence to stop
+# speech — the inversion is empirically measurable.
+
+
+def behavioral_immune_index(markers: dict[str, float]) -> float:
+    """Behavioral immune system strength — population's stigma capacity.
+
+    Empirical calibration:
+    - Fincher et al. (2008, N=98): pathogen→collectivism r=-0.71,
+      world-region r=0.93. BIS IS the mechanism.
+    - Murray & Schaller (2013, N=31): pathogen→authoritarianism
+      r=0.65, beta=0.73. Individual BIS mediates 77%.
+    - Curtis et al. (2004, N≈40K): disgust universally maps to
+      disease vectors. Cross-cultural validation.
+    - Gelfand (2011, 33 nations): inverted-U. Japan (tight, BIS
+      culturally enforced beyond biological substrate) shows
+      different pathology: hikikomori 1.15M, concealment, not
+      normalization. Optimal = moderate tightness.
+
+    Model output: amish=0.934, rural=0.591, suburban=0.462,
+    urban_res=0.386, urban_off=0.332.
+
+    BIS components:
+    1. Sanctity/purity foundation = pathogen detection (disgust response)
+    2. T = enforcement willingness (confronting norm violators)
+    3. Time preference = long-term orientation (short-term cost of
+       stigma enforcement for long-term group benefit)
+    4. OXT = coordination capacity (collective enforcement)
+
+    Returns 0 (no behavioral immunity) to 1 (full BIS function).
+    """
+    sanctity = sanctity_purity(markers)
+    t = markers.get("T", 0.5)
+    oxt = markers.get("OXT", 0.5)
+    tp = time_preference(markers)
+
+    raw = (
+        0.40 * sanctity
+        + 0.25 * t
+        + 0.20 * tp
+        + 0.15 * oxt
+    )
+    return round(max(0.0, min(1.0, raw ** 1.2)), 4)
+
+
+def destigmatization_index(markers: dict[str, float]) -> float:
+    """Active dismantling of the behavioral immune system.
+
+    Empirical calibration:
+    - LGBT identification: 3.5%→9.3% (2012→2024), Gen Z 23.1%.
+      No plateau visible — consistent with positive feedback.
+    - Single motherhood: 5%→40% (US 1960→2020s), 9%→51% (UK).
+    - OnlyFans: 348K→4.63M in 5 years (13x).
+    - US obesity: 13.4% (1960) → 41.9% (2020). Successive cohorts
+      reach thresholds at younger ages.
+    - Counter-case (Category A): divorce spiked then normalized
+      (Wolfers 2006); female suicide -20%. Not all destigmatization
+      is pathological — some reveals suppressed demand for exit
+      from genuinely harmful situations.
+
+    Model output: amish=0.021, rural=0.112, suburban=0.188,
+    urban_res=0.282, urban_off=0.373.
+
+    Three requirements:
+    1. Motivation: pathopolites index (the degraded need to normalize)
+    2. Moral framework: moral compensation (justification as "compassion")
+    3. Power: institutional capture (enforcement apparatus)
+
+    Above threshold 0.15, positive feedback: destigmatization makes
+    further destigmatization easier (chilling effect on BIS defenders).
+
+    Returns 0 (no destigmatization pressure) to 1 (BIS fully dismantled).
+    """
+    pp = pathopolites_profile(markers)
+    pp_idx = pp["pathopolites_index"]
+    moral_comp = pp["moral_compensation"]
+    capture = institutional_capture_index(markers)
+
+    motivation = pp_idx * (0.4 + 0.6 * moral_comp)
+    pressure = motivation * (0.5 + 1.0 * capture)
+
+    if pressure > 0.15:
+        amplification = 1.0 + 2.0 * (pressure - 0.15)
+    else:
+        amplification = 1.0
+
+    return round(max(0.0, min(1.0, pressure * amplification)), 4)
+
+
+def stigma_inversion_index(markers: dict[str, float]) -> float:
+    """Degree to which stigma has been inverted against BIS defenders.
+
+    Empirical calibration:
+    - FIRE 2026: 93% of students self-censor, 36% support shouting
+      down speakers (record high), 15% accept violence to stop speech.
+      The inversion is directly measurable in the most captured
+      institutional environments (universities).
+    - Ofosu et al. (2019): same-sex marriage legalization doubled
+      the decline in anti-gay bias. BUT states where only federal
+      (not state) legalization applied showed INCREASED anti-gay
+      bias — forced norm imposition without organic BIS decline
+      produces backlash, not inversion.
+    - Edelman paradox: conservative/religious states consume MORE
+      porn, not less. Stigma drives behavior underground; removal
+      makes it visible. Inversion goes further: makes the previously
+      stigmatized behavior MANDATORY to signal ("ally").
+
+    Model output: amish/rural/suburban/urban_res=0.000,
+    urban_off=0.130. Crossover between urban_res and urban_off.
+
+    Only activates when destigmatization exceeds BIS capacity.
+    Amplified by group conformity (which enforces whatever the
+    current norm is — in an inverted environment, it enforces inversion).
+
+    Returns 0 (no inversion) to 1 (fully inverted BIS).
+    """
+    bis = behavioral_immune_index(markers)
+    destig = destigmatization_index(markers)
+
+    excess = max(0.0, destig - bis)
+    if excess <= 0:
+        return 0.0
+
+    conform = group_conformity(markers)
+    inversion = excess * (1.0 + 3.0 * conform)
+    return round(max(0.0, min(1.0, inversion)), 4)
+
+
+def net_behavioral_immunity(markers: dict[str, float]) -> float:
+    """Net behavioral immune function after destigmatization.
+
+    Positive = functioning BIS (stigma deters pathological spread)
+    Zero = no immunity (stigma fully neutralized)
+    Negative = inverted BIS (stigma punishes defenders)
+
+    Returns -1 (fully inverted) through 0 to 1 (full immunity).
+    """
+    bis = behavioral_immune_index(markers)
+    destig = destigmatization_index(markers)
+    inversion = stigma_inversion_index(markers)
+
+    net = bis - destig - inversion
+    return round(max(-1.0, min(1.0, net)), 4)
+
+
+def transmission_resistance(markers: dict[str, float]) -> float:
+    """Population resistance to pathological behavior transmission.
+
+    Combines BIS with cooperative group integrity.
+    When net BIS is negative (inverted), resistance = 0 and
+    the population is defenseless.
+
+    Returns 0 (no resistance, defenseless) to 1 (full resistance).
+    """
+    net_bis = net_behavioral_immunity(markers)
+    coop = cooperative_group_integrity(markers)
+
+    if net_bis > 0:
+        resistance = net_bis * 0.6 + coop * 0.4
+    else:
+        resistance = coop * 0.2
+    return round(max(0.0, min(1.0, resistance)), 4)
+
+
+BEHAVIORAL_IMMUNE_FUNCTIONS: dict[str, Any] = {
+    "behavioral_immune": behavioral_immune_index,
+    "destigmatization": destigmatization_index,
+    "stigma_inversion": stigma_inversion_index,
+    "net_immunity": net_behavioral_immunity,
+    "transmission_resistance": transmission_resistance,
+}
+
+
+# ── Social Transmission Channels ──
+#
+# Five channels through which pathological states actively spread
+# from infected to healthy individuals. Each channel operates
+# through a distinct mechanism and exploits a different vulnerability.
+#
+# Empirical foundation:
+# - Christakis & Fowler (2007, NEJM, N=12,067, Framingham 32yr):
+#   obesity contagion 57% from friend, 171% from mutual friend,
+#   40% from sibling. Effect extends to 3 degrees of separation.
+# - TikTok tics (Pringsheim 2021; Müller-Vahl 2021): functional
+#   tic-like disorders went from <5% to 20-35% of referrals,
+#   tenfold increase. 95% female, 95% had TikTok exposure.
+# - DID (McHugh 2008): from <100 known cases pre-1980 to
+#   thousands/year after media depiction (Sybil, United States
+#   of Tara). Average alters rose from 3 to 16.
+# - Suicide contagion (Niederkrotenthaler 2012, meta-analysis):
+#   13% increase after high-profile celebrity suicide. Phillips
+#   "Werther effect" (1974) showed 12% spike in month after
+#   front-page suicide.
+# - Haidt (2024): post-2012 teen suicide +167%, ER self-harm
+#   +188%, anxiety/depression doubled. Timing correlates with
+#   smartphone/social media saturation (not economic crisis).
+# - ACE study (Felitti 1998, N=17,337): ACE 4+ → depression
+#   OR=4.6, suicide OR=12.2, alcoholism OR=7.4. Dose-response.
+# - Attachment transmission (van IJzendoorn 1995, meta-analysis):
+#   ~75% parent→child concordance, d=1.06. Intergenerational
+#   transmission of attachment style is one of the largest
+#   effects in developmental psychology.
+# - Learned helplessness (Seligman 1967): 75% of dogs helpless
+#   after single inescapable shock session. Transfers cross-modal.
+#   Hiroto (1974): human analogue confirmed (d>1.0).
+# - Addiction relapse: 85% within first year. Addicted best
+#   friend → 2.59x relapse risk; addicted close relative →
+#   3.49x (systematic review). 34% relapse specifically from
+#   peer pressure (not craving, not stress).
+# - FDIA/Münchausen by proxy (Frontiers 2025, 314 studies):
+#   92.75% female perpetrators, 6-10% victim mortality,
+#   19.56% of perpetrators had medical background.
+# - Pathological altruism (Oakley et al. 2012, OUP, 31 papers):
+#   hyperempathy/codependency affects ~40M Americans. Healthcare
+#   burnout 25-60% by specialty. Concept creep (Haslam 2016)
+#   documents systematic expansion of harm/trauma definitions.
+# - Obesity normalization (Robinson 2017): 82.5% of obese
+#   underestimate their weight. Visual normalization: as
+#   population gets heavier, "normal" recalibrates upward.
+#   US obesity: 13.4% (1960) → 41.9% (2020). No plateau.
+#
+# 1. Recovery sabotage (crab bucket): the recovered individual
+#    is an existential threat — proves condition is a choice.
+#    Mechanism: social pressure, temptation, ostracism of recoverers.
+#
+# 2. Dependency transmission (Münchausen + intergenerational):
+#    making others sick/helpless to maintain control and prevent
+#    their independence. Vanhempi kieltää lapselta itsenäisyyden.
+#
+# 3. Social contagion (media-amplified): TikTok tics, diagnosis
+#    as social capital, symptom spread through identification.
+#    Mechanism: dopaminergic capture × cognitive fragility.
+#
+# 4. Empathy weaponization (pathological altruism + sacralization):
+#    compassion exploited as transmission vector. "Terveys on
+#    etuoikeus / sortoa" — health reframed as oppression.
+#    Mechanism: care foundation without disgust filter.
+#
+# 5. Active infection seeking (bugchasing/normalization):
+#    deliberate pursuit of shared pathological state to resolve
+#    anomic isolation. "En ole yksin viallinen."
+
+
+def recovery_sabotage_index(markers: dict[str, float]) -> float:
+    """Crab bucket: active sabotage of recovery in others.
+
+    The recovered individual is an existential threat to those still
+    trapped: they prove that the condition is not an immutable external
+    fate but a potentially reversible state. This invalidates the
+    entire victimhood identity.
+
+    Empirical calibration:
+    - Addiction relapse: 85% within first year. 34% specifically
+      from peer pressure. Addicted best friend → OR=2.59, addicted
+      close relative → OR=3.49 (systematic review).
+    - Hoff & Pandey (2006): caste identity salience alone (no material
+      change) suppresses Dalit performance — the social pressure
+      channel is powerful enough to operate through expectation alone.
+    - Feather (1989, N=205): tall poppy syndrome — more pleasure at
+      high achiever's fall. 86.8% of women report TPS at work (2024).
+
+    Driven by victimhood identity (condition = identity) and external
+    locus (condition = environment's fault, not choice). Suppressed by
+    T (capacity to celebrate others' success instead of feeling threatened).
+    """
+    pp = pathopolites_profile(markers)
+    victim = pp["victimhood_identity"]
+    ext_locus = pp["external_locus"]
+    t = markers.get("T", 0.5)
+
+    sabotage = victim * ext_locus * (1.0 - 0.5 * t)
+    return round(max(0.0, min(1.0, sabotage)), 4)
+
+
+def dependency_transmission_index(markers: dict[str, float]) -> float:
+    """Deliberate sickening/helplessness for control (Münchausen + intergenerational).
+
+    Two merged mechanisms:
+    1. Münchausen by proxy: making others sick for attention, status,
+       and control. FDIA systematic review (2025, 314 studies):
+       92.75% female perpetrators, 6-10% victim mortality, 19.56%
+       with medical background. 0.5-2.0 per 100K children.
+    2. Intergenerational helplessness: neurotic/narcissistic parent
+       teaching child learned helplessness to prevent independence.
+
+    Empirical calibration:
+    - ACE study (Felitti 1998, N=17,337): ACE 4+ → depression
+      OR=4.6, suicide OR=12.2, alcoholism OR=7.4. Dose-response
+      across 7 ACE categories.
+    - Attachment concordance: 75% parent→infant (van IJzendoorn
+      1995, d=1.06). One of largest effects in developmental psych.
+    - Learned helplessness (Seligman 1967): 75% helpless after
+      single session. Hiroto (1974) human analogue d>1.0.
+      Cross-modal generalization: noise→anagram transfer.
+    - Helicopter parenting → depression beta=0.15, low autonomy
+      r=-0.17 (Schiffrin et al. 2014).
+
+    Driven by safety_seeking (teaches danger), external_locus
+    (models dependency), moral_compensation (frames control as care).
+    Amplified by CORT (chronic stress environment) and (1-T)
+    (inability to model autonomy for others).
+    """
+    pp = pathopolites_profile(markers)
+    safety = pp["safety_seeking"]
+    ext_locus = pp["external_locus"]
+    moral_comp = pp["moral_compensation"]
+    t = markers.get("T", 0.5)
+    cort = markers.get("CORT", 0.3)
+
+    control_drive = safety * ext_locus
+    moral_cover = 0.3 + 0.7 * moral_comp
+    helplessness = control_drive * moral_cover * (0.3 + 0.7 * cort) * (1.5 - t)
+
+    return round(max(0.0, min(1.0, helplessness)), 4)
+
+
+def social_contagion_index(markers: dict[str, float]) -> float:
+    """Media-amplified pathology spread (massapsykogeeninen sairaus).
+
+    Empirical calibration:
+    - Christakis & Fowler (2007, N=12,067, 32yr): obesity 57%
+      from friend, 171% from mutual friend. 3 degrees of separation.
+    - TikTok tics (2021): functional tic disorders <5% → 20-35% of
+      referrals (tenfold). 95% female, 95% TikTok-exposed.
+    - DID: <100 cases pre-1980 → thousands/year post-media.
+      Average alters: 3 → 16.
+    - Suicide contagion: 13% increase after celebrity suicide
+      (meta-analysis). Phillips Werther effect (1974): 12% spike.
+    - Haidt (2024): post-2012 teen suicide +167%, self-harm +188%.
+    - Peer substance influence meta-analysis: beta=0.147,
+      alcohol beta=0.182. Peer drinking OR=1.76.
+    - Foulkes prevalence inflation: awareness campaigns both
+      identify real cases AND medicalize normal distress.
+    - Robinson visual normalization: 82.5% of obese underestimate
+      their weight. Population-level recalibration of "normal."
+
+    Driven by:
+    - Dopaminergic capture (social media hook provides the channel)
+    - Victimhood identity (diagnosis as identity = motivation)
+    - Cognitive fragility (inability to maintain independent judgment)
+    - (1 - sanctity) = collapsed disgust/contamination filter
+
+    The contagion requires both the channel (media) and the substrate
+    (fragile, identity-seeking, with no purity filter).
+    """
+    dopa = dopaminergic_capture_index(markers)
+    pp = pathopolites_profile(markers)
+    victim = pp["victimhood_identity"]
+    cog_frag = pp["cognitive_fragility"]
+    sanctity = sanctity_purity(markers)
+
+    channel = dopa * victim
+    substrate = (0.3 + 0.7 * cog_frag) * (1.5 - sanctity)
+
+    return round(max(0.0, min(1.0, channel * substrate)), 4)
+
+
+def empathy_weaponization_index(markers: dict[str, float]) -> float:
+    """Parasitic exploitation of empathy + sacralization of sickness.
+
+    Two merged mechanisms:
+    1. Pathological altruism exploitation: the degraded demonstrate
+       suffering to extract resources, protection, and status.
+    2. Sacralization of sickness: institutions redefine pathology as
+       virtue, health as oppression. "Terveys on etuoikeus."
+
+    Empirical calibration:
+    - Oakley et al. (2012, OUP, 31 papers): pathological altruism
+      = altruism producing unanticipated harm. Codependency ~40M
+      Americans. Healthcare burnout 25-60% by specialty.
+    - Haslam (2016) concept creep: harm, trauma, prejudice, mental
+      disorder definitions systematically expanded. Both vertical
+      (more severe) and horizontal (broader scope).
+    - Tomiyama (2014) COBWEBS: weight stigma → cortisol → overeating
+      → weight gain → more stigma. But removal of ALL stigma removes
+      the "obese" self-classification that motivates behavior change:
+      82.5% of obese underestimate weight (Robinson 2017).
+
+    Both exploit the gap between care/harm (remains high) and
+    sanctity/purity (collapsed). Empathy without disgust filter =
+    no immune response to parasitic exploitation.
+
+    Enabled by moral_compensation (frames exploitation as compassion)
+    and institutional capture (enforces sacralization through policy).
+    """
+    sanctity = sanctity_purity(markers)
+    moral_comp = pathopolites_profile(markers)["moral_compensation"]
+    capture = institutional_capture_index(markers)
+    ext_locus = pathopolites_profile(markers)["external_locus"]
+
+    disgust_deficit = 1.0 - sanctity
+    exploitation = disgust_deficit * moral_comp * (0.3 + 0.7 * ext_locus)
+    sacralization = capture * disgust_deficit * moral_comp
+
+    return round(max(0.0, min(1.0, 0.6 * exploitation + 0.4 * sacralization)), 4)
+
+
+def active_infection_seeking_index(markers: dict[str, float]) -> float:
+    """Deliberate pursuit of shared pathological state (bugchasing).
+
+    The most extreme transmission: the uninfected actively seek
+    infection. Biological: HIV bugchasing subculture. Social:
+    seeking diagnosis, "neurodivergent pride", celebrating shared
+    pathology as identity and community.
+
+    Psychological function: anomic isolation is worse than shared
+    sickness. Tartunnan levittäminen toiselle poistaa leiman
+    ("en ole enää yksin viallinen"), lievittää hylätyksi tulemisen
+    pelkoa ja luo tiiviin sisäryhmän.
+
+    Driven by anomic distress (isolation) and external locus
+    (seeking belonging through shared condition). Requires low T
+    (no capacity for independent path). Only significant when
+    destigmatization has removed the cost of infection.
+    """
+    pp = pathopolites_profile(markers)
+    anomic = pp["anomic_distress"]
+    ext_locus = pp["external_locus"]
+    victim = pp["victimhood_identity"]
+    t = markers.get("T", 0.5)
+
+    isolation_drive = anomic * ext_locus
+    identity_gain = 0.3 + 0.7 * victim
+    capacity = max(0.0, 1.0 - t)
+
+    return round(max(0.0, min(1.0, isolation_drive * identity_gain * capacity)), 4)
+
+
+def civilizational_transmission_composite(markers: dict[str, float]) -> float:
+    """Aggregate social transmission intensity across all channels.
+
+    Not a simple average — channels compound. High values in
+    multiple channels means the population faces simultaneous
+    attack vectors with no defense.
+
+    Modulated by transmission_resistance: high resistance blocks
+    all channels; low resistance lets them through; inverted BIS
+    amplifies them.
+
+    Returns 0 (no active transmission) to 1 (maximal pathological spread).
+    """
+    sabotage = recovery_sabotage_index(markers)
+    dependency = dependency_transmission_index(markers)
+    contagion = social_contagion_index(markers)
+    empathy = empathy_weaponization_index(markers)
+    infection = active_infection_seeking_index(markers)
+
+    raw_transmission = (
+        0.25 * sabotage
+        + 0.20 * dependency
+        + 0.20 * contagion
+        + 0.20 * empathy
+        + 0.15 * infection
+    )
+
+    resistance = transmission_resistance(markers)
+    effective = raw_transmission * (1.5 - resistance)
+
+    return round(max(0.0, min(1.0, effective)), 4)
+
+
+def civilizational_transmission_profile(
+    markers: dict[str, float],
+) -> dict[str, Any]:
+    """Full behavioral immune system and transmission diagnostic."""
+    return {
+        "behavioral_immune": behavioral_immune_index(markers),
+        "destigmatization": destigmatization_index(markers),
+        "stigma_inversion": stigma_inversion_index(markers),
+        "net_immunity": net_behavioral_immunity(markers),
+        "transmission_resistance": transmission_resistance(markers),
+        "recovery_sabotage": recovery_sabotage_index(markers),
+        "dependency_transmission": dependency_transmission_index(markers),
+        "social_contagion": social_contagion_index(markers),
+        "empathy_weaponization": empathy_weaponization_index(markers),
+        "active_infection_seeking": active_infection_seeking_index(markers),
+        "transmission_composite": civilizational_transmission_composite(markers),
+    }
+
+
+def civilizational_transmission_gradient(
+    year: float = 2025,
+) -> list[dict[str, Any]]:
+    """Transmission analysis across all EMF environments."""
+    env_order = [
+        "amish", "rural", "suburban", "urban_residential", "urban_office",
+    ]
+    results: list[dict[str, Any]] = []
+    for env_name in env_order:
+        markers = environment_biomarkers(env_name, year)
+        profile = civilizational_transmission_profile(markers)
+        profile["environment"] = env_name
+        results.append(profile)
+    return results
+
+
+SOCIAL_TRANSMISSION_FUNCTIONS: dict[str, Any] = {
+    "recovery_sabotage": recovery_sabotage_index,
+    "dependency_transmission": dependency_transmission_index,
+    "social_contagion": social_contagion_index,
+    "empathy_weaponization": empathy_weaponization_index,
+    "active_infection_seeking": active_infection_seeking_index,
+    "transmission_composite": civilizational_transmission_composite,
+    "transmission_profile": civilizational_transmission_profile,
+}

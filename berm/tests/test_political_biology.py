@@ -81,6 +81,66 @@ from berm.civilization.political_biology import (
     moral_compensation_index,
     pathopolites_profile,
     pathopolites_gradient,
+    morphological_signal_index,
+    dynamic_signal_index,
+    cryptic_signal_index,
+    obesity_amplification_index,
+    signal_perception_capacity,
+    pair_signal_compound,
+    signal_degradation_profile,
+    signal_degradation_gradient,
+    SIGNAL_DEGRADATION_FUNCTIONS,
+    normative_predation_index,
+    institutional_capture_index,
+    sterilization_contagion_index,
+    behavioral_sink_index,
+    behavioral_sink_profile,
+    behavioral_sink_gradient,
+    BEHAVIORAL_SINK_FUNCTIONS,
+    COUNTRY_PROFILES,
+    CountryEMFProfile,
+    country_emf_index,
+    country_predicted_tfr,
+    country_berm_analysis,
+    cross_country_comparison,
+    CALHOUN_PHASE_FUNCTIONS,
+    BIOLENINIST_FUNCTIONS,
+    REPRODUCTIVE_SPECTRUM_FUNCTIONS,
+    PARASITIC_TRANSMISSION_FUNCTIONS,
+    CIVILIZATIONAL_SINK_FUNCTIONS,
+    calhoun_phase_indicators,
+    calhoun_phase,
+    calhoun_recovery_potential,
+    bioleninist_loyalty_value,
+    institutional_competence_decay,
+    bioleninist_ratchet_index,
+    reproductive_behavior_spectrum,
+    effective_fertility_index,
+    prenatal_disruption_index,
+    endocrine_sexual_disruption_index,
+    wolbachia_sterilization_index,
+    sacculina_hijacking_index,
+    baculovirus_institutional_index,
+    disoperator_destruction_index,
+    cooperative_group_integrity,
+    civilizational_sink_index,
+    civilizational_sink_profile,
+    civilizational_sink_gradient,
+    BEHAVIORAL_IMMUNE_FUNCTIONS,
+    SOCIAL_TRANSMISSION_FUNCTIONS,
+    behavioral_immune_index,
+    destigmatization_index,
+    stigma_inversion_index,
+    net_behavioral_immunity,
+    transmission_resistance,
+    recovery_sabotage_index,
+    dependency_transmission_index,
+    social_contagion_index,
+    empathy_weaponization_index,
+    active_infection_seeking_index,
+    civilizational_transmission_composite,
+    civilizational_transmission_profile,
+    civilizational_transmission_gradient,
 )
 from berm.civilization.biomarker_trajectories import biomarker_values_at
 from berm.civilization.cultural_energy import compute_biocap
@@ -1606,3 +1666,1115 @@ class TestPathopolitesGradient:
     def test_urban_more_than_5x_amish(self):
         gradient = pathopolites_gradient()
         assert gradient[-1]["pathopolites_index"] > gradient[0]["pathopolites_index"] * 5
+
+
+# ── Signal degradation tests ──
+
+
+class TestMorphologicalSignal:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env)
+            assert 0.0 <= morphological_signal_index(m) <= 1.0
+
+    def test_amish_higher_than_urban(self):
+        amish = morphological_signal_index(environment_biomarkers("amish"))
+        urban = morphological_signal_index(environment_biomarkers("urban_office"))
+        assert amish > urban
+
+    def test_monotonically_decreasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        scores = [morphological_signal_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(scores) - 1):
+            assert scores[i] >= scores[i + 1]
+
+
+class TestDynamicSignal:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env)
+            assert 0.0 <= dynamic_signal_index(m) <= 1.0
+
+    def test_amish_higher_than_urban(self):
+        amish = dynamic_signal_index(environment_biomarkers("amish"))
+        urban = dynamic_signal_index(environment_biomarkers("urban_office"))
+        assert amish > urban
+
+    def test_monotonically_decreasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        scores = [dynamic_signal_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(scores) - 1):
+            assert scores[i] >= scores[i + 1]
+
+
+class TestCrypticSignal:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env)
+            assert 0.0 <= cryptic_signal_index(m) <= 1.0
+
+    def test_amish_higher_than_urban(self):
+        amish = cryptic_signal_index(environment_biomarkers("amish"))
+        urban = cryptic_signal_index(environment_biomarkers("urban_office"))
+        assert amish > urban
+
+    def test_monotonically_decreasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        scores = [cryptic_signal_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(scores) - 1):
+            assert scores[i] >= scores[i + 1]
+
+
+class TestObesityAmplification:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env)
+            assert 0.0 <= obesity_amplification_index(m) <= 1.0
+
+    def test_amish_low(self):
+        amish = obesity_amplification_index(environment_biomarkers("amish"))
+        assert amish < 0.15
+
+    def test_urban_higher(self):
+        amish = obesity_amplification_index(environment_biomarkers("amish"))
+        urban = obesity_amplification_index(environment_biomarkers("urban_office"))
+        assert urban > amish
+
+    def test_monotonically_increasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        scores = [obesity_amplification_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(scores) - 1):
+            assert scores[i] <= scores[i + 1]
+
+
+class TestSignalPerception:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env)
+            assert 0.0 <= signal_perception_capacity(m) <= 1.0
+
+    def test_amish_higher(self):
+        amish = signal_perception_capacity(environment_biomarkers("amish"))
+        urban = signal_perception_capacity(environment_biomarkers("urban_office"))
+        assert amish > urban
+
+
+class TestPairSignalCompound:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env)
+            assert 0.0 <= pair_signal_compound(m) <= 1.0
+
+    def test_amish_high(self):
+        amish = pair_signal_compound(environment_biomarkers("amish"))
+        assert amish > 0.5
+
+    def test_urban_low(self):
+        urban = pair_signal_compound(environment_biomarkers("urban_office"))
+        assert urban < 0.5
+
+    def test_monotonically_decreasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        scores = [pair_signal_compound(environment_biomarkers(e)) for e in envs]
+        for i in range(len(scores) - 1):
+            assert scores[i] >= scores[i + 1]
+
+    def test_multiplicative_collapse(self):
+        m = {"T": 0.01, "OXT": 0.8, "DA": 0.8, "MEL": 0.8, "BDNF": 0.8, "CORT": 0.2}
+        assert pair_signal_compound(m) < 0.3
+
+
+class TestSignalDegradationProfile:
+    def test_all_keys(self):
+        m = environment_biomarkers("suburban")
+        profile = signal_degradation_profile(m)
+        expected_keys = {
+            "morphological_signal", "dynamic_signal", "cryptic_signal",
+            "total_signal_strength", "signal_degradation",
+            "obesity_amplification", "signal_perception", "pair_signal_compound",
+        }
+        assert set(profile.keys()) == expected_keys
+
+    def test_degradation_complement(self):
+        m = environment_biomarkers("suburban")
+        profile = signal_degradation_profile(m)
+        assert abs(
+            profile["total_signal_strength"] + profile["signal_degradation"] - 1.0
+        ) < 0.001
+
+
+class TestSignalDegradationGradient:
+    def test_all_environments(self):
+        gradient = signal_degradation_gradient()
+        assert len(gradient) == 5
+
+    def test_signal_decreases(self):
+        gradient = signal_degradation_gradient()
+        signals = [g["total_signal_strength"] for g in gradient]
+        for i in range(len(signals) - 1):
+            assert signals[i] >= signals[i + 1]
+
+    def test_degradation_increases(self):
+        gradient = signal_degradation_gradient()
+        degradation = [g["signal_degradation"] for g in gradient]
+        for i in range(len(degradation) - 1):
+            assert degradation[i] <= degradation[i + 1]
+
+
+class TestSignalDegradationFunctions:
+    def test_all_registered(self):
+        assert len(SIGNAL_DEGRADATION_FUNCTIONS) == 6
+        for name, fn in SIGNAL_DEGRADATION_FUNCTIONS.items():
+            m = environment_biomarkers("suburban")
+            assert 0.0 <= fn(m) <= 1.0
+
+
+# ── Behavioral sink tests ──
+
+
+class TestNormativePredation:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env)
+            assert 0.0 <= normative_predation_index(m) <= 1.0
+
+    def test_amish_low(self):
+        amish = normative_predation_index(environment_biomarkers("amish"))
+        assert amish < 0.05
+
+    def test_urban_higher(self):
+        amish = normative_predation_index(environment_biomarkers("amish"))
+        urban = normative_predation_index(environment_biomarkers("urban_office"))
+        assert urban > amish
+
+    def test_monotonically_increasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        scores = [normative_predation_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(scores) - 1):
+            assert scores[i] <= scores[i + 1]
+
+
+class TestInstitutionalCapture:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env)
+            assert 0.0 <= institutional_capture_index(m) <= 1.0
+
+    def test_amish_minimal(self):
+        amish = institutional_capture_index(environment_biomarkers("amish"))
+        assert amish < 0.10
+
+    def test_urban_substantial(self):
+        urban = institutional_capture_index(environment_biomarkers("urban_office"))
+        assert urban > 0.10
+
+    def test_nonlinear_threshold(self):
+        amish = institutional_capture_index(environment_biomarkers("amish"))
+        rural = institutional_capture_index(environment_biomarkers("rural"))
+        urban = institutional_capture_index(environment_biomarkers("urban_office"))
+        rural_amish_gap = rural - amish
+        urban_rural_gap = urban - rural
+        assert urban_rural_gap > rural_amish_gap
+
+
+class TestSterilizationContagion:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env)
+            assert 0.0 <= sterilization_contagion_index(m) <= 1.0
+
+    def test_amish_near_zero(self):
+        amish = sterilization_contagion_index(environment_biomarkers("amish"))
+        assert amish < 0.03
+
+    def test_urban_higher(self):
+        amish = sterilization_contagion_index(environment_biomarkers("amish"))
+        urban = sterilization_contagion_index(environment_biomarkers("urban_office"))
+        assert urban > amish * 5
+
+    def test_monotonically_increasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        scores = [sterilization_contagion_index(environment_biomarkers(e)) for e in envs]
+        for i in range(len(scores) - 1):
+            assert scores[i] <= scores[i + 1]
+
+
+class TestBehavioralSink:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env)
+            assert 0.0 <= behavioral_sink_index(m) <= 1.0
+
+    def test_amish_low(self):
+        amish = behavioral_sink_index(environment_biomarkers("amish"))
+        assert amish < 0.10
+
+    def test_urban_higher(self):
+        amish = behavioral_sink_index(environment_biomarkers("amish"))
+        urban = behavioral_sink_index(environment_biomarkers("urban_office"))
+        assert urban > amish
+
+
+class TestBehavioralSinkProfile:
+    def test_all_keys(self):
+        m = environment_biomarkers("suburban")
+        profile = behavioral_sink_profile(m)
+        expected = {"normative_predation", "institutional_capture",
+                    "sterilization_contagion", "behavioral_sink"}
+        assert set(profile.keys()) == expected
+
+
+class TestBehavioralSinkGradient:
+    def test_all_environments(self):
+        gradient = behavioral_sink_gradient()
+        assert len(gradient) == 5
+
+    def test_sink_increases(self):
+        gradient = behavioral_sink_gradient()
+        sinks = [g["behavioral_sink"] for g in gradient]
+        for i in range(len(sinks) - 1):
+            assert sinks[i] <= sinks[i + 1]
+
+
+class TestBehavioralSinkFunctions:
+    def test_all_registered(self):
+        assert len(BEHAVIORAL_SINK_FUNCTIONS) == 4
+        for name, fn in BEHAVIORAL_SINK_FUNCTIONS.items():
+            m = environment_biomarkers("suburban")
+            assert 0.0 <= fn(m) <= 1.0
+
+
+# ── Cross-country prediction tests ──
+
+
+class TestCountryProfiles:
+    def test_all_countries_have_profiles(self):
+        expected = {"south_korea", "japan", "singapore", "finland", "usa",
+                    "uk", "france", "sweden", "hungary", "poland"}
+        assert set(COUNTRY_PROFILES.keys()) == expected
+
+    def test_all_profiles_valid(self):
+        for key, profile in COUNTRY_PROFILES.items():
+            assert isinstance(profile, CountryEMFProfile)
+            assert 0.0 <= profile.smartphone_penetration <= 1.0
+            assert 0.0 <= profile.urbanization_rate <= 1.0
+            assert 0.0 <= profile.population_density_factor <= 1.0
+            assert 0.0 <= profile.cultural_buffer <= 1.0
+            assert profile.tfr_2010 > 0
+            assert profile.tfr_latest > 0
+
+
+class TestCountryEMFIndex:
+    def test_bounds(self):
+        for key, profile in COUNTRY_PROFILES.items():
+            idx = country_emf_index(profile)
+            assert 0.0 <= idx <= 1.0
+
+    def test_singapore_high(self):
+        idx = country_emf_index(COUNTRY_PROFILES["singapore"])
+        assert idx > 0.7
+
+    def test_cultural_buffer_reduces(self):
+        japan = COUNTRY_PROFILES["japan"]
+        unbuffered = CountryEMFProfile(
+            name="Japan_unbuffered",
+            mobile_infrastructure_year=japan.mobile_infrastructure_year,
+            five_g_year=japan.five_g_year,
+            smartphone_penetration=japan.smartphone_penetration,
+            urbanization_rate=japan.urbanization_rate,
+            population_density_factor=japan.population_density_factor,
+            obesity_rate=japan.obesity_rate,
+            tfr_2010=japan.tfr_2010,
+            tfr_latest=japan.tfr_latest,
+            cultural_buffer=0.0,
+        )
+        assert country_emf_index(japan) < country_emf_index(unbuffered)
+
+
+class TestCountryPredictedTFR:
+    def test_all_positive(self):
+        for key, profile in COUNTRY_PROFILES.items():
+            tfr = country_predicted_tfr(profile)
+            assert tfr >= 0.5
+
+    def test_high_emf_lower_tfr(self):
+        sg_tfr = country_predicted_tfr(COUNTRY_PROFILES["singapore"])
+        hu_tfr = country_predicted_tfr(COUNTRY_PROFILES["hungary"])
+        assert sg_tfr < hu_tfr
+
+
+class TestCountryBERMAnalysis:
+    def test_all_countries_analyzable(self):
+        for key in COUNTRY_PROFILES:
+            analysis = country_berm_analysis(key)
+            assert "emf_index" in analysis
+            assert "predicted_tfr" in analysis
+            assert "actual_tfr" in analysis
+            assert "prediction_error" in analysis
+
+    def test_unknown_country_raises(self):
+        with pytest.raises(ValueError):
+            country_berm_analysis("atlantis")
+
+    def test_prediction_error_bounded(self):
+        for key in COUNTRY_PROFILES:
+            analysis = country_berm_analysis(key)
+            assert analysis["prediction_error"] < 1.5
+
+
+class TestCrossCountryComparison:
+    def test_all_countries_included(self):
+        comparison = cross_country_comparison()
+        assert len(comparison) == len(COUNTRY_PROFILES)
+
+    def test_sorted_by_emf_descending(self):
+        comparison = cross_country_comparison()
+        emf_indices = [c["emf_index"] for c in comparison]
+        for i in range(len(emf_indices) - 1):
+            assert emf_indices[i] >= emf_indices[i + 1]
+
+    def test_highest_emf_has_low_tfr(self):
+        comparison = cross_country_comparison()
+        highest_emf = comparison[0]
+        assert highest_emf["actual_tfr"] < 1.5
+
+
+# ── Calhoun Phase Dynamics ──
+
+
+class TestCalhounPhaseIndicators:
+    def test_all_keys_present(self):
+        m = environment_biomarkers("suburban", 2025)
+        ind = calhoun_phase_indicators(m)
+        expected = {"position_saturation", "maternal_collapse",
+                    "complexity_loss", "beautiful_ones_fraction",
+                    "societal_death"}
+        assert set(ind.keys()) == expected
+
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            ind = calhoun_phase_indicators(m)
+            for k, v in ind.items():
+                assert 0.0 <= v <= 1.0, f"{env}/{k}={v}"
+
+    def test_amish_low_societal_death(self):
+        m = environment_biomarkers("amish", 2025)
+        ind = calhoun_phase_indicators(m)
+        assert ind["societal_death"] < 0.15
+
+    def test_urban_high_societal_death(self):
+        m = environment_biomarkers("urban_office", 2025)
+        ind = calhoun_phase_indicators(m)
+        assert ind["societal_death"] > 0.50
+
+    def test_monotonically_increasing(self):
+        env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        deaths = [calhoun_phase_indicators(
+            environment_biomarkers(e, 2025))["societal_death"]
+            for e in env_order]
+        for i in range(len(deaths) - 1):
+            assert deaths[i] <= deaths[i + 1]
+
+
+class TestCalhounPhase:
+    def test_amish_phase_b(self):
+        m = environment_biomarkers("amish", 2025)
+        assert calhoun_phase(m) == "B"
+
+    def test_urban_phase_d(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert calhoun_phase(m) == "D"
+
+    def test_valid_phases(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert calhoun_phase(m) in ("B", "C", "D")
+
+
+class TestCalhounRecovery:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            r = calhoun_recovery_potential(m)
+            assert 0.0 <= r <= 1.0
+
+    def test_amish_high_recovery(self):
+        m = environment_biomarkers("amish", 2025)
+        assert calhoun_recovery_potential(m) > 0.70
+
+    def test_urban_low_recovery(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert calhoun_recovery_potential(m) < 0.20
+
+    def test_decreasing_with_degradation(self):
+        env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        recoveries = [calhoun_recovery_potential(
+            environment_biomarkers(e, 2025)) for e in env_order]
+        for i in range(len(recoveries) - 1):
+            assert recoveries[i] >= recoveries[i + 1]
+
+
+class TestCalhounPhaseFunctions:
+    def test_all_registered(self):
+        assert len(CALHOUN_PHASE_FUNCTIONS) == 3
+
+
+# ── Bioleninist Selection ──
+
+
+class TestBioleninitLoyalty:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= bioleninist_loyalty_value(m) <= 1.0
+
+    def test_amish_low_loyalty(self):
+        m = environment_biomarkers("amish", 2025)
+        assert bioleninist_loyalty_value(m) < 0.10
+
+    def test_urban_higher_loyalty(self):
+        m_a = environment_biomarkers("amish", 2025)
+        m_u = environment_biomarkers("urban_office", 2025)
+        assert bioleninist_loyalty_value(m_u) > bioleninist_loyalty_value(m_a)
+
+    def test_monotonic(self):
+        env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [bioleninist_loyalty_value(
+            environment_biomarkers(e, 2025)) for e in env_order]
+        for i in range(len(vals) - 1):
+            assert vals[i] <= vals[i + 1]
+
+
+class TestCompetenceDecay:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= institutional_competence_decay(m) <= 1.0
+
+    def test_amish_minimal(self):
+        m = environment_biomarkers("amish", 2025)
+        assert institutional_competence_decay(m) < 0.01
+
+    def test_urban_higher(self):
+        m_a = environment_biomarkers("amish", 2025)
+        m_u = environment_biomarkers("urban_office", 2025)
+        assert institutional_competence_decay(m_u) > institutional_competence_decay(m_a)
+
+
+class TestBioleninitRatchet:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= bioleninist_ratchet_index(m) <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish", 2025)
+        assert bioleninist_ratchet_index(m) < 0.05
+
+    def test_urban_higher(self):
+        m_a = environment_biomarkers("amish", 2025)
+        m_u = environment_biomarkers("urban_office", 2025)
+        assert bioleninist_ratchet_index(m_u) > bioleninist_ratchet_index(m_a)
+
+
+class TestBioleninitFunctions:
+    def test_all_registered(self):
+        assert len(BIOLENINIST_FUNCTIONS) == 3
+
+
+# ── Reproductive Behavior Spectrum ──
+
+
+class TestReproductiveSpectrum:
+    def test_all_keys(self):
+        m = environment_biomarkers("suburban", 2025)
+        s = reproductive_behavior_spectrum(m)
+        expected = {"normal_reproductive", "reduced_libido",
+                    "pansexual_undifferentiated",
+                    "non_reproductive_preferential", "asexual_withdrawn"}
+        assert set(s.keys()) == expected
+
+    def test_sums_to_one(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            s = reproductive_behavior_spectrum(m)
+            total = sum(s.values())
+            assert abs(total - 1.0) < 0.01, f"{env}: sum={total}"
+
+    def test_all_non_negative(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            s = reproductive_behavior_spectrum(m)
+            for k, v in s.items():
+                assert v >= 0.0, f"{env}/{k}={v}"
+
+    def test_amish_mostly_normal(self):
+        m = environment_biomarkers("amish", 2025)
+        s = reproductive_behavior_spectrum(m)
+        assert s["normal_reproductive"] > 0.90
+
+    def test_urban_less_normal(self):
+        m = environment_biomarkers("urban_office", 2025)
+        s = reproductive_behavior_spectrum(m)
+        assert s["normal_reproductive"] < 0.50
+
+    def test_normal_decreases_with_degradation(self):
+        env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        normals = [reproductive_behavior_spectrum(
+            environment_biomarkers(e, 2025))["normal_reproductive"]
+            for e in env_order]
+        for i in range(len(normals) - 1):
+            assert normals[i] >= normals[i + 1]
+
+    def test_non_repro_baseline_near_historical(self):
+        m = environment_biomarkers("amish", 2025)
+        s = reproductive_behavior_spectrum(m)
+        assert 0.02 <= s["non_reproductive_preferential"] <= 0.05
+
+    def test_non_repro_urban_matches_gallup(self):
+        m = environment_biomarkers("urban_residential", 2025)
+        s = reproductive_behavior_spectrum(m)
+        assert 0.05 <= s["non_reproductive_preferential"] <= 0.15
+
+    def test_asexual_increases_with_degradation(self):
+        env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        asexuals = [reproductive_behavior_spectrum(
+            environment_biomarkers(e, 2025))["asexual_withdrawn"]
+            for e in env_order]
+        for i in range(len(asexuals) - 1):
+            assert asexuals[i] <= asexuals[i + 1]
+
+
+class TestEffectiveFertility:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            ef = effective_fertility_index(m)
+            assert 0.0 <= ef <= 1.0
+
+    def test_amish_high(self):
+        m = environment_biomarkers("amish", 2025)
+        assert effective_fertility_index(m) > 0.90
+
+    def test_urban_low(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert effective_fertility_index(m) < 0.60
+
+    def test_decreasing_with_degradation(self):
+        env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        ferts = [effective_fertility_index(
+            environment_biomarkers(e, 2025)) for e in env_order]
+        for i in range(len(ferts) - 1):
+            assert ferts[i] >= ferts[i + 1]
+
+
+class TestPrenatalDisruption:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= prenatal_disruption_index(m) <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish", 2025)
+        assert prenatal_disruption_index(m) < 0.10
+
+    def test_urban_higher(self):
+        m_a = environment_biomarkers("amish", 2025)
+        m_u = environment_biomarkers("urban_office", 2025)
+        assert prenatal_disruption_index(m_u) > prenatal_disruption_index(m_a)
+
+
+class TestEndocrineSexualDisruption:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= endocrine_sexual_disruption_index(m) <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish", 2025)
+        assert endocrine_sexual_disruption_index(m) < 0.10
+
+    def test_urban_high(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert endocrine_sexual_disruption_index(m) > 0.40
+
+    def test_monotonic(self):
+        env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [endocrine_sexual_disruption_index(
+            environment_biomarkers(e, 2025)) for e in env_order]
+        for i in range(len(vals) - 1):
+            assert vals[i] <= vals[i + 1]
+
+
+class TestReproductiveSpectrumFunctions:
+    def test_all_registered(self):
+        assert len(REPRODUCTIVE_SPECTRUM_FUNCTIONS) == 4
+
+
+# ── Parasitic Transmission ──
+
+
+class TestWolbachiaSterilization:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= wolbachia_sterilization_index(m) <= 1.0
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert wolbachia_sterilization_index(m) < 0.05
+
+    def test_urban_higher(self):
+        m_a = environment_biomarkers("amish", 2025)
+        m_u = environment_biomarkers("urban_office", 2025)
+        assert wolbachia_sterilization_index(m_u) > wolbachia_sterilization_index(m_a)
+
+
+class TestSacculinaHijacking:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= sacculina_hijacking_index(m) <= 1.0
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert sacculina_hijacking_index(m) < 0.05
+
+    def test_urban_higher(self):
+        m_a = environment_biomarkers("amish", 2025)
+        m_u = environment_biomarkers("urban_office", 2025)
+        assert sacculina_hijacking_index(m_u) > sacculina_hijacking_index(m_a)
+
+
+class TestBaculovirusInstitutional:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= baculovirus_institutional_index(m) <= 1.0
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert baculovirus_institutional_index(m) < 0.05
+
+    def test_urban_higher(self):
+        m_a = environment_biomarkers("amish", 2025)
+        m_u = environment_biomarkers("urban_office", 2025)
+        assert baculovirus_institutional_index(m_u) > baculovirus_institutional_index(m_a)
+
+
+class TestDisoperatorDestruction:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= disoperator_destruction_index(m) <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish", 2025)
+        assert disoperator_destruction_index(m) < 0.10
+
+    def test_urban_high(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert disoperator_destruction_index(m) > 0.50
+
+    def test_monotonic(self):
+        env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [disoperator_destruction_index(
+            environment_biomarkers(e, 2025)) for e in env_order]
+        for i in range(len(vals) - 1):
+            assert vals[i] <= vals[i + 1]
+
+
+class TestCooperativeIntegrity:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= cooperative_group_integrity(m) <= 1.0
+
+    def test_amish_high(self):
+        m = environment_biomarkers("amish", 2025)
+        assert cooperative_group_integrity(m) > 0.80
+
+    def test_urban_low(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert cooperative_group_integrity(m) < 0.30
+
+    def test_decreasing_with_degradation(self):
+        env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        vals = [cooperative_group_integrity(
+            environment_biomarkers(e, 2025)) for e in env_order]
+        for i in range(len(vals) - 1):
+            assert vals[i] >= vals[i + 1]
+
+
+class TestParasiticTransmissionFunctions:
+    def test_all_registered(self):
+        assert len(PARASITIC_TRANSMISSION_FUNCTIONS) == 5
+
+
+# ── Integrated Civilizational Sink ──
+
+
+class TestCivilizationalSinkIndex:
+    def test_bounds(self):
+        for env in ENVIRONMENTS:
+            m = environment_biomarkers(env, 2025)
+            assert 0.0 <= civilizational_sink_index(m) <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish", 2025)
+        assert civilizational_sink_index(m) < 0.10
+
+    def test_urban_high(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert civilizational_sink_index(m) > 0.30
+
+    def test_monotonically_increasing(self):
+        env_order = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        sinks = [civilizational_sink_index(
+            environment_biomarkers(e, 2025)) for e in env_order]
+        for i in range(len(sinks) - 1):
+            assert sinks[i] <= sinks[i + 1]
+
+
+class TestCivilizationalSinkProfile:
+    def test_all_keys(self):
+        m = environment_biomarkers("suburban", 2025)
+        p = civilizational_sink_profile(m)
+        expected_keys = {
+            "civilizational_sink", "calhoun_phase", "calhoun_indicators",
+            "recovery_potential", "bioleninist_loyalty", "competence_decay",
+            "ratchet_strength", "reproductive_spectrum", "effective_fertility",
+            "prenatal_disruption", "sexual_disruption",
+            "wolbachia_sterilization", "sacculina_hijacking",
+            "baculovirus_institutional", "disoperator_destruction",
+            "cooperative_integrity",
+            "behavioral_immune", "destigmatization", "stigma_inversion",
+            "net_immunity", "transmission_resistance",
+            "transmission_composite",
+        }
+        assert set(p.keys()) == expected_keys
+        assert len(expected_keys) == 22
+
+    def test_spectrum_is_dict(self):
+        m = environment_biomarkers("suburban", 2025)
+        p = civilizational_sink_profile(m)
+        assert isinstance(p["reproductive_spectrum"], dict)
+        assert len(p["reproductive_spectrum"]) == 5
+
+
+class TestCivilizationalSinkGradient:
+    def test_all_environments(self):
+        gradient = civilizational_sink_gradient()
+        assert len(gradient) == 5
+
+    def test_sink_increases(self):
+        gradient = civilizational_sink_gradient()
+        sinks = [g["civilizational_sink"] for g in gradient]
+        for i in range(len(sinks) - 1):
+            assert sinks[i] <= sinks[i + 1]
+
+    def test_amish_lowest(self):
+        gradient = civilizational_sink_gradient()
+        assert gradient[0]["environment"] == "amish"
+        assert gradient[0]["civilizational_sink"] < 0.10
+
+
+class TestCivilizationalSinkFunctions:
+    def test_all_registered(self):
+        assert len(CIVILIZATIONAL_SINK_FUNCTIONS) == 16
+
+
+# ── Behavioral Immune System Tests ──
+
+
+class TestBehavioralImmuneIndex:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = behavioral_immune_index(m)
+            assert 0.0 <= v <= 1.0
+
+    def test_amish_high(self):
+        m = environment_biomarkers("amish", 2025)
+        assert behavioral_immune_index(m) > 0.80
+
+    def test_urban_low(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert behavioral_immune_index(m) < 0.40
+
+    def test_monotonic_decreasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        values = [behavioral_immune_index(environment_biomarkers(e, 2025)) for e in envs]
+        for i in range(len(values) - 1):
+            assert values[i] >= values[i + 1]
+
+
+class TestDestigmatizationIndex:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = destigmatization_index(m)
+            assert 0.0 <= v <= 1.0
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert destigmatization_index(m) < 0.05
+
+    def test_urban_elevated(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert destigmatization_index(m) > 0.25
+
+    def test_monotonic_increasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        values = [destigmatization_index(environment_biomarkers(e, 2025)) for e in envs]
+        for i in range(len(values) - 1):
+            assert values[i] <= values[i + 1]
+
+
+class TestStigmaInversion:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = stigma_inversion_index(m)
+            assert 0.0 <= v <= 1.0
+
+    def test_amish_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert stigma_inversion_index(m) == 0.0
+
+    def test_healthy_environments_no_inversion(self):
+        for env in ["amish", "rural", "suburban"]:
+            m = environment_biomarkers(env, 2025)
+            assert stigma_inversion_index(m) == 0.0
+
+    def test_urban_office_has_inversion(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert stigma_inversion_index(m) > 0.0
+
+
+class TestNetBehavioralImmunity:
+    def test_range(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = net_behavioral_immunity(m)
+            assert -1.0 <= v <= 1.0
+
+    def test_amish_strongly_positive(self):
+        m = environment_biomarkers("amish", 2025)
+        assert net_behavioral_immunity(m) > 0.70
+
+    def test_urban_office_negative(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert net_behavioral_immunity(m) < 0.0
+
+    def test_monotonic_decreasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        values = [net_behavioral_immunity(environment_biomarkers(e, 2025)) for e in envs]
+        for i in range(len(values) - 1):
+            assert values[i] >= values[i + 1]
+
+
+class TestTransmissionResistance:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = transmission_resistance(m)
+            assert 0.0 <= v <= 1.0
+
+    def test_amish_high(self):
+        m = environment_biomarkers("amish", 2025)
+        assert transmission_resistance(m) > 0.80
+
+    def test_urban_near_zero(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert transmission_resistance(m) < 0.10
+
+    def test_monotonic_decreasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        values = [transmission_resistance(environment_biomarkers(e, 2025)) for e in envs]
+        for i in range(len(values) - 1):
+            assert values[i] >= values[i + 1]
+
+
+class TestBehavioralImmuneFunctions:
+    def test_all_registered(self):
+        assert len(BEHAVIORAL_IMMUNE_FUNCTIONS) == 5
+
+
+# ── Social Transmission Channel Tests ──
+
+
+class TestRecoverySabotage:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = recovery_sabotage_index(m)
+            assert 0.0 <= v <= 1.0
+
+    def test_amish_low(self):
+        m = environment_biomarkers("amish", 2025)
+        assert recovery_sabotage_index(m) < 0.05
+
+    def test_urban_elevated(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert recovery_sabotage_index(m) > 0.25
+
+    def test_monotonic_increasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        values = [recovery_sabotage_index(environment_biomarkers(e, 2025)) for e in envs]
+        for i in range(len(values) - 1):
+            assert values[i] <= values[i + 1]
+
+
+class TestDependencyTransmission:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = dependency_transmission_index(m)
+            assert 0.0 <= v <= 1.0
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert dependency_transmission_index(m) < 0.02
+
+    def test_urban_elevated(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert dependency_transmission_index(m) > 0.10
+
+    def test_monotonic_increasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        values = [dependency_transmission_index(environment_biomarkers(e, 2025)) for e in envs]
+        for i in range(len(values) - 1):
+            assert values[i] <= values[i + 1]
+
+
+class TestSocialContagion:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = social_contagion_index(m)
+            assert 0.0 <= v <= 1.0
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert social_contagion_index(m) < 0.02
+
+    def test_urban_elevated(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert social_contagion_index(m) > 0.15
+
+    def test_monotonic_increasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        values = [social_contagion_index(environment_biomarkers(e, 2025)) for e in envs]
+        for i in range(len(values) - 1):
+            assert values[i] <= values[i + 1]
+
+
+class TestEmpathyWeaponization:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = empathy_weaponization_index(m)
+            assert 0.0 <= v <= 1.0
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert empathy_weaponization_index(m) < 0.02
+
+    def test_urban_elevated(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert empathy_weaponization_index(m) > 0.10
+
+    def test_monotonic_increasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        values = [empathy_weaponization_index(environment_biomarkers(e, 2025)) for e in envs]
+        for i in range(len(values) - 1):
+            assert values[i] <= values[i + 1]
+
+
+class TestActiveInfectionSeeking:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = active_infection_seeking_index(m)
+            assert 0.0 <= v <= 1.0
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert active_infection_seeking_index(m) < 0.02
+
+    def test_urban_elevated(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert active_infection_seeking_index(m) > 0.15
+
+    def test_monotonic_increasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        values = [active_infection_seeking_index(environment_biomarkers(e, 2025)) for e in envs]
+        for i in range(len(values) - 1):
+            assert values[i] <= values[i + 1]
+
+
+class TestTransmissionComposite:
+    def test_bounds(self):
+        for env in ["amish", "rural", "suburban", "urban_residential", "urban_office"]:
+            m = environment_biomarkers(env, 2025)
+            v = civilizational_transmission_composite(m)
+            assert 0.0 <= v <= 1.0
+
+    def test_amish_near_zero(self):
+        m = environment_biomarkers("amish", 2025)
+        assert civilizational_transmission_composite(m) < 0.02
+
+    def test_urban_elevated(self):
+        m = environment_biomarkers("urban_office", 2025)
+        assert civilizational_transmission_composite(m) > 0.25
+
+    def test_monotonic_increasing(self):
+        envs = ["amish", "rural", "suburban", "urban_residential", "urban_office"]
+        values = [civilizational_transmission_composite(environment_biomarkers(e, 2025)) for e in envs]
+        for i in range(len(values) - 1):
+            assert values[i] <= values[i + 1]
+
+
+class TestTransmissionProfile:
+    def test_all_keys(self):
+        m = environment_biomarkers("suburban", 2025)
+        p = civilizational_transmission_profile(m)
+        expected_keys = {
+            "behavioral_immune", "destigmatization", "stigma_inversion",
+            "net_immunity", "transmission_resistance",
+            "recovery_sabotage", "dependency_transmission",
+            "social_contagion", "empathy_weaponization",
+            "active_infection_seeking", "transmission_composite",
+        }
+        assert set(p.keys()) == expected_keys
+        assert len(expected_keys) == 11
+
+
+class TestTransmissionGradient:
+    def test_all_environments(self):
+        gradient = civilizational_transmission_gradient()
+        assert len(gradient) == 5
+
+    def test_composite_increases(self):
+        gradient = civilizational_transmission_gradient()
+        composites = [g["transmission_composite"] for g in gradient]
+        for i in range(len(composites) - 1):
+            assert composites[i] <= composites[i + 1]
+
+    def test_amish_lowest(self):
+        gradient = civilizational_transmission_gradient()
+        assert gradient[0]["environment"] == "amish"
+        assert gradient[0]["transmission_composite"] < 0.02
+
+    def test_bis_crossover(self):
+        gradient = civilizational_transmission_gradient()
+        net_immunities = [g["net_immunity"] for g in gradient]
+        assert net_immunities[0] > 0.5
+        assert net_immunities[-1] < 0.0
+
+
+class TestSocialTransmissionFunctions:
+    def test_all_registered(self):
+        assert len(SOCIAL_TRANSMISSION_FUNCTIONS) == 7
