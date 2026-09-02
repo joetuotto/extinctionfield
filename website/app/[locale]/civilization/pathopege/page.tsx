@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Zap, Shield, Heart } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
+import { TranslationNotice } from "@/components/TranslationNotice";
 import { CitationLink } from "@/components/CitationLink";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 
@@ -17,6 +18,7 @@ const COPY = {
     s2title: "Two Parallel Disruptions",
     s2lead:
       "EMF → VGCC → Ca²⁺ is the same mechanism in both sexes. But because the endocrine systems differ, the downstream consequences are sex-specific — and complementary.",
+    s2glossary: "VGCC: voltage-gated calcium channels — ion channels in cell membranes that open in response to voltage changes, allowing Ca²⁺ influx. Cav3.2: the T-type calcium channel subunit expressed in Leydig cells (testicular testosterone-producing cells) and neurons; gates calcium entry required for steroidogenesis. StAR (Steroidogenic Acute Regulatory protein): transports cholesterol into the mitochondrial inner membrane — the rate-limiting step of all steroid hormone synthesis. VTA (ventral tegmental area): midbrain nucleus containing dopamine-producing neurons that project to the nucleus accumbens and prefrontal cortex. Cav1.3: the L-type calcium channel subunit in VTA neurons; Ca²⁺ entry through Cav1.3 triggers dopamine vesicle release. HPA axis (hypothalamic-pituitary-adrenal): the neuroendocrine stress-response system; chronic activation sustains cortisol elevation even after the stressor resolves.",
     maleTitle: "Male disruption profile",
     malePrimary: "Testosterone ↓ (Cav3.2 → StAR)",
     maleSecondary: "Dopamine ↓ (VTA Cav1.3)",
@@ -56,7 +58,7 @@ const COPY = {
         hormone: "Cortisol",
         mechanism: "HPA axis hyperactivation → chronic cortisol elevation",
         behavioral:
-          "Anxiety ↑, social avoidance ↑, testosterone effect suppression (dual hormone hypothesis)",
+          "Anxiety ↑, social avoidance ↑, testosterone effect suppression (dual hormone hypothesis: cortisol moderates testosterone's behavioral effects — high cortisol blocks T-driven dominance, status-seeking, and risk-taking even when T is present; the two hormones gate the same behaviors through opposing mechanisms)",
         evidence: "[[ref:mehta2010_dual_hormone|Mehta & Josephs 2010]], meta n=8,538",
         magnitude:
           "Cortisol trends less studied than T — inferred from stress marker increases",
@@ -66,7 +68,7 @@ const COPY = {
       {
         hormone: "Estrogen / Progesterone",
         mechanism:
-          "Ovarian VGCC → folliculogenesis disrupted. Granulosa cell Ca²⁺ → steroidogenesis altered.",
+          "Ovarian VGCC → folliculogenesis disrupted (folliculogenesis: the maturation of ovarian follicles from dormant primordial stage to ovulatory Graafian follicle — a process spanning months and requiring precise Ca²⁺ signaling). Granulosa cells (the somatic support cells surrounding each oocyte, responsible for estrogen and progesterone production) depend on Ca²⁺-mediated steroidogenesis — VGCC disruption alters their hormone output directly.",
         behavioral:
           "Libido fluctuation ↑, emotional dysregulation ↑, fertility window narrowing",
         evidence:
@@ -172,7 +174,7 @@ const COPY = {
       "As EMF increases, the female anxiety/depression gender gap should widen — and it has.",
     s4bTitle: "Oxytocin and social cohesion",
     s4bBody:
-      "Oxytocin regulates trust, empathy, maternal bonding, pair-bond formation, and social cooperation. It is released through vagal nerve stimulation, physical touch, eye contact, and breastfeeding. BERM Route D disrupts vagal tone → oxytocin release ↓. At the individual level, this reduces bonding capacity. At the population level, it erodes the infrastructure of trust that institutions require.",
+      "Oxytocin regulates trust, empathy, maternal bonding, pair-bond formation, and social cooperation. It is released through vagal nerve stimulation, physical touch, eye contact, and breastfeeding. BERM Route D (the EMF → VGCC → Ca²⁺ → HPA hyperactivation → vagal suppression pathway) disrupts vagal tone → oxytocin release ↓. At the individual level, this reduces bonding capacity. At the population level, it erodes the infrastructure of trust that institutions require.",
     s4bData:
       'Edelman Trust Barometer 2025: trust in government, media, NGOs, and employers has reached historic lows across nearly every demographic. Former US Surgeon General Vivek Murthy declared loneliness a "public health crisis" in 2023.',
     s4bCaveat:
@@ -201,6 +203,18 @@ const COPY = {
     navPatopolisDesc: "What this causes at city level",
     navPatokratiaDesc: "Political consequences",
     navPatopoliteiaDesc: "Civilizational consequences",
+
+    sSantiContext: "A 2024 meta-regression of 50+ global studies, harmonized for modern LC-MS assay methods, confirmed a true secular decline of 0.8–1.3% annually since the 1980s. Even men who maintained stable weight showed a 19% decline over 20 years (Mazur 2013, n=991, US Air Force veterans). The decline is not explained by obesity, smoking, alcohol, or sleep.",
+
+    sRecoveryTitle: "Recovery Evidence",
+    sRecoveryBody1: "A 2022 intervention study (PMC9306162) measured hormone levels in men and women before and after 2 months of sleeping in a bed with an EMF-avoidance system. Results: significant increases in plasma DHEA, norepinephrine, serotonin, oxytocin, melatonin, AND testosterone simultaneously. Cortisol/DHEA ratio decreased.",
+    sRecoveryBody2: "This is the BERM-predicted 'all biomarkers recover simultaneously' signature. If each hormone were regulated by a separate mechanism, removing one environmental factor would not raise all of them at once. The simultaneous recovery indicates a shared upstream disruptor — consistent with Ca²⁺ homeostasis restoration.",
+
+    sEarlyPubertyTitle: "Melatonin and Pubertal Timing",
+    sEarlyPubertyBody1: "Melatonin receptors are expressed in the hypothalamus, pituitary, and ovaries. Melatonin has a regulatory effect on the HPG axis, inhibiting GnRH secretion and thereby the initiation of puberty. Low melatonin levels accelerate pubertal onset (Frontiers Endocrinol 2023).",
+    sEarlyPubertyBody2: "Direct evidence: circulating melatonin levels were 30% lower in Italian schoolchildren exposed daily to a television screen for one week compared to levels measured after a week of abstaining from TV. In 39 females diagnosed with central precocious puberty, salivary melatonin levels were significantly lower than controls — attributed to light stimulation and EMF from electronic devices.",
+    sEarlyPubertyBody3: "Nocturnal bright light exposure predicted earlier pubertal onset in both boys and girls (JCEM, September 2025, prospective longitudinal study).",
+    sEarlyPubertyChain: "The chain: EMF/LED → melatonin↓ → GnRH disinhibition → earlier puberty → earlier ovarian depletion → reduced lifetime fertility. This is BERM pathway B operating through the melatonin arm.",
   },
   fi: {
     title: "Pathopege",
@@ -213,6 +227,7 @@ const COPY = {
     s2title: "Kaksi rinnakkaista häiriötä",
     s2lead:
       "EMF → VGCC → Ca²⁺ on sama mekanismi molemmilla sukupuolilla. Mutta koska hormonijärjestelmät eroavat, seuraukset ovat sukupuolitarkkoja — ja komplementaarisia.",
+    s2glossary: "VGCC: jänniteohjautuvat kalsiumkanavat — solukalvon ionikanavia jotka avautuvat jännitemuutoksesta päästäen Ca²⁺:n sisään. Cav3.2: T-tyypin kalsiumkanavan alayksikkö Leydigin soluissa (kivesten testosteronituottajasolut) ja neuroneissa; säätelee steroidogeneesin vaatimaa kalsiumin sisäänvirtausta. StAR (Steroidogenic Acute Regulatory -proteiini): kuljettaa kolesterolia mitokondrion sisäkalvolle — kaikkien steroidien synteesin nopeusrajoittava vaihe. VTA (ventraalinen tegmentaalialue): keskiaivojen tumake jossa dopamiinituottajat neuronit projisoimat nucleus accumbensiin ja prefrontaalikorteksiin. Cav1.3: L-tyypin kalsiumkanavan alayksikkö VTA-neuroneissa; Ca²⁺-sisäänvirtaus Cav1.3:n kautta laukaisee dopamiinivesikuloiden vapautumisen. HPA-akseli (hypotalamus-aivolisäke-lisämunuainen): neuroendokriininen stressivastejärjestelmä; krooninen aktivaatio ylläpitää kortisolieleviaatiota stressorin poistumisen jälkeenkin.",
     maleTitle: "Miesten häiriöprofiili",
     malePrimary: "Testosteroni ↓ (Cav3.2 → StAR)",
     maleSecondary: "Dopamiini ↓ (VTA Cav1.3)",
@@ -397,6 +412,18 @@ const COPY = {
     navPatopolisDesc: "Mitä tämä aiheuttaa kaupunkitasolla",
     navPatokratiaDesc: "Poliittiset seuraukset",
     navPatopoliteiaDesc: "Sivilisatoriset seuraukset",
+
+    sSantiContext: "Vuoden 2024 meta-regressio 50+ globaalista tutkimuksesta, yhtenäistetty modernein LC-MS-mittausmenetelmin, vahvisti todellisen sekulaarilaskun 0,8–1,3 % vuodessa 1980-luvulta lähtien. Jopa painonsa vakiona pitäneet miehet osoittivat 19 %:n laskun 20 vuodessa (Mazur 2013, n=991). Lasku ei selity lihavuudella, tupakoinnilla, alkoholilla tai unella.",
+
+    sRecoveryTitle: "Palautumisnäyttö",
+    sRecoveryBody1: "Vuoden 2022 interventiotutkimus (PMC9306162) mittasi hormonitasoja miehillä ja naisilla ennen ja jälkeen 2 kuukauden nukkumisen sängyssä, jossa oli EMF-suojausjärjestelmä. Tulokset: merkitsevät nousut plasman DHEA:ssa, noradrenaliinissa, serotoniinissa, oksitosiinissa, melatoniinissa JA testosteronissa samanaikaisesti. Kortisoli/DHEA-suhde laski.",
+    sRecoveryBody2: "Tämä on BERM:n ennustama 'kaikki biomarkkerit palautuvat samanaikaisesti' -tunniste. Jos kutakin hormonia säätelisi erillinen mekanismi, yhden ympäristötekijän poistaminen ei nostaisi kaikkia kerralla. Samanaikainen palautuminen viittaa jaettuun ylävirran häiritsijään — yhdenmukainen Ca²⁺-homeostaasin palautumisen kanssa.",
+
+    sEarlyPubertyTitle: "Melatoniini ja puberteetin ajoitus",
+    sEarlyPubertyBody1: "Melatoniinireseptoreita ilmennetään hypotalamuksessa, aivolisäkkeessä ja munasarjoissa. Melatoniinilla on säätelevä vaikutus HPG-akseliin, estäen GnRH-eritystä ja siten puberteetin alkamista. Matalat melatoniini­tasot kiihdyttävät puberteetin alkamista (Frontiers Endocrinol 2023).",
+    sEarlyPubertyBody2: "Suora näyttö: kiertävät melatoniini­tasot olivat 30 % matalammat italialaisilla koululaisilla, jotka altistuivat päivittäin televisioruudulle yhden viikon ajan, verrattuna tasoihin TV:stä pidättäytymisviikon jälkeen. 39 naisella, joilla diagnosoitiin sentraalinen ennenaikainen puberteetti, sylki­melatoniini­tasot olivat merkitsevästi matalammat kuin kontrolleilla — syyksi katsottiin valo­stimulaatio ja elektronisten laitteiden EMF.",
+    sEarlyPubertyBody3: "Yöllinen kirkasvaloaltistus ennusti aikaisempaa puberteetin alkamista sekä pojilla että tytöillä (JCEM, syyskuu 2025, prospektiivinen pitkittäistutkimus).",
+    sEarlyPubertyChain: "Ketju: EMF/LED → melatoniini↓ → GnRH:n estoinhibitio → aikaisempi puberteetti → aikaisempi munasarjojen ehtyminen → vähentynyt elinaikainen hedelmällisyys. Tämä on BERM-reitti B, joka toimii melatoniinireitin kautta.",
   },
   ja: {
     title: "Pathopege",
@@ -409,6 +436,7 @@ const COPY = {
     s2title: "2つの並行する撹乱",
     s2lead:
       "EMF → VGCC → Ca²⁺ は両性で同一のメカニズムである。しかし内分泌系が異なるため、下流の帰結は性別特異的であり、かつ相補的である。",
+    s2glossary: "",
     maleTitle: "男性の撹乱プロファイル",
     malePrimary: "Testosterone ↓ (Cav3.2 → StAR)",
     maleSecondary: "Dopamine ↓ (VTA Cav1.3)",
@@ -593,6 +621,15 @@ const COPY = {
     navPatopolisDesc: "都市レベルでの帰結",
     navPatokratiaDesc: "政治的帰結",
     navPatopoliteiaDesc: "文明的帰結",
+    sSantiContext: "",
+    sRecoveryTitle: "",
+    sRecoveryBody1: "",
+    sRecoveryBody2: "",
+    sEarlyPubertyTitle: "",
+    sEarlyPubertyBody1: "",
+    sEarlyPubertyBody2: "",
+    sEarlyPubertyBody3: "",
+    sEarlyPubertyChain: "",
   },
   fr: {
     title: "Pathopege",
@@ -605,6 +642,7 @@ const COPY = {
     s2title: "Deux perturbations paralleles",
     s2lead:
       "EMF → VGCC → Ca²⁺ est le meme mecanisme dans les deux sexes. Mais comme les systemes endocriniens different, les consequences en aval sont specifiques au sexe — et complementaires.",
+    s2glossary: "",
     maleTitle: "Profil de perturbation masculine",
     malePrimary: "Testosterone ↓ (Cav3.2 → StAR)",
     maleSecondary: "Dopamine ↓ (VTA Cav1.3)",
@@ -789,6 +827,15 @@ const COPY = {
     navPatopolisDesc: "Ce que cela cause au niveau urbain",
     navPatokratiaDesc: "Consequences politiques",
     navPatopoliteiaDesc: "Consequences civilisationnelles",
+    sSantiContext: "",
+    sRecoveryTitle: "",
+    sRecoveryBody1: "",
+    sRecoveryBody2: "",
+    sEarlyPubertyTitle: "",
+    sEarlyPubertyBody1: "",
+    sEarlyPubertyBody2: "",
+    sEarlyPubertyBody3: "",
+    sEarlyPubertyChain: "",
   },
   ko: {
     title: "Pathopege",
@@ -801,6 +848,7 @@ const COPY = {
     s2title: "두 가지 병행 교란",
     s2lead:
       "EMF → VGCC → Ca²⁺는 양성에서 동일한 메커니즘입니다. 그러나 내분비 체계가 다르기 때문에 하류 결과는 성별 특이적이며 상호보완적입니다.",
+    s2glossary: "",
     maleTitle: "남성 교란 프로파일",
     malePrimary: "Testosterone ↓ (Cav3.2 → StAR)",
     maleSecondary: "Dopamine ↓ (VTA Cav1.3)",
@@ -985,6 +1033,15 @@ const COPY = {
     navPatopolisDesc: "도시 수준에서의 결과",
     navPatokratiaDesc: "정치적 결과",
     navPatopoliteiaDesc: "문명적 결과",
+    sSantiContext: "",
+    sRecoveryTitle: "",
+    sRecoveryBody1: "",
+    sRecoveryBody2: "",
+    sEarlyPubertyTitle: "",
+    sEarlyPubertyBody1: "",
+    sEarlyPubertyBody2: "",
+    sEarlyPubertyBody3: "",
+    sEarlyPubertyChain: "",
   },
 };
 
@@ -1033,6 +1090,7 @@ export default async function PathopegePage({
 
   return (
     <main id="main-content">
+      <TranslationNotice copy={COPY} locale={locale} />
       <div className="max-w-5xl mx-auto px-6">
 
       {/* Hero */}
@@ -1064,7 +1122,12 @@ export default async function PathopegePage({
           <Zap className="w-6 h-6 text-amber-500" />
           {d.s2title}
         </h2>
-        <p className="text-muted-foreground mb-8">{d.s2lead}</p>
+        <p className="text-muted-foreground mb-4">{d.s2lead}</p>
+        {d.s2glossary && (
+          <div className="mb-8 rounded-lg border border-muted bg-muted/30 p-4">
+            <p className="text-xs text-muted-foreground font-mono leading-relaxed">{d.s2glossary}</p>
+          </div>
+        )}
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Male */}
@@ -1081,7 +1144,8 @@ export default async function PathopegePage({
               <div key={i} className="mt-4 border-t border-blue-500/20 pt-3">
                 <p className="font-semibold text-sm">{c.hormone}</p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  <span className="font-medium">Mechanism:</span> {c.mechanism}
+                  <span className="font-medium">Mechanism:</span>{" "}
+                  <InlineReferenceText text={c.mechanism} locale={locale} />
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">
                   <span className="font-medium">Behavioral:</span> {c.behavioral}
@@ -1096,6 +1160,11 @@ export default async function PathopegePage({
                 </p>
               </div>
             ))}
+            {d.sSantiContext && (
+            <div className="rounded-lg border border-card-border bg-card-bg p-3 my-4 max-w-4xl">
+              <p className="text-xs text-muted-foreground leading-relaxed">{d.sSantiContext}</p>
+            </div>
+            )}
             <div className="mt-4 rounded-lg bg-blue-500/10 p-3">
               <p className="text-xs font-medium">
                 <InlineReferenceText text={d.maleReproductive} locale={locale} />
@@ -1117,7 +1186,8 @@ export default async function PathopegePage({
               <div key={i} className="mt-4 border-t border-rose-500/20 pt-3">
                 <p className="font-semibold text-sm">{c.hormone}</p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  <span className="font-medium">Mechanism:</span> {c.mechanism}
+                  <span className="font-medium">Mechanism:</span>{" "}
+                  <InlineReferenceText text={c.mechanism} locale={locale} />
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">
                   <span className="font-medium">Behavioral:</span> {c.behavioral}
@@ -1137,6 +1207,19 @@ export default async function PathopegePage({
             </div>
           </div>
         </div>
+
+        {/* Early Puberty */}
+        {d.sEarlyPubertyBody1 && (
+        <div className="mb-8 max-w-4xl">
+          <h4 className="text-sm font-semibold mb-3">{d.sEarlyPubertyTitle}</h4>
+          <div className="space-y-2 text-xs text-muted-foreground leading-relaxed">
+            <p>{d.sEarlyPubertyBody1}</p>
+            <p>{d.sEarlyPubertyBody2}</p>
+            <p>{d.sEarlyPubertyBody3}</p>
+            <p className="font-medium text-sm">{d.sEarlyPubertyChain}</p>
+          </div>
+        </div>
+        )}
 
         {/* Butterfly/Mirror Chart: Sex-specific disruptions from shared mechanism */}
         <div className="mt-8">
@@ -1292,12 +1375,25 @@ export default async function PathopegePage({
         {/* 4C: Ovarian */}
         <div className="mb-8 rounded-xl border p-6">
           <h3 className="text-lg font-semibold mb-3">{d.s4cTitle}</h3>
-          <p className="text-sm text-muted-foreground mb-3">{d.s4cBody}</p>
+          <p className="text-sm text-muted-foreground mb-3">
+            <InlineReferenceText text={d.s4cBody} locale={locale} />
+          </p>
           <div className="rounded-lg bg-rose-500/10 p-3 mt-3">
             <p className="text-xs font-medium">{d.s4cNote}</p>
           </div>
         </div>
       </section>
+
+      {/* Recovery Evidence */}
+      {d.sRecoveryBody1 && (
+      <section className="mb-16 border-t editorial-rule pt-8">
+        <h2 className="text-2xl font-bold mb-4">{d.sRecoveryTitle}</h2>
+        <div className="space-y-4 text-sm text-muted-foreground leading-relaxed max-w-4xl">
+          <p>{d.sRecoveryBody1}</p>
+          <p className="font-medium">{d.sRecoveryBody2}</p>
+        </div>
+      </section>
+      )}
 
       {/* Navigation */}
       <section className="mb-16">

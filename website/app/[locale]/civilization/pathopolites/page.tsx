@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, UserX, Shield, Brain, Heart, Users, Scale } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
+import { TranslationNotice } from "@/components/TranslationNotice";
 
 const COPY = {
   en: {
@@ -16,10 +17,13 @@ const COPY = {
     civilizationLink: "Back to Civilization",
     patopolisLink: "Patopolis",
     patokratiaLink: "Patokratia",
+    patokinesisLink: "Patokinesis",
 
     sixDimTitle: "Six dimensions of the pathological citizen",
     sixDimLead:
       "The pathopolites is not a stereotype — it is a measurable phenotype. Each dimension maps to specific hormonal substrates, follows the EMF exposure gradient monotonically, and can be independently verified from biomarker data. The composite index is the geometric mean of all six dimensions: it reaches 0.089 in the Amish baseline and 0.581 in the urban office environment — a 6.5× increase that tracks electromagnetic infrastructure density.",
+    sixDimScale:
+      "Each dimension is normalized to [0, 1] where 0 represents no deviation from the pre-industrial endocrine baseline (estimated from Amish biomarker data and historical reference populations) and 1 represents maximum measurable degradation in any observed environment. The dimension score is computed from its listed substrate biomarkers using the formula specified in political_biology.py: multiplicative substrates (e.g. OXT × T for anomic distress) produce sharper gradients than additive substrates because degradation in either component collapses the product. The composite index uses the geometric mean rather than arithmetic mean because it penalizes imbalance — a population scoring 0.9 on one dimension and 0.1 on another is not equivalent to 0.5 on both.",
 
     dim1Title: "Victimhood identity",
     dim1Icon: "UserX",
@@ -77,7 +81,7 @@ const COPY = {
 
     gradientTitle: "Pathopolites gradient",
     gradientLead:
-      "Every dimension intensifies monotonically from the Amish baseline to the urban office environment. The composite pathopolites index shows a 6.5× increase — the same genome, separated by electromagnetic environment, produces radically different civic phenotypes.",
+      "Every dimension intensifies monotonically from the Amish baseline to the urban office environment. The composite pathopolites index shows a 6.5× increase — the same genome, separated by electromagnetic environment, produces radically different civic phenotypes. The EMF column is a relative multiplier where 1.00× = median suburban power density (~0.1–1.0 V/m aggregate from infrastructure, devices, and ambient sources). Amish environments at 0.05× approximate pre-electrification background. Urban office at 1.80× reflects dense infrastructure, WiFi, fluorescent lighting, and device proximity.",
     gradientEnv: "Environment",
     gradientEMF: "EMF",
     gradientIndex: "Index",
@@ -148,6 +152,9 @@ const COPY = {
       "Twenge (2017): iGen. Generational shift toward safety-seeking, fragility, external locus. BERM identifies the EMF substrate beneath the smartphone-correlation.",
       "Haidt (2012): The Righteous Mind. Moral foundation asymmetry between liberals and conservatives maps to differential biomarker degradation of binding vs individualizing substrates.",
     ],
+
+    modelDerived: "Model-derived values from BioCap integral, not directly measured.",
+    modelDerivedLink: "mathematical specification",
   },
   fi: {
     title: "Pathopolites",
@@ -161,10 +168,13 @@ const COPY = {
     civilizationLink: "Takaisin Sivilisaatioon",
     patopolisLink: "Patopolis",
     patokratiaLink: "Patokratia",
+    patokinesisLink: "Patokinesis",
 
     sixDimTitle: "Patologisen kansalaisen kuusi ulottuvuutta",
     sixDimLead:
       "Pathopolites ei ole stereotypia — se on mitattava fenotyyppi. Jokainen ulottuvuus kartoittuu spesifisiin hormonaalisiin substraatteihin, seuraa EMF-altistusgradientia monotonisesti ja on itsenäisesti verifioitavissa biomarkkeridatasta. Komposiitti-indeksi on kaikkien kuuden ulottuvuuden geometrinen keskiarvo: se saavuttaa 0,089 amish-perustasolla ja 0,581 urbaanissa toimistoympäristössä — 6,5-kertainen kasvu, joka seuraa sähkömagneettisen infrastruktuurin tiheyttä.",
+    sixDimScale:
+      "Jokainen ulottuvuus on normalisoitu välille [0, 1], jossa 0 tarkoittaa nollapoikkeamaa esiteollisesta endokriinisesta perustasosta (estimoitu amish-biomarkkeridatasta ja historiallisista referenssipopulaatioista) ja 1 maksimaalista mitattua degradaatiota missä tahansa havaitussa ympäristössä. Ulottuvuuspiste lasketaan listatuista substraattibiomarkkereista political_biology.py:ssä spesifioidulla kaavalla: multiplikatiiviset substraatit (esim. OXT × T anomiselle distressille) tuottavat jyrkemmät gradientit kuin additiiviset koska minkä tahansa komponentin degradaatio romanduttaa tulon. Komposiitti-indeksi käyttää geometrista keskiarvoa aritmeettisen sijaan koska se rankaisee epätasapainosta — populaatio jolla yhdessä ulottuvuudessa 0,9 ja toisessa 0,1 ei ole ekvivalentti 0,5:n kanssa molemmissa.",
 
     dim1Title: "Uhri-identiteetti",
     dim1Substrate: "T↓, DA↓, BDNF↓, CORT↑",
@@ -216,7 +226,7 @@ const COPY = {
 
     gradientTitle: "Pathopolites-gradientti",
     gradientLead:
-      "Jokainen ulottuvuus voimistuu monotonisesti amish-perustasolta urbaaniin toimistoympäristöön. Komposiitti-pathopolites-indeksi osoittaa 6,5-kertaisen kasvun — sama genomi, erotettuna sähkömagneettisen ympäristön mukaan, tuottaa radikaalisti erilaisia kansalaisfenotyyppejä.",
+      "Jokainen ulottuvuus voimistuu monotonisesti amish-perustasolta urbaaniin toimistoympäristöön. Komposiitti-pathopolites-indeksi osoittaa 6,5-kertaisen kasvun — sama genomi, erotettuna sähkömagneettisen ympäristön mukaan, tuottaa radikaalisti erilaisia kansalaisfenotyyppejä. EMF-sarake on suhteellinen kerroin jossa 1,00× = esikaupunkialueen mediaani tehontiheys (~0,1–1,0 V/m aggregaatti infrastruktuurista, laitteista ja taustalähetyksistä). Amish-ympäristöt 0,05×:llä vastaavat esisähköistämisen taustaa. Urbaani toimisto 1,80×:llä heijastaa tiheää infrastruktuuria, WiFi-verkkoja, loisteputkivalaistusta ja laitteiden läheisyyttä.",
     gradientEnv: "Ympäristö",
     gradientEMF: "EMF",
     gradientIndex: "Indeksi",
@@ -287,6 +297,9 @@ const COPY = {
       "Twenge (2017): iGen. Sukupolvisiirtymä turvallisuushakuisuuteen, haurauteen, ulkoiseen hallintakäsitykseen. BERM tunnistaa EMF-substraatin älypuhelinkorrelaation takana.",
       "Haidt (2012): The Righteous Mind. Moraaliperusteiden epäsymmetria liberaalien ja konservatiivien välillä kartoittuu sitovien vs. yksilöllistävien substraattien eriytyneeseen rappeutumiseen.",
     ],
+
+    modelDerived: "Mallin tuottamia arvoja BioCap-integraalista, ei suoraan mitattuja.",
+    modelDerivedLink: "matemaattinen spesifikaatio",
   },
   ja: {
     title: "パトポリテース",
@@ -297,8 +310,10 @@ const COPY = {
     civilizationLink: "文明に戻る",
     patopolisLink: "パトポリス",
     patokratiaLink: "パトクラティア",
+    patokinesisLink: "パトキネシス",
     sixDimTitle: "病理的市民の6つの次元",
     sixDimLead: "パトポリテースはステレオタイプではなく、測定可能な表現型です。",
+    sixDimScale: "",
     dim1Title: "被害者アイデンティティ", dim1Substrate: "T↓, DA↓, BDNF↓, CORT↑",
     dim1Desc: "能力に基づくアイデンティティには、能力のための生物学的基盤が必要です。", dim1Amish: "0.164", dim1Urban: "0.674", dim1Ratio: "4.1×",
     dim2Title: "安全追求", dim2Substrate: "CORT↑ × T↓",
@@ -318,6 +333,8 @@ const COPY = {
     moralDistressTitle: "道徳的苦痛指数", moralDistressLead: "パトポリテースは本物の道徳的苦痛を経験します。", moralDistressExplain: "",
     predictionsTitle: "予測", pred1: "", pred2: "", pred3: "", pred4: "",
     litTitle: "文献", lit: [],
+    modelDerived: "",
+    modelDerivedLink: "",
   },
   fr: {
     title: "Pathopolites",
@@ -328,8 +345,10 @@ const COPY = {
     civilizationLink: "Retour a Civilisation",
     patopolisLink: "Patopolis",
     patokratiaLink: "Patokratia",
+    patokinesisLink: "Patokinesis",
     sixDimTitle: "Six dimensions du citoyen pathologique",
     sixDimLead: "Le pathopolites n'est pas un stereotype — c'est un phenotype mesurable.",
+    sixDimScale: "",
     dim1Title: "Identite victimaire", dim1Substrate: "T↓, DA↓, BDNF↓, CORT↑",
     dim1Desc: "L'identite basee sur la competence necessite la capacite biologique pour la competence.", dim1Amish: "0.164", dim1Urban: "0.674", dim1Ratio: "4.1×",
     dim2Title: "Recherche de securite", dim2Substrate: "CORT↑ × T↓",
@@ -349,6 +368,8 @@ const COPY = {
     moralDistressTitle: "Indice de detresse morale", moralDistressLead: "Le pathopolites eprouve une veritable souffrance morale.", moralDistressExplain: "",
     predictionsTitle: "Predictions", pred1: "", pred2: "", pred3: "", pred4: "",
     litTitle: "Litterature", lit: [],
+    modelDerived: "",
+    modelDerivedLink: "",
   },
   ko: {
     title: "파토폴리테스",
@@ -359,8 +380,10 @@ const COPY = {
     civilizationLink: "문명으로 돌아가기",
     patopolisLink: "파토폴리스",
     patokratiaLink: "파토크라티아",
+    patokinesisLink: "파토키네시스",
     sixDimTitle: "병리적 시민의 6가지 차원",
     sixDimLead: "파토폴리테스는 고정관념이 아니라 측정 가능한 표현형입니다.",
+    sixDimScale: "",
     dim1Title: "피해자 정체성", dim1Substrate: "T↓, DA↓, BDNF↓, CORT↑",
     dim1Desc: "역량 기반 정체성에는 역량을 위한 생물학적 기반이 필요합니다.", dim1Amish: "0.164", dim1Urban: "0.674", dim1Ratio: "4.1×",
     dim2Title: "안전 추구", dim2Substrate: "CORT↑ × T↓",
@@ -380,6 +403,8 @@ const COPY = {
     moralDistressTitle: "도덕적 고통 지수", moralDistressLead: "파토폴리테스는 진정한 도덕적 고통을 경험합니다.", moralDistressExplain: "",
     predictionsTitle: "예측", pred1: "", pred2: "", pred3: "", pred4: "",
     litTitle: "문헌", lit: [],
+    modelDerived: "",
+    modelDerivedLink: "",
   },
 };
 
@@ -453,6 +478,7 @@ export default async function PathopolitesPage({
 
   return (
     <main id="main-content">
+      <TranslationNotice copy={COPY} locale={locale} />
       <div className="max-w-5xl mx-auto px-6">
 
       {/* Hero */}
@@ -490,7 +516,12 @@ export default async function PathopolitesPage({
       {/* Six Dimensions */}
       <section className="mb-16">
         <h2 className="text-2xl font-bold mb-2">{d.sixDimTitle}</h2>
-        <p className="text-muted-foreground mb-10 max-w-3xl">{d.sixDimLead}</p>
+        <p className="text-muted-foreground mb-4 max-w-3xl">{d.sixDimLead}</p>
+        {d.sixDimScale && (
+          <div className="mb-10 rounded-lg border border-muted bg-muted/30 p-4 max-w-3xl">
+            <p className="text-xs text-muted-foreground leading-relaxed">{d.sixDimScale}</p>
+          </div>
+        )}
 
         <div className="space-y-8">
           {DIMS.map(({ key, icon: Icon, color }, i) => {
@@ -565,6 +596,10 @@ export default async function PathopolitesPage({
             </tbody>
           </table>
         </div>
+          <p className="text-xs text-muted-foreground mt-2 italic">
+            {d.modelDerived}{" "}
+            <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+          </p>
       </section>
 
       {/* Emergence */}
@@ -614,6 +649,10 @@ export default async function PathopolitesPage({
             <p className="text-sm leading-relaxed">{d.moralDistressExplain}</p>
           </div>
         )}
+          <p className="text-xs text-muted-foreground mt-2 italic">
+            {d.modelDerived}{" "}
+            <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+          </p>
       </section>
 
       {/* Predictions */}
@@ -668,6 +707,13 @@ export default async function PathopolitesPage({
           className="flex items-center gap-2 rounded-xl border border-border px-5 py-3 text-sm font-medium hover:bg-muted/50 transition-colors"
         >
           {d.patokratiaLink}
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+        <Link
+          href={`/${locale}/civilization/patokinesis`}
+          className="flex items-center gap-2 rounded-xl border border-border px-5 py-3 text-sm font-medium hover:bg-muted/50 transition-colors"
+        >
+          {d.patokinesisLink}
           <ArrowRight className="w-4 h-4" />
         </Link>
       </nav>

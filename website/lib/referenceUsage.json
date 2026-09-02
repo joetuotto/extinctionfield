@@ -1,8 +1,8 @@
 {
   "metadata": {
     "generated": "2026-09-01",
-    "referencesWithUsages": 638,
-    "usageLocations": 1672
+    "referencesWithUsages": 644,
+    "usageLocations": 1682
   },
   "usage": {
     "adey1976_calcium_window": [
@@ -393,8 +393,12 @@
         "source": "app/[locale]/objections/page.tsx"
       },
       {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      },
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
       },
       {
         "path": "/data",
@@ -1017,8 +1021,8 @@
         "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
       },
       {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
       }
     ],
     "dekkers2019_dual_hormone": [
@@ -1033,8 +1037,12 @@
         "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
       },
       {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      },
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
       },
       {
         "path": "/data",
@@ -1059,8 +1067,12 @@
         "source": "app/[locale]/articles/[slug]/DualLockArticleContent.tsx"
       },
       {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      },
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
       },
       {
         "path": "/data",
@@ -1313,8 +1325,12 @@
     ],
     "levine2023_sperm": [
       {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      },
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
       },
       {
         "path": "/data",
@@ -1359,20 +1375,26 @@
     ],
     "marano2026_female_neuroinflammation": [
       {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
       }
     ],
     "turedi2016_ovarian_reserve": [
       {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
+      }
+    ],
+    "shielded_bed_2022": [
+      {
+        "path": "/civilization/pathopege",
+        "source": "app/[locale]/civilization/pathopege/page.tsx"
       }
     ],
     "dual_hormone_meta2021": [
       {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
       },
       {
         "path": "/mathematics",
@@ -1389,14 +1411,14 @@
     ],
     "wood_health2026": [
       {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
       }
     ],
     "camkii-cav32-threshold-2023": [
       {
-        "path": "/civilization",
-        "source": "app/[locale]/civilization/page.tsx"
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
       },
       {
         "path": "/map",
@@ -1405,6 +1427,36 @@
       {
         "path": "/model",
         "source": "app/[locale]/model/page.tsx"
+      }
+    ],
+    "magnesium_ca2_antagonist_2025": [
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
+      }
+    ],
+    "magnesium_testosterone_2025": [
+      {
+        "path": "/civilization/patopolis",
+        "source": "app/[locale]/civilization/patopolis/page.tsx"
+      }
+    ],
+    "camkii_pancreas_diabetes": [
+      {
+        "path": "/civilization/patopoliteia",
+        "source": "app/[locale]/civilization/patopoliteia/page.tsx"
+      }
+    ],
+    "hormesis_mitochondrial_2024": [
+      {
+        "path": "/civilization/patopoliteia",
+        "source": "app/[locale]/civilization/patopoliteia/page.tsx"
+      }
+    ],
+    "elf_steroidogenesis_2016": [
+      {
+        "path": "/civilization/patopoliteia",
+        "source": "app/[locale]/civilization/patopoliteia/page.tsx"
       }
     ],
     "blackman1985_calcium_windows": [

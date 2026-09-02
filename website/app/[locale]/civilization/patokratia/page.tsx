@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
+import { TranslationNotice } from "@/components/TranslationNotice";
 
 const COPY = {
   en: {
@@ -11,7 +12,7 @@ const COPY = {
     backLink: "\u2190 Back to Civilization",
 
     sPoliticalTitle: "Political Pathology",
-    sPoliticalDesc: "Political orientation is a phenotypic expression of biomarker state. The distance from pre-industrial endocrine baseline \u2014 the pathologization index \u2014 quantifies how far an ideology has been displaced by EMF-induced biomarker disruption.",
+    sPoliticalDesc: "Political orientation is a phenotypic expression of biomarker state. The distance from pre-industrial endocrine baseline \u2014 the pathologization index \u2014 quantifies how far an ideology has been displaced by EMF-induced biomarker disruption. BioCap (biological capacity) is the weighted composite of eight biomarker levels normalized to the pre-industrial baseline, ranging from 1.0 (fully intact) to 0.0 (total degradation); it is defined in detail in Patopoliteia. The pathologization index is the root-mean-square distance between an environment\u2019s political-orientation profile and the pre-industrial (Amish) profile, both computed from those biomarker levels: 0 means no displacement, 1 maximal displacement.",
     sPoliticalEnvTitle: "EMF Environment \u2192 Political Output (2025)",
     sPoliticalColEnv: "Environment", sPoliticalColEmf: "EMF", sPoliticalColBiocap: "BioCap", sPoliticalColIdeology: "Ideology", sPoliticalColPatholog: "Pathol.",
     sPoliticalEnvs: [
@@ -54,7 +55,7 @@ const COPY = {
     sPoliticalConclusion: "The model predicts urban-rural polarization is a gradient of endocrine disruption, not a conflict of values. No political dialogue resolves this \u2014 it requires environmental intervention.",
 
     sMoralTitle: "Moral Foundations (Haidt)",
-    sMoralDesc: "Jonathan Haidt (2012) identified six moral foundations. Graham, Haidt & Nosek (2009) showed liberals weight Care + Fairness while conservatives weight all six equally. The model maps each foundation to its biological substrate and predicts the liberal-conservative asymmetry as a direct consequence of differential biomarker degradation.",
+    sMoralDesc: "Jonathan Haidt's Moral Foundations Theory (2012) identified six innate psychological systems that generate moral intuitions across all cultures. Three are 'binding' foundations (Loyalty, Authority, Sanctity) — they bind individuals into cohesive groups, hierarchies, and shared sacred values. Three are 'individualizing' foundations (Care, Fairness, Liberty) — they protect individual rights and welfare regardless of group membership. Graham, Haidt & Nosek (2009) showed liberals weight Care + Fairness while conservatives weight all six equally. The model maps each foundation to its biological substrate and predicts the liberal-conservative asymmetry as a direct consequence of differential biomarker degradation.",
     sMoralColEnv: "Environment", sMoralColBreadth: "Breadth", sMoralColBinding: "Binding", sMoralColIndiv: "Individualizing", sMoralColActive: "Active",
     sMoralEnvs: [
       { env: "Amish", breadth: "6/6", binding: "3/3", indiv: "3/3", active: "All six", pattern: "Full moral palette \u2014 balanced binding and individualizing" },
@@ -86,9 +87,11 @@ const COPY = {
       { rank: 6, foundation: "Fairness", type: "Triple-redundant", collapse: "Survives", binding: false, vuln: "Three independent inputs (DA 0.40, T 0.30, OXT 0.15). Any single system partially sustains it. DA is the most buffered neurotransmitter." },
     ],
     sCollapseInsight: "The binding foundations \u2014 Loyalty, Authority, Sanctity \u2014 all depend on testosterone (Leydig cells) and multiplicative interactions between EMF-sensitive systems. The individualizing foundations \u2014 Care, Fairness, Liberty \u2014 depend on dopamine (VTA neurons, greater redundancy) and additive formulas where any single input can partially sustain the output. This is why the conservative moral palette degrades first: it is biologically expensive.",
+    sCollapseFormulaKey: "Formula types: Multiplicative (A \u00d7 B) \u2014 output collapses if either input degrades; catastrophic sensitivity to any single-point failure. Single-substrate \u2014 depends primarily on one hormone; vulnerable but predictable. Interaction \u2014 requires co-activation of two systems (e.g. OXT needs T for parochial loyalty, not just bonding). Additive-suppressed \u2014 sum of inputs minus a suppressor term (CORT); declines gradually. Additive-floor \u2014 sum with a biological minimum that prevents total collapse. Triple-redundant \u2014 three independent inputs where any one partially sustains the output; most resilient.",
 
     sRKTitle: "r/K Reproductive Strategy",
     sRKDesc: "Anonymous Conservative (The Evolutionary Psychology Behind Politics, 2014) mapped five psychological traits to the r/K selection continuum: r-strategists (liberal psychology) display competition aversion, promiscuity, low parental investment, early sexuality, and no in-group loyalty. K-strategists (conservative psychology) display the opposite. The original theory attributes this to resource abundance cycles. The BERM model identifies the mechanism: urban EMF environments produce r-selected endocrine profiles through VGCC-mediated biomarker degradation. This is environmental phenotypic mimicry of r-selection \u2014 not evolution. A genetically K-selected species expresses r-type behavioral outputs because its endocrine substrates are being suppressed.",
+    sRKScaleNote: "The r/K index ranges from 0.0 (fully r-selected phenotype: maximal reproductive quantity, minimal parental investment) to 1.0 (fully K-selected phenotype: maximal parental investment, selective mating, group loyalty). Each of the five sub-traits is computed from its substrate formula using the environment's biomarker values \u2014 e.g. Mating Strategy = OXT \u00d7 (0.5 + 0.5 \u00d7 T), where OXT and T are normalized to [0, 1] relative to the pre-industrial baseline. The composite r/K index is the mean of the five sub-scores.",
     sRKColEnv: "Environment", sRKColIndex: "r/K Index", sRKColClass: "Classification",
     sRKColComp: "Competition", sRKColMating: "Mating", sRKColParent: "Parenting", sRKColSexual: "Sexual Timing", sRKColLoyalty: "Group Loyalty",
     sRKEnvs: [
@@ -210,6 +213,11 @@ const COPY = {
     navPathopege: "Pathopege: The Source",
     navPatopolis: "Patopolis: The Pathological City",
     navPatopoliteia: "Patopoliteia: Pathological Civilization",
+    navPatokinesis: "Patokinesis: The Pathology That Moves",
+    sWellingCalloutTitle: "Direct Causal Evidence: Testosterone → Political Preferences",
+    sWellingCalloutBody: "The causal link from testosterone to political preferences was established by RCT in 2025. Alogaily, Zak et al. (Brain and Behavior, n=136) administered synthetic testosterone or placebo. Weakly affiliated Democrats had 19% higher basal testosterone than strongly affiliated Democrats (p=0.015). Testosterone administration reduced party affiliation by 12% (p=0.01) and increased warmth toward Republican candidates by 45% (p<0.001). This is the first direct experimental evidence that testosterone causally shifts political preferences.",
+    modelDerived: "Model-derived values from BioCap integral, not directly measured.",
+    modelDerivedLink: "mathematical specification",
     translationPending: "Full translation pending.",
   },
   fi: {
@@ -294,9 +302,11 @@ const COPY = {
       { rank: 6, foundation: "Reiluus", type: "Kolminkertainen redundanssi", collapse: "Selviytyy", binding: false, vuln: "Kolme riippumatonta sy\u00f6tett\u00e4 (DA 0.40, T 0.30, OXT 0.15). Mik\u00e4 tahansa yksitt\u00e4inen j\u00e4rjestelm\u00e4 yll\u00e4pit\u00e4\u00e4 osittain. DA on puskuroiduin v\u00e4litt\u00e4j\u00e4aine." },
     ],
     sCollapseInsight: "Sitovat perusteet \u2014 Lojaalisuus, Auktoriteetti, Pyhyys \u2014 kaikki riippuvat testosteronista (Leydigin solut) ja multiplikatiivisista interaktioista EMF-herkkien j\u00e4rjestelmien v\u00e4lill\u00e4. Yksil\u00f6lliset perusteet \u2014 Huolenpito, Reiluus, Vapaus \u2014 riippuvat dopamiinista (VTA-neuronit, suurempi redundanssi) ja additiivisista kaavoista, joissa mik\u00e4 tahansa yksitt\u00e4inen sy\u00f6te voi osittain yll\u00e4pit\u00e4\u00e4 tulosta. Siksi konservatiivinen moraalinen paletti rappeutuu ensin: se on biologisesti kallis.",
+    sCollapseFormulaKey: "",
 
     sRKTitle: "r/K-lis\u00e4\u00e4ntymisstrategia",
     sRKDesc: "Anonymous Conservative (The Evolutionary Psychology Behind Politics, 2014) kartoitti viisi psykologista piirrett\u00e4 r/K-valinnan jatkumolle: r-strategistit (liberaali psykologia) osoittavat kilpailun v\u00e4lttely\u00e4, promiskuiteettia, matalaa vanhemmuusinvestointia, varhaista seksuaalisuutta ja ryhm\u00e4lojaalisuuden puutetta. K-strategistit (konservatiivinen psykologia) osoittavat p\u00e4invastaista. Alkuper\u00e4inen teoria selit\u00e4\u00e4 t\u00e4m\u00e4n resurssien runsaussykleill\u00e4. BERM-malli tunnistaa mekanismin: kaupunkien EMF-ymp\u00e4rist\u00f6t tuottavat r-valittuja endokriinisi\u00e4 profiileja VGCC-v\u00e4litteisen biomarkkeridegradaation kautta. T\u00e4m\u00e4 on r-valinnan ymp\u00e4rist\u00f6llist\u00e4 fenotyypist\u00e4 mimikry\u00e4 \u2014 ei evoluutiota. Geneettisesti K-valittu laji ilment\u00e4\u00e4 r-tyyppisi\u00e4 k\u00e4ytt\u00e4ytymistuotoksia, koska sen endokriiniset substraatit ovat vaimentuneet.",
+    sRKScaleNote: "",
     sRKColEnv: "Ymp\u00e4rist\u00f6", sRKColIndex: "r/K-indeksi", sRKColClass: "Luokitus",
     sRKColComp: "Kilpailu", sRKColMating: "Parinmuod.", sRKColParent: "Vanhemmuus", sRKColSexual: "Sek. ajoitus", sRKColLoyalty: "Ryhm\u00e4lojaalius",
     sRKEnvs: [
@@ -418,6 +428,11 @@ const COPY = {
     navPathopege: "Pathopege: Sairauden lähde",
     navPatopolis: "Patopolis: Patologinen kaupunki",
     navPatopoliteia: "Patopoliteia: Patologinen sivilisaatio",
+    navPatokinesis: "Patokinesis: Patologia joka liikkuu",
+    sWellingCalloutTitle: "Suora kausaalinen n\u00e4ytt\u00f6: testosteroni \u2192 poliittiset preferenssit",
+    sWellingCalloutBody: "Kausaaliyhteys testosteronista poliittisiin preferensseihin vahvistettiin RCT:ll\u00e4 vuonna 2025. Alogaily, Zak ym. (Brain and Behavior, n=136) antoivat synteettist\u00e4 testosteronia tai lumel\u00e4\u00e4kett\u00e4. Heikosti affilioituneilla demokraateilla oli 19 % korkeampi basaalitestosteroni kuin vahvasti affilioituneilla (p=0,015). Testosteronin anto v\u00e4hensi puolueaffilikaatiota 12 % (p=0,01) ja lis\u00e4si l\u00e4mp\u00f6\u00e4 republikaaniehdokkaita kohtaan 45 % (p<0,001). T\u00e4m\u00e4 on ensimm\u00e4inen suora kokeellinen n\u00e4ytt\u00f6 siit\u00e4, ett\u00e4 testosteroni kausaalisesti muuttaa poliittisia preferenssej\u00e4.",
+    modelDerived: "Mallin tuottamia arvoja BioCap-integraalista, ei suoraan mitattuja.",
+    modelDerivedLink: "matemaattinen spesifikaatio",
     translationPending: "T\u00e4ysi k\u00e4\u00e4nn\u00f6s odottaa.",
   },
   ja: {
@@ -427,6 +442,13 @@ const COPY = {
     backLink: "\u2190 \u6587\u660e\u306b\u623b\u308b",
     translationPending: "Full translation pending.",
     navBackCiv: "\u6587\u660e\u306b\u623b\u308b",
+    navPathopege: "\u30d1\u30c8\u30da\u30b2: \u75c5\u306e\u6e90",
+    navPatopolis: "\u30d1\u30c8\u30dd\u30ea\u30b9: \u75c5\u7406\u7684\u90fd\u5e02",
+    navPatopoliteia: "\u30d1\u30c8\u30dd\u30ea\u30c6\u30a4\u30a2: \u75c5\u7406\u7684\u6587\u660e",
+    navPatokinesis: "\u30d1\u30c8\u30ad\u30cd\u30b7\u30b9: \u79fb\u52d5\u3059\u308b\u75c5\u7406",
+    sWellingCalloutTitle: "", sWellingCalloutBody: "",
+    sCollapseFormulaKey: "", sRKScaleNote: "",
+    modelDerived: "", modelDerivedLink: "",
   },
   fr: {
     pageTitle: "Patokratia",
@@ -435,6 +457,13 @@ const COPY = {
     backLink: "\u2190 Retour \u00e0 Civilisation",
     translationPending: "Full translation pending.",
     navBackCiv: "Retour \u00e0 Civilisation",
+    navPathopege: "Pathopege : la source de la maladie",
+    navPatopolis: "Patopolis : la cit\u00e9 pathologique",
+    navPatopoliteia: "Patopoliteia : civilisation pathologique",
+    navPatokinesis: "Patokinesis : la pathologie qui se d\u00e9place",
+    sWellingCalloutTitle: "", sWellingCalloutBody: "",
+    sCollapseFormulaKey: "", sRKScaleNote: "",
+    modelDerived: "", modelDerivedLink: "",
   },
   ko: {
     pageTitle: "\ud30c\ud1a0\ud06c\ub77c\ud2f0\uc544",
@@ -443,6 +472,13 @@ const COPY = {
     backLink: "\u2190 \ubb38\uba85\uc73c\ub85c \ub3cc\uc544\uac00\uae30",
     translationPending: "Full translation pending.",
     navBackCiv: "\ubb38\uba85\uc73c\ub85c \ub3cc\uc544\uac00\uae30",
+    navPathopege: "\ud30c\ud1a0\ud398\uac8c: \uc9c8\ubcd1\uc758 \uadfc\uc6d0",
+    navPatopolis: "\ud30c\ud1a0\ud3f4\ub9ac\uc2a4: \ubcd1\ub9ac\uc801 \ub3c4\uc2dc",
+    navPatopoliteia: "\ud30c\ud1a0\ud3f4\ub9ac\ud14c\uc774\uc544: \ubcd1\ub9ac\uc801 \ubb38\uba85",
+    navPatokinesis: "\ud30c\ud1a0\ud0a4\ub124\uc2dc\uc2a4: \uc774\ub3d9\ud558\ub294 \ubcd1\ub9ac",
+    sWellingCalloutTitle: "", sWellingCalloutBody: "",
+    sCollapseFormulaKey: "", sRKScaleNote: "",
+    modelDerived: "", modelDerivedLink: "",
   },
 } as const;
 
@@ -489,11 +525,10 @@ export default async function PatokratiaPage({
   const d = pickCopy(COPY, locale) as CopyType;
   const prefix = `/${locale}`;
 
-  /* For stub locales that lack the full content, show a minimal page */
-  const isStub = !("sMoralTitle" in d);
-
   return (
     <main id="main-content">
+      {/* pickCopy fills untranslated keys from English; the notice says so for stub locales */}
+      <TranslationNotice copy={COPY} locale={locale} />
       <div className="max-w-5xl mx-auto px-6">
 
         {/* Hero */}
@@ -512,21 +547,7 @@ export default async function PatokratiaPage({
           </section>
         )}
 
-        {/* Stub notice for untranslated locales */}
-        {isStub && "translationPending" in d && (
-          <section className="mb-14">
-            <div className="rounded-xl border border-yellow-500/30 bg-yellow-500/5 p-5">
-              <p className="text-sm">{(d as any).translationPending}</p>
-            </div>
-            <div className="mt-8">
-              <Link href={`${prefix}/civilization`} className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300">
-                {(d as any).navBackCiv} <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </section>
-        )}
-
-        {!isStub && (
+        {(
         <>
 
         {/* ── Political Pathology ─────────────────────────────────────────── */}
@@ -562,7 +583,21 @@ export default async function PatokratiaPage({
               </table>
             </div>
             <p className="text-sm text-foreground-muted mt-4 italic">{(d as CopyType).sPoliticalPolarization}</p>
+          {d.modelDerived && (
+          <p className="text-xs text-muted-foreground mt-2 italic">
+            {d.modelDerived}{" "}
+            <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+          </p>
+          )}
           </div>
+
+        {/* Welling/Zak 2025 RCT */}
+        {d.sWellingCalloutBody && (
+        <div className="rounded-xl border-2 border-green-500/40 bg-green-500/5 p-5 mb-8 max-w-4xl">
+          <h4 className="text-sm font-bold text-green-400 mb-2">{d.sWellingCalloutTitle}</h4>
+          <p className="text-sm text-muted-foreground leading-relaxed">{d.sWellingCalloutBody}</p>
+        </div>
+        )}
 
           {(d as CopyType).sPoliticalIdeologies?.length > 0 && (
           <div className="mb-10">
@@ -578,6 +613,12 @@ export default async function PatokratiaPage({
                 </div>
               ))}
             </div>
+          {d.modelDerived && (
+          <p className="text-xs text-muted-foreground mt-2 italic">
+            {d.modelDerived}{" "}
+            <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+          </p>
+          )}
           </div>
           )}
 
@@ -607,6 +648,12 @@ export default async function PatokratiaPage({
                 </tbody>
               </table>
             </div>
+          {d.modelDerived && (
+          <p className="text-xs text-muted-foreground mt-2 italic">
+            {d.modelDerived}{" "}
+            <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+          </p>
+          )}
           </div>
           )}
 
@@ -695,6 +742,12 @@ export default async function PatokratiaPage({
                 </div>
               ))}
             </div>
+          {d.modelDerived && (
+          <p className="text-xs text-muted-foreground mt-2 italic">
+            {d.modelDerived}{" "}
+            <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+          </p>
+          )}
           </div>
           )}
 
@@ -745,6 +798,11 @@ export default async function PatokratiaPage({
             ))}
           </div>
 
+          {(d as CopyType).sCollapseFormulaKey && (
+          <div className="mb-4 rounded-lg border border-muted bg-muted/30 p-4">
+            <p className="text-xs text-muted-foreground leading-relaxed">{(d as CopyType).sCollapseFormulaKey}</p>
+          </div>
+          )}
           {(d as CopyType).sCollapseInsight && (
           <div className="rounded-xl border border-orange-500/30 bg-orange-500/5 p-5">
             <p className="text-sm leading-relaxed">{(d as CopyType).sCollapseInsight}</p>
@@ -757,7 +815,12 @@ export default async function PatokratiaPage({
         {(d as CopyType).sRKTitle && (
         <section className="mb-16">
           <h2 className="text-2xl font-bold mb-3">{(d as CopyType).sRKTitle}</h2>
-          <p className="text-sm text-foreground-muted mb-6">{(d as CopyType).sRKDesc}</p>
+          <p className="text-sm text-foreground-muted mb-4">{(d as CopyType).sRKDesc}</p>
+          {(d as CopyType).sRKScaleNote && (
+          <div className="mb-6 rounded-lg border border-muted bg-muted/30 p-4">
+            <p className="text-xs text-muted-foreground leading-relaxed">{(d as CopyType).sRKScaleNote}</p>
+          </div>
+          )}
 
           {(d as CopyType).sRKTraits?.length > 0 && (
           <div className="mb-8">
@@ -820,6 +883,12 @@ export default async function PatokratiaPage({
                 </tbody>
               </table>
             </div>
+          {d.modelDerived && (
+          <p className="text-xs text-muted-foreground mt-2 italic">
+            {d.modelDerived}{" "}
+            <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+          </p>
+          )}
           </div>
           )}
 
@@ -893,6 +962,12 @@ export default async function PatokratiaPage({
                 ))}
               </tbody>
             </table>
+          {d.modelDerived && (
+          <p className="text-xs text-muted-foreground mt-2 italic">
+            {d.modelDerived}{" "}
+            <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+          </p>
+          )}
           </div>
           )}
 
@@ -950,6 +1025,12 @@ export default async function PatokratiaPage({
               </table>
             </div>
             )}
+          {d.modelDerived && (
+          <p className="text-xs text-muted-foreground mt-2 italic">
+            {d.modelDerived}{" "}
+            <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+          </p>
+          )}
           </div>
           )}
 
@@ -1083,21 +1164,26 @@ export default async function PatokratiaPage({
         {/* ── Navigation ─────────────────────────────────────────────────── */}
         <nav className="flex flex-col sm:flex-row flex-wrap gap-4 pb-20">
           <Link href={`${prefix}/civilization`} className="flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300">
-            {(d as any).navBackCiv} <ArrowRight className="w-4 h-4" />
+            {d.navBackCiv} <ArrowRight className="w-4 h-4" />
           </Link>
-          {(d as any).navPathopege && (
+          {d.navPathopege && (
           <Link href={`${prefix}/civilization/pathopege`} className="flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300">
-            {(d as any).navPathopege} <ArrowRight className="w-4 h-4" />
+            {d.navPathopege} <ArrowRight className="w-4 h-4" />
           </Link>
           )}
-          {(d as any).navPatopolis && (
+          {d.navPatopolis && (
           <Link href={`${prefix}/civilization/patopolis`} className="flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300">
-            {(d as any).navPatopolis} <ArrowRight className="w-4 h-4" />
+            {d.navPatopolis} <ArrowRight className="w-4 h-4" />
           </Link>
           )}
-          {(d as any).navPatopoliteia && (
+          {d.navPatopoliteia && (
           <Link href={`${prefix}/civilization/patopoliteia`} className="flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300">
-            {(d as any).navPatopoliteia} <ArrowRight className="w-4 h-4" />
+            {d.navPatopoliteia} <ArrowRight className="w-4 h-4" />
+          </Link>
+          )}
+          {d.navPatokinesis && (
+          <Link href={`${prefix}/civilization/patokinesis`} className="flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300">
+            {d.navPatokinesis} <ArrowRight className="w-4 h-4" />
           </Link>
           )}
         </nav>

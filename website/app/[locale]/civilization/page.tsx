@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Zap, Building2, Shield, Globe, UserX } from "lucide-react";
+import { ArrowRight, Zap, Building2, Shield, Globe, UserX, Radio } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
 
 const COPY = {
@@ -15,7 +15,7 @@ const COPY = {
       "This section traces that propagation — from seven randomized controlled trials to population-level behavioral data to the dynamics of civilizational change.",
     readingGuide: "Reading path",
     readingGuideDesc:
-      "The argument builds in five stages. Each page is self-contained but the causal chain runs left to right.",
+      "The argument builds in six stages. Each page is self-contained but the causal chain runs left to right.",
 
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — source of the disease",
@@ -42,11 +42,19 @@ const COPY = {
     pathopolitesDesc:
       "The individual whose civic identity is built around vulnerability, trauma, or biological incapacity. Six measurable dimensions — from victimhood identity to moral compensation — mapped to endocrine substrates. Not a character flaw but a phenotypic output of electromagnetic environment.",
 
+    patokinesis: "Patokinesis",
+    patokinesisGreek: "pathos + kinesis — the pathology that moves",
+    patokinesisDesc:
+      "How hormonal disruption degrades the physical signals of mate quality — morphological, dynamic, and cryptic — and how the degraded majority actively predates on the healthy remainder. The Calhoun behavioral sink in human civilization: normative predation, institutional capture, and sterilization contagion.",
+
     levelLabel: "Level III — Consequences",
     modelLink: "Read the mechanism",
     evidenceLink: "Explore the evidence",
     predictionsLink: "See all predictions",
     readMore: "Read",
+    epistemicTitle: "Epistemic note",
+    epistemicBody: "Each link in the chain below is independently supported by peer-reviewed research. The full chain — from electromagnetic physics to civilizational dynamics — has not been and cannot be tested as a single experiment. This is structurally identical to other long causal chains in science (smoking → cancer, CO₂ → climate change, lead → crime): the mechanism is established link by link, not end to end.",
+    epistemicBody2: "The confidence in the full chain is necessarily lower than the confidence in any individual link. Where model-derived values appear in tables, they are marked as such. Where observations are \"consistent\" with predictions, this means directional agreement — not formal testing.",
   },
   fi: {
     title: "Sivilisaatio",
@@ -58,7 +66,7 @@ const COPY = {
       "Tämä osio jäljittää tuon etenemisen — seitsemästä satunnaistetusta kontrolloidusta tutkimuksesta väestötason käyttäytymisdataan ja sivilisaatiomuutoksen dynamiikkaan.",
     readingGuide: "Lukupolku",
     readingGuideDesc:
-      "Argumentti rakentuu viidessä vaiheessa. Jokainen sivu on itsenäinen, mutta kausaaliketju kulkee vasemmalta oikealle.",
+      "Argumentti rakentuu kuudessa vaiheessa. Jokainen sivu on itsenäinen, mutta kausaaliketju kulkee vasemmalta oikealle.",
 
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — sairauden lähde",
@@ -85,11 +93,19 @@ const COPY = {
     pathopolitesDesc:
       "Yksilö, jonka kansalaisidentiteetti rakentuu haavoittuvuuden, trauman tai biologisen kyvyttömyyden ympärille. Kuusi mitattavaa ulottuvuutta — uhri-identiteetistä moraaliseen kompensointiin — kartoitettuna endokriinisiin substraatteihin.",
 
+    patokinesis: "Patokinesis",
+    patokinesisGreek: "pathos + kinesis — patologia joka liikkuu",
+    patokinesisDesc:
+      "Miten hormonihäiriö rappeuttaa fyysisen parinvalinta-arvon signaalit — morfologiset, dynaamiset ja kryptiset — ja miten rappeutunut enemmistö predatoi aktiivisesti tervettä jäännöstä. Calhounin käyttäytymisvalu ihmissivilisaatiossa.",
+
     levelLabel: "Taso III — Seuraukset",
     modelLink: "Lue mekanismi",
     evidenceLink: "Tutki näyttöä",
     predictionsLink: "Katso kaikki ennusteet",
     readMore: "Lue",
+    epistemicTitle: "Episteeminen huomautus",
+    epistemicBody: "Jokainen yksittäinen lenkki alla olevassa ketjussa on itsenäisesti tuettu vertaisarvioidulla tutkimuksella. Koko ketjua — sähkömagneettisesta fysiikasta sivilisaatiodynamiikkaan — ei ole testattu eikä voida testata yhtenä kokeena. Tämä on rakenteellisesti identtinen muiden pitkien kausaaliketjujen kanssa tieteessä (tupakointi → syöpä, CO₂ → ilmastonmuutos, lyijy → rikollisuus): mekanismi on todennettu lenkki lenkiltä, ei päästä päähän.",
+    epistemicBody2: "Luottamus koko ketjuun on välttämättä matalampi kuin luottamus yksittäiseen lenkkiin. Kun mallin tuottamia arvoja esiintyy taulukoissa, ne on merkitty sellaisiksi. Kun havaintoja kuvataan ennusteiden kanssa \"yhdenmukaisiksi\", tämä tarkoittaa suunnan vastaavuutta — ei muodollista testausta.",
   },
   ja: {
     title: "文明",
@@ -101,7 +117,7 @@ const COPY = {
       "このセクションはその伝播を追跡します — 7つのランダム化比較試験から人口レベルの行動データ、そして文明変動のダイナミクスへ。",
     readingGuide: "読書経路",
     readingGuideDesc:
-      "議論は5段階で構築されます。各ページは独立していますが、因果連鎖は左から右へ流れます。",
+      "議論は6段階で構築されます。各ページは独立していますが、因果連鎖は左から右へ流れます。",
 
     pathopege: "パトペゲ",
     pathopegeGreek: "pathos + pege — 病の源",
@@ -128,11 +144,17 @@ const COPY = {
     pathopolitesDesc:
       "脆弱性、トラウマ、生物学的無能力を中心にアイデンティティを構築する市民。6つの測定可能な次元。",
 
+    patokinesis: "パトキネシス",
+    patokinesisGreek: "pathos + kinesis — 移動する病理",
+    patokinesisDesc:
+      "ホルモン障害が配偶者の質のシグナルをどう劣化させ、劣化した多数派がどう健全な残余を捕食するか。",
+
     levelLabel: "レベルIII — 結果",
     modelLink: "メカニズムを読む",
     evidenceLink: "証拠を探る",
     predictionsLink: "すべての予測を見る",
     readMore: "読む",
+    epistemicTitle: "", epistemicBody: "", epistemicBody2: "",
   },
   fr: {
     title: "Civilisation",
@@ -144,7 +166,7 @@ const COPY = {
       "Cette section retrace cette propagation — des essais cliniques aux donnees comportementales de population et a la dynamique du changement civilisationnel.",
     readingGuide: "Parcours de lecture",
     readingGuideDesc:
-      "L'argument se construit en cinq etapes. Chaque page est autonome, mais la chaine causale se lit de gauche a droite.",
+      "L'argument se construit en six etapes. Chaque page est autonome, mais la chaine causale se lit de gauche a droite.",
 
     pathopege: "Pathopege",
     pathopegeGreek: "pathos + pege — source de la maladie",
@@ -171,11 +193,17 @@ const COPY = {
     pathopolitesDesc:
       "L'individu dont l'identite civique est construite autour de la vulnerabilite, du traumatisme ou de l'incapacite biologique. Six dimensions mesurables.",
 
+    patokinesis: "Patokinesis",
+    patokinesisGreek: "pathos + kinesis — la pathologie qui se deplace",
+    patokinesisDesc:
+      "Comment la perturbation hormonale degrade les signaux de qualite de partenaire et comment la majorite degradee predatera le reste sain.",
+
     levelLabel: "Niveau III — Consequences",
     modelLink: "Lire le mecanisme",
     evidenceLink: "Explorer les preuves",
     predictionsLink: "Voir toutes les predictions",
     readMore: "Lire",
+    epistemicTitle: "", epistemicBody: "", epistemicBody2: "",
   },
   ko: {
     title: "문명",
@@ -187,7 +215,7 @@ const COPY = {
       "이 섹션은 그 전파를 추적합니다 — 7개의 무작위 대조 시험에서 인구 수준의 행동 데이터, 그리고 문명 변동의 역학으로.",
     readingGuide: "독서 경로",
     readingGuideDesc:
-      "논증은 5단계로 구축됩니다. 각 페이지는 독립적이지만 인과 사슬은 왼쪽에서 오른쪽으로 흐릅니다.",
+      "논증은 6단계로 구축됩니다. 각 페이지는 독립적이지만 인과 사슬은 왼쪽에서 오른쪽으로 흐릅니다.",
 
     pathopege: "파토페게",
     pathopegeGreek: "pathos + pege — 질병의 근원",
@@ -214,11 +242,17 @@ const COPY = {
     pathopolitesDesc:
       "취약성, 트라우마 또는 생물학적 무능력을 중심으로 정체성을 구축하는 시민. 6가지 측정 가능한 차원.",
 
+    patokinesis: "파토키네시스",
+    patokinesisGreek: "pathos + kinesis — 이동하는 병리",
+    patokinesisDesc:
+      "호르몬 교란이 배우자 품질 신호를 어떻게 열화시키고, 열화된 다수가 건강한 나머지를 어떻게 포식하는가.",
+
     levelLabel: "레벨 III — 결과",
     modelLink: "메커니즘 읽기",
     evidenceLink: "증거 탐색",
     predictionsLink: "모든 예측 보기",
     readMore: "읽기",
+    epistemicTitle: "", epistemicBody: "", epistemicBody2: "",
   },
 };
 
@@ -263,6 +297,7 @@ const PAGES = [
   { key: "patokratia", href: "patokratia", icon: Shield, color: "red" },
   { key: "patopoliteia", href: "patopoliteia", icon: Globe, color: "purple" },
   { key: "pathopolites", href: "pathopolites", icon: UserX, color: "rose" },
+  { key: "patokinesis", href: "patokinesis", icon: Radio, color: "teal" },
 ] as const;
 
 const COLORS: Record<string, { border: string; bg: string; text: string; icon: string }> = {
@@ -271,6 +306,7 @@ const COLORS: Record<string, { border: string; bg: string; text: string; icon: s
   red: { border: "border-red-500/30", bg: "bg-red-500/5", text: "text-red-500", icon: "text-red-500" },
   purple: { border: "border-purple-500/30", bg: "bg-purple-500/5", text: "text-purple-500", icon: "text-purple-500" },
   rose: { border: "border-rose-500/30", bg: "bg-rose-500/5", text: "text-rose-500", icon: "text-rose-500" },
+  teal: { border: "border-teal-500/30", bg: "bg-teal-500/5", text: "text-teal-500", icon: "text-teal-500" },
 };
 
 export default async function CivilizationPage({
@@ -319,6 +355,15 @@ export default async function CivilizationPage({
             {d.heroTrail}
           </p>
         </section>
+
+        {/* Epistemic note */}
+        {d.epistemicTitle && (
+        <section className="mb-16 max-w-3xl border border-foreground/10 rounded-xl p-6 bg-foreground/[0.02]">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-foreground/50 mb-3">{d.epistemicTitle}</h2>
+          <p className="text-sm leading-relaxed text-foreground/70 mb-3">{d.epistemicBody}</p>
+          <p className="text-sm leading-relaxed text-foreground/70">{d.epistemicBody2}</p>
+        </section>
+        )}
 
         {/* Reading path */}
         <section className="mb-20">

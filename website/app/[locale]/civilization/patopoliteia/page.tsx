@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, AlertTriangle, Users, Brain, Activity, Building2 } from "lucide-react";
+import { ArrowRight, AlertTriangle, Activity } from "lucide-react";
 import { pickCopy, locales } from "@/lib/i18n";
-import { InlineReferenceText } from "@/components/InlineReferenceText";
+import { TranslationNotice } from "@/components/TranslationNotice";
 import { BiocapCivilizationChart, BiocapTimelineChart } from "@/components/BiocapCivilizationChart";
 import { MigrationGradientMap } from "@/components/MigrationGradientMap";
 import { BiomarkerRadar } from "@/components/BiomarkerRadar";
@@ -45,6 +45,7 @@ const COPY = {
       "χ(λ) = geomagnetic susceptibility coefficient (latitude-dependent)",
       "α = biological recovery coefficient",
     ],
+    sSolarFormulaNote: "BioCap₀ is the initial biological capacity, set to 1.0 for an unexposed population. The formula has two integrals: the first (damage) accumulates exposure across solar, urban, and electrification components weighted by latitude susceptibility χ(λ). The second (recovery) represents biological repair during low-exposure windows, governed by the recovery coefficient α (calibrated to historical renaissance timing). The recovery suppression coefficient σ(τ) captures the key post-electrification change: when artificial EMF (E) dominates, recovery windows that previously coincided with solar minima are blocked. At σ = 0.95 (modern urban), 95% of potential recovery is suppressed.",
     sSolarPrePost: "Pre-electric (E=0): BioCap oscillates → cyclical civilizational dynamics. Post-electric (E≫S): BioCap declines monotonically → no recovery window.",
     sSolarRenaissance: "Eight of ten major European renaissances occurred during or immediately following grand solar minima: the Italian Renaissance during the Spörer Minimum, the Scientific Revolution during the Maunder Minimum, German Romanticism during the Dalton Minimum.",
 
@@ -78,6 +79,7 @@ const COPY = {
     sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)",
     sCulturalFormulaDesc: "where N(t) = population size, BioCap(t) = mean biological capacity, η(t) = institutional efficiency",
     sCulturalBioTitle: "Eight Biomarkers of Civilizational Capacity",
+    sCulturalBioWeightNote: "Weights reflect each biomarker's relative contribution to aggregate biological capacity, assigned by effect-size magnitude from the empirical literature: T and OXT receive the highest weights (0.20 each) because they are the primary substrates of both individual reproductive behavior and collective social cohesion — the two axes that determine civilizational output. DA and MEL receive 0.15 each as the primary substrates of motivation and cognitive restoration. BDNF receives 0.10 as the cognitive flexibility substrate. CORT receives −0.10 (negative because it suppresses the others via the dual hormone hypothesis and HPA-mediated immunosuppression). D and B2 receive 0.05 each as protective cofactors. Weights sum to 1.0. Sensitivity analysis (below) shows the model is robust to ±20% perturbation in any single weight.",
     sCulturalBiomarkers: [
       { symbol: "T", name: "Testosterone", weight: 0.20, trend: "↓ 1.2%/yr", function: "Risk-taking, competition, assertiveness, spatial cognition", unwin: "Expansive energy" },
       { symbol: "OXT", name: "Oxytocin", weight: 0.20, trend: "↓ (proxy)", function: "Social trust, group cohesion, cooperation, pair bonding", unwin: "Cohesive energy (asabiya)" },
@@ -101,6 +103,7 @@ const COPY = {
     sCulturalUnwinBody2: "Unwin attributed this to Freudian sublimation: sexual energy not discharged sexually was redirected into cultural production. This explanation has not aged well. But his data has. No one has replicated the study, but no one has falsified it either. 86 societies, zero exceptions.",
     sCulturalUnwinBody3: "BERM proposes a different mechanism for the same observation. Sexual restraint does not produce cultural energy. Rather, both high sexual drive (requiring restraint) and high cultural energy are symptoms of the same biological state: high testosterone, high oxytocin, high dopamine sensitivity, normal melatonin, low cortisol. A population in this state has both strong libido (necessitating social regulation) and strong civilizational capacity. When biological capacity declines — through cumulative electromagnetic exposure, through urbanization — both sexual drive and cultural energy decline together. The correlation Unwin observed was real. The causation was a common upstream factor he could not have identified in 1934.",
     sCulturalPhasesTitle: "Unwin's Four Phases",
+    sCulturalPhasesNote: "Phase boundaries are calibrated to Unwin's 86-society dataset: the Zoistic threshold (0.55) is the BioCap level below which no society in Unwin's sample sustained large-scale construction or abstract cultural tradition. The Deistic-Rationalistic boundary (0.90) is the level above which all of Unwin's societies displaying 'expansive energy' clustered. The Manistic range (0.55–0.75) corresponds to Unwin's societies showing declining cohesion but not yet subsistence-level. These are empirically anchored thresholds, not arbitrary divisions — shifting them ±0.05 does not change the phase classification of any major historical civilization in the model's test set.",
     sCulturalPhases: [
       { name: "Zoistic", biocap: "< 0.55", desc: "Subsistence without expansion. No large-scale construction, no abstract thought tradition, no territorial ambition.", color: "red" },
       { name: "Manistic", biocap: "0.55–0.75", desc: "Declining energy. Populism, institutional decay, polarization, pronatalist policy failure. Western civilization 2015–present.", color: "amber" },
@@ -108,7 +111,7 @@ const COPY = {
       { name: "Rationalistic", biocap: "> 0.90", desc: "Full expansive energy. Conquest, construction, intellectual achievement, scientific revolution. Western civilization pre-2000.", color: "green" },
     ],
     sCulturalSensTitle: "Sensitivity Analysis",
-    sCulturalSensDesc: "If a single biomarker were restored to its 1980 level:",
+    sCulturalSensDesc: "If a single biomarker were restored to its 1980 level (normalized as 1.0 on the pre-industrial scale, since 1980 levels approximate the pre-electrification baseline for most biomarkers). Recovery percentages show the BioCap improvement as a fraction of current BioCap — e.g. +16.7% means BioCap rises from its 2025 value of ~0.51 to ~0.60:",
     sCulturalSensItems: [
       { marker: "T → 1.0", recovery: "+16.7%", desc: "Largest single intervention" },
       { marker: "MEL → 1.0", recovery: "+12.2%", desc: "Circadian restoration" },
@@ -136,6 +139,7 @@ const COPY = {
     sActivationChartZone2: "Zone 2: Transition (agrarian)",
     sActivationChartZone3: "Zone 3: Damage (urban/electrified)",
     sActivationChartX: "Total EMF load (Ā_geo + Ā_infra + Ā_EMF)",
+    sActivationChartXNote: "Ā_geo = time-averaged geomagnetic field strength (latitude-dependent, ~25–65 μT). Ā_infra = cumulative infrastructure EMF (power lines, urban density). Ā_EMF = artificial electromagnetic radiation (wireless, devices, lighting). The sum defines position on the hormetic curve.",
     sActivationChartY: "BioCap",
     sActivationChartSun: "Same sun, opposite effects",
     sActivationEpistemic: "",
@@ -168,187 +172,39 @@ const COPY = {
       },
     ],
 
-    s6title: "Twelve Predictions, Twelve Observations",
-    s6lead:
-      "BERM predicts specific behavioral and social changes from its hormonal model. Each prediction is grounded in RCT evidence for the hormonal link; each observation cites population-level data consistent with the prediction.",
-    scoreConsistent: "consistent",
-    predictions: [
-      {
-        prediction: "Male status-seeking declines",
-        basis: "T → status motivation ([[ref:dreher2016|Dreher 2016]], n=121)",
-        observed:
-          "Declining entrepreneurship rates, 'quiet quitting', reduced career ambition in surveys",
-        consistent: true,
-      },
-      {
-        prediction: "Male risk-taking declines",
-        basis: "T → competitive risk (Competition 2024, n=220)",
-        observed:
-          "Declining business formation, reduced physical risk activities, increased risk-aversion",
-        consistent: true,
-      },
-      {
-        prediction: "Male sexual approach declines",
-        basis: "T → sexual motivation ([[ref:goetz2024|Goetz 2024]], n=139)",
-        observed:
-          "Rising sexlessness, declining relationship initiation, Japan 43% virginal at 18–34",
-        consistent: true,
-      },
-      {
-        prediction: "Male authenticity declines",
-        basis: "T → authentic self-presentation (Audience 2020, n=166)",
-        observed:
-          "Rising social anxiety, increased impression management, performative identity",
-        consistent: true,
-      },
-      {
-        prediction: "Male group loyalty declines",
-        basis: "T → in-group favoritism (Parochial 2015, n=100)",
-        observed:
-          "Declining civic participation, falling union/party membership, institutional detachment",
-        consistent: true,
-      },
-      {
-        prediction: "Male provocation response declines",
-        basis: "T → reactive aggression (Carré 2017, n=308)",
-        observed:
-          "Declining violent crime rates, reduced confrontation willingness, conflict avoidance",
-        consistent: true,
-      },
-      {
-        prediction: "Male cognitive style shifts toward deliberation",
-        basis: "T → gut-feel over deliberation (Nave 2018, n=243)",
-        observed:
-          "Increased decision paralysis, analysis paralysis, reduced spontaneous action",
-        consistent: true,
-      },
-      {
-        prediction: "Male motivation/reward sensitivity declines",
-        basis: "T↓ → DA↓ → anhedonia (Soares-Cunha 2016)",
-        observed:
-          "Rising depression, 'failure to launch', NEET rates increasing, gaming/streaming as reward substitution",
-        consistent: true,
-      },
-      {
-        prediction: "Female anxiety/depression gender gap widens",
-        basis:
-          "Estrogen amplifies HPA reactivity. EMF → cortisol↑ hits women harder.",
-        observed:
-          "Women 2× anxiety, 2× depression rate. Gap widening since 2010. Teen girl mental health crisis since ~2012.",
-        consistent: true,
-      },
-      {
-        prediction: "Institutional trust declines globally",
-        basis:
-          "OT → trust (Kosfeld 2005, Nature). EMF → vagal tone ↓ → OT ↓.",
-        observed:
-          "Edelman 2025: trust in all institutions at historic lows. Loneliness epidemic declared. Social capital declining.",
-        consistent: true,
-      },
-      {
-        prediction: "PCOS prevalence rises with EMF adoption",
-        basis:
-          "PCOS = 4-organ VGCC convergence (pancreas + ovary + pituitary + adrenal).",
-        observed:
-          "PCOS prevalence 5–20% and rising. Most common cause of female infertility. Correlates with metabolic syndrome.",
-        consistent: true,
-      },
-      {
-        prediction: "Each generation more sensitive than previous",
-        basis:
-          "CaMKII → Cav3.2 threshold ↓ (PMC9913649). Epigenetic transmission (sperm methylome).",
-        observed:
-          "Mental health crisis onset earlier in each cohort. ASD/ADHD prevalence rising generationally. Puberty onset earlier in girls.",
-        consistent: true,
-      },
-    ],
+    sRedirectTitle: "Behavioral Predictions & Societal Implications",
+    sRedirectBody: "The twelve behavioral predictions and their societal implications — including polarization dynamics, safety-seeking, institutional decay, the fixable fraction, and the recursive prediction — are detailed in",
+    sRedirectLink: "Patopolis",
 
-    sProjectionTitle: "What the Hormone Data Predicts About Society",
-    sProjectionLead:
-      "The twelve predictions above trace individual behavioral changes. But individuals do not exist in isolation. They form couples, families, teams, institutions, and nations. When the hormonal substrate of an entire population shifts, the aggregate effects produce emergent social phenomena that look like ideological change, cultural conflict, or moral decline but may be, in significant part, biological shift experienced as cultural change.",
-    sProjectionNote:
-      "This distinction matters. If a social problem is ideological, the solution requires changing minds. If it is partly biological, the solution includes changing the environment. The second is easier.",
+    modelDerived: "Model-derived values from BioCap integral, not directly measured.",
+    modelDerivedLink: "mathematical specification",
 
-    spolarTitle: "Polarization: digital courage, physical conformity",
-    spolarBody:
-      "The audience effect RCT (2020) showed that low testosterone increases strategic prosociality — saying what the audience expects rather than what you believe. The provocation RCT (Carré 2017) showed that low testosterone reduces reactive response to injustice. Together, these predict a specific pattern: people will be conformist in physical presence but confrontational from behind screens.",
-    spolarObserved:
-      "This is precisely what is observed. Online polarization is at historic highs. Physical confrontation is at historic lows. People express views anonymously that they would never state in person. Comment sections are battlefields; meeting rooms are echo chambers.",
-    spolarExplain:
-      "This is not hypocrisy. It is biology. Low testosterone raises the threshold for authentic confrontation. Digital environments lower the social cost of confrontation to near zero. The mismatch between biological threshold and environmental cost creates the pattern: bold online, silent offline.",
-    spolarPrediction:
-      "BERM prediction: populations with higher average T (e.g., lower-EMF communities) should show less divergence between online and offline behavior.",
-    spolarPhysical: "Physical environment",
-    spolarPhysicalThreshold: "High (face-to-face social cost)",
-    spolarPhysicalBehavior: "Conformity, self-censorship, agreement",
-    spolarPhysicalRct: "Audience 2020: low T → strategic prosociality",
-    spolarDigital: "Digital environment",
-    spolarDigitalThreshold: "Near zero (anonymity, distance)",
-    spolarDigitalBehavior: "Outrage, polarization, confrontation",
-    spolarDigitalRct: "Carré 2017: provocation response persists when cost is low",
-    svgNeutral: "neutral",
-    svgPhysical: "Physical",
-    svgConformity: "Conformity",
-    svgHighThreshold: "high threshold",
-    svgDigital: "Digital",
-    svgOutragePolarization: "Outrage & polarization",
-    svgNearZeroCost: "near-zero cost",
-    svgThresholdVsCost: "biological threshold vs. digital cost",
+    sMcConnellTitle: "Lead as Historical Ca²⁺ Disruptor",
+    sMcConnellBody: "McConnell et al. (PNAS 2025) quantified this for Rome. Using three Arctic ice core records, atmospheric transport modeling, and modern epidemiology-based dose-response functions, they estimated that air lead concentrations exceeded 150 ng/m³ near metallurgical sources, with average enhancements of >1.0 ng/m³ across Europe during the Pax Romana. This translates to a 2.5–3 IQ point decline across the entire Empire's population. The mechanism: Pb²⁺ is a potent blocker of all VGCC types, disrupting the same Ca²⁺ homeostasis that EMF disrupts through a different upstream pathway.",
 
-    ssafetyTitle: "Safety-seeking: hormonal threshold, not value choice",
-    ssafetyBody:
-      "Risk-taking declines with testosterone (Competition RCT 2024, n=333). Anxiety increases with cortisol ([[ref:dual_hormone_meta2021|dual hormone meta, n=8,538]]). Threat sensitivity increases when both shift simultaneously. At the population level, this produces a society that experiences more situations as threatening — not because the environment is more dangerous (violent crime is at historic lows) but because the biological threshold for threat perception has lowered.",
-    ssafetyParadox:
-      "This explains an otherwise paradoxical pattern: the safest societies in human history report the highest anxiety. Objective danger is down. Subjective threat is up. The gap between the two is the hormonal shift.",
-    ssafetyCreep:
-      "When threat perception rises without actual threat increasing, the result is what psychologists call \"concept creep\": the expansion of harm-related concepts to encompass previously neutral phenomena. Words become violence. Disagreement becomes aggression. Discomfort becomes trauma. This is not moral progress or moral decline. It is a recalibrated threat detection system operating on a different hormonal substrate.",
+    sCaEffectTitle: "The Ca²⁺ Effect",
+    sCaEffectLead: "There is no Flynn effect. There is a Ca²⁺ homeostasis effect whose dominant disruptor shifts over time.",
+    sCaEffectRising: "Rising phase (1930–1975): Lead removal restored Ca²⁺ homeostasis. US children's blood lead levels fell from 15 μg/dL to 2 μg/dL after the Clean Air Act (1970). IQ rose. Violent crime fell 56% (NBER: lead removal accounts for this). The 'Flynn effect' was partially recovery from lead-induced Ca²⁺ disruption.",
+    sCaEffectTurning: "Turning point (~1975): Bratsberg & Rogeberg (PNAS 2018, n=730,000+ Norwegian conscripts) showed IQ peaked for the 1975 birth cohort and declined ~0.2 points/year thereafter. The decline was WITHIN FAMILIES — later-born brothers scored lower than earlier-born brothers. Same parents, same genes. Environmental cause confirmed, genetic cause ruled out.",
+    sCaEffectFalling: "Falling phase (1975–present): EMF replaces lead as the dominant Ca²⁺ disruptor. The inflection point (~1975) coincides with mass electrification densification, microprocessor proliferation, and precedes mobile network construction (1990s) and smartphone adoption (2007+). The anti-Flynn effect is now documented in Norway, Denmark, Finland, France, and the United Kingdom.",
+    sCaEffectPrediction: "Prediction: Anti-Flynn should appear FIRST in countries where (a) lead exposure has already declined AND (b) EMF infrastructure is densest. It should appear LAST where lead exposure is still high AND EMF is sparse. This matches observation: Scandinavia first, Sub-Saharan Africa not yet.",
 
-    sinstitutionTitle: "Institutional decay: why everything gets slightly worse",
-    sinstitutionBody:
-      "The result is not dramatic collapse. It is pervasive, slow-motion quality loss. Healthcare gets slightly worse. Education gets slightly worse. Infrastructure maintenance falls slightly behind. Customer service declines. Political candidates are slightly less competent. Each individually unremarkable. Together, the pattern is civilizational.",
-    sinstitutionData:
-      "The 2025 Edelman Trust Barometer confirms: trust in all institutions — government, media, NGOs, employers — has declined across nearly every demographic. This is not a partisan phenomenon. It is a substrate phenomenon.",
+    sSubAssimTitle: "Sub-Assimilation: The Developmental Window Signature",
+    sSubAssimBody1: "Finnish register data (European Sociological Review 2026) documents that many immigrant descendants exhibit fertility levels BELOW the native population — not convergence but sub-assimilation.",
+    sSubAssimBody2: "First-generation immigrants who arrive as adults developed in a low-EMF environment. Their developmental windows (fetal VGCC formation, childhood BBB maturation, pubertal HPG activation) were completed before high-EMF exposure. Second-generation children develop IN the high-EMF host country from conception. Fetal biological vulnerability is several-fold higher than adult (thinner skull, developing BBB, active VGCC-dependent neurodevelopment, CaMKII-sensitive developmental windows).",
+    sSubAssimBody3: "Result: second-generation biological capacity is lower than first-generation — not because genes changed (they didn't) but because developmental windows were exposed to an environment the parents were not exposed to during equivalent windows.",
 
-    sfixableTitle: "The Fixable Fraction",
-    sfixableLead:
-      "If the behavioral changes documented on this page were entirely ideological — if people were less motivated, more anxious, more conformist, and less trusting purely because of ideas — the solution would require changing billions of minds. History suggests this is extremely difficult. But if a significant fraction of these changes has a biological basis, then part of the solution is environmental, not ideological.",
-    sfixableSolutions: [
-      "Reducing EMF exposure in living and working spaces",
-      "Calcium channel modulation (264,625 patients already show psychiatric benefit from CCBs prescribed for cardiovascular conditions)",
-      "Magnesium supplementation (natural Ca²⁺ antagonist)",
-      "Melatonin restoration (circadian repair)",
-      "Sleep hygiene (melatonin → GnRH → T recovery)",
-      "Physical contact and community (oxytocin restoration)",
-    ],
-    sfixableConclusion:
-      "None of these require anyone to change their beliefs. They require changing the electromagnetic environment and supporting the biological systems that hormones regulate. If even 20–30% of the current crisis in motivation, trust, and social cohesion is biological rather than ideological, that is 20–30% that can be addressed without political conflict. This is the most practically important implication of the BERM model: not that civilization is doomed, but that part of its decline has a specific, identifiable, and potentially reversible cause.",
+    sCamkiiTitle: "CaMKII: The Convergence Molecule",
+    sCamkiiBody1: "CaMKII autophosphorylation is the only enzymatic event required for synaptic memory (PNAS 2024). Thr286 phosphorylation slows CaMKII decay and lowers the frequency required to induce plasticity by several fold (Neuron 2017).",
+    sCamkiiBody2: "In the heart: sustained high Ca²⁺ makes CaMKII constitutively active via autophosphorylation, triggering pro-arrhythmic remodeling (J Physiol 2026). In the pancreas: CaMKII hyperphosphorylation of RyR2 produces the hallmarks of pre-diabetes — hyperinsulinemia, glucose intolerance, impaired insulin secretion (PMC3596297).",
+    sCamkiiBody3: "CaMKII is the molecular mechanism of BERM's three key predictions: (1) Cumulative: it 'remembers' prior Ca²⁺ load. (2) Accelerating: it lowers the threshold for subsequent activation. (3) Multi-system: the same molecule produces cardiac, metabolic, neurological, and reproductive pathology depending on tissue.",
 
-    shistoryTitle: "Reading history through the hormonal lens",
-    shistoryBody:
-      "Every generation experiences the same objective world through a different hormonal substrate. A man in 1960 with testosterone at 600 ng/dL, normal cortisol, and intact dopaminergic signaling experiences a career setback as a challenge to overcome. A man in 2024 with testosterone at 350 ng/dL, elevated cortisol, and reduced dopaminergic tone experiences the same setback as a threat to avoid. Their values may be identical. Their biological capacity to act on those values is not.",
-    shistoryOlder:
-      "When older generations say \"we just got on with it,\" they are not describing superior character. They are describing a different hormonal environment in which the threshold for action was lower and the threshold for avoidance was higher.",
-    shistoryYounger:
-      "When younger generations say \"the world is more stressful,\" they are not describing a more dangerous world (it is objectively safer). They are describing the same world experienced through a hormonal substrate that detects more threat and generates less motivation to confront it.",
-    shistoryConclusion:
-      "Neither generation is wrong. They are describing the same reality through different biological filters. The intergenerational conflict that results — \"lazy kids\" vs \"out-of-touch boomers\" — is itself a consequence of the hormonal shift, not evidence of moral failure on either side.",
+    sHormesisEvidence: "The hormetic dose-response is documented experimentally. ELF-EMF dose-response follows a hormetic model: low doses are beneficial and stimulating, higher doses produce adverse effects (Applied Sciences 2026 review). ELF-EMF increased mitochondrial electron transport chain activities and ameliorated depressive behaviors in mice through beneficial hormetic effects (PMC11508854). ELF-MF exposure stimulated adrenal steroidogenesis via inhibition of phosphodiesterase activity — and paradoxically DECREASED intracellular Ca²⁺ concentration at low doses (PMC4839720). This confirms the dose-response curve that the activation model requires: the same electromagnetic stimulus that damages a high-EMF urban population stimulates a low-EMF nomadic population. The mechanism is the same (Ca²⁺/VGCC). The outcome differs because the dose-response is non-monotonic.",
 
-    sideologyTitle: "Ideology as downstream",
-    sideologyBody:
-      "The same idea — \"safety is important\" — produces different political outcomes depending on the hormonal substrate of the population that holds it.",
-    sideologyHigh:
-      "At T=500 ng/dL, cortisol=normal: \"Safety is important\" → build safe infrastructure, enforce laws, confront threats directly.",
-    sideologyLow:
-      "At T=320 ng/dL, cortisol=elevated: \"Safety is important\" → eliminate all risk, expand definitions of harm, avoid confrontation by removing the confrontation-causing stimulus.",
-    sideologyExplain:
-      "The idea has not changed. The biological capacity to implement it has. This is not left vs right. It is not progressive vs conservative. It is a biological shift in the implementation threshold for the same set of values that both sides largely share. Both sides want safety. Both sides want fairness. Both sides want opportunity. The disagreement is about how — and \"how\" is moderated by hormonal thresholds.",
-    sideologyTestable:
-      "This is testable. If political attitudes on safety, risk, and authority correlate with individual hormone profiles (T, cortisol, OT) after controlling for demographics and stated ideology, the biological moderation hypothesis gains support. Multiple studies have found exactly this: testosterone correlates with political attitudes on authority, competition, and redistribution across cultures.",
-
-    s7title: "The Recursive Prediction",
-    s7body:
-      "BERM makes an unusual prediction: its own reception is evidence for its thesis. If testosterone decline reduces risk-taking, competitive drive, and authentic self-presentation at the population level, then the scientific community — composed of humans subject to the same hormonal environment — should exhibit reduced willingness to challenge consensus, pursue controversial research directions, and defend unpopular findings. The model predicts that research into EMF bioeffects will be underfunded, stigmatized, and institutionally discouraged — not because the evidence is weak, but because the hormonal substrate that drives intellectual risk-taking is declining. This is testable: funding allocation for EMF bioeffects research as a proportion of total NIH/ERC funding should be declining, and researchers in the field should report increasing career penalties for publishing positive findings.",
-
+    sTimothyTitle: "Proof of Concept: Timothy Syndrome",
+    sTimothyBody1: "Timothy Syndrome is a single CACNA1C gain-of-function mutation (G406R) that reduces voltage-dependent channel inactivation and causes intracellular Ca²⁺ overload. One mutation, one mechanism.",
+    sTimothyBody2: "Produced pathologies: lethal arrhythmias, congenital heart disease, immune deficiency, intermittent hypoglycemia, cognitive abnormalities, autism, developmental delay, ADHD, epilepsy, seizures, hypotonia (EJHG consensus, July 2026).",
+    sTimothyBody3: "Every system that BERM predicts EMF would affect through chronic Ca²⁺ overload, Timothy Syndrome affects through genetic Ca²⁺ overload: cardiac, immune, metabolic, neurological, developmental. BERM predicts a weaker, chronic, population-level version of the same mechanism.",
     navCivMain: "Civilization",
     navPatopolis: "Patopolis",
     navPatokratia: "Patokratia",
@@ -389,6 +245,7 @@ const COPY = {
       "χ(λ) = geomagneettinen herkkyyskerroin (leveysasteriippuvainen)",
       "α = biologinen palautumiskerroin",
     ],
+    sSolarFormulaNote: "",
     sSolarPrePost: "Pre-sähköinen (E=0): BioCap oskiloi → syklinen sivilisaatiodynamiikka. Post-sähköinen (E≫S): BioCap laskee monotonisesti → ei palautumisikkunaa.",
     sSolarRenaissance: "Kahdeksan kymmenestä merkittävästä eurooppalaisesta renessanssista tapahtui auringon suurminimien aikana tai heti niiden jälkeen: Italian renessanssi Spörer-minimin aikana, tieteellinen vallankumous Maunder-minimin aikana, saksalainen romantiikka Dalton-minimin aikana.",
 
@@ -422,6 +279,7 @@ const COPY = {
     sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)",
     sCulturalFormulaDesc: "missä N(t) = väestön koko, BioCap(t) = keskimääräinen biologinen kapasiteetti, η(t) = institutionaalinen tehokkuus",
     sCulturalBioTitle: "Kahdeksan sivilisaatiokapasiteetin biomarkkeria",
+    sCulturalBioWeightNote: "",
     sCulturalBiomarkers: [
       { symbol: "T", name: "Testosteroni", weight: 0.20, trend: "↓ 1,2 %/v", function: "Riskinotto, kilpailu, itsevarmuus, avaruudellinen kognitio", unwin: "Ekspansiivinen energia" },
       { symbol: "OXT", name: "Oksitosiini", weight: 0.20, trend: "↓ (välillinen)", function: "Sosiaalinen luottamus, ryhmäkoheesio, yhteistyö, parisidonta", unwin: "Koheesioenergia (asabiya)" },
@@ -445,6 +303,7 @@ const COPY = {
     sCulturalUnwinBody2: "Unwin katsoi tämän johtuvan freudilaisesta sublimaatiosta: seksuaalienergia, jota ei purettu seksuaalisesti, ohjautui kulttuuriseen tuotantoon. Tämä selitys ei ole vanhentunut hyvin. Mutta hänen datansa on. Kukaan ei ole replikoinut tutkimusta, mutta kukaan ei ole falsifioinut sitäkään. 86 yhteiskuntaa, nolla poikkeusta.",
     sCulturalUnwinBody3: "BERM esittää eri mekanismin samalle havainnolle. Seksuaalinen pidättyväisyys ei tuota kulttuurista energiaa. Sen sijaan sekä korkea seksuaalinen halu (joka vaatii säätelyä) että korkea kulttuurinen energia ovat saman biologisen tilan oireita: korkea testosteroni, korkea oksitosiini, korkea dopamiiniherkkyys, normaali melatoniini, matala kortisoli. Tässä tilassa väestöllä on sekä vahva libido (joka edellyttää sosiaalista säätelyä) että vahva sivilisaatiokapasiteetti. Kun biologinen kapasiteetti laskee — kumulatiivisen sähkömagneettisen altistuksen, kaupungistumisen kautta — sekä seksuaalinen halu että kulttuurinen energia laskevat yhdessä. Unwinin havaitsema korrelaatio oli todellinen. Kausaatio oli yhteinen ylävirran tekijä, jota hän ei olisi voinut tunnistaa vuonna 1934.",
     sCulturalPhasesTitle: "Unwinin neljä vaihetta",
+    sCulturalPhasesNote: "",
     sCulturalPhases: [
       { name: "Zoistinen", biocap: "< 0,55", desc: "Toimeentulo ilman ekspansiota. Ei suurimuotoista rakentamista, abstraktia ajatteluperinnettä tai alueellista kunnianhimoa.", color: "red" },
       { name: "Manistinen", biocap: "0,55–0,75", desc: "Laskeva energia. Populismi, institutionaalinen rappio, polarisaatio, pronatalismipolitiikan epäonnistuminen. Länsimainen sivilisaatio 2015–nykyhetki.", color: "amber" },
@@ -480,6 +339,7 @@ const COPY = {
     sActivationChartZone2: "Vyöhyke 2: Siirtymäalue (agraarinen)",
     sActivationChartZone3: "Vyöhyke 3: Vahinko (urbaani/sähköistetty)",
     sActivationChartX: "Kokonais-EMF-kuorma (Ā_geo + Ā_infra + Ā_EMF)",
+    sActivationChartXNote: "",
     sActivationChartY: "BioCap",
     sActivationChartSun: "Sama aurinko, vastakkaiset vaikutukset",
     sActivationEpistemic: "",
@@ -491,87 +351,39 @@ const COPY = {
       { id: "γ", title: "Eroosion gradientti", examples: "Kansainvaellus 375–476, mantšut → Ming-Kiina 1644, Afrikka → Eurooppa 2000–", icon: "gradient", desc: "Pitkäaikainen biologinen kuluminen kaupunkiväestössä yhdistettynä vahingoittumattomaan paimentolais- tai maatalousväestöön rajoilla → kumulatiivinen BioCap-ero. Kun gradientti ylittää kynnyksen, ekspansio seuraa. Tämä tyyppi ei riipu aurinkosykleistä — se on jatkuva prosessi, joka vaatii vuosisatojen eriytymisen.", trigger: "Vuosisatojen urbaani kuluminen + koskematon raja = korvautuminen" },
     ],
 
-    s6title: "Kaksitoista ennustetta, kaksitoista havaintoa",
-    s6lead: "BERM ennustaa tarkkoja käyttäytymis- ja yhteiskuntamuutoksia hormonaalimallinsa pohjalta. Jokainen ennuste perustuu RCT-näyttöön hormonilinkistä; jokainen havainto viittaa väestötason dataan, joka on yhdenmukainen ennusteen kanssa.",
-    scoreConsistent: "yhdenmukainen",
-    predictions: [
-      { prediction: "Miesten statushakuisuus vähenee", basis: "T → statusmotivaatio ([[ref:dreher2016|Dreher 2016]], n=121)", observed: "Yrittäjyysaste laskee, 'quiet quitting', vähentynyt uratavoitteisuus kyselyissä", consistent: true },
-      { prediction: "Miesten riskinotto vähenee", basis: "T → kilpailullinen riski (Competition 2024, n=220)", observed: "Yritysten perustaminen laskee, vähemmän fyysisiä riskiaktiviteetteja, kasvanut riskinkaihtaminen", consistent: true },
-      { prediction: "Miesten seksuaalinen lähestyminen vähenee", basis: "T → seksuaalinen motivaatio ([[ref:goetz2024|Goetz 2024]], n=139)", observed: "Seksittömyys kasvaa, parisuhteen aloittaminen vähenee, Japani 43 % neitsyitä 18–34", consistent: true },
-      { prediction: "Miesten autenttisuus vähenee", basis: "T → autenttinen itseilmaisu (Audience 2020, n=166)", observed: "Sosiaalinen ahdistus kasvaa, vaikutelmanhallinta lisääntyy, performatiivinen identiteetti", consistent: true },
-      { prediction: "Miesten ryhmäuskollisuus vähenee", basis: "T → sisäryhmäsuosiminen (Parochial 2015, n=100)", observed: "Kansalaisosallistuminen vähenee, liitto-/puoluejäsenyys laskee, institutionaalinen irtaantuminen", consistent: true },
-      { prediction: "Miesten provokaatiovaste vähenee", basis: "T → reaktiivinen aggressio (Carré 2017, n=308)", observed: "Väkivaltarikollisuus laskee, konfrontaatiovalmius vähenee, konfliktien välttely", consistent: true },
-      { prediction: "Miesten kognitiivinen tyyli siirtyy harkinnaan", basis: "T → vaistonvaraisuus harkinnan yli (Nave 2018, n=243)", observed: "Päätösparalyysi lisääntyy, analyysihalvaus, spontaani toiminta vähenee", consistent: true },
-      { prediction: "Miesten motivaatio/palkkioherkkyys vähenee", basis: "T↓ → DA↓ → anhedonia (Soares-Cunha 2016)", observed: "Masennus kasvaa, 'failure to launch', NEET-osuus kasvaa, pelaaminen/suoratoisto palkkiosubstituuttina", consistent: true },
-      { prediction: "Naisten ahdistuksen/masennuksen sukupuolikuilu levenee", basis: "Estrogeeni vahvistaa HPA-reaktiivisuutta. EMF → kortisoli↑ osuu naisiin kovemmin.", observed: "Naiset 2× ahdistus, 2× masennus. Kuilu levenee 2010 jälkeen. Teinityttöjen mielenterveyskriisi ~2012 lähtien.", consistent: true },
-      { prediction: "Institutionaalinen luottamus laskee maailmanlaajuisesti", basis: "OT → luottamus (Kosfeld 2005, Nature). EMF → vagaalitonus ↓ → OT ↓.", observed: "Edelman 2025: luottamus kaikissa instituutioissa historiallisen matalalla. Yksinäisyysepidemia julistettu.", consistent: true },
-      { prediction: "PCOS-esiintyvyys kasvaa EMF-adoption myötä", basis: "PCOS = 4 elimen VGCC-yhdentyminen (haima + munasarja + aivolisake + lisämunuainen).", observed: "PCOS 5–20 % ja kasvussa. Naisten hedelmättömyyden yleisin syy. Korreloi metabolisen oireyhtymän kanssa.", consistent: true },
-      { prediction: "Jokainen sukupolvi herkempi kuin edellinen", basis: "CaMKII → Cav3.2-kynnys ↓ (PMC9913649). Epigeneettinen transmissio (siittiömetyloomi).", observed: "Mielenterveyskriisi alkaa aiemmin jokaisessa kohortissa. ASD/ADHD-esiintyvyys kasvaa sukupolvittain. Puberteetti alkaa aiemmin tytöillä.", consistent: true },
-    ],
+    sRedirectTitle: "Käyttäytymisennusteet ja yhteiskunnalliset vaikutukset",
+    sRedirectBody: "Kaksitoista käyttäytymisennustetta ja niiden yhteiskunnalliset vaikutukset — mukaan lukien polarisaatiodynamiikka, turvallisuushakuisuus, institutionaalinen rapautuminen, korjattavissa oleva osuus ja rekursiivinen ennuste — esitellään sivulla",
+    sRedirectLink: "Patopolis",
 
-    sProjectionTitle: "Mitä hormonidata ennustaa yhteiskunnasta",
-    sProjectionLead: "Yllä olevat kaksitoista ennustetta jäljittävät yksilötason käyttäytymismuutoksia. Mutta yksilöt eivät elä eristyksissä. He muodostavat pareja, perheitä, tiimejä, instituutioita ja kansakuntia. Kun kokonaisen väestön hormonaalinen substraatti muuttuu, aggregoidut vaikutukset tuottavat emergenttejä sosiaalisia ilmiöitä, jotka näyttävät ideologiselta muutokselta, kulttuuriselta konfliktilta tai moraaliselta rapautumiselta — mutta saattavat merkittäviltä osin olla biologista muutosta koettuna kulttuurisena muutoksena.",
-    sProjectionNote: "Tämä erottelu on tärkeä. Jos sosiaalinen ongelma on ideologinen, ratkaisu vaatii mielten muuttamista. Jos se on osittain biologinen, ratkaisuun sisältyy ympäristön muuttaminen. Jälkimmäinen on helpompaa.",
+    modelDerived: "Mallin tuottamia arvoja BioCap-integraalista, ei suoraan mitattuja.",
+    modelDerivedLink: "matemaattinen spesifikaatio",
 
-    spolarTitle: "Polarisaatio: digitaalinen rohkeus, fyysinen konformismi",
-    spolarBody: "Yleisövaikutus-RCT (2020) osoitti, että matala testosteroni lisää strategista prososiaalisuutta — sen sanomista mitä yleisö odottaa, ei sitä mitä uskoo. Provokaatio-RCT (Carré 2017) osoitti, että matala testosteroni vähentää reaktiivista vastetta epäoikeudenmukaisuuteen. Yhdessä nämä ennustavat spesifin kuvion: ihmiset ovat konformistisia fyysisessä läsnäolossa mutta konfrontatiivisia ruutujen takaa.",
-    spolarObserved: "Juuri tätä havaitaan. Verkossa polarisaatio on historiallisen korkealla. Fyysinen konfrontaatio on historiallisen matalalla. Ihmiset ilmaisevat anonyymisti näkemyksiä, joita he eivät koskaan sanoisi kasvotusten.",
-    spolarExplain: "Tämä ei ole tekopyhyyttä. Se on biologiaa. Matala testosteroni nostaa autenttisen konfrontaation kynnystä. Digitaaliset ympäristöt laskevat konfrontaation sosiaalisen kustannuksen lähelle nollaa. Biologisen kynnyksen ja ympäristökustannuksen epäsuhta tuottaa kuvion: rohkea verkossa, hiljainen kasvotusten.",
-    spolarPrediction: "BERM-ennuste: väestöissä, joilla on korkeampi keskimääräinen T (esim. matala-EMF-yhteisöt), verkko- ja kasvokkais-käyttäytymisen välinen ero pitäisi olla pienempi.",
-    spolarPhysical: "Fyysinen ympäristö",
-    spolarPhysicalThreshold: "Korkea (kasvokkain sosiaalinen kustannus)",
-    spolarPhysicalBehavior: "Konformismi, itsesensuri, myöntyminen",
-    spolarPhysicalRct: "Audience 2020: matala T → strateginen prososiaalisuus",
-    spolarDigital: "Digitaalinen ympäristö",
-    spolarDigitalThreshold: "Lähellä nollaa (anonymiteetti, etäisyys)",
-    spolarDigitalBehavior: "Raivo, polarisaatio, konfrontaatio",
-    spolarDigitalRct: "Carré 2017: provokaatiovaste säilyy, kun kustannus on matala",
-    svgNeutral: "neutraali",
-    svgPhysical: "Fyysinen",
-    svgConformity: "Konformismi",
-    svgHighThreshold: "korkea kynnys",
-    svgDigital: "Digitaalinen",
-    svgOutragePolarization: "Raivo & polarisaatio",
-    svgNearZeroCost: "lähes nolla kustannus",
-    svgThresholdVsCost: "biologinen kynnys vs. digitaalinen kustannus",
+    sMcConnellTitle: "Lyijy historiallisena Ca²⁺-häiritsijänä",
+    sMcConnellBody: "McConnell ym. (PNAS 2025) kvantifioivat tämän Rooman osalta. Käyttäen kolmea arktista jääkairausnäytettä, ilmakehän kulkeutumismallinnusta ja moderniin epidemiologiaan perustuvia annos-vastekertoimia he arvioivat, että ilman lyijypitoisuudet ylittivät 150 ng/m³ metallurgisten lähteiden lähellä, ja eurooppalaiset keskimääräiset kohonneet tasot olivat >1,0 ng/m³ Pax Romanan aikana. Tämä vastaa 2,5–3 älykkyysosamaarapisteen laskua koko valtakunnan väestössä. Mekanismi: Pb²⁺ on voimakas kaikkien VGCC-tyyppien salpaaja, joka häiritsee samaa Ca²⁺-homeostaasia, jonka EMF häiritsee eri ylävirran reitin kautta.",
 
-    ssafetyTitle: "Turvallisuushakuisuus: hormonaalinen kynnys, ei arvovalinta",
-    ssafetyBody: "Riskinotto vähenee testosteronin myötä (Competition RCT 2024, n=333). Ahdistus kasvaa kortisolin myötä ([[ref:dual_hormone_meta2021|kaksoishormonimeta, n=8 538]]). Uhkaherkkyys kasvaa, kun molemmat muuttuvat samanaikaisesti. Väestötasolla tämä tuottaa yhteiskunnan, joka kokee enemmän tilanteita uhkaavina — ei siksi että ympäristö olisi vaarallisempi (väkivaltarikollisuus on historiallisen matalalla) vaan koska biologinen kynnys uhkan havaitsemiselle on laskenut.",
-    ssafetyParadox: "Tämä selittää muuten paradoksaalisen kuvion: ihmiskunnan historian turvallisimmat yhteiskunnat raportoivat korkeinta ahdistusta. Objektiivinen vaara on laskenut. Subjektiivinen uhka on noussut. Näiden välinen ero on hormonaalinen muutos.",
-    ssafetyCreep: "Kun uhkahavainnointi kasvaa ilman todellisen uhkan kasvua, tuloksena on se mitä psykologit kutsuvat \"concept creepiksi\": haittaan liittyvien käsitteiden laajeneminen kattamaan aiemmin neutraaleja ilmiöitä. Sanat muuttuvat väkivallaksi. Erimielisyys muuttuu aggressioksi. Epämukavuus muuttuu traumaksi. Tämä ei ole moraalista edistystä eikä moraalista rappeutumista. Se on uudelleenkalibroitu uhkantunnistusjärjestelmä, joka toimii eri hormonaalisella substraatilla.",
+    sCaEffectTitle: "Ca²⁺-efekti",
+    sCaEffectLead: "Flynn-efektiä ei ole. On Ca²⁺-homeostaasivaikutus, jonka hallitseva häiritsijä vaihtuu ajan myötä.",
+    sCaEffectRising: "Nousuvaihe (1930–1975): Lyijyn poisto palautti Ca²⁺-homeostaasin. Yhdysvaltojen lasten veren lyijytasot laskivat 15 μg/dL:sta 2 μg/dL:iin Clean Air Actin (1970) jälkeen. Älykkyysosamaaara nousi. Väkivaltarikollisuus laski 56 %. 'Flynn-efekti' oli osittain palautumista lyijyn aiheuttamasta Ca²⁺-häiriöstä.",
+    sCaEffectTurning: "Käännepiste (~1975): Bratsberg ja Rogeberg (PNAS 2018, n=730 000+ norjalaista asevelvollista) osoittivat, että älykkyysosamaaara saavutti huippunsa vuoden 1975 syntymaakohortissa ja laski ~0,2 pistettä/vuosi sen jälkeen. Lasku tapahtui PERHEIDEN SISÄLLÄ — myöhemmin syntyneet veljet saivat matalampia tuloksia. Samat vanhemmat, samat geenit. Ympäristösyy vahvistettu, geneettinen syy suljettu pois.",
+    sCaEffectFalling: "Laskuvaihe (1975–nykyhetki): EMF korvaa lyijyn hallitsevana Ca²⁺-häiritsijänä. Käännepiste (~1975) osuu yhteen sähköistyksen tihentymisen, mikroprosessorien leviämisen kanssa ja edeltää mobiiliverkkojen rakentamista (1990-luku) ja älypuhelinten käyttöönottoa (2007+). Anti-Flynn-efekti on nyt dokumentoitu Norjassa, Tanskassa, Suomessa, Ranskassa ja Yhdistyneessä kuningaskunnassa.",
+    sCaEffectPrediction: "Ennuste: Anti-Flynnin pitäisi ilmaantua ENSIN maissa, joissa (a) lyijyaltistus on jo laskenut JA (b) EMF-infrastruktuuri on tiheintä. VIIMEISENÄ siellä missä lyijyaltistus on vielä korkea JA EMF on harvaa. Tämä vastaa havaintoa: Skandinavia ensin, Saharan eteläinen Afrikka ei vielä.",
 
-    sinstitutionTitle: "Institutionaalinen rapautuminen: miksi kaikki heikkenee hieman",
-    sinstitutionBody: "Tulos ei ole dramaattinen romahdus. Se on laaja-alainen, hidaskäyntinen laadun menetys. Terveydenhuolto heikkenee hieman. Koulutus heikkenee hieman. Infrastruktuurin ylläpito jää hieman jälkeen. Asiakaspalvelu heikkenee. Poliittiset ehdokkaat ovat hieman vähemmän päteviä. Jokainen yksinään huomaamaton. Yhdessä kuvio on sivilisatorinen.",
-    sinstitutionData: "Vuoden 2025 Edelman Trust Barometer vahvistaa: luottamus kaikkiin instituutioihin — hallitukseen, mediaan, kansalaisjärjestöihin, työnantajiin — on laskenut lähes kaikissa demografioissa. Tämä ei ole puoluepoliittinen ilmiö. Se on substraatti-ilmiö.",
+    sSubAssimTitle: "Sub-assimilaatio: kehitysikkunan allekirjoitus",
+    sSubAssimBody1: "Suomen rekisteriaineisto (European Sociological Review 2026) dokumentoi, että monet maahanmuuttajien jälkeläiset osoittavat hedelmällisyystasoja, jotka ovat ALLE kantaväestön — ei yhtenevyys vaan ali-assimilaatio.",
+    sSubAssimBody2: "Ensimmäisen sukupolven maahanmuuttajat, jotka saapuvat aikuisina, kehittyivät matala-EMF-ympäristössä. Heidän kehitysikkunansa (sikiön VGCC-muodostuminen, lapsuuden BBB-kypsyminen, puberteetin HPG-aktivaatio) olivat valmiit ennen korkea-EMF-altistusta. Toisen sukupolven lapset kehittyvät korkea-EMF-isäntämaassa hedelmöityksestä lähtien. Sikiön biologinen haavoittuvuus on moninkertainen aikuiseen verrattuna.",
+    sSubAssimBody3: "Tulos: toisen sukupolven biologinen kapasiteetti on matalampi kuin ensimmäisen sukupolven — ei siksi että geenit muuttuivat (eivät muuttuneet) vaan koska kehitysikkunat altistettiin ympäristölle, jolle vanhemmat eivät altistuneet vastaavien ikkunoiden aikana.",
 
-    sfixableTitle: "Korjattavissa oleva osuus",
-    sfixableLead: "Jos tällä sivulla dokumentoidut käyttäytymismuutokset olisivat kokonaan ideologisia — jos ihmiset olisivat vähemmän motivoituneita, ahdistuneempia, konformistisempia ja vähemmän luottavaisia puhtaasti ideoiden takia — ratkaisu vaatisi miljardien mielten muuttamista. Historia viittaa siihen, että tämä on äärimmäisen vaikeaa. Mutta jos merkittävä osa näistä muutoksista on biologista, osa ratkaisusta on ympäristöllistä, ei ideologista.",
-    sfixableSolutions: [
-      "EMF-altistuksen vähentäminen elin- ja työtiloissa",
-      "Kalsiumkanavamodulaatio (264 625 potilasta jo osoittaa psykiatrista hyötyä sydän- ja verisuonitauteihin määrätyistä CCB-lääkkeistä)",
-      "Magnesiumlisä (luonnollinen Ca²⁺-antagonisti)",
-      "Melatoniinin palautus (vuorokausirytmin korjaus)",
-      "Unihygienia (melatoniini → GnRH → T-palautuminen)",
-      "Fyysinen kontakti ja yhteisö (oksitosiinin palautus)",
-    ],
-    sfixableConclusion: "Mikään näistä ei vaadi kenenkään muuttavan uskomuksiaan. Ne vaativat sähkömagneettisen ympäristön muuttamista ja hormoneja säätelevien biologisten järjestelmien tukemista. Jos edes 20–30 % nykyisestä motivaation, luottamuksen ja sosiaalisen koheesion kriisistä on biologista eikä ideologista, se on 20–30 %, joka voidaan osoittaa ilman poliittista konfliktia. Tämä on BERM-mallin käytännöllisesti tärkein seuraus: ei se, että sivilisaatio on tuomittu, vaan se, että osa sen rapautumisesta johtuu nimenomaisesta, tunnistettavasta ja mahdollisesti palautettavissa olevasta syystä.",
+    sCamkiiTitle: "CaMKII: konvergenssimolekyyli",
+    sCamkiiBody1: "CaMKII:n autofosforylaatio on ainoa synaptiseen muistiin vaadittava entsymaattinen tapahtuma (PNAS 2024). Thr286-fosforylaatio hidastaa CaMKII:n hajoamista ja laskee plastisuuden indusoimiseen vaadittavaa taajuutta moninkertaisesti (Neuron 2017).",
+    sCamkiiBody2: "Sydämessä: pitkäaikainen korkea Ca²⁺ tekee CaMKII:sta konstitutiivisesti aktiivisen autofosforylaation kautta, laukaisten proarytmisen uudelleenmuokkauksen (J Physiol 2026). Haimassa: CaMKII:n hyperfosforylaatio RyR2:sta tuottaa esidiabeteksen tunnusmerkit — hyperinsulinemia, glukoosi-intoleranssi, heikentynyt insuliinineritys (PMC3596297).",
+    sCamkiiBody3: "CaMKII on BERM:n kolmen avainennusteen molekulaarinen mekanismi: (1) Kumulatiivinen: se 'muistaa' aiemman Ca²⁺-kuorman. (2) Kiihtyvä: se laskee kynnystä seuraavalle aktivaatiolle. (3) Monijärjestelmäinen: sama molekyyli tuottaa sydän-, metabolisen, neurologisen ja reproduktiivisen patologian kudoksesta riippuen.",
 
-    shistoryTitle: "Historian tulkinta hormonaalisen linssin läpi",
-    shistoryBody: "Jokainen sukupolvi kokee saman objektiivisen maailman eri hormonaalisen substraatin läpi. Mies vuonna 1960 testosteronilla 600 ng/dL, normaalilla kortisolilla ja ehjällä dopaminergisellä signaloinnilla kokee uravastoinkäymisen haasteena, joka voitetaan. Mies vuonna 2024 testosteronilla 350 ng/dL, kohonneella kortisolilla ja vähentyneellä dopaminergisellä tonuksella kokee saman vastoinkäymisen uhkana, jota vältetään. Heidän arvonsa voivat olla identtiset. Heidän biologinen kykynsä toimia noiden arvojen mukaisesti ei ole.",
-    shistoryOlder: "Kun vanhemmat sukupolvet sanovat \"me vain tehtiin se\", he eivät kuvaile ylivertaista luonnetta. He kuvailevat eri hormonaalista ympäristöä, jossa toiminnan kynnys oli matalampi ja välttelyn kynnys korkeampi.",
-    shistoryYounger: "Kun nuoremmat sukupolvet sanovat \"maailma on stressaavampi\", he eivät kuvaile vaarallisempaa maailmaa (se on objektiivisesti turvallisempi). He kuvailevat samaa maailmaa koettuna hormonaalisen substraatin läpi, joka havaitsee enemmän uhkaa ja tuottaa vähemmän motivaatiota kohdata sitä.",
-    shistoryConclusion: "Kumpikaan sukupolvi ei ole väärässä. He kuvailevat samaa todellisuutta eri biologisten suodattimien läpi. Tuloksena oleva sukupolvien välinen konflikti — \"laiskaat nuoret\" vs \"todellisuudesta vieraantuneet boomerit\" — on itsessään hormonaalisen muutoksen seuraus, ei todiste kummankaan osapuolen moraalisesta epäonnistumisesta.",
+    sHormesisEvidence: "Hormeettinen annos-vaste on dokumentoitu kokeellisesti. ELF-EMF:n annos-vaste noudattaa hormeettista mallia: pienet annokset ovat hyödyllisiä ja stimuloivia, suuremmat annokset tuottavat haittavaikutuksia (Applied Sciences 2026 katsaus). ELF-EMF lisäsi mitokondrioiden elektroninsiirtoketjun aktiivisuuksia ja lievitti hiirten masennuskäyttäytymistä hormeettisten vaikutusten kautta (PMC11508854). Tämä vahvistaa annos-vastekayran, jonka aktivaatiomalli vaatii: sama sähkömagneettinen ärsyke, joka vahingoittaa korkean EMF:n alaista kaupunkiväestöä, stimuloi matalan EMF:n alaista paimentolaisväestöä. Mekanismi on sama (Ca²⁺/VGCC). Lopputulos eroaa, koska annos-vaste on epämonotoninen.",
 
-    sideologyTitle: "Ideologia alavirrassa",
-    sideologyBody: "Sama idea — \"turvallisuus on tärkeää\" — tuottaa eri poliittisia tuloksia riippuen sen väestön hormonaalisesta substraatista, joka sitä kannattaa.",
-    sideologyHigh: "T=500 ng/dL, kortisoli=normaali: \"Turvallisuus on tärkeää\" → rakenna turvallinen infrastruktuuri, valvo lakeja, kohtaa uhkat suoraan.",
-    sideologyLow: "T=320 ng/dL, kortisoli=koholla: \"Turvallisuus on tärkeää\" → poista kaikki riski, laajenna haitan määritelmää, vältä konfrontaatiota poistamalla konfrontaation aiheuttava ärsyke.",
-    sideologyExplain: "Idea ei ole muuttunut. Biologinen kyky toteuttaa sitä on. Tämä ei ole vasemmisto vs oikeisto. Se ei ole etenevä vs konservatiivinen. Se on biologinen muutos toteutuskynnyksessä samoille arvoille, jotka molemmat puolet suurelta osin jakavat. Molemmat puolet haluavat turvallisuutta. Molemmat puolet haluavat oikeudenmukaisuutta. Molemmat puolet haluavat mahdollisuuksia. Erimielisyys koskee sitä miten — ja \"miten\" on moderoitu hormonaalisilla kynnyksillä.",
-    sideologyTestable: "Tämä on testattavissa. Jos poliittiset asenteet turvallisuuteen, riskiin ja auktoriteettiin korreloivat yksilön hormoniprofiilien (T, kortisoli, OT) kanssa demografisten tekijöiden ja ilmoitetun ideologian vakioinnin jälkeen, biologisen moderoinnin hypoteesi saa tukea. Useat tutkimukset ovat löytäneet juuri tämän: testosteroni korreloi poliittisten asenteiden kanssa auktoriteettiin, kilpailuun ja tulonjakoon eri kulttuureissa.",
-
-    s7title: "Rekursiivinen ennuste",
-    s7body: "BERM tekee epätavallisen ennusteen: sen oma vastaanotto on todistetta sen teesistä. Jos testosteronilasku vähentää riskinottoa, kilpailuviettiä ja autenttista itseilmaisua väestötasolla, tiedeyhteisön — joka koostuu samojen hormonaalisten olosuhteiden alaisista ihmisistä — pitäisi osoittaa vähentynyt halukkuus haastaa konsensusta, tutkia kiistanalaisia suuntia ja puolustaa epäsuosittuja tuloksia. Malli ennustaa, että EMF-biovaikutustutkimus on alirahoitettua, stigmatisoitua ja institutionaalisesti torpattua — ei siksi että näyttö olisi heikkoa, vaan koska intellektuaalista riskinottoa ajava hormonaalinen substraatti vähenee. Tämä on testattavissa: EMF-biovaikutustutkimuksen rahoitusosuuden NIH/ERC-kokonaisrahoituksesta pitäisi laskea, ja alan tutkijoiden pitäisi raportoida kasvavia uraseuraamuksia positiivisten tulosten julkaisemisesta.",
-
+    sTimothyTitle: "Konseptitodistus: Timothyn oireyhtymä",
+    sTimothyBody1: "Timothyn oireyhtymä on yksittäinen CACNA1C:n gain-of-function-mutaatio (G406R), joka vähentää jänniteriippuvaista kanavan inaktivaatiota ja aiheuttaa solusisäisen Ca²⁺-ylikuorman. Yksi mutaatio, yksi mekanismi.",
+    sTimothyBody2: "Tuotetut patologiat: letaalit arytmiat, synnynnäinen sydänsairaus, immuunipuutos, ajoittainen hypoglykemia, kognitiiviset poikkeavuudet, autismi, kehitysviive, ADHD, epilepsia, kouristukset, hypotonia (EJHG-konsensus, heinäkuu 2026).",
+    sTimothyBody3: "Jokainen järjestelmä, johon BERM ennustaa EMF:n vaikuttavan kroonisen Ca²⁺-ylikuorman kautta, Timothyn oireyhtymä vaikuttaa geneettisen Ca²⁺-ylikuorman kautta: sydän, immuuni, metabolinen, neurologinen, kehityksellinen. BERM ennustaa heikomman, kroonisen, väestötason version samasta mekanismista.",
     navCivMain: "Sivilisaatio",
     navPatopolis: "Patopolis",
     navPatokratia: "Patokratia",
@@ -608,6 +420,7 @@ const COPY = {
       "χ(λ) = 地磁気感受性係数（緯度依存）",
       "α = 生物学的回復係数",
     ],
+    sSolarFormulaNote: "",
     sSolarPrePost: "電気以前（E=0）：BioCapが振動→周期的な文明ダイナミクス。電気以後（E≫S）：BioCapが単調減少→回復の窓なし。",
     sSolarRenaissance: "ヨーロッパの主要なルネサンスの10件中8件が大極小期中またはその直後に発生した：イタリア・ルネサンスはシュペーラー極小期に、科学革命はマウンダー極小期に、ドイツ・ロマン主義はダルトン極小期に。",
     sMigrationTitle: "移住勾配",
@@ -625,69 +438,50 @@ const COPY = {
     biocapNormTitle: "BioCap減衰 — 正規化寿命", biocapTimeTitle: "BioCap軌跡 — 歴史的タイムライン", biocapXNorm: "文明の寿命（%）", biocapXTime: "年", biocapY: "BioCap",
     sCulturalTitle: "文化エネルギーとは何か？",
     sCulturalLead: "", sCulturalBody: "", sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)", sCulturalFormulaDesc: "",
-    sCulturalBioTitle: "文明能力の8つのバイオマーカー", sCulturalBiomarkers: [] as any[], sCulturalRadarTitle: "バイオマーカープロファイル — 西洋人口2025",
+    sCulturalBioTitle: "文明能力の8つのバイオマーカー", sCulturalBioWeightNote: "", sCulturalBiomarkers: [] as never[], sCulturalRadarTitle: "バイオマーカープロファイル — 西洋人口2025",
     sCulturalTimeTitle: "BioCap軌道: 1900–2060", sCulturalTimeX: "年", sCulturalTimeY: "BioCap", sCulturalAmish: "アーミッシュ (≈ 0.98)", sCulturalNow: "2025:", sCulturalForecast: "予測",
     sCulturalLinesTitle: "個別バイオマーカー軌道",
     sCulturalUnwinTitle: "アンウィンの証拠", sCulturalUnwinBody1: "", sCulturalUnwinBody2: "", sCulturalUnwinBody3: "",
-    sCulturalPhasesTitle: "アンウィンの4つの段階", sCulturalPhases: [] as any[],
-    sCulturalSensTitle: "感度分析", sCulturalSensDesc: "", sCulturalSensItems: [] as any[], sCulturalSensConclusion: "",
-    sCulturalTransTitle: "相転移", sCulturalTransitions: [] as any[],
+    sCulturalPhasesTitle: "アンウィンの4つの段階", sCulturalPhasesNote: "", sCulturalPhases: [] as never[],
+    sCulturalSensTitle: "感度分析", sCulturalSensDesc: "", sCulturalSensItems: [] as never[], sCulturalSensConclusion: "",
+    sCulturalTransTitle: "相転移", sCulturalTransitions: [] as never[],
     sActivationTitle: "活性化サイクル：なぜ新しい勢力は古い勢力の衰退とともに台頭するのか",
     sActivationLead: "", sActivationBody1: "", sActivationBody2: "", sActivationBody3: "", sActivationBody4: "",
     sActivationChartTitle: "ホルメシス用量反応", sActivationChartZone1: "ゾーン1：ホルメシス刺激（遊牧民）", sActivationChartZone2: "ゾーン2：移行（農耕）", sActivationChartZone3: "ゾーン3：損傷（都市/電化）",
-    sActivationChartX: "総EMF負荷", sActivationChartY: "BioCap", sActivationChartSun: "同じ太陽、反対の効果", sActivationEpistemic: "",
+    sActivationChartX: "総EMF負荷", sActivationChartXNote: "", sActivationChartY: "BioCap", sActivationChartSun: "同じ太陽、反対の効果", sActivationEpistemic: "",
     sExpansionTitle: "三つの拡大類型",
     sExpansionCards: [
       { id: "α", title: "ホルメシス活性化", examples: "モンゴル1206、アラブ632、ヴァイキング793", icon: "sun", desc: "", trigger: "太陽極大＋遊牧民＝生物学的活性化" },
       { id: "β", title: "回復エネルギー", examples: "大航海時代1492、科学革命1687、ナポレオン時代1803", icon: "moon", desc: "", trigger: "大極小期＋回復＝創造的高揚" },
       { id: "γ", title: "浸食勾配", examples: "ゲルマン民族移動375–476、満州→明1644、アフリカ→ヨーロッパ2000–", icon: "gradient", desc: "", trigger: "数世紀の都市浸食＋無傷の辺境＝交替" },
     ],
-    s6title: "12の予測、12の観察",
-    s6lead: "BERMはそのホルモンモデルから特定の行動的・社会的変化を予測する。各予測はホルモンの関連性についてRCTエビデンスに基づいている；各観察は予測と一致する集団レベルのデータを引用する。",
-    scoreConsistent: "一致",
-    predictions: [
-      { prediction: "男性の地位追求が低下する", basis: "T → status motivation ([[ref:dreher2016|Dreher 2016]], n=121)", observed: "起業率の低下、「静かな退職」、調査における職業的野心の低下", consistent: true },
-      { prediction: "男性のリスクテイキングが低下する", basis: "T → competitive risk (Competition 2024, n=220)", observed: "企業設立の減少、身体的リスク活動の減少、リスク回避の増加", consistent: true },
-      { prediction: "男性の性的アプローチが低下する", basis: "T → sexual motivation ([[ref:goetz2024|Goetz 2024]], n=139)", observed: "セックスレスの増加、交際開始の減少、Japan 18–34歳の43%が性経験なし", consistent: true },
-      { prediction: "男性の真正性が低下する", basis: "T → authentic self-presentation (Audience 2020, n=166)", observed: "社会不安の増加、印象管理の増加、演出的アイデンティティ", consistent: true },
-      { prediction: "男性の集団忠誠心が低下する", basis: "T → in-group favoritism (Parochial 2015, n=100)", observed: "市民参加の減少、組合・政党の会員減少、制度からの離脱", consistent: true },
-      { prediction: "男性の挑発反応が低下する", basis: "T → reactive aggression (Carré 2017, n=308)", observed: "暴力犯罪率の低下、対立する意欲の減少、紛争回避", consistent: true },
-      { prediction: "男性の認知スタイルが熟慮型にシフトする", basis: "T → gut-feel over deliberation (Nave 2018, n=243)", observed: "決断麻痺の増加、分析麻痺、自発的行動の減少", consistent: true },
-      { prediction: "男性の動機づけ/報酬感受性が低下する", basis: "T↓ → DA↓ → anhedonia (Soares-Cunha 2016)", observed: "うつ病の増加、「巣立ちの失敗」、NEET率の増加、報酬代替としてのゲーム/ストリーミング", consistent: true },
-      { prediction: "女性の不安/うつ病の性差が拡大する", basis: "Estrogen amplifies HPA reactivity. EMF → cortisol↑ hits women harder.", observed: "女性は不安2倍、うつ病2倍。2010年以降格差が拡大。2012年頃からの10代女子のメンタルヘルス危機。", consistent: true },
-      { prediction: "制度への信頼が世界的に低下する", basis: "OT → trust (Kosfeld 2005, Nature). EMF → vagal tone ↓ → OT ↓.", observed: "Edelman 2025：すべての制度への信頼が歴史的最低値。孤独のエピデミックが宣言。ソーシャルキャピタルの減少。", consistent: true },
-      { prediction: "PCOSの有病率がEMF普及とともに上昇する", basis: "PCOS = 4-organ VGCC convergence (pancreas + ovary + pituitary + adrenal).", observed: "PCOS有病率5–20%で上昇中。女性不妊の最も一般的な原因。メタボリックシンドロームと相関。", consistent: true },
-      { prediction: "各世代は前世代より感受性が高い", basis: "CaMKII → Cav3.2 threshold ↓ (PMC9913649). Epigenetic transmission (sperm methylome).", observed: "メンタルヘルス危機の発症が各コホートで早期化。ASD/ADHD有病率が世代ごとに上昇。女子の思春期発来が早期化。", consistent: true },
-    ],
-    sProjectionTitle: "ホルモンデータが社会について予測すること",
-    sProjectionLead: "上記の12の予測は個人の行動変化を追跡する。しかし個人は孤立して存在するのではない。カップル、家族、チーム、制度、国家を形成する。集団全体のホルモン基盤がシフトすると、その集約効果はイデオロギーの変化、文化的対立、道徳的衰退のように見えるが、その相当部分は文化的変化として経験される生物学的シフトである可能性がある創発的社会現象を生む。",
-    sProjectionNote: "この区別は重要である。社会問題がイデオロギー的であれば、解決策は考え方を変えることを要する。それが部分的に生物学的であれば、解決策には環境を変えることが含まれる。後者のほうが容易である。",
-    spolarTitle: "分極化：デジタルの勇気、物理的な同調", spolarBody: "オーディエンス効果RCT（2020）は、低テストステロンが戦略的向社会性――自分が信じることではなく聴衆が期待することを言うこと――を増加させることを示した。挑発RCT（Carré 2017）は、低テストステロンが不正義に対する反応的反応を減少させることを示した。これらを合わせると、特定のパターンが予測される：人々は物理的な場では同調的だが、スクリーンの向こうからは対立的になる。",
-    spolarObserved: "これはまさに観察されていることである。オンラインの分極化は歴史的な高水準にある。物理的な対立は歴史的な低水準にある。人々は対面では決して言わないであろう意見を匿名で表明する。コメント欄は戦場であり、会議室はエコーチェンバーである。",
-    spolarExplain: "これは偽善ではない。生物学である。低テストステロンは真正な対立の閾値を引き上げる。デジタル環境は対立の社会的コストをほぼゼロに引き下げる。生物学的閾値と環境コストのミスマッチがこのパターンを生む：オンラインでは大胆、オフラインでは沈黙。",
-    spolarPrediction: "BERMの予測：平均Tが高い集団（例：低EMFコミュニティ）は、オンラインとオフラインの行動の乖離が小さいはずである。",
-    spolarPhysical: "物理的環境", spolarPhysicalThreshold: "高（対面の社会的コスト）", spolarPhysicalBehavior: "同調、自己検閲、同意", spolarPhysicalRct: "Audience 2020: low T → strategic prosociality",
-    spolarDigital: "デジタル環境", spolarDigitalThreshold: "ほぼゼロ（匿名性、距離）", spolarDigitalBehavior: "憤怒、分極化、対立", spolarDigitalRct: "Carré 2017: provocation response persists when cost is low",
-    svgNeutral: "neutral", svgPhysical: "物理的", svgConformity: "同調", svgHighThreshold: "高い閾値", svgDigital: "デジタル", svgOutragePolarization: "憤怒と分極化", svgNearZeroCost: "ほぼゼロのコスト", svgThresholdVsCost: "生物学的閾値 vs. デジタルコスト",
-    ssafetyTitle: "安全志向：価値選択ではなくホルモン閾値", ssafetyBody: "リスクテイキングはテストステロンとともに低下する（Competition RCT 2024, n=333）。不安はコルチゾールとともに増加する（[[ref:dual_hormone_meta2021|dual hormone meta, n=8,538]]）。両方が同時にシフトすると脅威感受性が増加する。集団レベルでは、これがより多くの状況を脅威として経験する社会を生む――環境がより危険だからではなく（暴力犯罪は歴史的最低水準にある）、脅威認知の生物学的閾値が低下したからである。",
-    ssafetyParadox: "これは一見矛盾するパターンを説明する：人類史上最も安全な社会が最も高い不安を報告している。客観的危険は低下している。主観的脅威は上昇している。両者の間の差がホルモンシフトである。",
-    ssafetyCreep: "実際の脅威が増加することなく脅威認知が上昇すると、心理学者が「コンセプト・クリープ」と呼ぶもの――害に関連する概念が以前は中立的だった現象を包含するように拡大すること――が生じる。言葉が暴力になる。意見の相違が攻撃になる。不快感がトラウマになる。これは道徳的進歩でも道徳的衰退でもない。異なるホルモン基盤上で作動する再較正された脅威検出システムである。",
-    sinstitutionTitle: "制度の衰退：なぜすべてが少しずつ悪くなるのか", sinstitutionBody: "その結果は劇的な崩壊ではない。広範で緩やかな品質低下である。医療が少し悪くなる。教育が少し悪くなる。インフラの維持が少し遅れる。カスタマーサービスが低下する。政治家候補がわずかに能力を欠く。個々には目立たない。しかし合わせると、そのパターンは文明レベルのものである。",
-    sinstitutionData: "2025 Edelman Trust Barometerは確認する：すべての制度――政府、メディア、NGO、雇用主――への信頼がほぼすべての人口統計で低下した。これは党派的現象ではない。基盤的現象である。",
-    sfixableTitle: "修正可能な部分", sfixableLead: "このページに記録された行動変化が完全にイデオロギー的なものであれば――人々がアイデアのみの理由で動機づけが低く、より不安で、より同調的で、より信頼しなくなっていれば――解決策には何十億もの人々の考え方を変えることが必要になる。歴史はこれが極めて困難であることを示唆している。しかし、これらの変化のかなりの部分が生物学的基盤を持つならば、解決策の一部はイデオロギー的ではなく環境的なものである。",
-    sfixableSolutions: ["生活・就労空間でのEMF曝露の低減", "カルシウムチャネル調節（264,625人の患者が心血管適応でCCBを処方され、精神科的便益を既に示している）", "マグネシウム補給（天然のCa²⁺拮抗剤）", "メラトニン回復（概日リズム修復）", "睡眠衛生（melatonin → GnRH → T回復）", "身体的接触とコミュニティ（オキシトシン回復）"],
-    sfixableConclusion: "これらのいずれも、誰かの信念を変える必要はない。電磁環境を変え、ホルモンが調節する生物学的システムを支援することを必要とする。現在の動機づけ、信頼、社会的結束の危機のうち20–30%でも生物学的であってイデオロギー的でなければ、その20–30%は政治的対立なしに対処できる。これがBERMモデルの最も実際的に重要な含意である：文明が運命づけられているということではなく、その衰退の一部に特定可能で、潜在的に可逆的な原因があるということである。",
-    shistoryTitle: "ホルモンのレンズで歴史を読む", shistoryBody: "すべての世代は同じ客観的世界を異なるホルモン基盤を通じて経験する。1960年にテストステロン600 ng/dL、正常なコルチゾール、正常なドーパミン作動性シグナル伝達を持つ男性は、キャリアの挫折を克服すべき挑戦として経験する。2024年にテストステロン350 ng/dL、コルチゾール上昇、ドーパミン作動性トーン低下を持つ男性は、同じ挫折を回避すべき脅威として経験する。彼らの価値観は同一かもしれない。その価値観に基づいて行動する生物学的能力は同じではない。",
-    shistoryOlder: "上の世代が「俺たちはただやっていただけだ」と言うとき、彼らは優れた人格を述べているのではない。行動の閾値が低く回避の閾値が高い、異なるホルモン環境を述べているのである。",
-    shistoryYounger: "若い世代が「世界はよりストレスフルだ」と言うとき、彼らはより危険な世界を述べているのではない（客観的にはより安全である）。より多くの脅威を検出し、それに立ち向かう動機をより少なく生成するホルモン基盤を通じて経験される同じ世界を述べているのである。",
-    shistoryConclusion: "どちらの世代も間違ってはいない。同じ現実を異なる生物学的フィルターを通じて述べている。その結果として生じる世代間対立――「怠け者の若者」対「世間知らずのベビーブーマー」――は、それ自体がホルモンシフトの帰結であり、どちら側の道徳的失敗の証拠でもない。",
-    sideologyTitle: "下流としてのイデオロギー", sideologyBody: "同じアイデア――「安全は重要だ」――は、それを保持する集団のホルモン基盤に応じて異なる政治的帰結を生む。",
-    sideologyHigh: "T=500 ng/dL、cortisol=正常の場合：「安全は重要だ」→ 安全なインフラを構築し、法を執行し、脅威に直接対峙する。",
-    sideologyLow: "T=320 ng/dL、cortisol=上昇の場合：「安全は重要だ」→ すべてのリスクを排除し、害の定義を拡大し、対立の原因となる刺激を除去することで対立を回避する。",
-    sideologyExplain: "アイデアは変わっていない。それを実行する生物学的能力が変わったのである。これは左派対右派ではない。進歩派対保守派でもない。両陣営が概ね共有する同じ価値観セットに対する実行閾値の生物学的シフトである。両陣営とも安全を望む。両陣営とも公正を望む。両陣営とも機会を望む。対立はその「方法」について――そして「方法」はホルモン閾値によって調節される。",
-    sideologyTestable: "これは検証可能である。安全性、リスク、権威に関する政治的態度が、人口統計と表明されたイデオロギーを統制した後に個人のホルモンプロファイル（T、cortisol、OT）と相関するなら、生物学的調節仮説は支持を得る。複数の研究がまさにこれを見出している：テストステロンは文化を超えて権威、競争、再分配に関する政治的態度と相関する。",
-    s7title: "再帰的予測",
-    s7body: "BERMは異例の予測を行う：モデル自体の受容がその命題のエビデンスである。テストステロンの低下が集団レベルでリスクテイキング、競争意欲、真正な自己提示を減少させるならば、同じホルモン環境に従属する人間で構成される科学コミュニティは、コンセンサスに挑戦し、論争的な研究方向を追求し、不人気な知見を擁護する意欲の低下を示すはずである。モデルはEMFの生体影響に関する研究が資金不足、汚名、制度的抑制を受けると予測する――エビデンスが弱いからではなく、知的リスクテイキングを駆動するホルモン基盤が低下しているからである。これは検証可能である：EMF生体影響研究へのNIH/ERC総資金に占める配分割合は低下しているはずであり、この分野の研究者は肯定的知見の公表に対するキャリア上の不利益が増加していると報告するはずである。",
+    sRedirectTitle: "行動予測と社会的影響",
+    sRedirectBody: "12の行動予測とその社会的影響は",
+    sRedirectLink: "パトポリス",
+
+    modelDerived: "",
+    modelDerivedLink: "",
+    sMcConnellTitle: "",
+    sMcConnellBody: "",
+    sCaEffectTitle: "",
+    sCaEffectLead: "",
+    sCaEffectRising: "",
+    sCaEffectTurning: "",
+    sCaEffectFalling: "",
+    sCaEffectPrediction: "",
+    sSubAssimTitle: "",
+    sSubAssimBody1: "",
+    sSubAssimBody2: "",
+    sSubAssimBody3: "",
+    sCamkiiTitle: "",
+    sCamkiiBody1: "",
+    sCamkiiBody2: "",
+    sCamkiiBody3: "",
+    sHormesisEvidence: "",
+    sTimothyTitle: "",
+    sTimothyBody1: "",
+    sTimothyBody2: "",
+    sTimothyBody3: "",
     navCivMain: "文明", navPatopolis: "パトポリス", navPatokratia: "パトクラティア",
   },
   fr: {
@@ -714,6 +508,7 @@ const COPY = {
     sSolarLead: "Avant l'electrification, la seule influence electromagnetique significative sur la biologie venait du soleil. L'activite solaire oscille en cycles imbriques : le cycle de Schwabe de 11 ans, le cycle de Gleissberg de 88 ans et le cycle de Suess/de Vries d'environ 200 ans. Pendant les grands minima solaires, la charge electromagnetique sur la biologie diminue et la recuperation biologique se produit.",
     sSolarFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ) + U(τ) + E(τ)] dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)] dτ",
     sSolarFormulaTerms: ["S(τ) = superposition des cycles solaires [0,1]", "U(τ) = composante EMF de l'urbanisation (lente, pre-electrique)", "E(τ) = composante EMF de l'electrification (rapide, post-1880)", "σ(τ) = coefficient de suppression de la recuperation = min(E(τ)/E_max, 0.95)", "χ(λ) = coefficient de susceptibilite geomagnetique (dependant de la latitude)", "α = coefficient de recuperation biologique"],
+    sSolarFormulaNote: "",
     sSolarPrePost: "Pre-electrique (E=0) : BioCap oscille → dynamique civilisationnelle cyclique. Post-electrique (E≫S) : BioCap decline de maniere monotone → pas de fenetre de recuperation.",
     sSolarRenaissance: "Huit des dix principales renaissances europeennes se sont produites pendant ou immediatement apres les grands minima solaires : la Renaissance italienne pendant le minimum de Sporer, la Revolution scientifique pendant le minimum de Maunder, le Romantisme allemand pendant le minimum de Dalton.",
     sMigrationTitle: "Le gradient migratoire",
@@ -731,56 +526,50 @@ const COPY = {
     biocapNormTitle: "Declin BioCap — duree de vie normalisee", biocapTimeTitle: "Trajectoires BioCap — chronologie historique", biocapXNorm: "Duree de vie civilisationnelle (%)", biocapXTime: "Annee", biocapY: "BioCap",
     sCulturalTitle: "Qu'est-ce que l'énergie culturelle ?",
     sCulturalLead: "", sCulturalBody: "", sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)", sCulturalFormulaDesc: "",
-    sCulturalBioTitle: "Huit biomarqueurs de capacité civilisationnelle", sCulturalBiomarkers: [] as any[], sCulturalRadarTitle: "Profil biomarqueur — Population occidentale 2025",
+    sCulturalBioTitle: "Huit biomarqueurs de capacité civilisationnelle", sCulturalBioWeightNote: "", sCulturalBiomarkers: [] as never[], sCulturalRadarTitle: "Profil biomarqueur — Population occidentale 2025",
     sCulturalTimeTitle: "Trajectoire BioCap : 1900–2060", sCulturalTimeX: "Année", sCulturalTimeY: "BioCap", sCulturalAmish: "Amish (≈ 0,98)", sCulturalNow: "2025 :", sCulturalForecast: "prévision",
     sCulturalLinesTitle: "Trajectoires individuelles des biomarqueurs",
     sCulturalUnwinTitle: "Les preuves d'Unwin", sCulturalUnwinBody1: "", sCulturalUnwinBody2: "", sCulturalUnwinBody3: "",
-    sCulturalPhasesTitle: "Les quatre phases d'Unwin", sCulturalPhases: [] as any[],
-    sCulturalSensTitle: "Analyse de sensibilité", sCulturalSensDesc: "", sCulturalSensItems: [] as any[], sCulturalSensConclusion: "",
-    sCulturalTransTitle: "Transitions de phase", sCulturalTransitions: [] as any[],
+    sCulturalPhasesTitle: "Les quatre phases d'Unwin", sCulturalPhasesNote: "", sCulturalPhases: [] as never[],
+    sCulturalSensTitle: "Analyse de sensibilité", sCulturalSensDesc: "", sCulturalSensItems: [] as never[], sCulturalSensConclusion: "",
+    sCulturalTransTitle: "Transitions de phase", sCulturalTransitions: [] as never[],
     sActivationTitle: "Le cycle d'activation : pourquoi de nouvelles puissances emergent quand les anciennes declinent",
     sActivationLead: "", sActivationBody1: "", sActivationBody2: "", sActivationBody3: "", sActivationBody4: "",
     sActivationChartTitle: "Reponse dose-effet hormetique", sActivationChartZone1: "Zone 1 : Stimulation hormetique (nomade)", sActivationChartZone2: "Zone 2 : Transition (agraire)", sActivationChartZone3: "Zone 3 : Dommage (urbain/electrifie)",
-    sActivationChartX: "Charge EMF totale", sActivationChartY: "BioCap", sActivationChartSun: "Meme soleil, effets opposes", sActivationEpistemic: "",
+    sActivationChartX: "Charge EMF totale", sActivationChartXNote: "", sActivationChartY: "BioCap", sActivationChartSun: "Meme soleil, effets opposes", sActivationEpistemic: "",
     sExpansionTitle: "Trois types d'expansion",
     sExpansionCards: [
       { id: "α", title: "Activation hormetique", examples: "Mongols 1206, Arabes 632, Vikings 793", icon: "sun", desc: "", trigger: "Maximum solaire + nomade = activation biologique" },
       { id: "β", title: "Energie de recuperation", examples: "Explorations 1492, Revolution scientifique 1687, ere napoleonienne 1803", icon: "moon", desc: "", trigger: "Grand minimum + recuperation = essor creatif" },
       { id: "γ", title: "Gradient d'erosion", examples: "Migrations germaniques 375–476, Mandchous → Ming 1644, Afrique → Europe 2000–", icon: "gradient", desc: "", trigger: "Siecles d'erosion urbaine + frontiere intacte = remplacement" },
     ],
-    s6title: "Douze predictions, douze observations",
-    s6lead: "BERM prédit des changements comportementaux et sociaux spécifiques à partir de son modèle hormonal. Chaque prédiction est fondée sur des preuves RCT pour le lien hormonal ; chaque observation cite des données au niveau populationnel cohérentes avec la prédiction.",
-    scoreConsistent: "cohérent",
-    predictions: [] as any[],
-    sProjectionTitle: "Ce que les données hormonales prédisent sur la société",
-    sProjectionLead: "Les douze prédictions ci-dessus retracent les changements comportementaux individuels. Mais les individus n'existent pas isolément. Ils forment des couples, des familles, des équipes, des institutions et des nations. Lorsque le substrat hormonal d'une population entière change, les effets agrégés produisent des phénomènes sociaux émergents qui ressemblent à un changement idéologique, un conflit culturel ou un déclin moral mais qui peuvent être, dans une mesure significative, un changement biologique vécu comme un changement culturel.",
-    sProjectionNote: "Cette distinction est importante. Si un problème social est idéologique, la solution nécessite de changer les mentalités. S'il est en partie biologique, la solution inclut le changement de l'environnement. Le second est plus facile.",
-    spolarTitle: "Polarisation : courage numérique, conformité physique", spolarBody: "Le RCT de l'effet de l'audience (2020) a montré qu'un faible taux de testostérone augmente la prosocialité stratégique — dire ce que l'audience attend plutôt que ce que l'on croit. Le RCT de la provocation (Carré 2017) a montré qu'un faible taux de testostérone réduit la réponse réactive à l'injustice. Ensemble, ces résultats prédisent un schéma spécifique : les gens seront conformistes en présence physique mais confrontationnels derrière les écrans.",
-    spolarObserved: "C'est précisément ce qui est observé. La polarisation en ligne est à des niveaux historiquement élevés. La confrontation physique est à des niveaux historiquement bas. Les gens expriment anonymement des opinions qu'ils n'oseraient jamais formuler en personne. Les sections de commentaires sont des champs de bataille ; les salles de réunion sont des chambres d'écho.",
-    spolarExplain: "Ce n'est pas de l'hypocrisie. C'est de la biologie. Un faible taux de testostérone élève le seuil de la confrontation authentique. Les environnements numériques réduisent le coût social de la confrontation à presque zéro. Le décalage entre le seuil biologique et le coût environnemental crée le schéma : audacieux en ligne, silencieux hors ligne.",
-    spolarPrediction: "Prédiction de BERM : les populations avec un taux moyen de T plus élevé (par ex., communautés à faible EMF) devraient montrer moins de divergence entre le comportement en ligne et hors ligne.",
-    spolarPhysical: "Environnement physique", spolarPhysicalThreshold: "Élevé (coût social en face-à-face)", spolarPhysicalBehavior: "Conformité, autocensure, acquiescement", spolarPhysicalRct: "Audience 2020 : faible T → prosocialité stratégique",
-    spolarDigital: "Environnement numérique", spolarDigitalThreshold: "Quasi nul (anonymat, distance)", spolarDigitalBehavior: "Indignation, polarisation, confrontation", spolarDigitalRct: "Carré 2017 : la réponse à la provocation persiste quand le coût est faible",
-    svgNeutral: "neutre", svgPhysical: "Physique", svgConformity: "Conformité", svgHighThreshold: "seuil élevé", svgDigital: "Numérique", svgOutragePolarization: "Indignation et polarisation", svgNearZeroCost: "coût quasi nul", svgThresholdVsCost: "seuil biologique vs coût numérique",
-    ssafetyTitle: "Recherche de sécurité : seuil hormonal, non choix de valeur", ssafetyBody: "La prise de risque décline avec la testostérone (RCT Competition 2024, n=333). L'anxiété augmente avec le cortisol ([[ref:dual_hormone_meta2021|méta double hormone, n=8,538]]). La sensibilité à la menace augmente lorsque les deux changent simultanément. Au niveau populationnel, cela produit une société qui perçoit plus de situations comme menaçantes — non pas parce que l'environnement est plus dangereux (la criminalité violente est à des niveaux historiquement bas) mais parce que le seuil biologique de perception de la menace s'est abaissé.",
-    ssafetyParadox: "Cela explique un schéma autrement paradoxal : les sociétés les plus sûres de l'histoire humaine rapportent la plus grande anxiété. Le danger objectif est en baisse. La menace subjective est en hausse. L'écart entre les deux est le changement hormonal.",
-    ssafetyCreep: "Lorsque la perception de la menace augmente sans que la menace réelle n'augmente, le résultat est ce que les psychologues appellent la « dérive conceptuelle » : l'expansion des concepts liés au préjudice pour englober des phénomènes auparavant neutres. Les mots deviennent violence. Le désaccord devient agression. L'inconfort devient traumatisme. Ce n'est ni un progrès moral ni un déclin moral. C'est un système de détection des menaces recalibré fonctionnant sur un substrat hormonal différent.",
-    sinstitutionTitle: "Déclin institutionnel : pourquoi tout se dégrade légèrement", sinstitutionBody: "Le résultat n'est pas un effondrement dramatique. C'est une perte de qualité omniprésente et au ralenti. Les soins de santé se dégradent légèrement. L'éducation se dégrade légèrement. L'entretien des infrastructures prend légèrement du retard. Le service client décline. Les candidats politiques sont légèrement moins compétents. Chacun individuellement sans remarque. Ensemble, le schéma est civilisationnel.",
-    sinstitutionData: "Le Edelman Trust Barometer 2025 confirme : la confiance dans toutes les institutions — gouvernement, médias, ONG, employeurs — a décliné dans presque tous les segments démographiques. Ce n'est pas un phénomène partisan. C'est un phénomène de substrat.",
-    sfixableTitle: "La fraction réparable", sfixableLead: "Si les changements comportementaux documentés sur cette page étaient entièrement idéologiques — si les gens étaient moins motivés, plus anxieux, plus conformistes et moins confiants uniquement à cause des idées — la solution nécessiterait de changer des milliards de mentalités. L'histoire suggère que c'est extrêmement difficile. Mais si une fraction significative de ces changements a une base biologique, alors une partie de la solution est environnementale, pas idéologique.",
-    sfixableSolutions: ["Réduire l'exposition aux EMF dans les espaces de vie et de travail", "Modulation des canaux calciques (264 625 patients montrent déjà un bénéfice psychiatrique des CCB prescrits pour des conditions cardiovasculaires)", "Supplémentation en magnésium (antagoniste naturel du Ca²⁺)", "Restauration de la mélatonine (réparation circadienne)", "Hygiène du sommeil (mélatonine → GnRH → récupération de la T)", "Contact physique et communauté (restauration de l'ocytocine)"],
-    sfixableConclusion: "Aucune de ces mesures ne nécessite que quiconque change ses croyances. Elles nécessitent de modifier l'environnement électromagnétique et de soutenir les systèmes biologiques que les hormones régulent. Si même 20–30 % de la crise actuelle de motivation, de confiance et de cohésion sociale est biologique plutôt qu'idéologique, c'est 20–30 % qui peut être traité sans conflit politique. C'est l'implication la plus importante sur le plan pratique du modèle BERM : non pas que la civilisation est condamnée, mais qu'une partie de son déclin a une cause spécifique, identifiable et potentiellement réversible.",
-    shistoryTitle: "Lire l'histoire à travers le prisme hormonal", shistoryBody: "Chaque génération vit le même monde objectif à travers un substrat hormonal différent. Un homme en 1960 avec une testostérone à 600 ng/dL, un cortisol normal et une signalisation dopaminergique intacte vit un revers de carrière comme un défi à surmonter. Un homme en 2024 avec une testostérone à 350 ng/dL, un cortisol élevé et un tonus dopaminergique réduit vit le même revers comme une menace à éviter. Leurs valeurs peuvent être identiques. Leur capacité biologique à agir selon ces valeurs ne l'est pas.",
-    shistoryOlder: "Quand les générations plus âgées disent « on s'en sortait, c'est tout », elles ne décrivent pas un caractère supérieur. Elles décrivent un environnement hormonal différent dans lequel le seuil d'action était plus bas et le seuil d'évitement était plus haut.",
-    shistoryYounger: "Quand les générations plus jeunes disent « le monde est plus stressant », elles ne décrivent pas un monde plus dangereux (il est objectivement plus sûr). Elles décrivent le même monde vécu à travers un substrat hormonal qui détecte plus de menaces et génère moins de motivation pour les affronter.",
-    shistoryConclusion: "Aucune génération n'a tort. Elles décrivent la même réalité à travers des filtres biologiques différents. Le conflit intergénérationnel qui en résulte — « jeunes paresseux » contre « boomers déconnectés » — est lui-même une conséquence du changement hormonal, pas la preuve d'une défaillance morale d'un côté ou de l'autre.",
-    sideologyTitle: "L'idéologie comme conséquence en aval", sideologyBody: "La même idée — « la sécurité est importante » — produit des résultats politiques différents selon le substrat hormonal de la population qui la porte.",
-    sideologyHigh: "À T=500 ng/dL, cortisol=normal : « La sécurité est importante » → construire des infrastructures sûres, appliquer les lois, affronter les menaces directement.",
-    sideologyLow: "À T=320 ng/dL, cortisol=élevé : « La sécurité est importante » → éliminer tout risque, élargir les définitions du préjudice, éviter la confrontation en supprimant le stimulus causant la confrontation.",
-    sideologyExplain: "L'idée n'a pas changé. La capacité biologique à la mettre en œuvre, si. Ce n'est pas gauche contre droite. Ce n'est pas progressiste contre conservateur. C'est un changement biologique du seuil de mise en œuvre du même ensemble de valeurs que les deux côtés partagent largement. Les deux côtés veulent la sécurité. Les deux côtés veulent l'équité. Les deux côtés veulent les opportunités. Le désaccord porte sur le comment — et le « comment » est modulé par les seuils hormonaux.",
-    sideologyTestable: "C'est vérifiable. Si les attitudes politiques sur la sécurité, le risque et l'autorité sont corrélées aux profils hormonaux individuels (T, cortisol, OT) après contrôle des données démographiques et de l'idéologie déclarée, l'hypothèse de modération biologique gagne en crédibilité. Plusieurs études ont trouvé exactement cela : la testostérone est corrélée aux attitudes politiques sur l'autorité, la compétition et la redistribution à travers les cultures.",
-    s7title: "La prédiction récursive",
-    s7body: "BERM fait une prédiction inhabituelle : sa propre réception est une preuve de sa thèse. Si le déclin de la testostérone réduit la prise de risque, l'esprit de compétition et la présentation authentique de soi au niveau populationnel, alors la communauté scientifique — composée d'humains soumis au même environnement hormonal — devrait manifester une volonté réduite de contester le consensus, de poursuivre des directions de recherche controversées et de défendre des résultats impopulaires. Le modèle prédit que la recherche sur les bioeffets des EMF sera sous-financée, stigmatisée et institutionnellement découragée — non pas parce que les preuves sont faibles, mais parce que le substrat hormonal qui anime la prise de risque intellectuelle est en déclin. C'est vérifiable : l'allocation de financement pour la recherche sur les bioeffets des EMF en proportion du financement total NIH/ERC devrait être en déclin, et les chercheurs du domaine devraient rapporter des pénalités de carrière croissantes pour la publication de résultats positifs.",
+    sRedirectTitle: "Predictions comportementales et implications societales",
+    sRedirectBody: "Les douze predictions comportementales et leurs implications societales sont detaillees dans",
+    sRedirectLink: "Patopolis",
+
+    modelDerived: "",
+    modelDerivedLink: "",
+    sMcConnellTitle: "",
+    sMcConnellBody: "",
+    sCaEffectTitle: "",
+    sCaEffectLead: "",
+    sCaEffectRising: "",
+    sCaEffectTurning: "",
+    sCaEffectFalling: "",
+    sCaEffectPrediction: "",
+    sSubAssimTitle: "",
+    sSubAssimBody1: "",
+    sSubAssimBody2: "",
+    sSubAssimBody3: "",
+    sCamkiiTitle: "",
+    sCamkiiBody1: "",
+    sCamkiiBody2: "",
+    sCamkiiBody3: "",
+    sHormesisEvidence: "",
+    sTimothyTitle: "",
+    sTimothyBody1: "",
+    sTimothyBody2: "",
+    sTimothyBody3: "",
     navCivMain: "Civilisation", navPatopolis: "Patopolis", navPatokratia: "Patokratia",
   },
   ko: {
@@ -807,6 +596,7 @@ const COPY = {
     sSolarLead: "전기화 이전, 생물학에 대한 유일한 중요한 전자기적 영향은 태양에서 왔다. 태양 활동은 중첩된 주기로 진동한다: 11년 슈바베 주기, 88년 글라이스베르크 주기, 약 200년 쉬스/드 브리스 주기. 대극소기 동안 생물학에 대한 전자기적 부담이 감소하고 생물학적 회복이 일어난다.",
     sSolarFormula: "BioCap(t,λ) = BioCap₀ − ∫₀ᵗ χ(λ)·[S(τ) + U(τ) + E(τ)] dτ + ∫₀ᵗ α·χ(λ)·[1−S(τ)]·[1−σ(τ)] dτ",
     sSolarFormulaTerms: ["S(τ) = 태양 주기 중첩 [0,1]", "U(τ) = 도시화의 EMF 성분 (느림, 전기 이전)", "E(τ) = 전기화의 EMF 성분 (빠름, 1880년 이후)", "σ(τ) = 회복 억제 계수 = min(E(τ)/E_max, 0.95)", "χ(λ) = 지자기 감수성 계수 (위도 의존)", "α = 생물학적 회복 계수"],
+    sSolarFormulaNote: "",
     sSolarPrePost: "전기 이전(E=0): BioCap이 진동 → 주기적 문명 역학. 전기 이후(E≫S): BioCap이 단조 감소 → 회복 기간 없음.",
     sSolarRenaissance: "유럽 주요 르네상스 10건 중 8건이 대극소기 동안 또는 직후에 발생했다: 이탈리아 르네상스는 슈페러 극소기에, 과학 혁명은 마운더 극소기에, 독일 낭만주의는 달턴 극소기에.",
     sMigrationTitle: "이주 기울기",
@@ -824,56 +614,50 @@ const COPY = {
     biocapNormTitle: "BioCap 감쇠 — 정규화 수명", biocapTimeTitle: "BioCap 궤적 — 역사적 타임라인", biocapXNorm: "문명 수명 (%)", biocapXTime: "연도", biocapY: "BioCap",
     sCulturalTitle: "문화적 에너지란 무엇인가?",
     sCulturalLead: "", sCulturalBody: "", sCulturalFormula: "CulturalEnergy(t) = N(t) × BioCap(t) × η(t)", sCulturalFormulaDesc: "",
-    sCulturalBioTitle: "문명 역량의 8가지 바이오마커", sCulturalBiomarkers: [] as any[], sCulturalRadarTitle: "바이오마커 프로필 — 서구 인구 2025",
+    sCulturalBioTitle: "문명 역량의 8가지 바이오마커", sCulturalBioWeightNote: "", sCulturalBiomarkers: [] as never[], sCulturalRadarTitle: "바이오마커 프로필 — 서구 인구 2025",
     sCulturalTimeTitle: "BioCap 궤적: 1900–2060", sCulturalTimeX: "연도", sCulturalTimeY: "BioCap", sCulturalAmish: "아미시 (≈ 0.98)", sCulturalNow: "2025:", sCulturalForecast: "예측",
     sCulturalLinesTitle: "개별 바이오마커 궤적",
     sCulturalUnwinTitle: "언윈의 증거", sCulturalUnwinBody1: "", sCulturalUnwinBody2: "", sCulturalUnwinBody3: "",
-    sCulturalPhasesTitle: "언윈의 4단계", sCulturalPhases: [] as any[],
-    sCulturalSensTitle: "민감도 분석", sCulturalSensDesc: "", sCulturalSensItems: [] as any[], sCulturalSensConclusion: "",
-    sCulturalTransTitle: "상전이", sCulturalTransitions: [] as any[],
+    sCulturalPhasesTitle: "언윈의 4단계", sCulturalPhasesNote: "", sCulturalPhases: [] as never[],
+    sCulturalSensTitle: "민감도 분석", sCulturalSensDesc: "", sCulturalSensItems: [] as never[], sCulturalSensConclusion: "",
+    sCulturalTransTitle: "상전이", sCulturalTransitions: [] as never[],
     sActivationTitle: "활성화 주기: 왜 새로운 세력은 구세력이 쇠퇴할 때 부상하는가",
     sActivationLead: "", sActivationBody1: "", sActivationBody2: "", sActivationBody3: "", sActivationBody4: "",
     sActivationChartTitle: "호르메시스 용량-반응", sActivationChartZone1: "구역 1: 호르메시스 자극 (유목민)", sActivationChartZone2: "구역 2: 전환 (농경)", sActivationChartZone3: "구역 3: 손상 (도시/전기화)",
-    sActivationChartX: "총 EMF 부하", sActivationChartY: "BioCap", sActivationChartSun: "같은 태양, 반대 효과", sActivationEpistemic: "",
+    sActivationChartX: "총 EMF 부하", sActivationChartXNote: "", sActivationChartY: "BioCap", sActivationChartSun: "같은 태양, 반대 효과", sActivationEpistemic: "",
     sExpansionTitle: "세 가지 확장 유형",
     sExpansionCards: [
       { id: "α", title: "호르메시스 활성화", examples: "몽골 1206, 아랍 632, 바이킹 793", icon: "sun", desc: "", trigger: "태양 극대기 + 유목민 = 생물학적 활성화" },
       { id: "β", title: "회복 에너지", examples: "대항해시대 1492, 과학혁명 1687, 나폴레옹 시대 1803", icon: "moon", desc: "", trigger: "대극소기 + 회복 = 창조적 고양" },
       { id: "γ", title: "침식 기울기", examples: "게르만 민족 이동 375–476, 만주→명 1644, 아프리카→유럽 2000–", icon: "gradient", desc: "", trigger: "수세기의 도시 침식 + 온전한 변경 = 교체" },
     ],
-    s6title: "12가지 예측, 12가지 관찰",
-    s6lead: "BERM은 호르몬 모델로부터 특정 행동적·사회적 변화를 예측합니다. 각 예측은 호르몬 연관에 대한 RCT 증거에 기반합니다; 각 관찰은 예측과 일치하는 인구 수준 데이터를 인용합니다.",
-    scoreConsistent: "일치",
-    predictions: [] as any[],
-    sProjectionTitle: "호르몬 데이터가 사회에 대해 예측하는 것",
-    sProjectionLead: "위의 12가지 예측은 개인 행동 변화를 추적합니다. 그러나 개인은 고립되어 존재하지 않습니다. 이들은 부부, 가족, 팀, 제도, 국가를 형성합니다. 전체 인구의 호르몬 기반이 변하면, 집합적 효과는 이념적 변화, 문화적 갈등, 도덕적 쇠퇴처럼 보이지만 상당 부분 문화적 변화로 경험되는 생물학적 전환일 수 있는 창발적 사회 현상을 만들어냅니다.",
-    sProjectionNote: "이 구분은 중요합니다. 만약 사회 문제가 이념적이라면, 해결책은 생각을 바꿀 것을 요구합니다. 만약 부분적으로 생물학적이라면, 해결책은 환경을 바꾸는 것을 포함합니다. 후자가 더 쉽습니다.",
-    spolarTitle: "양극화: 디지털 용기, 물리적 순응", spolarBody: "관객 효과 RCT (2020)는 낮은 테스토스테론이 전략적 친사회성을 증가시킨다는 것을 보여주었습니다 — 당신이 믿는 것이 아니라 관객이 기대하는 것을 말하는 것. 도발 RCT (Carré 2017)는 낮은 테스토스테론이 불의에 대한 반응적 반응을 감소시킨다는 것을 보여주었습니다. 함께 이들은 특정 패턴을 예측합니다: 사람들은 물리적 현존에서는 순응적이지만 화면 뒤에서는 대결적일 것입니다.",
-    spolarObserved: "이것이 정확히 관찰되는 현상입니다. 온라인 양극화는 역대 최고입니다. 물리적 대결은 역대 최저입니다. 사람들은 직접 대면해서는 절대 말하지 않을 견해를 익명으로 표현합니다. 댓글 섹션은 전장이고, 회의실은 반향실입니다.",
-    spolarExplain: "이것은 위선이 아닙니다. 생물학입니다. 낮은 테스토스테론은 진정한 대결의 역치를 높입니다. 디지털 환경은 대결의 사회적 비용을 거의 0으로 낮춥니다. 생물학적 역치와 환경적 비용 사이의 불일치가 패턴을 만듭니다: 온라인에서는 대담하고, 오프라인에서는 침묵합니다.",
-    spolarPrediction: "BERM 예측: 평균 T가 높은 인구 (예: 저EMF 공동체)는 온라인과 오프라인 행동 간 차이가 적어야 합니다.",
-    spolarPhysical: "물리적 환경", spolarPhysicalThreshold: "높음 (대면 사회적 비용)", spolarPhysicalBehavior: "순응, 자기검열, 동조", spolarPhysicalRct: "Audience 2020: 낮은 T → 전략적 친사회성",
-    spolarDigital: "디지털 환경", spolarDigitalThreshold: "거의 0 (익명성, 거리)", spolarDigitalBehavior: "분노, 양극화, 대결", spolarDigitalRct: "Carré 2017: 비용이 낮을 때 도발 반응 지속",
-    svgNeutral: "중립", svgPhysical: "물리적", svgConformity: "순응", svgHighThreshold: "높은 역치", svgDigital: "디지털", svgOutragePolarization: "분노와 양극화", svgNearZeroCost: "거의 0의 비용", svgThresholdVsCost: "생물학적 역치 대 디지털 비용",
-    ssafetyTitle: "안전 추구: 호르몬 역치이지 가치 선택이 아님", ssafetyBody: "위험 감수는 테스토스테론과 함께 감소합니다 (Competition RCT 2024, n=333). 불안은 코르티솔과 함께 증가합니다 ([[ref:dual_hormone_meta2021|이중 호르몬 메타, n=8,538]]). 위협 민감도는 양쪽이 동시에 변할 때 증가합니다. 인구 수준에서 이것은 더 많은 상황을 위협으로 경험하는 사회를 만들어냅니다 — 환경이 더 위험해져서가 아니라 (폭력 범죄는 역대 최저입니다) 위협 인식의 생물학적 역치가 낮아졌기 때문입니다.",
-    ssafetyParadox: "이것은 달리 역설적인 패턴을 설명합니다: 인류 역사상 가장 안전한 사회가 가장 높은 불안을 보고합니다. 객관적 위험은 줄었습니다. 주관적 위협은 늘었습니다. 둘 사이의 간극이 호르몬 변화입니다.",
-    ssafetyCreep: "위협 인식이 실제 위협 증가 없이 상승하면, 심리학자들이 \"개념 확장\"이라 부르는 것이 나타납니다: 이전에 중립적이던 현상을 포괄하도록 해악 관련 개념이 확장되는 것. 말이 폭력이 됩니다. 의견 불일치가 공격이 됩니다. 불편함이 트라우마가 됩니다. 이것은 도덕적 진보도 도덕적 쇠퇴도 아닙니다. 다른 호르몬 기반 위에서 작동하는 재보정된 위협 탐지 시스템입니다.",
-    sinstitutionTitle: "제도적 쇠퇴: 왜 모든 것이 조금씩 나빠지는가", sinstitutionBody: "결과는 극적인 붕괴가 아닙니다. 전반적이고 느린 품질 저하입니다. 의료가 약간 나빠집니다. 교육이 약간 나빠집니다. 인프라 유지보수가 약간 뒤처집니다. 고객 서비스가 저하됩니다. 정치 후보가 약간 덜 유능합니다. 각각은 개별적으로 주목할 만하지 않습니다. 함께 모으면, 그 패턴은 문명적입니다.",
-    sinstitutionData: "2025 Edelman Trust Barometer가 확인합니다: 모든 기관에 대한 신뢰 — 정부, 미디어, NGO, 고용주 — 가 거의 모든 인구 집단에서 감소했습니다. 이것은 당파적 현상이 아닙니다. 기반 현상입니다.",
-    sfixableTitle: "수정 가능한 부분", sfixableLead: "이 페이지에 기록된 행동 변화가 전적으로 이념적이라면 — 사람들이 순전히 사상 때문에 덜 동기부여되고, 더 불안하고, 더 순응적이고, 덜 신뢰한다면 — 해결책은 수십억 명의 생각을 바꿀 것을 요구할 것입니다. 역사는 이것이 극히 어렵다고 시사합니다. 그러나 이러한 변화의 상당 부분이 생물학적 기반을 가진다면, 해결책의 일부는 이념적이 아니라 환경적입니다.",
-    sfixableSolutions: ["생활 및 업무 공간에서 EMF 노출 감소", "칼슘 채널 조절 (264,625명의 환자가 심혈관 질환용 CCB 처방으로 이미 정신과적 이점을 보임)", "마그네슘 보충 (천연 Ca²⁺ 길항제)", "멜라토닌 회복 (일주기 복구)", "수면 위생 (멜라토닌 → GnRH → T 회복)", "신체 접촉과 공동체 (옥시토신 회복)"],
-    sfixableConclusion: "이것들 중 어떤 것도 누군가의 신념을 바꿀 것을 요구하지 않습니다. 전자기 환경을 바꾸고 호르몬이 조절하는 생물학적 시스템을 지원할 것을 요구합니다. 현재의 동기, 신뢰, 사회적 결속의 위기 중 20–30%만이라도 이념적이 아니라 생물학적이라면, 그것은 정치적 갈등 없이 해결할 수 있는 20–30%입니다. 이것이 BERM 모델의 가장 실천적으로 중요한 함의입니다: 문명이 운명지어졌다는 것이 아니라, 그 쇠퇴의 일부에 구체적이고, 식별 가능하며, 잠재적으로 되돌릴 수 있는 원인이 있다는 것입니다.",
-    shistoryTitle: "호르몬 렌즈로 역사 읽기", shistoryBody: "모든 세대는 동일한 객관적 세계를 다른 호르몬 기반을 통해 경험합니다. 1960년에 테스토스테론 600 ng/dL, 정상 코르티솔, 온전한 도파민 신호 체계를 가진 남성은 경력 좌절을 극복해야 할 도전으로 경험합니다. 2024년에 테스토스테론 350 ng/dL, 상승한 코르티솔, 감소한 도파민 기능을 가진 남성은 같은 좌절을 회피해야 할 위협으로 경험합니다. 그들의 가치관은 동일할 수 있습니다. 그 가치관에 따라 행동할 생물학적 능력은 다릅니다.",
-    shistoryOlder: "이전 세대가 \"우리는 그냥 해냈다\"라고 말할 때, 그들은 우월한 인격을 묘사하는 것이 아닙니다. 행동의 역치가 더 낮고 회피의 역치가 더 높았던 다른 호르몬 환경을 묘사하고 있습니다.",
-    shistoryYounger: "젊은 세대가 \"세상이 더 스트레스 받는다\"라고 말할 때, 그들은 더 위험한 세상을 묘사하고 있는 것이 아닙니다 (세상은 객관적으로 더 안전합니다). 그들은 더 많은 위협을 감지하고 그에 맞설 동기를 덜 생성하는 호르몬 기반을 통해 경험되는 같은 세상을 묘사하고 있습니다.",
-    shistoryConclusion: "어느 세대도 틀리지 않았습니다. 그들은 같은 현실을 다른 생물학적 필터를 통해 묘사하고 있습니다. 그로 인한 세대 간 갈등 — \"게으른 젊은이들\" 대 \"현실 감각 없는 기성세대\" — 은 그 자체로 호르몬 변화의 결과이지, 어느 쪽의 도덕적 실패의 증거가 아닙니다.",
-    sideologyTitle: "하류 현상으로서의 이념", sideologyBody: "같은 생각 — \"안전이 중요하다\" — 이 그 생각을 가진 인구의 호르몬 기반에 따라 다른 정치적 결과를 만들어냅니다.",
-    sideologyHigh: "T=500 ng/dL, cortisol=정상일 때: \"안전이 중요하다\" → 안전한 인프라를 구축하고, 법을 집행하고, 위협에 직접 대결한다.",
-    sideologyLow: "T=320 ng/dL, cortisol=상승일 때: \"안전이 중요하다\" → 모든 위험을 제거하고, 해악의 정의를 확장하고, 대결을 유발하는 자극을 제거하여 대결을 피한다.",
-    sideologyExplain: "생각은 변하지 않았습니다. 그것을 실행할 생물학적 능력이 변했습니다. 이것은 좌파 대 우파가 아닙니다. 진보 대 보수가 아닙니다. 양쪽이 대체로 공유하는 같은 가치관 세트에 대한 실행 역치의 생물학적 전환입니다. 양쪽 모두 안전을 원합니다. 양쪽 모두 공정을 원합니다. 양쪽 모두 기회를 원합니다. 불일치는 방법에 대한 것이며 — \"방법\"은 호르몬 역치에 의해 조절됩니다.",
-    sideologyTestable: "이것은 검증 가능합니다. 만약 안전, 위험, 권위에 대한 정치적 태도가 인구통계와 명시적 이념을 통제한 후에도 개인 호르몬 프로파일 (T, cortisol, OT)과 상관관계가 있다면, 생물학적 조절 가설이 지지를 얻습니다. 여러 연구가 정확히 이것을 발견했습니다: 테스토스테론은 문화권 전반에서 권위, 경쟁, 재분배에 대한 정치적 태도와 상관관계가 있습니다.",
-    s7title: "재귀적 예측",
-    s7body: "BERM은 특이한 예측을 합니다: 그 자체의 수용이 논제의 증거라는 것입니다. 만약 테스토스테론 감소가 인구 수준에서 위험 감수, 경쟁 의지, 진정한 자기 표현을 줄인다면, 같은 호르몬 환경에 놓인 인간으로 구성된 과학 공동체는 합의에 도전하고, 논쟁적 연구 방향을 추구하고, 비주류 발견을 방어하려는 의지가 감소해야 합니다. 모델은 EMF 생체효과 연구가 과소 지원되고, 낙인 찍히고, 제도적으로 억제될 것이라 예측합니다 — 증거가 약하기 때문이 아니라, 지적 위험 감수를 추동하는 호르몬 기반이 쇠퇴하고 있기 때문입니다. 이것은 검증 가능합니다: 총 NIH/ERC 연구비 대비 EMF 생체효과 연구에 대한 연구비 배분이 감소해야 하며, 해당 분야의 연구자들은 긍정적 결과 발표에 대한 경력 불이익이 증가한다고 보고해야 합니다.",
+    sRedirectTitle: "행동 예측과 사회적 영향",
+    sRedirectBody: "12가지 행동 예측과 사회적 영향은 다음에 자세히 설명되어 있습니다:",
+    sRedirectLink: "파토폴리스",
+
+    modelDerived: "",
+    modelDerivedLink: "",
+    sMcConnellTitle: "",
+    sMcConnellBody: "",
+    sCaEffectTitle: "",
+    sCaEffectLead: "",
+    sCaEffectRising: "",
+    sCaEffectTurning: "",
+    sCaEffectFalling: "",
+    sCaEffectPrediction: "",
+    sSubAssimTitle: "",
+    sSubAssimBody1: "",
+    sSubAssimBody2: "",
+    sSubAssimBody3: "",
+    sCamkiiTitle: "",
+    sCamkiiBody1: "",
+    sCamkiiBody2: "",
+    sCamkiiBody3: "",
+    sHormesisEvidence: "",
+    sTimothyTitle: "",
+    sTimothyBody1: "",
+    sTimothyBody2: "",
+    sTimothyBody3: "",
     navCivMain: "문명", navPatopolis: "파토폴리스", navPatokratia: "파토크라티아",
   },
 };
@@ -905,6 +689,7 @@ export default async function PatopoliteiaPage({
 
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <TranslationNotice copy={COPY} locale={locale} />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
 
       {/* Hero */}
@@ -940,6 +725,20 @@ export default async function PatopoliteiaPage({
             </div>
           </div>
         </div>
+
+
+        {/* McConnell PNAS 2025 */}
+        {d.sMcConnellBody && (
+        <div className="rounded-xl border border-card-border bg-card-bg p-4 mb-8 max-w-4xl">
+          <h4 className="text-sm font-semibold mb-2">{d.sMcConnellTitle}</h4>
+          <p className="text-sm text-muted-foreground leading-relaxed">{d.sMcConnellBody}</p>
+        </div>
+        )}
+
+        <p className="text-xs text-muted-foreground mt-2 italic max-w-4xl">
+          {d.modelDerived}{" "}
+          <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+        </p>
 
         {/* Prophets Were Right */}
         <h3 className="text-xl font-bold mb-2">{d.sProphetsTitle}</h3>
@@ -982,12 +781,40 @@ export default async function PatopoliteiaPage({
             ))}
           </ul>
         </div>
+        {d.sSolarFormulaNote && (
+        <div className="mb-4 rounded-lg border border-muted bg-muted/30 p-4 max-w-4xl">
+          <p className="text-xs text-muted-foreground leading-relaxed">{d.sSolarFormulaNote}</p>
+        </div>
+        )}
         <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 mb-4 max-w-4xl">
           <p className="text-sm font-medium">{d.sSolarPrePost}</p>
         </div>
         <div className="rounded-xl border border-green-500/30 bg-green-500/5 p-4 mb-8 max-w-4xl">
           <p className="text-sm text-muted-foreground leading-relaxed">{d.sSolarRenaissance}</p>
         </div>
+
+
+        {/* The Ca²⁺ Effect */}
+        {d.sCaEffectLead && (
+        <div className="mb-8">
+          <h3 className="text-xl font-bold mb-2">{d.sCaEffectTitle}</h3>
+          <p className="text-sm font-medium text-muted-foreground mb-4 max-w-4xl">{d.sCaEffectLead}</p>
+          <div className="space-y-3 max-w-4xl">
+            <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
+              <p className="text-sm text-muted-foreground leading-relaxed">{d.sCaEffectRising}</p>
+            </div>
+            <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+              <p className="text-sm text-muted-foreground leading-relaxed">{d.sCaEffectTurning}</p>
+            </div>
+            <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
+              <p className="text-sm text-muted-foreground leading-relaxed">{d.sCaEffectFalling}</p>
+            </div>
+            <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
+              <p className="text-sm font-medium text-muted-foreground leading-relaxed">{d.sCaEffectPrediction}</p>
+            </div>
+          </div>
+        </div>
+        )}
 
         {/* Three Historical Laws */}
         <h3 className="text-xl font-bold mb-4">{d.sThreeLawsTitle}</h3>
@@ -1013,6 +840,19 @@ export default async function PatopoliteiaPage({
         <div className="rounded-xl border border-card-border bg-card-bg p-4 mb-8">
           <MigrationGradientMap title={d.sMigrationTitle} />
         </div>
+
+
+        {/* Sub-Assimilation */}
+        {d.sSubAssimBody1 && (
+        <div className="mb-8 max-w-4xl">
+          <h3 className="text-lg font-semibold mb-3">{d.sSubAssimTitle}</h3>
+          <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+            <p>{d.sSubAssimBody1}</p>
+            <p>{d.sSubAssimBody2}</p>
+            <p className="font-medium">{d.sSubAssimBody3}</p>
+          </div>
+        </div>
+        )}
 
         {/* Last Barbarian Window */}
         <h3 className="text-xl font-bold mb-2">{d.sLastBarbarianTitle}</h3>
@@ -1053,6 +893,11 @@ export default async function PatopoliteiaPage({
         {d.sCulturalBiomarkers?.length > 0 && (
         <div className="mb-10">
           <h3 className="text-lg font-semibold mb-4">{d.sCulturalBioTitle}</h3>
+          {d.sCulturalBioWeightNote && (
+          <div className="mb-4 rounded-lg border border-muted bg-muted/30 p-4">
+            <p className="text-xs text-muted-foreground leading-relaxed">{d.sCulturalBioWeightNote}</p>
+          </div>
+          )}
           <div className="grid md:grid-cols-2 gap-6">
             <div className="overflow-x-auto">
               <table className="w-full text-xs border-collapse">
@@ -1066,7 +911,7 @@ export default async function PatopoliteiaPage({
                   </tr>
                 </thead>
                 <tbody>
-                  {d.sCulturalBiomarkers.map((b: any) => (
+                  {d.sCulturalBiomarkers.map((b) => (
                     <tr key={b.symbol} className="border-b border-card-border/50">
                       <td className="py-1.5 px-2 font-mono font-semibold">{b.symbol}</td>
                       <td className="py-1.5 px-2">{b.name}</td>
@@ -1095,6 +940,22 @@ export default async function PatopoliteiaPage({
         </div>
         )}
 
+
+        <p className="text-xs text-muted-foreground mt-2 italic max-w-4xl">
+          {d.modelDerived}{" "}
+          <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+        </p>
+        {/* CaMKII Convergence */}
+        {d.sCamkiiBody1 && (
+        <div className="mb-10">
+          <h3 className="text-lg font-semibold mb-3">{d.sCamkiiTitle}</h3>
+          <div className="space-y-3 text-sm text-muted-foreground leading-relaxed max-w-4xl">
+            <p>{d.sCamkiiBody1}</p>
+            <p>{d.sCamkiiBody2}</p>
+            <p className="font-medium">{d.sCamkiiBody3}</p>
+          </div>
+        </div>
+        )}
         {/* BioCap Trajectory */}
         <div className="mb-10">
           <h3 className="text-lg font-semibold mb-4">{d.sCulturalTimeTitle}</h3>
@@ -1110,8 +971,13 @@ export default async function PatopoliteiaPage({
         {d.sCulturalPhases?.length > 0 && (
         <div className="mb-10">
           <h3 className="text-lg font-semibold mb-4">{d.sCulturalPhasesTitle}</h3>
+          {d.sCulturalPhasesNote && (
+          <div className="mb-4 rounded-lg border border-muted bg-muted/30 p-4">
+            <p className="text-xs text-muted-foreground leading-relaxed">{d.sCulturalPhasesNote}</p>
+          </div>
+          )}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {d.sCulturalPhases.map((p: any) => {
+            {d.sCulturalPhases.map((p) => {
               const borderColor = p.color === "green" ? "border-green-500/40" : p.color === "blue" ? "border-blue-500/40" : p.color === "amber" ? "border-amber-500/40" : "border-red-500/40";
               return (
                 <div key={p.name} className={`rounded-lg border ${borderColor} bg-card-bg p-4`}>
@@ -1130,7 +996,7 @@ export default async function PatopoliteiaPage({
         <div className="mb-10">
           <h3 className="text-lg font-semibold mb-4">{d.sCulturalTransTitle}</h3>
           <div className="space-y-3">
-            {d.sCulturalTransitions.map((t: any) => (
+            {d.sCulturalTransitions.map((t) => (
               <div key={t.year} className="rounded-lg border border-card-border bg-card-bg p-4 flex flex-col sm:flex-row gap-3">
                 <div className="shrink-0 font-mono font-bold text-sm w-16">{t.year}</div>
                 <div className="flex-1">
@@ -1144,13 +1010,18 @@ export default async function PatopoliteiaPage({
         </div>
         )}
 
+        <p className="text-xs text-muted-foreground mt-2 italic max-w-4xl">
+          {d.modelDerived}{" "}
+          <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+        </p>
+
         {/* Sensitivity Analysis */}
         {d.sCulturalSensItems?.length > 0 && (
         <div className="mb-6">
           <h3 className="text-lg font-semibold mb-2">{d.sCulturalSensTitle}</h3>
           <p className="text-sm text-foreground-muted mb-4">{d.sCulturalSensDesc}</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
-            {d.sCulturalSensItems.map((s: any) => (
+            {d.sCulturalSensItems.map((s) => (
               <div key={s.marker} className="rounded-lg border border-card-border bg-card-bg p-3">
                 <p className="text-sm font-mono font-bold">{s.marker}</p>
                 <p className="text-lg font-bold text-blue-500">{s.recovery}</p>
@@ -1163,6 +1034,11 @@ export default async function PatopoliteiaPage({
           )}
         </div>
         )}
+
+        <p className="text-xs text-muted-foreground mt-2 italic max-w-4xl">
+          {d.modelDerived}{" "}
+          <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+        </p>
       </section>
       )}
 
@@ -1212,6 +1088,18 @@ export default async function PatopoliteiaPage({
           </svg>
         </div>
 
+
+        {d.sHormesisEvidence && (
+        <div className="rounded-xl border border-card-border bg-card-bg p-4 my-6 max-w-4xl">
+          <p className="text-sm text-muted-foreground leading-relaxed">{d.sHormesisEvidence}</p>
+        </div>
+        )}
+        {d.sActivationChartXNote && (
+        <div className="mt-2 max-w-4xl">
+          <p className="text-xs text-muted-foreground leading-relaxed">{d.sActivationChartXNote}</p>
+        </div>
+        )}
+
         {d.sActivationEpistemic && (
         <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 max-w-4xl flex gap-3 items-start">
           <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
@@ -1245,174 +1133,38 @@ export default async function PatopoliteiaPage({
         </div>
       </section>
 
-      {/* S6: 12 Predictions, 12 Observations */}
+
+      {/* Timothy Syndrome */}
+      {d.sTimothyBody1 && (
       <section className="mb-16 border-t editorial-rule pt-8">
-        <h2 className="text-2xl font-bold mb-2">{d.s6title}</h2>
-        <p className="text-muted-foreground mb-6">{d.s6lead}</p>
-
-        {d.predictions?.length > 0 && (
-        <>
-        <div className="mb-6 rounded-lg border border-green-500/30 bg-green-500/5 p-3 flex items-center gap-3 flex-wrap">
-          <span className="text-lg font-bold text-green-400">12/12</span>
-          <span className="text-xs text-muted-foreground">{d.scoreConsistent}</span>
-          <div className="flex gap-0.5 flex-1 min-w-[200px]">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="flex-1 h-5 rounded-sm bg-green-500/50 min-w-[14px]" />
-            ))}
+        <h2 className="text-2xl font-bold mb-4">{d.sTimothyTitle}</h2>
+        <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-6 max-w-4xl">
+          <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+            <p>{d.sTimothyBody1}</p>
+            <p>{d.sTimothyBody2}</p>
+            <p className="font-medium">{d.sTimothyBody3}</p>
           </div>
-        </div>
-
-        <div className="space-y-3">
-          {d.predictions.map((p: any, i: number) => (
-            <div key={i} className="rounded-lg border p-4 flex flex-col sm:flex-row sm:items-start gap-3">
-              <span className="flex-shrink-0 rounded-full bg-green-500/20 text-green-400 text-xs font-mono px-2 py-0.5">
-                {i + 1}/12
-              </span>
-              <div className="flex-1 min-w-0">
-                <p className="font-semibold text-sm">{p.prediction}</p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  <span className="font-medium">RCT basis:</span>{" "}
-                  <InlineReferenceText text={p.basis} locale={locale} />
-                </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  <span className="font-medium">Observed:</span> {p.observed}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-        </>
-        )}
-      </section>
-
-      {/* Societal Projection */}
-      <section className="mb-16 border-t editorial-rule pt-8">
-        <h2 className="text-2xl font-bold mb-2 flex items-center gap-2">
-          <Users className="w-6 h-6 text-violet-500" />
-          {d.sProjectionTitle}
-        </h2>
-        <p className="text-muted-foreground mb-2">{d.sProjectionLead}</p>
-        <p className="text-sm italic text-muted-foreground/80 mb-8">{d.sProjectionNote}</p>
-
-        {/* Polarization */}
-        <div className="mb-8 rounded-xl border p-6">
-          <h3 className="text-lg font-semibold mb-3">{d.spolarTitle}</h3>
-          <p className="text-sm text-muted-foreground mb-3">{d.spolarBody}</p>
-          <div className="grid md:grid-cols-2 gap-4 mb-4">
-            <div className="rounded-lg bg-blue-500/10 p-4">
-              <p className="text-sm font-semibold text-blue-400 mb-2">{d.spolarPhysical}</p>
-              <p className="text-xs text-muted-foreground"><span className="font-medium">T threshold:</span> {d.spolarPhysicalThreshold}</p>
-              <p className="text-xs text-muted-foreground mt-1"><span className="font-medium">Behavior:</span> {d.spolarPhysicalBehavior}</p>
-              <p className="text-xs text-muted-foreground/70 mt-1">{d.spolarPhysicalRct}</p>
-            </div>
-            <div className="rounded-lg bg-amber-500/10 p-4">
-              <p className="text-sm font-semibold text-amber-400 mb-2">{d.spolarDigital}</p>
-              <p className="text-xs text-muted-foreground"><span className="font-medium">T threshold:</span> {d.spolarDigitalThreshold}</p>
-              <p className="text-xs text-muted-foreground mt-1"><span className="font-medium">Behavior:</span> {d.spolarDigitalBehavior}</p>
-              <p className="text-xs text-muted-foreground/70 mt-1">{d.spolarDigitalRct}</p>
-            </div>
-          </div>
-
-          {/* Polarization Diverging Chart */}
-          <div className="my-4">
-            <svg viewBox="0 0 500 104" className="chart-svg w-full max-w-lg mx-auto" role="img" aria-label="Diverging bar chart: physical conformity vs digital outrage">
-              <line x1="250" y1="10" x2="250" y2="80" stroke="currentColor" strokeOpacity="0.2" strokeWidth="1" />
-              <text x="250" y="8" textAnchor="middle" fill="currentColor" fillOpacity="0.3" fontSize="8">{d.svgNeutral}</text>
-              <rect x="170" y="18" width="80" height="24" rx="4" fill="#3b82f6" fillOpacity="0.25" stroke="#3b82f6" strokeOpacity="0.4" strokeWidth="1" />
-              <text x="160" y="34" textAnchor="end" fill="#3b82f6" fontSize="9" fontWeight="600">{d.svgPhysical}</text>
-              <text x="210" y="34" textAnchor="middle" fill="#3b82f6" fillOpacity="0.8" fontSize="9">{d.svgConformity}</text>
-              <text x="160" y="47" textAnchor="end" fill="currentColor" fillOpacity="0.3" fontSize="7">{d.svgHighThreshold}</text>
-              <rect x="250" y="52" width="180" height="24" rx="4" fill="#f59e0b" fillOpacity="0.35" stroke="#f59e0b" strokeOpacity="0.5" strokeWidth="1" />
-              <text x="488" y="68" textAnchor="end" fill="#f59e0b" fontSize="9" fontWeight="600">{d.svgDigital}</text>
-              <text x="340" y="68" textAnchor="middle" fill="#f59e0b" fillOpacity="0.9" fontSize="9">{d.svgOutragePolarization}</text>
-              <text x="488" y="82" textAnchor="end" fill="currentColor" fillOpacity="0.3" fontSize="7">{d.svgNearZeroCost}</text>
-              <text x="250" y="98" textAnchor="middle" fill="currentColor" fillOpacity="0.25" fontSize="7">{d.svgThresholdVsCost}</text>
-            </svg>
-          </div>
-
-          <p className="text-sm text-muted-foreground mb-2">{d.spolarObserved}</p>
-          <p className="text-sm text-muted-foreground mb-3">{d.spolarExplain}</p>
-          <p className="text-sm font-medium text-violet-400">{d.spolarPrediction}</p>
-        </div>
-
-        {/* Safety-seeking */}
-        <div className="mb-8 rounded-xl border p-6">
-          <h3 className="text-lg font-semibold mb-3">{d.ssafetyTitle}</h3>
-          <p className="text-sm text-muted-foreground mb-3">
-            <InlineReferenceText text={d.ssafetyBody} locale={locale} />
-          </p>
-          <div className="rounded-lg bg-amber-500/10 p-4 mb-3">
-            <p className="text-sm font-medium">{d.ssafetyParadox}</p>
-          </div>
-          <p className="text-sm text-muted-foreground">{d.ssafetyCreep}</p>
-        </div>
-
-        {/* Institutional decay */}
-        <div className="mb-8 rounded-xl border p-6">
-          <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
-            <Building2 className="w-5 h-5" />
-            {d.sinstitutionTitle}
-          </h3>
-          <p className="text-sm text-muted-foreground mb-3">{d.sinstitutionBody}</p>
-          <p className="text-sm text-muted-foreground">{d.sinstitutionData}</p>
-        </div>
-
-        {/* The Fixable Fraction */}
-        <div className="mb-8 rounded-xl border border-green-500/30 bg-green-500/5 p-6">
-          <h3 className="text-lg font-semibold mb-3 text-green-400">{d.sfixableTitle}</h3>
-          <p className="text-sm text-muted-foreground mb-4">{d.sfixableLead}</p>
-          <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground mb-4">
-            {d.sfixableSolutions.map((s: string, i: number) => (
-              <li key={i}>{s}</li>
-            ))}
-          </ul>
-          <p className="text-sm font-medium">{d.sfixableConclusion}</p>
-        </div>
-
-        {/* Reading history */}
-        <div className="mb-8 rounded-xl border p-6">
-          <h3 className="text-lg font-semibold mb-3">{d.shistoryTitle}</h3>
-          <p className="text-sm text-muted-foreground mb-3">{d.shistoryBody}</p>
-          <div className="grid md:grid-cols-2 gap-4 mb-3">
-            <div className="rounded-lg bg-blue-500/10 p-4">
-              <p className="text-xs text-muted-foreground">{d.shistoryOlder}</p>
-            </div>
-            <div className="rounded-lg bg-rose-500/10 p-4">
-              <p className="text-xs text-muted-foreground">{d.shistoryYounger}</p>
-            </div>
-          </div>
-          <p className="text-sm font-medium">{d.shistoryConclusion}</p>
-        </div>
-
-        {/* Ideology as downstream */}
-        <div className="mb-8 rounded-xl border p-6">
-          <h3 className="text-lg font-semibold mb-3">{d.sideologyTitle}</h3>
-          <p className="text-sm text-muted-foreground mb-3">{d.sideologyBody}</p>
-          <div className="grid md:grid-cols-2 gap-4 mb-4">
-            <div className="rounded-lg bg-green-500/10 p-4">
-              <p className="text-xs font-medium">{d.sideologyHigh}</p>
-            </div>
-            <div className="rounded-lg bg-red-500/10 p-4">
-              <p className="text-xs font-medium">{d.sideologyLow}</p>
-            </div>
-          </div>
-          <p className="text-sm text-muted-foreground mb-3">{d.sideologyExplain}</p>
-          <p className="text-sm text-muted-foreground">{d.sideologyTestable}</p>
         </div>
       </section>
+      )}
 
-      {/* S7: Recursive Prediction */}
+      {/* Redirect to Patopolis for predictions & societal implications */}
       <section className="mb-16 border-t editorial-rule pt-8">
-        <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-          <Brain className="w-6 h-6 text-purple-500" />
-          {d.s7title}
-        </h2>
-        <div className="rounded-xl border border-purple-500/30 bg-purple-500/5 p-6">
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {d.s7body}
+        <h2 className="text-2xl font-bold mb-4">{d.sRedirectTitle}</h2>
+        <div className="rounded-xl border border-blue-500/30 bg-blue-500/5 p-6 max-w-4xl">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {d.sRedirectBody}{" "}
+            <Link
+              href={`/${locale}/civilization/patopolis#twelve-predictions`}
+              className="text-blue-400 underline underline-offset-2 hover:text-blue-300"
+            >
+              {d.sRedirectLink}
+            </Link>.
           </p>
         </div>
       </section>
+
+
 
       {/* Navigation links */}
       <section className="flex flex-wrap gap-4 justify-center mb-12">

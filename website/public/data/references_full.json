@@ -2,12 +2,12 @@
   "metadata": {
     "version": "3.0",
     "source": "BERM_lahteet_kattava_2.pdf merged with references.json v1",
-    "total_references": 1028,
+    "total_references": 1034,
     "verified_count": 373,
     "generated": "2026-08-31",
     "cleanup_note": "Cleaned: remapped legacy categories, removed corrupted entries, deduplicated by DOI/title, normalized DOI nulls",
     "linked_count": 378,
-    "unlinked_count": 650,
+    "unlinked_count": 656,
     "schema": "canonical-reference-registry-v1",
     "alias_count": 38,
     "last_updated": "2026-09-01"
@@ -17862,7 +17862,7 @@
       "url": null,
       "category": "reproduction_hormones",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "M",
       "type": "report",
@@ -18303,7 +18303,7 @@
       "url": null,
       "category": "reproduction_hormones",
       "pathway": [
-        "C"
+        "B"
       ],
       "level": "M",
       "type": "journal",
@@ -30420,6 +30420,190 @@
         "abstinence",
         "ejaculation",
         "hormonal_response"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "shielded_bed_2022",
+      "authors": "Halgamuge MN et al.",
+      "year": 2022,
+      "title": "Effect of an EMF-avoidance sleeping environment on hormone levels",
+      "journal": "Environmental Research",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC9306162",
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "A",
+        "D"
+      ],
+      "level": "C",
+      "type": "journal",
+      "finding": "EMF-shielded sleeping environment significantly increased DHEA, norepinephrine, serotonin, oxytocin, melatonin, and testosterone simultaneously. Cortisol/DHEA ratio decreased.",
+      "tags": [
+        "EMF_shielding",
+        "hormone_recovery",
+        "intervention",
+        "melatonin",
+        "testosterone"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "magnesium_ca2_antagonist_2025",
+      "authors": "Workinger JL et al.",
+      "year": 2025,
+      "title": "Magnesium as an endogenous calcium channel antagonist",
+      "journal": "International Journal for Vitamin and Nutrition Research",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC12616636",
+      "url": null,
+      "category": "mechanism",
+      "pathway": [
+        "A"
+      ],
+      "level": "M",
+      "type": "review",
+      "finding": "Magnesium deficiency results in elevated intracellular Ca²⁺ concentrations. 2.4 billion people (~31% of global population) fail to meet recommended magnesium intake.",
+      "tags": [
+        "magnesium",
+        "calcium",
+        "VGCC",
+        "deficiency"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "magnesium_testosterone_2025",
+      "authors": "Cinar V et al.",
+      "year": 2025,
+      "title": "Regulatory role of magnesium in testosterone biosynthesis",
+      "journal": "Biological Trace Element Research",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC12251677",
+      "url": null,
+      "category": "reproduction_hormones",
+      "pathway": [
+        "D"
+      ],
+      "level": "M",
+      "type": "journal",
+      "finding": "Magnesium has a regulatory role in testosterone biosynthesis. Deficiency compounds EMF-mediated Ca²⁺ disruption.",
+      "tags": [
+        "magnesium",
+        "testosterone",
+        "biosynthesis"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "camkii_pancreas_diabetes",
+      "authors": "Park IH et al.",
+      "year": 2013,
+      "title": "CaMKII hyperphosphorylation of RyR2 in pancreatic beta cells",
+      "journal": "Cell Metabolism",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC3596297",
+      "url": null,
+      "category": "mechanism",
+      "pathway": [
+        "A"
+      ],
+      "level": "M",
+      "type": "journal",
+      "finding": "CaMKII hyperphosphorylation of RyR2 produces hallmarks of pre-diabetes: hyperinsulinemia, glucose intolerance, impaired insulin secretion.",
+      "tags": [
+        "CaMKII",
+        "diabetes",
+        "calcium",
+        "RyR2",
+        "pancreas"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "hormesis_mitochondrial_2024",
+      "authors": "Zhang X et al.",
+      "year": 2024,
+      "title": "ELF-EMF increased mitochondrial electron transport chain activities through hormetic effects",
+      "journal": "Scientific Reports",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC11508854",
+      "url": null,
+      "category": "mechanism",
+      "pathway": [
+        "A"
+      ],
+      "level": "M",
+      "type": "journal",
+      "finding": "ELF-EMF increased mitochondrial electron transport chain activities and ameliorated depressive behaviors in mice through beneficial hormetic effects.",
+      "tags": [
+        "hormesis",
+        "ELF-EMF",
+        "mitochondria",
+        "dose_response"
+      ],
+      "pdf_section": null,
+      "pdf_number": null,
+      "verified": false,
+      "link_status": "registered",
+      "link_source": null,
+      "aliases": []
+    },
+    {
+      "id": "elf_steroidogenesis_2016",
+      "authors": "Boscolo P et al.",
+      "year": 2016,
+      "title": "ELF-MF stimulation of adrenal steroidogenesis via phosphodiesterase inhibition",
+      "journal": "International Journal of Environmental Research and Public Health",
+      "doi": null,
+      "pmid": null,
+      "pmcid": "PMC4839720",
+      "url": null,
+      "category": "mechanism",
+      "pathway": [
+        "A",
+        "D"
+      ],
+      "level": "M",
+      "type": "journal",
+      "finding": "ELF-MF exposure stimulated adrenal steroidogenesis via inhibition of phosphodiesterase activity and paradoxically decreased intracellular Ca²⁺ concentration at low doses.",
+      "tags": [
+        "ELF-MF",
+        "steroidogenesis",
+        "hormesis",
+        "calcium",
+        "dose_response"
       ],
       "pdf_section": null,
       "pdf_number": null,

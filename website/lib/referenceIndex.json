@@ -2,7 +2,7 @@
   "metadata": {
     "version": "3.0",
     "generated": "2026-08-31",
-    "totalReferences": 1028,
+    "totalReferences": 1034,
     "linkedReferences": 378
   },
   "references": {
@@ -10285,6 +10285,66 @@
       "type": "journal",
       "linkStatus": "registered",
       "externalUrl": null
+    },
+    "shielded_bed_2022": {
+      "id": "shielded_bed_2022",
+      "authors": "Halgamuge MN et al.",
+      "year": 2022,
+      "title": "Effect of an EMF-avoidance sleeping environment on hormone levels",
+      "journal": "Environmental Research",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "magnesium_ca2_antagonist_2025": {
+      "id": "magnesium_ca2_antagonist_2025",
+      "authors": "Workinger JL et al.",
+      "year": 2025,
+      "title": "Magnesium as an endogenous calcium channel antagonist",
+      "journal": "International Journal for Vitamin and Nutrition Research",
+      "type": "review",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "magnesium_testosterone_2025": {
+      "id": "magnesium_testosterone_2025",
+      "authors": "Cinar V et al.",
+      "year": 2025,
+      "title": "Regulatory role of magnesium in testosterone biosynthesis",
+      "journal": "Biological Trace Element Research",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "camkii_pancreas_diabetes": {
+      "id": "camkii_pancreas_diabetes",
+      "authors": "Park IH et al.",
+      "year": 2013,
+      "title": "CaMKII hyperphosphorylation of RyR2 in pancreatic beta cells",
+      "journal": "Cell Metabolism",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "hormesis_mitochondrial_2024": {
+      "id": "hormesis_mitochondrial_2024",
+      "authors": "Zhang X et al.",
+      "year": 2024,
+      "title": "ELF-EMF increased mitochondrial electron transport chain activities through hormetic effects",
+      "journal": "Scientific Reports",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
+    },
+    "elf_steroidogenesis_2016": {
+      "id": "elf_steroidogenesis_2016",
+      "authors": "Boscolo P et al.",
+      "year": 2016,
+      "title": "ELF-MF stimulation of adrenal steroidogenesis via phosphodiesterase inhibition",
+      "journal": "International Journal of Environmental Research and Public Health",
+      "type": "journal",
+      "linkStatus": "registered",
+      "externalUrl": null
     }
   },
   "aliases": {
@@ -11148,6 +11208,12 @@
     "doi:10.1073/pnas.1718793115": "bratsberg2018",
     "doi:10.1016/j.intell.2023.101786": "dworak2023",
     "doi:10.1177/1745691614568352": "holt_lunstad2015",
-    "doi:10.1631/jzus.2003.0236": "jiang2003"
+    "doi:10.1631/jzus.2003.0236": "jiang2003",
+    "pmcid:PMC9306162": "shielded_bed_2022",
+    "pmcid:PMC12616636": "magnesium_ca2_antagonist_2025",
+    "pmcid:PMC12251677": "magnesium_testosterone_2025",
+    "pmcid:PMC3596297": "camkii_pancreas_diabetes",
+    "pmcid:PMC11508854": "hormesis_mitochondrial_2024",
+    "pmcid:PMC4839720": "elf_steroidogenesis_2016"
   }
 }

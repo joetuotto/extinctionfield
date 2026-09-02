@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, AlertTriangle, Baby, Building2, Users, Brain, TrendingDown, Target } from "lucide-react";
 import { pickCopy } from "@/lib/i18n";
-import { CitationLink } from "@/components/CitationLink";
+import { TranslationNotice } from "@/components/TranslationNotice";
 import { InlineReferenceText } from "@/components/InlineReferenceText";
 
 const COPY = {
@@ -12,6 +12,7 @@ const COPY = {
     heroLead: "The city is not just a social environment — it is an electromagnetic one. Every concrete wall reflects, every wire hums, every device pulses. This page traces what that environment does to the body, the family, the institution, and the civilization.",
     civilizationLink: "Back to Civilization",
     patokratiaLink: "Patokratia",
+    patokinesisLink: "Patokinesis",
     mechanismNote: "The root mechanism — how EMF disrupts calcium channels to produce sex-specific hormonal cascades — is described in Pathopege.",
     s5title: "Compound Effects",
     s5lead:
@@ -47,7 +48,7 @@ const COPY = {
       "j(motivation): T↓ (male) × OT↓ (female) → fewer attempts",
     ],
     s5bCompound:
-      "If each factor declines 30%, total fecundability declines 76% (0.7⁴ = 0.24). This explains why TFR is falling faster than any single factor would predict — and why pronatalist policies fail. Policy addresses j(motivation) with money. It cannot address f, g, or h — which are biological.",
+      "If each factor declines 30%, total fecundability declines 76% (0.7⁴ = 0.24). Fecundability is the clinical probability of conception per menstrual cycle — distinct from the total fertility rate (TFR), which measures births per lifetime. The multiplicative structure means small declines in each factor compound into a dramatically larger aggregate decline. This explains why TFR is falling faster than any single factor would predict — and why pronatalist policies fail. Policy addresses j(motivation) with money. It cannot address f, g, or h — which are biological.",
 
     s5cTitle: "Child development cascade",
     s5cBurdens: [
@@ -68,7 +69,7 @@ const COPY = {
       },
     ],
     s5cSpiral:
-      "Each generation starts from a weaker baseline than the previous one. CaMKII-mediated sensitization means each generation is also more sensitive to the same EMF dose. This produces an accelerating spiral.",
+      "Each generation starts from a weaker baseline than the previous one. CaMKII-mediated sensitization means each generation is also more sensitive to the same EMF dose. This produces an accelerating spiral. CaMKII (calcium/calmodulin-dependent protein kinase II) is an enzyme that, once activated by calcium influx, remains active even after calcium levels normalize — it effectively creates a molecular memory of past exposure by auto-phosphorylating and sustaining downstream signaling changes. This mechanism converts temporary Ca²⁺ overload into permanent cellular state changes, including altered gene expression via methylation.",
 
     s5dTitle: "Institutional decay",
     s5dLead:
@@ -317,7 +318,7 @@ const COPY = {
 
     s8cTitle: "Time Preference and Fertility Decisions",
     s8cLead:
-      "Hyperbolic discounting — the tendency to strongly prefer immediate rewards over future ones — has a hormonal substrate. When that substrate changes, time preferences shift, and fertility decisions follow.",
+      "Temporal discounting is the reduction in subjective value of a reward as the delay to receiving it increases. Hyperbolic discounting is the specific pattern where the discount rate is not constant but steepens as the delay approaches — producing preference reversals (choosing a smaller immediate reward over a larger delayed one, even when the delayed choice was preferred in advance). This has a hormonal substrate. When that substrate changes, time preferences shift, and fertility decisions follow.",
     s8cMechanism:
       "Testosterone influences temporal discounting through two pathways: (1) directly, via androgen receptor density in the prefrontal cortex, which modulates future-oriented decision-making; and (2) indirectly, via dopamine — testosterone upregulates D2 receptor expression in the striatum, and dopamine mediates the valuation of delayed rewards. When both decline simultaneously, the present becomes heavier and the future becomes lighter.",
     s8cFertility:
@@ -536,6 +537,25 @@ const COPY = {
     svgThresholdVsCost: "biological threshold vs. digital cost",
     civTested: "tested",
     civAwaitingTesting: "All awaiting empirical testing",
+    modelDerived: "Model-derived values from BioCap integral, not directly measured.",
+    modelDerivedLink: "mathematical specification",
+    scoreExplain: "\"Consistent\" means the observation matches the prediction's direction. It does not mean the prediction has been formally tested. See the 14 testable predictions below — none has been empirically tested yet.",
+    sPronatalistTitle: "Pronatalist Policy Failure",
+    sPronatalistBody1: "No advanced economy has raised fertility to replacement level in modern history and sustained it there (AEI 2026).",
+    sPronatalistBody2: "South Korea: $270 billion since 2005. TFR fell from 1.19 to 0.72 (-40% in 10 years). Singapore: S$2.5 billion/year. TFR fell from 1.82 (1980) to 0.87 (2025). Hungary: 5% of GDP on family subsidies. TFR fell to 1.39 (2024), lowest in a decade.",
+    sPronatalistBody3: "Policy addresses j(motivation). It cannot address f(sperm), g(oocyte), or h(timing) — which are biological. When each factor has declined 30%, total fecundability is 0.7⁴ = 0.24. Restoring motivation to 100% yields 0.7³ = 0.34 — not 1.0. The biological components are inaccessible to monetary incentives.",
+    sCcbTitle: "Calcium Channel Blocker Evidence",
+    sCcbBody: "Brain-penetrant CCBs are associated with ~12% lower risk of psychiatric and neurodegenerative outcomes (Molecular Psychiatry 2022, propensity-matched cohorts up to 322,814). A Finnish nationwide cohort of 60,000+ schizophrenia patients found dihydropyridine use associated with reduced psychiatric rehospitalization (Cells 2025). CCBs showed lower incidence of psychotic, affective, and anxiety disorders than beta-blockers (risk ratios 0.69–0.99; Journal of Hypertension, June 2025 meta-analysis of RCTs). These are cardiovascular patients receiving Ca²⁺ channel blockade for blood pressure — and getting neuropsychiatric protection as a side effect. This is the inverse of the BERM prediction: if Ca²⁺ overload produces psychiatric symptoms, Ca²⁺ blockade should alleviate them. It does.",
+    sMagnesiumTitle: "Magnesium: The Missing Buffer",
+    sMagnesiumBody: "2.4 billion people (~31% of global population) fail to meet recommended magnesium intake (IJVNR 2025 systematic review). Magnesium functions as an endogenous calcium channel antagonist; deficiency results in elevated intracellular Ca²⁺ concentrations (PMC12616636). Magnesium has a regulatory role in testosterone biosynthesis (PMC12251677). The modern diet (processed food, depleted soil) has reduced magnesium intake at the same time that EMF exposure has increased Ca²⁺ load. These compound: less buffer + more disruptor = faster Ca²⁺ homeostasis degradation.",
+    animalsFellHierarchy: "The sensitivity hierarchy follows from the mechanism:",
+    animalsFellItems: [
+      { species: "Amphibians", detail: "Moist skin = direct ionic coupling, thin eggs, aquatic larvae", evidence: "Global decline began ~1987 (GSM rollout)" },
+      { species: "Insects", detail: "CRY-dependent navigation, small body mass, short generations", evidence: "Biomass −75% over 27 years (Krefeld)" },
+      { species: "Birds", detail: "CRY compass, migratory species most affected", evidence: "−29% in North America since 1970 (Rosenberg 2019)" },
+      { species: "Mammals", detail: "Dry skin, large mass, long lifespan — cumulative", evidence: "Human biomarker decline 1990s+" },
+    ],
+    animalsFellConclusion: "This is not a list of separate crises. It is one mechanism (Ca²⁺/CRY disruption) propagating through species at rates determined by biological sensitivity. The canary is not a metaphor. It is a measurement.",
   },
   fi: {
     title: "Patopolis",
@@ -543,6 +563,7 @@ const COPY = {
     heroLead: "Kaupunki ei ole pelkästään sosiaalinen ympäristö — se on sähkömagneettinen ympäristö. Jokainen betoniseinä heijastaa, jokainen johto hurisee, jokainen laite sykkii. Tämä sivu jäljittää, mitä tuo ympäristö tekee keholle, perheelle, instituutioille ja sivilisaatiolle.",
     civilizationLink: "Takaisin Sivilisaatioon",
     patokratiaLink: "Patokratia",
+    patokinesisLink: "Patokinesis",
     mechanismNote: "Juurimekanismi — miten EMF häiritsee kalsiumkanavia ja tuottaa sukupuolispesifiset hormonaaliset kaskaadit — kuvataan Pathopege-sivulla.",
     s5title: "Yhdistelmävaikutukset",
     s5lead:
@@ -1067,6 +1088,25 @@ const COPY = {
     svgThresholdVsCost: "biologinen kynnys vs. digitaalinen kustannus",
     civTested: "testattu",
     civAwaitingTesting: "Kaikki odottavat empiiristä testausta",
+    modelDerived: "Mallin tuottamia arvoja BioCap-integraalista, ei suoraan mitattuja.",
+    modelDerivedLink: "matemaattinen spesifikaatio",
+    scoreExplain: "\"Yhdenmukainen\" tarkoittaa, että havainto vastaa ennusteen suuntaa. Se ei tarkoita, että ennuste olisi muodollisesti testattu. Katso alla olevat 14 testattavaa ennustetta — yhtäkään ei ole vielä empiirisesti testattu.",
+    sPronatalistTitle: "Pronatalistisen politiikan epäonnistuminen",
+    sPronatalistBody1: "Yksikään kehittynyt talous ei ole nostanut syntyvyyttä uusiutumistasolle modernissa historiassa ja ylläpitänyt sitä siellä (AEI 2026).",
+    sPronatalistBody2: "Etelä-Korea: 270 miljardia dollaria vuodesta 2005. Kokonaishedelmällisyysluku laski 1,19:stä 0,72:een (-40 % 10 vuodessa). Singapore: 2,5 miljardia S$/vuosi. TFR laski 1,82:sta (1980) 0,87:ään (2025). Unkari: 5 % BKT:sta perhetukiin. TFR laski 1,39:ään (2024), vuosikymmenen matalin.",
+    sPronatalistBody3: "Politiikka käsittelee j(motivaatio). Se ei voi käsitellä f(siittiö), g(munasolu) tai h(ajoitus) — jotka ovat biologisia. Kun jokainen tekijä on laskenut 30 %, kokonaishedelmöityskyky on 0,7⁴ = 0,24. Motivaation palauttaminen 100 %:iin tuottaa 0,7³ = 0,34 — ei 1,0. Biologiset komponentit ovat rahallisten kannustimien ulottumattomissa.",
+    sCcbTitle: "Kalsiumkanavasalpaajaevidenssi",
+    sCcbBody: "Aivoihin pääsevät CCB:t ovat yhteydessä ~12 % matalampaan psykiatristen ja neurodegeneratiivisten lopputulosten riskiin (Molecular Psychiatry 2022, taipumuspistemäärällä sovitetut kohortit jopa 322 814). Suomalainen valtakunnallinen yli 60 000 skitsofreniapotilaan kohortti havaitsi dihydropyridiinin käytön yhteyden vähentyneisiin psykiatrisiin uudelleenhoitojaksoihin (Cells 2025). CCB:t osoittivat matalamman psykoottisten, affektiivisten ja ahdistushäiriöiden ilmaantuvuuden kuin beetasalpaajat (riskisuhteet 0,69–0,99; Journal of Hypertension, kesäkuu 2025, RCT-meta-analyysi). Nämä ovat sydän- ja verisuonipotilaita, jotka saavat Ca²⁺-kanavasalpausta verenpaineeseen — ja saavat neuropsykiatrista suojaa sivuvaikutuksena.",
+    sMagnesiumTitle: "Magnesium: puuttuva puskuri",
+    sMagnesiumBody: "2,4 miljardia ihmistä (~31 % maailman väestöstä) ei täytä suositeltua magnesiumin saantia (IJVNR 2025 systemaattinen katsaus). Magnesium toimii endogeenisenä kalsiumkanava-antagonistina; puutos johtaa kohonneisiin solunsisäisiin Ca²⁺-pitoisuuksiin (PMC12616636). Magnesiumilla on säätelevä rooli testosteronin biosynteesissä (PMC12251677). Moderni ruokavalio (prosessoitu ruoka, köyhtyneet maaperät) on vähentänyt magnesiumin saantia samaan aikaan kun EMF-altistus on lisännyt Ca²⁺-kuormaa. Nämä yhdistyvät: vähemmän puskuria + enemmän häiritsijää = nopeampi Ca²⁺-homeostaasin heikkeneminen.",
+    animalsFellHierarchy: "Herkkyyshierarkia seuraa mekanismista:",
+    animalsFellItems: [
+      { species: "Sammakkoeläimet", detail: "Kostea iho = suora ioninen kytkentä, ohuet munat, vesitoukat", evidence: "Maailmanlaajuinen lasku alkoi ~1987 (GSM-käyttöönotto)" },
+      { species: "Hyönteiset", detail: "CRY-riippuvainen navigointi, pieni ruumiinmassa, lyhyet sukupolvet", evidence: "Biomassa −75 % 27 vuodessa (Krefeld)" },
+      { species: "Linnut", detail: "CRY-kompassi, muuttolinnut eniten kärsineet", evidence: "−29 % Pohjois-Amerikassa vuodesta 1970 (Rosenberg 2019)" },
+      { species: "Nisäkkäät", detail: "Kuiva iho, suuri massa, pitkä elinikä — kumulatiivinen", evidence: "Ihmisten biomarkkereiden lasku 1990-luvulta+" },
+    ],
+    animalsFellConclusion: "Tämä ei ole lista erillisistä kriiseistä. Se on yksi mekanismi (Ca²⁺/CRY-häiriö), joka etenee lajien läpi nopeudella, jonka biologinen herkkyys määrää. Kaivoskanarialintu ei ole metafora. Se on mittaus.",
   },
   ja: {
     title: "パトポリス",
@@ -1074,6 +1114,7 @@ const COPY = {
     heroLead: "都市は単なる社会的環境ではない——電磁的環境である。コンクリートの壁は反射し、電線はうなり、あらゆるデバイスが脈動する。このページでは、その環境が身体、家族、制度、そして文明に何をもたらすかを追跡する。",
     civilizationLink: "文明に戻る",
     patokratiaLink: "パトクラティア",
+    patokinesisLink: "パトキネシス",
     mechanismNote: "根本メカニズム — EMFがカルシウムチャネルを乱して性別特異的なホルモンカスケードを生み出す仕組み — はパトペゲで説明されています。",
     s5title: "複合効果",
     s5lead:
@@ -1545,6 +1586,12 @@ const COPY = {
     svgThresholdVsCost: "生物学的閾値 vs. デジタルコスト",
     civTested: "検証済み",
     civAwaitingTesting: "すべて実証的検証待ち",
+    modelDerived: "", modelDerivedLink: "",
+    scoreExplain: "",
+    sPronatalistTitle: "", sPronatalistBody1: "", sPronatalistBody2: "", sPronatalistBody3: "",
+    sCcbTitle: "", sCcbBody: "",
+    sMagnesiumTitle: "", sMagnesiumBody: "",
+    animalsFellHierarchy: "", animalsFellItems: [] as { species: string; detail: string; evidence: string }[], animalsFellConclusion: "",
   },
   fr: {
     title: "Patopolis",
@@ -1552,6 +1599,7 @@ const COPY = {
     heroLead: "La ville n'est pas seulement un environnement social — c'est un environnement électromagnétique. Chaque mur de béton réfléchit, chaque fil bourdonne, chaque appareil pulse. Cette page retrace ce que cet environnement fait au corps, à la famille, aux institutions et à la civilisation.",
     civilizationLink: "Retour à Civilisation",
     patokratiaLink: "Patokratia",
+    patokinesisLink: "Patokinesis",
     mechanismNote: "Le mecanisme racine — comment les CEM perturbent les canaux calciques pour produire des cascades hormonales specifiques au sexe — est decrit dans Pathopege.",
     s5title: "Effets composés",
     s5lead:
@@ -2023,6 +2071,12 @@ const COPY = {
     svgThresholdVsCost: "seuil biologique vs coût numérique",
     civTested: "vérifié",
     civAwaitingTesting: "Tous en attente de vérification empirique",
+    modelDerived: "", modelDerivedLink: "",
+    scoreExplain: "",
+    sPronatalistTitle: "", sPronatalistBody1: "", sPronatalistBody2: "", sPronatalistBody3: "",
+    sCcbTitle: "", sCcbBody: "",
+    sMagnesiumTitle: "", sMagnesiumBody: "",
+    animalsFellHierarchy: "", animalsFellItems: [] as { species: string; detail: string; evidence: string }[], animalsFellConclusion: "",
   },
   ko: {
     title: "파토폴리스",
@@ -2030,6 +2084,7 @@ const COPY = {
     heroLead: "도시는 단순한 사회적 환경이 아니라 전자기적 환경이다. 콘크리트 벽은 반사하고, 전선은 윙윙거리며, 모든 기기는 맥동한다. 이 페이지는 그 환경이 신체, 가족, 제도, 문명에 무엇을 하는지 추적한다.",
     civilizationLink: "문명으로 돌아가기",
     patokratiaLink: "파토크라티아",
+    patokinesisLink: "파토키네시스",
     mechanismNote: "근본 메커니즘 — EMF가 칼슘 채널을 교란하여 성별 특이적 호르몬 캐스케이드를 생성하는 방법 — 은 파토페게에서 설명됩니다.",
     s5title: "복합 효과",
     s5lead:
@@ -2501,6 +2556,12 @@ const COPY = {
     svgThresholdVsCost: "생물학적 역치 대 디지털 비용",
     civTested: "검증됨",
     civAwaitingTesting: "모두 실증적 검증 대기 중",
+    modelDerived: "", modelDerivedLink: "",
+    scoreExplain: "",
+    sPronatalistTitle: "", sPronatalistBody1: "", sPronatalistBody2: "", sPronatalistBody3: "",
+    sCcbTitle: "", sCcbBody: "",
+    sMagnesiumTitle: "", sMagnesiumBody: "",
+    animalsFellHierarchy: "", animalsFellItems: [] as { species: string; detail: string; evidence: string }[], animalsFellConclusion: "",
   },
 };
 
@@ -2549,6 +2610,7 @@ export default async function PatopolisPage({
 
   return (
     <main id="main-content">
+      <TranslationNotice copy={COPY} locale={locale} />
       <div className="max-w-5xl mx-auto px-6">
 
       {/* Hero */}
@@ -2708,6 +2770,18 @@ export default async function PatopolisPage({
           </div>
         </div>
 
+        {/* Pronatalist Policy Failure */}
+        {d.sPronatalistBody1 && (
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-3">{d.sPronatalistTitle}</h3>
+          <div className="space-y-3 text-sm text-muted-foreground leading-relaxed max-w-4xl">
+            <p>{d.sPronatalistBody1}</p>
+            <p>{d.sPronatalistBody2}</p>
+            <p className="font-medium">{d.sPronatalistBody3}</p>
+          </div>
+        </div>
+        )}
+
         {/* 5C: Child development */}
         <div className="mb-8 rounded-xl border p-6">
           <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
@@ -2844,6 +2918,12 @@ export default async function PatopolisPage({
             </table>
           </div>
           <p className="mt-4 text-sm font-medium">{d.generationInsight}</p>
+          {d.modelDerived && (
+          <p className="text-xs text-muted-foreground mt-2 italic">
+            {d.modelDerived}{" "}
+            <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+          </p>
+          )}
         </div>
       </section>
       {/* S8: Dopaminergic Mind */}
@@ -2968,6 +3048,12 @@ export default async function PatopolisPage({
             </tbody>
           </table>
         </div>
+        {d.modelDerived && (
+        <p className="text-xs text-muted-foreground mt-2 italic">
+          {d.modelDerived}{" "}
+          <Link href={`/${locale}/model/math`} className="underline underline-offset-2">{d.modelDerivedLink}</Link>.
+        </p>
+        )}
 
         {/* Meta-irony */}
         <div className="rounded-lg border border-foreground/20 bg-foreground/5 p-5 mb-10 max-w-3xl">
@@ -3006,7 +3092,7 @@ export default async function PatopolisPage({
       </p>
 
       {/* S6: 12 Predictions, 12 Observations */}
-      <section className="mb-16">
+      <section id="twelve-predictions" className="mb-16">
         <h2 className="text-2xl font-bold mb-2">{d.s6title}</h2>
         <p className="text-muted-foreground mb-6">{d.s6lead}</p>
 
@@ -3020,6 +3106,7 @@ export default async function PatopolisPage({
             ))}
           </div>
         </div>
+        {d.scoreExplain && <p className="text-sm text-muted-foreground mb-4">{d.scoreExplain}</p>}
 
         <div className="space-y-3">
           {d.predictions.map((p, i) => (
@@ -3135,6 +3222,20 @@ export default async function PatopolisPage({
               <li key={i}>{s}</li>
             ))}
           </ul>
+          {/* CCB Evidence */}
+          {d.sCcbBody && (
+          <div className="rounded-lg border border-card-border bg-card-bg p-4 mb-4">
+            <h4 className="text-sm font-semibold mb-2">{d.sCcbTitle}</h4>
+            <p className="text-xs text-muted-foreground leading-relaxed">{d.sCcbBody}</p>
+          </div>
+          )}
+          {/* Magnesium */}
+          {d.sMagnesiumBody && (
+          <div className="rounded-lg border border-card-border bg-card-bg p-4 mb-4">
+            <h4 className="text-sm font-semibold mb-2">{d.sMagnesiumTitle}</h4>
+            <p className="text-xs text-muted-foreground leading-relaxed">{d.sMagnesiumBody}</p>
+          </div>
+          )}
           <p className="text-sm font-medium">{d.sfixableConclusion}</p>
         </div>
 
@@ -3213,6 +3314,26 @@ export default async function PatopolisPage({
         <div className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 max-w-4xl">
           <p className="text-xs text-foreground-muted leading-relaxed">{d.animalsFellAnalogy}</p>
         </div>
+        {d.animalsFellHierarchy && (
+        <>
+        <p className="text-sm text-muted-foreground mb-4 mt-4">{d.animalsFellHierarchy}</p>
+        {d.animalsFellItems?.length > 0 && (
+        <div className="space-y-2 mb-4">
+          {d.animalsFellItems.map((item: { species: string; detail: string; evidence: string }, i: number) => (
+            <div key={i} className="flex gap-3 items-start rounded-lg border border-card-border bg-card-bg p-3">
+              <span className="flex-shrink-0 rounded bg-amber-500/20 text-amber-400 text-xs font-mono px-2 py-0.5 mt-0.5">{i + 1}</span>
+              <div>
+                <p className="text-sm font-semibold">{item.species}</p>
+                <p className="text-xs text-muted-foreground">{item.detail}</p>
+                <p className="text-xs text-muted-foreground italic mt-1">{item.evidence}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        )}
+        <p className="text-sm font-medium text-muted-foreground">{d.animalsFellConclusion}</p>
+        </>
+        )}
       </section>
       {/* S9: Testable Predictions */}
       <section className="mb-16">
@@ -3266,7 +3387,7 @@ export default async function PatopolisPage({
       </section>
 
       {/* Navigation */}
-      <nav className="mt-20 mb-16 flex flex-col sm:flex-row gap-4">
+      <nav className="mt-20 mb-16 flex flex-col sm:flex-row flex-wrap gap-4">
         <Link
           href={`/${locale}/civilization`}
           className="flex items-center gap-2 rounded-xl border border-border px-5 py-3 text-sm font-medium hover:bg-muted/50 transition-colors"
@@ -3279,6 +3400,13 @@ export default async function PatopolisPage({
           className="flex items-center gap-2 rounded-xl border border-border px-5 py-3 text-sm font-medium hover:bg-muted/50 transition-colors"
         >
           {d.patokratiaLink}
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+        <Link
+          href={`/${locale}/civilization/patokinesis`}
+          className="flex items-center gap-2 rounded-xl border border-border px-5 py-3 text-sm font-medium hover:bg-muted/50 transition-colors"
+        >
+          {d.patokinesisLink}
           <ArrowRight className="w-4 h-4" />
         </Link>
       </nav>
